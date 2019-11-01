@@ -3,15 +3,15 @@ title: 共有プロジェクトを使用してコードを共有する
 description: 共有プロジェクトを使用すると、さまざまなアプリケーションプロジェクトによって参照される共通のコードを記述できます。 コードは、参照している各プロジェクトの一部としてコンパイルされ、プラットフォーム固有の機能を共有コード ベースに組み込むのに役立つコンパイラ ディレクティブを含めることができます。
 ms.prod: xamarin
 ms.assetid: 191c71fb-44a4-4e6c-af4b-7b1107dce6af
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/18/2018
-ms.openlocfilehash: ed58b0810d3c4fd3a3dd99cddd16227f9ac30273
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: eee76c056d05edccd1e039bc5e4cb8107d1aceb5
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "68739062"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016696"
 ---
 # <a name="shared-projects-code-sharing"></a>共有プロジェクトコード共有
 
@@ -33,7 +33,7 @@ _共有プロジェクトを使用すると、さまざまなアプリケーシ�
 
 共有プロジェクト自体はコンパイルされません。これは、他のプロジェクトに含めることができるソースコードファイルのグループとして純粋に存在します。 他のプロジェクトによって参照されている場合、コードはそのプロジェクトの*一部*として効果的にコンパイルされます。 共有プロジェクトは他のプロジェクトの種類 (他の共有プロジェクトを含む) を参照することはできません。
 
-Android アプリケーションプロジェクトは他の Android アプリケーションプロジェクトを参照できないことに注意してください。たとえば、android 単体テストプロジェクトは Android アプリケーションプロジェクトを参照できません。 この制限の詳細については、こちらの[フォーラムの説明](http://forums.xamarin.com/discussion/comment/98092/)を参照してください。
+Android アプリケーションプロジェクトは他の Android アプリケーションプロジェクトを参照できないことに注意してください。たとえば、android 単体テストプロジェクトは Android アプリケーションプロジェクトを参照できません。 この制限の詳細については、こちらの[フォーラムの説明](https://forums.xamarin.com/discussion/comment/98092/)を参照してください。
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -111,7 +111,7 @@ Visual Studio 2017 で、 **[共有プロジェクト]** テンプレートを�
 
 ## <a name="shared-project-example"></a>共有プロジェクトの例
 
-[Tasky](https://github.com/xamarin/mobile-samples/tree/master/Tasky)の例では、共有プロジェクトを使用して、IOS、Android、および Windows Phone アプリケーションの両方で使用される共通コードを格納します。 @No__t_0 と `TaskRepository.cs` ソースコードファイルの両方 utilise コンパイラディレクティブ ( `#if __ANDROID__`) を使用して、それらを参照する各アプリケーションに対して異なる出力を生成します。
+[Tasky](https://github.com/xamarin/mobile-samples/tree/master/Tasky)の例では、共有プロジェクトを使用して、IOS、Android、および Windows Phone アプリケーションの両方で使用される共通コードを格納します。 `SQLite.cs` と `TaskRepository.cs` ソースコードファイルの両方 utilise コンパイラディレクティブ ( `#if __ANDROID__`) を使用して、それらを参照する各アプリケーションに対して異なる出力を生成します。
 
 完全なソリューションの構造は次のとおりです (Visual Studio for Mac と Visual Studio でそれぞれ)。
 

@@ -3,19 +3,19 @@ title: パート 4 - 複数のプラットフォームを処理する
 description: このドキュメントでは、プラットフォームまたは機能に基づいてアプリケーションの相違を処理する方法について説明します。 画面のサイズ、ナビゲーションのメタファ、タッチとジェスチャ、プッシュ通知、およびリストやタブなどのインターフェイスのパラダイムについて説明します。
 ms.prod: xamarin
 ms.assetid: BBE47BA8-78BC-6A2B-63BA-D1A45CB1D3A5
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: fb01d0ca56365fa95aa563ca99394dea39dc7d31
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 555723e689a9ba076ee34d49b93cf7141e542832
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70288880"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016886"
 ---
 # <a name="part-4---dealing-with-multiple-platforms"></a>パート 4 - 複数のプラットフォームを処理する
 
-## <a name="handling-platform-divergence-amp-features"></a>プラットフォームの相違&amp;点の処理
+## <a name="handling-platform-divergence-amp-features"></a>プラットフォームの相違 &amp; 機能の処理
 
 相違点は、"クロスプラットフォーム" の問題ではありません。' 同じ ' プラットフォームのデバイスには、さまざまな機能があります (特に、利用可能なさまざまな Android デバイス)。 最も明白で基本的なのは画面サイズですが、その他のデバイス属性は異なる可能性があり、アプリケーションは特定の機能を確認し、存在 (または不要) に応じて動作を変える必要があります。
 
@@ -108,7 +108,7 @@ ms.locfileid: "70288880"
 
 場合によっては、共有コードが各プラットフォームで異なる動作をする必要があり、動作が異なるクラスや機能にアクセスすることもあります。 条件付きコンパイルは、異なるシンボルが定義されている複数のプロジェクトで同じソースファイルが参照されている共有アセットプロジェクトで最適に機能します。
 
-Xamarin プロジェクトでは`__MOBILE__` 、iOS と Android の両方のアプリケーションプロジェクトに対して true が定義されています (これらのシンボルについては、2つのアンダースコアの前と後の修正後に注意してください)。
+Xamarin プロジェクトでは、iOS と Android の両方のアプリケーションプロジェクトに対して true である `__MOBILE__` が常に定義されています (これらのシンボルについては、二重アンダースコアと修正後のコードに注意してください)。
 
 ```csharp
 #if __MOBILE__
@@ -118,7 +118,7 @@ Xamarin プロジェクトでは`__MOBILE__` 、iOS と Android の両方のア�
 
 #### <a name="ios"></a>iOS
 
-Xamarin ios は、 `__IOS__` ios デバイスを検出するために使用できるものを定義します。
+Xamarin には、iOS デバイスを検出するために使用できる `__IOS__` が定義されています。
 
 ```csharp
 #if __IOS__
@@ -148,7 +148,7 @@ Xamarin Android アプリケーションにのみコンパイルする必要が�
 #endif
 ```
 
-各 API バージョンでも新しいコンパイラディレクティブが定義されているため、このようなコードを使用すると、新しい Api が対象となっている場合に機能を追加できます。 各 API レベルには、"lower" レベルのシンボルがすべて含まれています。 この機能は、複数のプラットフォームをサポートする場合にはあまり役に立ちません。通常、 `__ANDROID__`シンボルは十分です。
+各 API バージョンでも新しいコンパイラディレクティブが定義されているため、このようなコードを使用すると、新しい Api が対象となっている場合に機能を追加できます。 各 API レベルには、"lower" レベルのシンボルがすべて含まれています。 この機能は、複数のプラットフォームをサポートする場合にはあまり役に立ちません。通常、`__ANDROID__` 記号は十分です。
 
 ```csharp
 #if __ANDROID_11__
@@ -158,7 +158,7 @@ Xamarin Android アプリケーションにのみコンパイルする必要が�
 
 #### <a name="mac"></a>Mac
 
-現時点では、Xamarin. Mac 用の組み込みシンボルはありませんが、**シンボルの定義** ボックスで コンパイラの定義 を **> >** して独自のシンボルを追加したり、.csproj ファイルを編集して`__MAC__`そこに追加したりすることができます (たとえば、) **。**
+現時点では、Xamarin. Mac 用の組み込みシンボルはありませんが、**シンボルの定義** ボックスで コンパイラの定義 を **> >** して独自のシンボルを追加したり、.csproj ファイルを編集してそこに追加したりすることができます (たとえば、`__MAC__`) **。**
 
 ```xml
 <PropertyGroup><DefineConstants>__MAC__;$(DefineConstants)</DefineConstants></PropertyGroup>
@@ -179,11 +179,11 @@ Xamarin Android アプリケーションにのみコンパイルする必要が�
 条件付きコンパイルの単純なケーススタディ例では、SQLite データベースファイルのファイルの場所を設定します。 この3つのプラットフォームには、ファイルの場所を指定するための要件が若干異なります。
 
 - **iOS** – Apple では、ユーザー以外のデータを特定の場所 (ライブラリディレクトリ) に配置することが推奨されていますが、このディレクトリにシステム定数はありません。 正しいパスを構築するには、プラットフォーム固有のコードが必要です。
-- **Android** –によって`Environment.SpecialFolder.Personal`返されるシステムパスは、データベースファイルを格納するのに許容される場所です。
+- **Android** – `Environment.SpecialFolder.Personal` によって返されるシステムパスは、データベースファイルを格納するのに許容される場所です。
 - **Windows Phone** -分離ストレージメカニズムでは、完全パスを指定することはできません。相対パスとファイル名だけを指定します。
-- **ユニバーサル Windows プラットフォーム**– api `Windows.Storage`を使用します。
+- **ユニバーサル Windows プラットフォーム**– `Windows.Storage` api を使用します。
 
-次のコードでは、条件付きコンパイル`DatabaseFilePath`を使用して、が各プラットフォームに対して正しいことを確認します。
+次のコードでは、条件付きコンパイルを使用して、プラットフォームごとに `DatabaseFilePath` が正しいことを確認します。
 
 ```csharp
 public static string DatabaseFilePath {

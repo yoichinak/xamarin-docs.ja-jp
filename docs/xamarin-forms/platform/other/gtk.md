@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/10/2018
-ms.openlocfilehash: d20e27fdbb1f62c2aebb7122d7f0c042b3ac9085
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: cbc3bceffacd9669c1e2e667faadc2939fd4aa1f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "71997190"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73005926"
 ---
 # <a name="gtk-platform-setup"></a>GTK # プラットフォームのセットアップ
 
@@ -26,7 +26,7 @@ Xamarin. フォームで、GTK # アプリのプレビューがサポートさ�
 開始する前に、新しい Xamarin. Forms ソリューションを作成するか、既存の Xamarin. Forms ソリューションを使用し[**てください。** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-gameoflife)たとえば、「」というようにします。
 
 > [!NOTE]
-> この記事では、VS2017 と Visual Studio for Mac の Xamarin. Forms ソリューションに GTK # アプリを追加することに焦点を当てていますが、Linux 用の[MonoDevelop](http://www.monodevelop.com/)でも実行できます。
+> この記事では、VS2017 と Visual Studio for Mac の Xamarin. Forms ソリューションに GTK # アプリを追加することに焦点を当てていますが、Linux 用の[MonoDevelop](https://www.monodevelop.com/)でも実行できます。
 
 ## <a name="adding-a-gtk-app"></a>GTK # アプリの追加
 

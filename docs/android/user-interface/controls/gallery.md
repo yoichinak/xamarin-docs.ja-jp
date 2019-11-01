@@ -3,59 +3,59 @@ title: Android ギャラリーコントロール
 ms.prod: xamarin
 ms.assetid: 3112E68A-7853-B147-90A6-6295CA2C4CB5
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/15/2018
-ms.openlocfilehash: 04fac4084328c0af962282dea7a31e3c00457bef
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: 93eb7f98da6f3fe06f288eae5823f7173e58585f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69523009"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029241"
 ---
 # <a name="xamarinandroid-gallery-control"></a>Xamarin. Android ギャラリーコントロール
 
-[`Gallery`](xref:Android.Widget.Gallery)水平スクロールリストに項目を表示し、現在の選択範囲をビューの中央に配置するためのレイアウトウィジェットです。
+[`Gallery`](xref:Android.Widget.Gallery)は、水平スクロールリストに項目を表示し、現在の選択範囲をビューの中央に配置するために使用されるレイアウトウィジェットです。
 
 > [!IMPORTANT]
 > このウィジェットは、Android 4.1 (API レベル 16) で非推奨とされました。 
 
 このチュートリアルでは、ギャラリー項目が選択されるたびに、写真のギャラリーを作成し、トーストメッセージを表示します。
 
-コンテンツビュー [`FindViewById`](xref:Android.App.Activity.FindViewById*)に対して`Main.axml`レイアウトを設定した後、を使用してレイアウトからがキャプチャされます。`Gallery`
-、[`Adapter`](xref:Android.Widget.AdapterView.RawAdapter)
-次に、プロパティを使用して、dallery `ImageAdapter`に表示されるすべての項目のソースとしてカスタムアダプター () を設定します。 は`ImageAdapter` 、次の手順で作成します。
+コンテンツビューに `Main.axml` レイアウトを設定した後、`Gallery` は[`FindViewById`](xref:Android.App.Activity.FindViewById*)を使用してレイアウトからキャプチャされます。
+[`Adapter`](xref:Android.Widget.AdapterView.RawAdapter)
+次に、プロパティを使用して、dallery に表示されるすべての項目のソースとして、カスタムアダプター (`ImageAdapter`) を設定します。 `ImageAdapter` は、次の手順で作成します。
 
-ギャラリー内の項目がクリックされたときに操作を行うには、匿名デリゲートをサブスクライブします。[`ItemClick`](xref:Android.Widget.AdapterView.ItemClick)
-イベント。 これは、[`Toast`](xref:Android.Widget.Toast)
+ギャラリー内の項目がクリックされたときに操作を行うには、匿名デリゲートをサブスクライブして[`ItemClick`](xref:Android.Widget.AdapterView.ItemClick)
+イベント。 [`Toast`](xref:Android.Widget.Toast)が表示されます。
 theselected item のインデックス位置 (0 から始まる) が表示されます (実際のシナリオでは、その位置を使用して、他のタスクのイメージ全体を取得できます)。
 
 最初に、いくつかのメンバー変数があります。これには、描画リソースディレクトリ (**リソース/** 描画) に保存されたイメージを参照する id の配列が含まれます。
 
-次はクラスコンストラクターです。ここで、[`Context`](xref:Android.Content.Context)
-では、インスタンスが定義され、ローカルフィールドに保存されます。 `ImageAdapter`
-次に、から継承されたいくつ[`BaseAdapter`](xref:Android.Widget.BaseAdapter)かの必須メソッドを実装します。
+次はクラスコンストラクターです。ここでは、 [`Context`](xref:Android.Content.Context)
+では、`ImageAdapter` インスタンスが定義され、ローカルフィールドに保存されます。
+次に、 [`BaseAdapter`](xref:Android.Widget.BaseAdapter)から継承されたいくつかの必須メソッドを実装します。
 コンストラクターと[`Count`](xref:Android.Widget.BaseAdapter.Count)
-プロパティは自明です。 通常であれば[`GetItem(int)`](xref:Android.Widget.BaseAdapter.GetItem*)
-は、アダプター内の指定した位置にある実際のオブジェクトを返す必要がありますが、この例では無視されます。 に[`GetItemId(int)`](xref:Android.Widget.BaseAdapter.GetItemId*)
+プロパティは自明です。 通常は、 [`GetItem(int)`](xref:Android.Widget.BaseAdapter.GetItem*)
+は、アダプター内の指定した位置にある実際のオブジェクトを返す必要がありますが、この例では無視されます。 同様に、 [`GetItemId(int)`](xref:Android.Widget.BaseAdapter.GetItemId*)
 は項目の行 id を返す必要がありますが、ここでは必要ありません。
 
-メソッドは、イメージをに適用する処理を実行します。[`ImageView`](xref:Android.Widget.ImageView)
-に埋め込まれます。[`Gallery`](xref:Android.Widget.Gallery)
-このメソッドでは、メンバー[`Context`](xref:Android.Content.Context)
+メソッドは、イメージを[`ImageView`](xref:Android.Widget.ImageView)に適用する処理を実行します。
+[`Gallery`](xref:Android.Widget.Gallery)に埋め込まれます。
+このメソッドでは、メンバー [`Context`](xref:Android.Content.Context)
 は、新しい[`ImageView`](xref:Android.Widget.ImageView)を作成するために使用されます。
-、[`ImageView`](xref:Android.Widget.ImageView)
-は、作成したリソースのローカル配列からイメージを適用することで準備されます。[`Gallery.LayoutParams`](xref:Android.Widget.Gallery.LayoutParams)
-イメージの高さと幅。スケールを設定します。[`ImageView`](xref:Android.Widget.ImageView)
+[`ImageView`](xref:Android.Widget.ImageView)
+は、作成されたリソースのローカル配列からイメージを適用して準備し、 [`Gallery.LayoutParams`](xref:Android.Widget.Gallery.LayoutParams)を設定します。
+画像の高さと幅。 [`ImageView`](xref:Android.Widget.ImageView)に合わせてスケールを設定します。
 最後に、コンストラクターで取得したスタイル設定可能な属性を使用するように背景を設定します。
 
-他[`ImageView.ScaleType`](xref:Android.Widget.ImageView.ScaleType)のイメージスケーリングオプションについては、「」を参照してください。
+その他のイメージスケーリングオプションについては、「 [`ImageView.ScaleType`](xref:Android.Widget.ImageView.ScaleType) 」を参照してください。
 
 ## <a name="walkthrough"></a>チュートリアル
 
-"/" という名前の新しいプロジェクトを開始します。
+"/" という*名前の新しい*プロジェクトを開始します。
 
-[![[新しいソリューション] ダイアログの新しい Android プロジェクトのスクリーンショット](gallery-images/hellogallery1-sml.png)](gallery-images/hellogallery1.png#lightbox)
+[[新しいソリューション] ダイアログで新しい Android プロジェクトの![スクリーンショット](gallery-images/hellogallery1-sml.png)](gallery-images/hellogallery1.png#lightbox)
 
 使用する写真を検索するか、[これらのサンプルイメージをダウンロード](https://developer.android.com/shareables/sample_images.zip)します。
 イメージファイルをプロジェクトの**Resources/アブル**ディレクトリに追加します。 **プロパティ** ウィンドウで、それぞれの ビルド アクションを**Androidresource**に設定します。
@@ -71,7 +71,7 @@ theselected item のインデックス位置 (0 から始まる) が表示され
 />
 ```
 
-を`MainActivity.cs`開き、次のコードを挿入します。[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
+`MainActivity.cs` を開き、次のコードを[`OnCreate()`](xref:Android.App.Activity.OnCreate*)に挿入します。
 b
 
 ```csharp
@@ -92,7 +92,7 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-サブクラス`ImageAdapter` [`BaseAdapter`](xref:Android.Widget.BaseAdapter)と呼ばれる新しいクラスを作成します。
+サブクラス[`BaseAdapter`](xref:Android.Widget.BaseAdapter)を `ImageAdapter` という名前の新しいクラスを作成します。
 
 ```csharp
 public class ImageAdapter : BaseAdapter
@@ -152,4 +152,4 @@ public class ImageAdapter : BaseAdapter
 - [`Gallery`](xref:Android.Widget.Gallery)
 - [`ImageView`](xref:Android.Widget.ImageView)
 
-_このページの一部は、Android オープンソースプロジェクトによって作成および共有され、 [Creative Commons 2.5 属性](http://creativecommons.org/licenses/by/2.5/)で説明されている条項に従って使用される作業に基づいて変更されます。_
+_このページの一部は、Android オープンソースプロジェクトによって作成および共有され、 [Creative Commons 2.5 属性](https://creativecommons.org/licenses/by/2.5/)で説明されている条項に従って使用される作業に基づいて変更されます。_

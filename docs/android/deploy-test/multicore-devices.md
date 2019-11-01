@@ -4,15 +4,15 @@ description: Android は、複数の異なるコンピューター アーキテ�
 ms.prod: xamarin
 ms.assetid: D812883C-A14A-E74B-0F72-E50071E96328
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/30/2019
-ms.openlocfilehash: f24fdb768cc0c4e12fdc58f6e5386edd0db98527
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 1141b96151df0adda755b7c6d60019c18825cc76
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753952"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028015"
 ---
 # <a name="multi-core-devices--xamarinandroid"></a>マルチコア デバイスと Xamarin.Android
 
@@ -140,7 +140,7 @@ lib/armeabi-v7a/libtwo.so
 $APP/lib/libtwo.so # from the armeabi-v7a directory in the apk
 ```
 
-つまり、`libone.so` はインストールされません。 これは、実行時に読み込むアプリケーションの `libone.so` が存在しないため、問題が発生します。 この動作は予期しないものですが、バグとしてログに記録され、"[目的どおりに動作](http://code.google.com/p/android/issues/detail?id=9089)" として再分類されています。
+つまり、`libone.so` はインストールされません。 これは、実行時に読み込むアプリケーションの `libone.so` が存在しないため、問題が発生します。 この動作は予期しないものですが、バグとしてログに記録され、"[目的どおりに動作](https://code.google.com/p/android/issues/detail?id=9089)" として再分類されています。
 
 その結果、Android 4.0 より前のバージョンを対象とする場合には、アプリケーションがサポートする*各* ABI に対して、*すべて*のネイティブ ライブラリを提供する必要があります。つまり、`.apk` を含める必要があります。
 
@@ -174,7 +174,7 @@ $APP/lib/libone.so
 $APP/lib/libtwo.so
 ```
 
-ただし、この動作は次のドキュメントで説明されているように順序依存です: [問題 24321: apk に armeabi と armeabi v7a の両方が含まれている場合、Galaxy Nexus 4.0.2 では armeabi ネイティブ コードが使用される](http://code.google.com/p/android/issues/detail?id=25321)
+ただし、この動作は次のドキュメントで説明されているように順序依存です: [問題 24321: apk に armeabi と armeabi v7a の両方が含まれている場合、Galaxy Nexus 4.0.2 では armeabi ネイティブ コードが使用される](https://code.google.com/p/android/issues/detail?id=25321)
 
 ネイティブ ライブラリは、(たとえば、unzip で一覧表示されているように) "順番に" 処理され、*最初の一致*が抽出されます。 `.apk` には `libtwo.so` の `armeabi` バージョンと `armeabi-v7a` バージョンが含まれており、`armeabi` が最初にリストされているため、`armeabi-v7a` バージョン*ではなく*、`armeabi` バージョンが抽出されます。
 
@@ -255,5 +255,5 @@ Visual Studio for Mac では、次のスクリーンショットで示すよう�
 
 - [ARM アーキテクチャの ABI (PDF)](http://infocenter.arm.com/help/topic/com.arm.doc.ihi0036b/IHI0036B_bsabi.pdf)
 - [Android NDK](https://developer.android.com/tools/sdk/ndk/index.html)
-- [問題 9089: Nexus One - armeabi v7a に 1 つ以上のライブラリがある場合、armeabi からどのネイティブ ライブラリも読み込まれない](http://code.google.com/p/android/issues/detail?id=9089)
-- [問題 24321: apk に armeabi と armeabi v7a の両方が含まれている場合、Galaxy Nexus 4.0.2 では armeabi ネイティブ コードが使用される](http://code.google.com/p/android/issues/detail?id=25321)
+- [問題 9089: Nexus One - armeabi v7a に 1 つ以上のライブラリがある場合、armeabi からどのネイティブ ライブラリも読み込まれない](https://code.google.com/p/android/issues/detail?id=9089)
+- [問題 24321: apk に armeabi と armeabi v7a の両方が含まれている場合、Galaxy Nexus 4.0.2 では armeabi ネイティブ コードが使用される](https://code.google.com/p/android/issues/detail?id=25321)

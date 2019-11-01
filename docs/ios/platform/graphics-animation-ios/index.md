@@ -4,19 +4,19 @@ description: このドキュメントでは、Xamarin iOS のコアイメージ�
 ms.prod: xamarin
 ms.assetid: 3FEF45F2-C0F0-4D66-8796-9674FFE6740F
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 84e59c81e08bc354199565cb0a91b0aec0797feb
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 523ecb8d579ca084941a987468ff243595b8c4af
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286081"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032430"
 ---
 # <a name="graphics-and-animation-in-ios"></a>iOS のグラフィックスとアニメーション
 
-![Images/00finalapp.xaml (] _d)(images/00-final-app.png "アプリの実行例")
+![Images/00finalapp.xaml (_d)](images/00-final-app.png "アプリの実行例")
 
 ## <a name="core-imageiosplatformgraphics-animation-iosintroduction-to-coreimagemd"></a>[コアイメージ](~/ios/platform/graphics-animation-ios/introduction-to-coreimage.md)
 

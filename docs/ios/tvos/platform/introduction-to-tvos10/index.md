@@ -4,15 +4,15 @@ description: この記事では、tvOS 10 for Xamarin. tvOS 開発者向けの�
 ms.prod: xamarin
 ms.assetid: CB9C1EC8-6008-43AD-977E-976AE7C73DD8
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 8c338f8a5b2f1d41b1ea0f61778a1c14eb84ce08
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 02fda984d65bb89ac3dc8a4ae5e15e2c61ec7d90
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769155"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030621"
 ---
 # <a name="introduction-to-tvos-10"></a>tvOS 10 の概要
 
@@ -38,7 +38,7 @@ tvOS 10 では、ユーザーの設定に基づいて、すべての組み込み
 
 Apple は tvOS 10 のセキュリティとプライバシーの両方に対していくつかの機能強化を行っており、開発者はアプリのセキュリティを強化し、エンドユーザーのプライバシーを確保することができます。
 
-結果として、watchOS 3 (またはそれ以降) で実行されるアプリは、特定の機能またはユーザー情報にアクセスする目的を静的に宣言`Info.plist`する必要があります。そのためには、アプリがアクセスする必要がある理由を説明する1つまたは複数のプライバシー固有のキーをファイルに入力します。
+そのため、watchOS 3 (またはそれ以降) で実行されるアプリでは、特定の機能またはユーザー情報にアクセスするためのインテントを静的に宣言する必要があります。そのためには、アプリがアクセスする理由をユーザーに説明する1つまたは複数のプライバシー固有のキーを `Info.plist` ファイルに入力します。
 
 TvOS 10 はこれらの変更を iOS 10 と共有しているため、詳細については、iOS 10 の[セキュリティとプライバシーの強化](~/ios/app-fundamentals/security-privacy.md)に関するガイドを参照してください。
 
@@ -52,12 +52,12 @@ TvOS 10 の新機能であるビデオサブスクライバーアカウントフ
 
 tvOS 10 は、コアグラフィックス、コアイメージ、メタル、AVFoundation などのフレームワークを含む、システム全体で拡張範囲のピクセル形式と広い範囲の色空間のサポートを拡張します。 グラフィックススタック全体でこの動作を提供することにより、さまざまな色で表示されるデバイスのサポートがさらに緩和さます。
 
-また、 `UIKit`は新しい extended **sRGB** colorspace で動作するように変更されています。これにより、パフォーマンスが大幅に低下することなく、広い色域で色を簡単に混在させることができます。
+さらに、`UIKit` は新しい extended **sRGB** colorspace で動作するように変更されています。これにより、パフォーマンスが大幅に低下することなく、色の広い色域で色を簡単に混在させることができます。
 
 Apple では、広範囲にわたる色を使用するときに、次のベストプラクティスを提供しています。
 
-- `UIColor`では、sRGB 色空間が使用されるようになり、 `0.0`値`1.0`が to 範囲にクランプされなくなりました。 アプリが以前のクランプ動作に依存している場合は、tvOS 10 に対して変更する必要があります。
-- アプリでの`UIImages`カスタムレンダリングを実行する場合は、新しい[UIGraphicsImageRender](https://developer.apple.com/reference/uikit/uigraphicsimagerenderer)クラスを使用して、拡張範囲または標準の範囲形式の使用を指定します。
+- `UIColor` は sRGB 色空間を使用するようになり、`1.0` 範囲の `0.0` に値がクランプされることはなくなりました。 アプリが以前のクランプ動作に依存している場合は、tvOS 10 に対して変更する必要があります。
+- アプリで `UIImages`のカスタムレンダリングを実行する場合は、新しい[UIGraphicsImageRender](https://developer.apple.com/reference/uikit/uigraphicsimagerenderer)クラスを使用して、拡張範囲または標準の範囲形式の使用を指定します。
 - コアグラフィックスや金属などの低レベルの API を使用してイメージ処理を行う場合、アプリでは16ビット浮動小数点値をサポートする拡張範囲の色空間とピクセル形式を使用する必要があります。 必要に応じて、アプリで色コンポーネントの値を手動で固定する必要があります。
 - コアグラフィックス、コアイメージ、および金属パフォーマンスシェーダーはすべて、2つの色空間間で変換を行うための新しいメソッドを提供します。
 
@@ -70,7 +70,7 @@ IOS で利用可能であった (tvOS ではない) いくつかのフレーム�
 - ExternalAccessory
 - HomeKit
 - MultipeerConnectivity
-- フォト
+- 写真
 - ReplayKit
 - UserNotification
 

@@ -4,15 +4,15 @@ description: デバッグ ログを使用して Xamarin.Android アプリケー�
 ms.prod: xamarin
 ms.assetid: 01A715FE-9E9D-9B85-8A59-6568D8A09CA5
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/22/2018
-ms.openlocfilehash: ef3ba27b9056e1de92aabb87f86416b2985d6e1d
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 39ee1039104052b8799debf19f09439f57a1791d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754221"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028097"
 ---
 # <a name="android-debug-log"></a>Android のデバッグ ログ
 
@@ -67,7 +67,7 @@ ms.locfileid: "70754221"
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-**デバイス ログ**を開くには、**[表示] > [パッド] > [デバイス ログ]** の順にクリックします。
+**デバイス ログ**を開くには、 **[表示] > [パッド] > [デバイス ログ]** の順にクリックします。
 
 [![[デバイス ログ] メニュー項目の場所](android-debug-log-images/vsmac-01-logcat-sml.png)](android-debug-log-images/vsmac-01-logcat.png#lightbox)
 

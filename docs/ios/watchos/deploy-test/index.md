@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin でビルドされた watc
 ms.prod: xamarin
 ms.assetid: 98257399-E9B3-4BAB-9204-0E89117DEA6D
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: af6d32808e2847c99c4f8a2d90e7dc2d3955ae03
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: b9b4d201e02d60bd6131c8693d9ac6a233e4fe10
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284673"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028339"
 ---
 # <a name="deploying-and-testing-watchos-apps-with-xamarin"></a>Xamarin を使用した watchOS アプリのデプロイとテスト
 
@@ -43,8 +43,8 @@ ms.locfileid: "70284673"
 [セットアップ手順](~/ios/watchos/get-started/installation.md)で説明したように、Watch アプリ内の3つのプロジェクトには、次のような関連するバンドル id があります。
 
 - Xamarin. iOS 統合プロジェクト-`com.xamarin.WatchKitCatalog`
-- WatchKit Extension プロジェクト-`com.xamarin.WatchKitCatalog.watchkitextension`
-- アプリプロジェクトの監視-`com.xamarin.WatchKitCatalog.watchkitapp`
+- WatchKit 拡張機能プロジェクト-`com.xamarin.WatchKitCatalog.watchkitextension`
+- アプリプロジェクトを見る-`com.xamarin.WatchKitCatalog.watchkitapp`
 
 3つのプロジェクトでは、それぞれに対して明示的なアプリ Id を使用するか、ワイルドカードアプリ ID を使用して、一致するディストリビューションプロビジョニングプロファイルが必要です。
 
@@ -60,7 +60,7 @@ ms.locfileid: "70284673"
 
 ### <a name="wildcard-app-id"></a>ワイルドカードアプリ ID
 
-または、のような`com.xamarin.*`3 つのプロジェクトすべてに一致するワイルドカード**アプリ ID**を作成することもできます。
+または、`com.xamarin.*`など、3つのプロジェクトすべてに一致するワイルドカード**アプリ ID**を作成することもできます。
 
 一部の機能は、ワイルドカードアプリ ID (プッシュ通知など) では使用できないことに注意してください。 アプリがこれらの機能を必要とする場合は、明示的なアプリ Id を作成する必要があります。
 
@@ -78,7 +78,7 @@ ms.locfileid: "70284673"
 
 ### <a name="certificates-identifiers--profiles"></a>証明書、識別子 & プロファイル
 
-アプリグループを使用するには、 **[アプリグループ]** 画面でエントリを作成します。 次の例では、グループの名前は、アプリ id に対して一般的に使用されるのと同じ逆引き DNS `group.`スタイルで指定されていますが、プレフィックスは (必須) です。
+アプリグループを使用するには、 **[アプリグループ]** 画面でエントリを作成します。 次の例では、グループの名前は、アプリ Id に対して一般的に使用されるのと同じ逆引き DNS スタイルで指定されていますが、`group.` のプレフィックス (必須) です。
 
 ![識別子](images/appgroups-new-sml.png)
 
@@ -100,7 +100,7 @@ Apple Watch アプリ ID ではアプリグループ**を有効にしないで�
 - iOS アプリプロジェクト
 - 拡張機能プロジェクトのウォッチ
 
-.![権利の plist エディター](images/entitlements-plist-sml.png)
+である必要があります。![権利の plist エディター](images/entitlements-plist-sml.png)
 
 Watch アプリプロジェクトでは、権利**を有効にしないでください。** ウォッチ自体で有効にする必要はありません。
 

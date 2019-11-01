@@ -4,15 +4,15 @@ description: ListView は、Android アプリケーションの重要な UI コ�
 ms.prod: xamarin
 ms.assetid: C2BA2705-9B20-01C2-468D-860BDFEDC157
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/25/2018
-ms.openlocfilehash: 5c9a11073a7e65d90e0776d0b43c9e3bd100a10d
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f6579e3b70e3788046916db12e201550e7fd5f16
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758639"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028886"
 ---
 # <a name="xamarinandroid-listview"></a>Xamarin Android ListView
 
@@ -20,18 +20,18 @@ _ListView は、Android アプリケーションの重要な UI コンポーネ�
 
 ## <a name="overview"></a>概要
 
-リストビューとアダプターは、Android アプリケーションの最も基本的な構成要素に含まれています。 `ListView`クラスは、短いメニューでも長いスクロールリストでも、データを表示するための柔軟な方法を提供します。 高速スクロール、インデックス、1つまたは複数の選択などの使いやすさ機能を提供し、アプリケーションのためのモバイル対応ユーザーインターフェイスを作成するのに役立ちます。 `ListView` インスタンスでは、行ビューに含まれているデータをフィードするための *Adapter* が必要です。
+リストビューとアダプターは、Android アプリケーションの最も基本的な構成要素に含まれています。 `ListView` クラスは、短いメニューでも長いスクロールリストでも、データを表示するための柔軟な方法を提供します。 高速スクロール、インデックス、1つまたは複数の選択などの使いやすさ機能を提供し、アプリケーションのためのモバイル対応ユーザーインターフェイスを作成するのに役立ちます。 `ListView` インスタンスでは、行ビューに含まれているデータをフィードするための *Adapter* が必要です。
 
-このガイドでは、および`ListView` Xamarin のさまざま`Adapter`なクラスを実装する方法について説明します。 また、の`ListView`外観をカスタマイズする方法についても説明します。また、メモリ使用量を減らすために行を再利用することの重要性についても説明します。 また、アクティビティのライフサイクルがどのように影響`ListView`し`Adapter` 、使用するかについても説明します。 Xamarin を使用したクロスプラットフォームアプリケーションで作業している場合、 `ListView`コントロールは ios `UITableView`と構造的に似ています ( `Adapter`および`UITableViewSource`Android はと似ています)。
+このガイドでは、`ListView` およびさまざまな `Adapter` クラスを Xamarin Android で実装する方法について説明します。 また、`ListView`の外観をカスタマイズする方法についても説明します。また、メモリ使用量を減らすために行を再利用することの重要性についても説明します。 また、アクティビティのライフサイクルが `ListView` に与える影響と使用 `Adapter` 方法についても説明します。 Xamarin. iOS を使用してクロスプラットフォームアプリケーションを操作している場合、`ListView` コントロールは iOS `UITableView` に構造的に似ています (および Android `Adapter` は `UITableViewSource`に似ています)。
 
-まず、簡単なチュートリアルでは`ListView` 、基本的なコード例でを紹介します。 次に、より高度なトピックへのリンクを使用し`ListView`て、実際のアプリでを使用できるようにします。
+まず、簡単なチュートリアルで `ListView` を紹介し、基本的なコード例を示します。 次に、より高度なトピックへのリンクを使用して、実際のアプリで `ListView` を使用できるようにします。
 
 > [!NOTE]
-> ウィジェットは、より高度で柔軟な`ListView`バージョンです。 `RecyclerView` は`RecyclerView` `ListView` (および`RecyclerView` `ListView` ) の後継となるように設計されているので、新しいアプリ開発ではなくを使用することをお勧めします。 `GridView` 詳細については、「 [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)」を参照してください。
+> `RecyclerView` ウィジェットは、より高度で柔軟な `ListView`のバージョンです。 `RecyclerView` は `ListView` (および `GridView`) の後継となるように設計されているので、新しいアプリ開発には `ListView` ではなく `RecyclerView` を使用することをお勧めします。 詳細については、「 [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)」を参照してください。
 
 ## <a name="listview-tutorial"></a>ListView のチュートリアル
 
-[`ListView`](xref:Android.Widget.ListView)はです。[`ViewGroup`](xref:Android.Views.ViewGroup)
+[`ListView`](xref:Android.Widget.ListView)は[`ViewGroup`](xref:Android.Views.ViewGroup)
 スクロール可能な項目の一覧を作成する。 リスト項目は、 [`IListAdapter`](xref:Android.Widget.IListAdapter)を使用してリストに自動的に挿入されます。
 
 このチュートリアルでは、文字列配列から読み取られた国名のスクロール可能な一覧を作成します。 リスト項目を選択すると、リスト内の項目の位置がトーストメッセージに表示されます。
@@ -52,14 +52,14 @@ _ListView は、Android アプリケーションの重要な UI コンポーネ�
 
 このファイルは、 [`ListView`](xref:Android.Widget.ListView)に配置される各項目のレイアウトを定義します。
 
-を`MainActivity.cs`開いて、(では[`ListActivity`](xref:Android.App.ListActivity) [`Activity`](xref:Android.App.Activity)なく) 拡張するクラスを変更します。
+`MainActivity.cs` を開き、クラスを変更して[`ListActivity`](xref:Android.App.ListActivity) ( [`Activity`](xref:Android.App.Activity)ではなく) を拡張します。
 
 ```csharp
 public class MainActivity : ListActivity
 {
 ```
 
-[`OnCreate()`](xref:Android.App.Activity.OnCreate*)) メソッドに次のコードを挿入します。
+[`OnCreate()`](xref:Android.App.Activity.OnCreate*)) メソッドの次のコードを挿入します。
 
 ```csharp
 protected override void OnCreate (Bundle bundle)
@@ -77,34 +77,34 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-この操作では、アクティビティのレイアウトファイル (通常はを使用[`SetContentView(int)`](xref:Android.App.Activity.SetContentView*)) は読み込まれないことに注意してください。
-代わりに、[`ListAdapter`](xref:Android.App.ListActivity.ListAdapter)
-プロパティは、を自動的に追加します。[`ListView`](xref:Android.Widget.ListView)
-を画面全体に表示[`ListActivity`](xref:Android.App.ListActivity)する場合は。
-このメソッドは、 [`ArrayAdapter<T>`](xref:Android.Widget.ArrayAdapter`1)に格納[`ListView`](xref:Android.Widget.ListView)されるリスト項目の配列を管理するを受け取ります。
-、[`ArrayAdapter<T>`](xref:Android.Widget.ArrayAdapter`1)
-コンストラクターは、アプリケーション[`Context`](xref:Android.Content.Context)、(前の手順で作成した) 各リスト項目のレイアウトの説明、 `T[]`またはを受け取ります。[`Java.Util.IList<T>`](xref:Java.Util.IList)
-に挿入するオブジェクトの配列。[`ListView`](xref:Android.Widget.ListView)
+これにより、アクティビティのレイアウトファイルは読み込まれないことに注意してください (通常は[`SetContentView(int)`](xref:Android.App.Activity.SetContentView*))。
+代わりに、 [`ListAdapter`](xref:Android.App.ListActivity.ListAdapter)を設定します。
+プロパティは、を自動的に追加し[`ListView`](xref:Android.Widget.ListView)
+[`ListActivity`](xref:Android.App.ListActivity)の画面全体を塗りつぶす場合はです。
+このメソッドは、 [`ListView`](xref:Android.Widget.ListView)に配置されるリスト項目の配列を管理する[`ArrayAdapter<T>`](xref:Android.Widget.ArrayAdapter`1)を受け取ります。
+[`ArrayAdapter<T>`](xref:Android.Widget.ArrayAdapter`1)
+コンストラクターは、アプリケーション[`Context`](xref:Android.Content.Context)、(前の手順で作成した) 各リスト項目のレイアウトの説明、および `T[]` または[`Java.Util.IList<T>`](xref:Java.Util.IList)を受け取ります。
+[`ListView`](xref:Android.Widget.ListView)に挿入するオブジェクトの配列
 (次の定義)。
 
-、[`TextFilterEnabled`](xref:Android.Widget.AbsListView.TextFilterEnabled)
-プロパティは、 [`ListView`](xref:Android.Widget.ListView)のテキストフィルター処理を有効にします。これにより、ユーザーが入力を開始すると、リストがフィルター処理されます。
+[`TextFilterEnabled`](xref:Android.Widget.AbsListView.TextFilterEnabled)
+プロパティは、 [`ListView`](xref:Android.Widget.ListView)のテキストフィルター処理をオンにして、ユーザーが入力を開始すると一覧がフィルター処理されるようにします。
 
-、[`ItemClick`](xref:Android.Widget.AdapterView.ItemClick)
-イベントを使用して、クリックするハンドラーをサブスクライブできます。 の項目が[`ListView`](xref:Android.Widget.ListView)
-がクリックされ、ハンドラーが呼び出され、[`Toast`](xref:Android.Widget.Toast)
+[`ItemClick`](xref:Android.Widget.AdapterView.ItemClick)
+イベントを使用して、クリックするハンドラーをサブスクライブできます。 [`ListView`](xref:Android.Widget.ListView)内の項目
+がクリックされ、ハンドラーが呼び出され、 [`Toast`](xref:Android.Widget.Toast)
 クリックした項目のテキストを使用して、メッセージが表示されます。
 
-に独自のレイアウトファイル[`ListAdapter`](xref:Android.App.ListActivity.ListAdapter)を定義するのではなく、プラットフォームによって提供されるリスト項目のデザインを使用できます。
-たとえば、の`Resource.Layout.list_item`代わりに`Android.Resource.Layout.SimpleListItem1`を使用してみてください。
+[`ListAdapter`](xref:Android.App.ListActivity.ListAdapter)用に独自のレイアウトファイルを定義するのではなく、プラットフォームによって提供されるリスト項目のデザインを使用できます。
+たとえば、`Resource.Layout.list_item`ではなく `Android.Resource.Layout.SimpleListItem1` を使用します。
 
-次`using`のステートメントを追加します。
+次の `using` ステートメントを追加します。
 
 ```csharp
 using System;
 ```
 
-次に、次の文字列配列をの`MainActivity`メンバーとして追加します。
+次に、次の文字列配列を `MainActivity`のメンバーとして追加します。
 
 ```csharp
 static readonly string[] countries = new String[] {
@@ -152,14 +152,14 @@ static readonly string[] countries = new String[] {
   };
 ```
 
-これは、 [`ListView`](xref:Android.Widget.ListView)に格納される文字列の配列です。
+これは、 [`ListView`](xref:Android.Widget.ListView)に配置される文字列の配列です。
 
 アプリケーションを実行します。 一覧をスクロールするか、「」と入力してフィルター処理し、項目をクリックしてメッセージを表示することができます。 次のように表示されます。
 
-[![国名を使用した ListView の例のスクリーンショット](images/01-listview-example-sml.png)](images/01-listview-example.png#lightbox)
+[![の例では、名前が country である ListView のスクリーンショットを示します。](images/01-listview-example-sml.png)](images/01-listview-example.png#lightbox)
 
-ハードコーディングされた文字列配列を使用することは、最適なデザイン方法ではないことに注意してください。 このチュートリアルでは、わかりやすくするために、[`ListView`](xref:Android.Widget.ListView)
-ウィジェット. プロジェクト`string-array` **リソース/値/文字列 .xml**ファイル内のリソースを使用して、などの外部リソースによって定義された文字列配列を参照することをお勧めします。 例えば:
+ハードコーディングされた文字列配列を使用することは、最適なデザイン方法ではないことに注意してください。 このチュートリアルでは、わかりやすくするために、1つを使用して[`ListView`](xref:Android.Widget.ListView)
+ウィジェット. プロジェクト**リソース/値/文字列 .xml**ファイル内の `string-array` リソースを使用して、などの外部リソースによって定義された文字列配列を参照することをお勧めします。 (例:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -177,7 +177,7 @@ static readonly string[] countries = new String[] {
 </resources>
 ```
 
-これらのリソース文字列[`ArrayAdapter`](xref:Android.Widget.ArrayAdapter`1)をに使用するには、元の[`ListAdapter`](xref:Android.App.ListActivity.ListAdapter)
+これらのリソース文字列を[`ArrayAdapter`](xref:Android.Widget.ArrayAdapter`1)に使用するには、元の[`ListAdapter`](xref:Android.App.ListActivity.ListAdapter)を置き換えます。
 次の行を使用します。
 
 ```csharp
@@ -187,25 +187,25 @@ ListAdapter = new ArrayAdapter<string> (this, Resource.Layout.list_item, countri
 
 アプリケーションを実行します。 次のように表示されます。
 
-[![名前の小さいリストを使用した ListView の例のスクリーンショット](images/02-smaller-example-sml.png)](images/02-smaller-example.png#lightbox)
+[名前の小さいリストを含む ListView の![例](images/02-smaller-example-sml.png)](images/02-smaller-example.png#lightbox)
 
 ## <a name="going-further-with-listview"></a>ListView をさらに進める
 
-その他のトピック (下のリンク) では、 `ListView`クラスと共に使用できるさまざまな種類のアダプターについて、包括的に説明しています。 構造は、次のとおりです。
+残りのトピック (下のリンク) では、`ListView` クラスの操作と、それに使用できるさまざまな種類のアダプターの種類について、包括的に説明します。 構造は、次のとおりです。
 
-- **視覚的外観**コントロールの`ListView`一部と&ndash;その動作方法。
+- **視覚的な外観**は、`ListView` コントロールの一部とその動作を &ndash; します。
 
-- **クラス**の表示に使用されるクラスの概要。 `ListView` &ndash;
+- **クラス**&ndash;、`ListView`を表示するために使用されるクラスの概要を示します。
 
-- **ListView でのデータの表示**単純なデータの一覧を表示する方法、ユーザビリティ機能`ListView's`を実装する方法、さまざまな組み込みの行レイアウトを使用する方法、およびアダプターで行ビューを再利用してメモリを節約する方法について説明します。 &ndash;
+- **ListView でデータを表示**すると、単純なデータの一覧を表示する方法 &ndash; ます。`ListView's` ユーザビリティ機能を実装する方法さまざまな組み込みの行レイアウトを使用する方法また、アダプターで行ビューを再利用してメモリを節約する方法について説明します。
 
-- **カスタムの外観**カスタムレイアウト、フォント、 `ListView`および色を使用してのスタイルを変更する。 &ndash;
+- **カスタムの外観**&ndash;、カスタムレイアウト、フォント、および色で `ListView` のスタイルを変更します。
 
-- **SQLite の使用**で SQLite データベースのデータを表示する方法について説明します。`CursorAdapter` &ndash;
+- **Sqlite を使用**すると、sqlite データベースのデータを `CursorAdapter`で表示する方法 &ndash; ます。
 
-- **アクティビティのライフサイクル**アクティビティを実装`ListView`する際の設計に関する考慮事項 (ライフサイクルのどこにあるかを含む)。データを設定し、リソースを解放するタイミングを含みます。 &ndash;
+- **アクティビティライフサイクル**は、ライフサイクルのどこでもデータを設定し、リソースを解放する必要がある場合など、`ListView` アクティビティを実装する際の設計上の考慮事項 &ndash; ます。
 
-(6 つの部分に分かれている) 説明は、 `ListView`クラス自体の概要から始めて、その使用方法についてのより複雑な例を紹介します。
+(6 つの部分に分かれています) 説明は、「`ListView` クラス自体の概要」から始まり、その使用方法についてより複雑な例を紹介します。
 
 - [ListView のパーツと機能](~/android/user-interface/layouts/list-view/parts-and-functionality.md)
 - [ListView にデータを読み込む](~/android/user-interface/layouts/list-view/populating.md)
@@ -216,7 +216,7 @@ ListAdapter = new ArrayAdapter<string> (this, Resource.Layout.list_item, countri
 
 ## <a name="summary"></a>まとめ
 
-この一連のトピック`ListView`では、 `ListActivity`の組み込み機能を使用する方法の例をいくつか紹介しました。 ここでは、カラフル`ListView`なレイアウトと SQLite データベースの使用を許可するのカスタム実装について説明し、 `ListView`実装におけるアクティビティのライフサイクルの関連性について簡単に触れました。
+この一連のトピック `ListView` 導入され、`ListActivity`の組み込み機能を使用する方法の例をいくつか紹介しました。 ここでは、カラフルなレイアウトと SQLite データベースの使用を許可する `ListView` のカスタム実装について説明し、`ListView` 実装におけるアクティビティのライフサイクルの関連性について簡単に触れました。
 
 ## <a name="related-links"></a>関連リンク
 

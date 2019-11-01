@@ -4,15 +4,15 @@ description: このドキュメントでは、iOS 10 の既存のフレームワ
 ms.prod: xamarin
 ms.assetid: F771640A-F92E-4954-82D5-2D720434971E
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 99ee654b260a3a89b58578d352dd066a41753295
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 1339a6c2909c7ba62592d66dcdf08bcfd2e668a4
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769138"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030636"
 ---
 # <a name="additional-tvos-10-frameworks-changes"></a>追加の tvOS 10 フレームワークの変更
 
@@ -24,8 +24,8 @@ Apple は、tvOS に対する大きな変更に加えて、tvOS 10 の既存の�
 
 AVFoundation framework には、次の機能強化が含まれています。
 
-- TvOS 10 では、アプリはコンテンツの種類に基づいてさまざまな[AVPlayerItem](https://developer.apple.com/reference/avfoundation/avplayeritem)の動作を実装しなくなりました。 プロパティを`Rate`設定するだけで、停止することなく再生できるコンテンツが十分にあるかどうかが avfoundation によって判断されます。
-- 新しい`AVPlayerLooper`クラスを使用すると、再生中に特定のメディアを簡単にループできます。
+- TvOS 10 では、アプリはコンテンツの種類に基づいてさまざまな[AVPlayerItem](https://developer.apple.com/reference/avfoundation/avplayeritem)の動作を実装しなくなりました。 `Rate` のプロパティを設定するだけで、停止することなく再生できるコンテンツが十分にある場合に AVFoundation によって判断されます。
+- 新しい `AVPlayerLooper` クラスを使用すると、再生中に特定のメディアを簡単にループできます。
 
 <a name="AVKit-Framework-Enhancements" />
 
@@ -44,8 +44,8 @@ tvOS 10 には、コアデータフレームワークに対する次の機能強
 - ルート[NSManagedObjectContext](https://developer.apple.com/reference/coredata/nsmanagedobjectcontext)オブジェクトは、シリアル化を使用しない同時エラーおよびフェッチをサポートしています。
 - [NSPersistentStoreCoordinator](https://developer.apple.com/reference/coredata/nspersistentstorecoordinator)クラスは、SQLite データストアのプールを保持します。
 - WAL ジャーナルモードで SQLite データストアを使用する[NSManagedObjectContext](https://developer.apple.com/reference/coredata/nsmanagedobjectcontext)オブジェクトでは、新しいクエリ生成機能がサポートされています。この機能を使用すると、マネージオブジェクトコンテキスト (MOC) を特定のデータベースバージョンに固定して、将来のフェッチやエラー処理を行うことができます。
-- 高レベル`NSPersistenceContainer`を使用して`NSPersistentStoreCoordinator`、、 [NSManagedObjectModel](https://developer.apple.com/reference/coredata/nsmanagedobjectmodel) 、その他のコアデータ構成リソースを参照します。
-- フェッチの実行とサブクラスの作成`NSManagedObject`を容易にするために、いくつかの新しい便利なメソッドが追加されました。
+- 高レベルの `NSPersistenceContainer` を使用して、`NSPersistentStoreCoordinator`、 [NSManagedObjectModel](https://developer.apple.com/reference/coredata/nsmanagedobjectmodel) 、その他のコアデータ構成リソースを参照します。
+- `NSManagedObject` にいくつかの新しい便利なメソッドが追加されました。これにより、フェッチとサブクラスの作成が容易になります。
 
 詳細については、Apple の[Core Data Framework リファレンス](https://developer.apple.com/reference/coredata)を参照してください。
 
@@ -63,10 +63,10 @@ tvOS 10 には、コアグラフィックスフレームワークに対する次
 
 tvOS 10 では、コアイメージフレームワークに対して次の機能強化が行われています。
 
-- [Cifilter](https://developer.apple.com/reference/coreimage/cifilter)クラスのメソッドを使用して、フィルター操作にカスタム処理を挿入できます。`ImageWithExtent` コアイメージは、出力または表示のためにイメージを処理するときに、フィルター間で指定されたコールバックを呼び出します。
+- [Cifilter](https://developer.apple.com/reference/coreimage/cifilter)クラスの `ImageWithExtent` メソッドを使用して、フィルター操作にカスタム処理を挿入できます。 コアイメージは、出力または表示のためにイメージを処理するときに、フィルター間で指定されたコールバックを呼び出します。
 - これで、アプリは、処理の前後に色空間を変換することによって、コアイメージコンテキストの作業色空間の外にある色空間でイメージを処理できるようになりました。
-- オブジェクトのレンダリング (コアイメージイメージストア`UIImage`によってサポートされている場合) に`UIImageView`対して、いくつかのレンダリングパフォーマンスが向上しています。 
-- `UIImage`ワイド色のタグが付けられたオブジェクトは、ワイド`UIImageView`色をサポートする iOS デバイス上のオブジェクトで、幅域外色として表示されます。
+- `UIImageView` オブジェクトの `UIImage` レンダリング (コアイメージイメージストアによってサポートされる場合) に対して、いくつかのレンダリングパフォーマンスが向上しています。 
+- ワイド色のタグが付けられた `UIImage` オブジェクトは、ワイド色をサポートする iOS デバイス上の `UIImageView` オブジェクトで、幅の広い色で表示されます。
 - コアイメージカーネルコードは、特定のピクセル出力形式を要求できるようになりました。
 
 さらに、次の新しいコアイメージフィルターが追加されました。
@@ -85,7 +85,7 @@ TvOS 10 の Foundation framework には、次の機能強化が加えられて�
 
 - 新しい[Nsdateinterval](https://developer.apple.com/reference/foundation/nsdateinterval)クラスを使用して、間隔の比較と間隔の交差部分のテストを行うために、期間などの日付と時間の間隔を計算します。
 - ローカル情報と使用可能な表示形式を取得するために、いくつかの新しいプロパティが[nslocal](https://developer.apple.com/reference/foundation/nslocale)クラスに追加されました。
-- 新しい [Nsmeasurement](https://developer.apple.com/reference/foundation/nsmeasurement) クラスを使用して異なる測定単位 (UOM) 間で変換するか、異なる uoms の値に対して計算を実行します。
+- 新しい[Nsmeasurement](https://developer.apple.com/reference/foundation/nsmeasurement)クラスを使用して異なる測定単位 (UOM) 間で変換するか、異なる uoms の値に対して計算を実行します。
 - 新しい[NSMeasurementFormatter](https://developer.apple.com/reference/foundation/nsmeasurementformatter)クラスを使用して、ローカライズされた測定形式をエンドユーザーに表示するように書式設定します。
 - 特定の UOMs を表すために、新しい[Nsunit](https://developer.apple.com/reference/foundation/nsunit)クラスと[nsunit](https://developer.apple.com/reference/foundation/nsdimension)クラスを使用します。
 
@@ -96,7 +96,7 @@ TvOS 10 の Foundation framework には、次の機能強化が加えられて�
 TvOS 10 の Kit フレームワークには、次の機能強化が行われています。
 
 - 新しい iCloud 専用のアカウントの種類は、 [Gkcloudplayer](https://developer.apple.com/reference/gamekit/gkcloudplayer)クラスによって実装されています。
-- 新しい[Gkq&a session](https://developer.apple.com/reference/gamekit/gkgamesession)クラスは、Game Center で永続的なデータストレージを管理するための一般化されたソリューションを提供します。 `GKGameSession`プレーヤーのリストを保持します。アプリは、参加者の日付の格納、取得、または交換の方法とタイミングを実装するフォームです。 多くの場合、ゲームセッションでは、既存のターンベースの一致、リアルタイムの一致、または永続的なゲーム保存方法を置き換えることができます。
+- 新しい[Gkq&a session](https://developer.apple.com/reference/gamekit/gkgamesession)クラスは、Game Center で永続的なデータストレージを管理するための一般化されたソリューションを提供します。 `GKGameSession` はプレイヤーのリストを保持し、アプリは参加者の日付を格納、取得、または交換する方法とタイミングを実装するフォームです。 多くの場合、ゲームセッションでは、既存のターンベースの一致、リアルタイムの一致、または永続的なゲーム保存方法を置き換えることができます。
 
 <a name="GameplayKit-Enhancements" />
 
@@ -139,9 +139,9 @@ TvOS 10 の金属パフォーマンスシェーダーフレームワークには
 TvOS 10 の ModelIO フレームワークには、次の機能強化が行われています。
 
 - 米国ドルのファイル形式がサポートされるようになりました。
-- 新しい`MDLMaterialPropertyGraph`クラスを使用すると、モデルに対する実行時の変更を簡単にサポートできます。
+- 新しい `MDLMaterialPropertyGraph` クラスを使用すると、モデルに対する実行時の変更を簡単にサポートできます。
 - 符号付き距離フィールドのサポートが[Mdlvoxelarray](https://developer.apple.com/reference/modelio/mdlvoxelarray)クラスに追加されました。
-- 新しい`MDLLightProbeIrradianceDataSource`クラスを使用すると、プローブの配置を簡単に行うことができます。
+- 新しい `MDLLightProbeIrradianceDataSource` クラスを使用して、ライトプローブの配置を支援します。
 
 <a name="SceneKit-Enhancements" />
 
@@ -150,15 +150,15 @@ TvOS 10 の ModelIO フレームワークには、次の機能強化が行われ
 TvOS 10 の SceneKit フレームワークには、次の機能強化が行われています。
 
 - SceneKit には、より簡単なアセット作成により、より現実的な結果を得るために、新しい物理的に基づく表示 (.PBR) システムが追加されました。
-- 新しい[SCNLightingModelPhysicallyBased](https://developer.apple.com/reference/scenekit/scnlightingmodelphysicallybased)シェーディングモデルを使用して、さまざまな現実的な網掛け効果を製品に追加し、`Diffuse`3 `Metalness`つの基本プロパティ (、および) のみを必要と`Roughness`します。
-- .Pbr の網掛けは環境ベースの光源で最適に機能`LightingEnvironment`するため、プロパティを使用してイメージベースの照明をシーン全体に適用します。
-- プロパティを`IESProfileURL`使用して、光源 (ルーメン) や色温度 (ケルビン単位) などの実際の値に光源を定義する実際の照明器具をインポートします。
+- 新しい[SCNLightingModelPhysicallyBased](https://developer.apple.com/reference/scenekit/scnlightingmodelphysicallybased)シェーディングモデルを使用して、さまざまな現実的な網掛け効果を製品に追加しますが、基本プロパティは3つ (`Diffuse`、`Metalness` と `Roughness`) しか必要ありません。
+- .PBR シェーディングは環境ベースの光源で最適に機能するため、`LightingEnvironment` プロパティを使用して、イメージベースの照明をシーン全体に適用します。
+- `IESProfileURL` プロパティを使用して、照度 (ルーメン) や色温度 (ケルビン) などの実際の値に光源を定義する実際の光具をインポートします。
 - [Scncamera](https://developer.apple.com/reference/scenekit/scncamera)クラスは、HDR の特徴と効果を使用して、よりリアリティを高めることができます。 アダプティブ露出を使用して自動効果を作成するか、vignetting、color fringing、色の調整を使用して、ゲームに filmatic 効果を追加します。
 - SceneKit と HDR の両方のカメラ機能は、従来の表示手法よりも優れた結果を提供します。結果として、では、すべての色の計算を線形の色空間で実行するようになりました (ワイド色のデバイスディスプレイで P3 の色域外を使用)。
 - SceneKit color プロファイル情報を読み取って、すべての色に一致するようになりました。
 - SceneKit は、すべてのシェーダーの種類の線形 RGB カラー空間で色コンポーネントの値を解釈します。
 - テクスチャイメージでカラープロファイル情報の読み取りと調整を SceneKit するため、すべてのイメージに対してアセットカタログを使用して、この情報が確実に提供されるようにします。
-- アプリのでキー `SCNDisableLinearSpaceRendering`と`SCNDisableWideGamut`キーを指定することにより、線形色空間の`Info.plist`レンダリングとワイド色の両方を無効にできます。
+- アプリの `Info.plist`で `SCNDisableLinearSpaceRendering` および `SCNDisableWideGamut` キーを指定することによって、線形色空間のレンダリングとワイドカラーの両方を無効にできます。
 - 新しい[SCNGeometryPrimitiveTypePolygon](https://developer.apple.com/reference/scenekit/1772322-scenekit_enumerations/scngeometryprimitivetype/scngeometryprimitivetypepolygon)クラスで geometry を指定するために、任意の多角形の霊長類 (ファイルから読み込まれるか、プログラムによって生成される) を構築します。
 
 <a name="SpriteKit-Enhancements" />
@@ -167,9 +167,9 @@ TvOS 10 の SceneKit フレームワークには、次の機能強化が行わ�
 
 TvOS 10 の SpriteKit フレームワークには、次の機能強化が行われています。
 
-- Tilemaps は`SKTileMapMode`、 `SKTileGroup`、、 `SKTileGroupRule`および`SKTileSet`の各クラスを使用して、2d、2.5 d、およびサイドスクロールゲーム用の正方形、六角、および等角投影のタイル図形をサポートするようになりました。
-- 新しい`SKWarpGeometry`クラスを使用して、 [SKSpriteNode](https://developer.apple.com/reference/spritekit/skspritenode)または[SKEffectNode](https://developer.apple.com/reference/spritekit/skeffectnode)のレンダリングを伸縮またはデフォルメします。 新しい[Skaction](https://developer.apple.com/reference/spritekit/skaction)クラスは、ワープ効果間の遷移をアニメーション化するために使用できます。
-- カスタムシェーダーは、属性値`SKAttribute`(`SKAttributeValue`) を指定することによって、シェーダーを使用する各ノードで個別に構成できる属性 () を提供できます。
+- Tilemaps、`SKTileGroup`、`SKTileGroupRule` および `SKTileSet` クラス `SKTileMapMode`を使用して、2D、2.5 D、およびサイドスクロールゲーム用の正方形、六角、および等角投影のタイル図形をサポートするようになりました。
+- 新しい `SKWarpGeometry` クラスを使用して、 [SKSpriteNode](https://developer.apple.com/reference/spritekit/skspritenode)または[SKEffectNode](https://developer.apple.com/reference/spritekit/skeffectnode)のレンダリングを伸縮または歪曲します。 新しい[Skaction](https://developer.apple.com/reference/spritekit/skaction)クラスは、ワープ効果間の遷移をアニメーション化するために使用できます。
+- カスタムシェーダーは、属性値 (`SKAttributeValue`) を指定することによって、シェーダーを使用する各ノードで個別に構成できる属性 (`SKAttribute`) を提供できます。
 - [Skview](https://developer.apple.com/reference/spritekit/skview)クラスには、シーンをレンダリングするタイミングと方法をきめ細かく制御できる新しいメソッドがいくつか用意されています。
 
 <a name="UIKit-Enhancements" />
@@ -178,22 +178,22 @@ TvOS 10 の SpriteKit フレームワークには、次の機能強化が行わ�
 
 TvOS 10 の UIKit フレームワークには、次の機能強化が加えられています。
 
-- に`UIViews`加えて非ビューアイテムのフォーカスをサポートするために、フォーカス API が強化されました。 フォーカスをサポートする項目は、 `IUIFocusItem`インターフェイスを実装_する必要があり_ます。
-- 新しい`UIGraphicsRender`クラスは、uikit レンダリングまたはコアグラフィックスからビットマップや pdf を作成するオブジェクト指向のメソッドを提供し`UIGraphicsBeginImageContext` 、非推奨のメソッドを置き換えます。
-- クラス`UIUserInterfaceStyle`が追加され、現在アクティブなユーザーインターフェイスのテーマ (ダークまたはライト) が特定されました。
+- フォーカス API は、`UIViews`に加えて非ビューアイテムのフォーカスをサポートするように強化されています。 フォーカスをサポートする項目は、`IUIFocusItem` インターフェイスを実装_する必要があり_ます。
+- 新しい `UIGraphicsRender` クラスは、UIKit レンダリングまたはコアグラフィックスからビットマップや Pdf を作成するオブジェクト指向のメソッドを提供し、非推奨の `UIGraphicsBeginImageContext` 方法を置き換えます。
+- `UIUserInterfaceStyle` クラスが追加され、現在アクティブになっているユーザーインターフェイスのテーマ (ダークまたはライト) が特定されました。
 - 新しい完全対話型のオブジェクトベースの中断可能なアニメーションのサポートが追加され、van がジェスチャにリンクされました。 Apple の[Uiviewanimating プロトコルのリファレンス](https://developer.apple.com/reference/uikit/uiviewanimating)、 [uiviewpropertyアニメータークラスリファレンス](https://developer.apple.com/reference/uikit/uiviewpropertyanimator)、 [UITimingCurveProvider Protocol reference](https://developer.apple.com/reference/uikit/uitimingcurveprovider)、 [UICubicTimingParameters クラス参照](https://developer.apple.com/reference/uikit/uicubictimingparameters) [、](https://developer.apple.com/reference/uikit/uispringtimingparameters)詳細については、UISpringTimingParameter クラス参照を参照してください。
-- 新しい`UIPreviewInteraction` と`UIPreviewInteractionDelegate`では、アプリがピーク操作とポップ操作のためのカスタムインターフェイスを提供できるようになります。
-- 新しい`UIAccessibilityCustomRotor`クラスを使用すると、アプリは、ボイスオーバーなどの補助的なテクノロジに対して、コンテキスト固有のカスタム機能を提供できます。
-- AssistiveTouch が`UIAccessibilityIsAssistiveTouchRunning`有効`UIAccessibilityAssistiveTouchStatusDidChangeNotification`になっているかどうかを判断するには、記号と記号を使用します。
-- `UIAccessibilityHearingDevicePairedEar` と`UIAccessibilityHearingDevicePairedEarDidChangeNotification`記号を使用して、ペアになっている mfi 聴覚援助の状態を取得します。
+- 新しい `UIPreviewInteraction` と `UIPreviewInteractionDelegate` により、アプリは、ピーク操作と pop 操作のためのカスタムインターフェイスを提供できます。
+- 新しい `UIAccessibilityCustomRotor` クラスを使用すると、アプリは、ボイスオーバーなどの補助的なテクノロジに対して、コンテキスト固有のカスタム機能を提供できます。
+- AssistiveTouch が有効になっているかどうかを判断するには、`UIAccessibilityIsAssistiveTouchRunning` と `UIAccessibilityAssistiveTouchStatusDidChangeNotification` 記号を使用します。
+- `UIAccessibilityHearingDevicePairedEar` と `UIAccessibilityHearingDevicePairedEarDidChangeNotification` 記号を使用して、ペアになっている MFi 聴覚援助の状態を取得します。
 - 新しい[Uipasteboard](https://developer.apple.com/reference/uikit/uipasteboard) API は、新しいオプション (有効期間の制限など) を提供し、共通クラス型に対して互換性のあるコンテンツの種類を自動的に宣言します。
-- ラベルの動的な型をサポートするために、テキストフィールドとテキスト`PreferredFontForTextStyle`ボックスは`UIFont`クラスの新しいメソッドを使用します。
-- デバイス`UIContentSizeCategory`が変更されたときに、要素がそのフォントを更新する必要がある`UIContentSizeCategoryAdjusting`かどうかを判断するには、デリゲートの`AdjustsFontForContentSizeCategory`プロパティを使用します。
+- ラベルの動的な型をサポートするために、テキストフィールドとテキストボックスは、`UIFont` クラスの新しい `PreferredFontForTextStyle` メソッドを使用します。
+- デバイス `UIContentSizeCategory` 変更されるときに、要素がそのフォントを更新する必要があるかどうかを判断するには、`UIContentSizeCategoryAdjusting` デリゲートの `AdjustsFontForContentSizeCategory` プロパティを使用します。
 - これで、アプリケーションは、テキストや背景色などのタブバー項目のバッジの外観を制御できるようになりました。
-- の更新コントロールが、すべてのスクロールビューおよびスクロールビューサブクラス ( `UICollectionView`など) でサポートされるようになりました。
-- クラスのメソッドが非同期に呼び出されるようになったため、open の完了後に呼び出される完了ハンドラーがサポートされるようになりました。 `OpenURL` `UIApplication`
-- Cloudkit の共有を開始し、新しい`UICloudSharingController`クラスと`UICloudSharingControllerDelegate`クラスを使用してそのプロパティを変更します。
-- `UICollectionViews` 新しい`UICollectionViewDataSourcePrefetching`デリゲートを使用したのスクロールエクスペリエンスを向上させるために、プリフェッチされたセルを活用します。
+- の更新コントロールが、すべてのスクロールビューおよびスクロールビューのサブクラス (`UICollectionView`など) でサポートされるようになりました。
+- `UIApplication` クラスの `OpenURL` メソッドが非同期に呼び出され、open の完了後に呼び出される完了ハンドラーがサポートされるようになりました。
+- CloudKit の共有を開始し、新しい `UICloudSharingController` クラスと `UICloudSharingControllerDelegate` クラスを使用してそのプロパティを変更します。
+- 新しい `UICollectionViewDataSourcePrefetching` デリゲートを使用して `UICollectionViews` のスクロールエクスペリエンスを向上させるために、プリフェッチされたセルを活用します。
 
 ## <a name="related-links"></a>関連リンク
 

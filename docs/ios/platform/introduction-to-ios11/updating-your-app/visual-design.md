@@ -4,15 +4,15 @@ description: このドキュメントでは、iOS 11 で導入されたビジュ
 ms.prod: xamarin
 ms.assetid: 7C300B94-0FAF-492E-A326-877419A1824B
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/13/2016
-ms.openlocfilehash: bd3adf5d01be0cdb709c752e1ace131b8b3e8d83
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: e5a61af4cd8a09df3ffddb74658f646aa8edfa1f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752254"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032083"
 ---
 # <a name="visual-design-updates-in-ios-11"></a>IOS 11 でのビジュアルデザインの更新
 
@@ -24,14 +24,14 @@ IPhone X 向けの設計に関する詳細については、「 [Iphone x 用](h
 
 UIKit バーは、iOS 11 では、エンドユーザーがより使いやすくなるように変更されています。
 
-このような変更の1つは、ユーザーがバー項目を長時間押したときに表示される新しい HUD ディスプレイです。 これを有効にするに`largeContentSizeImage`は、 `UIBarItem`でプロパティを設定し、[アセットカタログ](~/ios/app-fundamentals/images-icons/displaying-an-image.md)を使用してより大きなイメージを追加します。
+このような変更の1つは、ユーザーがバー項目を長時間押したときに表示される新しい HUD ディスプレイです。 これを有効にするには、`UIBarItem` の [`largeContentSizeImage`] プロパティを設定し、[アセットカタログ](~/ios/app-fundamentals/images-icons/displaying-an-image.md)を使用してより大きなイメージを追加します。
 
 ```csharp
 barItem.LargeContentSizeImage = UIImage.FromBundle("AccessibleImage");
 ```
 
 ### <a name="navigation-bar"></a>ナビゲーション バー
-iOS 11 では、ナビゲーションバーのタイトルを読みやすくするための新機能が導入されました。 アプリでは、プロパティを true に割り当てる`PrefersLargeTitles`ことで、この大きなタイトルを表示できます。
+iOS 11 では、ナビゲーションバーのタイトルを読みやすくするための新機能が導入されました。 アプリでは、`PrefersLargeTitles` プロパティを true に割り当てることで、この大きなタイトルを表示できます。
 
 ```csharp
 NavigationController.NavigationBar.PrefersLargeTitles = true;
@@ -41,25 +41,25 @@ NavigationController.NavigationBar.PrefersLargeTitles = true;
 
 ![大きなナビゲーションタイトル](visual-design-images/image7.png)
 
-ナビゲーションバーに大きなタイトルが表示されるタイミングを制御するには`LargeTitleDisplayMode` 、ナビゲーション項目のを、 `Never`、また`Automatic`はに`Always`設定します。
+ナビゲーションバーに大きなタイトルが表示されるタイミングを制御するには、ナビゲーション項目の `LargeTitleDisplayMode` を `Always`、`Never`、または `Automatic`に設定します。
 
 ### <a name="search-controller"></a>検索コントローラー
 
-iOS 11 では、検索コントローラーを簡単にナビゲーションバーに追加できました。 検索コントローラーを作成したら、 `SearchController`プロパティを使用して、それをナビゲーションバーに追加します。
+iOS 11 では、検索コントローラーを簡単にナビゲーションバーに追加できました。 検索コントローラーを作成したら、`SearchController` プロパティを使用してナビゲーションバーに追加します。
 
 ```csharp
 NavigationItem.SearchController = searchController;
 ```
 
-[![検索バーを含む大きなナビゲーションタイトル](visual-design-images/image8-sml.png)](visual-design-images/image8-sml.png#lightbox)
+[検索バーを使用して大きなナビゲーションタイトルを![する](visual-design-images/image8-sml.png)](visual-design-images/image8-sml.png#lightbox)
 
-アプリの機能によっては、ユーザーがリストをスクロールしたときに検索バーを非表示にすることがあります。 これは、 `HidesSearchBarWhenScrolling`プロパティを使用して調整できます。
+アプリの機能によっては、ユーザーがリストをスクロールしたときに検索バーを非表示にすることがあります。 これは、`HidesSearchBarWhenScrolling` プロパティを使用して調整できます。
 
 ## <a name="margins"></a>余白
 
-Apple では、ビューとサブ`directionalLayoutMargins`ビューの間隔を設定するために使用できる新しいプロパティ–を作成しました。 また`directionalLayoutMargins`は`leading`インセットで使用します。 `trailing` システムが左から右または右から左のどちらの言語であるかにかかわらず、アプリの間隔は iOS によって適切に設定されます。
+Apple では、ビューとサブビューの間隔を設定するために使用できる新しいプロパティ `directionalLayoutMargins` を作成しました。 `leading` または `trailing` インセットで `directionalLayoutMargins` を使用します。 システムが左から右または右から左のどちらの言語であるかにかかわらず、アプリの間隔は iOS によって適切に設定されます。
 
-IOS 10 以前では、すべてのビューの余白の最小サイズが調整されていました。 iOS 11 では、を使用`ViewRespectsSystemMinimumLayoutMargins`して上書きするオプションが導入されました。 たとえば、このプロパティを false に設定すると、エッジのインセットをゼロに調整できます。
+IOS 10 以前では、すべてのビューの余白の最小サイズが調整されていました。 iOS 11 では、`ViewRespectsSystemMinimumLayoutMargins`を使用して上書きするオプションが導入されました。 たとえば、このプロパティを false に設定すると、エッジのインセットをゼロに調整できます。
 
 ```csharp
 ViewRespectsSystemMinimumLayoutMargins = false;
@@ -72,13 +72,13 @@ View.LayoutMargins = UIEdgeInsets.Zero;
 
 ## <a name="full-screen-content"></a>全画面コンテンツ
 
-iOS 7 では`bottomLayoutGuide` 、ビューを制限する方法として、uikit バーによって非表示にされ、画面の表示領域に表示されるように、ビューを制限する方法が[導入](~/ios/platform/introduction-to-ios7/ios7-ui.md#fullscreen) `topLayoutGuide`されました。 これらは、iOS 11 では_安全な領域_を優先して非推奨とされています。
+iOS 7 では、ビューを制限する方法として `topLayoutGuide` および `bottomLayoutGuide` が[導入](~/ios/platform/introduction-to-ios7/ios7-ui.md#fullscreen)されました。これにより、ビューは、uikit バーによって非表示にされ、画面の表示領域に表示されます。 これらは、iOS 11 では_安全な領域_を優先して非推奨とされています。
 
 セーフ領域は、アプリケーションの表示領域と、ビューとスーパービューの間に制約がどのように追加されるかを検討する新しい方法です。 たとえば、次の図を考えてみます。
 
-[![安全な領域と、上と下のレイアウトガイド](visual-design-images/image10-sml.png)](visual-design-images/image10.png#lightbox)
+[![セーフエリア vs 上および下部レイアウトガイド](visual-design-images/image10-sml.png)](visual-design-images/image10.png#lightbox)
 
-以前は、ビューを追加し、上の緑の領域に表示されるようにしたい場合は、の_下部_ `TopLayoutGuide`との_先頭_ `BottomLayoutGuide`に制約を設定します。 IOS 11 では、その代わりに、安全領域の_一番上_と_一番下_に固定します。 以下に例を示します。
+以前は、ビューを追加し、それを上の緑の領域に表示する必要がある場合は、それを `TopLayoutGuide` の_下部_と `BottomLayoutGuide`の_一番上_に固定します。 IOS 11 では、その代わりに、安全領域の_一番上_と_一番下_に固定します。 以下に例を示します。
 
 ```csharp
 var safeGuide = View.SafeAreaLayoutGuide;
@@ -90,7 +90,7 @@ safeGuide.BottomAnchor.ConstraintEqualTo(imageView.BottomAnchor).Active = true;
 
 UITableView には、iOS 11 では多数の小さな変更が加えられています。
 
-既定では、ヘッダー、フッター、およびセルのサイズは、コンテンツに基づいて自動的に調整されます。 この自動サイズ変更動作を無効にするには`EstimatedRowHeight`、 `EstimatedSectionHeaderHeight`、、 `EstimatedSectionFooterHeight`またはを0に設定します。
+既定では、ヘッダー、フッター、およびセルのサイズは、コンテンツに基づいて自動的に調整されます。 この自動サイズ変更動作を無効にするには、`EstimatedRowHeight`、`EstimatedSectionHeaderHeight`、または `EstimatedSectionFooterHeight` を0に設定します。
 
 ただし、状況によっては (iOS デザイナーで UITableViewController を追加する場合や、Interface Builder の既存の Storboards を使用する場合など)、手動でサイズ変更するセルを手動で有効にすることが必要になる場合があります。 これを行うには、セル、ヘッダー、およびフッターのテーブルビューで、次のプロパティがそれぞれ設定されていることを確認します。
 
@@ -109,7 +109,7 @@ TableView.EstimatedSectionFooterHeight = 40f;
 
 ```
 
-iOS 11 では、行アクションの機能が拡張されています。 `UISwipeActionsConfiguration`は、ユーザーがテーブルビューの行に対していずれかの方向でスワイプしたときに実行する一連のアクションを定義するために導入されました。 この動作は、ネイティブの電子メールアプリの動作に似ています。 詳細については、「[行アクション](~/ios/user-interface/controls/tables/row-action.md)ガイド」を参照してください。
+iOS 11 では、行アクションの機能が拡張されています。 `UISwipeActionsConfiguration` は、ユーザーがテーブルビューの行に対していずれかの方向でスワイプしたときに実行する一連のアクションを定義するために導入されました。 この動作は、ネイティブの電子メールアプリの動作に似ています。 詳細については、「[行アクション](~/ios/user-interface/controls/tables/row-action.md)ガイド」を参照してください。
 
 テーブルビューでは、iOS 11 でのドラッグアンドドロップがサポートされています。 詳細については、「[ドラッグアンドドロップ](~/ios/platform/introduction-to-ios11/drag-and-drop.md#uitableview)ガイド」を参照してください。
 

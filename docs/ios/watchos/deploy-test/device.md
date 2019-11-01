@@ -4,15 +4,15 @@ description: このドキュメントでは、実際の Apple Watch でテスト
 ms.prod: xamarin
 ms.assetid: A72A7D38-FAE8-4DD2-843D-54B74C5078D7
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 6d3756f4215174e17ec45518f430dc38270e3289
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: c049fb0bd05749db30d99603fb9179e710f815f7
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768699"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028354"
 ---
 # <a name="testing-on-apple-watch-devices"></a>Apple Watch デバイスでのテスト
 
@@ -24,23 +24,23 @@ ms.locfileid: "70768699"
 
 <a name="devices" />
 
-## <a name="devices"></a>[デバイス]
+## <a name="devices"></a>デバイス
 
-実際の iPhone または iPad で iOS アプリをテストするには、常にデベロッパーセンターにデバイスを登録する必要があります。 デバイスの一覧は次のようになります ( **+** 新しいデバイスを追加するには、プラス記号をクリックします)。
+実際の iPhone または iPad で iOS アプリをテストするには、常にデベロッパーセンターにデバイスを登録する必要があります。 デバイスの一覧は次のようになります (新しいデバイスを追加するには、プラス記号 **+** をクリックします)。
 
-![](device-images/devices-sml.png "デバイスの一覧は次のようになります。")
+![](device-images/devices-sml.png "The device list looks like this")
 
 監視は異なります。アプリを展開する前に、Apple Watch デバイスを追加する必要があります。 **Xcode** (**Windows > Devices** list) を使用して、ウォッチの udid を検索します。 ペアリングされた電話が接続されると、ウォッチの情報も表示されます。
 
-[![](device-images/xcode-devices-sml.png "ペアになっているウォッチ情報")](device-images/xcode-devices.png#lightbox)
+[![](device-images/xcode-devices-sml.png "Paired Watch Information")](device-images/xcode-devices.png#lightbox)
 
 ウォッチの UDID がわかったら、デベロッパーセンターのデバイスの一覧に追加します。
 
-![](device-images/devices-watch-sml.png "デバイス一覧でのウォッチの UDID")
+![](device-images/devices-watch-sml.png "The Watch's UDID in the device list")
 
 監視デバイスを追加したら、新規または既存の開発またはカスタムプロビジョニングプロファイルで作成したものを選択します。
 
-![](device-images/devices-provisioning.png "使用可能なデバイスの一覧")
+![](device-images/devices-provisioning.png "Available device list")
 
 既存のプロビジョニングプロファイルを編集してダウンロードして再インストールするかどうかを忘れないでください。
 
@@ -52,17 +52,17 @@ ms.locfileid: "70768699"
 
 ワイルドカードアプリ ID がある場合は、*プロビジョニングプロファイルが1つだけ必要*です。ただし、プロジェクトごとに個別のアプリ ID がある場合は、アプリ ID ごとにプロビジョニングプロファイルが必要になります。
 
-![](device-images/provisioningprofile-development.png "開発プロビジョニングプロファイル")
+![](device-images/provisioningprofile-development.png "The Development Provisioning Profile")
 
 3つのプロファイルがすべて作成されると、一覧に表示されます。 各ファイルをダウンロードしてインストールすることを忘れないでください。
 
-![](device-images/provisioningprofiles.png "利用可能な開発プロビジョニングプロファイル")
+![](device-images/provisioningprofiles.png "The available Development Provisioning Profiles")
 
 **プロジェクトオプション**でプロビジョニングプロファイルを確認するには、 **[ビルド > iOS バンドル署名]** 画面を選択し、 **[Release]** または **[Debug iPhone]** 構成を選択します。
 
 **[プロビジョニングプロファイル]** の一覧には、一致するすべてのプロファイルが表示されます。このドロップダウンリストで作成した一致するプロファイルが表示されます。
 
-![](device-images/options-selectprofile.png "プロビジョニングプロファイルの一覧")
+![](device-images/options-selectprofile.png "The Provisioning Profile list")
 
 <a name="testing" />
 
@@ -91,13 +91,13 @@ ms.locfileid: "70768699"
 
 デプロイ中にエラーが発生した場合は、**ビュー > 埋め込み > デバイスログに埋め込ま**れ、エラーに関する詳細情報が表示されます。 いくつかのエラーとその原因を以下に示します。
 
-### <a name="error-mt3001-could-not-aot-the-assembly"></a>エラー MT3001:アセンブリを AOT にできませんでした
+### <a name="error-mt3001-could-not-aot-the-assembly"></a>エラー MT3001: アセンブリを AOT にできませんでした
 
 これは、Apple Watch デバイスに配置するためにデバッグモードでビルドするときに発生する可能性があります。
 
 この問題を*一時的*に回避するには、[ウォッチ拡張機能]**プロジェクトオプション > [ビルド > watchOS ビルド**] ウィンドウで**インクリメンタルビルド**を無効にします。
 
-[![](device-images/disable-incremental-sml.png "インクリメンタルビルドチェックボックス")](device-images/disable-incremental.png#lightbox)
+[![](device-images/disable-incremental-sml.png "The Incremental Builds checkbox")](device-images/disable-incremental.png#lightbox)
 
 これは今後のリリースで修正される予定です。これにより、インクリメンタルビルドを再度有効にして、より高速なビルド時間を利用することができます。
 
@@ -112,7 +112,7 @@ Failed to install [APPNAME]
 Invalid executable/Application Verification Failed
 ```
 
-![](device-images/invalid-application-executable.png "無効なアプリケーション実行可能ファイルのアラート")
+![](device-images/invalid-application-executable.png "Invalid Application Executable alert")
 
 アプリをインストールしようとした後に、これらのメッセージが *[ウォッチ] 画面に*表示される場合は、いくつかの問題が考えられます。
 
@@ -120,7 +120,7 @@ Invalid executable/Application Verification Failed
 
 - テストに使用されている開発プロビジョニングプロファイルに、監視デバイスが含まれていませんでした。または、監視がプロビジョニングプロファイルに追加された後、再ダウンロードされて再インストールされませんでした。 指示に従って、[プロビジョニングプロファイルを正しく構成](#profiles)します。
 
-- **IOS デバイスログ**に含まれ`The system version is lower than the minimum OS version specified for bundle...Have 8.2; need 8.3`ている場合、ウォッチ**アプリの** **MinimumOSVersion**の値が間違っています。
+- **IOS デバイスログ**に `The system version is lower than the minimum OS version specified for bundle...Have 8.2; need 8.3` が含まれている場合、Watch アプリの**MinimumOSVersion**の**値が正しく**ありません。
   これは**8.2**である必要があります。 Xcode 6.3 がインストールされている場合は、挿入するソースを手動で編集して8.2 に設定する必要がある場合があります。
 
 - Watch アプリの**権利**(アプリグループなど) が正しく設定されていません。

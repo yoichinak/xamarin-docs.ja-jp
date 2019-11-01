@@ -3,34 +3,34 @@ title: Xamarin. Android の ActionBar
 ms.prod: xamarin
 ms.assetid: 84A79F1F-9E73-4E3E-80FA-B72E5686900B
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/06/2018
-ms.openlocfilehash: f472f19429f21c659e28ba1c7a8d2670e22ea6a4
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b2b7c2cc87b37ae0e7397988e37df6b9b1e3aa10
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758952"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029388"
 ---
 # <a name="actionbar-for-xamarinandroid"></a>Xamarin. Android の ActionBar
 
-を使用`TabActivity`する場合、タブアイコンを作成するコードは、Android 4.0 フレームワークに対して実行しても効果がありません。 2\.3 より前のバージョンの Android と同様に機能しますが、 `TabActivity`クラス自体は4.0 で非推奨とされています。 次に説明する操作バーを使用する、タブ付きインターフェイスを作成する新しい方法が導入されました。
+`TabActivity`を使用する場合は、Android 4.0 フレームワークに対して実行しても、タブアイコンを作成するコードは効果がありません。 2\.3 より前のバージョンの Android では機能的に機能しますが、`TabActivity` クラス自体は4.0 で非推奨とされています。 次に説明する操作バーを使用する、タブ付きインターフェイスを作成する新しい方法が導入されました。
 
 ## <a name="action-bar-tabs"></a>操作バータブ
 
 操作バーには、Android 4.0 でタブ付きインターフェイスを追加するためのサポートが含まれています。
 次のスクリーンショットは、このようなインターフェイスの例を示しています。
 
-[![エミュレーターで実行されているアプリのスクリーンショット。2つのタブが表示されます。](action-bar-images/25-actionbartabs.png)](action-bar-images/25-actionbartabs.png#lightbox)
+[エミュレーターで実行されているアプリのスクリーンショットを![します。2つのタブが表示されます。](action-bar-images/25-actionbartabs.png)](action-bar-images/25-actionbartabs.png#lightbox)
 
-操作バーでタブを作成するには、まず、タブを`NavigationMode`サポートするようにプロパティを設定する必要があります。 Android 4 `ActionBar`では、アクティビティクラスでプロパティを使用できます。このクラスを使用して`NavigationMode` 、次のようにを設定できます。
+操作バーでタブを作成するには、まず、`NavigationMode` プロパティを [サポート] タブに設定する必要があります。 Android 4 では、`ActionBar` プロパティを Activity クラスで使用できます。このプロパティを使用して、次のように `NavigationMode` を設定できます。
 
 ```csharp
 this.ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
 ```
 
-この処理が完了したら、操作バーで`NewTab`メソッドを呼び出してタブを作成できます。 このタブインスタンスでは、メソッド`SetText`と`SetIcon`メソッドを呼び出してタブのラベルのテキストとアイコンを設定できます。これらの呼び出しは、以下に示すコードの順序で行われます。
+この処理が完了したら、操作バーで `NewTab` メソッドを呼び出して、タブを作成できます。 このタブインスタンスを使用して、`SetText` および `SetIcon` メソッドを呼び出して、タブのラベルのテキストとアイコンを設定できます。これらの呼び出しは、次に示すコードの順序で行われます。
 
 ```csharp
 var tab = this.ActionBar.NewTab ();
@@ -38,7 +38,7 @@ tab.SetText (tabText);
 tab.SetIcon (Resource.Drawable.ic_tab_white);
 ```
 
-ただし、タブを追加する前に、 `TabSelected`イベントを処理する必要があります。 このハンドラーでは、タブのコンテンツを作成できます。操作バーのタブは、アクティビティ内のユーザーインターフェイスの一部を表すクラスである*フラグメント*を使用するように設計されています。 この例では、フラグメントのビューに1つ`TextView`のが含まれてい`Fragment`ます。これは、次のようにサブクラスで拡大します。
+ただし、タブを追加する前に、`TabSelected` イベントを処理する必要があります。 このハンドラーでは、タブのコンテンツを作成できます。操作バータブは、アクティビティのユーザーインターフェイスの一部を表すクラスである*フラグメント*を使用するように設計されています。 この例では、フラグメントのビューには1つの `TextView`が含まれており、次のように `Fragment` サブクラスで拡大します。
 
 ```csharp
 class SampleTabFragment: Fragment
@@ -60,7 +60,7 @@ class SampleTabFragment: Fragment
 }
 ```
 
-`TabSelected`イベントで渡されるイベント引数の型`TabEventArgs`はであり、次`FragmentTransaction`に示すように、フラグメントを追加するために使用できるプロパティが含まれています。
+`TabSelected` イベントで渡されるイベント引数の型は `TabEventArgs`であり、次に示すように、フラグメントを追加するために使用できる `FragmentTransaction` プロパティが含まれています。
 
 ```csharp
 tab.TabSelected += delegate(object sender, ActionBar.TabEventArgs e) {             
@@ -69,7 +69,7 @@ tab.TabSelected += delegate(object sender, ActionBar.TabEventArgs e) {
 };
 ```
 
-最後に、次のコードに示すように、 `AddTab`メソッドを呼び出すことによって、タブを操作バーに追加できます。
+最後に、次のコードに示すように、`AddTab` メソッドを呼び出すことによって、タブを操作バーに追加できます。
 
 ```csharp
 this.ActionBar.AddTab (tab);
@@ -77,23 +77,23 @@ this.ActionBar.AddTab (tab);
 
 完全な例については、このドキュメントのサンプルコードの*HelloTabsICS*プロジェクトを参照してください。
 
-## <a name="shareactionprovider"></a>ShareActionProvider
+## <a name="shareactionprovider"></a>/のアクションプロバイダー
 
-`ShareActionProvider`クラスを使用すると、操作バーから共有アクションを実行できます。 共有の目的を処理し、以前に使用したアプリケーションの履歴を保存しておくことによって、操作バーから後で簡単にアクセスできるようにするアプリの一覧を使用して、アクションビューを作成します。 これにより、Android 全体で一貫性のあるユーザーエクスペリエンスを使用してアプリケーションがデータを共有できるようになります。
+`ShareActionProvider` クラスを使用すると、操作バーから共有アクションを実行できます。 共有の目的を処理し、以前に使用したアプリケーションの履歴を保存しておくことによって、操作バーから後で簡単にアクセスできるようにするアプリの一覧を使用して、アクションビューを作成します。 これにより、Android 全体で一貫性のあるユーザーエクスペリエンスを使用してアプリケーションがデータを共有できるようになります。
 
 ### <a name="image-sharing-example"></a>イメージ共有の例
 
-たとえば、次に示すのは、イメージを共有するためのメニュー項目を持つ操作バーのスクリーンショットです (共有[Actionprovider](https://docs.microsoft.com/samples/xamarin/monodroid-samples/shareactionproviderdemo)サンプルから取得)。 ユーザーが操作バーのメニュー項目をタップすると、に関連付けられて`ShareActionProvider`いるインテントを処理するために、このアプリケーションが読み込まれます。 この例では、メッセージングアプリケーションが既に使用されているため、操作バーに表示されます。
+たとえば、次に示すのは、イメージを共有するためのメニュー項目を持つ操作バーのスクリーンショットです (共有[Actionprovider](https://docs.microsoft.com/samples/xamarin/monodroid-samples/shareactionproviderdemo)サンプルから取得)。 ユーザーが操作バーのメニュー項目をタップすると、`ShareActionProvider`に関連付けられているインテントを処理するために、このアプリケーションが読み込まれます。 この例では、メッセージングアプリケーションが既に使用されているため、操作バーに表示されます。
 
-[![操作バーのメッセージングアプリケーションアイコンのスクリーンショット](action-bar-images/09-shareactionprovider.png)](action-bar-images/09-shareactionprovider.png#lightbox)
+[操作バー内のメッセージングアプリケーションアイコンのスクリーンショット![](action-bar-images/09-shareactionprovider.png)](action-bar-images/09-shareactionprovider.png#lightbox)
 
 ユーザーが操作バーの項目をクリックすると、次のように、共有イメージを含むメッセージングアプリが起動されます。
 
-[![サル画像を表示しているメッセージングアプリのスクリーンショット](action-bar-images/10-messagewithimage.png)](action-bar-images/10-messagewithimage.png#lightbox)
+[![、サル画像を表示しているメッセージングアプリのスクリーンショット](action-bar-images/10-messagewithimage.png)](action-bar-images/10-messagewithimage.png#lightbox)
 
 ### <a name="specifying-the-action-provider-class"></a>アクションプロバイダークラスの指定
 
-を使用`ShareActionProvider`するには、 `android:actionProviderClass`次のように、操作バーのメニューの XML のメニュー項目に対して属性を設定します。
+`ShareActionProvider`を使用するには、操作バーのメニューの XML のメニュー項目の `android:actionProviderClass` 属性を次のように設定します。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -107,7 +107,7 @@ this.ActionBar.AddTab (tab);
 
 ### <a name="inflating-the-menu"></a>メニューの拡大
 
-メニューを拡大するには、 `OnCreateOptionsMenu` Activity サブクラスでをオーバーライドします。 メニューへの参照を取得したら、次に示すよう`ShareActionProvider`に、 `ActionProvider`メニュー項目のプロパティからを取得し、set/ `ShareActionProvider`インテントメソッドを使用して目的を設定できます。
+メニューを拡大するには、Activity サブクラスの `OnCreateOptionsMenu` をオーバーライドします。 メニューへの参照を取得したら、次に示すように、メニュー項目の `ActionProvider` プロパティから `ShareActionProvider` を取得し、Set/インテントメソッドを使用して `ShareActionProvider`の意図を設定できます。
 
 ```csharp
 public override bool OnCreateOptionsMenu (IMenu menu)
@@ -123,7 +123,7 @@ public override bool OnCreateOptionsMenu (IMenu menu)
 
 ### <a name="creating-the-intent"></a>インテントの作成
 
-は`ShareActionProvider` 、上記のコードの`SetShareIntent`メソッドに渡されたインテントを使用して、適切なアクティビティを起動します。 この例では、次のコードを使用してイメージを送信するインテントを作成します。
+`ShareActionProvider` は、上記のコードの `SetShareIntent` メソッドに渡されるインテントを使用して、適切なアクティビティを起動します。 この例では、次のコードを使用してイメージを送信するインテントを作成します。
 
 ```csharp
 Intent CreateIntent ()
@@ -142,5 +142,5 @@ Intent CreateIntent ()
 
 - [Hello Tabs ICS (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/hellotabsics)
 - [/Sharepoint のデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/shareactionproviderdemo)
-- [アイスクリームサンドイッチの導入](http://www.android.com/about/ice-cream-sandwich/)
+- [アイスクリームサンドイッチの導入](https://www.android.com/about/ice-cream-sandwich/)
 - [Android 4.0 プラットフォーム](https://developer.android.com/sdk/android-4.0.html)

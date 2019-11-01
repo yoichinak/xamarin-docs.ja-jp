@@ -4,15 +4,15 @@ description: このドキュメントでは、さまざまなバージョンの 
 ms.prod: xamarin
 ms.assetid: 9F6A27E5-8A87-ADE2-D1EF-5684E7B8C999
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: c6385ff193c54fdab8f252c757cad810751b3f08
-ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
+ms.openlocfilehash: f2f0d44f9c9d2df3c09d98e8d921121ff2af1571
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71206304"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032275"
 ---
 # <a name="ios-platform-features-overview"></a>iOS プラットフォームの機能の概要
 
@@ -41,7 +41,7 @@ IOS 10 の新しい CallKit API は、VOIP アプリを iPhone UI と統合し�
 
 ## <a name="contacts-and-contactsuiiosplatformcontactsmd"></a>[連絡先と ContactsUI](~/ios/platform/contacts.md)
 
-Ios 9 の導入により、Apple は2つの新しいフレームワーク`Contacts`を`ContactsUI`リリースしました。これは、ios 8 以前で使用されていた既存のアドレス帳とアドレス帳の UI フレームワークを置き換えるものです。
+IOS 9 の導入により、Apple は、iOS 8 以前で使用されていた既存のアドレス帳とアドレス帳の UI フレームワークを置き換える2つの新しいフレームワーク `Contacts` と `ContactsUI`をリリースしました。
 
 ## <a name="document-pickeriosplatformdocument-pickermd"></a>[ドキュメント ピッカー](~/ios/platform/document-picker.md)
 
@@ -53,7 +53,7 @@ iOS には、カレンダーアプリケーションとアラームアプリケ�
 
 ## <a name="ios-extensionsiosplatformextensionsmd"></a>[iOS の拡張機能](~/ios/platform/extensions.md)
 
-Ios 8 で導入され`UIViewControllers`た拡張機能は、ios によって、**通知センター**内などの標準コンテキスト内、特化された入力やその他のコンテキストを実行するためにユーザーが要求するカスタムキーボードの種類として提供されます。画像の編集のように、拡張機能によって特殊な効果フィルターが提供されます。
+IOS 8 で導入された拡張機能は、 **Notification Center**内などの標準コンテキスト内で ios によって提供される特殊な `UIViewControllers` であり、ユーザーが特殊な入力やその他のコンテキストを実行するために要求するカスタムキーボードの種類として、拡張機能が特殊効果フィルターを提供できる写真を編集する。
 
 ## <a name="graphics-and-animation-in-iosiosplatformgraphics-animation-iosindexmd"></a>[IOS でのグラフィックスとアニメーション](~/ios/platform/graphics-animation-ios/index.md)
 
@@ -99,7 +99,7 @@ Photo Kit は、アプリケーションがシステムイメージライブラ�
 
 ## <a name="request-app-reviewiosplatformrequest-app-reviewmd"></a>[アプリレビューの要求](~/ios/platform/request-app-review.md)
 
-Ios 10.3 を初めて使用`RequestReview()`する場合、メソッドを使用すると、ios アプリでユーザーに評価または確認を求めることができます。 ユーザーが App Store からインストールした出荷アプリでこのメソッドが呼び出されると、iOS 10 は開発者の評価およびレビュープロセス全体を処理します。 このプロセスは App Store ポリシーによって管理されているため、アラートが表示されない場合があります。
+IOS 10.3 の新機能である `RequestReview()` 方法では、iOS アプリはユーザーに対して評価またはレビューを要求できます。 ユーザーが App Store からインストールした出荷アプリでこのメソッドが呼び出されると、iOS 10 は開発者の評価およびレビュープロセス全体を処理します。 このプロセスは App Store ポリシーによって管理されているため、アラートが表示されない場合があります。
 
 ## <a name="search-apisiosplatformsearchindexmd"></a>[API の検索](~/ios/platform/search/index.md)
 

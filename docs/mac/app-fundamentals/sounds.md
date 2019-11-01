@@ -4,23 +4,23 @@ description: このドキュメントでは、Xamarin. Mac アプリで AVAudioP
 ms.prod: xamarin
 ms.assetid: 4A683A94-F75D-4EAF-8497-E9443653250B
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/19/2016
-ms.openlocfilehash: b4a5ead3e3c02fbdd2ae5486a6ac637defeb5abd
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 18043a88a129d48a1cad3b9ee15b6989d50ad126
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283300"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030044"
 ---
 # <a name="playing-sound-with-avaudioplayer-in-xamarinmac"></a>Xamarin. Mac で AVAudioPlayer を使用してサウンドを再生する
 
 ## <a name="about-the-avaudioplayer"></a>AVAudioPlayer について
 
-`AVAudioPlayer`クラスは、メモリまたはファイルからオーディオデータを再生するために使用されます。 Apple では、ネットワークストリーミングを行ったり、低待機時間のオーディオ i/o を必要としない限り、アプリでオーディオの再生にこのクラスを使用することを推奨しています。
+`AVAudioPlayer` クラスは、メモリまたはファイルからオーディオデータを再生するために使用されます。 Apple では、ネットワークストリーミングを行ったり、低待機時間のオーディオ i/o を必要としない限り、アプリでオーディオの再生にこのクラスを使用することを推奨しています。
 
-`AVAudioPlayer`クラスを使用して、次の操作を行うことができます。
+`AVAudioPlayer` クラスを使用して、次の操作を行うことができます。
 
 - 任意のループを使用して、任意の期間のサウンドを再生します。
 - オプションの同期を使用して、複数のサウンドを同時に再生します。
@@ -28,7 +28,7 @@ ms.locfileid: "70283300"
 - 高速転送や巻き戻しなどの機能をサポートします。
 - 再生レベルの使用状況データを取得します。
 
-`AVAudioPlayer`では、iOS、tvOS、macOS (たとえば、aif、.wav、.mp3) によって提供されるオーディオ形式のサウンドをサポートしています。
+`AVAudioPlayer` は、iOS、tvOS、macOS (たとえば、aif、.wav、.mp3) によって提供されるオーディオ形式のサウンドをサポートしています。
 
 ## <a name="playing-sounds-in-macos"></a>MacOS でのサウンドの再生
 

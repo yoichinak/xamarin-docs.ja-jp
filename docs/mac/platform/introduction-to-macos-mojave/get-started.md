@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin. Mac で macOS Mojave ア�
 ms.prod: xamarin
 ms.assetid: E9A7B68A-E164-4C5C-86AC-B2A3E7A30DA1
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 64c1ca0bfee5b98b7842bdc44a46bc40cf2012fc
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: a7aba55f0470ad44dcce3de56ed15308439785e2
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285476"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029852"
 ---
 # <a name="get-started-with-macos-mojave"></a>MacOS Mojave を使ってみる
 
@@ -26,7 +26,7 @@ ms.locfileid: "70285476"
 
 3. **Visual Studio for Mac の更新**– [Xamarin 5.0](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/mac/xamarin.mac_5/xamarin.mac_5.0.md)以降で Visual Studio for Mac の最新の安定バージョンを使用します。
 
-4. _(省略可能)_ **Mac に MacOS Mojave をインストールする**–
+4. _(省略可能)_ **Macos Mojave を Mac にインストールする**–
 
    > [!TIP]
    > アプリで新しい macOS Mojave Api を使用していない場合でも、macOS Mojave SDK を使用してビルドし、テストして、すべてが期待どおりに動作することを確認してください。 アプリが新しい Api を呼び出さない場合は、macOS Mojave SDK を使用して再コンパイルし、Mac のオペレーティングシステムをアップグレードせずにテストすることができます。

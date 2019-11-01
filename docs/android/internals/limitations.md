@@ -3,15 +3,15 @@ title: Xamarin Android とデスクトップ-Mono ランタイムの違い
 ms.prod: xamarin
 ms.assetid: F953F9B4-3596-8B3A-A8E4-8219B5B9F7CA
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/25/2018
-ms.openlocfilehash: 7f98f2f75a106ad3a9f62256a7145ac746c4b1c8
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 8fe0e3a9adedb161c527ccdf6d6c3a7cd06a1d86
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70757783"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027838"
 ---
 # <a name="limitations"></a>制限事項
 
@@ -25,16 +25,16 @@ Android のアプリケーションはビルドプロセス中に Java プロキ
 
 ## <a name="limited-java-generation-support"></a>Java の生成サポートの制限
 
-Java コードからマネージコードを呼び出すためには、 [Android 呼び出し可能ラッパー](~/android/platform/java-integration/android-callable-wrappers.md)を生成する必要があります。 *既定で*は、Android 呼び出し可能ラッパーは、(つまり、がある[`RegisterAttribute`](xref:Android.Runtime.RegisterAttribute)) 仮想 java メソッドをオーバーライドしたり、java インターフェイスメソッドを実装したりする (特定の) 宣言されたコンストラクターおよびメソッドのみを含みます`Attribute`(インターフェイスも同様です)。
+Java コードからマネージコードを呼び出すためには、 [Android 呼び出し可能ラッパー](~/android/platform/java-integration/android-callable-wrappers.md)を生成する必要があります。 *既定で*は、Android 呼び出し可能ラッパーは、( [`RegisterAttribute`](xref:Android.Runtime.RegisterAttribute)を持つ) 仮想 java メソッドをオーバーライドしたり、java インターフェイスメソッドを実装したりする (特定の) 宣言されたコンストラクターとメソッドだけを格納します (インターフェイスも同様に `Attribute`ます)。
   
-4\.1 リリースより前のバージョンでは、追加のメソッドを宣言することはできませんでした。 4\.1 リリース[ `Export`では、 `ExportField`およびカスタム属性を使用して、Android 呼び出し可能ラッパー内の Java メソッドとフィールドを宣言でき](~/android/platform/java-integration/working-with-jni.md)ます。
+4\.1 リリースより前のバージョンでは、追加のメソッドを宣言することはできませんでした。 4\.1 リリースでは、 [`Export` および `ExportField` カスタム属性を使用して、Android 呼び出し可能ラッパー内の Java メソッドとフィールドを宣言でき](~/android/platform/java-integration/working-with-jni.md)ます。
 
 ### <a name="missing-constructors"></a>見つからないコンストラクター
 
-が使用されて[`ExportAttribute`](xref:Java.Interop.ExportAttribute)いる場合を除き、コンストラクターは注意してください。 Android 呼び出し可能ラッパーコンストラクターを生成するためのアルゴリズムは、次の場合に Java コンストラクターが生成されることを示します。
+[`ExportAttribute`](xref:Java.Interop.ExportAttribute)を使用しない限り、コンストラクターは注意してください。 Android 呼び出し可能ラッパーコンストラクターを生成するためのアルゴリズムは、次の場合に Java コンストラクターが生成されることを示します。
 
 1. すべてのパラメーターの型に対して Java マッピングが存在します
-2. 基本クラスは同じコンストラクター &ndash;を宣言します。これは、Android 呼び出し可能ラッパーが対応する基底クラスコンストラクターを呼び出す*必要*があるためです。既定の引数を使用することはできません (値を簡単に判断する方法はありません)。は Java 内で使用する必要があります)。
+2. この基本クラスでは、Android 呼び出し可能ラッパーが対応する基底クラスコンストラクターを呼び出す*必要*があるため、このコンストラクターが必要 &ndash; 同じコンストラクターが宣言されています。既定の引数は使用できません (Java 内で使用する必要がある値を簡単に判断する方法はありません)。
 
 たとえば、次のクラスを考えてみます。
 
@@ -47,7 +47,7 @@ class MyIntentService : IntentService {
 }
 ```
 
-これは完全に論理的に見えますが、*リリースビルドで*の Android 呼び出し可能ラッパーには既定のコンストラクターが含まれません。 そのため、このサービスを開始しようとすると[`Context.StartService`](xref:Android.Content.Context.StartService*)(たとえば、エラーが発生します。
+これは完全に論理的に見えますが、*リリースビルドで*の Android 呼び出し可能ラッパーには既定のコンストラクターが含まれません。 そのため、このサービスを開始しようとすると (たとえば、 [`Context.StartService`](xref:Android.Content.Context.StartService*)しようとすると失敗します。
 
 ```shell
 E/AndroidRuntime(31766): FATAL EXCEPTION: main
@@ -70,7 +70,7 @@ E/AndroidRuntime(31766):        at android.app.ActivityThread.handleCreateServic
 E/AndroidRuntime(31766):        ... 10 more
 ```
 
-これを回避するには、既定のコンストラクターを宣言し`ExportAttribute`、を使用し[`ExportAttribute.SuperStringArgument`](xref:Java.Interop.ExportAttribute.SuperArgumentsString)て装飾を設定し、次のように設定します。 
+この回避策は、既定のコンストラクターを宣言し、`ExportAttribute`を使用してそれを装飾し、 [`ExportAttribute.SuperStringArgument`](xref:Java.Interop.ExportAttribute.SuperArgumentsString)を設定することです。 
 
 ```csharp
 [Service]
@@ -88,7 +88,7 @@ class MyIntentService : IntentService {
 
 ジェネリックC#クラスは部分的にのみサポートされています。 次の制限事項があります。
 
-- ジェネリック型は、また`[Export]`は`[ExportField`を使用できません。 これを行おうとすると、 `XA4207`エラーが発生します。
+- ジェネリック型で `[Export]` または `[ExportField`] を使用することはできません。 これを行おうとすると、`XA4207` エラーが発生します。
 
     ```csharp
     public abstract class Parcelable<T> : Java.Lang.Object, IParcelable
@@ -101,7 +101,7 @@ class MyIntentService : IntentService {
     }
     ```
 
-- ジェネリックメソッドは、また`[Export]`は`[ExportField]`を使用できません。
+- ジェネリックメソッドで `[Export]` または `[ExportField]`を使用することはできません。
 
     ```csharp
     public class Example : Java.Lang.Object
@@ -116,7 +116,7 @@ class MyIntentService : IntentService {
     }
     ```
 
-- `[ExportField]`を返す`void`メソッドでは使用できません。
+- `[ExportField]` は、`void`を返すメソッドでは使用できません。
 
     ```csharp
     public class Example : Java.Lang.Object

@@ -2,15 +2,15 @@
 title: Android でのコールバック
 ms.prod: xamarin
 ms.assetid: F3A7A4E6-41FE-4F12-949C-96090815C5D6
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/14/2017
-ms.openlocfilehash: bfe12d84510707ff6e81aae2b5b20be7e9cacd59
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: f23f155a02422a3d04a0b14b282929ea63d60765
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70293064"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73007301"
 ---
 # <a name="callbacks-on-android"></a>Android でのコールバック
 
@@ -24,7 +24,7 @@ ms.locfileid: "70293064"
 
 ## <a name="abstract-classes"></a>抽象クラス
 
-これはコールバックの最も簡単なルートであるため、 `abstract`最も単純な形式で作業するコールバックを取得しようとしている場合は、を使用することをお勧めします。
+これはコールバックの最も簡単なルートであるため、最も単純な形式で動作するコールバックを取得しようとしている場合は、`abstract` を使用することをお勧めします。
 
 Java を実装するC#クラスから始めましょう。
 
@@ -43,11 +43,11 @@ public abstract class AbstractClass : Java.Lang.Object
 
 この作業を行うための詳細は次のとおりです。
 
-- `[Register]`Java では、適切なパッケージ名が生成されます。自動生成されたパッケージ名は取得されません。
-- Xamarin `Java.Lang.Object` Android の Java ジェネレーターを使用してクラスを実行するために、.net 埋め込みにシグナルをサブクラス化します。
+- `[Register]` は Java で適切なパッケージ名を生成します。自動生成されたパッケージ名を取得します。
+- .NET 埋め込みに `Java.Lang.Object` 信号をサブクラス化して、Xamarin Android の Java ジェネレーターを通じてクラスを実行します。
 - 空のコンストラクター: Java コードから使用するものです。
-- `(IntPtr, JniHandleOwnership)`コンストラクター: Xamarin は、 C#Java オブジェクトと同等のものを作成するために使用します。
-- `[Export]`メソッドを Java に公開するように Xamarin Android に通知します。 また、Java ワールドでは小文字のメソッドを使用することが気に入っているため、メソッド名を変更することもできます。
+- `(IntPtr, JniHandleOwnership)` コンストラクター: Java オブジェクトと同等のものを作成C#するために使用する Xamarin。
+- `[Export]` は、Java にメソッドを公開するように Xamarin Android に通知します。 また、Java ワールドでは小文字のメソッドを使用することが気に入っているため、メソッド名を変更することもできます。
 
 次に、シナリオをC#テストするメソッドを作成してみましょう。
 
@@ -63,7 +63,7 @@ public class JavaCallbacks : Java.Lang.Object
 }
 ```
 
-`JavaCallbacks`がである限り、これをテストする任意のクラスを指定`Java.Lang.Object`できます。
+`JavaCallbacks` は、`Java.Lang.Object`である限り、これをテストする任意のクラスにすることができます。
 
 次に、.net アセンブリで .NET 埋め込みを実行して、AAR を生成します。 詳細については、[はじめにガイド](~/tools/dotnet-embedding/get-started/java/android.md)を参照してください。
 
@@ -86,10 +86,10 @@ public void abstractCallback() throws Throwable {
 
 では、次のようにします。
 
-- 匿名型`AbstractClass`を使用して Java でを実装した
-- Java からインスタンスが返さ`"Java"`れるようにしました
-- インスタンスがから返される`"Java"`ことを確認しましたC#
-- コンストラクター `throws Throwable`が現在C#でマークされているため、が追加されました。`throws`
+- 匿名型を使用して Java で `AbstractClass` を実装します。
+- インスタンスが Java から `"Java"` を返すことを確認しました
+- インスタンスがから `"Java"` を返すようにしましたC#
+- コンストラクターが現在でC#マークされているため、`throws Throwable`が追加されました `throws`
 
 この単体テストをそのように実行した場合、次のようなエラーが発生して失敗します。
 
@@ -97,11 +97,11 @@ public void abstractCallback() throws Throwable {
 System.NotSupportedException: Unable to find Invoker for type 'Android.AbstractClass'. Was it linked away?
 ```
 
-ここでは、型に`Invoker`ついては説明しません。 これは、Java へ`AbstractClass`の呼び出しC#を転送するのサブクラスです。 Java オブジェクトが世界C#に入り、それに対応C#する型が abstract の場合、Xamarin Android は、コードC#内でC#使用する`Invoker`サフィックスを持つ型を自動的に検索します。
+ここには、`Invoker` の種類があります。 これは、Java への呼び出しをC#転送する `AbstractClass` のサブクラスです。 Java オブジェクトC#が世界に入り、それに対応C#する型が Abstract の場合、Xamarin Android は、コードC#内でC#使用するためにサフィックス`Invoker`を持つ型を自動的に検索します。
 
-Xamarin Android は、Java `Invoker`バインドプロジェクトにこのパターンを使用します。
+Xamarin Android では、このような `Invoker` パターンを Java バインドプロジェクトに使用します。
 
-次に、の`AbstractClassInvoker`実装を示します。
+`AbstractClassInvoker`の実装は次のとおりです。
 
 ```csharp
 class AbstractClassInvoker : AbstractClass
@@ -146,13 +146,13 @@ class AbstractClassInvoker : AbstractClass
 
 ここにはかなりのことがあります。
 
-- サブクラスのサフィックス`Invoker`を持つクラスを追加しました`AbstractClass`
-- クラスをサブクラス化する Java クラスへの JNI 参照を保持するために追加されまし`class_ref`た。 C#
-- `id_gettext` Java`getText`メソッドへの JNI 参照を保持するために追加されました
-- 含まれているコンストラクター `(IntPtr, JniHandleOwnership)`
-- を`ThresholdType` Xamarin `ThresholdClass` Android の要件として実装し、`Invoker`
-- `GetText`適切な JNI signature を`getText`使用して Java メソッドを参照して呼び出す必要があります
-- `Dispose`は、への参照をクリアするために必要なだけです。`class_ref`
+- サブクラスを `Invoker` サフィックスを持つクラスを追加しました `AbstractClass`
+- C#クラスをサブクラス化する Java クラスへの JNI 参照を保持するために `class_ref` を追加しました
+- Java `getText` メソッドへの JNI 参照を保持するために `id_gettext` を追加しました
+- `(IntPtr, JniHandleOwnership)` コンストラクターを含む
+- `ThresholdType` と `ThresholdClass` を Xamarin Android の要件として実装し、`Invoker` についての詳細を把握します。
+- 適切な JNI signature を使用して Java `getText` メソッドを参照して呼び出す必要が `GetText`
+- への参照をクリアするだけで `Dispose` が必要 `class_ref`
 
 このクラスを追加して新しい AAR を生成すると、単体テストは成功します。 コールバックのこのパターンは*理想的*ではありませんが、取り上げです。
 
@@ -173,7 +173,7 @@ public interface IJavaCallback : IJavaObject
 }
 ```
 
-`IJavaObject`.net に対して、これが Xamarin. Android インターフェイスであることを通知します。それ以外の`abstract`場合は、クラスとまったく同じです。
+`IJavaObject` は、これが Xamarin. Android インターフェイスであることを .NET に通知しますが、それ以外の場合は `abstract` クラスとまったく同じです。
 
 現在、Xamarin Android ではこのインターフェイスの Java コードが生成されないため、次の Java C#をプロジェクトに追加します。
 
@@ -185,9 +185,9 @@ public interface IJavaCallback {
 }
 ```
 
-ファイルは任意の場所に配置できますが、ビルドアクションをに`AndroidJavaSource`設定してください。 これにより、.NET 埋め込みが、AAR ファイルにコンパイルされるために適切なディレクトリにコピーされます。
+ファイルは任意の場所に配置できますが、必ずビルドアクションを `AndroidJavaSource`に設定してください。 これにより、.NET 埋め込みが、AAR ファイルにコンパイルされるために適切なディレクトリにコピーされます。
 
-次に`Invoker` 、実装はまったく同じになります。
+次に、`Invoker` の実装はまったく同じになります。
 
 ```csharp
 class IJavaCallbackInvoker : Java.Lang.Object, IJavaCallback
@@ -250,7 +250,7 @@ public void interfaceCallback() {
 
 ## <a name="virtual-methods"></a>仮想メソッド
 
-Java で`virtual`をオーバーライドすることは可能ですが、優れたエクスペリエンスではありません。
+Java で `virtual` をオーバーライドすることは可能ですが、優れたエクスペリエンスではありません。
 
 次C#のクラスを使用しているとします。
 
@@ -267,26 +267,26 @@ public class VirtualClass : Java.Lang.Object
 }
 ```
 
-上記のクラスの`abstract`例を実行した場合は、1つの詳細を除いて機能します。_Xamarin では、は`Invoker`検索されません_。
+上記の `abstract` クラスの例に従っている場合は、1つの詳細を除いて機能します。_Xamarin は `Invoker`を参照しません_。
 
-この問題を解決するにC#は、クラス`abstract`を次のように変更します。
+この問題を解決するにC#は、`abstract`するようにクラスを変更します。
 
 ```csharp
 public abstract class VirtualClass : Java.Lang.Object
 ```
 
-これは理想的ではありませんが、このシナリオは動作します。 Xamarin は、 `VirtualClassInvoker`を取得し、Java がメソッドで`@Override`使用できるようにします。
+これは理想的ではありませんが、このシナリオは動作します。 Xamarin Android は `VirtualClassInvoker` を取得し、Java はメソッドで `@Override` を使用できます。
 
 ## <a name="callbacks-in-the-future"></a>コールバック (将来)
 
 これらのシナリオを改善するには、いくつかの点があります。
 
-1. `throws Throwable`このC# [PR](https://github.com/xamarin/java.interop/pull/170)では、on コンストラクターが固定されています。
+1. この [PR](https://github.com/xamarin/java.interop/pull/170) C#では、コンストラクターの`throws Throwable` が修正されています。
 1. Java ジェネレーターを Xamarin. Android サポートインターフェイスで作成します。
-    - これにより、の`AndroidJavaSource`ビルドアクションを含む Java ソースファイルを追加する必要がなくなります。
-1. Xamarin Android で仮想クラス`Invoker`のを読み込む方法を作成します。
-    - これにより、この`virtual`例`abstract`でクラスをマークする必要がなくなります。
-1. .Net `Invoker`埋め込みクラスを自動的に生成する
+    - これにより、`AndroidJavaSource`のビルドアクションを含む Java ソースファイルを追加する必要がなくなります。
+1. Xamarin Android で仮想クラスの `Invoker` を読み込む方法を作成します。
+    - これにより、`virtual` の例 `abstract`でクラスをマークする必要がなくなります。
+1. .NET 埋め込み用の `Invoker` クラスを自動的に生成する
     - これは複雑になりますが、取り上げです。 Xamarin Android では、Java バインドプロジェクトの場合と同様の処理が既に実行されています。
 
 ここで実行する作業はたくさんありますが、.NET の埋め込みに対するこれらの機能強化が可能です。

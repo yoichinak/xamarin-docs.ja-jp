@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin iOS アプリケーショ�
 ms.prod: xamarin
 ms.assetid: B1994468-FD06-4FD9-96B3-FCEBB13A972A
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/11/2016
-ms.openlocfilehash: 4000e4cc5d260457c0e0da275e3a7beecafd1a98
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: eefe57abd4ebf4986411a1d717aebd131ebf408f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70767027"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73008343"
 ---
 # <a name="introduction-to-data-storage-in-xamarinios-apps"></a>Xamarin. iOS アプリのデータストレージの概要
 
@@ -54,13 +54,13 @@ SQLite は小規模で高速なので、使用に関していくつかの注意�
 - Table RENAME と ADDCOLUMN のみがサポートされています。 スキーマに対して他の変更を行うことはできません。
 - ビューは読み取り専用です。
 
-SQLite の詳細については、 [SQLite.org](http://SQLite.org)を参照してください。ただし、Xamarin で sqlite を使用するために必要なすべての情報は、このドキュメントおよび関連するサンプルに含まれています。 SQLite データベースエンジンは、すべてのバージョンの iOS に組み込まれています。
+SQLite の詳細については、 [SQLite.org](https://SQLite.org)を参照してください。ただし、Xamarin で sqlite を使用するために必要なすべての情報は、このドキュメントおよび関連するサンプルに含まれています。 SQLite データベースエンジンは、すべてのバージョンの iOS に組み込まれています。
 この章では説明しませんが、SQLite は Windows Phone および Windows アプリケーションでも使用できます。
 
 ## <a name="windows-and-windows-phone"></a>Windows および Windows Phone
 
 SQLite は Windows プラットフォームでも使用できますが、このドキュメントでは説明しません。
-詳細については、「 [Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)と[tasky Pro](http://docs.xamarin.com/guides/cross-platform/application_fundamentals/building_cross_platform_applications/case_study%3A_tasky)ケーススタディ」と「 [Tim heuer のブログ](http://timheuer.com/blog/archive/2012/06/28/seeding-your-metro-style-app-with-sqlite-database.aspx)」を参照してください。
+詳細については、「 [Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)のケーススタディ」と「 [Tim heuer のブログ](https://timheuer.com/blog/archive/2012/06/28/seeding-your-metro-style-app-with-sqlite-database.aspx)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 

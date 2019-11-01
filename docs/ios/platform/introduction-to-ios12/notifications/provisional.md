@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin を使用して仮の通�
 ms.prod: xamarin
 ms.assetid: 5DCB36B9-2637-48AE-8FC0-F6124F08AC48
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/04/2018
-ms.openlocfilehash: d321e8061d3091abeaa3cff6a6af9172c981cb60
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 7d9fe2a651d8d75d8dd9d8c0dd1225350a58373d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291199"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031887"
 ---
 # <a name="provisional-notifications-in-xamarinios"></a>Xamarin. iOS での仮通知
 
@@ -20,14 +20,14 @@ ms.locfileid: "70291199"
 
 通知センターでは、一時的な通知の配信を停止するか、仮の配信を継続するか、またはより目立つように配信を開始するかをユーザーが指定できます。
 
-## <a name="sample-app-redgreennotifications"></a>サンプルアプリ:RedGreenNotifications
+## <a name="sample-app-redgreennotifications"></a>サンプルアプリ: RedGreenNotifications
 
 仮の通知を送信する[RedGreenNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-redgreennotifications)サンプルアプリを見てみましょう。
 
 ## <a name="sending-provisional-notifications"></a>仮通知の送信
 
-仮通知を送信するに`UNAuthorizationOptions.Provisional`は、のオプションとしてを指定します。[`RequestAuthorization`](xref:UserNotifications.UNUserNotificationCenter.RequestAuthorization*)
-`UNUserNotificationCenter`方法:
+仮通知を送信するには、 [`RequestAuthorization`](xref:UserNotifications.UNUserNotificationCenter.RequestAuthorization*)にオプションとして `UNAuthorizationOptions.Provisional` を指定します
+`UNUserNotificationCenter`のメソッド:
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -41,7 +41,7 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 }
 ```
 
-ユーザーが仮の通知を目立つ配信に昇格する`UNAuthorizationOptions`と、に`RequestAuthorization`渡される値によって、新しい通知配信設定が決定`UNAuthorizationOptions.Alert`さ`UNAuthorizationOptions.Sound`れます (上のコードでは、と)。
+ユーザーが仮の通知を著名な配信に昇格すると、`RequestAuthorization` に渡される `UNAuthorizationOptions` の値によって、新しい通知配信設定が決定されます (上のコード、`UNAuthorizationOptions.Alert` および `UNAuthorizationOptions.Sound`)。
 
 ## <a name="related-links"></a>関連リンク
 

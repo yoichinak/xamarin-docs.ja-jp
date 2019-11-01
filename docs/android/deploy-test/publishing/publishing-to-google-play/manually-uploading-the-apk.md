@@ -3,15 +3,15 @@ title: APK を手動でアップロードする
 ms.prod: xamarin
 ms.assetid: 1309C251-ABF0-4412-B1F5-200DC8321A9D
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: 47dd1da8c82c47ee07ad2b4e5a22a32010462de2
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: b5b7a416cf67c217862987e7fa29bfb6a9692642
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756067"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021249"
 ---
 # <a name="manually-uploading-the-apk"></a>APK を手動でアップロードする
 
@@ -88,7 +88,7 @@ APK をアップロードした後は、テスト方法を選ぶことができ�
 
 [![[Content rating]\(コンテンツ レーティング\) セクション](manually-uploading-the-apk-images/11-content-rating-sml.png)](manually-uploading-the-apk-images/11-content-rating.png#lightbox)
 
-Google Play のすべてのアプリケーションは、Google Play レーティング システムに従ってレーティングされる必要があります。 コンテンツのレーティングに加えて、すべてのアプリケーションは Google の[開発者コンテンツ ポリシー](http://www.android.com/us/developer-content-policy.html)に従う必要があります。
+Google Play のすべてのアプリケーションは、Google Play レーティング システムに従ってレーティングされる必要があります。 コンテンツのレーティングに加えて、すべてのアプリケーションは Google の[開発者コンテンツ ポリシー](https://www.android.com/us/developer-content-policy.html)に従う必要があります。
 
 Google Play レーティング システムの 4 つのレベルと、レーティング レベルが必要とされるか適用される機能またはコンテンツのガイドラインを次に示します。 
 
@@ -131,7 +131,7 @@ Google Play では、無料のアプリケーションを有料に変更する�
 ### <a name="consent"></a>同意
 
 **[Pricing &amp; Distribution]\(価格と配布\)** ページの下部には **[CONSENT]\(同意\)** セクションがあります。
-これは必須セクションであり、アプリケーションが [Android コンテンツ ガイドライン](http://www.android.com/market/terms/developer-content-policy.html#hl=us)を満たしていることの宣言と、米国輸出法の対象であることの確認に使われます。
+これは必須セクションであり、アプリケーションが [Android コンテンツ ガイドライン](https://www.android.com/market/terms/developer-content-policy.html#hl=us)を満たしていることの宣言と、米国輸出法の対象であることの確認に使われます。
 
 [![[Consent]\(同意\) セクション](manually-uploading-the-apk-images/15-consent-sml.png)](manually-uploading-the-apk-images/15-consent.png#lightbox)
 

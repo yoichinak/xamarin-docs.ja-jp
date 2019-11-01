@@ -4,15 +4,15 @@ description: Android オペレーティングシステムでは、コンテン�
 ms.prod: xamarin
 ms.assetid: 6E1810AA-EB70-9AD0-1B32-D9418908CC97
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: 3dd321840c4be0729b843897ad51cf5bd2b61196
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 496e5c092c79f4f71bddaad30bea6acd1d58d375
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758913"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027541"
 ---
 # <a name="intro-to-contentproviders"></a>ContentProviders の概要
 
@@ -20,25 +20,25 @@ _Android オペレーティングシステムでは、コンテンツプロバ�
 
 ## <a name="content-providers-overview"></a>コンテンツプロバイダーの概要
 
-*Contentprovider*は、データリポジトリをカプセル化し、それにアクセスするための API を提供します。 プロバイダーは、通常、データを表示または管理するための UI も提供する Android アプリケーションの一部として存在します。 コンテンツプロバイダーを使用する主な利点は、他のアプリケーションがプロバイダークライアントオブジェクト ( *Contentresolver*と呼ばれます) を使用して、カプセル化されたデータに簡単にアクセスできるようにすることです。 また、コンテンツプロバイダーとコンテンツリゾルバーは、簡単に構築して使用できるデータアクセスのための一貫したアプリケーション間 API を提供します。 アプリケーションでは、を使用`ContentProviders`してデータを内部で管理したり、他のアプリケーションに公開したりすることもできます。
+*Contentprovider*は、データリポジトリをカプセル化し、それにアクセスするための API を提供します。 プロバイダーは、通常、データを表示または管理するための UI も提供する Android アプリケーションの一部として存在します。 コンテンツプロバイダーを使用する主な利点は、他のアプリケーションがプロバイダークライアントオブジェクト ( *Contentresolver*と呼ばれます) を使用して、カプセル化されたデータに簡単にアクセスできるようにすることです。 また、コンテンツプロバイダーとコンテンツリゾルバーは、簡単に構築して使用できるデータアクセスのための一貫したアプリケーション間 API を提供します。 アプリケーションでは、`ContentProviders` を使用して内部でデータを管理したり、他のアプリケーションに公開したりすることもできます。
 
-また`ContentProvider` 、は、アプリケーションがカスタムの検索候補を提供するために必要な場合や、アプリケーションから複雑なデータをコピーして他のアプリケーションに貼り付けることができるようにする場合にも必要です。 このドキュメントでは、Xamarin Android で`ContentProviders`にアクセスしてビルドする方法について説明します。
+また、アプリケーションでカスタムの検索候補を提供するために `ContentProvider` が必要な場合や、複雑なデータをアプリケーションからコピーして他のアプリケーションに貼り付けることができるようにする場合もあります。 このドキュメントでは、Xamarin Android で `ContentProviders` にアクセスしてビルドする方法について説明します。
 
 このセクションの構造は次のとおりです。
 
-- **しくみ**の設計と動作の`ContentProvider`概要について説明します。 &ndash;
+- **そのしくみ**&ndash;、`ContentProvider` の設計と動作の概要について説明します。
 
-- **コンテンツプロバイダーの**使用&ndash;連絡先リストにアクセスする例。
+- **コンテンツプロバイダー**の使用 &ndash;、連絡先リストにアクセスする例を示します。
 
-- **ContentProvider を使用してデータを共有する**同じアプリケーションでの`ContentProvider`の書き込みと使用。 &ndash;
+- **ContentProvider を使用してデータを共有**し、同じアプリケーションで `ContentProvider` を作成して使用 &ndash; ます。
 
-`ContentProviders`また、データを操作するカーソルは、ListViews を設定するために使用されることがよくあります。 これらのクラスの使用方法の詳細については、「 [Listviews And Adapters」ガイド](~/android/user-interface/layouts/list-view/index.md)を参照してください。
+`ContentProviders` と、そのデータを操作するカーソルは、ListViews を設定するためによく使用されます。 これらのクラスの使用方法の詳細については、「 [Listviews And Adapters」ガイド](~/android/user-interface/layouts/list-view/index.md)を参照してください。
 
-`ContentProviders`Android (または他のアプリケーション) によって公開されているので、アプリケーションの他のソースからのデータを簡単に含めることができます。 これらの機能を使用すると、アプリケーション内から連絡先リスト、写真、カレンダーイベントなどのデータにアクセスして表示し、ユーザーがそのデータを操作できるようになります。
+Android (または他のアプリケーション) によって公開される `ContentProviders` は、アプリケーションの他のソースからのデータを簡単に含めることができます。 これらの機能を使用すると、アプリケーション内から連絡先リスト、写真、カレンダーイベントなどのデータにアクセスして表示し、ユーザーがそのデータを操作できるようになります。
 
-カスタム`ContentProviders`は、独自のアプリ内で使用するデータをパッケージ化したり、他のアプリケーション (カスタム検索、コピー/貼り付けなどの特殊な用途を含む) で使用したりするための便利な方法です。
+カスタム `ContentProviders` は、独自のアプリ内で使用するデータをパッケージ化したり、他のアプリケーション (カスタム検索やコピー/貼り付けなどの特別な用途を含む) で使用したりするための便利な方法です。
 
-このセクションのトピックでは、コードの使用と記述`ContentProvider`の簡単な例をいくつか紹介します。
+このセクションのトピックでは、`ContentProvider` コードの使用と書き込みの簡単な例を示します。
 
 ## <a name="related-links"></a>関連リンク
 
@@ -50,5 +50,5 @@ _Android オペレーティングシステムでは、コンテンツプロバ�
 - [ListView クラスの参照](xref:Android.Widget.ListView)
 - [カーソルクラス参照のカーソル](xref:Android.Widget.CursorAdapter)
 - [UriMatcher クラスの参照](xref:Android.Content.UriMatcher)
-- [Android.Provider](xref:Android.Provider)
+- [Android. プロバイダー](xref:Android.Provider)
 - [ContactsContract クラスの参照](xref:Android.Provider.ContactsContract)

@@ -1,20 +1,20 @@
 ---
-title: 'ランタイム エラー: The assembly mscorlib.dll was not found or could not be loaded (アセンブリ mscorlib.dll が見つからないか、読み込めませんでした)'
+title: 'ランタイムエラー: アセンブリ mscorlib.dll が見つからなかったか、または読み込めませんでした'
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 1027E16C-2C14-4BB5-AAAB-342F3E28E22E
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/03/2018
-ms.openlocfilehash: a1c6c5357c62d0421376930ea04c4755fae59d04
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 1ca6aa8c08d51b91f6a31407328f8949062bbede
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769353"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031163"
 ---
-# <a name="runtime-error-the-assembly-mscorlibdll-was-not-found-or-could-not-be-loaded"></a>ランタイム エラー: The assembly mscorlib.dll was not found or could not be loaded (アセンブリ mscorlib.dll が見つからないか、読み込めませんでした)
+# <a name="runtime-error-the-assembly-mscorlibdll-was-not-found-or-could-not-be-loaded"></a>ランタイムエラー: アセンブリ mscorlib.dll が見つからなかったか、または読み込めませんでした
 
 ```
 <Warning>: The assembly mscorlib.dll was not found or could not be loaded.
@@ -22,4 +22,4 @@ ms.locfileid: "70769353"
 <Warning>: Service exited with abnormal code: 1
 ```
 
-この問題が発生するのは`.monotouch-64` 、署名/IPA 作成`.xcarchive`のためにで*非表示* `.monotouch-32`のおよびフォルダーが不足している場合に、ランタイムエラーがトリガーされることです。
+この問題は、署名/IPA 作成のために*非表示*の `.monotouch-32` と `.monotouch-64` フォルダーが `.xcarchive` にない場合に発生し、ランタイムエラーをトリガーします。

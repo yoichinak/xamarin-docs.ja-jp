@@ -3,15 +3,15 @@ title: クロスプラットフォームアプリケーションの構築の概�
 description: このドキュメントでは、クロスプラットフォームアプリケーションの構築の概要について説明します。 の値、MVC/ C#MVVM、ネイティブ ui などの設計パターンについて説明します。
 ms.prod: xamarin
 ms.assetid: E442EEFB-FA9C-40E9-9668-5A3F915C8400
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: c7673e7cd79844130117963bc56fd6e1b3c2b5c7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7d839e0141f14f4ba86897b128bf2a8c0a79548d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758109"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016910"
 ---
 # <a name="building-cross-platform-applications-overview"></a>クロスプラットフォームアプリケーションの構築の概要
 
@@ -26,7 +26,7 @@ Xamarin は、プラットフォームごとに固有のネイティブユーザ
 Xamarin クロスプラットフォームアプリを作成するための主要なポイントの概要を次に示します。
 
 - でアプリを作成します。 **C#** C# で記述されC#た既存のコードは、Xamarin を使用して IOS および Android に簡単に移植でき、Windows アプリでも使用できます。
-- **MVC または MVVM のデザインパターンを利用**する-モデル/ビュー/コントローラーパターンを使用してアプリケーションのユーザーインターフェイスを開発します。 モデル/ビュー/コントローラーアプローチを使用するか、"モデル" と rest の間に明確な分離があるモデル/ビュー/ビューモデルの方法を使用して、アプリケーションを設計します。 各プラットフォームのネイティブユーザーインターフェイス要素 (iOS、Android、Windows、Mac) を使用するアプリケーションの部分を決定し、これをガイドラインとして使用して、アプリケーションを2つのコンポーネントに分割します。"Core" と "User Interface"。
+- **MVC または MVVM のデザインパターンを利用**する-モデル/ビュー/コントローラーパターンを使用してアプリケーションのユーザーインターフェイスを開発します。 モデル/ビュー/コントローラーアプローチを使用するか、"モデル" と rest の間に明確な分離があるモデル/ビュー/ビューモデルの方法を使用して、アプリケーションを設計します。 アプリケーションのどの部分が各プラットフォームのネイティブユーザーインターフェイス要素 (iOS、Android、Windows、Mac) を使用するかを決定し、これをガイドラインとして使用して、"Core" と "User Interface" の2つのコンポーネントにアプリケーションを分割します。
 - **ネイティブ**Ui のビルド-OS 固有の各アプリケーションには、さまざまなユーザーインターフェイスレイヤーがC#用意されています (ネイティブの UI デザインツールを使用して、に実装されています)。
 
 1. IOS では、UIKit Api を使用してネイティブアプリケーションを作成し、必要に応じて Xamarin の iOS デザイナーを利用して UI を視覚的に作成できます。
@@ -53,7 +53,7 @@ Xamarin. Forms プロジェクトはすべてのプラットフォームでサ�
 
 アプリケーションアーキテクチャを階層化し、プラットフォームに依存しないコア機能を再利用可能なコアライブラリに移動することで、責任の分離の原則に従うことにより、次の図に示すように、プラットフォーム間でコード共有を最大化できます。図
 
- ![](overview-images/layers2.png "アプリケーションアーキテクチャを階層化し、プラットフォームに依存しないコア機能を再利用可能なコアライブラリに移動することで、責任の分離の原則に従うことで、プラットフォーム間でのコード共有を最大化できます。")
+ ![](overview-images/layers2.png "By following the principle of separation of responsibility by layering your application architecture and then moving core functionality that is platform agnostic into a reusable core library, you can maximize code sharing across platforms")
 
  <a name="Case_Studies" />
 

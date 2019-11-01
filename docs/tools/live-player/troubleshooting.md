@@ -3,15 +3,15 @@ title: Xamarin Live Player のトラブルシューティング
 description: このドキュメントでは、Xamarin Live Player および潜在的な修正に関する既知の問題について説明します。 接続の問題、構成に関する問題などについて説明します。
 ms.prod: xamarin
 ms.assetid: 29A97ADA-80E0-40A1-8B26-C68FFABE7D26
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/13/2019
-ms.openlocfilehash: 04a377bad42ff680247759036327035d61757b42
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d51241bee5f4ddc06032006071fa8296be37f2fb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290178"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73005938"
 ---
 # <a name="troubleshooting-xamarin-live-player"></a>Xamarin Live Player のトラブルシューティング
 
@@ -45,7 +45,7 @@ Live Player は iOS では使用できません。
 ### <a name="xamarinforms-limitations"></a>Xamarin. Forms の制限事項
 
 - カスタムレンダラーはサポートされていません。
-- エフェクトはサポートされていません。
+- 効果はサポートされていません。
 - カスタムバインド可能なプロパティを持つカスタムコントロールはサポートされていません。
 - 埋め込みリソースはサポートされていません (つまり、イメージや PCL 内の他のリソースを埋め込む)。
 - サードパーティの MVVM フレームワークはサポートされていません (ie。Prism、Mvvm、Mvvm など)。
@@ -74,7 +74,7 @@ Xamarin Live Player を実行しているモバイルデバイスが、IDE を�
 
 ## <a name="error-while-trying-to-deploy-message-in-ide"></a>IDE で "メッセージの展開中にエラーが発生しました" というメッセージが表示される
 
-**"IOException: トランスポート接続からデータを読み取ることができません:非ブロッキングソケットに対する操作は "**
+**"IOException: トランスポート接続からデータを読み取ることができません: 非ブロッキングソケットに対する操作はブロックされます"**
 
 このエラーは、Xamarin Live Player を実行しているモバイルデバイスが、Visual Studio を実行しているコンピューターと同じネットワーク上にない場合に発生することがよくあります。これは、以前に正常にペアリングされたデバイスに接続するときによく発生します。
 
@@ -87,32 +87,32 @@ Xamarin Live Player を実行しているモバイルデバイスが、IDE を�
 
 Wi-fi 経由でデバイスに接続できない場合は、次の手順に従って、構成ファイルを使用して手動でデバイスを構成することができます。
 
-**ステップ 1: 構成ファイルを開く**
+**手順 1: 構成ファイルを開く**
 
 アプリケーションデータフォルダーに移動します。
 
 - Windows: **%userprofile%\AppData\Roaming**
-- macOS: **~/Users/$USER/.config**
+- macOS: **~//.Config/$USER**
 
 このフォルダーには、 **PlayerDeviceList**が存在しない場合は、作成する必要があります。
 
-**手順 2:IP アドレスの取得**
+**手順 2: IP アドレスを取得する**
 
 Xamarin Live Player アプリで **> 接続テストの概要 > 接続テストを開始**します。
 
 IP アドレスをメモしておきます。デバイスを構成するときに、IP アドレスが表示されます。
 
-**手順 3:ペアリングコードを取得する**
+**手順 3: ペアリングコードを取得する**
 
 Xamarin Live Player 内で、**ペアリング**または**ペアをもう一度**タップし、Enter キーを**手動で**押します。 数値のコードが表示されます。構成ファイルを更新する必要があります。
 
-**手順 4:GUID の生成**
+**手順 4: GUID を生成する**
 
-移動: https://www.guidgenerator.com/online-guid-generator.aspx 新しい guid を生成して、大文字のことを確認します。
+にアクセスして、新しい guid を生成し、大文字がオンになっていることを確認します。 https://www.guidgenerator.com/online-guid-generator.aspx を参照してください。
 
-**手順 5: デバイスの構成**
+**手順 5: デバイスを構成する**
 
-Visual Studio や Visual Studio Code などのエディターで**PlayerDeviceList**を開きます。 このファイルでデバイスを手動で構成する必要があります。 既定では、ファイルには、次の`Devices`空の XML 要素が含まれている必要があります。
+Visual Studio や Visual Studio Code などのエディターで**PlayerDeviceList**を開きます。 このファイルでデバイスを手動で構成する必要があります。 既定では、ファイルには、次の空の `Devices` XML 要素が含まれている必要があります。
 
 ```xml
 <DeviceList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
@@ -154,7 +154,7 @@ Visual Studio や Visual Studio Code などのエディターで**PlayerDeviceLi
 public class SomeCustomButton : Xamarin.Forms.Button { ... }
 ```
 
-## <a name="mainactivitycs-resourcelayout-does-not-contain-a-definition-for-main"></a>"MainActivity.cs:' Resource. Layout ' に ' Main ' の定義が含まれていません
+## <a name="mainactivitycs-resourcelayout-does-not-contain-a-definition-for-main"></a>"MainActivity.cs: ' Resource. Layout ' に ' Main ' の定義が含まれていません
 
 このエラーは、AXML ファイルで定義されたユーザーインターフェイスを持つ Android プロジェクトに対して発生します。
 現在、Xamarin Live Player では、AXML ファイルはサポートされていません。

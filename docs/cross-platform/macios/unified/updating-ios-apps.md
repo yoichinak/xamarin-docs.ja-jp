@@ -3,15 +3,15 @@ title: 既存の iOS アプリを更新しています
 description: このドキュメントでは、Classic API から Unified API に Xamarin iOS アプリを更新するために従う必要がある手順について説明します。
 ms.prod: xamarin
 ms.assetid: 303C36A8-CBF4-48C0-9412-387E95024CAB
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: c74efef96a15a950122041eb52dc09835bb8940b
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 9b531bd095781c80c5f3418725d57f8f6bbb06fd
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279550"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73015026"
 ---
 # <a name="updating-existing-ios-apps"></a>既存の iOS アプリを更新しています
 
@@ -31,13 +31,13 @@ Xamarin には、Visual Studio for Mac と Visual Studio の両方のツール�
 
 ## <a name="automated-updating"></a>自動更新
 
-警告が修正されたら、Visual Studio for Mac または Visual Studio で既存の iOS プロジェクトを選択し、 **[プロジェクト]** メニューから **[Xamarin. IOS Unified API に移行]** を選択します。 例えば:
+警告が修正されたら、Visual Studio for Mac または Visual Studio で既存の iOS プロジェクトを選択し、 **[プロジェクト]** メニューから **[Xamarin. IOS Unified API に移行]** を選択します。 (例:
 
-![](updating-ios-apps-images/beta-tool1.png "[プロジェクト] メニューから [Xamarin. iOS Unified API に移行する] を選択します。")
+![](updating-ios-apps-images/beta-tool1.png "Choose Migrate to Xamarin.iOS Unified API from the Project menu")
 
 自動移行を実行する前に、この警告に同意する必要があります (当然、この adventure 着手の前にバックアップとソース管理があることを確認する必要があります)。
 
-![](updating-ios-apps-images/beta-tool2.png "自動移行を実行する前に、この警告に同意します")
+![](updating-ios-apps-images/beta-tool2.png "Agree to this warning before the automated migration will run")
 
 このツールでは、次に示す「**手動で更新**する」セクションで説明されているすべての手順が基本的に自動化されており、既存の Xamarin iOS プロジェクトを Unified API に変換するための推奨される方法です。
 
@@ -47,45 +47,45 @@ Xamarin には、Visual Studio for Mac と Visual Studio の両方のツール�
 
 ### <a name="1-update-project-type--build-target"></a>1. ビルドターゲット & プロジェクトの種類を更新します
 
-**.Csproj**ファイルのプロジェクトフレーバーをから`6BC8ED88-2882-458C-8E55-DFD12B67127B`に`FEACFBD2-3405-455C-9665-78FE426C6842`変更します。 テキストエディターで **.csproj**ファイルを編集し、次に示すように、 `<ProjectTypeGuids>`要素の最初の項目を置き換えます。
+**.Csproj**ファイルのプロジェクトフレーバーを `6BC8ED88-2882-458C-8E55-DFD12B67127B` から `FEACFBD2-3405-455C-9665-78FE426C6842`に変更します。 テキストエディターで **.csproj**ファイルを編集し、次に示すように `<ProjectTypeGuids>` 要素の最初の項目を置き換えます。
 
-![](updating-ios-apps-images/csproj.png "テキストエディターで .csproj ファイルを編集し、表示されているように ProjectTypeGuids 要素の最初の項目を置き換えます。")
+![](updating-ios-apps-images/csproj.png "Edit the csproj file in a text editor, replacing the first item in the ProjectTypeGuids element as shown")
 
-次に示すように、 `Xamarin.MonoTouch.CSharp.targets`を`Xamarin.iOS.CSharp.targets`含む Import 要素をに変更します。
+次に示すように、`Xamarin.MonoTouch.CSharp.targets` を含む**Import**要素を `Xamarin.iOS.CSharp.targets` に変更します。
 
-![](updating-ios-apps-images/csproj2.png "Monotouch.dialog が含まれている Import 要素を、図に示すように変更します。")
+![](updating-ios-apps-images/csproj2.png "Change the Import element that contains Xamarin.MonoTouch.CSharp.targets to Xamarin.iOS.CSharp.targets as shown")
 
-### <a name="2-update-project-references"></a>2. プロジェクト参照の更新
+### <a name="2-update-project-references"></a>2. プロジェクト参照を更新する
 
 IOS アプリケーションプロジェクトの **[参照設定]** ノードを展開します。 最初に、このスクリーンショットのような * **monotouch.dialog**の参照が表示されます (プロジェクトの種類を変更しただけなので)。
 
-![](updating-ios-apps-images/references.png "プロジェクトの種類が変更されたため、このスクリーンショットのような monotouch.dialog 参照が最初に表示されます。")
+![](updating-ios-apps-images/references.png "It will initially show a broken- monotouch reference similar to this screenshot because the project type changed")
 
 IOS アプリケーションプロジェクトを右クリックして**参照を編集**し、 **[monotouch.dialog]** 参照をクリックして、赤い [X] ボタンを使用して削除します。
 
-![](updating-ios-apps-images/references-delete-monotouch-sml.png "IOS アプリケーションプロジェクトを右クリックして参照を編集し、[monotouch.dialog] 参照をクリックして、赤い X ボタンを使用して削除します。")
+![](updating-ios-apps-images/references-delete-monotouch-sml.png "Right-click on the iOS application project to Edit References, then click on the monotouch reference and delete it using the red X button")
 
 次に、[参照] 一覧の末尾までスクロールし、 **Xamarin. iOS**アセンブリをティックします。
 
-![](updating-ios-apps-images/references-add-xamarinios-sml.png "次に、[参照] の一覧の最後までスクロールし、Xamarin. iOS アセンブリをティックします。")
+![](updating-ios-apps-images/references-add-xamarinios-sml.png "Now scroll to the end of the references list and tick the Xamarin.iOS assembly")
 
 **[OK]** をクリックして、プロジェクト参照の変更を保存します。
 
-### <a name="3-remove-monotouch-from-namespaces"></a>3.名前空間からの Monotouch.dialog の削除
+### <a name="3-remove-monotouch-from-namespaces"></a>3. 名前空間から Monotouch.dialog を削除する
 
-ステートメント内の`using`名前空間から、または classname が完全に修飾されている場所 (例を含む) から monotouch.dialog プレフィックスを削除します。 `MonoTouch.UIKit`がだけ`UIKit`になります)。
+`using` ステートメント内の名前空間から、または classname が完全に修飾されている場所 (例を含む) から、 **monotouch.dialog**プレフィックスを削除します。 `MonoTouch.UIKit` が `UIKit`) になります。
 
-### <a name="4-remap-types"></a>4.型の再マップ
+### <a name="4-remap-types"></a>4. リマップ型
 
-以前に使用されていたいくつかの型`CoreGraphics.CGRect` (たとえば、の`System.Drawing.RectangleF`インスタンス) を置き換える[ネイティブ型](~/cross-platform/macios/nativetypes.md)が導入されました。 型の完全な一覧については、「[ネイティブ型](~/cross-platform/macios/nativetypes.md)」ページを参照してください。
+以前に使用されていたいくつかの型を置き換える[ネイティブ型](~/cross-platform/macios/nativetypes.md)が導入されました。たとえば、`System.Drawing.RectangleF` のインスタンス (など) `CoreGraphics.CGRect` に置き換えられます。 型の完全な一覧については、「[ネイティブ型](~/cross-platform/macios/nativetypes.md)」ページを参照してください。
 
-### <a name="5-fix-method-overrides"></a>5。メソッドのオーバーライドを修正する
+### <a name="5-fix-method-overrides"></a>5. メソッドのオーバーライドを修正する
 
-一部`UIKit`のメソッドでは、新しい[ネイティブ型](~/cross-platform/macios/nativetypes.md)( `nint`など) を使用するようにシグネチャが変更されています。 カスタムサブクラスでこれらのメソッドをオーバーライドすると、署名が一致しなくなり、エラーが発生します。 ネイティブ型を使用して新しいシグネチャに一致するようにサブクラスを変更することで、これらのメソッドのオーバーライドを修正します。
+一部の `UIKit` メソッドでは、新しい[ネイティブ型](~/cross-platform/macios/nativetypes.md)(`nint`など) を使用するようにシグネチャが変更されています。 カスタムサブクラスでこれらのメソッドをオーバーライドすると、署名が一致しなくなり、エラーが発生します。 ネイティブ型を使用して新しいシグネチャに一致するようにサブクラスを変更することで、これらのメソッドのオーバーライドを修正します。
 
-例とし`public override int NumberOfSections (UITableView tableView)`て、 `nint`戻り値の変更と、の戻り値`public override int RowsInSection (UITableView tableView, int section)`の`nint`型とパラメーターの型の両方をに変更する方法があります。
+たとえば、`public override int NumberOfSections (UITableView tableView)` を変更して `nint` を返し、`public override int RowsInSection (UITableView tableView, int section)` の戻り値の型とパラメーターの型の両方を `nint`に変更することができます。
 
-## <a name="considerations"></a>考慮事項
+## <a name="considerations"></a>注意事項
 
 アプリが1つ以上のコンポーネントまたは NuGet パッケージに依存している場合は、既存の Xamarin の iOS プロジェクトを Classic API から新しい Unified API に変換する際には、次の点に注意する必要があります。
 

@@ -3,30 +3,30 @@ title: 統合のデバッグ
 description: このドキュメントでは、Windows と Mac でエージェント側とクライアント側の両方の Xamarin Workbooks 統合をデバッグする方法について説明します。
 ms.prod: xamarin
 ms.assetid: 90143544-084D-49BF-B44D-7AF943668F6C
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/19/2018
-ms.openlocfilehash: fbb5673a70328ad6edde78af1b35d2801fe65ca8
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 3030bf907d1ddbb02884f997f178b55950b442d4
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283925"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73018816"
 ---
 # <a name="debugging-integrations"></a>統合のデバッグ
 
 ## <a name="debugging-agent-side-integrations"></a>エージェント側の統合のデバッグ
 
-エージェント側の統合のデバッグは、の`Log` `Xamarin.Interactive.Logging`クラスによって提供されるログ記録メソッドを使用して行うことをお勧めします。
+エージェント側の統合のデバッグは、`Xamarin.Interactive.Logging`の `Log` クラスによって提供されるログ記録メソッドを使用して行うことをお勧めします。
 
 MacOS では、ログメッセージは、[ログビューアー] メニュー (**ウィンドウ > ログビューアー**) とクライアントログの両方に表示されます。 Windows では、ログビューアーが存在しないため、メッセージはクライアントログにのみ表示されます。
 
 クライアントログは、macOS および Windows 上の次の場所にあります。
 
-- Mac`~/Library/Logs/Xamarin/Workbooks/Xamarin Workbooks {date}.log`
+- Mac: `~/Library/Logs/Xamarin/Workbooks/Xamarin Workbooks {date}.log`
 - Windows: `%LOCALAPPDATA%\Xamarin\Workbooks\logs\Xamarin Workbooks {date}.log`
 
-注意すべき1つの点は、開発時に通常`#r`のメカニズムを使用して統合を読み込む場合、統合アセンブリがブックの_依存関係_として取得され、絶対パスが使用されていない場合にパッケージによってパッケージ化されることです。 これにより、統合を再構築しても何も行わなかったように、変更が反映されないように見える場合があります。
+注意すべき点として、開発時に通常の `#r` メカニズムを使用して統合を読み込む場合、統合アセンブリはブックの_依存関係_として取得され、絶対パスが使用されていない場合はパッケージとしてパッケージ化されます。 これにより、統合を再構築しても何も行わなかったように、変更が反映されないように見える場合があります。
 
 ## <a name="debugging-client-side-integrations"></a>クライアント側の統合のデバッグ
 
@@ -48,7 +48,7 @@ defaults write com.xamarin.Workbooks WebKitDeveloperExtras -bool true
 
 この設定は再起動のみを目的としているため、新しいブックで有効にするには、ブッククライアントを再起動する必要があります。 コンテキストメニューまたは基本設定を使用して開発者ツールをアクティブ化すると、使い慣れた Safari UI が表示されます。
 
-[![Safari 開発ツール](debugging-images/mac-dev-tools.png)](debugging-images/mac-dev-tools.png#lightbox)
+[Safari 開発ツールの![](debugging-images/mac-dev-tools.png)](debugging-images/mac-dev-tools.png#lightbox)
 
 Safari 開発者ツールの使用方法の詳細については、 [WebKit inspector のドキュメント][webkit-docs]を参照してください。
 

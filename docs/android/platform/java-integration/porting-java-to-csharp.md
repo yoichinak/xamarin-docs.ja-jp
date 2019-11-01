@@ -4,15 +4,15 @@ description: Xamarin Android アプリケーションで Java を使用するた
 ms.prod: xamarin
 ms.assetid: 39E528BD-010F-47FC-BE48-8E7848E30454
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/05/2016
-ms.openlocfilehash: c6627f585326848c5221729ca94071b00651c59e
-ms.sourcegitcommit: b07e0259d7b30413673a793ebf4aec2b75bb9285
+ms.openlocfilehash: 8f96fcc4aadcd8f082d55dc568b2517f048edaf2
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68511173"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73027190"
 ---
 # <a name="porting-java-to-c-for-xamarinandroid"></a>Java を Xamarin C# Android に移植する
 
@@ -27,8 +27,8 @@ Java コードをにC#移植するには、次の2つの方法があります。
 2番目の移植方法では、[シャープ](https://github.com/mono/sharpen)などのコードコンバーターを使用してプロセスを自動化します。 [シャープ](https://github.com/mono/sharpen)は、Versant からのオープンソースコンバーターでC#あり、当初は Java から*db4o*のコードを移植するために使用されていました。 db4o は、Java で開発した後、.NET に移植されたオブジェクト指向データベースです。 コードコンバーターの使用は、両方の言語に存在する必要があり、2つの間に何らかのパリティを必要とするプロジェクトに適しています。
 
 たとえば、自動化されたコード変換ツールを使用すると、 [ngit](https://github.com/mono/ngit)プロジェクトでそのようなことがわかります。
-Ngit は、Java プロジェクト[jgit](http://eclipse.org/)のポートです。
-Jgit 自体は、 [Git](http://git-scm.com/)ソースコード管理システムの Java 実装です。 Java からC#コードを生成するには、ngit プログラマーはカスタム自動化システムを使用して Jgit から java コードを抽出し、変換プロセスに対応するためにいくつかの修正プログラムC#を適用してから、コードを生成するシャープを実行します。 これにより、ngit プロジェクトは、jgit で実行される継続的な継続的な作業の恩恵を受けることができます。
+Ngit は、Java プロジェクト[jgit](https://eclipse.org/)のポートです。
+Jgit 自体は、 [Git](https://git-scm.com/)ソースコード管理システムの Java 実装です。 Java からC#コードを生成するには、ngit プログラマーはカスタム自動化システムを使用して Jgit から java コードを抽出し、変換プロセスに対応するためにいくつかの修正プログラムC#を適用してから、コードを生成するシャープを実行します。 これにより、ngit プロジェクトは、jgit で実行される継続的な継続的な作業の恩恵を受けることができます。
 
 多くの場合、自動化されたコード変換ツールのブートストラップに関連する作業量はごくわずかであり、これは使用する障壁であることが証明されます。 多くの場合、Java C#を手動で移植する方が簡単で簡単です。
 

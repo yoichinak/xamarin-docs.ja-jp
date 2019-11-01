@@ -3,19 +3,19 @@ title: ToggleButton
 ms.prod: xamarin
 ms.assetid: 9ADA8FCF-63ED-897A-DD56-D7D86535A92C
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/06/2018
-ms.openlocfilehash: 56372bb643cab545529d6a4a89c804471f3344bc
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: fe444d255beb9c08b4b5bcf5de36a8740e503b55
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762456"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029298"
 ---
 # <a name="togglebutton"></a>ToggleButton
 
-このセクションでは、 [`ToggleButton`](xref:Android.Widget.ToggleButton)ウィジェットを使用して2つの状態を切り替えるために使用するボタンを作成します。 相互に排他的な2つの単純な状態 ("オン" と "オフ" など) がある場合、このウィジェットは、オプションボタンの代わりに適しています。 Android 4.0 (API レベル 14) では、 [`Switch`](xref:Android.Widget.Switch)と呼ばれるトグルボタンの代わりにが導入されました。
+このセクションでは、 [`ToggleButton`](xref:Android.Widget.ToggleButton)ウィジェットを使用して、2つの状態を切り替えるために使用するボタンを作成します。 相互に排他的な2つの単純な状態 ("オン" と "オフ" など) がある場合、このウィジェットは、オプションボタンの代わりに適しています。 Android 4.0 (API レベル 14) では、 [`Switch`](xref:Android.Widget.Switch)と呼ばれるトグルボタンの代替手段が導入されました。
 
 **トグル**ボタンの例は、イメージの左側のペアで確認できます。一方、イメージの右側のペアは**スイッチ**の例を示しています。
 
@@ -23,9 +23,9 @@ ms.locfileid: "70762456"
 
 アプリケーションが使用するコントロールは、スタイルに関係しています。 どちらのウィジェットも機能的に同等です。
 
-**Resources/layout/Main. axml**ファイルを開き、 [`ToggleButton`](xref:Android.Widget.ToggleButton) [`LinearLayout`](xref:Android.Widget.LinearLayout)要素 (内) を追加します。
+**Resources/layout/Main. axml**ファイルを開き、 [`ToggleButton`](xref:Android.Widget.ToggleButton)要素 ( [`LinearLayout`](xref:Android.Widget.LinearLayout)内) を追加します。
 
-状態が変更されたときに操作を行うには、の末尾に次のコードを追加します。[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
+状態が変更されたときに操作を実行するには、の末尾に次のコードを追加し[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
 b
 
 ```csharp
@@ -40,14 +40,14 @@ togglebutton.Click += (o, e) => {
 };
 ```
 
-これをキャプチャ、 [ `ToggleButton` ](xref:Android.Widget.ToggleButton)要素をレイアウトから、ボタンがクリックされたときに実行するアクションを定義するをクリック イベントを処理します。 この例では、メソッドによってボタンの新しい状態がチェックされ[`Toast`](xref:Android.Widget.Toast) 、現在の状態を示すメッセージが表示されます。
+これにより、レイアウトから[`ToggleButton`](xref:Android.Widget.ToggleButton)要素がキャプチャされ、クリックイベントが処理されます。このイベントは、ボタンがクリックされたときに実行するアクションを定義します。 この例では、メソッドはボタンの新しい状態をチェックし、現在の状態を示す[`Toast`](xref:Android.Widget.Toast)メッセージを表示します。
 
-では、 [`ToggleButton`](xref:Android.Widget.ToggleButton) checked と unchecked の間で独自の状態の変更が処理されるので、それを確認するだけです。
+[`ToggleButton`](xref:Android.Widget.ToggleButton)によって、checked と unchecked の間で独自の状態変更が処理されるので、それを確認するだけです。
 
 アプリケーションを実行します。
 
 > [!TIP]
-> 状態を自分で変更する必要がある場合 (保存され[`CheckBoxPreference`](xref:Android.Preferences.CheckBoxPreference)たの読み込み時など) は、[`Checked`](xref:Android.Widget.CompoundButton.Checked)
+> 状態を自分で変更する必要がある場合 (保存されている[`CheckBoxPreference`](xref:Android.Preferences.CheckBoxPreference)を読み込む場合など) は、 [`Checked`](xref:Android.Widget.CompoundButton.Checked)を使用します。
 > プロパティセッターまたは[`Toggle()`](xref:Android.Widget.CompoundButton.Toggle)
 > メソッドをオーバーライドします。
 

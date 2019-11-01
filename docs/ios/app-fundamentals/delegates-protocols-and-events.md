@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin. iOS でイベント、プ
 ms.prod: xamarin
 ms.assetid: 7C07F0B7-9000-C540-0FC3-631C29610447
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/17/2017
-ms.openlocfilehash: d42263733c7fa793713738be4b389eaa4850f38b
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: b63d5dcd8ac1a82c1f120cc5a690985557f7e68f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "68649359"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73004395"
 ---
 # <a name="events-protocols-and-delegates-in-xamarinios"></a>Xamarin. iOS のイベント、プロトコル、およびデリゲート
 
@@ -52,7 +52,7 @@ aButton.TouchUpInside += delegate {
 };
 ```
 
-前のコードは、UIViewController の `ViewDidLoad` メソッドに接続されています。 @No__t_0 変数は、iOS デザイナーまたはコードで追加できるボタンを参照します。 次の図は、iOS デザイナーに追加されたボタンを示しています。
+前のコードは、UIViewController の `ViewDidLoad` メソッドに接続されています。 `aButton` 変数は、iOS デザイナーまたはコードで追加できるボタンを参照します。 次の図は、iOS デザイナーに追加されたボタンを示しています。
 
 [![](delegates-protocols-and-events-images/02-interface-builder-outlet-sml.png "A button added in iOS Designer")](delegates-protocols-and-events-images/02-interface-builder-outlet.png#lightbox)
 
@@ -152,7 +152,7 @@ Xamarin. iOS の目的の C プロトコルを使用した例を見てみまし�
 
  [![](delegates-protocols-and-events-images/04-annotation-with-callout-sml.png "Example text for the callout when the user taps on the annotation")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
 
-次のセクション「[プロトコルの詳細](#protocols-deep-dive)」で説明されているように、Xamarin. iOS は、プロトコルを抽象クラスにバインドします。 @No__t_0 プロトコルの場合、バインドC#されたクラスには `MKAnnotation` という名前が付けられ、プロトコルの名前が模倣されます。これは、CocoaTouch のルート基本クラスである `NSObject` のサブクラスです。 このプロトコルでは、座標に対して getter と setter が実装されている必要があります。ただし、タイトルとサブタイトルは省略可能です。 したがって、`MKAnnotation` クラスでは、`Coordinate` プロパティは*abstract*であり、実装する必要があります。また、次に示すように、`Title` および `Subtitle` プロパティは*virtual*に設定されており、省略可能です。
+次のセクション「[プロトコルの詳細](#protocols-deep-dive)」で説明されているように、Xamarin. iOS は、プロトコルを抽象クラスにバインドします。 `MKAnnotation` プロトコルの場合、バインドC#されたクラスには`MKAnnotation`という名前が付けられ、プロトコルの名前が模倣されます。これは、CocoaTouch のルート基本クラスである`NSObject`のサブクラスです。 このプロトコルでは、座標に対して getter と setter が実装されている必要があります。ただし、タイトルとサブタイトルは省略可能です。 したがって、`MKAnnotation` クラスでは、`Coordinate` プロパティは*abstract*であり、実装する必要があります。また、次に示すように、`Title` および `Subtitle` プロパティは*virtual*に設定されており、省略可能です。
 
 ```csharp
 [Register ("MKAnnotation"), Model ]
@@ -225,9 +225,9 @@ var sampleCoordinate =
 map.AddAnnotation (new SampleMapAnnotation (sampleCoordinate));
 ```
 
-Map 変数は、マップ自体を表すクラスである `MKMapView` のインスタンスです。 @No__t_0 は、`SampleMapAnnotation` インスタンスから派生した `Coordinate` データを使用して、注釈ビューをマップに配置します。
+Map 変数は、マップ自体を表すクラスである `MKMapView` のインスタンスです。 `MKMapView` は、`SampleMapAnnotation` インスタンスから派生した `Coordinate` データを使用して、注釈ビューをマップに配置します。
 
-@No__t_0 プロトコルは、実装を実装するオブジェクト全体で既知の一連の機能を提供します。コンシューマー (この場合は map) は実装の詳細を知る必要がありません。 これにより、さまざまな注釈をマップに追加することが効率化されます。
+`MKAnnotation` プロトコルは、実装を実装するオブジェクト全体で既知の一連の機能を提供します。コンシューマー (この場合は map) は実装の詳細を知る必要がありません。 これにより、さまざまな注釈をマップに追加することが効率化されます。
 
 ### <a name="protocols-deep-dive"></a>プロトコルの詳細
 
@@ -270,9 +270,9 @@ iOS では、目的 C のデリゲートを使用して委任パターンを実�
 ここでは、マップへの注釈の追加をサポートするためのプロトコルの使用方法について説明しました。
 また、プロトコルを使用して、特定のイベントが発生した後にクラスが呼び出す既知のメソッドのセットを提供します。たとえば、ユーザーがマップ上で注釈をタップした後や、テーブル内のセルを選択した後などです。 これらのメソッドを実装するクラスは、それらを呼び出すクラスのデリゲートと呼ばれます。
 
-デリゲートをサポートするクラスは、デリゲートを実装するクラスが割り当てられるデリゲートプロパティを公開することによってこれを行います。 デリゲートに実装するメソッドは、特定のデリゲートによって適用されるプロトコルによって異なります。 @No__t_0 メソッドでは、`UITableViewDelegate` プロトコルを実装します。 `UIAccelerometer` メソッドの場合は、`UIAccelerometerDelegate` を実装し、その他のすべてのクラスに対して、デリゲートを公開する必要があります。
+デリゲートをサポートするクラスは、デリゲートを実装するクラスが割り当てられるデリゲートプロパティを公開することによってこれを行います。 デリゲートに実装するメソッドは、特定のデリゲートによって適用されるプロトコルによって異なります。 `UITableView` メソッドでは、`UITableViewDelegate` プロトコルを実装します。 `UIAccelerometer` メソッドの場合は、`UIAccelerometerDelegate`を実装し、その他のすべてのクラスに対して、デリゲートを公開する必要があります。
 
-前の例で説明した `MKMapView` クラスには、デリゲートと呼ばれるプロパティもあります。このプロパティは、さまざまなイベントが発生した後に呼び出されます。 @No__t_0 のデリゲートの型は `MKMapViewDelegate` です。
+前の例で説明した `MKMapView` クラスには、デリゲートと呼ばれるプロパティもあります。このプロパティは、さまざまなイベントが発生した後に呼び出されます。 `MKMapView` のデリゲートの型は `MKMapViewDelegate`です。
 ここでは、選択した後に注釈に応答する例をすぐに使用しますが、まず、厳密なデリゲートと弱いデリゲートの違いについて説明します。
 
 ### <a name="strong-delegates-vs-weak-delegates"></a>強いデリゲートと弱いデリゲート
@@ -282,7 +282,7 @@ iOS では、目的 C のデリゲートを使用して委任パターンを実�
 
 ### <a name="example-using-a-delegate-with-xamarinios"></a>Xamarin でデリゲートを使用する例
 
-この例では、ユーザーが注釈をタップしたときにコードを実行するために `MKMapViewDelegate` をサブクラス化し、インスタンスを `MKMapView` の `Delegate` プロパティに割り当てることができます。 @No__t_0 プロトコルには、省略可能なメソッドのみが含まれています。
+この例では、ユーザーが注釈をタップしたときにコードを実行するために `MKMapViewDelegate` をサブクラス化し、インスタンスを `MKMapView` の `Delegate` プロパティに割り当てることができます。 `MKMapViewDelegate` プロトコルには、省略可能なメソッドのみが含まれています。
 そのため、すべてのメソッドは、Xamarin. iOS `MKMapViewDelegate` クラスのこのプロトコルにバインドされた仮想です。 ユーザーが注釈を選択すると、`MKMapView` インスタンスによって `mapView:didSelectAnnotationView:` メッセージがデリゲートに送信されます。 これを Xamarin. iOS で処理するには、次のように MKMapViewDelegate サブクラスの `DidSelectAnnotationView (MKMapView mapView, MKAnnotationView annotationView)` メソッドをオーバーライドする必要があります。
 
 ```csharp
@@ -333,7 +333,7 @@ public partial class Protocols_Delegates_EventsViewController : UIViewController
 }
 ```
 
-弱いデリゲートを使用して同じことを実現するには、メソッドを `NSObject` から派生した任意のクラスで自分でバインドし、`MKMapView` の `WeakDelegate` プロパティに割り当てる必要があります。 @No__t_0 クラスは最終的には `NSObject` (CocoaTouch のすべてのクラスなど) から派生するため、`mapView:didSelectAnnotationView:` にバインドされたメソッドをコントローラーに直接実装し、コントローラーを `MKMapView` の `WeakDelegate` に割り当てるだけで、余分な入れ子になったクラス。 次のコードは、この方法を示しています。
+弱いデリゲートを使用して同じことを実現するには、メソッドを `NSObject` から派生した任意のクラスで自分でバインドし、`MKMapView` の `WeakDelegate` プロパティに割り当てる必要があります。 `UIViewController` クラスは最終的に、`NSObject` (CocoaTouch のすべての目標 C クラスなど) から派生するため、`mapView:didSelectAnnotationView:` にバインドされたメソッドをコントローラーに直接実装し、コントローラーを `MKMapView`の `WeakDelegate`に割り当てるだけで、追加の入れ子になったクラス。 次のコードは、この方法を示しています。
 
 ```csharp
 public partial class Protocols_Delegates_EventsViewController : UIViewController
@@ -355,13 +355,13 @@ public partial class Protocols_Delegates_EventsViewController : UIViewController
 }
 ```
 
-このコードを実行すると、厳密に型指定されたデリゲートバージョンを実行したときとまったく同じように動作します。 このコードの利点は、弱いデリゲートでは、厳密に型指定されたデリゲートを使用したときに作成された追加のクラスを作成する必要がないことです。 ただし、これにはタイプセーフのコストが伴います。 @No__t_0 に渡されたセレクターで間違いを犯した場合、実行可能になるまではわかりません。
+このコードを実行すると、厳密に型指定されたデリゲートバージョンを実行したときとまったく同じように動作します。 このコードの利点は、弱いデリゲートでは、厳密に型指定されたデリゲートを使用したときに作成された追加のクラスを作成する必要がないことです。 ただし、これにはタイプセーフのコストが伴います。 `ExportAttribute`に渡されたセレクターで間違いを犯した場合、実行可能になるまではわかりません。
 
 ### <a name="events-and-delegates"></a>イベントとデリゲート
 
 デリゲートは、.NET でのイベントの使用方法と同様に、iOS のコールバックに使用されます。 IOS Api を作成し、目的の C のデリゲートを使用する方法が .NET と似ているようにするために、ios ではデリゲートが多くの場所で .NET に公開されています。
 
-たとえば、選択した注釈に `MKMapViewDelegate` が応答した以前の実装は、.NET イベントを使用して Xamarin に実装することもできます。 この場合、イベントは `MKMapView` で定義され `DidSelectAnnotationView` と呼ばれます。 @No__t_1 型の `EventArgs` サブクラスを持つことになります。 次に示すように、`MKMapViewAnnotationEventsArgs` の [`View`] プロパティには、注釈ビューへの参照が表示されます。ここでは、前に示したのと同じ実装を続行できます。
+たとえば、選択した注釈に `MKMapViewDelegate` が応答した以前の実装は、.NET イベントを使用して Xamarin に実装することもできます。 この場合、イベントは `MKMapView` で定義され `DidSelectAnnotationView` と呼ばれます。 `MKMapViewAnnotationEventsArgs`型の `EventArgs` サブクラスを持つことになります。 次に示すように、`MKMapViewAnnotationEventsArgs` の [`View`] プロパティには、注釈ビューへの参照が表示されます。ここでは、前に示したのと同じ実装を続行できます。
 
 ```csharp
 map.DidSelectAnnotationView += (s,e) => {

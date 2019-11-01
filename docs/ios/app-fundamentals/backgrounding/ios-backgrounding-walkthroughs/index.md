@@ -4,15 +4,15 @@ description: このドキュメントでは、backgrounded アプリで位置情
 ms.prod: xamarin
 ms.assetid: D4937080-7865-48C0-8FE5-310E90229BC3
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 340f5d614b268a68460c749c4844784fdc8cacf8
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1cda1284854572779d22d3942ef4ee577cba5ff1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70286869"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73004605"
 ---
 # <a name="ios-backgrounding-walkthroughs"></a>iOS バックグラウンド処理のチュートリアル
 
@@ -22,4 +22,4 @@ ms.locfileid: "70286869"
 
 ## <a name="walkthrough---using-background-transfer-service-and-nsurlsessioniosapp-fundamentalsbackgroundingios-backgrounding-walkthroughsbackground-transfer-walkthroughmd"></a>[チュートリアル - バックグラウンド転送サービスと NSURLSession の使用](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/background-transfer-walkthrough.md)
 
-このチュートリアルでは、バックグラウンド転送サービスと`NSURLSession` API を使用して、アプリがバックグラウンドで動作しているときにダウンロードを続ける大きなイメージのダウンロードを開始します。
+このチュートリアルでは、バックグラウンド転送サービスと `NSURLSession` API を使用して、アプリがバックグラウンドで動作しているときにダウンロードを続ける大きなイメージのダウンロードを開始します。

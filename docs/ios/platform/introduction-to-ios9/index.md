@@ -4,21 +4,21 @@ description: この記事では、iOS 9 for Xamarin の開発者が利用でき�
 ms.prod: xamarin
 ms.assetid: 4D71BBD9-B948-4B59-9AF5-F199C51CBEB3
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 3ce1c802fb276e271cddc75e8ebabd2237d84d39
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: db398947b5f13963febae7d25a7898af21600813
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70751996"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031779"
 ---
 # <a name="introduction-to-ios-9"></a>iOS 9 の概要
 
 _この記事では、iOS 9 for Xamarin の開発者が利用できる、新しい Api と変更された Api と機能について説明します。_
 
-![](images/ios9-sml.png "IOS 9 ロゴ")
+![](images/ios9-sml.png "The iOS 9 logo")
 
 Apple では、iOS 9 に新しい Api とサービスがいくつか追加されており、既存の機能に多くの機能強化が加えられています。
 
@@ -50,7 +50,7 @@ IOS 9 では、Apple は、特定の iPad ハードウェアで同時に2つの�
 
 IPad のマルチタスキングは、次の機能によってサポートされています。
 
-- **スライドオーバー** -ユーザーが、現在実行されているメインアプリの約 25% をカバーするスライドアウトパネル (言語の方向に基づいて、画面の右側または左側) で2番目の iOS アプリを一時的に実行できるようにします。 スライドショーは、iPad Pro、iPad Air、iPad Air 2、iPad ミニ2、iPad ミニ3、iPad ミニ4でのみ利用できます。
+- **スライドオーバー** -ユーザーが、現在実行されているメインアプリの約25% をカバーするスライドアウトパネル (言語の方向に基づいて、画面の右側または左側) で2番目の iOS アプリを一時的に実行できるようにします。 スライドショーは、iPad Pro、iPad Air、iPad Air 2、iPad ミニ2、iPad ミニ3、iPad ミニ4でのみ利用できます。
 - **分割ビュー** -サポートされている ipad ハードウェア (ipad Air 2、ipad ミニ4、ipad Pro のみ) では、ユーザーは2つ目のアプリを選択して、現在実行中のアプリと並べて分割画面モードで実行できます。 ユーザーは、各アプリが占めるメイン画面の割合を制御できます。
 - **画像の画像-ビデオ**コンテンツを再生するアプリでは、iOS デバイスで現在実行されている他のアプリの周囲にある、移動してサイズ変更が可能なウィンドウでビデオを再生できるようになりました。 ユーザーは、このウィンドウのサイズと位置を完全に制御できます。 画像の画像は、iPad Pro、iPad Air、iPad Air 2、iPad ミニ2、iPad ミニ3、iPad ミニ4でのみ使用できます。
 
@@ -121,7 +121,7 @@ IOS 9 では、使用ポリシーを定義する新しい_拡張ポイント_を
 
 - **新しいオーディオユニット拡張ポイント**-この拡張ポイントを使用して、他のオーディオユニットホストアプリ (GarageBand など) で使用するオーディオ効果、音楽楽器、サウンドジェネレーターなどを提供します。 また、この拡張ポイントを使用すると、_オーディオユニット_(オーディオプラグイン) をアプリストアで販売することもできます。
 - **新しいインデックスメンテナンス拡張ポイント**—この拡張ポイントを使用して、アプリの再起動を必要とせずにアプリデータのインデックスの再作成をサポートします。
-- **新しいネットワーク拡張ポイント**(Apple からの特別なアクセス許可が必要です):
+- **新しいネットワーク拡張ポイント**(Apple からの特別なアクセス許可が必要):
   - **アプリケーションプロキシプロバイダーの拡張**—この拡張ポイントを使用して、カスタムの透過的なクライアント側ネットワークプロキシを実装します。
   - **フィルター Data Provider/フィルターコントロールプロバイダー拡張機能**-これらの拡張ポイントを使用して、デバイス上で動的なネットワークコンテンツフィルターを実装します。
   - **パケットトンネルプロバイダーの拡張機能**—この拡張ポイントを使用して、カスタム VPN トンネリングプロトコルクライアント側を実装します。
@@ -137,15 +137,15 @@ IOS 9 では、次のように、Secure エンクレーブおよびその他の�
 
 - フィンガープリントデータベースが変更されたときにキーチェーン項目を無効にする新しい Touch ID 制約。
 - タッチ ID またはパスコードのみを含む Access Control リストエントリを作成できる新しい制約。
-- `SecItem`呼び出しとは別に認証を呼び出せるようにする新しい認証コンテキスト。
+- `SecItem` 呼び出しとは別に認証を呼び出せるようにする新しい認証コンテキスト。
 - アプリによって提供されるキーチェーン項目の暗号化に対して、Access Control リストエントロピ (アプリケーションパスワードオプションを使用)。
-- (属性を`kSecAttrTokenIDSecureEnclave`使用して) secure エンクレーブ内でのキーの生成と使用のサポート。
+- (`kSecAttrTokenIDSecureEnclave` 属性を使用して) secure エンクレーブ内でのキーの生成と使用のサポート。
 
 詳細については、「 [TOUCH ID](~/ios/platform/touchid.md)ドキュメントの概要」を参照してください。
 
 ## <a name="right-to-left-language-support"></a>右から左へ記述する言語サポート
 
-IOS 9 では、右から左へ記述する言語を完全にサポートすることにより、以前よりも簡単にフリップされたユーザーインターフェイスを提供してきました。 これには、次の内容が含まれます。
+IOS 9 では、右から左へ記述する言語を完全にサポートすることにより、以前よりも簡単にフリップされたユーザーインターフェイスを提供してきました。 次に例を示します。
 
 - 標準の[Uikit](xref:UIKit)コントロールは、iOS デバイスのロケールと言語の設定に基づいて、右から左に自動的に反転されます。
 - [Uiview](xref:UIKit.UIView)クラスには、右から左に反転したときに特定のビューを表示する方法を定義できる属性が用意されています。
@@ -177,8 +177,8 @@ Apple は、上記で説明した主な変更に加えて、次のような iOS 
 Apple では、iOS 9 の次の Api と関数が非推奨とされています。
 
 - アドレス帳 & アドレス帳**ui** -これらの api は、Contact および contact ui フレームワークに置き換えられました。 詳細については、[連絡先と連絡先の UI](~/ios/platform/contacts.md)に関するドキュメントを参照してください。
-- **CBCentralManager** - `RetrievePeripherals` iOS 9 `RetrieveConnectedPeripherals`では、 `CBCentralManager`クラスのメソッドとメソッドが削除されています。 これらのメソッドを呼び出すと、アクセサリをペアリングするとき、またはアプリを起動するときに、アプリがクラッシュします。
-- **FetchAllChanges** - `CKFetchRecordChangesOperation`クラス`FetchAllChanges`のは、減価償却されており、iOS 9 では削除されます。
+- **CBCentralManager** -`CBCentralManager` クラスの `RetrievePeripherals` および `RetrieveConnectedPeripherals` メソッドは、iOS 9 では削除されています。 これらのメソッドを呼び出すと、アクセサリをペアリングするとき、またはアプリを起動するときに、アプリがクラッシュします。
+- **FetchAllChanges** -`CKFetchRecordChangesOperation` クラスの `FetchAllChanges` は減価償却されており、iOS 9 では削除されます。
 - **Media Player** -Media Player framework は、iOS 9 では非推奨となりました。 代わりに、AVKit または AV Foundation Api を使用してください。
 
 特定の API 廃止の完全な一覧については、Apple の[iOS 9.0 api の相違](https://developer.apple.com/library/prerelease/ios/releasenotes/General/iOS90APIDiffs/index.html#//apple_ref/doc/uid/TP40016222)点に関するドキュメントを参照してください。
@@ -193,7 +193,7 @@ Apple では、iOS 9 の次の Api と関数が非推奨とされています。
 - [MusicMotion](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-musicmotion)
 - [PhotoProgress](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-photoprogress)
 - [SegueCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-seguecatalog)
-- [StackView](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StackView)
+- [System.windows.forms.toolstrip.stackview](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StackView)
 - [StickyCorners](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StickyCorners)
 
 また、これらのサンプルの iOS 部分も確認してください (コンパニオン Mac OS X バージョン)。

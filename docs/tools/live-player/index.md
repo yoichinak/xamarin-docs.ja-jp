@@ -3,15 +3,15 @@ title: Xamarin. Forms の Xamarin Live Player
 description: このドキュメントでは、Xamarin の Xamarin Live Player について説明します。インストール、Xamarin Live Player アプリ、Xamarin Live Player で使用するサンプル、制限事項、およびトラブルシューティングについて説明します。
 ms.prod: xamarin
 ms.assetid: 19B1F126-866E-4672-92D2-BE2B70ACF0F1
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/13/2019
-ms.openlocfilehash: 02a4f5970e1c94385316c80b53d8262f47db6c60
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: d5f3fb2a793f658334555aae3328e69134b2666a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278843"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029675"
 ---
 # <a name="xamarin-live-player-for-xamarinforms"></a>Xamarin. Forms の Xamarin Live Player
 
@@ -27,7 +27,7 @@ ms.locfileid: "70278843"
 
 ## <a name="how-xamarin-live-player-worked"></a>Xamarin Live Player の動作
 
-[![Xamarin Live Player:コード、スキャン、テスト](images/xamarin-live.png)](images/xamarin-live-sml.png#lightbox)
+[![Xamarin Live Player: コード、スキャン、テスト](images/xamarin-live.png)](images/xamarin-live-sml.png#lightbox)
 
 1. **[設定]** で*Xamarin Live Player*を有効にし、 **[デバイス]** の一覧からデバイスを選択します。
 2. Live Player デバイスを管理して、デバイスを Visual Studio とペアリングする QR コードをスキャンします。

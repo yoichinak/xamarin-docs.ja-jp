@@ -3,15 +3,15 @@ title: 'クロスプラットフォームアプリのケーススタディ: Task
 description: このドキュメントでは、Tasky ポータブルサンプルアプリケーションをクロスプラットフォームモバイルアプリケーションとして設計および構築する方法について説明します。 アプリの要件、インターフェイス、データモデル、コア機能、実装などについて説明します。
 ms.prod: xamarin
 ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 246ee002404fdf6fe1120c19701aceb3c2dee7db
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: e38fc0d23c65189f51f7f8f159a07894b3e1ab72
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "71249784"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030334"
 ---
 # <a name="cross-platform-app-case-study-tasky"></a>クロスプラットフォームアプリのケーススタディ: Tasky
 
@@ -95,7 +95,7 @@ Tasky ポータブルは、共通コードを共有するためのポータブ�
 
 ![](case-study-tasky-images/portable-project.png "When deployed, each native app will reference that library")
 
-次のクラス図は、レイヤーごとにグループ化されたクラスを示しています。 @No__t_0 クラスは、Sqlite-NET パッケージの定型コードです。 クラスの残りの部分は Tasky のカスタムコードです。 @No__t_0 クラスと `TaskItem` クラスは、プラットフォーム固有のアプリケーションに公開されている API を表します。
+次のクラス図は、レイヤーごとにグループ化されたクラスを示しています。 `SQLiteConnection` クラスは、Sqlite-NET パッケージの定型コードです。 クラスの残りの部分は Tasky のカスタムコードです。 `TaskItemManager` クラスと `TaskItem` クラスは、プラットフォーム固有のアプリケーションに公開されている API を表します。
 
  [![](case-study-tasky-images/classdiagram-core.png "The TaskItemManager and TaskItem classes represent the API that is exposed to the platform-specific applications")](case-study-tasky-images/classdiagram-core.png#lightbox)
 
@@ -115,9 +115,9 @@ Tasky ポータブルは、共通コードを共有するためのポータブ�
 
 データ層には、データベース、フラットファイル、またはその他のメカニズムのいずれであるかにかかわらず、データの物理的なストレージを行うコードが含まれています。 Tasky データレイヤーは2つの部分で構成されます。 SQLite-NET ライブラリと、それを接続するためのカスタムコードです。
 
-Tasky は、(Frank Kreuger によって発行された) Sqlite-net nuget パッケージを使用して、オブジェクトリレーショナルマッピング (ORM) データベースインターフェイスを提供する SQLite-NET コードを埋め込みます。 @No__t_0 クラスは `SQLiteConnection` から継承し、SQLite にデータを読み書きするために必要な Create、Read、Update、Delete (CRUD) の各メソッドを追加します。 これは、他のプロジェクトで再利用できる汎用 CRUD メソッドの単純な定型的な実装です。
+Tasky は、(Frank Kreuger によって発行された) Sqlite-net nuget パッケージを使用して、オブジェクトリレーショナルマッピング (ORM) データベースインターフェイスを提供する SQLite-NET コードを埋め込みます。 `TaskItemDatabase` クラスは `SQLiteConnection` から継承し、SQLite にデータを読み書きするために必要な Create、Read、Update、Delete (CRUD) の各メソッドを追加します。 これは、他のプロジェクトで再利用できる汎用 CRUD メソッドの単純な定型的な実装です。
 
-@No__t_0 はシングルトンであり、すべてのアクセスが同じインスタンスに対して行われることを保証します。 ロックは、複数のスレッドからの同時アクセスを防ぐために使用されます。
+`TaskItemDatabase` はシングルトンであり、すべてのアクセスが同じインスタンスに対して行われることを保証します。 ロックは、複数のスレッドからの同時アクセスを防ぐために使用されます。
 
  <a name="SQLite_on_WIndows_Phone" />
 
@@ -188,7 +188,7 @@ public T GetItem<T> (int id) where T : BL.Contracts.IBusinessEntity, new ()
 
 ### <a name="data-access-layer-dal"></a>データアクセス層 (DAL)
 
-@No__t_0 クラスは、`TaskItem` オブジェクトの作成、削除、取得、および更新を可能にする、厳密に型指定された API を使用してデータストレージメカニズムをカプセル化します。
+`TaskItemRepository` クラスは、`TaskItem` オブジェクトの作成、削除、取得、および更新を可能にする、厳密に型指定された API を使用してデータストレージメカニズムをカプセル化します。
 
  <a name="Using_Conditional_Compilation" />
 
@@ -241,7 +241,7 @@ Tasky では、モデルは `TaskItem` クラスで、`TaskItemManager` ファ�
 
 ### <a name="api-for-platform-specific-code"></a>プラットフォーム固有のコードの API
 
-共通コードが記述されたら、ユーザーインターフェイスを作成して、それによって公開されたデータを収集して表示する必要があります。 @No__t_0 クラスは、ファサードパターンを実装して、アプリケーションコードにアクセスするための単純な API を提供します。
+共通コードが記述されたら、ユーザーインターフェイスを作成して、それによって公開されたデータを収集して表示する必要があります。 `TaskItemManager` クラスは、ファサードパターンを実装して、アプリケーションコードにアクセスするための単純な API を提供します。
 
 各プラットフォーム固有のプロジェクトで記述されたコードは、通常、そのデバイスのネイティブ SDK に密結合され、`TaskItemManager` によって定義された API を使用してのみ共通コードにアクセスします。 これには、`TaskItem` など、公開するメソッドとビジネスクラスが含まれます。
 
@@ -283,7 +283,7 @@ IOS アプリはプラットフォーム固有の SDK ライブラリを参照�
 - **編集ソース**–このクラスは、タスクのリストをユーザーインターフェイスにバインドするために使用されます。 タスク一覧には `MonoTouch.Dialog` が使用されているため、このヘルパーを実装して、`UITableView` でスワイプアンド削除機能を有効にする必要があります。 スワイプ-delete は iOS では一般的ですが、Android や Windows Phone ではありません。そのため、iOS 固有のプロジェクトは、それを実装する唯一のものです。
 - **Taskdialog** -このクラスは、1つのタスクを UI にバインドするために使用されます。 この例では、`MonoTouch.Dialog` リフレクション API を使用して、正しい属性を含むクラスを使用して `TaskItem` オブジェクトを ' wrap ' します。これにより、入力画面を正しく書式設定できます。
 
-@No__t_0 クラスは、`MonoTouch.Dialog` 属性を使用して、クラスのプロパティに基づいて画面を作成します。 クラスは次のようになります。
+`TaskDialog` クラスは、`MonoTouch.Dialog` 属性を使用して、クラスのプロパティに基づいて画面を作成します。 クラスは次のようになります。
 
 ```csharp
 public class TaskDialog {
@@ -310,7 +310,7 @@ public class TaskDialog {
 }
 ```
 
-@No__t_0 の属性にはメソッド名が必要であることに注意してください。これらのメソッドは、`MonoTouch.Dialog.BindingContext` が作成されるクラス (この場合は次のセクションで説明する `HomeScreen` クラス) に存在する必要があります。
+`OnTap` の属性にはメソッド名が必要であることに注意してください。これらのメソッドは、`MonoTouch.Dialog.BindingContext` が作成されるクラス (この場合は次のセクションで説明する `HomeScreen` クラス) に存在する必要があります。
 
  <a name="User_Interface_Layer_(UI)" />
 
@@ -326,7 +326,7 @@ public class TaskDialog {
 
 #### <a name="home-screen"></a>ホーム画面
 
-ホーム画面は、SQLite データベースからのタスクの一覧を表示する `MonoTouch.Dialog` 画面です。 @No__t_0 から継承し、コードを実装して、表示する `TaskItem` オブジェクトのコレクションを格納するように `Root` を設定します。
+ホーム画面は、SQLite データベースからのタスクの一覧を表示する `MonoTouch.Dialog` 画面です。 `DialogViewController` から継承し、コードを実装して、表示する `TaskItem` オブジェクトのコレクションを格納するように `Root` を設定します。
 
  [![](case-study-tasky-images/ios-taskylist.png "It inherits from DialogViewController and implements code to set the Root to contain a collection of TaskItem objects for display")](case-study-tasky-images/ios-taskylist.png#lightbox)
 
@@ -351,7 +351,7 @@ Tasky は `MonoTouch.Dialog` のリフレクション API を使用して画面�
 
 1. **Showtaskdetails** –画面を表示するための `MonoTouch.Dialog.BindingContext` を作成します。 このメソッドは、リフレクションを使用して入力画面を作成し、`TaskDialog` クラスからプロパティ名と型を取得します。 入力ボックスのウォーターマークテキストなどの追加情報は、プロパティの属性を使用して実装されます。
 2. **Savetask** –このメソッドは、`OnTap` 属性を使用して `TaskDialog` クラスで参照されます。 このメソッドは、 **[保存]** を押したときに呼び出され、`TaskItemManager` を使用して変更を保存する前に、`MonoTouch.Dialog.BindingContext` を使用してユーザーが入力したデータを取得します。
-3. **Deletetask** –このメソッドは、`OnTap` 属性を使用して `TaskDialog` クラスで参照されます。 @No__t_0 を使用して、主キー (ID プロパティ) を使用してデータを削除します。
+3. **Deletetask** –このメソッドは、`OnTap` 属性を使用して `TaskDialog` クラスで参照されます。 `TaskItemManager` を使用して、主キー (ID プロパティ) を使用してデータを削除します。
 
  <a name="Android_App" />
 

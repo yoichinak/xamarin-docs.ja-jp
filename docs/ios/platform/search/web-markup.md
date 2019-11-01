@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin iOS アプリにリンク�
 ms.prod: xamarin
 ms.assetid: 876315BA-2EF9-4275-AE33-A3A494BBF7FD
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 52da0cfcab56c0acd339f4f0a0f2456a66d002a8
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 3d5db2f060b59fc689bea99141342b0447ac8933
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769479"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031524"
 ---
 # <a name="search-with-web-markup-in-xamarinios"></a>Xamarin で Web マークアップを使用して検索する
 
@@ -20,12 +20,12 @@ Web サイトを介してコンテンツへのアクセスを提供するアプ�
 
 IOS アプリが既にモバイルディープリンクをサポートしていて、web サイトにアプリ内のコンテンツへのディープリンクが表示されている場合、Apple の_Applebot_ web クローラーはこのコンテンツのインデックスを作成し、クラウドインデックスに自動的に追加します。
 
-[![](web-markup-images/webmarkup01.png "クラウドインデックスの概要")](web-markup-images/webmarkup01.png#lightbox)
+[![](web-markup-images/webmarkup01.png "Cloud Index overview")](web-markup-images/webmarkup01.png#lightbox)
 
 Apple は、これらの結果をスポットライト検索および Safari 検索結果に表示します。
 ユーザーがこれらの結果のいずれかをタップした場合 (およびアプリがインストールされている場合)、アプリのコンテンツに移動します。
 
-[![](web-markup-images/webmarkup02.png "検索結果の web サイトからのディープリンク")](web-markup-images/webmarkup02.png#lightbox)
+[![](web-markup-images/webmarkup02.png "Deep linking from a website in search results")](web-markup-images/webmarkup02.png#lightbox)
 
 ## <a name="enabling-web-content-indexing"></a>Web コンテンツのインデックス作成を有効にする
 
@@ -63,7 +63,7 @@ IOS 9 の新機能であるユニバーサルリンクを使用すると、次�
 
 ## <a name="using-twitter-cards"></a>Twitter カードの使用
 
-Twitter カードを使用して、アプリのコンテンツへのディープリンクを提供できます。 例えば:
+Twitter カードを使用して、アプリのコンテンツへのディープリンクを提供できます。 (例:
 
 ```html
 <meta name="twitter:app:name:iphone" content="AppName">
@@ -71,11 +71,11 @@ Twitter カードを使用して、アプリのコンテンツへのディープ
 <meta name="twitter:app:url:iphone" content="AppNameURL">
 ```
 
-詳細については、Twitter の[Twitter カードのプロトコル](http://dev.twitter.com/cards/mobile)に関するドキュメントを参照してください。
+詳細については、Twitter の[Twitter カードのプロトコル](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards)に関するドキュメントを参照してください。
 
 ## <a name="using-facebook-app-links"></a>Facebook アプリリンクの使用
 
-Facebook アプリリンクを使用して、アプリのコンテンツへのディープリンクを提供できます。 例えば:
+Facebook アプリリンクを使用して、アプリのコンテンツへのディープリンクを提供できます。 (例:
 
 ```html
 <meta property="al:ios:app_name" content="AppName">
@@ -83,11 +83,11 @@ Facebook アプリリンクを使用して、アプリのコンテンツへの�
 <meta property="al:ios:url" content="AppNameURL">
 ```
 
-詳細については、Facebook の[アプリリンク](http://applinks.org)に関するドキュメントを参照してください。
+詳細については、Facebook の[アプリリンク](https://developers.facebook.com/docs/applinks)に関するドキュメントを参照してください。
 
 ## <a name="opening-deep-links"></a>ディープリンクを開く
 
-Xamarin. iOS アプリでディープリンクを開いて表示するためのサポートを追加する必要があります。 **AppDelegate.cs**ファイルを編集し、 `OpenURL`メソッドをオーバーライドしてカスタム URL 形式を処理します。 例えば:
+Xamarin. iOS アプリでディープリンクを開いて表示するためのサポートを追加する必要があります。 **AppDelegate.cs**ファイルを編集し、`OpenURL` メソッドをオーバーライドして、カスタム URL 形式を処理します。 (例:
 
 ```csharp
 public override bool OpenUrl (UIApplication application, NSUrl url, string sourceApplication, NSObject annotation)
@@ -113,7 +113,7 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 }
 ```
 
-上のコードでは、要求されたコンテンツを`/appname`ユーザーに表示するため`query`に`123` 、(この例では) の値をアプリのカスタムビューコントローラーに渡すとを含む URL を探しています。
+上記のコードでは、`/appname` を含む URL を探し、`query` (この例では`123`) の値をアプリのカスタムビューコントローラーに渡して、要求されたコンテンツをユーザーに表示します。
 
 ## <a name="providing-rich-results-with-structured-data"></a>構造化データを使用した豊富な結果の提供
 
@@ -121,7 +121,7 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 
 豊富な結果を得ることができ、より多くのユーザーを魅力的して、クラウドベースの検索インデックスの順位を向上させることができます。
 
-構造化データマークアップを提供するオプションの1つに、Open Graph を使用する方法があります。 例えば:
+構造化データマークアップを提供するオプションの1つに、Open Graph を使用する方法があります。 (例:
 
 ```html
 <meta property="og:image" content="http://company.com/appname/icon.jpg">
@@ -129,9 +129,9 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 <meta property="og:video" content="http://company.com/appname/tutorial.mp4">
 ```
 
-詳細については、「 [Open Graph](http://ogp.me) 」 web サイトを参照してください。
+詳細については、「 [Open Graph](https://ogp.me) 」 web サイトを参照してください。
 
-構造化データマークアップのもう1つの一般的な形式は、schema. org のマイクロデータ形式です。 例えば:
+構造化データマークアップのもう1つの一般的な形式は、schema. org のマイクロデータ形式です。 (例:
 
 ```html
 <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
@@ -152,7 +152,7 @@ public override bool OpenUrl (UIApplication application, NSUrl url, string sourc
 
 Web サイトのメタデータの例を次に示します。この例では、リッチな検索結果をエンドユーザーに提供しています。
 
-[![](web-markup-images/deeplink01.png "構造化データマークアップを使用したリッチな検索結果")](web-markup-images/deeplink01.png#lightbox)
+[![](web-markup-images/deeplink01.png "Rich search results via Structured Data Markup")](web-markup-images/deeplink01.png#lightbox)
 
 現在、Apple は schema.org からの次のスキーマの種類をサポートしています。
 
@@ -160,12 +160,12 @@ Web サイトのメタデータの例を次に示します。この例では、�
 - ImageObject
 - InteractionCount
 - 提案
-- 組織
+- 部門
 - PriceRange
 - レシピ
 - SearchAction
 
-これらのスキームの種類の詳細については、 [schema.org](http://schema.org)を参照してください。
+これらのスキームの種類の詳細については、 [schema.org](https://schema.org)を参照してください。
 
 ## <a name="providing-actions-with-structured-data"></a>構造化データを使用したアクションの提供
 

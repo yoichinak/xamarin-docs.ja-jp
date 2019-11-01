@@ -4,15 +4,15 @@ description: この記事では、キーと値のコードを使用して、Xcod
 ms.prod: xamarin
 ms.assetid: 72594395-0737-4894-8819-3E1802864BE7
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 0caed670e09c268bce4fe66cd5857313ac8ed174
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 81a1f63078a5f7a2a70f731d1790f85f4283d22f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70770001"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030217"
 ---
 # <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>Xamarin. Mac でのデータバインディングとキー値のコーディング
 
@@ -135,7 +135,7 @@ namespace MacDatabinding
 
 ### <a name="getting-values-using-key-value-coding"></a>キー値のコードを使用した値の取得
 
-@No__t_0 メソッドは、要求を受け取る KVC クラスのインスタンスに対して、指定されたキー (`NSString`) の値を返します。 たとえば、`Person` が、上で定義された `PersonModel` クラスのインスタンスである場合は、次のようになります。
+`ValueForKey` メソッドは、要求を受け取る KVC クラスのインスタンスに対して、指定されたキー (`NSString`) の値を返します。 たとえば、`Person` が、上で定義された `PersonModel` クラスのインスタンスである場合は、次のようになります。
 
 ```csharp
 // Read value
@@ -153,7 +153,7 @@ var name = Person.ValueForKey (new NSString("Name"));
 Person.SetValueForKey(new NSString("Jane Doe"), new NSString("Name"));
 ```
 
-@No__t_0 プロパティの値を `Jane Doe` に変更します。
+`Name` プロパティの値を `Jane Doe`に変更します。
 
 <a name="Observing_Value_Changes" />
 
@@ -334,7 +334,7 @@ public NSArray People {
 次の2つの点に注意してください。
 
 1. これは、 C# **テーブルビュー**、**アウトラインビュー** 、**コレクション**などの appkit コントロールにデータをバインドするための要件であるため、標準の配列またはコレクションではなく `NSMutableArray` を使用していました。
-2. 従業員の配列を公開しました。これは、データバインディングのために `NSArray` にC#キャストし、書式設定された名前 (`People`) を、 **{class_name} 配列**形式の `personModelArray` (最初の文字が作成されていることに注意してください) に変更しました。小文字)。
+2. 従業員の配列を公開しました。これは、データバインディングのために `NSArray` にC#キャストし、書式設定された名前 (`People`) を、データバインディングで`personModelArray`想定される形式に変更しました (最初の文字が **{class_name}** という形式になっていることに注意してください)。小文字に変更)。
 
 次に、**配列コントローラー**と**ツリーコントローラー**をサポートするために、特別な名前のパブリックメソッドをいくつか追加する必要があります。
 
@@ -463,7 +463,7 @@ public override void ViewDidLoad ()
 
 [![Xcode でストーリーボードを編集する](databinding-images/simple02.png "Xcode でストーリーボードを編集する")](databinding-images/simple02-large.png#lightbox)
 
-@No__t_1 キーを使用して公開した `PersonModel` にフォームをデータバインドするには、次の手順を実行します。
+`Person` キーを使用して公開した `PersonModel` にフォームをデータバインドするには、次の手順を実行します。
 
 1. **[Employee Name]** テキストフィールドを選択し、[**バインド] インスペクター**に切り替えます。
 2. **[バインド先]** ボックスをオンにし、ドロップダウンから **[簡易ビューコントローラー]** を選択します。 次に、キーの**パス**に `self.Person.Name` を入力します。
@@ -582,11 +582,11 @@ public override void AwakeFromNib ()
 2. **インターフェイス階層**で **[配列コントローラー]** を選択し、**属性インスペクター**に切り替えます。
 
     [![属性インスペクターの選択](databinding-images/table04.png "属性インスペクターの選択")](databinding-images/table04-large.png#lightbox)
-3. **クラス名**として「`PersonModel`」と入力し、**プラス**ボタンをクリックして、3つのキーを追加します。 @No__t_0、`Occupation`、`isManager` の名前を指定します。
+3. **クラス名**として「`PersonModel`」と入力し、**プラス**ボタンをクリックして、3つのキーを追加します。 `Name`、`Occupation`、`isManager`の名前を指定します。
 
     ![必要なキーパスを追加する](databinding-images/table05.png "必要なキーパスを追加する")
 4. これにより、配列がどのように管理しているか、およびキーによって公開する必要があるプロパティが配列コントローラーに伝えられます。
-5. **バインドインスペクター**に切り替え、 **[コンテンツ配列]** で **[バインド先]** と **[テーブルビューコントローラー]** を選択します。 @No__t_1 の**モデルキーパス**を入力してください:
+5. **バインドインスペクター**に切り替え、 **[コンテンツ配列]** で **[バインド先]** と **[テーブルビューコントローラー]** を選択します。 `self.personModelArray`の**モデルキーパス**を入力してください:
 
     ![キーのパスを入力する](databinding-images/table06.png "キーのパスを入力する")
 6. これにより、ビューコントローラーで公開された `PersonModels` の配列に配列コントローラーが結び付けられます。
@@ -700,7 +700,7 @@ public override void AwakeFromNib ()
 2. **インターフェイス階層**で **[ツリーコントローラー]** を選択し、**属性インスペクター**に切り替えます。
 
     [![属性インスペクターの選択](databinding-images/outline04.png "属性インスペクターの選択")](databinding-images/outline04-large.png#lightbox)
-3. **クラス名**として「`PersonModel`」と入力し、**プラス**ボタンをクリックして、3つのキーを追加します。 @No__t_0、`Occupation`、`isManager` の名前を指定します。
+3. **クラス名**として「`PersonModel`」と入力し、**プラス**ボタンをクリックして、3つのキーを追加します。 `Name`、`Occupation`、`isManager`の名前を指定します。
 
     ![必要なキーパスを追加する](databinding-images/outline05.png "必要なキーパスを追加する")
 4. これにより、ツリーコントローラーがどのように配列を管理しているか、および (キーを使用して) 公開する必要があるプロパティが示されます。
@@ -708,7 +708,7 @@ public override void AwakeFromNib ()
 
     ![ツリーコントローラーのキーパスの設定](databinding-images/outline05.png "ツリーコントローラーのキーパスの設定")
 6. これにより、子ノードを検索する場所、子ノードの数、現在のノードに子ノードがあるかどうかがツリーコントローラーに示されます。
-7. **バインドインスペクター**に切り替え、 **[コンテンツ配列]** で、 **[バインド先]** と **[ファイルの所有者]** を選択します。 @No__t_1 の**モデルキーパス**を入力してください:
+7. **バインドインスペクター**に切り替え、 **[コンテンツ配列]** で、 **[バインド先]** と **[ファイルの所有者]** を選択します。 `self.personModelArray`の**モデルキーパス**を入力してください:
 
     ![キーのパスを編集する](databinding-images/outline06.png "キーのパスを編集する")
 8. これにより、ビューコントローラーで公開された `PersonModels` の配列にツリーコントローラーが関連付けられます。
@@ -865,8 +865,8 @@ For more information on working with Collection Views, please see our [Collectio
 通常、データバインディング中のネイティブクラッシュには、主に次の4つの原因があります。
 
 1. データモデルは、`NSObject` または `NSObject` のサブクラスから継承されません。
-2. @No__t_0 属性を使用して、プロパティを目的の C に公開していませんでした。
-3. @No__t_0 でアクセサーの値に対する変更をラップしていませんでした。 `DidChangeValue` メソッドの呼び出し (`Export` 属性と同じキーを指定)。
+2. `[Export("key-name")]` 属性を使用して、プロパティを目的の C に公開していませんでした。
+3. `WillChangeValue` でアクセサーの値に対する変更をラップしていませんでした。 `DidChangeValue` メソッドの呼び出し (`Export` 属性と同じキーを指定)。
 4. Interface Builder の**バインドインスペクター**に間違ったキーまたは入力ミスのキーがあります。
 
 ### <a name="decoding-a-crash"></a>クラッシュのデコード

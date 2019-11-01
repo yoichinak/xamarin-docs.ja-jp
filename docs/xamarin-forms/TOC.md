@@ -95,6 +95,7 @@
 ##### [CLR プロパティとしてのパラメーター](app-fundamentals/effects/passing-parameters/clr-properties.md)
 ##### [添付プロパティとしてのパラメーター](app-fundamentals/effects/passing-parameters/attached-properties.md)
 #### [イベントの呼び出し](app-fundamentals/effects/touch-tracking.md)
+#### [再利用可能な RoundEffect](app-fundamentals/effects/reusable-roundeffect.md)
 ### [ジェスチャ](app-fundamentals/gestures/index.md)
 #### [タップ](app-fundamentals/gestures/tap.md)
 #### [ピンチ](app-fundamentals/gestures/pinch.md)

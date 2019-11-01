@@ -3,31 +3,31 @@ title: チュートリアル-Android でのタッチの使用
 ms.prod: xamarin
 ms.assetid: E281F89B-4142-4BD8-8882-FB65508BF69E
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 05/09/2018
-ms.openlocfilehash: fc3fb6e7c3391092b33ce1d162a60ce6528e0ab0
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 484d567b5243ac282e2773d64a186e056141d8f4
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754861"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73024519"
 ---
 # <a name="walkthrough---using-touch-in-android"></a>チュートリアル-Android でのタッチの使用
 
 作業中のアプリケーションで、前のセクションの概念を使用する方法について説明します。 ここでは、4つのアクティビティを含むアプリケーションを作成します。 最初のアクティビティは、さまざまな Api を示すために他のアクティビティを起動するメニューまたはメニューバーです。 次のスクリーンショットは、メインアクティビティを示しています。
 
-[![タッチ入力ボタンを使用したスクリーンショットの例](android-touch-walkthrough-images/image14.png)](android-touch-walkthrough-images/image14.png#lightbox)
+[![[タッチ入力] ボタンを使用したスクリーンショットの例](android-touch-walkthrough-images/image14.png)](android-touch-walkthrough-images/image14.png#lightbox)
 
-最初のアクティビティである Touch サンプルは、ビューに接してイベントハンドラーを使用する方法を示しています。 ジェスチャレコグナイザーアクティビティは、イベントをサブクラス`Android.View.Views`化および処理する方法と、ピンチジェスチャを処理する方法を示します。 3番目と最後のアクティビティである**カスタムジェスチャ**は、カスタムジェスチャの使用方法を示します。 より簡単にフォローおよび吸収できるようにするために、このチュートリアルをセクションごとに分割します。各セクションでは、アクティビティの1つに焦点を合わせています。
+最初のアクティビティである Touch サンプルは、ビューに接してイベントハンドラーを使用する方法を示しています。 ジェスチャレコグナイザーアクティビティは、イベントをサブ `Android.View.Views` クラス化してイベントを処理し、ピンチジェスチャの処理方法を示す方法を示します。 3番目と最後のアクティビティである**カスタムジェスチャ**は、カスタムジェスチャの使用方法を示します。 より簡単にフォローおよび吸収できるようにするために、このチュートリアルをセクションごとに分割します。各セクションでは、アクティビティの1つに焦点を合わせています。
 
 ## <a name="touch-sample-activity"></a>タッチサンプル活動
 
-- プロジェクト**TouchWalkthrough\_Start**を開きます。 **Mainactivity**がすべてに&ndash;設定されているので、アクティビティにタッチ動作を実装することになります。 アプリケーションを実行して **[タッチサンプル]** をクリックすると、次のアクティビティが開始されます。
+- TouchWalkthrough プロジェクトを開き **\_開始**します。 **Mainactivity**はすべて "実行" に設定されて &ndash;、アクティビティにタッチ動作を実装することになります。 アプリケーションを実行して **[タッチサンプル]** をクリックすると、次のアクティビティが開始されます。
 
-  [![タッチが開始されたアクティビティのスクリーンショット](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png#lightbox)
+  [タッチが開始されたアクティビティのスクリーンショット![](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png#lightbox)
 
-- アクティビティが開始されたことを確認したので、 **TouchActivity.cs**ファイルを開き、の`Touch` `ImageView`イベントのハンドラーを追加します。
+- アクティビティが開始されたことを確認したので、 **TouchActivity.cs**ファイルを開き、`ImageView`の `Touch` イベントのハンドラーを追加します。
 
   ```csharp
   _touchMeImageView.Touch += TouchMeImageViewOnTouch;
@@ -59,21 +59,21 @@ ms.locfileid: "70754861"
   }
   ```
 
-上記のコードでは、 `Move`と`Down`アクションを同じものとして扱うことに注意してください。 これは、ユーザーが指`ImageView`をから離していなくても、ユーザーが移動したり、ユーザーが変更する可能性のある圧力用いるが発生したりする可能性があるためです。 これらの種類の変更により`Move` 、アクションが生成されます。
+上記のコードでは、`Move` と `Down` アクションを同じものとして扱うことに注意してください。 これは、ユーザーが `ImageView`から指を離していない場合でも、ユーザーが用いるしたり、ユーザーが変更する可能性のある圧力が低下したりする可能性があるためです。 これらの種類の変更により、`Move` アクションが生成されます。
 
-ユーザーがに触れる`ImageView`たび`Touch`にイベントが発生し、次のスクリーンショットに示すように、ハンドラーによって画面のメッセージ**タッチ**が表示されます。
+ユーザーが `ImageView`に触れるたびに、次のスクリーンショットに示すように、`Touch` イベントが発生し、ハンドラーによって画面のメッセージ**タッチが開始**されます。
 
-[![タッチが開始されたアクティビティのスクリーンショット](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png#lightbox)
+[タッチが開始されたアクティビティのスクリーンショット![](android-touch-walkthrough-images/image15.png)](android-touch-walkthrough-images/image15.png#lightbox)
 
-ユーザーがに触れる`ImageView`間、タッチが**開始** `TextView`されます。 ユーザーがに`ImageView`触れていない場合は、次のスクリーンショットに示すように`TextView`、メッセージタッチの**終了**がに表示されます。
+ユーザーが `ImageView`に触れている限り、**タッチが開始**され、`TextView`に表示されます。 ユーザーが `ImageView`に触れていない場合は、次のスクリーンショットに示すように、メッセージ**タッチの終了**が `TextView`に表示されます。
 
-[![タッチエンドによるアクティビティのスクリーンショット](android-touch-walkthrough-images/image16.png)](android-touch-walkthrough-images/image16.png#lightbox)
+[タッチエンドによるアクティビティのスクリーンショットの![](android-touch-walkthrough-images/image16.png)](android-touch-walkthrough-images/image16.png#lightbox)
 
 ## <a name="gesture-recognizer-activity"></a>ジェスチャレコグナイザーアクティビティ
 
 次に、ジェスチャレコグナイザーアクティビティを実装します。 このアクティビティでは、画面の周りにビューをドラッグし、ピンチからズームを実装する方法の1つを示します。
 
-- という名前`GestureRecognizer`のアプリケーションに新しいアクティビティを追加します。
+- `GestureRecognizer`という名前のアプリケーションに新しいアクティビティを追加します。
   次のコードのように、このアクティビティのコードを編集します。
 
   ```csharp
@@ -88,7 +88,7 @@ ms.locfileid: "70754861"
   }
   ```
 
-- 新しい Android ビューをプロジェクトに追加し、という`GestureRecognizerView`名前を指定します。 次の変数をこのクラスに追加します。
+- 新しい Android ビューをプロジェクトに追加し、`GestureRecognizerView`という名前を指定します。 次の変数をこのクラスに追加します。
 
   ```csharp
   private static readonly int InvalidPointerId = -1;
@@ -104,7 +104,7 @@ ms.locfileid: "70754861"
   private float _scaleFactor = 1.0f;
   ```
 
-- に次のコンストラクターを`GestureRecognizerView`追加します。 このコンストラクターは、 `ImageView`をアクティビティに追加します。 この時点で、コードはコンパイル&ndash;されません。ユーザーが pinches を使用するときに、のサイズを変更するための`ImageView`クラス`MyScaleListener`を作成する必要があります。
+- 次のコンストラクターを `GestureRecognizerView`に追加します。 このコンストラクターは、アクティビティに `ImageView` を追加します。 この時点で、コードはコンパイルされません。ユーザーが pinches を使用するときに `ImageView` のサイズを変更するのに役立つクラス `MyScaleListener` を作成する必要があり &ndash;。
 
   ```csharp
   public GestureRecognizerView(Context context): base(context, null, 0)
@@ -115,7 +115,7 @@ ms.locfileid: "70754861"
   }
   ```
 
-- アクティビティにイメージを描画するには、次のスニペットに`OnDraw`示すように、ビュークラスのメソッドをオーバーライドする必要があります。 このコードは、 `ImageView`を`_posY`によっ`_posX`て指定された位置に移動するだけでなく、スケールファクターに従ってイメージのサイズを変更します。
+- アクティビティにイメージを描画するには、次のスニペットに示すように、ビュークラスの `OnDraw` メソッドをオーバーライドする必要があります。 このコードは、`ImageView` を `_posX` と `_posY` によって指定された位置に移動し、スケールファクターに従ってイメージのサイズを変更します。
 
   ```csharp
   protected override void OnDraw(Canvas canvas)
@@ -129,8 +129,8 @@ ms.locfileid: "70754861"
   }
   ```
 
-- 次に、 `_scaleFactor` `ImageView`インスタンス変数をユーザーの pinches として更新する必要があります。 という`MyScaleListener`クラスを追加します。 このクラスは、ユーザーがを使用しているときに、 `ImageView`Android によって生成されるスケールイベントをリッスンします。
-  次の内部クラスをに`GestureRecognizerView`追加します。 このクラスは、 `ScaleGesture.SimpleOnScaleGestureListener`です。 このクラスは、ジェスチャのサブセットに関心がある場合にリスナーがサブクラス化できる便利なクラスです。
+- 次に、ユーザーが `ImageView`の pinches として `_scaleFactor` インスタンス変数を更新する必要があります。 `MyScaleListener`というクラスを追加します。 このクラスは、ユーザーが `ImageView`を指定したときに Android によって生成されるスケールイベントをリッスンします。
+  次の内部クラスを `GestureRecognizerView`に追加します。 このクラスは `ScaleGesture.SimpleOnScaleGestureListener`です。 このクラスは、ジェスチャのサブセットに関心がある場合にリスナーがサブクラス化できる便利なクラスです。
 
   ```csharp
   private class MyScaleListener : ScaleGestureDetector.SimpleOnScaleGestureListener
@@ -162,7 +162,7 @@ ms.locfileid: "70754861"
   }
   ```
 
-- で`GestureRecognizerView`オーバーライドする必要がある次のメソッド`OnTouchEvent`は、です。 次のコードは、このメソッドの完全な実装を示しています。 ここには多数のコードが含まれているので、ここで何が起こっているかを見てみましょう。 このメソッドの最初の処理では、必要に&ndash;応じてアイコンのサイズを変更します。これは、を呼び出す`_scaleDetector.OnTouchEvent`ことによって処理されます。 次に、このメソッドと呼ばれるアクションについて説明します。
+- `GestureRecognizerView` でオーバーライドする必要がある次のメソッドは `OnTouchEvent`です。 次のコードは、このメソッドの完全な実装を示しています。 ここには多数のコードが含まれているので、ここで何が起こっているかを見てみましょう。 このメソッドの最初の処理として、必要に応じてアイコンをスケールします。これ &ndash;、`_scaleDetector.OnTouchEvent`を呼び出すことによって処理されます。 次に、このメソッドと呼ばれるアクションについて説明します。
 
   - ユーザーがで画面を操作した場合、X と Y の位置と、画面に接した最初のポインターの ID が記録されます。
 
@@ -233,13 +233,13 @@ ms.locfileid: "70754861"
 - 次に、アプリケーションを実行し、ジェスチャレコグナイザーアクティビティを開始します。
   起動すると、次のスクリーンショットのような画面が表示されます。
 
-  [![Android アイコンを使用したジェスチャ認識エンジンのスタート画面](android-touch-walkthrough-images/image17.png)](android-touch-walkthrough-images/image17.png#lightbox)
+  [Android アイコンを使用した![ジェスチャ認識エンジンのスタート画面](android-touch-walkthrough-images/image17.png)](android-touch-walkthrough-images/image17.png#lightbox)
 
 - 次に、アイコンをタッチし、画面の周りにドラッグします。 ピンチ操作でズームするジェスチャを試してください。 ある時点で、画面は次のスクリーンショットのようになります。
 
   [![ジェスチャ画面の周りを移動するアイコン](android-touch-walkthrough-images/image18.png)](android-touch-walkthrough-images/image18.png#lightbox)
 
-この時点で、前に pat を提供する必要があります。これは、Android アプリケーションにピンチによるズームインを実装したばかりです。 このチュートリアル&ndash;では、カスタムジェスチャを使用して、3番目と最後のアクティビティに進むことができます。
+この時点で、前に pat を提供する必要があります。これは、Android アプリケーションにピンチによるズームインを実装したばかりです。 このチュートリアルでは、カスタムジェスチャを使用して、3番目と最後のアクティビティ &ndash; に進むことができます。
 
 ## <a name="custom-gesture-activity"></a>カスタムジェスチャアクティビティ
 
@@ -247,7 +247,7 @@ ms.locfileid: "70754861"
 
 このチュートリアルでは、ジェスチャライブラリはジェスチャツールを使用して既に作成されており、ファイル**リソース/生/ジェスチャ**でプロジェクトに追加されています。 このようにしてこのような作業を行うことで、チュートリアルの最後のアクティビティを使用できるようになります。
 
-- 次の内容を使用して、**カスタム\_ジェスチャ\_レイアウト axml**という名前のレイアウトファイルをプロジェクトに追加します。 プロジェクトには、 **Resources**フォルダー内のすべてのイメージが既に存在します。
+- 次の内容を使用して、**カスタム\_ジェスチャ\_layout. axml**という名前のレイアウトファイルをプロジェクトに追加します。 プロジェクトには、 **Resources**フォルダー内のすべてのイメージが既に存在します。
 
   ```xml
   <?xml version="1.0" encoding="utf-8"?>
@@ -273,15 +273,15 @@ ms.locfileid: "70754861"
   </LinearLayout>
   ```
 
-- 次に、新しいアクティビティをプロジェクトに追加し、 `CustomGestureRecognizerActivity.cs`という名前を指定します。 次の2行のコードに示すように、クラスに2つのインスタンス変数を追加します。
+- 次に、新しいアクティビティをプロジェクトに追加し、`CustomGestureRecognizerActivity.cs`という名前を指定します。 次の2行のコードに示すように、クラスに2つのインスタンス変数を追加します。
 
   ```csharp
   private GestureLibrary _gestureLibrary;
   private ImageView _imageView;
   ```
 
-- 次のコードのように、このアクティビティのメソッドを編集します。`OnCreate` このコードで何が起こっているかについて説明します。 まず、を`GestureOverlayView`インスタンス化し、アクティビティのルートビューとして設定します。
-  また、 `GesturePerformed`の`GestureOverlayView`イベントにイベントハンドラーを割り当てます。 次に、前に作成したレイアウトファイルを展開し、そのファイルをの子ビュー `GestureOverlayView`として追加します。 最後の手順では、変数`_gestureLibrary`を初期化し、アプリケーションリソースからジェスチャファイルを読み込みます。 何らかの理由でジェスチャファイルを読み込むことができない場合、このアクティビティは実行できないため、シャットダウンされます。
+- このアクティビティの `OnCreate` メソッドを編集して、次のコードのようにします。 このコードで何が起こっているかについて説明します。 まず、`GestureOverlayView` をインスタンス化し、それをアクティビティのルートビューとして設定します。
+  また、`GestureOverlayView`の `GesturePerformed` イベントにイベントハンドラーを割り当てます。 次に、前に作成したレイアウトファイルを拡大し、`GestureOverlayView`の子ビューとして追加します。 最後の手順では、変数 `_gestureLibrary` を初期化し、アプリケーションリソースからジェスチャファイルを読み込みます。 何らかの理由でジェスチャファイルを読み込むことができない場合、このアクティビティは実行できないため、シャットダウンされます。
 
   ```csharp
   protected override void OnCreate(Bundle bundle)
@@ -305,7 +305,7 @@ ms.locfileid: "70754861"
   }
   ```
 
-- 最後に、次のコードスニペットに示すよう`GestureOverlayViewOnGesturePerformed`に、メソッドを実装する必要があります。 が`GestureOverlayView`ジェスチャを検出すると、このメソッドにコールバックします。 最初に、を呼び出し`IList<Prediction>` `_gestureLibrary.Recognize()`てジェスチャに一致するオブジェクトを取得しようとします。 少しの LINQ を使用して、 `Prediction`そのジェスチャのスコアが最も高いを取得します。
+- 最後に、次のコードスニペットに示すように、メソッド `GestureOverlayViewOnGesturePerformed` を実装する必要があります。 `GestureOverlayView` がジェスチャを検出すると、このメソッドにコールバックします。 最初に、`_gestureLibrary.Recognize()`を呼び出してジェスチャに一致する `IList<Prediction>` オブジェクトを取得しようとします。 LINQ を使用して、ジェスチャの最高スコアを持つ `Prediction` を取得します。
 
   十分なスコアを持つ一致するジェスチャがない場合、イベントハンドラーは何も行わずに終了します。 それ以外の場合は、予測の名前を確認し、ジェスチャの名前に基づいて表示されるイメージを変更します。
 
@@ -340,7 +340,7 @@ ms.locfileid: "70754861"
 
 - アプリケーションを実行し、カスタムジェスチャレコグナイザーアクティビティを開始します。 次のスクリーンショットのようになります。
 
-  [![チェックマークの画像が表示されるスクリーンショット](android-touch-walkthrough-images/image19.png)](android-touch-walkthrough-images/image19.png#lightbox)
+  [チェックインイメージを使用したスクリーンショットの![](android-touch-walkthrough-images/image19.png)](android-touch-walkthrough-images/image19.png#lightbox)
 
   画面にチェックマークを描画します。表示されるビットマップは、次のスクリーンショットに示されているようになります。
 
@@ -348,7 +348,7 @@ ms.locfileid: "70754861"
 
   最後に、画面に scribble を描きます。 チェックボックスは、次のスクリーンショットに示すように、元のイメージに戻す必要があります。
 
-  [![画面上の Scribble、元のイメージが表示されます。](android-touch-walkthrough-images/image21.png)](android-touch-walkthrough-images/image21.png#lightbox)
+  [画面上に Scribble を![、元のイメージが表示されます。](android-touch-walkthrough-images/image21.png)](android-touch-walkthrough-images/image21.png#lightbox)
 
 Android アプリケーションで、Xamarin を使用してタッチとジェスチャを統合する方法について理解できました。
 

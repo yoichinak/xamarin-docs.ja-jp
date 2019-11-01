@@ -4,15 +4,15 @@ description: このドキュメントでは、haptic のフィードバックを
 ms.prod: xamarin
 ms.assetid: 888106D1-58F4-453F-BACC-91D51FA39C80
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 112ee17eab872f9265687869bec82e72f44e81da
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 156af7a5336ac091c0202e38a3a59a32846e281a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70287091"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73003343"
 ---
 # <a name="providing-haptic-feedback-in-xamarinios"></a>Xamarin での Haptic フィードバックの提供
 
@@ -27,19 +27,19 @@ IPhone 7 と iPhone 7 に加えて、Apple には、ユーザーに物理的に�
 - [Haptic のフィードバックについて](#About-Haptic-Feedback)
 - [UIImpactFeedbackGenerator](#UIImpactFeedbackGenerator)
 - [UINotificationFeedbackGenerator](#UINotificationFeedbackGenerator)
-- [UISelectionFeedbackGenerator](#UISelectionFeedbackGenerator)
+- [Uiselectionフィード Backgenerator](#UISelectionFeedbackGenerator)
 
 <a name="About-Haptic-Feedback" />
 
 ## <a name="about-haptic-feedback"></a>Haptic のフィードバックについて
 
-いくつかの組み込み UI 要素には、ピッカー、スイッチ、スライダーなどの haptic フィードバックが既に用意されています。 iOS 10 では、 `UIFeedbackGenerator`クラスの具象サブクラスを使用して、プログラムによって haptics をトリガーする機能が追加されました。
+いくつかの組み込み UI 要素には、ピッカー、スイッチ、スライダーなどの haptic フィードバックが既に用意されています。 iOS 10 では、`UIFeedbackGenerator` クラスの具象サブクラスを使用して、プログラムによって haptics をトリガーする機能が追加されました。
 
-開発者は、次`UIFeedbackGenerator`のいずれかのサブクラスを使用して、プログラムで haptic フィードバックをトリガーできます。
+開発者は、次のいずれかの `UIFeedbackGenerator` サブクラスを使用して、プログラムで haptic のフィードバックをトリガーできます。
 
 - `UIImpactFeedbackGenerator`-このフィードバックジェネレーターを使用して、ビューが配置されたとき、または2つの画面上のオブジェクトが競合する場合に "thud" を表示するなどのアクションまたはタスクを補完します。
-- `UINotificationFeedbackGenerator`-アクションの完了、失敗、またはその他の種類の警告などの通知には、このフィードバックジェネレーターを使用します。
-- `UISelectionFeedbackGenerator`-リストから項目を選択するなど、アクティブに変更する選択には、このフィードバックジェネレーターを使用します。
+- `UINotificationFeedbackGenerator`-このフィードバックジェネレーターを使用して、アクションの完了、失敗、またはその他の種類の警告などの通知を行います。
+- `UISelectionFeedbackGenerator`-このフィードバックジェネレーターを使用して、リストから項目を選択するなどのアクティブな変更を行います。
 
 <a name="UIImpactFeedbackGenerator" />
 
@@ -61,15 +61,15 @@ impact.Prepare ();
 impact.ImpactOccurred ();
 ```
 
-開発者が`UIImpactFeedbackGenerator`クラスの新しいインスタンスを作成すると、次`UIImpactFeedbackStyle`のように、フィードバックの強度を指定するが提供されます。
+開発者が `UIImpactFeedbackGenerator` クラスの新しいインスタンスを作成すると、次のようにフィードバックの強度を指定する `UIImpactFeedbackStyle` が提供されます。
 
 - `Heavy`
 - `Medium`
 - `Light`
 
-`Prepare` のメソッドは、待機時間を最小限に抑えるためにhapticフィードバックが発生しようとしていることをシステムに通知するために`UIImpactFeedbackGenerator`呼び出されます。
+`UIImpactFeedbackGenerator` の `Prepare` メソッドを呼び出して、待機時間を最小限に抑えるために haptic のフィードバックが発生しようとしていることをシステムに通知します。
 
-その`ImpactOccurred`後、メソッドによって haptic フィードバックがトリガーされます。
+`ImpactOccurred` メソッドは、haptic フィードバックをトリガーします。
 
 <a name="UINotificationFeedbackGenerator" />
 
@@ -91,9 +91,9 @@ notification.Prepare ();
 notification.NotificationOccurred (UINotificationFeedbackType.Error);
 ```
 
-`UINotificationFeedbackGenerator`クラスの新しいインスタンスが作成され、その`Prepare`メソッドが呼び出されて、待機時間を最小限に抑えるために haptic フィードバックが発生しようとしていることをシステムに通知します。
+`UINotificationFeedbackGenerator` クラスの新しいインスタンスが作成され、待機時間を最小限に抑えるために haptic フィードバックが発生しようとしていることをシステムに通知するために、その `Prepare` メソッドが呼び出されます。
 
-を`NotificationOccurred`呼び出すと、指定さ`UINotificationFeedbackType`れたで haptic フィードバックがトリガーされます。
+特定の `UINotificationFeedbackType` のを使用して haptic フィードバックをトリガーするために `NotificationOccurred` が呼び出されます。
 
 - `Success`
 - `Warning`
@@ -119,11 +119,11 @@ selection.Prepare ();
 selection.SelectionChanged ();
 ```
 
-`UISelectionFeedbackGenerator`クラスの新しいインスタンスが作成され、その`Prepare`メソッドが呼び出されて、待機時間を最小限に抑えるために haptic フィードバックが発生しようとしていることをシステムに通知します。
+`UISelectionFeedbackGenerator` クラスの新しいインスタンスが作成され、待機時間を最小限に抑えるために haptic フィードバックが発生しようとしていることをシステムに通知するために、その `Prepare` メソッドが呼び出されます。
 
-その`SelectionChanged`後、メソッドによって haptic フィードバックがトリガーされます。
+`SelectionChanged` メソッドは、haptic フィードバックをトリガーします。
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 この記事では、iOS 10 で利用できる新しい種類の haptic フィードバックと、それらを Xamarin. iOS に実装する方法について説明しました。
 

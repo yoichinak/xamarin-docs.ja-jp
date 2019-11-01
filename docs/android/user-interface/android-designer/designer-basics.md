@@ -4,15 +4,15 @@ description: このトピックでは、Xamarin の Android Designer 機能、�
 ms.prod: xamarin
 ms.assetid: 48B20C9A-B2A2-AE82-76B2-A3C1E5A4050D
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 09/05/2018
-ms.openlocfilehash: 0089f8681142b1d3d3446c21ba89ab2648e4a638
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 2d5f20326de56bca77dd8fdd742515e003f996e1
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70761410"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029510"
 ---
 # <a name="xamarinandroid-designer-basics"></a>Xamarin. Android Designer の基礎
 
@@ -24,11 +24,11 @@ _このトピックでは、Xamarin の Android Designer 機能、デザイナ�
 
 デザイナーは、レイアウトが作成されると自動的に起動されます。または、既存のレイアウトファイルをダブルクリックして起動することもできます。 たとえば、 **Resources > Layout**フォルダー内の**activity_main**をダブルクリックすると、次のスクリーンショットのようにデザイナーが読み込まれます。
 
-[Visual Studio の ![Designer 画面](designer-basics-images/vs/01-open-designer-sml.png)](designer-basics-images/vs/01-open-designer.png#lightbox)
+[Visual Studio の![デザイナー画面](designer-basics-images/vs/01-open-designer-sml.png)](designer-basics-images/vs/01-open-designer.png#lightbox)
 
 同様に、**ソリューションエクスプローラー**の **[レイアウト]** フォルダーを右クリックし、[**新しい項目の追加 >] を選択して、新しいレイアウトを追加できます。Android レイアウトを >** :
 
-[[新しい項目の ![Add] ダイアログ](designer-basics-images/vs/02-add-new-layout-sml.png)](designer-basics-images/vs/02-add-new-layout.png#lightbox)
+[[新しい項目の追加] ダイアログボックス![](designer-basics-images/vs/02-add-new-layout-sml.png)](designer-basics-images/vs/02-add-new-layout.png#lightbox)
 
 これにより、新しい**axml**レイアウトファイルが作成され、デザイナーに読み込まれます。
 
@@ -41,7 +41,7 @@ _このトピックでは、Xamarin の Android Designer 機能、デザイナ�
 
 デザイナーは、次のスクリーンショットに示すように、さまざまな機能をサポートするいくつかのセクションで構成されています。
 
-[デザイナーペインの ![Diagram](designer-basics-images/vs/03-designer-features-sml.png)](designer-basics-images/vs/03-designer-features.png#lightbox)
+[デザイナーウィンドウの![ダイアグラム](designer-basics-images/vs/03-designer-features-sml.png)](designer-basics-images/vs/03-designer-features.png#lightbox)
 
 デザイナーでレイアウトを編集するときは、次の機能を使用して設計を作成し、整形します。
 
@@ -61,7 +61,7 @@ _このトピックでは、Xamarin の Android Designer 機能、デザイナ�
 
 デザイナーを使用すると、ツールボックスから**デザインサーフェイス**にウィジェットをドラッグアンドドロップすることができます。 デザイナーでウィジェットを操作する (新しいウィジェットを追加するか、既存のウィジェットを再配置することによって) と、使用可能な挿入ポイントをマークするための垂直線と水平線が表示されます。 次の例では、新しい `Button` ウィジェットを**デザインサーフェイス**にドラッグしています。
 
-[デザインサーフェイスに挿入行を ![Example](designer-basics-images/vs/05-insertion-points-sml.png)](designer-basics-images/vs/05-insertion-points.png#lightbox)
+[![デザインサーフェイスの挿入行の例](designer-basics-images/vs/05-insertion-points-sml.png)](designer-basics-images/vs/05-insertion-points.png#lightbox)
 
 さらに、ウィジェットをコピーすることもできます。コピーと貼り付けを使用してウィジェットをコピーすることも、 <kbd>CTRL</kbd>キーを押しながら既存のウィジェットをドラッグアンドドロップすることもできます。
 
@@ -69,7 +69,7 @@ _このトピックでは、Xamarin の Android Designer 機能、デザイナ�
 
 **デザイナーツールバー** (**デザインサーフェイス**の上に配置) には、構成セレクターとツールメニューが表示されます。
 
-[デザイナーツールバーの ![Diagram](designer-basics-images/vs/04-toolbar-sml.png)](designer-basics-images/vs/04-toolbar.png#lightbox)
+[デザイナーツールバーの![ダイアグラム](designer-basics-images/vs/04-toolbar-sml.png)](designer-basics-images/vs/04-toolbar.png#lightbox)
 
 **デザイナーのツールバー**では、次の機能にアクセスできます。
 
@@ -103,7 +103,7 @@ _このトピックでは、Xamarin の Android Designer 機能、デザイナ�
 
 コンテキストメニューは、**デザインサーフェイス**と**ドキュメントアウトライン**の両方で使用できます。 このメニューには、選択したウィジェットとそのコンテナーで使用できるコマンドが表示されます。これにより、コンテナーに対する操作を簡単に実行できるようになります (**デザインサーフェイス**では、常に選択するのは簡単ではありません)。 コンテキストメニューの例を次に示します。
 
-[デザインサーフェイスを右クリックしたときのショートカットメニュー ![Example](designer-basics-images/vs/06-context-menu-sml.png)](designer-basics-images/vs/06-context-menu.png#lightbox)
+[デザインサーフェイスを右クリックしたときのショートカットメニューの![例](designer-basics-images/vs/06-context-menu-sml.png)](designer-basics-images/vs/06-context-menu.png#lightbox)
 
 この例では、`TextView` を右クリックすると、いくつかのオプションを示すショートカットメニューが表示されます。
 
@@ -115,7 +115,7 @@ _このトピックでは、Xamarin の Android Designer 機能、デザイナ�
 
 **デザインサーフェイス**では、次のようにいくつかのコントロールを使用したズームがサポートされます。
 
-[デザインサーフェイスズームコントロールの ![Diagram](designer-basics-images/vs/07-zoom-controls-sml.png)](designer-basics-images/vs/07-zoom-controls.png#lightbox)
+[デザインサーフェイスズームコントロールの![ダイアグラム](designer-basics-images/vs/07-zoom-controls-sml.png)](designer-basics-images/vs/07-zoom-controls.png#lightbox)
 
 これらのコントロールを使用すると、ユーザーインターフェイスの特定の領域をデザイナーで簡単に確認できます。
 
@@ -127,7 +127,7 @@ _このトピックでは、Xamarin の Android Designer 機能、デザイナ�
 
 - **拡大**&ndash; をクリックするたびにズームインし、レイアウトを拡大します。
 
-- @No__t_1**縮小**すると、各クリックで徐々にズームアウトし、デザインサーフェイス上でレイアウトを小さく表示できます。
+- &ndash;**縮小**すると、各クリックで徐々にズームアウトし、デザインサーフェイス上でレイアウトを小さく表示できます。
 
 選択したズーム設定は、実行時にアプリケーションのユーザーインターフェイスに影響しないことに注意してください。
 
@@ -135,7 +135,7 @@ _このトピックでは、Xamarin の Android Designer 機能、デザイナ�
 
 **デザイン**ペインと**ソース**ペインの間には、**デザイン**ペインと**ソース**ペインの表示方法を変更するためのボタンがいくつかあります。
 
-[ボタンの場所を表示 ![Pane には](designer-basics-images/vs/25-pane-buttons-sml.png)](designer-basics-images/vs/25-pane-buttons.png#lightbox)
+[![ペインにボタンの場所を表示する](designer-basics-images/vs/25-pane-buttons-sml.png)](designer-basics-images/vs/25-pane-buttons.png#lightbox)
 
 これらのボタンは、次の操作を実行します。
 
@@ -158,7 +158,7 @@ _このトピックでは、Xamarin の Android Designer 機能、デザイナ�
 
 **[ソース]** ウィンドウには、**デザインサーフェイス**に表示されるデザインの基になる XML ソースが表示されます。 両方のビューが同時に使用可能であるため、デザインのビジュアル表現と、デザインの基になる XML ソースの間を行き来して、UI デザインを作成することができます。
 
-[ソースペインでの XML ソースの ![Example](designer-basics-images/vs/22-source-pane-w158-sml.png)](designer-basics-images/vs/22-source-pane-w158.png#lightbox)
+[![ソースペイン内の XML ソースの例](designer-basics-images/vs/22-source-pane-w158-sml.png)](designer-basics-images/vs/22-source-pane-w158.png#lightbox)
 
 XML ソースに対して行われた変更は、直ちに**デザインサーフェイス**に表示されます。**デザインサーフェイス**に対して行われた変更によって、**ソース**ペインに表示される XML ソースがそれに応じて更新されます。 **ソース**ペインで xml を変更すると、次に説明するように、オートコンプリート機能と IntelliSense 機能を使用して xml ベースの UI 開発を高速化できます。
 
@@ -168,7 +168,7 @@ XML ソースに対して行われた変更は、直ちに**デザインサー�
 
 ウィジェットの属性の名前の入力を開始するときに、CTRL キーを押し<kbd>ながら SPACE</kbd>キーを押すと、候補の候補の一覧が表示されます。 たとえば、次の例で `android:lay` を入力した後 ( <kbd>CTRL + SPACE キー</kbd>を押すと)、次の一覧が表示されます。
 
-[レイアウト属性の ![Autocompletion](designer-basics-images/vs/23-autocompletion-w158-sml.png)](designer-basics-images/vs/23-autocompletion-w158.png#lightbox)
+[レイアウト属性のオートコンプリートを![](designer-basics-images/vs/23-autocompletion-w158-sml.png)](designer-basics-images/vs/23-autocompletion-w158.png#lightbox)
 
 <kbd>Enter</kbd>キーを押して最初に表示された完了を受け入れるか、方向キーを使用して目的の入力候補までスクロールし、 <kbd>enter</kbd>キーを押します。 または、マウスを使用してスクロールし、目的の完了をクリックします。
 
@@ -176,7 +176,7 @@ XML ソースに対して行われた変更は、直ちに**デザインサー�
 
 ウィジェットの新しい属性を入力し、値の割り当てを開始すると、トリガー文字が入力された後に IntelliSense がポップアップ表示され、その属性に使用する有効な値の一覧が提供されます。 たとえば、次の例の `android:layout_width` に対して最初の二重引用符を入力した後、オートコンプリートセレクターがポップアップ表示され、この幅の有効な選択肢の一覧が示されます。
 
-[レイアウト幅の ![IntelliSense 例](designer-basics-images/vs/24-intellisense-w158-sml.png)](designer-basics-images/vs/24-intellisense-w158.png#lightbox)
+[![のレイアウト幅の IntelliSense の例](designer-basics-images/vs/24-intellisense-w158-sml.png)](designer-basics-images/vs/24-intellisense-w158.png#lightbox)
 
 このポップアップの下部には、2つのボタンがあります (上のスクリーンショットでは赤で説明しています)。 左側の **[プロジェクトリソース]** ボタンをクリックすると、アプリプロジェクトの一部であるリソースだけが一覧に表示されます。右側の **[framework リソース]** ボタンをクリックすると、一覧がフレームワークから使用可能なリソースを表示するよう制限されます。
 これらのボタンをオンまたはオフにする: これらのボタンをクリックすると、それぞれが提供するフィルター処理を無効にすることができます。
@@ -200,17 +200,17 @@ XML ソースに対して行われた変更は、直ちに**デザインサー�
 
 たとえば、次のスクリーンショットは、 **[プロパティ]** ウィンドウで `Text` ウィジェットのテキストフィールドの右側にある暗い四角形をクリックしたときに使用できるオプションを示しています。
 
-[![Example テキストオプションの一覧](designer-basics-images/vs/09-text-options-sml.png)](designer-basics-images/vs/09-text-options.png#lightbox)
+[![テキストオプションの一覧の例](designer-basics-images/vs/09-text-options-sml.png)](designer-basics-images/vs/09-text-options.png#lightbox)
 
 **[リソース...]** をクリックすると、 **[リソースの選択**] ダイアログボックスが表示されます。
 
-[複数のリソースが一覧表示された ![Example リソースのスクリーンショット](designer-basics-images/vs/09b-resources-w158-sml.png)](designer-basics-images/vs/09b-resources-w158.png#lightbox)
+[いくつかのリソースが一覧表示された![リソースの例](designer-basics-images/vs/09b-resources-w158-sml.png)](designer-basics-images/vs/09b-resources-w158.png#lightbox)
 
 この一覧から、 **[プロパティ]** ウィンドウでテキストをハードコーディングするのではなく、そのウィジェットに使用するテキストリソースを選択できます。 次の例は、`ImageView` の `Src` プロパティのリソースセレクターを示しています。
 
-[ImageView の ![Resource selector リストアイコンリソース](designer-basics-images/vs/10-src-resource-sml.png)](designer-basics-images/vs/10-src-resource.png#lightbox)
+[ImageView のリソースセレクターリストアイコンリソースの![](designer-basics-images/vs/10-src-resource-sml.png)](designer-basics-images/vs/10-src-resource.png#lightbox)
 
-@No__t_0 プロパティの右側にある空白の四角形をクリックすると、 **[リソースの選択**] ダイアログボックスが開き、(上記のように) 色からのリソースの一覧が表示されます。
+`Src` プロパティの右側にある空白の四角形をクリックすると、 **[リソースの選択**] ダイアログボックスが開き、(上記のように) 色からのリソースの一覧が表示されます。
 
 ### <a name="boolean-property-references"></a>ブール型プロパティの参照
 
@@ -250,13 +250,13 @@ Android Designer は、**デザインサーフェイス**の特定のプロパ�
 
 ### <a name="size"></a>サイズ
 
-前述のように、既に選択されているときにウィジェットをクリックすると、サイズ編集モードに切り替えることができます。 三角形ハンドルをクリックして、指定したディメンションのサイズを `wrap_content` に設定します。
+前述のように、既に選択されているときにウィジェットをクリックすると、サイズ編集モードに切り替えることができます。 三角形ハンドルをクリックして、指定したディメンションのサイズを `wrap_content`に設定します。
 
 ![コンテンツとサイズ変更ハンドルをラップする](designer-basics-images/vs/17-wrap-content.png)
 
 **Wrap コンテンツ**ハンドルをクリックすると、そのディメンション内のウィジェットが縮小され、囲まれたコンテンツをラップするために必要な大きさになります。 この例では、ボタンのテキストは、次のスクリーンショットに示すように水平方向に縮小されます。
 
-サイズ値が **[折り返しコンテンツ]** に設定されている場合、デザイナーは、サイズを `match_parent` に変更するための逆方向を指す三角形ハンドルを表示します。
+サイズ値が **[折り返しコンテンツ]** に設定されている場合、デザイナーは、サイズを `match_parent`に変更するための逆方向を指す三角形ハンドルを表示します。
 
 ![親ハンドルの一致](designer-basics-images/vs/18-match-parent.png)
 
@@ -287,11 +287,11 @@ Android Designer は、**デザインサーフェイス**の特定のプロパ�
 
 デザイナーは、レイアウトが作成されると自動的に起動されます。または、既存の axml ファイルをダブルクリックして起動することもできます。 たとえば、 **Resources > Layout**フォルダーの**Main**をダブルクリックすると、次のようにデザイナーが読み込まれます。
 
-[Visual Studio for Mac の ![Designer 画面](designer-basics-images/xs/01-open-designer-sml.png)](designer-basics-images/xs/01-open-designer.png#lightbox)
+[Visual Studio for Mac の![デザイナー画面](designer-basics-images/xs/01-open-designer-sml.png)](designer-basics-images/xs/01-open-designer.png#lightbox)
 
 同様に、 **Solution Pad**の **レイアウト** フォルダーを右クリックし、> 新しいファイルを追加 を選択して  **Android > レイアウト >** 新しいレイアウトを追加することもできます。
 
-[[新しいファイルの ![Add] ダイアログ](designer-basics-images/xs/02-add-new-layout-sml.png)](designer-basics-images/xs/02-add-new-layout.png#lightbox)
+[[新しいファイルの追加] ダイアログボックス![](designer-basics-images/xs/02-add-new-layout-sml.png)](designer-basics-images/xs/02-add-new-layout.png#lightbox)
 
 これにより、新しい axml ファイルが作成され、デザインサーフェイスに読み込まれます。
 
@@ -304,7 +304,7 @@ Android Designer は、**デザインサーフェイス**の特定のプロパ�
 
 デザイナーは、次のスクリーンショットに示すように、さまざまな機能をサポートするいくつかのセクションで構成されています。
 
-[デザイナーペインの ![Diagram](designer-basics-images/xs/03-designer-features-sml.png)](designer-basics-images/xs/03-designer-features.png#lightbox)
+[デザイナーウィンドウの![ダイアグラム](designer-basics-images/xs/03-designer-features-sml.png)](designer-basics-images/xs/03-designer-features.png#lightbox)
 
 デザイナーでレイアウトを編集するときは、次の機能を使用して設計を作成し、整形します。
 
@@ -322,7 +322,7 @@ Android Designer は、**デザインサーフェイス**の特定のプロパ�
 
 ツールバー (デザインサーフェイスの上に配置) には、構成セレクターとツールメニューが表示されます。
 
-[デザイナーツールバーの ![Diagram](designer-basics-images/xs/04-toolbar-sml.png)](designer-basics-images/xs/04-toolbar.png#lightbox)
+[デザイナーツールバーの![ダイアグラム](designer-basics-images/xs/04-toolbar-sml.png)](designer-basics-images/xs/04-toolbar.png#lightbox)
 
 ツールバーは、次の機能へのアクセスを提供します。
 
@@ -356,7 +356,7 @@ Android Designer は、**デザインサーフェイス**の特定のプロパ�
 
 デザイナーを使用すると、ツールボックスからデザインサーフェイスにウィジェットをドラッグアンドドロップすることができます。 デザイナーでウィジェットを操作する (新しいウィジェットを追加するか、既存のウィジェットを再配置することによって) と、使用可能な挿入ポイントをマークするための垂直線と水平線が表示されます。 次の例では、新しい `Button` ウィジェットをデザインサーフェイスにドラッグしています。
 
-[デザインサーフェイスに挿入行を ![Example](designer-basics-images/xs/05-insertion-points-sml.png)](designer-basics-images/xs/05-insertion-points.png#lightbox)
+[![デザインサーフェイスの挿入行の例](designer-basics-images/xs/05-insertion-points-sml.png)](designer-basics-images/xs/05-insertion-points.png#lightbox)
 
 さらに、ウィジェットをコピーすることもできます。コピーと貼り付けを使用してウィジェットをコピーすることも、 <kbd>Ctrl</kbd>キーを押しながら既存のウィジェットをドラッグアンドドロップすることもできます。
 
@@ -364,7 +364,7 @@ Android Designer は、**デザインサーフェイス**の特定のプロパ�
 
 コンテキストメニューは、デザインサーフェイスとドキュメントアウトラインの両方で使用できます。 このメニューには、選択したウィジェットとそのコンテナーで使用できるコマンドが表示されます。これにより、コンテナーに対する操作を簡単に実行できるようになります (デザインサーフェイスでは、常に選択するのは簡単ではありません)。 コンテキストメニューの例を次に示します。
 
-[デザインサーフェイスを右クリックしたときのショートカットメニュー ![Example](designer-basics-images/xs/06-context-menu-sml.png)](designer-basics-images/xs/06-context-menu.png#lightbox)
+[デザインサーフェイスを右クリックしたときのショートカットメニューの![例](designer-basics-images/xs/06-context-menu-sml.png)](designer-basics-images/xs/06-context-menu.png#lightbox)
 
 この例では、`Button` を右クリックすると、いくつかのオプションを示すショートカットメニューが表示されます。
 
@@ -376,7 +376,7 @@ Android Designer は、**デザインサーフェイス**の特定のプロパ�
 
 デザインサーフェイスでは、次のようにいくつかのコントロールを使用したズームがサポートされます。
 
-[デザインサーフェイスズームコントロールの ![Diagram](designer-basics-images/xs/07-zoom-controls-sml.png)](designer-basics-images/xs/07-zoom-controls.png#lightbox)
+[デザインサーフェイスズームコントロールの![ダイアグラム](designer-basics-images/xs/07-zoom-controls-sml.png)](designer-basics-images/xs/07-zoom-controls.png#lightbox)
 
 これらのコントロールを使用すると、ユーザーインターフェイスの特定の領域をデザイナーで簡単に確認できます。
 
@@ -388,7 +388,7 @@ Android Designer は、**デザインサーフェイス**の特定のプロパ�
 
 - **拡大**&ndash; をクリックするたびにズームインし、レイアウトを拡大します。
 
-- @No__t_1**縮小**すると、各クリックで徐々にズームアウトし、デザインサーフェイス上でレイアウトを小さく表示できます。
+- &ndash;**縮小**すると、各クリックで徐々にズームアウトし、デザインサーフェイス上でレイアウトを小さく表示できます。
 
 選択したズーム設定は、実行時にアプリケーションのユーザーインターフェイスに影響しないことに注意してください。
 
@@ -396,7 +396,7 @@ Android Designer は、**デザインサーフェイス**の特定のプロパ�
 
 デザイナーでは、**プロパティパッド**を使用したウィジェットプロパティの編集がサポートされています。 プロパティパッドに表示されるプロパティは、デザイナー画面で選択されているウィジェットに応じて変わります。 前の例の `Button` を選択すると、その `Button` ウィジェットのプロパティが表示されます。
 
-[プロパティパッドの ![Screenshot](designer-basics-images/xs/08-property-pad-sml.png)](designer-basics-images/xs/08-property-pad.png#lightbox)
+[プロパティパッドの![スクリーンショット](designer-basics-images/xs/08-property-pad-sml.png)](designer-basics-images/xs/08-property-pad.png#lightbox)
 
 ## <a name="property-pad-sections"></a>プロパティパッドのセクション
 
@@ -404,7 +404,7 @@ Android Designer は、**デザインサーフェイス**の特定のプロパ�
 
 - **ウィ**ジェットは、`id`、`visibility`、`text` などのウィジェットの主要なプロパティ &ndash; ます。ウィジェットのコンテンツを管理するためのプロパティは、通常、ここに配置されます。
 
-- @No__t_2、`text color`、`background` などのウィジェットの外観を変更する**スタイル**&ndash; プロパティ。
+- `font`、`text color`、`background`などのウィジェットの外観を変更する**スタイル**&ndash; プロパティ。
 
 - **[レイアウト]** ウィジェットの位置とサイズを設定するプロパティを &ndash; ます。
 
@@ -424,23 +424,23 @@ Android Designer は、**デザインサーフェイス**の特定のプロパ�
 
 たとえば、次のスクリーンショットは、**プロパティパッド**で `Button` ウィジェットのテキストフィールドの右側にある省略記号をクリックしたときに使用できるリソースを示しています。
 
-[2つのリソースが一覧表示された ![Example リソースのスクリーンショット](designer-basics-images/xs/09-resources-sml.png)](designer-basics-images/xs/09-resources.png#lightbox)
+[2つのリソースが一覧表示された![のリソースのスクリーンショット](designer-basics-images/xs/09-resources-sml.png)](designer-basics-images/xs/09-resources.png#lightbox)
 
 次の例は、`ImageView` の `Src` プロパティのリソースセレクターを示しています。
 
-[ImageView の ![Resource selector リストアイコンリソース](designer-basics-images/xs/10-src-resource-sml.png)](designer-basics-images/xs/10-src-resource.png#lightbox)
+[ImageView のリソースセレクターリストアイコンリソースの![](designer-basics-images/xs/10-src-resource-sml.png)](designer-basics-images/xs/10-src-resource.png#lightbox)
 
 ### <a name="boolean-property-references"></a>ブール型プロパティの参照
 
-*ブール型*のプロパティは、通常、プロパティパッドにチェックボックスとして表示されます。 @No__t_0 プロパティがリソース参照をサポートしている場合、プロパティの横に小さなチェックボックスが表示されます。 チェックボックスをオンにすると `true`、空のボックスは `false` を意味します。 また、`true` や `false` などの値を直接入力することもできます。 入力の上にマウスポインターを置くと、小さいテキストフィールドアイコンが表示されます。 値を手動で入力する場合は、それをクリックします。
+*ブール型*のプロパティは、通常、プロパティパッドにチェックボックスとして表示されます。 `Boolean` プロパティがリソース参照をサポートしている場合、プロパティの横に小さなチェックボックスが表示されます。 チェックボックスをオンにすると `true`、空のボックスは `false` を意味します。 また、`true` や `false` などの値を直接入力することもできます。 入力の上にマウスポインターを置くと、小さいテキストフィールドアイコンが表示されます。 値を手動で入力する場合は、それをクリックします。
 
-[ブール型プロパティの設定の ![Example](designer-basics-images/xs/12-boolean-sml.png)](designer-basics-images/xs/12-boolean.png#lightbox)
+[ブール型プロパティの設定の![例](designer-basics-images/xs/12-boolean-sml.png)](designer-basics-images/xs/12-boolean.png#lightbox)
 
 ## <a name="grouped-properties"></a>グループ化されたプロパティ
 
 一部のウィジェットには、グループ化された複数値プロパティがあります (たとえば、`Padding` など)。 これらのプロパティ値は、1つの展開可能な行で**プロパティパッド**に一覧表示されます。 これらのプロパティの一部は、次に示す `Padding` プロパティなど、グループ化された行で直接編集できます。
 
-[Padding プロパティの ![Example 設定](designer-basics-images/xs/13-padding-property-sml.png)](designer-basics-images/xs/13-padding-property.png#lightbox)
+[![Padding プロパティの設定例](designer-basics-images/xs/13-padding-property-sml.png)](designer-basics-images/xs/13-padding-property.png#lightbox)
 
 ## <a name="editing-properties-inline"></a>インラインでのプロパティの編集
 
@@ -450,11 +450,11 @@ Android Designer は、デザインサーフェイスの特定のプロパティ
 
 一部のウィジェット (`Button` や `TextView` など) のテキストプロパティは、デザインサーフェイスで直接編集できます。 ウィジェットをダブルクリックすると、次のように編集モードになります。
 
-[hello 文字列の ![Text リソース](designer-basics-images/xs/14-text-resource-sml.png)](designer-basics-images/xs/14-text-resource.png#lightbox)
+[hello 文字列の![テキストリソース](designer-basics-images/xs/14-text-resource-sml.png)](designer-basics-images/xs/14-text-resource.png#lightbox)
 
 新しいテキスト値を入力するか、新しいリソース文字列を入力することができます。 次の例では、`@string/hello` リソースがテキストで置き換えられ、`CLICK THIS BUTTON` ます。
 
-[![Shift + Enter キーを押して、テキストを新しいリソースに自動的にリンクする](designer-basics-images/xs/15-shift-enter-resource-sml.png)](designer-basics-images/xs/15-shift-enter-resource.png#lightbox)
+[テキストを新しいリソースに自動的にリンクするには、Shift キーを押しながら Enter キーを![](designer-basics-images/xs/15-shift-enter-resource-sml.png)](designer-basics-images/xs/15-shift-enter-resource.png#lightbox)
 
 この変更は、ウィジェットの `text` プロパティに格納されます。`@string/hello` リソースに割り当てられた値は変更されません。
 新しいテキスト文字列でキーを押すと、 <kbd>Shift</kbd>キーを押し  +
@@ -466,40 +466,40 @@ Android Designer は、デザインサーフェイスの特定のプロパティ
 
 ウィジェットを初めてクリックすると、余白ハンドルが表示されます。 マウスをハンドルのいずれかに移動すると、次に示すように、ハンドルが変更されるプロパティがデザイナーに表示されます (`layout_marginLeft` プロパティについては次のようになります)。
 
-[デザイナーでの余白ハンドルの表示 ![Screenshot](designer-basics-images/xs/16-margin-handles-sml.png)](designer-basics-images/xs/16-margin-handles.png#lightbox)
+[デザイナーでの余白ハンドルを示す![スクリーンショット](designer-basics-images/xs/16-margin-handles-sml.png)](designer-basics-images/xs/16-margin-handles.png#lightbox)
 
 余白が既に設定されている場合は、余白が占める領域を示す点線が表示されます。
 
-[ボタンの周囲のスペースをマークする点線の ![Example](designer-basics-images/xs/17-margins-set-sml.png)](designer-basics-images/xs/17-margins-set.png#lightbox)
+[ボタンの周囲のスペースをマークする点線の![例](designer-basics-images/xs/17-margins-set-sml.png)](designer-basics-images/xs/17-margins-set.png#lightbox)
 
 ### <a name="size"></a>サイズ
 
-前述のように、既に選択されているときにウィジェットをクリックすると、サイズ編集モードに切り替えることができます。 三角形ハンドルをクリックして、指定したディメンションのサイズを `wrap_content` に設定します。
+前述のように、既に選択されているときにウィジェットをクリックすると、サイズ編集モードに切り替えることができます。 三角形ハンドルをクリックして、指定したディメンションのサイズを `wrap_content`に設定します。
 
-[![Wrap コンテンツとサイズ変更ハンドル](designer-basics-images/xs/18-wrap-content-sml.png)](designer-basics-images/xs/18-wrap-content.png#lightbox)
+[コンテンツとサイズ変更ハンドルをラップ![](designer-basics-images/xs/18-wrap-content-sml.png)](designer-basics-images/xs/18-wrap-content.png#lightbox)
 
 **Wrap コンテンツ**ハンドルをクリックすると、そのディメンション内のウィジェットが縮小され、が囲まれたコンテンツをラップするために必要以上になります。 この例では、ボタンのテキストは、次のスクリーンショットに示すように水平方向に縮小されます。
 
-サイズ値が **[折り返しコンテンツ]** に設定されている場合、デザイナーは、サイズを `match_parent` に変更するための逆方向を指す三角形ハンドルを表示します。
+サイズ値が **[折り返しコンテンツ]** に設定されている場合、デザイナーは、サイズを `match_parent`に変更するための逆方向を指す三角形ハンドルを表示します。
 
-[![Match 親ハンドル](designer-basics-images/xs/19-match-parent-sml.png)](designer-basics-images/xs/19-match-parent.png#lightbox)
+[![一致する親ハンドル](designer-basics-images/xs/19-match-parent-sml.png)](designer-basics-images/xs/19-match-parent.png#lightbox)
 
 [**一致する親**ハンドル] をクリックすると、親ウィジェットと同じサイズになるように、そのディメンションのサイズが復元されます。
 
 また、前のスクリーンショットに示されているように、円形のサイズ変更ハンドルをドラッグして、任意の `dp` 値にウィジェットのサイズを変更することもできます。 この場合、**ラップコンテンツ**と**一致する親**ハンドルの両方がそのディメンションに対して表示されます。
 
-[サイズ変更ハンドルの ![Circular](designer-basics-images/xs/20-resize-dp-sml.png)](designer-basics-images/xs/20-resize-dp.png#lightbox)
+[![の円のサイズ変更ハンドル](designer-basics-images/xs/20-resize-dp-sml.png)](designer-basics-images/xs/20-resize-dp.png#lightbox)
 
 すべてのコンテナーでウィジェットの `Size` を編集することはできません。 たとえば、次のスクリーンショットでは `LinearLayout` が選択されていますが、サイズ変更ハンドルが表示されていないことに注意してください。
 
-[サイズ変更ハンドルの ![No](designer-basics-images/xs/21-no-resize-handles-sml.png)](designer-basics-images/xs/20-no-resize-handles.png#lightbox)
+[サイズ変更ハンドルなし![](designer-basics-images/xs/21-no-resize-handles-sml.png)](designer-basics-images/xs/20-no-resize-handles.png#lightbox)
 
 ## <a name="document-outline"></a>[ドキュメント アウトライン]
 
 **ドキュメントアウトライン**には、レイアウトのウィジェット階層が表示されます。
 次の例では、含んでいる `LinearLayout` ウィジェットが選択されています。
 
-[![Document アウトライン](designer-basics-images/xs/22-outline-view-sml.png)](designer-basics-images/xs/22-outline-view.png#lightbox)
+[![ドキュメントアウトライン](designer-basics-images/xs/22-outline-view-sml.png)](designer-basics-images/xs/22-outline-view.png#lightbox)
 
 選択したウィジェットのアウトライン (この例では `LinearLayout`) もデザインサーフェイスで強調表示されています。 ドキュメントアウトライン内の選択したウィジェットは、デザインサーフェイスに対応するものと同期したままになります。 これは、[グループの表示] を選択する場合に便利です。デザインサーフェイスでは、常に選択するのは簡単ではありません。
 

@@ -3,23 +3,23 @@ title: RadioButton
 ms.prod: xamarin
 ms.assetid: 3C32EA3F-D917-C988-72C5-A17354DA791E
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 02/06/2018
-ms.openlocfilehash: c1dabfcd481dccf50075c02c54019ee27499769f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9f51adcbd1accb4f780318cc0853e612ed8e5bed
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70758826"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029299"
 ---
 # <a name="radiobutton"></a>RadioButton
 
-このセクションでは、次を使用して相互に排他的な2つのラジオボタンを作成します (有効にするともう一方は無効になります)。[`RadioGroup`](xref:Android.Widget.RadioGroup)
-そして[`RadioButton`](xref:Android.Widget.RadioButton)
+このセクションでは、2つの相互排他的なラジオボタンを作成し (有効にすると、もう一方を無効にする)、を使用して[`RadioGroup`](xref:Android.Widget.RadioGroup)
+および[`RadioButton`](xref:Android.Widget.RadioButton)
 ウィジェット. いずれかのオプションボタンを押すと、トーストメッセージが表示されます。
 
-**Resources/layout/Main. axml**ファイルを開き、2つ[`RadioButton`](xref:Android.Widget.RadioButton)の[`RadioGroup`](xref:Android.Widget.RadioGroup)を追加します。その中[`LinearLayout`](xref:Android.Widget.LinearLayout)には、(内の) で入れ子になっています。
+**Resources/layout/Main. axml**ファイルを開き、次の2つの[`RadioButton`](xref:Android.Widget.RadioButton)を追加します。これは、 [`LinearLayout`](xref:Android.Widget.LinearLayout)内の[`RadioGroup`](xref:Android.Widget.RadioGroup)に入れ子になっています。
 
 ```xml
 <RadioGroup
@@ -37,7 +37,7 @@ ms.locfileid: "70758826"
 </RadioGroup>
 ```
 
-を[`RadioButton`](xref:Android.Widget.RadioButton)[要素`RadioGroup`](xref:Android.Widget.RadioGroup)ごとにグループ化して、一度に複数のを選択できないようにすることが重要です。 このロジックは、Android システムによって自動的に処理されます。 ある場合[`RadioButton`](xref:Android.Widget.RadioButton)
+[`RadioButton`](xref:Android.Widget.RadioButton)は、一度に1つ以上選択できるように、 [`RadioGroup`](xref:Android.Widget.RadioGroup)要素でグループ化されていることが重要です。 このロジックは、Android システムによって自動的に処理されます。 1 [`RadioButton`](xref:Android.Widget.RadioButton)
 [グループ内] を選択すると、他のグループは自動的に選択解除されます。
 
 各[`RadioButton`](xref:Android.Widget.RadioButton)を選択したときに何かを行うには、イベントハンドラーを記述する必要があります。
@@ -51,10 +51,10 @@ private void RadioButtonClick (object sender, EventArgs e)
 ```
 
 まず、渡された送信元は RadioButton にキャストされます。
-次に、[`Toast`](xref:Android.Widget.Toast)
+次に[`Toast`](xref:Android.Widget.Toast)
 [メッセージ] 選択したラジオボタンのテキストを表示します。
 
-次に、の下部にあります。[`OnCreate()`](xref:Android.App.Activity.OnCreate*)
+次に、 [`OnCreate()`](xref:Android.App.Activity.OnCreate*)の下部にあります。
 次のように、メソッドを追加します。
 
 ```csharp
@@ -65,14 +65,14 @@ radio_red.Click += RadioButtonClick;
 radio_blue.Click += RadioButtonClick;
 ```
 
-これにより、 [`RadioButton`](xref:Android.Widget.RadioButton)レイアウトから各をキャプチャし、新しく作成されたイベントハンドラーをそれぞれに追加します。
+これにより、レイアウトから[`RadioButton`](xref:Android.Widget.RadioButton)の各がキャプチャされ、新しく作成されたイベントハンドラーがそれぞれに追加されます。
 
 アプリケーションを実行します。
 
 > [!TIP]
-> 状態を自分で変更する必要がある場合 (保存され[`CheckBoxPreference`](xref:Android.Preferences.CheckBoxPreference)たの読み込み時など) は、[`Checked`](xref:Android.Widget.CompoundButton.Checked)
+> 状態を自分で変更する必要がある場合 (保存されている[`CheckBoxPreference`](xref:Android.Preferences.CheckBoxPreference)を読み込む場合など) は、 [`Checked`](xref:Android.Widget.CompoundButton.Checked)を使用します。
 > プロパティセッターまたは[`Toggle()`](xref:Android.Widget.CompoundButton.Toggle)
 > メソッドをオーバーライドします。
 
-*このページの一部は、Android オープンソースプロジェクトによって作成および共有*
-され、[*Creative Commons 2.5 属性*](http://creativecommons.org/licenses/by/2.5/)で説明されている条項に従って使用される作業に基づいて変更されます。 
+*このページの一部は、Android オープンソースプロジェクトによって作成および共有*され、
+[*Creative Commons 2.5 属性のライセンス*](https://creativecommons.org/licenses/by/2.5/)に記載されている条項に従って使用される作業に基づいて変更されます。 

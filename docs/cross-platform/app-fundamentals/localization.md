@@ -3,15 +3,15 @@ title: アプリケーションのユーザーインターフェイスのロー�
 description: このドキュメントでは、国際化とローカリゼーションのクロスプラットフォームの概念について説明し、アプリケーションの設計にどのように影響するかを調べます。
 ms.prod: xamarin
 ms.assetid: CC6847B2-23FB-4EDE-9F7E-EF29DD46A5C5
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 9e0a6569710ca3ad10f57d7145a97af92574427c
-ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
+ms.openlocfilehash: 418c0da2b8fa0e495ae7e6a605c7fde43b6515cb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71198440"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016797"
 ---
 # <a name="localization"></a>ローカリゼーション
 
@@ -59,13 +59,13 @@ Xamarin アプリのローカライズに関する技術的な詳細に直接進
 
 IOS ホーム画面上のいくつかの項目の文字列の長さを英語、ドイツ語、日本語で比較します。
 
-[![](localization-images/language-compare-sml.png "ドイツ語と日本語の文字列長")](localization-images/language-compare.png#lightbox)
+[![](localization-images/language-compare-sml.png "German vs Japanese string length")](localization-images/language-compare.png#lightbox)
 
 英語 (8 文字) の**設定**ではドイツ語の翻訳に13文字が必要ですが、日本語では2文字のみであることに注意してください。
 
 表示ラベルと入力フィールドが左右に並んでいるレイアウトでは、ラベルの長さが大幅に異なる場合に、操作が困難になります。 多くの場合、フィールドの上にラベルが表示されているレイアウトは、ラベルと入力の両方に対して画面全体の幅が使用できるため、ローカライズが容易になります。
 
-一般的な規則として、固定レイアウト (特にサイドバイサイドの要素) を作成する場合は、ラベルとテキストに対して、英語の文字列では少なくとも 50% の幅が許容されます。 これにより、すべての問題が解決されるわけではありませんが、多くの場合に動作するバッファーが提供されます。
+一般的な規則として、固定レイアウト (特にサイドバイサイドの要素) を作成する場合は、ラベルとテキストに対して、英語の文字列では少なくとも50% の幅が許容されます。 これにより、すべての問題が解決されるわけではありませんが、多くの場合に動作するバッファーが提供されます。
 
 ### <a name="input-validation"></a>入力の検証
 
@@ -218,7 +218,7 @@ IOS と Android はどちらも、右から左へのレイアウトとフォン�
 
 ### <a name="use-multiple-strings-for-cardinality"></a>カーディナリティに複数の文字列を使用する
 
-ユーザーエクスペリエンスを`"You have {0} message/s."`向上させるために、各状態に特定の文字列を使用するような文字列は使用しないでください。
+ユーザーエクスペリエンスを向上させるために、各状態に特定の文字列を使用 `"You have {0} message/s."` などの文字列は避けてください。
 
 **いいですね**。
 
@@ -235,7 +235,7 @@ IOS と Android はどちらも、右から左へのレイアウトとフォン�
 
 ラテン語ベースの言語では、サブジェクトの性別によって異なる単語が使用されることがあります。 アプリが性別を認識している場合は、翻訳された文字列にこのことを反映させる必要があります。
 
-また、英語でもより明確なケースもあります。文字列は、アプリの特定の個人またはユーザーを指します。 たとえば、一部のサイトでは、 `"Bob commented on his post"`次のようなメッセージが表示されるため、男性、女性、および非バイナリまたは不明な性別の両方に対して文字列が必要です。
+また、英語でもより明確なケースもあります。文字列は、アプリの特定の個人またはユーザーを指します。 たとえば、一部のサイトでは `"Bob commented on his post"` のようなメッセージが表示されるため、男性、女性、および非バイナリまたは不明な性別の両方に対して文字列が必要です。
 
 **いいですね**。
 
@@ -271,7 +271,7 @@ IOS と Android はどちらも、右から左へのレイアウトとフォン�
 テスト目的では、多くのオンライン翻訳ツールのいずれかを使用して、開発時にアプリにローカライズされたテキストを含めることができます。
 
 - [Bing Translator](https://www.bing.com/translator/)
-- [Google の翻訳](http://translate.google.com/)
+- [Google の翻訳](https://translate.google.com/)
 
 他にも多くの使用可能なものがあります。 機械翻訳の品質は、一般に、プロの翻訳者やネイティブの講演者によって確認およびテストされることなく、アプリケーションをリリースするのに十分なものとは見なされません。
 
@@ -279,7 +279,7 @@ IOS と Android はどちらも、右から左へのレイアウトとフォン�
 
 また、お客様の文字列を取得して独自の翻訳者に配布するプロ翻訳サービスも用意されています。これにより、翻訳が完成しました。
 
-よく知られているサービスの1つは[Lionbridge](http://www.lionbridge.com/)です。 ほとんどのプロフェッショナルサービスは、文字列、XML、RESX、および .POT などの一般的なファイルの種類をサポートしています。
+よく知られているサービスの1つは[Lionbridge](https://www.lionbridge.com/)です。 ほとんどのプロフェッショナルサービスは、文字列、XML、RESX、および .POT などの一般的なファイルの種類をサポートしています。
 
 ## <a name="summary"></a>まとめ
 

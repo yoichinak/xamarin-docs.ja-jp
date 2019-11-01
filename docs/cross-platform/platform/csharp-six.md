@@ -4,15 +4,15 @@ description: C#言語のバージョン6では、言語を進化させながら�
 ms.prod: xamarin
 ms.assetid: 4B4E41A8-68BA-4E2B-9539-881AC19971B
 ms.custom: xamu-video
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 34a77f15391a0f4e10c1902046d8bd37806c14ec
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 1db7ee95ec261739463fa2584f4acf493ac71217
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765280"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73014819"
 ---
 # <a name="c-6-new-features-overview"></a>C#6新機能の概要
 
@@ -30,12 +30,12 @@ _C#言語のバージョン6では、言語を進化させながら定型コー�
 ## <a name="using-c-6"></a>6 C#を使用する
 
 6 C#つのコンパイラは、Visual Studio for Mac の最近のすべてのバージョンで使用されます。
-コマンドラインコンパイラを使用する場合は、 `mcs --version`が4.0 以上を返すことを確認する必要があります。
+コマンドラインコンパイラを使用して、`mcs --version` が4.0 以上を返すことを確認する必要があります。
 Visual Studio for Mac ユーザーは、 **Visual Studio for Mac > Visual Studio for Mac > に関する情報**を参照して Mono 4 (またはそれ以降) がインストールされているかどうかを確認し、詳細を表示することができます。
 
 ## <a name="less-boilerplate"></a>Less 定型句
 ### <a name="using-static"></a>using static
-列挙型、およびなどの特定`System.Math`のクラスは、主に静的な値と関数の所有者です。 6 C#では、1つ`using static`のステートメントを使用して、型のすべての静的メンバーをインポートできます。 5とC# C# 6 の一般的な三角関数を比較します。
+列挙型と、`System.Math`などの特定のクラスは、主に静的な値と関数の所有者です。 6 C#では、1つの`using static`ステートメントを使用して、型のすべての静的メンバーをインポートできます。 5とC# C# 6 の一般的な三角関数を比較します。
 
 ```csharp
 // Classic C#
@@ -61,7 +61,7 @@ class MyClass
 }
 ```
 
-`using static`は、パブリック`const`フィールド ( `Math.PI`や`Math.E`など) を直接アクセスできません。
+`using static` は、`Math.PI` や `Math.E`などのパブリック `const` フィールドに直接アクセスできません。
 
 ```csharp
 for (var angle = 0.0; angle <= Math.PI * 2.0; angle += Math.PI / 8) ... 
@@ -70,7 +70,7 @@ for (var angle = 0.0; angle <= Math.PI * 2.0; angle += Math.PI / 8) ...
 
 ### <a name="using-static-with-extension-methods"></a>拡張メソッドでの static の使用
 
-拡張`using static`メソッドでは、ファシリティの動作が若干異なります。 拡張メソッドはを使用し`static`て記述されますが、操作するインスタンスがないと意味がありません。 したがって`using static` 、を拡張メソッドを定義する型と共に使用すると、その拡張メソッドはターゲット型 (メソッド`this`の型) で使用できるようになります。 たとえば、を`using static System.Linq.Enumerable`使用して、すべての LINQ 型`IEnumerable<T>`を取り込むことなくオブジェクトの API を拡張できます。
+`using static` ファシリティは、拡張メソッドを使用して若干異なる方法で動作します。 拡張メソッドは `static`を使用して記述されますが、操作するインスタンスがないと意味がありません。 したがって、拡張メソッドを定義する型で `using static` を使用すると、その拡張メソッドはターゲット型 (メソッドの `this` 型) で使用できるようになります。 たとえば、`using static System.Linq.Enumerable` を使用すると、すべての LINQ 型を使用せずに `IEnumerable<T>` オブジェクトの API を拡張できます。
 
 ```csharp
 using static System.Linq.Enumerable;
@@ -87,16 +87,16 @@ class Program
 }
 ```
 
-前の例では、動作の違いを示して`Enumerable.Where`います。拡張メソッドは配列に関連付け`String.Join`られていますが、 `String`静的メソッドは型を参照せずに呼び出すことができます。
+前の例では、動作の違いを示しています。拡張メソッド `Enumerable.Where` が配列に関連付けられていますが、静的メソッド `String.Join` は `String` 型への参照なしで呼び出すことができます。
 
 ### <a name="nameof-expressions"></a>すべてのの表記
-場合によっては、変数またはフィールドを指定した名前を参照する必要があります。 6 C#では`nameof(someVariableOrFieldOrType)` 、は文字列`"someVariableOrFieldOrType"`を返します。 たとえば、をスロー `ArgumentException`する場合は、どの引数が無効であるかを指定するのが一般的です。
+場合によっては、変数またはフィールドを指定した名前を参照する必要があります。 6 C#では、`nameof(someVariableOrFieldOrType)`は文字列`"someVariableOrFieldOrType"`を返します。 たとえば、`ArgumentException` をスローする場合は、どの引数が無効であるかを指定するのが一般的です。
 
 ```csharp
 throw new ArgumentException ("Problem with " + nameof(myInvalidArgument))
 ```
 
-式の`nameof`最高の利点は、型チェックが行われ、ツールを使用したリファクタリングと互換性があることです。 式の`nameof`型チェックは、を`string`使用して型を動的に関連付ける場合に特に歓迎します。 たとえば、iOS `string`では、で`UITableView`オブジェクトのプロトタイプ`UITableViewCell`を設定するために使用される型を指定するために使用されます。 `nameof`スペルミスまたは粗雑なのリファクタリングによって、この関連付けが失敗しないようにすることができます。
+`nameof` 式の最高の利点は、それらが型チェックされ、ツールを使用したリファクタリングと互換性があることです。 `nameof` 式の型チェックは、`string` を使用して型を動的に関連付ける場合に特に歓迎します。 たとえば、iOS では、`UITableView`内の `UITableViewCell` オブジェクトのプロトタイプを設定するために使用される型を指定するために `string` が使用されます。 `nameof` は、スペルミスまたは粗雑なのリファクタリングによって、この関連付けが失敗しないようにすることができます。
 
 ```csharp
 public override UITableViewCell GetCell (UITableView tableView, NSIndexPath indexPath)
@@ -107,7 +107,7 @@ public override UITableViewCell GetCell (UITableView tableView, NSIndexPath inde
 }
 ```
 
-修飾名はに`nameof`渡すことができますが、最後の要素 (最後`.`の要素の後) だけが返されます。 たとえば、Xamarin にデータバインディングを追加できます。
+修飾名を `nameof`に渡すことはできますが、最後の要素 (最後の `.`の後) だけが返されます。 たとえば、Xamarin にデータバインディングを追加できます。
 
 ```csharp
 var myReactiveInstance = new ReactiveType ();
@@ -117,10 +117,10 @@ var myLabelOld.SetBinding (Label.TextProperty, "StringField");
 var myLabelNew.SetBinding (Label.TextProperty, nameof(ReactiveType.StringField));
 ```
 
-の2つの`SetBinding`呼び出しで同一の`nameof(ReactiveType.StringField)`値が渡されています。は、最初に予想されるようにでは`"StringField"`ありません`"ReactiveType.StringField"` 。
+`SetBinding` の2つの呼び出しで同一の値が渡されています。 `nameof(ReactiveType.StringField)` は `"StringField"`であり、最初に予想される `"ReactiveType.StringField"` ではありません。
 
 ## <a name="null-conditional-operator"></a>Null 条件演算子
-以前のでC#は、null 許容値を処理するときに定型コード`??`の量を減らすために、null 許容型と null 合体演算子の概念が導入されました。 C#6このテーマは、"null 条件演算子" `?.`を使用して続行します。 式の右辺にあるオブジェクトで使用する場合、null 条件演算子は、オブジェクトがでない`null` `null`場合はメンバー値を返し、それ以外の場合はを返します。
+の以前のC#更新では、null 許容の値を処理するときに定型コードの量を減らすために、null 許容型と null 合体演算子`??`の概念が導入されました。 C#6このテーマは、"null 条件演算子"`?.`で続行されます。 Null 条件演算子は、式の右辺のオブジェクトで使用されている場合、オブジェクトが `null` ない場合はメンバー値を返し、それ以外の場合は `null` を返します。
 
 ```csharp
 var ss = new string[] { "Foo", null };
@@ -129,19 +129,19 @@ var length1 = ss [1]?.Length; // null
 var lengths = ss.Select (s => s?.Length ?? 0); //[3, 0]
 ```
 
-(と`length0`の`length1`両方が型`int?`であると推論されます)
+(`length0` と `length1` の両方が `int?`型であると推論されます)
 
-前の例の最後の行は、 `?` null 条件演算子`??`と null 合体演算子の組み合わせを示しています。 新しいC# 6 の null 条件演算子は、 `null`配列内の2番目の要素に対してを返します。この時点で、null 合体演算子が開始`lengths`され、配列に0が渡されます (これが適切かどうかにかかわらず、もちろんです。問題固有)。
+前の例の最後の行は、null 条件演算子 `?` を `??` の null 合体演算子と組み合わせて示しています。 新しいC# 6 つの null 条件演算子は、配列内の2番目の要素に対して`null`を返します。この時点で、null 合体演算子が開始され、`lengths`配列に0が渡されます (これが適切かどうかにかかわらず、問題に固有のものであるかどうか)。
 
 Null 条件演算子を指定すると、多くの多くのアプリケーションで必要となる定型的な null チェックの量を大幅に削減できます。
 
-あいまいさのために、null 条件演算子にはいくつかの制限があります。 デリゲートを使用すること`?`をお勧めしますが、かっこで囲まれる引数リストを使用して、にすぐに従うことはできません。
+あいまいさのために、null 条件演算子にはいくつかの制限があります。 デリゲートを使用する場合と同じように、かっこで囲まれる引数リストを使用して、`?` にすぐに従うことはできません。
 
 ```csharp
 SomeDelegate?("Some Argument") // Not allowed
 ```
 
-ただし、 `Invoke`は、を引数リスト`?`から分離するために使用できます。また、は、 `null`次のように、定型句のチェックブロックよりも改良されています。
+ただし、`Invoke` は、引数リストから `?` を分離するために使用できます。また、定型句の `null`チェックブロックよりも改善されています。
 
 ```csharp
 public event EventHandler HandoffOccurred;
@@ -153,9 +153,9 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 ```
 
 ## <a name="string-interpolation"></a>文字列補間
-この`String.Format`関数では、 `String.Format("Expected: {0} Received: {1}.", expected, received`従来は形式文字列のプレースホルダーとしてインデックスが使用されていました (例:)。 もちろん、新しい値を追加すると、常に、引数をカウントし、プレースホルダーの番号を指定し、引数リストの右側のシーケンスに新しい引数を挿入する面倒な作業が発生します。
+`String.Format` 関数では、従来は、`String.Format("Expected: {0} Received: {1}.", expected, received`などの書式文字列のプレースホルダーとしてインデックスが使用されていました。 もちろん、新しい値を追加すると、常に、引数をカウントし、プレースホルダーの番号を指定し、引数リストの右側のシーケンスに新しい引数を挿入する面倒な作業が発生します。
 
-C#6の新しい文字列補間機能は`String.Format`、で大幅に改善されています。 ここで、というプレフィックスの付い`$`た文字列で変数に直接名前を付けることができます。 たとえば、次のようになります。
+C#6の新しい文字列補間機能は `String.Format`で大幅に改善されています。 これで、`$`で始まる文字列の変数に直接名前を付けることができます。 たとえば、次のようになります。
 
 ```csharp
 $"Expected: {expected} Received: {received}."
@@ -163,13 +163,13 @@ $"Expected: {expected} Received: {received}."
 
 もちろん、変数がチェックされ、スペルミスまたは使用できない変数があると、コンパイラエラーが発生します。
 
-プレースホルダーは、単純な変数である必要はなく、任意の式にすることができます。 これらのプレースホルダー内では、引用符をエスケープ*せず*に引用符で囲むことができます。 たとえば、次のに`"s"`注意してください。
+プレースホルダーは、単純な変数である必要はなく、任意の式にすることができます。 これらのプレースホルダー内では、引用符をエスケープ*せず*に引用符で囲むことができます。 たとえば、次の `"s"` に注意してください。
 
 ```csharp
 var s = $"Timestamp: {DateTime.Now.ToString ("s", System.Globalization.CultureInfo.InvariantCulture )}"
 ```
 
-文字列補間では、の`String.Format`アラインメントおよび書式設定構文がサポートされています。 前に書い`{index, alignment:format}`たように、6では`{placeholder, alignment:format}`次のようにC#記述します。
+文字列補間では、`String.Format`のアラインメントと書式設定の構文がサポートされます。 前に `{index, alignment:format}`を書き込んだのとC#同じように、6で`{placeholder, alignment:format}`を記述します。
 
 ```csharp
 using static System.Linq.Enumerable;
@@ -200,13 +200,13 @@ The value is 123,456.00.
 Minimum is 1.00.
 ```
 
-文字列補間の`String.Format`構文は、文字列リテラルで`@""`は使用できません。また、プレースホルダー `const`が使用されていない場合でも、との互換性がありません。
+文字列補間は `String.Format`の構文砂糖です。プレースホルダーが使用されていない場合でも、文字列リテラル `@""` と共に使用することはできません。また、`const`と互換性がありません。
 
 ```csharp
 const string s = $"Foo"; //Error : const requires value
 ```
 
-文字列補間を使用して関数の引数を構築する一般的なユースケースでは、エスケープ、エンコーディング、およびカルチャの問題について注意する必要があります。 もちろん、SQL と URL のクエリは、サニタイズに不可欠です。 と`String.Format`同様に、文字列補間`CultureInfo.CurrentCulture`ではを使用します。 を`CultureInfo.InvariantCulture`使用すると、もう少し複雑になります。
+文字列補間を使用して関数の引数を構築する一般的なユースケースでは、エスケープ、エンコーディング、およびカルチャの問題について注意する必要があります。 もちろん、SQL と URL のクエリは、サニタイズに不可欠です。 `String.Format`と同様に、文字列補間では `CultureInfo.CurrentCulture`が使用されます。 `CultureInfo.InvariantCulture` の使用方法はもう少しです。
 
 ```csharp
 Thread.CurrentThread.CurrentCulture  = new CultureInfo ("de");
@@ -248,7 +248,7 @@ class ToDo
 
 ### <a name="index-initializers"></a>インデックス初期化子
 
-C#6では、インデックス初期化子が導入されています。これにより、インデクサーを持つ型のキーと値の両方を設定できます。 通常、これはスタイル`Dictionary`のデータ構造です。
+C#6では、インデックス初期化子が導入されています。これにより、インデクサーを持つ型のキーと値の両方を設定できます。 通常、これは `Dictionary`スタイルのデータ構造に対して行います。
 
 ```csharp
 partial void ActivateHandoffClicked (WatchKit.WKInterfaceButton sender)
@@ -273,13 +273,13 @@ partial void ActivateHandoffClicked (WatchKit.WKInterfaceButton sender)
 public override string ToString () => $"{FirstName} {LastName}";
 ```
 
-ラムダ矢印の構文では、明示的`return`なが使用されないことに注意してください。 を返す`void`関数では、式もステートメントである必要があります。
+ラムダ矢印の構文では、明示的な `return`を使用しないことに注意してください。 `void`を返す関数では、式もステートメントである必要があります。
 
 ```csharp
 public void Log(string message) => System.Console.WriteLine($"{DateTime.Now.ToString ("s", System.Globalization.CultureInfo.InvariantCulture )}: {message}");
 ```
 
-式形式のメンバーは、メソッドではサポートされ`async`ているがプロパティではないルールの対象になります。
+式形式のメンバーは、メソッドではサポートされているがプロパティではサポートされていない `async` する規則の対象となります。
 
 ```csharp
 //A method, so async is valid
@@ -294,7 +294,7 @@ public async Task<int> LeisureHours => await Task.FromResult<char> (DateTime.Now
 
 ### <a name="exception-filters"></a>例外フィルター
 
-定義上、例外的な状況では例外が発生し、特定の型の例外が発生する可能性がある理由やコード*については、* その理由やコードが非常に複雑になることがあります。 C#6では、ランタイムによって評価されるフィルターを使用して実行ハンドラーを保護する機能が導入されています。 これを行うには、 `when (bool)`通常`catch(ExceptionType)`の宣言の後にパターンを追加します。 次の例では、フィルターは、他の解析エラー `date`とは対照的に、パラメーターに関連する解析エラーを識別します。
+定義上、例外的な状況では例外が発生し、特定の型の例外が発生する可能性がある理由やコード*については、* その理由やコードが非常に複雑になることがあります。 C#6では、ランタイムによって評価されるフィルターを使用して実行ハンドラーを保護する機能が導入されています。 これを行うには、通常の `catch(ExceptionType)` 宣言の後に `when (bool)` パターンを追加します。 次の例では、フィルターは、他の解析エラーとは対照的に、`date` パラメーターに関連する解析エラーを識別します。
 
 ```csharp
 public void ExceptionFilters(string aFloat, string date, string anInt)
@@ -314,7 +314,7 @@ public void ExceptionFilters(string aFloat, string date, string anInt)
 
 ### <a name="await-in-catchfinally"></a>catch の await...最終的に。。。
 
-5 `async`でC#導入された機能は、その言語のゲームチェンジャーでした。 5 C# `catch`では、と`finally`ブロックでは使用できませんでしたが、 `async/await`機能の値が指定されています。 `await` C#6は、次のスニペットに示すように、この制限を解除して、非同期の結果をプログラムを通じて一貫して待機できるようにします。
+5でC#導入された `async` 機能は、その言語のゲームチェンジャーでした。 5 C#では、`await`は`catch`および`finally`ブロックでは許可されていませんでしたが、`async/await`機能の値が指定されています。 C#6は、次のスニペットに示すように、この制限を解除して、非同期の結果をプログラムを通じて一貫して待機できるようにします。
 
 ```csharp
 async void SomeMethod()

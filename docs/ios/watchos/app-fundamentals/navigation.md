@@ -1,83 +1,83 @@
 ---
-title: WatchOS Xamarin でのナビゲーションの操作
-description: このドキュメントでは、watchOS アプリケーションでナビゲーションを操作する方法について説明します。 これは、モーダル インターフェイス、階層型ナビゲーション、およびページ ベースのインターフェイスについて説明します。
+title: Xamarin での watchOS ナビゲーションの使用
+description: このドキュメントでは、watchOS アプリケーションでナビゲーションを操作する方法について説明します。 モーダルインターフェイス、階層ナビゲーション、およびページベースのインターフェイスについて説明します。
 ms.prod: xamarin
 ms.assetid: 71A64C10-75C8-4159-A547-6A704F3B5C2E
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 05da84949f6613bce24f103df4d86f1bdcd30764
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: d3565e359ccbad9f7b779969f4273a8cbae4d438
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70768719"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021743"
 ---
-# <a name="working-with-watchos-navigation-in-xamarin"></a>WatchOS Xamarin でのナビゲーションの操作
+# <a name="working-with-watchos-navigation-in-xamarin"></a>Xamarin での watchOS ナビゲーションの使用
 
-Watch で使用可能な最も簡単なナビゲーション オプションは、単純な[モーダル ポップアップ](#modal)現在のシーンの上に表示されます。
+ウォッチで使用できる最も簡単なナビゲーションオプションは、現在のシーンの上に表示される単純な[モーダルポップアップ](#modal)です。
 
-複数のシーン ウォッチ アプリケーションは使用可能な 2 つのナビゲーション パラダイムです。
+マルチシーンウォッチアプリの場合、次の2つのナビゲーションパラダイムを利用できます。
 
 - [階層ナビゲーション](#Hierarchical_Navigation)
-- [ページ ベースのインターフェイス](#Page-Based_Interfaces)
+- [ページベースのインターフェイス](#Page-Based_Interfaces)
 
 <a name="modal"/>
 
-## <a name="modal-interfaces"></a>モーダル インターフェイス
+## <a name="modal-interfaces"></a>モーダルインターフェイス
 
-使用して、`PresentController`インターフェイス コント ローラーをモーダルとして開くメソッドです。 インターフェイス コント ローラーで既に定義する必要があります、 **Interface.storyboard**します。
+インターフェイスコントローラーをモーダルとして開くには、`PresentController` メソッドを使用します。 インターフェイスコントローラーは、既に**インターフェイスの storyboard**で定義されている必要があります。
 
 ```csharp
 PresentController ("pageController","some context info");
 ```
 
-コント ローラーのモーダルとして表示では、画面全体を (前のシーンをカバーする) を使用します。 既定では、タイトル設定されます**キャンセル**し、タップすることで、コント ローラーが閉じます。
+モーダルで表示されるコントローラーは、画面全体を使用します (前のシーンをカバーします)。 既定では、タイトルは **[キャンセル]** に設定され、タップするとコントローラーが破棄されます。
 
-モーダルとして表示されるコント ローラーをプログラムで閉じる呼び出す`DismissController`します。
+モーダルで表示されたコントローラーをプログラムで閉じるには、`DismissController`を呼び出します。
 
 ```csharp
 DismissController();
 ```
 
-モーダルの画面は、1 つのシーンまたはページ ベースのレイアウトを使用できます。
+モーダル画面には、単一のシーンを使用することも、ページベースのレイアウトを使用することもできます。
 
 <a name="Hierarchical_Navigation"/>
 
 ## <a name="hierarchical-navigation"></a>階層ナビゲーション
 
-移動を遡ってと同じように、スタックのようにシーンを表示します。 `UINavigationController` iOS で動作します。 シーンをナビゲーション スタックにプッシュし、(プログラムまたはユーザーの選択によって) からポップします。
+は、iOS での `UINavigationController` と同様に、移動可能なスタックのようなシーンを提供します。 シーンは、ナビゲーションスタックにプッシュしてポップすることができます (プログラムによって、またはユーザー選択によって)。
 
-![](navigation-images/hierarchy-1.png "シーンをナビゲーション スタックにプッシュできる") ![](navigation-images/hierarchy-2.png "シーンをナビゲーション スタックからポップすることができます")
+![](navigation-images/hierarchy-1.png "シーンをナビゲーションスタックにプッシュすることができます") ![](navigation-images/hierarchy-2.png "シーンをナビゲーションスタックからポップすることができます")
 
-同様に、iOS 左エッジ スワイプが階層型ナビゲーション スタックの親のコント ローラーに移動します。
+IOS の場合と同様に、左の端のスワイプは階層型のナビゲーションスタックで親コントローラーに戻ります。
 
-両方の[WatchKitCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)と[WatchTables](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchtables)サンプルには、階層型ナビゲーションが含まれています。
+[WatchKitCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)と[WatchTables](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchtables)の両方のサンプルには、階層ナビゲーションが含まれています。
 
-### <a name="pushing-and-popping-in-code"></a>プッシュとポップをコードで
+### <a name="pushing-and-popping-in-code"></a>コードでのプッシュとポップ
 
-キットは、包括的な「ナビゲーション コント ローラー」をご覧ください。 - iOS と同様に作成する単純にプッシュを使用して、コント ローラー、`PushController`メソッドとナビゲーション スタックが自動的に作成されます。
+Watch Kit では、iOS と同様に arching "ナビゲーションコントローラー" を作成する必要はありません。 `PushController` メソッドを使用してコントローラーをプッシュするだけで、ナビゲーションスタックが自動的に作成されます。
 
 ```csharp
 PushController("secondPageController","some context info");
 ```
 
-ウォッチの画面が含まれます、**戻る**左、上のボタンを使ってナビゲーション スタックからシーンを削除できますもプログラムで`PopController`します。
+ウォッチの画面には左上に **[戻る]** ボタンが表示されますが、`PopController`を使用してナビゲーションスタックからシーンをプログラムで削除することもできます。
 
 ```csharp
 PopController();
 ```
 
-ですので、iOS でもを使用して、ナビゲーション スタックのルートに返すこと`PopToRootController`します。
+IOS と同様に、`PopToRootController`を使用してナビゲーションスタックのルートに戻ることもできます。
 
 ```csharp
 PopToRootController();
 ```
 
-### <a name="using-segues"></a>セグエを使用して
+### <a name="using-segues"></a>セグエの使用
 
-セグエを階層型ナビゲーションを定義するストーリー ボード内のシーン間に作成できます。 ターゲットのシーン、オペレーティング システムの呼び出しのコンテキストを取得する`GetContextForSegue`新しいインターフェイス コント ローラーを初期化します。
+セグエは、ストーリーボードのシーンの間に作成して、階層ナビゲーションを定義できます。 ターゲットシーンのコンテキストを取得するために、オペレーティングシステムは `GetContextForSegue` を呼び出して新しいインターフェイスコントローラーを初期化します。
 
 ```csharp
 public override NSObject GetContextForSegue (string segueIdentifier)
@@ -91,13 +91,13 @@ public override NSObject GetContextForSegue (string segueIdentifier)
 
 <a name="Page-Based_Interfaces"/>
 
-## <a name="page-based-interfaces"></a>ページ ベースのインターフェイス
+## <a name="page-based-interfaces"></a>ページベースのインターフェイス
 
-ページ ベースのインターフェイスは、左から右と同様の方法をスワイプ`UIPageViewController`iOS で動作します。 現在表示されているどのページを表示する画面の下部には、インジケーターのドットが表示されます。
+ページベースのインターフェイスは、iOS での `UIPageViewController` のように左から右にスワイプされます。 インジケーターのドットが画面の下部に表示され、現在表示されているページが表示されます。
 
-![](navigation-images/paged-1.png "サンプルの最初のページ") ![](navigation-images/paged-2.png "サンプル 2 ページ目") ![](navigation-images/paged-5.png "5 ページ目のサンプル")
+![](navigation-images/paged-1.png "最初のページのサンプル")![](navigation-images/paged-2.png "サンプルの2ページ目")![](navigation-images/paged-5.png "5ページ目のサンプル")
 
-ページ ベースのインターフェイスを watch アプリのメイン UI にするを使用して`ReloadRootControllers`インターフェイス コント ローラーとコンテキストの配列。
+ページベースのインターフェイスを watch アプリのメイン UI にするには、インターフェイスコントローラーとコンテキストの配列を使用して `ReloadRootControllers` を使用します。
 
 ```csharp
 var controllerNames = new [] { "pageController", "pageController", "pageController", "pageController", "pageController" };
@@ -105,7 +105,7 @@ var contexts = new [] { "First", "Second", "Third", "Fourth", "Fifth" };
 ReloadRootControllers (controllerNames, contexts);
 ```
 
-ページ ベースのコント ローラーではないルートを表示することもできます。 を使用して`PresentController`からアプリ内の他のシーンのいずれか。
+アプリ内の他のいずれかのシーンから `PresentController` を使用して、ルートではないページベースのコントローラーを提示することもできます。
 
 ```csharp
 var controllerNames = new [] { "pageController", "pageController", "pageController", "pageController", "pageController" };

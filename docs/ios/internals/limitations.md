@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin の iOS の制限事項、
 ms.prod: xamarin
 ms.assetid: 5AC28F21-4567-278C-7F63-9C2142C6E06A
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/09/2018
-ms.openlocfilehash: 83c71ebf844102a7d3a16969868f187237fb0d04
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 91513936a0223af0e4220154d0fe65ee0a599a4f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753333"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022310"
 ---
 # <a name="limitations-of-xamarinios"></a>Xamarin. iOS の制限事項
 
@@ -24,7 +24,7 @@ Xamarin を使用するアプリケーションは静的コードにコンパイ
 
 ## <a name="limited-generics-support"></a>制限付きジェネリックのサポート
 
-従来の Mono/NET とは異なり、iPhone 上のコードは JIT コンパイラによって要求時にコンパイルされるのではなく、事前に静的にコンパイルされます。
+従来の Mono/.NET とは異なり、iPhone 上のコードは JIT コンパイラによって要求時にコンパイルされるのではなく、事前に静的にコンパイルされます。
 
 Mono の[完全な AOT](https://www.mono-project.com/docs/advanced/aot/#full-aot)テクノロジでは、ジェネリックに関していくつかの制限があります。これは、コンパイル時にすべてのジェネリックインスタンスを事前に決定できるわけではないためです。 このコードは常に Just-in-time コンパイラを使用して実行時にコンパイルされるので、通常の .NET または Mono ランタイムでは問題になりません。 しかし、これにより、Xamarin. iOS のような静的コンパイラの課題が生じます。
 
@@ -49,7 +49,7 @@ class Foo<T> : UIView {
 
 ## <a name="no-dynamic-code-generation"></a>動的なコード生成なし
 
-IOS カーネルでは、アプリケーションがコードを動的に生成できないようにするため、Xamarin は、どのような形式の動的コード生成もサポートしていません。 不足している機能には次が含まれます。
+iOS カーネルでは、アプリケーションがコードを動的に生成できないようにするため、Xamarin は、どのような形式の動的コード生成もサポートしていません。 次の設定があります。
 
 - システムのリフレクションは使用できません。
 - System.string はサポートされていません。
@@ -75,7 +75,7 @@ IOS カーネルでは、アプリケーションがコードを動的に生成�
 
 デリゲートをC#使用してネイティブ関数を呼び出すには、デリゲートの宣言を次の属性のいずれかで修飾する必要があります。
 
-- [UnmanagedFunctionPointerAttribute](xref:System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute)(推奨されるのは、クロスプラットフォームで、.NET Standard 1.1 以降と互換性があるためです)
+- [UnmanagedFunctionPointerAttribute](xref:System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute) (優先、クロスプラットフォーム、.NET Standard 1.1 + との互換性があるため)
 - [MonoNativeFunctionWrapperAttribute](xref:ObjCRuntime.MonoNativeFunctionWrapperAttribute)
 
 これらの属性のいずれかを指定しないと、次のような実行時エラーが発生します。
@@ -88,9 +88,9 @@ System.ExecutionEngineException: Attempting to JIT compile method '(wrapper mana
 
 ### <a name="reverse-callbacks"></a>逆コールバック
 
-標準 Mono では、関数ポインターのC#代わりにデリゲートインスタンスをアンマネージコードに渡すことができます。 通常、ランタイムは、これらの関数ポインターを小さなサンクに変換し、アンマネージコードがマネージコードにコールバックできるようにします。
+標準 Mono では、関数ポインターの代わりに C# のデリゲート インスタンスをアンマネージ コードに渡すことができます。 通常、ランタイムは、これらの関数ポインターを小さなサンクに変換し、アンマネージ コードがマネージ コードにコールバックできるようにします。
 
-Mono では、これらのブリッジはジャストインタイムコンパイラによって実装されます。 IPhone が必要とする事前対応のコンパイラを使用する場合は、この時点で2つの重要な制限があります。
+Mono では、これらのブリッジは Just-in-Time コンパイラによって実装されます。 iPhone が必要とする Ahead Of Time コンパイラを使用する場合は、この時点で 2 つの重要な制限があります。
 
 - [MonoPInvokeCallbackAttribute](xref:ObjCRuntime.MonoPInvokeCallbackAttribute)を使用して、すべてのコールバックメソッドにフラグを付ける必要があります。
 - メソッドは静的メソッドである必要がありますが、インスタンスメソッドはサポートされていません。

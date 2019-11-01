@@ -4,15 +4,15 @@ description: このセクションでは、Xamarin iOS アプリケーション�
 ms.prod: xamarin
 ms.assetid: 32B9C6F0-2BB3-4295-99CB-A75418969A62
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 1ad0200d083f7b190184f631de51483f4f651d17
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 764be6319e95b16dc043bebd2abfb27ba0696457
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769753"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031402"
 ---
 # <a name="walkthrough---using-local-notifications-in-xamarinios"></a>チュートリアル-Xamarin でのローカル通知の使用
 
@@ -25,11 +25,11 @@ _このセクションでは、Xamarin iOS アプリケーションでローカ�
 
 ローカル通知を実際に表示する単純なアプリケーションを作成してみましょう。 このアプリケーションには1つのボタンがあります。 ボタンをクリックすると、ローカル通知が作成されます。 指定された期間が経過すると、通知が表示されます。
 
-1. Visual Studio for Mac で、新しい単一ビューの iOS ソリューションを作成し、 `Notifications`それを呼び出します。
-1. `Main.storyboard`ファイルを開き、ボタンをビューにドラッグします。 **ボタンに名前を付け**て、タイトルを**追加通知**にします。 この時点で、いくつかの[制約](~/ios/user-interface/designer/designer-auto-layout.md)をボタンに設定することもできます。 
+1. Visual Studio for Mac で、新しい単一ビューの iOS ソリューションを作成し、`Notifications`呼び出します。
+1. `Main.storyboard` ファイルを開き、ボタンをビューにドラッグします。 **ボタンに名前を付け**て、タイトルを**追加通知**にします。 この時点で、いくつかの[制約](~/ios/user-interface/designer/designer-auto-layout.md)をボタンに設定することもできます。 
 
-    ![](local-notifications-in-ios-walkthrough-images/image3.png "ボタンにいくつかの制約を設定する")
-1. `ViewController`クラスを編集し、次のイベントハンドラーを ViewDidLoad メソッドに追加します。
+    ![](local-notifications-in-ios-walkthrough-images/image3.png "Setting some constraints on the button")
+1. `ViewController` クラスを編集し、次のイベントハンドラーを ViewDidLoad メソッドに追加します。
 
     ```csharp
     button.TouchUpInside += (sender, e) =>
@@ -57,7 +57,7 @@ _このセクションでは、Xamarin iOS アプリケーションでローカ�
 
     このコードは、サウンドを使用する通知を作成し、アイコンバッジの値を1に設定して、ユーザーに警告を表示します。
 
-1. 次に、ファイル`AppDelegate.cs`を編集し、まず次のコード`FinishedLaunching`をメソッドに追加します。 デバイスで iOS 8 が実行されているかどうかを確認しました。その場合は、通知を受信するためのユーザーのアクセス許可を要求する**必要**があります。
+1. 次に `AppDelegate.cs`ファイルを編集し、まず次のコードを `FinishedLaunching` メソッドに追加します。 デバイスで iOS 8 が実行されているかどうかを確認しました。その場合は、通知を受信するためのユーザーのアクセス許可を要求する**必要**があります。
 
     ```csharp
     if (UIDevice.CurrentDevice.CheckSystemVersion (8, 0)) {
@@ -69,7 +69,7 @@ _このセクションでは、Xamarin iOS アプリケーションでローカ�
     }
     ```
 
-1. まだの`AppDelegate.cs`場合は、通知の受信時に呼び出される次のメソッドを追加します。
+1. まだ `AppDelegate.cs`では、通知を受信したときに呼び出される次のメソッドを追加します。
 
     ```csharp
     public override void ReceivedLocalNotification(UIApplication application, UILocalNotification notification)
@@ -85,7 +85,7 @@ _このセクションでは、Xamarin iOS アプリケーションでローカ�
     }
     ```
 
-1. ローカル通知によって通知が開始されたケースを処理する必要があります。 でメソッド`FinishedLaunching`を編集して、次のコードスニペットを含めます。`AppDelegate`
+1. ローカル通知によって通知が開始されたケースを処理する必要があります。 `AppDelegate` 内のメソッド `FinishedLaunching` を編集して、次のコードスニペットを含めます。
 
     ```csharp
     // check for a notification
@@ -112,9 +112,10 @@ _このセクションでは、Xamarin iOS アプリケーションでローカ�
 
 1. 最後に、アプリケーションを実行します。 IOS 8 では、通知を許可するように求められます。 [ **OK]** をクリックし、 **[通知の追加]** ボタンをクリックします。 短い一時停止の後、次のスクリーンショットに示すように、アラートダイアログが表示されます。
 
-    ![](local-notifications-in-ios-walkthrough-images/image0.png "通知を送信することを確認する") ![](local-notifications-in-ios-walkthrough-images/image1.png "通知の追加ボタン") ![](local-notifications-in-ios-walkthrough-images/image2.png "通知アラート ダイアログ")
+    ![](local-notifications-in-ios-walkthrough-images/image0.png "通知を送信する機能を確認しています") ![](local-notifications-in-ios-walkthrough-images/image1.png "[通知の追加] ボタン")
+    ![](local-notifications-in-ios-walkthrough-images/image2.png "The notification alert dialog")
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 このチュートリアルでは、さまざまな API を使用して、iOS で通知を作成および発行する方法について説明しました。 また、アプリケーションアイコンをバッジで更新して、アプリケーション固有のフィードバックをユーザーに提供する方法についても説明します。
 

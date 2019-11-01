@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin でビルドされた watc
 ms.prod: xamarin
 ms.assetid: B741C207-3427-46F3-9C90-A52BF8933FA4
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: f9367eda7651ca61a8a3cb0928ad11cb320faab6
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 7d24286b5d428a571afc7498afafa1171c075110
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70769957"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032702"
 ---
 # <a name="watchos-image-controls-in-xamarin"></a>Xamarin の watchOS Image コントロール
 
@@ -49,7 +49,7 @@ myOtherImageControl.SetImage("Worry");
 
 ### <a name="background-images"></a>背景画像
 
-@No__t_1、`Group`、および `InterfaceController` クラスの `SetBackgroundImage (string imageName)` に対しても同じロジックが適用されます。 最適なパフォーマンスを得るには、画像を watch アプリ自体に格納します。
+`Button`、`Group`、および `InterfaceController` クラスの `SetBackgroundImage (string imageName)` に対しても同じロジックが適用されます。 最適なパフォーマンスを得るには、画像を watch アプリ自体に格納します。
 
 ## <a name="images-in-the-watch-extension"></a>Watch 拡張機能の画像
 
@@ -102,7 +102,7 @@ animatedImage.StopAnimating ();
 
 アプリケーションが拡張機能に格納されているイメージを繰り返し使用している場合 (またはダウンロードされている場合)、ウォッチのストレージにイメージをキャッシュして、後続の表示のパフォーマンスを向上させることができます。
 
-@No__t_0s `AddCachedImage` メソッドを使用してイメージをウォッチに転送し、image name パラメーターと共に `SetImage` を文字列として使用して表示します。
+`WKInterfaceDevice`s `AddCachedImage` メソッドを使用してイメージをウォッチに転送し、image name パラメーターと共に `SetImage` を文字列として使用して表示します。
 
 ```csharp
 var device = WKInterfaceDevice.CurrentDevice;
@@ -116,7 +116,7 @@ using (var image = UIImage.FromBundle ("Bumblebee")) {
 }
 ```
 
-@No__t_0 を使用して、コード内のイメージキャッシュの内容を照会できます。
+`WKInterfaceDevice.CurrentDevice.WeakCachedImages`を使用して、コード内のイメージキャッシュの内容を照会できます。
 
 ### <a name="managing-the-cache"></a>キャッシュの管理
 

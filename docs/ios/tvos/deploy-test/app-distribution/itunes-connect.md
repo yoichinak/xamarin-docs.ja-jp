@@ -4,15 +4,15 @@ description: この記事では、tvOS 固有の構成のために、iTunes Conn
 ms.prod: xamarin
 ms.assetid: 86C7C5BD-C97D-4F1D-B611-A7694557BFDF
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: ef3d25974f61bb1ac763831ab9a1f6b62d11abbe
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 01ab48f68656dcabdf2a6cfc286dfcd8850454f8
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769679"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030757"
 ---
 # <a name="configure-your-tvos-app-in-itunes-connect"></a>iTunes Connect での tvOS アプリの構成
 
@@ -38,11 +38,11 @@ Apple TV App Store でリリースする新しいアプリを作成する場合�
 
 上記の手順をすべて完了したら、アプリの iTunes Connect レコードを開き、左側のサイドバーを使用して tvOS サポートを追加します。
 
-[![](itunes-connect-images/connect01.png "左側のサイドバーを使用して tvOS サポートを追加する")](itunes-connect-images/connect01.png#lightbox)
+[![](itunes-connect-images/connect01.png "Add tvOS support using the left hand sidebar")](itunes-connect-images/connect01.png#lightbox)
 
 次に、特定の iTunes Connect レコードで、tvOS 固有の情報画面を使用できるようになります。
 
-[![](itunes-connect-images/connect02.png "TvOS 固有の情報画面")](itunes-connect-images/connect02.png#lightbox)
+[![](itunes-connect-images/connect02.png "The tvOS specific information screen")](itunes-connect-images/connect02.png#lightbox)
 
 <a name="tvOS-Version-Information" />
 
@@ -50,7 +50,7 @@ Apple TV App Store でリリースする新しいアプリを作成する場合�
 
 左側のサイドバーで、tvOS APP セクションの  **1.0 For 送信** を選択します。
 
-[![](itunes-connect-images/connect03.png "tvOS のバージョン情報")](itunes-connect-images/connect03.png#lightbox)
+[![](itunes-connect-images/connect03.png "tvOS Version Information")](itunes-connect-images/connect03.png#lightbox)
 
 この画面では、次の情報を提供します。
 
@@ -62,7 +62,7 @@ Apple TV App Store でリリースする新しいアプリを作成する場合�
 
 必要な情報を入力したら、画面の右上隅にある **[保存]** ボタンをクリックして、変更を保存します。
 
-[![](itunes-connect-images/connect04.png "tvOS のバージョン情報を送信する準備ができました")](itunes-connect-images/connect04.png#lightbox)
+[![](itunes-connect-images/connect04.png "tvOS Version Information ready for submission")](itunes-connect-images/connect04.png#lightbox)
 
 <a name="Submitting-for-Review" />
 
@@ -70,11 +70,11 @@ Apple TV App Store でリリースする新しいアプリを作成する場合�
 
 TvOS アプリを確認のために Apple TV App Store に送信する準備ができたら、アプリの iTunes Connect レコードに戻り、画面の右上隅にある **[レビュー用に送信]** ボタンをクリックします。
 
-[![](itunes-connect-images/connect05.png "レビュー用に送信する")](itunes-connect-images/connect05.png#lightbox)
+[![](itunes-connect-images/connect05.png "Submit for Review")](itunes-connect-images/connect05.png#lightbox)
 
 <a name="Summary" />
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 この記事では、iTunes Connect で tvOS アプリを Apple TV App Store にリリースするために必要な tvOS 固有の設定の概要を説明しました。
 

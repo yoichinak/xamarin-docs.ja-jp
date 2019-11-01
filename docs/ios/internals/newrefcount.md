@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin の強化された参照�
 ms.prod: xamarin
 ms.assetid: 0221ED8C-5382-4C1C-B182-6C3F3AA47DB1
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/25/2015
-ms.openlocfilehash: 56e35662230a3c529eb48a0ae742c2b063c1ac10
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 8d8ad5b5f79b90fc415c9e3cdf6809a4e196056f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70753342"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022301"
 ---
 # <a name="new-reference-counting-system-in-xamarinios"></a>Xamarin. iOS の新しい参照カウントシステム
 
@@ -22,27 +22,27 @@ ms.locfileid: "70753342"
 
 Xamarin 9.2.1 の As では、新しい参照カウントシステムが既定で**すべて**のアプリケーションに対して有効になっています。
 
-既存のアプリケーションを開発している場合は、.csproj ファイルをチェックして、次のよう`MtouchUseRefCounting`に、の`true`すべての出現がに設定されていることを確認できます。
+既存のアプリケーションを開発している場合は、.csproj ファイルをチェックして、次のように、すべての `MtouchUseRefCounting` が `true`に設定されていることを確認できます。
 
 ```xml
 <MtouchUseRefCounting>true</MtouchUseRefCounting>
 ```
 
-これがに`false`設定されている場合、アプリケーションは新しいツールを使用しません。
+`false` に設定されている場合、アプリケーションは新しいツールを使用しません。
 
 ### <a name="using-older-versions-of-xamarin"></a>以前のバージョンの Xamarin の使用
 
 7\.2.1 以降の機能では、新しい参照カウントシステムのプレビューが強化されています。
 
-**Classic API:**
+**Classic API：**
 
 この新しい参照カウントシステムを有効にするには、次のように、プロジェクトの**IOS ビルドオプション**の **[詳細設定**] タブにある [**参照カウントの拡張機能を使用**する] チェックボックスをオンにします。 
 
-[![](newrefcount-images/image1.png "新しい参照カウントシステムを有効にする")](newrefcount-images/image1.png#lightbox)
+[![](newrefcount-images/image1.png "Enable the new Reference Counting System")](newrefcount-images/image1.png#lightbox)
 
 これらのオプションは、新しいバージョンの Visual Studio for Mac では削除されています。
 
- **[Unified API:](~/cross-platform/macios/unified/index.md)**
+ **[Unified API：](~/cross-platform/macios/unified/index.md)**
 
  新しい参照カウント拡張は、Unified API に必要であり、既定で有効になっている必要があります。 以前のバージョンの IDE では、この値が自動的にチェックされない場合があるため、自分で確認を行う必要がある場合があります。
 
@@ -71,7 +71,7 @@ class MyTableSource : UITableViewSource {
 }
 ```
 
-参照カウントの拡張がない場合、このコード`cell`は、が収集可能に`TouchDown`なり、そのデリゲートが未解決のポインターに変換されるため、クラッシュします。
+参照カウントの拡張がない場合、このコードは `cell` が収集可能になるため、このコードはクラッシュします。そのため、`TouchDown` デリゲートは、対象となるポインターに変換されます。
 
 ネイティブオブジェクトがネイティブコードによって保持されていれば、参照カウント拡張によってマネージオブジェクトが引き続き有効であり、コレクションを防ぐことができます。
 

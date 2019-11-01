@@ -6,12 +6,12 @@ ms.assetid: AD0A7971-51B1-4E38-B412-7907CE43CDDF
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: c5702780b6a0f0732d846a2cd4226aec5e49fc21
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 909594fe86c9718d9922470d7fca36155e33aed3
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70766832"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73005235"
 ---
 # <a name="using-the-model-class"></a>モデルクラスの使用
 
@@ -41,9 +41,9 @@ _モデルクラスは、従来の3D グラフィックスレンダリングの�
 
 ## <a name="including-the-xnbs-in-the-game-project"></a>ゲームプロジェクトに XNBs を含める
 
-Xnb ファイル形式は、ビルドされたコンテンツ ([モノゲームパイプラインツール](http://www.monogame.net/documentation/?page=Pipeline)によって作成されたコンテンツ) の標準の拡張機能です。 すべてのビルドされたコンテンツには、ソースファイル (モデルの場合は fbx ファイル) と変換先ファイル (xnb ファイル) があります。 Fbx 形式は、 [Maya](http://www.autodesk.com/products/maya/overview)や[Blender](http://www.blender.org/)などのアプリケーションで作成できる一般的な3d モデル形式です。 
+Xnb ファイル形式は、ビルドされたコンテンツ ([モノゲームパイプラインツール](http://www.monogame.net/documentation/?page=Pipeline)によって作成されたコンテンツ) の標準の拡張機能です。 すべてのビルドされたコンテンツには、ソースファイル (モデルの場合は fbx ファイル) と変換先ファイル (xnb ファイル) があります。 Fbx 形式は、 [Maya](https://www.autodesk.com/products/maya/overview)や[Blender](https://www.blender.org/)などのアプリケーションで作成できる一般的な3d モデル形式です。 
 
-@No__t_0 クラスは、3D geometry データを格納するディスクから、xnb ファイルを読み込むことによって作成できます。   この xnb ファイルは、コンテンツプロジェクトを通じて作成されます。 モノゲームテンプレートでは、コンテンツフォルダーにコンテンツプロジェクトが自動的に含まれます。 モノゲームパイプラインツールの詳細については、「[コンテンツパイプラインガイド](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/content-pipeline/introduction.md)」を参照してください。
+`Model` クラスは、3D geometry データを格納するディスクから、xnb ファイルを読み込むことによって作成できます。   この xnb ファイルは、コンテンツプロジェクトを通じて作成されます。 モノゲームテンプレートでは、コンテンツフォルダーにコンテンツプロジェクトが自動的に含まれます。 モノゲームパイプラインツールの詳細については、「[コンテンツパイプラインガイド](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/content-pipeline/introduction.md)」を参照してください。
 
 このガイドでは、モノゲームパイプラインツールの使用をスキップし、を使用します。ここには XNB ファイルが含まれています。 であることに注意してください。XNB ファイルはプラットフォームごとに異なります。そのため、使用しているプラットフォームごとに正しい XNB ファイルセットを使用してください。
 
@@ -59,11 +59,11 @@ Xnb ファイル形式は、ビルドされたコンテンツ ([モノゲーム�
 
 モデルを画面上に表示するために必要な最後の手順は、読み込みと描画のコードを追加することです。 具体的には、次のことを行います。
 
-- @No__t_1 クラスでの `Model` インスタンスの定義
-- @No__t_1 に `Model` インスタンスを読み込んでいます
-- @No__t_1 での `Model` インスタンスの描画
+- `Game1` クラスでの `Model` インスタンスの定義
+- `Game1.LoadContent` に `Model` インスタンスを読み込んでいます
+- `Game1.Draw` での `Model` インスタンスの描画
 
-@No__t_0 コードファイル (**ゲーム**PCL にある) を次のコードに置き換えます。
+`Game1.cs` コードファイル (**ゲーム**PCL にある) を次のコードに置き換えます。
 
 ```csharp
 public class Game1 : Game
@@ -167,15 +167,15 @@ public class Game1 : Game
 
 ### <a name="model-class"></a>モデルクラス
 
-@No__t_0 クラスは、コンテンツファイル (fbx ファイルなど) からの3D レンダリングを実行するためのコアクラスです。 これには、表示に必要なすべての情報が含まれています。これには、3D ジオメトリ、テクスチャ参照、および位置、照明、カメラの値を制御する `BasicEffect` インスタンスが含まれます。
+`Model` クラスは、コンテンツファイル (fbx ファイルなど) からの3D レンダリングを実行するためのコアクラスです。 これには、表示に必要なすべての情報が含まれています。これには、3D ジオメトリ、テクスチャ参照、および位置、照明、カメラの値を制御する `BasicEffect` インスタンスが含まれます。
 
-@No__t_0 クラス自体には、このガイドの後半で説明するように、1つのモデルインスタンスを複数の場所にレンダリングできるため、配置用の変数は直接ありません。
+`Model` クラス自体には、このガイドの後半で説明するように、1つのモデルインスタンスを複数の場所にレンダリングできるため、配置用の変数は直接ありません。
 
-各 `Model` は、`Meshes` プロパティを通じて公開される1つ以上の `ModelMesh` インスタンスで構成されます。 @No__t_0 は1つのゲームオブジェクト (ロボットや車など) として考えられるかもしれませんが、各 `ModelMesh` は異なる `BasicEffect` 値で描画できます。 たとえば、個々のメッシュパーツが、車のロボットまたは車輪の脚を表す場合があります。また、`BasicEffect` 値を割り当てて、車輪を回転させたり、脚を移動させたりすることがあります。 
+各 `Model` は、`Meshes` プロパティを通じて公開される1つ以上の `ModelMesh` インスタンスで構成されます。 `Model` は1つのゲームオブジェクト (ロボットや車など) として考えられるかもしれませんが、各 `ModelMesh` は異なる `BasicEffect` 値で描画できます。 たとえば、個々のメッシュパーツが、車のロボットまたは車輪の脚を表す場合があります。また、`BasicEffect` 値を割り当てて、車輪を回転させたり、脚を移動させたりすることがあります。 
 
 ### <a name="basiceffect-class"></a>BasicEffect クラス
 
-@No__t_0 クラスには、表示オプションを制御するためのプロパティが用意されています。 @No__t_0 に対して行う最初の変更は、`EnableDefaultLighting` メソッドを呼び出すことです。 名前が示すように、これにより既定の照明が有効になります。これは、`Model` が意図したとおりにゲームに表示されることを確認するのに非常に便利です。 @No__t_0 の呼び出しをコメントアウトすると、テクスチャだけを使用してレンダリングされたモデルが表示されますが、網掛けや反射グローはありません。
+`BasicEffect` クラスには、表示オプションを制御するためのプロパティが用意されています。 `BasicEffect` に対して行う最初の変更は、`EnableDefaultLighting` メソッドを呼び出すことです。 名前が示すように、これにより既定の照明が有効になります。これは、`Model` が意図したとおりにゲームに表示されることを確認するのに非常に便利です。 `EnableDefaultLighting` の呼び出しをコメントアウトすると、テクスチャだけを使用してレンダリングされたモデルが表示されますが、網掛けや反射グローはありません。
 
 ```csharp
 //effect.EnableDefaultLighting ();
@@ -183,7 +183,7 @@ public class Game1 : Game
 
 ![テクスチャだけでレンダリングされるモデルですが、網掛けや反射グローはありません。](part1-images/image9.png "テクスチャだけでレンダリングされるモデルですが、網掛けや反射グローはありません。")
 
-@No__t_0 プロパティを使用して、モデルの位置、回転、およびスケールを調整できます。 上記のコードでは、`Matrix.Identity` 値を使用しています。これは、`Model` が fbx ファイルで指定されたとおりにゲーム内でレンダリングされることを意味します。 ここでは、[第3部](~/graphics-games/monogame/3d/part3.md)でマトリックスと3d 座標について詳しく説明しますが、例として、`World` プロパティを次のように変更して `Model` の位置を変更することができます。
+`World` プロパティを使用して、モデルの位置、回転、およびスケールを調整できます。 上記のコードでは、`Matrix.Identity` 値を使用しています。これは、`Model` が fbx ファイルで指定されたとおりにゲーム内でレンダリングされることを意味します。 ここでは、[第3部](~/graphics-games/monogame/3d/part3.md)でマトリックスと3d 座標について詳しく説明しますが、例として、`World` プロパティを次のように変更して `Model` の位置を変更することができます。
 
 ```csharp
 // Z is up, so changing Z to 3 moves the object up 3 units:
@@ -195,7 +195,7 @@ effect.World = Matrix.CreateTranslation (modelPosition);
 
 ![このコードにより、オブジェクトが3つのワールド単位で上に移動します。](part1-images/image10.png "このコードにより、オブジェクトが3つのワールド単位で上に移動します。")
 
-@No__t_0 に割り当てられた最後の2つのプロパティは `View` と `Projection` です。 [第3部](~/graphics-games/monogame/3d/part3.md)では3d カメラについて説明しますが、例として、ローカル `cameraPosition` 変数を変更して、カメラの位置を変更することができます。
+`BasicEffect` に割り当てられた最後の2つのプロパティは `View` と `Projection`です。 [第3部](~/graphics-games/monogame/3d/part3.md)では3d カメラについて説明しますが、例として、ローカル `cameraPosition` 変数を変更して、カメラの位置を変更することができます。
 
 ```csharp
 // The 8 has been changed to a 30 to move the Camera further back

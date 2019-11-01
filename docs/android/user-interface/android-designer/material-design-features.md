@@ -4,23 +4,23 @@ description: このトピックでは、開発者が素材デザインに準拠�
 ms.prod: xamarin
 ms.assetid: AC55E1B2-C239-4019-B0C3-A16F6CF0D6E0
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/25/2018
-ms.openlocfilehash: 67755baf18ad5277e7c2fe8be705522a9b668ff3
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 43397fb855bdf872cf17b315044f34a468c22d00
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756823"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029448"
 ---
 # <a name="xamarinandroid-designer-material-design-features"></a>Xamarin. Android Designer 素材のデザイン機能
 
-_このトピックでは、開発者が素材デザインに準拠したレイアウトを簡単に作成できるようにするデザイナー機能について説明します。このセクションでは、素材グリッド、素材カラーパレット、文字体裁スケール、およびテーマエディターの使用方法について説明します。_
+このトピックでは、開発者が素材デザインに準拠したレイアウトを簡単に作成できるようにするデザイナー機能について説明 _ます。このセクションでは、素材グリッド、素材カラーパレット、文字体裁スケール、およびテーマエディターの使用方法について説明します。_
 
 > [!Video https://youtube.com/embed/E3_ZjIOzVzY]
 
-**Evolve 2016:すべてのユーザーが、素材設計で美しいアプリを作成できます**
+**Evolve 2016:すべてのユーザーが、素材設計で美しいアプリを作成でき**
 
 ## <a name="overview"></a>概要
 
@@ -30,9 +30,9 @@ Android Designer には、マテリアルデザインに準拠したレイアウ
 
 このガイドでは、次のデザイナー機能について説明します。
 
-- *素材グリッド*&ndash;素材のデザインガイドラインに従ってレイアウトウィジェットを配置する際に役立つグリッド、スペース、および keylines を表示するデザインサーフェイスのオーバーレイ。
+- 素材*グリッド*では、素材のデザインガイドラインに従ってレイアウトウィジェットを配置するのに役立つグリッド、スペース、および keylines を表示する、デザインサーフェイス上のオーバーレイ &ndash; ます。
 
-- *テーマエディター*&ndash;テーマのサブセットの色情報を設定できる、小さいカラーリソースエディター。 たとえば、 `colorPrimary`、 `colorPrimaryDark`、 `colorAccent`などの素材の色をプレビューおよび変更できます。
+- *テーマエディター* &ndash;、テーマのサブセットの色情報を設定できる、小さい色のリソースエディターです。 たとえば、`colorPrimary`、`colorPrimaryDark`、`colorAccent`などの素材の色をプレビューおよび変更できます。
 
 これらの各機能について説明し、その使用方法の例を示します。
 
@@ -40,7 +40,7 @@ Android Designer には、マテリアルデザインに準拠したレイアウ
 
 [マテリアルデザイン] グリッドメニューは、デザイナーの上部にあるツールバーから使用できます。
 
-[![素材のデザイングリッド](material-design-features-images/vs/01-material-design-grid-w158-sml.png)](material-design-features-images/vs/01-material-design-grid-w158.png#lightbox)
+[![素材デザイングリッド](material-design-features-images/vs/01-material-design-grid-w158-sml.png)](material-design-features-images/vs/01-material-design-grid-w158.png#lightbox)
 
 [素材デザイン] グリッドアイコンをクリックすると、次の要素を含むデザインサーフェイスにオーバーレイが表示されます。
 
@@ -50,7 +50,7 @@ Android Designer には、マテリアルデザインに準拠したレイアウ
 
 - グリッド (青い線)
 
-これらの要素は、前のスクリーンショットで確認できます。 これらの各オーバーレイ項目は構成可能です。 [マテリアルデザイン] グリッドメニューの横にある省略記号をクリックすると、ダイアログ segue が開きます。このダイアログボックスでは、グリッドを無効/有効にしたり、キー行の配置を構成したり、spacings を設定したりできます。 すべての値は (密度に`dp`依存しないピクセル) で表されることに注意してください。
+これらの要素は、前のスクリーンショットで確認できます。 これらの各オーバーレイ項目は構成可能です。 [マテリアルデザイン] グリッドメニューの横にある省略記号をクリックすると、ダイアログ segue が開きます。このダイアログボックスでは、グリッドを無効/有効にしたり、キー行の配置を構成したり、spacings を設定したりできます。 すべての値は `dp` (密度に依存しないピクセル) で表されることに注意してください。
 
 [![Grid、keyline、および spacing の構成](material-design-features-images/vs/03-grid-configuration-w158-sml.png)](material-design-features-images/vs/03-grid-configuration-w158.png#lightbox)
 
@@ -66,19 +66,19 @@ Android Designer には、マテリアルデザインに準拠したレイアウ
 
 **テーマエディター**には、対象となるすべての Android バージョンと api レベルのツールバーからアクセスできますが、ターゲット api レベルが API 21 (Android 5.0 ロリポップ) よりも前の場合は、以下で説明する機能のサブセットのみを使用できます。
 
-**テーマエディター**の左側のパネルには、現在選択されているテーマを構成する色の一覧が表示されます (この例`Default Theme`ではを使用しています)。
+**テーマエディター**の左側のパネルには、現在選択されているテーマを構成する色の一覧が表示されます (この例では、`Default Theme`を使用しています)。
 
 [![テーマエディター](material-design-features-images/vs/05-theme-editor-w158-sml.png)](material-design-features-images/vs/05-theme-editor-w158.png#lightbox)
 
 左側の色を選択すると、右側のパネルには、その色を編集するための次のタブが表示されます。
 
-- **継承**&ndash;選択した色のスタイルの継承ダイアグラムを表示し、そのテーマの色に割り当てられている解決済みの色と色のコードを表示します。
+- [**継承**&ndash;] 選択した色のスタイルの継承ダイアグラムを表示し、そのテーマの色に割り当てられている解決済みの色と色のコードを表示します。
 
-- **カラーピッカー**&ndash;選択した色を任意の値に変更できます。
+- **カラーピッカー** &ndash; では、選択した色を任意の値に変更できます。
 
-- **素材パレット**&ndash;選択した色を、マテリアルデザインに準拠した値に変更できます。
+- **素材パレット**&ndash; を使用すると、選択した色をマテリアルデザインに準拠した値に変更できます。
 
-- **リソース**&ndash;選択した色を、テーマ内の他の既存の色リソースの1つに変更できます。
+- **リソース**&ndash; を使用すると、選択した色を、テーマ内の他の既存の色リソースのいずれかに変更できます。
 
 これらのタブのそれぞれを詳しく見てみましょう。
 
@@ -86,9 +86,9 @@ Android Designer には、マテリアルデザインに準拠したレイアウ
 
 次の例に示すように、 **[継承]** タブには、**既定のテーマ**の**背景**色のスタイル継承が表示されます。
 
-[![[継承] タブ](material-design-features-images/vs/06-inherit-tab-w158-sml.png)](material-design-features-images/vs/06-inherit-tab-w158.png#lightbox)
+[![継承 タブ](material-design-features-images/vs/06-inherit-tab-w158-sml.png)](material-design-features-images/vs/06-inherit-tab-w158.png#lightbox)
 
-この例では、**既定のテーマ**はを使用`@color/background_material_light`するスタイルを継承します`color/material_grey_50`が、色の`#fffafafa`コード値がであるでオーバーライドします。
+この例では、**既定のテーマ**は `@color/background_material_light` を使用するスタイルを継承しますが、色コード値が `#fffafafa`の `color/material_grey_50`でオーバーライドします。
 スタイルの継承の詳細については、「[スタイルとテーマ](https://developer.android.com/guide/topics/ui/themes.html#Inheritance)」を参照してください。
 
 ### <a name="color-picker"></a>カラー ピッカー
@@ -111,7 +111,7 @@ Android Designer には、マテリアルデザインに準拠したレイアウ
 
 **[リソース]** タブには、テーマに既に存在する色リソースの一覧が表示されます。
 
-[![参考](material-design-features-images/vs/08-resources-w158-sml.png)](material-design-features-images/vs/08-resources-w158.png#lightbox)
+[![リソース](material-design-features-images/vs/08-resources-w158-sml.png)](material-design-features-images/vs/08-resources-w158.png#lightbox)
 
 **[リソース]** タブを使用すると、選択した色の一覧が制限されます。 テーマの別の部分に既に割り当てられている色リソースを選択すると、UI の隣接する2つの要素が "同時に実行" される可能性があることに注意してください (色が同じであるため)。ユーザーが区別するのが困難になります。
 
@@ -122,11 +122,11 @@ Android Designer には、マテリアルデザインに準拠したレイアウ
 [![素材パレット](material-design-features-images/vs/09-material-palette-w158-sml.png)](material-design-features-images/vs/09-material-palette-w158.png#lightbox)
 
 カラーパレットの上部には、主要な素材デザインの色が表示されます。パレットの下部には、選択した原色の色の範囲が表示されます。 たとえば、 **[indigo]** を選択すると、ダイアログの下部に**indigo**の色合いのコレクションが表示されます。
-色合いを選択すると、プロパティの色が、選択した色合いに変わります。 次の例では、 `Background Tint`ボタンのが*Indigo 500*に変更されています。
+色合いを選択すると、プロパティの色が、選択した色合いに変わります。 次の例では、ボタンの `Background Tint` が*Indigo 500*に変更されています。
 
 ![[Indigo 500] を選択します。](material-design-features-images/vs/10-indigo-w158.png)
 
-`Background Tint`は*Indigo 500* (`#ff3f51b5`) の色コードに設定され、デザイナーはこの変更を反映するように背景色を更新します。
+`Background Tint` が*Indigo 500* (`#ff3f51b5`) の色コードに設定され、デザイナーはこの変更を反映するように背景色を更新します。
 
 [![背景の濃淡が変更されました](material-design-features-images/vs/11-background-tint-w158-sml.png)](material-design-features-images/vs/11-background-tint-w158.png#lightbox)
 
@@ -140,7 +140,7 @@ Android Designer には、マテリアルデザインに準拠したレイアウ
 
 色リソースを変更すると、メッセージが表示され、*現在のテーマの変更は保存*されていません。
 
-[![未保存の変更の警告](material-design-features-images/vs/13-unsaved-changes-w158-sml.png)](material-design-features-images/vs/13-unsaved-changes-w158.png#lightbox)
+[未保存の変更の![警告](material-design-features-images/vs/13-unsaved-changes-w158-sml.png)](material-design-features-images/vs/13-unsaved-changes-w158.png#lightbox)
 
 デザイナーの**背景**色が新しい色の選択に変わりましたが、この変更はまだ保存されていません。 この時点で、次のいずれかの操作を実行できます。
 
@@ -150,7 +150,7 @@ Android Designer には、マテリアルデザインに準拠したレイアウ
 
 次の例では、変更が**Apptheme**に保存されるように<kbd>CTRL + S キー</kbd>を押しました。
 
-[![AppTheme に保存された変更](material-design-features-images/vs/14-custom-theme-w158-sml.png)](material-design-features-images/vs/14-custom-theme-w158.png#lightbox)
+[AppTheme に保存された変更の![](material-design-features-images/vs/14-custom-theme-w158-sml.png)](material-design-features-images/vs/14-custom-theme-w158.png#lightbox)
 
 ## <a name="summary"></a>まとめ
 
@@ -161,13 +161,13 @@ Xamarin の詳細については、マテリアル設計の詳細については
 
 このガイドでは、デザイナーの次の機能について説明します。
 
-- *素材のデザイングリッド*&ndash;素材のデザインガイドラインに従ってレイアウトウィジェットを配置する際に役立つグリッド、スペース、および keylines を表示するデザインサーフェイスのオーバーレイ。
+- [*マテリアルデザイン] グリッド*では、マテリアルデザインガイドラインに従ってレイアウトウィジェットを配置する際に役立つグリッド、スペース、および keylines を表示するデザインサーフェイスのオーバーレイ &ndash; ます。
 
-- *素材デザインの色パレット*&ndash; [プロパティパッド] ダイアログ。これは、公式のマテリアルデザインパレットから色を選択するのに役立ちます。
+- *マテリアルデザインカラーパレット*&ndash;、公式のマテリアルデザインパレットから色を選択するのに役立つプロパティパッドダイアログです。
 
-- *大*文字と小文字の調整テキストフィールドの`textAppearance`プロパティに対する素材デザインに準拠した設定を提供するプロパティパッドダイアログ。 &ndash;
+- テキストフィールドの `textAppearance` プロパティに対する素材デザインに準拠した設定を提供する、[プロパティパッド] ダイアログボックスの文字*幅の表記*を &ndash; します。
 
-- *テーマエディター*&ndash;テーマのサブセットの色情報を設定できる、小さいカラーリソースエディター。 たとえば、 `colorPrimary`、 `colorPrimaryDark`、 `colorAccent`などの素材の色をプレビューおよび変更できます。
+- *テーマエディター* &ndash;、テーマのサブセットの色情報を設定できる、小さい色のリソースエディターです。 たとえば、`colorPrimary`、`colorPrimaryDark`、`colorAccent`などの素材の色をプレビューおよび変更できます。
 
 これらの各機能について説明し、その使用方法の例を示します。
 
@@ -175,7 +175,7 @@ Xamarin の詳細については、マテリアル設計の詳細については
 
 [マテリアルデザイン] グリッドメニューは、デザイナーの上部にあるツールバーから使用できます。
 
-[![素材のデザイングリッド](material-design-features-images/xs/01-material-design-grid-sml.png)](material-design-features-images/xs/01-material-design-grid.png#lightbox)
+[![素材デザイングリッド](material-design-features-images/xs/01-material-design-grid-sml.png)](material-design-features-images/xs/01-material-design-grid.png#lightbox)
 
 [素材デザイン] グリッドアイコンをクリックすると、次の要素を含むデザインサーフェイスにオーバーレイが表示されます。
 
@@ -189,7 +189,7 @@ Xamarin の詳細については、マテリアル設計の詳細については
 
 [![Keyline、スペーシング、および grid](material-design-features-images/xs/02-grid-and-keylines-sml.png)](material-design-features-images/xs/02-grid-and-keylines.png#lightbox)
 
-これらの各オーバーレイ項目は構成可能です。 [マテリアルデザイン] グリッドメニュー&hellip;の横にある省略記号 () をクリックすると、ダイアログ segue が開き、グリッドを無効/有効にしたり、キー行の配置を構成したり、spacings を設定したりすることができます。 すべての値は (密度に`dp`依存しないピクセル) で表されることに注意してください。
+これらの各オーバーレイ項目は構成可能です。 [素材デザイン] グリッドメニューの横にある省略記号 (&hellip;) をクリックすると、ダイアログ segue が開きます。このダイアログボックスでは、グリッドを無効/有効にしたり、キー行の配置を構成したり、spacings を設定したりできます。 すべての値は `dp` (密度に依存しないピクセル) で表されることに注意してください。
 
 [![Grid、keyline、および spacing の構成](material-design-features-images/xs/03-grid-configuration-sml.png)](material-design-features-images/xs/03-grid-configuration.png#lightbox)
 
@@ -205,14 +205,14 @@ Xamarin の詳細については、マテリアル設計の詳細については
 
 このアイコンをクリックすると、ダイアログ segue が開きます。このダイアログボックスでは、素材デザインのカラーパレットから、そのプロパティの色を構成することができます。
 
-[![素材デザインの色パレット](material-design-features-images/xs/05-material-palette-sml.png)](material-design-features-images/xs/05-material-palette.png#lightbox)
+[![マテリアルデザインの色パレット](material-design-features-images/xs/05-material-palette-sml.png)](material-design-features-images/xs/05-material-palette.png#lightbox)
 
 カラーパレットの上部には、主要な素材デザインの色が表示されます。パレットの下部には、選択した原色の色の範囲が表示されます。 たとえば、 **[indigo]** を選択すると、ダイアログの下部に**indigo**の色合いのコレクションが表示されます。
-色合いを選択すると、プロパティの色が、選択した色合いに変わります。 次の例では、 `Background Tint`ボタンのが*Indigo 500*に変更されています。
+色合いを選択すると、プロパティの色が、選択した色合いに変わります。 次の例では、ボタンの `Background Tint` が*Indigo 500*に変更されています。
 
 [![Indigo 500 を選択する](material-design-features-images/xs/06-indigo-sml.png)](material-design-features-images/xs/06-indigo.png#lightbox)
 
-`Background Tint`は*Indigo 500* (`#ff3f51b5`) の色コードに設定され、デザイナーは、この変更を反映するようにボタンの背景色を更新します。
+`Background Tint` が*Indigo 500* (`#ff3f51b5`) の色コードに設定され、デザイナーはボタンの背景色を更新して、この変更を反映します。
 
 [![背景の濃淡の変更](material-design-features-images/xs/07-background-tint-sml.png)](material-design-features-images/xs/07-background-tint.png#lightbox)
 
@@ -220,9 +220,9 @@ Xamarin の詳細については、マテリアル設計の詳細については
 
 ## <a name="typographic-scale"></a>大文字と小文字の調整
 
-[**プロパティ**パッド**スタイル**] タブの **[テキストの表示]** セクションには、マテリアルデザイン仕様`TextAppearance`に準拠するスタイルを選択できるアイコンがあります。
+[**プロパティ**パッド**スタイル**] タブの **[テキストの表示]** セクションには、マテリアルデザイン仕様に準拠した `TextAppearance` スタイルから選択できるアイコンがあります。
 
-[![[スタイル] タブ](material-design-features-images/xs/08-typo-scale-icon-sml.png)](material-design-features-images/xs/08-typo-scale-icon.png#lightbox)
+[![スタイル タブ](material-design-features-images/xs/08-typo-scale-icon-sml.png)](material-design-features-images/xs/08-typo-scale-icon.png#lightbox)
 
 このアイコンをクリックすると、 **[タイポグラフィスケール]** ダイアログボックスが開き、事前に構成されたテキストスタイルの一覧が表示されます。これには、次の中から選択できます。
 
@@ -230,11 +230,11 @@ Xamarin の詳細については、マテリアル設計の詳細については
 
 次の例では、 **[表示 1]** をクリックすると、ボタンのテキストが、**表示 1**の大きなフォントに変わります。
 
-[![1スタイルを表示](material-design-features-images/xs/10-display-1-sml.png)](material-design-features-images/xs/10-display-1.png#lightbox)
+[![表示1スタイル](material-design-features-images/xs/10-display-1-sml.png)](material-design-features-images/xs/10-display-1.png#lightbox)
 
 [文字**幅の調整**] ダイアログボックスのテキストスタイルは、**テーマ**の設定に従います。 たとえば、**ライト**テーマがデザイナーで選択されている場合、使用可能なテキストスタイルの一覧によって**明るい**テーマが反映されます。
 
-[![ライトテーマ](material-design-features-images/xs/11-light-theme-sml.png)](material-design-features-images/xs/11-light-theme.png#lightbox)
+[![明るいテーマ](material-design-features-images/xs/11-light-theme-sml.png)](material-design-features-images/xs/11-light-theme.png#lightbox)
 
 ## <a name="theme-editor"></a>テーマエディター
 
@@ -244,19 +244,19 @@ Xamarin の詳細については、マテリアル設計の詳細については
 
 **テーマエディター**には、対象となるすべての Android バージョンと api レベルのツールバーからアクセスできますが、ターゲット api レベルが API 21 (Android 5.0 ロリポップ) よりも前の場合は、以下で説明する機能のサブセットのみを使用できます。
 
-**テーマエディター**の左側のパネルには、現在選択されているテーマを構成する色の一覧が表示されます (この例`Default Theme`ではを使用しています)。
+**テーマエディター**の左側のパネルには、現在選択されているテーマを構成する色の一覧が表示されます (この例では、`Default Theme`を使用しています)。
 
 [![テーマエディター](material-design-features-images/xs/12b-theme-editor-sml.png)](material-design-features-images/xs/12b-theme-editor.png#lightbox)
 
 左側の色を選択すると、右側のパネルには、その色を編集するための次のタブが表示されます。
 
-- **継承**&ndash;選択した色のスタイルの継承ダイアグラムを表示し、そのテーマの色に割り当てられている解決済みの色と色のコードを表示します。
+- [**継承**&ndash;] 選択した色のスタイルの継承ダイアグラムを表示し、そのテーマの色に割り当てられている解決済みの色と色のコードを表示します。
 
-- **カラーピッカー**&ndash;選択した色を任意の値に変更できます。
+- **カラーピッカー** &ndash; では、選択した色を任意の値に変更できます。
 
-- **素材パレット**&ndash;選択した色を、マテリアルデザインに準拠した値に変更できます。
+- **素材パレット**&ndash; を使用すると、選択した色をマテリアルデザインに準拠した値に変更できます。
 
-- **リソース**&ndash;選択した色を、テーマ内の他の既存の色リソースの1つに変更できます。
+- **リソース**&ndash; を使用すると、選択した色を、テーマ内の他の既存の色リソースのいずれかに変更できます。
 
 これらのタブのそれぞれを詳しく見てみましょう。
 
@@ -264,9 +264,9 @@ Xamarin の詳細については、マテリアル設計の詳細については
 
 次の例に示すように、 **[継承]** タブには、**既定のテーマ**の**背景**色のスタイル継承が表示されます。
 
-[![[継承] タブ](material-design-features-images/xs/13-inherit-sml.png)](material-design-features-images/xs/13-inherit.png#lightbox)
+[![継承 タブ](material-design-features-images/xs/13-inherit-sml.png)](material-design-features-images/xs/13-inherit.png#lightbox)
 
-この例では、**既定のテーマ**はを使用`@color/background_material_dark`するスタイルを継承します`color/material_grey_850`が、色の`#ff303030`コード値がであるでオーバーライドします。
+この例では、**既定のテーマ**は `@color/background_material_dark` を使用するスタイルを継承しますが、色コード値が `#ff303030`の `color/material_grey_850`でオーバーライドします。
 スタイルの継承の詳細については、「[スタイルとテーマ](https://developer.android.com/guide/topics/ui/themes.html#Inheritance)」を参照してください。
 
 ### <a name="color-picker"></a>カラー ピッカー
@@ -289,7 +289,7 @@ Xamarin の詳細については、マテリアル設計の詳細については
 
 **[リソース]** タブには、テーマに既に存在する色リソースの一覧が表示されます。
 
-[![参考](material-design-features-images/xs/15-resources-sml.png)](material-design-features-images/xs/15-resources.png#lightbox)
+[![リソース](material-design-features-images/xs/15-resources-sml.png)](material-design-features-images/xs/15-resources.png#lightbox)
 
 **[リソース]** タブを使用すると、選択した色の一覧が制限されます。 テーマの別の部分に既に割り当てられている色リソースを選択すると、UI の隣接する2つの要素が "同時に実行" される可能性があることに注意してください (色が同じであるため)。ユーザーが区別するのが困難になります。
 
@@ -303,11 +303,11 @@ Xamarin の詳細については、マテリアル設計の詳細については
 
 次の例では、マテリアルパレットを使用して、新しいカスタムテーマを作成します。 まず、**背景**色を*青 900*に変更します。
 
-[![背景を青900に変更します](material-design-features-images/xs/17-change-background-to-blue-sml.png)](material-design-features-images/xs/17-change-background-to-blue.png#lightbox)
+[背景を青900に変更![](material-design-features-images/xs/17-change-background-to-blue-sml.png)](material-design-features-images/xs/17-change-background-to-blue.png#lightbox)
 
 色リソースを変更すると、メッセージが表示され、*現在のテーマの変更は保存*されていません。
 
-[![未保存の変更の警告](material-design-features-images/xs/18-unsaved-changes-sml.png)](material-design-features-images/xs/18-unsaved-changes.png#lightbox)
+[未保存の変更の![警告](material-design-features-images/xs/18-unsaved-changes-sml.png)](material-design-features-images/xs/18-unsaved-changes.png#lightbox)
 
 デザイナーでの色の変更が行われましたが、この変更はまだ保存されていません。 この時点で、次のいずれかの操作を実行できます。
 
@@ -315,7 +315,7 @@ Xamarin の詳細については、マテリアル設計の詳細については
 
 - **&#8984; + S**キーを押して、**カスタム**という名前の新しいテーマへの変更を保存します。
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 このトピックでは、Android Designer で使用できるマテリアルデザイン機能について説明します。 ここでは、マテリアルデザイングリッドを有効にして構成する方法、素材デザインカラーパレットを使用して色のプロパティを編集する方法、およびタイポグラフィスケールセレクターを使用してテキストプロパティを構成する方法について説明しました。 また、テーマエディターを使用して、マテリアルデザインガイドラインに準拠する新しいカスタムテーマを作成する方法についても説明します。 Xamarin の詳細については、マテリアル設計の詳細については、「[マテリアルのテーマ](~/android/user-interface/material-theme.md)」を参照してください。
 

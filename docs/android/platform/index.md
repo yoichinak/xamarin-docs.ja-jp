@@ -4,15 +4,15 @@ description: このセクションのドキュメントでは、Android 固有�
 ms.prod: xamarin
 ms.assetid: DDE54082-6E2B-9ED9-05FB-D9C1D1B1258E
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/21/2018
-ms.openlocfilehash: def8bf236ec25d3b75e435ff525a683343d9b861
-ms.sourcegitcommit: f324193bcfb1c674e421955cf6ee2a4249d61ac3
+ms.openlocfilehash: a0b8b80499854d485b8420adb580c22a74933443
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71119234"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73020175"
 ---
 # <a name="platform-features"></a>プラットフォーム機能
 
@@ -38,7 +38,7 @@ Android ビームは、近接しているときにアプリケーションが NF
 
 Android 3.0 では、スマートフォンやタブレットで検出されたさまざまな画面サイズに対して、より柔軟なデザインをサポートする方法を示すフラグメントが導入されました。 この記事では、フラグメントを使用して Xamarin Android アプリケーションを開発する方法について説明します。また、Android 3.0 (API レベル 11) デバイスでフラグメントをサポートする方法についても説明します。
 
-## <a name="app-linkingandroidplatformapp-linkingmd"></a>[App-Linking](~/android/platform/app-linking.md)
+## <a name="app-linkingandroidplatformapp-linkingmd"></a>[アプリリンク](~/android/platform/app-linking.md)
 
 このガイドでは、モバイルアプリが web サイトの Url に応答できるようにするための手法である Android 6.0 での_アプリリンク_のサポートについて説明します。 Android 6.0 アプリケーションでのアプリリンクの実装方法と、ドメインのアプリリンクを処理するためのアクセス許可をモバイルアプリに付与するように web サイトを構成する方法について説明します。
 

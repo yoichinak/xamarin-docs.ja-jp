@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/27/2017
-ms.openlocfilehash: a5b6466b1d2489cced4b1e3205ef672b8f6a4da7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: e8c05000275b65c18ddb6b628091da0fac462278
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770659"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73005452"
 ---
 # <a name="adding-appcompat-and-material-design"></a>AppCompat とマテリアルデザインの追加
 
@@ -33,13 +33,13 @@ https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ --
 
 Android プロジェクトのターゲットフレームワークが Android 6.0 (Marshmallow) であることを確認します。 **Android プロジェクト > オプション > ビルド > 全般設定**をオンにして、corrent フレームワークが選択されていることを確認します。
 
- ![](appcompat-images/target-android-6-sml.png "Android の一般ビルド構成")
+ ![](appcompat-images/target-android-6-sml.png "Android General Build Configuration")
 
-### <a name="3-add-new-themes-to-support-material-design"></a>3.新しいテーマを追加してマテリアル設計をサポートする
+### <a name="3-add-new-themes-to-support-material-design"></a>3. 新しいテーマを追加して、マテリアルデザインをサポートする
 
-Android プロジェクトに次の3つのファイルを作成し、以下の内容を貼り付けます。 Google には、[スタイルガイド](http://www.google.com/design/spec/style/color.html#color-color-palette)と[カラーパレットジェネレーター](http://www.materialpalette.com/)が用意されています。このジェネレーターを使用すると、指定した配色に対して代替配色を選択できます。
+Android プロジェクトに次の3つのファイルを作成し、以下の内容を貼り付けます。 Google には、[スタイルガイド](https://www.google.com/design/spec/style/color.html#color-color-palette)と[カラーパレットジェネレーター](https://www.materialpalette.com/)が用意されています。このジェネレーターを使用すると、指定した配色に対して代替配色を選択できます。
 
-**Resources/values/colors.xml**
+**Resources/values/colors**
 
 ```xml
 <resources>
@@ -50,7 +50,7 @@ Android プロジェクトに次の3つのファイルを作成し、以下の�
 </resources>
 ```
 
-**Resources/values/style.xml**
+**Resources/values/style .xml**
 
 ```xml
 <resources>
@@ -68,7 +68,7 @@ Android プロジェクトに次の3つのファイルを作成し、以下の�
 
 Android ロリポップ以降で実行するときに特定のプロパティを適用するには、 **v21**フォルダーに追加のスタイルを含める必要があります。
 
-**Resources/values-v21/style.xml**
+**Resources/values-v21/style .xml**
 
 ```xml
 <resources>
@@ -80,11 +80,11 @@ Android ロリポップ以降で実行するときに特定のプロパティを
 </resources>
 ```
 
-### <a name="4-update-androidmanifestxml"></a>4.Update AndroidManifest .xml
+### <a name="4-update-androidmanifestxml"></a>4. Update AndroidManifest .xml
 
-この新しいテーマ情報が使用されていることを確認するには、を追加`android:theme="@style/MyTheme"`して**androidmanifest**ファイルのテーマを設定します (XML の残りの部分はそのままにします)。
+この新しいテーマ情報が使用されるようにするには、`android:theme="@style/MyTheme"` を追加して**Androidmanifest**ファイルのテーマを設定します (XML の残りの部分はそのままにします)。
 
-**Properties/AndroidManifest.xml**
+**Properties/AndroidManifest .xml**
 
 ```xml
 ...
@@ -93,11 +93,11 @@ Android ロリポップ以降で実行するときに特定のプロパティを
 ...
 ```
 
-### <a name="5-provide-toolbar-and-tab-layouts"></a>5。ツールバーとタブレイアウトの提供
+### <a name="5-provide-toolbar-and-tab-layouts"></a>5. ツールバーとタブレイアウトを指定する
 
 **Resources/layout**ディレクトリに**tabbar. Axml**ファイルと**Toolbar. axml**ファイルを作成し、以下の内容を貼り付けます。
 
-**Resources/layout/Tabbar.axml**
+**Resources/layout/Tabbar. axml**
 
 ```xml
 <android.support.design.widget.TabLayout
@@ -113,7 +113,7 @@ Android ロリポップ以降で実行するときに特定のプロパティを
     app:tabMode="fixed" />
 ```
 
-タブのいくつかのプロパティが設定されています。これ`fill`には、 `fixed`タブの [重力] と [モード] を含めます。
+タブのいくつかのプロパティが設定されています。これには、`fill` に対するタブの重心、`fixed`のモードが含まれます。
 多数のタブがある場合、詳細については、Android [TabLayout のドキュメント](https://developer.android.com/reference/android/support/design/widget/TabLayout.html)を参照してください。
 
 **Resources/layout/Toolbar. axml**
@@ -135,9 +135,9 @@ Android ロリポップ以降で実行するときに特定のプロパティを
 これらのファイルでは、アプリケーションによって異なる可能性があるツールバーの特定のテーマを作成しています。
 詳細については、 [Hello ツールバー](https://blog.xamarin.com/android-tips-hello-toolbar-goodbye-action-bar/)のブログ記事を参照してください。
 
-### <a name="6-update-the-mainactivity"></a>6。を更新します。`MainActivity`
+### <a name="6-update-the-mainactivity"></a>6. `MainActivity` を更新する
 
-既存の Xamarin. Forms アプリでは、 **MainActivity.cs**クラスは`FormsApplicationActivity`を継承します。 新しい機能を有効`FormsAppCompatActivity`にするには、これをに置き換える必要があります。
+既存の Xamarin. Forms アプリでは、 **MainActivity.cs**クラスは `FormsApplicationActivity`から継承します。 新しい機能を有効にするには、これを `FormsAppCompatActivity` に置き換える必要があります。
 
 **MainActivity.cs**
 
@@ -145,7 +145,7 @@ Android ロリポップ以降で実行するときに特定のプロパティを
 public class MainActivity : FormsAppCompatActivity  // was FormsApplicationActivity
 ```
 
-最後に、次に示すように、メソッドの`OnCreate`手順 5. の新しいレイアウトを "接続" します。
+最後に、次に示すように、`OnCreate` メソッドの手順 5. の新しいレイアウトを "接続" します。
 
 ```csharp
 protected override void OnCreate(Bundle bundle)

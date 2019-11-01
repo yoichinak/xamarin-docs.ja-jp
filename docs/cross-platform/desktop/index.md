@@ -2,15 +2,15 @@
 ms.assetid: 65F6A634-9CB0-4BB8-A013-7CA0334F6100
 title: デスクトップ開発者のためのクロスプラットフォーム
 description: このドキュメントでは、WPF および Windows フォーム開発者向けの Xamarin の形式について説明しているさまざまなガイドにリンクしています。 リンクされたコンテンツは、アプリケーションのライフサイクル、UI コントロール、移植のガイダンス、およびサンプルについて説明します。
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/26/2017
-ms.openlocfilehash: e4c14b3f6458180c6da9f123cab5aad406091667
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: dad7548ab576f03ab2e7e3fca94f0ab45918367e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290364"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016462"
 ---
 # <a name="cross-platform-for-desktop-developers"></a>デスクトップ開発者のためのクロスプラットフォーム
 
@@ -34,4 +34,4 @@ WPF と Xamarin の違いに関する追加のガイダンスなど、Windows �
 
 ## <a name="learn-more"></a>詳細
 
-電子ブックエンタープライズアプリケーションパターンの Mobile Apps 電子ブックを作成する[ ![](images/creating-sml.png)](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md) [ ![](images/enterprise-sml.png)](~/xamarin-forms/enterprise-application-patterns/index.md)
+[Mobile Apps 電子ブック](images/creating-sml.png)](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md) [![エンタープライズアプリケーションパターン電子ブック](images/enterprise-sml.png)](~/xamarin-forms/enterprise-application-patterns/index.md)の作成![

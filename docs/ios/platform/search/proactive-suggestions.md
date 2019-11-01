@@ -4,15 +4,15 @@ description: この記事では、Xamarin iOS アプリでプロアクティブ�
 ms.prod: xamarin
 ms.assetid: 8DDD084A-0D1E-4DF7-B686-6309DCEFF5D3
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: b79f64f154dbd7dde623d13385f111d3d5a5d3f2
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 4a5081c9246a0a740d5ba0516d69d23f4d3019b4
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769548"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031532"
 ---
 # <a name="introduction-to-proactive-suggestions-in-xamarinios"></a>Xamarin でのプロアクティブな提案の概要
 
@@ -29,25 +29,25 @@ iOS 10 では、システムが適切なタイミングで有益な情報をユ�
 - Siri の相互作用
 - QuickType 候補
 
-アプリは`NSUserActivity`、web マークアップ、コアスポットライト、mapkit、Media Player、uikit などのテクノロジのコレクションを使用して、この機能をシステムに公開します。 さらに、アプリの事前提案のサポートを提供することで、Siri 統合を無料で利用できるようになります。
+このアプリは、`NSUserActivity`、web マークアップ、コアスポットライト、MapKit、Media Player、UIKit などのテクノロジのコレクションを使用して、この機能をシステムに公開します。 さらに、アプリの事前提案のサポートを提供することで、Siri 統合を無料で利用できるようになります。
 
 ## <a name="location-based-suggestions"></a>場所に基づく提案
 
-IOS 10 の新機能で`NSUserActivity`あるクラスに`MapItem`は、開発者が他のコンテキストで使用できる場所情報を提供できるようにするプロパティが含まれています。 たとえば、アプリがレストランのレビューを表示する場合、開発者は`MapItem` 、ユーザーがアプリで表示しているレストランの場所にプロパティを設定できます。 ユーザーが Maps アプリに切り替えた場合、レストランの場所は自動的に使用できるようになります。
+IOS 10 の新機能である `NSUserActivity` クラスには、開発者が他のコンテキストで使用できる場所情報を提供できるようにする `MapItem` のプロパティが含まれています。 たとえば、アプリがレストランのレビューを表示する場合、開発者は、アプリでユーザーが表示しているレストランの場所に `MapItem` プロパティを設定できます。 ユーザーが Maps アプリに切り替えた場合、レストランの場所は自動的に使用できるようになります。
 
-アプリがアプリ検索をサポートしている場合は、 `CSSearchableItemAttributesSet`クラスの新しいアドレスコンポーネントを使用して、ユーザーがアクセスする場所を指定できます。 `MapItem`プロパティを設定すると、その他のプロパティは自動的に入力されます。
+アプリがアプリ検索をサポートしている場合は、`CSSearchableItemAttributesSet` クラスの新しいアドレスコンポーネントを使用して、ユーザーがアクセスする場所を指定できます。 `MapItem` プロパティを設定すると、その他のプロパティは自動的に入力されます。
 
-アドレスコンポーネントのプロパティの`Latitude`および`Longitude`を設定するだけでなく、アプリでもプロパティ`NamedLocation`と`PhoneNumbers`プロパティを指定することをお勧めします。これにより、siri は場所への呼び出しを開始できます。
+Address コンポーネントのプロパティの `Latitude` と `Longitude` を設定するだけでなく、アプリでは `NamedLocation` と `PhoneNumbers` のプロパティも指定することをお勧めします。これにより、Siri は場所への呼び出しを開始できます。
 
 ## <a name="web-markup-based-suggestions"></a>Web マークアップに基づく提案
 
-iOS 9 は、ユーザーがスポットライトや Safari の検索結果に表示するコンテンツを強化する、構造化されたデータマークアップを web サイトに追加する機能を追加しました (「 [Web マークアップを使用した検索](~/ios/platform/search/web-markup.md)」を参照してください)。 iOS 10 では、場所ベースのマークアップ ( [Schema.org](http://schema.org/)で定義されている[PostalAddress](http://schema.org/PostalAddress)など) を追加して、ユーザーのエクスペリエンスをさらに強化する機能が追加されています。 たとえば、ユーザーが web サイト上のページとしてマークされている場所を表示する場合、マップを開くときに同じ場所を提案できます。
+iOS 9 は、ユーザーがスポットライトや Safari の検索結果に表示するコンテンツを強化する、構造化されたデータマークアップを web サイトに追加する機能を追加しました (「 [Web マークアップを使用した検索](~/ios/platform/search/web-markup.md)」を参照してください)。 iOS 10 では、場所ベースのマークアップ ( [Schema.org](https://schema.org/)で定義されている[PostalAddress](https://schema.org/PostalAddress)など) を追加して、ユーザーのエクスペリエンスをさらに強化する機能が追加されています。 たとえば、ユーザーが web サイト上のページとしてマークされている場所を表示する場合、マップを開くときに同じ場所を提案できます。
 
 ## <a name="text-based-suggestions"></a>テキストベースの候補
 
 UIKit が iOS 10 で拡張され、 [Uitextinputtraits](https://developer.apple.com/reference/uikit/uitextinputtraits)クラスの[textcontenttype](https://developer.apple.com/reference/uikit/uitextinputtraits/1649656-textcontenttype)プロパティが含まれるようになりました。これにより、テキスト領域の内容の意味を指定します。 この情報を使用すると、通常、システムは適切なキーボードの種類を自動的に選択し、オートコレクトの提案を改善し、他のアプリや web サイトから情報を事前に統合できます。
 
-たとえば、というテキストフィールド`UITextContentType.FullStreetAddress`にユーザーがテキストを入力する場合、システムは、ユーザーが最近表示した場所でフィールドを自動入力することを提案できます。
+たとえば、`UITextContentType.FullStreetAddress`マークが付けられているテキストフィールドにユーザーがテキストを入力する場合、システムは、ユーザーが最近表示した場所でフィールドを自動入力することを提案できます。
 
 ## <a name="media-based-suggestions"></a>メディアベースの提案
 
@@ -63,7 +63,7 @@ UIKit が iOS 10 で拡張され、 [Uitextinputtraits](https://developer.apple.
 
 ## <a name="ride-sharing-based-suggestions"></a>乗り物に基づく提案
 
-乗り物共有アプリで[Mkdirection Srequest](xref:MapKit.MKDirectionsRequest) API が使用されている場合、iOS 10 は、ユーザーが乗り物を望む可能性があるときに、アプリスイッチャーにオプションとして表示します。 また、 `Info.plist`ファイルの[mkdirection sapplicationsupportedmodes](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html)キーのを指定し`MKDirectionsModeRideShare`て、アプリを乗り物共有アプリとして登録する必要があります。
+乗り物共有アプリで[Mkdirection Srequest](xref:MapKit.MKDirectionsRequest) API が使用されている場合、iOS 10 は、ユーザーが乗り物を望む可能性があるときに、アプリスイッチャーにオプションとして表示します。 また、`Info.plist` ファイルの[Mkdirection Sapplicationsupportedmodes](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html)キーの `MKDirectionsModeRideShare` を指定して、アプリを乗り物共有アプリとして登録する必要があります。
 
 アプリが乗り物の共有のみをサポートしている場合、システムの提案は *"get a 乗り物.* .." から始まります。他の種類のルーティング方向 (ウォーキングや自転車など) がサポートされている場合、システムは *"案内の表示*" を使用します。
 
@@ -76,38 +76,38 @@ Xamarin iOS アプリに事前提案サポートを追加するのは、通常�
 
 プロアクティブな提案は、次の3つの主な方法でアプリを操作します。
 
-- **`NSUserActivity`また、Schema.org**  -  `NSUserActivity`を使用すると、ユーザーが現在画面上でどのような情報を操作しているかをシステムが理解するのに役立ちます。 Schema.org は、web ページに同様の機能を追加します。
+- **`NSUserActivity` と Schema.org**の - `NSUserActivity` を使用すると、ユーザーが現在画面上でどのような情報を操作しているかをシステムが理解するのに役立ちます。 Schema.org は、web ページに同様の機能を追加します。
 - **場所の提案**-アプリが場所ベースの情報を提供または使用する場合、これらの API 拡張機能は、この情報をアプリ間で共有するための新しい方法を提供します。
 - **メディアアプリの提案**-システムは、iOS デバイスとのユーザー操作のコンテキストに基づいて、アプリとそのメディアコンテンツを昇格させることができます。
 
 とは、次のものを実装することによって、アプリでサポートされます。
 
--  - ハンドオフがサポートされるように、iOS 8 でハンド`NSUserActivity`オフが追加されました。これにより、開発者は1つのデバイスでアクティビティを開始して、別のデバイスで続行できます (「[ハンドオフの概要」を](~/ios/platform/handoff.md)参照してください)。
-- **スポットライト検索**-iOS 9 では、を使用して`NSUserActivity`スポットライト検索結果内からアプリコンテンツを昇格する機能が追加されました (「[コアスポットライトを使用した検索](~/ios/platform/search/corespotlight.md)」を参照してください)。
-- **コンテキスト siri リマインダー** -iOS 10 では`NSUserActivity` 、ユーザーが現在表示しているコンテンツを後で表示するために siri がすばやくリマインダーを行うことができるように拡張されました。
-- **場所の提案**-iOS 10 `NSUserActivity`は、アプリ内で表示される場所をキャプチャし、システム全体のさまざまな場所で昇格するように拡張します。
-- **コンテキスト siri 要求** -  `NSUserActivity`では、アプリ内に表示される情報を siri に提供するため、ユーザーはアプリ内から siri を呼び出すことができます。
-- **連絡先相互作用**-iOS 10 の新`NSUserActivity`機能では、通信アプリを連絡先カード (Contacts アプリ内) から別の通信方法として昇格させることができます。
+- **ハンドオフ - `NSUserActivity`** が iOS 8 で追加され、ハンドオフがサポートされるようになりました。これにより、開発者は1つのデバイスでアクティビティを開始し、別のデバイスで操作を続行できます (「[ハンドオフの概要」を](~/ios/platform/handoff.md)参照)。
+- **スポットライト検索**-iOS 9 では、`NSUserActivity` を使用してスポットライト検索結果内からアプリコンテンツを昇格する機能が追加されました (「[コアスポットライトを使用した検索](~/ios/platform/search/corespotlight.md)」を参照してください)。
+- **コンテキスト Siri リマインダー** -iOS 10 では、`NSUserActivity` が拡張され、ユーザーが現在表示しているコンテンツを後で表示するために siri がすぐにリマインダーを行うことができるようになりました。
+- **場所の提案**-iOS 10 は、アプリ内で表示される場所をキャプチャし、システム全体のさまざまな場所で昇格するために `NSUserActivity` を拡張します。
+- **コンテキスト Siri 要求** - `NSUserActivity` は、アプリ内に表示される情報を siri に提供します。これにより、ユーザーがアプリ内から siri を呼び出すことができるようになります。
+- **連絡先の相互作用**-iOS 10 の新機能では、通信アプリを (連絡先アプリの) 連絡先カードから別の通信方法として昇格させることが `NSUserActivity` できます。
 
-これらの機能はすべて、1つのフォームで使用さ`NSUserActivity`れるか、またはその機能を提供するために使用されます。 
+これらの機能はすべて共通しています。1つのフォームで `NSUserActivity` を使用するか、別の機能を使用して機能を提供します。 
 
 ## <a name="nsuseractivity"></a>NSUserActivity
 
-前述のように`NSUserActivity` 、では、ユーザーが現在どのような情報を画面で操作しているかをシステムが理解するのに役立ちます。 `NSUserActivity`は、アプリ内を移動するときにユーザーのアクティビティをキャプチャする軽量の状態のキャッシュメカニズムです。 たとえば、レストランアプリを見ているとします。
+前述のように、`NSUserActivity` は、ユーザーが現在どのように画面上で作業しているのかをシステムが理解するのに役立ちます。 `NSUserActivity` は、アプリ内を移動するときにユーザーのアクティビティをキャプチャする軽量の状態のキャッシュメカニズムです。 たとえば、レストランアプリを見ているとします。
 
-[![](proactive-suggestions-images/activity02.png "NSUserActivity のライトウェイト状態キャッシュメカニズム")](proactive-suggestions-images/activity02.png#lightbox)
+[![](proactive-suggestions-images/activity02.png "The NSUserActivity light-weight state caching mechanism")](proactive-suggestions-images/activity02.png#lightbox)
 
 次のような相互作用があります。
 
-1. ユーザーがアプリ`NSUserActivity`で作業するときに、アプリの状態を後で再作成するためにが作成されます。
+1. ユーザーがアプリを操作すると、後でアプリの状態を再作成するための `NSUserActivity` が作成されます。
 2. ユーザーがレストランを検索する場合は、アクティビティの作成と同じパターンが適用されます。
 3. ここでも、ユーザーが結果を表示したとき。 この最後の例では、ユーザーが場所を表示していて、iOS 10 では、特定の概念 (場所や通信の相互作用など) を認識しています。
 
 最後の画面を詳しく見てみましょう。
 
-[![](proactive-suggestions-images/activity03.png "NSUserActivity の詳細")](proactive-suggestions-images/activity03.png#lightbox)
+[![](proactive-suggestions-images/activity03.png "The NSUserActivity details")](proactive-suggestions-images/activity03.png#lightbox)
 
-ここで、アプリはを`NSUserActivity`作成しており、後で状態を再作成するための情報が設定されています。 アプリには、場所の名前や住所などのいくつかのメタデータも含まれています。 このアクティビティを作成すると、アプリはユーザーの現在の状態を表すことを iOS に通知します。
+ここで、アプリは `NSUserActivity` を作成しており、後で状態を再作成するための情報が設定されています。 アプリには、場所の名前や住所などのいくつかのメタデータも含まれています。 このアクティビティを作成すると、アプリはユーザーの現在の状態を表すことを iOS に通知します。
 
 次に、アプリは、ハンドオフのために活動を提供するかどうかを決定します。これは場所の提案の一時的な値として保存されるか、または検索結果に表示するためにデバイス上のスポットライトインデックスに追加されます。
 
@@ -115,7 +115,7 @@ Xamarin iOS アプリに事前提案サポートを追加するのは、通常�
 
 ### <a name="creating-an-activity"></a>アクティビティの作成
 
-アクティビティを作成する前に、アクティビティの種類を識別するための識別子を作成する必要があります。 アクティビティの種類の識別子は、特定のユーザーアクティビティ`NSUserActivityTypes`の種類を一意に`Info.plist`識別するために使用される、アプリのファイルの配列に追加される短い文字列です。 アプリがサポートし、アプリ検索に公開されるアクティビティごとに、配列に1つのエントリがあります。 詳細については、「[アクティビティの種類の識別子の作成](~/ios/platform/search/nsuseractivity.md)」を参照してください。
+アクティビティを作成する前に、アクティビティの種類を識別するための識別子を作成する必要があります。 アクティビティの種類の識別子は、特定のユーザーアクティビティの種類を一意に識別するために使用される、アプリの `Info.plist` ファイルの `NSUserActivityTypes` 配列に追加される短い文字列です。 アプリがサポートし、アプリ検索に公開されるアクティビティごとに、配列に1つのエントリがあります。 詳細については、「[アクティビティの種類の識別子の作成](~/ios/platform/search/nsuseractivity.md)」を参照してください。
 
 アクティビティの例を見てみましょう。
 
@@ -166,7 +166,7 @@ activity.WebPageUrl = new NSUrl("http://xamarin.com/platform");
 
 ### <a name="restoring-an-activity"></a>アクティビティの復元
 
-アプリの検索結果 (`NSUserActivity`) をタップしてユーザーに応答するには、 **AppDelegate.cs** `ContinueUserActivity`ファイルを編集し、メソッドをオーバーライドします。 例えば:
+アプリの検索結果 (`NSUserActivity`) をタップしてユーザーに応答するには、 **AppDelegate.cs**ファイルを編集し、`ContinueUserActivity` メソッドをオーバーライドします。 (例:
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -183,7 +183,7 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 }
 ```
 
-開発者は、これが上記で作成したアクティビティと同じ`com.xamarin.platform`種類の id () であることを確認する必要があります。 アプリは、 `NSUserActivity`に格納されている情報を使用して、ユーザーが中断した場所に状態を戻します。
+開発者は、上記で作成したアクティビティと同じアクティビティタイプ識別子 (`com.xamarin.platform`) であることを確認する必要があります。 アプリは、`NSUserActivity` に格納されている情報を使用して、ユーザーが中断した場所に状態を戻します。
 
 ### <a name="benefits-of-creating-an-activity"></a>アクティビティを作成する利点
 
@@ -200,20 +200,20 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 
 ### <a name="location-based-suggestions"></a>場所に基づく提案 
 
-上記のレストラン検索アプリの例を見てください。 実装`NSUserActivity`されており、すべてのメタデータと属性が正しく設定されている場合、ユーザーは次の操作を実行できます。
+上記のレストラン検索アプリの例を見てください。 `NSUserActivity` が実装されていて、すべてのメタデータと属性が正しく設定されている場合、ユーザーは次の操作を実行できます。
 
 1. アプリ内で友人を満足させるレストランを検索します。
 2. ユーザーがマルチタスクアプリスイッチャーを使用してアプリから移動すると、お気に入りのナビゲーションアプリを使用してレストランへの指示を得るために、(画面の下部に) 提案が自動的に表示されます。
 3. ユーザーがメッセージアプリに切り替えて、 *「Let to 会い*in」と入力し始めた場合、quicktype キーボードは自動的にレストランのアドレスへの貼り付けを提案します。
 4. ユーザーが Maps アプリに切り替えた場合、レストランの住所は自動的に宛先として提案されます。
-5. これはサードパーティ製のアプリ (をサポート`NSUserActivity`) に対しても機能します。そのため、ユーザーは、乗り物共有アプリに切り替えることができ、レストランのアドレスも宛先として自動的に提案されます。
+5. これはサードパーティ製のアプリ (`NSUserActivity`をサポート) に対しても機能します。そのため、ユーザーは、乗り物共有アプリに切り替えることができ、レストランのアドレスも宛先として自動的に提案されます。
 6. また、Siri にコンテキストが提供されるので、ユーザーはレストランアプリ内で Siri を呼び出して、 *"取得方向.* .." を尋ね、siri は、ユーザーが表示しているレストランへの指示を提供します。
 
 上記の機能はすべて共通しています。これらはすべて、提案がもともとどこから来ているかを示しています。 上記の例の場合は、架空のレストランレビューアプリです。
 
 iOS 10 は、いくつかの小さな変更や既存のフレームワークへの追加によってアプリでこの機能を有効にするように強化されています。
 
-- `NSUserActivity`には、アプリ内で表示される場所情報をキャプチャするための追加のフィールドがあります。
+- `NSUserActivity` には、アプリ内で表示される場所情報をキャプチャするためのフィールドが追加されています。
 - 位置情報をキャプチャするために、MapKit と CoreSpotlight にいくつかの追加が行われています。
 - 場所を認識する機能が、システム内の Siri、マップ、キーボード、マルチタスク、およびその他のアプリに追加されました。
 
@@ -249,7 +249,7 @@ activity.WebPageUrl = new NSUrl("http://xamarin.com/platform");
 activity.BecomeCurrent();
 ```
 
-アプリが mapkit を使用している場合は、現在のマップ`MKMapItem`をアクティビティに追加するのと同じように簡単です。
+アプリが MapKit を使用している場合は、現在のマップ `MKMapItem` をアクティビティに追加するのと同じように簡単です。
 
 ```csharp
 // Save MKMapItem location
@@ -318,23 +318,23 @@ IOS 10 の新方式では、通信アプリは連絡先カードから連絡先�
 
 サードパーティのアプリが選択されている場合は、ユーザーが次に連絡するときに、指定したユーザーにメッセージを表示する既定の方法として、そのアプリを記憶して表示することができます。
 
-連絡先の相互作用は、および iOS `NSUserActivity` 10 で導入された新しいインテントフレームワークを使用してアプリに実装されます。 インテントの操作の詳細については、「 [SiriKit の概念につい](~/ios/platform/sirikit/understanding-sirikit.md)て」および「 [sirikit](~/ios/platform/sirikit/implementing-sirikit.md)ガイドの実装」を参照してください。
+連絡先の相互作用は、`NSUserActivity` と、iOS 10 で導入された新しいインテントフレームワークを使用して、アプリに実装されます。 インテントの操作の詳細については、「 [SiriKit の概念につい](~/ios/platform/sirikit/understanding-sirikit.md)て」および「 [sirikit](~/ios/platform/sirikit/implementing-sirikit.md)ガイドの実装」を参照してください。
 
 #### <a name="donating-interactions"></a>寄付の相互作用
 
 アプリがどのように相互作用を寄贈できるかを見てみましょう。
 
-[![](proactive-suggestions-images/activity04.png "寄付の相互作用の概要")](proactive-suggestions-images/activity04.png#lightbox)
+[![](proactive-suggestions-images/activity04.png "Donating Interactions overview")](proactive-suggestions-images/activity04.png#lightbox)
 
-アプリ`INInteraction`は、**インテント**(`INIntent`)、**参加者**、および**メタデータ**を含むオブジェクトを作成します。 **インテント**は、ビデオ通話の作成やテキストメッセージの送信などのユーザーアクションを表します。 **参加者**には、通信を受けている人が含まれます。 **メタデータ**は、メッセージを正常に送信するなどの追加情報を定義します。
+アプリは、**インテント**(`INIntent`)、**参加者**、および**メタデータ**を含む `INInteraction` オブジェクトを作成します。 **インテント**は、ビデオ通話の作成やテキストメッセージの送信などのユーザーアクションを表します。 **参加者**には、通信を受けている人が含まれます。 **メタデータ**は、メッセージを正常に送信するなどの追加情報を定義します。
 
-開発者は、または`INIntent` `INIntentResponse`のインスタンスを直接作成することはありません。これらの親クラスから継承する特定の子クラスの1つ (ユーザーの代わりにアプリが実行するタスクに基づく) を使用します。 たとえば、テキスト`INSendMessageIntent`メッセージ`INSendMessageIntentResponse`を送信する場合は、とします。 
+開発者は、`INIntent` または `INIntentResponse`のインスタンスを直接作成することはなく、これらの親クラスを継承する特定の子クラス (アプリがユーザーに代わって実行するタスクに基づく) のいずれかを使用します。 たとえば、テキストメッセージを送信するための `INSendMessageIntent` と `INSendMessageIntentResponse` です。 
 
-相互作用が完全に設定されたら`DonateInteraction` 、メソッドを呼び出して、相互作用が使用可能であることをシステムに通知します。
+相互作用が完全に設定されたら、`DonateInteraction` メソッドを呼び出して、相互作用が使用可能であることをシステムに通知します。
 
-ユーザーが連絡先カードからアプリを操作すると、相互作用はにバンドル`NSUserActivity`され、その後、アプリを起動するために使用されます。
+ユーザーが連絡先カードからアプリと対話すると、相互作用が `NSUserActivity`にバンドルされ、アプリの起動に使用されます。
 
-[![](proactive-suggestions-images/activity05.png "相互作用は、アプリを起動するために使用される NSUserActivity にバンドルされます。")](proactive-suggestions-images/activity05.png#lightbox)
+[![](proactive-suggestions-images/activity05.png "The interaction gets bundled with a NSUserActivity that is used to launch the app")](proactive-suggestions-images/activity05.png#lightbox)
 
 メッセージ送信の目的の次の例を見てみましょう。
 
@@ -397,19 +397,19 @@ namespace MonkeyNotification
 }
 ```
 
-このコードについて詳しく説明すると、の`NSUserActivity`インスタンスを作成して設定します (前の「アクティビティの[作成](#creating-an-activity)」セクションを参照)。 次に、の`INSendMessageIntent`インスタンス (から`INIntent`継承) を作成し、送信されるメッセージの詳細を設定します。
+このコードについて詳しく説明すると、`NSUserActivity` のインスタンスを作成して設定します (前の「[アクティビティの作成](#creating-an-activity)」セクションを参照)。 次に、`INSendMessageIntent` のインスタンス (`INIntent`から継承) を作成し、送信されるメッセージの詳細を設定します。
 
 ```csharp
 var intent = new INSendMessageIntent (to, text, "", "MonkeyChat", from);
 ```
 
-が作成され、上記`NSUserActivity`で作成したが渡されます。 `INSendMessageIntentResponse`
+`INSendMessageIntentResponse` が作成され、上記で作成した `NSUserActivity` が渡されます。
 
 ```csharp
 var response = new INSendMessageIntentResponse (INSendMessageIntentResponseCode.Success, activity);
 ```
 
-は、送信メッセージのインテント (`INSendMessageIntent`) と、次のよう`INSendMessageIntentResponse`に作成された応答 () から構築されます。`INInteraction`
+`INInteraction` は、送信メッセージのインテント (`INSendMessageIntent`) と、次のように作成された応答 (`INSendMessageIntentResponse`) から構築されます。
 
 ```csharp
 var interaction = new INInteraction (intent, response);
@@ -431,14 +431,14 @@ interaction.DonateInteraction ((err) => {
 
 Apple では、アクティビティを操作するときに、次のベストプラクティスを提案しています。
 
-- 遅延`NeedsSave`ペイロードの更新に使用します。
+- 遅延ペイロードの更新には `NeedsSave` を使用します。
 - 現在のアクティビティへの強い参照を保持するようにしてください。
 - 状態を復元するのに十分な情報だけを含む小さなペイロードのみを転送します。
 - アクティビティの種類の識別子が一意であり、逆引き DNS 表記を使用して指定されていることを確認します。 
 
 ## <a name="schemaorg"></a>Schema.org
 
-上に示した`NSUserActivity`ように、は、ユーザーが現在どのような情報を画面で操作しているかをシステムが理解するのに役立ちます。 Schema.org は、web ページに同様の機能を追加します。
+上に示したように、`NSUserActivity` は、ユーザーが現在どのように画面上で作業しているのかをシステムが理解するのに役立ちます。 Schema.org は、web ページに同様の機能を追加します。
 
 Schema.org は、web サイトに対して同じ種類の場所での対話を提供できます。 Apple では、ネイティブアプリの場合と同様に、Safari で表示するときにも、新しい場所の提案を行うように設計されています。
 
@@ -447,9 +447,9 @@ Schema.org の背景:
 - オープンな web マークアップボキャブラリ標準が用意されています。
 - Web ページに構造化されたメタデータを含めることで機能します。
 - 使用可能なさまざまな概念を表す500を超えるスキーマがあります。
-- 開発者は、web サイトに実装することで、ネイティブアプリでを使用`NSUserActivity`する利点の一部を取得できます。
+- 開発者は、web サイトに実装することで、ネイティブアプリで `NSUserActivity` を使用する利点の一部を取得できます。
 
-スキーマは、ツリーのような構造で配置されます。たとえば、*レストラン*などの特定の型は、*ローカルビジネス*などの汎用的な型から継承されます。 詳細については、「 [Schema.org](http://schema.org)」を参照してください。
+スキーマは、ツリーのような構造で配置されます。たとえば、*レストラン*などの特定の型は、*ローカルビジネス*などの汎用的な型から継承されます。 詳細については、「 [Schema.org](https://schema.org)」を参照してください。
 
 たとえば、web ページに次のデータが含まれているとします。
 
@@ -503,7 +503,7 @@ Safari は、次のいずれかのスキーマプロパティに準拠した web
 - アプリでは、アプリでプロアクティブな提案を取得できます。
 - アプリには、enhanced オートコレクトを利用できます。
 
-IOS 10 `TextContentType`のテキストフィールドコントロールの新しいプロパティを使用すると、開発者は、ユーザーが特定のフィールドに入力する値のセマンティックインテントを定義できます。 例えば:
+IOS 10 のテキストフィールドコントロールの新しい `TextContentType` プロパティを使用すると、開発者は、ユーザーが特定のフィールドに入力する値のセマンティックインテントを定義できます。 (例:
 
 ```csharp
 var textField = new UITextField();
@@ -512,7 +512,7 @@ textField.TextContentType = UITextContentType.FullStreetAddress;
 
 は、ユーザーが指定されたフィールドに完全な住所を入力することをアプリケーションが想定していることをシステムに伝えます。 これにより、ユーザーがこのフィールドに値を入力したときに、QuickType キーボードによってキーボードの場所に関する提案が自動的に提供されるようになります。
 
-次に、 `UITextContentType`静的クラスの開発者が使用できる一般的な型をいくつか示します。
+`UITextContentType` 静的クラスで開発者が使用できる一般的な型のいくつかを次に示します。
 
 - `Name`
 - `GivenName`
@@ -525,14 +525,14 @@ textField.TextContentType = UITextContentType.FullStreetAddress;
 
 ### <a name="routing-apps-and-locations-suggestions"></a>アプリと場所をルーティングする提案
 
-このセクションでは、ルーティングアプリ内から直接場所の提案を利用する方法について説明します。 この機能を追加するルーティングアプリでは、開発者は次の`MKDirectionsRequest`ように既存のフレームワークを活用します。
+このセクションでは、ルーティングアプリ内から直接場所の提案を利用する方法について説明します。 この機能を追加するルーティングアプリの場合、開発者は次のように既存の `MKDirectionsRequest` フレームワークを活用します。
 
 - アプリをマルチタスクで昇格させることができます。
 - アプリをルーティングアプリとして登録します。
-- Mapkit `MKDirectionsRequest`オブジェクトを使用したアプリの起動を処理する場合は。
+- MapKit `MKDirectionsRequest` オブジェクトを使用したアプリの起動を処理するには
 - IOS に、ユーザーのエンゲージメントに基づいて、適切なタイミングでユーザーにアプリを提案する機能を提供します。
 
-アプリケーションが mapkit `MKDirectionsRequest`オブジェクトを使用して起動されると、要求された場所へのユーザーの指示が自動的に開始されるか、ユーザーが簡単に方向を開始できるようにするための UI が表示されます。 例えば:
+アプリケーションが MapKit `MKDirectionsRequest` オブジェクトを使用して起動されると、要求された場所へのユーザーの指示が自動的に開始されます。または、ユーザーが簡単に方向を開始できるようにするための UI が表示されます。 (例:
 
 ```csharp
 using System;
@@ -575,7 +575,7 @@ namespace MonkeyChat
 if (MKDirectionsRequest.IsDirectionsRequestUrl(url)) {
 ```
 
-の場合は、URL からを`MKDirectionsRequest`作成します。
+の場合は、URL から `MKDirectionsRequest` を作成します。
 
 ```csharp
 var request = new MKDirectionsRequest(url);
@@ -605,7 +605,7 @@ IOS 10 を使用して、ポッドキャストアプリや、オーディオや�
   - 車に入った後。
   - 自宅または職場に到着した後。 
 
-IOS 10 に単純な API 呼び出しを含めることにより、開発者はメディアアプリのユーザーに対してより魅力的なロック画面エクスペリエンスを作成できます。 `MPPlayableContentManager`クラスを使用してメディアの再生を管理することで、アプリのロック画面にフルメディアコントロール (音楽アプリによって表示されるものと同様) が表示されます。
+IOS 10 に単純な API 呼び出しを含めることにより、開発者はメディアアプリのユーザーに対してより魅力的なロック画面エクスペリエンスを作成できます。 `MPPlayableContentManager` クラスを使用してメディアの再生を管理することで、アプリのロック画面にフルメディアコントロール (音楽アプリによって表示されるものなど) が表示されます。
 
 ```csharp
 using System;
@@ -677,7 +677,7 @@ namespace MonkeyPlayer
 }
 ```
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 この記事では、プロアクティブな提案について説明し、開発者が Xamarin. iOS アプリへのトラフィックを促進する方法について説明しました。 ここでは、プロアクティブな提案を実装し、使用ガイドラインを提示する手順について説明します。
 

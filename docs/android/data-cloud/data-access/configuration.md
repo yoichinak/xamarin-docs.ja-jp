@@ -3,15 +3,15 @@ title: 構成
 ms.prod: xamarin
 ms.assetid: 44526226-4E4E-4FFF-9A16-CA7B1E01BB8F
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/11/2016
-ms.openlocfilehash: 5ebafa70239305210da631c3e9c34278f83b272b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 29bbd5c52a5af6c0ac9f9790dc182d3d806c6b5f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70754664"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73024026"
 ---
 # <a name="configuration"></a>構成
 
@@ -69,4 +69,4 @@ lock (locker){
 - [このような場合の基本 (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
 - [詳細設定 (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
 - [Android データレシピ](https://github.com/xamarin/recipes/tree/master/Recipes/android/data)
-- [Xamarin.Forms データアクセス](~/xamarin-forms/data-cloud/data/databases.md)
+- [Xamarin. フォームデータアクセス](~/xamarin-forms/data-cloud/data/databases.md)

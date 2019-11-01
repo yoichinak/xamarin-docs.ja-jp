@@ -3,15 +3,15 @@ title: クロスプラットフォームのパフォーマンス
 description: このドキュメントでは、モバイル アプリケーションのパフォーマンスを向上させるために使用できるさまざまな手法について説明します。 プロファイラー、IDisposable のリソース、弱い参照、SGen ガベージ コレクター、サイズ縮小の手法などを説明します。
 ms.prod: xamarin
 ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: 7fcb482fd17cba267d25dbea5d25232f2cf6ff2f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: d0b195b90bb57b6d0717c0fb06d0202857851fe7
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70765943"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016524"
 ---
 # <a name="cross-platform-performance"></a>クロスプラットフォームのパフォーマンス
 
@@ -331,7 +331,7 @@ SGen がガベージ コレクションを開始すると、メモリの再利�
 - アプリケーションのマネージド コード サイズを減らします。 これは、すべてのアセンブリでリンカーを有効にすることで行うことができます (iOS プロジェクトの場合は *[すべてリンク]* 、Android プロジェクトの場合は *[すべてのアセンブリをリンクする]* )。
 
 Android アプリは、ABI ("アーキテクチャ") ごとに別の APK に分割することもできます。
-詳細については、次のブログ記事を参照してください: [ご利用の Android アプリのサイズを小さくしておく方法](http://motzcod.es/post/112072508362/how-to-keep-your-android-app-size-down)。
+詳細については、次のブログ記事を参照してください: [ご利用の Android アプリのサイズを小さくしておく方法](https://montemagno.com/how-to-keep-your-android-app-size-down/)。
 
 <a name="optimizeimages" />
 

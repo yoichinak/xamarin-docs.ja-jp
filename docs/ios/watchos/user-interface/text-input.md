@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin での watchOS テキス�
 ms.prod: xamarin
 ms.assetid: E9CDF1DE-4233-4C39-99A9-C0AA643D314D
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: a0e45c51ba5460da87b80f21d4e9e54c13deabde
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 156a31e37d14ce3e3cbe7173ae97b608e9d4c32e
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70766777"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73032649"
 ---
 # <a name="working-with-watchos-text-input-in-xamarin"></a>Xamarin での watchOS テキスト入力の操作
 
@@ -25,12 +25,12 @@ Apple Watch には、ユーザーがテキストを入力するためのキー�
 
 現在、シミュレーターではディクテーションはサポートされていませんが、次に示すように、テキスト入力コントローラーのその他のオプション (Scribble など) をテストできます。
 
-![](text-input-images/textinput-sml.png "Scribble オプションのテスト")
+![](text-input-images/textinput-sml.png "Testing the scribble option")
 
 Watch アプリでテキスト入力を受け入れるには、次のようにします。
 
 1. 定義済みのオプションの文字列配列を作成します。
-2. 配列`PresentTextInputController`を使用して、絵文字`Action`を許可するかどうかにかかわらず、ユーザーが終了したときに呼び出されるを呼び出します。
+2. 配列を使用して `PresentTextInputController` を呼び出します。絵文字を許可するかどうかにかかわらず、ユーザーが終了したときに呼び出される `Action` ます。
 3. [完了] アクションで、入力結果をテストし、アプリで適切なアクションを実行します (ラベルのテキスト値を設定する場合もあります)。
 
 次のコードスニペットは、ユーザーに対して定義済みの3つのオプションを示しています。
@@ -49,7 +49,7 @@ PresentTextInputController (suggest, WatchKit.WKTextInputMode.AllowEmoji, (resul
 });
 ```
 
-列挙`WKTextInputMode`体には、次の3つの値があります。
+`WKTextInputMode` 列挙体には、次の3つの値があります。
 
 - プレーン
 - AllowEmoji
@@ -63,9 +63,9 @@ PresentTextInputController (suggest, WatchKit.WKTextInputMode.AllowEmoji, (resul
 - Scribble、または
 - アプリケーションによって提供される定義済みのリストから。
 
-[![](text-input-images/plain-scribble-sml.png "ディクテーション、Scribble、またはアプリが提供する定義済みの一覧から")](text-input-images/plain-scribble.png#lightbox)
+[![](text-input-images/plain-scribble-sml.png "Dictation, Scribble, or from a pre-defined list that the app supplies")](text-input-images/plain-scribble.png#lightbox)
 
-結果は、 `string`にキャストできると`NSObject`して常に返されます。
+結果は常に、`string`にキャストできる `NSObject` として返されます。
 
 ## <a name="emoji"></a>絵文字
 
@@ -76,14 +76,14 @@ PresentTextInputController (suggest, WatchKit.WKTextInputMode.AllowEmoji, (resul
 
 ユーザーが Unicode 絵文字を選択すると、文字列として返されます。
 
-アニメーション化されたイメージの絵文字`result`が選択されている場合`NSData` 、では、入力`UIImage`候補ハンドラーに絵文字を含むオブジェクトが格納されます。
+アニメーション画像の絵文字が選択されている場合、完了ハンドラーの `result` には、絵文字 `UIImage`を含む `NSData` オブジェクトが含まれます。
 
 ## <a name="accepting-dictation-only"></a>ディクテーションのみを受け入れる
 
 修正候補 (または Scribble オプション) を表示せずにユーザーを直接ディクテーション画面に移動するには、次のようにします。
 
 - 候補リストに空の配列を渡します。
-- を`WatchKit.WKTextInputMode.Plain`設定します。
+- `WatchKit.WKTextInputMode.Plain`を設定します。
 
 ```csharp
 PresentTextInputController (new string[0], WatchKit.WKTextInputMode.Plain, (result) => {
@@ -98,7 +98,7 @@ PresentTextInputController (new string[0], WatchKit.WKTextInputMode.Plain, (resu
 
 ユーザーが話しているときに、認識されたテキストを含む次の画面が [ウォッチ] 画面に表示されます ("This is a test" など)。
 
-![](text-input-images/dictation.png "ユーザーが話しているときに、認識されたテキストが [ウォッチ] 画面に表示されます。")
+![](text-input-images/dictation.png "When the user is speaking, the watch screen displays the text as it is understood")
 
 **[完了]** ボタンを押すと、テキストが返されます。
 
