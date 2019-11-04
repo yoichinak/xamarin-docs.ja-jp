@@ -4,21 +4,21 @@ description: このドキュメントは、iOS 6 で導入された機能につ�
 ms.prod: xamarin
 ms.assetid: 242DA7E3-8FD8-5F20-285D-603259CA622D
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: dc8f2c3a11dd283db46fd0a2530fcca435da75f9
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: d30789a33eb8023f4ce77b4a7c2445fabca0f2db
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70752052"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73031832"
 ---
 # <a name="introduction-to-ios-6"></a>iOS 6 の概要
 
 _iOS 6 には、アプリを開発するためのさまざまな新しいテクノロジが含まれてC#います。 Xamarin は、開発者を対象としています。_
 
-[![](images/ios6-large.jpg "IOS 6 ロゴ")](images/ios6-large.jpg#lightbox)
+[![](images/ios6-large.jpg "The iOS 6 logo")](images/ios6-large.jpg#lightbox)
 
 IOS 6 と Xamarin. iOS 6 を使用すると、開発者は、iPhone 5 を対象とするアプリを含む iOS アプリケーションを作成するための豊富な機能を利用できるようになりました。
 このドキュメントでは、利用可能な新機能をいくつか紹介し、各トピックの記事へのリンクを示します。 さらに、開発者が iOS 6 に移行する際に重要になるいくつかの変更と、iPhone 5 の新しい解決策についても触れています。
@@ -47,9 +47,9 @@ Apple では、ストアキットに2つの新機能が導入されています�
 
 ### <a name="viewwillunload-and-viewdidunload-deprecated"></a>ViewWillUnload と ViewDidUnload は非推奨とされます
 
-の`ViewWillUnload` `ViewDidUnload`メソッドとメソッドは、iOS 6 では呼び出されなくなりました。 `UIViewController` 以前のバージョンの iOS では、これらのメソッドは、ビューがアンロードされる前に状態を保存するためにアプリケーションによって使用されている可能性があります。
+`UIViewController` の `ViewWillUnload` および `ViewDidUnload` メソッドは、iOS 6 では呼び出されなくなりました。 以前のバージョンの iOS では、これらのメソッドは、ビューがアンロードされる前に状態を保存するためにアプリケーションによって使用されている可能性があります。
 
-たとえば、次のようにという`ReleaseDesignerOutlets`メソッドが作成されます。このメソッドは、から呼び出されます。次に Visual Studio for Mac 例を示します。このメソッドは、から`ViewDidUnload`呼び出されます。
+たとえば、次に示すように、Visual Studio for Mac は `ReleaseDesignerOutlets`と呼ばれるメソッドを作成します。このメソッドは `ViewDidUnload`から呼び出されます。
 
 ```csharp
 void ReleaseDesignerOutlets ()
@@ -61,9 +61,9 @@ void ReleaseDesignerOutlets ()
 }
 ```
 
-ただし、iOS 6 では、を呼び出す`ReleaseDesignerOutlets`必要がなくなりました。   
+ただし、iOS 6 では、`ReleaseDesignerOutlets`を呼び出す必要がなくなりました。   
 
-クリーンアップコードでは、iOS 6 アプリケーションで`DidReceiveMemoryWarning`を使用する必要があります。 ただし、を呼び出す`Dispose`コードは、以下に示すように、メモリを集中的に使用するオブジェクトに対してのみ使用してください。
+クリーンアップコードでは、iOS 6 アプリケーションは `DidReceiveMemoryWarning`を使用する必要があります。 ただし、`Dispose` を呼び出すコードは、以下に示すように、メモリを集中的に使用するオブジェクトに対してのみ使用してください。
 
 ```csharp
 if (myImageView != null){
@@ -74,25 +74,25 @@ if (myImageView != null){
 }
 ```
 
-ここでも`Dispose` 、上記のようにを呼び出す必要はほとんどありません。 一般に、ほとんどのアプリケーションでは、イベントハンドラーを削除する必要があります。
+ここでも、上記の `Dispose` を呼び出す必要はほとんどありません。 一般に、ほとんどのアプリケーションでは、イベントハンドラーを削除する必要があります。
 
-状態を保存する場合、アプリケーションはの`ViewWillDisappear` `ViewWillUnload`代わりにと`ViewDidDisappear`を実行できます。
+状態を保存する場合、アプリケーションは `ViewWillUnload`ではなく `ViewWillDisappear` および `ViewDidDisappear` でこれを実行できます。
 
 ### <a name="iphone-5-resolution"></a>iPhone 5 の解決策
 
 iPhone 5 デバイスには、640x1136 解決策があります。 以前のバージョンの iOS を対象とするアプリケーションは、次に示すように、iPhone 5 で実行すると letterboxed と表示されます。
 
- [![](images/01-letterboxed.png "以前のバージョンの iOS を対象とするアプリケーションが iPhone 5 で実行されると、letterboxed が表示される")](images/01-letterboxed.png#lightbox)
+ [![](images/01-letterboxed.png "Applications that targeted previous versions of iOS will appear letterboxed when run on an iPhone 5")](images/01-letterboxed.png#lightbox)
 
-IPhone 5 でアプリケーションが全画面表示されるようにするには、"640x1136" という名前`Default-568h@2x.png`のイメージを追加するだけです。 次のスクリーンショットは、このイメージを含めた後に実行中のアプリケーションを示しています。
+IPhone 5 でアプリケーションが全画面表示されるようにするには、`Default-568h@2x.png` という名前のイメージを追加して、解像度が640x1136 になるようにします。 次のスクリーンショットは、このイメージを含めた後に実行中のアプリケーションを示しています。
 
- [![](images/02-fullscreen.png "このスクリーンショットは、このイメージを含めた後に実行中のアプリケーションを示しています。")](images/02-fullscreen.png#lightbox)
+ [![](images/02-fullscreen.png "This screenshot shows the application running after this image has been included")](images/02-fullscreen.png#lightbox)
 
 ### <a name="subclassing-uinavigationbar"></a>UINavigationBar のサブクラス化
 
-IOS 6 `UINavigationBar`では、サブクラス化することができます。 これにより、 `UINavigationBar`のルックアンドフィールをさらに制御できます。 たとえば、アプリケーションでサブビューを追加し、それらのビューをアニメーション化し、の`UINavigationBar`境界を変更することができます。
+IOS 6 では、`UINavigationBar` をサブクラス化できます。 これにより、`UINavigationBar`のルックアンドフィールをさらに制御できます。 たとえば、アプリケーションでサブビューを追加し、それらのビューをアニメーション化して、`UINavigationBar`の境界を変更することができます。
 
-次のコードは、を`UINavigationBar` `UIImageView`追加するサブクラスの例を示しています。
+次のコードは、`UIImageView`を追加するサブクラス化された `UINavigationBar` の例を示しています。
 
 ```csharp
 public class CustomNavBar : UINavigationBar
@@ -112,19 +112,19 @@ public class CustomNavBar : UINavigationBar
 }
 ```
 
-`UINavigationBar`サブクラス`UINavigationController` `UINavigationBar` `UIToolbar`をに追加するには、次に示すように、との型を受け取るコンストラクターを使用します。 `UINavigationController`
+サブクラス化された `UINavigationBar` を `UINavigationController`に追加するには、次に示すように、`UINavigationBar` の型と `UIToolbar`を受け取る `UINavigationController` コンストラクターを使用します。
 
 ```csharp
 navController = new UINavigationController (typeof(CustomNavBar), typeof(UIToolbar));
 ```
 
-この`UINavigationBar`サブクラスを使用すると、次のスクリーンショットに示すように、イメージビューが表示されます。
+この `UINavigationBar` サブクラスを使用すると、次のスクリーンショットに示すように、イメージビューが表示されます。
 
- [![](images/03-navbar.png "この UINavigationBar サブクラスを使用すると、次のスクリーンショットに示すようにイメージビューが表示されます。")](images/03-navbar.png#lightbox)
+ [![](images/03-navbar.png "Using this UINavigationBar subclass results in the image view being displayed as shown in this screenshot")](images/03-navbar.png#lightbox)
 
 ### <a name="interface-orientation"></a>インターフェイスの向き
 
-IOS 6 アプリケーションより前`ShouldAutorotateToInterfaceOrientation`では、特定のコントローラーがサポートされている方向に対して true を返すことができました。 たとえば、次のコードは、縦方向のみをサポートするために使用されます。
+IOS 6 アプリケーションより前では、`ShouldAutorotateToInterfaceOrientation`をオーバーライドして、特定のコントローラーがサポートされている方向に対して true を返すことができました。 たとえば、次のコードは、縦方向のみをサポートするために使用されます。
 
 ```csharp
 public override bool ShouldAutorotateToInterfaceOrientation (UIInterfaceOrientation toInterfaceOrientation)
@@ -133,8 +133,8 @@ public override bool ShouldAutorotateToInterfaceOrientation (UIInterfaceOrientat
     }
 ```
 
-IOS 6 `ShouldAutorotateToInterfaceOrientation`のは非推奨とされます。
-代わりに、次に`GetSupportedInterfaceOrientations`示すように、アプリケーションはルートビューコントローラーでオーバーライドできます。
+IOS 6 `ShouldAutorotateToInterfaceOrientation` は非推奨とされます。
+代わりに、次に示すように、アプリケーションはルートビューコントローラーの `GetSupportedInterfaceOrientations` をオーバーライドできます。
 
 ```csharp
 public override UIInterfaceOrientationMask GetSupportedInterfaceOrientations ()
@@ -143,4 +143,4 @@ public override UIInterfaceOrientationMask GetSupportedInterfaceOrientations ()
     }
 ```
 
-IPad では、が実装されてい`GetSupportedInterfaceOrientation`ない場合、これは既定で4つの方向になります。 IPhone と iPod Touch の既定値は、を除く`PortraitUpsideDown`すべての向きです。
+IPad では、`GetSupportedInterfaceOrientation` が実装されていない場合、これは既定で4つの方向に設定されます。 IPhone と iPod Touch では、既定値は `PortraitUpsideDown`を除くすべての向きです。
