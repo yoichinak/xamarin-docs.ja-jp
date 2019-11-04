@@ -4,15 +4,15 @@ description: このドキュメントでは、コード署名とプロビジョ�
 ms.prod: xamarin
 ms.assetid: 65286D09-F74D-4F22-B6CD-D1BCD7FC7992
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/23/2017
-ms.openlocfilehash: b6fbe8ca975100310922240e532b9922e76e4724
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 1c8eddcf16c8513852c21babf34d81c9a3290406
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70290671"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028432"
 ---
 # <a name="xamarinios-testing-and-deployment---troubleshooting"></a>Xamarin.iOS のテストと展開 - トラブルシューティング
 
@@ -22,7 +22,7 @@ iOS ではコード署名とプロビジョニングは非常に厄介な場合�
 
 - 大規模なチームは、Xcode で [Fix issue]\(問題の修正\) ボタン (下図) の使用は控える必要があります。
 
-    [![](troubleshooting-images/fixissue.png "[Fix Issues] ダイアログ")](troubleshooting-images/fixissue.png#lightbox)
+    [![](troubleshooting-images/fixissue.png "The Fix Issues dialog")](troubleshooting-images/fixissue.png#lightbox)
 
     これにより新しいプロビジョニング プロファイルと証明書が作成されます。 最良の場合でも、チーム メンバーがボタンをクリックするたびに、プロビジョニング プロファイルが作成され、プロファイルによる混乱が発生します。 最悪の場合、社内の他の人全員の証明書が無効になり、アプリの停止を引き起こします。
 

@@ -4,15 +4,15 @@ description: このドキュメントでは fastlane について説明します
 ms.prod: xamarin
 ms.assetid: 900FA6FF-F3C9-4D35-993E-B0D88E6B1883
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 8e98a8e0314d8cb5ace4d17fdc62eb2ec75ca336
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: ba0348ff0cf6dc394f67b3c5779fd49eb852673f
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70292462"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028524"
 ---
 # <a name="fastlane-for-ios--cert"></a>fastlane for iOS – cert
 
@@ -65,7 +65,7 @@ fastlane cert --development
 
 cert により Apple ID とパスワードの入力が求められるので、ここで入力します。
 
-[![](cert-images/fastlane-image1.png "cert により Apple ID とパスワードの入力が求められる")](cert-images/fastlane-image1.png#lightbox)
+[![](cert-images/fastlane-image1.png "cert will prompt for your Apple ID and password")](cert-images/fastlane-image1.png#lightbox)
 
 > [!IMPORTANT]
 > 初めてパスワードを入力すると、パスワードがローカル macOS キーチェーンに保存されます。 または、環境変数を使用してユーザー名とパスワードを格納することも、パスワードをキーチェーンに保存したくない場合は、`export fastlane_DONT_STORE_PASSWORD=1` を使用することもできます。 fastlane で資格情報を管理する詳細については、fastlane の[資格情報マネージャー ガイド](https://github.com/fastlane/fastlane/blob/master/credentials_manager/README.md)を参照してください。
@@ -78,7 +78,7 @@ fastlane cert -u myemailadress@domain.com
 
 Apple ID が複数のチームに接続されている場合は、ここに表示されます。 使用するチームに対応する番号を選択します。
 
-[![](cert-images/fastlane-image2.png "使用するチームの選択")](cert-images/fastlane-image2.png#lightbox)
+[![](cert-images/fastlane-image2.png "Select the team that you wish to use")](cert-images/fastlane-image2.png#lightbox)
 
 次のフラグを使用してチーム ID を渡すこともできます。
 

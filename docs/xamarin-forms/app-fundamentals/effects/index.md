@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/01/2017
-ms.openlocfilehash: 9d859377c40c6fca07e140c50da46d8f30aaae04
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 2de1d1dd065a01bb457ebf03acdc0c01529abf7b
+ms.sourcegitcommit: 1242d32b7f072c837005cdee174abe6c0d1d0c68
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38994459"
+ms.lasthandoff: 10/30/2019
+ms.locfileid: "73083831"
 ---
 # <a name="xamarinforms-effects"></a>Xamarin.Forms のエフェクト
 
@@ -33,3 +33,7 @@ _Xamarin.Forms のユーザー インターフェイスは、ターゲット プ
 ## <a name="invoking-events-from-an-effecttouch-trackingmd"></a>[エフェクトからのイベントの呼び出し](touch-tracking.md)
 
 エフェクトでイベントを呼び出すことができます。 この記事では、指のマルチタッチ追跡を低レベルで実装し、タッチで押したり、動かしたり、離したりしたときにアプリケーションに通知するイベントの作成方法を示します。
+
+## <a name="reusable-roundeffectreusable-roundeffectmd"></a>[再利用可能な RoundEffect](reusable-roundeffect.md)
+
+RoundEffect は再利用可能なエフェクトであり、VisualElement から派生したコントロールに適用して、コントロールを円としてレンダリングできます。 このエフェクトを使用して、円形の画像、円形のボタン、その他の円形のコントロールを作成できます。

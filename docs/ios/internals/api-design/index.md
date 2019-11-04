@@ -63,11 +63,9 @@ Objective-C のコードと通信する低レベルのランタイムは、[Mono
 
 - ネイティブ C# 型:
 
-
-  - [`NSString` は `string` となります](~/ios/internals/api-design/nsstring.md)
-  - `uint` C# C#属性を使用`int` して列挙型に列挙されている必要があるパラメーターと`[Flags]`パラメーターを設定する
-  - 型に依存`NSArray`しないオブジェクトではなく、配列を厳密に型指定された配列として公開します。
-
+  - [`NSString` が `string`になります](~/ios/internals/api-design/nsstring.md)
+  - `int` を有効にし、`[Flags]`属性を持つ列挙C#型とC#列挙型に列挙されている必要があるパラメーターを `uint` します。
+  - 型に依存しない `NSArray` オブジェクトではなく、厳密に型指定された配列として配列を公開します。
   - イベントと通知の場合は、次のいずれかの選択肢をユーザーに提供します。
 
     - 既定では、厳密に型指定されたバージョン
@@ -80,7 +78,7 @@ Objective-C のコードと通信する低レベルのランタイムは、[Mono
 
 ### <a name="assemblies"></a>アセンブリ
 
-Xamarin.iOS には、 *Xamarin.iOS Profile* を構成する多数のアセンブリが含まれています。 [[アセンブリ](~/cross-platform/internals/available-assemblies.md)] ページに詳細情報があります。
+Xamarin.iOS には、 *Xamarin.IOS Profile*を構成するさまざまなアセンブリが含まれています。 [[アセンブリ](~/cross-platform/internals/available-assemblies.md)] ページに詳細情報があります。
 
 ### <a name="major-namespaces"></a>主要な名前空間
 

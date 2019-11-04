@@ -6,21 +6,21 @@ ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: d72e6230-c9ee-4bee-90ec-877d256821aa
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: d58a18a1957fa7515e6ad260eff95f5a33e64c1e
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c89a3616bfa239ba919ae9750082bcef48c9f890
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291144"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73023374"
 ---
 # <a name="hello-ios-multiscreen--quickstart"></a>Hello, iOS マルチスクリーン – クイック スタート
 
 チュートリアルのこの部分では、アプリでかけた電話番号の履歴を表示する 2 つ目の画面を Phoneword アプリケーションに追加します。 最終的なアプリケーションには、以下のスクリーン ショットのように、通話履歴を表示する 2 つ目の画面が表示されます。
 
-[![](hello-ios-multiscreen-quickstart-images/00.png "最終的なアプリケーションには、このスクリーン ショットのように、通話履歴を表示する 2 つ目の画面が表示されます")](hello-ios-multiscreen-quickstart-images/00.png#lightbox)
+[![](hello-ios-multiscreen-quickstart-images/00.png "The final application will have a second screen that displays the call history, as illustrated by this screenshot")](hello-ios-multiscreen-quickstart-images/00.png#lightbox)
 
 [後半の詳細のページ](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md)では、ビルドしたアプリケーションを確認し、アーキテクチャ、ナビゲーション、およびその過程で遭遇したその他の新しい iOS の概念について説明します。
 
@@ -38,56 +38,56 @@ ms.locfileid: "70291144"
 
 2. **Solution Pad** から **Main.storyboard** ファイルを開きます。
 
-    ![](hello-ios-multiscreen-quickstart-images/02new.png "iOS Designer の Main.storyboard")
+    ![](hello-ios-multiscreen-quickstart-images/02new.png "The Main.storyboard in the iOS Designer")
 
 3. **[ツールボックス]** からデザイン サーフェイスに**ナビゲーション コントローラー**をドラッグします (デザイン サーフェイスにこれらすべてが収まるように縮小する必要がある場合があります)。
 
-    ![](hello-ios-multiscreen-quickstart-images/03new.png "[ツールボックス] からデザイン サーフェイスにナビゲーション コントローラーをドラッグします")
+    ![](hello-ios-multiscreen-quickstart-images/03new.png "Drag a navigation controller from the Toolbox onto the design surface")
 
 4. **ソースレス セグエ** (1 つのビュー コントローラーの左側にある灰色の矢印) を**ナビゲーション コントローラー**にドラッグし、アプリケーションの開始点を変更します。
 
-    ![](hello-ios-multiscreen-quickstart-images/04new.png "ナビゲーション コントローラーにソースレス セグエをドラッグして、アプリケーションの開始点を変更します")
+    ![](hello-ios-multiscreen-quickstart-images/04new.png "Drag the Sourceless Segue to the navigation controller to change the starting point of the application")
 
 5. 下部にあるバーをクリックして既存の **[ルート ビュー コントローラー]** を選択し、**Delete** キーを押してデザイン サーフェイスから削除します。
 次に、**ナビゲーション コントローラー**の横に **Phoneword** シーンを移動します。
 
-    ![](hello-ios-multiscreen-quickstart-images/05new.png "ナビゲーション コントローラーの横に Phoneword シーンを移動します")
+    ![](hello-ios-multiscreen-quickstart-images/05new.png "Move the Phoneword scene next to the navigation controller")
 
 6. ナビゲーション コントローラーの**ルート ビュー コントローラー**として **ViewController** を設定します。 **Ctrl** キーを押したまま、**ナビゲーション コントローラー**内をクリックします。 青い線が表示されます。 次に、**Ctrl** キーを押したままの状態で、**ナビゲーション コントローラー**から **Phoneword** シーンまでドラッグして離します。 これを _Ctrl-ドラッグ_といいます。
 
-    ![](hello-ios-multiscreen-quickstart-images/06.png "ナビゲーション コントローラーから Phoneword シーンまでドラッグして離します")
+    ![](hello-ios-multiscreen-quickstart-images/06.png "Drag from the navigation controller to the Phoneword scene and release")
 
 7. ポップオーバーから、関係を **[ルート]** に設定します。
 
-    ![](hello-ios-multiscreen-quickstart-images/07new.png "関係を [ルート] に設定")
+    ![](hello-ios-multiscreen-quickstart-images/07new.png "Setting the relationship to Root")
 
     これで、**ViewController** が**ナビゲーション コントローラーのルート ビュー コントローラーになりました。**
 
-    ![](hello-ios-multiscreen-quickstart-images/08.png "これで、ViewController がナビゲーション コントローラーのルート ビュー コントローラーになりました")
+    ![](hello-ios-multiscreen-quickstart-images/08.png "The ViewController is now the navigation controllers Root view controller")
 
 8. **Phoneword** 画面の**タイトル** バーをダブルクリックして、**タイトル**を **Phoneword** に変更します。
 
-    ![](hello-ios-multiscreen-quickstart-images/09.png "タイトルを「Phoneword」に変更します")
+    ![](hello-ios-multiscreen-quickstart-images/09.png "Change the Title to 'Phoneword'")
 
 9. **[ツールボックス]** から**ボタン**をドラッグして、**通話ボタン**の下に配置します。 ハンドルをドラッグして、新しい**ボタン**を**通話ボタン**と同じ幅にします。
 
-    ![](hello-ios-multiscreen-quickstart-images/10new.png "新しいボタンを通話ボタンと同じ幅にします")
+    ![](hello-ios-multiscreen-quickstart-images/10new.png "Make the new Button the same width as the Call Button")
 
 10. **Properties Pad** で、ボタンの **[名前]** を **CallHistoryButton** に変更し、 **[タイトル]** を**通話履歴**に変更します。
 
-    ![](hello-ios-multiscreen-quickstart-images/11new.png "ボタンの [名前] を CallHistoryButton に変更し、[タイトル]を通話履歴に変更します")
+    ![](hello-ios-multiscreen-quickstart-images/11new.png "Change the Name of the Button to CallHistoryButton and change the Title to Call History")
 
 11. **通話履歴**画面を作成します。 **[ツールボックス]** から、**テーブル ビュー コントローラー**をデザイン サーフェイスにドラッグします。
 
-    ![](hello-ios-multiscreen-quickstart-images/12new.png "テーブル ビュー コントローラーをデザイン サーフェイスにドラッグします")
+    ![](hello-ios-multiscreen-quickstart-images/12new.png "Drag a table view controller onto the design surface")
 
 12. 次に、シーンの下部にある黒いバーをクリックして、**テーブル ビュー コントローラー**を選択します。 **Properties Pad** で、**テーブル ビュー コントローラー**のクラスを `CallHistoryController` に変更し、**Enter** キーを押します。
 
-    ![](hello-ios-multiscreen-quickstart-images/13new.png "テーブル ビュー コントローラーのクラスを CallHistoryController に変更します")
+    ![](hello-ios-multiscreen-quickstart-images/13new.png "Change the table view controllers class to CallHistoryController")
 
     iOS Designer は、`CallHistoryController` というカスタム バッキング クラスを生成して、この画面のコンテンツ ビュー階層を管理します。 **CallHistoryController.cs** ファイルが **Solution Pad** に表示されます。
 
-    ![](hello-ios-multiscreen-quickstart-images/14new.png "Solution Pad の CallHistoryController.cs ファイル")
+    ![](hello-ios-multiscreen-quickstart-images/14new.png "The CallHistoryController.cs file in the Solution Pad")
 
 13. **CallHistoryController.cs** ファイルをダブルクリックして開き、その内容を以下のコードに置き換えます。
     
@@ -144,17 +144,17 @@ ms.locfileid: "70291144"
 14. **Phoneword** シーンと**通話履歴**シーンの間に_セグエ_ (切り替え) を作成します。
   **Phoneword シーン**で、**通話履歴ボタン**を選択し、**ボタン**から**通話履歴**シーンに Ctrl キーを押しながらドラッグします。
 
-    ![](hello-ios-multiscreen-quickstart-images/15.png "ボタンから通話履歴シーンに Ctrl キーを押しながらドラッグします")
+    ![](hello-ios-multiscreen-quickstart-images/15.png "Ctrl-drag from the Button to the Call History scene")
 
     **[Action Segue]\(アクション セグエ\)** ポップオーバーから、 **[表示]** を選択します
 
     iOS Designer は次の 2 つのシーン間にセグエを追加します。
 
-    ![](hello-ios-multiscreen-quickstart-images/17new.png "2 つのシーン間のセグエ")
+    ![](hello-ios-multiscreen-quickstart-images/17new.png "The Segue between the two scenes")
 
 15. シーンの下部にある黒いバーを選択し、**Properties Pad** で **ビュー コントローラーの [タイトル]** を**通話履歴**に変更して、**テーブル ビュー コントローラー**に**タイトル**を追加します。
 
-    ![](hello-ios-multiscreen-quickstart-images/18new.png "Properties Pad でビュー コントローラーのタイトルを通話履歴に変更します")
+    ![](hello-ios-multiscreen-quickstart-images/18new.png "Change the view controller title to Call History in the Properties Pad")
 
 16. アプリケーションが実行されている場合は、**通話履歴ボタン**で**通話履歴**画面が開きますが、電話番号を追跡して表示するコードがないため、テーブル ビューは空になります。
 
@@ -264,7 +264,7 @@ ms.locfileid: "70291144"
 
 18. **[開始]** ボタンを押して、**iOS シミュレーター**内でアプリケーションを起動します。
 
-    ![](hello-ios-multiscreen-quickstart-images/19.png "[開始] ボタンを押して、iOS シミュレーター内でアプリケーションを起動します")
+    ![](hello-ios-multiscreen-quickstart-images/19.png "Press the Start button to launch the application inside the iOS Simulator")
 
 おつかれさまでした。これで最初のマルチスクリーン Xamarin.iOS アプリケーションが完成しました。
 
@@ -279,54 +279,54 @@ ms.locfileid: "70291144"
 
 2. ユーザー インターフェイスの編集を開始します。 **[表示方法]** が _iPhone 6_ に設定されていることを確認して、**ソリューション エクスプローラー**から **Main.storyboard** ファイルを開きます。
 
-    ![](hello-ios-multiscreen-quickstart-images/image1.png "iOS Designer の Main.storyboard")
+    ![](hello-ios-multiscreen-quickstart-images/image1.png "The Main.storyboard in the iOS Designer")
 
 3. **[ツールボックス]** からデザイン サーフェイスに**ナビゲーション コントローラー**をドラッグします。
 
-    ![](hello-ios-multiscreen-quickstart-images/image2.png "[ツールボックス] からデザイン サーフェイスにナビゲーション コントローラーをドラッグします")
+    ![](hello-ios-multiscreen-quickstart-images/image2.png "Drag a navigation controller from the Toolbox onto the design surface")
 
 4. **Phoneword** シーンから**ナビゲーション コントローラー**に**ソースレス セグエ** (**Phoneword** シーンの左側にある灰色の矢印) をドラッグし、アプリケーションの開始点を変更します。
 
-    ![](hello-ios-multiscreen-quickstart-images/image3.png "ナビゲーション コントローラーにソースレス セグエをドラッグして、アプリケーションの開始点を変更します")
+    ![](hello-ios-multiscreen-quickstart-images/image3.png "Drag the Sourceless Segue to the navigation controller to change the starting point of the application")
 
 5. 黒いバーをクリックして **[ルート ビュー コントローラー]** を選択し、**Delete** キーを押してデザイン サーフェイスから削除します。
   次に、**ナビゲーション コントローラー**の横に **Phoneword** シーンを移動します。
 
-    ![](hello-ios-multiscreen-quickstart-images/image4.png "ナビゲーション コントローラーの横に Phoneword シーンを移動します")
+    ![](hello-ios-multiscreen-quickstart-images/image4.png "Move the Phoneword scene next to the navigation controller")
 
 6. ナビゲーション コントローラーのルート ビュー コントローラーとして **ViewController** を設定します。 **Ctrl** キーを押し、**ナビゲーション コントローラー**内をクリックします。 青い線が表示されます。 次に、**Ctrl** キーを押したままの状態で、**ナビゲーション コントローラー**から **Phoneword** シーンまでドラッグして離します。 これを _Ctrl-ドラッグ_といいます。
 
-    ![](hello-ios-multiscreen-quickstart-images/image5.png "ナビゲーション コントローラーから Phoneword シーンまでドラッグして離します")
+    ![](hello-ios-multiscreen-quickstart-images/image5.png "Drag from the navigation controller to the Phoneword scene and release")
 
 7. ポップオーバーから、関係を **[ルート]** に設定します。
 
-    ![](hello-ios-multiscreen-quickstart-images/image6.png "関係を [ルート] に設定")
+    ![](hello-ios-multiscreen-quickstart-images/image6.png "Set the relationship to Root")
 
     これで、**ViewController** が**ナビゲーション コントローラーのルート ビュー コントローラー**になりました。
 
 8. **Phoneword** 画面の**タイトル** バーをダブルクリックして、**タイトル**を **Phoneword** に変更します。
 
-    ![](hello-ios-multiscreen-quickstart-images/image7.png "タイトルを「Phoneword」に変更します")
+    ![](hello-ios-multiscreen-quickstart-images/image7.png "Change the Title to Phoneword")
 
 9. **[ツールボックス]** から**ボタン**をドラッグして、**通話ボタン**の下に配置します。 ハンドルをドラッグして、新しい**ボタン**を**通話ボタン**と同じ幅にします。
 
-    ![](hello-ios-multiscreen-quickstart-images/image8.png "新しいボタンを通話ボタンと同じ幅にします")
+    ![](hello-ios-multiscreen-quickstart-images/image8.png "Make the new Button the same width as the Call Button")
 
 10. **プロパティ エクスプローラー**で、**ボタン**の**名前**を `CallHistoryButton` に変更し、**タイトル**を**通話履歴**に変更します。
 
-    ![](hello-ios-multiscreen-quickstart-images/image9.png "ボタンの [名前] を CallHistoryButton に変更し、[タイトル] を通話履歴に変更します")
+    ![](hello-ios-multiscreen-quickstart-images/image9.png "Change the Name of the Button to 'CallHistoryButton' and the Title to 'Call History'")
 
 11. **通話履歴**画面を作成します。 **[ツールボックス]** から、**テーブル ビュー コントローラー**をデザイン サーフェイスにドラッグします。
 
-    ![](hello-ios-multiscreen-quickstart-images/image10.png "テーブル ビュー コントローラーをデザイン サーフェイスにドラッグします")
+    ![](hello-ios-multiscreen-quickstart-images/image10.png "Drag a table view controller onto the design surface")
 
 12. シーンの下部にある黒いバーをクリックして、**テーブル ビュー コントローラー**を選択します。 **プロパティ エクスプローラー**で、**テーブル ビュー コントローラー**のクラスを `CallHistoryController` に変更して **Enter** キーを押します。
 
-    ![](hello-ios-multiscreen-quickstart-images/image11.png "テーブル ビュー コントローラーのクラスを CallHistoryController に変更します")
+    ![](hello-ios-multiscreen-quickstart-images/image11.png "Change the table view controllers class to CallHistoryController")
 
     iOS Designer は、`CallHistoryController` というカスタム バッキング クラスを生成して、この画面のコンテンツ ビュー階層を管理します。 **CallHistoryController.cs** ファイルが**ソリューション エクスプローラー**に表示されます。
 
-    ![](hello-ios-multiscreen-quickstart-images/image12.png "ソリューション エクスプローラーの CallHistoryController.cs ファイル")
+    ![](hello-ios-multiscreen-quickstart-images/image12.png "The CallHistoryController.cs file in the Solution Explorer")
 
 13. **CallHistoryController.cs** ファイルをダブルクリックして開き、その内容を以下のコードに置き換えます。
 
@@ -384,19 +384,19 @@ ms.locfileid: "70291144"
 14. **Phoneword** シーンと**通話履歴**シーンの間に_セグエ_ (切り替え) を作成します。
   **Phoneword シーン**で、**通話履歴ボタン**を選択し、**ボタン**から**通話履歴**シーンに **Ctrl キーを押しながらドラッグ**します。
 
-    ![](hello-ios-multiscreen-quickstart-images/image13.png "ボタンから通話履歴シーンに Ctrl キーを押しながらドラッグします")
+    ![](hello-ios-multiscreen-quickstart-images/image13.png "Ctrl-drag from the Button to the Call History scene")
 
     **[Action Segue]\(アクション セグエ\)** ポップオーバーから、 **[表示]** を選択します。
 
-    ![](hello-ios-multiscreen-quickstart-images/image14.png "セグエの種類として [表示] を選択します")
+    ![](hello-ios-multiscreen-quickstart-images/image14.png "Select Show as the segue type")
 
     iOS Designer は次の 2 つのシーン間にセグエを追加します。
 
-    ![](hello-ios-multiscreen-quickstart-images/image15.png "2 つのシーン間のセグエ")
+    ![](hello-ios-multiscreen-quickstart-images/image15.png "The Segue between the two scenes")
 
 15. シーンの下部にある黒いバーを選択し、**プロパティ エクスプローラー**で **[ビュー コントローラー] の [タイトル]** を**通話履歴**に変更して、**テーブル ビュー コントローラー**に**タイトル**を追加します。
 
-    ![](hello-ios-multiscreen-quickstart-images/image16.png "ビュー コントローラーの [タイトル] を通話履歴に変更します")
+    ![](hello-ios-multiscreen-quickstart-images/image16.png "Change the view controller Title to Call History")
 
 16. アプリケーションが実行されている場合は、**通話履歴ボタン**で**通話履歴**画面が開きますが、電話番号を追跡して表示するコードがないため、テーブル ビューは空になります。
 
@@ -507,7 +507,7 @@ ms.locfileid: "70291144"
 
 18. **[開始]** ボタンを押して、**iOS シミュレーター**内でアプリケーションを起動します。
 
-    ![](hello-ios-multiscreen-quickstart-images/19.png "サンプル アプリの最初の画面")
+    ![](hello-ios-multiscreen-quickstart-images/19.png "The first screen of the sample app")
 
 おつかれさまでした。これで最初のマルチスクリーン Xamarin.iOS アプリケーションが完成しました。
 

@@ -4,15 +4,15 @@ description: この記事では、テストまたはエンタープライズ展�
 ms.prod: xamarin
 ms.assetid: 70676eba-6a99-4a3a-bccc-84359fe9c2c3
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 47b2428ddca47f554fea675a9d2e70374679688f
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: cdaa0855538c35c82cb96bde58ad2258b1fb56e5
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281163"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73026500"
 ---
 # <a name="the-itunesmetadataplist-file-in-xamarinios-apps"></a>Xamarin.iOS アプリの iTunesMetadata.plist ファイル
 
@@ -242,7 +242,7 @@ iOS アプリケーションの場合、現在定義されているジャンル�
 
 [!include[](~/ios/includes/table-appstore.md)]
 
-詳しくは、Apple の「[Genre IDs Appendix](http://www.apple.com/itunes/affiliates/resources/documentation/genre-mapping.html)」(ジャンル ID 付録) ドキュメントをご覧ください。
+詳しくは、Apple の「[Genre IDs Appendix](https://www.apple.com/itunes/affiliates/resources/documentation/genre-mapping.html)」(ジャンル ID 付録) ドキュメントをご覧ください。
 
 ### <a name="softwaresupporteddeviceids"></a>softwareSupportedDeviceIds
 
@@ -302,26 +302,26 @@ iOS アプリケーションの場合、現在定義されているジャンル�
 1. **ソリューション エクスプローラー**で Xamarin.iOS プロジェクト ファイルを右クリックし、 **[追加]**  >  **[新しいファイル...]** の順に選びます。
 2. [新しいファイル] ダイアログで、 **[iOS]**  >  **[プロパティ一覧]** の順に選びます。
 
-    ![](itunesmetadata-images/image01.png "[IOS] の [プロパティ一覧] を選択します")
+    ![](itunesmetadata-images/image01.png "Select iOS Property List")
 3. **[名前]** に「`iTunesMetadata`」と入力し、 **[新規]** ボタンをクリックします。
 4. **ソリューション エクスプローラー**で `iTunesMetadata.plist` ファイルをダブルクリックして、編集用に開きます。
 
-    ![](itunesmetadata-images/image02.png "iTunesMetadata.plist エディター")
+    ![](itunesmetadata-images/image02.png "The iTunesMetadata.plist editor")
 5. 緑色の **[+]** をクリックして新しいエントリを作成し、キー名として「`UIRequiredDeviceCapabilities`」と入力します。
 
-    ![](itunesmetadata-images/image03.png "新しいエントリを作成し、キー名として UIRequiredDeviceCapabilities を入力します")
+    ![](itunesmetadata-images/image03.png "Create a new entry and enter UIRequiredDeviceCapabilities as the key name")
 6. 値の種類として **[文字列]** をクリックし、ポップアップ リストから **[辞書]** を選びます。
 
-    ![](itunesmetadata-images/image04.png "ポップアップ リストから [辞書] を選択します")
+    ![](itunesmetadata-images/image04.png "Select Dictionary from the popup list")
 7. プロパティの名前の左側にある折り返しをクリックして、辞書のエントリを表示します。
 
-    ![](itunesmetadata-images/image05.png "辞書のエントリを表示します")
+    ![](itunesmetadata-images/image05.png "Reveal the dictionary entries")
 8. **[新しいエントリの追加]** をクリックし、緑色の **[+]** をクリックして辞書にエントリを追加します。
 
-    ![](itunesmetadata-images/image06.png "辞書にエントリを追加します")
+    ![](itunesmetadata-images/image06.png "Add an entry to the dictionary")
 9. キーの名前に「`armv7`」と入力し、種類として **[ブール値]** を選び、値として「**Yes**」を入力します。
 
-    ![](itunesmetadata-images/image07.png "キーの名前に「armv7」と入力し、種類として [ブール値] を選び、値として「Yes」を入力します")
+    ![](itunesmetadata-images/image07.png "Enter armv7 for the key name, select a type of Boolean and enter Yes as the value")
 10. 上記の手順を繰り返して、必要なすべてのキー/値ペアを `iTunesMetadata.plist` ファイルに設定します (詳しくは、前の「[iTunesMetadata.plist の内容](#iTunesMetadata_contents)」をご覧ください)。
 
 11. 変更内容を plist ファイルに保存します。

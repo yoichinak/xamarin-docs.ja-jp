@@ -6,15 +6,15 @@ ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: EF0E110B-20EA-43F6-9476-1A0F41AFD298
 ms.technology: xamarin-android
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: c02e8e3c30508951df071810aff8db429a2f04ea
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: ee72c51611503f92e7ede3a01a7918780652935c
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756713"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028007"
 ---
 # <a name="hello-android-deep-dive"></a>Hello, Android:詳しく調べる
 
@@ -376,26 +376,26 @@ Android では、適切な密度のアイコンを取得します。
 
 ::: zone pivot="windows"
 
-- [Android Asset Studio](http://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; すべての種類の Android のアイコン用の Web ベースのブラウザー内ジェネレーターで、他の役に立つコミュニティ ツールへのリンクも提供しています。 Google Chrome で最も適切に動作します。
+- [Android Asset Studio](https://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; すべての種類の Android のアイコン用の Web ベースのブラウザー内ジェネレーターで、他の役に立つコミュニティ ツールへのリンクも提供しています。 Google Chrome で最も適切に動作します。
 
 - Visual Studio &ndash; これを使用して、アプリ用の単純なアイコン セットを IDE で直接作成できます。
 
-- [Glyphish](http://www.glyphish.com/) &ndash; 無料ダウンロードと有料版がある高品質のビルド済みアイコンのセットです。
+- [Glyphish](https://www.glyphish.com/) &ndash; 無料ダウンロードと有料版がある高品質のビルド済みアイコンのセットです。
 
-- [Fiverr](http://www.fiverr.com/) &ndash; 5 ドルから利用でき、さまざまなデザイナーから選択してアイコンのセットを作成できます。 見つかる場合も見つからない場合もありますが、アイコンをすぐにデザインする必要がある場合は有効なリソースです。
+- [Fiverr](https://www.fiverr.com/) &ndash; 5 ドルから利用でき、さまざまなデザイナーから選択してアイコンのセットを作成できます。 見つかる場合も見つからない場合もありますが、アイコンをすぐにデザインする必要がある場合は有効なリソースです。
 
 ::: zone-end
 ::: zone pivot="macos"
 
-- [Android Asset Studio](http://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; すべての種類の Android のアイコン用の Web ベースのブラウザー内ジェネレーターで、他の役に立つコミュニティ ツールへのリンクも提供しています。 Google Chrome で最も適切に動作します。
+- [Android Asset Studio](https://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; すべての種類の Android のアイコン用の Web ベースのブラウザー内ジェネレーターで、他の役に立つコミュニティ ツールへのリンクも提供しています。 Google Chrome で最も適切に動作します。
 
-- [Sketch 3](https://itunes.apple.com/us/app/sketch/id852320343?mt=12) &ndash; Sketch は、ユーザーインターフェイス、アイコンなどをデザインするための Mac アプリです。 これは、Xamarin アプリ アイコンと起動イメージのセットをデザインするために使用されたアプリです。 Sketch 3 は、App Store で約 80 ドルで入手できます。 無料の [Sketch Tool](http://bohemiancoding.com/sketch/tool/) を試すこともできます。
+- [Sketch 3](https://itunes.apple.com/us/app/sketch/id852320343?mt=12) &ndash; Sketch は、ユーザーインターフェイス、アイコンなどをデザインするための Mac アプリです。 これは、Xamarin アプリ アイコンと起動イメージのセットをデザインするために使用されたアプリです。 Sketch 3 は、App Store で約 80 ドルで入手できます。 無料の [Sketch Tool](https://bohemiancoding.com/sketch/tool/) を試すこともできます。
 
-- [Pixelmator](http://www.pixelmator.com/) &ndash; 約 30 ドルの Mac 用の多様な画像編集アプリです。
+- [Pixelmator](https://www.pixelmator.com/) &ndash; 約 30 ドルの Mac 用の多様な画像編集アプリです。
 
-- [Glyphish](http://www.glyphish.com/) &ndash; 無料ダウンロードと有料版がある高品質のビルド済みアイコンのセットです。
+- [Glyphish](https://www.glyphish.com/) &ndash; 無料ダウンロードと有料版がある高品質のビルド済みアイコンのセットです。
 
-- [Fiverr](http://www.fiverr.com/) &ndash; 5 ドルから利用でき、さまざまなデザイナーから選択してアイコンのセットを作成できます。 見つかる場合も見つからない場合もありますが、アイコンをすぐにデザインする必要がある場合は有効なリソースです。
+- [Fiverr](https://www.fiverr.com/) &ndash; 5 ドルから利用でき、さまざまなデザイナーから選択してアイコンのセットを作成できます。 見つかる場合も見つからない場合もありますが、アイコンをすぐにデザインする必要がある場合は有効なリソースです。
 
 ::: zone-end
 

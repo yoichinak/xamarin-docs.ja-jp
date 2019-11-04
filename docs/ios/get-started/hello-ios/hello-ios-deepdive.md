@@ -6,15 +6,15 @@ ms.topic: quickstart
 ms.prod: xamarin
 ms.assetid: 61ba3a7e-fe11-4439-8bc8-9809512b8eff
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: f29001d00a8071c213641d0337f1e8f307ca8afa
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 0fa6c05b3aa90f1d1875b9169350b197d882d863
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70281771"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73023265"
 ---
 # <a name="hello-ios--deep-dive"></a>Hello, iOS – 深い分析
 
@@ -30,7 +30,7 @@ Visual Studio for Mac は、Visual Studio と Xcode から機能を結合した�
 
 Visual Studio for Mac は、コードを*ソリューション*と*プロジェクト*に分けて整理するという Visual Studio の方法に従っています。 ソリューションとは、1 つまたは複数のプロジェクトを保持できるコンテナーです。 プロジェクトは、アプリケーション (iOS、Android など)、サポートするライブラリ、テスト アプリケーションなどの場合があります。 Phoneword アプリで、**単一ビュー アプリケーション** テンプレートが使用され、新しい iPhone プロジェクトが追加されています。 最初のソリューションは次のようになります。
 
-![](hello-ios-deepdive-images/image30.png "最初のソリューションのスクリーンショット")
+![](hello-ios-deepdive-images/image30.png "A screenshot of the initial solution")
 
 ::: zone-end
 ::: zone pivot="windows"
@@ -41,7 +41,7 @@ Visual Studio は Microsoft 製の強力な IDE です。 ビジュアル デザ
 
 Visual Studio は、コードをソリューションとプロジェクトに分けて整理しています。 ソリューションとは、1 つまたは複数のプロジェクトを保持できるコンテナーです。 プロジェクトは、アプリケーション (iOS、Android など)、サポートするライブラリ、テスト アプリケーションなどの場合があります。 Phoneword アプリで、**単一ビュー アプリケーション** テンプレートが使用され、新しい iPhone プロジェクトが追加されています。 最初のソリューションは次のようになります。
 
-![](hello-ios-deepdive-images/vs-image30.png "最初のソリューションのスクリーンショット")
+![](hello-ios-deepdive-images/vs-image30.png "A screenshot of the initial solution")
 
 ::: zone-end
 
@@ -51,14 +51,14 @@ Visual Studio は、コードをソリューションとプロジェクトに分
 
 左側は、ディレクトリ構造とソリューションに関連付けられているすべてのファイルを含む **Solution Pad** です。
 
-![](hello-ios-deepdive-images/image31.png "ディレクトリ構造とソリューションに関連付けられているすべてのファイルを含む Solution Pad です")
+![](hello-ios-deepdive-images/image31.png "The solution Pad, which contains the directory structure and all the files associated with the solution")
 
 ::: zone-end
 ::: zone pivot="windows"
 
 右側は、ディレクトリ構造とソリューションに関連付けられているすべてのファイルを含む**ソリューション ウィンドウ**です。
 
-![](hello-ios-deepdive-images/vs-image31.png "ディレクトリ構造とソリューションに関連付けられているすべてのファイルを含むソリューション ウィンドウです")
+![](hello-ios-deepdive-images/vs-image31.png "The solution Pane, which contains the directory structure and all the files associated with the solution")
 
 ::: zone-end
 
@@ -81,7 +81,7 @@ iOS アプリケーションにユーザー インターフェイスを読み込
 
 このセクションでは、次の図に示す関係について学習します。
 
-[![](hello-ios-deepdive-images/image32.png "この図はアーキテクチャとアプリケーションの基本の関係について説明しています")](hello-ios-deepdive-images/image32.png#lightbox)
+[![](hello-ios-deepdive-images/image32.png "The Architecture and App Fundamentals relationships are illustrated in this diagram")](hello-ios-deepdive-images/image32.png#lightbox)
 
 ### <a name="main-method"></a>Main メソッド
 
@@ -146,28 +146,28 @@ iOS Designer は、Xamarin 内のユーザー インターフェイスを構築�
 
 ::: zone pivot="macos"
 
-![](hello-ios-deepdive-images/image33.png "iOS Designer のインターフェイス")
+![](hello-ios-deepdive-images/image33.png "iOS Designer Interface")
 
 *ストーリーボード*は、アプリケーションの画面のビジュアル デザインと、画面間の切り替え効果と関係を含むファイルです。 ストーリーボードでのアプリケーションの画面の表現は_シーン_と呼ばれます。 各シーンは、ビュー コントローラーと、それが管理するビューのスタック (コンテンツ ビュー階層) を表します。 新しい**単一ビュー アプリケーション** プロジェクトがテンプレートから作成されると、下のスクリーンショットに示すように、Visual Studio for Mac が、`Main.storyboard` という名前のストーリーボード ファイルを自動的に生成し、1 つのシーンを追加します。
 
-![](hello-ios-deepdive-images/image34.png "Visual Studio for Mac により Main.storyboard というストーリーボード ファイルが自動的に生成され、これに 1 つのシーンが追加されます")
+![](hello-ios-deepdive-images/image34.png "Visual Studio for Mac automatically generates a Storyboard file called Main.storyboard and populates it with a single Scene")
 
 ストーリーボード画面の下部にある黒いバーを選択してシーンのビュー コントローラーを選択することができます。 ビュー コントローラーは、`UIViewController` インスタンスで、コンテンツ ビュー階層の背景のコードを含んでいます。 次のスクリーン ショットに示すように、このビュー コントローラーのプロパティを **Properties Pad** 内で表示および設定できます。
 
-![](hello-ios-deepdive-images/image35.png "プロパティ ウィンドウ")
+![](hello-ios-deepdive-images/image35.png "The Properties Pane")
 
 ::: zone-end
 ::: zone pivot="windows"
 
-![](hello-ios-deepdive-images/vs-image33.png "iOS Designer のインターフェイス")
+![](hello-ios-deepdive-images/vs-image33.png "iOS Designer Interface")
 
 *ストーリーボード*は、アプリケーションの画面のビジュアル デザインと、画面間の切り替え効果と関係を含むファイルです。 ストーリーボードでのアプリケーションの画面の表現は_シーン_と呼ばれます。 各シーンは、ビュー コントローラーと、それが管理するビューのスタック (コンテンツ ビュー階層) を表します。 新しい**単一ビュー アプリケーション** プロジェクトがテンプレートから作成されると、下のスクリーンショットに示すように、Visual Studio が、`Main.storyboard` という名前のストーリーボード ファイルを自動的に生成し、1 つのシーンを追加します。
 
-![](hello-ios-deepdive-images/vs-image34.png "Visual Studio により Main.storyboard というストーリーボード ファイルが自動的に生成され、これに 1 つのシーンが追加されます")
+![](hello-ios-deepdive-images/vs-image34.png "Visual Studio automatically generates a Storyboard file called Main.storyboard and populates it with a single Scene")
 
 ストーリーボード画面の下部にあるバーを選択してシーンのビュー コントローラーを選択することができます。 ビュー コントローラーは、`UIViewController` インスタンスで、コンテンツ ビュー階層の背景のコードを含んでいます。 次のスクリーン ショットに示すように、このビュー コントローラーのプロパティを**プロパティ ウィンドウ**内で表示および設定できます。
 
-![](hello-ios-deepdive-images/vs-image35.png "プロパティ ウィンドウ")
+![](hello-ios-deepdive-images/vs-image35.png "The Properties Pane")
 
 ::: zone-end
 
@@ -175,7 +175,7 @@ _ビュー_を選択するには、シーンの白い部分の内部をクリッ
 
 シーンの左側には、次のスクリーンショットに示すように、フラグ アイコン付きの灰色の矢印があります。
 
- [![](hello-ios-deepdive-images/image37.png "フラグ アイコン付きの灰色の矢印")](hello-ios-deepdive-images/image37.png#lightbox)
+ [![](hello-ios-deepdive-images/image37.png "A gray arrow with a flag icon")](hello-ios-deepdive-images/image37.png#lightbox)
 
 灰色の矢印は、*Segue* ("セグエ" と発音) と呼ばれるストーリーボードの切り替え効果を表しています。 このセグエには基がないので、*ソースレス セグエ*と呼ばれます。 ソースレス セグエは、アプリケーションの起動時にアプリケーションのウィンドウにビューが読み込まれる最初のシーンをポイントします。 シーンおよびその内部のビューは、アプリが読み込まれるときにユーザーに最初に表示されます。
 
@@ -183,12 +183,12 @@ _ビュー_を選択するには、シーンの白い部分の内部をクリッ
 
 ::: zone pivot="macos"
 
-![](hello-ios-deepdive-images/image38.png "追加のビューは、ツールボックスからデザイン サーフェイス上のメイン ビューにドラッグできます")
+![](hello-ios-deepdive-images/image38.png "Additional Views can be dragged from the Toolbox onto the main View on the design surface")
 
 ::: zone-end
 ::: zone pivot="windows"
 
-![](hello-ios-deepdive-images/vs-image38.png "追加のビューは、ツールボックスからデザイン サーフェイス上のメイン ビューにドラッグできます")
+![](hello-ios-deepdive-images/vs-image38.png "Additional Views can be dragged from the Toolbox onto the main View on the design surface")
 
 ::: zone-end
 
@@ -196,12 +196,12 @@ _ビュー_を選択するには、シーンの白い部分の内部をクリッ
 
 ::: zone pivot="macos"
 
-![](hello-ios-deepdive-images/image39.png "ドキュメント アウトライン パッド")
+![](hello-ios-deepdive-images/image39.png "The Document Outline pad")
 
 ::: zone-end
 ::: zone pivot="windows"
 
-![](hello-ios-deepdive-images/vs-image39.png "ドキュメント アウトライン パッド")
+![](hello-ios-deepdive-images/vs-image39.png "The Document Outline pad")
 
 ::: zone-end
 
@@ -209,12 +209,12 @@ _ビュー_を選択するには、シーンの白い部分の内部をクリッ
 
 ::: zone pivot="macos"
 
-![](hello-ios-deepdive-images/image40.png "サブビューが図で強調表示されています")
+![](hello-ios-deepdive-images/image40.png "The Subviews are highlighted in the diagram")
 
 ::: zone-end
 ::: zone pivot="windows"
 
-![](hello-ios-deepdive-images/vs-image40.png "サブビューが図で強調表示されています")
+![](hello-ios-deepdive-images/vs-image40.png "The Subviews are highlighted in the diagram")
 
 ::: zone-end
 
@@ -224,24 +224,24 @@ _ビュー_を選択するには、シーンの白い部分の内部をクリッ
 
 _コンテンツ ビュー階層_は、次の図に示すように、1 つのビュー コントローラーによって管理されるビューとサブビューのスタックです。
 
- [![](hello-ios-deepdive-images/image41.png "コンテンツ ビュー階層")](hello-ios-deepdive-images/image41.png#lightbox)
+ [![](hello-ios-deepdive-images/image41.png "The Content View Hierarchy")](hello-ios-deepdive-images/image41.png#lightbox)
 
 下のスクリーンショットに示すように、**プロパティ パッド**のビュー セクションで、ルート ビューの背景色を一時的に黄色に変更することで、`ViewController` のコンテンツ ビューを見やすくすることができます。
 
 ::: zone pivot="macos"
 
-![](hello-ios-deepdive-images/image42.png "プロパティ パッドのビュー セクションで、ルート ビューの背景色を黄色に変更する")
+![](hello-ios-deepdive-images/image42.png "Changing the background color of the root View to yellow in the View section of the Properties Pad")
 
 ::: zone-end
 ::: zone pivot="windows"
 
-![](hello-ios-deepdive-images/vs-image42.png "プロパティ パッドのビュー セクションで、ルート ビューの背景色を黄色に変更する")
+![](hello-ios-deepdive-images/vs-image42.png "Changing the background color of the root View to yellow in the View section of the Properties Pad")
 
 ::: zone-end
 
 次の図は、デバイスの画面にユーザー インターフェイスを表示するウィンドウ、ビュー、サブビュー、およびビュー コントローラー間の関係を示しています。
 
-[![](hello-ios-deepdive-images/image43.png "ウィンドウ、ビュー、サブビュー、ビュー コントローラー間の関係")](hello-ios-deepdive-images/image43.png#lightbox)
+[![](hello-ios-deepdive-images/image43.png "The relationships between the Window, Views, Subviews, and view controller")](hello-ios-deepdive-images/image43.png#lightbox)
 
 次のセクションでは、コードでビューを操作する方法について説明し、ビュー コントローラーとビュー ライフサイクルを使用してユーザーの操作をプログラムする方法を説明します。
 
@@ -255,22 +255,22 @@ _コンテンツ ビュー階層_は、次の図に示すように、1 つのビ
 
 ビュー コントローラーは、ストーリーボードで、シーンの下部にあるバーとして表されます。 ビュー コントローラーを選択すると、**Properties Pad** にそのプロパティが表示されます。
 
-![](hello-ios-deepdive-images/image44.png "ビュー コントローラーを選択すると、プロパティ ウィンドウにそのプロパティが表示されます")
+![](hello-ios-deepdive-images/image44.png "Selecting the view controller brings up its properties in the Properties Pane")
 
 このシーンによって表されるコンテンツ ビュー階層のカスタム ビュー コントローラー クラスは、**Properties Pad** の **[ID]** セクションで **[クラス]** プロパティを編集することによって設定できます。 たとえば、私たちの **Phoneword** アプリケーションでは、下のスクリーンショットに示すように、最初の画面のビュー コントローラーとして `ViewController` が設定されます。
 
-![](hello-ios-deepdive-images/image45new.png "Phoneword アプリケーションは、ビュー コントローラーとして ViewController を設定します")
+![](hello-ios-deepdive-images/image45new.png "The Phoneword application sets the ViewController as the view controller")
 
 ::: zone-end
 ::: zone pivot="windows"
 
 ビュー コントローラーは、ストーリーボードで、シーンの下部にあるバーとして表されます。 ビュー コントローラーを選択すると、**プロパティ ウィンドウ**にそのプロパティが表示されます。
 
-![](hello-ios-deepdive-images/vs-image44.png "ビュー コントローラーを選択すると、プロパティ ウィンドウにそのプロパティが表示されます")
+![](hello-ios-deepdive-images/vs-image44.png "Selecting the view controller brings up its properties in the Properties Pane")
 
 このシーンによって表されるコンテンツ ビュー階層のカスタム ビュー コントローラー クラスは、**プロパティ ウィンドウ**の **[ID]** セクションで **[クラス]** プロパティを編集することによって設定できます。 たとえば、私たちの **Phoneword** アプリケーションでは、下のスクリーンショットに示すように、最初の画面のビュー コントローラーとして `ViewController` が設定されます。
 
-![](hello-ios-deepdive-images/vs-image45.png "Phoneword アプリケーションは、ビュー コントローラーとして ViewController を設定します")
+![](hello-ios-deepdive-images/vs-image45.png "The Phoneword application sets the ViewController as the view controller")
 
 ::: zone-end
 
@@ -313,7 +313,7 @@ public partial class ViewController : UIViewController
 このしくみを見てみましょう。
 `Phoneword_iOS` プロジェクトでは、`TranslateButton` というボタンを現在のビュー階層に追加しました。
 
-[![](hello-ios-deepdive-images/image1.png "TranslateButton というボタンがコンテンツ ビュー階層に追加されました")](hello-ios-deepdive-images/image1.png#lightbox)
+[![](hello-ios-deepdive-images/image1.png "A button was added called TranslateButton to the Content View Hierarchy")](hello-ios-deepdive-images/image1.png#lightbox)
 
 **プロパティ パッド**で **Name** が **Button** コントロールに割り当てられるときに、iOS Designer が **ViewController.designer.cs** でそれを自動的にコントロールにマッピングし、`ViewController` クラス内で `TranslateButton` を使用できるようにします。 コントロールは、ビュー ライフサイクルの `ViewDidLoad` ステージで初めて利用可能になるので、このライフサイクル メソッドを使用して、ユーザーのタッチに応答します。
 
@@ -420,18 +420,18 @@ iOS シミュレーターは、アプリケーションをテストする簡単�
 
 ::: zone pivot="macos"
 
-![](hello-ios-deepdive-images/image46new.png "[Start]/[Play] を押す")
+![](hello-ios-deepdive-images/image46new.png "Pressing Start/Play")
 
 ::: zone-end
 ::: zone pivot="windows"
 
-![](hello-ios-deepdive-images/vs-image46.png "[Start]/[Play] を押す")
+![](hello-ios-deepdive-images/vs-image46.png "Pressing Start/Play")
 
 ::: zone-end
 
 iOS デバイスにアプリが展開されます。
 
-[![](hello-ios-deepdive-images/image1.png "iOS デバイスにアプリが展開され、実行されます")](hello-ios-deepdive-images/image1.png#lightbox)
+[![](hello-ios-deepdive-images/image1.png "The app will deploy to the iOS device and run")](hello-ios-deepdive-images/image1.png#lightbox)
 
 ### <a name="generate-custom-icons-and-launch-images"></a>カスタム アイコンを生成し、イメージを起動する
 
@@ -439,17 +439,17 @@ iOS デバイスにアプリが展開されます。
 
 ::: zone pivot="macos"
 
-- [**Sketch**](https://www.sketchapp.com") – Sketch は、ユーザーインターフェイス、アイコンなどをデザインするための Mac アプリです。 これは、Xamarin アプリ アイコンと起動イメージのセットをデザインするために使用されたアプリです。 Sketch 3 は、App Store で入手できます。 無料の [Sketch Tool](http://bohemiancoding.com/sketch/tool/) を試すこともできます。
-- [**Pixelmator**](http://www.pixelmator.com/) – 約 30 ドルの Mac 用の多様な画像編集アプリです。
-- [**Glyphish**](http://www.glyphish.com/) – 無料ダウンロードと有料版がある高品質のビルド済みアイコンのセットです。
-- [**Fiverr**](http://www.fiverr.com/) – 5 ドルから利用でき、さまざまなデザイナーから選択してアイコンのセットを作成できます。 見つかる場合も見つからない場合もありますが、アイコンをすぐにデザインする必要がある場合は有効なリソースです。
+- [**Sketch**](https://www.sketchapp.com") – Sketch は、ユーザーインターフェイス、アイコンなどをデザインするための Mac アプリです。 これは、Xamarin アプリ アイコンと起動イメージのセットをデザインするために使用されたアプリです。 Sketch 3 は、App Store で入手できます。 無料の [Sketch Tool](https://bohemiancoding.com/sketch/tool/) を試すこともできます。
+- [**Pixelmator**](https://www.pixelmator.com/) – 約 30 ドルの Mac 用の多様な画像編集アプリです。
+- [**Glyphish**](https://www.glyphish.com/) – 無料ダウンロードと有料版がある高品質のビルド済みアイコンのセットです。
+- [**Fiverr**](https://www.fiverr.com/) – 5 ドルから利用でき、さまざまなデザイナーから選択してアイコンのセットを作成できます。 見つかる場合も見つからない場合もありますが、アイコンをすぐにデザインする必要がある場合は有効なリソースです。
 
 ::: zone-end
 ::: zone pivot="windows"
 
 - Visual Studio - これを使用して、アプリ用の単純なアイコン セットを IDE で直接作成できます。
-- [**Glyphish**](http://www.glyphish.com/) – 無料ダウンロードと有料版がある高品質のビルド済みアイコンのセットです。
-- [**Fiverr**](http://www.fiverr.com/) – 5 ドルから利用でき、さまざまなデザイナーから選択してアイコンのセットを作成できます。 見つかる場合も見つからない場合もありますが、アイコンをすぐにデザインする必要がある場合は有効なリソースです。
+- [**Glyphish**](https://www.glyphish.com/) – 無料ダウンロードと有料版がある高品質のビルド済みアイコンのセットです。
+- [**Fiverr**](https://www.fiverr.com/) – 5 ドルから利用でき、さまざまなデザイナーから選択してアイコンのセットを作成できます。 見つかる場合も見つからない場合もありますが、アイコンをすぐにデザインする必要がある場合は有効なリソースです。
 
 ::: zone-end
 

@@ -4,15 +4,15 @@ description: この記事では、Xamarin.iOS 開発のために Visual Studio 2
 ms.prod: xamarin
 ms.assetid: 22D82244-890D-4325-B3CC-C0AC49130BCA
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/16/2018
-ms.openlocfilehash: b3910bd096f2a8dd301a9ba6e200028d3121c8df
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: c5c819221bc08f1c39bde9b5900c2f9f9889764d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70279225"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022531"
 ---
 # <a name="configuring-visual-studio-for-ios-development"></a>iOS 開発用の Visual Studio の構成
 
@@ -42,7 +42,7 @@ Visual Studio 2019 または Visual Studio 2017 で iOS プロジェクトを開
 
 このツール バーが表示されない場合は、Visual Studio 2019 または Visual Studio 2017 で **[表示]** メニューを開いて、 **[ツール バー] > [iOS]** を選びます。
 
-![[iOS] ツール バーを有効にする](config-options-images/ios-toolbar-enable.png "[iOS] ツール バーを有効にする")
+![iOS ツールバーの有効化](config-options-images/ios-toolbar-enable.png "iOS ツールバーの有効化")
 
 ## <a name="solution-platforms-drop-down-menu"></a>[ソリューション プラットフォーム] ドロップダウン メニュー
 
@@ -54,7 +54,7 @@ Visual Studio 2019 または Visual Studio 2017 で iOS プロジェクトを開
 - **[ボタンの表示/非表示]** を選びます 
 - **[ソリューション プラットフォーム]** 項目がオンになっていることを確認します。
 
-![[ソリューション プラットフォーム] ドロップダウン メニューを有効にする](config-options-images/solution-platforms-enable.png "[ソリューション プラットフォーム] ドロップダウン メニューを有効にする")
+![[ソリューション プラットフォーム] ドロップダウン メニューの有効化](config-options-images/solution-platforms-enable.png "[ソリューション プラットフォーム] ドロップダウン メニューの有効化")
 
 iOS プロジェクトを開くと、 **[標準]** および **[iOS]** ツール バーが次のスクリーンショットのようになります。
 

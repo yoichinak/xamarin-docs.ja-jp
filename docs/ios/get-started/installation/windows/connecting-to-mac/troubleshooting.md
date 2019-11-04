@@ -4,15 +4,15 @@ description: このガイドでは、新しい接続マネージャーの使用�
 ms.prod: xamarin
 ms.assetid: A1508A15-1997-4562-B537-E4A9F3DD1F06
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: ae8095ed0ef0ba8d0bfaf8295832bbef006d1627
-ms.sourcegitcommit: 76f930ce63b193ca3f7f85f768b031e59cb342ec
+ms.openlocfilehash: 4abe0da2b75b6859c6547f0dc1c4cf8708491afb
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71198529"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022471"
 ---
 # <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Xamarin.iOS ビルド ホストの接続のトラブルシューティング
 
@@ -44,15 +44,15 @@ _このガイドでは、新しい接続マネージャーの使用中に発生�
 
 2. Mac で **[リモート ログイン]** が有効になっていることを確認します。 **[対象ユーザーのみ]** にアクセスを設定し、Mac ユーザーがリストまたはグループに含まれていることを確認します。
 
-    [![](troubleshooting-images/troubleshooting-image1.png "[対象ユーザーのみ] にアクセスを設定します")](troubleshooting-images/troubleshooting-image1.png#lightbox)
+    [![](troubleshooting-images/troubleshooting-image1.png "Set access for Only these users")](troubleshooting-images/troubleshooting-image1.png#lightbox)
 
 3. ファイアウォールが SSH の既定値であるポート 22 で着信接続を許可するように設定されていることを確認します。
 
-    [![](troubleshooting-images/troubleshooting-image2.png "ファイアウォールがポート 22 で着信接続を許可するように設定されていることを確認します")](troubleshooting-images/troubleshooting-image2.png#lightbox)
+    [![](troubleshooting-images/troubleshooting-image2.png "Check that the firewall allows incoming connections through port 22")](troubleshooting-images/troubleshooting-image2.png#lightbox)
 
     **[Automatically allow signed software to receive incoming connections]\(署名済みソフトウェアには着信接続の受信を自動的に許可する\)** を無効にしている場合、OS X はペアリング プロセス中にダイアログを表示し、着信接続の受信を `mono-sgen` または `mono-sgen32` に許可するか尋ねます。 このダイアログでは必ず **[許可]** をクリックしてください。
 
-    [![](troubleshooting-images/troubleshooting-image4a.png "このダイアログでは [許可] をクリックします")](troubleshooting-images/troubleshooting-image4a.png#lightbox)
+    [![](troubleshooting-images/troubleshooting-image4a.png "Click Allow on this dialog")](troubleshooting-images/troubleshooting-image4a.png#lightbox)
 
 4. その Mac でユーザー アカウントにログインしており、GUI セッションが有効になっていることを確認します。
 
@@ -62,11 +62,11 @@ _このガイドでは、新しい接続マネージャーの使用中に発生�
 
     たとえば、下のスクリーンショットでは、アカウント名が **Amy Burns** ではなく **amyb** になります。
 
-    [![](troubleshooting-images/troubleshooting-image5a.png "ターミナル アプリからのアカウント名の取得")](troubleshooting-images/troubleshooting-image5a.png#lightbox)
+    [![](troubleshooting-images/troubleshooting-image5a.png "Getting the account name from the Terminal app")](troubleshooting-images/troubleshooting-image5a.png#lightbox)
 
 6. Mac に使用している IP アドレスが正しいことを確認します。 Mac で IP アドレスを見つけるには、 **[システム環境設定]、[共有]、[リモート ログイン]** の順に選択します。
 
-    [![](troubleshooting-images/troubleshooting-image17.png "[システム環境設定] アプリの IP アドレス")](troubleshooting-images/troubleshooting-image17.png#lightbox)
+    [![](troubleshooting-images/troubleshooting-image17.png "The IP address in the System Preferences app")](troubleshooting-images/troubleshooting-image17.png#lightbox)
 
 7. Mac の IP アドレスを確認したら、Windows の `cmd.exe` でそのアドレスに `ping` を試します。
 
@@ -153,13 +153,13 @@ _このガイドでは、新しい接続マネージャーの使用中に発生�
 
 - **制限** – このエラーは、インターネットにアクセスできないルーターに Mac ビルド ホストが接続されている場合に (あるいは、Windows コンピューターの DNS 逆引き参照を要求されるとタイムアウトする DNS サーバーを Mac が使用している場合に) 発生することがあります。 Visual Studio は、SSH フィンガープリントを取得し、結局は接続に失敗するのに約 30 秒かかります。
 
-    **考えられる回避策**:"UseDNS no" を **sshd\_config** ファイルに追加します。 変更前にこの SSH 設定についてお読みください。 たとえば、[unix.stackexchange.com/questions/56941/what-is-the-point-of-sshd-usedns-option](http://unix.stackexchange.com/questions/56941/what-is-the-point-of-sshd-usedns-option) をご覧ください。
+    **考えられる回避策**:"UseDNS no" を **sshd\_config** ファイルに追加します。 変更前にこの SSH 設定についてお読みください。 たとえば、[unix.stackexchange.com/questions/56941/what-is-the-point-of-sshd-usedns-option](https://unix.stackexchange.com/questions/56941/what-is-the-point-of-sshd-usedns-option) をご覧ください。
 
     次の手順は、設定を変更する方法の 1 つです。 手順を完了するには、Mac で管理者アカウントにログインする必要があります。
 
     1. ターミナル コマンド プロンプトで `ls /etc/ssh/sshd_config` と `ls /etc/sshd_config` を実行し、**sshd\_config** ファイルの場所を確認します。 残りのすべての手順では、"該当するファイルまたはディレクトリがありません" を_返さない_この場所を必ず使用します。
 
-        [![](troubleshooting-images/troubleshooting-image18.png "ターミナルでの \"ls /etc/ssh/sshd_config\" と \"ls /etc/sshd_config\" の実行")](troubleshooting-images/troubleshooting-image18.png#lightbox)
+        [![](troubleshooting-images/troubleshooting-image18.png "Running `ls /etc/ssh/sshd_config` and `ls /etc/sshd_config` in the Terminal")](troubleshooting-images/troubleshooting-image18.png#lightbox)
 
     2. ターミナルで `cp /etc/ssh/sshd_config "$HOME/Desktop/"` を実行し、デスクトップにファイルをコピーします。
 
@@ -193,7 +193,7 @@ Mac エージェントの "インストール"、"アップロード"、"起動"
     
 2. **XMA** フォルダーをコントロール クリックし、 **[ごみ箱に入れる]** を選択します。
 
-    [![](troubleshooting-images/troubleshooting-image8.png "XMA フォルダーをごみ箱に移動します")](troubleshooting-images/troubleshooting-image8.png#lightbox)
+    [![](troubleshooting-images/troubleshooting-image8.png "Move the XMA folder to Trash")](troubleshooting-images/troubleshooting-image8.png#lightbox)
 
 3. Windows のキャッシュもクリアしておくといいでしょう。 Windows でコマンド プロンプトを管理者として開きます。
 
@@ -233,7 +233,7 @@ Mac で OS X 10.11 (El Capitan) 以降を実行している限り、このメッ
 2. **[出力元の表示]** ドロップダウン メニューをクリックします。
 3. **[Xamarin]** を選択します。
 
-[![](troubleshooting-images/troubleshooting-image11.png "[出力] タブで [Xamarin] を選択します")](troubleshooting-images/troubleshooting-image11.png#lightbox)
+[![](troubleshooting-images/troubleshooting-image11.png "Select Xamarin in the Output tab")](troubleshooting-images/troubleshooting-image11.png#lightbox)
 
 #### <a name="log-files"></a>ログ ファイル
 
@@ -248,17 +248,17 @@ Mac で OS X 10.11 (El Capitan) 以降を実行している限り、このメッ
 
 3. Visual Studio で接続エラーが表示されたら、 **[ヘルプ]、[Xamarin]、[ログの Zip]** の順に選択し、ログを収集します。
 
-    [![](troubleshooting-images/troubleshooting-image12.png "[ヘルプ]、[Xamarin]、[ログの Zip] の順に選択し、ログを収集します")](troubleshooting-images/troubleshooting-image12.png#lightbox)
+    [![](troubleshooting-images/troubleshooting-image12.png "Collect the logs from Help > Xamarin > Zip Logs")](troubleshooting-images/troubleshooting-image12.png#lightbox)
 
 4. .zip ファイルを開くと、下のサンプルのようなファイルの一覧が表示されます。 接続エラーの場合、最も重要なファイルは **\*Ide.log** ファイルと **\*Ide.svclog** ファイルです。 このファイルには、同じメッセージが微妙に異なる 2 つの形式で入っています。 **.svclog** は XML であり、メッセージを拾い読みする場合に便利です。 **.log** はプレーン テキストであり、コマンド ライン ツールでメッセージをフィルター処理する場合に便利です。
 
     すべてのメッセージに目を通すには、 **.svclog** ファイルを選択し、開きます。
 
-    [![](troubleshooting-images/troubleshooting-image13.png "svclog ファイルを選択します")](troubleshooting-images/troubleshooting-image13.png#lightbox)
+    [![](troubleshooting-images/troubleshooting-image13.png "Select the svclog file")](troubleshooting-images/troubleshooting-image13.png#lightbox)
 
 5. **.svclog** ファイルを **Microsoft Service Trace Viewer** で開きます。 メッセージの関連グループを見るには、スレッド別にメッセージを参照します。 スレッド別に閲覧するには、最初に **[グラフ]** タブを選択し、 **[レイアウト モード]** ドロップダウン メニューをクリックし、 **[スレッド]** を選択します。
 
-    [![](troubleshooting-images/troubleshooting-image14.png "[レイアウト モード] ドロップダウン メニューをクリックし、[スレッド] を選択します")](troubleshooting-images/troubleshooting-image14.png#lightbox)
+    [![](troubleshooting-images/troubleshooting-image14.png "Click the Layout Mode drop-down menu and select Thread")](troubleshooting-images/troubleshooting-image14.png#lightbox)
 
 <a name="verboselogs" />
 
@@ -324,7 +324,7 @@ error : Building from a network share path is not supported at the moment. Pleas
 
 Mac で Xcode を起動し、Apple 開発者アカウントでログインしており、iOS 開発プロファイルがダウンロードされていることを確認します。
 
-[![](troubleshooting-images/troubleshooting-image7.png "Apple 開発者アカウントでログインしており、iOS 開発プロファイルがダウンロードされていることを確認します")](troubleshooting-images/troubleshooting-image7.png#lightbox)
+[![](troubleshooting-images/troubleshooting-image7.png "Ensuring that the Apple developer account is logged in and the iOS Development Profile is downloaded")](troubleshooting-images/troubleshooting-image7.png#lightbox)
 
 ### <a name="a-socket-operation-was-attempted-to-an-unreachable-network"></a>"到達できないネットワークでソケット操作を実行しようとしました"
 
@@ -350,7 +350,7 @@ Visual Studio MEF コンポーネント キャッシュが消去され、キャ�
 ps -A | grep mono
 ```
 
-[![](troubleshooting-images/troubleshooting-image10.png "Mac のターミナルでのコマンドの実行")](troubleshooting-images/troubleshooting-image10.png#lightbox)
+[![](troubleshooting-images/troubleshooting-image10.png "Running commands in Terminal on the Mac")](troubleshooting-images/troubleshooting-image10.png#lightbox)
 
 既存のプロセスを終了するには、次のコマンドを使用します。
 
@@ -370,7 +370,7 @@ killall mono
 
 2. **mtbs** フォルダーをコントロール クリックし、 **[ごみ箱に入れる]** を選択します。
 
-    [![](troubleshooting-images/troubleshooting-image9.png "mtbs フォルダーをごみ箱に移動します")](troubleshooting-images/troubleshooting-image9.png#lightbox)
+    [![](troubleshooting-images/troubleshooting-image9.png "Move the mtbs folder to Trash")](troubleshooting-images/troubleshooting-image9.png#lightbox)
 
 ## <a name="related-links"></a>関連リンク
 

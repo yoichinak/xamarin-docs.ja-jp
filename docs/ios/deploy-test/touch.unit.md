@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin.iOS アプリケーショ�
 ms.prod: xamarin
 ms.assetid: BD959779-3239-79B6-5289-3A9ECDFBD973
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 44ced93605ff595fe2fd7f09f88948e5b0e1914c
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 08ddf282c8839a6283b90c0736c0b4259bd01469
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70282455"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028441"
 ---
 # <a name="unit-testing-xamarinios-apps"></a>Xamarin.iOS アプリの単体テスト
 
@@ -23,11 +23,11 @@ Xamarin.iOS での単体テストは、Touch.Unit フレームワークを使用
 
 プロジェクトの単体テスト フレームワークを設定する場合、単に **iOS 単体テスト プロジェクト**という種類のプロジェクトをソリューションに追加するだけです。 その場合、ソリューションを右クリックし、 **[追加]、[新しいプロジェクトの追加]** の順に選択します。 リストから、 **[iOS]、[テスト]、[Unified API]、[iOS 単体テスト プロジェクト]** の順に選択します (C# または F# を選択できます)。
 
-![](touch.unit-images/00.png "C# または F# を選択する")
+![](touch.unit-images/00.png "Choose either C# or F#")
 
 これで基本的なプロジェクトが作成されます。このプロジェクトは基本的なランナー プログラムを含み、新しい MonoTouch.NUnitLite アセンブリを参照します。プロジェクトは次のようになります。
 
-![](touch.unit-images/01.png "ソリューション エクスプローラーのプロジェクト")
+![](touch.unit-images/01.png "The project in the Solution Explorer")
 
 `AppDelegate.cs` クラスにはテスト ランナーが含まれ、次のようになります。
 
@@ -105,20 +105,20 @@ namespace Fixtures {
 
 テスト ランナーでは、登録されるテストを確認し、実行可能なテストを個別に選択できます。
 
-[![](touch.unit-images/02-sml.png "登録済みのテストの一覧")](touch.unit-images/02.png#lightbox) 
-[![](touch.unit-images/03-sml.png "個々のテキスト")](touch.unit-images/03.png#lightbox) 
+[![](touch.unit-images/02-sml.png "The list of registered tests")](touch.unit-images/02.png#lightbox) 
+[![](touch.unit-images/03-sml.png "An individual text")](touch.unit-images/03.png#lightbox) 
 
-[![](touch.unit-images/04-sml.png "実行結果")](touch.unit-images/04.png#lightbox)
+[![](touch.unit-images/04-sml.png "The run results")](touch.unit-images/04.png#lightbox)
 
 個々のテスト フィクスチャを実行する場合は、入れ子ビューからテスト フィクスチャを選択します。あるいは、"すべて実行" ですべてのテストを実行することもできます。 既定のテストを実行する場合、成功したテスト、失敗したテストおよび無視されたテストが 1 つずつ含まれることが想定されます。 そのレポートは次のようになり、失敗したテストに直接ドリルダウンして、失敗に関する詳細情報を見つけることができます。
 
-[![](touch.unit-images/05-sml.png "サンプル レポート")](touch.unit-images/05.png#lightbox)[![](touch.unit-images/06-sml.png "サンプル レポート")](touch.unit-images/06.png#lightbox) [![](touch.unit-images/07-sml.png "サンプル レポート")](touch.unit-images/07.png#lightbox)
+[![](touch.unit-images/05-sml.png "サンプル レポート")](touch.unit-images/05.png#lightbox) [![](touch.unit-images/06-sml.png "サンプル レポート")](touch.unit-images/06.png#lightbox) [![](touch.unit-images/07-sml.png "サンプル レポート")](touch.unit-images/07.png#lightbox)
 
 IDE のアプリケーション出力ウィンドウで、実行中のテストとその現在の状態を確認することもできます。
 
 ## <a name="writing-new-tests"></a>新しいテストの書き込み
 
-NUnitLite は、[Touch.Unit](https://github.com/xamarin/Touch.Unit) プロジェクトという NUnit の変更バージョンです。 .NET 用の軽量なテスト フレームワークであり、[NUnit](http://nunit.com/) のアイデアに基づいており、その機能のサブセットを提供します。
+NUnitLite は、[Touch.Unit](https://github.com/xamarin/Touch.Unit) プロジェクトという NUnit の変更バージョンです。 .NET 用の軽量なテスト フレームワークであり、[NUnit](https://nunit.com/) のアイデアに基づいており、その機能のサブセットを提供します。
 最小限のリソースを使用し、埋め込みおよびモバイル開発で使用されるものなど、リソースに制限のあるプラットフォームで実行されます。 Xamarin.iOS では NUnitLite API を使用できます。 単体テスト テンプレートで提供される基本的なスケルトンの場合、メイン エントリ ポイントは [Assert クラス](xref:NUnit.Framework.Assert) メソッドになります。
 
 assert クラス メソッドに加え、単体テスト機能は、NUnitLite の一部である以下の名前空間に分けられます。

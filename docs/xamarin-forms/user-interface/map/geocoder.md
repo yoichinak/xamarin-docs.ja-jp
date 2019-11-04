@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/22/2019
-ms.openlocfilehash: ce1f6751c0381ed41058784fbea3ebedefbdac6d
-ms.sourcegitcommit: e4c23187874488ff55794d0e81a9bba30d2c2cd6
+ms.openlocfilehash: 9a20618fea0091979c2ea862f417dccec565b218
+ms.sourcegitcommit: 3ea19e3a51515b30349d03c70a5b3acd7eca7fe7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72778794"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73425602"
 ---
 # <a name="xamarinforms-map-geocoding"></a>Xamarin. Forms マップジオコーディング
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
-[`Geocoder`](xref:Xamarin.Forms.Maps.Geocoder)クラスを使用すると、 [`Position`](xref:Xamarin.Forms.Maps.Position)オブジェクトに格納されている文字列アドレスと緯度座標と経度座標を変換できます。
+[`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps)名前空間は、 [`Geocoder`](xref:Xamarin.Forms.Maps.Geocoder)クラスを提供します。このクラスは、 [`Position`](xref:Xamarin.Forms.Maps.Position)オブジェクトに格納されている文字列アドレスと緯度座標と経度座標を変換します。 [`Position`](xref:Xamarin.Forms.Maps.Position)構造体の詳細については、「[マップの位置と距離](position-distance.md)」を参照してください。
 
 ## <a name="geocode-an-address"></a>Geocode のアドレス
 
@@ -55,4 +55,5 @@ string address = possibleAddresses.FirstOrDefault();
 ## <a name="related-links"></a>関連リンク
 
 - [Maps サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+- [Xamarin. フォームマップの位置と距離](position-distance.md)
 - [Geocoder API](xref:Xamarin.Forms.Maps.Geocoder)

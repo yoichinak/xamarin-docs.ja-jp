@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin.Mac アプリの公開設�
 ms.prod: xamarin
 ms.assetid: fea66a34-1581-4cd6-b714-3fbff215a542
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 04/12/2017
-ms.openlocfilehash: 6134cbfabb342750ec68b676dd06388f4fb8f035
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 545c1cef26d3bbf85b490492347f4f63b42269a9
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70283027"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73021694"
 ---
 # <a name="mac-app-configuration"></a>Mac アプリの構成
 
@@ -38,7 +38,7 @@ Xamarin.Mac で作成された Mac アプリケーションを実行するには
 
 **[プロジェクト オプション]** ダイアログ ボックスの **[Mac 署名]** セクションを使用して、開発者は、テスト用、自己リリース用、または Apple App Store からのリリース用に Xamarin.Mac アプリに署名することができます。
 
-[![Mac Signing エディター](app-configuration-images/config02.png "Mac Signing エディター")](app-configuration-images/config02-large.png#lightbox)
+[![Mac Signing エディター](app-configuration-images/config02.png "[Mac Signing] ウィンドウ")](app-configuration-images/config02-large.png#lightbox)
 
 ここで選択、ID、プロビジョニング プロファイル、コンパイル時にアプリに署名するために使用するカスタム権利を選択します。 開発者は、オプションで、他の Mac 上でアプリをインストールするために使用されるインストーラーに署名することができます。
 

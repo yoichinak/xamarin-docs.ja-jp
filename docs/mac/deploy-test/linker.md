@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin.Mac のリンクについ�
 ms.prod: xamarin
 ms.assetid: F03176C3-F8D4-4DE8-870C-7F27D8CE525A
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/10/2017
-ms.openlocfilehash: 4b538df5e8e615f8594bd38cb13d9b45b0961dac
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f4ab94c4eede4a122ac834e075270a375bca0807
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770135"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73030006"
 ---
 # <a name="xamarinmac-linker-options"></a>Xamarin.Mac リンカー オプション
 

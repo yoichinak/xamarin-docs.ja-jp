@@ -4,15 +4,15 @@ description: このドキュメントでは、App Store で配布する Xamarin.
 ms.prod: xamarin
 ms.assetid: DFBCC0BA-D233-4DC4-8545-AFBD3768C3B9
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: b6fb02697d3df59181750bf6fd7c840129554ac3
-ms.sourcegitcommit: 84d788f7dbabc1c83ac795ed3952d589074fa8e8
+ms.openlocfilehash: 3803d7e14b161a7c166bcae37e3d9f46b7637984
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71811181"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73026639"
 ---
 # <a name="publishing-xamarinios-apps-to-the-app-store"></a>App Store への Xamarin.iOS アプリの公開
 
@@ -222,11 +222,11 @@ App Store プロビジョニング プロファイルを作成してインスト
 
 6. **[プロビジョニング プロファイル]** ウィンドウで、署名 ID、アプリ、およびプロビジョニング プロファイルを選択します。 **[次へ]** をクリックします。
 
-    ![有効な署名 ID、アプリ、プロビジョニング プロファイルの選択を示すプロビジョニング プロファイル ウィザード ページのスクリーンショット。](publishing-to-the-app-store-images/provProfileSelect-mac.png "有効な署名 ID、アプリ、プロビジョニング プロファイルが選択されたプロビジョニング プロファイル ウィザード ページのスクリーンショット。")
+    ![有効な署名 ID、アプリ、プロビジョニング プロファイルの選択を示すプロビジョニング プロファイル ウィザード ページのスクリーンショット。](publishing-to-the-app-store-images/provProfileSelect-mac.png "有効な署名 ID、アプリ、プロビジョニング プロファイルが選択されているプロビジョニング プロファイル ウィザード ページのスクリーンショット。")
 
 7. **[App Store Connect information]\(App Store Connect の情報\)** ウィンドウで、メニューから Apple ID のユーザー名を選択し、[アプリ固有のパスワード](https://support.apple.com/ht204397)を入力します。 **[次へ]** をクリックします。
 
-    ![Apple ID ユーザー名が選択されていることを示す [App Store Connect information]\(App Store Connect の情報\) ウィザード ページのスクリーンショット。](publishing-to-the-app-store-images/connectInfo-mac.png "Apple ID ユーザー名が選択されていることを示す [App Store Connect information]\(App Store Connect の情報\) ウィザード ページのスクリーンショット。")
+    ![Apple ID ユーザー名が選択されていることを示す、App Store の接続情報ウィザード ページのスクリーンショット。](publishing-to-the-app-store-images/connectInfo-mac.png "Apple ID ユーザー名が選択されていることを示す、App Store の接続情報ウィザード ページのスクリーンショット。")
 
 8. パッケージの詳細を確認し、 **[発行]** をクリックします。 .ipa ファイルを保存する場所を選択すると、アプリが App Store Connect にアップロードされます。
 
@@ -245,13 +245,13 @@ App Store プロビジョニング プロファイルを作成してインスト
 1. Visual Studio 2019 が [Mac ビルド ホストとペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)されていることを確認します。
 2. **[ソリューション構成]** ドロップダウンからは **[リリース]** を、 **[ソリューション プラットフォーム]** ドロップダウンからは **[iPhone]** を選択します。
 
-    ![[ソリューション構成] が [リリース]、[ソリューション プラットフォーム] が [iPhone]、[ターゲット] が [デバイス] に設定されている Visual Studio ツール バーのスクリーンショット。](publishing-to-the-app-store-images/chooseConfig-w157.png "[ソリューション構成] が [リリース]、[ソリューション プラットフォーム] が [iPhone]、[ターゲット] が [デバイス] に設定されている Visual Studio ツール バーのスクリーンショット。")
+    ![ソリューション構成がリリースに設定され、ソリューション プラットフォームが iPhone に設定され、ターゲットがデバイスに設定されていることを示す、Visual Studio ツール バーのスクリーンショット。](publishing-to-the-app-store-images/chooseConfig-w157.png "ソリューション構成がリリースに設定され、ソリューション プラットフォームが iPhone に設定され、ターゲットがデバイスに設定されていることを示す、Visual Studio ツール バーのスクリーンショット。")
 
 3. **[ビルド]** メニューの **[アーカイブ]** を選択します。これにより、 **[アーカイブ マネージャー]** が開き、アーカイブの作成が開始されます。
 
 4. アーカイブが作成されたら、 **[配布]** をクリックして、発行ウィザードを開きます。
 
-    ![[アーカイブ マネージャー] ビューの [配布] ボタンの場所のスクリーンショット。](publishing-to-the-app-store-images/archives-win.png "[アーカイブ マネージャー] ビューの [配布] ボタンの場所のスクリーンショット。")
+    ![アーカイブ マネージャー ビューの [配布] ボタンの場所のスクリーンショット。](publishing-to-the-app-store-images/archives-win.png "アーカイブ マネージャー ビューの [配布] ボタンの場所のスクリーンショット。")
 
 5. **[App Store]** 配布チャネルを選択します。
 
@@ -261,7 +261,7 @@ App Store プロビジョニング プロファイルを作成してインスト
 
 7. Apple ID と[アプリ固有のパスワード](https://support.apple.com/ht204397)を入力します。 **[OK]** をクリックして、App Store Connect へのアプリのアップロードを開始します。
 
-    ![Apple ID とアプリ固有のパスワードを入力するポップアップ ウィンドウのスクリーンショット。](publishing-to-the-app-store-images/connectInfo-win.png "Apple ID とアプリ固有のパスワードを入力するポップアップ ウィンドウのスクリーンショット。")
+    ![Apple ID とアプリ固有のパスワードを入力するためのポップアップ ウィンドウのスクリーンショット。](publishing-to-the-app-store-images/connectInfo-win.png "Apple ID とアプリ固有のパスワードを入力するためのポップアップ ウィンドウのスクリーンショット。")
 
 # <a name="visual-studio-2017tabwin-vs2017"></a>[Visual Studio 2017](#tab/win-vs2017)
 
@@ -299,7 +299,7 @@ App Store プロビジョニング プロファイルを作成してインスト
 7. Application Loader にログインします (Apple ID 用の[アプリ固有のパスワードを作成する](https://support.apple.com/ht204397)必要があることに注意してください)。
 8. **[Deliver Your App]\(アプリの配信\)** を選択して、 **[選択]** ボタンをクリックします。
 
-    ![[Deliver Your App]\(アプリの配信\) の選択](publishing-to-the-app-store-images/publishvs01.png "[Deliver Your App]\(アプリの配信\) の選択")
+    ![[Deliver Your App]\(アプリの配信\) を選択する](publishing-to-the-app-store-images/publishvs01.png "[Deliver Your App]\(アプリの配信\) を選択する")
 
 9. 前の手順で作成した .ipa ファイルを選択して、 **[OK]** をクリックします。
 10. アプリケーション ローダーはファイルを検証します。
@@ -326,7 +326,7 @@ App Store プロビジョニング プロファイルを作成してインスト
 
 アプリの提出の状態を確認するには、iTunes Connect にログインし、ご利用のアプリを選択します。 初期状態は **[審査待ち]** となります。ただし、処理中は一時的に **[Upload Received]\(アップロード受信済み\)** になる場合があります。
 
-![審査待ち](publishing-to-the-app-store-images/image21.png "審査待ち")
+![レビューを待機しています](publishing-to-the-app-store-images/image21.png "レビューを待機しています")
 
 ## <a name="tips-and-tricks"></a>ヒントとテクニック
 

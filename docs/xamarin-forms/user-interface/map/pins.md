@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/23/2019
-ms.openlocfilehash: a2fb0ba2036dfe34e85c7bebab6ecb55cd868ad5
-ms.sourcegitcommit: 5c22097bed2a8d51ecaf6ca197bf4d449dfe1377
+ms.openlocfilehash: 930d2dcc701f88e2a350ec1011405bb18b86de6e
+ms.sourcegitcommit: 3ea19e3a51515b30349d03c70a5b3acd7eca7fe7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72810515"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73425559"
 ---
 # <a name="xamarinforms-map-pins"></a>Xamarin. フォームマップのピン
 
@@ -44,10 +44,7 @@ Xamarin Forms [`Map`](xref:Xamarin.Forms.Maps.Map)コントロールを使用す
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps">
      <maps:Map x:Name="map"
                IsShowingUser="True"
-               MoveToLastRegionOnLayoutChange="False"
-               HeightRequest="100"                  
-               WidthRequest="960"
-               VerticalOptions="FillAndExpand">
+               MoveToLastRegionOnLayoutChange="False">
          <x:Arguments>
              <maps:MapSpan>
                  <x:Arguments>
@@ -80,10 +77,7 @@ Xamarin Forms [`Map`](xref:Xamarin.Forms.Maps.Map)コントロールを使用す
 </ContentPage>
 ```
 
-この XAML は、 [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan)オブジェクトによって指定された領域を示す[`Map`](xref:Xamarin.Forms.Maps.Map)オブジェクトを作成します。 `MapSpan` オブジェクトは、 [`Position`](xref:Xamarin.Forms.Maps.Position)のオブジェクトによって表される緯度と経度の中央にあり、0.01 の緯度と経度の角度を超えています。 [`Pin`](xref:Xamarin.Forms.Maps.Pin)オブジェクトが[`Map.Pins`](xref:Xamarin.Forms.Maps.Pin)コレクションに追加され、 [`Position`](xref:Xamarin.Forms.Maps.Pin.Position)プロパティで指定された位置に `Map` に描画されます。 既定のコンストラクターを持たないオブジェクトに XAML の引数を渡す方法については、「 [xaml で引数を渡す](~/xamarin-forms/xaml/passing-arguments.md)」を参照してください。
-
-> [!NOTE]
-> [`Position`](xref:Xamarin.Forms.Maps.Position)構造体は、型 `double`の両方で読み取り専用[`Latitude`](xref:Xamarin.Forms.Maps.Position.Latitude)と[`Longitude`](xref:Xamarin.Forms.Maps.Position.Longitude)プロパティを定義します。 コンストラクターを使用して `Position` オブジェクトを作成する場合、緯度の値は-90.0 と90.0 の間で固定され、経度の値は-180.0 と180.0 の間で固定されます。
+この XAML は、 [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan)オブジェクトによって指定された領域を示す[`Map`](xref:Xamarin.Forms.Maps.Map)オブジェクトを作成します。 `MapSpan` オブジェクトは、 [`Position`](xref:Xamarin.Forms.Maps.Position)のオブジェクトによって表される緯度と経度の中央にあり、0.01 の緯度と経度の角度を超えています。 [`Pin`](xref:Xamarin.Forms.Maps.Pin)オブジェクトが[`Map.Pins`](xref:Xamarin.Forms.Maps.Pin)コレクションに追加され、 [`Position`](xref:Xamarin.Forms.Maps.Pin.Position)プロパティで指定された位置に `Map` に描画されます。 [`Position`](xref:Xamarin.Forms.Maps.Position)構造体の詳細については、「[マップの位置と距離](position-distance.md)」を参照してください。 既定のコンストラクターを持たないオブジェクトに XAML の引数を渡す方法については、「 [xaml で引数を渡す](~/xamarin-forms/xaml/passing-arguments.md)」を参照してください。
 
 これに相当する C# コードを次に示します。
 
@@ -119,7 +113,7 @@ map.Pins.Add(pin);
 
 マップ上の他の場所をタップすると、情報ウィンドウが閉じます。
 
-[`Pin`](xref:Xamarin.Forms.Maps.Pin)クラスは、`Pin` がタップされたときに発生する `MarkerClicked` イベントを定義します。 情報ウィンドウを表示するためにこのイベントを処理する必要はありません。 代わりに、特定の pin がタップされたことを通知する必要がある場合にのみ、このイベントを処理する必要があります。
+[`Pin`](xref:Xamarin.Forms.Maps.Pin)クラスは、`Pin` がタップされたときに発生する `MarkerClicked` イベントを定義します。 情報ウィンドウを表示するためにこのイベントを処理する必要はありません。 代わりに、特定の pin がタップされたことを通知する必要がある場合に、このイベントを処理する必要があります。
 
 [`Pin`](xref:Xamarin.Forms.Maps.Pin)クラスは、情報ウィンドウがタップされたときに発生する `InfoWindowClicked` イベントも定義します。 このイベントは、特定の情報ウィンドウがタップされたことを通知する必要がある場合に処理する必要があります。
 
@@ -190,7 +184,6 @@ wharfPin.InfoWindowClicked += async (s, args) =>
     <Grid>
         ...
         <maps:Map x:Name="map"
-                  MoveToLastRegionOnLayoutChange="false"
                   ItemsSource="{Binding Locations}">
             <maps:Map.ItemTemplate>
                 <DataTemplate>
@@ -211,7 +204,7 @@ wharfPin.InfoWindowClicked += async (s, args) =>
 
 次のスクリーンショットは、データバインディングを使用して[`Pin`](xref:Xamarin.Forms.Maps.Pin)コレクションを表示する[`Map`](xref:Xamarin.Forms.Maps.Map)を示しています。
 
-[![IOS と Android でのデータバインドされた pin を使用したマップのスクリーンショット](map-images/pins-itemssource.png "データバインドされた pin を使用したマップ")](map-images/pins-itemssource-large.png#lightbox "データバインドされた pin を使用したマップ")
+[![IOS と Android でのデータバインドされた pin を使用したマップのスクリーンショット](pins-images/pins-itemsource.png "データバインドされた pin を使用したマップ")](pins-images/pins-itemsource-large.png#lightbox "データバインドされた pin を使用したマップ")
 
 ### <a name="choose-item-appearance-at-runtime"></a>実行時に項目の外観を選択する
 
@@ -265,7 +258,7 @@ public class MapItemTemplateSelector : DataTemplateSelector
 }
 ```
 
-`MapItemTemplateSelector` クラスは、さまざまなデータテンプレートに設定されている[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)プロパティの `DefaultTemplate` と `XamarinTemplate` を定義します。 `OnSelectTemplate` メソッドは、`XamarinTemplate` を返します。この場合、`Pin` がタップされたときに "Xamarin" というラベルが表示され、その項目に "サンフランシスコ" が含まれているアドレスが含まれています。 "サンフランシスコ" を含むアドレスが項目にない場合、`OnSelectTemplate` メソッドは `DefaultTemplate` を返します。
+`MapItemTemplateSelector` クラスは、さまざまなデータテンプレートに設定されている[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)プロパティの `DefaultTemplate` と `XamarinTemplate` を定義します。 `OnSelectTemplate` メソッドは、`XamarinTemplate`を返します。この場合、`Pin` がタップされたときに "Xamarin" というラベルが表示され、その項目に "サンフランシスコ" が含まれているアドレスが含まれています。 "サンフランシスコ" を含むアドレスが項目にない場合、`OnSelectTemplate` メソッドは `DefaultTemplate` を返します。
 
 データテンプレートセレクターの詳細については、「 [DataTemplateSelector の作成](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)」を参照してください。
 

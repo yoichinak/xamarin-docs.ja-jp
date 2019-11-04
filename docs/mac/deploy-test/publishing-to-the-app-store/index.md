@@ -4,15 +4,15 @@ description: このドキュメントでは、Visual Studio for Mac で Xamarin.
 ms.prod: xamarin
 ms.assetid: D26C5E54-EAD2-5487-264D-4263AEA1EBF2
 ms.technology: xamarin-mac
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 84a35389276fed031f6bea116c1e4f37a63469a7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 60f51be5ffad67d839edd42b7826b0c57c46eb8a
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70769869"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73029993"
 ---
 # <a name="publishing-xamarinmac-apps-to-the-mac-app-store"></a>Mac App Store に Xamarin.Mac アプリを公開する
 
@@ -29,7 +29,7 @@ Xamarin.Mac アプリは、2 つの異なる方法で配布することができ
 
 [Mac Developer Program](https://developer.apple.com/devcenter/mac/) に参加するときには、下のスクリーンショットに示すように、開発者は、個人または会社としての参加を選択することができます。
 
-[![Apple Developer ポータル](images/image1.png "Apple Developer ポータル")](images/image1-large.png#lightbox)
+[![Azure Developer ポータル](images/image1.png "Azure Developer ポータル")](images/image1-large.png#lightbox)
 
 状況に応じた正しい登録の種類を選択します。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/30/2019
-ms.openlocfilehash: 24879b1ffcac97acdba27c32a22e43bfb6e80459
-ms.sourcegitcommit: e71474f91639bb43159b22f5d534325c3270ba93
+ms.openlocfilehash: 08026cd3f3ef7503a92f6c78f1e3e27ad3642d09
+ms.sourcegitcommit: f8583585c501607fdfa061b95e9a9f385ed1d591
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72749781"
+ms.lasthandoff: 10/26/2019
+ms.locfileid: "72959137"
 ---
 # <a name="xamarinforms-relative-bindings"></a>Xamarin.Forms の相対バインド
 
@@ -31,10 +31,10 @@ ms.locfileid: "72749781"
 
 `Mode` プロパティは、`RelativeBindingSourceMode` 列挙型メンバーのいずれかに設定する必要があります。
 
-- `TemplatedParent` は、テンプレート (バインド要素が存在する) が適用される要素を示します。 詳細については、[テンプレート化された親へのバインド](#bind-to-a-templated-parent)のセクションを参照してください。
-- `Self` は、バインドが設定されている要素を示し、その要素の 1 つのプロパティを同じ要素の別のプロパティにバインドできます。 詳細については、[自己へのバインド](#bind-to-self)のセクションを参照してください。
-- `FindAncestor` は、バインドされた要素のビジュアル ツリーの先祖を示します。 `AncestorType` プロパティによって表される先祖コントロールにバインドするには、このモードを使用する必要があります。 詳細については、[先祖へのバインド](#bind-to-an-ancestor)のセクションを参照してください。
-- `FindAncestorBindingContext` は、バインドされた要素のビジュアル ツリーの先祖の `BindingContext` を示します。 `AncestorType` プロパティによって表される先祖の `BindingContext` にバインドするには、このモードを使用する必要があります。 詳細については、[先祖へのバインド](#bind-to-an-ancestor)のセクションを参照してください。
+- `TemplatedParent` は、テンプレート (バインド要素が存在する) が適用される要素を示します。 詳細については、「[テンプレート化された親にバインドする](#bind-to-a-templated-parent)」セクションを参照してください。
+- `Self` は、バインドが設定されている要素を示し、その要素の 1 つのプロパティを同じ要素の別のプロパティにバインドできます。 詳細については、「[自己にバインドする](#bind-to-self)」を参照してください。
+- `FindAncestor` は、バインドされた要素のビジュアル ツリーの先祖を示します。 `AncestorType` プロパティによって表される先祖コントロールにバインドするには、このモードを使用する必要があります。 詳細については、「[先祖にバインドする](#bind-to-an-ancestor)」を参照してください。
+- `FindAncestorBindingContext` は、バインドされた要素のビジュアル ツリーの先祖の `BindingContext` を示します。 `AncestorType` プロパティによって表される先祖の `BindingContext` にバインドするには、このモードを使用する必要があります。 詳細については、「[先祖にバインドする](#bind-to-an-ancestor)」を参照してください。
 
 `Mode` プロパティは、`RelativeSourceExtension` クラスのコンテンツ プロパティです。 そのため、中かっこで囲まれた XAML マークアップ式では、式の `Mode=` 部分を削除できます。
 

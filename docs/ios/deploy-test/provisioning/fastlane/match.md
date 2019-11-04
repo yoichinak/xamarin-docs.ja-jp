@@ -4,15 +4,15 @@ description: このドキュメントでは fastlane の match コマンドに�
 ms.prod: xamarin
 ms.assetid: C4A2A67E-0643-4CED-B1A9-79D65054F3CA
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 8991ddc55069fad8c5f023f35ece0926f0f7e5b8
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 08fdcafe33e4b9b2aa6b5595c732718878be33f2
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70285729"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028509"
 ---
 # <a name="fastlane-for-ios---match"></a>fastlane for iOS - match
 
@@ -59,15 +59,15 @@ fastlane match init
 
 プロンプトが表示されたら、Git リポジトリの URL を入力します。
 
- [![](match-images/fastlane-image7.png "Git リポジトリの URL を入力します")](match-images/fastlane-image7.png#lightbox)
+ [![](match-images/fastlane-image7.png "Enter the URL of the git repo")](match-images/fastlane-image7.png#lightbox)
 
 この URL は、次の図のように、github.com の **[Clone or Download]\(複製またはダウンロード\)** ボタンをクリックすることで確認およびコピーできます。
 
-[![](match-images/fastlane-image6.png "github.com の [Clone or Download]\(複製またはダウンロード\) ボタンの下の URL")](match-images/fastlane-image6.png#lightbox)
+[![](match-images/fastlane-image6.png "The URL under the Clone or Download button on github.com")](match-images/fastlane-image6.png#lightbox)
 
 プロジェクトを初期化することで matchfile が作成されます。これは環境変数を match ツールに渡すために編集可能なテキスト ファイルです。 matchfile の例を次に示します。
 
-[![](match-images/fastlane-image8.png "matchfile の例")](match-images/fastlane-image8.png#lightbox)
+[![](match-images/fastlane-image8.png "A matchfile example")](match-images/fastlane-image8.png#lightbox)
 
 <a name="running" />
 
@@ -93,7 +93,7 @@ fastlane match development
 - 基本的な手順が記載された Readme
 - match のバージョン
 
-[![](match-images/fastlane-image9.png "Git リポジトリのプロジェクト構造")](match-images/fastlane-image9.png#lightbox)
+[![](match-images/fastlane-image9.png "The project structure in the git repo")](match-images/fastlane-image9.png#lightbox)
 
 プロビジョニング プロファイルは `~/Library/MobileDevice/Provisioning Profiles` にインストールされます。 証明書と秘密キーは、キーチェーンに直接インストールされます。
 

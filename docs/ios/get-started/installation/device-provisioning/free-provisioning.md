@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin.iOS の開発者が Apple 
 ms.prod: xamarin
 ms.assetid: A5CE2ECF-8057-49ED-8393-EB0C5977FE4C
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 07/16/2018
-ms.openlocfilehash: 8279487fc5effd5c2c019bffa5ceb820d2240400
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 951b019a4a0bf503629b6ac63853bd5b1c818bce
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70291433"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73022757"
 ---
 # <a name="free-provisioning-for-xamarinios-apps"></a>Xamarin.iOS アプリの無料プロビジョニング
 
@@ -49,23 +49,23 @@ ms.locfileid: "70291433"
 2. Xcode を開き、 **[Xcode]、[Preferences]\(設定\)** の順に移動します。
 3. **[Accounts]** \(アカウント\) で **+** ボタンを使用して既存の Apple ID を追加します。 次のスクリーンショットのようになります。
 
-    ![Xcode の設定 – アカウント](free-provisioning-images/launchapp1.png "Xcode の設定 – アカウント")
+    ![Xcode の [設定] – [アカウント]](free-provisioning-images/launchapp1.png "Xcode の [設定] – [アカウント]")
 
 4. Xcode の設定を閉じます。
 5. アプリの展開先に iOS デバイスを接続します。
 6. Xcode で新しいプロジェクトを作成します。 **[File]\(ファイル\)、[New]\(新規\)、[Project]\(プロジェクト\)** の順に移動して、 **[Single View App]\(単一ビュー アプリ\)** を選択します。
 7. 新しいプロジェクト ダイアログで、 **[Team]\(チーム\)** に今追加した Apple ID を設定します。 ドロップダウン リストでは、 **[Your Name (Personal Team)]\(ユーザーの名前 (個人チーム)\)** のように表示されます。
 
-    ![新しいアプリの作成](free-provisioning-images/launchapp2.png "新しいアプリの作成")
+    ![新しいアプリを作成する](free-provisioning-images/launchapp2.png "新しいアプリを作成する")
 
 8. 新しいプロジェクトが作成されたら、(シミュレーターではなく) iOS デバイスを対象とする Xcode ビルド スキームを選択します。
 
-    ![Xcode のビルド スキームの選択](free-provisioning-images/xcodescheme.png "Xcode のビルド スキームの選択")
+    ![Xcode ビルド スキームを選択する](free-provisioning-images/xcodescheme.png "Xcode ビルド スキームを選択する")
 
 9. Xcode の**プロジェクト ナビゲーター**で最上位のノードを選択して、アプリのプロジェクトの設定を開きます。
 10. **[General]\(一般\)、[Identity]\(ID\)** の下で、**バンドル ID** が Xamarin.iOS アプリのバンドル ID と_完全に一致している_ことを確認します。
 
-    ![バンドル ID の設定](free-provisioning-images/launchapp5.png "バンドル ID の設定")
+    ![バンドル ID を設定する](free-provisioning-images/launchapp5.png "バンドル ID を設定する")
 
     > [!IMPORTANT]
     > Xcode は明示的なアプリ ID のプロビジョニング プロファイルのみを作成し、この ID は Xamarin.iOS アプリのアプリ ID と同一である必要があります。
@@ -74,11 +74,11 @@ ms.locfileid: "70291433"
 11. **[Deployment Info]\(展開情報\)** の下で、展開対象の iOS のバージョンが、接続されている iOS デバイスにインストールされているバージョン以下であることを確認します。
 12. **[Signing]\(署名\)** の下で、 **[Automatically manage signing]\(署名の自動管理\)** を選択して、ドロップダウン リストから自分のチームを選びます。
 
-    ![署名の自動管理](free-provisioning-images/launchapp6.png "署名の自動管理")
+    ![署名を自動管理する](free-provisioning-images/launchapp6.png "署名を自動管理する")
 
     Xcode で、プロビジョニング プロファイルと署名 ID が自動的に生成されます。 この情報を表示するには、プロビジョニング プロファイルの横の情報アイコンをクリックします。
 
-    ![プロビジョニング プロファイルの表示](free-provisioning-images/launchapp7.png "プロビジョニング プロファイルの表示")
+    ![プロビジョニング プロファイルを表示する](free-provisioning-images/launchapp7.png "プロビジョニング プロファイルを表示する")
 
     > [!TIP]
     > Xcode でのプロビジョニング プロファイルの生成時にエラーが発生した場合は、Xcode の現在選択されているビルド スキームが、シミュレーターではなく接続されている iOS デバイスを対象としていることを確認してください。
@@ -98,7 +98,7 @@ ms.locfileid: "70291433"
 7. Xcode で作成された**署名 ID** を選択します。
 8. Xcode で作成された**プロビジョニング プロファイル**を選択します。
 
-    ![署名 ID とプロビジョニング プロファイルの設定](free-provisioning-images/launchapp8.png "署名 ID とプロビジョニング プロファイルの設定")
+    ![署名 ID とプロビジョニング プロファイルを設定する](free-provisioning-images/launchapp8.png "署名 ID とプロビジョニング プロファイルを設定する")
 
     > [!TIP]
     > 署名 ID または正しいプロビジョニング プロファイルが表示されない場合は、必要に応じて Visual Studio for Mac を再起動します。
@@ -118,7 +118,7 @@ ms.locfileid: "70291433"
 8. Xcode で作成された**署名 ID** を選択します。
 9. Xcode で作成された**プロビジョニング プロファイル**を選択します。
     
-    ![署名 ID とプロビジョニング プロファイルの設定](free-provisioning-images/setprofile-w157.png "署名 ID とプロビジョニング プロファイルの設定")
+    ![署名 ID とプロビジョニング プロファイルを設定する](free-provisioning-images/setprofile-w157.png "署名 ID とプロビジョニング プロファイルを設定する")
 
     > [!TIP]
     > この署名 ID とプロビジョニング プロファイルは Xcode により作成され、Mac ビルド ホストに格納されました。 Mac ビルド ホストとは[ペアリングされている](~/ios/get-started/installation/windows/connecting-to-mac/index.md)ため、Visual Studio 2019 または Visual Studio 2017 からアクセスすることができます。 一覧に表示されない場合は、場合によって Visual Studio 2019 または Visual Studio 2017 を再起動する必要があります。

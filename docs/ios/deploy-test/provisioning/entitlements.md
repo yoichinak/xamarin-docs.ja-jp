@@ -4,15 +4,15 @@ description: 権利は特殊なアプリの機能およびセキュリティの�
 ms.prod: xamarin
 ms.assetid: 8A3961A2-02AB-4228-A41D-06CB4108D9D0
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 08/13/2018
-ms.openlocfilehash: 381cddcef826d00b09f9928746bb4f60ce78a7e0
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 43bde3a31a79728548e72ea1d34977f1a131f282
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70284797"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028534"
 ---
 # <a name="working-with-entitlements-in-xamarinios"></a>Xamarin.iOS での権利の使用
 
@@ -44,12 +44,12 @@ Visual Studio for Mac で権利を構成するには、次の操作を行いま�
 1. **ソリューション エクスプローラー**で、**Info.plist** ファイルをダブルクリックして開き、編集します。
 2. **[iOS アプリケーションのターゲット]** セクションで、アプリケーションの名前を入力し、アプリ ID が定義されたときに作成された**バンドル ID** を入力します。
 
-    ![](entitlements-images/servicexs01.png "バンドル ID を入力します")
+    ![](entitlements-images/servicexs01.png "Enter a Bundle Identifier")
 
 3. 変更内容を **Info.plist** ファイルに保存します。
 4. **ソリューション エクスプローラー**で、**Entitlements.plist** ファイルをダブルクリックして開き、編集します。
 
-    ![](entitlements-images/servicexs02.png "権利の編集")
+    ![](entitlements-images/servicexs02.png "Editing the Entitlements")
 
 5. Xamarin.iOS アプリケーションに必要な権利を選択して構成し、アプリ ID が作成されたときに定義された設定と一致するようにします。
 6. 変更内容を **Entitlements.plist** ファイルに保存します。
@@ -61,12 +61,12 @@ Visual Studio で権利を構成するには、次の操作を行います。
 1. **ソリューション エクスプローラー**で、**Info.plist** を右クリックし、 **[プログラムから開く]** を選択し、 **[プロパティ一覧エディター]** ファイルを選択して開き、編集します。
 2. **[iOS アプリケーションのターゲット]** セクションで、アプリケーションの名前を入力し、アプリ ID が定義されたときに作成された**バンドル ID** を入力します。
 
-    ![](entitlements-images/servicevs01.png "バンドル ID の設定")
+    ![](entitlements-images/servicevs01.png "Setting the Bundle Identifier")
 
 3. 変更内容を **Info.plist** ファイルに保存します。
 4. **ソリューション エクスプローラー**で、**Entitlements.plist** ファイルを右クリックし、 **[プログラムから開く]** を選択し、 **[プロパティ一覧エディター]** を選択して開き、編集します。
 
-    ![](entitlements-images/servicevs02.png "権利の編集")
+    ![](entitlements-images/servicevs02.png "Editing the Entitlements")
 
     または、**Entitlements.plist** ファイルをダブルクリックして XML ソース エディターを開きます。このエディターでは、後述の[権利キー参照](#entitlement-key-reference)に関するセクションで詳しく説明されているように、権利プロパティとキーの値を設定することができます。
 

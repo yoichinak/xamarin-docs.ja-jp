@@ -4,15 +4,15 @@ description: この記事では、Apple の Instruments ツールを使用して
 ms.prod: xamarin
 ms.assetid: 8f21db1d-7107-4158-8058-d47e417689a0
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 2bdb95c73ed692b3ba7f0c3ff15cd7754a7e7b66
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
+ms.openlocfilehash: 41254fb6aac176cd796fba851478b31f774553d2
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70278874"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73023454"
 ---
 # <a name="walkthrough---using-apples-instruments-tool"></a>チュートリアル - Apple の Instruments ツールの使用
 
@@ -27,11 +27,11 @@ _この記事では、Apple の Instruments ツールを使用して、Xamarin �
 2. **[実行] > [デバイスにアップロード]** メニュー項目を選択し、デバイスにアプリケーションをアップロードします。
 3. **[Allocations]\(割り当て\)** テンプレート (白のボックスがあるオレンジ色のアイコン) を選択します。
 
-    ![](walkthrough-apples-instrument-images/00-allocations-tempate.png "[Allocations]\(割り当て\) テンプレートを選択する")
+    ![](walkthrough-apples-instrument-images/00-allocations-tempate.png "Choose the Allocations template")
 
 4. ウィンドウの上部にある **[Choose a profiling template for:]\(プロファイリング テンプレートの選択\)** リストで **[Memory Demo]** アプリケーションを選択します。 最初に iOS デバイスをクリックして、インストールされたアプリケーションが表示されたメニューを展開します。
 
-    ![](walkthrough-apples-instrument-images/01-mem-demo.png "Memory Demo アプリケーションを選択する")
+    ![](walkthrough-apples-instrument-images/01-mem-demo.png "Select the Memory Demo application")
 
 5. (ウィンドウの右下にある) **[選択]** ボタンを押し、**Instruments** を起動します。 このテンプレートは、上部ウィンドウに 2 つの項目を表示します。[Allocations]\(割り当て\) と [VM Tracker]\(VM トラッカー\) です。
 
@@ -39,7 +39,7 @@ _この記事では、Apple の Instruments ツールを使用して、Xamarin �
 
 7. 上部ウィンドウ (アプリが実行中で、[Dirty]\(ダーティ\) と [Resident Size]\(常駐サイズ\) の 2 つのセクションが含まれます) で **[VM Tracker]\(VM トラッカー\)** 行を選択します。 **[Inspector]\(検査\)** ウィンドウで、 **[Show Display Settings]\(表示設定の表示\)** オプション (歯車アイコン) を選択し、スクリーンショットの右下に表示されている **[Automatic Snapshotting]\(スナップショットの自動作成\)** チェックボックスをオンにします。
 
-    ![](walkthrough-apples-instrument-images/02-auto-snapshot.png "[Show Display Settings]\(表示設定の表示\) オプション (歯車アイコン) を選択し、[Automatic Snapshotting]\(スナップショットの自動作成\) チェックボックスをオンにする")
+    ![](walkthrough-apples-instrument-images/02-auto-snapshot.png "Choose the Show Display Settings option the gear icon then tick the Automatic Snapshotting checkbox")
 
 8. 上部ウィンドウ (アプリが実行中で、 *[All Heap and Anonymous VM]\(すべてのヒープと匿名 VM\)* と表示されます) で **[Allocations]\(割り当て\)** 行を選択します。
 9. **[Inspector]\(検査\)** ウィンドウで、 **[Show Display Settings]\(表示設定の表示\)** オプション (歯車アイコン) を選択し、 **[Mark Generation]\(マークの生成\)** ボタンを押してベースラインを確立します。 ウィンドウの上部のタイムラインに小さな赤いフラグが表示されます。
@@ -50,15 +50,15 @@ _この記事では、Apple の Instruments ツールを使用して、Xamarin �
 
 14. **&lt;non-object>** ノードが過剰なメモリの増加を示していることに注目してください。 詳細を表示するにはこのノードの横にある矢印をクリックします。スタック トレース内を右クリックして、ウィンドウに **[Source Location]\(ソースの場所\)** を追加します。
 
-    ![](walkthrough-apples-instrument-images/03-mem-growth.png "ソースの場所をウィンドウに追加する")
+    ![](walkthrough-apples-instrument-images/03-mem-growth.png "Add Source Location to the pane")
 
 15. **[Size]\(サイズ\)** で並べ替えて、 **[Extended Detail]\(拡張詳細\)** ビューを表示します。
 
-    ![](walkthrough-apples-instrument-images/04-extended-detail.png "[Size]\(サイズ\) で並べ替えて、[Extended Detail]\(拡張詳細\) ビューを表示します。")
+    ![](walkthrough-apples-instrument-images/04-extended-detail.png "Sort by Size and display the  Extended Detail view")
 
 16. 呼び出し履歴で目的のエントリをクリックして、関連するコードを表示します。
 
-    ![](walkthrough-apples-instrument-images/05-related-code.png "関連するコードを表示する")
+    ![](walkthrough-apples-instrument-images/05-related-code.png "Viewing the related code")
 
 この場合、新しいイメージが作成されて各セルのコレクションに保存され、既存のコレクション ビューは再利用されません。
 
@@ -83,11 +83,11 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, N
 
 これで、アプリケーションを実行したときのメモリ使用量が大幅に減少します。生成間の **[Growth]\(増加\)** は、コードを修正する前の MiB (メガバイト単位) ではなく、Kib (キロバイト単位) で測定されるようになりました。
 
-![](walkthrough-apples-instrument-images/06-reduced-memory.png "アプリのメモリ使用量を表示する")
+![](walkthrough-apples-instrument-images/06-reduced-memory.png "Showing the app memory usage")
 
 改善されたコードは、Visual Studio for Mac の **after** ソリューションの [MemoryDemo サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/profiling-memorydemo)で入手できます。
 
-[Xamarin.iOS ガベージ コレクション](http://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me/)に関するこのコミュニティ ブログは、Xamarin.iOS のメモリ問題に対処するためのリファレンスとして役立ちます。
+[Xamarin.iOS ガベージ コレクション](https://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me/)に関するこのコミュニティ ブログは、Xamarin.iOS のメモリ問題に対処するためのリファレンスとして役立ちます。
 
 ## <a name="summary"></a>まとめ
 
@@ -98,4 +98,4 @@ Visual Studio for Mac 内から Instruments を起動して、メモリ割り当
 ## <a name="related-links"></a>関連リンク
 
 - [MemoryDemo サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/profiling-memorydemo)
-- [Xamarin.iOS ガベージ コレクション (ブログ記事)](http://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me/)
+- [Xamarin.iOS ガベージ コレクション (ブログ記事)](https://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me/)

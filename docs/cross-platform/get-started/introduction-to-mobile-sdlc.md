@@ -3,15 +3,15 @@ title: モバイル ソフトウェア開発ライフ サイクル
 description: このドキュメントでは、UX デザイン、UI デザイン、開発、安定化、配布などを確認し、モバイル ソフトウェア開発ライフサイクルについて説明します。
 ms.prod: xamarin
 ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 11/22/2016
-ms.openlocfilehash: 4e2af0d1746ef1321db39d97a86af2b4bd769c69
-ms.sourcegitcommit: 6264fb540ca1f131328707e295e7259cb10f95fb
+ms.openlocfilehash: b08293727a585ff68c4bac8a25b26d249505b1aa
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/16/2019
-ms.locfileid: "69526694"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73016396"
 ---
 # <a name="mobile-software-development-lifecycle"></a>モバイル ソフトウェア開発ライフ サイクル
 
@@ -72,7 +72,7 @@ ms.locfileid: "69526694"
 
 通常 UX は、多くの[デザイン ツールキット](https://docs.microsoft.com/windows/uwp/design/downloads/)のいずれかを使用したワイヤフレームまたはモックアップで行います。 UX モックアップを使用すると、実際の UI デザインを心配することなく UX をデザインできます。
 
- [![](introduction-to-mobile-sdlc-images/balsamiq.png "通常 UX は、Balsamiq などのツールを使用したワイヤフレームまたはモックアップで行います")](introduction-to-mobile-sdlc-images/balsamiq.png#lightbox)
+ [![](introduction-to-mobile-sdlc-images/balsamiq.png "UX is usually done via wireframes or mockups using tools such as Balsamiq")](introduction-to-mobile-sdlc-images/balsamiq.png#lightbox)
 
 UX モックアップを作成するときは、アプリが対象とする多様なプラットフォームのインターフェイス ガイドラインを考慮することが重要です。 各プラットフォームで "使い慣れた感覚" のアプリになるようにします。 各プラットフォームの公式デザイン ガイドラインは次のとおりです。
 
@@ -84,11 +84,11 @@ UX モックアップを作成するときは、アプリが対象とする多�
 
 また、ハードウェア自体にも UX を決定する要素があります。 たとえば、iOS デバイスには物理的な*戻る*ボタンがないため、ナビゲーション コントローラーのメタファーを導入します。
 
- ![](introduction-to-mobile-sdlc-images/01-navigation-controller.png "iOS デバイスには物理的な戻るボタンがないため、ナビゲーション コントローラーのメタファーを導入します")
+ ![](introduction-to-mobile-sdlc-images/01-navigation-controller.png "iOS devices have no physical back button, and therefore introduce the Navigation Controller metaphor")
 
 さらに、フォーム ファクターも UX の決定に影響があります。 タブレットにははるかに広いスペースがあるため、より多くの情報を表示できます。 多くの場合、スマートフォンで複数の画面が必要な機能は、タブレットでは 1 つの画面に収まります。
 
- [![](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png "多くの場合、スマートフォンで複数の画面が必要な機能は、タブレットでは 1 つの画面に収まります")](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png#lightbox)
+ [![](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png "Often what needs multiple screens on a phone is compressed into one for a tablet")](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png#lightbox)
 
 また、さまざまなフォーム ファクターがあるため、多くの場合、中サイズのフォーム ファクター (スマートフォンとタブレットの間くらい) を対象とすることがあります。
 
@@ -98,7 +98,7 @@ UX が決まったら、次の手順は UI デザインの作成です。 通常
 
 UX の場合と同様に、各プラットフォームには独自のデザイン言語があることを理解することが重要です。また、適切なデザインのアプリケーションの外観は、プラットフォームによって異なる可能性があります。
 
- [![](introduction-to-mobile-sdlc-images/multiplatform-1.png "適切なデザインのアプリケーションの外観は、プラットフォームによって異なる可能性があります")](introduction-to-mobile-sdlc-images/multiplatform-1.png#lightbox)
+ [![](introduction-to-mobile-sdlc-images/multiplatform-1.png "A well-designed application may still look different on each platform")](introduction-to-mobile-sdlc-images/multiplatform-1.png#lightbox)
 
 ### <a name="development"></a>開発
 
@@ -146,10 +146,10 @@ Android はこの情報を使用して、Android OS 内で実行されるアプ�
 
 そのため、開発者は、自作アプリケーション用により大規模で複雑な配布チャネルを利用できます。 [Google Play](https://play.google.com/store?hl=en) は Google の公式アプリ ストアですが、他にも多くのストアがあります。 人気のあるストアをいくつか紹介します。
 
-1. [AppBrain](http://www.appbrain.com/)
-1. [Amazon App Store for Android](http://www.amazon.com/mobile-apps/b?ie=UTF8&amp;node=2350149011)
-1. [Handango](http://www.handango.com/)
-1. [GetJar](http://www.getjar.com/)
+1. [AppBrain](https://www.appbrain.com/)
+1. [Amazon App Store for Android](https://www.amazon.com/mobile-apps/b?ie=UTF8&amp;node=2350149011)
+1. [Handango](https://www.handango.com/)
+1. [GetJar](https://www.getjar.com/)
 
 #### <a name="uwp"></a>UWP
 

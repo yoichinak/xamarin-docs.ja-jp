@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 10/02/2019
-ms.openlocfilehash: 8f225df47b299ae4748c3a3fea586f277e14213d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: cc499902058e7b20b00e65e0c6541b8d137804a7
+ms.sourcegitcommit: 3ea19e3a51515b30349d03c70a5b3acd7eca7fe7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028723"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73425509"
 ---
 # <a name="splash-screen"></a>スプラッシュ スクリーン
 
@@ -67,7 +67,7 @@ Android アプリの起動には時間がかかります。特に、デバイス
 </layer-list>
 ```
 
-この `layer-list` は、`@color/splash_background` リソースによって指定された背景色でスプラッシュイメージを中心にします。 このサンプルアプリケーションでは、 **Resources/values/color .xml**ファイルにこの色を定義しています。
+この `layer-list` は、`@color/splash_background` リソースによって指定された背景色でスプラッシュイメージを中心にします。 このサンプルアプリケーションでは、 **Resources/values/colors**ファイルにこの色を定義しています。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -221,7 +221,7 @@ public class MainActivity : AppCompatActivity
 
 7. アプリをもう一度ビルドして実行します。 スプラッシュスクリーンがまだ表示されている状態で、デバイスを横モードに切り替えます。 スプラッシュスクリーンが横向きバージョンに変わります。
 
-    [スプラッシュスクリーンから横モードへの![回転](splash-screen-images/landscape-splash-sml.png)](splash-screen-images/landscape-splash.png#lightbox)
+    [スプラッシュスクリーンから横モードへの ![回転](splash-screen-images/landscape-splash-sml.png)](splash-screen-images/landscape-splash.png#lightbox)
 
 横モードのスプラッシュスクリーンを使用しても、常にシームレスなエクスペリエンスが提供されるわけではないことに注意してください。 既定では、Android は縦モードでアプリを起動し、デバイスが既に横モードになっている場合でも横モードに切り替えます。 その結果、デバイスが横モードになっているときにアプリを起動すると、デバイスは簡単に縦向きのスプラッシュスクリーンを表示し、縦から横方向のスプラッシュスクリーンへの回転をアニメーション化します。 残念ながら、スプラッシュアクティビティのフラグに `ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape` が指定されている場合でも、この初期の縦から横への移行が行われます。 この制限を回避する最善の方法は、縦モードと横モードの両方で正しくレンダリングされるスプラッシュスクリーンイメージを1つ作成することです。
 

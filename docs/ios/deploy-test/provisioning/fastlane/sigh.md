@@ -4,15 +4,15 @@ description: このドキュメントでは fastlane の sigh コマンドにつ
 ms.prod: xamarin
 ms.assetid: CD17276F-2C8C-4A46-A54C-DD532EBD5720
 ms.technology: xamarin-ios
-author: conceptdev
-ms.author: crdun
+author: davidortinau
+ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: c9b6f6c29b86ee40c2d7b04dbe6fa4ce24a745ea
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 9506d80ab10ce70938f95371a52bf28bda33d42d
+ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70762626"
+ms.lasthandoff: 10/29/2019
+ms.locfileid: "73028496"
 ---
 # <a name="fastlane-for-ios-sigh"></a>fastlane for iOS – sigh
 
@@ -64,7 +64,7 @@ fastlane produce -u your@appleid.com -a com.company.appname --skip_itc
 
 ここで `com.company.appname` はアプリのバンドル ID で、次に示すように、Xamarin.iOS アプリケーションの Info.plist ファイルで見つかります。
 
-[![](sigh-images/fastlane-image5.png "Xamarin.iOS アプリケーションの Info.plist ファイル")](sigh-images/fastlane-image5.png#lightbox)
+[![](sigh-images/fastlane-image5.png "The Info.plist file of the Xamarin.iOS application")](sigh-images/fastlane-image5.png#lightbox)
 
 一意の App ID は、逆引き DNS スタイルの文字列である必要があります。 ID が作成されたら、メモします。これは、このガイドで後ほど sigh を使用する場合に必要になります。
 
@@ -101,7 +101,7 @@ sigh ユーティリティの使用を開始するには、端末に次のコマ
 fastlane sigh
 ```
 
-既定ではこれが [App Store Distribution](~/ios/deploy-test/app-distribution/app-store-distribution/index.md) プロビジョニング プロファイルを作成します。 開発用にデバイスを設定するには、`--development` フラグ: 
+既定ではこれが [App Store Distribution](~/ios/deploy-test/app-distribution/app-store-distribution/index.md) プロビジョニング プロファイルを作成します。 開発用にデバイスを設定するには、`--development` フラグ:
 
 ```bash
 fastlane sigh --development
@@ -111,7 +111,7 @@ fastlane によって求められたら、Apple ID のユーザー名を入力�
 
 Apple ID が複数のチームに接続されている場合は、ここに表示されます。 使用するチームに対応する番号を選択します。
 
-[![](sigh-images/fastlane-image2.png "使用するチームの選択")](sigh-images/fastlane-image2.png#lightbox)
+[![](sigh-images/fastlane-image2.png "Select the team that you wish to use")](sigh-images/fastlane-image2.png#lightbox)
 
 次の方法で CLI にチーム ID を渡すこともできます。
 
@@ -127,7 +127,7 @@ fastlane sigh -l 2TU993NY9J
 
 Developer Center を参照すると、以下に示すように、新しく作成されたプロビジョニング プロファイルを表示できます。
 
-[![](sigh-images/fastlane-image10.png "新たに作成されたプロビジョニング プロファイルを表示")](sigh-images/fastlane-image10.png#lightbox)
+[![](sigh-images/fastlane-image10.png "View the newly created provisioning profile")](sigh-images/fastlane-image10.png#lightbox)
 
 既定では、sigh は現在のフォルダーにプロビジョニング プロファイルを格納します。 出力ディレクトリを変更するには、`output_path` を編集するか、次の手順を実行します。
 
