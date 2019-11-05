@@ -1,5 +1,5 @@
 ---
-title: Xamarin. フォームマップコントロール
+title: Xamarin.Forms マップコントロール
 description: マップコントロールは、マップを表示して注釈を付けるためのクロスプラットフォームビューです。 プラットフォームごとにネイティブマップコントロールを使用して、ユーザーに高速で使い慣れた maps エクスペリエンスを提供します。
 ms.prod: xamarin
 ms.assetid: 22C99029-0B16-43A6-BF58-26B48C4AED38
@@ -14,27 +14,27 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/01/2019
 ms.locfileid: "73426349"
 ---
-# <a name="xamarinforms-map-control"></a>Xamarin. フォームマップコントロール
+# <a name="xamarinforms-map-control"></a>Xamarin.Forms マップコントロール
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
 [`Map`](xref:Xamarin.Forms.Maps.Map)コントロールは、マップを表示して注釈を付けるためのクロスプラットフォームビューです。 プラットフォームごとにネイティブマップコントロールを使用して、ユーザーに高速で使い慣れた maps エクスペリエンスを提供します。
 
-[![IOS と Android でのマップコントロールのスクリーンショット](map-images/map-default.png "マップコントロール")](map-images/map-default-large.png#lightbox "マップコントロール")
+[![iOS と Android でのマップコントロールのスクリーンショット](map-images/map-default.png "マップコントロール")](map-images/map-default-large.png#lightbox "マップコントロール")
 
 [`Map`](xref:Xamarin.Forms.Maps.Map)クラスは、マップの外観と動作を制御する次のプロパティを定義します。
 
-- `bool`型の[`IsShowingUser`](xref:Xamarin.Forms.Maps.Map.IsShowingUser)は、マップにユーザーの現在の場所が表示されているかどうかを示します。
-- `IEnumerable`型の[`ItemsSource`](xref:Xamarin.Forms.Maps.Map.ItemsSource)。表示される `IEnumerable` 項目のコレクションを指定します。
-- [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)型の[`ItemTemplate`](xref:Xamarin.Forms.Maps.Map.ItemTemplate)。表示されている項目のコレクション内の各項目に適用する[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)を指定します。
-- [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)型の `ItemTemplateSelector`。実行時に項目の[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)を選択するために使用される[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)を指定します。
-- `bool`型の[`HasScrollEnabled`](xref:Xamarin.Forms.Maps.Map.HasScrollEnabled)は、マップのスクロールが許可されているかどうかを判断します。
-- `bool`型の[`HasZoomEnabled`](xref:Xamarin.Forms.Maps.Map.HasZoomEnabled)は、マップのズームを許可するかどうかを決定します。
-- `IList<MapElement>`型の `MapElements`は、多角形やポリラインなど、マップ上の要素のリストを表します。
-- [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType)型の[`MapType`](xref:Xamarin.Forms.Maps.Map.MapType)は、マップの表示スタイルを示します。
-- `bool`型の `MoveToLastRegionOnLayoutChange`、レイアウトの変更が発生したときに、表示されているマップ領域を現在の領域から以前に設定した領域に移動するかどうかを制御します。
-- `IList<Pin>`型の[`Pins`](xref:Xamarin.Forms.Maps.Map.Pins)は、マップ上のピンの一覧を表します。
-- [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan)型の[`VisibleRegion`](xref:Xamarin.Forms.Maps.Map.VisibleRegion)は、現在表示されているマップの領域を返します。
+- [`IsShowingUser`](xref:Xamarin.Forms.Maps.Map.IsShowingUser)は、`bool`型で、マップにユーザーの現在の場所が表示されているかどうかを示します。
+- [`ItemsSource`](xref:Xamarin.Forms.Maps.Map.ItemsSource)は、`IEnumerable`型で、表示される `IEnumerable` 項目のコレクションを指定します。
+- [`ItemTemplate`](xref:Xamarin.Forms.Maps.Map.ItemTemplate)は、[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)型で、表示されている項目のコレクション内の各項目に適用する[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)を指定します。
+- `ItemTemplateSelector`は、[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)型で、実行時に項目の[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)を選択するために使用される[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)を指定します。
+- [`HasScrollEnabled`](xref:Xamarin.Forms.Maps.Map.HasScrollEnabled)は、`bool`型で、マップのスクロールが許可されているかどうかを決定します。
+- [`HasZoomEnabled`](xref:Xamarin.Forms.Maps.Map.HasZoomEnabled)は、`bool`型で、マップのズームを許可されているかどうかを決定します。
+- `MapElements`は、`IList<MapElement>`型で、多角形やポリラインなど、マップ上の要素のリストを表します。
+- [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType)は、[`MapType`](xref:Xamarin.Forms.Maps.Map.MapType)型で、マップの表示スタイルを示します。
+- `MoveToLastRegionOnLayoutChange`は、`bool`型で、レイアウトの変更が発生したときに、表示されているマップ領域を現在の領域から以前に設定した領域に移動するかどうかを制御します。
+- [`Pins`](xref:Xamarin.Forms.Maps.Map.Pins)は、`IList<Pin>`型で、マップ上のピンの一覧を表します。
+- [`VisibleRegion`](xref:Xamarin.Forms.Maps.Map.VisibleRegion)は、[`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan)型で、現在表示されているマップの領域を返します。
 
 これらのプロパティは、`MapElements`、`Pins`、および `VisibleRegion` プロパティを除き、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)オブジェクトによって支えられています。これは、データバインディングのターゲットになる可能性があることを意味します。
 
@@ -54,7 +54,7 @@ ms.locfileid: "73426349"
 ```
 
 > [!NOTE]
-> 追加の `xmlns` 名前空間の定義は、Xamarin. Forms. マップコントロールを参照するために必要です。 前の例では、`Xamarin.Forms.Maps` 名前空間が `maps` キーワードを通じて参照されています。
+> 追加の `xmlns` 名前空間の定義は、Xamarin.Forms.Maps のコントロールを参照するために必要です。 前の例では、`Xamarin.Forms.Maps` 名前空間が `maps` キーワードを通じて参照されています。
 
 これに相当する C# コードを次に示します。
 
@@ -77,7 +77,7 @@ namespace WorkingWithMaps
 
 この例では、既定の[`Map`](xref:Xamarin.Forms.Maps.Map)コンストラクターを呼び出します。これにより、ローマでマップが中心になります。
 
-[![IOS と Android での既定の場所を使用したマップコントロールのスクリーンショット](map-images/map-default.png "既定の場所でのマップコントロール")](map-images/map-default-large.png#lightbox "既定の場所でのマップコントロール")
+[![iOS と Android での既定の場所を使用したマップコントロールのスクリーンショット](map-images/map-default.png "既定の場所でのマップコントロール")](map-images/map-default-large.png#lightbox "既定の場所でのマップコントロール")
 
 または、 [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan)引数を[`Map`](xref:Xamarin.Forms.Maps.Map)コンストラクターに渡して、マップが読み込まれたときの中心点とズームレベルを設定することもできます。 詳細については、「[マップに特定の場所を表示する](#display-a-specific-location-on-a-map)」を参照してください。
 
@@ -85,11 +85,11 @@ namespace WorkingWithMaps
 
 [`Map.MapType`](xref:Xamarin.Forms.Maps.Map.MapType)プロパティを[`MapType`](xref:Xamarin.Forms.Maps.MapType)列挙メンバーに設定すると、マップの表示スタイルを定義できます。 `MapType` 列挙体を使って、次のメンバーを定義できます。
 
-- `Street` は、道路地図が表示されることを指定します。
-- `Satellite` は、サテライト画像を含むマップが表示されることを指定します。
-- `Hybrid` は、番地と衛星のデータを組み合わせたマップが表示されることを指定します。
+- `Street` は、道路マップが表示されることを指定します。
+- `Satellite` は、衛星画像を含むマップが表示されることを指定します。
+- `Hybrid` は、道路と衛星のデータを組み合わせたマップが表示されることを指定します。
 
-既定では、 [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType)プロパティが定義されていない場合、 [`Map`](xref:Xamarin.Forms.Maps.Map)にはストリートマップが表示されます。 または、`MapType` プロパティを[`MapType`](xref:Xamarin.Forms.Maps.MapType)列挙型のメンバーのいずれかに設定することもできます。
+既定では、 [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType)プロパティが定義されていない場合、 [`Map`](xref:Xamarin.Forms.Maps.Map)には道路マップが表示されます。 または、`MapType` プロパティを[`MapType`](xref:Xamarin.Forms.Maps.MapType)列挙型のメンバーのいずれかに設定することもできます。
 
 ```xaml
 <maps:Map MapType="Satellite" />
@@ -106,15 +106,15 @@ Map map = new Map
 
 次のスクリーンショットは、 [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType)プロパティが `Street`に設定されている場合の[`Map`](xref:Xamarin.Forms.Maps.Map)を示しています。
 
-[![IOS と Android でのマップコントロールのスクリーンショット (ストリートマップの種類)](map-images/maptype-street.png "ストリート maptype によるマップコントロール")](map-images/maptype-street-large.png#lightbox "Map control with the street map type")
+[![iOS と Android での、道路マップの種類を使用したマップコントロールのスクリーンショット](map-images/maptype-street.png "street maptype によるマップコントロール")](map-images/maptype-street-large.png#lightbox "Map control with the street map type")
 
 次のスクリーンショットは、 [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType)プロパティが `Satellite`に設定されている場合の[`Map`](xref:Xamarin.Forms.Maps.Map)を示しています。
 
-[![IOS と Android での、衛星マップの種類を使用したマップコントロールのスクリーンショット](map-images/maptype-satellite.png "サテライト maptype を使用したマップコントロール")](map-images/maptype-satellite-large.png#lightbox "Map control with the satellite map type")
+[![iOS と Android での、衛星マップの種類を使用したマップコントロールのスクリーンショット](map-images/maptype-satellite.png "satellite maptype を使用したマップコントロール")](map-images/maptype-satellite-large.png#lightbox "Map control with the satellite map type")
 
 次のスクリーンショットは、 [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType)プロパティが `Hybrid`に設定されている場合の[`Map`](xref:Xamarin.Forms.Maps.Map)を示しています。
 
-[![IOS と Android での、ハイブリッドマップの種類を使用したマップコントロールのスクリーンショット](map-images/maptype-hybrid.png "ハイブリッド maptype によるマップコントロール")](map-images/maptype-hybrid-large.png#lightbox "Map control with the hybrid map type")
+[![iOS と Android での、ハイブリッドマップの種類を使用したマップコントロールのスクリーンショット](map-images/maptype-hybrid.png "hybrid maptype によるマップコントロール")](map-images/maptype-hybrid-large.png#lightbox "Map control with the hybrid map type")
 
 ## <a name="display-a-specific-location-on-a-map"></a>マップ上の特定の場所を表示する
 
@@ -155,7 +155,7 @@ Map map = new Map(mapSpan);
 
 ## <a name="create-a-mapspan-object"></a>MapSpan オブジェクトを作成する
 
-[`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan)オブジェクトを作成するには、いくつかの方法があります。 一般的な方法として、`MapSpan` コンストラクターに必要な引数を指定します。 これらは、 [`Position`](xref:Xamarin.Forms.Maps.Position)オブジェクトによって表される緯度と経度で、`MapSpan`によっての緯度と経度の角度を表す値 `double` ます。 [`Position`](xref:Xamarin.Forms.Maps.Position)構造体の詳細については、「[マップの位置と距離](position-distance.md)」を参照してください。
+[`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan)オブジェクトを作成するには、いくつかの方法があります。 一般的な方法として、`MapSpan` コンストラクターに必要な引数を指定します。 これらは、 [`Position`](xref:Xamarin.Forms.Maps.Position)オブジェクトによって表される緯度と経度、および `MapSpan`によっての緯度と経度の角度を表す `double` 値です。 [`Position`](xref:Xamarin.Forms.Maps.Position)構造体の詳細については、「[マップの位置と距離](position-distance.md)」を参照してください。
 
 また、新しい `MapSpan` オブジェクトを返す[`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan)クラスには、次の3つのメソッドがあります。
 
@@ -167,10 +167,10 @@ Map map = new Map(mapSpan);
 
 [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan)が作成されると、次のプロパティにアクセスしてデータを取得できます。
 
-- [`Center`](xref:Xamarin.Forms.Maps.MapSpan.Center)。 `MapSpan`の地理的な中央の[`Position`](xref:Xamarin.Forms.Maps.Position)を表します。
-- `MapSpan`によってスパンされる緯度の角度を表す[`LatitudeDegrees`](xref:Xamarin.Forms.Maps.MapSpan.LatitudeDegrees)。
-- `MapSpan`によってスパンされている経度の角度を表す[`LongitudeDegrees`](xref:Xamarin.Forms.Maps.MapSpan.LongitudeDegrees)。
-- `MapSpan` radius を表す[`Radius`](xref:Xamarin.Forms.Maps.MapSpan.Radius)。
+- [`Center`](xref:Xamarin.Forms.Maps.MapSpan.Center)は、 `MapSpan`の地理的な中央の[`Position`](xref:Xamarin.Forms.Maps.Position)を表します。
+- [`LatitudeDegrees`](xref:Xamarin.Forms.Maps.MapSpan.LatitudeDegrees)は、 `MapSpan`によってスパンされる緯度の角度を表す。
+- [`LongitudeDegrees`](xref:Xamarin.Forms.Maps.MapSpan.LongitudeDegrees)は、 `MapSpan`によってスパンされる経度の角度を表す。
+- [`Radius`](xref:Xamarin.Forms.Maps.MapSpan.Radius)は、 `MapSpan` の半径を表す。
 
 ## <a name="move-the-map"></a>マップを移動する
 
@@ -260,7 +260,7 @@ Map map = new Map
 ```
 
 > [!IMPORTANT]
-> IOS、Android、およびユニバーサル Windows プラットフォームでは、ユーザーの場所にアクセスするには、アプリケーションに対する場所のアクセス許可が付与されている必要があります。 詳細については、「[プラットフォームの構成](setup.md#platform-configuration)」を参照してください。
+> iOS、Android、およびユニバーサル Windows プラットフォームでは、ユーザーの場所にアクセスするには、アプリケーションに対する場所のアクセス許可が付与されている必要があります。 詳細については、「[プラットフォームの構成](setup.md#platform-configuration)」を参照してください。
 
 ### <a name="maintain-map-region-on-layout-change"></a>レイアウトの変更時にマップ領域を維持する
 
@@ -309,5 +309,5 @@ map.MapClicked += OnMapClicked;
 
 - [Maps サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 - [マップの位置と距離](position-distance.md)
-- [Xamarin. Forms マップのカスタマイズ](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)
-- [渡す (引数を XAML で)](~/xamarin-forms/xaml/passing-arguments.md)
+- [Xamarin.Forms マップのカスタマイズ](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)
+- [XAML での引数の受け渡し](~/xamarin-forms/xaml/passing-arguments.md)
