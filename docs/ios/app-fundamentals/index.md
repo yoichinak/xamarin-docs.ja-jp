@@ -56,7 +56,7 @@ Xamarin では、同じ System.IO クラスを使用して、任意の .NET ア�
 
 ## <a name="working-with-property-listsiosapp-fundamentalsindexmd"></a>[プロパティリストの操作](~/ios/app-fundamentals/index.md)
 
-このドキュメントでは、Visual Studio for Mac のグラフィカルおよび詳細プロパティリスト (plist) エディターについて説明します。このエディターでは、情報 plist と権利 plist を操作できます。 ここでは、iOS アプリケーションのアイコンと起動イメージを設定する方法と、Visual Studio for Mac 内部からアプリの機能 (権利) を指定する方法について説明します。
+このドキュメントでは、Visual Studio for Mac のグラフィカルおよび詳細プロパティリスト (plist) エディターについて説明します。このエディターでは、Info.plist と Entitlements.plist を操作できます。 ここでは、iOS アプリケーションのアイコンと起動イメージを設定する方法と、Visual Studio for Mac 内部からアプリの機能 (権利) を指定する方法について説明します。
 
 ## <a name="working-with-security-and-privacyiosapp-fundamentalssecurity-privacymd"></a>[セキュリティとプライバシーの使用](~/ios/app-fundamentals/security-privacy.md)
 
