@@ -5,12 +5,12 @@ ms.assetid: B3342772-FB88-4B7F-BC15-8BC78EED749E
 author: JonDouglas
 ms.author: jodou
 ms.date: 09/17/2019
-ms.openlocfilehash: df9fa43d2071d273104edafbe6b880a97afb3f96
-ms.sourcegitcommit: e354aabfb39598e0ce11115db3e6bcebb9f68338
+ms.openlocfilehash: c19c9e5bd279824ea2d3e4e9f88857388f786a2c
+ms.sourcegitcommit: b11dc46a9ba23483195e923de88cbef173730087
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72273141"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73612277"
 ---
 # <a name="android-10-with-xamarin"></a>Android 10 と Xamarin
 
@@ -24,7 +24,7 @@ Android 10 を Google から入手できるようになりました。 このリ
 
 Android 10.0 では、Android 10 がサポートされています。 Android 10 向けの Xamarin のサポートの詳細については、「 [Xamarin android 10.0 のリリースノート](https://docs.microsoft.com/xamarin/android/release-notes/10/10.0)」を参照してください。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>［要件］
 
 Xamarin ベースのアプリで Android 10 の機能を使用するには、次の一覧が必要です。
 
@@ -53,7 +53,7 @@ Android 10 アプリの開発を Xamarin Android で開始するには、初め�
 
 Xamarin を使用して Android 10 アプリをビルドする場合は、Visual Studio 2019 をお勧めします。
 
-Visual studio 2019 を使用している場合は、Visual Studio 2019 バージョン16.3 以降に更新してください (手順については、「 [Visual studio 2019 を最新のリリースに更新](https://docs.microsoft.com/visualstudio/install/update-visual-studio)する」を参照してください)。 MacOS で、Mac 8.3 以降の Visual Studio 2019 に更新します (手順については、「 [Visual studio 2019 For mac を最新のリリースに更新](https://docs.microsoft.com/en-us/visualstudio/mac/update)する」を参照してください)。
+Visual studio 2019 を使用している場合は、Visual Studio 2019 バージョン16.3 以降に更新してください (手順については、「 [Visual studio 2019 を最新のリリースに更新](https://docs.microsoft.com/visualstudio/install/update-visual-studio)する」を参照してください)。 MacOS で、Mac 8.3 以降の Visual Studio 2019 に更新します (手順については、「 [Visual studio 2019 For mac を最新のリリースに更新](https://docs.microsoft.com/visualstudio/mac/update)する」を参照してください)。
 
 ### <a name="install-the-android-sdk"></a>Android SDK のインストール
 
@@ -64,23 +64,23 @@ Xamarin Android 10.0 を使用してプロジェクトを作成するには、�
 
     ![Android SDK Manager リポジトリの選択](~/android/platform/android-10-images/sdkrepository.png)
 
-3. **[プラットフォーム]** タブで**Android SDK Platform 29**と表示されている**Android 10 SDK Platform**パッケージをインストールします (sdk Manager の使用方法の詳細については、「 [Android SDK セットアップ](https://docs.microsoft.com/en-us/xamarin/android/get-started/installation/android-sdk)」を参照してください)。
+3. **[プラットフォーム]** タブで**Android SDK Platform 29**と表示されている**Android 10 SDK Platform**パッケージをインストールします (sdk Manager の使用方法の詳細については、「 [Android SDK セットアップ](https://docs.microsoft.com/xamarin/android/get-started/installation/android-sdk)」を参照してください)。
 
     ![Android SDK Manager の [プラットフォーム] タブ](~/android/platform/android-10-images/sdkplatforms.png)
 
 ### <a name="create-a-xamarinandroid-project"></a>Xamarin Android プロジェクトを作成する
 
-新しい Xamarin. Android プロジェクトを作成します。 Xamarin を使用した Android 開発を初めて使用する場合は、「 [Hello, android](https://docs.microsoft.com/en-us/xamarin/android/get-started/hello-android/index) 」を参照して、xamarin android プロジェクトの作成について学習してください。
+新しい Xamarin. Android プロジェクトを作成します。 Xamarin を使用した Android 開発を初めて使用する場合は、「 [Hello, android](https://docs.microsoft.com/xamarin/android/get-started/hello-android/index) 」を参照して、xamarin android プロジェクトの作成について学習してください。
 
-Android プロジェクトを作成するときは、バージョン設定を Android 10.0 以降を対象とするように構成する必要があります。 たとえば、Android 10 のプロジェクトを対象にするには、プロジェクトのターゲットの Android API レベルを**android 10.0 (API 29)** に構成する必要があります。 これには、**ターゲットフレームワークバージョン**と**ターゲット Android SDK バージョン**の両方が API 29 以降に含まれます。 Android API レベルの構成の詳細については、「 [ANDROID Api レベル](https://docs.microsoft.com/en-us/xamarin/android/app-fundamentals/android-api-levels)について」を参照してください。
+Android プロジェクトを作成するときは、バージョン設定を Android 10.0 以降を対象とするように構成する必要があります。 たとえば、Android 10 のプロジェクトを対象にするには、プロジェクトのターゲットの Android API レベルを**android 10.0 (API 29)** に構成する必要があります。 これには、**ターゲットフレームワークバージョン**と**ターゲット Android SDK バージョン**の両方が API 29 以降に含まれます。 Android API レベルの構成の詳細については、「 [ANDROID Api レベル](https://docs.microsoft.com/xamarin/android/app-fundamentals/android-api-levels)について」を参照してください。
 
 ![Xamarin Android のターゲットフレームワーク](~/android/platform/android-10-images/targetframework.png)
 
 ### <a name="configure-a-device-or-emulator"></a>デバイスまたはエミュレーターを構成する
 
-ピクセルなどの物理デバイスを使用している場合は、電話の設定にある `System` @ no__t-1 @ no__t @ no__t @ no__t @ に移動して、Android 10 の更新プログラムをダウンロードできます。 デバイスをフラッシュする場合は、デバイスへの[ファクトリイメージ](https://developers.google.com/android/images)または[OTA イメージ](https://developers.google.com/android/ota)のフラッシュに関する手順を参照してください。
+ピクセルなどの物理デバイスを使用している場合は、電話の設定で `System` > `System update` > `Check for update` に移動して、Android 10 の更新プログラムをダウンロードできます。 デバイスをフラッシュする場合は、デバイスへの[ファクトリイメージ](https://developers.google.com/android/images)または[OTA イメージ](https://developers.google.com/android/ota)のフラッシュに関する手順を参照してください。
 
-エミュレーターを使用している場合は、API レベル29用の仮想デバイスを作成し、x86 ベースのイメージを選択します。 Android Device Manager を使用した仮想デバイスの作成と管理の詳細については、「 [Android Device Manager を使用した仮想デバイスの管理](https://docs.microsoft.com/en-us/xamarin/android/get-started/installation/android-emulator/device-manager)」を参照してください。 テストとデバッグに Android Emulator を使用する方法の詳細については、「 [Android Emulator でのデバッグ](https://docs.microsoft.com/en-us/xamarin/android/deploy-test/debugging/debug-on-emulator)」を参照してください。
+エミュレーターを使用している場合は、API レベル29用の仮想デバイスを作成し、x86 ベースのイメージを選択します。 Android Device Manager を使用した仮想デバイスの作成と管理の詳細については、「 [Android Device Manager を使用した仮想デバイスの管理](https://docs.microsoft.com/xamarin/android/get-started/installation/android-emulator/device-manager)」を参照してください。 テストとデバッグに Android Emulator を使用する方法の詳細については、「 [Android Emulator でのデバッグ](https://docs.microsoft.com/xamarin/android/deploy-test/debugging/debug-on-emulator)」を参照してください。
 
 ## <a name="new-features"></a>新機能
 
@@ -88,11 +88,11 @@ Android 10 では、さまざまな新機能が導入されています。 こ�
 
 ## <a name="enhance-your-app-with-android-10-features-and-apis"></a>Android 10 の機能と Api を使用してアプリを強化する
 
-次に、Android 10 について説明し、使用可能な [新しい機能と api](https://developer.android.com/preview/api-overview.html)  について説明します。 ここでは、基本的な機能をいくつか紹介します。
+次に、Android 10 について説明し、使用できる [新しい機能と api](https://developer.android.com/preview/api-overview.html) について説明します。 ここでは、基本的な機能をいくつか紹介します。
 
 すべてのアプリに対して、次の機能をお勧めします。
 
-- **ダークテーマ:**   [ダークテーマ](https://developer.android.com/preview/features/darktheme) を追加するか、 [強制濃色](https://developer.android.com/preview/features/darktheme#force_dark)を有効にすることによって、システム全体のダークテーマを有効にするユーザーに一貫したエクスペリエンスを確保します。
+- **ダークテーマ:**   [ダークテーマ](https://developer.android.com/preview/features/darktheme) を追加したり、 [強制ダーク](https://developer.android.com/preview/features/darktheme#force_dark)を有効にしたりすることにより、システム全体のダークテーマを有効にするユーザーに一貫したエクスペリエンスを提供します。
 
 ![ダーク テーマ](~/android/platform/android-10-images/darktheme.png)
 
@@ -100,17 +100,17 @@ Android 10 では、さまざまな新機能が導入されています。 こ�
 
 ![ジェスチャのナビゲーション](~/android/platform/android-10-images/gesturenavigation.png)
 
-- **Optimize for foldables:**   [foldables 用に最適化する](https://developer.android.com/preview/features/foldables)ことにより、現在の革新的なデバイス上でシームレスなエッジツーエッジのエクスペリエンスを実現します。
+- **Optimize for foldables :** を最適化することで、今日の革新的なデバイス上で、 [foldables 用](https://developer.android.com/preview/features/foldables)にシームレスなエッジツーエッジのエクスペリエンスを実現します。
 
 ![たたみ込み](~/android/platform/android-10-images/foldable.png)
 
 アプリに関連する場合は、次の機能をお勧めします。
 
-- **より対話的な通知:**   通知にメッセージが含まれている場合は、 [通知の返信とアクション](https://developer.android.com/preview/features#smart-suggestions) to 有効にすると、ユーザーの関与を促し、ユーザーがすぐにアクションを実行できるようになります。
-- **生体認証の向上:**   生体認証を使用する場合は、 [BiometricPrompt](https://developer.android.com/reference/androidx/biometric/BiometricPrompt)に移動します。これは、最新のデバイスで指紋認証をサポートするための推奨される方法です。
-- **記録の強化**キャプションやゲームプレイの記録をサポートするには、 [オーディオ再生のキャプチャ](https://developer.android.com/preview/features/playback-capture)を有効にします。 これは、より多くのユーザーにリーチし、アプリをより使いやすくするための優れた方法です。
-- **より優れたコーデック:**  メディアアプリの場合は、ビデオストリーミングには [AV1](https://en.wikipedia.org/wiki/AV1) を、高ダイナミックレンジのビデオでは [HDR10 +](https://en.wikipedia.org/wiki/High-dynamic-range_video#HDR10+) を試してください。 Speech および音楽ストリーミングの場合は、 [Opus](http://opus-codec.org/)encoding を使用できます。また、ミュージシャンでは、 [ネイティブ MIDI API](https://developer.android.com/preview/features/midi) が使用可能です。
-- **より優れたネットワーク api:**   アプリが wi-fi 経由で IoT デバイスを管理する場合は、構成、ダウンロード、印刷などの機能に対して、新しい [ネットワーク接続 api](https://developer.android.com/preview/features#peer2peer) for 試してみてください。
+- **より対話的な通知:**  通知にメッセージが含まれている場合は、 [通知の返信とアクション](https://developer.android.com/preview/features#smart-suggestions)を有効にし、ユーザーがすぐにアクションを実行できるように します。
+- **生体認証の向上:**  生体認証を使用する場合は、最新のデバイスで指紋認証をサポートするための推奨される方法として、 [BiometricPrompt](https://developer.android.com/reference/androidx/biometric/BiometricPrompt)に移動します。
+- 強化された**記録:** キャプションまたはゲームプレイの記録をサポートする 、 [オーディオ再生のキャプチャ](https://developer.android.com/preview/features/playback-capture)を有効にします。 これは、より多くのユーザーにリーチし、アプリをより使いやすくするための優れた方法です。
+- **より優れたコーデック:** メディアアプリの には、ビデオストリーミング用の [AV1](https://en.wikipedia.org/wiki/AV1) を試してみてください。高ダイナミックレンジビデオについては、 [HDR10 +](https://en.wikipedia.org/wiki/High-dynamic-range_video#HDR10+) をお試しください。 Speech および音楽ストリーミングの場合は、 [傑作](http://opus-codec.org/)encoding を使用できます。ミュージシャンでは、 [ネイティブ MIDI API](https://developer.android.com/preview/features/midi) を使用できます。
+- **ネットワーク api の向上 :** アプリが wi-fi 経由で IoT デバイスを管理している場合は、構成、ダウンロード、印刷などの機能に対して、新しい [ネットワーク接続 api](https://developer.android.com/preview/features#peer2peer) 試してみてください。
 
 これらは、Android 10 の多くの新機能と Api のほんの一部です。 すべてを表示するには、 [開発者向けの Android 10 サイト](https://developer.android.com/about/versions/10/highlights)にアクセスしてください。
 
@@ -120,8 +120,8 @@ Android 10 では、さまざまな新機能が導入されています。 こ�
 
 - Android プラットフォームでは、アプリの[安定性と互換性を確保するために、アプリで android 10 で使用できる非 SDK インターフェイスが制限されるようになりました](https://developer.android.com/about/versions/10/behavior-changes-10#non-sdk-restrictions)。
 - [共有メモリが変更されまし](https://developer.android.com/about/versions/10/behavior-changes-10#shared-memory)た。
-- [Android ランタイム &AMP; AOT の正確性](https://developer.android.com/about/versions/10/behavior-changes-10#system-only-oat)。
-- [全画面のインテントのアクセス許可は `USE_FULL_SCREEN_INTENT` を要求する必要があり](https://developer.android.com/about/versions/10/behavior-changes-10#full-screen-intents)ます。
+- [Android ランタイム & AOT の正確性](https://developer.android.com/about/versions/10/behavior-changes-10#system-only-oat)。
+- [全画面のインテントのアクセス許可は `USE_FULL_SCREEN_INTENT`を要求する必要があり](https://developer.android.com/about/versions/10/behavior-changes-10#full-screen-intents)ます。
 - [Foldables のサポート](https://developer.android.com/about/versions/10/behavior-changes-10#foldables)。
 
 ## <a name="summary"></a>まとめ
