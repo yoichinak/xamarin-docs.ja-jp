@@ -42,7 +42,7 @@ ms.locfileid: "72697849"
 
 ## <a name="detect-scrolling"></a>スクロールの検出
 
-@No__t_0 プロパティを調べて、現在[`CarouselView`](xref:Xamarin.Forms.CarouselView)が項目をスクロールしているかどうかを判断できます。
+`IsDragging` プロパティを調べて、現在[`CarouselView`](xref:Xamarin.Forms.CarouselView)が項目をスクロールしているかどうかを判断できます。
 
 さらに、 [`CarouselView`](xref:Xamarin.Forms.CarouselView)は、スクロールが発生したことを示すために発生する `Scrolled` イベントを定義します。 このイベントは、スクロールに関するデータが必要な場合に使用します。
 
@@ -79,7 +79,7 @@ void OnCarouselViewScrolled(object sender, ItemsViewScrolledEventArgs e)
 この例では、`OnCarouselViewScrolled` イベントハンドラーによって、イベントに付随する `ItemsViewScrolledEventArgs` オブジェクトの値が出力されます。
 
 > [!IMPORTANT]
-> @No__t_0 イベントは、ユーザーが開始したスクロール、およびプログラムによるスクロールのために発生します。
+> `Scrolled` イベントは、ユーザーが開始したスクロール、およびプログラムによるスクロールのために発生します。
 
 ## <a name="scroll-an-item-at-an-index-into-view"></a>インデックスにある項目をスクロールして表示する
 
@@ -90,7 +90,7 @@ carouselView.ScrollTo(6);
 ```
 
 > [!NOTE]
-> [@No__t_3](xref:Xamarin.Forms.ItemsView.ScrollTo*)メソッドが呼び出されると、 [`ScrollToRequested`](xref:Xamarin.Forms.ItemsView.ScrollToRequested)イベントが発生します。
+> [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*)メソッドが呼び出されると、 [`ScrollToRequested`](xref:Xamarin.Forms.ItemsView.ScrollToRequested)イベントが発生します。
 
 ## <a name="scroll-an-item-into-view"></a>項目をスクロールして表示する
 
@@ -103,7 +103,7 @@ carouselView.ScrollTo(monkey);
 ```
 
 > [!NOTE]
-> [@No__t_3](xref:Xamarin.Forms.ItemsView.ScrollTo*)メソッドが呼び出されると、 [`ScrollToRequested`](xref:Xamarin.Forms.ItemsView.ScrollToRequested)イベントが発生します。
+> [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*)メソッドが呼び出されると、 [`ScrollToRequested`](xref:Xamarin.Forms.ItemsView.ScrollToRequested)イベントが発生します。
 
 ## <a name="disable-scroll-animation"></a>スクロールアニメーションを無効にする
 
@@ -121,7 +121,7 @@ carouselView.ScrollTo(monkey, animate: false);
 
 ### <a name="makevisible"></a>MakeVisible
 
-[@No__t_1](xref:Xamarin.Forms.ScrollToPosition)メンバーは、ビューに表示されるまで項目をスクロールする必要があることを示します。
+[`ScrollToPosition.MakeVisible`](xref:Xamarin.Forms.ScrollToPosition)メンバーは、ビューに表示されるまで項目をスクロールする必要があることを示します。
 
 ```csharp
 carouselView.ScrollTo(monkey, position: ScrollToPosition.MakeVisible);
@@ -130,11 +130,11 @@ carouselView.ScrollTo(monkey, position: ScrollToPosition.MakeVisible);
 このコード例では、項目をスクロールして表示するために必要な最小限のスクロールが実行されます。
 
 > [!NOTE]
-> @No__t_3 メソッドを呼び出すときに `position` 引数が指定されていない場合、既定では[`ScrollToPosition.MakeVisible`](xref:Xamarin.Forms.ScrollToPosition)メンバーが使用されます。
+> `ScrollTo` メソッドを呼び出すときに `position` 引数が指定されていない場合、既定では[`ScrollToPosition.MakeVisible`](xref:Xamarin.Forms.ScrollToPosition)メンバーが使用されます。
 
 ### <a name="start"></a>[開始]
 
-[@No__t_1](xref:Xamarin.Forms.ScrollToPosition)メンバーは、項目をビューの先頭までスクロールする必要があることを示します。
+[`ScrollToPosition.Start`](xref:Xamarin.Forms.ScrollToPosition)メンバーは、項目をビューの先頭までスクロールする必要があることを示します。
 
 ```csharp
 carouselView.ScrollTo(monkey, position: ScrollToPosition.Start);
@@ -144,7 +144,7 @@ carouselView.ScrollTo(monkey, position: ScrollToPosition.Start);
 
 ### <a name="center"></a>中央揃え
 
-[@No__t_1](xref:Xamarin.Forms.ScrollToPosition)メンバーは、アイテムをビューの中央にスクロールする必要があることを示します。
+[`ScrollToPosition.Center`](xref:Xamarin.Forms.ScrollToPosition)メンバーは、アイテムをビューの中央にスクロールする必要があることを示します。
 
 ```csharp
 carouselViewView.ScrollTo(monkey, position: ScrollToPosition.Center);
@@ -154,7 +154,7 @@ carouselViewView.ScrollTo(monkey, position: ScrollToPosition.Center);
 
 ### <a name="end"></a>終了
 
-[@No__t_1](xref:Xamarin.Forms.ScrollToPosition)メンバーは、項目をビューの最後までスクロールする必要があることを示します。
+[`ScrollToPosition.End`](xref:Xamarin.Forms.ScrollToPosition)メンバーは、項目をビューの最後までスクロールする必要があることを示します。
 
 ```csharp
 carouselViewView.ScrollTo(monkey, position: ScrollToPosition.End);
@@ -209,7 +209,7 @@ CarouselView carouselView = new CarouselView
 
 ### <a name="snap-points-type"></a>スナップポイントの種類
 
-[@No__t_1](xref:Xamarin.Forms.SnapPointsType)列挙体は、次のメンバーを定義します。
+[`SnapPointsType`列挙体は、次のメンバーを定義します。
 
 - `None` は、スクロールが項目にスナップされないことを示します。
 - `Mandatory` は、コンテンツが常に最も近いスナップポイントにスナップポイントにスナップし、慣性の方向に沿ってスクロールが自然に停止することを示します。
@@ -219,10 +219,10 @@ CarouselView carouselView = new CarouselView
 
 ### <a name="snap-points-alignment"></a>スナップポイントの配置
 
-[@No__t_1](xref:Xamarin.Forms.SnapPointsAlignment)列挙体は、`Start`、`Center`、および `End` のメンバーを定義します。
+[`SnapPointsAlignment`](xref:Xamarin.Forms.SnapPointsAlignment)列挙体は、`Start`、`Center`、および `End` のメンバーを定義します。
 
 > [!IMPORTANT]
-> [@No__t_1](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment)プロパティの値は、 [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType)プロパティが `Mandatory` または `MandatorySingle` に設定されている場合にのみ尊重されます。
+> [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment)プロパティの値は、 [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType)プロパティが `Mandatory` または `MandatorySingle` に設定されている場合にのみ尊重されます。
 
 #### <a name="start"></a>[開始]
 
@@ -258,7 +258,7 @@ CarouselView carouselView = new CarouselView
 
 #### <a name="center"></a>中央揃え
 
-@No__t_0 メンバーは、スナップポイントが項目の中央に配置されていることを示します。
+`SnapPointsAlignment.Center` メンバーは、スナップポイントが項目の中央に配置されていることを示します。
 
 既定では、 [`CarouselView`](xref:Xamarin.Forms.CarouselView)の[`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment)プロパティは `Center` に設定されます。 ただし、完全を期すために、この列挙型のメンバーを設定する方法を次の XAML の例に示します。
 

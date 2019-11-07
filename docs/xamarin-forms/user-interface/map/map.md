@@ -85,11 +85,11 @@ namespace WorkingWithMaps
 
 [`Map.MapType`](xref:Xamarin.Forms.Maps.Map.MapType)プロパティを[`MapType`](xref:Xamarin.Forms.Maps.MapType)列挙メンバーに設定すると、マップの表示スタイルを定義できます。 `MapType` 列挙体を使って、次のメンバーを定義できます。
 
-- `Street` は、道路地図が表示されることを指定します。
-- `Satellite` は、サテライト画像を含むマップが表示されることを指定します。
-- `Hybrid` は、番地と衛星のデータを組み合わせたマップが表示されることを指定します。
+- `Street` は、道路マップが表示されることを指定します。
+- `Satellite` は、衛星画像を含むマップが表示されることを指定します。
+- `Hybrid` は、道路と衛星のデータを組み合わせたマップが表示されることを指定します。
 
-既定では、 [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType)プロパティが定義されていない場合、 [`Map`](xref:Xamarin.Forms.Maps.Map)にはストリートマップが表示されます。 または、`MapType` プロパティを[`MapType`](xref:Xamarin.Forms.Maps.MapType)列挙型のメンバーのいずれかに設定することもできます。
+既定では、 [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType)プロパティが定義されていない場合、 [`Map`](xref:Xamarin.Forms.Maps.Map)にはストリートマップが表示されます。 または、`MapType` プロパティを[`MapType`](xref:Xamarin.Forms.Maps.MapType) 列挙型のメンバーのいずれかに設定することもできます。
 
 ```xaml
 <maps:Map MapType="Satellite" />
@@ -260,7 +260,7 @@ Map map = new Map
 ```
 
 > [!IMPORTANT]
-> IOS、Android、およびユニバーサル Windows プラットフォームでは、ユーザーの場所にアクセスするには、アプリケーションに対する場所のアクセス許可が付与されている必要があります。 詳細については、「[プラットフォームの構成](setup.md#platform-configuration)」を参照してください。
+> iOS、Android、およびユニバーサル Windows プラットフォームでは、ユーザーの場所にアクセスするには、アプリケーションに対する場所のアクセス許可が付与されている必要があります。 詳細については、「[プラットフォームの構成](setup.md#platform-configuration)」を参照してください。
 
 ### <a name="maintain-map-region-on-layout-change"></a>レイアウトの変更時にマップ領域を維持する
 
@@ -309,5 +309,5 @@ map.MapClicked += OnMapClicked;
 
 - [Maps サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 - [マップの位置と距離](position-distance.md)
-- [Xamarin. Forms マップのカスタマイズ](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)
-- [渡す (引数を XAML で)](~/xamarin-forms/xaml/passing-arguments.md)
+- [Xamarin.Forms マップのカスタマイズ](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)
+- [XAML での引数の受け渡し](~/xamarin-forms/xaml/passing-arguments.md)

@@ -17,7 +17,7 @@ ms.locfileid: "73015539"
 
 _この記事では、Android や Windows Phone Os などの iOS 以外のデバイスでコードを共有するクロスプラットフォームアプリケーションで、新しい iOS Unified API ネイティブ型 (nint、nuint、nint) を使用する方法について説明します。_
 
-64型のネイティブ型は、iOS および Mac Api と連携して動作します。 Android または Windows で実行される共有コードを記述する場合は、統合型を共有できる通常の .NET 型に変換することを管理する必要があります。
+64型のネイティブ型は、iOS および Mac API と連携して動作します。 Android または Windows で実行される共有コードを記述する場合は、統合型を共有できる通常の .NET 型に変換することを管理する必要があります。
 
 このドキュメントでは、共有/共通コードから Unified API と相互運用するさまざまな方法について説明します。
 
@@ -231,11 +231,11 @@ Console.WriteLine ("Rectangle Area: {0}", Transformations.CalculateArea ((Rectan
 次に示すのは、Unified API アプリケーションと共有されるクロスプラットフォームの Ui に対して Xamarin. Forms を使用する場合です。
 
 - ソリューション全体で、1.3.1 NuGet パッケージのバージョン (またはそれ以降) を使用している必要があります。
-- すべての Xamarin のカスタムレンダリングでは、UI コードの共有 (共有プロジェクトまたは PCL) に基づいて、上記と同じ種類のソリューションを使用します。
+- すべての Xamarin.iOS のカスタムレンダリングでは、UI コードの共有 (共有プロジェクトまたは PCL) に基づいて、上記と同じ種類のソリューションを使用します。
 
 標準的なクロスプラットフォームアプリケーションと同様に、既存の32ビットデータ型は、ほとんどの状況において、すべての共有のクロスプラットフォームコードで使用する必要があります。 新しいネイティブデータ型は、アーキテクチャ対応型のサポートが必要な場合に、Mac または iOS API の呼び出しを行うときにのみ使用してください。
 
-詳細については、[既存の Xamarin. Forms アプリの更新](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)に関するドキュメントを参照してください。
+詳細については、[既存の Xamarin.Forms アプリの更新](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)に関するドキュメントを参照してください。
 
 ## <a name="summary"></a>まとめ
 
