@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/11/2018
-ms.openlocfilehash: 516d8ebfd8e0dabbdbba9737ae8b35627c649380
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 103720c8cb47b1ac4cfe5cfadeb6b18828318ad3
+ms.sourcegitcommit: 5a23c66f81853884480aca666d649a56d68c01cb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73027757"
+ms.lasthandoff: 11/05/2019
+ms.locfileid: "73618543"
 ---
 # <a name="binding-an-aar"></a>.AAR のバインド
 
@@ -31,7 +31,7 @@ _このチュートリアルでは、Android から Xamarin Android Java バイ�
 このガイドでは、1つのにバインドライブラリを作成する方法の基本について説明します。AAR ファイル。 一般的な Java ライブラリバインディングの概要 (基本的なコード例を含む) については、「 [Java ライブラリのバインド](~/android/platform/binding-java-library/index.md)」を参照してください。
 
 > [!IMPORTANT]
-> バインドプロジェクトに含めることができるのは1つだけです。AAR ファイル。 の場合は。他のに依存関係を AAR します。AAR、これらの依存関係は、独自のバインドプロジェクトに含めてから参照する必要があります。 [バグ 44573](https://bugzilla.xamarin.com/show_bug.cgi?id=44573)を参照してください。
+> バインドプロジェクトに含めることができるのは1つだけです。AAR ファイル。 の場合は。AAR は、他のに依存します。AAR、これらの依存関係は、独自のバインドプロジェクトに含めてから参照する必要があります。 [バグ 44573](https://bugzilla.xamarin.com/show_bug.cgi?id=44573)を参照してください。
 
 ## <a name="walkthrough"></a>チュートリアル
 
@@ -68,7 +68,7 @@ public class TextCounter
 
 さらに、このサンプルアプリは、 **textanalyzer. aar**にパッケージ化されているイメージリソースを取得して表示します。
 
-[Xamarin のサルの画像を![](binding-an-aar-images/00-monkey-sml.png)](binding-an-aar-images/00-monkey.png#lightbox)
+[Xamarin のサルの画像を ![](binding-an-aar-images/00-monkey-sml.png)](binding-an-aar-images/00-monkey.png#lightbox)
 
 このイメージリソースは、 **aar**の**res/描画/サル .png**に置かれています。
 
@@ -78,7 +78,7 @@ public class TextCounter
 
 1. Android バインドライブラリテンプレートを使用して、新しいバインドライブラリプロジェクトを作成します。 Visual Studio for Mac または Visual Studio のいずれかを使用できます (以下のスクリーンショットは Visual Studio を示していますが、Visual Studio for Mac はよく似ています)。 ソリューションに**AarBinding**という名前を指定します。
 
-    [AarBindings プロジェクトを作成![には](binding-an-aar-images/01-new-bindings-library-vs-sml.w160.png)](binding-an-aar-images/01-new-bindings-library-vs.w160.png#lightbox)
+    [AarBindings プロジェクトを作成 ![には](binding-an-aar-images/01-new-bindings-library-vs-sml.w160.png)](binding-an-aar-images/01-new-bindings-library-vs.w160.png#lightbox)
 
 2. テンプレートには、を追加する**jar**フォルダーが含まれています。AAR (s) をバインドライブラリプロジェクトに対して行います。 **[Jar]** フォルダーを右クリックし、 **[既存の項目の追加 >]** を選択します。
 
@@ -86,21 +86,21 @@ public class TextCounter
 
 3. 先ほどダウンロードした**aar**ファイルに移動して選択し、 **[追加]** をクリックします。
 
-    [textanalayzer を追加![には、aar を追加します。](binding-an-aar-images/03-select-aar-file-vs-sml.png)](binding-an-aar-images/03-select-aar-file-vs.png#lightbox)
+    [textanalayzer を追加 ![には、aar を追加します。](binding-an-aar-images/03-select-aar-file-vs-sml.png)](binding-an-aar-images/03-select-aar-file-vs.png#lightbox)
 
 4. **Aar**ファイルがプロジェクトに正常に追加されたことを確認します。
 
-    [aar ファイルが追加された![](binding-an-aar-images/04-aar-added-vs-sml.png)](binding-an-aar-images/04-aar-added-vs.png#lightbox)
+    [aar ファイルが追加された ![](binding-an-aar-images/04-aar-added-vs-sml.png)](binding-an-aar-images/04-aar-added-vs.png#lightbox)
 
 5. **Aar**のビルドアクションを `LibraryProjectZip`に設定します。 Visual Studio for Mac で、 **aar**を右クリックして、ビルドアクションを設定します。 Visual Studio では、 **[プロパティ]** ペインでビルドアクションを設定できます)。
 
-    [aar ビルドアクションを LibraryProjectZip に設定![](binding-an-aar-images/05-embedded-aar-vs-sml.png)](binding-an-aar-images/05-embedded-aar-vs.png#lightbox)
+    [aar ビルドアクションを LibraryProjectZip に設定 ![](binding-an-aar-images/05-embedded-aar-vs-sml.png)](binding-an-aar-images/05-embedded-aar-vs.png#lightbox)
 
 6. プロジェクトのプロパティを開いて、*ターゲットフレームワーク*を構成します。 の場合は。AAR は、任意の Android Api を使用して、ターゲットフレームワークをに設定されている API レベルに設定します。AAR が必要です。 (ターゲットフレームワークの設定と、一般的な Android API レベルの詳細については、「 [ANDROID Api レベル](~/android/app-fundamentals/android-api-levels.md)について」を参照してください)。
 
     バインドライブラリのターゲット API レベルを設定します。 この例では、 **textanalyzer**が Android api に依存していないため、最新のプラットフォーム api レベル (api レベル 23) を自由に使用できます。
 
-    [ターゲットレベルを API 23 に設定![](binding-an-aar-images/06-set-target-framework-vs-sml.png)](binding-an-aar-images/06-set-target-framework-vs.png#lightbox)
+    [ターゲットレベルを API 23 に設定 ![](binding-an-aar-images/06-set-target-framework-vs-sml.png)](binding-an-aar-images/06-set-target-framework-vs.png#lightbox)
 
 7. バインドライブラリをビルドします。 バインドライブラリプロジェクトが正常にビルドされ、出力が生成されます。次の場所にある DLL: **AarBinding/bin/Debug/AarBinding**
 
@@ -110,7 +110,7 @@ public class TextCounter
 
 1. このチュートリアルを簡略化するために、このアプリをバインドライブラリと同じソリューションに作成しています。 (バインディングライブラリを使用するアプリケーションは、別のソリューションにも存在する可能性があります)。新しい Xamarin Android アプリを作成します。ソリューションを右クリックし、 **[新しいプロジェクトの追加]** を選択します。 新しいプロジェクトに**Bindingtest**という名前を指定します。
 
-    [新しい BindingTest プロジェクトを作成![には](binding-an-aar-images/07-add-new-project-vs-sml.w157.png)](binding-an-aar-images/07-add-new-project-vs.w157.png#lightbox)
+    [新しい BindingTest プロジェクトを作成 ![には](binding-an-aar-images/07-add-new-project-vs-sml.w157.png)](binding-an-aar-images/07-add-new-project-vs.w157.png#lightbox)
 
 2. **Bindingtest**プロジェクトの **[参照]** ノードを右クリックし、 **[参照の追加]** を選択します。
 
@@ -118,7 +118,7 @@ public class TextCounter
 
 3. 前の手順で作成した**AarBinding**プロジェクトを選択し、[ **OK]** をクリックします。
 
-    [AAR binding プロジェクトを確認![には](binding-an-aar-images/09-choose-aar-binding-vs-sml.png)](binding-an-aar-images/09-choose-aar-binding-vs.png#lightbox)
+    [AAR binding プロジェクトを確認 ![には](binding-an-aar-images/09-choose-aar-binding-vs-sml.png)](binding-an-aar-images/09-choose-aar-binding-vs.png#lightbox)
 
 4. **Bindingtest**プロジェクトの **[参照設定]** ノードを開き、 **AarBinding**参照が存在することを確認します。
 
@@ -126,7 +126,7 @@ public class TextCounter
 
 バインドライブラリプロジェクトの内容を表示するには、参照をダブルクリックして、**オブジェクトブラウザー**で開きます。 (Java `com.xamarin.textanalyzezr` パッケージからマップされた) `Com.Xamarin.Textcounter` 名前空間のマップされた内容を確認し、`TextCounter` クラスのメンバーを表示できます。
 
-[オブジェクトブラウザーを表示![には](binding-an-aar-images/11-object-browser-vs-sml.png)](binding-an-aar-images/11-object-browser-vs.png#lightbox)
+[オブジェクトブラウザーを表示 ![には](binding-an-aar-images/11-object-browser-vs-sml.png)](binding-an-aar-images/11-object-browser-vs.png#lightbox)
 
 上のスクリーンショットは、サンプルアプリが呼び出す2つの `TextAnalyzer` メソッドを強調表示しています。 `NumConsonants` (基になる Java `numConsonants` メソッドをラップする) と `NumVowels` (基になる Java `numVowels` メソッドをラップする) です。
 

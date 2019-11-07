@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2019
-ms.openlocfilehash: 5afdaa9afa4c5ced39498a1cb45de07fe4bf4195
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.openlocfilehash: c8d01846c9b860982cee74390dab85c7473ee141
+ms.sourcegitcommit: 283810340de5310f63ef7c3e4b266fe9dc2ffcaf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72696707"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73662325"
 ---
 # <a name="xamarinforms-collectionview-data"></a>CollectionView データ
 
@@ -32,7 +32,7 @@ ms.locfileid: "72696707"
 
 ## <a name="populate-a-collectionview-with-data"></a>CollectionView にデータを設定する
 
-[@No__t_1](xref:Xamarin.Forms.CollectionView)には、 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)プロパティを `IEnumerable` を実装する任意のコレクションに設定することによってデータが設定されます。 項目は、文字列の配列から `ItemsSource` プロパティを初期化することによって、XAML で追加できます。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)には、 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)プロパティを `IEnumerable`を実装する任意のコレクションに設定することによってデータが設定されます。 項目は、文字列の配列から `ItemsSource` プロパティを初期化することによって、XAML で追加できます。
 
 ```xaml
 <CollectionView>
@@ -69,14 +69,17 @@ collectionView.ItemsSource = new string[]
 };
 ```
 
-> [!IMPORTANT]
-> 基になるコレクションで項目が追加、削除、または変更されたときに、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)を更新する必要がある場合、基になるコレクションは、`ObservableCollection` などのプロパティ変更通知を送信する `IEnumerable` コレクションである必要があります。
+> [!WARNING]
+> [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)が UI スレッドから更新された場合、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)は例外をスローします。
 
 既定では、次のスクリーンショットに示すように、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)の項目が縦の一覧に表示されます。
 
 [![IOS と Android のテキスト項目を含む CollectionView のスクリーンショット](populate-data-images/text.png "CollectionView のテキスト項目")](populate-data-images/text-large.png#lightbox "CollectionView のテキスト項目")
 
-[@No__t_1](xref:Xamarin.Forms.CollectionView)レイアウトを変更する方法の詳細については、「 [Xamarin CollectionView layout](layout.md)」を参照してください。 @No__t_0 内の各項目の外観を定義する方法の詳細については、「[項目の外観を定義](#define-item-appearance)する」を参照してください。
+> [!IMPORTANT]
+> 基になるコレクションで項目が追加、削除、または変更されたときに、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)を更新する必要がある場合、基になるコレクションは、`ObservableCollection` などのプロパティ変更通知を送信する `IEnumerable` コレクションである必要があります。
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)レイアウトを変更する方法の詳細については、「 [Xamarin CollectionView layout](layout.md)」を参照してください。 `CollectionView`内の各項目の外観を定義する方法の詳細については、「[項目の外観を定義](#define-item-appearance)する」を参照してください。
 
 ### <a name="data-binding"></a>データ バインディング
 
@@ -102,7 +105,7 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 
 ## <a name="define-item-appearance"></a>項目の外観を定義する
 
-[@No__t_1](xref:Xamarin.Forms.CollectionView)内の各項目の外観は、 [`CollectionView.ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)プロパティを[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)に設定することによって定義できます。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)内の各項目の外観は、 [`CollectionView.ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)プロパティを[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)に設定することによって定義できます。
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
@@ -170,7 +173,7 @@ collectionView.ItemTemplate = new DataTemplate(() =>
 });
 ```
 
-[@No__t_1](xref:Xamarin.Forms.DataTemplate)で指定された要素は、リスト内の各項目の外観を定義します。 この例では、`DataTemplate` 内のレイアウトは[`Grid`](xref:Xamarin.Forms.Grid)によって管理されています。 @No__t_0 には、 [`Image`](xref:Xamarin.Forms.Image)オブジェクトと、すべて `Monkey` クラスのプロパティにバインドされる2つの[`Label`](xref:Xamarin.Forms.Label)オブジェクトが含まれています。
+[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)で指定された要素は、リスト内の各項目の外観を定義します。 この例では、`DataTemplate` 内のレイアウトは[`Grid`](xref:Xamarin.Forms.Grid)によって管理されています。 `Grid` には、 [`Image`](xref:Xamarin.Forms.Image)オブジェクトと、すべて `Monkey` クラスのプロパティにバインドされる2つの[`Label`](xref:Xamarin.Forms.Label)オブジェクトが含まれています。
 
 ```csharp
 public class Monkey
@@ -190,7 +193,7 @@ public class Monkey
 
 ## <a name="choose-item-appearance-at-runtime"></a>実行時に項目の外観を選択する
 
-[@No__t_1](xref:Xamarin.Forms.CollectionView)内の各項目の外観は、項目の値に基づいて実行時に選択できます。そのためには、 [`CollectionView.ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)プロパティを[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)オブジェクトに設定します。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)内の各項目の外観は、項目の値に基づいて実行時に選択できます。そのためには、 [`CollectionView.ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)プロパティを[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)オブジェクトに設定します。
 
 ```xaml
 <ContentPage ...
@@ -224,7 +227,7 @@ CollectionView collectionView = new CollectionView
 collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
 
-[@No__t_1](xref:Xamarin.Forms.ItemsView.ItemTemplate)プロパティは `MonkeyDataTemplateSelector` オブジェクトに設定されます。 次の例は、`MonkeyDataTemplateSelector` クラスを示しています。
+[`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)プロパティは `MonkeyDataTemplateSelector` オブジェクトに設定されます。 次の例は、`MonkeyDataTemplateSelector` クラスを示しています。
 
 ```csharp
 public class MonkeyDataTemplateSelector : DataTemplateSelector
@@ -239,18 +242,18 @@ public class MonkeyDataTemplateSelector : DataTemplateSelector
 }
 ```
 
-@No__t_0 クラスは、さまざまなデータテンプレートに設定されている[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)プロパティの `AmericanMonkey` と `OtherMonkey` を定義します。 @No__t_0 のオーバーライドは、`AmericanMonkey` テンプレートを返します。これにより、サル名に "America" が含まれている場合に、サルの名前と場所が青緑で表示されます。 サル名に "America" が含まれていない場合、`OnSelectTemplate` のオーバーライドは `OtherMonkey` テンプレートを返します。このテンプレートには、銀のサルの名前と場所が表示されます。
+`MonkeyDataTemplateSelector` クラスは、さまざまなデータテンプレートに設定されている[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)プロパティの `AmericanMonkey` と `OtherMonkey` を定義します。 `OnSelectTemplate` のオーバーライドは、`AmericanMonkey` テンプレートを返します。これにより、サル名に "America" が含まれている場合に、サルの名前と場所が青緑で表示されます。 サル名に "America" が含まれていない場合、`OnSelectTemplate` のオーバーライドは `OtherMonkey` テンプレートを返します。このテンプレートには、銀のサルの名前と場所が表示されます。
 
 [![IOS と Android での CollectionView runtime item テンプレートの選択のスクリーンショット](populate-data-images/datatemplateselector.png "CollectionView でのランタイム項目テンプレートの選択")](populate-data-images/datatemplateselector-large.png#lightbox "CollectionView でのランタイム項目テンプレートの選択")
 
 データテンプレートセレクターの詳細については、「 [DataTemplateSelector を作成する](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)」を参照してください。
 
 > [!IMPORTANT]
-> [@No__t_1](xref:Xamarin.Forms.CollectionView)を使用する場合は、 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)オブジェクトのルート要素を `ViewCell` に設定しないでください。 これにより、`CollectionView` にセルの概念がないため、例外がスローされます。
+> [`CollectionView`](xref:Xamarin.Forms.CollectionView)を使用する場合は、 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)オブジェクトのルート要素を `ViewCell`に設定しないでください。 これにより、`CollectionView` にセルの概念がないため、例外がスローされます。
 
 ## <a name="pull-to-refresh"></a>プルして更新
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)では、`RefreshView` を通じてプルを更新する機能がサポートされています。これにより、表示されているデータを、項目の一覧を取得して更新できます。 @No__t_0 は、子がスクロール可能なコンテンツをサポートしていれば、その子に対してプルを行う機能を提供するコンテナーコントロールです。 そのため、`RefreshView` の子として設定することにより、`CollectionView` の pull to refresh が実装されます。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)では、`RefreshView` を通じてプルを更新する機能がサポートされています。これにより、表示されているデータを、項目の一覧を取得して更新できます。 `RefreshView` は、子がスクロール可能なコンテンツをサポートしていれば、その子に対してプルを行う機能を提供するコンテナーコントロールです。 そのため、`RefreshView` の子として設定することにより、`CollectionView` の pull to refresh が実装されます。
 
 ```xaml
 <RefreshView IsRefreshing="{Binding IsRefreshing}"
@@ -283,9 +286,9 @@ refreshView.Content = collectionView;
 
 [![IOS と Android での CollectionView のプルから更新のスクリーンショット](populate-data-images/pull-to-refresh.png "CollectionView のプルから更新")](populate-data-images/pull-to-refresh-large.png#lightbox "CollectionView のプルから更新")
 
-@No__t_0 プロパティの値は、`RefreshView` の現在の状態を示します。 ユーザーによって更新がトリガーされると、このプロパティは自動的に `true` に移行します。 更新が完了したら、プロパティを `false` にリセットする必要があります。
+`RefreshView.IsRefreshing` プロパティの値は、`RefreshView`の現在の状態を示します。 ユーザーによって更新がトリガーされると、このプロパティは自動的に `true` に移行します。 更新が完了したら、プロパティを `false` にリセットする必要があります。
 
-@No__t_0 の詳細については、「 [Xamarin. フォーム RefreshView](~/xamarin-forms/user-interface/refreshview.md)」を参照してください。
+`RefreshView`の詳細については、「 [Xamarin. フォーム RefreshView](~/xamarin-forms/user-interface/refreshview.md)」を参照してください。
 
 ## <a name="load-data-incrementally"></a>データを増分読み込み
 
@@ -299,7 +302,7 @@ refreshView.Content = collectionView;
 
 また、 [`CollectionView`](xref:Xamarin.Forms.CollectionView) `RemainingItemsThreshold` 項目が表示されていない場合に `CollectionView` がスクロールされたときに発生する `RemainingItemsThresholdReached` イベントも定義します。 このイベントを処理して、さらに多くの項目を読み込むことができます。 さらに、`RemainingItemsThresholdReached` イベントが発生すると、`RemainingItemsThresholdReachedCommand` が実行され、増分データの読み込みがビューモデルで行われるようになります。
 
-@No__t_0 プロパティの既定値は-1 です。これは、`RemainingItemsThresholdReached` イベントが発生しないことを示します。 プロパティ値が0の場合、 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)の最後の項目が表示されるときに `RemainingItemsThresholdReached` イベントが発生します。 0より大きい値の場合、`ItemsSource` にまだスクロールされていない項目の数が含まれていると、`RemainingItemsThresholdReached` イベントが発生します。
+`RemainingItemsThreshold` プロパティの既定値は-1 です。これは、`RemainingItemsThresholdReached` イベントが発生しないことを示します。 プロパティ値が0の場合、 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)の最後の項目が表示されるときに `RemainingItemsThresholdReached` イベントが発生します。 0より大きい値の場合、`ItemsSource` にまだスクロールされていない項目の数が含まれていると、`RemainingItemsThresholdReached` イベントが発生します。
 
 > [!NOTE]
 > [`CollectionView`](xref:Xamarin.Forms.CollectionView)は `RemainingItemsThreshold` プロパティを検証して、その値が常に-1 以上になるようにします。
