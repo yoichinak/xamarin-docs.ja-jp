@@ -23,15 +23,15 @@ ms.locfileid: "72810485"
 `Polygon` 要素と `Polyline` 要素を使用すると、マップ上の特定の領域を強調表示できます。 @No__t_0 は、ストロークと塗りつぶしの色を持つ、完全に囲まれた図形です。 @No__t_0 は、領域を完全に囲む線ではありません。
 
 > [!NOTE]
-> @No__t_0 と `Polyline` の例については、サンプルプロジェクトの**PolygonsPage**を参照してください。
+> `Polygon` と `Polyline` の例については、サンプルプロジェクトの**PolygonsPage**を参照してください。
 
-@No__t_0 クラスと `Polyline` クラスは `MapElement` から派生し、次の[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)プロパティを公開します。
+`Polygon` クラスと `Polyline` クラスは `MapElement` から派生し、次の[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)プロパティを公開します。
 
 - `StrokeColor` は、線の色を決定する `Color` のプロパティです。
 - `StrokeWidth` は、線の幅を決定する `float` のプロパティです。
 - `Geopath` は `Polygon` と `Polyline` の両方で定義され、図形のポイントを指定する[`Position`](xref:Xamarin.Forms.Maps.Position)オブジェクトの一覧です。
 
-@No__t_0 クラスは、追加のプロパティを定義します。
+`Polygon` クラスは、追加のプロパティを定義します。
 
 - `FillColor` は、多角形の背景色を決定する `Color` プロパティです。
 

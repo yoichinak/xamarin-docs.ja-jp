@@ -37,7 +37,7 @@ ms.locfileid: "72749821"
 
 これらのプロパティは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)のオブジェクトによってサポートされています。これは、プロパティをデータバインディングのターゲットにできることを意味します。 スナップポイントの詳細については、「 [CollectionView スクロール](scrolling.md)ガイド」の「[スナップポイント](scrolling.md#snap-points)」を参照してください。
 
-[@No__t_1](xref:Xamarin.Forms.ItemsLayoutOrientation)列挙体は、次のメンバーを定義します。
+[`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)列挙体は、次のメンバーを定義します。
 
 - `Vertical` は、項目が追加されると、 [`CarouselView`](xref:Xamarin.Forms.CarouselView)が垂直方向に拡張されることを示します。
 - `Horizontal` は、項目が追加されると、 [`CarouselView`](xref:Xamarin.Forms.CarouselView)が横方向に拡張されることを示します。
@@ -216,13 +216,13 @@ CarouselView carouselView = new CarouselView
 この例では、現在の項目の各辺に1つの隣接する項目が表示されます。
 
 > [!NOTE]
-> @No__t_0 プロパティを設定しても、`PeekAreaInsets` の値は適用されます。
+> `NumberOfSideItems` プロパティを設定しても、`PeekAreaInsets` の値は適用されます。
 
 ## <a name="item-spacing"></a>項目の間隔
 
 既定では、 [`CarouselView`](xref:Xamarin.Forms.CarouselView)内の各項目には、その周囲に空の領域がありません。 この動作は、`CarouselView` によって使用される項目のレイアウトのプロパティを設定することによって変更できます。
 
-[@No__t_1](xref:Xamarin.Forms.CarouselView)が[`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)プロパティを `LinearItemsLayout` オブジェクトに設定する場合、`LinearItemsLayout.ItemSpacing` プロパティは、各項目の周囲の空白を表す `double` 値に設定できます。
+[`CarouselView`](xref:Xamarin.Forms.CarouselView)が[`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)プロパティを `LinearItemsLayout` オブジェクトに設定する場合、`LinearItemsLayout.ItemSpacing` プロパティは、各項目の周囲の空白を表す `double` 値に設定できます。
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}">
@@ -266,7 +266,7 @@ void OnImageTapped(object sender, EventArgs e)
 }
 ```
 
-@No__t_0 イベントハンドラーは、タップされる[`Image`](xref:Xamarin.Forms.Image)オブジェクトに応答して実行され、イメージ (およびその親フレーム) のサイズを変更して、より簡単に表示できるようにします。
+`OnImageTapped` イベントハンドラーは、タップされる[`Image`](xref:Xamarin.Forms.Image)オブジェクトに応答して実行され、イメージ (およびその親フレーム) のサイズを変更して、より簡単に表示できるようにします。
 
 ## <a name="right-to-left-layout"></a>右から左へのレイアウト
 
