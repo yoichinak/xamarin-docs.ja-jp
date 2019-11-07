@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2019
-ms.openlocfilehash: 274a2a99445a77a2b8c1f68e823c753bc16b673a
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.openlocfilehash: 871d7cad6c57cd34757ae992ce14d5f686935584
+ms.sourcegitcommit: 283810340de5310f63ef7c3e4b266fe9dc2ffcaf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72696671"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73662307"
 ---
 # <a name="xamarinforms-collectionview-introduction"></a>CollectionView の概要
 
@@ -29,14 +29,15 @@ ms.locfileid: "72696671"
 
 ## <a name="collectionview-and-listview-differences"></a>CollectionView と ListView の相違点
 
-[@No__t_1](xref:Xamarin.Forms.CollectionView) api と[`ListView`](xref:Xamarin.Forms.ListView) api は似ていますが、いくつかの重要な違いがあります。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) api と[`ListView`](xref:Xamarin.Forms.ListView) api は似ていますが、いくつかの重要な違いがあります。
 
 - [`CollectionView`](xref:Xamarin.Forms.CollectionView)には、データを垂直方向または水平方向にリストまたはグリッドで表示できる柔軟なレイアウトモデルがあります。
 - [`CollectionView`](xref:Xamarin.Forms.CollectionView)は、単一選択と複数選択をサポートします。
 - [`CollectionView`](xref:Xamarin.Forms.CollectionView)には、セルの概念がありません。 代わりに、データテンプレートを使用して、リスト内の各データ項目の外観を定義します。
 - [`CollectionView`](xref:Xamarin.Forms.CollectionView)は、基になるネイティブコントロールによって提供される仮想化を自動的に利用します。
-- [`CollectionView`](xref:Xamarin.Forms.CollectionView)により、 [`ListView`](xref:Xamarin.Forms.ListView)の API サーフェイスが減少します。 [@No__t_1](xref:Xamarin.Forms.ListView)からの多くのプロパティとイベントは、`CollectionView` には存在しません。
+- [`CollectionView`](xref:Xamarin.Forms.CollectionView)により、 [`ListView`](xref:Xamarin.Forms.ListView)の API サーフェイスが減少します。 [`ListView`](xref:Xamarin.Forms.ListView)からの多くのプロパティとイベントは、`CollectionView`には存在しません。
 - [`CollectionView`](xref:Xamarin.Forms.CollectionView)には、組み込みの区切り記号は含まれません。
+- [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)が UI スレッドから更新された場合、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)は例外をスローします。
 
 ## <a name="move-from-listview-to-collectionview"></a>ListView から CollectionView への移動
 
@@ -44,12 +45,12 @@ ms.locfileid: "72696671"
 
 | 概念 | ListView API | CollectionView |
 |---|---|---|
-| データ | `ItemsSource` | [@No__t_1](xref:Xamarin.Forms.CollectionView)には、`ItemsSource` プロパティを設定することによってデータが設定されます。 詳細については、「データを使用した[CollectionView の設定](populate-data.md#populate-a-collectionview-with-data)」を参照してください。 |
-| 項目の外観 | `ItemTemplate` | [@No__t_1](xref:Xamarin.Forms.CollectionView)内の各項目の外観は、`ItemTemplate` プロパティを[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)に設定することによって定義できます。 詳細については、「[アイテムの外観を定義](populate-data.md#define-item-appearance)する」を参照してください。 |
+| データ | `ItemsSource` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)には、`ItemsSource` プロパティを設定することによってデータが設定されます。 詳細については、「データを使用した[CollectionView の設定](populate-data.md#populate-a-collectionview-with-data)」を参照してください。 |
+| 項目の外観 | `ItemTemplate` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)内の各項目の外観は、`ItemTemplate` プロパティを[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)に設定することによって定義できます。 詳細については、「[アイテムの外観を定義](populate-data.md#define-item-appearance)する」を参照してください。 |
 | セル | `TextCell`では、 `ImageCell`では、 `ViewCell` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)には、セルの概念がありません。 代わりに、データテンプレートを使用して、リスト内の各データ項目の外観を定義します。 |
 | 行区切り記号 | `SeparatorColor`、 `SeparatorVisibility` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)には、組み込みの区切り記号は含まれません。 これらは、必要に応じて項目テンプレートに指定できます。 |
 | 選択ツール | `SelectionMode`、 `SelectedItem` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)は、単一選択と複数選択をサポートします。 詳細については、「 [CollectionView Selection](selection.md)」を参照してください。 |
-| 行の高さ | `HasUnevenRows`、 `RowHeight` | @No__t_0 では、各項目の行の高さは、`ItemSizingStrategy` プロパティによって決定されます。 詳細については、「[項目のサイズ](layout.md#item-sizing)設定」を参照してください。|
+| 行の高さ | `HasUnevenRows`、 `RowHeight` | `CollectionView`では、各項目の行の高さは、`ItemSizingStrategy` プロパティによって決定されます。 詳細については、「[項目のサイズ](layout.md#item-sizing)設定」を参照してください。|
 | キャッシュ | `CachingStrategy` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)は、基になるネイティブコントロールによって提供される仮想化を自動的に使用します。 |
 | ヘッダーとフッター | `Header`、 `HeaderElement`、 `HeaderTemplate`、 `Footer`、 `FooterElement`、 `FooterTemplate` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)は、`Header`、`Footer`、`HeaderTemplate`、および `FooterTemplate` の各プロパティを使用して、リスト内の項目と共にスクロールするヘッダーとフッターを表示できます。 詳細については、「[ヘッダーとフッター](layout.md#headers-and-footers)」を参照してください。 |
 | グループ化 | `GroupDisplayBinding`, `GroupHeaderTemplate`, `GroupShortNameBinding`, `IsGroupingEnabled` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) `IsGrouped` プロパティを `true` に設定して、正しくグループ化されたデータを表示します。 グループヘッダーとグループフッターをカスタマイズするには、`GroupHeaderTemplate` プロパティと `GroupFooterTemplate` プロパティを[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)オブジェクトに設定します。 詳細については、「 [CollectionView Grouping](grouping.md)」を参照してください。 |

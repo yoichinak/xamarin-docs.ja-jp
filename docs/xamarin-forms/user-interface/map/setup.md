@@ -6,13 +6,13 @@ ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/31/2019
-ms.openlocfilehash: dd451ae1acd233c1d3de675357bb172f25716f59
-ms.sourcegitcommit: 3ea19e3a51515b30349d03c70a5b3acd7eca7fe7
+ms.date: 11/06/2019
+ms.openlocfilehash: 038ff27907573c1fe15516f6f4caf26d0892ab9f
+ms.sourcegitcommit: 283810340de5310f63ef7c3e4b266fe9dc2ffcaf
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73426289"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73662342"
 ---
 # <a name="xamarinforms-map-initialization-and-configuration"></a>Xamarin. フォームマップの初期化と構成
 
@@ -43,6 +43,8 @@ Xamarin.FormsMaps.Init(this, savedInstanceState);
 ```csharp
 Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 ```
+
+UWP に必要な認証トークンの詳細については、「[ユニバーサル Windows プラットフォーム](#universal-windows-platform)」を参照してください。
 
 NuGet パッケージが追加され、各アプリケーション内部で初期化メソッドが呼び出されると、共有コードプロジェクトで `Xamarin.Forms.Maps` Api を使用できるようになります。
 
@@ -244,6 +246,20 @@ UWP では、マップを表示してマップサービスを使用する前に�
       <DeviceCapability Name="location"/>
     </Capabilities>
     ```
+
+#### <a name="release-builds"></a>リリースビルド
+
+UWP リリースビルドでは、.NET ネイティブコンパイルを使用して、アプリケーションを直接ネイティブコードにコンパイルします。 ただし、このような結果として、UWP の[`Map`](xref:Xamarin.Forms.Maps.Map)コントロールのレンダラーが実行可能ファイルからリンクされている可能性があります。 これは、 **App.xaml.cs**の `Forms.Init` メソッドの UWP 固有のオーバーロードを使用して修正できます。
+
+```csharp
+var assembliesToInclude = new [] { typeof(Xamarin.Forms.Maps.UWP.MapRenderer).GetTypeInfo().Assembly };
+Xamarin.Forms.Forms.Init(e, assembliesToInclude);
+```
+
+このコードは、`Xamarin.Forms.Maps.UWP.MapRenderer` クラスが存在するアセンブリを `Forms.Init` メソッドに渡します。 これにより、.NET ネイティブコンパイルプロセスによってアセンブリが実行可能ファイルからリンクされなくなります。
+
+> [!IMPORTANT]
+> この操作を行わないと、リリースビルドの実行時に[`Map`](xref:Xamarin.Forms.Maps.Map)コントロールが表示されなくなります。
 
 ## <a name="related-links"></a>関連リンク
 
