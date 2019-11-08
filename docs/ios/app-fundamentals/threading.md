@@ -16,12 +16,12 @@ ms.locfileid: "73009437"
 ---
 # <a name="threading-in-xamarinios"></a>Xamarin でのスレッド処理
 
-Xamarin iOS ランタイムを使用すると、開発者は、スレッド (`System.Threading.Thread, System.Threading.ThreadPool`) を使用する場合は明示的に .NET スレッド Api にアクセスできます。また、非同期デリゲートパターンまたは BeginXXX メソッドを使用する場合は、タスクをサポートするすべての Api の範囲を明示的に指定することもできます。並列ライブラリ。
+Xamarin.iOS ランタイムを使用すると、開発者は、スレッド (`System.Threading.Thread, System.Threading.ThreadPool`) を使用する場合は明示的に .NET スレッド API にアクセスできます。また、非同期デリゲートパターンまたは BeginXXX メソッドを使用する場合は、タスクをサポートするすべての API の範囲を明示的に指定することもできます。並列ライブラリ。
 
 Xamarin では、アプリケーションを構築するために[タスク並列ライブラリ](https://msdn.microsoft.com/library/dd460717.aspx)(TPL) を使用することを強くお勧めします。いくつかの理由があります。
 
 - 既定の TPL スケジューラは、タスクの実行をスレッドプールに委任します。これにより、スレッドの数が多すぎるために CPU 時間の競合が発生することを回避しながら、プロセスの実行に必要なスレッド数が動的に増加します。 
-- TPL タスクに関しては、操作について考える方が簡単です。 豊富な Api セットを使用して、それらを簡単に操作したり、スケジュールを設定したり、実行をシリアル化したり、多数のタスクを同時に起動したりすることができます。 
+- TPL タスクに関しては、操作について考える方が簡単です。 豊富な API セットを使用して、それらを簡単に操作したり、スケジュールを設定したり、実行をシリアル化したり、多数のタスクを同時に起動したりすることができます。 
 - これは、新しいC#非同期言語拡張機能を使用したプログラミングの基礎となります。 
 
 スレッドプールは、システムで使用可能な CPU コアの数、システムの負荷、およびアプリケーションの要求に基づいて、必要に応じてスレッドの数を徐々に拡大します。 このスレッドプールを使用するには、`System.Threading.ThreadPool` のメソッドを呼び出すか、既定の `System.Threading.Tasks.TaskScheduler` (*並列フレームワーク*の一部) を使用します。
@@ -55,7 +55,7 @@ MyThreadedRoutine ()
 
 ## <a name="threading-and-garbage-collection"></a>スレッド処理とガベージコレクション
 
-実行時には、目的 C ランタイムによってオブジェクトが作成および解放されます。 オブジェクトに "自動リリース" のフラグが設定されている場合、目的の C ランタイムは、それらのオブジェクトをスレッドの現在の `NSAutoReleasePool`に解放します。 Xamarin は、`System.Threading.ThreadPool` とメインスレッドのすべてのスレッドに対して、1つの `NSAutoRelease` プールを作成します。 これは、TaskScheduler の既定のを使用して作成されたすべてのスレッドをカバーします。
+実行時には、Objective-C ランタイムによってオブジェクトが作成および解放されます。 オブジェクトに "自動リリース" のフラグが設定されている場合、Objective-C ランタイムは、それらのオブジェクトをスレッドの現在の `NSAutoReleasePool`に解放します。 Xamarin は、`System.Threading.ThreadPool` とメインスレッドのすべてのスレッドに対して、1つの `NSAutoRelease` プールを作成します。 これは、TaskScheduler の既定のを使用して作成されたすべてのスレッドをカバーします。
 
 `System.Threading` を使用して独自のスレッドを作成する場合は、データのリークを防ぐために `NSAutoRelease` プールを用意する必要があります。 これを行うには、次のコードでスレッドをラップするだけです。
 
@@ -68,7 +68,7 @@ void MyThreadStart (object arg)
 }
 ```
 
-注: Xamarin iOS 5.2 以降では、独自の `NSAutoReleasePool` を提供する必要がなくなりました。自動的に提供される予定です。
+注: Xamarin.iOS 5.2 以降では、独自の `NSAutoReleasePool` を提供する必要がなくなりました。自動的に提供される予定です。
 
 ## <a name="related-links"></a>関連リンク
 
