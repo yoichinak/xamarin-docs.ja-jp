@@ -54,7 +54,7 @@ Android とユニバーサル Windows プラットフォーム (UWP) では、�
 
 ### <a name="ios"></a>iOS
 
-iOS でマップを表示して操作する場合、追加の構成は必要ありません。 ただし、ロケーションサービスにアクセスするには、次のキーを**info.plist**で設定する必要があります。
+iOS でマップを表示して操作する場合、追加の構成は必要ありません。 ただし、ロケーションサービスにアクセスするには、次のキーを **info.plist** で設定する必要があります。
 
 - iOS 11 以降
   - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) –アプリケーションが使用されているときにロケーションサービスを使用する場合
@@ -63,9 +63,9 @@ iOS でマップを表示して操作する場合、追加の構成は必要あ�
   - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) –アプリケーションが使用されているときにロケーションサービスを使用する場合
   - [`NSLocationAlwaysUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) –位置情報サービスを常に使用する場合    
 
-iOS 11 以前をサポートするには、`NSLocationWhenInUseUsageDescription`、`NSLocationAlwaysAndWhenInUseUsageDescription`、`NSLocationAlwaysUsageDescription` の3つのキーすべてを含めることができます。
+iOS 11 以前をサポートするには、`NSLocationWhenInUseUsageDescription`、`NSLocationAlwaysAndWhenInUseUsageDescription`、`NSLocationAlwaysUsageDescription` の 3 つのキーすべてを含めることができます。
 
-次に、これらのキーの XML 表現を**info.plist**で示します。 アプリケーションが場所情報をどのように使用しているかを反映するように、`string` の値を更新する必要があります。
+次に、これらのキーの XML 表現を **info.plist** で示します。 アプリケーションが場所情報をどのように使用しているかを反映するように、`string` の値を更新する必要があります。
 
 ```xml
 <key>NSLocationAlwaysUsageDescription</key>
@@ -99,9 +99,9 @@ Android でマップを表示して操作するための構成プロセスは次
 
 #### <a name="get-a-google-maps-api-key"></a>Google Maps API キーを取得する
 
-Android で[Google Maps API](https://developers.google.com/maps/documentation/android/)を使用するには、API キーを生成する必要があります。 これを行うには、「 [Google Maps API キーを取得する](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)」の手順に従います。
+Android で[Google Maps API](https://developers.google.com/maps/documentation/android/) を使用するには、API キーを生成する必要があります。 これを行うには、「 [Google Maps API キーを取得する](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)」の手順に従います。
 
-API キーを取得したら、 **Properties/AndroidManifest.xml**ファイルの `<application>` 要素内に追加する必要があります。
+API キーを取得したら、 **Properties/AndroidManifest.xml** ファイルの `<application>` 要素内に追加する必要があります。
 
 ```xml
 <application ...>
@@ -116,7 +116,7 @@ API キーを取得したら、 **Properties/AndroidManifest.xml**ファイル�
 
 #### <a name="specify-the-google-play-services-version-number"></a>Google Play services のバージョン番号を指定する
 
-**AndroidManifest.xml**の `<application>` 要素内に次の宣言を追加します。
+**AndroidManifest.xml** の `<application>` 要素内に次の宣言を追加します。
 
 ```xml
 <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
@@ -126,7 +126,7 @@ API キーを取得したら、 **Properties/AndroidManifest.xml**ファイル�
 
 #### <a name="specify-the-requirement-for-the-apache-http-legacy-library"></a>Apache HTTP レガシライブラリの要件を指定する
 
-Xamarin アプリケーションが API 28 以上を対象としている場合は、 **AndroidManifest.xml**の `<application>` 要素内に次の宣言を追加する必要があります。
+Xamarin アプリケーションが API 28 以上を対象としている場合は、 **AndroidManifest.xml** の `<application>` 要素内に次の宣言を追加する必要があります。
 
 ```xml
 <uses-library android:name="org.apache.http.legacy" android:required="false" />    

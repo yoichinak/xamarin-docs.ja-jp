@@ -20,7 +20,7 @@ ms.locfileid: "72696988"
 
 ## <a name="introductionintroductionmd"></a>[はじめに](introduction.md)
 
-[@No__t_1](xref:Xamarin.Forms.CarouselView)は、スクロール可能なレイアウトでデータを表示するためのビューであり、ユーザーはスワイプして項目のコレクション内を移動できます。
+[`CarouselView`](xref:Xamarin.Forms.CarouselView)は、スクロール可能なレイアウトでデータを表示するためのビューであり、ユーザーはスワイプして項目のコレクション内を移動できます。
 
 ## <a name="datapopulate-datamd"></a>[データ](populate-data.md)
 

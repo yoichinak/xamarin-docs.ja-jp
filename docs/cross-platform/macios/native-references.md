@@ -1,6 +1,6 @@
 ---
 title: ネイティブは、iOS、Mac、およびバインドプロジェクトを参照します
-description: ネイティブ参照を使用すると、ネイティブフレームワークを Xamarin.iOS、Xamarin、またはバインドプロジェクトに埋め込むことができます。
+description: ネイティブ参照を使用すると、ネイティブフレームワークを Xamarin. iOS、Xamarin、またはバインドプロジェクトに埋め込むことができます。
 ms.prod: xamarin
 ms.assetid: E53185FB-CEF5-4AB5-94F9-CC9B57C52300
 author: davidortinau
@@ -15,12 +15,12 @@ ms.locfileid: "73015620"
 ---
 # <a name="native-references-in-ios-mac-and-bindings-projects"></a>iOS、Mac、およびバインドプロジェクトでのネイティブ参照
 
-_ネイティブ参照を使用すると、ネイティブフレームワークを Xamarin.iOS または Xamarin.Mac のプロジェクトまたはバインドプロジェクトに埋め込むことができます。_
+_ネイティブ参照を使用すると、ネイティブフレームワークを Xamarin または Xamarin のプロジェクトまたはバインドプロジェクトに埋め込むことができます。_
 
 IOS 8.0 以降、アプリ拡張機能と Xcode のメインアプリ間でコードを共有するための埋め込みフレームワークを作成できるようになりました。 ネイティブ参照機能を使用すると、Xcode で作成されたこれらの埋め込みフレームワークを使用することができます。
 
 > [!IMPORTANT]
-> 任意の種類の Xamarin.iOS プロジェクトまたは Xamarin.Mac プロジェクトから埋め込みフレームワークを作成することはできません。ネイティブ参照では、既存のネイティブ (Objective-C) フレームワークの使用のみが許可されます。
+> 任意の種類の Xamarin. iOS プロジェクトまたは Xamarin. Mac プロジェクトから埋め込みフレームワークを作成することはできません。ネイティブ参照では、既存のネイティブ (目標 C) フレームワークの使用のみが許可されます。
 
 <a name="Terminology" />
 

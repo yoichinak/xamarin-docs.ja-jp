@@ -89,7 +89,7 @@ namespace WorkingWithMaps
 - `Satellite` は、衛星画像を含むマップが表示されることを指定します。
 - `Hybrid` は、道路と衛星のデータを組み合わせたマップが表示されることを指定します。
 
-既定では、 [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType)プロパティが定義されていない場合、 [`Map`](xref:Xamarin.Forms.Maps.Map)には道路マップが表示されます。 または、`MapType` プロパティを[`MapType`](xref:Xamarin.Forms.Maps.MapType)列挙型のメンバーのいずれかに設定することもできます。
+既定では、 [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType)プロパティが定義されていない場合、 [`Map`](xref:Xamarin.Forms.Maps.Map)にはストリートマップが表示されます。 または、`MapType` プロパティを[`MapType`](xref:Xamarin.Forms.Maps.MapType) 列挙型のメンバーのいずれかに設定することもできます。
 
 ```xaml
 <maps:Map MapType="Satellite" />
