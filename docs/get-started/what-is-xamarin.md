@@ -3,23 +3,24 @@ title: Xamarin とは
 description: この記事では、Xamarin と関連ライブラリについて説明します。
 ms.prod: xamarin
 ms.assetid: 33C83E13-F3E5-17B4-6512-207F3D3C5AB6
+ms.custom: video
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 09/16/2019
-ms.openlocfilehash: 8213eeb18ec23e79f0cc2a82c22b50d77b6d4931
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: 34763804e9833224721ea32f9c7e6200dd5faba7
+ms.sourcegitcommit: efbc69acf4ea484d8815311b058114379c9db8a2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71256619"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73842931"
 ---
 # <a name="what-is-xamarin"></a>Xamarin とは
 
-[![IOS および Android での Xamarin アプリケーションの例のスクリーンショット](what-is-xamarin-images/xamarin-app-cropped.png)](what-is-xamarin-images/xamarin-app.png#lightbox)
+[iOS および Android での Xamarin アプリケーションの例の ![スクリーンショット](what-is-xamarin-images/xamarin-app-cropped.png)](what-is-xamarin-images/xamarin-app.png#lightbox)
 
 Xamarin は、iOS、Android、Windows 向けの最新で高性能なアプリケーションを .NET で構築するためのオープンソースのプラットフォームです。 Xamarin は、基になるプラットフォームコードと共有コードの通信を管理する抽象化レイヤーです。 Xamarin は、メモリ割り当てやガベージコレクションなどの便利なを提供するマネージ環境で実行されます。
 
-Xamarin を使用すると、開発者はプラットフォーム間でアプリケーションの 90% の平均を共有できます。 このパターンを使用すると、開発者はすべてのビジネスロジックを1つの言語で記述でき (または既存のアプリケーションコードを再利用できます)、各プラットフォームでネイティブのパフォーマンス、ルックアンドフィールを実現できます。
+Xamarin を使用すると、開発者はプラットフォーム間でアプリケーションの90% の平均を共有できます。 このパターンを使用すると、開発者はすべてのビジネスロジックを1つの言語で記述でき (または既存のアプリケーションコードを再利用できます)、各プラットフォームでネイティブのパフォーマンス、ルックアンドフィールを実現できます。
 
 Xamarin アプリケーションは、PC または Mac 上で記述し、ネイティブアプリケーションパッケージ (Android 上の**apk**ファイルなど)、または iOS 上の**ipa**ファイルとしてコンパイルできます。
 
@@ -37,7 +38,7 @@ Xamarin は、次のような目標を持つ開発者を対象としています
 
 ![Xamarin アーキテクチャの図](what-is-xamarin-images/xamarin-architecture.png)
 
-この図は、クロスプラットフォーム Xamarin アプリケーションの全体的なアーキテクチャを示しています。 Xamarin では、プラットフォームごとにネイティブ UI を作成し、プラットフォーム間C#で共有されるのビジネスロジックを記述できます。 ほとんどの場合、アプリケーションコードの 80% は Xamarin を使用して共有できます。
+この図は、クロスプラットフォーム Xamarin アプリケーションの全体的なアーキテクチャを示しています。 Xamarin では、プラットフォームごとにネイティブ UI を作成し、プラットフォーム間C#で共有されるのビジネスロジックを記述できます。 ほとんどの場合、アプリケーションコードの80% は Xamarin を使用して共有できます。
 
 Xamarin は、 **Mono**の上に構築されており、.net ECMA 標準に基づく .NET Framework のオープンソースバージョンです。 Mono は .NET Framework 自体とほぼ同じくらいに存在し、Linux、Unix、FreeBSD、macOS などのほとんどのプラットフォームで実行されます。 Mono 実行環境では、メモリの割り当て、ガベージコレクション、基になるプラットフォームとの相互運用性などのタスクが自動的に処理されます。
 
@@ -49,10 +50,10 @@ Xamarin は、ネイティブプラットフォームの機能を統合し、次
 
 1. **基になる sdk の完全なバインド**– Xamarin には、IOS と Android の両方で、基になるプラットフォーム sdk のほぼすべてのバインドが含まれています。 さらに、これらのバインディングは厳密に型指定されています。つまり、ナビゲーションや使用が簡単で、開発時に堅牢なコンパイル時の型チェックが行われます。 厳密に型指定されたバインディングによって、実行時エラーや品質の高いアプリケーションが減少します。
 1. **目的-c、Java、C、およびC++相互運用**-Xamarin には、目的の c、java、c、およびC++ライブラリを直接呼び出す機能が用意されており、サードパーティ製のさまざまなコードを使用することができます。 この機能により、目標 C、Java、または C/C++で記述された既存の IOS および Android ライブラリを使用できるようになります。 さらに、Xamarin には、宣言型の構文を使用してネイティブの目的 C と Java のライブラリをバインドできるバインドプロジェクトが用意されています。
-1. **最新の言語コンストラクト**– Xamarin アプリケーションが記述C#されています。これは、ダイナミック言語機能、ラムダ、LINQ、parallel などの機能構成要素など、目的 C と Java よりも大幅に改善された最新の言語です。プログラミング、ジェネリックなど。
+1. **最新の言語構成**– Xamarin アプリケーションは、 C#で記述されています。これは、動的言語機能、ラムダ、LINQ、並列プログラミング、ジェネリックなどの機能の構成要素など、目的の C と Java よりも大幅に改善された最新の言語です。
 1. **堅牢な基底クラスライブラリ (BCL)** – Xamarin アプリケーションは、.net BCL を使用します。これは、強力な XML、データベース、シリアル化、IO、文字列、ネットワークのサポートなど、包括的で合理化された機能を持つクラスの大規模なコレクションです。 既存C#のコードをコンパイルしてアプリで使用することができます。これにより、BCL を超える機能を追加する数千のライブラリにアクセスできます。
-1. **最新の統合開発環境 (IDE)** – Xamarin では、コードのオートコンプリート、洗練されたプロジェクトとソリューションの管理システム、包括的なプロジェクトテンプレートライブラリなどの機能を備えた最新の IDE である Visual Studio を使用します。統合ソース管理など。
-1. **モバイルクロスプラットフォームサポート**– Xamarin では、IOS、Android、Windows の3つの主要なプラットフォームに対して、高度なクロスプラットフォームサポートを提供しています。 アプリケーションは、コードの最大 90% を共有するように記述できます。また、Xamarin では、3つのすべてのプラットフォームで共通のリソースにアクセスするための統一された API を提供します。 共有コードを使用すると、開発コストと、モバイル開発者の製品化までの時間を大幅に削減できます。
+1. **最新の統合開発環境 (IDE)** – Xamarin は、コードのオートコンプリート、洗練されたプロジェクトとソリューションの管理システム、包括的なプロジェクトテンプレートライブラリ、統合ソース管理などの機能を備えた最新の ide である Visual Studio を使用します。
+1. **モバイルクロスプラットフォームサポート**– Xamarin では、IOS、Android、Windows の3つの主要なプラットフォームに対して、高度なクロスプラットフォームサポートを提供しています。 アプリケーションは、コードの最大90% を共有するように記述できます。また、Xamarin では、3つのすべてのプラットフォームで共通のリソースにアクセスするための統一された API を提供します。 共有コードを使用すると、開発コストと、モバイル開発者の製品化までの時間を大幅に削減できます。
 
 ### <a name="xamarinandroid"></a>Xamarin.Android
 
@@ -103,3 +104,9 @@ Xamarin. Forms はオープンソースの UI フレームワークです。 Xam
 - [Xamarin Android を使ってみる](~/android/index.yml)
 - [Xamarin を使ってみる](~/ios/index.yml)
 - [Xamarin. Mac を使ってみる](~/mac/index.yml)
+
+## <a name="related-video"></a>関連ビデオ
+
+> [!Video https://channel9.msdn.com/Series/Xamarin-101/What-is-Xamarin-1-of-11/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]
