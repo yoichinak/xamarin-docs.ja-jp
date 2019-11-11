@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/06/2016
-ms.openlocfilehash: b17a1177abafe4e605263664038842863302ac3b
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: 96c775ba8e29597a8420b1c42d53e33357c7324c
+ms.sourcegitcommit: 18b446a0032f3a7a064e5a6470e9d20b1ec2fbed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71249688"
+ms.lasthandoff: 11/01/2019
+ms.locfileid: "73426458"
 ---
 # <a name="localization"></a>ローカリゼーション
 
@@ -60,7 +60,7 @@ Xamarin.Forms .NET 標準ライブラリ アプリケーションをグローバ
 
 **AppResources** などのわかりやすい名前を選んで、 **[OK]** を押します。
 
-[![リソース ファイルを追加する](text-images/resx-new-file-sml.png "[新しいファイル] ダイアログ")](text-images/resx-new-file.png#lightbox "[新しいファイル] ダイアログ")
+[![リソース ファイルの追加](text-images/resx-new-file-sml.png "[新しいファイル] ダイアログ")](text-images/resx-new-file.png#lightbox "[新しいファイル] ダイアログ")
 
 次の 2 つのファイルがプロジェクトに追加されます。
 
@@ -69,7 +69,7 @@ Xamarin.Forms .NET 標準ライブラリ アプリケーションをグローバ
 
 ソリューション ツリーは、ファイルが関連していることを示します。 新しい翻訳可能な文字列に追加するには、RESX ファイルを編集する*必要があります*。 **.designer.cs** ファイルは編集*しないでください*。
 
-![](text-images/appresources-tree.png "AppResources.resx ファイル")
+![](text-images/appresources-tree.png "AppResources.resx File")
 
 ##### <a name="string-visibility"></a>文字列の可視性
 
@@ -81,11 +81,11 @@ Xamarin.Forms .NET 標準ライブラリ アプリケーションをグローバ
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![](text-images/vs-resx-internal-sml.png "AppResources.Resx の [プロパティ] ウィンドウ")](text-images/vs-resx-internal.png#lightbox)
+[![](text-images/vs-resx-internal-sml.png "Properties Window for AppResources.Resx")](text-images/vs-resx-internal.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![](text-images/xs-resx-internal-sml.png "AppResources.Resx の [プロパティ] パッド")](text-images/xs-resx-internal.png#lightbox)
+[![](text-images/xs-resx-internal-sml.png "Properties Pad for AppResources.Resx")](text-images/xs-resx-internal.png#lightbox)
 
 -----
 
@@ -93,13 +93,13 @@ Xamarin.Forms .NET 標準ライブラリ アプリケーションをグローバ
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[![](text-images/vs-resx-public-sml.png "AppResources.Resx の [プロパティ] ウィンドウ")](text-images/vs-resx-public.png#lightbox)
+[![](text-images/vs-resx-public-sml.png "Properties Window for AppResources.Resx")](text-images/vs-resx-public.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[![](text-images/xs-resx-internal-sml.png "AppResources.Resx の [プロパティ] パッド")](text-images/xs-resx-internal.png#lightbox)
+[![](text-images/xs-resx-internal-sml.png "Properties Pad for AppResources.Resx")](text-images/xs-resx-internal.png#lightbox)
 
-[![](text-images/xs-resx-public-sml.png "AppResources.Resx の [プロパティ] パッド")](text-images/xs-resx-public.png#lightbox)
+[![](text-images/xs-resx-public-sml.png "Properties Pad for AppResources.Resx")](text-images/xs-resx-public.png#lightbox)
 
 -----
 
@@ -148,8 +148,8 @@ Xamarin.Forms .NET 標準ライブラリ アプリケーションをグローバ
 - **AppResources.es.resx** - スペイン語の言語翻訳。
 - **AppResources.de.resx** - ドイツ語の言語翻訳。
 - **AppResources.ja.resx** - 日本語の言語翻訳。
-- **AppResources.zh-Hans.resx** - 簡体字中国語の言語翻訳。
-- **AppResources.zh-Hant.resx** - 繁体字中国語の言語翻訳。
+- **AppResources.zh-Hans.resx** - 簡体中国語の言語翻訳。
+- **AppResources.zh-Hant.resx** -繁体中国語の言語翻訳。
 - **AppResources.pt.resx** - ポルトガル語の言語翻訳。
 - **AppResources.pt-BR.resx** - ポルトガル語 (ブラジル) の言語翻訳。
 
@@ -157,7 +157,7 @@ Xamarin.Forms .NET 標準ライブラリ アプリケーションをグローバ
 
 これらの言語固有のリソース ファイルでは **.designer.cs** 部分クラスを必要と*しない* ため、**ビルド アクションをEmbeddedResource** に設定し、通常の XML ファイルとして追加することができます。 次のスクリーンショットには、言語固有のリソース ファイルを含むソリューションが示されています。
 
-![](text-images/appresources-langs.png "言語固有のリソース ファイル")
+![](text-images/appresources-langs.png "Language-Specific Resource Files")
 
 アプリケーションが開発され、基本的な RESX ファイルにテキストが追加されたら、翻訳者に送信する必要があります。翻訳者は、各 `data` 要素を翻訳し、アプリに含める (示されている名前付け規則を使用する) 言語固有のリソース ファイルを返します。 "機械翻訳された" 例をいくつか以下に示します。
 
@@ -208,7 +208,7 @@ myButton.Text = AppResources.AddButton;
 
 iOS、Android、およびユニバーサル Windows プラットフォーム (UWP) 上のユーザー インターフェイスは予期したとおりにレンダリングされます。ただし、テキストは、ハードコーディングされるのではなく、リソースから読み込まれるため、ここではアプリを複数の言語に翻訳することができます。 翻訳前の各プラットフォーム上の UI が表示されたスクリーンショットを以下に示します。
 
-![](text-images/simple-example-english.png "翻訳前のクロスプラットフォーム UI")
+![](text-images/simple-example-english.png "Cross-Platform UIs Prior to Translation")
 
 ### <a name="troubleshooting"></a>トラブルシューティング
 
@@ -398,7 +398,7 @@ namespace UsingResxLocalization.iOS
                 case "ms-SG":    // "Malaysian (Singapore)" not supported .NET culture
                     netLanguage = "ms"; // closest supported
                     break;
-                case "gsw-CH":  // "Schwiizertüütsch (Swiss German)" not supported .NET culture
+                case "gsw-CH":  // "Schwiizerdüütsch (Swiss German)" not supported .NET culture
                     netLanguage = "de-CH"; // closest supported
                     break;
                 // add more application-specific cases here (if required)
@@ -438,7 +438,7 @@ namespace UsingResxLocalization.iOS
 
 `Picker` コントロールの **[完了]** ボタンなど、iOS によって自動的に翻訳されるシステム定義のユーザー インターフェイス要素がいくつかあります。 iOS でこれらの要素を強制的に翻訳するには、**Info.plist** ファイルでサポートする言語を示す必要があります。 以下に示すように、 **[Info.plist] > [ソース]** を使用して、これらの値を追加できます。
 
-![Info.plist のローカライズ キー](text-images/info-plist.png "Info.plist のローカライズ キー")
+![Info.plist 内のローカライズ キー](text-images/info-plist.png "Info.plist 内のローカライズ キー")
 
 または、XML エディターで **Info.plist** ファイルを開き、次のように値を直接編集します。
 
@@ -506,7 +506,7 @@ namespace UsingResxLocalization.Android
                 }
                 catch (CultureNotFoundException e2)
                 {
-                    // iOS language not valid .NET culture, falling back to English
+                    // Android language not valid .NET culture, falling back to English
                     ci = new System.Globalization.CultureInfo("en");
                 }
             }
@@ -526,7 +526,7 @@ namespace UsingResxLocalization.Android
                 case "in-ID":  // "Indonesian (Indonesia)" has different code in  .NET
                     netLanguage = "id-ID"; // correct code for .NET
                     break;
-                case "gsw-CH":  // "Schwiizertüütsch (Swiss German)" not supported .NET culture
+                case "gsw-CH":  // "Schwiizerdüütsch (Swiss German)" not supported .NET culture
                     netLanguage = "de-CH"; // closest supported
                     break;
                     // add more application-specific cases here (if required)
@@ -583,7 +583,7 @@ Android のローカライズについて詳しくは、「[Android のローカ
 
 前述のようにプラットフォーム固有のプロジェクトを更新し、翻訳された RESX ファイルを使用してアプリを再コンパイルした後、更新された翻訳は各アプリで使用できるようになります。 簡体中国語に翻訳されたサンプル コードのスクリーンショットを以下に示します。
 
-![](text-images/simple-example-hans.png "簡体字中国語に翻訳されたクロスプラットフォーム UI")
+![](text-images/simple-example-hans.png "Cross-Platform UIs Translated to Simplified Chinese")
 
 UWP のローカライズについて詳しくは、[UWP のローカライズ](/windows/uwp/design/globalizing/globalizing-portal/)に関するページを参照してください。
 
@@ -732,7 +732,7 @@ iOS では、イメージおよび文字列リソースを含めるために、�
 
 以下のスクリーンショットは、言語固有の **.lproj** ディレクトリを含む、iOS サンプル アプリを示しています。 **es.lproj** というスペイン語のディレクトリには、ローカライズされたバージョンの既定のイメージと、**flag.png** が含まれています。
 
-![](text-images/ios-resources.png "iOS のローカライズ プロジェクト ディレクトリ")
+![](text-images/ios-resources.png "iOS Localization Project Directories")
 
 各言語のディレクトリには、その言語用にローカライズされた、**flag.png** のコピーが含まれています。 イメージが指定されていない場合、オペレーティング システムでは既定で、その既定の言語ディレクトリのイメージに設定されます。 完全に Retina をサポートするには、各イメージの **@2x** および **@3x** のコピーを指定する必要があります。
 
@@ -746,7 +746,7 @@ iOS では、イメージおよび文字列リソースを含めるために、�
 
 アプリケーションの実行時に、アプリ名とイメージの両方がローカライズされます。
 
-![](text-images/ios-imageicon.png "iOS のサンプル アプリ テキストとイメージのローカライズ")
+![](text-images/ios-imageicon.png "iOS Sample App Text and Image Localization")
 
 ### <a name="android-application-project"></a>Android アプリケーション プロジェクト
 
@@ -756,7 +756,7 @@ Android では、言語コード サフィックスが異なる**ドローアブ
 
 以下のスクリーンショットは、いくつかのローカライズされたドローアブルと文字列を含む、Android のサンプルを示しています。
 
-![](text-images/android-resources.png "Android のローカライズされたドローアブルと文字列のディレクトリ")
+![](text-images/android-resources.png "Android Localized Drawables and String Directories")
 
 Android では、簡体中国語と繁体字中国語で zh-Hans と zh-Hant コードを使用しないことに注意してください。代わりに、国固有のコードである zh-CN と zh-TW のみがサポートされます。
 
@@ -782,7 +782,7 @@ Android では、簡体中国語と繁体字中国語で zh-Hans と zh-Hant コ
 
 これで、アプリによって、アプリの名前とイメージがローカライズされます。 (スペイン語の) 結果のスクリーンショットを以下に示します。
 
-![](text-images/android-imageicon.png "Android のサンプル アプリ テキストとイメージのローカライズ")
+![](text-images/android-imageicon.png "Android Sample App Text and Image Localization")
 
 ### <a name="universal-windows-platform-application-projects"></a>ユニバーサル Windows プラットフォームのアプリケーション プロジェクト
 
@@ -792,7 +792,7 @@ Android では、簡体中国語と繁体字中国語で zh-Hans と zh-Hant コ
 
 イメージは、次のスクリーンショットに示すように、リソース固有のフォルダーに配置してローカライズできます。
 
-![](text-images/uwp-image-folder-structure.png "UWP イメージ ローカライズ フォルダーの構造")
+![](text-images/uwp-image-folder-structure.png "UWP Image Localization Folder Structure")
 
 実行時に、Windows リソース インフラストラクチャで、ユーザーのロケールに基づいて適切なイメージが選択されます。
 
