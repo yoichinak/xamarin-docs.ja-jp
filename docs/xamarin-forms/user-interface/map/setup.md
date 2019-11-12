@@ -26,13 +26,13 @@ ms.locfileid: "73662342"
 
 [Xamarin.Forms.Maps](https://www.nuget.org/packages/Xamarin.Forms.Maps/) NuGet パッケージをインストールした後は、各プラットフォームプロジェクトで初期化する必要があります。
 
-iOS では、これは、`Xamarin.Forms.Forms.Init` メソッドの *'後'* に `Xamarin.FormsMaps.Init` メソッドを呼び出すことによって**AppDelegate.cs** で発生する必要があります。
+iOS では、これは、`Xamarin.Forms.Forms.Init` メソッドの*'後'*に `Xamarin.FormsMaps.Init` メソッドを呼び出すことによって **AppDelegate.cs** で発生する必要があります。
 
 ```csharp
 Xamarin.FormsMaps.Init();
 ```
 
-Android では、これは、`Xamarin.Forms.Forms.Init` メソッドの *'後'* に `Xamarin.FormsMaps.Init` メソッドを呼び出すことによって**MainActivity.cs** で発生する必要があります。
+Android では、これは、`Xamarin.Forms.Forms.Init` メソッドの*'後'*に `Xamarin.FormsMaps.Init` メソッドを呼び出すことによって **MainActivity.cs** で発生する必要があります。
 
 ```csharp
 Xamarin.FormsMaps.Init(this, savedInstanceState);
@@ -76,13 +76,13 @@ iOS 11 以前をサポートするには、`NSLocationWhenInUseUsageDescription`
 <string>Can we use your location at all times?</string>
 ```
 
-また、 **info.plist** ファイルを編集しているときに、 **[ソース]** ビューで **info.plist** のエントリを追加することもできます。
+また、 **info.plist** ファイルを編集しているときに、**[ソース]** ビューで **info.plist** のエントリを追加することもできます。
 
 ![iOS 8 用 info.plist](setup-images/ios8-map-permissions.png "iOS 8 必須 info.plist エントリ")
 
 アプリケーションがユーザーの場所にアクセスしようとしてアクセスを要求したときに、プロンプトが表示されます。
 
-[![IOS での場所のアクセス許可要求のスクリーンショット](setup-images/permission-ios.png "iOS アクセス許可要求")](setup-images/permission-ios-large.png#lightbox "iOS アクセス許可要求")
+[![iOS での場所のアクセス許可要求のスクリーンショット](setup-images/permission-ios.png "iOS アクセス許可要求")](setup-images/permission-ios-large.png#lightbox "iOS アクセス許可要求")
 
 ### <a name="android"></a>Android
 
@@ -112,7 +112,7 @@ API キーを取得したら、 **Properties/AndroidManifest.xml** ファイル�
 これにより、API キーがマニフェストに埋め込まれます。 有効な API キーがない場合、 [`Map`](xref:Xamarin.Forms.Maps.Map)コントロールには空のグリッドが表示されます。
 
 > [!NOTE]
-> APK が Google Maps にアクセスできるようにするには、APK に署名するために使用するすべてのキーストア (デバッグとリリース) に SHA-1 指紋とパッケージ名を含める必要があることに注意してください。 たとえば、デバッグに 1 台のコンピューターを使用し、リリース APK を生成する別のコンピューターを使用する場合は、最初のコンピューターのデバッグキーストアから SHA-1 証明書のフィンガープリントを指定し、2 番目のコンピューターのリリースキーストアから SHA-1 証明書のフィンガープリントを含める必要があります。 また、アプリの **パッケージ名** が変更された場合は、キーの資格情報を編集することも忘れないでください。 「 [Google Maps API キーを取得する」を](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)」を参照してください。
+> APK が Google Maps にアクセスできるようにするには、APK に署名するために使用するすべてのキーストア (デバッグとリリース) に SHA-1 指紋とパッケージ名を含める必要があることに注意してください。 たとえば、デバッグに 1 台のコンピューターを使用し、リリース APK を生成する別のコンピューターを使用する場合は、最初のコンピューターのデバッグキーストアから SHA-1 証明書のフィンガープリントを指定し、2 番目のコンピューターのリリースキーストアから SHA-1 証明書のフィンガープリントを含める必要があります。 また、アプリの **パッケージ名** が変更された場合は、キーの資格情報を編集することも忘れないでください。 「 [Google Maps API キーを取得する](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)」を参照してください。
 
 #### <a name="specify-the-google-play-services-version-number"></a>Google Play services のバージョン番号を指定する
 
