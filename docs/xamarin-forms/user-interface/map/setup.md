@@ -26,13 +26,13 @@ ms.locfileid: "73662342"
 
 [Xamarin.Forms.Maps](https://www.nuget.org/packages/Xamarin.Forms.Maps/) NuGet パッケージをインストールした後は、各プラットフォームプロジェクトで初期化する必要があります。
 
-iOS では、これは、`Xamarin.Forms.Forms.Init` メソッドの *'後'* に `Xamarin.FormsMaps.Init` メソッドを呼び出すことによって**AppDelegate.cs** で発生する必要があります。
+iOS では、これは、`Xamarin.Forms.Forms.Init` メソッドの*'後'*に `Xamarin.FormsMaps.Init` メソッドを呼び出すことによって **AppDelegate.cs** で発生する必要があります。
 
 ```csharp
 Xamarin.FormsMaps.Init();
 ```
 
-Android では、これは、`Xamarin.Forms.Forms.Init` メソッドの *'後'* に `Xamarin.FormsMaps.Init` メソッドを呼び出すことによって**MainActivity.cs** で発生する必要があります。
+Android では、これは、`Xamarin.Forms.Forms.Init` メソッドの*'後'*に `Xamarin.FormsMaps.Init` メソッドを呼び出すことによって **MainActivity.cs** で発生する必要があります。
 
 ```csharp
 Xamarin.FormsMaps.Init(this, savedInstanceState);
@@ -76,7 +76,7 @@ iOS 11 以前をサポートするには、`NSLocationWhenInUseUsageDescription`
 <string>Can we use your location at all times?</string>
 ```
 
-また、 **info.plist** ファイルを編集しているときに、 **[ソース]** ビューで **info.plist** のエントリを追加することもできます。
+また、 **info.plist** ファイルを編集しているときに、**[ソース]** ビューで **info.plist** のエントリを追加することもできます。
 
 ![iOS 8 用 info.plist](setup-images/ios8-map-permissions.png "iOS 8 必須 info.plist エントリ")
 
