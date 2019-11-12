@@ -24,8 +24,8 @@ ms.locfileid: "73426283"
 
 [`Position`](xref:Xamarin.Forms.Maps.Position)構造体は、緯度と経度の値として格納されている位置をカプセル化します。 この構造体は、次の2つの読み取り専用プロパティを定義します。
 
-- [`Latitude`](xref:Xamarin.Forms.Maps.Position.Latitude)は、`double`型で、小数点以下の位置の緯度を表します。
-- [`Longitude`](xref:Xamarin.Forms.Maps.Position.Longitude)は、`double`型で、小数点以下の位置の経度を表します。
+- [`Latitude`](xref:Xamarin.Forms.Maps.Position.Latitude) は、`double`型で、小数点以下の位置の緯度を表します。
+- [`Longitude`](xref:Xamarin.Forms.Maps.Position.Longitude) は、`double`型で、小数点以下の位置の経度を表します。
 
 [`Position`](xref:Xamarin.Forms.Maps.Position)オブジェクトは、`Position` コンストラクターを使用して作成されます。これには `double` 値として指定された緯度と経度の引数が必要です。
 
@@ -40,9 +40,9 @@ Position position = new Position(36.9628066, -122.0194722);
 
 [`Distance`](xref:Xamarin.Forms.Maps.Distance)構造体は、`double` 値として格納されている距離をカプセル化します。これは、メートル単位の距離を表します。 この構造体は、次の3つの読み取り専用プロパティを定義します。
 
-- [`Kilometers`](xref:Xamarin.Forms.Maps.Distance.Kilometers)は、`double`型で、`Distance`によってスパンされる距離 (キロメートル単位) を表します。
-- [`Meters`](xref:Xamarin.Forms.Maps.Distance.Meters)は、`double`型で、`Distance`によってスパンされるメートル単位の距離を表します。
-- [`Miles`](xref:Xamarin.Forms.Maps.Distance.Miles)は、`double`型で、`Distance`によってスパンされる距離 (マイル単位) を表します。
+- [`Kilometers`](xref:Xamarin.Forms.Maps.Distance.Kilometers) は、`double`型で、`Distance`によってスパンされる距離 (キロメートル単位) を表します。
+- [`Meters`](xref:Xamarin.Forms.Maps.Distance.Meters) は、`double`型で、`Distance`によってスパンされるメートル単位の距離を表します。
+- [`Miles`](xref:Xamarin.Forms.Maps.Distance.Miles) は、`double`型で、`Distance`によってスパンされる距離 (マイル単位) を表します。
 
 [`Distance`](xref:Xamarin.Forms.Maps.Distance)オブジェクトは、`Distance` コンストラクターを使用して作成できます。これには、`double`として指定されたメーター引数が必要です。
 
