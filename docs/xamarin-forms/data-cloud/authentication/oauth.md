@@ -6,13 +6,13 @@ ms.assetid: D44745D5-77BB-4596-9B8C-EC75C259157C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/19/2017
-ms.openlocfilehash: 3c167b025b41bd4fc7c8c93bdb2f825c9daa540c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.date: 11/07/2019
+ms.openlocfilehash: 83fbad8a9bbb9afef5ee80705fe9e86e51284e7d
+ms.sourcegitcommit: efbc69acf4ea484d8815311b058114379c9db8a2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032845"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73842979"
 ---
 # <a name="authenticate-users-with-an-identity-provider"></a>Id プロバイダーを使用したユーザーの認証
 
@@ -259,6 +259,16 @@ var account = AccountStore.Create ().FindAccountsForService (Constants.AppName).
 ```
 
 `FindAccountsForService` メソッドは `Account` オブジェクトの `IEnumerable` コレクションを返します。コレクション内の最初の項目は、一致したアカウントとして設定されます。
+
+## <a name="troubleshooting"></a>トラブルシューティング
+
+- Android で、認証後にブラウザーを閉じたときにトースト通知を受信し、トースト通知を停止する場合は、Xamarin. Auth を初期化した後、Android プロジェクトに次のコードを追加します。
+
+```csharp
+Xamarin.Auth.CustomTabsConfiguration.CustomTabsClosingMessage = null;
+```
+
+- Android では、ブラウザーが自動的に閉じない場合は、Xamarin. Auth パッケージをバージョン1.5.0.3 にダウングレードすることが一時的な回避策です。 次に、 [PCL Crypto v 2.0.147](https://www.nuget.org/packages/PCLCrypto/2.0.147)を Android プロジェクトに追加します。
 
 ## <a name="summary"></a>まとめ
 

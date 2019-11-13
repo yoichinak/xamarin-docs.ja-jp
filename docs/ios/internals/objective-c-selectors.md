@@ -16,11 +16,15 @@ ms.locfileid: "73022282"
 ---
 # <a name="objective-c-selectors-in-xamarinios"></a>Xamarin. iOS の Objective-C セレクター
 
+
  Objective-C 言語は*セレクター*に基づいています。 セレクターは、オブジェクトまたは*クラス*に送信できるメッセージです。 [Xamarin iOS](~/ios/internals/api-design/index.md) は、インスタンスセレクターをインスタンスメソッドに、クラスセレクターを静的メソッドにマップします。
+
 
 通常の C 関数 (および同様の C++ メンバー関数) とは異なり、 [P/invoke](https://www.mono-project.com/docs/advanced/pinvoke/) を使用してセレクターを直接呼び出すことはできません。セレクターは、[`objc_msgSend`](https://developer.apple.com/documentation/objectivec/1456712-objc_msgsend) 関数を使用して Objective-C クラスまたはインスタンスに送信されます。
 
+
  Objective-C のメッセージの詳細については、「Apple の[オブジェクトの操作](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithObjects/WorkingwithObjects.html#//apple_ref/doc/uid/TP40011210-CH4-SW2)ガイド」を参照してください。
+
 
 ## <a name="example"></a>例
 
@@ -136,7 +140,9 @@ else
 
 ### <a name="selector-targets"></a>セレクターターゲット
 
+
 セレクターターゲットは、オブジェクトインスタンスまたは Objective-C クラスのいずれかです。 ターゲットがインスタンスであり、バインドされた Xamarin. iOS の種類からのものである場合は、 [`ObjCRuntime.INativeObject.Handle`](xref:ObjCRuntime.INativeObject.Handle) プロパティを使用します。
+
 
 ターゲットがクラスの場合は、 [`ObjCRuntime.Class`](xref:ObjCRuntime.Class)を使用してクラスインスタンスへの参照を取得し、 [`Class.Handle`](xref:ObjCRuntime.Class.Handle)プロパティを使用します。
 

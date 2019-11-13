@@ -6,13 +6,13 @@ ms.assetid: C5481D86-80E9-4E3D-9FB6-57B0F93711A6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/24/2018
-ms.openlocfilehash: 98def647c38f69ec4f942a06e2187841c4e04459
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.date: 11/06/2019
+ms.openlocfilehash: dfb7f12affc8b0b41ec56cd17894c0f0a4b5fc6e
+ms.sourcegitcommit: 283810340de5310f63ef7c3e4b266fe9dc2ffcaf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72697170"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73662352"
 ---
 # <a name="customizing-a-map-pin"></a>マップ ピンのカスタマイズ
 
@@ -46,7 +46,7 @@ _この記事では、各プラットフォーム上でカスタマイズされ�
 ```csharp
 public class CustomMap : Map
 {
-  public List<CustomPin> CustomPins { get; set; }
+    public List<CustomPin> CustomPins { get; set; }
 }
 ```
 
@@ -55,11 +55,12 @@ public class CustomMap : Map
 ```csharp
 public class CustomPin : Pin
 {
-  public string Url { get; set; }
+    public string Name { get; set; }
+    public string Url { get; set; }
 }
 ```
 
-このクラスでは、[`Pin`](xref:Xamarin.Forms.Maps.Pin) クラスのプロパティを継承するものとして、`Url` プロパティを追加することで、`CustomPin` を定義します。
+このクラスでは、[`Pin`](xref:Xamarin.Forms.Maps.Pin) クラスのプロパティを継承し、`Name` プロパティと `Url` プロパティが追加するものとして、`CustomPin` が定義されます。
 
 <a name="Consuming_the_Custom_Map" />
 
@@ -69,13 +70,11 @@ public class CustomPin : Pin
 
 ```xaml
 <ContentPage ...
-             xmlns:local="clr-namespace:CustomRenderer;assembly=CustomRenderer">
-    <ContentPage.Content>
-        <local:CustomMap x:Name="myMap" MapType="Street"
-          WidthRequest="{x:Static local:App.ScreenWidth}"
-          HeightRequest="{x:Static local:App.ScreenHeight}" />
-    </ContentPage.Content>
+                   xmlns:local="clr-namespace:CustomRenderer;assembly=CustomRenderer">
+    <local:CustomMap x:Name="customMap"
+                   MapType="Street" />
 </ContentPage>
+
 ```
 
 `local` 名前空間プレフィックスには任意の名前を付けることができます。 しかし、`clr-namespace` と `assembly` の値は、カスタム マップの詳細と一致する必要があります。 名前空間が宣言されたら、カスタム マップを参照するためにプレフィックスが使用されます。
@@ -85,41 +84,38 @@ public class CustomPin : Pin
 ```csharp
 public class MapPageCS : ContentPage
 {
-  public MapPageCS ()
-  {
-    var customMap = new CustomMap {
-      MapType = MapType.Street,
-      WidthRequest = App.ScreenWidth,
-      HeightRequest = App.ScreenHeight
-    };
-    ...
-
-    Content = customMap;
-  }
+    public MapPageCS()
+    {
+        CustomMap customMap = new CustomMap
+        {
+            MapType = MapType.Street
+        };
+        // ...
+        Content = customMap;
+    }
 }
 ```
 
-`CustomMap` インスタンスは、各プラットフォーム上でネイティブ マップを表示するために使用されます。 その [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType) プロパティでは、[`MapType`](xref:Xamarin.Forms.Maps.MapType) 列挙型で定義されている使用可能な値で、[`Map`](xref:Xamarin.Forms.Maps.Map) の表示スタイルが設定されます。 iOS と Android の場合、マップの幅と高さは、プラットフォーム固有のプロジェクトで初期化される `App` クラスのプロパティを使用して設定されます。
+`CustomMap` インスタンスは、各プラットフォーム上でネイティブ マップを表示するために使用されます。 その [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType) プロパティでは、[`MapType`](xref:Xamarin.Forms.Maps.MapType) 列挙型で定義されている使用可能な値で、[`Map`](xref:Xamarin.Forms.Maps.Map) の表示スタイルが設定されます。
 
 マップの場所、およびそれに含まれるピンは、次のコード例に示すように初期化されます。
 
 ```csharp
-public MapPage ()
+public MapPage()
 {
-  ...
-  var pin = new CustomPin {
-    Type = PinType.Place,
-    Position = new Position (37.79752, -122.40183),
-    Label = "Xamarin San Francisco Office",
-    Address = "394 Pacific Ave, San Francisco CA",
-    MarkerId = "Xamarin",
-    Url = "http://xamarin.com/about/"
-  };
-
-  customMap.CustomPins = new List<CustomPin> { pin };
-  customMap.Pins.Add (pin);
-  customMap.MoveToRegion (MapSpan.FromCenterAndRadius (
-    new Position (37.79752, -122.40183), Distance.FromMiles (1.0)));
+    // ...
+    CustomPin pin = new CustomPin
+    {
+        Type = PinType.Place,
+        Position = new Position(37.79752, -122.40183),
+        Label = "Xamarin San Francisco Office",
+        Address = "394 Pacific Ave, San Francisco CA",
+        Name = "Xamarin",
+        Url = "http://xamarin.com/about/"
+    };
+    customMap.CustomPins = new List<CustomPin> { pin };
+    customMap.Pins.Add(pin);
+    customMap.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(37.79752, -122.40183), Distance.FromMiles(1.0)));
 }
 ```
 
@@ -159,12 +155,14 @@ protected override void OnElementChanged (ElementChangedEventArgs<Xamarin.Forms.
 {
   base.OnElementChanged (e);
 
-  if (e.OldElement != null) {
-    // Unsubscribe from event handlers
+  if (e.OldElement != null)
+  {
+      // Unsubscribe from event handlers
   }
 
-  if (e.NewElement != null) {
-    // Configure the native control and subscribe to event handlers
+  if (e.NewElement != null)
+  {
+      // Configure the native control and subscribe to event handlers
   }
 }
 ```
@@ -198,9 +196,11 @@ namespace CustomRenderer.iOS
         {
             base.OnElementChanged(e);
 
-            if (e.OldElement != null) {
+            if (e.OldElement != null)
+            {
                 var nativeMap = Control as MKMapView;
-                if (nativeMap != null) {
+                if (nativeMap != null)
+                {
                     nativeMap.RemoveAnnotations(nativeMap.Annotations);
                     nativeMap.GetViewForAnnotation = null;
                     nativeMap.CalloutAccessoryControlTapped -= OnCalloutAccessoryControlTapped;
@@ -209,7 +209,8 @@ namespace CustomRenderer.iOS
                 }
             }
 
-            if (e.NewElement != null) {
+            if (e.NewElement != null)
+            {
                 var formsMap = (CustomMap)e.NewElement;
                 var nativeMap = Control as MKMapView;
                 customPins = formsMap.CustomPins;
@@ -220,7 +221,7 @@ namespace CustomRenderer.iOS
                 nativeMap.DidDeselectAnnotationView += OnDidDeselectAnnotationView;
             }
         }
-        ...
+        // ...
     }
 }
 ```
@@ -250,18 +251,20 @@ protected override MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKA
         return null;
 
     var customPin = GetCustomPin(annotation as MKPointAnnotation);
-    if (customPin == null) {
+    if (customPin == null)
+    {
         throw new Exception("Custom pin not found");
     }
 
-    annotationView = mapView.DequeueReusableAnnotation(customPin.MarkerId.ToString());
-    if (annotationView == null) {
-        annotationView = new CustomMKAnnotationView(annotation, customPin.MarkerId.ToString());
+    annotationView = mapView.DequeueReusableAnnotation(customPin.Name);
+    if (annotationView == null)
+    {
+        annotationView = new CustomMKAnnotationView(annotation, customPin.Name);
         annotationView.Image = UIImage.FromFile("pin.png");
         annotationView.CalloutOffset = new CGPoint(0, 0);
         annotationView.LeftCalloutAccessoryView = new UIImageView(UIImage.FromFile("monkey.png"));
         annotationView.RightCalloutAccessoryView = UIButton.FromType(UIButtonType.DetailDisclosure);
-        ((CustomMKAnnotationView)annotationView).MarkerId = customPin.MarkerId.ToString();
+        ((CustomMKAnnotationView)annotationView).Name = customPin.Name;
         ((CustomMKAnnotationView)annotationView).Url = customPin.Url;
     }
     annotationView.CanShowCallout = true;
@@ -274,12 +277,12 @@ protected override MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKA
 
 1. 注釈のカスタム ピン データを返すために、`GetCustomPin` メソッドが呼び出されます。
 1. メモリを節約するため、[`DequeueReusableAnnotation`](xref:MapKit.MKMapView.DequeueReusableAnnotation*) の呼び出しで再利用できるように注釈のビューがプーリングされます。
-1. `CustomMKAnnotationView` クラスでは、`CustomPin` インスタンスの同じプロパティに対応する `MarkerId` および `Url` プロパティを使用して、`MKAnnotationView` クラスが拡張されます。 注釈が `null` の場合、`CustomMKAnnotationView` の新しいインスタンスが作成されます。
+1. `CustomMKAnnotationView` クラスでは、`CustomPin` インスタンスの同じプロパティに対応する `Name` および `Url` プロパティを使用して、`MKAnnotationView` クラスが拡張されます。 注釈が `null` の場合、`CustomMKAnnotationView` の新しいインスタンスが作成されます。
     - `CustomMKAnnotationView.Image` プロパティは、マップ上の注釈を表すイメージに設定されます。
     - `CustomMKAnnotationView.CalloutOffset` プロパティは `CGPoint` に設定されます。これにより、吹き出しが注釈の上の中央に表示されることが指定されます。
     - `CustomMKAnnotationView.LeftCalloutAccessoryView` プロパティは、注釈のタイトルとアドレスの左側に表示されるサルのイメージに設定されます。
     - `CustomMKAnnotationView.RightCalloutAccessoryView` プロパティは、注釈のタイトルとアドレスの右側に表示される*情報* ボタンに設定されます。
-    - `CustomMKAnnotationView.MarkerId` プロパティは、`GetCustomPin` メソッドによって返される `CustomPin.MarkerId` プロパティに設定されます。 これにより、注釈を識別でき、必要に応じて、その[吹き出しをさらにカスタマイズできる](#Selecting_the_Annotation)ようになります。
+    - `CustomMKAnnotationView.Name` プロパティは、`GetCustomPin` メソッドによって返される `CustomPin.Name` プロパティに設定されます。 これにより、注釈を識別でき、必要に応じて、その[吹き出しをさらにカスタマイズできる](#Selecting_the_Annotation)ようになります。
     - `CustomMKAnnotationView.Url` プロパティは、`GetCustomPin` メソッドによって返される `CustomPin.Url` プロパティに設定されます。 ユーザーが[右側の吹き出しのアクセサリ ビューに表示されるボタンをタップ](#Tapping_on_the_Right_Callout_Accessory_View)したときに、URL にナビゲートされます。
 1. [`MKAnnotationView.CanShowCallout`](xref:MapKit.MKAnnotationView.CanShowCallout*) プロパティは `true` に設定され、注釈がタップされたときに吹き出しが表示されるようになります。
 1. マップに表示される注釈が返されます。
@@ -291,23 +294,24 @@ protected override MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKA
 ユーザーが注釈をタップしたときに、`DidSelectAnnotationView` イベントが発生し、次に、`OnDidSelectAnnotationView` メソッドが実行されます。
 
 ```csharp
-void OnDidSelectAnnotationView (object sender, MKAnnotationViewEventArgs e)
+void OnDidSelectAnnotationView(object sender, MKAnnotationViewEventArgs e)
 {
-  var customView = e.View as CustomMKAnnotationView;
-  customPinView = new UIView ();
+    CustomMKAnnotationView customView = e.View as CustomMKAnnotationView;
+    customPinView = new UIView();
 
-  if (customView.MarkerId == "Xamarin") {
-    customPinView.Frame = new CGRect (0, 0, 200, 84);
-    var image = new UIImageView (new CGRect (0, 0, 200, 84));
-    image.Image = UIImage.FromFile ("xamarin.png");
-    customPinView.AddSubview (image);
-    customPinView.Center = new CGPoint (0, -(e.View.Frame.Height + 75));
-    e.View.AddSubview (customPinView);
-  }
+    if (customView.Name.Equals("Xamarin"))
+    {
+        customPinView.Frame = new CGRect(0, 0, 200, 84);
+        var image = new UIImageView(new CGRect(0, 0, 200, 84));
+        image.Image = UIImage.FromFile("xamarin.png");
+        customPinView.AddSubview(image);
+        customPinView.Center = new CGPoint(0, -(e.View.Frame.Height + 75));
+        e.View.AddSubview(customPinView);
+    }
 }
 ```
 
-選択された注釈の `MarkerId` プロパティが `Xamarin` に設定されている場合、このメソッドでは、Xamarin ロゴのイメージを含む既存の吹き出しに `UIView` インスタンスを追加することで、その吹き出し (左側と右側のアクセサリ ビューを含む) を拡張します。 これにより、異なる注釈に対して異なる吹き出しを表示できるシナリオが可能になります。 `UIView` インスタンスは、既存の吹き出しの上の中央に表示されます。
+選択された注釈の `Name` プロパティが `Xamarin` に設定されている場合、このメソッドでは、Xamarin ロゴのイメージを含む既存の吹き出しに `UIView` インスタンスを追加することで、その吹き出し (左側と右側のアクセサリ ビューを含む) を拡張します。 これにより、異なる注釈に対して異なる吹き出しを表示できるシナリオが可能になります。 `UIView` インスタンスは、既存の吹き出しの上の中央に表示されます。
 
 <a name="Tapping_on_the_Right_Callout_Accessory_View" />
 
@@ -316,12 +320,13 @@ void OnDidSelectAnnotationView (object sender, MKAnnotationViewEventArgs e)
 ユーザーが右側の吹き出しのアクセサリ ビューにある*情報* ボタンをタップすると、`CalloutAccessoryControlTapped` イベントが発生し、次に、`OnCalloutAccessoryControlTapped` メソッドが実行されます。
 
 ```csharp
-void OnCalloutAccessoryControlTapped (object sender, MKMapViewAccessoryTappedEventArgs e)
+void OnCalloutAccessoryControlTapped(object sender, MKMapViewAccessoryTappedEventArgs e)
 {
-  var customView = e.View as CustomMKAnnotationView;
-  if (!string.IsNullOrWhiteSpace (customView.Url)) {
-    UIApplication.SharedApplication.OpenUrl (new Foundation.NSUrl (customView.Url));
-  }
+    CustomMKAnnotationView customView = e.View as CustomMKAnnotationView;
+    if (!string.IsNullOrWhiteSpace(customView.Url))
+    {
+        UIApplication.SharedApplication.OpenUrl(new Foundation.NSUrl(customView.Url));
+    }
 }
 ```
 
@@ -334,13 +339,14 @@ void OnCalloutAccessoryControlTapped (object sender, MKMapViewAccessoryTappedEve
 注釈が表示され、ユーザーがマップをタップしたときに、`DidDeselectAnnotationView` イベントが発生し、次に、`OnDidDeselectAnnotationView` メソッドが実行されます。
 
 ```csharp
-void OnDidDeselectAnnotationView (object sender, MKAnnotationViewEventArgs e)
+void OnDidDeselectAnnotationView(object sender, MKAnnotationViewEventArgs e)
 {
-  if (!e.View.Selected) {
-    customPinView.RemoveFromSuperview ();
-    customPinView.Dispose ();
-    customPinView = null;
-  }
+    if (!e.View.Selected)
+    {
+        customPinView.RemoveFromSuperview();
+        customPinView.Dispose();
+        customPinView = null;
+    }
 }
 ```
 
@@ -435,36 +441,43 @@ protected override MarkerOptions CreateMarker(Pin pin)
 `GetInfoWindow` メソッドで `null` が返される場合、ユーザーがマーカーをタップすると、`GetInfoContents` メソッドが実行されます。 次のコード例は、`GetInfoContents` メソッドを示しています。
 
 ```csharp
-public Android.Views.View GetInfoContents (Marker marker)
+public Android.Views.View GetInfoContents(Marker marker)
 {
-  var inflater = Android.App.Application.Context.GetSystemService (Context.LayoutInflaterService) as Android.Views.LayoutInflater;
-  if (inflater != null) {
-    Android.Views.View view;
+    var inflater = Android.App.Application.Context.GetSystemService(Context.LayoutInflaterService) as Android.Views.LayoutInflater;
+    if (inflater != null)
+    {
+        Android.Views.View view;
 
-    var customPin = GetCustomPin (marker);
-    if (customPin == null) {
-      throw new Exception ("Custom pin not found");
+        var customPin = GetCustomPin(marker);
+        if (customPin == null)
+        {
+            throw new Exception("Custom pin not found");
+        }
+
+        if (customPin.Name.Equals("Xamarin"))
+        {
+            view = inflater.Inflate(Resource.Layout.XamarinMapInfoWindow, null);
+        }
+        else
+        {
+            view = inflater.Inflate(Resource.Layout.MapInfoWindow, null);
+        }
+
+        var infoTitle = view.FindViewById<TextView>(Resource.Id.InfoWindowTitle);
+        var infoSubtitle = view.FindViewById<TextView>(Resource.Id.InfoWindowSubtitle);
+
+        if (infoTitle != null)
+        {
+            infoTitle.Text = marker.Title;
+        }
+        if (infoSubtitle != null)
+        {
+            infoSubtitle.Text = marker.Snippet;
+        }
+
+        return view;
     }
-
-    if (customPin.MarkerId.ToString() == "Xamarin") {
-      view = inflater.Inflate (Resource.Layout.XamarinMapInfoWindow, null);
-    } else {
-      view = inflater.Inflate (Resource.Layout.MapInfoWindow, null);
-    }
-
-    var infoTitle = view.FindViewById<TextView> (Resource.Id.InfoWindowTitle);
-    var infoSubtitle = view.FindViewById<TextView> (Resource.Id.InfoWindowSubtitle);
-
-    if (infoTitle != null) {
-      infoTitle.Text = marker.Title;
-    }
-    if (infoSubtitle != null) {
-      infoSubtitle.Text = marker.Snippet;
-    }
-
-    return view;
-  }
-  return null;
+    return null;
 }
 ```
 
@@ -472,7 +485,7 @@ public Android.Views.View GetInfoContents (Marker marker)
 
 - `LayoutInflater` インスタンスが取得されます。 これは、レイアウト XML ファイルをそれに対応する `View` にインスタンス化するために使用されます。
 - 情報ウィンドウのカスタム ピン データを返すために、`GetCustomPin` メソッドが呼び出されます。
-- `CustomPin.MarkerId` が `Xamarin` と等しい場合、`XamarinMapInfoWindow` レイアウトが拡張されます。 それ以外の場合は、`MapInfoWindow` レイアウトが拡張されます。 これにより、異なるマーカーに対して異なる情報ウィンドウ レイアウトを表示できるシナリオが可能になります。
+- `CustomPin.Name` が `Xamarin` と等しい場合、`XamarinMapInfoWindow` レイアウトが拡張されます。 それ以外の場合は、`MapInfoWindow` レイアウトが拡張されます。 これにより、異なるマーカーに対して異なる情報ウィンドウ レイアウトを表示できるシナリオが可能になります。
 - `InfoWindowTitle` および `InfoWindowSubtitle` リソースは拡張されたレイアウトから取得されます。リソースが `null` でない場合、それらの `Text` プロパティは `Marker` インスタンスの対応するデータに設定されます。
 - マップに表示される `View` インスタンスが返されます。
 
@@ -486,19 +499,21 @@ public Android.Views.View GetInfoContents (Marker marker)
 ユーザーが情報ウィンドウをクリックしたときに、`InfoWindowClick` イベントが発生し、次に、`OnInfoWindowClick` メソッドが実行されます。
 
 ```csharp
-void OnInfoWindowClick (object sender, GoogleMap.InfoWindowClickEventArgs e)
+void OnInfoWindowClick(object sender, GoogleMap.InfoWindowClickEventArgs e)
 {
-  var customPin = GetCustomPin (e.Marker);
-  if (customPin == null) {
-    throw new Exception ("Custom pin not found");
-  }
+    var customPin = GetCustomPin(e.Marker);
+    if (customPin == null)
+    {
+        throw new Exception("Custom pin not found");
+    }
 
-  if (!string.IsNullOrWhiteSpace (customPin.Url)) {
-    var url = Android.Net.Uri.Parse (customPin.Url);
-    var intent = new Intent (Intent.ActionView, url);
-    intent.AddFlags (ActivityFlags.NewTask);
-    Android.App.Application.Context.StartActivity (intent);
-  }
+    if (!string.IsNullOrWhiteSpace(customPin.Url))
+    {
+        var url = Android.Net.Uri.Parse(customPin.Url);
+        var intent = new Intent(Intent.ActionView, url);
+        intent.AddFlags(ActivityFlags.NewTask);
+        Android.App.Application.Context.StartActivity(intent);
+    }
 }
 ```
 
@@ -600,14 +615,14 @@ private void OnMapElementClick(MapControl sender, MapElementClickEventArgs args)
                 throw new Exception("Custom pin not found");
             }
 
-            if (customPin.MarkerId.ToString() == "Xamarin")
+            if (customPin.Name.Equals("Xamarin"))
             {
                 if (mapOverlay == null)
                 {
                     mapOverlay = new XamarinMapOverlay(customPin);
                 }
 
-                var snPosition = new BasicGeoposition { Latitude = customPin.Pin.Position.Latitude, Longitude = customPin.Pin.Position.Longitude };
+                var snPosition = new BasicGeoposition { Latitude = customPin.Position.Latitude, Longitude = customPin.Position.Longitude };
                 var snPoint = new Geopoint(snPosition);
 
                 nativeMap.Children.Add(mapOverlay);

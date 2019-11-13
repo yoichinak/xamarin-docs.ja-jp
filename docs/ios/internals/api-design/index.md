@@ -78,7 +78,7 @@ Objective-C のコードと通信する低レベルのランタイムは、[Mono
 
 ### <a name="assemblies"></a>アセンブリ
 
-Xamarin.iOS には、 *Xamarin.IOS Profile*を構成するさまざまなアセンブリが含まれています。 [[アセンブリ](~/cross-platform/internals/available-assemblies.md)] ページに詳細情報があります。
+Xamarin.iOS には、 *Xamarin.iOS Profile* を構成する多数のアセンブリが含まれています。 [[アセンブリ](~/cross-platform/internals/available-assemblies.md)] ページに詳細情報があります。
 
 ### <a name="major-namespaces"></a>主要な名前空間
 
@@ -95,7 +95,7 @@ Xamarin.iOS は、C# で Objective-C のクラスの階層をミラーリング�
 
 この名前空間には、基になる Objective-C からの型のバインドが用意されていますが、いくつかのケースでは、基になる型を .NET 型にマップしています。 例えば:
 
-- このランタイムでは、[NSString](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html)と[NSArray](https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html) を処理する代わりに、これらを C# の [string](xref:System.String) および厳密に型指定された [配列](xref:System.Array) として API 全体に公開しています。
+- このランタイムでは、 [nsstring](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html)と[nsstring](https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html)を処理する代わりにC#、これらを[文字列型](xref:System.String)および厳密に型指定された[配列](xref:System.Array)として API 全体に公開しています。
 
 - ここでは、開発者が Xamarin.iOS によって現在バインドされていないサードパーティの Objective-C Api、他の iOS Api、Api をバインドできるようにするために、さまざまなヘルパー Api が公開されています。
 
@@ -220,7 +220,7 @@ P/Invoke が、Windows および Linux でネイティブライブラリを呼�
 
 #### <a name="types"></a>種類
 
-意味があるところでC# 、型は低レベルの Foundation 型ではなく、 C#宇宙に公開されます。  これは[、API が NSString C#ではなく "string" 型を使用](~/ios/internals/api-design/nsstring.md)し、nsstring C#を公開するのではなく、厳密に型指定された配列を使用することを意味します。
+意味があるところでC# 、型は低レベルの Foundation 型ではなく、 C#宇宙に公開されます。  これは[`NSString` は `string` となります](~/ios/internals/api-design/nsstring.md)し、nsstring C#を公開するのではなく、厳密に型指定された配列を使用することを意味します。
 
 一般に、Xamarin と Xamarin の設計では、基になる `NSArray` オブジェクトは公開されません。 代わりに、ランタイムは `NSArray`s を、一部の `NSObject` クラスの厳密に型指定された配列に自動的に変換します。 そのため、Xamarin では、NSArray を返す GetViews のように弱く型指定されたメソッドを公開していません。
 

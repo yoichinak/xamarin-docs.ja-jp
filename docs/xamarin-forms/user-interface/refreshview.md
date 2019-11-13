@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/19/2019
-ms.openlocfilehash: b53c58a5e859bf7752855c3954666a062261599d
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.openlocfilehash: e38987006025dad1c2ff49c3ea8916e2075d61d7
+ms.sourcegitcommit: d1d4700b3b1b417a9d7b7da85ab5d28f8e8e599d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72697741"
+ms.lasthandoff: 11/06/2019
+ms.locfileid: "73649293"
 ---
 # <a name="xamarinforms-refreshview"></a>Xamarin. フォーム RefreshView
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshview/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshviewdemo/)
 
-`RefreshView ` は、スクロール可能なコンテンツに対してプルを更新する機能を提供するコンテナーコントロールです。 したがって、`RefreshView` の子は、 [`ScrollView`](xref:Xamarin.Forms.ScrollView)、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)、 [`ListView`](xref:Xamarin.Forms.ListView)などのスクロール可能なコントロールである必要があります。
+`RefreshView` は、スクロール可能なコンテンツに対してプルを更新する機能を提供するコンテナーコントロールです。 したがって、`RefreshView` の子は、 [`ScrollView`](xref:Xamarin.Forms.ScrollView)、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)、 [`ListView`](xref:Xamarin.Forms.ListView)などのスクロール可能なコントロールである必要があります。
 
 `RefreshView` は、次のプロパティを定義します。
 
@@ -70,7 +70,7 @@ refreshView.Content = scrollView;
 
 この例では、`RefreshView` は、子が[`FlexLayout`](xref:Xamarin.Forms.FlexLayout)である[`ScrollView`](xref:Xamarin.Forms.ScrollView)にプルを更新する機能を提供します。 `FlexLayout` は、バインド可能なレイアウトを使用して、項目のコレクションにバインドしてコンテンツを生成し、各項目の外観を[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)で設定します。 バインド可能なレイアウトの詳細については、「 [Xamarin. Forms でのバインド](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)可能なレイアウト」を参照してください。
 
-`RefreshView.IsRefreshing` プロパティの値は、`RefreshView` の現在の状態を示します。 ユーザーによって更新がトリガーされると、このプロパティは自動的に `true` に移行します。 更新が完了したら、プロパティを `false` にリセットする必要があります。
+`RefreshView.IsRefreshing` プロパティの値は、`RefreshView`の現在の状態を示します。 ユーザーによって更新がトリガーされると、このプロパティは自動的に `true` に移行します。 更新が完了したら、プロパティを `false` にリセットする必要があります。
 
 ユーザーが更新を開始すると、`Command` プロパティによって定義された `ICommand` が実行されます。これにより、表示される項目が更新されます。 更新が行われている間に、更新の視覚化が表示されます。これは、アニメーションの進行状況の円で構成されます。
 
@@ -105,6 +105,6 @@ refreshView.Content = scrollView;
 
 ## <a name="related-links"></a>関連リンク
 
-- [RefreshView (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshview/)
+- [RefreshView (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshviewdemo/)
 - [Xamarin. Forms のバインド可能なレイアウト](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)
 - [RefreshView のプル方向のプラットフォーム固有](~/xamarin-forms/platform/windows/refreshview-pulldirection.md)

@@ -32,9 +32,9 @@ ms.locfileid: "72697849"
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)では、項目をスクロールして表示する2つの[`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*)メソッドも定義されています。 オーバーロードの1つは、指定されたインデックス位置にある項目をビューにスクロールし、もう一方は指定された項目をビューにスクロールします。 どちらのオーバーロードにも、スクロールの完了後に項目の正確な位置を示すために指定できる追加の引数と、スクロールをアニメーション化するかどうかを指定できます。
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)は、いずれかの[`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*)メソッドが呼び出されたときに発生する[`ScrollToRequested`](xref:Xamarin.Forms.ItemsView.ScrollToRequested)イベントを定義します。 `ScrollToRequested` イベントに付随する[`ScrollToRequestedEventArgs`](xref:Xamarin.Forms.ScrollToRequestedEventArgs)オブジェクトには、`IsAnimated`、`Index`、`Item`、`ScrollToPosition` を含む多くのプロパティがあります。 これらのプロパティは、`ScrollTo` メソッドの呼び出しで指定された引数によって設定されます。
+[`CarouselView`](xref:Xamarin.Forms.CarouselView)は、いずれかの[`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*)メソッドが呼び出されたときに発生する[`ScrollToRequested`](xref:Xamarin.Forms.ItemsView.ScrollToRequested)イベントを定義します。 @No__t_2 イベントに付随する[`ScrollToRequestedEventArgs`](xref:Xamarin.Forms.ScrollToRequestedEventArgs)オブジェクトには、`IsAnimated`、`Index`、`Item`、`ScrollToPosition` を含む多くのプロパティがあります。 これらのプロパティは、`ScrollTo` メソッドの呼び出しで指定された引数によって設定されます。
 
-さらに、 [`CarouselView`](xref:Xamarin.Forms.CarouselView)は、スクロールが発生したことを示すために発生する `Scrolled` イベントを定義します。 `Scrolled` イベントに付随する `ItemsViewScrolledEventArgs` オブジェクトには、多くのプロパティがあります。 詳細については、「[スクロールの検出](#detect-scrolling)」を参照してください。
+さらに、 [`CarouselView`](xref:Xamarin.Forms.CarouselView)は、スクロールが発生したことを示すために発生する `Scrolled` イベントを定義します。 @No__t_1 イベントに付随する `ItemsViewScrolledEventArgs` オブジェクトには、多くのプロパティがあります。 詳細については、「[スクロールの検出](#detect-scrolling)」を参照してください。
 
 ユーザーがスクロールを開始しようとしたときに、項目が完全に表示されるように、スクロールの終了位置を制御できます。 スクロールが停止したときに項目が位置にスナップされるため、この機能はスナップと呼ばれています。 詳細については、「[スナップポイント](#snap-points)」を参照してください。
 
@@ -83,7 +83,7 @@ void OnCarouselViewScrolled(object sender, ItemsViewScrolledEventArgs e)
 
 ## <a name="scroll-an-item-at-an-index-into-view"></a>インデックスにある項目をスクロールして表示する
 
-最初の[`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*)メソッドオーバーロードは、指定されたインデックス位置にある項目をビューにスクロールします。 `carouselView` という名前の[`CarouselView`](xref:Xamarin.Forms.CarouselView)オブジェクトを指定した場合、次の例では、インデックス6の項目をビューにスクロールする方法を示しています。
+最初の[`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*)メソッドオーバーロードは、指定されたインデックス位置にある項目をビューにスクロールします。 @No__t_2 という名前の[`CarouselView`](xref:Xamarin.Forms.CarouselView)オブジェクトを指定した場合、次の例では、インデックス6の項目をビューにスクロールする方法を示しています。
 
 ```csharp
 carouselView.ScrollTo(6);
@@ -94,7 +94,7 @@ carouselView.ScrollTo(6);
 
 ## <a name="scroll-an-item-into-view"></a>項目をスクロールして表示する
 
-2番目の[`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*)メソッドオーバーロードは、指定された項目をビューにスクロールします。 `carouselView` という名前の[`CarouselView`](xref:Xamarin.Forms.CarouselView)オブジェクトがある場合、次の例は、Proboscis のサル項目をスクロールして表示する方法を示しています。
+2番目の[`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*)メソッドオーバーロードは、指定された項目をビューにスクロールします。 @No__t_2 という名前の[`CarouselView`](xref:Xamarin.Forms.CarouselView)オブジェクトがある場合、次の例は、Proboscis のサル項目をスクロールして表示する方法を示しています。
 
 ```csharp
 MonkeysViewModel viewModel = BindingContext as MonkeysViewModel;
@@ -107,7 +107,7 @@ carouselView.ScrollTo(monkey);
 
 ## <a name="disable-scroll-animation"></a>スクロールアニメーションを無効にする
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)内の項目間を移動すると、スクロールアニメーションが表示されます。 このアニメーションは、ユーザーが開始したスクロールとプログラムによるスクロールの両方で発生します。 `IsScrollAnimated` プロパティを `false` に設定すると、両方のスクロールカテゴリのアニメーションが無効になります。
+[@No__t_1](xref:Xamarin.Forms.CarouselView)内の項目間を移動すると、スクロールアニメーションが表示されます。 このアニメーションは、ユーザーが開始したスクロールとプログラムによるスクロールの両方で発生します。 @No__t_0 プロパティを `false` に設定すると、両方のスクロールカテゴリのアニメーションが無効になります。
 
 または、`ScrollTo` メソッドの `animate` 引数を `false` に設定して、プログラムによるスクロールでのスクロールアニメーションを無効にすることもできます。
 
@@ -170,7 +170,7 @@ carouselViewView.ScrollTo(monkey, position: ScrollToPosition.End);
 - `KeepScrollOffset` は、新しい項目が追加されたときに、リストの先頭を基準としたスクロールオフセットを維持します。
 - `KeepLastItemInView` は、新しい項目が追加されたときに最後の項目が表示されるように、スクロールのオフセットを調整します。
 
-`ItemsUpdatingScrollMode` プロパティの既定値は `KeepItemsInView` です。 したがって、 [`CarouselView`](xref:Xamarin.Forms.CarouselView)に新しい項目が追加されると、一覧に表示されている最初の項目が表示されたままになります。 新しく追加された項目が一覧の下部に常に表示されるようにするには、`ItemsUpdatingScrollMode` プロパティを `KeepLastItemInView` に設定する必要があります。
+@No__t_0 プロパティの既定値は `KeepItemsInView` です。 したがって、 [`CarouselView`](xref:Xamarin.Forms.CarouselView)に新しい項目が追加されると、一覧に表示されている最初の項目が表示されたままになります。 新しく追加された項目が一覧の下部に常に表示されるようにするには、`ItemsUpdatingScrollMode` プロパティを `KeepLastItemInView` に設定する必要があります。
 
 ```xaml
 <CarouselView ItemsUpdatingScrollMode="KeepLastItemInView">
@@ -209,7 +209,7 @@ CarouselView carouselView = new CarouselView
 
 ### <a name="snap-points-type"></a>スナップポイントの種類
 
-[`SnapPointsType`](xref:Xamarin.Forms.SnapPointsType)列挙体は、次のメンバーを定義します。
+[`SnapPointsType`列挙体は、次のメンバーを定義します。
 
 - `None` は、スクロールが項目にスナップされないことを示します。
 - `Mandatory` は、コンテンツが常に最も近いスナップポイントにスナップポイントにスナップし、慣性の方向に沿ってスクロールが自然に停止することを示します。
@@ -226,7 +226,7 @@ CarouselView carouselView = new CarouselView
 
 #### <a name="start"></a>[開始]
 
-`SnapPointsAlignment.Start` メンバーは、スナップポイントが項目の先頭端に合わせて整列されていることを示します。 次の XAML の例は、この列挙型のメンバーを設定する方法を示しています。
+@No__t_0 メンバーは、スナップポイントが項目の先頭端に合わせて整列されていることを示します。 次の XAML の例は、この列挙型のメンバーを設定する方法を示しています。
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}"
@@ -292,7 +292,7 @@ CarouselView carouselView = new CarouselView
 
 #### <a name="end"></a>終了
 
-`SnapPointsAlignment.End` メンバーは、スナップポイントが項目の末尾の端に揃えられていることを示します。 次の XAML の例は、この列挙型のメンバーを設定する方法を示しています。
+@No__t_0 メンバーは、スナップポイントが項目の末尾の端に揃えられていることを示します。 次の XAML の例は、この列挙型のメンバーを設定する方法を示しています。
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}"

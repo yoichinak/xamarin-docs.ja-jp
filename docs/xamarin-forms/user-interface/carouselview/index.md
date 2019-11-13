@@ -24,7 +24,7 @@ ms.locfileid: "72696988"
 
 ## <a name="datapopulate-datamd"></a>[データ](populate-data.md)
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)には、 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)プロパティを `IEnumerable` を実装する任意のコレクションに設定することによってデータが設定されます。 各項目の外観を定義するには、[ [`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate) ] プロパティを[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)に設定します。
+[@No__t_1](xref:Xamarin.Forms.CarouselView)には、 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)プロパティを `IEnumerable` を実装する任意のコレクションに設定することによってデータが設定されます。 各項目の外観を定義するには、[ [`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate) ] プロパティを[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)に設定します。
 
 ## <a name="layoutlayoutmd"></a>[レイアウト](layout.md)
 
@@ -32,11 +32,11 @@ ms.locfileid: "72696988"
 
 ## <a name="interactioninteractionmd"></a>[介入](interaction.md)
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)に現在表示されているアイテムには、`CurrentItem` プロパティと `Position` プロパティを使用してアクセスできます。
+[@No__t_1](xref:Xamarin.Forms.CarouselView)に現在表示されているアイテムには、`CurrentItem` プロパティと `Position` プロパティを使用してアクセスできます。
 
 ## <a name="empty-viewsemptyviewmd"></a>[空のビュー](emptyview.md)
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)では、表示可能なデータがない場合にユーザーにフィードバックを提供する空のビューを指定できます。 空のビューには、文字列、ビュー、または複数のビューを指定できます。
+[@No__t_1](xref:Xamarin.Forms.CarouselView)では、表示可能なデータがない場合にユーザーにフィードバックを提供する空のビューを指定できます。 空のビューには、文字列、ビュー、または複数のビューを指定できます。
 
 ## <a name="scrollingscrollingmd"></a>[スクロール](scrolling.md)
 
