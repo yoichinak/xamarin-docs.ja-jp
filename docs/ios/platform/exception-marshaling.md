@@ -18,7 +18,7 @@ ms.locfileid: "73032520"
 
 _Xamarin. iOS には、例外 (特にネイティブコード) に応答するための新しいイベントが含まれています。_
 
-マネージコードと目標 C の両方で、ランタイム例外 (try/catch/finally 句) がサポートされています。
+マネージコードと Objective-C の両方で、ランタイム例外 (try/catch/finally 句) がサポートされています。
 
 ただし、これらの実装は異なります。つまり、ランタイムライブラリ (Mono ランタイムライブラリと目的 C ランタイムライブラリ) では、例外を処理し、他の言語で記述されたコードを実行する必要がある場合に問題が発生します。
 
@@ -271,7 +271,7 @@ xamarin_dyn_objc_msgSend (id obj, SEL sel)
 
 - `Default`: 既定値はプラットフォームによって異なります。 GC が協調モード (watchOS) の場合は `ThrowObjectiveCException`、それ以外の場合は `UnwindNativeCode` (iOS/watchOS/macOS)。 既定値は将来変更される可能性があります。
 - `UnwindNativeCode`: これは前 (未定義) の動作です。 これは、GC を協調モードで使用する場合は使用できません (これは watchOS の唯一のオプションであるため、watchOS では有効なオプションではありません) が、他のすべてのプラットフォームの既定のオプションです。
-- `ThrowObjectiveCException`: マネージ例外を目的の C 例外に変換し、C 例外をスローします。 これは、watchOS の既定値です。
+- `ThrowObjectiveCException`: マネージ例外を Objective-C 例外に変換し、Objective-C 例外をスローします。 これは、watchOS の既定値です。
 - `Abort`: プロセスを中止します。
 - `Disable`: 例外のインターセプトを無効にするため、イベントハンドラーにこの値を設定するのは理にかなっていませんが、イベントが発生した後で無効にするのは遅すぎます。 どのような場合でも、設定した場合は `UnwindNativeCode`として動作します。
 
