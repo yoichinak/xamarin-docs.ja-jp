@@ -104,7 +104,7 @@ carouselView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 
 ## <a name="define-item-appearance"></a>項目の外観を定義する
 
-[@No__t_1](xref:Xamarin.Forms.CarouselView)内の各項目の外観は、 [`CarouselView.ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)プロパティを[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)に設定することによって定義できます。
+[`CarouselView`](xref:Xamarin.Forms.CarouselView)内の各項目の外観は、 [`CarouselView.ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)プロパティを[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)に設定することによって定義できます。
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}">
@@ -249,7 +249,7 @@ public class MonkeyDataTemplateSelector : DataTemplateSelector
 }
 ```
 
-@No__t_0 クラスは、さまざまなデータテンプレートに設定されている[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)プロパティの `AmericanMonkey` と `OtherMonkey` を定義します。 @No__t_0 override は、サル名に "America" が含まれている場合に、`AmericanMonkey` テンプレートを返します。 サル名に "America" が含まれていない場合、`OnSelectTemplate` のオーバーライドによって `OtherMonkey` テンプレートが返され、そのデータがグレーで表示されます。
+`MonkeyDataTemplateSelector` クラスは、さまざまなデータテンプレートに設定されている[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)プロパティの `AmericanMonkey` と `OtherMonkey` を定義します。 `OnSelectTemplate` override は、サル名に "America" が含まれている場合に、`AmericanMonkey` テンプレートを返します。 サル名に "America" が含まれていない場合、`OnSelectTemplate` のオーバーライドによって `OtherMonkey` テンプレートが返され、そのデータがグレーで表示されます。
 
 [![IOS と Android での CarouselView runtime item テンプレートの選択のスクリーンショット](populate-data-images/datatemplateselector.png "CarouselView でのランタイム項目テンプレートの選択")](populate-data-images/datatemplateselector-large.png#lightbox "CarouselView でのランタイム項目テンプレートの選択")
 
@@ -295,7 +295,7 @@ refreshView.Content = carouselView;
 
 @No__t_0 プロパティの値は、`RefreshView` の現在の状態を示します。 ユーザーによって更新がトリガーされると、このプロパティは自動的に `true` に移行します。 更新が完了したら、プロパティを `false` にリセットする必要があります。
 
-@No__t_0 の詳細については、「 [Xamarin. フォーム RefreshView](~/xamarin-forms/user-interface/refreshview.md)」を参照してください。
+`RefreshView` の詳細については、「 [Xamarin. フォーム RefreshView](~/xamarin-forms/user-interface/refreshview.md)」を参照してください。
 
 ## <a name="load-data-incrementally"></a>データを増分読み込み
 

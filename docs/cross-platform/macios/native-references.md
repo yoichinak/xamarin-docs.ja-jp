@@ -13,7 +13,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/29/2019
 ms.locfileid: "73015620"
 ---
-# <a name="native-references-in-ios-mac-and-bindings-projects"></a>IOS、Mac、およびバインドプロジェクトでのネイティブ参照
+# <a name="native-references-in-ios-mac-and-bindings-projects"></a>iOS、Mac、およびバインドプロジェクトでのネイティブ参照
 
 _ネイティブ参照を使用すると、ネイティブフレームワークを Xamarin または Xamarin のプロジェクトまたはバインドプロジェクトに埋め込むことができます。_
 

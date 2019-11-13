@@ -1,46 +1,46 @@
 ---
-title: Xamarin.Forms でのイージング関数
-description: Xamarin.Forms には、アニメーションの速度または実行されているように遅く、そのコントロールを使用すると、転送関数を指定するイージング クラスが含まれています。 この記事では、定義済みのイージング関数を使用する方法とカスタム イージング関数を作成する方法を示します。
+title: Xamarin のイージング関数
+description: Xamarin. フォームにはイージングクラスが含まれています。このクラスを使用すると、アニメーションの実行速度を制御する転送関数を指定できます。 この記事では、定義済みのイージング関数を使用する方法と、カスタムイージング関数を作成する方法について説明します。
 ms.prod: xamarin
 ms.assetid: E6F124C7-A161-4C1F-AF40-52F0935E54DE
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/14/2016
-ms.openlocfilehash: ad22bfb4370dceb25fd229c7d5cfb38c386fbd84
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 56ea31d1e1be8bbad4a27dd7ffd844aa03f75bbb
+ms.sourcegitcommit: efbc69acf4ea484d8815311b058114379c9db8a2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759808"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73842828"
 ---
-# <a name="easing-functions-in-xamarinforms"></a>Xamarin.Forms でのイージング関数
+# <a name="easing-functions-in-xamarinforms"></a>Xamarin のイージング関数
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-easing)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-easing)
 
-_Xamarin.Forms には、アニメーションの速度または実行されているように遅く、そのコントロールを使用すると、転送関数を指定するイージング クラスが含まれています。この記事では、定義済みのイージング関数を使用する方法とカスタム イージング関数を作成する方法を示します。_
+_Xamarin. フォームにはイージングクラスが含まれています。このクラスを使用すると、アニメーションの実行速度を制御する転送関数を指定できます。この記事では、定義済みのイージング関数を使用する方法と、カスタムイージング関数を作成する方法について説明します。_
 
-[ `Easing` ](xref:Xamarin.Forms.Easing)クラスは、さまざまなアニメーションで使用できるイージング関数を定義します。
+[`Easing`](xref:Xamarin.Forms.Easing)クラスは、アニメーションで使用できるイージング関数の数を定義します。
 
-- [ `BounceIn` ](xref:Xamarin.Forms.Easing.BounceIn)先頭にアニメーションを bounces イージング機能。
-- [ `BounceOut` ](xref:Xamarin.Forms.Easing.BounceOut)最後にアニメーションを bounces イージング機能。
-- [ `CubicIn` ](xref:Xamarin.Forms.Easing.CubicIn)アニメーションを加速するイージング関数を緩やかに変化します。
-- [ `CubicInOut` ](xref:Xamarin.Forms.Easing.CubicInOut)イージング関数を開始時に、アニメーションを加速および減速のアニメーションを最後にします。
-- [ `CubicOut` ](xref:Xamarin.Forms.Easing.CubicOut)減速のアニメーションのイージング関数を簡単にします。
-- [ `Linear` ](xref:Xamarin.Forms.Easing.Linear)一定の速度を使用するイージング機能し、イージング関数を既定値は。
-- [ `SinIn` ](xref:Xamarin.Forms.Easing.SinIn)イージング機能をスムーズにアニメーションを加速します。
-- [ `SinInOut` ](xref:Xamarin.Forms.Easing.SinInOut)イージング機能をスムーズに開始時に、アニメーションを加速し、最後にアニメーションをスムーズに減速します。
-- [ `SinOut` ](xref:Xamarin.Forms.Easing.SinOut)イージング機能をスムーズにアニメーションを減速します。
-- [ `SpringIn` ](xref:Xamarin.Forms.Easing.SpringIn)と、非常に迅速に終了するころに高速化、アニメーションのイージング機能。
-- [ `SpringOut` ](xref:Xamarin.Forms.Easing.SpringOut)により迅速に終了するころに減速するアニメーションのイージング機能。
+- [`BounceIn`](xref:Xamarin.Forms.Easing.BounceIn)イージング関数は、アニメーションを先頭にバウンスします。
+- [`BounceOut`](xref:Xamarin.Forms.Easing.BounceOut)イージング関数は、最後にアニメーションをバウンスします。
+- [`CubicIn`](xref:Xamarin.Forms.Easing.CubicIn)イージング関数は、アニメーションを遅く加速します。
+- [`CubicInOut`](xref:Xamarin.Forms.Easing.CubicInOut)イージング関数は、最初のアニメーションを加速させると共に、最後にアニメーションを減速します。
+- [`CubicOut`](xref:Xamarin.Forms.Easing.CubicOut)イージング関数は、アニメーションをすばやく減速します。
+- [`Linear`](xref:Xamarin.Forms.Easing.Linear)イージング関数は、一定の速度を使用します。これは、既定のイージング関数です。
+- [`SinIn`](xref:Xamarin.Forms.Easing.SinIn)イージング関数は、アニメーションをスムーズに加速します。
+- [`SinInOut`](xref:Xamarin.Forms.Easing.SinInOut)イージング関数は、アニメーションを開始時にスムーズに加速させると共に、最後にアニメーションを減速します。
+- [`SinOut`](xref:Xamarin.Forms.Easing.SinOut)イージング関数は、アニメーションをスムーズに減速します。
+- [`SpringIn`](xref:Xamarin.Forms.Easing.SpringIn)イージング関数を使うと、アニメーションが短時間で終了します。
+- [`SpringOut`](xref:Xamarin.Forms.Easing.SpringOut)イージング関数を使うと、アニメーションは最終的にすばやく減速します。
 
-`In`と`Out`サフィックスは、イージング関数によって提供される効果が最後に、またはその両方で、アニメーションの先頭に顕著なを指定します。
+`In` と `Out` のサフィックスは、イージング関数によって提供される効果が、アニメーションの先頭、末尾、またはその両方で目立つかどうかを示します。
 
-さらに、カスタム イージング関数を作成できます。 詳細については、次を参照してください。[カスタム イージング関数](#customeasing)します。
+さらに、カスタムイージング関数を作成することもできます。 詳細については、「[カスタムイージング関数](#customeasing)」を参照してください。
 
-## <a name="consuming-an-easing-function"></a>イージング関数を使用
+## <a name="consuming-an-easing-function"></a>イージング関数の使用
 
-アニメーションの拡張メソッドにおいて、 [ `ViewExtensions` ](xref:Xamarin.Forms.ViewExtensions)クラスの次のコード例に示す最後のメソッドのパラメーターとして指定するイージング関数を許可します。
+[`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions)クラスのアニメーション拡張メソッドを使用すると、次のコード例に示すように、イージング関数を final メソッドパラメーターとして指定できます。
 
 ```csharp
 await image.TranslateTo(0, 200, 2000, Easing.BounceIn);
@@ -50,65 +50,65 @@ await image.ScaleTo(1, 2000, Easing.CubicOut);
 await image.TranslateTo(0, -200, 2000, Easing.BounceOut);
 ```
 
-アニメーションにイージング関数を指定するは、アニメーションの速度は、非線形のようになり、イージング関数によって提供される効果を生成します。 アニメーションを作成するときに、イージング関数を省略すると、既定値を使用するアニメーションが[ `Linear` ](xref:Xamarin.Forms.Easing.Linear)イージング機能で、線形の速度が生成されます。
+アニメーションのイージング関数を指定することにより、アニメーションベロシティが非線形になり、イージング関数によって提供される効果が生成されます。 アニメーションを作成するときにイージング関数を省略すると、アニメーションでは、既定の[`Linear`](xref:Xamarin.Forms.Easing.Linear)イージング関数が使用されます。これにより、線形速度が生成されます。
 
-アニメーションの拡張メソッドを使用しての詳細については、 [ `ViewExtensions` ](xref:Xamarin.Forms.ViewExtensions)クラスを参照してください[単純なアニメーション](~/xamarin-forms/user-interface/animation/simple.md)します。 イージング関数を使用できますが、 [ `Animation` ](xref:Xamarin.Forms.Animation)クラス。 詳細については、次を参照してください。[アニメーション](~/xamarin-forms/user-interface/animation/custom.md)します。
+[`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions)クラスでアニメーション拡張メソッドを使用する方法の詳細については、「[単純なアニメーション](~/xamarin-forms/user-interface/animation/simple.md)」を参照してください。 イージング関数は、 [`Animation`](xref:Xamarin.Forms.Animation)クラスでも使用できます。 詳細については、「[カスタムアニメーション](~/xamarin-forms/user-interface/animation/custom.md)」を参照してください。
 
 <a name="customeasing" />
 
-## <a name="custom-easing-functions"></a>カスタム イージング関数
+## <a name="custom-easing-functions"></a>カスタムイージング関数
 
-カスタム イージング関数を作成する 3 つの主な方法はあります。
+カスタムイージング関数を作成するには、主に次の3つの方法があります。
 
-1. 受け取るメソッドを作成、`double`引数を返します、`double`結果。
+1. `double` 引数を受け取り、`double` 結果を返すメソッドを作成します。
 1. `Func<double, double>` を作成します。
-1. イージング関数を指定する引数として、 [ `Easing` ](xref:Xamarin.Forms.Easing)コンス トラクター。
+1. [`Easing`](xref:Xamarin.Forms.Easing)コンストラクターの引数としてイージング関数を指定します。
 
-すべての 3 つのケースでカスタム イージング関数は 1 の引数の 0 ~ 1 の引数の場合は 0 を返します。 ただし、引数の値を 0 ~ 1 の間の値が返されます。 それぞれの方法でさらに説明するようになりました。
+3つのすべてのケースで、カスタムイージング関数は、引数が0の場合は0を返し、1の引数には1を返します。 ただし、0と1の引数値の間には任意の値を返すことができます。 ここでは、それぞれのアプローチについて説明します。
 
-### <a name="custom-easing-method"></a>カスタム イージング メソッド
+### <a name="custom-easing-method"></a>カスタムイージングメソッド
 
-カスタム イージング関数を使用するメソッドとして定義できますを`double`引数を返します、`double`結果、次のコード例で示した。
+次のコード例に示すように、カスタムイージング関数は、`double` 引数を受け取るメソッドとして定義し、`double` 結果を返すことができます。
 
 ```csharp
-await image.TranslateTo(0, 200, 2000, CustomEase);
-
 double CustomEase (double t)
 {
   return t == 0 || t == 1 ? t : (int)(5 * t) / 5.0;
 }
+
+await image.TranslateTo(0, 200, 2000, (Easing)CustomEase);
 ```
 
-`CustomEase`メソッドには、0、0.2、0.4、0.6、0.8、および 1 の値を受信した値が切り捨てられます。 そのため、 [ `Image` ](xref:Xamarin.Forms.Image)インスタンスは、不連続なジャンプではなくスムーズに変換されます。
+`CustomEase` メソッドは、入力値を0、0.2、0.4、0.6、0.8、および1の値に切り捨てます。 したがって、 [`Image`](xref:Xamarin.Forms.Image)インスタンスはスムーズに移動されるのではなく、不連続のジャンプで変換されます。
 
-### <a name="custom-easing-func"></a>カスタム イージング関数
+### <a name="custom-easing-func"></a>カスタムイージング Func
 
-としてカスタム イージング関数を定義することも、`Func<double, double>`次のコード例に示すように、します。
+次のコード例に示すように、カスタムイージング関数を `Func<double, double>`として定義することもできます。
 
 ```csharp
-Func<double, double> CustomEase = t => 9 * t * t * t - 13.5 * t * t + 5.5 * t;
-await image.TranslateTo(0, 200, 2000, CustomEase));
+Func<double, double> CustomEaseFunc = t => 9 * t * t * t - 13.5 * t * t + 5.5 * t;
+await image.TranslateTo(0, 200, 2000, CustomEaseFunc);
 ```
 
-`CustomEase` `Func` 2018 年 2 月末日まで、急速に加速をもう一度コースのイージング関数を開始する高速で遅くとコースでは、元に戻し、反転しを表します。 そのため、全体の移動中に、 [ `Image` ](xref:Xamarin.Forms.Image)インスタンスが下方向には、アニメーションの途中でコースを一時的に反転します。
+`CustomEaseFunc` は、迅速に開始し、コースの速度を低下させて反転するイージング関数を表し、もう一度コースを反転してすぐに終了します。 したがって、 [`Image`](xref:Xamarin.Forms.Image)インスタンスの全体的な移動は下向きになりますが、アニメーションの途中でコースが一時的に反転されます。
 
-### <a name="custom-easing-constructor"></a>カスタム コンス トラクターを簡略化
+### <a name="custom-easing-constructor"></a>カスタムイージングコンストラクター
 
-引数としてカスタム イージング関数を定義することも、 [ `Easing` ](xref:Xamarin.Forms.Easing)コンス トラクターは、次のコード例で示した。
+次のコード例に示すように、カスタムイージング関数は、 [`Easing`](xref:Xamarin.Forms.Easing)コンストラクターの引数として定義することもできます。
 
 ```csharp
 await image.TranslateTo (0, 200, 2000, new Easing (t => 1 - Math.Cos (10 * Math.PI * t) * Math.Exp (-5 * t)));
 ```
 
-カスタム イージング関数は、ラムダ関数の引数として指定された、 [ `Easing` ](xref:Xamarin.Forms.Easing)コンス トラクターを使用して、`Math.Cos`によってを抑制する低速のドロップ効果を作成する方法、`Math.Exp`メソッド。 そのため、 [ `Image` ](xref:Xamarin.Forms.Image)インスタンスがその最終的な保存場所に表示されるように変換されます。
+カスタムイージング関数は、 [`Easing`](xref:Xamarin.Forms.Easing)コンストラクターのラムダ関数引数として指定され、`Math.Cos` メソッドを使用して、`Math.Exp` メソッドによって抑制される低速のドロップ効果を作成します。 したがって、 [`Image`](xref:Xamarin.Forms.Image)インスタンスは変換され、最終的な場所にドロップしたように見えます。
 
 ## <a name="summary"></a>まとめ
 
-この記事では、定義済みのイージング関数を使用する方法とカスタム イージング関数を作成する方法を説明します。 Xamarin.Forms を含む、 [ `Easing` ](xref:Xamarin.Forms.Easing)クラスをアニメーション高速化する方法を制御する転送関数を指定するか、実行されているように、速度が低下することができます。
+この記事では、定義済みのイージング関数を使用する方法と、カスタムイージング関数を作成する方法について説明します。 Xamarin. Forms には[`Easing`](xref:Xamarin.Forms.Easing)クラスが含まれています。このクラスを使用すると、アニメーションの実行速度を制御する転送関数を指定できます。
 
 ## <a name="related-links"></a>関連リンク
 
 - [非同期サポートの概要](~/cross-platform/platform/async.md)
 - [イージング関数 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-easing)
-- [簡略化](xref:Xamarin.Forms.Easing)
+- [イージング](xref:Xamarin.Forms.Easing)
 - [ViewExtensions](xref:Xamarin.Forms.ViewExtensions)

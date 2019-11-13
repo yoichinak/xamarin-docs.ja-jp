@@ -48,7 +48,9 @@ Xamarin では、バインドを使用してアプリにネイティブライブ
 
 ## <a name="macios-native-typesnativetypesmd"></a>[Mac/iOS ネイティブ型](nativetypes.md)
 
+
 C# と F# から透過的に 32 と 64 のビットコードをサポートするために、新しいデータ型を導入しています。 詳細については、こちらを参照してください。
+
 
 ## <a name="building-32-and-64-bit-apps32-and-64indexmd"></a>[32および64ビットアプリのビルド](32-and-64/index.md)
 
