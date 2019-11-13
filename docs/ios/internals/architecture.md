@@ -16,7 +16,9 @@ ms.locfileid: "73022387"
 ---
 # <a name="ios-app-architecture"></a>iOS アプリのアーキテクチャ
 
+
 Xamarin iOS アプリケーションは Mono 実行環境内で実行され、完全な事前 (AOT) コンパイルを使用して C# コードを ARM アセンブリ言語にコンパイルします。 これは、[Objective-C ランタイム](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ObjCRuntimeRef/) とサイドバイサイドで実行されます。 どちらのランタイム環境も、UNIX のようなカーネル (具体的には[XNU](https://en.wikipedia.org/wiki/XNU)) 上で実行され、さまざまな API をユーザーコードに公開して、開発者が基になるネイティブシステムまたはマネージシステムにアクセスできるようにします。
+
 
 次の図は、このアーキテクチャの基本的な概要を示しています。
 
@@ -45,8 +47,10 @@ AOT の使用にはいくつかの制限事項があります。これについ�
 
 Xamarin では、.NET と Apple という 2 つの個別のエコシステムがあり、最終的な目標がスムーズなユーザーエクスペリエンスであることを保証するために、可能な限り合理化する必要があります。 上記のセクションでは、2 つのランタイムが通信する方法について説明しました。また、ネイティブ iOS API を Xamarin で使用できるようにする "バインド" という用語についてもよく知られています。 バインディングの詳細については、 [Objective-C のバインド](~/cross-platform/macios/binding/overview.md) ドキュメントを参照してください。そのため、ここでは iOS が内部でどのように動作するかを見てみましょう。
 
+
 まず、セレクターを使用して、Objective-C を C# に公開する方法が必要です。 セレクターは、オブジェクトまたはクラスに送信されるメッセージです。 Objective-C では、 [objc_msgSend](~/cross-platform/macios/binding/overview.md) 関数を使用します。
 セレクターの使用方法の詳細については、「[Objective-C セレクター](~/ios/internals/objective-c-selectors.md)ガイド」を参照してください。 また、マネージコードを Objective-C に公開する方法が必要です。これは、Objective-C でマネージコードについて何も知られていないことが原因で、より複雑になります。 この問題を回避するには、*レジストラー*を使用します。 これらの詳細については、次のセクションで詳しく説明します。
+
 
 ## <a name="registrars"></a>機関
 
@@ -69,7 +73,9 @@ Xamarin では、.NET と Apple という 2 つの個別のエコシステムが
  }
 ```
 
+
 **Objective-C**
+
 
 ```objectivec
 @interface MyViewController : UIViewController { }
@@ -107,7 +113,7 @@ Xamarin. iOS で使用される iOS の種類の登録システムの詳細に�
 
 プロジェクトの種類に応じて、次の処理が行われます。
 
-- 通常の iOS および tvOS アプリケーションでは、Xamarin アプリによって提供されるマネージ Main メソッドが呼び出されます。 次に、このマネージ Main メソッドは Objective-C のエントリポイントである`UIApplication.Main`を呼び出します。 Uiapplication Main は、Objective-C の`UIApplicationMain`メソッドのバインディングです。
+- 通常の iOS および tvOS アプリケーションでは、Xamarin アプリによって提供されるマネージ Main メソッドが呼び出されます。 次に、このマネージ Main メソッドは `UIApplication.Main`を呼び出します。これは、目標-C のエントリポイントです。 UIApplication。 Main は、目的の C の `UIApplicationMain` メソッドのバインドです。
 - 拡張機能では、Apple ライブラリによって提供されるネイティブ関数– `NSExtensionMain` または (WatchOS 拡張機能の`NSExtensionmain`) が呼び出されます。 これらのプロジェクトはクラスライブラリであり、実行可能なプロジェクトではないため、実行するマネージドの主要なメソッドはありません。
 
 この起動シーケンスはすべてスタティックライブラリとしてコンパイルされ、最終的な実行可能ファイルにリンクされます。これにより、アプリは、グラウンドをオフにする方法を知ることができます。
@@ -151,7 +157,9 @@ public interface UIToolbar : UIBarPositioning {
 }
 ```
 
+
 Xamarin の [`btouch`](https://github.com/xamarin/xamarin-macios/blob/master/src/btouch.cs)と呼ばれるジェネレーターは、これらの定義ファイルを受け取り、.net ツールを使用して[それらを一時アセンブリにコンパイル](https://github.com/xamarin/xamarin-macios/blob/master/src/btouch.cs#L318) します。 ただし、この一時アセンブリは、Objective-C コードを呼び出すことができません。 その後、ジェネレーターは一時アセンブリを読み取り 、実行時に使用できる C# コードを生成します。
+
 このため、たとえば、ランダムな属性を定義の .cs ファイルに追加しても、出力されるコードには表示されません。 ジェネレーターはそれを認識しないため、`btouch` は、それを出力するために一時アセンブリ内でそのことを確認することはできません。
 
 Xamarin が作成されると、mtouch によってすべてのコンポーネントがバンドルされます。

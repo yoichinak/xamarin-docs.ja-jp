@@ -199,7 +199,7 @@ carouselView.SetBinding(CarouselView.CurrentItemProperty, "CurrentItem");
 ```
 
 > [!NOTE]
-> @No__t_0 プロパティには、`TwoWay` の既定のバインディングモードがあります。
+> `CurrentItem` プロパティには、`TwoWay` の既定のバインディングモードがあります。
 
 @No__t_0 のプロパティデータは、接続されたビューモデルの `CurrentItem` プロパティにバインドされます。これは `Monkey` 型です。 既定では、ユーザーが現在の項目を変更した場合に、`CurrentItem` プロパティの値が現在の `Monkey` オブジェクトに設定されるように `TwoWay` バインドが使用されます。 @No__t_0 プロパティは `MonkeysViewModel` クラスで定義され、`Monkeys` コレクションの4番目の項目に設定されます。
 
@@ -240,7 +240,7 @@ carouselView.SetBinding(CarouselView.PositionProperty, "Position");
 ```
 
 > [!NOTE]
-> @No__t_0 プロパティには、`TwoWay` の既定のバインディングモードがあります。
+> `Position` プロパティには、`TwoWay` の既定のバインディングモードがあります。
 
 @No__t_0 のプロパティデータは、接続されたビューモデルの `Position` プロパティにバインドされます。これは `int` 型です。 既定では、ユーザーが[`CarouselView`](xref:Xamarin.Forms.CarouselView)をスクロールしたときに、`Position` プロパティの値が表示されている項目のインデックスに設定されるように、`TwoWay` バインドが使用されます。 @No__t_0 プロパティは `MonkeysViewModel` クラスで定義され、`Monkeys` コレクションの4番目の項目に設定されます。
 
@@ -261,7 +261,7 @@ public class MonkeysViewModel : INotifyPropertyChanged
 
 ## <a name="clear-the-current-item"></a>現在の項目をクリアします
 
-@No__t_0 プロパティは、それを設定するか、バインド先のオブジェクトを `null` に設定することによってクリアできます。
+`CurrentItem` プロパティは、それを設定するか、バインド先のオブジェクトを `null` に設定することによってクリアできます。
 
 ## <a name="disable-bounce"></a>バウンスを無効にする
 

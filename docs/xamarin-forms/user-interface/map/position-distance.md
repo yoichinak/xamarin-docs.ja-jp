@@ -1,6 +1,6 @@
 ---
-title: Xamarin. フォームマップの位置と距離
-description: Xamarin. map 名前空間には、マップとそのピンを配置するときに通常使用される位置構造体と、マップを配置するときに必要に応じて使用できる距離構造体が含まれます。
+title: Xamarin.Forms マップの位置と距離
+description: Xamarin.Forms.Maps 名前空間には、マップとそのピンを配置するときに通常使用される位置構造体と、マップを配置するときに必要に応じて使用できる距離構造体が含まれます。
 ms.prod: xamarin
 ms.assetid: 2F4EA3D2-1351-40AD-A71D-CF7F1F18F1E8
 ms.technology: xamarin-forms
@@ -14,7 +14,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/01/2019
 ms.locfileid: "73426283"
 ---
-# <a name="xamarinforms-map-position-and-distance"></a>Xamarin. フォームマップの位置と距離
+# <a name="xamarinforms-map-position-and-distance"></a>Xamarin.Forms マップの位置と距離
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
@@ -24,8 +24,8 @@ ms.locfileid: "73426283"
 
 [`Position`](xref:Xamarin.Forms.Maps.Position)構造体は、緯度と経度の値として格納されている位置をカプセル化します。 この構造体は、次の2つの読み取り専用プロパティを定義します。
 
-- `double`型の[`Latitude`](xref:Xamarin.Forms.Maps.Position.Latitude)。これは、小数点以下の位置の緯度を表します。
-- `double`型の[`Longitude`](xref:Xamarin.Forms.Maps.Position.Longitude)。これは、小数点以下の位置の経度を表します。
+- [`Latitude`](xref:Xamarin.Forms.Maps.Position.Latitude) は、`double`型で、小数点以下の位置の緯度を表します。
+- [`Longitude`](xref:Xamarin.Forms.Maps.Position.Longitude) は、`double`型で、小数点以下の位置の経度を表します。
 
 [`Position`](xref:Xamarin.Forms.Maps.Position)オブジェクトは、`Position` コンストラクターを使用して作成されます。これには `double` 値として指定された緯度と経度の引数が必要です。
 
@@ -34,15 +34,15 @@ Position position = new Position(36.9628066, -122.0194722);
 ```
 
 > [!NOTE]
-> `Position` オブジェクトを作成すると、緯度の値は-90.0 と90.0 の間でクランプされ、経度の値は-180.0 と180.0 の間で固定されます。
+> `Position` オブジェクトを作成すると、緯度の値は -90.0 と 90.0 の間でクランプされ、経度の値は -180.0 と 180.0 の間でクランプされます。
 
 ## <a name="distance"></a>単位
 
 [`Distance`](xref:Xamarin.Forms.Maps.Distance)構造体は、`double` 値として格納されている距離をカプセル化します。これは、メートル単位の距離を表します。 この構造体は、次の3つの読み取り専用プロパティを定義します。
 
-- `Distance`によってスパンされる距離 (キロメートル単位) を表す `double`型の[`Kilometers`](xref:Xamarin.Forms.Maps.Distance.Kilometers)。
-- `Distance`によってスパンされるメートル単位の距離を表す `double`型の[`Meters`](xref:Xamarin.Forms.Maps.Distance.Meters)。
-- `Distance`によってスパンされる距離 (マイル単位) を表す `double`型の[`Miles`](xref:Xamarin.Forms.Maps.Distance.Miles)。
+- [`Kilometers`](xref:Xamarin.Forms.Maps.Distance.Kilometers) は、`double`型で、`Distance`によってスパンされる距離 (キロメートル単位) を表します。
+- [`Meters`](xref:Xamarin.Forms.Maps.Distance.Meters) は、`double`型で、`Distance`によってスパンされるメートル単位の距離を表します。
+- [`Miles`](xref:Xamarin.Forms.Maps.Distance.Miles) は、`double`型で、`Distance`によってスパンされる距離 (マイル単位) を表します。
 
 [`Distance`](xref:Xamarin.Forms.Maps.Distance)オブジェクトは、`Distance` コンストラクターを使用して作成できます。これには、`double`として指定されたメーター引数が必要です。
 
