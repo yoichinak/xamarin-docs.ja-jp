@@ -80,7 +80,7 @@ try {
 
 これは、アンワインダー stack がマネージ `catch` 句を認識しておらず、どちらの `finally` 句も実行されないためです。
 
-上記のコードサンプル_が有効な_場合、これは、処理されていない Objective-C の例外 ( [`NSSetUncaughtExceptionHandler`][2]、Xamarin.iOS と xamarin.Mac で使用) が通知され、その時点ですべての目標を変換しようとしていることが原因です。マネージ例外の例外。
+上記のコードサンプル_が有効な_場合、これは、処理されていない Objective-C の例外 ( [`NSSetUncaughtExceptionHandler`][2]、Xamarin.iOS と xamarin.Mac で使用) が通知され、その時点ですべてのObjective-C 例外をマネージ例外に変換しようとしていることが原因です。
 
 ## <a name="scenarios"></a>監視プロセス
 
