@@ -4,15 +4,16 @@ description: この記事では、既定の App クラスの機能について�
 ms.prod: xamarin
 ms.assetid: 421F8294-1944-46A4-8459-D2BD5AAABC9D
 ms.technology: xamarin-forms
+ms.custom: video
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
-ms.openlocfilehash: 85e420933cfeffd00f686b0eea537cd0ad2f4ca5
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+ms.openlocfilehash: aaf2086fd8128d68baa401ab646b31bcbc279545
+ms.sourcegitcommit: efbc69acf4ea484d8815311b058114379c9db8a2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65971215"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73842970"
 ---
 # <a name="xamarinforms-app-class"></a>Xamarin.Forms の App クラス
 
@@ -221,3 +222,9 @@ public sealed partial class MainPage
 UWP プロジェクトの **App.xaml.cs** から `Forms.Init()` を呼び出す必要があることに注意してください。
 
 詳細については、「[Setup Windows Projects](~/xamarin-forms/platform/windows/installation/index.md)」(Windows プロジェクトのセットアップ) を参照してください。UWP をターゲットにしていない既存の Xamarin.Forms ソリューションに UWP プロジェクトを追加する手順が説明されています。
+
+## <a name="related-video"></a>関連ビデオ
+
+> [!Video https://channel9.msdn.com/Series/Xamarin-101/Xamarin-Solution-Architecture-4-of-11/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]
