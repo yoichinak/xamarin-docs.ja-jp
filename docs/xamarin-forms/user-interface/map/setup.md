@@ -1,6 +1,6 @@
 ---
-title: Xamarin. フォームマップの初期化と構成
-description: アプリケーションで maps 機能を使用するには、Xamarin. Forms. Map NuGet パッケージが必要です。 さらに、ユーザーの場所にアクセスするには、アプリケーションに対する場所のアクセス許可が必要です。
+title: Xamarin.Forms マップの初期化と構成
+description: アプリケーションで maps 機能を使用するには、Xamarin.Forms.Maps NuGet パッケージが必要です。 さらに、ユーザーの場所にアクセスするには、アプリケーションに対する場所のアクセス許可が必要です。
 ms.prod: xamarin
 ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
 ms.technology: xamarin-forms
@@ -14,7 +14,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/06/2019
 ms.locfileid: "73662342"
 ---
-# <a name="xamarinforms-map-initialization-and-configuration"></a>Xamarin. フォームマップの初期化と構成
+# <a name="xamarinforms-map-initialization-and-configuration"></a>Xamarin.Forms マップの初期化と構成
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
@@ -22,17 +22,17 @@ ms.locfileid: "73662342"
 
 ## <a name="map-initialization"></a>マップの初期化
 
-[`Map`](xref:Xamarin.Forms.Maps.Map)コントロールは、ソリューション内のすべてのプロジェクトに追加する必要がある、 [Xamarin. Forms. map](https://www.nuget.org/packages/Xamarin.Forms.Maps/) NuGet パッケージによって提供されます。
+[`Map`](xref:Xamarin.Forms.Maps.Map) コントロールは、ソリューション内のすべてのプロジェクトに追加する必要がある、 [Xamarin.Forms.Maps](https://www.nuget.org/packages/Xamarin.Forms.Maps/) NuGet パッケージによって提供されます。
 
 [Xamarin.Forms.Maps](https://www.nuget.org/packages/Xamarin.Forms.Maps/) NuGet パッケージをインストールした後は、各プラットフォームプロジェクトで初期化する必要があります。
 
-IOS では、これは、`Xamarin.Forms.Forms.Init` メソッドの*後*に `Xamarin.FormsMaps.Init` メソッドを呼び出すことによって**AppDelegate.cs**で発生する必要があります。
+iOS では、これは、`Xamarin.Forms.Forms.Init` メソッドの *'後'* に `Xamarin.FormsMaps.Init` メソッドを呼び出すことによって**AppDelegate.cs** で発生する必要があります。
 
 ```csharp
 Xamarin.FormsMaps.Init();
 ```
 
-Android では、これは、`Xamarin.Forms.Forms.Init` メソッドの*後*に `Xamarin.FormsMaps.Init` メソッドを呼び出すことによって**MainActivity.cs**で発生する必要があります。
+Android では、これは、`Xamarin.Forms.Forms.Init` メソッドの *'後'* に `Xamarin.FormsMaps.Init` メソッドを呼び出すことによって**MainActivity.cs** で発生する必要があります。
 
 ```csharp
 Xamarin.FormsMaps.Init(this, savedInstanceState);
@@ -50,7 +50,7 @@ NuGet パッケージが追加され、各アプリケーション内部で初�
 
 ## <a name="platform-configuration"></a>プラットフォームの構成
 
-Android では、マップを表示する前に、追加の構成が必要になります。これは、ユニバーサル Windows プラットフォーム (UWP) です。 さらに、iOS、Android、UWP では、ユーザーの場所にアクセスするには、アプリケーションに対する場所のアクセス許可が付与されている必要があります。
+Android とユニバーサル Windows プラットフォーム (UWP) では、マップを表示する前に、追加の構成が必要になります。 さらに、iOS、Android、UWP では、ユーザーの場所にアクセスするには、アプリケーションに対する場所のアクセス許可が付与されている必要があります。
 
 ### <a name="ios"></a>iOS
 
@@ -76,9 +76,9 @@ iOS 11 以前をサポートするには、`NSLocationWhenInUseUsageDescription`
 <string>Can we use your location at all times?</string>
 ```
 
-また **、情報の plist ファイルを**編集しているときに、**ソース**ビューで**情報**を追加することもできます。
+また、 **info.plist** ファイルを編集しているときに、 **[ソース]** ビューで **info.plist** のエントリを追加することもできます。
 
-![IOS 8 用情報 plist](setup-images/ios8-map-permissions.png "iOS 8 必須情報. plist エントリ")
+![iOS 8 用 info.plist](setup-images/ios8-map-permissions.png "iOS 8 必須 info.plist エントリ")
 
 アプリケーションがユーザーの場所にアクセスしようとしてアクセスを要求したときに、プロンプトが表示されます。
 
@@ -112,7 +112,7 @@ API キーを取得したら、 **Properties/AndroidManifest.xml** ファイル�
 これにより、API キーがマニフェストに埋め込まれます。 有効な API キーがない場合、 [`Map`](xref:Xamarin.Forms.Maps.Map)コントロールには空のグリッドが表示されます。
 
 > [!NOTE]
-> APK が Google Maps にアクセスできるようにするには、APK に署名するために使用するすべてのキーストア (デバッグとリリース) に SHA-1 指紋とパッケージ名を含める必要があることに注意してください。 たとえば、デバッグに1台のコンピューターを使用し、リリース APK を生成する別のコンピューターを使用する場合は、最初のコンピューターのデバッグキーストアから SHA-1 証明書のフィンガープリントを指定し、次のリリースキーストアから SHA-1 証明書のフィンガープリントを含める必要があります。2番目のコンピューター。 また、アプリの**パッケージ名**が変更された場合は、キーの資格情報を編集することも忘れないでください。 「 [Google MAPS API キーを取得する」を](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)参照してください。
+> APK が Google Maps にアクセスできるようにするには、APK に署名するために使用するすべてのキーストア (デバッグとリリース) に SHA-1 指紋とパッケージ名を含める必要があることに注意してください。 たとえば、デバッグに 1 台のコンピューターを使用し、リリース APK を生成する別のコンピューターを使用する場合は、最初のコンピューターのデバッグキーストアから SHA-1 証明書のフィンガープリントを指定し、2 番目のコンピューターのリリースキーストアから SHA-1 証明書のフィンガープリントを含める必要があります。 また、アプリの **パッケージ名** が変更された場合は、キーの資格情報を編集することも忘れないでください。 「 [Google Maps API キーを取得する」を](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)」を参照してください。
 
 #### <a name="specify-the-google-play-services-version-number"></a>Google Play services のバージョン番号を指定する
 

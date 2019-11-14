@@ -1,6 +1,6 @@
 ---
 title: Xamarin.Forms からネイティブマップアプリを起動する
-description: 各プラットフォームのネイティブマップアプリは、Xamarin. Essentials ランチャークラスによって Xamarin. Forms アプリケーションから起動できます。
+description: 各プラットフォームのネイティブマップアプリは、Xamarin.Essentials ランチャークラスによって Xamarin.Forms アプリケーションから起動できます。
 ms.prod: xamarin
 ms.assetid: 5CF7CD67-3F20-4D80-B99E-D35A5FD1019A
 ms.technology: xamarin-forms
@@ -18,7 +18,7 @@ ms.locfileid: "73426325"
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
-各プラットフォームのネイティブマップアプリは、xamarin. Essentials `Launcher` クラスを使用して Xamarin アプリケーションから起動できます。 このクラスを使用すると、アプリケーションは、カスタム URI スキームを使用して別のアプリを開くことができます。 ランチャー機能は、`OpenAsync` メソッドを使用して呼び出すことができます。これを行うには、開くカスタム URL スキームを表す `string` または `Uri` 引数を渡します。 Xamarin の詳細については、「 [xamarin. essentials](~/essentials/index.md?context=xamarin/xamarin-forms)」を参照してください。
+各プラットフォームのネイティブマップアプリは、xamarin.Essentials `Launcher` クラスを使用して Xamarin アプリケーションから起動できます。 このクラスを使用すると、アプリケーションは、カスタム URI スキームを使用して別のアプリを開くことができます。 ランチャー機能は、`OpenAsync` メソッドを使用して呼び出すことができます。これを行うには、開くカスタム URL スキームを表す `string` または `Uri` 引数を渡します。 Xamarin の詳細については、「 [Xamarin.Essentials](~/essentials/index.md?context=xamarin/xamarin-forms)」を参照してください。
 
 > [!NOTE]
 > Xamarin `Launcher` クラスを使用する代わりに、`Map` クラスを使用することもできます。 詳細については、「 [Xamarin.Essentials: Map](~/essentials/maps.md?context=xamarin/xamarin-forms)」を参照してください。

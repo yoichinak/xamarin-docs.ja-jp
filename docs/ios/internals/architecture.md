@@ -16,7 +16,9 @@ ms.locfileid: "73022387"
 ---
 # <a name="ios-app-architecture"></a>iOS アプリのアーキテクチャ
 
-Xamarin iOS アプリケーションは Mono 実行環境内で実行され、完全な事前 (AOT) コンパイルを使用しC#てコードを ARM アセンブリ言語にコンパイルします。 これは、[目的 C ランタイム](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ObjCRuntimeRef/)とサイドバイサイドで実行されます。 どちらのランタイム環境も、UNIX のようなカーネル (具体的には[XNU](https://en.wikipedia.org/wiki/XNU)) 上で実行され、さまざまな api をユーザーコードに公開して、開発者が基になるネイティブシステムまたはマネージシステムにアクセスできるようにします。
+
+Xamarin iOS アプリケーションは Mono 実行環境内で実行され、完全な事前 (AOT) コンパイルを使用して C# コードを ARM アセンブリ言語にコンパイルします。 これは、[Objective-C ランタイム](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ObjCRuntimeRef/) とサイドバイサイドで実行されます。 どちらのランタイム環境も、UNIX のようなカーネル (具体的には[XNU](https://en.wikipedia.org/wiki/XNU)) 上で実行され、さまざまな API をユーザーコードに公開して、開発者が基になるネイティブシステムまたはマネージシステムにアクセスできるようにします。
+
 
 次の図は、このアーキテクチャの基本的な概要を示しています。
 
@@ -43,18 +45,20 @@ AOT の使用にはいくつかの制限事項があります。これについ�
 
 ## <a name="selectors"></a>セレクター
 
-Xamarin では、.NET と Apple という2つの個別のエコシステムがあり、最終的な目標がスムーズなユーザーエクスペリエンスであることを保証するために、可能な限り合理化する必要があります。 上記のセクションでは、2つのランタイムが通信する方法について説明しました。また、ネイティブ iOS Api を Xamarin で使用できるようにする "バインド" という用語についてもよく知られています。 バインディングの詳細については、 [C のバインド](~/cross-platform/macios/binding/overview.md)ドキュメントを参照してください。そのため、ここでは iOS が内部でどのように動作するかを見てみましょう。
+Xamarin では、.NET と Apple という 2 つの個別のエコシステムがあり、最終的な目標がスムーズなユーザーエクスペリエンスであることを保証するために、可能な限り合理化する必要があります。 上記のセクションでは、2 つのランタイムが通信する方法について説明しました。また、ネイティブ iOS API を Xamarin で使用できるようにする "バインド" という用語についてもよく知られています。 バインディングの詳細については、 [Objective-C のバインド](~/cross-platform/macios/binding/overview.md) ドキュメントを参照してください。そのため、ここでは iOS が内部でどのように動作するかを見てみましょう。
 
-まず、セレクターを使用して、目的の C をにC#公開する方法が必要です。 セレクターは、オブジェクトまたはクラスに送信されるメッセージです。 目標 C では、 [objc_msgSend](~/cross-platform/macios/binding/overview.md)関数を使用します。
-セレクターの使用方法の詳細については、「[Objective-C セレクター](~/ios/internals/objective-c-selectors.md)ガイド」を参照してください。 また、マネージコードを目的の C に公開する方法が必要です。これは、目的の C でマネージコードについて何も知られていないことが原因で、より複雑になります。 この問題を回避するには、*レジストラー*を使用します。 これらの詳細については、次のセクションで詳しく説明します。
+
+まず、セレクターを使用して、Objective-C を C# に公開する方法が必要です。 セレクターは、オブジェクトまたはクラスに送信されるメッセージです。 Objective-C では、 [objc_msgSend](~/cross-platform/macios/binding/overview.md) 関数を使用します。
+セレクターの使用方法の詳細については、「[Objective-C セレクター](~/ios/internals/objective-c-selectors.md)ガイド」を参照してください。 また、マネージコードを Objective-C に公開する方法が必要です。これは、Objective-C でマネージコードについて何も知られていないことが原因で、より複雑になります。 この問題を回避するには、*レジストラー*を使用します。 これらの詳細については、次のセクションで詳しく説明します。
+
 
 ## <a name="registrars"></a>機関
 
 前述のように、レジストラーはマネージコードを目的の C に公開するコードです。 これを行うには、NSObject から派生したすべてのマネージクラスのリストを作成します。
 
-- 既存の目的 C クラスをラップしていないすべてのクラスに対して、[`Export`] 属性を持つすべてのマネージメンバーをミラーリングする目的の c メンバーを持つ新しい目標 C クラスを作成します。
+- 既存の Objective-C クラスをラップしていないすべてのクラスに対して、[`Export`] 属性を持つすべてのマネージメンバーをミラーリングする Objective-C メンバーを持つ新しい Objective-C クラスを作成します。
 
-- 各目標-C メンバーの実装では、ミラー化されたマネージメンバーを呼び出すために、コードが自動的に追加されます。
+- 各 Objective-C メンバーの実装では、ミラー化されたマネージメンバーを呼び出すために、コードが自動的に追加されます。
 
 次の擬似コードは、その方法の例を示しています。
 
@@ -69,7 +73,9 @@ Xamarin では、.NET と Apple という2つの個別のエコシステムが�
  }
 ```
 
-**目的-C:**
+
+**Objective-C**
+
 
 ```objectivec
 @interface MyViewController : UIViewController { }
@@ -87,15 +93,15 @@ Xamarin では、.NET と Apple という2つの個別のエコシステムが�
 
 ```
 
-マネージコードには、オブジェクトを目的の C に公開する必要があることをレジストラーが認識するために使用する属性、`[Register]` および `[Export]`を含めることができます。
+マネージコードには、オブジェクトを Objective-C に公開する必要があることをレジストラーが認識するために使用する属性、`[Register]` および `[Export]`を含めることができます。
 `[Register]` 属性は、既定の生成された名前が適切でない場合に生成される目的の C クラスの名前を指定するために使用されます。 NSObject から派生したすべてのクラスは、自動的にに登録されます。
-Required `[Export]` 属性には、生成された目的 C クラスで使用されるセレクターである文字列が含まれています。
+必須の `[Export]` 属性には、生成された Objective-C クラスで使用されるセレクターである文字列が含まれています。
 
 Xamarin では、動的と静的の2種類のレジストラーが使用されています。
 
-- **動的**レジストラー: 動的レジストラーは、実行時にアセンブリ内のすべての型の登録を行います。 これを行うには、[目的 C のランタイム API](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ObjCRuntimeRef/)によって提供される関数を使用します。 そのため、動的レジストラーは起動速度が遅くなり、ビルド時間が短縮されます。 これは、iOS シミュレーターの既定の設定です。 動的レジストラーを使用する場合、ネイティブ関数 (通常は C) は trampolines と呼ばれ、メソッドの実装として使用されます。 アーキテクチャによって異なります。
+- **動的**レジストラー: 動的レジストラーは、実行時にアセンブリ内のすべての型の登録を行います。 これを行うには、[Objective-C のランタイム API](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ObjCRuntimeRef/)によって提供される関数を使用します。 そのため、動的レジストラーは起動速度が遅くなり、ビルド時間が短縮されます。 これは、iOS シミュレーターの既定の設定です。 動的レジストラーを使用する場合、ネイティブ関数 (通常は C) は trampolines と呼ばれ、メソッドの実装として使用されます。 アーキテクチャによって異なります。
 
-- **静的**レジストラー–静的レジストラーは、ビルド中に目標 C コードを生成し、その後、スタティックライブラリにコンパイルされ、実行可能ファイルにリンクされます。 これにより、起動が高速になりますが、ビルド時にかかる時間は長くなります。 これは、デバイスビルドに対して既定で使用されます。 次に示すように、静的レジストラーは、プロジェクトのビルドオプションの `mtouch` 属性として `--registrar:static` を渡すことによって、iOS シミュレーターでも使用できます。
+- **静的**レジストラー: 静的レジストラーは、ビルド中に Objective-C コードを生成し、その後、スタティックライブラリにコンパイルされ、実行可能ファイルにリンクされます。 これにより、起動が高速になりますが、ビルド時にかかる時間は長くなります。 これは、デバイスビルドに対して既定で使用されます。 次に示すように、静的レジストラーは、プロジェクトのビルドオプションの `mtouch` 属性として `--registrar:static` を渡すことによって、iOS シミュレーターでも使用できます。
 
     [![](architecture-images/image1.png "Setting Additional mtouch arguments")](architecture-images/image1.png#lightbox)
 
@@ -107,7 +113,7 @@ Xamarin. iOS で使用される iOS の種類の登録システムの詳細に�
 
 プロジェクトの種類に応じて、次の処理が行われます。
 
-- 通常の iOS および tvOS アプリケーションでは、Xamarin アプリによって提供されるマネージ Main メソッドが呼び出されます。 次に、このマネージ Main メソッドは Objective-C のエントリポイントである`UIApplication.Main`を呼び出します。 Uiapplication Main は、Objective-C の`UIApplicationMain`メソッドのバインディングです。
+- 通常の iOS および tvOS アプリケーションでは、Xamarin アプリによって提供されるマネージ Main メソッドが呼び出されます。 次に、このマネージ Main メソッドは `UIApplication.Main`を呼び出します。これは、目標-C のエントリポイントです。 UIApplication。 Main は、目的の C の `UIApplicationMain` メソッドのバインドです。
 - 拡張機能では、Apple ライブラリによって提供されるネイティブ関数– `NSExtensionMain` または (WatchOS 拡張機能の`NSExtensionmain`) が呼び出されます。 これらのプロジェクトはクラスライブラリであり、実行可能なプロジェクトではないため、実行するマネージドの主要なメソッドはありません。
 
 この起動シーケンスはすべてスタティックライブラリとしてコンパイルされ、最終的な実行可能ファイルにリンクされます。これにより、アプリは、グラウンドをオフにする方法を知ることができます。
@@ -151,7 +157,9 @@ public interface UIToolbar : UIBarPositioning {
 }
 ```
 
-Xamarin の[`btouch`](https://github.com/xamarin/xamarin-macios/blob/master/src/btouch.cs)と呼ばれるジェネレーターは、これらの定義ファイルを受け取り、.net ツールを使用して[それらを一時アセンブリにコンパイル](https://github.com/xamarin/xamarin-macios/blob/master/src/btouch.cs#L318)します。 ただし、この一時アセンブリは、目的の C コードを呼び出すことができません。 その後、ジェネレーターは一時アセンブリを読み取りC# 、実行時に使用できるコードを生成します。
+
+Xamarin の [`btouch`](https://github.com/xamarin/xamarin-macios/blob/master/src/btouch.cs)と呼ばれるジェネレーターは、これらの定義ファイルを受け取り、.net ツールを使用して[それらを一時アセンブリにコンパイル](https://github.com/xamarin/xamarin-macios/blob/master/src/btouch.cs#L318) します。 ただし、この一時アセンブリは、Objective-C コードを呼び出すことができません。 その後、ジェネレーターは一時アセンブリを読み取り 、実行時に使用できる C# コードを生成します。
+
 このため、たとえば、ランダムな属性を定義の .cs ファイルに追加しても、出力されるコードには表示されません。 ジェネレーターはそれを認識しないため、`btouch` は、それを出力するために一時アセンブリ内でそのことを確認することはできません。
 
 Xamarin が作成されると、mtouch によってすべてのコンポーネントがバンドルされます。
@@ -174,6 +182,6 @@ Xamarin が作成されると、mtouch によってすべてのコンポーネ�
 
 - [制限事項](~/ios/internals/limitations.md)
 - [Objective-C のバインド](~/cross-platform/macios/binding/overview.md)
-- [目標-C セレクター](~/ios/internals/objective-c-selectors.md)
+- [Objective-C セレクター](~/ios/internals/objective-c-selectors.md)
 - [型レジストラー](~/ios/internals/registrar.md)
 - [リンカー](~/ios/deploy-test/linker.md)
