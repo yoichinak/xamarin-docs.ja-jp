@@ -1,6 +1,6 @@
 ---
 title: Xamarin. iOS の Objective-C セレクター
-description: このドキュメントでは、C# から Objective-C のセレクターを操作する方法について説明します。 セレクターを呼び出す方法と、その際に考慮する必要がある技術的な考慮事項について説明します。
+description: このドキュメントでは、のC# から Objective-C の セレクターを操作する方法について説明します。 セレクターを呼び出す方法と、その際に考慮する必要がある技術的な考慮事項について説明します。
 ms.prod: xamarin
 ms.assetid: A80904C4-6A89-389B-0487-057AFEB70989
 ms.technology: xamarin-ios
@@ -16,15 +16,12 @@ ms.locfileid: "73022282"
 ---
 # <a name="objective-c-selectors-in-xamarinios"></a>Xamarin. iOS の Objective-C セレクター
 
-
- Objective-C 言語は*セレクター*に基づいています。 セレクターは、オブジェクトまたは*クラス*に送信できるメッセージです。 [Xamarin iOS](~/ios/internals/api-design/index.md) は、インスタンスセレクターをインスタンスメソッドに、クラスセレクターを静的メソッドにマップします。
-
+Objective-C 言語は*セレクター*に基づいています。 セレクターは、オブジェクトまたは*クラス*に送信できるメッセージです。 [Xamarin iOS](~/ios/internals/api-design/index.md) は、インスタンスセレクターをインスタンスメソッドに、クラスセレクターを静的メソッドにマップします。
 
 通常の C 関数 (および同様の C++ メンバー関数) とは異なり、 [P/invoke](https://www.mono-project.com/docs/advanced/pinvoke/) を使用してセレクターを直接呼び出すことはできません。セレクターは、[`objc_msgSend`](https://developer.apple.com/documentation/objectivec/1456712-objc_msgsend) 関数を使用して Objective-C クラスまたはインスタンスに送信されます。
+プロシージャ.
 
-
- Objective-C のメッセージの詳細については、「Apple の[オブジェクトの操作](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithObjects/WorkingwithObjects.html#//apple_ref/doc/uid/TP40011210-CH4-SW2)ガイド」を参照してください。
-
+Objective-C のメッセージの詳細については、「Apple の[オブジェクトの操作](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithObjects/WorkingwithObjects.html#//apple_ref/doc/uid/TP40011210-CH4-SW2)ガイド」を参照してください。
 
 ## <a name="example"></a>例
 
@@ -140,9 +137,7 @@ else
 
 ### <a name="selector-targets"></a>セレクターターゲット
 
-
-セレクターターゲットは、オブジェクトインスタンスまたは Objective-C クラスのいずれかです。 ターゲットがインスタンスであり、バインドされた Xamarin. iOS の種類からのものである場合は、 [`ObjCRuntime.INativeObject.Handle`](xref:ObjCRuntime.INativeObject.Handle) プロパティを使用します。
-
+セレクターターゲットは、オブジェクトインスタンスまたは Objective-C クラスのいずれかです。 ターゲットがインスタンスであり、バインドされた Xamarin. iOS の種類からのものである場合は、 [`ObjCRuntime.INativeObject.Handle`](xref:ObjCRuntime.INativeObject.Handle)プロパティを使用します。
 
 ターゲットがクラスの場合は、 [`ObjCRuntime.Class`](xref:ObjCRuntime.Class)を使用してクラスインスタンスへの参照を取得し、 [`Class.Handle`](xref:ObjCRuntime.Class.Handle)プロパティを使用します。
 
@@ -169,7 +164,7 @@ else
 
 ## <a name="different-invocations-on-simulator-and-device"></a>シミュレーターとデバイスでの異なる呼び出し
 
-前に説明したように、 Objective-C には 3 種類の `objc_msgSend` メソッドがあります。1 つは通常の呼び出し用、もう 1 つは浮動小数点値を返す呼び出し用 (x86 のみ)、もう 1 つは構造体の値を返す呼び出し用です。 後者には、`ObjCRuntime.Messaging`に `_stret` サフィックスが含まれています。
+前に説明したように、Objective-C には 3 種類の `objc_msgSend` メソッドがあります。1 つは通常の呼び出し用、もう 1 つは浮動小数点値を返す呼び出し用 (x86 のみ)、もう 1 つは構造体の値を返す呼び出し用です。 後者には、`ObjCRuntime.Messaging`に `_stret` サフィックスが含まれています。
 
 特定の構造体 (以下で説明するルール) を返すメソッドを呼び出す場合は、`out` 値として最初のパラメーターとして戻り値を指定してメソッドを呼び出す必要があります。
 

@@ -16,7 +16,7 @@ ms.locfileid: "73009874"
 ---
 # <a name="working-with-property-lists-in-xamarinios"></a>Xamarin のプロパティリストの操作
 
-_このドキュメントでは、Visual Studio for Mac のグラフィカルおよび詳細プロパティリスト (plist) エディターについて説明します。このエディターでは、情報 plist と権利 plist を操作できます。ここでは、Visual Studio for Mac 内から iOS アプリケーションのアイコンと起動イメージを設定する方法について説明します。_
+_このドキュメントでは、Visual Studio for Mac のグラフィカルおよび詳細プロパティリスト (plist) エディターについて説明します。このエディターでは、Info.plist と Entitlements.plist を操作できます。ここでは、Visual Studio for Mac 内から iOS アプリケーションのアイコンと起動イメージを設定する方法について説明します。_
 
 Visual Studio for Mac には、アプリのプロパティや機能を簡単に編集できるグラフィカルな plist エディターが用意されています。 Visual Studio for Mac には、アプリのプロパティとアイコンを編集するための plists-`Info.plist` と、アプリの機能を管理するための `Entitlements.plist` があります。 このガイドでは、plists について説明し、Visual Studio for Mac での作業の概要を示します。 権利の詳細については、「[権利の使用](~/ios/deploy-test/provisioning/entitlements.md)」ガイドを参照してください。
 

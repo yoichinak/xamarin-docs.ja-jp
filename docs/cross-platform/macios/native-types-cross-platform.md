@@ -1,6 +1,6 @@
 ---
 title: クロスプラットフォーム アプリでのネイティブ型の使用
-description: この記事では、Android や Windows Phone Os などの iOS 以外のデバイスでコードを共有するクロスプラットフォームアプリケーションで、新しい iOS Unified API ネイティブ型 (nint、nuint、nint) を使用する方法について説明します。
+description: この記事では、Android や Windows Phone OS などの iOS 以外のデバイスでコードを共有するクロスプラットフォームアプリケーションで、新しい iOS Unified API ネイティブ型 (nint、nuint、nint) を使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: B9C56C3B-E196-4ADA-A1DE-AC10D1001C2A
 author: davidortinau

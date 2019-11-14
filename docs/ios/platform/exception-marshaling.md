@@ -93,6 +93,7 @@ try {
 3. Objective-C ランタイムは `@catch` ハンドラーを検出せず `NSGetUncaughtExceptionHandler`を呼び出し、Xamarin.iOS/Xamarin.Mac によってインストールされたハンドラーを呼び出します。
 4. Xamarin.iOS/Xamarin.Mac ハンドラーは、Objective-C の例外をマネージ例外に変換し、スローします。Objective-C ランタイムではスタックがアンワインドされていないので (ウォークのみ)、現在のフレームは、 Objective-C の例外がスローされたものと同じです。
 
+
 ここで別の問題が発生します。これは、Mono ランタイムが、目的の C フレームを適切にアンワインドする方法を認識しないためです。
 
 Xamarin. iOS の "キャッチされていない Objective-C" 例外のコールバックが呼び出されると、スタックは次のようになります。
