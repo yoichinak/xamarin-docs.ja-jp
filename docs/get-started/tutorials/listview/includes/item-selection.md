@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: a537bdaf2015dd7d179545cb7587934818e960d7
-ms.sourcegitcommit: a5ef4497db04dfa016865bc7454b3de6ff088554
+ms.openlocfilehash: 2185fa243d2bccea046be5c91a2b1e9ed365edfe
+ms.sourcegitcommit: ecb81266e59c9e1773a06582e138bf4eed713dfe
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/15/2019
-ms.locfileid: "71004148"
+ms.lasthandoff: 11/13/2019
+ms.locfileid: "74062901"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -82,4 +82,4 @@ ms.locfileid: "71004148"
 
     2 つのイベント ハンドラーにブレークポイントを設定し、[`ListView`](xref:Xamarin.Forms.ListView) 内の項目をタップします。 [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) イベントが新しい項目が [`ListView`](xref:Xamarin.Forms.ListView) で選択された場合にのみ発生するのに対し、[`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) イベントは項目がタップされるたびに発生することに注意してください。
 
-    項目の選択とタップに関する詳細は、「選択とタップ」 (~/xamarin-forms/user-interface/listview/interactivity.md#selection-and) を参照してください。
+    項目の選択とタップについて詳しくは、[選択とタップ](~/xamarin-forms/user-interface/listview/interactivity.md#selection-and-taps)に関する記事をご覧ください
