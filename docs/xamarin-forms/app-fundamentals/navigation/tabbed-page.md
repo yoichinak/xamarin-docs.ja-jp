@@ -1,77 +1,66 @@
 ---
-title: Xamarin.Forms のタブ付きページ
+title: Xamarin.Forms の TabbedPage
 description: Xamarin.Form の TabbedPage は、タブのリストと大きい詳細エリアで構成されており、各タブでは、コンテンツが詳細エリアに読み込まれます。 この記事では、TabbedPage を使用してページのコレクションを移動する方法について説明します。
 ms.prod: xamarin
 ms.assetid: C946057F-C77C-412D-82A0-DAF475A24EF5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/24/2018
-ms.openlocfilehash: f8f2fc489c10d404b5864ea13c438e3e5508eabe
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.date: 11/07/2019
+ms.openlocfilehash: 22c5b5b6479ce65c2e6b69f6ad5a98fd11ae47d7
+ms.sourcegitcommit: efbc69acf4ea484d8815311b058114379c9db8a2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771357"
+ms.lasthandoff: 11/08/2019
+ms.locfileid: "73842923"
 ---
-# <a name="xamarinforms-tabbed-page"></a>Xamarin.Forms のタブ付きページ
+# <a name="xamarinforms-tabbedpage"></a>Xamarin.Forms の TabbedPage
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
 
-_Xamarin.Form の TabbedPage は、タブのリストと大きい詳細エリアで構成されており、各タブでは、コンテンツが詳細エリアに読み込まれます。この記事では、TabbedPage を使用してページのコレクションを移動する方法について説明します。_
+Xamarin.Form の [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) は、タブのリストと大きい詳細エリアで構成されており、各タブでは、コンテンツが詳細エリアに読み込まれます。 次のスクリーンショットは、iOS と Android での `TabbedPage` を示しています。
 
-## <a name="overview"></a>概要
+[![iOS と Android 上の 3 つのタブを含む TabbedPage のスクリーンショット](tabbed-page-images/tabbedpage-today.png "3 つのタブがある TabbedPage")](tabbed-page-images/tabbedpage-today-large.png#lightbox "3 つのタブがある TabbedPage")
 
-次のスクリーンショットは、各プラットフォームの [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) を示します。
+iOS では、タブのリストが画面の下部に表示され、その上に詳細エリアが表示されます。 各タブは、タイトルとアイコンで構成されます。これは、アルファ チャネルを含む PNG ファイルです。 縦長の向きでは、タブ バーのアイコンがタブ タイトルの上に表示されます。 横長の向きでは、アイコンとタイトルが横に並んで表示されます。 また、デバイスと向きに応じて、ノーマルまたはコンパクトなタブ バーが表示される場合があります。 6 個以上のタブがある場合、 **[その他]** タブが表示され、これを使用して追加のタブにアクセスできます。 アイコン要件の詳細については、developer.apple.com で[タブ バーのアイコン サイズ](https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/custom-icons#tab-bar-icon-size)に関するページを参照してください。
 
-![](tabbed-page-images/tab1.png "TabbedPage の例")
+> [!TIP]
+> iOS 用の `TabbedRenderer` には、指定されたソースからタブ アイコンを読み込むために使用できるオーバーライド可能な `GetIcon` メソッドがあります。 このオーバーライドにより、SVG イメージを `TabbedPage` のアイコンとして使用することができます。 さらに、アイコンの選択バージョンと未選択バージョンも提供することができます。
 
-次のスクリーンショットは、各プラットフォームのタブ形式を拡大したものです。
+Android では、タブのリストが画面の上部に表示され、その下に詳細エリアが表示されます。 各タブは、タイトルとアイコンで構成されます。これは、アルファ チャネルを含む PNG ファイルです。 タブは、プラットフォーム固有で画面の下部に移動できます。 アイコン要件の詳細については、material.io の[タブ](https://material.io/components/tabs/#)に関するページと、developer.android.com の「[各種のセル密度をサポートする](https://developer.android.com/training/multiscreen/screendensities)」を参照してください。 タブを画面の下部に移動する方法については、[TabbedPage ツール バーの配置と色の設定](~/xamarin-forms/platform/android/tabbedpage-toolbar-placement-color.md)に関する記事を参照してください。
 
-![](tabbed-page-images/tabbedpage-components.png "TabbedPage のタブ コンポーネント")
+> [!TIP]
+> Android AppCompat 用の `TabbedPageRenderer` には、カスタム `Drawable` からタブ アイコンを読み込むために使用できるオーバーライド可能な `GetIconDrawable` メソッドがあります。 このオーバーライドは、SVG イメージを `TabbedPage` のアイコンとして使用できるようにし、上部のタブ バーと下部のタブ バーの両方で機能します。 また、オーバーライド可能な `SetTabIcon` メソッドは、上部のタブ バー用のカスタム `Drawable` からタブ アイコンを読み込むために使用することもできます。
 
-[`TabbedPage`](xref:Xamarin.Forms.TabbedPage) のレイアウトとタブは、プラットフォームによって異なります。
+Universal Windows Platform (UWP) では、タブのリストが画面の上部に表示され、その下に詳細エリアが表示されます。 各タブは、タイトルで構成されます。 ただし、各タブにはプラットフォーム固有のアイコンを追加できます。 詳細については、「[Windows 上の TabbedPage アイコン](~/xamarin-forms/platform/windows/tabbedpage-icons.md)」を参照してください。
 
-- iOS では、タブのリストが画面の下部に表示され、その上に詳細エリアが表示されます。 また、各タブにはアイコン イメージがあり、これらのサイズは、通常の解像度の場合は 30 × 30 (PNG) の透明度、高解像度の場合は 60 × 60、iPhone 6 Plus の場合は 90 × 90 である必要があります。 6 個以上のタブがある場合、 *[その他]* タブが表示され、これを使用して追加のタブにアクセスできます。 Xamarin.Forms アプリケーションでイメージを読み込む方法の詳細については、[イメージの操作](~/xamarin-forms/user-interface/images.md)に関するページを参照してください。 アイコンの要件の詳細については、[タブ付きアプリケーションの作成](~/ios/user-interface/controls/creating-tabbed-applications.md)に関するページを参照してください。
+## <a name="create-a-tabbedpage"></a>TabbedPage の作成
 
-  > [!NOTE]
-  > iOS 用の `TabbedRenderer` には、指定されたソースからタブ アイコンを読み込むために使用できるオーバーライド可能な `GetIcon` メソッドがあることに注意してください。 このオーバーライドにより、SVG イメージを `TabbedPage` のアイコンとして使用することができます。 さらに、アイコンの選択バージョンと未選択バージョンも提供することができます。
+[`TabbedPage`](xref:Xamarin.Forms.TabbedPage) を作成するには、次の 2 つの方法を使用することができます。
 
-- Android では、既定により、タブのリストが画面の上部に表示され、その下に詳細エリアが表示されますが、 タブのリストは、プラットフォーム固有で画面の下部に移動できます。 詳細については、「[Setting TabbedPage Toolbar Placement and Color](~/xamarin-forms/platform/android/tabbedpage-toolbar-placement-color.md)」(TabbedPage ツールバーの配置と色の設定) を参照してください。
+- 子 [`Page`](xref:Xamarin.Forms.Page) オブジェクトのコレクション ([`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトのコレクションなど) を使って [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) を作成する。 詳細については、「[ページ コレクションを使って TabbedPage を作成する](#populate-a-tabbedpage-with-a-page-collection)」を参照してください。
+- コレクションを [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource) プロパティに割り当て、[`DataTemplate`](xref:Xamarin.Forms.DataTemplate) を [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate) プロパティに割り当てて、コレクション内のオブジェクト用のページを返すようにする。 詳細については、「[テンプレートを使って TabbedPage を作成する](#populate-a-tabbedpage-with-a-template)」を参照してください。
 
-  > [!NOTE]
-  > Android で AppCompat を使用する場合、各タブにはアイコンも表示されることに注意してください。 また、Android AppCompat 用の `TabbedPageRenderer` には、カスタム `Drawable` からタブ アイコンを読み込むために使用できるオーバーライド可能な `GetIconDrawable` メソッドがあることにも注意してください。 このオーバーライドは、SVG イメージを `TabbedPage` のアイコンとして使用できるようにし、上部のタブ バーと下部のタブ バーの両方で機能します。 また、オーバーライド可能な `SetTabIcon` メソッドは、上部のタブ バー用のカスタム `Drawable` からタブ アイコンを読み込むために使用することもできます。
+どちらの方法を使用する場合も、ユーザーが各タブを選択すると、[`TabbedPage`](xref:Xamarin.Forms.TabbedPage) に各ページが表示されます。
 
-- Windows タブレット フォーム ファクターでは、タブは常に表示されるとは限らないため、ユーザーは下方向にスワイプ (マウスが接続されている場合は右クリック) して `TabbedPage` でタブを表示する必要があります (次のスクリーンショットを参照)。
+> [!IMPORTANT]
+> [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) を [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) インスタンスおよび [`ContentPage`](xref:Xamarin.Forms.ContentPage) インスタンスのみで作成することをお勧めします。 こうすることにより、すべてのプラットフォームで一貫したユーザー エクスペリエンスを提供することができます。
 
-    ![](tabbed-page-images/windows-tabs.png "Windows の TabbedPage のタブ")
+また、[`TabbedPage`](xref:Xamarin.Forms.TabbedPage) では次のプロパティが定義されます。
 
-## <a name="creating-a-tabbedpage"></a>TabbedPage の作成
-
-[`TabbedPage`](xref:Xamarin.Forms.TabbedPage) は次の特性を定義します。
-
-- タイプが [`Color`](xref:Xamarin.Forms.Color) の[`BarBackgroundColor`](xref:Xamarin.Forms.TabbedPage.BarBackgroundColor) (タブ バーの背景色)。
-- タイプが [`Color`](xref:Xamarin.Forms.Color) の[`BarTextColor`](xref:Xamarin.Forms.TabbedPage.BarTextColor) (タブ バーのテキストの色)。
+- タイプが [`Color`](xref:Xamarin.Forms.Color) の [`BarBackgroundColor`](xref:Xamarin.Forms.TabbedPage.BarBackgroundColor) (タブ バーの背景色)。
+- タイプが [`Color`](xref:Xamarin.Forms.Color) の [`BarTextColor`](xref:Xamarin.Forms.TabbedPage.BarTextColor) (タブ バーのテキストの色)。
 - タイプが [`Color`](xref:Xamarin.Forms.Color) の [`SelectedTabColor`](xref:Xamarin.Forms.TabbedPage.SelectedTabColor) (タブが選択されているときの色)。
 - タイプが [`Color`](xref:Xamarin.Forms.Color) の [`UnselectedTabColor`](xref:Xamarin.Forms.TabbedPage.UnselectedTabColor) (タブが選択されていないときの色)。
 
 これらのプロパティはすべて、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトを基盤としています。つまり、スタイルを指定でき、プロパティがデータ バインディングの対象になる場合があります。
 
-[`TabbedPage`](xref:Xamarin.Forms.TabbedPage) を作成するには、次の 2 つの方法を使用することができます。
+> [!WARNING]
+> [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) では、`TabbedPage` の構築時に各 [`Page`](xref:Xamarin.Forms.Page) オブジェクトが作成されます。 これにより、特に `TabbedPage` がアプリケーションのルート ページである場合に、ユーザー エクスペリエンスが低下する可能性があります。 ただし、Xamarin.Forms シェルを使用すると、ナビゲーションに応じて、タブ バーを介してアクセスされるページをオン デマンドで作成できます。 詳細は、「[Xamarin.Forms シェル](~/xamarin-forms/app-fundamentals/shell/index.md)」を参照してください。
 
-- 子 [`Page`](xref:Xamarin.Forms.Page) オブジェクトのコレクション ([`ContentPage`](xref:Xamarin.Forms.ContentPage) インスタンスのコレクションなど) を使って [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) を[作成](#Populating_a_TabbedPage_with_a_Page_Collection)する。
-- コレクションを [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource) プロパティに[割り当て](#Populating_a_TabbedPage_with_a_Template)、[`DataTemplate`](xref:Xamarin.Forms.DataTemplate) を [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate) プロパティに割り当てて、コレクション内のオブジェクト用のページを返すようにする。
+## <a name="populate-a-tabbedpage-with-a-page-collection"></a>ページ コレクションを使って TabbedPage を作成する
 
-どちらの方法を使用する場合も、ユーザーが各タブを選択すると、[`TabbedPage`](xref:Xamarin.Forms.TabbedPage) に各ページが表示されます。
-
-> [!NOTE]
-> [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) を [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) インスタンスおよび [`ContentPage`](xref:Xamarin.Forms.ContentPage) インスタンスのみで作成することをお勧めします。 こうすることにより、すべてのプラットフォームで一貫したユーザー エクスペリエンスを提供することができます。
-
-<a name="Populating_a_TabbedPage_with_a_Page_Collection" />
-
-### <a name="populating-a-tabbedpage-with-a-page-collection"></a>ページ コレクションを使って TabbedPage を作成する
-
-次の XAML コード例は、子 [`Page`](xref:Xamarin.Forms.Page) オブジェクトのコレクションを使用して、[`TabbedPage`](xref:Xamarin.Forms.TabbedPage) を作成します。
+子 [`Page`](xref:Xamarin.Forms.Page) オブジェクトのコレクション ([`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトのコレクションなど) を使って [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) を作成できます。 これは、`Page` オブジェクトを [`TabbedPage.Children`](xref:Xamarin.Forms.MultiPage`1.Children*) コレクションに追加することで実現されます。 XAML では次のようにしてこれが実現されます。
 
 ```xaml
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -87,14 +76,17 @@ _Xamarin.Form の TabbedPage は、タブのリストと大きい詳細エリア
 </TabbedPage>
 ```
 
-次のコード例は、同じ [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) を C# で作成します。
+> [!NOTE]
+> [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) の派生元である、[`MultiPage<T>`](xref:Xamarin.Forms.MultiPage`1) クラスの [`Children`](xref:Xamarin.Forms.MultiPage`1.Children*) プロパティは、`MultiPage<T>` の `ContentProperty` です。 そのため、XAML では、[`Page`](xref:Xamarin.Forms.Page) オブジェクトを `Children` プロパティに明示的に割り当てる必要はありません。
+
+これに相当する C# コードを次に示します。
 
 ```csharp
 public class MainPageCS : TabbedPage
 {
   public MainPageCS ()
   {
-    var navigationPage = new NavigationPage (new SchedulePageCS ());
+    NavigationPage navigationPage = new NavigationPage (new SchedulePageCS ());
     navigationPage.IconImageSource = "schedule.png";
     navigationPage.Title = "Schedule";
 
@@ -104,52 +96,45 @@ public class MainPageCS : TabbedPage
 }
 ```
 
-[`TabbedPage`](xref:Xamarin.Forms.TabbedPage) は、2 つの子 [`Page`](xref:Xamarin.Forms.Page) オブジェクトで作成されます。 最初の子は、[`ContentPage`](xref:Xamarin.Forms.ContentPage) インスタンスで、2 番目のタブは、`ContentPage` インスタンスを含む [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) です。
+この例では、[`TabbedPage`](xref:Xamarin.Forms.TabbedPage) に 2 つの [`Page`](xref:Xamarin.Forms.ContentPage) オブジェクトが設定されています。 最初の子は [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトで、2 番目の子は、`ContentPage` オブジェクトを含む [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) です。
 
-> [!NOTE]
-> [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) では、UI の仮想化はサポートされません。 このため、`TabbedPage` に含まれる子要素が多すぎると、パフォーマンスに影響する可能性があります。
+次のスクリーンショットは、[`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 内の [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトを示しています。
 
-次のスクリーンショットは、`TodayPage` [`ContentPage`](xref:Xamarin.Forms.ContentPage) インスタンスを示します。これは、 *[今日]* タブで表示されます。
+[![iOS と Android 上の 3 つのタブを含む TabbedPage のスクリーンショット](tabbed-page-images/tabbedpage-today.png "3 つのタブがある TabbedPage")](tabbed-page-images/tabbedpage-today-large.png#lightbox "3 つのタブがある TabbedPage")
 
-![](tabbed-page-images/today-page.png "TabbedPage 内の ContentPage")
+別のタブを選択すると、タブを表す [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトが表示されます。
 
-*[スケジュール]* タブを選択すると、[`NavigationPage`](xref:Xamarin.Forms.NavigationPage) インスタンスにラップされている `SchedulePage` [`ContentPage`](xref:Xamarin.Forms.ContentPage) が表示されます。これを次のスクリーンショットに示します。
+[![iOS と Android 上のタブを含む TabbedPage のスクリーンショット](tabbed-page-images/tabbedpage-week.png "タブがある TabbedPage")](tabbed-page-images/tabbedpage-week-large.png#lightbox "タブがある TabbedPage")
 
-![](tabbed-page-images/schedule-page.png "TabbedPage 内の NavigationPage")
+**[スケジュール]** タブで、[`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトが [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) オブジェクト内にラップされます。
 
-[`NavigationPage`](xref:Xamarin.Forms.NavigationPage) のレイアウトの詳細については、「[ナビゲーションを実行する](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md)」を参照してください。
+> [!WARNING]
+> [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) を [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) に配置することはできますが、`TabbedPage` を `NavigationPage` に配置することはお勧めしません。 これは、iOS では、`UITabBarController` が常に `UINavigationController` のラッパーとして機能するためです。 詳細については、iOS 開発者ライブラリの「[Combined View Controller Interfaces](https://developer.apple.com/library/ios/documentation/WindowsViews/Conceptual/ViewControllerCatalog/Chapters/CombiningViewControllers.html)」 (View Controller インターフェイスの結合) を参照してください。
 
-> [!NOTE]
-> [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) を [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) に配置することは可能ですが、`TabbedPage` を `NavigationPage` に配置することはお勧めしません。 これは、iOS では、`UITabBarController` が常に `UINavigationController` のラッパーとして機能するためです。 詳細については、iOS 開発者ライブラリの「[Combined View Controller Interfaces](https://developer.apple.com/library/ios/documentation/WindowsViews/Conceptual/ViewControllerCatalog/Chapters/CombiningViewControllers.html)」 (View Controller インターフェイスの結合) を参照してください。
+## <a name="navigate-within-a-tab"></a>タブ内での移動
 
-#### <a name="navigation-inside-a-tab"></a>タブ内のナビゲーション
-
-2 番目のタブからナビゲーションを実行するには、次のコード例で示すように、[`ContentPage`](xref:Xamarin.Forms.ContentPage) インスタンスの [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) プロパティで [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) メソッドを呼び出します。
+ナビゲーションは、[`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトが [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) オブジェクト内にラップされている場合に、タブ内で実行できます。 これを行うには、[`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトの [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) プロパティに対して [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) メソッドを呼び出します。
 
 ```csharp
-async void OnUpcomingAppointmentsButtonClicked (object sender, EventArgs e)
-{
-  await Navigation.PushAsync (new UpcomingAppointmentsPage ());
-}
+await Navigation.PushAsync (new UpcomingAppointmentsPage ());
 ```
 
-これにより、`UpcomingAppointmentsPage` インスタンスがナビゲーション スタックにプッシュされるようになり、そこがアクティブ ページとなります。 これを次のスクリーンショットに示します。
+移動先のページは、[`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) メソッドへの引数として指定されます。 この例では、`UpcomingAppointmentsPage` ページがナビゲーション スタックにプッシュされるようになり、そこがアクティブ ページとなります。
 
-![](tabbed-page-images/navigationpage.png "タブ内のナビゲーション")
+[![iOS および Android 上のタブ内のナビゲーションのスクリーンショット](tabbed-page-images/tabbedpage-upcoming.png "タブ内の TabbedPage ナビゲーション")](tabbed-page-images/tabbedpage-upcoming-large.png#lightbox "タブ内の TabbedPage ナビゲーション")
 
 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) クラスを使用してナビゲーションを実行する方法の詳細については、「[階層ナビゲーション](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md)」を参照してください。
 
-<a name="Populating_a_TabbedPage_with_a_Template" />
+## <a name="populate-a-tabbedpage-with-a-template"></a>テンプレートを使って TabbedPage を作成する
 
-### <a name="populating-a-tabbedpage-with-a-template"></a>テンプレートを使って TabbedPage を作成する
-
-次の XAML コード例は、[`DataTemplate`](xref:Xamarin.Forms.DataTemplate) を [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate) プロパティに割り当てて、コレクション内のオブジェクト用のページを返すことによって、[`TabbedPage`](xref:Xamarin.Forms.TabbedPage) を作成します。
+データのコレクションを [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource) プロパティに割り当て、データを [`Page`](xref:Xamarin.Forms.Page) オブジェクトとしてテンプレート化する [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate) プロパティに [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) オブジェクトを割り当てることにより、[`TabbedPage`](xref:Xamarin.Forms.TabbedPage) を作成できます。 XAML では次のようにしてこれが実現されます。
 
 ```xaml
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
             xmlns:local="clr-namespace:TabbedPageDemo;assembly=TabbedPageDemo"
-            x:Class="TabbedPageDemo.TabbedPageDemoPage">
+            x:Class="TabbedPageDemo.TabbedPageDemoPage"
+            ItemsSource="{x:Static local:MonkeyDataModel.All}">            
   <TabbedPage.Resources>
     <ResourceDictionary>
       <local:NonNullToBooleanConverter x:Key="booleanConverter" />
@@ -175,17 +160,7 @@ async void OnUpcomingAppointmentsButtonClicked (object sender, EventArgs e)
 </TabbedPage>
 ```
 
-分離コード ファイルのコンストラクターで [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource) プロパティを設定することにより、[`TabbedPage`](xref:Xamarin.Forms.TabbedPage) にデータを設定します。
-
-```csharp
-public TabbedPageDemoPage ()
-{
-  ...
-  ItemsSource = MonkeyDataModel.All;
-}
-```
-
-次のコード例は、同じ [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) を C# で作成します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 public class TabbedPageDemoPageCS : TabbedPage
@@ -194,8 +169,10 @@ public class TabbedPageDemoPageCS : TabbedPage
   {
     var booleanConverter = new NonNullToBooleanConverter ();
 
-    ItemTemplate = new DataTemplate (() => {
-      var nameLabel = new Label {
+    ItemTemplate = new DataTemplate (() =>
+    {
+      var nameLabel = new Label
+      {
         FontSize = Device.GetNamedSize (NamedSize.Large, typeof(Label)),
         FontAttributes = FontAttributes.Bold,
         HorizontalOptions = LayoutOptions.Center
@@ -205,31 +182,38 @@ public class TabbedPageDemoPageCS : TabbedPage
       var image = new Image { WidthRequest = 200, HeightRequest = 200 };
       image.SetBinding (Image.SourceProperty, "PhotoUrl");
 
-      var familyLabel = new Label {
+      var familyLabel = new Label
+      {
         FontSize = Device.GetNamedSize (NamedSize.Medium, typeof(Label)),
         FontAttributes = FontAttributes.Bold
       };
       familyLabel.SetBinding (Label.TextProperty, "Family");
       ...
 
-      var contentPage = new ContentPage {
+      var contentPage = new ContentPage
+      {
         IconImageSource = "monkeyicon.png",
         Content = new StackLayout {
           Padding = new Thickness (5, 25),
-          Children = {
+          Children =
+          {
             nameLabel,
             image,
-            new StackLayout {
+            new StackLayout
+            {
               Padding = new Thickness (50, 10),
-              Children = {
-                new StackLayout {
+              Children =
+              {
+                new StackLayout
+                {
                   Orientation = StackOrientation.Horizontal,
-                  Children = {
+                  Children =
+                  {
                     new Label { Text = "Family:", HorizontalOptions = LayoutOptions.FillAndExpand },
                     familyLabel
                   }
                 },
-                ...
+                // ...
               }
             }
           }
@@ -243,24 +227,16 @@ public class TabbedPageDemoPageCS : TabbedPage
 }
 ```
 
-各タブでは、[`ContentPage`](xref:Xamarin.Forms.ContentPage) が表示されます。これは、一連の [`StackLayout`](xref:Xamarin.Forms.StackLayout) インスタンスと [`Label`](xref:Xamarin.Forms.Label) インスタンスを使用して、各タブのデータを表示します。次のスクリーンショットは、 *[Tamarin]* タブのコンテンツを示します。
+この例では、各タブは、[`Image`](xref:Xamarin.Forms.Image) および [`Label`](xref:Xamarin.Forms.Label) オブジェクトを使用してタブのデータを表示する [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトで構成されています。
 
-![](tabbed-page-images/tab3.png "テンプレートを使って TabbedPage を作成する")
+[![iOS と Android 上のテンプレート化された TabbedPage のスクリーンショット](tabbed-page-images/tabbedpage-template.png "テンプレート化された TabbedPage")](tabbed-page-images/tabbedpage-template-large.png#lightbox "テンプレート化された TabbedPage")
 
-別のタブを選択すると、そのタブのコンテンツが表示されます。
-
-> [!NOTE]
-> [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) では、UI の仮想化はサポートされません。 このため、`TabbedPage` に含まれる子要素が多すぎると、パフォーマンスに影響する可能性があります。
-
-[`TabbedPage`](xref:Xamarin.Forms.TabbedPage) の詳細については、Charles Petzold 氏著作の Xamarin.Forms ブックの[第 25 章](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)を参照してください。
-
-## <a name="summary"></a>まとめ
-
-この記事では、TabbedPage を使用してページのコレクションを移動する方法について説明しました。 Xamarin.Form の [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) は、タブのリストと大きい詳細エリアで構成されており、各タブでは、コンテンツが詳細エリアに読み込まれます。
+別のタブを選択すると、タブを表す [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトが表示されます。
 
 ## <a name="related-links"></a>関連リンク
 
-- [ページの変数](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)
 - [ナビゲーション ページを含むタブ付きページ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
 - [タブ付きページ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpage)
-- [TabbedPage](xref:Xamarin.Forms.TabbedPage)
+- [階層ナビゲーション](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md)
+- [ページの変数](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)
+- [TabbedPage API](xref:Xamarin.Forms.TabbedPage)
