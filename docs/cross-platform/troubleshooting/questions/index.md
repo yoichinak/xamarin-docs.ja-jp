@@ -49,7 +49,7 @@ Xamarin コンポーネントをアプリプロジェクトにインストール
 ### <a name="when-and-how-should-i-file-a-bug-reporthowto-file-bugmd"></a>[バグを報告する場合と場所を教えてください](howto-file-bug.md)
 このガイドでは、品質の高いバグレポートを提出するためのヒントを提供します。これにより、エンジニアは問題の原因 (および潜在的な修正) をより効率的に特定できます。
 
-### <a name="why-isnt-jenkins-supported-by-xamarinxamarin-jenkinsmd"></a>[Xenarin が Jenkins をサポートしていないのはなぜですか](xamarin-jenkins.md)
+### <a name="why-isnt-jenkins-supported-by-xamarinxamarin-jenkinsmd"></a>[Xamarin が Jenkins をサポートしていないのはなぜですか](xamarin-jenkins.md)
 Jenkins はオープンソースの CI スイートです。このため、Jenkins*自体*によって直接発生する多くの問題は、コードを入手した場所に対する問題としてファイリングする必要があります。たとえば、[メインの Jenkins リポジトリ](https://github.com/jenkinsci/jenkins)や[Jenkins](https://github.com/stisti/jenkins-app)のリポジトリなどです。
 
 ### <a name="what-project-settings-are-required-for-the-debuggerdebugger-settingsmd"></a>[デバッガーに必要なプロジェクト設定を教えてください](debugger-settings.md)
