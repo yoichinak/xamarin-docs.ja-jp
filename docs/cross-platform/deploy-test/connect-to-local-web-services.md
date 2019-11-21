@@ -6,12 +6,12 @@ ms.assetid: FD8FE199-898B-4841-8041-CC9CA1A00917
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/16/2019
-ms.openlocfilehash: 0a2bd469477ce6e2aca03e1d4cf279bb5a7a16f9
-ms.sourcegitcommit: 94fa3bf464a2ee5ac4b6056691d264b8210b1192
+ms.openlocfilehash: 29261f2ef6366c0dac8ac82e63584366a5cca0b0
+ms.sourcegitcommit: 233aaa1ac3d8f40c09b6daf6d944ea0b4cbee381
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72526824"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74135272"
 ---
 # <a name="connect-to-local-web-services-from-ios-simulators-and-android-emulators"></a>iOS シミュレーターと Android エミュレーターからローカル Web サービスに接続する
 
@@ -37,13 +37,13 @@ iOS シミュレーターまたは Android エミュレーターで実行され�
 
 .NET Core SDK をインストールすると、ローカル ユーザーの証明書ストアに ASP.NET Core HTTPS 開発証明書がインストールされます。 ただし、証明書はインストールされましたが、信頼されていません。 証明書を信頼するには、次の 1 回限りの手順を実行して dotnet の `dev-certs` ツールを実行します。
 
-```console
+```dotnetcli
 dotnet dev-certs https --trust
 ```
 
 次のコマンドにより、`dev-certs` ツールに関するヘルプが表示されます。
 
-```console
+```dotnetcli
 dotnet dev-certs https --help
 ```
 
