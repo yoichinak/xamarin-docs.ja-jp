@@ -152,7 +152,7 @@
               href: troubleshooting/questions/version-logs.md
             - name: バグを報告する場合と方法を教えてください
               href: troubleshooting/questions/howto-file-bug.md
-            - name: Xenarin が Jenkins をサポートしていないのはなぜですか
+            - name: Xamarin が Jenkins をサポートしていないのはなぜですか
               href: troubleshooting/questions/xamarin-jenkins.md
             - name: デバッガーに必要なプロジェクト設定を教えてください
               href: troubleshooting/questions/debugger-settings.md
