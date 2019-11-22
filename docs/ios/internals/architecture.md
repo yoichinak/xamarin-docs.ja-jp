@@ -28,11 +28,11 @@ Xamarin iOS アプリケーションは Mono 実行環境内で実行され、�
 
 Xamarin 用に開発する場合、*ネイティブコードとマネージ*コードの用語がよく使用されます。 [マネージコード](https://blogs.msdn.microsoft.com/brada/2004/01/09/what-is-managed-code/)は、 [.NET Framework 共通言語ランタイム](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx)、または Xamarin のケース (Mono ランタイム) によって管理される実行を持つコードです。 ここでは、中間言語を呼び出します。
 
-ネイティブコードは、特定のプラットフォームでネイティブに実行されるコードです (たとえば、ARM チップでは、目標 C や AOT でコンパイルされたコードなど)。 このガイドでは、AOT によってマネージコードがネイティブコードにコンパイルされるしくみについて説明し、Xamarin アプリケーションの動作のしくみについて説明します。また、バインディングを使用して Apple の iOS Api を最大限に活用し、にアクセスすることもできます。NET の BCL となどの高度な言語C#。
+ネイティブコードは、特定のプラットフォームでネイティブに実行されるコードです (たとえば、ARM チップでは、Objective-C や AOT でコンパイルされたコードなど)。 このガイドでは、AOT によってマネージコードがネイティブコードにコンパイルされるしくみについて説明し、Xamarin アプリケーションの動作のしくみについて説明します。また、バインディングを使用して Apple の iOS Api を最大限に活用し、にアクセスすることもできます。NET の BCL となどの高度な言語C#。
 
 ## <a name="aot"></a>AOT
 
-Xamarin platform アプリケーションをコンパイルするC#と、Mono (またはF#) コンパイラが実行され、 C#およびF#コードが Microsoft 中間言語 (MSIL) にコンパイルされます。 Xamarin Android、Xamarin. Mac アプリケーション、またはシミュレーターで xamarin iOS アプリケーションを実行している場合、 [.Net 共通言語ランタイム (CLR)](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx)はジャストインタイム (JIT) コンパイラを使用して MSIL をコンパイルします。 実行時に、これはネイティブコードにコンパイルされ、アプリケーションの適切なアーキテクチャで実行できます。
+Xamarin platform アプリケーションをコンパイルするC#と、Mono (またはF#) コンパイラが実行され、 C#およびF#コードが Microsoft 中間言語 (MSIL) にコンパイルされます。 Xamarin.Android、Xamarin.Mac アプリケーション、またはシミュレーターで Xamarin.iOS アプリケーションを実行している場合、 [.Net 共通言語ランタイム (CLR)](https://msdn.microsoft.com/library/8bs2ecf4(v=vs.110).aspx)はジャストインタイム (JIT) コンパイラを使用して MSIL をコンパイルします。 実行時に、これはネイティブコードにコンパイルされ、アプリケーションの適切なアーキテクチャで実行できます。
 
 ただし、iOS には、Apple によって設定されたセキュリティ制限があります。これにより、デバイスで動的に生成されたコードを実行できません。
 これらの安全性プロトコルに準拠していることを確認するために、Xamarin は、事前に (AOT) コンパイラを使用してマネージコードをコンパイルします。 これにより、必要に応じて、Apple の ARM ベースのプロセッサに展開できる、デバイスの LLVM で最適化されたネイティブの iOS バイナリが生成されます。 次の図は、これがどのように組み合わされているかを大まかに示しています。
@@ -105,7 +105,7 @@ Xamarin では、動的と静的の2種類のレジストラーが使用され�
 
     [![](architecture-images/image1.png "Setting Additional mtouch arguments")](architecture-images/image1.png#lightbox)
 
-Xamarin. iOS で使用される iOS の種類の登録システムの詳細については、 [「タイプレジスタ](~/ios/internals/registrar.md)ガイド」を参照してください。
+Xamarin.iOS で使用される iOS の種類の登録システムの詳細については、 [「タイプレジスタ](~/ios/internals/registrar.md)ガイド」を参照してください。
 
 ## <a name="application-launch"></a>アプリケーションの起動
 
@@ -113,7 +113,7 @@ Xamarin. iOS で使用される iOS の種類の登録システムの詳細に�
 
 プロジェクトの種類に応じて、次の処理が行われます。
 
-- 通常の iOS および tvOS アプリケーションでは、Xamarin アプリによって提供されるマネージ Main メソッドが呼び出されます。 次に、このマネージ Main メソッドは `UIApplication.Main`を呼び出します。これは、目標-C のエントリポイントです。 UIApplication。 Main は、目的の C の `UIApplicationMain` メソッドのバインドです。
+- 通常の iOS および tvOS アプリケーションでは、Xamarin アプリによって提供されるマネージ Main メソッドが呼び出されます。 次に、このマネージ Main メソッドは `UIApplication.Main`を呼び出します。これは、Objective-C のエントリポイントです。 UIApplication。 Main は、Objective-C の `UIApplicationMain` メソッドのバインドです。
 - 拡張機能では、Apple ライブラリによって提供されるネイティブ関数– `NSExtensionMain` または (WatchOS 拡張機能の`NSExtensionmain`) が呼び出されます。 これらのプロジェクトはクラスライブラリであり、実行可能なプロジェクトではないため、実行するマネージドの主要なメソッドはありません。
 
 この起動シーケンスはすべてスタティックライブラリとしてコンパイルされ、最終的な実行可能ファイルにリンクされます。これにより、アプリは、グラウンドをオフにする方法を知ることができます。
@@ -122,7 +122,7 @@ Xamarin. iOS で使用される iOS の種類の登録システムの詳細に�
 
 ## <a name="generator"></a>Generator
 
-Xamarin iOS には、すべての単一の iOS API の定義が含まれています。 [Macios github リポジトリ](https://github.com/xamarin/xamarin-macios/tree/master/src)でこれらのいずれかを参照できます。 これらの定義には、属性を持つインターフェイスだけでなく、必要なメソッドとプロパティも含まれています。 たとえば、次のコードは、UIKit[名前空間](https://github.com/xamarin/xamarin-macios/blob/master/src/uikit.cs#L11277-L11327)で UIToolbar を定義するために使用されます。 これは、いくつかのメソッドとプロパティを持つインターフェイスであることに注意してください。
+Xamarin.iOS には、すべての単一の iOS API の定義が含まれています。 [Macios github リポジトリ](https://github.com/xamarin/xamarin-macios/tree/master/src)でこれらのいずれかを参照できます。 これらの定義には、属性を持つインターフェイスだけでなく、必要なメソッドとプロパティも含まれています。 たとえば、次のコードは、UIKit[名前空間](https://github.com/xamarin/xamarin-macios/blob/master/src/uikit.cs#L11277-L11327)で UIToolbar を定義するために使用されます。 これは、いくつかのメソッドとプロパティを持つインターフェイスであることに注意してください。
 
 ```csharp
 [BaseType (typeof (UIView))]
