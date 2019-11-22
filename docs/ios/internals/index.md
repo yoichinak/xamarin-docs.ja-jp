@@ -31,15 +31,15 @@ API バインディングの背後にある設計原則について説明しま�
 また、Visual Studio for Mac と Xcode の Interface Builder で Interface Builder を使用して UI をデザインする方法についても説明します。
 
 > [!IMPORTANT]
-> このドキュメントでは、Xcode の Interface Builder のみとの統合 Visual Studio for Mac について説明します。 IOS Designer の詳細については、 [Ios designer](~/ios/user-interface/designer/index.md)のドキュメントを参照してください。
+> このドキュメントでは、Xcode の Interface Builder のみとの統合 Visual Studio for Mac について説明します。 iOS Designer の詳細については、 [iOS designer](~/ios/user-interface/designer/index.md)のドキュメントを参照してください。
 
 ## <a name="ios-architectureiosinternalsarchitecturemd"></a>[iOS のアーキテクチャ](~/ios/internals/architecture.md)
 
-Xamarin iOS アプリケーションは Mono 実行環境内で実行され、完全な事前 (AOT) コンパイルを使用しC#てコードを ARM アセンブリ言語にコンパイルします。 このガイドでは、低レベルでの Xamarin の詳細について説明します。
+Xamarin.iOS アプリケーションは Mono 実行環境内で実行され、完全な事前 (AOT) コンパイルを使用して C# コードを ARM アセンブリ言語にコンパイルします。 このガイドでは、低レベルでの Xamarin の詳細について説明します。
 
-## <a name="objective-c-selectorsiosinternalsobjective-c-selectorsmd"></a>[目標-C セレクター](~/ios/internals/objective-c-selectors.md)
+## <a name="objective-c-selectorsiosinternalsobjective-c-selectorsmd"></a>[Objective-C セレクター](~/ios/internals/objective-c-selectors.md)
 
-目的 C セレクター (メソッド) を直接呼び出す場合の注意と使用方法。
+Objective-C セレクター (メソッド) を直接呼び出す場合の注意と使用方法。
 
 ## <a name="limitationslimitationsmd"></a>[制限事項](limitations.md)
 
