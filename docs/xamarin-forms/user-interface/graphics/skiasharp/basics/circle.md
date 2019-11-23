@@ -16,7 +16,7 @@ ms.locfileid: "72032582"
 ---
 # <a name="drawing-a-simple-circle-in-skiasharp"></a>SkiaSharp の単純な円を描画
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _SkiaSharp 描画、キャンバスのなどの基本を学習し、オブジェクトの塗りつぶし_
 
@@ -106,7 +106,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 - [`Stroke`](xref:SkiaSharp.SKPaintStyle.Stroke)
 - [`StrokeAndFill`](xref:SkiaSharp.SKPaintStyle.StrokeAndFill)
 
-既定値は `Fill` です。 線のストロークを描画し、内部を同じ色で塗りつぶすには、3 番目のオプションを使用します。
+既定値は、`Fill` です。 線のストロークを描画し、内部を同じ色で塗りつぶすには、3 番目のオプションを使用します。
 
 設定、 [ `Color` ](xref:SkiaSharp.SKPaint.Color)プロパティ型の値を[ `SKColor`](xref:SkiaSharp.SKColor)します。 取得する方法の 1 つ、`SKColor`値は、Xamarin.Forms を変換することで、`Color`値を`SKColor`拡張メソッドを使用して値[ `ToSKColor`](xref:SkiaSharp.Views.Forms.Extensions.ToSKColor*)します。 [ `Extensions` ](xref:SkiaSharp.Views.Forms.Extensions)クラス、`SkiaSharp.Views.Forms`名前空間には、Xamarin.Forms と SkiaSharp 値の間で変換できるその他のメソッドが含まれています。
 
@@ -154,7 +154,7 @@ IOS、Android、およびユニバーサル Windows プラットフォームで�
 > [!NOTE]
 > `SKPaint`クラスを定義、 [ `IsAntialias` ](xref:SkiaSharp.SKPaint.IsAntialias)グラフィックスのレンダリングにアンチエイリアシングを有効にします。 アンチエイリアシング通常、結果視覚的により滑らかなエッジは、このプロパティに設定する可能性がありますので`true`のほとんどで、`SKPaint`オブジェクト。 このプロパティは、わかりやすくするためのために、_いない_のほとんどのサンプル ページで設定します。
 
-円の輪郭の幅は25ピクセル &mdash; または円の半径の1分 @no__t ますが、-1 の場合は幅が薄く、そのような理由があります。青の円では、線の幅の半分が見えません。 引数、`DrawCircle`メソッドは、円の抽象の幾何学的座標を定義します。 青の内部のサイズは、最も近いピクセルにそのディメンションが 25 ピクセル幅のアウトラインがジオメトリの円をまたぐ&mdash;内側と外側の半分の半分です。
+円のアウトラインの幅が 25 ピクセルとして指定されていますが&mdash;または 4 分の 1 円の半径&mdash;幅が狭いほど、ように見え、する正当な理由がある: します線の幅の半分は、青い円によって隠されています。 引数、`DrawCircle`メソッドは、円の抽象の幾何学的座標を定義します。 青の内部のサイズは、最も近いピクセルにそのディメンションが 25 ピクセル幅のアウトラインがジオメトリの円をまたぐ&mdash;内側と外側の半分の半分です。
 
 次のサンプル、 [Xamarin.Forms との統合](~/xamarin-forms/user-interface/graphics/skiasharp/basics/integration.md)記事では、これを視覚的に示します。
 

@@ -119,7 +119,7 @@ ms.locfileid: "73025722"
 
 <a name="MM0071" />
 
-#### <a name="mm0071-unknown-platform--this-usually-indicates-a-bug-in-xamarinmac-please-file-a-bug-report-at-httpsbugzillaxamarincom-with-a-test-case"></a>MM0071: 不明なプラットフォーム: *。 これは通常、Xamarin. Mac のバグであることを示します。テストケースがある https://bugzilla.xamarin.com でバグレポートをファイルに登録してください。
+#### <a name="mm0071-unknown-platform--this-usually-indicates-a-bug-in-xamarinmac-please-file-a-bug-report-at-httpsbugzillaxamarincom-with-a-test-case"></a>MM0071: 不明なプラットフォーム: *。 これは通常 Xamarin.Mac; のバグを示しますバグ報告を送信してください https://bugzilla.xamarin.com とテスト_ケースをします。
 
 これは通常、Xamarin. Mac のバグであることを示します。テストケースがある[https://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=Xamarin.Mac)でバグレポートをファイルに登録してください。
 
@@ -172,7 +172,7 @@ Straw の最後の解決策は、プロジェクトに必要な SDK をサポー
 
 <a name="MM0099" />
 
-#### <a name="mm0099-internal-error-0-please-file-a-bug-report-with-a-test-case-httpsbugzillaxamarincom"></a>MM0099: 内部エラー {0}。 テストケース (https://bugzilla.xamarin.com) を含むバグレポートをファイルに登録してください。
+#### <a name="mm0099-internal-error-0-please-file-a-bug-report-with-a-test-case-httpsbugzillaxamarincom"></a>MM0099: 内部エラー {0}。 テストケース (https://bugzilla.xamarin.com)を含むバグレポートをファイルに登録してください。
 
 <a name="MM0114" />
 
@@ -244,7 +244,7 @@ Apple は、32ビットアプリの macOS アプリストアの送信を許可�
 
 <a name="MM1034" />
 
-#### <a name="mm1034-could-not-create-symlink-file---target-error-number"></a>MM1034: シンボリックリンク ' {file} ' を作成できませんでした-> ' {target} ': エラー {number}
+#### <a name="mm1034-could-not-create-symlink-file---target-error-number"></a>MM1034: Could not create symlink '{file}' -> '{target}': error {number}
 
 ### <a name="mm14xx-product-assemblies"></a>MM14xx: Product アセンブリ
 
@@ -338,7 +338,7 @@ Apple は、32ビットアプリの macOS アプリストアの送信を許可�
 
 <a name="MM2009" />
 
-#### <a name="mm2009-referenced-by-01------this-message-is-related-to-mm2006-"></a>MM2009: {0}によって参照されます。{1} @ no__t_2_\* このメッセージは MM2006 \*に関連付けられてい\*
+#### <a name="mm2009-referenced-by-01------this-message-is-related-to-mm2006-"></a>MM2009: {0}によって参照されます。{1}\*\* このメッセージは MM2006 \*に関連 \*
 
 <a name="MM2010" />
 
@@ -350,7 +350,7 @@ Apple は、32ビットアプリの macOS アプリストアの送信を許可�
 
 <a name="MM2012" />
 
-#### <a name="mm2012-only-first-0-of-1-referenced-by-warnings-shown--this-message-related-to-2009-"></a>MM2012: {1} "" によって参照されている "警告が表示されるのは、最初の {0} のみです。 このメッセージは、2009 \*に関連する\* \*\*
+#### <a name="mm2012-only-first-0-of-1-referenced-by-warnings-shown--this-message-related-to-2009-"></a>MM2012: {1} "" によって参照されている "警告が表示されるのは、最初の {0} のみです。 このメッセージは、2009 \*に関連する \* \*\*
 
 <a name="MM2013" />
 
@@ -358,7 +358,7 @@ Apple は、32ビットアプリの macOS アプリストアの送信を許可�
 
 <a name="MM2014" />
 
-#### <a name="mm2014-xamarinmac-extensions-do-not-support-linking-request-for-linking-will-be-ignored--this-message-is-obsolete-in-xm-36-"></a>MM2014: Xamarin 拡張子はリンクをサポートしていません。 リンクの要求は無視されます。 XM 3.6 + \*では、このメッセージは廃止\* \*\*
+#### <a name="mm2014-xamarinmac-extensions-do-not-support-linking-request-for-linking-will-be-ignored--this-message-is-obsolete-in-xm-36-"></a>MM2014: Xamarin 拡張子はリンクをサポートしていません。 リンクの要求は無視されます。 XM 3.6 + \*では、このメッセージは廃止 \* \*\*
 
 <!-- 2015 used by mtouch -->
 
@@ -392,7 +392,7 @@ Apple は、32ビットアプリの macOS アプリストアの送信を許可�
 
 混合モードのアセンブリは、リンカーでは処理できません。
 
-混合モードのアセンブリの詳細については、「 https://docs.microsoft.com/cpp/dotnet/mixed-native-and-managed-assemblies 」を参照してください。
+参照してください https://docs.microsoft.com/cpp/dotnet/mixed-native-and-managed-assemblies 混合モード アセンブリの詳細についてはします。
 
 <a name="MM2106" />
 
@@ -521,7 +521,7 @@ App Store は、32ビットのバリアントを含むライブラリとフレ�
 
 <a name="MM5205" />
 
-#### <a name="mm5205-invalid-architecture-0-valid-architectures-are-i386-and-x86_64-when---profilemobile"></a>MM5205: アーキテクチャ '{0}' が無効です。 有効なアーキテクチャは、i386 と x86_64 (--profile = mobile) です。
+#### <a name="mm5205-invalid-architecture-0-valid-architectures-are-i386-and-x86_64-when---profilemobile"></a>MM5205: アーキテクチャ '{0}' が無効です。 有効なアーキテクチャは i386 と x86_64 (--profile = mobile) です。
 
 <a name="MM5218" />
 
@@ -609,7 +609,7 @@ App Store は、32ビットのバリアントを含むライブラリとフレ�
 
 #### <a name="mm8025-failed-to-compute-the-token-reference-for-the-type-typeassemblyqualifiedname-because-reasons"></a>MM8025: 型 ' {type ' のトークン参照を計算できませんでした。AssemblyQualifiedName} ' は {理由}
 
-これは、Xamarin. Mac のバグを示しています。 [https://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=Xamarin.Mac)でバグを報告してください。
+これは、Xamarin. Mac のバグを示しています。 バグを送信してください [https://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=Xamarin.Mac)です。
 
 回避策として、プロジェクトの Mac ビルドオプションで追加の mmp 引数として `--optimize:-register-protocols` を渡すことによって、`register-protocols` の最適化を無効にすることが考えられます。
 
@@ -617,6 +617,6 @@ App Store は、32ビットのバリアントを含むライブラリとフレ�
 
 #### <a name="mm8026--is-not-supported-when-the-dynamic-registrar-has-been-linked-away"></a>MM8026: * は、動的レジスタがリンクされている場合はサポートされません。
 
-これは通常、必要に応じて動的レジストラーをリンクしないようにする必要があるため、Xamarin. Mac のバグを示します。 [https://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)でバグを報告してください。
+これは通常、必要に応じて動的レジストラーをリンクしないようにする必要があるため、Xamarin. Mac のバグを示します。 バグを送信してください [https://bugzilla.xamarin.com](https://bugzilla.xamarin.com/enter_bug.cgi?product=iOS)です。
 
 プロジェクトの Mac ビルドオプションの追加の mmp 引数に `--optimize=-remove-dynamic-registrar` を追加することによって、動的レジストラーを保持するようにリンカーを設定することができます。

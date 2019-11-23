@@ -209,7 +209,7 @@ I/monodroid-gref(27679): -w- grefc 1915 gwrefc 294 handle 0xde691aaf/W from take
 - 弱いグローバル参照の作成: *+ w +* で始まる行です。
 - 弱いグローバル参照破棄: これらは *、-w から*始まる行です。
 
-すべてのメッセージでは、 *grefc*の値は、xamarin によって作成されたグローバル参照の数を示します。 *grefc*値は、xamarin によって作成された弱いグローバル参照の数です。 *Handle*または*obj-* HANDLE の値は JNI handle の値で、' */* ' の後の文字はハンドル値の型です。ローカル参照の場合は */L* 、グローバル参照の場合は */g* 、weak グローバルの場合は " */w* " になります。形式.
+すべてのメッセージでは、 *grefc*の値は、xamarin によって作成されたグローバル参照の数を示します。 *grefc*値は、xamarin によって作成された弱いグローバル参照の数です。 *Handle*または*obj-* HANDLE の値は JNI handle の値で、' */* ' の後の文字はハンドル値の型 (ローカル参照の場合は */L* 、グローバル参照の場合は */G* 、弱グローバル参照の場合は、 */w* ) です。
 
 GC プロセスの一部として、グローバル参照 (+ g +) が弱いグローバル参照 (+ w + と-g-) に変換され、Java 側 GC が開始され、弱いグローバル参照が収集されたかどうかが確認されます。 まだ生きている場合は、弱い参照 (+ g +,-w) の周りに新しいグリーンが作成されます。それ以外の場合は、弱い参照が破棄されます (-w)。
 
@@ -279,7 +279,7 @@ Xamarin は複数のデバイス ABIs をサポートしています。 *armeabi
 Windows 用 Android SDK には、Google から2つのダウンロードが用意されています。
 .Exe インストーラーを選択すると、インストールされている Xamarin. Android に通知するレジストリキーが書き込まれます。 .Zip ファイルを選択して自分で解凍した場合、Xamarin では、SDK を検索する場所がわかりません。 Visual Studio で SDK を使用するように Xamarin Android に指示するには、**ツール > オプション > xamarin > Android 設定**の順に移動します。
 
-[Xamarin Android 設定での Android SDK の場所の![](troubleshooting-images/01.png)](troubleshooting-images/01.png#lightbox)
+[Xamarin Android 設定での Android SDK の場所の ![](troubleshooting-images/01.png)](troubleshooting-images/01.png#lightbox)
 
 ## <a name="ide-does-not-display-target-device"></a>IDE にターゲットデバイスが表示されない
 
@@ -306,7 +306,7 @@ HTC 同期ソフトウェアによって **、adb の起動サーバー**が正�
 
 ## <a name="monodroidexe-or-aresgenexe-exited-with-code-1"></a>コード1で終了したモノ id .exe または aresgen
 
-この問題をデバッグするには、Visual Studio に移動し、MSBuild の詳細レベルを変更します。これを行うには、[**ツール > オプション > プロジェクト**と **> ソリューション**] を選択し **> MSBuild プロジェクトビルドの出力の詳細**を設定し、これを設定します。値を**標準**にします。
+この問題をデバッグするには、Visual Studio に移動し、MSBuild の詳細レベルを変更します。これを行うには、[**ツール > オプション > プロジェクト**と **> ソリューション**] を選択し **> MSBuild プロジェクトビルドの出力の詳細**をビルドして実行し、この値を**Normal**に設定します。
 
 リビルドし、Visual Studio の出力ウィンドウを確認します。このウィンドウには、完全なエラーが含まれている必要があります。
 
@@ -464,7 +464,7 @@ mAdapter = new SimpleExpandableListAdapter (
 );
 ```
 
-問題は、Xamarin. Android で入れ子になったジェネリック型が正しくマーシャリングされないことです。 `List<IDictionary<string, object>>` は[ArrrayList](xref:Java.Util.ArrayList)にマーシャリングされていますが、`ArrayList` には、(`Dictionary<string, object>` インスタンスを参照する) `mono.android.runtime.JavaObject` インスタンスが含まれてい[ます](xref:Java.Util.IMap)。これは、次のようになります。例外的
+問題は、Xamarin. Android で入れ子になったジェネリック型が正しくマーシャリングされないことです。 `List<IDictionary<string, object>>` は [java.lang.ArrrayList](xref:Java.Util.ArrayList) にマーシャリングされていますが、`ArrayList` には、(`mono.android.runtime.JavaObject` インスタンスを参照する) `Dictionary<string, object>` インスタンスが含まれています。これは、[java.util.Map](xref:Java.Util.IMap) を実装するものではありません。その結果、次の例外が発生します。
 
 ```shell
 E/AndroidRuntime( 2991): FATAL EXCEPTION: main
@@ -515,7 +515,7 @@ using (var groupData = new JavaList<IDictionary<string, object>> ()) {
 
 ## <a name="unexpected-nullreferenceexceptions"></a>予期しない NullReferenceExceptions
 
-場合によっては、 [android のデバッグログ](~/android/deploy-test/debugging/android-debug-log.md)に、アプリが動作しなくなる前に、Mono for android のランタイムコードを&rdquo; または Mono から取得 &ldquo;ことができない NullReferenceExceptions が示されます。
+場合によっては、[Android Debug Log](~/android/deploy-test/debugging/android-debug-log.md) に、&ldquo;発生できない&rdquo; nullreferenceexceptionsや、アプリが停止する直前にMonoforAndroidのランタイムコードが表示されることがあります。
 
 ```shell
 E/mono(15202): Unhandled Exception: System.NullReferenceException: Object reference not set to an instance of an object
@@ -627,7 +627,7 @@ E/dalvikvm(  602): VM aborting
 
 上の例 (ちなみに、[バグ 685215](https://bugzilla.novell.com/show_bug.cgi?id=685215)から発生します) で問題は、作成されている Android... のインスタンスが多すぎることです。この特定のバグの修正の一覧については、[コメント \#2](https://bugzilla.novell.com/show_bug.cgi?id=685215#c2)を参照してください。
 
-通常、便利な解決策としては、上記のダンプ &ndash; に割り当てられているインスタンスが多すぎる型を見つけて、ソースコード内で作成された場所を見つけて、それらを適切に破棄します (そのため、それらの Java オブジェクトを &ndash;有効期間が短縮されます)。 これは常に適切であるとは限りません (\#685215 はマルチスレッドであるため、単純なソリューションは Dispose 呼び出しを回避します) が、最初に考慮する必要があります。
+通常、便利な解決策としては、上記の &ndash; ダンプに割り当て &ndash; られたインスタンスの数が多すぎる型を見つけて、ソースコードで作成された場所を見つけて、それらを適切に破棄します (Java オブジェクトの有効期間が短縮されるようにするため)。 これは常に適切であるとは限りません (\#685215 はマルチスレッドであるため、単純なソリューションは Dispose 呼び出しを回避します) が、最初に考慮する必要があります。
 
 作成した GREFs がどの程度存在するかを確認するには、その[ログ記録](~/android/troubleshooting/index.md)を有効にすることができます。
 

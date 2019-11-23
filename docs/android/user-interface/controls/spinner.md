@@ -21,7 +21,7 @@ ms.locfileid: "73029158"
 
 このチュートリアルの最初の部分では、惑星の一覧を表示する単純なスピンボタンウィジェットを作成します。 地球を選択すると、選択した項目がトーストメッセージに表示されます。
 
-[HelloSpinner アプリの![スクリーンショットの例](spinner-images/01-example-screenshots-sml.png)](spinner-images/01-example-screenshots.png#lightbox)
+[HelloSpinner アプリの ![スクリーンショットの例](spinner-images/01-example-screenshots-sml.png)](spinner-images/01-example-screenshots.png#lightbox)
 
 **HelloSpinner**という名前の新しいプロジェクトを開始します。
 
@@ -122,7 +122,7 @@ private void spinner_ItemSelected (object sender, AdapterView.ItemSelectedEventA
 
 アプリケーションを実行します。次のようになります。
 
-[地球として選択された Mars を使用したスピンボタンの例の![スクリーンショット](spinner-images/02-basic-example-sml.png)](spinner-images/02-basic-example.png#lightbox)
+[地球として選択された Mars を使用したスピンボタンの例の ![スクリーンショット](spinner-images/02-basic-example-sml.png)](spinner-images/02-basic-example.png#lightbox)
 
 ## <a name="spinner-using-keyvalue-pairs"></a>キー/値ペアを使用したスピンボタン
 
@@ -190,7 +190,7 @@ private void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventAr
 
 アプリケーションを実行します。トーストは次のようになります。
 
-[地球選択の表示温度の![例](spinner-images/03-keyvalue-example-sml.png)](spinner-images/03-keyvalue-example.png#lightbox)
+[地球選択の表示温度の ![例](spinner-images/03-keyvalue-example-sml.png)](spinner-images/03-keyvalue-example.png#lightbox)
 
 ## <a name="resources"></a>リソース
 

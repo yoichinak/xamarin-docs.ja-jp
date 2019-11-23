@@ -17,9 +17,9 @@ ms.locfileid: "70228195"
 ---
 # <a name="dynamic-styles-in-xamarinforms"></a>Xamarin.Forms での動的なスタイル
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
 
-_スタイルはないプロパティの変更に応答し、アプリケーションの実行中は変更されません。たとえば、スタイル ビジュアル要素、1 つの set アクセス操作子インスタンスが変更された場合、削除、または追加された新しい set アクセス操作子インスタンスに割り当てると、変更は視覚要素に適用されません。ただし、アプリケーションは、動的リソースを使用して実行時に動的にスタイルの変更に応答することができます。_
+_スタイルは、プロパティの変更に応答せず、アプリケーションの継続中は変更されません。たとえば、視覚要素にスタイルを割り当てた後、Setter インスタンスのいずれかが変更、削除された場合、または新しい Setter インスタンスが追加された場合、変更はビジュアル要素に適用されません。ただし、アプリケーションは動的リソースを使用して、実行時に動的にスタイルの変更に応答できます。_
 
 `DynamicResource`マークアップ拡張機能に似ています、`StaticResource`から値をフェッチする辞書のキーを使用して両方のマークアップ拡張機能、 [ `ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)します。 ただし、中に、`StaticResource`は 1 つのディクショナリ参照を実行、`DynamicResource`ディクショナリ キーへのリンクを保持します。 そのため、キーに関連付けられているディクショナリ エントリが置き換えられている場合、変更は、ビジュアル要素に適用されます。 これにより、アプリケーションで作成するランタイム スタイルの変更ができます。
 
@@ -56,7 +56,7 @@ _スタイルはないプロパティの変更に応答し、アプリケーシ�
 
 [ `SearchBar` ](xref:Xamarin.Forms.SearchBar)インスタンスを使用して、`DynamicResource`を参照するマークアップ拡張機能、 [ `Style` ](xref:Xamarin.Forms.Style)という`searchBarStyle`、XAML で定義されていません。 ただし、ため、 [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)のプロパティ、`SearchBar`を使用してインスタンスが設定されて、 `DynamicResource`、ディクショナリ キーがないことはない例外がスローされます。
 
-代わりに、分離コード ファイルでコンストラクターは、作成、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)キーを持つエントリ`searchBarStyle`次のコード例のように。
+代わりに、分離コード ファイルでコンス トラクターは、作成、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)キーを持つエントリ`searchBarStyle`次のコード例のように。
 
 ```csharp
 public partial class DynamicStylesPage : ContentPage
@@ -82,12 +82,12 @@ public partial class DynamicStylesPage : ContentPage
 }
 ```
 
-ときに、`OnButtonClicked`イベント ハンドラーを実行すると、`searchBarStyle`間の切り替えは`blueSearchBarStyle`と`greenSearchBarStyle`します。 次のスクリーン ショットに示すように外観が発生します。
+ときに、`OnButtonClicked`イベント ハンドラーを実行すると、`searchBarStyle`間の切り替えは`blueSearchBarStyle`と`greenSearchBarStyle`します。 これで、次のスクリーンショットのような結果になります。
 
 [![青の動的スタイルの例](dynamic-images/dynamic-style-blue.png)](dynamic-images/dynamic-style-blue-large.png#lightbox)
-[![(緑の動的スタイルの例)](dynamic-images/dynamic-style-green.png)](dynamic-images/dynamic-style-green-large.png#lightbox)
+[![緑色の動的スタイルの例](dynamic-images/dynamic-style-green.png)](dynamic-images/dynamic-style-green-large.png#lightbox)
 
-次のコード例では、C# で最初のページを示しています。
+次のコード例では、c# で最初のページを示しています。
 
 ```csharp
 public class DynamicStylesPageCS : ContentPage
@@ -161,12 +161,12 @@ C# で、 [ `SearchBar` ](xref:Xamarin.Forms.SearchBar)インスタンスを使�
 
 [ `SearchBar` ](xref:Xamarin.Forms.SearchBar)インスタンスを使用して、`StaticResource`を参照するマークアップ拡張機能、 [ `Style` ](xref:Xamarin.Forms.Style)という`tealSearchBarStyle`します。 これは、`Style`いくつか追加のプロパティを設定しを使用して、 [ `BaseResourceKey` ](xref:Xamarin.Forms.Style.BaseResourceKey)プロパティ参照を`searchBarStyle`します。 `DynamicResource`マークアップ拡張機能は必要ありませんので`tealSearchBarStyle`は変更されませんを除き、`Style`から派生します。 そのため、`tealSearchBarStyle`へのリンクを維持`searchBarStyle`が、基本のスタイルが変更されたときに変更されるとします。
 
-コンストラクターを作成、分離コード ファイルで、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)キーを持つエントリ`searchBarStyle`、動的なスタイルを示す前の例のようです。 ときに、`OnButtonClicked`イベント ハンドラーを実行すると、`searchBarStyle`間の切り替えは`blueSearchBarStyle`と`greenSearchBarStyle`します。 次のスクリーン ショットに示すように外観が発生します。
+コンス トラクターを作成、分離コード ファイルで、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)キーを持つエントリ`searchBarStyle`、動的なスタイルを示す前の例のようです。 ときに、`OnButtonClicked`イベント ハンドラーを実行すると、`searchBarStyle`間の切り替えは`blueSearchBarStyle`と`greenSearchBarStyle`します。 これで、次のスクリーンショットのような結果になります。
 
-[![青の動的スタイルの継承例](dynamic-images/dynamic-style-inheritance-blue.png)](dynamic-images/dynamic-style-inheritance-blue-large.png#lightbox)
-[![(緑の動的スタイルの継承の例)](dynamic-images/dynamic-style-inheritance-green.png)](dynamic-images/dynamic-style-inheritance-green-large.png#lightbox)
+[![青の動的スタイルの継承の例](dynamic-images/dynamic-style-inheritance-blue.png)](dynamic-images/dynamic-style-inheritance-blue-large.png#lightbox)
+[![緑色の動的スタイルの継承の例](dynamic-images/dynamic-style-inheritance-green.png)](dynamic-images/dynamic-style-inheritance-green-large.png#lightbox)
 
-次のコード例では、C# で最初のページを示しています。
+次のコード例では、c# で最初のページを示しています。
 
 ```csharp
 public class DynamicStylesInheritancePageCS : ContentPage

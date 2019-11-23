@@ -112,7 +112,7 @@ API レベル 13 (Android 3.2) 以降では、sw*N*dp 修飾子の使用を優�
 
 - **10 個の "タブレット**&ndash; 720 Dp: Motorola xoom など
 
-API レベルを最大 12 (Android 3.1) にするアプリケーションでは、さまざまな画面の汎化として、**小さい**/**通常**/**大**/**特大**という修飾子を使用するディレクトリにレイアウトを設定する必要があります。ほとんどのデバイスで使用できるサイズ。 たとえば、次の図には、4つの異なる画面サイズの代替リソースがあります。
+API レベルが 12 (Android 3.1) を対象とするアプリケーションでは、ほとんどのデバイスで使用できるさまざまな画面サイズの一般化として、**小さい**/**通常**/**大**/**特大**という修飾子を使用するディレクトリにレイアウトが含まれている必要があります。 たとえば、次の図には、4つの異なる画面サイズの代替リソースがあります。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -163,7 +163,7 @@ Android では、必要に応じてデバイスのビットマップが拡張さ
 
 さまざまな密度のビットマップの作成は、少し面倒になることがあります。 そのため、Google は、 [**Android Asset Studio**](https://romannurik.github.io/AndroidAssetStudio/)と呼ばれるこれらのビットマップの作成に関連する面倒な作業の一部を減らすことができるオンラインユーティリティを作成しました。
 
-[Android Asset Studio の![](resources-for-varying-screens-images/08-android-asset-studio-sml.png)](resources-for-varying-screens-images/08-android-asset-studio.png#lightbox)
+[Android Asset Studio の ![](resources-for-varying-screens-images/08-android-asset-studio-sml.png)](resources-for-varying-screens-images/08-android-asset-studio.png#lightbox)
 
 この web サイトは、1つのイメージを提供することで、4つの一般的な画面密度を対象とするビットマップの作成に役立ちます。 Android Asset Studio は、いくつかのカスタマイズでビットマップを作成し、zip ファイルとしてダウンロードできるようにします。
 
@@ -178,9 +178,9 @@ Android は困惑のデバイスで実行され、画面のサイズと画面密
 - **可能な**限り、 [AbsoluteLayout](xref:Android.Widget.AbsoluteLayout)
   は使用し**ない**でください &ndash; API レベル 3 (Android 1.5) で非推奨とされ、レイアウトが不安定になります。 使用しないでください。 代わりに、 [**LinearLayout**](xref:Android.Widget.LinearLayout)、 [**RelativeLayout**](xref:Android.Widget.RelativeLayout)、new [**GridLayout**](xref:Android.Widget.GridLayout)などのより柔軟なレイアウトウィジェットを使用してみてください。
 
-- **既定の &ndash; として1つのレイアウトの向きを選択し**ます。たとえば、代替リソース**レイアウト**と**レイアウトポート**を指定する代わりに、**レイアウト**に横長のリソースを配置し、縦長のリソースを**layout-port**。
+- **既定の &ndash; として1つのレイアウトの向きを選択し**ます。たとえば、代替リソース**レイアウト**と**レイアウトポート**を指定するのではなく、横長のリソースを**レイアウト**に、縦のリソースを**レイアウトポート**に配置します。
 
-- **Height と Width に LayoutParams を使用する**-XML レイアウトファイルで UI 要素を定義する場合、 **wrap_content**と**fill_parent**の値を使用する Android アプリケーションでは、ピクセルまたは密度に依存しない単位を使用します。 これらのディメンション値により、Android はビットマップリソースを必要に応じてスケーリングします。 これと同じ理由から、密度に依存しない単位は、UI 要素の余白と埋め込みを指定する場合に最適です。
+- **高さと幅に対して LayoutParams を使用する**-XML レイアウトファイルで UI 要素を定義する場合、 **wrap_content**と**fill_parent**の値を使用する Android アプリケーションでは、ピクセルまたは密度に依存しない単位を使用するのではなく、さまざまなデバイスを適切に確認できるようになります。 これらのディメンション値により、Android はビットマップリソースを必要に応じてスケーリングします。 これと同じ理由から、密度に依存しない単位は、UI 要素の余白と埋め込みを指定する場合に最適です。
 
 ## <a name="testing-multiple-screens"></a>複数の画面のテスト
 

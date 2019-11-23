@@ -73,7 +73,7 @@ PCL ベースのプロジェクトと .NET Standard ベースのプロジェク�
 [![](single-codebase-images/add-later-platforms-sml.png "Add platform options such as iOS, Android, and Shared Project")](single-codebase-images/add-later-platforms-sml.png#lightbox)
 
 共有プロジェクトに変換した後、**プロジェクトオプション > Nuget パッケージ > 参照アセンブリ**
-[セクション](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/platform-specific.md)にアクセスし、必要なすべてのプロファイルが選択されていることを確認します (nuget が引き続きプロジェクトと互換性があることを確認します)。以前にで使用されています)。
+[セクション](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/platform-specific.md)にアクセスし、必要なすべてのプロファイルが選択されていることを確認します (nuget は、以前に使用されていたプロジェクトとの互換性を維持するため)。
 
 ## <a name="related-links"></a>関連リンク
 

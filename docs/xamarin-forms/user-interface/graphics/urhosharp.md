@@ -16,7 +16,7 @@ ms.locfileid: "70772933"
 ---
 # <a name="using-urhosharp-in-xamarinforms"></a>Xamarin.Forms で urhosharp の使用
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/urho-samples/tree/master/FormsSample)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/urho-samples/tree/master/FormsSample)
 
 ## <a name="what-is-urhosharp"></a>UrhoSharp とは何ですか。
 
@@ -33,7 +33,7 @@ UrhoSharp は、Xamarin.Forms アプリケーションでグラフィックス�
 UrhoSharp を使用する前に、開発者は、そのソリューションに UrhoSharp の Nuget パッケージを追加する必要があります。 このガイドでは、Xamarin.Forms プロジェクトで、iOS、Android、および .NET Standard ライブラリ プロジェクト。 すべてのコードは、.NET Standard ライブラリ プロジェクトで出力されます。ただし、UrhoSharp の Nuget をも iOS と Android プロジェクトに追加する必要があります。
 
 UrhoSharp.Forms Nuget パッケージには、すべての UrhoSharp のオブジェクトを作成するために必要なオブジェクトが含まれます。 UrhoSharp.Forms の nuget パッケージに含まれる、`UrhoSurface`クラスは、Xamarin.Forms で UrhoSharp をホストするために使用します。
-最初を右クリックし、**パッケージ**フォルダーをクリックし、.NET Standard ライブラリ プロジェクトで**パッケージを追加しています.** .検索語句を入力します。 **UrhoSharp.Forms**を選択します**Xamarin.Forms 用 UrhoSharp**、順にクリックします**パッケージの追加**します。
+開始するには、.NET Standard ライブラリプロジェクトの**packages**フォルダーを右クリックし、 **[パッケージの追加]** を選択します。検索語句に「 **Urhosharp**」と入力し、 **[urhosharp]** を選択して、 **[パッケージの追加]** をクリックします。
 
 [![](urhosharp-images/add-package-sml.png "[追加] ダイアログのパッケージ")](urhosharp-images/add-package.png#lightbox "追加パッケージ ダイアログ ボックス")
 
@@ -43,7 +43,7 @@ UrhoSharp.Forms NuGet パッケージをプロジェクトに追加されます�
 
 プラットフォーム固有プロジェクト (iOS と Android) などの上記の手順を繰り返します。
 
-## <a name="walkthrough-adding-urhosharp-to-a-xamarinforms-app"></a>チュートリアル: Xamarin. Forms アプリへの UrhoSharp の追加
+## <a name="walkthrough-adding-urhosharp-to-a-xamarinforms-app"></a>チュートリアル: UrhoSharp を Xamarin.Forms アプリに追加します。
 
 次の手順では、Xamarin.Forms UrhoSharp のサンプル コードについて説明します。
 
@@ -57,7 +57,7 @@ UrhoSharp.Forms NuGet パッケージをプロジェクトに追加されます�
 
 <a name="1"/>
 
-### <a name="1-create-a-xamarin-forms-page"></a>1.Xamarin フォーム ページを作成します。
+### <a name="1-create-a-xamarin-forms-page"></a>1. Xamarin フォームページを作成する
 
 次のコードは、Xamarin.Forms のページを示しています。 `UrhoPage` Urho に関連するコードが追加された前に。
 
@@ -89,7 +89,7 @@ public class UrhoPage : ContentPage
 
 <a name="2"/>
 
-### <a name="2-add-the-urhosurface"></a>2.追加、UrhoSurface
+### <a name="2-add-the-urhosurface"></a>2. UrhoSurface を追加する
 
 UrhoSharp をホストすることができます、`ContentPage`などの他の Xamarin.Forms コントロール。
 次のコード スニペットを`UrhoSurface`Xamarin.Forms のページに追加します。
@@ -122,7 +122,7 @@ public class UrhoPage : ContentPage
 
 <a name="3"/>
 
-### <a name="3-build-a-urho-application"></a>3.Urho アプリケーションを構築します。
+### <a name="3-build-a-urho-application"></a>3. Urho アプリケーションをビルドする
 
 参照してください、`Charts`このサンプルで使用されている Urho 3D グラフィックの実装のためのクラス。 基本的なコードのアウトラインを示す次のクラスを実装することに注意してください`Urho.Application`とは別に、`Xamarin.Forms.Application`クラスで実装されている**App.cs**します。
 
@@ -151,7 +151,7 @@ namespace FormsSample
 
 <a name="4"/>
 
-### <a name="4-add-the-charts-class-to-the-urhosurface"></a>4.グラフ クラス、UrhoSurface を追加します。
+### <a name="4-add-the-charts-class-to-the-urhosurface"></a>4. グラフクラスを UrhoSurface に追加する
 
 使用して、 `UrhoSurface.Show<T>` Urho アプリケーション Xamarin.Forms ページを追加するジェネリック メソッド。 次のコード スニペットを作成するために必要な追加のコードを示しています、`Charts`クラス。
 
@@ -171,7 +171,7 @@ public class UrhoPage : ContentPage
 
 <a name="5"/>
 
-### <a name="5-interacting-with-urhosharp"></a>5.UrhoSharp の対話
+### <a name="5-interacting-with-urhosharp"></a>5. UrhoSharp との対話
 
 例では、グラフのバーを選択し、変更を許可します。 `Charts`クラスでは、`Bars`と`SelectedBar`この対話を有効にします。
 
@@ -220,7 +220,7 @@ selectedBarSlider.ValueChanged += OnValuesSliderValueChanged;
 
 アニメーションを[ページのトップ](#what-is-urhosharp)実行されているサンプルを表示します。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>概要
 
 このページは、UrhoSharp を使用して、Xamarin.Forms の 3D のデータの視覚化を追加する方法を示します。 読み取り、 [UrhoSharp ドキュメント](~/graphics-games/urhosharp/index.md)前に示したメソッドを使用して Xamarin.Forms アプリに含めることができる Urho シーンを構築する方法の詳細について。
 

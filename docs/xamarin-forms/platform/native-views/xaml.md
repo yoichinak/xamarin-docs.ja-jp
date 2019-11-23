@@ -16,15 +16,15 @@ ms.locfileid: "70770642"
 ---
 # <a name="native-views-in-xaml"></a>XAML のネイティブ ビュー
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)
 
-_IOS、Android、およびユニバーサル Windows プラットフォームからのネイティブ ビューは、Xamarin.Forms XAML ファイルから直接参照できます。プロパティとイベント ハンドラーは、ネイティブのビューを設定でき、Xamarin.Forms のビューとやり取りすることができます。この記事では、Xamarin.Forms XAML ファイルからのネイティブ ビューを使用する方法を示します。_
+_IOS、Android、およびユニバーサル Windows プラットフォームからのネイティブビューは、Xamarin の XAML ファイルから直接参照できます。プロパティとイベントハンドラーは、ネイティブビューで設定でき、Xamarin のビューと対話できます。この記事では、Xamarin の XAML ファイルからネイティブビューを使用する方法について説明します。_
 
 この記事では、次のトピックについて説明します。
 
 - [ネイティブ ビューの使用](#consuming)– XAML からのネイティブ ビューを使用するためのプロセス。
 - [ネイティブのバインドを使用して](#native_bindings)– データとの間のネイティブ ビューのプロパティをバインドします。
-- [ネイティブ ビューに引数を渡す](#passing_arguments)– ネイティブ ビュー コンストラクターに引数を渡すと、ネイティブのビュー ファクトリ メソッドを呼び出すことです。
+- [ネイティブ ビューに引数を渡す](#passing_arguments)– ネイティブ ビュー コンス トラクターに引数を渡すと、ネイティブのビュー ファクトリ メソッドを呼び出すことです。
 - [コードからネイティブ ビューを参照する](#native_view_code)– その分離コード ファイルからの XAML ファイルで宣言されているネイティブ ビューのインスタンスを取得します。
 - [ネイティブ ビューのサブクラス化](#subclassing)– XAML 使いやすい API を定義するネイティブ ビューのサブクラス化します。  
 
@@ -38,9 +38,9 @@ Xamarin.Forms XAML ファイルにネイティブのビューを埋め込むに�
 1. XAML ファイルでのネイティブ ビューのインスタンスを作成します。
 
 > [!IMPORTANT]
-> ネイティブビューを使用するすべての XAML ページでは、コンパイルされた XAML を無効にする必要があります。 これは、 `[XamlCompilation(XamlCompilationOptions.Skip)]` XAML ページの分離コードクラスを属性で修飾することによって実現できます。 XAML コンパイルの詳細については、「 [Xamarin. Forms での xaml のコンパイル](~/xamarin-forms/xaml/xamlc.md)」を参照してください。
+> ネイティブビューを使用するすべての XAML ページでは、コンパイルされた XAML を無効にする必要があります。 これは、XAML ページの分離コードクラスを `[XamlCompilation(XamlCompilationOptions.Skip)]` 属性で修飾することによって実現できます。 XAML コンパイルの詳細については、「 [Xamarin. Forms での xaml のコンパイル](~/xamarin-forms/xaml/xamlc.md)」を参照してください。
 
-分離コード ファイルからのネイティブ ビューを参照するには、共有資産プロジェクト (SAP) を使用して、条件付きコンパイル ディレクティブを使用してプラットフォーム固有のコードをラップする必要があります。 詳細については、[コードからネイティブ ビューを参照する](#native_view_code)を参照してください。
+分離コード ファイルからのネイティブ ビューを参照するには、共有資産プロジェクト (SAP) を使用して、条件付きコンパイル ディレクティブを使用してプラットフォーム固有のコードをラップする必要があります。 詳細については、次を参照してください。[コードからネイティブ ビューを参照する](#native_view_code)します。
 
 <a name="consuming" />
 
@@ -74,10 +74,10 @@ Xamarin.Forms XAML ファイルにネイティブのビューを埋め込むに�
 > [!NOTE]
 > スタイルのみ対象にできるためでは、提供されるプロパティは、ネイティブのビューのスタイルを使用できないことに注意してください`BindableProperty`オブジェクト。
 
-Android のウィジェットのコンストラクターは通常、Android を必要と`Context`オブジェクト引数、およびこれが利用できる静的プロパティを通じて、`MainActivity`クラス。 そのため、XAML で Android のウィジェットを作成するときに、`Context`オブジェクトは、ウィジェットのコンストラクターに渡す一般的にする必要がありますを使用して、`x:Arguments`属性、`x:Static`マークアップ拡張機能。 詳細については、[をネイティブのビューに渡す引数](#passing_arguments)を参照してください。
+Android のウィジェットのコンス トラクターは通常、Android を必要と`Context`オブジェクト引数、およびこれが利用できる静的プロパティを通じて、`MainActivity`クラス。 そのため、XAML で Android のウィジェットを作成するときに、`Context`オブジェクトは、ウィジェットのコンス トラクターに渡す一般的にする必要がありますを使用して、`x:Arguments`属性、`x:Static`マークアップ拡張機能。 詳細については、次を参照してください。[をネイティブのビューに渡す引数](#passing_arguments)します。
 
 > [!NOTE]
-> ネイティブ ビューの名前を付けることに注意してください。 `x:Name` .NET Standard ライブラリ プロジェクトまたは共有資産プロジェクト (SAP) のいずれかのことはできません。 そうと、コンパイル エラーの原因は、ネイティブの型の変数が生成されます。 ただし、ネイティブのビューにラップできます`ContentView`インスタンスし、SAP が使用されていること、分離コード ファイルで取得します。 詳細については、[コードからネイティブのビューを参照する](#native_view_code)を参照してください。
+> ネイティブ ビューの名前を付けることに注意してください。 `x:Name` .NET Standard ライブラリ プロジェクトまたは共有資産プロジェクト (SAP) のいずれかのことはできません。 そうと、コンパイル エラーの原因は、ネイティブの型の変数が生成されます。 ただし、ネイティブのビューにラップできます`ContentView`インスタンスし、SAP が使用されていること、分離コード ファイルで取得します。 詳細については、次を参照してください。[コードからネイティブのビューを参照する](#native_view_code)します。
 
 <a name="native_bindings" />
 
@@ -128,7 +128,7 @@ Android のウィジェットのコンストラクターは通常、Android を�
 
 ## <a name="passing-arguments-to-native-views"></a>ネイティブ ビューに引数を渡す
 
-コンストラクターの引数を使用してネイティブのビューに渡すことができます、`x:Arguments`属性、`x:Static`マークアップ拡張機能。 さらに、ファクトリ メソッドのネイティブ ビュー (`public static`オブジェクトまたはクラスまたはメソッドを定義する構造体と同じ型の値を返すメソッドを)、メソッドの指定することによって呼び出すことが名前を使用して、`x:FactoryMethod`属性、およびその引数使用して、`x:Arguments`属性。
+コンス トラクターの引数を使用してネイティブのビューに渡すことができます、`x:Arguments`属性、`x:Static`マークアップ拡張機能。 さらに、ファクトリ メソッドのネイティブ ビュー (`public static`オブジェクトまたはクラスまたはメソッドを定義する構造体と同じ型の値を返すメソッドを)、メソッドの指定することによって呼び出すことが名前を使用して、`x:FactoryMethod`属性、およびその引数使用して、`x:Arguments`属性。
 
 次のコード例では、両方の方法を示しています。
 
@@ -186,16 +186,16 @@ Android のウィジェットのコンストラクターは通常、Android を�
 
 [ `Typeface.Create` ](xref:Android.Graphics.Typeface.Create*)ファクトリ メソッドを設定するため、 [ `TextView.Typeface` ](xref:Android.Widget.TextView.Typeface)プロパティを新しい[ `Typeface` ](xref:Android.Graphics.Typeface) Android で。 `Typeface`ファミリ名とスタイルの子であるメソッドの引数によって指定されます、`x:Arguments`属性。
 
-[ `FontFamily` ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.fontfamily)コンストラクターは、設定に使用される、 [ `TextBlock.FontFamily` ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.fontfamily)プロパティを新しい`FontFamily`ユニバーサル Windows プラットフォーム (UWP) にします。 `FontFamily`の子であるメソッドの引数で指定された名前、`x:Arguments`属性。
+[ `FontFamily` ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.fontfamily)コンス トラクターは、設定に使用される、 [ `TextBlock.FontFamily` ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.fontfamily)プロパティを新しい`FontFamily`ユニバーサル Windows プラットフォーム (UWP) にします。 `FontFamily`の子であるメソッドの引数で指定された名前、`x:Arguments`属性。
 
 > [!NOTE]
-> 引数は、コンストラクターまたはファクトリ メソッドで必要な型と一致する必要があります。
+> 引数は、コンス トラクターまたはファクトリ メソッドで必要な型と一致する必要があります。
 
-次のスクリーン ショットでは、別のネイティブ ビューのフォントを設定するファクトリ メソッドとコンストラクターの引数を指定して結果を表示します。
+次のスクリーン ショットでは、別のネイティブ ビューのフォントを設定するファクトリ メソッドとコンス トラクターの引数を指定して結果を表示します。
 
 ![](xaml-images/passing-arguments.png "ネイティブ ビューのフォントの設定")
 
-XAML で引数の受け渡しの詳細については、[XAML で引数を渡す](~/xamarin-forms/xaml/passing-arguments.md)を参照してください。
+XAML で引数の受け渡しの詳細については、次を参照してください。 [XAML で引数を渡す](~/xamarin-forms/xaml/passing-arguments.md)します。
 
 <a name="native_view_code" />
 
@@ -483,7 +483,7 @@ class MySpinner : Spinner
 
 `MySpinner`クラスでは`ItemsSource`と`SelectedObject`プロパティ、および`ItemSelected`イベント。 によって表示される項目、`MySpinner`クラスは、によって提供される、 [ `Adapter` ](xref:Android.Widget.Adapter) 、ビューに関連付けられたおよびに項目が表示されます、`Adapter`ときに、`ItemsSource`プロパティが最初に設定します。 たびにで選択された項目、`MySpinner`クラスの変更、`OnBindableSpinnerItemSelected`イベント ハンドラーの更新プログラム、`SelectedObject`プロパティ。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>概要
 
 この記事では、Xamarin.Forms XAML ファイルからのネイティブ ビューを使用する方法を示しました。 プロパティとイベント ハンドラーは、ネイティブのビューを設定でき、Xamarin.Forms のビューとやり取りすることができます。
 

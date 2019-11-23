@@ -22,15 +22,15 @@ Xamarin アプリケーションは、`DynamicResource` マークアップ拡張
 
 Xamarin. フォームアプリケーションでランタイムテーマを実装するプロセスは次のとおりです。
 
-1. [@No__t_1](xref:Xamarin.Forms.ResourceDictionary)内の各テーマのリソースを定義します。
-1. @No__t_0 マークアップ拡張機能を使用して、アプリケーションでテーマリソースを使用します。
+1. [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)内の各テーマのリソースを定義します。
+1. `DynamicResource` マークアップ拡張機能を使用して、アプリケーションでテーマリソースを使用します。
 1. アプリケーションの**app.xaml**ファイルに既定のテーマを設定します。
 1. 実行時にテーマを読み込むコードを追加します。
 
 次のスクリーンショットは、テーマが適用されたページを示しています。 iOS アプリケーションでは、明るいテーマと Android アプリケーションを使用して、ダークテーマを使用しています。
 
-テーマが適用さ[![れたアプリのメインページのスクリーンショット (ios および 
- android](theming-images/main-page-both-themes.png "テーマ付きアプリのメインページ")](theming-images/main-page-both-themes-large.png#lightbox "テーマ付きアプリのメインページ")の場合)、テーマが適用さ[![れたアプリの詳細ページのスクリーンショット (ios および android)](theming-images/detail-page-both-themes.png "テーマ付きアプリの詳細ページ")](theming-images/detail-page-both-themes-large.png#lightbox "テーマ付きアプリの詳細ページ")
+テーマが適用さ[![れたアプリのメインページのスクリーンショット (ios および
+android](theming-images/main-page-both-themes.png "テーマ付きアプリのメインページ")](theming-images/main-page-both-themes-large.png#lightbox "テーマ付きアプリのメインページ")の場合)、テーマが適用さ[![れたアプリの詳細ページのスクリーンショット (ios および android)](theming-images/detail-page-both-themes.png "テーマ付きアプリの詳細ページ")](theming-images/detail-page-both-themes-large.png#lightbox "テーマ付きアプリの詳細ページ")
 
 ## <a name="define-themes"></a>テーマを定義する
 
@@ -70,10 +70,10 @@ Xamarin. フォームアプリケーションでランタイムテーマを実�
 </ResourceDictionary>
 ```
 
-各[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)には、それぞれのテーマを定義する[`Color`](xref:Xamarin.Forms.Color)リソースが含まれており、各 `ResourceDictionary` は同一のキー値を使用します。 リソースディクショナリの詳細については、「[リソースディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)」を参照してください。
+各[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)には、それぞれのテーマを定義する[`Color`](xref:Xamarin.Forms.Color)リソースが含まれており、各 `ResourceDictionary` は同一のキー値を使用します。 リソース ディクショナリの詳細については、次を参照してください。[リソース ディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)します。
 
 > [!IMPORTANT]
-> @No__t_1 メソッドを呼び出す各 `ResourceDictionary` には、分離コードファイルが必要です。 これは、選択したテーマを表す CLR オブジェクトを実行時に作成できるようにするために必要です。
+> `InitializeComponent` メソッドを呼び出す各 `ResourceDictionary`には、分離コードファイルが必要です。 これは、選択したテーマを表す CLR オブジェクトを実行時に作成できるようにするために必要です。
 
 ## <a name="set-a-default-theme"></a>既定のテーマを設定する
 
@@ -176,16 +176,16 @@ Xamarin. フォームアプリケーションでランタイムテーマを実�
 
 テーマリソースを直接使用する場合は、`DynamicResource` マークアップ拡張機能で使用する必要があります。 ただし、`DynamicResource` マークアップ拡張機能を使用するスタイルが使用されている場合は、`StaticResource` マークアップ拡張機能で使用する必要があります。
 
-スタイル設定の詳細については、「 [XAML スタイルを使用した Xamarin. Forms アプリのスタイル](~/xamarin-forms/user-interface/styles/xaml/index.md)設定」を参照してください。 @No__t_0 マークアップ拡張機能の詳細については、「 [Xamarin. フォームの動的スタイル](~/xamarin-forms/user-interface/styles/xaml/dynamic.md)」を参照してください。
+スタイル設定の詳細については、「 [XAML スタイルを使用した Xamarin. Forms アプリのスタイル](~/xamarin-forms/user-interface/styles/xaml/index.md)設定」を参照してください。 `DynamicResource` マークアップ拡張機能の詳細については、「 [Xamarin. フォームの動的スタイル](~/xamarin-forms/user-interface/styles/xaml/dynamic.md)」を参照してください。
 
 ## <a name="load-a-theme-at-runtime"></a>実行時にテーマを読み込む
 
 実行時にテーマを選択すると、アプリケーションは次のことを行う必要があります。
 
 1. 現在のテーマをアプリケーションから削除します。 これは、アプリケーションレベルの[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)の[`MergedDictionaries`](xref:Xamarin.Forms.ResourceDictionary.MergedDictionaries)プロパティをクリアすることで実現されます。
-2. 選択したテーマを読み込みます。 これを実現するには、選択したテーマのインスタンスをアプリケーションレベル `ResourceDictionary` の `MergedDictionaries` プロパティに追加します。
+2. 選択したテーマを読み込みます。 これを実現するには、選択したテーマのインスタンスをアプリケーションレベル `ResourceDictionary`の `MergedDictionaries` プロパティに追加します。
 
-@No__t_2 マークアップ拡張機能を使用してプロパティを設定する[`VisualElement`](xref:Xamarin.Forms.VisualElement)オブジェクトでは、新しいテーマの値が適用されます。 これは、`DynamicResource` マークアップ拡張機能がディクショナリキーへのリンクを保持しているために発生します。 そのため、キーに関連付けられている値が置換されると、その変更が `VisualElement` オブジェクトに適用されます。
+`DynamicResource` マークアップ拡張機能を使用してプロパティを設定する[`VisualElement`](xref:Xamarin.Forms.VisualElement)オブジェクトでは、新しいテーマの値が適用されます。 これは、`DynamicResource` マークアップ拡張機能がディクショナリキーへのリンクを保持しているために発生します。 そのため、キーに関連付けられている値が置換されると、その変更が `VisualElement` オブジェクトに適用されます。
 
 サンプルアプリケーションでは、 [`Picker`](xref:Xamarin.Forms.Picker)を含むモーダルページを使用してテーマを選択します。 次のコードは、選択したテーマが変更されたときに実行される `OnPickerSelectionChanged` メソッドを示しています。
 

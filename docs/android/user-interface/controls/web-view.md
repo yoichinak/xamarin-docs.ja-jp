@@ -93,11 +93,11 @@ protected override void OnCreate (Bundle bundle)
 ```
 
 これにより、 [`Activity`](xref:Android.App.Activity)レイアウトのメンバー [`WebView`](xref:Android.Webkit.WebView)が初期化され、 [`JavaScriptEnabled`](xref:Android.Webkit.WebSettings.JavaScriptEnabled)
-`= true` を使用して[`WebView`](xref:Android.Webkit.WebView)の javascript が有効になります (javascript レシピ[からの呼び出し C\#](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/webview/call_csharp_from_javascript)を参照してください)。JavaScript から C\# 関数を呼び出す方法について説明します)。 最後に、 [`LoadUrl(String)`](xref:Android.Webkit.WebView)と共に最初の web ページが読み込まれます。
+`= true` を使用して[`WebView`](xref:Android.Webkit.WebView)の javascript が有効になります (javascript から c\# 関数を呼び出す方法については、「 [javascript からの呼び出し](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/webview/call_csharp_from_javascript)」を参照してください。\# 最後に、 [`LoadUrl(String)`](xref:Android.Webkit.WebView)と共に最初の web ページが読み込まれます。
 
 アプリケーションをビルドし、実行します。 次のスクリーンショットに示すように、単純な web ページビューアーアプリが表示されます。
 
-[WebView を表示するアプリの![例](web-view-images/02-simple-webview-app-sml.png)](web-view-images/02-simple-webview-app.png#lightbox)
+[WebView を表示するアプリの ![例](web-view-images/02-simple-webview-app-sml.png)](web-view-images/02-simple-webview-app.png#lightbox)
 
 **[戻る]** ボタンのキーを押すには、次の using ステートメントを追加します。
 
@@ -132,5 +132,5 @@ public override bool OnKeyDown (Android.Views.Keycode keyCode, Android.Views.Key
 ## <a name="related-links"></a>関連リンク
 
 - [JavaScript から C# を呼び出す](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/webview/call_csharp_from_javascript)
-- [Webkit](xref:Android.Webkit.WebView)
+- [Android.Webkit.WebView](xref:Android.Webkit.WebView)
 - [KeyEvent](xref:Android.Webkit.WebView)

@@ -108,7 +108,7 @@ API ファイルの形式と使用できる属性の詳細については、後�
 
 API 定義ファイルには、(インターフェイスが含むことのできるすべてのメンバーを含む) 名前空間とインターフェイスの定義のみが含まれます。クラス、列挙体、デリゲート、または構造体を含めることはできません。 API 定義ファイルは、API の生成に使用されるコントラクトにすぎません。
 
-列挙型やサポートクラスなどの追加のコードは、別のファイルでホストする必要があります。上記の例では、"CameraMode" は CS ファイルに存在せず、別のファイルでホストする必要がある列挙値です。 `StructsAndEnums.cs`たとえば、次のようになります。:
+列挙やサポートクラスのように必要な追加のコードは、別のファイルでホストする必要があります。上記の例では、"CameraMode" は CS ファイルに存在しない列挙値です。たとえば、次のように別 `StructsAndEnums.cs`のファイルでホストする必要があります。
 
 ```csharp
 public enum CameraMode {
@@ -132,7 +132,7 @@ public partial class Camera {
 
 ライブラリをビルドすると、ネイティブバインドが生成されます。
 
-このバインディングを完了するには、ネイティブライブラリをプロジェクトに追加する必要があります。  これを行うには、ネイティブライブラリをプロジェクトに追加します。そのためには、ソリューションエクスプローラーで Finder からネイティブライブラリをプロジェクトにドラッグアンドドロップするか、プロジェクトを右クリックして **追加** を選択し > **ファイルの追加** を選択します。ネイティブライブラリ。
+このバインディングを完了するには、ネイティブライブラリをプロジェクトに追加する必要があります。  これを行うには、ソリューションエクスプローラーでネイティブライブラリを Finder からプロジェクトにドラッグアンドドロップするか、プロジェクトを右クリックして **[追加]** を選択し >  **[ファイル]** の追加 を選択してネイティブライブラリを選択します。
 ネイティブライブラリは、"lib" という語で始まり、拡張子 ". a" で終わります。 この操作を行うと、Visual Studio for Mac によって2つのファイルが追加されますC# 。このファイルには、ネイティブライブラリに含まれる内容に関する情報を含むファイルと、自動的に設定されたファイルがあります。
 
  [![](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png "Native libraries by convention start with the word lib and end with the extension .a")](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png#lightbox)
@@ -479,7 +479,7 @@ interface NSStringDrawingExtensions {
 
 ### <a name="binding-objective-c-argument-lists"></a>バインディング目標-C 引数リスト
 
-可変個引数は、引数をサポートします。 (例:
+可変個引数は、引数をサポートします。 例 :
 
 ```objc
 - (void) appendWorkers:(XWorker *) firstWorker, ...
@@ -522,7 +522,7 @@ public void AppendWorkers(params Worker[] workers)
 
 通常、これらのフィールドには、参照する必要がある文字列または整数値が含まれます。 一般的に、特定の通知を表す文字列として使用され、ディクショナリのキーとして使用されます。
 
-フィールドをバインドするには、インターフェイス定義ファイルにプロパティを追加し、 [`[Field]`](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute)属性を使用してプロパティを装飾します。 この属性は、1つのパラメーター (参照するシンボルの C 名) を受け取ります。 (例:
+フィールドをバインドするには、インターフェイス定義ファイルにプロパティを追加し、 [`[Field]`](~/cross-platform/macios/binding/binding-types-reference.md#FieldAttribute)属性を使用してプロパティを装飾します。 この属性は、1つのパラメーター (参照するシンボルの C 名) を受け取ります。 例 :
 
 ```csharp
 [Field ("NSSomeEventNotification")]
@@ -632,7 +632,7 @@ interface MyType {
 メソッド (戻り値)、パラメーター、およびプロパティを[`[BindAs]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute)で装飾できます。 唯一の制限は、メンバーを[`[Protocol]`](~/cross-platform/macios/binding/binding-types-reference.md#ProtocolAttribute)内に配置することはでき**ない**ということです。 
 または[`[Model]`](~/cross-platform/macios/binding/binding-types-reference.md#ModelAttribute)インターフェイス。
 
-(例:
+例 :
 
 ```csharp
 [return: BindAs (typeof (bool?))]
@@ -651,7 +651,7 @@ bool? ShouldDraw (CGRect rect) { ... }
 
 [`[BindAs]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAsAttribute)は、`NSNumber` `NSValue` と `NSString`(列挙型) の配列もサポートしています。
 
-(例:
+例 :
 
 ```csharp
 [BindAs (typeof (CAScroll []))]
@@ -682,7 +682,7 @@ Xamarin. iOS バインディングジェネレーターは、開発者が通知�
 
 この属性は、ペイロードを含まない通知の引数なしで使用できます。また、API 定義で別のインターフェイスを参照する `System.Type` を指定することもできます。この場合、通常は "EventArgs" で終わる名前が使用されます。 ジェネレーターは、`EventArgs` サブクラスを持つクラスにインターフェイスを変換し、そこに一覧表示されているすべてのプロパティを含みます。 [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)属性を EventArgs クラスで使用して、値を取得する目的の C 辞書を検索するために使用するキーの名前を一覧表示する必要があります。
 
-(例:
+例 :
 
 ```csharp
 interface MyClass {
@@ -901,11 +901,11 @@ Task<string> LoadFileAsync (string file);
 
 ### <a name="surfacing-strong-types-for-weak-nsdictionary-parameters"></a>弱い NSDictionary パラメーターの厳密な型を提示しています
 
-目標 C API の多くの場所では、パラメーターは、特定のキーと値を持つ厳密に型指定されていない `NSDictionary` Api として渡されますが、これらはエラーが発生しやすくなります (無効な値を渡して警告を表示することはできません。また、警告は表示されません)。そのため、使用可能なキーの名前と値を参照するために、ドキュメントへの複数のトリップが必要になります。
+目標 C API の多くの場所では、パラメーターは特定のキーと値を持つ弱く型指定された `NSDictionary` Api として渡されますが、エラーが発生しやすくなります (無効なキーを渡したり、警告を表示したりすることができます)。また、使用することができます。
 
 この解決策は、厳密に型指定されたバージョンの API を提供する厳密に型指定されたバージョンを提供することです。また、背後では、基になるさまざまなキーと値をマップします。
 
-たとえば、目的の C API が `NSDictionary` を受け入れ、0.0 から1.0 のボリューム値と文字列を受け取る `XyzCaptionKey` を `NSNumber` 受け取るキー `XyzVolumeKey` を取得しているとします。では、ユーザーは次のような優れた API を使用できます。
+たとえば、目標 C API が `NSDictionary` を受け入れ、0.0 ~ 1.0 のボリューム値を持つ `NSNumber` を取得し、文字列を受け取る `XyzCaptionKey` を取得する `XyzVolumeKey` として記述されている場合、ユーザーは次のような優れた API を使用できます。
 
 ```csharp
 public class  XyzOptions {
@@ -1027,7 +1027,7 @@ interface XyzPanel {
 
 |目的-C 型の名前|Xamarin Unified API の種類|
 |---|---|
-|`BOOL`、 `GLboolean`|`bool`|
+|`BOOL`, `GLboolean`|`bool`|
 |`NSInteger`|`nint`|
 |`NSUInteger`|`nuint`|
 |`CFTimeInterval` / `NSTimeInterval`|`double`|
@@ -1036,7 +1036,7 @@ interface XyzPanel {
 |`CGRect`|`CGRect`|
 |`CGPoint`|`CGPoint`|
 |`CGSize`|`CGSize`|
-|`CGFloat`、 `GLfloat`|`nfloat`|
+|`CGFloat`, `GLfloat`|`nfloat`|
 |CoreFoundation types (`CF*`)|`CoreFoundation.CF*`|
 |`GLint`|`nint`|
 |`GLfloat`|`nfloat`|
@@ -1055,7 +1055,7 @@ interface XyzPanel {
 
 ### <a name="arrays"></a>配列
 
-Xamarin の iOS ランタイムは、次のようにC# 、配列を`NSArrays`に変換して変換を実行する処理を自動的に行います。たとえば、`UIViews`の`NSArray`を返す架空の目標 C メソッドなどです。
+Xamarin の iOS ランタイムは、次のようにC# 、配列を `NSArrays` に変換して変換を実行する処理を自動的に行います。たとえば、`UIViews`の `NSArray` を返す架空の目標 C メソッドなどです。
 
 ```csharp
 // Get the peer views - untyped
@@ -1111,7 +1111,7 @@ class DialogPrint : UIViewController {
 }
 ```
 
-開発者にC#とってこのバインディングを簡単にするために、通常は`NSAction`パラメーターを受け取るメソッドをC#提供します。これにより、`Target+Selector`の代わりにデリゲートとラムダを使用できるようになります。 これを行うには、通常、 [`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)でフラグを付けて `SetTarget` メソッドを非表示にします。
+開発者にC#とってこのバインディングを簡単にするために、通常は `NSAction` パラメーターを受け取るメソッドをC#提供します。これにより、`Target+Selector`の代わりにデリゲートとラムダを使用できるようになります。 これを行うには、通常、 [`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)でフラグを付けて `SetTarget` メソッドを非表示にします。
 次のように、新しいヘルパーメソッドを公開します。
 
 ```csharp
@@ -1328,7 +1328,7 @@ Btouch インターフェイス定義システムによって直接サポート�
 
 アプリケーションに含まれていない Api をバインドする場合は、実行可能ファイルがこれらのライブラリにリンクされていることを確認する必要があります。
 
-Xamarin に通知する必要があります。ライブラリをリンクするには、ビルド構成を変更して、gcc_flags コマンドを `mtouch` 呼び出すようにビルド構成を変更するか、"-" オプションを使用して新しいライブラリとリンクする方法を指定するいくつかのビルド引数を追加します。に続けて、次のように、プログラムに必要なすべての追加ライブラリを含む、引用符で囲まれた文字列を指定します。
+Xamarin に通知する必要があります。ライブラリをリンクするには、ビルド `mtouch` 構成を変更して、次のように、"-gcc_flags" オプションを使用して新しいライブラリとリンクする方法を指定するいくつかの追加のビルド引数と、その後にプログラムに必要なすべての追加ライブラリを含む引用符で囲まれた文字列を指定します。
 
 ```bash
 -gcc_flags "-L${ProjectDir} -lMylibrary -force_load -lSystemLibrary -framework CFNetwork -ObjC"
@@ -1337,7 +1337,7 @@ Xamarin に通知する必要があります。ライブラリをリンクする
 上の例では、`libMyLibrary.a`、`libSystemLibrary.dylib`、および `CFNetwork` framework ライブラリを最終的な実行可能ファイルにリンクします。
 
 または、コントラクトファイル (`AssemblyInfo.cs`など) に埋め込むことができるアセンブリレベルの[`[LinkWithAttribute]`](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute)を利用することもできます。
-[`[LinkWithAttribute]`](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute)を使用する場合は、バインディングの作成時にネイティブライブラリを使用できるようにする必要があります。これにより、ネイティブライブラリがアプリケーションと共に埋め込まれます。 (例:
+[`[LinkWithAttribute]`](~/cross-platform/macios/binding/binding-types-reference.md#LinkWithAttribute)を使用する場合は、バインディングの作成時にネイティブライブラリを使用できるようにする必要があります。これにより、ネイティブライブラリがアプリケーションと共に埋め込まれます。 例 :
 
 ```csharp
 // Specify only the library name as a constructor argument and specify everything else with properties:
@@ -1347,7 +1347,7 @@ Xamarin に通知する必要があります。ライブラリをリンクする
 [assembly: LinkWith ("libMyLibrary.a", LinkTarget.ArmV6 | LinkTarget.ArmV7 | LinkTarget.Simulator, ForceLoad = true, IsCxx = true)]
 ```
 
-`-force_load` のコマンドが必要な理由は、のコードをコンパイルするのに-ObjC フラグが使用されているので、必要なカテゴリをサポートするために必要なメタデータ (リンカー/コンパイラのコードの削除) が保持されていないことについて、Xamarin. iOS のランタイム。
+`-force_load` コマンドが必要なのはなぜですか。また、でコードをコンパイルしても-ObjC フラグは、の実行時に必要なカテゴリをサポートするために必要なメタデータを保持しません (リンカーまたはコンパイラのコードの削除によって削除されます)。
 
 <a name="Assisted_References" />
 
