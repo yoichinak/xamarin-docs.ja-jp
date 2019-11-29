@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/28/2019
-ms.openlocfilehash: ba23b7dee93c0c8938ee3b2b820ba081e420727c
-ms.sourcegitcommit: 93697a20e6fc7da547a8714ac109d7953b61d63f
+ms.openlocfilehash: d47146c90635084a4974cfa0c7dcb142ac918788
+ms.sourcegitcommit: 2cc0796902123df137611b855a55b754ca3c6d73
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72980875"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74556178"
 ---
 # <a name="xamarinforms-label"></a>Xamarin. フォームラベル
 
@@ -76,7 +76,7 @@ Label label = new Label { Text = "Character spaced text", CharacterSpacing = 10 
 
 各プラットフォームで色が使用できるようにするには、特別な注意が必要です。 各プラットフォームにはテキストと背景色について異なる既定値があるため、各プラットフォームで動作する既定値を選択する必要があります。
 
-次の XAML の例では、`Label` のテキストの色を設定します。
+次の XAML の例では、`Label`のテキストの色を設定します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -133,7 +133,8 @@ public partial class LabelPage : ContentPage
 
 [`Label`](xref:Xamarin.Forms.Label)によって表示される行数は、`Label.MaxLines` プロパティを `int` 値に設定することによって指定できます。
 
-- `MaxLines` が0の場合、`Label` は[`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode)プロパティの値に従い、1行だけを表示するか、切り捨てられるか、すべてのテキストを含むすべての行を表示します。
+- `MaxLines` が-1 (既定値) の場合、`Label` は、 [`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode)プロパティの値に従い、1行だけを表示するか、切り捨てられるか、またはすべてのテキストを含むすべての行を表示します。
+- `MaxLines` が0の場合、`Label` は表示されません。
 - `MaxLines` が1の場合、結果は[`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode)プロパティを[`NoWrap`](xref:Xamarin.Forms.LineBreakMode)、 [`HeadTruncation`](xref:Xamarin.Forms.LineBreakMode)、 [`MiddleTruncation`](xref:Xamarin.Forms.LineBreakMode)、または[`TailTruncation`](xref:Xamarin.Forms.LineBreakMode)に設定した場合と同じになります。 ただし、`Label` は、省略記号の配置 (該当する場合) に関して、 [`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode)プロパティの値を尊重します。
 - `MaxLines` が1より大きい場合、`Label` は指定された行数まで表示され、必要に応じて、省略記号の配置に関して[`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode)プロパティの値が考慮されます。 ただし、 [`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode)プロパティが[`NoWrap`](xref:Xamarin.Forms.LineBreakMode)に設定されている場合、`MaxLines` プロパティを1より大きい値に設定しても効果はありません。
 
@@ -166,7 +167,7 @@ var label =
 - `Text` は、`Label` がプレーンテキストを表示し、`Label.TextType` プロパティの既定値であることを示します。
 - `Html` は、`Label` に HTML テキストが表示されることを示します。
 
-したがって、 [`Label`](xref:Xamarin.Forms.Label)インスタンスは、`Label.TextType` プロパティを `Html` に、`Label.Text` プロパティを html 文字列に設定することにより、html を表示できます。
+したがって、 [`Label`](xref:Xamarin.Forms.Label)インスタンスは、`Label.TextType` プロパティを `Html`に、`Label.Text` プロパティを html 文字列に設定することにより、html を表示できます。
 
 ```csharp
 Label label = new Label
@@ -215,7 +216,7 @@ XAML では、`<` と `>` シンボルをさらにエスケープすることに
 `FormattedText` プロパティの型は[`FormattedString`](xref:Xamarin.Forms.FormattedString)で、 [`Spans`](xref:Xamarin.Forms.FormattedString.Spans)プロパティを使用して設定された1つ以上の[`Span`](xref:Xamarin.Forms.Span)インスタンスで構成されています。 次の `Span` プロパティを使用して、外観を設定できます。
 
 - [`BackgroundColor`](xref:Xamarin.Forms.Span.BackgroundColor) –スパンの背景の色です。
-- `double` 型の `CharacterSpacing` は `Span` テキストの文字間隔です。
+- `CharacterSpacing`: `double` 型、`Span` テキストの文字間の間隔。
 - [`Font`](xref:Xamarin.Forms.Span.Font) –スパン内のテキストのフォント。
 - [`FontAttributes`](xref:Xamarin.Forms.Span.FontAttributes) –スパン内のテキストのフォント属性。
 - [`FontFamily`](xref:Xamarin.Forms.Span.FontFamily) –スパン内のテキストのフォントが属するフォントファミリ。
@@ -404,7 +405,6 @@ Label label = new Label
 > Android およびユニバーサル Windows プラットフォームでは、`Padding` プロパティの値は `Label` の作成時に指定するか、後で指定することができます。
 
 埋め込みの詳細については、「[余白と埋め込み](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)」を参照してください。
-
 
 ## <a name="hyperlinks"></a>ハイパーリンク
 

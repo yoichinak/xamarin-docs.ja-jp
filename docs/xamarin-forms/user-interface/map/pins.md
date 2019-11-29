@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/23/2019
-ms.openlocfilehash: 930d2dcc701f88e2a350ec1011405bb18b86de6e
-ms.sourcegitcommit: 3ea19e3a51515b30349d03c70a5b3acd7eca7fe7
+ms.openlocfilehash: 197c48a7a3486d7161d351a6b06101daaa389256
+ms.sourcegitcommit: 2cc0796902123df137611b855a55b754ca3c6d73
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73425559"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74556158"
 ---
 # <a name="xamarinforms-map-pins"></a>Xamarin. フォームマップのピン
 
@@ -198,7 +198,7 @@ wharfPin.InfoWindowClicked += async (s, args) =>
 </ContentPage>
 ```
 
-[`ItemsSource`](xref:Xamarin.Forms.Maps.Map.ItemsSource)プロパティデータは、接続されたビューモデルの `Locations` プロパティにバインドされます。これにより、カスタム型の `Location` オブジェクトの `ObservableCollection` が返されます。 各 `Location` オブジェクトは、型 `string` の `Address` と `Description` プロパティ、[および `Position` 型](xref:Xamarin.Forms.Maps.Position)の `Position` プロパティを定義します。
+[`ItemsSource`](xref:Xamarin.Forms.Maps.Map.ItemsSource)プロパティデータは、接続されたビューモデルの `Locations` プロパティにバインドされます。これにより、カスタム型の `Location` オブジェクトの `ObservableCollection` が返されます。 各 `Location` オブジェクトは、型 `string`の `Address` と `Description` プロパティ、[および `Position` 型](xref:Xamarin.Forms.Maps.Position)の`Position`プロパティを定義します。
 
 `IEnumerable` コレクション内の各項目の外観は、データを適切なプロパティにバインドする[`Pin`](xref:Xamarin.Forms.Maps.Pin)オブジェクトを含む[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)に[`ItemTemplate`](xref:Xamarin.Forms.Maps.Map.ItemTemplate)プロパティを設定することによって定義されます。
 
@@ -225,6 +225,7 @@ wharfPin.InfoWindowClicked += async (s, args) =>
             </local:MapItemTemplateSelector.DefaultTemplate>
             <local:MapItemTemplateSelector.XamarinTemplate>
                 <DataTemplate>
+                    <!-- Change the property values, or the properties that are bound to. -->
                     <maps:Pin Position="{Binding Position}"
                               Address="{Binding Address}"
                               Label="Xamarin!" />
@@ -258,7 +259,10 @@ public class MapItemTemplateSelector : DataTemplateSelector
 }
 ```
 
-`MapItemTemplateSelector` クラスは、さまざまなデータテンプレートに設定されている[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)プロパティの `DefaultTemplate` と `XamarinTemplate` を定義します。 `OnSelectTemplate` メソッドは、`XamarinTemplate`を返します。この場合、`Pin` がタップされたときに "Xamarin" というラベルが表示され、その項目に "サンフランシスコ" が含まれているアドレスが含まれています。 "サンフランシスコ" を含むアドレスが項目にない場合、`OnSelectTemplate` メソッドは `DefaultTemplate` を返します。
+`MapItemTemplateSelector` クラスは、さまざまなデータテンプレートに設定されている[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)プロパティの `DefaultTemplate` と `XamarinTemplate` を定義します。 `OnSelectTemplate` メソッドは、`XamarinTemplate`を返します。この場合、`Pin` がタップされたときに "Xamarin" というラベルが表示され、その項目に "サンフランシスコ" が含まれているアドレスが含まれています。 "サンフランシスコ" を含むアドレスが項目にない場合、`OnSelectTemplate` メソッドは `DefaultTemplate`を返します。
+
+> [!NOTE]
+> この機能のユースケースは、`Pin` サブ型に基づいて、サブ[`Pin`](xref:Xamarin.Forms.Maps.Pin)オブジェクトのプロパティを異なるプロパティにバインドすることです。
 
 データテンプレートセレクターの詳細については、「 [DataTemplateSelector の作成](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)」を参照してください。
 
