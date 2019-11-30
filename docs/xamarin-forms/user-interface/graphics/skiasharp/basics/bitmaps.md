@@ -1,40 +1,40 @@
 ---
-title: SkiaSharp のビットマップの基礎
-description: この記事では、さまざまなソースから SkiaSharp のビットマップを読み込むし、Xamarin.Forms アプリケーションで表示する方法について説明し、サンプル コードを示します。
+title: SkiaSharp でのビットマップの基礎
+description: この記事では、さまざまなソースから SkiaSharp のビットマップを読み込み、Xamarin. Forms アプリケーションで表示する方法について説明し、サンプルコードを使用してこれを示します。
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: 80f2b686e9802a93b0cf32420ccaef3e8877727c
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 4aa73e1cba3f970396e5a52679372a160f47f7af
+ms.sourcegitcommit: 3bf02ecac9a8855779e07eb1e7e27abb9fc38934
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759548"
+ms.lasthandoff: 11/29/2019
+ms.locfileid: "74658269"
 ---
-# <a name="bitmap-basics-in-skiasharp"></a>SkiaSharp のビットマップの基礎
+# <a name="bitmap-basics-in-skiasharp"></a>SkiaSharp でのビットマップの基礎
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_さまざまなソースからビットマップを読み込むし、それらを表示します。_
+_さまざまなソースからビットマップを読み込んで表示します。_
 
-SkiaSharp のビットマップのサポートは非常に広範です。 この記事では、のみの基本を説明します&mdash;ビットマップを読み込む方法と、それらを表示する方法。
+SkiaSharp でのビットマップのサポートは非常に広範囲です。 この記事では、ビットマップの読み込み方法とその表示方法 &mdash; 基本についてのみ説明します。
 
-![](bitmaps-images/basicbitmaps-small.png "2 つのビットマップの表示")
+![](bitmaps-images/basicbitmaps-small.png "The display of two bitmaps")
 
-ビットマップの量により詳細な検証は、セクションで見つかる[SkiaSharp ビットマップ](../bitmaps/index.md)します。
+ビットマップの詳細な探索については、「 [SkiaSharp ビットマップ](../bitmaps/index.md)」セクションを参照してください。
 
-SkiaSharp ビットマップの種類のオブジェクトである[ `SKBitmap`](xref:SkiaSharp.SKBitmap)します。 ビットマップを作成する方法はたくさんありますが、この記事に制限する、 [ `SKBitmap.Decode` ](xref:SkiaSharp.SKBitmap.Decode(System.IO.Stream))メソッドは、.NET からビットマップを読み込み`Stream`オブジェクト。
+SkiaSharp bitmap は[`SKBitmap`](xref:SkiaSharp.SKBitmap)型のオブジェクトです。 ビットマップを作成するにはさまざまな方法がありますが、この記事では、.NET `Stream` オブジェクトからビットマップを読み込む[`SKBitmap.Decode`](xref:SkiaSharp.SKBitmap.Decode(System.IO.Stream))メソッドに限定しています。
 
-**基本的なビットマップ**ページで、 **SkiaSharpFormsDemos**プログラムは、次の 3 つの異なるソースからビットマップを読み込む方法を示します。
+**SkiaSharpFormsDemos**プログラムの**基本的なビットマップ**ページは、3つの異なるソースからビットマップを読み込む方法を示しています。
 
-- インターネットを介した
+- インターネット経由
 - 実行可能ファイルに埋め込まれたリソースから
-- ユーザーのフォト ライブラリから
+- ユーザーのフォトライブラリから
 
-次の 3 つ`SKBitmap`これら 3 つのソースがフィールドとして定義されているオブジェクト、 [ `BasicBitmapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/BasicBitmapsPage.cs)クラス。
+これら3つのソースの3つの `SKBitmap` オブジェクトは、 [`BasicBitmapsPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/BasicBitmapsPage.cs)クラスのフィールドとして定義されます。
 
 ```csharp
 public class BasicBitmapsPage : ContentPage
@@ -57,17 +57,17 @@ public class BasicBitmapsPage : ContentPage
 }
 ```
 
-## <a name="loading-a-bitmap-from-the-web"></a>Web からビットマップを読み込む
+## <a name="loading-a-bitmap-from-the-web"></a>Web からビットマップを読み込んでいます
 
-URL に基づくビットマップを読み込むには、使用することができます、 [ `HttpClient` ](/dotnet/api/system.net.http.httpclient?view=netstandard-2.0)クラス。 インスタンスを 1 つだけをインスタンス化する必要があります`HttpClient`と再利用であるため、そのフィールドとして。
+URL に基づいてビットマップを読み込むには、 [`HttpClient`](/dotnet/api/system.net.http.httpclient?view=netstandard-2.0)クラスを使用します。 `HttpClient` のインスタンスを1つだけインスタンス化して再利用する必要があるため、フィールドとして格納します。
 
 ```csharp
 HttpClient httpClient = new HttpClient();
 ```
 
-使用する場合`HttpClient`iOS と Android アプリケーションでは、に関するドキュメントで説明したように、プロジェクトのプロパティを設定する必要あります **[トランスポート層セキュリティ (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)** します。
+IOS アプリケーションと Android アプリケーションで `HttpClient` を使用する場合は、 **[トランスポート層セキュリティ (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)** のドキュメントで説明されているように、プロジェクトのプロパティを設定することをお勧めします。
 
-使用する最も便利なので、`await`演算子`HttpClient`では、コードを実行できません、`BasicBitmapsPage`コンス トラクター。 代わりの一部では、`OnAppearing`をオーバーライドします。 ここで、URL は、いくつかのサンプルのビットマップの Xamarin の web サイト上の領域を指します。 Web サイト上のパッケージでは特定の幅にビットマップのサイズを変更するための仕様を追加できます。
+`HttpClient`で `await` 演算子を使用すると最も便利なので、`BasicBitmapsPage` コンストラクターでコードを実行することはできません。 代わりに、`OnAppearing` のオーバーライドに含まれています。 ここでの URL は、いくつかのサンプルビットマップを含む Xamarin web サイトの領域を指しています。 Web サイトのパッケージでは、ビットマップのサイズを特定の幅に変更するための仕様を追加できます。
 
 ```csharp
 protected override async void OnAppearing()
@@ -85,7 +85,7 @@ protected override async void OnAppearing()
             await stream.CopyToAsync(memStream);
             memStream.Seek(0, SeekOrigin.Begin);
 
-            webBitmap = SKBitmap.Decode(stream);
+            webBitmap = SKBitmap.Decode(memStream);
             canvasView.InvalidateSurface();
         };
     }
@@ -95,15 +95,15 @@ protected override async void OnAppearing()
 }
 ```
 
-Android オペレーティング システムを使用する場合に例外を発生させる、`Stream`から返された`GetStreamAsync`で、`SKBitmap.Decode`メソッド メイン スレッドで時間のかかる操作を実行することがあるためです。 このためにビットマップ ファイルの内容をコピー、`MemoryStream`オブジェクトを使用して`CopyToAsync`します。
+Android オペレーティングシステムでは、メインスレッドで時間のかかる操作が実行されているため、`SKBitmap.Decode` メソッドで `GetStreamAsync` から返された `Stream` を使用すると、例外が発生します。 このため、ビットマップファイルの内容は、`CopyToAsync`を使用して `MemoryStream` オブジェクトにコピーされます。
 
-静的な`SKBitmap.Decode`メソッドはビットマップ ファイルをデコードします。 JPEG、PNG、GIF のビットマップ形式と連携し、内部 SkiaSharp 形式で結果を格納します。 この時点で、`SKCanvasView`許可を無効にする必要があります、`PaintSurface`ハンドラーの表示を更新します。
+静的な `SKBitmap.Decode` メソッドは、ビットマップファイルのデコードを行います。 JPEG、PNG、および GIF ビットマップ形式で動作し、結果を内部 SkiaSharp 形式で格納します。 この時点で、`SKCanvasView` を無効にして、`PaintSurface` ハンドラーがディスプレイを更新できるようにする必要があります。
 
-## <a name="loading-a-bitmap-resource"></a>ビットマップ リソースの読み込み
+## <a name="loading-a-bitmap-resource"></a>ビットマップリソースを読み込んでいます
 
-コードの観点からビットマップを読み込む最も簡単な方法は、アプリケーションで直接ビットマップ リソースを含むです。 **SkiaSharpFormsDemos**プログラムには、という名前のフォルダーが含まれています。**メディア**ビットマップなどのファイルのいくつか含む**monkey.png**します。 プログラムのリソースとして格納されているビットマップに使用する必要があります、**プロパティ**ファイルを提供するためのダイアログ、**ビルド アクション**の**埋め込まれたリソース**!
+コードに関して、ビットマップを読み込む最も簡単な方法は、ビットマップリソースをアプリケーションに直接含めることです。 SkiaSharpFormsDemos プログラムには、" " という名前の複数のビットマップファイルを含む**Media**という名前のフォルダーが含まれてい**ます**。 プログラムリソースとして格納されているビットマップの場合、 **[プロパティ]** ダイアログボックスを使用して、**埋め込みリソース**の**ビルドアクション**をファイルに指定する必要があります。
 
-各埋め込みリソースには、プロジェクト名、フォルダー、およびファイル名で構成される*リソース ID*が含まれています。これらはすべてピリオドで結ばれています。**SkiaSharpFormsDemos**します。 そのリソースを指定することでこのリソースへのアクセスを取得する ID を引数として、 [ `GetManifestResourceStream` ](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String))のメソッド、 [ `Assembly` ](xref:System.Reflection.Assembly)クラス。
+各埋め込みリソースには、プロジェクト名、フォルダー、およびファイル名で構成される*リソース ID*が含まれています。これらはすべて、ピリオド ( **SkiaSharpFormsDemos**) で結ばれています。 このリソースにアクセスするには、そのリソース ID を[`Assembly`](xref:System.Reflection.Assembly)クラスの[`GetManifestResourceStream`](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String))メソッドの引数として指定します。
 
 ```csharp
 string resourceID = "SkiaSharpFormsDemos.Media.monkey.png";
@@ -115,15 +115,15 @@ using (Stream stream = assembly.GetManifestResourceStream(resourceID))
 }
 ```
 
-これは、`Stream`オブジェクトに直接渡すことができます、`SKBitmap.Decode`メソッド。
+この `Stream` オブジェクトは、`SKBitmap.Decode` メソッドに直接渡すことができます。
 
-## <a name="loading-a-bitmap-from-the-photo-library"></a>フォト ライブラリからビットマップを読み込む
+## <a name="loading-a-bitmap-from-the-photo-library"></a>フォトライブラリからビットマップを読み込む
 
-ユーザーがデバイスの画像ライブラリから写真を読み込むこともできます。 この機能は、Xamarin.Forms 自体によって提供されていません。 ジョブには、資料に記載されているものなどの依存関係サービスが必要です。[画像ライブラリから写真を選択](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)します。
+ユーザーは、デバイスの画像ライブラリから写真を読み込むこともできます。 この機能は、Xamarin では提供されません。 このジョブには、「[画像ライブラリから写真を選択](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)する」で説明されているような依存関係サービスが必要です。
 
-**IPhotoLibrary.cs**ファイル、 **SkiaSharpFormsDemos**プロジェクトと、3 つ**PhotoLibrary.cs**プラットフォーム プロジェクト ファイルをその記事から引用したものにされています。 さらに、Android **MainActivity.cs**ように、この記事で説明されているファイルが変更されていて、iOS プロジェクトに 2 行の下部に、フォト ライブラリへのアクセス許可が与えられて、 **info.plist**ファイル。
+**SkiaSharpFormsDemos**プロジェクトの**IPhotoLibrary.cs**ファイルと、プラットフォームプロジェクト内の3つの**PhotoLibrary.cs**ファイルは、その記事から応用されています。 さらに、この記事で説明されているように Android **MainActivity.cs**ファイルが変更されています。 iOS プロジェクトには、**情報 plist**ファイルの下部に2行の写真ライブラリへのアクセス許可が付与されています。
 
-`BasicBitmapsPage`コンス トラクターを追加、`TapGestureRecognizer`を`SKCanvasView`タップの通知を受け取る。 タップの受信時に、`Tapped`ハンドラーは、依存関係サービスの画像の選択と呼び出しへのアクセスを取得します。`PickPhotoAsync`します。 場合、`Stream`オブジェクトを取得しに渡される、`SKBitmap.Decode`メソッド。
+`BasicBitmapsPage` コンストラクターは、タップが通知されるように `SKCanvasView` に `TapGestureRecognizer` を追加します。 タップを受け取ると、`Tapped` ハンドラーは、picture picker 依存関係サービスにアクセスして `PickPhotoAsync`を呼び出します。 `Stream` オブジェクトが返された場合は、`SKBitmap.Decode` メソッドに渡されます。
 
 ```csharp
 // Add tap gesture recognizer
@@ -145,21 +145,21 @@ tapRecognizer.Tapped += async (sender, args) =>
 canvasView.GestureRecognizers.Add(tapRecognizer);
 ```
 
-なお、`Tapped`ハンドラーも呼び出します、`InvalidateSurface`のメソッド、`SKCanvasView`オブジェクト。 新しい呼び出しが生成されます、`PaintSurface`ハンドラー。
+`Tapped` ハンドラーも `SKCanvasView` オブジェクトの `InvalidateSurface` メソッドを呼び出すことに注意してください。 これにより、`PaintSurface` ハンドラーへの新しい呼び出しが生成されます。
 
-## <a name="displaying-the-bitmaps"></a>ビットマップを表示します。
+## <a name="displaying-the-bitmaps"></a>ビットマップを表示する
 
-`PaintSurface`ハンドラーは、3 つのビットマップを表示する必要があります。 ハンドラーは、携帯電話が縦向きモードがあり、同等の 3 つの部分に、キャンバスを垂直方向に分割ことを想定しています。
+`PaintSurface` ハンドラーは、3つのビットマップを表示する必要があります。 このハンドラーは、電話が縦モードであることを前提としており、キャンバスを垂直方向に3つの等しい部分に分割します。
 
-最初のビットマップを表示すると、最も簡単な[ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,System.Single,System.Single,SkiaSharp.SKPaint))メソッド。 指定する必要があるすべては、ビットマップの左上隅が配置される X および Y 座標。
+最初のビットマップは、最も単純な[`DrawBitmap`](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,System.Single,System.Single,SkiaSharp.SKPaint))メソッドと共に表示されます。 指定する必要があるのは、ビットマップの左上隅が配置される X 座標と Y 座標です。
 
 ```csharp
 public void DrawBitmap (SKBitmap bitmap, Single x, Single y, SKPaint paint = null)
 ```
 
-ですが、`SKPaint`パラメーターが定義されている場合の既定値を持つ、`null`し、これを無視することができます。 ビットマップのピクセルは、一対一のマッピングを表示画面のピクセルに単純に転送されます。 これは、アプリケーションが表示されます`SKPaint`引数には、次のセクションで[ **SkiaSharp の透明度**](transparency.md)します。
+`SKPaint` パラメーターは定義されていますが、既定値は `null` であり、無視してかまいません。 ビットマップのピクセルは、単純に1対1のマッピングで表示サーフェイスのピクセルに転送されます。 [**SkiaSharp の透過性**](transparency.md)に関する次のセクションで、この `SKPaint` の引数のアプリケーションが表示されます。
 
-プログラムでのビットマップのピクセル寸法を取得できます、 [ `Width` ](xref:SkiaSharp.SKBitmap.Width)と[ `Height` ](xref:SkiaSharp.SKBitmap.Height)プロパティ。 これらのプロパティは、ビットマップをキャンバスの上に 3 番目の中央に位置座標を計算するプログラムを許可します。
+プログラムでは、 [`Width`](xref:SkiaSharp.SKBitmap.Width)と[`Height`](xref:SkiaSharp.SKBitmap.Height)のプロパティを使用して、ビットマップのピクセルディメンションを取得できます。 これらのプロパティを使用すると、プログラムは、キャンバスの左上の中央にビットマップを配置する座標を計算できます。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -180,15 +180,15 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-その他の 2 つのビットマップがのバージョンで表示される[ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKPaint))で、`SKRect`パラメーター。
+他の2つのビットマップは、`SKRect` パラメーターを使用して[`DrawBitmap`](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKPaint))のバージョンと共に表示されます。
 
 ```csharp
 public void DrawBitmap (SKBitmap bitmap, SKRect dest, SKPaint paint = null)
 ```
 
-3 番目のバージョン[ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKRect,SkiaSharp.SKPaint))が 2 つあります`SKRect`に表示されるのに、そのバージョンのビットマップの四角形のサブセットを指定する引数は、この記事で使用されていません。
+3番目のバージョンの[`DrawBitmap`](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKRect,SkiaSharp.SKPaint))には、表示するビットマップの四角形のサブセットを指定するための2つの `SKRect` 引数がありますが、そのバージョンはこの記事では使用されていません。
 
-次に、埋め込みリソース ビットマップから読み込まれたビットマップを表示するコードを示します。
+埋め込みリソースビットマップから読み込まれたビットマップを表示するコードを次に示します。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -203,11 +203,11 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-ビットマップは、monkey はこれらのスクリーン ショットで水平方向に広がります理由は、四角形の大きさに拡大されます。
+ビットマップは、四角形の大きさに拡大されます。そのため、次のスクリーンショットでは、サルが水平方向に拡大されています。
 
-[![](bitmaps-images/basicbitmaps-small.png "基本的なビットマップ ページのスクリーン ショットが 3 倍になる")](bitmaps-images/basicbitmaps-large.png#lightbox "3 倍になる基本的なビットマップ ページのスクリーン ショット")
+[![](bitmaps-images/basicbitmaps-small.png "A triple screenshot of the Basic Bitmaps page")](bitmaps-images/basicbitmaps-large.png#lightbox "A triple screenshot of the Basic Bitmaps page")
 
-3 番目のイメージ&mdash;プログラムを実行し、画像ライブラリから写真を読み込むかどうかにのみ表示されています&mdash;四角形が四角形内に表示されることも、ビットマップの縦横比を維持するために、位置とサイズが調整されます。 この計算は、スケール ファクターのビットマップと先の四角形のサイズに基づいて、その領域内の四角形の中心を計算する必要があるため少し複雑です。
+3番目のイメージ &mdash; は、プログラムを実行して独自の画像ライブラリから写真を読み込む場合にのみ表示され &mdash; 四角形にも表示されますが、四角形の縦横比を維持するために四角形の位置とサイズが調整されます。 この計算は、ビットマップと移動先の四角形のサイズに基づいてスケールファクターを計算し、その領域で四角形を中央揃えにする必要があるため、さらに複雑になります。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -242,12 +242,12 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-ビットマップがまだされて読み込まれていない場合、画像ライブラリから、`else`ブロックは、画面をタップしてユーザー入力を求めるテキストを表示します。
+画像ライブラリからまだビットマップが読み込まれていない場合、`else` ブロックには、ユーザーに画面をタップするように求めるテキストが表示されます。
 
-透明性、およびでは、次の記事のさまざまな角度を持つビットマップを表示することができます[ **SkiaSharp の透明度**](transparency.md)について説明しますか。
+さまざまな透明度でビットマップを表示できます。また、SkiaSharp の[**透明度**](transparency.md)に関する次の記事では、その方法について説明します。
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
-- [画像ライブラリから写真を選択](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)
+- [画像ライブラリから写真を選択する](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)
