@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/25/2018
-ms.openlocfilehash: f6d255e9af64d316ac76eab92a73cc1c90b82956
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 659545431a490f50224de3e7728b4d4d0c111d64
+ms.sourcegitcommit: b4c9eb94ae2b9eae852a24d126b39ac64a6d0ffb
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73019550"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74681328"
 ---
 # <a name="troubleshooting"></a>トラブルシューティング
 
@@ -35,6 +35,6 @@ _このセクションのドキュメントでは、Android でのトラブル�
 
 Android SDK Tools の26.0.1 以降、Google は、新しいコマンドラインツール favour の既存の AVD および SDK マネージャーを削除しました。
 
-## <a name="xamarinandroid-errors-referenceandroidtroubleshootingerrorsmd"></a>[Xamarin.Android エラー リファレンス](~/android/troubleshooting/errors.md)
+## <a name="xamarinandroid-errors-referencexamarinandroiderrors-and-warnings"></a>[Xamarin.Android エラー リファレンス](/xamarin/android/errors-and-warnings/)
 
-エラーのリファレンスガイド。 Xamarin Studio で Xamarin を使用するときに発生する可能性がある最も一般的なエラーを示しています。
+エラーのリファレンスガイド。 Visual Studio で Xamarin を使用するときに発生する可能性がある最も一般的なエラーを示しています。

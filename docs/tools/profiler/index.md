@@ -6,12 +6,12 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: davidortinau
 ms.author: daortin
 ms.date: 06/03/2018
-ms.openlocfilehash: 330d41ea795754388402fbb7c660ba8d77f1aa4b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 8927e7b2a1b194d1bfab334736c3d024f0542b01
+ms.sourcegitcommit: 60e955ce65194ffea987409157ccc7d5db87c2ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73019410"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74690210"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -34,8 +34,8 @@ Xamarin Profiler はスタンドアロンアプリケーションであり、IDE
 
 プラットフォームのインストールパッケージをダウンロードします。
 
-- [**Os**](https://dl.xamarin.com/profiler/profiler-mac.pkg)
-- [**ウィンドウ**](https://dl.xamarin.com/profiler/profiler-windows.msi)
+- [**Os**](https://dl.xamarin.com/profiler/profiler-mac-1.6.10-15.pkg)
+- [**ウィンドウ**](https://dl.xamarin.com/profiler/XamarinProfiler.Windows.Installer.1.6.10-15.msi)
 
 ダウンロードが完了したら、インストーラーを起動して、システムに Xamarin Profiler を追加します。
 
@@ -96,7 +96,7 @@ Xamarin Profiler のサポートは、次のプラットフォームで使用で
 
 アプリを正常にプロファイリングするには、アプリのプロジェクトオプションでプロファイリングを許可する必要があります。
 
-- IOS
+- iOS:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -112,7 +112,7 @@ Xamarin Profiler のサポートは、次のプラットフォームで使用で
 
 -----
 
-- Android
+- Android:
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -186,11 +186,11 @@ Xamarin Profiler は、次に示す5つのセクションで構成されてい�
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[Visual Studio for Mac のプロファイラーセクションの![](images/profiler-mac-sml.png)](images/profiler-mac.png#lightbox) 
+[Visual Studio for Mac のプロファイラーセクションの ![](images/profiler-mac-sml.png)](images/profiler-mac.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[Visual Studio でのプロファイラーセクションの![](images/profiler-vs.png)](images/profiler-vs.png#lightbox)
+[Visual Studio でのプロファイラーセクションの ![](images/profiler-vs.png)](images/profiler-vs.png#lightbox)
 
 -----
 
@@ -312,11 +312,11 @@ Xamarin Profiler は、次に示す5つのセクションで構成されてい�
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
-[プロファイルエラーの![ダイアログ](images/image001.png)](images/image001.png#lightbox) 
+[プロファイルエラーの ![ダイアログ](images/image001.png)](images/image001.png#lightbox) 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[プロファイルエラーの![ダイアログ](images/image1vs.png)](images/image1vs.png#lightbox) 
+[プロファイルエラーの ![ダイアログ](images/image1vs.png)](images/image1vs.png#lightbox) 
 
 -----
 
@@ -334,11 +334,11 @@ Classic API を使用する Xamarin アプリケーションでは、Boehm GC �
 
 メモリ管理の詳細については、「[メモリとパフォーマンスのベストプラクティス](~/cross-platform/deploy-test/memory-perf-best-practices.md)ガイド」を参照してください。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 このガイドでは、プロファイルとは何か、および開発者にとってどのような利点があるかを見てきました。 次に、Xamarin Profiler を導入し、その動作についていくつかの履歴と情報を提供します。 最後に、Xamarin Profiler の機能をがし、割り当てと時間プロファイラーの音色について説明します。
 
 ## <a name="related-links"></a>関連リンク
 
 - [メモリとパフォーマンスのベストプラクティス](~/cross-platform/deploy-test/memory-perf-best-practices.md)
-- [リリース ノート](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/profiler/preview/index.md)
+- [リリース ノート](/xamarin/tools/profiler/release-notes/)
