@@ -2,7 +2,7 @@
   href: index.yml
   expanded: true
   items:
-    - name: 開始するには
+    - name: はじめに
       href: get-started/index.md
       expanded: true
       items:
@@ -619,12 +619,12 @@
           href: troubleshooting/resolving-library-installation-errors.md
         - name: Android SDK ツールへの変更
           href: troubleshooting/sdk-cli-tooling-changes.md
-        - name: Xamarin.Android エラー リファレンス
-          href: troubleshooting/errors.md
+        - name: Xamarin.Android エラーおよび警告リファレンス
+          href: /xamarin/android/errors-and-warnings/
     - name: Wear
       href: wear/index.md
       items:
-        - name: 開始するには
+        - name: はじめに
           href: wear/get-started/index.md
           items:
             - name: Android Wear の概要
