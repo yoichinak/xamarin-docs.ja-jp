@@ -17,9 +17,9 @@ ms.locfileid: "73021610"
 # <a name="remote-notifications-with-google-cloud-messaging"></a>Google Cloud Messaging を使用したリモート通知
 
 > [!WARNING]
-> Google 非推奨 GCM (2018 年4月10日時点)。 次のドキュメントとサンプルプロジェクトは、管理されなくなる可能性があります。 Google の GCM サーバーとクライアント Api は、2019年5月29日の時点で削除される予定です。 Google は、GCM アプリを焼討 Base Cloud Messaging (FCM) に移行することを推奨しています。 GCM の廃止と移行の詳細については、「 [Google Cloud Messaging-非推奨](https://developers.google.com/cloud-messaging/)」を参照してください。
+> Google 非推奨 GCM (2018 年4月10日時点)。 次のドキュメントとサンプルプロジェクトは、管理されなくなる可能性があります。 Google の GCM サーバーとクライアント Api は、2019年5月29日の時点で削除される予定です。 Google は、GCM アプリを Firebase Cloud Messaging (FCM) に移行することを推奨しています。 GCM の廃止と移行の詳細については、「 [Google Cloud Messaging-非推奨](https://developers.google.com/cloud-messaging/)」を参照してください。
 >
-> Xamarin での焼討 Base Cloud Messaging を使用したリモート通知の使用を開始するには、「 [FCM を使用したリモート通知](remote-notifications-with-fcm.md)」を参照してください。
+> Xamarin での Firebase Cloud Messaging を使用したリモート通知の使用を開始するには、「 [FCM を使用したリモート通知](remote-notifications-with-fcm.md)」を参照してください。
 
 _このチュートリアルでは、Google Cloud Messaging を使用して、Xamarin アプリケーションでリモート通知 (プッシュ通知とも呼ばれます) を実装する方法について、順を追って説明します。ここでは、Google Cloud Messaging (GCM) との通信に実装する必要があるさまざまなクラスについて説明します。 GCM にアクセスするために Android マニフェストにアクセス許可を設定する方法について説明し、サンプルテストプログラムを使用したエンドツーエンドのメッセージングを示します。_
 

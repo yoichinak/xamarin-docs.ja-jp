@@ -26,4 +26,4 @@ Xamarin Android アプリケーションは、多くの場合、(ローカルデ
 
 ## <a name="google-messagingandroiddata-cloudgoogle-messagingindexmd"></a>[Google Messaging](~/android/data-cloud/google-messaging/index.md)
 
-Google は、モバイルアプリとサーバーアプリケーション間のメッセージングを円滑にするために、焼討 Base Cloud Messaging と従来の Google Cloud Messaging サービスの両方を提供しています。 このセクションでは、これらのサービスを使用して、Xamarin アプリケーションでリモート通知 (プッシュ通知とも呼ばれます) を実装する方法の詳細な手順について説明します。
+Google は、モバイルアプリとサーバーアプリケーション間のメッセージングを円滑にするために、Firebase Cloud Messaging と従来の Google Cloud Messaging サービスの両方を提供しています。 このセクションでは、これらのサービスを使用して、Xamarin アプリケーションでリモート通知 (プッシュ通知とも呼ばれます) を実装する方法の詳細な手順について説明します。

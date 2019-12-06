@@ -17,9 +17,9 @@ ms.locfileid: "73023703"
 # <a name="google-cloud-messaging"></a>Google Cloud Messaging
 
 > [!WARNING]
-> Google 非推奨 GCM (2018 年4月10日時点)。 次のドキュメントとサンプルプロジェクトは、管理されなくなる可能性があります。 Google の GCM サーバーとクライアント Api は、2019年5月29日の時点で削除される予定です。 Google は、GCM アプリを焼討 Base Cloud Messaging (FCM) に移行することを推奨しています。 GCM の廃止と移行の詳細については、「 [Google Deprecated Cloud Messaging](https://developers.google.com/cloud-messaging/)」を参照してください。
+> Google 非推奨 GCM (2018 年4月10日時点)。 次のドキュメントとサンプルプロジェクトは、管理されなくなる可能性があります。 Google の GCM サーバーとクライアント Api は、2019年5月29日の時点で削除される予定です。 Google は、GCM アプリを Firebase Cloud Messaging (FCM) に移行することを推奨しています。 GCM の廃止と移行の詳細については、「 [Google Deprecated Cloud Messaging](https://developers.google.com/cloud-messaging/)」を参照してください。
 >
-> Xamarin での焼討 Base Cloud Messaging の使用を開始するには、「[焼討 Base Cloud messaging](firebase-cloud-messaging.md)」を参照してください。
+> Xamarin での Firebase Cloud Messaging の使用を開始するには、「[Firebase Cloud messaging](firebase-cloud-messaging.md)」を参照してください。
 
 _Google Cloud Messaging (GCM) は、モバイルアプリとサーバーアプリケーション間のメッセージングを容易にするサービスです。この記事では、GCM の動作の概要について説明します。また、アプリで GCM を使用できるように Google サービスを構成する方法についても説明します。_
 

@@ -1,6 +1,6 @@
 ---
 title: Firebase ジョブ ディスパッチャー
-description: このガイドでは、Google の焼討ベースのジョブディスパッチャーライブラリを使用して、バックグラウンド作業をスケジュールする方法について説明します。
+description: このガイドでは、Google の Firebase のジョブディスパッチャーライブラリを使用して、バックグラウンド作業をスケジュールする方法について説明します。
 ms.prod: xamarin
 ms.assetid: 3DB9C7A3-D351-481D-90C5-BEC25D1B9910
 ms.technology: xamarin-android
@@ -16,7 +16,7 @@ ms.locfileid: "73020247"
 ---
 # <a name="firebase-job-dispatcher"></a>Firebase ジョブ ディスパッチャー
 
-_このガイドでは、Google の焼討ベースのジョブディスパッチャーライブラリを使用して、バックグラウンド作業をスケジュールする方法について説明します。_
+_このガイドでは、Google の Firebase のジョブディスパッチャーライブラリを使用して、バックグラウンド作業をスケジュールする方法について説明します。_
 
 ## <a name="overview"></a>概要
 
@@ -36,7 +36,7 @@ Android には、バックグラウンドでの作業の実行に役立つ次の
 1. **作業をインテリジェントにスケジュール**する &ndash;、アプリケーションがバックグラウンドで作業を行っているときに、優れた市民として作業を行うことが重要です。 アプリケーションでは、ジョブの実行を要求しないことが理想的です。 代わりに、アプリケーションでは、ジョブを実行できるときに満たす必要がある条件を指定し、条件が満たされたときに実行するようにスケジュールを設定する必要があります。 これにより、Android は作業をインテリジェントに実行できます。 たとえば、ネットワーク要求をバッチ処理して、ネットワークに関連するオーバーヘッドを最大限に活用するために、すべてを同時に実行することができます。
 2. &ndash;**作業をカプセル**化することで、バックグラウンド作業を実行するコードを、ユーザーインターフェイスとは無関係に実行できる個別のコンポーネントにカプセル化する必要があります。また、作業の完了に失敗した場合には、比較的簡単に再スケジュールすることができます。理由.
 
-焼討 Base ジョブディスパッチャーは、fluent API を提供する Google のライブラリであり、バックグラウンド処理のスケジューリングを簡略化します。 これは、Google Cloud Manager の後継となることを目的としています。 焼討 Base ジョブディスパッチャーは、次の Api で構成されています。
+Firebase ジョブディスパッチャーは、fluent API を提供する Google のライブラリであり、バックグラウンド処理のスケジューリングを簡略化します。 これは、Google Cloud Manager の後継となることを目的としています。 Firebase ジョブディスパッチャーは、次の Api で構成されています。
 
 - `Firebase.JobDispatcher.JobService` は、バックグラウンドジョブで実行されるロジックで拡張する必要がある抽象クラスです。
 - ジョブをいつ開始するかを `Firebase.JobDispatcher.JobTrigger` が宣言します。 通常、これは時間枠として表現されます。たとえば、ジョブを開始する前に少なくとも30秒待機しますが、5分以内にジョブを実行します。
@@ -45,7 +45,7 @@ Android には、バックグラウンドでの作業の実行に役立つ次の
 - `Firebase.JobDispatcher.Job` は、の以前の Api を、`JobDispatcher`によってスケジュールできる作業単位に統合する API です。 `Job.Builder` クラスは、`Job`をインスタンス化するために使用されます。
 - `Firebase.JobDispatcher.JobDispatcher` は、前の3つの Api を使用して、オペレーティングシステムでの作業のスケジュールを設定し、必要に応じてジョブを取り消す方法を提供します。
 
-焼討ベースのジョブディスパッチャーを使用して作業をスケジュールするには、Xamarin Android アプリケーションで、`JobService` クラスを拡張する型にコードをカプセル化する必要があります。 `JobService` には、ジョブの有効期間中に呼び出すことができるライフサイクルメソッドが3つあります。
+Firebase のジョブディスパッチャーを使用して作業をスケジュールするには、Xamarin Android アプリケーションで、`JobService` クラスを拡張する型にコードをカプセル化する必要があります。 `JobService` には、ジョブの有効期間中に呼び出すことができるライフサイクルメソッドが3つあります。
 
 - **`bool OnStartJob(IJobParameters parameters)`** &ndash; このメソッドは、作業が発生し、常に実装する必要があります。 メインスレッドで実行されます。 このメソッドは、残存作業がある場合は `true` を返し、作業が完了した場合は `false` します。 
 - **`bool OnStopJob(IJobParameters parameters)`** &ndash; これは、何らかの理由でジョブが停止されたときに呼び出されます。 後でジョブを再スケジュールする必要がある場合は `true` が返されます。
@@ -53,21 +53,21 @@ Android には、バックグラウンドでの作業の実行に役立つ次の
 
 ジョブをスケジュールするために、アプリケーションは `JobDispatcher` オブジェクトをインスタンス化します。 次に、`Job.Builder` を使用して `Job` オブジェクトを作成します。このオブジェクトは、実行するジョブのスケジュールを設定する `JobDispatcher` に提供されます。
 
-このガイドでは、焼討ベースジョブディスパッチャーを Xamarin Android アプリケーションに追加し、それを使用してバックグラウンド作業をスケジュールする方法について説明します。
+このガイドでは、Firebase ジョブディスパッチャーを Xamarin Android アプリケーションに追加し、それを使用してバックグラウンド作業をスケジュールする方法について説明します。
 
 ## <a name="requirements"></a>［要件］
 
-焼討 Base ジョブディスパッチャーには、Android API レベル9以上が必要です。 焼討 Base ジョブディスパッチャーライブラリは、Google Play 開発者サービスによって提供されるいくつかのコンポーネントに依存しています。デバイスに Google Play 開発者サービスがインストールされている必要があります。
+Firebase ジョブディスパッチャーには、Android API レベル9以上が必要です。 Firebase ジョブディスパッチャーライブラリは、Google Play 開発者サービスによって提供されるいくつかのコンポーネントに依存しています。デバイスに Google Play 開発者サービスがインストールされている必要があります。
 
-## <a name="using-the-firebase-job-dispatcher-library-in-xamarinandroid"></a>Xamarin. Android での焼討 Base ジョブディスパッチャーライブラリの使用
+## <a name="using-the-firebase-job-dispatcher-library-in-xamarinandroid"></a>Xamarin. Android での Firebase ジョブディスパッチャーライブラリの使用
 
-焼討ベースのジョブディスパッチャーの使用を開始するには、最初に xamarin. の[NuGet パッケージ](https://www.nuget.org/packages/Xamarin.Firebase.JobDispatcher)を Xamarin. Android プロジェクトに追加します。 NuGet パッケージマネージャーを検索します。このパッケージは、まだプレリリース段階**にあります**。
+Firebase のジョブディスパッチャーの使用を開始するには、最初に xamarin. の[NuGet パッケージ](https://www.nuget.org/packages/Xamarin.Firebase.JobDispatcher)を Xamarin. Android プロジェクトに追加します。 NuGet パッケージマネージャーを検索します。このパッケージは、まだプレリリース段階**にあります**。
 
-焼討 Base ジョブディスパッチャーライブラリを追加した後、`JobService` クラスを作成し、`FirebaseJobDispatcher`のインスタンスを使用して実行するようにスケジュールを設定します。
+Firebase ジョブディスパッチャーライブラリを追加した後、`JobService` クラスを作成し、`FirebaseJobDispatcher`のインスタンスを使用して実行するようにスケジュールを設定します。
 
 ### <a name="creating-a-jobservice"></a>JobService の作成
 
-焼討ベースジョブディスパッチャーライブラリによって実行されるすべての作業は、`Firebase.JobDispatcher.JobService` 抽象クラスを拡張する型で実行する必要があります。 `JobService` の作成は、Android フレームワークで `Service` を作成することとよく似ています。 
+Firebase ジョブディスパッチャーライブラリによって実行されるすべての作業は、`Firebase.JobDispatcher.JobService` 抽象クラスを拡張する型で実行する必要があります。 `JobService` の作成は、Android フレームワークで `Service` を作成することとよく似ています。 
 
 1. `JobService` クラスを拡張する
 2. サブクラスを `ServiceAttribute`で修飾します。 厳密には必須ではありませんが、`JobService`のデバッグに役立つように `Name` パラメーターを明示的に設定することをお勧めします。 
@@ -103,7 +103,7 @@ public class DemoJob : JobService
 }
 ```
 
-### <a name="creating-a-firebasejobdispatcher"></a>焼討 Basejobdispatcher の作成
+### <a name="creating-a-firebasejobdispatcher"></a>Firebasejobdispatcher の作成
 
 作業をスケジュールする前に、`Firebase.JobDispatcher.FirebaseJobDispatcher` オブジェクトを作成する必要があります。 `FirebaseJobDispatcher` は、`JobService`をスケジュールする役割を担います。 次のコードスニペットは、`FirebaseJobDispatcher`のインスタンスを作成する方法の1つです。 
 
@@ -113,9 +113,9 @@ IDriver driver = new GooglePlayDriver(context);
 FirebaseJobDispatcher dispatcher = new FirebaseJobDispatcher(driver);
 ```
 
-前のコードスニペットでは、`GooglePlayDriver` は、`FirebaseJobDispatcher` がデバイス上の Google Play 開発者サービスのいくつかのスケジュール Api と対話できるようにするクラスです。 パラメーター `context` は、アクティビティなどの Android `Context`です。 現時点では、`GooglePlayDriver` は、焼討 Base ジョブディスパッチャーライブラリの唯一の実装 `IDriver` です。 
+前のコードスニペットでは、`GooglePlayDriver` は、`FirebaseJobDispatcher` がデバイス上の Google Play 開発者サービスのいくつかのスケジュール Api と対話できるようにするクラスです。 パラメーター `context` は、アクティビティなどの Android `Context`です。 現時点では、`GooglePlayDriver` は、Firebase ジョブディスパッチャーライブラリの唯一の実装 `IDriver` です。 
 
-焼討ベースジョブディスパッチャーの Xamarin. Android バインドは、`Context`から `FirebaseJobDispatcher` を作成するための拡張メソッドを提供します。 
+Firebase ジョブディスパッチャーの Xamarin. Android バインドは、`Context`から `FirebaseJobDispatcher` を作成するための拡張メソッドを提供します。 
 
 ```csharp
 FirebaseJobDispatcher dispatcher = context.CreateJobDispatcher();
@@ -125,7 +125,7 @@ FirebaseJobDispatcher dispatcher = context.CreateJobDispatcher();
 
 ### <a name="creating-a-firebasejobdispatcherjob-with-the-jobbuilder"></a>このジョブを使用して、JobDispatcher. ジョブを作成しています。
 
-`Firebase.JobDispatcher.Job` クラスは、`JobService`を実行するために必要なメタデータをカプセル化します。 @ No__t_0_ には、ジョブを実行する前に満たす必要がある制約などの情報、`Job` が定期的に行われる場合、またはジョブが実行されるトリガーが含まれます。  最小要件として、`Job` には_タグ_(ジョブを `FirebaseJobDispatcher`に識別する一意の文字列) と実行する `JobService` の種類が必要です。 このジョブを実行する時間になると、焼討 Base ジョブディスパッチャーによって `JobService` がインスタンス化されます。  `Job` は、`Firebase.JobDispatcher.Job.JobBuilder` クラスのインスタンスを使用して作成されます。 
+`Firebase.JobDispatcher.Job` クラスは、`JobService`を実行するために必要なメタデータをカプセル化します。 @ No__t_0_ には、ジョブを実行する前に満たす必要がある制約などの情報、`Job` が定期的に行われる場合、またはジョブが実行されるトリガーが含まれます。  最小要件として、`Job` には_タグ_(ジョブを `FirebaseJobDispatcher`に識別する一意の文字列) と実行する `JobService` の種類が必要です。 このジョブを実行する時間になると、Firebase ジョブディスパッチャーによって `JobService` がインスタンス化されます。  `Job` は、`Firebase.JobDispatcher.Job.JobBuilder` クラスのインスタンスを使用して作成されます。 
 
 次のコードスニペットは、Xamarin. Android バインドを使用して `Job` を作成する方法の最も簡単な例です。
 
@@ -168,7 +168,7 @@ int scheduleResult = dispatcher.Schedule(myJob);
 
 - `Job` &ndash;[ジョブにパラメーターを渡す](#Passing_Parameters_to_a_Job)と、ファイルのダウンロードなどの処理を実行するために追加の値が必要になる場合があります。
 - [制約を設定](#Setting_Constraints)する &ndash;、特定の条件が満たされた場合にのみジョブを実行する必要がある場合があります。 たとえば、デバイスが充電されている場合にのみ、`Job` を実行します。 
-- [`Job` をいつ実行するかを指定し](#Setting_Job_Triggers)ます。これにより、焼討 Base ジョブディスパッチャーによって、アプリケーションでジョブを実行する時刻を指定でき &ndash; ます。  
+- [`Job` をいつ実行するかを指定し](#Setting_Job_Triggers)ます。これにより、Firebase ジョブディスパッチャーによって、アプリケーションでジョブを実行する時刻を指定でき &ndash; ます。  
 - [失敗したジョブの再試行戦略を宣言](#Setting_a_RetryStrategy)する &ndash;_再試行戦略_では、完了できなかった `Jobs` を処理する `FirebaseJobDispatcher` についてのガイダンスを提供します。 
 
 これらの各トピックについては、以降のセクションで詳しく説明します。
@@ -244,8 +244,8 @@ Job myJob = dispatcher.NewJobBuilder()
 
 次の2種類の再試行ポリシーは、これらの int 値によって識別されます。
 
-- _指数バックオフ_ポリシーを &ndash; `RetryStrategy.RetryPolicyExponential` と、エラーが発生するたびに初期バックオフ値が指数関数的に増加します。 ジョブが初めて失敗したときに、ライブラリは、ジョブのスケジュールを再スケジュールする前に指定された初期の間隔を待機し &ndash; 例は30秒です。 ジョブが2回目に失敗した場合、ライブラリはジョブの実行を試行する前に少なくとも60秒間待機します。 3回目の試行が失敗すると、ライブラリは120秒ほど待機します。 焼討ベースジョブディスパッチャーライブラリの既定の `RetryStrategy` は、`RetryStrategy.DefaultExponential` オブジェクトによって表されます。 初期バックオフは30秒、最大バックオフは3600秒です。
-- この方法 &ndash; `RetryStrategy.RetryPolicyLinear`、この方法では、ジョブを (成功まで) 設定さ_れた間隔_で実行するように再スケジュールする必要があります。 線形バックオフは、可能な限り早く完了する必要がある作業や、自動的に解決される問題に最適です。 焼討ベースジョブディスパッチャーライブラリは、30秒以上3600秒の再スケジュールウィンドウを持つ `RetryStrategy.DefaultLinear` を定義します。
+- _指数バックオフ_ポリシーを &ndash; `RetryStrategy.RetryPolicyExponential` と、エラーが発生するたびに初期バックオフ値が指数関数的に増加します。 ジョブが初めて失敗したときに、ライブラリは、ジョブのスケジュールを再スケジュールする前に指定された初期の間隔を待機し &ndash; 例は30秒です。 ジョブが2回目に失敗した場合、ライブラリはジョブの実行を試行する前に少なくとも60秒間待機します。 3回目の試行が失敗すると、ライブラリは120秒ほど待機します。 Firebase ジョブディスパッチャーライブラリの既定の `RetryStrategy` は、`RetryStrategy.DefaultExponential` オブジェクトによって表されます。 初期バックオフは30秒、最大バックオフは3600秒です。
+- この方法 &ndash; `RetryStrategy.RetryPolicyLinear`、この方法では、ジョブを (成功まで) 設定さ_れた間隔_で実行するように再スケジュールする必要があります。 線形バックオフは、可能な限り早く完了する必要がある作業や、自動的に解決される問題に最適です。 Firebase ジョブディスパッチャーライブラリは、30秒以上3600秒の再スケジュールウィンドウを持つ `RetryStrategy.DefaultLinear` を定義します。
 
 `FirebaseJobDispatcher.NewRetryStrategy` メソッドを使用してカスタム `RetryStrategy` を定義することもできます。 次の3つのパラメーターを受け取ります。
 
@@ -283,12 +283,12 @@ int cancelResult = dispatcher.Cancel("unique-tag-for-job");
 
 ## <a name="summary"></a>まとめ
 
-このガイドでは、焼討ベースのジョブディスパッチャーを使用して、バックグラウンドで作業をインテリジェントに実行する方法について説明しました。 ここでは、`JobService` として実行される作業をカプセル化する方法と、`FirebaseJobDispatcher` を使用してその作業をスケジュールする方法、`JobTrigger` で条件を指定する方法、および `RetryStrategy`でエラーを処理する方法について説明しました。
+このガイドでは、Firebase のジョブディスパッチャーを使用して、バックグラウンドで作業をインテリジェントに実行する方法について説明しました。 ここでは、`JobService` として実行される作業をカプセル化する方法と、`FirebaseJobDispatcher` を使用してその作業をスケジュールする方法、`JobTrigger` で条件を指定する方法、および `RetryStrategy`でエラーを処理する方法について説明しました。
 
 ## <a name="related-links"></a>関連リンク
 
 - [NuGet 上の Xamarin. JobDispatcher](https://www.nuget.org/packages/Xamarin.Firebase.JobDispatcher)
-- [焼討 base-ジョブ-dispatcher (GitHub)](https://github.com/firebase/firebase-jobdispatcher-android)
+- [Firebase-ジョブ-dispatcher (GitHub)](https://github.com/firebase/firebase-jobdispatcher-android)
 - [Xamarin. JobDispatcher バインド](https://github.com/xamarin/XamarinComponents/tree/master/Android/FirebaseJobDispatcher)
 - [インテリジェントなジョブ-スケジュール設定](https://developer.android.com/topic/performance/scheduling.html)
 - [Android のバッテリとメモリの最適化-Google i/o 2016 (ビデオ)](https://www.youtube.com/watch?v=VC2Hlb22mZM&feature=youtu.be)
