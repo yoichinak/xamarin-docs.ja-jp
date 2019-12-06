@@ -16,11 +16,11 @@ ms.locfileid: "73023668"
 ---
 # <a name="firebase-cloud-messaging"></a>Firebase Cloud Messaging
 
-_Firebase Cloud Messaging (FCM) は、モバイルアプリとサーバーアプリケーション間のメッセージングを容易にするサービスです。この記事では、FCM のしくみの概要について説明します。また、アプリで FCM を使用できるように Google サービスを構成する方法についても説明します。_
+_焼討 base Cloud Messaging (FCM) は、モバイルアプリとサーバーアプリケーション間のメッセージングを容易にするサービスです。この記事では、FCM のしくみの概要について説明します。また、アプリで FCM を使用できるように Google サービスを構成する方法についても説明します。_
 
-[![Firebase Cloud Messaging のヒーロー画像](firebase-cloud-messaging-images/preview.png)](firebase-cloud-messaging-images/preview.png#lightbox)
+[![焼討 Base Cloud Messaging のヒーロー画像](firebase-cloud-messaging-images/preview.png)](firebase-cloud-messaging-images/preview.png#lightbox)
 
-このトピックでは、アプリケーションで FCM サービスを使用できるように、Firebase Cloud Messaging がメッセージを Xamarin Android アプリとアプリサーバー間でルーティングする方法の概要を説明します。また、資格情報を取得するための詳細な手順についても説明します。
+このトピックでは、アプリケーションで FCM サービスを使用できるように、焼討 Base Cloud Messaging がメッセージを Xamarin Android アプリとアプリサーバー間でルーティングする方法の概要を説明します。また、資格情報を取得するための詳細な手順についても説明します。
 
 ## <a name="overview"></a>概要
 
@@ -32,22 +32,22 @@ Firebase Cloud Messaging (FCM) は、サーバーアプリケーションとモ�
 
 FCM を使用すると、アプリサーバーは、1つのデバイス、デバイスのグループ、またはトピックにサブスクライブしている複数のデバイスにメッセージを送信できます。 クライアントアプリでは、FCM を使用して、アプリサーバーからのダウンストリームメッセージをサブスクライブできます (たとえば、リモート通知を受信します)。 さまざまな種類の Firebase メッセージの詳細については、「 [FCM メッセージについ](https://firebase.google.com/docs/cloud-messaging/concept-options)て」を参照してください。
 
-## <a name="fcm-in-action"></a>動作中の Firebase Cloud Messaging
+## 動作中の Firebase Cloud Messaging
 
 アプリケーションサーバーからクライアントアプリにダウンストリームメッセージが送信されると、アプリサーバーは Google によって提供される*Fcm 接続サーバー*にメッセージを送信します。さらに、FCM 接続サーバーは、クライアントアプリを実行しているデバイスにメッセージを転送します。 メッセージは、HTTP または[Xmpp](https://developers.google.com/cloud-messaging/ccs) (拡張可能なメッセージングおよびプレゼンスプロトコル) を介して送信できます。 クライアントアプリは常に接続または実行されていないため、FCM 接続サーバーはメッセージをキューに入れて格納し、再接続して使用できるようになったときにクライアントアプリに送信します。 同様に、アプリサーバーが使用できない場合は、FCM によって、クライアントアプリからのアップストリームメッセージがアプリサーバーにエンキューされます。 FCM 接続サーバーの詳細については、「サービス[につい](https://firebase.google.com/docs/cloud-messaging/server)て」を参照してください。
 
 FCM は、次の資格情報を使用してアプリサーバーとクライアントアプリを識別し、これらの資格情報を使用して FCM 経由でメッセージトランザクションを承認します。
 
-- <a name="fcm-in-action-sender-id"></a>**Sender id &ndash;** *送信者*Id は、Firebase プロジェクトを作成するときに割り当てられる一意の数値です。 送信者 ID は、クライアントアプリにメッセージを送信できる各アプリサーバーを識別するために使用されます。 送信者 ID もプロジェクト番号です。プロジェクトを登録するときに、Firebase コンソールから送信者 ID を取得します。 送信者 ID の例としては、`496915549731`があります。
+- <a name="fcm-in-action-sender-id"></a>**Sender id &ndash;** *送信者*Id は、焼討ベースプロジェクトを作成するときに割り当てられる一意の数値です。 送信者 ID は、クライアントアプリにメッセージを送信できる各アプリサーバーを識別するために使用されます。 送信者 ID もプロジェクト番号です。プロジェクトを登録するときに、焼討 Base コンソールから送信者 ID を取得します。 送信者 ID の例としては、`496915549731`があります。
 
-- <a name="fcm-in-action-api-key"></a>**Api キー &ndash;** api*キーを使用する*と、アプリサーバーは Firebase サービスにアクセスできます。FCM は、このキーを使用してアプリサーバーを認証します。 この資格情報は、*サーバーキー*または*Web API キー*とも呼ばれます。 API キーの例としては、`AJzbSyCTcpfRT1YRqbz-jIwp1h06YdauvewGDzk`があります。
+- <a name="fcm-in-action-api-key"></a>**Api キー &ndash;** api*キーを使用する*と、アプリサーバーは焼討 base サービスにアクセスできます。FCM は、このキーを使用してアプリサーバーを認証します。 この資格情報は、*サーバーキー*または*Web API キー*とも呼ばれます。 API キーの例としては、`AJzbSyCTcpfRT1YRqbz-jIwp1h06YdauvewGDzk`があります。
 
 - <a name="fcm-in-action-app-id"></a>**アプリケーション ID**は、fcm からメッセージを受信するように登録されているクライアントアプリの id &ndash; ます (特定のデバイスに依存しません)。 アプリ ID の例としては、`1:415712510732:android:0e1eb7a661af2460`があります。
 
 - <a name="fcm-in-action-registration-token"></a>**登録トークン &ndash; 登録**トークン (*インスタンス ID*とも呼ばれます)*は、特定*のデバイス上のクライアントアプリの fcm id です。 登録トークンは実行時に生成されます。アプリは、デバイスで実行中に FCM に最初に登録するときに登録トークンを受け取る &ndash; ます。 登録トークンは、(特定のデバイスで実行されている) クライアントアプリのインスタンスに対して、FCM からのメッセージの受信を承認します。
     登録トークンの例としては、`fkBQTHxKKhs:AP91bHuEedxM4xFAUn0z ... JKZS` (非常に長い文字列) があります。
 
-(このガイドの後半の) 「[Firebase Cloud Messaging](#setup_fcm)のセットアップ」では、プロジェクトを作成し、これらの資格情報を生成するための詳細な手順について説明しています。 新しいプロジェクトを[Firebase コンソール](https://console.firebase.google.com/)で作成すると、「 [fcm を使用したリモート通知](~/android/data-cloud/google-messaging/remote-notifications-with-fcm.md)」で説明されているように、このファイルを Xamarin Android プロジェクトに追加 &ndash; ために、 **google-** services.msc という名前の資格情報ファイルが作成されます。
+(このガイドの後半の) 「[Firebase Cloud Messaging](#setup_fcm)のセットアップ」では、プロジェクトを作成し、これらの資格情報を生成するための詳細な手順について説明しています。 新しいプロジェクトを[焼討 Base コンソール](https://console.firebase.google.com/)で作成すると、「 [fcm を使用したリモート通知](~/android/data-cloud/google-messaging/remote-notifications-with-fcm.md)」で説明されているように、このファイルを Xamarin Android プロジェクトに追加 &ndash; ために、 **google-** services.msc という名前の資格情報ファイルが作成されます。
 
 次のセクションでは、クライアントアプリが FCM 経由でアプリサーバーと通信するときに、これらの資格情報を使用する方法について説明します。
 

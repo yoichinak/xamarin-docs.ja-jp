@@ -24,7 +24,7 @@ Firebase Cloud Messaging (FCM) は、モバイルアプリとサーバーアプ�
 
 ## <a name="remote-notifications-with-firebase-cloud-messagingremote-notifications-with-fcmmd"></a>[Firebase Cloud Messaging を使用したリモート通知](remote-notifications-with-fcm.md)
 
-このチュートリアルでは、アドインアプリケーションで、Firebase Cloud Messaging を使用してリモート通知 (プッシュ通知とも呼ばれます) を実装する方法を順を追って説明します。 ここでは、Firebase Cloud Messaging (FCM) との通信に必要なさまざまなクラスを実装する方法を示し、FCM にアクセスするために Android マニフェストを構成する方法の例を示し、Firebase コンソールを使用したダウンストリームメッセージングのデモンストレーションを行います。
+このチュートリアルでは、アドインアプリケーションで、焼討 Base Cloud Messaging を使用してリモート通知 (プッシュ通知とも呼ばれます) を実装する方法を順を追って説明します。 ここでは、焼討 Base Cloud Messaging (FCM) との通信に必要なさまざまなクラスを実装する方法を示し、FCM にアクセスするために Android マニフェストを構成する方法の例を示し、消火ベースを使用したダウンストリームメッセージングのデモンストレーションを行います。コンソール.
 
 ## <a name="google-cloud-messaginggoogle-cloud-messagingmd"></a>[Google Cloud Messaging](google-cloud-messaging.md)
 

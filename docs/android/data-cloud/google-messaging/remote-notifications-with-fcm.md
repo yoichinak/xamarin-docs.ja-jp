@@ -1,6 +1,6 @@
 ---
 title: Firebase Cloud Messaging を使用したリモート通知
-description: このチュートリアルでは、アドインアプリケーションで、Firebase Cloud Messaging を使用してリモート通知 (プッシュ通知とも呼ばれます) を実装する方法を順を追って説明します。 ここでは、Firebase Cloud Messaging (FCM) との通信に必要なさまざまなクラスを実装する方法を示し、FCM にアクセスするために Android マニフェストを構成する方法の例を示し、Firebase コンソールを使用したダウンストリームメッセージングのデモンストレーションを行います。
+description: このチュートリアルでは、アドインアプリケーションで、焼討 Base Cloud Messaging を使用してリモート通知 (プッシュ通知とも呼ばれます) を実装する方法を順を追って説明します。 ここでは、焼討 Base Cloud Messaging (FCM) との通信に必要なさまざまなクラスを実装する方法を示し、FCM にアクセスするために Android マニフェストを構成する方法の例を示し、消火ベースを使用したダウンストリームメッセージングのデモンストレーションを行います。コンソール.
 ms.prod: xamarin
 ms.assetid: 4D7C5F46-C997-49F6-AFDA-6763E68CDC90
 ms.technology: xamarin-android
@@ -16,7 +16,7 @@ ms.locfileid: "73021643"
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>Firebase Cloud Messaging を使用したリモート通知
 
-_このチュートリアルでは、アドインアプリケーションで、Firebase Cloud Messaging を使用してリモート通知 (プッシュ通知とも呼ばれます) を実装する方法を順を追って説明します。ここでは、Firebase Cloud Messaging (FCM) との通信に必要なさまざまなクラスを実装する方法を示し、FCM にアクセスするために Android マニフェストを構成する方法の例を示し、Firebase コンソールを使用したダウンストリームメッセージングのデモンストレーションを行います。_
+_このチュートリアルでは、アドインアプリケーションで、焼討 Base Cloud Messaging を使用してリモート通知 (プッシュ通知とも呼ばれます) を実装する方法を順を追って説明します。ここでは、焼討 Base Cloud Messaging (FCM) との通信に必要なさまざまなクラスを実装する方法を示し、FCM にアクセスするために Android マニフェストを構成する方法の例を示し、消火ベースを使用したダウンストリームメッセージングのデモンストレーションを行います。コンソール._
 
 ## <a name="fcm-notifications-overview"></a>FCM 通知の概要
 
@@ -32,16 +32,16 @@ _このチュートリアルでは、アドインアプリケーションで、F
 
 3. フォアグラウンド通知
 
-このチュートリアルでは、 **Fcmclient**に機能を段階的に追加し、それをデバイスまたはエミュレーターで実行して、fcm との対話方法を理解します。 ログ記録を使用して、FCM サーバーでライブアプリトランザクションを監視します。また、FCM メッセージからの通知の生成方法については、「Firebase Console notification GUI」に入力します。
+このチュートリアルでは、 **Fcmclient**に機能を段階的に追加し、それをデバイスまたはエミュレーターで実行して、fcm との対話方法を理解します。 ログ記録を使用して、FCM サーバーでライブアプリトランザクションを監視します。また、FCM メッセージからの通知の生成方法については、「焼討 Base Console notification GUI」に入力します。
 
 ## <a name="requirements"></a>［要件］
 
 これは、Firebase Cloud Messaging から送信できる[さまざまな種類のメッセージ](https://firebase.google.com/docs/cloud-messaging/concept-options#notifications_and_data_messages)を理解するのに役立ちます。 メッセージのペイロードによって、クライアントアプリがメッセージを受信して処理する方法が決まります。
 
-このチュートリアルを続行するには、Google の FCM サーバーを使用するために必要な資格情報を取得する必要があります。このプロセスについては、「[Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md#setup_fcm)」で説明されています。
+このチュートリアルを続行するには、Google の FCM サーバーを使用するために必要な資格情報を取得する必要があります。このプロセスについては、「[焼討 Base Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md#setup_fcm)」で説明されています。
 特に、このチュートリアルで示されているコード例で使用する**google services の json**ファイルをダウンロードする必要があります。 まだ Firebase コンソールでプロジェクトを作成していない場合 (または、まだ**google services の json**ファイルをダウンロードしていない場合) は、「[Firebase Cloud Messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md)」を参照してください。
 
-このサンプルアプリを実行するには、互換性が付属している Android テストデバイスまたはエミュレーターが必要です。 Firebase Cloud Messaging では、Android 4.0 以降で実行されているクライアントがサポートされています。また、これらのデバイスには Google Play ストアアプリもインストールする必要があります (Google Play 開発者サービス9.2.1 以降が必要です)。 デバイスに Google Play ストアアプリをまだインストールしていない場合は、 [Google Play](https://support.google.com/googleplay)の web サイトにアクセスしてダウンロードし、インストールします。 または、テストデバイスではなく Google Play 開発者サービスをインストールした Android SDK エミュレーターを使用することもできます (Android SDK エミュレーターを使用している場合は、Google Play ストアをインストールする必要はありません)。
+このサンプルアプリを実行するには、互換性が付属している Android テストデバイスまたはエミュレーターが必要です。 焼討 base Cloud Messaging では、Android 4.0 以降で実行されているクライアントがサポートされています。また、これらのデバイスには Google Play ストアアプリもインストールする必要があります (Google Play 開発者サービス9.2.1 以降が必要です)。 デバイスに Google Play ストアアプリをまだインストールしていない場合は、 [Google Play](https://support.google.com/googleplay)の web サイトにアクセスしてダウンロードし、インストールします。 または、テストデバイスではなく Google Play 開発者サービスをインストールした Android SDK エミュレーターを使用することもできます (Android SDK エミュレーターを使用している場合は、Google Play ストアをインストールする必要はありません)。
 
 ## <a name="start-an-app-project"></a>アプリプロジェクトを開始する
 
@@ -85,7 +85,7 @@ _このチュートリアルでは、アドインアプリケーションで、F
 
 ### <a name="add-the-xamarin-google-play-services-base-package"></a>Xamarin Google Play 開発者サービス基本パッケージを追加する
 
-Firebase Cloud Messaging は Google Play 開発者サービスに依存しているため、xamarin [Google Play 開発者サービス Base](https://www.nuget.org/packages/Xamarin.GooglePlayServices.Base/) NuGet パッケージを Xamarin. Android プロジェクトに追加する必要があります。 バージョン29.0.0.2 以降が必要になります。
+焼討 Base Cloud Messaging は Google Play 開発者サービスに依存しているため、xamarin [Google Play 開発者サービス Base](https://www.nuget.org/packages/Xamarin.GooglePlayServices.Base/) NuGet パッケージを Xamarin. Android プロジェクトに追加する必要があります。 バージョン29.0.0.2 以降が必要になります。
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
@@ -132,7 +132,7 @@ FCM からメッセージを受信するには、 [Xamarin Firebase Messaging](h
 
 3. このパッケージを**Fcmclient**プロジェクトにインストールします。
 
-    [Xamarin Firebase メッセージングのインストール![](remote-notifications-with-fcm-images/03-firebase-messaging-vs-sml.png)](remote-notifications-with-fcm-images/03-firebase-messaging-vs.png#lightbox)
+    [Xamarin 焼討 Base メッセージングのインストール![](remote-notifications-with-fcm-images/03-firebase-messaging-vs-sml.png)](remote-notifications-with-fcm-images/03-firebase-messaging-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -142,7 +142,7 @@ FCM からメッセージを受信するには、 [Xamarin Firebase Messaging](h
 
 3. このパッケージを**Fcmclient**プロジェクトにインストールします。
 
-    [Xamarin Firebase メッセージングのインストール![](remote-notifications-with-fcm-images/03-firebase-messaging-xs-sml.png)](remote-notifications-with-fcm-images/03-firebase-messaging-xs.png#lightbox)
+    [Xamarin 焼討 Base メッセージングのインストール![](remote-notifications-with-fcm-images/03-firebase-messaging-xs-sml.png)](remote-notifications-with-fcm-images/03-firebase-messaging-xs.png#lightbox)
 
 -----
 
@@ -339,7 +339,7 @@ protected override void OnCreate (Bundle bundle)
 
 - サービスを安全に開始するために使用される内部 `FirebaseInstanceIdInternalReceiver` 実装を宣言します。
 
-- [アプリ ID](./firebase-cloud-messaging.md#fcm-in-action-app-id)は、[プロジェクトに追加](#add-googleplayservices-json)された**google services の json**ファイルに格納されます。 Xamarin. Android の Firebase のバインドによって、トークン `${applicationId}` がアプリ ID に置き換えられます。クライアントアプリでアプリ ID を提供するために、追加のコードは必要ありません。
+- [アプリ ID](./firebase-cloud-messaging.md#fcm-in-action-app-id)は、[プロジェクトに追加](#add-googleplayservices-json)された**google services の json**ファイルに格納されます。 Xamarin. Android の消火ベースのバインドによって、トークン `${applicationId}` がアプリ ID に置き換えられます。クライアントアプリでアプリ ID を提供するために、追加のコードは必要ありません。
 
 `FirebaseInstanceIdReceiver` は、`FirebaseInstanceId` イベントと `FirebaseMessaging` イベントを受け取り、`FirebaseInstanceIdService`から派生したクラスに配信する `WakefulBroadcastReceiver` です。
 
@@ -754,7 +754,7 @@ public override void OnMessageReceived(RemoteMessage message)
 
 ## <a name="disconnecting-from-fcm"></a>FCM からの切断
 
-トピックの購読を解除するには、[Firebasemessaging](https://firebase.google.com/docs/reference/android/com/google/firebase/messaging/FirebaseMessaging)クラスで[UnsubscribeFromTopic](https://firebase.google.com/docs/reference/android/com/google/firebase/messaging/FirebaseMessaging.html#unsubscribeFromTopic%28java.lang.String%29)メソッドを呼び出します。 たとえば、前の手順で購読した_ニュース_トピックからサブスクライブを解除するために、次のハンドラーコードを使用して、登録**解除**ボタンをレイアウトに追加することができます。
+トピックの購読を解除するには、[焼討 Basemessaging](https://firebase.google.com/docs/reference/android/com/google/firebase/messaging/FirebaseMessaging)クラスで[UnsubscribeFromTopic](https://firebase.google.com/docs/reference/android/com/google/firebase/messaging/FirebaseMessaging.html#unsubscribeFromTopic%28java.lang.String%29)メソッドを呼び出します。 たとえば、前の手順で購読した_ニュース_トピックからサブスクライブを解除するために、次のハンドラーコードを使用して、登録**解除**ボタンをレイアウトに追加することができます。
 
 ```csharp
 var unSubscribeButton = FindViewById<Button>(Resource.Id.unsubscribeButton);
@@ -764,7 +764,7 @@ unSubscribeButton.Click += delegate {
 };
 ```
 
-FCM からデバイスの登録を解除するには、[FirebaseInstanceId](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId)クラスの[deleteinstanceid](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId.html#deleteInstanceId%28%29)メソッドを呼び出して、インスタンス ID を削除します。 (例:
+FCM からデバイスの登録を解除するには、[消火 baseinstanceid](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId)クラスの[deleteinstanceid](https://firebase.google.com/docs/reference/android/com/google/firebase/iid/FirebaseInstanceId.html#deleteInstanceId%28%29)メソッドを呼び出して、インスタンス ID を削除します。 (例:
 
 ```csharp
 FirebaseInstanceId.Instance.DeleteInstanceId();
@@ -774,7 +774,7 @@ FirebaseInstanceId.Instance.DeleteInstanceId();
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 
-次に、Xamarin. Android での Firebase Cloud Messaging の使用時に発生する可能性がある問題と回避策について説明します。
+次に、Xamarin. Android での焼討 Base Cloud Messaging の使用時に発生する可能性がある問題と回避策について説明します。
 
 ### <a name="firebaseapp-is-not-initialized"></a>Firebaseapp は初期化されていません
 

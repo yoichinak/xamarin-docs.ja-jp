@@ -16,7 +16,7 @@ ms.locfileid: "73020247"
 ---
 # <a name="firebase-job-dispatcher"></a>Firebase ジョブ ディスパッチャー
 
-_このガイドでは、Google の Firebase のジョブディスパッチャーライブラリを使用して、バックグラウンド作業をスケジュールする方法について説明します。_
+_このガイドでは、Google の焼討ベースのジョブディスパッチャーライブラリを使用して、バックグラウンド作業をスケジュールする方法について説明します。_
 
 ## <a name="overview"></a>概要
 
@@ -57,11 +57,11 @@ Firebase のジョブディスパッチャーを使用して作業をスケジ�
 
 ## <a name="requirements"></a>［要件］
 
-Firebase ジョブディスパッチャーには、Android API レベル9以上が必要です。 Firebase ジョブディスパッチャーライブラリは、Google Play 開発者サービスによって提供されるいくつかのコンポーネントに依存しています。デバイスに Google Play 開発者サービスがインストールされている必要があります。
+Firebase ジョブディスパッチャーには、Android API レベル9以上が必要です。 焼討 Base ジョブディスパッチャーライブラリは、Google Play 開発者サービスによって提供されるいくつかのコンポーネントに依存しています。デバイスに Google Play 開発者サービスがインストールされている必要があります。
 
-## <a name="using-the-firebase-job-dispatcher-library-in-xamarinandroid"></a>Xamarin. Android での Firebase ジョブディスパッチャーライブラリの使用
+## <a name="using-the-firebase-job-dispatcher-library-in-xamarinandroid"></a>Xamarin. Android での焼討 Base ジョブディスパッチャーライブラリの使用
 
-Firebase のジョブディスパッチャーの使用を開始するには、最初に xamarin. の[NuGet パッケージ](https://www.nuget.org/packages/Xamarin.Firebase.JobDispatcher)を Xamarin. Android プロジェクトに追加します。 NuGet パッケージマネージャーを検索します。このパッケージは、まだプレリリース段階**にあります**。
+焼討ベースのジョブディスパッチャーの使用を開始するには、最初に xamarin. の[NuGet パッケージ](https://www.nuget.org/packages/Xamarin.Firebase.JobDispatcher)を Xamarin. Android プロジェクトに追加します。 NuGet パッケージマネージャーを検索します。このパッケージは、まだプレリリース段階**にあります**。
 
 Firebase ジョブディスパッチャーライブラリを追加した後、`JobService` クラスを作成し、`FirebaseJobDispatcher`のインスタンスを使用して実行するようにスケジュールを設定します。
 
@@ -115,7 +115,7 @@ FirebaseJobDispatcher dispatcher = new FirebaseJobDispatcher(driver);
 
 前のコードスニペットでは、`GooglePlayDriver` は、`FirebaseJobDispatcher` がデバイス上の Google Play 開発者サービスのいくつかのスケジュール Api と対話できるようにするクラスです。 パラメーター `context` は、アクティビティなどの Android `Context`です。 現時点では、`GooglePlayDriver` は、Firebase ジョブディスパッチャーライブラリの唯一の実装 `IDriver` です。 
 
-Firebase ジョブディスパッチャーの Xamarin. Android バインドは、`Context`から `FirebaseJobDispatcher` を作成するための拡張メソッドを提供します。 
+焼討ベースジョブディスパッチャーの Xamarin. Android バインドは、`Context`から `FirebaseJobDispatcher` を作成するための拡張メソッドを提供します。 
 
 ```csharp
 FirebaseJobDispatcher dispatcher = context.CreateJobDispatcher();
@@ -168,7 +168,7 @@ int scheduleResult = dispatcher.Schedule(myJob);
 
 - `Job` &ndash;[ジョブにパラメーターを渡す](#Passing_Parameters_to_a_Job)と、ファイルのダウンロードなどの処理を実行するために追加の値が必要になる場合があります。
 - [制約を設定](#Setting_Constraints)する &ndash;、特定の条件が満たされた場合にのみジョブを実行する必要がある場合があります。 たとえば、デバイスが充電されている場合にのみ、`Job` を実行します。 
-- [`Job` をいつ実行するかを指定し](#Setting_Job_Triggers)ます。これにより、Firebase ジョブディスパッチャーによって、アプリケーションでジョブを実行する時刻を指定でき &ndash; ます。  
+- [`Job` をいつ実行するかを指定し](#Setting_Job_Triggers)ます。これにより、焼討 Base ジョブディスパッチャーによって、アプリケーションでジョブを実行する時刻を指定でき &ndash; ます。  
 - [失敗したジョブの再試行戦略を宣言](#Setting_a_RetryStrategy)する &ndash;_再試行戦略_では、完了できなかった `Jobs` を処理する `FirebaseJobDispatcher` についてのガイダンスを提供します。 
 
 これらの各トピックについては、以降のセクションで詳しく説明します。
