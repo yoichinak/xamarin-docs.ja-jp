@@ -35,7 +35,7 @@ ms.locfileid: "74681354"
 Azure Notification Hubs と Xamarin. Forms モバイルアプリを統合することは、Azure Notification Hubs と Xamarin ネイティブアプリケーションを統合することと似ています。 [「Azure Notification Hubs を使用した Xamarin Android へのプッシュ通知」の「Azure のプッシュ通知](/azure/notification-hubs/xamarin-notification-hubs-push-notifications-android-gcm#create-a-firebase-project-and-enable-firebase-cloud-messaging)」に従って、 **fcm アプリケーション**を設定します。 Xamarin のチュートリアルを使用して、次の手順を実行します。
 
 1. サンプルで使用される、`com.xamarin.notifysample`などの Android パッケージ名を定義します。
-1. 焼討 Base コンソールから**google-services. json**をダウンロードします。 このファイルは、後の手順で Android アプリケーションに追加します。
+1. Firebase コンソールから**google-services. json**をダウンロードします。 このファイルは、後の手順で Android アプリケーションに追加します。
 1. Azure Notification Hub インスタンスを作成し、名前を付けます。 この記事とサンプルでは、ハブ名として `xdocsnotificationhub` を使用します。
 1. FCM**サーバーキー**をコピーし、それを**API キー**として Azure Notification HUB の**Google (GCM/fcm)** に保存します。
 
@@ -125,14 +125,14 @@ public static class AppConstants
 
 通知を受信して処理するように Android アプリケーションを構成するには、次の手順を実行します。
 
-1. パッケージ名を、焼討 Base コンソールのパッケージ名と一致**するように**構成します。
-1. 次の NuGet パッケージをインストールして、Google Play、焼討ベース、Azure Notification Hubs と対話します。
+1. パッケージ名を、Firebase コンソールのパッケージ名と一致**するように**構成します。
+1. 次の NuGet パッケージをインストールして、Google Play、Firebase、Azure Notification Hubs と対話します。
     1. GooglePlayServices。
     1. Xamarin. Messaging。
     1. Xamarin. Azure. NotificationHubs。
 1. FCM セットアップ中にダウンロードした `google-services.json` ファイルをプロジェクトにコピーし、[ビルド] アクションを [`GoogleServicesJson`] に設定します。
-1. [焼討 base と通信するように AndroidManifest を構成](#configure-android-manifest)します。
-1. [メッセージを処理するように、焼討 Basemessagingservice をオーバーライド](#override-firebasemessagingservice-to-handle-messages)します。
+1. [Firebase と通信するように AndroidManifest を構成](#configure-android-manifest)します。
+1. [メッセージを処理するように、Firebasemessagingservice をオーバーライド](#override-firebasemessagingservice-to-handle-messages)します。
 1. [Xamarin. フォーム UI に受信通知を追加](#add-incoming-notifications-to-the-xamarinforms-ui)します。
 
 > [!NOTE]
@@ -140,7 +140,7 @@ public static class AppConstants
 
 ### <a name="configure-android-manifest"></a>Android マニフェストを構成する
 
-`application` 要素内の `receiver` 要素を使用すると、アプリは焼討ベースと通信できます。 `uses-permission` の要素を使用すると、アプリはメッセージを処理し、Azure Notification Hub に登録できます。 完全な**Androidmanifest .xml**は、次の例のようになります。
+`application` 要素内の `receiver` 要素を使用すると、アプリは Firebase と通信できます。 `uses-permission` の要素を使用すると、アプリはメッセージを処理し、Azure Notification Hub に登録できます。 完全な**Androidmanifest .xml**は、次の例のようになります。
 
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="YOUR_PACKAGE_NAME" android:installLocation="auto">
@@ -162,9 +162,9 @@ public static class AppConstants
 </manifest>
 ```
 
-### <a name="override-firebasemessagingservice-to-handle-messages"></a>メッセージを処理するための、焼討 Basemessagingservice のオーバーライド
+### <a name="override-firebasemessagingservice-to-handle-messages"></a>メッセージを処理するための、Firebasemessagingservice のオーバーライド
 
-焼討ベースに登録してメッセージを処理するには、`FirebaseMessagingService` クラスをサブクラス化します。 このサンプルアプリケーションでは、`FirebaseMessagingService`をサブクラス化する `FirebaseService` クラスを定義します。 このクラスには、`com.google.firebase.MESSAGING_EVENT` フィルターを含む `IntentFilter` 属性がタグ付けされています。 このフィルターを使用すると、Android は、次の処理を行うために、このクラスに受信メッセージを渡すことができます。
+Firebase に登録してメッセージを処理するには、`FirebaseMessagingService` クラスをサブクラス化します。 このサンプルアプリケーションでは、`FirebaseMessagingService`をサブクラス化する `FirebaseService` クラスを定義します。 このクラスには、`com.google.firebase.MESSAGING_EVENT` フィルターを含む `IntentFilter` 属性がタグ付けされています。 このフィルターを使用すると、Android は、次の処理を行うために、このクラスに受信メッセージを渡すことができます。
 
 ```csharp
 [Service]
@@ -176,7 +176,7 @@ public class FirebaseService : FirebaseMessagingService
 
 ```
 
-アプリケーションが起動すると、焼討 Base SDK によって、焼討 Base サーバーから一意のトークン識別子が自動的に要求されます。 要求が成功すると、`OnNewToken` メソッドが `FirebaseService` クラスで呼び出されます。 サンプルプロジェクトでは、このメソッドをオーバーライドし、Azure Notification Hubs にトークンを登録します。
+アプリケーションが起動すると、Firebase SDK によって、Firebase サーバーから一意のトークン識別子が自動的に要求されます。 要求が成功すると、`OnNewToken` メソッドが `FirebaseService` クラスで呼び出されます。 サンプルプロジェクトでは、このメソッドをオーバーライドし、Azure Notification Hubs にトークンを登録します。
 
 ```csharp
 public override void OnNewToken(string token)
@@ -346,7 +346,7 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
 
 `Activity` 属性は、アプリケーションの `LaunchMode` を `SingleTop`に設定します。 この起動モードは、このアクティビティの1つのインスタンスのみを許可するように Android OS に指示します。 この起動モードでは、受信 `Intent` データは `OnNewIntent` メソッドにルーティングされます。このメソッドは、メッセージデータを抽出し、`AddMessage` メソッドを使用して `MainPage` インスタンスに送信します。 アプリケーションで別の起動モードを使用する場合は、`Intent` データを異なる方法で処理する必要があります。
 
-`OnCreate` メソッドでは、`IsPlayServiceAvailable` と呼ばれるヘルパーメソッドを使用して、デバイスが Google Play サービスをサポートしていることを確認します。 Google Play サービスをサポートしないエミュレーターまたはデバイスは、消火ベースからプッシュ通知を受信できません。
+`OnCreate` メソッドでは、`IsPlayServiceAvailable` と呼ばれるヘルパーメソッドを使用して、デバイスが Google Play サービスをサポートしていることを確認します。 Google Play サービスをサポートしないエミュレーターまたはデバイスは、Firebase からプッシュ通知を受信できません。
 
 ## <a name="configure-ios-for-notifications"></a>通知用に iOS を構成する
 
@@ -510,7 +510,7 @@ Azure Notification Hubs を使用すると、アプリケーションがテス�
 ### <a name="testing-tips"></a>テストのヒント
 
 1. アプリケーションがプッシュ通知を受信できることをテストする場合は、物理デバイスを使用する必要があります。 Android および iOS の仮想デバイスは、プッシュ通知を受信するように正しく構成されていない可能性があります。
-1. サンプル Android アプリケーションは、焼討 Base トークンが発行されたときにトークンとテンプレートを登録します。 テスト中に、新しいトークンを要求して、Azure Notification Hub に再登録することが必要になる場合があります。 これを強制する最良の方法は、プロジェクトをクリーンアップし、`bin` と `obj` のフォルダーを削除し、再構築と配置の前にデバイスからアプリケーションをアンインストールすることです。
+1. サンプル Android アプリケーションは、Firebase トークンが発行されたときにトークンとテンプレートを登録します。 テスト中に、新しいトークンを要求して、Azure Notification Hub に再登録することが必要になる場合があります。 これを強制する最良の方法は、プロジェクトをクリーンアップし、`bin` と `obj` のフォルダーを削除し、再構築と配置の前にデバイスからアプリケーションをアンインストールすることです。
 1. プッシュ通知フローの多くの部分は、非同期的に実行されます。 これにより、ブレークポイントがヒットしたり、予期しない順序でヒットしたりする可能性があります。 アプリケーションフローを中断せずに、デバイスまたはデバッグログを使用して実行をトレースします。 `Constants`で指定された `DebugTag` を使用して、Android デバイスのログをフィルター処理します。
 
 ## <a name="create-a-notification-dispatcher"></a>通知ディスパッチャーを作成する

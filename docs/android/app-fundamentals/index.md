@@ -68,7 +68,7 @@ Android OS では、オーディオとビデオの両方を含むマルチメデ
 
 ## <a name="notificationsandroidapp-fundamentalsnotificationsindexmd"></a>[通知](~/android/app-fundamentals/notifications/index.md)
 
-このセクションでは、Xamarin Android でローカル通知とリモート通知を実装する方法について説明します。 Android の通知のさまざまな UI 要素について説明し、通知の作成と表示に関連する API について説明します。 リモート通知については、Google Cloud Messaging と焼討基本クラウドメッセージングの両方について説明します。 ステップバイステップのチュートリアルとコードサンプルが含まれています。
+このセクションでは、Xamarin Android でローカル通知とリモート通知を実装する方法について説明します。 Android の通知のさまざまな UI 要素について説明し、通知の作成と表示に関連する API について説明します。 リモート通知については、Google Cloud Messaging と Firebase クラウドメッセージングの両方について説明します。 ステップバイステップのチュートリアルとコードサンプルが含まれています。
 
 ## <a name="touchandroidapp-fundamentalstouchindexmd"></a>[タッチ](~/android/app-fundamentals/touch/index.md)
 

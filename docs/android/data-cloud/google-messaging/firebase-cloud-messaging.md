@@ -1,6 +1,6 @@
 ---
 title: Firebase Cloud Messaging
-description: 焼討 base Cloud Messaging (FCM) は、モバイルアプリとサーバーアプリケーション間のメッセージングを容易にするサービスです。 この記事では、FCM のしくみの概要について説明します。また、アプリで FCM を使用できるように Google サービスを構成する方法についても説明します。
+description: Firebase Cloud Messaging (FCM) は、モバイルアプリとサーバーアプリケーション間のメッセージングを容易にするサービスです。 この記事では、FCM のしくみの概要について説明します。また、アプリで FCM を使用できるように Google サービスを構成する方法についても説明します。
 ms.prod: xamarin
 ms.assetid: E5314D7F-2AAC-40DA-BEBA-27C834F078DD
 ms.technology: xamarin-android
@@ -16,38 +16,38 @@ ms.locfileid: "73023668"
 ---
 # <a name="firebase-cloud-messaging"></a>Firebase Cloud Messaging
 
-_焼討 base Cloud Messaging (FCM) は、モバイルアプリとサーバーアプリケーション間のメッセージングを容易にするサービスです。この記事では、FCM のしくみの概要について説明します。また、アプリで FCM を使用できるように Google サービスを構成する方法についても説明します。_
+_Firebase Cloud Messaging (FCM) は、モバイルアプリとサーバーアプリケーション間のメッセージングを容易にするサービスです。この記事では、FCM のしくみの概要について説明します。また、アプリで FCM を使用できるように Google サービスを構成する方法についても説明します。_
 
-[![焼討 Base Cloud Messaging のヒーロー画像](firebase-cloud-messaging-images/preview.png)](firebase-cloud-messaging-images/preview.png#lightbox)
+[![Firebase Cloud Messaging のヒーロー画像](firebase-cloud-messaging-images/preview.png)](firebase-cloud-messaging-images/preview.png#lightbox)
 
-このトピックでは、アプリケーションで FCM サービスを使用できるように、焼討 Base Cloud Messaging がメッセージを Xamarin Android アプリとアプリサーバー間でルーティングする方法の概要を説明します。また、資格情報を取得するための詳細な手順についても説明します。
+このトピックでは、アプリケーションで FCM サービスを使用できるように、Firebase Cloud Messaging がメッセージを Xamarin Android アプリとアプリサーバー間でルーティングする方法の概要を説明します。また、資格情報を取得するための詳細な手順についても説明します。
 
 ## <a name="overview"></a>概要
 
-焼討 base Cloud Messaging (FCM) は、サーバーアプリケーションとモバイルクライアントアプリ間でのメッセージの送信、ルーティング、およびキューを処理するクロスプラットフォームサービスです。 FCM は Google Cloud Messaging (GCM) の後継であり、Google Play 開発者サービス上に構築されています。
+Firebase Cloud Messaging (FCM) は、サーバーアプリケーションとモバイルクライアントアプリ間でのメッセージの送信、ルーティング、およびキューを処理するクロスプラットフォームサービスです。 FCM は Google Cloud Messaging (GCM) の後継であり、Google Play 開発者サービス上に構築されています。
 
-次の図に示すように、FCM は、メッセージの送信者とクライアントの仲介役として機能します。 *クライアントアプリ*は、デバイス上で実行される fcm 対応アプリです。 *アプリサーバー* (お客様または会社が提供) は、クライアントアプリが fcm 経由で通信する fcm 対応のサーバーです。 GCM とは異なり、FCM を使用すると、焼討 Base コンソール通知 GUI を使用して直接クライアントアプリにメッセージを送信できます。
+次の図に示すように、FCM は、メッセージの送信者とクライアントの仲介役として機能します。 *クライアントアプリ*は、デバイス上で実行される fcm 対応アプリです。 *アプリサーバー* (お客様または会社が提供) は、クライアントアプリが fcm 経由で通信する fcm 対応のサーバーです。 GCM とは異なり、FCM を使用すると、Firebase コンソール通知 GUI を使用して直接クライアントアプリにメッセージを送信できます。
 
 [クライアントアプリとアプリサーバーの間に FCM がある![](firebase-cloud-messaging-images/01-server-fcm-app-sml.png)](firebase-cloud-messaging-images/01-server-fcm-app.png#lightbox)
 
-FCM を使用すると、アプリサーバーは、1つのデバイス、デバイスのグループ、またはトピックにサブスクライブしている複数のデバイスにメッセージを送信できます。 クライアントアプリでは、FCM を使用して、アプリサーバーからのダウンストリームメッセージをサブスクライブできます (たとえば、リモート通知を受信します)。 さまざまな種類の焼討 Base メッセージの詳細については、「 [FCM メッセージについ](https://firebase.google.com/docs/cloud-messaging/concept-options)て」を参照してください。
+FCM を使用すると、アプリサーバーは、1つのデバイス、デバイスのグループ、またはトピックにサブスクライブしている複数のデバイスにメッセージを送信できます。 クライアントアプリでは、FCM を使用して、アプリサーバーからのダウンストリームメッセージをサブスクライブできます (たとえば、リモート通知を受信します)。 さまざまな種類の Firebase メッセージの詳細については、「 [FCM メッセージについ](https://firebase.google.com/docs/cloud-messaging/concept-options)て」を参照してください。
 
-## <a name="fcm-in-action"></a>動作中の焼討 base Cloud Messaging
+## <a name="fcm-in-action"></a>動作中の Firebase Cloud Messaging
 
 アプリケーションサーバーからクライアントアプリにダウンストリームメッセージが送信されると、アプリサーバーは Google によって提供される*Fcm 接続サーバー*にメッセージを送信します。さらに、FCM 接続サーバーは、クライアントアプリを実行しているデバイスにメッセージを転送します。 メッセージは、HTTP または[Xmpp](https://developers.google.com/cloud-messaging/ccs) (拡張可能なメッセージングおよびプレゼンスプロトコル) を介して送信できます。 クライアントアプリは常に接続または実行されていないため、FCM 接続サーバーはメッセージをキューに入れて格納し、再接続して使用できるようになったときにクライアントアプリに送信します。 同様に、アプリサーバーが使用できない場合は、FCM によって、クライアントアプリからのアップストリームメッセージがアプリサーバーにエンキューされます。 FCM 接続サーバーの詳細については、「サービス[につい](https://firebase.google.com/docs/cloud-messaging/server)て」を参照してください。
 
 FCM は、次の資格情報を使用してアプリサーバーとクライアントアプリを識別し、これらの資格情報を使用して FCM 経由でメッセージトランザクションを承認します。
 
-- <a name="fcm-in-action-sender-id"></a>**Sender id &ndash;** *送信者*Id は、焼討ベースプロジェクトを作成するときに割り当てられる一意の数値です。 送信者 ID は、クライアントアプリにメッセージを送信できる各アプリサーバーを識別するために使用されます。 送信者 ID もプロジェクト番号です。プロジェクトを登録するときに、焼討 Base コンソールから送信者 ID を取得します。 送信者 ID の例としては、`496915549731`があります。
+- <a name="fcm-in-action-sender-id"></a>**Sender id &ndash;** *送信者*Id は、Firebase プロジェクトを作成するときに割り当てられる一意の数値です。 送信者 ID は、クライアントアプリにメッセージを送信できる各アプリサーバーを識別するために使用されます。 送信者 ID もプロジェクト番号です。プロジェクトを登録するときに、Firebase コンソールから送信者 ID を取得します。 送信者 ID の例としては、`496915549731`があります。
 
-- <a name="fcm-in-action-api-key"></a>**Api キー &ndash;** api*キーを使用する*と、アプリサーバーは焼討 base サービスにアクセスできます。FCM は、このキーを使用してアプリサーバーを認証します。 この資格情報は、*サーバーキー*または*Web API キー*とも呼ばれます。 API キーの例としては、`AJzbSyCTcpfRT1YRqbz-jIwp1h06YdauvewGDzk`があります。
+- <a name="fcm-in-action-api-key"></a>**Api キー &ndash;** api*キーを使用する*と、アプリサーバーは Firebase サービスにアクセスできます。FCM は、このキーを使用してアプリサーバーを認証します。 この資格情報は、*サーバーキー*または*Web API キー*とも呼ばれます。 API キーの例としては、`AJzbSyCTcpfRT1YRqbz-jIwp1h06YdauvewGDzk`があります。
 
 - <a name="fcm-in-action-app-id"></a>**アプリケーション ID**は、fcm からメッセージを受信するように登録されているクライアントアプリの id &ndash; ます (特定のデバイスに依存しません)。 アプリ ID の例としては、`1:415712510732:android:0e1eb7a661af2460`があります。
 
 - <a name="fcm-in-action-registration-token"></a>**登録トークン &ndash; 登録**トークン (*インスタンス ID*とも呼ばれます)*は、特定*のデバイス上のクライアントアプリの fcm id です。 登録トークンは実行時に生成されます。アプリは、デバイスで実行中に FCM に最初に登録するときに登録トークンを受け取る &ndash; ます。 登録トークンは、(特定のデバイスで実行されている) クライアントアプリのインスタンスに対して、FCM からのメッセージの受信を承認します。
     登録トークンの例としては、`fkBQTHxKKhs:AP91bHuEedxM4xFAUn0z ... JKZS` (非常に長い文字列) があります。
 
-(このガイドの後半の) 「[焼討 Base Cloud Messaging](#setup_fcm)のセットアップ」では、プロジェクトを作成し、これらの資格情報を生成するための詳細な手順について説明しています。 新しいプロジェクトを[焼討 Base コンソール](https://console.firebase.google.com/)で作成すると、「 [fcm を使用したリモート通知](~/android/data-cloud/google-messaging/remote-notifications-with-fcm.md)」で説明されているように、このファイルを Xamarin Android プロジェクトに追加 &ndash; ために、 **google-** services.msc という名前の資格情報ファイルが作成されます。
+(このガイドの後半の) 「[Firebase Cloud Messaging](#setup_fcm)のセットアップ」では、プロジェクトを作成し、これらの資格情報を生成するための詳細な手順について説明しています。 新しいプロジェクトを[Firebase コンソール](https://console.firebase.google.com/)で作成すると、「 [fcm を使用したリモート通知](~/android/data-cloud/google-messaging/remote-notifications-with-fcm.md)」で説明されているように、このファイルを Xamarin Android プロジェクトに追加 &ndash; ために、 **google-** services.msc という名前の資格情報ファイルが作成されます。
 
 次のセクションでは、クライアントアプリが FCM 経由でアプリサーバーと通信するときに、これらの資格情報を使用する方法について説明します。
 
@@ -71,7 +71,7 @@ FCM は、次の資格情報を使用してアプリサーバーとクライア�
 
 ### <a name="downstream-messaging"></a>ダウンストリームメッセージング
 
-次の図は、焼討 Base Cloud Messaging が下流のメッセージを格納および転送する方法を示しています。
+次の図は、Firebase Cloud Messaging が下流のメッセージを格納および転送する方法を示しています。
 
 [![FCM はダウンストリームメッセージングにストアアンドフォワードを使用します](firebase-cloud-messaging-images/03-downstream-sml.png)](firebase-cloud-messaging-images/03-downstream.png#lightbox)
 
@@ -91,7 +91,7 @@ Android で下流の FCM メッセージを受信する方法の詳細につい�
 
 ### <a name="topic-messaging"></a>トピックメッセージング
 
-*トピックメッセージング*を使用すると、アプリサーバーは、特定のトピックにオプトインされている複数のデバイスにメッセージを送信できます。 また、焼討 Base コンソール通知 GUI を使用して、トピックメッセージを作成して送信することもできます。 FCM は、サブスクライブされたクライアントへのトピックメッセージのルーティングと配信を処理します。 この機能は、気象アラート、株価情報、ヘッドラインニュースなどのメッセージに使用できます。
+*トピックメッセージング*を使用すると、アプリサーバーは、特定のトピックにオプトインされている複数のデバイスにメッセージを送信できます。 また、Firebase コンソール通知 GUI を使用して、トピックメッセージを作成して送信することもできます。 FCM は、サブスクライブされたクライアントへのトピックメッセージのルーティングと配信を処理します。 この機能は、気象アラート、株価情報、ヘッドラインニュースなどのメッセージに使用できます。
 
 [![トピックのメッセージングの図](firebase-cloud-messaging-images/04-topic-messaging-sml.png)](firebase-cloud-messaging-images/04-topic-messaging.png#lightbox)
 
@@ -103,15 +103,15 @@ Android で下流の FCM メッセージを受信する方法の詳細につい�
 
 3. FCM は、そのトピックをサブスクライブしているクライアントにトピックメッセージを転送します。
 
-焼討ベーストピックメッセージングの詳細については、Google の[トピック「Android でのメッセージング](https://firebase.google.com/docs/cloud-messaging/android/topic-messaging)」を参照してください。
+Firebase トピックメッセージングの詳細については、Google の[トピック「Android でのメッセージング](https://firebase.google.com/docs/cloud-messaging/android/topic-messaging)」を参照してください。
 
 <a name="setup_fcm" />
 
-## <a name="setting-up-firebase-cloud-messaging"></a>焼討 Base Cloud Messaging の設定
+## <a name="setting-up-firebase-cloud-messaging"></a>Firebase Cloud Messaging の設定
 
-アプリで FCM サービスを使用するに[は、新しい](https://console.firebase.google.com/)プロジェクトを作成する (または既存のプロジェクトをインポートする) 必要があります。 次の手順を使用して、アプリのための焼討 Base Cloud Messaging プロジェクトを作成します。
+アプリで FCM サービスを使用するに[は、新しい](https://console.firebase.google.com/)プロジェクトを作成する (または既存のプロジェクトをインポートする) 必要があります。 次の手順を使用して、アプリのための Firebase Cloud Messaging プロジェクトを作成します。
 
-1. Google アカウント (Gmail のアドレスなど) を使用して、[焼討 Base コンソール](https://console.firebase.google.com/)にサインインし、 **[新しいプロジェクトの作成]** をクリックします。
+1. Google アカウント (Gmail のアドレスなど) を使用して、[Firebase コンソール](https://console.firebase.google.com/)にサインインし、 **[新しいプロジェクトの作成]** をクリックします。
 
     [![新しいプロジェクトの作成 ボタン](firebase-cloud-messaging-images/05-firebase-console-sml.png)](firebase-cloud-messaging-images/05-firebase-console.png#lightbox)
 
@@ -121,9 +121,9 @@ Android で下流の FCM メッセージを受信する方法の詳細につい�
 
     [![プロジェクトの作成 ダイアログ](firebase-cloud-messaging-images/06-create-a-project-sml.png)](firebase-cloud-messaging-images/06-create-a-project.png#lightbox)
 
-3. 焼討 Base コンソールの **[概要]** で、 **[アドインを Android アプリに追加する]** をクリックします。
+3. Firebase コンソールの **[概要]** で、 **[アドインを Android アプリに追加する]** をクリックします。
 
-    [Android アプリに焼討 Base を追加![には](firebase-cloud-messaging-images/07-add-firebase-sml.png)](firebase-cloud-messaging-images/07-add-firebase.png#lightbox)
+    [Android アプリに Firebase を追加![には](firebase-cloud-messaging-images/07-add-firebase-sml.png)](firebase-cloud-messaging-images/07-add-firebase.png#lightbox)
 
 4. 次の画面で、アプリのパッケージ名を入力します。 この例では、パッケージ名は " **com. xamarin. fcmexample**" です。 この値は、Android アプリのパッケージ名と一致する必要があります。 アプリのニックネームは、**アプリのニックネーム**フィールドにも入力できます。
 
@@ -143,17 +143,17 @@ Android で FCM プッシュ通知メッセージを受信するためにアプ�
 
 ## <a name="for-further-reading"></a>参考資料
 
-- Google の[焼討 Base Cloud messaging](https://firebase.google.com/docs/cloud-messaging/)は、焼討 Base cloud messaging の主要な機能の概要、しくみの説明、およびセットアップ手順を提供します。
+- Google の[Firebase Cloud messaging](https://firebase.google.com/docs/cloud-messaging/)は、Firebase cloud messaging の主要な機能の概要、しくみの説明、およびセットアップ手順を提供します。
 
 - Google の[ビルドアプリサーバーの送信要求](https://firebase.google.com/docs/cloud-messaging/send-message)では、アプリサーバーでメッセージを送信する方法について説明しています。
 
 - [Rfc 6120](https://tools.ietf.org/html/rfc6120)および[rfc 6121](https://tools.ietf.org/html/rfc6121)では、拡張可能なメッセージングとプレゼンスプロトコル (xmpp) について説明し、定義します。
 
-- 「 [FCM メッセージについ](https://firebase.google.com/docs/cloud-messaging/concept-options)て」では、焼討 Base Cloud Messaging で送信できるさまざまな種類のメッセージについて説明しています。
+- 「 [FCM メッセージについ](https://firebase.google.com/docs/cloud-messaging/concept-options)て」では、Firebase Cloud Messaging で送信できるさまざまな種類のメッセージについて説明しています。
 
 ## <a name="summary"></a>まとめ
 
-この記事では、焼討 Base Cloud Messaging (FCM) の概要について説明しました。 ここでは、アプリサーバーとクライアントアプリ間のメッセージングを識別および承認するために使用されるさまざまな資格情報について説明しました。 ここでは、登録とダウンストリームのメッセージングシナリオについて説明し、fcm サービスを使用するようにアプリケーションを FCM に登録する手順について詳しく説明します。
+この記事では、Firebase Cloud Messaging (FCM) の概要について説明しました。 ここでは、アプリサーバーとクライアントアプリ間のメッセージングを識別および承認するために使用されるさまざまな資格情報について説明しました。 ここでは、登録とダウンストリームのメッセージングシナリオについて説明し、fcm サービスを使用するようにアプリケーションを FCM に登録する手順について詳しく説明します。
 
 ## <a name="related-links"></a>関連リンク
 

@@ -27,7 +27,7 @@ ms.locfileid: "73025536"
 
 ## <a name="further-reading"></a>関連項目
 
-焼討 base [Cloud messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md) &ndash; 焼討 Base cloud messaging (fcm) は、モバイルアプリとサーバーアプリケーション間のメッセージングを容易にするサービスです。 焼討 base Cloud Messaging を使用して、Xamarin Android アプリケーションでリモート通知 (プッシュ通知とも呼ばれます) を実装できます。
+Firebase [Cloud messaging](~/android/data-cloud/google-messaging/firebase-cloud-messaging.md) &ndash; Firebase cloud messaging (fcm) は、モバイルアプリとサーバーアプリケーション間のメッセージングを容易にするサービスです。 Firebase Cloud Messaging を使用して、Xamarin Android アプリケーションでリモート通知 (プッシュ通知とも呼ばれます) を実装できます。
 
 この Android 開発者向けトピック &ndash; の[通知](https://developer.android.com/guide/topics/ui/notifiers/notifications.html)は、android 通知の最終ガイドです。 このガイドには、Android ユーザーインターフェイスのガイドラインに準拠するように通知をデザインする際に役立つ、設計に関する考慮事項のセクションが含まれています。 アクティビティを開始するときの preserviing ナビゲーションに関する背景情報を提供します。また、通知で進行状況を表示し、ロック画面でメディアの再生を制御する方法についても説明します。
 

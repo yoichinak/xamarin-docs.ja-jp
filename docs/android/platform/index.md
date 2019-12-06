@@ -32,7 +32,7 @@ Android ビームは、近接しているときにアプリケーションが NF
 
 ## <a name="firebase-job-dispatcherandroidplatformfirebase-job-dispatchermd"></a>[Firebase ジョブ ディスパッチャー](~/android/platform/firebase-job-dispatcher.md)
 
-このガイドでは、焼討ベースのジョブディスパッチャーについて説明し、これを使用して Xamarin Android アプリでのバックグラウンドジョブの実行を簡略化する方法について説明します。
+このガイドでは、Firebase のジョブディスパッチャーについて説明し、これを使用して Xamarin Android アプリでのバックグラウンドジョブの実行を簡略化する方法について説明します。
 
 ## <a name="fragmentsandroidplatformfragmentsindexmd"></a>[フラグメント](~/android/platform/fragments/index.md)
 
