@@ -6,13 +6,13 @@ ms.assetid: 0be84c56-6698-448d-be5a-b4205f1caa9f
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/01/2019
-ms.openlocfilehash: 0841cb0cbe97644f3bb53105887f3adadf9bf6c5
-ms.sourcegitcommit: 266e75fa6893d3732e4e2c0c8e79c62be2804468
+ms.date: 11/27/2019
+ms.openlocfilehash: c57281f3fa526bb238f4a0dd6a4fad70376c742e
+ms.sourcegitcommit: b4c9eb94ae2b9eae852a24d126b39ac64a6d0ffb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68820946"
+ms.lasthandoff: 12/02/2019
+ms.locfileid: "74681341"
 ---
 # <a name="improve-xamarinforms-app-performance"></a>Xamarin.Forms アプリ パフォーマンスの改善
 
@@ -43,7 +43,7 @@ XAMLC は、新しい Xamarin. Forms ソリューションでは既定で有効�
 
 ## <a name="reduce-unnecessary-bindings"></a>不要なバインドを減らす
 
-簡単に静的に設定できるコンテンツにはバインドを利用しないでください。 バインドする必要のないデータをバインドすることには何の利点もありません。バインドはコスト効果が高くありません。 たとえば、`Button.Text = "Accept"` を設定すると、値 "Accept" で [`Button.Text`](xref:Xamarin.Forms.Button.Text) を ViewModel `string` プロパティにバインドするよりオーバーヘッドが少なくなります。
+簡単に静的に設定できるコンテンツにはバインドを利用しないでください。 バインドする必要のないデータをバインドすることには何の利点もありません。バインドはコスト効果が高くありません。 たとえば、`Button.Text = "Accept"` を設定すると、値が "Accept" のビューモデル プロパティ `string` に [`Button.Text`](xref:Xamarin.Forms.Button.Text) をバインドするより、オーバーヘッドが少なくなります。
 
 ## <a name="use-fast-renderers"></a>高速レンダラーを使用する
 
@@ -157,6 +157,41 @@ Android の事前 (AOT) コンパイルでは、より大きな APK の作成を
 - [`Label`](xref:Xamarin.Forms.Label) インスタンスは不必要に更新しないでください。ラベルのサイズを変更すると、画面レイアウト全体が再計算されることがあります。
 - 必要でない限り、[`Label.VerticalTextAlignment`](xref:Xamarin.Forms.Label.VerticalTextAlignment) プロパティは設定しないでください。
 - 可能であれば、[`Label`](xref:Xamarin.Forms.Label) インスタンスの [`LineBreakMode`](xref:Xamarin.Forms.Label.LineBreakMode) を [`NoWrap`](xref:Xamarin.Forms.LineBreakMode.NoWrap) に設定してください。
+
+## <a name="use-asynchronous-programming"></a>非同期プログラミングを使用する
+
+非同期プログラミングを使用することにより、アプリケーション全体の応答性を向上させ、多くの場合はパフォーマンスのボトルネックを回避することができます。 .NET では、非同期操作に推奨されるデザイン パターンは、[タスクベースの非同期パターン (TAP)](/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap) です。 ただし、TAP を不適切に使用すると、アプリケーションのパフォーマンスが低下する可能性があります。 そのため、TAP を使用するときは、次のガイドラインに従う必要があります。
+
+### <a name="fundamentals"></a>基礎
+
+- `TaskStatus` 列挙型によって表されるタスクのライフサイクルを理解します。 詳しくは、「[TaskStatus の意味](https://devblogs.microsoft.com/pfxteam/the-meaning-of-taskstatus/)」および「[タスクの状態](/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap#task-status)」をご覧ください。
+- 一連の非同期操作を `await` で個別に待機するのではなく、`Task.WhenAll` メソッドを使用して、複数の非同期操作が完了するのを非同期に待機します。 詳しくは、「[Task.WhenAll](/dotnet/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern#taskwhenall)」をご覧ください。
+- 複数の非同期操作の 1 つが完了するのを非同期に待つには、`Task.WhenAny` メソッドを使用します。 詳しくは、「[Task.WhenAny](/dotnet/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern#taskwhenall)」をご覧ください。
+- 指定した時間の後で終了する `Task` オブジェクトを生成するには、`Task.Delay` メソッドを使用します。 これは、データをポーリングする場合や、ユーザー入力の処理を事前に定義された時間だけ遅延する場合などのシナリオに役立ちます。 詳しくは、「[Task.Delay](/dotnet/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern#taskdelay)」をご覧ください。
+- スレッド プールで大量の同期 CPU 操作を実行するには、`Task.Run` メソッドを使用します。 このメソッドは `TaskFactory.StartNew` メソッドのショートカットであり、最適な引数が設定されています。 詳しくは、「[Task.Run](/dotnet/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern#taskrun)」をご覧ください。
+- 非同期コンストラクターを作成しないようにします。 すべての初期化を正しく `await` するには、代わりに、ライフサイクル イベントまたは個別の初期化ロジックを使用します。 詳しくは、blog.stephencleary.com の「[非同期コンストラクター](https://blog.stephencleary.com/2013/01/async-oop-2-constructors.html)」をご覧ください。
+- アプリケーションの起動時に非同期操作が完了するのを待たないようにするには、レイジー タスク パターンを使用します。 詳しくは、「[AsyncLazy](https://devblogs.microsoft.com/pfxteam/asynclazyt/)」をご覧ください。
+- TAP が使用されていない既存の非同期操作に対しては、`TaskCompletionSource<T>` オブジェクトを作成することによってタスク ラッパーを作成します。 これらのオブジェクトにより `Task` の利点がプログラミングで得られ、関連付けられた `Task` の有効期間と完了を制御できるようになります。 詳しくは、「[TaskCompletionSource の性質](https://devblogs.microsoft.com/pfxteam/the-nature-of-taskcompletionsourcetresult/)」をご覧ください。
+asynchronous-mvvm-applications-commands)。
+- 非同期操作の結果を処理する必要がない場合は、待機された `Task` オブジェクトを返す代わりに、`Task` オブジェクトを返します。 これは、実行されるコンテキストの切り替えが少ないため、パフォーマンスが向上します。
+- 使用可能になった時点でデータを処理する場合や、相互に非同期的に通信する必要がある複数の操作がある場合は、タスク並列ライブラリ (TPL) データフロー ライブラリを使用します。 詳しくは、「[データフロー (タスク並列ライブラリ)](/dotnet/standard/parallel-programming/dataflow-task-parallel-library)」をご覧ください。
+
+### <a name="ui"></a>UI
+
+- 使用可能な場合は、API の非同期バージョンを呼び出します。 これにより、UI スレッドの非ブロック状態が保たれ、アプリケーションのユーザー エクスペリエンスの向上に役立ちます。
+- 例外がスローされるのを防ぐために、UI スレッドでの非同期操作からのデータを使用して UI 要素を更新します。 ただし、`ListView.ItemsSource` プロパティに対する更新は、UI スレッドに自動的にマーシャリングされます。 コードが UI スレッドで実行されているかどうかを判断する方法については、「[Xamarin. Essentials: MainThread](~/essentials/main-thread.md?content=xamarin/xamarin-forms)」をご覧ください。
+
+    > [!IMPORTANT]
+    > データ バインディングによって更新される制御プロパティは、UI スレッドに自動的にマーシャリングされます。
+
+### <a name="error-handling"></a>エラー処理
+
+- 非同期例外処理について学習します。 非同期に実行されているコードによってスローされたハンドルされない例外は、特定の状況を除き、呼び出し元のスレッドに反映されます。 詳しくは、「[例外処理 (タスク並列ライブラリ)](/dotnet/standard/parallel-programming/exception-handling-task-parallel-library)」をご覧ください。
+- `async void` メソッドを作成せず、代わりに `async Task` メソッドを作成します。 これにより、エラー処理、構成可能性、およびテストの容易性が向上します。 このガイドラインに対する例外は非同期イベント ハンドラーであり、その場合は `void` を返す必要があります。 詳しくは、「[async void を避ける](/archive/msdn-magazine/2013/march/async-await-best-practices-in-asynchronous-programming#avoid-async-void)」をご覧ください。
+- `Task.Wait`、`Task.Result`、または `GetAwaiter().GetResult` メソッドを呼び出すことによって、ブロックと非同期コードを混在させないでください。デッドロックが発生する可能性があります。 ただし、このガイドラインに違反する必要がある場合は、`GetAwaiter().GetResult` メソッドを呼び出すことをお勧めします。この方法では、タスクの例外が保持されます。 詳しくは、「[すべて非同期にする](/archive/msdn-magazine/2013/march/async-await-best-practices-in-asynchronous-programming#async-all-the-way)」および「[.NET 4.5 でのタスク例外処理](https://devblogs.microsoft.com/pfxteam/task-exception-handling-in-net-4-5/)」をご覧ください。
+- 可能な限り `ConfigureAwait` メソッドを使用して、コンテキスト フリーのコードを作成します。 コンテキスト フリーのコードは、モバイル アプリケーションでのパフォーマンスが優れており、部分的に非同期のコードベースを使用するときのデッドロックを回避するのに役立つ手法です。 詳しくは、「[コンテキストを構成する](/archive/msdn-magazine/2013/march/async-await-best-practices-in-asynchronous-programming#configure-context)」をご覧ください。
+- 前の非同期操作によってスローされた例外の処理や、開始前または実行中の継続のキャンセルなどの機能には、"*継続タスク*" を使用します。 詳しくは、「[継続タスクを使用したタスクの連結](/dotnet/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks)」をご覧ください。
+- `ICommand` から非同期操作を呼び出すときは、`ICommand` の非同期の実装を使用します。 これにより、非同期コマンド ロジック内のすべての例外を処理できます。 詳しくは、「[非同期プログラミング: 非同期 MVVM アプリケーションのパターン: コマンド](/archive/msdn-magazine/2014/april/async-programming-patterns-for-asynchronous-mvvm-applications-commands)」をご覧ください。
 
 ## <a name="choose-a-dependency-injection-container-carefully"></a>依存関係挿入コンテナーを慎重に選択する
 

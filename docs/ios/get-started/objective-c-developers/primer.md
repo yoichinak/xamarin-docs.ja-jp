@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: 8b84d959ce7976fc51cbdfee99cbceec560e8e8e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 6b2753b0f1a7389d62866e5c8003b439a283e5b5
+ms.sourcegitcommit: 1c87135a47780f34102952d4b140850b4f08b075
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022425"
+ms.lasthandoff: 11/26/2019
+ms.locfileid: "74536509"
 ---
 # <a name="c-primer-for-objective-c-developers"></a>Objective-C 開発者向けの C# Primer
 
 _Xamarin.iOS では、C# で記述されたプラットフォームに依存しないコードをプラットフォーム間で共有できます。ただし、既存の iOS アプリケーションは既に作成されている Objective-C コードを活用できます。この記事は、Xamarin と C# 言語への移行を検討している Objective-C 開発者向けの簡単な入門となります。_
 
-Objective-C で開発された iOS および OS X アプリケーションは、プラットフォーム固有のコードが必要ない場所で C# を活用してこのようなコードを Apple 以外のデバイスで使用できるようにすることで、Xamarin のメリットを得られます。 Web サービス、JSON と XML の解析、カスタム アルゴリズムなどをクロスプラットフォーム方式で使用できます。
+Objective-C で開発された iOS および macOS アプリケーションでは、プラットフォーム固有のコードが必要ない場所で C# を利用することにより、Xamarin のメリットを得られます。そのようなコードは、Apple 以外のデバイスで使用できます。 Web サービス、JSON と XML の解析、カスタム アルゴリズムなどをクロスプラットフォーム方式で使用できます。
 
 Objective-C の既存の資産を維持しながら Xamarin を利用するには、バインディングと呼ばれる Xamarin のテクノロジでこれを C# に公開できます。バインディングは、Objective-C コードをマネージドな C# の世界に公開します。 また、必要な場合はコードを行ごとに C# に移植することもできます。 ただし、バインディングと移植のどちらのアプローチであっても、既存の Objective-C コードを Xamarin.iOS で効果的に活用するには Objective-C と C# の知識がある程度必要です。
 
@@ -64,7 +64,7 @@ public static class UITextViewExtensions
 
 ### <a name="frameworks-vs-assemblies"></a>フレームワークとアセンブリ
 
-Objective-C は、関連するクラスをフレームワークと呼ばれる特殊なディレクトリにパッケージ化します。 一方、C# と .NET では、アセンブリはプリコンパイルされたコードの再利用可能な部分を提供するために使用されます。 iOS の外部での環境では、アセンブリには、実行時に Just-In-Time (JIT) でコンパイルされる中間言語コード (IL) が含まれています。 ただし、Apple は iOS アプリケーションで JIT を許可していません。 そのため、Xamarin を使用する iOS をターゲットとする C# コードは Ahead Of Time (AOT) でコンパイルされ、アプリケーション バンドルに含まれるメタデータ ファイルと共に単一の UNIX 実行可能ファイルを生成します。
+Objective-C は、関連するクラスをフレームワークと呼ばれる特殊なディレクトリにパッケージ化します。 一方、C# と .NET では、アセンブリはプリコンパイルされたコードの再利用可能な部分を提供するために使用されます。 iOS の外部での環境では、アセンブリには、実行時に Just-In-Time (JIT) でコンパイルされる中間言語コード (IL) が含まれています。 ただし、App Store でリリースされた iOS アプリケーションで、JIT コンパイルのコードを実行することはできません。 そのため、Xamarin を使用する iOS をターゲットとする C# コードは Ahead Of Time (AOT) でコンパイルされ、アプリケーション バンドルに含まれるメタデータ ファイルと共に単一の UNIX 実行可能ファイルを生成します。
 
 ### <a name="selectors-vs-named-parameters"></a>セレクターと名前付きパラメーター
 

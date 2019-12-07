@@ -6,13 +6,13 @@ ms.assetid: BF1CF23A-3BC9-4226-92E6-DAEEB91422F1
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/12/2018
-ms.openlocfilehash: cc188abaece54a4df139918582e57d4116f894d0
-ms.sourcegitcommit: bf18425f97b48661ab6b775195eac76b356eeba0
+ms.date: 12/03/2019
+ms.openlocfilehash: b87e713f89951d03408fa559bcf6e02cdae65e28
+ms.sourcegitcommit: 27e77acd0139c099f6592085a5ea5aabcaeedc7f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64978136"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74824245"
 ---
 # <a name="xamarinforms-custom-renderers"></a>Xamarin.Forms のカスタム レンダラー
 
@@ -46,18 +46,14 @@ Xamarin.Forms の [`ListView`](xref:Xamarin.Forms.ListView) は、データの�
 
 Xamarin.Forms の [`ViewCell`](xref:Xamarin.Forms.ViewCell) は、[`ListView`](xref:Xamarin.Forms.ListView) または [`TableView`](xref:Xamarin.Forms.TableView) に追加できるセルで、これには開発者が定義したビューが含まれます。 この記事では、Xamarin.Forms の `ListView` コントロール内でホストされる、`ViewCell` 用のカスタム レンダラーを作成する方法を示します。 これにより、`ListView` のスクロール中に Xamarin.Forms のレイアウトの計算が繰り返し呼び出されることが回避されます。
 
+## <a name="customizing-a-webviewhybridwebviewmd"></a>[WebView のカスタマイズ](hybridwebview.md)
+
+Xamarin.Forms [`WebView`](xref:Xamarin.Forms.WebView) は、アプリに Web コンテンツと HTML コンテンツを表示するビューです。 この記事では、JavaScript から C# コードを呼び出せるように `WebView` を拡張するカスタム レンダラーを作成する方法について説明します。
+
 ## <a name="implementing-a-viewviewmd"></a>[ページの実装](view.md)
 
 Xamarin.Forms のカスタム ユーザー インターフェイス コントロールは、[`View`](xref:Xamarin.Forms.View) クラスから派生させる必要があります。これは画面上にレイアウトとコントロールを配置するために使われます。 この記事では、デバイスのカメラからビデオ ストリームのプレビューを表示するために使う、Xamarin.Forms のカスタム コントロール用のカスタム レンダラーを作成する方法を示します。
 
-## <a name="implementing-a-hybridwebviewhybridwebviewmd"></a>[HybridWebView の実装](hybridwebview.md)
-
-この記事では、`HybridWebView` カスタム コントロール用のカスタム レンダラーを作成する方法を示します。これにより、プラットフォームに固有の Web コントロールを強化して、JavaScript からの C# コードの呼び出しを実現する方法が示されます。
-
 ## <a name="implementing-a-video-playervideo-playerindexmd"></a>[ビデオ プレーヤーの実装](video-player/index.md)
 
 この記事では、レンダラーを記述して、Web のビデオ、アプリケーションのリソースとして埋め込まれたビデオ、またはユーザーのデバイス上のビデオ ライブラリに格納されているビデオを再生できる `VideoPlayer` のカスタム コントロールを実装する方法を示します。 メソッドの実装や、バインド可能な読み取り専用プロパティなど、いくつかの手法を示します。
-
-## <a name="related-links"></a>関連リンク
-
-- [エフェクト](~/xamarin-forms/app-fundamentals/effects/index.md)

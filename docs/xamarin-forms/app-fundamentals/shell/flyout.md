@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2019
-ms.openlocfilehash: eaa29138f91fb8215e2c7c4e651baaf8e311f713
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: c7ddcf443e3834e6c9e9518779a016d69ad7e204
+ms.sourcegitcommit: 18891db12c9d47224326af5753eccad8a904a188
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69889201"
+ms.lasthandoff: 11/24/2019
+ms.locfileid: "74451808"
 ---
 # <a name="xamarinforms-shell-flyout"></a>Xamarin.Forms シェルのポップアップ
 
@@ -20,7 +20,7 @@ ms.locfileid: "69889201"
 
 ポップアップは、シェル アプリケーションのルート メニューであり、アイコンから、または画面の横からスワイプして、アクセスすることが可能です。 ポップアップは、オプションのヘッダー、ポップアップ項目、およびオプションのメニュー項目から構成されています。
 
-![シェルの注釈付きポップアップのスクリーンショット](flyout-images/flyout-annotated.png "注釈付きポップアップ")
+![シェルの注釈付きポップアップのスクリーンショット](flyout-images/flyout-annotated.png "注釈付きフライアウト")
 
 ポップアップの背景色は、必要に応じて、バインド可能なプロパティ `Shell.FlyoutBackgroundColor` を使って [`Color`](xref:Xamarin.Forms.Color) に設定することができます。 このプロパティはカスケード スタイル シート (CSS) から設定することもできます。 詳しくは、「[Xamarin.Forms シェル固有のプロパティ](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties)」をご覧ください。
 
@@ -93,7 +93,7 @@ Shell.Current.FlyoutIsPresented = false;
 
 これにより、次のポップアップ ヘッダーが得られます。
 
-![ポップアップ ヘッダーのスクリーンショット](flyout-images/flyout-header.png "ポップアップ ヘッダー")
+![ポップアップ ヘッダーのスクリーンショット](flyout-images/flyout-header.png "ポップアップのヘッダー")
 
 または、`Shell.FlyoutHeaderTemplate` プロパティを [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) に設定することでもポップアップ ヘッダーの外観を定義できます。
 
@@ -331,10 +331,73 @@ Shell.Current.FlyoutIsPresented = false;
 
 この例では、各 `FlyoutItem` オブジェクトのタイトルを斜体で表示します。
 
-[![iOS と Android でのテンプレート化された FlyoutItem オブジェクトのスクリーンショット](flyout-images/flyoutitem-templated.png "シェルのテンプレート化された FlyoutItem オブジェクト")](flyout-images/flyoutitem-templated-large.png#lightbox "シェルのテンプレート化された FlyoutItem オブジェクト")
+[![iOS と Android でのテンプレート化された FlyoutItem オブジェクトのスクリーンショット](flyout-images/flyoutitem-templated.png "シェル テンプレート化された FlyoutItem オブジェクト")](flyout-images/flyoutitem-templated-large.png#lightbox "シェル テンプレート化された FlyoutItem オブジェクト")
+
+
+`Shell.ItemTemplate` は添付プロパティであるため、さまざまなテンプレートを特定の `FlyoutItem` オブジェクトに添付できます。
 
 > [!NOTE]
 > シェルには、`ItemTemplate` の [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) に対する `Title` と `FlyoutIcon` プロパティが用意されています。
+
+
+### <a name="default-template-for-flyoutitems-and-menuitems"></a>FlyoutItem と MenuItem の既定のテンプレート
+シェルでは、既定の実装に対して次のテンプレートが内部的に使用されます。 既存のレイアウトを微調整するだけの場合、これは最適な出発点です。 また、ポップアップ項目の Visual State Manager 機能も示しています。 これと同じテンプレートを、MenuItem にも使用できます
+
+```xaml
+<DataTemplate x:Key="FlyoutTemplates">
+    <Grid HeightRequest="{x:OnPlatform Android=50}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                    </VisualState>
+                    <VisualState x:Name="Selected">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="#F2F2F2" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </VisualStateManager.VisualStateGroups>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="{x:OnPlatform Android=54, iOS=50}"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Image Source="{Binding FlyoutIcon}"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            HeightRequest="{x:OnPlatform Android=24, iOS=22}"
+            WidthRequest="{x:OnPlatform Android=24, iOS=22}">
+        </Image>
+        <Label VerticalOptions="Center"
+                Text="{Binding Title}"
+                FontSize="{x:OnPlatform Android=14, iOS=Small}"
+                FontAttributes="Bold" Grid.Column="1">
+            <Label.TextColor>
+                <OnPlatform x:TypeArguments="Color">
+                    <OnPlatform.Platforms>
+                        <On Platform="Android" Value="#D2000000" />
+                    </OnPlatform.Platforms>
+                </OnPlatform>
+            </Label.TextColor>
+            <Label.Margin>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <OnPlatform.Platforms>
+                        <On Platform="Android" Value="20, 0, 0, 0" />
+                    </OnPlatform.Platforms>
+                </OnPlatform>
+            </Label.Margin>
+            <Label.FontFamily>
+                <OnPlatform x:TypeArguments="x:String">
+                    <OnPlatform.Platforms>
+                        <On Platform="Android" Value="sans-serif-medium" />
+                    </OnPlatform.Platforms>
+                </OnPlatform>
+            </Label.FontFamily>
+        </Label>
+    </Grid>
+</DataTemplate>
+```
 
 ## <a name="flyoutitem-tab-order"></a>FlyoutItem のタブ オーダー
 
@@ -446,10 +509,10 @@ Shell.Current.CurrentItem = aboutItem;
 
 この例では、シェルレベルの `MenuItemTemplate` を各 `MenuItem` オブジェクトに添付し、各 `MenuItem` オブジェクトのタイトルを斜体で表示します。
 
-[![iOS と Android でのテンプレート化された MenuItem オブジェクトのスクリーンショット](flyout-images/menuitem-templated.png "シェルのテンプレート化された MenuItem オブジェクト")](flyout-images/menuitem-templated-large.png#lightbox "シェルのテンプレート化された MenuItem オブジェクト")
+[![iOS と Android でのテンプレート化された MenuItem オブジェクトのスクリーンショット](flyout-images/menuitem-templated.png "シェル テンプレート化された MenuItem オブジェクト")](flyout-images/menuitem-templated-large.png#lightbox "シェル テンプレート化された MenuItem オブジェクト")
 
 > [!NOTE]
-> シェルには、`MenuItemTemplate` の [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) に対する [`Text`](xref:Xamarin.Forms.MenuItem.Text) と [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource) プロパティが用意されています。`
+> シェルには、`MenuItemTemplate` の [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) に対する [`Text`](xref:Xamarin.Forms.MenuItem.Text) と [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource) プロパティが用意されています。 また、`Text` の代わりに `Title` を使用し、`IconImageSource` の代わりに `Icon` を使用することもできます。このようにすると、メニュー項目とポップアップ項目に同じテンプレートを再利用できます
 
 `Shell.MenuItemTemplate` は添付プロパティであるため、さまざまなテンプレートを特定の `MenuItem` オブジェクトに添付できます。
 
@@ -488,6 +551,10 @@ Shell.Current.CurrentItem = aboutItem;
     </MenuItem>
 </Shell>
 ```
+
+
+> [!NOTE]
+> [ポップアップ項目](#default-template-for-flyoutitems-and-menuitems)に使用されるのと同じテンプレートを、メニュー項目にも使用できます。
 
 この例では、シェルレベルの `MenuItemTemplate` を最初の `MenuItem` オブジェクトに添付し、インライン `MenuItemTemplate` を 2 番目の `MenuItem` に添付しています。
 
