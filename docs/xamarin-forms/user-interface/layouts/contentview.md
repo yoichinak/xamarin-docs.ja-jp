@@ -7,63 +7,63 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 08/14/2019
-ms.openlocfilehash: 86e92ee5293b4c9ed902f1c8d9858e06db1aa458
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.openlocfilehash: 69f3311834fd438af97b3d2fa527572f02d2b0cb
+ms.sourcegitcommit: fa2898d95b35fcee05503f3829351ba5a7d4a44d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065510"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74955080"
 ---
 # <a name="xamarinforms-contentview"></a>Xamarin. Forms ContentView
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/)
 
-Xamarin [`ContentView`](xref:Xamarin.Forms.ContentView)クラスは、単一の`Layout`子要素を格納する型であり、通常は、カスタムの再利用可能なコントロールを作成するために使用されます。 クラス`ContentView`は、から[`TemplatedView`](xref:Xamarin.Forms.TemplatedView)継承されます。 この記事および関連するサンプルでは、 `CardView` `ContentView`クラスに基づいてカスタムコントロールを作成する方法について説明します。
+Xamarin [`ContentView`](xref:Xamarin.Forms.ContentView)クラスは、単一の子要素を含む型の `Layout` であり、通常は、カスタムの再利用可能なコントロールを作成するために使用されます。 `ContentView` クラスは[`TemplatedView`](xref:Xamarin.Forms.TemplatedView)から継承されます。 この記事および関連するサンプルでは、`ContentView` クラスに基づいてカスタム `CardView` コントロールを作成する方法について説明します。
 
-次のスクリーンショットは`CardView` 、 `ContentView`クラスから派生したコントロールを示しています。
+次のスクリーンショットは、`ContentView` クラスから派生した `CardView` コントロールを示しています。
 
 [![CardView サンプルアプリケーションのスクリーンショット](contentview-images/cardview-list-cropped.png)](contentview-images/cardview-list.png#lightbox)
 
-クラス`ContentView`は、1つのプロパティを定義します。
+`ContentView` クラスは、1つのプロパティを定義します。
 
-* [`Content`](xref:Xamarin.Forms.ContentView.Content)`View`はオブジェクトです。 このプロパティは、データバインディング[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)のターゲットとして使用できるように、オブジェクトによってサポートされます。
+* [`Content`](xref:Xamarin.Forms.ContentView.Content)は `View` オブジェクトです。 このプロパティは、データバインディングのターゲットにできるように、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)オブジェクトによってサポートされます。
 
-また`ContentView` 、は、 `TemplatedView`クラスからプロパティを継承します。
+`ContentView` は、`TemplatedView` クラスからもプロパティを継承します。
 
-* [`ControlTemplate`](xref:Xamarin.Forms.TemplatedView.ControlTemplate)は、 `ControlTemplate`コントロールの外観を定義またはオーバーライドできるです。
+* [`ControlTemplate`](xref:Xamarin.Forms.TemplatedView.ControlTemplate)は、コントロールの外観を定義またはオーバーライドできる `ControlTemplate` です。
 
-プロパティの`ControlTemplate`詳細については、「 [ControlTemplate を使用して外観をカスタマイズする](#customize-appearance-with-a-controltemplate)」を参照してください。
+`ControlTemplate` プロパティの詳細については、「 [ControlTemplate を使用して外観をカスタマイズする](#customize-appearance-with-a-controltemplate)」を参照してください。
 
 ## <a name="create-a-custom-control"></a>カスタムコントロールを作成する
 
-クラス`ContentView`は、単独ではほとんど機能を提供しませんが、カスタムコントロールを作成するために使用できます。 サンプルプロジェクトでは、 `CardView`画像、タイトル、および説明をカードのようなレイアウトで表示する UI 要素を定義します。
+`ContentView` クラスは、それ自体ではほとんど機能を提供しませんが、カスタムコントロールを作成するために使用できます。 サンプルプロジェクトでは、`CardView` コントロールが定義されています。これは、画像、タイトル、説明をカードのようなレイアウトで表示する UI 要素です。
 
 カスタムコントロールを作成するには、次の手順を実行します。
 
-1. Visual Studio 2019 でテンプレートを`ContentView`使用して、新しいクラスを作成します。
+1. Visual Studio 2019 の `ContentView` テンプレートを使用して、新しいクラスを作成します。
 1. 新しいカスタムコントロールの分離コードファイルで、一意のプロパティまたはイベントを定義します。
 1. カスタムコントロールの UI を作成します。
 
 > [!NOTE]
-> XAML ではなくコードで定義されたレイアウトを持つカスタムコントロールを作成することができます。 わかりやすくするために、サンプルアプリケーションでは`CardView` 、XAML レイアウトを持つ1つのクラスのみを定義します。 ただし、サンプルアプリケーションには、コード内でカスタムコントロールを使用するプロセスを示す**Cardviewcodepage**クラスが含まれています。
+> XAML ではなくコードで定義されたレイアウトを持つカスタムコントロールを作成することができます。 わかりやすくするために、サンプルアプリケーションでは、XAML レイアウトを持つ単一の `CardView` クラスのみを定義しています。 ただし、サンプルアプリケーションには、コード内でカスタムコントロールを使用するプロセスを示す**Cardviewcodepage**クラスが含まれています。
 
 ### <a name="create-code-behind-properties"></a>分離コードプロパティの作成
 
-カスタム`CardView`コントロールは、次のプロパティを定義します。
+`CardView` カスタムコントロールは、次のプロパティを定義します。
 
-* `CardTitle`: カードに表示されるタイトルを表すオブジェクト。`string`
-* `CardDescription`: カードに表示される説明を表すオブジェクト。`string`
-* `IconImageSource`: カードに表示されるイメージを表すオブジェクト。`ImageSource`
-* `IconBackgroundColor`: カードに表示されるイメージの背景色を表すオブジェクト。`Color`
-* `BorderColor`: カードの境界線、画像の境界線、および区分線の色を表すオブジェクト。`Color`
-* `CardColor`: カードの背景色を表すオブジェクト。`Color`
+* `CardTitle`: カードに表示されるタイトルを表す `string` オブジェクト。
+* `CardDescription`: カードに表示される説明を表す `string` オブジェクト。
+* `IconImageSource`: カードに表示されるイメージを表す `ImageSource` オブジェクト。
+* `IconBackgroundColor`: カードに表示されるイメージの背景色を表す `Color` オブジェクト。
+* `BorderColor`: カードの境界線、画像の境界線、および区分線の色を表す `Color` オブジェクト。
+* `CardColor`: カードの背景色を表す `Color` オブジェクト。
 
 > [!NOTE]
-> プロパティ`BorderColor`は、デモンストレーションの目的で複数の項目に影響します。 このプロパティは、必要に応じて3つのプロパティに分けることができます。
+> `BorderColor` プロパティは、デモンストレーションの目的で複数の項目に影響します。 このプロパティは、必要に応じて3つのプロパティに分けることができます。
 
-各プロパティは、 `BindableProperty`インスタンスによってサポートされます。 バッキング`BindableProperty`では、MVVM パターンを使用して、各プロパティのスタイル設定とバインドを行うことができます。
+各プロパティは、`BindableProperty` インスタンスによってサポートされます。 バッキング `BindableProperty` では、MVVM パターンを使用して、各プロパティのスタイル設定とバインドを行うことができます。
 
-次の例は、バッキング`BindableProperty`を作成する方法を示しています。
+次の例は、バッキング `BindableProperty`を作成する方法を示しています。
 
 ```csharp
 public static readonly BindableProperty CardTitleProperty = BindableProperty.Create(
@@ -73,7 +73,7 @@ public static readonly BindableProperty CardTitleProperty = BindableProperty.Cre
     string.Empty);      // the default value for the property
 ```
 
-カスタムプロパティは、メソッド`GetValue`と`SetValue`メソッドを使用して、 `BindableProperty`オブジェクトの値を取得および設定します。
+カスタムプロパティは、`GetValue` メソッドと `SetValue` メソッドを使用して、`BindableProperty` オブジェクトの値を取得および設定します。
 
 ```csharp
 public string CardTitle
@@ -83,11 +83,11 @@ public string CardTitle
 }
 ```
 
-`BindableProperty`オブジェクトの詳細については、「バインド可能な[プロパティ](~/xamarin-forms/xaml/bindable-properties.md)」を参照してください。
+`BindableProperty` オブジェクトの詳細については、「バインド可能な[プロパティ](~/xamarin-forms/xaml/bindable-properties.md)」を参照してください。
 
 ### <a name="define-ui"></a>UI の定義
 
-カスタムコントロール UI では、 `ContentView` `CardView`コントロールのルート要素としてを使用します。 XAML の`CardView`例を次に示します。
+カスタムコントロール UI では、`CardView` コントロールのルート要素として `ContentView` が使用されます。 `CardView` XAML の例を次に示します。
 
 ```XAML
 <ContentView ...
@@ -99,37 +99,40 @@ public string CardTitle
             ...>
         <Grid>
             ...
-            <Frame BorderColor="{Binding BorderColor}"
-                   BackgroundColor="{Binding IconBackgroundColor}"
+            <Frame BorderColor="{Binding BorderColor, FallbackValue='Black'}"
+                   BackgroundColor="{Binding IconBackgroundColor, FallbackValue='Grey'}"
                    ...>
                 <Image Source="{Binding IconImageSource}"
                        .. />
             </Frame>
-            <Label Text="{Binding CardTitle}"
+            <Label Text="{Binding CardTitle, FallbackValue='Card Title'}"
                    ... />
-            <BoxView BackgroundColor="{Binding BorderColor}"
+            <BoxView BackgroundColor="{Binding BorderColor, FallbackValue='Black'}"
                      ... />
-            <Label Text="{Binding CardDescription}"
+            <Label Text="{Binding CardDescription, FallbackValue='Card description text.'}"
                    ... />
         </Grid>
     </Frame>
 </ContentView>
 ```
 
-要素`ContentView`は`x:Name` 、プロパティをこのに設定します。**これ**を使用して、 `CardView`インスタンスにバインドされたオブジェクトにアクセスできます。 プロパティのバインドセットの要素は、バインドされたオブジェクトで定義されている値に設定されます。
+`ContentView` 要素は、`x:Name` プロパティをこのに設定します。**この**プロパティを使用して、`CardView` インスタンスにバインドされたオブジェクトにアクセスできます。 プロパティのバインドセットの要素は、バインドされたオブジェクトで定義されている値に設定されます。
 
 データ バインディングの詳細については、「[Xamarin.Forms Data Binding](~/xamarin-forms/app-fundamentals/data-binding/index.md)」 (Xamarin.Forms のデータ バインディング) を参照してください。
 
+> [!NOTE]
+> `FallbackValue` プロパティは、バインディングが `null`場合に既定値を提供します。 これにより、Visual Studio の[XAML プレビューアー](~/xamarin-forms/xaml/xaml-previewer/index.md)で `CardView` コントロールを表示することもできます。
+
 ## <a name="instantiate-a-custom-control"></a>カスタムコントロールのインスタンス化
 
-カスタムコントロールの名前空間への参照は、カスタムコントロールをインスタンス化するページに追加する必要があります。 次の例は、XAML の`ContentPage`インスタンスに追加された**コントロール**と呼ばれる名前空間参照を示しています。
+カスタムコントロールの名前空間への参照は、カスタムコントロールをインスタンス化するページに追加する必要があります。 次の例は、XAML の `ContentPage` インスタンスに追加された**コントロール**と呼ばれる名前空間参照を示しています。
 
 ```xaml
 <ContentPage ...
              xmlns:controls="clr-namespace:CardViewDemo.Controls" >
 ```
 
-参照が追加されると、 `CardView`は XAML でインスタンス化でき、そのプロパティは次のように定義されます。
+参照が追加されると、XAML で `CardView` をインスタンス化し、そのプロパティを定義できます。
 
 ```xaml
 <controls:CardView BorderColor="DarkGray"
@@ -139,7 +142,7 @@ public string CardTitle
                    IconImageSource="user.png"/>
 ```
 
-は`CardView` 、コードでインスタンス化することもできます。
+`CardView` は、コードでインスタンス化することもできます。
 
 ```csharp
 CardView card = new CardView
@@ -154,9 +157,9 @@ CardView card = new CardView
 
 ## <a name="customize-appearance-with-a-controltemplate"></a>ControlTemplate を使用して外観をカスタマイズする
 
-`ContentView`クラスから派生したカスタムコントロールは、XAML やコードを使用して外観を定義したり、外観をまったく定義したりすることはできません。 外観がどのように定義され`ControlTemplate`ているかに関係なく、オブジェクトはカスタムレイアウトで外観をオーバーライドできます。
+`ContentView` クラスから派生したカスタムコントロールは、XAML やコードを使用して外観を定義したり、外観をまったく定義したりすることはできません。 外観がどのように定義されているかに関係なく、`ControlTemplate` オブジェクトはカスタムレイアウトで外観をオーバーライドできます。
 
-レイアウト`CardView`によっては、一部のユースケースに対して多くの領域が占有される場合があります。 で`ControlTemplate`は、レイアウト`CardView`をオーバーライドして、よりコンパクトなビューを提供できます。これは、要約されたリストに適しています。
+`CardView` レイアウトでは、一部のユースケースに対して多くの領域が占有される可能性があります。 `ControlTemplate` では、`CardView` レイアウトをオーバーライドして、よりコンパクトなビューを提供できます。これは、要約されたリストに適しています。
 
 ```xaml
 <ContentPage.Resources>
@@ -191,21 +194,21 @@ CardView card = new CardView
 </ContentPage.Resources>
 ```
 
-のデータバインディングで`ControlTemplate`は、 `TemplateBinding`マークアップ拡張機能を使用してバインディングを指定します。 その`ControlTemplate`後、プロパティの`x:Key`値を使用して、定義された ControlTemplate オブジェクトにプロパティを設定できます。 次の例は、 `ControlTemplate` `CardView`インスタンスに設定されたプロパティを示しています。
+`ControlTemplate` でのデータバインディングでは、`TemplateBinding` マークアップ拡張機能を使用してバインディングを指定します。 `ControlTemplate` プロパティは、`x:Key` 値を使用して、定義された ControlTemplate オブジェクトに設定できます。 次の例は、`CardView` インスタンスに設定された `ControlTemplate` プロパティを示しています。
 
 ```xaml
 <controls:CardView ControlTemplate="{StaticResource CardViewCompressed}"/>
 ```
 
-次のスクリーンショットは、 `CardView` `ControlTemplate`がオーバーライド`CardView`された標準のインスタンスを示しています。
+次のスクリーンショットは、標準の `CardView` インスタンスと、`ControlTemplate` がオーバーライドされた `CardView` を示しています。
 
 [![CardView ControlTemplate スクリーンショット](contentview-images/cardview-controltemplates-cropped.png)](contentview-images/cardview-controltemplates.png#lightbox)
 
-コントロールテンプレートの詳細については、「 [Xamarin. フォームコントロールテンプレート](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md)」を参照してください。
+コントロール テンプレートの詳細については、「[Xamarin.Forms のコントロール テンプレート](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 
 * [ContentView サンプルアプリケーション](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/)
 * [Xamarin. フォームデータバインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 * [バインド](~/xamarin-forms/xaml/bindable-properties.md)可能なプロパティ。
-* [Xamarin. フォームコントロールテンプレート](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md)
+* [Xamarin.Forms のコントロール テンプレート](~/xamarin-forms/app-fundamentals/templates/control-templates/index.md)
