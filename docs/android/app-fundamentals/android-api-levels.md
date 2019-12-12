@@ -47,7 +47,7 @@ Xamarin Android では、次の3つの Android API レベルのプロジェク�
 
 [ターゲットのフレームワークバージョンに設定されている最小およびターゲットの Android バージョン![](android-api-levels-images/vs-manifest-defaults-sml.png)](android-api-levels-images/vs-manifest-defaults.png#lightbox)
 
-以前のバージョンの Android との下位互換性を維持するには、アプリでサポートする最も古いバージョンの android を対象とするように**最小 android バージョン**を設定します。 (API レベル14は、 [Google Play services および焼討 base サポート](https://android-developers.googleblog.com/2016/11/google-play-services-and-firebase-for-android-will-support-api-level-14-at-minimum.html)に必要な最小 api レベルです)。次の構成例では、api レベル14から API レベル25までの Android バージョンがサポートされています。
+以前のバージョンの Android との下位互換性を維持するには、アプリでサポートする最も古いバージョンの android を対象とするように**最小 android バージョン**を設定します。 (API レベル14は、 [Google Play services および Firebase サポート](https://android-developers.googleblog.com/2016/11/google-play-services-and-firebase-for-android-will-support-api-level-14-at-minimum.html)に必要な最小 api レベルです)。次の構成例では、api レベル14から API レベル25までの Android バージョンがサポートされています。
 
 [API レベル 25 Nougat を使用してコンパイル![、最小 Android バージョンを API レベル14に設定します。](android-api-levels-images/vs-minimum-sml.png)](android-api-levels-images/vs-minimum.png#lightbox)
 
