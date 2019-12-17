@@ -140,7 +140,7 @@ public static class AppConstants
 
 ### <a name="configure-android-manifest"></a>Android マニフェストを構成する
 
-`application` 要素内の `receiver` 要素を使用すると、アプリは焼討ベースと通信できます。 `uses-permission` の要素を使用すると、アプリはメッセージを処理し、Azure Notification Hub に登録できます。 完全な**Androidmanifest .xml**は、次の例のようになります。
+`application` 要素内の `receiver` 要素を使用すると、アプリは Firebase と通信できます。 `uses-permission` の要素を使用すると、アプリはメッセージを処理し、Azure Notification Hub に登録できます。 完全な**Androidmanifest .xml**は、次の例のようになります。
 
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="YOUR_PACKAGE_NAME" android:installLocation="auto">
