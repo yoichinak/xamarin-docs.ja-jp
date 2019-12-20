@@ -27,7 +27,7 @@ Xamarin.Forms シェル アプリケーションを作成するプロセスは�
 
 ## <a name="subclass-the-shell-class"></a>Shell クラスをサブクラス化する
 
-Xamarin.Forms シェル アプリケーションを作成する最初の手順は、`Shell` クラスがサブクラス化された XAML ファイルを共有コード プロジェクトに追加することです。 このファイルには任意の名前を付けることができますが、**AppShell** がお勧めです。 次のコード例は、新しく作成した **AppShell.xaml** ファイルを示しています。
+Xamarin.Forms シェル アプリケーションを作成する最初の手順は、`Shell` クラスをサブクラス化した XAML ファイルを共有コード プロジェクトに追加することです。 このファイルには任意の名前を付けることができますが、**AppShell** がお勧めです。 次のコード例は、新しく作成した **AppShell.xaml** ファイルを示しています。
 
 ```xaml
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
@@ -126,11 +126,11 @@ Xamarin.Forms シェル アプリケーションを作成する最後の手順�
 </Shell>
 ```
 
-実行すると、この XAML により `CatsPage` が表示されます。それは、これがサブクラス化された `Shell` クラスで宣言されたコンテンツの最初の項目であるためです。
+実行すると、この XAML により `CatsPage`  が表示されます。サブクラス化された `Shell` クラスで宣言されたコンテンツの最初の項目であるためです。
 
 [![iOS および Android 上での、シェル アプリのスクリーン ショット](create-images/cats.png "シェル アプリ")](create-images/cats-large.png#lightbox "シェル アプリ")
 
-ハンバーガーのアイコンを押すか、左からスワイプして、ポップアップを表示します。
+ハンバーガー アイコンを押すか、左からスワイプして、ポップアップを表示します。
 
 [![iOS および Android 上での、シェル ポップアップのスクリーンショット](create-images/flyout-reduced.png "シェル ポップアップ")](create-images/flyout-reduced-large.png#lightbox "シェル ポップアップ")
 
