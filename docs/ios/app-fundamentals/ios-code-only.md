@@ -457,7 +457,7 @@ foreach(var subview in View.Subviews)
 }
 ```
 
-ただし、これは、すべてのビューが `UIView` として返される `UIView` ので、親ビュー自体に追加されるオブジェクトが `UIView`を継承するので、これは機能しません。
+ただし、反復されるビューが  `UIView` の場合、親ビュー自体に追加されたオブジェクトが `UIView` を継承するので、すべてのビューが `UIView` として返されるため、これは機能しません。
 
 ## <a name="handling-rotation"></a>回転の処理
 
