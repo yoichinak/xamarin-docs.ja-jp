@@ -48,9 +48,7 @@ Xamarin では、バインドを使用してアプリにネイティブライブ
 
 ## <a name="macios-native-typesnativetypesmd"></a>[Mac/iOS ネイティブ型](nativetypes.md)
 
-
-C# と F# から透過的に 32 と 64 のビットコードをサポートするために、新しいデータ型を導入しています。 詳細については、こちらを参照してください。
-
+C# と F# から透過的に 32 と 64 のビットコードをサポートするために、新しいデータ型を導入しています。   詳細については、こちらを参照してください。
 
 ## <a name="building-32-and-64-bit-apps32-and-64indexmd"></a>[32および64ビットアプリのビルド](32-and-64/index.md)
 
@@ -58,7 +56,7 @@ C# と F# から透過的に 32 と 64 のビットコードをサポートす�
 
 ## <a name="working-with-native-types-in-cross-platform-appsnative-types-cross-platformmd"></a>[クロスプラットフォーム アプリでのネイティブ型の使用](native-types-cross-platform.md)
 
-この記事では、Android や Windows Phone Os などの iOS 以外のデバイスでコードを共有するクロスプラットフォームアプリケーションで、新しい iOS Unified API ネイティブ型 (`nint`、`nuint`、`nfloat`) を使用する方法について説明します。
+この記事では、Android や Windows Phone OS などの iOS 以外のデバイスでコードを共有するクロスプラットフォームアプリケーションで、新しい iOS Unified API ネイティブ型 (`nint`、`nuint`、`nfloat`) を使用する方法について説明します。
 ネイティブ型を使用するタイミングについての洞察を提供し、新しい型をクロスプラットフォームコードと共に使用する必要がある場合に、いくつかの考えられる解決策を提供します。
 
 ## <a name="httpclient-stack-and-ssltls-implementation-selectorhttp-stackmd"></a>[HttpClient スタックと SSL/TLS の実装セレクター](http-stack.md)
