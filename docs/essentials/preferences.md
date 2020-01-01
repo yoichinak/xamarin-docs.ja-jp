@@ -89,7 +89,7 @@ iOS デバイスに値を格納するには、[NSUserDefaults](https://docs.micr
 
 ## <a name="persistence"></a>永続性
 
-アプリケーションをアンインストールすると、すべての "_ユーザー設定_" が削除されます。 これには例外が 1 つあり、Android 6.0 (API レベル 23) 以降で実行されていて[__自動バックアップ__](https://developer.android.com/guide/topics/data/autobackup)を使用しているアプリの場合です。 この機能は既定で有効にされて、__共有ユーザー設定__などのアプリ データを保持し、**Preferences** API はそれを利用します。 この機能は、Google の[ドキュメント](https://developer.android.com/guide/topics/data/autobackup)に従って無効にできます。
+アプリケーションをアンインストールすると、すべての "_ユーザー設定_" が削除されます。 これには例外が 1 つあり、Android 6.0 (API レベル 23) 以降で実行されていて[__自動バックアップ__](https://developer.android.com/guide/topics/data/autobackup)を使用しているアプリの場合です。 この機能は既定で有効にされて、**共有ユーザー設定**などのアプリ データを保持し、**Preferences** API はそれを利用します。 この機能は、Google の[ドキュメント](https://developer.android.com/guide/topics/data/autobackup)に従って無効にできます。
 
 ## <a name="limitations"></a>制限事項
 
