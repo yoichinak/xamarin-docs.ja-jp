@@ -17,11 +17,11 @@ ms.locfileid: "73015026"
 
 _Unified API を使用するように既存の Xamarin iOS アプリを更新するには、次の手順に従います。_
 
-Unified API を使用するように既存のアプリを更新するには、アプリケーションコードで使用される名前空間と Api に加えて、プロジェクトファイル自体を変更する必要があります。
+Unified API を使用するように既存のアプリを更新するには、アプリケーションコードで使用される名前空間と API に加えて、プロジェクトファイル自体を変更する必要があります。
 
 ## <a name="the-road-to-64-bits"></a>64ビットへの道路
 
-Xamarin iOS モバイルアプリケーションから64ビットのデバイスアーキテクチャをサポートするには、統合された新しい Api が必要です。 2015年2月1日の時点で、iTunes App Store への新しいアプリの送信はすべて64ビットアーキテクチャをサポートしている必要があります。
+Xamarin.iOS モバイルアプリケーションから64ビットのデバイスアーキテクチャをサポートするには、統合された新しい API が必要です。 2015年2月1日の時点で、iTunes App Store への新しいアプリの送信はすべて64ビットアーキテクチャをサポートしている必要があります。
 
 Xamarin には、Visual Studio for Mac と Visual Studio の両方のツールが用意されており、Classic API から Unified API への移行プロセスを自動化できます。また、プロジェクトファイルを手動で変換することもできます。 自動ツールを使用することを強くお勧めしますが、この記事では両方の方法について説明します。
 
@@ -39,7 +39,7 @@ Xamarin には、Visual Studio for Mac と Visual Studio の両方のツール�
 
 ![](updating-ios-apps-images/beta-tool2.png "Agree to this warning before the automated migration will run")
 
-このツールでは、次に示す「**手動で更新**する」セクションで説明されているすべての手順が基本的に自動化されており、既存の Xamarin iOS プロジェクトを Unified API に変換するための推奨される方法です。
+このツールでは、次に示す「**手動で更新**する」セクションで説明されているすべての手順が基本的に自動化されており、既存の Xamarin.iOS プロジェクトを Unified API に変換するための推奨される方法です。
 
 ## <a name="steps-to-update-manually"></a>手動で更新するための手順
 
@@ -104,7 +104,7 @@ Unified API サポートを利用するために NuGet に変更が加えられ�
 
 ## <a name="enabling-64-bit-builds-of-xamarinios-apps"></a>Xamarin iOS アプリの64ビットビルドを有効にする
 
-Unified API に変換された Xamarin iOS モバイルアプリケーションでは、開発者は引き続き、アプリのオプションから64ビットコンピューター用のアプリケーションのビルドを有効にする必要があります。 64ビットビルドを有効にするための詳細な手順については、 [32/64 ビットプラットフォームに関する考慮事項](~/cross-platform/macios/32-and-64/index.md#enable-64)の**64 ビットビルドの有効化**に関するドキュメントを参照してください。
+Unified API に変換された Xamarin.iOS モバイルアプリケーションでは、開発者は引き続き、アプリのオプションから64ビットコンピューター用のアプリケーションのビルドを有効にする必要があります。 64ビットビルドを有効にするための詳細な手順については、 [32/64 ビットプラットフォームに関する考慮事項](~/cross-platform/macios/32-and-64/index.md#enable-64)の**64 ビットビルドの有効化**に関するドキュメントを参照してください。
 
 ## <a name="finishing-up"></a>終了しています
 
