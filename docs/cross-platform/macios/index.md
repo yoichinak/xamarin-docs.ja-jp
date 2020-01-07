@@ -41,8 +41,8 @@ IOS プロジェクトと Mac プロジェクトの Unified API では、同じ�
 Xamarin では、バインドを使用してアプリにネイティブライブラリを取り込むことができます。 このセクションの説明は次のとおりです。
 
 - バインディングのしくみ
-- 目的の C コードを Xamarin に取り込むことができるバインドプロジェクトを手動でビルドする方法
-- **目標マジックペン**ツールを使用してプロセスを自動化する方法。
+- Objective-C のコードを Xamarin に取り込むことができるバインド プロジェクトを手動でビルドする方法
+- **Objective Sharpie** ツールを使用してプロセスを自動化する方法。
 
 ## <a name="native-referencesnative-referencesmd"></a>[ネイティブ参照](native-references.md)
 
