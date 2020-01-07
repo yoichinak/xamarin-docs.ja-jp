@@ -27,7 +27,7 @@ ms.locfileid: "73015022"
 
 1. 既存のコードのコンパイラ警告を修正します (特に、非推奨の API に関連するもの)。
 
-2. Visual Studio for Mac するには、に組み込まれている移行ツールを使用して、プロジェクトファイルと名前空間を更新します。
+2. Visual Studio for Mac に組み込まれている移行ツールを使用して、プロジェクト ファイルと名前空間を更新します。
 
 3. 新しい[64 型](~/cross-platform/macios/nativetypes.md)および変更された[その他の API](~/cross-platform/macios/unified/overview.md#deprecated-typos)に関連する残りのコンパイラエラーを修正しました。 必要になる可能性がある手動更新の詳細については、[これらのヒント](~/cross-platform/macios/unified/updating-tips.md)を参照してください。
 
@@ -51,13 +51,13 @@ ms.locfileid: "73015022"
 
 ## <a name="update-bindings-to-the-unified-api"></a>バインドを Unified API に更新します。
 
-目的の C ライブラリへのバインドを作成したお客様は、バインドプロジェクトを更新して、基になる API の変更を反映する必要があります (一部の型は現在、64ビットになります)。
-次の手順に従っ[て、Unified API をサポートするように既存のバインドプロジェクトを更新](~/cross-platform/macios/unified/update-binding.md)します。
+Objective-C ライブラリへのバインドを作成したお客様は、バインド プロジェクトを更新して、基になる API の変更を反映する必要があります (一部の型は現在、64 ビットになります)。
+次の手順に従って、[Unified API をサポートするように既存のバインド プロジェクトを更新](~/cross-platform/macios/unified/update-binding.md)します。
 
 ## <a name="related-links"></a>関連リンク
 
 - [IOS アプリの更新](~/cross-platform/macios/unified/updating-ios-apps.md)
-- [Mac アプリを更新しています](~/cross-platform/macios/unified/updating-mac-apps.md)
+- [既存の Mac アプリを更新しています](~/cross-platform/macios/unified/updating-mac-apps.md)
 - [Xamarin.Forms アプリの更新](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)
 - [バインドの更新](~/cross-platform/macios/unified/update-binding.md)
 - [ヒントの更新](~/cross-platform/macios/unified/updating-tips.md)
