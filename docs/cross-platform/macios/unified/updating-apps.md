@@ -18,8 +18,8 @@ ms.locfileid: "73015022"
 > [!IMPORTANT]
 > Unified API の前にある Xamarin Classic API は非推奨とされました。
 >
-> - Classic API (monotouch.dialog) をサポートする最新バージョンの Xamarin. iOS 9.10 がありました。
-> - Classic API は引き続き Xamarin. Mac でサポートされますが、更新されなくなりました。 非推奨とされているため、開発者はアプリケーションを Unified API に移行する必要があります。
+> - Classic API (monotouch.dialog) をサポートする最新バージョンの Xamarin.iOS 9.10 がありました。
+> - Classic API は引き続き Xamarin.Mac でサポートされますが、更新されなくなりました。 非推奨とされているため、開発者はアプリケーションを Unified API に移行する必要があります。
 
 ## <a name="how-to-update-your-apps"></a>アプリを更新する方法
 
@@ -39,11 +39,11 @@ ms.locfileid: "73015022"
 
 ### <a name="xamarinmac-appscross-platformmaciosunifiedupdating-mac-appsmd"></a>[Xamarin.Mac アプリ](~/cross-platform/macios/unified/updating-mac-apps.md)
 
-既存の Xamarin. Mac アプリは、Visual Studio for Mac に組み込まれている自動移行ツールを使用して、Unified API に更新できます。 次の[手順](~/cross-platform/macios/unified/updating-mac-apps.md)と[ヒント](~/cross-platform/macios/unified/updating-tips.md)で説明するように、いくつかの追加の修正が必要になる場合があります。
+既存の Xamarin.Mac アプリは、Visual Studio for Mac に組み込まれている自動移行ツールを使用して、Unified API に更新できます。 次の[手順](~/cross-platform/macios/unified/updating-mac-apps.md)と[ヒント](~/cross-platform/macios/unified/updating-tips.md)で説明するように、いくつかの追加の修正が必要になる場合があります。
 
 ### <a name="xamarinforms-appscross-platformmaciosunifiedupdating-xamarin-forms-appsmd"></a>[Xamarin.Forms アプリ](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)
 
-次の手順に従って、Unified API を使用するように既存の Xamarin. Forms ソリューションを iOS プロジェクトに更新します。 Unified API サポートは、Xamarin. Forms 1.3 以降でのみ使用できます。この手順では、Xamarin. Forms アプリをバージョン1.3 に更新する方法についても説明[し](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)ます。 これらの[ヒント](~/cross-platform/macios/unified/updating-tips.md)は、カスタムレンダラーまたは依存関係サービスのネイティブな iOS コードを更新するのに役立ちます。
+次の手順に従って、Unified API を使用するように既存の Xamarin.Forms ソリューションを iOS プロジェクトに更新します。Unified API サポートは、Xamarin.Forms 1.3 以降でのみ使用できます。[この手順](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)では、Xamarin.Forms アプリをバージョン 1.3 に更新する方法についても説明します。これらの[ヒント](~/cross-platform/macios/unified/updating-tips.md)は、カスタム レンダラーまたは依存関係サービスのネイティブ iOS コードを更新するのに役立ちます。
 
 ## <a name="working-with-native-types-in-cross-platform-appscross-platformmaciosnativetypesmd"></a>[クロスプラットフォーム アプリでのネイティブ型の使用](~/cross-platform/macios/nativetypes.md)
 
