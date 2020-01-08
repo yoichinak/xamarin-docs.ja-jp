@@ -15,7 +15,7 @@ ms.locfileid: "73015026"
 ---
 # <a name="updating-existing-ios-apps"></a>既存の iOS アプリの更新
 
-_Unified API を使用するように既存の Xamarin.iOS アプリを更新するには、次の手順に従います。_
+_Unified API を使用するように既存の Xamarin iOS アプリを更新するには、次の手順に従います。_
 
 Unified API を使用するように既存のアプリを更新するには、アプリケーションコードで使用される名前空間と API に加えて、プロジェクトファイル自体を変更する必要があります。
 
@@ -31,7 +31,7 @@ Xamarin には、Visual Studio for Mac と Visual Studio の両方のツール�
 
 ## <a name="automated-updating"></a>自動更新
 
-警告が修正されたら、Visual Studio for Mac または Visual Studio で既存の iOS プロジェクトを選択し、 **[プロジェクト]** メニューから **[Xamarin.iOS Unified API に移行]** を選択します。 (例:
+警告が修正されたら、Visual Studio for Mac または Visual Studio で既存の iOS プロジェクトを選択し、 **[プロジェクト]** メニューから **[Xamarin. IOS Unified API に移行]** を選択します。 (例:
 
 ![](updating-ios-apps-images/beta-tool1.png "Choose Migrate to Xamarin.iOS Unified API from the Project menu")
 
@@ -100,7 +100,7 @@ Unified API サポートを利用するために NuGet に変更が加えられ�
 この時間が経過するまでは、コンポーネントと同じように、プロジェクトに含まれているすべての NuGet パッケージを、 Unified API をサポートするバージョンに切り替え、後でクリーン ビルドを実行する必要があります。
 
 > [!IMPORTANT]
-> アプリケーションを Unified API に変換した後に、_"エラー 3 に 'monotouch.dll' と 'Xamarin.iOS.dll' の両方を同じ Xamarin.iOS プロジェクトに含めることはできません - 'Xamarin.iOS.dll' は明示的に参照されますが、'monotouch.dll' は 'xxx、Version=0.0.000、Culture=neutral、PublicKeyToken=null' によって参照されます" という形式のエラーが発生した場合、それは通常、Unified API に更新されていないコンポーネントまたは NuGet パッケージがプロジェクトにあることが原因です。既存のコンポーネントまたは NuGet を削除し、Unified API をサポートするバージョンに更新し、クリーン ビルドを実行する必要があります。
+> _"エラー3に ' monotouch.dialog ' と ' 0.0.000 ' の両方を同じ Xamarin に含めることはできません" という形式のエラーが発生した場合は、' monotouch.dialog ' が明示的に参照されていますが、' ' は ' xxx, Version =, Culture = によって参照されています。ニュートラル, PublicKeyToken = null ' "_ アプリケーションを統合 api に変換した後、通常は、Unified API に更新されていないコンポーネントまたは NuGet パッケージがプロジェクトにあることが原因です。 既存のコンポーネントまたは NuGet を削除し、統合された Api をサポートし、クリーンビルドを実行するバージョンに更新する必要があります。
 
 ## <a name="enabling-64-bit-builds-of-xamarinios-apps"></a>Xamarin iOS アプリの64ビットビルドを有効にする
 
@@ -108,7 +108,7 @@ Unified API に変換された Xamarin.iOS モバイルアプリケーション�
 
 ## <a name="finishing-up"></a>終了しています
 
-自動または手動のいずれかの方法を使用して、Xamarin.iOS アプリケーションを Classic API から Unified API に変換することを選択したかどうかにかかわらず、手動での介入が必要になるインスタンスがいくつかあります。既知の問題と回避策については「[コードを Unified API に更新する場合のヒント](~/cross-platform/macios/unified/updating-tips.md)」を参照してください。
+自動または手動のいずれかの方法を使用して、Xamarin.iOS アプリケーションを Classic API から Unified API に変換することを選択したかどうかにかかわらず、手動での介入が必要になるインスタンスがいくつかあります。 既知の問題と回避策については「[コードを Unified API に更新する場合のヒント](~/cross-platform/macios/unified/updating-tips.md)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 
