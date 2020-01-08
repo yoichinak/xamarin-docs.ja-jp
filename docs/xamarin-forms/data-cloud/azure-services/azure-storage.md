@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/28/2018
-ms.openlocfilehash: 3f3ff0b06fe23d724e04ac34108119932aa666ef
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 8d773abbca348d09d3359f09cbded22f6521fb7f
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649706"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487322"
 ---
 # <a name="store-and-access-data-in-azure-storage-from-xamarinforms"></a>Xamarin. フォームから Azure Storage のデータを格納してアクセスする
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
 
-_Azure Storage とは、非構造化、および構造化データの格納に使用できるスケーラブルなクラウド ストレージ ソリューションです。この記事では、Xamarin.Forms を使用して Azure Storage にテキストおよびバイナリ データを格納する方法と、データにアクセスする方法を示します。_
+_Azure Storage は、構造化されていない構造化データを格納するために使用できるスケーラブルなクラウドストレージソリューションです。この記事では、Xamarin を使用して Azure Storage にテキストとバイナリデータを格納する方法と、データにアクセスする方法について説明します。_
 
 Azure Storage では、4 つのストレージ サービスを提供します。
 
@@ -34,19 +34,22 @@ Azure Storage では、4 つのストレージ サービスを提供します。
 
 この記事と付属のサンプル アプリケーションでは、blob storage、およびそれらをダウンロードするイメージとテキスト ファイルのアップロードを示します。 さらに、これは、blob storage からファイルの一覧を取得して、ファイルの削除にも示します。
 
-Azure Storage の詳細については、[Storage の概要](https://azure.microsoft.com/documentation/articles/storage-introduction/)を参照してください。
+Azure Storage の詳細については、次を参照してください。 [Storage の概要](https://azure.microsoft.com/documentation/articles/storage-introduction/)します。
+
+> [!NOTE]
+> [Azure サブスクリプション](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)をお持ちでない場合は、開始する前に[無料アカウント](https://aka.ms/azfree-docs-mobileapps)を作成してください。
 
 ## <a name="introduction-to-blob-storage"></a>Blob Storage の概要
 
 Blob ストレージは、次の図に示されている 3 つのコンポーネントで構成されます。
 
-![](azure-storage-images/blob-storage.png "Blob Storage の概念")
+![](azure-storage-images/blob-storage.png "Blob Storage Concepts")
 
 Azure Storage にアクセスするでは、ストレージ アカウントを使用します。 ストレージ アカウントは、コンテナーの無制限の数を含めることができ、コンテナーがストレージ アカウントの容量の上限に達するまで、blob の無制限の数を格納します。
 
 Blob は、任意の種類とサイズのファイルです。 Azure Storage には、次の 3 つの異なる blob の種類がサポートされています。
 
-- ブロック blob はストリーミングとクラウド オブジェクトの格納用に最適化された、バックアップ、メディア ファイル、ドキュメントなどを格納するための適切な選択です。ブロック blob は最大 195 Gb のサイズを指定できます。
+- ブロック blob は、クラウドオブジェクトをストリーミングおよび格納するために最適化されており、バックアップ、メディアファイル、ドキュメントなどを格納するための最適な選択肢です。ブロック blob のサイズは最大で 195Gb Gb です。
 - 追加 blob はブロック blob に似ていますが、用に最適化されたログ記録などの操作を追加します。 追加 blob は最大 195 Gb のサイズを指定できます。
 - ページ blob は、頻繁に読み取り/書き込み操作用に最適化され、仮想マシン、およびそれらのディスクを格納するために通常使用されます。 ページ blob は最大 1 Tb のサイズを指定できます。
 
@@ -63,9 +66,9 @@ Azure Storage に格納されているすべてのオブジェクトには、一
 
 Xamarin.Forms アプリケーションに Azure Storage アカウントを統合するためのプロセスは次のとおりです。
 
-1. ストレージ アカウントを作成します。 詳細については、[ストレージ アカウントの作成](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/#create-a-storage-account)を参照してください。
+1. ストレージ アカウントを作成します。 詳細については、次を参照してください。[ストレージ アカウントの作成](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/#create-a-storage-account)です。
 1. 追加、 [Azure Storage Client Library](https://www.nuget.org/packages/WindowsAzure.Storage/) Xamarin.Forms アプリケーションにします。
-1. ストレージ接続文字列を構成します。 詳細については、[Azure Storage に接続する](#connecting)を参照してください。
+1. ストレージ接続文字列を構成します。 詳細については、次を参照してください。 [Azure Storage に接続する](#connecting)します。
 1. 追加`using`ディレクティブを`Microsoft.WindowsAzure.Storage`と`Microsoft.WindowsAzure.Storage.Blob`名前空間を Azure Storage にアクセスするクラス。
 
 <a name="connecting" />
@@ -92,7 +95,7 @@ Azure ストレージ エミュレーターでは、Azure blob、キュー、お
 UseDevelopmentStorage=true
 ```
 
-Azure ストレージ エミュレーターの詳細については、[開発およびテスト用の Azure ストレージ エミュレーターを使用して](https://azure.microsoft.com/documentation/articles/storage-use-emulator/)を参照してください。
+Azure ストレージ エミュレーターの詳細については、次を参照してください。[開発およびテスト用の Azure ストレージ エミュレーターを使用して](https://azure.microsoft.com/documentation/articles/storage-use-emulator/)します。
 
 ### <a name="connecting-to-azure-storage-using-a-shared-key"></a>共有キーを使用して Azure Storage への接続
 
@@ -118,11 +121,11 @@ SAS を使用して Azure Storage に接続するには、次の接続文字列�
 > [!NOTE]
 > 実稼働アプリケーションには、SAS 認証を使用することをお勧めします。 ただし、運用アプリケーションでは、SAS をアプリケーションにバンドルされているのではなく、バックエンド サービス、オンデマンドでから取得する必要があります。
 
-Shared Access Signature の詳細については、[Shared Access Signature (SAS)](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)を参照してください。
+Shared Access Signature の詳細については、次を参照してください。 [Shared Access Signature (SAS)](https://azure.microsoft.com/documentation/articles/storage-dotnet-shared-access-signature-part-1/)します。
 
 ## <a name="creating-a-container"></a>コンテナーの作成
 
-`GetContainer`コンテナーから blob を取得するか、コンテナーに blob を追加するに使用できる名前付きコンテナーへの参照を取得するメソッドを使用します。 次のコード例は、`GetContainer`メソッド。
+`GetContainer`コンテナーから blob を取得するか、コンテナーに blob を追加するに使用できる名前付きコンテナーへの参照を取得するメソッドを使用します。 次のコード例は、`GetContainer` メソッドを示しています。
 
 ```csharp
 static CloudBlobContainer GetContainer(ContainerType containerType)
@@ -150,7 +153,7 @@ var container = GetContainer(containerType);
 await container.CreateIfNotExistsAsync();
 ```
 
-既定では、新しく作成されたコンテナーはプライベートです。 つまり、コンテナーから blob を取得する、ストレージ アクセス キーを指定する必要があります。 パブリック コンテナー内の blob を作成する方法については、[コンテナーを作成する](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/#create-a-container)を参照してください。
+既定では、新しく作成されたコンテナーはプライベートです。 つまり、コンテナーから blob を取得する、ストレージ アクセス キーを指定する必要があります。 パブリック コンテナー内の blob を作成する方法については、次を参照してください。[コンテナーを作成する](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-blobs/#create-a-container)します。
 
 ## <a name="uploading-data-to-a-container"></a>コンテナーにデータをアップロードします。
 

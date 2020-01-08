@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: f49fa08e5d9b2ad76fc069b415d6ea5b899b2bf7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a3d0962eb8253ca72b6afce77036e02a7aa59b94
+ms.sourcegitcommit: 6f09bc2b760e76a61a854f55d6a87c4f421ac6c8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030788"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75607894"
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>Apple TV App Store への発行
 
@@ -47,7 +47,7 @@ Apple では、Apple TV App Store の提出に関するヒントの一覧も保�
 
 [ITunes Connect](https://itunesconnect.apple.com/WebObjects/iTunesConnect.woa)は、特に、Apple TV App Store で tvOS アプリを管理するための web ベースのツールのスイートです。 TvOS アプリは、確認のために Apple に提出する前に iTunes Connect で適切に設定して構成する必要があります。最終的には、Apple TV App Store で販売または無料のアプリとしてリリースされます。
 
-次の手順で行います。
+次を実行します。
 
 1. 無償または販売用の iOS アプリケーションをリリースするために、iTunes Connect の「**契約/税金/口座情報**」セクションで契約が適切で最新であることを確認します。
 2. アプリケーションの新しい**ITunes Connect レコード**を作成し、その**表示名**を指定します (Apple TV App Store に表示されます)。
@@ -91,7 +91,7 @@ Visual Studio for Mac で次の操作を行います。
 5. アプリ ID を定義したときに上記で実行したセットアップと一致するように、tvOS アプリに必要な資格を選択して構成します。
 6. 変更内容を `Entitlements.plist` ファイルに保存します。
 
-詳しい手順については、[App Services のプロビジョニング](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#appservices)に関するドキュメントを参照してください。 このドキュメントは iOS 用に記述されていますが、tvOS アプリのプロビジョニングにも同じ手順を使用します。
+詳しい手順については、[App Services のプロビジョニング](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#provisioning-for-application-services)に関するドキュメントを参照してください。 このドキュメントは iOS 用に記述されていますが、tvOS アプリのプロビジョニングにも同じ手順を使用します。
 
 <a name="Setting_the_Apps_Icons_and_Launch_Screens" />
 
@@ -125,7 +125,7 @@ tvOS では、*プロビジョニングプロファイル*を使用して、特�
 
 既定では、新しい tvOS アプリを作成すると、**デバッグ**配置と**リリース**配置の両方に対して_ビルド構成_が自動的に作成されます。 Apple に提出するアプリの最終ビルドを実行する前に、基本**リリース**構成に加える必要がある変更がいくつかあります。
 
-次の手順で行います。
+次を実行します。
 
 1. [**ソリューションエクスプローラー**と選択 **] オプション**で**プロジェクト名**を右クリックして、編集用に開きます。
 2. 特定のバージョンの tvOS を対象としている場合は、[ **TvOS Build** > **iOS SDK version**] の下で選択します。 TvOS サポートのプレビューリリースでは、この値を**既定**値のままにしてください。
@@ -217,7 +217,7 @@ TvOS アプリを Apple TV App Store に送信する際に問題が発生した�
 
 <a name="Summary" />
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 この記事では、Apple TV App Store 発行用アプリの構成、ビルド、および提出に関するステップバイステップガイドを紹介しています。 最初に、配布プロビジョニング プロファイルの作成とインストールに必要な手順を説明しました。 次に、Visual Studio for Mac を使用して配布ビルドを作成する方法を説明しました。 最後に、iTunes Connect と Xcode Archive ツールを使用して、Apple TV App Store にアプリケーションを送信する方法について説明しました。
 

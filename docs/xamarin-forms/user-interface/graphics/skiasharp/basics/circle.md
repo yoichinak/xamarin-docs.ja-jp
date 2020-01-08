@@ -7,12 +7,12 @@ ms.assetid: E3A4E373-F65D-45C8-8E77-577A804AC3F8
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: a3eca2036b0e4c2722e034e48ad4ca3054343a89
-ms.sourcegitcommit: 5110d1279809a2af58d3d66cd14c78113bb51436
+ms.openlocfilehash: a0ab6a965c2507c01f5b7ebdc3670e6661ca481e
+ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2019
-ms.locfileid: "72032582"
+ms.lasthandoff: 12/30/2019
+ms.locfileid: "75545635"
 ---
 # <a name="drawing-a-simple-circle-in-skiasharp"></a>SkiaSharp の単純な円を描画
 
@@ -24,7 +24,7 @@ _SkiaSharp 描画、キャンバスのなどの基本を学習し、オブジェ
 
 [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラムには、この一連の SkiaSharp 記事のすべてのサンプル コードが含まれています。 最初のページは使用権を持って**単純な円**ページ クラスを呼び出すと[ `SimpleCirclePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs)します。 このコードは、半径が 100 ピクセルのページの中央に円を描画する方法を示します。 円のアウトラインが赤であり、円の内部が青。
 
-![](circle-images/circleexample.png "赤で、青色の円")
+![](circle-images/circleexample.png "A blue circle outlined in red")
 
 [ `SimpleCircle` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs)ページ クラスから派生`ContentPage`含まれていると`using`SkiaSharp 名前空間のディレクティブ。
 
@@ -60,8 +60,8 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 [ `SKPaintSurfaceEventArgs` ](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs)イベントに付属しているオブジェクトが 2 つのプロパティ。
 
-- [`Info`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Info) 型の [`SKImageInfo`](xref:SkiaSharp.SKImageInfo)
-- [`Surface`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Surface) 型の [`SKSurface`](xref:SkiaSharp.SKSurface)
+- [`SKImageInfo`](xref:SkiaSharp.SKImageInfo) 型の [`Info`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Info)
+- [`SKSurface`](xref:SkiaSharp.SKSurface) 型の [`Surface`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Surface)
 
 `SKImageInfo`構造については、描画サーフェイスに最も重要なは、含まれる、幅と高さ (ピクセル単位)。 `SKSurface`オブジェクト自体の描画サーフェイスを表します。 このプログラムで描画サーフェイスはビデオ ディスプレイの場合が他のプログラムで、`SKSurface`オブジェクトを描画する SkiaSharp を使用するビットマップを表すこともできます。
 
@@ -106,7 +106,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 - [`Stroke`](xref:SkiaSharp.SKPaintStyle.Stroke)
 - [`StrokeAndFill`](xref:SkiaSharp.SKPaintStyle.StrokeAndFill)
 
-既定値は、`Fill` です。 線のストロークを描画し、内部を同じ色で塗りつぶすには、3 番目のオプションを使用します。
+既定値は、 `Fill`です。 線のストロークを描画し、内部を同じ色で塗りつぶすには、3 番目のオプションを使用します。
 
 設定、 [ `Color` ](xref:SkiaSharp.SKPaint.Color)プロパティ型の値を[ `SKColor`](xref:SkiaSharp.SKColor)します。 取得する方法の 1 つ、`SKColor`値は、Xamarin.Forms を変換することで、`Color`値を`SKColor`拡張メソッドを使用して値[ `ToSKColor`](xref:SkiaSharp.Views.Forms.Extensions.ToSKColor*)します。 [ `Extensions` ](xref:SkiaSharp.Views.Forms.Extensions)クラス、`SkiaSharp.Views.Forms`名前空間には、Xamarin.Forms と SkiaSharp 値の間で変換できるその他のメソッドが含まれています。
 
@@ -141,9 +141,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 今回は、`DrawCircle`呼び出しの入力の新しいプロパティを使用して、円、`SKPaint`オブジェクト。
 
-IOS、Android、およびユニバーサル Windows プラットフォームで実行されているプログラムを次に示します。
+IOS と Android で実行されているプログラムは次のようになります。
 
-[![](circle-images/simplecircle-small.png "単純な円ページのトリプルスクリーンショット")](circle-images/simplecircle-large.png#lightbox "単純な円ページのトリプルスクリーンショット")
+[![](circle-images/simplecircle-small.png "Triple screenshot of the Simple Circle page")](circle-images/simplecircle-large.png#lightbox "Triple screenshot of the Simple Circle page")
 
 プログラムを自分で実行するときに、電話またはグラフィックを描画する方法を確認するシミュレーターを横方向が有効にできます。 グラフィックが再描画する必要があるたびに、`PaintSurface`イベント ハンドラーが再度呼び出されます。
 

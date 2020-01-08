@@ -7,22 +7,22 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: cc62ca4656a845a261c56424aa1ea1331c994994
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 724a79e618321f97257718bf56dd1fdd18f73563
+ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759219"
+ms.lasthandoff: 12/30/2019
+ms.locfileid: "75545611"
 ---
 # <a name="lines-and-stroke-caps"></a>線とストローク キャップ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _SkiaSharp を使用して異なるストローク キャップを持つ行を描画する方法について説明します_
 
 SkiaSharp、1 行のレンダリングは、一連の接続された直線のレンダリングと大きく異なります。 1 つの線を描画するには場合でも、ことが多い行は、特定のストロークの幅を提供するために必要です。 これらの行の幅になると、行の最後の外観も重要になります。 行の末尾の外観と呼ばれる、*ストローク キャップ*:
 
-![](lines-images/strokecapsexample.png "次の 3 つのストローク キャップのオプション")
+![](lines-images/strokecapsexample.png "The three stroke caps options")
 
 1 つの行を描画するため`SKCanvas`定義、単純な[ `DrawLine` ](xref:SkiaSharp.SKCanvas.DrawLine(System.Single,System.Single,System.Single,System.Single,SkiaSharp.SKPaint))メソッドの引数は、開始日と終了では、行の座標を指定、`SKPaint`オブジェクト。
 
@@ -30,7 +30,7 @@ SkiaSharp、1 行のレンダリングは、一連の接続された直線のレ
 canvas.DrawLine (x0, y0, x1, y1, paint);
 ```
 
-既定で、 [ `StrokeWidth` ](xref:SkiaSharp.SKPaint.StrokeWidth)新しくインスタンス化のプロパティ`SKPaint`オブジェクトが 0 で、太さで 1 ピクセルの行の表示では 1 の値と同じ効果があります。 これは表示を設定する可能性がありますので、携帯電話などの高解像度のデバイスで非常に軽量、`StrokeWidth`より大きい値にします。 しかし、サイズが非常に大きい線の描画を開始すると、別の問題が発生します。これらの太線の開始と終了をどのようにレンダリングするか。
+既定で、 [ `StrokeWidth` ](xref:SkiaSharp.SKPaint.StrokeWidth)新しくインスタンス化のプロパティ`SKPaint`オブジェクトが 0 で、太さで 1 ピクセルの行の表示では 1 の値と同じ効果があります。 これは表示を設定する可能性がありますので、携帯電話などの高解像度のデバイスで非常に軽量、`StrokeWidth`より大きい値にします。 別の問題が発生しますがかなり大きな太さの線を描画を開始すると: を開始し、これら太い線の両端表示する方法でしょうか。
 
 開始と終了行の外観と呼ばれる、*ライン キャップ*または Skia、*ストローク キャップ*します。 このコンテキストでは、「上限」という単語がある種の hat を指す&mdash;行の末尾に位置するものです。 設定する、 [ `StrokeCap` ](xref:SkiaSharp.SKPaint.StrokeCap)のプロパティ、`SKPaint`オブジェクトの次のメンバーのいずれかに、 [ `SKStrokeCap` ](xref:SkiaSharp.SKStrokeCap)列挙体。
 
@@ -94,7 +94,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 各メンバーに対して、`SKStrokeCap`列挙型で、ハンドラーはストロークの太さを 50 ピクセルと 2 つのピクセルのストロークの太さで一番上に配置されている別の行のいずれか 2 つの行を描画します。 この 2 行目は、幾何学の開始と線の太さとストローク キャップの独立した行の末尾を示すために対象としています。
 
-[![](lines-images/strokecaps-small.png "ストローク キャップ ページのスクリーン ショットをトリプル")](lines-images/strokecaps-large.png#lightbox "ストローク キャップ ページの 3 倍になるスクリーン ショット")
+[![](lines-images/strokecaps-small.png "Triple screenshot of the Stroke Caps page")](lines-images/strokecaps-large.png#lightbox "Triple screenshot of the Stroke Caps page")
 
 ご覧のとおり、`Square`と`Round`ストローク キャップはストローク幅の半分だけ行の先頭に、最後にもう一度、行の長さを効果的に拡張します。 この拡張機能は、レンダリングされたグラフィック オブジェクトのサイズを決定する必要がある場合に重要になります。
 
@@ -228,13 +228,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 スクリーン ショットは、表示のさまざまな`Picker`の選択。
 
-[![](lines-images/multiplelines-small.png "複数の行のページのスクリーン ショットをトリプル")](lines-images/multiplelines-large.png#lightbox "複数行のページの 3 倍になるスクリーン ショット")
+[![](lines-images/multiplelines-small.png "Triple screenshot of the Multiple Lines page")](lines-images/multiplelines-large.png#lightbox "Triple screenshot of the Multiple Lines page")
 
 左側には iPhone 方法、`SKPointMode.Points`列挙体メンバーにより`DrawPoints`の各ポイントで表示するために、`SKPoint`ライン キャップがある場合は、四角形として配列`Butt`または`Square`します。 ライン キャップがある場合、円が表示される`Round`します。
 
-代わりに使用すると`SKPointMode.Lines`センターでは、Android の画面上に示すように、`DrawPoints`メソッドの各ペアの間に線を描画します`SKPoint`cap を使用して、指定した行、ここで、値`Round`します。
+Android のスクリーンショットは、`SKPointMode.Lines`の結果を示しています。 `DrawPoints` メソッドは、指定されたラインキャップ (この場合は `Round`) を使用して `SKPoint` 値の各ペアの間に線を描画します。
 
-UWP のスクリーン ショットの結果を示しています、`SKPointMode.Polygon`値。 配列で、連続する点の間に線を描画しますが、非常に密接に確認する場合これらの行が接続されていないことが表示されます。 これらの個別の行の各は、開始し、指定のライン キャップで終了します。 選択した場合、 `Round` cap、接続されている行が表示されるが、実際に接続していません。
+代わりに `SKPointMode.Polygon`を使用すると、配列内の連続する点の間に線が描画されますが、非常によく似ている場合は、これらの行が接続されていないことがわかります。 これらの個別の行の各は、開始し、指定のライン キャップで終了します。 選択した場合、 `Round` cap、接続されている行が表示されるが、実際に接続していません。
 
 線を接続または接続されていないかどうかは、グラフィックス パスの作業の重要な側面です。
 

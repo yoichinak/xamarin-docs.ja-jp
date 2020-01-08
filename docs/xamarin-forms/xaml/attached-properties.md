@@ -1,5 +1,5 @@
 ---
-title: アタッチされるプロパティ
+title: 添付プロパティ
 description: この記事では、添付プロパティは、概要を示し、作成し、これらを使用する方法を示します。
 ms.prod: xamarin
 ms.assetid: 6E9DCDC3-A0E4-46A6-BAA9-4FEB6DF8A5A8
@@ -7,20 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/02/2016
-ms.openlocfilehash: b5d1ddc4cf3a6817851d22aba920abb29d9f746f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 78dd2d3a63cd0e2b6ab1e6876dd82f49f5580f0b
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70767646"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489974"
 ---
-# <a name="attached-properties"></a>アタッチされるプロパティ
+# <a name="attached-properties"></a>添付プロパティ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
 
-_添付プロパティは、特殊な種類のバインド可能なプロパティ、1 つのクラスで定義されているが、他のオブジェクトにアタッチされ、クラスを含む属性として XAML で認識可能なプロパティ名はピリオドで区切られました。この記事では、添付プロパティは、概要を示し、作成し、これらを使用する方法を示します。_
-
-## <a name="overview"></a>概要
 
 プロパティを使用する独自のクラスが定義されていないプロパティの値を代入するオブジェクトをアタッチします。 たとえば、子要素を使用できますには、ユーザー インターフェイスで表示するのには、親要素に通知するプロパティがアタッチされています。 [ `Grid` ](xref:Xamarin.Forms.Grid)行、列を設定して指定する子コントロールを使用できます、`Grid.Row`と`Grid.Column`添付プロパティ。 `Grid.Row` `Grid.Column`添付プロパティは、要素の子に設定されているため、`Grid`ではなくで、`Grid`自体。
 
@@ -31,14 +28,14 @@ _添付プロパティは、特殊な種類のバインド可能なプロパテ�
 
 バインド可能なプロパティの詳細については、次を参照してください。[バインド可能なプロパティ](~/xamarin-forms/xaml/bindable-properties.md)します。
 
-## <a name="creating-and-consuming-an-attached-property"></a>作成および添付プロパティを使用します。
+## <a name="create-an-attached-property"></a>添付プロパティを作成する
 
 添付プロパティを作成するプロセスは次のとおりです。
 
 1. 作成、 [ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)のいずれかのインスタンス、 [ `CreateAttached` ](xref:Xamarin.Forms.BindableProperty.CreateAttached*)メソッドのオーバー ロードします。
 1. 提供`static` `Get` *PropertyName*と`Set` *PropertyName*添付プロパティのアクセサーとしてメソッド。
 
-### <a name="creating-a-property"></a>プロパティを作成します。
+### <a name="create-a-property"></a>プロパティを作成する
 
 派生するプロパティが作成されているクラスがない他の種類で使用するため、添付プロパティを作成するときに[ `BindableObject`](xref:Xamarin.Forms.BindableObject)します。 ただし、*ターゲット*のアクセサー プロパティは、するか、派生元の[ `BindableObject`](xref:Xamarin.Forms.BindableObject)します。
 
@@ -53,9 +50,9 @@ public static readonly BindableProperty HasShadowProperty =
 
 これは、という名前の添付プロパティを作成します。 `HasShadow`、型の`bool`します。 プロパティが所有、`ShadowEffect`クラスし、の既定値を持つ`false`します。 添付プロパティの名前付け規則では、添付プロパティの識別子がで指定されたプロパティ名に一致する必要があります、`CreateAttached`メソッドは、"Property"が追加されます。 そのため、上記の例では、添付プロパティの識別子は`HasShadowProperty`します。
 
-作成時に指定できるパラメーターを含む、バインド可能なプロパティの作成の詳細については、次を参照してください。[作成およびバインド可能なプロパティを使用する](~/xamarin-forms/xaml/bindable-properties.md#consuming-bindable-property)します。
+作成時に指定できるパラメーターなど、バインド可能なプロパティの作成の詳細については、「[バインド可能なプロパティの作成](~/xamarin-forms/xaml/bindable-properties.md#consume-a-bindable-property)」を参照してください。
 
-### <a name="creating-accessors"></a>アクセサーの作成
+### <a name="create-accessors"></a>アクセサーの作成
 
 静的`Get` *PropertyName*と`Set` *PropertyName*添付プロパティのアクセサーとして必要なメソッドは、それ以外の場合、プロパティ システムことはできませんを使用する、添付プロパティ。 `Get` *PropertyName*アクセサーは、次のシグネチャに従う必要があります。
 
@@ -89,7 +86,7 @@ public static void SetHasShadow (BindableObject view, bool value)
 }
 ```
 
-### <a name="consuming-an-attached-property"></a>添付プロパティの使用
+### <a name="consume-an-attached-property"></a>添付プロパティを使用する
 
 添付プロパティが作成されると、XAML またはコードから使用できます。 XAML では、これは、共通言語ランタイム (CLR) 名前空間の名前および必要に応じて、アセンブリ名を示す名前空間宣言で、プレフィックスを持つ名前空間を宣言することによって実現されます。 詳細については、次を参照してください。 [XAML 名前空間](~/xamarin-forms/xaml/namespaces.md)します。
 
@@ -114,7 +111,7 @@ var label = new Label { Text = "Label Shadow Effect" };
 ShadowEffect.SetHasShadow (label, true);
 ```
 
-### <a name="consuming-an-attached-property-with-a-style"></a>スタイルで添付プロパティの使用
+### <a name="consume-an-attached-property-with-a-style"></a>添付プロパティをスタイルで使用する
 
 添付プロパティは、スタイルでコントロールにも追加できます。 次の XAML コード例は、*明示的な*を使用するスタイル、`HasShadow`添付、プロパティに適用できる[ `Label` ](xref:Xamarin.Forms.Label)コントロール。
 
@@ -126,26 +123,22 @@ ShadowEffect.SetHasShadow (label, true);
 </Style>
 ```
 
-[ `Style` ](xref:Xamarin.Forms.Style)に適用できる、 [ `Label` ](xref:Xamarin.Forms.Label)を設定してその[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)プロパティを`Style`インスタンス、を使用して`StaticResource`マークアップ拡張機能で、次のコード例で示した。
+[`Style`](xref:Xamarin.Forms.Style) は、次のコード例に示すように、`StaticResource` マークアップ拡張を使用して自身の [`Style`](xref:Xamarin.Forms.NavigableElement.Style) プロパティを `Style` インスタンスに設定することで、[`Label`](xref:Xamarin.Forms.Label) に適用できます。
 
 ```xaml
 <Label Text="Label Shadow Effect" Style="{StaticResource ShadowEffectStyle}" />
 ```
 
-スタイルの詳細については、次を参照してください。[スタイル](~/xamarin-forms/user-interface/styles/index.md)します。
+スタイルについて詳しくは、[スタイル](~/xamarin-forms/user-interface/styles/index.md)に関する記事をご覧ください。
 
 ## <a name="advanced-scenarios"></a>高度なシナリオ
 
-添付プロパティを作成するときに、さまざまな添付プロパティの高度なシナリオを有効に設定できる省略可能なパラメーターがあります。 これには、プロパティの変更を検出し、プロパティの値を検証し、プロパティ値の強制型変換が含まれます。 詳細については、次を参照してください。[高度なシナリオ](~/xamarin-forms/xaml/bindable-properties.md#advanced)します。
-
-## <a name="summary"></a>まとめ
-
-この記事では、添付プロパティの概要について説明し、作成し、これらを使用する方法を示しました。 添付プロパティは、特殊な種類のバインド可能なプロパティ、属性クラスとピリオドで区切ったプロパティ名が含まれていると、その他のオブジェクトにアタッチされていると、XAML で認識可能な 1 つのクラスで定義されています。
+添付プロパティを作成するときに、さまざまな添付プロパティの高度なシナリオを有効に設定できる省略可能なパラメーターがあります。 これには、プロパティの変更を検出し、プロパティの値を検証し、プロパティ値の強制型変換が含まれます。 詳細については、「[高度なシナリオ](~/xamarin-forms/xaml/bindable-properties.md#advanced-scenarios)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 
 - [連結可能プロパティ](~/xamarin-forms/xaml/bindable-properties.md)
 - [XAML 名前空間](~/xamarin-forms/xaml/namespaces.md)
-- [シャドウ効果 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
-- [BindableProperty](xref:Xamarin.Forms.BindableProperty)
-- [BindableObject](xref:Xamarin.Forms.BindableObject)
+- [影エフェクト (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
+- [BindableProperty API](xref:Xamarin.Forms.BindableProperty)
+- [BindableObject API](xref:Xamarin.Forms.BindableObject)

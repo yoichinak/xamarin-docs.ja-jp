@@ -1,28 +1,35 @@
 ---
-title: Xamarin.Forms の要件
-description: Xamarin.Forms のプラットフォームと開発システムの要件
+title: Xamarin。フォームの要件
+description: Xamarinのプラットフォームと開発システムの要件。形態.
 ms.prod: xamarin
 ms.assetid: eecaf6a5-567c-49b2-ac83-2a195596c5bf
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/16/2019
-ms.openlocfilehash: 46a72534fba7a45323a82ad121e5844410472812
-ms.sourcegitcommit: dad4dfcd194b63ec9e903363351b6d9e543d4888
+no-loc:
+- Xamarin
+- Xamarin.Forms
+- Xamarin.Android
+- Xamarin.Essentials
+- Xamarin.iOS
+- Xamarin.Mac
+ms.openlocfilehash: d12daa358917399fc5fd1febf02d4f96a647f360
+ms.sourcegitcommit: 6f09bc2b760e76a61a854f55d6a87c4f421ac6c8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72584347"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75607855"
 ---
-# <a name="xamarinforms-requirements"></a>Xamarin.Forms の要件
+# <a name="opno-locxamarinforms-requirements"></a>Xamarin。フォームの要件
 
-_Xamarin.Forms のプラットフォームと開発システムの要件_
+_Xamarinのプラットフォームと開発システムの要件。形態._
 
 プラットフォーム全体で適用されるインストール方法とセットアップ方法の概要については、[インストール](installation/index.md)記事を参照してください。
 
 ## <a name="target-platforms"></a>ターゲット プラットフォーム
 
-Xamarin.Forms アプリケーションは次のオペレーティング システム用として記述できます。
+Xamarin。フォームアプリケーションは、次のオペレーティングシステム用に記述できます。
 
 - iOS 9 以降
 - Android 4.4 (API 19) 以上 ([詳細](#android))
@@ -34,7 +41,7 @@ Xamarin.Forms アプリケーションは次のオペレーティング シス�
 
 ### <a name="additional-platform-support"></a>その他のプラットフォームのサポート
 
-これらのプラットフォームの状態は、[Xamarin.Forms GitHub](https://github.com/xamarin/Xamarin.Forms/wiki/Platform-Support) で確認できます。
+これらのプラットフォームの状態は、Xamarinで確認でき[ます。フォーム GitHub](https://github.com/xamarin/Xamarin.Forms/wiki/Platform-Support):
 
 - Samsung Tizen
 - macOS
@@ -67,18 +74,18 @@ Xamarin.Forms アプリケーションは次のオペレーティング シス�
 
 ## <a name="development-system-requirements"></a>開発システムの要件
 
-Xamarin.Forms アプリは macOS と Windows で開発できます。 ただし、アプリの Windows 版を作成するには Windows と Visual Studio が必要になります。
+Xamarin。フォームアプリは macOS と Windows で開発できます。 ただし、アプリの Windows 版を作成するには Windows と Visual Studio が必要になります。
 
 ## <a name="mac-system-requirements"></a>Mac のシステム要件
 
-Visual Studio for Mac を使用して、macOS High (10.13) 以降で Xamarin. Forms アプリを開発できます。 IOS アプリを開発するには、最新バージョンの Xcode、iOS、macOS を使用することをお勧めします。 特定のバージョンの要件については、最新の[Xamarin. iOS のリリースノート](/xamarin/ios/release-notes/)を参照してください。
+Visual Studio for Mac を使用すると、Xamarinを開発できます。MacOS High シエラレオネ (10.13) 以降のフォームアプリ。 IOS アプリを開発するには、最新バージョンの Xcode、iOS、macOS を使用することをお勧めします。 特定のバージョンの要件については、最新のXamarinに関する[リリースノート](/xamarin/ios/release-notes/)を参照してください。
 
 > [!NOTE]
 > Windows アプリを macOS で開発することはできません。
 
 ## <a name="windows-system-requirements"></a>Windows のシステム要件
 
-iOS と Android 向けの Xamarin.Forms アプリは Xamarin 開発に対応しているあらゆる Windows インストールでビルドできます。 現在のプラットフォーム機能を完全にサポートするには、最新バージョンの Visual Studio を使用します。 
+Xamarin。IOS および Android 用のフォームアプリは、Xamarin 開発をサポートする任意の Windows インストール上に構築できます。 現在のプラットフォーム機能を完全にサポートするには、最新バージョンの Visual Studio を使用します。 
 
 Xcode の最新バージョンと Apple によって指定された最小バージョンの macOS を使用した iOS 開発では、ネットワークに接続された Mac が必要です。
 
@@ -86,7 +93,7 @@ Xcode の最新バージョンと Apple によって指定された最小バー�
 
 ### <a name="universal-windows-platform-uwp"></a>ユニバーサル Windows プラットフォーム (UWP)
 
-UWP 用の Xamarin.Forms アプリの開発に必要なもの:
+Xamarinの開発。UWP 用のフォームアプリには次のものが必要です。
 
 - Windows 10 (推奨されている最新バージョン、更新プログラムの最小更新プログラム)
 
@@ -94,11 +101,11 @@ UWP 用の Xamarin.Forms アプリの開発に必要なもの:
 
 - [Windows 10 SDK](https://dev.windows.com/downloads/windows-10-sdk)
 
-既存の Xamarin.Forms ソリューションに、いつでも[ユニバーサル Windows プラットフォーム (UWP) アプリを追加](~/xamarin-forms/platform/windows/installation/index.md)できます。
+既存の Xamarinに[ユニバーサル Windows プラットフォーム (UWP) アプリを追加](~/xamarin-forms/platform/windows/installation/index.md)できます。フォームソリューション。
 
 ## <a name="deprecated-platforms"></a>非推奨のプラットフォーム
 
-これらのプラットフォームは、Xamarin. Forms 3.0 以降を使用している場合はサポートされません。
+Xamarinを使用する場合、これらのプラットフォームはサポートされません。フォーム3.0 以降:
 
 - *Windows 8.1 / Windows Phone 8.1 WinRT*
 - *Windows Phone 8 Silverlight*

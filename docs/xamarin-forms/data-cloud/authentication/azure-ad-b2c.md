@@ -6,13 +6,13 @@ ms.assetid: B0A5DB65-0585-4A00-B908-22CCC286E6B6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/17/2019
-ms.openlocfilehash: c1df3adfa67a363609b397731ed298155d7531be
-ms.sourcegitcommit: 483e0ab0e9f30382219084c0345519f1025169b2
+ms.date: 12/04/2019
+ms.openlocfilehash: 946cf65f7d83722fd388bed555b9d3f35c487708
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74809031"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489818"
 ---
 # <a name="authenticate-users-with-azure-active-directory-b2c"></a>Azure Active Directory B2C を使用してユーザーを認証する
 
@@ -26,15 +26,17 @@ Azure Active Directory B2C (ADB2C) は、コンシューマー向けアプリケ
 
 モバイル アプリケーションに Azure Active Directory B2C ID 管理サービスを統合するための手順は次のとおりです。
 
-1. Azure Active Directory B2C テナントの作成
-1. Azure Active Directory B2C テナントにモバイルアプリケーションを登録する
-1. サインアップとサインインのためのポリシーを作成し、パスワードのユーザーフローを忘れた場合
+1. Azure Active Directory B2C テナントを作成します。
+1. Azure Active Directory B2C テナントに、モバイル アプリケーションを登録します。
+1. サインアップとサインインのためのポリシーを作成し、パスワードのユーザーフローを忘れます。
 1. Microsoft Authentication Library (MSAL) を使用して、Azure Active Directory B2C テナントで認証ワークフローを開始します。
 
 > [!NOTE]
-> Azure Active Directory B2C は、Microsoft、GitHub、Facebook、Twitter などの複数の id プロバイダーをサポートしています。 Azure Active Directory B2C 機能の詳細については、 [Azure Active Directory B2C のドキュメント](/azure/active-directory-b2c/)を参照してください。
->
-> Microsoft 認証ライブラリでは、複数のアプリケーションアーキテクチャとプラットフォームがサポートされています。 MSAL の機能の詳細については、GitHub の「 [Microsoft 認証ライブラリ](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki)」を参照してください。
+> [Azure サブスクリプション](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)をお持ちでない場合は、開始する前に[無料アカウント](https://aka.ms/azfree-docs-mobileapps)を作成してください。
+
+Azure Active Directory B2C は、Microsoft、GitHub、Facebook、Twitter などの複数の id プロバイダーをサポートしています。 Azure Active Directory B2C 機能の詳細については、 [Azure Active Directory B2C のドキュメント](/azure/active-directory-b2c/)を参照してください。
+
+Microsoft 認証ライブラリでは、複数のアプリケーションアーキテクチャとプラットフォームがサポートされています。 MSAL の機能の詳細については、GitHub の「 [Microsoft 認証ライブラリ](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki)」を参照してください。
 
 ## <a name="configure-an-azure-active-directory-b2c-tenant"></a>Azure Active Directory B2C テナントを構成する
 
@@ -181,7 +183,7 @@ public partial class LoginPage : ContentPage
                 .WithPrompt(Prompt.SelectAccount)
                 .WithParentActivityOrWindow(App.UIParent)
                 .ExecuteAsync();
-    
+
             await Navigation.PushAsync(new LogoutPage(result));
         }
         catch (MsalException ex)

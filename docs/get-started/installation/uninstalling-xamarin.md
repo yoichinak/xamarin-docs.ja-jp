@@ -6,14 +6,14 @@ ms.assetid: b83a85ec-842a-444c-8f82-c2464eda099b
 author: conceptdev
 ms.author: crdun
 ms.date: 04/08/2017
-ms.openlocfilehash: a5a9ddfe92bd8f5b743da2c535a93c282542c860
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: fa7d5fc8d33cd7ed3a347209aaff2610e6d319dc
+ms.sourcegitcommit: 5ddb107b0a56bef8a16fce5bc6846f9673b3b22e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70756781"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75558821"
 ---
-# <a name="uninstalling-xamarin"></a>Xamarin のアンインストール
+# <a name="uninstall-xamarin"></a>Xamarin のアンインストール
 
 このガイドでは、mac OS または Windows の Visual Studio から Xamarin を削除する方法について説明します。
 
@@ -185,39 +185,42 @@ rm -rf "~/Library/Preferences/Visual Studio/"
 
 ### <a name="using-the-uninstall-script"></a>アンインストール スクリプトを使用する
 
-このアンインストール スクリプトでは、Visual Studio for Mac とそれに関連する Xamarin コンポーネントを一度にアンインストールできます。
+> [!TIP]
+> ダウンロードしたスクリプトを実行する前に、コマンドを読んで、コンピューターにどのような変更が加えられているかを把握してください。
 
-このスクリプトには、この記事にあるほとんどのコマンドが含まれます。 外部依存関係の可能性のためにスクリプトからは次の 2 つが除外されています。
+[このアンインストールスクリプト](https://raw.githubusercontent.com/MicrosoftDocs/visualstudio-docs/master/mac/resources/uninstall-vsmac.sh)を使用すると、Visual Studio for Mac とそれに関連付けられている Xamarin コンポーネントを1回の実行でアンインストールできます。
+
+このスクリプトには、この記事にあるほとんどのコマンドが含まれます。 スクリプトには主に2つの候補があり、外部の依存関係のために含まれていません (他のアプリが Mono または Android ツールを使用している可能性があります)。
 
 - Mono のアンインストール
 - Android AVD のアンインストール
 
-スクリプトを実行するには、次の手順のようにします。
+スクリプトを実行するには
 
-1. スクリプトを右クリックして [名前を付けて保存] を選び、 Mac にファイルを保存します。
+1. [ **Uninstall-vsmac.sh**へのこのリンク](https://raw.githubusercontent.com/MicrosoftDocs/visualstudio-docs/master/mac/resources/uninstall-vsmac.sh)を右クリックし、ファイルを Mac に保存/ダウンロードします。
 
 2. **ターミナル**を開き、作業ディレクトリをスクリプトをダウンロードした場所に変更します。
 
-    ```
+    ```bash
     cd /location/of/file
     ```
 
 3. スクリプトを実行可能にして、**sudo** で実行します。
 
-    ```
-    chmod +x ./xamarin_uninstall.sh
-    sudo ./xamarin_uninstall.sh
+    ```bash
+    chmod +x ./uninstall-vsmac.sh
+    sudo ./uninstall-vsmac.sh
     ```
 
-4. 最後に、アンインストール スクリプトを削除します。
+4. アンインストールスクリプトを削除します。
 
-この時点で、Xamarin は、コンピューターからアンインストールされています。
+これで、Visual Studio for Mac および Xamarin ツールをコンピューターからアンインストールする必要があります。
 
 <a name="uninstallwindows" />
 
 ## <a name="uninstalling-xamarin-on-windows"></a>Windows での Xamarin のアンインストール
 
-Xamarin は次でサポートされています。
+Xamarin は、次の Ide でサポートされています。
 
 - [Visual Studio 2019 および Visual Studio 2017](#uninstallvs2017)
 - [Visual Studio 2015](#uninstallvs2015)
@@ -234,25 +237,25 @@ Xamarin は、インストーラーアプリを使用して Visual Studio 2019 �
 
 2. 変更するインスタンスの **[変更]** ボタンを押します。
 
-    [![](uninstalling-xamarin-images/vs2017-02-sml.png "[変更] ボタンを押します")](uninstalling-xamarin-images/vs2017-02.png#lightbox)
+    [![](uninstalling-xamarin-images/vs2017-02-sml.png "Press the modify button")](uninstalling-xamarin-images/vs2017-02.png#lightbox)
 
 3. **[ワークロード]** タブで、( **[モバイルとゲーム]** セクションの) **[.NET によるモバイル開発]** オプションの選択を解除します。
 
-    [![](uninstalling-xamarin-images/vs2017-03-sml.png "[モバイル開発] ワークロードをオフにします")](uninstalling-xamarin-images/vs2017-03.png#lightbox)
+    [![](uninstalling-xamarin-images/vs2017-03-sml.png "Uncheck the Mobile Development workload")](uninstalling-xamarin-images/vs2017-03.png#lightbox)
 
 4. ウィンドウの右下にある **[変更]** ボタンをクリックします。
 
 5. インストーラーは、選択を解除したコンポーネントを削除します (インストーラーで変更を加えるには、Visual Studio 2017 を閉じる必要があります)。
 
-    [![](uninstalling-xamarin-images/vs2017-04-sml.png "[変更] ボタンを押します")](uninstalling-xamarin-images/vs2017-04.png#lightbox)
+    [![](uninstalling-xamarin-images/vs2017-04-sml.png "Press the Modify button")](uninstalling-xamarin-images/vs2017-04.png#lightbox)
 
 個別の Xamarin コンポーネント (Profiler、Workbooks など) は、手順 3 で **[個別のコンポーネント]** タブに切り替えて、特定のコンポーネントの選択を解除して、アンインストールすることができます。
 
-[![](uninstalling-xamarin-images/vs2017-components-sml.png "個々のコンポーネントをアンインストールします")](uninstalling-xamarin-images/vs2017-components.png#lightbox)
+[![](uninstalling-xamarin-images/vs2017-components-sml.png "Uninstall individual components")](uninstalling-xamarin-images/vs2017-components.png#lightbox)
 
 Visual Studio 2017 を完全にアンインストールするには、 **[起動]** ボタンの横にある 3 本線のメニューから **[アンインストール]** を選びます。
 
-[![](uninstalling-xamarin-images/vs2017-uninstall-sml.png "Visual Studio インストーラーを完全にアンインストールします")](uninstalling-xamarin-images/vs2017-uninstall.png#lightbox)
+[![](uninstalling-xamarin-images/vs2017-uninstall-sml.png "Uninstall Visual Studio completely")](uninstalling-xamarin-images/vs2017-uninstall.png#lightbox)
 
 > [!IMPORTANT]
 > Visual Studio の 2 つ (以上) のインスタンスを side-by-side (SxS) でインストールしている場合 (リリース バージョンとプレビュー バージョンなど)、1 つのインスタンスをアンインストールすると、次のような他の Visual Studio インスタンスから一部の Xamarin の機能が削除される可能性があります。
@@ -276,7 +279,7 @@ Visual Studio 2015 を完全にアンインストールするには、[visualstu
 
 Xamarin は、**コントロール パネル**を使って Windows コンピューターからアンインストールできます。 次の図に示すように、 **[プログラムと機能]** または **[プログラム] > [プログラムのアンインストール]** に移動します。
 
- [![](uninstalling-xamarin-images/image3.png "図に示すように、[プログラムと機能] または [プログラム] > [プログラムのアンインストール] に移動します。")](uninstalling-xamarin-images/image3.png#lightbox) 
+ [![](uninstalling-xamarin-images/image3.png "Navigate to Programs and Features or Programs  Uninstall a Program as illustrated here")](uninstalling-xamarin-images/image3.png#lightbox) 
 
 コントロール パネルで、表示されている次のいずれかをアンインストールします。
 
@@ -343,7 +346,7 @@ Xamarin Studio をアンインストールするには、プログラムの一�
 
 Mac から Xamarin Studio をアンインストールするときは、最初に **/Applications** ディレクトリで **Xamarin Studio.app** を探して、それを**ごみ箱**にドラッグします。 または、右クリックして **[ごみ箱に移動]** を選びます (下図参照)。
 
- [![](uninstalling-xamarin-images/image1.png "または、この図のように、右クリックして [ごみ箱に移動] を選びます")](uninstalling-xamarin-images/image1.png#lightbox)
+ [![](uninstalling-xamarin-images/image1.png "Alternatively, right-click and select Move to Trash as illustrated here")](uninstalling-xamarin-images/image1.png#lightbox)
 
 このアプリ バンドルを削除すると、Xamarin Studio は削除されますが、Xamarin 関連の他のファイルがファイル システムにまだ残っています。
 
@@ -357,7 +360,7 @@ rm -rf ~/Library/Logs/XamarinStudio-*
 rm -rf ~/Library/XamarinStudio-*
 ```
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>要約
 
 この記事では、ターミナル コマンドを使用して Mac から完全に Xamarin をアンインストールする方法について説明しました。 **[プログラムと機能]** オプション (Visual Studio 2015 以前の場合) を使用して Windows コンピューターから Xamarin をアンインストールする方法と、Visual Studio 2017 で **Visual Studio インストーラー**を使用する方法も説明しました。
 
