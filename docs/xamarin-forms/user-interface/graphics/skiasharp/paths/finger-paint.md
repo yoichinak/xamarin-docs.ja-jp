@@ -7,22 +7,22 @@ ms.assetid: 56929D74-8F2C-44C6-90E6-3FBABCDC0A4B
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/05/2017
-ms.openlocfilehash: 571ddae0757691cd7fee301076f0b1310749531d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 98809dca503d03d3d592161608fa9a6fa0e5d394
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657454"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488349"
 ---
 # <a name="finger-painting-in-skiasharp"></a>SkiaSharp の指による描画
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _指を使用して、キャンバスに描画します。_
 
 `SKPath`オブジェクトは継続的に更新および表示されることができます。 この機能は、フィンガーペインティング プログラムなど、対話型の描画に使用するパスを使用できます。
 
-![](finger-paint-images/fingerpaintsample.png "指による描画の課題")
+![](finger-paint-images/fingerpaintsample.png "An exercise in finger painting")
 
 Xamarin.Forms でのタッチ サポートでは、Xamarin.Forms のタッチ追跡効果は、追加のタッチ サポートを提供する開発が完了するために、画面で、個々 の本の指を追跡することはできません。 この効果は、情報の記事に記載されて[**効果からイベントを呼び出す**](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)します。 サンプル プログラム[**タッチ追跡効果デモ**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/) SkiaSharp、フィンガーペインティング プログラムなどを使用する 2 つのページが含まれています。
 
@@ -53,7 +53,7 @@ Xamarin.Forms でのタッチ サポートでは、Xamarin.Forms のタッチ追
 
 アタッチ、`TouchEffect`に直接、`SKCanvasView`はすべてのプラットフォームでは動作しません。
 
-[ **FingerPaintPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FingerPaintPage.xaml.cs)分離コード ファイルを格納するための 2 つのコレクションを定義する、`SKPath`オブジェクト、および`SKPaint`これらのパスを表示するためのオブジェクト。
+[ **FingerPaintPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/FingerPaintPage.xaml.cs)分離コード ファイルを格納するための 2 つのコレクションを定義する、`SKPath`オブジェクト、および`SKPaint`これらのパスを表示するためのオブジェクト。
 
 ```csharp
 public partial class FingerPaintPage : ContentPage
@@ -165,7 +165,7 @@ public partial class FingerPaintPage : ContentPage
 
 指、絵画はあなたの才能によってのみ制限されます。
 
-[![](finger-paint-images/fingerpaint-small.png "本の指ペイント ページのスクリーン ショットをトリプル")](finger-paint-images/fingerpaint-large.png#lightbox "指ペイント ページの 3 倍になるスクリーン ショット")
+[![](finger-paint-images/fingerpaint-small.png "Triple screenshot of the Finger Paint page")](finger-paint-images/fingerpaint-large.png#lightbox "Triple screenshot of the Finger Paint page")
 
 これで線を描画して、パラメーターの式を使用して曲線を定義する方法を説明しました。 以降のセクション[ **SkiaSharp の曲線とパス**](../curves/index.md)曲線のさまざまな種類について説明する`SKPath`をサポートしています。 便利な前提条件は、探索の[ **SkiaSharp の変換**](../transforms/index.md)します。
 

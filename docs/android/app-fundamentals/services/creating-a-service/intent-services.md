@@ -6,16 +6,14 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: c58787a051bfc965cb7493138ed6114ac23ed04d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: acf8824c7a575bca37301a409bdf6d5f42cca622
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73024846"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488063"
 ---
 # <a name="intent-services-in-xamarinandroid"></a>Xamarin. Android のインテントサービス
-
-## <a name="intent-services-overview"></a>インテントサービスの概要
 
 開始とバインドの両方のサービスがメインスレッドで実行されます。つまり、パフォーマンスを円滑に保つために、サービスは非同期に作業を実行する必要があります。 この問題に対処する最も簡単な方法の1つは、_ワーカーキュープロセッサパターン_を使用することです。このパターンでは、実行する作業が1つのスレッドによって処理されるキューに配置されます。
 
@@ -57,8 +55,7 @@ public class DemoIntentService: IntentService
 Intent downloadIntent = new Intent(this, typeof(DemoIntentService));
 
 // This is just one example of passing some values to an IntentService via the Intent:
-downloadIntent.Put
-("file_to_download", "http://www.somewhere.com/file/to/download.zip");
+downloadIntent.PutPutExtra("file_to_download", "http://www.somewhere.com/file/to/download.zip");
 
 StartService(downloadIntent);
 ```

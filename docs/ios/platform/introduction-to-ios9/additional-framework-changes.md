@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: ef0bcba7a59984c6bad7091431fe00b1f1b7eee3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: d9d47e750580bb9e4a0f4a2283cbd9e8c6a44c93
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031789"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489090"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>IOS 9 フレームワークのその他の変更
 
@@ -101,7 +101,7 @@ NSProcessInfo.ProcessInfo.EndActivity(activity);
 
 ### <a name="reacting-to-low-power-mode"></a>低電力モードへの対応
 
-[Nsprocessinfo](xref:Foundation.NSProcessInfo)クラスの `LowPowerModeEnabled` プロパティを使用して、アプリが実行されている iOS デバイスで低電力モードが有効になっているかどうかを確認します。 (例:
+[Nsprocessinfo](xref:Foundation.NSProcessInfo)クラスの `LowPowerModeEnabled` プロパティを使用して、アプリが実行されている iOS デバイスで低電力モードが有効になっているかどうかを確認します。 例:
 
 ```csharp
 // Is the device in low power mode?
@@ -131,16 +131,16 @@ Apple では、iOS 9 の[ローカル認証](xref:LocalAuthentication)フレー�
 - キーチェーンの呼び出しと、キーチェーンアクセス制御リストの評価をサポートする_認証コンテキスト_を使用する機能。
 - コードからユーザープロンプトをキャンセルする権限。
 
-詳細については、「 [TOUCH id](~/ios/platform/touchid.md)ドキュメントの概要」を参照してください。
+詳細については、「 [Xamarin. iOS でのタッチ id と顔 id](~/ios/platform/touch-id-face-id.md)」を参照してください。
 
 ### <a name="lacontext-changes"></a>LAContext の変更
 
 IOS 9 の[LAContext](xref:LocalAuthentication.LAContext)クラスには、次の変更が加えられました。
 
-- **TouchIdAuthenticationMaximumAllowableReuseDuration** -タッチ ID 認証を再利用できる最長時間を返します。
+- **TouchIdAuthenticationMaximumAllowableReuseDuration** -最大タッチ ID の認証を再利用可能な時間を返します。
 - **EvaluatedPolicyDomainState** -評価されたポリシーの状態を取得または設定します。
 - **MaxBiometryFailures** -iOS 9 では、減価償却が行われています。
-- **TouchIdAuthenticationAllowableReuseDuration**Touch ID 認証を再利用できる時間を取得します。値の設定も可能です。
+- **TouchIdAuthenticationAllowableReuseDuration** を取得またはタッチ ID の認証を再利用可能な時間を設定します。
 - **EvaluateAccessControl** -認証ポリシーを非同期に評価します。
 - **無効**-特定のタッチ ID 認証を無効にします。
 - **Iscredentialset** -資格情報が現在設定されている場合に `true` を返します。
@@ -154,7 +154,7 @@ Apple では、iOS 9 の[Mapkit](xref:MapKit)フレームワークに次の変�
 
 - MapKit は、転送方向にマップアプリを直接起動し、 [Mklaunchoptions](xref:MapKit.MKLaunchOptions)および[mk道順](xref:MapKit.MKLaunchOptions)クラスを使用して到着の推定所要時間 (ETA) を照会するためのサポートを提供するようになりました。
 - MapKit と[Clgeocoder](xref:CoreLocation.CLGeocoder)クラスによって返される検索結果では、結果のタイムゾーンを指定することもできます。
-- [MKAnnotationView](xref:MapKit.MKAnnotationView)クラスの [`DetailCalloutAccessoryView` プロパティを使用して、iOS アプリによって表示されるマップの注釈を完全にカスタマイズできるようになりました。
+- [MKAnnotationView](xref:MapKit.MKAnnotationView)クラスの `DetailCalloutAccessoryView` プロパティを使用して、iOS アプリによって表示されるマップの注釈を完全にカスタマイズできるようになりました。
 
 Xamarin でマップと注釈を操作する方法の詳細については、「 [Ios マップ](~/ios/user-interface/controls/ios-maps/index.md)と[チュートリアル-mapkit での注釈とオーバーレイの調査](~/ios/user-interface/controls/ios-maps/ios-maps-walkthrough.md)」を参照してください。詳細については、Ios と Apple の[clgeocoder リファレンス](https://developer.apple.com/library/prerelease/ios/documentation/CoreLocation/Reference/CLGeocoder_class/index.html#//apple_ref/occ/cl/CLGeocoder)を参照してください。
 
@@ -221,7 +221,7 @@ Apple では、iOS 9 のタッチイベントに対していくつかの機能�
 
 新しい `NSLayoutAnchor` および `NSLayoutDimension` レイアウトのアンカークラスは、 [Uiview](xref:UIKit.UIView)クラス (`LeadingAnchor` や `WidthAnchor`など) の新しいアンカープロパティと連携して、iOS 9 でのレイアウトを簡単にします。
 
-Xamarin でのオートレイアウトとサイズのクラスの操作の詳細については、統合されたストーリーボードのドキュメントの[概要に](~/ios/user-interface/storyboards/unified-storyboards.md)関する記事をご覧ください。 iOS アプリと Apple の[nslayoutanchor リファレンス](https://developer.apple.com/library/prerelease/ios/documentation/AppKit/Reference/NSLayoutAnchor_ClassReference/index.html#//apple_ref/occ/cl/NSLayoutAnchor)、 [nslayoutanchor リファレンス](https://developer.apple.com/library/prerelease/ios/documentation/AppKit/Reference/NSLayoutDimension_ClassReference/index.html#//apple_ref/occ/cl/NSLayoutDimension) [、](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/cl/UIView)詳細については、「UIView リファレンス」を参照してください。
+詳細については、統合された[ストーリーボードの概要に](~/ios/user-interface/storyboards/unified-storyboards.md)関するドキュメントを参照してください。 iOS アプリと Apple の[nslayoutanchor のリファレンス](https://developer.apple.com/library/prerelease/ios/documentation/AppKit/Reference/NSLayoutAnchor_ClassReference/index.html#//apple_ref/occ/cl/NSLayoutAnchor)、 [nslayoutanchor リファレンス](https://developer.apple.com/library/prerelease/ios/documentation/AppKit/Reference/NSLayoutDimension_ClassReference/index.html#//apple_ref/occ/cl/NSLayoutDimension)、および[uiview リファレンス](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIView_Class/index.html#//apple_ref/occ/cl/UIView)の詳細については、「統合されたストーリーボードの概要」を参照してください。
 
 ### <a name="new-readable-content-margins"></a>新しい読み取り可能なコンテンツの余白
 

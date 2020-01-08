@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 05/03/2018
-ms.openlocfilehash: 658bb65c9f9dea2c68b782736de02d95df368dd3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 97c582ada0951f530885359112c3c7adfacc3502
+ms.sourcegitcommit: bdb8ad7337931adf2ea45b10c2af81ecc4aad26a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73024861"
+ms.lasthandoff: 12/27/2019
+ms.locfileid: "75500236"
 ---
 # <a name="creating-a-service"></a>サービスの作成
 
@@ -38,7 +38,7 @@ public class DemoService : Service
 <service android:name="md5a0cbbf8da641ae5a4c781aaf35e00a86.DemoService" />
 ```
 
-_エクスポート_することによって、サービスを他の Android アプリケーションと共有することができます。 これを行うには、`ServiceAttribute` の `Exported` プロパティを設定します。 サービスをエクスポートする場合は、サービスに対して意味のあるパブリック名を提供するために、`ServiceAttribute.Name` プロパティも設定する必要があります。 このスニペットは、サービスをエクスポートして名前を指定する方法を示しています。
+_エクスポート_することによって、サービスを他の Android アプリケーションと共有することができます。 これを行うには、`ServiceAttribute`の `Exported` プロパティを設定します。 サービスをエクスポートする場合は、サービスに対して意味のあるパブリック名を提供するために、`ServiceAttribute.Name` プロパティも設定する必要があります。 このスニペットは、サービスをエクスポートして名前を指定する方法を示しています。
 
 ```csharp
 [Service(Exported=true, Name="com.xamarin.example.DemoService")]
@@ -75,7 +75,7 @@ public class DemoService : Service
 
 Android でサービスを開始する最も基本的な方法は、開始するサービスを特定するのに役立つメタデータを含む `Intent` をディスパッチすることです。 サービスの開始に使用できるインテントには、次の2つの異なるスタイルがあります。
 
-- 明示的な**インテント &ndash; 明示的に**指定すると、特定のアクションを完了するために使用する必要があるサービスが正確に_特定され_ます。 明示的なインテントは、特定のアドレスを持つ文字と考えることができます。Android は、明示的に識別されたサービスにインテントをルーティングします。 このスニペットは、明示的なインテントを使用して `DownloadService` というサービスを開始する例の1つです。
+- 明示的な**インテント &ndash; 明示的に**指定すると、特定のアクションを完了するために使用する必要があるサービスが正確に_特定され_ます。 明示的なインテントは、特定のアドレスを持つ文字と考えることができます。Android は、明示的に識別されたサービスにインテントをルーティングします。 このスニペットは、明示的なインテントを使用して `DownloadService`というサービスを開始する例の1つです。
 
     ```csharp
     // Example of creating an explicit Intent in an Android Activity
@@ -83,7 +83,7 @@ Android でサービスを開始する最も基本的な方法は、開始する
     downloadIntent.data = Uri.Parse(fileToDownload);
     ```
 
-- **暗黙的なインテント**&ndash; この種類のインテントは、ユーザーが実行しようとしているアクションのを大まかに特定しますが、その操作を完了するための正確なサービスは不明です。 暗黙のインテントは、"関心のあるユーザー" に対応する文字と考えることができます。
+- **暗黙的なインテント**&ndash; この種類のインテントは、ユーザーが実行しようとしているアクションの種類を大まかに特定しますが、その操作を完了するための正確なサービスは不明です。 暗黙のインテントは、"関心のあるユーザー" に対応する文字と考えることができます。
     Android は目的の内容を調べ、目的に合った既存のサービスがあるかどうかを判断します。
 
     _インテントフィルター_を使用して、登録済みサービスとの暗黙的なインテントを照合します。 インテントフィルターは、サービスと暗黙的なインテントを照合するために必要なメタデータを含む**Androidmanifest .xml**に追加される xml 要素です。
@@ -106,7 +106,7 @@ Android に暗黙的なインテントに関して複数の一致候補がある
 
 ### <a name="creating-an-intent-filter-for-implicit-intents"></a>暗黙的インテントのインテントフィルターを作成する
 
-サービスを暗黙的なインテントに関連付けるには、Android アプリがサービスの機能を識別するためにいくつかのメタデータを提供する必要があります。 このメタデータは、_インテントフィルター_によって提供されます。 インテントフィルターには、サービスを開始する目的で存在する必要がある、アクションやデータの種類など、いくつかの情報が含まれています。 Xamarin Android では、インテントフィルターは、サービスを[`IntentFilterAttribute`](xref:Android.App.IntentFilterAttribute)で修飾することによって、 **Androidmanifest .xml**に登録されます。 たとえば、次のコードでは、`com.xamarin.DemoService` のアクションが関連付けられたインテントフィルターを追加しています。
+サービスを暗黙的なインテントに関連付けるには、Android アプリがサービスの機能を識別するためにいくつかのメタデータを提供する必要があります。 このメタデータは、_インテントフィルター_によって提供されます。 インテントフィルターには、サービスを開始する目的で存在する必要がある、アクションやデータの種類など、いくつかの情報が含まれています。 Xamarin Android では、インテントフィルターは、サービスを[`IntentFilterAttribute`](xref:Android.App.IntentFilterAttribute)で修飾することによって、 **Androidmanifest .xml**に登録されます。 たとえば、次のコードでは、`com.xamarin.DemoService`のアクションが関連付けられたインテントフィルターを追加しています。
 
 ```csharp
 [Service]
@@ -130,7 +130,7 @@ Xamarin. Android サービスの基本については、サービスのさまざ
 
 ## <a name="related-links"></a>関連リンク
 
-- [Android. App. サービス](xref:Android.App.Service)
-- [Android. App. ServiceAttribute](xref:Android.App.ServiceAttribute)
+- [Android.App.Service](xref:Android.App.Service)
+- [Android.App.ServiceAttribute](xref:Android.App.ServiceAttribute)
 - [Android... インテント](xref:Android.Content.Intent)
-- [Android. IntentFilterAttribute](xref:Android.App.IntentFilterAttribute)
+- [Android.App.IntentFilterAttribute](xref:Android.App.IntentFilterAttribute)

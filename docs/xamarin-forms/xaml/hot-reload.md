@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 08/13/2019
-ms.openlocfilehash: 0f3ff5357d3fb4c60a910dda6befa8c699c6fc07
-ms.sourcegitcommit: 5f7749d6ba1db79aa0fbf4ee7c90f2dcd4de812b
+ms.openlocfilehash: d94f18d00ebf6eeec5f33343b5c0f985ba2a6ea8
+ms.sourcegitcommit: 9ab907e053c57fc96419149f83187bc3e8983a6b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74884125"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75655408"
 ---
 # <a name="xaml-hot-reload-for-xamarinforms-preview"></a>Xamarin. Forms の XAML ホットリロード (プレビュー)
 
@@ -20,6 +20,8 @@ XAML ホットリロードは、生産性を向上させ、時間を節約する
 
 > [!NOTE]
 > WPF または UWP アプリを作成する場合は、「 [uwp と wpf の XAML ホットリロード](/visualstudio/debugger/xaml-hot-reload)」を参照してください。
+>
+> Xamarin の XAML ホットリロードは、現在、Xamarin. Forms UWP プロジェクトでは使用_できません_。
 
 ## <a name="system-requirements"></a>システム要件
 
@@ -49,6 +51,7 @@ XAML ホットリロードで再読み込みできないように変更すると
 - `x:Name` 値を使用してコントロールを別のフィールドまたはプロパティに割り当てることによって作成された参照は、再読み込みされません。
 - **Appshell**でシェルアプリケーションのビジュアル階層を更新すると、アプリケーションの状態を維持する際に問題が発生する可能性があります。 再読み込みを続行するには、アプリをリビルドしてください。
 - XAML ホットリロードではC# 、イベントハンドラー、カスタムコントロール、ページ分離コード、およびその他のクラスを含むコードを再読み込みすることはできません。
+- は、他の Xamarin. Forms でサポートされているプラットフォーム (mac OS や UWP など) では機能し_ません_。
 
 ## <a name="migrate-from-the-private-preview"></a>プライベートプレビューからの移行
 

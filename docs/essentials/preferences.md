@@ -77,6 +77,7 @@ Preferences.Clear();
 
 すべてのデータは[Shared Preferences](https://developer.android.com/training/data-storage/shared-preferences.html)に格納されます。 `sharedName` が指定されていない場合は既定の共有ユーザー設定が使用され、指定されている場合はその名前を使用して**プライベート**共有ユーザー設定が取得されます。
 
+
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
 iOS デバイスに値を格納するには、[NSUserDefaults](https://docs.microsoft.com/xamarin/ios/app-fundamentals/user-defaults) が使用されます。 `sharedName` が指定されていない場合は、`StandardUserDefaults` が使用されます。指定されている場合は、`NSUserDefaultsType.SuiteName` に対して使用される指定された名前で新しい `NSUserDefaults` が作成されます。

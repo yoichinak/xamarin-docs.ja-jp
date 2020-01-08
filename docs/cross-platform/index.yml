@@ -1,89 +1,83 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: クロスプラットフォーム ガイダンス
+summary: Xamarin には、モバイル、タブレット、およびデスクトップ アプリケーション向けに、クロスプラットフォーム開発ソリューションが用意されています。 このセクションでは、対象のプラットフォームを問わず適用される詳細について説明します。
 metadata:
-  description: モバイル開発者向けのクロスプラットフォーム ガイダンスです。
+  title: クロスプラットフォーム ガイダンス
+  description: Xamarin には、モバイル、タブレット、およびデスクトップ アプリケーション向けに、クロスプラットフォーム開発ソリューションが用意されています。 このセクションでは、対象のプラットフォームを問わず適用される詳細について説明します。
   author: davidortinau
   ms.author: daortin
-  ms.date: 04/25/2018
+  ms.date: 12/23/2019
   ms.topic: landing-page
-abstract:
-  description: Xamarin には、モバイル、タブレット、およびデスクトップ アプリケーション向けに、クロスプラットフォーム開発ソリューションが用意されています。 このセクションでは、どのプラットフォームを対象とするかは問われません。
-  menu:
-    items:
-      - href: ~/cross-platform/samples/index.yml
-        text: Xamarin のサンプル
-      - href: /visualstudio/
-        text: Visual Studio
-      - href: /visualstudio/mac/
-        text: Visual Studio for Mac
-sections:
-  - title: はじめに
-    items:
-      - type: paragraph
-        text: 'Xamarin と C# を使用して、Android、iOS、macOS、UWP など用の最初のアプリを構築する方法について説明します。'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_setup.svg'
-            text: 必要条件
-            href: ~/cross-platform/get-started/requirements.md
-          - image:
-              src: ~/media/icons/i_desktop-phone.svg
-            text: Xamarin.Forms
-            href: ~/get-started/quickstarts/index.yml
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_mobileapp.svg'
-            text: Android
-            href: ~/android/get-started/hello-android/hello-android-quickstart
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_mobile-app-developement.svg'
-            text: iOS
-            href: ~/ios/get-started/hello-ios/hello-ios-quickstart.md
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_xplat-code.svg'
-            text: Mac
-            href: ~/mac/get-started/hello-mac.md
-  - title: ガイド
-    items:
-      - type: list
-        style: cards
-        className: cardsB
-        items:
-          - href: ~/cross-platform/get-started/index.md
-            html: Xamarin を使用したモバイル アプリ開発の概要。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
-              href: ~/cross-platform/get-started/index.md
-            title: モバイル アプリの構築
-          - href: ~/cross-platform/platform/index.md
-            html: 'Xamarin では、C#、F#、および Razor テンプレート エンジンがサポートされます。'
-            image:
-              src: ~/media/icons/i_app-build.svg
-              href: ~/cross-platform/platform/index.md
-            title: 言語サポート
-          - href: ~/cross-platform/app-fundamentals/index.md
-            html: アプリを構築するために必要なすべての情報について説明します。
-            image:
-              src: ~/media/icons/i_platform.svg
-              href: ~/cross-platform/app-fundamentals/index.md
-            title: コードの共有
-          - href: ~/cross-platform/deploy-test/performance.md
-            html: アプリのパフォーマンスとセキュリティのガイドラインを示します。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_code-performance.svg'
-              href: ~/cross-platform/deploy-test/performance.md
-            title: パフォーマンスとセキュリティ
-          - href: ~/cross-platform/deploy-test/index.md
-            html: デバッグと配置のヒントを紹介します。
-            image:
-              src: ~/media/icons/i_deploy-test.svg
-              href: ~/cross-platform/deploy-test/index.md
-            title: 配置とデバッグ
-          - href: ~/cross-platform/desktop/index.md
-            html: モバイル アプリの構築に関心のある .NET デスクトップ開発者向けガイダンスです。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_xplat-code.svg'
-              href: ~/cross-platform/desktop/index.md
-            title: デスクトップ開発者
+  ms.openlocfilehash: 244eb52cd22e04518da8d69b6e74dd0e1b68bf0a
+  ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 12/25/2019
+  ms.locfileid: "75488557"
+landingContent:
+- title: クロス プラットフォーム アプリをビルドする
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: 必要条件
+      url: ~/cross-platform/get-started/requirements.md
+    - text: Xamarin.Forms
+      url: ~/get-started/quickstarts/index.yml
+    - text: .NET Standard
+      url: ~/cross-platform/app-fundamentals/net-standard.md
+  - linkListType: how-to-guide
+    links:
+    - text: アプリ開発ライフサイクル
+      url: ~/cross-platform/get-started/introduction-to-mobile-sdlc.md
+    - text: チュートリアル
+      url: ~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md
+- title: 言語サポート
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: 概要
+      url: ~/cross-platform/platform/index.md
+    - text: C#
+      url: ~/cross-platform/platform/csharp-six.md
+    - text: F#
+      url: ~/cross-platform/platform/fsharp/index.md
+    - text: Visual Basic
+      url: ~/cross-platform/platform/visual-basic/index.md
+    - text: Razor HTML のテンプレート
+      url: ~/cross-platform/platform/razor-html-templates/index.md
+- title: パフォーマンスとセキュリティ
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Xamarin.Forms のパフォーマンス
+      url: /xamarin/xamarin-forms/deploy-test/performance?context=xamarin/cross-platform
+    - text: Android のパフォーマンス
+      url: /xamarin/android/deploy-test/performance?context=xamarin/cross-platform
+    - text: iOS のパフォーマンス
+      url: /xamarin/ios/deploy-test/performance?context=xamarin/cross-platform
+    - text: Mac のパフォーマンス
+      url: /xamarin/mac/deploy-test/performance?context=xamarin/cross-platform
+    - text: トランスポート層セキュリティ (TLS) 1.2
+      url: ~/cross-platform/app-fundamentals/transport-layer-security.md
+- title: 配置とデバッグ
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: カスタム リンカーの構成
+      url: ~/cross-platform/deploy-test/linker.md
+  - linkListType: how-to-guide
+    links:
+    - text: ローカル Web サービスに接続する
+      url: ~/cross-platform/deploy-test/connect-to-local-web-services.md
+    - text: マルチプロセス デバッグ
+      url: ~/cross-platform/deploy-test/multi-process-debugging.md
+- title: デスクトップ開発者
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: アプリのライフサイクルの比較
+      url: ~/cross-platform/desktop/lifecycle.md
+    - text: UI コントロールの比較
+      url: ~/cross-platform/desktop/controls/index.md
+    - text: 移植のガイダンス
+      url: ~/cross-platform/desktop/porting.md

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: db398947b5f13963febae7d25a7898af21600813
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 531e04c3dbc9bd695087204ceae88d2f0f5df012
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031779"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488947"
 ---
 # <a name="introduction-to-ios-9"></a>iOS 9 の概要
 
@@ -141,7 +141,7 @@ IOS 9 では、次のように、Secure エンクレーブおよびその他の�
 - アプリによって提供されるキーチェーン項目の暗号化に対して、Access Control リストエントロピ (アプリケーションパスワードオプションを使用)。
 - (`kSecAttrTokenIDSecureEnclave` 属性を使用して) secure エンクレーブ内でのキーの生成と使用のサポート。
 
-詳細については、「 [TOUCH ID](~/ios/platform/touchid.md)ドキュメントの概要」を参照してください。
+詳細については、「 [Xamarin. iOS のタッチ id と顔 id](~/ios/platform/touch-id-face-id.md)」を参照してください。
 
 ## <a name="right-to-left-language-support"></a>右から左へ記述する言語サポート
 
@@ -193,7 +193,7 @@ Apple では、iOS 9 の次の Api と関数が非推奨とされています。
 - [MusicMotion](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-musicmotion)
 - [PhotoProgress](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-photoprogress)
 - [SegueCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-seguecatalog)
-- [System.windows.forms.toolstrip.stackview](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StackView)
+- [StackView](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StackView)
 - [StickyCorners](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StickyCorners)
 
 また、これらのサンプルの iOS 部分も確認してください (コンパニオン Mac OS X バージョン)。

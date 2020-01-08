@@ -9,12 +9,12 @@ ms.custom: video
 author: conceptdev
 ms.author: crdun
 ms.date: 05/23/2019
-ms.openlocfilehash: 2c50ffb37f0fd1d7b0d9fad063c4d6195d6b1f08
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: fd2fcf6ebe11df27444f2ecc1d89955debf56cb4
+ms.sourcegitcommit: c4f72221a6dce1276a90f2b52282b8145f8e0f1c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199784"
+ms.lasthandoff: 12/27/2019
+ms.locfileid: "75502801"
 ---
 # <a name="build-your-first-xamarinforms-app"></a>最初の Xamarin.Forms アプリのビルド
 
@@ -26,7 +26,7 @@ _このビデオを視聴し、作業を進めて、Xamarin.Forms による最�
 
 ## <a name="step-by-step-instructions-for-windows"></a>Windows での手順の詳細
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
 
 上記のビデオと共に以下の手順に従います。
 
@@ -36,11 +36,11 @@ _このビデオを視聴し、作業を進めて、Xamarin.Forms による最�
 
 2. "Xamarin" を検索するか、 **[プロジェクトの種類]** メニューの **[モバイル]** を選択します。 **モバイルアプリ (Xamarin)** プロジェクトの種類を選択します。
 
-    [![Xamarin プロジェクトのフィルター](images/win-2019/02-sml.png)](images/win-2019/02.png#lightbox)
+    [Xamarin プロジェクトの ![フィルター](images/win-2019/02-sml.png)](images/win-2019/02.png#lightbox)
 
-3. この例では&ndash; 、"AwesomeApp" を使用してプロジェクト名を選択します。
+3. この例では "AwesomeApp" を使用する &ndash; プロジェクト名を選択します。
 
-    [![プロジェクト名の選択](images/win-2019/03-sml.png)](images/win-2019/03.png#lightbox)
+    [プロジェクト名を選択 ![には](images/win-2019/03-sml.png)](images/win-2019/03.png#lightbox)
 
 4. **空**のプロジェクトの種類をクリックし、 **Android**と**iOS**が選択されていることを確認します。
 
@@ -111,7 +111,7 @@ _このビデオを視聴し、作業を進めて、Xamarin.Forms による最�
 
 ## <a name="step-by-step-instructions-for-windows"></a>Windows での手順の詳細
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
 
 上記のビデオと共に以下の手順に従います。
 
@@ -158,7 +158,7 @@ _このビデオを視聴し、作業を進めて、Xamarin.Forms による最�
 
 ## <a name="step-by-step-instructions-for-mac"></a>Mac での手順の詳細
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
 
 上記のビデオと共に以下の手順に従います。
 
@@ -209,8 +209,8 @@ _このビデオを視聴し、作業を進めて、Xamarin.Forms による最�
 
 [サンプル ギャラリー](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)から完成したコードをダウンロードしたり、[GitHub](https://github.com/xamarin/xamarin-forms-samples/tree/master/GetStarted/FirstApp) でそのコードを表示したりすることができます。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
-- [シングルページのクイックスタート](~/get-started/quickstarts/single-page.md)&ndash;より機能が豊富なアプリを作成します。
-- [Xamarin.Forms のサンプル](~/xamarin-forms/samples/index.yml) &ndash; コード例とサンプル アプリをダウンロードして実行する。
-- [Mobile Apps の電子ブックの作成](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md) &ndash; PDF で提供され、数百の追加のサンプルを含む Xamarin.Forms 開発について解説する詳細な章。
+- [1 ページのクイックスタート](~/get-started/quickstarts/single-page.md)&ndash; より機能が豊富なアプリを構築できます。
+- [Xamarin サンプル](~/xamarin-forms/samples/index.md)&ndash; コード例とサンプルアプリをダウンロードして実行します。
+- [Mobile Apps](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)電子 &ndash; ブックを作成すると、Xamarin の開発について説明する詳細な章が作成されます。これには、PDF として利用でき、数百もの追加のサンプルが含まれます。

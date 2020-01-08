@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 6c7a236995bf2aa9677deb6fadacf76cb5726398
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: c3355b2696b5c40ee11a289e700239900698dcf1
+ms.sourcegitcommit: 55167ad9db910c5c0eb5a84c0923cb07acd2530e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73008126"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75606711"
 ---
 # <a name="windows-in-xamarinmac"></a>Xamarin. Mac のウィンドウ
 
@@ -29,13 +29,11 @@ Xamarin アプリケーションでは、その目的に基づいて、画面上
 
 パネルとは、特殊な種類のウィンドウ (基本 `NSWindow` クラスのサブクラス) です。通常は、テキスト形式のインスペクターやシステムカラーピッカーなどのユーティリティウィンドウなど、アプリケーションで補助関数を提供します。
 
-[![](window-images/intro01.png "Editing a window in Xcode")](window-images/intro01.png#lightbox)
+[Xcode でウィンドウを編集する ![](window-images/intro01.png)](window-images/intro01.png#lightbox)
 
-この記事では、Xamarin. Mac アプリケーションで Windows とパネルを操作するための基本について説明します。 最初に、 [Hello, Mac](~/mac/get-started/hello-mac.md)の記事を使用して作業することを強くお勧めします。具体的には、 [Xcode と Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)および[アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions)に関するセクションで説明します。これは、で使用する主要な概念と手法に関するものです。この記事をご覧ください。
+この記事では、Xamarin. Mac アプリケーションで Windows とパネルを操作するための基本について説明します。 この記事で使用する主要な概念と手法について説明しているように、最初に[Hello, Mac](~/mac/get-started/hello-mac.md)の記事「 [Xcode と Interface Builder の概要](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)」と「[アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions)」セクションをご覧になることを強くお勧めします。
 
-[Xamarin. Mac の内部](~/mac/internals/how-it-works.md)ドキュメントの「 C# [クラス/ C#メソッドを目的](~/mac/internals/how-it-works.md)として公開する」セクションを参照することもできます。ここでは、クラスを目的のために接続するために使用する`Register`と`Export`のコマンドについて説明します。オブジェクトと UI 要素。
-
-<a name="Introduction_to_Windows" />
+詳しくは、「 [Xamarin. Mac の内部](~/mac/internals/how-it-works.md)ドキュメント」の「 C# [クラス/メソッドを目的C# ](~/mac/internals/how-it-works.md)として公開する」セクションを参照してください。クラスを目的の c オブジェクトと UI 要素に接続するために使用する `Register` と `Export` のコマンドについても説明します。
 
 ## <a name="introduction-to-windows"></a>Windows の概要
 
@@ -49,9 +47,7 @@ Apple によれば、macOS アプリには次の5つの主要な種類のウィ�
 - **ダイアログ**-ユーザーの操作に応答してダイアログが表示され、通常、ユーザーがアクションを完了する方法が示されます。 ダイアログを閉じるには、ユーザーからの応答が必要です。 (「[ダイアログの操作」を](~/mac/user-interface/dialog.md)参照)
 - **アラート**-アラートは、重大な問題 (エラーなど) が発生したとき、または警告 (ファイルの削除の準備など) が発生したときに表示される特別な種類のダイアログです。 アラートはダイアログであるため、閉じる前にユーザーの応答も必要です。 (「[アラートの操作」を](~/mac/user-interface/alert.md)参照)
 
-詳細については、「Apple の[OS X ヒューマンインターフェイスガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)」の「 [About Windows](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowAppearanceBehavior.html#//apple_ref/doc/uid/20000957-CH33-SW1) 」セクションを参照してください。
-
-<a name="Main_Key_and_Inactive_Windows" />
+詳細については、Apple の[macOS デザインテーマ](https://developer.apple.com/design/human-interface-guidelines/macos/overview/themes/)の「 [About Windows](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowAppearanceBehavior.html#//apple_ref/doc/uid/20000957-CH33-SW1) 」セクションを参照してください。
 
 ### <a name="main-key-and-inactive-windows"></a>メイン、キー、および非アクティブなウィンドウ
 
@@ -59,9 +55,7 @@ Xamarin. Mac アプリケーションのウィンドウは、ユーザーが現�
 
 メインウィンドウとキーウィンドウ (これらが分離されている場合) は常にアクティブであり、_非アクティブウィンドウ_は開いているウィンドウであり、フォアグラウンドにはありません。 たとえば、テキストエディターアプリケーションでは、一度に複数のドキュメントを開くことができ、メインウィンドウだけがアクティブになり、その他はすべて非アクティブになります。 
 
-詳細については、「Apple の[OS X ヒューマンインターフェイスガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)」の「 [About Windows](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowAppearanceBehavior.html#//apple_ref/doc/uid/20000957-CH33-SW1) 」セクションを参照してください。
-
-<a name="Naming_Windows" />
+詳細については、Apple の[macOS デザインテーマ](https://developer.apple.com/design/human-interface-guidelines/macos/overview/themes/)の「 [About Windows](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowAppearanceBehavior.html#//apple_ref/doc/uid/20000957-CH33-SW1) 」セクションを参照してください。
 
 ### <a name="naming-windows"></a>Windows の名前付け
 
@@ -72,9 +66,7 @@ Apple では、次のガイドラインを提案します。
 - ドキュメント以外のメインウィンドウのタイトルには、アプリケーション名を使用します。 
 - 新しいドキュメントウィンドウに `untitled`名前を指定します。 最初の新しいドキュメントでは、タイトルに数字 (`untitled 1`など) を追加しないでください。 保存する前にユーザーが別の新しいドキュメントを作成し、最初の文書にタイトルを追加した場合は、そのウィンドウ `untitled 2`、`untitled 3`などを呼び出します。
 
-詳細については、「Apple の[OS X ヒューマンインターフェイスガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)」の「 [Windows の名前付け](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowNaming.html#//apple_ref/doc/uid/20000957-CH35-SW1)」を参照してください。
-
-<a name="Full-Screen_Windows" />
+詳細については、Apple の[macOS デザインテーマ](https://developer.apple.com/design/human-interface-guidelines/macos/overview/themes/)に関する[Windows の名前付け](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowNaming.html#//apple_ref/doc/uid/20000957-CH35-SW1)に関するセクションを参照してください。
 
 ### <a name="full-screen-windows"></a>全画面表示ウィンドウ
 
@@ -88,15 +80,13 @@ Apple では、次のガイドラインが提案されています。
 - 可能であれば、ユーザーが全画面表示のウィンドウにある間は Finder の対話を避けてください。
 - メインタスクからフォーカスを移動せずに、増加した画面領域を活用します。
 
-詳細については、Apple の[OS X ヒューマンインターフェイスガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)の[全画面ウィンドウ](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/FullScreen.html#//apple_ref/doc/uid/20000957-CH61-SW1)のセクションを参照してください。
-
-<a name="Panels" />
+詳細については、Apple の[macOS デザインテーマ](https://developer.apple.com/design/human-interface-guidelines/macos/overview/themes/)の[全画面ウィンドウ](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/FullScreen.html#//apple_ref/doc/uid/20000957-CH61-SW1)のセクションを参照してください。
 
 ### <a name="panels"></a>パネル
 
 パネルは、アクティブなドキュメントまたは選択 (システムカラーピッカーなど) に影響を与えるコントロールとオプションを含む補助ウィンドウです。
 
-[![](window-images/panel01.png "A color panel")](window-images/panel01.png#lightbox)
+[カラーパネルの ![](window-images/panel01.png)](window-images/panel01.png#lightbox)
 
 パネルには、_アプリ固有_またはシステム_全体_を使用できます。 アプリ固有のパネルは、アプリケーションのドキュメントウィンドウの上部に表示され、アプリケーションがバックグラウンドで表示されると消えます。 システム全体のパネル ( **[フォント]** パネルなど) では、アプリケーションに関係なく、すべての開いているウィンドウの上にフローティングします。 
 
@@ -112,21 +102,19 @@ Apple では、次のガイドラインが提案されています。
 
 最新の macOS**アプリケーションでは**、パネルウィンドウを使用するのではなく、メインウィンドウの一部である_インスペクター_として、アクティブなドキュメントまたは選択項目に影響を与える補助コントロールとオプションが用意されています。
 
-[![](window-images/panel02.png "An example inspector")](window-images/panel02.png#lightbox)
+[インスペクターの ![](window-images/panel02.png)](window-images/panel02.png#lightbox)
 
-詳細については、Apple の[OS X ヒューマンインターフェイスガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)の[パネル](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowPanels.html#//apple_ref/doc/uid/20000957-CH42-SW1)セクションと、Xamarin. Mac アプリでの**Inspector インターフェイス**の完全な実装に関する[macinspector](https://docs.microsoft.com/samples/xamarin/mac-samples/macinspector)サンプルアプリを参照してください。
-
-<a name="Creating_and_Maintaining_Windows_in_Xcode" />
+詳細については、「Apple の[macOS デザインテーマ](https://developer.apple.com/design/human-interface-guidelines/macos/overview/themes/)」と「 [macinspector](https://docs.microsoft.com/samples/xamarin/mac-samples/macinspector)サンプルアプリ」の「[パネル](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowPanels.html#//apple_ref/doc/uid/20000957-CH42-SW1)」セクションを参照して、Xamarin. Mac アプリで**インスペクターインターフェイス**を完全に実装してください。
 
 ## <a name="creating-and-maintaining-windows-in-xcode"></a>Xcode でのウィンドウの作成と保守
 
 新しい Xamarin. Mac Cocoa アプリケーションを作成すると、既定で標準の空白のウィンドウが表示されます。 このウィンドウは、プロジェクトに自動的に含まれる `.storyboard` ファイルで定義されています。 Windows のデザインを編集するには、**ソリューションエクスプローラー**で、`Main.storyboard` ファイルをダブルクリックします。
 
-[![](window-images/edit01.png "Selecting the main storyboard")](window-images/edit01.png#lightbox)
+[メインストーリーボードの選択 ![](window-images/edit01.png)](window-images/edit01.png#lightbox)
 
 これにより、Xcode の Interface Builder でウィンドウのデザインが開きます。
 
-[![](window-images/edit02.png "Editing the UI in Xcode")](window-images/edit02.png#lightbox)
+[Xcode で UI を編集する ![](window-images/edit02.png)](window-images/edit02.png#lightbox)
 
 **属性インスペクター**には、ウィンドウの定義と制御に使用できるプロパティがいくつかあります。
 
@@ -154,39 +142,33 @@ Apple では、次のガイドラインが提案されています。
 
 詳細については、Apple の Windows と[Nswindow](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSWindow_Class/index.html#//apple_ref/occ/cl/NSWindow)の[概要に](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/WinPanel/Introduction.html#//apple_ref/doc/uid/10000031-SW1)関するドキュメントを参照してください。
 
-<a name="Setting_the_Default_Size_and_Location" />
-
 ### <a name="setting-the-default-size-and-location"></a>既定のサイズと場所の設定
 
 ウィンドウの初期位置を設定し、サイズを制御するには、**サイズインスペクター**に切り替えます。
 
-[![](window-images/edit07.png "The default size and location")](window-images/edit07.png#lightbox)
+[既定のサイズと場所の ![](window-images/edit07.png)](window-images/edit07.png#lightbox)
 
 ここでは、ウィンドウの初期サイズを設定し、それに最小値と最大サイズを設定し、画面の最初の位置を設定して、ウィンドウの周囲の境界線を制御できます。
-
-<a name="Setting-a-Custom-Main-Window-Controller" />
 
 ### <a name="setting-a-custom-main-window-controller"></a>カスタムメインウィンドウコントローラーの設定
 
 UI 要素をコードにC#公開するためのアウトレットとアクションを作成できるようにするには、Xamarin. Mac アプリでカスタムウィンドウコントローラーを使用する必要があります。
 
-次の手順で行います。
+次を実行します。
 
 1. Xcode の Interface Builder でアプリのストーリーボードを開きます。
 2. デザインサーフェイスで `NSWindowController` を選択します。
 3. **[Identity Inspector]** ビューに切り替え、**クラス名**として「`WindowController`」と入力します。 
 
-    [![](window-images/windowcontroller01.png "Setting the class name")](window-images/windowcontroller01.png#lightbox)
+    [クラス名の設定 ![](window-images/windowcontroller01.png)](window-images/windowcontroller01.png#lightbox)
 4. 変更を保存し、Visual Studio for Mac に戻って同期します。
 5. `WindowController.cs` ファイルが Visual Studio for Mac の**ソリューションエクスプローラー**にプロジェクトに追加されます。 
 
-    [![](window-images/windowcontroller02.png "Selecting the windows controller")](window-images/windowcontroller02.png#lightbox)
+    [windows コントローラーを選択 ![には](window-images/windowcontroller02.png)](window-images/windowcontroller02.png#lightbox)
 6. Xcode の Interface Builder でストーリーボードを再度開きます。
 7. `WindowController.h` ファイルは、次のように使用できます。 
 
-    [![](window-images/windowcontroller03.png "Editing the WindowController.h file")](window-images/windowcontroller03.png#lightbox)
-
-<a name="Adding_UI_Elements" />
+    [WindowController .h ファイルの編集 ![](window-images/windowcontroller03.png)](window-images/windowcontroller03.png#lightbox)
 
 ### <a name="adding-ui-elements"></a>UI 要素の追加
 
@@ -194,27 +176,25 @@ UI 要素をコードにC#公開するためのアウトレットとアクショ
 
 例として、**ライブラリインスペクター**から**インターフェイスエディター**のウィンドウにツールバーをドラッグしてみましょう。
 
-[![](window-images/edit03.png "Selecting a Toolbar from the Library")](window-images/edit03.png#lightbox)
+[ライブラリからツールバーを選択 ![には](window-images/edit03.png)](window-images/edit03.png#lightbox)
 
 次に、**テキストビュー**をドラッグして、ツールバーの下の領域に合わせてサイズを変更します。
 
-[![](window-images/edit04.png "Adding a Text View")](window-images/edit04.png#lightbox)
+[テキストビューを追加 ![には](window-images/edit04.png)](window-images/edit04.png#lightbox)
 
 ウィンドウのサイズが変更されたときに**テキストビュー**を縮小して拡大する必要があるため、**制約エディター**に切り替えて、次の制約を追加してみましょう。
 
-[![](window-images/edit05.png "Editing constraints")](window-images/edit05.png#lightbox)
+[![の編集制約](window-images/edit05.png)](window-images/edit05.png#lightbox)
 
-エディターの上部にある**赤の I ビーム**のをクリックし、 **[4 つの制約の追加]** をクリックすると、指定した X、Y 座標に合わせてテキストビューが表示され、ウィンドウのサイズが変更されると、水平方向および垂直方向に拡大または縮小されます。
+エディターの上部にある4つの**赤の I ビーム**をクリックし、[4 つの**制約の追加**] をクリックすると、指定された X、Y 座標に収まるようにテキストビューが表示され、ウィンドウのサイズが変更されると、水平方向および垂直方向に拡大または縮小されます。
 
 最後に、**アウトレット**を使用して**テキストビュー**をコードに公開します (`ViewController.h` ファイルを選択します)。
 
-[![](window-images/edit06.png "Configuring an Outlet")](window-images/edit06.png#lightbox)
+[アウトレットを構成 ![には](window-images/edit06.png)](window-images/edit06.png#lightbox)
 
 変更を保存し、Visual Studio for Mac に戻って Xcode と同期します。
 
 **アウトレット** **とアクション**の操作の詳細については、[アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions)のドキュメントを参照してください。
-
-<a name="Standard_Window_Workflow" />
 
 ### <a name="standard-window-workflow"></a>標準ウィンドウワークフロー
 
@@ -231,23 +211,21 @@ Xamarin. Mac アプリケーションで作成して使用するすべてのウ�
 
 基本的なウィンドウが作成されたので、windows を操作するときに、Xamarin アプリケーションが実行する一般的なプロセスを見ていきます。 
 
-<a name="Displaying_the_Default_Window" />
-
 ## <a name="displaying-the-default-window"></a>既定のウィンドウを表示する
 
 既定では、新しい Xamarin. Mac アプリケーションは、開始時に `MainWindow.xib` ファイルで定義されているウィンドウを自動的に表示します。
 
-[![](window-images/display01.png "An example window running")](window-images/display01.png#lightbox)
+[実行中のウィンドウの例を ![する](window-images/display01.png)](window-images/display01.png#lightbox)
 
 上のウィンドウのデザインを変更したため、既定のツールバーと**テキストビュー**コントロールが追加されました。 `Info.plist` ファイルの次のセクションでは、このウィンドウを表示します。
 
-[![](window-images/display00.png "Editing Info.plist")](window-images/display00.png#lightbox)
+[![の編集](window-images/display00.png)](window-images/display00.png#lightbox)
 
 メインの **[インターフェイス]** ドロップダウンを使用して、メインアプリの UI として使用されるストーリーボードを選択します (この場合 `Main.storyboard`)。
 
 ビューコントローラーがプロジェクトに自動的に追加され、表示されるメインウィンドウ (およびそのプライマリビュー) が制御されます。 これは `ViewController.cs` ファイルで定義され、 **Id インスペクター**で Interface Builder の**ファイルの所有者**にアタッチされます。
 
-[![](window-images/display02.png "Setting the file's owner")](window-images/display02.png#lightbox)
+[ファイルの所有者を設定 ![](window-images/display02.png)](window-images/display02.png#lightbox)
 
 このウィンドウでは、最初に開いたときに `untitled` のタイトルが表示されるようにします。 `ViewController.cs` の `ViewWillAppear` メソッドをオーバーライドして、次のようにします。
 
@@ -262,15 +240,11 @@ public override void ViewWillAppear ()
 ```    
 
 > [!NOTE]
-> `ViewDidLoad` メソッドではなく、`ViewWillAppear` メソッドでウィンドウの `Title` プロパティの値を設定しようとしています。これは、ビューがメモリに読み込まれても、まだ完全にはインスタンス化されていないためです。 `ViewDidLoad` メソッドで `Title` プロパティにアクセスしようとした場合、ウィンドウがまだ構築されていないため `null` 例外が発生し、まだプロパティに接続されています。
-
-<a name="Programmatically_Closing_a_Window" />
+> ウィンドウの `Title` プロパティは `ViewDidLoad` メソッドではなく `ViewWillAppear` メソッドで設定されます。これは、ビューがメモリに読み込まれても、まだ完全にはインスタンス化されていないためです。 `ViewDidLoad` メソッドの `Title` プロパティにアクセスすると、ウィンドウがまだ構築されておらず、プロパティに接続されていないため、`null` 例外が発生します。
 
 ## <a name="programmatically-closing-a-window"></a>プログラムによるウィンドウの終了
 
 ユーザーがウィンドウの **[閉じる]** ボタンをクリックしたり、メニュー項目を使用したりするのではなく、プログラムによって Xamarin. Mac アプリケーションでウィンドウを閉じることが必要になる場合があります。 macOS では、`PerformClose` と `Close`プログラムを使用して `NSWindow` を閉じるための2つの方法が用意されています。
-
-<a name="PerformClose" />
 
 ### <a name="performclose"></a>パフォーマンスを閉じる
 
@@ -278,15 +252,13 @@ public override void ViewWillAppear ()
 
 アプリケーションで `NSWindow`の `WillClose` イベントが実装されている場合は、ウィンドウが閉じられる前にこのイベントが発生します。 イベントによって `false`が返された場合、ウィンドウは閉じられません。 ウィンドウに **[閉じる]** ボタンがない場合、または何らかの理由で閉じることができない場合は、OS によって警告音が出力されます。
 
-(例:
+例:
 
 ```csharp
 MyWindow.PerformClose(this);
 ```
 
 は `MyWindow` `NSWindow` インスタンスを終了しようとします。 成功した場合、ウィンドウは閉じられます。それ以外の場合は、警告音が出力され、が開いたままになります。
-
-<a name="Close" />
 
 ### <a name="close"></a>閉じる
 
@@ -299,7 +271,7 @@ MyWindow.PerformClose(this);
 1. `WillClose` イベントは発生しません。
 2. ユーザーが **[閉じる]** ボタンをクリックしても、ボタンを一時的に強調表示することはできません。
 
-(例:
+例:
 
 ```csharp
 MyWindow.Close();
@@ -307,17 +279,15 @@ MyWindow.Close();
 
 `MyWindow` `NSWindow` インスタンスを閉じます。
 
-<a name="Modified-Windows-Content" />
-
-## <a name="modified-windows-content"></a>変更された Windows コンテンツ
+## <a name="modified-windows-content"></a>変更された windows コンテンツ
 
 MacOS では、ユーザーにウィンドウ (`NSWindow`) の内容が変更されていること、および保存する必要があることをユーザーに通知する方法が Apple から提供されています。 ウィンドウに変更されたコンテンツが含まれている場合は、小さい黒い点が**閉じ**たウィジェットに表示されます。
 
-[![](window-images/close01.png "A window with the modified marker")](window-images/close01.png#lightbox)
+[変更されたマーカーを含むウィンドウを ![する](window-images/close01.png)](window-images/close01.png#lightbox)
 
 ウィンドウのコンテンツに未保存の変更があるときに、ユーザーがウィンドウを閉じたり、Mac アプリを終了しようとしたりした場合は、[ダイアログボックス](~/mac/user-interface/dialog.md)または[モーダルシート](~/mac/user-interface/dialog.md)を表示し、ユーザーが最初に変更を保存できるようにする必要があります。
 
-[![](window-images/close02.png "A save sheet being shown when the window is closed")](window-images/close02.png#lightbox)
+[ウィンドウを閉じたときに表示される保存シートを ![します。](window-images/close02.png)](window-images/close02.png#lightbox)
 
 ### <a name="marking-a-window-as-modified"></a>ウィンドウを変更済みとしてマークする
 
@@ -337,7 +307,7 @@ Window.DocumentEdited = false;
 
 ### <a name="saving-changes-before-closing-a-window"></a>ウィンドウを閉じる前に変更を保存する
 
-ユーザーがウィンドウを閉じ、変更されたコンテンツを事前に保存できるようにするには、`NSWindowDelegate` のサブクラスを作成し、その `WindowShouldClose` メソッドをオーバーライドする必要があります。 (例:
+ユーザーがウィンドウを閉じ、変更されたコンテンツを事前に保存できるようにするには、`NSWindowDelegate` のサブクラスを作成し、その `WindowShouldClose` メソッドをオーバーライドする必要があります。 例:
 
 ```csharp
 using System;
@@ -450,21 +420,19 @@ public override NSApplicationTerminateReply ApplicationShouldTerminate (NSApplic
 }
 ```
 
-<a name="Working_with_Multiple_Windows" />
-
 ## <a name="working-with-multiple-windows"></a>複数のウィンドウの操作
 
 ほとんどのドキュメントベースの Mac アプリケーションでは、複数のドキュメントを同時に編集できます。 たとえば、テキストエディターでは、複数のテキストファイルを同時に編集することができます。 既定では、新しい Xamarin. Mac アプリケーションには **[ファイル]** メニューがあり、**新しい**項目が [`newDocument:`]**アクション**に自動的に接続されます。
 
-この新しい項目をアクティブ化し、ユーザーがメインウィンドウの複数のコピーを開いて、一度に複数のドキュメントを編集できるようにします。
+次のコードでは、この新しい項目をアクティブ化し、ユーザーがメインウィンドウの複数のコピーを開いて、一度に複数のドキュメントを編集できるようにします。
 
-`AppDelegate.cs` ファイルを編集し、次の計算されたプロパティを追加してみましょう。
+`AppDelegate.cs` ファイルを編集し、次の計算されたプロパティを追加します。
 
 ```csharp
 public int UntitledWindowCount { get; set;} =1;
 ```
 
-これを使用して、保存されていないファイルの数を追跡し、ユーザーにフィードバックを提供できるようにします (前述のように、Apple のガイドラインに従ってください)。
+これを使用して、保存されていないファイルの数を追跡し、ユーザーにフィードバックを提供することができます (前述のように、Apple のガイドラインに従ってください)。
 
 次に、次のメソッドを追加します。
 
@@ -485,15 +453,13 @@ void NewDocument (NSObject sender) {
 
 このコードは、ウィンドウコントローラーの新しいバージョンを作成し、新しいウィンドウを読み込み、メインウィンドウとキーウィンドウにして、タイトルを設定します。 ここでアプリケーションを実行し、 **[ファイル]** メニューから **[新規]** を選択すると、新しいエディターウィンドウが開き、表示されます。
 
-[![](window-images/display04.png "A new untitled window was added")](window-images/display04.png#lightbox)
+[新しい無題のウィンドウが追加され ![](window-images/display04.png)](window-images/display04.png#lightbox)
 
 **Windows**メニューを開くと、アプリケーションが自動的に追跡し、開いているウィンドウを処理していることがわかります。
 
-[![](window-images/display05.png "The windows menu")](window-images/display05.png#lightbox)
+[windows メニューの ![](window-images/display05.png)](window-images/display05.png#lightbox)
 
 Xamarin. Mac アプリケーションでのメニューの操作の詳細については、「[メニューの操作](~/mac/user-interface/menu.md)」のドキュメントを参照してください。
-
-<a name="Getting_the_Currently_Active_Window" />
 
 ### <a name="getting-the-currently-active-window"></a>現在アクティブなウィンドウを取得しています
 
@@ -505,13 +471,11 @@ var window = NSApplication.SharedApplication.KeyWindow;
 
 現在のキーウィンドウにアクセスする必要がある任意のクラスまたはメソッドで呼び出すことができます。 現在開いているウィンドウがない場合は、`null`が返されます。
 
-<a name="Accessing-All-App-Windows" />
-
 ### <a name="accessing-all-app-windows"></a>すべてのアプリウィンドウにアクセスする
 
 Xamarin. Mac アプリで現在開いているすべてのウィンドウにアクセスする必要がある場合があります。 たとえば、ユーザーが開こうとしているファイルが既に開いているウィンドウで開かれているかどうかを確認します。
 
-`NSApplication.SharedApplication` は、アプリで開いているすべてのウィンドウの配列を含む `Windows` プロパティを保持します。 この配列を反復処理して、すべてのアプリの現在のウィンドウにアクセスできます。 (例:
+`NSApplication.SharedApplication` は、アプリで開いているすべてのウィンドウの配列を含む `Windows` プロパティを保持します。 この配列を反復処理して、すべてのアプリの現在のウィンドウにアクセスできます。 例:
 
 ```csharp
 // Is the file already open?
@@ -526,8 +490,6 @@ for(int n=0; n<NSApplication.SharedApplication.Windows.Length; ++n) {
 ```
 
 コード例では、返された各ウィンドウをアプリのカスタム `ViewController` クラスにキャストし、ユーザーが開こうとするファイルのパスに対してカスタム `Path` プロパティの値をテストしています。 ファイルが既に開いている場合は、そのウィンドウを前面に表示します。
-
-<a name="Adjusting_the_Window_Size_in_Code" />
 
 ## <a name="adjusting-the-window-size-in-code"></a>コードでのウィンドウサイズの調整
 
@@ -551,8 +513,6 @@ SetFrame (frame, true);
 > [!IMPORTANT]
 > コード内で windows のサイズと位置を調整する場合は、Interface Builder で設定した最小サイズと最大サイズを確実に調整する必要があります。 この設定は自動的には受け付けられず、ウィンドウをこれらの制限よりも大きくしたり小さくしたりすることができます。
 
-<a name="Monitoring-Window-Size-Changes" />
-
 ## <a name="monitoring-window-size-changes"></a>ウィンドウサイズの変更の監視
 
 Xamarin. Mac アプリ内のウィンドウサイズの変更を監視する必要がある場合があります。 たとえば、新しいサイズに合うようにコンテンツを再描画します。
@@ -561,7 +521,7 @@ Xamarin. Mac アプリ内のウィンドウサイズの変更を監視する必�
 
 [![](window-images/resize01.png "The Identity Inspector")](window-images/resize01.png#lightbox)
 
-次に、カスタムウィンドウコントローラークラスを編集し、コントローラーのウィンドウで `DidResize` イベントを監視して、ライブサイズの変更が通知されるようにします。 (例:
+次に、カスタムウィンドウコントローラークラスを編集し、コントローラーのウィンドウで `DidResize` イベントを監視して、ライブサイズの変更が通知されるようにします。 例:
 
 ```csharp
 public override void WindowDidLoad ()
@@ -574,7 +534,7 @@ public override void WindowDidLoad ()
 }
 ```
 
-必要に応じて、`DidEndLiveResize` イベントを使用して、ユーザーがウィンドウのサイズ変更を完了した後にのみ通知を受け取ることができます。 たとえば、次のように入力します。
+必要に応じて、`DidEndLiveResize` イベントを使用して、ユーザーがウィンドウのサイズ変更を完了した後にのみ通知を受け取ることができます。 例:
 
 ```csharp
 public override void WindowDidLoad ()
@@ -587,8 +547,6 @@ public override void WindowDidLoad ()
     };
 }
 ```
-
-<a name="Setting_a_Window’s_Title_and_Represented_File" />
 
 ## <a name="setting-a-windows-title-and-represented-file"></a>ウィンドウのタイトルと表現されたファイルの設定
 
@@ -649,11 +607,11 @@ public override void AwakeFromNib ()
 
 [![](window-images/file02.png "Displaying a save dialog")](window-images/file02.png#lightbox)
 
-ファイルからドキュメントを読み込む場合は、`window.SetTitleWithRepresentedFilename (Path.GetFileName(path));` メソッドを使用して、ウィンドウのタイトルをファイルの名前に設定できます (`path` は開かれているファイルを表す文字列であるため)。 また、`window.RepresentedUrl = url;` メソッドを使用して、ファイルの URL を設定することもできます。
+ファイルからドキュメントを読み込む場合は、`window.SetTitleWithRepresentedFilename (Path.GetFileName(path));` メソッドを使用して、ウィンドウのタイトルをファイルの名前に設定します (`path` は、開いているファイルを表す文字列であることを指定します)。 また、`window.RepresentedUrl = url;` メソッドを使用して、ファイルの URL を設定することもできます。
 
 URL が OS によって認識されるファイルの種類を指している場合、そのアイコンはタイトルバーに表示されます。 ユーザーがアイコンを右クリックすると、ファイルへのパスが表示されます。
 
-`AppDelegate.cs` ファイルを編集し、次のメソッドを追加してみましょう。
+`AppDelegate.cs` ファイルを編集し、次のメソッドを追加します。
 
 ```csharp
 [Export ("openDocument:")]
@@ -690,13 +648,11 @@ void OpenDialog (NSObject sender)
 
 ここでアプリを実行する場合は、 **[ファイル]** メニューの **[開く]** を選択し、 **[開く]** ダイアログボックスからテキストファイルを選択して開きます。
 
-[![](window-images/file03.png "An open dialog box")](window-images/file03.png#lightbox)
+[開いているダイアログボックスの ![](window-images/file03.png)](window-images/file03.png#lightbox)
 
 ファイルが表示され、ファイルのアイコンでタイトルが設定されます。
 
-[![](window-images/file04.png "The contents of a file loaded")](window-images/file04.png#lightbox)
-
-<a name="Adding_a_New_Window_to_a_Project" />
+[読み込まれたファイルの内容を ![する](window-images/file04.png)](window-images/file04.png#lightbox)
 
 ## <a name="adding-a-new-window-to-a-project"></a>プロジェクトへの新しいウィンドウの追加
 
@@ -707,24 +663,22 @@ void OpenDialog (NSObject sender)
 1. **ソリューションエクスプローラー**で、`Main.storyboard` ファイルをダブルクリックして、Xcode の Interface Builder で編集するために開きます。
 2. 新しい**ウィンドウコントローラー**を**ライブラリ**からドラッグし、**デザインサーフェイス**にドロップします。
 
-    [![](window-images/new01.png "Selecting a new Window Controller in the Library")](window-images/new01.png#lightbox)
+    [ライブラリで新しいウィンドウコントローラーを選択 ![には](window-images/new01.png)](window-images/new01.png#lightbox)
 3. **Id インスペクター**で、**ストーリーボード ID**として「`PreferencesWindow`」と入力します。 
 
-    [![](window-images/new02.png "Setting the storyboard ID")](window-images/new02.png#lightbox)
+    [ストーリーボード ID の設定 ![](window-images/new02.png)](window-images/new02.png#lightbox)
 4. インターフェイスを設計します。 
 
-    [![](window-images/new03.png "Designing the UI")](window-images/new03.png#lightbox)
+    [UI のデザイン ![](window-images/new03.png)](window-images/new03.png#lightbox)
 5. アプリメニュー (`MacWindows`) を開き、 **[基本設定...]** を選択し、コントロールをクリックして新しいウィンドウにドラッグします。 
 
-    [![](window-images/new05.png "Creating a segue")](window-images/new05.png#lightbox)
+    [セグエを作成する ![](window-images/new05.png)](window-images/new05.png#lightbox)
 6. ポップアップメニューから **[表示]** を選択します。
 7. 変更を保存し Visual Studio for Mac に戻り、Xcode と同期します。
 
 コードを実行し、[**アプリケーション] メニュー**の **[基本設定...]** を選択すると、ウィンドウが表示されます。
 
-[![](window-images/new04.png "A sample preferences menu")](window-images/new04.png#lightbox)
-
-<a name="Working_with_Panels" />
+[[基本設定] メニューの ![](window-images/new04.png)](window-images/new04.png#lightbox)
 
 ## <a name="working-with-panels"></a>パネルの操作
 
@@ -742,7 +696,7 @@ Xamarin. Mac アプリケーションで作成して使用する他の種類の�
 
 **属性インスペクター**には、パネルに固有の次のオプションがあります。
 
-[![](window-images/panel03.png "The Attribute Inspector")](window-images/panel03.png#lightbox)
+[属性インスペクターの ![](window-images/panel03.png)](window-images/panel03.png#lightbox)
 
 - **スタイル**-[標準] パネル (標準ウィンドウのように表示される)、[ユーティリティ] パネル (小さいタイトルバー)、[HUD] パネル (半透明で、タイトルバーが背景の一部である) からパネルのスタイルを調整できます。
 - **非アクティブ化**-パネル内のがキーウィンドウになるかどうかを判断します。
@@ -750,27 +704,33 @@ Xamarin. Mac アプリケーションで作成して使用する他の種類の�
 
 新しいパネルを追加するには、次の手順を実行します。
 
-1. **ソリューションエクスプローラー**で、プロジェクトを右クリックし、[ > 新しいファイルの**追加** **..** .] を選択します。
-2. [新しいファイル] ダイアログボックスで、[ **Xamarin. Mac**  > **Cocoa] ウィンドウ**を選択します。
+1. **ソリューションエクスプローラー**で、プロジェクトを右クリックし、[ > **新しいファイル**の**追加**] を選択します。
+2. [新しいファイル] ダイアログボックスで、[ **Xamarin. Mac** > **Cocoa] ウィンドウ**を選択します。
 
-    [![](window-images/panels00.png "Adding a new window controller")](window-images/panels00.png#lightbox)
+    [新しいウィンドウコントローラーの追加 ![](window-images/panels00.png)](window-images/panels00.png#lightbox)
+
 3. **[名前]** に「`DocumentPanel`」と入力し、 **[新規]** ボタンをクリックします。
 4. `DocumentPanel.xib` ファイルをダブルクリックして、Interface Builder で編集するために開きます。 
 
-    [![](window-images/new02.png "Editing the panel")](window-images/new02.png#lightbox)
+    [パネルを編集 ![には](window-images/new02.png)](window-images/new02.png#lightbox)
+
 5. 既存のウィンドウを削除し、**インターフェイスエディター**で**ライブラリインスペクター**からパネルをドラッグします。 
 
-    [![](window-images/panels01.png "Deleting the existing window")](window-images/panels01.png#lightbox)
+    [既存のウィンドウを削除 ![には](window-images/panels01.png)](window-images/panels01.png#lightbox)
+
 6. パネルを**ファイルの所有者** - **ウィンドウ** - **コンセント**にフックします。 
 
-    [![](window-images/panels02.png "Dragging to wire up the panel")](window-images/panels02.png#lightbox)
+    [パネルをワイヤアップするためにドラッグ ![](window-images/panels02.png)](window-images/panels02.png#lightbox)
+
 7. **Id インスペクター**に切り替えて、パネルのクラスを `DocumentPanel`に設定します。 
 
-    [![](window-images/panels03.png "Setting the panel's class")](window-images/panels03.png#lightbox)
+    [パネルのクラスを設定 ![](window-images/panels03.png)](window-images/panels03.png#lightbox)
+
 8. 変更を保存し Visual Studio for Mac に戻り、Xcode と同期します。
 9. `DocumentPanel.cs` ファイルを編集し、クラス定義を次のように変更します。 
 
     `public partial class DocumentPanel : NSPanel`
+
 10. 変更内容をファイルに保存します。
 
 `AppDelegate.cs` ファイルを編集し、`DidFinishLaunching` メソッドを次のようにします。
@@ -787,14 +747,12 @@ public override void DidFinishLaunching (NSNotification notification)
 
 アプリケーションを実行すると、パネルが表示されます。
 
-[![](window-images/panels04.png "The panel in a running app")](window-images/panels04.png#lightbox)
+[実行中のアプリのパネルを ![する](window-images/panels04.png)](window-images/panels04.png#lightbox)
 
 > [!IMPORTANT]
 > パネルウィンドウは Apple によって非推奨とされているため、**インスペクターインターフェイス**に置き換える必要があります。 Xamarin. Mac アプリで**インスペクター**を作成する完全な例については、 [macinspector](https://docs.microsoft.com/samples/xamarin/mac-samples/macinspector)サンプルアプリを参照してください。
 
-<a name="Summary" />
-
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 この記事では、Xamarin. Mac アプリケーションでのウィンドウとパネルの使用について詳しく説明しました。 Windows とパネルのさまざまな種類と用途、Xcode の Interface Builder でウィンドウとパネルを作成および管理する方法、およびコードでC#ウィンドウとパネルを操作する方法について説明しました。
 
@@ -804,5 +762,5 @@ public override void DidFinishLaunching (NSNotification notification)
 - [MacInspector (サンプル)](https://docs.microsoft.com/samples/xamarin/mac-samples/macinspector)
 - [Hello Mac](~/mac/get-started/hello-mac.md)
 - [メニューの操作](~/mac/user-interface/menu.md)
-- [OS X ヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
-- [Windows の概要](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/WinPanel/Introduction.html#//apple_ref/doc/uid/10000031-SW1)
+- [macOS デザインテーマ (Apple)](https://developer.apple.com/design/human-interface-guidelines/macos/overview/themes/)
+- [ウィンドウ、パネル、画面 (Apple)](https://developer.apple.com/documentation/appkit/windows_panels_and_screens)

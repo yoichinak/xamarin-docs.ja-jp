@@ -22,4 +22,4 @@ Xamarin では、CocoaTouch C#API に対してまたは cil バインドを公�
 
  **Api の設計**: CIL/CocoaTouch バインディングの api 設計については、「 [XAMARIN. iOS api design](~/ios/internals/api-design/index.md) 」ドキュメントで説明されています。また、目的の c api と c api をからC#バインドし、それらを/CIL の世界に公開する方法についても説明します。
 
- **アセンブリ**: バインドされた[アセンブリの一覧](~/cross-platform/internals/available-assemblies.md)で、 C#/CIL/ECMA の api を Xamarin で使用できる詳細なリファレンスがあるかどうかを確認します。
+ **アセンブリ**: [バインドされたアセンブリの一覧](~/cross-platform/internals/available-assemblies.md)で、Xamarin.iOS で使用できる C#/CIL/ECMA の API の詳細なリファレンスを確認してください。

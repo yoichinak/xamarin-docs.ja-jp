@@ -7,16 +7,27 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/14/2017
-ms.openlocfilehash: 82cff753e7569c2642c467db692c2d2d84347df0
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: def34efd1fd48cc0e7dd802a6d3e843be1e156a4
+ms.sourcegitcommit: 5ddb107b0a56bef8a16fce5bc6846f9673b3b22e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031619"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75558808"
 ---
 # <a name="photokit-in-xamarinios"></a>Xamarin の PhotoKit
 
-PhotoKit は、アプリケーションがシステムイメージライブラリに対してクエリを実行し、その内容を表示および変更するためのカスタムユーザーインターフェイスを作成できるようにする新しいフレームワークです。 これには、イメージとビデオ資産を表す多数のクラスと、アルバムやフォルダーなどの資産のコレクションが含まれます。
+[サンプル](~/media/shared/download.png) ダウンロード ![コードサンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-samplephotoapp/)
+
+PhotoKit は、アプリケーションがシステムイメージライブラリに対してクエリを実行し、その内容を表示および変更するためのカスタムユーザーインターフェイスを作成できるようにするフレームワークです。 これには、イメージとビデオ資産を表す多数のクラスと、アルバムやフォルダーなどの資産のコレクションが含まれます。
+
+## <a name="permissions"></a>[権限]
+
+アプリがフォトライブラリにアクセスできるようにするには、ユーザーにアクセス許可のダイアログが表示されます。 アプリで写真ライブラリを使用する方法を説明するために、次のような**情報を plist**ファイルに記述する必要があります。
+
+```xml
+<key>NSPhotoLibraryUsageDescription</key>
+<string>Applies filters to photos and updates the original image</string>
+```
 
 ## <a name="model-objects"></a>モデルオブジェクト
 
@@ -55,7 +66,7 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, N
 
 ## <a name="saving-changes-to-the-photo-library"></a>フォトライブラリへの変更の保存
 
-これは、クエリとデータの読み取りを処理する方法です。 また、変更をライブラリに書き戻すこともできます。 複数の関心のあるアプリケーションはシステムのフォトライブラリと対話できるため、PhotoLibraryObserver を使用して変更を通知するようにオブザーバーを登録できます。 変更が行われると、アプリケーションがそれに応じて更新される可能性があります。 たとえば、上記のコレクションビューを再読み込みする単純な実装を次に示します。
+これは、クエリとデータの読み取りを処理する方法です。 また、変更をライブラリに書き戻すこともできます。 複数の関心のあるアプリケーションはシステムのフォトライブラリと対話できるため、`PhotoLibraryObserver`を使用して、変更を通知するようにオブザーバーを登録できます。 変更が行われると、アプリケーションがそれに応じて更新される可能性があります。 たとえば、上記のコレクションビューを再読み込みする単純な実装を次に示します。
 
 ```csharp
 class PhotoLibraryObserver : PHPhotoLibraryChangeObserver
@@ -70,26 +81,25 @@ class PhotoLibraryObserver : PHPhotoLibraryChangeObserver
     public override void PhotoLibraryDidChange (PHChange changeInstance)
     {
         DispatchQueue.MainQueue.DispatchAsync (() => {
-        var changes = changeInstance.GetFetchResultChangeDetails (controller.fetchResults);
-        controller.fetchResults = changes.FetchResultAfterChanges;
-        controller.CollectionView.ReloadData ();
+            var changes = changeInstance.GetFetchResultChangeDetails (controller.fetchResults);
+            controller.fetchResults = changes.FetchResultAfterChanges;
+            controller.CollectionView.ReloadData ();
         });
     }
 }
 ```
 
-実際に変更をアプリケーションから書き戻すには、変更要求を作成します。 各モデルクラスには、関連付けられた変更要求クラスがあります。 たとえば、PHAsset を変更するには、PHAssetChangeRequest を作成します。 写真ライブラリに書き戻され、上記のようにオブザーバーに送信される変更を行う手順は次のとおりです。
+実際に変更をアプリケーションから書き戻すには、変更要求を作成します。 各モデルクラスには、関連付けられた変更要求クラスがあります。 たとえば、`PHAsset`を変更するには、`PHAssetChangeRequest`を作成します。 写真ライブラリに書き戻され、上記のようにオブザーバーに送信される変更を行う手順は次のとおりです。
 
-- 編集操作を実行します。
-- フィルター処理された画像データを Phcontent編集出力インスタンスに保存します。
-- 変更要求を作成して、編集出力から変更を発行します。
+1. 編集操作を実行します。
+2. フィルター処理された画像データを `PHContentEditingOutput` インスタンスに保存します。
+3. 編集出力から変更を発行するための変更要求を行います。
 
 コアイメージ noir フィルターを適用するイメージに変更を書き戻す例を次に示します。
 
 ```csharp
 void ApplyNoirFilter (object sender, EventArgs e)
 {
-
     Asset.RequestContentEditingInput (new PHContentEditingInputRequestOptions (), (input, options) => {
 
         // perform the editing operation, which applies a noir filter in this case
@@ -123,8 +133,8 @@ void ApplyNoirFilter (object sender, EventArgs e)
 
 ユーザーがボタンを選択すると、フィルターが適用されます。
 
-![](photokit-images/image5.png "An example of the filter being applied")
+![フィルターが適用される前と後の写真を示す2つの例](photokit-images/image5.png)
 
-PHPhotoLibraryChangeObserver のおかげで、ユーザーが移動したときに、変更がコレクションビューに反映されます。
+`PHPhotoLibraryChangeObserver`のおかげで、ユーザーが移動したときに、変更がコレクションビューに反映されます。
 
-![](photokit-images/image6.png "The change is reflected in the collection view when the user navigates back")
+![変更した写真を表示するフォトコレクションビュー](photokit-images/image6.png)

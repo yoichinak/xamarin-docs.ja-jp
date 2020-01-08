@@ -6,21 +6,19 @@ ms.assetid: 6960E025-3D5C-457A-B893-25B734F8626D
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
-ms.date: 03/18/2017
-ms.openlocfilehash: 6004598b215c85b70b057ff156c3a905a0879138
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.date: 01/02/2020
+ms.openlocfilehash: 90d5034f332b311ee83ac2654bcbbc2cde2b11c0
+ms.sourcegitcommit: 6f09bc2b760e76a61a854f55d6a87c4f421ac6c8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73010717"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75607829"
 ---
 # <a name="background-transfer-and-nsurlsession-in-xamarinios"></a>Xamarin のバックグラウンド転送と Nの Lsession
 
 バックグラウンド転送を開始するには、バックグラウンド `NSURLSession` を構成し、アップロードまたはダウンロードのタスクをキューに置いてください。 アプリケーションが backgrounded、中断、または終了している間にタスクが完了すると、iOS はアプリケーションの*Appdelegate*で完了ハンドラーを呼び出すことによってアプリケーションに通知します。 次の図は、実際の動作を示しています。
 
- [![](background-transfer-walkthrough-images/transfer.png "A background transfer is initiated by configuring a background NSURLSession and enqueuing upload or download tasks")](background-transfer-walkthrough-images/transfer.png#lightbox)
-
-コードでは、これがどのように見えるかを見てみましょう。
+ [バックグラウンド転送を開始するには、バックグラウンドの Nn セッションを構成し、アップロードまたはダウンロードのタスクをキューに置いて、バックグラウンド転送を ![します。](background-transfer-walkthrough-images/transfer.png)](background-transfer-walkthrough-images/transfer.png#lightbox)
 
 ## <a name="configuring-a-background-session"></a>バックグラウンドセッションの構成
 
@@ -38,7 +36,7 @@ public partial class SimpleBackgroundTransferViewController : UIViewController
   NSUrlSessionConfiguration configuration =
       NSUrlSessionConfiguration.CreateBackgroundSessionConfiguration ("com.SimpleBackgroundTransfer.BackgroundSession");
   session = NSUrlSession.FromConfiguration
-      (configuration, (NSUrlSessionDelegate) new MySessionDelegate(), new NSOperationQueue());
+      (configuration, new MySessionDelegate(), new NSOperationQueue());
 
 }
 ```
@@ -58,13 +56,13 @@ public partial class SimpleBackgroundTransferViewController : UIViewController
 
 バックグラウンドセッションでは、実行しているタスクの種類に応じて、より特殊なデリゲートが必要になります。 バックグラウンドセッションは、次の2種類のタスクに制限されます。
 
-- *タスクのアップロード*-`NSUrlSessionUploadTask` 種類のタスクは、`NSUrlSessionDelegate` から継承する `NSUrlSessionTaskDelegate` を使用します。 このデリゲートは、アップロードの進行状況を追跡したり、HTTP リダイレクトを処理したりするための追加のメソッドを提供します。
-- [*タスクのダウンロード*]-`NSUrlSessionDownloadTask` 種類のタスクは、`NSUrlSessionTaskDelegate` から継承する `NSUrlSessionDownloadDelegate` を使用します。 このデリゲートには、アップロードタスクのすべてのメソッドに加えて、ダウンロードの進行状況を追跡し、ダウンロードタスクが再開または完了したことを確認するためのダウンロード固有のメソッドが用意されています。
+- *アップロードタスク*-`NSUrlSessionUploadTask` 種類のタスクは、`INSUrlSessionDelegate`を実装する `INSUrlSessionTaskDelegate` インターフェイスを使用します。 これにより、アップロードの進行状況を追跡したり、HTTP リダイレクトを処理したりするための追加のメソッドが提供されます。
+- [*タスクのダウンロード*]-`NSUrlSessionDownloadTask` 種類のタスクは、`INSUrlSessionDelegate` と `INSUrlSessionTaskDelegate`を実装する `INSUrlSessionDownloadDelegate` インターフェイスを使用します。 これにより、アップロードタスクのすべてのメソッドに加えて、ダウンロードの進行状況を追跡し、ダウンロードタスクが再開または完了したことを確認するためのダウンロード固有のメソッドが提供されます。
 
-次のコードは、URL からイメージをダウンロードするために使用できるタスクを定義します。 バックグラウンドセッションで `CreateDownloadTask` を呼び出し、URL 要求を渡すことによって、タスクを開始します。
+次のコードは、URL からイメージをダウンロードするために使用できるタスクを定義します。 タスクは、バックグラウンドセッションで `CreateDownloadTask` を呼び出し、URL 要求を渡すことによって開始されます。
 
 ```csharp
-const string DownloadURLString = "http://cdn1.xamarin.com/webimages/images/xamarin.png";
+const string DownloadURLString = "http://xamarin.com/images/xamarin.png"; // or other hosted file
 public NSUrlSessionDownloadTask downloadTask;
 
 NSUrl downloadURL = NSUrl.FromString (DownloadURLString);
@@ -72,12 +70,12 @@ NSUrlRequest request = NSUrlRequest.FromUrl (downloadURL);
 downloadTask = session.CreateDownloadTask (request);
 ```
 
-次に、このセッションのすべてのダウンロードタスクを追跡する新しいセッションダウンロードのデリゲートを作成します。
+次に、新しいセッションダウンロードのデリゲートを作成して、このセッションのすべてのダウンロードタスクを追跡します。 デリゲートクラスは `NSObject` から継承し、必要なインターフェイスを実装する必要があります。
 
 ```csharp
-public class MySessionDelegate : NSUrlSessionDownloadDelegate
+public class MySessionDelegate : NSObject, INSUrlSessionDownloadDelegate
 {
-  public override void DidWriteData (NSUrlSession session, NSUrlSessionDownloadTask downloadTask, long bytesWritten, long totalBytesWritten, long totalBytesExpectedToWrite)
+  public void DidWriteData (NSUrlSession session, NSUrlSessionDownloadTask downloadTask, long bytesWritten, long totalBytesWritten, long totalBytesExpectedToWrite)
   {
     Console.WriteLine (string.Format ("DownloadTask: {0}  progress: {1}", downloadTask, progress));
     InvokeOnMainThread( () => {
@@ -88,7 +86,7 @@ public class MySessionDelegate : NSUrlSessionDownloadDelegate
 }
 ```
 
-ダウンロードタスクの進行状況を確認する場合は、`DidWriteData` メソッドをオーバーライドして進行状況を追跡し、UI を更新することもできます。 アプリケーションがフォアグラウンドにある場合、または次回アプリケーションを開いたときにユーザーが待機する場合、UI の更新はすぐに表示されます。
+ダウンロードタスクの進行状況を確認するには、`DidWriteData` メソッドをオーバーライドして進行状況を追跡し、UI も更新します。 アプリケーションがフォアグラウンドにある場合、または次回アプリケーションを開いたときにユーザーが待機する場合、UI の更新はすぐに表示されます。
 
 Session delegate API は、タスクと対話するための広範なツールキットを提供します。 セッションデリゲートメソッドの完全な一覧については、`NSUrlSessionDelegate` API のドキュメントを参照してください。
 
@@ -99,12 +97,12 @@ Session delegate API は、タスクと対話するための広範なツール�
 
 最後の手順は、セッションに関連付けられたすべてのタスクが完了したことをアプリケーションに通知し、新しいコンテンツを処理することです。
 
-*Appdelegate*で、`HandleEventsForBackgroundUrl` イベントをサブスクライブします。 アプリケーションがバックグラウンドに入り、転送セッションが実行されている場合、このメソッドが呼び出され、システムは完了ハンドラーを渡します。
+`AppDelegate`で、`HandleEventsForBackgroundUrl` イベントをサブスクライブします。 アプリケーションがバックグラウンドに入り、転送セッションが実行されている場合、このメソッドが呼び出され、システムは完了ハンドラーを渡します。
 
 ```csharp
 public System.Action backgroundSessionCompletionHandler;
 
-public override void HandleEventsForBackgroundUrl (UIApplication application, string sessionIdentifier, System.Action completionHandler)
+public void HandleEventsForBackgroundUrl (UIApplication application, string sessionIdentifier, System.Action completionHandler)
 {
   this.backgroundSessionCompletionHandler = completionHandler;
 }
@@ -115,7 +113,7 @@ public override void HandleEventsForBackgroundUrl (UIApplication application, st
 セッションでは、転送を処理する複数のタスクが生成される可能性があることを思い出してください。 最後のタスクが完了すると、中断または終了したアプリケーションがバックグラウンドで再起動されます。 次に、アプリケーションは一意のセッション識別子を使用して `NSURLSession` に再接続し、セッションデリゲートで `DidFinishEventsForBackgroundSession` を呼び出します。 このメソッドは、新しいコンテンツを処理するためのアプリケーションの機会です。これには、転送の結果を反映するための UI の更新が含まれます。
 
 ```csharp
-public override void DidFinishEventsForBackgroundSession (NSUrlSession session) {
+public void DidFinishEventsForBackgroundSession (NSUrlSession session) {
   // Handle new information, update UI, etc.
 }
 ```
@@ -123,7 +121,7 @@ public override void DidFinishEventsForBackgroundSession (NSUrlSession session) 
 新しいコンテンツの処理が完了したら、完了ハンドラーを呼び出して、アプリケーションのスナップショットを取得してスリープ状態に戻すことが安全であることをシステムに知らせます。
 
 ```csharp
-public override void DidFinishEventsForBackgroundSession (NSUrlSession session) {
+public void DidFinishEventsForBackgroundSession (NSUrlSession session) {
   var appDelegate = UIApplication.SharedApplication.Delegate as AppDelegate;
 
   // Handle new information, update UI, etc.
@@ -137,7 +135,7 @@ public override void DidFinishEventsForBackgroundSession (NSUrlSession session) 
 }
 ```
 
-このチュートリアルでは、iOS 7 でバックグラウンド転送サービスを実装するための基本的な手順について説明します。
+このチュートリアルでは、iOS 7 以降でバックグラウンド転送サービスを実装する基本的な手順について説明します。
 
 ## <a name="related-links"></a>関連リンク
 

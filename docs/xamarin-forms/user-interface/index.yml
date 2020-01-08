@@ -9,7 +9,7 @@ metadata:
   ms.assetid: 391B4A77-7CAC-42D2-9E77-BD8E170E9BE6
   author: davidbritch
   ms.author: dabritch
-  ms.date: 08/07/2019
+  ms.date: 12/11/2019
 abstract:
   description: Xamarin.Forms を使用し、ユーザー インターフェイスを作成する方法について説明します。
 sections:
@@ -103,11 +103,17 @@ sections:
               src: ~/media/icons/i_user-interface.svg
               href: imagebutton.md
             title: ImageButton
-          - href: layouts/index.md
+          - href: indicatorview.md
+            html: IndicatorView コントロールを使用し、項目の数や現在の位置を CarouselView で表示するインジケーターを表示する方法について説明します。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: indicatorview.md
+            title: IndicatorView
+          - href: layouts/index.yml
             html: Xamarin.Forms のレイアウト コントロールと機能を使用し、コンテンツを整理する方法について説明します。
             image:
               src: ~/media/icons/i_user-interface.svg
-              href: layouts/index.md
+              href: layouts/index.yml
             title: レイアウト
           - href: listview/index.md
             html: ListView コントロールを使用し、データ一覧を表示する方法について説明します。
@@ -175,6 +181,12 @@ sections:
               src: ~/media/icons/i_user-interface.svg
               href: styles/index.md
             title: スタイル
+          - href: swipeview.md
+            html: SwipeView を使用し、スワイプ ジェスチャで表示されるコンテキスト メニュー項目を提供する方法について説明します。
+            image:
+              src: ~/media/icons/i_user-interface.svg
+              href: swipeview.md
+            title: SwipeView
           - href: switch.md
             html: 切り替えを使用し、ブール値を設定する方法について説明します。
             image:

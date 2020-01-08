@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: fda5ed3b2a26166e23d4a796219758853d0aace7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f546a1403aa0af07fc69187c4cfbec8982ed7a2a
+ms.sourcegitcommit: 5821c9709bf5e06e6126233932f94f9cf3524577
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73024546"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75556510"
 ---
 # <a name="running-android-services-in-remote-processes"></a>リモートプロセスでの Android サービスの実行
 
@@ -35,30 +35,30 @@ _一般に、Android アプリケーションのすべてのコンポーネン�
 
 - サービスへのバインドに明示的なインテント &ndash; 使用する必要がある**インテントを作成**します。
 - `IServiceConnection` オブジェクト &ndash; クライアントとサービスの間の仲介役として機能する **`IServiceConnection` オブジェクトを実装し、インスタンス化**します。  クライアントとサーバー間の接続を監視する役割があります。
-- **`BindService` `BindService` &ndash; メソッドを呼び**出すと、前の手順で作成したインテントとサービス接続が Android にディスパッチされます。これにより、サービスの開始とクライアントとサービス間の通信の確立が行われます.
+- **`BindService` `BindService` &ndash; メソッドを呼び**出すと、前の手順で作成したインテントとサービス接続が Android にディスパッチされます。これにより、サービスの開始とクライアントとサービス間の通信の確立が行われます。
 
 プロセス間の境界を越える必要があるため、複雑さが増します。通信は一方向 (クライアントからサーバー) であり、クライアントはサービスクラスのメソッドを直接呼び出すことができません。 サービスがクライアントと同じプロセスを実行している場合、Android には、双方向の通信を可能にする `IBinder` オブジェクトが用意されていることを思い出してください。 これは、サービスが独自のプロセスで実行されている場合には当てはまりません。 クライアントは、`Android.OS.Messenger` クラスを使用してリモートサービスと通信します。
 
-クライアントがリモートサービスとのバインドを要求すると、Android は `Service.OnBind` ライフサイクルメソッドを呼び出します。これにより、`Messenger` によってカプセル化された内部 `IBinder` オブジェクトが返されます。 `Messenger` は、Android SDK によって提供される特殊な `IBinder` 実装に対するシンラッパーです。 `Messenger` は、2つの異なるプロセス間の通信を処理します。 開発者は、メッセージのシリアル化、プロセス境界を越えたメッセージのマーシャリング、およびクライアントでの逆シリアル化の詳細について心配していません。 この作業は、`Messenger` オブジェクトによって処理されます。 次の図は、クライアントがアウトプロセスサービスへのバインドを開始するときに関連するクライアント側の Android コンポーネントを示しています。
+クライアントがリモートサービスとのバインドを要求すると、Android は `Service.OnBind` ライフサイクルメソッドを呼び出します。これにより、`Messenger`によってカプセル化された内部 `IBinder` オブジェクトが返されます。 `Messenger` は、Android SDK によって提供される特殊な `IBinder` 実装に対するシンラッパーです。 `Messenger` は、2つの異なるプロセス間の通信を処理します。 開発者は、メッセージのシリアル化、プロセス境界を越えたメッセージのマーシャリング、およびクライアントでの逆シリアル化の詳細について心配していません。 この作業は、`Messenger` オブジェクトによって処理されます。 次の図は、クライアントがアウトプロセスサービスへのバインドを開始するときに関連するクライアント側の Android コンポーネントを示しています。
 
 ![サービスにバインドするクライアントの手順とコンポーネントを示す図](out-of-process-services-images/ipc-01.png "サービスにバインドするクライアントの手順とコンポーネントを示す図。")
 
-リモートプロセスの `Service` クラスは、ローカルプロセス内のバインドされたサービスを通過する同じライフサイクルコールバックを通過します。また、関連する Api の多くは同じです。 `Service.OnCreate` は、`Handler` を初期化し、それを `Messenger` オブジェクトに挿入するために使用されます。 同様に、`OnBind` はオーバーライドされますが、`IBinder` オブジェクトを返す代わりに、サービスは `Messenger` を返します。  次の図は、クライアントがサービスにバインドされている場合のサービスの動作を示しています。
+リモートプロセスの `Service` クラスは、ローカルプロセス内のバインドされたサービスを通過する同じライフサイクルコールバックを通過します。また、関連する Api の多くは同じです。 `Service.OnCreate` は、`Handler` を初期化し、それを `Messenger` オブジェクトに挿入するために使用されます。 同様に、`OnBind` はオーバーライドされますが、`IBinder` オブジェクトを返す代わりに、サービスは `Messenger`を返します。  次の図は、クライアントがサービスにバインドされている場合のサービスの動作を示しています。
 
 ![リモートクライアントによってバインドされるときにサービスが実行する手順とコンポーネントを示す図](out-of-process-services-images/ipc-02.png "リモートクライアントによってバインドされるときにサービスが実行する手順とコンポーネントを示す図。")
 
-サービスによって `Message` が受信されると、`Android.OS.Handler` のインスタンス内で処理されます。 サービスは、`HandleMessage` メソッドをオーバーライドする必要がある独自の `Handler` サブクラスを実装します。 このメソッドは `Messenger` によって呼び出され、`Message` をパラメーターとして受け取ります。 `Handler` は、`Message` メタデータを検査し、その情報を使用してサービスでメソッドを呼び出します。
+サービスによって `Message` が受信されると、`Android.OS.Handler`のインスタンス内で処理されます。 サービスは、`HandleMessage` メソッドをオーバーライドする必要がある独自の `Handler` サブクラスを実装します。 このメソッドは `Messenger` によって呼び出され、`Message` をパラメーターとして受け取ります。 `Handler` は、`Message` メタデータを検査し、その情報を使用してサービスでメソッドを呼び出します。
 
-一方向の通信は、クライアントが `Message` オブジェクトを作成し、`Messenger.Send` メソッドを使用してサービスにディスパッチするときに発生します。 `Messenger.Send` は `Message`、シリアル化されたデータを外部から Android にシリアル化します。これにより、メッセージがプロセスの境界を越えてサービスにルーティングされます。  サービスによってホストされる `Messenger` は、受信データから `Message` オブジェクトを作成します。 この `Message` は、メッセージが `Handler` に1つずつ送信されるキューに配置されます。 `Handler` は、`Message` に含まれるメタデータを検査し、`Service`に対して適切なメソッドを呼び出します。 次の図は、これらのさまざまな動作について説明しています。
+一方向の通信は、クライアントが `Message` オブジェクトを作成し、`Messenger.Send` メソッドを使用してサービスにディスパッチするときに発生します。 `Messenger.Send` は `Message`、シリアル化されたデータを外部から Android にシリアル化します。これにより、メッセージがプロセスの境界を越えてサービスにルーティングされます。  サービスによってホストされる `Messenger` は、受信データから `Message` オブジェクトを作成します。 この `Message` は、メッセージが `Handler`に1つずつ送信されるキューに配置されます。 `Handler` は、`Message` に含まれるメタデータを検査し、`Service`に対して適切なメソッドを呼び出します。 次の図は、これらのさまざまな動作について説明しています。
 
 ![プロセス間でメッセージが渡される方法を示す図](out-of-process-services-images/ipc-03.png "プロセス間でメッセージがどのように渡されるかを示す図")
 
 このガイドでは、アウトプロセスサービスの実装の詳細について説明します。 独自のプロセスで実行することを意図したサービスを実装する方法と、クライアントが `Messenger` framework を使用してそのサービスと通信する方法について説明します。 また、双方向の通信についても簡単に説明します。クライアントは、サービスにメッセージを送信し、サービスはクライアントにメッセージを返信します。 サービスは異なるアプリケーション間で共有できるため、このガイドでは、Android のアクセス許可を使用してサービスへのクライアントアクセスを制限する方法の1つについても説明します。
 
 > [!IMPORTANT]
-> [Bugzilla 51940/GitHub 1950-分離されたプロセスとカスタムアプリケーションクラスを使用したサービスは、オーバーロードの解決に失敗](https://github.com/xamarin/xamarin-android/issues/1950)します。これは、`IsolatedProcess` が `true` に設定されている場合に、Xamarin. Android サービスが正しく起動しないことを報告します。 このガイドは、リファレンスのために用意されています。 Xamarin Android アプリケーションは、Java で記述されたアウトプロセスサービスと引き続き通信できなければなりません。
+> [Bugzilla 51940/GitHub 1950-分離されたプロセスとカスタムアプリケーションクラスを使用したサービスは、オーバーロードの解決に失敗](https://github.com/xamarin/xamarin-android/issues/1950)します。これは、`IsolatedProcess` が `true`に設定されている場合に、Xamarin. Android サービスが正しく起動しないことを報告します。 このガイドは、リファレンスのために用意されています。 Xamarin Android アプリケーションは、Java で記述されたアウトプロセスサービスと引き続き通信できなければなりません。
 
-## <a name="requirements"></a>［要件］
+## <a name="requirements"></a>要件
 
 このガイドは、サービスの作成に関する知識を前提としています。
 
@@ -70,7 +70,7 @@ _一般に、Android アプリケーションのすべてのコンポーネン�
 
 - `Service` 型をサブクラス化 &ndash; **`Service` サブクラスを作成**し、バインドされたサービスのライフサイクルメソッドを実装します。 また、サービスが独自のプロセスで実行されることを Android に通知するメタデータを設定する必要もあります。
 - `Handler` がクライアント要求の分析、クライアントから渡されたパラメーターの抽出、およびサービスに対する適切なメソッドの呼び出しを行う **`Handler`&ndash; を実装**します。
-- 前の手順で説明したように **`Messenger` &ndash; をインスタンス化**するには、前の手順で作成した `Handler` にクライアント要求をルーティングする `Messenger` クラスのインスタンスを各 `Service` で保持する必要があります。
+- 前の手順で説明したように **`Messenger`&ndash; をインスタンス化**するには、前の手順で作成した `Handler` にクライアント要求をルーティングする `Messenger` クラスのインスタンスを各 `Service` で保持する必要があります。
 
 独自のプロセスで実行することを意図したサービスは、基本的にはバインドされたサービスです。 サービスクラスは、基本 `Service` クラスを拡張し、android マニフェストでバンドルする必要のあるメタデータを含む `ServiceAttribute` で修飾されます。 まず、アウトプロセスサービスにとって重要な `ServiceAttribute` の次のプロパティを示します。
 
@@ -79,7 +79,7 @@ _一般に、Android アプリケーションのすべてのコンポーネン�
 3. このプロパティ &ndash; `IsolatedProcess` すると、追加のセキュリティが有効になり、システムの他の部分と対話するための最小限のアクセス許可を持つ分離されたサンドボックスでサービスを実行するように Android に指示されます。 「 [Bugzilla 51940-分離されたプロセスを含むサービス」および「カスタムアプリケーションクラスは、オーバーロードの解決に失敗](https://bugzilla.xamarin.com/show_bug.cgi?id=51940)します」を参照してください。
 4. `Permission` &ndash; クライアントが要求 (および付与) するアクセス許可を指定することによって、サービスへのクライアントアクセスを制御することができます。
 
-サービスを独自のプロセスで実行するには、`ServiceAttribute` の `Process` プロパティをサービスの名前に設定する必要があります。 外部のアプリケーションと対話するには、`Exported` プロパティを `true` に設定する必要があります。 `Exported` が `false`場合、同じ APK (同じアプリケーション) 内のクライアントと、同じプロセスで実行されているクライアントのみがサービスと対話できます。
+サービスを独自のプロセスで実行するには、`ServiceAttribute` の `Process` プロパティをサービスの名前に設定する必要があります。 外部のアプリケーションと対話するには、`Exported` プロパティを `true`に設定する必要があります。 `Exported` が `false`場合、同じ APK (同じアプリケーション) 内のクライアントと、同じプロセスで実行されているクライアントのみがサービスと対話できます。
 
 サービスが実行されるプロセスの種類は、`Process` プロパティの値によって異なります。 Android では、次の3種類のプロセスを識別します。
 
@@ -129,9 +129,9 @@ _一般に、Android アプリケーションのすべてのコンポーネン�
 
 ### <a name="implementing-a-handler"></a>ハンドラーの実装
 
-クライアント要求を処理するには、サービスが `Handler` を実装し、`HandleMessage` メソッドをオーバーライドする必要があります。このメソッドは、クライアントからのメソッド呼び出しをカプセル化し、その呼び出しを、サービスによって実行されるアクションまたはタスクに変換する `Message` インスタンスを使用します。ため. `Message` オブジェクトは `What` という名前のプロパティを公開します。このプロパティは、クライアントとサービスの間で共有され、サービスがクライアントに対して実行するタスクに関連します。
+クライアント要求を処理するには、サービスが `Handler` を実装し、`HandleMessage` メソッドをオーバーライドする必要があります。 このメソッドは、クライアントからのメソッド呼び出しをカプセル化し、その呼び出しをサービスによって実行されるアクションまたはタスクに変換する `Message` インスタンスを受け取ります。 `Message` オブジェクトは `What` という名前のプロパティを公開します。このプロパティは、クライアントとサービスの間で共有され、サービスがクライアントに対して実行するタスクに関連します。
 
-サンプルアプリケーションの次のコードスニペットは、`HandleMessage` の1つの例を示しています。 この例では、クライアントがサービスに対して要求できる2つのアクションがあります。
+サンプルアプリケーションの次のコードスニペットは、`HandleMessage`の1つの例を示しています。 この例では、クライアントがサービスに対して要求できる2つのアクションがあります。
 
 - 最初のアクションは_Hello, World_メッセージで、クライアントは単純なメッセージをサービスに送信しました。
 - 2番目のアクションは、サービスのメソッドを呼び出し、文字列を取得します。この例では、文字列は、サービスの開始時刻と実行時間を返すメッセージです。
@@ -149,7 +149,7 @@ public class TimestampRequestHandler : Android.OS.Handler
         switch (messageType)
         {
             case Constants.SAY_HELLO_TO_TIMESTAMP_SERVICE:
-                // The client as sent a simple Hello, say in the Android Log.
+                // The client has sent a simple Hello, say in the Android Log.
                 break;
 
             case Constants.GET_UTC_TIMESTAMP:
@@ -164,13 +164,13 @@ public class TimestampRequestHandler : Android.OS.Handler
 }
 ```
 
-また、`Message` でサービスのパラメーターをパッケージ化することもできます。 これについては、このガイドの後半で説明します。 次に考慮すべきトピックは、受信 `Message`s を処理する `Messenger` オブジェクトを作成することです。
+また、`Message`でサービスのパラメーターをパッケージ化することもできます。 これについては、このガイドの後半で説明します。 次に考慮すべきトピックは、受信 `Message`s を処理する `Messenger` オブジェクトを作成することです。
 
 ### <a name="instantiating-the-messenger"></a>Messenger のインスタンス化
 
 既に説明したように、`Message` オブジェクトを逆シリアル化し、`Handler.HandleMessage` を呼び出すことは、`Messenger` オブジェクトの役割です。 `Messenger` クラスには、クライアントがサービスにメッセージを送信するために使用する `IBinder` オブジェクトも用意されています。  
 
-サービスが開始されると、`Messenger` がインスタンス化され、`Handler` が挿入されます。 この初期化を実行するには、サービスの `OnCreate` メソッドを実行することをお勧めします。 このコードスニペットは、独自の `Handler` と `Messenger` を初期化するサービスの一例です。
+サービスが開始されると、`Messenger` がインスタンス化され、`Handler`が挿入されます。 この初期化を実行するには、サービスの `OnCreate` メソッドを実行することをお勧めします。 このコードスニペットは、独自の `Handler` と `Messenger`を初期化するサービスの一例です。
 
 ```csharp
 private Messenger messenger; // Instance variable for the Messenger
@@ -183,7 +183,7 @@ public override void OnCreate()
 }
 ```
 
-この時点で、最後の手順は `OnBind` をオーバーライドする `Service` です。
+この時点で、最後の手順は `OnBind`をオーバーライドする `Service` です。
 
 ### <a name="implementing-serviceonbind"></a>Service. OnBind の実装
 
@@ -217,7 +217,7 @@ Intent serviceToStart = new Intent();
 serviceToStart.SetComponent(cn);
 ```
 
-サービスがバインドされると、`IServiceConnection.OnServiceConnected` メソッドが呼び出され、クライアントへの `IBinder` が提供されます。 ただし、クライアントは `IBinder` を直接使用しません。 代わりに、その `IBinder` から `Messenger` オブジェクトをインスタンス化します。 これは、クライアントがリモートサービスとの対話に使用する `Messenger` です。
+サービスがバインドされると、`IServiceConnection.OnServiceConnected` メソッドが呼び出され、クライアントへの `IBinder` が提供されます。 ただし、クライアントは `IBinder`を直接使用しません。 代わりに、その `IBinder`から `Messenger` オブジェクトをインスタンス化します。 これは、クライアントがリモートサービスとの対話に使用する `Messenger` です。
 
 次の例では、クライアントがサービスとの接続および切断を処理する方法を示す、基本的な `IServiceConnection` 実装の例を示します。 `OnServiceConnected` メソッドがを受け取り、`IBinder`し、クライアントがその `IBinder`から `Messenger` を作成することに注意してください。
 
@@ -242,7 +242,7 @@ public class TimestampServiceConnection : Java.Lang.Object, IServiceConnection
     {
         Log.Debug(TAG, $"OnServiceConnected {name.ClassName}");
 
-        IsConnected = service != null
+        IsConnected = service != null;
         Messenger = new Messenger(service);
 
         if (IsConnected)
@@ -270,15 +270,15 @@ public class TimestampServiceConnection : Java.Lang.Object, IServiceConnection
 サービス接続と目的が作成されると、クライアントは `BindService` を呼び出してバインドプロセスを開始することができます。
 
 ```csharp
-IServiceConnection serviceConnection = new TimestampServiceConnection(this);
-BindActivity(serviceToStart, serviceConnection, Bind.AutoCreate);
+var serviceConnection = new TimestampServiceConnection(this);
+BindService(serviceToStart, serviceConnection, Bind.AutoCreate);
 ```
 
 クライアントがサービスに正常にバインドされ、`Messenger` を使用できるようになると、クライアントが `Messages` をサービスに送信できるようになります。
 
 ## <a name="sending-messages-to-the-service"></a>サービスへのメッセージの送信
 
-クライアントが接続され、`Messenger` オブジェクトがある場合、`Messenger` 経由で `Message` オブジェクトをディスパッチすることで、サービスと通信することができます。 この通信は一方向であり、クライアントがメッセージを送信しますが、サービスからクライアントに返されるメッセージはありません。 この点では、`Message` は起動と破棄のメカニズムです。
+クライアントが接続され、`Messenger` オブジェクトがある場合、`Messenger`経由で `Message` オブジェクトをディスパッチすることで、サービスと通信することができます。 この通信は一方向であり、クライアントがメッセージを送信しますが、サービスからクライアントに返されるメッセージはありません。 この点では、`Message` は起動と破棄のメカニズムです。
 
 `Message` オブジェクトを作成する場合は、 [`Message.Obtain`](xref:Android.OS.Message)ファクトリメソッドを使用することをお勧めします。 このメソッドは、Android によって管理されているグローバルプールから `Message` オブジェクトをプルします。 `Message.Obtain` には、サービスに必要な値とパラメーターを使用して `Message` オブジェクトを初期化できるようにするオーバーロードされたメソッドもいくつかあります。  `Message` がインスタンス化されると、`Messenger.Send`を呼び出すことによってサービスにディスパッチされます。 このスニペットは、サービスプロセスに `Message` を作成してディスパッチする例の1つです。
 
@@ -294,7 +294,7 @@ catch (RemoteException ex)
 }
 ```
 
-`Message.Obtain` メソッドには、いくつかの異なる形式があります。 前の例では、 [`Message.Obtain(Handler h, Int32 what)`](xref:Android.OS.Message.Obtain)を使用します。 これは、アウトプロセスサービスに対する非同期要求であるためです。サービスからの応答がないため、`Handler` は `null` に設定されます。 2番目のパラメーター `Int32 what` は、`Message` オブジェクトの `.What` プロパティに格納されます。 `.What` プロパティは、サービスでメソッドを呼び出すためにサービスプロセス内のコードによって使用されます。
+`Message.Obtain` メソッドには、いくつかの異なる形式があります。 前の例では、 [`Message.Obtain(Handler h, Int32 what)`](xref:Android.OS.Message.Obtain)を使用します。 これは、アウトプロセスサービスに対する非同期要求であるためです。サービスからの応答がないため、`Handler` は `null`に設定されます。 2番目のパラメーター `Int32 what`は、`Message` オブジェクトの `.What` プロパティに格納されます。 `.What` プロパティは、サービスでメソッドを呼び出すためにサービスプロセス内のコードによって使用されます。
 
 `Message` クラスでは、受信者に使用できる2つの追加のプロパティである `Arg1` と `Arg2`も公開されます。 これらの2つのプロパティは、クライアントとサービスの間に意味のある特別な合意値を持つ可能性がある整数値です。 たとえば、`Arg1` は顧客 ID を保持し、その顧客の注文書番号を保持 `Arg2` ことがあります。 [`Method.Obtain(Handler h, Int32 what, Int32 arg1, Int32 arg2)`](xref:Android.OS.Message.Obtain)を使用すると、`Message` の作成時に2つのプロパティを設定できます。 これらの2つの値を設定するもう1つの方法は、作成した後に、`Message` オブジェクトに対して、`.Arg` と `.Arg2` のプロパティを直接設定することです。
 
@@ -317,17 +317,17 @@ messenger.Send(msg);
 
 ## <a name="returning-values-from-the-service"></a>サービスから値を返す
 
-この時点までに説明したメッセージングアーキテクチャは一方向であり、クライアントがメッセージをサービスに送信します。 サービスがクライアントに値を返す必要がある場合は、この点について説明したすべてのものが元に戻されます。 サービスは `Message` を作成し、戻り値をパッケージ化し、`Messenger` 経由でクライアントに `Message` をディスパッチする必要があります。 ただし、サービスは独自の `Messenger` を作成しません。代わりに、クライアントが初期要求の一部として `Messenger` をインスタンス化してパッケージ化する必要があります。 サービスは、このクライアント提供の `Messenger` を使用してメッセージを `Send` します。  
+この時点までに説明したメッセージングアーキテクチャは一方向であり、クライアントがメッセージをサービスに送信します。 サービスがクライアントに値を返す必要がある場合は、この点について説明したすべてのものが元に戻されます。 サービスは `Message`を作成し、戻り値をパッケージ化し、`Messenger` 経由でクライアントに `Message` をディスパッチする必要があります。 ただし、サービスは独自の `Messenger`を作成しません。代わりに、クライアントが初期要求の一部として `Messenger` をインスタンス化してパッケージ化する必要があります。 サービスは、このクライアント提供の `Messenger`を使用してメッセージを `Send` します。  
 
 双方向通信のイベントのシーケンスは次のとおりです。
 
-1. クライアントがサービスにバインドされます。 サービスとクライアントが接続すると、クライアントによって管理される `IServiceConnection` には、サービスに `Message`s を転送するために使用される `Messenger` オブジェクトへの参照が含まれます。 混乱を避けるため、これは_サービスメッセンジャー_と呼ばれます。
+1. クライアントがサービスにバインドされます。 サービスとクライアントが接続すると、クライアントによって管理される `IServiceConnection` は、`Message`をサービスに送信するために使用される `Messenger` オブジェクトへの参照を保持します。 混乱を避けるため、これは_サービスメッセンジャー_と呼ばれます。
 2. クライアントは `Handler` (_クライアントハンドラー_と呼ばれます) をインスタンス化し、それを使用して独自の `Messenger` (_クライアント Messenger_) を初期化します。 サービスメッセンジャーとクライアント Messenger は、2つの異なる方向のトラフィックを処理する2つの異なるオブジェクトであることに注意してください。 サービスメッセンジャーは、クライアントからサービスへのメッセージを処理します。また、クライアント Messenger は、サービスからクライアントへのメッセージを処理します。
 3. クライアントは `Message` オブジェクトを作成し、クライアント Messenger を使用して `ReplyTo` プロパティを設定します。 メッセージは、サービスメッセンジャーを使用してサービスに送信されます。
 4. サービスは、クライアントからメッセージを受信し、要求された作業を実行します。
 5. サービスがクライアントに応答を送信する時間が経過すると、`Message.Obtain` を使用して新しい `Message` オブジェクトが作成されます。
 6. このメッセージをクライアントに送信するために、サービスはクライアントメッセージの `.ReplyTo` プロパティからクライアント Messenger を抽出し、それを使用してクライアントに `Message` を `.Send` します。
-7. クライアントが応答を受信すると、その応答には、`.What` プロパティを調べることによって `Message` を処理する独自の `Handler` があります (必要に応じて、`Message` に含まれるパラメーターを抽出します)。
+7. クライアントが応答を受信すると、その応答には、`.What` プロパティを調べることによって `Message` を処理する独自の `Handler` があります (必要に応じて、`Message`に含まれるパラメーターを抽出します)。
 
 このサンプルコードでは、クライアントが `Message` をインスタンス化し、サービスが応答に使用する `Messenger` をパッケージ化する方法を示します。
 
@@ -392,7 +392,7 @@ Android には、次の4種類のアクセス許可レベルがあります。
 
 Android のアクセス許可でサービスをセキュリティで保護するには、次の2つの一般的な方法があります。
 
-1. 署名レベルのセキュリティ &ndash; 署名レベルのセキュリティを**実装**すると、サービスを保持する apk に署名するときに使用したものと同じキーで署名されたアプリケーションに対して、そのアクセス許可が自動的に付与されます。 これは、開発者が自分のアプリケーションからアクセス可能な状態を維持しながら、サービスをセキュリティで保護するための簡単な方法です。 署名レベルのアクセス許可を宣言するには、`ServiceAttribute` の `Permission` プロパティを `signature` に設定します。
+1. 署名レベルのセキュリティ &ndash; 署名レベルのセキュリティを**実装**すると、サービスを保持する apk に署名するときに使用したものと同じキーで署名されたアプリケーションに対して、そのアクセス許可が自動的に付与されます。 これは、開発者が自分のアプリケーションからアクセス可能な状態を維持しながら、サービスをセキュリティで保護するための簡単な方法です。 署名レベルのアクセス許可を宣言するには、`ServiceAttribute` の `Permission` プロパティを `signature`に設定します。
 
     ```csharp
     [Service(Name = "com.xamarin.TimestampService",
@@ -469,9 +469,9 @@ Service APK にアクセス許可を作成するには、`permission` 要素が*
 
 アプリケーションに付与されているアクセス許可を表示するには、Android 設定アプリを開き、 **[アプリ]** を選択します。 一覧でアプリケーションを見つけて選択します。 **[アプリ情報]** 画面で、 **[アクセス許可]** をタップすると、アプリに付与されているすべてのアクセス許可を表示するビューが表示されます。
 
-[アプリケーションに付与されたアクセス許可を検索する方法を示すスクリーンショットを Android デバイスから![する](out-of-process-services-images/ipc-06-sml.png)](out-of-process-services-images/ipc-06.png#lightbox)
+[アプリケーションに付与されたアクセス許可を検索する方法を示すスクリーンショットを Android デバイスから ![する](out-of-process-services-images/ipc-06-sml.png)](out-of-process-services-images/ipc-06.png#lightbox)
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 このガイドでは、リモートプロセスで Android サービスを実行する方法について詳しく説明しました。 ローカルサービスとリモートサービスの違いについて説明しました。また、リモートサービスが Android アプリの安定性とパフォーマンスに役立つ可能性がある理由についても説明しました。 リモートサービスを実装する方法と、クライアントがサービスと通信する方法について説明した後、このガイドでは、承認されたクライアントのみからサービスへのアクセスを制限する方法の1つを紹介しました。
 
@@ -479,7 +479,7 @@ Service APK にアクセス許可を作成するには、`permission` 要素が*
 
 - [ヘッダー](xref:Android.OS.Handler)
 - [[メッセージ]](xref:Android.OS.Message)
-- [オンライン](xref:Android.OS.Messenger)
+- [Messenger](xref:Android.OS.Messenger)
 - [ServiceAttribute](xref:Android.App.ServiceAttribute)
 - [エクスポートされた属性](https://developer.android.com/guide/topics/manifest/service-element.html#exported)
 - [分離されたプロセスおよびカスタムアプリケーションクラスを含むサービスが、オーバーロードを正しく解決できない](https://bugzilla.xamarin.com/show_bug.cgi?id=51940)

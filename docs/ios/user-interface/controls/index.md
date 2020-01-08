@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: fbf847ef49be83494f593291fbb0a00934bc3ced
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a4bf0b89a9ab336bf47ddcd104760211d912f423
+ms.sourcegitcommit: bad1ab3f78d7f94d48511666626b54f8ba155689
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022044"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75663435"
 ---
 # <a name="user-interface-controls-in-xamarinios"></a>Xamarin のユーザーインターフェイスコントロール
 
@@ -80,9 +80,9 @@ UISearchBar は、値のリストを検索するために使用されます。
 
 タブナビゲーション UI を使用する iOS アプリケーションは、UITabBarController クラスを使用して構築されます。 この記事では、複数のコントローラーとビューを含むタブ付きアプリケーションを設定する方法について説明します。 次に、ログイン画面の後など、ルートコントローラーではないときに UITabBarController を読み込む方法を確認します。
 
-## <a name="web-viewsuiwebviewmd"></a>[Web ビュー](uiwebview.md)
+## <a name="web-viewswebviewmd"></a>[Web ビュー](webview.md)
 
-この記事では、Apple によって提供される3つの Web ビュー (`UIWebView`、`WKWebview`、`SFSafariViewController`、その類似点と相違点、およびそれらの使用方法について説明します。
+この記事では、Apple によって提供される web ビュー (`WKWebview` と `SFSafariViewController`について説明します。これらの類似点と相違点と、それらを使用する方法について説明します。
 
 ## <a name="related-links"></a>関連リンク
 
