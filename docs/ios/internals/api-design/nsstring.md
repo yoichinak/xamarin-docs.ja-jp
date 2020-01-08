@@ -16,7 +16,7 @@ ms.locfileid: "73022349"
 ---
 # <a name="nsstring-in-xamarinios-and-xamarinmac"></a>Xamarin. iOS と Xamarin. Mac の NSString
 
-Xamarin.iOS と xamarin.Mac の両方の設計では、API を使用して、C# およびその他の .NET プログラミング言語の文字列操作のために、文字列を API によって公開するデータ型として、`string` `NSString`データ型の代わりに、ネイティブ .NET 文字列型の を公開します。
+Xamarin.iOS と Xamarin.Mac の両者の設計において、C# およびその他の .NET プログラミング言語で文字列を操作するためには、ネイティブ .NET 文字列型 `string` を公開する API の利用が必要となり、`NSString` データ型の代わりに API によって公開されるデータ型として string を公開するためにも API の利用が必要です。
 
 このため、開発者は Xamarin の呼び出しに使用することを意図した文字列を保持する必要がないことに注意してください。 特殊な種類の (`Foundation.NSString`) iOS & Xamarin.Mac API (統合) は、すべての操作に Mono の `System.String` を使用し続けることができます。Xamarin. iOS または Xamarin.Mac の API に文字列が必要な場合はいつでも、API バインディングでは情報のマーシャリングが処理されます。
 
