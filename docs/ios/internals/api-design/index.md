@@ -97,9 +97,9 @@ Xamarin.iOS は、C# で Objective-C のクラスの階層をミラーリング�
 
 - このランタイムでは、 [nsstring](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html)と[nsstring](https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html)を処理する代わりにC#、これらを[文字列型](xref:System.String)および厳密に型指定された[配列](xref:System.Array)として API 全体に公開しています。
 
-- ここでは、開発者が Xamarin.iOS によって現在バインドされていないサードパーティの Objective-C Api、他の iOS Api、Api をバインドできるようにするために、さまざまなヘルパー Api が公開されています。
+- ここでは、開発者がサードパーティの Objective-C API、他の iOS API、Xamarin.iOS によって現在バインドされていない API をバインドできるように、さまざまなヘルパー API が公開されています。
 
-バインディング Api の詳細については、「 [Xamarin のバインドジェネレーター](~/cross-platform/macios/binding/binding-types-reference.md) 」を参照してください。
+バインディング API の詳細については、「[Xamarin.iOS のバインドジェネレーター](~/cross-platform/macios/binding/binding-types-reference.md)」を参照してください。
 
 ##### <a name="nsobject"></a>NSObject
 

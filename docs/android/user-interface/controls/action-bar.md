@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/06/2018
-ms.openlocfilehash: b2b7c2cc87b37ae0e7397988e37df6b9b1e3aa10
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f64b57e73b69b3111087ca1352f5fb9536f855e5
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029388"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488960"
 ---
 # <a name="actionbar-for-xamarinandroid"></a>Xamarin. Android の ActionBar
 
@@ -22,7 +22,7 @@ ms.locfileid: "73029388"
 操作バーには、Android 4.0 でタブ付きインターフェイスを追加するためのサポートが含まれています。
 次のスクリーンショットは、このようなインターフェイスの例を示しています。
 
-[エミュレーターで実行されているアプリのスクリーンショットを![します。2つのタブが表示されます。](action-bar-images/25-actionbartabs.png)](action-bar-images/25-actionbartabs.png#lightbox)
+[エミュレーターで実行されているアプリのスクリーンショットを ![します。2つのタブが表示されます。](action-bar-images/25-actionbartabs.png)](action-bar-images/25-actionbartabs.png#lightbox)
 
 操作バーでタブを作成するには、まず、`NavigationMode` プロパティを [サポート] タブに設定する必要があります。 Android 4 では、`ActionBar` プロパティを Activity クラスで使用できます。このプロパティを使用して、次のように `NavigationMode` を設定できます。
 
@@ -77,7 +77,7 @@ this.ActionBar.AddTab (tab);
 
 完全な例については、このドキュメントのサンプルコードの*HelloTabsICS*プロジェクトを参照してください。
 
-## <a name="shareactionprovider"></a>/のアクションプロバイダー
+## <a name="shareactionprovider"></a>ShareActionProvider
 
 `ShareActionProvider` クラスを使用すると、操作バーから共有アクションを実行できます。 共有の目的を処理し、以前に使用したアプリケーションの履歴を保存しておくことによって、操作バーから後で簡単にアクセスできるようにするアプリの一覧を使用して、アクションビューを作成します。 これにより、Android 全体で一貫性のあるユーザーエクスペリエンスを使用してアプリケーションがデータを共有できるようになります。
 
@@ -85,7 +85,7 @@ this.ActionBar.AddTab (tab);
 
 たとえば、次に示すのは、イメージを共有するためのメニュー項目を持つ操作バーのスクリーンショットです (共有[Actionprovider](https://docs.microsoft.com/samples/xamarin/monodroid-samples/shareactionproviderdemo)サンプルから取得)。 ユーザーが操作バーのメニュー項目をタップすると、`ShareActionProvider`に関連付けられているインテントを処理するために、このアプリケーションが読み込まれます。 この例では、メッセージングアプリケーションが既に使用されているため、操作バーに表示されます。
 
-[操作バー内のメッセージングアプリケーションアイコンのスクリーンショット![](action-bar-images/09-shareactionprovider.png)](action-bar-images/09-shareactionprovider.png#lightbox)
+[操作バー内のメッセージングアプリケーションアイコンのスクリーンショット ![](action-bar-images/09-shareactionprovider.png)](action-bar-images/09-shareactionprovider.png#lightbox)
 
 ユーザーが操作バーの項目をクリックすると、次のように、共有イメージを含むメッセージングアプリが起動されます。
 
@@ -142,5 +142,3 @@ Intent CreateIntent ()
 
 - [Hello Tabs ICS (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/hellotabsics)
 - [/Sharepoint のデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/shareactionproviderdemo)
-- [アイスクリームサンドイッチの導入](https://www.android.com/about/ice-cream-sandwich/)
-- [Android 4.0 プラットフォーム](https://developer.android.com/sdk/android-4.0.html)

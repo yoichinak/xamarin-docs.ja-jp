@@ -23,7 +23,7 @@ ms.locfileid: "73015596"
 
 ## <a name="unified-apiunifiedindexmd"></a>[Unified API](unified/index.md)
 
-IOS プロジェクトと Mac プロジェクトの Unified API では、同じコードファイルを両方のプラットフォームで使用できるように、同じ名前空間をフレームワークに使用します。これにより、シームレスなコード共有が可能になります。 また、32と64の両方のビットビルドが有効になります。 Unified API は、初期2015以降のテンプレートの既定の設定であり、すべての新しいプロジェクトに対して、Unified API プロジェクト*のみ*を App Store に送信できるようにすることをお勧めします。
+iOS プロジェクトと Mac プロジェクトの Unified API では、同じコードファイルを両方のプラットフォームで使用できるように、同じ名前空間をフレームワークに使用します。これにより、シームレスなコード共有が可能になります。 また、32と64の両方のビットビルドが有効になります。 Unified API は、初期2015以降のテンプレートの既定の設定であり、すべての新しいプロジェクトに対して、Unified API プロジェクト*のみ*を App Store に送信できるようにすることをお勧めします。
 
 ### <a name="classic-apis"></a>クラシック Api
 
@@ -41,8 +41,8 @@ IOS プロジェクトと Mac プロジェクトの Unified API では、同じ�
 Xamarin では、バインドを使用してアプリにネイティブライブラリを取り込むことができます。 このセクションの説明は次のとおりです。
 
 - バインディングのしくみ
-- 目的の C コードを Xamarin に取り込むことができるバインドプロジェクトを手動でビルドする方法
-- **目標マジックペン**ツールを使用してプロセスを自動化する方法。
+- Objective-C のコードを Xamarin に取り込むことができるバインド プロジェクトを手動でビルドする方法
+- **Objective Sharpie** ツールを使用してプロセスを自動化する方法。
 
 ## <a name="native-referencesnative-referencesmd"></a>[ネイティブ参照](native-references.md)
 
@@ -61,6 +61,6 @@ C# と F# から透過的に 32 と 64 のビットコードをサポートす�
 
 ## <a name="httpclient-stack-and-ssltls-implementation-selectorhttp-stackmd"></a>[HttpClient スタックと SSL/TLS の実装セレクター](http-stack.md)
 
-新しい HttpClient スタックセレクターは、Xamarin. iOS、tvOS、および Xamarin. Mac アプリで使用する HttpClient 実装を制御します。 IOS の、tvOS、または OS X のネイティブトランスポート (OS によっては`NSUrlSession` または `CFNetwork`) を使用する実装に切り替えることができるようになりました。
+新しい HttpClient スタックセレクターは、Xamarin.iOS、tvOS、および Xamarin.Mac アプリで使用する HttpClient 実装を制御します。 iOS の、tvOS、または OS X のネイティブトランスポート (OS によっては`NSUrlSession` または `CFNetwork`) を使用する実装に切り替えることができるようになりました。
 
 SSL (Secure Socket Layer) とその後継 (TLS (Transport Layer Security)) は、`System.Net.Security.SslStream`を介して HTTP およびその他のネットワーク接続のサポートを提供します。 新しい SSL/TLS 実装のビルドオプションは、Mono の独自の TLS スタックと、Mac および iOS に存在する Apple の TLS スタックを利用したものを切り替えます。

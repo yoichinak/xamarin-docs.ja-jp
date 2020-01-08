@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/01/2016
-ms.openlocfilehash: 85bdace802e58725195d9124af70f396a533aaee
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: fc3a0ace7760b89ad9b2679243c9b6d562191554
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031238"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489077"
 ---
 # <a name="user-notifications-framework-in-xamarinios"></a>Xamarin. iOS のユーザー通知フレームワーク
 
@@ -35,4 +35,4 @@ IOS 10 の新機能であるユーザー通知フレームワークを使用す�
 - [iOS 10 のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)
 - [UserNotifications フレームワークリファレンス](https://developer.apple.com/reference/usernotifications)
 - [UserNotificationsUI](https://developer.apple.com/reference/usernotificationsui)
-- [ローカルおよびリモートの通知プログラミングガイド](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/Introduction.html)
+- [ローカルおよびリモートの通知プログラミングガイド](https://developer.apple.com/documentation/usernotifications)

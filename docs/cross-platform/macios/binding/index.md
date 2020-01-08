@@ -6,12 +6,12 @@ ms.assetid: DBBAA086-BB0F-8161-DF44-632F4F5DFE5D
 author: davidortinau
 ms.author: daortin
 ms.date: 01/25/2016
-ms.openlocfilehash: cc404f3995bd1f2940897f6cb84d57cea39ae44b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b7764d63991ec636043982509319e7097ef2091b
+ms.sourcegitcommit: d8af612b6b3218fea396d2f180e92071c4d4bf92
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016276"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75663255"
 ---
 # <a name="binding-objective-c"></a>Objective-C のバインディング
 
@@ -48,7 +48,9 @@ C Api のみをバインドする場合は、P/Invoke フレームワークの�
 
 ## <a name="mac"></a>Mac
 
-以前の[Mac バインド](~/mac/platform/binding.md)は、非常に手動のプロセスでした。 現在、今後のリリースの Visual Studio for Mac では、Mac バインドプロジェクトのサポートのダウンロード可能な[プレビュー](https://forums.xamarin.com/discussion/59760/xamarin-mac-binding-project-preview)があります。
+Mac の[バインド](~/mac/platform/binding.md)の手順に従って、macOS ライブラリをバインドします。 **[新しいプロジェクト]** ウィンドウから新しい**Mac バインドライブラリ**を作成できます。
+
+[![ファイルの [新しい mac バインドプロジェクト] ダイアログ](images/new-bindings-library-sml.png)](images/new-bindings-library.png#lightbox)
 
 ## <a name="related-links"></a>関連リンク
 

@@ -7,29 +7,32 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: ed6992f946512cd88b4b2b8cfcf4c826bdd6b837
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 924f5403f12250fcfc5f026438d08ed618fb373f
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645344"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487608"
 ---
 # <a name="spell-checking-using-the-bing-spell-check-api"></a>スペル チェック、Bing Spell Check API を使用します。
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
-_Bing Spell Check 実行コンテキストに応じたスペルをチェック、テキストのスペル ミスの語句のインラインの候補を提供します。この記事では、Bing Spell Check REST API を使用して、Xamarin.Forms アプリケーションでスペル ミスを修正する方法について説明します。_
+_Bing Spell Check は、テキストに対して文脈によるスペルチェックを実行し、スペルミスの語句にインラインでの候補を提供します。この記事では、Bing Spell Check REST API を使用して、Xamarin. フォームアプリケーションでスペルミスを修正する方法について説明します。_
 
-## <a name="overview"></a>概要
+## <a name="overview"></a>の概要
 
 Bing Spell Check REST API は 2 つの動作モードを備え、API に要求を行う場合、モードを指定する必要があります。
 
 - `Spell` 大文字小文字の区別、変更せずに短いテキスト (最大 9 個の単語) を修正します。
 - `Proof` 長いテキストの修正、大文字と小文字の修正と基本的な句読点調整などを提供および積極的な修正を抑制します。
 
+> [!NOTE]
+> [Azure サブスクリプション](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)をお持ちでない場合は、開始する前に[無料アカウント](https://aka.ms/azfree-docs-mobileapps)を作成してください。
+
 Bing Spell Check API を使用する API キーを取得する必要があります。 これから入手できる[Cognitive Services をお試しください](https://azure.microsoft.com/try/cognitive-services/)
 
-Bing Spell Check API でサポートされる言語の一覧は、[サポートされる言語](/azure/cognitive-services/bing-spell-check/bing-spell-check-supported-languages/)を参照してください。 Bing Spell Check API の詳細については、[Bing Spell 確認ドキュメント](/azure/cognitive-services/bing-spell-check/)を参照してください。
+Bing Spell Check API でサポートされる言語の一覧は、次を参照してください。[サポートされる言語](/azure/cognitive-services/bing-spell-check/bing-spell-check-supported-languages/)します。 Bing Spell Check API の詳細については、次を参照してください。 [Bing Spell 確認ドキュメント](/azure/cognitive-services/bing-spell-check/)します。
 
 ## <a name="authentication"></a>認証
 
@@ -79,7 +82,7 @@ string GenerateRequestUri(string spellCheckEndpoint, string text, SpellCheckMode
 
 このメソッドは、スペル チェック、およびスペル チェック モードにするテキストを設定します。
 
-Bing Spell Check REST API の詳細については、[Spell Check API v7 参照](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference/)を参照してください。
+Bing Spell Check REST API の詳細については、次を参照してください。 [Spell Check API v7 参照](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference/)します。
 
 ### <a name="sending-the-request"></a>要求を送信します。
 
@@ -95,7 +98,7 @@ async Task<string> SendRequestAsync(string url)
 
 このメソッドが GET 要求を送信、 `SpellCheck` API を変換するテキストを指定する要求 URL と、スペル チェック モードを使用します。 応答が読み取られ、呼び出し元メソッドに返されます。
 
-`SpellCheck` API は、要求が有効である、要求が成功したことを示すし、の要求された情報は、応答で提供される応答には、HTTP 状態コード 200 (OK) を送信します。 応答オブジェクトの一覧は、[応答オブジェクト](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference#response-objects)を参照してください。
+`SpellCheck` API は、要求が有効である、要求が成功したことを示すし、の要求された情報は、応答で提供される応答には、HTTP 状態コード 200 (OK) を送信します。 応答オブジェクトの一覧は、次を参照してください。[応答オブジェクト](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference#response-objects)します。
 
 ### <a name="processing-the-response"></a>応答の処理
 
@@ -151,14 +154,14 @@ foreach (var flaggedToken in spellCheckResult.FlaggedTokens)
 
 このコードの反復、`FlaggedTokens`コレクションと、スペル ミスの置換、または最初の修正候補のソース テキスト内の文法的に誤った単語。 次のスクリーン ショットは、スペル チェックの前後に表示します。
 
-![](spell-check-images/before-spell-check.png "スペル チェックする前に")
+![](spell-check-images/before-spell-check.png "Before Spell Check")
 
-![](spell-check-images/after-spell-check.png "スペル チェックの後")
+![](spell-check-images/after-spell-check.png "After Spell Check")
 
 > [!NOTE]
-> 上記の例で`Replace`は、わかりやすくするためにを使用していますが、大量のテキストを使用すると、間違ったトークンが置き換えられる可能性があります。 API では、 `offset`更新を実行するソーステキスト内の正しい場所を識別するために、運用アプリで使用される値が提供されます。
+> 上記の例では、わかりやすくするために `Replace` を使用していますが、大量のテキストでは、間違ったトークンが置換される可能性があります。 API には `offset` 値が用意されています。この値は、更新を実行するソーステキスト内の正しい場所を識別するために実稼働アプリで使用する必要があります。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 この記事では、Bing Spell Check REST API を使用して、Xamarin.Forms アプリケーションでスペル ミスを修正する方法について説明します。 Bing Spell Check 実行コンテキストに応じたスペルをチェック、テキストのスペル ミスの語句のインラインの候補を提供します。
 

@@ -6,17 +6,17 @@ ms.assetid: B5906AB6-3F79-4FCB-8C78-1F0AF18AB39E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/19/2018
-ms.openlocfilehash: 90d860cb6429025672a058e22e76f029872d3b34
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.date: 12/04/2019
+ms.openlocfilehash: 7c6647a0299b5ece3caaaa1d322ec1a0efac3557
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657173"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75490091"
 ---
 # <a name="xamarinforms-imagebutton"></a>Xamarin.Forms ImageButton
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
 
 _ImageButton がイメージを表示し、タップまたは特定のタスクを実行するためにアプリケーションに指示するクリックに応答します。_
 
@@ -53,9 +53,12 @@ _ImageButton がイメージを表示し、タップまたは特定のタスク�
 
 `Source`プロパティに表示されるイメージを指定します、`ImageButton`します。 この例では、次のスクリーン ショットは、その結果、各プラットフォーム プロジェクトから読み込まれるローカル ファイルに設定には。
 
-[![基本的な ImageButton](imagebutton-images/BasicImageButton.png "基本的な ImageButton")](imagebutton-images/BasicImageButton-Large.png#lightbox "基本的な ImageButton")
+[![基本 ImageButton](imagebutton-images/BasicImageButton.png "基本 ImageButton")](imagebutton-images/BasicImageButton-Large.png#lightbox "基本 ImageButton")
 
 既定で、`ImageButton`は、四角形を使用して、it が丸められますの角を与えることができますが、`CornerRadius`プロパティ。 詳細については`ImageButton`の外観を参照してください[ImageButton 外観](#imagebutton-appearance)します。
+
+> [!NOTE]
+> `ImageButton` は、アニメーション GIF を読み込むことができますが、GIF の最初のフレームのみが表示されます。
 
 次の例は、XAML の前の例では完全に機能的に同等であるページを作成する方法を示しますC#:
 
@@ -144,7 +147,7 @@ public partial class ImageButtonDemoPage : ContentPage
 
 この特定の`Clicked`ハンドラーは、カウンターをインクリメントして、内のカウンター値が表示されます、 [ `Label` ](xref:Xamarin.Forms.Label):
 
-[![基本的な ImageButton をクリックして](imagebutton-images/ImageButton.png "基本的な ImageButton をクリックして")](imagebutton-images/ImageButton-Large.png#lightbox "基本的な ImageButton をクリックします")
+[![基本 ImageButton クリック](imagebutton-images/ImageButton.png "基本 ImageButton クリック")](imagebutton-images/ImageButton-Large.png#lightbox "基本 ImageButton クリック")
 
 次の例は、XAML の前の例では完全に機能的に同等であるページを作成する方法を示しますC#:
 
@@ -238,7 +241,7 @@ public class ImageButtonDemoPage : ContentPage
 - [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit) -レター ボックス (必要に応じて) のイメージにイメージ全体が収まるように、`ImageButton`空白かどうかは、イメージ、幅または高さに応じて境界線の上/下に追加でします。 これは、既定値の[ `Aspect` ](xref:Xamarin.Forms.Aspect)列挙体。
 
 > [!NOTE]
-> `ImageButton`クラスもあります[ `Margin` ](xref:Xamarin.Forms.View.Margin)と`Padding`のレイアウト動作を制御するプロパティ、`ImageButton`します。 詳細については、次を参照してください。[余白やパディング](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)します。
+> `ImageButton`クラスもあります[ `Margin` ](xref:Xamarin.Forms.View.Margin)と`Padding`のレイアウト動作を制御するプロパティ、`ImageButton`します。 詳細については「[Margin and Padding](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)」 (余白とスペース) を参照してください。
 
 ## <a name="imagebutton-visual-states"></a>ImageButton 表示状態
 

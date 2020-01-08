@@ -6,13 +6,13 @@ ms.assetid: 20DB2C57-CE3A-4D91-80DC-73AE361A3CB0
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/02/2019
-ms.openlocfilehash: 0ad31bc6f84ae633a9a18592a00670703db19df9
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.date: 12/17/2019
+ms.openlocfilehash: 7d1183bf0c741b5a7ca02b43c4edb0c640ee1ac2
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72697873"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488226"
 ---
 # <a name="xamarinforms-carouselview-data"></a>CarouselView データ
 
@@ -22,10 +22,10 @@ ms.locfileid: "72697873"
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)には、表示するデータとその外観を定義する次のプロパティが含まれています。
 
-- `IEnumerable` 型の[`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)は、表示される項目のコレクションを指定します。既定値は `null` です。
+- `IEnumerable`型の[`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)は、表示される項目のコレクションを指定します。既定値は `null`です。
 - [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)型の[`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)は、表示される項目のコレクション内の各項目に適用するテンプレートを指定します。
 
-これらのプロパティは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)のオブジェクトによってサポートされています。これは、プロパティをデータバインディングのターゲットにできることを意味します。
+これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトによりサポートされます。つまりデータバインディングの対象となる可能性があるという意味です。
 
 > [!NOTE]
 > [`CarouselView`](xref:Xamarin.Forms.CarouselView)は、新しい項目が追加されたときの `CarouselView` のスクロール動作を表す `ItemsUpdatingScrollMode` プロパティを定義します。 このプロパティの詳細については、「[新しい項目が追加されたときのコントロールのスクロール位置](scrolling.md#control-scroll-position-when-new-items-are-added)」を参照してください。
@@ -34,7 +34,7 @@ ms.locfileid: "72697873"
 
 ## <a name="populate-a-carouselview-with-data"></a>CarouselView にデータを設定する
 
-[@No__t_1](xref:Xamarin.Forms.CarouselView)には、 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)プロパティを `IEnumerable` を実装する任意のコレクションに設定することによってデータが設定されます。 項目は、文字列の配列から `ItemsSource` プロパティを初期化することによって、XAML で追加できます。
+[`CarouselView`](xref:Xamarin.Forms.CarouselView)には、 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)プロパティを `IEnumerable`を実装する任意のコレクションに設定することによってデータが設定されます。 項目は任意の文字配列からの `ItemsSource` プロパティを初期化することにより、XAML で追加できます。
 
 ```xaml
 <CarouselView>
@@ -55,7 +55,7 @@ ms.locfileid: "72697873"
 > [!NOTE]
 > `x:Array` 要素には、配列内の項目の型を示す `Type` 属性が必要です。
 
-これに相当する C# コードを次に示します。
+該当の C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView();
@@ -72,23 +72,23 @@ carouselView.ItemsSource = new string[]
 ```
 
 > [!IMPORTANT]
-> 基になるコレクションで項目が追加、削除、または変更されたときに、 [`CarouselView`](xref:Xamarin.Forms.CarouselView)を更新する必要がある場合、基になるコレクションは、`ObservableCollection` などのプロパティ変更通知を送信する `IEnumerable` コレクションである必要があります。
+> 基になるコレクションで項目が追加、削除、または変更されたときに、 [`CarouselView`](xref:Xamarin.Forms.CarouselView)を更新する必要がある場合、基になるコレクションは、`ObservableCollection`などのプロパティ変更通知を送信する `IEnumerable` コレクションである必要があります。
 
 既定では、 [`CarouselView`](xref:Xamarin.Forms.CarouselView)項目は水平方向に表示されます。 次のスクリーンショットは、iOS と Android で異なる文字列項目を表示する `CarouselView` を示しています。
 
 [![IOS と Android のテキスト項目を含む CarouselView のスクリーンショット](populate-data-images/text.png "CarouselView のテキスト項目")](populate-data-images/text-large.png#lightbox "CarouselView のテキスト項目")
 
-[@No__t_1](xref:Xamarin.Forms.CarouselView)の向きを変更する方法の詳細については、「 [Xamarin CarouselView Layout](layout.md)」を参照してください。 @No__t_0 内の各項目の外観を定義する方法の詳細については、「[項目の外観を定義](#define-item-appearance)する」を参照してください。
+[`CarouselView`](xref:Xamarin.Forms.CarouselView)の向きを変更する方法の詳細については、「 [Xamarin CarouselView Layout](layout.md)」を参照してください。 `CarouselView` 内の各項目の外観を定義する方法については、[項目の外観の定義](#define-item-appearance) を参照してください。
 
 ### <a name="data-binding"></a>データ バインディング
 
-データバインディングを使用して、その[`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)プロパティを `IEnumerable` コレクションにバインドすることによって、 [`CarouselView`](xref:Xamarin.Forms.CarouselView)にデータを設定できます。 XAML では、これは `Binding` マークアップ拡張機能を使用して実現されます。
+データバインディングを使用して、その[`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)プロパティを `IEnumerable` コレクションにバインドすることによって、 [`CarouselView`](xref:Xamarin.Forms.CarouselView)にデータを設定できます。 XAML では、これは `Binding` マークアップ拡張を使って実現します。
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}" />
 ```
 
-これに相当する C# コードを次に示します。
+該当の C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView();
@@ -98,7 +98,7 @@ carouselView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 この例では、 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)プロパティデータを接続されたビューモデルの `Monkeys` プロパティにバインドします。
 
 > [!NOTE]
-> コンパイル済みのバインドを有効にすると、Xamarin. Forms アプリケーションでのデータバインディングのパフォーマンスを向上させることができます。 詳しくは、「[コンパイル済みのバインド](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)」を参照してください。
+> Xamarin.Forms アプリケーションのデータ バインディングのパフォーマンスを向上させるために、コンパイル済みのバインドを有効にすることができます。 詳しくは、「[コンパイル済みのバインド](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)」を参照してください。
 
 データ バインディングの詳細については、「[Xamarin.Forms Data Binding](~/xamarin-forms/app-fundamentals/data-binding/index.md)」 (Xamarin.Forms のデータ バインディング) を参照してください。
 
@@ -144,7 +144,7 @@ carouselView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 </CarouselView>
 ```
 
-これに相当する C# コードを次に示します。
+該当の C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView();
@@ -179,7 +179,7 @@ carouselView.ItemTemplate = new DataTemplate(() =>
 });
 ```
 
-[@No__t_1](xref:Xamarin.Forms.DataTemplate)で指定された要素は、`CarouselView` 内の各項目の外観を定義します。 この例では、`DataTemplate` 内のレイアウトは[`StackLayout`](xref:Xamarin.Forms.StackLayout)によって管理され、データには[`Image`](xref:Xamarin.Forms.Image)オブジェクトと3つの[`Label`](xref:Xamarin.Forms.Label)オブジェクトが表示されます。これらはすべて、`Monkey` クラスのプロパティにバインドされます。
+[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)で指定された要素は、`CarouselView`内の各項目の外観を定義します。 この例では、`DataTemplate` 内のレイアウトは[`StackLayout`](xref:Xamarin.Forms.StackLayout)によって管理され、データには[`Image`](xref:Xamarin.Forms.Image)オブジェクトと3つの[`Label`](xref:Xamarin.Forms.Label)オブジェクトが表示されます。これらはすべて、`Monkey` クラスのプロパティにバインドされます。
 
 ```csharp
 public class Monkey
@@ -199,7 +199,7 @@ public class Monkey
 
 ## <a name="choose-item-appearance-at-runtime"></a>実行時に項目の外観を選択する
 
-[@No__t_1](xref:Xamarin.Forms.CarouselView)内の各項目の外観は、項目の値に基づいて実行時に選択できます。そのためには、 [`CarouselView.ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)プロパティを[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)オブジェクトに設定します。
+[`CarouselView`](xref:Xamarin.Forms.CarouselView)内の各項目の外観は、項目の値に基づいて実行時に選択できます。そのためには、 [`CarouselView.ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)プロパティを[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)オブジェクトに設定します。
 
 ```xaml
 <ContentPage ...
@@ -224,7 +224,7 @@ public class Monkey
 </ContentPage>
 ```
 
-これに相当する C# コードを次に示します。
+該当の C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView
@@ -234,7 +234,7 @@ CarouselView carouselView = new CarouselView
 carouselView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
 
-[@No__t_1](xref:Xamarin.Forms.ItemsView.ItemTemplate)プロパティは `MonkeyDataTemplateSelector` オブジェクトに設定されます。 次の例は、`MonkeyDataTemplateSelector` クラスを示しています。
+[`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)プロパティは `MonkeyDataTemplateSelector` オブジェクトに設定されます。 次の例は、`MonkeyDataTemplateSelector` クラスを示しています。
 
 ```csharp
 public class MonkeyDataTemplateSelector : DataTemplateSelector
@@ -256,11 +256,39 @@ public class MonkeyDataTemplateSelector : DataTemplateSelector
 データテンプレートセレクターの詳細については、「 [DataTemplateSelector を作成する](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)」を参照してください。
 
 > [!IMPORTANT]
-> [@No__t_1](xref:Xamarin.Forms.CarouselView)を使用する場合は、 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)オブジェクトのルート要素を `ViewCell` に設定しないでください。 これにより、`CarouselView` にセルの概念がないため、例外がスローされます。
+> [`CarouselView`](xref:Xamarin.Forms.CarouselView)を使用する場合は、 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)オブジェクトのルート要素を `ViewCell`に設定しないでください。 これにより、`CarouselView` にセルの概念がないため、例外がスローされます。
 
-## <a name="pull-to-refresh"></a>プルして更新
+## <a name="display-indicators"></a>インジケーターの表示
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)では、`RefreshView` を通じてプルを更新する機能がサポートされています。これにより、表示されているデータを項目にプルダウンして更新できます。 @No__t_0 は、子がスクロール可能なコンテンツをサポートしていれば、その子に対してプルを行う機能を提供するコンテナーコントロールです。 そのため、`RefreshView` の子として設定することにより、`CarouselView` の pull to refresh が実装されます。
+`CarouselView`内の項目数と現在位置を表すインジケーターは、`CarouselView`の横に表示できます。 これは、`IndicatorView` コントロールを使用して実現できます。
+
+```xaml
+<StackLayout>
+    <CarouselView x:Name="carouselView"
+                  ItemsSource="{Binding Monkeys}">
+        <CarouselView.ItemTemplate>
+            <!-- DataTemplate that defines item appearance -->
+        </CarouselView.ItemTemplate>
+    </CarouselView>
+    <IndicatorView ItemsSourceBy="carouselView"
+                   IndicatorColor="LightGray"
+                   SelectedIndicatorColor="DarkGray"
+                   HorizontalOptions="Center" />
+</StackLayout>
+```
+
+この例では、`IndicatorView` が `CarouselView`の下にレンダリングされ、`CarouselView`内の各項目のインジケーターが表示されます。 `IndicatorView` には、`ItemsSourceBy` プロパティを `CarouselView` オブジェクトに設定することによってデータが設定されます。 各インジケーターは薄い灰色の円であり、`CarouselView` の現在の項目を表すインジケーターは濃い灰色です。
+
+[![IOS と Android での CarouselView と IndicatorView のスクリーンショット](populate-data-images/indicators.png "IndicatorView の円")](populate-data-images/indicators-large.png#lightbox "IndicatorView の円")
+
+> [!IMPORTANT]
+> `ItemsSourceBy` プロパティを設定すると、`IndicatorView.Position` プロパティのバインドが `CarouselView.Position` プロパティになり、`IndicatorView.ItemsSource` プロパティが `CarouselView.ItemsSource` プロパティにバインドされます。
+
+インジケーターの詳細については、「 [IndicatorView](~/xamarin-forms/user-interface/indicatorview.md)」を参照してください。
+
+## <a name="pull-to-refresh"></a>引っ張って更新
+
+[`CarouselView`](xref:Xamarin.Forms.CarouselView)では、`RefreshView`を通じてプルを更新する機能がサポートされています。これにより、表示されているデータを項目にプルダウンして更新できます。 `RefreshView` は、子がスクロール可能なコンテンツをサポートしていれば、その子に対してプルを行う機能を提供するコンテナーコントロールです。 そのため、`RefreshView`の子として設定することにより、`CarouselView` の pull to refresh が実装されます。
 
 ```xaml
 <RefreshView IsRefreshing="{Binding IsRefreshing}"
@@ -271,7 +299,7 @@ public class MonkeyDataTemplateSelector : DataTemplateSelector
 </RefreshView>
 ```
 
-これに相当する C# コードを次に示します。
+該当の C# コードを次に示します。
 
 ```csharp
 RefreshView refreshView = new RefreshView();
@@ -293,7 +321,7 @@ refreshView.Content = carouselView;
 
 [![IOS と Android での CarouselView のプルから更新のスクリーンショット](populate-data-images/pull-to-refresh.png "CarouselView のプルから更新")](populate-data-images/pull-to-refresh-large.png#lightbox "CarouselView のプルから更新")
 
-@No__t_0 プロパティの値は、`RefreshView` の現在の状態を示します。 ユーザーによって更新がトリガーされると、このプロパティは自動的に `true` に移行します。 更新が完了したら、プロパティを `false` にリセットする必要があります。
+`RefreshView.IsRefreshing` プロパティの値は、`RefreshView`の現在の状態を示します。 ユーザーによって更新がトリガーされると、このプロパティは自動的に `true`に移行します。 更新が完了したら、プロパティを `false`にリセットする必要があります。
 
 `RefreshView` の詳細については、「 [Xamarin. フォーム RefreshView](~/xamarin-forms/user-interface/refreshview.md)」を参照してください。
 
@@ -303,13 +331,13 @@ refreshView.Content = carouselView;
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)は、次のプロパティを定義して、データの増分読み込みを制御します。
 
-- `int` 型の `RemainingItemsThreshold`、`RemainingItemsThresholdReached` イベントが発生するリストにまだ表示されていない項目のしきい値。
-- `ICommand` 型の `RemainingItemsThresholdReachedCommand`。 `RemainingItemsThreshold` に達したときに実行されます。
+- `int`型の `RemainingItemsThreshold`、`RemainingItemsThresholdReached` イベントが発生するリストにまだ表示されていない項目のしきい値。
+- `ICommand`型の `RemainingItemsThresholdReachedCommand`。 `RemainingItemsThreshold` に達したときに実行されます。
 - `RemainingItemsThresholdReachedCommandParameter`: `object` 型、`RemainingItemsThresholdReachedCommand`に渡されるパラメーターです。
 
 また、 [`CarouselView`](xref:Xamarin.Forms.CarouselView) `RemainingItemsThreshold` 項目が表示されていない場合に `CarouselView` がスクロールされたときに発生する `RemainingItemsThresholdReached` イベントも定義します。 このイベントを処理して、さらに多くの項目を読み込むことができます。 さらに、`RemainingItemsThresholdReached` イベントが発生すると、`RemainingItemsThresholdReachedCommand` が実行され、増分データの読み込みがビューモデルで行われるようになります。
 
-@No__t_0 プロパティの既定値は-1 です。これは、`RemainingItemsThresholdReached` イベントが発生しないことを示します。 プロパティ値が0の場合、 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)の最後の項目が表示されるときに `RemainingItemsThresholdReached` イベントが発生します。 0より大きい値の場合、`ItemsSource` にまだスクロールされていない項目の数が含まれていると、`RemainingItemsThresholdReached` イベントが発生します。
+`RemainingItemsThreshold` プロパティの既定値は-1 です。これは、`RemainingItemsThresholdReached` イベントが発生しないことを示します。 プロパティ値が0の場合、 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)の最後の項目が表示されるときに `RemainingItemsThresholdReached` イベントが発生します。 0より大きい値の場合、`ItemsSource` にまだスクロールされていない項目の数が含まれていると、`RemainingItemsThresholdReached` イベントが発生します。
 
 > [!NOTE]
 > [`CarouselView`](xref:Xamarin.Forms.CarouselView)は `RemainingItemsThreshold` プロパティを検証して、その値が常に-1 以上になるようにします。
@@ -325,7 +353,7 @@ refreshView.Content = carouselView;
 </CarouselView>
 ```
 
-これに相当する C# コードを次に示します。
+該当の C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView
@@ -351,6 +379,7 @@ void OnCollectionViewRemainingItemsThresholdReached(object sender, EventArgs e)
 ## <a name="related-links"></a>関連リンク
 
 - [CarouselView (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
+- [IndicatorView](~/xamarin-forms/user-interface/indicatorview.md)
 - [Xamarin. フォーム RefreshView](~/xamarin-forms/user-interface/refreshview.md)
 - [Xamarin. フォームデータバインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 - [Xamarin. フォームデータテンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)

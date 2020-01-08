@@ -6,12 +6,12 @@ ms.assetid: F87BF587-AB64-4C60-84B1-184CAE36ED65
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: ae84dadf4c405f7f8075cedc0f16ca845fea6fdb
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 8978dbce97948d02d520b788d024fb50f4884635
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73014910"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488882"
 ---
 # <a name="async-support-overview"></a>非同期サポートの概要
 
@@ -19,7 +19,7 @@ _C#5では、非同期プログラミングを簡略化するために、async �
 
 Xamarin の非同期サポートは Mono 3.0 foundation 上に構築されており、API プロファイルをモバイル対応バージョンの Silverlight から .NET 4.5 のモバイル対応バージョンにアップグレードします。
 
-## <a name="overview"></a>概要
+## <a name="overview"></a>の概要
 
 このドキュメントでは、新しい async キーワードと await キーワードについて説明し、Xamarin と Xamarin の非同期メソッドを実装する簡単な例をいくつか紹介します。
 
@@ -31,7 +31,7 @@ Xamarin の非同期サポートは Mono 3.0 foundation 上に構築されてお
 
 Xamarin の非同期サポートは Mono 3.0 foundation 上に構築されており、API プロファイルをモバイル対応バージョンの Silverlight から .NET 4.5 のモバイル対応バージョンにアップグレードします。
 
-## <a name="requirements"></a>［要件］
+## <a name="requirements"></a>要件
 
 C#5つの機能には、Xamarin に含まれる Mono 3.0 が必要です。 iOS 6.4 および Xamarin. Android 4.8。 この機能を利用するには、Mono、Xamarin、Xamarin、および Xamarin. Mac をアップグレードするように求められます。
 
@@ -45,7 +45,7 @@ C#5つの機能には、Xamarin に含まれる Mono 3.0 が必要です。 iOS 
 
 `async` キーワードは、非同期的に実行できるコードが含まれていることを示すために (または、ラムダまたは匿名メソッドに) 配置されます。呼び出し元のスレッドをブロックしません。
 
-`async` でマークされたメソッドには、少なくとも1つの await 式またはステートメントが含まれている必要があります。 メソッドに `await`が存在しない場合は、同期的に実行されます (`async` 修飾子がない場合と同じです)。 これにより、コンパイラの警告も発生します (ただし、エラーは発生しません)。
+`async` でマークされたメソッドには、少なくとも1つの await 式またはステートメントが含まれている必要があります。 メソッドに `await` ステートメントが存在しない場合は、同期的に実行されます (`async` 修飾子がない場合と同じです)。 これにより、コンパイラの警告も発生します (ただし、エラーは発生しません)。
 
 ### <a name="return-types"></a>戻り値の型
 
@@ -87,7 +87,7 @@ Await を使用しても、呼び出し元のスレッドがブロックされ�
 
 取り消しの詳細については、「[Fine Tuning Your Async Application (C#) (非同期アプリケーションの微調整 (C#))](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/async/fine-tuning-your-async-application)」を参照してください。
 
-## <a name="example"></a>例
+## <a name="example"></a>使用例
 
 サンプルの[Xamarin ソリューション](https://docs.microsoft.com/samples/xamarin/mobile-samples/asyncawait/)(IOS と Android の両方) をダウンロードして、モバイルアプリでの `async` と `await` の実際の例を参照してください。 コード例については、このセクションで詳しく説明します。
 
@@ -145,7 +145,7 @@ GetButton.Click += async (sender, e) => {
 };
 ```
 
-メモ:
+注:
 
 - 匿名デリゲートには、async キーワードプレフィックスがあります。
 - 非同期メソッド DownloadHomepage は、sizeTask 変数に格納されているタスク\<int > を返します。
@@ -180,10 +180,10 @@ async void HandleTouchUpInside (object sender, EventArgs e)
 いくつかの重要な点:
 
 - メソッドは `async` としてマークされていますが、`void` を返します。 これは通常、イベントハンドラーに対してのみ実行されます (それ以外の場合は、`Task` または `Task<TResult>` を返します)。
-- このコードでは、前の例とは異なり、`DownloadHomepage` メソッド上の変数 (`intResult`) に対してを直接 `await` します。この例では、中間の `Task<int>` 変数を使用してタスクを参照していました。  *これ*は、非同期メソッドが別のスレッドで完了するまで、制御が呼び出し元に返される場所です。
+- `DownloadHomepage` メソッドの `await` キーワードは、前の例のように、タスクを参照するために中間の `Task<int>` 変数を使用した前の例とは異なり、変数に直接代入します (`intResult`)。  *これ*は、非同期メソッドが別のスレッドで完了するまで、制御が呼び出し元に返される場所です。
 - 非同期メソッドが完了して戻ると、`await` で実行が再開されます。これは、整数の結果が返され、UI ウィジェットで表示されることを意味します。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 Async と await を使用すると、メインスレッドをブロックせずに、バックグラウンドスレッドで長時間実行される操作を生成するために必要なコードを大幅に簡略化できます。 また、タスクの完了時に結果に簡単にアクセスすることもできます。
 

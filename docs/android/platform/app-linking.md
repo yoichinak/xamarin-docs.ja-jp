@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 0c7df5f1013c912f69514ee08bac56d0c25c99c1
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: af90c286d2bb960a9f78547dd15c3d98a69529ae
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73027747"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487829"
 ---
 # <a name="app-linking-in-android"></a>Android でのアプリリンク
 
@@ -36,7 +36,7 @@ URI をサポートするアプリがインストールされておらず、そ�
 
 このガイドでは、android 6.0 アプリケーションを構成する方法と、Android 6.0 でのアプリリンクをサポートするデジタル資産リンクファイルを作成して発行する方法について説明します。
 
-## <a name="requirements"></a>［要件］
+## <a name="requirements"></a>要件
 
 このガイドでは、Xamarin 6.1 と、Android 6.0 (API レベル 23) 以降を対象とするアプリケーションが必要です。
 
@@ -47,7 +47,7 @@ URI をサポートするアプリがインストールされておらず、そ�
 Android 6.0 でのアプリリンクの設定には、次の2つの主要な手順が含まれます。
 
 1. **Web サイト URI の1つまたは複数のインテントフィルターを追加する**&ndash; インテントフィルターガイド Android では、モバイルブラウザーで URL クリックを処理する方法を説明しています。
-2. ***デジタル資産リンク*を発行する JSON &ndash; ファイル**は web サイトにアップロードされます。このファイルは、web サイトにアップロードされ、Android によって使用されて、モバイルアプリと web サイトのドメインの関係を確認します。 これを行わないと、Android は URI の既定のハンドルとしてアプリをインストールできません。ユーザーは手動で行う必要があります。
+2. **発行、 *デジタル資産へのリンクの JSON* 、web サイト上のファイル** &ndash;は web サイトにアップロードされ、Android によってモバイル アプリと web サイトのドメイン間のリレーションシップを確認するために使用するファイルです。 これを行わないと、Android は URI の既定のハンドルとしてアプリをインストールできません。ユーザーは手動で行う必要があります。
 
 <a name="configure-intent-filter" />
 
@@ -56,7 +56,7 @@ Android 6.0 でのアプリリンクの設定には、次の2つの主要な手�
 Web サイトの URI (または一連の Uri) を Android アプリケーションのアクティビティにマップするインテントフィルターを構成する必要があります。 Xamarin Android では、この関係は、 [Intentfilterattribute](xref:Android.App.IntentFilterAttribute)を使用してアクティビティを装飾することによって確立されます。 インテントフィルターでは、次の情報を宣言する必要があります。
 
 - **`Intent.ActionView`** &ndash; 情報の表示要求に応答するインテントフィルターを登録します
-- インテントフィルターが &ndash; を **`Categories`** するには、両方のインテントを登録する必要があり **[ます。カテゴリ](xref:Android.Content.Intent.CategoryBrowsable)** の参照可能および **[インテント。カテゴリの既定](xref:Android.Content.Intent.CategoryDefault)** では、web URI を適切に処理できるようになります。
+- **`Categories`** &ndash;  インテント フィルターは、両方を登録する必要があります **[Intent.CategoryBrowsable](xref:Android.Content.Intent.CategoryBrowsable)** と **[Intent.CategoryDefault](xref:Android.Content.Intent.CategoryDefault)** ができなければ正しくweb の URI を処理します。
 - インテントフィルターが `http` および/または `https`を宣言する必要がある &ndash; **`DataScheme`** ます。 これらは、2つの有効なスキームだけです。
 - **`DataHost`** &ndash; これは uri の生成元となるドメインです。
 - **`DataPathPrefix`** &ndash; これは、web サイト上のリソースへの省略可能なパスです。
@@ -177,7 +177,7 @@ https://digitalassetlinks.googleapis.com/v1/statements:list?source.web.site=
     - web リンクがアプリケーションによって処理されるドメインを (スペースで区切って) **`Domain`** &ndash; します。
     - **`Status`** &ndash; これはアプリの現在のリンク処理状態です。 の値は**常に**、アプリケーションが宣言され `android:autoVerify=true`、システムの検証に合格したことを意味します。 その後に、設定の Android システムのレコードを表す16進数が続きます。
 
-    (例:
+    例:
 
     ```shell
     $ adb shell dumpsys package domain-preferred-apps
@@ -188,14 +188,13 @@ https://digitalassetlinks.googleapis.com/v1/statements:list?source.web.site=
     Status: always : 200000002
     ```
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 このガイドでは、Android 6.0 でのアプリリンクのしくみについて説明しました。 次に、アプリリンクをサポートし、応答するように Android 6.0 アプリケーションを構成する方法について説明します。 また、Android アプリケーションでアプリリンクをテストする方法についても説明しました。
 
 ## <a name="related-links"></a>関連リンク
 
 - [キーストアの MD5 または SHA1 署名の検索](~/android/deploy-test/signing/keystore-signature.md)
-- [アクティビティとインテント](https://university.xamarin.com/classes#4)
-- [りんごのインク](https://developers.facebook.com/docs/applinks)
+- [AppLinks](https://developers.facebook.com/docs/applinks)
 - [Google デジタル資産のリンク](https://developers.google.com/digital-asset-links/)
 - [ステートメントリストジェネレーターとテスト担当者](https://developers.google.com/digital-asset-links/tools/generator)

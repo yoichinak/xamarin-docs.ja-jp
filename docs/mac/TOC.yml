@@ -2,7 +2,7 @@
   href: index.yml
   expanded: true
   items:
-    - name: 開始するには
+    - name: はじめに
       href: get-started/index.md
       expanded: true
       items:
@@ -210,7 +210,7 @@
           href: internals/architecture.md
         - name: Xamarin.Mac のしくみ
           href: internals/how-it-works.md
-        - name: フレームワーク
+        - name: Frameworks
           href: internals/frameworks.md
         - name: レジストラー
           href: internals/registrar.md
@@ -224,4 +224,4 @@
     - name: リリース ノート
       href: 'https://docs.microsoft.com/xamarin/mac/release-notes/'
     - name: サンプル
-      href: samples/index.yml
+      href: samples/index.md
