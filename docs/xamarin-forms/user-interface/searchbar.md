@@ -6,43 +6,43 @@ ms.assetId: F5EFEA72-CB23-4DD6-9545-D9BB755AF3CB
 ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
-ms.date: 07/12/2019
-ms.openlocfilehash: 4deeab1b2792675033372ccfe2bf343c08794955
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.date: 11/04/2019
+ms.openlocfilehash: 8888f1615f250a908930cec9058a54bd6e7fedc2
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72696430"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75490078"
 ---
 # <a name="xamarinforms-searchbar"></a>Xamarin. Forms SearchBar
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/)
 
-Xamarin. Forms [`SearchBar`](xref:Xamarin.Forms.SearchBar)は、検索を開始するために使用されるユーザー入力コントロールです。 @No__t_0 コントロールは、プレースホルダーテキスト、クエリ入力、検索実行、およびキャンセルをサポートしています。 次のスクリーンショットは、`ListView` に結果が表示される `SearchBar` クエリを示しています。
+Xamarin. Forms [`SearchBar`](xref:Xamarin.Forms.SearchBar)は、検索を開始するために使用されるユーザー入力コントロールです。 `SearchBar` コントロールは、プレースホルダーテキスト、クエリ入力、検索実行、およびキャンセルをサポートしています。 次のスクリーンショットは、`ListView`に結果が表示される `SearchBar` クエリを示しています。
 
 [![IOS と Android の SearchBar のスクリーンショット](searchbar-images/device-searchbars-cropped.png "IOS と Android の SearchBar")](searchbar-images/device-searchbars.png#lightbox "IOS と Android の SearchBar")
 
-@No__t_0 クラスは、次のプロパティを定義します。
+`SearchBar` クラスは、次のプロパティを定義します。
 
 * [`CancelButtonColor`](xref:Xamarin.Forms.SearchBar.CancelButtonColor)は、[キャンセル] ボタンの色を定義する `Color` です。
-* `double` 型の `CharacterSpacing` は `SearchBar` テキストの文字間隔です。
+* `CharacterSpacing`: `double` 型、`SearchBar` テキストの文字間の間隔。
 * [`FontAttributes`](xref:Xamarin.Forms.SearchBar.FontAttributes)は、`SearchBar` フォントが太字、斜体、またはどちらでもないかを決定する `FontAttributes` 列挙値です。
-* [`FontFamily`](xref:Xamarin.Forms.SearchBar.FontFamily)は、`SearchBar` で使用されるフォントファミリを決定する `string` です。
+* [`FontFamily`](xref:Xamarin.Forms.SearchBar.FontFamily)は、`SearchBar`で使用されるフォントファミリを決定する `string` です。
 * [`FontSize`](xref:Xamarin.Forms.SearchBar.FontSize)には、`NamedSize` 列挙値、またはプラットフォーム間の特定のフォントサイズを表す `double` 値を指定できます。
 * [`HorizontalTextAlignment`](xref:Xamarin.Forms.SearchBar.HorizontalTextAlignment)は、クエリテキストの水平方向の配置を定義する `TextAlignment` 列挙値です。
 * `VerticalTextAlignment` は、クエリテキストの垂直方向の配置を定義する `TextAlignment` 列挙値です。
 * [`Placeholder`](xref:Xamarin.Forms.SearchBar.Placeholder)は、"検索..." などのプレースホルダーテキストを定義する `string` です。
 * [`PlaceholderColor`](xref:Xamarin.Forms.SearchBar.PlaceholderColor)は、プレースホルダーテキストの色を定義する `Color` です。
 * [`SearchCommand`](xref:Xamarin.Forms.SearchBar.SearchCommand)は、ユーザー操作 (指タップやクリックなど) を、ビューモデルで定義されているコマンドにバインドできるようにする `ICommand` です。
-* [`SearchCommandParameter`](xref:Xamarin.Forms.SearchBar.SearchCommandParameter)は、`SearchCommand` に渡す必要があるパラメーターを指定する `object` です。
-* [`Text`](xref:Xamarin.Forms.SearchBar.Text)は、`SearchBar` 内のクエリテキストを含む `string` です。
+* [`SearchCommandParameter`](xref:Xamarin.Forms.SearchBar.SearchCommandParameter)は、`SearchCommand`に渡す必要があるパラメーターを指定する `object` です。
+* [`Text`](xref:Xamarin.Forms.SearchBar.Text)は、`SearchBar`内のクエリテキストを含む `string` です。
 * [`TextColor`](xref:Xamarin.Forms.SearchBar.TextColor)は、クエリテキストの色を定義する `Color` です。
 
-これらのプロパティは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)のオブジェクトによってサポートされています。つまり、`SearchBar` をカスタマイズして、データバインディングのターゲットにすることができます。 @No__t_0 でのフォントプロパティの指定は、他の[Xamarin. フォームテキストコントロール](~/xamarin-forms/user-interface/text/index.md)でのテキストのカスタマイズと一致します。 詳細については、「 [Xamarin. Forms のフォント](~/xamarin-forms/user-interface/text/fonts.md)」を参照してください。
+これらのプロパティは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)のオブジェクトによってサポートされています。つまり、`SearchBar` をカスタマイズして、データバインディングのターゲットにすることができます。 `SearchBar` でのフォントプロパティの指定は、他の[Xamarin. フォームテキストコントロール](~/xamarin-forms/user-interface/text/index.md)でのテキストのカスタマイズと一致します。 詳細については、「 [Xamarin. Forms のフォント](~/xamarin-forms/user-interface/text/fonts.md)」を参照してください。
 
 ## <a name="create-a-searchbar"></a>SearchBar を作成する
 
-@No__t_0 は、XAML でインスタンス化できます。 省略可能な `Placeholder` プロパティは、[クエリ入力] ボックスにヒントテキストを定義するように設定できます。 @No__t_0 の既定値は空の文字列であるため、設定されていない場合はプレースホルダーが表示されません。 次の例は、省略可能な `Placeholder` プロパティセットを使用して、XAML で `SearchBar` をインスタンス化する方法を示しています。
+`SearchBar` は、XAML でインスタンス化できます。 省略可能な `Placeholder` プロパティは、[クエリ入力] ボックスにヒントテキストを定義するように設定できます。 `Placeholder` の既定値は空の文字列であるため、設定されていない場合はプレースホルダーが表示されません。 次の例は、省略可能な `Placeholder` プロパティセットを使用して、XAML で `SearchBar` をインスタンス化する方法を示しています。
 
 ```xaml
 <SearchBar Placeholder="Search items..." />
@@ -56,7 +56,7 @@ SearchBar searchBar = new SearchBar{ Placeholder = "Search items..." };
 
 ### <a name="searchbar-appearance-properties"></a>SearchBar の外観のプロパティ
 
-@No__t_0 コントロールでは、コントロールの外観をカスタマイズする多くのプロパティが定義されています。 次の例は、複数のプロパティを指定して XAML で `SearchBar` をインスタンス化する方法を示しています。
+`SearchBar` コントロールでは、コントロールの外観をカスタマイズする多くのプロパティが定義されています。 次の例は、複数のプロパティを指定して XAML で `SearchBar` をインスタンス化する方法を示しています。
 
 ```xaml
 <SearchBar Placeholder="Search items..."
@@ -86,9 +86,12 @@ SearchBar searchBar = new SearchBar
 
 [![IOS および Android でのカスタマイズされた SearchBar のスクリーンショット](searchbar-images/device-searchbars-styled-cropped.png "IOS および Android でのカスタマイズされた SearchBar")](searchbar-images/device-searchbars-styled.png#lightbox "IOS および Android でのカスタマイズされた SearchBar")
 
+> [!NOTE]
+> IOS では、`SearchBarRenderer` クラスに、オーバーライド可能な `UpdateCancelButton` メソッドが含まれています。 このメソッドは、[キャンセル] ボタンが表示されるタイミングを制御し、カスタムレンダラーでオーバーライドできます。 カスタムレンダラーの詳細については、「 [Xamarin. フォームカスタムレンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)」を参照してください。
+
 ## <a name="perform-a-search-with-event-handlers"></a>イベントハンドラーを使用した検索の実行
 
-@No__t_0 コントロールを使用して検索を実行するには、次のいずれかのイベントにイベントハンドラーをアタッチします。
+`SearchBar` コントロールを使用して検索を実行するには、次のいずれかのイベントにイベントハンドラーをアタッチします。
 
 * [`SearchButtonPressed`](xref:Xamarin.Forms.SearchBar.SearchButtonPressed)は、ユーザーが [検索] ボタンをクリックするか enter キーを押すと呼び出されます。
 * [`TextChanged`](xref:Xamarin.Forms.SearchBar.TextChanged)は、[クエリ] ボックス内のテキストが変更されるたびに呼び出されます。
@@ -117,13 +120,13 @@ void OnTextChanged(object sender, EventArgs e)
 }
 ```
 
-前の例では、クエリに一致する項目を返すことができる `GetSearchResults` メソッドを持つ `DataService` クラスが存在することを意味しています。 @No__t_0 コントロールの `Text` プロパティ値が `GetSearchResults` メソッドに渡され、結果を使用して `ListView` コントロールの `ItemsSource` プロパティが更新されます。 全体的な影響として、`ListView` コントロールに検索結果が表示されます。
+前の例では、クエリに一致する項目を返すことができる `GetSearchResults` メソッドを持つ `DataService` クラスが存在することを意味しています。 `SearchBar` コントロールの `Text` プロパティ値が `GetSearchResults` メソッドに渡され、結果を使用して `ListView` コントロールの `ItemsSource` プロパティが更新されます。 全体的な影響として、`ListView` コントロールに検索結果が表示されます。
 
 サンプルアプリケーションには、検索機能をテストするために使用できる `DataService` クラスの実装が用意されています。
 
 ## <a name="perform-a-search-using-a-viewmodel"></a>ビューモデルを使用して検索を実行する
 
-@No__t_0 と `SearchCommandParameter` のプロパティを `ICommand` の実装にバインドすることによって、イベントハンドラーなしで検索を実行できます。 サンプルプロジェクトでは、モデルビュービューモデル (MVVM) パターンを使用してこれらの実装を示しています。 MVVM を使用したデータバインディングの詳細については、「[データバインディングと MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)」を参照してください。
+`SearchCommand` と `SearchCommandParameter` のプロパティを `ICommand` の実装にバインドすることによって、イベントハンドラーなしで検索を実行できます。 サンプルプロジェクトでは、モデルビュービューモデル (MVVM) パターンを使用してこれらの実装を示しています。 MVVM を使用したデータバインディングの詳細については、「[データバインディングと MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)」を参照してください。
 
 サンプルアプリケーションのビューモデルには、次のコードが含まれています。
 
@@ -180,9 +183,9 @@ public class SearchViewModel : INotifyPropertyChanged
 </ContentPage>
 ```
 
-この例では、`BindingContext` を `SearchViewModel` クラスのインスタンスに設定します。 このメソッドは、`SearchCommand` プロパティをビューモデルの `PerformSearch` `ICommand` にバインドし、`SearchBar` の `Text` プロパティを `SearchCommandParameter` プロパティにバインドします。 @No__t_0 プロパティは、ビューモデルの `SearchResults` プロパティにバインドされます。
+この例では、`BindingContext` を `SearchViewModel` クラスのインスタンスに設定します。 このメソッドは、`SearchCommand` プロパティをビューモデルの `PerformSearch` `ICommand` にバインドし、`SearchBar` の `Text` プロパティを `SearchCommandParameter` プロパティにバインドします。 `ListView.ItemsSource` プロパティは、ビューモデルの `SearchResults` プロパティにバインドされます。
 
-@No__t_0 インターフェイスとバインドの詳細については、「 [Xamarin. フォームデータバインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)」と「 [ICommand インターフェイス](~/xamarin-forms/app-fundamentals/data-binding/commanding.md)」を参照してください。
+`ICommand` インターフェイスとバインドの詳細については、「 [Xamarin. フォームデータバインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)」と「 [ICommand インターフェイス](~/xamarin-forms/app-fundamentals/data-binding/commanding.md)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 

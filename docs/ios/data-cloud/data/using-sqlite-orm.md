@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 04/18/2018
-ms.openlocfilehash: e229ad37e8cd5ff940fb5abece7b782b84336d50
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: fb0981fea906a474d39834a52f0a8bfdf496ca1e
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73008160"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488414"
 ---
 # <a name="using-sqlitenet-with-xamarinios"></a>Xamarin で SQLite.NET を使用する
 
@@ -21,7 +21,7 @@ ORM は、オブジェクトリレーショナルマッピングを表します�
 
 <a name="Usage"/>
 
-## <a name="usage"></a>使用方法
+## <a name="usage"></a>使用状況
 
 Xamarin アプリに SQLite.NET ライブラリを追加するには、次の NuGet パッケージをプロジェクトに追加します。
 
@@ -130,13 +130,13 @@ public static void DoSomeDataAccess () {
 
 - **[PrimaryKey]** –この属性を整数プロパティに適用して、基になるテーブルの主キーにすることができます。 複合主キーはサポートされていません。
 - **[AutoIncrement]** –この属性により、データベースに挿入された新しいオブジェクトごとに整数プロパティの値が自動インクリメントされます。
-- **[列 (名前)]** –省略可能な `name` パラメーターを指定すると、基になるデータベース列の名前 (プロパティと同じ) の既定値が上書きされます。
-- **[テーブル (名前)]** –クラスを、基になる SQLite テーブルに格納できるものとしてマークします。 省略可能な name パラメーターを指定すると、基になるデータベーステーブルの名前 (クラス名と同じ) の既定値が上書きされます。
+- **[Column (name)]** &ndash; `name` パラメーターは、基になるデータベース列の名前を設定します。
+- **[テーブル (名前)]** –クラスを、指定された名前の基になる SQLite テーブルに格納できるものとしてマークします。
 - **[MaxLength (値)]** –データベースの挿入を試みたときに、テキストプロパティの長さを制限します。 コードを使用するには、オブジェクトを挿入する前にこれを検証する必要があります。この属性は、データベースの挿入操作または更新操作を実行しようとしたときにのみ ' checked ' になります。
 - **[無視]** – SQLite.NET がこのプロパティを無視するようにします。 これは、データベースに格納できない型を持つプロパティや、自動的に解決できないモデルコレクションを使用するプロパティを SQLite として使用する場合に特に便利です。
 - **[Unique]** –基になるデータベース列の値が一意であることを確認します。
 
-これらの属性のほとんどは省略可能で、SQLite はテーブル名と列名に既定値を使用します。 データに対して選択と削除のクエリを効率的に実行できるように、常に整数の主キーを指定する必要があります。
+これらの属性のほとんどは省略可能です。 データに対して選択と削除のクエリを効率的に実行できるように、常に整数の主キーを指定する必要があります。
 
 ## <a name="more-complex-queries"></a>より複雑なクエリ
 
@@ -208,4 +208,4 @@ SqliteConnection.SetConfig(SQLiteConfig.Serialized);
 
 - [このような場合の基本 (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
 - [詳細設定 (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
-- [Xamarin. フォームデータアクセス](~/xamarin-forms/data-cloud/data/databases.md)
+- [Xamarin.Forms データアクセス](~/xamarin-forms/data-cloud/data/databases.md)

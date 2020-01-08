@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 97997a527647ae972eadff47da8c1321d5d55daa
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: eca079972f4e46c0cf60c4749658ff9a7fe1791b
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655453"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489805"
 ---
 # <a name="speech-recognition-using-the-microsoft-speech-api"></a>Microsoft Speech API を使用して、音声認識
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
-_Microsoft Speech API には、音声言語を処理するアルゴリズムを提供するクラウド ベースの API です。この記事では、Microsoft の音声認識の REST API を使用して、Xamarin.Forms アプリケーションでのテキストをオーディオに変換する方法について説明します。_
+_Microsoft Speech API は、音声言語を処理するためのアルゴリズムを提供するクラウドベースの API です。この記事では、Microsoft 音声認識 REST API を使用して、Xamarin. フォームアプリケーションで音声をテキストに変換する方法について説明します。_
 
-## <a name="overview"></a>概要
+## <a name="overview"></a>の概要
 
 Microsoft Speech API では、2 つのコンポーネントがあります。
 
@@ -28,6 +28,9 @@ Microsoft Speech API では、2 つのコンポーネントがあります。
 - テキストを音声に変換するためのテキストを音声 API。 テキストの音声変換は、REST API 経由で実行されます。
 
 この記事では、REST API 経由での音声認識を実行する方法について説明します。 クライアントとサービス ライブラリでは、部分的な結果を返すことをサポート、REST API はのみ、部分的な結果なしの 1 つの認識結果を返します。
+
+> [!NOTE]
+> [Azure サブスクリプション](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)をお持ちでない場合は、開始する前に[無料アカウント](https://aka.ms/azfree-docs-mobileapps)を作成してください。
 
 Microsoft Speech API を使用して API キーを取得する必要があります。 これは、Azure から取得できます[ポータル](https://portal.azure.com/)します。 詳細については、次を参照してください。 [、Azure portal で Cognitive Services アカウントの作成](/azure/cognitive-services/cognitive-services-apis-create-account)です。
 
@@ -161,9 +164,9 @@ POST 要求に送信し、 `recognition` API。 応答が読み取られ、呼�
 
 サンプル アプリケーションで JSON 応答が逆シリアル化、`SpeechResult`の次のスクリーン ショットに示すように、表示のため、呼び出し元メソッドに返される結果のインスタンス。
 
-![](speech-recognition-images/speech-recognition.png "音声認識")
+![](speech-recognition-images/speech-recognition.png "Speech Recognition")
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 この記事では、Microsoft の音声の REST API を使用して、Xamarin.Forms アプリケーションでのテキストをオーディオに変換する方法について説明します。 音声認識を実行するだけでなく Microsoft Speech API はテキストを音声にも変換できます。
 

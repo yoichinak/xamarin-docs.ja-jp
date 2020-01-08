@@ -6,12 +6,12 @@ ms.assetid: BBE47BA8-78BC-6A2B-63BA-D1A45CB1D3A5
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 555723e689a9ba076ee34d49b93cf7141e542832
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: e1fa76faf0313a21061af585052a3b137243db55
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016886"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488648"
 ---
 # <a name="part-4---dealing-with-multiple-platforms"></a>パート 4 - 複数のプラットフォームを処理する
 
@@ -186,16 +186,18 @@ Xamarin Android アプリケーションにのみコンパイルする必要が�
 次のコードでは、条件付きコンパイルを使用して、プラットフォームごとに `DatabaseFilePath` が正しいことを確認します。
 
 ```csharp
-public static string DatabaseFilePath {
-        get {
-    var filename = "TodoDatabase.db3";
+public static string DatabaseFilePath
+{
+    get
+    {
+        var filename = "TodoDatabase.db3";
 #if SILVERLIGHT
-    // Windows Phone 8
-    var path = filename;
+        // Windows Phone 8
+        var path = filename;
 #else
 
 #if __ANDROID__
-    string libraryPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal); ;
+        string libraryPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
 #else
 #if __IOS__
         // we need to put in /Library/ on iOS5.1 to meet Apple's iCloud terms
@@ -207,9 +209,10 @@ public static string DatabaseFilePath {
         string libraryPath = Windows.Storage.ApplicationData.Current.LocalFolder.Path;
 #endif
 #endif
-        var path = Path.Combine (libraryPath, filename);
+        var path = Path.Combine(libraryPath, filename);
 #endif
         return path;
+    }
 }
 ```
 

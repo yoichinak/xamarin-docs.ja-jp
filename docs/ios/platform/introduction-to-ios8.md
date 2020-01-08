@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/14/2017
-ms.openlocfilehash: 2da018b3595850582331280909fa327cee4ff6e0
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 9353cffd924688058c1495b9258cc7f0e0ce7b82
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031805"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489207"
 ---
 # <a name="introduction-to-ios-8"></a>iOS 8 の概要
 
 _IOS 8 では、Apple は楽しみな気持ちと満足させるの開発者に多数の新しいフレームワークと Api を提供しています。このガイドでは、これらの新しい Api を紹介し、iOS 8 が開発者とユーザーの両方にもたらすメリットについて説明します。_
 
-iOS 7 では、最初の iPhone OS から直接、ユーザーと開発者が想定していた iOS ユーザーインターフェイス全体が視覚的に変更されました。 IOS 8 では、開発者向けに多くのフレームワークを提供することで、これを引き続き使用します。これにより、ユーザーは自分の iPhone から直接、ほぼすべての機能を制御できます。 たとえば、正常性と適合性は*HealthKit*を使用して分析でき、パスコードは*localauthentication*を使用した生体認証によって obsolescent されます。*アプリ拡張機能*は、サードパーティ製アプリ*間の通信チャネルを開きます。ホームキット*を使用すると、家を将来の自宅に変えることができます。 
+iOS 7 では、最初の iPhone OS から直接、ユーザーと開発者が想定していた iOS ユーザーインターフェイス全体が視覚的に変更されました。 IOS 8 では、開発者向けに多くのフレームワークを提供することで、これを引き続き使用します。これにより、ユーザーは自分の iPhone から直接、ほぼすべての機能を制御できます。 たとえば、正常性と適合性は*HealthKit*を使用して分析できます。パスコードは、 *localauthentication*を使用する生体認証によって obsolescent されます。*アプリ拡張*機能では、サードパーティ製アプリ間の通信チャネルが開かれます。また、ホーム*キット*を使用すると、家を将来の自宅に変えることができます。 
 
 IOS 7 がユーザーのために使用されていた場合、iOS 8 では、おいしいの新しいツールのすべての範囲を備えた delighting 開発者に重点を置いています。 
 
@@ -26,7 +26,7 @@ IOS 7 がユーザーのために使用されていた場合、iOS 8 では、�
 
 IOS 8 では非推奨とされているいくつかの Api もあります。これについては、このドキュメントの最後で説明します。
 
-## <a name="requirements"></a>［要件］
+## <a name="requirements"></a>要件
 
 Visual Studio for Mac で iOS 8 アプリを作成するには、次のものが必要です。
 
@@ -44,7 +44,7 @@ IPhone からアプライアンスを制御することは、新しいテクノ�
 
 ホームキットを使用すると、サードパーティ製アプリおよび Siri は、アクセサリを検出し、個人のホーム構成データベースに追加し、このデータを編集して操作し、アクセサリとそのサービスと通信してアクションを実行することができます。
 
-### <a name="configuration"></a>構成
+### <a name="configuration"></a>の構成
 
 次の図は、ホームキットのアクセサリの構成の基本階層を示しています。
 
@@ -93,7 +93,7 @@ Xamarin でのアプリ拡張機能の使用の詳細については、[アプ�
 
 次に、LocalAuthentication は、アプリケーションをローカルで認証する2つの方法を提供します。 開発者は、`CanEvaluatePolicy` を使用して、デバイスがタッチ ID を受け入れることができるかどうかを判断し、`EvaluatePolicy` 認証操作を開始する必要があります。
 
-Touch ID の詳細と、それを Xamarin. iOS アプリケーションに統合する方法については、TouchID ガイドの[概要](~/ios/platform/touchid.md)に関するページを参照してください。
+タッチ ID の詳細と、それを Xamarin. iOS アプリケーションに統合する方法については、 [xamarin の「TOUCH id と FACE id](~/ios/platform/touch-id-face-id.md) 」を参照してください。
 
 ### <a name="document-picker"></a>ドキュメント ピッカー
 
@@ -148,7 +148,7 @@ Apple の 2D game framework であるスプライトキットには、iOS 8 と 
 
 詳細については、 [SpriteKit](~/ios/platform/gaming/spritekit.md)のドキュメントを参照してください。
 
-## <a name="other-changes"></a>その他の変更
+## <a name="other-changes"></a>その他の変更点
 また、上記の iOS 8 の主な変更点に加えて、Apple では、多くの既存のフレームワークをさらに更新しています。 これらの詳細を以下に示します。
 
 - **[コアイメージ](https://developer.apple.com/library/prerelease/ios/documentation/GraphicsImaging/Reference/CoreImagingRef/index.html#//apple_ref/doc/uid/TP40001171)** – Apple は、イメージ処理フレームワークで拡張されています。これは、四角形領域の検出のサポートを強化し、画像内に QR コードを追加することによって行われます。 Mike Bluestein は、 [iOS 8 でのイメージの検出](https://blog.xamarin.com/image-detection-in-ios-8/)に関するブログ投稿でこれを考察しています
@@ -161,7 +161,7 @@ IOS 8 で加えられたすべての機能強化により、いくつかの Api 
 
 - **[Uisearchdisplaycontroller](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/cl/UISearchDisplayController)** – IOS8 の uisearchcontroller に置き換えられました。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 この記事では、iOS 8 で Apple によって導入された新機能について説明しました。
 
 ## <a name="related-links"></a>関連リンク
@@ -172,5 +172,5 @@ IOS 8 で加えられたすべての機能強化により、いくつかの Api 
 - [ドキュメントピッカーの概要](~/ios/platform/document-picker.md)
 - [HealthKit の概要](~/ios/platform/healthkit.md)
 - [手動カメラコントロールの概要](~/ios/user-interface/controls/intro-to-manual-camera-controls.md)
-- [TouchID の概要](~/ios/platform/touchid.md)
+- [Xamarin でタッチ ID と顔 ID を使用する](~/ios/platform/touch-id-face-id.md)
 - [統合されたストーリーボードの概要](~/ios/user-interface/storyboards/unified-storyboards.md)

@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/05/2016
-ms.openlocfilehash: ea2c733a9c85662b9286f8e8631b601248dc11de
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: cd5aaac0f41ee6e4afd79397a77635e66abad219
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770837"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489792"
 ---
 # <a name="search-data-with-azure-search-and-xamarinforms"></a>Azure Search と Xamarin. フォームを使用してデータを検索する
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresearch)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresearch)
 
-_Azure Search とは、インデックス作成とクエリのデータがアップロードするための機能を提供するクラウド サービスです。これには、インフラストラクチャの要件と、アプリケーションに検索機能を実装するのに関連付けられた検索アルゴリズムの複雑さが削除されます。この記事では、Microsoft の Azure Search ライブラリを使用して、Xamarin.Forms アプリケーションに Azure Search を統合する方法を示します。_
+_Azure Search は、アップロードされたデータのインデックス作成機能とクエリ機能を提供するクラウドサービスです。これにより、従来、アプリケーションでの検索機能の実装に関連するインフラストラクチャ要件と検索アルゴリズムの複雑さが解消されます。この記事では、Microsoft Azure 検索ライブラリを使用して Azure Search を Xamarin. フォームアプリケーションに統合する方法について説明します。_
 
-## <a name="overview"></a>概要
+## <a name="overview"></a>の概要
 
 データは、Azure Search でインデックスとドキュメントとして格納されます。 *インデックス*によって、Azure Search サービス検索データ ストアは、概念的には、データベース テーブルに似ています。 A*ドキュメント*インデックスでは、検索可能なデータの 1 つの単位は、概念的には、データベースの行に似ています。 ドキュメントをアップロードし、Azure search の検索クエリを送信して、要求はに対して行われた場合、search サービスで特定のインデックス。
 
@@ -31,18 +31,21 @@ Azure Search に対する各要求は、サービスと API キーの名前を�
 
 最も一般的な要求を Azure Search では、クエリを実行します。 送信できるクエリの 2 種類あります。
 
-- A*検索*インデックス内のすべての検索可能フィールドで 1 つまたは複数の項目を検索しクエリを実行します。 検索クエリは、簡略化された構文、または、Lucene クエリ構文を使用して構築されます。 詳細については、[Azure Search での単純なクエリ構文](/rest/api/searchservice/Simple-query-syntax-in-Azure-Search/)、および[Azure Search の Lucene クエリ構文](/rest/api/searchservice/Lucene-query-syntax-in-Azure-Search/)を参照してください。
-- A*フィルター*クエリでは、インデックス内のすべてのフィルター可能フィールドに対してブール式を評価します。 フィルター クエリは、OData フィルター言語のサブセットを使用して構築されます。 詳細については、[Azure Search の OData 式の構文](/rest/api/searchservice/OData-Expression-Syntax-for-Azure-Search/)を参照してください。
+- A*検索*インデックス内のすべての検索可能フィールドで 1 つまたは複数の項目を検索しクエリを実行します。 検索クエリは、簡略化された構文、または、Lucene クエリ構文を使用して構築されます。 詳細については、次を参照してください。 [Azure Search での単純なクエリ構文](/rest/api/searchservice/Simple-query-syntax-in-Azure-Search/)、および[Azure Search の Lucene クエリ構文](/rest/api/searchservice/Lucene-query-syntax-in-Azure-Search/)します。
+- A*フィルター*クエリでは、インデックス内のすべてのフィルター可能フィールドに対してブール式を評価します。 フィルター クエリは、OData フィルター言語のサブセットを使用して構築されます。 詳細については、次を参照してください。 [Azure Search の OData 式の構文](/rest/api/searchservice/OData-Expression-Syntax-for-Azure-Search/)します。
 
 検索クエリとフィルターのクエリは、個別にまたは組み合わせて使用できます。 フィルター クエリが、インデックス全体を最初に適用して一緒に使用して、フィルター クエリの結果は、検索クエリが実行されます。
 
-Azure Search には、検索の入力に基づく検索候補もサポートしています。 詳細については、[提案クエリ](#suggestions)を参照してください。
+Azure Search には、検索の入力に基づく検索候補もサポートしています。 詳細については、次を参照してください。[提案クエリ](#suggestions)します。
+
+> [!NOTE]
+> [Azure サブスクリプション](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)をお持ちでない場合は、開始する前に[無料アカウント](https://aka.ms/azfree-docs-mobileapps)を作成してください。
 
 ## <a name="setup"></a>セットアップ
 
 Xamarin.Forms アプリケーションに Azure Search を統合するためのプロセスは次のとおりです。
 
-1. Azure Search サービスを作成します。 詳細については、[Azure Portal を使用して Azure Search サービスの作成](/azure/search/search-create-service-portal/)を参照してください。
+1. Azure Search サービスを作成します。 詳細については、次を参照してください。 [Azure Portal を使用して Azure Search サービスの作成](/azure/search/search-create-service-portal/)です。
 1. ターゲット フレームワークと Silverlight を Xamarin.Forms ソリューションのポータブル クラス ライブラリ (PCL) から削除します。 これは、クロス プラットフォームの開発をサポートしていますが、151 プロファイルやプロファイル 92、Silverlight をサポートされていませんプロファイルに、PCL プロファイルを変更することで実現できます。
 1. 追加、 [Microsoft Azure Search ライブラリ](https://www.nuget.org/packages/Microsoft.Azure.Search)Xamarin.Forms ソリューションでは、PCL プロジェクトに NuGet パッケージ。
 
@@ -57,7 +60,7 @@ var searchClient =
   new SearchServiceClient(Constants.SearchServiceName, new SearchCredentials(Constants.AdminApiKey));
 ```
 
-`SearchServiceClient`コンストラクター オーバー ロードは、検索サービスの名前と`SearchCredentials`引数としてオブジェクトを`SearchCredentials`オブジェクト折り返し、*管理者キー* Azure Search サービス。 *管理者キー*インデックスを作成するが必要です。
+`SearchServiceClient`コンス トラクター オーバー ロードは、検索サービスの名前と`SearchCredentials`引数としてオブジェクトを`SearchCredentials`オブジェクト折り返し、*管理者キー* Azure Search サービス。 *管理者キー*インデックスを作成するが必要です。
 
 > [!NOTE]
 > 1 つ`SearchServiceClient`インスタンスは、Azure Search への接続が多すぎますを開くを回避するためにアプリケーションで使用する必要があります。
@@ -91,11 +94,11 @@ static void CreateSearchIndex()
 `Index.Name`プロパティは、インデックスの名前に設定する必要があります、`Index.Fields`配列へのプロパティを設定する必要があります`Field`オブジェクト。 各`Field`インスタンスは、名前、型、および、フィールドの使用方法を指定のプロパティを指定します。 これらのプロパティは次のとおりです。
 
 - `IsKey` フィールドがインデックスのキーであるかどうかを示します。 フィールドの種類のインデックスを 1 つのみ`DataType.String`、キー フィールドとして指定する必要があります。
-- `IsFacetable` – このフィールドでファセット ナビゲーションを実行することはあるかどうかを示します。 既定値は `false` です。
-- `IsFilterable` フィールドをフィルター クエリで使用できるかどうかを示します。 既定値は `false` です。
-- `IsRetrievable` – 検索結果にフィールドを取得できるかどうかを示します。 既定値は `true` です。
-- `IsSearchable` フィールドがフルテキスト検索に含めるかどうかを示します。 既定値は `false` です。
-- `IsSortable` – でフィールドを使用できるかどうかを示します`OrderBy`式。 既定値は `false` です。
+- `IsFacetable` – このフィールドでファセット ナビゲーションを実行することはあるかどうかを示します。 既定値は `false`です。
+- `IsFilterable` フィールドをフィルター クエリで使用できるかどうかを示します。 既定値は `false`です。
+- `IsRetrievable` – 検索結果にフィールドを取得できるかどうかを示します。 既定値は `true`です。
+- `IsSearchable` フィールドがフルテキスト検索に含めるかどうかを示します。 既定値は `false`です。
+- `IsSortable` – でフィールドを使用できるかどうかを示します`OrderBy`式。 既定値は `false`です。
 
 > [!NOTE]
 > 展開した後にインデックスを変更するには、再構築して、データの再読み込みする必要があります。
@@ -107,7 +110,7 @@ static void CreateSearchIndex()
 > [!NOTE]
 > 使用して、アプリケーションからインデックスを作成するも応答性を保持する必要があります、ときに、`Indexes.CreateAsync`メソッド。
 
-詳細については、[.NET SDK を使用して Azure Search インデックスの作成](/azure/search/search-create-index-dotnet/)を参照してください。
+詳細については、次を参照してください。 [.NET SDK を使用して Azure Search インデックスの作成](/azure/search/search-create-index-dotnet/)です。
 
 ## <a name="deleting-the-azure-search-index"></a>Azure Search インデックスを削除します。
 
@@ -156,14 +159,14 @@ static void UploadDataToSearchIndex()
 }
 ```
 
-としてインデックスにインポートするデータがパッケージ化、 `IndexBatch` 、オブジェクトのコレクションをカプセル化する`IndexAction`オブジェクト。 各`IndexAction`インスタンスには、ドキュメント、および Azure Search のドキュメントに対して実行する操作を指示するプロパティが含まれています。 上記のコード例で、`IndexAction.Upload`アクションを指定すると、その結果が、新規の場合、インデックスに挿入されるドキュメントまたは既に存在する場合に置き換えられます。 `IndexBatch`オブジェクトが呼び出すことによって、インデックスに送信し、`Documents.Index`メソッドを`SearchIndexClient`オブジェクト。 その他のインデックス作成操作の詳細については、[どのインデックス作成アクションを使用するかを決める](/azure/search/search-import-data-dotnet#decide-which-indexing-action-to-use)を参照してください。
+としてインデックスにインポートするデータがパッケージ化、 `IndexBatch` 、オブジェクトのコレクションをカプセル化する`IndexAction`オブジェクト。 各`IndexAction`インスタンスには、ドキュメント、および Azure Search のドキュメントに対して実行する操作を指示するプロパティが含まれています。 上記のコード例で、`IndexAction.Upload`アクションを指定すると、その結果が、新規の場合、インデックスに挿入されるドキュメントまたは既に存在する場合に置き換えられます。 `IndexBatch`オブジェクトが呼び出すことによって、インデックスに送信し、`Documents.Index`メソッドを`SearchIndexClient`オブジェクト。 その他のインデックス作成操作の詳細については、次を参照してください。[どのインデックス作成アクションを使用するかを決める](/azure/search/search-import-data-dotnet#decide-which-indexing-action-to-use)します。
 
 > [!NOTE]
 > 1000 個のドキュメントは、1 つのインデックス作成要求に含めることができます。
 
 上記のコード例で、`monkeyList`として匿名オブジェクトのコレクションからコレクションが作成された`Monkey`オブジェクト。 データを作成しますこの、`id`フィールドをパスカル ケースのマッピングを解決して`Monkey`プロパティの名前をキャメル ケースは、インデックスのフィールド名を検索します。 また、このマッピング行うこともできますを追加して、`[SerializePropertyNamesAsCamelCase]`属性を`Monkey`クラス。
 
-詳細については、[.NET SDK を使用して Azure Search にデータをアップロード](/azure/search/search-import-data-dotnet/)を参照してください。
+詳細については、次を参照してください。 [.NET SDK を使用して Azure Search にデータをアップロード](/azure/search/search-import-data-dotnet/)します。
 
 ## <a name="querying-the-azure-search-index"></a>Azure Search インデックスのクエリ
 
@@ -174,7 +177,7 @@ SearchIndexClient indexClient =
   new SearchIndexClient(Constants.SearchServiceName, Constants.Index, new SearchCredentials(Constants.QueryApiKey));
 ```
 
-`SearchIndexClient`コンストラクター オーバー ロードは、検索サービスの名前、インデックスの名前、および`SearchCredentials`引数としてオブジェクトを`SearchCredentials`オブジェクト折り返し、*クエリ キー* Azure Search サービスの。
+`SearchIndexClient`コンス トラクター オーバー ロードは、検索サービスの名前、インデックスの名前、および`SearchCredentials`引数としてオブジェクトを`SearchCredentials`オブジェクト折り返し、*クエリ キー* Azure Search サービスの。
 
 ### <a name="search-queries"></a>検索クエリ
 
@@ -216,9 +219,9 @@ var searchResults = await indexClient.Documents.SearchAsync<Monkey>(text, parame
 
 `SearchAsync`メソッドを返します。 を`DocumentSearchResult`クエリの結果を格納しているオブジェクト。 それぞれに、このオブジェクトが列挙`Document`オブジェクトとして作成されている、`Monkey`オブジェクトし、に追加、 `Monkeys` `ObservableCollection`表示します。 次のスクリーン ショット show 検索クエリ結果 Azure Search から返されます。
 
-![](azure-search-images/search.png "検索結果")
+![](azure-search-images/search.png "Search Results")
 
-検索とフィルター処理の詳細については、[.NET SDK を使用して Azure Search インデックスの照会](/azure/search/search-query-dotnet/)を参照してください。
+検索とフィルター処理の詳細については、次を参照してください。 [.NET SDK を使用して Azure Search インデックスの照会](/azure/search/search-query-dotnet/)します。
 
 <a name="suggestions" />
 
@@ -268,11 +271,11 @@ async Task AzureSuggestions(string text)
 
 `SuggestAsync`メソッドを返します。 を`DocumentSuggestResult`クエリの結果を格納しているオブジェクト。 それぞれに、このオブジェクトが列挙`Document`オブジェクトとして作成されている、`Monkey`オブジェクトし、に追加、 `Monkeys` `ObservableCollection`表示します。 次のスクリーン ショットは、Azure Search から返される候補の結果を表示します。
 
-![](azure-search-images/suggest.png "候補の結果")
+![](azure-search-images/suggest.png "Suggestion Results")
 
 サンプル アプリケーションで、`SuggestAsync`メソッドは、ユーザーは、検索語句の入力が完了するとにのみ呼び出されます。 ただし、そのこともできますキーを押すたびに実行することによって、オート コンプリートの検索クエリをサポートするためにします。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 この記事では、Microsoft Azure Search ライブラリを使用して、Xamarin.Forms アプリケーションに Azure Search を統合する方法を説明します。 Azure Search とは、インデックス作成とクエリのデータがアップロードするための機能を提供するクラウド サービスです。 これには、インフラストラクチャの要件と、アプリケーションに検索機能を実装するのに関連付けられた検索アルゴリズムの複雑さが削除されます。
 
