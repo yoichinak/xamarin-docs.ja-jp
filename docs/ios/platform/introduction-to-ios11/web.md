@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/12/2017
-ms.openlocfilehash: ef9577aad756ae67ac9fed685d7e40faea33c316
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: c52ac3c0f06d58ab5fff8228ca3bdf722056b5b6
+ms.sourcegitcommit: bad1ab3f78d7f94d48511666626b54f8ba155689
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032050"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75663448"
 ---
 # <a name="webkit-and-safari-changes-in-ios-11"></a>IOS 11 での WebKit と Safari の変更点
 
@@ -20,7 +20,7 @@ iOS 11 では、Safari web ブラウザー (Safari 11.0) の新しいバージ�
 
 ## <a name="safariservices"></a>Saf サービス
 
-`SFSafariViewController` は、web コンテンツを表示したり、アプリからユーザーを認証したりするためのオプションとして、iOS 9 で導入されました。 機能の詳細については、 [Web ビュー](~/ios/user-interface/controls/uiwebview.md#safariviewcontroller)のガイドを参照してください。
+`SFSafariViewController` は、web コンテンツを表示したり、アプリからユーザーを認証したりするためのオプションとして、iOS 9 で導入されました。 機能の詳細については、 [Web ビュー](~/ios/user-interface/controls/webview.md#sfsafariviewcontroller)のガイドを参照してください。
 
 iOS 11 では、Safari ビューコントローラーのスタイルの更新が導入されており、アプリと web の間でシームレスなエクスペリエンスを提供しています。 たとえば、アドレスバーを削除すると、Safari ビューコントローラーは、ミニブラウザーではなく、アプリ内ブラウザーを使用できるようになります。 また、`preferredBarTintColor` と `PreferredControlTintColor` のプロパティを設定して、アプリの配色に合わせて配色をカスタマイズすることもできます。
 
@@ -66,7 +66,7 @@ Apple では、iOS 11 の `WKWebView` に関して主に3つの機能強化が�
 
 - Cookie を管理する機能
 - コンテンツのフィルター処理
-- カスタムリソースの読み込み。 
+- カスタムリソースの読み込み
 
 Cookie の管理は、新しい[`WKHttpCookieStore`](https://developer.apple.com/documentation/webkit/wkhttpcookiestore)クラスを介して行われます。これにより、cookie の追加と削除、WKWebView に格納されているすべてのクッキーの取得、およびクッキーストアに対する変更の監視を行うことができます。
 
