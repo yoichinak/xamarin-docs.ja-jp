@@ -1,18 +1,18 @@
 ---
 title: CollectionView データ
-description: CollectionView には、ItemsSource プロパティを、IEnumerable を実装する任意のコレクションに設定することによってデータが設定されます。
+description: CollectionView は、ItemsSource プロパティに IEnumerable を実装した任意のコレクションを設定することで、データを設定します。
 ms.prod: xamarin
 ms.assetid: E1783E34-1C0F-401A-80D5-B2BE5508F5F8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/20/2019
-ms.openlocfilehash: c8d01846c9b860982cee74390dab85c7473ee141
-ms.sourcegitcommit: 283810340de5310f63ef7c3e4b266fe9dc2ffcaf
+ms.date: 12/11/2019
+ms.openlocfilehash: 9442f7878d9290946fabb7bfc5dee77a828228c7
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73662325"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488175"
 ---
 # <a name="xamarinforms-collectionview-data"></a>CollectionView データ
 
@@ -20,10 +20,10 @@ ms.locfileid: "73662325"
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)には、表示するデータとその外観を定義する次のプロパティが含まれています。
 
-- `IEnumerable` 型の[`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)は、表示される項目のコレクションを指定します。既定値は `null` です。
+- `IEnumerable`型の[`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)は、表示される項目のコレクションを指定します。既定値は `null`です。
 - [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)型の[`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)は、表示される項目のコレクション内の各項目に適用するテンプレートを指定します。
 
-これらのプロパティは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)のオブジェクトによってサポートされています。これは、プロパティをデータバインディングのターゲットにできることを意味します。
+これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトによりサポートされます。つまりデータバインディングの対象となる可能性があるという意味です。
 
 > [!NOTE]
 > [`CollectionView`](xref:Xamarin.Forms.CollectionView)は、新しい項目が追加されたときの `CollectionView` のスクロール動作を表す `ItemsUpdatingScrollMode` プロパティを定義します。 このプロパティの詳細については、「[新しい項目が追加されたときのコントロールのスクロール位置](scrolling.md#control-scroll-position-when-new-items-are-added)」を参照してください。
@@ -32,7 +32,7 @@ ms.locfileid: "73662325"
 
 ## <a name="populate-a-collectionview-with-data"></a>CollectionView にデータを設定する
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)には、 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)プロパティを `IEnumerable`を実装する任意のコレクションに設定することによってデータが設定されます。 項目は、文字列の配列から `ItemsSource` プロパティを初期化することによって、XAML で追加できます。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)には、 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)プロパティを `IEnumerable`を実装する任意のコレクションに設定することによってデータが設定されます。 項目は任意の文字配列からの `ItemsSource` プロパティを初期化することにより、XAML で追加できます。
 
 ```xaml
 <CollectionView>
@@ -53,7 +53,7 @@ ms.locfileid: "73662325"
 > [!NOTE]
 > `x:Array` 要素には、配列内の項目の型を示す `Type` 属性が必要です。
 
-これに相当する C# コードを次に示します。
+該当の C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView();
@@ -77,19 +77,19 @@ collectionView.ItemsSource = new string[]
 [![IOS と Android のテキスト項目を含む CollectionView のスクリーンショット](populate-data-images/text.png "CollectionView のテキスト項目")](populate-data-images/text-large.png#lightbox "CollectionView のテキスト項目")
 
 > [!IMPORTANT]
-> 基になるコレクションで項目が追加、削除、または変更されたときに、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)を更新する必要がある場合、基になるコレクションは、`ObservableCollection` などのプロパティ変更通知を送信する `IEnumerable` コレクションである必要があります。
+> 基になるコレクションで項目が追加、削除、または変更されたときに、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)を更新する必要がある場合、基になるコレクションは、`ObservableCollection`などのプロパティ変更通知を送信する `IEnumerable` コレクションである必要があります。
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)レイアウトを変更する方法の詳細については、「 [Xamarin CollectionView layout](layout.md)」を参照してください。 `CollectionView`内の各項目の外観を定義する方法の詳細については、「[項目の外観を定義](#define-item-appearance)する」を参照してください。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)レイアウトを変更する方法の詳細については、「 [Xamarin CollectionView layout](layout.md)」を参照してください。 `CollectionView` 内の各項目の外観を定義する方法については、[項目の外観の定義](#define-item-appearance) を参照してください。
 
 ### <a name="data-binding"></a>データ バインディング
 
-データバインディングを使用して、その[`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)プロパティを `IEnumerable` コレクションにバインドすることによって、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)にデータを設定できます。 XAML では、これは `Binding` マークアップ拡張機能を使用して実現されます。
+データバインディングを使用して、その[`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)プロパティを `IEnumerable` コレクションにバインドすることによって、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)にデータを設定できます。 XAML では、これは `Binding` マークアップ拡張を使って実現します。
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}" />
 ```
 
-これに相当する C# コードを次に示します。
+該当の C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView();
@@ -99,7 +99,7 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 この例では、 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)プロパティデータを接続されたビューモデルの `Monkeys` プロパティにバインドします。
 
 > [!NOTE]
-> コンパイル済みのバインドを有効にすると、Xamarin. Forms アプリケーションでのデータバインディングのパフォーマンスを向上させることができます。 詳しくは、「[コンパイル済みのバインド](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)」を参照してください。
+> Xamarin.Forms アプリケーションのデータ バインディングのパフォーマンスを向上させるために、コンパイル済みのバインドを有効にすることができます。 詳しくは、「[コンパイル済みのバインド](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)」を参照してください。
 
 データ バインディングの詳細については、「[Xamarin.Forms Data Binding](~/xamarin-forms/app-fundamentals/data-binding/index.md)」 (Xamarin.Forms のデータ バインディング) を参照してください。
 
@@ -140,7 +140,7 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 </CollectionView>
 ```
 
-これに相当する C# コードを次に示します。
+該当の C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView();
@@ -173,7 +173,7 @@ collectionView.ItemTemplate = new DataTemplate(() =>
 });
 ```
 
-[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)で指定された要素は、リスト内の各項目の外観を定義します。 この例では、`DataTemplate` 内のレイアウトは[`Grid`](xref:Xamarin.Forms.Grid)によって管理されています。 `Grid` には、 [`Image`](xref:Xamarin.Forms.Image)オブジェクトと、すべて `Monkey` クラスのプロパティにバインドされる2つの[`Label`](xref:Xamarin.Forms.Label)オブジェクトが含まれています。
+[ `DataTemplate` ](xref:Xamarin.Forms.DataTemplate) に指定された要素により、リスト内の各項目の外観は定義されます。 サンプルでは、`DataTemplate` 内のレイアウトは [ `Grid`](xref:Xamarin.Forms.Grid) により管理されています。 `Grid` は、[ `Image` ](xref:Xamarin.Forms.Image) オブジェクトと 2 つの [ `Label` ](xref:Xamarin.Forms.Label) オブジェクトを含み、そのすべてが `Monkey` クラスのプロパティにバインドされています。
 
 ```csharp
 public class Monkey
@@ -185,7 +185,7 @@ public class Monkey
 }
 ```
 
-次のスクリーンショットは、リスト内の各項目をテンプレートした結果を示しています。
+次のスクリーン ショットは、リストの各項目をテンプレートに展開した結果を示しています。
 
 [![IOS と Android で、各項目がテンプレート化されている CollectionView のスクリーンショット](populate-data-images/datatemplate.png "CollectionView のテンプレート項目")](populate-data-images/datatemplate-large.png#lightbox "CollectionView のテンプレート項目")
 
@@ -217,7 +217,7 @@ public class Monkey
 </ContentPage>
 ```
 
-これに相当する C# コードを次に示します。
+該当の C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -251,9 +251,88 @@ public class MonkeyDataTemplateSelector : DataTemplateSelector
 > [!IMPORTANT]
 > [`CollectionView`](xref:Xamarin.Forms.CollectionView)を使用する場合は、 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)オブジェクトのルート要素を `ViewCell`に設定しないでください。 これにより、`CollectionView` にセルの概念がないため、例外がスローされます。
 
-## <a name="pull-to-refresh"></a>プルして更新
+## <a name="context-menus"></a>コンテキスト メニュー
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)では、`RefreshView` を通じてプルを更新する機能がサポートされています。これにより、表示されているデータを、項目の一覧を取得して更新できます。 `RefreshView` は、子がスクロール可能なコンテンツをサポートしていれば、その子に対してプルを行う機能を提供するコンテナーコントロールです。 そのため、`RefreshView` の子として設定することにより、`CollectionView` の pull to refresh が実装されます。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)は、`SwipeView`を通じてデータ項目のコンテキストメニューをサポートします。これにより、スワイプジェスチャを使用してコンテキストメニューが示されます。 `SwipeView` は、コンテンツの項目をラップし、そのコンテンツ項目のコンテキストメニュー項目を提供するコンテナーコントロールです。 したがって、コンテキストメニューは、`SwipeView` がラップするコンテンツを定義する `SwipeView` と、スワイプジェスチャによって公開されるコンテキストメニュー項目を作成することによって、`CollectionView` に実装されます。 これを実現するには、`CollectionView`内の各データ項目の外観を定義する[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)のルートビューとして `SwipeView` を設定します。
+
+```xaml
+<CollectionView x:Name="collectionView"
+                ItemsSource="{Binding Monkeys}">
+    <CollectionView.ItemTemplate>
+        <DataTemplate>
+            <SwipeView>
+                <SwipeView.LeftItems>
+                    <SwipeItems>
+                        <SwipeItem Text="Favorite"
+                                   IconImageSource="favorite.png"
+                                   BackgroundColor="LightGreen"
+                                   Command="{Binding Source={x:Reference collectionView}, Path=BindingContext.FavoriteCommand}"
+                                   CommandParameter="{Binding}" />
+                        <SwipeItem Text="Delete"
+                                   IconImageSource="delete.png"
+                                   BackgroundColor="LightPink"
+                                   Command="{Binding Source={x:Reference collectionView}, Path=BindingContext.DeleteCommand}"
+                                   CommandParameter="{Binding}" />
+                    </SwipeItems>
+                </SwipeView.LeftItems>
+                <Grid BackgroundColor="White"
+                      Padding="10">
+                    <!-- Define item appearance -->
+                </Grid>
+            </SwipeView>
+        </DataTemplate>
+    </CollectionView.ItemTemplate>
+</CollectionView>
+```
+
+該当の C# コードを次に示します。
+
+```csharp
+CollectionView collectionView = new CollectionView();
+collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
+
+collectionView.ItemTemplate = new DataTemplate(() =>
+{
+    // Define item appearance
+    Grid grid = new Grid { Padding = 10, BackgroundColor = Color.White };
+    // ...
+
+    SwipeView swipeView = new SwipeView();
+    SwipeItem favoriteSwipeItem = new SwipeItem
+    {
+        Text = "Favorite",
+        IconImageSource = "favorite.png",
+        BackgroundColor = Color.LightGreen
+    };
+    favoriteSwipeItem.SetBinding(MenuItem.CommandProperty, new Binding("BindingContext.FavoriteCommand", source: collectionView));
+    favoriteSwipeItem.SetBinding(MenuItem.CommandParameterProperty, ".");
+
+    SwipeItem deleteSwipeItem = new SwipeItem
+    {
+        Text = "Delete",
+        IconImageSource = "delete.png",
+        BackgroundColor = Color.LightPink
+    };
+    deleteSwipeItem.SetBinding(MenuItem.CommandProperty, new Binding("BindingContext.DeleteCommand", source: collectionView));
+    deleteSwipeItem.SetBinding(MenuItem.CommandParameterProperty, ".");
+
+    swipeView.LeftItems = new SwipeItems { favoriteSwipeItem, deleteSwipeItem };
+    swipeView.Content = grid;    
+    return swipeView;
+});
+```
+
+この例では、`SwipeView` コンテンツは、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)内の各項目の外観を定義する[`Grid`](xref:Xamarin.Forms.Grid)です。 スワイプ項目は `SwipeView` の内容に対してアクションを実行するために使用され、コントロールが左側からスワイプされると明らかになります。
+
+[![IOS と Android の CollectionView コンテキストメニュー項目のスクリーンショット](populate-data-images/swipeview.png "CollectionView と SwipeView コンテキストメニュー項目")](populate-data-images/swipeview-large.png#lightbox "CollectionView と SwipeView コンテキストメニュー項目")
+
+`SwipeView` では、4つの異なるスワイプ方向がサポートされます。スワイプ方向は、`SwipeItems` オブジェクトが追加される方向 `SwipeItems` コレクションによって定義されます。 既定では、スワイプ項目はユーザーがタップしたときに実行されます。 また、スワイプ項目が実行されると、スワイプ項目が非表示になり、`SwipeView` の内容が再表示されます。 ただし、これらの動作は変更できます。
+
+`SwipeView` コントロールの詳細については、「 [SwipeView](~/xamarin-forms/user-interface/swipeview.md)」を参照してください。
+
+## <a name="pull-to-refresh"></a>引っ張って更新
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)では、`RefreshView`を通じてプルを更新する機能がサポートされています。これにより、表示されているデータを、項目の一覧を取得して更新できます。 `RefreshView` は、子がスクロール可能なコンテンツをサポートしていれば、その子に対してプルを行う機能を提供するコンテナーコントロールです。 そのため、`RefreshView`の子として設定することにより、`CollectionView` の pull to refresh が実装されます。
 
 ```xaml
 <RefreshView IsRefreshing="{Binding IsRefreshing}"
@@ -264,7 +343,7 @@ public class MonkeyDataTemplateSelector : DataTemplateSelector
 </RefreshView>
 ```
 
-これに相当する C# コードを次に示します。
+該当の C# コードを次に示します。
 
 ```csharp
 RefreshView refreshView = new RefreshView();
@@ -286,9 +365,9 @@ refreshView.Content = collectionView;
 
 [![IOS と Android での CollectionView のプルから更新のスクリーンショット](populate-data-images/pull-to-refresh.png "CollectionView のプルから更新")](populate-data-images/pull-to-refresh-large.png#lightbox "CollectionView のプルから更新")
 
-`RefreshView.IsRefreshing` プロパティの値は、`RefreshView`の現在の状態を示します。 ユーザーによって更新がトリガーされると、このプロパティは自動的に `true` に移行します。 更新が完了したら、プロパティを `false` にリセットする必要があります。
+`RefreshView.IsRefreshing` プロパティの値は、`RefreshView`の現在の状態を示します。 ユーザーによって更新がトリガーされると、このプロパティは自動的に `true`に移行します。 更新が完了したら、プロパティを `false`にリセットする必要があります。
 
-`RefreshView`の詳細については、「 [Xamarin. フォーム RefreshView](~/xamarin-forms/user-interface/refreshview.md)」を参照してください。
+`RefreshView` の詳細については、「 [Xamarin. フォーム RefreshView](~/xamarin-forms/user-interface/refreshview.md)」を参照してください。
 
 ## <a name="load-data-incrementally"></a>データを増分読み込み
 
@@ -296,8 +375,8 @@ refreshView.Content = collectionView;
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)は、次のプロパティを定義して、データの増分読み込みを制御します。
 
-- `int` 型の `RemainingItemsThreshold`、`RemainingItemsThresholdReached` イベントが発生するリストにまだ表示されていない項目のしきい値。
-- `ICommand` 型の `RemainingItemsThresholdReachedCommand`。 `RemainingItemsThreshold` に達したときに実行されます。
+- `int`型の `RemainingItemsThreshold`、`RemainingItemsThresholdReached` イベントが発生するリストにまだ表示されていない項目のしきい値。
+- `ICommand`型の `RemainingItemsThresholdReachedCommand`。 `RemainingItemsThreshold` に達したときに実行されます。
 - `RemainingItemsThresholdReachedCommandParameter`: `object` 型、`RemainingItemsThresholdReachedCommand`に渡されるパラメーターです。
 
 また、 [`CollectionView`](xref:Xamarin.Forms.CollectionView) `RemainingItemsThreshold` 項目が表示されていない場合に `CollectionView` がスクロールされたときに発生する `RemainingItemsThresholdReached` イベントも定義します。 このイベントを処理して、さらに多くの項目を読み込むことができます。 さらに、`RemainingItemsThresholdReached` イベントが発生すると、`RemainingItemsThresholdReachedCommand` が実行され、増分データの読み込みがビューモデルで行われるようになります。
@@ -317,7 +396,7 @@ refreshView.Content = collectionView;
 </CollectionView>
 ```
 
-これに相当する C# コードを次に示します。
+該当の C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -344,6 +423,7 @@ void OnCollectionViewRemainingItemsThresholdReached(object sender, EventArgs e)
 
 - [CollectionView (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 - [Xamarin. フォーム RefreshView](~/xamarin-forms/user-interface/refreshview.md)
+- [SwipeView](~/xamarin-forms/user-interface/swipeview.md)
 - [Xamarin. フォームデータバインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 - [Xamarin. フォームデータテンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
 - [DataTemplateSelector を作成する](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

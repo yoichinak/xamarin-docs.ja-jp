@@ -6,13 +6,13 @@ ms.assetid: 634AB62E-68C8-454C-838B-F1CC4E4E21BC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/22/2019
-ms.openlocfilehash: c90cfc297914b585403ae84e7dbac11fd6e02836
-ms.sourcegitcommit: eb23b7d745d1090376f9def07e0f11cb089494d0
+ms.date: 12/11/2019
+ms.openlocfilehash: 5d0e289ddeb7eabef6d96c8882c772c704c54b34
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72170942"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489727"
 ---
 # <a name="ios-platform-features-in-xamarinforms"></a>Xamarin の iOS プラットフォーム機能
 
@@ -20,7 +20,7 @@ IOS 用の Xamarin. Forms アプリケーションを開発するには、Visual
 
 ## <a name="platform-specifics"></a>プラットフォームの詳細
 
-プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。
+Platform-specifics は custom renderers や effects を実装することなく、特定のプラットフォーム上でのみ利用できる機能の使用を可能にします。
 
 IOS では、次のプラットフォーム固有の機能が Xamarin のビュー、ページ、およびレイアウト用に用意されています。
 
@@ -38,6 +38,7 @@ IOS では、次のプラットフォーム固有の機能が Xamarin. Forms ビ
 - 区切り記号のスタイルを設定、 [ `ListView`](xref:Xamarin.Forms.ListView)します。 詳細については、「 [iOS の ListView 区切り記号のスタイル](listview-separator-style.md)」を参照してください。
 - [`Picker`](xref:Xamarin.Forms.Picker)でアイテムの選択が発生するタイミングを制御します。 詳細については、「 [iOS でのピッカー項目の選択](picker-selection.md)」を参照してください。
 - 有効にすると、 [ `Slider.Value` ](xref:Xamarin.Forms.Slider.Value)の位置をタップして設定されるプロパティを[ `Slider` ](xref:Xamarin.Forms.Slider)をドラッグすることではなく、横棒グラフ、`Slider`つまみ。 詳細については、「 [iOS でのスライダー Thumb のタップ](slider-thumb.md)」を参照してください。
+- `SwipeView`を開くときに使用される遷移を制御します。 詳細については、「 [SwipeView スワイプ切り替えモード](swipeview-swipetransitionmode.md)」を参照してください。
 
 IOS では、次のプラットフォーム固有の機能が Xamarin. Forms ページ用に用意されています。
 
@@ -66,7 +67,7 @@ Xamarin では、クロスプラットフォームのユーザーインターフ
 
 [詳細](formatting.md)については、「**情報 plist**構成」や「`UIAppearance` Api」など、iOS 固有の api を使用したユーザーインターフェイスの書式設定に関する説明を参照してください。
 
-![](images/status-white-sml.png "iOS のテーマ")
+![](images/status-white-sml.png "iOS Theming")
 
 ## <a name="other-ios-features"></a>その他の iOS 機能
 

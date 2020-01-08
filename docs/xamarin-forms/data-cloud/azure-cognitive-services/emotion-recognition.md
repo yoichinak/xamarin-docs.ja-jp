@@ -7,24 +7,29 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
-ms.openlocfilehash: 05dfa69a70bcd43b66cf6b572aee7d5720a81d76
-ms.sourcegitcommit: 2e5a6b8bcd1a073b54604f51538fd108e1c2a8e5
+ms.openlocfilehash: 4dedcb0869c1e965679812239b1de09f07efa875
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68869393"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487621"
 ---
 # <a name="perceived-emotion-recognition-using-the-face-api"></a>Face API を使用した感情認識
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 Face API は、人間の占めるによって認識された注釈に基づいて、顔式で怒り、軽蔑、嫌悪感、恐怖、しあわせ度、ニュートラル、悲しみ、および驚くべき感情検出を実行できます。 ただし、顔式は、必ずしも人の内部状態を表すとは限らないことに注意する必要があります。
 
-顔式の感情の結果を返すだけでなく、検出された面の境界ボックスを返すことも Face API できます。 Face API を使用して、API キーを取得する必要がありますに注意してください。 これから入手できる[Cognitive Services をお試しください](https://azure.microsoft.com/try/cognitive-services/?api=face-api)します。
+顔式の感情の結果を返すだけでなく、検出された面の境界ボックスを返すことも Face API できます。
 
 クライアント ライブラリ、および REST API を使用して、感情認識を実行できます。 この記事では、REST API 経由での感情認識を実行する方法について説明します。 REST API の詳細については、次を参照してください。 [Face REST API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)します。
 
 Face API では、ビデオでは、人物の表情を認識するためにも使用して、感情の概要を返すことができます。 詳細については、次を参照してください。[リアルタイムでビデオを分析する方法](/azure/cognitive-services/face/face-api-how-to-topics/howtoanalyzevideo_face/)します。
+
+> [!NOTE]
+> [Azure サブスクリプション](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)をお持ちでない場合は、開始する前に[無料アカウント](https://aka.ms/azfree-docs-mobileapps)を作成してください。
+
+Face API を使用するには、API キーを取得する必要があります。 これから入手できる[Cognitive Services をお試しください](https://azure.microsoft.com/try/cognitive-services/?api=face-api)します。
 
 Face API の詳細については、次を参照してください。 [Face API](/azure/cognitive-services/face/overview/)します。
 
@@ -46,8 +51,8 @@ Face API に有効な API キーを渡すの失敗は、401 の応答、エラ�
 
 イメージを含む POST 要求を行って感情の認識が実行される、`detect`で API を`https://[location].api.cognitive.microsoft.com/face/v1.0`ここで、`[location]]`は API キーを取得するために使用する領域です。 省略可能な要求のパラメーターは次のとおりです。
 
-- `returnFaceId` – 検出された顔の faceIds を返すかどうか。 既定値は `true` です。
-- `returnFaceLandmarks` – 検出された顔の顔の目印を返すかどうか。 既定値は `false` です。
+- `returnFaceId` – 検出された顔の faceIds を返すかどうか。 既定値は `true`です。
+- `returnFaceLandmarks` – 検出された顔の顔の目印を返すかどうか。 既定値は `false`です。
 - `returnFaceAttributes` – 属性が顔を分析し、指定された 1 つ以上を返すかどうか。 サポートされている顔の特徴を含める`age`、 `gender`、 `headPose`、 `smile`、 `facialHair`、 `glasses`、 `emotion`、 `hair`、 `makeup`、 `occlusion`、 `accessories`、 `blur`、 `exposure`、および`noise`します。 顔属性の分析に追加のコンピューティングおよび時間コストに注意してください。
 
 イメージのコンテンツは、URL、またはバイナリ データとして POST 要求の本体に配置する必要があります。
@@ -130,7 +135,7 @@ POST 要求に送信し、 `detect` API。 応答は、読み取られ、逆シ�
 
 `detect` API は、要求が有効である、要求が成功したことを示すし、の要求された情報は、応答で提供される応答には、HTTP 状態コード 200 (OK) を送信します。 想定されるエラー応答の一覧は、次を参照してください。 [Face REST API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)します。
 
-### <a name="process-the-response"></a>応答を処理する
+### <a name="process-the-response"></a>応答の処理
 
 API 応答は JSON 形式で返されます。 次の JSON データには、サンプル アプリケーションによって要求されたデータを提供する標準的な成功の応答メッセージが表示されます。
 
@@ -170,7 +175,7 @@ emotionResultLabel.Text = faces.FirstOrDefault().FaceAttributes.Emotion.ToRanked
 
 次のスクリーン ショットは、サンプル アプリケーションでは、感情の認識プロセスの結果を示しています。
 
-![](emotion-recognition-images/emotion-recognition.png "感情認識")
+![](emotion-recognition-images/emotion-recognition.png "Emotion Recognition")
 
 ## <a name="related-links"></a>関連リンク
 

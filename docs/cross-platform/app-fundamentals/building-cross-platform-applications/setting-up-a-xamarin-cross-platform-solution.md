@@ -6,12 +6,12 @@ ms.assetid: 4139A6C2-D477-C563-C1AB-98CCD0D10A93
 author: davidortinau
 ms.author: daortin
 ms.date: 03/27/2017
-ms.openlocfilehash: 843887282c9a5af671d46699ae2f601fd32902e0
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: e7cde22115830a845ed82aa907195521f36b6866
+ms.sourcegitcommit: d8af612b6b3218fea396d2f180e92071c4d4bf92
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016881"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75663274"
 ---
 # <a name="part-3---setting-up-a-xamarin-cross-platform-solution"></a>パート 3-Xamarin クロスプラットフォームソリューションの設定
 
@@ -19,100 +19,55 @@ ms.locfileid: "73016881"
 
 新しいクロスプラットフォームアプリケーションを作成する場合、最初の手順は空のソリューションを作成することです。 このセクションでは、次の処理について説明します。クロスプラットフォームモバイルアプリをビルドするためのプロジェクトを設定します。
 
- <a name="Sharing_Code" />
-
 ## <a name="sharing-code"></a>コードの共有
 
 プラットフォーム間でコード共有を実装する方法の詳細については、[コード共有オプション](~/cross-platform/app-fundamentals/code-sharing.md)に関するドキュメントを参照してください。
 
- <a name="Shared_Asset_Projects" />
-
-### <a name="shared-projects"></a>共有プロジェクト
-
-コードファイルを共有するための最も簡単な方法は、[共有プロジェクト](~/cross-platform/app-fundamentals/shared-projects.md)を使用することです。
-
-このメソッドを使用すると、異なるプラットフォームプロジェクト間で同じコードを共有できます。また、コンパイラディレクティブを使用して、プラットフォーム固有のさまざまなコードパスを含めることができます。
-
- <a name="Portable_Class_Libraries" />
-
-### <a name="portable-class-libraries-pcl"></a>ポータブル クラス ライブラリ (PCL)
-
-従来、.NET プロジェクトファイル (および生成されたアセンブリ) は特定のバージョンのフレームワークを対象としていました。 これにより、プロジェクトまたはアセンブリが異なるフレームワークによって共有されるのを防ぐことができます。
-
-ポータブルクラスライブラリ (PCL) は、特殊な種類のプロジェクトであり、Xamarin、ユニバーサル Windows プラットフォーム、Xbox などのさまざまな CLI プラットフォームで使用することができます。 ライブラリは、完全な .NET framework のサブセットのみを利用できます。対象となるプラットフォームによって制限されます。
-
-Xamarin の[ポータブルクラスライブラリのサポートの](~/cross-platform/app-fundamentals/pcl.md)詳細を確認し、そこに記載されている手順に従って[taskyportable サンプル](https://github.com/xamarin/mobile-samples/tree/master/TaskyPortable)がどのように機能するかを確認できます。
-
 ### <a name="net-standard"></a>.NET Standard
 
-2016で導入された[.NET Standard](~/cross-platform/app-fundamentals/net-standard.md)プロジェクトを使用すると、プラットフォーム間でコードを簡単に共有でき、Windows、Xamarin プラットフォーム (IOS、Android、Mac)、Linux で使用できるアセンブリが生成されます。
+[.NET Standard](~/cross-platform/app-fundamentals/net-standard.md)プロジェクトを使用すると、プラットフォーム間でコードを簡単に共有でき、Windows、Xamarin プラットフォーム (IOS、Android、Mac)、Linux で使用できるアセンブリが生成されます。
+これは、Xamarin ソリューションのコードを共有するために推奨される方法です。
 
-.NET Standard ライブラリは、PCLs のように作成および使用できます。ただし、各バージョン (1.0 から 1.6) で利用可能な Api はより簡単に検出でき、各バージョンは下位バージョンの番号と下位互換性があります。
+### <a name="other-options"></a>その他のオプション
 
- <a name="Populating_the_Solution" />
+Xamarin では、従来、[ポータブルクラスライブラリ (pcl)](~/cross-platform/app-fundamentals/pcl.md)] と[共有プロジェクト](~/cross-platform/app-fundamentals/shared-projects.md)が使用されていました。 これらのいずれも、新しいプロジェクトには推奨されません。また、既存のアプリを移行して .NET Standard を使用することを検討する必要があります。
 
 ## <a name="populating-the-solution"></a>ソリューションの設定
 
 どのメソッドを使用してコードを共有するかにかかわらず、ソリューションの全体的な構造には、コード共有を促進するレイヤーアーキテクチャが実装されている必要があります。
 Xamarin のアプローチでは、コードを次の2つのプロジェクトの種類にグループ化します。
 
-- **コアプロジェクト**-再利用可能なコードを1か所に記述し、異なるプラットフォーム間で共有します。 カプセル化の原則を使用して、可能な限り実装の詳細を非表示にします。
+- **コア (または "共有") プロジェクト**-再利用可能なコードを1か所に記述し、異なるプラットフォーム間で共有します。 カプセル化の原則を使用して、可能な限り実装の詳細を非表示にします。
 - **プラットフォーム固有のアプリケーションプロジェクト**: 可能な限り少ない結合で再利用可能なコードを使用します。 このレベルでは、プラットフォーム固有の機能が追加されています。コアプロジェクトで公開されているコンポーネントに基づいて構築されています。
-
- <a name="Core_Project" />
 
 ### <a name="core-project"></a>コアプロジェクト
 
-共有コードプロジェクトは、すべてのプラットフォーム (ie) で使用できるアセンブリのみを参照する必要があります。`System`、`System.Core`、`System.Xml`などの共通のフレームワークの名前空間。
+コードを共有するコアプロジェクトは .NET Standard する必要があります。また、すべてのプラットフォーム (ie) で使用できるアセンブリのみを参照してください。`System`、`System.Core`、`System.Xml`などの共通のフレームワークの名前空間。
 
-共有プロジェクトは、可能な限り多くの UI 以外の機能を実装する必要があります。これには、次の層が含まれる可能性があります。
+コアプロジェクトは、可能な限り多くの UI 以外の機能を実装する必要があります。これには、次の層が含まれる可能性があります。
 
-- **データレイヤー** –物理的なデータストレージを扱うコード (  [SQLite-NET](https://github.com/praeclarum/sqlite-net)は、 [Realm.io](https://realm.io/products/realm-mobile-database/) 、偶数の XML ファイルなどの代替データベースです。 データレイヤークラスは、通常、データアクセス層によってのみ使用されます。
+- **データレイヤー** –物理的なデータストレージを扱うコード ( [SQLite-NET](https://www.nuget.org/packages/sqlite-net-pcl/)または XML ファイル。 データレイヤークラスは、通常、データアクセス層によってのみ使用されます。
 - **データアクセス層**–アプリケーションの機能に必要なデータ操作をサポートする API を定義します。たとえば、データのリストにアクセスするためのメソッド、個々のデータ項目、およびそれらを作成、編集、および削除するためのメソッドなどです。
 - **サービスアクセスレイヤー** –アプリケーションにクラウドサービスを提供するためのオプションのレイヤーです。 リモートネットワークリソース (web サービス、イメージのダウンロードなど) にアクセスし、場合によっては結果をキャッシュするコードが含まれています。
 - **ビジネス層**–モデルクラスの定義と、プラットフォーム固有のアプリケーションに機能を公開するファサードまたはマネージャークラス。
 
- <a name="Platform-Specific_Application_Projects" />
-
 ### <a name="platform-specific-application-projects"></a>プラットフォーム固有のアプリケーションプロジェクト
 
-プラットフォーム固有のプロジェクトは、各プラットフォームの SDK (Xamarin、Xamarin、Android、Xamarin. Mac、または Windows) とコア共有コードプロジェクトにバインドするために必要なアセンブリを参照する必要があります。
+プラットフォーム固有のプロジェクトは、各プラットフォームの SDK (Xamarin、Xamarin、Android、Xamarin. Mac、または Windows) および .NET Standard プロジェクトにバインドするために必要なアセンブリを参照する必要があります。
 
 プラットフォーム固有のプロジェクトでは、次のものを実装する必要があります。
 
 - **アプリケーションレイヤー** –プラットフォーム固有の機能と、ビジネス層オブジェクトとユーザーインターフェイスの間のバインディング/変換。
 - **ユーザーインターフェイスレイヤー** –画面、カスタムユーザーインターフェイスコントロール、検証ロジックの表示。
 
-<a name="Example" />
-
-### <a name="example"></a>例
-
-アプリケーションのアーキテクチャを次の図に示します。
-
- [![](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png "The application architecture is illustrated in this diagram")](setting-up-a-xamarin-cross-platform-solution-images/conceptualarchitecture.png#lightbox)
-
-このスクリーンショットは、共有コアプロジェクト、iOS、および Android アプリケーションプロジェクトを使用したソリューションのセットアップを示しています。 共有プロジェクトには、各アーキテクチャレイヤー (ビジネス、サービス、データ、およびデータアクセスコード) に関連するコードが含まれています。
-
- ![](setting-up-a-xamarin-cross-platform-solution-images/core-solution-example.png "The Shared Project contains code relating to each of the architectural layers (Business, Service, Data and Data Access code)")
-
- <a name="Project_References" />
-
 ## <a name="project-references"></a>プロジェクト参照
 
 プロジェクト参照には、プロジェクトの依存関係が反映されます。 コアプロジェクトは、コードを簡単に共有できるように、共通アセンブリへの参照を制限します。
-プラットフォーム固有のアプリケーションプロジェクトは、共有コードと、ターゲットプラットフォームを利用するために必要なその他のプラットフォーム固有のアセンブリを参照します。
-
-アプリケーションは各参照共有プロジェクトを射影し、次のスクリーンショットに示すように、ユーザーに機能を提供するために必要なユーザーインターフェイスコードを含みます。
-
-![](setting-up-a-xamarin-cross-platform-solution-images/solution-android.png "アプリケーションは各参照共有プロジェクトを射影します。") ![](setting-up-a-xamarin-cross-platform-solution-images/solution-ios.png "アプリケーションは各参照共有プロジェクトを射影します。")
+プラットフォーム固有のアプリケーションプロジェクトは、.NET Standard プロジェクトと、ターゲットプラットフォームを利用するために必要なその他のプラットフォーム固有のアセンブリを参照します。
 
 ケーススタディでは、プロジェクトを構造化する方法の具体的な例を示します。
 
- <a name="Adding_Files" />
-
 ## <a name="adding-files"></a>ファイルの追加
-
- <a name="Build_Action" />
 
 ### <a name="build-action"></a>ビルド アクション
 
@@ -121,15 +76,13 @@ Xamarin のアプローチでは、コードを次の2つのプロジェクト�
 - **すべてC#のファイル**–ビルドアクション: コンパイル
 - **Xamarin のイメージ & Windows** -ビルドアクション: コンテンツ
 - **Xamarin の XIB ファイルとストーリーボードファイル**–ビルドアクション: interfacedefinition
-- **Android でのイメージと AXML レイアウト**–ビルドアクション: AndroidResource
+- **Android のイメージと XML レイアウト**–ビルドアクション: AndroidResource
 - **Windows プロジェクトの XAML ファイル**–ビルドアクション: ページ
 - **Xamarin .xaml XAML ファイル**–ビルドアクション: EmbeddedResource
 
 一般に、IDE はファイルの種類を検出し、正しいビルドアクションを提案します。
 
- <a name="Case_Sensitivity" />
-
-### <a name="case-sensitivity"></a>大文字と小文字の区別
+### <a name="case-sensitivity"></a>[大文字と小文字の区別]
 
 最後に、一部のプラットフォームでは大文字と小文字が区別されるファイルシステムがあることに注意してください (例:
 iOS と Android) のため、必ず一貫性のあるファイル名前付け標準を使用し、コードで使用するファイル名がファイルシステムと完全に一致することを確認してください。 これは、コードで参照するイメージやその他のリソースに特に重要です。

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 3f3b9c84fad0bce8939187fcd0c91d18314ce8ab
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2162fba1275b66167965e90aeade721e08ea9130
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032641"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489324"
 ---
 # <a name="accessibility-on-macos"></a>MacOS のユーザー補助機能
 
@@ -23,7 +23,7 @@ MacOS でアクセシビリティ Api がどのように機能するかを理解
 
 ## <a name="describing-ui-elements"></a>UI 要素の記述
 
-AppKit は、`NSAccessibility` プロトコルを使用して、ユーザーインターフェイスにアクセスできるようにする Api を公開します。 これには、ボタンの `AccessibilityLabel` の設定など、アクセシビリティプロパティに意味のある値を設定しようとする既定の動作が含まれます。 ラベルは、通常、コントロールまたはビューを説明する1つの単語または短い語句です。
+AppKit は、`NSAccessibility` プロトコルを使用して、ユーザーインターフェイスにアクセスできるようにする Api を公開します。 これには、ボタンの `AccessibilityLabel`の設定など、アクセシビリティプロパティに意味のある値を設定しようとする既定の動作が含まれます。 ラベルは、通常、コントロールまたはビューを説明する1つの単語または短い語句です。
 
 ### <a name="storyboard-files"></a>ストーリーボードファイル
 
@@ -37,14 +37,14 @@ Xcode Interface Builder を使用して、ストーリーボードファイル�
 現在、Xamarin は `AccessibilityLabel` setter として公開されていません。  アクセシビリティラベルを設定するには、次のヘルパーメソッドを追加します。
 
 ```csharp
-public static class AccessibilityHelper
+public static class AccessibilityHelper
 {
-    [System.Runtime.InteropServices.DllImport (ObjCRuntime.Constants.ObjectiveCLibrary)]
-    extern static void objc_msgSend (IntPtr handle, IntPtr selector, IntPtr label);
+    [System.Runtime.InteropServices.DllImport (ObjCRuntime.Constants.ObjectiveCLibrary)]
+    extern static void objc_msgSend (IntPtr handle, IntPtr selector, IntPtr label);
 
-    static public void SetAccessibilityLabel (this NSView view, string value)
+    static public void SetAccessibilityLabel (this NSView view, string value)
     {
-        objc_msgSend (view.Handle, new ObjCRuntime.Selector ("setAccessibilityLabel:").Handle, new NSString (value).Handle);
+        objc_msgSend (view.Handle, new ObjCRuntime.Selector ("setAccessibilityLabel:").Handle, new NSString (value).Handle);
     }
 }
 ```

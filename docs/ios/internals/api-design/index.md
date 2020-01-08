@@ -99,7 +99,7 @@ Xamarin.iOS は、C# で Objective-C のクラスの階層をミラーリング�
 
 - ここでは、開発者がサードパーティの Objective-C API、他の iOS API、Xamarin.iOS によって現在バインドされていない API をバインドできるように、さまざまなヘルパー API が公開されています。
 
-バインディング API の詳細については、「 [Xamarin.iOS のバインドジェネレーター](~/cross-platform/macios/binding/binding-types-reference.md) 」を参照してください。
+バインディング API の詳細については、「[Xamarin.iOS のバインドジェネレーター](~/cross-platform/macios/binding/binding-types-reference.md)」を参照してください。
 
 ##### <a name="nsobject"></a>NSObject
 

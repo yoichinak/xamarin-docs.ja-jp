@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: f2f0d44f9c9d2df3c09d98e8d921121ff2af1571
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 78f8c8d1340c6bb1063e59ad03485d8b9b807c58
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032275"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488999"
 ---
 # <a name="ios-platform-features-overview"></a>iOS プラットフォームの機能の概要
 
@@ -53,7 +53,7 @@ iOS には、カレンダーアプリケーションとアラームアプリケ�
 
 ## <a name="ios-extensionsiosplatformextensionsmd"></a>[iOS の拡張機能](~/ios/platform/extensions.md)
 
-IOS 8 で導入された拡張機能は、 **Notification Center**内などの標準コンテキスト内で ios によって提供される特殊な `UIViewControllers` であり、ユーザーが特殊な入力やその他のコンテキストを実行するために要求するカスタムキーボードの種類として、拡張機能が特殊効果フィルターを提供できる写真を編集する。
+IOS 8 で導入された拡張機能は、 **Notification Center**内などの標準コンテキスト内で ios によって提供される特殊な `UIViewControllers` であり、特殊な入力を実行するためにユーザーによって要求されるカスタムキーボードの種類、または拡張機能が特別な効果フィルターを提供できるようなその他のコンテキストを実行するためにユーザーが要求する
 
 ## <a name="graphics-and-animation-in-iosiosplatformgraphics-animation-iosindexmd"></a>[IOS でのグラフィックスとアニメーション](~/ios/platform/graphics-animation-ios/index.md)
 
@@ -85,7 +85,7 @@ IOS 10 を初めて使用する場合、メッセージアプリ拡張機能は*
 
 ## <a name="multitasking-for-ipadiosplatformmultitaskingmd"></a>[iPad のマルチタスキング](~/ios/platform/multitasking.md)
 
-iOS 9 では、特定の iPad ハードウェアで同時に2つのアプリを実行するためのマルチタスキングサポートが追加されています。 IPad のマルチタスキングは、次の機能によってサポートされています。スライド上、分割ビュー & 画像内の画像。
+iOS 9 では、特定の iPad ハードウェアで同時に2つのアプリを実行するためのマルチタスキングサポートが追加されています。 IPad のマルチタスキングは、次の機能を使用してサポートされています。スライド上、分割ビュー & 画像の画像です。
 
 ## <a name="passkitiosplatformpasskitmd"></a>[PassKit](~/ios/platform/passkit.md)
 
@@ -125,9 +125,9 @@ iOS 10 には新しい Speech API が含まれています。これにより、�
 
 この記事では、新しい 3D Touch Api を使用して、Xamarin に負荷の高いジェスチャを追加する方法について説明します。新しい iPhone 6s と iPhone 6s Plus デバイスで実行されている iOS アプリ。
 
-## <a name="touch-idiosplatformtouchidmd"></a>[タッチ ID](~/ios/platform/touchid.md)
+## <a name="touch-id-and-face-id-with-xamariniosiosplatformtouch-id-face-idmd"></a>[Xamarin でタッチ ID と顔 ID を使用する](~/ios/platform/touch-id-face-id.md)
 
-タッチ ID は、ユーザーを認証する手段として iOS 7 で導入されました。パスコードに似ています。 ただし、アプリストアを使用してデバイスのロックを解除し、iTunes を使用して iCloud キーチェーンのみを認証することに制限されていました。
+タッチ ID と顔 ID は、iOS 8 以降で使用できる生体認証システムです。 この記事とサンプルでは、Xamarin iOS で Touch ID と Face ID を使用する方法について説明します。
 
 ## <a name="user-notificationsiosplatformuser-notificationsindexmd"></a>[ユーザーへの通知](~/ios/platform/user-notifications/index.md)
 

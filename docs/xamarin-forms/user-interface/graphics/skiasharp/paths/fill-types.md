@@ -7,22 +7,22 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 924b66b3bdb66c2197b708d87e20eeb6f3ed9f46
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 16d576c599dbf5815b19aec4a2e8390f7ed0e601
+ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770511"
+ms.lasthandoff: 12/30/2019
+ms.locfileid: "75545570"
 ---
 # <a name="the-path-fill-types"></a>パスの塗りつぶしの種類
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _SkiaSharp のパスの塗りつぶしの種類で可能なさまざまな効果を検出します。_
 
 パス内の 2 つの輪郭がオーバー ラップできるし、1 つの輪郭を構成する行が重複することができます。 任意の囲まれた領域は塗りつぶさ可能性があることができますが含まれているすべての領域を塗りつぶすしない可能性があります。 次に例を示します。
 
-![](fill-types-images/filltypeexample.png "5 ポイント filles を部分的に星")
+![](fill-types-images/filltypeexample.png "Five-pointed star partially filles")
 
 この少しのコントロールがあります。 いっぱいになるアルゴリズムが適用されます、 [ `SKFillType` ](xref:SkiaSharp.SKPath.FillType)プロパティの`SKPath`のメンバーに設定する、 [ `SKPathFillType` ](xref:SkiaSharp.SKPathFillType)列挙体。
 
@@ -170,9 +170,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 パスの塗りつぶしの種類の塗りつぶし、ストロークではないいて、2 つに影響は通常、`Inverse`モードは、塗りつぶしとストロークの両方に影響します。 2 つの塗りつぶし`Inverse`型領域を塗りつぶす oppositely 星の外側の領域が入力されるようにします。 2 つのストロークの`Inverse`色の線を除くすべての種類。 これらの逆の塗りつぶしの種類を使用すると、iOS のスクリーン ショットに示すように、奇数の効果をいくつかが生成することができます。
 
-[![](fill-types-images/fivepointedstar-small.png "Five-Pointed スター ページのスクリーン ショットをトリプル")](fill-types-images/fivepointedstar-large.png#lightbox "Five-Pointed スター ページの 3 倍になるスクリーン ショット")
+[![](fill-types-images/fivepointedstar-small.png "Triple screenshot of the Five-Pointed Star page")](fill-types-images/fivepointedstar-large.png#lightbox "Triple screenshot of the Five-Pointed Star page")
 
-Android、UWP のスクリーン ショットは、一般的な偶とワインディングの効果を示しますが、ストロークおよび塗りつぶしの順序は結果にも影響します。
+Android のスクリーンショットには、通常の奇数とワインディングの効果が示されていますが、ストロークと塗りつぶしの順序も結果に影響します。
 
 ワインディングのアルゴリズムでは、線が描画される方向に依存します。 通常、パスを作成する際を制御できますその方向の行が 1 つの点から描画される間を指定します。 ただし、`SKPath`クラスなどのメソッドも定義されています。`AddRect`と`AddCircle`全体の輪郭を描画します。 これらのオブジェクトを描画する方法を制御するため、メソッドが型のパラメーターを含める[ `SKPathDirection` ](xref:SkiaSharp.SKPathDirection)、2 つのメンバーを持ちます。
 
@@ -223,7 +223,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 最小限のコードで作成した興味深いイメージであります。
 
-[![](fill-types-images/overlappingcircles-small.png "円の重複するページのスクリーン ショットをトリプル")](fill-types-images/overlappingcircles-large.png#lightbox "円の重複するページの 3 倍になるスクリーン ショット")
+[![](fill-types-images/overlappingcircles-small.png "Triple screenshot of the Overlapping Circles page")](fill-types-images/overlappingcircles-large.png#lightbox "Triple screenshot of the Overlapping Circles page")
 
 ## <a name="related-links"></a>関連リンク
 

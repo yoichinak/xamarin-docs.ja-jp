@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 625826e729a6b4153396286361730d6a2b878dca
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b357a6e1531c8f587c8fc0f86e2b56d6fecc2923
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73010472"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488323"
 ---
 # <a name="walkthrough---background-location-in-xamarinios"></a>チュートリアル-Xamarin のバックグラウンドの場所
 
@@ -80,7 +80,7 @@ ms.locfileid: "73010472"
     > [!IMPORTANT]
     > iOS 8 (およびそれ以降) では、ユーザーを承認要求の一部として表示するために、**情報 plist**ファイルのエントリも必要です。
 
-1. 場所データへのアクセスを要求する警告でユーザーに表示される文字列を使用して、キー `NSLocationAlwaysUsageDescription` または `NSLocationWhenInUseUsageDescription` を追加します。
+1. アプリが必要とするアクセス許可の種類 (`NSLocationAlwaysUsageDescription`、`NSLocationWhenInUseUsageDescription`、`NSLocationAlwaysAndWhenInUseUsageDescription`) の情報を入力**します。** このキーは、場所データへのアクセスを要求するアラートにユーザーに表示される文字列と共に追加されます。
 
 1. iOS 9 では、`AllowsBackgroundLocationUpdates` を使用する場合、`location`値を持つキー `UIBackgroundModes`**が含まれ**ている必要があります。 このチュートリアルの手順2を完了している場合は、既に情報 plist ファイルに含まれています。
 
