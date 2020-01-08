@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/21/2017
-ms.openlocfilehash: fda021eb90feba1fed2352ef7f771f5583b00920
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 7ec5537345536884e2dc3da02ab54a3ca00f760e
+ms.sourcegitcommit: 6f09bc2b760e76a61a854f55d6a87c4f421ac6c8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028853"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75607972"
 ---
 # <a name="populating-a-xamarinandroid-listview-with-data"></a>Xamarin. Android ListView にデータを読み込む
 
@@ -33,7 +33,6 @@ public class HomeScreen : ListActivity {
        items = new string[] { "Vegetables","Fruits","Flower Buds","Legumes","Bulbs","Tubers" };
        ListAdapter = new ArrayAdapter<String>(this, Android.Resource.Layout.SimpleListItem1, items);
    }
-   protected override void OnListItemClick(ListView l, View v, int position, long id)
 }
 ```
 
@@ -41,7 +40,7 @@ public class HomeScreen : ListActivity {
 
 通常、`ListView` では、ユーザーが何らかの操作 (楽曲の再生、連絡先の呼び出し、別の画面の表示など) を実行することもできます。 ユーザーに応答するには、次のように &ndash; `OnListItemClick` `ListActivity` &ndash; に実装するメソッドが1つ以上必要です。
 
-[SimpleListItem の![スクリーンショット](populating-images/simplelistitem1.png)](populating-images/simplelistitem1.png#lightbox)
+[SimpleListItem の ![スクリーンショット](populating-images/simplelistitem1.png)](populating-images/simplelistitem1.png#lightbox)
 
 ```csharp
 protected override void OnListItemClick(ListView l, View v, int position, long id)
@@ -53,7 +52,7 @@ protected override void OnListItemClick(ListView l, View v, int position, long i
 
 これで、ユーザーは行に触れることができ、`Toast` の警告が表示されます。
 
-[行にタッチしたときに表示されるトーストの![スクリーンショット](populating-images/basictable2.png)](populating-images/basictable2.png#lightbox)
+[行にタッチしたときに表示されるトーストの ![スクリーンショット](populating-images/basictable2.png)](populating-images/basictable2.png#lightbox)
 
 ## <a name="implementing-a-listadapter"></a>ListAdapter の実装
 
@@ -137,7 +136,7 @@ public override View GetView(int position, View convertView, ViewGroup parent)
 
 高速スクロールを使用すると、スクロールバーとして機能し、リストの一部に直接アクセスする "ハンドル" を追加することで、長い一覧をスクロールできます。 このスクリーンショットは、高速スクロールハンドルを示しています。
 
-[スクロールハンドルを使用した高速スクロールの![スクリーンショット](populating-images/fastscroll.png)](populating-images/fastscroll.png#lightbox)
+[スクロールハンドルを使用した高速スクロールの ![スクリーンショット](populating-images/fastscroll.png)](populating-images/fastscroll.png#lightbox)
 
 高速スクロールハンドルが表示されるようにするには、`FastScrollEnabled` プロパティを `true`に設定するだけです。
 
@@ -149,7 +148,7 @@ ListView.FastScrollEnabled = true;
 
 セクションインデックスは、ユーザーが長い一覧をスクロールしているときにユーザーに追加のフィードバックを提供し &ndash; スクロールした ' セクション ' が表示されます。 セクションインデックスが表示されるようにするには、アダプターサブクラスは、表示されている行に応じてインデックステキストを指定するために `ISectionIndexer` インターフェイスを実装する必要があります。
 
-[h で始まるセクションの前に表示される H の![スクリーンショット](populating-images/sectionindex.png)](populating-images/sectionindex.png#lightbox)
+[h で始まるセクションの前に表示される H の ![スクリーンショット](populating-images/sectionindex.png)](populating-images/sectionindex.png#lightbox)
 
 `ISectionIndexer` を実装するには、次の3つのメソッドをアダプターに追加する必要があります。
 
