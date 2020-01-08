@@ -51,9 +51,9 @@ class Foo<T> : UIView {
 
 iOS カーネルでは、アプリケーションがコードを動的に生成できないようにするため、Xamarin は、どのような形式の動的コード生成もサポートしていません。 次の設定があります。
 
-- システムのリフレクションは使用できません。
-- System.string はサポートされていません。
-- 型を動的に作成することはサポートされていません (タイプ gettype ("MyType ' 1"))。ただし、既存の型 (たとえば、GetType ("System.string") は正常に動作します)。
+- System.Reflection.Emit は使用できません。
+- System.Runtime.Remoting はサポートされていません。
+- 型を動的に作成することはサポートされていません (Type.GetType ("MyType`1") は正常に動作しません)。ただし、既存の型 (たとえば、Type.GetType ("System.String") は正常に動作します)。
 - 逆コールバックは、コンパイル時にランタイムに登録する必要があります。
 
  <a name="System.Reflection.Emit" />
