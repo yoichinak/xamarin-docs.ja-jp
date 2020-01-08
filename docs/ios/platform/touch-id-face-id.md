@@ -1,5 +1,5 @@
 ---
-title: Xamarin でタッチ ID と顔 ID を使用する
+title: Xamarin.iOS で Touch ID と Face ID を使用する
 description: このドキュメントでは、iOS での生体認証の概要について説明します。
 ms.prod: xamarin
 ms.assetid: 4BC8EFD6-52FC-4793-BA69-D6BFF850FE5F
@@ -20,18 +20,18 @@ ms.locfileid: "75490428"
 
 iOS では、次の2つの生体認証システムがサポートされます。
 
-1. **TOUCH ID**では、[ホーム] ボタンの下に指紋センサーが使用されます。
-1. **顔 ID**は、顔スキャンを使用してユーザーを認証するために、正面カメラセンサーを使用します。
+1. **Touch ID** では、[ホーム] ボタンの下に指紋センサーが使用されます。
+1. **Face ID** は、顔スキャンを使用してユーザーを認証するために、正面カメラセンサーを使用します。
 
-タッチ ID は、ios 11 の iOS 7 と Face ID で導入されました。
+Touch ID は iOS 7 で、Face ID は iOS 11 で導入されました。
 
-これらの認証システムは、_セキュリティで保護さ_れたエンクレーブと呼ばれるハードウェアベースのセキュリティプロセッサに依存します。 セキュリティで保護されたエンクレーブは、顔と指紋のデータの数学的表現を暗号化し、この情報を使用してユーザーを認証する役割を担います。 Apple、顔、および指紋データはデバイスから離れていないため、iCloud にバックアップされません。 アプリは、_ローカル認証_API を介して Secure エンクレーブと対話します。また、顔や指紋データを取得したり、secure エンクレーブに直接アクセスしたりすることはできません。
+これらの認証システムは、_"セキュア エンクレーブ"_ と呼ばれるハードウェアベースのセキュリティプロセッサに依存します。セキュア エンクレーブは、顔と指紋のデータの数学的表現を暗号化し、この情報を使用してユーザーを認証する役割を担います。Apple によれば、顔、および指紋データはデバイスから離れていないため、iCloud にバックアップされません。アプリは、_"ローカル認証 API"_ を介してセキュア エンクレーブと対話します。また、顔や指紋データを取得したり、セキュア エンクレーブに直接アクセスしたりすることはできません。
 
 Touch ID と Face ID は、保護されたコンテンツへのアクセスを提供する前に、アプリがユーザーを認証するために使用できます。
 
 ## <a name="local-authentication-context"></a>ローカル認証コンテキスト
 
-IOS での生体認証は、`LAContext` クラスのインスタンスである_ローカル認証コンテキスト_オブジェクトに依存します。 `LAContext` クラスを使用すると、次のことができます。
+iOS での生体認証は、`LAContext` クラスのインスタンスである _"ローカル認証コンテキスト"_ オブジェクトに依存します。 `LAContext` クラスを使用すると、次のことができます。
 
 - 生体認証ハードウェアが使用可能かどうかを確認します。
 - 認証ポリシーを評価します。
@@ -195,5 +195,5 @@ partial class AuthenticationViewController: UIViewController
 ## <a name="related-links"></a>関連リンク
 
 - [Touch ID または Face ID を使用したローカル認証のサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-faceidsample/)
-- Support.apple.com の[タッチ ID について](https://support.apple.com/en-us/HT204587)
-- Support.apple.com の[FACE ID について](https://support.apple.com/en-us/HT208108)
+- Support.apple.com の[Touch ID について](https://support.apple.com/en-us/HT204587)
+- Support.apple.com の[Face ID について](https://support.apple.com/en-us/HT208108)
