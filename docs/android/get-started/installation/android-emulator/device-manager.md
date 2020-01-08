@@ -43,16 +43,16 @@ Android Device Manager を使用するには、次の項目が必要です。
 
 - Visual Studio Tools for Xamarin バージョン 4.9 以降。
 
-- Android SDK をインストールする必要があります (「[Xamarin.Android 向け Android SDK を設定する](~/android/get-started/installation/android-sdk.md)」を参照してください)。
+- Android SDK をインストールする必要があります (「[Xamarin.Android 向け Android SDK を設定する](~/android/get-started/installation/android-sdk.md)」を参照)。
   Android SDK がまだインストールされていない場合は、その既定の場所にインストールします。**C:\\Program Files (x86)\\Android\\android-sdk**。
 
 - ([Android SDK Manager](~/android/get-started/installation/android-sdk.md) を使用して) 次のパッケージをインストールする必要があります。 
   - **Android SDK Tools バージョン 26.1.1** 以降
-  - **Android SDK プラットフォーム ツール 27.0.1** 以降
+  - **Android SDK Platform-Tools 27.0.1** 以降
   - **Android SDK Build Tools 27.0.3** 以降 
   - **Android Emulator 27.2.7** 以降。 
 
-  これらのパッケージの状態は、次のスクリーンショットのように **[インストール済み]** となります。
+  これらのパッケージの状態は、次のスクリーンショットのように **[インストール済み]** と表示される必要があります。
 
   [![Android SDK Tools のインストール](device-manager-images/win/02-sdk-tools-sml.png)](device-manager-images/win/02-sdk-tools.png#lightbox)
 
@@ -90,7 +90,7 @@ Android Device Manager を初めて起動すると、現在構成されている
 
 [![Device Manager の [New Device]\(新しいデバイス\) 画面](device-manager-images/win/09-new-device-editor-sml.png)](device-manager-images/win/09-new-device-editor.png#lightbox)
 
-**[New Device]\(新しいデバイス\)** 画面で新しいデバイスを構成するには、次の手順のようにします。
+**[New Device](新しいデバイス)** 画面で新しいデバイスを構成するには、次の手順を実行します。
 
 1. デバイスの新しい名前を指定します。 次の例では、新しいデバイスに「**Pixel_API_27**」という名前を指定しています。
 
@@ -131,7 +131,7 @@ Android Device Manager を初めて起動すると、現在構成されている
 
    [![[Create]\(作成\) ボタン](device-manager-images/win/17-create-button-sml.png)](device-manager-images/win/17-create-button.png#lightbox)
 
-9. **[ライセンスの同意]** 画面が表示される場合があります。 ライセンス条項に同意する場合は、 **[Accept]\(同意する\)** をクリックします。
+9. **[License Acceptance]** \(ライセンスの同意\) 画面が表示される場合があります。 ライセンス条項に同意する場合は、 **[Accept]\(同意する\)** をクリックします。
 
    [![[License Acceptance]\(ライセンスの同意\) 画面](device-manager-images/win/18-license-acceptance-sml.png)](device-manager-images/win/18-license-acceptance.png#lightbox)
 
@@ -179,7 +179,7 @@ Android Device Manager を初めて起動すると、現在構成されている
 
   [![[Reveal in Explorer]\(エクスプローラーで表示\) をクリックした結果](device-manager-images/win/26-reveal-in-explorer-sml.png)](device-manager-images/win/26-reveal-in-explorer.png#lightbox)
 
-- **[Factory Reset]\(出荷時の設定にリセット\)** &ndash; 選んだデバイスを既定の設定にリセットし、デバイスの実行中にユーザーが行ったデバイスの内部状態に対する変更を消去します (存在する場合は、現在の[クイック ブート](~/android/deploy-test/debugging/debug-on-emulator.md#quick-boot)のスナップショットも消去されます)。 仮想デバイスを作成または編集するときに行った変更は消去されません。 このリセットは元に戻すことができないという警告がダイアログ ボックスに表示されます。 **[Factory Reset]\(出荷時の設定にリセット\)** をクリックしてリセットを確定します。
+- **[Factory Reset]\(出荷時の設定にリセット\)** &ndash; 選んだデバイスを既定の設定にリセットし、デバイスの実行中にユーザーが行ったデバイスの内部状態に対する変更を消去します (現在の[クイック ブート](~/android/deploy-test/debugging/debug-on-emulator.md#quick-boot)のスナップショットが存在する場合は、それも消去されます)。 仮想デバイスを作成または編集するときに行った変更は消去されません。 このリセットは元に戻すことができないという警告がダイアログ ボックスに表示されます。 **[Factory Reset]\(出荷時の設定にリセット\)** をクリックしてリセットを確定します。
 
   ![[Factory Reset]\(出荷時の設定にリセット\) ダイアログ](device-manager-images/win/27-factory-reset.png)
 
@@ -209,14 +209,14 @@ Android Device Manager を使用するには、次の項目が必要です。
 
 - Visual Studio for Mac 7.6 以降。
 
-- Android SDK をインストールする必要があります (「[Xamarin.Android 向け Android SDK を設定する](~/android/get-started/installation/android-sdk.md)」を参照してください)。
+- Android SDK をインストールする必要があります (「[Xamarin.Android 向け Android SDK を設定する](~/android/get-started/installation/android-sdk.md)」を参照)。
 
 - ([Android SDK Manager](~/android/get-started/installation/android-sdk.md) を使用して) 次のパッケージをインストールする必要があります。 
   - **SDK Tools バージョン 26.1.1** 以降
   - **Android SDK Platform-Tools 28.0.1** 以降 
   - **Android SDK Build-Tools 26.0.3** 以降
 
-  これらのパッケージの状態は、次のスクリーンショットのように **[インストール済み]** となります。
+  これらのパッケージの状態は、次のスクリーンショットのように **[インストール済み]** と表示される必要があります。
 
   [![Android SDK Tools のインストール](device-manager-images/mac/02-sdk-tools-sml.png)](device-manager-images/mac/02-sdk-tools.png#lightbox)
 
@@ -347,7 +347,7 @@ Android Device Manager を初めて起動すると、現在構成されている
 
   [![[Reveal in Finder]\(Finder で表示\) をクリックした結果](device-manager-images/mac/26-reveal-in-finder-sml.png)](device-manager-images/mac/26-reveal-in-finder.png#lightbox)
 
-- **[Factory Reset]\(出荷時の設定にリセット\)** &ndash; 選んだデバイスを既定の設定にリセットし、デバイスの実行中にユーザーが行ったデバイスの内部状態に対する変更を消去します (存在する場合は、現在の[クイック ブート](~/android/deploy-test/debugging/debug-on-emulator.md#quick-boot)のスナップショットも消去されます)。 仮想デバイスを作成または編集するときに行った変更は消去されません。 このリセットは元に戻すことができないという警告がダイアログ ボックスに表示されます。 **[Factory Reset]\(出荷時の設定にリセット\)** をクリックしてリセットを確定します。
+- **[Factory Reset]\(出荷時の設定にリセット\)** &ndash; 選んだデバイスを既定の設定にリセットし、デバイスの実行中にユーザーが行ったデバイスの内部状態に対する変更を消去します (現在の[クイック ブート](~/android/deploy-test/debugging/debug-on-emulator.md#quick-boot)のスナップショットが存在する場合は、それも消去されます)。 仮想デバイスを作成または編集するときに行った変更は消去されません。 このリセットは元に戻すことができないという警告がダイアログ ボックスに表示されます。 **[Factory Reset]\(出荷時の設定にリセット\)** をクリックしてリセットを確定します。
 
   ![[Factory Reset]\(出荷時の設定にリセット\) ダイアログ](device-manager-images/mac/27-factory-reset-m76.png)
 
@@ -406,7 +406,7 @@ Android SDK Tools 26.1.1 以降がインストールされていない場合、�
 このエラー ダイアログが表示された場合は、 **[SDK マネージャーを開く]** をクリックして Android SDK Manager を開きます。 Android SDK Manager で、 **[ツール]** タブをクリックして、以下のパッケージをインストールします。
 
 - **Android SDK Tools 26.1.1** 以降
-- **Android SDK プラットフォーム ツール 27.0.1** 以降
+- **Android SDK Platform-Tools 27.0.1** 以降
 - **Android SDK Build Tools 27.0.3** 以降
 
 ### <a name="snapshot-disables-wifi-on-android-oreo"></a>スナップショットによって Android Oreo の WiFi が無効になる

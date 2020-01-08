@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: df2fa04deafc4438798593d3f25b85ec17363996
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.openlocfilehash: a51a00c8cfcd0b12787ecd3cd1eb986bb8f596c0
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67277316"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75490674"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -31,7 +31,7 @@ ms.locfileid: "67277316"
     </ContentPage>
     ```
 
-    このコードでは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) の中の [`Image`](xref:Xamarin.Forms.Image) から構成されるページのユーザー インターフェイスを宣言によって定義します。 [`Image.Source`](xref:Xamarin.Forms.Image.Source) プロパティでは、URI を使用して、表示するイメージを指定します。 [`Image.Source`](xref:Xamarin.Forms.Image.Source) プロパティの型は [`ImageSource`](xref:Xamarin.Forms.ImageSource) です。これにより、イメージをファイル、URI、またはリソースから取得できます。 詳細については、「[Images in Xamarin.Forms](~/xamarin-forms/user-interface/images.md)」 (Xamarin.Forms のイメージ) ガイドの「[Displaying images](~/xamarin-forms/user-interface/images.md#displaying-images)」 (イメージの表示) を参照してください。
+    このコードでは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) の中の [`Image`](xref:Xamarin.Forms.Image) から構成されるページのユーザー インターフェイスを宣言によって定義します。 [`Image.Source`](xref:Xamarin.Forms.Image.Source) プロパティでは、URI を使用して、表示するイメージを指定します。 [`Image.Source`](xref:Xamarin.Forms.Image.Source) プロパティの型は [`ImageSource`](xref:Xamarin.Forms.ImageSource) です。これにより、イメージをファイル、URI、またはリソースから取得できます。 詳細については、「[Images in Xamarin.Forms](~/xamarin-forms/user-interface/images.md)」 (Xamarin.Forms のイメージ) ガイドの「[Displaying images](~/xamarin-forms/user-interface/images.md#display-images)」 (イメージの表示) を参照してください。
 
     [`HeightRequest`](xref:Xamarin.Forms.VisualElement) プロパティでは、`Image` の高さをデバイスに依存しない単位で指定します。
 
@@ -40,7 +40,7 @@ ms.locfileid: "67277316"
 
 1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
-    [![iOS および Android での Image のスクリーンショット](../images/create-image.png "イメージを表示する Image ビュー")](../images/create-image-large.png#lightbox "イメージを表示する Image ビュー")
+    [![iOS および Android 上の画像のスクリーンショット](../images/create-image.png "画像を表示する画像ビュー")](../images/create-image-large.png#lightbox "画像を表示する画像ビュー")
 
     > [!NOTE]
     > [`Image`](xref:Xamarin.Forms.Image) ビューでは、ダウンロードしたイメージが 24 時間、自動的にキャッシュされます。 詳細については、「[Images in Xamarin.Forms](~/xamarin-forms/user-interface/images.md)」 (Xamarin.Forms のイメージ) ガイドの「[Downloaded image caching](~/xamarin-forms/user-interface/images.md#downloaded-image-caching)」 (ダウンロードしたイメージのキャッシュ) を参照してください。
@@ -70,7 +70,7 @@ ms.locfileid: "67277316"
     </ContentPage>
     ```
 
-    このコードでは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) の中の [`Image`](xref:Xamarin.Forms.Image) から構成されるページのユーザー インターフェイスを宣言によって定義します。 [`Image.Source`](xref:Xamarin.Forms.Image.Source) プロパティでは、URI を使用して、表示するイメージを指定します。 [`Image.Source`](xref:Xamarin.Forms.Image.Source) プロパティの型は [`ImageSource`](xref:Xamarin.Forms.ImageSource) です。これにより、イメージをファイル、URI、またはリソースから取得できます。 詳細については、「[Images in Xamarin.Forms](~/xamarin-forms/user-interface/images.md)」 (Xamarin.Forms のイメージ) ガイドの「[Displaying images](~/xamarin-forms/user-interface/images.md#displaying-images)」 (イメージの表示) を参照してください。
+    このコードでは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) の中の [`Image`](xref:Xamarin.Forms.Image) から構成されるページのユーザー インターフェイスを宣言によって定義します。 [`Image.Source`](xref:Xamarin.Forms.Image.Source) プロパティでは、URI を使用して、表示するイメージを指定します。 [`Image.Source`](xref:Xamarin.Forms.Image.Source) プロパティの型は [`ImageSource`](xref:Xamarin.Forms.ImageSource) です。これにより、イメージをファイル、URI、またはリソースから取得できます。 詳細については、「[Images in Xamarin.Forms](~/xamarin-forms/user-interface/images.md)」 (Xamarin.Forms のイメージ) ガイドの「[Displaying images](~/xamarin-forms/user-interface/images.md#display-images)」 (イメージの表示) を参照してください。
 
     [`HeightRequest`](xref:Xamarin.Forms.VisualElement) プロパティでは、`Image` の高さをデバイスに依存しない単位で指定します。
 
@@ -79,7 +79,7 @@ ms.locfileid: "67277316"
 
 1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
-    [![iOS および Android での Image のスクリーンショット](../images/create-image.png "イメージを表示する Image ビュー")](../images/create-image-large.png#lightbox "イメージを表示する Image ビュー")
+    [![iOS および Android 上の画像のスクリーンショット](../images/create-image.png "画像を表示する画像ビュー")](../images/create-image-large.png#lightbox "画像を表示する画像ビュー")
 
     > [!NOTE]
     > [`Image`](xref:Xamarin.Forms.Image) ビューでは、ダウンロードしたイメージが 24 時間、自動的にキャッシュされます。 詳細については、「[Images in Xamarin.Forms](~/xamarin-forms/user-interface/images.md)」 (Xamarin.Forms のイメージ) ガイドの「[Downloaded image caching](~/xamarin-forms/user-interface/images.md#downloaded-image-caching)」 (ダウンロードしたイメージのキャッシュ) を参照してください。

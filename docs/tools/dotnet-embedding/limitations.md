@@ -6,18 +6,18 @@ ms.assetid: EBBBB886-1CEF-4DF4-AFDD-CA96049F878E
 author: davidortinau
 ms.author: daortin
 ms.date: 11/14/2017
-ms.openlocfilehash: 4e2b653365a747b30016a1fbd42b8a01c4c87848
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a8b63638861e8d44deb4ea72959d7461190f7713
+ms.sourcegitcommit: 6266ef043ae0289f174e901f204f2a280a53c071
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029741"
+ms.lasthandoff: 12/30/2019
+ms.locfileid: "75545807"
 ---
 # <a name="net-embedding-limitations"></a>.NET 埋め込みの制限事項
 
 このドキュメントでは、.NET 埋め込みの制限事項について説明し、可能であれば、それらの回避策を示します。
 
-## <a name="general"></a>全般
+## <a name="general"></a>[全般]
 
 ### <a name="use-more-than-one-embedded-library-in-a-project"></a>1つのプロジェクトで複数の埋め込みライブラリを使用する
 
@@ -39,7 +39,7 @@ ms.locfileid: "73029741"
 
 ## <a name="objective-c-generated-code"></a>目的 C で生成されたコード
 
-### <a name="nullability"></a>属性
+### <a name="nullability"></a>NULL 値の許容
 
 .NET には、API に対して null 参照が許容できるかどうかを通知するメタデータはありません。 ほとんどの Api は、`null` 引数を扱うことができない場合に `ArgumentNullException` をスローします。 この問題が発生するのは、例外を C で処理することが、推奨される回避方法であるためです。
 
@@ -48,5 +48,11 @@ ms.locfileid: "73029741"
 ### <a name="bitcode-ios"></a>Bitcode (iOS)
 
 現在、.NET 埋め込みは、一部の Xcode プロジェクトテンプレートに対して有効になっている iOS 上のビットコードをサポートしていません。 生成されたフレームワークを正常にリンクするには、この設定を無効にする必要があります。
+
+* IOS の場合、Apple の AppStore にアプリを送信するには、bitcode を省略できます。 生成された bitcode が "inline assembly" であるため、Xamarin は iOS 用にこれをサポートしていません。 これにより、サーバー側を最適化することはできず、バイナリを大きくしてビルド時間を長くすることができないため、iOS プラットフォームにはメリットがありません。
+
+* TvOS と watchOS の場合、Apple の AppStore にアプリを送信するには、bitcode が必要です。 Xamarin iOS では、この要件を満たすために、tvOS ("inline assembly") と watchOS ("LLVM/IR" として) の bitcode がサポートされています。
+
+* MacOS では、現在、bitcode サポートは必要なく、Xamarin. Mac でもサポートされていません。
 
 ![Bitcode オプション](images/ios-bitcode-option.png)

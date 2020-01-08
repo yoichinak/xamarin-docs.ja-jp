@@ -2,7 +2,7 @@
   href: index.yml
   expanded: true
   items:
-    - name: モバイル アプリの構築
+    - name: モバイル アプリのビルド
       href: get-started/index.md
       expanded: true
       items:
@@ -28,7 +28,7 @@
               href: app-fundamentals/building-cross-platform-applications/practical-code-sharing-strategies.md
             - name: パート 6 - テストと App Store の承認
               href: app-fundamentals/building-cross-platform-applications/testing-and-app-store-approvals.md
-            - name: 'ケース スタディ: Tasky'
+            - name: 'ケース スタディ:Tasky'
               href: app-fundamentals/building-cross-platform-applications/case-study-tasky.md
     - name: コードの共有
       href: app-fundamentals/index.md
@@ -57,7 +57,7 @@
           href: app-fundamentals/nuget-manual.md
         - name: クロス プラットフォーム アプリで C/C++ ライブラリを使用する
           href: cpp/index.md
-    - name: 言語のサポート
+    - name: 言語サポート
       href: platform/index.md
       items:
         - name: 'C#'
@@ -69,7 +69,7 @@
         - name: 'F#'
           href: platform/fsharp/index.md
           items:
-            - name: Getting Started (概要)
+            - name: 作業開始
               href: platform/fsharp/overview.md
             - name: 'F# のサンプル'
               href: platform/fsharp/samples.md
@@ -88,6 +88,8 @@
         - name: パフォーマンス
           href: deploy-test/memory-perf-best-practices.md
           items:
+            - name: Xamarin.Forms のパフォーマンス
+              href: ~/xamarin-forms/deploy-test/performance.md?context=xamarin/cross-platform
             - name: Android のパフォーマンス
               href: ~/android/deploy-test/performance.md?context=xamarin/cross-platform
             - name: iOS のパフォーマンス
@@ -111,7 +113,7 @@
         - name: マルチ プロセスのデバッグ
           href: deploy-test/multi-process-debugging.md
     - name: デスクトップ開発者
-      displayName: 'Windows Forms (WinForms), Windows Presentation Foundation (WPF), and UWP Developers'
+      displayName: 'Windows Forms (WinForms), Windows Presentation Foundation (WPF), and UWP developers'
       href: desktop/index.md
       items:
         - name: アプリのライフサイクルの比較
@@ -171,4 +173,4 @@
         - name: NuGet へのコンポーネント参照の更新
           href: troubleshooting/component-nuget.md
     - name: サンプル
-      href: samples/index.yml
+      href: samples/index.md
