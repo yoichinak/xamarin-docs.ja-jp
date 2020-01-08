@@ -1,4 +1,4 @@
-- name: 開始するには
+- name: はじめに
   href: index.yml
   expanded: true
   items:
@@ -26,7 +26,7 @@
     - name: 最初のアプリ
       href: first-app/index.md
     - name: クイックスタート
-      href: quickstarts/index.yml
+      href: quickstarts/index.md
       expanded: true
       items:
         - name: ファイル > 新規
@@ -70,11 +70,7 @@
     - name: Xamarin について学習する
       expanded: true
       items:
-        - name: ネイティブ アプリ
-          href: ~/cross-platform/get-started/introduction-to-mobile-development.md
         - name: .NET 開発者
-          href: ~/cross-platform/desktop/index.md
-        - name: ASP.NET 開発者
           href: ~/cross-platform/desktop/index.md
         - name: Java 開発者
           href: ~/android/get-started/java-developers.md
