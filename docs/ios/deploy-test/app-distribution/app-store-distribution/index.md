@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/23/2017
-ms.openlocfilehash: 78df4a7f4c90cd6459216f1f65dd09e0daae19f7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 96300cdddcc21511ef85ebbfe33f6ce32cb56cd7
+ms.sourcegitcommit: 6f09bc2b760e76a61a854f55d6a87c4f421ac6c8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026701"
+ms.lasthandoff: 01/02/2020
+ms.locfileid: "75607933"
 ---
 # <a name="app-store-distribution"></a>App Store 配布
 
@@ -85,7 +85,7 @@ Xamarin.iOS アプリケーションをリリースするためにどのよう�
 3. アプリのプレフィックスは、チーム ID として既に設定されており、変更できません。 明示的またはワイルドカード アプリ ID を選択し、次のように逆引き DNS 形式でバンドル ID を入力します。
     - **明示的**: com.[DomainName].[AppName]
     - **ワイルドカード**: com.[DomainName].*
-4. アプリで必要な任意の [App Services](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#appservices) を選択します。
+4. アプリで必要な任意の [App Services](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#provisioning-for-application-services) を選択します。
 5. **[Continue]\(続行\)** ボタンをクリックし、画面の指示に従って新しいアプリ ID を作成します。
 
 ### <a name="creating-a-provisioning-profile"></a>プロビジョニング プロファイルの作成

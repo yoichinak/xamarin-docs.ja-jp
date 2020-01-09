@@ -7,20 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/03/2019
-ms.openlocfilehash: e3c042a82a9870e68c94741ae4bdfaa728a40cb0
-ms.sourcegitcommit: 27e77acd0139c099f6592085a5ea5aabcaeedc7f
+ms.openlocfilehash: 46d0b245246d9e93040cd8591dab8ed3a816268d
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74823905"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487010"
 ---
-# <a name="customizing-a-hybridwebview"></a>HybridWebView のカスタマイズ
+# <a name="customizing-a-webview"></a>WebView のカスタマイズ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-hybridwebview)
 
 _Xamarin.Forms `WebView` は、アプリに Web コンテンツと HTML コンテンツを表示するビューです。この記事では、JavaScript から C# コードを呼び出せるように `WebView` を拡張するカスタム レンダラーを作成する方法について説明します。_
 
-すべての Xamarin.Forms ビューに、ネイティブ コントロールのインスタンスを作成する各プラットフォーム用のレンダラーが付属しています。 iOS 上の Xamarin.Forms アプリケーションによって [`WebView`](xref:Xamarin.Forms.WebView) がレンダリングされると、`WkWebViewRenderer` クラスがインスタンス化され、それによってネイティブの `WkWebView` コントロールもインスタンス化されます。 Android プラットフォーム上では、`WebViewRenderer` クラスによってネイティブの `WebView` コントロールがインスタンス化されます。 ユニバーサル Windows プラットフォーム (UWP) 上では、`WebViewRenderer` クラスによってネイティブの `WebView` コントロールがインスタンス化されます。 Xamarin.Forms コントロールがマップするレンダラーとネイティブ コントロール クラスの詳細については、「[レンダラーの基本クラスおよびネイティブ コントロール](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)」を参照してください。
+すべての Xamarin.Forms ビューに、ネイティブ コントロールのインスタンスを作成する各プラットフォーム用のレンダラーが付属しています。 iOS 上の Xamarin.Forms アプリケーションによって [`WebView`](xref:Xamarin.Forms.WebView) がレンダリングされると、`WkWebViewRenderer` クラスがインスタンス化され、それによってネイティブの `WkWebView` コントロールもインスタンス化されます。 Android プラットフォーム上では、`WebViewRenderer` クラスによってネイティブの `WebView` コントロールがインスタンス化されます。 ユニバーサル Windows プラットフォーム (UWP) 上では、`WebViewRenderer` クラスによってネイティブの `WebView` コントロールがインスタンス化されます。 Xamarin.Forms コントロールによってマップされるレンダラーとネイティブ コントロール クラスの詳細については、「[Renderer Base Classes and Native Controls](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)」 (レンダラーの基底クラスおよびネイティブ コントロール) を参照してください。
 
 次の図は、[`View`](xref:Xamarin.Forms.View) と、それを実装する、対応しているネイティブ コントロールの関係を示しています。
 
