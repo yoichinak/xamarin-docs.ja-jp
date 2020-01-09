@@ -48,7 +48,7 @@ Xamarin では、.NET と Apple という 2 つの個別のエコシステムが
 まず、セレクターを使用して、Objective-C を C# に公開する方法が必要です。 セレクターは、オブジェクトまたはクラスに送信されるメッセージです。 Objective-C では、 [objc_msgSend](~/cross-platform/macios/binding/overview.md) 関数を使用して実行します。
 セレクターの使用方法の詳細については、「[目標 C セレクター](~/ios/internals/objective-c-selectors.md)ガイド」を参照してください。 また、マネージコードを Objective-C に公開する方法が必要です。これは、Objective-C でマネージコードについて何も知られていないことが原因で、より複雑になります。 この問題を回避するには、*レジストラー*を使用します。 これらの詳細については、次のセクションで詳しく説明します。
 
-## <a name="registrars"></a>機関
+## <a name="registrars"></a>レジストラー
 
 前述のように、レジストラーはマネージコードを目的の C に公開するコードです。 これを行うには、NSObject から派生したすべてのマネージクラスのリストを作成します。
 
