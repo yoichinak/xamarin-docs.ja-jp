@@ -15,7 +15,7 @@ ms.locfileid: "73016362"
 ---
 # <a name="available-assemblies"></a>使用できるアセンブリ
 
-Xamarin、Xamarin、および Xamarin. Mac には、多数のアセンブリが付属しています。 Silverlight がデスクトップ .NET アセンブリの拡張サブセットであるのと同様に、Xamarin プラットフォームは、いくつかの Silverlight およびデスクトップ .NET アセンブリの拡張サブセットでもあります。
+Xamarin.iOS、Xamarin.Android、および Xamarin.Mac には、すべて多数のアセンブリが付属しています。 Silverlight がデスクトップ .NET アセンブリの拡張サブセットであるのと同様に、Xamarin プラットフォームも、いくつかの Silverlight およびデスクトップ .NET アセンブリの拡張サブセットです。
 
 Xamarin プラットフォームは、別のプロファイル用にコンパイルされた既存のアセンブリとの ABI との互換性がありません。 ソースコードを再コンパイルして、正しいプロファイルを対象とするアセンブリを生成する必要があります (Silverlight と .NET 3.5 を個別に再コンパイルする必要があるのと同じです)。
 
