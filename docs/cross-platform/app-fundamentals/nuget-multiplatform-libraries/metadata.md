@@ -6,12 +6,12 @@ ms.assetid: 147BA370-67A7-4E6C-BF17-AA7C536C0A48
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 5965b3f78bfc086b1cc6030a02f1cabafaae29d3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5e71ff86869c42d478fbf1ee3f6de5bff59431fc
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016749"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728214"
 ---
 # <a name="editing-nuget-metadata"></a>NuGet メタデータの編集
 
@@ -27,7 +27,7 @@ _プロジェクトオプションを使用して、マルチプラットフォ�
 
 [![](metadata-images/metadata-general-sml.png "NuGet package required metadata window")](metadata-images/metadata-general.png#lightbox)
 
-- **ID** –パッケージ識別子。 Nuget.org (またはパッケージが配布されるすべての場所) 内で一意である必要があります。 この[ガイダンス](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number)に従って、URL で有効な文字のみを使用します (スペースは不要で、ほとんどの特殊文字は使用しないでください)。
+- **ID** –パッケージ識別子。 NuGet.org (またはパッケージが配布されるすべての場所) 内で一意である必要があります。 この[ガイダンス](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number)に従って、URL で有効な文字のみを使用します (スペースは不要で、ほとんどの特殊文字は使用しないでください)。
 - **[バージョン]** – [NuGet のバージョン管理ルール](https://docs.microsoft.com/nuget/create-packages/dependency-versions)と一致するバージョン番号を選択します。
 - **作成者**–名前のコンマ区切りのリスト。
 - **説明**–パッケージを選択しているときに表示される、パッケージの機能の概要です。

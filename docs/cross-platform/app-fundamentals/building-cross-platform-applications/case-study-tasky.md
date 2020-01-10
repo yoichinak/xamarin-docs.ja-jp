@@ -6,12 +6,12 @@ ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: e38fc0d23c65189f51f7f8f159a07894b3e1ab72
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a94baa66c1ca18762efccd980264170648c232fa
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030334"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728292"
 ---
 # <a name="cross-platform-app-case-study-tasky"></a>クロスプラットフォームアプリのケーススタディ: Tasky
 
@@ -19,13 +19,13 @@ ms.locfileid: "73030334"
 
 <a name="Design_Process" />
 
-## <a name="design-process"></a>デザインプロセス
+## <a name="design-process"></a>設計プロセス
 
 コーディングを開始する前に、目的に応じて、道路マップのを作成することをお勧めします。 これは、複数の方法で公開される機能を構築するクロスプラットフォームの開発に特に当てはまります。 構築している内容を明確に理解しておくと、開発サイクルの後半で時間と労力を節約できます。
 
  <a name="Requirements" />
 
-### <a name="requirements"></a>［要件］
+### <a name="requirements"></a>要件
 
 アプリケーションを設計するための最初の手順は、目的の機能を特定することです。 これには、高レベルの目標や詳細なユースケースがあります。 Tasky には、簡単な機能要件があります。
 
@@ -52,7 +52,7 @@ ms.locfileid: "73030334"
 
 Tasky では、' TaskItem ' ごとに3つのプロパティを格納する必要があります。
 
-- **名前**–文字列
+- **Name** – 文字列
 - **メモ**–文字列
 - **完了**–ブール値
 
@@ -103,7 +103,7 @@ Tasky ポータブルは、共通コードを共有するためのポータブ�
 
  <a name="References" />
 
-### <a name="references"></a>関連項目
+### <a name="references"></a>参照
 
 ポータブルクラスライブラリは、プラットフォームとフレームワークの機能のサポートレベルが異なる複数のプラットフォームで使用できる必要があります。 そのため、使用できるパッケージとフレームワークライブラリには制限があります。 たとえば、Xamarin では、c# の `dynamic` キーワードがサポートされていないため、ポータブルクラスライブラリでは、このようなコードが Android で動作する場合でも、動的コードに依存するパッケージを使用することはできません。 Visual Studio for Mac では、互換性のないパッケージと参照を追加することはできませんが、後での使用を回避するために、制限事項を考慮する必要があります。
 
@@ -115,7 +115,7 @@ Tasky ポータブルは、共通コードを共有するためのポータブ�
 
 データ層には、データベース、フラットファイル、またはその他のメカニズムのいずれであるかにかかわらず、データの物理的なストレージを行うコードが含まれています。 Tasky データレイヤーは2つの部分で構成されます。 SQLite-NET ライブラリと、それを接続するためのカスタムコードです。
 
-Tasky は、(Frank Kreuger によって発行された) Sqlite-net nuget パッケージを使用して、オブジェクトリレーショナルマッピング (ORM) データベースインターフェイスを提供する SQLite-NET コードを埋め込みます。 `TaskItemDatabase` クラスは `SQLiteConnection` から継承し、SQLite にデータを読み書きするために必要な Create、Read、Update、Delete (CRUD) の各メソッドを追加します。 これは、他のプロジェクトで再利用できる汎用 CRUD メソッドの単純な定型的な実装です。
+Tasky は、(Frank Kreuger によって発行された) Sqlite-net NuGet パッケージを使用して、オブジェクトリレーショナルマッピング (ORM) データベースインターフェイスを提供する SQLite-NET コードを埋め込みます。 `TaskItemDatabase` クラスは `SQLiteConnection` から継承し、SQLite にデータを読み書きするために必要な Create、Read、Update、Delete (CRUD) の各メソッドを追加します。 これは、他のプロジェクトで再利用できる汎用 CRUD メソッドの単純な定型的な実装です。
 
 `TaskItemDatabase` はシングルトンであり、すべてのアクセスが同じインスタンスに対して行われることを保証します。 ロックは、複数のスレッドからの同時アクセスを防ぐために使用されます。
 
@@ -186,7 +186,7 @@ public T GetItem<T> (int id) where T : BL.Contracts.IBusinessEntity, new ()
 
  <a name="Data_Access_Layer_(DAL)" />
 
-### <a name="data-access-layer-dal"></a>データアクセス層 (DAL)
+### <a name="data-access-layer-dal"></a>データ アクセス層 (DAL)
 
 `TaskItemRepository` クラスは、`TaskItem` オブジェクトの作成、削除、取得、および更新を可能にする、厳密に型指定された API を使用してデータストレージメカニズムをカプセル化します。
 
@@ -227,7 +227,7 @@ path>/db3"、Windows Phone の場合は "TaskDB..." になります。
 ### <a name="business-layer-bl"></a>ビジネス層 (BL)
 
 ビジネス層は、モデルクラスとファサードを実装してそれらを管理します。
-Tasky では、モデルは `TaskItem` クラスで、`TaskItemManager` ファサードパターンを実装して `TaskItems` を管理するための API を提供します。
+Tasky では、モデルは `TaskItem` クラスで、`TaskItemManager` ファサードパターンを実装して `TaskItems`を管理するための API を提供します。
 
  <a name="Façade" />
 
@@ -243,7 +243,7 @@ Tasky では、モデルは `TaskItem` クラスで、`TaskItemManager` ファ�
 
 共通コードが記述されたら、ユーザーインターフェイスを作成して、それによって公開されたデータを収集して表示する必要があります。 `TaskItemManager` クラスは、ファサードパターンを実装して、アプリケーションコードにアクセスするための単純な API を提供します。
 
-各プラットフォーム固有のプロジェクトで記述されたコードは、通常、そのデバイスのネイティブ SDK に密結合され、`TaskItemManager` によって定義された API を使用してのみ共通コードにアクセスします。 これには、`TaskItem` など、公開するメソッドとビジネスクラスが含まれます。
+各プラットフォーム固有のプロジェクトで記述されたコードは、通常、そのデバイスのネイティブ SDK に密結合され、`TaskItemManager`によって定義された API を使用してのみ共通コードにアクセスします。 これには、`TaskItem`など、公開するメソッドとビジネスクラスが含まれます。
 
 イメージはプラットフォーム間で共有されませんが、各プロジェクトに個別に追加されます。 プラットフォームごとに異なるファイル名、ディレクトリ、および解決方法を使用してイメージを処理するので、この方法が重要です。
 
@@ -263,7 +263,7 @@ Tasky では、モデルは `TaskItem` クラスで、`TaskItemManager` ファ�
 
  <a name="References" />
 
-### <a name="references"></a>関連項目
+### <a name="references"></a>参照
 
 IOS アプリはプラットフォーム固有の SDK ライブラリを参照します。例: Xamarin. iOS と Monotouch.dialog-1。
 
@@ -341,7 +341,7 @@ public class TaskDialog {
 
 タスクの詳細とは、タスクの編集や削除を可能にする入力画面です。
 
-Tasky は `MonoTouch.Dialog` のリフレクション API を使用して画面を表示するため、`UIViewController` の実装はありません。 代わりに、`HomeScreen` クラスは、アプリケーション層の `TaskDialog` クラスを使用して `DialogViewController` をインスタンス化して表示します。
+Tasky は `MonoTouch.Dialog`のリフレクション API を使用して画面を表示するため、`UIViewController` の実装はありません。 代わりに、`HomeScreen` クラスは、アプリケーション層の `TaskDialog` クラスを使用して `DialogViewController` をインスタンス化して表示します。
 
 このスクリーンショットは、 **[名前]** フィールドと **[メモ]** フィールドにウォーターマークテキストを設定する `Entry` 属性を示す空の画面を示しています。
 
@@ -367,7 +367,7 @@ Tasky は `MonoTouch.Dialog` のリフレクション API を使用して画面�
 
  <a name="References" />
 
-### <a name="references"></a>関連項目
+### <a name="references"></a>参照
 
 Android アプリプロジェクトは、Android SDK からクラスにアクセスするために、プラットフォーム固有の Xamarin. Android アセンブリを参照する必要があります。
 
@@ -381,11 +381,11 @@ Android アプリプロジェクトは、Android SDK からクラスにアクセ
 
 前に見た iOS のバージョンと同様に、Android バージョンのアプリケーションレイヤーには、コアによって公開されたオブジェクトを UI に "バインド" するために必要なプラットフォーム固有のクラスが含まれています。
 
- **Tasklistadapter** –オブジェクトの > \<T 一覧を表示するには、`ListView` にカスタムオブジェクトを表示するアダプターを実装する必要があります。 アダプターは、リスト内の各項目に使用するレイアウトを制御します。この場合、コードは Android の組み込みレイアウト `SimpleListItemChecked` を使用します。
+ **Tasklistadapter** –オブジェクトの\<t > 一覧を表示するには、`ListView`にカスタムオブジェクトを表示するアダプターを実装する必要があります。 アダプターは、リスト内の各項目に使用するレイアウトを制御します。この場合、コードは Android の組み込みレイアウト `SimpleListItemChecked`を使用します。
 
  <a name="User_Interface_(UI)" />
 
-### <a name="user-interface-ui"></a>ユーザーインターフェイス (UI)
+### <a name="user-interface-ui"></a>ユーザー インターフェイス (UI)
 
 Android アプリのユーザーインターフェイスレイヤーは、コードと XML マークアップを組み合わせたものです。
 
@@ -426,9 +426,9 @@ PCL ライブラリへのすべての参照は、`TaskItemManager` クラスを�
 
  <a name="References" />
 
-### <a name="references"></a>関連項目
+### <a name="references"></a>参照
 
-プラットフォーム固有のプロジェクトは、有効な Windows Phone アプリケーションを作成するために必要なプラットフォーム固有のライブラリ (`Microsoft.Phone` や `System.Windows` など) を参照する必要があります。
+プラットフォーム固有のプロジェクトは、有効な Windows Phone アプリケーションを作成するために必要なプラットフォーム固有のライブラリ (`Microsoft.Phone` や `System.Windows`など) を参照する必要があります。
 
 また、PCL プロジェクトを参照する必要があります (例として、 `TaskyPortableLibrary`) を使用して、`TaskItem` クラスとデータベースを使用します。
 
@@ -448,7 +448,7 @@ Viewmodel は PCL (`TaskItemManager`) からデータをラップし、Silverlig
 
  <a name="User_Interface_(UI)" />
 
-### <a name="user-interface-ui"></a>ユーザーインターフェイス (UI)
+### <a name="user-interface-ui"></a>ユーザー インターフェイス (UI)
 
 XAML には、マークアップで宣言し、オブジェクトを表示するために必要なコードの量を減らすことができる、独自のデータバインディング機能があります。
 
@@ -457,7 +457,7 @@ XAML には、マークアップで宣言し、オブジェクトを表示する
 
  <a name="MainPage" />
 
-#### <a name="mainpage"></a>Mainpage.xaml
+#### <a name="mainpage"></a>MainPage
 
 Mainpage.xaml クラスは、XAML のデータバインディング機能を使用してデータを表示するために `TaskListViewModel` を使用します。 ページの `DataContext` はビューモデルに設定されており、これは非同期に設定されます。 XAML の `{Binding}` 構文によって、データの表示方法が決まります。
 
@@ -499,7 +499,7 @@ Windows Phone アプリでは、標準レイアウトを使用して、上部に
 
  <a name="Summary" />
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 このドキュメントでは、3つのモバイルプラットフォーム (iOS、Android、Windows Phone) でコードの再利用を容易にするために、階層型アプリケーションの設計の原則が簡単なアプリケーションにどのように適用されているかについて詳しく説明しました。
 

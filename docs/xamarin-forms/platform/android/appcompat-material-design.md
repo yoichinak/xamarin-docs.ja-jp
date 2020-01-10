@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/27/2017
-ms.openlocfilehash: e8c05000275b65c18ddb6b628091da0fac462278
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 36c5733c347e3493b5ed423c52766c7e33fbdb3d
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73005452"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728331"
 ---
 # <a name="adding-appcompat-and-material-design"></a>AppCompat とマテリアルデザインの追加
 
@@ -21,13 +21,13 @@ _次の手順に従って、既存の Xamarin. Forms Android アプリを変換�
 <!-- source https://gist.github.com/jassmith/a3b2a543f99126782936
 https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ -->
 
-## <a name="overview"></a>概要
+## <a name="overview"></a>の概要
 
 次の手順では、既存の Xamarin. Forms Android アプリケーションを更新して AppCompat ライブラリを使用し、Android バージョンの Xamarin. Forms アプリで素材の設計を有効にする方法について説明します。
 
 ### <a name="1-update-xamarinforms"></a>1. Xamarin. フォームを更新する
 
-ソリューションが Xamarin. Forms 2.0 以降を使用していることを確認します。 必要に応じて、Xamarin. Forms Nuget パッケージを2.0 に更新します。
+ソリューションが Xamarin. Forms 2.0 以降を使用していることを確認します。 必要に応じて、Xamarin. Forms NuGet パッケージを2.0 に更新します。
 
 ### <a name="2-check-android-version"></a>2. Android のバージョンを確認する
 
@@ -39,7 +39,7 @@ Android プロジェクトのターゲットフレームワークが Android 6.0
 
 Android プロジェクトに次の3つのファイルを作成し、以下の内容を貼り付けます。 Google には、[スタイルガイド](https://www.google.com/design/spec/style/color.html#color-color-palette)と[カラーパレットジェネレーター](https://www.materialpalette.com/)が用意されています。このジェネレーターを使用すると、指定した配色に対して代替配色を選択できます。
 
-**Resources/values/colors**
+**Resources/values/colors.xml**
 
 ```xml
 <resources>
@@ -50,7 +50,7 @@ Android プロジェクトに次の3つのファイルを作成し、以下の�
 </resources>
 ```
 
-**Resources/values/style .xml**
+**Resources/values/style.xml**
 
 ```xml
 <resources>
@@ -68,7 +68,7 @@ Android プロジェクトに次の3つのファイルを作成し、以下の�
 
 Android ロリポップ以降で実行するときに特定のプロパティを適用するには、 **v21**フォルダーに追加のスタイルを含める必要があります。
 
-**Resources/values-v21/style .xml**
+**Resources/values-v21/style.xml**
 
 ```xml
 <resources>
@@ -84,7 +84,7 @@ Android ロリポップ以降で実行するときに特定のプロパティを
 
 この新しいテーマ情報が使用されるようにするには、`android:theme="@style/MyTheme"` を追加して**Androidmanifest**ファイルのテーマを設定します (XML の残りの部分はそのままにします)。
 
-**Properties/AndroidManifest .xml**
+**Properties/AndroidManifest.xml**
 
 ```xml
 ...
@@ -97,7 +97,7 @@ Android ロリポップ以降で実行するときに特定のプロパティを
 
 **Resources/layout**ディレクトリに**tabbar. Axml**ファイルと**Toolbar. axml**ファイルを作成し、以下の内容を貼り付けます。
 
-**Resources/layout/Tabbar. axml**
+**Resources/layout/Tabbar.axml**
 
 ```xml
 <android.support.design.widget.TabLayout
