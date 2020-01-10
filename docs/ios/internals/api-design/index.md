@@ -91,7 +91,7 @@ Xamarin.iOS には、 *Xamarin.iOS Profile* を構成する多数のアセンブ
 
 [Foundation](xref:Foundation)名前空間は、iOS の一部である Objective-C Foundation フレームワークと相互運用できるように設計された基本データ型を提供します。これは、Objective-C でのオブジェクト指向プログラミングの基本となります。
 
-Xamarin.iOS は、C# で Objective-C のクラスの階層をミラーリングしています。 たとえば、Objective-C の基本クラスである  [NSObject](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html)は[NSObject](xref:Foundation.NSObject)を介して C# から使用できます。
+Xamarin.iOS は、C# で Objective-C のクラスの階層をミラーリングしています。 たとえば、Objective-C の基本クラスである  [NSObject](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html)は[Foundation.NSObject](xref:Foundation.NSObject)を介して C# から使用できます。
 
 この名前空間には、基になる Objective-C からの型のバインドが用意されていますが、いくつかのケースでは、基になる型を .NET 型にマップしています。 例えば:
 
