@@ -1,117 +1,63 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Xamarin.Forms のレイアウト
+summary: Xamarin.Forms のレイアウト クラスとレイアウトの概念について説明します。
 metadata:
   title: Xamarin.Forms のレイアウト
-  description: Xamarin. Forms のレイアウト クラスとレイアウト機能について説明します。
+  description: Xamarin.Forms のレイアウト クラスとレイアウトの概念について説明します。
   ms.topic: landing-page
   ms.prod: xamarin
   ms.assetid: CF6BD41F-CD4B-4576-841D-B8A49A4EC754
   author: davidbritch
   ms.author: dabritch
-  ms.date: 08/14/2019
-abstract:
-  description: Xamarin. Forms のレイアウト クラスとレイアウト機能について説明します。
-sections:
-  - title: null
-    items:
-      - type: list
-        style: cards
-        className: cardsB
-        items:
-          - href: choose-layout.md
-            html: Xamarin.Forms のメインのレイアウトクラスがどのように子を配置し、サイズを変更するのかについて説明します。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-              href: choose-layout.md
-            title: レイアウトの選択
-          - href: stack-layout.md
-            html: ビューを 1 次元のスタックで水平方向または垂直方向に整理する方法について学習します。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-              href: stack-layout.md
-            title: StackLayout
-          - href: grid.md
-            html: ビューを比例サイズと絶対サイズにできるように行と列に整理する方法について学習します。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-              href: grid.md
-            title: グリッド
-          - href: flex-layout.md
-            html: 折り返しを使用して、ビューを水平方向または垂直方向に整理する方法について説明します。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-              href: flex-layout.md
-            title: FlexLayout
-          - href: relative-layout.md
-            html: レイアウト ビューや兄弟ビューのプロパティに対する制約を設定して、ビューを整理する方法について説明します。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-              href: absolute-layout.md
-            title: RelativeLayout
-          - href: absolute-layout.md
-            html: 座標とサイズを相対値または絶対値で設定して、ビューを整理する方法について説明します。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-              href: absolute-layout.md
-            title: AbsoluteLayout
-          - href: scroll-view.md
-            html: ビューが画面の境界内に収まらないときにスクロールを可能にする方法について説明します。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-              href: scroll-view.md
-            title: ScrollView
-          - href: contentview.md
-            html: ContentView を使用してカスタム コントロールを作成する方法について説明します。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-              href: contentview.md
-            title: ContentView
-          - href: frame.md
-            html: 色、ドロップ シャドウなどのオプションを使用して構成できるフレームでビューを折り返す方法について説明します。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-              href: frame.md
-            title: フレーム
-          - href: layout-options.md
-            html: 親レイアウト内でビューの配置を定義する方法について説明します。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-              href: layout-options.md
-            title: LayoutOptions
-          - href: margin-and-padding.md
-            html: 要素とその隣接する要素、および子要素との距離を制御する方法について説明します。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-              href: margin-and-padding.md
-            title: 余白とスペース
-          - href: device-orientation.md
-            html: デバイスの向きの変更を構成し、それに対応する方法について説明します。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-              href: device-orientation.md
-            title: デバイスの向き
-          - href: tablet.md
-            html: タブレットとデスクトップのアプリケーションのレイアウトを最適化する方法について説明します。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-              href: tablet.md
-            title: タブレットとデスクトップのレイアウト
-          - href: bindable-layouts.md
-            html: 項目のコレクションにバインドすることによって、レイアウト クラスでコンテンツを生成し、その外観を設定する方法について説明します。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-              href: bindable-layouts.md
-            title: バインド可能なレイアウト
-          - href: layout-compression.md
-            html: ビジュアル ツリーから特定のレイアウト オブジェクトを削除し、ページのレンダリング パフォーマンスを改善する方法について説明します。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-              href: layout-compression.md
-            title: レイアウト圧縮
-          - href: custom.md
-            html: 方向を区別するカスタム レイアウト クラスを作成する方法について説明します。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_dashboard.svg'
-              href: custom.md
-            title: カスタム レイアウト
+  ms.date: 01/03/2020
+  ms.openlocfilehash: e8d3e6d57bab88c85f0058ee2c974d932bd07b37
+  ms.sourcegitcommit: ff0dd66d6d00257ac1695aa7ac46940ff7d3bd93
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 01/06/2020
+  ms.locfileid: "75679741"
+landingContent:
+- title: コア レイアウト
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: レイアウトの選択
+      url: choose-layout.md
+    - text: AbsoluteLayout
+      url: absolute-layout.md
+    - text: FlexLayout
+      url: flex-layout.md
+    - text: グリッド
+      url: grid.md
+    - text: RelativeLayout
+      url: relative-layout.md
+    - text: StackLayout
+      url: stack-layout.md
+- title: その他のレイアウト
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: ContentView
+      url: contentview.md
+    - text: フレーム
+      url: frame.md
+    - text: ScrollView
+      url: scroll-view.md
+- title: レイアウトの概念
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: バインド可能なレイアウト
+      url: bindable-layouts.md
+    - text: カスタム レイアウト
+      url: custom.md
+    - text: デバイスの向き
+      url: device-orientation.md
+    - text: LayoutOptions
+      url: layout-options.md
+    - text: レイアウトの圧縮
+      url: layout-compression.md
+    - text: 余白とパディング
+      url: margin-and-padding.md
+    - text: タブレットとデスクトップのレイアウト
+      url: tablet.md

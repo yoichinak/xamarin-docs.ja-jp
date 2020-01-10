@@ -9,12 +9,12 @@ metadata:
   author: davidbritch
   ms.author: dabritch
   ms.date: 11/06/2019
-  ms.openlocfilehash: a5289c5b1935ec133b0f823a7fbebe307a8606a6
-  ms.sourcegitcommit: 2dea02d0c7497cd5a5cbdce5a26ae33540d78dcc
+  ms.openlocfilehash: e8269c87513c127c24fbfa3b93963300c41d8eae
+  ms.sourcegitcommit: ff0dd66d6d00257ac1695aa7ac46940ff7d3bd93
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 11/27/2019
-  ms.locfileid: "74550084"
+  ms.lasthandoff: 01/06/2020
+  ms.locfileid: "75680132"
 highlightedContent:
   items:
   - title: Xamarin.Forms とは
@@ -96,7 +96,7 @@ conceptualContent:
       itemType: concept
     footerLink:
       url: ~/xamarin-forms/app-fundamentals/index.yml
-      text: 関連項目
+      text: 詳しく見る
   - title: ユーザー インターフェイス
     links:
     - text: CollectionView
@@ -113,7 +113,7 @@ conceptualContent:
       itemType: concept
     footerLink:
       url: ~/xamarin-forms/user-interface/index.yml
-      text: 関連項目
+      text: 詳しく見る
   - title: Xamarin.Forms XAML
     links:
     - text: XAML の基礎
@@ -130,7 +130,7 @@ conceptualContent:
       itemType: concept
     footerLink:
       url: ~/xamarin-forms/xaml/index.yml
-      text: 関連項目
+      text: 詳しく見る
   - title: プラットフォーム機能
     links:
     - text: Android プラットフォーム固有設定
@@ -147,7 +147,7 @@ conceptualContent:
       itemType: concept
     footerLink:
       url: ~/xamarin-forms/platform/index.yml
-      text: 関連項目
+      text: 詳しく見る
   - title: Xamarin.Essentials
     links:
     - text: はじめに
@@ -164,7 +164,7 @@ conceptualContent:
       itemType: reference
     footerLink:
       url: ~/essentials/index.md?context=xamarin/xamarin-forms
-      text: 関連項目
+      text: 詳しく見る
   - title: データと Azure Cloud Services
     links:
     - text: ファイル処理
@@ -181,7 +181,7 @@ conceptualContent:
       itemType: concept
     footerLink:
       url: ~/xamarin-forms/data-cloud/index.yml
-      text: 関連項目
+      text: 詳しく見る
   - title: 配置とテスト
     links:
     - text: Visual Studio App Center を使用したテストの自動化
@@ -198,7 +198,7 @@ conceptualContent:
       itemType: concept
     footerLink:
       url: ~/xamarin-forms/deploy-test/index.yml
-      text: 関連項目
+      text: 詳しく見る
   - title: 高度な概念と内部構造
     links:
     - text: コントロール クラスの階層構造
@@ -214,8 +214,8 @@ conceptualContent:
       url: ~/xamarin-forms/internals/sourcelink.md
       itemType: concept
     footerLink:
-      url: ~/xamarin-forms/internals/index.yml
-      text: 関連項目
+      url: ~/xamarin-forms/internals/index.md
+      text: 詳しく見る
 additionalContent:
   sections:
   - title: ブック
