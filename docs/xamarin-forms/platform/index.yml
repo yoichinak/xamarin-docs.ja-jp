@@ -1,75 +1,75 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Xamarin.Forms のプラットフォーム機能
+summary: さまざまな手法を使って、Xamarin.Forms のプラットフォーム固有の機能を活用する方法を説明します。
 metadata:
   title: Xamarin.Forms のプラットフォーム機能
-  description: さまざまな手法を使って、Xamarin.Forms のプラットフォームに固有の機能を活用する方法を説明します。
+  description: さまざまな手法を使って、Xamarin.Forms のプラットフォーム固有の機能を活用する方法を説明します。
   ms.topic: landing-page
   ms.prod: xamarin
   ms.assetid: 2C6CE42C-E380-4BB9-90CC-D0F4E60C4C03
   author: davidbritch
   ms.author: dabritch
-  ms.date: 07/23/2019
-abstract:
-  description: さまざまな手法を使って、Xamarin.Forms のプラットフォームに固有の機能を活用する方法を説明します。
-sections:
-  - title: プラットフォーム固有設定
-    items:
-      - type: list
-        style: cards
-        className: cardsB
-        items:
-          - href: android/index.md
-            html: Xamarin.Forms に用意されている Android プラットフォームに固有の設定を使用する方法と、マテリアル デザインを使用するよう既存の Xamarin.Forms Android アプリを更新する方法について説明します。
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_android.svg'
-              href: android/index.md
-            title: Android
-          - href: ios/index.md
-            html: Xamarin.Forms に用意されている iOS プラットフォームに固有の設定を使用する方法と、追加の iOS スタイル設定を行う方法について説明します。
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_ios.svg'
-              href: ios/index.md
-            title: iOS
-          - href: windows/index.md
-            html: Xamarin.Forms に用意されている UWP プラットフォームに固有の設定を使用する方法と、既存の Xamarin.Forms ソリューションに UWP プロジェクトを追加する方法について説明します。
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_Windows.svg'
-              href: windows/index.md
-            title: Windows
-          - href: platform-specifics/index.md
-            html: プラットフォーム固有設定と、ベンダーがエフェクトを使ってプラットフォーム固有設定を作成する方法について説明します。
-            image:
-              src: ~/media/icons/i_app-build.svg
-              href: platform-specifics/index.md
-            title: プラットフォーム固有設定の作成
-  - title: プラットフォーム機能
-    items:
-      - type: list
-        style: cards
-        className: cardsB
-        items:
-          - href: device.md
-            html: デバイス クラスを使用して、プラットフォームごとに機能とレイアウトをきめ細かく制御できるようにする方法について説明します。
-            image:
-              src: ~/media/icons/i_desktop-phone.svg
-              href: device.md
-            title: デバイス クラス
-          - href: native-forms.md
-            html: ネイティブの Xamarin.iOS、Xamarin.Android、および UWP プロジェクトで、Xamarin.Forms の ContentPage の派生ページを使用する方法について説明します。
-            image:
-              src: ~/media/icons/i_xaml-forms.svg
-              href: native-forms.md
-            title: ネイティブ フォーム
-          - href: native-views/index.md
-            html: Android、iOS、ユニバーサル Windows プラットフォームのネイティブ ビューを、Xamarin.Forms アプリケーションから直接参照する方法について説明します。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_form.svg'
-              href: native-views/index.md
-            title: ネイティブ ビュー
-          - href: sign-in-with-apple/index.md
-            html: Apple でのサインインを Android および iOS 上で使用して、より強力なユーザー プライバシーを提供する方法について説明します。
-            image:
-              src: 'https://docs.microsoft.com/media/logos/logo_ios.svg'
-              href: sign-in-with-apple/index.md
-            title: Apple でのサインイン
+  ms.date: 12/30/2019
+  ms.openlocfilehash: c95416d35a54dfd5954318ea068a4c70622dc1a1
+  ms.sourcegitcommit: ff0dd66d6d00257ac1695aa7ac46940ff7d3bd93
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 01/06/2020
+  ms.locfileid: "75679650"
+landingContent:
+- title: Android
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: ListView 高速スクロール
+      url: android/listview-fast-scrolling.md
+    - text: TabbedPage ページ スワイプ
+      url: android/tabbedpage-page-swiping.md
+    - text: Material デザイン
+      url: android/appcompat-material-design.md
+    - text: VisualElement の昇格
+      url: android/visualelement-elevation.md
+    - text: 詳しく見る >
+      url: android/index.md
+- title: iOS
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: エントリのカーソルの色
+      url: ios/entry-cursor-color.md
+    - text: ラージ ページ タイトル
+      url: ios/page-large-title.md
+    - text: ページのホーム インジケーターの表示
+      url: ios/page-home-indicator.md
+    - text: スライダーのつまみのタップ
+      url: ios/slider-thumb.md
+    - text: 詳しく見る >
+      url: ios/index.md
+- title: Windows
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: ListView の選択モード
+      url: windows/listview-selectionmode.md
+    - text: RefreshView のプル方向
+      url: windows/refreshview-pulldirection.md
+    - text: SearchBar のスペル チェック
+      url: windows/searchbar-spell-check.md
+    - text: TabbedPage のタブ アイコン
+      url: windows/tabbedpage-icons.md
+    - text: 詳しく見る >
+      url: windows/index.md
+- title: プラットフォーム機能
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: プラットフォーム固有設定の作成
+      url: platform-specifics/index.md
+    - text: デバイス クラス
+      url: device.md
+    - text: ネイティブ フォーム
+      url: native-forms.md
+    - text: ネイティブ ビュー
+      url: native-views/index.md
+    - text: Apple でのサインイン
+      url: sign-in-with-apple/index.md

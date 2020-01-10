@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: cbea7686c2ec96492f9531e1ff30d1686db1a4c0
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: edc778879aa88d420f41bd2b7b8e15b6d80b5939
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031773"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728266"
 ---
 # <a name="ios-9-compatibility"></a>iOS 9 の互換性
 
@@ -46,7 +46,7 @@ Visual Studio が最新の安定したバージョンに更新されているこ
 前述の2つの問題に対処するために使用しているコンポーネントまたは Nuget の新しいバージョンを待つ必要はあり**ません**。
 これらの問題は、Xamarin. iOS の最新の安定したリリースを使用してアプリを再構築するだけで修正されます。
 
-同様に、コンポーネントベンダーと Nuget の作成者は、前述の2つの問題を修正するためだけに新しいビルドを送信する必要は**ありません**。 ただし、コンポーネントまたは Nuget で `UICollectionView` を使用している場合、または**Xib**ファイルからビューを読み込む場合は、以下で説明する iOS 9 の互換性の問題に対処するために更新が必要に*なることがあり*ます。
+同様に、コンポーネントベンダーと NuGet の作成者は、前述の2つの問題を修正するためだけに新しいビルドを送信する必要は**ありません**。 ただし、コンポーネントまたは NuGet で `UICollectionView` を使用している場合、または**Xib**ファイルからビューを読み込む場合は、以下で説明する iOS 9 の互換性の問題に対処するために更新が必要に*なることがあり*ます。
 
 <a name="compat" />
 
