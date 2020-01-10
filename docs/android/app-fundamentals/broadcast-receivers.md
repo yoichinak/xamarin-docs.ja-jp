@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/20/2018
-ms.openlocfilehash: c9a0eee2779aa392cb2049b5518b6f30b7f05abc
-ms.sourcegitcommit: 58a08133496df53a639a82a7f672724220c57fd5
+ms.openlocfilehash: 2dd0a9a98c05204606f157cd9cd1028582af375b
+ms.sourcegitcommit: 5d75830fca6f2e58452d4445806e3653a3145dc0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74540394"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870910"
 ---
 # <a name="broadcast-receivers-in-xamarinandroid"></a>Xamarin. Android で受信者をブロードキャストする
 
@@ -29,7 +29,7 @@ Android は、次の2種類のブロードキャストを識別します。
 
 ブロードキャストレシーバーは `BroadcastReceiver` 型のサブクラスであり、 [`OnReceive`](xref:Android.Content.BroadcastReceiver.OnReceive*)メソッドをオーバーライドする必要があります。 Android はメインスレッドで `OnReceive` を実行するので、このメソッドはすぐに実行されるように設計する必要があります。 `OnReceive` でスレッドを生成する場合は、メソッドの終了時に Android がプロセスを終了する可能性があるため、注意が必要です。 ブロードキャストレシーバーで長時間実行される作業を実行する必要がある場合は、`JobScheduler` または _Firebase のジョブディスパッチャー_ を使用して_ジョブ_のスケジュールを設定することをお勧めします。 ジョブでの作業のスケジュール設定については、別のガイドで説明します。
 
-_インテントフィルター_は、Android がメッセージを適切にルーティングできるように、ブロードキャストレシーバーを登録するために使用されます。 インテントフィルターは、実行時に指定できます (これは、_コンテキスト登録の受信_者または_動的な登録_と呼ばれることもあります)。また、Android マニフェスト (マニフェストに登録された_受信側_) で静的に定義することもできます。 Xamarin Android には、 C#インテントフィルターを静的に登録する属性`IntentFilterAttribute`が用意されています (この詳細については、このガイドで後述します)。 Android 8.0 以降では、アプリケーションが暗黙的なブロードキャストに対して静的に登録することはできません。
+_インテントフィルター_は、Android がメッセージを適切にルーティングできるように、ブロードキャストレシーバーを登録するために使用されます。 インテントフィルターは、実行時に指定できます (これは、_コンテキスト登録の受信_者または_動的な登録_と呼ばれることもあります)。また、Android マニフェスト (マニフェストに登録された_受信側_) で静的に定義することもできます。 Xamarin Android には、 C#インテントフィルターを静的に登録する属性 `IntentFilterAttribute`が用意されています (この詳細については、このガイドで後述します)。 Android 8.0 以降では、アプリケーションが暗黙的なブロードキャストに対して静的に登録することはできません。
 
 マニフェスト登録受信側とコンテキスト登録受信側の主な違いは、コンテキスト登録された受信側がアプリケーションの実行中にブロードキャストに応答するだけで、マニフェストに登録された受信側が応答できることです。アプリが実行されていない場合でもブロードキャストします。  
 
@@ -82,6 +82,9 @@ public class MyBootReceiver : BroadcastReceiver
     }
 }
 ```
+
+> [!NOTE]
+> Android 8.0 (API 26 以降) では、ユーザーが直接対話していないときにアプリが実行できる操作に[制限が設け](https://developer.android.com/about/versions/oreo/background)られていました。 これらの制限は、バックグラウンドサービスと、`Android.Content.Intent.ActionBootCompleted`などの暗黙的なブロードキャストレシーバーに影響します。 これらの制限により、新しいバージョンの Android に `Boot Completed` ブロードキャスト受信者を登録する際に問題が発生する可能性があります。 この場合、これらの制限は、ブロードキャストレシーバーから呼び出すことができるフォアグラウンドサービスには適用されないことに注意してください。
 
 カスタムインテントに応答するインテントフィルターを作成することもできます。 次に例を示します。 
 
@@ -158,7 +161,7 @@ public class MainActivity: Activity
     SendBroadcast(intent);
     ```
 
-2. **SendOrderedBroadcast** &ndash; このメソッドは `Context.SendBroadcast`と非常によく似ていますが、その目的は、レシーバーが登録された順序で、レシーバーに一度に1つずつ発行される点が異なります。
+2. SendOrderedBroadcast&ndash; This is メソッドはと非常に`Context.SendBroadcast`よく似ていますが、その目的は、レシーバーが登録された順序で、レシーバーに一度に1つずつ発行される点が異なります。
 
 ### <a name="localbroadcastmanager"></a>LocalBroadcastManager
 
