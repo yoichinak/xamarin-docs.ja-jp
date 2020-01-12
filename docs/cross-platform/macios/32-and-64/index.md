@@ -1,6 +1,6 @@
 ---
 title: 32/64 ビットプラットフォームに関する考慮事項
-description: このドキュメントでは、Xamarin iOS または Xamarin. Mac アプリケーションの32ビットアーキテクチャと64ビットアーキテクチャを対象とする場合に留意すべきさまざまな考慮事項について説明します。
+description: このドキュメントでは、Xamarin.iOS または Xamarin.Mac アプリケーションの32ビットアーキテクチャと64ビットアーキテクチャを対象とする場合に留意すべきさまざまな考慮事項について説明します。
 ms.prod: xamarin
 ms.assetid: F7126340-04B2-4A10-B14D-394E23527C1A
 author: davidortinau
@@ -15,13 +15,13 @@ ms.locfileid: "73016331"
 ---
 # <a name="3264-bit-platform-considerations"></a>32/64 ビットプラットフォームに関する考慮事項
 
-IOS と macOS は、従来は32と64ビットの両方のアプリをサポートしていましたが、Apple は、非推奨の32ビットサポートを徐々に廃止しています。
+iOS と macOS は、従来は32と64ビットの両方のアプリをサポートしていましたが、Apple は、非推奨の32ビットサポートを徐々に廃止しています。
 
-IOS 11 以降では、32ビットのアプリは起動されなくなり、[アプリストアへのすべての送信は64ビットをサポートする必要があり](https://developer.apple.com/news/?id=06282017b)ます。
+iOS 11 以降では、32ビットのアプリは起動されなくなり、[App Store へのすべての送信は64ビットをサポートする必要があり](https://developer.apple.com/news/?id=06282017b)ます。
 
-2018年1月以降、 [Mac App Store に送信された新しいアプリは64ビットをサポートする必要があり](https://developer.apple.com/news/?id=06282017a)、既存のアプリは6月の2018で更新する必要があります。
+2018年1月以降、 [Mac App Store に送信された新しいアプリは64ビットをサポートする必要があり](https://developer.apple.com/news/?id=06282017a)、既存のアプリは2018年の6月までに更新する必要があります。
 
-Xamarin の Classic API (`XamMac.dll` と `monotouch.dll`) では、32ビットアプリケーションのみがサポートされていました。 ただし、新しい Xamarin および Xamarin アプリケーションでは、既定で[Unified API](~/cross-platform/macios/unified/index.md) (`Xamarin.iOS` と `Xamarin.Mac`) が使用されるため、必要に応じて32と64ビットの両方を対象にすることができます。
+Xamarin の Classic API (`XamMac.dll` と `monotouch.dll`) では、32ビットアプリケーションのみがサポートされていました。 ただし、新しい Xamarin.iOS および Xamarin.Mac アプリケーションでは、既定で [Unified API](~/cross-platform/macios/unified/index.md) (`Xamarin.iOS` と `Xamarin.Mac`) が使用されるため、必要に応じて32と64ビットの両方をターゲットにすることができます。
 
 ## <a name="ios"></a>iOS
 
