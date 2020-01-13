@@ -44,14 +44,14 @@ IOS 10 で[追加の拡張ポイント](~/ios/platform/introduction-to-ios10/ind
 
 一般的な制限事項は次のとおりです。
 
-- [正常性キット](~/ios/platform/healthkit.md)および[イベントキットの UI](~/ios/platform/eventkit.md)フレームワークは使用できません
+- [Health Kit](~/ios/platform/healthkit.md) および [Event Kit UI](~/ios/platform/eventkit.md)フレームワークは使用できません
 - 拡張機能は[拡張バックグラウンドモード](~/ios/app-fundamentals/backgrounding/ios-backgrounding-techniques/registering-applications-to-run-in-background.md)を使用できません
 - 拡張機能はデバイスのカメラやマイクにアクセスできません (ただし、既存のメディアファイルにアクセスする可能性があります)。
-- 拡張機能はエアドロップデータを受信できません (無線でデータを送信することもできます)
-- [Uiactionsheet](xref:UIKit.UIActionSheet)と[uiactionsheet](xref:UIKit.UIAlertView)は使用できません。拡張機能は[Uialertcontroller](xref:UIKit.UIAlertController)を使用する必要があります
-- [Uiapplication のいくつ](xref:UIKit.UIApplication)かのメンバーが使用できません: [uiapplication](xref:UIKit.UIApplication.SharedApplication) [、uiapplication、、](xref:UIKit.UIApplication.OpenUrl(Foundation.NSUrl))Uiapplication。 [beginignoringinteractionevents](xref:UIKit.UIApplication.BeginIgnoringInteractionEvents)と[UIApplication](xref:UIKit.UIApplication.EndIgnoringInteractionEvents)
+- 拡張機能は Air Drop データを受信できません (ただし、Air Drop でデータを送信することはできます)
+- [UIActionSheet](xref:UIKit.UIActionSheet) と [UIAlertView](xref:UIKit.UIAlertView) は使用できません。拡張機能は [UIAlertController](xref:UIKit.UIAlertController) を使用する必要があります
+- [UIApplication](xref:UIKit.UIApplication) のいくつかのメンバーが使用できません: [UIApplication.SharedApplication](xref:UIKit.UIApplication.SharedApplication) 、[UIApplication.OpenUrl](xref:UIKit.UIApplication.OpenUrl(Foundation.NSUrl))、[UIApplication.BeginIgnoringInteractionEvents](xref:UIKit.UIApplication.BeginIgnoringInteractionEvents) と [UIApplication.EndIgnoringInteractionEvents](xref:UIKit.UIApplication.EndIgnoringInteractionEvents)。
 - iOS では、現在の拡張機能に 16 MB のメモリ使用量制限が適用されます。
-- 既定では、キーボード拡張機能はネットワークにアクセスできません。 これはデバイスのデバッグに影響します (この制限はシミュレーターには適用されません)。そのため、Xamarin. iOS ではデバッグのためにネットワークアクセスが必要になります。 プロジェクトの情報を `Yes` に `Requests Open Access` 設定することによって、ネットワークへのアクセスを要求することができます。 キーボード拡張機能の制限の詳細については、Apple の[カスタムキーボードガイド](https://developer.apple.com/library/content/documentation/General/Conceptual/ExtensibilityPG/CustomKeyboard.html)を参照してください。
+- 既定では、キーボード拡張機能はネットワークにアクセスできません。 これはデバイスのデバッグに影響します (この制限はシミュレーターには適用されません)。そのため、Xamarin.iOS ではデバッグのためにネットワークアクセスが必要になります。 プロジェクトの情報を `Yes` に `Requests Open Access` 設定することによって、ネットワークへのアクセスを要求することができます。 キーボード拡張機能の制限の詳細については、Apple の[カスタムキーボードガイド](https://developer.apple.com/library/content/documentation/General/Conceptual/ExtensibilityPG/CustomKeyboard.html)を参照してください。
 
 個々の制限事項については、「Apple の[アプリ拡張機能のプログラミングガイド](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/)」を参照してください。
 
