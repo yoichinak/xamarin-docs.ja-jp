@@ -613,16 +613,17 @@
         - name: 概要
           href: deploy-test/index.md
         - name: アプリの配布
-          href: deploy-test/app-distribution/index.md
           items:
-            - name: App Store 配布
+            - name: 概要
+              href: deploy-test/app-distribution/index.md
+            - name: App Store の配布
               href: deploy-test/app-distribution/app-store-distribution/index.md
               items:
                 - name: iTunes Connect でのアプリの構成
                   href: deploy-test/app-distribution/app-store-distribution/itunesconnect.md
                 - name: App Store への発行
                   href: deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md
-            - name: 社内 (エンタープライズ) 配布
+            - name: 社内 (エンタープライズ) の配布
               href: deploy-test/app-distribution/in-house-distribution.md
             - name: アドホック配布
               href: deploy-test/app-distribution/ad-hoc-distribution.md
