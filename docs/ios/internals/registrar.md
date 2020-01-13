@@ -1,6 +1,6 @@
 ---
 title: Xamarin の型レジストラー。 iOS
-description: このドキュメントでは、Xamarin.iOS 型レジストラーについて説明します。これにより、Objective-C ランタイムで C# クラスを使用できるようになります。
+description: このドキュメントでは、Xamarin. iOS 型レジストラーについC#て説明します。これにより、目的の C ランタイムでクラスを使用できるようになります。
 ms.prod: xamarin
 ms.assetid: 610A0834-1141-4D09-A05E-B7ADF99462C5
 ms.technology: xamarin-ios
@@ -16,18 +16,18 @@ ms.locfileid: "73022278"
 ---
 # <a name="type-registrar-for-xamarinios"></a>Xamarin の型レジストラー。 iOS
 
-このドキュメントでは、Xamarin.iOS によって使用されるタイプ登録システムについて説明します。
+このドキュメントでは、Xamarin. iOS によって使用されるタイプ登録システムについて説明します。
 
 ## <a name="registration-of-managed-classes-and-methods"></a>マネージクラスとマネージメソッドの登録
 
-起動時に、Xamarin.iOS によって登録されます。
+起動時に、Xamarin. iOS によって登録されます。
 
 - [[Register]](xref:Foundation.RegisterAttribute) 属性を持つクラスは、Objective-C クラスとして使用されます。
 - [[Category]](xref:ObjCRuntime.CategoryAttribute) 属性を持つクラスは、Objective-C カテゴリとして使用されます。
-- [[Protocol]](xref:Foundation.ProtocolAttribute) 属性を持つインターフェイスは、Objective-C プロトコルとして使用されます。
+- " [Protocol](xref:Foundation.ProtocolAttribute) " 属性を持つインターフェイスを目的とする C プロトコルとして使用します。
 - [[Export]](xref:Foundation.ExportAttribute)が設定されたメンバーは、Objective-C からアクセスすることができます。
 
-たとえば、Xamarin.iOS アプリケーションで一般的に使用されるマネージ `Main` メソッドを考えてみます。
+たとえば、Xamarin. iOS アプリケーションで一般的に使用されるマネージ `Main` 方法を考えてみます。
 
 ```csharp
 UIApplication.Main (args, null, "AppDelegate");
