@@ -1,6 +1,6 @@
 ---
 title: Xamarin. iOS の Web ビュー
-description: このドキュメントでは、Xamarin iOS アプリで web コンテンツを表示するさまざまな方法について説明します。 WKWebView、SFSafariViewController、Safari、およびアプリトランスポートのセキュリティについて説明します。
+description: このドキュメントでは、Xamarin.iOS アプリで web コンテンツを表示するさまざまな方法について説明します。 WKWebView、SFSafariViewController、Safari、およびアプリトランスポートのセキュリティについて説明します。
 ms.prod: xamarin
 ms.assetid: 84886CF4-2B2B-4540-AD92-7F0B791952D1
 ms.technology: xamarin-ios
@@ -85,7 +85,7 @@ iOS 9 の機能強化により、Safari ページの左上隅にある [戻る] 
 
 ## <a name="app-transport-security"></a>アプリケーション トランスポート セキュリティ
 
-IOS 9 では、アプリトランスポートセキュリティ (または*ATS* ) が Apple によって導入され、すべてのインターネット通信がセキュリティで保護された接続のベストプラクティスに準拠するようになりました。
+iOS 9 では、アプリトランスポートセキュリティ (または*ATS* ) が Apple によって導入され、すべてのインターネット通信がセキュリティで保護された接続のベストプラクティスに準拠するようになりました。
 
 アプリでの実装方法など、ATS の詳細については、「[アプリトランスポートセキュリティ](~/ios/app-fundamentals/ats.md)ガイド」を参照してください。
 
@@ -96,7 +96,7 @@ IOS 9 では、アプリトランスポートセキュリティ (または*ATS* 
 > 
 > [Apple の `UIWebView` ドキュメント](https://developer.apple.com/documentation/uikit/uiwebview)では、アプリで[`WKWebView`](#wkwebview)を使用することを提案します。
 
-`UIWebView` は、アプリに web コンテンツを提供するための Apple の従来の方法です。 IOS 2.0 でリリースされ、8.0 の時点で非推奨とされています。
+`UIWebView` は、アプリに web コンテンツを提供するための Apple の従来の方法です。 iOS 2.0 でリリースされ、8.0 の時点で非推奨とされています。
 
 UIWebView を Xamarin iOS アプリに追加するには、次のコードを使用します。
 
