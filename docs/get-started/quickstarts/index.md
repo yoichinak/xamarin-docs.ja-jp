@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms のクイックスタート
+title: Xamarin. フォームのクイックスタート
 description: Visual Studio および Visual Studio for Mac での Xamarin.Forms アプリケーションの開発に関するクイック スタート。
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -14,9 +14,9 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 01/07/2020
 ms.locfileid: "75720472"
 ---
-# <a name="xamarinforms-quickstarts"></a>Xamarin.Forms のクイックスタート
+# <a name="xamarinforms-quickstarts"></a>Xamarin. フォームのクイックスタート
 
-_Xamarin.Forms を使用してモバイルアプリケーションを作成する方法について説明します。_
+_Xamarin. Forms を使用してモバイルアプリケーションを作成する方法について説明します。_
 
 ## <a name="create-a-single-page-xamarinforms-applicationsingle-pagemd"></a>[単一ページの Xamarin.Forms アプリケーションを作成する](single-page.md)
 

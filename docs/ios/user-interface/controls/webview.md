@@ -16,7 +16,7 @@ ms.locfileid: "75718767"
 ---
 # <a name="web-views-in-xamarinios"></a>Xamarin. iOS の Web ビュー
 
-IOS Apple の有効期間中は、アプリ開発者がアプリに web ビュー機能を組み込むためのさまざまな方法がリリースされました。 ほとんどのユーザーは iOS デバイスで組み込みの Safari web ブラウザーを利用しているため、他のアプリの web ビュー機能はこのエクスペリエンスと同じであることが期待されます。 同じジェスチャが動作すること、パフォーマンスが同等であること、および機能が同じであることが期待されます。
+iOS が登場してからずっと、Apple はアプリ開発者がアプリに web ビュー機能を組み込むためのさまざまな方法をリリースしてきました。 ほとんどのユーザーは iOS デバイスで組み込みの Safari web ブラウザーを利用しているため、他のアプリの web ビュー機能はこのエクスペリエンスと同じであることが期待されます。 同じジェスチャが動作すること、パフォーマンスが同等であること、および機能が同じであることが期待されます。
 
 iOS 11 では、`WKWebView` と `SFSafariViewController`の両方に新しい変更が導入されました。 これらの詳細については、「 [iOS 11 の Web 変更ガイド](~/ios/platform/introduction-to-ios11/web.md)」ガイドを参照してください。
 
@@ -77,7 +77,7 @@ UIApplication.SharedApplication.OpenUrl(url);
 
 これにより、次の web ビューが生成されます。
 
-[Safari に表示される web ページを ![する](webview-images/safari.png)](webview-images/safari.png#lightbox)
+[  ![Safari に表示される web ページ](webview-images/safari.png)](webview-images/safari.png#lightbox)
 
 一般に、アプリから Safari にユーザーを移動することは、常に避ける必要があります。 ほとんどのユーザーはアプリケーションの外部でのナビゲーションを想定していません。そのため、アプリから移動すると、ユーザーはそれを返すことがなく、実質的にはエンゲージメントを終了する可能性があります。
 
