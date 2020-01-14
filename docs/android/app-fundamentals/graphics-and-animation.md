@@ -7,16 +7,16 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 1781503d214b959d31223cbe8f55fd6afa0fef44
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: eeee9b7d694d9380c653fb87c24171bcaf79389d
+ms.sourcegitcommit: 9ab907e053c57fc96419149f83187bc3e8983a6b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73019291"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75655294"
 ---
 # <a name="android-graphics-and-animation"></a>Android のグラフィックスとアニメーション
 
-_Android には、2D グラフィックスとアニメーションをサポートするための豊富で多様なフレームワークが用意されています。このトピックでは、これらのフレームワークについて説明し、Xamarin Android アプリケーションで使用するカスタムグラフィックスとアニメーションを作成する方法について説明します。_
+_Android は、2D グラフィックスとアニメーションをサポートするための非常に豊富で多様なフレームワークを提供します。このトピックでは、これらのフレームワークについて説明し、Xamarin Android アプリケーションで使用するカスタムグラフィックスとアニメーションを作成する方法について説明します。_
 
 ## <a name="overview"></a>概要
 
@@ -24,7 +24,7 @@ _Android には、2D グラフィックスとアニメーションをサポー�
 
 さいわいにも、最新のモバイルプラットフォームには、使いやすさを維持しながら、高度なアニメーションやカスタムグラフィックスを作成するための強力なフレームワークが用意されています。 これにより、開発者は非常に少ない労力で、豊富な対話機能を追加できます。
 
-Android の UI API フレームワークは、ほぼ2つのカテゴリ (グラフィックスとアニメーション) に分割できます。
+Android の UI API フレームワークは、ほぼ次の2つのカテゴリに分割できます。グラフィックスとアニメーション。
 
 グラフィックスは、2D および3D グラフィックスを実行するためのさまざまなアプローチに分割されます。 3D グラフィックスは、OpenGL ES (モバイル固有バージョンの OpenGL) などのさまざまな組み込みフレームワーク、およびモノゲーム (XNA toolkit と互換性のあるクロスプラットフォームツールキット) などのサードパーティのフレームワークを介して利用できます。 3D グラフィックスはこの記事の範囲外ですが、ここでは、組み込みの2D 描画手法について説明します。
 
@@ -82,7 +82,7 @@ Android では、いくつかの異なる種類の描画リソースを定義し
 
 - [Levellistdrawable ル](https://developer.android.com/guide/topics/resources/drawable-resource.html#LevelList)&ndash; これは、特定の条件に基づいてイメージを表示するという点で、 *statelistdrawable ル*と非常によく似ています。 ただし、 *Statelistdrawable ル*とは異なり、 *levellistdrawable ル*は、整数値に基づいてイメージを表示します。 *Levellistdrawable ル*の例として、WiFi 信号の強さを表示する方法があります。 WiFi 信号の強度が変化すると、表示される描画用の設定が変わります。
 
-- [Scaledraw/](https://developer.android.com/guide/topics/resources/drawable-resource.html#Scale) [clipdraw&ndash;](https://developer.android.com/guide/topics/resources/drawable-resource.html#Clip)の名前が示すように、これらの drawables スケーリングとクリッピングの両方の機能を提供します。 *Scaledrawable*描画可能な場合は、別の描画可能なスケーリングが行われますが、 *clipdrawable*ルは別の描画可能なクリップをクリップします。
+- [ScaleDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Scale)/[ClipDrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Clip) &ndash;を使用すると、その名前が示すように、これらのdrawablesスケーリングとクリッピングの両方の機能を提供します。 *Scaledrawable*描画可能な場合は、別の描画可能なスケーリングが行われますが、 *clipdrawable*ルは別の描画可能なクリップをクリップします。
 
 - [Insetdrawable](https://developer.android.com/guide/topics/resources/drawable-resource.html#Inset) &ndash; この描画を行うと、別の描画リソースの側にインセットが適用されます。 ビューの実際の境界よりも小さい背景がビューに必要な場合に使用されます。
 
@@ -139,7 +139,7 @@ tv.SetBackgroundResource(Resource.Drawable.shape_rounded_blue_rect);
 
 これがどのように表示されるかを確認するには、[*アニメーション*] プロジェクトを実行し、メインメニューから [図形の構築] 項目を選択します。 次のスクリーンショットのような内容が表示されます。
 
-![カスタム背景を持つ Textview (グラデーションと丸い角を持つ描画)](graphics-and-animation-images/image1.png)
+[カスタムの背景を持つ Textview を ![します。グラデーションと丸い角で描画されます](graphics-and-animation-images/image2-sml.png)](graphics-and-animation-images/image2.png#lightbox)
 
 XML 要素および描画リソースの構文の詳細については、 [Google のドキュメント](https://developer.android.com/guide/topics/resources/drawable-resource.html#Shape)を参照してください。
 
@@ -162,17 +162,17 @@ Canvas canvas = new Canvas(b);
 
 `Canvas` オブジェクトを取得するもう1つの方法は、[ビュー](xref:Android.Views.View)の基底クラスを提供する[OnDraw](xref:Android.Views.View.OnDraw*)コールバックメソッドです。 Android は、ビューがそれ自体を描画する必要があると判断したときにこのメソッドを呼び出し、ビューが操作するために `Canvas` オブジェクトに渡す必要があります。
 
-Canvas クラスは、描画命令をプログラムによって提供するメソッドを公開します。 (例:
+Canvas クラスは、描画命令をプログラムによって提供するメソッドを公開します。 次に例を示します。
 
 - [Canvas 描画](xref:Android.Graphics.Canvas.DrawPaint*)&ndash; 指定した描画を使用してキャンバスのビットマップ全体を塗りつぶします。
 
 - 指定した描画を使用して、指定した幾何学図形を描画するための &ndash; し[ます。](xref:Android.Graphics.Canvas.DrawPath*)
 
-- [DrawText](xref:Android.Graphics.Canvas.DrawText*) &ndash; は、指定された色でキャンバス上にテキストを描画します。 テキストは `x,y` の位置に描画されます。
+- [Canvas.DrawText](xref:Android.Graphics.Canvas.DrawText*) &ndash; は、指定された色でキャンバス上のテキストを描画します。 テキストは `x,y` の位置に描画されます。
 
 #### <a name="drawing-with-the-canvas-api"></a>Canvas API を使用した描画
 
-キャンバス API の動作例を見てみましょう。 次のコードスニペットは、ビューを描画する方法を示しています。
+次に、キャンバス API の動作例を示します。 次のコードスニペットは、ビューを描画する方法を示しています。
 
 ```csharp
 public class MyView : View
@@ -201,7 +201,7 @@ public class MyView : View
 
 このコードでは、最初に赤のペイントオブジェクトと緑色の描画オブジェクトを作成します。 キャンバスの内容を赤で塗りつぶし、キャンバスの幅の25% である緑の四角形を描画するようにキャンバスに指示します。 この例については、この記事のソースコードに含まれている `AnimationsDemo` プロジェクトを参照してください。 アプリケーションを起動し、メインメニューから描画項目を選択すると、次のような画面が表示されます。
 
-![赤の描画オブジェクトと緑色の描画オブジェクトを含む画面](graphics-and-animation-images/image3.png)
+[赤の描画オブジェクトと緑の描画オブジェクトを含む ![画面](graphics-and-animation-images/image3-sml.png)](graphics-and-animation-images/image3.png#lightbox)
 
 ## <a name="animation"></a>アニメーション
 
@@ -310,7 +310,7 @@ myImage.StartAnimation(myAnimation);
 
 - [Objectanimator](xref:Android.Animation.ObjectAnimator) &ndash; このクラスは `ValueAnimator` のサブクラスです。 ターゲットオブジェクトと更新するプロパティを受け入れることによって、オブジェクトをアニメーション化するプロセスを簡略化することを目的としています。
 
-- [アニメーションの[設定](xref:Android.Animation.AnimatorSet)&ndash; このクラスは、アニメーションを互いに相対的に実行する方法を調整します。 アニメーションは、連続して、または指定された間隔で同時に実行できます。
+- アニメーションの[設定](xref:Android.Animation.AnimatorSet)&ndash; このクラスは、アニメーションを互いに相対的に実行する方法を調整します。 アニメーションは、連続して、または指定された間隔で同時に実行できます。
 
 *エバリュエーター*は、アニメーション中に新しい値を計算するためにアニメーターによって使用される特殊なクラスです。 既定では、Android には次のエバリュエーターが用意されています。
 
@@ -426,7 +426,7 @@ protected override void OnCreate(Bundle bundle)
 - [アニメーションのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/animationdemo)
 - [アニメーションとグラフィックス](https://developer.android.com/guide/topics/graphics/index.html)
 - [アニメーションを使用して Mobile Apps を有効にする](https://youtu.be/ikSk_ILg3d0)
-- [アニメーション描画](xref:Android.Graphics.Drawables.AnimationDrawable)
+- [AnimationDrawable](xref:Android.Graphics.Drawables.AnimationDrawable)
 - [Canvas](xref:Android.Graphics.Canvas)
 - [オブジェクトのアニメーター](xref:Android.Animation.ObjectAnimator)
 - [値のアニメーター](xref:Android.Animation.ValueAnimator)
