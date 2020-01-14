@@ -44,7 +44,7 @@ IOS 10 で[追加の拡張ポイント](~/ios/platform/introduction-to-ios10/ind
 
 一般的な制限事項は次のとおりです。
 
-- [正常性キット](~/ios/platform/healthkit.md)および[イベントキットの UI](~/ios/platform/eventkit.md)フレームワークは使用できません
+- [Health Kit](~/ios/platform/healthkit.md) および [Event Kit UI](~/ios/platform/eventkit.md)フレームワークは使用できません
 - 拡張機能は[拡張バックグラウンドモード](~/ios/app-fundamentals/backgrounding/ios-backgrounding-techniques/registering-applications-to-run-in-background.md)を使用できません
 - 拡張機能はデバイスのカメラやマイクにアクセスできません (ただし、既存のメディアファイルにアクセスする可能性があります)。
 - 拡張機能はエアドロップデータを受信できません (無線でデータを送信することもできます)
