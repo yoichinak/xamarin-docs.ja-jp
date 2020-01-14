@@ -24,7 +24,7 @@ _Xamarin. iOS には、例外 (特にネイティブコード) に応答する�
 
 このドキュメントでは、発生する可能性がある問題と、考えられる解決策について説明します。
 
-また、サンプルプロジェクトと[例外のマーシャリング](https://github.com/xamarin/mac-ios-samples/tree/master/ExceptionMarshaling)も含まれており、さまざまなシナリオとそのソリューションをテストするために使用できます。
+また、サンプルプロジェクトと [例外のマーシャリング](https://github.com/xamarin/mac-ios-samples/tree/master/ExceptionMarshaling)も含まれており、さまざまなシナリオとそのソリューションをテストするために使用できます。
 
 ## <a name="problem"></a>問題
 
