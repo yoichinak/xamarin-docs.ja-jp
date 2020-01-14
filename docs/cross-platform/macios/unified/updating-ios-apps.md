@@ -100,7 +100,7 @@ Unified API サポートを利用するために NuGet に変更が加えられ�
 この時間が経過するまでは、コンポーネントと同じように、プロジェクトに含まれているすべての NuGet パッケージを、 Unified API をサポートするバージョンに切り替え、後でクリーン ビルドを実行する必要があります。
 
 > [!IMPORTANT]
-> _"エラー3に ' monotouch.dialog ' と ' 0.0.000 ' の両方を同じ Xamarin に含めることはできません" という形式のエラーが発生した場合は、' monotouch.dialog ' が明示的に参照されていますが、' ' は ' xxx, Version =, Culture = によって参照されています。ニュートラル, PublicKeyToken = null ' "_ アプリケーションを統合 api に変換した後、通常は、Unified API に更新されていないコンポーネントまたは NuGet パッケージがプロジェクトにあることが原因です。 既存のコンポーネントまたは NuGet を削除し、統合された Api をサポートし、クリーンビルドを実行するバージョンに更新する必要があります。
+> アプリケーションを Unified API に変換した後に、 _"エラー 3 に 'monotouch.dll' と 'Xamarin.iOS.dll' の両方を同じ Xamarin.iOS プロジェクトに含めることはできません - 'Xamarin.iOS.dll' は明示的に参照されますが、'monotouch.dll' は 'xxx、Version=0.0.000、Culture=neutral、PublicKeyToken=null' によって参照されます"_ という形式のエラーが発生した場合、それは通常、Unified API に更新されていないコンポーネントまたは NuGet パッケージがプロジェクトにあることが原因です。 既存のコンポーネントまたは NuGet を削除し、Unified API をサポートするバージョンに更新し、クリーン ビルドを実行する必要があります。
 
 ## <a name="enabling-64-bit-builds-of-xamarinios-apps"></a>Xamarin iOS アプリの64ビットビルドを有効にする
 

@@ -6,12 +6,12 @@ ms.assetid: C7E6E54D-3957-407D-BB87-22B095148C6B
 author: davidortinau
 ms.author: daortin
 ms.date: 05/08/2018
-ms.openlocfilehash: 0e49ef8fa0bf00d5ed41f3411393ffaf4891c1b8
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 30827292e59c70395fce17bb520f48b2f19c7d1e
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73013989"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728177"
 ---
 # <a name="general-frequently-asked-questions"></a>一般的によく寄せられる質問
 
@@ -33,7 +33,7 @@ NuGet の更新プログラム、拡張機能、アドインは、 **Nuget パ�
 ### <a name="how-do-i-downgrade-a-nuget-packagenuget-package-downgrademd"></a>[NuGet パッケージをダウングレードする方法を教えてください](nuget-package-downgrade.md)
 Visual Studio for Mac & Visual Studio には、古いバージョンのパッケージを選択して自動的にインストールする機能があります。更新パッケージの動作と同様です。
 
-### <a name="missing-packages-error-after-updating-nuget-packagesnuget-packages-missingmd"></a>[Nuget パッケージを更新した後の不足しているパッケージのエラー](nuget-packages-missing.md)
+### <a name="missing-packages-error-after-updating-nuget-packagesnuget-packages-missingmd"></a>[NuGet パッケージの更新後にパッケージが見つからないというエラーが発生する](nuget-packages-missing.md)
 この問題は、主に Xamarin. Forms サンプルアプリソリューションで報告されていますが、この問題の可能性は、NuGet パッケージを使用するプロジェクトで発生する可能性があります。
 
 ### <a name="unifying-google-play-services-components-and-nugetgps-components-nugetmd"></a>[Google Play 開発者サービス コンポーネントと NuGet の統合](gps-components-nuget.md)
@@ -49,7 +49,7 @@ Xamarin コンポーネントをアプリプロジェクトにインストール
 ### <a name="when-and-how-should-i-file-a-bug-reporthowto-file-bugmd"></a>[バグを報告する場合と場所を教えてください](howto-file-bug.md)
 このガイドでは、品質の高いバグレポートを提出するためのヒントを提供します。これにより、エンジニアは問題の原因 (および潜在的な修正) をより効率的に特定できます。
 
-### <a name="why-isnt-jenkins-supported-by-xamarinxamarin-jenkinsmd"></a>[Xamarin が Jenkins をサポートしていないのはなぜですか](xamarin-jenkins.md)
+### <a name="why-isnt-jenkins-supported-by-xamarinxamarin-jenkinsmd"></a>[Xenarin が Jenkins をサポートしていないのはなぜですか](xamarin-jenkins.md)
 Jenkins はオープンソースの CI スイートです。このため、Jenkins*自体*によって直接発生する多くの問題は、コードを入手した場所に対する問題としてファイリングする必要があります。たとえば、[メインの Jenkins リポジトリ](https://github.com/jenkinsci/jenkins)や[Jenkins](https://github.com/stisti/jenkins-app)のリポジトリなどです。
 
 ### <a name="what-project-settings-are-required-for-the-debuggerdebugger-settingsmd"></a>[デバッガーに必要なプロジェクト設定を教えてください](debugger-settings.md)

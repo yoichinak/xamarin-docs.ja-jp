@@ -8,12 +8,12 @@ author: pierceboggan
 ms.author: piboggan
 robots: noindex
 ms.date: 10/26/2018
-ms.openlocfilehash: 9fb085313e994adc486833bb25e893659aa33b4b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a5a5a9acf47603601461660df689a7a5fa6aee00
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032755"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728344"
 ---
 # <a name="xamarin-live-reload-preview"></a>Xamarin Live Reload (プレビュー)
 
@@ -22,7 +22,7 @@ ms.locfileid: "73032755"
 
 Xamarin Live Reload を使用する**と、XAML を変更してライブに反映することができ、別のコンパイルとデプロイは必要**ありません。 XAML に加えられたすべての変更は保存時に再デプロイされ、デプロイターゲットに反映されます。
 
-## <a name="requirements"></a>［要件］
+## <a name="requirements"></a>要件
 
 * .NET ワークロード**を使用したモバイル開発**のある[Visual Studio 2017 バージョン15.7 以降](https://visualstudio.microsoft.com/vs/)。
 * [3.0.0 以上](https://www.nuget.org/packages/Xamarin.Forms/)。
@@ -46,11 +46,11 @@ Xamarin Live Reload は、Visual Studio Marketplace 経由で配布されます�
 
 2. **LiveReload** NuGet パッケージを追加します。
 
-    a. **.NET Standard** – .NET Standard 2.0 ライブラリに**LiveReload** NuGet をインストールします。 これは、プラットフォームプロジェクトにインストールする必要はありません。 **パッケージソース**が**All**に設定されていることを確認します。
+    キーを押します。 **.NET Standard** – .NET Standard 2.0 ライブラリに**LiveReload** NuGet をインストールします。 これは、プラットフォームプロジェクトにインストールする必要はありません。 **パッケージソース**が**All**に設定されていることを確認します。
     
     b. **共有プロジェクト**–すべてのプラットフォームプロジェクト (Android、IOS、UWP など) に**LiveReload** NuGet をインストールします。 **パッケージソース**が**All**に設定されていることを確認します。
 
-    [NuGet パッケージマネージャーを使用して Xamarin ライブリロード NuGet を追加![](images/addlivereloadnuget.w157-sml.png)](images/addlivereloadnuget.w157.png#lightbox)
+    [NuGet パッケージマネージャーを使用して Xamarin ライブリロード NuGet を追加 ![](images/addlivereloadnuget.w157-sml.png)](images/addlivereloadnuget.w157.png#lightbox)
 
 3. 次のコードスニペットに示すように、`Application` クラスのコンストラクターに `LiveReload.Init();` を追加します。
 
@@ -105,7 +105,7 @@ Android エミュレーターまたは iOS シミュレーターにデバッグ�
 
 ### <a name="does-it-require-debugging-the-app"></a>アプリのデバッグが必要ですか。 
 
-いいえ。 実際には、サポートされているすべてのアプリケーションターゲット (Android、iOS、UWP) を任意の数のデバイスまたはシミュレーター/エミュレーターで起動し、一度にすべての更新を確認することもできます。 
+No: 実際には、サポートされているすべてのアプリケーションターゲット (Android、iOS、UWP) を任意の数のデバイスまたはシミュレーター/エミュレーターで起動し、一度にすべての更新を確認することもできます。 
 
 ## <a name="limitations"></a>制限事項
 
@@ -127,15 +127,15 @@ Android エミュレーターまたは iOS シミュレーターにデバッグ�
 
 * **XLR001**:*現在のプロジェクトは ' xamarin. LiveReload ' NuGet パッケージバージョン ' [version] ' を参照していますが、Xamarin Live Reload 拡張機能にはバージョン ' [version] ' が必要です。*
 
-  ライブリロード機能を迅速に反復して進化させるには、nuget パッケージと Visual Studio 拡張機能が完全に一致している必要があります。 Nuget パッケージを、インストールした拡張機能と同じバージョンに更新します。
+  ライブリロード機能を迅速に反復して進化させるには、NuGet パッケージと Visual Studio 拡張機能が完全に一致している必要があります。 NuGet パッケージを、インストールした拡張機能と同じバージョンに更新します。
 
 * **XLR002**:*ライブ再読み込みには、コマンドラインからビルドするときに少なくとも ' MqttHostname ' プロパティが必要です。または、' EnableLiveReload ' を ' false ' に設定して、この機能を無効にします。*
 
   ライブ再読み込みに必要なプロパティは、コマンドラインからのビルド (または継続的インテグレーション) では使用できません。したがって、を明示的に指定する必要があります。 
 
-* **XLR003**:*ライブリロード nuget パッケージをインストールするには、Xamarin Live reload Visual Studio 拡張機能をインストールする必要があります。*
+* **XLR003**:*ライブリロード NuGet パッケージをインストールするには、Xamarin Live reload Visual Studio 拡張機能をインストールする必要があります。*
 
-  ライブリロード nuget パッケージを参照するプロジェクトをビルドしようとしましたが、ビジュアル拡張機能がインストールされていません。  
+  ライブリロード NuGet パッケージを参照するプロジェクトをビルドしようとしましたが、ビジュアル拡張機能がインストールされていません。  
 
 * *アセンブリの読み込み中に例外が発生しました: FileNotFoundException: アセンブリ ' 0.3.27.0, Version =, Culture = ニュートラル, PublicKeyToken = ' を読み込むことができませんでした。*
 
@@ -143,7 +143,7 @@ Android エミュレーターまたは iOS シミュレーターにデバッグ�
 
 ### <a name="app-doesnt-connect"></a>アプリが接続していません
 
-アプリケーションがビルドされると、[**ツール > オプション] の情報 (Xamarin > ライブ再読み込み >** (ホスト名、ポート、暗号化キー) がアプリに埋め込まれます。これにより、`LiveReload.Init()` を実行したときに、に接続するためのペアリングまたは構成は必要ありません。連続.
+アプリケーションがビルドされると、ツール > オプションからの情報 ( **Xamarin > ライブ再読み込み >** (ホスト名、ポート、暗号化キー) がアプリに埋め込まれます。これにより、`LiveReload.Init()` を実行するときに、接続を成功させるためにペアリングまたは構成は必要ありません。
 
 通常のネットワークの問題 (ファイアウォール、別のネットワーク上のデバイス) 以外は、アプリが IDE に正常に接続できないという主な理由は、その構成が Visual Studio の構成と異なるためです。 これは、次の場合に発生する可能性があります。
 
@@ -160,9 +160,9 @@ Android エミュレーターまたは iOS シミュレーターにデバッグ�
 1. フォルダー **C:\Program files (x86) \Microsoft Visual Studio\Preview\Enterprise\Common7\IDE\Extensions\Xamarin\LiveReload**を削除します (注: "Enterprise" をインストールされているエディションに置き換え、"Preview" を "2017" に置き換えます (安定した VS にインストールした場合)。
 2. その Visual Studio の**開発者コマンドプロンプト**を開き、`devenv /updateconfiguration`を実行します。 
 
-## <a name="tips--tricks"></a>ヒント & コツ
+## <a name="tips--tricks"></a>ヒントと秘訣
 
-* ライブ再読み込みの設定が変更されない限り (暗号化キーの**自動生成**をオフにしている場合など)、同じコンピューターからビルドした場合、最初の展開後にアプリをビルドして展開する必要はありません (変更しない限り)。コードまたは依存関係。 以前にデプロイされたアプリを再起動するだけで、最後に使用したホストに接続できます。
+* ライブ再読み込みの設定が変更されない限り (暗号化キーの**自動生成**をオフにした場合など)、同じコンピューターからビルドする場合は、コードまたは依存関係を変更しない限り、初期デプロイ後にアプリをビルドして展開する必要はありません。 以前にデプロイされたアプリを再起動するだけで、最後に使用したホストに接続できます。
 
 * 同じ Visual Studio セッションに接続できるデバイスの数に制限はありません。 アプリは、必要な数のデバイス/シミュレーターでデプロイおよび開始できます。これにより、ライブ再読み込みがすべて同時に実行されます。
 
@@ -170,7 +170,7 @@ Android エミュレーターまたは iOS シミュレーターにデバッグ�
 
 ## <a name="live-reload-server"></a>ライブ再読み込みサーバー
 
-実行中のアプリからコンピューターへの接続 (`localhost` を使用して示されている、または [ツール] > > オプションの `127.0.0.1` を使用した**Xamarin > ライブ再読み込み**) が不可能なシナリオ (ファイアウォール、異なるネットワークなど) は使用できません。代わりに、IDE とアプリの両方が対象となります。
+実行中のアプリからコンピューターへの接続 (`localhost` または [ツール] > > オプションの `127.0.0.1` を使用して示されている**Xamarin > ライブ再読み込み**) を実行できない場合 (ファイアウォールや別のネットワークなど) は、代わりに、IDE とアプリの両方が使用するリモートサーバーを構成することができます。
 
 ライブ再読み込みでは、標準の[MQTT プロトコル](https://mqtt.org/)を使用してメッセージを交換するため、[サードパーティサーバー](https://github.com/mqtt/mqtt.github.io/wiki/servers)と通信できます。 使用可能な[パブリックサーバー](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers) (*ブローカー*とも呼ばれます) もあります。 ライブ再読み込みは、`broker.hivemq.com` と `iot.eclipse.org` のホスト名と、 [www.cloudmqtt.com](https://www.cloudmqtt.com)および[www.cloudamqp.com](https://www.cloudamqp.com)によって提供されるサービスを使用してテストされています。 また、 [Azure 上の Hivemq](https://www.hivemq.com/blog/hivemq-on-windows-azure-mqtt-microsoft-cloud)など、独自の MQTT サーバーをクラウドにデプロイすることもできます。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/11/2016
-ms.openlocfilehash: 7045bd4d3343d0c11c6cd52fa02cdc005175b8a7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 60c647a9a09ebffa5a9d50c799c09cf0dbf2e4ac
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772933"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728011"
 ---
 # <a name="using-urhosharp-in-xamarinforms"></a>Xamarin.Forms で urhosharp の使用
 
@@ -25,21 +25,21 @@ ms.locfileid: "70772933"
 UrhoSharp は、Xamarin.Forms アプリケーションでグラフィックスを表示するために使用できます。
 これは、[サンプル](https://github.com/xamarin/urho-samples/tree/master/FormsSample)UrhoSharp でした使用して、対話型の 3D グラフを作成する方法を示します。
 
-![](urhosharp-images/ios-animation.gif "IOS で 3D 対話的なグラフを UrhoSharp")
-![](urhosharp-images/android-animation.gif "UrhoSharp Android で 3D の対話的なグラフ。")
+![](urhosharp-images/ios-animation.gif "UrhoSharp 3D Interactive Chart on iOS")
+![](urhosharp-images/android-animation.gif "UrhoSharp 3D Interactive Chart on Android")
 
-## <a name="adding-the-urhosharp-nuget-packages"></a>UrhoSharp の Nuget パッケージを追加します。
+## <a name="adding-the-urhosharp-nuget-packages"></a>UrhoSharp NuGet パッケージの追加
 
-UrhoSharp を使用する前に、開発者は、そのソリューションに UrhoSharp の Nuget パッケージを追加する必要があります。 このガイドでは、Xamarin.Forms プロジェクトで、iOS、Android、および .NET Standard ライブラリ プロジェクト。 すべてのコードは、.NET Standard ライブラリ プロジェクトで出力されます。ただし、UrhoSharp の Nuget をも iOS と Android プロジェクトに追加する必要があります。
+UrhoSharp を使用する前に、開発者は UrhoSharp NuGet パッケージをソリューションに追加する必要があります。 このガイドでは、Xamarin.Forms プロジェクトで、iOS、Android、および .NET Standard ライブラリ プロジェクト。 すべてのコードは、.NET Standard library プロジェクトに記述されます。ただし、UrhoSharp NuGet も iOS および Android プロジェクトに追加する必要があります。
 
-UrhoSharp.Forms Nuget パッケージには、すべての UrhoSharp のオブジェクトを作成するために必要なオブジェクトが含まれます。 UrhoSharp.Forms の nuget パッケージに含まれる、`UrhoSurface`クラスは、Xamarin.Forms で UrhoSharp をホストするために使用します。
+UrhoSharp 形式の NuGet パッケージには、UrhoSharp オブジェクトを作成するために必要なすべてのオブジェクトが含まれています。 UrhoSharp 形式の NuGet パッケージには `UrhoSurface` クラスが含まれています。これは、Xamarin. Forms で UrhoSharp をホストするために使用されます。
 開始するには、.NET Standard ライブラリプロジェクトの**packages**フォルダーを右クリックし、 **[パッケージの追加]** を選択します。検索語句に「 **Urhosharp**」と入力し、 **[urhosharp]** を選択して、 **[パッケージの追加]** をクリックします。
 
-[![](urhosharp-images/add-package-sml.png "[追加] ダイアログのパッケージ")](urhosharp-images/add-package.png#lightbox "追加パッケージ ダイアログ ボックス")
+[![](urhosharp-images/add-package-sml.png "Add Packages Dialog")](urhosharp-images/add-package.png#lightbox "Add Packages Dialog")
 
 UrhoSharp.Forms NuGet パッケージをプロジェクトに追加されます。
 
-![](urhosharp-images/packages.png "パッケージ フォルダー")
+![](urhosharp-images/packages.png "Packages Folder")
 
 プラットフォーム固有プロジェクト (iOS と Android) などの上記の手順を繰り返します。
 
@@ -220,7 +220,7 @@ selectedBarSlider.ValueChanged += OnValuesSliderValueChanged;
 
 アニメーションを[ページのトップ](#what-is-urhosharp)実行されているサンプルを表示します。
 
-## <a name="summary"></a>概要
+## <a name="summary"></a>要約
 
 このページは、UrhoSharp を使用して、Xamarin.Forms の 3D のデータの視覚化を追加する方法を示します。 読み取り、 [UrhoSharp ドキュメント](~/graphics-games/urhosharp/index.md)前に示したメソッドを使用して Xamarin.Forms アプリに含めることができる Urho シーンを構築する方法の詳細について。
 

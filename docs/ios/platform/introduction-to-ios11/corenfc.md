@@ -7,18 +7,18 @@ ms.assetid: 846B59D3-F66A-48F3-A78C-84217697194E
 author: davidortinau
 ms.author: daortin
 ms.date: 09/25/2017
-ms.openlocfilehash: 110df71dd043f627b89a7c4a906db0418a8cfae8
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2e19fd37270d3c96cb175d30dc786a95a01c3fcf
+ms.sourcegitcommit: 2ed3d1c933fce4ce332128f125acb2f23f9e0f1a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032204"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75753018"
 ---
 # <a name="core-nfc-in-xamarinios"></a>Xamarin のコア NFC
 
 _IOS 11 を使用した近距離無線通信 (NFC) タグの読み取り_
 
-CoreNFC は iOS 11 の新しいフレームワークで、アプリ内からタグを読み取る_近距離無線通信_(NFC) ラジオへのアクセスを提供します。 IPhone 7、7 Plus、8、8 Plus、X で動作します。
+CoreNFC は iOS 11 の新しいフレームワークで、アプリ内からタグを読み取る_近距離無線通信_(NFC) ラジオへのアクセスを提供します。 CoreNFC は、iphone 7、iPhone 7 Plus、iPhone 8、iPhone 8 Plus、iphone X、iPhone XS、および iPhone 11 の各モデルで動作します (iPhone 6 および iPhone 6 Plus モデルには NFC の支払い機能があり、CoreNFC はサポートされていません)。
 
 IOS デバイスの NFC タグリーダーは、 _Nfc データ交換形式_(NDEF) 情報を含むすべての nfc タグの種類 1 ~ 5 をサポートしています。
 
@@ -31,7 +31,7 @@ IOS デバイスの NFC タグリーダーは、 _Nfc データ交換形式_(NDE
 
 このページでは、CoreNFC の使用に必要な構成について説明し、 ["Nfctagreader" サンプルコード](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-nfctagreader)を使用して API を使用する方法を示します。
 
-## <a name="configuration"></a>構成
+## <a name="configuration"></a>の構成
 
 CoreNFC を有効にするには、プロジェクトで次の3つの項目を構成する必要があります。
 
@@ -155,7 +155,7 @@ Session.InvalidateSession();
 
 どちらの場合も、デリゲートの `DidInvalidate` メソッドが呼び出されます。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 CoreNFC を使用すると、アプリは NFC タグからデータを読み取ることができます。 さまざまなタグ形式 (NDEF types 1 ~ 5) の読み取りをサポートしますが、書き込みや書式設定はサポートしていません。
 

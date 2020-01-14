@@ -1,6 +1,6 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Xamarin.Forms ユーザー インターフェイス
+summary: Xamarin.Forms を使用し、ユーザー インターフェイスを作成する方法について説明します。
 metadata:
   title: Xamarin.Forms ユーザー インターフェイス
   description: Xamarin.Forms を使用し、ユーザー インターフェイスを作成する方法について説明します。
@@ -9,235 +9,177 @@ metadata:
   ms.assetid: 391B4A77-7CAC-42D2-9E77-BD8E170E9BE6
   author: davidbritch
   ms.author: dabritch
-  ms.date: 12/11/2019
-abstract:
-  description: Xamarin.Forms を使用し、ユーザー インターフェイスを作成する方法について説明します。
-sections:
-  - title: null
-    items:
-      - type: list
-        style: cards
-        className: cardsB
-        items:
-          - href: activityindicator.md
-            html: ActivityIndicator を使用して、アプリケーションが時間のかかるアクティビティを、進行状況を示さずに実行していることをユーザーに示す方法について説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: activityindicator.md
-            title: ActivityIndicator
-          - href: animation/index.md
-            html: Xamarin.Forms でアニメーションを作成する方法について説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: animation/index.md
-            title: アニメーション
-          - href: boxview.md
-            html: BoxView を使用し、色付きの四角形を作成する方法について説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: boxview.md
-            title: BoxView
-          - href: button.md
-            html: ボタンを使用し、特定のタスクを実行するようにアプリケーションに指示する方法について説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: button.md
-            title: Button
-          - href: carouselview/index.md
-            html: CarouselView を使用して、データを線形のカルーセル レイアウトで表示する方法について説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: collectionview/index.md
-            title: CarouselView
-          - href: checkbox.md
-            html: チェックボックスを使用し、ブール値を設定する方法について説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: checkbox.md
-            title: CheckBox
-          - href: collectionview/index.md
-            html: CollectionView を使用し、さまざまなレイアウト仕様を使用してデータの一覧を表示する方法について説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: collectionview/index.md
-            title: CollectionView
-          - href: colors.md
-            html: 色クラスを使用し、さまざまなプラットフォームで色を定義して使用する方法について説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: colors.md
-            title: 色
-          - href: controls/index.md
-            html: Xamarin.Forms で使用できるページ、レイアウト、ビュー、およびセルについて説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: controls/index.md
-            title: コントロールのリファレンス
-          - href: datepicker.md
-            html: DatePicker を使用し、指定した範囲内の日付を選択する方法について説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: datepicker.md
-            title: DatePicker
-          - href: pop-ups.md
-            html: ユーザーに簡単な質問をして、タスクの誘導を行い、プロンプトを表示するダイアログ ボックスを表示する方法について説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: pop-ups.md
-            title: ポップアップを表示する
-          - href: graphics/skiasharp/index.md
-            html: SkiaSharp を使用し、Xamarin.Forms アプリケーションにグラフィックスを組み込む方法について説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: graphics/skiasharp/index.md
-            title: SkiaSharp を使用したグラフィックス
-          - href: images.md
-            html: イメージ コントロールを使用し、イメージを表示する方法について説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: images.md
-            title: イメージ
-          - href: imagebutton.md
-            html: ImageButton コントロールを使用してイメージを表示し、特定のタスクを実行するようアプリケーションに指示するタップに応答する方法について説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: imagebutton.md
-            title: ImageButton
-          - href: indicatorview.md
-            html: IndicatorView コントロールを使用し、項目の数や現在の位置を CarouselView で表示するインジケーターを表示する方法について説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: indicatorview.md
-            title: IndicatorView
-          - href: layouts/index.yml
-            html: Xamarin.Forms のレイアウト コントロールと機能を使用し、コンテンツを整理する方法について説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: layouts/index.yml
-            title: レイアウト
-          - href: listview/index.md
-            html: ListView コントロールを使用し、データ一覧を表示する方法について説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: listview/index.md
-            title: ListView
-          - href: map/index.md
-            html: 必要なプラットフォーム構成や、マップへのピンの設定方法を含む、マップ コントロールの使用方法について説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: map/index.md
-            title: マップ
-          - href: menuitem.md
-            html: MenuItem クラスを使用して、ListView セルのコンテキスト メニューに項目を追加する方法について説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: menuitem.md
-            title: MenuItem
-          - href: picker/index.md
-            html: ピッカー コントロールを使用し、データ一覧からテキスト項目を選択する方法について説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: picker/index.md
-            title: ピッカー
-          - href: progressbar.md
-            html: ProgressBar を使用し、アプリケーションが時間のかかるアクティビティを実行中であることを示す方法について説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: progressbar.md
-            title: ProgressBar
-          - href: refreshview.md
-            html: RefreshView を使用して、スクロール可能なコンテンツの更新機能にプルを提供する方法について説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: refreshview.md
-            title: RefreshView
-          - href: searchbar.md
-            html: SearchBar コントロールを使用した、検索の開始方法について説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: searchbar.md
-            title: SearchBar
-          - href: slider.md
-            html: スライダー コントロールを使用し、ユーザーが連続する範囲から数値を選択できるようにする方法について説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: slider.md
-            title: Slider
-          - href: splashscreen.md
-            html: Xamarin.Forms アプリケーションのスプラッシュ スクリーンを作成する方法について説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: splashscreen.md
-            title: スプラッシュ スクリーン
-          - href: stepper.md
-            html: ステッパ コントロールを使用し、値の範囲からユーザーが数値を選択できるようにする方法について説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: stepper.md
-            title: ステッパ
-          - href: styles/index.md
-            html: ユーザー インターフェイスの書式を、XAML スタイルとカスケードスタイルシート (CSS) を使用して適用する方法について説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: styles/index.md
-            title: スタイル
-          - href: swipeview.md
-            html: SwipeView を使用し、スワイプ ジェスチャで表示されるコンテキスト メニュー項目を提供する方法について説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: swipeview.md
-            title: SwipeView
-          - href: switch.md
-            html: 切り替えを使用し、ブール値を設定する方法について説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: switch.md
-            title: Switch
-          - href: tableview.md
-            html: TableView を使用し、行で同じテンプレートが使用されていないときにスクロール可能なデータまたは選択肢を表示する方法について説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: tableview.md
-            title: TableView
-          - href: text/index.md
-            html: テキストを表示および受け取る Xamarin.Forms コントロールについて説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: text/index.md
-            title: テキスト
-          - href: theming.md
-            html: Xamarin. Forms アプリケーションのテーマを作成し、実行時にテーマを変更する方法について説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: theming.md
-            title: テーマ
-          - href: timepicker.md
-            html: TimePicker を使用し、時間を選択できるようにする方法について説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: timepicker.md
-            title: TimePicker
-          - href: toolbaritem.md
-            html: ToolbarItem を使用して、ナビゲーション バーにボタンを追加する方法について説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: toolbaritem.md
-            title: ToolbarItem
-          - href: visual/index.md
-            html: Xamarin.Forms の素材のビジュアルを使用し、iOS と Android で、同一またはだいたい同一に見えるアプリケーションを作成する方法について説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: visual/index.md
-            title: ビジュアル
-          - href: visual-state-manager.md
-            html: ユーザー インターフェイスの視覚の状態を定義し、VisualStateManager クラスを使用してその状態をアクティブ化する方法について説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: visual-state-manager.md
-            title: Visual State Manager
-          - href: webview.md
-            html: Xamarin.Forms アプリケーションで HTML および Web コンテンツを表示する方法について説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: webview.md
-            title: WebView
+  ms.date: 12/30/2019
+  ms.openlocfilehash: 2a62ff0c3d94d47870b9b112b86091c534ed6ff8
+  ms.sourcegitcommit: ff0dd66d6d00257ac1695aa7ac46940ff7d3bd93
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 01/06/2020
+  ms.locfileid: "75679611"
+landingContent:
+- title: コントロールのリファレンス
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: 概要
+      url: controls/index.md
+    - text: Pages
+      url: controls/pages.md
+    - text: レイアウト
+      url: controls/layouts.md
+    - text: Views
+      url: controls/views.md
+    - text: セル
+      url: controls/cells.md
+    - text: 共通のプロパティ、メソッド、およびイベント
+      url: controls/common-properties.md
+    - text: サードパーティ コントロール
+      url: controls/thirdparty.md
+- title: 表示用のビュー
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: BoxView
+      url: boxview.md
+    - text: Image
+      url: images.md
+    - text: group1
+      url: text/label.md
+    - text: マップ
+      url: map/index.md
+    - text: WebView
+      url: webview.md
+- title: コマンドを開始するビュー
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Button
+      url: button.md
+    - text: ImageButton
+      url: imagebutton.md
+    - text: RefreshView
+      url: refreshview.md
+    - text: SearchBar
+      url: searchbar.md
+    - text: SwipeView
+      url: swipeview.md
+- title: 値を設定するためのビュー
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: CheckBox
+      url: checkbox.md
+    - text: DatePicker
+      url: datepicker.md
+    - text: Slider
+      url: slider.md
+    - text: ステッパ
+      url: stepper.md
+    - text: Switch
+      url: switch.md
+    - text: TimePicker
+      url: timepicker.md
+- title: テキストを編集するためのビュー
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: エディター
+      url: text/editor.md
+    - text: 入力
+      url: text/entry.md
+- title: アクティビティを示すためのビュー
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: ActivityIndicator
+      url: activityindicator.md
+    - text: ProgressBar
+      url: progressbar.md
+- title: コレクションを表示するビュー
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: CarouselView
+      url: carouselview/index.md
+    - text: CollectionView
+      url: collectionview/index.md
+    - text: IndicatorView
+      url: indicatorview.md
+    - text: ListView
+      url: listview/index.md
+    - text: ピッカー
+      url: picker/index.md
+    - text: TableView
+      url: tableview.md
+- title: その他のコントロール
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: MenuItem
+      url: menuitem.md
+    - text: ToolbarItem
+      url: toolbaritem.md
+- title: ユーザー インターフェイスの概念
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: アニメーション
+      url: animation/index.md
+    - text: 色
+      url: colors.md
+    - text: ポップアップの表示
+      url: pop-ups.md
+    - text: フォント
+      url: text/fonts.md
+    - text: SkiaSharp を使用したグラフィックス
+      url: graphics/skiasharp/index.md
+    - text: スプラッシュ スクリーン
+      url: splashscreen.md
+    - text: スタイル
+      url: styles/index.md
+    - text: テーマ
+      url: theming.md
+    - text: ビジュアル
+      url: visual/index.md
+    - text: Visual State Manager
+      url: visual-state-manager.md
+- title: レイアウト
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: レイアウトの選択
+      url: layouts/choose-layout.md
+    - text: AbsoluteLayout
+      url: layouts/absolute-layout.md
+    - text: ContentView
+      url: layouts/contentview.md
+    - text: FlexLayout
+      url: layouts/flex-layout.md
+    - text: フレーム
+      url: layouts/frame.md
+    - text: グリッド
+      url: layouts/grid.md
+    - text: RelativeLayout
+      url: layouts/relative-layout.md
+    - text: ScrollView
+      url: layouts/scroll-view.md
+    - text: StackLayout
+      url: layouts/stack-layout.md
+- title: レイアウトの概念
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: バインド可能なレイアウト
+      url: layouts/bindable-layouts.md
+    - text: カスタム レイアウト
+      url: layouts/custom.md
+    - text: デバイスの向き
+      url: layouts/device-orientation.md
+    - text: LayoutOptions
+      url: layouts/layout-options.md
+    - text: レイアウトの圧縮
+      url: layouts/layout-compression.md
+    - text: 余白とパディング
+      url: layouts/margin-and-padding.md
+    - text: タブレットとデスクトップのレイアウト
+      url: layouts/tablet.md

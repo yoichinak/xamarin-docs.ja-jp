@@ -6,12 +6,12 @@ ms.assetid: 5D962EB4-2CB3-4B7D-9D77-889DEACDAE02
 author: davidortinau
 ms.author: daortin
 ms.date: 05/08/2018
-ms.openlocfilehash: 100ef7ffd7e05db0ed8b2af6b9990fc3a0ac1fa9
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 0b2fd92eb9157b561708eafe10d341381fa21543
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73014147"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728201"
 ---
 # <a name="unifying-google-play-services-components-and-nuget"></a>Google Play 開発者サービス コンポーネントと NuGet の統合
 
@@ -59,6 +59,6 @@ Google は、実際には、Google Play 開発者サービスに対して2つの
 - Google Play 開発者サービス (JellyBean)
 - Google Play 開発者サービス (KitKat)
 
-既存の_Google Play 開発者サービス (ICS)_ コンポーネント/Nuget の名前が_Google Play 開発者サービス_に変更され、今後最新の状態に保たれるようになりました。 無効/Delisted パッケージを参照しているすべてのプロジェクトを、このパッケージを使用するように更新する必要があります。
+既存の_Google Play 開発者サービス (ICS)_ コンポーネント/NuGet の名前が_Google Play 開発者サービス_に変更され、今後最新の状態に保たれるようになりました。 無効/Delisted パッケージを参照しているすべてのプロジェクトを、このパッケージを使用するように更新する必要があります。
 
 無効になっているコンポーネントはまだ存在しており、それらがまだ参照されているプロジェクトについては、中断を避けるために復元可能である必要があります。 同様に、delisted NuGet パッケージも存在し、復元できます。 今後更新されることはありません。

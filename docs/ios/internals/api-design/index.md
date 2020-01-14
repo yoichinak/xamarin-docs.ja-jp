@@ -91,11 +91,11 @@ Xamarin.iOS には、 *Xamarin.iOS Profile* を構成する多数のアセンブ
 
 [Foundation](xref:Foundation)名前空間は、iOS の一部である Objective-C Foundation フレームワークと相互運用できるように設計された基本データ型を提供します。これは、Objective-C でのオブジェクト指向プログラミングの基本となります。
 
-Xamarin.iOS は、C# で Objective-C のクラスの階層をミラーリングしています。 たとえば、Objective-C の基本クラスである  [NSObject](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html)は[NSObject](xref:Foundation.NSObject)を介して C# から使用できます。
+Xamarin.iOS は、C# で Objective-C のクラスの階層をミラーリングしています。 たとえば、Objective-C の基本クラスである  [NSObject](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html)は[Foundation.NSObject](xref:Foundation.NSObject)を介して C# から使用できます。
 
 この名前空間には、基になる Objective-C からの型のバインドが用意されていますが、いくつかのケースでは、基になる型を .NET 型にマップしています。 例えば:
 
-- [NSString](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html) と [NSArray](https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html) を扱う代わりに、このランタイムでは、これらを C# の [string](xref:System.String) および厳密に型指定された [Array](xref:System.Array) として API 全体に公開しています。
+- このランタイムでは、 [nsstring](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html)と[nsstring](https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html)を処理する代わりにC#、これらを[文字列型](xref:System.String)および厳密に型指定された[配列](xref:System.Array)として API 全体に公開しています。
 
 - ここでは、開発者がサードパーティの Objective-C API、他の iOS API、Xamarin.iOS によって現在バインドされていない API をバインドできるように、さまざまなヘルパー API が公開されています。
 
@@ -446,9 +446,9 @@ web.LoadFinished += () => { endTime = DateTime.Now; }
 
 #### <a name="responding-to-events"></a>イベントへの応答
 
-目的 C のコードでは、複数のコントロールの複数のコントロールとプロバイダーのイベントハンドラーが、同じクラスでホストされることがあります。 クラスはメッセージに応答し、クラスがメッセージに応答する限り、オブジェクトをリンクすることができます。
+Objective-C のコードでは、複数のコントロールの複数のコントロールとプロバイダーのイベントハンドラーが、同じクラスでホストされることがあります。 クラスはメッセージに応答し、クラスがメッセージに応答する限り、オブジェクトをリンクすることができます。
 
-これまでに説明したように、Xamarin C#は、イベントベースのプログラミングモデルと、デリゲートを実装する新しいクラスを作成して目的のメソッドをオーバーライドする目的 C のデリゲートパターンの両方をサポートしています。
+これまでに説明したように、Xamarin.iOS は、C# のイベントベースのプログラミングモデルと、デリゲートを実装する新しいクラスを作成して目的のメソッドをオーバーライドする  Objective-C のデリゲートパターンの両方をサポートしています。
 
 また、複数の異なる操作のレスポンダーがすべて同じクラスのインスタンスでホストされている、Objective-C のパターンをサポートすることもできます。 ただし、これを行うには、Xamarin. iOS バインドの低レベルの機能を使用する必要があります。
 
@@ -472,7 +472,7 @@ public class MyCallbacks : NSObject {
 
 メソッドC#の名前は重要ではありません。重要なのは、[Export] 属性に渡される文字列だけです。
 
-このスタイルのプログラミングを使用する場合は、 C#パラメーターが、ランタイムエンジンが渡す実際の型と一致していることを確認してください。
+このスタイルのプログラミングを使用する場合は、 C# パラメーターが、ランタイムエンジンが渡す実際の型と一致していることを確認してください。
 
 #### <a name="models"></a>モデル
 

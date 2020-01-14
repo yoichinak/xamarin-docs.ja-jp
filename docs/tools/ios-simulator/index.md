@@ -6,12 +6,12 @@ ms.assetid: 63c50190-7e54-4140-a30d-1a0e577c47d7
 author: davidortinau
 ms.author: daortin
 ms.date: 04/26/2019
-ms.openlocfilehash: 8313af47882b1c8c47f1e82f62f0a43e4e9c704c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: d5898f9c6ee30eb1f12bf6480b93a609e762e6ea
+ms.sourcegitcommit: ec62e2624295aa502ec35ac782031d61d61c3aaa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029724"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75886594"
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>Remoted iOS Simulator for Windows
 
@@ -34,7 +34,7 @@ Windows 用のリモート iOS シミュレーターは、Xamarin の一部と�
 
 - **Home** – iOS デバイスの [ホーム] ボタンをシミュレートします。
 - **Lock** –シミュレーターをロックします (ロック解除するにはスワイプします)。
-- **スクリーンショット**-シミュレーターのスクリーンショットを保存します ( **Pictures\Xamarin\iOS シミュレーター \\** に格納されています)。
+- **スクリーンショット**-シミュレーターのスクリーンショットを保存します ( **Pictures\Xamarin\iOS シミュレーター\\** に格納されています)。
 - [[**設定**](#settings)] –キーボード、場所、およびその他の設定が表示されます。
 - [**その他のオプション**](#other-options)–回転、シェイクジェスチャ、タッチ ID などのさまざまなシミュレーターオプションが表示されます。
 
@@ -72,3 +72,12 @@ Windows コンピューターでは、iOS サウンドが聞こえません。
 [![シミュレーターを使用するためのチェックボックス](images/options-sml.png "シミュレーターを使用するためのチェックボックス")](images/options.png#lightbox)
 
 このオプションを無効にすると、接続されている Mac ビルドホストで iOS シミュレーターが開きます。
+
+## <a name="troubleshooting"></a>トラブルシューティング
+
+リモートの iOS シミュレーターで問題が発生した場合は、次の場所にあるログを確認できます。
+
+- **Mac** – `~/Library/Logs/Xamarin/Simulator.Server`
+- **Windows** – `%LOCALAPPDATA%\Xamarin\Logs\Xamarin.Simulator`
+
+[Visual Studio で問題を報告](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio)する場合は、これらのログを添付すると便利な場合があります (アップロードをプライベートに保持するオプションがあります)。

@@ -6,12 +6,12 @@ ms.assetid: a5964686-5fc6-4280-b087-7ba27cc1c8bf
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 583b1cb9e53ef0fb1002bc73ba53d063f99eff7c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 16b8f303555bc2f45516c3c060c0d2482f9c4954
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016777"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728227"
 ---
 # <a name="manually-creating-nuget-packages-for-xamarin"></a>Xamarin の NuGet パッケージを手動で作成する
 
@@ -53,7 +53,7 @@ _このページには、Xamarin プラットフォームを対象とする NuGe
 
 上記の "MonoAndroid10" は "Android 1.0" を意味します。 これは、プロジェクトの[ターゲットフレームワーク](~/android/app-fundamentals/android-api-levels.md)がモノ android バージョン1.0 以降である必要があることを意味します。 バージョンは、プロジェクトファイルの `<TargetFrameworkVersion>` 要素で指定されます。
 
-明確にするには:
+解説:
 
 - **MonoAndroid403**は Android 4.0.3 以降 (ie API レベル 15) と一致します
 - **IOS10**は、Xamarin. iOS 1.0 以降に一致します。
@@ -79,5 +79,5 @@ PCL プロファイルは、アクセスできる .NET framework Api に限定�
 
 ## <a name="related-links"></a>関連リンク
 
-- [Nugetizer-3000 自動 Nuget 作成](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md)       
+- [Nugetizer-3000 自動 NuGet 作成](~/cross-platform/app-fundamentals/nuget-multiplatform-libraries/index.md)       
 - [プロジェクトに NuGet を含める](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)

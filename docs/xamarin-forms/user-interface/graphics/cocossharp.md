@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/03/2016
-ms.openlocfilehash: 7b465391958a6e862bfed9fde8d9da1fdd52bee5
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: d13237f270fe01e2a91b69a60c3109843db713bf
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759763"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728015"
 ---
 # <a name="using-cocossharp-in-xamarinforms"></a>Xamarin.Forms で CocosSharp を使用します。
 
@@ -24,12 +24,12 @@ _CocosSharp は、正確な図形、イメージ、およびテキストのレ�
 
 **Evolve 2016: Cocos # Xamarin.Forms で**
 
-## <a name="overview"></a>概要
+## <a name="overview"></a>の概要
 
 CocosSharp では、グラフィックスを表示する、タッチ入力を読み取り、オーディオ、および管理のコンテンツを再生するための柔軟で強力なテクノロジです。 このガイドでは、Xamarin.Forms アプリケーションに CocosSharp を追加する方法について説明します。 次について説明します。
 
 - [CocosSharp とは何ですか。](#what)
-- [CocosSharp の Nuget パッケージを追加します。](#nuget)
+- [CocosSharp NuGet パッケージの追加](#nuget)
 - [チュートリアル: CocosSharp を Xamarin.Forms アプリに追加します。](#add)
 
 <a name="what" />
@@ -53,22 +53,22 @@ Xamarin.Forms は、ネイティブなプラットフォーム固有の UI シ�
 
 <a name="nuget" />
 
-## <a name="adding-the-cocossharp-nuget-packages"></a>CocosSharp の Nuget パッケージを追加します。
+## <a name="adding-the-cocossharp-nuget-packages"></a>CocosSharp NuGet パッケージの追加
 
 CocosSharp を使用する前に、開発者は、Xamarin.Forms プロジェクトにいくつかの項目を追加する必要があります。
 このガイドでは、Xamarin.Forms プロジェクトで、iOS、Android、および .NET Standard ライブラリ プロジェクト。
 すべてのコードは、.NET Standard ライブラリ プロジェクトで出力されます。ただし、ライブラリは、iOS および Android のプロジェクトに追加する必要があります。
 
-CocosSharp の Nuget パッケージには、すべての CocosSharp オブジェクトを作成するために必要なオブジェクトが含まれます。
-CocosSharp.Forms の nuget パッケージに含まれる、`CocosSharpView`クラスは、Xamarin.Forms で CocosSharp をホストするために使用します。
+CocosSharp NuGet パッケージには、CocosSharp オブジェクトを作成するために必要なすべてのオブジェクトが含まれています。
+CocosSharp NuGet パッケージには `CocosSharpView` クラスが含まれています。これは、CocosSharp でのホストに使用されます。
 追加、 **CocosSharp.Forms** NuGet と**CocosSharp**も自動的に追加されます。
 これを行うには、.NET Standard ライブラリ プロジェクトの **パッケージ** フォルダーを右クリックし、**パッケージの追加** を選択します。検索用語として「 **CocosSharp**」を入力し、 **CocosSharp に対し**て  を選択して、**パッケージの追加** をクリックします。
 
-![](cocossharp-images/image1.png "追加のパッケージ ダイアログ ボックス")
+![](cocossharp-images/image1.png "Add Packages Dialog")
 
 両方**CocosSharp**と**CocosSharp.Forms** NuGet パッケージをプロジェクトに追加されます。
 
-![](cocossharp-images/image2.png "パッケージ フォルダー")
+![](cocossharp-images/image2.png "Packages Folder")
 
 プラットフォーム固有プロジェクト (iOS と Android) などの上記の手順を繰り返します。
 
@@ -138,7 +138,7 @@ public HomePage ()
 
 Ios では、`HomePage`次の図のように表示されます。
 
-![](cocossharp-images/image3.png "ホーム ページのスクリーン ショット")
+![](cocossharp-images/image3.png "HomePage Screenshot")
 
 <a name="2" />
 
@@ -194,7 +194,7 @@ void HandleViewCreated (object sender, EventArgs e)
 
 次のグラフは、一般的な CocosSharp 階層を視覚化できます。
 
-![](cocossharp-images/image4.png "CocosSharp の一般的な階層")
+![](cocossharp-images/image4.png "Typical CocosSharp Hierarchy")
 
 1 つだけ`CCScene`一度にアクティブにできます。 ほとんどのゲームを使用して、複数`CCLayer`コンテンツの並べ替えは、アプリケーションのインスタンスでは、1 つのみを使用します。 同様に、ほとんどのゲームを使用して、複数のビジュアル オブジェクトですが、アプリのいずれかを私たちだけ必要があります。 詳細については、CocosSharp でのビジュアル階層が見つかりません、 [BouncingGame チュートリアル](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/bouncing-game.md)します。
 
@@ -220,7 +220,7 @@ GameScene gameScene;
 
 プロジェクトをコンパイルしてを実行している CocosSharp を確認を実行しましたできますようになりました。 何も追加していない、`GameScene,`のため、ページの上半分は黒 – CocosSharp シーンの既定の色。
 
-![](cocossharp-images/image5.png "空白 GameScene")
+![](cocossharp-images/image5.png "Blank GameScene")
 
 <a name="4" />
 
@@ -254,7 +254,7 @@ public class GameScene : CCScene
 
 今すぐアプリを実行すると、CocosSharp 表示領域の左側にある円が表示されます。
 
-![](cocossharp-images/image6.png "GameScene の円")
+![](cocossharp-images/image6.png "Circle in GameScene")
 
 #### <a name="understanding-designresolution"></a>Understanding DesignResolution
 
@@ -262,7 +262,7 @@ public class GameScene : CCScene
 
 `DesignResolution`を配置して、オブジェクトのサイズ変更の CocosSharp 領域の高さと幅を表します。 領域の実際の解像度の単位で*ピクセル*中に、`DesignResolution`は世界で測定されます*ユニット*します。 次の図は、iPhone 5 x 1136 640 ピクセルの解像度が画面に表示されるビューのさまざまな部分の解像度を示します。
 
-![](cocossharp-images/image7.png "iPhone 5 s デザインの解決")
+![](cocossharp-images/image7.png "iPhone 5s Design Resolution")
 
 上記の図は、黒色の文字で、画面の外側のピクセル寸法を表示します。 単位は、白いテキストでダイアグラムの内側に表示されます。 上に表示される重要な詳細情報を次に示します。
 
@@ -330,9 +330,9 @@ void CreateBottomHalf(Grid grid)
 
 CocosSharp の円は、今すぐクリックに応答に移動します。 CocosSharp キャンバスの境界を左または右円を十分に移動することによっても明確に確認できます。
 
-![](cocossharp-images/image8.png "円の移動に GameScene")
+![](cocossharp-images/image8.png "GameScene with Moving Circle")
 
-## <a name="summary"></a>概要
+## <a name="summary"></a>要約
 
 このガイドは、CocosSharp を既存の Xamarin.Forms に追加する方法を示しています。 プロジェクトを Xamarin.Forms で CocosSharp との対話を作成する方法と CocosSharp でレイアウトを作成するときにさまざまな考慮事項について説明します。
 
