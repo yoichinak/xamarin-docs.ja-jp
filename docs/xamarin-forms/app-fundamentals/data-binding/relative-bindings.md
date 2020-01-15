@@ -6,13 +6,13 @@ ms.assetid: CC64BB1D-8303-46B1-94B6-4EF2F20317A8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/30/2019
-ms.openlocfilehash: 08026cd3f3ef7503a92f6c78f1e3e27ad3642d09
-ms.sourcegitcommit: f8583585c501607fdfa061b95e9a9f385ed1d591
+ms.date: 12/04/2019
+ms.openlocfilehash: e115014728cce9252a92740b6db5beab582f61ed
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "72959137"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489874"
 ---
 # <a name="xamarinforms-relative-bindings"></a>Xamarin.Forms の相対バインド
 
@@ -23,7 +23,7 @@ ms.locfileid: "72959137"
 `RelativeSource` マークアップ拡張機能は、次のプロパティを定義する `RelativeSourceExtension` クラスによってサポートされています。
 
 - `RelativeBindingSourceMode` 型の `Mode`。バインディング ターゲットの位置を基準とする相対的なバインド ソースの位置を記述します。
-- `int` 型の `AncestorLevel`。`Mode` プロパティが `FindAncestor` の場合、検索するオプションの先祖レベル。
+- `int` 型の `AncestorLevel`。`Mode` プロパティが `FindAncestor` の場合、検索するオプションの先祖レベル。 `n` の `AncestorLevel` は、`AncestorType` の `n-1` インスタンスをスキップします。
 - `Type` 型の `AncestorType`。`Mode` プロパティが `FindAncestor` の場合、検索する先祖の種類。
 
 > [!NOTE]
@@ -81,6 +81,9 @@ Xamarin.Forms マークアップ拡張機能の詳細については、「[XAML 
 > `FindAncestor` および `FindAncestorBindingContext` の相対バインド モードを使用する場合は、`AncestorType` プロパティを `Type` に設定する必要があります。それ以外の場合は、`XamlParseException` がスローされます。
 
 `Mode` プロパティが明示的に設定されていない場合、`AncestorType` プロパティを [`Element`](xref:Xamarin.Forms.Element) から派生した型に設定すると、`Mode` プロパティが暗黙的に `FindAncestor` に設定されます。 同様に、`AncestorType` プロパティを `Element` から派生していない型に設定すると、`Mode` プロパティは暗黙的に `FindAncestorBindingContext` に設定されます。
+
+> [!NOTE]
+> `FindAncestorBindingContext` モードを使用する相対バインドは、先祖の `BindingContext` が変更されたときに再適用されます。
 
 次の XAML は、`Mode` プロパティが暗黙的に `FindAncestorBindingContext` に設定される例を示しています。
 

@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.custom: video
 ms.date: 07/10/2019
-ms.openlocfilehash: c73144f797447832d795c1379f12a52494c1fbca
-ms.sourcegitcommit: 1c87135a47780f34102952d4b140850b4f08b075
+ms.openlocfilehash: e388df2b4c7201cad01789de1676f79bec8d351e
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2019
-ms.locfileid: "74536522"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75488544"
 ---
 # <a name="get-started-with-xamarinessentials"></a>Xamarin.Essentials の概要
 
@@ -19,7 +19,7 @@ Xamarin.Essentials には、任意の iOS、Android、または UWP アプリケ
 
 ## <a name="installation"></a>インストール
 
-Xamarin.Essentials は NuGet パッケージとして入手可能で、Visual Studio を使用して既存または新規の任意のプロジェクトに追加できます。
+Xamarin.Essentials は、NuGet パッケージとして入手でき、Visual Studio のすべての新しいプロジェクトに含まれています。 また、次の手順で Visual Studio を使用して既存のプロジェクトに追加することもできます。
 
 1. [Xamarin 用の Visual Studio ツール](~/get-started/installation/index.md)と共に、[Visual Studio](https://visualstudio.microsoft.com/) をダウンロードしてインストールします。
 

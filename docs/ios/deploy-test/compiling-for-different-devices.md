@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 30415bd2df14cdc13f94a020475acf471b25c6ae
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 1f71179ccafc2daf65e792c4538bf47ea2df1e7d
+ms.sourcegitcommit: 0177e06169da621ed9d5fa0f6118a628e8c92bd2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030370"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75663732"
 ---
 # <a name="compiling-for-different-devices-in-xamarinios"></a>Xamarin.iOS の各種デバイス向けコンパイル
 
@@ -30,27 +30,23 @@ ms.locfileid: "73030370"
 
 UI で利用できる構成オプションに加え、独自のコマンド ライン オプション セットを [Xamarin.iOS ビルド ツール (mtouch)](~/ios/deploy-test/mtouch.md) に渡すこともできます。
 
-[http://iossupportmatrix.com/](http://iossupportmatrix.com/) は便利なリソースです。これを利用すれば、必要なすべてのデバイス、アーキテクチャ、iOS バージョンを含めることができます。
-
- <a name="SDK_Options" />
-
 ## <a name="sdk-options"></a>SDK オプション
 
 Visual Studio for Mac では、SDK に関連する 2 つの重要なプロパティを構成できます。ソフトウェアのビルドに利用される iOS SDK バージョンと配置ターゲット (または必要な最小 iOS バージョン) です。
 
-iOS **SDK バージョン** オプションでは、Apple が公開している SDK をさまざまなバージョンで利用できます。これはビルド中に参照すべきコンパイラ、リンカー、ライブラリを Xamarin.iOS に指示します。 
+iOS **SDK バージョン** オプションでは、Apple が公開している SDK をさまざまなバージョンで利用できます。これはビルド中に参照すべきコンパイラ、リンカー、ライブラリを Xamarin.iOS に指示します。 プロジェクトを右クリックして **[オプション]** を選択し、オプション ウィンドウで **[iOS ビルド]** を選択します。
 
-**配置ターゲット**設定では、アプリケーションを実行するオペレーティング システムの必要な最小バージョンを選択します。 これはプロジェクトの Info.plist ファイルで設定されます。 アプリケーションを実行するために必要なすべての API が含まれる最小のバージョンを選択してください。
+[![オプション ウィンドウで SDK バージョンを選択する](compiling-for-different-devices-images/sdk-version-sml.png)](compiling-for-different-devices-images/sdk-version.png#lightbox)
+
+**配置ターゲット**設定では、アプリケーションを実行するオペレーティング システムの必要な最小バージョンを選択します。 これはプロジェクトの **Info.plist** ファイルで設定されます。 アプリケーションを実行するために必要なすべての API が含まれる最小のバージョンを選択してください。
+
+[![Info.plist ファイルで配置ターゲットを設定する](compiling-for-different-devices-images/deployment-target-sml.png)](compiling-for-different-devices-images/deployment-target.png#lightbox)
 
 通常、Xamarin.iOS API は最新版の SDK で利用できるすべてのメソッドを公開します。Microsoft では、必要に応じて、実行時に機能が利用できるかどうかを検出する便利なプロパティを提供しています (たとえば、`UIDevice.UserInterfaceIdiom` と `UIDevice.IsMultitaskingSupported` は常に Xamarin.iOS で動作し、Microsoft はバックグラウンドのあらゆる仕事を行っています)。
-
- <a name="Linking" />
 
 ## <a name="linking"></a>リンク
 
 Microsoft の[リンカー](~/ios/deploy-test/linker.md)専用ページをご覧ください。実行可能ファイルのサイズを減らし、実行可能ファイルを効果的に使用するためにリンカーがいかに役立つかをご確認いただけます。
-
- <a name="Code_Generation_Engine" />
 
 ## <a name="code-generation-engine"></a>コード生成エンジン
 
@@ -66,11 +62,7 @@ LLVM 最適化バックエンド エンジンは、Mono エンジンより簡潔
 
 [![](compiling-for-different-devices-images/image2a.png "Enabling LLVM")](compiling-for-different-devices-images/image2a.png#lightbox)
 
- <a name="ARMV7_and_ARMV7s_support" />
-
 ## <a name="architecture-support"></a>アーキテクチャ サポート
-
-<a name="armv6-discontinued" />
 
 ### <a name="armv6-xamarinios-discontinued-support-for-armv6-with-v810"></a>ARMv6 (Xamarin.iOS では、v8.10 で ARMv6 のサポートが終了しました)
 
@@ -107,13 +99,9 @@ ARMv7s プロセッサのみを対象とする場合、わずかに速いコー�
 
 App Store に提出するビルドには、64 ビット サポートを含める必要があります。これは [Apple](https://developer.apple.com/news/?id=12172014b) が定めた要件です。 また、iOS 11 は 64 ビット アプリケーションにのみ対応しています。
 
- <a name="ARM_Thumb_Support" />
-
 ### <a name="arm-thumb-2-support"></a>ARM Thumb-2 サポート
 
 Thumb は、ARM プロセッサで利用される、より簡潔な命令セットです。 Thumb サポートを有効にすれば、実行時間が長くなりますが、実行可能ファイルのサイズを減らすことができます。 Thumb は ARMv7 と ARMv7s でサポートされています。
-
- <a name="Conditional_framwork_useage" />
 
 ## <a name="conditional-framework-usage"></a>フレームワークの条件付き利用
 
@@ -131,4 +119,3 @@ Thumb は、ARM プロセッサで利用される、より簡潔な命令セッ�
 ## <a name="related-links"></a>関連リンク
 
 - [リンカー](~/ios/deploy-test/linker.md)
-- [外部 - iOS サポート マトリックス](http://iossupportmatrix.com/)

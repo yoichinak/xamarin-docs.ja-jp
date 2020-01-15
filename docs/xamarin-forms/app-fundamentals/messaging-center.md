@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/08/2019
-ms.openlocfilehash: 8d5de8bac6cc61b0874c978a6443ca4490015457
-ms.sourcegitcommit: eb23b7d745d1090376f9def07e0f11cb089494d0
+ms.openlocfilehash: 0e5fd88678becd7becfcb1c43e14b1e33aad72de
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72170962"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489883"
 ---
 # <a name="xamarinforms-messagingcenter"></a>Xamarin.Forms の MessagingCenter
 
@@ -26,7 +26,7 @@ Xamarin.Forms の [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) クラ
 
 [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) クラスでは、マルチキャストの発行/サブスクライブ機能を提供します。 つまり、1 つのメッセージをパブリッシュする複数のパブリッシャーが存在し、同じメッセージをリッスンしている複数のサブスクライバーが存在する可能性があるということです。
 
-![](messaging-center-images/messaging-center.png "マルチキャストの発行/サブスクライブ機能")
+![](messaging-center-images/messaging-center.png "Multicast publish-subscribe functionality")
 
 パブリッシャーは [`MessagingCenter.Send`](xref:Xamarin.Forms.MessagingCenter.Send*) メソッドを使用してメッセージを送信しますが、サブスクライバーは [`MessagingCenter.Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*) メソッドを使用してメッセージをリッスンします。 さらに、サブスクライバーは、必要に応じて [`MessagingCenter.Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) メソッドを使用して、メッセージ サブスクリプションを解除することもできます。
 
@@ -82,6 +82,9 @@ MessagingCenter.Subscribe<MainPage, string>(this, "Hi", async (sender, arg) =>
 ```
 
 この例では、[`Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*) メソッドでペイロード データが `string` である `MainPage` 型によって送信された `Hi` メッセージをサブスクライブします。 コールバック デリゲートは、このようなメッセージの受信に応答して実行されます。これにより、アラートのペイロード データが表示されます。
+
+> [!IMPORTANT]
+> `Subscribe` メソッドによって実行されるデリゲートは、`Send` メソッドを使用してメッセージを発行するのと同じスレッド上で実行されます。
 
 ## <a name="unsubscribe-from-a-message"></a>メッセージのサブスクリプションの解除
 

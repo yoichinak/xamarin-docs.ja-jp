@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: fede666071aad8702eda17a94a06c7de49c7397e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: e2b25468255ff84a3fe79ed4fea913e04bf88687
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029475"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489370"
 ---
 # <a name="upload-to-mac-app-store"></a>Mac App Store へのアップロード
 
 _このガイドでは、Mac App Store に Xamarin.Mac アプリを発行するためのアップロード手順について説明します。_
 
-承認時、アプリケーションは、[iTunes Connect](https://itunesconnect.apple.com/) から Mac App Store に送信されます。
+承認時、アプリケーションは、[iTunes Connect](https://itunesconnect.apple.com/) から Mac App Store に送信されます。 さらに、App Store から [**Transporter**](https://apps.apple.com/us/app/transporter/id1450874784?mt=12) ツールを入手する必要もあります。
 
 1. 作成する **macOS アプリ**を選択します。 
 
@@ -70,37 +70,22 @@ _このガイドでは、Mac App Store に Xamarin.Mac アプリを発行する�
 
     [![](uploading-images/image76.png "The acceptance notification")](uploading-images/image76.png#lightbox)
 
-9. Application Loader を起動し、Apple ID でログインしていることを確認します。
-**[Deliver Your App]\(アプリの配信\)** を選択し、続行します。 
+9. **Transporter** を開始し、Apple ID でログインした後、 **[アプリの追加]** を選択します。
 
-    [![](uploading-images/image77.png "The Application Loader interface")](uploading-images/image77.png#lightbox)
+    [![](uploading-images/transporter01-sml.png "The Application Loader interface")](uploading-images/transporter01.png#lightbox)
 
-10. **[Ready to Upload Binary]\(バイナリのアップロードの準備ができました\)** の状態のアプリケーション一覧から選択し、 **[Next]\(次へ\)** をクリックします。 
+    手順に従ってアプリ パッケージを iTunes Connect にアップロードします。
 
-    [![](uploading-images/image78.png "Selecting the app to load")](uploading-images/image78.png#lightbox)
-
-11. アプリケーションのメタデータを確認し、 **[Choose...]\(選択\)** をクリックして、パッケージ ファイルを検索します。 
-
-    [![](uploading-images/image79.png "Reviewing the app metadata")](uploading-images/image79.png#lightbox)
-
-12. App Store のビルド構成を使用して Visual Studio for Mac でビルドされたパッケージ ファイルを探します。 
-
-    [![](uploading-images/image80.png "Selecting the file to upload")](uploading-images/image80.png#lightbox)
-
-13. **[送信]** を押します。 
-
-    [![](uploading-images/image81.png "Sending the app")](uploading-images/image81.png#lightbox)
-
-14. パッケージが検証され、すべてのエラーが報告されます。 これらのエラーを修正し、再度アップロードします。 アップロードが正常に完了すると、App Store チームが検証するためにアプリは自動送信されます。 
-
-    [![](uploading-images/image82.png "An example of upload errors")](uploading-images/image82.png#lightbox)
+    > [!NOTE]
+    > [**Transporter**](https://apps.apple.com/us/app/transporter/id1450874784?mt=12) は、Xcode 10 以前で使用されていた**Application Loader** ツールに代わるものです。
+    > Application Loader は、Xcode 11 以降では使用できなくなります。
 
 承認されると、アプリケーションはダウンロード可能になるか、Mac App Store から購入可能となります。
 
 ## <a name="related-links"></a>関連リンク
 
 - [インストール](~//mac/get-started/installation.md)
-- [Hello Mac のサンプル](~//mac/get-started/hello-mac.md)
+- [Hello Mac のサンプル](~/mac/get-started/hello-mac.md)
 - [Mac App Store でアプリを配布する](https://developer.apple.com/devcenter/mac/checklist/)
 - [ツール ガイド: アプリのコード署名](https://developer.apple.com/library/mac/#documentation/ToolsLanguages/Conceptual/OSXWorkflowGuide/CodeSigning/CodeSigning.html)
 - [Developer ID と GateKeeper](https://developer.apple.com/resources/developer-id/)

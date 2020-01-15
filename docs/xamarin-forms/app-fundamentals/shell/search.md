@@ -6,13 +6,13 @@ ms.assetid: F8F9471D-6771-4D23-96C0-2B79473A06D4
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/25/2019
-ms.openlocfilehash: 400459d2701731726c91c70e020ef375a7031169
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.date: 12/18/2019
+ms.openlocfilehash: 9bd4fe5f1a35e2a6f36540cbee13838841b36d92
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72695936"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75490065"
 ---
 # <a name="xamarinforms-shell-search"></a>Xamarin.Forms シェルでの検索
 
@@ -142,7 +142,7 @@ Shell.SetSearchHandler(this, new MonkeySearchHandler
 </ContentPage>
 ```
 
-該当の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 Shell.SetSearchHandler(this, new MonkeySearchHandler
@@ -181,8 +181,11 @@ Shell.SetSearchHandler(this, new MonkeySearchHandler
 `SearchHandler` がページの上部に追加されると、既定で検索ボックスが表示され、完全に展開されます。 しかし、`SearchHandler.SearchBoxVisibility` プロパティを `SearchBoxVisibility` 列挙メンバーのいずれかに設定することで、この動作を変更することができます。
 
 - `Hidden` – 検索ボックスは表示されず、アクセスできません。
-- `Collapsible` – 表示するためのアクションをユーザーが実行するまで、検索ボックスは非表示になります。
-- `Expanded` – 検索ボックスは表示され、完全に展開されます。
+- `Collapsible` – 表示するためのアクションをユーザーが実行するまで、検索ボックスは非表示になります。 iOS では、ページのコンテンツを垂直方向にバウンスさせることで検索ボックスが表示されます。Android では、疑問符アイコンをタップすると検索ボックスが表示されます。
+- `Expanded` – 検索ボックスは表示され、完全に展開されます。 これは、`SearchHandler.SearchBoxVisibility` プロパティの既定値です。
+
+> [!IMPORTANT]
+> iOS では、折りたたみ可能な検索ボックスには iOS 11 以上が必要です。
 
 次の例は、検索ボックスを非表示にする方法を示しています。
 
@@ -190,7 +193,7 @@ Shell.SetSearchHandler(this, new MonkeySearchHandler
 <ContentPage ...
              xmlns:controls="clr-namespace:Xaminals.Controls">
     <Shell.SearchHandler>
-        <controls:MonkeySearchHandler SearchBoxVisibility="Hidden"
+        <controls:AnimalSearchHandler SearchBoxVisibility="Hidden"
                                       ... />
     </Shell.SearchHandler>
     ...

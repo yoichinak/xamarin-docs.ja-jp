@@ -6,13 +6,13 @@ ms.assetid: 318D81DB-E456-4E44-B083-36A27DBD9523
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/23/2019
-ms.openlocfilehash: a6d99197adca9d07fec5b996d2a74e2ac336d2e9
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.date: 11/06/2019
+ms.openlocfilehash: 0ffcbe99ef9696c5fde501809bea5ddcc7a793a7
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69888981"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489838"
 ---
 # <a name="xamarinforms-shell-tabs"></a>Xamarin.Forms シェルのタブ
 
@@ -50,7 +50,7 @@ ms.locfileid: "69888981"
 
 このコード例により、次のシングル ページ アプリケーションが得られます。
 
-[![iOS と Android でのシェルのシングル ページ アプリのスクリーンショット](tabs-images/single-page-app.png "シェルのシングル ページ アプリ")](tabs-images/single-page-app-large.png#lightbox "シェルのシングル ページ アプリ")
+[![iOS および Android 上のシェル シングル ページ アプリのスクリーンショット](tabs-images/single-page-app.png "シェル シングル ページ アプリ")](tabs-images/single-page-app-large.png#lightbox "シェル シングル ページ アプリ")
 
 > [!NOTE]
 > 必要に応じてナビゲーション バーを非表示にすることができます。それには、[`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクト上で `Shell.NavBarIsVisible` 添付プロパティを `false` に設定します。
@@ -100,7 +100,11 @@ ms.locfileid: "69888981"
 
 タブのタイトルとアイコンは各 `Tab` オブジェクト上で設定され、下部のタブに表示されます。
 
-[![iOS と Android での、下部のタブを備えたシェルの 2 ページ アプリのスクリーンショット](tabs-images/two-page-app-bottom-tabs.png "下部のタブを備えたシェルの 2 ページ アプリ")](tabs-images/two-page-app-bottom-tabs-large.png#lightbox "下部のタブを備えたシェルの 2 ページ アプリ")
+[![下部タブが表示された、iOS および Android 上のシェル 2 ページ アプリのスクリーンショット](tabs-images/two-page-app-bottom-tabs.png "下部タブが表示されたシェル 2 ページ アプリ")](tabs-images/two-page-app-bottom-tabs-large.png#lightbox "下部タブが表示されたシェル 2 ページ アプリ")
+
+6 個以上のタブがある場合、 **[その他]** タブが表示され、これを使用して追加のタブにアクセスできます。
+
+[![[その他] タブが表示された、iOS および Android 上のシェル アプリのスクリーン ショット](tabs-images/more-tabs.png "[その他] タブが表示されたシェル アプリ")](tabs-images/more-tabs-large.png#lightbox "[その他] タブが表示されたシェル アプリ")
 
 または、シェルの暗黙的な変換演算子を使って、前の例から `ShellContent` および `Tab` オブジェクトを削除することができます。
 
@@ -213,7 +217,7 @@ ms.locfileid: "69888981"
 
 これで、次のスクリーンショットに示すようなレイアウトになります。
 
-[![iOS と Android での、上部と下部のタブを備えたシェルの 2 ページ アプリのスクリーンショット](tabs-images/two-page-app-top-tabs.png "上部と下部のタブを備えたシェルの 2 ページ アプリ")](tabs-images/two-page-app-top-tabs-large.png#lightbox "上部と下部のタブを備えたシェルの 2 ページ アプリ")
+[![上部タブと下部タブが表示された、iOS および Android 上のシェル 2 ページ アプリのスクリーンショット](tabs-images/two-page-app-top-tabs.png "上部タブと下部タブが表示されたシェル 2 ページ アプリ")](tabs-images/two-page-app-top-tabs-large.png#lightbox "上部タブと下部タブが表示されたシェル 2 ページ アプリ")
 
 または、シェルの暗黙的な変換演算子を使って、前の例から `ShellContent` オブジェクトと 2 つ目の `Tab` オブジェクトを削除することができます。
 

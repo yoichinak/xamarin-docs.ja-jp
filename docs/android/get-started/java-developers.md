@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/13/2018
-ms.openlocfilehash: 1d9b41af68576a67c901f8f19a57fb4738430306
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b9c6694ea49607b839a3658e5cc8bac5fb529c85
+ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73027941"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75728058"
 ---
 # <a name="xamarin-for-java-developers"></a>Java 開発者向け Xamarin
 
@@ -44,7 +44,7 @@ Java と C# はどちらも、マネージド実行環境で実行される中�
 
 ただし、Java と C# には違う点も多くあります。 次に例を示します。
 
-- Java は、暗黙的に型指定されたローカル変数をサポートしていません (C# は `var` キーワードをサポートします)。
+- Java は (Android での使用時)、暗黙的に型指定されたローカル変数をサポートしていません (C# は `var` キーワードをサポートします)。
 
 - Java ではパラメーターは値によってのみ渡すことができますが、C# では値だけでなく参照で渡すこともきます (C# では、パラメーターの参照渡しに `ref` および `out` キーワードが提供されていますが、Java にはこれに相当する機能はありません)。
 
@@ -56,7 +56,7 @@ Java と C# はどちらも、マネージド実行環境で実行される中�
 
 - Java の `switch` ステートメントでは、コードは次の switch セクションに移行できますが、C# では、すべての `switch` セクションの最後で switch を終了する必要があります (各セクションの最後を `break` ステートメントで閉じる必要があります)。
 
-- Java ではメソッドによってスローされる例外を `throws` キーワードで指定しますが、C# にはチェックされた例外の概念がありません &ndash; `throws` キーワードは C# ではサポートされていません。
+- Java ではメソッドによってスローされる例外を `throws` キーワードで指定しますが、C# にはチェックされた例外の概念がありません &ndash;`throws` キーワードは C# ではサポートされていません。
 
 - C# では統合言語クエリ (LINQ) がサポートされており、予約語 `from`、`select`、`where` を使って、データベース クエリと同じような方法でコレクションに対するクエリを記述できます。
 
@@ -80,6 +80,11 @@ Java と C# はどちらも、マネージド実行環境で実行される中�
     この機能の言語レベルでのサポートにより、非同期プログラミングの実装が容易になり、エラーが減ります。
 
 最後に、Xamarin では "*バインド*" と呼ばれる技術を使って、[既存の Java のアセットを利用する](#interop)こともできます。 Xamarin の自動バインド ジェネレーターを使うことで、C# から Java の既存のコード、フレームワーク、ライブラリを呼び出すことができます。 そのために必要なことは、Java でスタティック ライブラリを作成し、バインドを介して C# に公開するだけです。
+
+> [!NOTE]
+> Android プログラミングでは、Java 言語の特定のバージョンを使用します。この言語は、Java 7 のすべての機能と [Java 8 のサブセット](https://developer.android.com/studio/write/java8-support.html)をサポートしています。
+>
+> このページに記載されている一部の機能 (C# の `var` キーワードなど) は、新しいバージョンの Java ([Java 10 の `var`](https://developer.oracle.com/java/jdk-10-local-variable-type-inference.html) など) で使用できますが、Android 開発者が使用することはやはりできません。
 
 <a name="fundamentals" />
 
@@ -207,8 +212,6 @@ public class SensorsActivity : Activity, ISensorEventListener
 C# でクラスがそれ以上サブクラス化されないようにしたい場合は、クラス名の前に `sealed` を付けます。Java では、クラス名の前に `final` を付けます。
 
 C# のクラス定義について詳しくは、[クラス](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/classes)に関するトピックと[継承](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/inheritance)に関するトピックをご覧ください。
-
-<a name="properties" />
 
 ### <a name="properties"></a>プロパティ
 
@@ -423,7 +426,7 @@ Java で使われている言語キーワードの多くは、C# でも使われ
 |`super`|[base](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/base)|派生クラス内から親クラスのメンバーにアクセスするために使われます。|
 |`synchronized`|[lock](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/lock-statement)|ロックの取得と解放でコードの重要なセクションをラップします。|
 
-また、C# に固有で、Java には対応するもののないキーワードも多くあります。 Xamarin.Android のコードでは、以下の C# キーワードがよく使われます (この表は、Xamarin.Android の[サンプル コード](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android)を読むときに参照すると便利です)。
+また、C# に固有で、Android 上で使用される Java には対応するもののないキーワードも多くあります。 Xamarin.Android のコードでは、以下の C# キーワードがよく使われます (この表は、Xamarin.Android の[サンプル コード](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android)を読むときに参照すると便利です)。
 
 |C#|説明|
 |---|---|
@@ -459,11 +462,11 @@ C# に変換したくない既存の Java 機能がある場合は、2 つの方
 
 - **Java バインド ライブラリを作成する** &ndash; この方法では、Xamarin ツールを使って Java 型を囲む C# ラッパーを生成します。 このようなラッパーは "*バインド*" と呼ばれます。 結果として、Xamarin.Android アプリケーションはこれらのラッパーを呼び出すことによって *.jar* ファイルを使うことができます。
 
-- **Java ネイティブ インターフェイス** &ndash; *Java ネイティブ インターフェイス* (JNI) は、C# アプリによる Java コードの呼び出し、または Java コードによる C# アプリの呼び出しを可能にするフレームワークです。
+- **Java ネイティブ インターフェイス** &ndash;*Java ネイティブ インターフェイス* (JNI) は、C# アプリによる Java コードの呼び出し、または Java コードによる C# アプリの呼び出しを可能にするフレームワークです。
 
 これらの手法について詳しくは、「[Java Integration Overview](~/android/platform/java-integration/index.md)」(Java 統合の概要) をご覧ください。
 
-## <a name="for-further-reading"></a>関連項目
+## <a name="further-reading"></a>関連項目
 
 MSDN の「[C# プログラミング ガイド](https://docs.microsoft.com/dotnet/csharp/programming-guide/)」は C# プログラミング言語の学習を始めるときに役立ちます。「[C# リファレンス](https://docs.microsoft.com/dotnet/csharp/language-reference/)」を使うと C# 言語の特定の機能を検索できます。
 
