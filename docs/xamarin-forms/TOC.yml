@@ -10,18 +10,75 @@
           href: ~/get-started/requirements.md
         - name: インストール
           href: ~/get-started/installation/index.md
-        - name: 最初のアプリをビルドする
+          items:
+            - name: Windows での Xamarin のインストール
+              href: ~/get-started/installation/windows.md
+              items:
+                - name: Xamarin のインストールのプレビュー (Windows)
+                  href: ~/get-started/installation/windows-preview.md
+            - name: Visual Studio for Mac のインストール
+              href: /visualstudio/mac/installation/
+              items:
+                - name: Xamarin のインストールのプレビュー (Mac)
+                  href: /visualstudio/mac/update/
+            - name: Xamarin ファイアウォールの構成手順
+              href: ~/get-started/installation/firewall.md
+            - name: Xamarin のアンインストール
+              href: ~/get-started/installation/uninstalling-xamarin.md
+        - name: 最初のアプリ
           href: ~/get-started/first-app/index.md
-        - name: 単一ページのクイック スタート
-          href: ~/get-started/quickstarts/single-page.md
-        - name: 複数ページのクイック スタート
-          href: ~/get-started/quickstarts/multi-page.md
-        - name: ローカル データベースのクイック スタート
-          href: ~/get-started/quickstarts/database.md
-        - name: スタイルのクイック スタート
-          href: ~/get-started/quickstarts/styling.md
-        - name: Deep Dive
-          href: ~/get-started/quickstarts/deepdive.md
+        - name: クイックスタート
+          href: ~/get-started/quickstarts/index.md
+          items:
+            - name: ファイル > 新規
+              href: ~/get-started/quickstarts/single-page.md
+            - name: マルチページ
+              href: ~/get-started/quickstarts/multi-page.md
+            - name: データベース
+              href: ~/get-started/quickstarts/database.md
+            - name: '[スタイル]'
+              href: ~/get-started/quickstarts/styling.md
+            - name: Deep Dive
+              href: ~/get-started/quickstarts/deepdive.md
+        - name: チュートリアル
+          href: ~/get-started/tutorials/index.yml
+          items:
+            - name: スタック レイアウト
+              href: ~/get-started/tutorials/stacklayout/index.yml
+            - name: group1
+              href: ~/get-started/tutorials/label/index.yml
+            - name: Button
+              href: ~/get-started/tutorials/button/index.yml
+            - name: テキスト入力
+              href: ~/get-started/tutorials/entry/index.yml
+            - name: テキスト エディター
+              href: ~/get-started/tutorials/editor/index.yml
+            - name: イメージ
+              href: ~/get-started/tutorials/image/index.yml
+            - name: Grid レイアウト
+              href: ~/get-started/tutorials/grid/index.yml
+            - name: 表示内容
+              href: ~/get-started/tutorials/listview/index.yml
+            - name: ポップアップ
+              href: ~/get-started/tutorials/pop-ups/index.yml
+            - name: アプリのライフサイクル
+              href: ~/get-started/tutorials/app-lifecycle/index.yml
+            - name: ローカル データベース
+              href: ~/get-started/tutorials/local-database/index.yml
+            - name: Web サービス
+              href: ~/get-started/tutorials/web-service/index.yml
+        - name: Xamarin について学習する
+          items:
+            - name: .NET 開発者
+              href: ~/cross-platform/desktop/index.md
+            - name: Java 開発者
+              href: ~/android/get-started/java-developers.md
+            - name: Objective-C 開発者
+              href: ~/ios/get-started/objective-c-developers/index.md
+            - name: Azure
+              href: ~/xamarin-forms/data-cloud/index.yml
+        - name: 開発ガイダンス
+          href: ~/cross-platform/index.yml
     - name: XAML
       items:
         - name: 概要
@@ -266,17 +323,11 @@
             - name: カスタム レンダラー
               href: app-fundamentals/shell/customrenderers.md
         - name: テンプレート
-          href: app-fundamentals/templates/index.md
           items:
+            - name: 概要
+              href: app-fundamentals/templates/index.md
             - name: コントロール テンプレート
-              href: app-fundamentals/templates/control-templates/index.md
-              items:
-                - name: はじめに
-                  href: app-fundamentals/templates/control-templates/introduction.md
-                - name: コントロール テンプレートの作成
-                  href: app-fundamentals/templates/control-templates/creating.md
-                - name: テンプレートのバインド
-                  href: app-fundamentals/templates/control-templates/template-binding.md
+              href: app-fundamentals/templates/control-template.md
             - name: データ テンプレート
               href: app-fundamentals/templates/data-templates/index.md
               items:
@@ -799,7 +850,7 @@
               href: data-cloud/azure-services/azure-storage.md
             - name: Azure Search
               href: data-cloud/azure-services/azure-search.md
-            - name: 'Azure Functions '
+            - name: Azure Functions
               href: data-cloud/azure-services/azure-functions.md
             - name: Azure SignalR Service
               href: data-cloud/azure-services/azure-signalr.md

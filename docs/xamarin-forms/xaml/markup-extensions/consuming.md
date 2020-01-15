@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/04/2019
-ms.openlocfilehash: 736627edc8628f229e6e1a1e079fca24b8ff97db
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: 47fd6d34a1ef286fa8e1a307ea6033c9c6a9feea
+ms.sourcegitcommit: 211fed94fb96127a3e158ae1ff5d7eb831a203d8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75490117"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75955755"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>XAML マークアップ拡張の使用
 
@@ -35,7 +35,7 @@ XAML マークアップ拡張機能を追加では、従来の他の XAML 実装
 - リソースディクショナリからオブジェクトを参照するには、記事「[**リソースディクショナリ**](~/xamarin-forms/xaml/resource-dictionaries.md)」で説明されているように `StaticResource` します。
 - `DynamicResource`-リソースディクショナリ内のオブジェクトの変更に応答します。詳細については、「[**動的スタイル**](~/xamarin-forms/user-interface/styles/dynamic.md)」を参照してください。
 - `Binding`-「[**データバインディング**](~/xamarin-forms/app-fundamentals/data-binding/index.md)」で説明されているように、2つのオブジェクトのプロパティ間のリンクを確立します。
-- `TemplateBinding`-「[**コントロールテンプレートからのバインド**](~/xamarin-forms/app-fundamentals/templates/control-templates/template-binding.md)」で説明されているように、コントロールテンプレートからデータバインディングを実行します。
+- `TemplateBinding`-「 [**Xamarin. フォームコントロールテンプレート**](~/xamarin-forms/app-fundamentals/templates/control-template.md)」で説明されているように、コントロールテンプレートからデータバインディングを実行します。
 - `RelativeSource`-「[相対バインド](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)」の記事で説明されているように、バインディングターゲットの位置に対して相対的なバインディングソースを設定します。
 
 [ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout)レイアウト カスタム マークアップ拡張機能を利用[ `ConstraintExpression`](xref:Xamarin.Forms.ConstraintExpression)します。 このマークアップ拡張機能が、情報の記事で説明されている[ **[相対レイアウト]** ](~/xamarin-forms/user-interface/layouts/relative-layout.md)します。
