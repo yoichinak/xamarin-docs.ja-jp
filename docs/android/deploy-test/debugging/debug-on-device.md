@@ -7,18 +7,16 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: e697459b20a481b1d2bada69677647ad4fbd3023
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 3ca524e451a7a4eb838805c839b33c4b9dd6bddd
+ms.sourcegitcommit: 5821c9709bf5e06e6126233932f94f9cf3524577
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021588"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75556536"
 ---
-# <a name="debug-on-device"></a>デバイスでのデバッグ
+# <a name="debug-on-an-android-device"></a>Android デバイスでのデバッグ
 
 _この記事では、Android の物理デバイス上で Xamarin.Android アプリケーションをデバッグする方法について説明します。_
-
-## <a name="debug-on-device-overview"></a>デバイスでのデバッグの概要
 
 Visual Studio for Mac または Visual Studio のいずれかを使用して、Android デバイスで Xamarin.Android アプリをデバッグできます。 デバイスでデバッグできるようにするには、デバイスが[開発用にセットアップ](~/android/get-started/installation/set-up-device-for-development.md)され、PC または Mac に接続されている必要があります。
 

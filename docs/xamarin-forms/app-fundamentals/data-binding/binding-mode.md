@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/01/2018
-ms.openlocfilehash: 1991be6961cbc296501a1df92fe3c89dda01d190
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: acfa7bc953906654567d361b93ec1ccff22c1f1b
+ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771687"
+ms.lasthandoff: 12/30/2019
+ms.locfileid: "75545648"
 ---
 # <a name="xamarinforms-binding-mode"></a>Xamarin.Forms のバインディング モード
 
@@ -49,7 +49,7 @@ ms.locfileid: "70771687"
 
 [![Reverse Binding](binding-mode-images/reversebinding-small.png "Reverse Binding")](binding-mode-images/reversebinding-large.png#lightbox "Reverse Binding")
 
-しかし、Android および UWP のスクリーンショットで示すように、`Slider` が引き続き動作することに驚かれるかもしれません。 これは、期待したとおりに初期化が機能したことから、`Label` ではなく `Slider` がバインディング ターゲットである場合にデータ バインディングは適切に機能することを示唆しているようです。
+しかし、Android のスクリーンショットで示すように、`Slider` が引き続き動作することに驚かれるかもしれません。 これは、期待したとおりに初期化が機能したことから、`Label` ではなく `Slider` がバインディング ターゲットである場合にデータ バインディングは適切に機能することを示唆しているようです。
 
 **Reverse Binding** サンプルと以前のサンプルとの違いは、"*バインディング モード*" に関係しています。
 
@@ -61,7 +61,7 @@ ms.locfileid: "70771687"
 - [`TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay) &ndash; データは、ソースとターゲット間で両方向に移動します
 - [`OneWay`](xref:Xamarin.Forms.BindingMode.OneWay) &ndash; データはソースからターゲットに移動します
 - [`OneWayToSource`](xref:Xamarin.Forms.BindingMode.OneWayToSource) &ndash; データは、ターゲットからソースに移動します
-- [`OneTime`](xref:Xamarin.Forms.BindingMode.OneWayToSource) &ndash; データはソースからターゲットに移動します。ただし、`BindingContext` が変更された場合のみとなります (Xamarin.Forms 3.0 の新機能)
+- [`OneTime`](xref:Xamarin.Forms.BindingMode.OneWayToSource) &ndash; データはソースからターゲットに移動しますが、`BindingContext` が変更された場合のみとなります (Xamarin.Forms 3.0 の新機能)
 
 すべてのバインド可能なプロパティに既定のバインディング モードがあります。既定のバインディング モードは、バインド可能なプロパティの作成時に設定し、`BindableProperty` オブジェクトの [`DefaultBindingMode`](xref:Xamarin.Forms.BindableProperty.DefaultBindingMode) プロパティから利用できます。 この既定のバインディング モードは、バインド可能なプロパティがデータ バインディングのターゲットであるときに有効なモードを示します。
 
@@ -263,7 +263,7 @@ ViewModel がバインディング ソースとして設定されると、バイ
 
 [![Simple Color Selector](binding-mode-images/simplecolorselector-small.png "Simple Color Selector")](binding-mode-images/simplecolorselector-large.png#lightbox "Simple Color Selector")
 
-Android および UWP のスクリーンショットに示したように、スライダーを操作すると、それに応じて `BoxView` と `Label` が更新されます。
+Android のスクリーンショットに示したように、スライダーを操作すると、それに応じて `BoxView` と `Label` が更新されます。
 
 リソース ディクショナリ内で ViewModel をインスタンス化することは、1 つの一般的なアプローチです。 `BindingContext` プロパティ用のプロパティ要素タグ内で ViewModel をインスタンス化することもできます。 **Simple Color Selector** XAML ファイル内で、リソース ディクショナリから `HslColorViewModel` を削除することを試みてから、それを次のように `Grid` の `BindingContext` プロパティに設定します。
 
@@ -675,7 +675,7 @@ public partial class SampleSettingsPage : ContentPage
 
 左側にある iOS のスクリーンショットには、最初に実行されたときのプログラムが示されています。 `SampleSettingsViewModel` 内のコンストラクターによって、背景色が白に初期化されます。これは、`ListView` で選択した内容です。
 
-[![設定のサンプル](binding-mode-images/samplesettings-small.png "設定のサンプル")](binding-mode-images/samplesettings-large.png#lightbox "設定のサンプル")
+[![Sample Settings](binding-mode-images/samplesettings-small.png "Sample Settings")](binding-mode-images/samplesettings-large.png#lightbox "Sample Settings")
 
 他のスクリーンショットは、変更された設定を示しています。 このページを試してみる場合は、プログラムが実行されているデバイスまたはエミュレーター上でプログラムをスリープ状態にするか、または終了することを忘れないでください。 Visual Studio デバッガーからプログラムを終了すると、`App` クラス内の `OnSleep` オーバーライドは呼び出されません。
 

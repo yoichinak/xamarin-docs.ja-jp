@@ -7,20 +7,18 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 04/12/2017
-ms.openlocfilehash: b361cd00121d16752d5eebc971653c8ea185c641
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 1bb7ffba11a7135735b7599fa7f12b47d0b347c8
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73018102"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489389"
 ---
 # <a name="provisioning-profiles-for-xamarinmac-apps"></a>Xamarin.Mac アプリのプロビジョニング プロファイル
 
 プロビジョニング プロファイルを使用すると、開発者が複数の macOS (旧称 Mac OS X) 固有の機能 (iCloud やプッシュ通知など) を Xamarin.Mac アプリに組み込むことができます。 これらの機能を使用する開発中の各アプリケーション用の Mac プロビジョニング プロファイルを作成、ダウンロード、およびインストールする必要があります。
 
 [![](profiles-images/certif13.png "The Apple Provisioning Portal")](profiles-images/certif13.png#lightbox)
-
-<a name="Development_Provisioning_Profile" />
 
 ## <a name="development-provisioning-profile"></a>開発プロビジョニング プロファイル
 
@@ -60,8 +58,6 @@ ms.locfileid: "73018102"
     [![](profiles-images/image48.png "The Developer Certificate Utility")](profiles-images/image48.png#lightbox)
 
 新しいアプリごとにまたは新しいコンピューターをテストに追加するたびに新しい開発プロビジョニング プロファイルを作成する必要があります。
-
-<a name="Production_Provisioning_Profile" />
 
 ## <a name="production-provisioning-profile"></a>実稼働プロビジョニング プロファイル
 

@@ -6,13 +6,13 @@ ms.assetid: FEDE51EB-577E-4B3E-9890-B7C1A5E52516
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/19/2019
-ms.openlocfilehash: c7ddcf443e3834e6c9e9518779a016d69ad7e204
-ms.sourcegitcommit: 18891db12c9d47224326af5753eccad8a904a188
+ms.date: 11/05/2019
+ms.openlocfilehash: 4049b3bdfdd6077dcfa151df9553722e63def0ba
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/24/2019
-ms.locfileid: "74451808"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489961"
 ---
 # <a name="xamarinforms-shell-flyout"></a>Xamarin.Forms シェルのポップアップ
 
@@ -247,6 +247,23 @@ Shell.Current.FlyoutIsPresented = false;
 - `TabIndexDefaultValueCreator`: `int` を返します。`TabIndex` プロパティの既定値を設定するために呼び出されます。
 - `TabStopDefaultValueCreator`: `bool` を返します。`TabStop` プロパティの既定値を設定するために呼び出されます。
 
+## <a name="flyout-vertical-scroll"></a>ポップアップ垂直スクロール
+
+既定では、ポップアップ項目がポップアップ内に収まらない場合は、ポップアウトを垂直方向にスクロールできます。 ただし、この動作は、バインド可能な `Shell.FlyoutVerticalScrollMode` プロパティを次の `ScrollMode` 列挙メンバーのいずれかに設定することで変更できます。
+
+- `Disabled` – 垂直スクロールが無効になることを示します。
+- `Enabled` – 垂直スクロールが有効になることを示します。
+- `Auto` – ポップアップ項目がポップアップ内に収まらない場合に、垂直スクロールが有効になることを示します。 これは、`Shell.FlyoutVerticalScrollMode` プロパティの既定値です。
+
+次の例は、垂直スクロールを無効にする方法を示しています。
+
+```xaml
+<Shell ...
+       FlyoutVerticalScrollMode="Disabled"
+    ...
+</Shell>
+```
+
 ## <a name="flyout-display-options"></a>ポップアップの表示オプション
 
 `FlyoutDisplayOptions` 列挙体を使って、次のメンバーを定義できます。
@@ -444,7 +461,7 @@ Shell.Current.CurrentItem = aboutItem;
 
 ## <a name="menu-items"></a>メニュー項目
 
-メニュー項目は必要に応じてポップアップに追加できますが、各メニュー項目は [ `MenuItem`](xref:Xamarin.Forms.MenuItem) オブジェクトによって表されます。 ポップアップ上の `MenuItem` オブジェクトの位置は、シェル ビジュアル階層内の宣言の順序によって異なります。 そのため、`FlyoutItem` オブジェクトの前に宣言された `MenuItem` オブジェクトは、ポップアップの一番上に表示され、`FlyoutItem` オブジェクトの後に宣言された `MenuItem` オブジェクトは、ポップアップの一番下に表示されます。
+メニュー項目は必要に応じてポップアップに追加できますが、各メニュー項目は [`MenuItem`](xref:Xamarin.Forms.MenuItem) オブジェクトによって表されます。 ポップアップ上の `MenuItem` オブジェクトの位置は、シェル ビジュアル階層内の宣言の順序によって異なります。 そのため、`FlyoutItem` オブジェクトの前に宣言された `MenuItem` オブジェクトは、ポップアップの一番上に表示され、`FlyoutItem` オブジェクトの後に宣言された `MenuItem` オブジェクトは、ポップアップの一番下に表示されます。
 
 > [!NOTE]
 > `MenuItem` クラスには、[`Clicked`](xref:Xamarin.Forms.MenuItem.Clicked) イベントと [`Command`](xref:Xamarin.Forms.MenuItem.Command) プロパティがあります。 そのため、`MenuItem` オブジェクトを使って、タップされた `MenuItem` への応答としてアクションを実行するシナリオを実現できます。 このようなシナリオには、ナビゲーションの実行や、特定の Web ページで Web ブラウザーを開くことなどが含まれます。

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 7d442d14589b35632bce2b6caec09235138ec585
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 185aebf48b24a6abbdd8f56dbbfc32f6e99f6e63
+ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771632"
+ms.lasthandoff: 12/30/2019
+ms.locfileid: "75545612"
 ---
 # <a name="the-xamarinforms-command-interface"></a>Xamarin.Forms のコマンド インターフェイス
 
@@ -279,7 +279,7 @@ public class PersonCollectionViewModel : INotifyPropertyChanged
 
 そのしくみを次に示します。ユーザーは最初に **[New]** ボタンを押します。 これにより、入力フォームは有効になりますが、 **[New]** ボタンは無効になります。 その後、ユーザーは名前、年齢、スキルを入力します。 編集中いつでも、ユーザーは **[Cancel]** ボタンを押して最初からやり直すことができます。 名前と有効な年齢が入力された場合にのみ、 **[Submit]** ボタンが有効になります。 この **[Submit]** ボタンを押して、`ListView` に表示されているコレクションにユーザーを転送します。 **[Cancel]** または **[Submit]** ボタンを押すと、入力フォームがクリアされ、 **[New]** ボタンが再び有効になります。
 
-左側の iOS の画面には、有効な年齢を入力する前のレイアウトが表示されています。 Android と UWP の画面には、年齢を設定した後で有効になった **[Submit]** ボタンが表示されています。
+左側の iOS の画面には、有効な年齢を入力する前のレイアウトが表示されています。 Android 画面には、年齢を設定した後で有効になった **[Submit]** ボタンが表示されています。
 
 [![Person Entry](commanding-images/personentry-small.png "Person Entry")](commanding-images/personentry-large.png#lightbox "Person Entry")
 

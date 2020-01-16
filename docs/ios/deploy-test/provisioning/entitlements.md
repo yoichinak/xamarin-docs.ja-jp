@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/13/2018
-ms.openlocfilehash: 43bde3a31a79728548e72ea1d34977f1a131f282
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f6a38aea1e46e1165bb36d83e75e24769de0a1e2
+ms.sourcegitcommit: 9ab907e053c57fc96419149f83187bc3e8983a6b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028534"
+ms.lasthandoff: 01/04/2020
+ms.locfileid: "75655361"
 ---
 # <a name="working-with-entitlements-in-xamarinios"></a>Xamarin.iOS での権利の使用
 
@@ -41,15 +41,15 @@ Entitlements.plist ファイルは権利の指定と、アプリケーション 
 
 Visual Studio for Mac で権利を構成するには、次の操作を行います。
 
-1. **ソリューション エクスプローラー**で、**Info.plist** ファイルをダブルクリックして開き、編集します。
-2. **[iOS アプリケーションのターゲット]** セクションで、アプリケーションの名前を入力し、アプリ ID が定義されたときに作成された**バンドル ID** を入力します。
+1. **Solution Pad** で、**Info.plist** ファイルをダブルクリックして開きします。
+2. **[ID]** セクションで、アプリケーションの名前を入力し、アプリ ID が定義されたときに作成された**バンドル ID** を入力します。
 
-    ![](entitlements-images/servicexs01.png "Enter a Bundle Identifier")
+    ![バンドル ID を入力します](entitlements-images/servicexs01-sml.png)
 
 3. 変更内容を **Info.plist** ファイルに保存します。
-4. **ソリューション エクスプローラー**で、**Entitlements.plist** ファイルをダブルクリックして開き、編集します。
+4. **Solution Pad** で、**Entitlements.plist** ファイルをダブルクリックして開き、編集します。
 
-    ![](entitlements-images/servicexs02.png "Editing the Entitlements")
+    ![権利の編集](entitlements-images/servicexs02-sml.png)
 
 5. Xamarin.iOS アプリケーションに必要な権利を選択して構成し、アプリ ID が作成されたときに定義された設定と一致するようにします。
 6. 変更内容を **Entitlements.plist** ファイルに保存します。
@@ -58,17 +58,17 @@ Visual Studio for Mac で権利を構成するには、次の操作を行いま�
 
 Visual Studio で権利を構成するには、次の操作を行います。
 
-1. **ソリューション エクスプローラー**で、**Info.plist** を右クリックし、 **[プログラムから開く]** を選択し、 **[プロパティ一覧エディター]** ファイルを選択して開き、編集します。
+1. **ソリューション エクスプローラー**で、**Info.plist** をダブルクリックして開き、編集します。
 2. **[iOS アプリケーションのターゲット]** セクションで、アプリケーションの名前を入力し、アプリ ID が定義されたときに作成された**バンドル ID** を入力します。
 
-    ![](entitlements-images/servicevs01.png "Setting the Bundle Identifier")
+    ![バンドル ID の設定](entitlements-images/servicevs01-sml.png)
 
 3. 変更内容を **Info.plist** ファイルに保存します。
-4. **ソリューション エクスプローラー**で、**Entitlements.plist** ファイルを右クリックし、 **[プログラムから開く]** を選択し、 **[プロパティ一覧エディター]** を選択して開き、編集します。
+4. **ソリューション エクスプローラー**で、**Entitlements.plist** ファイルをダブルクリックして開きます。
 
-    ![](entitlements-images/servicevs02.png "Editing the Entitlements")
+    ![権利の編集](entitlements-images/servicevs02-sml.png)
 
-    または、**Entitlements.plist** ファイルをダブルクリックして XML ソース エディターを開きます。このエディターでは、後述の[権利キー参照](#entitlement-key-reference)に関するセクションで詳しく説明されているように、権利プロパティとキーの値を設定することができます。
+    **Entitlements.plist** ファイルを右クリックし、 **[プログラムから開く]** で XML ソース エディターを選択することもできます。このエディターでは、後述の[権利キー参照](#entitlement-key-reference)に関するセクションで詳しく説明されているように、権利プロパティとキーの値を設定することができます。
 
 5. Xamarin.iOS アプリケーションに必要な権利を選択して構成し、アプリ ID が作成されたときに定義された設定と一致するようにします。
 6. 変更内容を **Entitlements.plist** ファイルに保存します。
@@ -83,10 +83,10 @@ Xamarin.iOS に Entitlements.plist ファイルを追加するには、次の操
 
 1. プロジェクト ファイルを右クリックし、 **[追加]、[新しいファイル...]** の順に参照します。
 
-    ![[ファイルの追加] コンテキスト メニュー](entitlements-images/image1.png)
+    ![[ファイルの追加] コンテキスト メニュー](entitlements-images/image1-sml.png)
 2. [新しいファイル] ダイアログで、 **[iOS]、[プロパティ一覧]** の順に選択し、Entitlements という名前を付けます。
 
-    ![[新しいファイル] ダイアログ](entitlements-images/image2.png)
+    ![[新しいファイル] ダイアログ](entitlements-images/image2-sml.png)
 
 ## <a name="entitlement-key-reference"></a>権利キー参照
 
@@ -104,8 +104,6 @@ Entitlements.plist エディターの [ソース] パネルを使用して、権
   - これにより、アプリはすべてのパスの種類を許可できるようになります。 アプリを制限し、チームのパスの種類のサブセットのみを許可するには、文字列値を `$(TeamIdentifierPrefix)pass.$(CFBundleIdentifier)` に設定します。
 
   この pass.$(CFBundleIdentifier) は、[ここ](~/ios/platform/passkit.md)で作成されたパス ID です。
-
-<a name="icloud" />
 
 ### <a name="icloud"></a>iCloud
 
@@ -132,8 +130,6 @@ Entitlements.plist エディターの [ソース] パネルを使用して、権
 
   - **キー**: com.apple.security.application-groups
   - **文字列**: group.$(CFBundleIdentifier)
-
-<a name="apple-pay" />
 
 ### <a name="apple-pay"></a>Apple Pay
 

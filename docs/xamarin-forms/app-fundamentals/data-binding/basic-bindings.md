@@ -8,12 +8,12 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/22/2019
 ms.custom: video
-ms.openlocfilehash: d981307ae96f75c67442d3898255c8bed62f1cf7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 2227e2bd47a5b4960d28be67bac7947a4fb57a93
+ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771716"
+ms.lasthandoff: 12/30/2019
+ms.locfileid: "75545667"
 ---
 # <a name="xamarinforms-basic-bindings"></a>Xamarin.Forms の基本的なバインディング
 
@@ -97,7 +97,7 @@ label.SetBinding(RotationProperty, "Value");
 
 `Slider` を操作すると、それに応じて `Label` が回転します。
 
-[![基本的なコード バインディング](basic-bindings-images/basiccodebinding-small.png "基本的なコード バインディング")](basic-bindings-images/basiccodebinding-large.png#lightbox "基本的なコード バインディング")
+[![Basic Code Binding](basic-bindings-images/basiccodebinding-small.png "Basic Code Binding")](basic-bindings-images/basiccodebinding-large.png#lightbox "Basic Code Binding")
 
 **Basic Xaml Binding** (基本的な XAML バインディング) ページは、すべてのデータ バインディングを XAML で定義している点を除き、**Basic Code Binding** (基本的なコード バインディング) と同じです。
 
@@ -197,7 +197,7 @@ public partial class AlternativeCodeBindingPage : ContentPage
 
 左側の iOS 画面は、ページが最初に表示されたときに画面がどのように見えるかを示しています。 `Label` はどこでしょうか。
 
-問題は、`Slider` が初期値の 0 になっていることです。 このため、`Label` の `Scale` プロパティも 0 に設定され、既定値の 1 がオーバーライドされています。 この結果、最初は `Label` が表示されません。 Android とユニバーサル Windows プラットフォーム (UWP) のスクリーンショットが示すように、`Slider` を操作して `Label` が再び表示されるようにすることができますが、最初に表示されないのは不安を与えます。
+問題は、`Slider` が初期値の 0 になっていることです。 このため、`Label` の `Scale` プロパティも 0 に設定され、既定値の 1 がオーバーライドされています。 この結果、最初は `Label` が表示されません。 Android のスクリーンショットが示すように、`Slider` を操作して `Label` が再び表示されるようにすることができますが、最初に表示されないのは不安を与えます。
 
 [次の記事](binding-mode.md)では、`Scale` プロパティの既定値から `Slider` を初期化することによる、この問題の回避方法について説明しています。
 

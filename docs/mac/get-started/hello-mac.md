@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 09/02/2018
-ms.openlocfilehash: cb5eb783109f4758fcbc997c4f2bf4a93aaa262b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b56275ef903aa7def239a2e19980f52d83e6194f
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73018128"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75489740"
 ---
 # <a name="hello-mac-walkthrough"></a>Hello, Mac - チュートリアル
 
@@ -38,7 +38,7 @@ Xamarin.Mac を使うと、*Objective-C* または *Swift* で開発するとき
 Xamarin.Mac アプリケーションの開発に必要な条件は次のとおりです。
 
 - macOS High Sierra (10.13) 以上を実行している Mac コンピューター。
-- [Xcode 9 以上](https://itunes.apple.com/us/app/xcode/id497799835?mt=12).
+- [Xcode 10 以上](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)。
 - [Xamarin.Mac と Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/installation/) の最新バージョン。
 
 Xamarin.Mac を使って構築されたアプリケーションを実行するには、次のものが必要です。

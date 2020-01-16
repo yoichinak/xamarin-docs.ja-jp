@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/04/2019
-ms.openlocfilehash: c9f934ad690bffa2418a7221445a473d9a90fdb9
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: dedce45d0c09f807aaf2ecbf540b8c9f319a4f16
+ms.sourcegitcommit: 3e94c6d2b6d6a70c94601e7bf922d62c4a6c7308
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75490208"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76031398"
 ---
 # <a name="xamarinforms-webview"></a>Xamarin.Forms の WebView
 
@@ -518,6 +518,50 @@ function factorial(num) {
 </body>
 </html>
 ```
+
+## <a name="uiwebview-deprecation-and-app-store-rejection-itms-90809"></a>UIWebView の廃止と App Store の拒否 (ITMS-90809)
+
+2020年4月以降、 [Apple は](https://developer.apple.com/news/?id=12232019b)非推奨の `UIWebView` API を引き続き使用するアプリを拒否します。 Xamarin. Forms が既定の `WKWebView` に切り替えられましたが、Xamarin のバイナリに古い SDK への参照が残っています。 現在の[iOS リンカー](~/ios/deploy-test/linker.md)の動作では、これは削除されません。そのため、アプリストアに送信するときに、非推奨の `UIWebView` API はアプリから参照されているように見えます。
+
+この問題を解決するには、リンカーのプレビューバージョンを使用できます。 プレビューを有効にするには、リンカーに `--optimize=experimental-xforms-product-type` 追加の引数を指定する必要があります。 
+
+これを行うための前提条件は次のとおりです。
+
+- Xamarin. **forms 4.5 以降**&ndash; プレリリースバージョンの Xamarin. forms 4.5 を使用できます。
+- **13.10.0.17 以降**&ndash; [Visual Studio で](~/cross-platform/troubleshooting/questions/version-logs.md#version-information)xamarin の ios バージョンを確認します。 このバージョンの Xamarin. iOS は Visual Studio for Mac dbms-guide-8.4.1 と Visual Studio 16.4.3 に含まれています。
+- &ndash; **`UIWebView`への参照を削除**します。コードには、`UIWebView` または `UIWebView`を使用するクラスへの参照を含めることはできません。
+
+### <a name="configure-the-linker-preview"></a>リンカープレビューの構成
+
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+
+リンカーで `UIWebView` 参照を削除するには、次の手順に従います。
+
+1. Ios**プロジェクトのプロパティを開き**&ndash; ios プロジェクトを右クリックし、 **[プロパティ]** を選択します。
+1. [ **Ios ビルド] セクションに移動**し、 **[ios ビルド]** セクション &ndash; 選択します。
+1. 追加の mtouch 引数に &ndash; 追加の**mtouch 引数を更新**します。このフラグは、既に存在している可能性がある値に加え**て、このフラグ `--optimize=experimental-xforms-product-type` 追加し**ます。 
+1. **すべてのビルド構成を更新**し &ndash; ウィンドウの上部にある **[構成]** と **[プラットフォーム]** の一覧を使用して、すべてのビルド構成を更新します。 更新する最も重要な構成は、**リリース/iPhone**の構成です。通常、これは、App Store の送信用にビルドを作成するために使用されるためです。
+
+このスクリーンショットでは、新しいフラグが設定されたウィンドウが表示されます。
+
+[iOS ビルドセクションでフラグを設定 ![](webview-images/iosbuildblade-vs-sml.png)](webview-images/iosbuildblade-vs.png#lightbox)
+
+# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+
+リンカーで `UIWebView` 参照を削除するには、次の手順に従います。
+
+1. Ios**プロジェクトオプション &ndash; 開き**、ios プロジェクトを右クリックして、 **[オプション]** を選択します。
+1. [ **Ios ビルド] セクションに移動**し、 **[ios ビルド]** セクション &ndash; 選択します。
+1. **追加の_mtouch_ &ndash; 引数を更新**して、追加の **_mtouch_** 引数をプロファイリングします。このフラグは、既に存在している可能性のある値に加えて、このフラグ `--optimize=experimental-xforms-product-type` 追加します。
+1. **すべてのビルド構成を更新**し &ndash; ウィンドウの上部にある **[構成]** と **[プラットフォーム]** の一覧を使用して、すべてのビルド構成を更新します。 更新する最も重要な構成は、**リリース/iPhone**の構成です。通常、これは、App Store の送信用にビルドを作成するために使用されるためです。
+
+このスクリーンショットでは、新しいフラグが設定されたウィンドウが表示されます。
+
+[iOS ビルドセクションでフラグを設定 ![](webview-images/iosbuildblade-xs-sml.png)](webview-images/iosbuildblade-xs.png#lightbox)
+
+-----
+
+新しい (リリース) ビルドを作成して App Store に送信すると、非推奨の API に関する警告は表示されなくなります。
 
 ## <a name="related-links"></a>関連リンク
 
