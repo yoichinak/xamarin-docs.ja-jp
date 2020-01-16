@@ -15,7 +15,7 @@ ms.locfileid: "73015849"
 ---
 # <a name="httpclient-and-ssltls-implementation-selector-for-iosmacos"></a>IOS/macOS 用の HttpClient と SSL/TLS 実装セレクター
 
-Xamarin、tvOS、および Xamarin. Mac 用の**Httpclient 実装セレクター**は、使用する実装 `HttpClient` を制御します。 IOS、tvOS、または macOS ネイティブトランスポート (OS によっては`NSUrlSession` または `CFNetwork`) を使用する実装に切り替えることができます。 これは、TLS 1.2-サポート、より小さなバイナリ、および高速ダウンロードです。欠点は、非同期操作を実行するためにイベントループを実行する必要があることです。
+Xamarin.iOS、Xamarin.tvOS、および Xamarin.Mac 用の **Httpclient 実装セレクター** は、使用する実装 `HttpClient` を制御します。 iOS、tvOS、または macOS ネイティブトランスポート (OS によっては`NSUrlSession` または `CFNetwork`) を使用する実装に切り替えることができます。 利点は、TLS 1.2-サポート、より小さなバイナリ、および高速ダウンロードです。欠点は、非同期操作を実行するためにイベントループを実行する必要があることです。
 
 プロジェクトは、**System.Net.Http**アセンブリを参照する必要があります。
 
