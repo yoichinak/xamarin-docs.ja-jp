@@ -7,41 +7,40 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 04ca9c98abbd97cd9e5d1f7694264b8316a7f151
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 7d2cd650dd22cd64d506d5d17a5ae0c34b44fc2b
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73001552"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487207"
 ---
 # <a name="bundling-for-the-mac-app-store"></a>Mac App Store 用のバンドル
 
 このセクションでは、Visual Studio for Mac を使用して、Mac App Store でリリースするためのアプリケーションを構築する基礎について説明します。 iCloud アクセスやプッシュ通知などの追加の機能によっては、この記事で扱っていない追加のセットアップが必要になる場合があります。
 
 > [!NOTE]
-> このセクションの内容を開始する前に、開発者が、Mac App Store 用にビルドするための Production プロビジョニング プロファイルを作成している必要があります。 必要なプロビジョニング プロファイルの作成方法については、このドキュメントの前の手順を参照してください。
+> このセクションの内容を開始する前に、開発者が、Mac App Store 用にビルドするための Production プロビジョニング プロファイルを作成している必要があります。 必要なプロビジョニング プロファイルの作成については、[プロファイルの手順](profiles.md)に関する記事をご覧ください。
 
 ## <a name="code-signing-options"></a>コード署名のオプション
 
 コードの署名とパッケージ化のオプションを更新する前に、 **[構成]** を **[リリース]** に変更してください。 開発者は、App Store でのリリース用にアプリケーションに署名するときに、前に作成した **ID** とプロビジョニング ファイルを会社が使用していることを確認する必要があります。
 
- [![コード署名のオプションの編集](bundling-images/config02.png "コード署名のオプションの編集")](bundling-images/config02-large.png#lightbox)
+[![コード署名のオプションの編集](bundling-images/sign.png)](bundling-images/sign-large.png#lightbox)
 
 **[Mac ビルド]** の設定で、インストーラー パッケージを作成するオプションがオンになっていることを確認します。
 
-[![ビルド オプションの編集](bundling-images/config03.png "ビルド オプションの編集")](bundling-images/config03-large.png#lightbox)
+[![ビルド オプションの編集](bundling-images/build.png "ビルド オプションの編集")](bundling-images/build-large.png#lightbox)
 
 ## <a name="build"></a>ビルド
 
-ビルドの前に、 **[リリース]** 構成が選択されていることを確認します。 開発者がアプリをビルドする際、両方の証明書を使用するよう求められます。
+ビルドの前に、 **[リリース]** 構成が選択されていることを確認します。 開発者がアプリをビルドすると、プロンプトが "_2 回_" 表示されます (アプリケーションとインストーラーの両方の証明書を使用するため)。
 
- ![アプリによる証明書の使用の許可](bundling-images/image62.png "アプリによる証明書の使用の許可")
+![アプリによる証明書の使用の許可は、2 回表示されます](bundling-images/perms02.png)
 
- ![アプリによる証明書の使用の許可](bundling-images/image63.png "アプリによる証明書の使用の許可")
+アプリケーションがビルドされると、開発者はプロジェクトを右クリックし、 **[Finder で表示]** を選択して、パッケージ ファイルを (下に示す例の `bin/Release/AppStore` ディレクトリから) 検索することができます。  このパッケージ ファイルには、Mac App Store で含めるように Apple に送信できるアプリのインストーラーが含まれています。
 
-アプリケーションがビルドされると、開発者はプロジェクトを右クリックし、 **[Open Containing Folder]\(含まれているフォルダーを開く\)** を選択して、パッケージ ファイルを (下に示す例の `bin/x86/AppStore` ディレクトリから) 検索することができます。  このパッケージ ファイルには、Mac App Store で含めるように Apple に送信できるアプリのインストーラーが含まれています。
-
- ![Finder でのビルド パッケージの選択](bundling-images/image64.png "Finder でのビルド パッケージの選択")
+> [!div class="mx-imgBorder"]
+> ![Finder でのビルド パッケージの選択](bundling-images/path.png)
 
 ## <a name="related-links"></a>関連リンク
 

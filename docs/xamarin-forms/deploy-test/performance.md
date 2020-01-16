@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/27/2019
-ms.openlocfilehash: c57281f3fa526bb238f4a0dd6a4fad70376c742e
-ms.sourcegitcommit: b4c9eb94ae2b9eae852a24d126b39ac64a6d0ffb
+ms.openlocfilehash: 4427d347723284a2f8897612f10857270c9631bf
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/02/2019
-ms.locfileid: "74681341"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487166"
 ---
 # <a name="improve-xamarinforms-app-performance"></a>Xamarin.Forms アプリ パフォーマンスの改善
 
@@ -172,7 +172,7 @@ Android の事前 (AOT) コンパイルでは、より大きな APK の作成を
 - 非同期コンストラクターを作成しないようにします。 すべての初期化を正しく `await` するには、代わりに、ライフサイクル イベントまたは個別の初期化ロジックを使用します。 詳しくは、blog.stephencleary.com の「[非同期コンストラクター](https://blog.stephencleary.com/2013/01/async-oop-2-constructors.html)」をご覧ください。
 - アプリケーションの起動時に非同期操作が完了するのを待たないようにするには、レイジー タスク パターンを使用します。 詳しくは、「[AsyncLazy](https://devblogs.microsoft.com/pfxteam/asynclazyt/)」をご覧ください。
 - TAP が使用されていない既存の非同期操作に対しては、`TaskCompletionSource<T>` オブジェクトを作成することによってタスク ラッパーを作成します。 これらのオブジェクトにより `Task` の利点がプログラミングで得られ、関連付けられた `Task` の有効期間と完了を制御できるようになります。 詳しくは、「[TaskCompletionSource の性質](https://devblogs.microsoft.com/pfxteam/the-nature-of-taskcompletionsourcetresult/)」をご覧ください。
-asynchronous-mvvm-applications-commands)。
+ 
 - 非同期操作の結果を処理する必要がない場合は、待機された `Task` オブジェクトを返す代わりに、`Task` オブジェクトを返します。 これは、実行されるコンテキストの切り替えが少ないため、パフォーマンスが向上します。
 - 使用可能になった時点でデータを処理する場合や、相互に非同期的に通信する必要がある複数の操作がある場合は、タスク並列ライブラリ (TPL) データフロー ライブラリを使用します。 詳しくは、「[データフロー (タスク並列ライブラリ)](/dotnet/standard/parallel-programming/dataflow-task-parallel-library)」をご覧ください。
 
@@ -182,7 +182,7 @@ asynchronous-mvvm-applications-commands)。
 - 例外がスローされるのを防ぐために、UI スレッドでの非同期操作からのデータを使用して UI 要素を更新します。 ただし、`ListView.ItemsSource` プロパティに対する更新は、UI スレッドに自動的にマーシャリングされます。 コードが UI スレッドで実行されているかどうかを判断する方法については、「[Xamarin. Essentials: MainThread](~/essentials/main-thread.md?content=xamarin/xamarin-forms)」をご覧ください。
 
     > [!IMPORTANT]
-    > データ バインディングによって更新される制御プロパティは、UI スレッドに自動的にマーシャリングされます。
+    > データ バインディングによって更新されるコントロール プロパティは、UI スレッドに自動的にマーシャリングされます。
 
 ### <a name="error-handling"></a>エラー処理
 

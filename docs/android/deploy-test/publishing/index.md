@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 765adf10e5bdf20191c5ee1c089d39032ea07ce0
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 3062afda82be2b45146687b9d77210a42f8f55fa
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021377"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487959"
 ---
 # <a name="publishing-an-application"></a>アプリケーションの発行
 
@@ -21,9 +21,9 @@ ms.locfileid: "73021377"
 
 Xamarin.Android アプリケーション開発の最終手順は、アプリケーションの公開です。 公開とは、ユーザーがそのデバイスにインストールできるようにするための、Xamarin.Android アプリケーションをコンパイルするプロセスです。2 つの重要な作業から構成されます。
 
-- **公開に向けた準備** &ndash; Android 搭載デバイスに展開できるようにアプリケーションのリリース版が作成されます (リリースの準備に関する詳細については、「[リリースに向けてアプリケーションを準備する](~/android/deploy-test/release-prep/index.md)」を参照してください)。
+- **公開に向けた準備** &ndash; Android 搭載デバイスに展開できるアプリケーションのリリース バージョンが作成されます (リリースの準備に関する詳細については、「[リリースに向けてアプリケーションを準備する](~/android/deploy-test/release-prep/index.md)」を参照してください)。
 
-- **配布** &ndash; アプリケーションのリリース版は、さまざまな配布チャネルのうち 1 つまたは複数のチャネルから入手できます。
+- **配布** &ndash; アプリケーションのリリース バージョンは、さまざまな配布チャネルの 1 つまたは複数から入手できます。
 
 次の図は、Xamarin.Android アプリケーションの公開手順をまとめたものです。
 
@@ -31,9 +31,9 @@ Xamarin.Android アプリケーション開発の最終手順は、アプリケ�
 
 上の図からわかるように、利用される配信方法に関係なく、準備は同じです。 Android アプリケーションはいくつかの方法でユーザーに公開できます。
 
-- **Web サイトから** &ndash; Xamarin.Android アプリケーションを Web サイトでダウンロードできます。ユーザーはサイトでリンクをクリックしてアプリケーションをインストールします。
-- **電子メールで** &ndash; ユーザーは Xamarin.Android アプリケーションを電子メールからインストールできます。 Android 搭載デバイスで添付ファイルを開くと、アプリケーションがインストールされます。
-- **マーケットから** &ndash; [Google Play](https://play.google.com/) や [Amazon App Store for Android](https://www.amazon.com/mobile-apps/b?ie=UTF8&node=2350149011) など、配信を行っているアプリケーション マーケットプレイスがいくつかあります。
+- **Web サイトから** &ndash; Xamarin.Android アプリケーションは、Web サイトでダウンロード可能にすることができます。ここから、ユーザーはリンクをクリックしてアプリケーションをインストールできます。
+- **電子メールで** &ndash; ユーザーは、各自の電子メールから Xamarin.Android アプリケーションをインストールできます。 Android 搭載デバイスで添付ファイルを開くと、アプリケーションがインストールされます。
+- **マーケットから** &ndash; [Google Play](https://play.google.com/) や [Amazon App Store for Android](https://www.amazon.com/mobile-apps/b?ie=UTF8&node=2350149011) など、配布用に利用できるアプリケーション マーケットプレースがいくつかあります。
 
 人気のマーケットプレイスをアプリケーション公開に使うことが一般的です。市場が広く、配布管理が行き届いています。 ただし、マーケットプレイスでアプリケーションを公開する場合、さらに一手間かかります。
 
@@ -56,6 +56,7 @@ Amazon のモバイル アプリ配信プログラムでは、モバイル ア�
 - [ビルド プロセス](~/android/deploy-test/building-apps/build-process.md)
 - [リンク](~/android/deploy-test/linker.md)
 - [Google マップ API キーを取得する](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
+- [Visual Studio App Center を使用した展開](https://docs.microsoft.com/appcenter/distribution/stores/googleplay)
 - [アプリケーション署名](https://source.android.com/security/apksigning/)
 - [Google Play で公開する](https://developer.android.com/distribute/googleplay/publish/index.html)
 - [Google アプリケーション ライセンス](https://developer.android.com/guide/google/play/licensing/index.html)

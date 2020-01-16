@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 60f51be5ffad67d839edd42b7826b0c57c46eb8a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2b6dcd53a9761ec3f030f3f5bf81894e9faa8b1f
+ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029993"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75487023"
 ---
 # <a name="publishing-xamarinmac-apps-to-the-mac-app-store"></a>Mac App Store に Xamarin.Mac アプリを公開する
 
