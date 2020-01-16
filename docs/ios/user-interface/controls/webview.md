@@ -1,22 +1,22 @@
 ---
 title: Xamarin. iOS の Web ビュー
-description: このドキュメントでは、Xamarin.iOS アプリで web コンテンツを表示するさまざまな方法について説明します。 WKWebView、SFSafariViewController、Safari、およびアプリトランスポートのセキュリティについて説明します。
+description: このドキュメントでは、Xamarin iOS アプリで web コンテンツを表示するさまざまな方法について説明します。 WKWebView、SFSafariViewController、Safari、およびアプリトランスポートのセキュリティについて説明します。
 ms.prod: xamarin
 ms.assetid: 84886CF4-2B2B-4540-AD92-7F0B791952D1
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 1ae3a2af436a4ad8860ab27df550a1d74d5084a6
-ms.sourcegitcommit: 0ffef1721f28717d46c8168ec96a45b6fe96b623
+ms.openlocfilehash: 933edb1c0681f3fc9cbb8d81aa3091a65c4346e3
+ms.sourcegitcommit: 3e94c6d2b6d6a70c94601e7bf922d62c4a6c7308
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75718767"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76031355"
 ---
 # <a name="web-views-in-xamarinios"></a>Xamarin. iOS の Web ビュー
 
-iOS が登場してからずっと、Apple はアプリ開発者がアプリに web ビュー機能を組み込むためのさまざまな方法をリリースしてきました。 ほとんどのユーザーは iOS デバイスで組み込みの Safari web ブラウザーを利用しているため、他のアプリの web ビュー機能はこのエクスペリエンスと同じであることが期待されます。 同じジェスチャが動作すること、パフォーマンスが同等であること、および機能が同じであることが期待されます。
+IOS Apple の有効期間中は、アプリ開発者がアプリに web ビュー機能を組み込むためのさまざまな方法がリリースされました。 ほとんどのユーザーは iOS デバイスで組み込みの Safari web ブラウザーを利用しているため、他のアプリの web ビュー機能はこのエクスペリエンスと同じであることが期待されます。 同じジェスチャが動作すること、パフォーマンスが同等であること、および機能が同じであることが期待されます。
 
 iOS 11 では、`WKWebView` と `SFSafariViewController`の両方に新しい変更が導入されました。 これらの詳細については、「 [iOS 11 の Web 変更ガイド](~/ios/platform/introduction-to-ios11/web.md)」ガイドを参照してください。
 
@@ -77,7 +77,7 @@ UIApplication.SharedApplication.OpenUrl(url);
 
 これにより、次の web ビューが生成されます。
 
-[  ![Safari に表示される web ページ](webview-images/safari.png)](webview-images/safari.png#lightbox)
+[Safari に表示される web ページを ![する](webview-images/safari.png)](webview-images/safari.png#lightbox)
 
 一般に、アプリから Safari にユーザーを移動することは、常に避ける必要があります。 ほとんどのユーザーはアプリケーションの外部でのナビゲーションを想定していません。そのため、アプリから移動すると、ユーザーはそれを返すことがなく、実質的にはエンゲージメントを終了する可能性があります。
 
@@ -85,7 +85,7 @@ iOS 9 の機能強化により、Safari ページの左上隅にある [戻る] 
 
 ## <a name="app-transport-security"></a>アプリケーション トランスポート セキュリティ
 
-iOS 9 では、アプリトランスポートセキュリティ (または*ATS* ) が Apple によって導入され、すべてのインターネット通信がセキュリティで保護された接続のベストプラクティスに準拠するようになりました。
+IOS 9 では、アプリトランスポートセキュリティ (または*ATS* ) が Apple によって導入され、すべてのインターネット通信がセキュリティで保護された接続のベストプラクティスに準拠するようになりました。
 
 アプリでの実装方法など、ATS の詳細については、「[アプリトランスポートセキュリティ](~/ios/app-fundamentals/ats.md)ガイド」を参照してください。
 
@@ -96,7 +96,10 @@ iOS 9 では、アプリトランスポートセキュリティ (または*ATS* 
 > 
 > [Apple の `UIWebView` ドキュメント](https://developer.apple.com/documentation/uikit/uiwebview)では、アプリで[`WKWebView`](#wkwebview)を使用することを提案します。
 
-`UIWebView` は、アプリに web コンテンツを提供するための Apple の従来の方法です。 iOS 2.0 でリリースされ、8.0 の時点で非推奨とされています。
+> [!IMPORTANT]
+> Xamarin. Forms を使用しているときに `UIWebView` の非推奨の警告 (ITMS-90809) に関するリソースを探している場合は、 [xamarin. Forms WebView](~/xamarin-forms/user-interface/webview.md#uiwebview-deprecation-and-app-store-rejection-itms-90809)のドキュメントを参照してください。
+
+`UIWebView` は、アプリに web コンテンツを提供するための Apple の従来の方法です。 IOS 2.0 でリリースされ、8.0 の時点で非推奨とされています。
 
 UIWebView を Xamarin iOS アプリに追加するには、次のコードを使用します。
 
