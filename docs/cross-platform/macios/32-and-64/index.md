@@ -17,11 +17,11 @@ ms.locfileid: "73016331"
 
 iOS と macOS は、従来は 32 と 64 ビットの両方のアプリをサポートしていましたが、Apple は、非推奨の 32 ビットサポートを徐々に廃止しています。
 
-iOS 11 以降では、32ビットのアプリは起動されなくなり、[App Store へのすべての送信は64ビットをサポートする必要があり](https://developer.apple.com/news/?id=06282017b)ます。
+iOS 11 以降では、32 ビットのアプリは起動されなくなり、[App Store へのすべての送信は 64 ビットをサポートする必要があり](https://developer.apple.com/news/?id=06282017b)ます。
 
-2018年1月以降、 [Mac App Store に送信された新しいアプリは64ビットをサポートする必要があり](https://developer.apple.com/news/?id=06282017a)、既存のアプリは2018年の6月までに更新する必要があります。
+2018 年 1 月以降、 [Mac App Store に送信された新しいアプリは 64 ビットをサポートする必要があり](https://developer.apple.com/news/?id=06282017a)、既存のアプリは 2018 年の 6 月までに更新する必要があります。
 
-Xamarin の Classic API (`XamMac.dll` と `monotouch.dll`) では、32ビットアプリケーションのみがサポートされていました。 ただし、新しい Xamarin.iOS および Xamarin.Mac アプリケーションでは、既定で [Unified API](~/cross-platform/macios/unified/index.md) (`Xamarin.iOS` と `Xamarin.Mac`) が使用されるため、必要に応じて32と64ビットの両方をターゲットにすることができます。
+Xamarin の Classic API (`XamMac.dll` と `monotouch.dll`) では、32 ビットアプリケーションのみがサポートされていました。 ただし、新しい Xamarin.iOS および Xamarin.Mac アプリケーションでは、既定で [Unified API](~/cross-platform/macios/unified/index.md) (`Xamarin.iOS` と `Xamarin.Mac`) が使用されるため、必要に応じて 32 と 64 ビットの両方をターゲットにすることができます。
 
 ## <a name="ios"></a>iOS
 
