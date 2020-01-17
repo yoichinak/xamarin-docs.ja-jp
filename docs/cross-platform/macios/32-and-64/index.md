@@ -1,6 +1,6 @@
 ---
 title: 32/64 ビットプラットフォームに関する考慮事項
-description: このドキュメントでは、Xamarin iOS または Xamarin. Mac アプリケーションの32ビットアーキテクチャと64ビットアーキテクチャを対象とする場合に留意すべきさまざまな考慮事項について説明します。
+description: このドキュメントでは、Xamarin.iOS または Xamarin.Mac アプリケーションの32ビットアーキテクチャと64ビットアーキテクチャを対象とする場合に留意すべきさまざまな考慮事項について説明します。
 ms.prod: xamarin
 ms.assetid: F7126340-04B2-4A10-B14D-394E23527C1A
 author: davidortinau
