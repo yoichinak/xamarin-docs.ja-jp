@@ -18,8 +18,8 @@ ms.locfileid: "73022373"
 
 Xamarin.iOS では、CocoaTouch API に対する C#/CIL バインドを公開します。また、ECMA CIL API やその他のさまざまな .NET API へのアクセスも提供します。
 
- **API リファレンス**: API リファレンスは[docs.microsoft.com/dotnet/api/](https://docs.microsoft.com/dotnet/api/)で入手できます。 ネイティブ iPhone API の API バインドの場合は、[「Xamarin.iOS reference」](https://docs.microsoft.com/dotnet/api/?view=xamarin-ios-sdk-12) から開始します。.NET API のドキュメントについては、[「基底クラスライブラリ」ノード](https://docs.microsoft.com/dotnet/api/?view=xamarinios-10.8)に進んでください。
+ **API リファレンス**: API リファレンスは [docs.microsoft.com/dotnet/api/](https://docs.microsoft.com/dotnet/api/)で入手できます。 ネイティブ iPhone API の API バインドの場合は、[Xamarin.iOS reference](https://docs.microsoft.com/dotnet/api/?view=xamarin-ios-sdk-12)から開始します。.NET API のドキュメントについては、[基底クラスライブラリ ノード](https://docs.microsoft.com/dotnet/api/?view=xamarinios-10.8)に進んでください。
 
- **API の設計**: CIL/Objective-C バインディングの API 設計については、[「Xamarin.iOS API Design」](~/ios/internals/api-design/index.md) ドキュメントで説明されています。また、CocoaTouch から Objective-C API と C API をからバインドし、それらを C#/CIL の世界に公開する方法についても説明します。
+ **API の設計**: CIL/Objective-C バインディングの API 設計については、「[Xamarin.iOS API Design](~/ios/internals/api-design/index.md)」ドキュメントで説明されています。また、CocoaTouch から Objective-C API と C API をからバインドし、それらを C#/CIL の世界に公開する方法についても説明します。
 
  **アセンブリ**: [バインドされたアセンブリの一覧](~/cross-platform/internals/available-assemblies.md)で、Xamarin.iOS で使用できる C#/CIL/ECMA の API の詳細なリファレンスを確認してください。
