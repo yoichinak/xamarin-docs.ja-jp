@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: db26de8deed9945c6fff2d49f7d12de03fbe38df
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2ed16c651d0b373e33d58bb73591977d3484d6e0
+ms.sourcegitcommit: be8ce3449afab22673e48b546d857431c071d66f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73008237"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76162933"
 ---
 # <a name="using-adonet-with-xamarinios"></a>Xamarin で ADO.NET を使用する
 
@@ -69,7 +69,7 @@ ADO.NET 経由で SQLite へのアクセスを使用するには、次に示す�
 
 ## <a name="basic-data-access"></a>基本的なデータアクセス
 
-このドキュメントの*DataAccess_Basic*サンプルコードは、iOS で実行されている場合、次のようになります。
+このドキュメントの*DataAccess_Basic*サンプルコードは、iOS で実行されている場合は次のようになります。
 
  ![](using-adonet-images/image9.png "iOS ADO.NET sample")
 
@@ -210,9 +210,20 @@ using (var contents = connection.CreateCommand ()) {
 
 `ExecuteScalar` メソッドの戻り値の型は `object` です。データベースクエリによっては、結果をキャストする必要があります。 結果には、カウントクエリの整数、または1つの列の SELECT クエリの文字列を指定できます。 これは、リーダーオブジェクトを返す他の Execute メソッド、または影響を受ける行の数のカウントとは異なることに注意してください。
 
+## <a name="microsoftdatasqlite"></a>Microsoft.Data.Sqlite
+
+[NuGet からインストール](https://www.nuget.org/packages/Microsoft.Data.Sqlite)できる別のライブラリ `Microsoft.Data.Sqlite`があります。これは機能的には `Mono.Data.Sqlite` と同じであり、同じ種類のクエリを許可します。
+
+[2 つのライブラリ](https://docs.microsoft.com/dotnet/standard/data/sqlite/compare)と[Xamarin 固有の詳細](https://docs.microsoft.com/dotnet/standard/data/sqlite/xamarin)を比較しています。 Xamarin iOS アプリで最も重要なのは、初期化呼び出しを含める必要があることです。
+
+```csharp
+// required for Xamarin.iOS
+SQLitePCL.Batteries_V2.Init();
+```
+
 ## <a name="related-links"></a>関連リンク
 
 - [このような場合の基本 (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
 - [詳細設定 (サンプル)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
 - [iOS データレシピ](https://github.com/xamarin/recipes/tree/master/Recipes/ios/data/sqlite)
-- [Xamarin. フォームデータアクセス](~/xamarin-forms/data-cloud/data/databases.md)
+- [Xamarin.Forms データアクセス](~/xamarin-forms/data-cloud/data/databases.md)

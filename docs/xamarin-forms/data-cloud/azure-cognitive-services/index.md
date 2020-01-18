@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/27/2019
-ms.openlocfilehash: fed556dc303fecb92a1ce5b09bfaa1aeb0c61bd0
-ms.sourcegitcommit: 2e5a6b8bcd1a073b54604f51538fd108e1c2a8e5
+ms.openlocfilehash: 03fb194a4c85d51a6fe477dcfdc8fa38fec5a89c
+ms.sourcegitcommit: ba83c107c87b015dbcc9db13964fe111a0573dca
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68869328"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76265163"
 ---
 # <a name="xamarinforms-and-azure-cognitive-services"></a>Xamarin. Forms と Azure Cognitive Services
 
@@ -22,7 +22,7 @@ Microsoft Cognitive Services は、顔認識、音声認識、言語の理解な
 
 ## <a name="speech-recognitionspeech-recognitionmd"></a>[音声認識](speech-recognition.md)
 
-Microsoft Speech API には、音声言語を処理するアルゴリズムを提供するクラウド ベースの API です。 この記事では、Microsoft の音声認識の REST API を使用して、Xamarin.Forms アプリケーションでのテキストをオーディオに変換する方法について説明します。
+Azure Speech Service は、音声言語を処理するためのアルゴリズムを提供するクラウドベースの API です。 この記事では、Azure Speech サービスを使用して、Xamarin. フォームアプリケーションで音声をテキストに表示する方法について説明します。
 
 ## <a name="spell-checkspell-checkmd"></a>[スペル チェック](spell-check.md)
 
@@ -32,6 +32,6 @@ Bing Spell Check 実行コンテキストに応じたスペルをチェック、
 
 Microsoft Translator API は、音声および REST API を介してテキスト翻訳を使用できます。 この記事では、Microsoft Translator Text API を使用して、Xamarin.Forms アプリケーションで 1 つの言語からテキストを翻訳する方法について説明します。
 
-## <a name="perceived-emotion-recognitionemotion-recognitionmd"></a>[感情認識](emotion-recognition.md)
+## <a name="perceived-emotion-recognitionemotion-recognitionmd"></a>[認識された感情認識](emotion-recognition.md)
 
 Face API は、入力として画像の顔の式を受け取りし、一連のイメージ内の顔ごとの感情の信頼レベルを含むデータを返します。 この記事では、Face API を使用して、Xamarin.Forms アプリケーションを評価する、感情を認識する方法について説明します。
