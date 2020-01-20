@@ -43,7 +43,7 @@ ms.locfileid: "73015022"
 
 ### <a name="xamarinforms-appscross-platformmaciosunifiedupdating-xamarin-forms-appsmd"></a>[Xamarin.Forms アプリ](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)
 
-次の手順に従って、Unified API を使用するように既存の Xamarin.Forms ソリューションを iOS プロジェクトに更新します。Unified API サポートは、Xamarin.Forms 1.3 以降でのみ使用できます。[この手順](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)では、Xamarin.Forms アプリをバージョン 1.3 に更新する方法についても説明します。これらの[ヒント](~/cross-platform/macios/unified/updating-tips.md)は、カスタム レンダラーまたは依存関係サービスのネイティブ iOS コードを更新するのに役立ちます。
+次の手順に従って、Unified API を使用するように既存の Xamarin.Forms ソリューションを iOS プロジェクトに更新します。 Unified API サポートは、Xamarin.Forms 1.3 以降でのみ使用できます。[この手順](~/cross-platform/macios/unified/updating-xamarin-forms-apps.md)では、Xamarin.Forms アプリをバージョン 1.3 に更新する方法についても説明します。 これらの[ヒント](~/cross-platform/macios/unified/updating-tips.md)は、カスタム レンダラーまたは依存関係サービスのネイティブ iOS コードを更新するのに役立ちます。
 
 ## <a name="working-with-native-types-in-cross-platform-appscross-platformmaciosnativetypesmd"></a>[クロスプラットフォーム アプリでのネイティブ型の使用](~/cross-platform/macios/nativetypes.md)
 

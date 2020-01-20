@@ -15,7 +15,7 @@ ms.locfileid: "73015026"
 ---
 # <a name="updating-existing-ios-apps"></a>既存の iOS アプリの更新
 
-_Unified API を使用するように既存の Xamarin iOS アプリを更新するには、次の手順に従います。_
+_Unified API を使用するように既存の Xamarin.iOS アプリを更新するには、次の手順に従います。_
 
 Unified API を使用するように既存のアプリを更新するには、アプリケーションコードで使用される名前空間と API に加えて、プロジェクトファイル自体を変更する必要があります。
 
@@ -31,7 +31,7 @@ Xamarin には、Visual Studio for Mac と Visual Studio の両方のツール�
 
 ## <a name="automated-updating"></a>自動更新
 
-警告が修正されたら、Visual Studio for Mac または Visual Studio で既存の iOS プロジェクトを選択し、 **[プロジェクト]** メニューから **[Xamarin. IOS Unified API に移行]** を選択します。 (例:
+警告が修正されたら、Visual Studio for Mac または Visual Studio で既存の iOS プロジェクトを選択し、 **[プロジェクト]** メニューから **[Xamarin.iOS Unified API に移行]** を選択します。 (例:
 
 ![](updating-ios-apps-images/beta-tool1.png "Choose Migrate to Xamarin.iOS Unified API from the Project menu")
 
