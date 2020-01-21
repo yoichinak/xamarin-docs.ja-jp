@@ -16,7 +16,7 @@ ms.locfileid: "75558808"
 ---
 # <a name="photokit-in-xamarinios"></a>Xamarin の PhotoKit
 
-[サンプル](~/media/shared/download.png) ダウンロード ![コードサンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-samplephotoapp/)
+[![サンプル ダウンロード](~/media/shared/download.png) コードサンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-samplephotoapp/)
 
 PhotoKit は、アプリケーションがシステムイメージライブラリに対してクエリを実行し、その内容を表示および変更するためのカスタムユーザーインターフェイスを作成できるようにするフレームワークです。 これには、イメージとビデオ資産を表す多数のクラスと、アルバムやフォルダーなどの資産のコレクションが含まれます。
 
