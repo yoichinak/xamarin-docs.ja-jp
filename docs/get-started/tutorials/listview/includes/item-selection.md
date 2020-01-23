@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 2185fa243d2bccea046be5c91a2b1e9ed365edfe
-ms.sourcegitcommit: ecb81266e59c9e1773a06582e138bf4eed713dfe
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/13/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "74062901"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -55,9 +55,9 @@ ms.locfileid: "74062901"
               ItemTapped="OnListViewItemTapped" />
     ```
 
-    このコードは、[`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) イベントを `OnListViewItemSelected` という名前のイベント ハンドラーに設定し、[`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) イベントを `OnListViewItemTapped` という名前のイベント ハンドラーに設定します。 どちらのイベント ハンドラーも次の手順で作成します。
+    このコードは、[`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) イベントを `OnListViewItemSelected` という名前のイベント ハンドラーに設定し、[`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) イベントを `OnListViewItemTapped` という名前のイベント ハンドラーに設定します。 どちらのイベント ハンドラーも次の手順で作成されます。
 
-1. **Solution Pad** の **ListViewTutorial** プロジェクトで **[MainPage.xaml]** を展開し、 **[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、**MainPage.xaml.cs** で、`OnListViewItemSelected` と `OnListViewItemTapped` のイベント ハンドラーをクラスに追加します。
+1. **Solution Pad** の **ListViewTutorial** プロジェクトで **[MainPage.xaml]** を展開し、 **[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、 **[MainPage.xaml.cs]** で、`OnListViewItemSelected` と `OnListViewItemTapped` のイベント ハンドラーをクラスに追加します。
 
     ```csharp
     void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
