@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2019
-ms.openlocfilehash: 5d0e289ddeb7eabef6d96c8882c772c704c54b34
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: 2b718411750b56559beaee64d20e392b113ee497
+ms.sourcegitcommit: a3b7e016fb25584dbf57bae89b64a9f98031e7c9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489727"
+ms.lasthandoff: 01/23/2020
+ms.locfileid: "76550130"
 ---
 # <a name="ios-platform-features-in-xamarinforms"></a>Xamarin の iOS プラットフォーム機能
 
-IOS 用の Xamarin. Forms アプリケーションを開発するには、Visual Studio が必要です。 [[要件] ページ](~/get-started/requirements.md)には、前提条件に関する詳細情報が表示されます。
+IOS 用の Xamarin. Forms アプリケーションを開発するには、Visual Studio が必要です。 [[サポートされているプラットフォーム] ページ](~/get-started/supported-platforms.md)には、前提条件に関する詳細情報が表示されます。
 
 ## <a name="platform-specifics"></a>プラットフォームの詳細
 
