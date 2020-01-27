@@ -6,12 +6,12 @@ ms.assetid: 328D042A-FF78-A7B6-1574-B5AF49A1AADB
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 2ad576f10fc0af5d96396d90b3e502e21da1182d
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.openlocfilehash: 0e37e138607fb0e00fbdc463ac7c53facf81395d
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728240"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76723631"
 ---
 # <a name="part-5---practical-code-sharing-strategies"></a>パート 5 - 実践的なコード共有戦略
 
@@ -162,7 +162,7 @@ Xamarin.iOS を参照してください[ファイル システム操作](~/ios/a
 
 ### <a name="windowsstorage-for-windows-8-and-windows-10"></a>Windows 8 および Windows 10 の Windows.Storage
 
-「 *Xamarin. Forms book を使用した Mobile Apps の作成* [book](https://developer.xamarin.com/r/xamarin-forms/book/) 」
+「 *Xamarin. [Forms book](https://developer.xamarin.com/r/xamarin-forms/book/) を使用した Mobile Apps の作成*  」
 第20章を参照して[ください。非同期 i/o とファイル i/o](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf)には[、Windows 8.1 と Windows 10 のサンプル](https://github.com/xamarin/xamarin-forms-book-preview-2/tree/master/Chapter20)が含まれています。
 
 使用して、 [ `DependencyService` ](~/xamarin-forms/app-fundamentals/dependency-service/index.md)サポートされている Api を使用してこれらのプラットフォーム上のファイルのファイルを読み書きすることは。
@@ -272,8 +272,6 @@ using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
 - 接続が 3 G の場合は、アプリケーションの動作が異なります (たとえば、Apple を許可しないアプリ 3 G を超えるダウンロードを 20 Mb より大きい)。 アプリケーションがこの情報を使用して過度のダウンロードについてユーザーに警告する大きなファイルを取得するときにタイムアウトします。
 - ネットワークを使用できる場合でも、他の要求を開始する前に、ターゲット サーバーとの接続を確認することをお勧めを勧めします。 アプリのネットワーク操作がタイムアウトを繰り返し防止されより多くの情報のエラー メッセージ、ユーザーに表示することもできます。
 
-[Xamarin.iOS サンプル](https://github.com/xamarin/monotouch-samples/tree/master/ReachabilitySample)使用可能な (Apple のに基づいて[サンプル コードの到達可能性](https://developer.apple.com/library/ios/#samplecode/Reachability/Introduction/Intro.html)) ネットワークの可用性を検出するためにします。
-
 ## <a name="webservices"></a>WebServices
 
 ドキュメントを参照してください[Web サービスを使用する](~/cross-platform/data-cloud/web-services/index.md)が含まれています、残りの部分にアクセスする Xamarin.iOS を使用して SOAP および WCF のエンドポイントには。 Web サービスの要求を自ら作成することができますしがはるかに簡単、Azure、RestSharp、ServiceStack などに使用可能なライブラリがあります、応答を解析します。 基本的な WCF 操作は、Xamarin アプリでアクセスできます。
@@ -300,8 +298,6 @@ Xamarin.iOS のコード スニペットはまた、 [Web Services のドキュ�
 ServiceStack とは異なり RestSharp、それらのサービスにアクセスするモバイル アプリケーションで実装できるクライアント ライブラリと同様に、web サービスをホストするサーバー側ソリューション両方。
 
 [ServiceStack web サイト](http://servicestack.net/)ドキュメントおよびコード サンプルへのプロジェクトとリンクの目的を説明します。 例には、それにアクセスできるさまざまなクライアント側アプリケーションと同様に、web サービスの完全なサーバー側実装が含まれます。
-
-[Xamarin.iOS 例](http://www.servicestack.net/monotouch/remote-info/)ServiceStack web サイトでのコード スニペット、 [Web Services のドキュメント](~/cross-platform/data-cloud/web-services/index.md)します。
 
 ### <a name="wcf"></a>WCF
 

@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/09/2018
-ms.openlocfilehash: 62859e19c533d7b200833996b44a65cb275805c6
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 6180896002d19c51bce47bf53aaecdc11b0cae6e
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029249"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725150"
 ---
 # <a name="xamarinandroid-edit-text"></a>Xamarin Android のテキストの編集
 
 このセクションでは、 [EditText](xref:Android.Widget.EditText)ウィジェットを使用して、ユーザー入力用のテキストフィールドを作成します。 フィールドにテキストが入力されると、Enter キーを**押し**て、トーストメッセージにテキストが表示されます。
 
-**Resources/layout/activity_main**を開き、 [EditText](xref:Android.Widget.EditText)要素を含んでいるレイアウトに追加します。 次の例の**activity_main**には、`LinearLayout`に追加された `EditText` があります。
+**Resources/layout/activity_main**を開き、 [EditText](xref:Android.Widget.EditText)要素を含んでいるレイアウトに追加します。 次の例**activity_main。 axml**には、`LinearLayout`に追加された `EditText` があります。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -44,7 +44,7 @@ ms.locfileid: "73029249"
 EditText edittext = FindViewById<EditText>(Resource.Id.edittext);
 edittext.KeyPress += (object sender, View.KeyEventArgs e) => {
     e.Handled = false;
-    if (e.Event.Action == KeyEventActions.Down && e.KeyCode == Keycode.Enter) 
+    if (e.Event.Action == KeyEventActions.Down && e.KeyCode == Keycode.Enter)
     {
         Toast.MakeText(this, edittext.Text, ToastLength.Short).Show();
         e.Handled = true;
@@ -62,9 +62,10 @@ using Android.Views;
 
 アプリケーションを実行し、テキストフィールドにテキストを入力します。 **Enter キーを**押すと、右側に表示されるようにトーストが表示されます。
 
-[EditText にテキストを入力する例の![](edit-text-images/edit-text-sml.png)](edit-text-images/edit-text.png#lightbox)
+[EditText にテキストを入力する例の ![](edit-text-images/edit-text-sml.png)](edit-text-images/edit-text.png#lightbox)
 
-*このページの一部は*、 [*Android オープンソースプロジェクトによって*](https://code.google.com/policies.html)作成および共有された作業に基づいて変更され、 [*Creative Commons 2.5 の属性のライセンス*](https://creativecommons.org/licenses/by/2.5/) **に記載されている条項に従って使用さ*れます。このチュートリアルは、* [*Android フォーム*](https://developer.android.com/resources/tutorials/views/hello-formstuff.html)に関するチュートリアルに基づいてい*ます。*
+*このページの一部は、Android オープンソースプロジェクトによって作成および共有され、Creative Commons 2.5 属性で説明されている条項に従って使用される作業に基づいて変更され* [ます](https://creativecommons.org/licenses/by/2.5/) *。このチュートリアルは、Android フォームに関するチュートリアルに基づいて* [ます](https://developer.android.com/resources/tutorials/views/hello-formstuff.html)い *。* 
+
 
 ## <a name="related-links"></a>関連リンク
 

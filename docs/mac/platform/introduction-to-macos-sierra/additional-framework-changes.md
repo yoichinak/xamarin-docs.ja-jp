@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 3db7e456d4321aa7eba415813f8c374b030da4ca
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 44468d3f2d323065161c290f2df8e6f0e89d3def
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029861"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724988"
 ---
 # <a name="additional-macos-sierra-framework-changes"></a>追加の macOS Sierra フレームワークの変更
 
@@ -101,7 +101,7 @@ MacOS Sierra の Foundation Framework には、次の機能強化が加えられ
 
 MacOS Sierra のために、次のような機能強化が行われています。
 
-- **Game Center アプリ**は非推奨とされ、macOS から削除されました。 アプリで使用する場合は、独自のインターフェイスを提示して、スコアボードなどのユーザーキット機能を表示_する必要があり_ます。 
+- **Game Center アプリ**は非推奨とされ、macOS から削除されました。 アプリで使用する場合は、独自のインターフェイスを提示して、スコアボードなどのユーザーキット機能を表示_する必要があり_ます。
 - 新しい iCloud 専用のアカウントの種類は、 [Gkcloudplayer](https://developer.apple.com/reference/gamekit/gkcloudplayer)クラスによって実装されています。
 - 新しい[Gkq&a session](https://developer.apple.com/reference/gamekit/gkgamesession)クラスは、Game Center で永続的なデータストレージを管理するための一般化されたソリューションを提供します。 `GKGameSession` はプレイヤーのリストを保持し、アプリは参加者の日付を格納、取得、または交換する方法とタイミングを実装するフォームです。 多くの場合、ゲームセッションでは、既存のターンベースの一致、リアルタイムの一致、または永続的なゲーム保存方法を置き換えることができます。
 
@@ -169,7 +169,7 @@ MacOS Sierra の SceneKit Framework には、次の機能強化が行われて�
 - SceneKit は、すべてのシェーダーの種類の線形 RGB カラー空間で色コンポーネントの値を解釈します。
 - テクスチャイメージでカラープロファイル情報の読み取りと調整を SceneKit するため、すべてのイメージに対してアセットカタログを使用して、この情報が確実に提供されるようにします。
 - アプリの `Info.plist`で `SCNDisableLinearSpaceRendering` および `SCNDisableWideGamut` キーを指定することによって、線形色空間のレンダリングとワイドカラーの両方を無効にできます。
-- 新しい[SCNGeometryPrimitiveTypePolygon](https://developer.apple.com/reference/scenekit/1772322-scenekit_enumerations/scngeometryprimitivetype/scngeometryprimitivetypepolygon)クラスで geometry を指定するために、任意の多角形の霊長類 (ファイルから読み込まれるか、プログラムによって生成される) を構築します。
+- 新しい[SCNGeometryPrimitiveTypePolygon](https://developer.apple.com/documentation/scenekit/scngeometryprimitivetype/scngeometryprimitivetypepolygon?language=objc)クラスで geometry を指定するために、任意の多角形の霊長類 (ファイルから読み込まれるか、プログラムによって生成される) を構築します。
 
 <a name="Security-Framework-Enhancements" />
 

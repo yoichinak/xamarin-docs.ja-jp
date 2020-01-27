@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: d9d47e750580bb9e4a0f4a2283cbd9e8c6a44c93
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: fd9bced0d2185fd9bd0d18932921c101b2ed207c
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489090"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725177"
 ---
 # <a name="additional-ios-9-frameworks-changes"></a>IOS 9 フレームワークのその他の変更
 
@@ -61,7 +61,6 @@ CloudKit フレームワークを使用すると、iCloud にアクセスする�
 - [CloudKit の概要](~/ios/data-cloud/intro-to-cloudkit.md)-Xamarin iOS アプリでの cloudkit の使用について説明します。
 - [Cloudkit クイックスタート](https://developer.apple.com/library/prerelease/ios/documentation/DataManagement/Conceptual/CloudKitQuickStart/Introduction/Introduction.html#//apple_ref/doc/uid/TP40014987)-Apple が cloudkit を紹介します。
 - [CLOUDKIT Js リファレンス](https://developer.apple.com/library/prerelease/ios/documentation/CloudKitJS/Reference/CloudKitJavaScriptReference/index.html#//apple_ref/doc/uid/TP40015359)-Apple の cloudkit js ドキュメント。
-- [Cloudkit Web サービスリファレンス](https://developer.apple.com/library/prerelease/ios/documentation/DataManagement/Conceptual/CloutKitWebServicesReference/Introduction/Introduction.html#//apple_ref/doc/uid/TP40015240)-cloudkit への HTTP インターフェイスについて説明している Apple のリファレンスです。
 - [Cloudkit カタログ: cloudkit (Cocoa および JavaScript) の概要](https://developer.apple.com/library/prerelease/ios/samplecode/CloudAtlas/Introduction/Intro.html#//apple_ref/doc/uid/TP40014599)-CloudKit と CLOUDKIT JS を使用した Apple のサンプルアプリ。
 
 > [!IMPORTANT]
@@ -117,7 +116,7 @@ if (NSProcessInfo.ProcessInfo.LowPowerModeEnabled) {
 Apple では、iOS 9 の[HealthKit](xref:HealthKit)フレームワークに次の変更が加えられています。
 
 - HealthKit データベース内のエントリの一括削除と削除の追跡をサポートします。 詳細については、Apple の[Hkdeletedobject](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HKDeletedObject_ClassReference/index.html#//apple_ref/occ/cl/HKDeletedObject)、 [HKAnchoredObjectQuery](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HKAnchoredObjectQuery_Class/index.html#//apple_ref/occ/cl/HKAnchoredObjectQuery) 、および[HKHealthStore クラスリファレンス](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HKHealthStore_Class/index.html#//apple_ref/doc/uid/TP40014708)を参照してください。
-- 新しい追跡カテゴリと特性が `HKQuantityTypeIdentifier` クラス (`UVExposure`など) と `HKCategoryTypeIdentifier` クラス (`OvulationTestResult`など) に追加されました。 詳細については、「Apple の[HealthKit 定数](https://developer.apple.com/library/prerelease/ios/documentation/HealthKit/Reference/HealthKit_Constants/index.html#//apple_ref/doc/uid/TP40014710)」を参照してください。
+- 新しい追跡カテゴリと特性が `HKQuantityTypeIdentifier` クラス (`UVExposure`など) と `HKCategoryTypeIdentifier` クラス (`OvulationTestResult`など) に追加されました。 
 
 Xamarin. iOS での HealthKit の使用方法の詳細については、 [HealthKit の概要に](~/ios/platform/healthkit.md)関するドキュメントを参照してください。
 
