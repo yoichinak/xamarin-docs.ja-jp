@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 8820d52a2a41ce3c5de9cf1176d5a8a90a987900
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "71107286"
 ---
 このチュートリアルを試行する前に、以下を正常に完了しておく必要があります。
@@ -20,4 +20,4 @@ ms.locfileid: "71107286"
 
 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 内にコントロールを配置する方法を示す簡単なアプリケーションを作成するには、Visual Studio 2019 または Visual Studio for Mac を使用します。 次のスクリーンショットは、最終的なアプリケーションです。
 
-[![iOS および Android 上の、配置オプションと展開オプションを設定した StackLayout の子ビューのスクリーンショット](../images/alignment-expansion-reduced.png "配置と展開を設定した、Label インスタンスを含む StackLayout") ](../images/alignment-expansion-large.png#lightbox "配置と展開を設定した、Label インスタンスを含む StackLayout")
+[![iOS および Android 上の、配置オプションと展開オプションを設定した StackLayout の子ビューのスクリーンショット](../images/alignment-expansion-reduced.png "配置と展開を設定した、Label インスタンスを含む StackLayout")](../images/alignment-expansion-large.png#lightbox "配置と展開を設定した、Label インスタンスを含む StackLayout")

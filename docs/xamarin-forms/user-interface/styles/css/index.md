@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/04/2019
-ms.openlocfilehash: 8425db35b64ec72ba0384f837e01acca49bd20f7
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: 726ebd55b38460ee966113e4ee487327cd42b03d
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75490052"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724194"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>カスケード スタイル シート (CSS) を使用した Xamarin.Forms アプリのスタイル設定
 
@@ -456,7 +456,7 @@ Xamarin.Forms では次の CSS プロパティがサポートされています�
 
 次のような `color` 値がサポートされます。
 
-- `X11` [colors](https://en.wikipedia.org/wiki/X11_color_names/) は、CSS の色、UWP 定義済みの色、および Xamarin.Forms の色に一致します。 これらの色値は大文字小文字を区別しないことに注意してください。
+- `X11` [colors](https://en.wikipedia.org/wiki/X11_color_names) は、CSS の色、UWP 定義済みの色、および Xamarin.Forms の色に一致します。 これらの色値は大文字小文字を区別しないことに注意してください。
 - 16 進数の色: `#rgb`、 `#argb`、 `#rrggbb`、 `#aarrggbb`
 - rgb 色: `rgb(255,0,0)`、`rgb(100%,0%,0%)`。 値は 0 ~ 255 0 ~ 100% の範囲です。
 - rgba 色: `rgba(255, 0, 0, 0.8)`、`rgba(100%, 0%, 0%, 0.8)`。 不透明度の値は 0.0 ~ 1.0 の範囲です。

@@ -6,16 +6,16 @@ ms.assetid: 46E0578A-7EB9-C105-ABB0-A043E501F36B
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 07eab1e8229cd6600bb8abdd324cb3eb12a8f886
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a9f84192a312f9aba98817b75c058229e6c721bb
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016851"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76723621"
 ---
 # <a name="part-6---testing-and-app-store-approvals"></a>パート 6 - テストと App Store の承認
 
-## <a name="testing"></a>テスト中
+## <a name="testing"></a>Testing (テスト)
 
 多くのアプリ (一部のストア) では、発行前に承認プロセスを渡す必要があります。そのため、アプリが市場に到達したことを確認するためにテストが不可欠です (お客様に対してのみ成功します)。 テストでは、開発者レベルの単体テストからさまざまなハードウェアでのベータテストの管理まで、さまざまな形を取ることができます。
 
@@ -31,7 +31,7 @@ Windows phone、タブレット、およびデスクトップデバイスで .NE
 
 携帯電話およびタブレットエコシステムは常に成長しているため、使用可能なデバイスの数が増え続けることをテストすることは不可能です。 この問題を解決するには、多数の異なるデバイスをリモートで制御して、多数のハードウェアに直接投資することなく、アプリケーションをインストールおよびテストできるようにします。
 
-[App Center テスト](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/uitest)では、数百のデバイスで iOS アプリケーションと Android アプリケーションを簡単にテストできます。
+App Center テストでは、数百のデバイスで iOS アプリケーションと Android アプリケーションを簡単にテストできます。 詳細については、「 [Xamarin Android アプリを準備](/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest)する」および「 [xamarin IOS アプリを準備](/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest)する」を参照してください。
 
 ### <a name="test-management"></a>テスト管理
 
@@ -50,13 +50,13 @@ Xamarin [UITest](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-u
 
 ## <a name="unit-testing"></a>単体テスト
 
-### <a name="touchunit"></a>タッチ単位
+### <a name="touchunit"></a>Touch.Unit
 
 Xamarin. iOS には、JUnit/NUnit スタイルの作成テストの後に続く、Touch と呼ばれる単体テストフレームワークが含まれています。
 
 テストの作成と Touch の実行に関する詳細については、「 [Xamarin の単体テスト](~/ios/deploy-test/touch.unit.md)」を参照してください。
 
-### <a name="andrunit"></a>Andr. 単位
+### <a name="andrunit"></a>Andr.Unit
 
 Android では、オープンソースに相当する Touch が Andr. Unit と呼ばれています。 [Github](https://github.com/spouliot/Andr.Unit)からダウンロードして、 [@spouliotのブログ](https://spouliot.wordpress.com/2011/10/30/andr-unit-joins-the-family/)でツールを読むことができます。
 

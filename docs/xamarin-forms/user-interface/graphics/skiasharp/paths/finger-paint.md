@@ -7,12 +7,12 @@ ms.assetid: 56929D74-8F2C-44C6-90E6-3FBABCDC0A4B
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/05/2017
-ms.openlocfilehash: 98809dca503d03d3d592161608fa9a6fa0e5d394
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: d5cf0927c64732d6d0a44204db9509fae77f0d1d
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75488349"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724074"
 ---
 # <a name="finger-painting-in-skiasharp"></a>SkiaSharp の指による描画
 
@@ -30,7 +30,7 @@ Xamarin.Forms でのタッチ サポートでは、Xamarin.Forms のタッチ追
 
 **指ペイント**ページ**SkiaSharpFormsDemos**指による描画の簡略化された実装です。 色の選択を許可したり、ストロークの幅しない、キャンバスをクリアする方法がない、および、もちろん、アートワークを保存することはできません。
 
-[ **FingerPaintPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FingerPaintPage.xaml)ファイルの配置、 `SKCanvasView` 1 つのセルで`Grid`アタッチし、`TouchEffect`に`Grid`:
+[ **FingerPaintPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/FingerPaintPage.xaml)ファイルの配置、 `SKCanvasView` 1 つのセルで`Grid`アタッチし、`TouchEffect`に`Grid`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

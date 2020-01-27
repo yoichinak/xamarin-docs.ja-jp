@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/06/2018
-ms.openlocfilehash: 3d74e2db541e1f30c7626cd1b08228c1e8f57a42
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: d9c655a503ebdd9ebc08646fb385cdd8f4aa5753
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029312"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725168"
 ---
 # <a name="xamarinandroid-calendar"></a>Xamarin Android カレンダー
 
@@ -265,16 +265,14 @@ long GetDateTimeMS (int yr, int month, int day, int hr, int min)
 
 イベント一覧の UI にボタンを追加し、ボタンの click イベントハンドラーで上記のコードを実行すると、イベントがカレンダーに追加され、次のように一覧で更新されます。
 
-[カレンダーイベントを含むサンプルアプリのスクリーンショット![[サンプルイベントの追加] ボタン](calendar-images/13.png)](calendar-images/13.png#lightbox)
+[カレンダーイベントを含むサンプルアプリのスクリーンショット ![[サンプルイベントの追加] ボタン](calendar-images/13.png)](calendar-images/13.png#lightbox)
 
 予定表アプリを開くと、イベントも同様に書き込まれます。
 
-[選択したカレンダーイベントを表示している予定表アプリのスクリーンショット![](calendar-images/14.png)](calendar-images/14.png#lightbox)
+[選択したカレンダーイベントを表示している予定表アプリのスクリーンショット ![](calendar-images/14.png)](calendar-images/14.png#lightbox)
 
 ご覧のように、Android では、カレンダーデータを取得して保持するための強力で簡単なアクセスが可能になり、アプリケーションが予定表の機能をシームレスに統合できるようになります。
 
 ## <a name="related-links"></a>関連リンク
 
 - [カレンダーのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/calendardemo)
-- [アイスクリームサンドイッチの導入](https://www.android.com/about/ice-cream-sandwich/)
-- [Android 4.0 プラットフォーム](https://developer.android.com/sdk/android-4.0.html)

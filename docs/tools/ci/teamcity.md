@@ -1,19 +1,19 @@
 ---
-title: Xamarin でのチーム City の使用
+title: Xamarin での TeamCity の使用
 description: このガイドでは、TeamCity を使用してモバイルアプリケーションをコンパイルし、Xamarin Test Cloud に送信するために必要な手順について説明します。
 ms.prod: xamarin
 ms.assetid: AC2626CB-28A7-4808-B2A9-789D67899546
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 5a16ec338d5929a217ee2e4a622bdce4da617e86
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 94bc775366d832e0994b8d3c74a45123ff56c13b
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029796"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725306"
 ---
-# <a name="using-team-city-with-xamarin"></a>Xamarin でのチーム City の使用
+# <a name="using-team-city-with-xamarin"></a>Xamarin での TeamCity の使用
 
 _このガイドでは、TeamCity を使用してモバイルアプリケーションをコンパイルし、Xamarin Test Cloud に送信するために必要な手順について説明します。_
 
@@ -61,7 +61,7 @@ TeamCity 8.1 に関する知識が必要です。 TeamCity のインストール
 3. **Xcode** – Xcode は、iOS アプリケーションをコンパイルして署名するために必要です。
 4. **Xcode コマンドラインツール**–「 [Ruby With rbenv の更新](https://github.com/calabash/calabash-ios/wiki)」ガイドの「インストール」セクションの手順 1. で説明されています。
 5. **& プロビジョニングプロファイルの署名 id** : XCode を使用して証明書とプロビジョニングプロファイルをインポートします。 詳細については[、「署名 id とプロビジョニングプロファイルのエクスポート](https://developer.apple.com/library/ios/recipes/xcode_help-accounts_preferences/articles/export_signing_assets.html)に関する Apple のガイド」を参照してください。
-6. **Android キーストア**–必要な android キーストアを teamcity ユーザーがアクセスできるディレクトリにコピーします。つまり、`~/Documents/keystores/MyAndroidApp1` です。
+6. **Android キーストア**–必要な android キーストアを teamcity ユーザーがアクセスできるディレクトリにコピーします。つまり、`~/Documents/keystores/MyAndroidApp1`します。
 7. **Calabash** –アプリケーションに calabash を使用して記述されたテストがある場合は、これは省略可能な手順です。 詳細については、「 [OS X Mavericks に Calabash をインストールする](https://github.com/calabash/calabash-ios/wiki)」および「 [Ruby With rbenv を更新](https://github.com/calabash/calabash-ios/wiki)する」ガイドを参照してください。
 
 次の図は、これらすべてのコンポーネントを示しています。
@@ -81,13 +81,13 @@ TeamCity では、コンパイルとモバイルアプリケーションの送�
 
 ビルドスクリプトは、Powershell ファイル (Windows の場合) または bash スクリプト (OS X の場合) のように簡単にできます。 ビルドスクリプトを作成する場合、スクリプト言語にはいくつかの選択肢があります。
 
-- [**Rake**](https://github.com/jimweirich/rake) : Ruby に基づいてプロジェクトをビルドするためのドメイン固有言語 (DSL) です。 Rake には、人気と豊富なライブラリのエコシステムの利点があります。
+- [**rake** ](https://github.com/jimweirich/rake) – Ruby に基づいてプロジェクトを構築するためのドメイン固有言語 (DSL) になります。 rake は、人気の利点とライブラリの豊富なエコシステムがあります。
 
 - [**psake**](https://github.com/psake/psake) - ソフトウェアを構築するための Windows Powershell ライブラリです
 
-- [フェイク](https://fsharp.github.io/FAKE/)–これは DSL ベースです。 F#これにより、必要に応じて既存の .net ライブラリを利用できるようになります。
+- [**FAKE**](https://fsharp.github.io/FAKE/) – これは、ベースの DSLF#に必要な場合は、既存の .NET ライブラリを利用できるようにします。
 
-どのスクリプト言語が使用されるかは、ユーザーの好みや要件によって異なります。 [Taskypro-Calabash](https://github.com/xamarin/test-cloud-samples/tree/master/TaskyPro/TaskyPro-Calabash)の例には、Rake を[ビルドスクリプト](https://github.com/xamarin/test-cloud-samples/blob/master/TaskyPro/TaskyPro-Calabash/Rakefile)として使用する例が含まれています。
+どのスクリプト言語が使用されるかは、ユーザーの好みや要件によって異なります。
 
 > [!NOTE]
 > MSBuild や NAnt などの XML ベースのビルドシステムを使用することもできますが、本ソフトウェアの構築専用の DSL の表現力や保守性は欠けています。
@@ -201,7 +201,7 @@ TeamCity がインストールされ Visual Studio for Mac、プロジェクト�
 
 8. ビルドが完了したら、ビルドログを調べ、注意が必要なビルドに問題または警告があるかどうかを確認します。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 このガイドでは、TeamCity を使用して Xamarin モバイルアプリケーションをビルドし、Test Cloud に送信する方法について説明します。 ビルドプロセスを自動化するためのビルドスクリプトの作成について説明しました。 ビルドスクリプトは、アプリケーションのコンパイル、Test Cloud への送信、および結果の待機を行います。
 

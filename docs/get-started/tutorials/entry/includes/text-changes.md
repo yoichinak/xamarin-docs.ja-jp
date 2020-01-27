@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 3130c20d39e0140695eed92ffa4941d6bafe796e
-ms.sourcegitcommit: b4c9c574b771ae0265171ca5e938aed1c5e35028
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/25/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "67394546"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -42,7 +42,7 @@ ms.locfileid: "67394546"
 
 1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
-    [![iOS および Android でのテキストを含むエントリのスクリーン ショット](../images/text-changes.png "テキストを含むエントリ")](../images/text-changes-large.png#lightbox "テキストを含むエントリ")
+    [![iOS および Android でのテキストを含む Entry のスクリーンショット](../images/text-changes.png "テキストを含む Entry")](../images/text-changes-large.png#lightbox "テキストを含む Entry")
 
     2 つのイベント ハンドラーにブレークポイントを設定し、[`Entry`](xref:Xamarin.Forms.Entry) にテキストを入力して、[`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) と [`Completed`](xref:Xamarin.Forms.Entry.Completed) のイベントの発生を確認します。
 
@@ -84,7 +84,7 @@ ms.locfileid: "67394546"
 
 1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
-    [![iOS および Android でのテキストを含むエントリのスクリーン ショット](../images/text-changes.png "テキストを含むエントリ")](../images/text-changes-large.png#lightbox "テキストを含むエントリ")
+    [![iOS および Android でのテキストを含む Entry のスクリーンショット](../images/text-changes.png "テキストを含む Entry")](../images/text-changes-large.png#lightbox "テキストを含む Entry")
 
     2 つのイベント ハンドラーにブレークポイントを設定し、[`Entry`](xref:Xamarin.Forms.Entry) にテキストを入力して、[`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) と [`Completed`](xref:Xamarin.Forms.Entry.Completed) のイベントの発生を確認します。
 

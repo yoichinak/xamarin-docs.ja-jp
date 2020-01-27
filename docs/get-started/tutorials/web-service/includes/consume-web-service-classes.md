@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: c92a97b336e89214bbd95021ad8fb9a56f64cc8c
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "67659847"
 ---
 この演習では、`RestService` クラスを使用し、その後、[OpenWeatherMap](https://openweathermap.org/) Web API からデータを取得するためのユーザー インターフェイスを作成します。

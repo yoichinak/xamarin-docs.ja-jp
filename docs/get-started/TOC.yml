@@ -4,8 +4,6 @@
   items:
     - name: Xamarin とは
       href: what-is-xamarin.md
-    - name: 必要条件
-      href: requirements.md
     - name: インストール
       href: installation/index.md
       items:
@@ -14,15 +12,19 @@
           items:
             - name: Xamarin のインストールのプレビュー (Windows)
               href: installation/windows-preview.md
+            - name: Visual Studio からの Xamarin のアンインストール
+              href: installation/uninstalling-xamarin.md
         - name: Visual Studio for Mac のインストール
           href: /visualstudio/mac/installation/
           items:
             - name: Xamarin のインストールのプレビュー (Mac)
               href: /visualstudio/mac/update/
+            - name: Visual Studio for Mac のアンインストール
+              href: /visualstudio/mac/uninstall
         - name: Xamarin ファイアウォールの構成手順
           href: installation/firewall.md
-        - name: Xamarin のアンインストール
-          href: installation/uninstalling-xamarin.md
+    - name: サポートされているプラットフォーム
+      href: supported-platforms.md
     - name: 最初のアプリ
       href: first-app/index.md
     - name: クイックスタート

@@ -8,16 +8,16 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 7bb17abf8cdb943780bb3939aae8e461925b6517
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 8714297c4948dbb65c521d6a32bac3e437b40733
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73001605"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725441"
 ---
 # <a name="xamarinmac-troubleshooting-tips"></a>Xamarin. Mac のトラブルシューティングのヒント
 
-## <a name="overview"></a>概要
+## <a name="overview"></a>の概要
 
 場合によっては、API を手に入れたり、バグに対処したりすることができないときに、プロジェクトの作業中に行き詰まってしまうことがあります。 Xamarin での目標は、モバイルアプリケーションとデスクトップアプリケーションの作成に成功し、役に立ちます。
 
@@ -51,10 +51,10 @@ ms.locfileid: "73001605"
 - コマンドラインからアプリケーションを実行し、次のコマンドを使用して (**ターミナル**アプリ内の) 出力を確認します。
 
   `MyApp.app/Contents/MacOS/MyApp` (`MyApp` はアプリケーションの名前です)
-- コマンドラインでコマンドに "MONO_LOG_LEVEL" を追加して出力を増やすことができます。次に例を示します。
+- コマンドラインでコマンドに "MONO_LOG_LEVEL" を追加すると、出力を増やすことができます。次に例を示します。
 
   `MONO_LOG_LEVEL=debug MyApp.app/Contents/MacOS/MyApp`
-- ネイティブデバッガー (`lldb`) をプロセスにアタッチして、それ以上の情報が提供されているかどうかを確認できます (これには有料ライセンスが必要です)。 たとえば、次のようにします。
+- ネイティブデバッガー (`lldb`) をプロセスにアタッチして、それ以上の情報が提供されているかどうかを確認できます (これには有料ライセンスが必要です)。 たとえば、次の手順を行います。
 
   1. ターミナルで `lldb MyApp.app/Contents/MacOS/MyApp` を入力します。
   2. ターミナルで `run` を入力します。
@@ -68,7 +68,7 @@ ms.locfileid: "73001605"
 
 ### <a name="unable-to-connect-to-the-debugger-in-sandboxed-apps"></a>サンドボックスアプリのデバッガーに接続できません
 
-デバッガーは、TCP を通じて Xamarin. Mac アプリに接続します。つまり、サンドボックスを有効にすると、既定ではアプリに接続できないため、適切なアクセス許可を有効にせずにアプリを実行しようとすると、 *"デバッガーに接続できません" というエラーが表示されます。* .
+デバッガーは、TCP を通じて Xamarin. Mac アプリに接続します。つまり、サンドボックスを有効にすると、既定ではアプリに接続できないため、適切なアクセス許可を有効にせずにアプリを実行しようとすると、 *"デバッガーに接続できません"* というエラーが表示されます。
 
 [![権利の編集](troubleshooting-images/debug01.png "権利の編集")](troubleshooting-images/debug01-large.png#lightbox)
 
@@ -80,7 +80,7 @@ Xamarin. Mac アプリにサードパーティ製のライブラリを含める�
 
 これを解決するには、Xamarin プロジェクトのオプションを開き、[ **Mac Build** > **国際化**] に移動して、[**西**国際化] をオンにします。
 
-[![ビルドオプションの編集](troubleshooting-images/issue01.png "ビルドオプションの編集")](troubleshooting-images/issue01-large.png#lightbox)
+[![ビルド オプションの編集](troubleshooting-images/issue01.png "ビルド オプションの編集")](troubleshooting-images/issue01-large.png#lightbox)
 
 ### <a name="failed-to-compile-mm5103"></a>コンパイルに失敗しました (mm5103)
 
@@ -112,13 +112,13 @@ Xamarin. Mac アプリにサードパーティ製のライブラリを含める�
 
 ## <a name="community-support-on-the-forums"></a>フォーラムのコミュニティサポート
 
-Xamarin 製品を使用する開発者コミュニティはすばらしいものであり、多くの場合、経験と専門知識を共有するための[xamarin. Mac フォーラム](https://forums.xamarin.com/categories/mac)にアクセスします。 さらに、Xamarin エンジニアは、フォーラムに定期的にアクセスしてヘルプを提供します。
+Xamarin 製品を使用する開発者コミュニティはすばらしいものであり、多くの場合、経験と専門知識を共有するための[xamarin. Mac フォーラム](https://forums.xamarin.com/categories/xamarin-mac)にアクセスします。 さらに、Xamarin エンジニアは、フォーラムに定期的にアクセスしてヘルプを提供します。
 
 <a name="filing-a-bug"/>
 
 ## <a name="filing-a-bug"></a>バグを提出する
 
-フィードバックは microsoft にとって重要です。 Xamarin. Mac で問題が見つかった場合は、次のようにします。
+皆様からのご意見をお待ちしております。 Xamarin. Mac で問題が見つかった場合は、次のようにします。
 
 - [問題リポジトリ](https://github.com/xamarin/xamarin-macios/issues)を検索する
 - GitHub の問題に切り替わる前に、Xamarin の問題は [Bugzilla](https://bugzilla.xamarin.com/describecomponents.cgi) で追跡されていました。 そこで一致する問題を検索してください。

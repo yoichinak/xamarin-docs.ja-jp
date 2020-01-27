@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 19afeed47f1c06c89c58dfd996d360698b19fc9c
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "61373414"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -19,7 +19,7 @@ ms.locfileid: "61373414"
 
     このコードでは、[`TextChanged`](xref:Xamarin.Forms.Editor.TextChanged) イベントを `OnEditorTextChanged` という名前のイベント ハンドラーに設定し、[`Completed`](xref:Xamarin.Forms.Editor.Completed) イベントを `OnEditorCompleted` という名前のイベント ハンドラーに設定します。 どちらのイベント ハンドラーも次の手順で作成されます。
 
-1. **ソリューション エクスプローラー**の **[EditorTutorial]** プロジェクトで **[MainPage.xaml]** を展開し、**[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、**[MainPage.xaml.cs]** で、`OnEditorTextChanged` と `OnEditorCompleted` のイベント ハンドラーをクラスに追加します。
+1. **ソリューション エクスプローラー**の **[EditorTutorial]** プロジェクトで **[MainPage.xaml]** を展開し、 **[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、 **[MainPage.xaml.cs]** で、`OnEditorTextChanged` と `OnEditorCompleted` のイベント ハンドラーをクラスに追加します。
 
     ```csharp
     void OnEditorTextChanged(object sender, TextChangedEventArgs e)
@@ -41,7 +41,7 @@ ms.locfileid: "61373414"
     > [!IMPORTANT]
     > [`Editor`](xref:Xamarin.Forms.Editor) に入力されたテキストはすべて [`Text`](xref:Xamarin.Forms.Editor.Text) プロパティに格納されます。
 
-1. Visual Studio ツール バーで、**[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
+1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
     [![iOS および Android でのテキストを含む Editor のスクリーンショット](../images/text-changes.png "テキストを含む Editor")](../images/text-changes-large.png#lightbox "テキストを含む Editor")
 
@@ -62,7 +62,7 @@ ms.locfileid: "61373414"
 
     このコードでは、[`TextChanged`](xref:Xamarin.Forms.Editor.TextChanged) イベントを `OnEditorTextChanged` という名前のイベント ハンドラーに設定し、[`Completed`](xref:Xamarin.Forms.Editor.Completed) イベントを `OnEditorCompleted` という名前のイベント ハンドラーに設定します。 どちらのイベント ハンドラーも次の手順で作成されます。
 
-1. **Solution Pad** の **[EditorTutorial]** プロジェクトで **[MainPage.xaml]** を展開し、**[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、**[MainPage.xaml.cs]** で、`OnEditorTextChanged` と `OnEditorCompleted` のイベント ハンドラーをクラスに追加します。
+1. **Solution Pad** の **[EditorTutorial]** プロジェクトで **[MainPage.xaml]** を展開し、 **[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、 **[MainPage.xaml.cs]** で、`OnEditorTextChanged` と `OnEditorCompleted` のイベント ハンドラーをクラスに追加します。
 
     ```csharp
     void OnEditorTextChanged(object sender, TextChangedEventArgs e)
@@ -84,7 +84,7 @@ ms.locfileid: "61373414"
     > [!IMPORTANT]
     > [`Editor`](xref:Xamarin.Forms.Editor) に入力されたテキストはすべて [`Text`](xref:Xamarin.Forms.Editor.Text) プロパティに格納されます。
 
-1. Visual Studio for Mac ツール バーで、**[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
+1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
     [![iOS および Android でのテキストを含む Editor のスクリーンショット](../images/text-changes.png "テキストを含む Editor")](../images/text-changes-large.png#lightbox "テキストを含む Editor")
 

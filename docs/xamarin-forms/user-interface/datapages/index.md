@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
 ms.openlocfilehash: 4569240d7419254bad41957d30b4ad652c7a3f4e
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 01/24/2020
 ms.locfileid: "75727941"
 ---
 # <a name="xamarinforms-datapages"></a>DataPages
@@ -59,7 +59,7 @@ DataPages NuGet パッケージをインクルードすることに**より、xa
 
 例については、「 [DataPages controls reference](controls.md) 」を参照してください。
 
-### <a name="under-the-hood"></a>内部的な処理
+### <a name="under-the-hood"></a>内部
 
 Xamarin データソースは、`IDataSource` インターフェイスに準拠しています。
 

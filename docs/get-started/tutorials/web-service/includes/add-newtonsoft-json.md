@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: cef0b8f56639e7bc8571ab01b820dfd54b074472
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "67277328"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -19,7 +19,7 @@ ms.locfileid: "67277328"
 
 1. **ソリューション エクスプローラー**で、 **[WebServiceTutorial]** プロジェクトを選択し、右クリックして **[NuGet パッケージの管理...]** を選びます。
 
-    ![[Add NuGet Packages...]\(NuGet パッケージの追加...\) メニュー項目が選択されているスクリーンショット](../images/vs/add-nuget-packages.png "[Add NuGet Packages...]\(NuGet パッケージの追加...\) メニュー項目")
+    ![選択されている [Add NuGet Packages]\(NuGet パッケージの追加\) メニュー項目のスクリーンショット](../images/vs/add-nuget-packages.png "[Add NuGet Packages]\(NuGet パッケージの追加) メニュー項目")
 
 1. **NuGet パッケージ マネージャー**で、 **[参照]** タブを選択し、**Newtonsoft.Json** NuGet パッケージを検索して選択し、 **[インストール]** ボタンをクリックしてプロジェクトに追加します。
 
@@ -42,7 +42,7 @@ ms.locfileid: "67277328"
 
 1. **Solution Pad** で、 **[WebServiceTutorial]** プロジェクトを選び、右クリックして **[追加] > [Add NuGet Packages...]\(NuGet パッケージの追加...\)** の順に選択します。
 
-    ![[Add NuGet Packages...]\(NuGet パッケージの追加...\) メニュー項目が選択されているスクリーンショット](../images/vsmac/add-nuget-packages.png "[Add NuGet Packages...]\(NuGet パッケージの追加...\) メニュー項目")
+    ![選択されている [Add NuGet Packages]\(NuGet パッケージの追加\) メニュー項目のスクリーンショット](../images/vsmac/add-nuget-packages.png "[Add NuGet Packages]\(NuGet パッケージの追加) メニュー項目")
 
 1. **[パッケージを追加]** ウィンドウで、**Newtonsoft.Json** NuGet パッケージを検索して選択し、 **[パッケージを追加]** ボタンをクリックしてプロジェクトに追加します。
 

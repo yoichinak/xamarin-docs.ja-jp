@@ -6,12 +6,12 @@ ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
 author: davidortinau
 ms.author: daortin
 ms.date: 11/25/2015
-ms.openlocfilehash: cad352466e7661183c5277f60c63c283342c50fb
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: be2f7f555b76d472f7a66d95e661bb2f5884c58f
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73015877"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725342"
 ---
 # <a name="overview-of-objective-c-bindings"></a>目的 C のバインドの概要
 
@@ -19,7 +19,7 @@ _バインドプロセスのしくみの詳細_
 
 Xamarin で使用する目的の C ライブラリをバインドするには、次の3つの手順を実行します。
 
-1. C# 「Api 定義」を記述して、.net でのネイティブ API の公開方法と、基になる目標 (C) へのマッピングについて説明します。 これは、`interface`やC#さまざまなバインド**属性**などの標準の構成体を使用して行われます (この[簡単な例](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API)を参照)。
+1. C# 「Api 定義」を記述して、.net でのネイティブ API の公開方法と、基になる目標 (C) へのマッピングについて説明します。 これは、`interface` やC#さまざまなバインド**属性**などの標準の構成体を使用して行われます (この[簡単な例](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API)を参照)。
 
 2. 「」でC#"API 定義" を記述したら、それをコンパイルして "binding" アセンブリを生成します。 これを行うには、[**コマンドライン**](#commandline)を使用するか、Visual Studio for Mac または Visual Studio で[**バインドプロジェクト**](#bindingproject)を使用します。
 
@@ -35,7 +35,7 @@ Xamarin で使用する目的の C ライブラリをバインドするには、
 
 ## <a name="command-line-bindings"></a>コマンドラインバインド
 
-(Xamarin. Mac を使用している場合は `bmac-native`) の `btouch-native` を使用して、バインドを直接構築できます。 これは、手動でC#作成した API 定義 (または目的のマジックペンを使用) をコマンドラインツール (iOS の場合は`btouch-native`、Mac の場合は`bmac-native`) に渡すことによって機能します。
+(Xamarin. Mac を使用している場合は `bmac-native`) の `btouch-native` を使用して、バインドを直接構築できます。 これは、手動でC#作成した API 定義 (または目的のマジックペンを使用) をコマンドラインツール (iOS の場合は`btouch-native`、Mac の場合は `bmac-native`) に渡すことによって機能します。
 
 これらのツールを呼び出すための一般的な構文は次のとおりです。
 
@@ -73,7 +73,7 @@ bash$ bmac-native -e cocos2d.cs -s:enums.cs -x:extensions.cs
 
 [[Register]](xref:Foundation.RegisterAttribute)属性、 [[Export]](xref:Foundation.ExportAttribute)属性、および[手動の目標 c セレクターの呼び出し](~/ios/internals/objective-c-selectors.md)を一緒に使用して、新しい (以前にバインドされていない) 目的 c の型を手動でバインドすることができます。
 
-まず、バインドする型を見つけます。 ディスカッションの目的 (および簡潔さ) については、 [NSEnumerator](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSEnumerator_Class/Reference/Reference.html)型をバインドします (これは既に[NSEnumerator](xref:Foundation.NSEnumerator)にバインドされています。以下の実装は単なる例です)。
+まず、バインドする型を見つけます。 ディスカッションの目的 (および簡潔さ) については、 [NSEnumerator](https://developer.apple.com/documentation/foundation/nsenumerator)型をバインドします (これは既に[NSEnumerator](xref:Foundation.NSEnumerator)にバインドされています。以下の実装は単なる例です)。
 
 次に、 C#型を作成する必要があります。 これを名前空間に配置することをお勧めします。目標 C では名前空間がサポートされていないため、`[Register]` 属性を使用して、Xamarin が目的の C ランタイムに登録する型名を変更する必要があります。 このC#型は、 [NSObject](xref:Foundation.NSObject)からも継承する必要があります。
 

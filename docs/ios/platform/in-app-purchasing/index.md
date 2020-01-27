@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 1efb8df4bac307d0e73da6bcbf645077cb63c839
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5aabaadfb1781f9f1622abf5687252b16b327d34
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032358"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725423"
 ---
 # <a name="in-app-purchasing-in-xamarinios"></a>Xamarin. iOS でのアプリ内購入
 
@@ -28,11 +28,11 @@ iOS アプリケーションでは、StoreKit を使用してデジタル製品�
 
 このドキュメントでは、これらのすべての手順を完了して、Xamarin. iOS を使用してアプリ内購入を提供する方法について説明します。
 
-## <a name="requirements"></a>［要件］
+## <a name="requirements"></a>要件
 
 アプリ内購入をサポートするには、Xcode 7 以降で Xamarin. iOS 5.0 以降を使用する必要があります。
 
-## <a name="contents"></a>コンテンツ
+## <a name="contents"></a>目次
 
 - [アプリ内購入の基本と構成](~/ios/platform/in-app-purchasing/in-app-purchase-basics-and-configuration.md)
 
@@ -46,7 +46,7 @@ iOS アプリケーションでは、StoreKit を使用してデジタル製品�
 
 - [サブスクリプションとレポート](~/ios/platform/in-app-purchasing/subscriptions-and-reporting.md)
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 この記事では、アプリ内購入の概念を紹介しました。この記事では、Xamarin を使用してアプリケーションを構成し、それを利用し、例を紹介する方法を説明しました。 ここで説明しました。
 
@@ -65,7 +65,6 @@ iOS アプリケーションでは、StoreKit を使用してデジタル製品�
 - [アプリ内購入製品識別子 Q & A](https://developer.apple.com/library/ios/#qa/qa1329/_index.html)
 - [アプリ内購入に関するテクニカルノート](https://developer.apple.com/library/ios/#technotes/tn2259/_index.html)
 - [最初のアプリストアの送信](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/Introduction/Introduction.html)
-- [App Store リソースセンター](https://developer.apple.com/appstore/index.html)
 - [App Store への提出に関するヒント](https://developer.apple.com/appstore/resources/submission/tips.html)
 - [App Store の審査に関するガイドライン](https://developer.apple.com/appstore/resources/approval/guidelines.html)
 - [アプリの管理](https://developer.apple.com/appstore/resources/managing/index.html)

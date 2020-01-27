@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: cae1ec70880fe694584e14b732608725bcbb1d91
-ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "71059717"
 ---
 このチュートリアルを試行する前に、以下を正常に完了しておく必要があります。

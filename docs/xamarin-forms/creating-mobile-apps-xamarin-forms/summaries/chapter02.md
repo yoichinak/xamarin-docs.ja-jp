@@ -1,22 +1,22 @@
 ---
 title: 第 2 章の概要です。 アプリの詳細
-description: Xamarin.Forms によるモバイル アプリの作成。第 2 章の概要です。 アプリの詳細
+description: 'Xamarin.Forms によるモバイル アプリの作成: 第 2 章の概要。 アプリの詳細'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: 95defd11a9e568d1089cb2f262cb323045b6c247
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: f900cb1532ba4415127c95b07e777881e1d74994
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334397"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724995"
 ---
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>第 2 章の概要です。 アプリの詳細
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02)
 
 > [!NOTE]
 > このページに関する注意事項は、この本で説明されている内容が Xamarin.Forms が異なっている領域を示しています。
@@ -38,14 +38,12 @@ A`Page`派生物が画面全体、または画面全体ではほぼを占有し�
 > [!NOTE]
 > ポータブル クラス ライブラリが .NET Standard ライブラリに置き換えられました。 .NET standard ライブラリを使用するブックからのすべてのサンプル コードが変換されました。
 
-このサンプルでは、変更なしで Visual Studio で作成された Xamarin.Forms ソリューションを示します。 ソリューションは、6 つのプロジェクトで構成されます。
+このサンプルでは、変更なしで Visual Studio で作成された Xamarin.Forms ソリューションを示します。 このソリューションは、次の4つのプロジェクトで構成されています。
 
 - [**こんにちは**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello)、ポータブル クラス ライブラリ (PCL) が、その他のプロジェクトで共有
 - [**Hello.Droid**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.Droid)、android アプリケーション プロジェクト
 - [**Hello.iOS**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.iOS)iOS 用のアプリケーション プロジェクト
 - [**Hello.UWP**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.UWP)、ユニバーサル Windows プラットフォーム (Windows 10 および Windows 10 Mobile) のアプリケーション プロジェクト
-- [**Hello.Windows**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.Windows)、Windows 8.1 のアプリケーション プロジェクト
-- [**Hello.WinPhone**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.WinPhone)、Windows Phone 8.1 用アプリケーション プロジェクト
 
 > [!NOTE]
 > Xamarin.Forms Windows 8.1、Windows Phone 8.1、または Windows 10 Mobile のをサポートしていませんが、Xamarin.Forms アプリケーションは、Windows 10 デスクトップで実行しないでください。
@@ -104,7 +102,7 @@ Xamarin.Forms プログラムの多くでは、アプリケーション プロ�
 
 Xamarin.Forms のほとんどの開発者では、ライブラリのアプローチを選択します。 この本では、ソリューションの多くは、ライブラリを使用します。 SAP を使用するものが含まれて、 **Sap**プロジェクト名にサフィックス。
 
-SAP アプローチでは、共有プロジェクト内のコードは、C# プリプロセッサ ディレクティブを使用して、さまざまなプラットフォームのさまざまなコードを実行できます (`#if`、#`elif`、および`#endif`) これらの定義済みの識別子。
+SAP アプローチでは、共有プロジェクト内のコードは、c# プリプロセッサ ディレクティブを使用して、さまざまなプラットフォームのさまざまなコードを実行できます (`#if`、#`elif`、および`#endif`) これらの定義済みの識別子。
 
 - iOS: `__IOS__`
 - Android: `__ANDROID__`
@@ -114,7 +112,7 @@ SAP アプローチでは、共有プロジェクト内のコードは、C# プ�
 
 ## <a name="labels-for-text"></a>テキストのラベル
 
-[ **Greetings** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Greetings)ソリューションは、新しい C# ファイルを追加する方法を示します、 **Greetings**プロジェクト。 このファイルは、という名前のクラスを定義します。`GreetingsPage`から派生した`ContentPage`します。 この本では、ほとんどのプロジェクトは、1 つを含めることが`ContentPage`名前サフィックスを持つプロジェクトの名前は、派生物`Page`追加されます。
+[ **Greetings** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Greetings)ソリューションは、新しい c# ファイルを追加する方法を示します、 **Greetings**プロジェクト。 このファイルは、という名前のクラスを定義します。`GreetingsPage`から派生した`ContentPage`します。 この本では、ほとんどのプロジェクトは、1 つを含めることが`ContentPage`名前サフィックスを持つプロジェクトの名前は、派生物`Page`追加されます。
 
 `GreetingsPage`コンス トラクターをインスタンス化、 [ `Label` ](xref:Xamarin.Forms.Label)ビューで、テキストを表示する Xamarin.Forms のビューです。 [ `Text` ](xref:Xamarin.Forms.Label.Text)プロパティによって表示されるテキストに設定されて、`Label`します。 このプログラムの設定、`Label`を`Content`プロパティの`ContentPage`します。 コンス トラクター、`App`クラスのインスタンスを作成し、`GreetingsPage`に設定とその`MainPage`プロパティ。
 
@@ -185,11 +183,11 @@ IOS と Android の間のカットオフの`Tablet`と`Phone`は 600 ユニッ�
 - [`LayoutOptions.EndAndExpand`](xref:Xamarin.Forms.LayoutOptions.EndAndExpand)
 - [`LayoutOptions.FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand)
 
-`HorizontalOptions` `VerticalOptions` Xamarin.Forms のレイアウトで最も重要なプロパティは、詳細については説明[**第 4 章です。スタックをスクロール**](chapter04.md)します。
+`HorizontalOptions` と `VerticalOptions` は、Xamarin. フォームレイアウトで最も重要なプロパティです。詳細については、[**第4章を参照してください。スタックをスクロールして**](chapter04.md)います。
 
 結果を次に示します、`HorizontalOptions`と`VerticalOptions`プロパティの`Label`両方とも設定`LayoutOptions.Center`:
 
-[![Greetings プログラムのスクリーン ショットをトリプル](images/ch02fg05-small.png "水平および垂直方向に中央揃えのラベル")](images/ch02fg05-large.png#lightbox "水平および垂直方向に中央揃えのラベル")
+[![グリーティングプログラムのトリプルスクリーンショット](images/ch02fg05-small.png "水平および垂直方向の中央揃えのラベル")](images/ch02fg05-large.png#lightbox "水平および垂直方向の中央揃えのラベル")
 
 ## <a name="solution-5-center-the-text-within-the-label"></a>5 のソリューションです。 ラベル内でテキストを中央揃え
 

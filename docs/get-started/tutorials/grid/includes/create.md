@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: b1a041f1a2baae9b06de023f6eae9c6598b80061
-ms.sourcegitcommit: 5efbf5ab53532b3a74c80129ff4e0ca84b476d21
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "72678726"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -37,7 +37,7 @@ ms.locfileid: "72678726"
 
 1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS リモート シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
-    [![iOS と Android 上のグリッドのラベルのスクリーンショット](../images/create-grid.png "ラベルを含むグリッド")](../images/create-grid-large.png#lightbox "ラベルを含むグリッドs")
+    [![iOS と Android 上のグリッドのラベルのスクリーンショット](../images/create-grid.png "ラベルを含むグリッド")](../images/create-grid-large.png#lightbox "ラベルを含むグリッド")
 
     [`Grid`](xref:Xamarin.Forms.Grid) の詳細については、「[Xamarin.Forms Grid](~/xamarin-forms/user-interface/layouts/grid.md)」 (Xamarin.Forms のグリッド) を参照してください。
 
@@ -72,6 +72,6 @@ ms.locfileid: "72678726"
 
 1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
-    [![iOS と Android 上のグリッドのラベルのスクリーンショット](../images/create-grid.png "ラベルを含むグリッド")](../images/create-grid-large.png#lightbox "ラベルを含むグリッドs")
+    [![iOS と Android 上のグリッドのラベルのスクリーンショット](../images/create-grid.png "ラベルを含むグリッド")](../images/create-grid-large.png#lightbox "ラベルを含むグリッド")
 
     [`Grid`](xref:Xamarin.Forms.Grid) の詳細については、「[Xamarin.Forms Grid](~/xamarin-forms/user-interface/layouts/grid.md)」 (Xamarin.Forms のグリッド) を参照してください。

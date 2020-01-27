@@ -1,24 +1,24 @@
 ---
 title: 第 13 章の概要です。 ビットマップ
-description: Xamarin.Forms によるモバイル アプリの作成。第 13 章の概要です。 ビットマップ
+description: 'Xamarin.Forms によるモバイル アプリの作成: 第 13 章の概要。 ビットマップ'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 5D153857-B6B7-4A14-8FB9-067DE198C2C7
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: 737e242e14778f38405845541b2ca30d27c3cf5a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: e4746ed94a008d382ce15bb9cd7c52365d9ba574
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61334620"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725529"
 ---
 # <a name="summary-of-chapter-13-bitmaps"></a>第 13 章の概要です。 ビットマップ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13)
 
-> [!NOTE] 
+> [!NOTE]
 > このページに関する注意事項は、この本で説明されている内容が Xamarin.Forms が異なっている領域を示しています。
 
 Xamarin.Forms [ `Image` ](xref:Xamarin.Forms.Image)要素には、ビットマップが表示されます。 すべての Xamarin.Forms プラットフォームは、JPEG、PNG、GIF、および BMP ファイル形式をサポートします。
@@ -32,7 +32,7 @@ Xamarin.Forms [ `Image` ](xref:Xamarin.Forms.Image)要素には、ビットマ�
 
 共有ライブラリでビットマップ リソースはプラットフォームに依存せず、プラットフォーム プロジェクトでビットマップ リソースがプラットフォームに固有です。
 
-> [!NOTE] 
+> [!NOTE]
 > 書籍のテキストでは、.NET Standard ライブラリに置き換えられているポータブル クラス ライブラリへの参照。 .NET standard ライブラリを使用するブックからのすべてのサンプル コードが変換されました。
 
 設定して、ビットマップが指定されて、 [ `Source` ](xref:Xamarin.Forms.Image.Source)プロパティの`Image`型のオブジェクトに[ `ImageSource` ](xref:Xamarin.Forms.ImageSource)、3 つの派生クラスで抽象クラス。
@@ -86,16 +86,16 @@ Xamarin.Forms [ `Image` ](xref:Xamarin.Forms.Image)要素には、ビットマ�
 
 [ **MadTeaParty** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/MadTeaParty)ルイス キャロルの第 7 章が表示されます*景色 Alice の冒険*John Tenniel によって元の図。
 
-[![Mad 紅茶のパーティのスクリーン ショットをトリプル](images/ch13fg16-small.png "Mad Hatters 紅茶のパーティの書籍のテキスト")](images/ch13fg16-large.png#lightbox "Mad Hatters 紅茶のパーティの書籍のテキスト")
+[![Mad ティーパーティーのトリプルスクリーンショット](images/ch13fg16-small.png "Mad Hatters 茶パーティーの書籍のテキスト")](images/ch13fg16-large.png#lightbox "Mad Hatters 茶パーティーの書籍のテキスト")
 
 ### <a name="browsing-and-waiting"></a>参照して、待機しています
 
 [ **ImageBrowser** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageBrowser)サンプルには、Xamarin の web サイトに格納されているストック イメージをブラウズできます。 .NET を使用して[ `WebRequest` ](xref:System.Net.WebRequest)ビットマップの一覧を含む JSON ファイルをダウンロードするクラス。
 
 > [!NOTE]
-> Xamarin.Forms のプログラムを使用する必要があります[ `HttpClient` ](xref:System.Net.Http.HttpClient)なく[ `WebRequest` ](xref:System.Net.WebRequest)インターネット経由でファイルにアクセスするためです。 
+> Xamarin.Forms のプログラムを使用する必要があります[ `HttpClient` ](xref:System.Net.Http.HttpClient)なく[ `WebRequest` ](xref:System.Net.WebRequest)インターネット経由でファイルにアクセスするためです。
 
-プログラムを使用して、 [ `ActivityIndicator` ](xref:Xamarin.Forms.ActivityIndicator)を処理が行われているかを示します。 各ビットマップを読み込み、読み取り専用として[ `IsLoading` ](xref:Xamarin.Forms.Image.IsLoading)プロパティの`Image`は`true`します。 `IsLoading`ためプロパティは、バインド可能なプロパティによって支えられて、`PropertyChanged`そのプロパティを変更するときに発生します。 プログラムは、このイベントにハンドラーをアタッチしの現在の設定を使用して`IsLoaded`を設定する、 [ `IsRunning` ](https://api/property/Xamarin.Forms.ActivityIndicator.IsRunning/)のプロパティ、`ActivityIndicator`します。
+プログラムを使用して、 [ `ActivityIndicator` ](xref:Xamarin.Forms.ActivityIndicator)を処理が行われているかを示します。 各ビットマップを読み込み、読み取り専用として[ `IsLoading` ](xref:Xamarin.Forms.Image.IsLoading)プロパティの`Image`は`true`します。 `IsLoading`ためプロパティは、バインド可能なプロパティによって支えられて、`PropertyChanged`そのプロパティを変更するときに発生します。 プログラムは、このイベントにハンドラーをアタッチしの現在の設定を使用して`IsLoaded`を設定する、 [ `IsRunning` ](xref:Xamarin.Forms.ActivityIndicator.IsRunning)のプロパティ、`ActivityIndicator`します。
 
 ## <a name="streaming-bitmaps"></a>ビットマップのストリーミング
 
@@ -173,8 +173,8 @@ UWP プロジェクトには、ビットマップの名前付けスキームで�
 
 プラットフォームのプロジェクトにビットマップを追加するときに、**ビルド アクション**する必要があります。
 
-- iOS の場合:**BundleResource**
-- Android:**AndroidResource**
+- iOS: **BundleResource**
+- Android: **AndroidResource**
 - UWP:**コンテンツ**
 
 [ **ImageTap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageTap)サンプルから成る 2 つのボタンのようなオブジェクトを作成します`Image`を持つ要素を`TapGestureRecognizer`をインストールします。 オブジェクトが 1 インチの四角形をすることが目的です。 `Source`プロパティの`Image`を使用して設定されている`OnPlatform`と`On`プラットフォームで可能性のあるさまざまなファイル名を参照するオブジェクト。 ビットマップ イメージには、どのサイズ ビットマップが取得され、表示を表示できるように、ピクセル サイズを示す番号が含まれます。

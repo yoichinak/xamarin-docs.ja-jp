@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 01/23/2017
-ms.openlocfilehash: 7aac9a3e2a86f5cdcfa2d6ab27961dd83998bb0f
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: edf5f1c82857930a2647f306195a4c82f4338db6
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73009357"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724630"
 ---
 # <a name="handling-touch-in-xamarinios-apps"></a>Xamarin iOS アプリでのタッチ処理
 
@@ -39,6 +39,5 @@ iOS は `UITouch` クラスのタッチデータをカプセル化します。�
 
 ## <a name="related-links"></a>関連リンク
 
-- [iOS タッチスタート (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-touch-start)
 - [iOS タッチの最終版 (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-touch-final)
 - [FingerPaint (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-fingerpaint)

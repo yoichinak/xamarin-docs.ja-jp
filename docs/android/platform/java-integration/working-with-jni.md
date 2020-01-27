@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: 4d4274770263b120e856cf8db01a71f7ed124a63
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 0fa717a775ff2f1ace9e248a8afde8d373e8a1f8
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73027179"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724345"
 ---
 # <a name="working-with-jni-and-xamarinandroid"></a>JNI と Xamarin Android の使用
 
-_Xamarin Android では、Java ではC#なく、で android アプリを作成できます。いくつかのアセンブリが Xamarin. Android に付属しています。これは、GoogleMaps や Mono などの Java ライブラリのバインドを提供します。ただし、バインドは、可能なすべての Java ライブラリに対して提供されていません。また、提供されているバインドでは、Java のすべての型とメンバーをバインドできない場合があります。バインドされていない Java の型とメンバーを使用するには、Java ネイティブインターフェイス (JNI) を使用できます。この記事では、JNI を使用して、Xamarin Android アプリケーションから Java の型とメンバーを操作する方法について説明します。_
+_Xamarin では、Java ではなくC# 、を使用して android アプリを作成できます。いくつかのアセンブリが Xamarin. Android に付属しています。これは、GoogleMaps や Mono などの Java ライブラリのバインドを提供します。ただし、バインドは、可能なすべての Java ライブラリに対して提供されていません。また、提供されているバインドでは、Java のすべての型とメンバーをバインドできない場合があります。バインドされていない Java の型とメンバーを使用するには、Java ネイティブインターフェイス (JNI) を使用できます。この記事では、JNI を使用して、Xamarin Android アプリケーションから Java の型とメンバーを操作する方法について説明します。_
 
-## <a name="overview"></a>概要
+## <a name="overview"></a>の概要
 
 Java コードを呼び出すためにマネージ呼び出し可能ラッパー (MCW) を作成する必要は必ずしも必要ではありません。 多くの場合、"inline" JNI は、バインドされていない Java メンバーの1回限りの使用に適しています。 多くの場合、JNI を使用すると、jar バインド全体を生成するよりも、Java クラスで1つのメソッドを呼び出すことが簡単になります。
 
@@ -34,7 +34,7 @@ Xamarin. Android の JNI API は、概念的には .NET の `System.Reflection` 
 - マネージコードからのオーバーライドを可能にする仮想メソッドを公開する方法。
 - インターフェイスを公開する方法。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 JNI[名前空間](xref:Android.Runtime.JNIEnv)を通じて公開されているように、Xamarin. Android のすべてのバージョンで使用できます。
 Java の型とインターフェイスをバインドするには、Xamarin Android 4.0 以降を使用する必要があります。
@@ -64,7 +64,7 @@ Android 呼び出し可能ラッパーは、[ビルドプロセス](~/android/de
 Android インターフェイス ( [IComponentCallbacks](xref:Android.Content.IComponentCallbacks)など) を実装することが必要になる場合があります。
 
 Android のクラスとインターフェイスはすべて、 [IJavaObject](xref:Android.Runtime.IJavaObject)インターフェイスを拡張します。そのため、すべての Android の種類で `IJavaObject`を実装する必要があります。
-Xamarin Android は、この事実を活用します。これは、`IJavaObject` を使用して、指定されたマネージ型の Java プロキシ (Android 呼び出し可能ラッパー) を Android に提供する &ndash; です。 **モノの id**は `Java.Lang.Object` サブクラス (`IJavaObject`を実装する必要があります) のみを検索するため、`Java.Lang.Object` をサブクラス化して、マネージコードでインターフェイスを実装する方法を提供します。 例えば:
+Xamarin Android は、この事実を活用します。これは、`IJavaObject` を使用して、指定されたマネージ型の Java プロキシ (Android 呼び出し可能ラッパー) を Android に提供する &ndash; です。 **モノの id**は `Java.Lang.Object` サブクラス (`IJavaObject`を実装する必要があります) のみを検索するため、`Java.Lang.Object` をサブクラス化して、マネージコードでインターフェイスを実装する方法を提供します。 例:
 
 ```csharp
 class MyComponentCallbacks : Java.Lang.Object, Android.Content.IComponentCallbacks {
@@ -149,13 +149,11 @@ public class HelloAndroid extends android.app.Activity {
 
 - [Parcelable](xref:Android.OS.Parcelable)インターフェイスは、実装クラスが `Parcelable.Creator`型の静的フィールド `CREATOR` を持つ必要があることを想定しています。 生成された Java コードには、明示的なフィールドが必要です。 標準的なシナリオでは、マネージコードから Java コードのフィールドを出力することはできません。
 
-コード生成には、任意の名前を持つ任意の Java メソッドを生成するためのソリューションが用意されていません。これは、Xamarin Android 4.2 以降、 [Exportattribute](xref:Java.Interop.ExportAttribute)と[ExportFieldAttribute](xref:Java.Interop.ExportFieldAttribute)が、上記のソリューションを提供するために導入されました。モデル. 両方の属性が `Java.Interop` 名前空間に存在します。
+コード生成には、任意の名前を持つ任意の Java メソッドを生成するためのソリューションが用意されていません。これは、Xamarin Android 4.2 以降では、上記のシナリオに対するソリューションを提供するために、 [Exportattribute](xref:Java.Interop.ExportAttribute)と[ExportFieldAttribute](xref:Java.Interop.ExportFieldAttribute)が導入されました。 両方の属性が `Java.Interop` 名前空間に存在します。
 
 - `ExportAttribute` &ndash; は、メソッド名と予期される例外の種類 (Java で明示的に "スロー" を与えるため) を指定します。 メソッドで使用されている場合、メソッドは、ディスパッチコードを生成する Java メソッドをマネージメソッドに対応する JNI 呼び出しに "エクスポート" します。 これは、`android:onClick` と `java.io.Serializable`で使用できます。
 
 - `ExportFieldAttribute` &ndash; フィールド名を指定します。 これは、フィールド初期化子として機能するメソッドに存在します。 これは、`android.os.Parcelable`と共に使用できます。
-
-[Exportattribute](https://docs.microsoft.com/samples/xamarin/monodroid-samples/exportattribute)サンプルプロジェクトは、これらの属性の使用方法を示しています。
 
 #### <a name="troubleshooting-exportattribute-and-exportfieldattribute"></a>ExportAttribute と ExportFieldAttribute のトラブルシューティング
 
@@ -257,7 +255,7 @@ public static System.IO.Stream In
 }
 ```
 
-メモ:[Inputstreaminvoker](xref:Android.Runtime.InputStreamInvoker.FromJniHandle*)を使用して、参照を `System.IO.Stream` インスタンスに変換し、`JniHandleOwnership.TransferLocalRef` を使用しています。これは、 [j objectfield](xref:Android.Runtime.JNIEnv.GetStaticObjectField*)がローカル参照を返すからです。
+メモ: [Inputstreaminvoker](xref:Android.Runtime.InputStreamInvoker.FromJniHandle*)を使用して、参照を `System.IO.Stream` インスタンスに変換しています。また、`JniHandleOwnership.TransferLocalRef` を使用しています。これは、 [j objectfield](xref:Android.Runtime.JNIEnv.GetStaticObjectField*)がローカル参照を返すためです。
 
 多くの[Android ランタイム](xref:Android.Runtime)型には、JNI 参照を目的の型に変換するメソッドが `FromJniHandle` あります。
 
@@ -346,13 +344,13 @@ IntPtr lrefInstance = JNIEnv.NewObject (class_ref, id_ctor_I, new JValue (value)
 
 1. それ以外の場合、`this.GetType` に対応する[Android 呼び出し可能ラッパー](~/android/platform/java-integration/android-callable-wrappers.md) (ACW) は、既定のコンストラクターを使用してインスタンス化されます。 Android 呼び出し可能ラッパーは、`RegisterAttribute.DoNotGenerateAcw` が `true`に設定されていない `Java.Lang.Object` サブクラスごとに、パッケージの作成時に生成されます。
 
-クラスバインドではない型の場合、これは想定されるセマンティクスです。 C# `Mono.Samples.HelloWorld.HelloAndroid` インスタンスのインスタンス化では、生成された Android 呼び出し可能ラッパーである Java `mono.samples.helloworld.HelloAndroid`インスタンスを構築する必要があります。
+クラスバインドではない型の場合、これは想定されるセマンティクスです。 C# `Mono.Samples.HelloWorld.HelloAndroid` インスタンスのインスタンス化では、生成された Android 呼び出し可能ラッパーである Java `mono.samples.helloworld.HelloAndroid` インスタンスを構築する必要があります。
 
 クラスバインディングでは、Java 型に既定のコンストラクターが含まれている場合、または他のコンストラクターを呼び出す必要がない場合、これは正しい動作である可能性があります。 それ以外の場合は、次のアクションを実行するコンストラクターを指定する必要があります。
 
 1. 既定の `Java.Lang.Object` コンストラクターの代わりに、 [Java. Lang. オブジェクト (IntPtr、jを Handlehandleオーナーシップ)](xref:Java.Lang.Object#ctor*)を呼び出します。 これは、新しい Java インスタンスを作成しないようにするために必要です。
 
-1. Java インスタンスを作成する前に、 [.java](xref:Java.Lang.Object.Handle)の値を確認してください。 Android 呼び出し可能ラッパーが Java コードで構築されていて、作成された Android 呼び出し可能ラッパーインスタンスを格納するようにクラスバインディングが構築されている場合、`Object.Handle` プロパティは `IntPtr.Zero` 以外の値を持ちます。 たとえば、Android が `mono.samples.helloworld.HelloAndroid` インスタンスを作成すると、まず Android 呼び出し可能ラッパーが作成され、Java `HelloAndroid` コンストラクターによって、対応する `Mono.Samples.HelloWorld.HelloAndroid` 型のインスタンスが作成されます。この場合、java インスタンスに設定されている `Object.Handle` プロパティが使用されます。コンストラクターの実行前。
+1. Java インスタンスを作成する前に、 [.java](xref:Java.Lang.Object.Handle)の値を確認してください。 Android 呼び出し可能ラッパーが Java コードで構築されていて、作成された Android 呼び出し可能ラッパーインスタンスを格納するようにクラスバインディングが構築されている場合、`Object.Handle` プロパティは `IntPtr.Zero` 以外の値を持ちます。 たとえば、Android が `mono.samples.helloworld.HelloAndroid` インスタンスを作成する場合、最初に Android 呼び出し可能ラッパーが作成され、Java `HelloAndroid` コンストラクターによって、対応する `Mono.Samples.HelloWorld.HelloAndroid` 型のインスタンスが作成され、`Object.Handle` プロパティがコンストラクター実行前に Java インスタンスに設定されます。
 
 1. 現在のランタイム型が宣言型と同じでない場合は、対応する Android 呼び出し可能ラッパーのインスタンスを作成し、 [SetHandle](xref:Java.Lang.Object.SetHandle*)を使用して、 [j](xref:Android.Runtime.JNIEnv.CreateInstance*)によって返されるハンドルを格納する必要があります。
 
@@ -403,7 +401,7 @@ public Integer (int value)
 
 Java 型をサブクラス化するか、Java インターフェイスを実装するには、パッケージ化プロセス中にすべての `Java.Lang.Object` サブクラスに対して生成される[Android 呼び出し可能ラッパー](~/android/platform/java-integration/android-callable-wrappers.md) (acws) を生成する必要があります。 ACW generation は、[カスタム属性](xref:Android.Runtime.RegisterAttribute)によって制御されます。
 
-型C#の場合、`[Register]`カスタム属性コンストラクターには、対応する Java 型の[JNI 単純化型参照](#_Simplified_Type_References_1)の1つの引数が必要です。 これにより、Java との間C#で異なる名前を指定できます。
+型C#の場合、`[Register]` カスタム属性コンストラクターには、対応する Java 型の[JNI 単純化型参照](#_Simplified_Type_References_1)の1つの引数が必要です。 これにより、Java との間C#で異なる名前を指定できます。
 
 Xamarin Android 4.0 より前の `[Register]` カスタム属性は、既存の Java の種類 "エイリアス" では使用できませんでした。 これは、ACW の生成プロセスによって、検出された `Java.Lang.Object` サブクラスごとに ACWs が生成されるためです。
 
@@ -438,11 +436,11 @@ partial class ManagedAdder : Adder {
 }
 ```
 
-ここでは、 C# `Adder` 型の*エイリアス*`Adder`Java 型になります。 `[Register]` 属性は、`mono.android.test.Adder` Java 型の JNI 名を指定するために使用されます。 `DoNotGenerateAcw` プロパティは、ACW の生成を禁止するために使用されます。 これにより、`ManagedAdder` 型の ACW が生成され、`mono.android.test.Adder` 型が適切にサブクラス化されます。 `RegisterAttribute.DoNotGenerateAcw` プロパティが使用されていない場合は、Xamarin のビルドプロセスによって新しい `mono.android.test.Adder` Java 型が生成されます。 この場合、`mono.android.test.Adder` の型は2つの異なるファイルに2回存在するので、コンパイルエラーが発生します。
+ここでは、 C# `Adder` 型の*エイリアス*`Adder` Java 型になります。 `[Register]` 属性は、`mono.android.test.Adder` Java 型の JNI 名を指定するために使用されます。 `DoNotGenerateAcw` プロパティは、ACW の生成を禁止するために使用されます。 これにより、`ManagedAdder` 型の ACW が生成され、`mono.android.test.Adder` 型が適切にサブクラス化されます。 `RegisterAttribute.DoNotGenerateAcw` プロパティが使用されていない場合は、Xamarin のビルドプロセスによって新しい `mono.android.test.Adder` Java 型が生成されます。 この場合、`mono.android.test.Adder` の型は2つの異なるファイルに2回存在するので、コンパイルエラーが発生します。
 
 ### <a name="binding-virtual-methods"></a>仮想メソッドのバインド
 
-`ManagedAdder` サブクラスは Java `Adder` の種類ですが、特に重要C#ではありません。`Adder`の種類では仮想メソッドが定義されていないため、`ManagedAdder`では何もオーバーライドできません。
+`ManagedAdder` サブクラスは Java `Adder` の種類ですが、特に重要C#ではありません。 `Adder` の種類では仮想メソッドが定義されていないため、`ManagedAdder` では何もオーバーライドできません。
 
 サブクラスによるオーバーライドを許可する `virtual` メソッドをバインドするには、次の2つのカテゴリに分類されるいくつかの処理を行う必要があります。
 
@@ -452,7 +450,7 @@ partial class ManagedAdder : Adder {
 
 #### <a name="method-binding"></a>メソッドのバインド
 
-メソッドのバインドでは、 C#`Adder`定義に2つのサポートメンバーを追加する必要があります。`ThresholdType`、`ThresholdClass`です。
+メソッドのバインドでは、 C# `Adder` 定義に2つのサポートメンバーを追加する必要があります。 `ThresholdType`、`ThresholdClass`です。
 
 ##### <a name="thresholdtype"></a>ThresholdType
 
@@ -555,7 +553,7 @@ public class ManagedAdder extends mono.android.test.Adder {
 }
 ```
 
-`@Override` メソッドが宣言されていることに注意してください。これは、同じ名前の `n_`プレフィックスのメソッドにデリゲートします。 これにより、Java コードが `ManagedAdder.add`を呼び出すと、`ManagedAdder.n_add` が呼び出され、オーバーライドC#する`ManagedAdder.Add`メソッドを実行できるようになります。
+`@Override` メソッドが宣言されていることに注意してください。これは、同じ名前の `n_`プレフィックスのメソッドにデリゲートします。 これにより、Java コードが `ManagedAdder.add`を呼び出すと、`ManagedAdder.n_add` が呼び出され、オーバーライドC#する `ManagedAdder.Add` メソッドを実行できるようになります。
 
 このように、最も重要な質問は、`ManagedAdder.Add`にどのように `ManagedAdder.n_add` フックされているかということです。
 
@@ -598,7 +596,7 @@ int>` デリゲートを作成し、 [JNINativeWrapper](xref:Android.Runtime.JNI
 
 最後に、`n_Add` メソッドは、対応するマネージ型への JNI パラメーターのマーシャリング、およびメソッド呼び出しの委任を行います。
 
-メモ:Java インスタンスで MCW を取得するときは、常に `JniHandleOwnership.DoNotTransfer` を使用します。 これらをローカル参照として扱う (したがって `JNIEnv.DeleteLocalRef`を呼び出す) と、マネージ&gt; の Java&gt; マネージスタックの遷移が中断されます。
+注: Java インスタンスで MCW を取得する場合は、常に `JniHandleOwnership.DoNotTransfer` を使用します。 これらをローカル参照として扱う (したがって `JNIEnv.DeleteLocalRef`を呼び出す) と、マネージ&gt; の Java&gt; マネージスタックの遷移が中断されます。
 
 ### <a name="complete-adder-binding"></a>補完バインドの完了
 
@@ -681,7 +679,7 @@ public class Adder : Java.Lang.Object {
 
 1. 抽象型をサブクラス化する非 `abstract` `Invoker` 型が作成されます。 `Invoker` 型は、基本クラスで宣言されているすべての抽象メソッドをオーバーライドする必要があり、オーバーライドされた実装はメソッドのバインディング実装ですが、非仮想ディスパッチケースは無視できます。
 
-たとえば、上記の `mono.android.test.Adder.add` メソッドが `abstract`であるとします。 バインドC#が変更されて `Adder.Add`が抽象的になり、`Adder.Add`を実装する新しい`AdderInvoker`型が定義されるようになります。
+たとえば、上記の `mono.android.test.Adder.add` メソッドが `abstract`であるとします。 バインドC#が変更されて `Adder.Add` が抽象的になり、`Adder.Add`を実装する新しい `AdderInvoker` 型が定義されるようになります。
 
 ```csharp
 partial class Adder {
@@ -737,7 +735,7 @@ public interface Progress {
 
 `abstract` メソッドと `virtual` メソッドをバインドすると、登録されている型の継承階層内でコネクタメソッドが検索されます。 インターフェイスには本体を含むメソッドを含めることができないため、これは動作しないため、コネクタメソッドが配置されている場所を示す型を指定する必要があります。 この型は、コネクタメソッド文字列内でコロン `':'`の後に指定され、呼び出し元を含む型のアセンブリ修飾型名である必要があります。
 
-インターフェイスメソッドの宣言は、*互換性のある*型を使用して、対応する Java メソッドを変換したものです。 Java の組み込み型の場合、互換性のある型C#は対応する型です。たとえばC# 、java `int`は`int`です。 参照型の場合、互換性のある型は、適切な Java 型の JNI ハンドルを提供できる型です。
+インターフェイスメソッドの宣言は、*互換性のある*型を使用して、対応する Java メソッドを変換したものです。 Java の組み込み型の場合、互換性のある型C#は対応する型です。たとえばC# 、java `int` は `int`です。 参照型の場合、互換性のある型は、適切な Java 型の JNI ハンドルを提供できる型です。
 
 インターフェイスのメンバーは、Java によって直接呼び出されることはありません &ndash; 呼び出しは、呼び出し元の &ndash; 型によって仲介されるので、ある程度の柔軟性が許可されます。
 
@@ -753,7 +751,7 @@ public interface IAdderProgress : IJavaObject {
 ```
 
 上記の「Java `int[]` パラメーターを[JavaArray&lt;int&gt;](xref:Android.Runtime.JavaArray`1)にマップすることに注意してください。
-これは必要ありません。 C#`int[]`、`IList<int>`、またはその他のものにバインドした可能性があります。 どのような種類を選択した場合でも、`Invoker` は、それを Java `int[]` 型に変換して呼び出しを行うことができなければなりません。
+これは必要ありません。 C# `int[]`、`IList<int>`、またはその他のものにバインドした可能性があります。 どのような種類を選択した場合でも、`Invoker` は、それを Java `int[]` 型に変換して呼び出しを行うことができなければなりません。
 
 ### <a name="invoker-definition"></a>呼び出し元の定義
 
@@ -799,7 +797,7 @@ partial class IAdderProgressInvoker {
 }
 ```
 
-メモ:`Handle` プロパティは、`handle` パラメーターではなく、コンストラクター本体内で使用する必要があります。 Android v4.0 の場合と同様に、基本コンストラクターの実行が完了した後、`handle` パラメーターは無効になる可能性があります。
+注: `Handle` プロパティは、`handle` パラメーターではなく、コンストラクター本体内で使用する必要があります。 Android v4.0 の場合と同様に、基本コンストラクターの実行が完了した後、`handle` パラメーターは無効になる可能性があります。
 
 #### <a name="dispose-method"></a>Dispose メソッド
 
@@ -1057,7 +1055,7 @@ Java.Lang.String value = Java.Lang.Object.GetObject<Java.Lang.String>( lrefStrin
 
 JNI でフィールドまたはメソッドを参照するには、フィールドまたはメソッドの宣言する型を最初に検索する必要があります。 Java 型を参照するには、 [Android. Runtime. FindClass (string)](xref:Android.Runtime.JNIEnv.FindClass*)メソッドを使用します。 文字列パラメーターは、簡略化された*型参照*、または Java 型の*完全な型参照*です。 単純型と完全型の参照の詳細については、「 [JNI 型の参照」](#_JNI_Type_References)を参照してください。
 
-メモ:オブジェクトインスタンスを返す他のすべての `JNIEnv` メソッドとは異なり、`FindClass` はローカル参照ではなく、グローバル参照を返します。
+注: オブジェクトインスタンスを返す他の `JNIEnv` メソッドとは異なり、`FindClass` はローカル参照ではなく、グローバル参照を返します。
 
 <a name="_Instance_Fields" />
 
@@ -1293,7 +1291,7 @@ JNIEnv.SetStaticField(IntPtr class, IntPtr fieldID, Type value);
 
 ## <a name="jni-type-signatures"></a>JNI 型シグネチャ
 
-[JNI 型シグネチャ](https://docs.oracle.com/javase/1.5.0/docs/guide/jni/spec/types.html#wp16432)は、メソッドを除き、 [JNI 型参照](#_JNI_Type_References)です (ただし、簡略化された型参照ではありません)。 メソッドを使用すると、JNI 型シグネチャは始めかっこ `'('`になり、その後にすべてのパラメーター型の型参照が連結されます (コンマや他の文字は区別されません)。次に、終わりかっこ `')'`の後に、JNI メソッドの戻り値の型の型参照。
+[JNI 型シグネチャ](https://docs.oracle.com/javase/1.5.0/docs/guide/jni/spec/types.html#wp16432)は、メソッドを除き、 [JNI 型参照](#_JNI_Type_References)です (ただし、簡略化された型参照ではありません)。 メソッドを使用する場合、JNI 型シグネチャは、始めかっこ `'('`、その後に連結されたすべてのパラメーター型の型参照 (コンマや他の文字を区別しない)、続けて終わりかっこ `')'`、メソッドの戻り値の型の JNI 型参照を続けたものです。
 
 たとえば、Java メソッドの場合は、次のようになります。
 
@@ -1307,7 +1305,7 @@ JNI 型シグネチャは次のようになります。
 (ILjava/lang/String;[I)J
 ```
 
-一般に、JNI 署名を決定するには、`javap` コマンドを使用することを*強く*お勧めします。 たとえば、JNI [(string)](https://developer.android.com/reference/java/lang/Thread.State.html#valueOf(java.lang.String))メソッドの JNI 型シグネチャは、"(ljava/Lang/string;) ljava/Lang/Thread $ State;" ですが、 [java.](https://developer.android.com/reference/java/lang/Thread.State.html#values)メソッドの型シグネチャは "() [ljava/である" となります。lang/Thread $ State; "。 末尾のセミコロンをご覧ください。これら*は*JNI 型シグネチャの一部です。
+一般に、JNI 署名を決定するには、`javap` コマンドを使用することを*強く*お勧めします。 たとえば、JNI [(String)](https://developer.android.com/reference/java/lang/Thread.State.html#valueOf(java.lang.String))メソッドの JNI 型シグネチャは、"(ljava/Lang/string;) ljava/Lang/Thread $ state;" ですが、 [java.](https://developer.android.com/reference/java/lang/Thread.State.html#values)メソッドの type シグネチャは "() [Ljava/Lang/thread $ state;" になっているとします。 末尾のセミコロンをご覧ください。これら*は*JNI 型シグネチャの一部です。
 
 <a name="_JNI_Type_References" />
 
@@ -1462,7 +1460,7 @@ Activity mapActivity = Java.Lang.Object.GetObject<Activity>(lrefActivity, JniHan
 
 さらに、すべての JNI 関数に存在する `JNIEnv*` パラメーターを削除することによって、すべての JNI 関数が変更されています。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 JNI を直接処理することは、すべてのコストで回避する必要がある、非常に手間のかかるエクスペリエンスです。 残念ながら、これは常にあればではありません。このガイドでは、Mono for Android でバインドされていない Java ケースにヒットしたときに、いくつかのサポートを提供します。
 

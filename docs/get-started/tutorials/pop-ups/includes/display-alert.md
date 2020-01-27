@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 875f00b379879aa131d37018f89e475170e5320e
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "67277329"
 ---
 Xamarin.Forms には、ユーザーにアラートを表示する、または簡単な質問をする、アラートと呼ばれる、モーダル ポップアップがあります。 この演習では、[`Page`](xref:Xamarin.Forms.Page) クラスから [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) メソッドを使用して、ユーザーにアラートを表示したり、簡単な質問をします。
@@ -61,7 +61,7 @@ Xamarin.Forms には、ユーザーにアラートを表示する、または簡
 
 1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。 次に、最初の [`Button`](xref:Xamarin.Forms.Button) をタップします。
 
-    [![iOS および Android でのアラートのスクリーンショット](../images/alert.png "アラート")](../images/alert-large.png#lightbox "アラート")
+    [![iOS および Android でのアラートのスクリーンショット](../images/alert.png "警告")](../images/alert-large.png#lightbox "警告")
 
     アラートを閉じた後、2 番目の [`Button`](xref:Xamarin.Forms.Button) をタップします。
 
@@ -124,7 +124,7 @@ Xamarin.Forms には、ユーザーにアラートを表示する、または簡
 
 1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。 次に、最初の [`Button`](xref:Xamarin.Forms.Button) をタップします。
 
-    [![iOS および Android でのアラートのスクリーンショット](../images/alert.png "アラート")](../images/alert-large.png#lightbox "アラート")
+    [![iOS および Android でのアラートのスクリーンショット](../images/alert.png "警告")](../images/alert-large.png#lightbox "警告")
 
     アラートを閉じた後、2 番目の [`Button`](xref:Xamarin.Forms.Button) をタップします。
 

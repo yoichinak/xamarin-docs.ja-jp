@@ -7,22 +7,22 @@ ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/23/2017
-ms.openlocfilehash: 1adade4e66a6df504ba7c8ac3ff1f668c014fe93
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7dc7a2faabef86aa63b52739edda696efcb54aba
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770450"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724245"
 ---
 # <a name="the-scale-transform"></a>スケール変換
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _SkiaSharp のスケール変換オブジェクトをさまざまなサイズを拡張するための検出します。_
 
 説明したように[ **、変換の変換**](translate.md)記事では、平行移動変換は、1 つの場所からグラフィカル オブジェクトを別に移動できます。 これに対し、スケール変換は、グラフィカル オブジェクトのサイズを変更します。
 
-![](scale-images/scaleexample.png "サイズにスケーリング (縦) word")
+![](scale-images/scaleexample.png "A tall word scaled in size")
 
 スケール変換には、大規模な実行時に移動するグラフィックス座標も多くの場合とします。
 
@@ -34,9 +34,9 @@ y' = y + dy
 
 スケール ファクターの`sx`と`sy`加法ではなく乗算されます。
 
-x' = sx ・ x
+x' sx 押しを =x
 
-y' = sy ・ y
+y' sy 押しを =y
 
 翻訳の要素の既定値は 0 です。スケール ファクターの既定値は、1 です。
 
@@ -102,18 +102,18 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-次のようなことがあります。スケールファクターは、の`MeasureText` `SKPaint`メソッドから返される値にどのように影響しますか。 答えは：まったくありません。 `Scale` メソッドは、`SKCanvas`します。 行う何らかの処理は影響しません、`SKPaint`キャンバスで何かを表示するためにそのオブジェクトを使用するまでのオブジェクトします。
+疑問に思うかもしれません。 はどのようにスケール ファクター影響から返される値、`MeasureText`メソッドの`SKPaint`でしょうか。 答え: いいえ、違います。 `Scale` メソッドは、`SKCanvas`します。 行う何らかの処理は影響しません、`SKPaint`キャンバスで何かを表示するためにそのオブジェクトを使用するまでのオブジェクトします。
 
 ご覧のとおり、すべての後に描画、`Scale`比例して増加を呼び出します。
 
-[![](scale-images/basicscale-small.png "基本的なスケール ページのスクリーン ショットをトリプル")](scale-images/basicscale-large.png#lightbox "基本的なスケール ページの 3 倍になるスクリーン ショット")
+[![](scale-images/basicscale-small.png "Triple screenshot of the Basic Scale page")](scale-images/basicscale-large.png#lightbox "Triple screenshot of the Basic Scale page")
 
 テキスト、破線、隅と、キャンバスの左と上の端と角丸四角形の間の 10 ピクセルの余白の丸め、その行にダッシュの長さの幅はすべて同じスケール ファクター。
 
 > [!IMPORTANT]
 > ユニバーサル Windows プラットフォームは anisotropicly 拡大縮小されたテキストを正しく表示されません。
 
-水平および垂直の軸に揃えになる別の線のストロークの幅をエラーの原因をスケーリング異方性。 (これはもこのページの最初の図からわかります) です。スケーリングの要因によって影響を受けるストロークの幅をしたくない場合は 0 に設定しに関係なく 1 ピクセルは常に、`Scale`設定します。
+水平および垂直の軸に揃えになる別の線のストロークの幅をエラーの原因をスケーリング異方性。 (これは、このページの最初のイメージからも明らかです)。ストロークの幅がスケールファクターの影響を受けないようにするには、この値を0に設定します。 `Scale` 設定に関係なく、常に1ピクセル幅になります。
 
 スケーリングは、キャンバスの左上隅に対して相対的です。 これは厳密にあります目的の動作ができない可能性があります。 キャンバスで、テキストと四角形の別の場所に移動して、その中心を基準としたサイズを変更するとします。 4 番目のバージョンを使用する場合、 [ `Scale` ](xref:SkiaSharp.SKCanvas.Scale(System.Single,System.Single,System.Single,System.Single))メソッドで、スケーリングの中心を指定する 2 つのパラメーターが含まれています。
 
@@ -168,7 +168,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 角丸四角形の左上隅が配置されている`margin`、キャンバスの左側からのピクセルと`margin`上部 (ピクセル)。 最後の 2 つの引数、`Scale`メソッドは、これらの値と幅との角の丸い四角形の幅と高さにもには、テキストの高さに設定されます。 つまり、すべてのスケーリングが四角形の中央を基準。
 
-[![](scale-images/centeredscale-small.png "[スケールの中央に配置] ページのスクリーン ショットをトリプル")](scale-images/centeredscale-large.png#lightbox "スケールの中央に配置 ページの 3 倍になるスクリーン ショット")
+[![](scale-images/centeredscale-small.png "Triple screenshot of the Centered Scale page")](scale-images/centeredscale-large.png#lightbox "Triple screenshot of the Centered Scale page")
 
 `Slider`このプログラム内の要素の範囲がある&ndash;10 ~ 10。 ご覧のように、負の値の垂直スケール (画面の中央で、android など) が発生するスケーリングの中心を通過する水平方向の軸を中心に反転するオブジェクト。 水平スケーリング (右側の UWP 画面など) の負の値では、スケーリングの中心を通過する垂直軸を中心に反転するオブジェクトが発生します。
 
@@ -249,9 +249,9 @@ using (SKPaint strokePaint = new SKPaint
 
 `pathBounds`四角形が、このコードの先頭付近にある取得され、キャンバスの高さと幅で後で使用される、`Scale`呼び出します。 呼び出し自体はによって表示される場合は、パスの座標をスケールは、`DrawPath`の呼び出しが星されますが、キャンバスの右上隅で中央揃えにします。 下と左にシフトが必要です。 これは、ジョブの`Translate`呼び出します。 これら 2 つのプロパティの`pathBounds`は約 –100、平行移動の係数は約 100。 `Translate`後の呼び出しは、`Scale`を呼び出すには、キャンバスの中央に、星の中央を移動できるように、これらの値をスケーリングの要因によってスケール効果的に。
 
-[![](scale-images/anisotropicscaling-small.png "スケーリングの異方性ページのスクリーン ショットをトリプル")](scale-images/anisotropicscaling-large.png#lightbox "異方性スケール ページの 3 倍になるスクリーン ショット")
+[![](scale-images/anisotropicscaling-small.png "Triple screenshot of the Anisotropic Scaling page")](scale-images/anisotropicscaling-large.png#lightbox "Triple screenshot of the Anisotropic Scaling page")
 
-`Scale` と`Translate`の呼び出しについて考えられるもう1つの方法は、逆の順序で効果を判断することです。この`Translate`呼び出しでは、パスが完全に表示されますが、キャンバスの左上隅に配置されるようになります。 `Scale`メソッドからは、そのスター左上隅に対して相対的に大きくします。
+別の方法を考えることができます、`Scale`と`Translate`呼び出しは、逆の順序で効果を確認する:`Translate`呼び出しは、キャンバスの左上隅に指向が完全に可視状態になるようにパスをシフトします。 `Scale`メソッドからは、そのスター左上隅に対して相対的に大きくします。
 
 実際には、星がキャンバスより少し大きいでことが表示されます。 問題は、ストロークの幅です。 `Bounds`プロパティの`SKPath`パスでエンコードされた座標のディメンションとは、プログラムの使用を拡張することを示します。 特定のストロークの幅と、パスが表示されると、表示されたパスは、キャンバスを超えています。
 
@@ -292,7 +292,7 @@ using (SKPaint textPaint = new SKPaint
 
 同様のロジック、テキストがテキストの境界の四角形から返されるに基づいてページのサイズに拡大`MeasureText`(実際のテキストより少し大きい値です)。
 
-[![](scale-images/anisotropictext-small.png "異方性テスト ページのスクリーン ショットをトリプル")](scale-images/anisotropictext-large.png#lightbox "異方性テスト ページの 3 倍になるスクリーン ショット")
+[![](scale-images/anisotropictext-small.png "Triple screenshot of the Anisotropic Test page")](scale-images/anisotropictext-large.png#lightbox "Triple screenshot of the Anisotropic Test page")
 
 グラフィカル オブジェクトの縦横比を保持する必要がある場合にアイソトロ ピック スケーリングを使用します。 **アイソトロ ピック スケーリング**11 星のこのページを示します。 概念的には、グラフィカル オブジェクトをアイソトロ ピック スケーリングとページの中央に表示するための手順です。
 
@@ -300,7 +300,7 @@ using (SKPaint textPaint = new SKPaint
 - 水平および垂直方向のページの寸法のグラフィカル オブジェクトのサイズで割った値の最小値に基づくオブジェクトを拡張します。
 - ページの中央にスケーリングされたオブジェクトの中心に変換します。
 
-[ `IsotropicScalingPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/skia-sharp-forms/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/IsotropicScalingPage.cs)星を表示する前に、逆の順序で次の手順を実行します。
+[ `IsotropicScalingPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/IsotropicScalingPage.cs)星を表示する前に、逆の順序で次の手順を実行します。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -341,7 +341,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 によって 10% と赤から青に徐々 に色を変更するたびに、スケーリングの減少を考慮、コードが他にもスター 10 に表示されます。
 
-[![](scale-images/isotropicscaling-small.png "アイソトロ ピック スケーリング ページのスクリーン ショットをトリプル")](scale-images/isotropicscaling-large.png#lightbox "アイソトロ ピック スケール ページの 3 倍になるスクリーン ショット")
+[![](scale-images/isotropicscaling-small.png "Triple screenshot of the Isotropic Scaling page")](scale-images/isotropicscaling-large.png#lightbox "Triple screenshot of the Isotropic Scaling page")
 
 ## <a name="related-links"></a>関連リンク
 

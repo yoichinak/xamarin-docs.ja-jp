@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/13/2017
-ms.openlocfilehash: e0ab824eff4c8bb18a2bd1998862df433cdade1a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 84d235bb7c6874255ea025ff5897e150bd6f023b
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73011101"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724684"
 ---
 # <a name="app-transport-security-in-xamarinios"></a>Xamarin. iOS のアプリトランスポートセキュリティ
 
 _アプリトランスポートセキュリティ (ATS) は、インターネットリソース (アプリのバックエンドサーバーなど) とアプリの間にセキュリティで保護された接続を適用します。_
 
-この記事では、iOS 9 アプリでアプリトランスポートセキュリティによって適用されるセキュリティの変更について説明します。また、Xamarin のプロジェクトでは、この方法について説明します。また、 [ats の構成オプション](#config)について説明し、 [ats のオプトアウト](#optout)方法についても説明し[ます。](#xamarinsupport)ATS (必要な場合)。 ATS は既定で有効になっているため、セキュリティで保護されていないインターネット接続では、iOS 9 アプリで例外が発生します (明示的に許可している場合を除く)。
+この記事では、iOS 9 アプリでアプリトランスポートセキュリティによって適用されるセキュリティの変更について説明し[ます。](#xamarinsupport)また、Xamarin のプロジェクトでは、このような意味について説明します。また、必要に応じて、ats[の](#optout)[構成オプション](#config)について説明します。 この記事はATS構成オプションと必要な場合にATSからオプトアウトする方法を説明します。ATSは既定で有効となっているため、iOS 9アプリでは(明示的に許可しない限り)あらゆるセキュアでないインターネット接続によって例外が発生します。
 
 ## <a name="about-app-transport-security"></a>アプリトランスポートセキュリティについて
 
@@ -93,11 +93,11 @@ IOS アプリで使用される HTTPClient 実装を設定するには、**ソ�
 
 マネージハンドラーは、以前のバージョンの Xamarin. iOS に付属していた、完全に管理された HttpClient ハンドラーであり、既定のハンドラーです。
 
-プロフェッショナル
+長所:
 
 - これは、Microsoft .NET と以前のバージョンの Xamarin と互換性があります。
 
-マイナス
+短所:
 
 - IOS と完全に統合されていません (たとえば、TLS 1.0 に制限されています)。
 - 通常、ネイティブ Api よりもはるかに低速です。
@@ -107,12 +107,12 @@ IOS アプリで使用される HTTPClient 実装を設定するには、**ソ�
 
 CFNetwork ベースのハンドラーは、ネイティブ `CFNetwork` フレームワークに基づいています。
 
-プロフェッショナル
+長所:
 
 - は、パフォーマンスを向上させ、実行可能ファイルのサイズを小さくするためにネイティブ API を使用します。
 - では、TLS 1.2 などの新しい標準のサポートが追加されています。
 
-マイナス
+短所:
 
 - IOS 6 以降が必要です。
 - WatchOS では使用できません。
@@ -122,12 +122,12 @@ CFNetwork ベースのハンドラーは、ネイティブ `CFNetwork` フレー
 
 Nの Lsession ベースのハンドラーは、ネイティブ `NSUrlSession` API に基づいています。
 
-プロフェッショナル
+長所:
 
 - は、パフォーマンスを向上させ、実行可能ファイルのサイズを小さくするためにネイティブ API を使用します。
 - では、TLS 1.2 などの新しい標準のサポートが追加されています。
 
-マイナス
+短所:
 
 - IOS 7 以降が必要です。
 - HttpClient の一部の機能およびオプションは使用できません。
@@ -136,7 +136,7 @@ Nの Lsession ベースのハンドラーは、ネイティブ `NSUrlSession` AP
 
 直接、または iOS 9 の web ビューからインターネットに接続しようとすると、次の形式でエラーが表示されることがあります。
 
-> アプリトランスポートセキュリティは、安全ではないため、クリアテキスト HTTP (http://www.-the-blocked-domain.com) リソースの読み込みをブロックしました。 一時的な例外は、アプリの情報の plist ファイルを使用して構成できます。
+> アプリトランスポートセキュリティは安全でないため、クリアテキストの HTTP (`http://www.-the-blocked-domain.com`) リソースの読み込みをブロックしました。 一時的な例外は、アプリの情報の plist ファイルを使用して構成できます。
 
 IOS9 では、アプリトランスポートセキュリティ (ATS) は、インターネットリソース (アプリのバックエンドサーバーなど) とアプリの間にセキュリティで保護された接続を適用します。 さらに、ATS では、`HTTPS` プロトコルと高レベルの API 通信を使用した通信が、転送機密性を持つ TLS バージョン1.2 を使用して暗号化されている必要があります。
 
@@ -180,7 +180,7 @@ NSAppTransportSecurity
 - **Ns`Boolean`サブドメイン**()-これらの設定 `YES`、このドメインのすべてのサブドメインを上書きします。 既定値は `NO`です。
 - **NSThirdPartyExceptionMinimumTLSVersion** (`String`)-ドメインが開発者の管理外にあるサードパーティのサービスである場合に使用される TLS のバージョン。
 - **NSThirdPartyExceptionRequiresForwardSecrecy** (`Boolean`)-サードパーティのドメイン `YES` が上位の機密性を必要とする場合。
-- **NSThirdPartyExceptionAllowsInsecureHTTPLoads** (`Boolean`)-サードパーティのドメインとのセキュリティで保護されていない通信を有効にする場合は、`YES` します。
+- **NSThirdPartyExceptionAllowsInsecureHTTPLoads** (`Boolean`) - If `YES` the ATS will allow non-secure communication with 3rd party domains.
 
 <a name="optout" />
 
@@ -239,13 +239,13 @@ Visual Studio for Mac で、**ソリューションエクスプローラー**内
 [![](ats-images/ats02.png "The Source view of the Info.plist file")](ats-images/ats02.png#lightbox)
 
 > [!IMPORTANT]
-> アプリケーションがセキュリティで保護されていない web サイトへの接続を必要とする場合は、**常に**`NSAllowsArbitraryLoads`を使用して完全に有効にするのではなく、必ず `NSExceptionDomains` を使用してドメインを例外として入力してください。 `NSAllowsArbitraryLoads` は、極端な緊急の場合にのみ使用してください。
+> アプリケーションがセキュリティで保護されていない web サイトへの接続を必要とする場合は、**常に**`NSAllowsArbitraryLoads`を使用して完全に有効にするのではなく、必ず `NSExceptionDomains` を使用してドメインを例外として入力してください。 `NSAllowsArbitraryLoads` 極端な緊急の状況でのみ使用する必要があります。
 
 ここでも、セキュリティで保護された接続への切り替えが利用できないか、または実用的でない場合は、最後の手段として_のみ_、ATS を無効にしてください。
 
 <a name="Summary" />
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 この記事では、アプリトランスポートセキュリティ (ATS) を導入し、インターネットとのセキュリティで保護された通信を実施する方法について説明しました。 まず、iOS 9 で実行されている Xamarin の iOS アプリに対して、ATS に必要な変更について説明します。 次に、ATS の機能とオプションの制御について説明します。 最後に、Xamarin. iOS アプリの使用を停止します。
 

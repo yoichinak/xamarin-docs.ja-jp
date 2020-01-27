@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: c25ea0878906b31028143ff1ad689db56b197458
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 4a6ec3c34afc0c017d5b37eec080f7f9bad08c0c
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032265"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725405"
 ---
 # <a name="additional-ios-10-frameworks-changes"></a>IOS 10 フレームワークのその他の変更
 
@@ -23,7 +23,7 @@ _この記事では、iOS 10 の既存のフレームワークに対する追加
 AVFoundation framework には、次の機能強化が含まれています。
 
 - IOS 10 では、開発者はコンテンツの種類に基づいてさまざまな[AVPlayerItem](xref:AVFoundation.AVPlayerItem)動作を実装する必要がなくなりました。 `Rate` のプロパティを設定するだけで、停止することなく再生できるコンテンツが十分にある場合に AVFoundation によって判断されます。
-- 新しい[AVCapturePhotoOutput](xref:AVFoundation.AVCaptureFileOutput)クラスは、非推奨の `AVCaptureStillImageOutput` クラスを置き換え、キャプチャプロセスの高度な制御と監視、およびその他の新機能のサポートを提供することで、すべての写真ワークフローを処理するための統一された方法を提供します。ライブ写真と RAW キャプチャ形式として。
+- 新しい[AVCapturePhotoOutput](xref:AVFoundation.AVCaptureFileOutput)クラスは、非推奨の `AVCaptureStillImageOutput` クラスを置き換え、キャプチャプロセスの高度な制御と監視、およびライブ写真や生のキャプチャ形式などの新機能のサポートを提供することにより、すべての写真ワークフローを処理するための統一された方法を提供します。
 - 新しい `AVPlayerLooper` クラスを使用すると、再生中に特定のメディアを簡単にループできます。
 - `AVAssetDownloadURLSession` クラスを使用すると、FairPlay の暗号化された HLS ストリームをダウンロードし、後で再生できます。
 - 既定では、 [AVCaptureSession](xref:AVFoundation.AVCaptureSession)クラスは、デバイスのハードウェアでサポートされている場合に、ワイド色のワイド色のキャプチャを自動的にサポートします。 詳細については、Apple の[IOS デバイス互換性のリファレンス](https://developer.apple.com/library/prerelease/content/documentation/DeviceInformation/Reference/iOSDeviceCompatibility/Introduction/Introduction.html#//apple_ref/doc/uid/TP40013599)を参照してください。
@@ -50,7 +50,7 @@ iOS 10 では、コアイメージフレームワークが次のように強化�
 
 - 開発者は、処理の前後に色空間を変換することによって、コアイメージコンテキストの作業色空間の外にある色空間のイメージを処理できるようになりました。
 - A8 または A9 の Cpu を使用する iOS デバイスでは、RAW イメージ形式がサポートされるようになりました。 コアイメージでは、組み込みの iSight カメラから、またはサードパーティ製カメラから生画像をデコードできるようになりました。 [Cifilter](xref:CoreImage.CIFilter)クラスの `FilterWithImageData` または `FilterWithImageURL` メソッドを使用して、未加工の画像を処理します。
-- `UIImageView` オブジェクトの `UIImage` レンダリング (コアイメージイメージストアによってサポートされる場合) に対して、いくつかのレンダリングパフォーマンスが向上しています。 
+- `UIImageView` オブジェクトの `UIImage` レンダリング (コアイメージイメージストアによってサポートされる場合) に対して、いくつかのレンダリングパフォーマンスが向上しています。
 - ワイド色のタグが付けられた `UIImage` オブジェクトは、ワイド色をサポートする iOS デバイス上の `UIImageView` オブジェクトで、幅の広い色で表示されます。
 - コアイメージカーネルコードは、特定のピクセル出力形式を要求できるようになりました。
 - [Cifilter](xref:CoreImage.CIFilter)クラスの `ImageWithExtent` メソッドを使用して、フィルター操作にカスタム処理を挿入できます。 コアイメージは、出力または表示のためにイメージを処理するときに、フィルター間で指定されたコールバックを呼び出します。
@@ -82,7 +82,7 @@ IOS 10 の Foundation framework には、次の機能強化が加えられてい
 
 IOS 10 の作成キットフレームワークには、次の機能強化が行われています。
 
-- **Game Center アプリ**は非推奨となり、iOS から削除されました。 アプリで使用する場合は、独自のインターフェイスを提示して、スコアボードなどのユーザーキット機能を表示_する必要があり_ます。 
+- **Game Center アプリ**は非推奨となり、iOS から削除されました。 アプリで使用する場合は、独自のインターフェイスを提示して、スコアボードなどのユーザーキット機能を表示_する必要があり_ます。
 - 新しい iCloud 専用のアカウントの種類は、 [Gkcloudplayer](https://developer.apple.com/reference/gamekit/gkcloudplayer)クラスによって実装されています。
 - 新しい[Gkq&a session](https://developer.apple.com/reference/gamekit/gkgamesession)クラスは、Game Center で永続的なデータストレージを管理するための一般化されたソリューションを提供します。 `GKGameSession` はプレイヤーのリストを保持し、アプリは参加者の日付を格納、取得、または交換する方法とタイミングを実装する責任を担います。 多くの場合、ゲームセッションでは、既存のターンベースの一致、リアルタイムの一致、または永続的なゲーム保存方法を置き換えることができます。
 
@@ -165,7 +165,7 @@ IOS 10 の SceneKit フレームワークには、次の機能強化が行われ
 - SceneKit color プロファイル情報を読み取って、すべての色に一致するようになりました。
 - SceneKit は、すべてのシェーダーの種類の線形 RGB カラー空間で色コンポーネントの値を解釈します。
 - アプリの `Info.plist`で `SCNDisableLinearSpaceRendering` および `SCNDisableWideGamut` キーを指定することによって、線形色空間のレンダリングとワイドカラーの両方を無効にできます。
-- 新しい[SCNGeometryPrimitiveTypePolygon](https://developer.apple.com/reference/scenekit/1772322-scenekit_enumerations/scngeometryprimitivetype/scngeometryprimitivetypepolygon)クラスで geometry を指定するために、任意の多角形の霊長類 (ファイルから読み込まれるか、プログラムによって生成される) を構築します。
+- 新しい[SCNGeometryPrimitiveTypePolygon](https://developer.apple.com/documentation/scenekit/scngeometryprimitivetype/scngeometryprimitivetypepolygon)クラスで geometry を指定するために、任意の多角形の霊長類 (ファイルから読み込まれるか、プログラムによって生成される) を構築します。
 - テクスチャイメージでカラープロファイル情報の読み取りと調整を SceneKit するため、すべてのイメージに対してアセットカタログを使用して、この情報が確実に提供されるようにします。
 
 ## <a name="spritekit-enhancements"></a>SpriteKit の機能強化

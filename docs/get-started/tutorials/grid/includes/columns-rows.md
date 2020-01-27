@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: d87289e481b69592b68627d053e937856d3d6067
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "61376011"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -44,7 +44,7 @@ ms.locfileid: "61376011"
     > [!NOTE]
     > [`Grid`](xref:Xamarin.Forms.Grid) 内の列と行の間隔は、[`ColumnSpacing`](xref:Xamarin.Forms.Grid.ColumnSpacing) プロパティと [`RowSpacing`](xref:Xamarin.Forms.Grid.RowSpacing) プロパティで設定できます。 詳しくは、「[Xamarin.Forms Grid](~/xamarin-forms/user-interface/layouts/grid.md)」ガイドの「[Spacing](~/xamarin-forms/user-interface/layouts/grid.md#spacing)」 (間隔) を参照してください。
 
-1. Visual Studio ツール バーで、**[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
+1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
     [![iOS と Android で、列と行にレイアウトされたコンテンツがある Grid のスクリーンショット](../images/columns-rows.png "列と行にコンテンツがある Grid")](../images/columns-rows-large.png#lightbox "列と行にコンテンツがある Grid")
 
@@ -86,6 +86,6 @@ ms.locfileid: "61376011"
     > [!NOTE]
     > [`Grid`](xref:Xamarin.Forms.Grid) 内の列と行の間隔は、[`ColumnSpacing`](xref:Xamarin.Forms.Grid.ColumnSpacing) プロパティと [`RowSpacing`](xref:Xamarin.Forms.Grid.RowSpacing) プロパティで設定できます。 詳しくは、「[Xamarin.Forms Grid](~/xamarin-forms/user-interface/layouts/grid.md)」ガイドの「[Spacing](~/xamarin-forms/user-interface/layouts/grid.md#spacing)」 (間隔) を参照してください。
 
-1. Visual Studio for Mac ツール バーで、**[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
+1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
     [![iOS と Android で、列と行にレイアウトされたコンテンツがある Grid のスクリーンショット](../images/columns-rows.png "列と行にコンテンツがある Grid")](../images/columns-rows-large.png#lightbox "列と行にコンテンツがある Grid")

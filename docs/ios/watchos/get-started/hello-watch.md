@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 12/14/2016
-ms.openlocfilehash: f1551607a621ac3960c39d282111065c258ed90e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2d8b48892a5a1106b03778ac30eca4b18f049f4d
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032775"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725324"
 ---
 # <a name="hello-watchos--walkthrough"></a>Hello, watchOS –チュートリアル
 
@@ -87,7 +87,7 @@ UI を作成します。
 
 ![](hello-watch-images/buttonaction.png "The OnButtonPress Action added to a button")
 
-ストーリーボードを保存すると、 **InterfaceController.designer.cs**はコントロール名とアクションを使用して更新されます。 更新後にこのファイルを開くと、`RegisterAttribute` がコントローラーにどのように対応しているか、および`OutletAttribute`でマークC#されたインスタンス変数に UI コントロールがどのように対応しているか、およびアクションが`ActionAttribute`でタグ付けされた部分メソッドにどのようにマップされるかを確認できます:
+ストーリーボードを保存すると、 **InterfaceController.designer.cs**はコントロール名とアクションを使用して更新されます。 更新後にこのファイルを開くと、`RegisterAttribute` がコントローラーにどのように対応しているか、および `OutletAttribute` でマークC#されたインスタンス変数に UI コントロールがどのように対応しているか、および `ActionAttribute`にタグ付けされた部分メソッドにアクションがどのようにマップされるかを確認できます。
 
 ```csharp
 // WARNING
@@ -155,6 +155,5 @@ partial void OnButtonPress (WatchKit.WKInterfaceButton sender)
 
 ## <a name="related-links"></a>関連リンク
 
-- [はじめに (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchkit-gettingstarted)
 - [セットアップとインストール](~/ios/watchos/get-started/installation.md)
-- [最初のアプリの視聴に関するビデオ](https://blog.xamarin.com/your-first-watch-kit-app/)
+- [Watch アプリの最初のビデオ](https://blog.xamarin.com/your-first-watch-kit-app/)

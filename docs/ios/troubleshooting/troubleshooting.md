@@ -8,14 +8,14 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/22/2018
-ms.openlocfilehash: 21b1f0c29962b7aeb45a836c976ec2635a39622e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 716999002cf90b50b90f4924adc11555cc43717f
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030877"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725360"
 ---
-# <a name="troubleshooting-tips-for-xamarinios"></a>Xamarin のトラブルシューティングのヒント 
+# <a name="troubleshooting-tips-for-xamarinios"></a>Xamarin のトラブルシューティングのヒント
 
 ## <a name="xamarinios-cannot-resolve-systemvaluetuple"></a>Xamarin. iOS では、ValueTuple を解決できません。
 
@@ -98,7 +98,7 @@ public partial class MyImageView : UIView {
 }
 ```
 
-## <a name="systemmissingmethodexception-no-constructor-found-for-foobarctorsystemintptr"></a>MissingMethodException:Foo. Bar:: .ctor (IntPtr) のコンストラクターが見つかりませんでした
+## <a name="systemmissingmethodexception-no-constructor-found-for-foobarctorsystemintptr"></a>MissingMethodException: Foo. Bar:: .ctor (IntPtr) のコンストラクターが見つかりません
 
 このエラーは、コードが Interface Builder ファイルから参照したクラスのインスタンスをインスタンス化しようとすると、実行時に生成されます。 これは、1つの IntPtr をパラメーターとして受け取るコンストラクターを追加し忘れたことを意味します。
 
@@ -124,13 +124,13 @@ public Bar (IntPtr handle) : base (handle) { }
 
 名前空間の設定は、[プロジェクトオプション] ダイアログボックスで確認できます。 既定の名前空間は、 **[General-> のメイン設定**] セクションにあります。 空白の場合は、プロジェクトの名前が既定値として使用されます。 詳細な名前空間の設定については、「**ソースコード-> .net の名前付けポリシー** 」セクションを参照してください。
 
-## <a name="warning-for-actions-the-private-method-foo-is-never-used-cs0169"></a>アクションの警告:プライベートメソッド ' Foo ' は使用されません。 CS0169
+## <a name="warning-for-actions-the-private-method-foo-is-never-used-cs0169"></a>アクションの警告: プライベートメソッド ' Foo ' は使用されません。 CS0169
 
 インターフェイスビルダーファイルのアクションは、実行時にリフレクションによってウィジェットに接続されるため、この警告が発生します。
 
-これらのメソッドに対してのみ警告を非表示にする場合は、"#pragma warning disable 0169" を使用して、アクションの前後に "警告を0169有効にする" を #pragma ます。または、プロジェクト全体で無効にする場合は、コンパイラオプションの [警告を無視する] フィールドに0169を追加します。推奨)。
+これらのメソッドに対してのみ警告を非表示にする場合は、「#pragma warning disable 0169」 #pragma 警告を0169有効にします。または、プロジェクト全体で無効にする場合は、コンパイラオプションの [警告を無視する] フィールドに0169を追加します (推奨しません)。
 
-## <a name="mtouch-failed-with-the-following-message-cannot-open-assembly-pathtoyourprojectexe"></a>mtouch が次のメッセージで失敗しました:アセンブリ '/path/to/yourproject.exe ' を開くことができません
+## <a name="mtouch-failed-with-the-following-message-cannot-open-assembly-pathtoyourprojectexe"></a>mtouch は次のメッセージで失敗しました: アセンブリ '/path/to/yourproject.exe ' を開けません
 
 このエラーメッセージが表示される場合は、一般に、プロジェクトへの絶対パスにスペースが含まれています。 これは、今後のバージョンの Xamarin. iOS で修正される予定ですが、この問題を回避するには、空白のないフォルダーにプロジェクトを移動します。
 
@@ -144,9 +144,9 @@ public Bar (IntPtr handle) : base (handle) { }
 
 問題は、Mono がリストで iphonesimulator の `libsqlite3.dylib` ファイルではなく、OS X `libsqlite3.dylib`を選択していることです。 アプリ*は*デバイスで動作しますが、シミュレーターでは動作しません。
 
-## <a name="deploy-to-device-fails-with-systemexception-amdeviceinstallapplication-returned-3892346901"></a>デバイスへの展開がシステムで失敗します。例外:AMDeviceInstallApplication から3892346901が返されました
+## <a name="deploy-to-device-fails-with-systemexception-amdeviceinstallapplication-returned-3892346901"></a>デバイスへの配置がシステムで失敗します。例外: AMDeviceInstallApplication から3892346901が返されました
 
-このエラーは、証明書/バンドル id のコード署名構成が、デバイスにインストールされているプロビジョニングプロファイルと一致しないことを意味します。  [プロジェクトオプション-> iPhone バンドル署名] で適切な証明書が選択されていること、および [プロジェクトオプション-> iPhone アプリケーション] で指定されている正しいバンドル id があることを確認します。
+このエラーは、証明書/バンドル id のコード署名構成が、デバイスにインストールされているプロビジョニングプロファイルと一致しないことを意味します。  確認する、適切な証明書があるプロジェクトのオプションで選択されているバンドル署名 、iPhone]-> [し、プロジェクトのオプションで指定された正しいバンドル id が iPhone アプリケーション ->
 
 ## <a name="code-completion-is-not-working-in-visual-studio-for-mac"></a>コード補完が Visual Studio for Mac で機能していません
 
@@ -186,7 +186,7 @@ Stacktrace:
 
 これは、thumb コードを使用してコンパイルされたスタティックライブラリをプロジェクトにリンクすることを意味します。 IPhone SDK リリース 3.1 (またはこのドキュメントの執筆時点以降) では、非 Thumb コード (Xamarin) を Thumb コード (スタティックライブラリ) にリンクするときに、Apple によってリンカーにバグが導入されました。この問題を軽減するには、スタティックライブラリの非 Thumb バージョンとリンクする必要があります。
 
-## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1get_count-"></a>System.executionengineexception:JIT コンパイルメソッド (ラッパーマネージ-マネージ) Foo []: ICollection'1. get_Count () を試行しています
+## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1get_count-"></a>System.executionengineexception: JIT コンパイルメソッド (ラッパーマネージ-マネージ) Foo []: system.string ' 1. get_Count () を試行しています
 
 [] サフィックスは、ユーザーまたはクラスライブラリが、IEnumerable < >、ICollection < > や IList < > などのジェネリックコレクションを通じて配列に対してメソッドを呼び出すことを示します。 回避策として、自分でメソッドを呼び出し、例外をトリガーした呼び出しの前にこのコードが実行されるように、AOT コンパイラに明示的に強制することができます。 この場合は、次のように記述できます。
 
@@ -208,7 +208,7 @@ int count = ((ICollection<Foo>) array).Count;
 1. ビーム同期を無効にしたまま、ステップ (1) を繰り返してみてください。
 1. エディターが数秒間ハングした場合は、ハングしているときに、ターミナルで "終了しました。" [Visual Studio for Mac] "を実行してみてください。 エディターがハングしている間に kill コマンドが発生するのは困難な場合がありますが、コマンドによってすべてのスレッドのスタックトレースが MD ログに書き込まれます。これは、XS がハングしている間のスレッドの状態を検出するために使用できます。
 
-XS logs、 **~/Library/Logs/XamarinStudio-{VERSION}/Ide-{TIMESTAMP}.log**、 **androidtools-{timestamp} .Log**、および**Components-{timestamp} .log**をアタッチしてください (以前のバージョンの xs/MonoDevelop では、 **~/ログを送信するだけです)/モノの開発-(3.0 | 2.8 | 2.6)/MonoDevelop.log**)。
+XS logs、 **~/Library/Logs/XamarinStudio-{VERSION}/Ide-{TIMESTAMP}.log**、 **androidtools-{timestamp} .Log**、および**Components-{timestamp} .log**をアタッチしてください (以前のバージョンの xs/MonoDevelop では、**最大で library/logs/モノ開発-(3.0 | 2.8 | 2.6)/MonoDevelop.log**)。
 
 > [!NOTE]
 > 上記の問題は、XS 2.2 Final * * で修正されました。
@@ -219,7 +219,7 @@ XS logs、 **~/Library/Logs/XamarinStudio-{VERSION}/Ide-{TIMESTAMP}.log**、 **a
 
 Xamarin. iOS 1.3 の場合、デバッグビルドには、Mono のすべてのコンポーネント (フレームワークのすべてのクラスのすべてのメソッド) に対するデバッグサポートが含まれていました。  
 
-Xamarin の iOS 1.4 では、より詳細なデバッグ方法が導入されます。既定では、コードとライブラリのデバッグインストルメンテーションだけを提供し、すべての[Mono アセンブリ](~/cross-platform/internals/available-assemblies.md)に対してこれを実行しません (これは引き続き可能ですが、では、これらのアセンブリのデバッグをオプトインする必要があります)。
+Xamarin の iOS 1.4 では、より詳細なデバッグ方法が導入されます。既定では、コードとライブラリのデバッグインストルメンテーションだけを提供し、すべての[Mono アセンブリ](~/cross-platform/internals/available-assemblies.md)に対してこれを実行しないようにします (これは可能ですが、これらのアセンブリをデバッグするにはオプトインする必要があります)。
 
 ## <a name="installation-hangs"></a>インストールがハングする
 
@@ -280,14 +280,14 @@ WiFi モードまたは USB モードが動作しない場合は、簡単に試�
 
 Visual Studio for Mac 2.2 には、コンマを含む配布証明書を検出しない原因となるバグがあります。 Visual Studio for Mac 2.2.1 に更新してください。
 
-## <a name="error-afcfilerefwrite-returned-1-during-upload"></a>エラー "AFCFileRefWrite が返されました:1 "アップロード中
+## <a name="error-afcfilerefwrite-returned-1-during-upload"></a>アップロード中に "AFCFileRefWrite が返されました: 1" というエラーが発生する
 
-デバイスにアプリをアップロードしているときに、"AFCFileRefWrite が返されました:1 "。 これは、長さゼロのファイルがある場合に発生する可能性があります。
+デバイスにアプリをアップロードしているときに、"AFCFileRefWrite が返されました: 1" というエラーが表示されることがあります。 これは、長さゼロのファイルがある場合に発生する可能性があります。
 
 ## <a name="error-mtouch-failed-with-no-output"></a>エラー "mtouch は出力されませんでした"
 
 Xamarin. iOS と Visual Studio for Mac の現在のリリースは、プロジェクト名またはソリューションまたはプロジェクトに格納されているディレクトリにスペースが含まれていると失敗します。
-これを修正するには、次を実行してください。
+解決するには、次の操作を行います。
 
 - プロジェクトまたは格納されているディレクトリにスペースが含まれていないことを確認してください。
 - プロジェクトの [メイン設定] で、プロジェクト名にスペースが含まれていないことを確認します。
@@ -309,13 +309,13 @@ Xamarin. iOS と Visual Studio for Mac の現在のリリースは、プロジ�
 
 (Ed Anuff が提供)
 
-次の手順に従います。
+この場合は、以下の手順に従ってください。
 
 - IPhone ビルドの SDK バージョンを3.2 に変更します。または、iTunes connect は、3.2 よりも前のバージョンの SDK を使用してビルドされた iPad 互換アプリを表示しているため、アップロード時にそのバージョンを拒否します。
 - プロジェクトに対してカスタムの MinimumOSVersion を作成し、その中で明示的に3.0 に設定します。   これにより、MinimumOSVersion によって設定された3.2 の値が上書きされます。   この操作を行わないと、アプリは iPhone で実行できなくなります。
 - 再構築し、zip 接続して、iTunes connect にアップロードします。
 
-## <a name="unhandled-exception-systemexception-failed-to-find-selector-someselector-on-type"></a>未処理の例外:System.Exception: セレクターのセレクターが見つかりませんでした: {type}
+## <a name="unhandled-exception-systemexception-failed-to-find-selector-someselector-on-type"></a>ハンドルされない例外: System.exception: セレクターのセレクターが見つかりませんでした: {type}
 
 この例外は、次の3つのうちのいずれかによって発生します。
 
@@ -368,7 +368,7 @@ SDK のバージョンは、[OS の最小バージョン] 設定と混同しな�
 
 これは、XCode 4 がインストールされていることを意味します。   XCode 4 では、ツール ibtool が削除されているため、スタンドアロンツールを使用して XIB ファイルを編集することはできなくなりました。
 
-Interface Builder を使用する場合は、Apple の web サイトから入手できる[XCode series 3](https://connect.apple.com/cgi-bin/WebObjects/MemberSite.woa/wa/getSoftware?bundleID=20792)をインストールします。
+Interface Builder を使用する場合は、Apple の web サイトから入手できる XCode series 3 をインストールします。
 
 ## <a name="cant-create-display-binding-for-mime-type-applicationvndapple-interface-builder"></a>"Mime の種類: application/vnd. apple-interface-builder" の表示バインドを作成できません。
 
@@ -394,9 +394,9 @@ Interface Builder を使用する場合は、Apple の web サイトから入手
 これは、アプリケーション名に '. ' が含まれている場合に発生する可能性があります。(ドット) を名前で指定します。
 これは、他の多くのケース (デバイスなど) で動作する場合でも、CFBundleExecutable の実行可能ファイル名としては禁止されています。
 
- \* "値には名前の拡張子を含めないでください。"- [https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf](https://developer.apple.com/library/mac/documentation/General/Reference/InfoPlistKeyReference/InfoPlistKeyReference.pdf)
+"値には名前の拡張子を含めないでください。"
 
-## <a name="error-custom-attribute-type-0x43-is-not-supported-when-double-clicking-xib-files"></a>エラー :Xib ファイルをダブルクリックすると、カスタム属性の種類0x43 はサポートされません。
+## <a name="error-custom-attribute-type-0x43-is-not-supported-when-double-clicking-xib-files"></a>エラー: xib ファイルをダブルクリックすると、"カスタム属性の種類0x43 はサポートされていません" になります。
 
 これは、環境変数が正しく設定されていない場合に xib ファイルを開こうとすると発生します。 これは、Visual Studio for Mac/Xamarin. iOS の通常の使用時には発生しません。また、アプリケーションから Visual Studio for Mac を再起動すると、問題を解決する必要があります。
 
@@ -408,8 +408,8 @@ Interface Builder を使用する場合は、Apple の web サイトから入手
 
 ビルドアクションを確認するには、xib ファイルを右クリックし、 **[ビルドアクション]** を選択します。
 
-## <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>NotSupportedException:エンコード437に使用できるデータがありません
+## <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>NotSupportedException: エンコード437で使用できるデータがありません
 
-Xamarin. iOS アプリにサードパーティ製のライブラリを含めると、次の形式でエラーが表示されることがあります。 "NotSupportedException:アプリをコンパイルして実行しようとすると、エンコード437に使用できるデータがありません。 たとえば、`Ionic.Zip.ZipFile`などのライブラリでは、操作中にこの例外がスローされる場合があります。
+Xamarin. iOS アプリにサードパーティ製のライブラリを含めると、アプリをコンパイルして実行しようとすると、"NotSupportedException: encoding 437 のデータは使用できません" という形式のエラーが表示されることがあります。 たとえば、`Ionic.Zip.ZipFile`などのライブラリでは、操作中にこの例外がスローされる場合があります。
 
 これを解決するには、Xamarin. iOS プロジェクトのオプションを開き、[ **Ios ビルド** > **国際化**] に移動して、[**西**国際化] をオンにします。

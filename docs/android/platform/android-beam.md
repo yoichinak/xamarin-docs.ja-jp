@@ -6,18 +6,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/06/2017
-ms.openlocfilehash: 11f1d38eb10421d4ecef3e2039688b2d9a6d9e6e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: aab121ed5f811baf38eed48cf891ccdf076eaf44
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73027826"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76723813"
 ---
 # <a name="android-beam"></a>Android ビーム
 
 Android ビームは Android 4.0 で導入された近距離無線通信 (NFC) テクノロジで、近接しているときにアプリケーションが NFC 経由で情報を共有できるようにします。
 
-[近接共有情報のある2つのデバイスを示す![ダイアグラム](android-beam-images/androidbeam.png)](android-beam-images/androidbeam.png#lightbox)
+[近接共有情報のある2つのデバイスを示す ![ダイアグラム](android-beam-images/androidbeam.png)](android-beam-images/androidbeam.png#lightbox)
 
 Android ビームは、2つのデバイスが範囲内にある場合に、NFC 経由でメッセージをプッシュすることで機能します。 約4cm のデバイスは、Android ビームを使用してデータを共有できます。 1つのデバイスのアクティビティによってメッセージが作成され、プッシュを処理できるアクティビティ (またはアクティビティ) が指定されます。 指定されたアクティビティがフォアグラウンドにあり、デバイスが範囲内にある場合、Android ビームは2番目のデバイスにメッセージをプッシュします。 受信側のデバイスでは、メッセージデータを含むインテントが呼び出されます。
 
@@ -74,10 +74,8 @@ NdefMessage msg = (NdefMessage) rawMsgs [0];
 
 以下のスクリーンショットのように、Android ビームを使用する完全なコード例については、サンプルギャラリーの[Android ビームデモ](https://docs.microsoft.com/samples/xamarin/monodroid-samples/androidbeamdemo)を参照してください。
 
-[Android ビームデモの![スクリーンショットの例](android-beam-images/24.png)](android-beam-images/24.png#lightbox)
+[Android ビームデモの ![スクリーンショットの例](android-beam-images/24.png)](android-beam-images/24.png#lightbox)
 
 ## <a name="related-links"></a>関連リンク
 
 - [Android ビームデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/androidbeamdemo)
-- [アイスクリームサンドイッチの導入](https://www.android.com/about/ice-cream-sandwich/)
-- [Android 4.0 プラットフォーム](https://developer.android.com/sdk/android-4.0.html)

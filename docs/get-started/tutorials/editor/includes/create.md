@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 7471d6bc66463091fafea855b12da06292055be6
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "67277321"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -17,7 +17,7 @@ ms.locfileid: "67277321"
 
     作成される .NET Standard ライブラリの詳細については、[Xamarin.Forms クイック スタート Deep Dive](~/get-started/first-app/index.md) の [Xamarin.Forms アプリケーションの構造](~/get-started/first-app/index.md)に関するページを参照してください。
 
-1. **ソリューション エクスプローラー**の **EditorTutorial** プロジェクトで、 **[MainPage.xaml]** をダブルクリックして開きます。 次に、**MainPage.xaml** のテンプレート コードをすべて削除し、次のコードに置き換えます。
+1. **ソリューション エクスプローラー**の **EditorTutorial** プロジェクトで、 **[MainPage.xaml]** をダブルクリックして開きます。 次に、 **[MainPage.xaml]** のテンプレート コードをすべて削除し、次のコードに置き換えます。
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -35,7 +35,7 @@ ms.locfileid: "67277321"
 
 1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
-    [![iOS と Android での Editor のスクリーンショット](../images/create-editor.png "プレース ホルダー テキストを含む Editor")](../images/create-editor-large.png#lightbox "プレース ホルダー テキストを含む Editor")
+    [![iOS および Android 上の Editor のスクリーンショット](../images/create-editor.png "プレースホルダー テキストを含む Editor")](../images/create-editor-large.png#lightbox "プレースホルダー テキストを含む Editor")
 
     > [!NOTE]
     > Android では [`Editor`](xref:Xamarin.Forms.Editor) の高さが示されますが、iOS では示されません。
@@ -51,7 +51,7 @@ ms.locfileid: "67277321"
 
     作成される .NET Standard ライブラリの詳細については、[Xamarin.Forms クイック スタート Deep Dive](~/get-started/first-app/index.md) の [Xamarin.Forms アプリケーションの構造](~/get-started/first-app/index.md)に関するページを参照してください。
 
-1. **Solution Pad** の **EditorTutorial** プロジェクトで、 **[MainPage.xaml]** をダブルクリックして開きます。 次に、**MainPage.xaml** のテンプレート コードをすべて削除し、次のコードに置き換えます。
+1. **Solution Pad** の **EditorTutorial** プロジェクトで、 **[MainPage.xaml]** をダブルクリックして開きます。 次に、 **[MainPage.xaml]** のテンプレート コードをすべて削除し、次のコードに置き換えます。
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -69,7 +69,7 @@ ms.locfileid: "67277321"
 
 1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
-    [![iOS と Android での Editor のスクリーンショット](../images/create-editor.png "プレース ホルダー テキストを含む Editor")](../images/create-editor-large.png#lightbox "プレース ホルダー テキストを含む Editor")
+    [![iOS および Android 上の Editor のスクリーンショット](../images/create-editor.png "プレースホルダー テキストを含む Editor")](../images/create-editor-large.png#lightbox "プレースホルダー テキストを含む Editor")
 
     > [!NOTE]
     > Android では [`Editor`](xref:Xamarin.Forms.Editor) の高さが示されますが、iOS では示されません。

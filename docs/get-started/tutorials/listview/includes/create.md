@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 28a0b894d6230810f99ffaec4b93d9d87120e30f
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "67277317"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -46,7 +46,7 @@ ms.locfileid: "67277317"
 
 1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
-    [![iOS および Android での ListView のスクリーンショット](../images/create-listview.png "データを表示する ListView")](../images/create-listview-large.png#lightbox "データを表示する ListView")
+    [![iOS および Android 上の ListView のスクリーンショット](../images/create-listview.png "データを表示する ListView")](../images/create-listview-large.png#lightbox "データを表示する ListView")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -88,4 +88,4 @@ ms.locfileid: "67277317"
 
 1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
-    [![iOS および Android での ListView のスクリーンショット](../images/create-listview.png "データを表示する ListView")](../images/create-listview-large.png#lightbox "データを表示する ListView")
+    [![iOS および Android 上の ListView のスクリーンショット](../images/create-listview.png "データを表示する ListView")](../images/create-listview-large.png#lightbox "データを表示する ListView")

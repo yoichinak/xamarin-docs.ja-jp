@@ -44,7 +44,7 @@ Microsoft 認証ライブラリでは、複数のアプリケーションアー�
 
 テナントを作成した後、モバイルアプリケーションを構成するには、**テナント名**と**テナント ID**が必要になります。 テナント ID と名前は、テナント URL を作成したときに生成されたドメインによって定義されます。 生成されたテナント URL が `https://contoso20190410tenant.onmicrosoft.com/` 場合、**テナント ID**は `contoso20190410tenant.onmicrosoft.com`、**テナント名**は `contoso20190410tenant`ます。 上部のメニューにある [**ディレクトリとサブスクリプション] フィルター**をクリックして、Azure portal でテナントドメインを見つけます。 次のスクリーンショットは、[Azure directory とサブスクリプションのフィルター] ボタンとテナントドメインを示しています。
 
-[Azure ディレクトリとサブスクリプションのフィルタービューでテナント名を ![](azure-ad-b2c-images/azure-tenant-name-cropped.png)](azure-ad-b2c-images/azure-tenant-name.png#lightbox)
+[![Azure ディレクトリとサブスクリプションのフィルタービューでテナント名を ](azure-ad-b2c-images/azure-tenant-name-cropped.png)](azure-ad-b2c-images/azure-tenant-name.png#lightbox)
 
 サンプルプロジェクトで、 **Constants.cs**ファイルを編集して、`tenantName` および `tenantId` フィールドを設定します。 次のコードは、テナントドメインが `https://contoso20190410tenant.onmicrosoft.com/`場合にこれらの値を設定する方法を示しています。これらの値は、ポータルの値に置き換えてください。
 
@@ -61,7 +61,7 @@ public static class Constants
 
 接続してユーザーを認証するには、事前にモバイルアプリケーションをテナントに登録しておく必要があります。 登録プロセスでは、アプリケーションに一意の**アプリケーション ID**と、認証後に応答をアプリケーションに返す**リダイレクト URL**が割り当てられます。 詳細については、[Azure Active Directory B2C: アプリケーションの登録](/azure/active-directory-b2c/active-directory-b2c-app-registration/) を参照してください。 アプリケーションに割り当てられている**アプリケーション ID**を把握しておく必要があります。これは、[プロパティ] ビューのアプリケーション名の後に表示されます。 次のスクリーンショットは、アプリケーション ID を見つける場所を示しています。
 
-[Azure アプリケーションのプロパティビューで ![アプリケーション ID](azure-ad-b2c-images/azure-application-id-cropped.png)](azure-ad-b2c-images/azure-application-id.png#lightbox)
+[![Azure アプリケーションのプロパティビューで アプリケーション ID](azure-ad-b2c-images/azure-application-id-cropped.png)](azure-ad-b2c-images/azure-application-id.png#lightbox)
 
 Microsoft 認証ライブラリでは、アプリケーションの**リダイレクト URL**が、"msal" というテキストが付いた**アプリケーション ID**になり、その後に "auth" という名前のエンドポイントが含まれていることを想定しています。 アプリケーション ID が "1234abcd" の場合、完全な URL は `msal1234abcd://auth`である必要があります。 アプリケーションで**Native client**設定が有効になっていることを確認し、次のスクリーンショットに示すように、アプリケーション ID を使用して**カスタムリダイレクト URI**を作成します。
 

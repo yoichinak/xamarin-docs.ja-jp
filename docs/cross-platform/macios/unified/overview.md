@@ -6,22 +6,22 @@ ms.assetid: 5F0CEC18-5EF6-4A99-9DCF-1A3B57EA157C
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: 372a51ba204b3b87d1bb3917b26c0ffb8acfceb6
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: dee7f4fa0b3d8fbd0b3ed57e885c9f5083d9875e
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73015133"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725297"
 ---
 # <a name="unified-api-overview"></a>Unified API の概要
 
 Xamarin の Unified API を使用すると、Mac と iOS の間でコードを共有し、同じバイナリで32と64ビットのアプリケーションをサポートすることができます。 Unified API は、新しい Xamarin および Xamarin プロジェクトで既定で使用されます。
 
 > [!IMPORTANT]
-> Unified API の前にある Xamarin Classic API は非推奨とされました。 
+> Unified API の前にある Xamarin Classic API は非推奨とされました。
 >
-> - Classic API (monotouch.dialog) をサポートする最新バージョンの Xamarin. iOS 9.10 がありました。
-> - Classic API は引き続き Xamarin. Mac でサポートされますが、更新されなくなりました。 非推奨とされているため、開発者はアプリケーションを Unified API に移行する必要があります。
+> - Classic API (monotouch.dialog) をサポートする最新バージョンの Xamarin.iOS 9.10 がありました。
+> - Classic API は引き続き Xamarin.Mac でサポートされますが、更新されなくなりました。 非推奨とされているため、開発者はアプリケーションを Unified API に移行する必要があります。
 
 ## <a name="updating-classic-api-based-apps"></a>Classic API ベースのアプリの更新
 
@@ -98,9 +98,9 @@ Unified API は、非推奨のメソッドを削除します。また、クラ�
 Unified API には、互換性のあるパッケージの新しいプラットフォーム識別子である**iOS10**が導入されています。 このプラットフォームのサポートを追加するには、Unified API に対してビルドすることによって、既存の NuGet パッケージを更新する必要があります。
 
 > [!IMPORTANT]
-> _"エラー3に ' monotouch.dialog ' と ' 0.0.000 ' の両方を同じ Xamarin に含めることはできません" という形式のエラーが発生した場合は、' monotouch.dialog ' が明示的に参照されていますが、' ' は ' xxx, Version =, Culture = によって参照されています。ニュートラル, PublicKeyToken = null ' "_ アプリケーションを統合 api に変換した後、通常は、Unified API に更新されていないコンポーネントまたは NuGet パッケージがプロジェクトにあることが原因です。 既存のコンポーネントまたは NuGet を削除し、統合された Api をサポートし、クリーンビルドを実行するバージョンに更新する必要があります。
+> アプリケーションを Unified API に変換した後に、 _"エラー 3 に 'monotouch.dll' と 'Xamarin.iOS.dll' の両方を同じ Xamarin.iOS プロジェクトに含めることはできません - 'Xamarin.iOS.dll' は明示的に参照されますが、'monotouch.dll' は 'xxx、Version=0.0.000、Culture=neutral、PublicKeyToken=null' によって参照されます"_ という形式のエラーが発生した場合、それは通常、Unified API に更新されていないコンポーネントまたは NuGet パッケージがプロジェクトにあることが原因です。 既存のコンポーネントまたは NuGet を削除し、Unified API をサポートするバージョンに更新し、クリーン ビルドを実行する必要があります。
 
-### <a name="the-road-to-64-bits"></a>64ビットへの道路
+### <a name="the-road-to-64-bits"></a>64 ビットへの道のり
 
 32および64ビットアプリケーションのサポートと、フレームワークに関する情報の背景については、 [32 および64ビットプラットフォームに関する考慮事項](~/cross-platform/macios/32-and-64/index.md)を参照してください。
 
@@ -134,7 +134,7 @@ if (IntPtr.Size == 4) {
 
 ### <a name="arrays-and-systemcollectionsgeneric"></a>配列と system.string
 
-インデクサー C#では`int`の型が想定されるため、コレクションまたは配列内の要素にアクセスするには、`nint`値を`int`に明示的にキャストする必要があります。 (例:
+インデクサー C#では `int`の型が想定されるため、コレクションまたは配列内の要素にアクセスするには、`nint` 値を `int` に明示的にキャストする必要があります。 例:
 
 ```csharp
 public List<string> Names = new List<string>();
@@ -228,7 +228,7 @@ UITapGestureRecognizer singleTap = new UITapGestureRecognizer (() => ShowDropDow
 
 ### <a name="custom-delegates-replaced-with-actiont"></a>アクション\<T > に置き換えられたカスタムデリゲート
 
-**統合**では、単純な (1 つのパラメーターなど) .net デリゲートが `Action<T>`に置き換えられました。 たとえば、
+**統合**では、単純な (1 つのパラメーターなど) .net デリゲートが `Action<T>`に置き換えられました。 例:
 
 ```csharp
 public delegate void NSNotificationHandler (NSNotification notification);
@@ -311,17 +311,12 @@ Unified API、このことを修正しました。  型が `NSCoding`に準拠�
 
 [アプリを Unified API に更新するためのヒント](~/cross-platform/macios/unified/updating-tips.md)には、注意が必要な追加の変更が記載されています。
 
-## <a name="sample-code"></a>サンプル コード
-
-7月31日の時点で、 [monotouch.dialog](https://github.com/xamarin/monotouch-samples/commits/magic-types)の `magic-types` ブランチで、この新しい API に iOS サンプルのポートを公開しました。
-
-Mac の場合、 [mac サンプル](https://github.com/xamarin/mac-samples)リポジトリ (Mavericks/ヨークの新しい api を表示) と、マジック types branch [Mac サンプル](https://github.com/xamarin/monotouch-samples/commits/magic-types)の32/64 ビットサンプルの両方でサンプルを確認しています。
 
 ## <a name="related-links"></a>関連リンク
 
 - [IOS アプリの更新](updating-ios-apps.md)
-- [Mac アプリを更新しています](updating-mac-apps.md)
-- [Xamarin. Forms アプリの更新](updating-xamarin-forms-apps.md)
+- [既存の Mac アプリを更新しています](updating-mac-apps.md)
+- [Xamarin.Forms アプリの更新](updating-xamarin-forms-apps.md)
 - [バインドの更新](update-binding.md)
 - [ヒントの更新](updating-tips.md)
 - [クラシックと Unified API の違い](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/api_changes/classic-vs-unified-8.6.0/index.md)

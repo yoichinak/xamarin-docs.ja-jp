@@ -6,12 +6,12 @@ ms.assetid: 7C65A55C-71FA-46C5-A1B4-955B82559844
 author: davidortinau
 ms.author: daortin
 ms.date: 10/19/2016
-ms.openlocfilehash: fe4b9ade9e6e462c3472a8bb3bb8750ed6cac326
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 8194c369aa0e4f8bb17a1a162354b4f72c6aaa41
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73015892"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725333"
 ---
 # <a name="binding-troubleshooting"></a>バインディングのトラブルシューティング
 
@@ -42,17 +42,17 @@ Xamarin は Apple Api の高品質で十分にテストされたバインディ�
 
 ## <a name="reporting-bugs"></a>バグの報告
 
-フィードバックは microsoft にとって重要です。 Xamarin. Mac で問題が見つかった場合は、次のようにします。
+皆様からのご意見をお待ちしております。 Xamarin. Mac で問題が見つかった場合は、次のようにします。
 
-- [Xamarin.Mac フォーラム](https://forums.xamarin.com/categories/mac)を確認する
-- [問題リポジトリ](https://github.com/xamarin/xamarin-macios/issues)を検索する 
+- [Xamarin.Mac フォーラム](https://forums.xamarin.com/categories/xamarin-mac)を確認する
+- [問題リポジトリ](https://github.com/xamarin/xamarin-macios/issues)を検索する
 - GitHub の問題に切り替わる前に、Xamarin の問題は [Bugzilla](https://bugzilla.xamarin.com/describecomponents.cgi) で追跡されていました。 そこで一致する問題を検索してください。
 - 一致する問題が見つからない場合は、[GitHub の問題リポジトリ](https://github.com/xamarin/xamarin-macios/issues/new)に新しい問題を提出してください。
 
-GitHub の問題はすべて公開されています。 コメントまたは添付ファイルを非表示にすることはできません。 
+GitHub の問題はすべて公開されています。 コメントまたは添付ファイルを非表示にすることはできません。
 
 次の情報について、できるだけ多くを含めてください。
 
-- 問題を再現する簡単な例。 これは**重要**です (可能な場合)。 
+- 問題を再現する簡単な例。 これは**重要**です (可能な場合)。
 - クラッシュの完全なスタック トレース。
 - クラッシュの周囲の C# コード。

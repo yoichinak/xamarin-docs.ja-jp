@@ -16,7 +16,7 @@ ms.locfileid: "73022349"
 ---
 # <a name="nsstring-in-xamarinios-and-xamarinmac"></a>Xamarin. iOS と Xamarin. Mac の NSString
 
-Xamarin.iOS と Xamarin.Mac の両者の設計において、C# およびその他の .NET プログラミング言語で文字列を操作するためには、ネイティブ .NET 文字列型 `string` を公開する API の利用が必要となり、`NSString` データ型の代わりに API によって公開されるデータ型として string を公開するためにも API の利用が必要です。
+Xamarin.iOS と Xamarin.Mac の両者の設計において、C# およびその他の .NET プログラミング言語で文字列を操作するためには、ネイティブ .NET 文字列型 `string` を公開する API の利用が必要となり、 `NSString`  データ型の代わりに API によって公開されるデータ型として string を公開するためにも API の利用が必要です。
 
 このため、開発者は Xamarin の呼び出しに使用することを意図した文字列を保持する必要がないことに注意してください。 特殊な種類の (`Foundation.NSString`) iOS & Xamarin.Mac API (統合) は、すべての操作に Mono の `System.String` を使用し続けることができます。Xamarin. iOS または Xamarin.Mac の API に文字列が必要な場合はいつでも、API バインディングでは情報のマーシャリングが処理されます。
 
@@ -36,7 +36,7 @@ class UILabel {
 
 背後では、このプロパティの実装によって C# 文字列が `NSString` にマーシャリングされ、Objective-C と同じ方法で `objc_msgSend` メソッドが呼び出されます。
 
-`NSString` を使用せず、代わりに C 文字列 ("*char*") を使用するサードパーティの Objective-C API がいくつかあります。 この場合でも、引き続き C# 文字列データ型を使用できますが、この文字列を [ としてマーシャリングせず、代わりに C 文字列としてマーシャリングする必要があることをバインディング ジェネレーターに通知するには、 ](~/cross-platform/macios/binding/objective-c-libraries.md)[PlainString]`NSString` 属性を使用する必要があります。
+`NSString` を使用せず、代わりに C 文字列 ("*char*") を使用するサードパーティの Objective-C API がいくつかあります。 この場合でも、引き続き C# 文字列データ型を使用できますが、この文字列を `NSString` としてマーシャリングせず、代わりに C 文字列としてマーシャリングする必要があることをバインディング ジェネレーターに通知するには、 [[PlainString]](~/cross-platform/macios/binding/objective-c-libraries.md) 属性を使用する必要があります。
 
  <a name="Exceptions_to_the_Rule" />
 

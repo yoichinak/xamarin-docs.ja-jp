@@ -6,12 +6,12 @@ ms.assetid: 442FC40A-84DD-A218-0D15-EAD86594B6D7
 author: davidortinau
 ms.author: daortin
 ms.date: 01/28/2016
-ms.openlocfilehash: b3444b962a032ceaeeba36f63ad975b3d80a9f14
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 551e9b1fc6298ddc2cf64e2e9ef60d90f6c1abac
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016927"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76723764"
 ---
 # <a name="building-cross-platform-applications"></a>クロスプラットフォーム アプリケーションの構築
 
@@ -35,7 +35,7 @@ ms.locfileid: "73016927"
 
  <a name="Cross-Platform_Mobile_Application_Case_Studies" />
 
-## <a name="case-studies"></a>ケーススタディ
+## <a name="case-studies"></a>ケース スタディ
 
 このドキュメントで説明されている原則は、サンプルアプリケーション*Tasky*と、 [Xamarin CRM](https://xamarin.com/prebuilt/#xamarincrm)のような[事前に構築](https://xamarin.com/prebuilt)されたアプリケーションについて説明します。
 
@@ -50,7 +50,7 @@ Xamarin を使用してクロスプラットフォームアプリケーション
 
 [Tasky のケーススタディ](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)を参照してください。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 このセクションでは、Xamarin のアプリケーション開発ツールについて説明し、複数のモバイルプラットフォームを対象とするアプリケーションを構築する方法について説明します。
 
@@ -67,4 +67,3 @@ Xamarin を使用してクロスプラットフォームアプリケーション
 - [Tasky サンプルアプリ (github)](https://docs.microsoft.com/samples/xamarin/mobile-samples/taskyportable/)
 - [Xamarin モバイルアプリケーション開発: クロスプラットフォームC#および Xamarin. Forms の基礎 (Amazon)](https://www.amazon.com/Xamarin-Mobile-Application-Development-Cross-Platform/dp/1484202155/)
 - [Greg Shackles C#によるモバイル開発 (O'Reilly)](https://shop.oreilly.com/product/0636920024002.do)
-- [Scott Olson、John Hunter、 C# Ben Horgen、Kenny Goers (Wrox) によるプロフェッショナルなクロスプラットフォームモバイル開発](https://www.wrox.com/WileyCDA/WroxTitle/Professional-Cross-Platform-Mobile-Development-in-C-.productCd-1118157702.html)

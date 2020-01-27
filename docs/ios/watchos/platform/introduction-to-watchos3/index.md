@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/07/2017
-ms.openlocfilehash: 5ff315270646389d67b505eef04c1aa11d0029c1
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f849ad9d722e297438b3960f74953ff922be0e56
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028262"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725288"
 ---
 # <a name="introduction-to-watchos-3"></a>watchOS 3 の概要
 
@@ -79,7 +79,7 @@ watchOS 3 では、ウォッチアプリに対して1つ以上の複雑な機能
 - ユーザーは、ウォッチ式を直接タップして、アプリケーションをすばやく起動できます。
 - ウォッチ盤でアプリの複雑さの1つを使用すると、システムはアプリを起動可能な状態にして、バックグラウンドでアプリを起動しようとし、メモリ内に保持し、更新に余分な時間を与えるようにします。
 - 複雑さは、1日に50以上のプッシュ更新が保証されることを保証します。
-- アプリに複雑な点がある場合は、Apple Watch Face ギャラリーに表示されます (詳細については、「[ギャラリードキュメントに複雑](https://developer.apple.com/documentation/clockkit/adding_complications_to_the_gallery)な機能を追加する」を参照してください)。
+- アプリに複雑な点がある場合は、Apple Watch Face ギャラリーに表示されます。
 
 WatchOS 3 では、ClockKit フレームワークには、 [CLKComplicationTemplateExtraLargeColumnsText](https://developer.apple.com/reference/clockkit/clkcomplicationtemplateextralargecolumnstext)や[CLKComplicationTemplateExtraLargeRingImage](https://developer.apple.com/reference/clockkit/clkcomplicationtemplateextralargeringimage)などの大規模な複雑さに対応するための新しいテンプレートがいくつか追加されました。 さらに、ローカライズ可能なテキストを作成するには、 [Clktextprovider](https://developer.apple.com/reference/clockkit/clktextprovider)クラスの新しいメソッドを使用します。
 
@@ -151,7 +151,7 @@ watchOS 3 には、次のような WatchKit フレームワークに対するい
 - アプリは、新しい[WKCrownSequencer](https://developer.apple.com/reference/watchkit/wkcrownsequencer)クラスを使用して Digital Crown の状態を取得し、ユーザーが[WKCrownDelegate](https://developer.apple.com/reference/watchkit/wkcrowndelegate)クラスを使用してクラウンを回転したときに更新を受け取ることができます。
 - [WKExtension](https://developer.apple.com/reference/watchkit/wkextension)クラスには、アプリがアプリのランタイム状態を追跡するために使用できる `ApplicationState` メソッドと[WKApplicationState](https://developer.apple.com/reference/watchkit/wkapplicationstate)定数が含まれるようになりました。 `WKExtension` では、バックグラウンドタスクをスケジュールするために使用できる2つの新しいメソッドも用意されています。
 - [WKExtensionDelegate](https://developer.apple.com/reference/watchkit/wkextensiondelegate)には、アプリの状態の変化を監視し、バックグラウンドタスクの更新を処理するための新しい `ApplicationWillEnterForeground`、`ApplicationDidEnterBackground`、および `HandleBackgroundTasks` メソッドが含まれるようになりました。
-- 次の種類のジェスチャ認識を watch アプリに提供するために、新しい[WKGestureRecognizer](https://developer.apple.com/reference/watchkit/wkgesturerecognizer)クラスが追加されました。 [WKLongPressGestureRecognizer](https://developer.apple.com/reference/watchkit/wklongpressgesturerecognizer)、 [WKPanGestureRecognizer](https://developer.apple.com/reference/watchkit/wkpangesturerecognizer)、 [WKSwipeGestureRecognizer](https://developer.apple.com/reference/watchkit/wkswipegesturerecognizer) [、WKTapGestureRecognizer](https://developer.apple.com/reference/watchkit/wktapgesturerecognizer)。
+- 次の種類のジェスチャ認識を watch アプリに提供するために、新しい[WKGestureRecognizer](https://developer.apple.com/reference/watchkit/wkgesturerecognizer)クラスが追加されました。 [WKLongPressGestureRecognizer](https://developer.apple.com/reference/watchkit/wklongpressgesturerecognizer)、 [WKPanGestureRecognizer](https://developer.apple.com/reference/watchkit/wkpangesturerecognizer)、 [WKSwipeGestureRecognizer](https://developer.apple.com/reference/watchkit/wkswipegesturerecognizer) 、および[WKTapGestureRecognizer](https://developer.apple.com/reference/watchkit/wktapgesturerecognizer)。
 - 新しい[WKinterfaceHMCamera](https://developer.apple.com/reference/watchkit/wkinterfacehmcamera)クラスは、すべてのホームキットに接続されている IP カメラ用のインターフェイスを提供します。
 - 新しい[WKInterfaceInlineMovie](https://developer.apple.com/reference/watchkit/wkinterfaceinlinemovie)クラスを使用すると、アプリは、ユーザーがタップしたときに実行中のムービーに置き換えられるムービー "ポスター" を表示できます。
 - 新しい[WKInterfacePaymentButton](https://developer.apple.com/reference/watchkit/wkinterfacepaymentbutton)クラスを使用すると、アプリは UI に Apple Pay ボタンを表示し、タップしたときに支払い要求を開始することができます。

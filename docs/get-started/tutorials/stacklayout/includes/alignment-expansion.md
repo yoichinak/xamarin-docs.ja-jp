@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: f87367ce7bc7e364147d087cdd126efaa6bf910c
-ms.sourcegitcommit: 8ecfa339d0f3e7687977bfe4fc96448942690183
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "67560007"
 ---
 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 内の子ビューのサイズと位置は、子ビューの [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) プロパティと [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) プロパティの値、および [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) プロパティと [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) プロパティの値によって異なります。
@@ -53,7 +53,7 @@ ms.locfileid: "67560007"
 
 1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
-    [![iOS および Android 上の、配置オプションと展開オプションを設定した StackLayout の子ビューのスクリーンショット](../images/alignment-expansion.png "配置と展開を設定した、Label インスタンスを含む StackLayout") ](../images/alignment-expansion-large.png#lightbox "配置と展開を設定した、Label インスタンスを含む StackLayout")
+    [![iOS および Android 上の、配置オプションと展開オプションを設定した StackLayout の子ビューのスクリーンショット](../images/alignment-expansion.png "配置と展開を設定した、Label インスタンスを含む StackLayout")](../images/alignment-expansion-large.png#lightbox "配置と展開を設定した、Label インスタンスを含む StackLayout")
 
     [`StackLayout`](xref:Xamarin.Forms.StackLayout) は、`StackLayout` の方向とは反対方向にある子ビューの配置設定のみに従います。 したがって、垂直方向の `StackLayout` 内の [`Label`](xref:Xamarin.Forms.Label) 子ビューは、それらの [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) プロパティを次の配置フィールドの 1 つに設定します。
 
@@ -109,7 +109,7 @@ ms.locfileid: "67560007"
 
 1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
-    [![iOS および Android 上の、配置オプションと展開オプションを設定した StackLayout の子ビューのスクリーンショット](../images/alignment-expansion.png "配置と展開を設定した、Label インスタンスを含む StackLayout") ](../images/alignment-expansion-large.png#lightbox "配置と展開を設定した、Label インスタンスを含む StackLayout")
+    [![iOS および Android 上の、配置オプションと展開オプションを設定した StackLayout の子ビューのスクリーンショット](../images/alignment-expansion.png "配置と展開を設定した、Label インスタンスを含む StackLayout")](../images/alignment-expansion-large.png#lightbox "配置と展開を設定した、Label インスタンスを含む StackLayout")
 
     [`StackLayout`](xref:Xamarin.Forms.StackLayout) は、`StackLayout` の方向とは反対方向にある子ビューの配置設定のみに従います。 したがって、垂直方向の `StackLayout` 内の [`Label`](xref:Xamarin.Forms.Label) 子ビューは、それらの [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) プロパティを次の配置フィールドの 1 つに設定します。
 

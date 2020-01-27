@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2019
-ms.openlocfilehash: dcba15d049e5bab09142f0aeba237b2a790a5950
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.openlocfilehash: 7d53623ef1fb1eeb917cbf4cd6d65d461e525982
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728188"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724238"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms のビュー
 
@@ -22,7 +22,7 @@ _Xamarin.Forms のビューとは、クロス プラットフォーム モバイ
 
 ビューは、ラベル、ボタン、およびとよく呼ばれるスライダーなどのユーザー インターフェイス オブジェクト*コントロール*または*ウィジェット*他のグラフィカルなプログラミング環境でします。 すべての派生を Xamarin.Forms でサポートされるビュー、 [ `View` ](xref:Xamarin.Forms.View)クラス。 これらは、いくつかのカテゴリに分類できます。
 
-## <a name="views-for-presentation"></a>プレゼンテーションのビュー
+## <a name="views-for-presentation"></a>表示用のビュー
 
 ### <a name="label"></a>[ラベル]
 
@@ -66,7 +66,7 @@ _Xamarin.Forms のビューとは、クロス プラットフォーム モバイ
 | [`Map`](xref:Xamarin.Forms.Maps.Map) マップを表示します。 **Xamarin. Forms. map** NuGet パッケージがインストールされている必要があります。 Android およびユニバーサル Windows プラットフォームがマップの承認キーが必要です。<br /><br />[API ドキュメント](xref:Xamarin.Forms.Maps.Map) / [ガイド](~/xamarin-forms/user-interface/map/index.md) / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps/) | [![マップの例](views-images/Map.png "マップの例")](views-images/Map-Large.png#lightbox "マップの例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/MapDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/MapDemoPage.xaml) |
 |     |     |
 
-## <a name="views-that-initiate-commands"></a>コマンドの開始ビュー
+## <a name="views-that-initiate-commands"></a>コマンドを開始するビュー
 
 ### <a name="button"></a>Button
 
@@ -103,13 +103,13 @@ _Xamarin.Forms のビューとは、クロス プラットフォーム モバイ
 | `SwipeView` は、コンテンツの項目をラップするコンテナーコントロールであり、スワイプジェスチャによって表示されるコンテキストメニュー項目を提供します。 各メニュー項目は、`SwipeItem`によって表されます。これには、項目がタップされたときに `ICommand` を実行する `Command` プロパティがあります。<br /><br /> [ガイド](~/xamarin-forms/user-interface/swipeview.md) / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery) | [![SwipeView の例](views-images/SwipeView.png "SwipeView の例")](views-images/SwipeView-Large.png#lightbox "SwipeView の例")<br /> [このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwipeViewDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwipeViewDemoPage.xaml)で[分離コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwipeViewDemoPage.xaml.cs) |
 |     |     |
 
-## <a name="views-for-setting-values"></a>値の設定のビュー
+## <a name="views-for-setting-values"></a>値を設定するためのビュー
 
 ### <a name="checkbox"></a>CheckBox
 
 |     |     |
 | --- | --- |
-| `CheckBox` を使用すると、ユーザーは、チェックボックスをオンまたは空にすることができるボタンの種類を使用してブール値を選択できます。 `IsChecked` プロパティは `CheckBox`の状態であり、`CheckedChanged` イベントは、状態が変化したときに発生します。<br /><br />API ドキュメント/[ガイド](~/xamarin-forms/user-interface/checkbox.md) / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos) | [![CheckBox の例](views-images/CheckBox.png "CheckBox の例")](views-images/CheckBox-Large.png#lightbox "CheckBox の例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CheckBoxDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CheckBoxDemoPage.xaml) |
+| `CheckBox` を使用すると、ユーザーは、チェックボックスをオンまたは空にすることができるボタンの種類を使用してブール値を選択できます。 `IsChecked` プロパティは `CheckBox`の状態であり、`CheckedChanged` イベントは、状態が変化したときに発生します。<br /><br />API ドキュメント/[ガイド](~/xamarin-forms/user-interface/checkbox.md) / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos) | [![CheckBox の例](views-images/CheckBox.png "CheckBox の例")](views-images/CheckBox-Large.png#lightbox "CheckBox の例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CheckBoxPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CheckBoxPage.xaml) |
 |     |     |
 
 ### <a name="slider"></a>[スライダー]
@@ -165,7 +165,7 @@ _Xamarin.Forms のビューとは、クロス プラットフォーム モバイ
 | [`Editor`](xref:Xamarin.Forms.Editor) 入力し、複数行のテキストを編集できます。 テキストは、 [ `Text` ](xref:Xamarin.Forms.Editor.Text)プロパティ、および[ `TextChanged` ](xref:Xamarin.Forms.Editor.TextChanged)と[ `Completed` ](xref:Xamarin.Forms.Editor.Completed)イベントが発生したときにテキストの変更またはユーザー完了を通知します。<br /><br />使用して、 [ `Entry` ](#entry)ビューを入力すると、1 行のテキストを編集します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.Editor) / [ガイド](~/xamarin-forms/user-interface/text/editor.md) / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text) | [![エントリの例](views-images/Editor.png "エディターの例")](views-images/Editor-Large.png#lightbox "エディターの例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/EditorDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/EditorDemoPage.xaml) |
 |     |     |
 
-## <a name="views-to-indicate-activity"></a>アクティビティを示すビュー
+## <a name="views-to-indicate-activity"></a>アクティビティを示すためのビュー
 
 ### <a name="activityindicator"></a>ActivityIndicator
 
@@ -222,7 +222,7 @@ _Xamarin.Forms のビューとは、クロス プラットフォーム モバイ
 
 |     |     |
 | --- | --- |
-| [`TableView`](xref:Xamarin.Forms.TableView) 型の行の一覧を表示します[ `Cell` ](xref:Xamarin.Forms.Cell)省略可能なヘッダー、サブヘッダーとします。 設定、 [ `Root` ](xref:Xamarin.Forms.TableView.Root)プロパティ型のオブジェクトを[ `TableRoot` ](xref:Xamarin.Forms.TableRoot)、追加[ `TableSection` ](xref:Xamarin.Forms.TableSection)オブジェクトに`TableRoot`します。 各`TableSection`のコレクションである`Cell`オブジェクト。<br /><br />[API ドキュメント](xref:Xamarin.Forms.TableView) / [ガイド](~/xamarin-forms/user-interface/tableview.md) / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-tableview) | [![TableView の例](views-images/TableView.png "TableView の例")](views-images/TableView-Large.png#lightbox "TableView の例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/TableViewDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/TableViewDemoPage.xaml) |
+| [`TableView`](xref:Xamarin.Forms.TableView) 型の行の一覧を表示します[ `Cell` ](xref:Xamarin.Forms.Cell)省略可能なヘッダー、サブヘッダーとします。 設定、 [ `Root` ](xref:Xamarin.Forms.TableView.Root)プロパティ型のオブジェクトを[ `TableRoot` ](xref:Xamarin.Forms.TableRoot)、追加[ `TableSection` ](xref:Xamarin.Forms.TableSection)オブジェクトに`TableRoot`します。 各`TableSection`のコレクションである`Cell`オブジェクト。<br /><br />[API ドキュメント](xref:Xamarin.Forms.TableView) / [ガイド](~/xamarin-forms/user-interface/tableview.md) / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-tableview) | [![TableView の例](views-images/TableView.png "TableView の例")](views-images/TableView-Large.png#lightbox "TableView の例")<br />[このページの c# コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/TableViewFormDemoPage.cs) / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/TableViewFormDemoPage.xaml) |
 |     |     |
 
 ## <a name="related-links"></a>関連リンク

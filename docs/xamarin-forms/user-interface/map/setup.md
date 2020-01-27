@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/06/2019
-ms.openlocfilehash: 038ff27907573c1fe15516f6f4caf26d0892ab9f
-ms.sourcegitcommit: 283810340de5310f63ef7c3e4b266fe9dc2ffcaf
+ms.openlocfilehash: 9213e893d222e26168940e09a93e158d1e74d8dc
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2019
-ms.locfileid: "73662342"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725578"
 ---
 # <a name="xamarinforms-map-initialization-and-configuration"></a>Xamarin.Forms マップの初期化と構成
 
@@ -24,7 +24,7 @@ ms.locfileid: "73662342"
 
 [`Map`](xref:Xamarin.Forms.Maps.Map) コントロールは、ソリューション内のすべてのプロジェクトに追加する必要がある、 [Xamarin.Forms.Maps](https://www.nuget.org/packages/Xamarin.Forms.Maps/) NuGet パッケージによって提供されます。
 
-[Xamarin.Forms.Maps](https://www.nuget.org/packages/Xamarin.Forms.Maps/) NuGet パッケージをインストールした後は、各プラットフォームプロジェクトで初期化する必要があります。
+[Xamarin. Forms. map](https://www.nuget.org/packages/Xamarin.Forms.Maps/) NuGet パッケージをインストールした後は、各プラットフォームプロジェクトで初期化する必要があります。
 
 iOS では、これは、`Xamarin.Forms.Forms.Init` メソッドの *'後'* に `Xamarin.FormsMaps.Init` メソッドを呼び出すことによって**AppDelegate.cs** で発生する必要があります。
 
@@ -46,7 +46,7 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 
 UWP に必要な認証トークンの詳細については、「[ユニバーサル Windows プラットフォーム](#universal-windows-platform)」を参照してください。
 
-NuGet パッケージが追加され、各アプリケーション内部で初期化メソッドが呼び出されると、共有コードプロジェクトで `Xamarin.Forms.Maps` API を使用できるようになります。
+NuGet パッケージが追加され、各アプリケーション内部で初期化メソッドが呼び出されると、共有コードプロジェクトで `Xamarin.Forms.Maps` Api を使用できるようになります。
 
 ## <a name="platform-configuration"></a>プラットフォームの構成
 
@@ -54,18 +54,18 @@ Android とユニバーサル Windows プラットフォーム (UWP) では、�
 
 ### <a name="ios"></a>iOS
 
-iOS でマップを表示して操作する場合、追加の構成は必要ありません。 ただし、ロケーションサービスにアクセスするには、次のキーを **info.plist** で設定する必要があります。
+IOS でマップを表示して操作する場合、追加の構成は必要ありません。 ただし、ロケーションサービスにアクセスするには、次のキーを**情報 plist**で設定する必要があります。
 
 - iOS 11 以降
   - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) –アプリケーションが使用されているときにロケーションサービスを使用する場合
-  - [`NSLocationAlwaysAndWhenInUseUsageDescription`](https://developer.apple.com/documentation/corelocation/choosing_the_authorization_level_for_location_services/requesting_always_authorization?language=objc) –位置情報サービスを常に使用する場合
-- iOS 10 以前
+  - [`NSLocationAlwaysAndWhenInUseUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nslocationalwaysandwheninuseusagedescription) – 常に位置情報サービスを使用します。
+- iOS 10 以降
   - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) –アプリケーションが使用されているときにロケーションサービスを使用する場合
-  - [`NSLocationAlwaysUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) –位置情報サービスを常に使用する場合    
+  - [`NSLocationAlwaysUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) – 常に位置情報サービスを使用します。    
 
-iOS 11 以前をサポートするには、`NSLocationWhenInUseUsageDescription`、`NSLocationAlwaysAndWhenInUseUsageDescription`、`NSLocationAlwaysUsageDescription` の 3 つのキーすべてを含めることができます。
+IOS 11 以降をサポートするには、3 つのキーを含めることができます: `NSLocationWhenInUseUsageDescription`、 `NSLocationAlwaysAndWhenInUseUsageDescription`、および`NSLocationAlwaysUsageDescription`します。
 
-次に、これらのキーの XML 表現を **info.plist** で示します。 アプリケーションが場所情報をどのように使用しているかを反映するように、`string` の値を更新する必要があります。
+これらのキーでの XML 表現**Info.plist**を次に示します。 更新する必要があります、`string`アプリケーションが場所情報を使用する方法を反映するように値。
 
 ```xml
 <key>NSLocationAlwaysUsageDescription</key>
@@ -91,17 +91,17 @@ Android でマップを表示して操作するための構成プロセスは次
 1. Google Maps API キーを取得し、マニフェストに追加します。
 1. マニフェストで Google Play services のバージョン番号を指定します。
 1. マニフェストで Apache HTTP レガシライブラリの要件を指定します。
-1. [任意] マニフェストで WRITE_EXTERNAL_STORAGE アクセス許可を指定します。
-1. [任意] マニフェストでの場所のアクセス許可を指定します。
-1. [任意] `MainActivity` クラスでランタイムの場所のアクセス許可を要求します。
+1. optionalマニフェストで WRITE_EXTERNAL_STORAGE アクセス許可を指定します。
+1. optionalマニフェストでの場所のアクセス許可を指定します。
+1. optional`MainActivity` クラスでランタイムの場所のアクセス許可を要求します。
 
-正しく構成されたマニフェストファイルの例については、サンプルアプリケーションの「 [AndroidManifest.xml](https://github.com/xamarin/xamarin-forms-samples/blob/master/WorkingWithMaps/WorkingWithMaps/WorkingWithMaps.Android/Properties/AndroidManifest.xml) 」を参照してください。
+正しく構成されたマニフェストファイルの例については、サンプルアプリケーションの「 [Androidmanifest .xml](https://github.com/xamarin/xamarin-forms-samples/blob/master/WorkingWithMaps/WorkingWithMaps/WorkingWithMaps.Android/Properties/AndroidManifest.xml) 」を参照してください。
 
 #### <a name="get-a-google-maps-api-key"></a>Google Maps API キーを取得する
 
-Android で[Google Maps API](https://developers.google.com/maps/documentation/android/) を使用するには、API キーを生成する必要があります。 これを行うには、「 [Google Maps API キーを取得する](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)」の手順に従います。
+Android で[Google MAPS api](https://developers.google.com/maps/documentation/android/)を使用するには、API キーを生成する必要があります。 これを行うには、「 [Google MAPS API キーを取得](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)する」の手順に従います。
 
-API キーを取得したら、 **Properties/AndroidManifest.xml** ファイルの `<application>` 要素内に追加する必要があります。
+API キーを取得したら、 **Properties/AndroidManifest .xml**ファイルの `<application>` 要素内に追加する必要があります。
 
 ```xml
 <application ...>
@@ -112,11 +112,11 @@ API キーを取得したら、 **Properties/AndroidManifest.xml** ファイル�
 これにより、API キーがマニフェストに埋め込まれます。 有効な API キーがない場合、 [`Map`](xref:Xamarin.Forms.Maps.Map)コントロールには空のグリッドが表示されます。
 
 > [!NOTE]
-> APK が Google Maps にアクセスできるようにするには、APK に署名するために使用するすべてのキーストア (デバッグとリリース) に SHA-1 指紋とパッケージ名を含める必要があることに注意してください。 たとえば、デバッグに 1 台のコンピューターを使用し、リリース APK を生成する別のコンピューターを使用する場合は、最初のコンピューターのデバッグキーストアから SHA-1 証明書のフィンガープリントを指定し、2 番目のコンピューターのリリースキーストアから SHA-1 証明書のフィンガープリントを含める必要があります。 また、アプリの **パッケージ名** が変更された場合は、キーの資格情報を編集することも忘れないでください。 「 [Google Maps API キーを取得する」を](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)」を参照してください。
+> 注意してください、APK を Google Maps にアクセスするためには、する必要があります sha-1 指紋が含まれますすべてキーストアの (デバッグとリリース)、APK の署名に使用する名前をパッケージ化します。 たとえば、デバッグに 1 台のコンピューターを使用し、リリース APK を生成する別のコンピューターを使用する場合は、最初のコンピューターのデバッグキーストアから SHA-1 証明書のフィンガープリントを指定し、2 番目のコンピューターのリリースキーストアから SHA-1 証明書のフィンガープリントを含める必要があります。 また、アプリの **パッケージ名** が変更された場合は、キーの資格情報を編集することも忘れないでください。 「 [Google Maps API キーを取得する」を](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)」を参照してください。
 
-#### <a name="specify-the-google-play-services-version-number"></a>Google Play services のバージョン番号を指定する
+#### <a name="specify-the-google-play-services-version-number"></a>Google Play services のバージョン番号を指定してください
 
-**AndroidManifest.xml** の `<application>` 要素内に次の宣言を追加します。
+**Androidmanifest .xml**の `<application>` 要素内に次の宣言を追加します。
 
 ```xml
 <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
@@ -124,9 +124,9 @@ API キーを取得したら、 **Properties/AndroidManifest.xml** ファイル�
 
 これにより、アプリケーションがコンパイルされた Google Play サービスのバージョンがマニフェストに埋め込まれます。
 
-#### <a name="specify-the-requirement-for-the-apache-http-legacy-library"></a>Apache HTTP レガシライブラリの要件を指定する
+#### <a name="specify-the-requirement-for-the-apache-http-legacy-library"></a>Apache HTTP レガシライブラリの要件を指定します
 
-Xamarin アプリケーションが API 28 以上を対象としている場合は、 **AndroidManifest.xml** の `<application>` 要素内に次の宣言を追加する必要があります。
+Xamarin アプリケーションが API 28 以上を対象としている場合は、 **Androidmanifest .xml**の `<application>` 要素内に次の宣言を追加する必要があります。
 
 ```xml
 <uses-library android:name="org.apache.http.legacy" android:required="false" />    
@@ -134,7 +134,7 @@ Xamarin アプリケーションが API 28 以上を対象としている場合�
 
 これにより、Android 9 の `bootclasspath` から削除された Apache Http クライアントライブラリを使用するようにアプリケーションに指示します。
 
-#### <a name="specify-the-write_external_storage-permission"></a>WRITE_EXTERNAL_STORAGE アクセス許可を指定する
+#### <a name="specify-the-write_external_storage-permission"></a>WRITE_EXTERNAL_STORAGE のアクセス許可を指定する
 
 アプリケーションが API 22 以下を対象としている場合は、`<manifest>` 要素の子として、マニフェストに `WRITE_EXTERNAL_STORAGE` のアクセス許可を追加する必要がある場合があります。
 
@@ -144,7 +144,7 @@ Xamarin アプリケーションが API 28 以上を対象としている場合�
 
 これは、アプリケーションが API 23 以上を対象としている場合は必要ありません。
 
-#### <a name="specify-location-permissions"></a>場所のアクセス許可を指定する
+#### <a name="specify-location-permissions"></a>場所のアクセス許可の指定
 
 アプリケーションがユーザーの場所にアクセスする必要がある場合は、`<manifest>` 要素の子として、マニフェスト (またはその両方) に `ACCESS_COARSE_LOCATION` または `ACCESS_FINE_LOCATION` のアクセス許可を追加することにより、アクセス許可を要求する必要があります。
 
@@ -264,6 +264,6 @@ Xamarin.Forms.Forms.Init(e, assembliesToInclude);
 ## <a name="related-links"></a>関連リンク
 
 - [Maps サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
-- [Xamarin.Forms.Maps のピン](~/xamarin-forms/user-interface/map/pins.md)
+- [Xamarin. Forms. マップの pin](~/xamarin-forms/user-interface/map/pins.md)。
 - [Maps API](xref:Xamarin.Forms.Maps)
-- [マップカスタムレンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)
+- [カスタム レンダラーをマップします。](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)

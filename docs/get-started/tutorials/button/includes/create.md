@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 854212951844d2443c5d1b332d94b533673640c4
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "67277320"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -34,7 +34,7 @@ ms.locfileid: "67277320"
 
 1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
-    [![iOS および Android での Button のスクリーンショット](../images/create-button.png "テキストを含む Button")](../images/create-button-large.png#lightbox "テキストを含む Button")
+    [![iOS および Android 上の Button のスクリーンショット](../images/create-button.png "テキストを含む Button")](../images/create-button-large.png#lightbox "テキストを含む Button")
 
     既定では、[`Button`](xref:Xamarin.Forms.Button) によって、許可されるすべてのスペース、この場合はその親 ([`StackLayout`](xref:Xamarin.Forms.StackLayout)) の幅全体が占有される傾向があることに注意してください。
 
@@ -66,6 +66,6 @@ ms.locfileid: "67277320"
 
 1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
-    [![iOS および Android での Button のスクリーンショット](../images/create-button.png "テキストを含む Button")](../images/create-button-large.png#lightbox "テキストを含む Button")
+    [![iOS および Android 上の Button のスクリーンショット](../images/create-button.png "テキストを含む Button")](../images/create-button-large.png#lightbox "テキストを含む Button")
 
     既定では、[`Button`](xref:Xamarin.Forms.Button) によって、許可されるすべてのスペース、この場合はその親 ([`StackLayout`](xref:Xamarin.Forms.StackLayout)) の幅全体が占有される傾向があることに注意してください。

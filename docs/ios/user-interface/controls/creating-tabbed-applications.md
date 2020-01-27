@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: ad4682e9a3d4de2565bee54ffa159fd739572e24
-ms.sourcegitcommit: d8af612b6b3218fea396d2f180e92071c4d4bf92
+ms.openlocfilehash: 25d8563288cce614bc2823b0146e5121688c6f02
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75663335"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725481"
 ---
 # <a name="tab-bars-and-tab-bar-controllers-in-xamarinios"></a>Xamarin. iOS のタブバーとタブバーコントローラー
 
@@ -27,7 +27,7 @@ ms.locfileid: "75663335"
 `UITabBarController`タブ付きアプリケーションの開発を以下がサポートされます。
 
 - 複数のコント ローラーを追加することができます。
-- 使用して、タブ付きのユーザー インターフェイスを提供する、`UITabBar`クラスは、コント ローラーとビューを切り替えるユーザーを許可します。 
+- 使用して、タブ付きのユーザー インターフェイスを提供する、`UITabBar`クラスは、コント ローラーとビューを切り替えるユーザーを許可します。
 
 コント ローラーに追加、`UITabBarController`経由でその`ViewControllers`であるプロパティを`UIViewController`配列。 `UITabBarController`自体の処理の適切なコント ローラーの読み込みと選択されたタブに基づいてそのビューを表示します。
 
@@ -63,9 +63,9 @@ Visual Studio for Mac で使用できるタブ付きアプリケーションテ�
 
 実装する、`UITabBarController`以下を実行する必要があります。
 
-1. 基本クラスを設定する`TabController`に`UITabBarController`します。 
-1. 作成`UIViewController`に追加するインスタンス、`TabController`します。 
-1. 追加、`UIViewController`インスタンスに割り当てられた配列を`ViewControllers`のプロパティ、`TabController`します。 
+1. 基本クラスを設定する`TabController`に`UITabBarController`します。
+1. 作成`UIViewController`に追加するインスタンス、`TabController`します。
+1. 追加、`UIViewController`インスタンスに割り当てられた配列を`ViewControllers`のプロパティ、`TabController`します。
 
 次のコードを追加、`TabController`を次の手順を実現するクラス。
 
@@ -118,16 +118,16 @@ public partial class AppDelegate : UIApplicationDelegate
 {
     UIWindow window;
     TabController tabController;
-    
+
     public override bool FinishedLaunching (UIApplication app, NSDictionary options)
     {
         window = new UIWindow (UIScreen.MainScreen.Bounds);
-        
+
         tabController = new TabController ();
         window.RootViewController = tabController;
-        
+
         window.MakeKeyAndVisible ();
-        
+
         return true;
     }
 }
@@ -217,7 +217,7 @@ tab3.TabBarItem.BadgeValue = null;
 
 - 移動し、新しいファイル ダイアログが表示されたら、 **iOS > 空の iPhone ストーリー ボード**します。
 
-この新しいストーリー ボードをましょう**MainStoryboard**以下に示すように。 
+この新しいストーリー ボードをましょう**MainStoryboard**以下に示すように。
 
 [![](creating-tabbed-applications-images/new-file-dialog.png "Add a MainStoryboard file to the project")](creating-tabbed-applications-images/new-file-dialog.png#lightbox)
 
@@ -295,7 +295,7 @@ partial void InitialActionCompleted (UIButton sender)
 
 私たちのストーリー ボードの Segues、TabBarController と、ビュー コント ローラー間の遷移を処理するために使用できます。 初期表示を対話したら、それをユーザーに提示 TabBarController にロードします。 みましょうこれデザイナーで設定します。
 
-**Ctrl-クリック**と**ドラッグ**TabBarController にボタンをクリックします。 マウス時に、コンテキスト メニューが表示されます。 モーダルのセグエを使用します。 
+**Ctrl-クリック**と**ドラッグ**TabBarController にボタンをクリックします。 マウス時に、コンテキスト メニューが表示されます。 モーダルのセグエを使用します。
 
 各タブを設定する**Ctrl-クリック**から 3、およびリレーションシップを選択する 1 つの順序でこれらのビュー コント ローラーの各 TabBarController から**タブ**下図のように、コンテキスト メニューから。
 
@@ -309,7 +309,7 @@ partial void InitialActionCompleted (UIButton sender)
 
 [![](creating-tabbed-applications-images/properties-panel.png "Setting the tab options in the Properties Explorer")](creating-tabbed-applications-images/properties-panel.png#lightbox)
 
-これを使用して、バッジ、タイトル、iOS などの特定の属性を編集[識別子](https://developer.apple.com/library/ios/documentation/userexperience/conceptual/UIKitUICatalog/TabBarItem.html)、他のユーザーの間で
+これを使用すると、バッジ、タイトル、iOS 識別子など、特定の属性を編集できます。
 
 保存し、アプリケーションを実行する場合、TabBarController に ViewController1 インスタンスが読み込まれるときがボタンに再び表示されますが分かります。 親ビュー コント ローラーが現在のビューをチェックして、これを修正しましょう。 わかった場合は、TabBarController 中ですし、ボタンを非表示にそのためです。 ViewController1 クラスに次のコードを追加しましょう。
 

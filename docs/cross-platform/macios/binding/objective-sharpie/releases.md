@@ -6,12 +6,12 @@ ms.assetid: 1F4A1BE1-7205-43F4-89D0-6C8672F52598
 author: davidortinau
 ms.author: daortin
 ms.date: 10/11/2017
-ms.openlocfilehash: 2f1fb3706012fa86834986064a366071b644b2dc
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f60be3f7dc14749f5cd58d5228c17fa85282cd78
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73015954"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725351"
 ---
 # <a name="objective-sharpie-release-history"></a>目標マジックペンリリース履歴
 
@@ -58,11 +58,9 @@ ms.locfileid: "73015954"
 
 ## <a name="216-march-17-2015"></a>2.1.6 (2015 年3月17日)
 
-[ダウンロード2.1.6](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-2.1.6.pkg)
-
 * 二項演算子式のバインドが固定されています。式の左辺が正しく正しく交換されていません (例: `1 << 0` が `0 << 1`として正しくバインドされていません)。 Adam Kemp に感謝しています。
 * `NSInteger` と `NSUInteger` が `nint` ではなく `int` および `uint` としてバインドされている問題を修正しました。`-DNS_BUILD_32_LIKE_64` が Clang に渡されるようになりました。これにより、解析 `objc/NSObjCRuntime.h` が i386 で想定どおりに機能します。
-* Mac OS X Sdk (`-sdk macosx10.10`など) の既定のアーキテクチャは、i386 ではなく x86_64 になりました。そのため、既定の設定をオーバーライドする場合を除き `-arch` を省略できます。
+* Mac OS X Sdk (`-sdk macosx10.10`など) の既定のアーキテクチャは、i386 ではなく x86_64 されるようになりました。そのため、既定値をオーバーライドする場合を除き、`-arch` は省略できます。
 
 ## <a name="210-march-15-2015"></a>2.1.0 (2015 年3月15日)
 
@@ -95,7 +93,7 @@ ms.locfileid: "73015954"
 
 * 匿名列挙型の名前付けのヒューリスティックが改善されました。これは、`typedef` が `long` や `int`などの組み込みの整数型に解決される直前のものです。
 
-* C ポインターは、`System.IntPtr`でC#はなく`unsafe`ポインターとしてバインドされるようになりました。 これにより、ポインターパラメーターを `out` または `ref` パラメーターに変換する必要がある場合に、バインディングがより明確になります。 パラメーターを `out` または `ref`にする必要があるかどうかを常に推論することはできません。そのため、簡単に監査できるように、ポインターはバインドに保持されます。
+* C ポインターは、`System.IntPtr`でC#はなく `unsafe` ポインターとしてバインドされるようになりました。 これにより、ポインターパラメーターを `out` または `ref` パラメーターに変換する必要がある場合に、バインディングがより明確になります。 パラメーターを `out` または `ref`にする必要があるかどうかを常に推論することはできません。そのため、簡単に監査できるように、ポインターはバインドに保持されます。
 
 * 上記のポインターバインディングの例外は、目的の C オブジェクトへの2ランクのポインターがパラメーターとして検出された場合です。 このような場合、慣例は広く、パラメーターは `out` (`NSError **error` → `out NSError error`など) としてバインドされます。
 
@@ -135,7 +133,7 @@ ms.locfileid: "73015954"
 
 [ダウンロード1.1.35](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-1.1.35.pkg)
 
-軽微なバグ修正。
+マイナーなバグの修正。
 
 ## <a name="111-december-15-2014"></a>1.1.1: 2014 年12月15日
 

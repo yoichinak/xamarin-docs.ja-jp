@@ -6,16 +6,16 @@ ms.assetid: D781401F-7A96-4098-9645-5F98AEAF7F71
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 1a94a29f0da6f7916eca697a24ad504a0af46b7c
-ms.sourcegitcommit: 41a029c69925e3a9d2de883751ebfd649e8747cd
+ms.openlocfilehash: 8ffb62c8715ff60e9b0ea3b2bc536f3441fb8765
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68978389"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724675"
 ---
 # <a name="introduction-to-game-development-with-monogame"></a>モノゲームによるゲーム開発の概要
 
-_このマルチパートチュートリアルでは、モノゲームを使用して簡単な2D アプリケーションを作成する方法について説明します。グラフィックス、入力、ゲームエンティティ、物理など、ゲームのプログラミングに関する一般的な概念について説明します。_
+_このマルチパートチュートリアルでは、モノゲームを使用して簡単な2D アプリケーションを作成する方法について説明します。 グラフィックス、入力、ゲームエンティティ、物理など、ゲームのプログラミングに関する一般的な概念について説明します。_
 
 この記事では、クロスプラットフォームのゲームを作成するためのモノゲーム API テクノロジについて説明します。 プラットフォームの完全な一覧については、「[モノゲーム」 web サイト](http://www.monogame.net/)を参照してください。 このチュートリアルではC#コードサンプルにを使用しますが、ではF#モノゲームも完全に機能します。
 
@@ -43,8 +43,6 @@ XNA に精通している開発者は、モノゲームの構文について既�
 ## <a name="related-links"></a>関連リンク
 
 - [プレイ Inggame のモノゲームプロジェクト (サンプル)](https://docs.microsoft.com/samples/xamarin/mobile-samples/walkinggamemg/)
-- [XNB フォント iOS](https://github.com/mono/CocosSharp/tree/master/Samples/GameStarterKit/GameStarterKit/Content/fonts)
-- [XNB フォント Android](https://github.com/mono/CocosSharp/tree/master/Samples/GameStarterKit/GameStarterKit/Assets/Content/fonts)
 - [NuGet でのモノゲーム Android](https://www.nuget.org/packages/MonoGame.Framework.Android/)
 - [NuGet でのモノゲーム iOS](https://www.nuget.org/packages/MonoGame.Framework.iOS/)
 - [モノゲーム API ドキュメント](http://www.monogame.net/documentation/?page=main)

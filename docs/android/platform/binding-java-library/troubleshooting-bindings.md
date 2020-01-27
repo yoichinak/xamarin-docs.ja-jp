@@ -7,20 +7,20 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 2eea51764e0e0f13c1a1a91db664872a67420d33
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 0c273797d7512f062260e49e0f71fdd1132f037b
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73020556"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76723804"
 ---
 # <a name="troubleshooting-bindings"></a>バインドのトラブルシューティング
 
 _この記事では、バインドの生成時に発生する可能性のある一般的なエラーの概要と、考えられる原因と解決方法について説明します。いくつかです。_
 
-## <a name="overview"></a>概要
+## <a name="overview"></a>の概要
 
-Android ライブラリ ( **aar**または **.jar**) ファイルのバインドは、ほとんどの場合、単純申し込みです。通常、Java と .NET の違いに起因する問題を軽減するには、追加の作業が必要です。
+Android のライブラリのバインド ( **.aar**または **.jar**) ファイルは、簡単な例ではめったにありません。 追加の作業を Java と .NET 間の違いに起因する問題を軽減するために通常必要があります。
 これらの問題により、Xamarin android は Android ライブラリをバインドできなくなり、ビルドログにエラーメッセージとして表示されます。 このガイドでは、問題のトラブルシューティングを行うためのヒントを紹介し、いくつかの一般的な問題とシナリオの一覧を示し、Android ライブラリを正常にバインドするための解決策を提供します。
 
 既存の Android ライブラリをバインドする場合は、次の点に注意する必要があります。
@@ -41,9 +41,9 @@ Xamarin Android ライブラリのバインドに関する問題をトラブル�
 Java クラスのクラスとメソッドを検査すると、ライブラリのバインドに役立つ有用な情報が得られます。
 [Jd-GUI](http://jd.benow.ca/)は、JAR に含まれる**クラス**ファイルから Java ソースコードを表示できるグラフィカルユーティリティです。 スタンドアロンアプリケーションとして、または IntelliJ または Eclipse のプラグインとして実行できます。
 
-Android ライブラリをデコンパイルするには、を開き**ます。** Java デコンパイラの JAR ファイル。 ライブラリがの場合 **。AAR**ファイルの場合は、アーカイブファイルから**jar**ファイルを抽出する必要があります。 JD-GUI を使用して[ピカソ](https://square.github.io/picasso/)JAR を分析するサンプルスクリーンショットを次に示します。
+Android ライブラリをデコンパイルするには、を開き**ます。** Java デコンパイラの JAR ファイル。 ライブラリがの場合 **。AAR**ファイルの場合は、アーカイブファイルから**jar**ファイルを抽出する必要があります。 JD GUI を使用した分析のサンプルのスクリーン ショットを次に、[Picasso](https://square.github.io/picasso/)JAR:
 
-![Java デコンパイラを使用した picasso-2.5.2 の分析](troubleshooting-bindings-images/troubleshoot-bindings-01.png)
+![Java デコンパイラを使用して、picasso-2.5.2.jar を分析するには](troubleshooting-bindings-images/troubleshoot-bindings-01.png)
 
 Android ライブラリのデコンパイルが完了したら、ソースコードを確認します。 一般に、次のものを探します。
 
@@ -52,7 +52,7 @@ Android ライブラリのデコンパイルが完了したら、ソースコー
   - クラス名には、 **$** 、つまり **$. クラス**が含まれています。
   - クラス名は、小文字、つまり **. クラス**で完全に侵害されます。      
 
-- 参照されていないライブラリ**のステートメントを`import`** &ndash; 参照されていないライブラリを特定し、 **Referencejar**または EmbedddedReferenceJar の**ビルドアクション**を使用してそれらの依存関係を Xamarin. Android バインドプロジェクトに追加します。.
+- 参照されていないライブラリ**のステートメントを`import`** &ndash; 参照されていないライブラリを特定し、 **Referencejar**または**EmbedddedReferenceJar**の**ビルドアクション**を使用してそれらの依存関係を Xamarin. Android バインドプロジェクトに追加します。
 
 > [!NOTE]
 > 逆コンパイル Java ライブラリが禁止されている可能性があります。または、Java ライブラリが公開されている地域の法律またはライセンスに基づいて、法的な制限が適用される場合があります。 必要に応じて、Java ライブラリをデコンパイルしてソースコードを検査する前に、法的担当者のサービスを参加させます。
@@ -105,7 +105,7 @@ Android ライブラリのデコンパイルが完了したら、ソースコー
 
 - Java では、パブリッククラス以外のクラスからパブリッククラスを派生させることができますが、これは .NET ではサポートされていません。 バインディングジェネレーターは、パブリックでないクラスのバインドを生成しないため、このような派生クラスを正しく生成することはできません。 この問題を解決するには、 **metadata .xml**で削除ノードを使用してこれらの派生クラスのメタデータエントリを削除するか、パブリックでないクラスを公開するメタデータを修正します。 後者のソリューションでは、 C#ソースがビルドされるようにバインディングが作成されますが、非パブリッククラスを使用することはできません。
 
-  (例:
+  例:
 
   ```xml
   <attr path="/api/package[@name='com.some.package']/class[@name='SomeClass']"
@@ -157,7 +157,7 @@ public interface MediationInterstitialListener {
 }
 ```
 
-これは、イベント引数の型の長い名前が回避されるように設計されています。 これらの競合を回避するには、いくつかのメタデータ変換が必要です。 [**Transformraxml**](https://github.com/xamarin/monodroid-samples/blob/master/AdMob/AdMob/Transforms/Metadata.xml)を編集し、いずれかのインターフェイス (またはインターフェイスメソッド) に `argsType` 属性を追加します。
+これは、イベント引数の型の長い名前が回避されるように設計されています。 これらの競合を回避するには、いくつかのメタデータ変換が必要です。 **Transformraxml**を編集し、いずれかのインターフェイス (またはインターフェイスメソッド) に `argsType` 属性を追加します。
 
 ```xml
 <attr path="/api/package[@name='com.google.ads.mediation']/
@@ -204,7 +204,7 @@ return type of 'Java.Lang.Object'
   }
   ```
 
-- 生成さC#れたコードから共変性を削除します。 これには、次の変換を**transformthe xml**に追加する必要がありC#ます。これにより、生成されたコードの戻り値の型が`Java.Lang.Object`になります。
+- 生成さC#れたコードから共変性を削除します。 これには、次の変換を**transformthe xml**に追加する必要がありC#ます。これにより、生成されたコードの戻り値の型が `Java.Lang.Object`になります。
 
   ```xml
   <attr
@@ -231,13 +231,13 @@ Java では、派生クラスの可視性が親と同じである必要はあり
 
 バインドプロジェクトによっては、 **...** ライブラリの機能に依存している場合もあります。 Xamarin. Android では、 **...** ライブラリが自動的に読み込まれない可能性があります。 ラップされた Java コードを実行すると、JNI の呼び出しに失敗し、エラーメッセージ_UnsatisfiedLinkError: ネイティブメソッドが見つからないことを示します_。は、アプリケーションの logcat out に表示されます。
 
-この問題を解決するには、`Java.Lang.JavaSystem.LoadLibrary`の呼び出しを使用して、 **..** . ライブラリを手動で読み込みます。 たとえば、Xamarin Android プロジェクトに共有ライブラリ libpocketsphinx_jni が含まれていると**します。そのため**、 **EmbeddedNativeLibrary**のビルドアクションを使用してバインドプロジェクトにインクルードします。次のスニペット (共有ライブラリを使用する前に実行)は、 **...** ライブラリを読み込みます。
+この問題を解決するには、`Java.Lang.JavaSystem.LoadLibrary`の呼び出しを使用して、 **..** . ライブラリを手動で読み込みます。 たとえば、Xamarin Android プロジェクトに共有ライブラリ libpocketsphinx_jni があると仮定**します。そのため**、 **EmbeddedNativeLibrary**のビルドアクションを使用してバインドプロジェクトに含まれている場合、次のスニペット (共有ライブラリを使用する前に実行) によって、 **...** ライブラリが読み込まれます。
 
 ```csharp
 Java.Lang.JavaSystem.LoadLibrary("pocketsphinx_jni");
 ```
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 この記事では、Java バインディングに関連する一般的なトラブルシューティングの問題とその解決方法について説明しました。
 

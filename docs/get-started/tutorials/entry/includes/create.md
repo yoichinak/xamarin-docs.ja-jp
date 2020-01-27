@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 820761111c609f224a6dda14d5853777d22aa259
-ms.sourcegitcommit: a153623a69b5cb125f672df8007838afa32e9edf
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "67277312"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -17,7 +17,7 @@ ms.locfileid: "67277312"
 
     作成される .NET Standard ライブラリの詳細については、[Xamarin.Forms クイック スタート Deep Dive](~/get-started/first-app/index.md) の [Xamarin.Forms アプリケーションの構造](~/get-started/first-app/index.md)に関するページを参照してください。
 
-1. **ソリューション エクスプローラー**の **EntryTutorial** プロジェクトで、 **[MainPage.xaml]** をダブルクリックして開きます。 次に、**MainPage.xaml** のテンプレート コードをすべて削除し、次のコードに置き換えます。
+1. **ソリューション エクスプローラー**の **EntryTutorial** プロジェクトで、 **[MainPage.xaml]** をダブルクリックして開きます。 次に、 **[MainPage.xaml]** のテンプレート コードをすべて削除し、次のコードに置き換えます。
 
     ```xaml
     <?xml version="1.0" encoding="utf-8"?>
@@ -34,7 +34,7 @@ ms.locfileid: "67277312"
 
 1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
-    [![iOS と Android での Entry のスクリーンショット](../images/create-entry.png "プレース ホルダー テキストを含む Entry")](../images/create-entry-large.png#lightbox "プレース ホルダー テキストを含む Entry")
+    [![iOS および Android 上の Entry のスクリーンショット](../images/create-entry.png "プレースホルダー テキストを含む Entry")](../images/create-entry-large.png#lightbox "プレースホルダー テキストを含む Entry")
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -64,4 +64,4 @@ ms.locfileid: "67277312"
 
 1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
-    [![iOS と Android での Entry のスクリーンショット](../images/create-entry.png "プレース ホルダー テキストを含む Entry")](../images/create-entry-large.png#lightbox "プレース ホルダー テキストを含む Entry")
+    [![iOS および Android 上の Entry のスクリーンショット](../images/create-entry.png "プレースホルダー テキストを含む Entry")](../images/create-entry-large.png#lightbox "プレースホルダー テキストを含む Entry")

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 653d2420a9101203412b91a93cc7b6f681e2f5f2
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.openlocfilehash: 1f7917784ea66c31979b87f43639a7d03756692c
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728305"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725596"
 ---
 # <a name="getting-started-with-datapages"></a>DataPages の概要
 
@@ -117,7 +117,7 @@ MainPage = new NavigationPage (new SessionDataPage ());
 
 **JSON データ**
 
-JSON データの例、[デモ ソース](http://demo3143189.mockable.io/sessions)を次に示します。
+デモソースからの JSON データの例を次に示します。
 
 ```json
 [{

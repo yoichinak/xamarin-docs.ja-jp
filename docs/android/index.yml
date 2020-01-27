@@ -12,7 +12,7 @@ abstract:
   description: 'Xamarin.Android は、.NET 開発者向けに Android SDK 全体を公開しています。 Visual Studio で C# または F# を使用して、完全にネイティブな Android アプリを構築できます。'
   menu:
     items:
-      - href: ~/android/samples/
+      - href: ~/android/samples/index.md
         text: Android のサンプル
       - href: 'https://docs.microsoft.com/xamarin/android/release-notes/'
         text: リリース ノート

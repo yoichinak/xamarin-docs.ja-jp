@@ -5,12 +5,12 @@ ms.assetid: F3A7A4E6-41FE-4F12-949C-96090815C5D6
 author: davidortinau
 ms.author: daortin
 ms.date: 11/14/2017
-ms.openlocfilehash: f23f155a02422a3d04a0b14b282929ea63d60765
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2d1d5b8985d132e5a5839e3cd23aaec32fc3815a
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73007301"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725114"
 ---
 # <a name="callbacks-on-android"></a>Android でのコールバック
 
@@ -97,7 +97,7 @@ public void abstractCallback() throws Throwable {
 System.NotSupportedException: Unable to find Invoker for type 'Android.AbstractClass'. Was it linked away?
 ```
 
-ここには、`Invoker` の種類があります。 これは、Java への呼び出しをC#転送する `AbstractClass` のサブクラスです。 Java オブジェクトC#が世界に入り、それに対応C#する型が Abstract の場合、Xamarin Android は、コードC#内でC#使用するためにサフィックス`Invoker`を持つ型を自動的に検索します。
+ここには、`Invoker` の種類があります。 これは、Java への呼び出しをC#転送する `AbstractClass` のサブクラスです。 Java オブジェクトC#が世界に入り、それに対応C#する型が Abstract の場合、Xamarin Android は、コードC#内でC#使用するためにサフィックス `Invoker` を持つ型を自動的に検索します。
 
 Xamarin Android では、このような `Invoker` パターンを Java バインドプロジェクトに使用します。
 
@@ -160,7 +160,7 @@ Java 相互運用機能の詳細については、このテーマに関するす
 
 ## <a name="interfaces"></a>インターフェイス
 
-インターフェイスは抽象クラスとほぼ同じですが、1つの詳細を除きます。Xamarin Android では、Java は生成されません。 これは、.NET を埋め込む前に、Java がインターフェイスをC#実装するシナリオが多くないためです。
+インターフェイスは抽象クラスとほぼ同じですが、1つ詳しく説明します。 Xamarin では、Java が生成されません。 これは、.NET を埋め込む前に、Java がインターフェイスをC#実装するシナリオが多くないためです。
 
 たとえば、次C#のようなインターフェイスがあるとします。
 
@@ -267,7 +267,7 @@ public class VirtualClass : Java.Lang.Object
 }
 ```
 
-上記の `abstract` クラスの例に従っている場合は、1つの詳細を除いて機能します。_Xamarin は `Invoker`を参照しません_。
+上記の `abstract` クラスの例に従っている場合は、1つの詳細を除いて機能します。 _Xamarin は、`Invoker`を参照しません_。
 
 この問題を解決するにC#は、`abstract`するようにクラスを変更します。
 
@@ -296,5 +296,4 @@ public abstract class VirtualClass : Java.Lang.Object
 - [Android でのはじめに](~/tools/dotnet-embedding/get-started/java/android.md)
 - [Android の暫定版の研究](~/tools/dotnet-embedding/android/index.md)
 - [.NET 埋め込みの制限事項](~/tools/dotnet-embedding/limitations.md)
-- [オープンソースプロジェクトへの貢献](https://github.com/mono/Embeddinator-4000/blob/master/docs/Contributing.md)
 - [エラーコードと説明](~/tools/dotnet-embedding/errors.md)

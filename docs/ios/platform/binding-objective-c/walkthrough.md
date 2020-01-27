@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2017
-ms.openlocfilehash: f5e5af7d9b4ec85832f2d6050f632d054ba089a2
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f7c98de605f71b320f0650954f08c8857459ceaf
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032679"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725270"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>チュートリアル: iOS の目的 C ライブラリのバインド
 
@@ -28,7 +28,7 @@ IOS で作業している場合、サードパーティの目標 C ライブラ�
 
 1番目と2番目のシナリオでは、プリコンパイル済み CocoaTouch スタティックライブラリが既に存在するため、この記事では3番目のシナリオに焦点を当てます。 バインドの作成を開始する前に、ライブラリで提供されているライセンスを必ず確認して、それを確実にバインドできることを確認してください。
 
-この記事では、オープンソースの[Infcolorpicker](https://github.com/InfinitApps/InfColorPicker)目標 c プロジェクトを使用してバインドプロジェクトを作成する手順について説明します。ただし、このガイドに記載されているすべての情報は、サードパーティの目的 c ライブラリで使用するために適合させることができます. InfColorPicker ライブラリには、ユーザーが HSB 表現に基づいて色を選択できるようにする再利用可能なビューコントローラーが用意されており、色の選択がよりわかりやすくなっています。
+この記事では、オープンソースの[Infcolorpicker](https://github.com/InfinitApps/InfColorPicker)目標 c プロジェクトを使用してバインドプロジェクトを作成する手順について説明します。ただし、このガイドに記載されているすべての情報は、サードパーティの目的 c ライブラリで使用するために適合させることができます。 InfColorPicker ライブラリには、ユーザーが HSB 表現に基づいて色を選択できるようにする再利用可能なビューコントローラーが用意されており、色の選択がよりわかりやすくなっています。
 
 [![](walkthrough-images/run01.png "Example of the InfColorPicker library running on iOS")](walkthrough-images/run01.png#lightbox)
 
@@ -41,9 +41,9 @@ Xamarin でこの特定の目標 C API を使用するために必要なすべ�
 
 このサンプルアプリケーションでは、InfColorPicker API とC#コード間の通信に強力なデリゲートを使用する方法を示します。 厳密なデリゲートの使用方法について学習した後は、弱いデリゲートを使用して同じタスクを実行する方法について説明します。
 
-## <a name="requirements"></a>［要件］
+## <a name="requirements"></a>要件
 
-この記事では、Xcode と C 言語[に関する知識](~/cross-platform/macios/binding/index.md)があることを前提としています。 また、表示される手順を完了するには、次のものが必要です。
+この記事では、Xcode と C 言語に関する知識があり、「[Objective-C のバインド](~/cross-platform/macios/binding/index.md)」を読んだことがあることを前提としています。 また、表示される手順を完了するには、次のものが必要です。
 
 - **Xcode と IOS SDK** -Apple の Xcode と最新の ios API は、開発者のコンピューターにインストールして構成する必要があります。
 - **[Xcode コマンドラインツール](#Installing_the_Xcode_Command_Line_Tools)** -現在インストールされているバージョンの Xcode には、Xcode コマンドラインツールがインストールされている必要があります (インストールの詳細については、以下を参照してください)。
@@ -90,7 +90,7 @@ Xcode の FAQ ドキュメントを使用した、[コマンドラインから](
 このチュートリアルでは、次の手順について説明します。
 
 - **[スタティックライブラリを作成する](#Creating_A_Static_Library)** -この手順では、 **infcolorpicker**目標 C コードのスタティックライブラリを作成します。 スタティックライブラリには `.a` ファイル拡張子が付き、ライブラリプロジェクトの .NET アセンブリに埋め込まれます。
-- **[Xamarin. Ios バインドプロジェクトを作成](#Create_a_Xamarin.iOS_Binding_Project)** する-スタティックライブラリがある場合は、それを使用して Xamarin. ios バインドプロジェクトを作成します。 バインドプロジェクトは、作成したばかりのスタティックライブラリと、目的の C API C#を使用する方法を説明するコード形式のメタデータで構成されます。 このメタデータは、一般に API 定義と呼ばれます。 ここでは、 **[目標マジックペン](#Using_Objective_Sharpie)** を使用して、API 定義の作成について説明します。
+- **[Xamarin. Ios バインドプロジェクトを作成](#Create_a_Xamarin.iOS_Binding_Project)** する-スタティックライブラリがある場合は、それを使用して Xamarin. ios バインドプロジェクトを作成します。 バインドプロジェクトは、作成したばかりのスタティックライブラリと、目的の C API C#を使用する方法を説明するコード形式のメタデータで構成されます。 このメタデータは、一般に API 定義と呼ばれます。 使用して **[目標油性](#Using_Objective_Sharpie)** にご協力に API 定義を作成します。
 - **[API の定義を正規化](#Normalize_the_API_Definitions)** する-目標マジックペンは、お客様に役立つ優れたジョブを実行しますが、すべてを行うことはできません。 ここでは、API 定義を使用する前に行う必要がある変更について説明します。
 - **[バインドライブラリを使用](#Using_the_Binding)** します。最後に、新しく作成されたバインドプロジェクトの使用方法を示す Xamarin. iOS アプリケーションを作成します。
 
@@ -168,7 +168,7 @@ Github で InfColorPicker のコードを調べる場合は、次のようにし
 
 ### <a name="creating-a-fat-binary"></a>Fat バイナリの作成
 
-すべての iOS デバイスには、時間の経過と共に開発された ARM アーキテクチャを搭載したプロセッサが搭載されています。 新しいアーキテクチャでは、旧バージョンとの互換性を維持しながら、新しい命令やその他の機能強化が追加されました。 iOS デバイスには armv6、armv7、armv7s、arm64 命令セットがありますが、 [armv6 は使用されません](~/ios/deploy-test/compiling-for-different-devices.md)。 IOS シミュレーターは ARM を搭載していないので、代わりに x86 と x86_64 の電源が供給されます。 これは、各命令セットに対してライブラリを提供する必要があることを意味します。
+すべての iOS デバイスには、時間の経過と共に開発された ARM アーキテクチャを搭載したプロセッサが搭載されています。 新しいアーキテクチャでは、旧バージョンとの互換性を維持しながら、新しい命令やその他の機能強化が追加されました。 iOS デバイスには armv6、armv7、armv7s、arm64 命令セットがありますが、 [armv6 は使用されません](~/ios/deploy-test/compiling-for-different-devices.md)。 IOS シミュレーターは ARM を搭載していないので、代わりに x86 および x86_64 の電源シミュレーターです。 これは、各命令セットに対してライブラリを提供する必要があることを意味します。
 
 Fat ライブラリは、サポートされているすべてのアーキテクチャを含む `.a` ファイルです。
 
@@ -180,7 +180,7 @@ Fat バイナリの作成は、次の3つの手順で行います。
 
 これら3つの手順は比較的簡単ですが、目的の C ライブラリが更新プログラムを受け取ったとき、またはバグ修正が必要な場合は、今後も繰り返すことが必要になる場合があります。 これらの手順を自動化することにした場合は、iOS バインドプロジェクトの将来のメンテナンスとサポートが簡略化されます。
 
-このようなタスクを自動化するために使用できるツールは多数あります。シェルスクリプト、 [rake](https://rake.rubyforge.org/)、 [xbuild](https://www.mono-project.com/docs/tools+libraries/tools/xbuild/)、 [make](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/make.1.html)などです。 Xcode コマンドラインツールがインストールされている場合は、`make` もインストールされるため、このチュートリアルで使用されるビルドシステムです。 次に示すのは、iOS デバイスで動作するマルチアーキテクチャ共有ライブラリと、任意のライブラリのシミュレーターを作成するために使用できる**メイクファイル**です。
+このようなタスクを自動化するために使用できるツールは多数あります。シェルスクリプト、 [rake](https://rake.rubyforge.org/)、 [xbuild](https://www.mono-project.com/docs/tools+libraries/tools/xbuild/)、make などです。 Xcode コマンドラインツールがインストールされている場合は、`make` もインストールされるため、このチュートリアルで使用されるビルドシステムです。 次に示すのは、iOS デバイスで動作するマルチアーキテクチャ共有ライブラリと、任意のライブラリのシミュレーターを作成するために使用できる**メイクファイル**です。
 
 <!--markdownlint-disable MD010 -->
 ```makefile
@@ -278,7 +278,7 @@ Architectures in the fat file: libInfColorPicker.a are: i386 armv7 x86_64 arm64
 
 1. [新しいプロジェクト] ダイアログボックスで、 **[ C# Visual > iPhone & IPad > iOS バインドライブラリ (Xamarin)** ] を選択します。
 
-    [iOS バインドライブラリを選択![には](walkthrough-images/bind02.w157-sml.png)](walkthrough-images/bind02.w157.png#lightbox)
+    [iOS バインドライブラリを選択 ![には](walkthrough-images/bind02.w157-sml.png)](walkthrough-images/bind02.w157.png#lightbox)
 
 1. **名前**として「InfColorPickerBinding」と入力し、 **[OK]** ボタンをクリックしてソリューションを作成します。
 
@@ -419,7 +419,7 @@ sdk: watchos2.2      arch: armv7
 sharpie bind --output=InfColorPicker --namespace=InfColorPicker --sdk=[iphone-os] [full-path-to-project]/InfColorPicker/InfColorPicker/*.h
 ```
 
-ここで `[full-path-to-project]` は、コンピューター上の**Infcolorpicker** Xcode プロジェクトファイルが置かれているディレクトリへの完全パスです。また、[iphone-os] は、`sharpie xcode -sdks` コマンドに示されているように、インストールされている iOS SDK です。 この例では、パラメーターとして\*.h を渡しています。これには、このディレクトリ内の*すべて*のヘッダーファイルが含まれ**ます。** 通常、この操作は行わないでください。その代わりに、ヘッダーファイルを注意深く読み取って、最上位の .h ファイルを検索します **。** 他のすべての関連ファイルを参照し、それを目的のマジックペンに渡すだけです。
+ここで `[full-path-to-project]` は、コンピューター上の**Infcolorpicker** Xcode プロジェクトファイルが置かれているディレクトリへの完全パスです。また、[iphone-os] は、`sharpie xcode -sdks` コマンドに示されているように、インストールされている iOS SDK です。 この例では、このディレクトリ内の*すべて*のヘッダーファイルを含むパラメーターとして\*.h を渡してい**ます。** 通常は、この操作は行わないでください。その代わりに、ヘッダーファイルを慎重に読み取って、他の関連ファイルを参照する最上位の **.h**ファイルを見つけ、それを目的のマジックペンに渡すだけです。
 
 ターミナルで次の[出力](walkthrough-images/os05.png)が生成されます。
 
@@ -460,7 +460,7 @@ Europa:Resources kmullins$
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-上記で作成したバインドプロジェクトで、これらの両方のファイルを開きます。 ( **Mac ビルドホスト**から) **InfColorPicker.cs**ファイルの内容をコピーし、 **ApiDefinition.cs**ファイルに貼り付けて、既存の `namespace ...` コードブロックを**InfColorPicker.cs**ファイルの内容に置き換えます (`using` ステートメントはそのままです)。
+上記で作成したバインドプロジェクトで、これらの両方のファイルを開きます。 ( **Mac ビルドホスト**から) **InfColorPicker.cs**ファイルの内容をコピーし、 **ApiDefinition.cs**ファイルに貼り付けて、既存の `namespace ...` コードブロックを**InfColorPicker.cs**ファイルの内容に置き換えます (`using` ステートメントはそのままにしておきます)。
 
 -----
 
@@ -531,7 +531,7 @@ Europa:Resources kmullins$
 
     [![iOS アプリ (Xamarin) プロジェクト](walkthrough-images/use01.w157-sml.png)](walkthrough-images/use01.w157.png#lightbox)
 
-    [テンプレートの選択![](walkthrough-images/use01-2.w157-sml.png)](walkthrough-images/use01-2.w157.png#lightbox)
+    [テンプレートの選択 ![](walkthrough-images/use01-2.w157-sml.png)](walkthrough-images/use01-2.w157.png#lightbox)
 
 1. **バインドプロジェクトへの参照の追加**- **InfColorPickerBinding**プロジェクトへの参照が含まれるように**InfColorPickerSample**プロジェクトを更新します。
 
@@ -586,7 +586,7 @@ public partial interface InfColorPickerControllerDelegate {
 
 Xamarin. iOS アプリケーションでこのインターフェイスを実装するには、次の2つの方法があります。
 
-- **強いデリゲート**-強いデリゲートを使用するにはC# 、`InfColorPickerControllerDelegate`サブクラスを作成し、適切なメソッドをオーバーライドするクラスを作成する必要があります。 **InfColorPickerController**は、このクラスのインスタンスを使用して、クライアントと通信します。
+- **強いデリゲート**-強いデリゲートを使用するにはC# 、`InfColorPickerControllerDelegate` サブクラスを作成し、適切なメソッドをオーバーライドするクラスを作成する必要があります。 **InfColorPickerController**は、このクラスのインスタンスを使用して、クライアントと通信します。
 - **弱いデリゲート**-弱いデリゲートは、一部のクラス (`InfColorPickerSampleViewController`など) でパブリックメソッドを作成し、そのメソッドを `Export` 属性を介して `InfColorPickerDelegate` プロトコルに公開するという、少し異なる手法です。
 
 強いデリゲートは、Intellisense、タイプセーフ、およびより適切なカプセル化を提供します。 これらの理由から、弱いデリゲートではなく、可能な場合は強力なデリゲートを使用する必要があります。
@@ -667,7 +667,7 @@ private void HandleTouchUpInsideWithStrongDelegate (object sender, EventArgs e)
 
 ### <a name="implementing-a-weak-delegate"></a>弱いデリゲートの実装
 
-Xamarin. iOS では、特定のデリゲートに対して目的の C プロトコルにバインドされたクラスをサブクラス化するのではなく、`NSObject`から派生した任意のクラスにプロトコルメソッドを実装し、`ExportAttribute`でメソッドを装飾し、適切なセレクター。 この方法を使用する場合は、クラスのインスタンスを、`Delegate` プロパティではなく、`WeakDelegate` プロパティに割り当てます。 弱いデリゲートを使用すると、デリゲートクラスを別の継承階層にする柔軟性が得られます。 ここでは、Xamarin. iOS アプリケーションで弱いデリゲートを実装して使用する方法について説明します。
+Xamarin は、特定のデリゲートの目的の C プロトコルにバインドされたクラスをサブクラス化するのではなく、`NSObject`から派生した任意のクラスのプロトコルメソッドを実装し、`ExportAttribute`でメソッドを装飾し、適切なセレクターを指定することもできます。 この方法を使用する場合は、クラスのインスタンスを、`Delegate` プロパティではなく、`WeakDelegate` プロパティに割り当てます。 弱いデリゲートを使用すると、デリゲートクラスを別の継承階層にする柔軟性が得られます。 ここでは、Xamarin. iOS アプリケーションで弱いデリゲートを実装して使用する方法について説明します。
 
 **TouchUpInside のイベントハンドラーを作成**します。 [背景色の変更] ボタンの `TouchUpInside` イベントの新しいイベントハンドラーを作成します。 このハンドラーは、前のセクションで作成した `HandleTouchUpInsideWithStrongDelegate` ハンドラーと同じロールを設定しますが、強いデリゲートではなく弱いデリゲートを使用します。 クラス `ViewController`を編集し、次のメソッドを追加します。
 
@@ -706,13 +706,12 @@ public void ColorPickerControllerDidFinish (InfColorPickerController controller)
 
 アプリケーションを実行します。 これは、以前とまったく同じように動作しますが、厳密なデリゲートではなく弱いデリゲートを使用しています。 この時点で、このチュートリアルは正常に完了しています。 これで、Xamarin の iOS バインドプロジェクトを作成および使用する方法を理解できるようになりました。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 この記事では、Xamarin の iOS バインドプロジェクトを作成して使用するプロセスについて説明します。 まず、既存の目的 C ライブラリをスタティックライブラリにコンパイルする方法について説明しました。 次に、Xamarin の iOS バインドプロジェクトを作成する方法と、目標マジックペンを使用して目的の C ライブラリの API 定義を生成する方法について説明します。 ここでは、生成された API 定義を更新および調整して、パブリックの使用に適したものにする方法について説明しました。 Xamarin のバインドプロジェクトが終了した後、Xamarin. iOS アプリケーションでそのバインドを使用するようになりました。強力なデリゲートと弱いデリゲートの使用に重点を置いています。
 
 ## <a name="related-links"></a>関連リンク
 
-- [Binding の例 (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/infcolorpicker)
 - [Objective-C ライブラリのバインド](~/cross-platform/macios/binding/objective-c-libraries.md)
 - [バインディングの詳細](~/cross-platform/macios/binding/overview.md)
 - [バインディングの種類のリファレンスガイド](~/cross-platform/macios/binding/binding-types-reference.md)

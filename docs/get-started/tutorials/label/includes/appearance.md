@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 4fc6c50b5aa2ce502b4157ca2b15f0d33a68ecd1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "60896737"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -21,7 +21,7 @@ ms.locfileid: "60896737"
 
     このコードでは、[`Label`](xref:Xamarin.Forms.Label) の外観を変更するプロパティを設定します。 [`TextColor`](xref:Xamarin.Forms.Label.TextColor) プロパティでは、`Button` テキストの色を設定します。 [`FontAttributes`](xref:Xamarin.Forms.Label.FontAttributes) プロパティではラベルのフォントをイタリックに設定し、[`FontSize`](xref:Xamarin.Forms.Label.FontSize) プロパティではフォント サイズを設定します。 さらに、下線の文字修飾が、その [`TextDecorations`](xref:Xamarin.Forms.Label.TextDecorations) プロパティを設定することで、`Label` に適用され、[`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) プロパティを [`Center`](xref:Xamarin.Forms.LayoutOptions.Center) に設定することで、水平方向の中央に配置されます。
 
-1. Visual Studio ツール バーで、**[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。 [`Label`](xref:Xamarin.Forms.Label) の外観が変更されたことを確認します。
+1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。 [`Label`](xref:Xamarin.Forms.Label) の外観が変更されたことを確認します。
 
     [![iOS および Android での、外観が変更された Label のスクリーンショット](../images/change-label-appearance.png "外観が変更された Label")](../images/change-label-appearance-large.png#lightbox "外観が変更された Label")
 
@@ -42,7 +42,7 @@ ms.locfileid: "60896737"
 
     このコードでは、[`Label`](xref:Xamarin.Forms.Label) の外観を変更するプロパティを設定します。 [`TextColor`](xref:Xamarin.Forms.Label.TextColor) プロパティでは、`Button` テキストの色を設定します。 [`FontAttributes`](xref:Xamarin.Forms.Label.FontAttributes) プロパティではラベルのフォントをイタリックに設定し、[`FontSize`](xref:Xamarin.Forms.Label.FontSize) プロパティではフォント サイズを設定します。 さらに、下線の文字修飾が、その [`TextDecorations`](xref:Xamarin.Forms.Label.TextDecorations) プロパティを設定することで、`Label` に適用され、[`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) プロパティを [`Center`](xref:Xamarin.Forms.LayoutOptions.Center) に設定することで、水平方向の中央に配置されます。
 
-1. Visual Studio for Mac ツール バーで、**[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。 [`Label`](xref:Xamarin.Forms.Label) の外観が変更されたことを確認します。
+1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。 [`Label`](xref:Xamarin.Forms.Label) の外観が変更されたことを確認します。
 
     [![iOS および Android での、外観が変更された Label のスクリーンショット](../images/change-label-appearance.png "外観が変更された Label")](../images/change-label-appearance-large.png#lightbox "外観が変更された Label")
 

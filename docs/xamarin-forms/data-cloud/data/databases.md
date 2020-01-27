@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 12/05/2019
-ms.openlocfilehash: 190aeb83456fa7c7ba8a9415b02ab56f3f8779da
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.openlocfilehash: e86d69bb9dc751f70d03a556f65c11efd0b34d10
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728279"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725587"
 ---
 # <a name="xamarinforms-local-databases"></a>Xamarin.Forms のローカル データベース
 
@@ -92,7 +92,7 @@ public static class Constants
 
 ### <a name="lazy-initialization"></a>限定的な初期化
 
-`TodoItemDatabase` は、最初にアクセスされるまで、.NET `Lazy` クラスを使用してデータベースの初期化を遅延させます。 遅延初期化を使用すると、データベースの読み込みプロセスによってアプリの起動が遅れることがなくなります。 詳細については、「 [Lazy&lt;t&gt; クラス](https://docs.microsoft.com/dotnet/api/system.lazy-1)」を参照してください。
+`TodoItemDatabase` は、最初にアクセスされるまで、.NET `Lazy` クラスを使用してデータベースの初期化を遅延させます。 遅延初期化を使用すると、データベースの読み込みプロセスによってアプリの起動が遅れることがなくなります。 詳細については、「 [Lazy&lt;t&gt; クラス](xref:System.Lazy`1)」を参照してください。
 
 ```csharp
 public class TodoItemDatabase
@@ -289,4 +289,4 @@ SQLite データベースのコピーが必要になる場合があります。
 - [Android での SQLite の使用](~/android/data-cloud/data-access/using-sqlite-orm.md)
 - [IOS での SQLite の使用](~/ios/data-cloud/data/using-sqlite-orm.md)
 - [タスクベースの非同期パターン (TAP)](https://docs.microsoft.com/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)
-- [Lazy<T> クラス](https://docs.microsoft.com//api/system.lazy-1)
+- [Lazy&lt;T&gt; クラス](xref:System.Lazy`1)

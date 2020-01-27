@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/08/2017
-ms.openlocfilehash: 4f73ea249d29075b0e9e115e86afc971632b7b61
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: 841b1d4abab5e4c09249174b221da20794771a86
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75487504"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725569"
 ---
 # <a name="text-translation-using-the-translator-api"></a>Translator API を使用してテキスト翻訳
 
@@ -67,7 +67,7 @@ Base64 テキストには、返されたアクセス トークンが 10 分間�
 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", bearerToken);
 ```
 
-Cognitive services のトークン サービスの詳細については、次を参照してください。[認証トークン API](https://docs.microsofttranslator.com/oauth-token.html)します。
+認知サービストークンサービスの詳細については、「 [Authentication](/azure/cognitive-services/translator/reference/v3-0-reference#authentication)」を参照してください。
 
 ## <a name="performing-text-translation"></a>テキストの翻訳を実行します。
 
@@ -87,7 +87,7 @@ public async Task<string> TranslateTextAsync(string text)
 
 `TranslateTextAsync`メソッドは、要求 URI を生成し、トークン サービスからアクセス トークンを取得します。 テキストの翻訳の要求に送信し、 `translate` API で、結果を格納する XML 応答を返します。 XML 応答が解析され、呼び出し元のメソッドの表示、変換結果が返されます。
 
-テキストの翻訳の REST Api の詳細については、次を参照してください。 [Microsoft Translator Text API](https://docs.microsofttranslator.com/text-translate.html)します。
+テキスト変換 REST Api の詳細については、「 [Translator Text API](/azure/cognitive-services/translator/reference/v3-0-reference)」を参照してください。
 
 ### <a name="configuring-text-translation"></a>テキストの翻訳を構成します。
 
@@ -128,7 +128,7 @@ async Task<string> SendRequestAsync(string url, string bearerToken)
 
 このメソッドが GET 要求を作成するアクセス トークンを追加することで、`Authorization`文字列で始まるヘッダー`Bearer`します。 GET 要求に送信し、 `translate` API を変換するテキストを指定する要求 URL とにテキストを翻訳する言語を使用します。 応答が読み取られ、呼び出し元メソッドに返されます。
 
-`translate` API は、要求が有効である、要求が成功したことを示すし、の要求された情報は、応答で提供される応答には、HTTP 状態コード 200 (OK) を送信します。 想定されるエラー応答の一覧は、応答メッセージを参照してください。[変換取得](https://docs.microsofttranslator.com/text-translate.html#!/default/get_Translate)します。
+`translate` API は、要求が有効である、要求が成功したことを示すし、の要求された情報は、応答で提供される応答には、HTTP 状態コード 200 (OK) を送信します。 想定されるエラー応答の一覧は、応答メッセージを参照してください。[変換取得](/azure/cognitive-services/translator/reference/v3-0-translate)します。
 
 ### <a name="processing-the-response"></a>応答の処理
 
@@ -148,7 +148,7 @@ XML 応答の解析にサンプル アプリケーションで、`XDocument`の�
 
 ## <a name="related-links"></a>関連リンク
 
-- [Translator Text API ドキュメント](/azure/cognitive-services/translator/)します。
+- [Translator Text API のドキュメント](/azure/cognitive-services/translator/)
 - [RESTful Web サービスを使用する](~/xamarin-forms/data-cloud/web-services/rest.md)
 - [Todo Cognitive Services (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
-- [Microsoft Translator Text API](https://docs.microsofttranslator.com/text-translate.html)します。
+- [Translator Text API](/azure/cognitive-services/translator/reference/v3-0-reference)

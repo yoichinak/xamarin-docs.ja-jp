@@ -12,7 +12,7 @@ abstract:
   description: 'Xamarin.iOS は、.NET 開発者向けに iOS SDK 全体を公開しています。 Visual Studio で C# または F# を使用して、完全にネイティブな iOS アプリを構築できます。'
   menu:
     items:
-      - href: ~/ios/samples/index.yml
+      - href: ~/ios/samples/index.md
         text: iOS のサンプル
       - href: 'https://docs.microsoft.com/xamarin/ios/release-notes/'
         text: リリース ノート

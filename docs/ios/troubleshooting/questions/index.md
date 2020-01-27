@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: e79fca8c59ae49d27cd335106ca57945be106031
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 186164d9f2239bc577470cc4b1a999f4c516dedb
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031088"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725396"
 ---
 # <a name="ios-frequently-asked-questions"></a>iOS に関してよく寄せられる質問
 
@@ -77,7 +77,7 @@ IOS 9 での API の変更では、基になる API が想定しているよう�
 ### <a name="compile-error-can-not-encode-offset-x-in-resulting-scattered-relocationerror-encode-offset-scattered-relocationmd"></a>[コンパイルエラー: 拡散した再配置でオフセット X をエンコードできません](error-encode-offset-scattered-relocation.md)
 この問題は、ARMv7 などの32ビットアーキテクチャのビルド時に、最終的なバイナリがネイティブツールチェーンに対して大きすぎる場合に発生します。
 
-## <a name="deprecated"></a>れ
+## <a name="deprecated"></a>非推奨
 
 > [!IMPORTANT]
 > 以下の記事は、Xamarin の最近のバージョンで解決された問題に適用されます。 ただし、最新バージョンのソフトウェアで問題が発生した場合は、完全なバージョン管理情報と完全ビルドログ出力を使用して[新しいバグを作成](~/cross-platform/troubleshooting/questions/howto-file-bug.md)してください。
@@ -86,7 +86,7 @@ IOS 9 での API の変更では、基になる API が想定しているよう�
 以前のバージョンの Xamarin では、Windows 上の IPA ファイルが0バイトになる可能性があるという既知の問題がいくつかありました。
 
 ### <a name="ibtool-error-the-operation-couldnt-be-completederror-ibtoolmd"></a>[IBTool エラー: "The operation couldn’t be completed." (操作を完了できませんでした。)](error-ibtool.md)
-Apple は Xcode 6.1.1 でこの `ibtool` バグを[修正](https://developer.apple.com/library/ios/releasenotes/DeveloperTools/RN-Xcode/Chapters/xc6_release_notes.html)したので、Xcode 6.1.1 以降にアップグレードするのが最も簡単な修正です。
+Apple は Xcode 6.1.1 でこの `ibtool` バグを修正したので、Xcode 6.1.1 以降にアップグレードするのが最も簡単な修正です。
 
 ### <a name="error-mt1009-could-not-copy-the-assemblyerror-mt1009md"></a>[エラー MT1009: "Could not copy the assembly" (アセンブリをコピーできませんでした)](error-mt1009.md)
 これは、Xamarin. iOS 7.2.6 を実行しているユーザーに影響します。 この問題が発生するのは、Xamarin が、別のユーザーアカウントを使用してインストールされている場合に、より高い特権を必要とするファイルのアクセス許可があるためです。

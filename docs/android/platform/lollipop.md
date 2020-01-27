@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 104141d98cecb31cae17f4510f742387be4a3fb7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 297c7806ce8a880d65c38ef0e4672e41fee5acfe
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73027248"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724443"
 ---
 # <a name="lollipop-features"></a>ロリポップ機能
 
@@ -40,11 +40,11 @@ Android 5.0 には、マテリアルテーマを通じて行われる UI の機�
 
 - **新しい api** &ndash; Android 5.0 では、複数のネットワークサポート用に新しい api が追加され、Bluetooth 接続の機能が向上し、記憶域の管理が容易になり、マルチメディアプレーヤーとカメラデバイスをより柔軟に制御できます。 スケジュールされた時刻にタスクを非同期に実行するために、新しいジョブスケジュール機能を使用できます。 この機能を使用すると、バッテリの寿命を向上させることができます。たとえば、デバイスが電源に接続され、充電されたときに実行されるスケジュールタスクなどです。
 
-## <a name="requirements"></a>［要件］
+## <a name="requirements"></a>要件
 
 Xamarin ベースのアプリで新しい Android 5.0 機能を使用するには、次のものが必要です。
 
-- Xamarin **android** 4.20 &ndash; Visual Studio または Visual Studio for Mac を使用してインストールおよび構成する必要があります。 
+- Xamarin **android** 4.20 &ndash; Visual Studio または Visual Studio for Mac を使用してインストールおよび構成する必要があります。
 
 - **Android SDK** &ndash; Android 5.0 (API 21) 以降を Android SDK Manager を使用してインストールする必要があります。
 
@@ -62,11 +62,11 @@ Android 5.0 プロジェクトを作成するには、最新のツールと SDK 
 
 3. Android SDK Manager を起動し (Visual Studio for Mac で、**ツール &gt; 使用して Android SDK Manager&hellip;** ) を開き、Android SDK Tools 23.0.5 以降をインストールします。
 
-    [Android SDK マネージャーで Android SDK ツールを選択![には](lollipop-images/android-l-tools-sml.png)](lollipop-images/android-l-tools.png#lightbox)
+    [Android SDK マネージャーで Android SDK ツールを選択 ![には](lollipop-images/android-l-tools-sml.png)](lollipop-images/android-l-tools.png#lightbox)
 
    また、最新の Android 5.0 SDK パッケージ (API 21 以降) をインストールします。
 
-    [Android SDK Manager での Android 5.0 SDK パッケージのインストール![](lollipop-images/android-l-sdk-pkgs-sml.png)](lollipop-images/android-l-sdk-pkgs.png#lightbox)
+    [Android SDK Manager での Android 5.0 SDK パッケージのインストール ![](lollipop-images/android-l-sdk-pkgs-sml.png)](lollipop-images/android-l-sdk-pkgs.png#lightbox)
 
    Android SDK Manager の使用方法の詳細については、「 [SDK manager](https://developer.android.com/tools/help/sdk-manager.html)」を参照してください。
 
@@ -83,7 +83,7 @@ Android 5.0 プロジェクトを作成するには、最新のツールと SDK 
 
 注: Android L Preview を対象としていた既存の Android プロジェクトを更新する場合は、**ターゲットフレームワーク**と**android のバージョン**を、前述の値に更新する必要があります。
 
-## <a name="important-changes"></a>重要な変更
+## <a name="important-changes"></a>重要な変更点
 
 以前に発行された Android アプリは、Android 5.0 の変更の影響を受ける可能性があります。 特に、Android 5.0 では、新しいランタイムと大幅に変更された通知形式が使用されます。
 
@@ -105,7 +105,7 @@ Android 5.0 で通知が大幅に変更されました。
 
 - **サウンドと振動は**、通知音と vibrations が `Ringtone`、`MediaPlayer`、`Vibrator`ではなく `Notification.Builder` によって処理されるため、異なる &ndash; 方法で処理されます。
 
-- **新しい配色**&ndash; マテリアルのテーマに従って、白または非常に明るい背景で濃いテキストを使用して通知がレンダリングされます。 また、通知アイコン内のアルファチャネルは、Android によってシステムカラースキームと調整される場合があります。 
+- **新しい配色**&ndash; マテリアルのテーマに従って、白または非常に明るい背景で濃いテキストを使用して通知がレンダリングされます。 また、通知アイコン内のアルファチャネルは、Android によってシステムカラースキームと調整される場合があります。
 
 - **ロック**画面の通知 &ndash; 通知がデバイスのロック画面に表示されるようになりました。
 
@@ -113,7 +113,7 @@ Android 5.0 で通知が大幅に変更されました。
 
 ほとんどの場合、既存のアプリ通知機能を Android 5.0 に移植するには、次の手順を実行する必要があります。
 
-1. 通知を作成するために `Notification.Builder` (または `NotificationsCompat.Builder`) を使用するようにコードを変換します。 
+1. 通知を作成するために `Notification.Builder` (または `NotificationsCompat.Builder`) を使用するようにコードを変換します。
 
 2. 新しいマテリアルテーマの配色で、既存の通知資産が表示されていることを確認します。
 
@@ -129,13 +129,13 @@ Android での通知の作成の詳細については、「[ローカル通知](
 
 新しい Android 5.0 のマテリアルテーマにより、Android UI のルックアンドフィールが変化します。 ビジュアル要素は、印刷ベースのデザインの太字のグラフィックス、文字体裁、および明るい色で使用される tactile サーフェイスを使用するようになりました。 素材のテーマの例を次のスクリーンショットに示します。
 
-[素材テーマホーム画面、アプリ画面、設定画面のスクリーンショット![](lollipop-images/android-5-gallery-labeled-sml.png)](lollipop-images/android-5-gallery-labeled.png#lightbox)
+[素材テーマホーム画面、アプリ画面、設定画面のスクリーンショット ![](lollipop-images/android-5-gallery-labeled-sml.png)](lollipop-images/android-5-gallery-labeled.png#lightbox)
 
 Android 5.0 では、左側に表示されるホーム画面が greets ます。 中央のスクリーンショットはアプリの一覧の最初の画面で、右側のスクリーンショットは **[設定]** 画面です。 Google の[マテリアル設計](https://material.io/guidelines/material-design/introduction.html)仕様では、新しいマテリアルテーマの概念の背後にある基になる設計規則について説明します。
 
-マテリアルテーマには、アプリで使用できる3つの組み込みのフレーバーが含まれています。 `Theme.Material` ダークテーマ (既定)、`Theme.Material.Light` テーマ、および `Theme.Material.Light.DarkActionBar` テーマです。 
+マテリアルテーマには、アプリで使用できる3つの組み込みのフレーバーが含まれています。 `Theme.Material` ダークテーマ (既定)、`Theme.Material.Light` テーマ、および `Theme.Material.Light.DarkActionBar` テーマです。
 
-[ダーク、ライト、DarkActionBar テーマのスクリーンショットの![](lollipop-images/three-material-themes-sml.png)](lollipop-images/three-material-themes.png#lightbox)
+[ダーク、ライト、DarkActionBar テーマのスクリーンショットの ![](lollipop-images/three-material-themes-sml.png)](lollipop-images/three-material-themes.png#lightbox)
 
 Xamarin Android アプリでのマテリアルテーマ機能の使用の詳細については、「[マテリアルテーマ](~/android/user-interface/material-theme.md)」を参照してください。
 
@@ -165,7 +165,7 @@ Android 5.0 のタッチフィードバックアニメーションの詳細に�
 
 たとえば、次の一連のスクリーンショットは、共有要素の遷移を示しています。
 
-[共有要素の切り替えアニメーションのフレームスクリーンショットによるフレームの![](lollipop-images/activity-transition-sml.png)](lollipop-images/activity-transition.png#lightbox)
+[共有要素の切り替えアニメーションのフレームスクリーンショットによるフレームの ![](lollipop-images/activity-transition-sml.png)](lollipop-images/activity-transition.png#lightbox)
 
 共有要素 (caterpillar の写真) は、最初のアクティビティのいくつかのビューの1つです。最初のアクティビティが2番目のアクティビティに遷移するときに、2番目のアクティビティの唯一のビューになるように拡大されます。
 
@@ -215,11 +215,11 @@ Android 5.0 でのビューステート遷移のアニメーションの詳細�
 
 [*公開] 効果*は、ビューを表示または非表示にするために半径を変更するクリッピング円です。 この効果を制御するには、クリッピング円の最初と最後の半径を設定します。 次の一連のスクリーンショットは、画面の中央から効果を示すアニメーションを示しています。
 
-[アニメーションを表示するフレームのスクリーンショットによるフレームの![](lollipop-images/reveal-center-sml.png)](lollipop-images/reveal-center.png#lightbox)
+[アニメーションを表示するフレームのスクリーンショットによるフレームの ![](lollipop-images/reveal-center-sml.png)](lollipop-images/reveal-center.png#lightbox)
 
 次のシーケンスは、画面の左下隅から実行される効果アニメーションを示しています。
 
-[クリッピングアニメーションのフレームスクリーンショットによるフレームの![](lollipop-images/reveal-left-sml.png)](lollipop-images/reveal-left.png#lightbox)
+[クリッピングアニメーションのフレームスクリーンショットによるフレームの ![](lollipop-images/reveal-left-sml.png)](lollipop-images/reveal-left.png#lightbox)
 
 アニメーションを反転させることができます。つまり、クリッピング円では、ビューを表示するために拡大するのではなく、ビューを非表示にすることができます。
 
@@ -243,7 +243,7 @@ Android 5.0 では、新しい `Z` プロパティを設定して、ビューの
 
 次の例では、昇格属性が2dp、4dp、6dp にそれぞれ設定されている場合に、空の `TextView` コントロールによってキャストされた影を示しています。
 
-[progessively の大きなビューの影のスクリーンショットの![](lollipop-images/view-shadows-sml.png)](lollipop-images/view-shadows.png#lightbox)
+[progessively の大きなビューの影のスクリーンショットの ![](lollipop-images/view-shadows-sml.png)](lollipop-images/view-shadows.png#lightbox)
 
 ビューの影の設定は静的にすることができます (上記のように)。または、アニメーションで使用して、ビューの背景の上に一時的に表示されるようにすることもできます。 `ViewPropertyAnimator` クラスを使用して、ビューの昇格をアニメーション化できます。 ビューの昇格とは、そのレイアウト `elevation` 設定の合計と、`ViewPropertyAnimator` メソッドの呼び出しを使用して設定できる `translationZ` プロパティを加算したものです。
 
@@ -289,7 +289,7 @@ Android 5.0 での描画の色合いの詳細については、「描画の[色�
 
 たとえば、次のスクリーンショットでは、写真表示アプリが画面上のイメージから目立つ色を抽出し、これらの色を使用して、イメージに合わせてアプリの配色を調整しています。
 
-[緑、ピンク、青のテーマカラー抽出のスクリーンショットを![](lollipop-images/prominent-color-extraction-sml.png)](lollipop-images/prominent-color-extraction.png#lightbox)
+[緑、ピンク、青のテーマカラー抽出のスクリーンショットを ![](lollipop-images/prominent-color-extraction-sml.png)](lollipop-images/prominent-color-extraction.png#lightbox)
 
 上のスクリーンショットでは、操作バーは抽出された "鮮やかな光" の色に設定され、背景は "鮮やかなダーク" 色に設定されています。 上の各例では、イメージから抽出されたパレットの色を示すために、小さい色の正方形の行が含まれています。
 
@@ -305,7 +305,7 @@ Android 5.0 では、2つの新しい UI ウィジェットが導入されてい
 
 どちらのウィジェットにも、マテリアルテーマ機能のサポートが組み込まれています。たとえば、`RecyclerView` では、ビューの追加と削除にアニメーションが使用され、`CardView` はビューの影を使用して、各カードが背景の上にフローティングするようにします。 これらの新しいウィジェットの例を次のスクリーンショットに示します。
 
-[RecyclerView でビルドされたアプリのスクリーンショットを![](lollipop-images/recyclerview-cardview-sml.png)](lollipop-images/recyclerview-cardview.png#lightbox)
+[RecyclerView でビルドされたアプリのスクリーンショットを ![](lollipop-images/recyclerview-cardview-sml.png)](lollipop-images/recyclerview-cardview.png#lightbox)
 
 左側のスクリーンショットは、電子メールアプリで使用される `RecyclerView` の例であり、右側のスクリーンショットは旅行予約アプリで使用される `CardView` の例です。
 
@@ -319,11 +319,11 @@ Android 5.0 では、2つの新しい UI ウィジェットが導入されてい
 
 次のスクリーンショットは、100項目を含む `RecyclerView` を示しています (各項目は `ImageView` と `TextView`で構成されています)。
 
-[RecyclerView アプリのスクリーンショットを![画像をスクロールする](lollipop-images/recyclerview-scroll-sml.png)](lollipop-images/recyclerview-scroll.png#lightbox)
+[RecyclerView アプリのスクリーンショットを ![画像をスクロールする](lollipop-images/recyclerview-scroll-sml.png)](lollipop-images/recyclerview-scroll.png#lightbox)
 
 `RecyclerView` はこの大規模なデータセットを処理します。このサンプルアプリでは、リストの先頭からリストの終わりまで &ndash; 簡単にスクロールできます。これには数秒しかかかりません。 `RecyclerView` はアニメーションもサポートします。実際、項目を追加および削除するためのアニメーションは既定で有効になっています。 項目が `RecyclerView`に追加されると、次の一連のスクリーンショットに示すようにフェードインされます。
 
-[フレームによるフレームの![フェードでの写真項目のスクリーンショット](lollipop-images/recyclerview-animation-sml.png)](lollipop-images/recyclerview-animation.png#lightbox)
+[フレームによるフレームの ![フェードでの写真項目のスクリーンショット](lollipop-images/recyclerview-animation-sml.png)](lollipop-images/recyclerview-animation.png#lightbox)
 
 `RecyclerView`の詳細については、「 [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)」を参照してください。
 
@@ -331,7 +331,7 @@ Android 5.0 では、2つの新しい UI ウィジェットが導入されてい
 
 `CardView` は、角が丸い浮動カードをシミュレートする単純なビューです。 `CardView` には組み込みのビューの影があるため、アプリに視覚的な奥行を簡単に追加することができます。 次のスクリーンショットは、`CardView`の3つのテキスト指向の例を示しています。
 
-[RecyclerView を使用して CardView ベースの項目を使用するアプリのスクリーンショットの例を![](lollipop-images/recyclerview-cardview-sml.png)](lollipop-images/recyclerview-cardview.png#lightbox)
+[RecyclerView を使用して CardView ベースの項目を使用するアプリのスクリーンショットの例を ![](lollipop-images/recyclerview-cardview-sml.png)](lollipop-images/recyclerview-cardview.png#lightbox)
 
 上の例の各カードには `TextView`が含まれています。背景色は、`cardBackgroundColor` 属性によって設定されます。
 
@@ -343,18 +343,19 @@ Android 5.0 の通知システムは、新しい視覚形式と新機能によ�
 
 ![展開されていない Android 5.0 通知の例](lollipop-images/expanded-notification-contracted.png)
 
-(上の例で示すように) 大きいアイコンが通知に表示されると、Android 5.0 は小さいアイコンをバッジとして大きいアイコンの上に表示します。 
+(上の例で示すように) 大きいアイコンが通知に表示されると、Android 5.0 は小さいアイコンをバッジとして大きいアイコンの上に表示します。
 
 Android 5.0 では、通知はデバイスのロック画面にも表示されます。
 たとえば、次に示すのは、1つの通知を含むロック画面のスクリーンショットの例です。
 
-[ロック画面に表示される通知の![スクリーンショット](lollipop-images/lockscreen-notification-sml.png)](lollipop-images/lockscreen-notification.png#lightbox)
+[ロック画面に表示される通知の ![スクリーンショット](lollipop-images/lockscreen-notification-sml.png)](lollipop-images/lockscreen-notification.png#lightbox)
 
 ユーザーは、ロック画面で通知をダブルタップしてデバイスのロックを解除し、その通知を開始したアプリに移動するか、スワイプして通知を破棄することができます。 通知には、ロック画面に表示できるコンテンツの量を決定する新しい*可視性*の設定があります。 ユーザーは、ロック画面の通知に機微なコンテンツを表示するかどうかを選択できます。
 
-Android 5.0 では、*ヘッドアップ*と呼ばれる優先順位の高い新しい通知プレゼンテーション形式が導入されています。 ヘッドアップ通知は、画面の上部から数秒後にスライドし、画面の上部にある通知網掛けに戻ります。 ヘッドアップ通知を使用すると、システム UI は、現在実行中のアクティビティを中断することなく、ユーザーの前に重要な情報を格納できます。 次の例は、アプリの上部に表示される簡単なヘッドアップ通知を示しています。
+Android 5.0 では、*ヘッドアップ*と呼ばれる優先順位の高い新しい通知プレゼンテーション形式が導入されています。 ヘッドアップ通知は、画面の上部から数秒後にスライドし、画面の上部にある通知網掛けに戻ります。 ヘッドアップ通知を使用すると、システム UI は、現在実行中のアクティビティを中断することなく、ユーザーの前に重要な情報を格納できます。
+次の例は、アプリの上部に表示される簡単なヘッドアップ通知を示しています。
 
-[ヘッドアップ通知の![例](lollipop-images/heads-up-notification-sml.png)](lollipop-images/heads-up-notification.png#lightbox)
+[ヘッドアップ通知の ![例](lollipop-images/heads-up-notification-sml.png)](lollipop-images/heads-up-notification.png#lightbox)
 
 ヘッドアップ通知は、通常、次のイベントに使用されます。
 
@@ -417,7 +418,7 @@ Android 5.0 では、`RemoteControlClient`を置き換える新しい `Android.M
 
 Android 5.0 の新しいメディア再生コントロール機能の詳細については、「[メディア](https://developer.android.com/about/versions/android-5.0.html#Media)」を参照してください。
 
-### <a name="storage"></a>記憶域
+### <a name="storage"></a>Storage
 
 Android 5.0 では、アプリケーションがディレクトリとドキュメントを簡単に操作できるように、ストレージアクセスフレームワークが更新されます。
 
@@ -441,13 +442,13 @@ Android 5.0 では、ワイヤレスおよび接続に対して次の API の機
 
 Android 5.0 での新しいワイヤレスおよび接続 Api の詳細については、「[ワイヤレスと接続](https://developer.android.com/preview/api-overview.html#Wireless)」を参照してください。
 
-### <a name="job-scheduling"></a>ジョブのスケジュール設定
+### <a name="job-scheduling"></a>ジョブ スケジューリング
 
 Android 5.0 で導入された新しい `JobScheduler` API を使用すると、デバイスが電源に接続されているときのみ実行するように特定のタスクをスケジュールすることで、ユーザーがバッテリの消耗を最小限に抑えるのに役立ちます。 このジョブスケジューラ機能は、デバイスが従量制課金ネットワークではなく Wi-fi ネットワーク経由で接続されている場合など、条件がそのタスクに適している場合に実行するタスクのスケジュール設定にも使用できます。
 
 Android 5.0 の新しいジョブスケジュール Api の詳細については、「[ジョブのスケジュール設定](https://developer.android.com/preview/api-overview.html#JobScheduler)」を参照してください。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 この記事では、Xamarin 用 Android 5.0 の重要な新機能の概要について説明しました。 Android アプリ開発者向け:
 
@@ -473,4 +474,3 @@ Android プロジェクトを作成する方法の詳細については[、「He
 - [Android L Developer Preview](https://developer.android.com/preview/index.html)
 - [Android SDK を取得する](https://developer.android.com/sdk/index.html#Other)
 - [素材のデザイン](https://developer.android.com/preview/material/index.html)
-- [素材デザインの原則](http://static.googleusercontent.com/media/www.google.com/en/us/design/material-design.pdf)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 12/31/2019
-ms.openlocfilehash: 7b9bb93f75faba55d5ad79f60dc5697eada36cb5
-ms.sourcegitcommit: 55167ad9db910c5c0eb5a84c0923cb07acd2530e
+ms.openlocfilehash: a712486018079167b8e6756e183b1eb7cb096009
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75607644"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725414"
 ---
 # <a name="xamarinios-samples"></a>Xamarin サンプル iOS のサンプル
 
@@ -60,7 +60,7 @@ ContactsUI のビュー コントローラーとプロパティの使用方法�
 watchOS で使用できる UI コントロール スイートです。
     :::column-end:::
     :::column:::
-[![tvOS UI カタログ](images/tvosui.png)](https://docs.microsoft.com/xamarin/ios-samples/tvos-uicatalog/)
+[![tvOS UI カタログ](images/tvosui.png)](https://docs.microsoft.com/samples/xamarin/ios-samples/tvos-uicatalog/)
 
 ### <a name="tvos-ui-cataloghttpsdocsmicrosoftcomsamplesxamarinios-samplestvos-uicatalog"></a>[tvOS UI カタログ](https://docs.microsoft.com/samples/xamarin/ios-samples/tvos-uicatalog/)
 

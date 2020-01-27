@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: e2d459650c4e5ea38d5e54aef64cc3d7dcb5625c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 0e283c9d9d1143f7cf4b0d2da0616e94d6ce5bce
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029878"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725013"
 ---
 # <a name="introduction-to-opentk-in-xamarinmac"></a>Xamarin. Mac での OpenTK の概要
 
@@ -20,9 +20,9 @@ OpenTK (オープンキット) は、OpenGL、OpenCL、OpenAL C#を簡単に操�
 
 [![](opentk-images/intro01.png "An example app run")](opentk-images/intro01.png#lightbox)
 
-この記事では、Xamarin. Mac アプリケーションでの OpenTK の基本について説明します。 最初に、 [Hello, Mac](~/mac/get-started/hello-mac.md)の記事を使用して作業することを強くお勧めします。具体的には、 [Xcode と Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)および[アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions)に関するセクションで説明します。これは、で使用する主要な概念と手法に関するものです。この記事をご覧ください。
+この記事では、Xamarin. Mac アプリケーションでの OpenTK の基本について説明します。 この記事で使用する主要な概念と手法について説明しているように、最初に[Hello, Mac](~/mac/get-started/hello-mac.md)の記事「 [Xcode と Interface Builder の概要](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)」と「[アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions)」セクションをご覧になることを強くお勧めします。
 
-[Xamarin. Mac の内部](~/mac/internals/how-it-works.md)ドキュメントの「 C# [クラス/ C#メソッドを目的](~/mac/internals/how-it-works.md)として公開する」セクションを参照することもできます。ここでは、クラスを目的のために接続するために使用する`Register`と`Export`のコマンドについて説明します。オブジェクトと UI 要素。
+詳しくは、「 [Xamarin. Mac の内部](~/mac/internals/how-it-works.md)ドキュメント」の「 C# [クラス/メソッドを目的C# ](~/mac/internals/how-it-works.md)として公開する」セクションを参照してください。クラスを目的の c オブジェクトと UI 要素に接続するために使用する `Register` と `Export` のコマンドについても説明します。
 
 <a name="About_OpenTK" />
 
@@ -40,7 +40,7 @@ OpenTK (オープンキット) は、OpenGL、OpenCL、OpenAL C#を簡単に操�
 
 OpenTK は、ゲーム、科学的なアプリケーション、または3D グラフィックス、オーディオ、または計算機能を必要とするその他のプロジェクトに使用できます。
 
-詳細については、 [Open Toolkit の](http://www.opentk.com)web サイトを参照してください。
+詳細については、 [Open Toolkit の](https://opentk.net)web サイトを参照してください。
 
 <a name="OpenTK_Quickstart" />
 
@@ -319,7 +319,7 @@ OpenTK 実装のより複雑な Xamarin. Mac の例については、[モノ Mac
 
 <a name="Summary" />
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 この記事では、Xamarin. Mac アプリケーションでの OpenTK の使用について簡単に説明しました。 ゲームウィンドウを作成する方法、ゲームウィンドウを Mac ウィンドウに接続する方法、およびゲームウィンドウに単純な図形を描画する方法について説明しました。
 
@@ -329,6 +329,6 @@ OpenTK 実装のより複雑な Xamarin. Mac の例については、[モノ Mac
 - [モノ Mac/ビュー (サンプル)](https://docs.microsoft.com/samples/xamarin/mac-samples/monomacgamewindow)
 - [Hello Mac](~/mac/get-started/hello-mac.md)
 - [Windows の操作](~/mac/user-interface/window.md)
-- [オープンツールキット](http://www.opentk.com)
+- [オープンツールキット](https://opentk.net)
 - [OS X ヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
 - [Windows の概要](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/WinPanel/Introduction.html#//apple_ref/doc/uid/10000031-SW1)

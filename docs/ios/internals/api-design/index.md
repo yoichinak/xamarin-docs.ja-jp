@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: ab56332617fece8e80429f82000880012bf85b41
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a2435b30b7d5b468fca6c55d295c87b9a0d20652
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022402"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724434"
 ---
 # <a name="xamarinios-api-design"></a>Xamarin. iOS API の設計
 
-[Xamarin.iOS](~/ios/index.yml) には、Mono の一部であるコアの基本クラス ライブラリだけでなく、開発者が Mono を利用してネイティブの iOS アプリケーションの作成を可能にするために、さまざまな iOS API へのバインドが付属しています。
+[Xamarin.iOS](~/ios/index.yml)には、Mono の一部であるコアの基本クラス ライブラリだけでなく、開発者が Mono を利用してネイティブの iOS アプリケーションの作成を可能にするために、さまざまな iOS Api へのバインドが付属しています。
 
-Xamarin.iOS のコアには、C# の世界と Objective-C の世界をブリッジする相互運用機能および、CoreGraphics や [OpenGL ES](#opengles) などの iOS C ベースの API のバインドがあります。
+Xamarin.iOS のコアには、C# の世界と OBJECTIVE-C の世界をブリッジする相互運用機能および、CoreGraphics や [OpenGL ES](#opengles) などの iOS C ベースの API のバインドがあります。
 
 Objective-C のコードと通信する低レベルのランタイムは、[MonoTouch.ObjCRuntime](#objcruntime) にあります。 この上には、 [Foundation](#foundation)、CoreFoundation、および[UiKit](#uikit) のバインドが用意されています。
 
@@ -63,8 +63,8 @@ Objective-C のコードと通信する低レベルのランタイムは、[Mono
 
 - ネイティブ C# 型:
 
-  - [`NSString` が `string`になります](~/ios/internals/api-design/nsstring.md)
-  - `int` を有効にし、`[Flags]`属性を持つ列挙C#型とC#列挙型に列挙されている必要があるパラメーターを `uint` します。
+  - [`NSString` が `string` になります](~/ios/internals/api-design/nsstring.md)
+  - `int` を有効にし、`[Flags]` 属性を持つ列挙C#型とC#列挙型に列挙されている必要があるパラメーターを `uint` します。
   - 型に依存しない `NSArray` オブジェクトではなく、厳密に型指定された配列として配列を公開します。
   - イベントと通知の場合は、次のいずれかの選択肢をユーザーに提供します。
 
@@ -91,11 +91,11 @@ Xamarin.iOS には、 *Xamarin.iOS Profile* を構成する多数のアセンブ
 
 [Foundation](xref:Foundation)名前空間は、iOS の一部である Objective-C Foundation フレームワークと相互運用できるように設計された基本データ型を提供します。これは、Objective-C でのオブジェクト指向プログラミングの基本となります。
 
-Xamarin.iOS は、C# で Objective-C のクラスの階層をミラーリングしています。 たとえば、Objective-C の基本クラスである  [NSObject](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSObject_Class/Reference/Reference.html)は[Foundation.NSObject](xref:Foundation.NSObject)を介して C# から使用できます。
+Xamarin.iOS は、C# で Objective-C のクラスの階層をミラーリングしています。 たとえば、NSObject の基本クラスであるC# [NSObject](xref:Foundation.NSObject)を使用することもできます。
 
-この名前空間には、基になる Objective-C からの型のバインドが用意されていますが、いくつかのケースでは、基になる型を .NET 型にマップしています。 例えば:
+この名前空間には、基になる Objective-C からの型のバインドが用意されていますが、いくつかのケースでは、基になる型を .NET 型にマップしています。 例:
 
-- このランタイムでは、 [nsstring](https://developer.apple.com/iphone/library/documentation/Cocoa/Reference/Foundation/Classes/NSString_Class/Reference/NSString.html)と[nsstring](https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html)を処理する代わりにC#、これらを[文字列型](xref:System.String)および厳密に型指定された[配列](xref:System.Array)として API 全体に公開しています。
+- このランタイムでは、nsstring と[nsstring](https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html)を処理する代わりにC#、これらを[文字列型](xref:System.String)および厳密に型指定された[配列](xref:System.Array)として API 全体に公開しています。
 
 - ここでは、開発者がサードパーティの Objective-C API、他の iOS API、Xamarin.iOS によって現在バインドされていない API をバインドできるように、さまざまなヘルパー API が公開されています。
 
@@ -109,9 +109,9 @@ Xamarin.iOS は、C# で Objective-C のクラスの階層をミラーリング�
 
 Mono はすべてのオブジェクトに対してガベージコレクションを提供しますが、`Foundation.NSObject` は、 [IDisposable](xref:System.IDisposable)インターフェイスを実装します。 これは、ガベージコレクターが開始されるのを待たずに、特定の NSObject のリソースを明示的に解放できることを意味します。 これは、大量のデータブロックへのポインターを保持している可能性のある UIImages など、ヘビー NSObjects を使用している場合に重要です。
 
-型で決定的な終了処理を実行する必要がある場合は、 [NSObject (bool) メソッド](xref:Foundation.NSObject.Dispose(System.Boolean))をオーバーライドして dispose のパラメーターを "bool disposing" にします。 true に設定すると、ユーザーが明示的に呼び出されたため、dispose メソッドが呼び出されることを意味します。オブジェクトに対して Dispose () を行います。 値が false の場合、これは Dispose (bool disposing) メソッドがファイナライザースレッドでファイナライザーから呼び出されることを意味します。
+型で決定的な終了処理を実行する必要がある場合は、 [NSObject (bool) メソッド](xref:Foundation.NSObject.Dispose(System.Boolean))をオーバーライドして dispose のパラメーターを "bool disposing" にします。 true に設定すると、ユーザーがオブジェクトに対して明示的に dispose () を呼び出したため、dispose メソッドが呼び出されることを意味します。 値が false の場合、これは Dispose (bool disposing) メソッドがファイナライザースレッドでファイナライザーから呼び出されることを意味します。
 
-##### <a name="categories"></a>カテゴリ
+##### <a name="categories"></a>［カテゴリ］
 
 Xamarin. iOS 8.10 以降では、C# から Objective-C のカテゴリを作成できます。
 
@@ -202,7 +202,7 @@ C#デリゲートは、一般的な操作のために用意されています。
 
 #### <a name="opengles"></a>OpenGLES
 
-OpenGLES については、[変更](xref:OpenTK)されたバージョンの[OpenTK](http://www.opentk.com/) API を配布します。これは、coregraphics データ型と構造体を使用するように変更された OpenGL へのオブジェクト指向のバインドであり、iOS で使用可能な機能のみを公開します。
+OpenGLES については、[変更](xref:OpenTK)されたバージョンの[OpenTK](https://opentk.net/) API を配布します。これは、coregraphics データ型と構造体を使用するように変更された OpenGL へのオブジェクト指向のバインドであり、iOS で使用可能な機能のみを公開します。
 
 OpenGLES 1.1 機能は、 [ES11.GL 型](xref:OpenTK.Graphics.ES11.GL)を介して使用できます。
 
@@ -236,7 +236,7 @@ UIView [] GetViews ();
 
 `NSArray`で公開されているメソッドの中には、`NSArray` を直接使用する必要があるものの、API バインドでは使用しないことをお勧めします。
 
-また、CoreGraphics API から `CGRect`、`CGPoint` および `CGSize` を公開するのではなく、 **Classic API**では、開発者が保持するのと同様に `System.Drawing`、`RectangleF`、`PointF` の実装に置き換えました。OpenTK を使用する既存の OpenGL コード。 新しい64ビット**Unified API**を使用する場合は、COREGRAPHICS API を使用する必要があります。
+さらに、OpenTK を使用する既存の OpenGL コードを開発者が保持するのに役立つように、CoreGraphics API から `CGRect`、`CGPoint`、および `CGSize` を公開するのではなく、 **Classic API**の `System.Drawing` 実装に置き換えました。 新しい64ビット**Unified API**を使用する場合は、COREGRAPHICS API を使用する必要があります。
 
 #### <a name="inheritance"></a>継承
 
@@ -269,7 +269,7 @@ Objective-C の世界では、CocoaTouch についてのオンラインのドキ
 - データ視覚化コントロールのモデルを実装します。
 - コントロールの動作を制御します。
 
-プログラミングパターンは、コントロールの動作を変更するための派生クラスの作成を最小限にするように設計されています。 このソリューションは、長年にわたって他の GUI ツールキットによって実行されていたものと似ています。Gtk のシグナル、Qt スロット、Winforms イベント、WPF/Silverlight イベントなど。 数百のインターフェイス (アクションごとに1つ) を使用したり、不要なメソッドを実装したりする必要がないようにするには、省略可能なメソッドの定義をサポートします。 これは、すべてC#のメソッドを実装する必要があるインターフェイスとは異なります。
+プログラミングパターンは、コントロールの動作を変更するための派生クラスの作成を最小限にするように設計されています。 このソリューションは、他の GUI ツールキットが長年にわたって実行したものと似ています。 Gtk の信号、Qt スロット、Winforms イベント、WPF/Silverlight イベントなどです。 数百のインターフェイス (アクションごとに1つ) を使用したり、不要なメソッドを実装したりする必要がないようにするには、省略可能なメソッドの定義をサポートします。 これは、すべてC#のメソッドを実装する必要があるインターフェイスとは異なります。
 
 Objective-C クラスでは、このプログラミングパターンを使用するクラスは、通常`delegate`と呼ばれるプロパティを公開しています。このプロパティは、インターフェイスの必須の部分および 0 個以上のオプションの部分を実装するために必要です。
 
@@ -279,15 +279,15 @@ Xamarin では、これらのデリゲートにバインドする相互排他的
 2. [`Delegate` プロパティを使用した厳密な型指定](#strongly-typed-via-a-delegate-property)
 3. [`WeakDelegate` プロパティを使用して緩やかに型指定された](#loosely-typed-via-the-weakdelegate-property)
 
-たとえば、 [Uiwebview](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html)クラスを考えてみます。 これにより、 [delegate](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebView_Class/Reference/Reference.html#//apple_ref/occ/instp/UIWebView/delegate)プロパティに割り当てられている[uiwebviewdelegate](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html)インスタンスにディスパッチされます。
+たとえば、UIWebView クラスを考えてみます。 これにより、delegate プロパティに割り当てられている UIWebViewDelegate インスタンスにディスパッチされます。
 
 ##### <a name="via-events"></a>Via イベント
 
-多くの種類の場合、Xamarin では、`UIWebViewDelegate` の呼び出しをイベントにC#転送する適切なデリゲートが自動的に作成されます。 `UIWebView`の場合:
+多くの種類の場合、Xamarin では、`UIWebViewDelegate` の呼び出しをイベントにC#転送する適切なデリゲートが自動的に作成されます。 `UIWebView`:
 
-- [WebViewDidStartLoad](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidStartLoad:)メソッドは、 [Uiwebview. loadstarted](xref:UIKit.UIWebView.LoadStarted)イベントにマップされます。
-- [WebViewDidFinishLoad](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webViewDidFinishLoad:)メソッドは、 [Uiwebview. loadfinished](xref:UIKit.UIWebView.LoadFinished)イベントにマップされます。
-- [WebView: didFailLoadWithError](https://developer.apple.com/iphone/library/documentation/UIKit/Reference/UIWebViewDelegate_Protocol/Reference/Reference.html#//apple_ref/occ/intfm/UIWebViewDelegate/webView:didFailLoadWithError:)メソッドは、 [Uiwebview. loaderror](xref:UIKit.UIWebView.LoadError)イベントにマップされます。
+- WebViewDidStartLoad メソッドは、 [Uiwebview. LoadStarted](xref:UIKit.UIWebView.LoadStarted)イベントにマップされます。
+- WebViewDidFinishLoad メソッドは、 [Uiwebview. LoadFinished](xref:UIKit.UIWebView.LoadFinished)イベントにマップされます。
+- WebView: didFailLoadWithError メソッドは、 [Uiwebview. LoadError](xref:UIKit.UIWebView.LoadError)イベントにマップされます。
 
 たとえば、次の単純なプログラムは、web ビューを読み込むときの開始時刻と終了時刻を記録します。
 
@@ -358,7 +358,7 @@ web.Delegate = new Notifier ();
 厳密に型指定されたプロパティに加えて、開発者が必要に応じて異なる方法でバインドできる、弱い型指定のあるデリゲートもあります。
 厳密に型指定された `Delegate` プロパティが Xamarin で公開されているすべての場所で、対応する `WeakDelegate` プロパティも公開されます。
 
-`WeakDelegate`を使用する場合は、[エクスポート](xref:Foundation.ExportAttribute)属性を使用してセレクターを指定することにより、クラスを適切に修飾する必要があります。 例えば:
+`WeakDelegate`を使用する場合は、[エクスポート](xref:Foundation.ExportAttribute)属性を使用してセレクターを指定することにより、クラスを適切に修飾する必要があります。 例:
 
 ```csharp
 class Notifier : NSObject  {
@@ -595,13 +595,13 @@ Visual Studio for Mac と InterfaceBuilder を使用する場合は、このこ�
 
 Objective-C プログラミングの中核となる概念はセレクターです。 多くの場合、セレクターを渡す必要がある API や、コードがセレクターに応答することを期待する API が使用されます。
 
-でC#新しいセレクターを作成するのは非常に簡単です。`ObjCRuntime.Selector`クラスの新しいインスタンスを作成し、それを必要とする API 内の任意の場所で結果を使用するだけです。 例:
+でC#新しいセレクターを作成するのは非常に簡単です。 `ObjCRuntime.Selector` クラスの新しいインスタンスを作成し、それを必要とする API 内の任意の場所で結果を使用するだけです。 例:
 
 ```csharp
 var selector_add = new Selector ("add:plus:");
 ```
 
-メソッドがC#セレクター呼び出しに応答するには、`NSObject`型から継承する必要がありC# 、メソッドは、`[Export]`属性を使用してセレクター名で修飾する必要があります。 例えば:
+メソッドがC#セレクター呼び出しに応答するには、`NSObject` 型から継承する必要がありC# 、メソッドは、`[Export]` 属性を使用してセレクター名で修飾する必要があります。 例:
 
 ```csharp
 public class MyMath : NSObject {
@@ -645,7 +645,7 @@ public Foo (NSObjectFlag x)
 public Foo (NSCoder coder)
 ```
 
-このコンストラクターは、オブジェクトが NSCoding インスタンスから初期化されている場合に提供されます。 詳細については、「Apple の[アーカイブとシリアル化のプログラミングガイド](https://developer.apple.com/mac/library/documentation/Cocoa/Conceptual/Archiving/index.html#//apple_ref/doc/uid/10000047i)」を参照してください。
+このコンストラクターは、オブジェクトが NSCoding インスタンスから初期化されている場合に提供されます。
 
 #### <a name="exceptions"></a>例外
 
@@ -663,7 +663,7 @@ Xamarin. iOS には、使用されなくなったときにリソースの解放�
 
 #### <a name="nsobject-and-idisposable"></a>NSObject および IDisposable
 
-`IDisposable` インターフェイスを公開することは、大きなメモリブロックをカプセル化する可能性があるオブジェクト (たとえば、`UIImage` が無害なポインターのように見えても、2メガバイトの画像を指している可能性があります) を解放する開発者を支援するための便利な方法です。重要なリソースと有限のリソース (ビデオデコードバッファーなど)。
+`IDisposable` インターフェイスを公開すると、大きなメモリブロックをカプセル化する可能性があるオブジェクト (たとえば、`UIImage` は無害なポインターのように見えますが、2メガバイトの画像を指している可能性があります) や、その他の重要で有限のリソース (ビデオデコードバッファーなど) をリリースする開発者を支援する便利な方法です。
 
 NSObject は IDisposable インターフェイスを実装し、 [.Net Dispose パターン](https://msdn.microsoft.com/library/fs2xkftw.aspx)も実装します。 これにより、NSObject をサブクラス化する開発者は、Dispose の動作をオーバーライドし、必要に応じて独自のリソースを解放できます。 たとえば、次のようなビューコントローラーを考えてみます。
 

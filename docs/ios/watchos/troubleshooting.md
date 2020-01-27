@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 1f5c4135dc1db874de16f6783a86fa7ea927676c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 06524163fadc4300d55ec90f35723fd1561bb8a0
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032734"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725315"
 ---
 # <a name="watchos-troubleshooting"></a>watchOS のトラブルシューティング
 
@@ -31,14 +31,14 @@ ms.locfileid: "73032734"
 
 ## <a name="known-issues"></a>既知の問題
 
-### <a name="general"></a>全般
+### <a name="general"></a>[全般]
 
 <a name="deploy" />
 
 - 以前のリリースの Visual Studio for Mac では、 **AppleCompanionSettings**アイコンの1つが正しくないとして表示されます。これにより、App Store に送信しようとするとアイコンが表示されないという**エラーが発生**します。
-    このアイコンは87x87 ピクセル ( **@3x** Retina 画面の場合は29単位) にする必要があります。 Xcode のイメージ資産を編集するか、([このサンプル](https://github.com/xamarin/monotouch-samples/blob/master/WatchKit/WatchKitCatalog/WatchApp/Resources/Images.xcassets/AppIcons.appiconset/Contents.json#L126-L132)に一致するように) 手動で**ファイルを**編集すること Visual Studio for Mac で、これを修正することはできません。
+    このアイコンは 87 x 87 ピクセルである必要があります (29 単位 **@3x** Retina 画面)。 Xcode のイメージ資産を編集するか、ファイルを手動で編集すること Visual Studio for Mac で、これを修正することはでき**ません。**
 
-- Watch 拡張機能プロジェクトの**WKApp バンドル id**が watch アプリの**バンドル id**と一致するように[正しく設定](~/ios/watchos/get-started/project-references.md)されていない場合、デバッガーは接続に失敗し、"デバッガーを待機 Visual Studio for Mac しています >。 *"接続"* 。
+- Watch 拡張機能プロジェクト > の**WKApp バンドル id**が watch アプリの**バンドル id**と一致するように[正しく設定](~/ios/watchos/get-started/project-references.md)されていない場合、デバッガーは接続に失敗し、Visual Studio for Mac は *"デバッガーの接続を待機*しています" というメッセージを表示して待機します。
 
 - デバッグは**通知**モードでサポートされていますが、信頼性が低い可能性があります。 再試行は機能する場合があります。 Watch アプリの**情報**`WKCompanionAppBundleIdentifier` が、iOS の親/コンテナーアプリのバンドル識別子 (iPhone で実行されているもの) に一致するように設定されていることを確認します。
 
@@ -251,13 +251,13 @@ Xcode Interface Builder を使用して*いる場合*は、次の手順に従っ
 --watchlaunchmode=Notification --watchnotificationpayload=/path/to/file.json
 ```
 
-## <a name="other-arguments"></a>その他の引数
+## <a name="other-arguments"></a>他の引数
 
 残りの引数については、以下で説明します。
 
 ### <a name="--sdkroot"></a>--sdkroot
 
-必須です。 Xcode (6.2 以降) へのパスを指定します。
+必ず指定します。 Xcode (6.2 以降) へのパスを指定します。
 
 例:
 

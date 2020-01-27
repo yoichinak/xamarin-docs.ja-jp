@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/08/2017
-ms.openlocfilehash: 7ced28a5ed379b761ffcc9841f5d0e923ec747e7
-ms.sourcegitcommit: 6de849e2feca928ce5d91a3897e7d4049301081c
+ms.openlocfilehash: 528ccd66cc013f83752d93251cb9714115b29819
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75667053"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725605"
 ---
 # <a name="authentication-and-authorization"></a>認証と承認
 
@@ -100,7 +100,7 @@ public void ConfigureServices(IServiceCollection services)
 > [!TIP]
 > IdentityServer 4 の構成を動的に読み込みます。 IdentityServer 4 の Api を使用すると、構成オブジェクトのメモリ内の一覧から、IdentityServer を構成できます。 EShopOnContainers reference アプリケーションでは、これらのメモリ内コレクションはアプリケーションにハードコーディングされています。 ただし、運用環境のシナリオでは、構成ファイルまたはデータベースから動的に読み込むことができます。
 
-ASP.NET Core Id を使用するように IdentityServer を構成する方法の詳細については、IdentityServer のドキュメントの「[ASP.NET Core id の使用](https://identityserver4.readthedocs.io/en/latest/quickstarts/8_aspnet_identity.html)」を参照してください。
+ASP.NET Core Id を使用するように IdentityServer を構成する方法の詳細については、IdentityServer のドキュメントの「[ASP.NET Core id の使用](https://identityserver4.readthedocs.io/en/latest/quickstarts/6_aspnet_identity.html)」を参照してください。
 
 #### <a name="configuring-api-resources"></a>API リソースの構成
 

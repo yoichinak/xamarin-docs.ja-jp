@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 19276826e1996e68fd27107d23e0def76a1025a5
-ms.sourcegitcommit: 61a35d0643eb3bf5adb8f8831da54771d8dde626
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/17/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "71059719"
 ---
 このチュートリアルを試行する前に、以下を正常に完了しておく必要があります。
@@ -21,4 +21,4 @@ ms.locfileid: "71059719"
 
 Xamarin.Forms でポップアップを表示する方法を示す簡単なアプリケーションを作成するには、Visual Studio 2019 または Visual Studio for Mac を使用します。 次のスクリーンショットは、最終的なアプリケーションです。
 
-[![iOS と Android でのアクション シートのスクリーンショット](../images/actionsheet-reduced.png "タスの完了までユーザーをガイドするアクション シート")](../images/actionsheet-large.png#lightbox "タスクの完了までユーザーをガイドするアクション シート")
+[![iOS および Android 上のアクション シートのスクリーンショット](../images/actionsheet-reduced.png "ユーザーにタスクを案内する Actionsheet")](../images/actionsheet-large.png#lightbox "ユーザーにタスクを案内する Actionsheet")

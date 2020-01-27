@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: d1f7d209eaaca62a55b768646f51024609057a63
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "61372975"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -17,7 +17,7 @@ ms.locfileid: "61372975"
 
     このコードは、[`Clicked`](xref:Xamarin.Forms.Button.Clicked) イベントを次の手順で作成する `OnButtonClicked` という名前のイベント ハンドラーに設定します。
 
-1. **ソリューション エクスプローラー**の **ButtonTutorial** プロジェクトで **[MainPage.xaml]** を展開し、**[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、**MainPage.xaml.cs** で、`OnButtonClicked` イベント ハンドラーをクラスに追加します。
+1. **ソリューション エクスプローラー**の **ButtonTutorial** プロジェクトで **[MainPage.xaml]** を展開し、 **[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、**MainPage.xaml.cs** で、`OnButtonClicked` イベント ハンドラーをクラスに追加します。
 
     ```csharp
     void OnButtonClicked(object sender, EventArgs e)
@@ -31,9 +31,9 @@ ms.locfileid: "61372975"
     > [!NOTE]
     > `Clicked` イベントのほかに、`Button` は [`Pressed`](xref:Xamarin.Forms.Button.Pressed) イベントと [`Released`](xref:Xamarin.Forms.Button.Released) イベントも定義します。 詳細については、「[Xamarin.Forms Button](~/xamarin-forms/user-interface/button.md)」ガイドの「[Pressing and releasing the button](~/xamarin-forms/user-interface/button.md#pressing-and-releasing-the-button)」 (ボタンを押して放す) を参照してください。
 
-1. Visual Studio ツール バーで、**[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。 [`Button`](xref:Xamarin.Forms.Button) をクリックして、表示されるテキストが変わっていることを確認します。
+1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。 [`Button`](xref:Xamarin.Forms.Button) をクリックして、表示されるテキストが変わっていることを確認します。
 
-    [![iOS と Android で、クリックを受信すると変わる Button テキストのスクリーンショット](../images/handle-button-click.png "ボタン クリックの処理")](../images/handle-button-click-large.png#lightbox "ボタン クリックの処理")
+    [![iOS と Android で、クリックを受信すると変わる Button テキストのスクリーンショット](../images/handle-button-click.png "ボタン クリックを処理する")](../images/handle-button-click-large.png#lightbox "ボタン クリックを処理する")
 
     ボタン クリックの処理の詳細については、「[Xamarin.Forms Button](~/xamarin-forms/user-interface/button.md)」ガイドの「[Handling button clicks](~/xamarin-forms/user-interface/button.md#handling-button-clicks)」 (ボタン クリックの処理) を参照してください。
 
@@ -48,7 +48,7 @@ ms.locfileid: "61372975"
 
     このコードは、[`Clicked`](xref:Xamarin.Forms.Button.Clicked) イベントを次の手順で作成する `OnButtonClicked` という名前のイベント ハンドラーに設定します。
 
-1. **Solution Pad** の **ButtonTutorial** プロジェクトで **[MainPage.xaml]** を展開し、**[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、**MainPage.xaml.cs** で、`OnButtonClicked` イベント ハンドラーをクラスに追加します。
+1. **Solution Pad** の **ButtonTutorial** プロジェクトで **[MainPage.xaml]** を展開し、 **[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、**MainPage.xaml.cs** で、`OnButtonClicked` イベント ハンドラーをクラスに追加します。
 
     ```csharp
     void OnButtonClicked(object sender, EventArgs e)
@@ -62,8 +62,8 @@ ms.locfileid: "61372975"
     > [!NOTE]
     > `Clicked` イベントのほかに、`Button` は [`Pressed`](xref:Xamarin.Forms.Button.Pressed) イベントと [`Released`](xref:Xamarin.Forms.Button.Released) イベントも定義します。 詳細については、「[Xamarin.Forms Button](~/xamarin-forms/user-interface/button.md)」ガイドの「[Pressing and releasing the button](~/xamarin-forms/user-interface/button.md#pressing-and-releasing-the-button)」 (ボタンを押して放す) を参照してください。
 
-1. Visual Studio for Mac ツール バーで、**[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。 [`Button`](xref:Xamarin.Forms.Button) をクリックして、表示されるテキストが変わっていることを確認します。
+1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。 [`Button`](xref:Xamarin.Forms.Button) をクリックして、表示されるテキストが変わっていることを確認します。
 
-    [![iOS と Android で、クリックを受信すると変わる Button テキストのスクリーンショット](../images/handle-button-click.png "ボタン クリックの処理")](../images/handle-button-click-large.png#lightbox "ボタン クリックの処理")
+    [![iOS と Android で、クリックを受信すると変わる Button テキストのスクリーンショット](../images/handle-button-click.png "ボタン クリックを処理する")](../images/handle-button-click-large.png#lightbox "ボタン クリックを処理する")
 
     ボタン クリックの処理の詳細については、「[Xamarin.Forms Button](~/xamarin-forms/user-interface/button.md)」ガイドの「[Handling button clicks](~/xamarin-forms/user-interface/button.md#handling-button-clicks)」 (ボタン クリックの処理) を参照してください。

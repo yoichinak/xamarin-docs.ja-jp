@@ -22,7 +22,7 @@ ms.locfileid: "75488960"
 操作バーには、Android 4.0 でタブ付きインターフェイスを追加するためのサポートが含まれています。
 次のスクリーンショットは、このようなインターフェイスの例を示しています。
 
-[エミュレーターで実行されているアプリのスクリーンショットを ![します。2つのタブが表示されます。](action-bar-images/25-actionbartabs.png)](action-bar-images/25-actionbartabs.png#lightbox)
+[![エミュレーターで実行されているアプリのスクリーンショットを します。2つのタブが表示されます。](action-bar-images/25-actionbartabs.png)](action-bar-images/25-actionbartabs.png#lightbox)
 
 操作バーでタブを作成するには、まず、`NavigationMode` プロパティを [サポート] タブに設定する必要があります。 Android 4 では、`ActionBar` プロパティを Activity クラスで使用できます。このプロパティを使用して、次のように `NavigationMode` を設定できます。
 

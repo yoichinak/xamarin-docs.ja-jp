@@ -6,8 +6,6 @@
       items:
         - name: Xamarin.Forms とは
           href: ~/get-started/what-is-xamarin-forms.md
-        - name: 必要条件
-          href: ~/get-started/requirements.md
         - name: インストール
           href: ~/get-started/installation/index.md
           items:
@@ -16,15 +14,19 @@
               items:
                 - name: Xamarin のインストールのプレビュー (Windows)
                   href: ~/get-started/installation/windows-preview.md
+                - name: Visual Studio からの Xamarin のアンインストール
+                  href: ~/get-started/installation/uninstalling-xamarin.md
             - name: Visual Studio for Mac のインストール
               href: /visualstudio/mac/installation/
               items:
                 - name: Xamarin のインストールのプレビュー (Mac)
                   href: /visualstudio/mac/update/
+                - name: Visual Studio for Mac のアンインストール
+                  href: /visualstudio/mac/uninstall
             - name: Xamarin ファイアウォールの構成手順
               href: ~/get-started/installation/firewall.md
-            - name: Xamarin のアンインストール
-              href: ~/get-started/installation/uninstalling-xamarin.md
+        - name: サポートされているプラットフォーム
+          href: ~/get-started/supported-platforms.md
         - name: 最初のアプリ
           href: ~/get-started/first-app/index.md
         - name: クイックスタート
@@ -898,6 +900,8 @@
           href: deploy-test/index.yml
         - name: パフォーマンスの向上
           href: deploy-test/performance.md
+        - name: ホット再起動
+          href: deploy-test/hot-restart.md
         - name: Visual Studio App Center を使用したテストの自動化
           href: /appcenter/test-cloud/uitest/get-started-xamarin-forms
         - name: iOS アプリの発行

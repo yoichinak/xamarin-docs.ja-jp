@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 933edb1c0681f3fc9cbb8d81aa3091a65c4346e3
-ms.sourcegitcommit: 3e94c6d2b6d6a70c94601e7bf922d62c4a6c7308
+ms.openlocfilehash: 8640800717a88e800503e93c339eeb080707374e
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76031355"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725432"
 ---
 # <a name="web-views-in-xamarinios"></a>Xamarin. iOS の Web ビュー
 
@@ -22,8 +22,8 @@ iOS 11 では、`WKWebView` と `SFSafariViewController`の両方に新しい変
 
 ## <a name="wkwebview"></a>WKWebView
 
-`WKWebView` は、iOS 8 で導入されました。これにより、アプリ開発者は、mobile Safari のような web 閲覧インターフェイスを実装できます。 これは、`WKWebView`、mobile Safari で使用されるのと同じエンジンである Nitro Javascript エンジンを使用していることが原因です。 `WKWebView` は、[パフォーマンスの向上](http://blog.initlabs.com/post/100113463211/wkwebview-vs-uiwebview)、ユーザーにとって便利なジェスチャの構築、web ページとアプリ間の相互作用の容易さによって、可能な限り uiwebview で常に使用する必要があります。
-  
+`WKWebView` は、iOS 8 で導入されました。これにより、アプリ開発者は、mobile Safari のような web 閲覧インターフェイスを実装できます。 これは、`WKWebView`、mobile Safari で使用されるのと同じエンジンである Nitro Javascript エンジンを使用していることが原因です。 `WKWebView` は、パフォーマンスの向上、ユーザーにとって便利なジェスチャの構築、web ページとアプリ間の相互作用の容易さによって、可能な限り UIWebView で常に使用する必要があります。
+
 `WKWebView` は、UIWebView とほぼ同じ方法でアプリに追加できます。ただし、開発者は UI/UX と機能をはるかに細かく制御できます。 Web ビューオブジェクトを作成して表示すると、要求されたページが表示されます。ただし、ビューの表示方法、ユーザーが移動する方法、およびユーザーがビューを終了する方法を制御できます。  
 
 次のコードを使用して、Xamarin. iOS アプリで `WKWebView` を起動できます。
@@ -49,7 +49,7 @@ webView.LoadRequest(request);
 
  `SFSafariViewController` は、基本的には "ミニ safari" で、アプリに埋め込むことができます。 WKWebView と同様に、同じ Nitro Javascript エンジンを使用しますが、オートフィル、閲覧者、モバイル Safari で cookie とデータを共有する機能など、さまざまな Safari 機能も用意されています。 ユーザーと `SFSafariViewController` の間の対話は、アプリにはアクセスできません。 アプリは、既定の Safari 機能のいずれにもアクセスできません。
 
-また、既定では、 **[完了]** ボタンが実装されています。これにより、ユーザーはアプリに簡単に戻ることができ、ナビゲーションボタンを転送および戻ることができ、ユーザーは web ページのスタック内を移動できます。 また、ユーザーには、予期された web ページ上にあることを安心して提供するアドレスバーを提供します。 アドレスバーでは、ユーザーが url を変更することはできません。 
+また、既定では、 **[完了]** ボタンが実装されています。これにより、ユーザーはアプリに簡単に戻ることができ、ナビゲーションボタンを転送および戻ることができ、ユーザーは web ページのスタック内を移動できます。 また、ユーザーには、予期された web ページ上にあることを安心して提供するアドレスバーを提供します。 アドレスバーでは、ユーザーが url を変更することはできません。
 
 これらの実装は変更できないため、`SFSafariViewController` は、アプリがカスタマイズなしで web ページを表示する場合に、既定のブラウザーとして使用するのが理想的です。
 
@@ -93,11 +93,11 @@ IOS 9 では、アプリトランスポートセキュリティ (または*ATS* 
 
 > [!IMPORTANT]
 > `UIWebView` は非推奨とされます。 2020年4月の時点では、このコントロールを使用するアプリは[App Store には受け入れられず、既存のアプリは2020年12月までに削除する必要があり](https://developer.apple.com/news/?id=12232019b)ます。
-> 
+>
 > [Apple の `UIWebView` ドキュメント](https://developer.apple.com/documentation/uikit/uiwebview)では、アプリで[`WKWebView`](#wkwebview)を使用することを提案します。
 
 > [!IMPORTANT]
-> Xamarin. Forms を使用しているときに `UIWebView` の非推奨の警告 (ITMS-90809) に関するリソースを探している場合は、 [xamarin. Forms WebView](~/xamarin-forms/user-interface/webview.md#uiwebview-deprecation-and-app-store-rejection-itms-90809)のドキュメントを参照してください。
+> Xamarin.Forms の使用時に `UIWebView` の非推奨の警告 (ITMS-90809) についてリソースを探している場合は、[Xamarin.Forms WebView](~/xamarin-forms/user-interface/webview.md#uiwebview-deprecation-and-app-store-rejection-itms-90809) のドキュメントを参照してください。
 
 `UIWebView` は、アプリに web コンテンツを提供するための Apple の従来の方法です。 IOS 2.0 でリリースされ、8.0 の時点で非推奨とされています。
 

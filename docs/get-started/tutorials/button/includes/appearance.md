@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 1d2bed830af97ce1ff329a5396a415247a43189d
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "61372974"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -24,7 +24,7 @@ ms.locfileid: "61372974"
 
     このコードでは、[`Button`](xref:Xamarin.Forms.Button) の外観を変更するプロパティを設定します。 [`TextColor`](xref:Xamarin.Forms.Button.TextColor) プロパティでは `Button` テキストの色を設定し、[`BackgroundColor`](xref:Xamarin.Forms.VisualElement.BackgroundColor) プロパティではテキストの背景色を設定します。 [`BorderColor`](xref:Xamarin.Forms.Button.BorderColor) プロパティでは、`Button` の周りの領域の色を設定し、[`BorderWidth`](xref:Xamarin.Forms.Button.BorderWidth) プロパティでは罫線の幅を設定します。 既定では、`Button` は四角形ですが、[`CornerRadius`](xref:Xamarin.Forms.Button.CornerRadius) プロパティを適切な値に設定することで、角を丸くすることができます。 また、`Button` のサイズは、その [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) および [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) プロパティを設定して変更します。
 
-1. Visual Studio ツール バーで、**[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。 [`Button`](xref:Xamarin.Forms.Button) の外観が変更されたことを確認します。
+1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。 [`Button`](xref:Xamarin.Forms.Button) の外観が変更されたことを確認します。
 
     [![iOS および Android での、外観が変更された Button のスクリーンショット](../images/change-button-appearance.png "外観が変更された Button")](../images/change-button-appearance-large.png#lightbox "外観が変更された Button")
 
@@ -48,7 +48,7 @@ ms.locfileid: "61372974"
 
     このコードでは、[`Button`](xref:Xamarin.Forms.Button) の外観を変更するプロパティを設定します。 [`TextColor`](xref:Xamarin.Forms.Button.TextColor) プロパティでは `Button` テキストの色を設定し、[`BackgroundColor`](xref:Xamarin.Forms.VisualElement.BackgroundColor) プロパティではテキストの背景色を設定します。 [`BorderColor`](xref:Xamarin.Forms.Button.BorderColor) プロパティでは、`Button` の周りの領域の色を設定し、[`BorderWidth`](xref:Xamarin.Forms.Button.BorderWidth) プロパティでは罫線の幅を設定します。 既定では、`Button` は四角形ですが、[`CornerRadius`](xref:Xamarin.Forms.Button.CornerRadius) プロパティを適切な値に設定することで、角を丸くすることができます。 また、`Button` のサイズは、その [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) および [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) プロパティを設定して変更します。
 
-1. Visual Studio for Mac ツール バーで、**[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。 [`Button`](xref:Xamarin.Forms.Button) の外観が変更されたことを確認します。
+1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。 [`Button`](xref:Xamarin.Forms.Button) の外観が変更されたことを確認します。
 
     [![iOS および Android での、外観が変更された Button のスクリーンショット](../images/change-button-appearance.png "外観が変更された Button")](../images/change-button-appearance-large.png#lightbox "外観が変更された Button")
 

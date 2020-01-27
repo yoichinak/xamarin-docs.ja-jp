@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: c826ee87c006b05322af8c9312bdf3120df8b357
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "61375986"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -31,7 +31,7 @@ ms.locfileid: "61375986"
 
     このコードでは、[`Grid`](xref:Xamarin.Forms.Grid) の列と行を定義し、[`Label`](xref:Xamarin.Forms.Label) インスタンスを特定の列と行に配置します。 最初の `Label` では [`ColumnSpan`](xref:Xamarin.Forms.Grid.ColumnSpanProperty) 添付プロパティを設定し、そのテキストが複数の列にまたがるようにします。 `ColumnSpan` プロパティは 2 に設定されます。これは、`Label` がまたがる列の数を表します。 2 番目の `Label` では [`RowSpan`](xref:Xamarin.Forms.Grid.RowSpanProperty) 添付プロパティを設定し、そのテキストが複数の行にまたがるようにします。 `RowSpan` プロパティは 2 に設定されます。これは、`Label` がまたがる行の数を表します。
 
-1. Visual Studio ツール バーで、**[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS リモート シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
+1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS リモート シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
     [![iOS と Android での、複数の列と行にまたがるコンテンツがある Grid のスクリーンショット](../images/span-columns-rows.png "列と行にまたがるコンテンツがある Grid")](../images/span-columns-rows-large.png#lightbox "列と行にまたがるコンテンツがある Grid")
 
@@ -62,7 +62,7 @@ ms.locfileid: "61375986"
 
     このコードでは、[`Grid`](xref:Xamarin.Forms.Grid) の列と行を定義し、[`Label`](xref:Xamarin.Forms.Label) インスタンスを特定の列と行に配置します。 最初の `Label` では [`ColumnSpan`](xref:Xamarin.Forms.Grid.ColumnSpanProperty) 添付プロパティを設定し、そのテキストが複数の列にまたがるようにします。 `ColumnSpan` プロパティは 2 に設定されます。これは、`Label` がまたがる列の数を表します。 2 番目の `Label` では [`RowSpan`](xref:Xamarin.Forms.Grid.RowSpanProperty) 添付プロパティを設定し、そのテキストが複数の行にまたがるようにします。 `RowSpan` プロパティは 2 に設定されます。これは、`Label` がまたがる行の数を表します。
 
-1. Visual Studio for Mac ツール バーで、**[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
+1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
     [![iOS と Android での、複数の列と行にまたがるコンテンツがある Grid のスクリーンショット](../images/span-columns-rows.png "列と行にまたがるコンテンツがある Grid")](../images/span-columns-rows-large.png#lightbox "列と行にまたがるコンテンツがある Grid")
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 724a79e618321f97257718bf56dd1fdd18f73563
-ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
+ms.openlocfilehash: 9aaecb8c63ff28111097dce81954f523b4c7731b
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/30/2019
-ms.locfileid: "75545611"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725213"
 ---
 # <a name="lines-and-stroke-caps"></a>線とストローク キャップ
 
@@ -38,7 +38,7 @@ canvas.DrawLine (x0, y0, x1, y1, paint);
 - `Square`
 - `Round`
 
-サンプル プログラムでこれらを最適に示します。 **SkiaSharp の線とパス**のセクション、 [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)というタイトルでページとプログラムの開始**ストローク キャップ**に基づいて、[ `StrokeCapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs)クラス。 このページを定義、`PaintSurface`の 3 つのメンバーをループ処理するイベント ハンドラー、`SKStrokeCap`列挙体、列挙型メンバーの両方の名前を表示して、そのストローク キャップを使用して線を描画します。
+サンプル プログラムでこれらを最適に示します。 **SkiaSharp の線とパス**のセクション、 [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)というタイトルでページとプログラムの開始**ストローク キャップ**に基づいて、[ `StrokeCapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/StrokeCapsPage.cs)クラス。 このページを定義、`PaintSurface`の 3 つのメンバーをループ処理するイベント ハンドラー、`SKStrokeCap`列挙体、列挙型メンバーの両方の名前を表示して、そのストローク キャップを使用して線を描画します。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -110,7 +110,7 @@ DrawPoints (SKPointMode mode, points, paint)
 - `Lines` ポイントの各ペアを接続するには
 - `Polygon` すべての連続するポイントを接続するには
 
-**複数行**ページは、この方法を示します。 [ **MultipleLinesPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/MultipleLinesPage.xaml)ファイルでは、2 つのインスタンス化します`Picker`できるビューのメンバーの選択、`SKPointMode`列挙体のメンバーと、`SKStrokeCap`列挙体。
+**複数行**ページは、この方法を示します。 [ **MultipleLinesPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/MultipleLinesPage.xaml)ファイルでは、2 つのインスタンス化します`Picker`できるビューのメンバーの選択、`SKPointMode`列挙体のメンバーと、`SKStrokeCap`列挙体。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

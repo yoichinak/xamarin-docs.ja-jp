@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 1d49be1f4339b658e8202d4091b9a12b45d7b507
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 7cf18934c70acf59213a697ab57b6c5e308e7b2a
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031917"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725222"
 ---
 # <a name="changes-to-storekit-in-ios-6"></a>iOS 6 の StoreKit の変更点
 
@@ -21,11 +21,11 @@ _iOS 6 では、ストアキット API に2つの変更が導入されました�
 IOS6 のストアキットに対する主な変更は、次の2つの新機能です。
 
 - アプリ**内コンテンツ表示 & 購入**-ユーザーはアプリを離れることなく、アプリ、音楽、ブック、およびその他の iTunes コンテンツを購入してダウンロードできます。 また、独自のアプリにリンクして購入を促進したり、レビューや評価を促進したりすることもできます。
-- **アプリ内購入ホストコンテンツ**-Apple は、アプリ内購入製品に関連付けられているコンテンツを保存して配信します。これにより、ファイルをホストするための個別のサーバーが不要になり、バックグラウンドダウンロードが自動的にサポートされ、作成が可能になります。コードが少なくなります。
+- **アプリ内購入ホストコンテンツ**-Apple は、アプリ内購入製品に関連付けられているコンテンツを格納して配信します。これにより、ファイルをホストするための個別のサーバーが不要になり、バックグラウンドダウンロードが自動的にサポートされ、コードの記述が少なくなります。
 
 StoreKit Api の詳細については、[アプリ内購入](~/ios/platform/in-app-purchasing/index.md)ガイドを参照してください。
 
-## <a name="requirements"></a>［要件］
+## <a name="requirements"></a>要件
 
 このドキュメントで説明されているストアキットの機能には、iOS 6 と Xcode 6.0 4.5 が必要です。
 
@@ -60,7 +60,7 @@ IOS のアプリ内購入の新機能により、ユーザーはアプリ内か�
 1. ビューコントローラーの `Finished` イベントにハンドラーを割り当てます。これにより、ビューコントローラーが破棄されます。 このイベントは、ユーザーが [キャンセル] を押したときに呼び出されます。それ以外の場合は、ビューコントローラー内のトランザクションを終了します。
 1. `StoreProductParameters` と完了ハンドラーを渡す `LoadProduct` メソッドを呼び出します。 完了ハンドラーは、製品要求が正常に行われたことを確認し、存在する場合は、`SKProductViewController` モーダルであることを示します。 製品を取得できない場合は、適切なエラー処理を追加する必要があります。
 
-### <a name="example"></a>例
+### <a name="example"></a>使用例
 
 この記事の*Storekit*サンプルコードの*productview*プロジェクトは、任意の製品の Apple ID を受け取り、`SKStoreProductViewController`を表示する `Buy` メソッドを実装しています。 次のコードは、特定の Apple ID の製品情報を表示します。
 
@@ -100,7 +100,7 @@ void Buy (int productId)
 if (UIDevice.CurrentDevice.CheckSystemVersion (6,0)) {
     // do iOS6+ stuff, using SKStoreProductViewController as shown above
 } else {
-    // don't do stuff requiring iOS 6.0, use the old syntax 
+    // don't do stuff requiring iOS 6.0, use the old syntax
     // (which will take the user out of your app)
     var nsurl = new NSUrl("http://itunes.apple.com/us/app/angry-birds/id343200656?mt=8");
     UIApplication.SharedApplication.OpenUrl (nsurl);
@@ -131,7 +131,7 @@ Apple の開発者ポータルでストアキットについてお読みにな�
 
 ### <a name="search-api"></a>API の検索
 
-Apple は、App Store、iTunes、および iBookstore 内のすべての製品に対してクエリを実行するための動的検索 API を提供しています。 Search API へのアクセス方法に関する情報は、 [Apple の関連リソース](https://www.apple.com/itunes/affiliates/resources/documentation/itunes-store-web-service-search-api.html)に記載されています。ただし、api は、登録された関連会社ではなくすべてのユーザーに公開されます。 結果の JSON を解析して、`SKStoreProductViewController`で使用する Apple ID である `trackId` を検出できます。
+Apple は、App Store、iTunes、および iBookstore 内のすべての製品に対してクエリを実行するための動的検索 API を提供しています。 Search API へのアクセス方法に関する情報は、Apple の関連リソースに記載されています。ただし、API は、登録された関連会社ではなくすべてのユーザーに公開されます。 結果の JSON を解析して、`SKStoreProductViewController`で使用する Apple ID である `trackId` を検出できます。
 
 結果には、アプリで製品をレンダリングするために使用できる表示情報やアートワークの Url など、他のメタデータも含まれます。
 
@@ -142,7 +142,7 @@ Apple は、App Store、iTunes、および iBookstore 内のすべての製品�
 
 ### <a name="enterprise-partner-feed"></a>エンタープライズパートナーフィード
 
-Apple は、承認されたパートナーに、すべての製品の完全なデータダンプを、ダウンロード可能なデータベース準備済みフラットファイルの形式で提供します。 [エンタープライズパートナーフィード](https://www.apple.com/itunes/affiliates/resources/documentation/itunes-enterprise-partner-feed.html)へのアクセスが必要な場合は、製品の Apple ID がそのデータセットに含まれています。
+Apple は、承認されたパートナーに、すべての製品の完全なデータダンプを、ダウンロード可能なデータベース準備済みフラットファイルの形式で提供します。 エンタープライズパートナーフィードへのアクセスが必要な場合は、製品の Apple ID がそのデータセットに含まれています。
 
 エンタープライズパートナーフィードの多くのユーザーは、製品売上に対して歩合を獲得できる[関連プログラム](https://www.apple.com/itunes/affiliates)のメンバーです。 `SKStoreProductViewController` は、(書き込み時に) 関連 Id をサポートしていません。
 
@@ -170,8 +170,8 @@ Apple ID は**496963922**です。
 アプリ内購入が、ダウンロード可能なコンテンツ (書籍やその他のメディア、ゲームレベルのアートと構成、その他の大きなファイル) で構成されている場合、これらのファイルは web サーバーでホストされるため、アプリケーションは、ご. IOS 6 以降では、Apple はサーバー上でファイルをホストするため、個別のサーバーを必要としません。 この機能は、非消費製品 (使用不可またはサブスクリプションではない) でのみ利用できます。 Apple のホスティングサービスを使用する利点は次のとおりです。
 
 - ホスティング & 帯域幅のコストを節約します。
-- 現在使用している任意のサーバーホストよりも拡張性が高いと思います。 
-- サーバー側の処理を構築する必要がないため、記述するコードが少なくて済みます。 
+- 現在使用している任意のサーバーホストよりも拡張性が高いと思います。
+- サーバー側の処理を構築する必要がないため、記述するコードが少なくて済みます。
 - バックグラウンドダウンロードが実装されています。
 
 注: iOS シミュレーターでのホスト型アプリ内購入コンテンツのテストはサポートされていないため、実際のデバイスでテストする必要があります。
@@ -269,7 +269,8 @@ Apple にアップロードするコンテンツファイルは、次の制限�
 
 ![](changes-to-storekit-images/image13.png "Choose Archiven")
 
-次に示すように、コンテンツパッケージはアーカイブに表示されます。 アーカイブの種類とアイコンこの行は、**アプリ内購入コンテンツアーカイブ**です。 **[検証]** をクリックします。 アップロードを実際に実行しなくても、コンテンツパッケージにエラーがないかどうかを確認します。
+次に示すように、コンテンツパッケージはアーカイブに表示されます。
+アーカイブの種類とアイコンこの行は、**アプリ内購入コンテンツアーカイブ**です。 **[検証]** をクリックします。 アップロードを実際に実行しなくても、コンテンツパッケージにエラーがないかどうかを確認します。
 
 [![](changes-to-storekit-images/image14.png "Validate the package")](changes-to-storekit-images/image14.png#lightbox)
 
@@ -469,7 +470,7 @@ public void SaveDownload (SKDownload download)
     // targetfolder will be "/Documents/com.xamarin.storekitdoc.montouchimages/" or something like that
     if (!System.IO.Directory.Exists (targetfolder))
         System.IO.Directory.CreateDirectory (targetfolder);
-    foreach (var file in System.IO.Directory.EnumerateFiles 
+    foreach (var file in System.IO.Directory.EnumerateFiles
              (System.IO.Path.Combine(download.ContentUrl.Path, "Contents"))) { // Contents directory is the default in .PKG files
         var fileName = file.Substring (file.LastIndexOf ("/") + 1);
         var newFilePath = System.IO.Path.Combine(targetfolder, fileName);
@@ -514,7 +515,7 @@ public void SaveDownload (SKDownload download)
 
 Apple の iCloud バックアップのガイドラインでは、サーバーから簡単に復元できる非ユーザーコンテンツ (iCloud 記憶域を不必要に使用するため) をバックアップしないようにすることを推奨して*い*ます。 Backup 属性の設定の詳細については、[ファイルシステム](~/ios/app-fundamentals/file-system.md)のドキュメントを参照してください。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 この記事では、iOS6 のストアキットの2つの新機能を紹介しました。アプリ内から iTunes とその他のコンテンツを購入し、Apple のサーバーを利用して独自のアプリ内購入をホストします。 この概要については、既存[のアプリ内購入](~/ios/platform/in-app-purchasing/index.md)に関するドキュメントと共に、ストアキットの機能の実装の詳細について説明します。
 
@@ -524,7 +525,6 @@ Apple の iCloud バックアップのガイドラインでは、サーバーか
 - [アプリ内購入](~/ios/platform/in-app-purchasing/index.md)
 - [StoreKit フレームワークリファレンス](https://developer.apple.com/library/prerelease/ios/#documentation/StoreKit/Reference/StoreKit_Collection/_index.html)
 - [SKStoreProductViewController クラスのリファレンス](https://developer.apple.com/library/ios/documentation/StoreKit/Reference/SKITunesProductViewController_Ref/SKStoreProductViewController.html)
-- [iTunes Search API リファレンス](https://www.apple.com/itunes/affiliates/resources/documentation/itunes-store-web-service-search-api.html)
 - [SKDownload](https://developer.apple.com/library/prerelease/ios/#documentation/StoreKit/Reference/SKDownload_Ref/Introduction/Introduction.html)
 - [SKPaymentQueue](https://developer.apple.com/library/prerelease/ios/documentation/StoreKit/Reference/SKPaymentQueue_Class/Reference/Reference.html#/apple_ref/occ/instm/SKPaymentQueue/cancelDownloads:)
 - [SKProduct](https://developer.apple.com/library/prerelease/ios/documentation/StoreKit/Reference/SKProduct_Reference/Reference/Reference.html#/apple_ref/occ/instp/SKProduct/downloadable)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 1339a6c2909c7ba62592d66dcdf08bcfd2e668a4
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5b9dfb354f33f67c73b415f8c109ebdc27dcdb6d
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030636"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725387"
 ---
 # <a name="additional-tvos-10-frameworks-changes"></a>追加の tvOS 10 フレームワークの変更
 
@@ -55,7 +55,7 @@ tvOS 10 には、コアデータフレームワークに対する次の機能強
 
 tvOS 10 には、コアグラフィックスフレームワークに対する次の機能強化が含まれています。
 
-- 新しい[Cgcolorterref](https://developer.apple.com/reference/coregraphics/cgcolorconverterref)クラスを使用して、一連のカラー変換を実行できます。
+- 新しい Cgcolorterref クラスを使用して、一連のカラー変換を実行できます。
 
 <a name="Core-Image-Enhancements" />
 
@@ -65,7 +65,7 @@ tvOS 10 では、コアイメージフレームワークに対して次の機能
 
 - [Cifilter](https://developer.apple.com/reference/coreimage/cifilter)クラスの `ImageWithExtent` メソッドを使用して、フィルター操作にカスタム処理を挿入できます。 コアイメージは、出力または表示のためにイメージを処理するときに、フィルター間で指定されたコールバックを呼び出します。
 - これで、アプリは、処理の前後に色空間を変換することによって、コアイメージコンテキストの作業色空間の外にある色空間でイメージを処理できるようになりました。
-- `UIImageView` オブジェクトの `UIImage` レンダリング (コアイメージイメージストアによってサポートされる場合) に対して、いくつかのレンダリングパフォーマンスが向上しています。 
+- `UIImageView` オブジェクトの `UIImage` レンダリング (コアイメージイメージストアによってサポートされる場合) に対して、いくつかのレンダリングパフォーマンスが向上しています。
 - ワイド色のタグが付けられた `UIImage` オブジェクトは、ワイド色をサポートする iOS デバイス上の `UIImageView` オブジェクトで、幅の広い色で表示されます。
 - コアイメージカーネルコードは、特定のピクセル出力形式を要求できるようになりました。
 
@@ -85,7 +85,7 @@ TvOS 10 の Foundation framework には、次の機能強化が加えられて�
 
 - 新しい[Nsdateinterval](https://developer.apple.com/reference/foundation/nsdateinterval)クラスを使用して、間隔の比較と間隔の交差部分のテストを行うために、期間などの日付と時間の間隔を計算します。
 - ローカル情報と使用可能な表示形式を取得するために、いくつかの新しいプロパティが[nslocal](https://developer.apple.com/reference/foundation/nslocale)クラスに追加されました。
-- 新しい[Nsmeasurement](https://developer.apple.com/reference/foundation/nsmeasurement)クラスを使用して異なる測定単位 (UOM) 間で変換するか、異なる uoms の値に対して計算を実行します。
+- 新しい [Nsmeasurement](https://developer.apple.com/reference/foundation/nsmeasurement) クラスを使用して異なる測定単位 (UOM) 間で変換するか、異なる uoms の値に対して計算を実行します。
 - 新しい[NSMeasurementFormatter](https://developer.apple.com/reference/foundation/nsmeasurementformatter)クラスを使用して、ローカライズされた測定形式をエンドユーザーに表示するように書式設定します。
 - 特定の UOMs を表すために、新しい[Nsunit](https://developer.apple.com/reference/foundation/nsunit)クラスと[nsunit](https://developer.apple.com/reference/foundation/nsdimension)クラスを使用します。
 
@@ -159,7 +159,7 @@ TvOS 10 の SceneKit フレームワークには、次の機能強化が行わ�
 - SceneKit は、すべてのシェーダーの種類の線形 RGB カラー空間で色コンポーネントの値を解釈します。
 - テクスチャイメージでカラープロファイル情報の読み取りと調整を SceneKit するため、すべてのイメージに対してアセットカタログを使用して、この情報が確実に提供されるようにします。
 - アプリの `Info.plist`で `SCNDisableLinearSpaceRendering` および `SCNDisableWideGamut` キーを指定することによって、線形色空間のレンダリングとワイドカラーの両方を無効にできます。
-- 新しい[SCNGeometryPrimitiveTypePolygon](https://developer.apple.com/reference/scenekit/1772322-scenekit_enumerations/scngeometryprimitivetype/scngeometryprimitivetypepolygon)クラスで geometry を指定するために、任意の多角形の霊長類 (ファイルから読み込まれるか、プログラムによって生成される) を構築します。
+- 新しい[SCNGeometryPrimitiveTypePolygon](https://developer.apple.com/documentation/scenekit/scngeometryprimitivetype/scngeometryprimitivetypepolygon)クラスで geometry を指定するために、任意の多角形の霊長類 (ファイルから読み込まれるか、プログラムによって生成される) を構築します。
 
 <a name="SpriteKit-Enhancements" />
 
@@ -181,7 +181,7 @@ TvOS 10 の UIKit フレームワークには、次の機能強化が加えら�
 - フォーカス API は、`UIViews`に加えて非ビューアイテムのフォーカスをサポートするように強化されています。 フォーカスをサポートする項目は、`IUIFocusItem` インターフェイスを実装_する必要があり_ます。
 - 新しい `UIGraphicsRender` クラスは、UIKit レンダリングまたはコアグラフィックスからビットマップや Pdf を作成するオブジェクト指向のメソッドを提供し、非推奨の `UIGraphicsBeginImageContext` 方法を置き換えます。
 - `UIUserInterfaceStyle` クラスが追加され、現在アクティブになっているユーザーインターフェイスのテーマ (ダークまたはライト) が特定されました。
-- 新しい完全対話型のオブジェクトベースの中断可能なアニメーションのサポートが追加され、van がジェスチャにリンクされました。 Apple の[Uiviewanimating プロトコルのリファレンス](https://developer.apple.com/reference/uikit/uiviewanimating)、 [uiviewpropertyアニメータークラスリファレンス](https://developer.apple.com/reference/uikit/uiviewpropertyanimator)、 [UITimingCurveProvider Protocol reference](https://developer.apple.com/reference/uikit/uitimingcurveprovider)、 [UICubicTimingParameters クラス参照](https://developer.apple.com/reference/uikit/uicubictimingparameters) [、](https://developer.apple.com/reference/uikit/uispringtimingparameters)詳細については、UISpringTimingParameter クラス参照を参照してください。
+- 新しい完全対話型のオブジェクトベースの中断可能なアニメーションのサポートが追加され、van がジェスチャにリンクされました。 詳細については、「Apple の[Uiviewanimating プロトコルのリファレンス](https://developer.apple.com/reference/uikit/uiviewanimating)」、「 [uiviewpropertyアニメータークラスリファレンス](https://developer.apple.com/reference/uikit/uiviewpropertyanimator)」、「 [UITimingCurveProvider protocol Reference](https://developer.apple.com/reference/uikit/uitimingcurveprovider)」、「 [UICubicTimingParameters Class](https://developer.apple.com/reference/uikit/uicubictimingparameters) reference」、および「 [UISpringTimingParameter class](https://developer.apple.com/reference/uikit/uispringtimingparameters) reference」を参照してください。
 - 新しい `UIPreviewInteraction` と `UIPreviewInteractionDelegate` により、アプリは、ピーク操作と pop 操作のためのカスタムインターフェイスを提供できます。
 - 新しい `UIAccessibilityCustomRotor` クラスを使用すると、アプリは、ボイスオーバーなどの補助的なテクノロジに対して、コンテキスト固有のカスタム機能を提供できます。
 - AssistiveTouch が有効になっているかどうかを判断するには、`UIAccessibilityIsAssistiveTouchRunning` と `UIAccessibilityAssistiveTouchStatusDidChangeNotification` 記号を使用します。

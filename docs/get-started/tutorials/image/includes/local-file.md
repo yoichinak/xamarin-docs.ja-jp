@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 93ee0681adcc63fe05b4be88ff67f0aeee3e03ca
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "61384584"
 ---
 イメージ ファイルをプラットフォーム プロジェクトに追加したり、Xamarin.Forms 共有コードから参照したりすることができます。 このイメージ配布方法は、イメージがプラットフォーム固有の場合に必要になります。例えば、異なるプラットフォームで異なる解像度を使用する場合や、わずかに異なるデザインを使用する場合などです。
@@ -18,7 +18,7 @@ ms.locfileid: "61384584"
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. **ソリューション エクスプローラー**の  **ImageTutorial.iOS** プロジェクトで、**[資産カタログ]** を展開し、**[資産]** をダブルクリックして開きます。 次に、**[Assets.xcassets]** タブで **[プラス]** ボタンをクリックし、**[イメージ セットの追加]** を選択します。
+1. **ソリューション エクスプローラー**の  **ImageTutorial.iOS** プロジェクトで、 **[資産カタログ]** を展開し、 **[資産]** をダブルクリックして開きます。 次に、 **[Assets.xcassets]** タブで **[プラス]** ボタンをクリックし、 **[イメージ セットの追加]** を選択します。
 
     ![Visual Studio で資産カタログに新しいイメージ セットを作成するスクリーンショット](../images/vs/new-image-set.png "新しい資産カタログのイメージ セット")
 
@@ -36,7 +36,7 @@ ms.locfileid: "61384584"
 
     **[Assets.xcassets]** タブを保存して閉じます。
 
-1. **ソリューション エクスプローラー**の **ImageTutorial.Android** プロジェクトで、**[リソース]** フォルダーを展開します。 次に、**XamarinLogo.png** をファイル システムから、 **ドローアブル** フォルダーにドラッグします。
+1. **ソリューション エクスプローラー**の **ImageTutorial.Android** プロジェクトで、 **[リソース]** フォルダーを展開します。 次に、**XamarinLogo.png** をファイル システムから、 **ドローアブル** フォルダーにドラッグします。
 
     ![Visual Studio での Android リソースとしてのイメージ ファイルのスクリーンショット](../images/vs/android-resource.png "Android リソース フォルダー内のローカル イメージ ファイル")
 
@@ -56,7 +56,7 @@ ms.locfileid: "61384584"
     > [!NOTE]
     > iOS 上の PNG イメージの場合、[`Source`](xref:Xamarin.Forms.Image.Source) プロパティで指定するファイル名から **.png** 拡張子を省略できます。 その他のイメージ形式の場合は、拡張子が必要です。
 
-1. Visual Studio for Mac ツール バーで、**[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
+1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
     [![iOS および Android でのローカル イメージを表示するイメージ ビューのスクリーンショット](../images/local-file.png "ローカル イメージを表示するイメージ ビュー")](../images/local-file-large.png#lightbox "ローカル イメージを表示するイメージ ビュー")
 
@@ -64,7 +64,7 @@ ms.locfileid: "61384584"
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. **Solution Pad** の**ImageTutorial.iOS** プロジェクトで、**[Assets.xcassets]** をダブルクリックして開きます。 次に、**[資産リスト]** で右クリックして **[新しいイメージ セット]** を選択します。
+1. **Solution Pad** の**ImageTutorial.iOS** プロジェクトで、 **[Assets.xcassets]** をダブルクリックして開きます。 次に、 **[資産リスト]** で右クリックして **[新しいイメージ セット]** を選択します。
 
     ![Visual Studio for Mac で資産カタログに新しいイメージ セットを作成するスクリーンショット](../images/vsmac/new-image-set.png "新しい資産カタログのイメージ セット")
 
@@ -80,7 +80,7 @@ ms.locfileid: "61384584"
 
     ![Visual Studio for Mac での名前が変更されたイメージ セットのスクリーンショット](../images/vsmac/rename-image-set.png "名前が変更されたイメージ セット")
 
-1. **Solution Pad** の **ImageTutorial.Android** プロジェクトで、**[リソース]** フォルダーを展開します。 次に、**XamarinLogo.png** をファイル システムから、 **ドローアブル** フォルダーにドラッグします。
+1. **Solution Pad** の **ImageTutorial.Android** プロジェクトで、 **[リソース]** フォルダーを展開します。 次に、**XamarinLogo.png** をファイル システムから、 **ドローアブル** フォルダーにドラッグします。
 
 1. **[ファイルをフォルダーに追加する]** ダイアログで **[OK]** を選択します。
 
@@ -102,7 +102,7 @@ ms.locfileid: "61384584"
     > [!NOTE]
     > iOS 上の PNG イメージの場合、[`Source`](xref:Xamarin.Forms.Image.Source) プロパティで指定するファイル名から **.png** 拡張子を省略できます。 その他のイメージ形式の場合は、拡張子が必要です。
 
-1. Visual Studio for Mac ツール バーで、**[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
+1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
     [![iOS および Android でのローカル イメージを表示するイメージ ビューのスクリーンショット](../images/local-file.png "ローカル イメージを表示するイメージ ビュー")](../images/local-file-large.png#lightbox "ローカル イメージを表示するイメージ ビュー")
 

@@ -6,12 +6,12 @@ ms.assetid: AE51F523-74F4-4EC0-B531-30B71C4D36DF
 author: davidortinau
 ms.author: daortin
 ms.date: 11/14/2017
-ms.openlocfilehash: d081795ecfcc5d0aa2559b866fcc57076fe8248b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f0e2128bca5d2965395647353cd5a95a4030439f
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73007021"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725279"
 ---
 # <a name="getting-started-with-macos"></a>MacOS の概要
 
@@ -40,7 +40,7 @@ public class MyNSView : NSTextView
 }
 ```
 
-プロジェクトをビルドします。 結果として得られるアセンブリは、 **~/Projects/hello-from-csharp/hello-from-csharp/bin/Debug/hello-from-csharp.dll**として保存されます。
+プロジェクトをビルドする。 結果として得られるアセンブリは、 **~/Projects/hello-from-csharp/hello-from-csharp/bin/Debug/hello-from-csharp.dll**として保存されます。
 
 ### <a name="bind-the-managed-assembly"></a>マネージアセンブリをバインドする
 
@@ -82,7 +82,7 @@ Finder で **~/Projects/hello-from-csharp/output**ディレクトリを開き、
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     MyNSView *view = [[MyNSView alloc] init];
     view.frame = CGRectMake(0, 200, 200, 200);
     [self.view addSubview: view];
@@ -94,5 +94,3 @@ Finder で **~/Projects/hello-from-csharp/output**ディレクトリを開き、
 最後に、Xcode プロジェクトを実行すると、次のような内容が表示されます。
 
 ![シミュレーターでC#実行されているサンプルからの Hello](macos-images/hello-from-csharp-mac.png)
-
-より完全で見栄えの良いサンプルについて[は、こちら](https://github.com/mono/Embeddinator-4000/tree/objc/samples/mac/weather)を参照してください。

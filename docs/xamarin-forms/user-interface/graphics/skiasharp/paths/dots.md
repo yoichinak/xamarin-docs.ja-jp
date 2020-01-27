@@ -7,32 +7,32 @@ ms.technology: xamarin-skiasharp
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 2d02e79ff51468572250d1a7ce7c6d3da103c03a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 229f60cbb96058454a1c634e53a7bb00ec725bcf
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770527"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76723755"
 ---
 # <a name="dots-and-dashes-in-skiasharp"></a>ドットとダッシュで SkiaSharp
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _点線および破線の SkiaSharp 描画の複雑さをマスターします。_
 
 SkiaSharp では、solid はありませんが、代わりに、ドットとダッシュで構成されている直線を描画することができます。
 
-![](dots-images/dottedlinesample.png "点線")
+![](dots-images/dottedlinesample.png "Dotted line")
 
 これには、*パス効果*のインスタンスである、 [ `SKPathEffect` ](xref:SkiaSharp.SKPathEffect)に設定するクラス、 [ `PathEffect` ](xref:SkiaSharp.SKPaint.PathEffect)プロパティの`SKPaint`します。 パスを作成することによって定義された静的な作成方法のいずれかを使用して、効果 (または結合パスの効果)`SKPathEffect`します。 (`SKPathEffect` SkiaSharp でサポートされる 6 つの効果の 1 つは、他のユーザーは、セクションで説明されている[ **SkiaSharp 効果**](../effects/index.md))。
 
-点線または破線を描画するために使用する、 [ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash(System.Single[],System.Single))静的メソッド。 次の2つの引数があります。これは、ドットとダッシュ`float`の長さ、およびそれらの間のスペースの長さを示す値の配列です。 この配列は、要素の偶数をいる必要があり、少なくとも 2 つの要素があります。 (がありますが、配列の要素が 0、実線では、その結果です。)2 つの要素がある場合は、1 つはドットまたはダッシュの長さ、2 番目の間隔の長さ [次へ] のドットまたは dash の前にします。 3 つ以上の要素があるかどうか、この順序で、: ダッシュの長さ、ギャップの長さ、ダッシュの長さ、時間の差、およびなど。
+点線または破線を描画するために使用する、 [ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash(System.Single[],System.Single))静的メソッド。 2 つの引数: 最初の配列は、この`float`ドットとダッシュの長さとそれらの間の空白文字の長さを示す値。 この配列は、要素の偶数をいる必要があり、少なくとも 2 つの要素があります。 (配列には0個の要素がありますが、その結果、実線になります)。要素が2つある場合、1つ目はドットまたはダッシュの長さ、2番目は次のドットまたはダッシュの前のギャップの長さです。 3 つ以上の要素があるかどうか、この順序で、: ダッシュの長さ、ギャップの長さ、ダッシュの長さ、時間の差、およびなど。
 
 一般的には、dash と間隔の長さのストロークの幅の倍数を作成するします。 ストロークの幅が 10 ピクセルの場合は、たとえば、し {10, 10} 配列描画点線、ドットとのギャップが、同じ長さのストロークの太さとします。
 
 ただし、`StrokeCap`の設定、`SKPaint`オブジェクトは、これらのドットとダッシュにも影響します。 後ほど、としては、この配列の要素に対する影響を与えるを持っている必要があります。
 
-点線および破線がで示されています、**ドットし、ダッシュ**ページ。 [ **DotsAndDashesPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml)ファイルでは、2 つのインスタンス化します`Picker`ストローク キャップおよび dash アレイを選択する 2 番目を選択することの 1 つのビューします。
+点線および破線がで示されています、**ドットし、ダッシュ**ページ。 [ **DotsAndDashesPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/DotsAndDashesPage.xaml)ファイルでは、2 つのインスタンス化します`Picker`ストローク キャップおよび dash アレイを選択する 2 番目を選択することの 1 つのビューします。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -100,7 +100,7 @@ SkiaSharp では、solid はありませんが、代わりに、ドットとダ�
 
  最初の 3 つの項目、`dashArrayPicker`ストロークの幅が 10 ピクセルであると仮定します。 {10, 10} アレイが点線では、{30, 10} 破線、および {10, 10、30, 10} には点鎖線です。 (他の 3 つ、後ほど。)
 
-[ `DotsAndDashesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml.cs)分離コード ファイルが含まれています、`PaintSurface`イベント ハンドラーとヘルパー ルーチンにアクセスするための 2 つ、`Picker`ビュー。
+[ `DotsAndDashesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/DotsAndDashesPage.xaml.cs)分離コード ファイルが含まれています、`PaintSurface`イベント ハンドラーとヘルパー ルーチンにアクセスするための 2 つ、`Picker`ビュー。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -126,7 +126,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
     path.LineTo(0.2f * info.Width, 0.8f * info.Height);
     path.LineTo(0.8f * info.Width, 0.2f * info.Height);
 
-    canvas.DrawPath(path, paint); 
+    canvas.DrawPath(path, paint);
 }
 
 float[] GetPickerArray(Picker picker)
@@ -150,7 +150,7 @@ float[] GetPickerArray(Picker picker)
 
 次のスクリーン ショットの一番左にある iOS の画面には、点線が示されています。
 
-[![](dots-images/dotsanddashes-small.png "ドットとダッシュのページのスクリーン ショットをトリプル")](dots-images/dotsanddashes-large.png#lightbox "ドットとダッシュのページの 3 倍になるスクリーン ショット")
+[![](dots-images/dotsanddashes-small.png "Triple screenshot of the Dots and Dashes page")](dots-images/dotsanddashes-large.png#lightbox "Triple screenshot of the Dots and Dashes page")
 
 ただし、Android の画面は {10, 10} の配列を使用して点線を表示することにもなってが代わりに、行が堅牢です。 どうなっているのでしょうか。 問題は、Android の画面は、のストローク キャップの設定もが`Square`します。 これは、ストローク幅の半分だけ、ギャップがいっぱいになり、すべてのダッシュを拡張します。
 
@@ -211,7 +211,7 @@ public class AnimatedSpiralPage : ContentPage
 
 もちろん、実際にアニメーションを表示するプログラムを実行する必要があります。
 
-[![](dots-images/animatedspiral-small.png "アニメーションのスパイラル ページのスクリーン ショットをトリプル")](dots-images/animatedspiral-large.png#lightbox "らせんをアニメーション化されるページの 3 倍になるスクリーン ショット")
+[![](dots-images/animatedspiral-small.png "Triple screenshot of the Animated Spiral page")](dots-images/animatedspiral-large.png#lightbox "Triple screenshot of the Animated Spiral page")
 
 ## <a name="related-links"></a>関連リンク
 

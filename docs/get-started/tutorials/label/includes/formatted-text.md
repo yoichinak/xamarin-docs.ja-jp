@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 841dac9486097e27923ccfe582803b4ec50371cf
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "60896725"
 ---
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
@@ -30,9 +30,9 @@ ms.locfileid: "60896725"
     > [!NOTE]
     > [`FormattedText`](xref:Xamarin.Forms.Label.FormattedText) プロパティは、1 つ以上の [`Span`](xref:Xamarin.Forms.Span)インスタンスで構成される [`FormattedString`](xref:Xamarin.Forms.FormattedString) の型です。
 
-1. Visual Studio ツール バーで、**[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。 [`Label`](xref:Xamarin.Forms.Label) の外観が変更されたことを確認します。
+1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。 [`Label`](xref:Xamarin.Forms.Label) の外観が変更されたことを確認します。
 
-    [![iOS と Android で書式設定されたテキストを表示しているラベルのスクリーンショット](../images/label-formatted-text.png "書式設定されたテキストのラベル")](../images/label-formatted-text-large.png#lightbox "書式設定されたテキストのラベル")
+    [![iOS と Android で書式設定されたテキストを表示している Label のスクリーンショット](../images/label-formatted-text.png "書式設定されたテキストの Label")](../images/label-formatted-text-large.png#lightbox "書式設定されたテキストの Label")
 
     [`Span`](xref:Xamarin.Forms.Span) の設定の詳細については、「[Xamarin.Forms Label](~/xamarin-forms/user-interface/text/label.md)」ガイドの「[Formatted text](~/xamarin-forms/user-interface/text/label.md#formatted-text)」 (書式設定されたテキスト) を参照してください。
 
@@ -60,8 +60,8 @@ ms.locfileid: "60896725"
     > [!NOTE]
     > [`FormattedText`](xref:Xamarin.Forms.Label.FormattedText) プロパティは、1 つ以上の [`Span`](xref:Xamarin.Forms.Span)インスタンスで構成される [`FormattedString`](xref:Xamarin.Forms.FormattedString) の型です。
 
-1. Visual Studio for Mac ツール バーで、**[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。 [`Label`](xref:Xamarin.Forms.Label) の外観が変更されたことを確認します。
+1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。 [`Label`](xref:Xamarin.Forms.Label) の外観が変更されたことを確認します。
 
-    [![iOS と Android で書式設定されたテキストを表示しているラベルのスクリーンショット](../images/label-formatted-text.png "書式設定されたテキストのラベル")](../images/label-formatted-text-large.png#lightbox "書式設定されたテキストのラベル")
+    [![iOS と Android で書式設定されたテキストを表示している Label のスクリーンショット](../images/label-formatted-text.png "書式設定されたテキストの Label")](../images/label-formatted-text-large.png#lightbox "書式設定されたテキストの Label")
 
     [`Span`](xref:Xamarin.Forms.Span) の設定の詳細については、「[Xamarin.Forms Label](~/xamarin-forms/user-interface/text/label.md)」ガイドの「[Formatted text](~/xamarin-forms/user-interface/text/label.md#formatted-text)」 (書式設定されたテキスト) を参照してください。

@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 3c88b71cea834f5e6ef20d43332904c052c6e3a6
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "61037626"
 ---
 以前は、データ バインディングを使用して [`ListView`](xref:Xamarin.Forms.ListView) にデータが取り込まれていました。 しかし、コレクション内の各オブジェクトが複数のデータ項目を定義しているコレクションへのデータ バインディングであるにもかかわらず、オブジェクトごとに単一のデータ項目のみ (`Monkey` オブジェクトの `Name` プロパティー) が表示されていました。
@@ -56,7 +56,7 @@ ms.locfileid: "61037626"
 
     [`ListView`](xref:Xamarin.Forms.ListView) セルの外観について詳しくは、「[Customizing ListView Cell Appearance](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)」(ListView セルの外観をカスタマイズする) をご覧ください。 データ テンプレートについて詳しくは「[Xamarin.Forms Data Templates](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)」(Xamarin.Forms のデータ テンプレート) をご覧ください。
 
-1. Visual Studio ツール バーで、**[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
+1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
     [![項目がデータ テンプレートでテンプレート化された ListView のスクリーンショット](../images/customize-cell-appearance.png "テンプレート化されたデータを表示する ListView")](../images/customize-cell-appearance-large.png#lightbox "テンプレート化されたデータを表示する ListView")
 
@@ -106,6 +106,6 @@ ms.locfileid: "61037626"
 
     [`ListView`](xref:Xamarin.Forms.ListView) セルの外観について詳しくは、「[Customizing ListView Cell Appearance](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)」(ListView セルの外観をカスタマイズする) をご覧ください。 データ テンプレートについて詳しくは「[Xamarin.Forms Data Templates](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)」(Xamarin.Forms のデータ テンプレート) をご覧ください。
 
-1. Visual Studio for Mac ツール バーで、**[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
+1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
     [![項目がデータ テンプレートでテンプレート化された ListView のスクリーンショット](../images/customize-cell-appearance.png "テンプレート化されたデータを表示する ListView")](../images/customize-cell-appearance-large.png#lightbox "テンプレート化されたデータを表示する ListView")

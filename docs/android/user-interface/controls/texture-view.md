@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 05/30/2017
-ms.openlocfilehash: 5d6b1b01cf9597a1d7ae9de762eff1514b494663
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2ffa544789e0d605a241c8e038c790650a7fc6a3
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029120"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724977"
 ---
 # <a name="xamarinandroid-textureview"></a>Xamarin. Android TextureView
 
@@ -30,16 +30,16 @@ public class TextureViewActivity : Activity,
 {
     Camera _camera;
     TextureView _textureView;
-       
+
     protected override void OnCreate (Bundle bundle)
     {
         base.OnCreate (bundle);
         _textureView = new TextureView (this);
         _textureView.SurfaceTextureListener = this;
-           
+
         SetContentView (_textureView);
     }
-       
+
     public void OnSurfaceTextureAvailable (
         Android.Graphics.SurfaceTexture surface,
         int width, int height)
@@ -56,7 +56,7 @@ public class TextureViewActivity : Activity,
         } catch (Java.IO.IOException ex) {
             Console.WriteLine (ex.Message);
         }
-           
+
         // this is the sort of thing TextureView enables
         _textureView.Rotation = 45.0f;
         _textureView.Alpha = 0.5f;
@@ -67,12 +67,10 @@ public class TextureViewActivity : Activity,
 
 上記のコードでは、アクティビティの `OnCreate` メソッドに `TextureView` インスタンスを作成し、アクティビティを `TextureView`の `SurfaceTextureListener`として設定します。 `SurfaceTextureListener`にするために、アクティビティは `TextureView.ISurfaceTextureListener` インターフェイスを実装します。 `SurfaceTexture` が使用できる状態になると、システムは `OnSurfaceTextAvailable` メソッドを呼び出します。 このメソッドでは、渡された `SurfaceTexture` を取得し、カメラのプレビューテクスチャに設定します。 次に、上記の例のように、`Rotation` や `Alpha`の設定など、通常のビューベースの操作を自由に実行できます。 デバイスで実行されているアプリケーションは、次のようになります。
 
-[デバイスで実行されているアプリの例を![し、イメージを表示する](texture-view-images/17-textureviewdemo.png)](texture-view-images/17-textureviewdemo.png#lightbox)
+[デバイスで実行されているアプリの例を ![し、イメージを表示する](texture-view-images/17-textureviewdemo.png)](texture-view-images/17-textureviewdemo.png#lightbox)
 
 `TextureView`を使用するには、ハードウェアアクセラレータを有効にする必要があります。これは、既定では API レベル14のようになります。 また、この例ではカメラを使用しているため、`android.permission.CAMERA` のアクセス許可と `android.hardware.camera` 機能の両方が**Androidmanifest .xml**で設定されている必要があります。
 
 ## <a name="related-links"></a>関連リンク
 
-- [TextureViewDemo (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/textureviewdemo)
-- [アイスクリームサンドイッチの導入](https://www.android.com/about/ice-cream-sandwich/)
-- [Android 4.0 プラットフォーム](https://developer.android.com/sdk/android-4.0.html)
+- [TextureViewDemo (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/textureviewdemo)/)

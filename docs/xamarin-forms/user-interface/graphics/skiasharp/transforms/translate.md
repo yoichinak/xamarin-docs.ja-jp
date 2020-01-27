@@ -7,16 +7,16 @@ ms.assetid: BD28ADA1-49F9-44E2-A548-46024A29882F
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 6e108852b2978903fb74686ad60cf419bbe4e3c0
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: f1efd7610b32e6a3903d34fc2f8b5a6e20c9da8a
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772960"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76723604"
 ---
 # <a name="the-translate-transform"></a>平行移動変換
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _SkiaSharp のグラフィックスをシフトする平行移動変換を使用する方法について説明します_
 
@@ -24,7 +24,7 @@ SkiaSharp の変換の最も単純な型が、*変換*または*翻訳*変換し
 
 翻訳もアニメーションを実行し、単純なテキスト効果に役立ちます。
 
-![](translate-images/translateexample.png "テキストの影、彫刻、翻訳とエンボス")
+![](translate-images/translateexample.png "Text shadow, engraving, and embossing with translation")
 
 [ `Translate` ](xref:SkiaSharp.SKCanvas.Translate(System.Single,System.Single))メソッド`SKCanvas`は水平および垂直方向にシフトするときにオブジェクトが描画された後でグラフィックスを 2 つのパラメーターがあります。
 
@@ -71,7 +71,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 連続する四角形は少量のページの下。
 
-[![](translate-images/accumulatedtranslate-small.png "累積変換ページのスクリーン ショットをトリプル")](translate-images/accumulatedtranslate-large.png#lightbox "累積変換ページの 3 倍になるスクリーン ショット")
+[![](translate-images/accumulatedtranslate-small.png "Triple screenshot of the Accumulated Translate page")](translate-images/accumulatedtranslate-large.png#lightbox "Triple screenshot of the Accumulated Translate page")
 
 累積翻訳要素は、する場合`dx`と`dy`、描画関数で指定したポイントが (`x`、 `y`)、グラフィカル オブジェクトは、ポイントにレンダリングし、(`x'`、 `y'`) ここで。
 
@@ -128,7 +128,7 @@ using (SKPaint textPaint = new SKPaint())
 
 3 つの例では、各`Translate`で指定した位置からオフセットするテキストを表示するために呼び出されますが、`x`と`y`変数。 テキストを翻訳影響を別の色でもう一度表示されます。
 
-[![](translate-images/translatetexteffects-small.png "テキスト効果の変換 ページのスクリーン ショットをトリプル")](translate-images/translatetexteffects-large.png#lightbox "テキスト効果の変換 ページの 3 倍になるスクリーン ショット")
+[![](translate-images/translatetexteffects-small.png "Triple screenshot of the Translate Text Effects page")](translate-images/translatetexteffects-large.png#lightbox "Triple screenshot of the Translate Text Effects page")
 
 3 つの例の各役に立たなくなる別の方法を示しています、`Translate`呼び出し。
 
@@ -136,13 +136,13 @@ using (SKPaint textPaint = new SKPaint())
 
 2 番目の例では、 [ `ResetMatrix`](xref:SkiaSharp.SKCanvas.ResetMatrix)します。 これにより、すべての変換の既定の状態に戻ります。
 
-3 番目の例の状態を保存する、`SKCanvas`オブジェクトへの呼び出しで[ `Save` ](xref:SkiaSharp.SKCanvas.Save)への呼び出しで状態を復元[ `Restore`](xref:SkiaSharp.SKCanvas.Restore)します。 これは、最も汎用的な描画操作の一連の変換を操作する方法です。 これら`Save`の`Restore`関数と関数は、スタックのように機能します。を複数回`Save`呼び出してから、逆の`Restore`順序でを呼び出して以前の状態に戻すことができます。 `Save`メソッドは、整数を返し、その整数を渡すことができます[ `RestoreToCount` ](xref:SkiaSharp.SKCanvas.RestoreToCount*)を効果的に呼び出す`Restore`複数回です。 [ `SaveCount` ](xref:SkiaSharp.SKCanvas.SaveCount)プロパティがスタックに現在保存されている状態の数を返します。
+3 番目の例の状態を保存する、`SKCanvas`オブジェクトへの呼び出しで[ `Save` ](xref:SkiaSharp.SKCanvas.Save)への呼び出しで状態を復元[ `Restore`](xref:SkiaSharp.SKCanvas.Restore)します。 これは、最も汎用的な描画操作の一連の変換を操作する方法です。 これら`Save`と`Restore`スタックのように関数を呼び出します: 呼び出すことができます`Save`複数の時刻、および 呼び出し`Restore`で以前の状態を返すシーケンスを反転します。 `Save`メソッドは、整数を返し、その整数を渡すことができます[ `RestoreToCount` ](xref:SkiaSharp.SKCanvas.RestoreToCount*)を効果的に呼び出す`Restore`複数回です。 [ `SaveCount` ](xref:SkiaSharp.SKCanvas.SaveCount)プロパティがスタックに現在保存されている状態の数を返します。
 
-使用することも、 [ `SKAutoCanvasRestore` ](xref:SkiaSharp.SKAutoCanvasRestore)キャンバスの状態を復元するためのクラス。 このクラスのコンス トラクターで呼び出されるものでは、`using`ステートメントでは、キャンバスの最後に状態が自動的に復元、`using`ブロックします。 
+使用することも、 [ `SKAutoCanvasRestore` ](xref:SkiaSharp.SKAutoCanvasRestore)キャンバスの状態を復元するためのクラス。 このクラスのコンス トラクターで呼び出されるものでは、`using`ステートメントでは、キャンバスの最後に状態が自動的に復元、`using`ブロックします。
 
 ただし、変換の 1 回の呼び出しから引き継がについて心配することも、`PaintSurface`へハンドラー。 新しい各呼び出し`PaintSurface`新規の配信`SKCanvas`既定の変換を持つオブジェクト。
 
-もう 1 つの一般的な用途、`Translate`変換はビジュアル オブジェクトのレンダリングがもともと作成された描画は便利である座標を使用しています。 たとえば、中心点 (0, 0) で、アナログ時計の座標を指定する可能性があります。 できますし、変換を使用できます、時計を表示するのに目的の場所。 示します。 この手法は、 **[Hendecagram 配列]** ページ。 [ `HendecagramArrayPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramPage.cs)クラスを作成して開始、 `SKPath` 11 - 星のオブジェクト。 `HendecagramPath`オブジェクトは、その他のデモ プログラムからアクセスできるように、パブリック、static、および読み取り専用で定義されます。 静的コンス トラクター内に作成されます。
+もう 1 つの一般的な用途、`Translate`変換はビジュアル オブジェクトのレンダリングがもともと作成された描画は便利である座標を使用しています。 たとえば、中心点 (0, 0) で、アナログ時計の座標を指定する可能性があります。 できますし、変換を使用できます、時計を表示するのに目的の場所。 示します。 この手法は、 **[Hendecagram 配列]** ページ。 [ `HendecagramArrayPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramArrayPage.cs)クラスを作成して開始、 `SKPath` 11 - 星のオブジェクト。 `HendecagramPath`オブジェクトは、その他のデモ プログラムからアクセスできるように、パブリック、static、および読み取り専用で定義されます。 静的コンス トラクター内に作成されます。
 
 ```csharp
 public class HendecagramArrayPage : ContentPage
@@ -173,7 +173,7 @@ public class HendecagramArrayPage : ContentPage
 }
 ```
 
-星のすべてのポイントが点を囲む円に星形の中心点 (0, 0) がある場合。 各ポイントは、5/11ths の 360 度ずつ増加する角度の正弦と余弦の値の組み合わせです。 (2 の角度を増やすことで 11 の星を作成することも、11/3/11ths、または 4 の円の 11/)。円の半径は 100 として設定されます。
+星のすべてのポイントが点を囲む円に星形の中心点 (0, 0) がある場合。 各ポイントは、5/11ths の 360 度ずつ増加する角度の正弦と余弦の値の組み合わせです。 (山の 2/11、3/11、または 4/11 の角度を増やすことで、11ポイントの星印を作成することもできます)。その円の半径は100として設定されます。
 
 中央の左上隅に配置されますこのパスが、変換を行わずに表示される場合、`SKCanvas`とに四半期のみが表示されます。 `PaintSurface`のハンドラー`HendecagramPage`代わりに使用`Translate`色付きそれぞれランダムの星の複数のコピーでキャンバスを並べて表示します。
 
@@ -212,9 +212,9 @@ public class HendecagramArrayPage : ContentPage
 
 ```
 
-結果を次に示します。
+結果は次のようになります。
 
-[![](translate-images/hendecagramarray-small.png "Hendecagram 配列ページのスクリーン ショットをトリプル")](translate-images/hendecagramarray-large.png#lightbox "Hendecagram 配列ページの 3 倍になるスクリーン ショット")
+[![](translate-images/hendecagramarray-small.png "Triple screenshot of the Hendecagram Array page")](translate-images/hendecagramarray-large.png#lightbox "Triple screenshot of the Hendecagram Array page")
 
 多くの場合、アニメーションには、変換が含まれます。 **Hendecagram アニメーション**ページは、11 星をで円状に移動します。 [ `HendecagramAnimationPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramAnimationPage.cs)クラスがいくつかのフィールドで始まりのオーバーライド、`OnAppearing`と`OnDisappearing`開始および Xamarin.Forms タイマーを停止するメソッド。
 
@@ -299,7 +299,7 @@ public class HendecagramAnimationPage : ContentPage
 
 `PaintSurface`ハンドラーの呼び出し、`Translate`キャンバスの中央に変換するには、最初にメソッドを 2 回、およびその中心の円の円周を変換するために (0, 0)。 円の半径は、ページの範囲内で星を保持しながら可能な限り大きくに設定されます。
 
-[![](translate-images/hendecagramanimation-small.png "Hendecagram アニメーション ページのスクリーン ショットをトリプル")](translate-images/hendecagramanimation-large.png#lightbox "Hendecagram アニメーション ページの 3 倍になるスクリーン ショット")
+[![](translate-images/hendecagramanimation-small.png "Triple screenshot of the Hendecagram Animation page")](translate-images/hendecagramanimation-large.png#lightbox "Triple screenshot of the Hendecagram Animation page")
 
 ページの中央を中心に、星が同じ方向を維持することを確認します。 これはまったく回転しません。 回転の変換用のジョブです。
 

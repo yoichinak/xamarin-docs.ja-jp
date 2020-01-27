@@ -7,26 +7,26 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 8f930e2358562df7e68841b87b6a3df0914805fe
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5e1019417ff7ac93abfe2396a4acaa76c66d182f
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032301"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725369"
 ---
 # <a name="subscriptions-and-reporting-in-xamarinios"></a>Xamarin. iOS のサブスクリプションとレポート
 
 ## <a name="about-non-renewing-subscriptions"></a>更新以外のサブスクリプションについて
 
 非更新サブスクリプションは、時間制限付きのサービスの販売を表す製品 (ナビゲーションアプリケーションへの1週間のアクセス、またはデータアーカイブへの期間限定のアクセスなど) を対象としています。   
-   
+
 更新以外のサブスクリプションとその他の製品の種類の主な違いは次のとおりです。
 
-- ITunes Connect の製品定義には、という用語は含まれていません。 アプリケーションコードは、プロダクト ID から有効期間を推測できる必要があります。 
-- 複数回購入できます (使用可能な製品など)。 アプリケーションは、サブスクリプションの有効期限と更新を管理し、ユーザーが重複するサブスクリプションを購入できないようにする必要があります。 
-- この購入は、StoreKit の復元機能ではサポートされていません。 すべてのユーザーのデバイスでサブスクリプションを使用できるようにする必要がある場合は、この機能をリモートサーバーと組み合わせて設計および実装する必要があります。 また、アプリケーションは、デバイスがバックアップから復元された場合に、サブスクリプションの状態をバックアップする役割も担います。 
+- ITunes Connect の製品定義には、という用語は含まれていません。 アプリケーションコードは、プロダクト ID から有効期間を推測できる必要があります。
+- 複数回購入できます (使用可能な製品など)。 アプリケーションは、サブスクリプションの有効期限と更新を管理し、ユーザーが重複するサブスクリプションを購入できないようにする必要があります。
+- この購入は、StoreKit の復元機能ではサポートされていません。 すべてのユーザーのデバイスでサブスクリプションを使用できるようにする必要がある場合は、この機能をリモートサーバーと組み合わせて設計および実装する必要があります。 また、アプリケーションは、デバイスがバックアップから復元された場合に、サブスクリプションの状態をバックアップする役割も担います。
 - 実装の概要
-- 更新以外のサブスクリプションは、通常、サーバー側で配信されるワークフローと、使用可能なマネージド製品を使用して実装する必要があります。 
+- 更新以外のサブスクリプションは、通常、サーバー側で配信されるワークフローと、使用可能なマネージド製品を使用して実装する必要があります。
 
 ## <a name="about-free-subscriptions"></a>無料サブスクリプションについて
 
@@ -49,7 +49,7 @@ ms.locfileid: "73032301"
 サーバーで自動更新可能なサブスクリプションを確認するときは、アプリ内購入共有シークレットを JSON 要求で使用する必要があります。 共有シークレットは、iTunes Connect を使用して作成またはアクセスされます。
 
 ITunes Connect のホームページから、 **[マイアプリ]** を選択します。   
-   
+
  [![](subscriptions-and-reporting-images/image2.png "Select My Apps")](subscriptions-and-reporting-images/image2.png#lightbox)  
 
 アプリケーションを選択し、 **[アプリ内購入]** タブをクリックします。
@@ -57,7 +57,7 @@ ITunes Connect のホームページから、 **[マイアプリ]** を選択し
 [![](subscriptions-and-reporting-images/image6.png "Click on the In-App Purchases tab")](subscriptions-and-reporting-images/image6.png#lightbox)
 
 ページの下部にある **[共有シークレットの表示または生成]** を選択します。
-   
+
  [![](subscriptions-and-reporting-images/image40.png "Select View or generate a shared secret")](subscriptions-and-reporting-images/image40.png#lightbox)
 
  [![](subscriptions-and-reporting-images/image41.png "Generate a shared secret")](subscriptions-and-reporting-images/image41.png#lightbox)   
@@ -101,16 +101,15 @@ SKPaymentTransaction オブジェクトにはサブスクリプションの用�
 ## <a name="reporting"></a>レポート
 
 iTunes Connect ( [itunesconnect.apple.com](https://itunesconnect.apple.com)) には次のものがあります。   
-   
+
  **[売上と傾向**] –アプリのダウンロード、更新プログラム、アプリ内購入の詳細が表示されます。   
-   
+
  **支払いと財務報告**–お客様のアプリによって獲得された収入の詳細と、お客様に対して行われた支払いとお支払い額の一覧を表示します。
 
 次に、売上および傾向レポートの例を示します。   
 
  [![](subscriptions-and-reporting-images/image42.png "An example Sales and Trends report")](subscriptions-and-reporting-images/image42.png#lightbox)   
-   
- また、 [ **ITC Connect Mobile**IOS アプリ (iTunes リンク)](https://itunes.apple.com/us/app/itunes-connect-mobile/id376771144?mt=8)もあります。
-使用できる統計情報の一部については、iPhone のスクリーンショットを次に示します。   
-   
+
+ また、 **ITC Connect Mobile** iOS アプリもあります。 使用できる統計情報の一部については、iPhone のスクリーンショットを次に示します。   
+
  [![](subscriptions-and-reporting-images/image43.png "iPhone screenshots for some of the statistics available")](subscriptions-and-reporting-images/image43.png#lightbox)

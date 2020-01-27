@@ -6,18 +6,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/06/2018
-ms.openlocfilehash: 4b6fcfc3120c3ef09556f3466295f4bee35fad0c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 13271b50353d95ecd2db40e25d549788111530f7
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029005"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725004"
 ---
 # <a name="xamarinandroid-gridlayout"></a>Xamarin Android GridLayout
 
 `GridLayout` は、次に示すように、HTML テーブルと同様に、2D グリッドでのビューのレイアウトをサポートする新しい `ViewGroup` サブクラスです。
 
- [4つのセルを表示するトリミング GridLayout の![](grid-layout-images/21-gridlayoutcropped.png)](grid-layout-images/21-gridlayoutcropped.png#lightbox)
+ [4つのセルを表示するトリミング GridLayout の ![](grid-layout-images/21-gridlayoutcropped.png)](grid-layout-images/21-gridlayoutcropped.png#lightbox)
 
  `GridLayout` は、フラットビュー階層を使用します。この場合、子ビューでは、グリッド内の位置が、列に含まれる行と列を指定することによって設定されます。 これにより、 *GridLayout*は、TableLayout で使用されるテーブル行に表示されるように、中間ビューがテーブル構造を提供しなくても、グリッドにビューを配置できます。 フラットな階層を維持することで、 *GridLayout*は子ビューをより迅速にレイアウトできます。 コードでこの概念が実際に意味するものを示す例を見てみましょう。
 
@@ -49,11 +49,11 @@ ms.locfileid: "73029005"
 
 次の図に示すように、レイアウトは行と列のサイズを調整して、セルがコンテンツに適合するようにします。
 
- [左側の2つのセルが右側より小さい場合に表示されるレイアウトの![ダイアグラム](grid-layout-images/gridlayout-cells.png)](grid-layout-images/gridlayout-cells.png#lightbox)
+ [左側の2つのセルが右側より小さい場合に表示されるレイアウトの ![ダイアグラム](grid-layout-images/gridlayout-cells.png)](grid-layout-images/gridlayout-cells.png#lightbox)
 
 この結果、アプリケーションで次のユーザーインターフェイスが実行されます。
 
- [4つのセルを表示する GridLayoutDemo アプリのスクリーンショットを![](grid-layout-images/01-gridlayout.png)](grid-layout-images/01-gridlayout.png#lightbox)
+ [4つのセルを表示する GridLayoutDemo アプリのスクリーンショットを ![](grid-layout-images/01-gridlayout.png)](grid-layout-images/01-gridlayout.png#lightbox)
 
 ## <a name="specifying-orientation"></a>方向の指定
 
@@ -71,11 +71,11 @@ ms.locfileid: "73029005"
 
 次に示すように、`GridLayout` では、左から右ではなく、各列のセルが上から下に配置されます。
 
- [セルが垂直方向に配置される方法を示す![ダイアグラム](grid-layout-images/gridlayoutorientation.png)](grid-layout-images/gridlayoutorientation.png#lightbox)
+ [セルが垂直方向に配置される方法を示す ![ダイアグラム](grid-layout-images/gridlayoutorientation.png)](grid-layout-images/gridlayoutorientation.png#lightbox)
 
 これにより、実行時に次のユーザーインターフェイスが生成されます。
 
- [垂直方向に配置されたセルを含む GridLayoutDemo の![スクリーンショット](grid-layout-images/02-gridlayout.png)](grid-layout-images/02-gridlayout.png#lightbox)
+ [垂直方向に配置されたセルを含む GridLayoutDemo の ![スクリーンショット](grid-layout-images/02-gridlayout.png)](grid-layout-images/02-gridlayout.png#lightbox)
 
 ### <a name="specifying-explicit-position"></a>明示的な位置の指定
 
@@ -125,7 +125,7 @@ ms.locfileid: "73029005"
 ```
 
 さらに、Android 4 では `Space` という名前の新しい汎用的なスペースビューが使用できるようになりました。 これを使用するには、単に子ビューとして追加します。
-たとえば、次の XML では、その `rowcount` を3に設定して `GridLayout` に行を追加し、`TextViews` 間の間隔を提供する `Space` ビューを追加しています。
+たとえば、次の XML では、その `rowcount` を3に設定して `GridLayout` に行を追加し、`TextViews`間の間隔を提供する `Space` ビューを追加しています。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -216,7 +216,7 @@ ms.locfileid: "73029005"
 
 これにより、次に示すように、ボタンのサイズに合わせて `GridLayout` の最初の列が拡張されます。
 
-[最初の列にのみまたがるボタンを使用して GridLayoutDemo のスクリーンショットを![](grid-layout-images/04-gridlayout.png)](grid-layout-images/04-gridlayout.png#lightbox)
+[最初の列にのみまたがるボタンを使用して GridLayoutDemo のスクリーンショットを ![](grid-layout-images/04-gridlayout.png)](grid-layout-images/04-gridlayout.png#lightbox)
 
 最初の列の伸縮を維持するには、次のように columnspan を設定して、2つの列をスパンするようにボタンを設定します。
 
@@ -231,10 +231,8 @@ ms.locfileid: "73029005"
 
 これを行うと、前に示したレイアウトに似た `TextViews` のレイアウトが生成されます。次に示すように、ボタンが `GridLayout` の下部に追加されます。
 
- [両方の列にまたがるボタンを使用して GridLayoutDemo のスクリーンショットを![](grid-layout-images/05-gridlayout.png)](grid-layout-images/05-gridlayout.png#lightbox)
+ [両方の列にまたがるボタンを使用して GridLayoutDemo のスクリーンショットを ![](grid-layout-images/05-gridlayout.png)](grid-layout-images/05-gridlayout.png#lightbox)
 
 ## <a name="related-links"></a>関連リンク
 
 - [GridLayoutDemo (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/gridlayoutdemo)
-- [アイスクリームサンドイッチの導入](https://www.android.com/about/ice-cream-sandwich/)
-- [Android 4.0 プラットフォーム](https://developer.android.com/sdk/android-4.0.html)

@@ -8,18 +8,18 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/27/2018
-ms.openlocfilehash: 32fecaff7f6896c03f3ac094d478fef3338f844d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 1dc53b863e0408e27351aabfa625a08baae3d5a1
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73025722"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725450"
 ---
 # <a name="xamarinmac-error-messages-mmp"></a>Xamarin. Mac エラーメッセージ (mmp)
 
 ## <a name="mm0xxx-mmp-error-messages"></a>MM0xxx: mmp エラーメッセージ
 
-たとえば、 パラメーター、環境、ツールがありません。
+例: パラメーター、環境、ツールがありません。
 
 <a name="MM0000" />
 
@@ -158,7 +158,7 @@ Xamarin. Mac では、エラーメッセージに示されている SDK バー�
 
 もう1つの方法は、マネージリンカーを有効にすることです。 これにより、ほとんどの場合、ヘッダーファイルが存在しない (または不完全な) 新しい API を含む、未使用の API が削除されます。 ただし、Xcode が提供する API よりも新しい SDK で導入された API がプロジェクトで使用されている場合、これは機能しません。
 
-別の方法としては、代わりに動的レジストラーを使用します。 これにより、型を動的に登録し、ヘッダーファイルの要件を削除することで、スタートアップコストがかかります。 
+別の方法としては、代わりに動的レジストラーを使用します。 これにより、型を動的に登録し、ヘッダーファイルの要件を削除することで、スタートアップコストがかかります。
 
 Straw の最後の解決策は、プロジェクトに必要な SDK をサポートする古いバージョンの Xamarin. Mac を使用することです。
 
@@ -172,7 +172,7 @@ Straw の最後の解決策は、プロジェクトに必要な SDK をサポー
 
 <a name="MM0099" />
 
-#### <a name="mm0099-internal-error-0-please-file-a-bug-report-with-a-test-case-httpsbugzillaxamarincom"></a>MM0099: 内部エラー {0}。 テストケース (https://bugzilla.xamarin.com)を含むバグレポートをファイルに登録してください。
+#### <a name="mm0099-internal-error-0-please-file-a-bug-report-with-a-test-case-httpsbugzillaxamarincom"></a>MM0099: 内部エラー {0}。 テストケース (https://bugzilla.xamarin.com) を含むバグレポートをファイルに登録してください。
 
 <a name="MM0114" />
 
@@ -210,7 +210,7 @@ Straw の最後の解決策は、プロジェクトに必要な SDK をサポー
 
 許容される形式は `[+|-]optimization-name`です。 `optimization-name` は、エラーメッセージに示されている値のいずれかです。
 
-各最適化の詳細については、「[ビルドの最適化](https://developer.xamarin.com/guides/cross-platform/macios/build-optimizations)」を参照してください。
+各最適化の詳細については、「[ビルドの最適化](~/cross-platform/macios/optimizations.md)」を参照してください。
 
 <a name="MM0133" />
 
@@ -220,9 +220,9 @@ Straw の最後の解決策は、プロジェクトに必要な SDK をサポー
 
 #### <a name="mm0134-32-bit-applications-should-be-migrated-to-64-bit"></a>MM0134:32 ビットアプリケーションは、64ビットに移行する必要があります。
 
-Apple は、32ビットアプリの macOS アプリストアの送信を許可しないことを発表しました (2018 年1月から)。 
+Apple は、32ビットアプリの macOS アプリストアの送信を許可しないことを発表しました (2018 年1月から)。
 
-さらに、32ビットのアプリケーションは、"侵害なし" ではなく、macOS のバージョンでは実行されません。 
+さらに、32ビットのアプリケーションは、"侵害なし" ではなく、macOS のバージョンでは実行されません。
 
 詳細情報: https://developer.apple.com/news/?id=06282017a
 

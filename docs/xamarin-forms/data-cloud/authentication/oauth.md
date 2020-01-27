@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2019
-ms.openlocfilehash: 25a09e27fb25e477c5176af0ee4a75a836751ccf
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: 0fa433de7fd1acb6fb27741f1615a644315f373f
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75487634"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725560"
 ---
 # <a name="authenticate-users-with-an-identity-provider"></a>Id プロバイダーを使用したユーザーの認証
 
@@ -90,7 +90,7 @@ var authenticator = new OAuth2Authenticator(
 
 - **クライアント ID** – は、要求を行って、内のプロジェクトから取得できるクライアントを識別、 [Google API コンソール](https://console.developers.google.com)します。
 - **クライアント シークレット**– このアカウントは`null`または`string.Empty`します。
-- **スコープ**: アプリケーションで要求されている API のアクセスを識別し、値は、ユーザーに表示される同意画面に通知します。 スコープの詳細については、次を参照してください。 [API の承認要求](https://developers.google.com/+/web/api/rest/oauth)Google の web サイト。
+- **スコープ**: アプリケーションで要求されている API のアクセスを識別し、値は、ユーザーに表示される同意画面に通知します。 スコープの詳細については、「Google の web サイトで[要求を承認](https://developers.google.com/docs/api/how-tos/authorizing)する」を参照してください。
 - **URL 承認**– 認証コードの取得から URL を識別します。
 - **リダイレクト URL** – これは、応答を送信する URL を識別します。 このパラメーターの値に表示される値のいずれかと一致する必要があります、**資格情報**タブで、プロジェクトを[Google Developers Console](https://console.developers.google.com/)します。
 - **AccessToken Url** – これは、認証コードの取得後に、アクセス トークンを要求するために使用する URL を識別します。
