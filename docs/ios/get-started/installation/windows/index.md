@@ -34,7 +34,7 @@ Windows 上で Visual Studio 2019 を使って Xamarin.iOS アプリを構築す
   - [Mac のシステム要件](~/cross-platform/get-started/requirements.md#macos-requirements)
 
   > [!TIP]
-  > Mac にアクセスできません。
+  > Mac にアクセスできませんか？
   >
   > Mac にアクセスできない場合は、[MacinCloud](https://www.macincloud.com/pages/visual-studio-mac.html) または [MacStadium](https://www.macstadium.com/) を使用することができます。両方のサービスは、Xamarin.iOS プロジェクトをビルドするために使用できるクラウド ベースの Mac ハードウェアを提供します。
 
