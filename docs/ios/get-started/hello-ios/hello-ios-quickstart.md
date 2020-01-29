@@ -89,7 +89,7 @@ Xamarin.iOS は次のセットアップで機能します。
     ![](hello-ios-quickstart-images/image8new.png "Drag a Label onto the design surface the area in the center")
 
     > [!NOTE]
-    > **[表示] > [パッド]** の順に選択すれば、**Properties Pad** や**ツールボックス**をいつでも表示できます。
+    > **[表示] > [パッド]** の順に選択すれば、**プロパティ** や**ツールボックス**をいつでも表示できます。
 
 8. *ドラッグ コントロール*のハンドル (コントロールを囲む円) をつかみ、ラベルを大きくします。
 
