@@ -1,5 +1,5 @@
 ---
-title: Xamarin. フォームのクイックスタート
+title: Xamarin.Forms のクイックスタート
 description: Visual Studio および Visual Studio for Mac での Xamarin.Forms アプリケーションの開発に関するクイック スタート。
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -8,15 +8,15 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/06/2020
 ms.openlocfilehash: 1ec6c3cd752754b14f242194cad15e0ad15e2816
-ms.sourcegitcommit: 0ffef1721f28717d46c8168ec96a45b6fe96b623
-ms.translationtype: MT
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "75720472"
 ---
-# <a name="xamarinforms-quickstarts"></a>Xamarin. フォームのクイックスタート
+# <a name="xamarinforms-quickstarts"></a>Xamarin.Forms のクイックスタート
 
-_Xamarin. Forms を使用してモバイルアプリケーションを作成する方法について説明します。_
+_Xamarin.Forms を使用してモバイル アプリケーションを作成する方法について説明します。_
 
 ## <a name="create-a-single-page-xamarinforms-applicationsingle-pagemd"></a>[単一ページの Xamarin.Forms アプリケーションを作成する](single-page.md)
 
@@ -30,10 +30,10 @@ _Xamarin. Forms を使用してモバイルアプリケーションを作成す�
 
 ローカルの SQLite.NET データベースにデータを格納する方法を学習します。
 
-## <a name="style-a-cross-platform-xamarinforms-applicationstylingmd"></a>[クロスプラットフォームの Xamarin.Forms アプリケーションのスタイルを適用する](styling.md)
+## <a name="style-a-cross-platform-xamarinforms-applicationstylingmd"></a>[クロスプラットフォーム Xamarin.Forms アプリケーションのスタイルを設定する](styling.md)
 
 XAML スタイルで、クロスプラットフォーム Xamarin.Forms アプリケーションのスタイルを設定する方法を学習します。
 
-## <a name="quickstart-deep-divedeepdivemd"></a>[クイックスタートの詳細](deepdive.md)
+## <a name="quickstart-deep-divedeepdivemd"></a>[クイックスタート Deep Dive](deepdive.md)
 
 クイック スタート全体で開発されるアプリケーションを中心に、Xamarin.Forms を使用したアプリケーション開発の基礎を確認します。

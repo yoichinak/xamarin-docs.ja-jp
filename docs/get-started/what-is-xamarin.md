@@ -8,72 +8,72 @@ author: profexorgeek
 ms.author: jusjohns
 ms.date: 09/16/2019
 ms.openlocfilehash: 34763804e9833224721ea32f9c7e6200dd5faba7
-ms.sourcegitcommit: ba83c107c87b015dbcc9db13964fe111a0573dca
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/22/2020
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "75607881"
 ---
 # <a name="what-is-xamarin"></a>Xamarin とは
 
-[iOS および Android での Xamarin アプリケーションの例の ![スクリーンショット](what-is-xamarin-images/xamarin-app-cropped.png)](what-is-xamarin-images/xamarin-app.png#lightbox)
+[![iOS および Android での Xamarin サンプル アプリケーションのスクリーンショット](what-is-xamarin-images/xamarin-app-cropped.png)](what-is-xamarin-images/xamarin-app.png#lightbox)
 
-Xamarin は、iOS、Android、Windows 向けの最新で高性能なアプリケーションを .NET で構築するためのオープンソースのプラットフォームです。 Xamarin は、基になるプラットフォームコードと共有コードの通信を管理する抽象化レイヤーです。 Xamarin は、メモリ割り当てやガベージコレクションなどの便利なを提供するマネージ環境で実行されます。
+Xamarin は、.NET を使用して、iOS、Android、Windows 向けの最新で高性能なアプリケーションをビルドするためのオープンソースのプラットフォームです。 Xamarin は、基になるプラットフォーム コードと共有コードの通信を管理する抽象化レイヤーです。 Xamarin は、メモリ割り当てやガベージ コレクションなどの利便性を提供するマネージド環境で実行されます。
 
-Xamarin を使用すると、開発者はプラットフォーム間でアプリケーションの90% の平均を共有できます。 このパターンを使用すると、開発者はすべてのビジネスロジックを1つの言語で記述でき (または既存のアプリケーションコードを再利用できます)、各プラットフォームでネイティブのパフォーマンス、ルックアンドフィールを実現できます。
+Xamarin を使用すると、開発者はプラットフォーム間でアプリケーションの 90% (平均) を共有できます。 このパターンにより、開発者はすべてのビジネス ロジックを 1 つの言語で記述 (または既存のアプリケーション コードを再利用) して、各プラットフォームでネイティブのパフォーマンスとルック アンド フィールを実現することができます。
 
-Xamarin アプリケーションは、PC または Mac 上で記述し、ネイティブアプリケーションパッケージ (Android 上の**apk**ファイルなど)、または iOS 上の**ipa**ファイルとしてコンパイルできます。
+Xamarin アプリケーションを PC または Mac で記述し、ネイティブ アプリケーション パッケージ (Android 上の **.apk** ファイルや、iOS 上の **.ipa** ファイルなど) にコンパイルできます。
 
 > [!NOTE]
-> 現在、iOS 用のアプリケーションをコンパイルして展開するには、MacOS コンピューターが必要です。 開発要件の詳細については、「[システム要件](~/cross-platform/get-started/requirements.md#macos-requirements)」を参照してください。
+> 現在、iOS 用のアプリケーションをコンパイルして展開するには、MacOS マシンが必要です。 開発要件の詳細については、[システム要件](~/cross-platform/get-started/requirements.md#macos-requirements)を参照してください。
 
-## <a name="who-xamarin-is-for"></a>Xamarin の対象ユーザー
+## <a name="who-xamarin-is-for"></a>Xamarin の対象者
 
 Xamarin は、次のような目標を持つ開発者を対象としています。
 
-- プラットフォーム間でコード、テスト、ビジネスロジックを共有します。
-- Visual Studio を使用してC# 、でクロスプラットフォームアプリケーションを作成します。
+- プラットフォーム間でコード、テスト、ビジネス ロジックを共有する。
+- Visual Studio を使用して C# でクロスプラットフォーム アプリケーションを作成する。
 
 ## <a name="how-xamarin-works"></a>Xamarin のしくみ
 
 ![Xamarin アーキテクチャの図](what-is-xamarin-images/xamarin-architecture.png)
 
-この図は、クロスプラットフォーム Xamarin アプリケーションの全体的なアーキテクチャを示しています。 Xamarin では、プラットフォームごとにネイティブ UI を作成し、プラットフォーム間C#で共有されるのビジネスロジックを記述できます。 ほとんどの場合、アプリケーションコードの80% は Xamarin を使用して共有できます。
+この図は、クロスプラットフォーム Xamarin アプリケーションのアーキテクチャ全体を示しています。 Xamarin を使用すると、プラットフォームごとにネイティブ UI を作成し、プラットフォーム間で共有されるビジネス ロジックを C# で記述できます。 ほとんどの場合、アプリケーション コードの 80% は Xamarin を使用して共有できます。
 
-Xamarin は、 **Mono**の上に構築されており、.net ECMA 標準に基づく .NET Framework のオープンソースバージョンです。 Mono は .NET Framework 自体とほぼ同じくらいに存在し、Linux、Unix、FreeBSD、macOS などのほとんどのプラットフォームで実行されます。 Mono 実行環境では、メモリの割り当て、ガベージコレクション、基になるプラットフォームとの相互運用性などのタスクが自動的に処理されます。
+Xamarin は、.NET ECMA 規格に基づいたオープン ソース版の .NET Framework である **Mono** の上に構築されています。 Mono は .NET Framework 自体と同じくらい前から存在していて、Linux、Unix、FreeBSD、macOS などのほぼすべてのプラットフォーム上で実行できます。 Mono の実行環境では、メモリの割り当て、ガベージ コレクション、基になるプラットフォームとの相互運用性などのタスクが自動的に処理されます。
 
-プラットフォーム固有のアーキテクチャの詳細については、「 [Xamarin Android](#xamarinandroid)と[xamarin. iOS](#xamarinios)」を参照してください。
+プラットフォーム固有のアーキテクチャの詳細については、「[Xamarin.Android](#xamarinandroid)」および「[Xamarin.iOS](#xamarinios)」を参照してください。
 
 ### <a name="added-features"></a>追加された機能
 
-Xamarin は、ネイティブプラットフォームの機能を統合し、次のような多数の機能を追加します。
+Xamarin には、ネイティブ プラットフォームの機能が組み合わされたうえ、次のような機能が多数追加されています。
 
-1. **基になる sdk の完全なバインド**– Xamarin には、IOS と Android の両方で、基になるプラットフォーム sdk のほぼすべてのバインドが含まれています。 さらに、これらのバインディングは厳密に型指定されています。つまり、ナビゲーションや使用が簡単で、開発時に堅牢なコンパイル時の型チェックが行われます。 厳密に型指定されたバインディングによって、実行時エラーや品質の高いアプリケーションが減少します。
-1. **目的-c、Java、C、およびC++相互運用**-Xamarin には、目的の c、java、c、およびC++ライブラリを直接呼び出す機能が用意されており、サードパーティ製のさまざまなコードを使用することができます。 この機能により、目標 C、Java、または C/C++で記述された既存の IOS および Android ライブラリを使用できるようになります。 さらに、Xamarin には、宣言型の構文を使用してネイティブの目的 C と Java のライブラリをバインドできるバインドプロジェクトが用意されています。
-1. **最新の言語構成**– Xamarin アプリケーションは、 C#で記述されています。これは、動的言語機能、ラムダ、LINQ、並列プログラミング、ジェネリックなどの機能の構成要素など、目的の C と Java よりも大幅に改善された最新の言語です。
-1. **堅牢な基底クラスライブラリ (BCL)** – Xamarin アプリケーションは、.net BCL を使用します。これは、強力な XML、データベース、シリアル化、IO、文字列、ネットワークのサポートなど、包括的で合理化された機能を持つクラスの大規模なコレクションです。 既存C#のコードをコンパイルしてアプリで使用することができます。これにより、BCL を超える機能を追加する数千のライブラリにアクセスできます。
-1. **最新の統合開発環境 (IDE)** – Xamarin は、コードのオートコンプリート、洗練されたプロジェクトとソリューションの管理システム、包括的なプロジェクトテンプレートライブラリ、統合ソース管理などの機能を備えた最新の ide である Visual Studio を使用します。
-1. **モバイルクロスプラットフォームサポート**– Xamarin では、IOS、Android、Windows の3つの主要なプラットフォームに対して、高度なクロスプラットフォームサポートを提供しています。 アプリケーションは、コードの最大90% を共有するように記述できます。また、Xamarin では、3つのすべてのプラットフォームで共通のリソースにアクセスするための統一された API を提供します。 共有コードを使用すると、開発コストと、モバイル開発者の製品化までの時間を大幅に削減できます。
+1. **基になる SDK の完全なバインディング** – Xamarin には iOS と Android の両方の基になるプラットフォーム SDK のほぼ全体を対象としたバインディングが含まれています。 さらに、これらのバインディングは厳密に型指定されています。つまり、ナビゲーションや使用が簡単で、開発時に堅牢なコンパイル時の型チェックが行われます。 厳密に型指定されたバインディングは、ランタイム エラーの削減とアプリケーションの品質向上につながります。
+1. **Objective-C、Java、C、および C++ の相互運用** – Xamarin は Objective-C、Java、C、C++ ライブラリを直接呼び出す機能を提供しているため、サード パーティ製の豊富なコードを使用できます。 この機能により、Objective-C、Java、C/C++ で記述された既存の iOS および Android のライブラリを使用できるようになります。 さらに、Xamarin は宣言型の構文を使用してネイティブの Objective-C および Java のライブラリをバインドできるバインド プロジェクトも提供しています。
+1. **最新の言語構造** – Xamarin アプリケーションは、現代的な言語である C# で記述されています。これには、動的言語機能や、ラムダ、LINQ などの関数コンストラクト、並列プログラミング機能、ジェネリックなど、Objective-C と Java を超える大幅な改善が含まれています。
+1. **堅牢な基本クラス ライブラリ (BCL)** – Xamarin アプリケーションでは .NET BCL が使用されます。これはクラスの大規模なコレクションで、強力な XML、データベース、シリアル化、IO、文字列、ネットワークのサポートなどの包括的かつ簡素化された機能が含まれています。 既存の C# コードをコンパイルしてアプリで使用することができます。これにより、BCL を超える機能を追加する何千個ものライブラリにアクセスできるようになります。
+1. **最新の統合開発環境 (IDE)** – Xamarin では最新の IDE である Visual Studio が使用されています。これには、コードのオート コンプリート、高度なプロジェクトとソリューションの管理システム、包括的なプロジェクト テンプレート ライブラリ、統合ソース管理などの機能が含まれます。
+1. **モバイルのクロス プラットフォーム サポート** – Xamarin には、iOS、Android、Windows という 3 つの主要なプラットフォーム向けの高度なクロス プラット フォーム サポートが用意されています。 記述したアプリケーションは最大 90% のコードを共有することができ、Xamarin.Essentials では 3 つのすべてのプラットフォームに共通するリソースにアクセスするための Unified API が提供されています。 共有コードにより、モバイル開発者の開発コストと市場投入までの時間の両方が大幅に削減されます。
 
 ### <a name="xamarinandroid"></a>Xamarin.Android
 
-[![Xamarin. Android アーキテクチャの図](what-is-xamarin-images/android-architecture-cropped.png)](what-is-xamarin-images/android-architecture.png#lightbox)
+[![Xamarin.Android アーキテクチャ ダイアグラム](what-is-xamarin-images/android-architecture-cropped.png)](what-is-xamarin-images/android-architecture.png#lightbox)
 
-Xamarin Android アプリケーションはからC#中間言語 (IL) にコンパイルされます。**中間言語 (IL)** は、アプリケーションの起動時にネイティブアセンブリにコンパイルされます。 Xamarin Android アプリケーションは、Mono 実行環境内で Android Runtime (アート) 仮想マシンとサイドバイサイドで実行されます。 Xamarin には、Android. * と Java. * 名前空間への .NET バインドが用意されています。 Mono 実行環境は、**マネージ呼び出し可能ラッパー (MCW)** を使用してこれらの名前空間を呼び出し、 **Android 呼び出し可能ラッパー (ACW)** をアートに提供して、両方の環境が相互にコードを呼び出すことができるようにします。
+Xamarin.Android アプリケーションでは、アプリケーションの起動時に、C# が **中間言語 (IL)** にコンパイルされてから、ネイティブのアセンブリに **Just-in-Time (JIT)** コンパイルされます。 Xamarin.Android アプリケーションは、Mono 実行環境内で Android Runtime (ART) 仮想マシンとサイド バイ サイドで実行されます。 Xamarin には、Android.* と Java.* 名前空間への .NET バインドが用意されています。 Mono 実行環境では、**Managed Callable Wrappers (MCW)** 経由でこれらの名前空間を呼び出し、**Android Callable Wrappers (ACW)** を ART に提供して、両方の環境で相互にコードを呼び出せるようにします。
 
-詳細については、「 [Xamarin のアーキテクチャ](~/android/internals/architecture.md)」を参照してください。
+詳細については、[Xamarin.Android のアーキテクチャ](~/android/internals/architecture.md)に関するページをご覧ください。
 
 ### <a name="xamarinios"></a>Xamarin.iOS
 
-[![Xamarin. iOS アーキテクチャダイアグラム](what-is-xamarin-images/ios-architecture-cropped.png)](what-is-xamarin-images/ios-architecture.png#lightbox)
+[![Xamarin.iOS アーキテクチャ ダイアグラム](what-is-xamarin-images/ios-architecture-cropped.png)](what-is-xamarin-images/ios-architecture.png#lightbox)
 
-Xamarin iOS アプリケーションは、からC#ネイティブ ARM アセンブリコードに完全に事前にコンパイルされます **(AOT)** 。 Xamarin では、**セレクター**を使用して目的C#の c をマネージおよびC# **レジストラー**に公開し、マネージコードを目的の c に公開します。 セレクターとレジストラーは、総称して "バインド" と呼ばれ、 C# C との間の通信を許可します。
+Xamarin.iOS アプリケーションは、C# からネイティブ ARM アセンブリ コードに完全に **Ahead-of-Time (AOT)** コンパイルされます。 Xamarin では、**セレクター**を使用して Objective-C がマネージド C# に公開され、**レジストラー**を使用してマネージド C# コードが Objective-C に公開されます。 セレクターとレジストラーは、総称して "バインド" と呼ばれ、Objective-C と C# 間の通信を可能にします。
 
-詳細については、「 [Xamarin. iOS アーキテクチャ](~/ios/internals/architecture.md)」を参照してください。
+詳細については、[Xamarin.iOS のアーキテクチャ](~/ios/internals/architecture.md)に関するページをご覧ください。
 
 ### <a name="xamarinessentials"></a>Xamarin.Essentials
 
-Xamarin. Essentials は、ネイティブデバイス機能用のクロスプラットフォーム Api を提供するライブラリです。 Xamarin 自体と同様に、Xamarin. Essentials は、ネイティブ機能へのアクセスプロセスを簡略化する抽象化です。 Xamarin. Essentials で提供される機能の例には、次のようなものがあります。
+Xamarin.Essentials は、ネイティブ デバイスの機能にクロスプラットフォーム API を提供するライブラリです。 Xamarin 自体と同様に、Xamarin.Essentials は、ネイティブ機能へのアクセス プロセスを簡略化する抽象化です。 Xamarin.Essentials で提供されている機能の例をいくつか次に示します。
 
 - デバイス情報
 - ファイル システム
@@ -82,28 +82,28 @@ Xamarin. Essentials は、ネイティブデバイス機能用のクロスプラ
 - 音声合成
 - 画面のロック
 
-詳細については、「 [Xamarin. Essentials](~/essentials/index.md)」を参照してください。
+詳細については、「[Xamarin.Essentials](~/essentials/index.md)」を参照してください。
 
 ### <a name="xamarinforms"></a>Xamarin.Forms
 
-Xamarin. Forms はオープンソースの UI フレームワークです。 Xamarin を使用すると、開発者は1つの共有コードベースから iOS、Android、および Windows アプリケーションを作成できます。 Xamarin を使用すると、開発者はのC#分離コードを使用して XAML でユーザーインターフェイスを作成できます。 これらのユーザーインターフェイスは、各プラットフォームでパフォーマンスの高いネイティブコントロールとしてレンダリングされます。 Xamarin に用意されている機能の例を次に示します。
+Xamarin.Forms はオープンソースの UI フレームワークです。 Xamarin.Forms を使用すると、開発者は 1 つの共有コードベースから iOS、Android、Windows のアプリケーションを作成できます。 Xamarin.Forms を使用すると、開発者は C# でコードビハインドを使用して XAML でユーザー インターフェイスを作成できます。 これらのユーザー インターフェイスは、各プラットフォームでパフォーマンスの高いネイティブ コントロールとしてレンダリングされます。 Xamarin.Forms で提供される機能の例としては、次のようなものがあります。
 
-- XAML ユーザーインターフェイス言語
+- XAML ユーザー インターフェイス言語
 - データ バインド
 - ジェスチャ
-- 効果
-- スタイル
+- エフェクト
+- [スタイル]
 
-詳細については、「 [Xamarin. フォーム](~/xamarin-forms/index.yml)」を参照してください。
+詳細については、[Xamarin.Forms](~/xamarin-forms/index.yml) に関するページを参照してください。
 
 ## <a name="get-started"></a>作業開始
 
-次のガイドは、Xamarin を使用して初めてのアプリを構築する際に役立ちます。
+次のガイドは、Xamarin を使用して初めてのアプリをビルドする際に役立ちます。
 
-- [Xamarin を使ってみる](~/xamarin-forms/index.yml)
-- [Xamarin Android を使ってみる](~/android/index.yml)
-- [Xamarin を使ってみる](~/ios/index.yml)
-- [Xamarin. Mac を使ってみる](~/mac/index.yml)
+- [Xamarin.Forms の概要](~/xamarin-forms/index.yml)
+- [Xamarin.Android の概要](~/android/index.yml)
+- [Xamarin.iOS の概要](~/ios/index.yml)
+- [Xamarin.Mac の概要](~/mac/index.yml)
 
 ## <a name="related-video"></a>関連ビデオ
 
