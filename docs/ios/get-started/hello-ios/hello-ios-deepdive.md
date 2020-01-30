@@ -161,7 +161,7 @@ iOS Designer は、Xamarin 内のユーザー インターフェイスを構築�
 
 ![](hello-ios-deepdive-images/vs-image33.png "iOS Designer Interface")
 
-*ストーリーボード*は、アプリケーションの画面のビジュアル デザインと、画面間の切り替え効果と関係を含むファイルです。 ストーリーボードでのアプリケーションの画面の表現は_シーン_と呼ばれます。 各シーンは、ビュー コントローラーと、それが管理するビューのスタック (コンテンツ ビュー階層) を表します。 新しい**単一ビュー アプリケーション** プロジェクトがテンプレートから作成されると、下のスクリーンショットに示すように、Visual Studio が、`Main.storyboard` という名前のストーリーボード ファイルを自動的に生成し、1 つのシーンを追加します。
+*ストーリーボード*は、アプリケーションの画面のビジュアル デザインと、画面間の切り替え効果と関係を含むファイルです。 ストーリーボードでのアプリケーションの画面の表現は _シーン_ と呼ばれます。 各シーンは、ビュー コントローラーと、それが管理するビューのスタック (コンテンツ ビュー階層) を表します。 新しい**単一ビュー アプリケーション** プロジェクトがテンプレートから作成されると、下のスクリーンショットに示すように、Visual Studio が、`Main.storyboard` という名前のストーリーボード ファイルを自動的に生成し、1 つのシーンを追加します。
 
 ![](hello-ios-deepdive-images/vs-image34.png "Visual Studio automatically generates a Storyboard file called Main.storyboard and populates it with a single Scene")
 
