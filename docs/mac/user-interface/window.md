@@ -29,7 +29,7 @@ Xamarin アプリケーションでは、その目的に基づいて、画面上
 
 パネルとは、特殊な種類のウィンドウ (基本 `NSWindow` クラスのサブクラス) です。通常は、テキスト形式のインスペクターやシステムカラーピッカーなどのユーティリティウィンドウなど、アプリケーションで補助関数を提供します。
 
-[Xcode でウィンドウを編集する ![](window-images/intro01.png)](window-images/intro01.png#lightbox)
+[![Xcode でウィンドウを編集する](window-images/intro01.png)](window-images/intro01.png#lightbox)
 
 この記事では、Xamarin. Mac アプリケーションで Windows とパネルを操作するための基本について説明します。 この記事で使用する主要な概念と手法について説明しているように、最初に[Hello, Mac](~/mac/get-started/hello-mac.md)の記事「 [Xcode と Interface Builder の概要](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)」と「[アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions)」セクションをご覧になることを強くお勧めします。
 
@@ -110,11 +110,11 @@ Apple では、次のガイドラインが提案されています。
 
 新しい Xamarin. Mac Cocoa アプリケーションを作成すると、既定で標準の空白のウィンドウが表示されます。 このウィンドウは、プロジェクトに自動的に含まれる `.storyboard` ファイルで定義されています。 Windows のデザインを編集するには、**ソリューションエクスプローラー**で、`Main.storyboard` ファイルをダブルクリックします。
 
-[メインストーリーボードの選択 ![](window-images/edit01.png)](window-images/edit01.png#lightbox)
+[![メインストーリーボードの選択](window-images/edit01.png)](window-images/edit01.png#lightbox)
 
 これにより、Xcode の Interface Builder でウィンドウのデザインが開きます。
 
-[Xcode で UI を編集する ![](window-images/edit02.png)](window-images/edit02.png#lightbox)
+[![Xcode で UI を編集する](window-images/edit02.png)](window-images/edit02.png#lightbox)
 
 **属性インスペクター**には、ウィンドウの定義と制御に使用できるプロパティがいくつかあります。
 
@@ -190,7 +190,7 @@ UI 要素をコードにC#公開するためのアウトレットとアクショ
 
 最後に、**アウトレット**を使用して**テキストビュー**をコードに公開します (`ViewController.h` ファイルを選択します)。
 
-[アウトレットを構成 ![には](window-images/edit06.png)](window-images/edit06.png#lightbox)
+[![アウトレットを構成 には](window-images/edit06.png)](window-images/edit06.png#lightbox)
 
 変更を保存し、Visual Studio for Mac に戻って Xcode と同期します。
 
@@ -663,10 +663,10 @@ void OpenDialog (NSObject sender)
 1. **ソリューションエクスプローラー**で、`Main.storyboard` ファイルをダブルクリックして、Xcode の Interface Builder で編集するために開きます。
 2. 新しい**ウィンドウコントローラー**を**ライブラリ**からドラッグし、**デザインサーフェイス**にドロップします。
 
-    [ライブラリで新しいウィンドウコントローラーを選択 ![には](window-images/new01.png)](window-images/new01.png#lightbox)
+    [![ライブラリで新しいウィンドウコントローラーを選択 には](window-images/new01.png)](window-images/new01.png#lightbox)
 3. **Id インスペクター**で、**ストーリーボード ID**として「`PreferencesWindow`」と入力します。 
 
-    [ストーリーボード ID の設定 ![](window-images/new02.png)](window-images/new02.png#lightbox)
+    [![ストーリーボード ID の設定](window-images/new02.png)](window-images/new02.png#lightbox)
 4. インターフェイスを設計します。 
 
     [![UI のデザイン ](window-images/new03.png)](window-images/new03.png#lightbox)

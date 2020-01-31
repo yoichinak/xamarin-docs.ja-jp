@@ -20,7 +20,7 @@ ms.locfileid: "76794668"
 
 SQLite データベースエンジンを使用すると、Xamarin アプリケーションは、共有コードでデータオブジェクトを読み込んで保存することができます。 このサンプルアプリケーションでは、SQLite データベーステーブルを使用して todo 項目を格納します。 この記事では、共有コードで SQLite.Net を使用して、ローカルデータベースの情報を格納および取得する方法について説明します。
 
-[iOS および Android での Todolist アプリのスクリーンショットの ![](databases-images/todo-list-sml.png)](databases-images/todo-list.png#lightbox "IOS および Android での Todolist アプリ")
+[![iOS および Android での Todolist アプリのスクリーンショットの](databases-images/todo-list-sml.png)](databases-images/todo-list.png#lightbox "IOS および Android での Todolist アプリ")
 
 SQLite.NET をモバイルアプリに統合するには、次の手順を実行します。
 
