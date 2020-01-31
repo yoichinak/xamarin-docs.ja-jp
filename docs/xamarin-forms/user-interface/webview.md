@@ -544,7 +544,7 @@ function factorial(num) {
 
 このスクリーンショットでは、新しいフラグが設定されたウィンドウが表示されます。
 
-[iOS ビルドセクションでフラグを設定 ![](webview-images/iosbuildblade-vs-sml.png)](webview-images/iosbuildblade-vs.png#lightbox)
+[![iOS ビルドセクションでフラグを設定](webview-images/iosbuildblade-vs-sml.png)](webview-images/iosbuildblade-vs.png#lightbox)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -557,7 +557,7 @@ function factorial(num) {
 
 このスクリーンショットでは、新しいフラグが設定されたウィンドウが表示されます。
 
-[iOS ビルドセクションでフラグを設定 ![](webview-images/iosbuildblade-xs-sml.png)](webview-images/iosbuildblade-xs.png#lightbox)
+[![iOS ビルドセクションでフラグを設定](webview-images/iosbuildblade-xs-sml.png)](webview-images/iosbuildblade-xs.png#lightbox)
 
 -----
 

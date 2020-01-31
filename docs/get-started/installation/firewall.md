@@ -1,23 +1,23 @@
 ---
 title: Xamarin ファイアウォールの構成手順
-description: このドキュメントでは、企業環境で Xamarin が動作できるように、ファイアウォールで許可する必要があるホストの一覧を示します。
+description: このドキュメントでは、企業環境で Xamarin が機能するように、ご利用のファイアウォールで許可する必要があるホストのリストを示します。
 ms.prod: xamarin
 ms.assetid: 658f699b-8cca-48f7-ae54-fa956384b6d6
 author: conceptdev
 ms.author: crdun
 ms.date: 07/17/2019
 ms.openlocfilehash: 2b52dfd55194ec076f28f8c33e758a39d14f5943
-ms.sourcegitcommit: 933de144d1fbe7d412e49b743839cae4bfcac439
-ms.translationtype: MT
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "70291332"
 ---
 # <a name="xamarin-firewall-configuration-instructions"></a>Xamarin ファイアウォールの構成手順
 
-_会社で Xamarin のプラットフォームが動作できるように、ファイアウォールで許可する必要があるホストの一覧。_
+"_会社で Xamarin のプラットフォームが機能するように、ご利用のファイアウォールで許可する必要があるホストのリスト。_ "
 
-Xamarin 製品をインストールし、製品が正常に動作するには、ソフトウェアに必要なツールと更新プログラムをダウンロードできるように、特定のエンドポイントをアクセス可能にする必要があります。 管理者または会社がファイアウォール設定を厳格にしている場合は、インストール、ライセンス、コンポーネントなどで問題が発生する可能性があります。 このドキュメントでは、Xamarin が動作するためにファイアウォールで許可する必要がある既知のエンドポイントのいくつかについて説明します。 このホワイトリストには、ダウンロードに含まれるすべてのサードパーティ ツールに必要なエンドポイントを含めません。 このリストを使用しても問題が解決しない場合は、Apple または Android のインストールに関するトラブルシューティング ガイドを参照してください。
+Xamarin 製品をインストールし、製品が正常に動作するには、ソフトウェアに必要なツールと更新プログラムをダウンロードできるように、特定のエンドポイントをアクセス可能にする必要があります。 管理者または会社がファイアウォール設定を厳格にしている場合は、インストール、ライセンス、コンポーネントなどで問題が発生する可能性があります。 このドキュメントでは、Xamarin が動作するようにご利用のファイアウォールで許可する必要があるいくつかの既知のエンドポイントについて概要を説明します。 このホワイトリストには、ダウンロードに含まれるすべてのサードパーティ ツールに必要なエンドポイントを含めません。 このリストを使用しても問題が解決しない場合は、Apple または Android のインストールに関するトラブルシューティング ガイドを参照してください。
 
 ## <a name="endpoints-to-allow"></a>許可するエンドポイント
 
@@ -39,7 +39,7 @@ Mac を使用していて Xamarin.Android のインストールの問題が発�
 
 NuGet にアクセスするには、次のアドレスを追加する必要があります (Xamarin.Forms は NuGet としてパッケージ化されています)。
 
-- [www.nuget.org](www.nuget.org) (NuGet にアクセスする場合)
+- www.nuget.org (NuGet にアクセスする場合)
 - globalcdn.nuget.org (NuGet のダウンロード)
 - dl-ssl.google.com (Android および Xamarin.Forms 用 Google コンポーネント)
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 04/12/2017
-ms.openlocfilehash: 7db7edd4d8143f4e456f59b97de51e3c1d202dc0
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: f008ac42bfffeda2a47ca30aa2991d91f990732f
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489402"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725039"
 ---
 # <a name="mac-app-configuration"></a>Mac アプリの構成
 
@@ -53,4 +53,4 @@ Xamarin.Mac で作成された Mac アプリケーションを実行するには
 - [インストール](/visualstudio/mac/installation/)
 - [Hello Mac のサンプル](~/mac/get-started/hello-mac.md)
 - [Mac App Store でアプリを配布する](https://developer.apple.com/devcenter/mac/checklist/)
-- [Developer ID と GateKeeper](https://developer.apple.com/resources/developer-id/)
+- [Developer ID と GateKeeper](https://developer.apple.com/developer-id/)

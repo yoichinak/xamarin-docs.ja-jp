@@ -50,7 +50,7 @@ Xamarin Live Reload は、Visual Studio Marketplace 経由で配布されます�
     
     b. **共有プロジェクト**–すべてのプラットフォームプロジェクト (Android、IOS、UWP など) に**LiveReload** NuGet をインストールします。 **パッケージソース**が**All**に設定されていることを確認します。
 
-    [NuGet パッケージマネージャーを使用して Xamarin ライブリロード NuGet を追加 ![](images/addlivereloadnuget.w157-sml.png)](images/addlivereloadnuget.w157.png#lightbox)
+    [![NuGet パッケージマネージャーを使用して Xamarin ライブリロード NuGet を追加](images/addlivereloadnuget.w157-sml.png)](images/addlivereloadnuget.w157.png#lightbox)
 
 3. 次のコードスニペットに示すように、`Application` クラスのコンストラクターに `LiveReload.Init();` を追加します。
 

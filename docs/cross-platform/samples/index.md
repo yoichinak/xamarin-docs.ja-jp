@@ -73,7 +73,7 @@ Xamarin と Azure を含むアプリ スイートを構築する Connect 2016 �
 :::row-end:::
 :::row:::
     :::column:::
-[eShop ![](images/eshop.png)](https://github.com/dotnet-architecture/eShopOnContainers/tree/dev/src/Mobile)
+[![eShop ](images/eshop.png)](https://github.com/dotnet-architecture/eShopOnContainers/tree/dev/src/Mobile)
 
 ### <a name="eshophttpsgithubcomdotnet-architectureeshoponcontainerstreedevsrcmobile"></a>[ショッピング](https://github.com/dotnet-architecture/eShopOnContainers/tree/dev/src/Mobile)
 

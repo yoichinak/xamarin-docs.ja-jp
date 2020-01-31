@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: 177a7f9017559daad528885da90edbc8a0760920
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 007c027772701e424aad5995c0ec025c3589171c
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771789"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725092"
 ---
 # <a name="creating-the-platform-video-players"></a>プラットフォーム ビデオ プレーヤーの作成
 
@@ -22,7 +22,7 @@ ms.locfileid: "70771789"
 
 ## <a name="the-video-player"></a>ビデオ プレーヤー
 
-[`VideoPlayer`](https://github.com/xamarin/xamarin-forms-samples/blob/master/CustomRenderers/VideoPlayerDemos/VideoPlayerDemos/VideoPlayerDemos/VideoPlayer.cs) クラスは、プラットフォーム間で共有される **VideoPlayerDemos** .NET Standard ライブラリに含まれます。 これは、`View` から派生します。
+[`VideoPlayer`](https://github.com/xamarin/xamarin-forms-samples/blob/master/CustomRenderers/VideoPlayerDemos/VideoPlayerDemos/VideoPlayerDemos/FormsVideoLibrary/VideoPlayer.cs) クラスは、プラットフォーム間で共有される **VideoPlayerDemos** .NET Standard ライブラリに含まれます。 これは、`View` から派生します。
 
 ```csharp
 using System;
@@ -45,7 +45,7 @@ namespace FormsVideoLibrary
 
 iOS でビデオ プレーヤーを実装する場合、関係のあるクラスがいくつかあります。 まず、アプリケーションは [`AVPlayerViewController`](xref:AVKit.AVPlayerViewController) を作成し、[`AVPlayer`](xref:AVFoundation.AVPlayer) 型のオブジェクトに [`Player`](xref:AVKit.AVPlayerViewController.Player*) プロパティを設定します。 プレーヤーにビデオ ソースを割り当てる場合は、追加のクラスが必要です。
 
-すべてのレンダラーと同様、iOS [`VideoPlayerRenderer`](https://github.com/xamarin/xamarin-forms-samples/blob/master/CustomRenderers/VideoPlayerDemos/VideoPlayerDemos/VideoPlayerDemos.iOS/VideoPlayerRenderer.cs)には、レンダラーで `VideoPlayer` ビューを識別する `ExportRenderer` 属性が含まれます。
+すべてのレンダラーと同様、iOS [`VideoPlayerRenderer`](https://github.com/xamarin/xamarin-forms-samples/blob/master/CustomRenderers/VideoPlayerDemos/VideoPlayerDemos/VideoPlayerDemos.iOS/FormsVideoLibrary/VideoPlayerRenderer.csVideoPlayerRenderer.cs)には、レンダラーで `VideoPlayer` ビューを識別する `ExportRenderer` 属性が含まれます。
 
 ```csharp
 using System;
@@ -120,7 +120,7 @@ namespace FormsVideoLibrary.iOS
 
 ### <a name="the-android-video-view"></a>Android のビデオ ビュー
 
-`VideoPlayer` 用の Android レンダラーは、Android [`VideoView`](xrtef:Android.Widget.VideoView) クラスに基づきます。 しかし、`VideoView` を単独で使用して、Xamarin.Forms アプリケーションでビデオを再生すると、ビデオは `VideoPlayer` 用に割り当てられた領域を塗りつぶし、正確な縦横比は保持されません。 このため、(後述するように) `VideoView` を Android `RelativeLayout` の子にします。 `using` ディレクティブは、それを Xamarin.Forms `RelativeLayout` と区別する `ARelativeLayout` を定義し、それが `ViewRenderer` の 2 番目のジェネリック引数になります。
+`VideoPlayer` 用の Android レンダラーは、Android [`VideoView`](xref:Android.Widget.VideoView) クラスに基づきます。 しかし、`VideoView` を単独で使用して、Xamarin.Forms アプリケーションでビデオを再生すると、ビデオは `VideoPlayer` 用に割り当てられた領域を塗りつぶし、正確な縦横比は保持されません。 このため、(後述するように) `VideoView` を Android `RelativeLayout` の子にします。 `using` ディレクティブは、それを Xamarin.Forms `RelativeLayout` と区別する `ARelativeLayout` を定義し、それが `ViewRenderer` の 2 番目のジェネリック引数になります。
 
 ```csharp
 using System;

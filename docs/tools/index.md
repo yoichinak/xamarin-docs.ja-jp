@@ -17,7 +17,7 @@ Xamarin 開発環境の向上に役立つツールを紹介します。
 
 :::row:::
     :::column:::
-[Windows 用 iOS シミュレーターの ![](~/media/index/xamarin-tools-windows-simulator.svg?branch=master)](~/tools/ios-simulator/index.md)
+[![Windows 用 iOS シミュレーターの](~/media/index/xamarin-tools-windows-simulator.svg?branch=master)](~/tools/ios-simulator/index.md)
 
 ### <a name="ios-simulator-for-windowstoolsios-simulatorindexmd"></a>[iOS Simulator for Windows](~/tools/ios-simulator/index.md)
 

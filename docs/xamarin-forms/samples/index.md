@@ -53,7 +53,7 @@ RPN (逆ポーランド記法) Calculator では、かっこや等号を使用�
 指でタッチして動かすことで描画できる回転円盤をシミュレートするプログラムです。 SpinPaint では、タッチすると指の下に線が描画されますが、円盤の他の 3 象限にもその線のミラー画像が複製されます。
     :::column-end:::
     :::column:::
-[XAML サンプルの ![](images/xaml.png)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples/)
+[![XAML サンプルの](images/xaml.png)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples/)
 
 ### <a name="xaml-sampleshttpsdocsmicrosoftcomsamplesxamarinxamarin-forms-samplesxamlsamples"></a>[XAML のサンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples/)
 

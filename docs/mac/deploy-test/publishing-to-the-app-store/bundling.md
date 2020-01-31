@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 7d2cd650dd22cd64d506d5d17a5ae0c34b44fc2b
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: f4d38bb66a34257c1e0a27c5fbbfe16f59743e83
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75487207"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725507"
 ---
 # <a name="bundling-for-the-mac-app-store"></a>Mac App Store 用のバンドル
 
@@ -47,4 +47,4 @@ ms.locfileid: "75487207"
 - [インストール](/visualstudio/mac/installation/)
 - [Hello Mac のサンプル](~/mac/get-started/hello-mac.md)
 - [Mac App Store でアプリを配布する](https://developer.apple.com/devcenter/mac/checklist/)
-- [Developer ID と GateKeeper](https://developer.apple.com/resources/developer-id/)
+- [Developer ID と GateKeeper](https://developer.apple.com/developer-id/)

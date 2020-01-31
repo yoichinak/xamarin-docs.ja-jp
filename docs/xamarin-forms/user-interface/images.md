@@ -73,7 +73,7 @@ var image = new Image { Source = "waterfront.jpg" };
 
 次のスクリーン ショットは、ローカル イメージを表示する各プラットフォームでの結果を表示します。
 
-[ローカルイメージを表示する ![サンプルアプリケーション](images-images/local-sml.png)](images-images/local.png#lightbox)
+[![ローカルイメージを表示する サンプルアプリケーション](images-images/local-sml.png)](images-images/local.png#lightbox)
 
 柔軟性を高めるため、`Device.RuntimePlatform`このコード例で示すように、別のイメージ ファイルまたはパスの一部またはすべてのプラットフォームを選択するプロパティを使用できます。
 
@@ -96,7 +96,7 @@ Retina のバージョンのイメージは、iOS 9 より前に配置する可�
 
 Android の代替解像度のイメージを配置する必要があります[特別という名前のディレクトリ](https://developer.android.com/guide/practices/screens_support.html)に次のスクリーン ショットに示すように、Android プロジェクトで。
 
-[Android の複数解像度の画像の場所を ![](images-images/xs-highdpisolution-sml.png)](images-images/xs-highdpisolution.png#lightbox)
+[![Android の複数解像度の画像の場所を](images-images/xs-highdpisolution-sml.png)](images-images/xs-highdpisolution.png#lightbox)
 
 イメージ ファイルの名前を UWP[付くことができます`.scale-xxx`ファイル拡張子の前に](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast)ここで、`xxx`など、資産に適用されるスケーリングの割合をパーセント**myimage.scale 200.png**。 イメージは、コードまたは XAML スケール修飾子を指定せず、だけなどに参照する**myimage.png**します。 プラットフォームでは、ディスプレイの現在の DPI に基づいて最も近い適切な資産のスケールを選択します。
 
@@ -123,7 +123,7 @@ Android の代替解像度のイメージを配置する必要があります[�
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-[ビルドアクションを埋め込みリソースに設定 ![](images-images/vs-buildaction-sml.png)](images-images/vs-buildaction.png#lightbox)
+[![ビルドアクションを埋め込みリソースに設定](images-images/vs-buildaction-sml.png)](images-images/vs-buildaction.png#lightbox)
 
 **ビルド アクション**表示および変更できる、**プロパティ**ファイル ウィンドウ。
 
@@ -140,7 +140,7 @@ IDE によってこの既定値を連結して生成された、**既定 Namespa
 IDE によってこの既定値を連結して生成された、**既定 Namespace**ファイル名では、このプロジェクトの各値の間のピリオド (.) を使用します。
 この ID を編集できます、**プロパティ**パッドがこれらの例の値**WorkingWithImages.beach.jpg**使用されます。
 
-[埋め込みリソースプロパティパッドの ![](images-images/xs-embeddedproperties-sml.png)](images-images/xs-embeddedproperties.png#lightbox)
+[![埋め込みリソースプロパティパッドの](images-images/xs-embeddedproperties-sml.png)](images-images/xs-embeddedproperties.png#lightbox)
 
 -----
 
@@ -163,7 +163,7 @@ var embeddedImage = new Image {
 
 次のスクリーン ショットは、埋め込み画像を表示する各プラットフォームでの結果を表示します。
 
-[埋め込み画像を表示する ![サンプルアプリケーション](images-images/resource-sml.png)](images-images/resource.png#lightbox)
+[![埋め込み画像を表示する サンプルアプリケーション](images-images/resource-sml.png)](images-images/resource.png#lightbox)
 
 ### <a name="xaml"></a>XAML
 
@@ -273,7 +273,7 @@ webImage.Source = "https://xamarin.com/content/images/pages/forms/example-app.pn
 
 次のスクリーン ショットは、リモート イメージを表示する各プラットフォームでの結果を表示します。
 
-[ダウンロードしたイメージを表示する ![サンプルアプリケーション](images-images/download-sml.png)](images-images/download.png#lightbox)
+[![ダウンロードしたイメージを表示する サンプルアプリケーション](images-images/download-sml.png)](images-images/download.png#lightbox)
 
 ### <a name="downloaded-image-caching"></a>ダウンロードされたイメージのキャッシュ
 

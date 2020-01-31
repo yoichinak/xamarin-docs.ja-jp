@@ -29,14 +29,14 @@ Xamarin.Mac のサンプル アプリとコード デモを参考にして、C# 
 Mac 開発を開始するための Hello World アプリです。
     :::column-end:::
     :::column:::
-["MacControls" の ![](images/controls.png)](https://docs.microsoft.com/samples/xamarin/mac-samples/maccontrols/)
+[!["MacControls" の](images/controls.png)](https://docs.microsoft.com/samples/xamarin/mac-samples/maccontrols/)
 
 ### <a name="maccontrolshttpsdocsmicrosoftcomsamplesxamarinmac-samplesmaccontrols"></a>[MacControls](https://docs.microsoft.com/samples/xamarin/mac-samples/maccontrols/)
 
 Mac アプリの UI コントロールの例です。
     :::column-end:::
     :::column:::
-["MacImages" を ![](images/images.png)](https://docs.microsoft.com/samples/xamarin/mac-samples/macimages/)
+[!["MacImages" を](images/images.png)](https://docs.microsoft.com/samples/xamarin/mac-samples/macimages/)
 
 ### <a name="macimageshttpsdocsmicrosoftcomsamplesxamarinmac-samplesmacimages"></a>[MacImages](https://docs.microsoft.com/samples/xamarin/mac-samples/macimages/)
 
@@ -46,7 +46,7 @@ Mac アプリの UI コントロールの例です。
 
 :::row:::
     :::column:::
-["SourceWriter" の ![](images/sourcewriter.png)](https://docs.microsoft.com/samples/xamarin/mac-samples/sourcewriter/)
+[!["SourceWriter" の](images/sourcewriter.png)](https://docs.microsoft.com/samples/xamarin/mac-samples/sourcewriter/)
 
 ### <a name="sourcewriterhttpsdocsmicrosoftcomsamplesxamarinmac-samplessourcewriter"></a>[SourceWriter](https://docs.microsoft.com/samples/xamarin/mac-samples/sourcewriter/)
 

@@ -22,7 +22,7 @@ ms.locfileid: "75489025"
 
 このドキュメントに付属するサンプルコードは、組み込み製品を示しています。製品 Id は、支払い後に機能を "ロック解除" するコードに密に結合されているため、アプリケーションにハードコーディングされています。 購入プロセスは次のように視覚化できます。   
    
-[購入プロセスの視覚化の ![](purchasing-consumable-products-images/image26.png)](purchasing-consumable-products-images/image26.png#lightbox)     
+[![購入プロセスの視覚化の](purchasing-consumable-products-images/image26.png)](purchasing-consumable-products-images/image26.png#lightbox)     
    
  基本的なワークフローは次のとおりです。   
    
@@ -44,11 +44,11 @@ ms.locfileid: "75489025"
 
 アプリケーションは次のスクリーンショットに示されています。購入するたびに、ユーザーの残高に "サルクレジット" が追加されます。   
 
- [各購入 ![ユーザーのバランスにより多くのサルクレジットを追加](purchasing-consumable-products-images/image27.png)](purchasing-consumable-products-images/image27.png#lightbox)   
+ [![各購入 ユーザーのバランスにより多くのサルクレジットを追加](purchasing-consumable-products-images/image27.png)](purchasing-consumable-products-images/image27.png#lightbox)   
 
 カスタムクラス、StoreKit、アプリストア間の相互作用は次のようになります。   
 
- [カスタムクラス、StoreKit、およびアプリストア間の相互作用の ![](purchasing-consumable-products-images/image28.png)](purchasing-consumable-products-images/image28.png#lightbox)
+ [![カスタムクラス、StoreKit、およびアプリストア間の相互作用の ](purchasing-consumable-products-images/image28.png)](purchasing-consumable-products-images/image28.png#lightbox)
 
 ### <a name="viewcontroller-methods"></a>ViewController メソッド
 
@@ -197,7 +197,7 @@ public void CompleteTransaction (SKPaymentTransaction transaction)
 
 ユーザーが複数の数量を購入すると、StoreKit 確認アラートには、次のスクリーンショットに示すように、請求される数量、単価、および料金の合計が反映されます。
 
-[購入の確認 ![](purchasing-consumable-products-images/image30.png)](purchasing-consumable-products-images/image30.png#lightbox)
+[![購入の確認](purchasing-consumable-products-images/image30.png)](purchasing-consumable-products-images/image30.png#lightbox)
 
 ## <a name="handling-network-outages"></a>ネットワーク障害の処理
 
@@ -303,7 +303,7 @@ public bool CanMakePayments()
 
 このメソッドをテストするには、iOS の**制限**機能を使用して、**アプリ内購入**を無効にします。   
 
- [iOS の制限機能を使用してアプリ内購入を無効に ![](purchasing-consumable-products-images/image31.png)](purchasing-consumable-products-images/image31.png#lightbox)   
+ [![iOS の制限機能を使用してアプリ内購入を無効に](purchasing-consumable-products-images/image31.png)](purchasing-consumable-products-images/image31.png#lightbox)   
 
 `ConsumableViewController` からのこのコード例では、無効なボタンに**Appstore の無効**なテキストを表示することによって false を返す `CanMakePayments` に反応しています。
 
@@ -323,10 +323,10 @@ if (iap.CanMakePayments()) {
 
 **アプリ内購入**機能が制限されている場合、アプリケーションは次のようになります。 [購入] ボタンは無効になっています。   
 
- [アプリ内購入機能が制限されている場合、アプリケーションは次のようになります。購入ボタンが無効になっている場合は、このような ![](purchasing-consumable-products-images/image32.png)](purchasing-consumable-products-images/image32.png#lightbox)   
+ [![アプリ内購入機能が制限されている場合、アプリケーションは次のようになります。購入ボタンが無効になっている場合は、このような](purchasing-consumable-products-images/image32.png)](purchasing-consumable-products-images/image32.png#lightbox)   
 
 `CanMakePayments` が false の場合でも製品情報を要求できます。そのため、アプリでは引き続き価格を取得して表示できます。 つまり、コードから `CanMakePayments` チェックを削除した場合でも、購入ボタンは引き続きアクティブですが、購入時には、**アプリ内購入は許可**されていないというメッセージがユーザーに表示されます (これは、支払いキューにアクセスしたときに storekit によって生成されます)。   
 
- [アプリ内購入 ![は使用できません](purchasing-consumable-products-images/image33.png)](purchasing-consumable-products-images/image33.png#lightbox)   
+ [![アプリ内購入 は使用できません](purchasing-consumable-products-images/image33.png)](purchasing-consumable-products-images/image33.png#lightbox)   
 
 実際のアプリケーションでは、ボタンを完全に非表示にしたり、StoreKit によって自動的に表示されるアラートよりも詳細なメッセージを提供するなど、さまざまな方法で制限を処理することがあります。

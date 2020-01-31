@@ -36,7 +36,7 @@ ms.locfileid: "75502507"
 このソリューションでは、Xamarin Google Play 開発者サービス NuGet を使用してマップ API いくつかの使用例を紹介しています。
   :::column-end:::
     :::column:::
-[フラッシュカードのポケットベルを ![](images/flash.png)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-flashcardpager/)
+[![フラッシュカードのポケットベルを](images/flash.png)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-flashcardpager/)
 
 ### <a name="flash-card-pagerhttpsdocsmicrosoftcomsamplesxamarinmonodroid-samplesuserinterface-flashcardpager"></a>[フラッシュカードのポケットベル](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-flashcardpager/)
 

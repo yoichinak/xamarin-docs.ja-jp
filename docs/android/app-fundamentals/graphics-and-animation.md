@@ -139,7 +139,7 @@ tv.SetBackgroundResource(Resource.Drawable.shape_rounded_blue_rect);
 
 これがどのように表示されるかを確認するには、[*アニメーション*] プロジェクトを実行し、メインメニューから [図形の構築] 項目を選択します。 次のスクリーンショットのような内容が表示されます。
 
-[カスタムの背景を持つ Textview を ![します。グラデーションと丸い角で描画されます](graphics-and-animation-images/image2-sml.png)](graphics-and-animation-images/image2.png#lightbox)
+[![カスタムの背景を持つ Textview を します。グラデーションと丸い角で描画されます](graphics-and-animation-images/image2-sml.png)](graphics-and-animation-images/image2.png#lightbox)
 
 XML 要素および描画リソースの構文の詳細については、 [Google のドキュメント](https://developer.android.com/guide/topics/resources/drawable-resource.html#Shape)を参照してください。
 
@@ -201,7 +201,7 @@ public class MyView : View
 
 このコードでは、最初に赤のペイントオブジェクトと緑色の描画オブジェクトを作成します。 キャンバスの内容を赤で塗りつぶし、キャンバスの幅の25% である緑の四角形を描画するようにキャンバスに指示します。 この例については、この記事のソースコードに含まれている `AnimationsDemo` プロジェクトを参照してください。 アプリケーションを起動し、メインメニューから描画項目を選択すると、次のような画面が表示されます。
 
-[赤の描画オブジェクトと緑の描画オブジェクトを含む ![画面](graphics-and-animation-images/image3-sml.png)](graphics-and-animation-images/image3.png#lightbox)
+[![赤の描画オブジェクトと緑の描画オブジェクトを含む 画面](graphics-and-animation-images/image3-sml.png)](graphics-and-animation-images/image3.png#lightbox)
 
 ## <a name="animation"></a>アニメーション
 

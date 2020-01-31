@@ -6,12 +6,12 @@ ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
 author: davidortinau
 ms.author: daortin
 ms.date: 11/22/2016
-ms.openlocfilehash: b08293727a585ff68c4bac8a25b26d249505b1aa
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: c428d39911da9abff7d53d478fbe99dbe9a3604e
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016396"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724835"
 ---
 # <a name="mobile-software-development-lifecycle"></a>モバイル ソフトウェア開発ライフ サイクル
 
@@ -80,7 +80,7 @@ UX モックアップを作成するときは、アプリが対象とする多�
 1. **Android** - [Design Guidelines](https://developer.android.com/design/index.html) (デザイン ガイドライン)
 1. **UWP** – [UWP Design basics](https://docs.microsoft.com/windows/uwp/design/basics/) (UWP デザインの基本)
 
-たとえば、各アプリには、アプリケーションのセクション間を切り替える操作のメタファーがあります。 iOS は、画面の下部にあるタブ バーを使用し、Android は画面の上部にあるタブ バーを使用し、UWP は[ピボットまたはタブ](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/tabs-pivot) ビューを使用します。
+たとえば、各アプリには、アプリケーションのセクション間を切り替える操作のメタファーがあります。 iOS は、画面の下部にあるタブ バーを使用し、Android は画面の上部にあるタブ バーを使用し、UWP は[ピボットまたはタブ](/windows/uwp/design/controls-and-patterns/pivot) ビューを使用します。
 
 また、ハードウェア自体にも UX を決定する要素があります。 たとえば、iOS デバイスには物理的な*戻る*ボタンがないため、ナビゲーション コントローラーのメタファーを導入します。
 

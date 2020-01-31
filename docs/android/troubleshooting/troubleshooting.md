@@ -279,7 +279,7 @@ Xamarin は複数のデバイス ABIs をサポートしています。 *armeabi
 Windows 用 Android SDK には、Google から2つのダウンロードが用意されています。
 .Exe インストーラーを選択すると、インストールされている Xamarin. Android に通知するレジストリキーが書き込まれます。 .Zip ファイルを選択して自分で解凍した場合、Xamarin では、SDK を検索する場所がわかりません。 Visual Studio で SDK を使用するように Xamarin Android に指示するには、**ツール > オプション > xamarin > Android 設定**の順に移動します。
 
-[Xamarin Android 設定での Android SDK の場所の ![](troubleshooting-images/01.png)](troubleshooting-images/01.png#lightbox)
+[![Xamarin Android 設定での Android SDK の場所の](troubleshooting-images/01.png)](troubleshooting-images/01.png#lightbox)
 
 ## <a name="ide-does-not-display-target-device"></a>IDE にターゲットデバイスが表示されない
 

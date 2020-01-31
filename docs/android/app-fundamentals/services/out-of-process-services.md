@@ -469,7 +469,7 @@ Service APK にアクセス許可を作成するには、`permission` 要素が*
 
 アプリケーションに付与されているアクセス許可を表示するには、Android 設定アプリを開き、 **[アプリ]** を選択します。 一覧でアプリケーションを見つけて選択します。 **[アプリ情報]** 画面で、 **[アクセス許可]** をタップすると、アプリに付与されているすべてのアクセス許可を表示するビューが表示されます。
 
-[アプリケーションに付与されたアクセス許可を検索する方法を示すスクリーンショットを Android デバイスから ![する](out-of-process-services-images/ipc-06-sml.png)](out-of-process-services-images/ipc-06.png#lightbox)
+[![アプリケーションに付与されたアクセス許可を検索する方法を示すスクリーンショットを Android デバイスから する](out-of-process-services-images/ipc-06-sml.png)](out-of-process-services-images/ipc-06.png#lightbox)
 
 ## <a name="summary"></a>要約
 

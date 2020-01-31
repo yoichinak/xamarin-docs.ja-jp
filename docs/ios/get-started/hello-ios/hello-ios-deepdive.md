@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 0fa6c05b3aa90f1d1875b9169350b197d882d863
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5fadd1ba556b15cb92134471f007e41f04fce69e
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73023265"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724773"
 ---
 # <a name="hello-ios--deep-dive"></a>Hello, iOS – 深い分析
 
@@ -161,7 +161,7 @@ iOS Designer は、Xamarin 内のユーザー インターフェイスを構築�
 
 ![](hello-ios-deepdive-images/vs-image33.png "iOS Designer Interface")
 
-*ストーリーボード*は、アプリケーションの画面のビジュアル デザインと、画面間の切り替え効果と関係を含むファイルです。 ストーリーボードでのアプリケーションの画面の表現は _シーン_ と呼ばれます。 各シーンは、ビュー コントローラーと、それが管理するビューのスタック (コンテンツ ビュー階層) を表します。 新しい**単一ビュー アプリケーション** プロジェクトがテンプレートから作成されると、下のスクリーンショットに示すように、Visual Studio が、`Main.storyboard` という名前のストーリーボード ファイルを自動的に生成し、1 つのシーンを追加します。
+*ストーリーボード*は、アプリケーションの画面のビジュアル デザインと、画面間の切り替え効果と関係を含むファイルです。 ストーリーボードでのアプリケーションの画面の表現は_シーン_と呼ばれます。 各シーンは、ビュー コントローラーと、それが管理するビューのスタック (コンテンツ ビュー階層) を表します。 新しい**単一ビュー アプリケーション** プロジェクトがテンプレートから作成されると、下のスクリーンショットに示すように、Visual Studio が、`Main.storyboard` という名前のストーリーボード ファイルを自動的に生成し、1 つのシーンを追加します。
 
 ![](hello-ios-deepdive-images/vs-image34.png "Visual Studio automatically generates a Storyboard file called Main.storyboard and populates it with a single Scene")
 
@@ -171,7 +171,7 @@ iOS Designer は、Xamarin 内のユーザー インターフェイスを構築�
 
 ::: zone-end
 
-_ビュー_ を選択するには、シーンの白い部分の内部をクリックします。 ビューは、画面の領域を定義し、その領域内のコンテンツを操作するためのインターフェイスを提供する `UIView` クラスのインスタンスです。 既定のビューは、デバイス全体の画面を表示する 1 つの "*ルート ビュー*" です。
+_ビュー_を選択するには、シーンの白い部分の内部をクリックします。 ビューは、画面の領域を定義し、その領域内のコンテンツを操作するためのインターフェイスを提供する `UIView` クラスのインスタンスです。 既定のビューは、デバイス全体の画面を表示する 1 つの "*ルート ビュー*" です。
 
 シーンの左側には、次のスクリーンショットに示すように、フラグ アイコン付きの灰色の矢印があります。
 
@@ -222,7 +222,7 @@ _ビュー_ を選択するには、シーンの白い部分の内部をクリ�
 
 ## <a name="content-view-hierarchy"></a>コンテンツ ビュー階層
 
-_コンテンツ ビュー階層_ は、次の図に示すように、1 つのビュー コントローラーによって管理されるビューとサブビューのスタックです。
+_コンテンツ ビュー階層_は、次の図に示すように、1 つのビュー コントローラーによって管理されるビューとサブビューのスタックです。
 
  [![](hello-ios-deepdive-images/image41.png "The Content View Hierarchy")](hello-ios-deepdive-images/image41.png#lightbox)
 
@@ -253,11 +253,11 @@ _コンテンツ ビュー階層_ は、次の図に示すように、1 つの�
 
 ::: zone pivot="macos"
 
-ビュー コントローラーは、ストーリーボードで、シーンの下部にあるバーとして表されます。 ビュー コントローラーを選択すると、**プロパティ パッド** にそのプロパティが表示されます。
+ビュー コントローラーは、ストーリーボードで、シーンの下部にあるバーとして表されます。 ビュー コントローラーを選択すると、**Properties Pad** にそのプロパティが表示されます。
 
 ![](hello-ios-deepdive-images/image44.png "Selecting the view controller brings up its properties in the Properties Pane")
 
-このシーンによって表されるコンテンツ ビュー階層のカスタム ビュー コントローラー クラスは、**プロパティ パッド** の **[ID]** セクションで **[クラス]** プロパティを編集することによって設定できます。 たとえば、私たちの **Phoneword** アプリケーションでは、下のスクリーンショットに示すように、最初の画面のビュー コントローラーとして `ViewController` が設定されます。
+このシーンによって表されるコンテンツ ビュー階層のカスタム ビュー コントローラー クラスは、**Properties Pad** の **[ID]** セクションで **[クラス]** プロパティを編集することによって設定できます。 たとえば、私たちの **Phoneword** アプリケーションでは、下のスクリーンショットに示すように、最初の画面のビュー コントローラーとして `ViewController` が設定されます。
 
 ![](hello-ios-deepdive-images/image45new.png "The Phoneword application sets the ViewController as the view controller")
 
@@ -289,7 +289,7 @@ public partial class ViewController : UIViewController
 これで `ViewController` は、ストーリーボードでこのビュー コントローラーに関連付けられているコンテンツ ビュー階層のやり取りを実行します。 次に、ビュー ライフサイクルと呼ばれるプロセスを紹介することで、ビューの管理でのビュー コントローラーの役割について説明します。
 
 > [!NOTE]
-> ユーザーの介入を必要としない表示専用の画面の場合は、**プロパティ パッド** で **[Class]** プロパティを空白のままにすることができます。 これにより、`UIViewController` の既定の実装としてビュー コントローラーのバッキング クラスを設定します。これは、カスタム コードを追加する予定がない場合に適しています。
+> ユーザーの介入を必要としない表示専用の画面の場合は、**Properties Pad** で **[Class]** プロパティを空白のままにすることができます。 これにより、`UIViewController` の既定の実装としてビュー コントローラーのバッキング クラスを設定します。これは、カスタム コードを追加する予定がない場合に適しています。
 
 ### <a name="view-lifecycle"></a>ビュー ライフサイクル
 
@@ -355,7 +355,7 @@ public override void ViewDidLoad ()
 
 Phoneword アプリケーションでは、このガイドでは説明していない概念がいくつか導入されています。 たとえば、次のような概念です。
 
-- **ボタンのテキストの変更** – Phoneword アプリでは、**ボタン**上で `SetTitle` を呼び出して、新しいテキストと**ボタンの** _コントロールの状態_ を渡すことによって**ボタン**のと変更する方法を紹介しています。 たとえば、次のコードは、CallButton のテキストを "Call" に変更します。
+- **ボタンのテキストの変更** – Phoneword アプリでは、**ボタン**上で `SetTitle` を呼び出して、新しいテキストと**ボタンの**_コントロールの状態_を渡すことによって**ボタン**のと変更する方法を紹介しています。 たとえば、次のコードは、CallButton のテキストを "Call" に変更します。
 
     ```csharp
     CallButton.SetTitle ("Call", UIControlState.Normal);
@@ -439,16 +439,13 @@ iOS デバイスにアプリが展開されます。
 
 ::: zone pivot="macos"
 
-- [**Sketch**](https://www.sketchapp.com") – Sketch は、ユーザーインターフェイス、アイコンなどをデザインするための Mac アプリです。 これは、Xamarin アプリ アイコンと起動イメージのセットをデザインするために使用されたアプリです。 Sketch 3 は、App Store で入手できます。 無料の [Sketch Tool](https://bohemiancoding.com/sketch/tool/) を試すこともできます。
 - [**Pixelmator**](https://www.pixelmator.com/) – 約 30 ドルの Mac 用の多様な画像編集アプリです。
-- [**Glyphish**](https://www.glyphish.com/) – 無料ダウンロードと有料版がある高品質のビルド済みアイコンのセットです。
 - [**Fiverr**](https://www.fiverr.com/) – 5 ドルから利用でき、さまざまなデザイナーから選択してアイコンのセットを作成できます。 見つかる場合も見つからない場合もありますが、アイコンをすぐにデザインする必要がある場合は有効なリソースです。
 
 ::: zone-end
 ::: zone pivot="windows"
 
 - Visual Studio - これを使用して、アプリ用の単純なアイコン セットを IDE で直接作成できます。
-- [**Glyphish**](https://www.glyphish.com/) – 無料ダウンロードと有料版がある高品質のビルド済みアイコンのセットです。
 - [**Fiverr**](https://www.fiverr.com/) – 5 ドルから利用でき、さまざまなデザイナーから選択してアイコンのセットを作成できます。 見つかる場合も見つからない場合もありますが、アイコンをすぐにデザインする必要がある場合は有効なリソースです。
 
 ::: zone-end

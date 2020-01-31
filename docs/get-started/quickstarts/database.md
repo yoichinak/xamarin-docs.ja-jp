@@ -10,37 +10,37 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/01/2019
 ms.openlocfilehash: 2cd4726566e73aece5d0deef90ad1feedefaa2d8
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
-ms.translationtype: MT
+ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
+ms.lasthandoff: 01/23/2020
 ms.locfileid: "71249679"
 ---
 # <a name="store-data-in-a-local-sqlitenet-database"></a>ローカルの SQLite.NET データベースにデータを格納する
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)
 
-このクイックスタートでは、次の方法について説明します。
+このクイックスタートでは、次の方法について学習します。
 
-- Nuget パッケージマネージャーを使用して、NuGet パッケージをプロジェクトに追加します。
-- データを SQLite.NET データベースにローカルに格納します。
+- Nuget パッケージ マネージャーを使用して、NuGet パッケージをプロジェクトに追加する。
+- データを SQLite.NET データベースにローカルに格納する。
 
-クイックスタートでは、ローカルの SQLite.NET データベースにデータを格納する方法について説明します。 最終的なアプリケーションは、次のとおりです。
+このクイック スタートでは、ローカルの SQLite.NET データベースにデータを格納する方法について説明します。 最終的なアプリケーションは、次のとおりです。
 
 [![](database-images/screenshots1-sml.png "Notes Page")](database-images/screenshots1.png#lightbox "Notes Page")
 [![](database-images/screenshots2-sml.png "Note Entry Page")](database-images/screenshots2.png#lightbox "Note Entry Page")
 
-## <a name="prerequisites"></a>必要条件
+## <a name="prerequisites"></a>必須コンポーネント
 
-このクイックスタートを試行する前に、[前のクイックスタート](multi-page.md)を正常に完了している必要があります。 または、[前のクイックスタートサンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)をダウンロードし、このクイックスタートの出発点として使用してください。
+このクイックスタートを試みるには、[前のクイックスタート](multi-page.md)を正常に完了しておく必要があります。 または、[前のクイックスタートのサンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)をダウンロードし、それをこのクイックスタートの出発点として使用します。
 
 ::: zone pivot="windows"
 
 ## <a name="update-the-app-with-visual-studio"></a>Visual Studio でアプリを更新する
 
-1. Visual Studio を起動し、Note ソリューションを開きます。
+1. Visual Studio を起動し、Notes ソリューションを開きます。
 
-2. **ソリューションエクスプローラー**で、**メモ**プロジェクトを選択し、右クリックして **[NuGet パッケージの管理...]** を選択します。
+2. **ソリューション エクスプローラー**で、 **[Notes]** プロジェクトを選択し、右クリックして **[NuGet パッケージの管理]** を選択します。
 
     ![](database-images/vs/add-nuget-packages.png "Add NuGet Packages")    
 
@@ -50,15 +50,15 @@ ms.locfileid: "71249679"
 
     > [!NOTE]
     > 類似した名前を持つ NuGet パッケージが多数あります。 正しいパッケージには、次の属性があります。
-    > - **作成者:** Frank A.
+    > - **作成者:** Frank A. Krueger
     > - **ID:** sqlite-net-pcl
-    > - **NuGet リンク:**  [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)  
+    > - **NuGet リンク:** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)  
     >
     > パッケージ名に関係なく、この NuGet パッケージは .NET Standard プロジェクトで使用できます。
 
     このパッケージは、データベース操作をアプリケーションに組み込むために使用されます。
 
-4. **ソリューションエクスプローラー**の**Notes**プロジェクトで、 **[モデル]** フォルダーの**Note.cs**を開き、既存のコードを次のコードに置き換えます。
+4. **ソリューション エクスプローラー**の **[Notes]** プロジェクトで、 **[Models]** フォルダーにある **[Note.cs]** を開き、既存のコードを次のコードに置き換えます。
 
     ```csharp
     using System;
@@ -76,18 +76,18 @@ ms.locfileid: "71249679"
     }
     ```
 
-    このクラスは、アプリケーションの各メモに関するデータを格納する `Note` モデルを定義します。 SQLite.NET データベースの各 `Note` インスタンスが SQLite.NET によって提供される一意の id を持つようにするために、`ID` プロパティには、`PrimaryKey` および `AutoIncrement` 属性が設定されています。
+    このクラスでは、アプリケーションでの各メモに関するデータを格納する `Note` モデルが定義されています。 SQLite.NET データベース内の各 `Note` インスタンスが SQLite.NET によって付与される一意の ID を確実に持つようにするため、`ID` プロパティが `PrimaryKey` と `AutoIncrement` の属性によってマークされます。
 
-    **CTRL + S**キーを押して**Note.cs**への変更内容を保存し、ファイルを閉じます。
+    **Ctrl + S** キーを押して **Note.cs** への変更内容を保存してから、ファイルを閉じます。
 
     > [!WARNING]
-    > この時点でアプリケーションをビルドしようとすると、後続の手順で修正されるエラーが発生します。
+    > この時点でアプリケーションをビルドしようとするとエラーが発生しますが、これは以降の手順で修正します。
 
-5. **ソリューションエクスプローラー**で、 **Notes**プロジェクトに**Data**という名前の新しいフォルダーを追加します。
+5. **ソリューション エクスプローラー**で、 **[Data]** という名前の新しいフォルダーを **[Notes]** プロジェクトに追加します。
 
-6. **ソリューションエクスプローラー**の**Notes**プロジェクトで、note **database**という名前の新しいクラスを**Data**フォルダーに追加します。
+6. **ソリューション エクスプローラー**の **[Note]** プロジェクトで、 **[Data]** フォルダーに **[NoteDatabase]** という名前の新しいクラスを追加します。
 
-7. **NoteDatabase.cs**で、既存のコードを次のコードに置き換えます。
+7. **[NoteDatabase.cs]** で、既存のコードを次のコードに置き換えます。
 
     ```csharp
     using System.Collections.Generic;
@@ -139,14 +139,14 @@ ms.locfileid: "71249679"
     }
     ```
 
-    このクラスには、データベースを作成し、そこからデータを読み取り、データを書き込んでからデータを削除するためのコードが含まれています。 このコードでは、データベース操作をバックグラウンドのスレッドに移動する非同期 SQLite.Net API が使用されています。 さらに、`NoteDatabase` コンストラクターがデータベース ファイルのパスを引数として受け取ります。 このパスは、次の手順で `App` クラスによって提供されます。
+    このクラスには、データベースを作成し、それに対してデータの読み込み、データの書き込み、データの削除を行うためのコードが含まれます。 このコードでは、データベース操作をバックグラウンドのスレッドに移動する非同期 SQLite.Net API が使用されています。 さらに、`NoteDatabase` コンストラクターがデータベース ファイルのパスを引数として受け取ります。 このパスは次の手順で `App` クラスによって提供されます。
 
-    **CTRL + S**キーを押して**NoteDatabase.cs**への変更内容を保存し、ファイルを閉じます。
+    **CTRL + S** キーを押して **NoteDatabase.cs** への変更内容を保存してから、ファイルを閉じます。
 
     > [!WARNING]
-    > この時点でアプリケーションをビルドしようとすると、後続の手順で修正されるエラーが発生します。
+    > この時点でアプリケーションをビルドしようとするとエラーが発生しますが、これは以降の手順で修正します。
 
-8. **ソリューションエクスプローラー**の**Notes**プロジェクトで、 **App.xaml.cs**をダブルクリックして開きます。 次に、既存のコードを次のコードに置き換えます。
+8. **ソリューション エクスプローラー**の **[Notes]** プロジェクトで、 **[App.xaml.cs]** をダブルクリックして開きます。 次に、既存のコードを次のコードに置き換えます。
 
     ```csharp
     using System;
@@ -196,14 +196,14 @@ ms.locfileid: "71249679"
     }
     ```
 
-    このコードは、新しい `NoteDatabase` インスタンスをシングルトンとして作成し、データベースのファイル名を `NoteDatabase` コンストラクターの引数として渡す `Database` プロパティを定義します。 データベースをシングルトンとして公開することの利点は、アプリケーションが実行されている間、開いたままになる単一のデータベース接続が作成されることです。そのため、データベース操作が実行されるときにデータベース ファイルを毎回開いて閉じる労力を避けることができます。
+    このコードでは `Database` プロパティが定義されています。これによって、新しい `NoteDatabase` インスタンスがシングルトンとして作成され、データベースのファイル名が `NoteDatabase` コンストラクターに引数として渡されます。 データベースをシングルトンとして公開することの利点は、アプリケーションが実行されている間、開いたままになる単一のデータベース接続が作成されることです。そのため、データベース操作が実行されるときにデータベース ファイルを毎回開いて閉じる労力を避けることができます。
 
     **CTRL + S** を押し、**App.xaml.cs** への変更内容を保存してから、ファイルを閉じます。
 
     > [!WARNING]
-    > この時点でアプリケーションをビルドしようとすると、後続の手順で修正されるエラーが発生します。
+    > この時点でアプリケーションをビルドしようとするとエラーが発生しますが、これは以降の手順で修正します。
 
-9. **ソリューションエクスプローラー**の**Notes**プロジェクトで、 **NotesPage.xaml.cs**をダブルクリックして開きます。 次に、`OnAppearing` メソッドを次のコードに置き換えます。
+9. **ソリューション エクスプローラー**の **[Notes]** プロジェクトで、 **[NotesPage.xaml.cs]** をダブルクリックして開きます。 次に、`OnAppearing` メソッドを次のコードに置き換えます。
 
     ```csharp
     protected override async void OnAppearing()
@@ -214,14 +214,14 @@ ms.locfileid: "71249679"
     }
     ```    
 
-    このコードは、データベースに格納されているすべてのメモを[`ListView`](xref:Xamarin.Forms.ListView)に設定します。
+    このコードにより、データベースに格納されているすべてのメモが [`ListView`](xref:Xamarin.Forms.ListView) に取り込まれます。
 
-    **CTRL + S**キーを押して**NotesPage.xaml.cs**への変更内容を保存し、ファイルを閉じます。
+    **CTRL + S** キーを押して **NotesPage.xaml.cs** への変更内容を保存してから、ファイルを閉じます。
 
     > [!WARNING]
-    > この時点でアプリケーションをビルドしようとすると、後続の手順で修正されるエラーが発生します。
+    > この時点でアプリケーションをビルドしようとするとエラーが発生しますが、これは以降の手順で修正します。
 
-10. **ソリューションエクスプローラー**で、 **[NoteEntryPage.xaml.cs]** をダブルクリックして開きます。 次に、`OnSaveButtonClicked` と `OnDeleteButtonClicked` のメソッドを次のコードに置き換えます。
+10. **ソリューション エクスプローラー**で、 **[NoteEntryPage.xaml.cs]** をダブルクリックして開きます。 次に、`OnSaveButtonClicked` と `OnDeleteButtonClicked` のメソッドを次のコードに置き換えます。
 
       ```csharp
       async void OnSaveButtonClicked(object sender, EventArgs e)
@@ -240,15 +240,15 @@ ms.locfileid: "71249679"
       }
       ```    
 
-      @No__t_0 には、1つのメモを表す `Note` インスタンスが、ページの[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)に格納されます。 @No__t_0 イベントハンドラーが実行されると、`Note` インスタンスがデータベースに保存され、アプリケーションは前のページに戻ります。 @No__t_0 イベントハンドラーが実行されると、`Note` インスタンスがデータベースから削除され、アプリケーションが前のページに戻ります。
+      `NoteEntryPage` では 1 つのメモを表す `Note` インスタンスがページの [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) に格納されます。 `OnSaveButtonClicked` イベント ハンドラーが実行されると、`Note` インスタンスがデータベースに保存され、アプリケーションは前のページに戻ります。 `OnDeleteButtonClicked` イベント ハンドラーが実行されると、`Note` インスタンスがデータベースから削除され、アプリケーションは前のページに戻ります。
 
-      **CTRL + S**キーを押して**NoteEntryPage.xaml.cs**への変更内容を保存し、ファイルを閉じます。
+      **CTRL + S** キーを押して **NoteEntryPage.xaml.cs** への変更内容を保存してから、ファイルを閉じます。
 
 11. 各プラットフォームでプロジェクトをビルドして実行します。 詳細については、「[クイックスタートのビルド](single-page.md#building-the-quickstart)」を参照してください。
 
-    [**ノート] ページ**で、[ **+** ] ボタンをクリックして**NoteEntryPage**に移動し、メモを入力します。 メモを保存すると、アプリケーションは [ノート **] ページ**に戻ります。
+    **NotesPage** で **[+]** ボタンを押して **NoteEntryPage** に移動し、メモを入力します。 メモを保存すると、アプリケーションは **NotesPage** に戻ります。
 
-    さまざまな長さのメモを入力して、アプリケーションの動作を観察します。
+    さまざまな長さの複数のメモを入力して、アプリケーションの動作を観察します。
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -257,7 +257,7 @@ ms.locfileid: "71249679"
 
 1. Visual Studio for Mac を起動し、Notes プロジェクトを開きます。
 
-2. **Solution Pad**で、**メモ**プロジェクトを選択して右クリックし、[**追加] > [NuGet パッケージの追加**] の順に選択します。
+2. **Solution Pad** で、 **[Notes]** プロジェクトを選択し、右クリックして **[追加] > [NuGet パッケージの追加]** の順に選択します。
 
     ![](database-images/vsmac/add-nuget-packages.png "Add NuGet Packages")    
 
@@ -267,15 +267,15 @@ ms.locfileid: "71249679"
 
     > [!NOTE]
     > 類似した名前を持つ NuGet パッケージが多数あります。 正しいパッケージには、次の属性があります。
-    > - **作成者:** Frank A.
+    > - **作成者:** Frank A. Krueger
     > - **ID:** sqlite-net-pcl
-    > - **NuGet リンク:**  [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)  
+    > - **NuGet リンク:** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)  
     >
     > パッケージ名に関係なく、この NuGet パッケージは .NET Standard プロジェクトで使用できます。
 
     このパッケージは、データベース操作をアプリケーションに組み込むために使用されます。
 
-4. **Solution Pad**の**Notes**プロジェクトで、 **[モデル]** フォルダーの**Note.cs**を開き、既存のコードを次のコードに置き換えます。
+4. **Solution Pad**の **[Notes]** プロジェクトで、 **[Models]** フォルダーにある **[Note.cs]** を開き、既存のコードを次のコードに置き換えます。
 
     ```csharp
     using System;
@@ -293,18 +293,18 @@ ms.locfileid: "71249679"
     }
     ```
 
-    このクラスは、アプリケーションの各メモに関するデータを格納する `Note` モデルを定義します。 SQLite.NET データベースの各 `Note` インスタンスが SQLite.NET によって提供される一意の id を持つようにするために、`ID` プロパティには、`PrimaryKey` および `AutoIncrement` 属性が設定されています。
+    このクラスでは、アプリケーションでの各メモに関するデータを格納する `Note` モデルが定義されています。 SQLite.NET データベース内の各 `Note` インスタンスが SQLite.NET によって付与される一意の ID を確実に持つようにするため、`ID` プロパティが `PrimaryKey` と `AutoIncrement` の属性によってマークされます。
 
-    **[ファイル > 保存]** を選択し (または **&#8984; + S**キーを押して)、 **Note.cs**への変更内容を保存してから、ファイルを閉じます。
+    **[ファイル]、[保存]** の順に選択し (または **&#8984; + S** キーを押し)、**Note.cs** への変更内容を保存してから、ファイルを閉じます。
 
     > [!WARNING]
-    > この時点でアプリケーションをビルドしようとすると、後続の手順で修正されるエラーが発生します。
+    > この時点でアプリケーションをビルドしようとするとエラーが発生しますが、これは以降の手順で修正します。
 
-5. **Solution Pad**で、 **Notes**プロジェクトに**Data**という名前の新しいフォルダーを追加します。
+5. **Solution Pad** で、 **[Data]** という名前の新しいフォルダーを **[Notes]** プロジェクトに追加します。
 
-6. **Solution Pad**の Notes プロジェクトで、 **note** **database**という名前の新しいクラスを**Data**フォルダーに追加します。
+6. **Solution Pad** の **[Note]** プロジェクトで、 **[Data]** フォルダーに **[NoteDatabase]** という名前の新しいクラスを追加します。
 
-7. **NoteDatabase.cs**で、既存のコードを次のコードに置き換えます。
+7. **[NoteDatabase.cs]** で、既存のコードを次のコードに置き換えます。
 
     ```csharp
     using System.Collections.Generic;
@@ -356,14 +356,14 @@ ms.locfileid: "71249679"
     }
     ```
 
-    このクラスには、データベースを作成し、そこからデータを読み取り、データを書き込んでからデータを削除するためのコードが含まれています。 このコードでは、データベース操作をバックグラウンドのスレッドに移動する非同期 SQLite.Net API が使用されています。 さらに、`NoteDatabase` コンストラクターがデータベース ファイルのパスを引数として受け取ります。 このパスは、次の手順で `App` クラスによって提供されます。
+    このクラスには、データベースを作成し、それに対してデータの読み込み、データの書き込み、データの削除を行うためのコードが含まれます。 このコードでは、データベース操作をバックグラウンドのスレッドに移動する非同期 SQLite.Net API が使用されています。 さらに、`NoteDatabase` コンストラクターがデータベース ファイルのパスを引数として受け取ります。 このパスは次の手順で `App` クラスによって提供されます。
 
-    **[ファイル > 保存]** を選択し (または **&#8984; + S**キーを押して)、 **NoteDatabase.cs**への変更内容を保存してから、ファイルを閉じます。
+    **[ファイル]、[保存]** の順に選択し (または **&#8984; + S** キーを押し)、**NoteDatabase.cs** への変更内容を保存してから、ファイルを閉じます。
 
     > [!WARNING]
-    > この時点でアプリケーションをビルドしようとすると、後続の手順で修正されるエラーが発生します。
+    > この時点でアプリケーションをビルドしようとするとエラーが発生しますが、これは以降の手順で修正します。
 
-8. **Solution Pad**の**Notes**プロジェクトで、 **App.xaml.cs**をダブルクリックして開きます。 次に、既存のコードを次のコードに置き換えます。
+8. **Solution Pad** の **[Notes]** プロジェクトで、 **[App.xaml.cs]** をダブルクリックして開きます。 次に、既存のコードを次のコードに置き換えます。
 
     ```csharp
     using System;
@@ -413,14 +413,14 @@ ms.locfileid: "71249679"
     }
     ```
 
-    このコードは、新しい `NoteDatabase` インスタンスをシングルトンとして作成し、データベースのファイル名を `NoteDatabase` コンストラクターの引数として渡す `Database` プロパティを定義します。 データベースをシングルトンとして公開することの利点は、アプリケーションが実行されている間、開いたままになる単一のデータベース接続が作成されることです。そのため、データベース操作が実行されるときにデータベース ファイルを毎回開いて閉じる労力を避けることができます。
+    このコードでは `Database` プロパティが定義されています。これによって、新しい `NoteDatabase` インスタンスがシングルトンとして作成され、データベースのファイル名が `NoteDatabase` コンストラクターに引数として渡されます。 データベースをシングルトンとして公開することの利点は、アプリケーションが実行されている間、開いたままになる単一のデータベース接続が作成されることです。そのため、データベース操作が実行されるときにデータベース ファイルを毎回開いて閉じる労力を避けることができます。
 
     **[ファイル]、[保存]** の順に選択し (または **& #8984; + S** キーを押し)、**App.xaml.cs** への変更内容を保存してから、ファイルを閉じます。
 
     > [!WARNING]
-    > この時点でアプリケーションをビルドしようとすると、後続の手順で修正されるエラーが発生します。
+    > この時点でアプリケーションをビルドしようとするとエラーが発生しますが、これは以降の手順で修正します。
 
-9. **Solution Pad**の**Notes**プロジェクトで、 **NotesPage.xaml.cs**をダブルクリックして開きます。 次に、`OnAppearing` メソッドを次のコードに置き換えます。
+9. **Solution Pad** の **[Notes]** プロジェクトで、 **[NotesPage.xaml.cs]** をダブルクリックして開きます。 次に、`OnAppearing` メソッドを次のコードに置き換えます。
 
     ```csharp
     protected override async void OnAppearing()
@@ -431,14 +431,14 @@ ms.locfileid: "71249679"
     }
     ```    
 
-    このコードは、データベースに格納されているすべてのメモを[`ListView`](xref:Xamarin.Forms.ListView)に設定します。
+    このコードにより、データベースに格納されているすべてのメモが [`ListView`](xref:Xamarin.Forms.ListView) に取り込まれます。
 
-    **[ファイル > 保存]** を選択し (または **&#8984; + S**キーを押して)、 **NotesPage.xaml.cs**への変更内容を保存してから、ファイルを閉じます。
+    **[ファイル]、[保存]** の順に選択し (または **&#8984; + S** キーを押し)、**NotesPage.xaml.cs** への変更内容を保存してから、ファイルを閉じます。
 
     > [!WARNING]
-    > この時点でアプリケーションをビルドしようとすると、後続の手順で修正されるエラーが発生します。
+    > この時点でアプリケーションをビルドしようとするとエラーが発生しますが、これは以降の手順で修正します。
 
-10. **Solution Pad**で、 **[NoteEntryPage.xaml.cs]** をダブルクリックして開きます。 次に、`OnSaveButtonClicked` と `OnDeleteButtonClicked` のメソッドを次のコードに置き換えます。
+10. **Solution Pad** で **[NoteEntryPage.xaml.cs]** をダブルクリックして開きます。 次に、`OnSaveButtonClicked` と `OnDeleteButtonClicked` のメソッドを次のコードに置き換えます。
 
       ```csharp
       async void OnSaveButtonClicked(object sender, EventArgs e)
@@ -457,26 +457,26 @@ ms.locfileid: "71249679"
       }
       ```    
 
-      @No__t_0 には、1つのメモを表す `Note` インスタンスが、ページの[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)に格納されます。 @No__t_0 イベントハンドラーが実行されると、`Note` インスタンスがデータベースに保存され、アプリケーションは前のページに戻ります。 @No__t_0 イベントハンドラーが実行されると、`Note` インスタンスがデータベースから削除され、アプリケーションが前のページに戻ります。
+      `NoteEntryPage` では 1 つのメモを表す `Note` インスタンスがページの [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) に格納されます。 `OnSaveButtonClicked` イベント ハンドラーが実行されると、`Note` インスタンスがデータベースに保存され、アプリケーションは前のページに戻ります。 `OnDeleteButtonClicked` イベント ハンドラーが実行されると、`Note` インスタンスがデータベースから削除され、アプリケーションは前のページに戻ります。
 
-      **[ファイル > 保存]** を選択し (または **&#8984; + S**キーを押して)、 **NoteEntryPage.xaml.cs**への変更内容を保存してから、ファイルを閉じます。
+      **[ファイル]、[保存]** の順に選択し (または **&#8984; + S** キーを押し)、**NoteEntryPage.xaml.cs** への変更内容を保存してから、ファイルを閉じます。
 
 11. 各プラットフォームでプロジェクトをビルドして実行します。 詳細については、「[クイックスタートのビルド](single-page.md#building-the-quickstart)」を参照してください。
 
-    [**ノート] ページ**で、[ **+** ] ボタンをクリックして**NoteEntryPage**に移動し、メモを入力します。 メモを保存すると、アプリケーションは [ノート **] ページ**に戻ります。
+    **NotesPage** で **[+]** ボタンを押して **NoteEntryPage** に移動し、メモを入力します。 メモを保存すると、アプリケーションは **NotesPage** に戻ります。
 
-    さまざまな長さのメモを入力して、アプリケーションの動作を観察します。
+    さまざまな長さの複数のメモを入力して、アプリケーションの動作を観察します。
 
 ::: zone-end
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 このクイックスタートでは、次の方法について学習しました。
 
-- Nuget パッケージマネージャーを使用して、NuGet パッケージをプロジェクトに追加します。
-- データを SQLite.NET データベースにローカルに格納します。
+- Nuget パッケージ マネージャーを使用して、NuGet パッケージをプロジェクトに追加する。
+- データを SQLite.NET データベースにローカルに格納する。
 
-XAML スタイルを使用してアプリケーションのスタイルを適用するには、次のクイックスタートに進みます。
+XAML スタイルを使用してアプリケーションのスタイルを設定するには、次のクイックスタートに進みます。
 
 > [!div class="nextstepaction"]
 > [次へ](styling.md)
@@ -484,4 +484,4 @@ XAML スタイルを使用してアプリケーションのスタイルを適用
 ## <a name="related-links"></a>関連リンク
 
 - [Notes (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)
-- [Xamarin. フォームのクイックスタートの詳細](deepdive.md)
+- [Xamarin.Forms クイックスタートの詳細](deepdive.md)
