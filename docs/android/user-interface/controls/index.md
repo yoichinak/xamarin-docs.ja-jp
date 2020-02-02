@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/29/2018
-ms.openlocfilehash: 8c0a2dffbe312cb25258cd2738b661ded2df8d7d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 25e33ee2d77501b3913a3598ef7855714f0b9bc1
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029269"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940903"
 ---
 # <a name="xamarinandroid-controls-widgets"></a>Xamarin Android コントロール (ウィジェット)
 
@@ -87,7 +87,7 @@ Android に用意されているすべてのネイティブユーザーインタ
 
 ## <a name="spinnerandroiduser-interfacecontrolsspinnermd"></a>[スピン ボタン](~/android/user-interface/controls/spinner.md)
 
-`Spinner` は、セットから1つの値を選択するための簡単な方法を提供する UI 要素です。 ドロップダウンリストが表示されます。 
+`Spinner` は、セットから1つの値を選択するための簡単な方法を提供する UI 要素です。 ドロップダウンリストに似ています。 
 
 ![スピンボタンの例](images/spinner.png)
 

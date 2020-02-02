@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/14/2018
-ms.openlocfilehash: ac96363378e91c60956d28352535733c7e954e6a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 43dbafe16d7cbabdb3b7902dd3d46d845f213fcd
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021991"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940940"
 ---
 # <a name="picker-control-in-xamarinios"></a>Xamarin のピッカーコントロール
 
@@ -27,7 +27,7 @@ ms.locfileid: "73021991"
 
 ### <a name="implementing-a-picker"></a>ピッカーの実装
 
-新しい `UIPickerView` をインスタンス化して、ピッカーを実装します。
+新しい `UIPickerView`をインスタンス化して、ピッカーを実装します。
 
 ```csharp
 UIPickerView pickerView = new UIPickerView(
@@ -127,12 +127,12 @@ public class PeopleModel : UIPickerViewModel
 ![2つのコンポーネントを含むピッカー](picker-images/image3.png "2つのコンポーネントを含むピッカー")
 
 ピッカー内のコンポーネントの数を指定するには、 [`GetComponentCount`](xref:UIKit.UIPickerViewModel.GetComponentCount(UIKit.UIPickerView))を使用します。 
-メソッドをオーバーライドします。
+メソッドからキャッシュされました。
 
 ### <a name="customizing-a-pickers-appearance"></a>ピッカーの外観のカスタマイズ
 
 ピッカーの外観をカスタマイズするには、 [`UIPickerView.UIPickerViewAppearance`](xref:UIKit.UIPickerView.UIPickerViewAppearance)を使用します。
-`UIPickerViewModel` 内の[`GetView`](xref:UIKit.UIPickerViewModel.GetView(UIKit.UIPickerView,System.nint,System.nint,UIKit.UIView))および[`GetRowHeight`](xref:UIKit.UIPickerViewModel.GetRowHeight(UIKit.UIPickerView,System.nint))メソッドをクラスまたはオーバーライドします。
+`UIPickerViewModel`内の[`GetView`](xref:UIKit.UIPickerViewModel.GetView(UIKit.UIPickerView,System.nint,System.nint,UIKit.UIView))および[`GetRowHeight`](xref:UIKit.UIPickerViewModel.GetRowHeight(UIKit.UIPickerView,System.nint))メソッドをクラスまたはオーバーライドします。
 
 ## <a name="uidatepicker"></a>UIDatePicker
 
@@ -168,9 +168,9 @@ var calendar = new NSCalendar(NSCalendarType.Gregorian);
 var currentDate = NSDate.Now;
 var components = new NSDateComponents();
 components.Year = -60;
-NSDate minDate = calendar.DateByAddingComponents(components, NSDate.Now, NSCalendarOptions.None);
+NSDate minDate = calendar.DateByAddingComponents(components, currentDate, NSCalendarOptions.None);
 datePickerView.MinimumDate = minDate;
-datePickerView.MaximumDate = NSDate.Now;
+datePickerView.MaximumDate = currentDate;
 ```
 
 > [!TIP]
@@ -234,7 +234,7 @@ datePickerView.Mode = UIDatePickerMode.DateAndTime;
 [`UIDatePickerMode.Date`](#uidatepickermodedate)と同様に、セレクターの順序と12または24時間の時刻の使用は、日付の選択のロケールによって異なります。
 
 > [!TIP]
-> `Date` プロパティを使用して、モード `UIDatePickerMode.Time`、`UIDatePickerMode.Date`、または `UIDatePickerMode.DateAndTime`で日付選択の値をキャプチャします。 この値は `NSDate` として格納されます。
+> `Date` プロパティを使用して、モード `UIDatePickerMode.Time`、`UIDatePickerMode.Date`、または `UIDatePickerMode.DateAndTime`で日付選択の値をキャプチャします。 この値は `NSDate`として格納されます。
 
 ##### <a name="uidatepickermodecountdowntimer"></a>UIDatePickerMode
 
@@ -260,7 +260,7 @@ dateLabel.Text = "Alarm set for:" + coundownTimeformat.ToString(finishCountdown)
 
 `NSDate`の書式を設定するには、 [`NSDateFormatter`](xref:Foundation.NSDateFormatter)を使用します。
 
-`NSDateFormatter`を使用するには、その[`ToString`](xref:Foundation.NSDateFormatter.ToString(Foundation.NSDate))メソッドを呼び出します。 (例:
+`NSDateFormatter`を使用するには、その[`ToString`](xref:Foundation.NSDateFormatter.ToString(Foundation.NSDate))メソッドを呼び出します。 例:
 
 ```csharp
 var date = NSDate.Now;
@@ -313,7 +313,7 @@ dateTimeformat.DateStyle = NSDateFormatterStyle.Long;
 - `NSDateFormatterStyle.Short`: 8/2/17、7:50 PM
 
 > [!NOTE]
-> `DateFormat` と `DateStyle` / `TimeStyle`、日付と時刻の書式設定を指定するさまざまな方法が用意されています。 最後に設定したプロパティによって、日付フォーマッタの出力が決まります。
+> `DateFormat` と `DateStyle`/`TimeStyle`、日付と時刻の書式設定を指定するさまざまな方法が用意されています。 最後に設定したプロパティによって、日付フォーマッタの出力が決まります。
 
 ## <a name="related-links"></a>関連リンク
 

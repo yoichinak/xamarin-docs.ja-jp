@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/25/2017
-ms.openlocfilehash: 542ae6696bae8fccfa6d5ed9842bce126760da37
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 8efa116a82ba021c2a723dc6ab636f54b6b5af71
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021867"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940991"
 ---
 # <a name="working-with-row-actions-in-xamarinios"></a>Xamarin の行アクションの操作 (iOS)
 
@@ -27,7 +27,7 @@ iOS には、テーブルに対して操作を実行する方法として、`UIS
 `UITableViewRowAction` クラスは、ユーザーがテーブルビューの行の水平方向にスワイプたときに実行されるアクションを定義するために使用されます。
 たとえば、テーブルを編集するときに、行を左にスワイプすると、既定で **[削除]** ボタンが表示されます。 `UITableViewRowAction` クラスの複数のインスタンスを `UITableView`にアタッチすることにより、複数のカスタムアクションを定義し、それぞれに独自のテキスト、書式設定、および動作を持たせることができます。
 
-## <a name="uiswipeactionsconfiguration"></a>Uiswipeactions 構成
+## <a name="uiswipeactionsconfiguration"></a>UISwipeActionsConfiguration
 
 `UISwipeActionsConfiguration`でスワイプアクションを実装するには、次の3つの手順が必要です。
 
@@ -71,7 +71,7 @@ var leadingSwipe = UISwipeActionsConfiguration.FromActions(new UIContextualActio
 leadingSwipe.PerformsFirstActionWithFullSwipe = false;
 ```
 
-アクションが表示される順序は、配列に渡される方法によって異なります。 たとえば、先頭のスワイプのコードでは、次のようにアクションが表示されます。
+アクションが表示される順序は、配列に渡される方法によって異なることに注意する必要があります。 たとえば、先頭のスワイプのコードでは、次のようにアクションが表示されます。
 
 ![テーブルの行に表示される先頭方向のスワイプ操作](row-action-images/action03.png)
 
@@ -117,7 +117,7 @@ public UIContextualAction ContextualFlagAction(int row)
 
 ## <a name="uitableviewrowaction"></a>UITableViewRowAction
 
-`UITableView`に対して1つ以上のカスタム行アクションを定義するには、`UITableViewDelegate` クラスのインスタンスを作成し、`EditActionsForRow` メソッドをオーバーライドする必要があります。 (例:
+`UITableView`に対して1つ以上のカスタム行アクションを定義するには、`UITableViewDelegate` クラスのインスタンスを作成し、`EditActionsForRow` メソッドをオーバーライドする必要があります。 例:
 
 ```csharp
 using System;
@@ -161,7 +161,7 @@ namespace BasicTable
 }
 ```
 
-静的な `UITableViewRowAction.Create` メソッドを使用して新しい `UITableViewRowAction` を作成し、ユーザーがテーブルの行の水平方向にスワイプたときに **[Hi]** ボタンが表示されるようにします。 その後、`TableDelegate` の新しいインスタンスが作成され、`UITableView`にアタッチされます。 (例:
+静的な `UITableViewRowAction.Create` メソッドを使用して新しい `UITableViewRowAction` を作成し、ユーザーがテーブルの行の水平方向にスワイプたときに **[Hi]** ボタンが表示されるようにします。 その後、`TableDelegate` の新しいインスタンスが作成され、`UITableView`にアタッチされます。 例:
 
 ```csharp
 TableDelegate tableDelegate;

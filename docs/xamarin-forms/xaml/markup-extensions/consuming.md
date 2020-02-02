@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/04/2019
-ms.openlocfilehash: 47fd6d34a1ef286fa8e1a307ea6033c9c6a9feea
-ms.sourcegitcommit: 211fed94fb96127a3e158ae1ff5d7eb831a203d8
+ms.openlocfilehash: 693dd29e59aee73a206398a8a44cc4f15e385d8d
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75955755"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940283"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>XAML マークアップ拡張の使用
 
@@ -60,7 +60,7 @@ static class AppConstants
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
              xmlns:local="clr-namespace:MarkupExtensions"
              x:Class="MarkupExtensions.StaticDemoPage"
              Title="x:Static Demo">
@@ -115,7 +115,7 @@ XAML パーサーができます、`StaticExtension`のように短縮するに�
 **静的デモ**ページには、その他の 2 つの例が含まれています。 XAML ファイルのルート タグには、.NET 用の XML 名前空間宣言が含まれています`System`名前空間。
 
 ```xaml
-xmlns:sys="clr-namespace:System;assembly=mscorlib"
+xmlns:sys="clr-namespace:System;assembly=netstandard"
 ```
 
 これにより、`Label`フォント サイズを静的フィールドに設定する`Math.PI`します。 比較的小さなテキストは、結果をそのため、`Scale`プロパティに設定されて`Math.E`:

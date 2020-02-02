@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2019
-ms.openlocfilehash: 11de0ecf20c6748d4958d1f1f1bea80e6a87024e
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: 99bf55b6e956efe54510e822d379665879f3ba44
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75490013"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940292"
 ---
 # <a name="the-xamarinforms-visual-state-manager"></a>Xamarin.Forms Visual State Manager
 
@@ -511,7 +511,7 @@ VSM マークアップは、2 番目の (`helpLabel` という名前の) `Label`
 
 [![VSM 検証: 有効な状態](vsm-images/VsmValidationValid.png "VSM 検証-有効")](vsm-images/VsmValidationValid-Large.png#lightbox)
 
-分離コード ファイルは、役割の処理を担います、`TextChanged`からイベントを`Entry`します。 ハンドラーは、入力文字列が有効かどうかを判断するのに正規表現を使用します。 という名前の分離コード ファイル内のメソッド`GoToState`呼び出す静的`VisualStateManager.GoToState`両方のメソッド`helpLabel`と`submitButton`:
+分離コードファイルは、`Entry`からの `TextChanged` イベントの処理を担当します。 ハンドラーは、入力文字列が有効かどうかを判断するのに正規表現を使用します。 という名前の分離コード ファイル内のメソッド`GoToState`呼び出す静的`VisualStateManager.GoToState`両方のメソッド`helpLabel`と`submitButton`:
 
 ```csharp
 public partial class VsmValidationPage : ContentPage
@@ -681,7 +681,7 @@ VSM マークアップは、XAML ファイルの 4 箇所 で発生します。 
 
 `ScrollView` という名前の内側の `menuScroll` と `StackLayout` という名前の `menuStack` は、ボタンのメニューを実装しています。 これらのレイアウトの方向は、`mainStack` とは反対になっています。 メニューは縦向きモードでは水平に、横向きモードでは垂直である必要があります。
 
-VSM マークアップの 4 番目のセクションは、ボタン自体の暗黙的なスタイルが使用されています。 このマークアップは、縦向きと横向きに固有の `VerticalOptions`、`HorizontalOptions`、および `Margin` プロパティを設定します。
+VSM マークアップの 4 番目のセクションは、ボタン自体の暗黙的なスタイルが使用されています。 このマークアップは、縦と横の向きに固有の `VerticalOptions`、`HorizontalOptions`、および `Margin` プロパティを設定します。
 
 分離コードファイルでは、`BindingContext` の `menuStack` プロパティを `Button` のコマンドを実装するように設定し、ハンドラーをページの `SizeChanged` イベントも付加します。
 

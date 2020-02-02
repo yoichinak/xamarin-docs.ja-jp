@@ -5,12 +5,12 @@ description: このドキュメントでは、WPF と Xamarin. Forms を比較�
 author: davidortinau
 ms.author: daortin
 ms.date: 04/26/2017
-ms.openlocfilehash: e87595c121f1117d055d812cb06c81ecba850c12
-ms.sourcegitcommit: 211fed94fb96127a3e158ae1ff5d7eb831a203d8
+ms.openlocfilehash: 9c69449f88f9c237b5075967c89ff7ff3b6fb57a
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75955652"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940795"
 ---
 # <a name="wpf-vs-xamarinforms-similarities--differences"></a>WPF と Xamarin. Forms: 類似点 & 相違点
 
@@ -74,11 +74,11 @@ Xamarin. Forms のバインド可能なプロパティの定義は、WPF と同�
 
 ### <a name="attached-properties"></a>添付プロパティ
 
-添付プロパティは、バインド可能なプロパティのサブセットであり、WPF と同じように動作します。 主な違いは、プロパティラッパーはこの場合はオプション、所有クラスでは静的な get/set メソッドのセットに置き換えることです。 詳細については、「 [Xamarin. Forms の添付プロパティ](~/xamarin-forms/xaml/attached-properties.md)」を参照してください。
+添付プロパティは、バインド可能なプロパティのサブセットであり、WPF と同じように動作します。 主な違いは、この場合はプロパティラッパーが省略され、所有クラスの静的な get/set メソッドのセットに置き換えられることです。 詳細については、「 [Xamarin. Forms の添付プロパティ](~/xamarin-forms/xaml/attached-properties.md)」を参照してください。
 
 ### <a name="using-the-binding-engine"></a>バインディングエンジンの使用
 
-バインディングエンジンを使用するためのプロセスは、WPF と同じです。 これは、ソースオブジェクト (任意の .NET 型) に関連付けられた `Binding` オブジェクトを作成し、オプションのプロパティ値 (オプションの場合、WPF と同様に、ソースオブジェクトをプロパティ自体として扱います) によって分離コードで利用できます。 その後、任意の `BindableObject` で `SetBinding` を使用して、バインドを `BindableProperty`に関連付けることができます。
+バインディングエンジンを使用するためのプロセスは、WPF と同じです。 これは、ソースオブジェクト (任意の .NET 型) に関連付けられた `Binding` オブジェクトを作成し、省略可能なプロパティ値 (省略した場合、WPF と同様に、ソースオブジェクトをプロパティ自体として扱います) によって分離コードで使用できます。 その後、任意の `BindableObject` で `SetBinding` を使用して、バインドを `BindableProperty`に関連付けることができます。
 
 または、`BindingExtension`を使用して、XAML でバインド関係を定義することもできます。 WPF の拡張機能と同じ基本値を持ちます。
 
@@ -128,7 +128,7 @@ WPF では、既定のバインディングソースを再設定する `DataCont
 
 値コンバーターは、WPF で完全にサポートされています。 WPF と同様です。 同じインターフェイス図形が使用されますが、Xamarin. Forms には `Xamarin.Forms` 名前空間で定義されたインターフェイスがあります。
 
-### <a name="model-view-viewmodel"></a>Model-View-ViewModel
+### <a name="model-view-viewmodel"></a>モデルビュー-ビューモデル
 
 MVVM は、WPF と Xamarin. Forms の両方で完全にサポートされています。
 
@@ -153,7 +153,7 @@ WPF に組み込まれている `RoutedCommand` は、使用されることが�
 2. データトリガーはデータテンプレートで完全にサポートされますが、トリガーが関連付けられているプロパティの型を示す `DataType` プロパティを含める必要があります。
 3. `DataTemplateSelector` もサポートされていますが、`DataTemplate` から派生しているため、`ItemTemplate` プロパティに直接割り当てられます (WPF では `ItemTemplateSelector`)。
 
-## <a name="itemscontrol"></a>ItemsControl
+## <a name="itemscontrol"></a>System.windows.controls.itemscontrol>
 
 Xamarin. Forms の `ItemsControl` に相当するものはありません。ただし、 [Xamarin. フォーム用にカスタムのもの](https://github.com/xamarinhq/xamu-infrastructure/blob/master/src/XamU.Infrastructure/Controls/ItemsControl.cs)があります。
 

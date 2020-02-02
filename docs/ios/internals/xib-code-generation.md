@@ -7,17 +7,17 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 778b8eeb82ebfb62cfb8c16e14f341c9afb8ff7a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f6218977e9ad0d4c396ef127c3c3ca53dc56d7d3
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022250"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940871"
 ---
 # <a name="xib-code-generation-in-xamarinios"></a>xib でのコード生成
 
 > [!IMPORTANT]
-> このドキュメントでは、Xamarin Designer for iOS でアクションとアウトレットが使用されていないため、Visual Studio for Mac と Xcode の Interface Builder のみとの統合について説明します。 IOS Designer の詳細については、 [Ios designer](~/ios/user-interface/designer/index.md)のドキュメントを参照してください。
+> このドキュメントでは、Xamarin Designer for iOS でアクションとアウトレットが使用されていないため、Visual Studio for Mac と Xcode の Interface Builder のみとの統合について説明します。 iOS Designer の詳細については、 [iOS Designer](~/ios/user-interface/designer/index.md)ドキュメントを参照してください。
 
 Apple Interface Builder ツール ("IB") を使用すると、ユーザーインターフェイスを視覚的にデザインできます。 IB によって作成されたインターフェイス定義は、 **xib**ファイルに保存されます。 **Xib**ファイル内のウィジェットとその他のオブジェクトには、"クラス id" を与えることができます。これは、カスタムのユーザー定義型にすることができます。 これにより、ウィジェットの動作をカスタマイズしたり、カスタムウィジェットを作成したりすることができます。
 
@@ -33,7 +33,7 @@ Cocoa Touch の既存の型を使用するだけでなく、 **xib**ファイル
 
 ## <a name="generating-code"></a>コードの生成
 
-*ページ*のビルドアクションを含む **{0}xib**ファイルの場合、xib.designer.cs ファイルがプロジェクトにも存在{0}する場合、Visual Studio for Mac によって、ファイルに含まれるすべてのユーザークラスの部分クラスが生成されます。**xib ファイル。** すべてのアクションのアウトレットと部分メソッドのプロパティが含まれています。 このファイルが存在するだけで、コード生成が有効になります。
+*ページ*のビルドアクションを含む **{0}xib**ファイルの場合は、xib.designer.cs ファイルがプロジェクトにも存在 **{0}** する場合、Visual Studio for Mac は、 **xib**ファイルで検索できるすべてのユーザークラスの部分クラスをデザイナーファイル内に生成します。これには、すべてのアクションのアウトレットと部分メソッドのプロパティが含まれます。 このファイルが存在するだけで、コード生成が有効になります。
 
 **Xib**ファイルが変更されると、デザイナーファイルが自動的に更新され、Visual Studio for Mac がフォーカスを取り戻す。 デザイナーファイルを手動で変更することはできません。変更は、次回 Visual Studio for Mac によってファイルが更新されるときに上書きされます。
 
@@ -47,7 +47,7 @@ Visual Studio for Mac は、標準の .NET プロジェクト namespacing と一
 
 ## <a name="non-designer-class-parts"></a>非デザイナークラスの部分
 
-デザイナー部分クラスは、そのように使用するためのものではありません。 アウトレットはプライベートであり、基底クラスは指定されていません。 各クラスは、対応する "非デザイナー" クラスパーツを別のファイルに含めることが想定されています。これは、基底クラスを設定し、アウトレットを使用または公開し、xib の読み込み時にネイティブコードからクラスをインスタンス化するために必要なコンストラクターを定義し**ます。** . **Xib**テンプレートはこれを行いますが、 **xib**で定義する追加のカスタムクラスについては、非デザイナーパーツを手動で追加する必要があります。
+デザイナー部分クラスは、そのように使用するためのものではありません。 アウトレットはプライベートであり、基底クラスは指定されていません。 各クラスは、対応する "非デザイナー" クラスパーツを別のファイルに含めることが想定されています。このクラスは、基底クラスを設定し、アウトレットを使用または公開し、 **xib**の読み込み時にネイティブコードからクラスをインスタンス化するために必要なコンストラクターを定義します。 **Xib**テンプレートはこれを行いますが、 **xib**で定義する追加のカスタムクラスについては、非デザイナーパーツを手動で追加する必要があります。
 
 その理由は、柔軟性が必要なためです。 たとえば、複数の分離コードクラスは、クラスを IB でサブクラス化する共通のマネージ抽象クラスをサブクラス化できます。
 

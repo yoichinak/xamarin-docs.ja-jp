@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: c913f18e34f93e9ab7adc09109ea5c9e9e5067a2
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.openlocfilehash: 7413fbe3f08988cfdb7c7b4e5237539aca250772
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728149"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940844"
 ---
 # <a name="viewpager-with-views"></a>ViewPager とビュー
 
@@ -62,18 +62,13 @@ int imageId = treeCatalog[2].imageId;
     android:layout_height="match_parent" >
 
 </android.support.v4.view.ViewPager>
+```
 
-```csharp
-This XML defines a `ViewPager` that occupies the entire screen. Note that
-you must use the fully-qualified name **android.support.v4.view.ViewPager**
-because `ViewPager` is packaged in a support library. `ViewPager` is
-available only from 
-[Android Support Library v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/);
-it is not available in the Android SDK. 
+この XML は、画面全体を占有する `ViewPager` を定義します。 `ViewPager` はサポートライブラリにパッケージされているので、完全修飾名の android... **ViewPager**を使用する必要があることに注意してください。 `ViewPager` は、 [Android サポートライブラリ v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)からのみ使用できます。Android SDK では使用できません。 
 
-## Set up ViewPager
+## <a name="set-up-viewpager"></a>ViewPager の設定
 
-Edit **MainActivity.cs** and add the following `using` statement:
+**MainActivity.cs**を編集し、次の `using` ステートメントを追加します。
 
 ```csharp
 using Android.Support.V4.View;

@@ -7,27 +7,27 @@ ms.technology: xamarin-forms
 author: davidortinau
 ms.author: daortin
 ms.date: 09/10/2019
-ms.openlocfilehash: 1e436cf96367141873f16a09d8c818be4265226b
-ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
+ms.openlocfilehash: a0d15c7d264c32a8ed193e55fb934f63992198eb
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71206510"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940275"
 ---
 # <a name="sign-in-with-apple-in-xamarinforms"></a>Xamarin での Apple でのサインイン
 
-Apple でサインインすると、ユーザーの id 保護を提供する新しいサービスが導入されます。 IOS 13 Apple では、サードパーティの認証プロバイダーを使用するすべてのアプリで、Apple でのサインインも提供する必要があります。 これを Xamarin の iOS で使用する方法については、[こちらを参照](~/ios/platform/ios13/sign-in.md)してください。
+Apple でサインインすると、ユーザーの id 保護を提供する新しいサービスが導入されます。 IOS 13 Apple では、サードパーティの認証プロバイダーを使用するすべてのアプリで、Apple でのサインインも提供する必要があります。 Xamarin. iOS でこの機能を使用する手順については、[こちらを参照](~/ios/platform/ios13/sign-in.md)してください。
 
 Xamarin. Forms ソリューション内の Apple でのサインインをサポートする場合は、Android と UWP を考慮する必要があるその他の考慮事項があります。 これらのプラットフォームでは、Apple は異なるワークフローを提供します。
 
-## <a name="setup-for-iosiosplatformios13sign-inmd"></a>[iOS 用のセットアップ](~/ios/platform/ios13/sign-in.md)
+## <a name="setup-for-xamariniosiosplatformios13sign-inmd"></a>[Xamarin のセットアップ (iOS)](~/ios/platform/ios13/sign-in.md)
 
-このガイドでは、Apple for iOS アプリケーションへのサインインを有効にするために必要なセットアップについて説明します。
+このガイドでは、Apple for Xamarin iOS アプリケーションのサインインを有効にするために必要なセットアップについて説明します。
 
 ## <a name="setup-for-other-platformssetupmd"></a>[その他のプラットフォーム用のセットアップ](setup.md)
 
-このガイドでは、Xamarin Android および UWP を含む iOS 以外のアプリケーションに対して、Apple でのサインインを有効にするために必要なセットアップについて説明します。
+このガイドでは、Xamarin Android や UWP など、他のプラットフォームで Apple でのサインインを有効にするために必要なセットアップについて説明します。
 
-## <a name="use-sign-in-with-appleandroid-ios-sign-inmd"></a>[Apple でのサインインの使用](android-ios-sign-in.md)
+## <a name="use-sign-in-with-apple-in-xamarinformsandroid-ios-sign-inmd"></a>[Xamarin での Apple でのサインインの使用](android-ios-sign-in.md)
 
 いくつかのサービスでは、クロスプラットフォームの Xamarin. フォームアプリケーションで、Apple によるサインインをサポートできます。 このガイドでは、必要な手順について説明します。

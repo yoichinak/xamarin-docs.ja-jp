@@ -7,16 +7,16 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 5e83e34dab407c5be84fc5b4c3c0c445d56907e3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 809f6241b3a17f63fe3077f896095c303e1dfd2e
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028755"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940835"
 ---
 # <a name="material-theme"></a>素材のテーマ
 
-*マテリアルテーマ*は、Android 5.0 (ロリポップ) 以降のビューとアクティビティのルックアンドフィールを決定するユーザーインターフェイススタイルです。 マテリアルのテーマは Android 5.0 に組み込まれているため、システム UI やアプリケーションによって使用されます。 マテリアルテーマは、ユーザーが設定メニューから動的に選択できるシステム全体の外観オプションを意味する "テーマ" ではありません。 代わりに、素材のテーマは、アプリのルックアンドフィールをカスタマイズするために使用できる、関連する組み込み基本スタイルのセットと考えることができます。
+*マテリアル テーマ*のビューと Android 5.0 (ロリポップ) で始まるアクティビティの外観を決定するユーザー インターフェイスのスタイルがします。 マテリアル テーマは、およびアプリケーション、システム UI で使用するよう Android 5.0 に組み込まれています。 マテリアル テーマは、ユーザーは [設定] メニューから動的に選択できるシステム全体の外観のオプションの意味で「テーマ」ではありません。 代わりに、マテリアル テーマ見なすことができますのアプリの外観をカスタマイズに使用できる関連する組み込みの基本スタイルのセットとして。
 
 Android には、次の3つの素材テーマがあります。
 
@@ -36,7 +36,7 @@ Android には、次の3つの素材テーマがあります。
 
 マテリアルのテーマは Android 5.0 以降でのみサポートされているため、以前のバージョンの Android で実行するためにアプリのテーマを作成することはできません (または、マテリアルテーマから派生したカスタムテーマを使用することはできません)。 ただし、Android 5.0 デバイスで素材のテーマを使用するようにアプリを構成し、以前のバージョンの Android で動作する場合は以前のテーマに適切にフォールバックできます (詳細については、この記事の「[互換性](#compatibility)」セクションを参照してください)。
 
-## <a name="requirements"></a>［要件］
+## <a name="requirements"></a>要件
 
 Xamarin ベースのアプリで新しい Android 5.0 のマテリアルテーマ機能を使用するには、次のものが必要です。
 
@@ -44,7 +44,7 @@ Xamarin ベースのアプリで新しい Android 5.0 のマテリアルテー�
 
 - **Android SDK** &ndash; Android 5.0 (API 21) 以降を Android SDK Manager を使用してインストールする必要があります。
 
-- API レベル23以前をターゲットにしている場合は、 **JAVA jdk 1.8** &ndash; jdk 1.7 を使用できます。 JDK 1.8 は、 [Oracle](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)から入手できます。
+- API レベル23以前を対象としている場合は、 **JAVA jdk 1.8** &ndash; jdk 1.7 を使用できます。 JDK 1.8 は、 [Oracle](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)から入手できます。
 
 Android 5.0 アプリケーションプロジェクトを構成する方法については、「 [android 5.0 プロジェクトの設定](~/android/platform/lollipop.md)」を参照してください。
 
@@ -70,7 +70,7 @@ Android 5.0 アプリケーションプロジェクトを構成する方法に�
 </application>
 ```
 
-または、 **AssemblyInfo.cs** (または**Properties.cs**) で application `Theme` 属性を設定することもできます。 (例:
+または、 **AssemblyInfo.cs** (または**Properties.cs**) で application `Theme` 属性を設定することもできます。 例:
 
 ```C#
 [assembly: Application(Theme="@android:style/Theme.Material.Light")]
@@ -113,7 +113,7 @@ Android 5.0 アプリケーションプロジェクトを構成する方法に�
 
 次の図に、これらの画面領域のラベルを示します。
 
-[属性とそれに関連付けられた画面領域の![ダイアグラム](material-theme-images/screen-attributes-sml.png)](material-theme-images/screen-attributes.png#lightbox)
+[属性とそれに関連付けられた画面領域の ![ダイアグラム](material-theme-images/screen-attributes-sml.png)](material-theme-images/screen-attributes.png#lightbox)
 
 既定では、`statusBarColor` は `colorPrimaryDark`の値に設定されます。 `statusBarColor` を純色に設定することも、`@android:color/transparent` に設定してステータスバーを透明にすることもできます。 `navigationBarColor` を `@android:color/transparent`に設定することによって、ナビゲーションバーを透明にすることもできます。
 
@@ -137,7 +137,7 @@ Android 5.0 アプリケーションプロジェクトを構成する方法に�
 
 - **Resources/v21**フォルダーを作成します。 このフォルダーに、次のように**スタイルの .xml**ファイルを作成します。
 
-    [Resources/values-21 フォルダー内の styles .xml の![場所](material-theme-images/values-v21-sml.png)](material-theme-images/values-v21.png#lightbox)
+    [Resources/values-21 フォルダー内の styles .xml の ![場所](material-theme-images/values-v21-sml.png)](material-theme-images/values-v21.png#lightbox)
 
     **リソース/値-v21**は android 5.0 に固有であることに注意してください &ndash; 古いバージョンの android では、このフォルダー内のファイルは読み取られません。
 
@@ -155,7 +155,7 @@ Android 5.0 アプリケーションプロジェクトを構成する方法に�
 
 - この時点で、 *Mycustomtheme*を使用するアプリでは、カスタマイズなしで stock `Theme.Material.Light` テーマが表示されます。
 
-    [カスタマイズ前にカスタムテーマの外観を![する](material-theme-images/custom-theme-before-sml.png)](material-theme-images/custom-theme-before.png#lightbox)
+    [カスタマイズ前にカスタムテーマの外観を ![する](material-theme-images/custom-theme-before-sml.png)](material-theme-images/custom-theme-before.png#lightbox)
 
 - 変更するレイアウト属性の色を定義して、色のカスタマイズを**スタイルの .xml**に追加します。 たとえば、アプリバーの色を `my_blue` に変更し、UI コントロールの色を `my_purple`に変更するには、color **. xml**で構成されている色リソースを参照する**スタイルの xml**に色のオーバーライドを追加します。
 
@@ -174,7 +174,7 @@ Android 5.0 アプリケーションプロジェクトを構成する方法に�
 
 これらの変更が適用されると、 *Mycustomtheme*を使用するアプリでは、`my_purple`の `my_blue` と UI コントロールにアプリバーの色が表示されますが、他の場所では `Theme.Material.Light` の配色を使用します。
 
-[カスタマイズ後にカスタムテーマの外観を![する](material-theme-images/custom-theme-after-sml.png)](material-theme-images/custom-theme-after.png#lightbox)
+[カスタマイズ後にカスタムテーマの外観を ![する](material-theme-images/custom-theme-after-sml.png)](material-theme-images/custom-theme-after.png#lightbox)
 
 この例では、 *Mycustomtheme*は背景色、ステータスバー、およびテキストの色の `Theme.Material.Light` から色をではますが、アプリバーの色を `my_blue` に変更し、ラジオボタンの色を `my_purple`に設定します。
 
@@ -185,7 +185,7 @@ Android 5.0 アプリケーションプロジェクトを構成する方法に�
 Android 5.0 では、個々のビューのスタイルを設定することもできます。 前のセクションで説明したように、**色 .xml**と**スタイル .xml**を作成した後は、**スタイルの .xml**にビュースタイルを追加できます。
 個々のビューのスタイルを適用するには、次の手順に従います。
 
-- **Resources/values-v21/styles .xml**を編集し、カスタムビュースタイルの名前を持つ `style` ノードを追加します。 この `style` ノード内で、ビューのカスタムカラー属性を設定します。 たとえば、角が丸く、`my_blue` をカードの背景色として使用するカスタムの[CardView](~/android/user-interface/controls/card-view.md)スタイルを作成するには、`style` ノードを (`resources` ノード内の)**スタイルの .xml**に追加し、背景色とコーナー半径を構成します。
+- **Resources/values-v21/styles .xml**を編集し、カスタムビュースタイルの名前を持つ `style` ノードを追加します。 この `style` ノード内で、ビューのカスタムカラー属性を設定します。 たとえば、角が丸く、カードの背景色として `my_blue` を使用するカスタム [CardView](~/android/user-interface/controls/card-view.md) スタイルを作成するには、`style` ノードを (`resources` ノード内の) **styles.xml** に追加し、背景色を構成します。角の半径:
 
 ```xml
 <!-- Theme an individual view: -->
@@ -199,7 +199,7 @@ Android 5.0 では、個々のビューのスタイルを設定することも�
 </style>
 ```
 
-- レイアウトで、そのビューの `style` 属性を、前の手順で選択したカスタムスタイル名と一致するように設定します。 (例:
+- レイアウトで、そのビューの `style` 属性を、前の手順で選択したカスタムスタイル名と一致するように設定します。 例:
 
 ```xml
 <android.support.v7.widget.CardView
@@ -211,7 +211,7 @@ Android 5.0 では、個々のビューのスタイルを設定することも�
 
 次のスクリーンショットは、(左側に表示される) 既定の `CardView` の例を示しています。これは、(右側に表示されている) カスタム `CardView.MyBlue` テーマでスタイルを設定した `CardView` と比較したものです。
 
-[既定の CardView およびカスタム CardView の![例](material-theme-images/custom-cardview-sml.png)](material-theme-images/custom-cardview.png#lightbox)
+[既定の CardView およびカスタム CardView の ![例](material-theme-images/custom-cardview-sml.png)](material-theme-images/custom-cardview.png#lightbox)
 
 この例では、カスタム `CardView` が、背景色 `my_blue` と18dp コーナー半径と共に表示されます。
 
@@ -219,7 +219,7 @@ Android 5.0 では、個々のビューのスタイルを設定することも�
 
 Android 5.0 で素材のテーマを使用するようにアプリのスタイルを設定し、古い Android バージョンで自動的に下互換性のあるスタイルに戻すには、次の手順を使用します。
 
-- マテリアルテーマスタイルから派生する**Resources/values-v21/styles .xml**でカスタムテーマを定義します。 (例:
+- マテリアルテーマスタイルから派生する**Resources/values-v21/styles .xml**でカスタムテーマを定義します。 例:
 
 ```xml
 <resources>
@@ -229,7 +229,7 @@ Android 5.0 で素材のテーマを使用するようにアプリのスタイ�
 </resources>
 ```
 
-- 以前のテーマから派生した**リソース/値/スタイルの xml**でカスタムテーマを定義しますが、上記と同じテーマ名を使用します。 (例:
+- 以前のテーマから派生した**リソース/値/スタイルの xml**でカスタムテーマを定義しますが、上記と同じテーマ名を使用します。 例:
 
 ```xml
 <resources>
@@ -240,7 +240,7 @@ Android 5.0 で素材のテーマを使用するようにアプリのスタイ�
 ```
 
 - **Androidmanifest .xml**で、カスタムテーマ名を使用してアプリを構成します。 
-    (例:
+    例:
 
 ```xml
 <application android:label="MyApp" 
@@ -260,7 +260,7 @@ Android 5.0 デバイスでアプリを実行すると、 **Resources/values-v21
 
 以前のバージョンの Android とのテーマの互換性の詳細については、「[代替リソース](~/android/app-fundamentals/resources-in-android/alternate-resources.md)」を参照してください。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 この記事では、Android 5.0 (ロリポップ) に含まれる新しいマテリアルテーマのユーザーインターフェイススタイルについて紹介しました。 ここでは、アプリのスタイルを設定するために使用できる3つの組み込みの素材テーマの種類について説明し、アプリをブランド化するためのカスタムテーマを作成する方法を説明しました。また、個々のビューをテーマする方法の例を示しました。 最後に、この記事では、以前のバージョンの Android との下位互換性を維持しながら、アプリで素材のテーマを使用する方法について説明しました。
 

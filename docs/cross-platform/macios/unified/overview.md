@@ -6,12 +6,12 @@ ms.assetid: 5F0CEC18-5EF6-4A99-9DCF-1A3B57EA157C
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: dee7f4fa0b3d8fbd0b3ed57e885c9f5083d9875e
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: 8402a48602dd94578e688faeb038aec69684e7d4
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725297"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940724"
 ---
 # <a name="unified-api-overview"></a>Unified API の概要
 
@@ -44,7 +44,7 @@ Xamarin の Unified API を使用すると、Mac と iOS の間でコードを�
 - **Classic API:** 32ビット (のみ) に制限され、`monotouch.dll` アセンブリおよび `XamMac.dll` アセンブリで公開されます。
 - **Unified API:** `Xamarin.iOS.dll` と `Xamarin.Mac.dll` アセンブリで使用可能な1つの API を使用して、32と64ビットの両方の開発をサポートします。
 
-つまり、企業の開発者 (アプリストアをターゲットにしない) の場合は、引き続き既存のクラシック Api を使用し続けることができます。これは、永続的に維持されます。また、新しい Api にアップグレードすることもできます。
+つまり、(App Store を対象としない) 企業の開発者にとっては、引き続き既存のクラシック Api を使用し続けることができます。これは、永続的に維持されます。また、新しい Api にアップグレードすることもできます。
 
 <a name="namespace-changes" />
 

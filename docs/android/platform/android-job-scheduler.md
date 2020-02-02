@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2018
-ms.openlocfilehash: 4b1e0b32050b22a63bb89b28107877ef3e196b16
-ms.sourcegitcommit: 6de849e2feca928ce5d91a3897e7d4049301081c
+ms.openlocfilehash: 10d2ae6ac35f02d75ef6e04a0531ec3f5dafd668
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/06/2020
-ms.locfileid: "75667040"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940816"
 ---
 # <a name="android-job-scheduler"></a>Android ジョブのスケジューラ
 
@@ -76,7 +76,7 @@ Android ジョブスケジューラライブラリによって実行されるす
 3. `ServiceAttribute` の `Permission` プロパティを文字列 `android.permission.BIND_JOB_SERVICE`に設定します。
 4. `OnStartJob` メソッドをオーバーライドして、作業を実行するコードを追加します。 Android は、ジョブを実行するアプリケーションのメインスレッドでこのメソッドを呼び出します。 アプリケーションがブロックされないようにするために、スレッドに対して数ミリ秒の実行時間がかかる作業です。
 5. 作業が完了したら、`JobService` が `JobFinished` メソッドを呼び出す必要があります。 このメソッドは、`JobService` が `JobScheduler` を実行する方法を示しています。 `JobFinished` を呼び出さないと `JobService`、デバイスに不要な要求が発生し、バッテリの寿命が短縮されます。 
-6. `OnStopJob` メソッドをオーバーライドすることもお勧めします。 このメソッドは、ジョブが完了する前にシャットダウンされているときに Android によって呼び出され、`JobService` にリソースを適切に破棄する機会を提供します。 このメソッドは、ジョブを再スケジュールする必要がある場合は `true` を返し、ジョブを再実行するために望ましいされていない場合は `false` を返します。
+6. `OnStopJob` メソッドをオーバーライドすることもお勧めします。 このメソッドは、ジョブが完了する前にシャットダウンされているときに Android によって呼び出され、`JobService` にリソースを適切に破棄する機会を提供します。 このメソッドは、ジョブを再スケジュールする必要がある場合は `true` を返し、ジョブを再実行することが望ましくない場合は `false` します。
 
 次のコードは、TPL を使用して何らかの処理を非同期に実行するアプリケーションの最も単純な `JobService` の例です。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/04/2019
-ms.openlocfilehash: dedce45d0c09f807aaf2ecbf540b8c9f319a4f16
-ms.sourcegitcommit: 3e94c6d2b6d6a70c94601e7bf922d62c4a6c7308
+ms.openlocfilehash: 65b6eb0ab75344ef112bc09aa1165f86e125872b
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76031398"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940348"
 ---
 # <a name="xamarinforms-webview"></a>Xamarin.Forms の WebView
 
@@ -107,7 +107,7 @@ browser.Source = htmlSource;
 
 ![WebView HTML 文字列を表示する](webview-images/html-string.png)
 
-上記のコードで`@`リテラル、つまりすべての通常のエスケープ文字は無視されますを文字列として、HTML を示すために使用します。
+上記のコードでは、`@` を使用して、HTML を[逐語的文字列リテラル](/dotnet/csharp/programming-guide/strings/#regular-and-verbatim-string-literals)としてマークしています。これは、ほとんどのエスケープ文字が無視されることを意味します。
 
 > [!NOTE]
 > `WebView` が子であるレイアウトに応じて、HTML コンテンツを表示するには、 [`WebView`](xref:Xamarin.Forms.WebView)の `WidthRequest` と `HeightRequest` のプロパティを設定することが必要になる場合があります。 たとえば、 [`StackLayout`](xref:Xamarin.Forms.StackLayout)ではこれが必須です。
@@ -122,7 +122,7 @@ WebView は、HTML、CSS からのコンテンツを表示でき、アプリ内�
     <title>Xamarin Forms</title>
   </head>
   <body>
-    <h1>Xamrin.Forms</h1>
+    <h1>Xamarin.Forms</h1>
     <p>This is an iOS web page.</p>
     <img src="XamarinLogo.png" />
   </body>

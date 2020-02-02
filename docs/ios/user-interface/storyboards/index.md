@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: b0cd3e7c851aed6f178069497665b88c1338b36b
-ms.sourcegitcommit: dde593cf9dedf4a056ffef86bcf2fa0640412a4d
+ms.openlocfilehash: 13f5c594543934e14295615517e3de01a98a69a5
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76794738"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940997"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Xamarin のストーリーボードの概要
 
@@ -78,7 +78,7 @@ IOS アプリケーションの UI を視覚的に表現するために、Apple 
 
  iOS 8 では、使用可能なすべての画面サイズで iOS ストーリーボードファイルを操作できるように[サイズクラス](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes)が導入されました。これにより、開発者はすべての ios デバイス用に1つの UI を作成できます。 既定では、すべての新しい Xamarin iOS アプリケーションでサイズクラスが使用されます。 以前のプロジェクトのサイズクラスを使用するには、統合された[ストーリーボードの概要](~/ios/user-interface/storyboards/unified-storyboards.md)に関するガイドを参照してください。
 
-サイズクラスを使用するアプリケーションでは、新しい[*Adaptive セグエ*](~/ios/user-interface/storyboards/unified-storyboards.md)も使用されます。 サイズクラスを使用する場合は、iPhone または iPad を使用しているかどうかを直接指定していないことに注意してください。 つまり、どのくらいの作業が必要であるかに関係なく、常に同じように表示される1つの UI を作成しています。 Adaptive セグエ work は、環境を審査し、コンテンツをどの程度最適に提示するかを決定します。 Adaptive セグエを次に示します。
+サイズクラスを使用するアプリケーションでは、新しい[*Adaptive セグエ*](~/ios/user-interface/storyboards/unified-storyboards.md)も使用されます。 サイズクラスを使用する場合は、iPhone または iPad を使用している天気を直接指定していないことに注意してください。 つまり、どのくらいの作業が必要であるかに関係なく、常に同じように表示される1つの UI を作成しています。 Adaptive セグエ work は、環境を審査し、コンテンツをどの程度最適に提示するかを決定します。 Adaptive セグエを次に示します。
 
 [![](images/adaptivesegue.png "The Adaptive Segues dropdown")](images/adaptivesegue.png#lightbox)
 
