@@ -35,7 +35,7 @@ DataPages の迅速かつ簡単に構築済みのビューにデータ ソース
 
 DataPages NuGet パッケージをインクルードすることに**より、xamarin** . forms アプリケーションに追加されます。
 
-### <a name="data-sources"></a>Data Sources
+### <a name="data-sources"></a>ソリューション エクスプローラー
 
 プレビューでは、いくつかの事前に構築されたデータソースを使用できます。
 
@@ -59,7 +59,7 @@ DataPages NuGet パッケージをインクルードすることに**より、xa
 
 例については、「 [DataPages controls reference](controls.md) 」を参照してください。
 
-### <a name="under-the-hood"></a>内部
+### <a name="under-the-hood"></a>しくみ
 
 Xamarin データソースは、`IDataSource` インターフェイスに準拠しています。
 

@@ -19,7 +19,7 @@ ms.locfileid: "76724300"
 
 _場合によっては、Android サポートライブラリのインストール中にエラーが発生することがあります。このガイドでは、いくつかの一般的なエラーの回避策について説明します。_
 
-## <a name="overview"></a>の概要
+## <a name="overview"></a>概要
 
 Xamarin Android アプリプロジェクトをビルドするときに、Visual Studio または Visual Studio for Mac が依存関係ライブラリをダウンロードしてインストールしようとすると、ビルドエラーが発生することがあります。 これらのエラーの多くは、ネットワーク接続の問題、ファイルの破損、またはバージョン管理の問題によって発生します。 このガイドでは、サポートライブラリのインストールに関する最も一般的なエラーについて説明し、これらの問題を回避してアプリプロジェクトを再度ビルドするための手順を示します。
 
@@ -73,7 +73,7 @@ Download failed. Please download https://dl-ssl.google.com/android/repository/an
 
     - [android\_m2repository\_r29](https://dl-ssl.google.com/android/repository/android_m2repository_r29.zip) &ndash; 2A3A8A6D6826EF6CC653030E7D695C41
 
-    - [android\_m2repository\_r28.zip](https://dl-ssl.google.com/android/repository/android_m2repository_r28.zip) &ndash; 17BE247580748F1EDB72E9F374AA0223
+    - [android\_m2repository\_r28](https://dl-ssl.google.com/android/repository/android_m2repository_r28.zip) &ndash; 17BE247580748F1EDB72E9F374AA0223
 
     - [android\_m2repository\_r27](https://dl-ssl.google.com/android/repository/android_m2repository_r27.zip) &ndash; C9FD4FCD69D7D12B1D9DF076B7BE4E1C
 
@@ -91,7 +91,7 @@ Download failed. Please download https://dl-ssl.google.com/android/repository/an
 
     - [android\_m2repository\_r20](https://dl-ssl.google.com/android/repository/android_m2repository_r20.zip) &ndash; 650E58DF02DB1A832386FA4A2DE46B1A
 
-    - [android\_m2repository\_r19.zip](https://dl-ssl.google.com/android/repository/android_m2repository_r19.zip) &ndash; 263B062D6EFAA8AEE39E9460B8A5851A
+    - [android\_m2repository\_r19](https://dl-ssl.google.com/android/repository/android_m2repository_r19.zip) &ndash; 263B062D6EFAA8AEE39E9460B8A5851A
 
     - [android\_m2repository\_r18](https://dl-ssl.google.com/android/repository/android_m2repository_r18.zip) &ndash; 25947AD38DCB4865ABEB61522FAFDA0E
 
@@ -99,13 +99,13 @@ Download failed. Please download https://dl-ssl.google.com/android/repository/an
 
     - [android\_m2repository\_r16](https://dl-ssl.google.com/android/repository/android_m2repository_r16.zip) &ndash; 0595E577D19D31708195A8308788 1 ee6
 
-    **M2repository**アーカイブがこの表に示されていない場合は、ダウンロードする**m2repository**の名前に `https://dl-ssl.google.com/android/repository/` を付けることで、ダウンロード URL を作成できます。 たとえば、使用して **https://dl-ssl.google.com/android/repository/android\_m2repository\_r10.zip** をダウンロードする **android\_ m2repository\_ r10.zip** します。
+    **M2repository**アーカイブがこの表に示されていない場合は、ダウンロードする**m2repository**の名前に `https://dl-ssl.google.com/android/repository/` を付けることで、ダウンロード URL を作成できます。 たとえば、 **https://dl-ssl.google.com/android/repository/android\_m2repository\_r10.zip** を使用して**android\_m2repository\_r10**をダウンロードします。
 
 2. 上記の表に示されているように、ファイルの名前をダウンロード URL の対応する MD5 ハッシュに変更します。 たとえば、 **android\_m2repository\_r25**をダウンロードした場合は、名前を**0B3F1796C97C707339FB13AE8507AF50**に変更します。 ダウンロードしたファイルのダウンロード URL の MD5 ハッシュが表に示されていない場合は、[オンライン md5 ジェネレーター](http://www.webconfs.com/online-md5-generator.php)を使用して URL を md5 ハッシュ文字列に変換できます。
 
 3. ファイルを Xamarin **zip**フォルダーにコピーします。
 
-    - Windows では、このフォルダーは **\\C: Users\\***ユーザー 名***\\AppData\\ローカル\\Xamarin\\zip**にあります。
+    - Windows では、このフォルダーは**C:\\Users\\***Username***\\AppData\\Local\\Xamarin\\zip**にあります。
 
     - Mac OS X では、このフォルダーは **//.local/share/Xamarin/zips**にあります。
 
@@ -125,7 +125,7 @@ Unzipping failed. Please download https://dl-ssl.google.com/android/repository/a
 
 **M2repository**をダウンロードし、その内容をインストールするには、次の手順を実行します。
 
-1. エラーメッセージに対応するライブラリフォルダーの内容を削除します。 たとえば、上記のエラーメッセージでは、 **C:\\Users\\***ユーザー 名***\\AppData\\ローカル\\Xamarin\\Android. Support. v4の内容を削除します。23.1.1.0\\** 。
+1. エラーメッセージに対応するライブラリフォルダーの内容を削除します。 たとえば、上記のエラーメッセージでは、 **C:\\Users\\***Username***\\AppData\\Local\\Xamarin\\Android. Support. v4\\23.1.1.0**の内容を削除します。
     前述のように、このディレクトリの内容全体を削除する必要があります。
 
     [23.1.1.0 フォルダーからコンテンツ、埋め込み、android_m2repository の各フォルダーを削除 ![には](resolving-library-installation-errors-images/04-delete-contents-vs.png)](resolving-library-installation-errors-images/04-delete-contents-vs.png#lightbox)
@@ -159,7 +159,7 @@ Unzipping failed. Please download https://dl-ssl.google.com/android/repository/a
 
 この時点で、不足しているコンポーネントが手動でインストールされ、プロジェクトはエラーなしでビルドされます。 そうでない場合は、エラーメッセージのバージョンと正確に一致する**m2repository** **アーカイブバージョン**をダウンロードしたことを確認し、上記の手順の説明に従って、内容が正しい場所にインストールされていることを確認します。
 
-## <a name="summary"></a>要約
+## <a name="summary"></a>まとめ
 
 この記事では、依存関係ライブラリの自動ダウンロードおよびインストール中に発生する可能性のある一般的なエラーから回復する方法について説明しました。 この記事では、問題のあるライブラリを削除し、ライブラリを再ダウンロードして再インストールする方法として、プロジェクトをリビルドする方法を説明しています。
 この記事では、ライブラリをダウンロードし、 **zip**フォルダーにインストールする方法について説明しています。 また、自動的な方法で解決できない問題に対処する方法として、必要なファイルを手動でダウンロードしてインストールする手順についても説明しました。

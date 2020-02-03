@@ -30,7 +30,7 @@ SDK manager の Tools フォルダーから最新のツールをインストー�
 
 最小 & ターゲットとして設定した Android バージョンの "SDK Platform" をインストールします。
 
-例:
+例 :
 
 - ターゲット API 23
 - 最小 API 23

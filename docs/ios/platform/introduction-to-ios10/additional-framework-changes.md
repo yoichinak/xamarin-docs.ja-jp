@@ -73,7 +73,7 @@ IOS 10 の Foundation framework には、次の機能強化が加えられてい
 
 - 新しい[NSMeasurementFormatter](https://developer.apple.com/reference/foundation/nsmeasurementformatter)クラスを使用して、ローカライズされた測定形式をエンドユーザーに表示するように書式設定します。
 - 新しい[Nsdateinterval](https://developer.apple.com/reference/foundation/nsdateinterval)クラスを使用して、間隔の比較と間隔の交差部分のテストを行うために、期間などの日付と時間の間隔を計算します。
-- 新しい [Nsmeasurement](https://developer.apple.com/reference/foundation/nsmeasurement) クラスを使用して異なる測定単位 (UOM) 間で変換するか、異なる uoms の値に対して計算を実行します。
+- 新しい[Nsmeasurement](https://developer.apple.com/reference/foundation/nsmeasurement)クラスを使用して異なる測定単位 (UOM) 間で変換するか、異なる uoms の値に対して計算を実行します。
 
 - 特定の UOMs を表すために、新しい[Nsunit](https://developer.apple.com/reference/foundation/nsunit)クラスと[nsunit](https://developer.apple.com/reference/foundation/nsdimension)クラスを使用します。
 - ローカル情報と使用可能な表示形式を取得するために、いくつかの新しいプロパティが[nslocal](https://developer.apple.com/reference/foundation/nslocale)クラスに追加されました。
@@ -149,7 +149,7 @@ IOS 10 の Photos フレームワークには、次のような機能強化が�
 
 IOS 10 の ReplayKit フレームワークには、次の機能強化が行われています。
 
-- [RPScreenRecorder](https://developer.apple.com/reference/replaykit/rpscreenrecorder)、[RPBroadcastActivityViewController](https://developer.apple.com/reference/replaykit/rpbroadcastactivityviewcontroller)、[RPBroadcastController](https://developer.apple.com/reference/replaykit/rpbroadcastcontroller) クラスを使用して、サードパーティのサイトからの記録されたメディアのブロードキャストをサポートします。
+- [RPBroadcastActivityViewController](https://developer.apple.com/reference/replaykit/rpbroadcastactivityviewcontroller)クラスと[RPBroadcastController](https://developer.apple.com/reference/replaykit/rpbroadcastcontroller)クラスを使用し[て、サード](https://developer.apple.com/reference/replaykit/rpscreenrecorder)パーティのサイトからの記録されたメディアのブロードキャストをサポートします。
 - アプリケーションで ReplayKit サードパーティのブロードキャストサービスをサポートするには、ブロードキャスト UI と Broadcast Upload の拡張機能が必要です。
 
 ## <a name="scenekit-enhancements"></a>SceneKit の機能強化
@@ -192,7 +192,7 @@ IOS 10.3 の ScrollView コントロールには、次の機能強化が行わ�
 IOS 10 の UIKit フレームワークには、次のような機能強化が加えられています。
 
 - 新しい[Uipasteboard](xref:UIKit.UIPasteboard) API は、新しいオプション (有効期間の制限など) を提供し、共通クラス型に対して互換性のあるコンテンツの種類を自動的に宣言します。
-- 新しい完全対話型のオブジェクトベースの中断可能なアニメーションのサポートが追加され、ジェスチャにリンクできるようになりました。 Apple の[Uiviewanimating プロトコルのリファレンス](https://developer.apple.com/reference/uikit/uiviewanimating)、[uiviewpropertyアニメータークラスリファレンス](https://developer.apple.com/reference/uikit/uiviewpropertyanimator)、[UITimingCurveProvider Protocol reference](https://developer.apple.com/reference/uikit/uitimingcurveprovider)、[UICubicTimingParameters クラス参照](https://developer.apple.com/reference/uikit/uicubictimingparameters)、詳細については、[UISpringTimingParameter クラス参照](https://developer.apple.com/reference/uikit/uispringtimingparameters)を参照してください。
+- 新しい完全対話型のオブジェクトベースの中断可能なアニメーションのサポートが追加され、ジェスチャにリンクできるようになりました。 詳細については、Apple の[Uiviewanimating プロトコルのリファレンス](https://developer.apple.com/reference/uikit/uiviewanimating)、 [uiviewpropertyアニメータークラスリファレンス](https://developer.apple.com/reference/uikit/uiviewpropertyanimator)、 [UITimingCurveProvider Protocol reference](https://developer.apple.com/reference/uikit/uitimingcurveprovider)、 [UICubicTimingParameters class](https://developer.apple.com/reference/uikit/uicubictimingparameters) reference、および[UISpringTimingParameter クラスリファレンス](https://developer.apple.com/reference/uikit/uispringtimingparameters)を参照してください。
 - 新しい `UIPreviewInteraction` と `UIPreviewInteractionDelegate` を使用すると、開発者アプリはピーク操作とポップ操作のためのカスタムインターフェイスを提供できます。
 - 新しい `UIAccessibilityCustomRotor` クラスを使用すると、アプリは、ボイスオーバーなどの補助的なテクノロジに対して、コンテキスト固有のカスタム機能を提供できます。
 - AssistiveTouch が有効になっているかどうかを判断するには、`UIAccessibilityIsAssistiveTouchRunning` と `UIAccessibilityAssistiveTouchStatusDidChangeNotification` 記号を使用します。

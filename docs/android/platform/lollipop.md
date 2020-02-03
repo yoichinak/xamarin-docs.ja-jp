@@ -40,7 +40,7 @@ Android 5.0 には、マテリアルテーマを通じて行われる UI の機�
 
 - **新しい api** &ndash; Android 5.0 では、複数のネットワークサポート用に新しい api が追加され、Bluetooth 接続の機能が向上し、記憶域の管理が容易になり、マルチメディアプレーヤーとカメラデバイスをより柔軟に制御できます。 スケジュールされた時刻にタスクを非同期に実行するために、新しいジョブスケジュール機能を使用できます。 この機能を使用すると、バッテリの寿命を向上させることができます。たとえば、デバイスが電源に接続され、充電されたときに実行されるスケジュールタスクなどです。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 Xamarin ベースのアプリで新しい Android 5.0 機能を使用するには、次のものが必要です。
 
@@ -378,7 +378,7 @@ Android 5.0 では、Android の並べ替えと表示をよりインテリジェ
 
 Android 5.0 では、前述の新しいルックアンドフィール機能に加えて、既存のマルチメディア、ストレージ、およびワイヤレス/接続機能の機能を拡張する新しい Api が追加されています。 また、Android 5.0 には、新しいジョブスケジューラ機能をサポートする新しい Api が含まれています。
 
-### <a name="camera"></a>カメラ
+### <a name="camera"></a>Camera
 
 Android 5.0 では、カメラ機能を強化するための新しい Api がいくつか提供されています。 新しい `Android.Hardware.Camera2` 名前空間には、Android デバイスに接続されている個々のカメラデバイスにアクセスするための機能が含まれています。 また、`Android.Hardware.Camera2` は、各カメラデバイスをパイプラインとしてモデル化します。これにより、キャプチャ要求を受け取り、イメージをキャプチャして、結果を出力します。 この方法により、アプリはカメラデバイスに対して複数のキャプチャ要求をキューに取り込むことができます。
 
@@ -418,7 +418,7 @@ Android 5.0 では、`RemoteControlClient`を置き換える新しい `Android.M
 
 Android 5.0 の新しいメディア再生コントロール機能の詳細については、「[メディア](https://developer.android.com/about/versions/android-5.0.html#Media)」を参照してください。
 
-### <a name="storage"></a>Storage
+### <a name="storage"></a>ストレージ
 
 Android 5.0 では、アプリケーションがディレクトリとドキュメントを簡単に操作できるように、ストレージアクセスフレームワークが更新されます。
 
@@ -448,7 +448,7 @@ Android 5.0 で導入された新しい `JobScheduler` API を使用すると、
 
 Android 5.0 の新しいジョブスケジュール Api の詳細については、「[ジョブのスケジュール設定](https://developer.android.com/preview/api-overview.html#JobScheduler)」を参照してください。
 
-## <a name="summary"></a>要約
+## <a name="summary"></a>まとめ
 
 この記事では、Xamarin 用 Android 5.0 の重要な新機能の概要について説明しました。 Android アプリ開発者向け:
 

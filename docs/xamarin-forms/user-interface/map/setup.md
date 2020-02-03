@@ -22,17 +22,17 @@ ms.locfileid: "76725578"
 
 ## <a name="map-initialization"></a>マップの初期化
 
-[`Map`](xref:Xamarin.Forms.Maps.Map) コントロールは、ソリューション内のすべてのプロジェクトに追加する必要がある、 [Xamarin.Forms.Maps](https://www.nuget.org/packages/Xamarin.Forms.Maps/) NuGet パッケージによって提供されます。
+[`Map`](xref:Xamarin.Forms.Maps.Map)コントロールは、ソリューション内のすべてのプロジェクトに追加する必要がある、 [Xamarin. Forms. map](https://www.nuget.org/packages/Xamarin.Forms.Maps/) NuGet パッケージによって提供されます。
 
 [Xamarin. Forms. map](https://www.nuget.org/packages/Xamarin.Forms.Maps/) NuGet パッケージをインストールした後は、各プラットフォームプロジェクトで初期化する必要があります。
 
-iOS では、これは、`Xamarin.Forms.Forms.Init` メソッドの *'後'* に `Xamarin.FormsMaps.Init` メソッドを呼び出すことによって**AppDelegate.cs** で発生する必要があります。
+IOS では、これは、`Xamarin.Forms.Forms.Init` メソッドの*後*に `Xamarin.FormsMaps.Init` メソッドを呼び出すことによって**AppDelegate.cs**で発生する必要があります。
 
 ```csharp
 Xamarin.FormsMaps.Init();
 ```
 
-Android では、これは、`Xamarin.Forms.Forms.Init` メソッドの *'後'* に `Xamarin.FormsMaps.Init` メソッドを呼び出すことによって**MainActivity.cs** で発生する必要があります。
+Android では、これは、`Xamarin.Forms.Forms.Init` メソッドの*後*に `Xamarin.FormsMaps.Init` メソッドを呼び出すことによって**MainActivity.cs**で発生する必要があります。
 
 ```csharp
 Xamarin.FormsMaps.Init(this, savedInstanceState);
@@ -58,14 +58,14 @@ IOS でマップを表示して操作する場合、追加の構成は必要あ�
 
 - iOS 11 以降
   - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) –アプリケーションが使用されているときにロケーションサービスを使用する場合
-  - [`NSLocationAlwaysAndWhenInUseUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nslocationalwaysandwheninuseusagedescription) – 常に位置情報サービスを使用します。
+  - [`NSLocationAlwaysAndWhenInUseUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nslocationalwaysandwheninuseusagedescription) –位置情報サービスを常に使用する場合
 - iOS 10 以降
   - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) –アプリケーションが使用されているときにロケーションサービスを使用する場合
-  - [`NSLocationAlwaysUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) – 常に位置情報サービスを使用します。    
+  - [`NSLocationAlwaysUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) –位置情報サービスを常に使用する場合    
 
-IOS 11 以降をサポートするには、3 つのキーを含めることができます: `NSLocationWhenInUseUsageDescription`、 `NSLocationAlwaysAndWhenInUseUsageDescription`、および`NSLocationAlwaysUsageDescription`します。
+IOS 11 以前をサポートするには、`NSLocationWhenInUseUsageDescription`、`NSLocationAlwaysAndWhenInUseUsageDescription`、`NSLocationAlwaysUsageDescription`の3つのキーすべてを含めることができます。
 
-これらのキーでの XML 表現**Info.plist**を次に示します。 更新する必要があります、`string`アプリケーションが場所情報を使用する方法を反映するように値。
+次に、これらのキーの XML 表現を**情報 plist**で示します。 アプリケーションが場所情報をどのように使用しているかを反映するように、`string` の値を更新する必要があります。
 
 ```xml
 <key>NSLocationAlwaysUsageDescription</key>
@@ -76,9 +76,9 @@ IOS 11 以降をサポートするには、3 つのキーを含めることが�
 <string>Can we use your location at all times?</string>
 ```
 
-また、 **info.plist** ファイルを編集しているときに、 **[ソース]** ビューで **info.plist** のエントリを追加することもできます。
+また **、情報の plist ファイルを**編集しているときに、**ソース**ビューで**情報**を追加することもできます。
 
-![iOS 8 用 info.plist](setup-images/ios8-map-permissions.png "iOS 8 必須 info.plist エントリ")
+![IOS 8 用情報 plist](setup-images/ios8-map-permissions.png "iOS 8 必須 info.plist エントリ")
 
 アプリケーションがユーザーの場所にアクセスしようとしてアクセスを要求したときに、プロンプトが表示されます。
 
@@ -112,7 +112,7 @@ API キーを取得したら、 **Properties/AndroidManifest .xml**ファイル�
 これにより、API キーがマニフェストに埋め込まれます。 有効な API キーがない場合、 [`Map`](xref:Xamarin.Forms.Maps.Map)コントロールには空のグリッドが表示されます。
 
 > [!NOTE]
-> 注意してください、APK を Google Maps にアクセスするためには、する必要があります sha-1 指紋が含まれますすべてキーストアの (デバッグとリリース)、APK の署名に使用する名前をパッケージ化します。 たとえば、デバッグに 1 台のコンピューターを使用し、リリース APK を生成する別のコンピューターを使用する場合は、最初のコンピューターのデバッグキーストアから SHA-1 証明書のフィンガープリントを指定し、2 番目のコンピューターのリリースキーストアから SHA-1 証明書のフィンガープリントを含める必要があります。 また、アプリの **パッケージ名** が変更された場合は、キーの資格情報を編集することも忘れないでください。 「 [Google Maps API キーを取得する」を](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)」を参照してください。
+> 注意してください、APK を Google Maps にアクセスするためには、する必要があります sha-1 指紋が含まれますすべてキーストアの (デバッグとリリース)、APK の署名に使用する名前をパッケージ化します。 たとえば、デバッグに 1 台のコンピューターを使用し、リリース APK を生成する別のコンピューターを使用する場合は、最初のコンピューターのデバッグキーストアから SHA-1 証明書のフィンガープリントを指定し、2 番目のコンピューターのリリースキーストアから SHA-1 証明書のフィンガープリントを含める必要があります。 また、アプリの**パッケージ名**が変更された場合は、キーの資格情報を編集することも忘れないでください。 「 [Google MAPS API キーを取得する」を](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)参照してください。
 
 #### <a name="specify-the-google-play-services-version-number"></a>Google Play services のバージョン番号を指定してください
 
@@ -266,4 +266,4 @@ Xamarin.Forms.Forms.Init(e, assembliesToInclude);
 - [Maps サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 - [Xamarin. Forms. マップの pin](~/xamarin-forms/user-interface/map/pins.md)。
 - [Maps API](xref:Xamarin.Forms.Maps)
-- [カスタム レンダラーをマップします。](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)
+- [カスタムレンダラーのマップ](~/xamarin-forms/app-fundamentals/custom-renderer/map/index.md)

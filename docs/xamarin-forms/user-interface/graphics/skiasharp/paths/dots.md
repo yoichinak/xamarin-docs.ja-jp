@@ -18,21 +18,21 @@ ms.locfileid: "76723755"
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_点線および破線の SkiaSharp 描画の複雑さをマスターします。_
+_SkiaSharp に点線や破線を描画した場合の複雑さをマスタにします。_
 
 SkiaSharp では、solid はありませんが、代わりに、ドットとダッシュで構成されている直線を描画することができます。
 
 ![](dots-images/dottedlinesample.png "Dotted line")
 
-これには、*パス効果*のインスタンスである、 [ `SKPathEffect` ](xref:SkiaSharp.SKPathEffect)に設定するクラス、 [ `PathEffect` ](xref:SkiaSharp.SKPaint.PathEffect)プロパティの`SKPaint`します。 パスを作成することによって定義された静的な作成方法のいずれかを使用して、効果 (または結合パスの効果)`SKPathEffect`します。 (`SKPathEffect` SkiaSharp でサポートされる 6 つの効果の 1 つは、他のユーザーは、セクションで説明されている[ **SkiaSharp 効果**](../effects/index.md))。
+これを行うには、*パス効果*を使用します。これは、`SKPaint`の[`PathEffect`](xref:SkiaSharp.SKPaint.PathEffect)プロパティに設定する[`SKPathEffect`](xref:SkiaSharp.SKPathEffect)クラスのインスタンスです。 `SKPathEffect`によって定義された静的な作成方法の1つを使用して、パス効果 (またはパス効果の組み合わせ) を作成できます。 (`SKPathEffect` は、SkiaSharp でサポートされている6つの効果の1つです。その他は[**SkiaSharp Effect**](../effects/index.md)セクションで説明されています)。
 
-点線または破線を描画するために使用する、 [ `SKPathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash(System.Single[],System.Single))静的メソッド。 2 つの引数: 最初の配列は、この`float`ドットとダッシュの長さとそれらの間の空白文字の長さを示す値。 この配列は、要素の偶数をいる必要があり、少なくとも 2 つの要素があります。 (配列には0個の要素がありますが、その結果、実線になります)。要素が2つある場合、1つ目はドットまたはダッシュの長さ、2番目は次のドットまたはダッシュの前のギャップの長さです。 3 つ以上の要素があるかどうか、この順序で、: ダッシュの長さ、ギャップの長さ、ダッシュの長さ、時間の差、およびなど。
+点線または破線を描画するには、 [`SKPathEffect.CreateDash`](xref:SkiaSharp.SKPathEffect.CreateDash(System.Single[],System.Single))の静的メソッドを使用します。 2つの引数があります。これは、ドットとダッシュの長さ、およびそれらの間のスペースの長さを示す `float` 値の配列です。 この配列は、要素の偶数をいる必要があり、少なくとも 2 つの要素があります。 (配列には0個の要素がありますが、その結果、実線になります)。要素が2つある場合、1つ目はドットまたはダッシュの長さ、2番目は次のドットまたはダッシュの前のギャップの長さです。 3 つ以上の要素があるかどうか、この順序で、: ダッシュの長さ、ギャップの長さ、ダッシュの長さ、時間の差、およびなど。
 
 一般的には、dash と間隔の長さのストロークの幅の倍数を作成するします。 ストロークの幅が 10 ピクセルの場合は、たとえば、し {10, 10} 配列描画点線、ドットとのギャップが、同じ長さのストロークの太さとします。
 
-ただし、`StrokeCap`の設定、`SKPaint`オブジェクトは、これらのドットとダッシュにも影響します。 後ほど、としては、この配列の要素に対する影響を与えるを持っている必要があります。
+ただし、`SKPaint` オブジェクトの `StrokeCap` 設定は、これらのドットとダッシュにも影響します。 後ほど、としては、この配列の要素に対する影響を与えるを持っている必要があります。
 
-点線および破線がで示されています、**ドットし、ダッシュ**ページ。 [ **DotsAndDashesPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/DotsAndDashesPage.xaml)ファイルでは、2 つのインスタンス化します`Picker`ストローク キャップおよび dash アレイを選択する 2 番目を選択することの 1 つのビューします。
+点線と破線は、**ドットとダッシュ**のページで示されています。 [**DotsAndDashesPage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/DotsAndDashesPage.xaml)ファイルは2つの `Picker` ビューをインスタンス化します。1つはストロークキャップを選択し、2番目はダッシュ配列を選択します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -98,9 +98,9 @@ SkiaSharp では、solid はありませんが、代わりに、ドットとダ�
 </ContentPage>
 ```
 
- 最初の 3 つの項目、`dashArrayPicker`ストロークの幅が 10 ピクセルであると仮定します。 {10, 10} アレイが点線では、{30, 10} 破線、および {10, 10、30, 10} には点鎖線です。 (他の 3 つ、後ほど。)
+ `dashArrayPicker` の最初の3つの項目は、ストロークの幅が10ピクセルであることを前提としています。 {10, 10} アレイが点線では、{30, 10} 破線、および {10, 10、30, 10} には点鎖線です。 (他の 3 つ、後ほど。)
 
-[ `DotsAndDashesPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/DotsAndDashesPage.xaml.cs)分離コード ファイルが含まれています、`PaintSurface`イベント ハンドラーとヘルパー ルーチンにアクセスするための 2 つ、`Picker`ビュー。
+[`DotsAndDashesPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/DotsAndDashesPage.xaml.cs)分離コードファイルには、`PaintSurface` イベントハンドラーと、`Picker` ビューにアクセスするためのいくつかのヘルパールーチンが含まれています。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -152,19 +152,19 @@ float[] GetPickerArray(Picker picker)
 
 [![](dots-images/dotsanddashes-small.png "Triple screenshot of the Dots and Dashes page")](dots-images/dotsanddashes-large.png#lightbox "Triple screenshot of the Dots and Dashes page")
 
-ただし、Android の画面は {10, 10} の配列を使用して点線を表示することにもなってが代わりに、行が堅牢です。 どうなっているのでしょうか。 問題は、Android の画面は、のストローク キャップの設定もが`Square`します。 これは、ストローク幅の半分だけ、ギャップがいっぱいになり、すべてのダッシュを拡張します。
+ただし、Android の画面は {10, 10} の配列を使用して点線を表示することにもなってが代わりに、行が堅牢です。 どうなっているのでしょうか。 問題は、Android の画面に `Square`のストロークキャップが設定されていることです。 これは、ストローク幅の半分だけ、ギャップがいっぱいになり、すべてのダッシュを拡張します。
 
-ストローク キャップを使用する場合、この問題を回避する`Square`または`Round`、(場合によってその結果、ダッシュの長さは 0)、ストロークの長さによって配列のダッシュの長さを短縮し、ストロークの長さによって間隔の長さを増やす必要があります。 これは、方法、最後の 3 つダッシュで配列、 `Picker` XAML ファイルが計算されます。
+`Square` または `Round`のストロークキャップを使用するときにこの問題を回避するには、配列内のダッシュの長さをストロークの長さで減らし (場合によってはダッシュの長さが0になることがあります)、境界の長さをストロークの長さで増やします。 XAML ファイル内の `Picker` の最後の3つのダッシュ配列は、次のように計算されます。
 
 - {10, 10} が {0, 20} 点線の場合
 - {30, 10} が {20、20} 破線の
 - {10, 10、30, 10} {0、20、20、20} を点線および破線の線になります
 
-点線および破線の線を UWP 画面表示のキャップの`Round`します。 `Round`ストローク キャップが太い線で多くの場合、ドットとダッシュの最良の外観を提供します。
+UWP 画面に、`Round`のストロークキャップの点線と破線が表示されます。 `Round` ストロークキャップは、多くの場合、太い線でのドットとダッシュの最適な外観を提供します。
 
-これまでにメンションが加えられていない 2 番目のパラメーターの`SKPathEffect.CreateDash`メソッド。 このパラメータの名前は`phase`と行の先頭のドットの破線パターン内のオフセットを指しています。 たとえば、dash 配列 {10, 10} と`phase`10 では、ドットではなく、ギャップで始まる行。
+ここまでは、`SKPathEffect.CreateDash` メソッドの2番目のパラメーターについては説明していませんでした。 このパラメーターには `phase` という名前が付けられ、行の先頭のドットとダッシュのパターン内のオフセットを参照します。 たとえば、ダッシュ配列が {10, 10} で、`phase` が10の場合、行はドットではなくギャップで始まります。
 
-1 つの興味深いアプリケーション、`phase`パラメーターは、アニメーションにできます。 **アニメーション スパイラル**に似ている、 **Archimedean スパイラル**ページのことを除いて、 [ `AnimatedSpiralPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/AnimatedSpiralPage.cs)クラスがアニメーション化、`phase`パラメーターを使用して、Xamarin.Forms`Device.Timer`メソッド。
+`phase` パラメーターの興味深いアプリケーションの1つは、アニメーションです。 アニメーション化された**らせん**状のページは、 [`AnimatedSpiralPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/AnimatedSpiralPage.cs)クラスが Xamarin. Forms `Device.Timer` メソッドを使用して `phase` パラメーターをアニメーション化する点を除いて、アーカイブのための**らせん状**のページに似ています。
 
 ```csharp
 public class AnimatedSpiralPage : ContentPage
@@ -215,5 +215,5 @@ public class AnimatedSpiralPage : ContentPage
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

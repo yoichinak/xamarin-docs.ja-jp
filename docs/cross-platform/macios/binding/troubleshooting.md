@@ -42,7 +42,7 @@ Xamarin は Apple Api の高品質で十分にテストされたバインディ�
 
 ## <a name="reporting-bugs"></a>バグの報告
 
-皆様からのご意見をお待ちしております。 Xamarin. Mac で問題が見つかった場合は、次のようにします。
+お客様のフィードバックは Microsoft にとって重要です。 Xamarin. Mac で問題が見つかった場合は、次のようにします。
 
 - [Xamarin.Mac フォーラム](https://forums.xamarin.com/categories/xamarin-mac)を確認する
 - [問題リポジトリ](https://github.com/xamarin/xamarin-macios/issues)を検索する

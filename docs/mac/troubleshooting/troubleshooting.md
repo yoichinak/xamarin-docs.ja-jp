@@ -17,7 +17,7 @@ ms.locfileid: "76725441"
 ---
 # <a name="xamarinmac-troubleshooting-tips"></a>Xamarin. Mac のトラブルシューティングのヒント
 
-## <a name="overview"></a>の概要
+## <a name="overview"></a>概要
 
 場合によっては、API を手に入れたり、バグに対処したりすることができないときに、プロジェクトの作業中に行き詰まってしまうことがあります。 Xamarin での目標は、モバイルアプリケーションとデスクトップアプリケーションの作成に成功し、役に立ちます。
 
@@ -118,7 +118,7 @@ Xamarin 製品を使用する開発者コミュニティはすばらしいもの
 
 ## <a name="filing-a-bug"></a>バグを提出する
 
-皆様からのご意見をお待ちしております。 Xamarin. Mac で問題が見つかった場合は、次のようにします。
+お客様のフィードバックは Microsoft にとって重要です。 Xamarin. Mac で問題が見つかった場合は、次のようにします。
 
 - [問題リポジトリ](https://github.com/xamarin/xamarin-macios/issues)を検索する
 - GitHub の問題に切り替わる前に、Xamarin の問題は [Bugzilla](https://bugzilla.xamarin.com/describecomponents.cgi) で追跡されていました。 そこで一致する問題を検索してください。

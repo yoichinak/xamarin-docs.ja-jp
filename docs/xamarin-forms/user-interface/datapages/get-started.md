@@ -37,7 +37,7 @@ DataPages Preview を使用して単純なデータ ドリブンのページの�
 
 ## <a name="2-add-theme-reference"></a>2. テーマ参照を追加する
 
-**App.xaml**ファイルに追加し、カスタム`xmlns:mytheme`テーマのテーマがアプリケーションのリソース ディクショナリにマージされるかを確認してください。
+**App.xaml**ファイルで、テーマのカスタム `xmlns:mytheme` を追加し、テーマがアプリケーションのリソースディクショナリにマージされていることを確認します。
 
 ```xaml
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
@@ -55,9 +55,9 @@ DataPages Preview を使用して単純なデータ ドリブンのページの�
 
 ## <a name="3-add-a-xaml-page"></a>3. XAML ページを追加する
 
-Xamarin.Forms アプリケーションに新しい XAML ページを追加し、*基本クラスを変更*から`ContentPage`に`Xamarin.Forms.Pages.ListDataPage`。 これは、c# と、XAML の両方で行う必要があります。
+新しい XAML ページを Xamarin. Forms アプリケーションに追加し、*基本クラス*を `ContentPage` から `Xamarin.Forms.Pages.ListDataPage`に変更します。 これは、c# と、XAML の両方で行う必要があります。
 
-**C# ファイル**
+**C#拡張子**
 
 ```csharp
 public partial class SessionDataPage : Xamarin.Forms.Pages.ListDataPage // was ContentPage
@@ -71,7 +71,7 @@ public partial class SessionDataPage : Xamarin.Forms.Pages.ListDataPage // was C
 
 **XAML ファイル**
 
-ルート要素を変更するだけでなく`<p:ListDataPage>`カスタム名前空間を`xmlns:p`も追加する必要があります。
+ルート要素をに変更するだけでなく、`xmlns:p` のカスタム名前空間も追加する必要が `<p:ListDataPage>` ます。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -85,9 +85,9 @@ public partial class SessionDataPage : Xamarin.Forms.Pages.ListDataPage // was C
 </p:ListDataPage>
 ```
 
-**アプリケーション サブクラス**
+**Application サブクラス**
 
-変更、`App`クラスのコンス トラクターを`MainPage`に設定されている、`NavigationPage`を含む新しい`SessionDataPage`します。 ナビゲーション ページ*する必要があります*使用します。
+`MainPage` が新しい `SessionDataPage`を含む `NavigationPage` に設定されるように `App` クラスコンストラクターを変更します。 ナビゲーションページを使用する*必要があり*ます。
 
 ```csharp
 MainPage = new NavigationPage (new SessionDataPage ());
@@ -95,10 +95,10 @@ MainPage = new NavigationPage (new SessionDataPage ());
 
 ## <a name="3-add-the-datasource"></a>3. DataSource を追加する
 
-削除、`Content`要素置き換え、それを`p:ListDataPage.DataSource`データ ページを設定します。 リモート Json 次の例では、データ ファイルを URL から読み込まれています。
+`Content` 要素を削除し、`p:ListDataPage.DataSource` に置き換えて、ページにデータを設定します。 リモート Json 次の例では、データ ファイルを URL から読み込まれています。
 
 > [!NOTE]
-> プレビューでは、データソースの表示ヒントを提供するために、`StyleClass` 属性*が必要です*。 `StyleClass="Events"`プレビューでは事前に定義し、スタイルを含むレイアウトを指す*ハードコード*使用されている JSON データ ソースと一致します。
+> プレビューでは、データソースの表示ヒントを提供するために、`StyleClass` 属性*が必要です*。 `StyleClass="Events"` は、プレビューで事前に定義されているレイアウトを参照し、使用されている JSON データソースと一致するように*ハードコーディング*されたスタイルを含みます。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -141,7 +141,7 @@ MainPage = new NavigationPage (new SessionDataPage ());
 
 これは、事前に構築されたスタイルの **"イベント"** がライトテーマ NuGet パッケージに存在し、データソースに一致するスタイルが定義されているために機能します (例: "title"、"image"、「プレゼンター」)。
 
-「イベント」`StyleClass`ビルドを表示する、`ListDataPage`をカスタム コントロール`CardView`で定義されている Xamarin.Forms.Pages で制御されています。 `CardView`コントロールが 3 つのプロパティ: `ImageSource`、 `Text`、および`Detail`します。 テーマ、データソースの 3 つのフィールド (JSON ファイル) からこれらのプロパティを表示するためにバインドするハードコーディングされています。
+"Events" `StyleClass` は、Xamarin. `ListDataPage` で定義されたカスタム `CardView` コントロールを使用して、コントロールを表示するように構築されています。 `CardView` コントロールには、`ImageSource`、`Text`、および `Detail`の3つのプロパティがあります。 テーマ、データソースの 3 つのフィールド (JSON ファイル) からこれらのプロパティを表示するためにバインドするハードコーディングされています。
 
 ## <a name="5-customize"></a>5. カスタマイズ
 
@@ -164,11 +164,11 @@ MainPage = new NavigationPage (new SessionDataPage ());
 </p:ListDataPage.DefaultItemTemplate>
 ```
 
-提供することで、`DataTemplate`このコードは、`StyleClass`の既定のレイアウトを代わりに使用して、`ListItemControl`します。
+`DataTemplate` を提供することにより、このコードは `StyleClass` をオーバーライドし、代わりに `ListItemControl`の既定のレイアウトを使用します。
 
 [![](get-started-images/custom-sml.png "DataPages Sample Application")](get-started-images/custom.png#lightbox "DataPages Sample Application")
 
-ソース バインドを XAML に c# にはデータを作成できますを好む開発者も (を必ず含めて、`using Xamarin.Forms.Pages;`ステートメント)。
+XAML を好むC#開発者は、データソースのバインドも作成できます (`using Xamarin.Forms.Pages;` ステートメントを必ず含めるようにしてください)。
 
 ```csharp
 SetBinding (TitleProperty, new DataSourceBinding ("title"));
@@ -184,9 +184,9 @@ SetBinding (TitleProperty, new DataSourceBinding ("title"));
 
 プレビュー リリースでは、テーマの実行時に読み込むことがない場合があります。 このエラーを修正するのには、関連するプロジェクトに、以下に示すコードを追加します。
 
-**Android**
+**iOS**
 
-**AppDelegate.cs**後に次の行を追加 `LoadApplication`
+**AppDelegate.cs**で、`LoadApplication` の後に次の行を追加します。
 
 ```csharp
 var x = typeof(Xamarin.Forms.Themes.DarkThemeResources);
@@ -194,9 +194,9 @@ x = typeof(Xamarin.Forms.Themes.LightThemeResources);
 x = typeof(Xamarin.Forms.Themes.iOS.UnderlineEffect);
 ```
 
-**Outlook Web Access (OWA)**
+**Android**
 
-**MainActivity.cs**後に次の行を追加 `LoadApplication`
+**MainActivity.cs**で、`LoadApplication` の後に次の行を追加します。
 
 ```csharp
 var x = typeof(Xamarin.Forms.Themes.DarkThemeResources);

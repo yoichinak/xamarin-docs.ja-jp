@@ -50,7 +50,7 @@ Visual Basic を使用する単純な Xamarin. Forms プロジェクトを作成
 
 7. 次の画面で、プロジェクトの名前を入力し、 **[作成]** をクリックします。
 
-8. Visual Basic プロジェクトを右クリックし、選択**プロパティ**、変更、**既定の名前空間**に合わせて既存の C# プロジェクトします。
+8. Visual Basic プロジェクトを右クリックし、 **[プロパティ]** を選択します。次に、既存C#のプロジェクトに合わせて**既定の名前空間**を変更します。
 
     [Visual Basic ルート名前空間が Xamarin. Forms アプリと一致することを ![](xamarin-forms-images/07a-sml.png)](xamarin-forms-images/07a.png#lightbox)
 
@@ -121,7 +121,7 @@ Android および iOS プロジェクトの **[参照設定]** ノードを右�
 
 [ポータブル Visual Basic.NET ページ](~/cross-platform/platform/visual-basic/index.md)に記載されているように、Xamarin は Visual Basic 言語をサポートしていません。 これは、Visual Basic を使用できる場所にいくつかの制限があることを意味します。
 
-- XAML ページは、Visual Basic プロジェクトに含めることができません - C# 分離コード ジェネレーターの作成できるのみです。 独立した、参照、C# ポータブル クラス ライブラリに XAML を含めるし、データ バインドを使用して Visual Basic のモデルを使用して、XAML ファイルを作成することは (この例が記載されて、[サンプル](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/XamarinFormsVB))。
+- XAML ページは、Visual Basic プロジェクトに含めることができません - C# 分離コード ジェネレーターの作成できるのみです。 XAML を別の参照可能なC#ポータブルクラスライブラリに含め、データバインディングを使用して Visual Basic モデル ([サンプル](https://github.com/xamarin/mobile-samples/tree/master/VisualBasic/XamarinFormsVB)に含まれています) を使用して xaml ファイルを設定することができます。
 
 - カスタムレンダラーを Visual Basic に記述することはできません。 C#これらはネイティブプラットフォームプロジェクトで記述する必要があります。
 
@@ -129,5 +129,5 @@ Android および iOS プロジェクトの **[参照設定]** ノードを右�
 
 ## <a name="related-links"></a>関連リンク
 
-- [XamarinFormsVB (sample)](https://docs.microsoft.com/samples/xamarin/mobile-samples/visualbasic-xamarinformsvb/)
+- [XamarinFormsVB (サンプル)](https://docs.microsoft.com/samples/xamarin/mobile-samples/visualbasic-xamarinformsvb/)
 - [.NET Framework を使用したクロスプラットフォーム開発](https://docs.microsoft.com/dotnet/standard/cross-platform/)

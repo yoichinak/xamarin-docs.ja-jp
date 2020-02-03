@@ -172,7 +172,7 @@ NSAppTransportSecurity
 - **NSAllowsArbitraryLoads** (`Boolean`)-`NSExceptionDomains`に記載されて**いない**ドメインに対して `YES` ATS を無効にする場合は。 リストされているドメインの場合は、指定されたセキュリティ設定が使用されます。
 - **NSAllowsArbitraryLoadsInWebContent** (`Boolean`)-Apple Transport SECURITY (ATS) の保護がアプリの残りの部分に対して有効になっている場合に、web ページが正しく読み込まれることを `YES` に許可するかどうかを示します。
 - **Nsexceptiondomains** (`Dictionary`)-ドメインのコレクション。これは、特定のドメインに対して、ATS が使用する必要があるセキュリティ設定です。
-- **\<のドメイン名-文字列 >** (`Dictionary`)-指定されたドメインの例外のコレクション (例: `www.xamarin.com`)
+- **\<のドメイン名-文字列 >** (`Dictionary`)-指定されたドメインの例外のコレクション (例: `www.xamarin.com`)。
 - **NSExceptionMinimumTLSVersion** (`String`)-`TLSv1.0`、`TLSv1.1` または `TLSv1.2` (既定値) の最小 TLS バージョン。
 - **NSExceptionRequiresForwardSecrecy** (`Boolean`)-ドメインで `NO` 転送セキュリティ付きの暗号を使用する必要がない場合。 既定値は `YES`です。
 - **Nsexceptionallowsinsecurehtt/** `Boolean`)-`NO` (既定値) の場合、このドメインとのすべての通信は `HTTPS` プロトコルに含まれている必要があります。
@@ -180,7 +180,7 @@ NSAppTransportSecurity
 - **Ns`Boolean`サブドメイン**()-これらの設定 `YES`、このドメインのすべてのサブドメインを上書きします。 既定値は `NO`です。
 - **NSThirdPartyExceptionMinimumTLSVersion** (`String`)-ドメインが開発者の管理外にあるサードパーティのサービスである場合に使用される TLS のバージョン。
 - **NSThirdPartyExceptionRequiresForwardSecrecy** (`Boolean`)-サードパーティのドメイン `YES` が上位の機密性を必要とする場合。
-- **NSThirdPartyExceptionAllowsInsecureHTTPLoads** (`Boolean`) - If `YES` the ATS will allow non-secure communication with 3rd party domains.
+- **NSThirdPartyExceptionAllowsInsecureHTTPLoads** (`Boolean`)-サードパーティのドメインとのセキュリティで保護されていない通信を有効にする場合は、`YES` します。
 
 <a name="optout" />
 
@@ -239,13 +239,13 @@ Visual Studio for Mac で、**ソリューションエクスプローラー**内
 [![](ats-images/ats02.png "The Source view of the Info.plist file")](ats-images/ats02.png#lightbox)
 
 > [!IMPORTANT]
-> アプリケーションがセキュリティで保護されていない web サイトへの接続を必要とする場合は、**常に**`NSAllowsArbitraryLoads`を使用して完全に有効にするのではなく、必ず `NSExceptionDomains` を使用してドメインを例外として入力してください。 `NSAllowsArbitraryLoads` 極端な緊急の状況でのみ使用する必要があります。
+> アプリケーションがセキュリティで保護されていない web サイトへの接続を必要とする場合は、**常に**`NSAllowsArbitraryLoads`を使用して完全に有効にするのではなく、必ず `NSExceptionDomains` を使用してドメインを例外として入力してください。 `NSAllowsArbitraryLoads` は、極端な緊急の場合にのみ使用してください。
 
 ここでも、セキュリティで保護された接続への切り替えが利用できないか、または実用的でない場合は、最後の手段として_のみ_、ATS を無効にしてください。
 
 <a name="Summary" />
 
-## <a name="summary"></a>要約
+## <a name="summary"></a>まとめ
 
 この記事では、アプリトランスポートセキュリティ (ATS) を導入し、インターネットとのセキュリティで保護された通信を実施する方法について説明しました。 まず、iOS 9 で実行されている Xamarin の iOS アプリに対して、ATS に必要な変更について説明します。 次に、ATS の機能とオプションの制御について説明します。 最後に、Xamarin. iOS アプリの使用を停止します。
 

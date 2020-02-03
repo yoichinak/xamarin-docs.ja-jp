@@ -46,14 +46,14 @@ Azure の Custom Vision Service でトレーニングされたモデルを使用
 
 :::row:::
     :::column:::
-[![連絡先の](images/contacts.png)](https://docs.microsoft.com/samples/xamarin/ios-samples/contacts)
+[連絡先の ![](images/contacts.png)](https://docs.microsoft.com/samples/xamarin/ios-samples/contacts)
 
 ### <a name="contactshttpsdocsmicrosoftcomsamplesxamarinios-samplescontacts"></a>[連絡先](https://docs.microsoft.com/samples/xamarin/ios-samples/contacts)
 
 ContactsUI のビュー コントローラーとプロパティの使用方法です。
     :::column-end:::
     :::column:::
-[![WatchKit カタログの](images/watchos.png)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog/)
+[WatchKit カタログの ![](images/watchos.png)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog/)
 
 ### <a name="watchkit-cataloghttpsdocsmicrosoftcomsamplesxamarinios-sampleswatchos-watchkitcatalog"></a>[WatchKit カタログ](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog/)
 

@@ -25,7 +25,7 @@ IOS6 のストアキットに対する主な変更は、次の2つの新機能�
 
 StoreKit Api の詳細については、[アプリ内購入](~/ios/platform/in-app-purchasing/index.md)ガイドを参照してください。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 このドキュメントで説明されているストアキットの機能には、iOS 6 と Xcode 6.0 4.5 が必要です。
 
@@ -60,7 +60,7 @@ IOS のアプリ内購入の新機能により、ユーザーはアプリ内か�
 1. ビューコントローラーの `Finished` イベントにハンドラーを割り当てます。これにより、ビューコントローラーが破棄されます。 このイベントは、ユーザーが [キャンセル] を押したときに呼び出されます。それ以外の場合は、ビューコントローラー内のトランザクションを終了します。
 1. `StoreProductParameters` と完了ハンドラーを渡す `LoadProduct` メソッドを呼び出します。 完了ハンドラーは、製品要求が正常に行われたことを確認し、存在する場合は、`SKProductViewController` モーダルであることを示します。 製品を取得できない場合は、適切なエラー処理を追加する必要があります。
 
-### <a name="example"></a>使用例
+### <a name="example"></a>例
 
 この記事の*Storekit*サンプルコードの*productview*プロジェクトは、任意の製品の Apple ID を受け取り、`SKStoreProductViewController`を表示する `Buy` メソッドを実装しています。 次のコードは、特定の Apple ID の製品情報を表示します。
 
@@ -129,7 +129,7 @@ Apple の開発者ポータルでストアキットについてお読みにな�
 
  <a name="Search_API" />
 
-### <a name="search-api"></a>API の検索
+### <a name="search-api"></a>Search API
 
 Apple は、App Store、iTunes、および iBookstore 内のすべての製品に対してクエリを実行するための動的検索 API を提供しています。 Search API へのアクセス方法に関する情報は、Apple の関連リソースに記載されています。ただし、API は、登録された関連会社ではなくすべてのユーザーに公開されます。 結果の JSON を解析して、`SKStoreProductViewController`で使用する Apple ID である `trackId` を検出できます。
 
@@ -137,8 +137,8 @@ Apple は、App Store、iTunes、および iBookstore 内のすべての製品�
 
 次にいくつかの例を示します。
 
-- **Ibooks アプリ**– [https://itunes.apple.com/search?term=ibooks&amp ; entity = software&amp; country = us](https://itunes.apple.com/search?term=ibooks&amp;entity=software&amp;country=us)
-- **ドットと Kangaroo iBook** – [https://itunes.apple.com/search?term=dot+and+the+kangaroo&amp ; entity = ebook&amp; country = us](https://itunes.apple.com/search?term=dot+and+the+kangaroo&amp;entity=ebook&amp;country=us)
+- **Ibooks アプリ**– [https://itunes.apple.com/search?term=ibooks&amp; entity = software&amp;country = us](https://itunes.apple.com/search?term=ibooks&amp;entity=software&amp;country=us)
+- **ドットと Kangaroo iBook** – [https://itunes.apple.com/search?term=dot+and+the+kangaroo&amp; entity = ebook&amp;country = us](https://itunes.apple.com/search?term=dot+and+the+kangaroo&amp;entity=ebook&amp;country=us)
 
 ### <a name="enterprise-partner-feed"></a>エンタープライズパートナーフィード
 
@@ -485,7 +485,7 @@ public void SaveDownload (SKDownload download)
 
 `FinishTransaction` が呼び出されると、ダウンロードされたファイルは `Cache` ディレクトリに存在する保証がなくなります。 `FinishTransaction`を呼び出す前に、すべてのファイルをコピーする必要があります。
 
-## <a name="other-considerations"></a>その他の注意事項
+## <a name="other-considerations"></a>その他の考慮事項
 
 上記のコード例は、ホストされたコンテンツを購入するための非常に単純な実装を示しています。 考慮する必要がある追加のポイントがいくつかあります。
 
@@ -515,7 +515,7 @@ public void SaveDownload (SKDownload download)
 
 Apple の iCloud バックアップのガイドラインでは、サーバーから簡単に復元できる非ユーザーコンテンツ (iCloud 記憶域を不必要に使用するため) をバックアップしないようにすることを推奨して*い*ます。 Backup 属性の設定の詳細については、[ファイルシステム](~/ios/app-fundamentals/file-system.md)のドキュメントを参照してください。
 
-## <a name="summary"></a>要約
+## <a name="summary"></a>まとめ
 
 この記事では、iOS6 のストアキットの2つの新機能を紹介しました。アプリ内から iTunes とその他のコンテンツを購入し、Apple のサーバーを利用して独自のアプリ内購入をホストします。 この概要については、既存[のアプリ内購入](~/ios/platform/in-app-purchasing/index.md)に関するドキュメントと共に、ストアキットの機能の実装の詳細について説明します。
 

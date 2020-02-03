@@ -16,13 +16,13 @@ ms.locfileid: "76723782"
 ---
 # <a name="firebase-cloud-messaging"></a>Firebase Cloud Messaging
 
-_Firebase Cloud Messaging (FCM) は、モバイルアプリとサーバーアプリケーション間のメッセージングを容易にするサービスです。この記事では、FCM のしくみの概要について説明します。また、アプリで FCM を使用できるように Google サービスを構成する方法についても説明します。_
+_焼討 base Cloud Messaging (FCM) は、モバイルアプリとサーバーアプリケーション間のメッセージングを容易にするサービスです。この記事では、FCM のしくみの概要について説明します。また、アプリで FCM を使用できるように Google サービスを構成する方法についても説明します。_
 
-[![Firebase Cloud Messaging のヒーロー画像](firebase-cloud-messaging-images/preview.png)](firebase-cloud-messaging-images/preview.png#lightbox)
+[![焼討 Base Cloud Messaging のヒーロー画像](firebase-cloud-messaging-images/preview.png)](firebase-cloud-messaging-images/preview.png#lightbox)
 
 このトピックでは、アプリケーションで FCM サービスを使用できるように、Firebase Cloud Messaging がメッセージを Xamarin Android アプリとアプリサーバー間でルーティングする方法の概要を説明します。また、資格情報を取得するための詳細な手順についても説明します。
 
-## <a name="overview"></a>の概要
+## <a name="overview"></a>概要
 
 焼討 base Cloud Messaging (FCM) は、サーバーアプリケーションとモバイルクライアントアプリ間でのメッセージの送信、ルーティング、およびキューを処理するクロスプラットフォームサービスです。 FCM は Google Cloud Messaging (GCM) の後継であり、Google Play 開発者サービス上に構築されています。
 
@@ -38,9 +38,9 @@ FCM を使用すると、アプリサーバーは、1つのデバイス、デバ
 
 FCM は、次の資格情報を使用してアプリサーバーとクライアントアプリを識別し、これらの資格情報を使用して FCM 経由でメッセージトランザクションを承認します。
 
-- <a name="fcm-in-action-sender-id"></a>**Sender id &ndash;** *送信者*Id は、Firebase プロジェクトを作成するときに割り当てられる一意の数値です。 送信者 ID は、クライアントアプリにメッセージを送信できる各アプリサーバーを識別するために使用されます。 送信者 ID もプロジェクト番号です。プロジェクトを登録するときに、Firebase コンソールから送信者 ID を取得します。 送信者 ID の例としては、`496915549731`があります。
+- <a name="fcm-in-action-sender-id"></a>**Sender id &ndash;** *送信者*Id は、焼討ベースプロジェクトを作成するときに割り当てられる一意の数値です。 送信者 ID は、クライアントアプリにメッセージを送信できる各アプリサーバーを識別するために使用されます。 送信者 ID もプロジェクト番号です。プロジェクトを登録するときに、Firebase コンソールから送信者 ID を取得します。 送信者 ID の例としては、`496915549731`があります。
 
-- <a name="fcm-in-action-api-key"></a>**Api キー &ndash;** api*キーを使用する*と、アプリサーバーは Firebase サービスにアクセスできます。FCM は、このキーを使用してアプリサーバーを認証します。 この資格情報は、*サーバーキー*または*Web API キー*とも呼ばれます。 API キーの例としては、`AJzbSyCTcpfRT1YRqbz-jIwp1h06YdauvewGDzk`があります。
+- <a name="fcm-in-action-api-key"></a>**Api キー &ndash;** api*キーを使用する*と、アプリサーバーは焼討 base サービスにアクセスできます。FCM は、このキーを使用してアプリサーバーを認証します。 この資格情報は、*サーバーキー*または*Web API キー*とも呼ばれます。 API キーの例としては、`AJzbSyCTcpfRT1YRqbz-jIwp1h06YdauvewGDzk`があります。
 
 - <a name="fcm-in-action-app-id"></a>**アプリケーション ID**は、fcm からメッセージを受信するように登録されているクライアントアプリの id &ndash; ます (特定のデバイスに依存しません)。 アプリ ID の例としては、`1:415712510732:android:0e1eb7a661af2460`があります。
 
@@ -151,7 +151,7 @@ Android で FCM プッシュ通知メッセージを受信するためにアプ�
 
 - 「 [FCM メッセージについ](https://firebase.google.com/docs/cloud-messaging/concept-options)て」では、焼討 Base Cloud Messaging で送信できるさまざまな種類のメッセージについて説明しています。
 
-## <a name="summary"></a>要約
+## <a name="summary"></a>まとめ
 
 この記事では、焼討 Base Cloud Messaging (FCM) の概要について説明しました。 ここでは、アプリサーバーとクライアントアプリ間のメッセージングを識別および承認するために使用されるさまざまな資格情報について説明しました。 ここでは、登録とダウンストリームのメッセージングシナリオについて説明し、fcm サービスを使用するようにアプリケーションを FCM に登録する手順について詳しく説明します。
 

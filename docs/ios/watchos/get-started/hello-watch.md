@@ -156,4 +156,4 @@ partial void OnButtonPress (WatchKit.WKInterfaceButton sender)
 ## <a name="related-links"></a>関連リンク
 
 - [セットアップとインストール](~/ios/watchos/get-started/installation.md)
-- [Watch アプリの最初のビデオ](https://blog.xamarin.com/your-first-watch-kit-app/)
+- [最初のアプリの視聴に関するビデオ](https://blog.xamarin.com/your-first-watch-kit-app/)

@@ -16,14 +16,14 @@ ms.locfileid: "76725186"
 ---
 # <a name="objective-c-selectors-in-xamarinios"></a>Xamarin. iOS の Objective-C セレクター
 
-Objective-C 言語は*セレクター*に基づいています。 セレクターは、オブジェクトまたは*クラス*に送信できるメッセージです。 [Xamarin.iOS](~/ios/internals/api-design/index.md) は、インスタンスセレクターをインスタンスメソッドに、クラスセレクターを静的メソッドにマップします。
+目的 C 言語は*セレクター*に基づいています。 セレクターは、オブジェクトまたは*クラス*に送信できるメッセージです。 [Xamarin iOS](~/ios/internals/api-design/index.md)は、インスタンスセレクターをインスタンスメソッドに、クラスセレクターを静的メソッドにマップします。
 
-通常の C 関数 (および同様の C++ メンバー関数) とは異なり、 [P/invoke](https://www.mono-project.com/docs/advanced/pinvoke/) を使用してセレクターを直接呼び出すことはできません。セレクターは、[`objc_msgSend`](https://developer.apple.com/documentation/objectivec/1456712-objc_msgsend) 関数を使用して Objective-C クラスまたはインスタンスに送信されます。
+通常の C 関数 (および同様C++のメンバー関数) とは異なり、 [P/invoke](https://www.mono-project.com/docs/advanced/pinvoke/)を使用してセレクターを直接呼び出すことはできません。セレクターは、を使用して目的の c クラスまたはインスタンスに送信され[`objc_msgSend`](https://developer.apple.com/documentation/objectivec/1456712-objc_msgsend)
 関数。
 
-Objective-C でのメッセージの詳細については、Apple の[Working with Objects](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithObjects/WorkingwithObjects.html#//apple_ref/doc/uid/TP40011210-CH4-SW2)ガイドを参照してください。
+目的、C のメッセージの詳細については、「Apple の[オブジェクトの操作](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithObjects/WorkingwithObjects.html#//apple_ref/doc/uid/TP40011210-CH4-SW2)ガイド」を参照してください。
 
-## <a name="example"></a>使用例
+## <a name="example"></a>例
 
 [`sizeWithFont:forWidth:lineBreakMode:`](https://developer.apple.com/documentation/foundation/nsstring/1619914-sizewithfont)を呼び出すとします。
 [`NSString`](https://developer.apple.com/documentation/foundation/nsstring)のセレクター。
@@ -36,10 +36,10 @@ Objective-C でのメッセージの詳細については、Apple の[Working wi
 この API には次の特性があります。
 
 - 戻り値の型は、Unified API に対して `CGSize` ます。
-- パラメーターは、 [uifont](xref:UIKit.UIFont) (および[NSObject](xref:Foundation.NSObject)から派生した型 (間接的)) で、[System.IntPtr](xref:System.IntPtr) にマップされます。`font`
+- `font` パラメーターは、 [Uifont](xref:UIKit.UIFont) (および[NSObject](xref:Foundation.NSObject)から派生した型 (間接的)) で、 [IntPtr](xref:System.IntPtr)にマップされます。
 - `CGFloat``width` パラメーターは `nfloat`にマップされます。
 - `lineBreakMode` パラメーターの[`UILineBreakMode`](https://developer.apple.com/documentation/uikit/uilinebreakmode?language=objc)は、 [`UILineBreakMode`](xref:UIKit.UILineBreakMode)として既に Xamarin. iOS にバインドされています。
-列挙体に記載されています。
+列挙.
 
 すべてをまとめて、`objc_msgSend` 宣言を一致させる必要があります。
 
@@ -164,7 +164,7 @@ else
 
 ## <a name="different-invocations-on-simulator-and-device"></a>シミュレーターとデバイスでの異なる呼び出し
 
-前に説明したように、Objective-C には 3 種類の `objc_msgSend` メソッドがあります。1 つは通常の呼び出し用、もう 1 つは浮動小数点値を返す呼び出し用 (x86 のみ)、もう 1 つは構造体の値を返す呼び出し用です。 後者には、`ObjCRuntime.Messaging`に `_stret` サフィックスが含まれています。
+前に説明したように、目標 C には3種類の `objc_msgSend` メソッドがあります。1つは通常の呼び出し用、もう1つは浮動小数点値を返す呼び出し用 (x86 のみ)、もう1つは構造体の値を返す呼び出し用です。 後者には、`ObjCRuntime.Messaging`に `_stret` サフィックスが含まれています。
 
 特定の構造体 (以下で説明するルール) を返すメソッドを呼び出す場合は、`out` 値として最初のパラメーターとして戻り値を指定してメソッドを呼び出す必要があります。
 

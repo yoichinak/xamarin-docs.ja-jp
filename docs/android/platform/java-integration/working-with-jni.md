@@ -18,7 +18,7 @@ ms.locfileid: "76724345"
 
 _Xamarin では、Java ではなくC# 、を使用して android アプリを作成できます。いくつかのアセンブリが Xamarin. Android に付属しています。これは、GoogleMaps や Mono などの Java ライブラリのバインドを提供します。ただし、バインドは、可能なすべての Java ライブラリに対して提供されていません。また、提供されているバインドでは、Java のすべての型とメンバーをバインドできない場合があります。バインドされていない Java の型とメンバーを使用するには、Java ネイティブインターフェイス (JNI) を使用できます。この記事では、JNI を使用して、Xamarin Android アプリケーションから Java の型とメンバーを操作する方法について説明します。_
 
-## <a name="overview"></a>の概要
+## <a name="overview"></a>概要
 
 Java コードを呼び出すためにマネージ呼び出し可能ラッパー (MCW) を作成する必要は必ずしも必要ではありません。 多くの場合、"inline" JNI は、バインドされていない Java メンバーの1回限りの使用に適しています。 多くの場合、JNI を使用すると、jar バインド全体を生成するよりも、Java クラスで1つのメソッドを呼び出すことが簡単になります。
 
@@ -34,7 +34,7 @@ Xamarin. Android の JNI API は、概念的には .NET の `System.Reflection` 
 - マネージコードからのオーバーライドを可能にする仮想メソッドを公開する方法。
 - インターフェイスを公開する方法。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 JNI[名前空間](xref:Android.Runtime.JNIEnv)を通じて公開されているように、Xamarin. Android のすべてのバージョンで使用できます。
 Java の型とインターフェイスをバインドするには、Xamarin Android 4.0 以降を使用する必要があります。
@@ -64,7 +64,7 @@ Android 呼び出し可能ラッパーは、[ビルドプロセス](~/android/de
 Android インターフェイス ( [IComponentCallbacks](xref:Android.Content.IComponentCallbacks)など) を実装することが必要になる場合があります。
 
 Android のクラスとインターフェイスはすべて、 [IJavaObject](xref:Android.Runtime.IJavaObject)インターフェイスを拡張します。そのため、すべての Android の種類で `IJavaObject`を実装する必要があります。
-Xamarin Android は、この事実を活用します。これは、`IJavaObject` を使用して、指定されたマネージ型の Java プロキシ (Android 呼び出し可能ラッパー) を Android に提供する &ndash; です。 **モノの id**は `Java.Lang.Object` サブクラス (`IJavaObject`を実装する必要があります) のみを検索するため、`Java.Lang.Object` をサブクラス化して、マネージコードでインターフェイスを実装する方法を提供します。 例:
+Xamarin Android は、この事実を活用します。これは、`IJavaObject` を使用して、指定されたマネージ型の Java プロキシ (Android 呼び出し可能ラッパー) を Android に提供する &ndash; です。 **モノの id**は `Java.Lang.Object` サブクラス (`IJavaObject`を実装する必要があります) のみを検索するため、`Java.Lang.Object` をサブクラス化して、マネージコードでインターフェイスを実装する方法を提供します。 次に例を示します。
 
 ```csharp
 class MyComponentCallbacks : Java.Lang.Object, Android.Content.IComponentCallbacks {
@@ -261,7 +261,7 @@ public static System.IO.Stream In
 
 ### <a name="method-binding"></a>メソッドのバインド
 
-Java メソッドは、 C#メソッドとしてC# 、プロパティとして公開されます。 たとえば、java メソッドの[java. lang. runFinalizersOnExit](https://developer.android.com/reference/java/lang/Runtime.html#runFinalizersOnExit(boolean)) メソッドは、[Java.Lang.Runtime.RunFinalizersOnExit](xref:Java.Lang.Runtime.RunFinalizersOnExit*) メソッドとしてバインドされています。また、[.javaクラス](https://developer.android.com/reference/java/lang/Object.html#getClass)のメソッドは、[java. オブジェクト. クラス](xref:Java.Lang.Object.Class) プロパティとしてバインドされています。
+Java メソッドは、 C#メソッドとしてC# 、プロパティとして公開されます。 たとえば、java メソッドの[java. runtime. runFinalizersOnExit](https://developer.android.com/reference/java/lang/Runtime.html#runFinalizersOnExit(boolean))メソッドは、 [java. Runtime. RunFinalizersOnExit](xref:Java.Lang.Runtime.RunFinalizersOnExit*)メソッドとしてバインドされています。また、.java[クラス](https://developer.android.com/reference/java/lang/Object.html#getClass)のメソッドは、 [.java](xref:Java.Lang.Object.Class)プロパティとしてバインドされています。
 
 メソッドの呼び出しは、次の2つの手順からなるプロセスです。
 
@@ -354,7 +354,7 @@ IntPtr lrefInstance = JNIEnv.NewObject (class_ref, id_ctor_I, new JValue (value)
 
 1. 現在のランタイム型が宣言型と同じでない場合は、対応する Android 呼び出し可能ラッパーのインスタンスを作成し、 [SetHandle](xref:Java.Lang.Object.SetHandle*)を使用して、 [j](xref:Android.Runtime.JNIEnv.CreateInstance*)によって返されるハンドルを格納する必要があります。
 
-1. 現在のランタイム型が宣言する型と同じである場合は、Java コンストラクターを呼び出し、`JNIEnv.NewInstance` によって返されるハンドルを格納するために [Object.SetHandle](xref:Java.Lang.Object.SetHandle*) を使用します。
+1. 現在のランタイム型が宣言する型と同じである場合は、Java コンストラクターを呼び出し、`JNIEnv.NewInstance` によって返されるハンドルを格納するために[SetHandle](xref:Java.Lang.Object.SetHandle*)を使用します。
 
 たとえば、 [java. Integer (int)](https://developer.android.com/reference/java/lang/Integer.html#Integer(int))コンストラクターを考えてみます。 これは次のようにバインドされます。
 
@@ -657,7 +657,7 @@ public class Adder : Java.Lang.Object {
 }
 ```
 
-### <a name="restrictions"></a>制約
+### <a name="restrictions"></a>制限
 
 次の条件に一致する型を書き込む場合:
 
@@ -973,7 +973,7 @@ new JValue (currentSum));
 
 ローカル参照は、*ほとんど*の参照作成メソッドによって作成されます。
 Android では、特定の時点 (通常は 512) に限られた数のローカル参照しか存在できません。 ローカル参照は、 [DeleteLocalRef](xref:Android.Runtime.JNIEnv.DeleteLocalRef*)を使用して削除できます。
-JNI とは異なり、オブジェクト参照を返すすべての参照 j Env メソッドがローカル参照を返すわけではありません。[FindClass](xref:Android.Runtime.JNIEnv.FindClass*)は*グローバル*参照を返します。 ローカル参照は、可能な限り早く削除することを強くお勧めします。これは、オブジェクトの周囲に[java. lang. オブジェクト](xref:Java.Lang.Object)を作成し、そのオブジェクトに `JniHandleOwnership.TransferLocalRef` を指定することによって、[Java.Lang.Object(IntPtr handle, JniHandleOwnership transfer)](xref:Java.Lang.Object#ctor*) コンストラクター。
+JNI とは異なり、オブジェクト参照を返すすべての参照 j Env メソッドがローカル参照を返すわけではありません。[FindClass](xref:Android.Runtime.JNIEnv.FindClass*)は*グローバル*参照を返します。 ローカル参照は、可能な限り早く削除することを強くお勧めします。これは、オブジェクトの周りに[Java Lang.ini オブジェクト](xref:Java.Lang.Object)を構築し、`JniHandleOwnership.TransferLocalRef` を指定して、 [java. lang. オブジェクト (IntPtr ハンドル、Jの handleオーナーシップの転送)](xref:Java.Lang.Object#ctor*)コンストラクターに対してを指定することによって可能です。
 
 グローバル参照は、 [Jare env. NewGlobalRef](xref:Android.Runtime.JNIEnv.NewGlobalRef*)と[Jの Env. findclass](xref:Android.Runtime.JNIEnv.FindClass*)によって作成されます。
 これらは、 [DeleteGlobalRef](xref:Android.Runtime.JNIEnv.DeleteGlobalRef*)で破棄できます。
@@ -983,7 +983,7 @@ JNI とは異なり、オブジェクト参照を返すすべての参照 j Env 
 
 ### <a name="dealing-with-jni-local-references"></a>JNI ローカル参照の処理
 
-[JNIEnv.GetObjectField](xref:Android.Runtime.JNIEnv.GetObjectField*)、[JNIEnv.GetStaticObjectField](xref:Android.Runtime.JNIEnv.GetStaticObjectField*)、[JNIEnv.CallObjectMethod](xref:Android.Runtime.JNIEnv.CallObjectMethod*)、[JNIEnv.CallNonvirtualObjectMethod](xref:Android.Runtime.JNIEnv.CallNonvirtualObjectMethod*)、および [JNIEnv.CallStaticObjectMethod](xref:Android.Runtime.JNIEnv.CallStaticObjectMethod*) メソッドは `IntPtr` を返します。java オブジェクトへの JNI ローカル参照、または `IntPtr.Zero` java が返された場合は `null` を格納します。 ローカル参照の数が制限されているため (512 エントリ)、参照が適時に削除されることを確認することをお勧めします。 ローカル参照の処理方法には、明示的に削除する方法、それを保持するための `Java.Lang.Object` インスタンスを作成する方法、および `Java.Lang.Object.GetObject<T>()` を使用してマネージ呼び出し可能ラッパーを作成する方法の3つがあります。
+JCallObjectMethod[フィールド](xref:Android.Runtime.JNIEnv.GetObjectField*) [、](xref:Android.Runtime.JNIEnv.GetStaticObjectField*) [j](xref:Android.Runtime.JNIEnv.CallObjectMethod*)、 [JJNI、j、Callnonvirtualobjectmethod](xref:Android.Runtime.JNIEnv.CallNonvirtualObjectMethod*) 、および[j OBJECTMETHOD](xref:Android.Runtime.JNIEnv.CallStaticObjectMethod*)メソッドは、java オブジェクトへのローカル参照を含む `IntPtr` を返します。 java が `null`を返した場合 `IntPtr.Zero` は、このメソッドを返します。または、 ローカル参照の数が制限されているため (512 エントリ)、参照が適時に削除されることを確認することをお勧めします。 ローカル参照の処理方法には、明示的に削除する方法、それを保持するための `Java.Lang.Object` インスタンスを作成する方法、および `Java.Lang.Object.GetObject<T>()` を使用してマネージ呼び出し可能ラッパーを作成する方法の3つがあります。
 
 ### <a name="explicitly-deleting-local-references"></a>ローカル参照の明示的な削除
 
@@ -1006,7 +1006,7 @@ finally {
 - 作成された `Java.Lang.Object`[インスタンス &ndash; 作成](xref:Android.Runtime.JniHandleOwnership.DoNotTransfer)された `handle` パラメーターから新しいグローバル参照を作成し、`handle` を変更しません。
     呼び出し元は、必要に応じて `handle` を解放する役割を担います。
 
-- [JniHandleOwnership.TransferLocalRef](xref:Android.Runtime.JniHandleOwnership.TransferLocalRef) &ndash; 生成された `Java.Lang.Object` インスタンスは、[JNIEnv.DeleteLocalRef](xref:Android.Runtime.JNIEnv.DeleteLocalRef*) で削除された `handle` の所有権の譲渡によって新しいグローバル参照を作成し、`handle` パラメーターから新しいグローバル参照を作成します。 呼び出し元は `handle` を解放する必要がなく、コンストラクターの実行が完了した後で `handle` を使用することはできません。
+- 作成された `Java.Lang.Object` インスタンスによって作成された新しいグローバル参照は、 [j/](xref:Android.Runtime.JniHandleOwnership.TransferLocalRef) &ndash; によって `handle` パラメーターから作成され、`handle` が削除され[ます。](xref:Android.Runtime.JNIEnv.DeleteLocalRef*) 呼び出し元は `handle` を解放する必要がなく、コンストラクターの実行が完了した後で `handle` を使用することはできません。
 
 - 作成された `Java.Lang.Object` インスタンスは、`handle` パラメーター[の所有権を引き継ぎ &ndash;。](xref:Android.Runtime.JniHandleOwnership.TransferLocalRef) 呼び出し元は `handle` を解放しないでください。
 
@@ -1215,7 +1215,7 @@ JNIEnv.SetStaticField(IntPtr class, IntPtr fieldID, Type value);
 
 - [CallBooleanMethod](xref:Android.Runtime.JNIEnv.CallBooleanMethod*) &ndash; `bool` 値を返すメソッドを呼び出します。
 
-- [JNIEnv.CallByteMethod](xref:Android.Runtime.JNIEnv.CallByteMethod*) &ndash; `sbyte` 値を返すメソッドを呼び出します。
+- &ndash; `sbyte` 値を返すメソッドを呼び出すメソッドを呼び出し[ます。](xref:Android.Runtime.JNIEnv.CallByteMethod*)
 
 - &ndash; `char` 値を返すメソッドを呼び出すメソッドを呼び出し[ます。](xref:Android.Runtime.JNIEnv.CallCharMethod*)
 
@@ -1314,8 +1314,8 @@ JNI 型シグネチャは次のようになります。
 JNI 型参照は、Java 型参照とは異なります。 JNI で `java.lang.String` などの完全修飾 Java 型名を使用することはできません。コンテキストに応じて、JNI のバリエーション `"java/lang/String"` または `"Ljava/lang/String;"`を使用する必要があります。詳細については、以下を参照してください。
 JNI 型参照には、次の4種類があります。
 
-- **built-in**
-- **simplified**
+- **組み込み**
+- **た**
 - **type**
 - **array**
 
@@ -1344,7 +1344,7 @@ JNI 型参照には、次の4種類があります。
 
 1. `'unzip -l android.jar | grep JavaName'` の出力を読み取ります。
 
-どちらの場合も、Java 型 [java.lang.Thread.State](https://developer.android.com/reference/java/lang/Thread.State.html) は、簡略化された型参照 `java/lang/Thread$State` にマップされます。
+どちらの場合も、Java の型は、[単純化され](https://developer.android.com/reference/java/lang/Thread.State.html)た型参照 `java/lang/Thread$State`にマップされます。
 
 ### <a name="type-references"></a>型参照
 
@@ -1353,7 +1353,7 @@ JNI 型参照には、次の4種類があります。
 型参照は、配列型参照および JNI シグネチャと共に使用されます。
 
 型参照を取得するための追加の方法として、`'javap -s -classpath android.jar fully.qualified.Java.Name'`の出力を読み取る方法があります。
-関連する型に応じて、コンストラクターの宣言またはメソッドの戻り値の型を使用して、JNI 名を決定できます。 例:
+関連する型に応じて、コンストラクターの宣言またはメソッドの戻り値の型を使用して、JNI 名を決定できます。 次に例を示します。
 
 ```shell
 $ javap -classpath android.jar -s java.lang.Thread.State
@@ -1460,7 +1460,7 @@ Activity mapActivity = Java.Lang.Object.GetObject<Activity>(lrefActivity, JniHan
 
 さらに、すべての JNI 関数に存在する `JNIEnv*` パラメーターを削除することによって、すべての JNI 関数が変更されています。
 
-## <a name="summary"></a>要約
+## <a name="summary"></a>まとめ
 
 JNI を直接処理することは、すべてのコストで回避する必要がある、非常に手間のかかるエクスペリエンスです。 残念ながら、これは常にあればではありません。このガイドでは、Mono for Android でバインドされていない Java ケースにヒットしたときに、いくつかのサポートを提供します。
 

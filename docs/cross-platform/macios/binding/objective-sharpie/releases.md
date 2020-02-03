@@ -59,7 +59,7 @@ ms.locfileid: "76725351"
 ## <a name="216-march-17-2015"></a>2.1.6 (2015 年3月17日)
 
 * 二項演算子式のバインドが固定されています。式の左辺が正しく正しく交換されていません (例: `1 << 0` が `0 << 1`として正しくバインドされていません)。 Adam Kemp に感謝しています。
-* `NSInteger` と `NSUInteger` が `nint` ではなく `int` および `uint` としてバインドされている問題を修正しました。`-DNS_BUILD_32_LIKE_64` が Clang に渡されるようになりました。これにより、解析 `objc/NSObjCRuntime.h` が i386 で想定どおりに機能します。
+* `NSInteger` と `NSUInteger` が `nint` ではなく `int` および `uint` としてバインドされている問題を修正しました。`-DNS_BUILD_32_LIKE_64` が Clang に渡されるようになりました。これにより、解析 `objc/NSObjCRuntime.h` が i386 で想定どおりに機能します。`nuint`
 * Mac OS X Sdk (`-sdk macosx10.10`など) の既定のアーキテクチャは、i386 ではなく x86_64 されるようになりました。そのため、既定値をオーバーライドする場合を除き、`-arch` は省略できます。
 
 ## <a name="210-march-15-2015"></a>2.1.0 (2015 年3月15日)
@@ -123,7 +123,7 @@ ms.locfileid: "76725351"
 
 * これで、Xamarin Unified API が既定のバインディングターゲットになりました。`-classic` オプションを使用して、32ビットのみ Classic API を対象にします。
 
-### <a name="notable-bug-fixes"></a>注目すべきバグ修正
+### <a name="notable-bug-fixes"></a>注目すべきバグの修正
 
 * 目標 C カテゴリで使用されている場合に `instancetype` バインドを修正する
 * 完全名の目標-C カテゴリ
@@ -133,7 +133,7 @@ ms.locfileid: "76725351"
 
 [ダウンロード1.1.35](https://download.xamarin.com/objective-sharpie/ObjectiveSharpie-1.1.35.pkg)
 
-マイナーなバグの修正。
+軽微なバグの修正。
 
 ## <a name="111-december-15-2014"></a>1.1.1: 2014 年12月15日
 

@@ -19,7 +19,7 @@ ms.locfileid: "76725279"
 
 * 『[目標](~/tools/dotnet-embedding/get-started/objective-c/index.md)の概要』のガイドの手順に従ってください。
 
-## <a name="hello-world"></a>Hello world
+## <a name="hello-world"></a>Hello World
 
 まず、「」でC#簡単な hello world の例を作成します。
 
@@ -40,7 +40,7 @@ public class MyNSView : NSTextView
 }
 ```
 
-プロジェクトをビルドする。 結果として得られるアセンブリは、 **~/Projects/hello-from-csharp/hello-from-csharp/bin/Debug/hello-from-csharp.dll**として保存されます。
+プロジェクトをビルドします。 結果として得られるアセンブリは、 **~/Projects/hello-from-csharp/hello-from-csharp/bin/Debug/hello-from-csharp.dll**として保存されます。
 
 ### <a name="bind-the-managed-assembly"></a>マネージアセンブリをバインドする
 

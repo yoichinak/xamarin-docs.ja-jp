@@ -18,15 +18,15 @@ ms.locfileid: "76723640"
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_SkiaSharp のパスの塗りつぶしの種類で可能なさまざまな効果を検出します。_
+_SkiaSharp path fill 型で可能なさまざまな効果を発見する_
 
 パス内の 2 つの輪郭がオーバー ラップできるし、1 つの輪郭を構成する行が重複することができます。 任意の囲まれた領域は塗りつぶさ可能性があることができますが含まれているすべての領域を塗りつぶすしない可能性があります。 次に例を示します。
 
 ![](fill-types-images/filltypeexample.png "Five-pointed star partially filles")
 
-この少しのコントロールがあります。 いっぱいになるアルゴリズムが適用されます、 [ `SKFillType` ](xref:SkiaSharp.SKPath.FillType)プロパティの`SKPath`のメンバーに設定する、 [ `SKPathFillType` ](xref:SkiaSharp.SKPathFillType)列挙体。
+この少しのコントロールがあります。 入力アルゴリズムは、`SKPath`の[`SKFillType`](xref:SkiaSharp.SKPath.FillType)プロパティによって制御されます。これは、 [`SKPathFillType`](xref:SkiaSharp.SKPathFillType)列挙体のメンバーに設定します。
 
-- `Winding` 既定値
+- `Winding`、既定値
 - `EvenOdd`
 - `InverseWinding`
 - `InverseEvenOdd`
@@ -35,7 +35,7 @@ _SkiaSharp のパスの塗りつぶしの種類で可能なさまざまな効果
 
 多くの日常的なパスを持つワインディングのアルゴリズムは多くの場合、パスのすべての囲まれた領域を塗りつぶします。 一般に、偶アルゴリズムより興味深い結果が生成されます。
 
-示した、典型的な例は、5 ポイントの星、 **Five-Pointed スター**ページ。 [ **FivePointedStarPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/FivePointedStarPage.xaml)ファイルでは、2 つのインスタンス化します`Picker`パスを選択するビューの種類とパスの線を付けるまたは入力するかどうかまたはその両方を入力し、どのような順序で。
+クラシックの例は、5つの**星**のページで説明されているように、星5つの星です。 [**Fivepointedstarpage .xaml**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/FivePointedStarPage.xaml)ファイルは、2つの `Picker` ビューをインスタンス化してパスの塗りつぶしの種類を選択し、パスがストロークされるか、または塗りつぶされるか、またはその両方を順番に指定します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -102,7 +102,7 @@ _SkiaSharp のパスの塗りつぶしの種類で可能なさまざまな効果
 </ContentPage>
 ```
 
-分離コード ファイルを使用して両方`Picker`5 ポイントの星を描画する値。
+分離コードファイルでは、両方の `Picker` 値を使用して、次の5つの星を描画します。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -168,20 +168,20 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-パスの塗りつぶしの種類の塗りつぶし、ストロークではないいて、2 つに影響は通常、`Inverse`モードは、塗りつぶしとストロークの両方に影響します。 2 つの塗りつぶし`Inverse`型領域を塗りつぶす oppositely 星の外側の領域が入力されるようにします。 2 つのストロークの`Inverse`色の線を除くすべての種類。 これらの逆の塗りつぶしの種類を使用すると、iOS のスクリーン ショットに示すように、奇数の効果をいくつかが生成することができます。
+通常、パスの塗りつぶしの種類は塗りつぶしにのみ影響し、ストロークは影響しませんが、2つの `Inverse` モードは塗りつぶしとストロークの両方に影響します。 塗りつぶしの場合、2つの `Inverse` の種類は oppositely の外側の領域を塗りつぶすように塗りつぶします。 ストロークの場合、2つの `Inverse` の種類はストロークを除くすべての色になります。 これらの逆の塗りつぶしの種類を使用すると、iOS のスクリーン ショットに示すように、奇数の効果をいくつかが生成することができます。
 
 [![](fill-types-images/fivepointedstar-small.png "Triple screenshot of the Five-Pointed Star page")](fill-types-images/fivepointedstar-large.png#lightbox "Triple screenshot of the Five-Pointed Star page")
 
 Android のスクリーンショットには、通常の奇数とワインディングの効果が示されていますが、ストロークと塗りつぶしの順序も結果に影響します。
 
-ワインディングのアルゴリズムでは、線が描画される方向に依存します。 通常、パスを作成する際を制御できますその方向の行が 1 つの点から描画される間を指定します。 ただし、`SKPath`クラスなどのメソッドも定義されています。`AddRect`と`AddCircle`全体の輪郭を描画します。 これらのオブジェクトを描画する方法を制御するため、メソッドが型のパラメーターを含める[ `SKPathDirection` ](xref:SkiaSharp.SKPathDirection)、2 つのメンバーを持ちます。
+ワインディングのアルゴリズムでは、線が描画される方向に依存します。 通常、パスを作成する際を制御できますその方向の行が 1 つの点から描画される間を指定します。 ただし、`SKPath` クラスは、輪郭全体を描画する `AddRect` や `AddCircle` などのメソッドも定義します。 これらのオブジェクトの描画方法を制御するために、メソッドには[`SKPathDirection`](xref:SkiaSharp.SKPathDirection)型のパラメーターが含まれています。このパラメーターには、次の2つのメンバーがあります。
 
 - `Clockwise`
 - `CounterClockwise`
 
-メソッドは、`SKPath`が含まれる、`SKPathDirection`パラメーターを指定の既定値`Clockwise`します。
+`SKPathDirection` パラメーターを含む `SKPath` 内のメソッドには、`Clockwise`の既定値が与えられます。
 
-**重なり合う円**ページ偶パスの塗りつぶしの種類を次の 4 つの重なり合う円のパスを作成します。
+**重なった円**ページにより、偶数の円で始まるパスが作成されます。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -227,5 +227,5 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

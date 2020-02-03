@@ -50,7 +50,7 @@ Xamarin を使用してクロスプラットフォームアプリケーション
 
 [Tasky のケーススタディ](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)を参照してください。
 
-## <a name="summary"></a>要約
+## <a name="summary"></a>まとめ
 
 このセクションでは、Xamarin のアプリケーション開発ツールについて説明し、複数のモバイルプラットフォームを対象とするアプリケーションを構築する方法について説明します。
 

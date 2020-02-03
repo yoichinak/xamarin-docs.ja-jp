@@ -118,7 +118,7 @@ Android アプリケーションで Google Cloud Messaging から通知を受信
 </manifest>
 ```
 
-上記の XML では、 *YOUR_PACKAGE_NAME*をクライアントアプリプロジェクトのパッケージ名に変更します。 たとえば、 `com.xamarin.gcmexample`のようにします。
+上記の XML では、 *YOUR_PACKAGE_NAME*をクライアントアプリプロジェクトのパッケージ名に変更します。 たとえば、「 `com.xamarin.gcmexample` 」のように入力します。
 
 ### <a name="check-for-google-play-services"></a>Google Play 開発者サービスの確認
 
@@ -398,7 +398,7 @@ namespace ClientApp
 
 #### <a name="test-registration-with-gcm"></a>GCM を使用した登録のテスト
 
-アプリを完全にリビルドして実行してみましょう。 GCM から登録トークンを正常に受信した場合は、[出力] ウィンドウに登録トークンが表示されます。 例:
+アプリを完全にリビルドして実行してみましょう。 GCM から登録トークンを正常に受信した場合は、[出力] ウィンドウに登録トークンが表示されます。 次に例を示します。
 
 ```shell
 D/Mono    ( 1934): Assembly Ref addref ClientApp[0xb4ac2400] -> Xamarin.GooglePlayServices.Gcm[0xb4ac2640]: 2
@@ -501,7 +501,7 @@ GCM からメッセージを受信するには、その前に、Android マニ�
 
 この XML の各設定について、次のように説明します。
 
-|設定|説明|
+|設定|[説明]|
 |---|---|
 |`com.google.android.gms.gcm.GcmReceiver`|受信したプッシュ通知メッセージをキャプチャして処理する GCM レシーバーをアプリが実装することを宣言します。|
 |`com.google.android.c2dm.permission.SEND`|GCM サーバーだけがアプリにメッセージを直接送信できることを宣言します。|
@@ -599,7 +599,7 @@ namespace MessageSender
 
 GCM は、このメッセージをクライアントアプリに転送します。 **MessageSender**をビルドし、コンソールウィンドウを開いて、コマンドラインから実行できるようにしましょう。
 
-### <a name="try-it"></a>試してみる
+### <a name="try-it"></a>手順を次に示します。
 
 これで、クライアントアプリをテストする準備ができました。 エミュレーターを使用している場合、またはデバイスが Wi-fi 経由で GCM と通信している場合は、GCM メッセージを取得するために、ファイアウォールで次の TCP ポートを開く必要があります: 5228、5229、および5230。
 
@@ -643,7 +643,7 @@ D/MyGcmListenerService(16103): Message: Hello, Xamarin!
 
 アプリが強制的に停止された場合、GCM メッセージは受信されなくなることに注意してください。 強制停止後に通知を再開するには、アプリを手動で再起動する必要があります。 この Android ポリシーの詳細については、「停止した[アプリケーションでのコントロールの起動](https://developer.android.com/about/versions/android-3.1.html#launchcontrols)」および「この[スタックオーバーフローの投稿](https://stackoverflow.com/questions/5051687/broadcastreceiver-not-receiving-boot-completed/19856267#19856267)」を参照してください。
 
-## <a name="summary"></a>要約
+## <a name="summary"></a>まとめ
 
 このチュートリアルでは、Xamarin Android アプリケーションでリモート通知を実装する手順について詳しく説明します。 GCM 通信に必要な追加のパッケージをインストールする方法について説明し、GCM サーバーにアクセスするためのアプリのアクセス許可を構成する方法について説明しました。
 このサンプルコードでは、Google Play 開発者サービスの存在を確認する方法、登録インテントサービスを実装する方法と、登録トークンの GCM とネゴシエートするインスタンス ID リスナーサービスを実装する方法、および GCM リスナーを実装する方法を示しています。リモート通知メッセージを受信して処理するサービスです。 最後に、GCM を介してクライアントアプリにテスト通知を送信するコマンドラインテストプログラムを実装しています。

@@ -63,7 +63,7 @@ Windows 仮想マシンから Mac で実行されている Android Emulator に�
     C:\> adb connect ip-address-of-the-mac:5555
     ```
 
-    "Ip アドレス-mac" を Mac の IP アドレスに置き換えます。たとえば、`ifconfig vmnet8 | grep 'inet '`によって表示されます。 必要に応じて`5555` 、を手順 4. の別のポートに置き換えます\. (注: `adb` へのコマンドラインアクセスを取得する方法の1つは、Visual Studio で[**android > Android Adb コマンドプロンプト > ツール**](~/cross-platform/troubleshooting/questions/version-logs.md#adb-logcat)を使用する方法です)。
+    "Ip アドレス-mac" を Mac の IP アドレスに置き換えます。たとえば、`ifconfig vmnet8 | grep 'inet '`によって表示されます。 必要に応じて、`5555` を手順 4. の他のポートに置き換え\. (注: `adb` へのコマンドラインアクセスを取得する方法の1つは、Visual Studio で[**android > Android Adb コマンドプロンプト > ツール**](~/cross-platform/troubleshooting/questions/version-logs.md#adb-logcat)を使用する方法です)。
 
 ### <a name="alternate-technique-using-ssh"></a>`ssh` を使用した別の手法
 

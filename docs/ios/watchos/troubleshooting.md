@@ -31,12 +31,12 @@ ms.locfileid: "76725315"
 
 ## <a name="known-issues"></a>既知の問題
 
-### <a name="general"></a>[全般]
+### <a name="general"></a>全般
 
 <a name="deploy" />
 
 - 以前のリリースの Visual Studio for Mac では、 **AppleCompanionSettings**アイコンの1つが正しくないとして表示されます。これにより、App Store に送信しようとするとアイコンが表示されないという**エラーが発生**します。
-    このアイコンは 87 x 87 ピクセルである必要があります (29 単位 **@3x** Retina 画面)。 Xcode のイメージ資産を編集するか、ファイルを手動で編集すること Visual Studio for Mac で、これを修正することはでき**ません。**
+    このアイコンは87x87 ピクセル ( **@3x** Retina 画面の場合は29単位) にする必要があります。 Xcode のイメージ資産を編集するか、ファイルを手動で編集すること Visual Studio for Mac で、これを修正することはでき**ません。**
 
 - Watch 拡張機能プロジェクト > の**WKApp バンドル id**が watch アプリの**バンドル id**と一致するように[正しく設定](~/ios/watchos/get-started/project-references.md)されていない場合、デバッガーは接続に失敗し、Visual Studio for Mac は *"デバッガーの接続を待機*しています" というメッセージを表示して待機します。
 
@@ -166,7 +166,7 @@ Xcode Interface Builder を使用して*いる場合*は、次の手順に従っ
 
     ![](troubleshooting-images/add-6.png "Opening the storyboard in Interface Builder")
 
-8. 新しいインターフェイスコントローラーを選択し、前の手順で定義したクラス名を指定します。例を示します。 `MyInterfaceController`.
+8. 新しいインターフェイスコントローラーを選択し、前の手順で定義したクラス名を指定します。例を示します。 [https://login.microsoftonline.com/consumers/](`MyInterfaceController`)
     すべてが正常に動作している場合は、 **[クラス:]** ドロップダウンリストに自動的に表示され、そこから選択できます。
 
     ![](troubleshooting-images/add-4.png "Setting a custom class")
@@ -257,7 +257,7 @@ Xcode Interface Builder を使用して*いる場合*は、次の手順に従っ
 
 ### <a name="--sdkroot"></a>--sdkroot
 
-必ず指定します。 Xcode (6.2 以降) へのパスを指定します。
+必須。 Xcode (6.2 以降) へのパスを指定します。
 
 例:
 
