@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/27/2018
-ms.openlocfilehash: 675e6cebab95d2a997bf48a6c9231b5e8c661342
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: d73c72fa70a22bacf122f5c3957b789914dfd765
+ms.sourcegitcommit: dde593cf9dedf4a056ffef86bcf2fa0640412a4d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73020844"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76794825"
 ---
 # <a name="android-emulator-troubleshooting"></a>Android Emulator のトラブルシューティング
 
@@ -232,7 +232,7 @@ HAXM が、仮想化を使用する他のテクノロジ (Hyper-V、Windows Devi
 
 - **Hyper-V** &ndash; **Windows 10 April 2018 Update (ビルド 1803)** より前のバージョンの Windows を使用しており、Hyper-V が有効になっている場合は、HAXM を有効化できるように、「[Hyper-V を無効にする](#disable-hyperv)」の手順に従ってください。
 
-- **Device Guard** &ndash;Device Guard と Credential Guard により、Windows コンピューター上で Hyper-V を無効にできない可能性があります。 Device Guard と Credential Guard を無効にするには、「[Disabling Device Guard](#disable-devguard)」 (Device Guard を無効にする) を参照してください。
+- **Device Guard** &ndash; Device Guard と Credential Guard により、Windows マシン上で Hyper-V を無効にできない可能性があります。 Device Guard と Credential Guard を無効にするには、「[Disabling Device Guard](#disable-devguard)」 (Device Guard を無効にする) を参照してください。
 
 - **ウイルス対策ソフトウェア** &ndash; (Avast など) ハードウェア補助による仮想化を使用するウイルス対策ソフトウェアを実行している場合は、そのソフトウェアを無効にするかアンインストールしてから、Android Emulator を再起動してみてください。
 
@@ -284,7 +284,7 @@ Device Guard が有効になっている場合は、次の手順に従って無�
 
 1. 前のセクションで説明したように、( **[Windows の機能の有効化または無効化**] の下で) **HYPER-V** が無効になっていることを確認します。
 
-2. Windows 検索ボックスで、「**gpedit**」を入力し、検索結果で **[グループ ポリシーの編集]** を選択します。 この手順により**ローカル グループ ポリシー エディター**が起動します。
+2. Windows 検索ボックスで、「**gpedit.msc**」を入力し、検索結果で **[グループ ポリシーの編集]** を選択します。 この手順により**ローカル グループ ポリシー エディター**が起動します。
 
 3. **ローカル グループ ポリシー エディター**で、 **[コンピューターの構成]、[管理用テンプレート]、[システム]、[Device Guard]** の順に移動します。
 

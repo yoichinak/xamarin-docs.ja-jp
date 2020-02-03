@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: f43cb3ac5ff4d976c57a9d82c2003a08954ef1a4
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2d84d149b2eb4194de35fabc69cf44af99c04d25
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021047"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724127"
 ---
 # <a name="manually-signing-the-apk"></a>APK に手動で署名する
 
@@ -22,9 +22,9 @@ ms.locfileid: "73021047"
 
 2. **APK に zipalign を実行する** &ndash; *zipalign* はアプリケーション上で実行される最適化プロセスです。 実行時に Android が APK とより効率的に対話できるようにします。 Xamarin.Android は実行時にチェックを実行します。APK に zipalign が実行されていない場合、アプリケーションの実行は許可されません。
 
-3. **APK に署名する** &ndash; この手順では、Android SDK の **apksigner** ユーティリティを利用し、前の手順で作成された秘密キーで APK に署名します。 v24.0.3 より前の古いバージョンの Android SDK ビルド ツールで開発されたアプリケーションは JDK の **jarsigner** アプリを使用します。 これらのツールについては、以下で詳しく説明します。 
+3. **APK に署名する** &ndash; この手順では、Android SDK の **apksigner** ユーティリティを利用し、前の手順で作成された秘密キーで APK に署名します。 v24.0.3 より前の古いバージョンの Android SDK ビルド ツールで開発されたアプリケーションは JDK の **jarsigner** アプリを使用します。 これらのツールについては、以下で詳しく説明します。
 
-順序は重要です。APK の署名に利用されるツールによって変わります。 **apksigner** を使用するときは、先にアプリケーションに **zipalign** を実行し、それから **apksigner** で署名することが重要です。  **jarsigner** を使用して APK に署名する必要がある場合、先に APK に署名し、それから **zipalign** を実行することが重要です。 
+順序は重要です。APK の署名に利用されるツールによって変わります。 **apksigner** を使用するときは、先にアプリケーションに **zipalign** を実行し、それから **apksigner** で署名することが重要です。  **jarsigner** を使用して APK に署名する必要がある場合、先に APK に署名し、それから **zipalign** を実行することが重要です。
 
 ## <a name="prerequisites"></a>必須コンポーネント
 
@@ -127,7 +127,7 @@ $ apksigner sign --ks xample.keystore --ks-key-alias publishingdoc mono.samples.
 > [!WARNING]
 > このセクションは、**jarsigner** ユーティリティで APK に署名する必要がある場合にのみ適用されます。 開発者には、**apksigner** を利用して APK に署名することが推奨されています。
 
-この手法では、Java SDK の **[jarsigner](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jarsigner.html)** コマンドを利用して APK ファイルに署名します。  **jarsigner** ツールは Java SDK が提供します。 
+この手法では、Java SDK の **[jarsigner](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jarsigner.html)** コマンドを利用して APK ファイルに署名します。  **jarsigner** ツールは Java SDK が提供します。
 
 以下は、**jarsigner** と、「**xample.keystore**」という名前のキーストア ファイルに含まれているキー `publishingdoc` を利用して APK に署名する方法です。
 
@@ -141,7 +141,6 @@ $ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore xample.keysto
 ## <a name="related-links"></a>関連リンク
 
 - [アプリケーション署名](https://source.android.com/security/apksigning/)
-- [Java JAR 署名](https://docs.oracle.com/javase/8/docs/technotes~/jar/jar.html#Signed_JAR_File)
 - [jarsigner](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jarsigner.html)
 - [keytool](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/keytool.html)
 - [zipalign](https://developer.android.com/studio/command-line/zipalign.html)

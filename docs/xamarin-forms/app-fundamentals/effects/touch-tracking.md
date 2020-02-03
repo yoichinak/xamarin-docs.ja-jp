@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2018
-ms.openlocfilehash: 5fda0b78a80a25d122fbc58ef61fbeab22a547a0
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: cf5a97bca7c827101db951a440863839539c7e48
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771353"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725261"
 ---
 # <a name="invoking-events-from-effects"></a>エフェクトからのイベントの呼び出し
 
@@ -361,9 +361,9 @@ static Dictionary<long, TouchRecognizer> idToTouchDictionary =
 
 [**TouchTrackingEffectDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/) プログラムには、一般的な作業のタッチトラッキング エフェクトをテストするページが 5 つ含まれています。
 
-**[BoxView Dragging]\(BoxView ドラッグ操作\)** ページでは、`BoxView` 要素を `AbsoluteLayout` に追加し、画面上をドラッグできます。 [XAML ファイル](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/BoxViewDraggingPage.xaml)によって、`BoxView` 要素を `AbsoluteLayout` に追加し、`AbsoluteLayout` を消去するための `Button` ビューが 2 つインスタンス化されます。
+**[BoxView Dragging]\(BoxView ドラッグ操作\)** ページでは、`BoxView` 要素を `AbsoluteLayout` に追加し、画面上をドラッグできます。 [XAML ファイル](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/BoxViewDraggingPage.xaml)によって、`BoxView` 要素を `AbsoluteLayout` に追加し、`AbsoluteLayout` を消去するための `Button` ビューが 2 つインスタンス化されます。
 
-また、新しい `BoxView` を `AbsoluteLayout` に追加する[分離コード ファイル](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/BoxViewDraggingPage.xaml.cs)のメソッドによって、`TouchEffect` オブジェクトが `BoxView` に追加され、イベント ハンドラーがエフェクトにアタッチされます。
+また、新しい `BoxView` を `AbsoluteLayout` に追加する[分離コード ファイル](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/BoxViewDraggingPage.xaml.cs)のメソッドによって、`TouchEffect` オブジェクトが `BoxView` に追加され、イベント ハンドラーがエフェクトにアタッチされます。
 
 ```csharp
 void AddBoxViewToLayout()
@@ -453,11 +453,11 @@ void OnTouchEffectAction(object sender, TouchActionEventArgs args)
 
 異なる指を使用し、複数の `BoxView` 要素を同時に動かすことができます。
 
-[![](touch-tracking-images/boxviewdragging-small.png "[BoxView Dragging]\(BoxView ドラッグ操作\) ページのトリプル スクリーンショット")](touch-tracking-images/boxviewdragging-large.png#lightbox "[BoxView Dragging]\(BoxView ドラッグ操作\) ページのトリプル スクリーンショット")
+[![](touch-tracking-images/boxviewdragging-small.png "Triple screenshot of the BoxView Dragging page")](touch-tracking-images/boxviewdragging-large.png#lightbox "Triple screenshot of the BoxView Dragging page")
 
 ### <a name="subclassing-the-view"></a>ビューのサブクラス化
 
-多くの場合、Xamarin.Forms 要素ではそれ自体のタッチ イベントを簡単に処理できます。 **[Draggable BoxView Dragging]\(ドラッグ可能 BoxView ドラッグ操作\)** ページの機能は **[BoxView Dragging]\(BoxView ドラッグ操作\)** ページと同じですが、ユーザーがドラッグする要素は `BoxView` から派生した [`DraggableBoxView`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/DraggableBoxView.cs) クラスのインスタンスとなります。
+多くの場合、Xamarin.Forms 要素ではそれ自体のタッチ イベントを簡単に処理できます。 **[Draggable BoxView Dragging]\(ドラッグ可能 BoxView ドラッグ操作\)** ページの機能は **[BoxView Dragging]\(BoxView ドラッグ操作\)** ページと同じですが、ユーザーがドラッグする要素は `BoxView` から派生した [`DraggableBoxView`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/DraggableBoxView.cs) クラスのインスタンスとなります。
 
 ```csharp
 class DraggableBoxView : BoxView
@@ -516,11 +516,11 @@ class DraggableBoxView : BoxView
 
 **[Ellipse Drawing]\(楕円の描画\)** ページでは、画面を指でなぞることで楕円を描くことができます。 指の動かし方に基づき、左上から右下に、あるいは任意の他の隅からその反対側の隅に楕円を描くことができます。 楕円は無作為で選択された色と不透明度で描画されます。
 
-[![](touch-tracking-images/ellipsedrawing-small.png "[Ellipse Drawing]\(楕円の描画\) ページのトリプル スクリーンショット")](touch-tracking-images/ellipsedrawing-large.png#lightbox "[Ellipse Drawing]\(楕円の描画\) ページのトリプル スクリーンショット")
+[![](touch-tracking-images/ellipsedrawing-small.png "Triple screenshot of the Ellipse Drawing page")](touch-tracking-images/ellipsedrawing-large.png#lightbox "Triple screenshot of the Ellipse Drawing page")
 
 楕円の 1 つに触れたら、それを別の場所にドラッグできます。 これには "ヒットテスト" と呼ばれている手法が必要です。ヒットテストでは、特定の点にあるグラフィカル オブジェクトが検索されます。 SkiaSharp の楕円は Xamarin.Forms 要素ではありません。そのため、独自の `TouchEffect` 処理を実行できません。 `TouchEffect` は `SKCanvasView` オブジェクト全体に適用する必要があります。
 
-[EllipseDrawPage.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/EllipseDrawingPage.xaml) ファイルによって、シングルセルの `Grid` で `SKCanvasView` がインスタンス化されます。 `TouchEffect` オブジェクトはその `Grid` にアタッチされます。
+[EllipseDrawPage.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/EllipseDrawingPage.xaml) ファイルによって、シングルセルの `Grid` で `SKCanvasView` がインスタンス化されます。 `TouchEffect` オブジェクトはその `Grid` にアタッチされます。
 
 ```xaml
 <Grid x:Name="canvasViewGrid"
@@ -592,7 +592,7 @@ class EllipseDrawingFigure
 
 プログラムによってタッチ入力が処理されるとき、`StartPoint` プロパティと `EndPoint` プロパティが使用されます。楕円の描画には `Rectangle` プロパティが使用されます。 楕円がドラッグされるとき、`LastFingerLocation` プロパティが使用されます。`IsInEllipse` メソッドはヒットテストを支援します。 このメソッドは、点が楕円内にあるとき、`true` を返します。
 
-[分離コード ファイル](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/EllipseDrawingPage.xaml.cs)には 3 つのコレクションが保持されます。
+[分離コード ファイル](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/EllipseDrawingPage.xaml.cs)には 3 つのコレクションが保持されます。
 
 ```csharp
 Dictionary<long, EllipseDrawingFigure> inProgressFigures = new Dictionary<long, EllipseDrawingFigure>();
@@ -688,7 +688,7 @@ case TouchActionType.Pressed:
 
 もう 1 つの SkiaSharp 例は **[Finger Paint]** ページです。 2 つの `Picker` ビューからストロークの色と幅を選択し、1 本または複数の指で描画できます。
 
-[![](touch-tracking-images/fingerpaint-small.png "[Finger Paint] ページのトリプル スクリーンショット")](touch-tracking-images/fingerpaint-large.png#lightbox "[Finger Paint] ページのトリプル スクリーンショット")
+[![](touch-tracking-images/fingerpaint-small.png "Triple screenshot of the Finger Paint page")](touch-tracking-images/fingerpaint-large.png#lightbox "Triple screenshot of the Finger Paint page")
 
 この例では、画面にペイントされる各線を表す個別のクラスも必要になります。
 
@@ -708,7 +708,7 @@ class FingerPaintPolyline
 }
 ```
 
-各線をレンダリングするために `SKPath` オブジェクトが使用されます。 [FingerPaint.xaml.cs](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/FingerPaintPage.xaml.cs) ファイルには、このようなオブジェクトのコレクションが 2 つ保持されます。1 つは現在描画されているポリライン用のコレクションで、もう 1 つは完成したポリライン用のコレクションです。
+各線をレンダリングするために `SKPath` オブジェクトが使用されます。 [FingerPaint.xaml.cs](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/FingerPaintPage.xaml.cs) ファイルには、このようなオブジェクトのコレクションが 2 つ保持されます。1 つは現在描画されているポリライン用のコレクションで、もう 1 つは完成したポリライン用のコレクションです。
 
 ```csharp
 Dictionary<long, FingerPaintPolyline> inProgressPolylines = new Dictionary<long, FingerPaintPolyline>();
@@ -752,7 +752,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 この種類のタッチ処理は音楽用キーボードで非常に便利です。 鍵盤は押されたタイミングだけでなく、指が鍵盤間をスライド移動したタイミングも検出できなければなりません。
 
-**[Silent Keyboard]\(サイレント キーボード\)** ページでは、`BoxView` から派生する [`Key`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/Key.cs) から派生する小さな [`WhiteKey`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/WhiteKey.cs) クラスと [`BlackKey`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/BlackKey.cs) クラスが定義されます。
+**[Silent Keyboard]\(サイレント キーボード\)** ページでは、`BoxView` から派生する [`Key`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/Key.cs) から派生する小さな [`WhiteKey`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/WhiteKey.cs) クラスと [`BlackKey`](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/BlackKey.cs) クラスが定義されます。
 
 `Key` クラスは、実際の音楽プログラムですぐに使用できます。 このクラスによって `IsPressed` および `KeyNumber`という名前のパブリック プロパティが定義されますが、後者は MIDI 標準で決められている鍵盤コードに設定されます。 `Key` クラスによって `StatusChanged` という名前のイベントも定義されます。このイベントは、`IsPressed` プロパティが変更されたときに呼び出されます。
 
@@ -794,9 +794,9 @@ void OnTouchEffectAction(object sender, TouchActionEventArgs args)
 
 `AddToList` メソッドと `RemoveFromList` メソッドの両方で、`List` が空から空ではない状態に (あるいはその逆に) 変化したかどうかが確認され、変化した場合、`StatusChanged` イベントが呼び出されます。
 
-さまざまな `WhiteKey` および `BlackKey` 要素がページの [XAML ファイル](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffectDemos/TouchTrackingEffectDemos/TouchTrackingEffectDemos/SilentKeyboardPage.xaml) に配置されます。電話を横に構えると見栄えが良くなります。
+さまざまな `WhiteKey` および `BlackKey` 要素がページの [XAML ファイル](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/SilentKeyboardPage.xaml) に配置されます。電話を横に構えると見栄えが良くなります。
 
-[![](touch-tracking-images/silentkeyboard-small.png "[Silent Keyboard]\(サイレント キーボード\) ページのトリプル スクリーンショット")](touch-tracking-images/silentkeyboard-large.png#lightbox "[Silent Keyboard]\(サイレント キーボード\) ページのトリプル スクリーンショット")
+[![](touch-tracking-images/silentkeyboard-small.png "Triple screenshot of the Silent Keyboard page")](touch-tracking-images/silentkeyboard-large.png#lightbox "Triple screenshot of the Silent Keyboard page")
 
 鍵盤で指をすべらすと、タッチ イベントが鍵盤間を移動することが微妙な色の変化によりわかります。
 

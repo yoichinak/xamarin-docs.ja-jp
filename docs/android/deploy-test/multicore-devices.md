@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 05/30/2019
-ms.openlocfilehash: 1141b96151df0adda755b7c6d60019c18825cc76
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: e27e73ac2c5164fa3431c8892b21a71c32fcd8ef
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028015"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724016"
 ---
 # <a name="multi-core-devices--xamarinandroid"></a>マルチコア デバイスと Xamarin.Android
 
@@ -190,7 +190,7 @@ $APP/lib/libtwo.so # armeabi, NOT armeabi-v7a!
 <AndroidSupportedAbis>armeabi,armeabi-v7a</AndroidSupportedAbis>
 ```
 
-その結果、`armeabi` `libmonodroid.so` は最初に `.apk` 内で見つかり、`armeabi-v7a` `libmonodroid.so`が存在し、ターゲット用に最適化されていても、抽出されるのは `armeabi` `libmonodroid.so` になります。 `armeabi` が SMP セーフではないため、あいまいな実行時エラーが発生する可能性もあります。
+その結果、`armeabi` `libmonodroid.so` は最初に `.apk` 内で見つかり、`armeabi-v7a` `libmonodroid.so` が存在し、ターゲット用に最適化されていても、抽出されるのは `armeabi` `libmonodroid.so` になります。 `armeabi` が SMP セーフではないため、あいまいな実行時エラーが発生する可能性もあります。
 
 ##### <a name="installing-native-libraries-android-404-and-later"></a>ネイティブ ライブラリのインストール: Android 4.0.4 以降
 
@@ -253,7 +253,6 @@ Visual Studio for Mac では、次のスクリーンショットで示すよう�
 
 ## <a name="related-links"></a>関連リンク
 
-- [ARM アーキテクチャの ABI (PDF)](http://infocenter.arm.com/help/topic/com.arm.doc.ihi0036b/IHI0036B_bsabi.pdf)
 - [Android NDK](https://developer.android.com/tools/sdk/ndk/index.html)
 - [問題 9089: Nexus One - armeabi v7a に 1 つ以上のライブラリがある場合、armeabi からどのネイティブ ライブラリも読み込まれない](https://code.google.com/p/android/issues/detail?id=9089)
 - [問題 24321: apk に armeabi と armeabi v7a の両方が含まれている場合、Galaxy Nexus 4.0.2 では armeabi ネイティブ コードが使用される](https://code.google.com/p/android/issues/detail?id=25321)

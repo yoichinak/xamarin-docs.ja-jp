@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: 5eff10d58ac094f3493bd60bdb621df1bcb30477
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 72cddde86708b5573dc578165354d137c4dc35b6
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028054"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76723901"
 ---
 # <a name="installing-xamarinandroid-as-a-system-app"></a>システム アプリケーションとして Xamarin.Android をインストールする
 
@@ -42,7 +42,7 @@ Xamarin.Android アプリケーションをシステム アプリケーション
 
 次の手順では、Xamarin.Android アプリケーションをシステム アプリケーションとしてインストールする方法について説明します。
 
-1. **Xamarin.Android アプリケーションのリリース APK をパッケージ化する** &ndash; 詳細については、「[Publishing an Application](~/android/deploy-test/publishing/index.md)」(アプリケーションの公開) ガイドを参照してください。
+1. **Xamarin.Android アプリケーションのリリース APK をパッケージ化する** &ndash; 詳細については、「[アプリケーションの発行](~/android/deploy-test/publishing/index.md)」ガイドを参照してください。
 
 2. **共有ライブラリを APK から抽出する** &ndash; ZIP ユーティリティ プログラムを使用して APK ファイルを開き、 **/lib/** フォルダーの内容を確認します。 このフォルダーには、アプリケーションがサポートする_アプリケーション バイナリ インターフェイス_ (ABI) のサブディレクトリがあります。このフォルダー内には、その ABI でアプリケーションに必要なすべての共有ライブラリがあります。
 
@@ -63,4 +63,4 @@ Xamarin.Android アプリケーションをシステム アプリケーション
 - [アプリケーションの発行](~/android/deploy-test/publishing/index.md)
 - [CPU アーキテクチャ](~/android/app-fundamentals/cpu-architectures.md)
 - [BLUETOOTH_PRIVILEGED](https://developer.android.com/reference/android/Manifest.permission.html#BLUETOOTH_PRIVILEGED)
-- [ABI 管理](https://developer.android.com/ndk~/abis.html)
+- [ABI 管理](https://developer.android.com/ndk/guides/abis)

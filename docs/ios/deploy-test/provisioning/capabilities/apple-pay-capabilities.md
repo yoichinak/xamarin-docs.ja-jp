@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2017
-ms.openlocfilehash: 4406ff3ce67ddf4787d155794258faa1a172eec1
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 54fcc3bb683f6ca4515d807da5c3345cf71a2df3
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016959"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76725243"
 ---
 # <a name="apple-pay-capabilities-in-xamarinios"></a>Xamarin.iOS の Apple Pay 機能
 
@@ -34,91 +34,91 @@ Developer Center から新しいアプリをプロビジョニングするとき
 
 マーチャント ID は、支払いを受け取れることを Apple Pay に知らせるために使用され、PassKit の `PaymentRequest` メソッドに渡され、Apple Pay のエンタイトルメントで使用されます。
 
-1. [Apple Developer Center](https://developer.apple.com/account/) の [Certificate, Identifiers and Profiles]\(証明書、ID、およびプロファイル\) セクションを参照します。 
+1. [Apple Developer Center](https://developer.apple.com/account/) の [Certificate, Identifiers and Profiles]\(証明書、ID、およびプロファイル\) セクションを参照します。
 
     ![Developer Center でのマーチャント ID の選択](apple-pay-capabilities-images/image57.png)
 
 2. **[Identifiers]\(ID\)** の下で **[Merchant IDs]\(マーチャント ID\)** を選択し、 **+** を選択して新しいコンテナーを作成します。  
 
 3. 次に示すように、フォームに新しい説明と識別子を記入します。 説明は、ID を特定しやすいものにします。これは後で変更することができます。 識別子は、一意である必要があり、文字列  `merchant` で始まる必要があります。 Apple では、識別子を次の形式にすることを推奨しています。`merchant.com.[Your-App-Name]`:
-   
+
     ![新しいマーチャント ID の詳細](apple-pay-capabilities-images/image58.png)
 
 4. 詳細を確認し、ID を **登録** します。 
-    
+
     ![マーチャント ID の確認](apple-pay-capabilities-images/image59.png)
 
 <a name="appid" />
 
 ## <a name="create-an-app-id-with-the-apple-pay-capability-that-includes-the-merchant-id"></a>Apple Pay 機能を使用してマーチャント ID を含む App ID を作成する
 
-1. [Developer Center](https://developer.apple.com/account/) で、 **[Identifiers]\(ID\)** の下で **[Merchant IDs]\(マーチャント ID\)** をクリックします。 
-    
+1. [Developer Center](https://developer.apple.com/account/) で、 **[Identifiers]\(ID\)** の下で **[Merchant IDs]\(マーチャント ID\)** をクリックします。
+
     ![Developer Center での App ID の選択](apple-pay-capabilities-images/image6.png)
 
-2. **+** ボタンを選択し、新しい App ID を追加します。 
-   
+2. **+** ボタンを選択し、新しい App ID を追加します。
+
     ![新しい App ID の追加ボタン](apple-pay-capabilities-images/image27.png)
 
 3. App ID の [Name]\(名前\) を入力し、[Explicit App ID]\(明示的な App ID\) を指定します。    
-   
+
     ![App ID の詳細画面](apple-pay-capabilities-images/image35.png)
 
 4. [App Services] の下で [Apple Pay] を選択します。    
-  
+
     ![App Services の Apple Pay](apple-pay-capabilities-images/image36.png)
 
-5. **[Continue]\(続行\)** 、 **[Register]\(登録\)** の順に選択します。 確認画面で、Apple Pay が黄色のシンボルで [Configurable]\(構成可能\) が選択されていることを示していることに注目してください。 
-   
+5. **[Continue]\(続行\)** 、 **[Register]\(登録\)** の順に選択します。 確認画面で、Apple Pay が黄色のシンボルで [Configurable]\(構成可能\) が選択されていることを示していることに注目してください。
+
     ![Apple Pay の確認画面](apple-pay-capabilities-images/image37.png)
 
 6. App ID のリストに戻り、先ほど作成したものを選択します。  
-   
+
     ![App ID の編集](apple-pay-capabilities-images/image38.png)
 
 7. この拡張されたセクションの下部までスクロールし、 **[Edit]\(編集\)** をクリックします。
 8. Apple Pay までリストを下にスクロールして、 **[Edit]\(編集\)** ボタンをクリックします。  
-    
+
     ![Apple Pay の App ID 詳細の編集](apple-pay-capabilities-images/image39.png)
 
 9. この App ID で使用するマーチャント ID を選択し、 **[Continue]\(続行\)** をクリックします。  
-    
+
     ![App ID に使用するマーチャント ID の選択](apple-pay-capabilities-images/image40.png)
 
 10. マーチャント ID の割り当てを確認し、 **[Assign]\(割り当て\)** を押します。  
-    
+
     ![確認画面](apple-pay-capabilities-images/image41.png)
 
-これでこのアプリ ID を使用して、新しいプロビジョニング プロファイルの生成または再生成ができます。手順については、[機能の使用](~/ios/deploy-test/provisioning/capabilities/index.md)に関するガイドを参照してください。 
+これでこのアプリ ID を使用して、新しいプロビジョニング プロファイルの生成または再生成ができます。手順については、[機能の使用](~/ios/deploy-test/provisioning/capabilities/index.md)に関するガイドを参照してください。
 
 <a name="certificate" />
 
 ## <a name="create-a-certificate-for-your-merchant-id"></a>マーチャント ID の証明書の作成
 
-トランザクションに関連する機密データを暗号化するため、Apple によって証明書が求められます。 作成されたマーチャント ID ごとに独自の証明書が必要です。 
+トランザクションに関連する機密データを暗号化するため、Apple によって証明書が求められます。 作成されたマーチャント ID ごとに独自の証明書が必要です。
 
 証明書を作成するには、次の手順に従います。
 
-1. 上記で作成したマーチャント ID を選択し、 **[Edit]\(編集\)** を押します。 
-    
+1. 上記で作成したマーチャント ID を選択し、 **[Edit]\(編集\)** を押します。
+
     ![マーチャント ID の編集ダイアログ](apple-pay-capabilities-images/image42.png)
 
-2. [iOS Merchant ID Settings]\(iOS マーチャント ID の設定\) 画面で、 **[Create Certificate]\(証明書の作成\)** をクリックします。 
-   
+2. [iOS Merchant ID Settings]\(iOS マーチャント ID の設定\) 画面で、 **[Create Certificate]\(証明書の作成\)** をクリックします。
+
     ![支払い処理の証明書の作成](apple-pay-capabilities-images/image43.png)
 
-3. 次の質問に答えます。 
+3. 次の質問に答えます。
 
     ![支払いが中国でのみ処理される場合の対処](apple-pay-capabilities-images/image44.png)
 
-4. この時点で、_証明書の署名要求_ (CSR) の作成が求められます。 
+4. この時点で、_証明書の署名要求_ (CSR) の作成が求められます。
 
     ![証明書の署名要求の作成](apple-pay-capabilities-images/image45.png)
-    
-    > [!IMPORTANT]
-    > Apple Pay に JudoPay や Stripe などの支払いプロバイダーを使用している場合は、これらのプロバイダーから、ここで使用可能な適切な形式の CSR を提供してもらうことができます。 CSR の要求に関する情報は、[JudoPay](https://www.judopay.com/docs/version-52/apple-pay/getting-started/#create-an-apple-pay-certificate) や [Stripe](https://stripe.com/docs/apple-pay/apps#csr) のサイトにあります。 独自の CSR を作成するには、次の手順 5 - 8 に従います。 CSR を入手したら、手順 9 に進みます。
 
-5. Keychain Access アプリケーションを開き、 **[Keychain Access] > [Certificate Assistant]\(証明書アシスタント\) > [Request a Certificate from a Certificate Authority]\(証明機関から証明書を要求する\)** の順に移動します。 
+    > [!IMPORTANT]
+    > Apple Pay に JudoPay や Stripe などの支払いプロバイダーを使用している場合は、これらのプロバイダーから、ここで使用可能な適切な形式の CSR を提供してもらうことができます。 CSR の要求に関する情報は、[Stripe](https://stripe.com/docs/apple-pay/apps#csr) のサイトにあります。 独自の CSR を作成するには、次の手順 5 - 8 に従います。 CSR を入手したら、手順 9 に進みます。
+
+5. Keychain Access アプリケーションを開き、 **[Keychain Access] > [Certificate Assistant]\(証明書アシスタント\) > [Request a Certificate from a Certificate Authority]\(証明機関から証明書を要求する\)** の順に移動します。
 
      ![Mac でキーチェーンを使用して CSR を作成する](apple-pay-capabilities-images/image46.png)
 
@@ -126,7 +126,7 @@ Developer Center から新しいアプリをプロビジョニングするとき
 
      ![[Certificate Information]\(証明書情報\) ダイアログ](apple-pay-capabilities-images/image47.png)
 
-7. CSR を任意の場所に保存します。 
+7. CSR を任意の場所に保存します。
 
      ![CSR をローカル コンピューターに保存](apple-pay-capabilities-images/image48.png)
 
@@ -134,11 +134,11 @@ Developer Center から新しいアプリをプロビジョニングするとき
 
      ![[Key Pair information]\(キーペア情報\) ダイアログの入力](apple-pay-capabilities-images/image49.png)
 
-9. Developer Center で、 **[Continue]\(続行\)** をクリックして CSR をアップロードします。 
+9. Developer Center で、 **[Continue]\(続行\)** をクリックして CSR をアップロードします。
 
      ![CSR を Developer Center にアップロードする準備](apple-pay-capabilities-images/image50.png)
 
-10. **[ファイルの選択…] をクリックして、** CSR を選択し、 **[Continue]\(続行\)** を押して Developer ポータルにアップロードします。 
+10. **[ファイルの選択…] をクリックして、** CSR を選択し、 **[Continue]\(続行\)** を押して Developer ポータルにアップロードします。
 
      ![CSR を Developer Center にアップロード](apple-pay-capabilities-images/image51.png)
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: ae140f7ea75c1631c6c96170af738f3fac04dcdb
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 48aba9ead925d3404146795eb9a3e0588d7b600d
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026520"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724697"
 ---
 # <a name="debugging-xamarinios-apps"></a>Xamarin.iOS アプリのデバッグ
 
@@ -198,7 +198,7 @@ Xamarin.iOS は新しい Mono Soft Debugger を使用します。 オペレー�
 
 クラッシュ ログとコンソール クラスの出力は iPhone コンソールに送信されます。 このコンソールには Xcode でアクセスできます。"オーガナイザー" を利用し、オーガナイザーからデバイスを選択します。
 
-あるいは、Xcode を起動しない場合、Apple の [iPhone Configuration Utility](https://www.apple.com/support/iphone/enterprise/) を利用してコンソールに直接アクセスできます。 これにはさらに良いことがあります。現場である問題をデバッグしているとき、Windows マシンからコンソール ログにアクセスできます。
+あるいは、Xcode を起動しない場合、Apple の iPhone Configuration Utility を利用してコンソールに直接アクセスできます。 これにはさらに良いことがあります。現場である問題をデバッグしているとき、Windows マシンからコンソール ログにアクセスできます。
 
 Visual Studio をご利用の場合、出力ウィンドウにもログがありますが、Mac に切り替え、完全なログを参照してください。
 

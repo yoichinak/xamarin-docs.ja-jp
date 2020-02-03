@@ -9,12 +9,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: ee72c51611503f92e7ede3a01a7918780652935c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 10a46c916654f8421dc5a9af93de3abbbae5e934
+ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028007"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76724367"
 ---
 # <a name="hello-android-deep-dive"></a>Hello, Android:詳しく調べる
 
@@ -51,7 +51,7 @@ _このガイドは 2 つに分かれています。最初に、Xamarin.Android 
 
 - **アクティビティとアクティビティのライフ サイクル** &ndash; アクティビティのライフ サイクルの概要と、コード内でのユーザー インターフェイスの作成。
 
-- **テスト、展開、しあげ** &ndash;テスト、展開、アートワークの生成などに関するアドバイスを利用したアプリケーションの完成。
+- **テスト、展開、しあげ** &ndash; テスト、展開、アートワークの生成などに関するアドバイスを利用したアプリケーションの完成。
 
 ::: zone-end
 
@@ -99,11 +99,11 @@ Visual Studio for Mac は、コードを_ソリューション_と_プロジェ�
 
 プロジェクト内の各アイテムを見て、各フォルダーとその目的を確認します。
 
-- **Properties** &ndash;名前、バージョン番号、アクセス許可を含む Xamarin.Android アプリケーションのすべての要件を記述する [AndroidManifest.xml](~/android/platform/android-manifest.md) ファイルを含んでいます。 **Properties** フォルダーには、.NET アセンブリ メタデータ ファイルである [AssemblyInfo.cs](xref:Microsoft.VisualBasic.ApplicationServices.AssemblyInfo) も含まれています。 このファイルには、アプリケーションに関する基本的な情報を入力しておくことをお勧めします。
+- **Properties** &ndash; 名前、バージョン番号、アクセス許可を含む Xamarin.Android アプリケーションのすべての要件を記述する [AndroidManifest.xml](~/android/platform/android-manifest.md) ファイルを含んでいます。 **Properties** フォルダーには、.NET アセンブリ メタデータ ファイルである [AssemblyInfo.cs](xref:Microsoft.VisualBasic.ApplicationServices.AssemblyInfo) も含まれています。 このファイルには、アプリケーションに関する基本的な情報を入力しておくことをお勧めします。
 
-- **References**&ndash; アプリケーションのビルドと実行に必要なアセンブリが含まれています。 References ディレクトリを展開すると、[System](xref:System)、System.Core、[System.Xml](xref:System.Xml) などの .NET アセンブリ、および Xamarin の Mono.Android アセンブリへの参照が表示されます。
+- **References** &ndash; アプリケーションのビルドと実行に必要なアセンブリが含まれています。 References ディレクトリを展開すると、[System](xref:System)、System.Core、[System.Xml](xref:System.Xml) などの .NET アセンブリ、および Xamarin の Mono.Android アセンブリへの参照が表示されます。
 
-- **Assets**&ndash; フォント、ローカル データ ファイル、テキスト ファイルなどのアプリケーションで実行する必要があるファイルが含まれています。 ここに含まれるファイルは、生成された `Assets` クラスを介してアクセスできます。 Android の資産の詳細については、Xamarin の「[Using Android Assets](~/android/app-fundamentals/resources-in-android/android-assets.md)」 (Android 資産の使用) ガイドを参照してください。
+- **Assets** &ndash; フォント、ローカル データ ファイル、テキスト ファイルなどのアプリケーションで実行する必要があるファイルが含まれています。 ここに含まれるファイルは、生成された `Assets` クラスを介してアクセスできます。 Android の資産の詳細については、Xamarin の「[Using Android Assets](~/android/app-fundamentals/resources-in-android/android-assets.md)」 (Android 資産の使用) ガイドを参照してください。
 
 - **Resources** &ndash;文字列、イメージ、およびレイアウトなどのアプリケーション リソースが含まれています。 生成された `Resource` クラスを介してコード内でこれらのリソースにアクセスすることができます。 [Android リソース](~/android/app-fundamentals/resources-in-android/index.md) ガイドには、**Resources** ディレクトリに関する詳細が記載されています。 アプリケーション テンプレートには、**AboutResources.txt** ファイル内のリソースに簡潔なガイドも含まれています。
 
@@ -115,7 +115,7 @@ Visual Studio for Mac は、コードを_ソリューション_と_プロジェ�
 
 - **drawable** &ndash; drawable ディレクトリには、画像やビットマップなどの[ドローアブル リソース](https://developer.android.com/guide/topics/resources/drawable-resource.html)が含まれています。
 
-- **mipmap** &ndash;mipmap ディレクトリには、密度が異なる起動アイコンのドローアブル ファイルが含まれています。 既定のテンプレートでは、drawable ディレクトリにはアプリケーション アイコン ファイル **Icon.png** が含まれています。
+- **mipmap** &ndash; mipmap ディレクトリには、密度が異なる起動アイコンのドローアブル ファイルが含まれています。 既定のテンプレートでは、drawable ディレクトリにはアプリケーション アイコン ファイル **Icon.png** が含まれています。
 
 ::: zone pivot="windows"
 
@@ -128,9 +128,9 @@ Visual Studio for Mac は、コードを_ソリューション_と_プロジェ�
 
 ::: zone-end
 
-- **values**&ndash; このディレクトリは、文字列、整数、色などの単純な値を格納する XML ファイルを格納します。 テンプレートは、**Strings.xml** という文字列値を格納するファイルを作成します。
+- **values** &ndash; このディレクトリには、文字列、整数、色などの単純な値を格納する XML ファイルを格納します。 テンプレートは、**Strings.xml** という文字列値を格納するファイルを作成します。
 
-- **Resource.designer.cs** &ndash; `Resource`クラスとも呼ばれるこのファイルは、各リソースに割り当てられている一意の ID を保持する部分クラスです。 Xamarin.Android ツールによって自動的に作成され、必要に応じて再生成されます。 Xamarin.Android が手動で加えられた変更をすべて上書きするので、このファイルを手動で編集しないでください。
+- **Resource.designer.cs** &ndash; `Resource` クラスとも呼ばれるこのファイルは、各リソースに割り当てられている一意の ID を保持する部分クラスです。 Xamarin.Android ツールによって自動的に作成され、必要に応じて再生成されます。 Xamarin.Android が手動で加えられた変更をすべて上書きするので、このファイルを手動で編集しないでください。
 
 ## <a name="app-fundamentals-and-architecture-basics"></a>アプリケーションの基本とアーキテクチャの基礎
 
@@ -235,7 +235,7 @@ Android では、アクティビティは、ユーザーとの対話に応じて
 
 `Activity` ライフサイクル メソッドをオーバーライドすることで、アクティビティを読み込む方法、ユーザーに反応する方法、さらにデバイスの画面に表示されなくなった後の動作まで制御できます。 たとえば、上の図でライフサイクル メソッドをオーバーライドして、いくつかの重要なタスクを実行することができます。
 
-- **OnCreate** &ndash;ビューを作成し、変数を初期化し、ユーザーがアクティビティを表示する前に行う必要があるその他の準備作業を実行します。 このメソッドは、アクティビティがメモリに読み込まれるときに 1 回だけ呼び出されます。 
+- **OnCreate** &ndash; ビューを作成し、変数を初期化し、ユーザーがアクティビティを表示する前に行う必要があるその他の準備作業を実行します。 このメソッドは、アクティビティがメモリに読み込まれるときに 1 回だけ呼び出されます。
 
 - **OnResume** &ndash; アクティビティがデバイスの画面に戻るたびに発生する必要があるタスクを実行します。
 
@@ -279,7 +279,7 @@ SetContentView (Resource.Layout.activity_main);
 SetContentView (Resource.Layout.Main);
 ```
 
-`MainActivity` は、起動すると、**Main.axml** ファイルのコンテンツに基づいてビューを作成します。 レイアウト ファイル名は、アクティビティ名に一致することに注意してください。&ndash; *Main*.axml は、*Main* アクティビティのレイアウトです。 Android の観点から見るとこれは必須ではありませんが、他の画面をアプリケーションに追加し始めると、この名前付け規則のおかげで、レイアウト ファイルにコード ファイルを簡単に一致させることができることがわかります。
+`MainActivity` は、起動すると、**Main.axml** ファイルのコンテンツに基づいてビューを作成します。 レイアウト ファイル名は、アクティビティ名に一致することに注意してください &ndash; *Main*.axml は、*Main* アクティビティのレイアウトです。 Android の観点から見るとこれは必須ではありませんが、他の画面をアプリケーションに追加し始めると、この名前付け規則のおかげで、レイアウト ファイルにコード ファイルを簡単に一致させることができることがわかります。
 
 ::: zone-end
 
@@ -296,7 +296,7 @@ TextView translatedPhoneWord = FindViewById<TextView>(Resource.Id.TranslatedPhon
 
 ### <a name="responding-to-user-interaction"></a>ユーザー操作に対する応答
 
-Android では、`Click` イベントが、ユーザーの操作をリッスンします。 このアプリでは、`Click` イベントがラムダで処理されますが、デリゲートまたは名前付きイベント ハンドラーを代わりに使用することができます。 最終的な **TranslateButton** ボタンのコードは次のようになります。 
+Android では、`Click` イベントが、ユーザーの操作をリッスンします。 このアプリでは、`Click` イベントがラムダで処理されますが、デリゲートまたは名前付きイベント ハンドラーを代わりに使用することができます。 最終的な **TranslateButton** ボタンのコードは次のようになります。
 
 ```csharp
 translateButton.Click += (sender, e) =>
@@ -380,8 +380,6 @@ Android では、適切な密度のアイコンを取得します。
 
 - Visual Studio &ndash; これを使用して、アプリ用の単純なアイコン セットを IDE で直接作成できます。
 
-- [Glyphish](https://www.glyphish.com/) &ndash; 無料ダウンロードと有料版がある高品質のビルド済みアイコンのセットです。
-
 - [Fiverr](https://www.fiverr.com/) &ndash; 5 ドルから利用でき、さまざまなデザイナーから選択してアイコンのセットを作成できます。 見つかる場合も見つからない場合もありますが、アイコンをすぐにデザインする必要がある場合は有効なリソースです。
 
 ::: zone-end
@@ -389,11 +387,7 @@ Android では、適切な密度のアイコンを取得します。
 
 - [Android Asset Studio](https://romannurik.github.io/AndroidAssetStudio/index.html) &ndash; すべての種類の Android のアイコン用の Web ベースのブラウザー内ジェネレーターで、他の役に立つコミュニティ ツールへのリンクも提供しています。 Google Chrome で最も適切に動作します。
 
-- [Sketch 3](https://itunes.apple.com/us/app/sketch/id852320343?mt=12) &ndash; Sketch は、ユーザーインターフェイス、アイコンなどをデザインするための Mac アプリです。 これは、Xamarin アプリ アイコンと起動イメージのセットをデザインするために使用されたアプリです。 Sketch 3 は、App Store で約 80 ドルで入手できます。 無料の [Sketch Tool](https://bohemiancoding.com/sketch/tool/) を試すこともできます。
-
 - [Pixelmator](https://www.pixelmator.com/) &ndash; 約 30 ドルの Mac 用の多様な画像編集アプリです。
-
-- [Glyphish](https://www.glyphish.com/) &ndash; 無料ダウンロードと有料版がある高品質のビルド済みアイコンのセットです。
 
 - [Fiverr](https://www.fiverr.com/) &ndash; 5 ドルから利用でき、さまざまなデザイナーから選択してアイコンのセットを作成できます。 見つかる場合も見つからない場合もありますが、アイコンをすぐにデザインする必要がある場合は有効なリソースです。
 
