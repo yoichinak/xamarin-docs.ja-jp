@@ -51,7 +51,7 @@ Visual Studio 内で診断 MSBuild 出力を有効にするには:
 
 -----
 
-## <a name="timing-mtouch"></a>mtouch の時間を調整する
+## <a name="timing-mtouch"></a>mtouch の所要時間
 
 mtouch ビルド プロセス固有の情報を表示するには、 **[プロジェクト オプション]** の mtouch 引数に `--time --time` を渡します。 結果は [ビルド出力] にあります。`MTouch` タスクを探してください。
 
