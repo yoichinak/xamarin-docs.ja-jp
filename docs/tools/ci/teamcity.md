@@ -39,7 +39,7 @@ TeamCity の設定には、次のようないくつかの手順が含まれま�
 
 - **TeamCity プロジェクトの作成**–前の3つの手順が完了したら、ソースコードを取得し、プロジェクトをコンパイルして、テストを Xamarin Test Cloud に送信するために必要なすべてのメタデータを含む teamcity プロジェクトを作成する必要があります。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 [App Center テスト](https://docs.microsoft.com/appcenter/test-cloud/)の経験が必要です。
 
@@ -81,11 +81,11 @@ TeamCity では、コンパイルとモバイルアプリケーションの送�
 
 ビルドスクリプトは、Powershell ファイル (Windows の場合) または bash スクリプト (OS X の場合) のように簡単にできます。 ビルドスクリプトを作成する場合、スクリプト言語にはいくつかの選択肢があります。
 
-- [**rake** ](https://github.com/jimweirich/rake) – Ruby に基づいてプロジェクトを構築するためのドメイン固有言語 (DSL) になります。 rake は、人気の利点とライブラリの豊富なエコシステムがあります。
+- [**Rake**](https://github.com/jimweirich/rake) : Ruby に基づいてプロジェクトをビルドするためのドメイン固有言語 (DSL) です。 rake は、人気の利点とライブラリの豊富なエコシステムがあります。
 
-- [**psake**](https://github.com/psake/psake) - ソフトウェアを構築するための Windows Powershell ライブラリです
+- [**psake**](https://github.com/psake/psake)ソフトウェアを構築するための Windows Powershell ライブラリです。
 
-- [**FAKE**](https://fsharp.github.io/FAKE/) – これは、ベースの DSLF#に必要な場合は、既存の .NET ライブラリを利用できるようにします。
+- [**フェイク**](https://fsharp.github.io/FAKE/)–これは DSL ベースです。 F#これにより、必要に応じて既存の .net ライブラリを利用できるようになります。
 
 どのスクリプト言語が使用されるかは、ユーザーの好みや要件によって異なります。
 
@@ -201,7 +201,7 @@ TeamCity がインストールされ Visual Studio for Mac、プロジェクト�
 
 8. ビルドが完了したら、ビルドログを調べ、注意が必要なビルドに問題または警告があるかどうかを確認します。
 
-## <a name="summary"></a>要約
+## <a name="summary"></a>まとめ
 
 このガイドでは、TeamCity を使用して Xamarin モバイルアプリケーションをビルドし、Test Cloud に送信する方法について説明します。 ビルドプロセスを自動化するためのビルドスクリプトの作成について説明しました。 ビルドスクリプトは、アプリケーションのコンパイル、Test Cloud への送信、および結果の待機を行います。
 

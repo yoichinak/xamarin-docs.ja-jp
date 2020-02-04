@@ -281,7 +281,7 @@ public abstract class VirtualClass : Java.Lang.Object
 
 これらのシナリオを改善するには、いくつかの点があります。
 
-1. この [PR](https://github.com/xamarin/java.interop/pull/170) C#では、コンストラクターの`throws Throwable` が修正されています。
+1. この PR C#では、コンストラクターの[PR](https://github.com/xamarin/java.interop/pull/170)`throws Throwable` が修正されています。
 1. Java ジェネレーターを Xamarin. Android サポートインターフェイスで作成します。
     - これにより、`AndroidJavaSource`のビルドアクションを含む Java ソースファイルを追加する必要がなくなります。
 1. Xamarin Android で仮想クラスの `Invoker` を読み込む方法を作成します。
@@ -291,7 +291,7 @@ public abstract class VirtualClass : Java.Lang.Object
 
 ここで実行する作業はたくさんありますが、.NET の埋め込みに対するこれらの機能強化が可能です。
 
-## <a name="further-reading"></a>関連項目
+## <a name="further-reading"></a>参考資料
 
 - [Android でのはじめに](~/tools/dotnet-embedding/get-started/java/android.md)
 - [Android の暫定版の研究](~/tools/dotnet-embedding/android/index.md)

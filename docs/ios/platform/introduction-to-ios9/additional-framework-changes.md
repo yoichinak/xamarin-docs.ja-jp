@@ -100,7 +100,7 @@ NSProcessInfo.ProcessInfo.EndActivity(activity);
 
 ### <a name="reacting-to-low-power-mode"></a>低電力モードへの対応
 
-[Nsprocessinfo](xref:Foundation.NSProcessInfo)クラスの `LowPowerModeEnabled` プロパティを使用して、アプリが実行されている iOS デバイスで低電力モードが有効になっているかどうかを確認します。 例:
+[Nsprocessinfo](xref:Foundation.NSProcessInfo)クラスの `LowPowerModeEnabled` プロパティを使用して、アプリが実行されている iOS デバイスで低電力モードが有効になっているかどうかを確認します。 次に例を示します。
 
 ```csharp
 // Is the device in low power mode?
@@ -136,10 +136,10 @@ Apple では、iOS 9 の[ローカル認証](xref:LocalAuthentication)フレー�
 
 IOS 9 の[LAContext](xref:LocalAuthentication.LAContext)クラスには、次の変更が加えられました。
 
-- **TouchIdAuthenticationMaximumAllowableReuseDuration** -最大タッチ ID の認証を再利用可能な時間を返します。
+- **TouchIdAuthenticationMaximumAllowableReuseDuration** -タッチ ID 認証を再利用できる最長時間を返します。
 - **EvaluatedPolicyDomainState** -評価されたポリシーの状態を取得または設定します。
 - **MaxBiometryFailures** -iOS 9 では、減価償却が行われています。
-- **TouchIdAuthenticationAllowableReuseDuration** を取得またはタッチ ID の認証を再利用可能な時間を設定します。
+- **TouchIdAuthenticationAllowableReuseDuration**Touch ID 認証を再利用できる時間を取得します。値の設定も可能です。
 - **EvaluateAccessControl** -認証ポリシーを非同期に評価します。
 - **無効**-特定のタッチ ID 認証を無効にします。
 - **Iscredentialset** -資格情報が現在設定されている場合に `true` を返します。

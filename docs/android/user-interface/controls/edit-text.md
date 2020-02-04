@@ -58,14 +58,13 @@ edittext.KeyPress += (object sender, View.KeyEventArgs e) => {
 using Android.Views;
 ```
 
-このコード例では、レイアウトから[EditText](xref:Android.Widget.EditText)要素を増えし、ウィジェットにフォーカスがあるときにキーが押されたときに実行されるアクションを定義する[KeyPress](xref:Android.Views.View.KeyPress)ハンドラーを追加します。 この場合、メソッドは**enter**キーをリッスンするように定義されています (タップした場合)。その後、入力されたテキストを含む[トースト](xref:Android.Widget.Toast)メッセージをポップアップ表示します。 イベントが処理された場合、[処理済み](xref:Android.Views.View.KeyEventArgs.Handled)のプロパティは常に `true` にする必要があることに注意してください。 これは、イベントがバブルアップされないようにするために必要です (これにより、テキストフィールドに復帰が返されます)。
+このコード例では、レイアウトから[EditText](xref:Android.Widget.EditText)要素を増えし、ウィジェットにフォーカスがあるときにキーが押されたときに実行されるアクションを定義する[KeyPress](xref:Android.Views.View.KeyPress)ハンドラーを追加します。 この場合、メソッドは**enter**キーをリッスンするように定義されています (タップした場合)。その後、入力されたテキストを含む[トースト](xref:Android.Widget.Toast)メッセージをポップアップ表示します。 イベントが処理された場合は、[処理](xref:Android.Views.View.KeyEventArgs.Handled)済みのプロパティを常に `true` する必要があることに注意してください。 これは、イベントがバブルアップされないようにするために必要です (これにより、テキストフィールドに復帰が返されます)。
 
 アプリケーションを実行し、テキストフィールドにテキストを入力します。 **Enter キーを**押すと、右側に表示されるようにトーストが表示されます。
 
 [EditText にテキストを入力する例の ![](edit-text-images/edit-text-sml.png)](edit-text-images/edit-text.png#lightbox)
 
-*このページの一部は、Android オープンソースプロジェクトによって作成および共有され、Creative Commons 2.5 属性で説明されている条項に従って使用される作業に基づいて変更され* [ます](https://creativecommons.org/licenses/by/2.5/) *。このチュートリアルは、Android フォームに関するチュートリアルに基づいて* [ます](https://developer.android.com/resources/tutorials/views/hello-formstuff.html)い *。* 
-
+*このページの一部は、Android オープンソースプロジェクトによって作成および共有され、Creative Commons 2.5 属性で説明されている条項に従って使用される作業に基づいて変更され* [*Creative Commons 2.5 Attribution License*](https://creativecommons.org/licenses/by/2.5/) *ます。このチュートリアルは、Android フォームに関するチュートリアルに基づいて* [*Android Form Stuff tutorial*](https://developer.android.com/resources/tutorials/views/hello-formstuff.html)い*ます。*
 
 ## <a name="related-links"></a>関連リンク
 

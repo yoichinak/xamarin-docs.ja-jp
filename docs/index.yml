@@ -9,12 +9,12 @@ metadata:
   author: conceptdev
   ms.author: crdun
   ms.date: 09/26/2019
-  ms.openlocfilehash: fa152418c40ac61df15e8a22b838d012935bee4b
-  ms.sourcegitcommit: ff0dd66d6d00257ac1695aa7ac46940ff7d3bd93
+  ms.openlocfilehash: c28f849f772bb496b526552745a0aea1c2e08e62
+  ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 01/06/2020
-  ms.locfileid: "75679715"
+  ms.lasthandoff: 02/01/2020
+  ms.locfileid: "76940705"
 highlightedContent:
   items:
   - title: セットアップとインストール
@@ -140,7 +140,7 @@ additionalContent:
       summary: 一般的なデバイスの機能用のクロスプラットフォーム API。
       url: ~/essentials/index.md
     - title: REST Web サービスにアクセスする
-      summary: Git や TFVC などのバージョン コントロール テクノロジを使ってコードを共有します。
+      summary: HTTP と JSON を使用して Web サービスと統合および対話する
       url: ~/xamarin-forms/data-cloud/web-services/rest.md
     - title: Android および iOS デバイスに展開する
       summary: テスト デバイスとアプリ ストアにアップロードします。
