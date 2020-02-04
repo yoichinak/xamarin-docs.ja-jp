@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 404483bb0c2c405fb810ebcd3a8007692219f522
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 7e9010eb579f28e62b5f7ab72ac061e9898e7ecf
+ms.sourcegitcommit: a9b180651863cb7da31d3af14182fe3ad44796f7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021999"
+ms.lasthandoff: 02/03/2020
+ms.locfileid: "76971537"
 ---
 # <a name="annotations-and-overlays-in-xamarinios"></a>Xamarin. iOS の注釈とオーバーレイ
 
@@ -80,7 +80,7 @@ ms.locfileid: "73021999"
 
     ```
 
-1. `MapDelegate` の新しいインスタンスを作成し、`MKMapView`の `Delegate` に割り当てます。 ここでも、`MapDelegate` をすぐに implcodeent します。
+1. `MapDelegate` の新しいインスタンスを作成し、`MKMapView`の `Delegate` に割り当てます。 ここでも、`MapDelegate` をすぐに実装します。
 
     ```csharp
     mapDelegate = new MapDelegate ();
@@ -245,7 +245,7 @@ ms.locfileid: "73021999"
     }
     ```
 
-1. ユーザーがマップ上の任意の場所をタップして注釈を選択解除したときにイメージを非表示にするには、次のように `DidSelectAnnotationView` メソッドを実装します。
+1. ユーザーがマップ上の任意の場所をタップして注釈を選択解除したときにイメージを非表示にするには、次のように `DidDeselectAnnotationView` メソッドを実装します。
 
     ```csharp
     public override void DidDeselectAnnotationView (MKMapView mapView, MKAnnotationView view)
@@ -280,7 +280,7 @@ ms.locfileid: "73021999"
 
  [![](ios-maps-walkthrough-images/01-map-image.png "Tap on the annotation and the image of Austin is displayed")](ios-maps-walkthrough-images/01-map-image.png#lightbox)
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 この記事では、マップに注釈を追加する方法と、指定した多角形のオーバーレイを追加する方法について説明しました。 また、注釈にタッチサポートを追加して、マップ上でイメージをアニメーション化する方法についても説明します。
 
