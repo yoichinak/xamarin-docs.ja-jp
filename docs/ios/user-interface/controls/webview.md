@@ -63,7 +63,7 @@ PresentViewController(sfViewController, true, null);
 
 これにより、次の web ビューが生成されます。
 
-[SFSafariViewController を使用した web ビューの例の ![](webview-images/sfsafariviewcontroller.png)](webview-images/sfsafariviewcontroller.png#lightbox)
+[![SFSafariViewController を使用した web ビューの例の](webview-images/sfsafariviewcontroller.png)](webview-images/sfsafariviewcontroller.png#lightbox)
 
 ## <a name="safari"></a>Safari
 
@@ -77,7 +77,7 @@ UIApplication.SharedApplication.OpenUrl(url);
 
 これにより、次の web ビューが生成されます。
 
-[Safari に表示される web ページを ![する](webview-images/safari.png)](webview-images/safari.png#lightbox)
+[![Safari に表示される web ページを する](webview-images/safari.png)](webview-images/safari.png#lightbox)
 
 一般に、アプリから Safari にユーザーを移動することは、常に避ける必要があります。 ほとんどのユーザーはアプリケーションの外部でのナビゲーションを想定していません。そのため、アプリから移動すると、ユーザーはそれを返すことがなく、実質的にはエンゲージメントを終了する可能性があります。
 
@@ -113,7 +113,7 @@ webView.LoadRequest(new NSUrlRequest(new NSUrl(url)));
 
 これにより、次の web ビューが生成されます。
 
-[ScalesPagesToFit の効果を ![します。](webview-images/webview.png)](webview-images/webview.png#lightbox)
+[![ScalesPagesToFit の効果を します。](webview-images/webview.png)](webview-images/webview.png#lightbox)
 
 ## <a name="related-links"></a>関連リンク
 

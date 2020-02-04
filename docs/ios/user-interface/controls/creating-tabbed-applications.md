@@ -324,7 +324,7 @@ public override void ViewDidLoad ()
 
 アプリケーションが実行されると、ユーザーが、UITabBarController、最初の画面でボタンをタップするときに読み込まれると、ビューを次に示すように、最初のタブに配置する最初の画面から。
 
-[サンプルアプリの出力の ![](creating-tabbed-applications-images/first-view-sml.png)](creating-tabbed-applications-images/first-view.png#lightbox)
+[![サンプルアプリの出力の](creating-tabbed-applications-images/first-view-sml.png)](creating-tabbed-applications-images/first-view.png#lightbox)
 
 ## <a name="summary"></a>要約
 
