@@ -38,7 +38,7 @@ Xamarin クロスプラットフォーム サンプル アプリとコード デ
 販売員が販売成績を把握したり、潜在顧客を管理したり、連絡先を表示したり、注文を管理したり、製品カタログを参照したりできるようにするデモ アプリです。
     :::column-end:::
     :::column:::
-[Xamarin CRM の ![](images/crm.png)](https://github.com/xamarin/app-crm)
+[![Xamarin CRM の](images/crm.png)](https://github.com/xamarin/app-crm)
 
 ### <a name="xamarin-crmhttpsgithubcomxamarinapp-crm"></a>[Xamarin CRM](https://github.com/xamarin/app-crm)
 
