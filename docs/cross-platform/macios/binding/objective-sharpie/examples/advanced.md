@@ -6,12 +6,12 @@ ms.assetid: 044FF669-0B81-4186-97A5-148C8B56EE9C
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: 23ca9c3fe36a65aefb17f10fd3e680937c36acc0
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5e36a66949c55a85d84cbbb17fa4d276e3af1eee
+ms.sourcegitcommit: acbaedbcb78bb5629d4a32e3b00f11540c93c216
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016248"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76980428"
 ---
 # <a name="advanced-manual-real-world-example"></a>高度な (手動) 実際の例
 
@@ -19,7 +19,7 @@ ms.locfileid: "73016248"
 
 このセクションでは、より高度なバインド方法について説明します。ここでは、Apple の `xcodebuild` ツールを使用して最初に POP プロジェクトをビルドしてから、目標マジックペンの入力を手動で推測します。 これは、基本的に、前のセクションで説明したマジックペンの目的で行われていることを表します。
 
-```
+```bash
  $ git clone https://github.com/facebook/pop.git
 Cloning into 'pop'...
    _(more git clone output)_
@@ -29,7 +29,7 @@ $ cd pop
 
 POP ライブラリには Xcode プロジェクト (`pop.xcodeproj`) があるため、`xcodebuild` を使用して POP を構築するだけで済みます。 このプロセスによって、目的のマジックペンが解析する必要のあるヘッダーファイルが生成される場合があります。 このため、バインド前に構築することが重要です。 `xcodebuild` 経由でビルドする場合、目標マジックペンに渡すのと同じ SDK 識別子とアーキテクチャを使用してください (ただし、目標マジックペン3.0 は通常これを行うことができます)。
 
-```
+```bash
 $ xcodebuild -sdk iphoneos9.0 -arch arm64
 
 Build settings from command line:
@@ -54,7 +54,7 @@ CpHeader pop/POPAnimationTracer.h build/Headers/POP/POPAnimationTracer.h
 
 これで、POP をバインドする準備ができました。 ここでは、`arm64` アーキテクチャを使用して SDK `iphoneos8.1` 用にビルドする必要があります。また、注目するヘッダーファイルは、POP git チェックアウトの下に `build/Headers` ます。 `build/Headers` ディレクトリを見ると、いくつかのヘッダーファイルが表示されます。
 
-```
+```bash
 $ ls build/Headers/POP/
 POP.h                    POPAnimationTracer.h     POPDefines.h
 POPAnimatableProperty.h  POPAnimator.h            POPGeometry.h
@@ -66,7 +66,7 @@ POPAnimationPrivate.h    POPDecayAnimation.h
 
 `POP.h`を見ると、他のファイルを `#import`するライブラリの主要な最上位レベルのヘッダーファイルであることがわかります。 このため、`POP.h` を目標マジックペンに渡すだけで、clang がバックグラウンドで残りの部分を実行します。
 
-```
+```bash
 $ sharpie bind -output Binding -sdk iphoneos8.1 \
     -scope build/Headers build/Headers/POP/POP.h \
     -c -Ibuild/Headers -arch arm64
@@ -122,7 +122,7 @@ Submitting usage data to Xamarin...
 Done.
 ```
 
-`-scope build/Headers` 引数が目標マジックペンに渡されたことがわかります。 C との c 言語ライブラリは、バインドする API ではなく、ライブラリの実装の詳細である他のヘッダーファイルを `#import` または `#include` する必要があるため、`-scope` 引数は、ファイルで定義されていない任意の API を無視することを目標マジックペンに指示します。`-scope` ディレクトリ内。
+`-scope build/Headers` 引数が目標マジックペンに渡されたことがわかります。 C との c 言語のライブラリは、バインドする API ではなく、ライブラリの実装の詳細である他のヘッダーファイルを `#import` または `#include` する必要があるため、`-scope` 引数は、`-scope` ディレクトリ内のファイルで定義されていない API を無視するようにマジックペンに指示します。
 
 `-scope` 引数は、クリーンに実装されたライブラリではオプションであることがよくありますが、明示的に指定しても害はありません。
 
