@@ -36,7 +36,7 @@ ms.locfileid: "73026455"
 
 ## <a name="wireless-deploymentwireless-deploymentmd"></a>[ワイヤレス展開](wireless-deployment.md)
 
- Xcode 9 では、ネットワークを介して iOS デバイスや Apple TV に展開するオプションが導入されました。アプリを展開およびデバッグするたびにデバイスをケーブルで接続する必要はありません。 この機能は現在プレビュー段階です。
+ Xcode 9 では、ネットワークを介して iOS デバイスや Apple TV に展開するオプションが導入されました。アプリを展開およびデバッグするたびにデバイスを配線する必要はありません。 この機能は現在プレビュー段階です。
 
 ## <a name="testflightiosdeploy-testtestflightmd"></a>[TestFlight](~/ios/deploy-test/testflight.md)
 
