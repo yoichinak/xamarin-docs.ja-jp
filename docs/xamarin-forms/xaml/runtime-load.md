@@ -7,22 +7,22 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/12/2018
-ms.openlocfilehash: e253d2ba949a94637d7773fdc50b479679fd3f41
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 71f510cd37d4bed2a5a6077ed63f748ce9894725
+ms.sourcegitcommit: ae5557c5024d4b7bd52b2f33cb96114ce2b8e086
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657248"
+ms.lasthandoff: 02/06/2020
+ms.locfileid: "77045072"
 ---
 # <a name="loading-xaml-at-runtime-in-xamarinforms"></a>実行時の Xamarin 形式での XAML の読み込み
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-loadruntimexaml)
 
-名前空間には[`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*) 、実行時に XAML を読み込んで解析するために使用できる2つの拡張メソッドが含まれています。 [`Xamarin.Forms.Xaml`](xref:Xamarin.Forms.Xaml)
+[`Xamarin.Forms.Xaml`](xref:Xamarin.Forms.Xaml)名前空間には、実行時に XAML を読み込み、解析するために使用できる2つの[`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)拡張メソッドが含まれています。
 
-## <a name="background"></a>背景
+## <a name="background"></a>バックグラウンド
 
-Xamarin の XAML クラスが構築されると、 [`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)メソッドは間接的に呼び出されます。 このエラーは、XAML クラスの分離コードファイルがコンストラクターからメソッド`InitializeComponent`を呼び出すことが原因で発生します。
+Xamarin の XAML クラスが構築されると、 [`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)メソッドが間接的に呼び出されます。 これは、XAML クラスの分離コードファイルがコンストラクターから `InitializeComponent` メソッドを呼び出すことが原因で発生します。
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -34,7 +34,7 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Visual Studio は、xaml ファイルを含むプロジェクトをビルドするときに、 C# `InitializeComponent`メソッドの定義を含むコードファイル (たとえば、 **MainPage.xaml.g.cs**) を生成するために xaml ファイルを解析します。
+Visual Studio は、XAML ファイルを含むプロジェクトをビルドするときに、XAML ファイルを解析C#して、`InitializeComponent` メソッドの定義を含むコードファイル (たとえば、 **MainPage.xaml.g.cs**) を生成します。
 
 ```csharp
 private void InitializeComponent()
@@ -44,11 +44,11 @@ private void InitializeComponent()
 }
 ```
 
-メソッド`InitializeComponent`は、 [`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)メソッドを呼び出して、XAML ファイル (またはコンパイルされたバイナリ) を .NET Standard ライブラリから抽出します。 抽出後、XAML ファイルで定義されているすべてのオブジェクトを初期化し、それらを親子のリレーションシップですべて連結し、コードで定義されているイベントハンドラーを XAML ファイルに設定されたイベントにアタッチし、オブジェクトの結果ツリーをのコンテンツとして設定します。改.
+`InitializeComponent` メソッドは、 [`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)メソッドを呼び出して、.NET Standard ライブラリから XAML ファイル (またはコンパイルされたバイナリ) を抽出します。 抽出後、XAML ファイルで定義されているすべてのオブジェクトを初期化し、それらを親子のリレーションシップですべて連結し、コードで定義されているイベントハンドラーを XAML ファイルに設定されたイベントにアタッチし、オブジェクトの結果ツリーをのコンテンツとして設定します。改.
 
 ## <a name="loading-xaml-at-runtime"></a>実行時の XAML の読み込み
 
-これらの`public`メソッドはであるため、Xamarin. Forms アプリケーションから呼び出して、実行時に XAML を読み込んで解析することができます。 [`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*) これにより、アプリケーションが web サービスから XAML をダウンロードし、XAML から必要なビューを作成して、アプリケーションで表示するなどのシナリオが可能になります。
+[`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)メソッドは `public`であるため、Xamarin. フォームアプリケーションから呼び出して、実行時に XAML を読み込んで解析することができます。 これにより、アプリケーションが web サービスから XAML をダウンロードし、XAML から必要なビューを作成して、アプリケーションで表示するなどのシナリオが可能になります。
 
 > [!WARNING]
 > 実行時の XAML の読み込みにはパフォーマンスコストが非常に高く、通常は避ける必要があります。
@@ -65,12 +65,12 @@ Button navigationButton = new Button().LoadFromXaml(navigationButtonXAML);
 _stackLayout.Children.Add(navigationButton);
 ```
 
-この例[`Button`](xref:Xamarin.Forms.Button)では、インスタンスが作成されます。 [`Text`](xref:Xamarin.Forms.Button.Text)このインスタンスのプロパティ値は、 `string`で定義されている XAML から設定されます。 `Button` [次`StackLayout`](xref:Xamarin.Forms.StackLayout)に、が、ページの XAML で定義されているに追加されます。
+この例では、 [`Button`](xref:Xamarin.Forms.Button)インスタンスが作成され、 [`Text`](xref:Xamarin.Forms.Button.Text)プロパティ値が `string`で定義されている XAML から設定されます。 次に、ページの XAML で定義されている[`StackLayout`](xref:Xamarin.Forms.StackLayout)に `Button` が追加されます。
 
 > [!NOTE]
-> 拡張[`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)メソッドを使用すると、ジェネリック型引数を指定できます。 ただし、型引数を指定する必要はほとんどありません。これは、操作対象のインスタンスの型から推論されるためです。
+> [`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)拡張メソッドを使用すると、ジェネリック型引数を指定できます。 ただし、型引数を指定する必要はほとんどありません。これは、操作対象のインスタンスの型から推論されるためです。
 
-メソッドを使用すると、次の例の拡大を[`ContentPage`](xref:Xamarin.Forms.ContentPage)使用して XAML を展開できます。 [`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)
+[`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)メソッドを使用すると、次の例のように[`ContentPage`](xref:Xamarin.Forms.ContentPage)を拡大してから、その XAML に移動できます。
 
 ```csharp
 using Xamarin.Forms.Xaml;
@@ -85,7 +85,7 @@ await Navigation.PushAsync(page);
 
 ## <a name="accessing-elements"></a>アクセス (要素に)
 
-メソッドを使用して実行[`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)時に xaml を読み込むと、(を使用して`x:Name`) 指定されたランタイムオブジェクト名を持つ xaml 要素への厳密に型指定されたアクセスが許可されません。 ただし、これらの XAML 要素は、 [`FindByName`](xref:Xamarin.Forms.NameScopeExtensions.FindByName*)メソッドを使用して取得し、必要に応じてアクセスできます。
+[`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*)メソッドを使用して実行時に xaml を読み込むと、ランタイムオブジェクト名 (`x:Name`を使用) を指定した xaml 要素への厳密に型指定されたアクセスが許可されません。 ただし、これらの XAML 要素は[`FindByName`](xref:Xamarin.Forms.NameScopeExtensions.FindByName*)メソッドを使用して取得し、必要に応じてアクセスできます。
 
 ```csharp
 // See the sample for the full XAML string
@@ -97,7 +97,7 @@ monkeyLabel.Text = "Seated Monkey";
 ...
 ```
 
-この例では、の[`ContentPage`](xref:Xamarin.Forms.ContentPage) XAML が大きくなっています。 この XAML には[`Label`](xref:Xamarin.Forms.Label) 、 `monkeyName` [`Text`](xref:Xamarin.Forms.Label.Text)プロパティが設定される前[`FindByName`](xref:Xamarin.Forms.NameScopeExtensions.FindByName*)に、メソッドを使用して取得されるという名前のが含まれています。
+この例では、 [`ContentPage`](xref:Xamarin.Forms.ContentPage)の XAML が大きくなっています。 この XAML には、 [`Text`](xref:Xamarin.Forms.Label.Text)プロパティが設定される前に、 [`FindByName`](xref:Xamarin.Forms.NameScopeExtensions.FindByName*)メソッドを使用して取得される `monkeyName`という名前の[`Label`](xref:Xamarin.Forms.Label)が含まれています。
 
 ## <a name="related-links"></a>関連リンク
 
