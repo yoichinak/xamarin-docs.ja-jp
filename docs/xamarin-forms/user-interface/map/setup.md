@@ -6,13 +6,13 @@ ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/06/2019
-ms.openlocfilehash: 9213e893d222e26168940e09a93e158d1e74d8dc
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.date: 02/07/2020
+ms.openlocfilehash: eff7dff15fb75859d43923f71696bccf1b0e2cc5
+ms.sourcegitcommit: 87b818373d83fd3a6856c4b5a702b013a731b5ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725578"
+ms.lasthandoff: 02/07/2020
+ms.locfileid: "77069650"
 ---
 # <a name="xamarinforms-map-initialization-and-configuration"></a>Xamarin.Forms マップの初期化と構成
 
@@ -234,6 +234,9 @@ Xamarin アプリケーションが API 28 以上を対象としている場合�
 ### <a name="universal-windows-platform"></a>ユニバーサル Windows プラットフォーム
 
 UWP では、マップを表示してマップサービスを使用する前に、アプリケーションを認証する必要があります。 アプリケーションを認証するには、maps 認証キーを指定する必要があります。 詳細については、「 [Request a maps authentication key](/windows/uwp/maps-and-location/authentication-key)」を参照してください。 その後、`FormsMaps.Init("AUTHORIZATION_TOKEN")` メソッドの呼び出しで認証トークンを指定し、Bing Maps でアプリケーションを認証する必要があります。
+
+> [!NOTE]
+> UWP では、ジオコーディングなどのマップサービスを使用するには、`MapService.ServiceToken` プロパティを認証キーの値に設定する必要もあります。 これは、次のコード行を使用して実行できます: `Windows.Services.Maps.MapService.ServiceToken = "INSERT_AUTH_TOKEN_HERE";`。
 
 また、アプリケーションがユーザーの場所にアクセスする必要がある場合は、パッケージマニフェストで場所の機能を有効にする必要があります。 これは次のようにして実装します。
 
