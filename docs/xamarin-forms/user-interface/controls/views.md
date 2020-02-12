@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2019
-ms.openlocfilehash: 7d53623ef1fb1eeb917cbf4cd6d65d461e525982
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: 286950104e9a85b6ec89f0c0f3f891f29dada4ec
+ms.sourcegitcommit: 07941cf9704ff88cf4087de5ebdea623ff54edb1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76724238"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77144666"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms のビュー
 
@@ -24,7 +24,7 @@ _Xamarin 形式のビューは、クロスプラットフォームモバイル�
 
 ## <a name="views-for-presentation"></a>表示用のビュー
 
-### <a name="label"></a>ラベル
+### <a name="label"></a>Label
 
 |     |     |
 | --- | --- |
@@ -66,9 +66,16 @@ _Xamarin 形式のビューは、クロスプラットフォームモバイル�
 | [`Map`](xref:Xamarin.Forms.Maps.Map)マップを表示します。 **Xamarin. Forms. map** NuGet パッケージがインストールされている必要があります。 Android およびユニバーサル Windows プラットフォームがマップの承認キーが必要です。<br /><br />[API ドキュメント](xref:Xamarin.Forms.Maps.Map) / [ガイド](~/xamarin-forms/user-interface/map/index.md) / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps/) | [![マップの例](views-images/Map.png "マップの例")](views-images/Map-Large.png#lightbox "マップの例")<br />このページ / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/MapDemoPage.xaml)のコード[ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/MapDemoPage.cs) |
 |     |     |
 
+### <a name="mediaelement"></a>MediaElement
+
+|     |     |
+| --- | --- |
+| `MediaElement` ビデオを表示したり、オーディオを再生したりします。 メディアは、Web 経由でダウンロードすることも、プラットフォームプロジェクトにリソースとして埋め込むこともできます。<br /><br /> / [サンプル](https://github.com/xamarin/xamarin-forms-samples/tree/pre-release/WorkingWithMediaElement)の[ガイド](~/xamarin-forms/user-interface/mediaelement.md) | |
+|     |     |
+
 ## <a name="views-that-initiate-commands"></a>コマンドを開始するビュー
 
-### <a name="button"></a>Button
+### <a name="button"></a>ボタン
 
 |     |     |
 | --- | --- |
@@ -93,7 +100,7 @@ _Xamarin 形式のビューは、クロスプラットフォームモバイル�
 
 |     |     |
 | --- | --- |
-| [`SearchBar`](xref:Xamarin.Forms.SearchBar)には、ユーザーがテキスト文字列を入力するための領域と、アプリケーションに検索を実行するように通知するボタン (またはキーボードキー) が表示されます。 [`Text`](xref:Xamarin.Forms.SearchBar.Text)プロパティはテキストへのアクセスを提供し、 [`SearchButtonPressed`](xref:Xamarin.Forms.SearchBar.SearchButtonPressed)イベントはボタンが押されたことを示します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.SearchBar) / [ガイド](~/xamarin-forms/user-interface/searchbar.md) / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/) | [![SearchBar の例](views-images/SearchBar.png "SearchBar の例")](views-images/SearchBar-Large.png#lightbox "SearchBar の例")<br /> このページのコード / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SearchBarDemoPage.xaml)と[分離コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SearchBarDemoPage.xaml.cs) [ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SearchBarDemoPage.cs) |
+| [`SearchBar`](xref:Xamarin.Forms.SearchBar)には、ユーザーがテキスト文字列を入力するための領域と、アプリケーションに検索を実行するように通知するボタン (またはキーボードキー) が表示されます。 [`Text`](xref:Xamarin.Forms.InputView.Text)プロパティはテキストへのアクセスを提供し、 [`SearchButtonPressed`](xref:Xamarin.Forms.SearchBar.SearchButtonPressed)イベントはボタンが押されたことを示します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.SearchBar) / [ガイド](~/xamarin-forms/user-interface/searchbar.md) / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/) | [![SearchBar の例](views-images/SearchBar.png "SearchBar の例")](views-images/SearchBar-Large.png#lightbox "SearchBar の例")<br /> このページのコード / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SearchBarDemoPage.xaml)と[分離コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SearchBarDemoPage.xaml.cs) [ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SearchBarDemoPage.cs) |
 |     |     |
 
 ### <a name="swipeview"></a>SwipeView
@@ -112,7 +119,7 @@ _Xamarin 形式のビューは、クロスプラットフォームモバイル�
 | `CheckBox` を使用すると、ユーザーは、チェックボックスをオンまたは空にすることができるボタンの種類を使用してブール値を選択できます。 `IsChecked` プロパティは `CheckBox`の状態であり、`CheckedChanged` イベントは、状態が変化したときに発生します。<br /><br />API ドキュメント/[ガイド](~/xamarin-forms/user-interface/checkbox.md) / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos) | [![CheckBox の例](views-images/CheckBox.png "CheckBox の例")](views-images/CheckBox-Large.png#lightbox "CheckBox の例")<br />このページ / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CheckBoxPage.xaml)のコード[ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CheckBoxPage.cs) |
 |     |     |
 
-### <a name="slider"></a>Slider
+### <a name="slider"></a>スライダー
 
 |     |     |
 | --- | --- |
@@ -155,14 +162,14 @@ _Xamarin 形式のビューは、クロスプラットフォームモバイル�
 
 |     |     |
 | --- | --- |
-| [`Entry`](xref:Xamarin.Forms.Entry)を使用すると、ユーザーは1行のテキストを入力して編集できます。 テキストは[`Text`](xref:Xamarin.Forms.Entry.Text)プロパティとして使用でき、テキストが変更されたとき、またはユーザーが enter キーをタップして完了を通知するときに、 [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged)イベントと[`Completed`](xref:Xamarin.Forms.Entry.Completed)イベントが発生します。<br /><br />複数行のテキストを入力および編集するには、 [`Editor`](#editor)を使用します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.Entry) / [ガイド](~/xamarin-forms/user-interface/text/entry.md) / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text) | [![エントリの例](views-images/Entry.png "エントリの例")](views-images/Entry-Large.png#lightbox "エントリの例")<br />このページ / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/EntryDemoPage.xaml)のコード[ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/EntryDemoPage.cs) |
+| [`Entry`](xref:Xamarin.Forms.Entry)を使用すると、ユーザーは1行のテキストを入力して編集できます。 テキストは[`Text`](xref:Xamarin.Forms.InputView.Text)プロパティとして使用でき、テキストが変更されたとき、またはユーザーが enter キーをタップして完了を通知するときに、 [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged)イベントと[`Completed`](xref:Xamarin.Forms.Entry.Completed)イベントが発生します。<br /><br />複数行のテキストを入力および編集するには、 [`Editor`](#editor)を使用します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.Entry) / [ガイド](~/xamarin-forms/user-interface/text/entry.md) / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text) | [![エントリの例](views-images/Entry.png "エントリの例")](views-images/Entry-Large.png#lightbox "エントリの例")<br />このページ / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/EntryDemoPage.xaml)のコード[ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/EntryDemoPage.cs) |
 |     |     |
 
 ### <a name="editor"></a>エディター
 
 |     |     |
 | --- | --- |
-| [`Editor`](xref:Xamarin.Forms.Editor)を使用すると、複数行のテキストを入力および編集できます。 テキストは[`Text`](xref:Xamarin.Forms.Editor.Text)プロパティとして使用でき、テキストが変更されたとき、またはユーザーが入力を完了したときに、 [`TextChanged`](xref:Xamarin.Forms.Editor.TextChanged)イベントと[`Completed`](xref:Xamarin.Forms.Editor.Completed)イベントが発生します。<br /><br />1行のテキストを入力および編集するには、 [`Entry`](#entry)ビューを使用します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.Editor) / [ガイド](~/xamarin-forms/user-interface/text/editor.md) / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text) | [![エントリの例](views-images/Editor.png "エディターの例")](views-images/Editor-Large.png#lightbox "エディターの例")<br />このページ / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/EditorDemoPage.xaml)のコード[ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/EditorDemoPage.cs) |
+| [`Editor`](xref:Xamarin.Forms.Editor)を使用すると、複数行のテキストを入力および編集できます。 テキストは[`Text`](xref:Xamarin.Forms.InputView.Text)プロパティとして使用でき、テキストが変更されたとき、またはユーザーが入力を完了したときに、 [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged)イベントと[`Completed`](xref:Xamarin.Forms.Editor.Completed)イベントが発生します。<br /><br />1行のテキストを入力および編集するには、 [`Entry`](#entry)ビューを使用します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.Editor) / [ガイド](~/xamarin-forms/user-interface/text/editor.md) / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text) | [![エントリの例](views-images/Editor.png "エディターの例")](views-images/Editor-Large.png#lightbox "エディターの例")<br />このページ / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/EditorDemoPage.xaml)のコード[ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/EditorDemoPage.cs) |
 |     |     |
 
 ## <a name="views-to-indicate-activity"></a>アクティビティを示すためのビュー

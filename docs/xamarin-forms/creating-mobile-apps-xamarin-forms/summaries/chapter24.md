@@ -1,99 +1,99 @@
 ---
 title: 第 24 章の概要です。 ページのナビゲーション
-description: Xamarin を使用した Mobile Apps の作成:第 24 章の概要です。 ページのナビゲーション
+description: 'Xamarin.Forms によるモバイル アプリの作成: 第 24 章の概要。 ページのナビゲーション'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: DDCDB49C-6008-4F72-B095-463EE21D7C23
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 340aa8c7327ba75986b960d5e0f6bda66c116fc5
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: fd8e4fc77917fcba9bc61e59ced714ac1cd6fbe9
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770924"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77130839"
 ---
 # <a name="summary-of-chapter-24-page-navigation"></a>第 24 章の概要です。 ページのナビゲーション
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24)
 
-多くのアプリケーションは、ユーザーが移動する複数のページで構成されます。 アプリケーションは常には、*メイン*ページまたは*ホーム* ページで、し、そこから、ユーザーの移動に他のページに戻るためのスタックに保持されます。 追加のナビゲーション オプションは、「 [**第 25 章です。さまざまなページ**](chapter25.md)します。
+多くのアプリケーションは、ユーザーが移動する複数のページで構成されます。 アプリケーションには、常に*メイン*ページまたは*ホーム*ページがあり、ユーザーは他のページに移動します。他のページに移動するには、スタックに保持されています。 その他のナビゲーションオプションについては、25章で説明されてい[**ます。ページの種類**](chapter25.md)。
 
 ## <a name="modal-pages-and-modeless-pages"></a>ページのモーダルとモードレスのページ
 
-`VisualElement` 定義、 [ `Navigation` ](xref:Xamarin.Forms.NavigableElement.Navigation)型のプロパティ[ `INavigation` ](xref:Xamarin.Forms.INavigation)、新しいページに移動する次の 2 つのメソッドが含まれます。
+`VisualElement` は[`INavigation`](xref:Xamarin.Forms.INavigation)型の[`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation)プロパティを定義します。このプロパティには、新しいページに移動するための次の2つのメソッドが含まれています。
 
 - [`PushAsync`](xref:Xamarin.Forms.INavigation.PushAsync(Xamarin.Forms.Page))
 - [`PushModalAsync`](xref:Xamarin.Forms.INavigation.PushModalAsync(Xamarin.Forms.Page))
 
-どちらのメソッド、`Page`インスタンスを引数と戻り値として、`Task`オブジェクト。 次の 2 つのメソッドは、前のページに移動します。
+どちらのメソッドも、引数として `Page` インスタンスを受け取り、`Task` オブジェクトを返します。 次の 2 つのメソッドは、前のページに移動します。
 
 - [`PopAsync`](xref:Xamarin.Forms.INavigation.PopAsync)
 - [`PopModalAsync`](xref:Xamarin.Forms.INavigation.PopModalAsync)
 
-ユーザー インターフェイスには、独自場合**戻る**ボタン (Android および Windows phone での操作) と、アプリケーションをこれらのメソッドを呼び出す必要はありません。
+ユーザーインターフェイスに独自の **[戻る]** ボタン (Android と Windows phone の場合) がある場合は、アプリケーションでこれらのメソッドを呼び出す必要はありません。
 
-これらのメソッドは、`VisualElement`から呼び出された一般的に、`Navigation`プロパティ、現在の`Page`インスタンス。
+これらのメソッドはどの `VisualElement`からでも使用できますが、通常は、現在の `Page` インスタンスの `Navigation` プロパティから呼び出されます。
 
-前のページに戻る前に、ページにいくつかの情報を提供する、ユーザーが必要な場合に、アプリケーションは一般にモーダル ページを使用します。 モーダルではないページとも呼ばれるモードレスまたは*階層*します。 モーダルまたはモードレス; として区別ページ自体ではありません。これは、そこに移動するために使用するメソッドによって、代わりに制御されます。 すべてのプラットフォームで作業を行う、モーダル ページは、前のページに戻るの独自のユーザー インターフェイスを提供する必要があります。
+前のページに戻る前に、ページにいくつかの情報を提供する、ユーザーが必要な場合に、アプリケーションは一般にモーダル ページを使用します。 モーダルでないページは、モードレスまたは*階層*と呼ばれることもあります。 モーダルまたはモードレス; として区別ページ自体ではありません。これは、そこに移動するために使用するメソッドによって、代わりに制御されます。 すべてのプラットフォームで作業を行う、モーダル ページは、前のページに戻るの独自のユーザー インターフェイスを提供する必要があります。
 
-[ **ModelessAndModal** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/ModelessAndModal)モードレスとモーダル ページ間の違いを調査することができます。 ページ ナビゲーションを使用するアプリケーションがそのホーム ページに渡す必要があります、 [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)コンストラクター、プログラムの一般に`App`クラス。 1 つおまけが不要になったを設定する必要があること、 `Padding` iOS 用のページ。
+[**Modeとモーダル**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/ModelessAndModal)のサンプルを使用すると、モードレスページとモーダルページの違いを調べることができます。 ページナビゲーションを使用するアプリケーションは、そのホームページを[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)コンストラクター (通常はプログラムの `App` クラス) に渡す必要があります。 1つの利点は、iOS のページで `Padding` を設定する必要がなくなったことです。
 
-モードレス ページ、ページのことを発見したは[ `Title` ](xref:Xamarin.Forms.Page.Title)プロパティが表示されます。 IOS、Android、および Windows タブレットとデスクトップ プラットフォームは、前のページに戻るユーザー インターフェイス要素を提供します。 コース、Android、および Windows Phone のデバイスがある標準**戻る**戻るボタンをクリックします。
+モードレスページでは、ページの[`Title`](xref:Xamarin.Forms.Page.Title)プロパティが表示されていることがわかります。 IOS、Android、および Windows タブレットとデスクトップ プラットフォームは、前のページに戻るユーザー インターフェイス要素を提供します。 もちろん、Android デバイスと Windows phone デバイスには、元に戻すための標準の **[戻る]** ボタンがあります。
 
-モーダル ページ、ページの`Title`は表示されませんし、前のページに戻るユーザー インターフェイス要素が指定されていません。 標準の Android および Windows Phone を使用することもできます**戻る**他のプラットフォームでモーダル ページに戻るには、独自のメカニズムを提供する必要があります、前のページに戻るボタンをクリックします。
+モーダルページの場合、ページ `Title` は表示されず、前のページに戻るためのユーザーインターフェイス要素は提供されません。 前のページに戻るには、Android および Windows phone の標準の **[戻る]** ボタンを使用できますが、他のプラットフォームのモーダルページでは、元に戻すための独自のメカニズムが用意されている必要があります。
 
 ### <a name="animated-page-transitions"></a>アニメーション化されたページの切り替え効果
 
-設定する 2 番目のブール型引数が付属してさまざまなナビゲーション方法の代替バージョン`true`ページ遷移アニメーションを含めることが必要な場合。
+さまざまなナビゲーションメソッドの代替バージョンは、ページ切り替えにアニメーションを含める場合に `true` に設定する2番目のブール値引数を使用して提供されます。
 
 - [PushAsync](xref:Xamarin.Forms.INavigation.PushAsync(Xamarin.Forms.Page,System.Boolean))
 - [PushModalAsync](xref:Xamarin.Forms.INavigation.PushModalAsync(Xamarin.Forms.Page,System.Boolean))
 - [PopAsync](xref:Xamarin.Forms.INavigation.PopAsync(System.Boolean))
 - [PopModalAsync](xref:Xamarin.Forms.INavigation.PopModalAsync(System.Boolean))
 
-ただし、標準ページ ナビゲーション メソッドなどがあります、アニメーション、既定では (この章の最後の方で説明する) と、起動時に特定のページに移動するため貴重なのみ (で説明したように、独自の開始のアニメーションを提供するときに[**第 22 章です。アニメーション**](chapter22.md))。
+ただし、標準のページナビゲーションメソッドには既定でアニメーションが含まれているため、これらは起動時に特定のページに移動する場合 (この章の末尾について説明します)、または独自の開始アニメーションを提供する場合 (Chapter22 で説明します) にのみ役立ち[**ます。アニメーション**](chapter22.md))。
 
 ### <a name="visual-and-functional-variations"></a>外観および機能のバリエーション
 
-`NavigationPage` 内のクラスをインスタンス化するときに設定できる 2 つのプロパティが含まれています、`App`メソッド。
+`NavigationPage` には、`App` メソッドでクラスをインスタンス化するときに設定できる2つのプロパティが含まれています。
 
 - [`BarBackgroundColor`](xref:Xamarin.Forms.NavigationPage.BarBackgroundColor)
 - [`BarTextColor`](xref:Xamarin.Forms.NavigationPage.BarTextColor)
 
-`NavigationPage` 4 つの接続されているバインド可能なプロパティが設定されている特定のページに影響を与えるとも含まれます。
+`NavigationPage` には、設定されている特定のページに影響を与える、アタッチ可能な4つのバインド可能なプロパティも含まれています。
 
 - [`SetHasBackButton`](xref:Xamarin.Forms.NavigationPage.SetHasBackButton(Xamarin.Forms.Page,System.Boolean)) および [`GetHasBackButton`](xref:Xamarin.Forms.NavigationPage.GetHasBackButton(Xamarin.Forms.Page))
 - [`SetHasNavigationBar`](xref:Xamarin.Forms.NavigationPage.SetHasNavigationBar(Xamarin.Forms.BindableObject,System.Boolean)) および [`GetHasNavigationBar`](xref:Xamarin.Forms.NavigationPage.GetHasNavigationBar(Xamarin.Forms.BindableObject))
-- [`SetBackButtonTitle`](xref:Xamarin.Forms.NavigationPage.SetBackButtonTitle(Xamarin.Forms.BindableObject,System.String)) [ `GetBackButtonTitle` ](xref:Xamarin.Forms.NavigationPage.GetBackButtonTitle(Xamarin.Forms.BindableObject)) iOS のみで動作
-- [`SetTitleIcon`](xref:Xamarin.Forms.NavigationPage.SetTitleIcon(Xamarin.Forms.BindableObject,Xamarin.Forms.ImageSource)) [ `GetTitleIcon` ](xref:Xamarin.Forms.NavigationPage.GetTitleIcon(Xamarin.Forms.BindableObject))作業して iOS と Android のみ
+- [`SetBackButtonTitle`](xref:Xamarin.Forms.NavigationPage.SetBackButtonTitle(Xamarin.Forms.BindableObject,System.String))と[`GetBackButtonTitle`](xref:Xamarin.Forms.NavigationPage.GetBackButtonTitle(Xamarin.Forms.BindableObject)) iOS での作業のみ
+- [`SetTitleIcon`](xref:Xamarin.Forms.NavigationPage.SetTitleIcon(Xamarin.Forms.BindableObject,Xamarin.Forms.FileImageSource))と[`GetTitleIcon`](xref:Xamarin.Forms.NavigationPage.GetTitleIcon(Xamarin.Forms.BindableObject)) iOS と Android でのみ機能する
 
 ### <a name="exploring-the-mechanics"></a>しくみの調査
 
-ページのナビゲーション メソッドは、すべて非同期と併用する必要があります`await`します。 完了には、ページ ナビゲーションが完了したことが、ページ ナビゲーション スタックを調べて安全であることを示されません。
+ページナビゲーションメソッドはすべて非同期であり、`await`で使用する必要があります。 完了には、ページ ナビゲーションが完了したことが、ページ ナビゲーション スタックを調べて安全であることを示されません。
 
-最初のページが一般にへの呼び出しを取得して別に移動する 1 つのページ、その[ `OnDisappearing` ](xref:Xamarin.Forms.Page.OnDisappearing)メソッド、および 2 番目のページへの呼び出しを取得します。 その[ `OnAppearing` ](xref:Xamarin.Forms.Page.OnAppearing)メソッド。 同様に、別に 1 つのページが戻るとき、最初のページは取得の呼び出しをその`OnDisappearing`メソッド、および 2 番目のページへの呼び出しを取得します通常その`OnAppearing`メソッド。 これらの呼び出し (およびナビゲーションを呼び出す非同期メソッドの完了) の順序は、プラットフォームに依存します。 上記の 2 つのステートメントに「一般」という単語の使用は、Android のモーダル ページ ナビゲーションがこれらのメソッド呼び出しが発生しないためです。
+あるページが別のページに移動すると、最初のページは通常[`OnDisappearing`](xref:Xamarin.Forms.Page.OnDisappearing)メソッドへの呼び出しを取得し、2番目のページはその[`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing)メソッドの呼び出しを取得します。 同様に、あるページが別のページに戻ったとき、最初のページはその `OnDisappearing` メソッドへの呼び出しを取得し、2番目のページは通常、`OnAppearing` メソッドの呼び出しを取得します。 これらの呼び出し (およびナビゲーションを呼び出す非同期メソッドの完了) の順序は、プラットフォームに依存します。 上記の 2 つのステートメントに「一般」という単語の使用は、Android のモーダル ページ ナビゲーションがこれらのメソッド呼び出しが発生しないためです。
 
-また、呼び出し、`OnAppearing`と`OnDisappearing`メソッドを示さないページ ナビゲーションとは限りません。
+また、`OnAppearing` および `OnDisappearing` メソッドの呼び出しは、必ずしもページナビゲーションを示すとは限りません。
 
-`INavigation`インターフェイスには、ナビゲーション スタックを調査するための 2 つのコレクション プロパティが含まれています。
+`INavigation` インターフェイスには、ナビゲーションスタックを調べることができる2つのコレクションプロパティが含まれています。
 
-- [`NavigationStack`](xref:Xamarin.Forms.INavigation.NavigationStack) 型の`IReadOnlyList<Page>`モードレス スタック
-- [`ModalStack`](xref:Xamarin.Forms.INavigation.ModalStack) 型の`IReadOnlyList<Page>`モーダル スタック
+- モードレススタックの `IReadOnlyList<Page>` 型の[`NavigationStack`](xref:Xamarin.Forms.INavigation.NavigationStack)
+- モーダルスタックの型 `IReadOnlyList<Page>` の[`ModalStack`](xref:Xamarin.Forms.INavigation.ModalStack)
 
-これらの呼び出し履歴にアクセスする最も安全な方法は、`Navigation`のプロパティ、 `NavigationPage` (です、`App`クラスの[ `MainPage` ](xref:Xamarin.Forms.Application.MainPage)プロパティ)。 のみ、ページ ナビゲーションの非同期メソッドが完了した後、これらの呼び出し履歴を確認しても安全です。 [ `CurrentPage` ](xref:Xamarin.Forms.NavigationPage.CurrentPage)のプロパティ、`NavigationPage`現在場合は、現在のページがモーダルページを示すページが代わりにモードレスの最後のページを示していません。
+これらのスタックには、`NavigationPage` の `Navigation` プロパティ (`App` クラスの[`MainPage`](xref:Xamarin.Forms.Application.MainPage)プロパティ) からアクセスするのが安全です。 のみ、ページ ナビゲーションの非同期メソッドが完了した後、これらの呼び出し履歴を確認しても安全です。 現在のページがモーダルページである場合、`NavigationPage` の[`CurrentPage`](xref:Xamarin.Forms.NavigationPage.CurrentPage)プロパティは現在のページを示しませんが、代わりに最後のモードレスページであることを示します。
 
-[ **SinglePageNavigation** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/SinglePageNavigation)サンプルでは、ページ ナビゲーションと、スタックでは、ページ ナビゲーションの有効な型を検証することができます。
+[**SinglePageNavigation**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/SinglePageNavigation)サンプルでは、ページナビゲーションとスタック、およびページナビゲーションの法的な種類を調べることができます。
 
 - モードレスのページがモードレスの別のページまたはモーダル ページに移動できます。
 - モーダル ページは別のモーダル ページにのみ移動できます。
 
 ### <a name="enforcing-modality"></a>モダリティを適用します。
 
-アプリケーションは、ユーザーからのいくつかの情報を取得する必要がある場合に、モーダル ページを使用します。 ユーザーは、その情報が提供されるまで、前のページに返すことを禁止する必要があります。 Ios では、簡単に使用できますが、**戻る**ボタンをクリックし、ユーザーがページに完了したときにのみ有効にします。 Android および Windows Phone デバイスでは、アプリケーションをオーバーライドする必要がありますが、 [ `OnBackButtonPressed` ](xref:Xamarin.Forms.Page.OnBackButtonPressed)メソッドと戻り値`true`プログラムが処理される場合は、**戻る**で示した自体には、ボタン[ **ModalEnforcement** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/ModalEnforcement)サンプル。
+アプリケーションは、ユーザーからのいくつかの情報を取得する必要がある場合に、モーダル ページを使用します。 ユーザーは、その情報が提供されるまで、前のページに返すことを禁止する必要があります。 IOS では、 **[戻る]** ボタンを簡単に提供し、ユーザーがページで終了した場合にのみ有効にすることができます。 ただし、Android および Windows phone デバイスの場合は、 [**ModalEnforcement**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/ModalEnforcement)サンプルで説明されているように、アプリケーションが[`OnBackButtonPressed`](xref:Xamarin.Forms.Page.OnBackButtonPressed)メソッドをオーバーライドし、 **`true` を返す**必要があります。
 
-[ **MvvmEnforcement** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/MvvmEnforcement) MVVM シナリオではこのしくみを示します。
+[**MvvmEnforcement**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/MvvmEnforcement)サンプルでは、MVVM シナリオでのこの動作を示します。
 
 ## <a name="navigation-variations"></a>ナビゲーションのバリエーション
 
@@ -101,79 +101,79 @@ ms.locfileid: "70770924"
 
 ### <a name="making-a-navigation-menu"></a>ナビゲーション メニューの作成
 
-[ **ViewGalleryType** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/ViewGalleryType)サンプルの使用例、`TableView`リスト メニュー項目にします。 各項目に関連付けられた、`Type`特定ページのオブジェクト。 その項目が選択されているときに、プログラムは、ページをインスタンス化しに移動します。
+[**ViewGalleryType**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/ViewGalleryType)サンプルでは、`TableView` を使用してメニュー項目を一覧表示する方法を示します。 各項目は、特定のページの `Type` オブジェクトに関連付けられています。 その項目が選択されているときに、プログラムは、ページをインスタンス化しに移動します。
 
-[![ギャラリーの種類のビューのスクリーン ショットをトリプル](images/ch24fg21-small.png "テーブルを一覧表示するメニュー項目")](images/ch24fg21-large.png#lightbox "テーブルを一覧表示するメニュー項目")
+[![ビューギャラリーの種類のトリプルスクリーンショット](images/ch24fg21-small.png "TableView リストのメニュー項目")](images/ch24fg21-large.png#lightbox "TableView リストのメニュー項目")
 
-[ **ViewGalleryInst** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/ViewGalleryInst)メニューには、型ではなく各ページのインスタンスが含まれていることで、サンプルが若干異なります。 これにより、各ページの情報を保持しますが、プログラムの起動時に、すべてのページをインスタンス化する必要があります。
+[**ViewGalleryInst**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/ViewGalleryInst)サンプルは、メニューには型ではなく各ページのインスタンスが含まれているので、少し異なります。 これにより、各ページの情報を保持しますが、プログラムの起動時に、すべてのページをインスタンス化する必要があります。
 
 ### <a name="manipulating-the-navigation-stack"></a>ナビゲーション スタックを操作します。
 
-[**StackManipulation** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/StackManipulation)によって定義されているいくつかの関数を示します`INavigation`ナビゲーション スタックの構造化された方法で操作することができます。
+[**Stackmanipulation**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/StackManipulation)は、`INavigation` によって定義されたいくつかの関数を示しています。これにより、ナビゲーションスタックを構造化された方法で操作できます。
 
 - [`RemovePage`](xref:Xamarin.Forms.INavigation.RemovePage(Xamarin.Forms.Page))
 - [`InsertPageBefore`](xref:Xamarin.Forms.INavigation.InsertPageBefore(Xamarin.Forms.Page,Xamarin.Forms.Page))
-- [`PopToRootAsync`](xref:Xamarin.Forms.INavigation.PopToRootAsync) [ `PopToRootAsync` ](xref:Xamarin.Forms.INavigation.PopToRootAsync(System.Boolean))省略可能なアニメーション
+- オプションのアニメーションを使用した[`PopToRootAsync`](xref:Xamarin.Forms.INavigation.PopToRootAsync)と[`PopToRootAsync`](xref:Xamarin.Forms.INavigation.PopToRootAsync(System.Boolean))
 
 ### <a name="dynamic-page-generation"></a>動的なページの生成
 
-[ **BuildAPage** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/BuildAPage)ユーザー入力に基づいて実行時にページを作成することを示します。
+[**Buildapage**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/BuildAPage)サンプルは、ユーザー入力に基づいて実行時にページを構築する方法を示しています。
 
 ## <a name="patterns-of-data-transfer"></a>データ転送のパターン
 
-ページ間でデータを共有する必要があります&mdash;へ移動 ページでは、およびページを起動したページにデータを返すデータを転送します。 これを行うためのいくつかの方法はあります。
+移動ページにデータを転送するために &mdash; ページ間でデータを共有し、ページを呼び出したページにデータを返すことが必要になることがよくあります。 これを行うためのいくつかの方法はあります。
 
-### <a name="constructor-arguments"></a>コンストラクターの引数
+### <a name="constructor-arguments"></a>コンス トラクターの引数
 
-新しいページに移動するととき、自体を初期化するためにページを使用するコンストラクター引数を使用して、ページ クラスのインスタンスを作成することができます。 [ **SchoolAndStudents** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/SchoolAndStudents)のサンプルで例示します。 移動して、ページのこともその`BindingContext`ページに移動するで設定します。
+新しいページに移動するととき、自体を初期化するためにページを使用するコンス トラクター引数を使用して、ページ クラスのインスタンスを作成することができます。 [**SchoolAndStudents**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/SchoolAndStudents)サンプルでは、これを示します。 移動先のページでは、移動先のページで `BindingContext` 設定することもできます。
 
 ### <a name="properties-and-method-calls"></a>プロパティとメソッドの呼び出し
 
-その他のデータ転送の例では、1 つのページが別のページに移動するときに、ページとバックエンド間で情報を渡すことの問題について説明します。 これらの説明で、*ホーム*ページに移動、*情報*ページ、および初期化情報を転送する必要があります、*情報*ページ。 *情報*ページ、ユーザーから追加情報を取得およびに情報を転送する、*ホーム*ページ。
+その他のデータ転送の例では、1 つのページが別のページに移動するときに、ページとバックエンド間で情報を渡すことの問題について説明します。 これらのディスカッションでは、*ホーム*ページが*情報*ページに移動し、初期化された情報を*情報*ページに転送する必要があります。 情報*ページでは、* ユーザーから追加情報を取得し、その情報を*ホーム*ページに転送します。
 
-*ホーム*ページのパブリック メソッドとプロパティにアクセスできる簡単に、*情報*ページ、そのページをインスタンス化するようになります。 *情報*ページのパブリック メソッドとプロパティにアクセスできることも、*ホーム* ページが、これは複雑になるは、絶好のタイミングを選択します。 [ **DateTransfer1** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/DataTransfer1)このサンプルではその`OnDisappearing`をオーバーライドします。 1 つの欠点は、*情報*ページがの型を認識する必要があります、*ホーム*ページ。
+*ホーム*ページでは、そのページがインスタンス化されるとすぐに、[*情報*] ページのパブリックメソッドとプロパティに簡単にアクセスできます。 また、[*情報*] ページでは、*ホーム*ページのパブリックメソッドとプロパティにアクセスすることもできますが、そのためには適切な時間を選択するのが難しい場合があります。 [**DateTransfer1**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/DataTransfer1)サンプルでは、`OnDisappearing` オーバーライドでこれを行います。 欠点の1つは、*情報*ページが*ホーム*ページの種類を知る必要があることです。
 
 ### <a name="messagingcenter"></a>MessagingCenter
 
-Xamarin.Forms [ `MessagingCenter` ](xref:Xamarin.Forms.MessagingCenter)クラスには、互いに通信する 2 つのページの別の方法が用意されています。 メッセージは、テキスト文字列で識別され、任意のオブジェクトを含めることができます。
+Xamarin [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter)クラスは、2つのページが互いに通信するための別の方法を提供します。 メッセージは、テキスト文字列で識別され、任意のオブジェクトを含めることができます。
 
-特定の種類からメッセージを受信しようとしているプログラムがサブスクライブする必要がありますを使用して[ `MessagingCenter.Subscribe` ](xref:Xamarin.Forms.MessagingCenter.Subscribe*)コールバック関数を指定します。 後で呼び出すことによってアンサブスク ライブできます[ `MessagingCenter.Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*)します。 コールバック関数を経由して送信する指定の名前を持つ指定した型から送信されたメッセージの受信、 [ `Send` ](xref:Xamarin.Forms.MessagingCenter.Send*)メソッド。
+特定の型からメッセージを受信するプログラムでは、 [`MessagingCenter.Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*)を使用してメッセージをサブスクライブし、コールバック関数を指定する必要があります。 後で[`MessagingCenter.Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*)を呼び出すことによって、サブスクライブを解除できます。 コールバック関数は、 [`Send`](xref:Xamarin.Forms.MessagingCenter.Send*)メソッドを介して送信された指定された名前を使用して、指定された型から送信されるすべてのメッセージを受信します。
 
-[ **DateTransfer2** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/DataTransfer2)プログラムは、メッセージング center を使用してデータを転送する方法を示しますが、もう一度このことが必要、*情報*ページ、の型を認識する*ホーム*ページ。
+[**DateTransfer2**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/DataTransfer2)プログラムでは、メッセージングセンターを使用してデータを転送する方法を示していますが、この場合も、*ホーム*ページの種類が*情報*ページで認識されている必要があります。
 
-### <a name="events"></a>イベント
+### <a name="events"></a>events
 
-イベントは、そのクラスの型を知らなくても、別のクラスに情報を送信する 1 つのクラスの伝統的なアプローチです。 [ **DateTransfer3** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/DataTransfer3)サンプル、*情報*クラスについては、準備ができたら、起動するイベントを定義します。 ただし、便利な場所はありません、*ホーム*イベント ハンドラーをデタッチするページ。
+イベントは、そのクラスの型を知らなくても、別のクラスに情報を送信する 1 つのクラスの伝統的なアプローチです。 [**DateTransfer3**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/DataTransfer3)サンプルでは、 *info*クラスは、情報の準備が整ったときに発生するイベントを定義します。 ただし、*ホーム*ページでイベントハンドラーをデタッチするのに便利な場所はありません。
 
 ### <a name="the-app-class-intermediary"></a>App クラスの中継ぎ局
 
-[ **DateTransfer4** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/DataTransfer4)サンプルで定義されたプロパティにアクセスする方法を示しています、`App`両方によってクラス、*ホーム*ページと*情報*ページ。 これは優れたソリューションですが、次のセクションでは、もっと優れたについて説明します。
+[**DateTransfer4**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/DataTransfer4)サンプルでは、*ホーム*ページと*情報*ページの両方で `App` クラスで定義されているプロパティにアクセスする方法を示します。 これは優れたソリューションですが、次のセクションでは、もっと優れたについて説明します。
 
 ### <a name="switching-to-a-viewmodel"></a>ViewModel に切り替える
 
-情報を ViewModel を使用して、*ホーム*ページと*情報*情報クラスのインスタンスを共有するページ。 これは、方法については、 [ **DateTransfer5** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/DataTransfer5)サンプル。
+情報にビューモデルを使用すると、*ホーム*ページと*情報ページで*information クラスのインスタンスを共有できるようになります。 これは、 [**DateTransfer5**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/DataTransfer5)サンプルに示されています。
 
 ### <a name="saving-and-restoring-page-state"></a>保存とページの状態の復元
 
-`App`クラス中継ぎ局または ViewModel アプローチが最も適しているプログラムは、スリープ状態になる場合、アプリケーションで情報を保存する必要があります中に、*情報*ページがアクティブです。 [ **DateTransfer6** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/DataTransfer6)のサンプルで例示します。
+`App` クラスの中継点またはビューモデルのアプローチは、*情報*ページがアクティブになっている間にプログラムがスリープ状態になった場合に、アプリケーションで情報を保存する必要がある場合に最適です。 [**DateTransfer6**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/DataTransfer6)サンプルでは、これを示します。
 
 ## <a name="saving-and-restoring-the-navigation-stack"></a>保存と復元、ナビゲーション スタック
 
 一般的なケースでは、スリープ状態になるマルチページ プログラムする必要がありますが復旧し次第、同じページに移動します。 つまり、このようなプログラムがナビゲーション スタックの内容を保存する必要があります。 このセクションでは、この目的で設計されたクラスでは、このプロセスを自動化する方法を示します。 このクラスは、個々 のページを保存し、そのページの状態を復元できるようにも呼び出します。
 
-[ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)ライブラリという名前のインターフェイスを定義する[ `IPersistantPage` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/IPersistentPage.cs)クラスは、保存し、復元、内の項目を実装できます`Properties`ディクショナリ。
+[**Xamarin. ツールキット**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)ライブラリでは、クラスが `Properties` 辞書の項目を保存および復元するために実装できる[`IPersistantPage`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/IPersistentPage.cs)という名前のインターフェイスが定義されています。
 
-[ `MultiPageRestorableApp` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MultiPageRestorableApp.cs)クラス、 **Xamarin.FormsBook.Toolkit**から派生したライブラリ`Application`します。 導き、`App`クラス`MultiPageRestorableApp`一部ハウスキーピングを実行します。
+[`MultiPageRestorableApp`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MultiPageRestorableApp.cs)クラスは、`Application`から派生してい**ます。** その後、`MultiPageRestorableApp` から `App` クラスを派生させ、いくつかのハウスキーピングを実行できます。
 
-[ **StackRestoreDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/StackRestoreDemo)の使用方法を示します`MultiPageRestorableApp`します。
+[**Stackrestoredemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/StackRestoreDemo)は、`MultiPageRestorableApp`の使用方法を示しています。
 
 ### <a name="something-like-a-real-life-app"></a>以下のような実際のアプリ
 
-[ **NoteTaker** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/NoteTaker)サンプルも使用`MultiPageRestorableApp`入力と編集のノートに保存されていることができ、`Properties`ディクショナリ。
+また[ **、この例で**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24/NoteTaker)は、`MultiPageRestorableApp` を利用し、`Properties` 辞書に保存されているメモを入力および編集することもできます。
 
 ## <a name="related-links"></a>関連リンク
 
-- [第 24 章フル テキスト (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch24-Apr2016.pdf)
-- [第 24 章のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24)
+- [第24章フルテキスト (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch24-Apr2016.pdf)
+- [第24章のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24)
 - [階層ナビゲーション](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md)
 - [モーダル ページ](~/xamarin-forms/app-fundamentals/navigation/modal.md)

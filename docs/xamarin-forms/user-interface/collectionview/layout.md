@@ -1,18 +1,18 @@
 ---
 title: CollectionView レイアウト
-description: 既定では、CollectionView は項目を縦に並べて表示します。 ただし、縦と横のリストおよびグリッドを指定することもできます。
+description: 既定では、CollectionView は垂直方向のリストでその項目を表示しますが、 垂直および水平方向のリストとグリッドを指定することができます。
 ms.prod: xamarin
 ms.assetid: 5FE78207-1BD6-4706-91EF-B13932321FC9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/22/2019
-ms.openlocfilehash: 901ea8a3b00a129d39e824e1ab0b053c8d5c743c
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.openlocfilehash: 6c2b3d8bad621db3110fe25041125c5694f21180
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72696816"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77130989"
 ---
 # <a name="xamarinforms-collectionview-layout"></a>CollectionView レイアウト
 
@@ -21,18 +21,18 @@ ms.locfileid: "72696816"
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)は、レイアウトを制御する次のプロパティを定義します。
 
 - [`IItemsLayout`](xref:Xamarin.Forms.IItemsLayout)型の[`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)は、使用するレイアウトを指定します。
-- [`ItemSizingStrategy`](xref:Xamarin.Forms.ItemSizingStrategy)型の[`ItemSizingStrategy`](xref:Xamarin.Forms.ItemsView.ItemSizingStrategy)は、使用する項目メジャーの方法を指定します。
+- [`ItemSizingStrategy`](xref:Xamarin.Forms.ItemSizingStrategy)型の[`ItemSizingStrategy`](xref:Xamarin.Forms.StructuredItemsView.ItemSizingStrategy)は、使用する項目メジャーの方法を指定します。
 
 これらのプロパティは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)のオブジェクトによってサポートされています。これは、プロパティをデータバインディングのターゲットにできることを意味します。
 
-既定では、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)の項目は縦の一覧に表示されます。 ただし、次のいずれかのレイアウトを使用できます。
+既定では、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)の項目は縦の一覧に表示されます。 以下のいずれかのレイアウトを使用することができます。
 
-- 縦方向の一覧–新しい項目が追加されたときに垂直方向に拡張される単一の列リスト。
-- 横方向の一覧–新しい項目が追加されたときに水平方向に拡張される単一行のリストです。
-- 垂直グリッド-新しいアイテムが追加されると、垂直方向に拡張される複数列のグリッドです。
-- 水平グリッド-新しいアイテムが追加されると、水平方向に拡張される複数行のグリッドです。
+- 垂直方向リスト – 新しい項目が追加されるにつれ、垂直方向に拡大する 1 つの列のリスト。
+- 水平方向リスト – 新しい項目が追加されるにつれ、水平方向に拡大する 1 つの行のリスト。
+- 垂直グリッド – 新しい項目が追加されるにつれ、垂直方向に拡大する複数列のグリッド。
+- 水平グリッド – 新しい項目が追加されるにつれ、水平方向に拡大する複数行のグリッド。
 
-これらのレイアウトを指定するには、 [`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)プロパティを[`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)クラスから派生したクラスに設定します。 このクラスは、次のプロパティを定義します。
+これらのレイアウトを指定するには、 [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout)プロパティを[`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)クラスから派生したクラスに設定します。 以下のようなプロパティを定義します。
 
 - [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)型の[`Orientation`](xref:Xamarin.Forms.ItemsLayout.Orientation)は、項目が追加されたときに[`CollectionView`](xref:Xamarin.Forms.CollectionView)を拡張する方向を指定します。
 - [`SnapPointsAlignment`](xref:Xamarin.Forms.SnapPointsAlignment)型の[`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment)は、スナップポイントを項目にどのように整列させるかを指定します。
@@ -40,27 +40,27 @@ ms.locfileid: "72696816"
 
 これらのプロパティは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)のオブジェクトによってサポートされています。これは、プロパティをデータバインディングのターゲットにできることを意味します。 スナップポイントの詳細については、「 [CollectionView スクロール](scrolling.md)ガイド」の「[スナップポイント](scrolling.md#snap-points)」を参照してください。
 
-[@No__t_1](xref:Xamarin.Forms.ItemsLayoutOrientation)列挙体は、次のメンバーを定義します。
+[`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)列挙体は、次のメンバーを定義します。
 
 - `Vertical` は、項目が追加されると、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)が垂直方向に拡張されることを示します。
 - `Horizontal` は、項目が追加されると、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)が横方向に拡張されることを示します。
 
-@No__t_0 クラスは[`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)クラスから継承され、各項目の周囲の空白を表す `double` 型の `ItemSpacing` プロパティを定義します。 このプロパティの既定値は0で、値は常に0以上である必要があります。 @No__t_0 クラスは、静的 `Vertical` と `Horizontal` メンバーも定義します。 これらのメンバーを使用すると、縦または横のリストをそれぞれ作成できます。 または、`LinearItemsLayout` オブジェクトを作成し、 [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)列挙型のメンバーを引数として指定することもできます。
+`LinearItemsLayout` クラスは[`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)クラスから継承され、各項目の周囲の空白を表す `double`型の `ItemSpacing` プロパティを定義します。 このプロパティの既定値は0で、値は常に0以上である必要があります。 `LinearItemsLayout` クラスは、静的 `Vertical` と `Horizontal` メンバーも定義します。 これらのメンバーを使って、垂直または水平方向のリストをそれぞれ作成することができます。 または、`LinearItemsLayout` オブジェクトを作成し、 [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)列挙型のメンバーを引数として指定することもできます。
 
-[@No__t_1](xref:Xamarin.Forms.GridItemsLayout)クラスは[`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)クラスから継承され、次のプロパティを定義します。
+[`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout)クラスは[`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)クラスから継承され、次のプロパティを定義します。
 
-- 各項目の周りの垂直方向の空白を表す、型 `double` の `VerticalItemSpacing`。 このプロパティの既定値は0で、値は常に0以上である必要があります。
-- 各項目の周りの水平方向の空白を表す、型 `double` の `HorizontalItemSpacing`。 このプロパティの既定値は0で、値は常に0以上である必要があります。
-- グリッドに表示する列または行の数を表す `int` 型の `Span`。 このプロパティの既定値は1で、その値は常に1以上である必要があります。
+- 各項目の周りの垂直方向の空白を表す、型 `double`の `VerticalItemSpacing`。 このプロパティの既定値は0で、値は常に0以上である必要があります。
+- 各項目の周りの水平方向の空白を表す、型 `double`の `HorizontalItemSpacing`。 このプロパティの既定値は0で、値は常に0以上である必要があります。
+- グリッドに表示する列または行の数を表す `int`型の `Span`。 このプロパティの既定値は1で、その値は常に1以上である必要があります。
 
 これらのプロパティは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)のオブジェクトによってサポートされています。これは、プロパティをデータバインディングのターゲットにできることを意味します。
 
 > [!NOTE]
 > [`CollectionView`](xref:Xamarin.Forms.CollectionView)は、ネイティブレイアウトエンジンを使用してレイアウトを実行します。
 
-## <a name="vertical-list"></a>縦方向の一覧
+## <a name="vertical-list"></a>垂直方向リスト
 
-既定では、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)によって項目が縦の一覧レイアウトで表示されます。 このため、このレイアウトを使用するように[`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)プロパティを設定する必要はありません。
+既定では、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)によって項目が縦の一覧レイアウトで表示されます。 このため、このレイアウトを使用するように[`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout)プロパティを設定する必要はありません。
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
@@ -94,7 +94,7 @@ ms.locfileid: "72696816"
 </CollectionView>
 ```
 
-ただし、完全を期すために、 [`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)プロパティを `VerticalList` に設定して、項目を縦に並べた一覧に表示するように[`CollectionView`](xref:Xamarin.Forms.CollectionView)を設定できます。
+ただし、完全を期すために、 [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout)プロパティを `VerticalList`に設定して、項目を縦に並べた一覧に表示するように[`CollectionView`](xref:Xamarin.Forms.CollectionView)を設定できます。
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}"
@@ -103,7 +103,7 @@ ms.locfileid: "72696816"
 </CollectionView>
 ```
 
-または、 [`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)プロパティを `LinearItemsLayout` オブジェクトに設定して、`Vertical` [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)列挙メンバーを `Orientation` プロパティ値として指定することでも実現できます。
+または、 [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout)プロパティを `LinearItemsLayout` オブジェクトに設定して、`Vertical` [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)列挙メンバーを `Orientation` プロパティ値として指定することでも実現できます。
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
@@ -114,7 +114,7 @@ ms.locfileid: "72696816"
 </CollectionView>
 ```
 
-これに相当する C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -124,13 +124,13 @@ CollectionView collectionView = new CollectionView
 };
 ```
 
-この結果、1つの列リストが作成されます。新しい項目が追加されると、垂直方向に拡張されます。
+これにより 1 列のリストが生成され、そのリストは新しい項目が追加されると垂直に拡大します。
 
 [![IOS と Android の CollectionView 縦のリストレイアウトのスクリーンショット](layout-images/vertical-list.png "CollectionView 縦のリストレイアウト")](layout-images/vertical-list-large.png#lightbox "CollectionView 縦のリストレイアウト")
 
-## <a name="horizontal-list"></a>横方向の一覧
+## <a name="horizontal-list"></a>水平方向リスト
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)は、 [`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)プロパティを `HorizontalList` に設定することにより、項目を横方向の一覧に表示できます。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)は、 [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout)プロパティを `HorizontalList`に設定することにより、項目を横方向の一覧に表示できます。
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}"
@@ -167,7 +167,7 @@ CollectionView collectionView = new CollectionView
 </CollectionView>
 ```
 
-また、このレイアウトを実現するには、 [`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)プロパティを `LinearItemsLayout` オブジェクトに設定し、`Horizontal` [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)列挙メンバーを `Orientation` プロパティ値として指定します。
+また、このレイアウトを実現するには、 [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout)プロパティを `LinearItemsLayout` オブジェクトに設定し、`Horizontal` [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)列挙メンバーを `Orientation` プロパティ値として指定します。
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
@@ -178,7 +178,7 @@ CollectionView collectionView = new CollectionView
 </CollectionView>
 ```
 
-これに相当する C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -188,13 +188,13 @@ CollectionView collectionView = new CollectionView
 };
 ```
 
-これにより、新しい項目が追加されたときに水平方向に拡張される1行のリストが生成されます。
+これにより 1 行のリストが生成され、新しい項目が追加されると、水平方向に拡大します。
 
 [![IOS と Android での CollectionView 横方向リストレイアウトのスクリーンショット](layout-images/horizontal-list.png "CollectionView 横方向リストレイアウト")](layout-images/horizontal-list-large.png#lightbox "CollectionView 横方向リストレイアウト")
 
 ## <a name="vertical-grid"></a>垂直グリッド
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)は、 [`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)プロパティを[`Orientation`](xref:Xamarin.Forms.ItemsLayout.Orientation)プロパティが `Vertical` に設定されている[`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout)オブジェクトに設定することにより、項目を垂直グリッドに表示できます。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)は、 [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout)プロパティを[`Orientation`](xref:Xamarin.Forms.ItemsLayout.Orientation)プロパティが `Vertical`に設定されている[`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout)オブジェクトに設定することにより、項目を垂直グリッドに表示できます。
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
@@ -234,7 +234,7 @@ CollectionView collectionView = new CollectionView
 </CollectionView>
 ```
 
-これに相当する C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -244,13 +244,13 @@ CollectionView collectionView = new CollectionView
 };
 ```
 
-既定では、垂直[`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout)によって1つの列に項目が表示されます。 ただし、この例では、`GridItemsLayout.Span` プロパティを2に設定しています。 これにより、新しい項目が追加されたときに垂直方向に拡大する2列のグリッドが生成されます。
+既定では、垂直[`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout)によって1つの列に項目が表示されます。 ただし、この例では、`GridItemsLayout.Span` プロパティを2に設定しています。 これによって、2 列のグリッドになり、新しい項目が追加されると、垂直方向に拡大します。
 
 [![IOS と Android の CollectionView 垂直グリッドレイアウトのスクリーンショット](layout-images/vertical-grid.png "CollectionView 縦グリッドレイアウト")](layout-images/vertical-grid-large.png#lightbox "CollectionView 縦グリッドレイアウト")
 
 ## <a name="horizontal-grid"></a>水平グリッド
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)は、 [`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)プロパティを[`Orientation`](xref:Xamarin.Forms.ItemsLayout.Orientation)プロパティが `Horizontal` に設定されている[`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout)オブジェクトに設定することにより、項目を水平グリッドに表示できます。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)は、 [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout)プロパティを[`Orientation`](xref:Xamarin.Forms.ItemsLayout.Orientation)プロパティが `Horizontal`に設定されている[`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout)オブジェクトに設定することにより、項目を水平グリッドに表示できます。
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
@@ -290,7 +290,7 @@ CollectionView collectionView = new CollectionView
 </CollectionView>
 ```
 
-これに相当する C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -300,7 +300,7 @@ CollectionView collectionView = new CollectionView
 };
 ```
 
-既定では、水平[`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout)によって1つの行に項目が表示されます。 ただし、この例では、`GridItemsLayout.Span` プロパティを4に設定しています。 これにより、新しい項目が追加されたときに水平方向に拡大する4行のグリッドが生成されます。
+既定では、水平[`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout)によって1つの行に項目が表示されます。 ただし、この例では、`GridItemsLayout.Span` プロパティを4に設定しています。 これによって 4 行のグリッドになり、新しい項目が追加されると水平方向に拡大します。
 
 [![IOS と Android の CollectionView 水平グリッドレイアウトのスクリーンショット](layout-images/horizontal-grid.png "CollectionView 水平グリッドレイアウト")](layout-images/horizontal-grid-large.png#lightbox "CollectionView 水平グリッドレイアウト")
 
@@ -310,10 +310,10 @@ CollectionView collectionView = new CollectionView
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)は、ヘッダーとフッターを指定するための次のプロパティを定義します。
 
-- `object` 型の `Header` は、リストの先頭に表示される文字列、バインド、またはビューを指定します。
-- [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)型の `HeaderTemplate` は、`Header` の書式設定に使用する `DataTemplate` を指定します。
-- `object` 型の `Footer` は、リストの末尾に表示される文字列、バインド、またはビューを指定します。
-- [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)型の `FooterTemplate` は、`Footer` の書式設定に使用する `DataTemplate` を指定します。
+- `object`型の `Header`は、リストの先頭に表示される文字列、バインド、またはビューを指定します。
+- [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)型の `HeaderTemplate`は、`Header`の書式設定に使用する `DataTemplate` を指定します。
+- `object`型の `Footer`は、リストの末尾に表示される文字列、バインド、またはビューを指定します。
+- [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)型の `FooterTemplate`は、`Footer`の書式設定に使用する `DataTemplate` を指定します。
 
 これらのプロパティは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)のオブジェクトによってサポートされています。これは、プロパティをデータバインディングのターゲットにできることを意味します。
 
@@ -331,7 +331,7 @@ CollectionView collectionView = new CollectionView
 </CollectionView>
 ```
 
-これに相当する C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -348,7 +348,7 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 
 ### <a name="display-views-in-the-header-and-footer"></a>ヘッダーとフッターにビューを表示する
 
-@No__t_0 プロパティと `Footer` プロパティはそれぞれ、ビューに設定できます。 1つのビュー、または複数の子ビューを含むビューを指定できます。 次の例は、 [`Label`](xref:Xamarin.Forms.Label)オブジェクトを含む[`StackLayout`](xref:Xamarin.Forms.StackLayout)オブジェクトにそれぞれ設定されている `Header` と `Footer` プロパティを示しています。
+`Header` プロパティと `Footer` プロパティはそれぞれ、ビューに設定できます。 1つのビュー、または複数の子ビューを含むビューを指定できます。 次の例は、 [`Label`](xref:Xamarin.Forms.Label)オブジェクトを含む[`StackLayout`](xref:Xamarin.Forms.StackLayout)オブジェクトにそれぞれ設定されている `Header` と `Footer` プロパティを示しています。
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
@@ -372,7 +372,7 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 </CollectionView>
 ```
 
-これに相当する C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -401,7 +401,7 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 
 ### <a name="display-a-templated-header-and-footer"></a>テンプレート化されたヘッダーとフッターを表示する
 
-@No__t_0 プロパティと `FooterTemplate` プロパティは、ヘッダーとフッターの書式設定に使用される[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)オブジェクトに設定できます。 このシナリオでは、次の例に示すように、`Header` プロパティと `Footer` プロパティを、適用するテンプレートの現在のソースにバインドする必要があります。
+`HeaderTemplate` プロパティと `FooterTemplate` プロパティは、ヘッダーとフッターの書式設定に使用される[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)オブジェクトに設定できます。 このシナリオでは、次の例に示すように、`Header` プロパティと `Footer` プロパティを、適用するテンプレートの現在のソースにバインドする必要があります。
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}"
@@ -431,7 +431,7 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 </CollectionView>
 ```
 
-これに相当する C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -456,9 +456,9 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 
 ## <a name="item-spacing"></a>項目の間隔
 
-既定では、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)内の各項目には、その周囲に空の領域がありません。 この動作は、`CollectionView` によって使用される項目のレイアウトのプロパティを設定することによって変更できます。
+既定では、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)内の各項目には、その周囲に空の領域がありません。 この動作は、`CollectionView`によって使用される項目のレイアウトのプロパティを設定することによって変更できます。
 
-[@No__t_1](xref:Xamarin.Forms.CollectionView)が[`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)プロパティを `LinearItemsLayout` オブジェクトに設定する場合、`LinearItemsLayout.ItemSpacing` プロパティは、各項目の周囲の空白を表す `double` 値に設定できます。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)が[`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout)プロパティを `LinearItemsLayout` オブジェクトに設定する場合、`LinearItemsLayout.ItemSpacing` プロパティは、各項目の周囲の空白を表す `double` 値に設定できます。
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
@@ -471,9 +471,9 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
 
 > [!NOTE]
-> @No__t_0 プロパティには検証コールバックセットがあります。これにより、プロパティの値が常に0以上になるようにします。
+> `LinearItemsLayout.ItemSpacing` プロパティには検証コールバックセットがあります。これにより、プロパティの値が常に0以上になるようにします。
 
-これに相当する C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -490,7 +490,7 @@ CollectionView collectionView = new CollectionView
 
 [![IOS と Android での項目の間隔を含む CollectionView のスクリーンショット](layout-images/vertical-list-spacing.png "CollectionView item の間隔")](layout-images/vertical-list-spacing-large.png#lightbox "CollectionView item の間隔")
 
-[@No__t_1](xref:Xamarin.Forms.CollectionView)によって[`ItemsLayout`](xref:Xamarin.Forms.ItemsView.ItemsLayout)プロパティが[`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout)オブジェクトに設定されている場合、`GridItemsLayout.VerticalItemSpacing` および `GridItemsLayout.HorizontalItemSpacing` のプロパティは、各項目の垂直方向および水平方向の空白を表す `double` 値に設定できます。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)によって[`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout)プロパティが[`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout)オブジェクトに設定されている場合、`GridItemsLayout.VerticalItemSpacing` および `GridItemsLayout.HorizontalItemSpacing` のプロパティは、各項目の垂直方向および水平方向の空白を表す `double` 値に設定できます。
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}">
@@ -505,9 +505,9 @@ CollectionView collectionView = new CollectionView
 ```
 
 > [!NOTE]
-> @No__t_0 プロパティと `GridItemsLayout.HorizontalItemSpacing` プロパティには検証コールバックが設定されており、プロパティの値が常に0以上であることを確認します。
+> `GridItemsLayout.VerticalItemSpacing` プロパティと `GridItemsLayout.HorizontalItemSpacing` プロパティには検証コールバックが設定されており、プロパティの値が常に0以上であることを確認します。
 
-これに相当する C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -527,15 +527,15 @@ CollectionView collectionView = new CollectionView
 
 ## <a name="item-sizing"></a>項目のサイズ変更
 
-既定では、 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)内の UI 要素が固定サイズを指定していない場合、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)内の各項目は個別に測定およびサイズ設定されます。 この動作は変更可能ですが、 [`CollectionView.ItemSizingStrategy`](xref:Xamarin.Forms.ItemsView.ItemSizingStrategy)のプロパティ値によって指定されます。 このプロパティ値は、 [`ItemSizingStrategy`](xref:Xamarin.Forms.ItemSizingStrategy)列挙型のメンバーのいずれかに設定できます。
+既定では、 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)内の UI 要素が固定サイズを指定していない場合、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)内の各項目は個別に測定およびサイズ設定されます。 この動作は変更可能ですが、 [`CollectionView.ItemSizingStrategy`](xref:Xamarin.Forms.StructuredItemsView.ItemSizingStrategy)のプロパティ値によって指定されます。 このプロパティ値は、 [`ItemSizingStrategy`](xref:Xamarin.Forms.ItemSizingStrategy)列挙型のメンバーのいずれかに設定できます。
 
-- `MeasureAllItems` –各項目は個別に測定されます。 これは既定値です。
+- `MeasureAllItems` –各項目は個別に測定されます。 これが既定値です。
 - `MeasureFirstItem` –最初の項目のみが測定され、後続のすべての項目には最初の項目と同じサイズが割り当てられます。
 
 > [!IMPORTANT]
-> @No__t_0 のサイズ調整戦略では、項目のサイズがすべての項目にわたって一様であることを意図している場合に、パフォーマンスが向上します。
+> `MeasureFirstItem` のサイズ調整戦略では、項目のサイズがすべての項目にわたって一様であることを意図している場合に、パフォーマンスが向上します。
 
-次のコード例は、 [`ItemSizingStrategy`](xref:Xamarin.Forms.ItemsView.ItemSizingStrategy)プロパティの設定を示しています。
+次のコード例は、 [`ItemSizingStrategy`](xref:Xamarin.Forms.StructuredItemsView.ItemSizingStrategy)プロパティの設定を示しています。
 
 ```xaml
 <CollectionView ...
@@ -544,7 +544,7 @@ CollectionView collectionView = new CollectionView
 </CollectionView>
 ```
 
-これに相当する C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -556,7 +556,7 @@ CollectionView collectionView = new CollectionView
 
 ## <a name="dynamic-resizing-of-items"></a>項目の動的なサイズ変更
 
-[@No__t_1](xref:Xamarin.Forms.CollectionView)内の項目は、 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)内の要素のレイアウトに関連するプロパティを変更することによって、実行時に動的にサイズを変更できます。 たとえば、次のコード例では、 [`Image`](xref:Xamarin.Forms.Image)オブジェクトの[`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest)と[`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest)プロパティを変更します。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)内の項目は、 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)内の要素のレイアウトに関連するプロパティを変更することによって、実行時に動的にサイズを変更できます。 たとえば、次のコード例では、 [`Image`](xref:Xamarin.Forms.Image)オブジェクトの[`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest)と[`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest)プロパティを変更します。
 
 ```csharp
 void OnImageTapped(object sender, EventArgs e)
@@ -566,7 +566,7 @@ void OnImageTapped(object sender, EventArgs e)
 }
 ```
 
-@No__t_0 イベントハンドラーは、タップされる[`Image`](xref:Xamarin.Forms.Image)オブジェクトに応答して実行され、より簡単に表示されるようにイメージのサイズを変更します。
+`OnImageTapped` イベントハンドラーは、タップされる[`Image`](xref:Xamarin.Forms.Image)オブジェクトに応答して実行され、より簡単に表示されるようにイメージのサイズを変更します。
 
 [![IOS と Android での動的な項目サイズ設定を使用した CollectionView のスクリーンショット](layout-images/runtime-resizing.png "CollectionView 動的な項目のサイズ変更")](layout-images/runtime-resizing-large.png#lightbox "CollectionView 動的な項目のサイズ変更")
 
@@ -588,7 +588,7 @@ void OnImageTapped(object sender, EventArgs e)
 </ContentPage>
 ```
 
-親を持つ要素の既定の[`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)は[`MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent)です。 したがって、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)は[`StackLayout`](xref:Xamarin.Forms.StackLayout)から `FlowDirection` プロパティ値を継承し、さらに、 [`ContentPage`](xref:Xamarin.Forms.ContentPage)から `FlowDirection` プロパティ値を継承します。 この結果、次のスクリーンショットに示されている右から左のレイアウトになります。
+親を持つ要素の既定の[`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)は[`MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent)です。 したがって、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)は[`StackLayout`](xref:Xamarin.Forms.StackLayout)から `FlowDirection` プロパティ値を継承し、さらに、 [`ContentPage`](xref:Xamarin.Forms.ContentPage)から `FlowDirection` プロパティ値を継承します。 この結果、次のスクリーン ショットに示すように、右から左のレイアウトになります。
 
 [![IOS と Android での CollectionView 右から左方向のリストレイアウトのスクリーンショット](layout-images/vertical-list-rtl.png "CollectionView 右から左方向のリストレイアウト")](layout-images/vertical-list-rtl-large.png#lightbox "CollectionView 右から左方向のリストレイアウト")
 

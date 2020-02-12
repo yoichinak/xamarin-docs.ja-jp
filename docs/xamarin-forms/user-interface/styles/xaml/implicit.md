@@ -7,24 +7,24 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/30/2019
-ms.openlocfilehash: cdbfaafdac8f965adaf4b840b568154e40ef7e10
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.openlocfilehash: d58ba81596cccf470b7246514d71f35968599880
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228184"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77131062"
 ---
 # <a name="implicit-styles-in-xamarinforms"></a>Xamarin.Forms での暗黙的なスタイル
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
-_暗黙的なスタイルは、いずれかのスタイルを参照するには、各コントロールを必要とせずに同じの TargetType のすべてのコントロールによって使用されます。_
+_暗黙的なスタイルとは、同じ TargetType のすべてのコントロールで使用されるスタイルで、各コントロールがスタイルを参照する必要がありません。_
 
 ## <a name="create-an-implicit-style-in-xaml"></a>XAML で暗黙的なスタイルを作成する
 
-宣言する、 [ `Style` ](xref:Xamarin.Forms.Style)ページ レベル、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)ページと、1 つ以上を追加する必要があります`Style`に宣言を含めることができます、`ResourceDictionary`します。 A`Style`される*暗黙的な*されませんを指定して、`x:Key`属性。 一致するビジュアル要素に適用されるスタイル、`TargetType`正確から派生した要素へ、`TargetType`値。
+ページレベルで[`Style`](xref:Xamarin.Forms.Style)を宣言するには、 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)をページに追加する必要があります。その後、1つまたは複数の `Style` 宣言を `ResourceDictionary`に含めることができます。 `Style` は、`x:Key` 属性を指定しないことによって*暗黙的*に行われます。 次に、`TargetType` に一致するビジュアル要素にスタイルが適用されますが、`TargetType` 値から派生した要素には適用されません。
 
-次のコード例は、*暗黙的な*スタイルがページの XAML で宣言された`ResourceDictionary`に、ページの適用と[ `Entry` ](xref:Xamarin.Forms.Entry)インスタンス。
+次のコード例は、ページの `ResourceDictionary`の XAML で宣言され、ページの[`Entry`](xref:Xamarin.Forms.Entry)インスタンスに適用される*暗黙的*なスタイルを示しています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Styles;assembly=Styles" x:Class="Styles.ImplicitStylesPage" Title="Implicit" IconImageSource="xaml.png">
@@ -51,15 +51,15 @@ _暗黙的なスタイルは、いずれかのスタイルを参照するには�
 </ContentPage>
 ```
 
-[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) 、1 つを定義します。*暗黙的な*をページの適用されるスタイル[ `Entry` ](xref:Xamarin.Forms.Entry)インスタンス。 `Style`も他の外観のオプションの設定中に、黄色の背景に青色のテキストを表示するために使用します。 `Style`をページの追加は[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)を指定せず、`x:Key`属性。 そのため、`Style`すべてに適用される、`Entry`に合うように暗黙的にインスタンス、 [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)のプロパティ、`Style`正確にします。 ただし、`Style`に適用されない、`CustomEntry`インスタンスの場合、サブクラス化された`Entry`します。 次のスクリーン ショットに示すように外観が発生します。
+[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)は、ページの[`Entry`](xref:Xamarin.Forms.Entry)インスタンスに適用される単一の*暗黙的*なスタイルを定義します。 `Style` は、青いテキストを黄色の背景に表示するために使用されます。また、その他の外観オプションも設定します。 `Style` は、`x:Key` 属性を指定せずにページの[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)に追加されます。 したがって、`Style` は `Style` の[`TargetType`](xref:Xamarin.Forms.Style.TargetType)プロパティと完全に一致するため、すべての `Entry` インスタンスに暗黙的に適用されます。 ただし、`Style` は、サブクラス化された `Entry`である `CustomEntry` インスタンスには適用されません。 これで、次のスクリーンショットのような結果になります。
 
-[![暗黙的なスタイルの例](implicit-images/implicit-styles.png)](implicit-images/implicit-styles-large.png#lightbox)
+[![の暗黙的なスタイルの例](implicit-images/implicit-styles.png)](implicit-images/implicit-styles-large.png#lightbox)
 
-さらに、4 番目[ `Entry` ](xref:Xamarin.Forms.Entry)オーバーライド、 [ `BackgroundColor` ](xref:Xamarin.Forms.VisualElement.BackgroundColor)と[ `TextColor` ](xref:Xamarin.Forms.Entry.TextColor)異なるする暗黙的なスタイルのプロパティ`Color`値。
+また、4番目の[`Entry`](xref:Xamarin.Forms.Entry)は、暗黙的なスタイルの[`BackgroundColor`](xref:Xamarin.Forms.VisualElement.BackgroundColor)と[`TextColor`](xref:Xamarin.Forms.InputView.TextColor)プロパティを異なる `Color` 値にオーバーライドします。
 
 ### <a name="create-an-implicit-style-at-the-control-level"></a>コントロールレベルでの暗黙的なスタイルの作成
 
-作成するだけでなく*暗黙的な*ページ レベルでスタイルを作成することも制御レベルでは、次のコード例に示すようにします。
+次のコード例に示すように、ページレベルで*暗黙的*なスタイルを作成するだけでなく、コントロールレベルで作成することもできます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Styles;assembly=Styles" x:Class="Styles.ImplicitStylesPage" Title="Implicit" IconImageSource="xaml.png">
@@ -80,13 +80,13 @@ _暗黙的なスタイルは、いずれかのスタイルを参照するには�
 </ContentPage>
 ```
 
-この例で、*暗黙的な* [ `Style` ](xref:Xamarin.Forms.Style)に割り当てられている、 [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources)のコレクション、 [ `StackLayout` ](xref:Xamarin.Forms.StackLayout)コントロール。 *暗黙的な*スタイル、コントロールとその子に適用できます。
+この例では、*暗黙的*な[`Style`](xref:Xamarin.Forms.Style)が[`StackLayout`](xref:Xamarin.Forms.StackLayout)コントロールの[`Resources`](xref:Xamarin.Forms.VisualElement.Resources)コレクションに割り当てられています。 その後、*暗黙的*なスタイルをコントロールとその子に適用できます。
 
-アプリケーションのスタイルを作成する方法について[ `ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)を参照してください[グローバル スタイル](~/xamarin-forms/user-interface/styles/application.md)します。
+アプリケーションの[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)でスタイルを作成する方法の詳細については、「[グローバルスタイル](~/xamarin-forms/user-interface/styles/application.md)」を参照してください。
 
 ## <a name="create-an-implicit-style-in-c35"></a>C での暗黙的なスタイルの作成&#35;
 
-[`Style`](xref:Xamarin.Forms.Style) ページのインスタンスを追加することができます[ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources)新しいを作成して C# でのコレクション[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)、追加してから、`Style`インスタンスを`ResourceDictionary`ように、次のコード例:
+次のコード例に示すように、新しい[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)をC#作成し、`Style` インスタンスを `ResourceDictionary`に追加することによって、のページの[`Resources`](xref:Xamarin.Forms.VisualElement.Resources)コレクションに[`Style`](xref:Xamarin.Forms.Style)インスタンスを追加できます。
 
 ```csharp
 public class ImplicitStylesPageCS : ContentPage
@@ -117,13 +117,13 @@ public class ImplicitStylesPageCS : ContentPage
 }
 ```
 
-コンストラクターは、1 つを定義します。*暗黙的な*をページの適用されるスタイル[ `Entry` ](xref:Xamarin.Forms.Entry)インスタンス。 `Style`も他の外観のオプションの設定中に、黄色の背景に青色のテキストを表示するために使用します。 `Style`をページの追加は[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)を指定せず、`key`文字列。 そのため、`Style`すべてに適用される、`Entry`に合うように暗黙的にインスタンス、 [ `TargetType` ](xref:Xamarin.Forms.Style.TargetType)のプロパティ、`Style`正確にします。 ただし、`Style`に適用されない、`CustomEntry`インスタンスの場合、サブクラス化された`Entry`します。
+コンストラクターは、ページの[`Entry`](xref:Xamarin.Forms.Entry)インスタンスに適用される単一の*暗黙的*なスタイルを定義します。 `Style` は、青いテキストを黄色の背景に表示するために使用されます。また、その他の外観オプションも設定します。 `Style` は、`key` 文字列を指定せずにページの[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)に追加されます。 したがって、`Style` は `Style` の[`TargetType`](xref:Xamarin.Forms.Style.TargetType)プロパティと完全に一致するため、すべての `Entry` インスタンスに暗黙的に適用されます。 ただし、`Style` は、サブクラス化された `Entry`である `CustomEntry` インスタンスには適用されません。
 
 ## <a name="apply-a-style-to-derived-types"></a>派生型へのスタイルの適用
 
-プロパティを使用すると、 [`TargetType`](xref:Xamarin.Forms.Style.TargetType)プロパティによって参照される基本型から派生したコントロールにスタイルを適用できます。 [`Style.ApplyToDerivedTypes`](xref:Xamarin.Forms.Style.ApplyToDerivedTypes) したがって、このプロパティを`true`に設定すると、型が`TargetType`プロパティで指定された基本型から派生していれば、1つのスタイルで複数の型を対象にすることができます。
+[`Style.ApplyToDerivedTypes`](xref:Xamarin.Forms.Style.ApplyToDerivedTypes)プロパティを使用すると、 [`TargetType`](xref:Xamarin.Forms.Style.TargetType)プロパティによって参照される基本型から派生したコントロールにスタイルを適用できます。 したがって、このプロパティを `true` に設定すると、型が `TargetType` プロパティで指定された基本型から派生していれば、1つのスタイルで複数の型を対象にすることができます。
 
-次の例は、インスタンスの[`Button`](xref:Xamarin.Forms.Button)背景色を赤に設定する暗黙的なスタイルを示しています。
+次の例は、 [`Button`](xref:Xamarin.Forms.Button)インスタンスの背景色を赤に設定する暗黙的なスタイルを示しています。
 
 ```xaml
 <Style TargetType="Button"
@@ -133,9 +133,9 @@ public class ImplicitStylesPageCS : ContentPage
 </Style>
 ```
 
-ページごとにこのスタイルを配置する[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)すべてに適用されていることになります[ `Button` ](xref:Xamarin.Forms.Button)インスタンスページで、またから派生したコントロールに`Button`します。 ただし、プロパティが[`ApplyToDerivedTypes`](xref:Xamarin.Forms.Style.ApplyToDerivedTypes)未設定のままである場合、スタイルはインスタンス`Button`にのみ適用されます。
+このスタイルをページレベルの[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)に配置すると、ページ上のすべての[`Button`](xref:Xamarin.Forms.Button)インスタンス、および `Button`から派生したコントロールにも適用されます。 ただし、 [`ApplyToDerivedTypes`](xref:Xamarin.Forms.Style.ApplyToDerivedTypes)プロパティが未設定のままになっている場合、スタイルは `Button` インスタンスにのみ適用されます。
 
-同等の C# コードに示します。
+同等の C# コードを次に示します。
 
 ```csharp
 var buttonStyle = new Style(typeof(Button))
@@ -157,8 +157,8 @@ Resources = new ResourceDictionary { buttonStyle };
 ## <a name="related-links"></a>関連リンク
 
 - [XAML マークアップ拡張](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [基本的なスタイル (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
-- [スタイル (サンプル) を使用します。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
+- [基本スタイル (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+- [スタイルの使用 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
-- [スタイル](xref:Xamarin.Forms.Style)
-- [Set アクセス操作子](xref:Xamarin.Forms.Setter)
+- [Style](xref:Xamarin.Forms.Style)
+- [メソッド](xref:Xamarin.Forms.Setter)

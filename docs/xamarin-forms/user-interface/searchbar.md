@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 11/04/2019
-ms.openlocfilehash: 8888f1615f250a908930cec9058a54bd6e7fedc2
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: a48a91b886cadcbe9dfa73a524b7bfa9fb2cf5fb
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75490078"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77130973"
 ---
 # <a name="xamarinforms-searchbar"></a>Xamarin. Forms SearchBar
 
@@ -31,12 +31,12 @@ Xamarin. Forms [`SearchBar`](xref:Xamarin.Forms.SearchBar)は、検索を開始�
 * [`FontSize`](xref:Xamarin.Forms.SearchBar.FontSize)には、`NamedSize` 列挙値、またはプラットフォーム間の特定のフォントサイズを表す `double` 値を指定できます。
 * [`HorizontalTextAlignment`](xref:Xamarin.Forms.SearchBar.HorizontalTextAlignment)は、クエリテキストの水平方向の配置を定義する `TextAlignment` 列挙値です。
 * `VerticalTextAlignment` は、クエリテキストの垂直方向の配置を定義する `TextAlignment` 列挙値です。
-* [`Placeholder`](xref:Xamarin.Forms.SearchBar.Placeholder)は、"検索..." などのプレースホルダーテキストを定義する `string` です。
-* [`PlaceholderColor`](xref:Xamarin.Forms.SearchBar.PlaceholderColor)は、プレースホルダーテキストの色を定義する `Color` です。
+* [`Placeholder`](xref:Xamarin.Forms.InputView.Placeholder)は、"検索..." などのプレースホルダーテキストを定義する `string` です。
+* [`PlaceholderColor`](xref:Xamarin.Forms.InputView.PlaceholderColor)は、プレースホルダーテキストの色を定義する `Color` です。
 * [`SearchCommand`](xref:Xamarin.Forms.SearchBar.SearchCommand)は、ユーザー操作 (指タップやクリックなど) を、ビューモデルで定義されているコマンドにバインドできるようにする `ICommand` です。
 * [`SearchCommandParameter`](xref:Xamarin.Forms.SearchBar.SearchCommandParameter)は、`SearchCommand`に渡す必要があるパラメーターを指定する `object` です。
-* [`Text`](xref:Xamarin.Forms.SearchBar.Text)は、`SearchBar`内のクエリテキストを含む `string` です。
-* [`TextColor`](xref:Xamarin.Forms.SearchBar.TextColor)は、クエリテキストの色を定義する `Color` です。
+* [`Text`](xref:Xamarin.Forms.InputView.Text)は、`SearchBar`内のクエリテキストを含む `string` です。
+* [`TextColor`](xref:Xamarin.Forms.InputView.TextColor)は、クエリテキストの色を定義する `Color` です。
 
 これらのプロパティは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)のオブジェクトによってサポートされています。つまり、`SearchBar` をカスタマイズして、データバインディングのターゲットにすることができます。 `SearchBar` でのフォントプロパティの指定は、他の[Xamarin. フォームテキストコントロール](~/xamarin-forms/user-interface/text/index.md)でのテキストのカスタマイズと一致します。 詳細については、「 [Xamarin. Forms のフォント](~/xamarin-forms/user-interface/text/fonts.md)」を参照してください。
 
@@ -94,7 +94,7 @@ SearchBar searchBar = new SearchBar
 `SearchBar` コントロールを使用して検索を実行するには、次のいずれかのイベントにイベントハンドラーをアタッチします。
 
 * [`SearchButtonPressed`](xref:Xamarin.Forms.SearchBar.SearchButtonPressed)は、ユーザーが [検索] ボタンをクリックするか enter キーを押すと呼び出されます。
-* [`TextChanged`](xref:Xamarin.Forms.SearchBar.TextChanged)は、[クエリ] ボックス内のテキストが変更されるたびに呼び出されます。
+* [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged)は、[クエリ] ボックス内のテキストが変更されるたびに呼び出されます。
 
 次の例は、XAML の `TextChanged` イベントにアタッチされたイベントハンドラーを示し、`ListView` を使用して検索結果を表示します。
 
