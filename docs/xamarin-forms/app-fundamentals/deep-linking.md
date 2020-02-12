@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/28/2018
-ms.openlocfilehash: ff5c7cb36305780d12b5fd69b7cbadec0eaef551
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: fcd8333a0623058fceb486183ddb995e85eaf18a
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771556"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940321"
 ---
 # <a name="application-indexing-and-deep-linking"></a>アプリケーション インデックス作成とディープ リンクの設定
 
@@ -29,7 +29,7 @@ Xamarin.Forms アプリケーション インデックス作成とディープ �
 
 サンプル アプリケーションは、次のスクリーン ショットに示すように、データがローカルの SQLite データベースに格納される Todo リスト アプリケーションの例です。
 
-![](deep-linking-images/screenshots.png "TodoList アプリケーション")
+![](deep-linking-images/screenshots.png "TodoList Application")
 
 ユーザーによって作成された各 `TodoItem` インスタンスにインデックスが付けられます。 これにより、プラットフォーム固有の検索を使用して、アプリケーションからインデックス付きのデータを特定できるようになります。 アプリケーションに関する検索結果の項目をユーザーがタップすると、そのアプリケーションが起動し、`TodoItemPage` に移動し、ディープ リンクから参照された `TodoItem` が表示されます。
 
@@ -79,6 +79,9 @@ AndroidAppLinks.Init(this);
 ```
 
 **google-services.json** をプロジェクトに追加 (および *GoogleServicesJson** ビルド アクションを設定) すると、ビルド プロセスによって、クライアント ID と API キーが抽出され、さらにこれらの資格情報が、生成されたマニフェスト ファイルに追加されます。
+
+> [!NOTE]
+> この記事では、多くの場合、アプリケーション リンクとディープ リンクという用語が同じ意味で使用されます。 しかし、Android に関しては、これらの用語は異なる意味を持ちます。 Android の場合、ディープ リンクとは、ユーザーがそのアプリで特定のアクティビティに直接移行できるようにするためのインテント フィルターのことです。 ディープ リンクをクリックすると、あいまいさ排除のためのダイアログが表示されることがあります。これにより、ユーザーはその URL を処理できる複数のアプリのいずれかを選択できます。 Android のアプリ リンクは、Web サイトの URL に基づくディープ リンクです。これは Web サイトに属することが検証済みです。 アプリ リンクをクリックすると、アプリがインストールされている場合はアプリが開き、あいまいさ排除のダイアログが開くことはありません。
 
 詳細については、Xamarin ブログでの「[Deep Link Content with Xamarin.Forms URL Navigation](https://blog.xamarin.com/deep-link-content-with-xamarin-forms-url-navigation/)」 (Xamarin.Forms URL ナビゲーションを使用したディープ リンク コンテンツ) を参照してください。
 
@@ -135,7 +138,7 @@ Application.Current.AppLinks.RegisterLink (appLink);
 
 インデックス作成のために [`AppLinkEntry`](xref:Xamarin.Forms.AppLinkEntry) インスタンスが登録されると、それを検索結果に表示できるようになります。 次のスクリーン ショットは、iOS プラットフォームでの検索結果に表示されているインデックス付きコンテンツの例です。
 
-![](deep-linking-images/ios-search.png "iOS での検索結果内のインデックス付きコンテンツ")
+![](deep-linking-images/ios-search.png "Indexed Content in Search Results on iOS")
 
 ## <a name="de-registering-indexed-content"></a>インデックス付きコンテンツの登録を解除する
 

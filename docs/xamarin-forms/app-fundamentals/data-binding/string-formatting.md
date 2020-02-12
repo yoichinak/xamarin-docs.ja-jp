@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: ba7148ecabf7f534a953fda3c3d3021abeaa034c
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: bdd28e1ce6d36a0a025ac43a709af2e38a313526
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771565"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940374"
 ---
 # <a name="xamarinforms-string-formatting"></a>Xamarin.Forms の文字列の書式設定
 
@@ -44,7 +44,7 @@ ms.locfileid: "70771565"
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
              x:Class="DataBindingDemos.StringFormattingPage"
              Title="String Formatting">
 
@@ -123,7 +123,7 @@ XAML ファイルの次のセクションは、`BindingContext` を静的な `Da
 
 実行中のプログラムを次に示します。
 
-[![String Formatting](string-formatting-images/stringformatting-small.png "String Formatting")](string-formatting-images/stringformatting-large.png#lightbox "String Formatting")
+[![String Formatting](string-formatting-images/stringformatting-small.png "文字列の形式設定")](string-formatting-images/stringformatting-large.png#lightbox "文字列の形式設定")
 
 ## <a name="viewmodels-and-string-formatting"></a>ViewModels と String Formatting
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 1ae7850951060f2e89a953ce554a0dbfa286c3a1
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: 28f48766dc62ac31fc357410eac27c33c9cae6d8
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75487992"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940689"
 ---
 # <a name="proguard"></a>ProGuard
 
@@ -37,7 +37,7 @@ ProGuard は、以下の手順を使って入力 APK を処理します。
 
 ## <a name="proguard-in-xamarinandroid"></a>Xamarin.Android での ProGuard
 
-Xamarin.Android ProGuard の構成では、APK は難読化されません。 実際、ProGuard で難読化を有効にすることはできません (カスタム構成ファイルを使用しても)。 したがって、Xamarin.Android の ProGuard は、**圧縮**ステップと**最適化**ステップのみを実行します。 
+Xamarin.Android ProGuard の構成では、APK は難読化されません。 それどころか、ProGuard を使用して難読化を有効にすることはできません (カスタム構成ファイルを使用しても)。 したがって、Xamarin.Android の ProGuard は、**圧縮**ステップと**最適化**ステップのみを実行します。 
 
 [![圧縮ステップと最適化ステップ](proguard-images/01-xa-chain-sml.png)](proguard-images/01-xa-chain.png#lightbox)
 

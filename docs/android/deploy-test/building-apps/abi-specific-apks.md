@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: b11f21b0d0932013c65ea9298ad9425747afdf79
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 0520439b89458b7f73a025cd8d6b2cf8fc41dac0
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028137"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940636"
 ---
 # <a name="building-abi-specific-apks"></a>ABI 固有の APK のビルド
 
@@ -95,7 +95,7 @@ ABI ごとに APK をビルドする場合、以下のサンプル コマンド 
 
 以下のリストで、各コマンド ライン パラメーターについて説明します。
 
-- `/t:Package` &ndash; デバッグ キーストアを使用して署名される Android APK を作成します。
+- `/t:Package` &ndash; デバッグ キーストアを使用して署名される Android APK を作成します
 
 - `/p:AndroidSupportedAbis=<TARGET_ABI>` &ndash; これはターゲットとなる ABI です。 `armeabi`、`armeabi-v7a`、`x86` のいずれかである必要があります。
 

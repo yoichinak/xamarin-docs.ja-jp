@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/20/2019
-ms.openlocfilehash: 3e63a580bbdb1c220d44b100725cdc8ce387b405
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.openlocfilehash: cb2ae3afe9db86d4db603d499ef0e75e7cbbf552
+ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72696520"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76940401"
 ---
 # <a name="xamarinforms-shell-introduction"></a>Xamarin.Forms シェルの概要
 
@@ -37,6 +37,8 @@ Xamarin.Forms シェルは、iOS および Android 上では完全に使用で�
 ```csharp
 global::Xamarin.Forms.Forms.SetFlags("Shell_UWP_Experimental");
 ```
+
+Xamarin.Forms ソリューションに UWP プロジェクトを追加する方法の詳細については、「[Windows プロジェクトのセットアップ](~/xamarin-forms/platform/windows/installation/index.md)」をご覧ください。
 
 ## <a name="shell-navigation-experience"></a>シェルのナビゲーション エクスペリエンス
 
