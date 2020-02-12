@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: c92a97b336e89214bbd95021ad8fb9a56f64cc8c
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.openlocfilehash: 90f3f9ff5ed29a1ae2c93e355fc15bc6550d78dd
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "67659847"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77135132"
 ---
 この演習では、`RestService` クラスを使用し、その後、[OpenWeatherMap](https://openweathermap.org/) Web API からデータを取得するためのユーザー インターフェイスを作成します。
 
@@ -67,7 +67,7 @@ ms.locfileid: "67659847"
     </ContentPage>
     ```
 
-    このコードでは、[`Grid`](xref:Xamarin.Forms.Grid) の中の [`Entry`](xref:Xamarin.Forms.Entry)、[`Button`](xref:Xamarin.Forms.Button)、および一連の [`Label`](xref:Xamarin.Forms.Label) インスタンスから構成される、ページのユーザー インターフェイスを宣言によって定義します。 `Entry` には、その [`Text`](xref:Xamarin.Forms.Entry.Text) プロパティを設定することで、事前に "Seattle" が入力されています。 `Button` ではその [`Clicked`](xref:Xamarin.Forms.Button.Clicked) イベントを、次の手順で作成される `OnButtonClicked` という名前のイベント ハンドラーに設定します。 `Label` インスタンスの半分には静的テキストが表示されており、残りのインスタンスは `WeatherData` プロパティにデータ バインディングされます。 実行時に、データ バインディングを使用する `Label` インスタンスでは、バインド式で使用するための `WeatherData` オブジェクトのそれぞれの [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) プロパティが参照されます。 データ バインディングの詳細については、「[Xamarin.Forms Data Binding](~/xamarin-forms/app-fundamentals/data-binding/index.md)」 (Xamarin.Forms のデータ バインディング) を参照してください。
+    このコードでは、[`Grid`](xref:Xamarin.Forms.Grid) の中の [`Entry`](xref:Xamarin.Forms.Entry)、[`Button`](xref:Xamarin.Forms.Button)、および一連の [`Label`](xref:Xamarin.Forms.Label) インスタンスから構成される、ページのユーザー インターフェイスを宣言によって定義します。 `Entry` には、その [`Text`](xref:Xamarin.Forms.InputView.Text) プロパティを設定することで、事前に "Seattle" が入力されています。 `Button` ではその [`Clicked`](xref:Xamarin.Forms.Button.Clicked) イベントを、次の手順で作成される `OnButtonClicked` という名前のイベント ハンドラーに設定します。 `Label` インスタンスの半分には静的テキストが表示されており、残りのインスタンスは `WeatherData` プロパティにデータ バインディングされます。 実行時に、データ バインディングを使用する `Label` インスタンスでは、バインド式で使用するための `WeatherData` オブジェクトのそれぞれの [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) プロパティが参照されます。 データ バインディングの詳細については、「[Xamarin.Forms Data Binding](~/xamarin-forms/app-fundamentals/data-binding/index.md)」 (Xamarin.Forms のデータ バインディング) を参照してください。
 
     また、[`Entry`](xref:Xamarin.Forms.Entry) には `x:Name` 属性で指定された名前があります。 これにより、分離コード ファイルは、割り当てられた名前を使用してオブジェクトにアクセスできます。
 
@@ -187,7 +187,7 @@ ms.locfileid: "67659847"
     </ContentPage>
     ```
 
-    このコードでは、[`Grid`](xref:Xamarin.Forms.Grid) の中の [`Entry`](xref:Xamarin.Forms.Entry)、[`Button`](xref:Xamarin.Forms.Button)、および一連の [`Label`](xref:Xamarin.Forms.Label) インスタンスから構成される、ページのユーザー インターフェイスを宣言によって定義します。 `Entry` には、その [`Text`](xref:Xamarin.Forms.Entry.Text) プロパティを設定することで、事前に "Seattle" が入力されています。 `Button` ではその [`Clicked`](xref:Xamarin.Forms.Button.Clicked) イベントを、次の手順で作成される `OnButtonClicked` という名前のイベント ハンドラーに設定します。 `Label` インスタンスの半分には静的テキストが表示されており、残りのインスタンスは `WeatherData` プロパティにデータ バインディングされます。 実行時に、データ バインディングを使用する `Label` インスタンスでは、バインド式で使用するための `WeatherData` オブジェクトのそれぞれの [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) プロパティが参照されます。 データ バインディングの詳細については、「[Xamarin.Forms Data Binding](~/xamarin-forms/app-fundamentals/data-binding/index.md)」 (Xamarin.Forms のデータ バインディング) を参照してください。
+    このコードでは、[`Grid`](xref:Xamarin.Forms.Grid) の中の [`Entry`](xref:Xamarin.Forms.Entry)、[`Button`](xref:Xamarin.Forms.Button)、および一連の [`Label`](xref:Xamarin.Forms.Label) インスタンスから構成される、ページのユーザー インターフェイスを宣言によって定義します。 `Entry` には、その [`Text`](xref:Xamarin.Forms.InputView.Text) プロパティを設定することで、事前に "Seattle" が入力されています。 `Button` ではその [`Clicked`](xref:Xamarin.Forms.Button.Clicked) イベントを、次の手順で作成される `OnButtonClicked` という名前のイベント ハンドラーに設定します。 `Label` インスタンスの半分には静的テキストが表示されており、残りのインスタンスは `WeatherData` プロパティにデータ バインディングされます。 実行時に、データ バインディングを使用する `Label` インスタンスでは、バインド式で使用するための `WeatherData` オブジェクトのそれぞれの [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) プロパティが参照されます。 データ バインディングの詳細については、「[Xamarin.Forms Data Binding](~/xamarin-forms/app-fundamentals/data-binding/index.md)」 (Xamarin.Forms のデータ バインディング) を参照してください。
 
     また、[`Entry`](xref:Xamarin.Forms.Entry) には `x:Name` 属性で指定された名前があります。 これにより、分離コード ファイルは、割り当てられた名前を使用してオブジェクトにアクセスできます。
 

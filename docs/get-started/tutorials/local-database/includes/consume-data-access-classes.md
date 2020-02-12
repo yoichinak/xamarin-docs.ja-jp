@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 27a3393e6eda9f26ea15003edc5022246ff4deff
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.openlocfilehash: caee3eeda90a560f032c17657072ae5ba5023a69
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "67659845"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77135104"
 ---
 この演習では、以前に作成したデータ アクセス クラスを使用するためのユーザー インターフェイスを作成します。
 
@@ -36,7 +36,7 @@ ms.locfileid: "67659845"
     </ContentPage>
     ```
 
-    このコードでは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) の中の 2 つの [`Entry`](xref:Xamarin.Forms.Entry) インスタンス、[`Button`](xref:Xamarin.Forms.Button)、および [`ListView`](xref:Xamarin.Forms.ListView) から構成される、ページのユーザー インターフェイスを宣言によって定義します。 各 `Entry` にはその [`Placeholder`](xref:Xamarin.Forms.Entry.Placeholder) プロパティが設定されており、これにより、ユーザー入力の前に表示されるプレースホルダー テキストが指定されます。 `Button` ではその [`Clicked`](xref:Xamarin.Forms.Button.Clicked) イベントを、次の手順で作成される `OnButtonClicked` という名前のイベント ハンドラーに設定します。 `ListView` ではその [`ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) プロパティを [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) に設定します。その場合、[`TextCell`](xref:Xamarin.Forms.TextCell) を使用して、[`ListView`](xref:Xamarin.Forms.ListView) の各行の外観を定義します。 `TextCell` ではその [`Text`](xref:Xamarin.Forms.TextCell.Text) および [`Detail`](xref:Xamarin.Forms.TextCell.Detail) プロパティを、各 `Person` オブジェクトの `Name` および `Age` プロパティにそれぞれデータ バインドします。
+    このコードでは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) の中の 2 つの [`Entry`](xref:Xamarin.Forms.Entry) インスタンス、[`Button`](xref:Xamarin.Forms.Button)、および [`ListView`](xref:Xamarin.Forms.ListView) から構成される、ページのユーザー インターフェイスを宣言によって定義します。 各 `Entry` にはその [`Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) プロパティが設定されており、これにより、ユーザー入力の前に表示されるプレースホルダー テキストが指定されます。 `Button` ではその [`Clicked`](xref:Xamarin.Forms.Button.Clicked) イベントを、次の手順で作成される `OnButtonClicked` という名前のイベント ハンドラーに設定します。 `ListView` ではその [`ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) プロパティを [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) に設定します。その場合、[`TextCell`](xref:Xamarin.Forms.TextCell) を使用して、[`ListView`](xref:Xamarin.Forms.ListView) の各行の外観を定義します。 `TextCell` ではその [`Text`](xref:Xamarin.Forms.TextCell.Text) および [`Detail`](xref:Xamarin.Forms.TextCell.Detail) プロパティを、各 `Person` オブジェクトの `Name` および `Age` プロパティにそれぞれデータ バインドします。
 
     さらに、[`Entry`](xref:Xamarin.Forms.Entry) インスタンスと [`ListView`](xref:Xamarin.Forms.ListView) には、`x:Name` 属性で指定された名前があります。 これにより、分離コード ファイルは割り当てられた名前を使用して、これらのオブジェクトにアクセスできます。
 
@@ -106,7 +106,7 @@ ms.locfileid: "67659845"
     </ContentPage>
     ```
 
-    このコードでは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) の中の 2 つの [`Entry`](xref:Xamarin.Forms.Entry) インスタンス、[`Button`](xref:Xamarin.Forms.Button)、および [`ListView`](xref:Xamarin.Forms.ListView) から構成される、ページのユーザー インターフェイスを宣言によって定義します。 各 `Entry` にはその [`Placeholder`](xref:Xamarin.Forms.Entry.Placeholder) プロパティが設定されており、これにより、ユーザー入力の前に表示されるプレースホルダー テキストが指定されます。 `Button` ではその [`Clicked`](xref:Xamarin.Forms.Button.Clicked) イベントを、次の手順で作成される `OnButtonClicked` という名前のイベント ハンドラーに設定します。 `ListView` ではその [`ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) プロパティを [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) に設定します。その場合、[`TextCell`](xref:Xamarin.Forms.TextCell) を使用して、[`ListView`](xref:Xamarin.Forms.ListView) の各行の外観を定義します。 `TextCell` ではその [`Text`](xref:Xamarin.Forms.TextCell.Text) および [`Detail`](xref:Xamarin.Forms.TextCell.Detail) プロパティを、各 `Person` オブジェクトの `Name` および `Age` プロパティにそれぞれデータ バインドします。
+    このコードでは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) の中の 2 つの [`Entry`](xref:Xamarin.Forms.Entry) インスタンス、[`Button`](xref:Xamarin.Forms.Button)、および [`ListView`](xref:Xamarin.Forms.ListView) から構成される、ページのユーザー インターフェイスを宣言によって定義します。 各 `Entry` にはその [`Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) プロパティが設定されており、これにより、ユーザー入力の前に表示されるプレースホルダー テキストが指定されます。 `Button` ではその [`Clicked`](xref:Xamarin.Forms.Button.Clicked) イベントを、次の手順で作成される `OnButtonClicked` という名前のイベント ハンドラーに設定します。 `ListView` ではその [`ItemTemplate`](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) プロパティを [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) に設定します。その場合、[`TextCell`](xref:Xamarin.Forms.TextCell) を使用して、[`ListView`](xref:Xamarin.Forms.ListView) の各行の外観を定義します。 `TextCell` ではその [`Text`](xref:Xamarin.Forms.TextCell.Text) および [`Detail`](xref:Xamarin.Forms.TextCell.Detail) プロパティを、各 `Person` オブジェクトの `Name` および `Age` プロパティにそれぞれデータ バインドします。
 
     さらに、[`Entry`](xref:Xamarin.Forms.Entry) インスタンスと [`ListView`](xref:Xamarin.Forms.ListView) には、`x:Name` 属性で指定された名前があります。 これにより、分離コード ファイルは割り当てられた名前を使用して、これらのオブジェクトにアクセスできます。
 
