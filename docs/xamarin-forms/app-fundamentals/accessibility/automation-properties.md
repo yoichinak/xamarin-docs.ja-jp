@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2018
-ms.openlocfilehash: 92e2ceeea901e2acea70118e75d936f3b3ac94db
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+ms.openlocfilehash: 12c6229c1922f0bd4a4d25ca796bcb46141a326c
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70199996"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77131139"
 ---
 # <a name="automation-properties-in-xamarinforms"></a>Xamarin.Forms でのオートメーション プロパティ
 
@@ -113,7 +113,7 @@ AutomationProperties.SetHelpText(button, "Tap to toggle the activity indicator")
 > [!NOTE]
 > [`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) メソッドを使用して `AutomationProperties.HelpText` 添付プロパティを設定することもできることに注意してください。`button.SetValue(AutomationProperties.HelpTextProperty, "Tap to toggle the activity indicator");`
 
-一部のプラットフォームの [`Entry`](xref:Xamarin.Forms.Entry) などの編集コントロールでは、`HelpText` プロパティを省略し、プレースホルダー テキストに置き換えることができる場合があります。 たとえば、"ここに名前を入力します" などは、ユーザーが実際に入力する前にコントロールにテキストを配置する [`Entry.Placeholder`](xref:Xamarin.Forms.Entry.Placeholder) プロパティに適した候補です。
+一部のプラットフォームの [`Entry`](xref:Xamarin.Forms.Entry) などの編集コントロールでは、`HelpText` プロパティを省略し、プレースホルダー テキストに置き換えることができる場合があります。 たとえば、"ここに名前を入力します" などは、ユーザーが実際に入力する前にコントロールにテキストを配置する [`Entry.Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) プロパティに適した候補です。
 
 <a name="labeledby" />
 

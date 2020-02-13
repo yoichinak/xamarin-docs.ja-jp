@@ -10,12 +10,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/27/2018
-ms.openlocfilehash: 3936fe16ee768505c53ec119c51dcbecef7e6fbe
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.openlocfilehash: c0e8ec27898cc842d485967e525c2936d7a0f56d
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "73842957"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77131050"
 ---
 # <a name="xamarinforms-quickstart-deep-dive"></a>Xamarin.Forms クイックスタートの詳細
 
@@ -383,7 +383,7 @@ await Navigation.PopAsync();
 
 Xamarin.Forms アプリケーションがそのデータを表示し、相互作用するしくみを簡単にするためにデータ バインディングが使用されます。 データ バインディングはユーザー インターフェイスと基礎アプリケーションの間で接続を確立します。 [`BindableObject`](xref:Xamarin.Forms.BindableObject) クラスには、データ バインディングをサポートするためのインフラストラクチャの大部分が含まれています。
 
-データ バインディングでは、*ソース*と*ターゲット*と呼ばれる 2 つのオブジェクトを接続します。 *ソース* オブジェクトはデータを提供します。 *ターゲット* オブジェクトは、ソース オブジェクトのデータを使用し (またしばしば表示し) ます。 たとえば、[`Editor`](xref:Xamarin.Forms.Editor) ("*ターゲット*" オブジェクト) は一般的にその [`Text`](xref:Xamarin.Forms.Editor.Text) プロパティを "*ソース*" オブジェクトのパブリック プロパティ `string` にバインドします。 次の図では、バインドの関係を示します。
+データ バインディングでは、*ソース*と*ターゲット*と呼ばれる 2 つのオブジェクトを接続します。 *ソース* オブジェクトはデータを提供します。 *ターゲット* オブジェクトは、ソース オブジェクトのデータを使用し (またしばしば表示し) ます。 たとえば、[`Editor`](xref:Xamarin.Forms.Editor) ("*ターゲット*" オブジェクト) は一般的にその [`Text`](xref:Xamarin.Forms.InputView.Text) プロパティを "*ソース*" オブジェクトのパブリック プロパティ `string` にバインドします。 次の図では、バインドの関係を示します。
 
 ![](deepdive-images/data-binding.png "Data Binding")
 
@@ -432,7 +432,7 @@ async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
         ... />
 ```
 
-*ソース* オブジェクトの [`Editor.Text`](xref:Xamarin.Forms.Editor.Text) プロパティと `Text` プロパティ間のバインディングが確立されました。 `Editor` での変更は `Note` オブジェクトに自動的に伝達されます。 同様に、`Note.Text` プロパティが変更された場合、Xamarin.Forms のバインド エンジンにより `Editor` のコンテンツも更新されます。 これは、*両方向のバインド*とも呼ばれています。
+*ソース* オブジェクトの [`Editor.Text`](xref:Xamarin.Forms.InputView.Text) プロパティと `Text` プロパティ間のバインディングが確立されました。 `Editor` での変更は `Note` オブジェクトに自動的に伝達されます。 同様に、`Note.Text` プロパティが変更された場合、Xamarin.Forms のバインド エンジンにより `Editor` のコンテンツも更新されます。 これは、*両方向のバインド*とも呼ばれています。
 
 データ バインディングの詳細については、「[Xamarin.Forms Data Binding](~/xamarin-forms/app-fundamentals/data-binding/index.md)」 (Xamarin.Forms のデータ バインディング) を参照してください。
 
