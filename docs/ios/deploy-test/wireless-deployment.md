@@ -17,7 +17,7 @@ ms.locfileid: "73023423"
 ---
 # <a name="wireless-deployment-for-xamarinios-and-tvos-apps"></a>Xamarin.iOS および tvOS アプリのワイヤレス展開
 
-開発者ワークフローの重要なフローの 1 つは、デバイスの展開です。 Xcode 9 では、ネットワークを介して iOS デバイスや Apple TV に展開するオプションが導入されました。アプリを展開およびデバッグするたびにデバイスを配線する必要はありません。 この機能は Visual Studio for Mac 7.4 と Visual Studio 15.6 リリースで導入されました。
+開発者ワークフローの重要なフローの 1 つは、デバイスの展開です。 Xcode 9 では、ネットワークを介して iOS デバイスや Apple TV に展開するオプションが導入されました。アプリを展開およびデバッグするたびにデバイスを有線で接続する必要はありません。 この機能は Visual Studio for Mac 7.4 と Visual Studio 15.6 リリースで導入されました。
 
 このガイドでは、ネットワーク経由でデバイスとペアリングし、そのデバイスに展開する方法を詳しく説明します。
 
