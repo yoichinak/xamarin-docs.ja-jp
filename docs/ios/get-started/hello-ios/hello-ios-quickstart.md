@@ -44,7 +44,7 @@ Xamarin.iOS は次のセットアップで機能します。
 
 - 最新版の Visual Studio 2019 または Visual Studio 2017 Community、Professional、または Enterprise。Windows 10。上記の仕様を満たす Mac ビルド ホストとペア。
 
-[Xamarin.iOS Windows インストール ガイド](~/ios/get-started/installation/windows/index.md)で段階的インストール手順をご確認いただけます。
+[Xamarin.iOS Windows インストール ガイド](~/ios/get-started/installation/windows/index.md)でステップ バイ ステップのインストール手順をご確認いただけます。
 
 ::: zone-end
 
