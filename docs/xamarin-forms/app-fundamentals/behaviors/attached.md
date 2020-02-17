@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: ab39c79c59855c9f78184614176b1658ee0e29b2
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 7d16eef4fe5422fb5cf3c039c66d1b0f113727fd
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772111"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77131120"
 ---
 # <a name="attached-behaviors"></a>アタッチされたビヘイビアー
 
@@ -80,7 +80,7 @@ public static class NumericValidationBehavior
 }
 ```
 
-`NumericValidationBehavior` クラスには、`static` ゲッターとセッターがある `AttachBehavior` という名前の添付プロパティが含まれています。このプロパティにより、それがアタッチされるコントロールのビヘイビアーの追加または削除が制御されます。 この添付プロパティにより、プロパティの値が変更されるときに実行される `OnAttachBehaviorChanged` メソッドが登録されます。 このメソッドによって、`AttachBehavior` 添付プロパティの値に基づいて [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) イベントのイベント ハンドラーが登録または登録解除されます。 `OnEntryTextChanged` メソッドにより、ビヘイビアーのコア機能が提供され、ユーザーが [`Entry`](xref:Xamarin.Forms.Entry) に入力した値が解析され、その値が `double` でなければ `TextColor` プロパティが赤に設定されます。
+`NumericValidationBehavior` クラスには、`static` ゲッターとセッターがある `AttachBehavior` という名前の添付プロパティが含まれています。このプロパティにより、それがアタッチされるコントロールのビヘイビアーの追加または削除が制御されます。 この添付プロパティにより、プロパティの値が変更されるときに実行される `OnAttachBehaviorChanged` メソッドが登録されます。 このメソッドによって、`AttachBehavior` 添付プロパティの値に基づいて [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) イベントのイベント ハンドラーが登録または登録解除されます。 `OnEntryTextChanged` メソッドにより、ビヘイビアーのコア機能が提供され、ユーザーが [`Entry`](xref:Xamarin.Forms.Entry) に入力した値が解析され、その値が `double` でなければ `TextColor` プロパティが赤に設定されます。
 
 ## <a name="consuming-an-attached-behavior"></a>アタッチされたビヘイビアーを使用する
 
@@ -103,7 +103,7 @@ NumericValidationBehavior.SetAttachBehavior (entry, true);
 
 実行時、ビヘイビアーは、ビヘイビアーの実装に従って、コントロールとのやりとりに応答します。 次のスクリーン ショットは、無効な入力に応答しているアタッチされたビヘイビアーを示しています。
 
-[![](attached-images/screenshots-sml.png "アタッチされたビヘイビアーを使用するサンプル アプリケーション")](attached-images/screenshots.png#lightbox "アタッチされたビヘイビアーを使用するサンプル アプリケーション")
+[![](attached-images/screenshots-sml.png "Sample Application with Attached Behavior")](attached-images/screenshots.png#lightbox "Sample Application with Attached Behavior")
 
 > [!NOTE]
 > アタッチされたビヘイビアーは特定のコントロールの種類 (または複数のコントロールに適用できるスーパークラス) に対して記述され、互換性のあるコントロールにのみ追加する必要があります。 互換性のないコントロールにビヘイビアーをアタッチしようとすると、不明なビヘイビアーになり、結果はビヘイビアーの実装によって変わります。
@@ -123,7 +123,7 @@ var entry = new Entry { Placeholder = "Enter a System.Double" };
 NumericValidationBehavior.SetAttachBehavior (entry, false);
 ```
 
-実行時に、`AttachBehavior` 添付プロパティの値が `false` に設定されていると、`OnAttachBehaviorChanged` メソッドが実行されます。 `OnAttachBehaviorChanged` メソッドによって [`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) イベントのイベント ハンドラーの登録が解除され、ユーザーがコントロールを操作してもそのビヘイビアーが実行されなくなります。
+実行時に、`AttachBehavior` 添付プロパティの値が `false` に設定されていると、`OnAttachBehaviorChanged` メソッドが実行されます。 `OnAttachBehaviorChanged` メソッドによって [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) イベントのイベント ハンドラーの登録が解除され、ユーザーがコントロールを操作してもそのビヘイビアーが実行されなくなります。
 
 ## <a name="summary"></a>まとめ
 

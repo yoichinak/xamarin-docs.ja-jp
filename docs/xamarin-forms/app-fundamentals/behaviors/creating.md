@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
-ms.openlocfilehash: a3b9653651e3000b954cb6d16154cddc8d5d363a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 42ad56a7ae34bcef638ed25bea267dcabd21e20c
+ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772098"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77131089"
 ---
 # <a name="create-xamarinforms-behaviors"></a>Xamarin.Forms のビヘイビアーを登録する
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)
 
-"_Xamarin.Forms のビヘイビアーは、Behavior または Behavior&lt;T&gt; クラスから派生させることで作成されます。この記事では、Xamarin.Forms のビヘイビアーを作成して使用する方法を示します。_"
+"_Xamarin.Forms のビヘイビアーは、Behavior または Behavior&lt;T&gt; クラスから派生させることで作成されます。この記事では、Xamarin.Forms のビヘイビアーを作成して使用する方法を示します。_ "
 
 ## <a name="overview"></a>概要
 
@@ -84,7 +84,7 @@ public class NumericValidationBehavior : Behavior<Entry>
 }
 ```
 
-`NumericValidationBehavior` は [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) クラスから派生します。`T` は [`Entry`](xref:Xamarin.Forms.Entry) です。 [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) メソッドにより、[`TextChanged`](xref:Xamarin.Forms.Entry.TextChanged) イベント用のイベント ハンドラーが登録され、[`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) メソッドにより、メモリ リークを防ぐために `TextChanged` の登録が解除されます。 `OnEntryTextChanged` メソッドにより、ビヘイビアーのコア機能が提供され、ユーザーが `Entry` に入力した値が解析され、その値が `double` でなければ [`TextColor`](xref:Xamarin.Forms.Entry.TextColor) プロパティが赤に設定されます。
+`NumericValidationBehavior` は [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) クラスから派生します。`T` は [`Entry`](xref:Xamarin.Forms.Entry) です。 [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) メソッドにより、[`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) イベント用のイベント ハンドラーが登録され、[`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) メソッドにより、メモリ リークを防ぐために `TextChanged` の登録が解除されます。 `OnEntryTextChanged` メソッドにより、ビヘイビアーのコア機能が提供され、ユーザーが `Entry` に入力した値が解析され、その値が `double` でなければ [`TextColor`](xref:Xamarin.Forms.InputView.TextColor) プロパティが赤に設定されます。
 
 > [!NOTE]
 > ビヘイビアーはスタイルを利用して複数のコントロールに適用されできるため、Xamarin.Forms では、ビヘイビアーの `BindingContext` は設定されません。
@@ -110,7 +110,7 @@ entry.Behaviors.Add (new NumericValidationBehavior ());
 
 実行時、ビヘイビアーは、ビヘイビアーの実装に従って、コントロールとのやりとりに応答します。 次のスクリーン ショットで、無効な入力に応答しているビヘイビアーを示します。
 
-[![](creating-images/screenshots-sml.png "Xamarin.Forms のビヘイビアーを使用しているサンプル アプリケーション")](creating-images/screenshots.png#lightbox "Xamarin.Forms のビヘイビアーを使用しているサンプル アプリケーション")
+[![](creating-images/screenshots-sml.png "Sample Application with Xamarin.Forms Behavior")](creating-images/screenshots.png#lightbox "Sample Application with Xamarin.Forms Behavior")
 
 > [!NOTE]
 > ビヘイビアーは特定のコントロールの種類 (または複数のコントロールに適用できるスーパークラス) に対して記述され、互換性のあるコントロールにのみ追加する必要があります。 互換性のないコントロールにビヘイビアーをアタッチしようとすると、例外がスローされます。

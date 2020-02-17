@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/01/2016
-ms.openlocfilehash: 056bb16c76887661f054422b2c682a91e6bfa466
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: d046962bf08b85069b1a698324db76a4ac3286d9
+ms.sourcegitcommit: 07941cf9704ff88cf4087de5ebdea623ff54edb1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489896"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77144655"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms のトリガー
 
@@ -22,7 +22,7 @@ ms.locfileid: "75489896"
 
 トリガーは、コントロールに直接割り当てることも、ページ レベルまたはアプリケーション レベルのリソース ディクショナリに追加して複数のコントロールに適用することもできます。
 
-4 種類のトリガーがあります。
+トリガーにはいくつかの種類があります。
 
 - [プロパティ トリガー](#property) -コントロールのプロパティが特定の値に設定されると発生します。
 
@@ -31,6 +31,20 @@ ms.locfileid: "75489896"
 - [イベント トリガー](#event) -コントロールでイベントが発生すると発生します。
 
 - [マルチ トリガー](#multi) - アクションが発生する前に、複数のトリガー条件を設定できます。
+
+- [アダプティブ トリガー](#adaptive) (プレビュー) - アプリケーション ウィンドウの幅と高さの変化に反応します。
+
+- [比較トリガー](#compare) (プレビュー) - 2 つの値が比較されるときに発生します。
+
+- [デバイス トリガー](#device) (プレビュー) - 指定したデバイスで実行されている場合に発生します。 
+
+- [向きトリガー](#orientation) (プレビュー) - デバイスの向きが変化したときに発生します。
+
+プレビューのトリガーを使用するには、`App.xaml.cs` の機能フラグを使用して有効にする必要があります。
+
+```csharp
+Device.SetFlags(new string[]{ "StateTriggers_Experimental" });
+```
 
 <a name="property" />
 
@@ -333,6 +347,141 @@ public class FadeTriggerAction : TriggerAction<VisualElement>
     }
 }
 ```
+
+<a name="adaptive" />
+
+## <a name="adaptive-trigger-preview"></a>アダプティブ トリガー (プレビュー)
+
+ウィンドウが指定した高さまたは幅になると、`AdaptiveTrigger` が自動的にトリガーされます。 `AdaptiveTrigger` で考えられるプロパティは、次の 2 つです。
+
+- **MinWindowHeight**
+- **MinWindowWidth**
+
+<a name="compare"/>
+
+## <a name="compare-trigger-preview"></a>比較トリガー (プレビュー)
+
+`CompareStateTrigger` は、**Value** が **Property** と等しい場合にトリガーされる非常に汎用性の高い `StateTrigger` です。
+
+```xaml
+<Grid>
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup>
+            <VisualState x:Name="Checked">
+                <VisualState.StateTriggers>
+                    <CompareStateTrigger Property="{Binding IsChecked, Source={x:Reference CheckBox}}" Value="True" />
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <Setter Property="BackgroundColor" Value="Green" />
+                </VisualState.Setters>
+            </VisualState>
+            <VisualState x:Name="UnChecked">
+                <VisualState.StateTriggers>
+                    <CompareStateTrigger Property="{Binding IsChecked, Source={x:Reference CheckBox}}" Value="False" />
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <Setter Property="BackgroundColor" Value="Red" />
+                </VisualState.Setters>
+            </VisualState>
+        </VisualStateGroup>     
+    </VisualStateManager.VisualStateGroups>  
+    <Frame
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        BackgroundColor="White"
+        Margin="24">
+        <StackLayout
+            Orientation="Horizontal">
+            <CheckBox 
+                x:Name="CheckBox"
+                VerticalOptions="Center"/>
+            <Label
+                Text="Checked/Uncheck the CheckBox to modify the Grid BackgroundColor"
+                VerticalOptions="Center"/>
+        </StackLayout>
+    </Frame>
+</Grid>
+```
+
+この例は、**CheckBox** **IsChecked** プロパティの状態に基づく **Grid** の **BackgroundColor** の変更方法を示しています。 **StateTrigger** ではバインドをサポートしているため、UI 要素だけでなく **BindingContext** の値も比較できる可能性が高くなります。
+
+<a name="device" />
+
+## <a name="device-trigger-preview"></a>デバイス トリガー (プレビュー)
+
+`DeviceTrigger` では、`OnPlatform` を使用する場合と同様に、特定のデバイス プラットフォームで実行したときの状態の適用方法を制御できます。
+
+```xaml
+<Grid>
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup>
+            <VisualState
+                x:Name="Android">
+                <VisualState.StateTriggers>
+                    <DeviceStateTrigger Device="Android" />
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <Setter Property="BackgroundColor" Value="Blue" />
+                </VisualState.Setters>
+            </VisualState>
+            <VisualState
+                x:Name="iOS">
+                <VisualState.StateTriggers>
+                    <DeviceStateTrigger Device="iOS" />
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <Setter Property="BackgroundColor" Value="Red" />
+                </VisualState.Setters>
+            </VisualState>
+        </VisualStateGroup>  
+    </VisualStateManager.VisualStateGroups>  
+    <Label
+        Text="This page changes the color based on the device where the App is running."
+        HorizontalOptions="Center"
+        VerticalOptions="Center"/>
+</Grid>
+```
+
+上の例では、Android デバイスでは背景色が青に、iOS デバイスでは赤になります。
+
+<a name="orientation" />
+
+## <a name="orientation-trigger-preview"></a>向きトリガー (プレビュー)
+
+`OrientationTrigger` は、デバイスの横向きと縦向きが変化したときのビュー状態の変更をサポートします。
+
+```xaml
+<Grid>
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup>
+            <VisualState
+                x:Name="Landscape">
+                <VisualState.StateTriggers>
+                    <OrientationStateTrigger Orientation="Landscape" />
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <Setter Property="BackgroundColor" Value="Blue" />
+                </VisualState.Setters>
+            </VisualState>
+            <VisualState
+                x:Name="Portrait">
+                <VisualState.StateTriggers>
+                    <OrientationStateTrigger Orientation="Portrait" />
+                </VisualState.StateTriggers>
+                <VisualState.Setters>
+                    <Setter Property="BackgroundColor" Value="Red" />
+                </VisualState.Setters>
+            </VisualState>
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>  
+    <Label
+        Text="This Grid changes the color based on the orientation device where the App is running."
+        HorizontalOptions="Center"
+        VerticalOptions="Center"/>
+</Grid>
+```
+
+上の例では、デバイスが横向きの場合、背景は青になり、縦向きの場合は赤になります。
 
 ## <a name="related-links"></a>関連リンク
 
