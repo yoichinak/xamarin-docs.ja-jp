@@ -1,5 +1,5 @@
 ---
-title: Objective-C 開発者向けの C# Primer
+title: Objective-C 開発者向けの C# 入門書
 description: このドキュメントでは、Objective-C 開発者向けに C# について説明します。 プロトコルとインターフェイス、カテゴリと拡張メソッド、フレームワークとアセンブリ、セレクターと名前付きパラメーターなどを考察しながら、2 つの言語を比較します。
 ms.prod: xamarin
 ms.assetid: 00285CBD-AE5E-4126-8F22-6B231B9467EA
@@ -14,7 +14,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/26/2019
 ms.locfileid: "74536509"
 ---
-# <a name="c-primer-for-objective-c-developers"></a>Objective-C 開発者向けの C# Primer
+# <a name="c-primer-for-objective-c-developers"></a>Objective-C 開発者向けの C# 入門書
 
 _Xamarin.iOS では、C# で記述されたプラットフォームに依存しないコードをプラットフォーム間で共有できます。ただし、既存の iOS アプリケーションは既に作成されている Objective-C コードを活用できます。この記事は、Xamarin と C# 言語への移行を検討している Objective-C 開発者向けの簡単な入門となります。_
 
