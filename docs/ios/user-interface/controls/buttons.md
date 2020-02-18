@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/11/2018
-ms.openlocfilehash: a8dfd267fe9f5f838927fc216d53c2475398ed16
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 0619488199c202e1877e4cfa60d622ef247e2b3f
+ms.sourcegitcommit: 24883be72e485e5311dd0eb91f9a22f78eeec11a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022113"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77374120"
 ---
 # <a name="buttons-in-xamarinios"></a>Xamarin. iOS のボタン
 
@@ -69,7 +69,7 @@ IOS では、`UIButton` クラスはボタンコントロールを表します�
 ボタンのタップに応答するには、ボタンの `TouchUpInside` イベントのハンドラーを指定します。
 
 ```csharp
-button.TouchUpInside += (sender, e) => {
+myButton.TouchUpInside += (sender, e) => {
     DoSomething();
 };
 ```
@@ -91,13 +91,13 @@ button.TouchUpInside += (sender, e) => {
 
 > [!NOTE]
 > すべての `UIControlState` 値の完全な一覧については、「」を参照してください[`UIKit.UIControlState enumeration`](xref:UIKit.UIControlState)
-> 書.
+> ドキュメントを参照してください。
 
 たとえば、`UIControlState.Normal`のタイトルの色と影の色を設定するには、次のようにします。
 
 ```csharp
-button.SetTitleColor(UIColor.White, UIControlState.Normal);
-button.SetTitleShadowColor(UIColor.Black, UIControlState.Normal);
+myButton.SetTitleColor(UIColor.White, UIControlState.Normal);
+myButton.SetTitleShadowColor(UIColor.Black, UIControlState.Normal);
 ```
 
 次のコードでは、ボタンのタイトルを `UIControlState.Normal` および `UIControlState.Highlighted`の属性付きの (定型) 文字列に設定しています。
@@ -115,9 +115,9 @@ myButton.SetAttributedTitle(highlightedAttributedTitle, UIControlState.Highlight
 `Custom` の `UIButtonType` を持つボタンには、既定のスタイルはありません。 ただし、さまざまな状態のイメージを設定して、ボタンの外観を構成することはできます。
 
 ```csharp
-button4.SetImage (UIImage.FromBundle ("Buttons/MagicWand.png"), UIControlState.Normal);
-button4.SetImage (UIImage.FromBundle ("Buttons/MagicWand_Highlight.png"), UIControlState.Highlighted);
-button4.SetImage (UIImage.FromBundle ("Buttons/MagicWand_On.png"), UIControlState.Selected);
+myButton.SetImage (UIImage.FromBundle ("Buttons/MagicWand.png"), UIControlState.Normal);
+myButton.SetImage (UIImage.FromBundle ("Buttons/MagicWand_Highlight.png"), UIControlState.Highlighted);
+myButton.SetImage (UIImage.FromBundle ("Buttons/MagicWand_On.png"), UIControlState.Selected);
 ```
 
 ユーザーがボタンにタッチしているかどうかに応じて、次のいずれかのイメージとして表示されます (`UIControlState.Normal`、`UIControlState.Highlighted`、および `UIControlState.Selected` の状態)。
