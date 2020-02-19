@@ -187,7 +187,7 @@ Visual Studio 2019 を [Mac に接続している](#connect-to-the-mac-from-visu
 > [!IMPORTANT]
 > [Mac とペアリング] は、Mac 上の Xamarin.iOS をアルファ/ベータから安定にダウングレードすることはありません。 Visual Studio for Mac をインストールした場合は、[リリース チャネル](https://docs.microsoft.com/visualstudio/mac/update)を次のように設定します。
 >
-> - Visual Studio 2019 を使用している場合は、Visual Studio for Mac で **[安定]** 更新チャネルを選択します。
+> - Visual Studio 2019 を使用している場合は、Visual Studio for Mac で **[Stable]** 更新チャネルを選択します。
 > - Visual Studio 2019 Preview を使用している場合は、Visual Studio for Mac で **[アルファ]** 更新チャネルを選択します。
 
 次のスクリーンショットで示すように (クリックすると拡大します)、さまざまなプロンプトで進行状況が示されます。
