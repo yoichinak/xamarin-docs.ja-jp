@@ -1,118 +1,177 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Xamarin.Android
+summary: Xamarin.Android は、.NET 開発者向けに Android SDK 全体を公開しています。 Visual Studio で C# または F# を使用して、完全にネイティブな Android アプリを構築できます。
 metadata:
+  title: Xamarin.Android
   description: Xamarin.Android は、.NET 開発者向けに Android SDK 全体を公開しています。
-  author: davidortinau
-  ms.author: daortin
-  ms.date: 07/27/2018
   ms.topic: landing-page
+  ms.prod: xamarin
   ms.technology: xamarin-android
-abstract:
-  description: 'Xamarin.Android は、.NET 開発者向けに Android SDK 全体を公開しています。 Visual Studio で C# または F# を使用して、完全にネイティブな Android アプリを構築できます。'
-  menu:
-    items:
-      - href: ~/android/samples/index.md
-        text: Android のサンプル
-      - href: 'https://docs.microsoft.com/xamarin/android/release-notes/'
-        text: リリース ノート
-      - href: 'https://developers.google.com/'
-        text: Google の開発者向けドキュメント
-      - href: /visualstudio/
-        text: Visual Studio
-sections:
-  - title: はじめに
-    items:
-      - type: paragraph
-        text: 'Xamarin と C# で最初の Android アプリを構築する方法について説明します。'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_setup.svg'
-            text: セットアップ
-            href: ~/android/get-started/installation/index.md
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_mobileapp.svg'
-            text: 'Hello, Android'
-            href: ~/android/get-started/hello-android/hello-android-quickstart.md
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_mobileapp.svg'
-            text: マルチスクリーン アプリ
-            href: ~/android/get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_mobile-app-developement.svg'
-            text: Android 10
-            href: ~/android/platform/android-10.md
-  - title: ガイド
-    items:
-      - type: list
-        style: cards
-        className: cardsB
-        items:
-          - href: ~/android/get-started/index.md
-            html: すぐに Xamarin.Android を活用できるようになるチュートリアルです。 インストールがすべて完了していることを確認し、最初の Android アプリを構築してみましょう。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
-              href: ~/android/get-started/index.md
-            title: 作業の開始
-          - href: ~/android/app-fundamentals/index.md
-            html: ファイル、画像、データベースの扱いなど、Android アプリを構築するために必要なすべての情報を説明します。
-            image:
-              src: ~/media/icons/i_app-build.svg
-              href: ~/android/app-fundamentals/index.md
-            title: アプリケーションの基礎
-          - href: ~/android/user-interface/index.md
-            html: Android で使用できるすべてのユーザー インターフェイス コントロール ウィジェットについて説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: ~/android/user-interface/index.md
-            title: ユーザー インターフェイス
-          - href: ~/android/platform/index.md
-            html: 指紋認証などの Android プラットフォーム機能、Android 8.0 Oreo の最新機能について説明します。
-            image:
-              src: ~/media/icons/i_platform.svg
-              href: ~/android/platform/index.md
-            title: プラットフォーム機能
-          - href: ~/essentials/index.md?context=xamarin/android
-            html: モバイル アプリケーション用のクロスプラットフォーム API。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_multi-connect.svg'
-              href: ~/essentials/index.md?context=xamarin/android
-            title: Xamarin.Essentials
-          - href: ~/android/data-cloud/index.md
-            html: ローカル データとリモートデータの格納と取得、その他のクラウド ベースのサービスについて説明します。
-            image:
-              src: ~/media/icons/i_data-cloud.svg
-              href: ~/android/data-cloud/index.md
-            title: データとクラウド サービス
-          - href: ~/android/deploy-test/index.md
-            html: アプリを構築して Google Play に配置する手順と、事前にテストする場合のヒントについて説明します。
-            image:
-              src: ~/media/icons/i_deploy-test.svg
-              href: ~/android/deploy-test/index.md
-            title: 配置とテスト
-          - href: ~/android/internals/index.md
-            html: Xamarin.Android の内部構造の詳細と、ローカライズやアクセシビリティなどの機能について説明します。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_advanced.svg'
-              href: ~/android/internals/index.md
-            title: 高度な概念と内部構造
-          - href: ~/android/wear/index.md
-            html: Android Wear 用アプリを構築します。
-            image:
-              src: ~/media/icons/i_android-wear.svg
-              href: ~/android/wear/index.md
-            title: Android Wear
-  - title: 関連項目
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: API
-            href: 'https://docs.microsoft.com/dotnet/api/?view=xamarin-android-sdk-9'
-            html: '<p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarin-android-sdk-9">Android API ドキュメント</a></p><p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarinandroid-7.1">基本クラス ライブラリ</a></p>'
-          - title: サンプル
-            href: 'https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android'
-            html: '<p><a href="https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android">Android のサンプル</a></p>'
+  author: davidbritch
+  ms.author: dabritch
+  ms.date: 01/27/2020
+  ms.openlocfilehash: 394812b5150f7bbea46dff476bd2f896083b9a74
+  ms.sourcegitcommit: 24883be72e485e5311dd0eb91f9a22f78eeec11a
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 02/17/2020
+  ms.locfileid: "77374085"
+landingContent:
+- title: 作業開始
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Xamarin.Android の概要
+      url: ~/android/get-started/index.md
+    - text: セットアップとインストール
+      url: ~/android/get-started/installation/index.md
+    - text: 最初のアプリをビルドする
+      url: ~/android/get-started/hello-android/index.md
+    - text: 最初のアプリを拡張する
+      url: ~/android/get-started/hello-android-multiscreen/index.md
+    - text: Java 開発者向け Xamarin
+      url: ~/android/get-started/java-developers.md
+- title: アプリケーションの基礎
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: ユーザー補助
+      url: ~/android/app-fundamentals/accessibility.md
+    - text: Android API レベル
+      url: ~/android/app-fundamentals/android-api-levels.md
+    - text: アクティビティのライフサイクル
+      url: ~/android/app-fundamentals/activity-lifecycle/index.md
+    - text: ブロードキャスト レシーバー
+      url: ~/android/app-fundamentals/broadcast-receivers.md
+    - text: グラフィックスとアニメーション
+      url: ~/android/app-fundamentals/graphics-and-animation.md
+    - text: ローカリゼーション
+      url: ~/android/app-fundamentals/localization.md
+    - text: 通知
+      url: ~/android/app-fundamentals/notifications/index.md
+    - text: アクセス許可
+      url: ~/android/app-fundamentals/permissions.md
+    - text: タッチとジェスチャ
+      url: ~/android/app-fundamentals/touch/index.md
+    - text: 詳しく見る >
+      url: ~/android/app-fundamentals/index.md
+- title: ユーザー インターフェイス
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Android デザイナー
+      url: ~/android/user-interface/android-designer/index.md
+    - text: 素材のテーマ
+      url: ~/android/user-interface/material-theme.md
+    - text: ユーザー プロファイル
+      url: ~/android/user-interface/user-profile.md
+    - text: スプラッシュ スクリーン
+      url: ~/android/user-interface/splash-screen.md
+    - text: レイアウト
+      url: ~/android/user-interface/layouts/index.md
+    - text: コントロール
+      url: ~/android/user-interface/controls/index.md
+- title: プラットフォーム機能
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: アプリのリンク
+      url: ~/android/platform/app-linking.md
+    - text: Java ライブラリのバインド
+      url: ~/android/platform/binding-java-library/index.md
+    - text: コンテンツ プロバイダー
+      url: ~/android/platform/content-providers/index.md
+    - text: ファイル アクセス
+      url: ~/android/platform/files/index.md
+    - text: 指紋認証
+      url: ~/android/platform/fingerprint-authentication/index.md
+    - text: フラグメント
+      url: ~/android/platform/fragments/index.md
+    - text: Java の統合
+      url: ~/android/platform/java-integration/index.md
+    - text: ジョブ スケジューラ
+      url: ~/android/platform/android-job-scheduler.md
+    - text: マップと場所
+      url: ~/android/platform/maps-and-location/index.md
+    - text: 詳しく見る >
+      url: ~/android/platform/index.md
+- title: Xamarin.Essentials
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: バージョン情報
+      url: ~/essentials/index.md?context=xamarin/android
+    - text: 作業開始
+      url: ~/essentials/get-started.md?context=xamarin/android
+    - text: プラットフォームと機能のサポート
+      url: ~/essentials/platform-feature-support.md?context=xamarin/android
+    - text: トラブルシューティング
+      url: ~/essentials/troubleshooting.md?context=xamarin/android
+    - text: リリース ノート
+      url: https://docs.microsoft.com/xamarin/essentials/release-notes/
+- title: データとクラウド サービス
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Azure Active Directory
+      url: ~/cross-platform/data-cloud/active-directory/index.md?context=xamarin/android
+    - text: Azure Mobile Apps
+      url: ~/cross-platform/data-cloud/mobile-apps.md
+    - text: データ アクセス
+      url: ~/android/data-cloud/data-access/index.md
+    - text: Google メッセージング
+      url: ~/android/data-cloud/google-messaging/index.md
+    - text: Web サービスの概要
+      url: ~/cross-platform/data-cloud/web-services/index.md?context=xamarin/android
+- title: デプロイとテスト
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: アプリ パッケージ サイズ
+      url: ~/android/deploy-test/app-package-size.md
+    - text: アプリの構築
+      url: ~/android/deploy-test/building-apps/index.md
+    - text: リンク
+      url: ~/android/deploy-test/linker.md
+    - text: マルチコア デバイス
+      url: ~/android/deploy-test/multicore-devices.md
+    - text: パフォーマンス
+      url: ~/android/deploy-test/performance.md
+    - text: プロファイル
+      url: ~/android/deploy-test/profiling.md
+    - text: リリースの準備
+      url: ~/android/deploy-test/release-prep/index.md
+    - text: APK に署名する
+      url: ~/android/deploy-test/signing/index.md
+    - text: アプリの発行
+      url: ~/android/deploy-test/publishing/index.md
+    - text: 詳しく見る >
+      url: ~/android/deploy-test/index.md
+- title: 高度な概念と内部構造
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: アーキテクチャ
+      url: ~/android/internals/architecture.md
+    - text: 使用できるアセンブリ
+      url: ~/cross-platform/internals/available-assemblies.md?context=xamarin/android
+    - text: API 設計
+      url: ~/android/internals/api-design.md
+    - text: ガベージ コレクション
+      url: ~/android/internals/garbage-collection.md
+    - text: 制限事項
+      url: ~/android/internals/limitations.md
+- title: Android Wear
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: 作業開始
+      url: ~/android/wear/get-started/index.md
+    - text: ユーザー インターフェイス
+      url: ~/android/wear/user-interface/index.md
+    - text: プラットフォーム機能
+      url: ~/android/wear/platform/index.md
+    - text: 画面のサイズ
+      url: ~/android/wear/screen-sizes.md
+    - text: デプロイとテスト
+      url: ~/android/wear/deploy-test/index.md

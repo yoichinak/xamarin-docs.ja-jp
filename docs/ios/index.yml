@@ -1,124 +1,215 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: Xamarin.iOS
+summary: Xamarin.iOS は、.NET 開発者向けに iOS SDK 全体を公開しています。 Visual Studio で C# または F# を使用して、完全にネイティブな iOS アプリを構築できます。
 metadata:
+  title: Xamarin.iOS
   description: Xamarin.iOS は、.NET 開発者向けに iOS SDK 全体を公開しています。
-  author: davidortinau
-  ms.author: daortin
-  ms.date: 09/28/2018
   ms.topic: landing-page
-  ms.technology: xamarin-ios
-abstract:
-  description: 'Xamarin.iOS は、.NET 開発者向けに iOS SDK 全体を公開しています。 Visual Studio で C# または F# を使用して、完全にネイティブな iOS アプリを構築できます。'
-  menu:
-    items:
-      - href: ~/ios/samples/index.md
-        text: iOS のサンプル
-      - href: 'https://docs.microsoft.com/xamarin/ios/release-notes/'
-        text: リリース ノート
-      - href: 'https://developer.apple.com/documentation/'
-        text: Apple の開発者向けドキュメント
-      - href: /visualstudio/
-        text: Visual Studio
-sections:
-  - title: はじめに
-    items:
-      - type: paragraph
-        text: 'Xamarin と C# で最初の iOS アプリを構築する方法について説明します。'
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_setup.svg'
-            text: セットアップ
-            href: ~/ios/get-started/installation/index.md
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_mobileapp.svg'
-            text: 'Hello, iOS'
-            href: ~/ios/get-started/hello-ios/hello-ios-quickstart.md
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_mobileapp.svg'
-            text: マルチスクリーン アプリ
-            href: ~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-quickstart.md
-          - image:
-              src: 'https://docs.microsoft.com/media/common/i_mobile-app-developement.svg'
-            text: iOS 13
-            href: ~/ios/platform/ios13/index.md
-  - title: ガイド
-    items:
-      - type: list
-        style: cards
-        className: cardsB
-        items:
-          - href: ~/ios/get-started/index.md
-            html: すぐに Xamarin.iOS を活用できるようになるチュートリアルです。 インストールがすべて完了していることを確認し、最初の iOS アプリを構築してみましょう。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_get-started.svg'
-              href: ~/ios/get-started/index.md
-            title: 作業の開始
-          - href: ~/ios/app-fundamentals/index.md
-            html: ファイル、画像、データベースの扱いなど、iOS アプリを構築するために必要なすべての情報を説明します。
-            image:
-              src: ~/media/icons/i_app-build.svg
-              href: ~/ios/app-fundamentals/index.md
-            title: アプリケーションの基礎
-          - href: ~/ios/user-interface/index.md
-            html: UIKit で iOS に使用できるすべてのユーザー インターフェイス コントロール ウィジェットについて説明します。
-            image:
-              src: ~/media/icons/i_user-interface.svg
-              href: ~/ios/user-interface/index.md
-            title: ユーザー インターフェイス
-          - href: ~/ios/platform/index.md
-            html: ARKit や CoreML などの iOS プラットフォーム機能、iOS 11 のその他の新機能の使用方法について説明します。
-            image:
-              src: ~/media/icons/i_platform.svg
-              href: ~/ios/platform/index.md
-            title: プラットフォーム機能
-          - href: ~/essentials/index.md?context=xamarin/ios
-            html: モバイル アプリケーション用のクロスプラットフォーム API。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_multi-connect.svg'
-              href: ~/essentials/index.md?context=xamarin/ios
-            title: Xamarin.Essentials
-          - href: ~/ios/data-cloud/index.md
-            html: ローカル データとリモートデータの格納と取得、その他のクラウド ベースのサービスについて説明します。
-            image:
-              src: ~/media/icons/i_data-cloud.svg
-              href: ~/ios/data-cloud/index.md
-            title: データとクラウド サービス
-          - href: ~/ios/deploy-test/index.md
-            html: アプリを構築して App Store に配置する手順と、事前にテストする場合のヒントについて説明します。
-            image:
-              src: ~/media/icons/i_deploy-test.svg
-              href: ~/ios/deploy-test/index.md
-            title: 配置とテスト
-          - href: ~/ios/internals/index.md
-            html: Xamarin.iOS のしくみについて詳しく説明します。
-            image:
-              src: 'https://docs.microsoft.com/media/common/i_config-tools.svg'
-              href: ~/ios/internals/index.md
-            title: 高度な概念と内部構造
-          - href: ~/ios/watchos/index.md
-            html: Apple Watch 用アプリを構築しましょう。
-            image:
-              src: ~/media/icons/i_watchos.svg
-              href: ~/ios/watchos/index.md
-            title: watchOS
-          - href: ~/ios/tvos/index.md
-            html: Apple TV 用アプリを構築しましょう。
-            image:
-              src: ~/media/icons/i_tvos.svg
-              href: ~/ios/tvos/index.md
-            title: tvOS
-  - title: 関連項目
-    items:
-      - type: list
-        style: cards
-        className: cardsD
-        items:
-          - title: API
-            href: 'https://docs.microsoft.com/dotnet/api/?view=xamarin-ios-sdk-12'
-            html: '<p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarin-ios-sdk-12">iOS API ドキュメント</a></p><p><a href="https://docs.microsoft.com/dotnet/api/?view=xamarinios-10.8">基本クラス ライブラリ</a></p>'
-          - title: サンプル
-            href: 'https://developer.xamarin.com/samples'
-            html: '<p><a href="https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS">iOS のサンプル</a></p><p><a href="https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS">watchOS のサンプル</a></p><p><a href="https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS">tvOS のサンプル</a></p>'
+  ms.prod: xamarin
+  ms.assetid: 7DF889E9-23F6-408F-B836-E0FDF5F0FA9B
+  author: davidbritch
+  ms.author: dabritch
+  ms.date: 01/24/2020
+  ms.openlocfilehash: f800b61bfdf9d1e79eed6e943c2b49e4724ef641
+  ms.sourcegitcommit: 24883be72e485e5311dd0eb91f9a22f78eeec11a
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 02/17/2020
+  ms.locfileid: "77374111"
+landingContent:
+- title: 作業開始
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Xamarin.iOS の概要
+      url: ~/ios/get-started/index.md
+    - text: セットアップとインストール
+      url: ~/ios/get-started/installation/index.md
+    - text: 最初のアプリをビルドする
+      url: ~/ios/get-started/hello-ios/index.md
+    - text: 最初のアプリを拡張する
+      url: ~/ios/get-started/hello-ios-multiscreen/index.md
+    - text: Objective-C 開発者
+      url: ~/ios/get-started/objective-c-developers/index.md
+- title: アプリケーションの基礎
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: ユーザー補助
+      url: ~/ios/app-fundamentals/accessibility.md
+    - text: バックグラウンド処理
+      url: ~/ios/app-fundamentals/backgrounding/index.md
+    - text: 例外のマーシャリング
+      url: ~/ios/platform/exception-marshaling.md
+    - text: イベント、プロトコル、デリゲート
+      url: ~/ios/app-fundamentals/delegates-protocols-and-events.md
+    - text: ファイル システム
+      url: ~/ios/app-fundamentals/file-system.md
+    - text: イメージとアイコン
+      url: ~/ios/app-fundamentals/images-icons/index.md
+    - text: ローカリゼーション
+      url: ~/ios/app-fundamentals/localization/index.md
+    - text: セキュリティとプライバシー
+      url: ~/ios/app-fundamentals/security-privacy.md
+    - text: タッチ
+      url: ~/ios/app-fundamentals/touch/index.md
+    - text: 詳しく見る >
+      url: ~/ios/app-fundamentals/index.md
+- title: ユーザー インターフェイス
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: iOS デザイナー
+      url: ~/ios/user-interface/designer/index.md
+    - text: ストーリーボード
+      url: ~/ios/user-interface/storyboards/index.md
+    - text: ユーザー インターフェイス
+      url: ~/ios/user-interface/ios-ui/index.md
+    - text: コントロール
+      url: ~/ios/user-interface/controls/index.md
+    - text: プログラムによるレイアウトの制約
+      url: ~/ios/user-interface/programmatic-layout-constraints.md
+    - text: MonoTouch.Dialog
+      url: ~/ios/user-interface/monotouch.dialog/index.md
+- title: プラットフォーム機能
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Apple Pay
+      url: ~/ios/platform/apple-pay.md
+    - text: ARKit
+      url: ~/ios/platform/introduction-to-ios11/arkit/index.md
+    - text: グラフィックスとアニメーション
+      url: ~/ios/platform/graphics-animation-ios/index.md
+    - text: PassKit
+      url: ~/ios/platform/passkit.md
+    - text: PhotoKit
+      url: ~/ios/platform/photokit.md
+    - text: 検索
+      url: ~/ios/platform/search/index.md
+    - text: SiriKit
+      url: ~/ios/platform/sirikit/index.md
+    - text: 3D タッチ
+      url: ~/ios/platform/3d-touch.md
+    - text: Touch ID と Face ID
+      url: ~/ios/platform/touch-id-face-id.md
+    - text: 詳しく見る >
+      url: ~/ios/platform/index.md
+- title: Xamarin.Essentials
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: バージョン情報
+      url: ~/essentials/index.md?context=xamarin/ios
+    - text: 作業開始
+      url: ~/essentials/get-started.md?context=xamarin/ios
+    - text: プラットフォームと機能のサポート
+      url: ~/essentials/platform-feature-support.md?context=xamarin/ios
+    - text: トラブルシューティング
+      url: ~/essentials/troubleshooting.md?context=xamarin/ios
+    - text: リリース ノート
+      url: https://docs.microsoft.com/xamarin/essentials/release-notes/
+- title: データとクラウド サービス
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Azure Active Directory
+      url: ~/cross-platform/data-cloud/active-directory/index.md?context=xamarin/ios
+    - text: Azure Mobile Apps
+      url: ~/cross-platform/data-cloud/mobile-apps.md
+    - text: データ アクセス
+      url: ~/ios/data-cloud/data/index.md
+    - text: System.Data
+      url: ~/ios/data-cloud/system.data.md
+    - text: iCloud
+      url: ~/ios/data-cloud/introduction-to-icloud.md
+    - text: CloudKit
+      url: ~/ios/data-cloud/intro-to-cloudkit.md
+    - text: Web サービスの概要
+      url: ~/cross-platform/data-cloud/web-services/index.md?context=xamarin/ios
+- title: デプロイとテスト
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: アプリの配布
+      url: ~/ios/deploy-test/app-distribution/index.md
+    - text: コード署名とプロビジョニング
+      url: ~/ios/deploy-test/provisioning/index.md
+    - text: 各種デバイス向けコンパイル
+      url: ~/ios/deploy-test/compiling-for-different-devices.md
+    - text: iOS ビルドのしくみ
+      url: ~/ios/deploy-test/ios-build-mechanics.md
+    - text: Xamarin.iOS アプリをリンクする
+      url: ~/ios/deploy-test/linker.md
+    - text: プロファイル
+      url: ~/ios/deploy-test/using-instruments-to-detect-native-leaks-using-markheap.md
+    - text: パフォーマンス
+      url: ~/ios/deploy-test/performance.md
+    - text: 単体テスト
+      url: ~/ios/deploy-test/touch.unit.md
+    - text: ワイヤレス展開
+      url: ~/ios/deploy-test/wireless-deployment.md
+    - text: 詳しく見る >
+      url: ~/ios/deploy-test/index.md
+- title: 高度な概念と内部構造
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: API
+      url: ~/ios/internals/api.md
+    - text: API 設計
+      url: ~/ios/internals/api-design/index.md
+    - text: 使用できるアセンブリ
+      url: ~/cross-platform/internals/available-assemblies.md?context=xamarin/ios
+    - text: 浮動小数点数
+      url: ~/ios/internals/floating-point.md
+    - text: XIB コードの生成
+      url: ~/ios/internals/xib-code-generation.md
+    - text: iOS のアーキテクチャ
+      url: ~/ios/internals/architecture.md
+    - text: 制限事項
+      url: ~/ios/internals/limitations.md
+    - text: 新しい refcount
+      url: ~/ios/internals/newrefcount.md
+    - text: Objective-C セレクター
+      url: ~/ios/internals/objective-c-selectors.md
+    - text: レジストラー
+      url: ~/ios/internals/registrar.md
+- title: watchOS
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: 作業開始
+      url: ~/ios/watchos/get-started/index.md
+    - text: アプリケーションの基礎
+      url: ~/ios/watchos/app-fundamentals/index.md
+    - text: ユーザー インターフェイス
+      url: ~/ios/watchos/user-interface/index.md
+    - text: プラットフォーム機能
+      url: ~/ios/watchos/platform/index.md
+    - text: watchOS 向け Xamarin.Essentials
+      url: ~/essentials/index.md?context=xamarin/watchos
+    - text: デプロイとテスト
+      url: ~/ios/watchos/deploy-test/index.md
+    - text: トラブルシューティング
+      url: ~/ios/watchos/troubleshooting.md
+- title: tvOS
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: 作業開始
+      url: ~/ios/tvos/get-started/index.md
+    - text: アプリケーションの基礎
+      url: ~/ios/tvos/app-fundamentals/index.md
+    - text: ユーザー インターフェイス
+      url: ~/ios/tvos/user-interface/index.md
+    - text: プラットフォーム機能
+      url: ~/ios/tvos/platform/index.md
+    - text: tvOS 向け Xamarin.Essentials
+      url: ~/essentials/index.md?context=xamarin/tvos
+    - text: デプロイとテスト
+      url: ~/ios/tvos/deploy-test/index.md
+    - text: 内部構造
+      url: ~/ios/tvos/internals/index.md
+    - text: トラブルシューティング
+      url: ~/ios/tvos/troubleshooting.md
