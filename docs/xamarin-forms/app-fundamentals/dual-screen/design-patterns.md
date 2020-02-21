@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidortinau
 ms.author: daortin
 ms.date: 02/08/2020
-ms.openlocfilehash: c739b32cb45c27bbbc166f898dee964a7cbbbce6
-ms.sourcegitcommit: 07941cf9704ff88cf4087de5ebdea623ff54edb1
+ms.openlocfilehash: eb4d3d80fa416f7bb94f3137a0925a9a9807cb10
+ms.sourcegitcommit: 524fc148bad17272bda83c50775771daa45bfd7e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77145526"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77480615"
 ---
 # <a name="xamarinforms-dual-screen-design-patterns"></a>Xamarin.Forms のデュアル画面の設計パターン
 
@@ -29,20 +29,24 @@ ms.locfileid: "77145526"
 ![](design-patterns-images/extended-canvas-sample.png "Extended canvas sample")
 
 ```xaml
-<ContentPage
-    xmlns:local="clr-namespace:Xamarin.Duo.Forms.Samples"
-    xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    x:Class="Xamarin.Duo.Forms.Samples.ExtendCanvas">
-    <ContentPage.Content>
-        <Grid>
-            <WebView x:Name="webView" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
-            <SearchBar x:Name="searchBar" Placeholder="Find a place..." BackgroundColor="DarkGray" Opacity="0.8" HorizontalOptions="FillAndExpand" VerticalOptions="Start" />
-        </Grid>
-    </ContentPage.Content>
+<ContentPage xmlns:local="clr-namespace:Xamarin.Duo.Forms.Samples"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Xamarin.Duo.Forms.Samples.ExtendCanvas">
+    <Grid>
+        <WebView x:Name="webView"
+                 HorizontalOptions="FillAndExpand"
+                 VerticalOptions="FillAndExpand" />
+        <SearchBar x:Name="searchBar"
+                   Placeholder="Find a place..."
+                   BackgroundColor="DarkGray"
+                   Opacity="0.8"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="Start" />
+    </Grid>
 </ContentPage>
 ```
 
@@ -55,19 +59,18 @@ ms.locfileid: "77145526"
 ![](design-patterns-images/master-detail-sample.png "Master detail sample")
 
 ```xaml
-<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage
-    xmlns:local="clr-namespace:Xamarin.Duo.Forms.Samples"
-    xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:dualScreen="clr-namespace:Xamarin.Forms.DualScreen;assembly=Xamarin.Forms.DualScreen"
-    x:Class="Xamarin.Duo.Forms.Samples.MasterDetail">
-    <dualScreen:TwoPaneView MinWideModeWidth="4000" MinTallModeHeight="4000">
+<ContentPage xmlns:local="clr-namespace:Xamarin.Duo.Forms.Samples"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dualScreen="clr-namespace:Xamarin.Forms.DualScreen;assembly=Xamarin.Forms.DualScreen"
+             x:Class="Xamarin.Duo.Forms.Samples.MasterDetail">
+    <dualScreen:TwoPaneView MinWideModeWidth="4000"
+                            MinTallModeHeight="4000">
         <dualScreen:TwoPaneView.Pane1>
-            <local:Master x:Name="masterPage"></local:Master>
+            <local:Master x:Name="masterPage" />
         </dualScreen:TwoPaneView.Pane1>
         <dualScreen:TwoPaneView.Pane2>
-            <local:Details x:Name="detailsPage"></local:Details>
+            <local:Details x:Name="detailsPage" />
         </dualScreen:TwoPaneView.Pane2>
     </dualScreen:TwoPaneView>
 </ContentPage>
@@ -77,27 +80,35 @@ ms.locfileid: "77145526"
 
 ## <a name="two-page-pattern"></a>2 ページのパターン
 
-2 ページは、ドキュメント リーダー、メモ、アートボードなどの 2 アップのレイアウトにするコンテンツに適しています。
+2 ページのパターンは、ドキュメント リーダー、メモ、アートボードなどの 2 アップのレイアウトにするコンテンツに適しています。
 
 ![](design-patterns-images/two-page-sample.png "Two page sample")
 
 ```xaml
 <Grid x:Name="layout">
-    <CollectionView x:Name="cv" BackgroundColor="LightGray">
+    <CollectionView x:Name="cv"
+                    BackgroundColor="LightGray">
         <CollectionView.ItemsLayout>
-            <GridItemsLayout
-                SnapPointsAlignment="Start"
-                SnapPointsType="MandatorySingle"
-                Orientation="Horizontal"
-                HorizontalItemSpacing="{Binding Source={x:Reference mainPage}, Path=HingeWidth}" />
+            <GridItemsLayout SnapPointsAlignment="Start"
+                             SnapPointsType="MandatorySingle"
+                             Orientation="Horizontal"
+                             HorizontalItemSpacing="{Binding Source={x:Reference mainPage}, Path=HingeWidth}" />
         </CollectionView.ItemsLayout>
         <CollectionView.ItemTemplate>
             <DataTemplate>
-                <Frame BackgroundColor="LightGray" Padding="0" Margin="0"
-                        WidthRequest="{Binding Source={x:Reference mainPage}, Path=ContentWidth}"
-                        HeightRequest="{Binding Source={x:Reference mainPage}, Path=ContentHeight}">
-                    <Frame Margin="20" BackgroundColor="White">
-                        <Label FontSize="Large" Text="{Binding .}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+                <Frame BackgroundColor="LightGray"
+                       Padding="0"
+                       Margin="0"
+                       WidthRequest="{Binding Source={x:Reference mainPage}, Path=ContentWidth}"
+                       HeightRequest="{Binding Source={x:Reference mainPage}, Path=ContentHeight}">
+                    <Frame Margin="20"
+                           BackgroundColor="White">
+                        <Label FontSize="Large"
+                               Text="{Binding .}"
+                               VerticalTextAlignment="Center"
+                               HorizontalTextAlignment="Center"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center" />
                     </Frame>
                 </Frame>
             </DataTemplate>
@@ -110,26 +121,28 @@ ms.locfileid: "77145526"
 
 ## <a name="dual-view-pattern"></a>デュアル ビューのパターン
 
-デュアル ビューは、"2 ページ" ビューと同じように見えますが、コンテンツとユーザーのシナリオで違いがあります。 このパターンでは、コンテンツを並べて比較して、ドキュメントや写真を編集したり、さまざまなレストランのメニューを比較したり、コード ファイルのマージ競合の差分を確認したりします。
+デュアル ビューのパターンは、"2 ページ" ビューと同じように見えますが、コンテンツとユーザーのシナリオで違いがあります。 このパターンでは、コンテンツを並べて比較して、ドキュメントや写真を編集したり、さまざまなレストランのメニューを比較したり、コード ファイルのマージ競合の差分を確認したりします。
 
 ![](design-patterns-images/dual-view-sample.png "Dual view sample")
 
 ```xaml
-<ContentPage
-    xmlns:local="clr-namespace:Xamarin.Duo.Forms.Samples"
-    xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:dualScreen="clr-namespace:Xamarin.Forms.DualScreen;assembly=Xamarin.Forms.DualScreen"
-    x:Class="Xamarin.Duo.Forms.Samples.DualViewListPage">
+<ContentPage xmlns:local="clr-namespace:Xamarin.Duo.Forms.Samples"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dualScreen="clr-namespace:Xamarin.Forms.DualScreen;assembly=Xamarin.Forms.DualScreen"
+             x:Class="Xamarin.Duo.Forms.Samples.DualViewListPage">
     <dualScreen:TwoPaneView>
         <dualScreen:TwoPaneView.Pane1>
-            <CollectionView SelectionMode="Single" x:Name="mapList">
+            <CollectionView x:Name="mapList"
+                            SelectionMode="Single">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid Padding="10,5,10,5">
-                            <Frame Visual="Material" BorderColor="LightGray">
+                            <Frame Visual="Material"
+                                   BorderColor="LightGray">
                                 <StackLayout Padding="5">
-                                    <Label FontSize="Title" Text="{Binding Title}"></Label>
+                                    <Label FontSize="Title"
+                                           Text="{Binding Title}" />
                                 </StackLayout>
                             </Frame>
                         </Grid>
@@ -138,7 +151,7 @@ ms.locfileid: "77145526"
             </CollectionView>
         </dualScreen:TwoPaneView.Pane1>
         <dualScreen:TwoPaneView.Pane2>
-            <local:DualViewMap x:Name="mapPage"></local:DualViewMap>
+            <local:DualViewMap x:Name="mapPage" />
         </dualScreen:TwoPaneView.Pane2>
     </dualScreen:TwoPaneView>
 </ContentPage>
@@ -151,24 +164,36 @@ ms.locfileid: "77145526"
 ![](design-patterns-images/companion-pane-sample.png "Companion pane sample")
 
 ```xaml
-<ContentPage
-    xmlns:local="clr-namespace:Xamarin.Duo.Forms.Samples" xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:dualscreen="clr-namespace:Xamarin.Forms.DualScreen;assembly=Xamarin.Forms.DualScreen"
-    x:Name="mainPage"
-    x:Class="Xamarin.Duo.Forms.Samples.CompanionPane"
-    BackgroundColor="LightGray"
-    Visual="Material">
-    <dualscreen:TwoPaneView x:Name="twoPaneView" MinWideModeWidth="4000" MinTallModeHeight="4000">
+<ContentPage xmlns:local="clr-namespace:Xamarin.Duo.Forms.Samples"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dualscreen="clr-namespace:Xamarin.Forms.DualScreen;assembly=Xamarin.Forms.DualScreen"
+             x:Name="mainPage"
+             x:Class="Xamarin.Duo.Forms.Samples.CompanionPane"
+             BackgroundColor="LightGray"
+             Visual="Material">
+    <dualscreen:TwoPaneView x:Name="twoPaneView"
+                            MinWideModeWidth="4000"
+                            MinTallModeHeight="4000">
         <dualscreen:TwoPaneView.Pane1>
-            <CarouselView x:Name="cv" BackgroundColor="LightGray" IsScrollAnimated="False" >
+            <CarouselView x:Name="cv"
+                          BackgroundColor="LightGray"
+                          IsScrollAnimated="False" >
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
-                        <Frame BackgroundColor="LightGray" Padding="0" Margin="0"
-                           WidthRequest="{Binding Source={x:Reference twoPaneView}, Path=Pane1.Width}"
-                           HeightRequest="{Binding Source={x:Reference twoPaneView}, Path=Pane1.Height}">
-                            <Frame Margin="20" BackgroundColor="White">
-                                <Label FontSize="Large" Text="{Binding ., StringFormat='Slide Content {0}'}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+                        <Frame BackgroundColor="LightGray"
+                               Padding="0"
+                               Margin="0"
+                               WidthRequest="{Binding Source={x:Reference twoPaneView}, Path=Pane1.Width}"
+                               HeightRequest="{Binding Source={x:Reference twoPaneView}, Path=Pane1.Height}">
+                            <Frame Margin="20"
+                                   BackgroundColor="White">
+                                <Label FontSize="Large"
+                                       Text="{Binding ., StringFormat='Slide Content {0}'}"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalTextAlignment="Center"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center" />
                             </Frame>
                         </Frame>
                     </DataTemplate>
@@ -177,11 +202,11 @@ ms.locfileid: "77145526"
         </dualscreen:TwoPaneView.Pane1>
         <dualscreen:TwoPaneView.Pane2>
             <CollectionView x:Name="indicators"
-            SelectionMode="Single"
-            Margin="20, 20, 20, 20"
-            BackgroundColor="LightGray"
-            WidthRequest="{Binding Source={x:Reference twoPaneView}, Path=Pane2.Width}"
-            ItemsSource="{Binding Source={x:Reference cv}, Path=ItemsSource}">
+                            SelectionMode="Single"
+                            Margin="20, 20, 20, 20"
+                            BackgroundColor="LightGray"
+                            WidthRequest="{Binding Source={x:Reference twoPaneView}, Path=Pane2.Width}"
+                            ItemsSource="{Binding Source={x:Reference cv}, Path=ItemsSource}">
                 <CollectionView.Resources>
                     <ResourceDictionary>
                         <Style TargetType="Frame">
@@ -190,13 +215,16 @@ ms.locfileid: "77145526"
                                     <VisualStateGroup x:Name="CommonStates">
                                         <VisualState x:Name="Normal">
                                             <VisualState.Setters>
-                                                <Setter Property="Padding" Value="0"></Setter>
+                                                <Setter Property="Padding"
+                                                        Value="0" />
                                             </VisualState.Setters>
                                         </VisualState>
                                         <VisualState x:Name="Selected">
                                             <VisualState.Setters>
-                                                <Setter Property="BorderColor" Value="Green" />
-                                                <Setter Property="Padding" Value="1"></Setter>
+                                                <Setter Property="BorderColor"
+                                                        Value="Green" />
+                                                <Setter Property="Padding"
+                                                        Value="1" />
                                             </VisualState.Setters>
                                         </VisualState>
                                     </VisualStateGroup>
@@ -206,14 +234,30 @@ ms.locfileid: "77145526"
                     </ResourceDictionary>
                 </CollectionView.Resources>
                 <CollectionView.ItemsLayout>
-                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="10"></LinearItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical"
+                                       ItemSpacing="10" />
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Frame WidthRequest="{Binding Source={x:Reference twoPaneView}, Path=Pane2.Width}" CornerRadius="10" HeightRequest="60" BackgroundColor="White" Margin="0">
-                            <StackLayout HorizontalOptions="Fill" VerticalOptions="Fill"  Orientation="Horizontal">
-                                <Label FontSize="Micro" Padding="20,0,20,0" VerticalTextAlignment="Center" WidthRequest="140" Text="{Binding ., StringFormat='Slide Content {0}'}"></Label>
-                                <Label FontSize="Small" Padding="20,0,20,0" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand" BackgroundColor="DarkGray"  Grid.Column="1" Text="{Binding ., StringFormat='Slide {0}'}"></Label>
+                        <Frame WidthRequest="{Binding Source={x:Reference twoPaneView}, Path=Pane2.Width}"
+                               CornerRadius="10"
+                               HeightRequest="60"
+                               BackgroundColor="White"
+                               Margin="0">
+                            <StackLayout HorizontalOptions="Fill"
+                                         VerticalOptions="Fill"
+                                         Orientation="Horizontal">
+                                <Label FontSize="Micro"
+                                       Padding="20,0,20,0"
+                                       VerticalTextAlignment="Center"
+                                       WidthRequest="140" Text="{Binding ., StringFormat='Slide Content {0}'}" />
+                                <Label FontSize="Small"
+                                       Padding="20,0,20,0"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalOptions="FillAndExpand"
+                                       BackgroundColor="DarkGray"
+                                       Grid.Column="1"
+                                       Text="{Binding ., StringFormat='Slide {0}'}" />
                             </StackLayout>
                         </Frame>
                     </DataTemplate>

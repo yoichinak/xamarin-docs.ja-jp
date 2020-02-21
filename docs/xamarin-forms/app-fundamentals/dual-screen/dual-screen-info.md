@@ -1,41 +1,41 @@
 ---
 title: Xamarin.Forms の DualScreenInfo
-description: このガイドでは、Xamarin.Forms の DualScreenInfo を使用して Surface Duo や Surface Neo などのデュアル画面デバイスのアプリ エクスペリエンスを最適化する方法について説明します。
+description: このガイドでは、Xamarin.Forms の DualScreenInfo クラスを使用して Surface Duo や Surface Neo などのデュアル画面デバイスのアプリ エクスペリエンスを最適化する方法について説明します。
 ms.prod: xamarin
 ms.assetid: dd5eb074-f4cb-4ab4-b47d-76f862ac7cfa
 ms.technology: xamarin-forms
 author: davidortinau
 ms.author: daortin
 ms.date: 02/08/2020
-ms.openlocfilehash: cae704b7d6300a9dc5eb456f0dec8989813c6581
-ms.sourcegitcommit: 07941cf9704ff88cf4087de5ebdea623ff54edb1
+ms.openlocfilehash: e9a01ed3720f1501423eb1c0746d311918af82fb
+ms.sourcegitcommit: 524fc148bad17272bda83c50775771daa45bfd7e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77145616"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77480583"
 ---
 # <a name="xamarinforms-dualscreeninfo"></a>Xamarin.Forms の DualScreenInfo
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-samples/tree/pre-release/UserInterface/DualScreenDemos)
 
-_DualScreenInfo を使用して、レイアウトの変更と、デュアル画面との現在のリレーションシップを検出して通知することができます。_
+`DualScreenInfo` で、表示されるペイン、その大きさ、デバイスがどのようなものか、ヒンジの角度などを決定できるようになります。
 
 ## <a name="properties"></a>プロパティ
 
-- `SpanningBounds` 2 画面にまたがっている場合は、表示可能な各領域の境界を示す 2 つの四角形を返します。 ウィンドウが複数にまたがっていない場合は、空の配列が返されます。
-- `HingeBounds` 画面上のヒンジの位置。
+- 2 画面にまたがっている場合は、`SpanningBounds` が表示可能な各領域の境界を示す 2 つの四角形を返します。 ウィンドウが複数にまたがっていない場合は、空の配列が返されます。
+- `HingeBounds` は画面上のヒンジの位置を示します。
 - `IsLandscape` はデバイスが横向きであるかどうかを示します。 アプリケーションが複数にまたがっている場合、ネイティブの向きの API では向きが正しく報告されないため、これは便利です。
-- `PropertyChanged` はプロパティが変更されたときに発生します。
 - `SpanMode` はレイアウトが縦長、横長、または単一のペイン モードのどれかを示します。
 
-## <a name="android-only-property"></a>Android のみのプロパティ
+また、プロパティが変更されたときには `PropertyChanged` のイベントが発生します。
 
-このプロパティは、Android プラットフォーム プロジェクトから DualScreenInfo にアクセスする場合にのみ使用できます。
-このプロパティはカスタム レンダラーから使用できます。
+## <a name="poll-hinge-angle-on-android"></a>Android でのヒンジ角度をポーリングする
+
+次のプロパティは、Android プラットフォーム プロジェクトから `DualScreenInfo` にアクセスする場合に使用できます。
 
 - `GetHingeAngleAsync` はデバイスのヒンジの現在の角度を取得します。 シミュレーターを使用する場合は、圧力センサーを変更することで HingeAngle を設定できます。
 
-## <a name="android-custom-renderer-for-polling-hinge-angle"></a>ポーリングのヒンジ角度用の Android カスタム レンダラー
+次のプロパティは、Android カスタム レンダラーから使用できます。
 
 ```csharp
 public class HingeAngleLabelRenderer : Xamarin.Forms.Platform.Android.FastRenderers.LabelRenderer
@@ -89,7 +89,9 @@ public class HingeAngleLabelRenderer : Xamarin.Forms.Platform.Android.FastRender
 }
 ```
 
-## <a name="access-dualscreeninfo-for-application-window"></a>アプリケーション ウィンドウの DualScreenInfo にアクセスする
+## <a name="access-dualscreeninfo-in-your-application-window"></a>アプリケーション ウィンドウの DualScreenInfo にアクセスする
+
+次のコードは、アプリケーション ウィンドウの `DualScreenInfo` にアクセスする方法を示しています。
 
 ```csharp
 DualScreenInfo currentWindow = DualScreenInfo.Current;
@@ -104,11 +106,11 @@ if(currentWindow.SpanMode == TwoPaneViewMode.SinglePane)
 }
 else if(currentWindow.SpanMode == TwoPaneViewMode.Tall)
 {
-    // window is spanned across two screens and oriented as landscape
+    // window is spanned across two screens and oriented top-bottom
 }
 else if(currentWindow.SpanMode == TwoPaneViewMode.Wide)
 {
-    // window is spanned across two screens and oriented as portrait
+    // window is spanned across two screens and oriented side-by-side
 }
 
 // Detect if any of the properties on DualScreenInfo change.
@@ -117,20 +119,26 @@ else if(currentWindow.SpanMode == TwoPaneViewMode.Wide)
 currentWindow.PropertyChanged += OnDualScreenInfoChanged;
 ```
 
-## <a name="apply-dualscreeninfo-to-your-own-layouts"></a>独自のレイアウトに DualScreenInfo を適用する
+## <a name="apply-dualscreeninfo-to-layouts"></a>レイアウトに DualScreenInfo を適用する
 
-DualScreenInfo には、レイアウトを取得し、デバイスを基準としたレイアウトに関する情報を 2 つの画面に表示するコンストラクターがあります。
+`DualScreenInfo` クラスには、レイアウトを取得し、デバイスを基準としたレイアウトに関する情報を 2 つの画面に表示するコンストラクターがあります。
 
 ```xaml
 <Grid x:Name="grid" ColumnSpacing="0">
     <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="{Binding Column1Width}"></ColumnDefinition>
-        <ColumnDefinition Width="{Binding Column2Width}"></ColumnDefinition>
-        <ColumnDefinition Width="{Binding Column3Width}"></ColumnDefinition>
+        <ColumnDefinition Width="{Binding Column1Width}" />
+        <ColumnDefinition Width="{Binding Column2Width}" />
+        <ColumnDefinition Width="{Binding Column3Width}" />
     </Grid.ColumnDefinitions>
-
-    <Label FontSize="Large" VerticalOptions="Center" HorizontalOptions="End" Text="I should be on the left side of the hinge"></Label>
-    <Label FontSize="Large" VerticalOptions="Center" HorizontalOptions="Start" Grid.Column="2" Text="I should be on the right side of the hinge"></Label>
+    <Label FontSize="Large"
+           VerticalOptions="Center"
+           HorizontalOptions="End"
+           Text="I should be on the left side of the hinge" />
+    <Label FontSize="Large"
+           VerticalOptions="Center"
+           HorizontalOptions="Start"
+           Grid.Column="2"
+           Text="I should be on the right side of the hinge" />
 </Grid>
 ```
 
@@ -197,6 +205,8 @@ public partial class GridUsingDualScreenInfo : ContentPage
     }
 }
 ```
+
+次のスクリーンショットは、結果のレイアウトを示しています。
 
 ![](dual-screen-info-images/grid-on-two-screens.png "Positioning Grid on Two Screens")
 

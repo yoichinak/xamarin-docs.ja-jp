@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/27/2018
-ms.openlocfilehash: 1199cdf00a5fa93b7ed7a4351ea5838a2065eddd
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a724a21dfffead307ca3d65d5ff134cf2d7c90db
+ms.sourcegitcommit: 24883be72e485e5311dd0eb91f9a22f78eeec11a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73020855"
+ms.lasthandoff: 02/17/2020
+ms.locfileid: "77374037"
 ---
 # <a name="hardware-acceleration-for-emulator-performance-hyper-v--haxm"></a>エミュレーターのパフォーマンスのためのハードウェア高速化 (Hyper-V と HAXM)
 
@@ -42,7 +42,7 @@ Android エミュレーターの高速化には、次の仮想化テクノロジ
 2. **Intel の Hardware Accelerated Execution Manager (HAXM)** 。
    HAXM は Intel CPU を実行するコンピューターのための仮想化エンジンです。
 
-Windows で最適なエクスペリエンスを実現するには、HAXM を使用して Android エミュレーターを高速化することをお勧めします。 コンピューターで HAXM を使用できない場合は、Windows ハイパーバイザー プラットフォーム (WHPX) を使用できます。 Android エミュレーターは、次の条件が満たされている場合、ハードウェア高速化を自動的に利用します。
+Windows で最適なエクスペリエンスを実現するには、WHPX を使用して Android エミュレーターを高速化することをお勧めします。 お使いのコンピューターで WHPX を使用できない場合は、HAXM を使用できます。 Android エミュレーターは、次の条件が満たされている場合、ハードウェア高速化を自動的に利用します。
 
 - 開発コンピューターにハードウェア高速化機能があり、それが有効になっている。
 
@@ -102,6 +102,10 @@ systeminfo
     [![Hyper-V と Windows ハイパーバイザー プラットフォームを有効にする](hardware-acceleration-images/win/03-hyper-v-settings-w158-sml.png)](hardware-acceleration-images/win/03-hyper-v-settings-w158.png#lightbox)
 
    これらの変更を加えたら、コンピューターを再起動します。
+   
+> [!IMPORTANT]
+>
+> Windows 10 の 2018 年 10 月の更新プログラム (RS5) 以降では、Windows ハイパーバイザー プラットフォーム (WHPX) が自動的に使用されるため、Hyper-V のみを有効にする必要があります。
 
 2. **[Visual Studio 15.8 以降](https://visualstudio.microsoft.com/vs/)をインストールします** (このバージョンの Visual Studio には Hyper-V で Android エミュレーターを実行するための IDE が用意されています)。
 

@@ -555,7 +555,12 @@
                 - name: カスケード スタイル シート (CSS) を使用した Xamarin.Forms アプリのスタイル設定
                   href: user-interface/styles/css/index.md
             - name: テーマ
-              href: user-interface/theming.md
+              href: user-interface/theming/index.md
+              items:
+                - name: アプリケーションのテーマを設定する
+                  href: user-interface/theming/theming.md
+                - name: ダーク モードを検出する
+                  href: user-interface/theming/dark-mode.md
             - name: ビジュアル
               href: user-interface/visual/index.md
               items:
