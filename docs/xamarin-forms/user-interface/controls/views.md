@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2019
-ms.openlocfilehash: 286950104e9a85b6ec89f0c0f3f891f29dada4ec
-ms.sourcegitcommit: 07941cf9704ff88cf4087de5ebdea623ff54edb1
+ms.openlocfilehash: 06b802a90ef350dcbd0b056f801109609dcd7a35
+ms.sourcegitcommit: 524fc148bad17272bda83c50775771daa45bfd7e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77144666"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77480634"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms のビュー
 
@@ -24,14 +24,14 @@ _Xamarin 形式のビューは、クロスプラットフォームモバイル�
 
 ## <a name="views-for-presentation"></a>表示用のビュー
 
-### <a name="label"></a>Label
+### <a name="label"></a>[ラベル]
 
 |     |     |
 | --- | --- |
 | [`Label`](xref:Xamarin.Forms.Label)には、定数または変数の書式設定を使用して、単一行のテキスト文字列またはテキストの複数行のブロックが表示されます。 [`Text`](xref:Xamarin.Forms.Label.Text)プロパティを定数形式の文字列に設定するか、 [`FormattedText`](xref:Xamarin.Forms.Label.FormattedText)プロパティを変数の書式設定のために[`FormattedString`](xref:Xamarin.Forms.FormattedString)オブジェクトに設定します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.Label) / [ガイド](~/xamarin-forms/user-interface/text/label.md) / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text) | [![ラベルの例](views-images/Label.png "ラベルの例")](views-images/Label-Large.png#lightbox "ラベルの例")<br /> このページ / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/LabelDemoPage.xaml)のコード[ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/LabelDemoPage.cs) |
 |     |     |
 
-### <a name="image"></a>Image
+### <a name="image"></a>イメージ
 
 |     |     |
 | --- | --- |
@@ -119,7 +119,7 @@ _Xamarin 形式のビューは、クロスプラットフォームモバイル�
 | `CheckBox` を使用すると、ユーザーは、チェックボックスをオンまたは空にすることができるボタンの種類を使用してブール値を選択できます。 `IsChecked` プロパティは `CheckBox`の状態であり、`CheckedChanged` イベントは、状態が変化したときに発生します。<br /><br />API ドキュメント/[ガイド](~/xamarin-forms/user-interface/checkbox.md) / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos) | [![CheckBox の例](views-images/CheckBox.png "CheckBox の例")](views-images/CheckBox-Large.png#lightbox "CheckBox の例")<br />このページ / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CheckBoxPage.xaml)のコード[ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CheckBoxPage.cs) |
 |     |     |
 
-### <a name="slider"></a>スライダー
+### <a name="slider"></a>[スライダー]
 
 |     |     |
 | --- | --- |
@@ -208,7 +208,7 @@ _Xamarin 形式のビューは、クロスプラットフォームモバイル�
 
 |     |     |
 | --- | --- |
-| `IndicatorView` `CarouselView`内の項目数を表すインジケーターを表示します。 インジケーターを表示するには、`ItemsSourceBy` プロパティを `CarouselView` オブジェクトに設定します。 <br /><br /> / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-indicatorviewdemos/)の[ガイド](~/xamarin-forms/user-interface/indicatorview.md) | [![IndicatorView の例](views-images/IndicatorView.png "IndicatorView の例")](views-images/IndicatorView-Large.png#lightbox "IndicatorView の例")<br />このページ / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/IndicatorViewDemoPage.xaml)のコード[ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/IndicatorViewDemoPage.cs) |
+| `IndicatorView` `CarouselView`内の項目数を表すインジケーターを表示します。 `IndicatorView.ItemsSourceBy` 添付プロパティを `CarouselView` オブジェクトに設定して、インジケーターを表示します。 <br /><br /> / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-indicatorviewdemos/)の[ガイド](~/xamarin-forms/user-interface/indicatorview.md) | [![IndicatorView の例](views-images/IndicatorView.png "IndicatorView の例")](views-images/IndicatorView-Large.png#lightbox "IndicatorView の例")<br />このページ / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/IndicatorViewDemoPage.xaml)のコード[ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/IndicatorViewDemoPage.cs) |
 |     |     |
 
 ### <a name="listview"></a>ListView

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/17/2019
-ms.openlocfilehash: 6b7845011470d83d8f2187e0227950c23e46d52d
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: a5a9daa39dcc94bbf77d9c91ea651bda6ec5747b
+ms.sourcegitcommit: 524fc148bad17272bda83c50775771daa45bfd7e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75490518"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77480549"
 ---
 # <a name="xamarinforms-indicatorview"></a>IndicatorView
 
@@ -30,7 +30,7 @@ ms.locfileid: "75490518"
 Forms.SetFlags("IndicatorView_Experimental");
 ```
 
-`IndicatorView` 次のプロパティを定義します。
+`IndicatorView` は、次のプロパティを定義します。
 
 - インジケーターの数 `int`型の `Count`。
 - 型 `bool`の `HideSingle`は、1つだけ存在する場合にインジケーターを非表示にするかどうかを示します。 既定値は `true`です。
@@ -39,10 +39,10 @@ Forms.SetFlags("IndicatorView_Experimental");
 - `Layout<View>`型の `IndicatorLayout`は、`IndicatorView`を表示するために使用するレイアウトクラスを定義します。 このプロパティは、Xamarin. Forms によって設定されます。通常、開発者が設定する必要はありません。
 - 各インジケーターの外観を定義するテンプレート `DataTemplate`型の `IndicatorTemplate`。
 - 各インジケーターの形状 `IndicatorShape`型の `IndicatorsShape`。
-- `IEnumerable`型の `ItemsSource`、インジケーターが表示されるコレクションです。 このプロパティは、`ItemsSourceBy` プロパティが設定されている場合に自動的に設定されます。
-- インジケーターを表示する `CarouselView` オブジェクト `VisualElement`型の `ItemsSourceBy`。
+- `IEnumerable`型の `ItemsSource`、インジケーターが表示されるコレクションです。 このプロパティは、`ItemsSourceBy` 添付プロパティが設定されている場合に自動的に設定されます。
+- インジケーターを表示する `CarouselView` オブジェクト `VisualElement`型の `ItemsSourceBy`。 これは添付プロパティです。
 - `int`型の `MaximumVisible`、表示されるインジケーターの最大数。 既定値は `int.MaxValue`です。
-- 現在選択されているインジケーターインデックスの型 `int`の `Position`。 このプロパティは、`TwoWay` バインドを使用します。 このプロパティは、`ItemsSourceBy` プロパティが設定されている場合に自動的に設定されます。
+- 現在選択されているインジケーターインデックスの型 `int`の `Position`。 このプロパティは、`TwoWay` バインドを使用します。 このプロパティは、`ItemsSourceBy` 添付プロパティが設定されている場合に自動的に設定されます。
 - `CarouselView`内の現在の項目を表すインジケーターの色 `Color`型の `SelectedIndicatorColor`。
 
 これらのプロパティは[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)のオブジェクトによって支えられています。これは、データバインディングのターゲットとスタイルを設定できることを意味します。
@@ -59,17 +59,17 @@ Forms.SetFlags("IndicatorView_Experimental");
             <!-- DataTemplate that defines item appearance -->
         </CarouselView.ItemTemplate>
     </CarouselView>
-    <IndicatorView ItemsSourceBy="carouselView"
+    <IndicatorView IndicatorView.ItemsSourceBy="carouselView"
                    IndicatorColor="LightGray"
                    SelectedIndicatorColor="DarkGray"
                    HorizontalOptions="Center" />
 </StackLayout>
 ```
 
-この例では、`IndicatorView` が `CarouselView`の下にレンダリングされ、`CarouselView`内の各項目のインジケーターが表示されます。 `IndicatorView` には、`ItemsSourceBy` プロパティを `CarouselView` オブジェクトに設定することによってデータが設定されます。 各インジケーターは薄い灰色の円であり、`CarouselView` の現在の項目を表すインジケーターは濃い灰色です。
+この例では、`IndicatorView` が `CarouselView`の下にレンダリングされ、`CarouselView`内の各項目のインジケーターが表示されます。 `IndicatorView` には、`ItemsSourceBy` 添付プロパティを `CarouselView` オブジェクトに設定することによってデータが設定されます。 各インジケーターは薄い灰色の円であり、`CarouselView` の現在の項目を表すインジケーターは濃い灰色です。
 
 > [!IMPORTANT]
-> `ItemsSourceBy` プロパティを設定すると、`Position` プロパティのバインドが `CarouselView.Position` プロパティになり、`ItemsSource` プロパティが `CarouselView.ItemsSource` プロパティにバインドされます。
+> `ItemsSourceBy` 添付プロパティを設定すると、`Position` プロパティバインドが `CarouselView.Position` プロパティになり、`ItemsSource` プロパティが `CarouselView.ItemsSource` プロパティにバインドされます。
 
 ## <a name="change-indicator-shape"></a>インジケーター形状の変更
 
@@ -82,7 +82,7 @@ Forms.SetFlags("IndicatorView_Experimental");
 
 ```xaml
 <IndicatorView IndicatorsShape="Square"
-               ItemsSourceBy="carouselView"
+               IndicatorView.ItemsSourceBy="carouselView"
                IndicatorColor="LightGray"
                SelectedIndicatorColor="DarkGray" />
 ```
@@ -99,7 +99,7 @@ Forms.SetFlags("IndicatorView_Experimental");
             <!-- DataTemplate that defines item appearance -->
         </CarouselView.ItemTemplate>
     </CarouselView>
-    <IndicatorView ItemsSourceBy="carouselView"
+    <IndicatorView IndicatorView.ItemsSourceBy="carouselView"
                    IndicatorColor="LightGray"
                    SelectedIndicatorColor="Black"
                    HorizontalOptions="Center">

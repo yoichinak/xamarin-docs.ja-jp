@@ -7,42 +7,42 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/18/2019
-ms.openlocfilehash: 1f2ef838287e32df5df42f73e4b43816d618552d
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.openlocfilehash: 88655aabdbd32db63aaf3330a18b0ad8105ea26c
+ms.sourcegitcommit: b751605179bef8eee2df92cb484011a7dceb6fda
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69887885"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77506538"
 ---
 # <a name="xamarinforms-switch"></a>Xamarin. フォームスイッチ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
 
-Xamarin [`Switch`](xref:Xamarin.Forms.Switch)コントロールは水平方向のトグルボタンで、ユーザーは`boolean`値で表されるオンとオフの状態を切り替えることができます。 クラス`Switch`は、から[`View`](xref:Xamarin.Forms.View)継承されます。
+Xamarin [`Switch`](xref:Xamarin.Forms.Switch)コントロールは水平方向のトグルボタンであり、ユーザーはこのボタンを使用して、`boolean` 値で表されるオンとオフの状態を切り替えることができます。 `Switch` クラスは[`View`](xref:Xamarin.Forms.View)から継承されます。
 
-次のスクリーンショットは`Switch` 、iOS と Android での**オン**と**オフ**の切り替え状態のコントロールを示しています。
+次のスクリーンショットは、iOS および Android での**オン**と**オフ**の切り替え状態の `Switch` コントロールを示しています。
 
 ![IOS と Android でのオンとオフの状態の切り替えのスクリーンショット](switch-images/switch-states-default.png "IOS と Android でのスイッチ")
 
-コントロール`Switch`は、次の2つのプロパティを定義します。
+`Switch` コントロールは、次のプロパティを定義します。
 
-* [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled)が**オンかどう**か`Switch`を示す値です。 `boolean`
-* [`OnColor`](xref:Xamarin.Forms.Switch.OnColor)は、が切り替え`Switch`られるか、状態で表示されるかに影響するです。`Color`
-* `ThumbColor`は、 `Color`スイッチのつまみのです。
+* [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled)は、`Switch` が**オン**かどうかを示す `boolean` 値です。
+* [`OnColor`](xref:Xamarin.Forms.Switch.OnColor)は、切り替えられた**状態または状態での**`Switch` の表示方法に影響する `Color` です。
+* `ThumbColor` は、スイッチのつまみの `Color` です。
 
-これらのプロパティは[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)オブジェクトによって支えられています。つまり、 `Switch`をスタイル設定し、データバインディングのターゲットにすることができます。
+これらのプロパティは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)オブジェクトによって支えられています。つまり、`Switch` のスタイルを設定し、データバインディングのターゲットにすることができます。
 
-コントロール`Switch`は、ユーザー `Toggled`操作を使用するか、 `IsToggled`アプリケーションがプロパティを`IsToggled`設定するときに、プロパティが変更されたときに発生するイベントを定義します。 イベントに`Value` `bool`付随する`ToggledEventArgs`オブジェクトには、型のという名前のプロパティが1つあります。 `Toggled` イベントが発生すると、プロパティの値`Value`に`IsToggled`プロパティの新しい値が反映されます。
+`Switch` コントロールは、ユーザー操作によって、またはアプリケーションが `IsToggled` プロパティを設定するときに、`IsToggled` プロパティが変更されたときに発生する `Toggled` イベントを定義します。 `Toggled` イベントに付随する `ToggledEventArgs` オブジェクトには、`bool`型の `Value`という名前のプロパティが1つあります。 イベントが発生すると、`Value` プロパティの値に `IsToggled` プロパティの新しい値が反映されます。
 
 ## <a name="create-a-switch"></a>スイッチを作成する
 
-は`Switch` 、XAML でインスタンス化できます。 このプロパティを設定すると、 `Switch`を切り替えることができます。 `IsToggled` 既定では、 `IsToggled`プロパティは`false`です。 次の例は、省略可能`Switch` `IsToggled`なプロパティセットを使用して、XAML でをインスタンス化する方法を示しています。
+`Switch` は、XAML でインスタンス化できます。 `IsToggled` プロパティを設定して、`Switch`を切り替えることができます。 既定では、`IsToggled` プロパティは `false`です。 次の例は、省略可能な `IsToggled` プロパティセットを使用して、XAML で `Switch` をインスタンス化する方法を示しています。
 
 ```xaml
 <Switch IsToggled="true"/>
 ```
 
-は`Switch` 、コードで作成することもできます。
+コードでは、`Switch` を作成することもできます。
 
 ```csharp
 Switch switchControl = new Switch { IsToggled = true };
@@ -50,32 +50,32 @@ Switch switchControl = new Switch { IsToggled = true };
 
 ## <a name="switch-appearance"></a>外観の切り替え
 
-[`Switch`](xref:Xamarin.Forms.Switch) `Switch` `OnColor` `ThumbColor`クラスから継承されるプロパティに加えて、はプロパティとプロパティも定義します。 [`View`](xref:Xamarin.Forms.View) `Color` `Switch` `ThumbColor`プロパティを設定して、状態がオンの状態に切り替わるときの色を定義できます。また、プロパティを設定して、スイッチのつまみのを定義できます。 `OnColor` 次の例は、これらのプロパティ`Switch`を設定して、XAML でをインスタンス化する方法を示しています。
+[`View`](xref:Xamarin.Forms.View)クラスから継承[`Switch`](xref:Xamarin.Forms.Switch)プロパティに加えて、`Switch` `OnColor` および `ThumbColor` のプロパティも定義します。 `OnColor` プロパティを設定して、`Switch` 色を**オン**状態に切り替えたときの色を定義できます。また、`ThumbColor` プロパティを設定して、スイッチのつまみの `Color` を定義できます。 次の例は、これらのプロパティを設定して、XAML で `Switch` をインスタンス化する方法を示しています。
 
 ```xaml
 <Switch OnColor="Orange"
         ThumbColor="Green" />
 ```
 
-プロパティは、コードでを`Switch`作成するときに設定することもできます。
+プロパティは、コードで `Switch` を作成するときに設定することもできます。
 
 ```csharp
 Switch switch = new Switch { OnColor = Color.Orange, ThumbColor = Color.Green };
 ```
 
-次のスクリーンショットは`Switch` 、プロパティ`OnColor`と`ThumbColor`プロパティが設定されている、**オン**と**オフ**の切り替え状態のを示しています。
+次のスクリーンショットは、`OnColor` と `ThumbColor` のプロパティが設定されている、**オン**と**オフ**の切り替え状態の `Switch` を示しています。
 
 ![IOS と Android でのオンとオフの状態の切り替えのスクリーンショット](switch-images/switch-states-colors.png "IOS と Android でのスイッチ")
 
 ## <a name="respond-to-a-switch-state-change"></a>スイッチの状態の変更に応答する
 
-ユーザー操作`IsToggled`によって、またはアプリケーションが`IsToggled`プロパティを設定するときに、プロパティ`Toggled`が変更されると、イベントが発生します。 このイベントのイベントハンドラーは、変更に応答するように登録できます。
+ユーザー操作によって、またはアプリケーションが `IsToggled` プロパティを設定したときに `IsToggled` プロパティが変更されると、`Toggled` イベントが発生します。 このイベントのイベントハンドラーは、変更に応答するように登録できます。
 
 ```xaml
 <Switch Toggled="OnToggled" />
 ```
 
-分離コード ファイルにはハンドラーが含まれています、`Toggled`イベント。
+分離コードファイルには、`Toggled` イベントのハンドラーが含まれています。
 
 ```csharp
 void OnToggled(object sender, ToggledEventArgs e)
@@ -84,9 +84,9 @@ void OnToggled(object sender, ToggledEventArgs e)
 }
 ```
 
-イベントハンドラーの`Switch` 引数は、このイベントの発生を`sender`担当するです。 `sender`プロパティを使用して`Switch`オブジェクトにアクセスしたり、同じ`Toggled`イベントハンドラーを`Switch`共有する複数のオブジェクトを区別したりできます。
+イベントハンドラーの `sender` 引数は、このイベントの発生を担当する `Switch` です。 `sender` プロパティを使用して、`Switch` オブジェクトにアクセスしたり、同じ `Toggled` イベントハンドラーを共有する複数の `Switch` オブジェクトを区別したりできます。
 
-イベント`Toggled`ハンドラーは、次のコードでも割り当てることができます。
+`Toggled` イベントハンドラーは、次のコードでも割り当てることができます。
 
 ```csharp
 Switch switchControl = new Switch {...};
@@ -98,7 +98,7 @@ switchControl.Toggled += (sender, e) =>
 
 ## <a name="data-bind-a-switch"></a>スイッチのデータバインド
 
-イベントハンドラーを削除するには、データバインディングとトリガーを使用して`Switch` 、変化するトグル状態に応答します。 `Toggled`
+`Toggled` イベントハンドラーを削除するには、データバインディングとトリガーを使用して、`Switch` 変化するトグル状態に応答します。
 
 ```xaml
 <Switch x:Name="styleSwitch" />
@@ -116,13 +116,13 @@ switchControl.Toggled += (sender, e) =>
 </Label>
 ```
 
-この[`Label`](xref:Xamarin.Forms.Label)例では、は、 `DataTrigger`でバインド式を使用して`IsToggled` 、 `Switch`という名前`styleSwitch`ののプロパティを監視します。 このプロパティ`true` `Label`がになる`FontAttributes`と、 `FontSize`のプロパティとプロパティが変更されます。 プロパティが`IsToggled` `false`に戻ると`FontSize` 、のプロパティ`Label`とプロパティが初期状態にリセットさ`FontAttributes`れます。
+この例では、 [`Label`](xref:Xamarin.Forms.Label)は `DataTrigger` 内のバインド式を使用して、`styleSwitch`という名前の `Switch` の `IsToggled` プロパティを監視します。 このプロパティが `true`になると、`Label` の `FontAttributes` と `FontSize` のプロパティが変更されます。 `IsToggled` プロパティが `false`に戻ると、`Label` の `FontAttributes` および `FontSize` プロパティが初期状態にリセットされます。
 
 トリガーの詳細については、「 [Xamarin. Forms triggers](~/xamarin-forms/app-fundamentals/triggers.md)」を参照してください。
 
 ## <a name="disable-a-switch"></a>スイッチを無効にする
 
-アプリケーションは、 `Switch`切り替え対象が有効な操作ではない状態になる場合があります。 このような場合は`Switch` 、 `IsEnabled`プロパティをに設定する`false`ことで、を無効にすることができます。 これにより、 `Switch`ユーザーがを操作できなくなります。
+アプリケーションは、切り替えられている `Switch` が有効な操作ではない状態になる可能性があります。 このような場合は、`IsEnabled` プロパティを `false`に設定することによって、`Switch` を無効にできます。 これにより、ユーザーが `Switch`を操作できなくなります。
 
 ## <a name="related-links"></a>関連リンク
 

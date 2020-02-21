@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: 78f8c8d1340c6bb1063e59ad03485d8b9b807c58
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: bcf293b29d6ddca10ab60ae061491b60f1e30520
+ms.sourcegitcommit: b751605179bef8eee2df92cb484011a7dceb6fda
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75488999"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77495638"
 ---
 # <a name="ios-platform-features-overview"></a>iOS プラットフォームの機能の概要
 
@@ -31,120 +31,124 @@ ms.locfileid: "75488999"
 | [iOS 7 の概要](~/ios/platform/introduction-to-ios7/index.md)   | IOS 7 で導入された主要な新しい Api について説明します。これには、ビューコントローラーの遷移、UIView アニメーションの機能強化、Uiview Dynamics、テキストキットが含まれます。 |
 | [iOS 6 の概要](~/ios/platform/introduction-to-ios6/index.md)   | コレクションビュー、パススルーキット、イベントキット、ソーシャルフレームワークなど、iOS 6 で導入された機能について説明します。 |
 
-## <a name="apple-payiosplatformapple-paymd"></a>[Apple Pay](~/ios/platform/apple-pay.md)
+## <a name="apple-pay"></a>[Apple Pay](~/ios/platform/apple-pay.md)
 
 Apple Pay は、iOS 8 と共に導入され、ユーザーは iOS デバイスを介して食品、エンターテイメント、メンバーシップなどの物理的な商品を支払うことができます。 IPhone 6 および iPhone 6 Plus で利用できます。また、ストア内購入の Apple Watch と組み合わせて使用することもできます。 IPhone で使用する場合、ユーザーのクレジットカードまたはデビットカードに対するトランザクションを確認して承認する手段として、Touch ID を使用します。
 
-## <a name="callkitiosplatformcallkitmd"></a>[CallKit](~/ios/platform/callkit.md)
+## <a name="callkit"></a>[CallKit](~/ios/platform/callkit.md)
 
 IOS 10 の新しい CallKit API は、VOIP アプリを iPhone UI と統合し、使い慣れたインターフェイスとエクスペリエンスをエンドユーザーに提供するための手段を提供します。 この API を使用すると、ユーザーは iOS デバイスのロック画面から VOIP 通話を表示して操作したり、電話アプリの **[お気に入り]** ビューと **[受信者]** ビューを使用して連絡先を管理したりできます。
 
-## <a name="contacts-and-contactsuiiosplatformcontactsmd"></a>[連絡先と ContactsUI](~/ios/platform/contacts.md)
+## <a name="contacts-and-contactsui"></a>[連絡先と ContactsUI](~/ios/platform/contacts.md)
 
 IOS 9 の導入により、Apple は、iOS 8 以前で使用されていた既存のアドレス帳とアドレス帳の UI フレームワークを置き換える2つの新しいフレームワーク `Contacts` と `ContactsUI`をリリースしました。
 
-## <a name="document-pickeriosplatformdocument-pickermd"></a>[ドキュメント ピッカー](~/ios/platform/document-picker.md)
+## <a name="document-picker"></a>[ドキュメント ピッカー](~/ios/platform/document-picker.md)
 
 ドキュメントピッカーでは、アプリ間でドキュメントを共有できます。 これらのドキュメントは iCloud または別のアプリのディレクトリに格納されている場合があります。 ドキュメントは、ユーザーがデバイスにインストールした[ドキュメントプロバイダーの拡張機能](~/ios/platform/extensions.md)のセットを介して共有されます。
 
-## <a name="eventkitiosplatformeventkitmd"></a>[EventKit](~/ios/platform/eventkit.md)
+## <a name="eventkit"></a>[EventKit](~/ios/platform/eventkit.md)
 
 iOS には、カレンダーアプリケーションとアラームアプリケーションという2つのカレンダー関連アプリケーションが組み込まれています。 カレンダーアプリケーションがカレンダーデータをどのように管理するかを理解するのは簡単ですが、リマインダーアプリケーションはあまり明確ではありません。 アラームには、実際に期限切れになったとき、完了したときなどに、日付を関連付けることができます。そのため、iOS では、予定表のイベントかリマインダーかにかかわらず、カレンダー*データベース*と呼ばれるすべてのカレンダーデータが1か所に格納されます。
 
-## <a name="ios-extensionsiosplatformextensionsmd"></a>[iOS の拡張機能](~/ios/platform/extensions.md)
+## <a name="ios-extensions"></a>[iOS の拡張機能](~/ios/platform/extensions.md)
 
 IOS 8 で導入された拡張機能は、 **Notification Center**内などの標準コンテキスト内で ios によって提供される特殊な `UIViewControllers` であり、特殊な入力を実行するためにユーザーによって要求されるカスタムキーボードの種類、または拡張機能が特別な効果フィルターを提供できるようなその他のコンテキストを実行するためにユーザーが要求する
 
-## <a name="graphics-and-animation-in-iosiosplatformgraphics-animation-iosindexmd"></a>[IOS でのグラフィックスとアニメーション](~/ios/platform/graphics-animation-ios/index.md)
+## <a name="graphics-and-animation-in-ios"></a>[IOS でのグラフィックスとアニメーション](~/ios/platform/graphics-animation-ios/index.md)
 
 IOS のグラフィックスとアニメーションでは、CoreImage、コアグラフィックス、コアアニメーションなど、iOS の主要なグラフィックスの概念が説明されています。
 
-## <a name="handoffiosplatformhandoffmd"></a>[Handoff](~/ios/platform/handoff.md)
+## <a name="handoff"></a>[Handoff](~/ios/platform/handoff.md)
 
 Apple では、iOS 8 および OS X ヨーク Semite (10.10) にハンドオフが導入されました。ユーザーは、デバイスの1つで開始されたアクティビティを、同じアプリを実行している別のデバイス、または同じアクティビティをサポートする別のデバイスに転送するための一般的なメカニズムを提供します。
 
-## <a name="healthkitiosplatformhealthkitmd"></a>[HealthKit](~/ios/platform/healthkit.md)
+## <a name="healthkit"></a>[HealthKit](~/ios/platform/healthkit.md)
 
 Health Kit は、ユーザーの正常性に関連する情報のセキュリティで保護されたデータストアを提供します。 正常性キットアプリは、ユーザーの明示的なアクセス許可、このデータストアへの読み取りと書き込み、関連データが追加されたときに通知を受け取ることができます。 アプリはデータを提示することができます。また、ユーザーは Apple が提供する正常性アプリを使用して、すべてのデータのダッシュボードを表示できます。
 
-## <a name="homekitiosplatformhomekitmd"></a>[HomeKit](~/ios/platform/homekit.md)
+## <a name="homekit"></a>[HomeKit](~/ios/platform/homekit.md)
 
 Apple では、ユーザーの自宅でホームオートメーションデバイスを検出して通信するための共通のフレームワークを提供するために、iOS 8 のホームキットを導入しました。 ホームキットは、デバイスを構成し、それらを制御するアクションを設定するための共通プラットフォームを提供します。
 
-## <a name="in-app-purchasingiosplatformin-app-purchasingindexmd"></a>[アプリ内購入](~/ios/platform/in-app-purchasing/index.md)
+## <a name="in-app-purchasing"></a>[アプリ内購入](~/ios/platform/in-app-purchasing/index.md)
 
 iOS アプリケーションでは、StoreKit を使用してデジタル製品またはサービスを販売できます。 iOS が提供する一連の Api は、Apple のサーバーと通信して、ユーザーが Apple ID を介して財務トランザクションを実行します。 StoreKit Api は、主に製品情報の取得とトランザクションの実行に関係しています。ユーザーインターフェイスコンポーネントはありません。 アプリ内購入を実装するアプリケーションは、独自のユーザーインターフェイスを構築し、ユーザーに必要な製品またはサービスを提供するカスタムコードを使用して購入した項目を追跡する必要があります。
 
-## <a name="ios-gaming-apisiosplatformgamingindexmd"></a>[iOS ゲーム Api](~/ios/platform/gaming/index.md)
+## <a name="ios-gaming-apis"></a>[iOS ゲーム Api](~/ios/platform/gaming/index.md)
 
 Apple は、iOS 9 のゲーム Api に技術的にいくつかの機能強化を行っています。これにより、Xamarin iOS アプリでゲームグラフィックスとオーディオを簡単に実装できるようになりました。 これには、高レベルのフレームワークを使用した簡単な開発と、iOS デバイスの GPU 機能を活用して速度とグラフィック能力を向上させることが含まれます。
 
-## <a name="message-app-integrationiosplatformmessage-app-integrationindexmd"></a>[メッセージアプリの統合](~/ios/platform/message-app-integration/index.md)
+## <a name="message-app-integration"></a>[メッセージアプリの統合](~/ios/platform/message-app-integration/index.md)
 
 IOS 10 を初めて使用する場合、メッセージアプリ拡張機能は**Messages**アプリと統合され、ユーザーに新しい機能を提供します。 拡張機能は、テキスト、ステッカー、メディアファイル、および対話型メッセージを送信できます。
 
-## <a name="multitasking-for-ipadiosplatformmultitaskingmd"></a>[iPad のマルチタスキング](~/ios/platform/multitasking.md)
+## <a name="multitasking-for-ipad"></a>[iPad のマルチタスキング](~/ios/platform/multitasking.md)
 
 iOS 9 では、特定の iPad ハードウェアで同時に2つのアプリを実行するためのマルチタスキングサポートが追加されています。 IPad のマルチタスキングは、次の機能を使用してサポートされています。スライド上、分割ビュー & 画像の画像です。
 
-## <a name="passkitiosplatformpasskitmd"></a>[PassKit](~/ios/platform/passkit.md)
+## <a name="passkit"></a>[PassKit](~/ios/platform/passkit.md)
 
 Pass book は、iphone のアプリであり、iOS 6 を使用します。 電話の顧客トランザクションを ' real world ' とリンクするために、バーコードやその他の情報を保存して表示します。 パスは、商人によって生成され、電子メール、Url、またはマーチャントの iOS アプリ内から顧客に送信されます。 電話のすべてのパスを保管して整理し、日付/時刻またはデバイスの場所に応じて、ロック画面に通知を表示します。
 
 このドキュメントでは、Pass Kit API と Xamarin を使用したパススルーブックについて説明し、サーバーでパスを実装する方法について説明します。
 
-## <a name="photokitiosplatformphotokitmd"></a>[PhotoKit](~/ios/platform/photokit.md)
+## <a name="photokit"></a>[PhotoKit](~/ios/platform/photokit.md)
 
 Photo Kit は、アプリケーションがシステムイメージライブラリに対してクエリを実行し、その内容を表示および変更するためのカスタムユーザーインターフェイスを作成できるようにする新しいフレームワークです。 これには、イメージとビデオ資産を表す多数のクラスと、アルバムやフォルダーなどの資産のコレクションが含まれます。
 
-## <a name="request-app-reviewiosplatformrequest-app-reviewmd"></a>[アプリレビューの要求](~/ios/platform/request-app-review.md)
+## <a name="request-app-review"></a>[アプリレビューの要求](~/ios/platform/request-app-review.md)
 
 IOS 10.3 の新機能である `RequestReview()` 方法では、iOS アプリはユーザーに対して評価またはレビューを要求できます。 ユーザーが App Store からインストールした出荷アプリでこのメソッドが呼び出されると、iOS 10 は開発者の評価およびレビュープロセス全体を処理します。 このプロセスは App Store ポリシーによって管理されているため、アラートが表示されない場合があります。
 
-## <a name="search-apisiosplatformsearchindexmd"></a>[API の検索](~/ios/platform/search/index.md)
+## <a name="search-apis"></a>[API の検索](~/ios/platform/search/index.md)
 
 IOS 9 では Search が拡張されており、Xamarin iOS アプリ内の情報や機能にアクセスするための新しい方法を提供しています。 新しいアプリ検索 Api を使用すると、アプリのコンテンツはスポットライトと Safari の検索結果、ハンドオフおよび Siri のリマインダーと提案によって検索可能になります。 これにより、ユーザーはアプリ内のアクティビティや情報にすばやくアクセスできます。
 
-## <a name="sirikitiosplatformsirikitindexmd"></a>[SiriKit](~/ios/platform/sirikit/index.md)
+## <a name="sirikit"></a>[SiriKit](~/ios/platform/sirikit/index.md)
 
 IOS 10 の新機能である SiriKit を使用すると、ios アプリは、アプリ拡張機能と新しい**インテント**および**インテント UI**フレームワークを使用して、Ios デバイスで siri と Maps アプリを使用して、ユーザーがアクセスできるサービスを提供できます。
 
-## <a name="social-frameworkiosplatformsocial-frameworkmd"></a>[ソーシャルフレームワーク](~/ios/platform/social-framework.md)
+## <a name="social-framework"></a>[ソーシャルフレームワーク](~/ios/platform/social-framework.md)
 
 ソーシャルフレームワークは、 _Twitter_や_Facebook_などのソーシャルネットワークや中国のユーザー向けの_sinaweibo_と対話するための統一された API を提供します。
 
-## <a name="speech-recognitioniosplatformspeechmd"></a>[音声認識](~/ios/platform/speech.md)
+## <a name="speech-recognition"></a>[音声認識](~/ios/platform/speech.md)
 
 iOS 10 には新しい Speech API が含まれています。これにより、アプリは、音声の音声認識と議事録 (ライブまたは録音されたオーディオストリーム) をテキストにすることができます。
 
-## <a name="textkitiosplatformtextkitmd"></a>[TextKit](~/ios/platform/textkit.md)
+## <a name="textkit"></a>[TextKit](~/ios/platform/textkit.md)
 
 テキストキットは、強力なテキストレイアウトとレンダリング機能を提供する新しい API です。 これは、低レベルのコアテキストフレームワークの上に構築されていますが、コアテキストよりもはるかに使いやすくなっています。
 
-## <a name="3d-touchiosplatform3d-touchmd"></a>[3D Touch](~/ios/platform/3d-touch.md)
+## <a name="3d-touch"></a>[3D Touch](~/ios/platform/3d-touch.md)
 
 この記事では、新しい 3D Touch Api を使用して、Xamarin に負荷の高いジェスチャを追加する方法について説明します。新しい iPhone 6s と iPhone 6s Plus デバイスで実行されている iOS アプリ。
 
-## <a name="touch-id-and-face-id-with-xamariniosiosplatformtouch-id-face-idmd"></a>[Xamarin でタッチ ID と顔 ID を使用する](~/ios/platform/touch-id-face-id.md)
+## <a name="touch-id-and-face-id-with-xamarinios"></a>[Xamarin でタッチ ID と顔 ID を使用する](~/ios/platform/touch-id-face-id.md)
 
 タッチ ID と顔 ID は、iOS 8 以降で使用できる生体認証システムです。 この記事とサンプルでは、Xamarin iOS で Touch ID と Face ID を使用する方法について説明します。
 
-## <a name="user-notificationsiosplatformuser-notificationsindexmd"></a>[ユーザーへの通知](~/ios/platform/user-notifications/index.md)
+## <a name="user-notifications"></a>[ユーザーへの通知](~/ios/platform/user-notifications/index.md)
 
 IOS 10 の新機能であるユーザー通知フレームワークを使用すると、ローカルおよびリモートの通知を配信および処理することができます。 このフレームワークを使用すると、アプリまたはアプリ拡張機能は、場所や時間などの条件のセットを指定することによって、ローカル通知の配信をスケジュールすることができます。
 
-## <a name="wide-coloriosplatformwide-colormd"></a>[広色域](~/ios/platform/wide-color.md)
+## <a name="wide-color"></a>[広色域](~/ios/platform/wide-color.md)
 
 iOS 10 と macOS Sierra は、コアグラフィックス、コアイメージ、メタル、AVFoundation などのフレームワークを含む、システム全体にわたる拡張範囲のピクセル形式と広い範囲の色空間のサポートを強化します。 グラフィックススタック全体でこの動作を提供することにより、さまざまな色で表示されるデバイスのサポートがさらに緩和さます。
 
-## <a name="binding-objective-cbinding-objective-cindexmd"></a>[Objective-C のバインド](binding-objective-c/index.md)
+## <a name="binding-objective-c"></a>[Objective-C のバインド](binding-objective-c/index.md)
 
 IOS で作業している場合、サードパーティの目標 C ライブラリを使用することが必要になる場合があります。 このような状況では、Monotouch.dialog のバインディングプロジェクトを使用しC#て、ネイティブの目的 C ライブラリへのバインディングを作成できます。 このプロジェクトでは、iOS Api をにC#持ち込むのと同じツールを使用します。 このドキュメントでは、目標 C Api をバインドする方法について説明します。
 
-## <a name="referencing-native-librariesnative-interopmd"></a>[参照 (ネイティブライブラリを)](native-interop.md)
+## <a name="bind-ios-swift-libraries"></a>[IOS Swift ライブラリをバインドする](binding-swift/index.md)
+
+このドキュメントでは、Swift C#コードへのバインドを作成する方法について説明します。これにより、ネイティブライブラリを使用したり、Xamarin. iOS アプリケーションで併置したりすることができます。
+
+## <a name="referencing-native-libraries"></a>[参照 (ネイティブライブラリを)](native-interop.md)
 
 Xamarin. iOS は、ネイティブ C ライブラリと目的 C ライブラリの両方を使用したリンクをサポートします。 このドキュメントでは、ネイティブ C ライブラリを Xamarin. iOS プロジェクトにリンクする方法について説明します。
 
-## <a name="embedded-frameworksembedded-frameworksmd"></a>[埋め込みフレームワーク](embedded-frameworks.md)
+## <a name="embedded-frameworks"></a>[埋め込みフレームワーク](embedded-frameworks.md)
 
 Xamarin iOS アプリに、目的の C ユーザーフレームワークを埋め込む方法について説明します。
