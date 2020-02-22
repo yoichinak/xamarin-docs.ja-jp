@@ -32,7 +32,7 @@ ms.locfileid: "71679980"
 
 ::: zone pivot="windows"
 
-### <a name="prerequisites"></a>必須コンポーネント
+### <a name="prerequisites"></a>前提条件
 
 - Visual Studio 2019 (最新リリース) と、 **.NET によるモバイル開発**ワークロードがインストールされている。
 - C# に関する知識。
