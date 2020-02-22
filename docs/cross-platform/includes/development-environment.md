@@ -10,7 +10,7 @@ ms.locfileid: "70206230"
 ||macOS|Windows|
 |---|---|---|
 |**開発環境**|Visual Studio for Mac|Visual Studio|
-|**Xamarin.iOS**|はい|はい (Mac コンピューター)|
+|**Xamarin.iOS**|はい|はい (Mac コンピューターも必要)|
 |**Xamarin.Android**|はい|はい|
 |**Xamarin.Forms** ^|iOS と Android|Android、Windows/UWP (Mac コンピューターでの iOS)|
 |**Xamarin.Mac**|はい|プロジェクトを開いて、コンパイルのみを行う|
