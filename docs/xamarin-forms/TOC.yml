@@ -778,6 +778,8 @@
           href: ~/essentials/accelerometer.md?context=xamarin/xamarin-forms
         - name: アプリ情報
           href: ~/essentials/app-information.md?context=xamarin/xamarin-forms
+        - name: アプリのテーマ
+          href: ~/essentials/app-theme.md?context=xamarin/xamarin-forms
         - name: バロメーター
           href: ~/essentials/barometer.md?context=xamarin/xamarin-forms
         - name: バッテリ
@@ -820,6 +822,8 @@
           href: ~/essentials/open-browser.md?context=xamarin/xamarin-forms
         - name: 向きセンサー
           href: ~/essentials/orientation-sensor.md?context=xamarin/xamarin-forms
+        - name: アクセス許可
+          href: ~/essentials/permissions.md?context=xamarin/xamarin-forms
         - name: ダイヤラー
           href: ~/essentials/phone-dialer.md?context=xamarin/xamarin-forms
         - name: プラットフォームの拡張機能 (サイズ、四角形、ポイント)
