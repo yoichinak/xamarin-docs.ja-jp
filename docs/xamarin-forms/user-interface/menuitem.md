@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 08/01/2019
-ms.openlocfilehash: 5bc36f03eac4ced7c19a0053dfea93dbe2ca4497
-ms.sourcegitcommit: 850dd7a3ed10eb3f66692e765d3e31438cff0288
+ms.openlocfilehash: b4690feb6444405d090a0b2bafd6c8615b2ffa8b
+ms.sourcegitcommit: 6d86aac422d6ce2131930d18ada161d117c8c61b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72531015"
+ms.lasthandoff: 02/24/2020
+ms.locfileid: "77567069"
 ---
 # <a name="xamarinforms-menuitem"></a>Xamarin. フォーム MenuItem
 
@@ -22,22 +22,22 @@ Xamarin [`MenuItem`](xref:Xamarin.Forms.MenuItem)クラスは、`ListView` 項�
 
 次のスクリーンショットは、iOS および Android の `ListView` のコンテキストメニューに `MenuItem` オブジェクトを示しています。
 
-[!["IOS と Android での MenuItems"](menuitem-images/menuitem-demo-cropped.png "IOS と Android の MenuItems")](menuitem-images/menuitem-demo-full.png#lightbox "IOS と Android の MenuItems full image")
+[!["IOS と Android での MenuItems"](menuitem-images/menuitem-demo-cropped.png "IOS と Android の MenuItems")](menuitem-images/menuitem-demo-full.png#lightbox "IOS と Android のフルイメージでの MenuItems")
 
-@No__t_0 クラスは、次のプロパティを定義します。
+`MenuItem` クラスは、次のプロパティを定義します。
 
 * [`Command`](xref:Xamarin.Forms.MenuItem.Command)は、ユーザー操作 (指タップやクリックなど) を、ビューモデルで定義されているコマンドにバインドできるようにする `ICommand` です。
-* [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter)は、`Command` に渡す必要があるパラメーターを指定する `object` です。
+* [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter)は、`Command`に渡す必要があるパラメーターを指定する `object` です。
 * [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource)は、表示アイコンを定義する `ImageSource` 値です。
 * [`IsDestructive`](xref:Xamarin.Forms.MenuItem.IsDestructive)は、`MenuItem` が関連する UI 要素を一覧から削除するかどうかを示す `bool` 値です。
-* [`IsEnabled`](xref:Xamarin.Forms.MenuItem.IsEnabled)は、このオブジェクトがユーザー入力に応答するかどうかを決定する `bool` 値です。
+* [`IsEnabled`](xref:Xamarin.Forms.MenuItem.IsEnabled)は、このオブジェクトがユーザー入力に応答するかどうかを示す `bool` 値です。
 * [`Text`](xref:Xamarin.Forms.MenuItem.Text)は、表示テキストを指定する `string` 値です。
 
 これらのプロパティは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)のオブジェクトによってサポートされるため、`MenuItem` インスタンスをデータバインディングのターゲットにすることができます。
 
 ## <a name="create-a-menuitem"></a>MenuItem を作成する
 
-`MenuItem` オブジェクトは、`ListView` オブジェクトの項目のコンテキストメニュー内で使用できます。 最も一般的なパターンは、`ViewCell` インスタンス内に `MenuItem` オブジェクトを作成することです。これは、`ListView`s `ItemTemplate` の `DataTemplate` オブジェクトとして使用されます。 @No__t_0 オブジェクトに値が設定されると、`DataTemplate` を使用して各項目が作成され、項目に対してコンテキストメニューがアクティブになったときに `MenuItem` の選択肢が公開されます。
+`MenuItem` オブジェクトは、`ListView` オブジェクトの項目のコンテキストメニュー内で使用できます。 最も一般的なパターンは、`ViewCell` インスタンス内に `MenuItem` オブジェクトを作成することです。これは、`ListView`s `ItemTemplate`の `DataTemplate` オブジェクトとして使用されます。 `ListView` オブジェクトに値が設定されると、`DataTemplate`を使用して各項目が作成され、項目に対してコンテキストメニューがアクティブになったときに `MenuItem` の選択肢が公開されます。
 
 次の例では、`ListView` オブジェクトのコンテキスト内でインスタンス化 `MenuItem` を示します。
 
@@ -127,7 +127,7 @@ void OnItemClicked(object sender, EventArgs e)
 
 ## <a name="define-menuitem-behavior-with-mvvm"></a>MVVM で MenuItem の動作を定義する
 
-@No__t_0 クラスは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)オブジェクトと `ICommand` インターフェイスを使用して、モデルビュービューモデル (MVVM) パターンをサポートします。 次の XAML は、ビューモデルで定義されているコマンドにバインドされている `MenuItem` インスタンスを示しています。
+`MenuItem` クラスは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)オブジェクトと `ICommand` インターフェイスを使用して、モデルビュービューモデル (MVVM) パターンをサポートします。 次の XAML は、ビューモデルで定義されているコマンドにバインドされている `MenuItem` インスタンスを示しています。
 
 ```xaml
 <ContentPage.BindingContext>
@@ -196,6 +196,51 @@ public MenuItemXamlMvvmPage()
 !["Android の MenuItem アイコンのスクリーンショット"](menuitem-images/menuitem-android-icon.png "Android の MenuItem アイコンのスクリーンショット")
 
 Xamarin. フォームでイメージを使用する方法の詳細については、「 [xamarin. forms の画像](~/xamarin-forms/user-interface/images.md)」を参照してください。
+
+## <a name="enable-or-disable-a-menuitem-at-runtime"></a>実行時に MenuItem を有効または無効にする
+
+実行時に `MenuItem` を無効にするには、`Command` プロパティを `ICommand` 実装にバインドし、`canExecute` デリゲートが適切に `ICommand` を有効または無効にするようにします。
+
+> [!IMPORTANT]
+> `Command` プロパティを使用して `MenuItem`を有効または無効にする場合は、`IsEnabled` プロパティを別のプロパティにバインドしないでください。
+
+次の例では、`Command` プロパティが `MyCommand`という名前の `ICommand` にバインドされている `MenuItem` を示します。
+
+```xaml
+<MenuItem Text="My menu item"
+          Command="{Binding MyCommand}" />
+```
+
+`ICommand` の実装では、`MenuItem`を有効または無効にするために `bool` プロパティの値を返す `canExecute` デリゲートが必要です。
+
+```csharp
+public class MyViewModel : INotifyPropertyChanged
+{
+    bool isMenuItemEnabled = false;
+    public bool IsMenuItemEnabled
+    {
+        get { return isMenuItemEnabled; }
+        set
+        {
+            isMenuItemEnabled = value;
+            MyCommand.ChangeCanExecute();
+        }
+    }
+
+    public Command MyCommand { get; private set; }
+
+    public ToolbarItemViewModel()
+    {
+        MyCommand = new Command(() =>
+        {
+            // Execute logic here
+        },
+        () => IsToolbarItemEnabled);
+    }
+}
+```
+
+この例では、`IsMenuItemEnabled` プロパティが設定されるまで、`MenuItem` は無効になっています。 このエラーが発生すると、`Command.ChangeCanExecute` メソッドが呼び出され、`MyCommand` の `canExecute` デリゲートが再評価されます。
 
 ## <a name="cross-platform-context-menu-behavior"></a>クロスプラットフォームコンテキストメニューの動作
 

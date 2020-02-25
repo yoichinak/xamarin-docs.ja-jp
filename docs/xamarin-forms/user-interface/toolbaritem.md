@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 07/29/2019
-ms.openlocfilehash: 0812347e85b0ccb6aa0bbb16649a89bb4d961c9b
-ms.sourcegitcommit: a14edebf00f3e0f8944e59042ca7aa5c42173e30
+ms.openlocfilehash: afdf9029f836ac8e55b2bb338b31f669af946c12
+ms.sourcegitcommit: 6d86aac422d6ce2131930d18ada161d117c8c61b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72780355"
+ms.lasthandoff: 02/24/2020
+ms.locfileid: "77567085"
 ---
 # <a name="xamarinforms-toolbaritem"></a>ToolbarItem
 
@@ -32,7 +32,7 @@ Xamarin [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)クラスは、`Page` オ
 `ToolbarItem` クラスは、次の一般的に使用されるプロパティを `MenuItem` クラスから継承します。
 
 * [`Command`](xref:Xamarin.Forms.MenuItem.Command)は、ユーザー操作 (指タップやクリックなど) を、ビューモデルで定義されているコマンドにバインドできるようにする `ICommand` です。
-* [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter)は、`Command` に渡す必要があるパラメーターを指定する `object` です。
+* [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter)は、`Command`に渡す必要があるパラメーターを指定する `object` です。
 * [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource)は、`ToolbarItem` オブジェクトの表示アイコンを決定する `ImageSource` 値です。
 * [`Text`](xref:Xamarin.Forms.MenuItem.Text)は、`ToolbarItem` オブジェクトの表示テキストを決定する `string` です。
 
@@ -102,6 +102,12 @@ void OnItemClicked(object sender, EventArgs e)
 
 `ToolbarItem` オブジェクトは、`Command` プロパティと `CommandParameter` プロパティを使用して、イベントハンドラーを使用せずにユーザー入力に応答することもできます。 `ICommand` インターフェイスと MVVM データバインディングの詳細については、「 [MVVM MenuItem の動作](~/xamarin-forms/user-interface/menuitem.md#define-menuitem-behavior-with-mvvm)」を参照してください。
 
+## <a name="enable-or-disable-a-toolbaritem-at-runtime"></a>実行時に ToolbarItem を有効または無効にする
+
+実行時に `ToolbarItem` を無効にするには、`Command` プロパティを `ICommand` 実装にバインドし、`canExecute` デリゲートが適切に `ICommand` を有効または無効にするようにします。
+
+詳細については、「[実行時に MenuItem を有効または無効](menuitem.md#enable-or-disable-a-menuitem-at-runtime)にする」を参照してください。
+
 ## <a name="primary-and-secondary-menus"></a>プライマリメニューとセカンダリメニュー
 
 `ToolbarItemOrder` 列挙型には、`Default`、`Primary`、および `Secondary` の値があります。
@@ -121,4 +127,4 @@ void OnItemClicked(object sender, EventArgs e)
 
 * [ToolbarItem のデモ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
 * [Xamarin 形式の画像](~/xamarin-forms/user-interface/images.md)
-* [Xamarin. フォーム MenuItem](~/xamarin-forms/user-interface/menuitem.md)
+* [Xamarin.Forms の MenuItem](~/xamarin-forms/user-interface/menuitem.md)
