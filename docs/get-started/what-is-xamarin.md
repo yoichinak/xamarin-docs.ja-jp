@@ -92,7 +92,7 @@ Xamarin.Forms はオープンソースの UI フレームワークです。 Xama
 - データ バインド
 - ジェスチャ
 - エフェクト
-- [スタイル]
+- スタイル
 
 詳細については、[Xamarin.Forms](~/xamarin-forms/index.yml) に関するページを参照してください。
 
