@@ -373,6 +373,11 @@
                   href: platform/binding-java-library/customizing-bindings/naming-parameters-with-javadoc.md
             - name: バインドのトラブルシューティング
               href: platform/binding-java-library/troubleshooting-bindings.md
+        - name: Kotlin ライブラリをバインドする
+          href: platform/binding-kotlin-library/index.md
+          items:
+            - name: チュートリアル
+              href: platform/binding-kotlin-library/walkthrough.md
         - name: ネイティブ ライブラリの使用
           href: platform/native-libraries.md
         - name: Renderscript

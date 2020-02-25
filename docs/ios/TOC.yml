@@ -322,6 +322,11 @@
           items:
             - name: 'チュートリアル: iOS Objective-C ライブラリのバインド'
               href: platform/binding-objective-c/walkthrough.md
+        - name: iOS Swift ライブラリをバインドする
+          href: platform/binding-swift/index.md
+          items:
+            - name: チュートリアル
+              href: platform/binding-swift/walkthrough.md
         - name: CallKit
           href: platform/callkit.md
         - name: 連絡先と ContactsUI
@@ -503,6 +508,8 @@
           href: ~/essentials/accelerometer.md?context=xamarin/ios
         - name: アプリ情報
           href: ~/essentials/app-information.md?context=xamarin/ios
+        - name: アプリのテーマ
+          href: ~/essentials/app-theme.md?context=xamarin/ios
         - name: バロメーター
           href: ~/essentials/barometer.md?context=xamarin/ios
         - name: バッテリ
@@ -545,6 +552,8 @@
           href: ~/essentials/open-browser.md?context=xamarin/ios
         - name: 向きセンサー
           href: ~/essentials/orientation-sensor.md?context=xamarin/ios
+        - name: アクセス許可
+          href: ~/essentials/permissions.md?context=xamarin/ios
         - name: ダイヤラー
           href: ~/essentials/phone-dialer.md?context=xamarin/ios
         - name: プラットフォームの拡張機能 (サイズ、四角形、ポイント)
@@ -937,6 +946,8 @@
               href: ~/essentials/accelerometer.md?context=xamarin/watchos
             - name: アプリ情報
               href: ~/essentials/app-information.md?context=xamarin/watchos
+            - name: アプリのテーマ
+              href: ~/essentials/app-theme.md?context=xamarin/watchos
             - name: バロメーター
               href: ~/essentials/barometer.md?context=xamarin/watchos
             - name: バッテリ
@@ -963,6 +974,8 @@
               href: ~/essentials/maps.md?context=xamarin/watchos
             - name: 向きセンサー
               href: ~/essentials/orientation-sensor.md?context=xamarin/watchos
+            - name: アクセス許可
+              href: ~/essentials/permissions.md?context=xamarin/watchos
             - name: プラットフォームの拡張機能 (サイズ、四角形、ポイント)
               href: ~/essentials/platform-extensions.md?context=xamarin/watchos
             - name: Preferences
@@ -1038,6 +1051,8 @@
               href: ~/essentials/platform-feature-support.md?context=xamarin/tvos
             - name: アプリ情報
               href: ~/essentials/app-information.md?context=xamarin/tvos
+            - name: アプリのテーマ
+              href: ~/essentials/app-theme.md?context=xamarin/tvos
             - name: 色のコンバーター
               href: ~/essentials/color-converters.md?context=xamarin/tvos
             - name: 接続
@@ -1050,6 +1065,8 @@
               href: ~/essentials/geocoding.md?context=xamarin/tvos
             - name: メイン スレッド
               href: ~/essentials/main-thread.md?context=xamarin/tvos
+            - name: アクセス許可
+              href: ~/essentials/permissions.md?context=xamarin/tvos
             - name: プラットフォームの拡張機能 (サイズ、四角形、ポイント)
               href: ~/essentials/platform-extensions.md?context=xamarin/tvos
             - name: Preferences
