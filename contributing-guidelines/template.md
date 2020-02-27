@@ -8,12 +8,12 @@ ms.date: 02/26/2018
 ms.topic: conceptual
 ms.assetid: 11111111-2222-3333-4444-555555555555
 ms.prod: xamarin
-ms.openlocfilehash: d6300d6d3fdebf851c3710aa2a949575e6fe3f68
-ms.sourcegitcommit: 699de58432b7da300ddc2c85842e5d9e129b0dc5
+ms.openlocfilehash: f26a786f3da909c7d948fe99b4b3a1423352ecbe
+ms.sourcegitcommit: ec62c7f28abc8e121656f1b93146657d90a4cab4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71249564"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77553563"
 ---
 # <a name="metadata-and-markdown-template"></a>メタデータとマークダウン テンプレート
 
@@ -95,7 +95,7 @@ ms.custom: Analytics data, a field that gets imported into SkyEye so you can use
 
 ## <a name="text-styling"></a>テキストのスタイル指定
 
-*斜体* ファイル、フォルダー、パス (長い項目の場合は独立した行に分割)、新しい用語、URL (既定ではリンクとして表示されますが、それ以外の場合) に使用します。
+_斜体_ ファイル、フォルダー、パス (長い項目の場合は独立した行に分割)、新しい用語、URL (既定ではリンクとして表示されますが、それ以外の場合) に使用します。
 
 **太字** UI 要素に使用します。
 
@@ -148,7 +148,7 @@ API にリンクする場合は、ソース コードから自動生成される
 UID に特殊文字 \` または \# が含まれている場合は、UID 値は次の例のようにそれぞれ %60 と %23 として HTML エンコードする必要があります。
 
 - 例:@System.Threading.Tasks.Task\`1 は `@System.Threading.Tasks.Task%601` になります
-- 例: @System.Exception \#ctor は `@System.Exception.%23ctor` になります
+- 例: @System.Exception\#ctor は `@System.Exception.%23ctor` になります
 
 ## <a name="lists"></a>表示内容
 
