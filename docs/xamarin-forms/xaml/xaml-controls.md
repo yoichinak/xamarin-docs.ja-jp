@@ -7,13 +7,13 @@ ms.assetid: 639BD392-1496-41BB-BB09-7652273AC9D8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/13/2019
-ms.openlocfilehash: d6f5b3022f930dc1345e230d3d6ea4e5fb8be55c
-ms.sourcegitcommit: 6d86aac422d6ce2131930d18ada161d117c8c61b
+ms.date: 02/14/2020
+ms.openlocfilehash: c4d2c6bdab09e87bcfc4a191c64425316fe133f9
+ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/24/2020
-ms.locfileid: "77567096"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77635850"
 ---
 # <a name="xaml-controls"></a>XAML コントロール
 
@@ -31,6 +31,7 @@ Xamarin. Forms で定義されているすべてのビューは、XAML ファイ
 | <h3>イメージ</h3>ビットマップを表示します。<p align="center">![イメージのスクリーンショット](xaml-controls-images/Image.png "イメージ")</p>[API](xref:Xamarin.Forms.Image) / [ガイド](~/xamarin-forms/user-interface/images.md) | <pre>&lt;Image Source="https://aka.ms/campus.jpg"<br />       Aspect="AspectFit"<br />       HorizontalOptions="Center" /&gt;</pre></p> |
 | <h3>[ラベル]</h3>1行以上のテキストを表示します。<p align="center">![ラベルのスクリーンショット](xaml-controls-images/Label.png "[ラベル]")</p>[API](xref:Xamarin.Forms.Label) / [ガイド](~/xamarin-forms/user-interface/text/label.md) | <p valign="center"><pre>&lt;Label Text="Hello, Xamarin.Forms!"<br />       FontSize="Large"<br />       FontAttributes="Italic"<br />       HorizontalTextAlignment="Center" /&gt;</pre></p> |
 | <h3>マップ</h3>マップを表示します。<p align="center">![マップのスクリーンショット](xaml-controls-images/Map.png "マップ")</p>[API](xref:Xamarin.Forms.Maps.Map) / [ガイド](~/xamarin-forms/user-interface/map/index.md) | <p valign="center"><pre>&lt;maps:Map ItemsSource="{Binding Locations}" /&gt;</pre></p> |
+| <h3>MediaElement</h3>ビデオまたはオーディオを再生します。<p align="center">![MediaElement のスクリーンショット](xaml-controls-images/MediaElement.png "MediaELement")</p>[API](xref:Xamarin.Forms.MediaElement) / [ガイド](~/xamarin-forms/user-interface/mediaelement.md) | <p valign="center"><pre>&lt;MediaElement Source="https://sec.ch9.ms/ch9/XamarinShow_mid.mp4"<br />              AutoPlay="True"<br />              ShowsPlaybackControls="True" /&gt;</pre></p> |
 | <h3>WebView</h3>Web ページまたは HTML コンテンツを表示します。<p align="center">![WebView のスクリーンショット](xaml-controls-images/WebView.png "WebView")</p>[API](xref:Xamarin.Forms.WebView) / [ガイド](~/xamarin-forms/user-interface/webview.md) | <p valign="center"><pre>&lt;WebView Source="https://docs.microsoft.com/xamarin/"<br/>         VerticalOptions="FillAndExpand" /&gt;</pre></p> |
 |     |     |
 

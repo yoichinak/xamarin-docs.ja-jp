@@ -6,13 +6,13 @@ ms.assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/13/2019
-ms.openlocfilehash: 06b802a90ef350dcbd0b056f801109609dcd7a35
-ms.sourcegitcommit: 524fc148bad17272bda83c50775771daa45bfd7e
+ms.date: 02/14/2020
+ms.openlocfilehash: 1e8b6f5e1ea090abc8ebd6084095bf6b34663a42
+ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77480634"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77635868"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms のビュー
 
@@ -70,7 +70,7 @@ _Xamarin 形式のビューは、クロスプラットフォームモバイル�
 
 |     |     |
 | --- | --- |
-| `MediaElement` ビデオを表示したり、オーディオを再生したりします。 メディアは、Web 経由でダウンロードすることも、プラットフォームプロジェクトにリソースとして埋め込むこともできます。<br /><br /> / [サンプル](https://github.com/xamarin/xamarin-forms-samples/tree/pre-release/WorkingWithMediaElement)の[ガイド](~/xamarin-forms/user-interface/mediaelement.md) | |
+| [`MediaElement`](xref:Xamarin.Forms.MediaElement)はビデオまたはオーディオを再生します。 メディアは、 [`Source`](xref:Xamarin.Forms.MediaElement.Source)プロパティが[`UriMediaSource`](xref:Xamarin.Forms.UriMediaSource)または[`FileMediaSource`](xref:Xamarin.Forms.FileMediaSource)に設定されているかどうかに基づいて、URL またはローカルファイルから再生できます。<br /><br />[API ドキュメント](xref:Xamarin.Forms.MediaElement) / [ガイド](~/xamarin-forms/user-interface/mediaelement.md) / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-mediaelementdemos) | [![MediaElement の例](views-images/MediaElement.png "MediaElement の例")](views-images/MediaElement-Large.png#lightbox "MediaElement の例")<br />このページ / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/MediaElementDemoPage.xaml)のコード[ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/MediaElementDemoPage.cs) |
 |     |     |
 
 ## <a name="views-that-initiate-commands"></a>コマンドを開始するビュー

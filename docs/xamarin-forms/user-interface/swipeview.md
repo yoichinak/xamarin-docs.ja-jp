@@ -6,13 +6,13 @@ ms.assetId: 602456B5-701B-4948-B454-B1F31283F1CF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/11/2019
-ms.openlocfilehash: 4119a650c431013bb0c8e680de600ed4e73d0c93
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.date: 02/11/2020
+ms.openlocfilehash: 6131287b200846a033e0c476d7039dfd774cab68
+ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75490506"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77635590"
 ---
 # <a name="xamarinforms-swipeview"></a>SwipeView
 
@@ -30,7 +30,7 @@ ms.locfileid: "75490506"
 Forms.SetFlags("SwipeView_Experimental");
 ```
 
-`SwipeView` 次のプロパティを定義します。
+`SwipeView` は、次のプロパティを定義します。
 
 - `SwipeItems`型の `LeftItems`。これは、コントロールが左側からスワイプたときに呼び出すことができるスワイプ項目を表します。
 - `SwipeItems`型の `RightItems`。コントロールが右側からスワイプたときに呼び出すことができるスワイプ項目を表します。
@@ -57,7 +57,7 @@ Forms.SetFlags("SwipeView_Experimental");
 
 `SwipeView` では、`SwipeView` がラップするコンテンツと、スワイプジェスチャによって公開されるスワイプ項目を定義する必要があります。 スワイプ項目は、`LeftItems`、`RightItems`、`TopItems`、または `BottomItems`の4つの `SwipeView` 方向コレクションのいずれかに配置される1つ以上の `SwipeItem` オブジェクトです。
 
-次の例では、インスタンス化する方法を示しています、 `SwipeView` XAML で。
+次の例は、XAML で `SwipeView` をインスタンス化する方法を示しています。
 
 ```xaml
 <SwipeView>
@@ -82,6 +82,49 @@ Forms.SetFlags("SwipeView_Experimental");
                VerticalOptions="Center" />
     </Grid>
 </SwipeView>
+```
+
+同等の C# コードを次に示します。
+
+```csharp
+// SwipeItems
+SwipeItem favoriteSwipeItem = new SwipeItem
+{
+    Text = "Favorite",
+    IconImageSource = "favorite.png",
+    BackgroundColor = Color.LightGreen
+};
+favoriteSwipeItem.Invoked += OnFavoriteSwipeItemInvoked;
+
+SwipeItem deleteSwipeItem = new SwipeItem
+{
+    Text = "Delete",
+    IconImageSource = "delete.png",
+    BackgroundColor = Color.LightPink
+};
+deleteSwipeItem.Invoked += OnDeleteSwipeItemInvoked;
+
+List<SwipeItem> swipeItems = new List<SwipeItem>() { favoriteSwipeItem, deleteSwipeItem };
+
+// SwipeView content
+Grid grid = new Grid
+{
+    HeightRequest = 60,
+    WidthRequest = 300,
+    BackgroundColor = Color.LightGray
+};
+grid.Children.Add(new Label
+{
+    Text = "Swipe right",
+    HorizontalOptions = LayoutOptions.Center,
+    VerticalOptions = LayoutOptions.Center
+});
+
+SwipeView swipeView = new SwipeView
+{
+    LeftItems = new SwipeItems(swipeItems),
+    Content = grid
+};
 ```
 
 この例では、`SwipeView` コンテンツは[`Label`](xref:Xamarin.Forms.Label)を含む[`Grid`](xref:Xamarin.Forms.Grid)です。
@@ -136,14 +179,16 @@ Forms.SetFlags("SwipeView_Experimental");
 </SwipeView>
 ```
 
-各 `SwipeItem` の外観は、`Text`、`IconImageSource`、および `BackgroundColor` の各プロパティによって定義されます。
+各 `SwipeItem` の外観は、`Text`、`IconImageSource`、および `BackgroundColor` の各プロパティの組み合わせによって定義されます。
 
 [![IOS と Android の SwipeView スワイプ項目のスクリーンショット](swipeview-images/swipeview-swipeitems.png "SwipeView スワイプ項目")](swipeview-images/swipeview-swipeitems-large.png#lightbox "SwipeView スワイプ項目")
 
 `SwipeItem` がタップされると、その `Invoked` イベントが発生し、登録されているイベントハンドラーによって処理されます。 または、`Command` プロパティを、`SwipeItem` が呼び出されたときに実行される `ICommand` の実装に設定することもできます。
 
 > [!NOTE]
-> スワイプ項目を `SwipeItem` オブジェクトとして定義するだけでなく、カスタムスワイプ項目ビューを定義することもできます。 詳細については、「[カスタムスワイプ項目](#custom-swipe-items)」を参照してください。
+> `SwipeItem` の外観が `Text` または `IconImageSource` プロパティを使用してのみ定義されている場合、コンテンツは常に中央揃えになります。
+
+スワイプ項目を `SwipeItem` オブジェクトとして定義するだけでなく、カスタムスワイプ項目ビューを定義することもできます。 詳細については、「[カスタムスワイプ項目](#custom-swipe-items)」を参照してください。
 
 ## <a name="swipe-direction"></a>スワイプ方向
 
@@ -247,7 +292,7 @@ Forms.SetFlags("SwipeView_Experimental");
 カスタムスワイプ項目は、`SwipeItemView` の種類を使用して定義できます。 `SwipeItemView` クラスは[`ContentView`](xref:Xamarin.Forms.ContentView)クラスから派生し、次のプロパティを追加します。
 
 - `ICommand`型の `Command`。スワイプ項目がタップされると実行されます。
-- `CommandParameter`: `object` 型、`Command`に渡されるパラメーターです。
+- `CommandParameter`: `object` 型、`Command` に渡されるパラメーター。
 
 これらのプロパティは[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)のオブジェクトによって支えられています。これは、データバインディングのターゲットとスタイルを設定できることを意味します。
 
@@ -288,4 +333,4 @@ Forms.SetFlags("SwipeView_Experimental");
 ## <a name="related-links"></a>関連リンク
 
 - [SwipeView (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-swipeviewdemos/)
-- [Xamarin.Forms MenuItem](~/xamarin-forms/user-interface/menuitem.md)
+- [Xamarin.Forms の MenuItem](~/xamarin-forms/user-interface/menuitem.md)

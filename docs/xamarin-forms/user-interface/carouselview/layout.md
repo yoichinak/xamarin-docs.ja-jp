@@ -6,13 +6,13 @@ ms.assetid: fede0382-c972-4023-a4ea-fe5cadec91a6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/14/2019
-ms.openlocfilehash: 38c891a095b2b3d41d906e747585b961516f9256
-ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
+ms.date: 01/28/2020
+ms.openlocfilehash: 2e3d3ccd42907ef3678ccfb634c036930800a145
+ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77130855"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77636127"
 ---
 # <a name="xamarinforms-carouselview-layout"></a>CarouselView レイアウト
 
@@ -108,7 +108,9 @@ CarouselView carouselView = new CarouselView
 };
 ```
 
-これにより、新しい項目が追加されたときに水平方向に拡大するレイアウトになります。
+この結果、新しい項目が追加されるにつれて、レイアウトが横方向に拡大します。
+
+[![IOS と Android での CarouselView 横レイアウトのスクリーンショット](layout-images/horizontal.png "CarouselView 横レイアウト")](layout-images/horizontal-large.png#lightbox "CarouselView 横レイアウト")
 
 ## <a name="vertical-layout"></a>縦方向のレイアウト
 
@@ -167,6 +169,8 @@ CarouselView carouselView = new CarouselView
 
 この結果、新しい項目が追加されるにつれて、レイアウトが垂直方向に拡大します。
 
+[![IOS と Android での CarouselView 縦レイアウトのスクリーンショット](layout-images/vertical.png "CarouselView 縦レイアウト")](layout-images/vertical-large.png#lightbox "CarouselView 縦レイアウト")
+
 ## <a name="partially-visible-adjacent-items"></a>部分的に表示される隣接項目
 
 既定では、 [`CarouselView`](xref:Xamarin.Forms.CarouselView)すべての項目が一度に表示されます。 ただし、この動作は、`PeekAreaInsets` プロパティを、によって部分的に表示される隣接する項目の数を指定する `Thickness` 値に設定することによって変更できます。 これは、表示する追加項目があることをユーザーに示す場合に便利です。 次の XAML は、このプロパティを設定する例を示しています。
@@ -189,6 +193,8 @@ CarouselView carouselView = new CarouselView
 ```
 
 結果として、隣接する項目が画面に部分的に公開されます。
+
+[![IOS と Android で、部分的に表示されている隣接する項目を含む CollectionView のスクリーンショット](layout-images/peek-items.png "CarouselView ピーク領域のインセット")](layout-images/peek-items-large.png#lightbox "CarouselView ピーク領域のインセット")
 
 ## <a name="item-spacing"></a>項目の間隔
 
@@ -238,7 +244,9 @@ void OnImageTapped(object sender, EventArgs e)
 }
 ```
 
-`OnImageTapped` イベントハンドラーは、タップされる[`Image`](xref:Xamarin.Forms.Image)オブジェクトに応答して実行され、イメージ (およびその親フレーム) のサイズを変更して、より簡単に表示できるようにします。
+`OnImageTapped` イベントハンドラーは、タップされる[`Image`](xref:Xamarin.Forms.Image)オブジェクトに応答して実行され、イメージ (およびその親 `Frame`) のサイズを変更して、より簡単に表示できるようにします。
+
+[![IOS と Android での動的な項目サイズ設定を使用した CarouselView のスクリーンショット](layout-images/runtime-resizing.png "CarouselView 動的な項目のサイズ変更")](layout-images/runtime-resizing-large.png#lightbox "CarouselView 動的な項目のサイズ変更")
 
 ## <a name="right-to-left-layout"></a>右から左へのレイアウト
 

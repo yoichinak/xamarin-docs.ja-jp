@@ -7,34 +7,34 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/11/2019
-ms.openlocfilehash: ce8d0b834cff5b2eee46b4ace5de4a95d196726d
-ms.sourcegitcommit: a3b7e016fb25584dbf57bae89b64a9f98031e7c9
+ms.openlocfilehash: 7ad7349c89913129cccdd77ac843188cbe668571
+ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2020
-ms.locfileid: "76549995"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77635541"
 ---
 # <a name="android-platform-features"></a>Android プラットフォーム機能
 
 Android 用の Xamarin. Forms アプリケーションを開発するには、Visual Studio が必要です。 [[サポートされているプラットフォーム] ページ](~/get-started/supported-platforms.md)には、前提条件に関する詳細情報が表示されます。
 
-## <a name="platform-specifics"></a>プラットフォームの詳細
+## <a name="platform-specifics"></a>プラットフォーム固有設定
 
-Platform-specifics は custom renderers や effects を実装することなく、特定のプラットフォーム上でのみ利用できる機能の使用を可能にします。
+プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。
 
 Android では、次のプラットフォーム固有の機能が Xamarin のビュー、ページ、およびレイアウト用に用意されています。
 
 - 描画の順番を決定するための視覚要素の Z オーダーの制御。 詳細については、「 [Android での Visualelement の昇格](visualelement-elevation.md)」を参照してください。
-- サポートされている従来のカラー モードを無効にする[ `VisualElement`](xref:Xamarin.Forms.VisualElement)します。 詳細については、「 [Android での Visualelement のレガシカラーモード](legacy-color-mode.md)」を参照してください。
+- サポートされている[`VisualElement`](xref:Xamarin.Forms.VisualElement)でレガシカラーモードを無効にする。 詳細については、「 [Android での Visualelement のレガシカラーモード](legacy-color-mode.md)」を参照してください。
 
 Android の Xamarin ビューでは、次のプラットフォーム固有の機能が用意されています。
 
 - 既定のパディングと Android のボタンの影の値を使用します。 詳細については、「 [Android でのボタンの余白と影](button-padding-shadow.md)」を参照してください。
-- 入力方式のソフト キーボードのエディター オプションの設定、 [ `Entry`](xref:Xamarin.Forms.Entry)します。 詳細については、「 [Android の入力方式エディターオプション](entry-ime-options.md)」を参照してください。
-- ドロップ シャドウを有効にすると、`ImageButton`します。 詳細については、「 [Android での ImageButton ドロップシャドウ](imagebutton-drop-shadow.md)」を参照してください。
+- [`Entry`](xref:Xamarin.Forms.Entry)のソフトキーボードの Input Method Editor オプションを設定します。 詳細については、「 [Android の入力方式エディターオプション](entry-ime-options.md)」を参照してください。
+- `ImageButton`でのドロップシャドウの有効化。 詳細については、「 [Android での ImageButton ドロップシャドウ](imagebutton-drop-shadow.md)」を参照してください。
 - [`ListView`](xref:Xamarin.Forms.ListView)での高速スクロールを有効にする詳細については、「 [ListView Fast スクロール (Android](listview-fast-scrolling.md))」を参照してください。
 - `SwipeView`を開くときに使用される遷移を制御します。 詳細については、「 [SwipeView スワイプ切り替えモード](swipeview-swipetransitionmode.md)」を参照してください。
-- 制御するかどうかを[ `WebView` ](xref:Xamarin.Forms.WebView)混合コンテンツを表示できます。 詳細については、「 [Android での WebView 混合コンテンツ](webview-mixed-content.md)」を参照してください。
+- [`WebView`](xref:Xamarin.Forms.WebView)が混合コンテンツを表示できるかどうかを制御します。 詳細については、「 [Android での WebView 混合コンテンツ](webview-mixed-content.md)」を参照してください。
 - [`WebView`](xref:Xamarin.Forms.WebView)のズームを有効にする。 詳細については、「 [WebView Zoom On Android](webview-zoom-controls.md)」を参照してください。
 
 Android 上の Xamarin. フォームセルには、次のプラットフォーム固有の機能が用意されています。
@@ -43,15 +43,15 @@ Android 上の Xamarin. フォームセルには、次のプラットフォー�
 
 Android では、次のプラットフォーム固有の機能が Xamarin. Forms ページ用に用意されています。
 
-- 上のナビゲーション バーの高さを設定、 [ `NavigationPage`](xref:Xamarin.Forms.NavigationPage)します。 詳細については、「 [Android での Navigationpage バーの高さ](navigationpage-bar-height.md)」を参照してください。
-- 内のページ間を移動するときに、遷移アニメーションを無効にすると、 [ `TabbedPage`](xref:Xamarin.Forms.TabbedPage)します。 詳細については、「 [Android での TabbedPage ページ切り替えアニメーション](tabbedpage-transition-animations.md)」を参照してください。
-- [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)でのページ間のスワイプ操作の有効化。 詳細については、「 [TabbedPage Page スワイプ On Android](tabbedpage-page-swiping.md)」を参照してください。
-- ツールバーの配置と色を設定、 [ `TabbedPage`](xref:Xamarin.Forms.TabbedPage)します。 詳細については、「 [TabbedPage Toolbar Placement And Color On Android](tabbedpage-toolbar-placement-color.md)」を参照してください。
+- [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)のナビゲーションバーの高さを設定します。 詳細については、「 [Android での Navigationpage バーの高さ](navigationpage-bar-height.md)」を参照してください。
+- [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)内のページ間を移動するときに切り替え効果アニメーションを無効にする。 詳細については、「 [Android での TabbedPage ページ切り替えアニメーション](tabbedpage-transition-animations.md)」を参照してください。
+- [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)内のページ間をスワイプできるようにします。 詳細については、「 [TabbedPage Page スワイプ On Android](tabbedpage-page-swiping.md)」を参照してください。
+- [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)上のツールバーの配置と色を設定します。 詳細については、「 [TabbedPage Toolbar Placement And Color On Android](tabbedpage-toolbar-placement-color.md)」を参照してください。
 
 Android 上の Xamarin. Forms [`Application`](xref:Xamarin.Forms.Application)クラスには、次のプラットフォーム固有の機能が用意されています。
 
 - ソフトキーボードの操作モードの設定。 詳細については、「 [Android でのソフトキーボード入力モード](soft-keyboard-input-mode.md)」を参照してください。
-- AppCompat を使用するアプリケーションに対し、一時停止や再開時に [`Disappearing`](xref:Xamarin.Forms.Page.Appearing)や[`Appearing`](xref:Xamarin.Forms.Page.Appearing) といったぺージのライフサイクルのイベントをそれぞれ無効化する。 詳細については、「 [Android でのページライフサイクルイベント](page-lifecycle-events.md)」を参照してください。
+- AppCompat を使用するアプリケーションについて、 [`Disappearing`](xref:Xamarin.Forms.Page.Appearing)および[`Appearing`](xref:Xamarin.Forms.Page.Appearing)ページライフサイクルイベントをそれぞれ一時停止と再開で無効にする。 詳細については、「 [Android でのページライフサイクルイベント](page-lifecycle-events.md)」を参照してください。
 
 ## <a name="platform-support"></a>プラットフォームのサポート
 
@@ -73,6 +73,10 @@ Xamarin. Forms Android プロジェクトでは、メインアクティビティ
 
 > [!NOTE]
 > `FormsAppCompatActivity`を使用する場合、[一部の Android カスタムレンダラーの基本クラス](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)は異なります。
+
+## <a name="androidx-migration"></a>AndroidX の移行
+
+AndroidX は、Android サポートライブラリを置き換えます。 AndroidX と、AndroidX ライブラリを使用するために Xamarin. Forms アプリを移行する方法については、「 [xamarin. forms での Androidx の移行](~/xamarin-forms/platform/android/androidx-migration.md)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 

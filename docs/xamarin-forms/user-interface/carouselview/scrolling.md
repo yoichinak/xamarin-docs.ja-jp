@@ -6,13 +6,13 @@ ms.assetid: 92D7B618-07FA-4343-9D0F-212525E92C39
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/14/2019
-ms.openlocfilehash: ce0e0b63206ab918b5d761be3e619370aec1eec7
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.date: 01/28/2020
+ms.openlocfilehash: 735a572f4aadfc224e545e371525b96f29c9552e
+ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489753"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77635917"
 ---
 # <a name="xamarinforms-carouselview-scrolling"></a>CarouselView のスクロール
 
@@ -24,7 +24,7 @@ ms.locfileid: "75489753"
 
 - 水平スクロールバーを表示するタイミングを指定する `ScrollBarVisibility`型の `HorizontalScrollBarVisibility`。
 - `bool`型の `IsDragging`。 `CarouselView` がスクロール中かどうかを示します。 これは読み取り専用プロパティで、既定値は `false`です。
-- `bool`型の `IsScrollAnimated`。 `CarouselView`をスクロールするときにアニメーションを実行するかどうかを指定します。 既定値は `true`です。
+- `bool`型の `IsScrollAnimated`。 `CarouselView`をスクロールするときにアニメーションを実行するかどうかを指定します。 既定値は `true` です。
 - `ItemsUpdatingScrollMode`型の `ItemsUpdatingScrollMode`。新しい項目が追加されたときの `CarouselView` のスクロール動作を表します。
 - 垂直スクロールバーを表示するタイミングを指定する `ScrollBarVisibility`型の `VerticalScrollBarVisibility`。
 
@@ -54,7 +54,7 @@ ms.locfileid: "75489753"
 </CarouselView>
 ```
 
-該当の C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView();
@@ -132,7 +132,7 @@ carouselView.ScrollTo(monkey, position: ScrollToPosition.MakeVisible);
 > [!NOTE]
 > `ScrollTo` メソッドを呼び出すときに `position` 引数が指定されていない場合、既定では[`ScrollToPosition.MakeVisible`](xref:Xamarin.Forms.ScrollToPosition)メンバーが使用されます。
 
-### <a name="start"></a>Start
+### <a name="start"></a>開始
 
 [`ScrollToPosition.Start`](xref:Xamarin.Forms.ScrollToPosition)メンバーは、項目をビューの先頭までスクロールする必要があることを示します。
 
@@ -142,7 +142,7 @@ carouselView.ScrollTo(monkey, position: ScrollToPosition.Start);
 
 このコード例では、項目がビューの先頭にスクロールされます。
 
-### <a name="center"></a>中央揃え
+### <a name="center"></a>Center
 
 [`ScrollToPosition.Center`](xref:Xamarin.Forms.ScrollToPosition)メンバーは、アイテムをビューの中央にスクロールする必要があることを示します。
 
@@ -178,7 +178,7 @@ carouselViewView.ScrollTo(monkey, position: ScrollToPosition.End);
 </CarouselView>
 ```
 
-該当の C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView
@@ -195,14 +195,14 @@ CarouselView carouselView = new CarouselView
 - [`Always`](xref:Xamarin.Forms.ScrollBarVisibility)は、ビューにコンテンツが収まる場合でも、スクロールバーが表示されることを示します。
 - [`Never`](xref:Xamarin.Forms.ScrollBarVisibility)は、ビューにコンテンツが収まらない場合でも、スクロールバーが表示されないことを示します。
 
-## <a name="snap-points"></a>スナップ位置
+## <a name="snap-points"></a>スナップポイント
 
 ユーザーが、スクロールを開始するためにスワイプした場合に、項目が完全に表示されるように、スクロールの終了位置を制御することができます。 この機能はスナップと呼ばれます。これは、スクロールが停止したときに項目が位置にスナップし、 [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)クラスの次のプロパティによって制御されるためです。
 
 - [`SnapPointsType`](xref:Xamarin.Forms.SnapPointsType)型の[`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType)は、スクロール時のスナップポイントの動作を指定します。
 - [`SnapPointsAlignment`](xref:Xamarin.Forms.SnapPointsAlignment)型の[`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment)は、スナップポイントを項目にどのように整列させるかを指定します。
 
-これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトによりサポートされます。つまりデータバインディングの対象となる可能性があるという意味です。
+これらのプロパティは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)のオブジェクトによってサポートされています。これは、プロパティをデータバインディングのターゲットにできることを意味します。
 
 > [!NOTE]
 > スナップが発生すると、動きが最も少ない方向に発生します。
@@ -217,14 +217,18 @@ CarouselView carouselView = new CarouselView
 
 既定では、 [`CarouselView`](xref:Xamarin.Forms.CarouselView)の[`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType)プロパティは `SnapPointsType.MandatorySingle`に設定されます。これにより、スクロールによって一度に1つの項目だけがスクロールされるようになります。
 
+次のスクリーンショットは、スナップがオフになっている[`CarouselView`](xref:Xamarin.Forms.CarouselView)を示しています。
+
+[![IOS と Android のスナップポイントのない CarouselView のスクリーンショット](scrolling-images/snappoints-none.png "スナップポイントのない CarouselView")](scrolling-images/snappoints-none-large.png#lightbox "スナップポイントのない CarouselView")
+
 ### <a name="snap-points-alignment"></a>スナップポイントの配置
 
 [`SnapPointsAlignment`](xref:Xamarin.Forms.SnapPointsAlignment)列挙体は、`Start`、`Center`、および `End` のメンバーを定義します。
 
 > [!IMPORTANT]
-> [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment)プロパティの値は、 [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType)プロパティが `Mandatory` または `MandatorySingle` に設定されている場合にのみ尊重されます。
+> [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment)プロパティの値は、 [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType)プロパティが `Mandatory`または `MandatorySingle`に設定されている場合にのみ尊重されます。
 
-#### <a name="start"></a>Start
+#### <a name="start"></a>開始
 
 `SnapPointsAlignment.Start` メンバーは、スナップポイントが項目の先頭端に合わせて整列されていることを示します。 次の XAML の例は、この列挙型のメンバーを設定する方法を示しています。
 
@@ -240,7 +244,7 @@ CarouselView carouselView = new CarouselView
 </CarouselView>
 ```
 
-該当の C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView
@@ -254,9 +258,11 @@ CarouselView carouselView = new CarouselView
 };
 ```
 
-ユーザーが水平スクロール[`CarouselView`](xref:Xamarin.Forms.CarouselView)でスクロールを開始しようとすると、左側の項目がビューの左側に配置されます。
+ユーザーが水平スクロール[`CarouselView`](xref:Xamarin.Forms.CarouselView)でスクロールを開始しようとすると、左側の項目はビューの左側に配置されます。
 
-#### <a name="center"></a>中央揃え
+[![スタートスナップポイントがある CarouselView のスクリーンショット (iOS と Android)](scrolling-images/snappoints-start.png "スナップポイントを開始する CarouselView")](scrolling-images/snappoints-start-large.png#lightbox "スナップポイントを開始する CarouselView")
+
+#### <a name="center"></a>Center
 
 `SnapPointsAlignment.Center` メンバーは、スナップポイントが項目の中央に配置されていることを示します。
 
@@ -274,7 +280,7 @@ CarouselView carouselView = new CarouselView
 </CarouselView>
 ```
 
-該当の C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView
@@ -289,6 +295,8 @@ CarouselView carouselView = new CarouselView
 ```
 
 ユーザーが水平スクロール[`CarouselView`](xref:Xamarin.Forms.CarouselView)でスクロールを開始しようとすると、中央の項目はビューの中央に揃えられます。
+
+[![IOS と Android の center スナップポイントを含む CarouselView のスクリーンショット](scrolling-images/snappoints-center.png "Center スナップポイントを使用した CarouselView")](scrolling-images/snappoints-center-large.png#lightbox "Center スナップポイントを使用した CarouselView")
 
 #### <a name="end"></a>終了
 
@@ -306,7 +314,7 @@ CarouselView carouselView = new CarouselView
 </CarouselView>
 ```
 
-該当の C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView
@@ -321,6 +329,8 @@ CarouselView carouselView = new CarouselView
 ```
 
 ユーザーが水平スクロール[`CarouselView`](xref:Xamarin.Forms.CarouselView)でスクロールを開始しようとすると、右側の項目がビューの右側に配置されます。
+
+[![IOS と Android のエンドスナップポイントがある CarouselView のスクリーンショット](scrolling-images/snappoints-end.png "CarouselView と終了スナップポイント")](scrolling-images/snappoints-end-large.png#lightbox "CarouselView と終了スナップポイント")
 
 ## <a name="related-links"></a>関連リンク
 

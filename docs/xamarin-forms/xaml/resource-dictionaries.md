@@ -6,14 +6,14 @@ ms.assetid: DF103686-4A92-40FA-9CF1-A9376293B13C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/15/2019
+ms.date: 02/26/2020
 ms.custom: video
-ms.openlocfilehash: 49ea5c2a8332e625710af8a9947e1cb0e0338040
-ms.sourcegitcommit: 211fed94fb96127a3e158ae1ff5d7eb831a203d8
+ms.openlocfilehash: f5266049e1498d902864185a61cba6d3730f9594
+ms.sourcegitcommit: 2836f2003a5b745b042ee6003a3d6a11b9139e44
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75955828"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77618869"
 ---
 # <a name="resource-dictionaries"></a>リソース ディクショナリ
 
@@ -21,25 +21,25 @@ ms.locfileid: "75955828"
 
 _XAML リソースは、Xamarin. フォームアプリケーション全体で共有および再利用できるオブジェクトの定義です。これらのリソースオブジェクトは、リソースディクショナリに格納されます。_
 
-A [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) Xamarin.Forms アプリケーションで使用されるリソースのリポジトリです。 一般的なリソースが含まれている、`ResourceDictionary`含める[スタイル](~/xamarin-forms/user-interface/styles/index.md)、[コントロール テンプレート](~/xamarin-forms/app-fundamentals/templates/control-template.md)、[データ テンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)色、およびコンバーター。
+[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)は、Xamarin. フォームアプリケーションで使用されるリソースのリポジトリです。 `ResourceDictionary` に格納されている一般的なリソースには、[スタイル](~/xamarin-forms/user-interface/styles/index.md)、[コントロールテンプレート](~/xamarin-forms/app-fundamentals/templates/control-template.md)、[データテンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)、色、およびコンバーターがあります。
 
-XAML に格納されているリソースで、`ResourceDictionary`取得して使用して要素に適用できるし、`StaticResource`マークアップ拡張機能。 C# の場合は、リソース定義することもに、`ResourceDictionary`を取得して、文字列ベースのインデクサーを使用して要素に適用します。 ただし、使用する利点のほとんどは、`ResourceDictionary`で c# の場合は、共有オブジェクトは単にフィールドまたはプロパティとして格納されているし、しない直接アクセスに最初から取得ディクショナリ。
+XAML では、`ResourceDictionary` に格納されているリソースを取得して、`StaticResource` マークアップ拡張機能を使用して要素に適用できます。 でC#は、リソースを `ResourceDictionary` で定義してから、文字列ベースのインデクサーを使用して取得し、要素に適用することもできます。 ただし、でC#は `ResourceDictionary` を使用する利点はほとんどありません。共有オブジェクトは単にフィールドまたはプロパティとして格納でき、最初にディクショナリから取得しなくても直接アクセスできます。
 
 ## <a name="create-and-consume-a-resourcedictionary"></a>ResourceDictionary の作成と使用
 
-リソースが定義されている、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) 、次のいずれかに設定されている`Resources`プロパティ。
+リソースは[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)で定義され、次のいずれかの `Resources` プロパティに設定されます。
 
-- [ `Resources` ](xref:Xamarin.Forms.Application.Resources)から派生したクラスのプロパティ [`Application`](xref:Xamarin.Forms.Application)
-- [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources)から派生したクラスのプロパティ [`VisualElement`](xref:Xamarin.Forms.Application)
+- から派生した任意のクラスの[`Resources`](xref:Xamarin.Forms.Application.Resources)プロパティ[`Application`](xref:Xamarin.Forms.Application)
+- から派生した任意のクラスの[`Resources`](xref:Xamarin.Forms.VisualElement.Resources)プロパティ[`VisualElement`](xref:Xamarin.Forms.Application)
 
-Xamarin.Forms のプログラムにはから派生したクラス 1 つだけにはが含まれています`Application`多くの場合を使用して、多くのクラスから派生するが、 `VisualElement`(ページ、レイアウト、コントロールなど)。 これらのオブジェクトのいずれかがその`Resources`プロパティに設定、`ResourceDictionary`します。 特定の配置場所を選択する`ResourceDictionary`影響は、リソースを使用できます。
+Xamarin. Forms プログラムには `Application` から派生したクラスが1つだけ含まれていますが、多くの場合、ページ、レイアウト、コントロールなど、`VisualElement`から派生した多くのクラスを使用します。 これらのオブジェクトのいずれでも、`Resources` プロパティを `ResourceDictionary`に設定できます。 特定の `ResourceDictionary` をどこに配置するかを選択すると、リソースをどこで使用できるかが決まります。
 
-- 内のリソースを`ResourceDictionary`など、ビューに接続される`Button`または`Label`のためこれは非常に便利なのみに、その特定のオブジェクトに適用できます。
-- 内のリソースを`ResourceDictionary`などのレイアウトにアタッチされている`StackLayout`または`Grid`レイアウトとそのレイアウトのすべての子に適用できます。
-- 内のリソースを`ResourceDictionary`定義されているページとそのすべての子ページにレベルは適用できます。
-- 内のリソースを`ResourceDictionary`定義されているアプリケーションで、アプリケーション全体でレベルを適用できます。
+- `Button` や `Label` などのビューにアタッチされている `ResourceDictionary` 内のリソースは、その特定のオブジェクトにのみ適用できます。そのため、これはあまり便利ではありません。
+- `StackLayout` や `Grid` などのレイアウトにアタッチされている `ResourceDictionary` 内のリソースは、レイアウトとそのレイアウトのすべての子に適用できます。
+- ページレベルで定義されている `ResourceDictionary` 内のリソースは、ページおよびそのすべての子に適用できます。
+- アプリケーションレベルで定義されている `ResourceDictionary` 内のリソースは、アプリケーション全体で適用できます。
 
-次の XAML には、アプリケーション レベルで定義されているリソースが表示されます。`ResourceDictionary`で、 **App.xaml**標準 Xamarin.Forms プログラムの一部として作成されたファイル。
+次の XAML は、標準の Xamarin. Forms プログラムの一部として作成された**app.xaml**ファイル内の `ResourceDictionary` アプリケーションレベルで定義されたリソースを示しています。
 
 ```xaml
 <Application ...>
@@ -58,9 +58,9 @@ Xamarin.Forms のプログラムにはから派生したクラス 1 つだけに
 </Application>
 ```
 
-これは、`ResourceDictionary`定義 3 [ `Color` ](xref:Xamarin.Forms.Color)リソースと[ `Style` ](xref:Xamarin.Forms.Style)リソース。 詳細については、`App`クラスを参照してください[App クラス](~/xamarin-forms/app-fundamentals/application-class.md)します。
+この `ResourceDictionary` では、3つの[`Color`](xref:Xamarin.Forms.Color)リソースと[`Style`](xref:Xamarin.Forms.Style)リソースを定義します。 `App` クラスの詳細については、「 [App クラス](~/xamarin-forms/app-fundamentals/application-class.md)」を参照してください。
 
-明示的な Xamarin.Forms 3.0 以降では`ResourceDictionary`タグは必要ありません。 `ResourceDictionary`オブジェクトが自動的に作成され、間で直接、リソースを挿入することができます、`Resources`プロパティ要素タグ。
+Xamarin. Forms 3.0 以降では、明示的な `ResourceDictionary` タグは必要ありません。 `ResourceDictionary` オブジェクトは自動的に作成され、`Resources` のプロパティ要素タグの間に直接リソースを挿入できます。
 
 ```xaml
 <Application ...>
@@ -77,7 +77,7 @@ Xamarin.Forms のプログラムにはから派生したクラス 1 つだけに
 </Application>
 ```
 
-各リソースを使用して指定されているキーには、`x:Key`属性には、ディクショナリ キーになりますが、`ResourceDictionary`します。 リソースを取得するキーが使用される、`ResourceDictionary`によって、 [ `StaticResource` ](xref:Xamarin.Forms.Xaml.StaticResourceExtension)マークアップ拡張機能、内で定義された追加のリソースを示す次の XAML コードの例のように、 `StackLayout`:
+各リソースには、`x:Key` 属性を使用して指定されたキーがあります。これは、`ResourceDictionary`のディクショナリキーになります。 キーは、`StackLayout`内で定義されている追加のリソースを示す次の XAML コード例に示すように、 [`StaticResource`](xref:Xamarin.Forms.Xaml.StaticResourceExtension)マークアップ拡張機能によって `ResourceDictionary` からリソースを取得するために使用されます。
 
 ```xaml
 <StackLayout Margin="0,20,0,0">
@@ -105,16 +105,16 @@ Xamarin.Forms のプログラムにはから派生したクラス 1 つだけに
 </StackLayout>
 ```
 
-最初の[ `Label` ](xref:Xamarin.Forms.Label)インスタンスを取得し、使用、`LabelPageHeadingStyle`アプリケーション レベルで定義されているリソース`ResourceDictionary`、2 つ目`Label`インスタンスの取得および使用、 `LabelNormalStyle`制御レベルで定義されているリソース`ResourceDictionary`します。 同様に、 [ `Button` ](xref:Xamarin.Forms.Button)インスタンスを取得し、使用、`NormalTextColor`アプリケーション レベルで定義されているリソース`ResourceDictionary`、および`MediumBoldText`制御レベルで定義されているリソース`ResourceDictionary`します。 この結果、次のスクリーンショットに示すような外観が表示されます。
+最初の[`Label`](xref:Xamarin.Forms.Label)インスタンスは、アプリケーションレベル `ResourceDictionary`で定義されている `LabelPageHeadingStyle` リソースを取得して使用します。2つ目の `Label` インスタンスは、コントロールレベル `LabelNormalStyle` に定義されている `ResourceDictionary`リソースを取得して使用します。 同様に、 [`Button`](xref:Xamarin.Forms.Button)インスタンスは、アプリケーションレベル `ResourceDictionary`で定義されている `NormalTextColor` リソースと、コントロールレベル `ResourceDictionary`で定義されている `MediumBoldText` リソースを取得して使用します。 これで、次のスクリーンショットのような結果になります。
 
-[![ResourceDictionary リソースを消費している](resource-dictionaries-images/screenshots-sml.png)](resource-dictionaries-images/screenshots.png#lightbox)
+[ResourceDictionary リソースを消費している ![](resource-dictionaries-images/screenshots-sml.png)](resource-dictionaries-images/screenshots.png#lightbox)
 
 > [!NOTE]
-> 1 つのページに固有のリソースは、アプリケーション レベルのリソース ディクショナリをそのため、ページで必要なときに、リソースの代わりに、アプリケーションの起動時に解析されますに含めることはできません。 詳細については、次を参照してください。[アプリケーション リソース ディクショナリのサイズを減らす](~/xamarin-forms/deploy-test/performance.md)します。
+> 1 つのページに固有のリソースは、アプリケーション レベルのリソース ディクショナリをそのため、ページで必要なときに、リソースの代わりに、アプリケーションの起動時に解析されますに含めることはできません。 詳細については、「[アプリケーションリソースディクショナリのサイズを減らす](~/xamarin-forms/deploy-test/performance.md)」を参照してください。
 
 ## <a name="override-resources"></a>リソースの上書き
 
-ときに`ResourceDictionary`のリソースを共有`x:Key`属性値は、ビューの階層内で下に定義されているリソースは優先を以上定義されています。 たとえば、設定、`PageBackgroundColor`リソースを`Blue`アプリケーションでレベルがページ レベルで上書きされている`PageBackgroundColor`リソースに設定`Yellow`。 ページ レベルでは同様に、`PageBackgroundColor`制御レベルによってリソースが上書きされます`PageBackgroundColor`リソース。 この優先順位は次の XAML コード例について説明します。
+`ResourceDictionary` リソースが `x:Key` 属性値を共有すると、ビュー階層で定義されているリソースよりも低いリソースが定義されているリソースよりも優先されます。 たとえば、`PageBackgroundColor` リソースをアプリケーションレベルで `Blue` に設定すると、`Yellow`に設定されたページレベル `PageBackgroundColor` リソースが上書きされます。 同様に、ページレベルの `PageBackgroundColor` リソースは、コントロールレベル `PageBackgroundColor` リソースによってオーバーライドされます。 この優先順位は次の XAML コード例について説明します。
 
 ```xaml
 <ContentPage ... BackgroundColor="{StaticResource PageBackgroundColor}">
@@ -140,21 +140,21 @@ Xamarin.Forms のプログラムにはから派生したクラス 1 つだけに
 </ContentPage>
 ```
 
-元の`PageBackgroundColor`と`NormalTextColor`によって、アプリケーション レベルで定義されている、インスタンスが上書きされます、`PageBackgroundColor`と`NormalTextColor`ページ レベルで定義されているインスタンス。 したがって、ページの背景色が青と、次のスクリーン ショットに示すよう、ページ上のテキストが、黄色になります。
+アプリケーションレベルで定義されている元の `PageBackgroundColor` インスタンスと `NormalTextColor` インスタンスは、ページレベルで定義されている `PageBackgroundColor` および `NormalTextColor` インスタンスによってオーバーライドされます。 したがって、ページの背景色が青と、次のスクリーン ショットに示すよう、ページ上のテキストが、黄色になります。
 
-[![ResourceDictionary リソースのオーバーライド](resource-dictionaries-images/overridding-screenshots-sml.png)](resource-dictionaries-images/overridding-screenshots.png#lightbox)
+[ResourceDictionary リソースのオーバーライド ![](resource-dictionaries-images/overridding-screenshots-sml.png)](resource-dictionaries-images/overridding-screenshots.png#lightbox)
 
-ただし、注意のバック グラウンド バー、 [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)黄色のまま、ため、 [ `BarBackgroundColor` ](xref:Xamarin.Forms.NavigationPage.BarBackgroundColor)の値に設定されて、`PageBackgroundColor`アプリケーションで定義されているリソースレベル`ResourceDictionary`します。
+ただし、 [`BarBackgroundColor`](xref:Xamarin.Forms.NavigationPage.BarBackgroundColor)プロパティは、アプリケーションレベル `ResourceDictionary`で定義されている `PageBackgroundColor` リソースの値に設定されているため、 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)の背景バーは黄色のままになっていることに注意してください。
 
-について検討する別の方法を次に示します`ResourceDictionary`優先順位: ときに、XAML パーサーが検出した、 `StaticResource`、ビジュアル ツリーを介したを結ぶこと、一致するキーを検索、見つかった最初の一致を使用します。 XAML パーサーが検索ページでこの検索を終了し、キーもまだ検出された場合、`ResourceDictionary`にアタッチされている、`App`オブジェクト。 でも、キーが存在しない場合は、例外が発生します。
+次に、`ResourceDictionary` の優先順位について検討するもう1つの方法を示します。 XAML パーサーが `StaticResource`を検出すると、見つかった最初の一致を使用して、ビジュアルツリー内を移動することで一致するキーが検索されます。 この検索がページで終了しても、キーがまだ見つからない場合は、XAML パーサーによって、`App` オブジェクトにアタッチされている `ResourceDictionary` が検索されます。 でも、キーが存在しない場合は、例外が発生します。
 
 ## <a name="stand-alone-resource-dictionaries"></a>スタンドアロンリソースディクショナリ
 
-派生したクラス`ResourceDictionary`別のスタンドアロン ファイルにもできます。 (正確には、`ResourceDictionary` から派生したクラスには、通常、ファイルの_ペア_が必要です。これは、リソースが XAML ファイルで定義されていても、`InitializeComponent` 呼び出しを伴う分離コードファイルが必要なためです)。結果ファイルは、アプリケーション間で共有できます。
+`ResourceDictionary` から派生したクラスは、独立したスタンドアロンファイルにも存在できます。 (正確には、`ResourceDictionary` から派生したクラスには、通常、ファイルの_ペア_が必要です。これは、リソースが XAML ファイルで定義されていても、`InitializeComponent` 呼び出しを伴う分離コードファイルが必要なためです)。結果ファイルは、アプリケーション間で共有できます。
 
-このようなファイルを作成するには、追加、新しい**コンテンツ ビュー**または**コンテンツ ページ**項目をプロジェクト (ではなく、**コンテンツ ビュー**または**コンテンツ ページ**でc# ファイルのみ)。 XAML ファイルと c# ファイルの両方でから基底クラスの名前を変更`ContentView`または`ContentPage`に`ResourceDictionary`します。 XAML ファイルでは、基底クラスの名前は、最上位要素です。
+このようなファイルを作成するには、新しい**コンテンツビュー**または**コンテンツページ**アイテムをプロジェクトに追加します (ただし、 C#ファイルが含まれている**コンテンツビュー**や**コンテンツページ**は除く)。 XAML ファイルとC#ファイルの両方で、基底クラスの名前を `ContentView` または `ContentPage` から `ResourceDictionary`に変更します。 XAML ファイルでは、基底クラスの名前は、最上位要素です。
 
-次の XAML の例は、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)という`MyResourceDictionary`:
+次の XAML の例は、`MyResourceDictionary`という名前の[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)を示しています。
 
 ```xaml
 <ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
@@ -177,9 +177,9 @@ Xamarin.Forms のプログラムにはから派生したクラス 1 つだけに
 </ResourceDictionary>
 ```
 
-これは、`ResourceDictionary`型のオブジェクトは、1 つのリソースを含む`DataTemplate`します。
+この `ResourceDictionary` には、`DataTemplate`型のオブジェクトである1つのリソースが含まれています。
 
-インスタンスを作成できる`MyResourceDictionary`のペアの間に配置して`Resources`プロパティ要素タグをたとえばで、 `ContentPage`:
+`MyResourceDictionary` インスタンス化するには、たとえば `ContentPage`内の `Resources` のプロパティ要素タグのペアの間に配置します。
 
 ```xaml
 <ContentPage ...>
@@ -190,9 +190,9 @@ Xamarin.Forms のプログラムにはから派生したクラス 1 つだけに
 </ContentPage>
 ```
 
-インスタンス`MyResourceDictionary`に設定されている、`Resources`のプロパティ、`ContentPage`オブジェクト。
+`MyResourceDictionary` のインスタンスは、`ContentPage` オブジェクトの `Resources` プロパティに設定されます。
 
-ただし、このアプローチにはいくつかの制限:`Resources`のプロパティ、`ContentPage`参照のみ`ResourceDictionary`します。 などの他のオプションが必要なほとんどの場合、`ResourceDictionary`インスタンスとおそらく他のリソースもします。
+ただし、この方法にはいくつかの制限があります。 `ContentPage` の `Resources` プロパティは、この1つの `ResourceDictionary`のみを参照します。 ほとんどの場合、他の `ResourceDictionary` インスタンスとその他のリソースも含めるオプションが必要です。
 
 このタスクでは、マージされたリソース ディクショナリが必要です。
 
@@ -265,20 +265,22 @@ Xamarin.Forms のプログラムにはから派生したクラス 1 つだけに
 </ContentPage>
 ```
 
+[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)を外部アセンブリに配置する場合は、ビルドアクションが**EmbeddedResource**に設定されていることを確認します。 また、分離コードファイルがあることを確認します。
+
 > [!IMPORTANT]
 > [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)には `MergedDictionaries` プロパティ要素タグが1つしか存在できませんが、必要な数の `ResourceDictionary` オブジェクトを含めることができます。
 
-マージする際に[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)リソースが同じ共有`x:Key`属性値は、Xamarin.Forms は、次のリソースの優先順位を使用します。
+結合された[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)リソースが同じ `x:Key` 属性値を共有する場合、Xamarin は次のリソース優先順位を使用します。
 
 1. リソース ディクショナリのローカル リソース。
-1. 使用してマージされたリソース ディクショナリに含まれるリソース、`MergedDictionaries`に登録されている逆の順序で、コレクション、`MergedDictionaries`プロパティ。
+1. `MergedDictionaries` コレクションによってマージされたリソースディクショナリに含まれているリソースは、逆の順序で、`MergedDictionaries` プロパティに一覧表示されます。
 
 > [!NOTE]
 > アプリケーションが複数含まれている場合に、負荷の高いタスク リソース ディクショナリを検索することができますサイズの大きいリソース ディクショナリ。 そのため、不要な検索を避けるため、アプリケーション内の各ページだけが、ページに適切なリソース ディクショナリを使用するを確認する必要があります。
 
 ## <a name="related-links"></a>関連リンク
 
-- [リソース ディクショナリ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-resourcedictionaries)
+- [リソースディクショナリ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-resourcedictionaries)
 - [スタイル](~/xamarin-forms/user-interface/styles/index.md)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
 
