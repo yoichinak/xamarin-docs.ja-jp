@@ -22,7 +22,7 @@ ms.locfileid: "71679980"
 
 このクイックスタートでは、次の方法について学習します。
 
-- クロスプラットフォーム Xamarin.Forms アプリケーションのスタイルを作成する
+- クロスプラットフォーム Xamarin.Forms アプリケーションを作成する
 - Extensible Application Markup Language (XAML) を使用して、ページのユーザー インターフェイスを定義する。
 - コードから XAML ユーザー インターフェイス要素を操作する。
 
@@ -32,11 +32,11 @@ ms.locfileid: "71679980"
 
 ::: zone pivot="windows"
 
-### <a name="prerequisites"></a>前提条件
+### <a name="prerequisites"></a>必須コンポーネント
 
 - Visual Studio 2019 (最新リリース) と、 **.NET によるモバイル開発**ワークロードがインストールされている。
 - C# に関する知識。
-- (必要に応じて) iOS 上でアプリケーションをビルドするためのペアリング済みの Mac。
+- (必要に応じて) iOS 上のアプリケーションをビルドするためのペアリング済みの Mac。
 
 これらの前提条件の詳細については、「[Xamarin のインストール](~/get-started/installation/index.md)」を参照してください。 Mac ビルド ホストへの Visual Studio 2019 の接続については、「[Xamarin.iOS 開発のために Mac とペアリングする](~/ios/get-started/installation/windows/connecting-to-mac/index.md)」を参照してください。
 
@@ -190,7 +190,7 @@ ms.locfileid: "71679980"
 
 - Visual Studio 2017 と、 **.NET によるモバイル開発**ワークロードがインストールされている。
 - C# に関する知識。
-- (必要に応じて) iOS 上でアプリケーションをビルドするためのペアリング済みの Mac。
+- (必要に応じて) iOS 上のアプリケーションをビルドするためのペアリング済みの Mac。
 
 これらの前提条件の詳細については、「[Xamarin のインストール](~/get-started/installation/index.md)」を参照してください。 Mac ビルド ホストへの Visual Studio 2019 の接続については、「[Xamarin.iOS 開発のために Mac とペアリングする](~/ios/get-started/installation/windows/connecting-to-mac/index.md)」を参照してください。
 
@@ -492,7 +492,7 @@ ms.locfileid: "71679980"
 
 このクイックスタートでは、次の方法について学習しました。
 
-- クロスプラットフォーム Xamarin.Forms アプリケーションのスタイルを作成する
+- クロスプラットフォーム Xamarin.Forms アプリケーションを作成する
 - Extensible Application Markup Language (XAML) を使用して、ページのユーザー インターフェイスを定義する。
 - コードから XAML ユーザー インターフェイス要素を操作する。
 
