@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/14/2020
-ms.openlocfilehash: 1e8b6f5e1ea090abc8ebd6084095bf6b34663a42
-ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
+ms.openlocfilehash: 09bcb49db7f257a415518b259672ca8e776cdbc4
+ms.sourcegitcommit: 5d22f37dfc358678df52a4d17c57261056a72cb7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77635868"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77674565"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms のビュー
 
@@ -208,7 +208,7 @@ _Xamarin 形式のビューは、クロスプラットフォームモバイル�
 
 |     |     |
 | --- | --- |
-| `IndicatorView` `CarouselView`内の項目数を表すインジケーターを表示します。 `IndicatorView.ItemsSourceBy` 添付プロパティを `CarouselView` オブジェクトに設定して、インジケーターを表示します。 <br /><br /> / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-indicatorviewdemos/)の[ガイド](~/xamarin-forms/user-interface/indicatorview.md) | [![IndicatorView の例](views-images/IndicatorView.png "IndicatorView の例")](views-images/IndicatorView-Large.png#lightbox "IndicatorView の例")<br />このページ / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/IndicatorViewDemoPage.xaml)のコード[ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/IndicatorViewDemoPage.cs) |
+| `IndicatorView` `CarouselView`内の項目数を表すインジケーターを表示します。 `CarouselView`のインジケーターを表示するには、`CarouselView.IndicatorView` プロパティを `IndicatorView` オブジェクトに設定します。 <br /><br /> / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-indicatorviewdemos/)の[ガイド](~/xamarin-forms/user-interface/indicatorview.md) | [![IndicatorView の例](views-images/IndicatorView.png "IndicatorView の例")](views-images/IndicatorView-Large.png#lightbox "IndicatorView の例")<br />このページ / [XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/IndicatorViewDemoPage.xaml)のコード[ C# ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/IndicatorViewDemoPage.cs) |
 |     |     |
 
 ### <a name="listview"></a>ListView

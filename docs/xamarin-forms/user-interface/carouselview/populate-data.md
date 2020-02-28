@@ -6,13 +6,13 @@ ms.assetid: 20DB2C57-CE3A-4D91-80DC-73AE361A3CB0
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/17/2019
-ms.openlocfilehash: 8ec66a8d39f373b624e3a597e62014e3b1c72f56
-ms.sourcegitcommit: 524fc148bad17272bda83c50775771daa45bfd7e
+ms.date: 02/27/2019
+ms.openlocfilehash: 154d039e95ccc2de28e09a7162a32a19f8f84656
+ms.sourcegitcommit: 5d22f37dfc358678df52a4d17c57261056a72cb7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77480557"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77674533"
 ---
 # <a name="xamarinforms-carouselview-data"></a>CarouselView データ
 
@@ -264,25 +264,25 @@ public class MonkeyDataTemplateSelector : DataTemplateSelector
 
 ```xaml
 <StackLayout>
-    <CarouselView x:Name="carouselView"
-                  ItemsSource="{Binding Monkeys}">
+    <CarouselView ItemsSource="{Binding Monkeys}"
+                  IndicatorView="indicatorView">
         <CarouselView.ItemTemplate>
             <!-- DataTemplate that defines item appearance -->
         </CarouselView.ItemTemplate>
     </CarouselView>
-    <IndicatorView IndicatorView.ItemsSourceBy="carouselView"
+    <IndicatorView x:Name="indicatorView"
                    IndicatorColor="LightGray"
                    SelectedIndicatorColor="DarkGray"
                    HorizontalOptions="Center" />
 </StackLayout>
 ```
 
-この例では、`IndicatorView` が `CarouselView`の下にレンダリングされ、`CarouselView`内の各項目のインジケーターが表示されます。 `IndicatorView` には、`ItemsSourceBy` 添付プロパティを `CarouselView` オブジェクトに設定することによってデータが設定されます。 各インジケーターは薄い灰色の円であり、`CarouselView` の現在の項目を表すインジケーターは濃い灰色です。
+この例では、`IndicatorView` が `CarouselView`の下にレンダリングされ、`CarouselView`内の各項目のインジケーターが表示されます。 `IndicatorView` には、`CarouselView.IndicatorView` プロパティを `IndicatorView` オブジェクトに設定することによってデータが設定されます。 各インジケーターは薄い灰色の円であり、`CarouselView` の現在の項目を表すインジケーターは濃い灰色です。
 
 [![IOS と Android での CarouselView と IndicatorView のスクリーンショット](populate-data-images/indicators.png "IndicatorView の円")](populate-data-images/indicators-large.png#lightbox "IndicatorView の円")
 
 > [!IMPORTANT]
-> `IndicatorView.ItemsSourceBy` 添付プロパティを設定すると、`IndicatorView.Position` プロパティバインドが `CarouselView.Position` プロパティになり、`IndicatorView.ItemsSource` プロパティが `CarouselView.ItemsSource` プロパティにバインドされます。
+> `CarouselView.IndicatorView` プロパティを設定すると、`IndicatorView.Position` プロパティのバインドが `CarouselView.Position` プロパティになり、`IndicatorView.ItemsSource` プロパティが `CarouselView.ItemsSource` プロパティにバインドされます。
 
 インジケーターの詳細については、「 [IndicatorView](~/xamarin-forms/user-interface/indicatorview.md)」を参照してください。
 
