@@ -398,6 +398,8 @@
                   href: user-interface/map/geocoder.md
                 - name: ネイティブ マップ アプリを起動する
                   href: user-interface/map/native-map-app.md
+            - name: MediaElement
+              href: user-interface/mediaelement.md
             - name: WebView
               href: user-interface/webview.md
         - name: コマンドの開始
@@ -620,6 +622,8 @@
           items:
             - name: 概要
               href: platform/android/index.md
+            - name: AndroidX への移行
+              href: platform/android/androidx-migration.md
             - name: AppCompat と素材の設計
               href: platform/android/appcompat-material-design.md
             - name: ボタンの余白とシャドウ
@@ -662,6 +666,8 @@
               href: platform/ios/named-font-size-scaling.md
             - name: セルの背景色
               href: platform/ios/cell-background-color.md
+            - name: DatePicker の項目選択
+              href: platform/ios/datepicker-selection.md
             - name: エントリのカーソルの色
               href: platform/ios/entry-cursor-color.md
             - name: エントリのフォント サイズ
@@ -702,16 +708,24 @@
               href: platform/ios/slider-thumb.md
             - name: SwipeView スワイプ切り替えモード
               href: platform/ios/swipeview-swipetransitionmode.md
+            - name: TabbedPage の半透明タブ バー
+              href: platform/ios/tabbedpage-translucent-tabbar.md
+            - name: TimePicker の項目選択
+              href: platform/ios/timepicker-selection.md
             - name: VisualElement ぼかし
               href: platform/ios/visualelement-blur.md
             - name: VisualElement ドロップ シャドウ
               href: platform/ios/visualelement-drop-shadow.md
             - name: VisualElement レガシ カラー モード
               href: platform/ios/legacy-color-mode.md
+            - name: VisualElement ファースト レスポンダー
+              href: platform/ios/visualelement-first-responder.md
         - name: Windows
           items:
             - name: 概要
               href: platform/windows/index.md
+            - name: 既定の画像ディレクトリ
+              href: platform/windows/default-image-directory.md
             - name: InputView 読み取り順序
               href: platform/windows/inputview-reading-order.md
             - name: ListView SelectionMode
