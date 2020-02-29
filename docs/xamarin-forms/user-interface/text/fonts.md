@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/20/2020
-ms.openlocfilehash: 75cf5acdb862a15d722075269b2f736264be680f
-ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
+ms.openlocfilehash: 3798e3612547d36905dd62e6314f158958782874
+ms.sourcegitcommit: 5b6d3bddf7148f8bb374de5657bdedc125d72ea7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77636169"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160610"
 ---
 # <a name="fonts-in-xamarinforms"></a>Xamarin.Forms でのフォント
 
@@ -43,7 +43,7 @@ var about = new Label
 
 <a name="FontSize" />
 
-### <a name="font-size"></a>[フォント サイズ]
+### <a name="font-size"></a>Font Size
 
 `FontSize` プロパティは、次のように double 値に設定できます。
 
@@ -61,7 +61,7 @@ label.FontSize = 24;
 
 **太字**や*斜体*などのフォントスタイルは、`FontAttributes` プロパティで設定できます。 次の値は現在サポートされています。
 
-- **なし**
+- **None**
 - **太字**
 - **<**
 
@@ -148,6 +148,74 @@ label.FontSize = Device.GetNamedSize(NamedSize.Small, typeof(Label));
 <a name="Using_a_Custom_Font" />
 
 ## <a name="use-a-custom-font"></a>カスタムフォントを使用する
+
+組み込みのタイプフェイス以外のフォントを使用してでは、いくつかのプラットフォームに固有のコーディングが必要です。 このスクリーンショットは、 **Lobster**を使用してレンダリングされた[Google のオープンソースフォント](https://www.google.com/fonts)のカスタムフォントを示しています。
+
+ [![IOS と Android でのカスタムフォント](fonts-images/custom-sml.png "カスタムフォントの例")](fonts-images/custom.png#lightbox "カスタムフォントの例")
+
+各プラットフォームに必要な手順は次のとおりです。 アプリケーションにカスタム フォント ファイルを含む、ときに必ずフォントのライセンスは、配布することを確認してください。
+
+### <a name="ios"></a>iOS
+
+カスタムフォントが読み込まれることを確認してから、Xamarin. Forms `Font` メソッドを使用して名前で参照することにより、カスタムフォントを表示できます。
+次の[ブログ記事](https://devblogs.microsoft.com/xamarin/custom-fonts-in-ios/)の手順に従ってください。
+
+1. ビルドアクションを含むフォントファイル BundleResource を追加し**ます。**
+2. 情報の plist ファイル (**アプリケーションによって提供されるフォント**、または `UIAppFonts`、キー) を更新し**ます。**
+3. Xamarin.Forms でフォントを定義する場所に名前を参照します。
+
+```csharp
+new Label
+{
+    Text = "Hello, Forms!",
+    FontFamily = Device.RuntimePlatform == Device.iOS ? "Lobster-Regular" : null // set only for iOS
+}
+```
+
+### <a name="android"></a>Android
+
+Android 用 Xamarin.Forms は、特定の命名基準に従ってプロジェクトに追加されたカスタムフォントを参照できます。 まず、アプリケーションプロジェクトの**Assets**フォルダーにフォントファイルを追加し、[*ビルドアクション: AndroidAsset*] を設定します。 次に、次のコードスニペットに示すように、完全なパスと*フォント名*を、Xamarin. Forms のフォント名としてハッシュ (#) で区切って使用します。
+
+```csharp
+new Label
+{
+  Text = "Hello, Forms!",
+  FontFamily = Device.RuntimePlatform == Device.Android ? "Lobster-Regular.ttf#Lobster-Regular" : null // set only for Android
+}
+```
+
+### <a name="windows"></a>Windows
+
+Windows プラットフォーム用の Xamarin.Forms は、特定の命名標準に従ってプロジェクトに追加されたカスタム フォントを参照できます。 まず、アプリケーションプロジェクトの **/Assets/Fonts/** フォルダーにフォントファイルを追加し、 **[ビルドアクション: コンテンツ]** を設定します。 次のコードスニペットに示すように、完全なパスとフォントファイル名の後にハッシュ (#) と**フォント名**を指定します。
+
+```csharp
+new Label
+{
+    Text = "Hello, Forms!",
+    FontFamily = Device.RuntimePlatform == Device.UWP ? "Assets/Fonts/Lobster-Regular.ttf#Lobster" : null // set only for UWP apps
+}
+```
+
+> [!NOTE]
+> フォント名とフォント ファイルの名前が異なるあることに注意してください。 Windows でフォント名を検出するには、ファイル を右クリックし、**プレビュー** を選択します。 フォント名は、プレビュー ウィンドウから確認できます。
+
+### <a name="xaml"></a>XAML
+
+また、XAML で[`Device.RuntimePlatform`](~/xamarin-forms/platform/device.md#interact-with-the-ui-from-background-threads)を使用して、カスタムフォントをレンダリングすることもできます。
+
+```xaml
+<Label Text="Hello Forms with XAML">
+    <Label.FontFamily>
+        <OnPlatform x:TypeArguments="x:String">
+                <On Platform="iOS" Value="Lobster-Regular" />
+                <On Platform="Android" Value="Lobster-Regular.ttf#Lobster-Regular" />
+                <On Platform="UWP" Value="Assets/Fonts/Lobster-Regular.ttf#Lobster" />
+        </OnPlatform>
+    </Label.FontFamily>
+</Label>
+```
+
+## <a name="use-a-custom-font-preview"></a>カスタムフォントを使用する (プレビュー)
 
 カスタムフォントは、Xamarin. フォーム共有プロジェクトに追加できます。また、追加の作業を行わずに、プラットフォームプロジェクトによって使用されます。 その手順は次のとおりです。
 

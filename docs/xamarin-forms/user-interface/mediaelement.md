@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/18/2020
-ms.openlocfilehash: 601a2884cb9ca90ab6681e48afda4c9f1f467932
-ms.sourcegitcommit: 5d22f37dfc358678df52a4d17c57261056a72cb7
+ms.openlocfilehash: 76a30bfb17c8263345d781386acf9d34c01aae3b
+ms.sourcegitcommit: 5b6d3bddf7148f8bb374de5657bdedc125d72ea7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77674547"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160410"
 ---
 # <a name="xamarinforms-mediaelement"></a>Xamarin. フォーム MediaElement
 
@@ -38,7 +38,7 @@ Device.SetFlags(new string[]{ "MediaElement_Experimental" });
 ```
 
 > [!NOTE]
-> [`MediaElement`](xref:Xamarin.Forms.MediaElement)は、IOS、Android、ユニバーサル WINDOWS プラットフォーム (UWP)、およびその他のプラットフォームで利用できます。
+> [`MediaElement`](xref:Xamarin.Forms.MediaElement)は、IOS、Android、ユニバーサル WINDOWS プラットフォーム (UWP)、macOS、Windows Presentation Foundation、Tizen で使用できます。
 
 [`MediaElement`](xref:Xamarin.Forms.MediaElement) は次の特性を定義します。
 
