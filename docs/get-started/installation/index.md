@@ -47,7 +47,7 @@ _Visual Studio と Xamarin を設定して .NET でモバイル アプリを構�
 
 > [!Video https://channel9.msdn.com/Shows/XamarinShow/Installing-Visual-Studio-for-Mac-for-Mobile-Development-with-NET/player]
 
-## <a name="step-by-step-instructions"></a>ステップ バイ ステップの指示
+## <a name="step-by-step-instructions"></a>ステップ バイ ステップの手順
 
 このビデオ以外に、Visual Studio for Mac と Visual Studio for Xamarin について説明する[ステップ バイ ステップのインストール ガイド](/visualstudio/mac/installation/)があります。
 
