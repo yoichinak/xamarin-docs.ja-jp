@@ -25,7 +25,7 @@ _Visual Studio と Xamarin を設定して .NET でモバイル アプリを構�
 
 > [!Video https://channel9.msdn.com/Shows/XamarinShow/Installing-Visual-Studio-2019-for-Mobile-Development-with-NET--Xamarin/player]
 
-## <a name="step-by-step-instructions"></a>ステップ バイ ステップの指示
+## <a name="step-by-step-instructions"></a>ステップ バイ ステップの手順
 
 [!include[](~/cross-platform/includes/install-xamarin-windows-2019.md)]
 
@@ -36,7 +36,7 @@ _Visual Studio と Xamarin を設定して .NET でモバイル アプリを構�
 
 > [!Video https://channel9.msdn.com/Shows/XamarinShow/Installing-Visual-Studio-2017-for-Mobile-Development-with-NET/player]
 
-## <a name="step-by-step-instructions"></a>ステップ バイ ステップの指示
+## <a name="step-by-step-instructions"></a>ステップ バイ ステップの手順
 
 [!include[](~/cross-platform/includes/install-xamarin-windows.md)]
 
