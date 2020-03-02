@@ -255,12 +255,14 @@
           items:
             - name: デュアル画面のパターン
               href: app-fundamentals/dual-screen/design-patterns.md
-            - name: TwoPaneView
+            - name: デュアル画面のレイアウト
               href: app-fundamentals/dual-screen/twopaneview.md
-            - name: DualScreenInfo
+            - name: デュアル画面のデバイスの機能
               href: app-fundamentals/dual-screen/dual-screen-info.md
-            - name: DualScreenHelper
+            - name: デュアル画面のプラットフォーム ヘルパー
               href: app-fundamentals/dual-screen/dual-screen-helper.md
+            - name: デュアル画面のトリガー
+              href: app-fundamentals/dual-screen/triggers.md
         - name: エフェクト
           href: app-fundamentals/effects/index.md
           items:
