@@ -94,7 +94,7 @@ Xamarin Android のビルド システムでは、ビルド プロセスに接�
 
   Xamarin.Android 9.4 で追加されました。
 
-## <a name="build-properties"></a>[ビルド プロパティ]
+## <a name="build-properties"></a>ビルド プロパティ
 
 MSBuild プロパティは、ターゲットの動作を制御します。 これらは、[MSBuild PropertyGroup 要素](https://docs.microsoft.com/visualstudio/msbuild/propertygroup-element-msbuild)内のプロジェクト ファイル (**MyApp.csproj** など) 内で指定されます。
 
