@@ -5,12 +5,12 @@ ms.assetid: 63FA28A5-6F52-4CB7-AF39-8DF7B436B5A4
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 08/20/2019
-ms.openlocfilehash: 66cc9042b74cd29cc11194e8cfde91a6ebec6f8b
-ms.sourcegitcommit: 04929b5ff4384ca807727bec7c0467111a7eb283
+ms.openlocfilehash: a104b3828caa9e00e9307420ae5473d0fe7d7784
+ms.sourcegitcommit: fec87846fcb262fc8b79774a395908c8c8fc8f5b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75867626"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77545184"
 ---
 # <a name="platform-support"></a>プラットフォームのサポート
 
@@ -43,7 +43,8 @@ Xamarin.Essentials では、すべてのプラットフォームに機能を提�
 | 機能 | Android | iOS | UWP | watchOS | tvOS | Tizen |
 | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | [加速度計](accelerometer.md?context=xamarin/xamarin-forms) | ![Android はサポートされています](~/media/shared/yes.png "Android はサポートされています") | ![iOS はサポートされています](~/media/shared/yes.png "iOS はサポートされています") | ![UWP はサポートされています](~/media/shared/yes.png "UWP はサポートされています") | ![watchOS はサポートされています](~/media/shared/yes.png "watchOS はサポートされています") | ![tvOS はサポートされていません](~/media/shared/no.png "tvOS はサポートされていません") | ![Tizen はサポートされています](~/media/shared/yes.png "Tizen はサポートされています") | 
-| [アプリ情報](app-information.md?context=xamarin/xamarin-forms) | ![Android はサポートされています](~/media/shared/yes.png "Android はサポートされています") | ![iOS はサポートされています](~/media/shared/yes.png "iOS はサポートされています") | ![UWP はサポートされています](~/media/shared/yes.png "UWP はサポートされています") | ![watchOS はサポートされています](~/media/shared/yes.png "watchOS はサポートされています") | ![tvOS はサポートされています](~/media/shared/yes.png "tvOS はサポートされています") | ![Tizen はサポートされています](~/media/shared/yes.png "Tizen はサポートされています") | 
+| [アプリ情報](app-information.md?context=xamarin/xamarin-forms) | ![Android はサポートされています](~/media/shared/yes.png "Android はサポートされています") | ![iOS はサポートされています](~/media/shared/yes.png "iOS はサポートされています") | ![UWP はサポートされています](~/media/shared/yes.png "UWP はサポートされています") | ![watchOS はサポートされています](~/media/shared/no.png "watchOS はサポートされていません") | ![tvOS はサポートされています](~/media/shared/yes.png "tvOS はサポートされています") | ![Tizen はサポートされています](~/media/shared/no.png "Tizen はサポートされていません") | 
+| [アプリのテーマ](app-theme.md?context=xamarin/xamarin-forms) | ![Android はサポートされています](~/media/shared/yes.png "Android はサポートされています") | ![iOS はサポートされています](~/media/shared/yes.png "iOS はサポートされています") | ![UWP はサポートされています](~/media/shared/yes.png "UWP はサポートされています") | ![watchOS はサポートされています](~/media/shared/yes.png "watchOS はサポートされています") | ![tvOS はサポートされていません](~/media/shared/no.png "tvOS はサポートされていません") | ![Tizen はサポートされています](~/media/shared/yes.png "Tizen はサポートされています") | 
 | [バロメーター](barometer.md?context=xamarin/xamarin-forms) | ![Android はサポートされています](~/media/shared/yes.png "Android はサポートされています") | ![iOS はサポートされています](~/media/shared/yes.png "iOS はサポートされています") | ![UWP はサポートされています](~/media/shared/yes.png "UWP はサポートされています") | ![watchOS はサポートされています](~/media/shared/yes.png "watchOS はサポートされています") | ![tvOS はサポートされていません](~/media/shared/no.png "tvOS はサポートされていません") | ![Tizen はサポートされています](~/media/shared/yes.png "Tizen はサポートされています") | 
 | [バッテリ](battery.md?context=xamarin/xamarin-forms) | ![Android はサポートされています](~/media/shared/yes.png "Android はサポートされています") | ![iOS はサポートされています](~/media/shared/yes.png "iOS はサポートされています") | ![UWP はサポートされています](~/media/shared/yes.png "UWP はサポートされています") | ![watchOS はサポートされています](~/media/shared/yes.png "watchOS はサポートされています") | ![tvOS は制限付きでサポートされています](~/media/shared/warn.png "tvOS は制限付きでサポートされています") | ![Tizen は制限付きでサポートされています](~/media/shared/warn.png "Tizen は制限付きでサポートされています") | 
 | [クリップボード](clipboard.md?context=xamarin/xamarin-forms) | ![Android はサポートされています](~/media/shared/yes.png "Android はサポートされています") | ![iOS はサポートされています](~/media/shared/yes.png "iOS はサポートされています") | ![UWP はサポートされています](~/media/shared/yes.png "UWP はサポートされています") | ![watchOS はサポートされていません](~/media/shared/no.png "watchOS はサポートされていません") | ![tvOS はサポートされていません](~/media/shared/no.png "tvOS はサポートされていません") | ![Tizen はサポートされていません](~/media/shared/no.png "Tizen はサポートされていません") | 

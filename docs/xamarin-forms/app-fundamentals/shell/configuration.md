@@ -6,19 +6,19 @@ ms.assetid: 3FC2FBD1-C30B-4408-97B2-B04E3A2E4F03
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/05/2019
-ms.openlocfilehash: e207949d607219393ffeb51fce818ddfb68ae344
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.date: 01/29/2020
+ms.openlocfilehash: dfa452addd7cfb838091afdfb350484998d0cc9d
+ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489909"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77636088"
 ---
 # <a name="xamarinforms-shell-page-configuration"></a>Xamarin.Forms シェルのページの構成
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
-`Shell` クラスでは、Xamarin.Forms シェル アプリケーションのページの外観の構成に使える添付プロパティを定義できます。 これには、ページの色の設定、ナビゲーション バーの無効化、タブ バーの無効化、およびナビゲーション バーでのビューの表示が含まれます。
+`Shell` クラスでは、Xamarin.Forms シェル アプリケーションのページの外観の構成に使える添付プロパティを定義できます。 これには、ページの色の設定、ページのプレゼンテーション モードの設定、ナビゲーション バーの無効化、タブ バーの無効化、およびナビゲーション バーでのビューの表示が含まれます。
 
 ## <a name="set-page-colors"></a>ページの色を設定する
 
@@ -85,6 +85,30 @@ ms.locfileid: "75489909"
 ```
 
 XAML スタイルの詳細については、「[XAML スタイルを使用した Xamarin.Forms アプリのスタイル設定](~/xamarin-forms/user-interface/styles/xaml/index.md)」をご覧ください。
+
+## <a name="set-page-presentation-mode"></a>ページのプレゼンテーション モードを設定する
+
+既定では、`GoToAsync` メソッドを使用してページに移動したときに、小さなナビゲーションのアニメーションが発生します。 ただし、[`ContentPage`](xref:Xamarin.Forms.ContentPage) の `Shell.PresentationMode` 添付プロパティを次の `PresentationMode` 列挙メンバーのいずれかに設定することで、この動作を変更することができます。
+
+- `NotAnimated`: ナビゲーションのアニメーションなしでページが表示されることを示します。
+- `Animated`: ナビゲーションのアニメーションを使用してページが表示されることを示します。 これは `Shell.PresentationMode` 添付プロパティの既定値です。
+- `Modal`: ページがモーダル ページとして表示されることを示します。
+- `ModalAnimated`: ページがモーダル ページとして、ナビゲーションのアニメーションを使用して表示されることを示します。
+- `ModalNotAnimated`: ページがモーダル ページとして、ナビゲーションのアニメーションなしで表示されることを示します。
+
+> [!IMPORTANT]
+> `PresentationMode` 型はフラグの列挙型です。 つまり、コード内で列挙メンバーを組み合わせて適用することができます。 ただし、XAML での使用を容易にするために、`ModalAnimated` メンバーは `Animated` および `Modal` メンバーの組み合わせ、`ModalNotAnimated` メンバーは `NotAnimated` および `Modal` メンバーの組み合わせになっています。 フラグの列挙型の詳細については、「[ビット フラグとしての列挙型](/dotnet/csharp/language-reference/builtin-types/enum#enumeration-types-as-bit-flags)」をご覧ください。
+
+次の XAML の例では、[`ContentPage`](xref:Xamarin.Forms.ContentPage) の `Shell.PresentationMode` 添付プロパティを設定しています。
+
+```xaml
+<ContentPage ...
+             Shell.PresentationMode="Modal">
+    ...             
+</ContentPage>
+```
+
+この例では、`GoToAsync` メソッドを使用してページに移動したときに、[`ContentPage`](xref:Xamarin.Forms.ContentPage) がモーダル ページとして表示されるように設定しています。
 
 ## <a name="enable-navigation-bar-shadow"></a>ナビゲーション バーの影を有効にする
 
@@ -162,6 +186,10 @@ XAML スタイルの詳細については、「[XAML スタイルを使用した
 ビューのサイズを [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) および [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) プロパティで指定するか、ビューの位置を [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) および [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) プロパティで指定しない限り、多くのビューはナビゲーション バーに表示されません。
 
 [`Layout`](xref:Xamarin.Forms.Layout) クラスは [`View`](xref:Xamarin.Forms.View) クラスから派生しているため、複数のビューを含むレイアウト クラスを表示するように `TitleView` 添付プロパティを設定することができます。 同様に、[`ContentView`](xref:Xamarin.Forms.ContentView) クラスは最終的に [`View`](xref:Xamarin.Forms.View) クラスから派生しているため、単一のビューを含む `ContentView` を表示するように `TitleView` 添付プロパティを設定することができます。
+
+## <a name="page-visibility"></a>ページの可視性
+
+シェルは、[`IsVisible`](xref:Xamarin.Forms.VisualElement.IsVisible) プロパティを使用して設定される、ページの可視性に従います。 したがって、ページの `IsVisible` プロパティが `false` に設定されている場合、それはシェル アプリケーションには表示されず、移動することもできません。
 
 ## <a name="related-links"></a>関連リンク
 

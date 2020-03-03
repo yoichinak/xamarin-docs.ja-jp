@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.custom: video
 ms.date: 07/10/2019
-ms.openlocfilehash: e388df2b4c7201cad01789de1676f79bec8d351e
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: daab2b3a18eeea2f50c9518144b3396fbba90928
+ms.sourcegitcommit: fec87846fcb262fc8b79774a395908c8c8fc8f5b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75488544"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77545122"
 ---
 # <a name="get-started-with-xamarinessentials"></a>Xamarin.Essentials の概要
 
@@ -31,13 +31,13 @@ Xamarin.Essentials は、NuGet パッケージとして入手でき、Visual Stu
 3. 各プロジェクトに [**Xamarin.Essentials**](https://www.nuget.org/packages/Xamarin.Essentials/) の NuGet パッケージを追加します。
 
     <!--markdownlint-disable MD023 -->
-    # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+    # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-    ソリューション エクスプローラー パネルでソリューション名を右クリックし、 **[NuGet パッケージの管理]** を選択します。 **Xamarin.Essentials** を検索し、Android、iOS、UWP、.NET Standard ライブラリなど、**すべての**プロジェクトにパッケージをインストールします。
+    ソリューション エクスプローラー パネルでソリューション名を右クリックし、**[NuGet パッケージの管理]** を選択します。 **Xamarin.Essentials** を検索し、Android、iOS、UWP、.NET Standard ライブラリなど、**すべての**プロジェクトにパッケージをインストールします。
 
-    # <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+    # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-    ソリューション エクスプローラー パネルでプロジェクト名を右クリックし、 **[追加] > [Add NuGet Packages...]\(NuGet パッケージの追加...\)** を選択します。**Xamarin.Essentials** を検索し、Android、iOS、.NET Standard ライブラリなど、**すべての**プロジェクトにパッケージをインストールします。
+    ソリューション エクスプローラー パネルでプロジェクト名を右クリックし、**[追加] > [Add NuGet Packages...]\(NuGet パッケージの追加...\)** を選択します。**Xamarin.Essentials** を検索し、Android、iOS、.NET Standard ライブラリなど、**すべての**プロジェクトにパッケージをインストールします。
 
     -----
 
@@ -49,11 +49,11 @@ Xamarin.Essentials は、NuGet パッケージとして入手でき、Visual Stu
 
 5. Xamarin.Essentials では、プラットフォーム固有の設定が必要です。
 
-    # <a name="androidtabandroid"></a>[Android](#tab/android)
+    # <a name="android"></a>[Android](#tab/android)
 
     Xamarin.Essentials では最小の Android バージョン 4.4 (API レベル 19 に対応) がサポートされていますが、コンパイルのターゲットの Android バージョンは 9.0 (API レベル 28 に対応) である必要があります。 (Visual Studio では、これらの 2 つのバージョンは、[Android マニフェスト] タブ内の、Android プロジェクトの [プロジェクトのプロパティ] ダイアログで設定されます。Visual Studio for Mac では、これらは [Android アプリケーション] タブ内の、Android プロジェクトの [プロジェクト オプション] ダイアログで設定されます。)
 
-    Xamarin.Essentials では、必要なバージョン 28.0.0.1 の Xamarin.Android.Support ライブラリがインストールされます。 アプリケーションで必要となるその他の Xamarin.Android.Support ライブラリも、NuGet パッケージ マネージャーを使用してバージョン 28.0.0.1 に更新する必要があります。 アプリケーションで使用される Xamarin.Android.Support ライブラリはすべて同じであり、かつ少なくともバージョン 28.0.0.1 以上である必要があります。 Xamarin.Essentials の NuGet の追加、またはソリューションでの NuGet の更新に関して問題が発生した場合は、[トラブルシューティングのページ](troubleshooting.md)を参照してください。
+    Xamarin.Essentials では、必要なバージョン 28.0.0.3 の Xamarin.Android.Support ライブラリがインストールされます。 アプリケーションで必要となるその他の Xamarin.Android.Support ライブラリも、NuGet パッケージ マネージャーを使用してバージョン 28.0.0.3 に更新する必要があります。 アプリケーションで使用される Xamarin.Android.Support ライブラリはすべて同じであり、かつ少なくともバージョン 28.0.0.3 以上である必要があります。 Xamarin.Essentials の NuGet の追加、またはソリューションでの NuGet の更新に関して問題が発生した場合は、[トラブルシューティングのページ](troubleshooting.md)を参照してください。
 
     Android プロジェクトの `MainLauncher`、または起動されるすべての `Activity` では、`OnCreate` メソッド内で Xamarin.Essentials を初期化する必要があります。
 
@@ -76,11 +76,11 @@ Xamarin.Essentials は、NuGet パッケージとして入手でき、Visual Stu
     }
     ```
 
-    # <a name="iostabios"></a>[iOS](#tab/ios)
+    # <a name="ios"></a>[iOS](#tab/ios)
 
     追加の設定は必要ありません。
 
-    # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+    # <a name="uwp"></a>[UWP](#tab/uwp)
 
     追加の設定は必要ありません。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
-ms.openlocfilehash: e0694598fe5637f6e63ebf64dce4a7d9768eba5f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: efe41fa5f25f6257587fd97a2711e9037b94dc6e
+ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70771827"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77636017"
 ---
 # <a name="custom-video-transport-controls"></a>カスタムのビデオ トランスポート コントロール
 
@@ -451,7 +451,7 @@ namespace FormsVideoLibrary.Droid
 
 ### <a name="the-uwp-status-setting"></a>UWP での状態の設定
 
-UWP `VideoPlayerRenderer` では `UpdateStatus` イベントが利用されていますが、`Status` プロパティの設定には必要ありません。 `MediaElement` によって定義される [ `CurrentStateChanged`](xref:Windows.UI.Xaml.Controls.MediaElement.CurrentStateChanged) イベントにより、[`CurrentState`](xref:Windows.UI.Xaml.Controls.MediaElement.CurrentState*) プロパティの変更時にレンダラーに通知が送られます。 このプロパティは `Dispose` のオーバーライド時にデタッチされます。
+UWP `VideoPlayerRenderer` では `UpdateStatus` イベントが利用されていますが、`Status` プロパティの設定には必要ありません。 `MediaElement` によって定義される [`CurrentStateChanged`](xref:Windows.UI.Xaml.Controls.MediaElement.CurrentStateChanged) イベントにより、[`CurrentState`](xref:Windows.UI.Xaml.Controls.MediaElement.CurrentState*) プロパティの変更時にレンダラーに通知が送られます。 このプロパティは `Dispose` のオーバーライド時にデタッチされます。
 
 ```csharp
 namespace FormsVideoLibrary.UWP
@@ -613,7 +613,7 @@ namespace FormsVideoLibrary.UWP
 </ContentPage>
 ```
 
-データ トリガーの詳細については、「[データ トリガー](~/xamarin-forms/app-fundamentals/triggers.md#data)」の記事を参照してください。
+データ トリガーの詳細については、「[データ トリガー](~/xamarin-forms/app-fundamentals/triggers.md#data-triggers)」の記事を参照してください。
 
 分離コード ファイルには、ボタンの `Clicked` イベントに対するハンドラーが存在します。
 
@@ -649,11 +649,11 @@ namespace VideoPlayerDemos
 
 **CustomTransport.xaml** ファイル内で `AutoPlay` が `false` に設定されているため、ビデオの再生が可能になったら、**再生**ボタンを押す必要があります。 ボタンは、上で説明した Unicode 文字に対応するテキストが共に表示されるように、定義されています。 ビデオ再生時のボタンの外観は、各プラットフォーム間で一貫したものとなります。
 
-[![Custom Transport 再生中](custom-transport-images/customtransportplaying-small.png "Custom Transport 再生中")](custom-transport-images/customtransportplaying-large.png#lightbox "Custom Transport 再生中")
+[![Custom Transport の再生](custom-transport-images/customtransportplaying-small.png "Custom Transport の再生")](custom-transport-images/customtransportplaying-large.png#lightbox "Custom Transport の再生")
 
 ただし、Android と UWP では、ビデオを一時停止したときの**再生**ボタンの外観が大きく異なります。
 
-[![Custom Transport 一時停止中](custom-transport-images/customtransportpaused-small.png "Custom Transport 一時停止中")](custom-transport-images/customtransportpaused-large.png#lightbox "Custom Transport 一時停止中")
+[![Custom Transport の一時停止](custom-transport-images/customtransportpaused-small.png "Custom Transport の一時停止")](custom-transport-images/customtransportpaused-large.png#lightbox "Custom Transport の一時停止")
 
 実稼働アプリケーションでは、外観に統一性を持たせるため、独自のビットマップ イメージをボタンに使用することもできます。
 
