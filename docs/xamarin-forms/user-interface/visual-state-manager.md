@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/21/2020
-ms.openlocfilehash: 086adee4dc6b921abe92f6486186023a3125695c
-ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
+ms.openlocfilehash: 0149806f3ab3772bc206cea9540a989d997c817b
+ms.sourcegitcommit: f43d5ecafd19cbc5cce39201916a83927a34617a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77636055"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78215001"
 ---
 # <a name="xamarinforms-visual-state-manager"></a>Xamarin Forms State Manager
 
@@ -405,15 +405,16 @@ VSM マークアップの残りの部分では前に、と同じです。
 
 次の表に、Xamarin で定義されている表示状態の一覧を示します。
 
-| クラス | 状態 | 詳細 |
+| クラス | 状態 | 詳細情報 |
 | ----- | ------ | ---------------- |
 | `Button` | `Pressed` | [ボタンの表示状態](~/xamarin-forms/user-interface/button.md#button-visual-states) |
 | `CarouselView` | `DefaultItem`、`CurrentItem`、`PreviousItem`, `NextItem` | [CarouselView の視覚的状態](~/xamarin-forms/user-interface/carouselview/interaction.md#define-visual-states) |
-| `CollectionView` | `Selected` | [選択した項目の色の変更](~/xamarin-forms/user-interface/collectionview/selection.md#change-selected-item-color) |
 | `ImageButton` | `Pressed` | [ImageButton ビジュアルの状態](~/xamarin-forms/user-interface/imagebutton.md#imagebutton-visual-states) |
 | `VisualElement` | `Normal`、`Disabled`、`Focused`, `Selected` | [一般的な状態](#common-states) |
 
 これらの各状態には、`CommonStates`という名前の表示状態グループを使用してアクセスできます。
+
+さらに、`CollectionView` は `Selected` の状態を実装します。 詳細については、「[選択した項目の色を変更](~/xamarin-forms/user-interface/collectionview/selection.md#change-selected-item-color)する」を参照してください。
 
 ## <a name="set-state-on-multiple-elements"></a>複数の要素の状態を設定する
 
@@ -480,7 +481,7 @@ VSM マークアップは `StackLayout`にアタッチされます。 "Normal" �
 
 ## <a name="define-your-own-visual-states"></a>独自の視覚的状態を定義する
 
-`VisualElement` から派生するすべてのクラスは、"Normal"、"フォーカスされた"、"Disabled" という3つの一般的な状態をサポートします。 内部的には、 [`VisualElement`](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Core/VisualElement.cs)クラスは、有効または無効になっているか、フォーカスまたは見るされたことを検出し、静的な[`VisualStateManager.GoToState`](xref:Xamarin.Forms.VisualStateManager.GoToState(Xamarin.Forms.VisualElement,System.String))メソッドを呼び出します。
+`VisualElement` から派生するすべてのクラスは、"Normal"、"フォーカスされた"、"Disabled" という共通の状態をサポートします。 また、`CollectionView` クラスでは、"Selected" 状態がサポートされています。 内部的には、 [`VisualElement`](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Core/VisualElement.cs)クラスは、有効または無効になっているか、フォーカスまたは見るされたことを検出し、静的な[`VisualStateManager.GoToState`](xref:Xamarin.Forms.VisualStateManager.GoToState(Xamarin.Forms.VisualElement,System.String))メソッドを呼び出します。
 
 ```csharp
 VisualStateManager.GoToState(this, "Focused");

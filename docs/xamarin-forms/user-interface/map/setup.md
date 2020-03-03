@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/07/2020
-ms.openlocfilehash: eff7dff15fb75859d43923f71696bccf1b0e2cc5
-ms.sourcegitcommit: 87b818373d83fd3a6856c4b5a702b013a731b5ea
+ms.openlocfilehash: c3c4863814949be2e6575e92136ca740452a2f3c
+ms.sourcegitcommit: f43d5ecafd19cbc5cce39201916a83927a34617a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77069650"
+ms.lasthandoff: 03/02/2020
+ms.locfileid: "78214983"
 ---
 # <a name="xamarinforms-map-initialization-and-configuration"></a>Xamarin.Forms マップの初期化と構成
 
@@ -105,14 +105,16 @@ API キーを取得したら、 **Properties/AndroidManifest .xml**ファイル�
 
 ```xml
 <application ...>
-    <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="PASTE-YOUR-API-KEY-HERE" />
+    <meta-data android:name="com.google.android.geo.API_KEY" android:value="PASTE-YOUR-API-KEY-HERE" />
 </application>
 ```
 
 これにより、API キーがマニフェストに埋め込まれます。 有効な API キーがない場合、 [`Map`](xref:Xamarin.Forms.Maps.Map)コントロールには空のグリッドが表示されます。
 
 > [!NOTE]
-> 注意してください、APK を Google Maps にアクセスするためには、する必要があります sha-1 指紋が含まれますすべてキーストアの (デバッグとリリース)、APK の署名に使用する名前をパッケージ化します。 たとえば、デバッグに 1 台のコンピューターを使用し、リリース APK を生成する別のコンピューターを使用する場合は、最初のコンピューターのデバッグキーストアから SHA-1 証明書のフィンガープリントを指定し、2 番目のコンピューターのリリースキーストアから SHA-1 証明書のフィンガープリントを含める必要があります。 また、アプリの**パッケージ名**が変更された場合は、キーの資格情報を編集することも忘れないでください。 「 [Google MAPS API キーを取得する」を](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)参照してください。
+> `com.google.android.geo.API_KEY` は、API キーの推奨されるメタデータ名です。 旧バージョンとの互換性を維持するために、`com.google.android.maps.v2.API_KEY` メタデータ名を使用できますが、Android Maps API v2 での認証のみが許可されます。
+
+APK が Google Maps にアクセスするには、APK に署名するために使用するすべてのキーストア (デバッグとリリース) に SHA-1 の指紋名とパッケージ名を含める必要があります。 たとえば、デバッグに 1 台のコンピューターを使用し、リリース APK を生成する別のコンピューターを使用する場合は、最初のコンピューターのデバッグキーストアから SHA-1 証明書のフィンガープリントを指定し、2 番目のコンピューターのリリースキーストアから SHA-1 証明書のフィンガープリントを含める必要があります。 また、アプリの**パッケージ名**が変更された場合は、キーの資格情報を編集することも忘れないでください。 「 [Google MAPS API キーを取得する」を](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)参照してください。
 
 #### <a name="specify-the-google-play-services-version-number"></a>Google Play services のバージョン番号を指定してください
 
