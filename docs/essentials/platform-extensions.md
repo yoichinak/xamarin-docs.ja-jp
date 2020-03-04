@@ -78,13 +78,13 @@ void Platform_ActivityStateChanged(object sender, Xamarin.Essentials.ActivitySta
 
 アクティビティの状態は次のとおりです。
 
-* 作成日時
+* Created
 * Resumed
-* 一時停止
-* 破棄される
+* Paused
+* Destroyed
 * SaveInstanceState
-* 開始
-* 停止
+* Started
+* Stopped
 
 詳細については、「[アクティビティのライフサイクル](https://docs.microsoft.com/xamarin/android/app-fundamentals/activity-lifecycle/)」のドキュメントを参照してください。
 
