@@ -80,7 +80,7 @@ public static class NumericValidationBehavior
 }
 ```
 
-`NumericValidationBehavior` クラスには、`static` ゲッターとセッターがある `AttachBehavior` という名前の添付プロパティが含まれています。このプロパティにより、それがアタッチされるコントロールのビヘイビアーの追加または削除が制御されます。 この添付プロパティにより、プロパティの値が変更されるときに実行される `OnAttachBehaviorChanged` メソッドが登録されます。 このメソッドによって、`AttachBehavior` 添付プロパティの値に基づいて [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) イベントのイベント ハンドラーが登録または登録解除されます。 `OnEntryTextChanged` メソッドにより、ビヘイビアーのコア機能が提供され、ユーザーが [`Entry`](xref:Xamarin.Forms.Entry) に入力した値が解析され、その値が `double` でなければ `TextColor` プロパティが赤に設定されます。
+`NumericValidationBehavior` クラスには、`static` getter と setter がある `AttachBehavior` という名前の添付プロパティが含まれています。このプロパティにより、それがアタッチされるコントロールのビヘイビアーの追加または削除が制御されます。 この添付プロパティにより、プロパティの値が変更されるときに実行される `OnAttachBehaviorChanged` メソッドが登録されます。 このメソッドによって、`AttachBehavior` 添付プロパティの値に基づいて [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) イベントのイベント ハンドラーが登録または登録解除されます。 `OnEntryTextChanged` メソッドにより、ビヘイビアーのコア機能が提供され、ユーザーが [`Entry`](xref:Xamarin.Forms.Entry) に入力した値が解析され、その値が `double` でなければ `TextColor` プロパティが赤に設定されます。
 
 ## <a name="consuming-an-attached-behavior"></a>アタッチされたビヘイビアーを使用する
 
