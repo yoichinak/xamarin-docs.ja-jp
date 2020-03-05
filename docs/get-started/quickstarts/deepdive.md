@@ -436,7 +436,7 @@ async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
 
 データ バインディングの詳細については、「[Xamarin.Forms Data Binding](~/xamarin-forms/app-fundamentals/data-binding/index.md)」 (Xamarin.Forms のデータ バインディング) を参照してください。
 
-## <a name="styling"></a>[スタイル]
+## <a name="styling"></a>スタイル
 
 Xamarin.Forms アプリケーションには、同じ外観を持つ複数のビジュアル要素が含まれていることがよくあります。 各ビジュアル要素の外観を設定すると、繰り返し使用しやすく、エラーが発生しやすくなります。 代わりに、外観を定義し、必要なビジュアル要素に適用するスタイルを作成できます。
 
