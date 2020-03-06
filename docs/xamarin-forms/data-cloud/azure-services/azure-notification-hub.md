@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 11/27/2019
-ms.openlocfilehash: 8b633481d74810bc4d86d68f8c36d55980092510
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.openlocfilehash: 778f56ec844e2802c1e1bc783824d55218678761
+ms.sourcegitcommit: e9d88587aafc912124b87732d81c3910247ad811
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76940319"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78337288"
 ---
 # <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-xamarinforms"></a>Azure Notification Hubs と Xamarin. Forms を使用してプッシュ通知を送信および受信する
 
@@ -143,7 +143,7 @@ public static class AppConstants
 
 ### <a name="configure-android-manifest"></a>Android マニフェストを構成する
 
-`application` 要素内の `receiver` 要素を使用すると、アプリは Firebase と通信できます。 `uses-permission` の要素を使用すると、アプリはメッセージを処理し、Azure Notification Hub に登録できます。 完全な**Androidmanifest .xml**は、次の例のようになります。
+`application` 要素内の `receiver` 要素を使用すると、アプリは焼討ベースと通信できます。 `uses-permission` の要素を使用すると、アプリはメッセージを処理し、Azure Notification Hub に登録できます。 完全な**Androidmanifest .xml**は、次の例のようになります。
 
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="YOUR_PACKAGE_NAME" android:installLocation="auto">
@@ -518,6 +518,7 @@ Azure Notification Hubs を使用すると、アプリケーションがテス�
 1. アプリケーションがプッシュ通知を受信できることをテストする場合は、物理デバイスを使用する必要があります。 Android および iOS の仮想デバイスは、プッシュ通知を受信するように正しく構成されていない可能性があります。
 1. サンプル Android アプリケーションは、焼討 Base トークンが発行されたときにトークンとテンプレートを登録します。 テスト中に、新しいトークンを要求して、Azure Notification Hub に再登録することが必要になる場合があります。 これを強制する最良の方法は、プロジェクトをクリーンアップし、`bin` と `obj` のフォルダーを削除し、再構築と配置の前にデバイスからアプリケーションをアンインストールすることです。
 1. プッシュ通知フローの多くの部分は、非同期的に実行されます。 これにより、ブレークポイントがヒットしたり、予期しない順序でヒットしたりする可能性があります。 アプリケーションフローを中断せずに、デバイスまたはデバッグログを使用して実行をトレースします。 `Constants`で指定された `DebugTag` を使用して、Android デバイスのログをフィルター処理します。
+1. Visual Studio でデバッグが停止すると、アプリは強制的に閉じられます。 デバッグプロセスの一部として起動されたメッセージ受信側またはその他のサービスは閉じられ、メッセージイベントに応答しません。
 
 ## <a name="create-a-notification-dispatcher"></a>通知ディスパッチャーを作成する
 
