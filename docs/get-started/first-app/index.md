@@ -213,4 +213,4 @@ _このビデオを視聴し、作業を進めて、Xamarin.Forms による最�
 
 - [単一ページのクイックスタート](~/get-started/quickstarts/single-page.md) &ndash; さらに機能的なアプリをビルドする。
 - [Xamarin.Forms のサンプル](~/xamarin-forms/samples/index.md) &ndash; コード例とサンプル アプリをダウンロードして実行する。
-- [Mobile Apps 電子ブックの作成](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md) &ndash; PDF で提供され、数百の追加のサンプルを含む Xamarin.Forms 開発について解説する詳細な章。
+- [モバイル アプリ作成についての電子ブック](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md) &ndash; PDF で提供され、数百の追加のサンプルを含む Xamarin.Forms 開発について解説する詳細な章。
