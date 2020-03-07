@@ -51,7 +51,7 @@ ms.locfileid: "75488908"
 </linker>
 ```
 
-上の例では、リンカーが指示を読み取り、`mscorlib.dll` (Mono for Android で出荷) アセンブリと `My.Own.Assembly` (ユーザー コード) アセンブリに適用します。
+上の例では、リンカーが指示を読み取り、`mscorlib.dll` (Mono for Android に付属) アセンブリと `My.Own.Assembly` (ユーザー コード) アセンブリに適用します。
 
 最初のセクションは `mscorlib.dll` の定義ですが、これによって `System.Environment` 型はフィールド `mono_corlib_version` とメソッド `get_StackTrace` を保持します。
 リンカーは IL で動作し、C# プロパティを認識しないため、getter または setter メソッドの名前を利用する必要があります。
