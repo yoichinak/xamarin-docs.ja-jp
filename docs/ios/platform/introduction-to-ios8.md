@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/14/2017
 ms.openlocfilehash: 9353cffd924688058c1495b9258cc7f0e0ce7b82
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75489207"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910827"
 ---
 # <a name="introduction-to-ios-8"></a>iOS 8 の概要
 
@@ -44,7 +44,7 @@ IPhone からアプライアンスを制御することは、新しいテクノ�
 
 ホームキットを使用すると、サードパーティ製アプリおよび Siri は、アクセサリを検出し、個人のホーム構成データベースに追加し、このデータを編集して操作し、アクセサリとそのサービスと通信してアクションを実行することができます。
 
-### <a name="configuration"></a>の構成
+### <a name="configuration"></a>構成
 
 次の図は、ホームキットのアクセサリの構成の基本階層を示しています。
 
@@ -83,7 +83,7 @@ IOS8 を使用すると、開発者は、アプリを使用できるユーザー
 
 Xamarin でのアプリ拡張機能の使用の詳細については、[アプリ拡張機能の概要](~/ios/platform/extensions.md)に関するガイドを参照してください。
 
-### <a name="touch-id"></a>タッチ ID
+### <a name="touch-id"></a>Touch ID
 
 タッチ ID は、ユーザーを認証する手段として iOS 7 で導入されました。パスコードに似ています。 ただし、デバイスのロック解除、アプリストアの使用、iTunes の使用、iCloud キーチェーンの認証のみに制限されていました。 
 
