@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 07/15/2017
 ms.openlocfilehash: 945a42485486dbfddfd023a72e88d9127651c71f
-ms.sourcegitcommit: 6f09bc2b760e76a61a854f55d6a87c4f421ac6c8
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/02/2020
-ms.locfileid: "75607953"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78911505"
 ---
 # <a name="manual-provisioning-for-xamarinios"></a>Xamarin.iOS の手動プロビジョニング
 
@@ -73,11 +73,11 @@ _Xamarin.iOS が正常にインストールされたら、iOS 開発の次の手
 
 ### <a name="understanding-certificate-key-pairs"></a>証明書キー ペアについて
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 開発者プロファイルには、証明書、その関連付けられたキー、およびアカウントに関連付けられているプロビジョニング プロファイルが含まれています。 実際には、開発者のプロファイルの 2 つのバージョンがあり、1 つは Developer Portal にあり、もう 1 つはローカルの Mac 上にあります。 2 つの違いは、含まれているキーの種類です。_ポータル上のプロファイルには、証明書に関連付けられているすべての公開キーが含まれますが、ローカルの Mac 上のコピーには、すべての秘密キーが含まれています_。 この証明書を有効にするには、キーのペアが一致しなければなりません。 秘密キーが失われた場合、すべての証明書とプロビジョニング プロファイルを再生成する必要があるので、ローカルの Mac に開発者プロファイルのバックアップを保管します。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 開発者プロファイルには、証明書、その関連付けられたキー、およびアカウントに関連付けられているプロビジョニング プロファイルが含まれています。 実際には、開発者のプロファイルの 2 つのバージョンがあり、1 つは Developer Portal にあり、もう 1 つは Mac 上にあります。 2 つの違いは、含まれているキーの種類です。_ポータル上のプロファイルには、証明書に関連付けられているすべての公開キーが含まれますが、Mac 上のコピーには、すべての秘密キーが含まれています_。 この証明書を有効にするには、キーのペアが一致しなければなりません。 秘密キーが失われた場合、すべての証明書とプロビジョニング プロファイルを再生成する必要があるので、Xamarin Build Host の Mac に開発者プロファイルのバックアップを保管します。
 
@@ -207,12 +207,12 @@ Apple Developer Portal で作成された証明書とプロビジョニング �
 
 新しい証明書またはプロビジョニング プロファイルが、Visual Studio for Mac または Visual Studio で使用可能になります。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 > [!IMPORTANT]
 > 新しい証明書や変更された証明書、または Xcode によって更新されたプロファイルが表示される前に、Visual Studio for Mac の停止と再起動が必要になる場合があります。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 > [!IMPORTANT]
 > 新しい証明書や変更された証明書、または Xcode によって更新されたプロファイルが表示される前に、Visual Studio の停止と再起動が必要になる場合があります。
@@ -231,7 +231,7 @@ Apple では、Xamarin.iOS アプリケーション用にアクティブ化で�
 
 この時点で、プロビジョニングが完了し、アプリをデバイスに展開する準備ができている必要があります。 この操作を行うには、次の手順に従います。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 > [!IMPORTANT]
 > 開始する前に、**Info.plist** で**手動プロビジョニング**を選択します。
@@ -250,7 +250,7 @@ Apple では、Xamarin.iOS アプリケーション用にアクティブ化で�
 4. ビルド構成がシミュレーターではなく **[iPhone]**  /  **[iPad]** に設定されていることを確認します。
 5. Visual Studio for Mac で **[実行]** をクリックして、デバイスで実行されているアプリを表示します。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 > [!IMPORTANT]
 > 開始する前に、 **[プロジェクト]、[プロビジョニング プロパティ]** の順に選択し、 **[手動プロビジョニング]** を選択します。

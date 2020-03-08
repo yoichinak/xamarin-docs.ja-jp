@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 08/23/2017
 ms.openlocfilehash: 73c4e992fae1a2d525670604d98f277fe4fde794
-ms.sourcegitcommit: 3e94c6d2b6d6a70c94601e7bf922d62c4a6c7308
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76031427"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78913576"
 ---
 # <a name="app-store-distribution"></a>App Store 配布
 
@@ -121,11 +121,11 @@ Xamarin.iOS アプリケーションをリリースするためにどのよう�
 
 7. **[Generate]\(生成\)** ボタンをクリックし、新しいプロファイルを作成してプロセスを終了します。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
  Visual Studio for Mac で新しい配布プロファイルを使用可能にするには、Visual Studio for Mac を終了し、(「[Requesting Signing Identities](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)」 (署名 ID の要求) セクションの手順に従って) Xcode で使用可能な署名 ID とプロビジョニング プロファイルのリストを更新する必要があります。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
  Visual Studio で新しい配布プロファイルを使用可能にするには、Visual Studio を終了して、([署名 ID の要求](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)に関するセクションの手順に従って、ビルド ホストの Mac で) Xcode で使用可能な署名 ID とプロビジョニング プロファイルのリストを更新する必要があります。
 
@@ -137,7 +137,7 @@ Xamarin.iOS アプリケーションをリリースするためにどのよう�
 
 iTunes App Store の販売向けの Xamarin.iOS アプリケーションの最終ビルドを行う準備ができたら、作成済みの配布プロファイルを選択します。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
  Visual Studio for Mac で、次の操作を行います。
 
@@ -153,7 +153,7 @@ iTunes App Store の販売向けの Xamarin.iOS アプリケーションの最�
     ![](images/releasexs03.png "Select the Signing Identity and Distribution Profiles")
 5. **[OK]** ボタンをクリックして、変更を保存します。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
  Visual Studio で、次の操作を行います。
 
