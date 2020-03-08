@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms の TwoPaneView
+title: Xamarin.Forms のデュアル画面のレイアウト
 description: このガイドでは、Xamarin.Forms の TwoPaneView を使用して Surface Duo や Surface Neo などのデュアル画面デバイスのアプリ エクスペリエンスを最適化する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 17ee8afa-5e7c-4a4f-a9b6-2aca03f30fe3
@@ -7,16 +7,18 @@ ms.technology: xamarin-forms
 author: davidortinau
 ms.author: daortin
 ms.date: 02/08/2020
-ms.openlocfilehash: 76a80a1c5750db29f132f71e0559364e26b33ab4
-ms.sourcegitcommit: 524fc148bad17272bda83c50775771daa45bfd7e
+ms.openlocfilehash: e961dc537d8b793feb3587ec89b69c53ab821088
+ms.sourcegitcommit: 5b6d3bddf7148f8bb374de5657bdedc125d72ea7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77480547"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160578"
 ---
-# <a name="xamarinforms-twopaneview"></a>Xamarin.Forms の TwoPaneView
+# <a name="xamarinforms-dual-screen-layout"></a>Xamarin.Forms のデュアル画面のレイアウト
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-samples/tree/pre-release/UserInterface/DualScreenDemos)
+![](~/media/shared/preview.png "This API is currently pre-release")
+
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/DualScreenDemos)
 
 `TwoPaneView` クラスはコンテンツのサイズを変更し、左右または上下の使用可能な領域に配置する 2 つのビューを持つコンテナーを表しています。 `TwoPaneView` は `Grid` から継承するため、これらのプロパティについてはグリッドに適用されているかのように考える方法が最も簡単です。
 
@@ -71,4 +73,4 @@ ms.locfileid: "77480547"
 
 ## <a name="related-links"></a>関連リンク
 
-- [DualScreen (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/pre-release/UserInterface/DualScreenDemos)
+- [DualScreen (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/DualScreenDemos)

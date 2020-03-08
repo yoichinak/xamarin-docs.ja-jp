@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2019
-ms.openlocfilehash: 06e40fce69ee6d614bcf27bd563d9452595bd6ab
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 59f7ce953d7cf957529f5b22b2dfb549c0105f4a
+ms.sourcegitcommit: eea5b096ace7551ba64a470d0b78ccc56b6ef418
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028144"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279913"
 ---
 # <a name="build-process"></a>ビルド プロセス
 
@@ -104,7 +104,7 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
   既定の `Release` 構成により、*スタンドアロン*で、他のパッケージやファイルをインストールしなくても使用できる Android パッケージを作成する `Install` ターゲットと `SignAndroidPackage` ターゲットがもたらされます。
 
-- **DebugSymbols** &ndash; `$(DebugType)` プロパティと組み合わせて、Android パッケージが*デバッグ可能*かどうかを決定するブール値。 デバッグ可能パッケージには、デバッグ シンボルが含まれており、`//application/@android:debuggable` 属性を `true` に設定し、`INTERNET` アクセス許可を自動的に追加して、デバッガーがプロセスにアタッチできるようにします。 `DebugSymbols` が `True` *で* `DebugType` が空の文字列または `Full` の場合、アプリケーションはデバッグ可能です。
+- **DebugSymbols** &ndash; `$(DebugType)` プロパティと組み合わせて、Android パッケージが*デバッグ可能*かどうかを決定するブール値。 デバッグ可能パッケージには、デバッグ シンボルが含まれており、`//application/@android:debuggable` 属性を `true` に設定し、`INTERNET` アクセス許可を自動的に追加して、デバッガーがプロセスにアタッチできるようにします。 `DebugSymbols` が `True` "*かつ*" `DebugType` が空の文字列または `Full` の場合、アプリケーションはデバッグ可能です。
 
 - **DebugType** &ndash; ビルドの一部として生成するための[デバッグ シンボルの型](https://docs.microsoft.com/visualstudio/msbuild/csc-task)を指定します。これはアプリケーションがデバッグ可能かどうかにも影響します。 次のような値となる場合があります。
 
@@ -173,7 +173,7 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
 - **AndroidEnableDesugar** &ndash; `desugar` が有効かどうかを決定するブール型プロパティ。 現在、Android ではすべての Java 8 機能がサポートされておらず、`javac` コンパイラの出力に `desugar` と呼ばれるバイトコード変換を実行して、既定のツールチェーンにより新しい言語機能が実装されています。 `AndroidDexTool=dx` を使用している場合の既定値は `False`、`AndroidDexTool=d8` を使用している場合の既定値は `True` です。
 
-- **AndroidEnableGooglePlayStoreChecks** &ndash; 開発者が次の Google Play ストア チェックを無効にできるようにするブール プロパティ: XA1004、XA1005、XA1006。 これは、Google Play ストアを対象としておらず、このチェックを実行したくない開発者にとって役立ちます。
+- **AndroidEnableGooglePlayStoreChecks** &ndash; 開発者が次の Google Play ストア チェックを無効にできるようにするブール プロパティ:XA1004、XA1005、XA1006。 これは、Google Play ストアを対象としておらず、このチェックを実行したくない開発者にとって役立ちます。
 
   Xamarin.Android 9.4 で追加されました。
 
@@ -211,8 +211,8 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
   このプロパティは既定で `False` です。
 
-- **AndroidErrorOnCustomJavaObject** &ndash; `Java.Lang.Object` または `Java.Lang.Throwable` を継承すること*なく*、型が `Android.Runtime.IJavaObject` を実装するかどうかを決定するブール型プロパティ。
-  
+- **AndroidErrorOnCustomJavaObject** &ndash; `Java.Lang.Object` または `Java.Lang.Throwable` を継承 "*することなく*"、型が `Android.Runtime.IJavaObject`
+   を実装するかどうかを決定するブール型プロパティ。
 
   ```csharp
   class BadType : IJavaObject {
@@ -372,9 +372,9 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
   `$(AndroidPackageFormat)` を `aab` に設定すると、Android アプリ バンドルに必要な他の MSBuild プロパティが設定されます。
 
-  - `$(AndroidUseAapt2)` は `True`です。
-  - `$(AndroidUseApkSigner)` は `False`です。
-  - `$(AndroidCreatePackagePerAbi)` は `False`です。
+  - `$(AndroidUseAapt2)` が `True`です。
+  - `$(AndroidUseApkSigner)` が `False`です。
+  - `$(AndroidCreatePackagePerAbi)` が `False`です。
 
   [apk]: https://en.wikipedia.org/wiki/Android_application_package
   [bundle]: https://developer.android.com/platform/technology/app-bundle
@@ -489,7 +489,7 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
   `$(AotAssemblies)` MSBuild プロパティが `True` でない限り、このプロパティは無視されます。
 
-- **EnableProguard** &ndash; [ProGuard](https://developer.android.com/tools/help/proguard.html) を Java コードをリンクするパッケージ化プロセスの一部として実行するかどうかを決定するブール型プロパティ。
+- **EnableProguard** &ndash; [proguard](https://developer.android.com/tools/help/proguard.html) を Java コードをリンクするパッケージ化プロセスの一部として実行するかどうかを決定するブール型プロパティ。
 
   このプロパティのサポートは、Xamarin.Android 5.1 で追加されました。
 
@@ -520,15 +520,15 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
   - **All**: 利用可能なすべてのエンコードが含まれます。
 
-  - **CJK**: *日本語 (EUC)* \[enc-jp, CP51932\]、*日本語 (Shift-JIS)* \[iso-2022-jp, shift\_jis, CP932\]、*日本語 (JIS)* \[CP50220\]、*簡体中国語 (GB2312)* \[gb2312, CP936\]、*韓国語 (UHC)* \[ks\_c\_5601-1987, CP949\]、*韓国語 (EUC)* \[euc-kr, CP51949\]、*繁体中国語 (Big5)* \[big5, CP950\]、および*簡体中国語 (GB18030)* \[GB18030, CP54936\] などの中国語、日本語、および韓国語のエンコードが含まれます。
+  - **CJK**: "*日本語 (EUC)* " \[enc-jp, CP51932\]、"*日本語 (Shift-JIS)* " \[iso-2022-jp, shift\_jis, CP932\]、"*日本語 (JIS)* " \[CP50220\]、"*簡体中国語 (GB2312)* " \[gb2312, CP936\]、"*韓国語 (UHC)* " \[ks\_c\_5601-1987, CP949\]、"*韓国語 (EUC)* " \[euc-kr, CP51949\]、"*繁体中国語 (Big5)* " \[big5, CP950\]、および "*簡体中国語 (GB18030)* " \[GB18030, CP54936\] などの中国語、日本語、および韓国語のエンコードが含まれます。
 
-  - **MidEast**: *トルコ語 (Windows)* \[iso-8859-9, CP1254\]、*ヘブライ語 (Windows)* \[windows-1255, CP1255\]、*アラビア語 (Windows)* \[windows-1256, CP1256\]、*アラビア語 (ISO)* \[iso-8859-6, CP28596\]、*ヘブライ語 (ISO)* \[iso-8859-8, CP28598\]、*ラテン 5 (ISO)* \[iso-8859-9, CP28599\]、および*ヘブライ語 (Iso 代替)* \[iso-8859-8, CP38598\] などの中東のエンコードが含まれます。
+  - **MidEast**: "*トルコ語 (Windows)* " \[iso-8859-9, CP1254\]、"*ヘブライ語 (Windows)* " \[windows-1255, CP1255\]、"*アラビア語 (Windows)* " \[windows-1256, CP1256\]、"*アラビア語 (ISO)* " \[iso-8859-6, CP28596\]、"*ヘブライ語 (ISO)* " \[iso-8859-8, CP28598\]、"*ラテン 5 (ISO)* " \[iso-8859-9, CP28599\]、および "*ヘブライ語 (Iso 代替)* " \[iso-8859-8, CP38598\] などの中東のエンコードが含まれます。
 
-  - **Other**: *キリル語 (Windows)* \[CP1251\]、*バルト語 (Windows)* \[iso-8859-4, CP1257\]、*ベトナム語 (Windows)* \[CP1258\]、*キリル語 (KOI8-R)* \[koi8-r, CP1251\]、*ウクライナ語 (KOI8 U)* \[koi8-u, CP1251\]、*バルト語 (ISO)* \[iso-8859-4, CP1257\]、*キリル語 (ISO)* \[iso-8859-5, CP1251\]、*ISCII デーヴァナーガリー語* \[x-iscii-de, CP57002\]、*ISCII ベンガル語* \[x-iscii-be, CP57003\]、*ISCII タミール語* \[x-iscii-ta, CP57004\]、*ISCII テルグ語* \[x-iscii-te, CP57005\]、*ISCII アッサム語* \[x-iscii-as, CP57006\]、*ISCII オリヤー語* \[x-iscii-or, CP57007\]、*ISCII カンナダ語* \[x-iscii-ka, CP57008\]、*ISCII マラヤーラム語* \[x-iscii-ma, CP57009\]、*ISCII グジャラート語* \[x-iscii-gu, CP57010\]、*ISCII パンジャーブ語* \[x-iscii-pa, CP57011\]、および*タイ語 (Windows)* \[CP874\] などのその他のエンコードが含まれます。
+  - **Other**: "*キリル語 (Windows)* " \[CP1251\]、"*バルト語 (Windows)* " \[iso-8859-4, CP1257\]、"*ベトナム語 (Windows)* " \[CP1258\]、"*キリル語 (KOI8-R)* " \[koi8-r, CP1251\]、"*ウクライナ語 (KOI8 U)* " \[koi8-u, CP1251\]、"*バルト語 (ISO)* " \[iso-8859-4, CP1257\]、"*キリル語 (ISO)* " \[iso-8859-5, CP1251\]、"*ISCII デーヴァナーガリー語*" \[x-iscii-de, CP57002\]、"*ISCII ベンガル語*" \[x-iscii-be, CP57003\]、"*ISCII タミール語*" \[x-iscii-ta, CP57004\]、"*ISCII テルグ語*" \[x-iscii-te, CP57005\]、"*ISCII アッサム語*" \[x-iscii-as, CP57006\]、"*ISCII オリヤー語*" \[x-iscii-or, CP57007\]、"*ISCII カンナダ語*" \[x-iscii-ka, CP57008\]、"*ISCII マラヤーラム語*" \[x-iscii-ma, CP57009\]、"*ISCII グジャラート語*" \[x-iscii-gu, CP57010\]、"*ISCII パンジャーブ語*" \[x-iscii-pa, CP57011\]、および "*タイ語 (Windows)* " \[CP874\] などのその他のエンコードが含まれます。
 
-  - **Rare**: *IBM EBCDIC (トルコ語)* \[CP1026\]、*IBM EBCDIC (オープン システム ラテン 1)* \[CP1047\]、*IBM EBCDIC (米国-カナダとユーロ)* \[CP1140\]、*IBM EBCDIC (ドイツとユーロ)* \[CP1141\]、*IBM EBCDIC (デンマーク/ノルウェーとユーロ)* \[CP1142\]、*IBM EBCDIC (フィンランド/スウェーデンとユーロ)* \[CP1143\]、*IBMEBCDIC (イタリアとユーロ)* \[CP1144\]、*IBM EBCDIC (ラテン アメリカ/スペインとユーロ)* \[CP1145\]、*IBM EBCDIC (イギリスとユーロ)* \[CP1146\]、*IBM EBCDIC (フランスとユーロ)* \[CP1147\]、*IBM EBCDIC (インターナショナルとユーロ)* \[CP1148\]、*IBM EBCDIC (アイスランド語とユーロ)* \[CP1149\]、*IBM EBCDIC (ドイツ)* \[CP20273\]、*IBM EBCDIC (デンマーク/ノルウェー)* \[CP20277\]、*IBM EBCDIC (フィンランド/スウェーデン)* \[CP20278\]、*IBM EBCDIC (イタリア)* \[CP20280\]、*IBM EBCDIC (ラテン アメリカ/スペイン)* \[CP20284\]、*IBM EBCDIC (イギリス)* \[CP20285\]、*IBM EBCDIC (日本語カタカナ拡張)* \[CP20290\]、*IBM EBCDIC (フランス)* \[CP20297\]、*IBM EBCDIC (アラビア語)* \[CP20420\]、*IBM EBCDIC (ヘブライ語)* \[CP20424\]、*IBM EBCDIC (アイスランド語)* \[CP20871\]、*IBM EBCDIC (キリル、セルビア語、ブルガリア語)* \[CP21025\]、*IBM EBCDIC (米国-カナダ)* \[CP37\]、*IBM EBCDIC (インターナショナル)* \[CP500\]、*アラビア語 (ASMO 708)* \[CP708\]、*中央ヨーロッパ言語 (DOS)* \[CP852\] *, キリル言語 (DOS)* \[CP855\]、*トルコ語 (DOS)* \[CP857\]*西ヨーロッパ言語 (DOS とユーロ)* \[CP858\]、*ヘブライ語 (DOS)* \[CP862\]、*アラビア語 (DOS)* \[CP864\]、*ロシア語 (DOS)* \[CP866\]、*ギリシャ語 (DOS)* \[CP869\]、*IBM EBCDIC (ラテン 2)* \[CP870\]、*IBM EBCDIC (ギリシャ語)* \[CP875\] などのまれなエンコードが含まれます。
+  - **Rare**: "*IBM EBCDIC (トルコ語)* " \[CP1026\]、"*IBM EBCDIC (オープン システム ラテン 1)* " \[CP1047\]、"*IBM EBCDIC (米国-カナダとユーロ)* " \[CP1140\]、"*IBM EBCDIC (ドイツとユーロ)* " \[CP1141\]、"*IBM EBCDIC (デンマーク/ノルウェーとユーロ)* " \[CP1142\]、"*IBM EBCDIC (フィンランド/スウェーデンとユーロ)* " \[CP1143\]、"*IBM EBCDIC (イタリアとユーロ)* " \[CP1144\]、"*IBM EBCDIC (ラテン アメリカ/スペインとユーロ)* " \[CP1145\]、"*IBM EBCDIC (イギリスとユーロ)* " \[CP1146\]、"*IBM EBCDIC (フランスとユーロ)* " \[CP1147\]、"*IBM EBCDIC (インターナショナルとユーロ)* " \[CP1148\]、"*IBM EBCDIC (アイスランド語とユーロ)* " \[CP1149\]、"*IBM EBCDIC (ドイツ)* " \[CP20273\]、"*IBM EBCDIC (デンマーク/ノルウェー)* " \[CP20277\]、"*IBM EBCDIC (フィンランド/スウェーデン)* " \[CP20278\]、"*IBM EBCDIC (イタリア)* " \[CP20280\]、"*IBM EBCDIC (ラテン アメリカ/スペイン)* " \[CP20284\]、"*IBM EBCDIC (イギリス)* " \[CP20285\]、"*IBM EBCDIC (日本語カタカナ拡張)* " \[CP20290\]、"*IBM EBCDIC (フランス)* " \[CP20297\]、"*IBM EBCDIC (アラビア語)* " \[CP20420\]、"*IBM EBCDIC (ヘブライ語)* " \[CP20424\]、"*IBM EBCDIC (アイスランド語)* " \[CP20871\]、"*IBM EBCDIC (キリル、セルビア語、ブルガリア語)* " \[CP21025\]、"*IBM EBCDIC (米国-カナダ)* " \[CP37\]、"*IBM EBCDIC (インターナショナル)* " \[CP500\]、"*アラビア語 (ASMO 708)* " \[CP708\]、"*中央ヨーロッパ言語 (DOS)* " \[CP852\]、"*キリル言語 (DOS)* " \[CP855\]、"*トルコ語 (DOS)* " \[CP857\]、"*西ヨーロッパ言語 (DOS とユーロ)* " \[CP858\]、"*ヘブライ語 (DOS)* " \[CP862\]、"*アラビア語 (DOS)* " \[CP864\]、"*ロシア語 (DOS)* " \[CP866\]、"*ギリシャ語 (DOS)* " \[CP869\]、"*IBM EBCDIC (ラテン 2)* " \[CP870\]、"*IBM EBCDIC (ギリシャ語)* " \[CP875\] などのまれなエンコードが含まれます。
 
-  - **West**: *西ヨーロッパ言語 (Mac)* \[macintosh, CP10000\]、*アイスランド語 (Mac)* \[x-mac-icelandic, CP10079\]、*中央ヨーロッパ言語 (Windows)* \[iso-8859-2, CP1250\]、*西ヨーロッパ言語 (Windows)* \[iso-8859-1, CP1252\]、*ギリシャ語 (Windows)* \[iso-8859-7, CP1253\]、*中央ヨーロッパ言語 (ISO)* \[iso-8859-2, CP28592\]、*ラテン 3 (ISO)* \[iso-8859-3, CP28593\]、*ギリシャ語 (ISO)* \[iso-8859-7, CP28597\]、*ラテン 9 (ISO)* \[iso-8859-15, CP28605\]、*OEM 米国* \[CP437\]、*西ヨーロッパ言語 (DOS)* \[CP850\]、*ポルトガル語 (DOS)* \[CP860\]、*アイスランド語 (DOS)* \[CP861\]、*フランス語 (カナダ) (DOS)* \[CP863\]、および*北欧語 (DOS)* \[CP865\] などの欧文のエンコードが含まれます。
+  - **West**: "*西ヨーロッパ言語 (Mac)* " \[macintosh, CP10000\]、"*アイスランド語 (Mac)* " \[x-mac-icelandic, CP10079\]、"*中央ヨーロッパ言語 (Windows)* " \[iso-8859-2, CP1250\]、"*西ヨーロッパ言語 (Windows)* " \[iso-8859-1, CP1252\]、"*ギリシャ語 (Windows)* " \[iso-8859-7, CP1253\]、"*中央ヨーロッパ言語 (ISO)* " \[iso-8859-2, CP28592\]、"*ラテン 3 (ISO)* " \[iso-8859-3, CP28593\]、"*ギリシャ語 (ISO)* " \[iso-8859-7, CP28597\]、"*ラテン 9 (ISO)* " \[iso-8859-15, CP28605\]、"*OEM 米国*" \[CP437\]、"*西ヨーロッパ言語 (DOS)* " \[CP850\]、"*ポルトガル語 (DOS)* " \[CP860\]、"*アイスランド語 (DOS)* " \[CP861\]、"*フランス語 (カナダ) (DOS)* " \[CP863\]、および "*北欧語 (DOS)* " \[CP865\] などの欧文のエンコードが含まれます。
 
   ```xml
   <MandroidI18n>West</MandroidI18n>

@@ -5,12 +5,12 @@ ms.assetid: 34062D84-3E55-4AF7-A688-8551068B1E57
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/06/2020
-ms.openlocfilehash: 2b1413c6bce7fc4ce43a190cd25494c69dbadedb
-ms.sourcegitcommit: ec62c7f28abc8e121656f1b93146657d90a4cab4
+ms.openlocfilehash: 21f2079ace4adae6fd84d89426e5d66692af2a0a
+ms.sourcegitcommit: ddf0369573b738896efaa601fa6ef5dbc68d9cf1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77555690"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78289807"
 ---
 # <a name="xamarinessentials-permissions"></a>Xamarin.Essentials:アクセス許可
 
@@ -90,7 +90,7 @@ Xamarin.Essentials では可能な限り多くのアクセス許可を抽象化�
 | StorageRead | ![Android はサポートされています](~/media/shared/yes.png "Android はサポートされています") | ![iOS はサポートされていません](~/media/shared/no.png "iOS はサポートされていません") | ![UWP はサポートされていません](~/media/shared/no.png "UWP はサポートされていません") | ![watchOS はサポートされていません](~/media/shared/no.png "watchOS はサポートされていません") | ![tvOS はサポートされていません](~/media/shared/no.png "tvOS はサポートされていません") | ![Tizen はサポートされていません](~/media/shared/no.png "Tizen はサポートされていません") |
 | StorageWrite | ![Android はサポートされています](~/media/shared/yes.png "Android はサポートされています") | ![iOS はサポートされていません](~/media/shared/no.png "iOS はサポートされていません") | ![UWP はサポートされていません](~/media/shared/no.png "UWP はサポートされていません") | ![watchOS はサポートされていません](~/media/shared/no.png "watchOS はサポートされていません") | ![tvOS はサポートされていません](~/media/shared/no.png "tvOS はサポートされていません") | ![Tizen はサポートされていません](~/media/shared/no.png "Tizen はサポートされていません") |
 
-アクセス許可に ❌ マークが付いている場合は、確認または要求されたときに常に `Granted` が返されます。
+アクセス許可に ![サポートされていません](~/media/shared/no.png "サポート外")マークが付いている場合は、確認または要求されたときに常に `Granted` が返されます。
 
 ## <a name="general-usage"></a>一般的な使用法
 アクセス許可を処理するための一般的な使用パターンを次に示します。

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: dffa9c202d42cfb12ed67e219b4e3155e4e554d0
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 0071fcc72844e4816e707c5828464859e09db68c
+ms.sourcegitcommit: 2503da076966d12a8bdbf7af209662b74913a15c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70751922"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78261619"
 ---
 # <a name="contributing"></a>コントリビューション
 
@@ -64,6 +64,10 @@ Xamarin チームが PR を確認し、変更が適切であるか、または�
 フィードバックが適用され、変更が適切であるように見える場合は、保守管理者によって PR がマージされます。
 
 特定の周期で、マスター ブランチのすべてのコミットがライブ サイトにプッシュされるので、 https://docs.microsoft.com/xamarin/ でご自分の投稿を確認できます。
+
+### <a name="contributing-to-international-content"></a>海外のコンテンツへの投稿
+
+現在、機械翻訳 (MT) コンテンツへの投稿は受け付けておりません。 MT コンテンツの品質を向上させるため、ニューラル MT エンジンに移行しました。 人間が翻訳した (HT) コンテンツへの投稿は受け付けています。これは、ニューラル MT エンジンをトレーニングするために使用されるため、ご協力ください。 時間の経過と共に、HT コンテンツへの投稿により、HT と MT の両方の品質が向上します。 MT トピックには、トピックの一部が MT であることを示す免責事項が含まれています。また、 **[編集]** ボタンは無効になっているため、表示されません。
 
 ## <a name="dos-and-donts"></a>注意事項
 

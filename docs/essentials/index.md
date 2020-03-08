@@ -4,13 +4,13 @@ description: このドキュメントは、Xamarin.Essentials について説明
 ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 08/27/2019
-ms.openlocfilehash: 2101d2e3948cb917e62725731c4895cc57282b3b
-ms.sourcegitcommit: 3d21bb1a6d9b78b65aa49917b545c39d44aa3e3c
+ms.date: 02/26/2020
+ms.openlocfilehash: a0d1e397725ca0a60eb68fb0e6b989ee22c3f56a
+ms.sourcegitcommit: 3d39bafe4c56b15cbb695b1f7f02b926e1033f58
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70065135"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78155268"
 ---
 # <a name="xamarinessentials"></a>Xamarin.Essentials
 
@@ -18,7 +18,7 @@ Xamarin.Essentials には、モバイル アプリケーション開発用のク
 
 Android、iOS、UWP では独自のオペレーティング システムとプラットフォーム API が提供されています。開発者は、Xamarin を活用して C# で そのすべてにアクセスできます。 Xamarin.Essentials には、任意の Xamarin.Forms、Android、iOS、または UWP アプリケーションと連携する単一のクロスプラットフォーム API が用意されています。ユーザー インターフェイスの作成方法に関係なく、共有コードからアクセスできます。
 
-## <a name="get-started-with-xamarinessentialsget-startedmdcontextxamarinxamarin-forms"></a>[Xamarin.Essentials の概要](get-started.md?context=xamarin/xamarin-forms)
+## <a name="get-started-with-xamarinessentials"></a>[Xamarin.Essentials の概要](get-started.md?context=xamarin/xamarin-forms)
 
 [ファースト ステップ ガイド](get-started.md)に従って、Xamarin.Forms、Android、iOS、または UWP の既存のプロジェクト、または新しいプロジェクトに、**Xamarin.Essentials** の NuGet パッケージをインストールします。
 
@@ -49,6 +49,7 @@ Android、iOS、UWP では独自のオペレーティング システムとプ�
 * [マップ](maps.md?content=xamarin/xamarin-forms) – 特定の場所にマップ アプリケーションを開きます。
 * [ブラウザーを開く](open-browser.md?context=xamarin/xamarin-forms) – ブラウザーで特定の Web サイトをすばやく簡単に開きます。
 * [向きセンサー](orientation-sensor.md?context=xamarin/xamarin-forms) – 3 次元空間内のデバイスの向きを取得します。
+* [アクセス許可](permissions.md?context=xamarin/xamarin-forms) – ユーザーからのアクセス許可を確認して要求します。
 * [ダイヤラー](phone-dialer.md?context=xamarin/xamarin-forms) – ダイヤラーを開きます。
 * [プラットフォーム拡張](platform-extensions.md?context=xamarin/xamarin-forms) – Rect、Size、Point を変換するためのヘルパー メソッド。
 * [ユーザー設定](preferences.md?context=xamarin/xamarin-forms) – 永続的なユーザー設定をすばやく簡単に追加します。
@@ -60,14 +61,14 @@ Android、iOS、UWP では独自のオペレーティング システムとプ�
 * [バージョンの追跡](version-tracking.md?context=xamarin/xamarin-forms) – アプリケーションのバージョンとビルド番号を追跡します。
 * [バイブレーション](vibrate.md?context=xamarin/xamarin-forms) – デバイスをバイブレーションさせます。
 
-## <a name="troubleshootingtroubleshootingmdcontextxamarinxamarin-forms"></a>[トラブルシューティング](troubleshooting.md?context=xamarin/xamarin-forms)
+## <a name="troubleshooting"></a>[トラブルシューティング](troubleshooting.md?context=xamarin/xamarin-forms)
 
 問題が発生する場合は、ヘルプを検索してください。
 
-## <a name="release-noteshttpsdocsmicrosoftcomxamarinessentialsrelease-notes"></a>[リリース ノート](https://docs.microsoft.com/xamarin/essentials/release-notes/)
+## <a name="release-notes"></a>[リリース ノート](https://docs.microsoft.com/xamarin/essentials/release-notes/)
 
 Xamarin.Essentials の各リリースの完全なリリースノートを見つけてください。
 
-## <a name="api-documentationxrefxamarinessentials"></a>[API ドキュメント](xref:Xamarin.Essentials)
+## <a name="api-documentation"></a>[API ドキュメント](xref:Xamarin.Essentials)
 
 Xamarin.Essentials のすべての機能の API ドキュメントを参照します。
