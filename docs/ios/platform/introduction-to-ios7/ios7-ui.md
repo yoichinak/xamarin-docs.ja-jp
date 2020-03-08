@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
 ms.openlocfilehash: 4731be58c1fadae0bba6768570ecfd181b071dd2
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031864"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915722"
 ---
 # <a name="ios-7-user-interface-overview"></a>iOS 7 ユーザー インターフェイスの概要
 
@@ -201,7 +201,7 @@ if (UIDevice.CurrentDevice.CheckSystemVersion (7, 0)) {
 
  [![](ios7-ui-images/good.png "Example with whole image visible")](ios7-ui-images/good.png#lightbox)
 
-`TopLayoutGuide/BottomLayoutGuide` Api と `EdgesForExtendedLayout` Api の効果は似ていますが、異なる目標を設定することを意図しています。 既定値から `EdgesForExtendedLayout` 設定を変更すると、iOS 6 用に設計されたアプリケーションでは、クリップされたビューが修正される場合がありますが、適切な iOS 7 設計では全画面表示を実現し、`TopLayoutGuide` に依存していて、適切に `BottomLayoutGuide` する必要があります。ユーザーのために快適に操作されるようにコンテンツを配置します。
+`TopLayoutGuide/BottomLayoutGuide` Api と `EdgesForExtendedLayout` Api の効果は似ていますが、異なる目標を設定することを意図しています。 `EdgesForExtendedLayout` 設定を既定値から変更すると、iOS 6 向けに設計されたアプリケーションでは、クリップされたビューが修正される場合がありますが、適切な iOS 7 設計では全画面表示を実現し、`TopLayoutGuide` に依存して、ユーザーにとって快適に操作されるコンテンツを適切に配置する `BottomLayoutGuide` します。
 
 実際のサンプルについては、 [Imageviewer](https://docs.microsoft.com/samples/xamarin/ios-samples/ios7-ui-updates/)を参照してください。
 
@@ -258,7 +258,7 @@ public override bool PrefersStatusBarHidden ()
 
 IOS 7 では、ユーザーはシステム設定でテキストのサイズを指定できます。 動的な型の場合、フォントはサイズに関係なく、適切に表示されるように動的に調整されます。 ユーザーによって制御されるサイズに合わせて最適化されたフォントを取得するには、`UIFont.PreferredFontForTextStyle` を使用する必要があります。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 この記事では、iOS 7 のユーザーインターフェイス要素に加えられた変更について説明します。 ここでは、UIKit のビューとコントロールに加えられたいくつかの変更を調べ、ビジュアルの変更と関連する Api の変更の両方を強調表示しています。 最後に、全画面コンテンツ、新しい着色色のサポート、および動的な型を操作するための新しい Api が導入されました。
 

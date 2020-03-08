@@ -8,15 +8,15 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2017
 ms.openlocfilehash: 54fcc3bb683f6ca4515d807da5c3345cf71a2df3
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
-ms.translationtype: HT
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725243"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78917742"
 ---
 # <a name="apple-pay-capabilities-in-xamarinios"></a>Xamarin.iOS の Apple Pay 機能
 
-_アプリケーションに機能を追加するには、多くの場合、追加のプロビジョニングの設定が必要です。このガイドでは、Apple Pay 機能に必要な設定について説明します。_
+_アプリケーションに機能を追加するには、多くの場合、追加のプロビジョニング設定が必要です。このガイドでは、Apple Pay 機能に必要なセットアップについて説明します。_
 
 Apple Pay を使用すると、ユーザーは自分の iOS デバイスから物理的な商品の支払いができます。 このセクションでは、Apple Developer Center で Apple Pay に必要なすべての必須コンポーネントを作成する方法について説明します。
 
@@ -154,6 +154,6 @@ Apple Pay の使用に関する詳細は、次のガイドを参照してくだ�
 
 * アプリでフレームワークの名前空間を使用します。
 * アプリに必要な権利を追加します。 必要な権利とその追加方法については、[権利の使用](~/ios/deploy-test/provisioning/entitlements.md)に関するガイドを参照してください。
-* アプリの  **[iOS バンドル署名]** で、 **[カスタムの権利]** が **Entitlements.plist** に確実に設定されているようにします。 これは、デバッグと iOS シミュレーターのビルドに対する既定の設定では _"ありません"_  。
+* アプリの  **[iOS バンドル署名]** で、 **[カスタムの権利]** が **Entitlements.plist** に確実に設定されているようにします。 これは、デバッグと iOS シミュレータービルドの既定の設定 は _ありません_。
 
 App Services で問題が発生した場合は、メイン ガイドの[トラブルシューティング](~/ios/deploy-test/provisioning/capabilities/index.md)のセクションを参照してください。

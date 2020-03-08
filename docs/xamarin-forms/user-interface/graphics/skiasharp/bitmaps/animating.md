@@ -8,17 +8,17 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/12/2018
 ms.openlocfilehash: 33e17a01d8a13fcdaee27e5857c554a4a232c534
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228057"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78917887"
 ---
 # <a name="animating-skiasharp-bitmaps"></a>SkiaSharp のビットマップをアニメーション化
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-SkiaSharp のグラフィックスを一般にアニメーション化するアプリケーションを呼び出す`InvalidateSurface`上、 `SKCanvasView` 16 ミリ秒ごとに多くの場合、固定の率でします。 呼び出しをトリガーする、画面を無効化、`PaintSurface`画面を再描画するハンドラー。 ビジュアルは、1 秒あたり 60 回再描画される、スムーズにアニメーション化に表示されます。
+通常、SkiaSharp グラフィックスをアニメーション化するアプリケーションでは、通常は16ミリ秒ごとに固定レートで `SKCanvasView` に `InvalidateSurface` を呼び出します。 Surface を無効にすると、表示を再描画するために `PaintSurface` ハンドラーへの呼び出しがトリガーされます。 ビジュアルは、1 秒あたり 60 回再描画される、スムーズにアニメーション化に表示されます。
 
 ただし、グラフィックスが 16 ミリ秒で表示するには複雑すぎる場合は、アニメーションはちらつきのようになります。 プログラマが 30 倍、または 15 分、秒、リフレッシュ レートを削減することもできますが、さえでは不十分です。 グラフィックスことが単にレンダリングできませんをリアルタイムで複雑になる場合もあります。
 
@@ -28,19 +28,19 @@ SkiaSharp のグラフィックスを一般にアニメーション化するア�
 
 SkiaSharp と似たことを行うことができます。 この記事では、ビットマップのアニメーションの 2 つの種類を示します。 最初の例では、マンデルブロ集合のアニメーションを示します。
 
-![サンプルをアニメーション化](animating-images/AnimatingSample.png "サンプルをアニメーション化")
+![アニメーション化のサンプル](animating-images/AnimatingSample.png "アニメーション化のサンプル")
 
 2 番目の例では、アニメーション GIF ファイルを表示するために SkiaSharp を使用する方法を示します。
 
 ## <a name="bitmap-animation"></a>ビットマップのアニメーション
 
-マンデルブロ集合とは、魅力的な視覚的が時間のかかる computionally です。 (マンデルブロ集合とここで使用する数学の詳細については、[の第 20 章_を Xamarin.Forms での Mobile Apps の作成_](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch20-Apr2016.pdf) 666 ページで開始を参照してください。 次の説明を想定その背景知識。)
+マンデルブロ集合とは、魅力的な視覚的が時間のかかる computionally です。 (マンデルブロセットと、ここで使用されている計算の詳細については、ページ666以降の[ _Xamarin の Mobile Apps の作成_に関する第20章](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch20-Apr2016.pdf)を参照してください。 次の説明を想定その背景知識。)
 
-[**マンデルブロ アニメーション**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-mandelanima)サンプルでは、ビットマップのアニメーションを使用して、マンデルブロ集合に固定小数点の継続的な拡大をシミュレートします。 ズーム アウト、後で拡大され、状態のままか、プログラムを終了するまで、サイクルが繰り返されます。
+[**マンデルブロアニメーション**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-mandelanima)のサンプルでは、ビットマップアニメーションを使用して、マンデルブロセット内の固定ポイントの連続ズームをシミュレートします。 ズーム アウト、後で拡大され、状態のままか、プログラムを終了するまで、サイクルが繰り返されます。
 
-プログラムは、このアニメーションのまでアプリケーションのローカル ストレージに格納された 50 のビットマップを作成して準備します。 各ビットマップには、前のビットマップとしての半分の幅と複素平面の高さが含まれます。 (プログラムでは、これらのビットマップが整数型を表すと言います_ズーム レベル_。)。シーケンス内のビットマップが表示されます。 ビットマップごとのスケーリングは別に 1 つのビットマップからスムーズな進行を提供するアニメーション化します。
+プログラムは、このアニメーションのまでアプリケーションのローカル ストレージに格納された 50 のビットマップを作成して準備します。 各ビットマップには、前のビットマップとしての半分の幅と複素平面の高さが含まれます。 (プログラムでは、これらのビットマップは、整数_ズームレベル_を表すものと呼ばれます)。次に、ビットマップが順に表示されます。 ビットマップごとのスケーリングは別に 1 つのビットマップからスムーズな進行を提供するアニメーション化します。
 
-などの第 20 章で説明されているプログラムの最終_を Xamarin.Forms での Mobile Apps の作成_、マンデルブロ集合内の計算**マンデルブロ アニメーション**が 8 個の非同期メソッドパラメーター。 パラメーターには、複雑な中心および幅とその center 点を囲む複素平面の高さが含まれます。 次の 3 つのパラメーターは、ピクセル幅と、作成するビットマップの高さと再帰的な計算のイテレーションの最大数です。 `progress`パラメーターがこの計算の進行状況を表示するために使用します。 `cancelToken`パラメーターは、このプログラムでは使用されません。
+「 _Xamarin. フォームで Mobile Apps を作成する_」の第20章で説明した最終的なプログラムと同様に、**マンデルブロアニメーション**でのマンデルブロセットの計算は、8つのパラメーターを持つ非同期メソッドです。 パラメーターには、複雑な中心および幅とその center 点を囲む複素平面の高さが含まれます。 次の 3 つのパラメーターは、ピクセル幅と、作成するビットマップの高さと再帰的な計算のイテレーションの最大数です。 この計算の進行状況を表示するには、`progress` パラメーターを使用します。 `cancelToken` パラメーターは、このプログラムでは使用されません。
 
 ```csharp
 static class Mandelbrot
@@ -107,7 +107,7 @@ static class Mandelbrot
 }
 ```
 
-型のオブジェクトを返します`BitmapInfo`ビットマップを作成するための情報を提供します。
+メソッドは、ビットマップを作成するための情報を提供する `BitmapInfo` 型のオブジェクトを返します。
 
 ```csharp
 class BitmapInfo
@@ -127,7 +127,7 @@ class BitmapInfo
 }
 ```
 
-**マンデルブロ アニメーション**XAML ファイルでは、2 つが含まれる`Label`ビュー、 `ProgressBar`、および`Button`だけでなく`SKCanvasView`:
+**マンデルブロアニメーション**の XAML ファイルには、2つの `Label` ビュー、`ProgressBar`、`Button` および `SKCanvasView`が含まれています。
 
 ```csharp
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -179,11 +179,11 @@ public partial class MainPage : ContentPage
 }
 ```
 
-ある時点でおそらくたい変更、`COUNT`値を 50 に、アニメーションの完全な範囲を参照してください。 50 を超える値は便利です。 48 などのズーム レベルに倍精度浮動小数点数の解像度になります、マンデルブロ集合の計算が不足しています。 この問題の 684 ページで説明した_を Xamarin.Forms での Mobile Apps の作成_です。
+場合によっては、`COUNT` 値を50に変更して、アニメーションの全範囲を表示することをお勧めします。 50 を超える値は便利です。 48 などのズーム レベルに倍精度浮動小数点数の解像度になります、マンデルブロ集合の計算が不足しています。 この問題については _、Xamarin. Forms を使用した Mobile Apps の作成_に関するページ684で説明されています。
 
-`center`値が非常に重要です。 これは、アニメーションのズームのフォーカスです。 ファイルの 3 つの値を使用しての第 20 章の 3 つの最終的なスクリーン ショットで使用されている_を Xamarin.Forms での Mobile Apps の作成_ ページで、684 が独自の値のいずれかを考案するには、その章でプログラムを試すことができます。
+`center` 値は非常に重要です。 これは、アニメーションのズームのフォーカスです。 このファイルの3つの値は、684ページに_Mobile Apps を作成する方法_の3番目のスクリーンショットで使用されているものですが、この章のプログラムを使用して、独自の値のいずれかを取得することもできます。
 
-**マンデルブロ アニメーション**サンプルでは、これらを格納`COUNT`ローカル アプリケーション記憶域のビットマップ。 50 のビットマップをこれらのビットマップが占有しているストレージの量を知りたい場合がありますのでお使いのデバイス上の記憶域の 20 のメガバイト数以上を必要とし、ある時点でそれらすべてを削除する可能性があります。 これら 2 つのメソッドの下部の目的は、`MainPage`クラス。
+**マンデルブロアニメーション**のサンプルでは、これらの `COUNT` ビットマップをローカルアプリケーションストレージに格納します。 50 のビットマップをこれらのビットマップが占有しているストレージの量を知りたい場合がありますのでお使いのデバイス上の記憶域の 20 のメガバイト数以上を必要とし、ある時点でそれらすべてを削除する可能性があります。 `MainPage` クラスの下部には、次の2つのメソッドの目的があります。
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -215,9 +215,9 @@ public partial class MainPage : ContentPage
 
 プログラムがそれらをメモリ内に保持するため、プログラムは、同じビットマップをアニメーション化する中には、ローカル ストレージ内のビットマップを削除することができます。 ビットマップを再作成する必要が次に、プログラムを実行したとき。
 
-アプリケーションのローカル ストレージに格納されているビットマップを組み込む、 `center` 、ファイル名に値を変更する場合、`center`設定すると、既存のビットマップ、ストレージには置き換えられません、領域を占有し続けます。
+ローカルアプリケーションストレージに格納されているビットマップには、`center` の値がファイル名に組み込まれています。したがって、`center` 設定を変更しても、既存のビットマップはストレージで置き換えられず、領域を占有し続けます。
 
-ここでは、方法を`MainPage`、ファイル名を構築するために使用すると同様に、`MakePixel`色成分に基づいてピクセル値を定義するためのメソッド。
+ここでは、ファイル名を作成するために `MainPage` 使用するメソッドと、カラーコンポーネントに基づいてピクセル値を定義するための `MakePixel` 方法について説明します。
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -238,9 +238,9 @@ public partial class MainPage : ContentPage
 }
 ```
 
-`zoomLevel`パラメーターを`FilePath`範囲は 0 を`COUNT`から 1 を引いた定数。
+`FilePath` の `zoomLevel` パラメーターは、0から `COUNT` 定数-1 までの範囲です。
 
-`MainPage`コンストラクターの呼び出し、`LoadAndStartAnimation`メソッド。
+`MainPage` コンストラクターは、`LoadAndStartAnimation` メソッドを呼び出します。
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -256,7 +256,7 @@ public partial class MainPage : ContentPage
 }
 ```
 
-`LoadAndStartAnimation`メソッドは、プログラムが以前に実行されたときに作成された可能性があります、ビットマップを読み込むアプリケーションのローカル ストレージにアクセスする責任を負います。 ループ`zoomLevel`値は 0 ~`COUNT`します。 それを読み込んだこと、ファイルが存在する場合、`bitmaps`配列。 特定のビットマップを作成する必要がありますそれ以外の場合、`center`と`zoomLevel`呼び出すことによって値`Mandelbrot.CalculateAsync`します。 そのメソッドは、このメソッドの色に変換し、各ピクセルのイテレーション数を取得します。
+`LoadAndStartAnimation` メソッドは、アプリケーションのローカルストレージにアクセスして、プログラムが以前に実行されたときに作成された可能性のあるビットマップを読み込む役割を担います。 0から `COUNT`まで `zoomLevel` 値をループ処理します。 ファイルが存在する場合は、`bitmaps` 配列に読み込まれます。 それ以外の場合は、`Mandelbrot.CalculateAsync`を呼び出すことによって、特定の `center` と `zoomLevel` 値のビットマップを作成する必要があります。 そのメソッドは、このメソッドの色に変換し、各ピクセルのイテレーション数を取得します。
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -374,13 +374,13 @@ public partial class MainPage : ContentPage
 }
 ```
 
-アプリケーションのローカル記憶域は、デバイスのフォト ライブラリではなく、プログラムでこれらのビットマップを格納することを確認します。 .NET Standard 2.0 ライブラリにより、使い慣れたを使用して`File.OpenRead`と`File.WriteAllBytes`このタスクのメソッド。
+アプリケーションのローカル記憶域は、デバイスのフォト ライブラリではなく、プログラムでこれらのビットマップを格納することを確認します。 .NET Standard 2.0 ライブラリでは、このタスクに使い慣れた `File.OpenRead` と `File.WriteAllBytes` の方法を使用できます。
 
-すべてのビットマップを作成またはメモリに読み込まれた後、メソッドは、開始、`Stopwatch`オブジェクトと呼び出し`Device.StartTimer`します。 `OnTimerTick`メソッドは 16 ミリ秒ごとに呼び出されます。
+すべてのビットマップが作成されるか、メモリに読み込まれると、メソッドは `Stopwatch` オブジェクトを開始し、`Device.StartTimer`を呼び出します。 `OnTimerTick` メソッドは、16ミリ秒ごとに呼び出されます。
 
-`OnTimerTick` 計算を`time`0 ~ 6000 の時間範囲の値 (ミリ秒単位) `COUNT`、6 秒の各ビットマップの表示を apportions をします。 `progress`値の使用、`Math.Sin`として、最後に低速の方向が反転プロパティと値は、サイクルの先頭に遅くなります振幅のアニメーションを作成します。
+`OnTimerTick` は、0から6000の `COUNT`の範囲の `time` 値をミリ秒単位で計算します。これは、各ビットマップの表示について6秒のうち6秒の部分です。 `progress` 値は、`Math.Sin` の値を使用して、決まる正弦波アニメーションを作成します。このアニメーションは、循環の開始時に遅くなり、方向を反転させると終了時に遅くなります。
 
-`progress`値の範囲は 0 ~`COUNT`します。 こうすることの整数部`progress`へのインデックス、`bitmaps`の小数部の中に、配列`progress`が特定のビットマップのズーム レベルを示します。 これらの値が格納されている、`bitmapIndex`と`bitmapProgress`フィールド、およびによって表示される、`Label`と`Slider`XAML ファイルにします。 `SKCanvasView`ビットマップの表示を更新するのには無効になります。
+`progress` 値の範囲は 0 ~ `COUNT`です。 これは、`progress` の整数部分が `bitmaps` 配列のインデックスであり、`progress` の小数部が特定のビットマップのズームレベルを示すことを意味します。 これらの値は `bitmapIndex` フィールドと `bitmapProgress` フィールドに格納され、`Label` と `Slider` によって XAML ファイルに表示されます。 `SKCanvasView` は、ビットマップディスプレイを更新するために無効になっています。
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -421,7 +421,7 @@ public partial class MainPage : ContentPage
 }
 ```
 
-最後に、`PaintSurface`のハンドラー、`SKCanvasView`縦横比を維持しながら、可能な限り大きくのビットマップを表示する先の四角形を計算します。 元の四角形がに基づいて、`bitmapProgress`値。 `fraction`値はここで計算される場合は 0 から範囲`bitmapProgress`0 0.25 のときに、ビットマップ全体を表示するには`bitmapProgress`1 と、効果的にズーム イン、ビットマップの高さの半分の幅を表示するには。
+最後に、`SKCanvasView` の `PaintSurface` ハンドラーは、縦横比を維持したままビットマップを可能な限り大きく表示する目的の四角形を計算します。 ソースの四角形は、`bitmapProgress` 値に基づいています。 ここで計算される `fraction` 値の範囲は0です `bitmapProgress` 0 は0.25 ビットマップ全体を表示し、`bitmapProgress` が1の場合はビットマップの幅と高さの半分を表示し、実際にはズームインします。
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -463,13 +463,13 @@ public partial class MainPage : ContentPage
 
 実行中のプログラムを次に示します。
 
-[![マンデルブロ アニメーション](animating-images/MandelbrotAnimation.png "マンデルブロ アニメーション")](animating-images/MandelbrotAnimation-Large.png#lightbox)
+[![マンデルブロアニメーション](animating-images/MandelbrotAnimation.png "マンデルブロアニメーション")](animating-images/MandelbrotAnimation-Large.png#lightbox)
 
 ## <a name="gif-animation"></a>GIF アニメーション
 
-グラフィックス インターチェンジ形式 (GIF) 仕様には、ループ内で多くの場合、連続して表示できるシーンの複数の連続フレームを格納する 1 つの GIF ファイルを許可する機能が含まれています。 これらのファイルと呼ばれる_アニメーション Gif_します。 Web ブラウザーは、Gif、アニメーションを再生でき、SkiaSharp により、アプリケーションはアニメーション GIF ファイルからのフレームを抽出して、それらを順番に表示します。
+グラフィックス インターチェンジ形式 (GIF) 仕様には、ループ内で多くの場合、連続して表示できるシーンの複数の連続フレームを格納する 1 つの GIF ファイルを許可する機能が含まれています。 これらのファイルは、_アニメーション gif_と呼ばれます。 Web ブラウザーは、Gif、アニメーションを再生でき、SkiaSharp により、アプリケーションはアニメーション GIF ファイルからのフレームを抽出して、それらを順番に表示します。
 
-[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルには、という名前のアニメーション GIF リソースが含まれて**Newtons_cradle_animation_book_2.gif** DemonDeLuxe によって作成されからダウンロード、[ニュートンのクレードルに接続](https://en.wikipedia.org/wiki/Newton%27s_cradle) wikipedia ページ。 **アニメーション GIF**ページには、その情報を提供し、インスタンス化する XAML ファイルが含まれています、 `SKCanvasView`:
+[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルには、DemonDeLuxe によって作成された**Newtons_cradle_animation_book_2**という名前のアニメーション Gif リソースと、Wikipedia の[ニュートンのクレードル](https://en.wikipedia.org/wiki/Newton%27s_cradle)ページからダウンロードされたものが含まれています。 **アニメーション gif**ページには、その情報を提供し、`SKCanvasView`をインスタンス化する XAML ファイルが含まれています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -500,15 +500,15 @@ public partial class MainPage : ContentPage
 
 アニメーション GIF ファイルのフレームを抽出する SkisSharp の使用はしていない、任意の場所を文書化するため、次のコードの記述が通常よりも詳細。
 
-アニメーション GIF ファイルのデコードがページのコンストラクターで発生しする必要があります、`Stream`ビットマップを参照するオブジェクトを作成するために使用する`SKManagedStream`オブジェクトをクリックし、 [ `SKCodec` ](xref:SkiaSharp.SKCodec)オブジェクト。 [ `FrameCount` ](xref:SkiaSharp.SKCodec.FrameCount)プロパティは、アニメーションを構成するフレームの数を示します。
+アニメーション GIF ファイルのデコードは、ページのコンストラクター内で行われます。この場合、ビットマップを参照する `Stream` オブジェクトを使用して、`SKManagedStream` オブジェクトを作成し、 [`SKCodec`](xref:SkiaSharp.SKCodec)オブジェクトを作成する必要があります。 [`FrameCount`](xref:SkiaSharp.SKCodec.FrameCount)プロパティは、アニメーションを構成するフレームの数を示します。
 
-コンストラクターを使用して、これらのフレームは個々 のビットマップとして保存最終的には`FrameCount`型の配列を割り当てる`SKBitmap`と 2 つ`int`累積 (アニメーションのロジックが容易になります) を各フレームの期間の配列期間。
+これらのフレームは最終的に個々のビットマップとして保存されるため、コンストラクターは `FrameCount` を使用して `SKBitmap` 型の配列と、各フレームの継続時間に対して2つの `int` 配列を割り当て、累積された期間を (アニメーションのロジックを簡単に) 割り当てます。
 
-[ `FrameInfo` ](xref:SkiaSharp.SKCodec.FrameInfo)プロパティの`SKCodec`クラスの配列は、 [ `SKCodecFrameInfo` ](xref:SkiaSharp.SKCodecFrameInfo)値、1 つは、各フレームがこのプログラムではその構造からですだけが、 [ `Duration` ](xref:SkiaSharp.SKCodecFrameInfo.Duration) (ミリ秒) 内のフレームの。
+`SKCodec` クラスの[`FrameInfo`](xref:SkiaSharp.SKCodec.FrameInfo)プロパティは、フレームごとに1つずつ[`SKCodecFrameInfo`](xref:SkiaSharp.SKCodecFrameInfo)値の配列ですが、このプログラムがこの構造から取得するのは、フレームの[`Duration`](xref:SkiaSharp.SKCodecFrameInfo.Duration) (ミリ秒単位) だけです。
 
-`SKCodec` という名前のプロパティを定義します[ `Info` ](xref:SkiaSharp.SKCodec.Info)型の[ `SKImageInfo`](xref:SkiaSharp.SKImageInfo)が、その`SKImageInfo`値を示します (少なくともこのイメージ) の色の種類がある`SKColorType.Index8`、です。 つまり。各ピクセルが、色の種類へのインデックス。 カラー テーブルを怠ってを避けるためには、プログラムを使用して、 [ `Width` ](xref:SkiaSharp.SKImageInfo.Width)と[ `Height` ](xref:SkiaSharp.SKImageInfo.Height)フルカラーを所有していることを構築するには、その構造から情報`ImageInfo`値。 各`SKBitmap`をから作成されます。
+`SKCodec` は[`SKImageInfo`](xref:SkiaSharp.SKImageInfo)型の[`Info`](xref:SkiaSharp.SKCodec.Info)という名前のプロパティを定義しますが、`SKImageInfo` 値は色の種類が `SKColorType.Index8`である (少なくともこのイメージの) ことを示します。つまり、各ピクセルは色の種類のインデックスです。 かけるを使用してカラーテーブルを作成しないようにするために、プログラムはその構造の[`Width`](xref:SkiaSharp.SKImageInfo.Width)と[`Height`](xref:SkiaSharp.SKImageInfo.Height)情報を使用して、独自のフルカラー `ImageInfo` 値を構築します。 各 `SKBitmap` は、そのから作成されます。
 
-`GetPixels`メソッドの`SKBitmap`を返します、`IntPtr`そのビットマップのピクセル ビットを参照します。 これらのピクセル ビットはまだ設定されていません。 ある`IntPtr`のいずれかに渡される、 [ `GetPixels` ](xref:SkiaSharp.SKCodec.GetPixels(SkiaSharp.SKImageInfo,System.IntPtr,SkiaSharp.SKCodecOptions))メソッドの`SKCodec`します。 そのメソッドが GIF ファイルからによって参照されるメモリ領域にフレームをコピー、`IntPtr`します。 [ `SKCodecOptions` ](xref:SkiaSharp.SKCodecOptions)コンストラクターは、フレームの数を示します。
+`SKBitmap` の `GetPixels` メソッドは、そのビットマップのピクセルビットを参照する `IntPtr` を返します。 これらのピクセル ビットはまだ設定されていません。 この `IntPtr` は `SKCodec`の[`GetPixels`](xref:SkiaSharp.SKCodec.GetPixels(SkiaSharp.SKImageInfo,System.IntPtr,SkiaSharp.SKCodecOptions))メソッドのいずれかに渡されます。 このメソッドは、GIF ファイルから、`IntPtr`によって参照されるメモリ空間にフレームをコピーします。 [`SKCodecOptions`](xref:SkiaSharp.SKCodecOptions)コンストラクターは、フレーム番号を示します。
 
 ```csharp
 public partial class AnimatedGifPage : ContentPage
@@ -576,11 +576,11 @@ public partial class AnimatedGifPage : ContentPage
 }
 ```
 
-関係なく、`IntPtr`値、いいえ`unsafe`コードは、必要なため、 `IntPtr` C# ポインター値には変換されません。
+`IntPtr` 値にもかかわらず、`IntPtr` はC#ポインター値に変換されないため、`unsafe` コードは必要ありません。
 
-各フレームを抽出すると、コンストラクターはすべてのフレームの期間を合計し、累積期間別の配列を初期化します。
+各フレームを抽出すると、コンス トラクターはすべてのフレームの期間を合計し、累積期間別の配列を初期化します。
 
-分離コード ファイルの残りの部分には、アニメーションは専用です。 `Device.StartTimer`メソッドを使用して、タイマーを開始し、`OnTimerTick`コールバックを使用して、`Stopwatch`経過時間 (ミリ秒単位) を決定するオブジェクト。 累積期間配列をループ処理は、現在のフレームを検索するための十分なは。
+分離コード ファイルの残りの部分には、アニメーションは専用です。 `Device.StartTimer` メソッドは、タイマーを開始するために使用され、`OnTimerTick` コールバックは `Stopwatch` オブジェクトを使用して経過時間をミリ秒単位で決定します。 累積期間配列をループ処理は、現在のフレームを検索するための十分なは。
 
 ```csharp
 public partial class AnimatedGifPage : ContentPage
@@ -651,14 +651,14 @@ public partial class AnimatedGifPage : ContentPage
 }
 ```
 
-毎回、 `currentframe` 、変数の変更、`SKCanvasView`は無効にし、新しいフレームが表示されます。
+`currentframe` 変数が変更されるたびに、`SKCanvasView` が無効になり、新しいフレームが表示されます。
 
-[![アニメーション GIF](animating-images/AnimatedGif.png "アニメーション GIF")](animating-images/AnimatedGif-Large.png#lightbox)
+[![アニメーション Gif](animating-images/AnimatedGif.png "アニメーション GIF")](animating-images/AnimatedGif-Large.png#lightbox)
 
 プログラムを実行したいは言うまでもなく、アニメーションを確認します。
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
-- [マンデルブロ アニメーション (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-mandelanima)
+- [マンデルブロアニメーション (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-mandelanima)

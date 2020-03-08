@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/04/2019
 ms.openlocfilehash: 08fb22627ab6b40c94c17d94321ed0bac60beedd
-ms.sourcegitcommit: 9dd0b076ab4ecdbbd1b029d2e0d67d900e1c4494
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/04/2019
-ms.locfileid: "73567894"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915295"
 ---
 # <a name="dependency-injection"></a>依存関係の挿入
 
@@ -117,7 +117,7 @@ _container.Register<ProfileViewModel>();
 
 <a name="resolution" />
 
-## <a name="resolution"></a>解決方法
+## <a name="resolution"></a>解決策
 
 型が登録されると、依存関係として解決または挿入されることがあります。 型が解決され、コンテナーが新しいインスタンスを作成する必要がある場合、そのインスタンスに依存関係が挿入されます。
 
@@ -163,7 +163,7 @@ _container.Register<LoginViewModel>().AsSingleton();
 > [!NOTE]
 > シングルトンとして登録された型は、コンテナーが破棄されるときに破棄されます。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 依存関係の挿入を使用すると、これらの型に依存するコードから具象型を切り離すことができます。 通常は、インターフェイスと抽象型の間の登録とマッピングのリストを保持するコンテナーと、これらの型を実装または拡張する具象型を使用します。
 

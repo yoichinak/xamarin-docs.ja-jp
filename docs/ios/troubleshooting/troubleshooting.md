@@ -9,11 +9,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 05/22/2018
 ms.openlocfilehash: 716999002cf90b50b90f4924adc11555cc43717f
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725360"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915360"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Xamarin のトラブルシューティングのヒント
 
@@ -287,7 +287,7 @@ Visual Studio for Mac 2.2 には、コンマを含む配布証明書を検出し
 ## <a name="error-mtouch-failed-with-no-output"></a>エラー "mtouch は出力されませんでした"
 
 Xamarin. iOS と Visual Studio for Mac の現在のリリースは、プロジェクト名またはソリューションまたはプロジェクトに格納されているディレクトリにスペースが含まれていると失敗します。
-これを修正するには、次を実行してください。
+解決するには、次の操作を行います。
 
 - プロジェクトまたは格納されているディレクトリにスペースが含まれていないことを確認してください。
 - プロジェクトの [メイン設定] で、プロジェクト名にスペースが含まれていないことを確認します。
@@ -309,7 +309,7 @@ Xamarin. iOS と Visual Studio for Mac の現在のリリースは、プロジ�
 
 (Ed Anuff が提供)
 
-この場合は、以下の手順に従ってください。
+次の手順に従います。
 
 - IPhone ビルドの SDK バージョンを3.2 に変更します。または、iTunes connect は、3.2 よりも前のバージョンの SDK を使用してビルドされた iPad 互換アプリを表示しているため、アップロード時にそのバージョンを拒否します。
 - プロジェクトに対してカスタムの MinimumOSVersion を作成し、その中で明示的に3.0 に設定します。   これにより、MinimumOSVersion によって設定された3.2 の値が上書きされます。   この操作を行わないと、アプリは iPhone で実行できなくなります。

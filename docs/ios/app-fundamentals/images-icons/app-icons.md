@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 05/22/2017
 ms.openlocfilehash: 37695ef93a1005febf12369e7d1defccf6130832
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75488434"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78916544"
 ---
 # <a name="application-icons-in-xamarinios"></a>Xamarin. iOS のアプリケーションアイコン
 
@@ -52,15 +52,15 @@ Xamarin iOS アプリで UI コントロールやドキュメントアイコン�
 
 - **iPhone: iOS 7 & 8**
 
-    ||x 1|2x|
+    ||1x|2x|
     |---|---|---|
     |アプリケーション アイコン|いずれか<sup>1</sup>|120 x 120|
-    |スポットライト|40x40<sup>2</sup>|80 x 80|
+    |スポットライト|40 x 40<sup>2</sup>|80x80|
     |設定|-|-|
 
 - **iPhone: iOS 5 & 6**
 
-    ||x 1|2x|
+    ||1x|2x|
     |---|---|---|
     |アプリケーション アイコン|57 x 57|114x114|
     |スポットライト|29 x 29|58 x 58|
@@ -74,19 +74,19 @@ Xamarin iOS アプリで UI コントロールやドキュメントアイコン�
     |---|---|
     |アプリケーション アイコン|167x167<sup>6</sup>|
     |スポットライト|120x120<sup>6</sup>|
-    |設定|58x58<sup>5</sup>|
+    |設定|58 x 58<sup>5</sup>|
 
 - **iPad: iOS 7 & 8**
 
-    ||x 1|2x|
+    ||1x|2x|
     |---|---|---|
     |アプリケーション アイコン|76 x 76|152x152|
-    |スポットライト|40 x 40|80 x 80|
+    |スポットライト|40 x 40|80x80|
     |設定|-|-|
 
 - **iPad: iOS 5 & 6**
 
-    ||x 1|2x|
+    ||1x|2x|
     |---|---|---|
     |アプリケーション アイコン|72 x 72|144x144|
     |スポットライト|50 x 50|100x100|
@@ -109,7 +109,7 @@ Xamarin iOS アプリで UI コントロールやドキュメントアイコン�
 
 アセットカタログを使用するには、次の手順を実行します。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 1. **ソリューションエクスプローラー**内の `Info.plist` ファイルをダブルクリックして、編集用に開きます。
 2. **[IPhone のアイコン]** セクションまで下にスクロールします。
@@ -129,7 +129,7 @@ Xamarin iOS アプリで UI コントロールやドキュメントアイコン�
 7. **[開く]** ボタンをクリックして、プロジェクトに画像を含め、xcasset に設定します。
 8. 必要なすべてのイメージについて、この手順を繰り返します。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. \* * [情報] をダブルクリックします。  \* ***ソリューションエクスプローラー**内のファイル:
 
@@ -166,7 +166,7 @@ Xamarin iOS アプリで UI コントロールやドキュメントアイコン�
 
 iTunes アートワークは次の手順で指定します。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 1. **ソリューションエクスプローラー**内の `Info.plist` ファイルをダブルクリックして、編集用に開きます。
 2. エディターの**ITunes アートワーク**セクションまでスクロールします。 
@@ -175,7 +175,7 @@ iTunes アートワークは次の手順で指定します。
 3. イメージが見つからない場合は、エディターでサムネイルをクリックし、ファイルを開く ダイアログボックスで目的の iTunes アートワークのイメージファイルを選択して、 **OK** ボタンをクリックします。
 4. アプリに必要なすべてのイメージが指定されるまで、この手順を繰り返します。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. **ソリューションエクスプローラー**内の `Info.plist` ファイルをダブルクリックして、編集用に開きます。
 

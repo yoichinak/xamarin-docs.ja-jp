@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/11/2018
 ms.openlocfilehash: 6c066f89dc8f558a9154138bf38ad4326fe21291
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68642522"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78918181"
 ---
 # <a name="accessing-skiasharp-bitmap-pixel-bits"></a>SkiaSharp のビットマップのピクセル ビットへのアクセス
 
@@ -24,7 +24,7 @@ SkiaSharp ビットマップによって占有されるメモリブロックは�
 
 この記事では、アプリケーションがそれらのピクセルがビットマップのピクセルのメモリ ブロックにアクセスするには、直接かへのアクセスを取得する方法について説明します直接的または間接的にします。 場合によっては、プログラム イメージのピクセルを分析し、何らかのヒストグラムを作成する可能性があります。 一般的には、アプリケーションでは、アルゴリズム、ビットマップを構成するピクセルを作成して一意のイメージを構築できます。
 
-![ピクセル ビット サンプル](pixel-bits-images/PixelBitsSample.png "ピクセル ビット サンプル")
+![ピクセルビットのサンプル](pixel-bits-images/PixelBitsSample.png "ピクセルビットのサンプル")
 
 ## <a name="the-techniques"></a>手法
 
@@ -280,7 +280,7 @@ SKBitmap FillBitmapUintPtrColor(out string description, out int milliseconds)
 }
 ```
 
-唯一の質問は次のとおりです。は、 `SKColor` 色の`SKColorType.Rgba8888`種類、色の種類、またはそれ以外のすべての値の整数形式です。`SKColorType.Bgra8888` その質問に対する回答をすぐに明らかには。
+唯一の質問は次のとおりです。`SKColor` 値の整数形式は、`SKColorType.Rgba8888` の色の種類または `SKColorType.Bgra8888` の色の種類の順序で指定するか、それともまったく別のものですか。 その質問に対する回答をすぐに明らかには。
 
 ### <a name="the-setpixels-method"></a>SetPixels メソッド
 
@@ -294,7 +294,7 @@ bitmap.SetPixels(intPtr);
 
 最初、見えますまるで`SetPixels`以上の能力とよりもパフォーマンスは、`GetPixels`が簡単。 `GetPixels`ビットマップ メモリ ブロックを取得し、アクセスします。 `SetPixels`を割り当てると、メモリの一部にアクセスし、ビットマップ メモリ ブロックとして設定しを実行します。
 
-ただし、 `SetPixels`を使用すると、構文上の利点が明確になります。配列を使用してビットマップピクセルビットにアクセスできます。 ここ、メソッドは、`GradientBitmapPage`この手法を示しています。 メソッドは、まず、ビットマップのピクセルのバイト数に対応する多次元のバイト配列を定義します。 最初の次元は、行、2 番目の次元は、列と各ピクセルの 4 つのコンポーネントの 3 番目の次元は。
+ただし、`SetPixels` を使用すると、構文上の利点が明確になります。配列を使用してビットマップピクセルビットにアクセスできます。 ここ、メソッドは、`GradientBitmapPage`この手法を示しています。 メソッドは、まず、ビットマップのピクセルのバイト数に対応する多次元のバイト配列を定義します。 最初の次元は、行、2 番目の次元は、列と各ピクセルの 4 つのコンポーネントの 3 番目の次元は。
 
 ```csharp
 SKBitmap FillBitmapByteBuffer(out string description, out int milliseconds)
@@ -482,7 +482,7 @@ public class GradientBitmapPage : ContentPage
 
 コンパイラがコードを最適化できるように、このページを実行した**リリース**モード。 MacBook Pro、Nexus 5 Android phone、および Surface Pro 3 の Windows 10 を実行する iPhone 8 シミュレーターで実行されているそのページを次に示します。 ハードウェアの違いにより、デバイス間でパフォーマンスの時間を比較することを回避が各デバイスでの相対的なタイミングで代わりになります。
 
-[![グラデーションのビットマップ](pixel-bits-images/GradientBitmap.png "グラデーション ビットマップ")](pixel-bits-images/GradientBitmap-Large.png#lightbox)
+[![グラデーションビットマップ](pixel-bits-images/GradientBitmap.png "グラデーションビットマップ")](pixel-bits-images/GradientBitmap-Large.png#lightbox)
 
 ここでは、実行時間 (ミリ秒単位) を統合するテーブル。
 
@@ -609,13 +609,13 @@ uint* ptr = basePtr + bitmap.Width * row + col;
 
 `PaintSurface`のハンドラー、`SKCanvasView`ビットマップが表示領域をいっぱいに拡大されます。
 
-[![レインボー サイン](pixel-bits-images/RainbowSine.png "虹サイン")](pixel-bits-images/RainbowSine-Large.png#lightbox)
+[![レインボーサイン](pixel-bits-images/RainbowSine.png "レインボーサイン")](pixel-bits-images/RainbowSine-Large.png#lightbox)
 
 ## <a name="from-one-bitmap-to-another"></a>別の 1 つのビットマップから
 
 非常に多くのイメージ処理タスクには、別に 1 つのビットマップから転送されるピクセルの変更が含まれます。 この手法の説明については、**ドライバーによる色補正**ページ。 ページがビットマップ リソースの 1 つ読み込まれ、3 つを使用してイメージを変更することができますし、`Slider`ビュー。
 
-[![色の調整](pixel-bits-images/ColorAdjustment.png "色の調整")](pixel-bits-images/ColorAdjustment-Large.png#lightbox)
+[![色の調整](pixel-bits-images/ColorAdjustment.png "[ドライバーによる色補正]")](pixel-bits-images/ColorAdjustment-Large.png#lightbox)
 
 各ピクセルの色の最初の`Slider`値を 0 から 360、hue に追加しますを使用して、モジュロ 0 ~ 360 の間の結果を保持する演算子、効果的にシフト スペクトルに沿って色など、UWP のスクリーン ショットを示します)。 2 番目の`Slider`0.5 になり、鮮やかさ、および 3 番目に適用する 2 の間の乗算要素を選択することができます`Slider`Android スクリーン ショットに示すようには、光度のと同じです。
 
@@ -789,7 +789,7 @@ public class PosterizePage : ContentPage
 
 コンス トラクターでコードは、各ピクセルにアクセスする、0xE0E0E0FF、値のビットごとの AND 演算を実行します。 および、ビットマップに戻り、結果を格納します。 0xE0E0E0FF 値は、各色成分の上位 3 ビットを保持し、下位 5 ビットを 0 に設定します。 2 ではなく<sup>24</sup> 16,777, 216 色、ビットマップが 2 に減少または<sup>9</sup>または 512 色。
 
-[![ポスタリゼーション](pixel-bits-images/Posterize.png "ポスタリゼーション")](pixel-bits-images/ポスタリゼーション-Large.png#lightbox)
+[![ポスタリゼーション](pixel-bits-images/Posterize.png "ポスタリゼーション")](pixel-bits-images/Posterize-Large.png#lightbox)
 
 ## <a name="related-links"></a>関連リンク
 

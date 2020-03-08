@@ -8,21 +8,21 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
 ms.openlocfilehash: 06774d13cf053b661dd0b2d24b7df0c0b767b4db
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026411"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78918920"
 ---
 # <a name="working-with-storyboards-in-xamarinmac"></a>Xamarin. Mac でストーリーボードを操作する
 
 ストーリーボードは、特定のアプリのすべての UI を定義し、そのビューコントローラーの機能の概要に分類します。 Xcode の Interface Builder では、各コントローラーが独自のシーンに存在します。
 
-[Xcode の Interface Builder でストーリーボードを![する](indepth-images/intro01.png)](indepth-images/intro01.png#lightbox)
+[Xcode の Interface Builder でストーリーボードを ![する](indepth-images/intro01.png)](indepth-images/intro01.png#lightbox)
 
 ストーリーボードは、コンパイル時および配布時に Xamarin. Mac アプリのバンドルに含まれるリソースファイル (`.storyboard`の拡張機能) です。 アプリの開始ストーリーボードを定義するには、`Info.plist` ファイルを編集し、ドロップダウンボックスから**メインインターフェイス**を選択します。 
 
-[情報エディターの![](indepth-images/sb01.png)](indepth-images/sb01.png#lightbox)
+[情報エディターの ![](indepth-images/sb01.png)](indepth-images/sb01.png#lightbox)
 
 <a name="Loading-from-Code" />
 
@@ -41,11 +41,11 @@ controller.ShowWindow(this);
 
 `FromName` は、アプリのバンドルに含まれている指定された名前のストーリーボードファイルを読み込みます。 `InstantiateControllerWithIdentifier` は、指定された Id を持つビューコントローラーのインスタンスを作成します。 UI をデザインするときに、Xcode の Interface Builder で Id を設定します。
 
-[ストーリーボード ID の設定![](indepth-images/sb02.png)](indepth-images/sb02.png#lightbox)
+[ストーリーボード ID の設定 ![](indepth-images/sb02.png)](indepth-images/sb02.png#lightbox)
 
 必要に応じて、`InstantiateInitialController` メソッドを使用して、Interface Builder で初期コントローラーが割り当てられているビューコントローラーを読み込むことができます。
 
-[初期コントローラーの設定![](indepth-images/sb03.png)](indepth-images/sb03.png#lightbox)
+[初期コントローラーの設定 ![](indepth-images/sb03.png)](indepth-images/sb03.png#lightbox)
 
 これは、**ストーリーボードのエントリポイント**と、上の [終了] 矢印によってマークされます。
 
@@ -76,7 +76,7 @@ MacOS でストーリーボードをサポートするために、いくつか�
 
 さらに、`NSViewControllers` がウィンドウの_応答側チェーン_の一部になりました。
 
-[応答側チェーンの![](indepth-images/vc01.png)](indepth-images/vc01.png#lightbox)
+[応答側チェーンの ![](indepth-images/vc01.png)](indepth-images/vc01.png#lightbox)
 
 また、切り取り、コピー、貼り付けの各メニュー項目の選択などのイベントを受信して応答するように設定されています。 この自動ビューコントローラーのワイヤアップは、macOS Sierra (10.12) 以上で実行されているアプリでのみ発生します。
 
@@ -86,13 +86,13 @@ MacOS でストーリーボードをサポートするために、いくつか�
 
 ストーリーボードでは、ビューコントローラー (分割ビューコントローラーやタブビューコントローラーなど) が_コンテインメント_を実装できるようになりました。これにより、他のサブビューコントローラーを "含める" ことができます。
 
-[ビューコントローラーのコンテインメントの例![](indepth-images/vc02.png)](indepth-images/vc02.png#lightbox)
+[ビューコントローラーのコンテインメントの例 ![](indepth-images/vc02.png)](indepth-images/vc02.png#lightbox)
 
 子ビューコントローラーには、親ビューコントローラーに関連付けたり、画面からビューの表示や削除を行ったりするためのメソッドとプロパティが含まれています。
 
 MacOS に組み込まれているすべてのコンテナービューコントローラーには、独自のカスタムコンテナービューコントローラーを作成する場合に従うことをお勧めする特定のレイアウトがあります。
 
-[ビューコントローラーのレイアウトの![](indepth-images/vc03.png)](indepth-images/vc03.png#lightbox)
+[ビューコントローラーのレイアウトの ![](indepth-images/vc03.png)](indepth-images/vc03.png#lightbox)
 
 コレクションビューコントローラーには、コレクションビューアイテムの配列が含まれており、それぞれに独自のビューを含む1つまたは複数のビューコントローラーが含まれています。
 
@@ -131,7 +131,7 @@ PerformSegue("MyNamedSegue", this);
 
 セグエ ID は、アプリの UI をレイアウトするときに、Xcode の Interface Builder 内で定義されます。
 
-[セグエ名の入力![](indepth-images/sg02.png)](indepth-images/sg02.png#lightbox)
+[セグエ名の入力 ![](indepth-images/sg02.png)](indepth-images/sg02.png#lightbox)
 
 セグエのソースとして動作しているビューコントローラーでは、`PrepareForSegue` メソッドをオーバーライドし、セグエを実行して指定されたビューコントローラーが表示される前に、必要な初期化を行う必要があります。
 
@@ -215,7 +215,7 @@ namespace OnCardMac
 
 この新しいセグエ type を Xcode の Interface Builder で使用するには、まずアプリをコンパイルし、次に Xcode に切り替えて、2つのシーン間に新しいセグエを追加する必要があります。 **スタイル**を**custom**に設定し、**セグエクラス**を `ReplaceViewSegue` (カスタムセグエクラスの名前) に設定します。
 
-[セグエクラスを設定する![](indepth-images/sg01.png)](indepth-images/sg01.png#lightbox)
+[セグエクラスを設定する ![](indepth-images/sg01.png)](indepth-images/sg01.png#lightbox)
 
 <a name="Triggered-Segues" />
 
@@ -271,21 +271,21 @@ MacOS では、次のジェスチャレコグナイザーを利用できます�
 
 1. **ソリューションエクスプローラー**で、プロジェクト名を右クリックし、 **[追加]** [ > **新しいファイル**] [ > **Mac** > **ストーリーボード**] の順に選択します。 新しいストーリーボードの**名前**を入力し、 **[新規]** ボタンをクリックします。 
 
-    [新しいストーリーボードを追加![](indepth-images/ref01.png)](indepth-images/ref01.png#lightbox)
+    [新しいストーリーボードを追加 ![](indepth-images/ref01.png)](indepth-images/ref01.png#lightbox)
 2. **ソリューションエクスプローラー**で、新しいストーリーボードの名前をダブルクリックして、Xcode の Interface Builder で編集するために開きます。
 3. 通常どおりに新しいストーリーボードのシーンのレイアウトをデザインし、変更を保存します。 
 
-    [インターフェイスをデザイン![には](indepth-images/ref02.png)](indepth-images/ref02.png#lightbox)
+    [インターフェイスをデザイン ![には](indepth-images/ref02.png)](indepth-images/ref02.png#lightbox)
 4. Interface Builder に、参照を追加するストーリーボードに切り替えます。
 5. **オブジェクトライブラリ**からデザインサーフェイスに**ストーリーボード参照**をドラッグします。 
 
-    [ライブラリでストーリーボード参照を選択![には](indepth-images/ref03.png)](indepth-images/ref03.png#lightbox)
+    [ライブラリでストーリーボード参照を選択 ![には](indepth-images/ref03.png)](indepth-images/ref03.png#lightbox)
 6. **属性インスペクター**で、上で作成した**ストーリーボード**の名前を選択します。 
 
-    [参照の構成![](indepth-images/ref04.png)](indepth-images/ref04.png#lightbox)
+    [参照の構成 ![](indepth-images/ref04.png)](indepth-images/ref04.png#lightbox)
 7. 既存のシーンで UI ウィジェット (ボタンなど) をコントロールクリックし、作成した**ストーリーボード参照**に新しいセグエを作成します。  ポップアップメニューから **[表示]** を選択して、セグエを完了します。 
 
-    [セグエの種類の設定![](indepth-images/ref06.png)](indepth-images/ref06.png#lightbox) 
+    [セグエの種類の設定 ![](indepth-images/ref06.png)](indepth-images/ref06.png#lightbox) 
 8. ストーリーボードへの変更を保存します。
 9. Visual Studio for Mac に戻り、変更を同期します。
 
@@ -300,20 +300,20 @@ MacOS では、次のジェスチャレコグナイザーを利用できます�
 1. **ソリューションエクスプローラー**で、外部ストーリーボードをダブルクリックして、Xcode の Interface Builder で編集するために開きます。
 2. 次のように、新しいシーンを追加し、そのレイアウトをデザインします。 
 
-    [Xcode でレイアウトをデザインする![](indepth-images/ref07.png)](indepth-images/ref07.png#lightbox)
+    [Xcode でレイアウトをデザインする ![](indepth-images/ref07.png)](indepth-images/ref07.png#lightbox)
 3. **Id インスペクター**で、新しいシーンのウィンドウコントローラーの**ストーリーボード ID**を入力します。 
 
-    [ストーリーボード ID の設定![](indepth-images/ref08.png)](indepth-images/ref08.png#lightbox)
+    [ストーリーボード ID の設定 ![](indepth-images/ref08.png)](indepth-images/ref08.png#lightbox)
 4. Interface Builder に参照を追加するストーリーボードを開きます。
 5. **オブジェクトライブラリ**からデザインサーフェイスに**ストーリーボード参照**をドラッグします。 
 
-    [ライブラリからストーリーボード参照を選択![には](indepth-images/ref03.png)](indepth-images/ref03.png#lightbox)
+    [ライブラリからストーリーボード参照を選択 ![には](indepth-images/ref03.png)](indepth-images/ref03.png#lightbox)
 6. **Id インスペクター**で、前の手順で作成したシーンの**ストーリーボード**の名前と**参照 ID** (ストーリーボード id) を選択します。 
 
-    [参照 ID の設定![](indepth-images/ref09.png)](indepth-images/ref09.png#lightbox)
+    [参照 ID の設定 ![](indepth-images/ref09.png)](indepth-images/ref09.png#lightbox)
 7. 既存のシーンで UI ウィジェット (ボタンなど) をコントロールクリックし、作成した**ストーリーボード参照**に新しいセグエを作成します。 ポップアップメニューから **[表示]** を選択して、セグエを完了します。 
 
-    [セグエの種類の設定![](indepth-images/ref06.png)](indepth-images/ref06.png#lightbox) 
+    [セグエの種類の設定 ![](indepth-images/ref06.png)](indepth-images/ref06.png#lightbox) 
 8. ストーリーボードへの変更を保存します。
 9. Visual Studio for Mac に戻り、変更を同期します。
 
@@ -328,19 +328,19 @@ MacOS では、次のジェスチャレコグナイザーを利用できます�
 1. **ソリューションエクスプローラー**で、ストーリーボードをダブルクリックして開き、編集します。
 2. 次のように、新しいシーンを追加し、そのレイアウトをデザインします。 
 
-    [Xcode でストーリーボードを編集![には](indepth-images/ref11.png)](indepth-images/ref11.png#lightbox)
+    [Xcode でストーリーボードを編集 ![には](indepth-images/ref11.png)](indepth-images/ref11.png#lightbox)
 3. **Id インスペクター**で、新しいシーンのウィンドウコントローラーの**ストーリーボード ID**を入力します。 
 
-    [ストーリーボード ID の設定![](indepth-images/ref12.png)](indepth-images/ref12.png#lightbox)
+    [ストーリーボード ID の設定 ![](indepth-images/ref12.png)](indepth-images/ref12.png#lightbox)
 4. **ツールボックス**からデザインサーフェイスに**ストーリーボード参照**をドラッグします。 
 
-    [ライブラリからストーリーボード参照を選択![には](indepth-images/ref03.png)](indepth-images/ref03.png#lightbox)
+    [ライブラリからストーリーボード参照を選択 ![には](indepth-images/ref03.png)](indepth-images/ref03.png#lightbox)
 5. **属性インスペクター**で、前の手順で作成したシーンの [**参照 ID** (ストーリーボード id)] を選択します。 
 
-    [参照 ID の設定![](indepth-images/ref13.png)](indepth-images/ref13.png#lightbox)
+    [参照 ID の設定 ![](indepth-images/ref13.png)](indepth-images/ref13.png#lightbox)
 6. 既存のシーンで UI ウィジェット (ボタンなど) をコントロールクリックし、作成した**ストーリーボード参照**に新しいセグエを作成します。 ポップアップメニューから **[表示]** を選択して、セグエを完了します。 
 
-    [セグエの種類を選択する![](indepth-images/ref06.png)](indepth-images/ref06.png#lightbox) 
+    [セグエの種類を選択する ![](indepth-images/ref06.png)](indepth-images/ref06.png#lightbox) 
 7. ストーリーボードへの変更を保存します。
 8. Visual Studio for Mac に戻り、変更を同期します。
 

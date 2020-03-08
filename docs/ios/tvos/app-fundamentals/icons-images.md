@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
 ms.openlocfilehash: b1b6d07b221f702b54833bd87161d6abbadbd4e8
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030852"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915797"
 ---
 # <a name="working-with-tvos-icons-and-images-in-xamarin"></a>Xamarin での tvOS アイコンとイメージの操作
 
@@ -38,7 +38,7 @@ ms.locfileid: "73030852"
 
 起動イメージは広告や芸術表現の機会ではなく、アプリがすぐに起動して使用できるようになるという印象を与えるためだけに存在します。
 
-|起動イメージのサイズ|メモ|
+|起動イメージのサイズ|説明|
 |---|---|
 |1920x1080px|階層化していない .png ファイルのみ|
 
@@ -64,7 +64,7 @@ TvOS プロジェクトの起動イメージを設定するには、次の手順
 3. **[1X APPLE TV]** エントリをクリックし、起動イメージを選択するか、またはファイルシステムから新しいイメージをドラッグします。 
 
     [![](icons-images-images/asset03.png "Select a Launch Image")](icons-images-images/asset03.png#lightbox)
-4. 変更内容を保存します。
+4. 変更を [保存] します。
 
 <a name="Layered-Images" />
 
@@ -175,7 +175,7 @@ TvOS プロジェクトに必要なアプリアイコンを設定するには、
 5. [ **1X APPLE TV] エントリ**をクリックし、画像ファイルを選択します。
 6. `Front` と `Middle` アセットに対して上記の手順を繰り返します。
 7. 次に、同じ手順を繰り返して、`App Icon - Large` の資産を定義します。
-8. 変更内容を保存します。
+8. 変更を [保存] します。
 
 <a name="Top-Shelf-Image" />
 
@@ -187,7 +187,7 @@ TvOS プロジェクトに必要なアプリアイコンを設定するには、
 
 一番上の棚の画像は、1つの静的な `.png` または `.lsr` ファイルとして提供するか (「[レイヤーイメージの作成](#Creating-Layered-Images)」を参照)、または実行時にフォーカス可能な項目の単一行として動的に作成することができます (以下の「[動的な上位シェルフコンテンツ](#Dynamic-Top-Shelf-Content)」を参照してください)。
 
-|上部の棚の画像のサイズ|メモ|
+|上部の棚の画像のサイズ|説明|
 |---|---|
 |1920x720px|静的な .png またはレイヤードファイル|
 
@@ -213,7 +213,7 @@ TvOS プロジェクトに必要な最大のシェルフイメージを設定す
 
     [![](icons-images-images/asset07.png "The Top Shelf Image asset")](icons-images-images/asset07.png#lightbox)
 4. [ **1X APPLE TV] エントリ**をクリックし、画像ファイルを選択します。
-5. 変更内容を保存します。
+5. 変更を [保存] します。
 
 <a name="Dynamic-Top-Shelf-Content" />
 
@@ -234,9 +234,9 @@ TvOS プロジェクトに必要な最大のシェルフイメージを設定す
 ||ポスター (2:3)|四角 (1:1)|HDTV (16:9)|
 |---|---|---|---|
 |実際のサイズ|404x608px|608x608px|908x512px|
-|セーフゾーンのサイズ|380x570px|570x570px|852x479 px|
+|セーフゾーンのサイズ|380x570px|570x570px|852x479px|
 |見るサイズ|333x500px|500x500px|782x440px|
-|フォーカスサイズ|380x570px|570x570px|852x479 px|
+|フォーカスサイズ|380x570px|570x570px|852x479px|
 
 Apple では、次の提案されたコンテンツ行に対して次の提案を提供しています。
 
@@ -281,17 +281,17 @@ TvOS アプリがゲームであり、Game Center サポートが含まれてい
 
 ||アチーブメントアイコン|ダッシュボードのアートワーク|ランキングアートワーク|
 |---|---|---|---|
-|表示サイズ|200x200px|923x150 px|N/A|
-|実際のサイズ|320x320px|N/A|659x371px|
-|セーフゾーンのサイズ|N/A|N/A|618x348px|
-|見るサイズ|N/A|N/A|548x309px|
-|フォーカスサイズ|N/A|N/A|618x348px|
+|表示サイズ|200x200px|923x150 px|該当なし|
+|実際のサイズ|320x320px|該当なし|659x371px|
+|セーフゾーンのサイズ|該当なし|該当なし|618x348px|
+|見るサイズ|該当なし|該当なし|548x309px|
+|フォーカスサイズ|該当なし|該当なし|618x348px|
 
 Game Center の操作の詳細については、「Apple の[Game Center プログラミングガイド](https://developer.apple.com/library/prerelease/tvos/documentation/NetworkingInternet/Conceptual/GameKit_Guide/Introduction/Introduction.html)」を参照してください。
 
 <a name="Working-with-Images" />
 
-## <a name="working-with-images"></a>イメージの処理
+## <a name="working-with-images"></a>イメージの操作
 
 TvOS 9 は iOS 9 のサブセットであるため、Xamarin. iOS アプリでのイメージの追加と表示に使用されているものと同じ手法が tvOS アプリでも機能します。 詳細について[は、イメージの表示に](~/ios/app-fundamentals/images-icons/displaying-an-image.md)関するドキュメントを参照してください。
 
@@ -301,7 +301,7 @@ TvOS 9 は iOS 9 のサブセットであるため、Xamarin. iOS アプリで�
 
 前述のように、すべての tvOS アプリには[起動イメージ](#Launch-Image)と[アプリアイコン](#App-Icons)が必要です。 このセクションでは、tvOS App プロジェクトがアセットカタログで設定された後に、そのプロジェクトの起動イメージとアプリアイコンを選択する方法について説明します。
 
-次の手順で行います。
+次を実行します。
 
 1. **ソリューションエクスプローラー**で、`Info.plist` をダブルクリックして開き、編集します。 
 
@@ -310,11 +310,11 @@ TvOS 9 は iOS 9 のサブセットであるため、Xamarin. iOS アプリで�
 
     [![](icons-images-images/info02.png "The Info.Plist Editor")](icons-images-images/info02.png#lightbox)
 3. 次に、**起動イメージ**のアセットカタログ ([[起動イメージの設定](#Setting-the-Launch-Image)] セクションで構成したもの) を選択します。
-4. 変更内容を保存します。
+4. 変更を [保存] します。
 
 <a name="Summary" />
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 この記事では、tvOS アプリで使用されるすべてのイメージの種類とサイズについて説明しました。 まず、起動イメージ、階層化されたイメージ、アプリアイコン、上部の棚イメージ、Game Center イメージについて説明します。 次に、tvOS アプリのイメージの操作について説明します。
 

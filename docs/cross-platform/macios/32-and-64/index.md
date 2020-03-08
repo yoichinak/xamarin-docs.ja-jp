@@ -1,27 +1,27 @@
 ---
 title: 32/64 ビットプラットフォームに関する考慮事項
-description: このドキュメントでは、Xamarin.iOS または Xamarin.Mac アプリケーションの32ビットアーキテクチャと64ビットアーキテクチャを対象とする場合に留意すべきさまざまな考慮事項について説明します。
+description: このドキュメントでは、Xamarin iOS または Xamarin. Mac アプリケーションの32ビットアーキテクチャと64ビットアーキテクチャを対象とする場合に留意すべきさまざまな考慮事項について説明します。
 ms.prod: xamarin
 ms.assetid: F7126340-04B2-4A10-B14D-394E23527C1A
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
 ms.openlocfilehash: 5ba451de857444bc5b12b750ae479b62abdb75a3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016331"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910776"
 ---
 # <a name="3264-bit-platform-considerations"></a>32/64 ビットプラットフォームに関する考慮事項
 
-iOS と macOS は、従来は 32 と 64 ビットの両方のアプリをサポートしていましたが、Apple は、非推奨の 32 ビットサポートを徐々に廃止しています。
+IOS と macOS は、従来は32と64ビットの両方のアプリをサポートしていましたが、Apple は、非推奨の32ビットサポートを徐々に廃止しています。
 
-iOS 11 以降では、32 ビットのアプリは起動されなくなり、[App Store へのすべての送信は 64 ビットをサポートする必要があり](https://developer.apple.com/news/?id=06282017b)ます。
+IOS 11 以降では、32ビットのアプリは起動されなくなり、[アプリストアへのすべての送信は64ビットをサポートする必要があり](https://developer.apple.com/news/?id=06282017b)ます。
 
-2018 年 1 月以降、 [Mac App Store に送信された新しいアプリは 64 ビットをサポートする必要があり](https://developer.apple.com/news/?id=06282017a)、既存のアプリは 2018 年の 6 月までに更新する必要があります。
+2018年1月以降、 [Mac App Store に送信された新しいアプリは64ビットをサポートする必要があり](https://developer.apple.com/news/?id=06282017a)、既存のアプリは6月の2018で更新する必要があります。
 
-Xamarin の Classic API (`XamMac.dll` と `monotouch.dll`) では、32 ビットアプリケーションのみがサポートされていました。 ただし、新しい Xamarin.iOS および Xamarin.Mac アプリケーションでは、既定で [Unified API](~/cross-platform/macios/unified/index.md) (`Xamarin.iOS` と `Xamarin.Mac`) が使用されるため、必要に応じて 32 と 64 ビットの両方をターゲットにすることができます。
+Xamarin の Classic API (`XamMac.dll` と `monotouch.dll`) では、32ビットアプリケーションのみがサポートされていました。 ただし、新しい Xamarin および Xamarin アプリケーションでは、既定で[Unified API](~/cross-platform/macios/unified/index.md) (`Xamarin.iOS` と `Xamarin.Mac`) が使用されるため、必要に応じて32と64ビットの両方を対象にすることができます。
 
 ## <a name="ios"></a>iOS
 
@@ -36,7 +36,7 @@ Unified API に変換された Xamarin の iOS モバイルアプリケーショ
 
 <!-- markdownlint-disable MD001 -->
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 1. **Solution Pad**で、アプリのプロジェクトをダブルクリックして、 **[プロジェクトオプション]** ウィンドウを開きます。
 2. **[IOS ビルド]** を選択します。
@@ -48,10 +48,10 @@ Unified API に変換された Xamarin の iOS モバイルアプリケーショ
 
    [![サポートされているアーキテクチャを ARM64 の組み合わせのいずれかに設定する](Images/Image02.png "サポートされているアーキテクチャを ARM64 の組み合わせのいずれかに設定する")](Images/Image02-large.png#lightbox)
 
-5. **[OK]** をクリックします。
-6. クリーンビルドを実行します。
+5. **[OK]** をクリックすると、
+6. クリーン ビルドを実行します。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. **ソリューションエクスプローラー**で、アプリのプロジェクトを右クリックし、 **[プロパティ]** を選択します。
 2. **[IOS ビルド]** を選択します。
@@ -63,8 +63,8 @@ Unified API に変換された Xamarin の iOS モバイルアプリケーショ
     
    [![サポートされているアーキテクチャを ARM64 の組み合わせのいずれかに設定する](Images/VS01.png "サポートされているアーキテクチャを ARM64 の組み合わせのいずれかに設定する")](Images/VS01-large.png#lightbox)
 
-5. 変更内容を保存します。
-6. クリーンビルドを実行します。
+5. 変更を [保存] します。
+6. クリーン ビルドを実行します。
 
 -----
 

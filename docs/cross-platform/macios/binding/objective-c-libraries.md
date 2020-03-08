@@ -7,11 +7,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/06/2018
 ms.openlocfilehash: 6841e94ad13357c51e6ccf59e35c659dfb9954aa
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016292"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915192"
 ---
 # <a name="binding-objective-c-libraries"></a>バインディングの目的 C ライブラリ
 
@@ -34,14 +34,14 @@ C ライブラリを静的にリンクする方法の詳細については、「
 
 ## <a name="getting-started"></a>作業の開始
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 バインディングを作成する最も簡単な方法は、Xamarin の iOS バインドプロジェクトを作成することです。
 これを行うには、プロジェクトの種類、 **iOS > ライブラリ > バインドライブラリ** の順に選択し Visual Studio for Mac します。
 
 [![](objective-c-libraries-images/00-sml.png "Do this from Visual Studio for Mac by selecting the project type, iOS Library Bindings Library")](objective-c-libraries-images/00.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 バインディングを作成する最も簡単な方法は、Xamarin の iOS バインドプロジェクトを作成することです。
 これを行うには、Windows の Visual Studio で、プロジェクトの種類、 **[ C# visual > IOS > バインドライブラリ (ios)]** の順に選択します。
@@ -169,7 +169,7 @@ API 定義ファイルは、さまざまなインターフェイスで構成さ�
 
 最も簡単なバインドは、メソッドをバインドすることです。 C#名前付け規則を使用してインターフェイスのメソッドを宣言し、メソッドを[`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)で修飾するだけです。
 属性. [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute)属性は、Xamarin. iOS C#ランタイムの名前と目的の C 名をリンクします。 のパラメーター [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) 
-属性は、目的の C セレクターの名前です。 以下に、いくつかの例を示します。
+属性は、目的の C セレクターの名前です。 次に例をいくつか示します。
 
 ```csharp
 // A method, that takes no arguments
@@ -779,7 +779,7 @@ interface MyUIViewExtension {
 }
 ```
 
-上の例では、`MakeBackgroundRed` 拡張メソッドを含むクラス `MyUIViewExtension` を作成します。  これにより、任意の `UIView` サブクラスで "MakeBackgroundRed" を呼び出すことができるようになりました。これにより、目的の C でも同じ機能が得られます。 場合によっては、カテゴリを使用してシステムクラスを拡張するのではなく、装飾のために機能を整理します。  以下に例を示します。
+上の例では、`MakeBackgroundRed` 拡張メソッドを含むクラス `MyUIViewExtension` を作成します。  これにより、任意の `UIView` サブクラスで "MakeBackgroundRed" を呼び出すことができるようになりました。これにより、目的の C でも同じ機能が得られます。 場合によっては、カテゴリを使用してシステムクラスを拡張するのではなく、装飾のために機能を整理します。  例:
 
 ```csharp
 @interface SocialNetworking (Twitter)
@@ -1041,7 +1041,7 @@ interface XyzPanel {
 |`GLint`|`nint`|
 |`GLfloat`|`nfloat`|
 |Foundation 型 (`NS*`)|`Foundation.NS*`|
-|`id`|`Foundation`.`NSObject`|
+|`id`|`Foundation`」を参照してください。`NSObject`|
 |`NSGlyph`|`nint`|
 |`NSSize`|`CGSize`|
 |`NSTextAlignment`|`UITextAlignment`|
@@ -1197,7 +1197,7 @@ void SomeString (ref NSObject byref);
 
 上の例では、値に "Retain" セマンティクスがあるとしてフラグが付けられています。 使用できるセマンティクスは次のとおりです。
 
-- Assign
+- 割り当て
 - コピー
 - 保持
 

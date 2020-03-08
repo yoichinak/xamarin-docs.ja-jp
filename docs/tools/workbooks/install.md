@@ -7,27 +7,27 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/19/2018
 ms.openlocfilehash: 92b08a9cfd725c1114b71fad4f29e6f28cd828b3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029629"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78914378"
 ---
 # <a name="workbooks-installation-and-requirements"></a>ブックのインストールと要件
 
 <a name="install" />
 
-## <a name="download-and-install"></a>ダウンロードしてインストールする
+## <a name="download-and-install"></a>ダウンロードおよびインストールする
 
 <!-- markdownlint-disable MD001 -->
 
-# <a name="windowstabwindows"></a>[Windows](#tab/windows)
+# <a name="windows"></a>[Windows](#tab/windows)
 
 1. 以下の[要件](#requirements)を確認してください。
 2. [Windows 用の Xamarin Workbooks を](https://dl.xamarin.com/interactive/XamarinInteractive.msi)ダウンロードしてインストールします。
 3. ブックでの[再生](~/tools/workbooks/workbook.md)を開始します。
 
-# <a name="macostabmacos"></a>[macOS](#tab/macos)
+# <a name="macos"></a>[macOS](#tab/macos)
 
 1. 以下の[要件](#requirements)を確認してください。
 2. [Mac 用の Xamarin Workbooks を](https://dl.xamarin.com/interactive/XamarinInteractive.pkg)ダウンロードしてインストールします。
@@ -35,16 +35,16 @@ ms.locfileid: "73029629"
 
 -----
 
-## <a name="requirements"></a>［要件］
+## <a name="requirements"></a>要件
 
-#### <a name="supported-operating-systems"></a>Supported Operating Systems
+#### <a name="supported-operating-systems"></a>サポートされるオペレーティング システム
 
 - **Mac** -OS X 10.11 以上
 - **Windows** -windows 7 以降 (Internet Explorer 11 以降および .net 4.6.1 以上)
 
 #### <a name="supported-app-platforms"></a>サポートされているアプリプラットフォーム
 
-|アプリのプラットフォーム|OS のサポート|ノート|
+|アプリ プラットフォーム|OS のサポート|説明|
 |--- |--- |--- |
 |Mac|Mac でのみサポートされています|
 |iOS|Mac および Windows でサポートされています|Mac には、Xamarin iOS 11.0 と Xcode 9.0 以降をインストールする必要があります。 Windows で iOS ブックを実行するには、上記のすべてを実行している Mac ビルドホストと、Windows にインストールされている[リモート Ios シミュレーター](~/tools/ios-simulator/index.md)が必要です。|
@@ -53,7 +53,7 @@ ms.locfileid: "73029629"
 |コンソール (.NET Framework)|Mac および Windows でサポートされています|
 |コンソール (.NET Core)|Mac および Windows でサポートされています|
 
-## <a name="reporting-bugs"></a>バグの報告
+## <a name="reporting-bugs"></a>バグのレポート
 
 [GitHub で問題を報告][bugs]し、次の情報をすべて含めるようにしてください。
 
@@ -93,7 +93,7 @@ Visual Studio
 - **Visual Studio > コピー情報の > に関するヘルプ**
 - オペレーティングシステムのバージョンと、32ビットまたは64ビットの Windows を実行しているかどうかをお知らせください。
 
-### <a name="samples"></a>サンプル
+### <a name="samples"></a>Samples
 
 問題が発生している**ブック**ファイルに添付またはリンクできる場合は、バグの迅速な解決に役立つことがあります。
 
@@ -112,7 +112,7 @@ IOS または Android ブックの接続に問題があり、[トラブルシュ
 
 [bugs]: https://github.com/Microsoft/workbooks/issues/new
 
-## <a name="uninstall"></a>[アンインストール]
+## <a name="uninstall"></a>アンインストール
 
 ### <a name="windows"></a>Windows
 

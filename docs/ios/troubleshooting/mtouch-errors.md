@@ -9,11 +9,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/06/2018
 ms.openlocfilehash: a26c83565e4cfa64272549e12a35206dff6ec3c0
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76940959"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78911556"
 ---
 # <a name="xamarinios-errors"></a>Xamarin. iOS エラー
 
@@ -420,7 +420,7 @@ Xamarin では、配置ターゲットが8.0 以上の場合にのみ、埋め�
 
 <a name="MT0071" />
 
-### <a name="mt0071-unknown-platform--this-usually-indicates-a-bug-in-xamarinios-please-file-a-bug-report-at-httpbugzillaxamarincom-with-a-test-case"></a>MT0071: 不明なプラットフォーム: *。 これは通常 Xamarin.iOS; のバグを示しますバグ報告を送信してください http://bugzilla.xamarin.com とテスト_ケースをします。
+### <a name="mt0071-unknown-platform--this-usually-indicates-a-bug-in-xamarinios-please-file-a-bug-report-at-httpbugzillaxamarincom-with-a-test-case"></a>MT0071: 不明なプラットフォーム: *。 これは通常、Xamarin のバグであることを示します。テストケースがある http://bugzilla.xamarin.com でバグレポートをファイルに登録してください。
 
 これは通常、Xamarin のバグであることを示します。テストケースを使用して、 [github](https://github.com/xamarin/xamarin-macios/issues/new)で新しい問題を報告してください。
 
@@ -557,7 +557,7 @@ Xamarin iOS では、エラーメッセージに示されている SDK バージ
 
 <a name="MT0099" />
 
-### <a name="mt0099-internal-error--please-file-a-bug-report-with-a-test-case-httpsbugzillaxamarincom"></a>MT0099: 内部エラー *。 テストケース (https://bugzilla.xamarin.com) を含むバグレポートをファイルに登録してください。
+### <a name="mt0099-internal-error--please-file-a-bug-report-with-a-test-case-httpsbugzillaxamarincom"></a>MT0099: 内部エラー *。 テストケース (https://bugzilla.xamarin.com)を含むバグレポートをファイルに登録してください。
 
 このエラーメッセージは、Xamarin の内部整合性チェックに失敗した場合に報告されます。
 
@@ -565,7 +565,7 @@ Xamarin iOS では、エラーメッセージに示されている SDK バージ
 
 <a name="MT0100" />
 
-### <a name="mt0100-invalid-assembly-build-target--please-file-a-bug-report-with-a-test-case-httpsbugzillaxamarincom"></a>MT0100: アセンブリビルドターゲットが無効です: ' * '。 テストケース (https://bugzilla.xamarin.com) を含むバグレポートをファイルに登録してください。
+### <a name="mt0100-invalid-assembly-build-target--please-file-a-bug-report-with-a-test-case-httpsbugzillaxamarincom"></a>MT0100: アセンブリビルドターゲットが無効です: ' * '。 テストケース (https://bugzilla.xamarin.com)を含むバグレポートをファイルに登録してください。
 
 このエラーメッセージは、Xamarin の内部整合性チェックに失敗した場合に報告されます。
 
@@ -583,7 +583,7 @@ Xamarin iOS では、エラーメッセージに示されている SDK バージ
 
 エラーメッセージに示されているアセンブリのビルドターゲットが競合しています。
 
-例:
+例 :
 
 ```
   --assembly-build-target:Assembly1.dll=framework=MyBinary --assembly-build-target:Assembly2.dll=dynamiclibrary=MyBinary
@@ -597,7 +597,7 @@ Xamarin iOS では、エラーメッセージに示されている SDK バージ
 
 エラーメッセージに示されているアセンブリはすべて、1つの静的オブジェクトにコンパイルされます。 これは許可されていません。すべてのアセンブリを別の静的オブジェクトにコンパイルする必要があります。
 
-例:
+例 :
 
 ```
 --assembly-build-target:Assembly1.dll=staticobject=MyBinary --assembly-build-target:Assembly2.dll=staticobject=MyBinary
@@ -937,7 +937,7 @@ sudo chmod 0644 /Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/m
 
 <a name="MT1013" />
 
-### <a name="mt1013-dependency-tracking-error-no-files-to-compare-please-file-a-bug-report-at-httpbugzillaxamarincom-with-a-test-case"></a>MT1013: 依存関係の追跡エラー: 比較するファイルがありません。 バグ報告を送信してください http://bugzilla.xamarin.com とテスト_ケースをします。
+### <a name="mt1013-dependency-tracking-error-no-files-to-compare-please-file-a-bug-report-at-httpbugzillaxamarincom-with-a-test-case"></a>MT1013: 依存関係の追跡エラー: 比較するファイルがありません。 テストケースがある http://bugzilla.xamarin.com でバグレポートをファイルに登録してください。
 
 これは、Xamarin. iOS のバグを示しています。 テストケースを使用して、 [github](https://github.com/xamarin/xamarin-macios/issues/new)で新しい問題を報告してください。
 
@@ -971,7 +971,7 @@ sudo chmod 0644 /Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/m
 
 ### <a name="mt1019-your-application-has-entitlements-not-supported-by-your-current-provisioning-profile-and-could-not-be-installed-on-the-device--please-check-the-ios-device-log-for-more-detailed-information-error-0xe8008016"></a>MT1019: アプリケーションは現在のプロビジョニングプロファイルでサポートされていない権利を持っているため、デバイス ' * ' にインストールできませんでした。 詳細については、iOS デバイスログを確認してください (エラー: 0xe8008016)。
 
-これは、次の場合に発生する可能性があります。
+これは次の場合に発生する可能性があります。
 
 - アプリケーションには、現在のプロビジョニングプロファイルでサポートされていない権限があります。
   考えられる解決策:
@@ -1143,7 +1143,7 @@ Xcode 7 以降を使用して、6.0 未満の iOS バージョンのデバイス
 
 デバイスがロックされているかどうかを確認してください。
 
-信頼開発者の場合は、エンタープライズ アプリケーションを配置するか、無料のプロビジョニング プロファイルを使用する必要があります (詳細については <a href="https://stackoverflow.com/a/30726375/183422">ここ</a> )。
+エンタープライズアプリをデプロイしている場合や、無料プロビジョニングプロファイルを使用している場合は、開発者を信頼している可能性があります (これについては<a href="https://stackoverflow.com/a/30726375/183422">ここで</a>説明します)。
 
 <a name="MT1108" />
 
@@ -1163,7 +1163,7 @@ Mtouch からのいくつかの操作では、`DeveloperDiskImage.dmg` ファイ
 
 ### <a name="mt1110-application-failed-to-launch-because-of-ios-security-restrictions-please-ensure-the-developer-is-trusted"></a>MT1110: iOS のセキュリティ制限により、アプリケーションを起動できませんでした。 開発者が信頼されていることを確認してください。
 
-信頼開発者の場合は、エンタープライズ アプリケーションを配置するか、無料のプロビジョニング プロファイルを使用する必要があります (詳細については <a href="https://stackoverflow.com/a/30726375/183422">ここ</a> )。
+エンタープライズアプリをデプロイしている場合や、無料プロビジョニングプロファイルを使用している場合は、開発者を信頼している可能性があります (これについては<a href="https://stackoverflow.com/a/30726375/183422">ここで</a>説明します)。
 
 <a name="MT1111" />
 
@@ -1532,7 +1532,7 @@ Parameter name: instruction
 
 <a name="MT2006" />
 
-### <a name="mt2006-can-not-load-mscorlibdll-from--please-reinstall-xamarinios"></a>MT2006: * から mscorlib.dll を読み込むことはできません。 Please reinstall Xamarin.iOS.
+### <a name="mt2006-can-not-load-mscorlibdll-from--please-reinstall-xamarinios"></a>MT2006: * から mscorlib.dll を読み込むことはできません。 Xamarin. iOS を再インストールしてください。
 
 これは、通常、Xamarin の iOS のインストールに問題があることを示しています。 Xamarin. iOS を再インストールしてみてください。
 
@@ -1609,7 +1609,7 @@ Parameter name: instruction
 
 ユーザーリソースを削除しようとしたときに予期しない問題が発生しました。 問題の原因となっているアセンブリの名前は、エラーメッセージで示されます。 この問題を解決するには、 [github](https://github.com/xamarin/xamarin-macios/issues/new)の新しい問題にアセンブリを提供し、詳細を有効にした完全なビルドログ (**追加の mtouch 引数**に `-v -v -v -v`) を指定する必要があります。
 
-ユーザーリソースは、アプリケーションバンドルを作成するために、ビルド時に抽出する必要があるアセンブリ (リソースとして) 内に含まれるファイルです。 バインディングには、以下の項目が含まれます。
+ユーザーリソースは、アプリケーションバンドルを作成するために、ビルド時に抽出する必要があるアセンブリ (リソースとして) 内に含まれるファイルです。 これには次のものが含まれます
 
 - リソースの `__monotouch_content_*` と `__monotouch_pages_*`そして
 - バインドアセンブリ内に埋め込まれたネイティブライブラリ。
@@ -1618,13 +1618,13 @@ Parameter name: instruction
 
 ### <a name="mt2040-default-httpmessagehandler-setter-failed-processing-"></a>MT2040: 既定の HttpMessageHandler setter は `...`を処理できませんでした。
 
-アプリケーションの既定の `HttpMessageHandler` を設定しようとしたときに、予期しない問題が発生しました。 詳細が有効になっている完全なビルドログ (**追加の mtouch 引数**の `-v -v -v -v` など) を使用して、[github](https://github.com/xamarin/xamarin-macios/issues/new) で新しい問題を作成してください。
+アプリケーションの既定の `HttpMessageHandler` を設定しようとしたときに、予期しない問題が発生しました。 詳細が有効になっている完全なビルドログ (たとえば、**追加の mtouch 引数**に `-v -v -v -v`) と共に、 [github](https://github.com/xamarin/xamarin-macios/issues/new)で新しい問題を作成してください。
 
 <a name="MT2050" />
 
 ### <a name="mt2050-code-remover-failed-processing-"></a>MT2050: Code 人で `...`を処理できませんでした。
 
-アプリケーションで BCL 配布からコードを削除しようとしたときに、予期しない問題が発生しました。 詳細が有効になっている完全なビルドログ (**追加の mtouch 引数**の `-v -v -v -v` など) を使用して、[github](https://github.com/xamarin/xamarin-macios/issues/new) で新しい問題を作成してください。
+アプリケーションで BCL 配布からコードを削除しようとしたときに、予期しない問題が発生しました。 詳細が有効になっている完全なビルドログ (たとえば、**追加の mtouch 引数**に `-v -v -v -v`) と共に、 [github](https://github.com/xamarin/xamarin-macios/issues/new)で新しい問題を作成してください。
 
 <a name="MT2060" />
 
@@ -1690,7 +1690,7 @@ Parameter name: instruction
 
 混合モードのアセンブリは、リンカーでは処理できません。
 
-参照してください https://docs.microsoft.com/cpp/dotnet/mixed-native-and-managed-assemblies 混合モード アセンブリの詳細についてはします。
+混合モードのアセンブリの詳細については、「 https://docs.microsoft.com/cpp/dotnet/mixed-native-and-managed-assemblies」を参照してください。
 
 ## <a name="mt3xxx-aot-error-messages"></a>MT3xxx: AOT エラーメッセージ
 
@@ -1709,7 +1709,7 @@ Parameter name: instruction
 
 <a name="MT3002" />
 
-### <a name="mt3002-aot-restriction-method--must-be-static-since-it-is-decorated-with-monopinvokecallback-see-developerxamarincomguidesiosadvanced_topicslimitationsreverse_callbacksiosinternalslimitationsmdreverse-callbacks"></a>MT3002: AOT 制限: メソッド ' * ' は、[MonoPInvokeCallback] で修飾されているため、静的である必要があります。 Developer.xamarin.com/guides/ios/advanced_topics/limitations/を参照してください[#Reverse_Callbacks](~/ios/internals/limitations.md#reverse-callbacks)
+### <a name="mt3002-aot-restriction-method--must-be-static-since-it-is-decorated-with-monopinvokecallback-see-developerxamarincomguidesiosadvanced_topicslimitationsreverse_callbacks"></a>MT3002: AOT 制限: メソッド ' * ' は、[MonoPInvokeCallback] で修飾されているため、静的である必要があります。 Developer.xamarin.com/guides/ios/advanced_topics/limitations/を参照してください[#Reverse_Callbacks](~/ios/internals/limitations.md#reverse-callbacks)
 
 このエラーメッセージは AOT コンパイラからのものです。
 
@@ -1789,7 +1789,7 @@ Xamarin では、問題の種類をサポートする必要がある場合は、
 
 <a name="MT4102" />
 
-### <a name="mt4102-the-registrar-found-an-invalid-type--in-signature-for-method--use--instead"></a>MT4102: レジストラーは、メソッド `*`のシグネチャに無効な型 `*` を検出しました。 代わりに、 `*` を使用してください。
+### <a name="mt4102-the-registrar-found-an-invalid-type--in-signature-for-method--use--instead"></a>MT4102: レジストラーは、メソッド `*`のシグネチャに無効な型 `*` を検出しました。 代わりに `*` を使用してください
 
 現在は、1つの型 (system.string) でのみ発生します。 代わりに、目的の C と同等の (NSDate) を使用してください。
 
@@ -1855,7 +1855,7 @@ Xamarin では、問題の種類をサポートする必要がある場合は、
 
 <a name="MT4112" />
 
-### <a name="mt4112-the-registrar-found-an-invalid-type--registering-generic-types-with-objective-c-is-not-supported-and-may-lead-to-random-behavior-andor-crashes-for-backwards-compatibility-with-older-versions-of-xamarinios-it-is-possible-to-ignore-this-error-by-passing---unsupported--enable-generics-in-registrar-as-an-additional-mtouch-argument-in-the-projects-ios-build-options-page-see-developerxamarincomguidesiosadvanced_topicsregistrariosinternalsregistrarmd-for-more-information"></a>MT4112: レジストラーで `*`無効な型が見つかりました。 旧バージョンの Xamarin との下位互換性を確保するために、ジェネリック型を目的の C に登録することはサポートされていません。また、(以前のバージョンの Xamarin との下位互換性のために) クラッシュする可能性があります。 iOS では、この `--unsupported--enable-generics-in-registrar` エラーを無視することができます。 詳細については、「 [developer.xamarin.com/guides/ios/advanced_topics/registrar](~/ios/internals/registrar.md) 」を参照してください)。
+### <a name="mt4112-the-registrar-found-an-invalid-type--registering-generic-types-with-objective-c-is-not-supported-and-may-lead-to-random-behavior-andor-crashes-for-backwards-compatibility-with-older-versions-of-xamarinios-it-is-possible-to-ignore-this-error-by-passing---unsupported--enable-generics-in-registrar-as-an-additional-mtouch-argument-in-the-projects-ios-build-options-page-see-developerxamarincomguidesiosadvanced_topicsregistrar-for-more-information"></a>MT4112: レジストラーで `*`無効な型が見つかりました。 旧バージョンの Xamarin との下位互換性を確保するために、ジェネリック型を目的の C に登録することはサポートされていません。また、(以前のバージョンの Xamarin との下位互換性のために) クラッシュする可能性があります。 iOS では、この `--unsupported--enable-generics-in-registrar` エラーを無視することができます。 詳細については、「 [developer.xamarin.com/guides/ios/advanced_topics/registrar](~/ios/internals/registrar.md) 」を参照してください)。
 
 <a name="MT4113" />
 
@@ -2019,7 +2019,7 @@ class MyCustomNSObject : MyNSObject
 
 <a name="MT4144" />
 
-### <a name="mt4144-cannot-register-the-method--since-it-does-not-have-an-associated-trampoline-please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT4144: メソッド ' * ' は、関連付けられている trampoline がないため、登録できません。 バグ報告を送信してください http://bugzilla.xamarin.com です。
+### <a name="mt4144-cannot-register-the-method--since-it-does-not-have-an-associated-trampoline-please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT4144: メソッド ' * ' は、関連付けられている trampoline がないため、登録できません。 http://bugzilla.xamarin.comでバグレポートをファイルに登録してください。
 
 これは、Xamarin. iOS のバグを示しています。 [Github](https://github.com/xamarin/xamarin-macios/issues/new)で新しい問題を報告してください。
 
@@ -2350,7 +2350,7 @@ BindAs 属性の型が、それがアタッチされているメンバーの型�
 
 ### <a name="mt5214-native-linking-failed-undefined-symbol--this-symbol-was-referenced-the-managed-member--please-verify-that-all-the-necessary-frameworks-have-been-referenced-and-native-libraries-linked"></a>MT5214: ネイティブリンクに失敗しました。未定義のシンボル: *。 このシンボルはマネージドメンバー * を参照しました。 必要なすべてのフレームワークが参照されていて、ネイティブライブラリがリンクされていることを確認してください。
 
-このエラーは、マネージコードに、存在しないネイティブメソッドへの P/Invoke が含まれている場合に報告されます。 例:
+このエラーは、マネージコードに、存在しないネイティブメソッドへの P/Invoke が含まれている場合に報告されます。 例 :
 
 ```csharp
 using System.Runtime.InteropServices;
@@ -2771,152 +2771,152 @@ class MyImports {
 
 ### <a name="mt7045-unrecognized-format-"></a>MT7045: 認識できない形式です: *。
 
-*MSBuild task: PropertyListEditorTaskBase*
+*MSBuild タスク: PropertyListEditorTaskBase*
 
 ここで * は次のようになります。
 
 - string
-- アレイ
-- dict
-- ブール
-- 実数
-- 整数
+- array
+- かつ
+- bool
+- real
+- 整数 (integer)
 - date
-- データ
+- data
 
 <a name="MT7046" />
 
 ### <a name="mt7046-add-entry--incorrectly-specified"></a>MT7046: Add: Entry、*、正しく指定されていません。
 
-*MSBuild task: PropertyListEditorTaskBase*
+*MSBuild タスク: PropertyListEditorTaskBase*
 
 <a name="MT7047" />
 
-### <a name="mt7047-add-entry--contains-invalid-array-index"></a>MT7047: Add: Entry, *, Contains Invalid Array Index.
+### <a name="mt7047-add-entry--contains-invalid-array-index"></a>MT7047: Add: Entry, *, に無効な配列インデックスが含まれています。
 
-*MSBuild task: PropertyListEditorTaskBase*
+*MSBuild タスク: PropertyListEditorTaskBase*
 
 <a name="MT7048" />
 
-### <a name="mt7048-add--entry-already-exists"></a>MT7048: Add: * Entry Already Exists.
+### <a name="mt7048-add--entry-already-exists"></a>MT7048: Add: * エントリは既に存在します。
 
-*MSBuild task: PropertyListEditorTaskBase*
+*MSBuild タスク: PropertyListEditorTaskBase*
 
 <a name="MT7049" />
 
-### <a name="mt7049-add-cant-add-entry--to-parent"></a>MT7049: Add: Can't Add Entry, *, to Parent.
+### <a name="mt7049-add-cant-add-entry--to-parent"></a>MT7049: Add: 親にエントリ * を追加できません。
 
-*MSBuild task: PropertyListEditorTaskBase*
+*MSBuild タスク: PropertyListEditorTaskBase*
 
 <a name="MT7050" />
 
-### <a name="mt7050-delete-cant-delete-entry--from-parent"></a>MT7050: Delete: Can't Delete Entry, *, from Parent.
+### <a name="mt7050-delete-cant-delete-entry--from-parent"></a>MT7050: Delete: 親からエントリ * を削除できません。
 
-*MSBuild task: PropertyListEditorTaskBase*
+*MSBuild タスク: PropertyListEditorTaskBase*
 
 <a name="MT7051" />
 
-### <a name="mt7051-delete-entry--contains-invalid-array-index"></a>MT7051: Delete: Entry, *, Contains Invalid Array Index.
+### <a name="mt7051-delete-entry--contains-invalid-array-index"></a>MT7051: Delete: Entry, *, に無効な配列インデックスが含まれています。
 
-*MSBuild task: PropertyListEditorTaskBase*
+*MSBuild タスク: PropertyListEditorTaskBase*
 
 <a name="MT7052" />
 
-### <a name="mt7052-delete-entry--does-not-exist"></a>MT7052: Delete: Entry, *, Does Not Exist.
+### <a name="mt7052-delete-entry--does-not-exist"></a>MT7052: Delete: Entry、*、は存在しません。
 
-*MSBuild task: PropertyListEditorTaskBase*
+*MSBuild タスク: PropertyListEditorTaskBase*
 
 <a name="MT7053" />
 
-### <a name="mt7053-import-entry--incorrectly-specified"></a>MT7053: Import: Entry, *, Incorrectly Specified.
+### <a name="mt7053-import-entry--incorrectly-specified"></a>MT7053: Import: Entry、*、正しく指定されていません。
 
-*MSBuild task: PropertyListEditorTaskBase*
+*MSBuild タスク: PropertyListEditorTaskBase*
 
 <a name="MT7054" />
 
-### <a name="mt7054-import-entry--contains-invalid-array-index"></a>MT7054: Import: Entry, *, Contains Invalid Array Index.
+### <a name="mt7054-import-entry--contains-invalid-array-index"></a>MT7054: Import: Entry, *, に無効な配列インデックスが含まれています。
 
-*MSBuild task: PropertyListEditorTaskBase*
+*MSBuild タスク: PropertyListEditorTaskBase*
 
 <a name="MT7055" />
 
-### <a name="mt7055-import-error-reading-file-"></a>MT7055: Import: Error Reading File: *.
+### <a name="mt7055-import-error-reading-file-"></a>MT7055: Import: ファイルの読み取り中にエラーが発生します: *。
 
-*MSBuild task: PropertyListEditorTaskBase*
+*MSBuild タスク: PropertyListEditorTaskBase*
 
 <a name="MT7056" />
 
-### <a name="mt7056-import-cant-add-entry--to-parent"></a>MT7056: Import: Can't Add Entry, *, to Parent.
+### <a name="mt7056-import-cant-add-entry--to-parent"></a>MT7056: Import: 親にエントリ * を追加できません。
 
-*MSBuild task: PropertyListEditorTaskBase*
+*MSBuild タスク: PropertyListEditorTaskBase*
 
 <a name="MT7057" />
 
-### <a name="mt7057-merge-cant-add-array-entries-to-dict"></a>MT7057: Merge: Can't Add array Entries to dict.
+### <a name="mt7057-merge-cant-add-array-entries-to-dict"></a>MT7057: Merge: 辞書に配列のエントリを追加することはできません。
 
-*MSBuild task: PropertyListEditorTaskBase*
+*MSBuild タスク: PropertyListEditorTaskBase*
 
 <a name="MT7058" />
 
-### <a name="mt7058-merge-specified-entry-must-be-a-container"></a>MT7058: Merge: Specified Entry Must Be a Container.
+### <a name="mt7058-merge-specified-entry-must-be-a-container"></a>MT7058: Merge: 指定されたエントリはコンテナーである必要があります。
 
-*MSBuild task: PropertyListEditorTaskBase*
+*MSBuild タスク: PropertyListEditorTaskBase*
 
 <a name="MT7059" />
 
-### <a name="mt7059-merge-entry--contains-invalid-array-index"></a>MT7059: Merge: Entry, *, Contains Invalid Array Index.
+### <a name="mt7059-merge-entry--contains-invalid-array-index"></a>MT7059: Merge: Entry, * に無効な配列インデックスが含まれています。
 
-*MSBuild task: PropertyListEditorTaskBase*
+*MSBuild タスク: PropertyListEditorTaskBase*
 
 <a name="MT7060" />
 
-### <a name="mt7060-merge-entry--does-not-exist"></a>MT7060: Merge: Entry, *, Does Not Exist.
+### <a name="mt7060-merge-entry--does-not-exist"></a>MT7060: Merge: Entry, *, は存在しません。
 
-*MSBuild task: PropertyListEditorTaskBase*
+*MSBuild タスク: PropertyListEditorTaskBase*
 
 <a name="MT7061" />
 
-### <a name="mt7061-merge-error-reading-file-"></a>MT7061: Merge: Error Reading File: *.
+### <a name="mt7061-merge-error-reading-file-"></a>MT7061: Merge: ファイルの読み取り中にエラーが発生します: *。
 
-*MSBuild task: PropertyListEditorTaskBase*
+*MSBuild タスク: PropertyListEditorTaskBase*
 
 <a name="MT7062" />
 
-### <a name="mt7062-set-entry--incorrectly-specified"></a>MT7062: Set: Entry, *, Incorrectly Specified.
+### <a name="mt7062-set-entry--incorrectly-specified"></a>MT7062: Set: Entry、*、正しく指定されていません。
 
-*MSBuild task: PropertyListEditorTaskBase*
+*MSBuild タスク: PropertyListEditorTaskBase*
 
 <a name="MT7063" />
 
-### <a name="mt7063-set-entry--contains-invalid-array-index"></a>MT7063: Set: Entry, *, Contains Invalid Array Index.
+### <a name="mt7063-set-entry--contains-invalid-array-index"></a>MT7063: Set: Entry, * に無効な配列インデックスが含まれています。
 
-*MSBuild task: PropertyListEditorTaskBase*
+*MSBuild タスク: PropertyListEditorTaskBase*
 
 <a name="MT7064" />
 
-### <a name="mt7064-set-entry--does-not-exist"></a>MT7064: Set: Entry, *, Does Not Exist.
+### <a name="mt7064-set-entry--does-not-exist"></a>MT7064: Set: Entry, *, は存在しません。
 
-*MSBuild task: PropertyListEditorTaskBase*
+*MSBuild タスク: PropertyListEditorTaskBase*
 
 <a name="MT7065" />
 
-### <a name="mt7065-unknown-propertylist-editor-action-"></a>MT7065: Unknown PropertyList editor action: *.
+### <a name="mt7065-unknown-propertylist-editor-action-"></a>MT7065: 不明な PropertyList エディターアクション: *。
 
-*MSBuild task: PropertyListEditorTaskBase*
+*MSBuild タスク: PropertyListEditorTaskBase*
 
 <a name="MT7066" />
 
-### <a name="mt7066-error-loading--"></a>MT7066: Error loading '*': *.
+### <a name="mt7066-error-loading--"></a>MT7066: ' * ' の読み込み中にエラーが発生しています: *。
 
-*MSBuild task: PropertyListEditorTaskBase*
+*MSBuild タスク: PropertyListEditorTaskBase*
 
 <a name="MT7067" />
 
-### <a name="mt7067-error-saving--"></a>MT7067: Error saving '*': *.
+### <a name="mt7067-error-saving--"></a>MT7067: ' * ' を保存中にエラーが発生しています: *。
 
-*MSBuild task: PropertyListEditorTaskBase*
+*MSBuild タスク: PropertyListEditorTaskBase*
 
-## <a name="mt8xxx-runtime-error-messages"></a>MT8xxx: Runtime error messages
+## <a name="mt8xxx-runtime-error-messages"></a>MT8xxx: ランタイムエラーメッセージ
 
 <!--
  MT8xxx runtime
@@ -2925,61 +2925,61 @@ class MyImports {
 
 <a name="MT8001" />
 
-### <a name="mt8001-version-mismatch-between-the-native-xamarinios-runtime-and-monotouchdll-please-reinstall-xamarinios"></a>MT8001: Version mismatch between the native Xamarin.iOS runtime and monotouch.dll. Please reinstall Xamarin.iOS.
+### <a name="mt8001-version-mismatch-between-the-native-xamarinios-runtime-and-monotouchdll-please-reinstall-xamarinios"></a>MT8001: ネイティブ Xamarin. iOS ランタイムと monotouch.dialog のバージョンが一致していません。 Xamarin. iOS を再インストールしてください。
 
 <a name="MT8002" />
 
-### <a name="mt8002-could-not-find-the-method--in-the-type-"></a>MT8002: Could not find the method '\*' in the type '\*'.
+### <a name="mt8002-could-not-find-the-method--in-the-type-"></a>MT8002: '\*' 型のメソッド '\*' が見つかりませんでした。
 
 <a name="MT8003" />
 
-### <a name="mt8003-failed-to-find-the-closed-generic-method--on-the-type-"></a>MT8003: Failed to find the closed generic method '\*' on the type '\*'.
+### <a name="mt8003-failed-to-find-the-closed-generic-method--on-the-type-"></a>MT8003: 型 '\*' のクローズジェネリックメソッド '\*' が見つかりませんでした。
 
 <a name="MT8004" />
 
-### <a name="mt8004-cannot-create-an-instance-of--for-the-native-object-0x-of-type--because-another-instance-already-exists-for-this-native-object-of-type-"></a>MT8004: Cannot create an instance of \* for the native object 0x* (of type '\*'), because another instance already exists for this native object (of type \*).
+### <a name="mt8004-cannot-create-an-instance-of--for-the-native-object-0x-of-type--because-another-instance-already-exists-for-this-native-object-of-type-"></a>MT8004: ネイティブオブジェクト 0x * (型 '\*') の \* のインスタンスを作成できません。このネイティブオブジェクト (\*型) には別のインスタンスが既に存在します。
 
 <a name="MT8005" />
 
-### <a name="mt8005-wrapper-type--is-missing-its-native-objectivec-class-"></a>MT8005: Wrapper type '\*' is missing its native ObjectiveC class '\*'.
+### <a name="mt8005-wrapper-type--is-missing-its-native-objectivec-class-"></a>MT8005: ラッパー型 '\*' に、ネイティブな型指定されたクラス '\*' がありません。
 
 <a name="MT8006" />
 
-### <a name="mt8006-failed-to-find-the-selector--on-the-type-"></a>MT8006: Failed to find the selector '\*' on the type '\*'
+### <a name="mt8006-failed-to-find-the-selector--on-the-type-"></a>MT8006: 型 '\*' でセレクター '\*' が見つかりませんでした
 
 <a name="MT8007" />
 
-### <a name="mt8007-cannot-get-the-method-descriptor-for-the-selector--on-the-type--because-the-selector-does-not-correspond-to-a-method"></a>MT8007: Cannot get the method descriptor for the selector '\*' on the type '\*', because the selector does not correspond to a method
+### <a name="mt8007-cannot-get-the-method-descriptor-for-the-selector--on-the-type--because-the-selector-does-not-correspond-to-a-method"></a>MT8007: セレクターがメソッドに対応していないため、型 '\*' のセレクター '\*' のメソッド記述子を取得できません
 
 <a name="MT8008" />
 
-### <a name="mt8008-the-loaded-version-of-xamariniosdll-was-compiled-for--bits-while-the-process-is--bits-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8008: The loaded version of Xamarin.iOS.dll was compiled for \* bits, while the process is \* bits. バグを送信してください http://bugzilla.xamarin.com です。
+### <a name="mt8008-the-loaded-version-of-xamariniosdll-was-compiled-for--bits-while-the-process-is--bits-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8008: 読み込まれたバージョンの Xamarin. iOS .dll は \* ビット用にコンパイルされましたが、プロセスは \* ビットです。 http://bugzilla.xamarin.comでバグを報告してください。
 
-This indicates something is wrong in the build process. [Github](https://github.com/xamarin/xamarin-macios/issues/new)で新しい問題を報告してください。
+これは、ビルドプロセスで何らかの問題が発生していることを示します。 [Github](https://github.com/xamarin/xamarin-macios/issues/new)で新しい問題を報告してください。
 
 <a name="MT8009" />
 
-### <a name="mt8009-unable-to-locate-the-block-to-delegate-conversion-method-for-the-method-s-parameter--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8009: Unable to locate the block to delegate conversion method for the method *.* 's parameter #*. バグを送信してください http://bugzilla.xamarin.com です。
+### <a name="mt8009-unable-to-locate-the-block-to-delegate-conversion-method-for-the-method-s-parameter--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8009: メソッドの変換メソッドを委任するブロックが見つかりません *。* 's パラメーター # *。 http://bugzilla.xamarin.comでバグを報告してください。
 
-This indicates an API wasn't bound correctly. If this is an API exposed by Xamarin, please file a new issue on [github](https://github.com/xamarin/xamarin-macios/issues/new). If it's a third-party binding, please contact the vendor.
+これは、API が正しくバインドされていないことを示します。 これが Xamarin によって公開される API である場合は、 [github](https://github.com/xamarin/xamarin-macios/issues/new)で新しい問題を報告してください。 サードパーティのバインドの場合は、ベンダーにお問い合わせください。
 
 <a name="MT8010" />
 
-### <a name="mt8010-native-type-size-mismatch-between-xamariniosmacdll-and-the-executing-architecture-xamariniosmacdll-was-built-for--bit-while-the-current-process-is--bit"></a>MT8010: Native type size mismatch between Xamarin.[iOS|Mac].dll and the executing architecture. Xamarin.[iOS|Mac].dll was built for *-bit, while the current process is *-bit.
+### <a name="mt8010-native-type-size-mismatch-between-xamariniosmacdll-and-the-executing-architecture-xamariniosmacdll-was-built-for--bit-while-the-current-process-is--bit"></a>MT8010: Xamarin のネイティブ型のサイズが一致していません。[iOS |Mac] .dll と実行中のアーキテクチャ。 Xamarin.[iOS |Mac] .dll は *-bit 用に構築されていますが、現在のプロセスは * ビットです。
 
-This indicates something is wrong in the build process. [Github](https://github.com/xamarin/xamarin-macios/issues/new)で新しい問題を報告してください。
+これは、ビルドプロセスで何らかの問題が発生していることを示します。 [Github](https://github.com/xamarin/xamarin-macios/issues/new)で新しい問題を報告してください。
 
 <a name="MT8011" />
 
-### <a name="mt8011-unable-to-locate-the-delegate-to-block-conversion-attribute-delegateproxy-for-the-return-value-for-the-method--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8011: Unable to locate the delegate to block conversion attribute ([DelegateProxy]) for the return value for the method *.* . バグを送信してください http://bugzilla.xamarin.com です。
+### <a name="mt8011-unable-to-locate-the-delegate-to-block-conversion-attribute-delegateproxy-for-the-return-value-for-the-method--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8011: メソッドの戻り値の変換属性 ([DelegateProxy]) をブロックするデリゲートが見つかりませ*ん。* http://bugzilla.xamarin.comでバグを報告してください。
 
-Xamarin.iOS was unable to locate a required method at runtime (to convert a delegate to a block).
+Xamarin. iOS は、実行時に必要なメソッドを見つけることができませんでした (デリゲートをブロックに変換するため)。
 
 これは通常、Xamarin. iOS のバグを示しています。 [Github](https://github.com/xamarin/xamarin-macios/issues/new)で新しい問題を報告してください。
 
 <a name="MT8012" />
 
-### <a name="mt8012-invalid-delegateproxyattribute-for-the-return-value-for-the-method--delegatetype-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8012: メソッドの戻り値の DelegateProxyAttribute が無効です *。* : DelegateType が null です。 バグを送信してください http://bugzilla.xamarin.com です。
+### <a name="mt8012-invalid-delegateproxyattribute-for-the-return-value-for-the-method--delegatetype-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8012: メソッドの戻り値の DelegateProxyAttribute が無効です *。* : DelegateType が null です。 http://bugzilla.xamarin.comでバグを報告してください。
 
 対象のメソッドの DelegateProxy 属性が無効です。
 
@@ -2987,7 +2987,7 @@ Xamarin.iOS was unable to locate a required method at runtime (to convert a dele
 
 <a name="MT8013" />
 
-### <a name="mt8013-invalid-delegateproxyattribute-for-the-return-value-for-the-method--delegatetype-2-specifies-a-type-without-a-handler-field-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8013: メソッドの戻り値の DelegateProxyAttribute が無効*です。* : DelegateType ({2}) では、' Handler ' フィールドのない型が指定されています。 バグを送信してください http://bugzilla.xamarin.com です。
+### <a name="mt8013-invalid-delegateproxyattribute-for-the-return-value-for-the-method--delegatetype-2-specifies-a-type-without-a-handler-field-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8013: メソッドの戻り値の DelegateProxyAttribute が無効*です。* : DelegateType ({2}) では、' Handler ' フィールドのない型が指定されています。 http://bugzilla.xamarin.comでバグを報告してください。
 
 対象のメソッドの `[DelegateProxy]` 属性が無効です。
 
@@ -2995,7 +2995,7 @@ Xamarin.iOS was unable to locate a required method at runtime (to convert a dele
 
 <a name="MT8014" />
 
-### <a name="mt8014-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8014: メソッドの戻り値の DelegateProxyAttribute が無効です *。* : DelegateType の ({2}) ' Handler ' フィールドが null です。 バグを送信してください http://bugzilla.xamarin.com です。
+### <a name="mt8014-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-null-please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8014: メソッドの戻り値の DelegateProxyAttribute が無効です *。* : DelegateType の ({2}) ' Handler ' フィールドが null です。 http://bugzilla.xamarin.comでバグを報告してください。
 
 対象のメソッドの `[DelegateProxy]` 属性が無効です。
 
@@ -3003,7 +3003,7 @@ Xamarin.iOS was unable to locate a required method at runtime (to convert a dele
 
 <a name="MT8015" />
 
-### <a name="mt8015-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-not-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8015: メソッドの戻り値の DelegateProxyAttribute が無効*です。* : DelegateType の ({2}) ' Handler ' フィールドはデリゲートではなく、* です。 バグを送信してください http://bugzilla.xamarin.com です。
+### <a name="mt8015-invalid-delegateproxyattribute-for-the-return-value-for-the-method--the-delegatetypes-2-handler-field-is-not-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8015: メソッドの戻り値の DelegateProxyAttribute が無効*です。* : DelegateType の ({2}) ' Handler ' フィールドはデリゲートではなく、* です。 http://bugzilla.xamarin.comでバグを報告してください。
 
 対象のメソッドの DelegateProxy 属性が無効です。
 
@@ -3011,7 +3011,7 @@ Xamarin.iOS was unable to locate a required method at runtime (to convert a dele
 
 <a name="MT8016" />
 
-### <a name="mt8016-unable-to-convert-delegate-to-block-for-the-return-value-for-the-method--because-the-input-isnt-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8016: メソッドの戻り値に対してデリゲートを block に変換できません *。* 入力がデリゲートではないため、これは * です。 バグを送信してください http://bugzilla.xamarin.com です。
+### <a name="mt8016-unable-to-convert-delegate-to-block-for-the-return-value-for-the-method--because-the-input-isnt-a-delegate-its-a--please-file-a-bug-at-httpbugzillaxamarincom"></a>MT8016: メソッドの戻り値に対してデリゲートを block に変換できません *。* 入力がデリゲートではないため、これは * です。 http://bugzilla.xamarin.comでバグを報告してください。
 
 対象のメソッドの `[DelegateProxy]` 属性が無効です。
 
@@ -3021,7 +3021,7 @@ Xamarin.iOS was unable to locate a required method at runtime (to convert a dele
 
 <a name="MT8018" />
 
-### <a name="mt8018-internal-consistency-error-please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT8018: 内部一貫性エラーが発生しています。 バグ報告を送信してください http://bugzilla.xamarin.com です。
+### <a name="mt8018-internal-consistency-error-please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT8018: 内部一貫性エラーが発生しています。 http://bugzilla.xamarin.comでバグレポートをファイルに登録してください。
 
 これは、Xamarin. iOS のバグを示しています。 [Github](https://github.com/xamarin/xamarin-macios/issues/new)で新しい問題を報告してください。
 
@@ -3045,18 +3045,18 @@ Xamarin.iOS was unable to locate a required method at runtime (to convert a dele
 
 <a name="MT8022" />
 
-### <a name="mt8022-expected-the-token-reference--to-be-a--but-its-a--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT8022: トークン参照 \* \*である必要がありますが、\*です。 バグ報告を送信してください http://bugzilla.xamarin.com です。
+### <a name="mt8022-expected-the-token-reference--to-be-a--but-its-a--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT8022: トークン参照 \* \*である必要がありますが、\*です。 http://bugzilla.xamarin.comでバグレポートをファイルに登録してください。
 
 これは、Xamarin. iOS のバグを示しています。 [Github](https://github.com/xamarin/xamarin-macios/issues/new)で新しい問題を報告してください。
 
 <a name="MT8023" />
 
-### <a name="mt8023-an-instance-object-is-required-to-construct-a-closed-generic-method-for-the-open-generic-method--token-reference--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT8023: open ジェネリックメソッドのクローズジェネリックメソッドを構築するには、インスタンスオブジェクトが必要です。 \* (トークン参照: \*)。 バグ報告を送信してください http://bugzilla.xamarin.com です。
+### <a name="mt8023-an-instance-object-is-required-to-construct-a-closed-generic-method-for-the-open-generic-method--token-reference--please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MT8023: open ジェネリックメソッドのクローズジェネリックメソッドを構築するには、インスタンスオブジェクトが必要です。 \* (トークン参照: \*)。 http://bugzilla.xamarin.comでバグレポートをファイルに登録してください。
 
 これは、Xamarin. iOS のバグを示しています。 [Github](https://github.com/xamarin/xamarin-macios/issues/new)で新しい問題を報告してください。
 
 <a name="MT8024" />
 
-### <a name="mt8024-could-not-find-a-valid-extension-type-for-the-smart-enum-smart_type-please-file-a-bug-at-httpsbugzillaxamarincom"></a>MT8024: スマート enum ' {smart_type} ' の有効な拡張機能の種類が見つかりませんでした。 バグを送信してください https://bugzilla.xamarin.com です。
+### <a name="mt8024-could-not-find-a-valid-extension-type-for-the-smart-enum-smart_type-please-file-a-bug-at-httpsbugzillaxamarincom"></a>MT8024: スマート enum ' {smart_type} ' の有効な拡張機能の種類が見つかりませんでした。 https://bugzilla.xamarin.comでバグを報告してください。
 
 これは、Xamarin. iOS のバグを示しています。 [Github](https://github.com/xamarin/xamarin-macios/issues/new)で新しい問題を報告してください。

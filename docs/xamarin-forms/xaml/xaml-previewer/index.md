@@ -9,11 +9,11 @@ author: maddyleger1
 ms.author: maleger
 ms.date: 02/04/2019
 ms.openlocfilehash: b287d523101bb8ca7faca8ea95ee898ccf9c0bb1
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "68757267"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78918042"
 ---
 # <a name="xaml-previewer-for-xamarinforms"></a>Xamarin. フォーム用の XAML プレビューアー
 
@@ -52,7 +52,7 @@ XAML ファイルを開くと、エディターは、[**ツール > オプショ
 
 **[プレビュー]** ボタンは、XAML ページを開いたときにエディターに表示されます。 任意の XAML ドキュメントウィンドウの左下にある **[プレビュー]** ボタンまたは **[分割]** ボタンを押して、プレビューアーを表示または非表示にします。
 
-[[プレビュー] ボタンまたは [分割] ボタンを使用して ![Xamarin フォームプレビューアーが有効になっている](xaml-previewer-images/xamlp-list-sml.png)](xaml-previewer-images/xamlp-list.png#lightbox)
+[[プレビュー] ボタンまたは [分割] ボタンを使用して ![Xamarin. フォームプレビューアーを有効にする](xaml-previewer-images/xamlp-list-sml.png)](xaml-previewer-images/xamlp-list.png#lightbox)
 
 > [!NOTE]
 > 以前のバージョンの Visual Studio for Mac では、**プレビュー**ボタンはウィンドウの右上にありました。
@@ -95,10 +95,10 @@ if (!DesignMode.IsDesignModeEnabled)
 
 * プレビューアーが起動するまでに時間がかかることがあります。準備が整うまで、"レンダリングを初期化しています" と表示されます。
 * XAML ファイルを閉じてから再度開いてみてください。
-* @No__t_0 クラスにパラメーターなしのコンストラクターがあることを確認します。
+* `App` クラスにパラメーターなしのコンストラクターがあることを確認します。
 * Xamarin. Forms バージョンを確認します。これは少なくとも Xamarin. Forms 3.6 である必要があります。 NuGet を使用して最新の Xamarin. Forms バージョンに更新できます。
 * JDK のインストールを確認する-Android のプレビューには[jdk 8](https://www.oracle.com/technetwork/java/javase/downloads/index.html)以上が必要です。
-* @No__t_1 で、ページのC#分離コードで初期化されたクラスをラップしてみてください。
+* `if (!DesignMode.IsDesignModeEnabled)`で、ページのC#分離コードで初期化されたクラスをラップしてみてください。
 
 ### <a name="custom-controls-arent-rendering"></a>カスタムコントロールがレンダリングしない
 

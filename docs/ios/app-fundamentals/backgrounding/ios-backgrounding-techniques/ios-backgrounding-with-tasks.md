@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
 ms.openlocfilehash: f39ab83e00db1abd6508d26a9280fb708e681445
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73004729"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915746"
 ---
 # <a name="ios-backgrounding-with-tasks"></a>タスクを使用した iOS バックグラウンド処理
 
@@ -132,7 +132,7 @@ IOS 7 でのバックグラウンド転送のバックボーンは、新しい `
 
 これがどのように動作するかについて詳しく見ていきましょう。
 
-### <a name="nsurlsession-api"></a>Nの Lsession API
+### <a name="nsurlsession-api"></a>NSURLSession API
 
  `NSURLSession` は、ネットワーク経由でコンテンツを転送するための強力な API です。 ネットワークの中断とアプリケーションの状態の変化によってデータの転送を処理するための一連のツールが用意されています。
 

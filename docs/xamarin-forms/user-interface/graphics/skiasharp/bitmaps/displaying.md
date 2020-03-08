@@ -8,23 +8,23 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
 ms.openlocfilehash: 9955b68346c74435a3a141c69d02e1bec5856bd3
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759512"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915972"
 ---
 # <a name="displaying-skiasharp-bitmaps"></a>SkiaSharp のビットマップの表示
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-SkiaSharp のビットマップのサブジェクトが、情報の記事で導入された **[SkiaSharp のビットマップ基本](../basics/bitmaps.md)** します。 その記事では、負荷のビットマップに 3 つの方法とビットマップを表示する 3 つの方法を示しました。 この記事では、ビットマップを読み込む方法を確認しより深いがの使用になる、`DrawBitmap`メソッドの`SKCanvas`します。
+SkiaSharp ビットマップの件名は、 **[SkiaSharp の「ビットマップの基礎](../basics/bitmaps.md)** 」で導入されました。 その記事では、負荷のビットマップに 3 つの方法とビットマップを表示する 3 つの方法を示しました。 この記事では、ビットマップを読み込み、`SKCanvas`の `DrawBitmap` メソッドの使用方法について詳しく説明します。
 
-![サンプルを表示する](displaying-images/DisplayingSample.png "サンプルを表示します。")
+![サンプルの表示](displaying-images/DisplayingSample.png "サンプルの表示")
 
-`DrawBitmapLattice`と`DrawBitmapNinePatch`メソッドが、情報の記事で説明した **[SkiaSharp ビットマップの表示をセグメント化された](segmented.md)** します。
+`DrawBitmapLattice` と `DrawBitmapNinePatch` の方法については、 **[SkiaSharp ビットマップのセグメント](segmented.md)** 化された表示に関する記事をご覧ください。
 
-このページのサンプルは、 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーション。 そのアプリケーションのホーム ページから次のように選択します。 **SkiaSharp ビットマップ**、順に移動し、**を表示するビットマップ**セクション。
+このページのサンプルは、 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーションからのものです。 そのアプリケーションのホームページで、 **[SkiaSharp ビットマップ]** を選択し、 **[ビットマップの表示]** セクションにアクセスします。
 
 ## <a name="loading-a-bitmap"></a>ビットマップの読み込み
 
@@ -34,23 +34,23 @@ SkiaSharp のアプリケーションで一般的に使用されるビットマ�
 - 実行可能ファイルに埋め込まれたリソースから
 - ユーザーのフォト ライブラリから
 
-SkiaSharp アプリケーションで、新しいビットマップを作成しとに描画またはアルゴリズム ビットマップのビットを設定することもできます。 これらの方法については、記事で説明 **[SkiaSharp ビットマップの描画の作成と](drawing.md)** と **[SkiaSharp ビットマップのピクセルへのアクセス](pixel-bits.md)** .
+SkiaSharp アプリケーションで、新しいビットマップを作成しとに描画またはアルゴリズム ビットマップのビットを設定することもできます。 これらの手法については、 **[SkiaSharp ビットマップの作成と描画](drawing.md)** 、および **[SkiaSharp ビットマップピクセルへのアクセス](pixel-bits.md)** に関する記事で説明されています。
 
-ビットマップの読み込みの次の 3 つのコード例では、クラスは型のフィールドを格納するものと`SKBitmap`:
+ビットマップを読み込むための次の3つのコード例では、クラスに `SKBitmap`型のフィールドが含まれていると想定されます。
 
 ```csharp
 SKBitmap bitmap;
 ```
 
-アーティクルとして **[SkiaSharp のビットマップ基本](../basics/bitmaps.md)** 言えば、最善の方法をインターネット経由でビットマップを読み込むとでは、 [`HttpClient`](xref:System.Net.Http.HttpClient)クラス。 クラスの 1 つのインスタンスは、フィールドとして定義できます。
+**[SkiaSharp の記事ビットマップの基礎](../basics/bitmaps.md)** として、インターネット上にビットマップを読み込む最適な方法は、 [`HttpClient`](xref:System.Net.Http.HttpClient)クラスを使用することです。 クラスの 1 つのインスタンスは、フィールドとして定義できます。
 
 ```csharp
 HttpClient httpClient = new HttpClient();
 ```
 
-使用する場合`HttpClient`iOS と Android アプリケーションでは、に関するドキュメントで説明したように、プロジェクトのプロパティを設定する必要あります **[トランスポート層セキュリティ (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)** します。
+IOS アプリケーションと Android アプリケーションで `HttpClient` を使用する場合は、 **[トランスポート層セキュリティ (TLS) 1.2](~/cross-platform/app-fundamentals/transport-layer-security.md)** のドキュメントで説明されているように、プロジェクトのプロパティを設定することをお勧めします。
 
-使用するコード`HttpClient`多くの場合、`await`に存在する必要があるため、演算子、`async`メソッド。
+`HttpClient` を使用するコードは、多くの場合、`await` 演算子を伴うため、`async` メソッドに存在する必要があります。
 
 ```csharp
 try
@@ -71,13 +71,13 @@ catch
 }
 ```
 
-注意、`Stream`オブジェクトから取得`GetStreamAsync`にコピーされます、`MemoryStream`します。 Android ではできません、`Stream`から`HttpClient`を非同期メソッドでは、メイン スレッド以外で処理できます。 
+`GetStreamAsync` から取得した `Stream` オブジェクトが `MemoryStream`にコピーされていることに注意してください。 Android では、非同期メソッドを除き、メインスレッドで `HttpClient` の `Stream` を処理することはできません。 
 
-で[`SKBitmap.Decode`](xref:SkiaSharp.SKBitmap.Decode(System.IO.Stream))は、さまざまな作業が行われます。渡さ`Stream`れたオブジェクトは、一般的なビットマップファイル形式 (通常は JPEG、PNG、GIF) のいずれかでビットマップ全体を含むメモリブロックを参照します。 `Decode`メソッドが、形式が決定し、SkiaSharp の内部ビットマップ形式にビットマップ ファイルをデコードする必要があります。
+[`SKBitmap.Decode`](xref:SkiaSharp.SKBitmap.Decode(System.IO.Stream))は多くの作業を行います。これに渡される `Stream` オブジェクトは、一般的なビットマップファイル形式 (通常は JPEG、PNG、GIF) のいずれかでビットマップ全体を含むメモリブロックを参照します。 `Decode` メソッドは、形式を決定し、ビットマップファイルを SkiaSharp の内部ビットマップ形式にデコードする必要があります。
 
-コードの呼び出し後`SKBitmap.Decode`、おそらくが無効になります、`CanvasView`ように、`PaintSurface`ハンドラーが新しく読み込まれたビットマップを表示できます。
+コードが `SKBitmap.Decode`を呼び出すと、`PaintSurface` ハンドラーが新しく読み込まれたビットマップを表示できるように、`CanvasView` が無効になる可能性があります。
 
-ビットマップを読み込む 2 つ目の方法は、.NET Standard ライブラリ内の埋め込みリソースとして、ビットマップを含めることによってによって参照される個別のプラットフォーム プロジェクト。 渡された ID、リソース、 [ `GetManifestResourceStream` ](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String))メソッド。 このリソース ID は、アセンブリ名、フォルダー名、およびピリオドで区切られたリソースのファイル名で構成されます。
+ビットマップを読み込む 2 つ目の方法は、.NET Standard ライブラリ内の埋め込みリソースとして、ビットマップを含めることによってによって参照される個別のプラットフォーム プロジェクト。 [`GetManifestResourceStream`](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String))メソッドにリソース ID が渡されます。 このリソース ID は、アセンブリ名、フォルダー名、およびピリオドで区切られたリソースのファイル名で構成されます。
 
 ```csharp
 string resourceID = "assemblyName.folderName.fileName";
@@ -92,7 +92,7 @@ using (Stream stream = assembly.GetManifestResourceStream(resourceID))
 
 ビットマップ ファイルは、iOS、Android、およびユニバーサル Windows プラットフォーム (UWP) 用の個別のプラットフォーム プロジェクトにリソースとしても格納できます。 ただし、これらのビットマップを読み込むには、プラットフォーム プロジェクトに配置されているコードが必要です。
 
-ビットマップを取得するための 3 番目のアプローチは、ユーザーの画像ライブラリです。 次のコードに含まれている依存関係サービスを使用して、 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーション。 **SkiaSharpFormsDemo** .NET 標準ライブラリが含まれています、`IPhotoLibrary`の各プラットフォーム プロジェクトに含まれていますが、インターフェイス、`PhotoLibrary`そのインターフェイスを実装するクラス。
+ビットマップを取得するための 3 番目のアプローチは、ユーザーの画像ライブラリです。 次のコードでは、 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーションに含まれている依存関係サービスを使用しています。 **SkiaSharpFormsDemo** .NET Standard ライブラリには `IPhotoLibrary` インターフェイスが含まれていますが、各プラットフォームプロジェクトには、そのインターフェイスを実装する `PhotoLibrary` クラスが含まれています。
 
 ```csharp
 IPhotoicturePicker picturePicker = DependencyService.Get<IPhotoLibrary>();
@@ -107,18 +107,18 @@ using (Stream stream = await picturePicker.GetImageStreamAsync())
 }
 ```
 
-一般に、このようなコードも無効になります、`CanvasView`ように、`PaintSurface`ハンドラーは、新しいビットマップを表示できます。
+通常、このようなコードは、`PaintSurface` ハンドラーが新しいビットマップを表示できるように、`CanvasView` も無効にします。
 
-`SKBitmap`クラスなど、いくつかの便利なプロパティを定義します[ `Width` ](xref:SkiaSharp.SKBitmap.Width)と[ `Height`](xref:SkiaSharp.SKBitmap.Height)を含む、多くのメソッドと同様に、ビットマップのピクセル寸法を表示します。ビットマップ、ピクセル ビットを公開して、それらをコピーを作成するメソッド。 
+`SKBitmap` クラスは、ビットマップのピクセルディメンションを表示する、 [`Width`](xref:SkiaSharp.SKBitmap.Width)や[`Height`](xref:SkiaSharp.SKBitmap.Height)などの便利なプロパティをいくつか定義します。また、ビットマップを作成し、それらをコピーして、ピクセルビットを公開するメソッドなど、多くのメソッドを定義します。 
 
 ## <a name="displaying-in-pixel-dimensions"></a>ピクセル数で表示します。
 
-SkiaSharp、 [ `Canvas` ](xref:SkiaSharp.SKCanvas)クラスは、4 つ定義`DrawBitmap`メソッド。 これらのメソッドは、根本的に異なる 2 つの方法で表示されるビットマップを許可します。 
+SkiaSharp [`Canvas`](xref:SkiaSharp.SKCanvas)クラスは、4つの `DrawBitmap` メソッドを定義します。 これらのメソッドは、根本的に異なる 2 つの方法で表示されるビットマップを許可します。 
 
-- 指定する、`SKPoint`値 (または個別`x`と`y`値) のピクセル寸法のビットマップを表示します。 ビットマップのピクセルは、ビデオ ディスプレイのピクセルに直接マップされます。
+- `SKPoint` 値 (または個別の `x` と `y` 値) を指定すると、ビットマップがピクセルディメンションで表示されます。 ビットマップのピクセルは、ビデオ ディスプレイのピクセルに直接マップされます。
 - 四角形を指定すると、四角形の形状とサイズに拡大するビットマップとします。 
 
-使用してそのピクセル寸法のビットマップを表示する[ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKPoint,SkiaSharp.SKPaint))で、`SKPoint`パラメーターまたは[ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,System.Single,System.Single,SkiaSharp.SKPaint))で`x`と`y`パラメーター。
+ピクセルディメンションにビットマップを表示するには、 [`DrawBitmap`](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKPoint,SkiaSharp.SKPaint))を `SKPoint` パラメーターと共に使用するか、個別の `x` と `y` パラメーターを使用して[`DrawBitmap`](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,System.Single,System.Single,SkiaSharp.SKPaint))します。
 
 ```csharp
 DrawBitmap(SKBitmap bitmap, SKPoint pt, SKPaint paint = null)
@@ -128,7 +128,7 @@ DrawBitmap(SKBitmap bitmap, float x, float y, SKPaint paint = null)
 
 これら 2 つの方法では、機能的に同じです。 指定したポイントでは、ビットマップをキャンバスの左上隅の場所を示します。 モバイル デバイスのピクセルの解像度は非常に高いため、小さいビットマップは通常、これらのデバイスでは非常に狭かった表示されます。
 
-省略可能な`SKPaint`パラメーターでは、透明度を使用してビットマップを表示することができます。 これを行うには、作成、`SKPaint`オブジェクトし、設定、`Color`プロパティにいずれか`SKColor`値、アルファ チャネルの 1 より小さい。 例:
+省略可能な `SKPaint` パラメーターを使用すると、透明度を使用してビットマップを表示できます。 これを行うには、`SKPaint` オブジェクトを作成し、`Color` プロパティに、アルファチャネルが1未満の任意の `SKColor` 値を設定します。 例 :
 
 ```csharp
 paint.Color = new SKColor(0, 0, 0, 0x80);
@@ -140,11 +140,11 @@ paint.Color = new SKColor(0, 0, 0, 0x80);
 paint.Color = SKColors.Red.WithAlpha(0x80);
 ```
 
-ただし、色自体では、関係ありません。 使用するときに、アルファ チャネルだけが調べられる、`SKPaint`オブジェクト、`DrawBitmap`呼び出します。
+ただし、色自体では、関係ありません。 `DrawBitmap` 呼び出しで `SKPaint` オブジェクトを使用すると、アルファチャネルのみが検査されます。
 
-`SKPaint`オブジェクトは、表示するビットマップを使用して、blend のモードまたは効果をフィルター処理とも、役割を果たします。 これらの記事で説明されています[SkiaSharp 合成と blend モード](../effects/blend-modes/index.md)と[SkiaSharp イメージ フィルター](../effects/image-filters.md)します。
+`SKPaint` オブジェクトは、blend モードまたはフィルター効果を使用してビットマップを表示するときにも役割を果たします。 これらの情報については、「 [SkiaSharp 合成」と「blend モード](../effects/blend-modes/index.md)と[SkiaSharp イメージフィルター](../effects/image-filters.md)」の記事で説明されています。
 
-**ピクセル寸法**ページで、 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** サンプル プログラムは、320 ピクセル 240 ピクセル、高さのビットマップ リソースを表示します。
+**[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** サンプルプログラムの **[ピクセルディメンション]** ページには、320ピクセル、高さが240ピクセルのビットマップリソースが表示されます。
 
 ```csharp
 public class PixelDimensionsPage : ContentPage
@@ -186,15 +186,15 @@ public class PixelDimensionsPage : ContentPage
 }
 ```
 
-`PaintSurface`ハンドラー、ビットマップを計算することで、中央`x`と`y`表示サーフェイスのピクセル寸法とビットマップのピクセルのサイズに基づいて、値。
+`PaintSurface` ハンドラーは、ディスプレイ画面のピクセル寸法とビットマップのピクセルサイズに基づいて `x` と `y` 値を計算することによって、ビットマップを中央揃えにします。
 
-[![ピクセル寸法](displaying-images/PixelDimensions.png "ピクセル寸法")](displaying-images/PixelDimensions-Large.png#lightbox)
+[![ピクセルディメンション](displaying-images/PixelDimensions.png "ピクセルディメンション")](displaying-images/PixelDimensions-Large.png#lightbox)
 
 座標を単に渡す場合、アプリケーションの左上隅にあるビットマップを表示する場合、(0, 0)。 
 
 ## <a name="a-method-for-loading-resource-bitmaps"></a>リソース ビットマップを読み込むためのメソッド
 
-次のサンプルの多くは、ビットマップ リソースを読み込む必要があります。 静的な`BitmapExtensions`クラス、 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** ソリューションに役立てるためにメソッドが含まれています。
+次のサンプルの多くは、ビットマップ リソースを読み込む必要があります。 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** ソリューションの静的 `BitmapExtensions` クラスには、次のことを支援するメソッドが含まれています。
 
 ```csharp
 static class BitmapExtensions
@@ -212,13 +212,13 @@ static class BitmapExtensions
 }
 ```
 
-通知、`Type`パラメーター。 これは、`Type`ビットマップ リソースを格納するアセンブリ内の任意の型に関連付けられているオブジェクト。
+`Type` パラメーターに注意してください。 これには、ビットマップリソースを格納するアセンブリ内の任意の型に関連付けられた `Type` オブジェクトを指定できます。
 
-これは、`LoadBitmapResource`メソッドはビットマップ リソースを必要とする後続のすべてのサンプルで使用されます。
+この `LoadBitmapResource` メソッドは、ビットマップリソースを必要とする後続のすべてのサンプルで使用されます。
 
 ## <a name="stretching-to-fill-a-rectangle"></a>四角形の塗りつぶしへの拡張
 
-`SKCanvas`クラスも定義、 [ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKPaint))別の四角形をビットマップをレンダリングするメソッド[ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKRect,SkiaSharp.SKPaint))するビットマップの四角形のサブセットを表示するメソッド、四角形。
+`SKCanvas` クラスは、ビットマップを四角形にレンダリングする[`DrawBitmap`](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKPaint))メソッドと、ビットマップの四角形のサブセットを四角形にレンダリングする別の[`DrawBitmap`](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKRect,SkiaSharp.SKPaint))メソッドも定義します。
 
 ```
 DrawBitmap(SKBitmap bitmap, SKRect dest, SKPaint paint = null)
@@ -226,9 +226,9 @@ DrawBitmap(SKBitmap bitmap, SKRect dest, SKPaint paint = null)
 DrawBitmap(SKBitmap bitmap, SKRect source, SKRect dest, SKPaint paint = null)
 ```
 
-ビットマップを拡大するという名前の四角形の塗りつぶし両方の場合、`dest`します。 2 番目のメソッドで、`source`四角形を使用すると、ビットマップのサブセットを選択します。 `dest`四角形を出力デバイス; の基準としたが、`source`ビットマップに対する相対パスの四角形です。
+どちらの場合も、ビットマップは `dest`という名前の四角形を埋めるように拡大されます。 2番目の方法では、`source` 四角形を使用して、ビットマップのサブセットを選択できます。 `dest` の四角形は、出力デバイスを基準にしています。`source` 四角形は、ビットマップに対して相対的です。
 
-**四角形の塗りつぶし**ページは、同じビットマップを表示することによってこれら 2 つのメソッドの最初の四角形内の前の例では同じサイズとして使用、キャンバスを示します。 
+**[四角形の塗りつぶし]** ページでは、前の例で使用したものと同じビットマップを四角形に表示することで、最初の2つの方法を示しています。 
 
 ```csharp
 public class FillRectanglePage : ContentPage
@@ -258,15 +258,15 @@ public class FillRectanglePage : ContentPage
 }
 ```
 
-新しい使用`BitmapExtensions.LoadBitmapResource`を設定するメソッド、`SKBitmap`フィールド。 先の四角形がから取得した、 [ `Rect` ](xref:SkiaSharp.SKImageInfo.Rect)プロパティの`SKImageInfo`を画面のサイズについて説明します。
+新しい `BitmapExtensions.LoadBitmapResource` メソッドを使用して、`SKBitmap` フィールドを設定することに注意してください。 コピー先の四角形は `SKImageInfo`の [ [`Rect`](xref:SkiaSharp.SKImageInfo.Rect) ] プロパティから取得されます。これにより、ディスプレイ画面のサイズが決まります。
 
-[![四角形の塗りつぶし](displaying-images/FillRectangle.png "四角形の塗りつぶし")](displaying-images/FillRectangle-Large.png#lightbox)
+[![塗りつぶし四角形](displaying-images/FillRectangle.png "塗りつぶし四角形")](displaying-images/FillRectangle-Large.png#lightbox)
 
-これは、通常_いない_対象します。 水平および垂直方向に異なる方法で拡張されたによってイメージがゆがめられます。 ピクセル サイズ以外の方法で、ビットマップを表示するときに通常するビットマップの元の縦横比を保持します。
+通常、この方法は必要_ありません_。 水平および垂直方向に異なる方法で拡張されたによってイメージがゆがめられます。 ピクセル サイズ以外の方法で、ビットマップを表示するときに通常するビットマップの元の縦横比を保持します。
 
 ## <a name="stretching-while-preserving-the-aspect-ratio"></a>縦横比を維持しながら拡張
 
-プロセスとも呼ばれますが、縦横比を維持しながら、ビットマップを拡大_統一されたスケーリング_します。 この用語は、アルゴリズムのアプローチを提案します。 ソリューションの 1 つを示した、**統一されたスケーリング**ページ。
+縦横比を維持したままビットマップを拡大するプロセスは、_一様なスケーリング_とも呼ばれます。 この用語は、アルゴリズムのアプローチを提案します。 1つの考えられる解決方法を、**一様なスケーリング**のページに示します。
 
 ```csharp
 public class UniformScalingPage : ContentPage
@@ -303,25 +303,25 @@ public class UniformScalingPage : ContentPage
 }
 ```
 
-`PaintSurface`ハンドラーを計算する`scale`表示幅と高さのビットマップの幅と高さの比率の最小の要素。 `x`と`y`表示幅と高さにスケーリングされたビットマップを中央揃えの値を計算することができます。 先の四角形が、左上隅の`x`と`y`し、それらの値とスケールの幅の右下隅とビットマップの高さ。
+`PaintSurface` ハンドラーは、ビットマップの幅と高さに対する表示幅と高さの最小値である `scale` 係数を計算します。 次に、`x` と `y` の値を計算して、拡大縮小されたビットマップを表示幅と高さの中央に配置することができます。 コピー先の四角形には、`x` と `y` の左上隅があり、これらの値の右下隅に、ビットマップの幅と高さが拡大縮小されています。
 
-[![統一されたスケーリング](displaying-images/UniformScaling.png "統一されたスケーリング")](displaying-images/UniformScaling-Large.png#lightbox)
+[![一様スケーリング](displaying-images/UniformScaling.png "一様スケーリング")](displaying-images/UniformScaling-Large.png#lightbox)
 
 その領域を拡大するビットマップを表示する電話を横向きにします。
 
-[![スケーリングのランドス ケープを uniform](displaying-images/UniformScaling-Landscape.png "ランドス ケープの統一されたスケーリング")](displaying-images/UniformScaling-Landscape-Large.png#lightbox)
+[![一様スケーリングの横](displaying-images/UniformScaling-Landscape.png "一様スケーリングの横")](displaying-images/UniformScaling-Landscape-Large.png#lightbox)
 
-これを使用する利点`scale`若干異なるアルゴリズムを実装する場合に要素が明らかになります。 ビットマップの縦横比が維持されますも先の四角形を入力するとします。 これは、可能な唯一の方法は、イメージの一部をトリミングしてが、そのアルゴリズムを実装するには変更するだけで`Math.Min`に`Math.Max`上記のコード。 結果を次に示します。 
+この `scale` 要因を使用する利点は、わずかに異なるアルゴリズムを実装する場合に明らかになります。 ビットマップの縦横比が維持されますも先の四角形を入力するとします。 これが可能な唯一の方法は、イメージの一部をトリミングすることですが、上記のコードで `Math.Min` を `Math.Max` に変更するだけで、そのアルゴリズムを実装できます。 結果は次のとおりです。 
 
-[![代わりに統一されたスケーリング](displaying-images/UniformScaling-Alternative.png "代わりに統一されたスケーリング")](displaying-images/UniformScaling-Alternative-Large.png#lightbox)
+[![一様スケーリングの代替](displaying-images/UniformScaling-Alternative.png "一様スケーリングの代替")](displaying-images/UniformScaling-Alternative-Large.png#lightbox)
 
 ビットマップの縦横比は保持されますが、ビットマップの左側の領域がトリミングされます。
 
 ## <a name="a-versatile-bitmap-display-function"></a>汎用的なビットマップの表示関数
 
-UWP および Xamarin.Forms) などの XAML ベースのプログラミング環境では、展開したり、縦横比を維持しながら、ビットマップのサイズを縮小する機能があります。 SkiaSharp にこの機能が含まれていませんを自分でその実装できます。 `BitmapExtensions`クラスに含まれる、 [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)アプリケーションの表示方法。 このクラスを定義する 2 つの新しい`DrawBitmap`縦横比の計算を実行するメソッド。 これらの新しいメソッドが拡張メソッドの`SKCanvas`します。
+UWP および Xamarin.Forms) などの XAML ベースのプログラミング環境では、展開したり、縦横比を維持しながら、ビットマップのサイズを縮小する機能があります。 SkiaSharp にこの機能が含まれていませんを自分でその実装できます。 [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)アプリケーションに含まれている `BitmapExtensions` クラスは、その方法を示しています。 クラスは、縦横比の計算を実行する2つの新しい `DrawBitmap` メソッドを定義します。 これらの新しいメソッドは、`SKCanvas`の拡張メソッドです。
 
-新しい`DrawBitmap`メソッドは、型のパラメーターを含める`BitmapStretch`、列挙体で定義されている、 **BitmapExtensions.cs**ファイル。
+新しい `DrawBitmap` メソッドには、型 `BitmapStretch`のパラメーター、 **BitmapExtensions.cs**ファイルで定義されている列挙体が含まれています。
 
 ```csharp
 public enum BitmapStretch
@@ -335,9 +335,9 @@ public enum BitmapStretch
 }
 ```
 
-`None`、 `Fill`、 `Uniform`、および`UniformToFill`メンバーは、UWP 内のものと同じ[ `Stretch` ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.stretch.aspx)列挙体。 ような Xamarin.Forms [ `Aspect` ](xref:Xamarin.Forms.Aspect)列挙型メンバーを定義する`Fill`、 `AspectFit`、および`AspectFill`します。
+`None`、`Fill`、`Uniform`、および `UniformToFill` のメンバーは、UWP [`Stretch`](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.stretch.aspx)列挙体のメンバーと同じです。 同様の Xamarin Forms [`Aspect`](xref:Xamarin.Forms.Aspect)列挙体は、`Fill`、`AspectFit`、および `AspectFill`のメンバーを定義します。
 
-**統一されたスケーリング**上に示すページ中央に四角形内でビットマップが左または四角形、または上部または下部の右側にあるビットマップの配置など、他のオプションをする可能性があります。 目的は、`BitmapAlignment`列挙体。
+上に示した**均一なスケーリング**のページでは、四角形の中にビットマップが配置されますが、四角形の左側または右側にビットマップを配置するなど、他のオプションを使用することもできます。 `BitmapAlignment` 列挙型の目的は次のとおりです。
 
 ```csharp
 public enum BitmapAlignment
@@ -348,9 +348,9 @@ public enum BitmapAlignment
 }
 ```
 
-配置の設定がある影響しないと併用すると`BitmapStretch.Fill`します。
+配置設定は、`BitmapStretch.Fill`で使用した場合には効果がありません。
 
-最初の`DrawBitmap`拡張関数には、先の四角形がないソースの四角形が含まれています。 既定値が定義され、ビットマップの中央に配置する場合を指定するだけ、`BitmapStretch`メンバー。
+最初の `DrawBitmap` 拡張関数には変換先の四角形が含まれますが、変換元の四角形は含まれません。 ビットマップを中央揃えにする場合は、`BitmapStretch` のメンバーのみを指定する必要があるため、既定値が定義されています。
 
 ```csharp
 static class BitmapExtensions
@@ -394,7 +394,7 @@ static class BitmapExtensions
 }
 ```
 
-このメソッドの主な目的は、という名前のスケール ファクターを計算することです。`scale`を呼び出すときに、ビットマップの幅と高さに適用されるし、`CalculateDisplayRect`メソッド。 これは、水平方向および垂直方向の配置に基づいて、ビットマップを表示するための四角形を計算するメソッドです。
+このメソッドの主な目的は、`CalculateDisplayRect` メソッドを呼び出すときにビットマップの幅と高さに適用される `scale` という名前のスケールファクターを計算することです。 これは、水平方向および垂直方向の配置に基づいて、ビットマップを表示するための四角形を計算するメソッドです。
 
 ```csharp
 static class BitmapExtensions
@@ -442,7 +442,7 @@ static class BitmapExtensions
 }
 ```
 
-`BitmapExtensions`クラスが含まれていますが、追加`DrawBitmap`ソース四角形を持つビットマップのサブセットを指定するためのメソッド。 スケール ファクターが基に計算する点を除いて、このメソッドは 1 つ目のような`source`四角形に適用し、`source`への呼び出し内の四角形`CalculateDisplayRect`:
+`BitmapExtensions` クラスには、ビットマップのサブセットを指定するためのソース四角形を持つ追加の `DrawBitmap` メソッドが含まれています。 このメソッドは最初の方法と似ていますが、スケールファクターは `source` の四角形に基づいて計算され、`CalculateDisplayRect`の呼び出しの `source` 四角形に適用される点が異なります。
 
 ```csharp
 static class BitmapExtensions
@@ -486,7 +486,7 @@ static class BitmapExtensions
 }
 ```
 
-これら 2 つの新しいの最初の`DrawBitmap`メソッドの説明については、**スケーリング モード**ページ。 XAML ファイルには、3 つが含まれている`Picker`できる要素のメンバーの選択、`BitmapStretch`と`BitmapAlignment`列挙体。
+これら2つの新しい `DrawBitmap` メソッドの最初の部分は、 **[スケーリングモード]** ページで説明されています。 XAML ファイルには、`BitmapStretch` と `BitmapAlignment` 列挙型のメンバーを選択できる3つの `Picker` 要素が含まれています。
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -578,7 +578,7 @@ static class BitmapExtensions
 </ContentPage>
 ```
 
-分離コード ファイルを単に無効化、`CanvasView`いずれかが`Picker`項目が変更されました。 `PaintSurface`ハンドラーにアクセスする、3 つ`Picker`呼び出し元のビュー、`DrawBitmap`拡張メソッド。
+分離コードファイルは、`Picker` 項目が変更されたときに、`CanvasView` を無効にするだけです。 `PaintSurface` ハンドラーは、`DrawBitmap` 拡張メソッドを呼び出すために、次の3つの `Picker` ビューにアクセスします。
 
 ```csharp
 public partial class ScalingModesPage : ContentPage
@@ -617,9 +617,9 @@ public partial class ScalingModesPage : ContentPage
 
 いくつかのオプションの組み合わせを次に示します。
 
-[![スケーリング モード](displaying-images/ScalingModes.png "スケーリング モード")](displaying-images/ScalingModes-Large.png#lightbox)
+[![スケーリングモード](displaying-images/ScalingModes.png "スケーリングモード")](displaying-images/ScalingModes-Large.png#lightbox)
 
-**四角形のサブセット**ページと同じ XAML ファイルには事実上**スケーリング モード**、分離コード ファイルで指定されたビットマップの四角形のサブセットを定義しますが、`SOURCE`フィールド。 
+**四角形のサブセット**ページには**スケーリングモード**とほぼ同じ XAML ファイルがありますが、分離コードファイルでは、`SOURCE` フィールドによって指定されたビットマップの四角形のサブセットが定義されています。 
 
 ```csharp
 public partial class ScalingModesPage : ContentPage
@@ -665,5 +665,5 @@ public partial class ScalingModesPage : ContentPage
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

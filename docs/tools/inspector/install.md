@@ -7,23 +7,23 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/19/2018
 ms.openlocfilehash: 19c4a15fb2490c7bace4798b0cb8e062b1379a04
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029695"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78917596"
 ---
 # <a name="inspector-installation-and-requirements"></a>インスペクターのインストールと要件
 
 ## <a name="download-and-installation"></a>ダウンロードとインストール
 
-# <a name="windowstabwindows"></a>[Windows](#tab/windows)
+# <a name="windows"></a>[Windows](#tab/windows)
 
 1. [Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/)をダウンロードしてインストールし、 **[.net を使用したモバイル開発]** ワークロードを選択します。
 1. [サインイン](https://docs.microsoft.com/visualstudio/ide/signing-in-to-visual-studio)して、エンタープライズサブスクリプションを有効にします。
 1. 自分のアプリを[調査](~/tools/inspector/inspect.md)してください。
 
-# <a name="macostabmacos"></a>[macOS](#tab/macos)
+# <a name="macos"></a>[macOS](#tab/macos)
 
 1. [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)をダウンロードしてインストールします。
 1. [サインイン](https://docs.microsoft.com/visualstudio/mac/activation)して、エンタープライズサブスクリプションを有効にします。
@@ -31,9 +31,9 @@ ms.locfileid: "73029695"
 
 -----
 
-## <a name="requirements"></a>［要件］
+## <a name="requirements"></a>要件
 
-### <a name="supported-operating-systems"></a>Supported Operating Systems
+### <a name="supported-operating-systems"></a>サポートされるオペレーティング システム
 
 - **Mac** -OS X 10.11 以上
 - **Windows** -windows 7 以降 (Internet Explorer 11 以降および .net 4.6.1 以上)
@@ -49,7 +49,7 @@ ms.locfileid: "73029695"
 
 ### <a name="supported-app-platforms"></a>サポートされているアプリプラットフォーム
 
-|アプリのプラットフォーム|IDE のサポート|ノート|
+|アプリ プラットフォーム|IDE のサポート|説明|
 |--- |--- |--- |
 |Mac|Visual Studio for Mac でのみサポートされています|
 |iOS|Visual Studio 2017 および Visual Studio for Mac でサポートされています| リンカーの動作は **[リンクしない]** に設定する必要があります ( **[iOS ビルド]** プロジェクトオプション の下) |
@@ -58,7 +58,7 @@ ms.locfileid: "73029695"
 
 <a name="reporting-bugs" />
 
-## <a name="reporting-bugs"></a>バグの報告
+## <a name="reporting-bugs"></a>バグのレポート
 
 バグは、Visual Studio を使用して直接報告する必要があります。
 
@@ -102,13 +102,13 @@ Visual Studio
 - `%LOCALAPPDATA%\Xamarin\Logs\{VS version}\Inspector {date}.log`
 - Visual Studio の **[出力]** ウィンドウの内容が有益な場合もあります。
 
-### <a name="project-settings"></a>プロジェクト設定
+### <a name="project-settings"></a>プロジェクトの設定
 
 調べようとしているプロジェクトに **.csproj**をアタッチできる場合は、それが非常に便利です。 これは、個々の設定について質問するよりも簡単です。
 
 また、デバッグ構成であることを確認してください。
 
-### <a name="selected-devices"></a>選択したデバイス
+### <a name="selected-devices"></a>[選択されているデバイス]
 
 Android と iOS の場合、検査するときに、どのデバイスがデバッグ中であるかを把握しておくことが重要です。 次の点を把握しておく必要があります。
 

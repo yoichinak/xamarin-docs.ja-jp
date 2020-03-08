@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
 ms.openlocfilehash: b9b4d201e02d60bd6131c8693d9ac6a233e4fe10
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028339"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78918745"
 ---
 # <a name="deploying-and-testing-watchos-apps-with-xamarin"></a>Xamarin を使用した watchOS アプリのデプロイとテスト
 
@@ -100,7 +100,7 @@ Apple Watch アプリ ID ではアプリグループ**を有効にしないで�
 - iOS アプリプロジェクト
 - 拡張機能プロジェクトのウォッチ
 
-である必要があります。![権利の plist エディター](images/entitlements-plist-sml.png)
+。![権利の plist エディター](images/entitlements-plist-sml.png)
 
 Watch アプリプロジェクトでは、権利**を有効にしないでください。** ウォッチ自体で有効にする必要はありません。
 

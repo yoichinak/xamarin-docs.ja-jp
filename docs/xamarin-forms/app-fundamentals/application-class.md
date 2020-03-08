@@ -9,11 +9,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
 ms.openlocfilehash: aaf2086fd8128d68baa401ab646b31bcbc279545
-ms.sourcegitcommit: efbc69acf4ea484d8815311b058114379c9db8a2
-ms.translationtype: HT
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73842970"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78916480"
 ---
 # <a name="xamarinforms-app-class"></a>Xamarin.Forms の App クラス
 
@@ -23,7 +23,7 @@ ms.locfileid: "73842970"
 * ライフサイクルの状態変化をまたいでシンプルな値を格納するための永続的な [`Properties` ディクショナリ](#Properties_Dictionary)。
 * 現在のアプリケーション オブジェクトへの参照が含まれている静的な `Current` プロパティ。
 
-また、`OnStart`、`OnSleep`、`OnResume` などの[ライフサイクル メソッド](~/xamarin-forms/app-fundamentals/app-lifecycle.md)と、モーダル ナビゲーション イベントも公開されています。
+また、[、](~/xamarin-forms/app-fundamentals/app-lifecycle.md)、`OnStart` などの`OnSleep`ライフサイクル メソッド`OnResume`と、モーダル ナビゲーション イベントも公開されています。
 
 選択するテンプレートに応じて、2 つの方法のいずれかで `App` クラスを定義できます。
 
@@ -58,7 +58,7 @@ public partial class App : Application
 
 ## <a name="mainpage-property"></a>MainPage プロパティ
 
-`Application` クラスの `MainPage` プロパティでは、アプリケーションのルート ページが設定されます。
+`MainPage` クラスの `Application` プロパティでは、アプリケーションのルート ページが設定されます。
 
 たとえば、ユーザーがログインしているかログアウトしているかに応じて異なるページを表示するためのロジックを、`App` クラス内に作成することができます。
 
@@ -105,7 +105,7 @@ if (Application.Current.Properties.ContainsKey("id"))
 
 <!-- bugzilla 28657 -->
 
-### <a name="persistence"></a>永続性
+### <a name="persistence"></a>永続化
 
 `Properties` ディクショナリは、デバイスに自動的に保存されます。
 ディクショナリに追加されたデータは、アプリケーションがバックグラウンドから戻るときに、または再起動後でも利用できます。
@@ -153,7 +153,7 @@ public class App : Xamarin.Forms.Application
 
 iOS の `AppDelegate` クラスは、`FormsApplicationDelegate` を継承します。 次のようになります。
 
-* `App` クラスのインスタンスを使用して `LoadApplication` を呼び出します。
+* `LoadApplication` クラスのインスタンスを使用して `App` を呼び出します。
 
 * 常に `base.FinishedLaunching (app, options);` を返します。
 
@@ -175,7 +175,7 @@ public partial class AppDelegate :
 
 ### <a name="android-project"></a>Android プロジェクト
 
-Android の `MainActivity` は、`FormsAppCompatActivity` を継承します。 `OnCreate` のオーバーライド内で、`App` クラスのインスタンスを使用して `LoadApplication` メソッドが呼び出されます。
+Android の `MainActivity` は、`FormsAppCompatActivity` を継承します。 `OnCreate` のオーバーライド内で、`LoadApplication` クラスのインスタンスを使用して `App` メソッドが呼び出されます。
 
 ```csharp
 [Activity (Label = "App Lifecycle Sample", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true,
@@ -219,7 +219,7 @@ public sealed partial class MainPage
  }
 ```
 
-UWP プロジェクトの **App.xaml.cs** から `Forms.Init()` を呼び出す必要があることに注意してください。
+UWP プロジェクトの `Forms.Init()`App.xaml.cs**から** を呼び出す必要があることに注意してください。
 
 詳細については、「[Setup Windows Projects](~/xamarin-forms/platform/windows/installation/index.md)」(Windows プロジェクトのセットアップ) を参照してください。UWP をターゲットにしていない既存の Xamarin.Forms ソリューションに UWP プロジェクトを追加する手順が説明されています。
 

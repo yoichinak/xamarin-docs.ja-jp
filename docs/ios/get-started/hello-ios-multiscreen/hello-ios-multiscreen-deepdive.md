@@ -9,11 +9,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
 ms.openlocfilehash: 3bcfb20d8283f621ac1d32730ee67be2b09efe50
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: HT
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73023401"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78918078"
 ---
 # <a name="hello-ios-multiscreen--deep-dive"></a>Hello, iOS マルチスクリーン – 詳細
 
@@ -52,7 +52,7 @@ MVC は、モデルの*データの永続性*と*アクセス*をまったく認
 > [!NOTE]
 > 資料によっては、MVC パターンのモデル部分は、UI に表示されるデータだけでなく、アプリケーション バックエンド全体を指すことがあります。 このガイドでは、モデルの最新の解釈を使用しますが、違いは特に重要ではありません。
 
-### <a name="view"></a>View
+### <a name="view"></a>表示
 
 ビューは、ユーザー インターフェイスのレンダリングを担当するコンポーネントです。 MVC パターンを使用するほぼすべてのプラットフォームで、ユーザー インターフェイスは複数ビューの階層で構成されます。 MVC のビューは、階層の最上位に単一のビュー (ルート ビューと呼ばれます) があり、その下位に任意の数の子ビュー (サブビューと呼ばれます) があるビュー階層と考えることができます。 iOS では、画面のコンテンツ ビュー階層は MVC のビュー コンポーネントに対応します。
 
@@ -64,7 +64,7 @@ MVC は、モデルの*データの永続性*と*アクセス*をまったく認
 
 ## <a name="navigation-controller"></a>ナビゲーション コントローラー
 
-Phoneword アプリケーションでは、複数の画面間のナビゲーションを管理するためにナビゲーション コントローラーを使用しました。 ナビゲーション コントローラーは、`UINavigationController` クラスで表現される特殊な `UIViewController` です。 ナビゲーション コントローラーでは、単一のコンテンツ ビュー階層を管理するのではなく、他のビュー コントローラーと独自の特殊なコンテンツ ビュー階層を、タイトル、戻るボタンなどのオプション機能を含むナビゲーション ツールバー形式で管理します。
+Phoneword アプリケーションでは、複数の画面間のナビゲーションを管理するためにナビゲーション コントローラーを使用しました。 ナビゲーション コントローラーは、`UIViewController` クラスで表現される特殊な `UINavigationController` です。 ナビゲーション コントローラーでは、単一のコンテンツ ビュー階層を管理するのではなく、他のビュー コントローラーと独自の特殊なコンテンツ ビュー階層を、タイトル、戻るボタンなどのオプション機能を含むナビゲーション ツールバー形式で管理します。
 
 ナビゲーション コントローラーは iOS アプリでは一般的であり、以下のスクリーンショットの**設定**アプリのような定番の iOS アプリケーションのナビゲーションを行います。
 
@@ -126,7 +126,7 @@ iOS は、切り替えが発生する直前に `PrepareForSegue` を呼び出し
 CallHistoryController callHistoryController = segue.DestinationViewController as CallHistoryController;
 ```
 
-最後に、`CallHistoryController` の `PhoneHistory` プロパティを詳細な電話番号の一覧に設定することで、`ViewController` の電話番号の一覧 (モデル) を `CallHistoryController` に渡します。
+最後に、`ViewController` の `CallHistoryController` プロパティを詳細な電話番号の一覧に設定することで、`PhoneHistory` の電話番号の一覧 (モデル) を `CallHistoryController` に渡します。
 
 ```csharp
 callHistoryController.PhoneNumbers = PhoneNumbers;
@@ -166,7 +166,7 @@ this.Storyboard.InstantiateViewController
 ("CallHistoryController") as CallHistoryController;
 ```
 
-最後に、`CallHistoryController` の `PhoneHistory` プロパティを詳細な電話番号の一覧に設定することで、`ViewController` の電話番号の一覧 (モデル) を `CallHistoryController` に渡します。これはセグエを使用して切り替えを処理した場合と同様の方法です。
+最後に、`ViewController` の `CallHistoryController` プロパティを詳細な電話番号の一覧に設定することで、`PhoneHistory` の電話番号の一覧 (モデル) を `CallHistoryController` に渡します。これはセグエを使用して切り替えを処理した場合と同様の方法です。
 
 ```csharp
 callHistory.PhoneNumbers = PhoneNumbers;
@@ -193,7 +193,7 @@ Phoneword アプリケーションでは、このガイドでは説明してい�
 - **テーブル ビュー コントローラー**: `CallHistoryController` はテーブル ビュー コントローラーです。 テーブル ビュー コントローラーには、iOS でよく使われるレイアウトおよびデータ表示ツールであるテーブル ビューが含まれています。 テーブルはこのガイドで取り扱う範囲を超えているので触れません。 テーブル ビュー コントローラーの詳細については、「[Working with Tables and Cells](~/ios/user-interface/controls/tables/index.md)」(テーブルとセルの操作) ガイドを参照してください。
 - **ストーリーボード ID**: ストーリーボード ID を設定すると、ストーリーボードにビュー コントローラーの分離コードを含む Objective-C のビュー コントローラー クラスが作成されます。 ここでは、ストーリーボード ID を使用して Objective-C クラスを検出し、ストーリーボードでビュー コントローラーをインスタンス化します。 ストーリーボード ID の詳細については、「[Introduction to Storyboards](~/ios/user-interface/storyboards/index.md)」(ストーリーボードの概要) ガイドを参照してください。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 これで最初のマルチスクリーン iOS アプリケーションが完成しました。
 

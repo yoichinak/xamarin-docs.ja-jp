@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
 ms.openlocfilehash: 35a8d3aeb00ac73f944712cb31f913f98bd3b6e8
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725472"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78919154"
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>Xamarin Designer for iOS を使用した自動レイアウト
 
@@ -20,7 +20,7 @@ ms.locfileid: "76725472"
 
 このガイドでは、Xamarin iOS Designer で制約とその操作を行う方法について説明します。 このガイドでは、制約の使用方法については説明しません。 プログラムによる自動レイアウトの使用の詳細については、 [Apple のドキュメント](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/AutolayoutPG/ProgrammaticallyCreatingConstraints.html)を参照してください。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 Xamarin Designer for iOS は、Visual Studio 2017 以降の Windows で Visual Studio for Mac で使用できます。
 
@@ -185,7 +185,7 @@ Frame misplacement は、underconstrained items と同じカラーコードを�
 3. 次に、**プロパティエクスプローラー**の **[ウィジェット]** タブで、制約に**名前**を割り当てます。
 
     [![](designer-auto-layout-images/modify02.png "The Widget Tab")](designer-auto-layout-images/modify02.png#lightbox)
-4. 変更内容を保存します。
+4. 変更を [保存] します。
 
 上記の変更を適用したら、コードで制約にアクセスし、そのプロパティを変更できます。 たとえば、次のコードを使用して、添付ビューの高さをゼロに設定できます。
 
@@ -210,7 +210,7 @@ IOS デザイナーでは、次のような制約が設定されています。
 
 ### <a name="animating-constraint-changes"></a>制約変更のアニメーション化
 
-制約プロパティを変更するだけでなく、コアアニメーションを使用して、ビューの制約に対する変更をアニメーション化することもできます。 次に例を示します。
+制約プロパティを変更するだけでなく、コアアニメーションを使用して、ビューの制約に対する変更をアニメーション化することもできます。 例 :
 
 ```csharp
 UIView.BeginAnimations("OpenInfo");
@@ -224,7 +224,7 @@ UIView.CommitAnimations();
 
 ここで重要なのは、アニメーションブロック内の親ビューの `LayoutIfNeeded` メソッドを呼び出すことです。 これにより、アニメーションの位置またはサイズの変更の各フレームを描画するようビューに指示します。 この行を使用しない場合、ビューはアニメーション化せずに最終バージョンにスナップするだけです。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 このガイドでは、iOS の自動 (アダプティブ) レイアウトと、デザインサーフェイス上の要素間のリレーションシップの数学的表現としての制約の概念を紹介しました。 ここでは、iOS デザイナーで自動レイアウトを有効にする方法、**制約ツールバー**を使用する方法、デザインサーフェイスで個別に制約を編集する方法について説明します。 次に、3つの一般的な制約の問題をトラブルシューティングする方法について説明しました。 最後に、コードで制約を変更する方法を示しました。
 

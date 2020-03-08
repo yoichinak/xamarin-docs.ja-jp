@@ -7,11 +7,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
 ms.openlocfilehash: 8402a48602dd94578e688faeb038aec69684e7d4
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76940724"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78917557"
 ---
 # <a name="unified-api-overview"></a>Unified API の概要
 
@@ -33,7 +33,7 @@ Xamarin の Unified API を使用すると、Mac と iOS の間でコードを�
 - [既存の Xamarin.Forms アプリの更新](updating-xamarin-forms-apps.md)
 - [バインドの Unified API への移行](update-binding.md)
 
-## <a name="tips-for-updating-code-to-the-unified-apiupdating-tipsmd"></a>[コードを Unified API に更新する場合のヒント](updating-tips.md)
+## <a name="tips-for-updating-code-to-the-unified-api"></a>[コードを Unified API に更新する場合のヒント](updating-tips.md)
 
 移行するアプリケーションに関係なく、Unified API に正常に更新できるように、[これらのヒント](updating-tips.md)を確認してください。
 
@@ -98,7 +98,7 @@ Unified API は、非推奨のメソッドを削除します。また、クラ�
 Unified API には、互換性のあるパッケージの新しいプラットフォーム識別子である**iOS10**が導入されています。 このプラットフォームのサポートを追加するには、Unified API に対してビルドすることによって、既存の NuGet パッケージを更新する必要があります。
 
 > [!IMPORTANT]
-> アプリケーションを Unified API に変換した後に、 _"エラー 3 に 'monotouch.dll' と 'Xamarin.iOS.dll' の両方を同じ Xamarin.iOS プロジェクトに含めることはできません - 'Xamarin.iOS.dll' は明示的に参照されますが、'monotouch.dll' は 'xxx、Version=0.0.000、Culture=neutral、PublicKeyToken=null' によって参照されます"_ という形式のエラーが発生した場合、それは通常、Unified API に更新されていないコンポーネントまたは NuGet パッケージがプロジェクトにあることが原因です。 既存のコンポーネントまたは NuGet を削除し、Unified API をサポートするバージョンに更新し、クリーン ビルドを実行する必要があります。
+> "エラー 3" という形式のエラーが発生した場合は _、同じ Xamarin に "monotouch.dialog" と "xamarin. iOS .dll" の両方を含めることはできません。 ios プロジェクト ' monotouch.dialog ' は明示的に参照されていますが、' 0.0.000 ' は、アプリケーションを統合 api に変換した後、' xxx, Version =, Culture = 中立的, PublicKeyToken = null ' によって参照_されています。そのため、通常は、Unified API に更新されていないプロジェクト内のコンポーネントまたは NuGet パッケージが 既存のコンポーネントまたは NuGet を削除し、Unified API をサポートするバージョンに更新し、クリーン ビルドを実行する必要があります。
 
 ### <a name="the-road-to-64-bits"></a>64 ビットへの道のり
 
@@ -134,7 +134,7 @@ if (IntPtr.Size == 4) {
 
 ### <a name="arrays-and-systemcollectionsgeneric"></a>配列と system.string
 
-インデクサー C#では `int`の型が想定されるため、コレクションまたは配列内の要素にアクセスするには、`nint` 値を `int` に明示的にキャストする必要があります。 例:
+インデクサー C#では `int`の型が想定されるため、コレクションまたは配列内の要素にアクセスするには、`nint` 値を `int` に明示的にキャストする必要があります。 例 :
 
 ```csharp
 public List<string> Names = new List<string>();
@@ -315,8 +315,8 @@ Unified API、このことを修正しました。  型が `NSCoding`に準拠�
 ## <a name="related-links"></a>関連リンク
 
 - [IOS アプリの更新](updating-ios-apps.md)
-- [既存の Mac アプリを更新しています](updating-mac-apps.md)
-- [Xamarin.Forms アプリの更新](updating-xamarin-forms-apps.md)
+- [Mac アプリを更新しています](updating-mac-apps.md)
+- [Xamarin. Forms アプリの更新](updating-xamarin-forms-apps.md)
 - [バインドの更新](update-binding.md)
 - [ヒントの更新](updating-tips.md)
 - [クラシックと Unified API の違い](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/api_changes/classic-vs-unified-8.6.0/index.md)
