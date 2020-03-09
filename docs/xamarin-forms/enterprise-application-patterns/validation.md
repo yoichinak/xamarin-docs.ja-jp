@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: de5728710a408b8e0c7c68dc89c7e6484cbcc3ce
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "70760163"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915306"
 ---
 # <a name="validation-in-enterprise-apps"></a>エンタープライズアプリでの検証
 
@@ -24,7 +24,7 @@ ms.locfileid: "70760163"
 
 **図 6-1**: eShopOnContainers モバイルアプリの検証クラス
 
-検証を必要とするビューモデルプロパティは `ValidatableObject<T>` 型で、各 `ValidatableObject<T>` インスタンスには `Validations` プロパティに追加された検証規則があります。 検証は、`ValidatableObject<T>` インスタンスの `Validate` メソッドを呼び出すことによって、ビューモデルから呼び出されます。このメソッドは検証規則を取得し、`ValidatableObject<T>` `Value` プロパティに対して実行します。 検証エラーは、`ValidatableObject<T>` インスタンスの `Errors` プロパティに配置され、`ValidatableObject<T>` インスタンスの `IsValid` プロパティが更新され、検証が成功したか失敗したかが示されます。
+検証を必要とするビューモデルプロパティは `ValidatableObject<T>`型で、各 `ValidatableObject<T>` インスタンスには `Validations` プロパティに追加された検証規則があります。 検証は、`ValidatableObject<T>` インスタンスの `Validate` メソッドを呼び出すことによって、ビューモデルから呼び出されます。このメソッドは検証規則を取得し、`ValidatableObject<T>` `Value` プロパティに対して実行します。 検証エラーは、`ValidatableObject<T>` インスタンスの `Errors` プロパティに配置され、`ValidatableObject<T>` インスタンスの `IsValid` プロパティが更新され、検証が成功したか失敗したかが示されます。
 
 プロパティの変更通知は `ExtendedBindableObject` クラスによって提供されるため、 [`Entry`](xref:Xamarin.Forms.Entry)コントロールは、入力されたデータが有効かどうかを通知するために、ビューモデルクラスの `ValidatableObject<T>` インスタンスの `IsValid` プロパティにバインドできます。
 
@@ -62,7 +62,7 @@ public class IsNotNullOrEmptyRule<T> : IValidationRule<T>
 }
 ```
 
-@No__t_0 メソッドは、値の引数が `null`、空、または空白文字だけで構成されているかどうかを示す `boolean` を返します。
+`Check` メソッドは、値の引数が `null`、空、または空白文字だけで構成されているかどうかを示す `boolean` を返します。
 
 EShopOnContainers モバイルアプリでは使用されませんが、次のコード例は、電子メールアドレスを検証するための検証規則を示しています。
 
@@ -87,14 +87,14 @@ public class EmailRule<T> : IValidationRule<T>
 }
 ```
 
-@No__t_0 メソッドは、値引数が有効な電子メールアドレスであるかどうかを示す `boolean` を返します。 これは、`Regex` コンストラクターで指定された正規表現パターンが最初に出現する値引数を検索することで実現されます。 入力文字列で正規表現パターンが見つかったかどうかを判断するには、`Match` オブジェクトの `Success` プロパティの値を確認します。
+`Check` メソッドは、値引数が有効な電子メールアドレスであるかどうかを示す `boolean` を返します。 これは、`Regex` コンストラクターで指定された正規表現パターンが最初に出現する値引数を検索することで実現されます。 入力文字列で正規表現パターンが見つかったかどうかを判断するには、`Match` オブジェクトの `Success` プロパティの値を確認します。
 
 > [!NOTE]
 > プロパティの検証には、依存プロパティが含まれる場合があります。 依存プロパティの例として、プロパティ A の有効な値のセットが、プロパティ B で設定されている特定の値に依存する場合があります。プロパティ A の値が、許可されている値のいずれかであることを確認するには、プロパティ B の値を取得する必要があります。さらに、プロパティ B の値が変更された場合は、プロパティ A を再検証する必要があります。
 
 ## <a name="adding-validation-rules-to-a-property"></a>プロパティへの検証規則の追加
 
-EShopOnContainers モバイルアプリでは、検証を必要とするビューモデルプロパティが `ValidatableObject<T>` 型として宣言されています。 `T` は検証対象のデータの型です。 次のコード例は、このような2つのプロパティの例を示しています。
+EShopOnContainers モバイルアプリでは、検証を必要とするビューモデルプロパティが `ValidatableObject<T>`型として宣言されています。 `T` は検証対象のデータの型です。 次のコード例は、このような2つのプロパティの例を示しています。
 
 ```csharp
 public ValidatableObject<string> UserName  
@@ -148,7 +148,7 @@ EShopOnContainers モバイルアプリで使用される検証方法では、�
 
 ### <a name="triggering-validation-manually"></a>手動による検証のトリガー
 
-検証は、ビューモデルのプロパティに対して手動でトリガーできます。 たとえば、eShopOnContainers モバイルアプリでは、モックサービスを使用しているときに、ユーザーが `LoginView` の **[ログイン]** ボタンをタップしたときに、このような処理が行われます。 コマンドデリゲートは、`LoginViewModel` 内の `MockSignInAsync` メソッドを呼び出します。このメソッドは、次のコード例に示すように、`Validate` メソッドを実行して検証を呼び出します。
+検証は、ビューモデルのプロパティに対して手動でトリガーできます。 たとえば、eShopOnContainers モバイルアプリでは、モックサービスを使用しているときに、ユーザーが `LoginView`の **[ログイン]** ボタンをタップしたときに、このような処理が行われます。 コマンドデリゲートは、`LoginViewModel`内の `MockSignInAsync` メソッドを呼び出します。このメソッドは、次のコード例に示すように、`Validate` メソッドを実行して検証を呼び出します。
 
 ```csharp
 private bool Validate()  
@@ -169,7 +169,7 @@ private bool ValidatePassword()
 }
 ```
 
-@No__t_0 メソッドは、各 `ValidatableObject<T>` インスタンスで Validate メソッドを呼び出すことによって、`LoginView` にユーザーが入力したユーザー名とパスワードの検証を実行します。 次のコード例は、`ValidatableObject<T>` クラスの Validate メソッドを示しています。
+`Validate` メソッドは、各 `ValidatableObject<T>` インスタンスで Validate メソッドを呼び出すことによって、`LoginView`にユーザーが入力したユーザー名とパスワードの検証を実行します。 次のコード例は、`ValidatableObject<T>` クラスの Validate メソッドを示しています。
 
 ```csharp
 public bool Validate()  
@@ -204,7 +204,7 @@ public bool Validate()
 </Entry>
 ```
 
-[@No__t_1](xref:Xamarin.Forms.Entry)コントロールは `ValidatableObject<T>` インスタンスの `UserName.Value` プロパティにバインドされます。コントロールの `Behaviors` コレクションには、`EventToCommandBehavior` インスタンスが追加されます。 この動作により、`Entry` での [`TextChanged`] イベントの発生に応じて `ValidateUserNameCommand` が実行されます。これは、`Entry` 内のテキストが変更されたときに発生します。 さらに、`ValidateUserNameCommand` デリゲートは、`ValidatableObject<T>` インスタンスで `Validate` メソッドを実行する `ValidateUserName` メソッドを実行します。 そのため、ユーザーがユーザー名の `Entry` コントロールに文字を入力するたびに、入力されたデータの検証が実行されます。
+[`Entry`](xref:Xamarin.Forms.Entry)コントロールは `ValidatableObject<T>` インスタンスの `UserName.Value` プロパティにバインドされます。コントロールの `Behaviors` コレクションには、`EventToCommandBehavior` インスタンスが追加されます。 この動作により、`Entry`での [`TextChanged`] イベントの発生に応じて `ValidateUserNameCommand` が実行されます。これは、`Entry` 内のテキストが変更されたときに発生します。 さらに、`ValidateUserNameCommand` デリゲートは、`ValidatableObject<T>` インスタンスで `Validate` メソッドを実行する `ValidateUserName` メソッドを実行します。 そのため、ユーザーがユーザー名の `Entry` コントロールに文字を入力するたびに、入力されたデータの検証が実行されます。
 
 動作の詳細については、「[動作の実装](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing_behaviors)」を参照してください。
 
@@ -220,7 +220,7 @@ EShopOnContainers モバイルアプリは、無効なデータが含まれて�
 
 ### <a name="highlighting-a-control-that-contains-invalid-data"></a>無効なデータが含まれているコントロールの強調表示
 
-@No__t_0 アタッチされる動作は、検証エラーが発生した[`Entry`](xref:Xamarin.Forms.Entry)コントロールを強調表示するために使用されます。 次のコード例は、`LineColorBehavior` のアタッチ動作を `Entry` コントロールにアタッチする方法を示しています。
+`LineColorBehavior` アタッチされる動作は、検証エラーが発生した[`Entry`](xref:Xamarin.Forms.Entry)コントロールを強調表示するために使用されます。 次のコード例は、`LineColorBehavior` のアタッチ動作を `Entry` コントロールにアタッチする方法を示しています。
 
 ```xaml
 <Entry Text="{Binding UserName.Value, Mode=TwoWay}">
@@ -234,7 +234,7 @@ EShopOnContainers モバイルアプリは、無効なデータが含まれて�
 </Entry>
 ```
 
-[@No__t_1](xref:Xamarin.Forms.Entry)コントロールは、次のコード例に示すように、明示的なスタイルを使用します。
+[`Entry`](xref:Xamarin.Forms.Entry)コントロールは、次のコード例に示すように、明示的なスタイルを使用します。
 
 ```xaml
 <Style x:Key="EntryStyle"  
@@ -250,7 +250,7 @@ EShopOnContainers モバイルアプリは、無効なデータが含まれて�
 
 このスタイルでは、 [`Entry`](xref:Xamarin.Forms.Entry)コントロールの `LineColorBehavior` アタッチされる動作の `ApplyLineColor` および `LineColor` 添付プロパティを設定します。 スタイルについて詳しくは、「[Styles](~/xamarin-forms/user-interface/styles/index.md)」(スタイル) をご覧ください。
 
-@No__t_0 添付プロパティの値が設定または変更されると、`LineColorBehavior` のアタッチされた動作によって `OnApplyLineColorChanged` メソッドが実行されます。次のコード例を参照してください。
+`ApplyLineColor` 添付プロパティの値が設定または変更されると、`LineColorBehavior` のアタッチされた動作によって `OnApplyLineColorChanged` メソッドが実行されます。次のコード例を参照してください。
 
 ```csharp
 public static class LineColorBehavior  
@@ -283,9 +283,9 @@ public static class LineColorBehavior
 }
 ```
 
-このメソッドのパラメーターは、動作がアタッチされるコントロールのインスタンス、および `ApplyLineColor` 添付プロパティの新旧の値を提供します。 @No__t_3 添付プロパティが `true` されている場合は、コントロールの[`Effects`](xref:Xamarin.Forms.Element.Effects)コレクションに `EntryLineColorEffect` クラスが追加されます。それ以外の場合は、コントロールの `Effects` コレクションから削除されます。 動作の詳細については、「[動作の実装](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing_behaviors)」を参照してください。
+このメソッドのパラメーターは、動作がアタッチされるコントロールのインスタンス、および `ApplyLineColor` 添付プロパティの新旧の値を提供します。 `ApplyLineColor` 添付プロパティが `true`されている場合は、コントロールの[`Effects`](xref:Xamarin.Forms.Element.Effects)コレクションに `EntryLineColorEffect` クラスが追加されます。それ以外の場合は、コントロールの `Effects` コレクションから削除されます。 動作の詳細については、「[動作の実装](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing_behaviors)」を参照してください。
 
-@No__t_0 サブクラス[`RoutingEffect`](xref:Xamarin.Forms.RoutingEffect)クラスを次のコード例に示します。
+`EntryLineColorEffect` サブクラス[`RoutingEffect`](xref:Xamarin.Forms.RoutingEffect)クラスを次のコード例に示します。
 
 ```csharp
 public class EntryLineColorEffect : RoutingEffect  
@@ -296,7 +296,7 @@ public class EntryLineColorEffect : RoutingEffect
 }
 ```
 
-[@No__t_1](xref:Xamarin.Forms.RoutingEffect)クラスは、プラットフォームに依存しない効果を表します。これは、プラットフォーム固有の内部効果をラップします。 これは、プラットフォーム固有のエフェクトの型情報へのコンパイル時アクセスがないため、エフェクトの削除プロセスを簡略化します。 @No__t_0 は、基本クラスのコンストラクターを呼び出し、解決グループ名の連結で構成されるパラメーターと、プラットフォーム固有の各効果クラスで指定される一意の ID を渡します。
+[`RoutingEffect`](xref:Xamarin.Forms.RoutingEffect)クラスは、プラットフォームに依存しない効果を表します。これは、プラットフォーム固有の内部効果をラップします。 これは、プラットフォーム固有のエフェクトの型情報へのコンパイル時アクセスがないため、エフェクトの削除プロセスを簡略化します。 `EntryLineColorEffect` は、基本クラスのコンストラクターを呼び出し、解決グループ名の連結で構成されるパラメーターと、プラットフォーム固有の各効果クラスで指定される一意の ID を渡します。
 
 次のコード例は、iOS の `eShopOnContainers.EntryLineColorEffect` の実装を示しています。
 
@@ -374,7 +374,7 @@ namespace eShopOnContainers.iOS.Effects
 }
 ```
 
-@No__t_0 メソッドは、Xamarin. Forms [`Entry`](xref:Xamarin.Forms.Entry)コントロールのネイティブコントロールを取得し、`UpdateLineColor` メソッドを呼び出して行の色を更新します。 @No__t_0 オーバーライドは、`Entry` コントロールのバインド可能なプロパティの変更に応答します。添付 `LineColor` プロパティが変更された場合、または `Entry` の[`Height`](xref:Xamarin.Forms.VisualElement.Height)プロパティが変更された場合は、線の色を更新します。 エフェクトの詳細については、[エフェクト](~/xamarin-forms/app-fundamentals/effects/index.md)に関するページを参照してください。
+`OnAttached` メソッドは、Xamarin. Forms [`Entry`](xref:Xamarin.Forms.Entry)コントロールのネイティブコントロールを取得し、`UpdateLineColor` メソッドを呼び出して行の色を更新します。 `OnElementPropertyChanged` オーバーライドは、`Entry` コントロールのバインド可能なプロパティの変更に応答します。添付 `LineColor` プロパティが変更された場合、または `Entry` の[`Height`](xref:Xamarin.Forms.VisualElement.Height)プロパティが変更された場合は、線の色を更新します。 エフェクトの詳細については、[エフェクト](~/xamarin-forms/app-fundamentals/effects/index.md)に関するページを参照してください。
 
 有効なデータが[`Entry`](xref:Xamarin.Forms.Entry)コントロールに入力されると、コントロールの下部に黒い線が適用され、検証エラーがないことが示されます。 図6-3 は、この例を示しています。
 
@@ -382,7 +382,7 @@ namespace eShopOnContainers.iOS.Effects
 
 **図 6-3**: 検証エラーがないことを示す黒い線
 
-[@No__t_1](xref:Xamarin.Forms.Entry)コントロールには、その[`Triggers`](xref:Xamarin.Forms.VisualElement.Triggers)コレクションにも[`DataTrigger`](xref:Xamarin.Forms.DataTrigger)が追加されています。 @No__t_0 を次のコード例に示します。
+[`Entry`](xref:Xamarin.Forms.Entry)コントロールには、その[`Triggers`](xref:Xamarin.Forms.VisualElement.Triggers)コレクションにも[`DataTrigger`](xref:Xamarin.Forms.DataTrigger)が追加されています。 `DataTrigger`を次のコード例に示します。
 
 ```xaml
 <Entry Text="{Binding UserName.Value, Mode=TwoWay}">  
@@ -399,7 +399,7 @@ namespace eShopOnContainers.iOS.Effects
 </Entry>
 ```
 
-この[`DataTrigger`](xref:Xamarin.Forms.DataTrigger)は `UserName.IsValid` プロパティを監視し、値が `false` になると、 [`Setter`](xref:Xamarin.Forms.Setter)を実行して、`LineColor` のアタッチされた動作の `LineColorBehavior` 添付プロパティを赤に変更します。 図6-4 は、この例を示しています。
+この[`DataTrigger`](xref:Xamarin.Forms.DataTrigger)は `UserName.IsValid` プロパティを監視し、値が `false`になると、 [`Setter`](xref:Xamarin.Forms.Setter)を実行して、`LineColor` のアタッチされた動作の `LineColorBehavior` 添付プロパティを赤に変更します。 図6-4 は、この例を示しています。
 
 ![](validation-images/validation-redline.png "Red line indicating validation error")
 
@@ -418,13 +418,13 @@ UI では、検証に失敗したデータを持つ各コントロールの下�
        Style="{StaticResource ValidationErrorLabelStyle}" />
 ```
 
-各[`Label`](xref:Xamarin.Forms.Label)は、検証対象のビューモデルオブジェクトの `Errors` プロパティにバインドされます。 @No__t_0 プロパティは、`ValidatableObject<T>` クラスによって提供され、`List<string>` 型です。 @No__t_0 プロパティには複数の検証エラーを含めることができるため、`FirstValidationErrorConverter` インスタンスを使用して、コレクションから表示する最初のエラーを取得します。
+各[`Label`](xref:Xamarin.Forms.Label)は、検証対象のビューモデルオブジェクトの `Errors` プロパティにバインドされます。 `Errors` プロパティは、`ValidatableObject<T>` クラスによって提供され、`List<string>`型です。 `Errors` プロパティには複数の検証エラーを含めることができるため、`FirstValidationErrorConverter` インスタンスを使用して、コレクションから表示する最初のエラーを取得します。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 EShopOnContainers モバイルアプリは、ビューモデルのプロパティの同期クライアント側検証を実行し、無効なデータが含まれているコントロールを強調表示し、ユーザーに通知するエラーメッセージを表示することによって、検証エラーをユーザーに通知します。データが無効である理由。
 
-検証を必要とするビューモデルプロパティは `ValidatableObject<T>` 型で、各 `ValidatableObject<T>` インスタンスには `Validations` プロパティに追加された検証規則があります。 検証は、`ValidatableObject<T>` インスタンスの `Validate` メソッドを呼び出すことによって、ビューモデルから呼び出されます。このメソッドは検証規則を取得し、`ValidatableObject<T>` `Value` プロパティに対して実行します。 検証エラーは、`ValidatableObject<T>`instance の `Errors` プロパティに配置され、`ValidatableObject<T>` インスタンスの `IsValid` プロパティが更新され、検証が成功したか失敗したかが示されます。
+検証を必要とするビューモデルプロパティは `ValidatableObject<T>`型で、各 `ValidatableObject<T>` インスタンスには `Validations` プロパティに追加された検証規則があります。 検証は、`ValidatableObject<T>` インスタンスの `Validate` メソッドを呼び出すことによって、ビューモデルから呼び出されます。このメソッドは検証規則を取得し、`ValidatableObject<T>` `Value` プロパティに対して実行します。 検証エラーは、`ValidatableObject<T>`インスタンスの `Errors` プロパティに配置され、`ValidatableObject<T>` インスタンスの `IsValid` プロパティが更新され、検証が成功したか失敗したかが示されます。
 
 ## <a name="related-links"></a>関連リンク
 

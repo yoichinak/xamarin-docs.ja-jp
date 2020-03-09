@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
 ms.openlocfilehash: ce262faf2d79e6a2cc969df582446fdc2ec29bde
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032222"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910873"
 ---
 # <a name="introduction-to-ios-10"></a>iOS 10 の概要
 
@@ -28,7 +28,7 @@ Apple では、iOS 10 に新しい Api とサービスがいくつか追加さ�
 
 Apple の真の雰囲気ディスプレイテクノロジでは、iOS デバイスのアンビエント光センサーを使用して、現在の照明条件に合わせてディスプレイの色と輝度を動的に調整します。 iOS 10 は、アプリの `Info.plist` ファイルに追加できる新しい[UIWhitePointAdaptivityStyle](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW31)キーを提供し、標準のカラーシフトを適用する方法を制御します。 
 
-次の値を使用できます。
+次の値を指定できます。
 
 - `UIWhitePointAdaptivityStyleStandard`**既定値**: 標準のホワイトポイント adaptivity を使用します。
 - `UIWhitePointAdaptivityStyleReading`-集中アプリに使用されます。
@@ -42,7 +42,7 @@ Apple では、iOS 10 に新しいアプリの拡張ポイントがいくつか�
 
 - 呼び出しディレクトリ
 - インテントとインテント UI
-- [メッセージ]
+- メッセージ
 - 通知の内容
 - Notification Services
 - ステッカーパック
@@ -52,7 +52,7 @@ Apple では、iOS 10 に新しいアプリの拡張ポイントがいくつか�
 - `UITextDocumentProxy` クラスの新しい `DocumentInputMode` プロパティを使用すると、ドキュメントの入力言語を決定し、その言語に合わせてキーボード拡張を配置できます。
 - 新しい `HandleInputModeList` メソッドを使用すると、タップされている地球キーに応答して、キーボード拡張機能でシステムのキーボードピッカーメニューを表示できます。
 
-詳細については、「[拡張機能の概要](~/ios/platform/extensions.md)」、「[メッセージアプリの統合](~/ios/platform/message-app-integration/index.md)」、「[プロアクティブな提案](~/ios/platform/search/proactive-suggestions.md)の概要」、「 [Sirikit](~/ios/platform/sirikit/index.md)の概要」、「[ユーザー通知](~/ios/platform/user-notifications/index.md)と Apple の[概要」を参照してください。アプリ拡張機能のプログラミングガイド](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)。
+詳細については、「[拡張機能の概要](~/ios/platform/extensions.md)」、「[メッセージアプリの統合](~/ios/platform/message-app-integration/index.md)」、「[プロアクティブな提案](~/ios/platform/search/proactive-suggestions.md)の概要」、「 [Sirikit](~/ios/platform/sirikit/index.md)の概要」、「ユーザーへの[通知](~/ios/platform/user-notifications/index.md)の概要」、および「Apple の[アプリ拡張機能のプログラミングガイド](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)」を参照してください。
 
 ## <a name="app-search-enhancements"></a>アプリ検索の機能強化
 
@@ -168,7 +168,7 @@ Siri は通常、すべてのユーザーの操作を処理しますが、アプ
 
 iOS 10 には新しい Speech API が含まれています。これにより、アプリは、音声の音声認識と議事録 (ライブまたは録音されたオーディオストリーム) をテキストにすることができます。
 
-音声認識では、Apple のサーバー上のデータの転送と一時的な保存が必要であるため、アプリは `SFSpeechRecognizer.RequestAutorization`、`Info.plist` ファイルに `NSSpeechRecognitionUsageDescription` キーを含め、を呼び出すことによって、ユーザーが認識を実行するためのアクセス許可を要求_する必要があり_ます。b.
+音声認識では、Apple のサーバー上のデータの転送と一時的な保存が必要であるため、アプリは、`Info.plist` ファイルに `NSSpeechRecognitionUsageDescription` キーを含め、`SFSpeechRecognizer.RequestAutorization` メソッドを呼び出すことによって、ユーザーが認識を実行するためのアクセス許可を要求_する必要があり_ます。
 
 詳細については、「[音声認識ガイドの概要](~/ios/platform/speech.md)」を参照してください。
 
