@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: 0f523c7149366cff85164f26f3f47b87801002cb
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770758"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78916495"
 ---
 # <a name="enterprise-app-navigation"></a>エンタープライズアプリのナビゲーション
 
@@ -25,18 +25,18 @@ Xamarin. フォームには、ページナビゲーションのサポートが�
 - ナビゲーション中に初期化のためにパラメーターを渡す方法。 たとえば、ユーザーが注文の詳細を更新するためにビューに移動した場合、正しいデータを表示できるように、注文データをビューに渡す必要があります。
 - 特定のビジネスルールが確実に cache-control されるようにするための、ナビゲーションを併置する方法。 たとえば、無効なデータを修正したり、ビュー内で行われたデータの変更を送信または破棄するように求めるメッセージが表示されるように、ビューから移動する前にユーザーに確認を求めることができます。
 
-この章では、ビューモデルの`NavigationService`最初のページナビゲーションを実行するために使用されるクラスを提示することで、これらの課題に対処します。
+この章では、ビューモデルの最初のページナビゲーションを実行するために使用される `NavigationService` クラスを提示することで、これらの課題に対処します。
 
 > [!NOTE]
-> アプリ`NavigationService`で使用されるは、ContentPage インスタンス間で階層ナビゲーションを実行するためだけに設計されています。 サービスを使用して他の種類のページ間を移動すると、予期しない動作が発生する可能性があります。
+> アプリで使用される `NavigationService` は、ContentPage インスタンス間で階層ナビゲーションを実行するためだけに設計されています。 サービスを使用して他の種類のページ間を移動すると、予期しない動作が発生する可能性があります。
 
 ## <a name="navigating-between-pages"></a>ページ間の移動
 
 ナビゲーションロジックは、ビューの分離コードまたはデータバインドビューモデルに配置できます。 ビューにナビゲーションロジックを配置するのは最も簡単な方法ですが、単体テストを使用して簡単にテストすることはできません。 ビューモデルクラスにナビゲーションロジックを配置すると、そのロジックを単体テストで実行できるようになります。 さらに、ビューモデルは、ナビゲーションを制御するロジックを実装して、特定のビジネスルールを確実に適用することができます。 たとえば、アプリでは、入力したデータが有効であることを最初に確認せずに、ユーザーがページから離れることを許可しない場合があります。
 
-`NavigationService`クラスは、通常、テストの容易性を高めるためにビューモデルから呼び出されます。 ただし、ビューモデルからビューに移動するには、ビューモデルがビューを参照する必要があります。また、特に、アクティブなビューモデルが関連付けられていないビューを表示する必要があります。これは推奨されません。 したがって、 `NavigationService`ここに示されているでは、移動先としてビューモデルの種類を指定しています。
+`NavigationService` クラスは、通常、テストの容易性を高めるためにビューモデルから呼び出されます。 ただし、ビューモデルからビューに移動するには、ビューモデルがビューを参照する必要があります。また、特に、アクティブなビューモデルが関連付けられていないビューを表示する必要があります。これは推奨されません。 したがって、ここに示されている `NavigationService` では、移動先としてビューモデルの種類を指定します。
 
-EShopOnContainers モバイルアプリは`NavigationService`クラスを使用して、ビューモデルの最初のナビゲーションを提供します。 このクラスは、 `INavigationService`次のコード例に示すように、インターフェイスを実装しています。
+EShopOnContainers モバイルアプリでは、`NavigationService` クラスを使用して、ビューモデルの最初のナビゲーションを提供します。 このクラスは、次のコード例に示すように、`INavigationService` インターフェイスを実装します。
 
 ```csharp
 public interface INavigationService  
@@ -52,7 +52,7 @@ public interface INavigationService
 
 このインターフェイスは、実装するクラスが次のメソッドを提供する必要があることを指定します。
 
-|メソッド|目的|
+|方法|目的|
 |--- |--- |
 |`InitializeAsync`|アプリが起動されると、2つのページのいずれかへの移動を実行します。|
 |`NavigateToAsync`|指定されたページへの階層ナビゲーションを実行します。|
@@ -60,34 +60,34 @@ public interface INavigationService
 |`RemoveLastFromBackStackAsync`|ナビゲーションスタックから前のページを削除します。|
 |`RemoveBackStackAsync`|ナビゲーションスタックから、前のすべてのページを削除します。|
 
-さらに、インターフェイス`INavigationService`は、実装するクラスがプロパティを`PreviousPageViewModel`提供する必要があることを指定します。 このプロパティは、ナビゲーションスタック内の前のページに関連付けられたビューモデルの型を返します。
+また、`INavigationService` インターフェイスは、実装するクラスが `PreviousPageViewModel` プロパティを提供する必要があることを指定します。 このプロパティは、ナビゲーションスタック内の前のページに関連付けられたビューモデルの型を返します。
 
 > [!NOTE]
-> インターフェイス`INavigationService`は通常、 `GoBackAsync`メソッドも指定します。このメソッドは、ナビゲーションスタックの前のページにプログラムで戻るために使用されます。 ただし、この方法は必須ではないため、eShopOnContainers モバイルアプリにはありません。
+> `INavigationService` インターフェイスは通常、`GoBackAsync` メソッドも指定します。このメソッドは、ナビゲーションスタックの前のページにプログラムによって戻るために使用されます。 ただし、この方法は必須ではないため、eShopOnContainers モバイルアプリにはありません。
 
 ### <a name="creating-the-navigationservice-instance"></a>NavigationService インスタンスを作成しています
 
-インターフェイスを実装するクラスは、次のコード例に示すように、Autofac 依存関係挿入コンテナーを使用してシングルトンとして登録されます。 `NavigationService` `INavigationService`
+`INavigationService` インターフェイスを実装する `NavigationService` クラスは、次のコード例に示すように、Autofac 依存関係挿入コンテナーを使用してシングルトンとして登録されます。
 
 ```csharp
 builder.RegisterType<NavigationService>().As<INavigationService>().SingleInstance();
 ```
 
-次のコード例に示す`ViewModelBase`ように、インターフェイスはクラスコンストラクターで解決されます。`INavigationService`
+`INavigationService` インターフェイスは、次のコード例に示すように、`ViewModelBase` クラスコンストラクターで解決されます。
 
 ```csharp
 NavigationService = ViewModelLocator.Resolve<INavigationService>();
 ```
 
-これに`NavigationService` `App`より、Autofac 依存関係挿入コンテナーに格納されているオブジェクトへの参照が返されます。このコンテナーは、クラスのメソッドによって作成されます。`InitNavigation` 詳細については、「[アプリの起動時の移動](#navigating_when_the_app_is_launched)」を参照してください。
+これにより、Autofac 依存関係挿入コンテナーに格納されている `NavigationService` オブジェクトへの参照が返されます。これは、`App` クラスの `InitNavigation` メソッドによって作成されます。 詳細については、「[アプリの起動時の移動](#navigating_when_the_app_is_launched)」を参照してください。
 
-クラス`ViewModelBase`は、 `NavigationService`型`NavigationService` の`INavigationService`プロパティにインスタンスを格納します。 したがって、 `ViewModelBase`クラスから派生するすべてのビューモデルクラスは、 `NavigationService`プロパティを使用して、 `INavigationService`インターフェイスによって指定されたメソッドにアクセスできます。 これにより、Autofac 依存関係`NavigationService`挿入コンテナーから各ビューモデルクラスにオブジェクトを挿入するオーバーヘッドを回避できます。
+`ViewModelBase` クラスは、`NavigationService` インスタンスを `INavigationService`型の `NavigationService` プロパティに格納します。 したがって、`ViewModelBase` クラスから派生するすべてのビューモデルクラスは、`NavigationService` プロパティを使用して、`INavigationService` インターフェイスによって指定されたメソッドにアクセスできます。 これにより、Autofac 依存関係挿入コンテナーから各ビューモデルクラスに `NavigationService` オブジェクトを挿入するオーバーヘッドを回避できます。
 
 ### <a name="handling-navigation-requests"></a>ナビゲーション要求の処理
 
-Xamarin には、クラス[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)が用意されています。このクラスは、ユーザーが必要に応じて、ページ間を移動したり、前後に移動したりできる階層型のナビゲーションエクスペリエンスを実装します。 階層ナビゲーションの詳細については、「[階層ナビゲーション](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md)」を参照してください。
+Xamarin には[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)クラスが用意されています。このクラスは、ユーザーが必要に応じて、ページ間を移動したり、前後に移動したりできる階層型のナビゲーションエクスペリエンスを実装します。 階層ナビゲーションの詳細については、「[階層ナビゲーション](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md)」を参照してください。
 
-次のコード例[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)に示すように、クラスを直接`NavigationPage`使用するの`CustomNavigationView`ではなく、eShopOnContainers アプリがクラスのクラスをラップします。
+EShopOnContainers アプリは、 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)クラスを直接使用するのではなく、次のコード例に示すように、`CustomNavigationView` クラスの `NavigationPage` クラスをラップします。
 
 ```csharp
 public partial class CustomNavigationView : NavigationPage  
@@ -104,15 +104,15 @@ public partial class CustomNavigationView : NavigationPage
 }
 ```
 
-このラップの目的は、クラスの XAML ファイル内[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)のインスタンスを簡単にスタイル設定することです。
+このラップの目的は、クラスの XAML ファイル内の[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)インスタンスのスタイルを簡単に設定することです。
 
-ナビゲーションは、次のコード例に示すように、 `NavigateToAsync`いずれかのメソッドを呼び出して、移動先のページのビューモデルの種類を指定して、ビューモデルクラス内で実行されます。
+ナビゲーションは、次のコード例に示すように、`NavigateToAsync` メソッドの1つを呼び出して、移動先のページのビューモデルの種類を指定して、ビューモデルクラス内で実行されます。
 
 ```csharp
 await NavigationService.NavigateToAsync<MainViewModel>();
 ```
 
-次のコード例は、 `NavigateToAsync` `NavigationService`クラスによって提供されるメソッドを示しています。
+次のコード例は、`NavigationService` クラスによって提供される `NavigateToAsync` メソッドを示しています。
 
 ```csharp
 public Task NavigateToAsync<TViewModel>() where TViewModel : ViewModelBase  
@@ -126,9 +126,9 @@ public Task NavigateToAsync<TViewModel>(object parameter) where TViewModel�
 }
 ```
 
-各メソッドでは`ViewModelBase` 、クラスから派生するすべてのビューモデルクラスを使用して、 `InternalNavigateToAsync`メソッドを呼び出すことによって階層ナビゲーションを実行できます。 さらに、2番`NavigateToAsync`目のメソッドでは、ナビゲーションデータを、移動先のビューモデルに渡される引数として指定できます。この引数は、通常、初期化の実行に使用されます。 詳細については、「[ナビゲーション中のパラメーターの引き渡し](#passing_parameters_during_navigation)」を参照してください。
+各メソッドでは、`InternalNavigateToAsync` メソッドを呼び出すことによって、`ViewModelBase` クラスから派生したすべてのビューモデルクラスで階層ナビゲーションを実行できます。 また、2つ目の `NavigateToAsync` メソッドを使用すると、ナビゲーションデータを、移動先のビューモデルに渡される引数として指定できます。この引数は通常、初期化の実行に使用されます。 詳細については、「[ナビゲーション中のパラメーターの引き渡し](#passing_parameters_during_navigation)」を参照してください。
 
-メソッド`InternalNavigateToAsync`はナビゲーション要求を実行し、次のコード例に示します。
+`InternalNavigateToAsync` メソッドはナビゲーション要求を実行し、次のコード例に示します。
 
 ```csharp
 private async Task InternalNavigateToAsync(Type viewModelType, object parameter)  
@@ -178,7 +178,7 @@ private Page CreatePage(Type viewModelType, object parameter)
 }
 ```
 
-メソッド`InternalNavigateToAsync`は、最初に`CreatePage`メソッドを呼び出して、ビューモデルへのナビゲーションを実行します。 このメソッドは、指定されたビューモデルの型に対応するビューを検索し、このビューの種類のインスタンスを作成して返します。 ビューモデルの種類に対応するビューを見つけるには、次のことを前提とした規約ベースのアプローチを使用します。
+`InternalNavigateToAsync` メソッドは、最初に `CreatePage` メソッドを呼び出すことによって、ビューモデルへのナビゲーションを実行します。 このメソッドは、指定されたビューモデルの型に対応するビューを検索し、このビューの種類のインスタンスを作成して返します。 ビューモデルの種類に対応するビューを見つけるには、次のことを前提とした規約ベースのアプローチを使用します。
 
 - ビューは、ビューモデルの種類と同じアセンブリに含まれています。
 - ビューはにあります。子の名前空間を表示します。
@@ -187,18 +187,18 @@ private Page CreatePage(Type viewModelType, object parameter)
 
 ビューがインスタンス化されると、ビューは対応するビューモデルに関連付けられます。 この方法の詳細については、「[ビューモデルロケーターを使用したビューモデルの自動作成](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically_creating_a_view_model_with_a_view_model_locator)」を参照してください。
 
-作成されるビューが`LoginView`である場合は、 `CustomNavigationView` [`Application.Current.MainPage`](xref:Xamarin.Forms.Application.MainPage)クラスの新しいインスタンス内にラップされ、プロパティに割り当てられます。 それ以外の`CustomNavigationView`場合、インスタンスが取得され、null [`PushAsync`](xref:Xamarin.Forms.NavigationPage)でない場合は、メソッドが呼び出されて、作成されたビューがナビゲーションスタックにプッシュされます。 ただし、 `CustomNavigationView`取得されたインスタンス`null`がの場合、作成されるビューは`CustomNavigationView`クラスの新しいインスタンス内にラップされ`Application.Current.MainPage` 、プロパティに割り当てられます。 このメカニズムにより、ナビゲーション中、ページが空である場合とデータが含まれている場合の両方で、ナビゲーションスタックに正しく追加されます。
+作成されるビューが `LoginView`である場合は、`CustomNavigationView` クラスの新しいインスタンス内にラップされ、 [`Application.Current.MainPage`](xref:Xamarin.Forms.Application.MainPage)プロパティに割り当てられます。 それ以外の場合は、`CustomNavigationView` インスタンスが取得され、null でない場合は、 [`PushAsync`](xref:Xamarin.Forms.NavigationPage)メソッドが呼び出されて、作成されるビューがナビゲーションスタックにプッシュされます。 ただし、取得した `CustomNavigationView` インスタンスが `null`場合、作成されるビューは `CustomNavigationView` クラスの新しいインスタンス内にラップされ、`Application.Current.MainPage` プロパティに割り当てられます。 このメカニズムにより、ナビゲーション中、ページが空である場合とデータが含まれている場合の両方で、ナビゲーションスタックに正しく追加されます。
 
 > [!TIP]
 > ページのキャッシュを検討してください。 ページキャッシュを使用すると、現在表示されていないビューのメモリ消費が発生します。 ただし、ページキャッシュを使用しない場合は、新しいページに移動するたびに、ページとそのビューモデルの XAML の解析と構築が行われることを意味します。これは、複雑なページのパフォーマンスに影響を与える可能性があります。 多数のコントロールを使用しない適切に設計されたページの場合は、パフォーマンスが十分である必要があります。 ただし、ページキャッシュは、ページの読み込みに時間がかかる場合に役立つ可能性があります。
 
-ビューを作成して移動すると、 `InitializeAsync`ビューに関連付けられたビューモデルのメソッドが実行されます。 詳細については、「[ナビゲーション中のパラメーターの引き渡し](#passing_parameters_during_navigation)」を参照してください。
+ビューを作成して移動すると、ビューに関連付けられたビューモデルの `InitializeAsync` メソッドが実行されます。 詳細については、「[ナビゲーション中のパラメーターの引き渡し](#passing_parameters_during_navigation)」を参照してください。
 
 <a name="navigating_when_the_app_is_launched" />
 
 ### <a name="navigating-when-the-app-is-launched"></a>アプリが起動されたときの移動
 
-アプリが起動されると、 `InitNavigation` `App`クラスのメソッドが呼び出されます。 以下のコード例はこのメソッドを示しています。
+アプリが起動されると、`App` クラスの `InitNavigation` メソッドが呼び出されます。 以下のコード例はこのメソッドを示しています。
 
 ```csharp
 private Task InitNavigation()  
@@ -208,12 +208,12 @@ private Task InitNavigation()
 }
 ```
 
-メソッドは、Autofac 依存`NavigationService`関係挿入コンテナーに新しいオブジェクトを作成し、 `InitializeAsync`メソッドを呼び出す前にそのオブジェクトへの参照を返します。
+メソッドは、Autofac 依存関係挿入コンテナーに新しい `NavigationService` オブジェクトを作成し、そのオブジェクトへの参照を返します。その後、`InitializeAsync` メソッドを呼び出します。
 
 > [!NOTE]
-> クラスによって`NavigationService`インターフェイスが解決されると、コンテナーは、initnavigation メソッドが呼び出されたときに作成されたオブジェクトへの参照を返します。 `INavigationService` `ViewModelBase`
+> `INavigationService` インターフェイスが `ViewModelBase` クラスによって解決されると、このコンテナーは、InitNavigation メソッドが呼び出されたときに作成された `NavigationService` オブジェクトへの参照を返します。
 
-次のコード例は、 `NavigationService`メソッドを`InitializeAsync`示しています。
+次のコード例は、`NavigationService` `InitializeAsync` メソッドを示しています。
 
 ```csharp
 public Task InitializeAsync()  
@@ -225,7 +225,7 @@ public Task InitializeAsync()
 }
 ```
 
-アプリ`MainView`にキャッシュされたアクセストークンがあり、認証に使用される場合は、に移動します。 それ以外の`LoginView`場合は、に移動します。
+アプリに認証に使用されるキャッシュされたアクセストークンがある場合、`MainView` に移動します。 それ以外の場合は、`LoginView` に移動します。
 
 Autofac の依存関係挿入コンテナーの詳細については、「[依存関係の挿入の概要](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection)」を参照してください。
 
@@ -233,9 +233,9 @@ Autofac の依存関係挿入コンテナーの詳細については、「[依�
 
 ### <a name="passing-parameters-during-navigation"></a>ナビゲーション中のパラメーターの引き渡し
 
-インターフェイスによっ`NavigateToAsync`て指定されたメソッドの1つでは、ナビゲーションデータを、移動先のビューモデルに渡される引数として指定できます。この引数は、通常、初期化の実行に使用されます。 `INavigationService`
+`INavigationService` インターフェイスによって指定された `NavigateToAsync` メソッドの1つで、ナビゲーションデータを、移動先のビューモデルに渡される引数として指定できます。この引数は通常、初期化の実行に使用されます。
 
-たとえば、 `ProfileViewModel`クラスには、ユーザー `OrderDetailCommand`が`ProfileView`ページで注文を選択したときに実行されるが含まれています。 次に、次のコード`OrderDetailAsync`例に示すように、メソッドを実行します。
+たとえば、`ProfileViewModel` クラスには、ユーザーが `ProfileView` ページで注文を選択したときに実行される `OrderDetailCommand` が含まれています。 次に、次のコード例に示すように、`OrderDetailAsync` メソッドを実行します。
 
 ```csharp
 private async Task OrderDetailAsync(Order order)  
@@ -244,9 +244,9 @@ private async Task OrderDetailAsync(Order order)
 }
 ```
 
-このメソッドは、への`OrderDetailViewModel`ナビゲーションを呼び出し`Order` 、ユーザーが`ProfileView`ページで選択した順序を表すインスタンスを渡します。 クラスによってが`OrderDetailView` `OrderDetailViewModel`作成されると、クラスがインスタンス化され[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)、ビューのに割り当てられます。 `NavigationService` に移動した`OrderDetailView`後、 `InternalNavigateToAsync`メソッドはビュー `InitializeAsync`に関連付けられたビューモデルのメソッドを実行します。
+このメソッドは、`OrderDetailViewModel`へのナビゲーションを呼び出し、`ProfileView` ページでユーザーが選択した順序を表す `Order` インスタンスを渡します。 `NavigationService` クラスが `OrderDetailView`を作成すると、`OrderDetailViewModel` クラスがインスタンス化され、ビューの[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)に割り当てられます。 `OrderDetailView`に移動した後、`InternalNavigateToAsync` メソッドはビューに関連付けられたビューモデルの `InitializeAsync` メソッドを実行します。
 
-メソッドは、オーバーライド可能な`ViewModelBase`メソッドとしてクラスで定義されます。 `InitializeAsync` このメソッドは、 `object`ナビゲーション操作中にビューモデルに渡されるデータを表す引数を指定します。 したがって、ナビゲーション操作からデータを受信するモデルクラスを表示するには、必要な`InitializeAsync`初期化を実行するメソッドの独自の実装を提供します。 次のコード例は、 `InitializeAsync` `OrderDetailViewModel`クラスのメソッドを示しています。
+`InitializeAsync` メソッドは、オーバーライド可能なメソッドとして `ViewModelBase` クラスで定義されます。 このメソッドは、ナビゲーション操作中にビューモデルに渡されるデータを表す `object` 引数を指定します。 したがって、ナビゲーション操作からデータを受信するモデルクラスを表示するには、必要な初期化を実行するための `InitializeAsync` メソッドの独自の実装を提供します。 次のコード例は、`OrderDetailViewModel` クラスの `InitializeAsync` メソッドを示しています。
 
 ```csharp
 public override async Task InitializeAsync(object navigationData)  
@@ -261,13 +261,13 @@ public override async Task InitializeAsync(object navigationData)
 }
 ```
 
-このメソッドは、 `Order`ナビゲーション操作中にビューモデルに渡されたインスタンスを取得し、それを使用して`OrderService`インスタンスから完全な順序の詳細を取得します。
+このメソッドは、ナビゲーション操作中にビューモデルに渡された `Order` インスタンスを取得し、それを使用して `OrderService` インスタンスから完全な注文の詳細を取得します。
 
 <a name="invoking_navigation_using_behaviors" />
 
 ### <a name="invoking-navigation-using-behaviors"></a>動作を使用したナビゲーションの呼び出し
 
-通常、ナビゲーションはユーザーの操作によってビューからトリガーされます。 たとえば、は、 `LoginView`正常に認証された後にナビゲーションを実行します。 次のコード例は、動作によってナビゲーションがどのように呼び出されるかを示しています。
+通常、ナビゲーションはユーザーの操作によってビューからトリガーされます。 たとえば、`LoginView` は、正常に認証された後にナビゲーションを実行します。 次のコード例は、動作によってナビゲーションがどのように呼び出されるかを示しています。
 
 ```xaml
 <WebView ...>  
@@ -280,9 +280,9 @@ public override async Task InitializeAsync(object navigationData)
 </WebView>
 ```
 
-実行`EventToCommandBehavior`時には、 [`WebView`](xref:Xamarin.Forms.WebView)との対話に応答します。 が`WebView` web ページ[`Navigating`](xref:Xamarin.Forms.WebView.Navigating)に移動すると、イベントが発生し`LoginViewModel`ます。これ`NavigateCommand`により、でが実行されます。 既定では、イベントのイベント引数がコマンドに渡されます。 このデータは、 `EventArgsConverter`プロパティで指定されたコンバーターによってソースとターゲットの間で渡されるときに変換され[`WebNavigatingEventArgs`](xref:Xamarin.Forms.WebNavigatingEventArgs)ます。これにより、からが[`Url`](xref:Xamarin.Forms.WebNavigationEventArgs.Url)返されます。 このため、 `NavigationCommand`が実行されると、web ページの Url は、登録さ`Action`れたにパラメーターとして渡されます。
+実行時には、`EventToCommandBehavior` は[`WebView`](xref:Xamarin.Forms.WebView)との対話に応答します。 `WebView` が web ページに移動すると、 [`Navigating`](xref:Xamarin.Forms.WebView.Navigating)イベントが発生し、`LoginViewModel`内の `NavigateCommand` が実行されます。 既定では、イベントのイベント引数がコマンドに渡されます。 このデータは、ソースとターゲットの間で渡されるときに、`EventArgsConverter` プロパティで指定されたコンバーターによって変換されます。これにより、 [`WebNavigatingEventArgs`](xref:Xamarin.Forms.WebNavigatingEventArgs)から[`Url`](xref:Xamarin.Forms.WebNavigationEventArgs.Url)が返されます。 したがって、`NavigationCommand` が実行されると、web ページの Url は、登録されている `Action`にパラメーターとして渡されます。
 
-次のコード例`NavigationCommand`に示す`NavigateAsync`ように、はメソッドを実行します。
+次のコード例に示すように、`NavigationCommand` によって `NavigateAsync` メソッドが実行されます。
 
 ```csharp
 private async Task NavigateAsync(string url)  
@@ -294,7 +294,7 @@ private async Task NavigateAsync(string url)
 }
 ```
 
-このメソッドは、への`MainViewModel`ナビゲーションを呼び出し、次のナビゲーション`LoginView`によってナビゲーションスタックからページを削除します。
+このメソッドは `MainViewModel`へのナビゲーションを呼び出し、次のナビゲーションによってナビゲーションスタックから `LoginView` ページを削除します。
 
 ### <a name="confirming-or-cancelling-navigation"></a>ナビゲーションの確認または取り消し
 
@@ -304,7 +304,7 @@ private async Task NavigateAsync(string url)
 
 Xamarin. フォームには、ページナビゲーションのサポートが含まれています。これは通常、ユーザーが UI と対話するか、アプリ自体から、ロジックに基づく状態の内部的な変更の結果として発生します。 ただし、MVVM パターンを使用するアプリでは、ナビゲーションが複雑になることがあります。
 
-この章では`NavigationService` 、ビューモデルからビューモデルの最初のナビゲーションを実行するために使用されるクラスについて説明します。 ビューモデルクラスにナビゲーションロジックを配置すると、自動テストでロジックを実行できるようになります。 さらに、ビューモデルは、ナビゲーションを制御するロジックを実装して、特定のビジネスルールを確実に適用することができます。
+この章では、ビューモデルからビューモデルの最初のナビゲーションを実行するために使用される `NavigationService` クラスについて説明します。 ビューモデルクラスにナビゲーションロジックを配置すると、自動テストでロジックを実行できるようになります。 さらに、ビューモデルは、ナビゲーションを制御するロジックを実装して、特定のビジネスルールを確実に適用することができます。
 
 ## <a name="related-links"></a>関連リンク
 

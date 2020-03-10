@@ -1,5 +1,5 @@
 ---
-title: Xamarin. iOS の Web ビュー
+title: Xamarin.iOS の Web ビュー
 description: このドキュメントでは、Xamarin iOS アプリで web コンテンツを表示するさまざまな方法について説明します。 WKWebView、SFSafariViewController、Safari、およびアプリトランスポートのセキュリティについて説明します。
 ms.prod: xamarin
 ms.assetid: 84886CF4-2B2B-4540-AD92-7F0B791952D1
@@ -8,13 +8,13 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
 ms.openlocfilehash: 8640800717a88e800503e93c339eeb080707374e
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725432"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915696"
 ---
-# <a name="web-views-in-xamarinios"></a>Xamarin. iOS の Web ビュー
+# <a name="web-views-in-xamarinios"></a>Xamarin.iOS の Web ビュー
 
 IOS Apple の有効期間中は、アプリ開発者がアプリに web ビュー機能を組み込むためのさまざまな方法がリリースされました。 ほとんどのユーザーは iOS デバイスで組み込みの Safari web ブラウザーを利用しているため、他のアプリの web ビュー機能はこのエクスペリエンスと同じであることが期待されます。 同じジェスチャが動作すること、パフォーマンスが同等であること、および機能が同じであることが期待されます。
 
@@ -47,7 +47,7 @@ webView.LoadRequest(request);
 
  `SFSafariViewController` は、アプリから web コンテンツを提供する最新の方法であり、iOS 9 以降で使用できます。 `UIWebView` または `WKWebView`とは異なり、`SFSafariViewController` はビューコントローラーであるため、他のビューと一緒に使用することはできません。 ビューコントローラーを表示するのと同じ方法で、`SFSafariViewController` を新しいビューコントローラーとして表示する必要があります。
 
- `SFSafariViewController` は、基本的には "ミニ safari" で、アプリに埋め込むことができます。 WKWebView と同様に、同じ Nitro Javascript エンジンを使用しますが、オートフィル、閲覧者、モバイル Safari で cookie とデータを共有する機能など、さまざまな Safari 機能も用意されています。 ユーザーと `SFSafariViewController` の間の対話は、アプリにはアクセスできません。 アプリは、既定の Safari 機能のいずれにもアクセスできません。
+ `SFSafariViewController` は、基本的には "ミニ safari" で、アプリに埋め込むことができます。 WKWebView と同様に、同じ Nitro Javascript エンジンを使用しますが、オートフィル、リーダー、モバイル Safari で cookie とデータを共有する機能など、さまざまな Safari 機能も用意されています。 ユーザーと `SFSafariViewController` の間の対話は、アプリにはアクセスできません。 アプリは、既定の Safari 機能のいずれにもアクセスできません。
 
 また、既定では、 **[完了]** ボタンが実装されています。これにより、ユーザーはアプリに簡単に戻ることができ、ナビゲーションボタンを転送および戻ることができ、ユーザーは web ページのスタック内を移動できます。 また、ユーザーには、予期された web ページ上にあることを安心して提供するアドレスバーを提供します。 アドレスバーでは、ユーザーが url を変更することはできません。
 
@@ -63,7 +63,7 @@ PresentViewController(sfViewController, true, null);
 
 これにより、次の web ビューが生成されます。
 
-[![SFSafariViewController を使用した web ビューの例の](webview-images/sfsafariviewcontroller.png)](webview-images/sfsafariviewcontroller.png#lightbox)
+[SFSafariViewController を使用した web ビューの例の ![](webview-images/sfsafariviewcontroller.png)](webview-images/sfsafariviewcontroller.png#lightbox)
 
 ## <a name="safari"></a>Safari
 
@@ -77,9 +77,9 @@ UIApplication.SharedApplication.OpenUrl(url);
 
 これにより、次の web ビューが生成されます。
 
-[![Safari に表示される web ページを する](webview-images/safari.png)](webview-images/safari.png#lightbox)
+[Safari に表示される web ページを ![する](webview-images/safari.png)](webview-images/safari.png#lightbox)
 
-一般に、アプリから Safari にユーザーを移動することは、常に避ける必要があります。 ほとんどのユーザーはアプリケーションの外部でのナビゲーションを想定していません。そのため、アプリから移動すると、ユーザーはそれを返すことがなく、実質的にはエンゲージメントを終了する可能性があります。
+一般に、アプリから Safari にユーザーを移動することは、常に避ける必要があります。 ほとんどのユーザーはアプリケーションの外部でのナビゲーションを想定していません。そのため、アプリから移動すると、ユーザーはそこに戻ることはなく、実質的にはエンゲージメントを終了する可能性があります。
 
 iOS 9 の機能強化により、Safari ページの左上隅にある [戻る] ボタンを使用して、ユーザーが簡単にアプリに戻ることができるようになりました。
 
@@ -92,7 +92,7 @@ IOS 9 では、アプリトランスポートセキュリティ (または*ATS* 
 ## <a name="uiwebview-deprecated"></a>UIWebView (非推奨)
 
 > [!IMPORTANT]
-> `UIWebView` は非推奨とされます。 2020年4月の時点では、このコントロールを使用するアプリは[App Store には受け入れられず、既存のアプリは2020年12月までに削除する必要があり](https://developer.apple.com/news/?id=12232019b)ます。
+> `UIWebView` は使用されなくなりました。 2020年4月の時点では、このコントロールを使用するアプリは[App Store には受け入れられず、既存のアプリは2020年12月までに削除する必要があり](https://developer.apple.com/news/?id=12232019b)ます。
 >
 > [Apple の `UIWebView` ドキュメント](https://developer.apple.com/documentation/uikit/uiwebview)では、アプリで[`WKWebView`](#wkwebview)を使用することを提案します。
 
@@ -113,7 +113,7 @@ webView.LoadRequest(new NSUrlRequest(new NSUrl(url)));
 
 これにより、次の web ビューが生成されます。
 
-[![ScalesPagesToFit の効果を します。](webview-images/webview.png)](webview-images/webview.png#lightbox)
+[ScalesPagesToFit の効果を ![します。](webview-images/webview.png)](webview-images/webview.png#lightbox)
 
 ## <a name="related-links"></a>関連リンク
 
