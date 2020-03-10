@@ -7,11 +7,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
 ms.openlocfilehash: ebd7cad9ef33a44dbc7aa469bb4e866bdfea2e61
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76724782"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915377"
 ---
 # <a name="introduction-to-web-services"></a>Web サービスの概要
 
@@ -438,7 +438,7 @@ client.ClientCredentials.UserName.UserName = @"foo";
 client.ClientCredentials.UserName.Password = @"mrsnuggles";
 ```
 
-上記の例では、"trampolines の型が不足しています" というメッセージが表示された場合は、ビルドに `–aot “trampolines={number of trampolines}”` 引数を追加して、型0の trampolines の数を増やすことができます。 詳細については、[トラブルシューティングのヒント](~/ios/troubleshooting/troubleshooting.md#trampolines)に関するページをご覧ください。
+上記の例では、"trampolines の型が不足しています" というメッセージが表示された場合は、ビルドに `–aot “trampolines={number of trampolines}”` 引数を追加して、型0の trampolines の数を増やすことができます。 詳細については、「 [トラブルシューティング](~/ios/troubleshooting/troubleshooting.md#trampolines)」を参照してください。
 
 HTTP 基本認証の詳細については、REST web サービスのコンテキストで、「 [RESTful Web サービスの認証](~/xamarin-forms/data-cloud/authentication/rest.md)」を参照してください。
 

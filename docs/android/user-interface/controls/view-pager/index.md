@@ -8,17 +8,17 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
 ms.openlocfilehash: c7718ef7a02365e9ca09f7491804cbadfa0c9a41
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76940858"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78914280"
 ---
 # <a name="viewpager"></a>ViewPager
 
 _ViewPager は、gestural ナビゲーションを実装できるレイアウトマネージャーです。Gestural ナビゲーションを使用すると、ユーザーは左右にスワイプしてデータのページをステップ実行できます。このガイドでは、フラグメントの有無にかかわらず、ViewPager で gestural ナビゲーションを実装する方法について説明します。また、Pagerタイトルストリップと PagerTabStrip を使用してページインジケーターを追加する方法についても説明します。_
 
-## <a name="overview"></a>の概要
+## <a name="overview"></a>概要
 
 アプリ開発の一般的なシナリオは、兄弟ビュー間の gestural ナビゲーションをユーザーに提供する必要があることです。 この方法では、ユーザーは、(セットアップウィザードやスライドショーなどで) コンテンツのページにアクセスするための左または右にスワイプます。 これらのスワイプビューは、 [Android Support Library v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)で入手できる `ViewPager` ウィジェットを使用して作成できます。 `ViewPager` は、複数の子ビューで構成されるレイアウトウィジェットで、各子ビューがレイアウト内のページを構成します。 
 
@@ -35,16 +35,16 @@ _ViewPager は、gestural ナビゲーションを実装できるレイアウト
 
 - [Viewpager とフラグメント](~/android/user-interface/controls/view-pager/viewpager-and-fragments.md)を使用すると、より複雑な[FlashCardPager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-flashcardpager)アプリが作成され、`Fragment`s で `ViewPager` を使用して、計算問題をフラッシュカードとして表示し、ユーザー入力に応答するアプリを構築する方法を示すことができます。 
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 アプリプロジェクトで `ViewPager` を使用するには、 [Android サポートライブラリ v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)パッケージをインストールする必要があります。 NuGet パッケージのインストールの詳細については、「[チュートリアル: プロジェクトに nuget を含める](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)」を参照してください。 
 
-## <a name="architecture"></a>アーキテクチャ
+## <a name="architecture"></a>Architecture
 
 `ViewPager`を使用した gestural ナビゲーションの実装には、次の3つのコンポーネントが使用されます。
 
 - ViewPager
-- アダプタ
+- アダプター
 - ページャーインジケーター
 
 これらの各コンポーネントの概要を次に示します。
@@ -55,7 +55,7 @@ _ViewPager は、gestural ナビゲーションを実装できるレイアウト
 
 [ビュー間の切り替えを表示する TreePager アプリの ![クローズアップ](images/02-transition-sml.png)](images/02-transition.png#lightbox)
 
-### <a name="adapter"></a>アダプタ
+### <a name="adapter"></a>アダプター
 
 `ViewPager` は、*アダプター*からデータをプルします。 アダプターのジョブは、`ViewPager`によって表示される `View`を作成し、必要に応じて提供します。 次の図は、アダプターが `View`s を作成して設定し、`ViewPager`に提供する &ndash; この概念を示しています。 `ViewPager` がユーザーのスワイプジェスチャを検出すると、表示する適切な `View` をアダプターに提供するように求められます。 
 

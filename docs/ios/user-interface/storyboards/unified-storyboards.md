@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
 ms.openlocfilehash: 13891100d3571f9e847243172aa974072f46e7fe
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73001824"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78914688"
 ---
 # <a name="unified-storyboards-in-xamarinios"></a>Xamarin の統合されたストーリーボード
 
@@ -112,23 +112,23 @@ IOS 8 を初めて使用する場合、開発者は、Auto Layout クラスと S
 
 次に示すのは、開発者が iPhone で見ることができる一般的な特徴コレクションです。
 
-|property|[値]|
+|プロパティ|値|
 |--- |--- |
-|`HorizontalSizeClass`|Cd-r|
-|`VerticalSizeClass`|Regular|
-|`UserInterfaceIdom`|電話番号|
+|`HorizontalSizeClass`|Compact (英語の可能性あり)|
+|`VerticalSizeClass`|通常|
+|`UserInterfaceIdom`|Phone|
 |`DisplayScale`|2.0|
 
 上のセットは、すべての特徴プロパティの値を持つため、完全修飾された特徴コレクションを表します。
 
 また、値の一部が欠落している特徴コレクションがある可能性もあります (Apple は*未指定*として参照します)。
 
-|property|[値]|
+|プロパティ|値|
 |--- |--- |
-|`HorizontalSizeClass`|Cd-r|
-|`VerticalSizeClass`|指定されていません。|
-|`UserInterfaceIdom`|指定されていません。|
-|`DisplayScale`|指定されていません。|
+|`HorizontalSizeClass`|Compact (英語の可能性あり)|
+|`VerticalSizeClass`|未指定|
+|`UserInterfaceIdom`|未指定|
+|`DisplayScale`|未指定|
 
 ただし、一般に、開発者が特徴のコレクションに特徴の環境を要求すると、上記の例に示すように、完全修飾コレクションが返されます。
 
@@ -214,7 +214,7 @@ IPad では、水平方向と垂直方向の両方に通常のサイズクラス
 
 iOS 8 には、次の表に示すように、開発者が特徴の変更に参加するために使用できるいくつかのコールバックが用意されています。
 
-|Phase|コールバック|説明|
+|段階|コールバック|Description|
 |--- |--- |--- |
 |セットアップ|<ul><li>`WillTransitionToTraitCollection`</li><li>`TraitCollectionDidChange`</li></ul>|<ul><li>このメソッドは、特徴コレクションが新しい値に設定される前に、特徴変更の開始時に呼び出されます。</li><li>このメソッドは、特徴コレクションの値が変更されたときに、アニメーションが行われる前に呼び出されます。</li></ul>|
 |アニメーション|`WillTransitionToTraitCollection`|このメソッドに渡される遷移コーディネーターには `AnimateAlongside` プロパティがあり、これを使用すると、開発者は既定のアニメーションと共に実行されるアニメーションを追加できます。|
@@ -242,7 +242,7 @@ iOS 8 には、次の表に示すように、開発者が特徴の変更に参�
 
 ### <a name="showing-view-controllers"></a>ビューコントローラーの表示
 
-Apple が iOS 8 に加えたもう1つの変更は、開発者がビューコントローラーを表示する方法です。 以前は、アプリケーションにリーフビューコントローラー (テーブルビューコントローラーなど) があり、開発者が別のビューコントローラーを表示した場合 (たとえば、ユーザーがセルをタップした場合など)、アプリケーションはコントローラー階層を通じてナビゲーションビューコントローラーを呼び出し、それに対して `PushViewController` メソッドを呼び出して、新しいビューを表示します。
+Apple が iOS 8 に加えたもう1つの変更は、開発者がビューコントローラーを表示する方法です。 以前は、アプリケーションにリーフビューコントローラー (テーブルビューコントローラーなど) があり、開発者が別のビューコントローラーを表示した場合 (たとえば、ユーザーがセルをタップした場合など)、アプリケーションはコントローラー階層を介してナビゲーションビューコントローラーに戻り、それに対して `PushViewController` メソッドを呼び出して新しいビューを表示します。
 
 これにより、ナビゲーションコントローラーと、それが実行されていた環境との間に非常に密接な結合が行われました。 IOS 8 では、Apple は次の2つの新しい方法を提供してこれを分離しました。
 
@@ -259,7 +259,7 @@ Apple が iOS 8 に加えたもう1つの変更は、開発者がビューコン
 
  [![](unified-storyboards-images/gettargetforaction.png "The new GetTargetForAction method")](unified-storyboards-images/gettargetforaction.png#lightbox)
 
-このメソッドは、正しいコンテナービューコントローラーが見つかるまで階層チェーンをウォークします。 (例:
+このメソッドは、正しいコンテナービューコントローラーが見つかるまで階層チェーンをウォークします。 次に例を示します。
 
 1. `ShowViewController` メソッドが呼び出されると、このメソッドを実装するチェーン内の最初のビューコントローラーがナビゲーションコントローラーになるため、新しいビューの親として使用されます。
 1. `ShowDetailViewController` メソッドが代わりに呼び出された場合、分割ビューコントローラーは、それを実装するための最初のビューコントローラーであるため、親として使用されます。
@@ -294,7 +294,7 @@ IPhone でアダプティブフォトアプリケーションを実行してい�
 
  [![](unified-storyboards-images/rotation.png "The Split View Controller will display both the master and details view as seen here")](unified-storyboards-images/rotation.png#lightbox)
 
-これを実現するには、ビューコントローラーの `UpdateConstraintsForTraitCollection` メソッドをオーバーライドし、`VerticalSizeClass`の値に基づいて制約を調整します。 (例:
+これを実現するには、ビューコントローラーの `UpdateConstraintsForTraitCollection` メソッドをオーバーライドし、`VerticalSizeClass`の値に基づいて制約を調整します。 次に例を示します。
 
 ```csharp
 public void UpdateConstraintsForTraitCollection (UITraitCollection collection)
@@ -350,7 +350,7 @@ public void UpdateConstraintsForTraitCollection (UITraitCollection collection)
 
 ### <a name="adding-transition-animations"></a>切り替え効果アニメーションの追加
 
-アダプティブフォトアプリケーションの分割ビューコントローラーが折りたたまれていない状態になったときに、ビューコントローラーの `WillTransitionToTraitCollection` メソッドをオーバーライドすることにより、アニメーションが既定のアニメーションに追加されます。 (例:
+アダプティブフォトアプリケーションの分割ビューコントローラーが折りたたまれていない状態になったときに、ビューコントローラーの `WillTransitionToTraitCollection` メソッドをオーバーライドすることにより、アニメーションが既定のアニメーションに追加されます。 次に例を示します。
 
 ```csharp
 public override void WillTransitionToTraitCollection (UITraitCollection traitCollection, IUIViewControllerTransitionCoordinator coordinator)
@@ -680,7 +680,7 @@ IPhone シミュレーターを停止し、iPad シミュレーターでアプ�
 
 アプリが実際に起動されていることをユーザーにフィードバックするために、iOS アプリケーションを起動しているときに、起動画面ファイルがスプラッシュスクリーンとして表示されます。 IOS 8 より前の開発者は、アプリケーションが実行されているデバイスの種類、向き、画面の解像度ごとに、複数の `Default.png` イメージ資産を含める必要があります。 たとえば、`Default@2x.png`、`Default-Landscape@2x~ipad.png`、`Default-Portrait@2x~ipad.png`などです。
 
-新しい iPhone 6 および iPhone 6 Plus デバイス (および今後の Apple Watch) には、すべての既存の iPhone および iPad デバイスが含まれています。これは、さまざまなサイズ、向き、および `Default.png` スタートアップ画面イメージ資産の解像度を表します。作成および管理されます。 さらに、これらのファイルは非常に大きくなる可能性があり、成果物アプリケーションバンドルを "肥大化" し、iTunes App Store からアプリケーションをダウンロードするために必要な時間を増やします (携帯ネットワークを介して配信できない場合もあります)。さらに、エンドユーザーのデバイスで必要とされるストレージの量を増やします。
+新しい iPhone 6 および iPhone 6 Plus デバイス (および今後の Apple Watch) で、既存の iPhone と iPad デバイスをすべて使用することで、作成および管理する必要がある `Default.png` スタートアップ画面のイメージ資産のさまざまなサイズ、向き、および解像度を表すことができます。 さらに、これらのファイルは非常に大きくなる可能性があり、成果物アプリケーションバンドルを "肥大化" し、iTunes App Store からアプリケーションをダウンロードするために必要な時間を増やします (携帯ネットワークを介して配信できない場合もあります)。さらに、エンドユーザーのデバイスで必要とされるストレージの量を増やします。
 
 IOS 8 を初めて使用する場合、開発者は、Auto Layout クラスと Size クラスを使用して、すべてのデバイス、解像度、および向きに対して機能する*動的な起動画面*を作成する、Xcode の単一のアトミック `.xib` ファイルを作成できます。 これにより、開発者が必要なすべてのイメージ資産を作成して維持するために必要な作業量を削減できるだけでなく、アプリケーションのインストール済みバンドルのサイズを大幅に削減できます。
 
@@ -695,7 +695,7 @@ IOS 8 を初めて使用する場合、開発者は、Auto Layout クラスと S
 
 上記のガイドラインを考慮して、既存の Xamarin iOS 8 プロジェクトに動的起動画面を追加する方法を見てみましょう。
 
-次の手順で行います。
+次の操作を行います。
 
 1. **Visual Studio for Mac**を開き、**ソリューション**を読み込んで、動的起動画面をに追加します。
 2. **ソリューションエクスプローラー**で、`MainStoryboard.storyboard` ファイルを右クリックし、[ **Open With** > **Xcode Interface Builder**] を選択します。
@@ -713,7 +713,7 @@ IOS 8 を初めて使用する場合、開発者は、Auto Layout クラスと S
 6. 起動画面のデザインを編集するには、グラフィック要素を追加し、レイアウトの制約を使用して、特定のデバイス、向き、画面のサイズに合わせます。
 
     [![](unified-storyboards-images/dls05.png "Editing the design of the launch screen")](unified-storyboards-images/dls05.png#lightbox)
-7. `LaunchScreen.xib`への変更を保存します。
+7. `LaunchScreen.xib` に対する変更を保存します。
 8. [**アプリケーション] ターゲット**と **[全般]** タブを選択します。
 
     [![](unified-storyboards-images/dls06.png "Select the Applications Target and the General tab")](unified-storyboards-images/dls06.png#lightbox)

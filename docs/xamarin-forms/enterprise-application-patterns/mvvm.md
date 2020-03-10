@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 ms.openlocfilehash: d6c9b74c9abc1a2c493c31699b52969a7d129429
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70760198"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78915322"
 ---
 # <a name="the-model-view-viewmodel-pattern"></a>モデルビュービューモデルパターン
 
@@ -24,9 +24,9 @@ ms.locfileid: "70760198"
 
 MVVM パターンには、モデル、ビュー、ビューモデルという3つの主要なコンポーネントがあります。 それぞれが個別の目的を果たします。 図2-1 は、3つのコンポーネント間の関係を示しています。
 
-![](mvvm-images/mvvm.png "MVVM パターン")
+![](mvvm-images/mvvm.png "The MVVM pattern")
 
-**図 2-1**:MVVM パターン
+**図 2-1**: MVVM パターン
 
 各コンポーネントの役割について理解することに加えて、相互にやり取りする方法を理解することも重要です。 大まかに言えば、ビューはビューモデルを "認識" し、ビューモデルではモデルを認識しますが、モデルはビューモデルを認識せず、ビューモデルはビューを認識しません。 したがって、ビューモデルはビューをモデルから分離し、ビューとは無関係にモデルを進化させることができます。
 
@@ -48,7 +48,7 @@ Xamarin のフォームアプリケーションでは、ビューは通常、 [`
 > [!TIP]
 > 分離コードで UI 要素を有効または無効にすることは避けてください。 ビューモデルが、ビューの表示のいくつかの側面 (コマンドが使用可能かどうか、または操作が保留中であることを示すなど) に影響する論理的な状態の変更を定義する責任があることを確認します。 そのため、コードビハインドで有効または無効にするのではなく、ビューモデルのプロパティにバインドして、UI 要素を有効または無効にします。
 
-ビューモデルでコードを実行するためのオプションはいくつかあります。これには、ボタンのクリックや項目の選択など、ビューの相互作用に応答します。 コントロールでコマンドがサポートされている`Command`場合、コントロールのプロパティは、ビュー `ICommand`モデルのプロパティにデータバインドできます。 コントロールのコマンドが呼び出されると、ビューモデルのコードが実行されます。 コマンドに加えて、動作はビュー内のオブジェクトにアタッチすることができ、コマンドを呼び出すか、イベントを発生させるかを待機できます。 これに対して、動作はビューモデル`ICommand`またはビューモデルのメソッドでを呼び出すことができます。
+ビューモデルでコードを実行するためのオプションはいくつかあります。これには、ボタンのクリックや項目の選択など、ビューの相互作用に応答します。 コントロールでコマンドがサポートされている場合は、コントロールの `Command` プロパティを、ビューモデルの `ICommand` プロパティにデータバインドできます。 コントロールのコマンドが呼び出されると、ビューモデルのコードが実行されます。 コマンドに加えて、動作はビュー内のオブジェクトにアタッチすることができ、コマンドを呼び出すか、イベントを発生させるかを待機できます。 応答として、ビューモデルの `ICommand`、またはビューモデルのメソッドを呼び出すことができます。
 
 ### <a name="viewmodel"></a>ViewModel
 
@@ -64,9 +64,9 @@ Xamarin のフォームアプリケーションでは、ビューは通常、 [`
 > [!TIP]
 > 変換レイヤーでのデータ変換を一元化します。 また、ビューモデルとビューの間にある独立したデータ変換層としてコンバーターを使用することもできます。 これは、たとえば、データがビューモデルで提供されていない特殊な書式設定を必要とする場合に必要になることがあります。
 
-ビューモデルがビューを使用した双方向のデータバインディングに参加するためには、そのプロパティが`PropertyChanged`イベントを発生させる必要があります。 モデルを表示するには、 `INotifyPropertyChanged`インターフェイスを実装し、プロパティが変更されたときにイベントを`PropertyChanged`発生させることによって、この要件を満たします。
+ビューモデルがビューで双方向のデータバインディングに参加するためには、そのプロパティによって `PropertyChanged` イベントが発生する必要があります。 ビューモデルは、`INotifyPropertyChanged` インターフェイスを実装し、プロパティが変更されたときに `PropertyChanged` イベントを発生させることによって、この要件を満たします。
 
-コレクションの場合、ビューフレンドリ`ObservableCollection<T>`が提供されます。 このコレクションは、コレクションの変更通知を実装します。これに`INotifyCollectionChanged`より、開発者は、インターフェイスをコレクションに実装する必要がなくなります。
+コレクションの場合は、表示に適した `ObservableCollection<T>` が用意されています。 このコレクションは、コレクションの変更通知を実装します。これにより、開発者は `INotifyCollectionChanged` インターフェイスをコレクションに実装する必要がなくなります。
 
 ### <a name="model"></a>モデル
 
@@ -100,13 +100,13 @@ Xamarin のフォームアプリケーションでは、ビューは通常、 [`
 </ContentPage>
 ```
 
-ときに、 [ `ContentPage` ](xref:Xamarin.Forms.ContentPage)は、インスタンスを作成、`LoginViewModel`が自動的に構築され、ビューの設定[ `BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)です。
+[`ContentPage`](xref:Xamarin.Forms.ContentPage)が作成されると、`LoginViewModel` のインスタンスが自動的に作成され、ビューの[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)として設定されます。
 
 ビューによるビューモデルの宣言型の構築と割り当てには、単純であるという利点がありますが、ビューモデルに既定の (パラメーターのない) コンストラクターが必要であるという欠点があります。
 
 ### <a name="creating-a-view-model-programmatically"></a>プログラムによるビューモデルの作成
 
-ビューでは、ビューモデルが[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)プロパティに割り当てられるコードビハインドファイルにコードを含めることができます。 これは、次のコード例に示すように、多くの場合、ビューのコンストラクターで実現されます。
+ビューでは、分離コードファイルにコードを記述して、ビューモデルが[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)プロパティに割り当てられるようにすることができます。 これは、次のコード例に示すように、多くの場合、ビューのコンストラクターで実現されます。
 
 ```csharp
 public LoginView()  
@@ -126,13 +126,13 @@ public LoginView()
 
 ### <a name="automatically-creating-a-view-model-with-a-view-model-locator"></a>ビューモデルロケーターを使用したビューモデルの自動作成
 
-ビューモデルロケーターは、ビューモデルのインスタンス化とビューへの関連付けを管理するカスタムクラスです。 EShopOnContainers モバイルアプリ`ViewModelLocator`では、クラスに添付`AutoWireViewModel`プロパティがあります。これは、ビューモデルをビューに関連付けるために使用されます。 ビューの XAML では、次のコード例に示すように、この添付プロパティが true に設定されて、ビューモデルがビューに自動的に接続されることを示しています。
+ビューモデルロケーターは、ビューモデルのインスタンス化とビューへの関連付けを管理するカスタムクラスです。 EShopOnContainers モバイルアプリでは、`ViewModelLocator` クラスに添付プロパティ `AutoWireViewModel`があります。これは、ビューモデルをビューに関連付けるために使用されます。 ビューの XAML では、次のコード例に示すように、この添付プロパティが true に設定されて、ビューモデルがビューに自動的に接続されることを示しています。
 
 ```xaml
 viewModelBase:ViewModelLocator.AutoWireViewModel="true"
 ```
 
-プロパティは、false に初期化されるバインド可能なプロパティであり、その値が`OnAutoWireViewModelChanged`変更されると、イベントハンドラーが呼び出されます。 `AutoWireViewModel` このメソッドは、ビューのビューモデルを解決します。 これを実現する方法を次のコード例に示します。
+`AutoWireViewModel` プロパティは、false に初期化されるバインド可能なプロパティであり、その値が変更されると `OnAutoWireViewModelChanged` イベントハンドラーが呼び出されます。 このメソッドは、ビューのビューモデルを解決します。 これを実現する方法を次のコード例に示します。
 
 ```csharp
 private static void OnAutoWireViewModelChanged(BindableObject bindable, object oldValue, object newValue)  
@@ -159,14 +159,14 @@ private static void OnAutoWireViewModelChanged(BindableObject bindable, obj
 }
 ```
 
-メソッド`OnAutoWireViewModelChanged`は、規則ベースの方法を使用して、ビューモデルの解決を試みます。 この規則は、次のことを前提としています。
+`OnAutoWireViewModelChanged` メソッドは、規則ベースの方法を使用してビューモデルの解決を試みます。 この規則は、次のことを前提としています。
 
 - ビューモデルは、ビューの種類と同じアセンブリにあります。
 - ビューはにあります。子の名前空間を表示します。
 - ビューモデルはに含まれています。Viewmodel child 名前空間。
 - ビューモデル名は、ビュー名に対応し、"モデルビュー" で終了します。
 
-最後に、 `OnAutoWireViewModelChanged`メソッドは、 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)ビュー型のを、解決されたビューモデル型に設定します。 ビューモデルの種類の解決の詳細については、「[解決策](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#resolution)」を参照してください。
+最後に、`OnAutoWireViewModelChanged` メソッドは、ビューの種類の[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)を、解決されたビューモデルの種類に設定します。 ビューモデルの種類の解決の詳細については、「[解決策](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#resolution)」を参照してください。
 
 このアプローチには、ビューモデルのインスタンス化とビューへの接続を行う単一のクラスがアプリにあるという利点があります。
 
@@ -175,18 +175,18 @@ private static void OnAutoWireViewModelChanged(BindableObject bindable, obj
 
 ## <a name="updating-views-in-response-to-changes-in-the-underlying-view-model-or-model"></a>基になるビューモデルまたはモデルの変更に応じてビューを更新する
 
-ビューにアクセスできるすべてのビューモデルおよびモデルクラスは、 `INotifyPropertyChanged`インターフェイスを実装する必要があります。 ビューモデルまたはモデルクラスにこのインターフェイスを実装すると、基になるプロパティ値が変更されたときに、クラスはビュー内のデータバインドコントロールに変更通知を提供できます。
+ビューにアクセスできるすべてのビューモデルおよびモデルクラスは、`INotifyPropertyChanged` インターフェイスを実装する必要があります。 ビューモデルまたはモデルクラスにこのインターフェイスを実装すると、基になるプロパティ値が変更されたときに、クラスはビュー内のデータバインドコントロールに変更通知を提供できます。
 
 次の要件を満たすことで、プロパティ変更通知を適切に使用するために、アプリを設計する必要があります。
 
-- パブリックプロパティの`PropertyChanged`値が変更された場合は、常にイベントを発生させます。 XAML バインディングがどのように`PropertyChanged`行われるかについての知識があるため、イベントの発生を無視できるとは限りません。
-- ビューモデルまた`PropertyChanged`はモデル内の他のプロパティで値が使用されているすべての計算プロパティについて、常にイベントを発生させます。
-- プロパティを変更`PropertyChanged`するメソッドの最後、またはオブジェクトが安全な状態であることがわかっている場合は、常にイベントを発生させます。 イベントを発生させると、イベントのハンドラーが同期的に呼び出され、操作が中断されます。 これが操作の途中で発生する場合、アンセーフで部分的に更新された状態にあるときに、オブジェクトがコールバック関数に公開されることがあります。 また、イベントによって`PropertyChanged`連鎖変更がトリガーされる可能性があります。 カスケード変更を行うには、通常、連鎖変更が安全に実行されるためには更新が完了している必要があります。
-- プロパティが変更`PropertyChanged`されない場合、イベントは発生しません。 これは、イベントを`PropertyChanged`発生させる前に、古い値と新しい値を比較する必要があることを意味します。
-- プロパティを初期化`PropertyChanged`する場合は、ビューモデルのコンストラクター中にイベントを発生させないでください。 ビュー内のデータバインドコントロールは、この時点で変更通知の受信をサブスクライブしていません。
-- クラスのパブリックメソッドの`PropertyChanged` 1 回の同期呼び出しで、同じプロパティ名引数を持つ複数のイベントを発生させないでください。 `NumberOfItems`たとえば、バッキングストア`_numberOfItems`がフィールドであるプロパティを指定した場合、ループの`_numberOfItems`実行中にメソッドが50回増加した場合、プロパティに対する`NumberOfItems`プロパティ変更通知は一度だけ発生します。すべての作業が完了したら、 非同期メソッドの場合は、 `PropertyChanged`非同期の継続チェーンの各同期セグメントで、指定されたプロパティ名のイベントを発生させます。
+- パブリックプロパティの値が変更された場合、常に `PropertyChanged` イベントを発生させます。 XAML バインディングがどのように行われるかを把握しているため、`PropertyChanged` イベントの発生を無視できるとは限りません。
+- ビューモデルまたはモデル内の他のプロパティで値が使用されているすべての計算プロパティの `PropertyChanged` イベントを常に発生させます。
+- プロパティの変更を行うメソッドの最後、またはオブジェクトが安全な状態であることがわかっている場合は、常に `PropertyChanged` イベントを発生させます。 イベントを発生させると、イベントのハンドラーが同期的に呼び出され、操作が中断されます。 これが操作の途中で発生する場合、アンセーフで部分的に更新された状態にあるときに、オブジェクトがコールバック関数に公開されることがあります。 また、`PropertyChanged` イベントによって連鎖変更がトリガーされる可能性があります。 カスケード変更を行うには、通常、連鎖変更が安全に実行されるためには更新が完了している必要があります。
+- プロパティが変更されない場合、`PropertyChanged` イベントは発生しません。 つまり、`PropertyChanged` イベントを発生させる前に、古い値と新しい値を比較する必要があります。
+- プロパティを初期化する場合は、ビューモデルのコンストラクター中に `PropertyChanged` イベントを発生させないでください。 ビュー内のデータバインドコントロールは、この時点で変更通知の受信をサブスクライブしていません。
+- クラスのパブリックメソッドの1回の同期呼び出しで、同じプロパティ名引数を持つ複数の `PropertyChanged` イベントを発生させないでください。 たとえば、バッキングストアが `_numberOfItems` フィールドである `NumberOfItems` のプロパティを指定した場合、ループの実行中にメソッドが50回 `_numberOfItems` インクリメントされると、すべての作業が完了した後に、`NumberOfItems` プロパティのプロパティ変更通知のみが発生します。 非同期メソッドの場合は、非同期継続チェーンの各同期セグメントで、指定されたプロパティ名の `PropertyChanged` イベントを発生させます。
 
-EShopOnContainers モバイルアプリでは、 `ExtendedBindableObject`クラスを使用して変更通知を提供します。次のコード例を参照してください。
+EShopOnContainers モバイルアプリでは、次のコード例に示すように、`ExtendedBindableObject` クラスを使用して変更通知を提供します。
 
 ```csharp
 public abstract class ExtendedBindableObject : BindableObject  
@@ -204,9 +204,9 @@ public abstract class ExtendedBindableObject : BindableObject
 }
 ```
 
-Xamarin. Form [`BindableObject`](xref:Xamarin.Forms.BindableObject)クラスは`INotifyPropertyChanged` [`OnPropertyChanged`](xref:Xamarin.Forms.BindableObject.OnPropertyChanged(System.String))インターフェイスを実装し、メソッドを提供します。 クラス`ExtendedBindableObject`は、プロパティ`RaisePropertyChanged`変更通知を呼び出すためのメソッドを提供します。また、では`BindableObject` 、クラスによって提供される機能を使用します。
+Xamarin フォームの[`BindableObject`](xref:Xamarin.Forms.BindableObject)クラスは、`INotifyPropertyChanged` インターフェイスを実装し、 [`OnPropertyChanged`](xref:Xamarin.Forms.BindableObject.OnPropertyChanged(System.String))メソッドを提供します。 `ExtendedBindableObject` クラスは、プロパティ変更通知を呼び出すための `RaisePropertyChanged` メソッドを提供します。そのため、`BindableObject` クラスによって提供される機能を使用します。
 
-EShopOnContainers モバイルアプリ`ViewModelBase`の各ビューモデルクラスは、クラスから派生します。このクラスは、 `ExtendedBindableObject`クラスから派生します。 したがって、各ビューモデルクラスは`RaisePropertyChanged` 、クラスの`ExtendedBindableObject`メソッドを使用してプロパティ変更通知を提供します。 次のコード例は、ラムダ式を使用して、eShopOnContainers モバイルアプリがプロパティ変更通知を呼び出す方法を示しています。
+EShopOnContainers モバイルアプリの各ビューモデルクラスは、`ViewModelBase` クラスから派生します。このクラスは、`ExtendedBindableObject` クラスから派生します。 したがって、各ビューモデルクラスは、`ExtendedBindableObject` クラスの `RaisePropertyChanged` メソッドを使用して、プロパティの変更通知を提供します。 次のコード例は、ラムダ式を使用して、eShopOnContainers モバイルアプリがプロパティ変更通知を呼び出す方法を示しています。
 
 ```csharp
 public bool IsLogin  
@@ -235,35 +235,35 @@ Mobile apps では、通常、アクションは、ボタンクリックなど�
 
 ### <a name="implementing-commands"></a>コマンドの実装
 
-ビューモデルは、通常、ビューからバインドするためのコマンドプロパティを公開します。これ`ICommand`は、インターフェイスを実装するオブジェクトインスタンスです。 多くの Xamarin コントロールには、プロパティが`Command`用意されています。これは`ICommand` 、ビューモデルによって提供されるオブジェクトにデータをバインドすることができます。 インターフェイス`ICommand`は、操作`Execute`自体を`CanExecute`カプセル化するメソッド、コマンドを呼び出すことができるかどうかを示すメソッド、および`CanExecuteChanged`変更が発生したときに発生するイベントを定義します。コマンドを実行する必要があります。 Xamarin [`Command`](xref:Xamarin.Forms.Command) `T` `Execute` [`Command<T>`](xref:Xamarin.Forms.Command) .Formsによっ`CanExecute`て提供されるクラスとクラスは、インターフェイスを実装します。ここで、は、およびの引数の型です。`ICommand`
+ビューモデルは、通常、ビューからバインドするためのコマンドプロパティを公開します。これは、`ICommand` インターフェイスを実装するオブジェクトインスタンスです。 多くの Xamarin フォームコントロールは、`Command` プロパティを提供します。これは、ビューモデルによって提供される `ICommand` オブジェクトにデータをバインドできます。 `ICommand` インターフェイスは、操作自体をカプセル化する `Execute` メソッド、`CanExecute` メソッドを定義します。このメソッドは、コマンドを呼び出すことができるかどうかを示します。また、コマンドを実行する必要があるかどうかに影響する変更が発生したときに発生する `CanExecuteChanged` イベントも定義します。 [`Command`](xref:Xamarin.Forms.Command)クラスと[`Command<T>`](xref:Xamarin.Forms.Command)によって提供されるクラスは、`ICommand` インターフェイスを実装します。ここで、`T` は `Execute` する引数の型であり、`CanExecute`します。
 
-ビューモデル内では、型のビューモデル[`Command`](xref:Xamarin.Forms.Command) `ICommand`の各パブリック[`Command<T>`](xref:Xamarin.Forms.Command)プロパティに対して、型または型のオブジェクトが存在する必要があります。 また`Command`は`Command<T>`コンストラクターには、メソッドが呼び出されたときに`Action` `ICommand.Execute`呼び出されるコールバックオブジェクトが必要です。 メソッドは省略可能なコンストラクターパラメーターで`bool`あり、 `Func`はを返すです。 `CanExecute`
+ビューモデル内では、型 `ICommand`のビューモデルのパブリックプロパティごとに、 [`Command`](xref:Xamarin.Forms.Command)型または[`Command<T>`](xref:Xamarin.Forms.Command)型のオブジェクトが存在している必要があります。 `Command` または `Command<T>` コンストラクターには、`ICommand.Execute` メソッドが呼び出されたときに呼び出される `Action` コールバックオブジェクトが必要です。 `CanExecute` メソッドは、省略可能なコンストラクターパラメーターであり、`bool`を返す `Func` です。
 
-次のコードは、レジスタ[`Command`](xref:Xamarin.Forms.Command)コマンドを表すインスタンスを、 `Register`ビューモデルメソッドへのデリゲートを指定することによって構築する方法を示しています。
+次のコードは、レジスタコマンドを表す[`Command`](xref:Xamarin.Forms.Command)インスタンスが、`Register` ビューモデルメソッドへのデリゲートを指定することによって構築される方法を示しています。
 
 ```csharp
 public ICommand RegisterCommand => new Command(Register);
 ```
 
-コマンドは、へ`ICommand`の参照を返すプロパティを使用してビューに公開されます。 オブジェクトでメソッドが呼び出されると、そのメソッドは、 `Command`コンストラクターで指定されたデリゲートを介して、ビューモデルのメソッドへの呼び出しを単純に転送します。 `Execute` [`Command`](xref:Xamarin.Forms.Command)
+このコマンドは、`ICommand`への参照を返すプロパティを使用してビューに公開されます。 `Execute` メソッドが[`Command`](xref:Xamarin.Forms.Command)オブジェクトで呼び出されると、`Command` コンストラクターで指定されたデリゲートを使用して、ビューモデルのメソッドへの呼び出しを単純に転送します。
 
-コマンドの`async` `await` デリゲートを指定するときに、キーワードとキーワードを使用して、コマンドによって非同期メソッドを呼び出すこと`Execute`ができます。 これは、コールバックがで`Task`あり、待機する必要があることを示します。 たとえば、次のコードは、 [`Command`](xref:Xamarin.Forms.Command) `SignInAsync`ビューモデルメソッドへのデリゲートを指定することによって、サインインコマンドを表すインスタンスを作成する方法を示しています。
+コマンドの `Execute` デリゲートを指定するときに、`async` キーワードと `await` キーワードを使用して、コマンドによって非同期メソッドを呼び出すことができます。 これは、コールバックが `Task` であり、待機する必要があることを示します。 たとえば、次のコードは、`SignInAsync` ビューモデルメソッドへのデリゲートを指定することによって、サインインコマンドを表す[`Command`](xref:Xamarin.Forms.Command)インスタンスを構築する方法を示しています。
 
 ```csharp
 public ICommand SignInCommand => new Command(async () => await SignInAsync());
 ```
 
-パラメーターは、 `Execute` [`Command<T>`](xref:Xamarin.Forms.Command)クラスを使用し`CanExecute`てコマンドをインスタンス化することにより、アクションとアクションに渡すことができます。 たとえば、次のコードは、 `Command<T>` `NavigateAsync`メソッドが型`string`の引数を必要とすることを示すために、インスタンスを使用する方法を示しています。
+パラメーターは `Execute` に渡すことができ、 [`Command<T>`](xref:Xamarin.Forms.Command)クラスを使用してコマンドをインスタンス化することによって `CanExecute` アクションに渡すことができます。 たとえば、次のコードは、`Command<T>` インスタンスを使用して、`NavigateAsync` メソッドに `string`型の引数が必要であることを示す方法を示しています。
 
 ```csharp
 public ICommand NavigateCommand => new Command<string>(NavigateAsync);
 ```
 
-クラスと[`Command`](xref:Xamarin.Forms.Command) [`Command<T>`](xref:Xamarin.Forms.Command)クラスの両方で`CanExecute` 、各コンストラクターのメソッドへのデリゲートは省略可能です。 デリゲートが指定さ`Command`れていない場合、はを`CanExecute`返し`true`ます。 ただし、ビューモデルでは、 `CanExecute` `Command`オブジェクトに対してメソッドを`ChangeCanExecute`呼び出すことによって、コマンドの状態の変更を示すことができます。 これにより`CanExecuteChanged` 、イベントが発生します。 コマンドにバインドされている UI 内のコントロールは、データバインドコマンドの可用性を反映するように、有効な状態を更新します。
+[`Command`](xref:Xamarin.Forms.Command)クラスと[`Command<T>`](xref:Xamarin.Forms.Command)クラスの両方で、各コンストラクターの `CanExecute` メソッドへのデリゲートは省略可能です。 デリゲートが指定されていない場合、`Command` は `CanExecute`の `true` を返します。 ただし、ビューモデルでは、`Command` オブジェクトの `ChangeCanExecute` メソッドを呼び出すことによって、コマンドの `CanExecute` ステータスの変更を示すことができます。 これにより、`CanExecuteChanged` イベントが発生します。 コマンドにバインドされている UI 内のコントロールは、データバインドコマンドの可用性を反映するように、有効な状態を更新します。
 
 #### <a name="invoking-commands-from-a-view"></a>ビューからのコマンドの呼び出し
 
-次のコード例では、 [`Grid`](xref:Xamarin.Forms.Grid) [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer)インスタンスを`LoginView`使用して`RegisterCommand` 、内`LoginViewModel`のをクラスのにバインドする方法を示します。
+次のコード例は、`LoginView` 内の[`Grid`](xref:Xamarin.Forms.Grid)が[`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer)インスタンスを使用して `LoginViewModel` クラスの `RegisterCommand` にバインドする方法を示しています。
 
 ```xaml
 <Grid Grid.Column="1" HorizontalOptions="Center">  
@@ -274,7 +274,7 @@ public ICommand NavigateCommand => new Command<string>(NavigateAsync);
 </Grid>
 ```
 
-コマンドパラメーターは、 [`CommandParameter`](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter)必要に応じてプロパティを使用して定義することもできます。 予期される引数の型は、および`Execute` `CanExecute`のターゲットメソッドで指定されます。 ユーザー [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer)が添付コントロールを操作すると、はターゲットコマンドを自動的に呼び出します。 コマンドパラメーターが指定されている場合は、コマンドの`Execute`デリゲートに引数として渡されます。
+コマンドパラメーターは、必要に応じて[`CommandParameter`](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter)プロパティを使用して定義することもできます。 予期される引数の型は、`Execute` および `CanExecute` のターゲットメソッドに指定されています。 ユーザーが添付コントロールを操作すると、 [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer)はターゲットコマンドを自動的に呼び出します。 コマンドパラメーターを指定すると、コマンドの `Execute` デリゲートに引数として渡されます。
 
 <a name="implementing_behaviors" />
 
@@ -282,15 +282,15 @@ public ICommand NavigateCommand => new Command<string>(NavigateAsync);
 
 ビヘイビアーを使用すると、機能を UI コントロールに追加できるようになります。 代わりに、その機能はビヘイビアー クラスで実装され、それがコントロール自体の一部であるかのようにコントロールにアタッチされます。 動作を使用すると、通常は分離コードとして記述する必要のあるコードを実装できます。これは、コントロールに簡潔にアタッチし、複数のビューやアプリで再利用するためにパッケージ化できるように、コントロールの API と直接対話するためです。 MVVM のコンテキストでは、動作は、コントロールをコマンドに接続するための便利な方法です。
 
-添付プロパティを介してコントロールにアタッチされる動作は、アタッチされる*動作*と呼ばれます。 その後、この動作によって、関連付けられている要素の公開された API を使用して、ビューのビジュアルツリー内のコントロールまたはその他のコントロールに機能を追加できます。 EShopOnContainers モバイルアプリには、 `LineColorBehavior`アタッチされる動作であるクラスが含まれています。 この動作の詳細については、「[検証エラーの表示](~/xamarin-forms/enterprise-application-patterns/validation.md#displaying_validation_errors)」を参照してください。
+添付プロパティを介してコントロールにアタッチされる動作は、アタッチされる*動作*と呼ばれます。 その後、この動作によって、関連付けられている要素の公開された API を使用して、ビューのビジュアルツリー内のコントロールまたはその他のコントロールに機能を追加できます。 EShopOnContainers モバイルアプリには、アタッチされる動作である `LineColorBehavior` クラスが含まれています。 この動作の詳細については、「[検証エラーの表示](~/xamarin-forms/enterprise-application-patterns/validation.md#displaying_validation_errors)」を参照してください。
 
-Xamarin の動作は、クラス[`Behavior`](xref:Xamarin.Forms.Behavior)または[`Behavior<T>`](xref:Xamarin.Forms.Behavior`1)クラスから派生するクラスです。ここ`T`で、はビヘイビアーを適用するコントロールの型です。 これらのクラス`OnAttachedTo`に`OnDetachingFrom`はメソッドとメソッドが用意されており、これをオーバーライドして、動作がコントロールにアタッチされ、コントロールからデタッチされるときに実行されるロジックを提供する必要があります。
+Xamarin の動作は、 [`Behavior`](xref:Xamarin.Forms.Behavior)または[`Behavior<T>`](xref:Xamarin.Forms.Behavior`1)クラスから派生するクラスであり、`T` は動作を適用するコントロールの型です。 これらのクラスは `OnAttachedTo` および `OnDetachingFrom` メソッドを提供します。これらのメソッドは、動作がコントロールにアタッチされ、コントロールからデタッチされるときに実行されるロジックを提供するためにオーバーライドする必要があります。
 
-EShopOnContainers モバイルアプリでは、クラス`BindableBehavior<T>`は[`Behavior<T>`](xref:Xamarin.Forms.Behavior`1)クラスから派生します。 `BindableBehavior<T>`クラスの目的は、添付されたコントロールに動作のを設定する必要がある[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) 、Xamarin の動作の基底クラスを提供することです。
+EShopOnContainers モバイルアプリでは、`BindableBehavior<T>` クラスは[`Behavior<T>`](xref:Xamarin.Forms.Behavior`1)クラスから派生します。 `BindableBehavior<T>` クラスの目的は、添付コントロールに設定する動作の[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)を必要とする、Xamarin の動作の基本クラスを提供することです。
 
-クラス`BindableBehavior<T>`には、動作`OnAttachedTo`のを[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)設定するオーバーライド可能なメソッドと、 `BindingContext`を`OnDetachingFrom`クリーンアップするオーバーライド可能なメソッドが用意されています。 さらに、このクラスでは、アタッチされたコントロールへの参照が `AssociatedObject` プロパティに格納されます。
+`BindableBehavior<T>` クラスは、オーバーライド可能な `OnAttachedTo` メソッドを提供します。このメソッドは、動作の[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext)と、`BindingContext`をクリーンアップするオーバーライド可能な `OnDetachingFrom` メソッドを設定します。 さらに、このクラスでは、アタッチされたコントロールへの参照が `AssociatedObject` プロパティに格納されます。
 
-EShopOnContainers モバイルアプリには、 `EventToCommandBehavior`イベントの発生に応じてコマンドを実行するクラスが含まれています。 このクラスは、動作`BindableBehavior<T>`が使用されるときに、 `Command`プロパティによって`ICommand`指定されたをバインドして実行できるように、クラスから派生します。 次に示すのは、`EventToCommandBehavior` クラスのコード例です。
+EShopOnContainers モバイルアプリには `EventToCommandBehavior` クラスが含まれています。このクラスは、発生したイベントに応答してコマンドを実行します。 このクラスは、動作が使用されるときに、`Command` プロパティによって指定された `ICommand` にバインドして実行できるように、`BindableBehavior<T>` クラスから派生します。 次に示すのは、`EventToCommandBehavior` クラスのコード例です。
 
 ```csharp
 public class EventToCommandBehavior : BindableBehavior<View>  
@@ -334,13 +334,13 @@ public class EventToCommandBehavior : BindableBehavior<View>
 }
 ```
 
-メソッド`OnAttachedTo` `EventName`と`OnDetachingFrom`メソッドは、プロパティで定義されているイベントのイベントハンドラーを登録および登録解除するために使用されます。 次に、イベントが発生`OnFired`すると、メソッドが呼び出され、コマンドが実行されます。
+`OnAttachedTo` メソッドと `OnDetachingFrom` メソッドは、`EventName` プロパティで定義されているイベントのイベントハンドラーを登録および登録解除するために使用されます。 次に、イベントが発生すると、`OnFired` メソッドが呼び出され、コマンドが実行されます。
 
-イベントが発生した`EventToCommandBehavior`ときにを使用してコマンドを実行すると、コマンドと対話するように設計されていないコントロールにコマンドを関連付けることができるという利点があります。 さらに、イベント処理コードを移動して、モデルを単体テストできるようにします。
+イベントの発生時にコマンドを実行するために `EventToCommandBehavior` を使用する利点は、コマンドと対話するように設計されていないコントロールにコマンドを関連付けることができることです。 さらに、イベント処理コードを移動して、モデルを単体テストできるようにします。
 
 #### <a name="invoking-behaviors-from-a-view"></a>ビューからの動作の呼び出し
 
-は`EventToCommandBehavior` 、コマンドをサポートしないコントロールにコマンドをアタッチする場合に特に便利です。 `ProfileView`たとえば、では、次のコードに示すよう[`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped)に、ユーザーの[`ListView`](xref:Xamarin.Forms.ListView)注文を一覧表示するでイベントが発生し`OrderDetailCommand`たときに、を`EventToCommandBehavior`使用してを実行します。
+`EventToCommandBehavior` は、コマンドをサポートしないコントロールにコマンドをアタッチする場合に特に便利です。 たとえば、`ProfileView` は、次のコードに示すように、ユーザーの注文を一覧表示する[`ListView`](xref:Xamarin.Forms.ListView)で[`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped)イベントが発生したときに、`EventToCommandBehavior` を使用して `OrderDetailCommand` を実行します。
 
 ```xaml
 <ListView>  
@@ -354,7 +354,7 @@ public class EventToCommandBehavior : BindableBehavior<View>
 </ListView>
 ```
 
-実行`EventToCommandBehavior`時には、 [`ListView`](xref:Xamarin.Forms.ListView)との対話に応答します。 で`ListView` `OrderDetailCommand` 項目が`ProfileViewModel`選択されると、[イベントが発生します。これにより、でが実行されます。`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) 既定では、イベントのイベント引数がコマンドに渡されます。 このデータは`EventArgsConverter` 、プロパティで指定されたコンバーターによってソースとターゲットの間で渡されるときに変換され[`ItemTappedEventArgs`](xref:Xamarin.Forms.ItemTappedEventArgs)ます。これにより、 `ListView`からのが[`Item`](xref:Xamarin.Forms.ItemTappedEventArgs.Item)返されます。 そのため、を`OrderDetailCommand`実行すると、選択`Order`したが、登録されたアクションにパラメーターとして渡されます。
+実行時には、`EventToCommandBehavior` は[`ListView`](xref:Xamarin.Forms.ListView)との対話に応答します。 `ListView`で項目が選択されると、 [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped)イベントが発生し、`ProfileViewModel`内の `OrderDetailCommand` が実行されます。 既定では、イベントのイベント引数がコマンドに渡されます。 このデータは、`EventArgsConverter` プロパティで指定されたコンバーターによってソースとターゲットの間で渡されるときに変換されます。これにより、 [`ItemTappedEventArgs`](xref:Xamarin.Forms.ItemTappedEventArgs)から `ListView` の[`Item`](xref:Xamarin.Forms.ItemTappedEventArgs.Item)が返されます。 したがって、`OrderDetailCommand` が実行されると、選択した `Order` がパラメーターとして登録されたアクションに渡されます。
 
 動作の詳細については、「[動作](~/xamarin-forms/app-fundamentals/behaviors/index.md)」を参照してください。
 
