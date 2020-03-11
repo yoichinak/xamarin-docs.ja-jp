@@ -102,7 +102,7 @@ Press enter to terminate the application
 
 アプリケーションにエラーが発生した場合、出力とエラーを表示し、問題を診断できます。
 
-### <a name="deploying-to-a-device"></a>デバイスの展開
+### <a name="deploying-to-a-device"></a>デバイスへの展開
 
 デバイスに配置するには、Apple の[デバイスの管理](https://developer.apple.com/library/ios/#documentation/Xcode/Conceptual/ios_development_workflow/00-About_the_iOS_Application_Development_Workflow/introduction.html)に関するドキュメントに基づいてデバイスをプロビジョニングする必要があります。 デバイスが適切にプロビジョニングされると、mtouch コマンドを利用し、コンパイル済みの ".app" をデバイスに配置できます。 これは次のコマンドで行います。
 
