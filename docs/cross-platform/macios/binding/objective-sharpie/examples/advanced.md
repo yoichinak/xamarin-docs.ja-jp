@@ -6,12 +6,12 @@ ms.assetid: 044FF669-0B81-4186-97A5-148C8B56EE9C
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: 5e36a66949c55a85d84cbbb17fa4d276e3af1eee
-ms.sourcegitcommit: acbaedbcb78bb5629d4a32e3b00f11540c93c216
+ms.openlocfilehash: 2dea16633181d6b1120a5f9a90da685df66e5451
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76980428"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "79031010"
 ---
 # <a name="advanced-manual-real-world-example"></a>高度な (手動) 実際の例
 
@@ -124,7 +124,10 @@ Done.
 
 `-scope build/Headers` 引数が目標マジックペンに渡されたことがわかります。 C との c 言語のライブラリは、バインドする API ではなく、ライブラリの実装の詳細である他のヘッダーファイルを `#import` または `#include` する必要があるため、`-scope` 引数は、`-scope` ディレクトリ内のファイルで定義されていない API を無視するようにマジックペンに指示します。
 
-`-scope` 引数は、クリーンに実装されたライブラリではオプションであることがよくありますが、明示的に指定しても害はありません。
+`-scope` 引数は、クリーンに実装されたライブラリではオプションであることがよくありますが、明示的に指定しても害はありません。 
+
+> [!TIP]
+> ライブラリのヘッダーで iOS SDK ヘッダー (`#import <Foundation.h>`など) をインポートする場合は、スコープを設定する必要があります。そうしないと、マジックペンはインポートされた iOS SDK ヘッダーのバインド定義を生成します。その結果、バインドプロジェクトのコンパイル時にエラーが発生する可能性があります。 
 
 また、`-c -Ibuild/headers`を指定しました。 まず、`-c` 引数は、コマンドライン引数の解釈を停止し、後続の引数を_clang コンパイラに直接_渡すことを目標マジックペンに指示します。 したがって、`-Ibuild/Headers` は、`build/Headers`下でインクルードを検索するように clang に指示する clang コンパイラ引数です。これは、POP ヘッダーがライブである場所です。 この引数が指定されていない場合、clang は `POP.h` が `#import`れるファイルの場所を認識しません。 _目標マジックペンを使用したほとんどすべての "問題" は、clang に渡すものを解明するために要約_されています。
 
