@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 09/13/2016
 ms.openlocfilehash: e5a61af4cd8a09df3ffddb74658f646aa8edfa1f
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: ce4670de51e24116a944c778ee64585bd0aae0e1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032083"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79088971"
 ---
 # <a name="visual-design-updates-in-ios-11"></a>IOS 11 でのビジュアルデザインの更新
 
@@ -51,7 +51,7 @@ iOS 11 では、検索コントローラーを簡単にナビゲーションバ�
 NavigationItem.SearchController = searchController;
 ```
 
-[検索バーを使用して大きなナビゲーションタイトルを![する](visual-design-images/image8-sml.png)](visual-design-images/image8-sml.png#lightbox)
+[検索バーを使用して大きなナビゲーションタイトルを ![する](visual-design-images/image8-sml.png)](visual-design-images/image8-sml.png#lightbox)
 
 アプリの機能によっては、ユーザーがリストをスクロールしたときに検索バーを非表示にすることがあります。 これは、`HidesSearchBarWhenScrolling` プロパティを使用して調整できます。
 
@@ -78,7 +78,7 @@ iOS 7 では、ビューを制限する方法として `topLayoutGuide` およ�
 
 [![セーフエリア vs 上および下部レイアウトガイド](visual-design-images/image10-sml.png)](visual-design-images/image10.png#lightbox)
 
-以前は、ビューを追加し、それを上の緑の領域に表示する必要がある場合は、それを `TopLayoutGuide` の_下部_と `BottomLayoutGuide`の_一番上_に固定します。 IOS 11 では、その代わりに、安全領域の_一番上_と_一番下_に固定します。 以下に例を示します。
+以前は、ビューを追加し、それを上の緑の領域に表示する必要がある場合は、それを `TopLayoutGuide` の_下部_と `BottomLayoutGuide`の_一番上_に固定します。 IOS 11 では、その代わりに、安全領域の_一番上_と_一番下_に固定します。 例を次に示します。
 
 ```csharp
 var safeGuide = View.SafeAreaLayoutGuide;

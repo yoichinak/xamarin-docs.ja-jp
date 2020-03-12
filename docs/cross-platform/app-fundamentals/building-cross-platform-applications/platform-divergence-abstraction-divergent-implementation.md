@@ -6,12 +6,12 @@ ms.assetid: BBE47BA8-78BC-6A2B-63BA-D1A45CB1D3A5
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: e1fa76faf0313a21061af585052a3b137243db55
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: c8b4dcbfbf65bc4059125404b0d20ed35fa31f29
+ms.sourcegitcommit: ce4670de51e24116a944c778ee64585bd0aae0e1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75488648"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79088932"
 ---
 # <a name="part-4---dealing-with-multiple-platforms"></a>パート 4 - 複数のプラットフォームを処理する
 
@@ -158,15 +158,17 @@ Xamarin Android アプリケーションにのみコンパイルする必要が�
 
 #### <a name="mac"></a>Mac
 
-現時点では、Xamarin. Mac 用の組み込みシンボルはありませんが、**シンボルの定義** ボックスで コンパイラの定義 を **> >** して独自のシンボルを追加したり、.csproj ファイルを編集してそこに追加したりすることができます (たとえば、`__MAC__`) **。**
+Xamarin では、macOS 用にのみコンパイルするために使用できる `__MACOS__` を定義します。
 
-```xml
-<PropertyGroup><DefineConstants>__MAC__;$(DefineConstants)</DefineConstants></PropertyGroup>
+```csharp
+#if __MACOS__
+// macOS-specific code
+#endif
 ```
 
 #### <a name="universal-windows-platform-uwp"></a>ユニバーサル Windows プラットフォーム (UWP)
 
-`WINDOWS_UWP` を使用してください。 Xamarin プラットフォームシンボルのような文字列を囲むアンダースコアはありません。
+`WINDOWS_UWP`を使用します。 Xamarin プラットフォームシンボルのような文字列を囲むアンダースコアはありません。
 
 ```csharp
 #if WINDOWS_UWP

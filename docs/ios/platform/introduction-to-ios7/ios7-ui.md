@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
 ms.openlocfilehash: 4731be58c1fadae0bba6768570ecfd181b071dd2
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: ce4670de51e24116a944c778ee64585bd0aae0e1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78915722"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79088959"
 ---
 # <a name="ios-7-user-interface-overview"></a>iOS 7 ユーザー インターフェイスの概要
 
@@ -258,7 +258,7 @@ public override bool PrefersStatusBarHidden ()
 
 IOS 7 では、ユーザーはシステム設定でテキストのサイズを指定できます。 動的な型の場合、フォントはサイズに関係なく、適切に表示されるように動的に調整されます。 ユーザーによって制御されるサイズに合わせて最適化されたフォントを取得するには、`UIFont.PreferredFontForTextStyle` を使用する必要があります。
 
-## <a name="summary"></a>要約
+## <a name="summary"></a>まとめ
 
 この記事では、iOS 7 のユーザーインターフェイス要素に加えられた変更について説明します。 ここでは、UIKit のビューとコントロールに加えられたいくつかの変更を調べ、ビジュアルの変更と関連する Api の変更の両方を強調表示しています。 最後に、全画面コンテンツ、新しい着色色のサポート、および動的な型を操作するための新しい Api が導入されました。
 
