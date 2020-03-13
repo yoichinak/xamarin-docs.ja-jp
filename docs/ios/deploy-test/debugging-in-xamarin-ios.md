@@ -140,7 +140,7 @@ Visual Studio for Mac では次のように表示されます。
 
  [![](debugging-in-xamarin-ios-images/image7.png "The Debug tools enable the developer to get control over the program’s execution")](debugging-in-xamarin-ios-images/image7.png#lightbox)
 
-これらの数値は、次のとおりです。
+これらのボタンの役割は、次のとおりです。
 
 - **再生/停止** - コードの実行が開始され、次のブレークポイントまで実行されます。あるいは、コードの実行を停止します。
 - **ステップ オーバー** - 次のコード行が実行されます。 次行が関数呼び出しの場合、[ステップ オーバー] をクリックするとその関数が実行され、関数の_後_の次のコード行で停止します。
@@ -153,7 +153,7 @@ Visual Studio では次のように表示されます。
 
 [![](debugging-in-xamarin-ios-images/image7vs.png "The Debug tools enable the developer to get control over the program’s execution")](debugging-in-xamarin-ios-images/image7vs.png#lightbox)
 
-これらの数値は、次のとおりです。
+これらのボタンの役割は、次のとおりです。
 
 - **再生/停止** - コードの実行が開始され、次のブレークポイントまで実行されます。あるいは、コードの実行を停止します。
 - **ステップ オーバー (F11)** - 次のコード行が実行されます。 次行が関数呼び出しの場合、[ステップ オーバー] をクリックするとその関数が実行され、関数の_後_の次のコード行で停止します。
