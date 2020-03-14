@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/26/2019
 ms.openlocfilehash: 1ae176cfebdde31038c30895d1bf562ff3396eaa
-ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77131068"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79306609"
 ---
 # <a name="xamarinforms-editor"></a>Xamarin.Forms のエディター
 
@@ -282,7 +282,7 @@ public partial class EditorPage : ContentPage
 > [!NOTE]
 > [`Entry`](xref:Xamarin.Forms.Entry)を継承する[`VisualElement`](xref:Xamarin.Forms.VisualElement)クラスにも[`Focused`](xref:Xamarin.Forms.VisualElement.Focused)および[`Unfocused`](xref:Xamarin.Forms.VisualElement.Unfocused)イベントがあります。
 
-### <a name="completed"></a>[完了]
+### <a name="completed"></a>完了
 
 `Completed` イベントは、`Editor`との対話の完了に応答するために使用されます。 `Completed` は、キーボードに戻りキーを入力することによって (または UWP の Tab キーを押して)、ユーザーがフィールドで入力を終了したときに発生します。 イベントのハンドラーは、送信者と `EventArgs`を取得する汎用イベントハンドラーです。
 

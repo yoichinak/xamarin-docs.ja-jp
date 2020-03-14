@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 13f5c594543934e14295615517e3de01a98a69a5
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.openlocfilehash: 3d9531bbaa38a0a0a9bb42d22c79a63fda75c449
+ms.sourcegitcommit: 926f9a44065b41c7d74794a94bee66b61e903bf2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76940997"
+ms.lasthandoff: 03/12/2020
+ms.locfileid: "79134004"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Xamarin のストーリーボードの概要
 
@@ -84,14 +84,14 @@ IOS アプリケーションの UI を視覚的に表現するために、Apple 
 
 |セグエ|説明|
 |--- |--- |
-|[表示]|これはプッシュセグエとよく似ていますが、画面の内容を考慮しています。|
+|表示|これはプッシュセグエとよく似ていますが、画面の内容を考慮しています。|
 |［詳細を表示］|アプリがマスタービューと詳細ビューを表示する場合 (iPad の分割ビューコントローラーなど)、詳細ビューがコンテンツに置き換えられます。 アプリがマスターまたは詳細のみを表示する場合、コンテンツはビューコントローラースタックの上部を置き換えます。|
-|Presentation|これはモーダルセグエに似ており、プレゼンテーションと切り替えのスタイルを選択できます。|
+|プレゼンテーション|これはモーダルセグエに似ており、プレゼンテーションと切り替えのスタイルを選択できます。|
 |Segue プレゼンテーション|これにより、コンテンツが segue として表示されます。|
 
 ### <a name="transferring-data-with-segues"></a>セグエを使用したデータの転送
 
-セグエの利点は遷移で終了しません。 また、ビューコントローラー間のデータ転送を管理するために使用することもできます。 これは、初期ビューコントローラーで `PrepareForSegue` メソッドをオーバーライドし、データを処理することで実現されます。 セグエがトリガーされると (たとえば、ボタンが押された場合)、アプリケーションはこのメソッドを呼び出し、ナビゲーションが発生*する前に*新しいビューコントローラーを準備する機会を提供します。 次のコードは、[Phoneword](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios) の例では、これを示しています。
+セグエの利点は遷移で終了しません。 また、ビューコントローラー間のデータ転送を管理するために使用することもできます。 これは、初期ビューコントローラーで `PrepareForSegue` メソッドをオーバーライドし、データを処理することで実現されます。 セグエがトリガーされると (たとえば、ボタンが押された場合)、アプリケーションはこのメソッドを呼び出し、ナビゲーションが発生*する前に*新しいビューコントローラーを準備する機会を提供します。 次のコードは、次の例[では、](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)これを示しています。
 
 ```csharp
 public override void PrepareForSegue (UIStoryboardSegue segue,
@@ -128,7 +128,7 @@ if (callHistoryController != null) {
 
 場合によっては、以前のストーリーボード以外のファイルにストーリーボードを追加することが必要になる場合があります。 これを Visual Studio for Mac で実行すると、次の手順に従って合理化できます。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 1. 次に示すように、 **iOS > storyboard > [ファイル > 新しいファイル**] を参照して、新しいストーリーボードファイルを作成します。
 
@@ -149,7 +149,7 @@ if (callHistoryController != null) {
     }
     ```
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. 次に示すように、新しい**ファイル > iOS > 空のストーリーボードに追加**するプロジェクトを右クリックして、新しいストーリーボードファイルを作成 > ます。
 
@@ -187,6 +187,10 @@ Visual Studio for Mac で開発した iOS アプリで使用するために、Xc
     [![](images/add-storyboard2.png "Adding storyboard")](images/add-storyboard2.png#lightbox)
 
 2. ストーリーボードファイルを右クリックし、 **[> Xcode Interface Builder で開く]** を選択して、Xcode で開きます。
+
+    *既定で Xcode Interface builder を使用する場合は、[プロジェクト] の [Visual Studio for Mac の設定] で [ **iOS] >** 選択できます。*
+
+![](images/set-preferred-designer-tool.png "Selecting the preferred designer tool")
 
 3. Xcode で、ライブラリを開きます (**ビュー > [ライブラリ**の表示] または [ *Shift + Command + L*] を使用)。これにより、ストーリーボードに追加できるオブジェクトの一覧が表示されます。 一覧からストーリーボードにオブジェクトをドラッグして、ストーリーボードに `Navigation Controller` を追加します。 既定では、`Navigation Controller` は2つの画面を提供します。右側の画面は `TableViewController` であり、より単純なビューに置き換えます。そのため、ビューをクリックし、Del キーを押して削除できます。
 

@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
 ms.openlocfilehash: c7718ef7a02365e9ca09f7491804cbadfa0c9a41
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78914280"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79305973"
 ---
 # <a name="viewpager"></a>ViewPager
 
@@ -35,16 +35,16 @@ _ViewPager は、gestural ナビゲーションを実装できるレイアウト
 
 - [Viewpager とフラグメント](~/android/user-interface/controls/view-pager/viewpager-and-fragments.md)を使用すると、より複雑な[FlashCardPager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-flashcardpager)アプリが作成され、`Fragment`s で `ViewPager` を使用して、計算問題をフラッシュカードとして表示し、ユーザー入力に応答するアプリを構築する方法を示すことができます。 
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 アプリプロジェクトで `ViewPager` を使用するには、 [Android サポートライブラリ v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)パッケージをインストールする必要があります。 NuGet パッケージのインストールの詳細については、「[チュートリアル: プロジェクトに nuget を含める](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)」を参照してください。 
 
-## <a name="architecture"></a>Architecture
+## <a name="architecture"></a>アーキテクチャ
 
 `ViewPager`を使用した gestural ナビゲーションの実装には、次の3つのコンポーネントが使用されます。
 
 - ViewPager
-- アダプター
+- アダプタ
 - ページャーインジケーター
 
 これらの各コンポーネントの概要を次に示します。
@@ -55,7 +55,7 @@ _ViewPager は、gestural ナビゲーションを実装できるレイアウト
 
 [ビュー間の切り替えを表示する TreePager アプリの ![クローズアップ](images/02-transition-sml.png)](images/02-transition.png#lightbox)
 
-### <a name="adapter"></a>アダプター
+### <a name="adapter"></a>アダプタ
 
 `ViewPager` は、*アダプター*からデータをプルします。 アダプターのジョブは、`ViewPager`によって表示される `View`を作成し、必要に応じて提供します。 次の図は、アダプターが `View`s を作成して設定し、`ViewPager`に提供する &ndash; この概念を示しています。 `ViewPager` がユーザーのスワイプジェスチャを検出すると、表示する適切な `View` をアダプターに提供するように求められます。 
 

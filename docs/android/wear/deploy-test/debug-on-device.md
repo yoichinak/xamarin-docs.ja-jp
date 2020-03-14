@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
 ms.openlocfilehash: 965ed4e802c05f8450192c0fec17fe31e464c779
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78916625"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79305967"
 ---
 # <a name="debug-on-a-wear-device"></a>Wear デバイスでのデバッグ
 
@@ -148,6 +148,6 @@ Android の摩耗アプリは、Google Play で配布するためのコンパニ
 
 4. デバイスでの Wear アプリの実行とデバッグを行います。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 この記事では、Bluetooth を使用して Visual Studio からの Wear デバッグ用に Android Wear デバイスを構成する方法、およびコンパニオン電話アプリを使用して Wear アプリをデバッグする方法について説明しました。 また、Bluetooth を使用して Wear アプリをデバッグするための一般的なデバッグのヒントも提供しました。

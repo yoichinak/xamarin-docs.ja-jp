@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
 ms.openlocfilehash: 68de58f499788d803aa0af6c68f20e2265b1d6b5
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73013173"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79305823"
 ---
 # <a name="where-can-i-find-my-version-information-and-logs"></a>バージョン情報とログはどこにありますか
 
@@ -160,9 +160,9 @@ Finder の **[フォルダーに >]** メニュー項目を選択して、これ
 
 **出力の表示 > > 出力の表示: デバッグ**
 
-### <a name="a-idadb-logcat-nameadb-logcat-android-adbhttpsdeveloperandroidcomtoolshelpadbhtml-logcat-logs"></a>Android [`adb`](https://developer.android.com/tools/help/adb.html) logcat ログの <a id="adb-logcat" name="adb-logcat" />
+### <a name="a-idadb-logcat-nameadb-logcat-android-adb-logcat-logs"></a>Android [`adb`](https://developer.android.com/tools/help/adb.html) logcat ログの <a id="adb-logcat" name="adb-logcat" />
 
-`adb` コマンドを実行した後、 **android_logcat**ファイルをデスクトップからアタッチします。 この手順では、デバイスが1つだけ接続されていることを前提とします。
+`adb` コマンドを実行した後、デスクトップから**android_logcat .txt**ファイルを添付して戻します。 この手順では、デバイスが1つだけ接続されていることを前提とします。
 
 [Android のデバッグログ](~/android/deploy-test/debugging/android-debug-log.md)に関するページも参照してください。
 

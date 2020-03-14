@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/29/2016
 ms.openlocfilehash: 24d86c54ea4b346e1c165b28c6b62f5a98390d64
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78918262"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79306417"
 ---
 # <a name="adding-ios-specific-formatting"></a>IOS 固有の書式設定の追加
 
@@ -20,7 +20,7 @@ IOS 固有の書式設定を行う1つの方法は、コントロールの[カ�
 
 次に、Xamarin の iOS アプリの外観の方法を制御するためのオプションを示します。
 
-- 情報の表示オプションの構成[Info.plist](#info-plist)
+- [**情報**](#info-plist)の表示オプションの構成
 - [`UIAppearance` API](#uiappearance)を使用したコントロールスタイルの設定
 
 これらの代替方法については、以下で説明します。

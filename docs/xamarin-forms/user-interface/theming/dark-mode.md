@@ -6,13 +6,13 @@ ms.assetid: D10506DD-BAA0-437F-A4AD-882D16E7B60D
 ms.technology: xamarin-forms
 author: davidortinau
 ms.author: daortin
-ms.date: 02/19/2020
-ms.openlocfilehash: 7136e3240a39321b2d67ca29c16a0758cf5c4cfb
-ms.sourcegitcommit: 524fc148bad17272bda83c50775771daa45bfd7e
+ms.date: 03/13/2020
+ms.openlocfilehash: 104237155797ca90c52ad385e8349480f9666c4c
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77486290"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79303503"
 ---
 # <a name="detect-dark-mode-in-xamarinforms-applications"></a>Xamarin. Forms アプリケーションでのダークモードの検出
 
@@ -41,13 +41,54 @@ android](theming-images/main-page-both-themes.png "テーマ付きアプリの�
 
 ## <a name="define-themes"></a>テーマを定義する
 
-ダークテーマの作成に関する詳細な手順については、「[テーマガイド」](theming.md)を参照してください。
+ダークテーマの作成に関する詳細な手順については、「[テーマガイド」](theming.md)を参照してください。 
+
+プラットフォームコードの適切な場所で、アプリケーションの新しいテーマを簡単に設定できます。 新しいテーマを読み込むには、アプリケーションの現在のリソースディクショナリを、選択したテーマを持つリソースディクショナリに置き換えるだけです。
+
+```csharp
+App.Current.Resources = new YourDarkTheme();
+```
+
+## <a name="detect-and-apply-theme"></a>テーマの検出と適用
+
+現在実行中のテーマを検出するには、 [Xamarin. Essentials](~/essentials/index.md)の[`RequestedTheme`](~/essentials/app-theme.md)機能 (バージョンの場合は、それ以降) を使用します。 次に、新しいクラスまたは `App` クラスにヘルパーメソッドを作成して、テーマを構成できます。
+
+```csharp
+public partial class App : Application
+{
+    public static void ApplyTheme()
+    {
+        if (AppInfo.RequestedTheme == AppTheme.Dark)
+        {
+            // change to light theme
+            // e.g. App.Current.Resources = new YourLightTheme();
+        }
+        else
+        {
+            // change to dark theme
+            // e.g. App.Current.Resources = new YourDarkTheme();
+        }
+    }
+}
+```
 
 ## <a name="react-to-appearance-mode-changes"></a>外観モードの変更に対処する
 
 デバイスの表示モードは、ユーザーが設定をどのように構成しているかに応じて、さまざまな理由で変更される可能性があります。モード、時刻、または低光などの環境要因を明示的に選択する方法です。 アプリケーションがこれらの変更に対応できるようにプラットフォームコードを追加する必要があります。以降のセクションでは、この点について詳しく説明します。
 
 ### <a name="android"></a>Android
+
+アプリでダークモードをサポートするには、アプリのテーマを更新する必要があります。このテーマは、`DayNight` テーマから継承するために `Resources/values/styles.xml`で見つけることができます。
+
+```xml
+<style name="MainTheme.Base" parent="Theme.AppCompat.DayNight">
+```
+
+AndroidX の[マテリアルコンポーネント](https://www.nuget.org/packages/Xamarin.Google.Android.Material/)(1.1.0) 以降にアップグレードした場合は、次のものを使用できます。
+
+```xml
+<style name="MainTheme.Base" parent="Theme.MaterialComponents.DayNight">
+```
 
 アプリケーションの**MainActivity.cs**ファイルで、`Activity` 属性の `ConfigurationChanges` プロパティに `ConfigChanges.UiMode` フィールドを追加します。これにより、アプリに UI モードの変更が通知されます。
 
@@ -63,17 +104,7 @@ android](theming-images/main-page-both-themes.png "テーマ付きアプリの�
 public override void OnConfigurationChanged(Configuration newConfig)
 {
     base.OnConfigurationChanged(newConfig);
-
-    if ((newConfig.UiMode & UiMode.NightNo) != 0)
-    {
-        // change to light theme
-        // e.g. App.Current.Resources = new YourLightTheme();
-    }
-    else
-    {
-        // change to dark theme
-        // e.g. App.Current.Resources = new YourDarkTheme();
-    }
+    App.ApplyTheme();
 }
 ```
 
@@ -103,7 +134,7 @@ namespace YourApp.iOS.Renderers
 
             try
             {
-                SetAppTheme();
+                App.ApplyTheme();
             }
             catch (Exception ex)
             {
@@ -115,24 +146,7 @@ namespace YourApp.iOS.Renderers
         {
             base.TraitCollectionDidChange(previousTraitCollection);
 
-            if(this.TraitCollection.UserInterfaceStyle != previousTraitCollection.UserInterfaceStyle)
-            {
-                SetAppTheme();
-            }
-        }
-
-        void SetAppTheme()
-        {
-            if (this.TraitCollection.UserInterfaceStyle == UIUserInterfaceStyle.Dark)
-            {
-                // change to dark theme
-                // e.g. App.Current.Resources = new YourDarkTheme();
-            }
-            else
-            {
-                // change to light theme
-                // e.g. App.Current.Resources = new YourLightTheme();
-            }
+            App.ApplyTheme();
         }
     }
 }
@@ -147,7 +161,6 @@ UWP で、次のコードをアプリケーションの**MainPage.xaml.cs**フ�
 ```csharp
 public sealed partial class MainPage
 {
-
     UISettings uiSettings;
 
     public MainPage()
@@ -162,34 +175,12 @@ public sealed partial class MainPage
 
     private void ColorValuesChanged(UISettings sender, object args)
     {
-        var backgroundColor = sender.GetColorValue(UIColorType.Background);
-        var isDarkMode = backgroundColor == Colors.Black;
-        if(isDarkMode)
+        Xamarin.Essentials.MainThread.BeginInvokeOnMainThread(() =>
         {
-            Xamarin.Essentials.MainThread.BeginInvokeOnMainThread(() =>
-            {
-                // change to dark theme
-                // e.g. App.Current.Resources = new YourDarkTheme();
-            });
-        }
-        else
-        {
-            Xamarin.Essentials.MainThread.BeginInvokeOnMainThread(() =>
-            {
-                // change to light theme
-                // e.g. App.Current.Resources = new YourLightTheme();
-            });
-        }
+            App.ApplyTheme();
+        });
     }
 }
-```
-
-## <a name="set-dark-and-light-themes"></a>ダークテーマと明るいテーマを設定する
-
-[テーマ](theming.md)ガイドに従うと、上記のプラットフォームコードの適切な場所で、アプリケーションの新しいテーマを簡単に設定できるようになります。 新しいテーマを読み込むには、アプリケーションの現在のリソースディクショナリを、選択したテーマを持つリソースディクショナリに置き換えるだけです。
-
-```csharp
-App.Current.Resources = new YourDarkTheme();
 ```
 
 ## <a name="related-links"></a>関連リンク

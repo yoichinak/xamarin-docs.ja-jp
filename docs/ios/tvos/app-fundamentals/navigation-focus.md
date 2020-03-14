@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
 ms.openlocfilehash: 3c754acc3502d7aa2c47264e734187ffe060c029
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78915807"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79306081"
 ---
 # <a name="working-with-tvos-navigation-and-focus-in-xamarin"></a>TvOS ナビゲーションを使用して Xamarin にフォーカスを移動する
 
@@ -28,7 +28,7 @@ _この記事では、フォーカスの概念と、tvOS アプリ内のナビ�
 
 <a name="Navigation" />
 
-## <a name="navigation"></a>「ナビゲーション」
+## <a name="navigation"></a>ナビゲーション
 
 TvOS アプリのユーザーは、iOS と直接やり取りするのではなく、デバイスの画面上のイメージをタップしますが、 [Siri リモート](~/ios/tvos/platform/remote-bluetooth.md#The-Siri-Remote)を使用してルーム間で間接的に移動します。 アプリのユーザーインターフェイスをデザインするときは、この点に留意する必要があります。これにより、ユーザーは Apple TV エクスペリエンスに専念ことができます。
 
@@ -80,7 +80,7 @@ Apple には、フォーカスと選択の操作に関して次のような推�
 
 ### <a name="working-with-focus"></a>フォーカスの操作
 
-フォーカス設定可能な項目になる可能性があるカスタムコントロールを作成することが必要になる場合があります。 その場合は、`CanBecomeFocused` プロパティをオーバーライドして `true`を返します。それ以外の場合は `false`を返します。 次に例を示します。
+フォーカス設定可能な項目になる可能性があるカスタムコントロールを作成することが必要になる場合があります。 その場合は、`CanBecomeFocused` プロパティをオーバーライドして `true`を返します。それ以外の場合は `false`を返します。 例 :
 
 ```csharp
 public class myView : UIView
@@ -91,7 +91,7 @@ public class myView : UIView
 }
 ```
 
-`UIKit` コントロールの `Focused` プロパティを使用して、現在の項目であるかどうかをいつでも確認できます。 UI 項目に現在フォーカスがある `true` 場合は。それ以外の場合は。 次に例を示します。
+`UIKit` コントロールの `Focused` プロパティを使用して、現在の項目であるかどうかをいつでも確認できます。 UI 項目に現在フォーカスがある `true` 場合は。それ以外の場合は。 例 :
 
 ```csharp
 // Is my view in focus?
@@ -101,7 +101,7 @@ if (myView.Focused) {
 }
 ```
 
-コードを使用して別の UI 要素にフォーカスを直接移動することはできませんが、その `PreferredFocusedView` プロパティを `true`に設定することにより、画面が読み込まれるときに最初にフォーカスを取得する UI 要素を指定できます。 次に例を示します。
+コードを使用して別の UI 要素にフォーカスを直接移動することはできませんが、その `PreferredFocusedView` プロパティを `true`に設定することにより、画面が読み込まれるときに最初にフォーカスを取得する UI 要素を指定できます。 例 :
 
 ```csharp
 // Make the play button the starting focus item
@@ -204,7 +204,7 @@ public override void DidUpdateFocus (UIFocusUpdateContext context, UIFocusAnimat
 
 まず、このコードは、渡された `UIFocusUpdateContext` (`context`) の `NextFocusedView` を取得します。 このビューが `null`場合、処理は必要なく、メソッドは終了します。
 
-次に、`nextFocusableItem` が評価されます。 **[詳細]** ボタンまたは **[購入]** ボタンのいずれかに一致する場合は、フォーカスガイドの `PreferredFocusedView` プロパティを使用して、反対のボタンにフォーカスが送信されます。 次に例を示します。
+次に、`nextFocusableItem` が評価されます。 **[詳細]** ボタンまたは **[購入]** ボタンのいずれかに一致する場合は、フォーカスガイドの `PreferredFocusedView` プロパティを使用して、反対のボタンにフォーカスが送信されます。 例 :
 
 ```csharp
 // Move from the More Info to Buy button
@@ -222,7 +222,7 @@ FocusGuide.PreferredFocusedView = null;
 
 ### <a name="working-with-focus-in-collections"></a>コレクションでのフォーカスの使用
 
-`UICollectionView` または `UITableView`で個々の項目にフォーカスを設定できるかどうかを判断する場合は、`UICollectionViewDelegate` または `UITableViewDelegate` のメソッドをそれぞれオーバーライドします。 次に例を示します。
+`UICollectionView` または `UITableView`で個々の項目にフォーカスを設定できるかどうかを判断する場合は、`UICollectionViewDelegate` または `UITableViewDelegate` のメソッドをそれぞれオーバーライドします。 例 :
 
 ```csharp
 public class CardHandDelegate : UICollectionViewDelegateFlowLayout
@@ -270,7 +270,7 @@ myImageView.AdjustsImageWhenAncestorFocused = true;
 
 <a name="Summary" />
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 この記事では、フォーカスの概念と、それを使用して tvOS アプリのユーザーインターフェイスでのナビゲーションを処理する方法について説明しました。 ここでは、組み込みの tvOS ナビゲーションコントロールでフォーカス、強調表示、および選択を使用してナビゲーションを行う方法を確認します。 次に、視差とレイヤー化されたイメージでフォーカスを使用して、エンドユーザーに現在のナビゲーション状態を視覚的に把握する方法について見てきました。 最後に、フォーカスを操作し、更新をフォーカスし、コレクションに焦点を当て、視差を有効にします。
 

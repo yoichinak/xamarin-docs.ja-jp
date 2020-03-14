@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
 ms.openlocfilehash: 3e11b163d16be9711bf09102e3ab8604d98299d7
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75487764"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79306249"
 ---
 # <a name="working-with-the-watchos-parent-application-in-xamarin"></a>親アプリケーション Xamarin で watchOS の操作
 
@@ -20,7 +20,7 @@ Watch アプリとそれにバンドルされている iOS アプリ間で通信
 
 - Watch アプリは、iPhone の親アプリで[コードを実行](#run-code)できます。
 
-- ウォッチ拡張機能は[記憶域の場所を共有](#shared-storage)親の iPhone アプリ。
+- 監視拡張機能は、親 iPhone アプリと[ストレージの場所を共有](#shared-storage)できます。
 
 - ハンドオフを使用して、通知からのデータを watch アプリに渡し、ユーザーをアプリの特定のインターフェイスコントローラーに送信します。
 
@@ -33,13 +33,13 @@ Watch アプリとそれにバンドルされている iOS アプリ間で通信
 - [接続の監視](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchconnectivity/)
 - [SimpleWatchConnectivity](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-simplewatchconnectivity/) 
 
-## <a name="shared-storage"></a>共有記憶域
+## <a name="shared-storage"></a>ストレージの共有
 
-構成する場合、[アプリ グループ](~/ios/watchos/app-fundamentals/app-groups.md)し iOS 8 の拡張機能 (ウォッチ拡張機能を含む) は、親アプリとデータを共有することができます。
+[アプリグループ](~/ios/watchos/app-fundamentals/app-groups.md)を構成すると、iOS 8 拡張機能 (watch extensions を含む) が親アプリとデータを共有できるようになります。
 
 ### <a name="nsuserdefaults"></a>NSUserDefaults
 
-一連の共通に参照できるように、watch アプリ拡張機能と親の iPhone アプリの両方で、次のコードを記述できます`NSUserDefaults`:
+次のコードは、watch アプリ拡張機能と親 iPhone アプリの両方で記述できます。これにより、`NSUserDefaults`の共通セットを参照できます。
 
 ```csharp
 NSUserDefaults shared = new NSUserDefaults(
@@ -70,11 +70,11 @@ Console.WriteLine ("agcpath: " + appGroupContainerPath);
 // use the path to create and update files
 ```
 
-注: パスの場合`null`確認し、[アプリ グループの構成](~/ios/watchos/app-fundamentals/app-groups.md)プロビジョニング プロファイルが正しく構成されているし、開発用コンピューターにダウンロード/インストールされていることを確認します。
+注: パスが `null` 場合は、[アプリグループの構成](~/ios/watchos/app-fundamentals/app-groups.md)を確認して、プロビジョニングプロファイルが正しく構成されており、開発用コンピューターにダウンロード/インストールされていることを確認します。
 
-詳細についてを参照してください、[アプリ グループ機能](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md)ドキュメント。
+詳細については、[アプリグループ機能](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md)のドキュメントを参照してください。
 
 ## <a name="related-links"></a>関連リンク
 
-- [Apple の WKInterfaceController 参照](https://developer.apple.com/library/prerelease/ios/documentation/WatchKit/Reference/WKInterfaceController_class/index.html#//apple_ref/occ/clm/WKInterfaceController/openParentApplication:reply:)
-- [Apple のデータを含むアプリを共有します。](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html)
+- [Apple の WKInterfaceController リファレンス](https://developer.apple.com/library/prerelease/ios/documentation/WatchKit/Reference/WKInterfaceController_class/index.html#//apple_ref/occ/clm/WKInterfaceController/openParentApplication:reply:)
+- [アプリを含む Apple の共有データ](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html)

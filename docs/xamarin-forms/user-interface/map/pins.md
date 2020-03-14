@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/23/2019
 ms.openlocfilehash: 197c48a7a3486d7161d351a6b06101daaa389256
-ms.sourcegitcommit: 2cc0796902123df137611b855a55b754ca3c6d73
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74556158"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79306567"
 ---
 # <a name="xamarinforms-map-pins"></a>Xamarin. フォームマップのピン
 
@@ -79,7 +79,7 @@ Xamarin Forms [`Map`](xref:Xamarin.Forms.Maps.Map)コントロールを使用す
 
 この XAML は、 [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan)オブジェクトによって指定された領域を示す[`Map`](xref:Xamarin.Forms.Maps.Map)オブジェクトを作成します。 `MapSpan` オブジェクトは、 [`Position`](xref:Xamarin.Forms.Maps.Position)のオブジェクトによって表される緯度と経度の中央にあり、0.01 の緯度と経度の角度を超えています。 [`Pin`](xref:Xamarin.Forms.Maps.Pin)オブジェクトが[`Map.Pins`](xref:Xamarin.Forms.Maps.Pin)コレクションに追加され、 [`Position`](xref:Xamarin.Forms.Maps.Pin.Position)プロパティで指定された位置に `Map` に描画されます。 [`Position`](xref:Xamarin.Forms.Maps.Position)構造体の詳細については、「[マップの位置と距離](position-distance.md)」を参照してください。 既定のコンストラクターを持たないオブジェクトに XAML の引数を渡す方法については、「 [xaml で引数を渡す](~/xamarin-forms/xaml/passing-arguments.md)」を参照してください。
 
-これに相当する C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 using Xamarin.Forms.Maps;

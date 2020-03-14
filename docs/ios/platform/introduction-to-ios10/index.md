@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
 ms.openlocfilehash: ce262faf2d79e6a2cc969df582446fdc2ec29bde
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78910873"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79306123"
 ---
 # <a name="introduction-to-ios-10"></a>iOS 10 の概要
 
@@ -28,7 +28,7 @@ Apple では、iOS 10 に新しい Api とサービスがいくつか追加さ�
 
 Apple の真の雰囲気ディスプレイテクノロジでは、iOS デバイスのアンビエント光センサーを使用して、現在の照明条件に合わせてディスプレイの色と輝度を動的に調整します。 iOS 10 は、アプリの `Info.plist` ファイルに追加できる新しい[UIWhitePointAdaptivityStyle](https://developer.apple.com/library/prerelease/content/documentation/General/Reference/InfoPlistKeyReference/Articles/iPhoneOSKeys.html#//apple_ref/doc/uid/TP40009252-SW31)キーを提供し、標準のカラーシフトを適用する方法を制御します。 
 
-次の値を指定できます。
+次の値を使用できます。
 
 - `UIWhitePointAdaptivityStyleStandard`**既定値**: 標準のホワイトポイント adaptivity を使用します。
 - `UIWhitePointAdaptivityStyleReading`-集中アプリに使用されます。
@@ -42,7 +42,7 @@ Apple では、iOS 10 に新しいアプリの拡張ポイントがいくつか�
 
 - 呼び出しディレクトリ
 - インテントとインテント UI
-- メッセージ
+- Messages
 - 通知の内容
 - Notification Services
 - ステッカーパック

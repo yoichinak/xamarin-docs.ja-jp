@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 08/16/2018
 ms.openlocfilehash: 617c04e2f40af535fb381362a389524d693fad0b
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78913446"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79305607"
 ---
 # <a name="local-notifications-on-android"></a>Android でのローカル通知
 
@@ -297,7 +297,7 @@ notification.Defaults |= NotificationDefaults.Vibrate;
 
 ### <a name="updating-a-notification"></a>通知を更新しています
 
-発行後に通知の内容を更新する場合は、既存の `NotificationCompat.Builder` オブジェクトを再利用して新しい通知オブジェクトを作成し、最後の通知の識別子を使用してこの通知を発行することができます。 次に例を示します。
+発行後に通知の内容を更新する場合は、既存の `NotificationCompat.Builder` オブジェクトを再利用して新しい通知オブジェクトを作成し、最後の通知の識別子を使用してこの通知を発行することができます。 例 :
 
 ```csharp
 // Update the existing notification builder content:
@@ -454,7 +454,7 @@ string message = Intent.Extras.GetString ("message", "");
 
 通知が大きいアイコン形式で表示されると、小さいアプリのアイコンが大きいアイコンの右下隅にバッジとして表示されることに注意してください。
 
-画像を通知で大きいアイコンとして使用するには、通知ビルダーの[SetLargeIcon](xref:Android.App.Notification.Builder.SetLargeIcon*)メソッドを呼び出し、イメージのビットマップを渡します。 `SetSmallIcon`とは異なり、`SetLargeIcon` はビットマップのみを受け入れます。 イメージファイルをビットマップに変換するには、 [Bitmapfactory](xref:Android.Graphics.BitmapFactory)クラスを使用します。 次に例を示します。
+画像を通知で大きいアイコンとして使用するには、通知ビルダーの[SetLargeIcon](xref:Android.App.Notification.Builder.SetLargeIcon*)メソッドを呼び出し、イメージのビットマップを渡します。 `SetSmallIcon`とは異なり、`SetLargeIcon` はビットマップのみを受け入れます。 イメージファイルをビットマップに変換するには、 [Bitmapfactory](xref:Android.Graphics.BitmapFactory)クラスを使用します。 例 :
 
 ```csharp
 builder.SetLargeIcon (BitmapFactory.DecodeResource (Resources, Resource.Drawable.monkey_icon));
@@ -511,7 +511,7 @@ builder.SetStyle (textStyle);
 
 通知がコンパクト形式で表示されると、通知テキスト (前に示したように、通知ビルダーの `SetContentText` メソッドに渡されるテキスト) が表示されることに注意してください。 ただし、通知を展開して画像を表示すると、画像の上に概要テキストが表示されます。
 
-*イメージ*通知を作成するには、前と同じように `NotificationCompat.Builder` オブジェクトをインスタンス化してから、`NotificationCompat.Builder` オブジェクトに[big絵 style](xref:Android.App.Notification.BigPictureStyle)オブジェクトを作成して挿入します。 次に例を示します。
+*イメージ*通知を作成するには、前と同じように `NotificationCompat.Builder` オブジェクトをインスタンス化してから、`NotificationCompat.Builder` オブジェクトに[big絵 style](xref:Android.App.Notification.BigPictureStyle)オブジェクトを作成して挿入します。 例 :
 
 ```csharp
 // Instantiate the Image (Big Picture) style:
@@ -619,7 +619,7 @@ Xamarin Android では、通知の優先度を設定するために次の列挙�
 
 - 通知を表示する場合にのみユーザーに通知される背景情報 (場所や天気情報など) については、&ndash; を `NotificationPriority.Min`。
 
-通知の優先度を設定するには、`NotificationCompat.Builder` オブジェクトの[Setpriority](xref:Android.App.Notification.Builder.SetPriority*)メソッドを呼び出して、優先度レベルで渡します。 次に例を示します。
+通知の優先度を設定するには、`NotificationCompat.Builder` オブジェクトの[Setpriority](xref:Android.App.Notification.Builder.SetPriority*)メソッドを呼び出して、優先度レベルで渡します。 例 :
 
 ```csharp
 builder.SetPriority (NotificationPriority.High);
@@ -697,7 +697,7 @@ Android 5.0 以降では、通知の順位付けとフィルター処理に定�
 
 - デバイスに関する &ndash; 情報を `Notification.CategoryStatus` します。
 
-通知が並べ替えられると、通知の優先度はそのカテゴリの設定よりも優先されます。 たとえば、優先度の高い通知は、[`Promo`] カテゴリに属している場合でも、[ヘッドアップ] として表示されます。 通知のカテゴリを設定するには、`NotificationCompat.Builder` オブジェクトの `SetCategory` メソッドを呼び出して、category 設定を渡します。 次に例を示します。
+通知が並べ替えられると、通知の優先度はそのカテゴリの設定よりも優先されます。 たとえば、優先度の高い通知は、[`Promo`] カテゴリに属している場合でも、[ヘッドアップ] として表示されます。 通知のカテゴリを設定するには、`NotificationCompat.Builder` オブジェクトの `SetCategory` メソッドを呼び出して、category 設定を渡します。 例 :
 
 ```csharp
 builder.SetCategory (Notification.CategoryCall);
@@ -748,7 +748,7 @@ if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop) {
 }
 ```
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 この記事では、Android でローカル通知を作成する方法について説明しました。 ここでは、通知の構造について説明し、`NotificationCompat.Builder` を使用して通知を作成する方法、大きいアイコンで通知をスタイル設定する方法、*大きなテキスト*、*画像*および*受信トレイ*形式、通知メタデータの設定 (優先度、可視性、カテゴリなど)、通知からアクティビティを起動する方法を説明しました。 この記事では、これらの通知設定が、Android 5.0 で導入された新しいヘッドアップ、ロック画面、および*応答不可*機能とどのように連携するかについても説明しました。 最後に、`NotificationCompat.Builder` を使用して、以前のバージョンの Android との通知との互換性を維持する方法を学習しました。
 

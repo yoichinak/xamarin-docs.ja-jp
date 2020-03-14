@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
 ms.openlocfilehash: 8640800717a88e800503e93c339eeb080707374e
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78915696"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79306171"
 ---
 # <a name="web-views-in-xamarinios"></a>Xamarin.iOS の Web ビュー
 
@@ -92,7 +92,7 @@ IOS 9 では、アプリトランスポートセキュリティ (または*ATS* 
 ## <a name="uiwebview-deprecated"></a>UIWebView (非推奨)
 
 > [!IMPORTANT]
-> `UIWebView` は使用されなくなりました。 2020年4月の時点では、このコントロールを使用するアプリは[App Store には受け入れられず、既存のアプリは2020年12月までに削除する必要があり](https://developer.apple.com/news/?id=12232019b)ます。
+> `UIWebView` は非推奨とされます。 2020年4月の時点では、このコントロールを使用するアプリは[App Store には受け入れられず、既存のアプリは2020年12月までに削除する必要があり](https://developer.apple.com/news/?id=12232019b)ます。
 >
 > [Apple の `UIWebView` ドキュメント](https://developer.apple.com/documentation/uikit/uiwebview)では、アプリで[`WKWebView`](#wkwebview)を使用することを提案します。
 

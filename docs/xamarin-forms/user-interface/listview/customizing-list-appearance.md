@@ -1,6 +1,6 @@
 ---
 title: ListView の外観
-description: この記事では、ヘッダー、フッター、グループ、および可変の高さセルを使用して、Xamarin アプリケーションで ListViews をカスタマイズする方法について説明します。
+description: この記事では、ヘッダー、フッター、グループ、および高さが可変のセルを使用して、Xamarin.Forms アプリケーションの Listview をカスタマイズする方法について説明します。
 ms.prod: xamarin
 ms.assetid: DC8009B0-4371-4D60-885A-5362FC7EE3E5
 ms.technology: xamarin-forms
@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2018
 ms.openlocfilehash: 90b0e0f3802ce766decb802c9406d72b5966360e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032812"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79305649"
 ---
 # <a name="listview-appearance"></a>ListView の外観
 
@@ -22,19 +22,19 @@ Xamarin [`ListView`](xref:Xamarin.Forms.ListView)を使用すると、リスト�
 
 ## <a name="grouping"></a>グループ化
 
-連続したスクロールリストに表示されている場合、データの大規模なセットが扱いにくくなることがあります。 グループ化を有効にすると、コンテンツを整理したり、データの移動を容易にするプラットフォーム固有のコントロールをアクティブ化したりすることで、ユーザーエクスペリエンスを向上させることができます。
+連続したスクロールリストに表示されている場合、データの大規模なセットが扱いにくくなることがあります。 グループ化を有効にするには、コンテンツをより適切に整理して移動するデータを簡単にするプラットフォーム固有のコントロールをアクティブ化するこのような場合、ユーザー エクスペリエンスが向上します。
 
 `ListView`に対してグループ化がアクティブになると、グループごとにヘッダー行が追加されます。
 
-グループ化を有効にするには:
+グループ化を有効にします。
 
-- リストの一覧を作成します (グループのリスト、各グループは要素の一覧です)。
+- (グループの一覧、各グループの要素の一覧) のリストの一覧を作成します。
 - `ListView`の `ItemsSource` をその一覧に設定します。
 - `IsGroupingEnabled` を true に設定します。
 - グループのタイトルとして使用されているグループのプロパティにバインドするには、 [`GroupDisplayBinding`](xref:Xamarin.Forms.ListView.GroupDisplayBinding)を設定します。
-- Optionalグループの短い名前として使用されているグループのプロパティにバインドするには、 [`GroupShortNameBinding`](xref:Xamarin.Forms.ListView.GroupShortNameBinding)を設定します。 短い名前は、ジャンプリスト (iOS の右側の列) に使用されます。
+- Optionalグループの短い名前として使用されているグループのプロパティにバインドするには、 [`GroupShortNameBinding`](xref:Xamarin.Forms.ListView.GroupShortNameBinding)を設定します。 ジャンプ リスト (iOS の右側にある列) の短い名前が使用されます。
 
-まず、グループのクラスを作成します。
+グループのクラスを作成して開始します。
 
 ```csharp
 public class PageTypeGroup : List<PageModel>
@@ -54,7 +54,7 @@ public class PageTypeGroup : List<PageModel>
 
 上記のコードでは、`All` は、ListView にバインドソースとして指定されるリストです。 `Title` と `ShortName` は、グループの見出しに使用されるプロパティです。
 
-この段階では、`All` は空のリストです。 プログラムの開始時にリストが設定されるように、静的コンストラクターを追加します。
+この段階では、`All` は空のリストです。 プログラムの開始時、リストに表示されます、静的コンス トラクターを追加します。
 
 ```csharp
 static PageTypeGroup()
@@ -79,7 +79,7 @@ static PageTypeGroup()
 
 上記のコードでは、`Groups`の要素で `Add` を呼び出すこともできます。これは `PageTypeGroup`型のインスタンスです。 `PageTypeGroup` は `List<PageModel>`から継承されるため、このメソッドを使用できます。
 
-グループ化されたリストを表示するための XAML は次のとおりです。
+グループ化された一覧を表示するための XAML を次に示します。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -115,11 +115,11 @@ static PageTypeGroup()
 
 ### <a name="customizing-grouping"></a>カスタマイズ (グループ化を)
 
-一覧でグループ化が有効になっている場合は、グループヘッダーをカスタマイズすることもできます。
+一覧にグループ化が有効になっている場合、グループ ヘッダーはカスタマイズもできます。
 
 `ListView` には、行の表示方法を定義するための `ItemTemplate` があるのと同様に、`ListView` には `GroupHeaderTemplate`があります。
 
-XAML でグループヘッダーをカスタマイズする例を次に示します。
+XAML でグループ ヘッダーをカスタマイズする例を次に示します。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -156,11 +156,11 @@ XAML でグループヘッダーをカスタマイズする例を次に示しま
 
 ## <a name="headers-and-footers"></a>ヘッダーとフッター
 
-ListView は、リストの要素でスクロールするヘッダーとフッターを表示することができます。 ヘッダーとフッターには、テキストの文字列またはより複雑なレイアウトを指定できます。 この動作は、[セクショングループ](#grouping)とは別のものです。
+リストの要素にスクロールするヘッダーとフッターを提示する ListView のことができます。 ヘッダーとフッターは、テキスト文字列またはより複雑なレイアウトを指定できます。 この動作は、[セクショングループ](#grouping)とは別のものです。
 
 `Header` または `Footer` を `string` 値に設定することも、より複雑なレイアウトに設定することもできます。 また、`HeaderTemplate` プロパティと `FooterTemplate` プロパティもあります。これにより、データバインディングをサポートするヘッダーとフッターに対してより複雑なレイアウトを作成できます。
 
-基本ヘッダー/フッターを作成するには、表示するテキストにヘッダーまたはフッターのプロパティを設定するだけです。 コードは次のとおりです。
+基本ヘッダー/フッターを作成するには、表示するテキストにヘッダーまたはフッターのプロパティを設定するだけです。 コード内で以下のように指定します。
 
 ```csharp
 ListView HeaderList = new ListView()
@@ -170,7 +170,7 @@ ListView HeaderList = new ListView()
 };
 ```
 
-XAML の場合:
+で XAML:
 
 ```xaml
 <ListView x:Name="HeaderList" 
@@ -182,7 +182,7 @@ XAML の場合:
 
 ![](customizing-list-appearance-images/header-default.png "ListView with Header and Footer")
 
-カスタマイズしたヘッダーとフッターを作成するには、次のようにヘッダーとフッターのビューを定義します。
+カスタマイズされたヘッダーとフッターを作成するには、ヘッダーとフッターのビューを定義します。
 
 ```xaml
 <ListView.Header>
@@ -218,7 +218,7 @@ XAML の場合:
 - **既定**-IOS と Android の区切り線を表示します。
 - **None** -すべてのプラットフォームの区切り記号を非表示にします。
 
-既定の表示:
+既定の可視性:
 
 C#:
 
@@ -226,7 +226,7 @@ C#:
 SeparatorDemoListView.SeparatorVisibility = SeparatorVisibility.Default;
 ```
 
-XAML
+XAML:
 
 ```xaml
 <ListView x:Name="SeparatorDemoListView" SeparatorVisibility="Default" />
@@ -234,7 +234,7 @@ XAML
 
 ![](customizing-list-appearance-images/separator-default.png "ListView with Default Row Separators")
 
-存在
+なし:
 
 C#:
 
@@ -242,7 +242,7 @@ C#:
 SeparatorDemoListView.SeparatorVisibility = SeparatorVisibility.None;
 ```
 
-XAML
+XAML:
 
 ```xaml
 <ListView x:Name="SeparatorDemoListView" SeparatorVisibility="None" />
@@ -258,7 +258,7 @@ C#:
 SeparatorDemoListView.SeparatorColor = Color.Green;
 ```
 
-XAML
+XAML:
 
 ```xaml
 <ListView x:Name="SeparatorDemoListView" SeparatorColor="Green" />
@@ -271,7 +271,7 @@ XAML
 
 ## <a name="row-height"></a>行の高さ
 
-既定では、ListView 内のすべての行の高さは同じになります。 ListView には、その動作を変更するために使用できる2つのプロパティがあります。
+既定では、同じ高さがある、ListView のすべての行。 ListView では、その動作を変更するために使用できる 2 つのプロパティがあります。
 
 - `false` に設定されている場合、&ndash; `true`/`true`値を `HasUnevenRows` すると、行の高さが変化します。 既定値は `false` です。
 - `HasUnevenRows` を `false`するときに各行の高さを `RowHeight` &ndash; 設定します。
@@ -286,7 +286,7 @@ C#:
 RowHeightDemoListView.RowHeight = 100;
 ```
 
-XAML
+XAML:
 
 ```xaml
 <ListView x:Name="RowHeightDemoListView" RowHeight="100" />
@@ -304,7 +304,7 @@ C#:
 RowHeightDemoListView.HasUnevenRows = true;
 ```
 
-XAML
+XAML:
 
 ```xaml
 <ListView x:Name="RowHeightDemoListView" HasUnevenRows="true" />

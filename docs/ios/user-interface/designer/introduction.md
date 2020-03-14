@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 01/31/2018
 ms.openlocfilehash: 6b02a0f8476cf47ca6df279653095fe0845b36c9
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78914767"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79306063"
 ---
 # <a name="ios-designer-basics"></a>iOS Designer の基本
 
@@ -20,7 +20,7 @@ _このガイドでは、Xamarin Designer for iOS について説明します。
 
 Xamarin Designer for iOS は、Xcode の Interface Builder や Android Designer に似たビジュアルインターフェイスデザイナーです。 多くの機能の中には、Visual Studio for Windows および Mac とのシームレスな統合、ドラッグアンドドロップ編集、イベントハンドラーを設定するためのインターフェイス、カスタムコントロールのレンダリング機能などがあります。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 IOS デザイナーは、Visual Studio for Mac と Visual Studio 2017 以降の Windows で使用できます。 Visual Studio for Windows では、iOS Designer は適切に構成された Mac ビルドホストへの接続を必要としますが、Xcode は実行されている必要はありません。
 
@@ -331,7 +331,7 @@ IOS Designer には、6つの主要なセクションがあります。
 
 1. 画面のサイズに合わせる
 2. 縮小します
-3. 拡大します
+3. 拡大
 4. 実際のサイズ (1:1 ピクセルのサイズ)
 
 これらのコントロールは、デザインサーフェイスのズームを調整します。 実行時にアプリケーションのユーザーインターフェイスには影響しません。
@@ -349,7 +349,7 @@ IOS Designer には、6つの主要なセクションがあります。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-### <a name="properties-window"></a>[プロパティ] ウィンドウ
+### <a name="properties-window"></a>プロパティ ウィンドウ
 
 コントロールの id、視覚スタイル、アクセシビリティ、および動作を編集するには、[**プロパティ] ウィンドウ**を使用します。 次のスクリーンショットは、ボタンの [**プロパティ] ウィンドウ**のオプションを示しています。
 
@@ -488,7 +488,7 @@ Xib ファイルの使用に関するその他のドキュメントについて�
 
 この iOS デザイナー関連のガイドでは、ほとんどの Xamarin. iOS の新しいプロジェクトテンプレートでストーリーボードが既定で提供されるため、ユーザーインターフェイスを構築するための標準的なアプローチとしてストーリーボードを使用することを示しています。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 このガイドでは、iOS Designer の概要について説明し、機能を説明し、美しいユーザーインターフェイスを設計するために提供するツールの概要を説明しました。
 

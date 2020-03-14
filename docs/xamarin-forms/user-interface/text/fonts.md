@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/20/2020
 ms.openlocfilehash: 3798e3612547d36905dd62e6314f158958782874
-ms.sourcegitcommit: 5b6d3bddf7148f8bb374de5657bdedc125d72ea7
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78160610"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79305679"
 ---
 # <a name="fonts-in-xamarinforms"></a>Xamarin.Forms でのフォント
 
@@ -43,7 +43,7 @@ var about = new Label
 
 <a name="FontSize" />
 
-### <a name="font-size"></a>Font Size
+### <a name="font-size"></a>[フォント サイズ]
 
 `FontSize` プロパティは、次のように double 値に設定できます。
 
@@ -61,7 +61,7 @@ label.FontSize = 24;
 
 **太字**や*斜体*などのフォントスタイルは、`FontAttributes` プロパティで設定できます。 次の値は現在サポートされています。
 
-- **None**
+- **なし**
 - **太字**
 - **<**
 
@@ -240,7 +240,7 @@ using Xamarin.Forms;
        FontFamily="Lobster-Regular" />
 ```
 
-同等の C# コードを次に示します。
+同等の c# コードに示します。
 
 ```csharp
 Label label = new Label
@@ -280,7 +280,7 @@ Label label = new Label
 </Image>
 ```
 
-このコードにより、Ionicons フォントファミリの XBox アイコンが[`Image`](xref:Xamarin.Forms.Image)ビューに表示されます。 このアイコンの unicode 文字は `\uf30c`ますが、XAML でエスケープする必要があるため、`&#xf30c;`になります。 同等の C# コードを次に示します。
+このコードにより、Ionicons フォントファミリの XBox アイコンが[`Image`](xref:Xamarin.Forms.Image)ビューに表示されます。 このアイコンの unicode 文字は `\uf30c`ますが、XAML でエスケープする必要があるため、`&#xf30c;`になります。 同等の c# コードに示します。
 
 ```csharp
 Image image = new Image { BackgroundColor = Color.FromHex("#D1D1D1") };

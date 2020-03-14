@@ -9,11 +9,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/21/2020
 ms.openlocfilehash: 0149806f3ab3772bc206cea9540a989d997c817b
-ms.sourcegitcommit: f43d5ecafd19cbc5cce39201916a83927a34617a
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/02/2020
-ms.locfileid: "78215001"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79306543"
 ---
 # <a name="xamarinforms-visual-state-manager"></a>Xamarin Forms State Manager
 
@@ -405,7 +405,7 @@ VSM マークアップの残りの部分では前に、と同じです。
 
 次の表に、Xamarin で定義されている表示状態の一覧を示します。
 
-| クラス | 状態 | 詳細情報 |
+| クラス | 状態 | 詳細 |
 | ----- | ------ | ---------------- |
 | `Button` | `Pressed` | [ボタンの表示状態](~/xamarin-forms/user-interface/button.md#button-visual-states) |
 | `CarouselView` | `DefaultItem`、`CurrentItem`、`PreviousItem`, `NextItem` | [CarouselView の視覚的状態](~/xamarin-forms/user-interface/carouselview/interaction.md#define-visual-states) |

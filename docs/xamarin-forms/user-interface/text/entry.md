@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/25/2019
 ms.openlocfilehash: c7daad8898d3048f10c9489ee4e2c78f147c6e52
-ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77131148"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79306615"
 ---
 # <a name="xamarinforms-entry"></a>Xamarin.Forms のエントリ
 
@@ -369,7 +369,7 @@ entry.BackgroundColor = Color.FromHex("#2c3e50");
 > [!NOTE]
 > [`Entry`](xref:Xamarin.Forms.Entry)を継承する[`VisualElement`](xref:Xamarin.Forms.VisualElement)クラスにも[`Focused`](xref:Xamarin.Forms.VisualElement.Focused)および[`Unfocused`](xref:Xamarin.Forms.VisualElement.Unfocused)イベントがあります。
 
-### <a name="completed"></a>[完了]
+### <a name="completed"></a>完了
 
 `Completed` イベントは、エントリとの対話の完了に応答するために使用されます。 `Completed` は、ユーザーがキーボードの return キーを押すか、UWP の Tab キーを押すことによって、入力をフィールドで終了したときに発生します。 イベントのハンドラーは、送信者と `EventArgs`を取得する汎用イベントハンドラーです。
 

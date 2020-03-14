@@ -1,5 +1,5 @@
 ---
-title: 第 2 部です。 重要な XAML 構文
+title: パート 2. 基本的な XAML 構文
 description: この記事では、プロパティ要素の重要な XAML 構文機能を説明し、添付プロパティ。
 ms.prod: xamarin
 ms.assetid: 4022F1DC-3802-4635-A553-688ABD3F0D5A
@@ -8,17 +8,17 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/25/2017
 ms.openlocfilehash: f79a07a04eddeea1441f7938fdef210a37fb920a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772883"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79306573"
 ---
-# <a name="part-2-essential-xaml-syntax"></a>第 2 部です。 重要な XAML 構文
+# <a name="part-2-essential-xaml-syntax"></a>パート 2. 基本的な XAML 構文
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
-_XAML は、ほとんどの場合、インスタンス化して、オブジェクトの初期化用です。多くの場合、XML の文字列として簡単に表すことができない複雑なオブジェクトにプロパティを設定する必要があり、子クラスの 1 つのクラスによって定義されたプロパティを設定する必要がある場合があります。これら 2 つのニーズには、プロパティ要素および添付プロパティの基本の XAML 構文の機能が必要です。_
+_XAML は、ほとんどがオブジェクトのインスタンス化と初期化を行うように設計されています。ただし、多くの場合、プロパティは、XML 文字列として簡単に表すことができない複合オブジェクトに設定する必要があります。また、1つのクラスで定義されるプロパティを子クラスに設定する必要がある場合もあります。この2つのニーズには、プロパティ要素と添付プロパティの基本的な XAML 構文機能が必要です。_
 
 ## <a name="property-elements"></a>プロパティ要素
 
@@ -32,7 +32,7 @@ _XAML は、ほとんどの場合、インスタンス化して、オブジェ�
        TextColor="Aqua" />
 ```
 
-ただし、XAML でプロパティを設定する別の方法はあります。 この方法を試すに`TextColor`、削除、既存`TextColor`設定。
+ただし、XAML でプロパティを設定する別の方法はあります。 `TextColor`でこの方法を使用するには、まず既存の `TextColor` 設定を削除します。
 
 ```xaml
 <Label Text="Hello, XAML!"
@@ -41,7 +41,7 @@ _XAML は、ほとんどの場合、インスタンス化して、オブジェ�
        FontSize="Large" />
 ```
 
-空要素を開いて`Label`タグと終了タグに分けることで。
+空の要素 `Label` タグを開始タグと終了タグに分割して開きます。
 
 ```xaml
 <Label Text="Hello, XAML!"
@@ -78,17 +78,17 @@ _XAML は、ほとんどの場合、インスタンス化して、オブジェ�
 </Label>
 ```
 
-これら 2 つの方法を指定する、`TextColor`プロパティは機能的に同等は効果的にするプロパティの設定、2 回、およびあいまいな場合がありますされるため、同じプロパティを 2 つの方法を使用しないでください。
+`TextColor` プロパティを指定する2つの方法は機能的に同等ですが、同じプロパティに対して2つの方法を使用しないでください。これは実質的にプロパティを2回設定し、あいまいになる可能性があるためです。
 
 この新しい構文では、いくつかの便利な用語を導入できます。
 
-- `Label` *オブジェクト要素*します。 これは Xamarin.Forms オブジェクトが XML 要素として表されます。
-- `Text`、 `VerticalOptions`、`FontAttributes`と`FontSize`は*プロパティ属性*します。 これらは Xamarin.Forms プロパティを XML 属性として表されます。
-- その最終的なスニペットで`TextColor`になりますが、*プロパティ要素*します。 Xamarin.Forms プロパティですが、XML 要素ではようになりました。
+- `Label` は*オブジェクト要素*です。 これは Xamarin.Forms オブジェクトが XML 要素として表されます。
+- `Text`、`VerticalOptions`、`FontAttributes`、および `FontSize` は*プロパティ属性*です。 これらは Xamarin.Forms プロパティを XML 属性として表されます。
+- この最後のスニペットでは、`TextColor` が*プロパティ要素*になりました。 Xamarin.Forms プロパティですが、XML 要素ではようになりました。
 
-最初の要素があるプロパティの定義を XML の構文の違反となると思われるはありません。 XML では、期間の特別な意味がありません。 XML デコーダーでは、`Label.TextColor`通常の子要素だけです。
+最初の要素があるプロパティの定義を XML の構文の違反となると思われるはありません。 XML では、期間の特別な意味がありません。 XML デコーダーでは、`Label.TextColor` は単に通常の子要素です。
 
-XAML、ただし、この構文は非常に特殊です。 他に何も表示できることは、プロパティ要素の規則のいずれか、`Label.TextColor`タグ。 プロパティの値は常に、プロパティ要素の開始と終了タグの間のコンテンツとして定義します。
+XAML、ただし、この構文は非常に特殊です。 Property 要素のルールの1つに、`Label.TextColor` タグに他のものが何も表示されないことがあります。 プロパティの値は常に、プロパティ要素の開始と終了タグの間のコンテンツとして定義します。
 
 1 つ以上のプロパティでは、プロパティ要素構文を使用できます。
 
@@ -131,7 +131,7 @@ XAML、ただし、この構文は非常に特殊です。 他に何も表示で
 
 最初は、プロパティ要素構文は非常に比較的単純なものの不要な取り戻す交換用と思えるかもしれませんし、これらの例では確実にします。
 
-ただし、プロパティ要素構文になりますプロパティの値が複雑すぎるため、単純な文字列として表すことが不可欠です。 プロパティ要素タグ内では、別のオブジェクトをインスタンス化し、そのプロパティを設定できます。 たとえば、明示的に設定できますプロパティなど`VerticalOptions`を`LayoutOptions`プロパティの設定の値。
+ただし、プロパティ要素構文になりますプロパティの値が複雑すぎるため、単純な文字列として表すことが不可欠です。 プロパティ要素タグ内では、別のオブジェクトをインスタンス化し、そのプロパティを設定できます。 たとえば、プロパティの設定を使用して、`VerticalOptions` などのプロパティを `LayoutOptions` 値に明示的に設定できます。
 
 ```xaml
 <Label>
@@ -142,9 +142,9 @@ XAML、ただし、この構文は非常に特殊です。 他に何も表示で
 </Label>
 ```
 
-もう1つの例を次に示します。に`Grid`は、とと`RowDefinitions` `ColumnDefinitions`いう名前の2つのプロパティがあります。 これら 2 つのプロパティが型`RowDefinitionCollection`と`ColumnDefinitionCollection`のコレクションである`RowDefinition`と`ColumnDefinition`オブジェクト。 プロパティ要素構文を使用して、これらのコレクションを設定する必要があります。
+別の例: `Grid` に `RowDefinitions` と `ColumnDefinitions`という名前の2つのプロパティがあります。 これらの2つのプロパティは `RowDefinitionCollection` と `ColumnDefinitionCollection`型で、`RowDefinition` および `ColumnDefinition` オブジェクトのコレクションです。 プロパティ要素構文を使用して、これらのコレクションを設定する必要があります。
 
-ここでは、XAML ファイルの先頭を`GridDemoPage`クラス、プロパティ要素タグを表示、`RowDefinitions`と`ColumnDefinitions`コレクション。
+`GridDemoPage` クラスの XAML ファイルの先頭を次に示します。 `RowDefinitions` コレクションと `ColumnDefinitions` コレクションの property 要素タグが示されています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -171,9 +171,9 @@ XAML、ただし、この構文は非常に特殊です。 他に何も表示で
 
 ## <a name="attached-properties"></a>アタッチされるプロパティ
 
-上記を`Grid`のプロパティ要素が必要です、`RowDefinitions`と`ColumnDefinitions`行と列を定義するコレクション。 ただし、必要もありますを行と列を示すために、プログラマにとっての何らかの方法でそれぞれの子の`Grid`が存在します。
+`Grid` には、行と列を定義するために、`RowDefinitions` コレクションと `ColumnDefinitions` コレクションのプロパティ要素が必要であることがわかりました。 ただし、プログラマが `Grid` の各子要素が存在する行と列を示す方法も必要です。
 
-それぞれの子のタグ内で、`Grid`行と、次の属性を使用してその子の列を指定します。
+`Grid` の各子のタグ内で、次の属性を使用してその子の行と列を指定します。
 
 - `Grid.Row`
 - `Grid.Column`
@@ -250,21 +250,21 @@ XAML、ただし、この構文は非常に特殊です。 他に何も表示で
 </ContentPage>
 ```
 
-`Grid.Row`と`Grid.Column`0 の設定は必要ありませんが、わかりやすくするための目的で一般的に含まれます。
+0の `Grid.Row` と `Grid.Column` の設定は必須ではありませんが、一般的にわかりやすくするために含まれています。
 
 次のような見た目に示します。
 
-[![グリッドレイアウト](essential-xaml-syntax-images/griddemo.png)](essential-xaml-syntax-images/griddemo-large.png#lightbox)
+[グリッドレイアウトの ![](essential-xaml-syntax-images/griddemo.png)](essential-xaml-syntax-images/griddemo-large.png#lightbox)
 
-構文からのみ判断これら`Grid.Row`、 `Grid.Column`、`Grid.RowSpan`と`Grid.ColumnSpan`の静的フィールドまたはプロパティに属性が表示されます`Grid`、が十分な大きさで`Grid`という名前が定義されていません。`Row`、 `Column`、 `RowSpan`、または`ColumnSpan`します。
+構文から審査だけでは、これらの `Grid.Row`、`Grid.Column`、`Grid.RowSpan`、および `Grid.ColumnSpan` の属性は `Grid`の静的フィールドまたはプロパティとして表示されますが、`Grid`、`Row`、`Column`、`RowSpan`という名前の何も定義されていません。`ColumnSpan`
 
-代わりに、`Grid`という 4 つのバインド可能なプロパティを定義します。 `RowProperty`、 `ColumnProperty`、 `RowSpanProperty`、および`ColumnSpanProperty`します。 これらは特殊な種類と呼ばれるバインド可能なプロパティの*添付プロパティ*します。 によって定義されている、`Grid`クラスは、の子で、設定、`Grid`します。
+代わりに、`Grid` は `RowProperty`、`ColumnProperty`、`RowSpanProperty`、`ColumnSpanProperty`という4つのバインド可能なプロパティを定義します。 これらは、*添付プロパティ*と呼ばれる特別な種類のバインド可能プロパティです。 これらは `Grid` クラスによって定義されていますが、`Grid`の子に設定されています。
 
-コードでは、プロパティがアタッチされているこれらを使用する場合、`Grid`クラスという名前の静的メソッドを提供する`SetRow`、`GetColumn`となります。 子の属性として、XAML でこれらの添付プロパティの設定が、`Grid`単純なプロパティ名を使用します。
+これらの添付プロパティをコードで使用する場合、`Grid` クラスには、`SetRow`、`GetColumn`などという名前の静的メソッドが用意されています。 ただし、XAML では、これらの添付プロパティは、単純なプロパティ名を使用して、`Grid` の子の属性として設定されます。
 
-添付プロパティは常に認識可能な XAML ファイルで、クラスとピリオドで区切ったプロパティ名の両方を含む属性として。 呼び出される*添付プロパティ*1 つのクラスで定義されているため (この場合、 `Grid`) 他のオブジェクトにアタッチされています (このケースでは、子で、 `Grid`)。 レイアウト中に、`Grid`それぞれの子を配置する場所を把握するこれらの添付プロパティの値を問い合わせることができます。
+添付プロパティは常に認識可能な XAML ファイルで、クラスとピリオドで区切ったプロパティ名の両方を含む属性として。 これらのプロパティは、1つのクラス (この場合は `Grid`) によって定義されていますが、他のオブジェクト (この場合は `Grid`の子) にアタッチされているため、*添付プロパティ*と呼ばれます。 レイアウト中、`Grid` は、これらの添付プロパティの値を調べて、各子を配置する場所を知ることができます。
 
-`AbsoluteLayout`クラスという 2 つの添付プロパティを定義する`LayoutBounds`と`LayoutFlags`します。 ここでは、比例して配置を使用して実現チェッカー ボード パターンのサイズ変更機能`AbsoluteLayout`:
+`AbsoluteLayout` クラスは、`LayoutBounds` と `LayoutFlags`という2つの添付プロパティを定義します。 `AbsoluteLayout`の比例した配置とサイズ設定の機能を使用して実現されるチェッカーボードパターンを次に示します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -311,17 +311,17 @@ XAML、ただし、この構文は非常に特殊です。 他に何も表示で
 
 ここでは。
 
-[![絶対レイアウト](essential-xaml-syntax-images/absolutedemo-large.png)](essential-xaml-syntax-images/absolutedemo-large.png#lightbox)
+[絶対レイアウト ![](essential-xaml-syntax-images/absolutedemo-large.png)](essential-xaml-syntax-images/absolutedemo-large.png#lightbox)
 
-このようなものの XAML を使用しての知恵を質問可能性があります。 確かに、繰り返しおよびの規制、`LayoutBounds`四角形が、その可能性がありますより適切に含まれているコードを示します。
+このようなものの XAML を使用しての知恵を質問可能性があります。 確かに、`LayoutBounds` の四角形の繰り返しと定期的により、コードでより適切に実現できることがわかります。
 
 正当な問題にならなければ、これは確かに、ユーザー インターフェイスを定義するときに、コードとマークアップの使用を分散の問題はありません。 一部のビジュアルを XAML で定義し、分離コード ファイルのコンス トラクターを使用して、ループ内で生成されるいくつかの多くのビジュアルを追加する簡単です。
 
 ## <a name="content-properties"></a>コンテンツのプロパティ
 
-前の例で、 `StackLayout`、 `Grid`、および`AbsoluteLayout`オブジェクトに設定されます、`Content`のプロパティ、 `ContentPage`、内の項目では実際には、これらのレイアウトの子、`Children`コレクション。 まだこれら`Content`と`Children`プロパティではなく、XAML ファイル。
+前の例では、`StackLayout`、`Grid`、および `AbsoluteLayout` オブジェクトは `ContentPage`の `Content` プロパティに設定されており、これらのレイアウトの子は実際には `Children` コレクション内の項目です。 ただし、これらの `Content` および `Children` プロパティは、XAML ファイルには存在しません。
 
-確かに含めることができます、`Content`と`Children`プロパティなどで、プロパティ要素として、 **XamlPlusCode**サンプル。
+**XamlPlusCode**サンプルのように、`Content` と `Children` プロパティをプロパティ要素として含めることができます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -350,31 +350,31 @@ XAML、ただし、この構文は非常に特殊です。 他に何も表示で
 </ContentPage>
 ```
 
-実際の質問は次のとおりです。これらのプロパティ要素が XAML ファイルで必須では*ない*のはなぜですか。
+実際の質問は、これらのプロパティ要素が XAML ファイルに必要*ない*のはなぜですか。
 
-XAML で使用するために、Xamarin.Forms で定義された要素が実行を許可されている 1 つのプロパティのフラグが設定された、`ContentProperty`クラスの属性。 検索する場合、`ContentPage`クラス オンライン Xamarin.Forms ドキュメントでは、この属性を確認します。
+XAML で使用するために Xamarin. Forms で定義された要素は、クラスの `ContentProperty` 属性でフラグが設定された1つのプロパティを持つことができます。 オンラインの Xamarin. Forms ドキュメントで `ContentPage` クラスを参照すると、次の属性が表示されます。
 
 ```csharp
 [Xamarin.Forms.ContentProperty("Content")]
 public class ContentPage : TemplatedPage
 ```
 
-つまり、`Content`プロパティ要素タグは必要ありません。 開始と終了の間に表示される任意の XML コンテンツ`ContentPage`タグに割り当てられると見なされます、`Content`プロパティ。
+これは、`Content` のプロパティ要素タグが必要ないことを意味します。 `ContentPage` の開始タグと終了タグの間に表示される XML コンテンツは、`Content` プロパティに割り当てられると想定されます。
 
- `StackLayout`、 `Grid`、 `AbsoluteLayout`、および`RelativeLayout`からすべての派生`Layout<View>`、を参照する場合と`Layout<T>`Xamarin.Forms ドキュメントでは、別表示されます`ContentProperty`属性。
+ `StackLayout`、`Grid`、`AbsoluteLayout`、および `RelativeLayout` はすべて `Layout<View>`から派生しています。また、Xamarin. Forms ドキュメントで `Layout<T>` を検索すると、別の `ContentProperty` 属性が表示されます。
 
 ```csharp
 [Xamarin.Forms.ContentProperty("Children")]
 public abstract class Layout<T> : Layout ...
 ```
 
-コンテンツのレイアウトを自動的に追加できるようにする、`Children`せずコレクション明示的な`Children`プロパティ要素タグ。
+これにより、明示的に `Children` プロパティ要素タグを使用せずに、レイアウトの内容を `Children` コレクションに自動的に追加できます。
 
-その他のクラスもある`ContentProperty`属性の定義。 たとえば、コンテンツ プロパティの`Label`は`Text`します。 他の API のドキュメントを確認します。
+他のクラスには、`ContentProperty` 属性の定義もあります。 たとえば、`Label` の content プロパティは `Text`です。 他の API のドキュメントを確認します。
 
 ## <a name="platform-differences-with-onplatform"></a>OnPlatform とプラットフォームの違い
 
-シングル ページ アプリケーションで、設定する一般的な`Padding`iOS のステータス バーの上書きを回避するために、ページのプロパティ。 コードでは、使用することができます、`Device.RuntimePlatform`この目的のプロパティ。
+シングルページアプリケーションでは、iOS ステータスバーが上書きされないように、ページの `Padding` プロパティを設定するのが一般的です。 コードでは、この目的のために `Device.RuntimePlatform` プロパティを使用できます。
 
 ```csharp
 if (Device.RuntimePlatform == Device.iOS)
@@ -383,7 +383,7 @@ if (Device.RuntimePlatform == Device.iOS)
 }
 ```
 
-XAML では、クラス[`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1)と[`On`](xref:Xamarin.Forms.On)クラスを使用して同様の操作を行うこともできます。 最初のプロパティ要素を含める、`Padding`ページの上部付近のプロパティ。
+XAML では、 [`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1)クラスと[`On`](xref:Xamarin.Forms.On)クラスを使用して同様の操作を行うこともできます。 最初に、ページの上部付近の `Padding` プロパティのプロパティ要素を含めます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -397,7 +397,7 @@ XAML では、クラス[`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1)と[`On`](
 </ContentPage>
 ```
 
-これらのタグ内で含める、`OnPlatform`タグ。 `OnPlatform` ジェネリック クラスです。 この場合は、ジェネリック型引数を指定する必要がある`Thickness`の型である`Padding`プロパティ。 さいわいと呼ばれるジェネリック引数を定義するには、具体的には XAML 属性が`x:TypeArguments`します。 これを設定するプロパティの型と一致する必要があります。
+これらのタグ内には、`OnPlatform` タグを含めます。 `OnPlatform` はジェネリッククラスです。 ジェネリック型引数を指定する必要があります。この例では、`Padding` プロパティの型である `Thickness`です。 幸いにも、`x:TypeArguments`と呼ばれる汎用的な引数を定義するための XAML 属性があります。 これを設定するプロパティの型と一致する必要があります。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -413,7 +413,7 @@ XAML では、クラス[`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1)と[`On`](
 </ContentPage>
 ```
 
-`OnPlatform` という名前のプロパティを持つ`Platforms`つまり、`IList`の`On`オブジェクト。 そのプロパティのプロパティ要素タグを使用します。
+`OnPlatform` には、`On` オブジェクトの `IList` である `Platforms` という名前のプロパティがあります。 そのプロパティのプロパティ要素タグを使用します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -431,7 +431,7 @@ XAML では、クラス[`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1)と[`On`](
 </ContentPage>
 ```
 
-ここで追加`On`要素。 1 つずつ設定、`Platform`プロパティおよび`Value`プロパティのマークアップを`Thickness`プロパティ。
+ここで `On` 要素を追加します。 それぞれに対して、`Platform` プロパティを設定し、`Value` プロパティを `Thickness` プロパティのマークアップに設定します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -451,7 +451,7 @@ XAML では、クラス[`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1)と[`On`](
 </ContentPage>
 ```
 
-このマークアップを簡略化できます。 Content プロパティ`OnPlatform`は`Platforms`ので、これらのプロパティ要素タグを削除することができます。
+このマークアップを簡略化できます。 `OnPlatform` の content プロパティは `Platforms`ため、これらのプロパティ要素タグは削除できます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -469,7 +469,7 @@ XAML では、クラス[`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1)と[`On`](
 </ContentPage>
 ```
 
-`Platform`プロパティの`On`の種類は`IList<string>`ので、値が同じ場合は、複数のプラットフォームを含めることができます。
+`On` の `Platform` プロパティは `IList<string>`型であるため、値が同じ場合は複数のプラットフォームを含めることができます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -486,7 +486,7 @@ XAML では、クラス[`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1)と[`On`](
 </ContentPage>
 ```
 
-Android、UWP は、の既定値に設定されているため`Padding`タグを削除できます。
+Android と UWP は `Padding`の既定値に設定されているため、このタグは削除できます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -502,7 +502,7 @@ Android、UWP は、の既定値に設定されているため`Padding`タグを
 </ContentPage>
 ```
 
-プラットフォーム依存を設定する標準的な方法は、この`Padding`XAML プロパティ。 場合、`Value`設定が 1 つの文字列によって表されることはできませんが、プロパティ要素を定義できます。
+これは、XAML でプラットフォームに依存する `Padding` プロパティを設定するための標準的な方法です。 `Value` 設定を1つの文字列で表すことができない場合は、次のようにプロパティ要素を定義できます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -523,16 +523,16 @@ Android、UWP は、の既定値に設定されているため`Padding`タグを
 ```
 
 > [!NOTE]
-> マーク`OnPlatform`アップ拡張機能を XAML で使用して、プラットフォームごとに UI の外観をカスタマイズすることもできます。 クラス`OnPlatform` および`On`クラスと同じ機能を提供しますが、より簡潔な表現を使用します。 詳細については、次を参照してください。 [OnPlatform マークアップ拡張機能](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform)します。
+> XAML では、`OnPlatform` マークアップ拡張機能を使用して、プラットフォームごとに UI の外観をカスタマイズすることもできます。 `OnPlatform` クラスと `On` クラスと同じ機能を提供しますが、より簡潔に表現できます。 詳細については、「 [Onplatform Markup Extension](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform)」を参照してください。
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>要約
 
-プロパティ要素と添付プロパティの場合は、基本的な XAML 構文の多くが確立されました。 ただし、場合によってオブジェクトに間接的な方法で、たとえば、リソース ディクショナリからプロパティを設定する必要があります。 この方法については、次の部分の一部で[3。XAML マークアップ拡張機能](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)します。
+プロパティ要素と添付プロパティの場合は、基本的な XAML 構文の多くが確立されました。 ただし、場合によってオブジェクトに間接的な方法で、たとえば、リソース ディクショナリからプロパティを設定する必要があります。 この方法については、第3部で説明し[ます。XAML マークアップ拡張機能](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)。
 
 ## <a name="related-links"></a>関連リンク
 
 - [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
-- [第 1 部XAML の概要](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
-- [第 3 部XAML マークアップ拡張](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [第 4 部データ バインディングの基礎](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
-- [第 5 部MVVM へのデータ バインディングから](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
+- [パート1。XAML を使用したはじめに](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
+- [パート3。XAML マークアップ拡張機能](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
+- [パート4。データバインディングの基礎](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)
+- [パート5。データバインドから MVVM へ](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)

@@ -9,11 +9,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/04/2019
 ms.openlocfilehash: 726ebd55b38460ee966113e4ee487327cd42b03d
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76724194"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79305601"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>カスケード スタイル シート (CSS) を使用した Xamarin.Forms アプリのスタイル設定
 
@@ -319,7 +319,7 @@ stacklayout>image {
 
 Xamarin.Forms では、次の CSS セレクターがサポートされています。
 
-|[セレクター]|例|[説明]|
+|セレクター|例|説明|
 |---|---|---|
 |`.class`|`.header`|' Header ' を含む `StyleClass` プロパティを持つすべての要素を選択します。 このセレクターは、大文字小文字を区別することに注意してください。|
 |`#id`|`#email`|`StyleId` が `email`に設定されているすべての要素を選択します。 `StyleId` が設定されていない場合は、`x:Name`にフォールバックします。 XAML を使用する場合は、`StyleId`よりも `x:Name` が優先されます。 このセレクターは、大文字小文字を区別することに注意してください。|
@@ -346,20 +346,20 @@ Xamarin.Forms では、次の CSS セレクターがサポートされていま�
 > [!NOTE]
 > 詳細度と詳細度の上書きはサポートされていません。
 
-## <a name="property-reference"></a>プロパティ リファレンス
+## <a name="property-reference"></a>プロパティの参照
 
 次の CSS プロパティは、Xamarin. Forms によってサポートされています ( **[値]** 列の型は_斜体_ですが、文字列リテラルは `gray`)。
 
-|property|対象|値|例|
+|プロパティ|状態名|値|例|
 |---|---|---|---|
 |`align-content`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `spacebetween` \| `spacearound` \| `spaceevenly` \| `flex-start` \| `flex-end` \| `space-between` \| `space-around` \| `initial` |`align-content: space-between;`|
 |`align-items`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| `flex-end` \| `initial` |`align-items: flex-start;`|
 |`align-self`|`VisualElement`| `auto` \| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| `flex-end` \| `initial`|`align-self: flex-end;`|
 |`background-color`|`VisualElement`|_色_\| `initial` |`background-color: springgreen;`|
 |`background-image`|`Page`|_文字列_\| `initial` |`background-image: bg.png;`|
-|`border-color`|`Button`、 `Frame`、 `ImageButton`|_色_\| `initial`|`border-color: #9acd32;`|
-|`border-radius`|`BoxView`, `Button`, `Frame`, `ImageButton`|_ダブル_\| `initial` |`border-radius: 10;`|
-|`border-width`|`Button`、 `ImageButton`|_ダブル_\| `initial` |`border-width: .5;`|
+|`border-color`|`Button`、`Frame`、`ImageButton`|_色_\| `initial`|`border-color: #9acd32;`|
+|`border-radius`|`BoxView`、`Button`、`Frame`, `ImageButton`|_ダブル_\| `initial` |`border-radius: 10;`|
+|`border-width`|`Button`, `ImageButton`|_ダブル_\| `initial` |`border-width: .5;`|
 |`color`|`ActivityIndicator`、`BoxView`、`Button`、`CheckBox`、`DatePicker`、`Editor`、`Entry`、`Label`、`Picker`、`ProgressBar`、`SearchBar`、`Switch`、`TimePicker`|_色_\| `initial` |`color: rgba(255, 0, 0, 0.3);`|
 |`column-gap`|`Grid`|_ダブル_\| `initial`|`column-gap: 9;`|
 |`direction`|`VisualElement`|`ltr` \| `rtl` \| `inherit` \| `initial` |`direction: rtl;`|
@@ -374,7 +374,7 @@ Xamarin.Forms では、次の CSS セレクターがサポートされていま�
 |`height`|`VisualElement`|_ダブル_\| `initial` |`min-height: 250;`|
 |`justify-content`|`FlexLayout`| `start` \| `center` \| `end` \| `spacebetween` \| `spacearound` \| `spaceevenly` \| `flex-start` \| `flex-end` \| `space-between` \| `space-around` \| `initial`|`justify-content: flex-end;`|
 |`letter-spacing`|`Button`、`DatePicker`、`Editor`、`Entry`、`Label`、`Picker`、`SearchBar`、`SearchHandler`、`Span`、`TimePicker`|_ダブル_\| `initial`|`letter-spacing: 2.5;`|
-|`line-height`|`Label`、 `Span`|_ダブル_\| `initial` |`line-height: 1.8;`|
+|`line-height`|`Label`, `Span`|_ダブル_\| `initial` |`line-height: 1.8;`|
 |`margin`|`View`|_太さ_\| `initial` |`margin: 6 12;`|
 |`margin-left`|`View`|_太さ_\| `initial` |`margin-left: 3;`|
 |`margin-top`|`View`|_太さ_\| `initial` |`margin-top: 2;`|
@@ -385,16 +385,16 @@ Xamarin.Forms では、次の CSS セレクターがサポートされていま�
 |`min-width`|`VisualElement`|_ダブル_\| `initial` |`min-width: 112;`|
 |`opacity`|`VisualElement`|_ダブル_\| `initial` |`opacity: .3;`|
 |`order`|`VisualElement`|_int_ \| `initial`|`order: -1;`|
-|`padding`|`Button`, `ImageButton`, `Layout`, `Page`|_太さ_\| `initial` |`padding: 6 12 12;`|
-|`padding-left`|`Button`, `ImageButton`, `Layout`, `Page`|_ダブル_\| `initial`|`padding-left: 3;`|
-|`padding-top`|`Button`, `ImageButton`, `Layout`, `Page`| _ダブル_\| `initial` |`padding-top: 4;`|
-|`padding-right`|`Button`, `ImageButton`, `Layout`, `Page`| _ダブル_\| `initial` |`padding-right: 2;`|
-|`padding-bottom`|`Button`, `ImageButton`, `Layout`, `Page`| _ダブル_\| `initial` |`padding-bottom: 6;`|
+|`padding`|`Button`、`ImageButton`、`Layout`, `Page`|_太さ_\| `initial` |`padding: 6 12 12;`|
+|`padding-left`|`Button`、`ImageButton`、`Layout`, `Page`|_ダブル_\| `initial`|`padding-left: 3;`|
+|`padding-top`|`Button`、`ImageButton`、`Layout`, `Page`| _ダブル_\| `initial` |`padding-top: 4;`|
+|`padding-right`|`Button`、`ImageButton`、`Layout`, `Page`| _ダブル_\| `initial` |`padding-right: 2;`|
+|`padding-bottom`|`Button`、`ImageButton`、`Layout`, `Page`| _ダブル_\| `initial` |`padding-bottom: 6;`|
 |`position`|`FlexLayout`| `relative` \| `absolute` \| `initial`|`position: absolute;`|
 |`row-gap`|`Grid`| _ダブル_\| `initial`|`row-gap: 12;`|
-|`text-align`| `Entry`, `EntryCell`, `Label`, `SearchBar`|`left` \| `top` \| `right` \| `bottom` \| `start` \| `center` \| `middle` \| `end` \| `initial`。 `left` と `right` は、右から左に記述する環境では避ける必要があります。| `text-align: right;`|
-|`text-decoration`|`Label`、 `Span`|`none` \| `underline` \| `strikethrough` \| `line-through` \| `initial`|`text-decoration: underline, line-through;`|
-|`transform`|`VisualElement`| `none`, `rotate`, `rotateX`, `rotateY`, `scale`, `scaleX`, `scaleY`, `translate`, `translateX`, `translateY`, `initial` |`transform: rotate(180), scaleX(2.5);`|
+|`text-align`| `Entry`、`EntryCell`、`Label`, `SearchBar`|`left` \| `top` \| `right` \| `bottom` \| `start` \| `center` \| `middle` \| `end` \| `initial`。 `left` と `right` は、右から左に記述する環境では避ける必要があります。| `text-align: right;`|
+|`text-decoration`|`Label`, `Span`|`none` \| `underline` \| `strikethrough` \| `line-through` \| `initial`|`text-decoration: underline, line-through;`|
+|`transform`|`VisualElement`| `none`、`rotate`、`rotateX`、`rotateY`、`scale`、`scaleX`、`scaleY`、`translate`、`translateX`、`translateY`、`initial` |`transform: rotate(180), scaleX(2.5);`|
 |`transform-origin`|`VisualElement`| _double_、 _double_ \| `initial` |`transform-origin: 7.5, 12.5;`|
 |`vertical-align`|`Label`|`left` \| `top` \| `right` \| `bottom` \| `start` \| `center` \| `middle` \| `end` \| `initial`|`vertical-align: bottom;`|
 |`visibility`|`VisualElement`|`true` \| `visible` \| `false` \| `hidden` \| `collapse` \| `initial`|`visibility: hidden;`|
@@ -417,19 +417,19 @@ Xamarin.Forms では、次の CSS セレクターがサポートされていま�
 
 次の Xamarin. Forms 固有の CSS プロパティもサポートされています ( **[値]** 列では、型は_斜体_ですが、文字列リテラルは `gray`)。
 
-|property|対象|値|例|
+|プロパティ|状態名|値|例|
 |---|---|---|---|
-|`-xf-bar-background-color`|`NavigationPage`、 `TabbedPage`|_色_\| `initial` |`-xf-bar-background-color: teal;`|
-|`-xf-bar-text-color`|`NavigationPage`、 `TabbedPage`|_色_\| `initial` |`-xf-bar-text-color: gray`|
+|`-xf-bar-background-color`|`NavigationPage`, `TabbedPage`|_色_\| `initial` |`-xf-bar-background-color: teal;`|
+|`-xf-bar-text-color`|`NavigationPage`, `TabbedPage`|_色_\| `initial` |`-xf-bar-text-color: gray`|
 |`-xf-horizontal-scroll-bar-visibility`|`ScrollView`| `default` \| `always` \| `never` \| `initial` |`-xf-horizontal-scroll-bar-visibility: never;`|
-|`-xf-max-length`|`Entry`、 `Editor`|_int_ \| `initial` |`-xf-max-length: 20;`|
+|`-xf-max-length`|`Entry`, `Editor`|_int_ \| `initial` |`-xf-max-length: 20;`|
 |`-xf-max-track-color`|`Slider`|_色_\| `initial` |`-xf-max-track-color: red;`|
 |`-xf-min-track-color`|`Slider`|_色_\| `initial` |`-xf-min-track-color: yellow;`|
-|`-xf-orientation`|`ScrollView`、 `StackLayout`| `horizontal` \| `vertical` \| `both` \| `initial`。 `both` は `ScrollView`でのみサポートされています。 |`-xf-orientation: horizontal;`|
-|`-xf-placeholder`|`Entry`、 `Editor`、 `SearchBar`|_引用符で囲ま_れたテキスト \| `initial` |`-xf-placeholder: Enter name;`|
-|`-xf-placeholder-color`|`Entry`、 `Editor`、 `SearchBar`|_色_\| `initial` |`-xf-placeholder-color: green;`|
+|`-xf-orientation`|`ScrollView`, `StackLayout`| `horizontal` \| `vertical` \| `both` \| `initial`。 `both` は `ScrollView`でのみサポートされています。 |`-xf-orientation: horizontal;`|
+|`-xf-placeholder`|`Entry`、`Editor`、`SearchBar`|_引用符で囲ま_れたテキスト \| `initial` |`-xf-placeholder: Enter name;`|
+|`-xf-placeholder-color`|`Entry`、`Editor`、`SearchBar`|_色_\| `initial` |`-xf-placeholder-color: green;`|
 |`-xf-spacing`|`StackLayout`|_ダブル_\| `initial` |`-xf-spacing: 8;`|
-|`-xf-thumb-color`|`Slider`、 `Switch`|_色_\| `initial` |`-xf-thumb-color: limegreen;`|
+|`-xf-thumb-color`|`Slider`, `Switch`|_色_\| `initial` |`-xf-thumb-color: limegreen;`|
 |`-xf-vertical-scroll-bar-visibility`|`ScrollView`| `default` \| `always` \| `never` \| `initial` |`-xf-vertical-scroll-bar-visibility: always;`|
 |`-xf-vertical-text-alignment`|`Label`| `start` \| `center` \| `end` \| `initial`|`-xf-vertical-text-alignment: end;`|
 |`-xf-visual`|`VisualElement`|_文字列_\| `initial` |`-xf-visual: material;`|
@@ -438,7 +438,7 @@ Xamarin.Forms では、次の CSS セレクターがサポートされていま�
 
 次の Xamarin. フォームシェル固有の CSS プロパティもサポートされています ( **[値]** 列では、型は_斜体_ですが、文字列リテラルは `gray`)。
 
-|property|対象|値|例|
+|プロパティ|状態名|値|例|
 |---|---|---|---|
 |`-xf-flyout-background`|`Shell`|_色_\| `initial` |`-xf-flyout-background: red;`|
 |`-xf-shell-background`|`Element`|_色_\| `initial` |`-xf-shell-background: green;`|
@@ -452,7 +452,7 @@ Xamarin.Forms では、次の CSS セレクターがサポートされていま�
 |`-xf-shell-title`|`Element`|_色_\| `initial` |`-xf-shell-title: teal;`|
 |`-xf-shell-unselected`|`Element`|_色_\| `initial` |`-xf-shell-unselected: limegreen;`|
 
-### <a name="color"></a>Color
+### <a name="color"></a>色
 
 次の `color` の値がサポートされています。
 

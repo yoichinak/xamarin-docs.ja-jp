@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
 ms.openlocfilehash: c0338fce694d61dc19484c56dbc00bb854d0d0d7
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78915791"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79306195"
 ---
 # <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>Xamarin の tvOS 用 siri リモートおよび Bluetooth コントローラー
 
@@ -51,7 +51,7 @@ Siri リモートには、tvOS アプリ内で次の機能と想定される使�
 
 Siri リモコンのタッチ画面は、tvOS アプリで応答できる、次のような単一の指ジェスチャを検出できます。
 
-|スワイプ|Click|タップ|
+|スワイプ|クリックする場所|タップ|
 |---|---|---|
 |![](remote-bluetooth-images/Gesture01.png)|![](remote-bluetooth-images/Gesture02.png)|![](remote-bluetooth-images/Gesture03.png)|
 |画面上の UI 要素 (上、左、右) の間で選択 (フォーカス) を移動します。 スワイプを使用すると、慣性を使用して、コンテンツの大きなリストをすばやくスクロールできます。|選択した (フォーカスされている) 項目をアクティブにします。または、ゲームの主ボタンと同じように動作します。 クリックして保持すると、コンテキストメニューまたはセカンダリ関数をアクティブにすることができます。|端のタッチサーフェスを軽くタップすると、D パッドの方向ボタンと同じように動作し、タップされた領域に応じて上下左右左右に移動します。 アプリによっては、を使用して非表示のコントロールを表示できます。|
@@ -361,7 +361,7 @@ TvOS でゲームコントローラーの入力を直接処理する場合は、
 
 <a name="Summary" />
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 この記事では、Apple TV、タッチスクリーンジェスチャ、Siri リモートボタンに付属する新しい Siri リモコンについて説明しました。 次に、ジェスチャとストーリーボード、ジェスチャ、コードおよび低レベルのイベントの操作について説明します。 最後に、ゲームコントローラーの操作について説明します。
 

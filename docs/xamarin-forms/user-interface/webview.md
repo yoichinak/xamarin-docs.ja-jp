@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/04/2019
 ms.openlocfilehash: 26fbe6af639c67a94408605ba456bb3a100d2355
-ms.sourcegitcommit: 3d39bafe4c56b15cbb695b1f7f02b926e1033f58
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78155250"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79305889"
 ---
 # <a name="xamarinforms-webview"></a>Xamarin.Forms の WebView
 
@@ -348,7 +348,7 @@ Web ビューは、状態の変化に対応するために、次のイベント�
 [`Navigated`](xref:Xamarin.Forms.WebView.Navigated)イベントに付随する[`WebNavigatedEventArgs`](xref:Xamarin.Forms.WebNavigatedEventArgs)オブジェクトには、次の4つのプロパティがあります。
 
 - `NavigationEvent` –発生したナビゲーションイベント。
-- `Result` – [`WebNavigationResult`](xref:Xamarin.Forms.WebNavigationResult)列挙メンバーを使用した、ナビゲーションの結果について説明します。 正しい値は `Cancel`、`Failure`、`Success`、`Timeout` です。
+- `Result` – [`WebNavigationResult`](xref:Xamarin.Forms.WebNavigationResult)列挙メンバーを使用した、ナビゲーションの結果について説明します。 有効な値は `Cancel`、`Failure`、`Success`、および `Timeout` です。
 - `Source` –ナビゲーションを実行した要素。
 - `Url` –ナビゲーション先。
 

@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
 ms.openlocfilehash: 13891100d3571f9e847243172aa974072f46e7fe
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78914688"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79306255"
 ---
 # <a name="unified-storyboards-in-xamarinios"></a>Xamarin の統合されたストーリーボード
 
@@ -214,7 +214,7 @@ IPad では、水平方向と垂直方向の両方に通常のサイズクラス
 
 iOS 8 には、次の表に示すように、開発者が特徴の変更に参加するために使用できるいくつかのコールバックが用意されています。
 
-|段階|コールバック|Description|
+|段階|コールバック|説明|
 |--- |--- |--- |
 |セットアップ|<ul><li>`WillTransitionToTraitCollection`</li><li>`TraitCollectionDidChange`</li></ul>|<ul><li>このメソッドは、特徴コレクションが新しい値に設定される前に、特徴変更の開始時に呼び出されます。</li><li>このメソッドは、特徴コレクションの値が変更されたときに、アニメーションが行われる前に呼び出されます。</li></ul>|
 |アニメーション|`WillTransitionToTraitCollection`|このメソッドに渡される遷移コーディネーターには `AnimateAlongside` プロパティがあり、これを使用すると、開発者は既定のアニメーションと共に実行されるアニメーションを追加できます。|
@@ -259,7 +259,7 @@ Apple が iOS 8 に加えたもう1つの変更は、開発者がビューコン
 
  [![](unified-storyboards-images/gettargetforaction.png "The new GetTargetForAction method")](unified-storyboards-images/gettargetforaction.png#lightbox)
 
-このメソッドは、正しいコンテナービューコントローラーが見つかるまで階層チェーンをウォークします。 次に例を示します。
+このメソッドは、正しいコンテナービューコントローラーが見つかるまで階層チェーンをウォークします。 例 :
 
 1. `ShowViewController` メソッドが呼び出されると、このメソッドを実装するチェーン内の最初のビューコントローラーがナビゲーションコントローラーになるため、新しいビューの親として使用されます。
 1. `ShowDetailViewController` メソッドが代わりに呼び出された場合、分割ビューコントローラーは、それを実装するための最初のビューコントローラーであるため、親として使用されます。
@@ -294,7 +294,7 @@ IPhone でアダプティブフォトアプリケーションを実行してい�
 
  [![](unified-storyboards-images/rotation.png "The Split View Controller will display both the master and details view as seen here")](unified-storyboards-images/rotation.png#lightbox)
 
-これを実現するには、ビューコントローラーの `UpdateConstraintsForTraitCollection` メソッドをオーバーライドし、`VerticalSizeClass`の値に基づいて制約を調整します。 次に例を示します。
+これを実現するには、ビューコントローラーの `UpdateConstraintsForTraitCollection` メソッドをオーバーライドし、`VerticalSizeClass`の値に基づいて制約を調整します。 例 :
 
 ```csharp
 public void UpdateConstraintsForTraitCollection (UITraitCollection collection)
@@ -350,7 +350,7 @@ public void UpdateConstraintsForTraitCollection (UITraitCollection collection)
 
 ### <a name="adding-transition-animations"></a>切り替え効果アニメーションの追加
 
-アダプティブフォトアプリケーションの分割ビューコントローラーが折りたたまれていない状態になったときに、ビューコントローラーの `WillTransitionToTraitCollection` メソッドをオーバーライドすることにより、アニメーションが既定のアニメーションに追加されます。 次に例を示します。
+アダプティブフォトアプリケーションの分割ビューコントローラーが折りたたまれていない状態になったときに、ビューコントローラーの `WillTransitionToTraitCollection` メソッドをオーバーライドすることにより、アニメーションが既定のアニメーションに追加されます。 例 :
 
 ```csharp
 public override void WillTransitionToTraitCollection (UITraitCollection traitCollection, IUIViewControllerTransitionCoordinator coordinator)
@@ -695,7 +695,7 @@ IOS 8 を初めて使用する場合、開発者は、Auto Layout クラスと S
 
 上記のガイドラインを考慮して、既存の Xamarin iOS 8 プロジェクトに動的起動画面を追加する方法を見てみましょう。
 
-次の操作を行います。
+次を実行します。
 
 1. **Visual Studio for Mac**を開き、**ソリューション**を読み込んで、動的起動画面をに追加します。
 2. **ソリューションエクスプローラー**で、`MainStoryboard.storyboard` ファイルを右クリックし、[ **Open With** > **Xcode Interface Builder**] を選択します。
@@ -751,7 +751,7 @@ IOS 7 との下位互換性を維持するには、通常の `Default.png` イ�
 
 Xamarin で動的起動画面の実装を確認するには、このドキュメントに添付されている[動的起動](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-dynamiclaunchscreen)画面のサンプル iOS 8 アプリケーションを確認してください。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 この記事では、サイズクラスの概要と、iPhone と iPad デバイスでのレイアウトへの影響について簡単に説明しました。 ここでは、特徴、特徴環境、特徴コレクションがサイズクラスを使用して統合インターフェイスを作成するしくみについて説明しました。 アダプティブビューコントローラーについて簡単に説明し、統合インターフェイス内でサイズクラスを使用する方法について説明しました。 ここでは、Xamarin iOS 8 アプリケーション内のコードC#から、サイズクラスと統合インターフェイスを完全に実装する方法を見てきました。
 
