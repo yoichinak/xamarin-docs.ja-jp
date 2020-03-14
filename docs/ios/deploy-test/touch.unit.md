@@ -60,9 +60,9 @@ public partial class AppDelegate : UIApplicationDelegate
 > [!NOTE]
 > iOS 単体テストのプロジェクト タイプは、Windows 上の Visual Studio 2019 または Visual Studio 2017 では使用できません。
 
-## <a name="writing-some-tests"></a>一部のテストの書き込み
+## <a name="writing-some-tests"></a>何らかのテストを書いてみる
 
-これで基本的なシェルの準備ができたので、最初の一連のテストを書き込む必要があります。
+これで基本的なシェルの準備ができたので、最初の一連のテストを書く必要があります。
 
 テストは、`[TestFixture]` 属性が適用されたクラスを作成することで書き込まれます。 各 TestFixture クラス内では、テスト ランナーで呼び出すすべてのメソッドに `[Test]` 属性を適用する必要があります。 実際のテスト フィクスチャはテスト プロジェクトのどのファイルにも存在できます。
 
