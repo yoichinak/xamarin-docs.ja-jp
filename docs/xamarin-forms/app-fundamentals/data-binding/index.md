@@ -32,10 +32,10 @@ Xamarin.Forms アプリケーションは 1 つ以上のページで構成され
 
 データ バインディングに関与する 2 つのオブジェクトのうちの 1 つは、ほとんど常に、`View` から派生してページのビジュアル インターフェイスの一部を形成している要素となります。 もう一方のオブジェクトは次のいずれかです。
 
-- 通常は同じページ上にある、`View` の別の派生物。
+- 通常は同じページ上にある、`View` の別の派生クラス。
 - コード ファイル内のオブジェクト。
 
-[**DataBindingDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) サンプルにあるようなデモ プログラムでは、`View` の 2 つの派生物間のデータ バインディングは、多くの場合、わかりやすさと簡潔さのために示されます。 ただし、`View` と別のオブジェクト間のデータ バインディングにも、同じ原則を適用できます。 アプリケーションが Model-View-ViewModel (MVVM) アーキテクチャを使って構築されている場合、基になるデータを使うクラスは多くの場合 viewmodel と呼ばれます。
+[**DataBindingDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) サンプルにあるようなデモ プログラムでは、`View` の 2 つの派生クラス間のデータ バインディングは、多くの場合、わかりやすさと簡潔さのために示されます。 ただし、`View` と別のオブジェクト間のデータ バインディングにも、同じ原則を適用できます。 アプリケーションが Model-View-ViewModel (MVVM) アーキテクチャを使って構築されている場合、基になるデータを使うクラスは多くの場合 viewmodel と呼ばれます。
 
 データ バインディングついては、次の一連の記事で説明されています。
 
