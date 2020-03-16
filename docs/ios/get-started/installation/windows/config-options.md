@@ -29,9 +29,9 @@ Visual Studio 2019 または Visual Studio 2017 では、Mac ビルド ホスト
 > [!NOTE]
 > [Visual Studio 2017 バージョン 15.6](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning) 以降では、Visual Studio 2017 は Mac ビルド ホストが Windows と同じバージョンの Xamarin.iOS を使用しているかどうかを自動的に検出します。 バージョンが一致しない場合、Visual Studio 2017 では Mac ビルド ホストに正しいバージョンをリモート インストールできます。 詳しくは、「[Mac とペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)」ガイドの「[Mac の自動プロビジョニング](~/ios/get-started/installation/windows/connecting-to-mac/index.md#automatic-mac-provisioning)」セクションをご覧ください。
 
-## <a name="ios-toolbar"></a>[iOS] ツール バー
+## <a name="ios-toolbar"></a>iOS ツール バー
 
-Visual Studio 2019 または Visual Studio 2017 で iOS プロジェクトを開くと、[iOS] ツール バーが表示されます。  既定では、このツール バーには Xamarin.iOS の開発に役立つ 4 つのボタンが含まれます。
+Visual Studio 2019 または Visual Studio 2017 で iOS プロジェクトを開くと、iOS ツール バーが表示されます。  既定では、このツール バーには Xamarin.iOS の開発に役立つ 4 つのボタンが含まれます。
 
 ![Visual Studio 2019 の iOS ツール バー](config-options-images/ios-toolbar.png)
 
