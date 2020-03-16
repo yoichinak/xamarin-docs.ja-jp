@@ -192,7 +192,7 @@ Developer ポータルにデバイスを追加した後に、プロビジョニ�
 
 ## <a name="downloading-profiles-and-certificates-in-xcode"></a>Xcode でプロファイルと証明書をダウンロードする
 
-Apple Developer Portal で作成された証明書とプロビジョニング プロファイルが Xcode に自動的に表示されない場合があります。 そのため、Visual Studio for Mac や Visual Studio でアクセスできるようにするために、それらのダウンロード必要な場合があります。 Apple Developer Portal で作成された証明書を更新およびダウンロードするには、次の手順を実行します。
+Apple Developer Portal で作成された証明書とプロビジョニング プロファイルが Xcode に自動的に表示されない場合があります。 そのため、Visual Studio for Mac や Visual Studio でアクセスできるようにするために、それらのダウンロードが必要な場合があります。 Apple Developer Portal で作成された証明書を更新およびダウンロードするには、次の手順を実行します。
 
 1. Visual Studio for Mac または Visual Studio を終了します。
 2. Xcode を起動します。
