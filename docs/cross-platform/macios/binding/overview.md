@@ -1,41 +1,41 @@
 ---
-title: 目的 C のバインドの概要
-description: このドキュメントでは、コマンドラインバインド、バインドC#プロジェクト、目標マジックペンなど、目的の C コードのバインディングを作成するさまざまな方法の概要について説明します。 また、バインディングのしくみについても説明します。
+title: Objective-C バインドの概要
+description: このドキュメントでは、コマンド ライン バインド、バインド プロジェクト、Objective Sharpie など、Objective-C コードの C# バインドを作成するさまざまな方法の概要について説明します。 また、バインドのしくみについても説明します。
 ms.prod: xamarin
 ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
 author: davidortinau
 ms.author: daortin
 ms.date: 11/25/2015
 ms.openlocfilehash: be2f7f555b76d472f7a66d95e661bb2f5884c58f
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
-ms.translationtype: MT
+ms.sourcegitcommit: 60d2243809d8e980fca90b9f771e72f8c0e64d71
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "76725342"
 ---
-# <a name="overview-of-objective-c-bindings"></a>目的 C のバインドの概要
+# <a name="overview-of-objective-c-bindings"></a>Objective-C バインドの概要
 
-_バインドプロセスのしくみの詳細_
+"_バインド プロセスのしくみの詳細_"
 
-Xamarin で使用する目的の C ライブラリをバインドするには、次の3つの手順を実行します。
+Xamarin で使用する Objective-C ライブラリをバインドするには、次の 3 つの手順を実行します。
 
-1. C# 「Api 定義」を記述して、.net でのネイティブ API の公開方法と、基になる目標 (C) へのマッピングについて説明します。 これは、`interface` やC#さまざまなバインド**属性**などの標準の構成体を使用して行われます (この[簡単な例](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API)を参照)。
+1. .NET でどのようにネイティブ API が公開されるか、また、それがどのように基底の Objective-C にマップされるかを記述するために、C# "API 定義" を記述します。 これは、`interface` のような標準 C# 構成体と、さまざまなバインド**属性**を使用して行われます (この[簡単な例](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API)を参照してください)。
 
-2. 「」でC#"API 定義" を記述したら、それをコンパイルして "binding" アセンブリを生成します。 これを行うには、[**コマンドライン**](#commandline)を使用するか、Visual Studio for Mac または Visual Studio で[**バインドプロジェクト**](#bindingproject)を使用します。
+2. C# で "API 定義" を記述したら、それをコンパイルして "バインド" アセンブリを生成します。 これは、[**コマンド ライン**](#commandline)で、または Visual Studio for Mac または Visual Studio の[**バインド プロジェクト**](#bindingproject)を使用して実行できます。
 
-3. その後、"binding" アセンブリが Xamarin アプリケーションプロジェクトに追加されます。これにより、定義した API を使用してネイティブ機能にアクセスできます。
-   バインドプロジェクトは、アプリケーションプロジェクトと完全に分離されています。
+3. その後、その "バインド" アセンブリが Xamarin アプリケーション プロジェクトに追加されます。これにより、定義した API を使用してネイティブ機能にアクセスできます。
+   バインド プロジェクトは、アプリケーション プロジェクトから完全に分離されています。
 
    > [!NOTE]
-   > 手順1は、[**目標マジックペン**](#objectivesharpie)を支援することで自動化できます。 このメソッドは、目的 C API を調べ、提案C#された "API 定義" を生成します。 マジックペンによって作成されたファイルをカスタマイズし、バインドプロジェクト (またはコマンドライン) で使用して、バインドアセンブリを作成できます。 目標マジックペンは、それ自体によってバインドを作成するのではなく、大きなプロセスのオプションの一部にすぎません。
+   > 手順 1 は、[**Objective Sharpie**](#objectivesharpie) を使用して自動化できます。 これは、Objective-C API を調べ、提案の C# "API 定義" を生成します。 Objective Sharpie によって作成されたファイルをカスタマイズし、それをバインド プロジェクト(またはコマンド ライン)で使用して、バインド アセンブリを作成できます。 Objective Sharpie は、それ自体でバインドを作成するのではなく、より大きなプロセスのオプションの一部にすぎません。
 
-また、[そのしくみ](#howitworks)の技術的な詳細を確認することもできます。これは、バインディングを記述するのに役立ちます。
+また、バインドを記述するのに役立つ[そのしくみ](#howitworks)の技術的な詳細を参照することもできます。
 
 <a name="Command_Line_Bindings" /><a name="commandline" />
 
-## <a name="command-line-bindings"></a>コマンドラインバインド
+## <a name="command-line-bindings"></a>コマンド ライン バインド
 
-(Xamarin. Mac を使用している場合は `bmac-native`) の `btouch-native` を使用して、バインドを直接構築できます。 これは、手動でC#作成した API 定義 (または目的のマジックペンを使用) をコマンドラインツール (iOS の場合は`btouch-native`、Mac の場合は `bmac-native`) に渡すことによって機能します。
+Xamarin.iOS の `btouch-native` (または Xamarin.Mac を使用している場合は `bmac-native`) を使って、直接バインドを構築することができます。 これは、手動で (または Objective Sharpie を使用して) 作成した C# API 定義 をコマンド ライン ツール (iOS の場合は`btouch-native`、Mac の場合は `bmac-native`) に渡すことによって機能します。
 
 これらのツールを呼び出すための一般的な構文は次のとおりです。
 
@@ -49,33 +49,33 @@ bash$ /Developer/MonoTouch/usr/bin/btouch-native -e cocos2d.cs -s:enums.cs -x:ex
 bash$ bmac-native -e cocos2d.cs -s:enums.cs -x:extensions.cs
 ```
 
-上のコマンドを実行すると、現在のディレクトリに `cocos2d.dll` ファイルが生成されます。このファイルには、プロジェクトで使用できる完全にバインドされたライブラリが含まれます。 これは、バインドプロジェクト ([以下](#bindingproject)で説明) を使用してバインドを作成するために Visual Studio for Mac 使用するツールです。
+上記のコマンドによって、現在のディレクトリに `cocos2d.dll` ファイルが生成されます。これには、お使いのプロジェクトで使用できる完全にバインドされたライブラリが含まれます。 これは、バインド プロジェクト([下記](#bindingproject)参照) を使用する場合に Visual Studio for Mac がバインドの作成に使用するツールです。
 
 <a name="bindingproject" />
 
-## <a name="binding-project"></a>プロジェクトのバインド
+## <a name="binding-project"></a>バインド プロジェクト
 
-バインドプロジェクトは Visual Studio for Mac または Visual Studio で作成できます (Visual Studio は iOS バインドのみをサポートしています)。また、バインド用の API 定義を簡単に編集およびビルドできます (コマンドラインを使用する場合は)。
+バインド プロジェクトは、Visual Studio for Mac または Visual Studio (Visual Studio は iOS バインドのみをサポートします) で作成することができ、(コマンド ラインを使用する場合と比べて) バインド の API 定義の編集と構築が容易になります。
 
-バインドプロジェクトを作成して使用してバインディングを作成する方法については、この[入門ガイド](~/cross-platform/macios/binding/objective-c-libraries.md#Getting_Started)に従ってください。
+この[使用開始ガイド](~/cross-platform/macios/binding/objective-c-libraries.md#Getting_Started)に従って、バインド プロジェクトを作成および使用してバインドを生成する方法を確認してください。
 
 <a name="objectivesharpie" />
 
 ## <a name="objective-sharpie"></a>Objective Sharpie
 
-目標マジックペンはもう1つの独立したコマンドラインツールであり、バインドの作成の初期段階に役立ちます。 バインド自体は作成されません。代わりに、ターゲットのネイティブライブラリの API 定義を生成する最初の手順を自動化します。
+Objective Sharpie は、もう 1 つの別のコマンド ライン ツールであり、バインドの作成の初期段階に役立ちます。 これは、それ自体でバインドを作成するのではなく、ターゲットのネイティブ ライブラリの API 定義を生成する最初の手順を自動化します。
 
-ネイティブライブラリ、ネイティブフレームワーク、およびバインドに組み込むことができる API 定義を解析する方法については、[目標マジックペン docs](~/cross-platform/macios/binding/objective-sharpie/index.md)を参照してください。
+ネイティブ ライブラリ、ネイティブ フレームワーク、CocoaPods を解析して、バインドに組み込むことができる API 定義にする方法については、[Objective Sharpie に関するドキュメント](~/cross-platform/macios/binding/objective-sharpie/index.md)を参照してください。
 
 <a name="howitworks" />
 
 ## <a name="how-binding-works"></a>バインドのしくみ
 
-[[Register]](xref:Foundation.RegisterAttribute)属性、 [[Export]](xref:Foundation.ExportAttribute)属性、および[手動の目標 c セレクターの呼び出し](~/ios/internals/objective-c-selectors.md)を一緒に使用して、新しい (以前にバインドされていない) 目的 c の型を手動でバインドすることができます。
+[[Register]](xref:Foundation.RegisterAttribute) 属性、[[Export]](xref:Foundation.ExportAttribute) 属性、[手動による Objective-C セレクターの呼び出し](~/ios/internals/objective-c-selectors.md)を一緒に使用して、新しい (以前にバインドされていない) Objective-C 型を手動でバインドすることができます。
 
-まず、バインドする型を見つけます。 ディスカッションの目的 (および簡潔さ) については、 [NSEnumerator](https://developer.apple.com/documentation/foundation/nsenumerator)型をバインドします (これは既に[NSEnumerator](xref:Foundation.NSEnumerator)にバインドされています。以下の実装は単なる例です)。
+最初に、バインドする型を見つけます。 説明 (と簡潔さ) のために、[NSEnumerator](https://developer.apple.com/documentation/foundation/nsenumerator) 型をバインドします (これは既に [Foundation.NSEnumerator](xref:Foundation.NSEnumerator) にバインドされています。以下の実装は単なる例です)。
 
-次に、 C#型を作成する必要があります。 これを名前空間に配置することをお勧めします。目標 C では名前空間がサポートされていないため、`[Register]` 属性を使用して、Xamarin が目的の C ランタイムに登録する型名を変更する必要があります。 このC#型は、 [NSObject](xref:Foundation.NSObject)からも継承する必要があります。
+次に、C# 型を作成する必要があります。 これを名前空間に配置したい場合があります。Objective-C では名前空間がサポートされていないため、`[Register]` 属性を使用して、Xamarin.iOS が Objective-C ランタイムに登録する型名を変更する必要があります。 C# 型は [Foundation.NSObject](xref:Foundation.NSObject) から継承する必要もあります。
 
 ```csharp
 namespace Example.Binding {
@@ -87,7 +87,7 @@ namespace Example.Binding {
 }
 ```
 
-第3に、使用するセレクターごとに、目的 C のドキュメントを確認し、 [Objcruntime](xref:ObjCRuntime.Selector)インスタンスを作成します。 クラス本体内に配置します。
+3 番目に、Objective-C のドキュメントを確認して、使用するセレクターごとに [ObjCRuntime.Selector](xref:ObjCRuntime.Selector) インスタンスを作成します。 これらをクラス本体内に配置します。
 
 ```csharp
 static Selector selInit       = new Selector("init");
@@ -95,7 +95,7 @@ static Selector selAllObjects = new Selector("allObjects");
 static Selector selNextObject = new Selector("nextObject");
 ```
 
-4番目の型では、コンストラクターを指定する必要があります。 コンストラクターの呼び出しを基底クラスのコンストラクターにチェーンする*必要があり*ます。 `[Export]` 属性を使用すると、指定したセレクター名を持つコンストラクターを、目的の C コードで呼び出すことができます。
+4 番目に、使用する型ではコンストラクターを提供する必要があります。 コンストラクターの呼び出しを基底クラスのコンストラクターにチェーンする "*必要があります*"。 `[Export]` 属性により、Objective-C コードは指定されたセレクター名のコンストラクターを呼び出すことができます。
 
 ```csharp
 [Export("init")]
@@ -115,7 +115,7 @@ public NSEnumerator(IntPtr handle)
 }
 ```
 
-5番目の方法として、手順 3. で宣言した各セレクターに対してメソッドを指定します。 これらは、`objc_msgSend()` を使用して、ネイティブオブジェクトのセレクターを呼び出します。 [GetNSObject ()](xref:ObjCRuntime.Runtime.GetNSObject*)を使用して、適切に型指定された `NSObject` (サブ) 型に `IntPtr` を変換することに注意してください。 メソッドを目的の C コードから呼び出すことができるようにするには、メンバーが**仮想**である*必要があり*ます。
+5 番目に、手順 3 で宣言した各セレクターのメソッドを指定します。 これらは、`objc_msgSend()` を使用して、ネイティブ オブジェクトのセレクターを呼び出します。 `IntPtr` を適切に型指定された `NSObject` (サブ) 型に変換するために [Runtime.GetNSObject()](xref:ObjCRuntime.Runtime.GetNSObject*) が使用されていることに注意してください。 このメソッドを Objective-C コードから呼び出せるようにするには、メンバーを**仮想**にする "*必要があります*"。
 
 ```csharp
 [Export("nextObject")]
@@ -137,7 +137,7 @@ public virtual NSArray AllObjects {
 }
 ```
 
-まとめ:
+すべてを組み合わせると次のようになります。
 
 ```csharp
 using System;

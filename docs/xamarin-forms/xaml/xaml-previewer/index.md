@@ -7,13 +7,13 @@ ms.assetid: 84769ff1-72fd-4c44-8251-dd6d5bf8c7b2
 ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
-ms.date: 02/04/2019
-ms.openlocfilehash: b287d523101bb8ca7faca8ea95ee898ccf9c0bb1
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.date: 03/16/2020
+ms.openlocfilehash: 465783c0771b666a276d18f47cf5d3d458d52933
+ms.sourcegitcommit: 8df67f0d76ff762b517d27b8d4c217d3a3379a18
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306423"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423929"
 ---
 # <a name="xaml-previewer-for-xamarinforms"></a>Xamarin. フォーム用の XAML プレビューアー
 
@@ -29,11 +29,11 @@ XAML プレビューアーには、iOS と Android に関する Xamarin の XAML
 
 ### <a name="visual-studio-2019"></a>Visual Studio 2019
 
-[分割ビュー] ペインの矢印をクリックすると、XAML プレビューアーを開くことができます。 既定の分割ビューの動作を変更する場合は、**ツール > オプション > Xamarin > フォームプレビューアー**  ダイアログを使用します。 このダイアログボックスでは、既定のドキュメントビューと分割の向きを選択できます。
+[分割ビュー] ペインの矢印をクリックすると、XAML プレビューアーを開くことができます。 既定の分割ビューの動作を変更する場合は、**ツール > オプション > xamarin > xamarin. FORMS XAML プレビューアー**  ダイアログボックスを使用します。 このダイアログボックスでは、既定のドキュメントビューと分割の向きを選択できます。
 
 [![Visual Studio の Xamarin. フォームプレビューアーオプション](xaml-previewer-images/xamlp-options-vs-sm.png "Visual Studio の Xamarin. フォームプレビューアーオプション")](xaml-previewer-images/xamlp-options-vs-lg.png#lightbox)
 
-XAML ファイルを開くと、エディターは、[**ツール > オプション] > [Xamarin > フォーム**] ポップアップダイアログで選択した設定に基づいて、フルサイズまたはプレビューアーの横に表示されます。 ただし、エディターウィンドウでは、ファイルごとに分割を変更できます。
+XAML ファイルを開くと、エディターは、[**ツール > オプション] > [xamarin > xamarin. フォーム XAML プレビューアー** ] ダイアログボックスで選択した設定に基づいて、すべてのサイズを開くか、プレビューアーの横に開きます。 ただし、エディターウィンドウでは、ファイルごとに分割を変更できます。
 
 #### <a name="xaml-preview-controls"></a>XAML プレビューコントロール
 
@@ -44,6 +44,10 @@ XAML ファイルを開くと、エディターは、[**ツール > オプショ
 画面を縦または横に分割するか、ウィンドウ全体を折りたたむかを変更できます。
 
 [![Visual Studio での Xamarin フォームのプレビューアーペインの向きコントロール](xaml-previewer-images/xamlp-controls-orientation-vs-sm.png "Visual Studio での Xamarin フォームのプレビューアーペインの向きコントロール")](xaml-previewer-images/xamlp-controls-orientation-vs-lg.png#lightbox)
+
+#### <a name="enable-or-disable-the-xaml-previewer"></a>XAML プレビューアーを有効または無効にする
+
+既定の**Xaml エディター**として**既定の XML エディター**を選択することにより、[**ツール] > オプションの [Xamarin > の > xaml プレビューアー** ] ダイアログで、xaml プレビューアーを無効にできます。 これにより、ドキュメントアウトライン、プロパティパネル、および XAML ツールボックスもオフになります。 XAML プレビューアーとそのツールを再び有効にするには、**既定の Xaml エディター**を**Xamarin. Forms プレビューアー**に変更します。
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -56,6 +60,10 @@ XAML ファイルを開くと、エディターは、[**ツール > オプショ
 
 > [!NOTE]
 > 以前のバージョンの Visual Studio for Mac では、**プレビュー**ボタンはウィンドウの右上にありました。
+
+#### <a name="enable-or-disable-the-xaml-previewer"></a>XAML プレビューアーを有効または無効にする
+
+既定の**Xaml エディター**として**既定の XML エディター**を選択すると、 **Visual Studio の [> の基本設定] > [テキストエディター > Xaml** ] ダイアログで xaml プレビューアーを無効にすることができます。 これにより、ドキュメントアウトライン、プロパティパネル、および XAML ツールボックスもオフになります。 XAML プレビューアーとそのツールを再び有効にするには、**既定の Xaml エディター**を**Xamarin. Forms プレビューアー**に変更します。
 
 ::: zone-end
 

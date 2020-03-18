@@ -5,13 +5,13 @@ ms.assetid: 3BE5EE1E-3FF6-4E95-7C9F-7B443EE3E94C
 ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
-ms.date: 03/22/2019
-ms.openlocfilehash: 59f7ce953d7cf957529f5b22b2dfb549c0105f4a
-ms.sourcegitcommit: eea5b096ace7551ba64a470d0b78ccc56b6ef418
+ms.date: 03/06/2020
+ms.openlocfilehash: bce2b6f29129894ed446100c87b5e92d3572ed2f
+ms.sourcegitcommit: 60d2243809d8e980fca90b9f771e72f8c0e64d71
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78279913"
+ms.lasthandoff: 03/10/2020
+ms.locfileid: "78946272"
 ---
 # <a name="build-process"></a>ビルド プロセス
 
@@ -61,13 +61,45 @@ Xamarin.Android プロジェクトに対して、次のビルド ターゲット
 
 - **Build** &ndash; パッケージをビルドします。
 
+- **BuildAndStartAotProfiling** &ndash; 埋め込みの AOT プロファイラーを使用してアプリをビルドし、プロファイラーの TCP ポートを `$(AndroidAotProfilerPort)`に設定して、既定のアクティビティを開始します。
+
+  既定の TCP ポートは `9999` です。
+
+  Xamarin.Android 10.2 で追加されました。
+
 - **Clean** &ndash; ビルド プロセスによって生成されたすべてのファイルを削除します。
+
+- **FinishAotProfiling** &ndash; デバイスまたはエミュレーターからの AOT プロファイラー データを TCP ポート `$(AndroidAotProfilerPort)` 経由で収集し、`$(AndroidAotCustomProfilePath)` に書き込みます。
+
+  ポートおよびカスタム プロファイルの既定値は `9999` と `custom.aprof` です。
+
+  追加のオプションを `aprofutil` に渡すには、`$(AProfUtilExtraOptions)` プロパティで設定します。
+
+  このようにすると、次の記述と同じ結果が得られます。
+
+  ```
+  aprofutil $(AProfUtilExtraOptions) -s -v -f -p $(AndroidAotProfilerPort) -o "$(AndroidAotCustomProfilePath)"
+  ```
+
+  Xamarin.Android 10.2 で追加されました。
 
 - **Install** &ndash; 既定のデバイスまたは仮想デバイスにパッケージをインストールします。
 
-- **Uninstall** &ndash; 既定のデバイスまたは仮想デバイスからパッケージをアンインストールします。
-
 - **SignAndroidPackage** &ndash; パッケージ (`.apk`) を作成して署名します。 `/p:Configuration=Release` とともに使用して、自己完結型の "リリース" パッケージを生成します。
+
+- **StartAndroidActivity** &ndash; デバイスまたは実行中のエミュレーターで既定のアクティビティを開始します。 別のアクティビティを開始するには、`$(AndroidLaunchActivity)` プロパティをアクティビティ名に設定します。
+
+  これは、`adb shell am start @PACKAGE_NAME@/$(AndroidLaunchActivity)` と同じです。
+
+  Xamarin.Android 10.2 で追加されました。
+
+- **StopAndroidPackage** &ndash; デバイスまたは実行中のエミュレーター上のアプリケーション パッケージを完全に停止します。
+
+  これは、`adb shell am force-stop @PACKAGE_NAME@` と同じです。
+
+  Xamarin.Android 10.2 で追加されました。
+
+- **Uninstall** &ndash; 既定のデバイスまたは仮想デバイスからパッケージをアンインストールします。
 
 - **UpdateAndroidResources** &ndash; `Resource.designer.cs` ファイルを更新します。 このターゲットは通常、新しいリソースがプロジェクトに追加されたときに、IDE によって呼び出されます。
 
@@ -133,9 +165,13 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 パッケージング プロパティは、Android パッケージの作成を制御し、`Install` ターゲットと `SignAndroidPackage` ターゲッによって使用されます。
 リリース アプリケーションをパッケージングする場合には、[署名プロパティ](#Signing_Properties)も関係します。
 
+- **AndroidAotProfiles** &ndash; 開発者がコマンド ラインから AOT プロファイルを追加できるようにする文字列プロパティ。 セミコロンまたはコンマで区切られた絶対パスの一覧です。
+
+  Xamarin.Android 10.1 で追加されました。
+
 - **AndroidApkDigestAlgorithm** &ndash; `jarsigner -digestalg` で使用するダイジェスト アルゴリズムを指定する文字列値。
 
-  既定値は APK の場合 `SHA1`、アプリ バンドルの場合 `SHA-256` です。
+  既定値は `SHA-256` です。 Xamarin.Android 10.0 以前では、既定値は `SHA1` でした。
 
   Xamarin.Android 9.4 で追加されました。
 
@@ -145,7 +181,7 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
 - **AndroidApkSigningAlgorithm** &ndash; `jarsigner -sigalg` で使用する署名アルゴリズムを指定する文字列値。
 
-  既定値は APK の場合 `md5withRSA`、アプリ バンドルの場合 `SHA256withRSA` です。
+  既定値は `SHA256withRSA` です。 Xamarin.Android 10.0 以前では、既定値は `md5withRSA` でした。
 
   Xamarin.Android 8.2 で追加されました。
 
@@ -159,11 +195,45 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
   Xamarin.Android 6.1 で追加されました。
 
+- **AndroidBinUtilsPath** &ndash; `ld`、ネイティブ リンカー、`as`、ネイティブ アセンブラーなどの Android [binutils][binutils] が格納されているディレクトリへのパス。 これらのツールは Android NDK に含まれており、Xamarin.Android のインストールにも含まれています。
+
+  既定値は `$(MonoAndroidBinDirectory)\ndk\` です。
+
+  Xamarin.Android 10.0 で追加されました。
+
+  [binutils]: https://android.googlesource.com/toolchain/binutils/
+
+- **AndroidBoundExceptionType** &ndash; Xamarin.Android で提供されている型で、`Android.Runtime.InputStreamInvoker`、`System.IO.Stream`、`Android.Runtime.JavaDictionary`、`System.Collections.IDictionary` など、Java 型の観点から .NET の型またはインターフェイスを実装している場合に、例外を伝播する方法を指定する文字列値。
+
+  - `Java`:元の Java 例外の型はそのまま伝播されます。
+
+    これは、たとえば、`InputStreamInvoker` が `System.IO.Stream` API を適切に実装していないことを意味します。これは、`Stream.Read()` から`System.IO.IOException` ではなく `Java.IO.IOException` がスローされる可能性があるためです。
+
+    これは、10.2 より前の Xamarin.Android のすべてのリリースでの例外伝播の動作です。
+
+    これは、Xamarin.Android 10.2 の既定値です。
+
+  - `System`:元の Java 例外の型がキャッチされ、適切な .NET 例外の型でラップされます。
+
+    これは、たとえば、`InputStreamInvoker` が `System.IO.Stream` を正しく実装し、`Stream.Read()` が `Java.IO.IOException` インスタンスをスロー "*しない*" ことを意味します。  (代わりに、`Exception.InnerException` の値として `Java.IO.IOException` を持つ `System.IO.IOException` をスローする場合があります)。
+
+    これは、Xamarin.Android 11.0 で既定値になります。
+
+  Xamarin.Android 10.2 で追加されました。
+
 - **AndroidBuildApplicationPackage** &ndash; パッケージ (.apk) を作成して署名するかどうかを示すブール値。 この値を `True` に設定することは、[SignAndroidPackage](#Build_Targets) ビルド ターゲットを使用することと同じです。
 
   このプロパティのサポートは、Xamarin.Android 7.1 以降で追加されました。
 
   このプロパティは既定で `False` です。
+
+- **AndroidBundleConfigurationFile** &ndash; Android アプリ バンドルをビルドするときに `bundletool` の[構成ファイル][bundle-config-format]として使用するファイル名を指定します。 このファイルは、APK を生成するためのどのディメンションでバンドルを分割するかなど、バンドルから APK を生成する方法のいくつかの側面を制御します。 Xamarin.Android では、圧縮しないままにするファイル拡張子の一覧など、これらの設定の一部が自動的に構成されることに注意してください。
+
+  このプロパティが意味をなすのは、`$(AndroidPackageFormat)` が `aab` に設定されている場合のみです。
+
+  Xamarin.Android 10.3 で追加されました。
+
+  [bundle-config-format]: https://developer.android.com/studio/build/building-cmdline#bundleconfig
 
 - **AndroidDexTool** &ndash; `dx` または `d8` の有効な値の列挙方式のプロパティ。 Xamarin.Android のビルド プロセス中に使用される Android の [dex][dex] コンパイラを示します。
   現在の既定値は `dx` です。 詳細については、[D8 と R8][d8-r8] に関するドキュメントをご覧ください。
@@ -231,6 +301,14 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
   このプロパティのサポートは、Xamarin.Android 8.1 で追加されました。
 
   このプロパティは既定で `True` です。
+
+- **AndroidExtraAotOptions** &ndash; `$(AndroidEnableProfiledAot)` または `$(AotAssemblies)` が `true` に設定されているプロジェクトの `Aot` タスク中に、Mono コンパイラに追加のオプションを渡すことができるようにする文字列プロパティ。 Mono クロスコンパイラを呼び出すときに、プロパティの文字列値が応答ファイルに追加されます。
+
+  一般に、このプロパティは空白のままにしておく必要がありますが、特殊なシナリオでは、柔軟性が向上する場合があります。
+
+  このプロパティは、関連する `$(AndroidAotAdditionalArguments)` プロパティとは異なることに注意してください。 このプロパティは、コンマ区切りの引数を Mono コンパイラの `--aot` オプションに配置します。 `$(AndroidExtraAotOptions)` では代わりに、`--verbose` や `--debug` など、完全なスタンドアロンのスペース区切りオプションがコンパイラに渡されます。
+
+  Xamarin.Android 10.2 で追加されました。
 
 - **AndroidFastDeploymentType** &ndash; `$(EmbedAssembliesIntoApk)` MSBuild プロパティが `False` の場合に、ターゲット デバイスの[高速展開ディレクトリ](#Fast_Deployment)に展開できる型を制御する値の `:` (コロン) 区切りのリスト。 リソースが高速展開される場合、そのリソースが生成された `.apk` に埋め込まれ*ない*ため、展開時間を短縮することができます (高速展開が増えるほど、`.apk` を再ビルドする頻度が減り、インストール プロセスを高速化できます)。有効な値を次に示します。
 
@@ -349,6 +427,16 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
   ビルド時に、実際の `AndroidManifest.xml` を生成するためにその他の必要な値がマージされます。
   `$(AndroidManifest)` は、`/manifest/@package` 属性にパッケージ名を含める必要があります。
 
+- **AndroidManifestMerger** &ndash; *AndroidManifest.xml* ファイルをマージするための実装を指定します。 これは、`legacy` が元の C# の実装を選択し、`manifestmerger.jar` が Google の Java 実装を選択する列挙型のプロパティです。
+
+  現在の既定値は `legacy` です。 これは、Android Studio の動作に合わせるために、将来のリリースで `manifestmerger.jar` に変更されます。
+
+  Google のマージャーでは、[Android ドキュメント][manifest-merger]に記載されている `xmlns:tools="http://schemas.android.com/tools"` のサポートが有効になります。
+
+  Xamarin.Android 10.2 で導入されました。
+
+  [manifest-merger]: https://developer.android.com/studio/build/manifest-merge
+
 - **AndroidMultiDexClassListExtraArgs** &ndash; `multidex.keep` ファイルを生成するときに、開発者が追加の引数を `com.android.multidex.MainDexListBuilder` に渡すことを許可する文字列プロパティ。
 
   1 つの具体的なケースは、`dx` のコンパイル中に次のエラーが発生する場合です。
@@ -379,6 +467,14 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
   [apk]: https://en.wikipedia.org/wiki/Android_application_package
   [bundle]: https://developer.android.com/platform/technology/app-bundle
 
+- **AndroidPackageNamingPolicy** &ndash; 生成された Java ソース コードの Java パッケージ名を指定するための列挙型スタイルのプロパティ。
+
+  Xamarin.Android 10.2 以降では、サポートされている値は `LowercaseCrc64` のみです。
+
+  Xamarin.Android 10.1 では、暫定の `LowercaseMD5` 値も使用できました。これにより、Xamarin.Android 10.0 以前で使用されてた元の Java パッケージ名スタイルに戻すことができました。 このオプションは、FIPS 準拠が適用されたビルド環境との互換性を向上させるために、Xamarin.Android 10.2 で削除されました。
+
+  Xamarin.Android 10.1 で追加されました。
+
 - **AndroidR8JarPath** &ndash; r8 dex コンパイラおよびシュリンカーで使用する `r8.jar` へのパス。 既定値は、Xamarin.Android のインストール パスになります。 詳細については、[D8 と R8][d8-r8] に関するドキュメントをご覧ください。
 
 - **AndroidSdkBuildToolsVersion** &ndash; Android SDK ビルド ツール パッケージは、特に、**aapt** ツールと **zipalign** ツールを提供します。 複数の異なるバージョンのビルド ツール パッケージを同時にインストールすることができます。 パッケージ化するビルド ツール パッケージの選択は、"優先" ビルド ツールのバージョンをチェックして、ある場合はそれを使用して行われます。"優先" バージョンが "*ない*" 場合は、インストールされている最も高いバージョンのビルド ツール パッケージが使用されます。
@@ -408,9 +504,11 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
     これは、Visual Studio のプロパティ ページの**ネイティブ TLS 1.2+** の設定に対応しています。
 
-  - `legacy`:ネットワークの対話に過去に管理されていた SSL の実装を使用します。 これは、TLS 1.2 をサポート*していません*。
+  - `legacy`:Xamarin.Android 10.1 以前では、ネットワークの対話に過去に管理されていた SSL の実装を使用します。 これは、TLS 1.2 をサポート*していません*。
 
     これは、Visual Studio のプロパティ ページの**マネージド TLS 1.0** の設定に対応しています。
+
+    Xamarin.Android 10.2 以降では、この値は無視され、`btls` 設定が使用されます。
 
   - `default`:この値は、Xamarin.Android プロジェクトで使用される可能性はほとんどありません。 代わりに空の文字列を使用することをお勧めします。これは、Visual Studio のプロパティ ページの**既定**の設定に対応しています。
 
@@ -423,6 +521,12 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 - **AndroidUseApkSigner** &ndash; `jarsigner` ではなく `apksigner` ツールを使用することを開発者に許可するブール型プロパティ。
 
     Xamarin.Android 8.2 で追加されました。
+
+- **AndroidUseDefaultAotProfile** &ndash; 開発者が既定の AOT プロファイルの使用を抑制できるようにするブール型プロパティです。
+
+  既定の AOT プロファイルを抑制するには、このプロパティを `false` に設定します。
+
+  Xamarin.Android 10.1 で追加されました。
 
 - **AndroidUseLegacyVersionCode** &ndash; 開発者が versionCode の計算を Xamarin.Android 8.2 前の動作に戻すことを許可するブール型プロパティ。 これは、Google Play ストアに既存のアプリケーションがある開発者に向けてのみ使用する必要があります。 新しい `$(AndroidVersionCodePattern)` プロパティを使用することを強くお勧めします。
 
@@ -482,6 +586,8 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
   このプロパティが `False` の場合、`$(AndroidFastDeploymentType)` MSBuild プロパティが `.apk` に埋め込まれるものも制御するため、展開および再ビルド時間に影響を及ぼす場合があります。
 
 - **EnableLLVM** &ndash; アセンブリをネイティブ コードに Ahead-of-Time コンパイルするときに、LLVM を使用するかどうかを決定するブール型プロパティ。
+
+  このプロパティが有効になっているプロジェクトをビルドするには、Android NDK がインストールされている必要があります。
 
   このプロパティのサポートは、Xamarin.Android 5.1 で追加されました。
 
@@ -632,15 +738,83 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
 - **AndroidDebugKeyValidity** &ndash; `debug.keystore` 用に使用する既定の有効性を指定します。 既定値は `10950`、`30 * 365`、または `30 years` です。
 
+- **AndroidDebugStoreType** &ndash; `debug.keystore` に使用するキー ストア ファイル形式を指定します。 既定値は `pkcs12` です。
+
+  Xamarin.Android 10.2 で追加されました。
+
 - **AndroidKeyStore** &ndash; カスタム署名情報を使用するかどうかを示すブール値。 既定値は `False` で、既定のデバッグ署名キーがパッケージの署名に使用されることを意味します。
 
 - **AndroidSigningKeyAlias** &ndash; キーストア内のキーに別名を指定します。 これは、キーストアを作成するときに使用される **keytool -alias** 値です。
 
 - **AndroidSigningKeyPass** &ndash;キーストア ファイル内にあるキーのパスワードを指定します。 これは、`keytool` が **Enter key password for $(AndroidSigningKeyAlias)** ($(AndroidSigningKeyAlias) のキーのパスワードを入力) を求めたときに入力される値です。
 
+  Xamarin.Android 10.0 以前では、このプロパティはプレーンテキストのパスワードのみをサポートしています。
+
+  Xamarin.Android 10.1 以降では、このプロパティは、パスワードを格納する環境変数またはファイルを指定するために使用できる `env:` および `file:` プレフィックスもサポートします。 これらのオプションを使用すると、ビルド ログにパスワードが表示されないようにすることができます。
+
+  たとえば、*AndroidSigningPassword* という名前の環境変数を使用するには、次のようにします。
+
+  ```xml
+  <PropertyGroup>
+      <AndroidSigningKeyPass>env:AndroidSigningPassword</AndroidSigningKeyPass>
+  </PropertyGroup>
+  ```
+
+  `C:\Users\user1\AndroidSigningPassword.txt` にあるファイルを使用するには、次のようにします。
+
+  ```xml
+  <PropertyGroup>
+      <AndroidSigningKeyPass>file:C:\Users\user1\AndroidSigningPassword.txt</AndroidSigningKeyPass>
+  </PropertyGroup>
+  ```
+
+  > [!NOTE]
+  > `env:` プレフィックスは、`$(AndroidPackageFormat)` が `aab` に設定されている場合はサポートされません。
+
 - **AndroidSigningKeyStore** &ndash; `keytool` で作成されたキーストア ファイルのファイル名を指定します。 これは、**keytool -keystore** オプションで指定された値に対応します。
 
 - **AndroidSigningStorePass** &ndash; `$(AndroidSigningKeyStore)` へのパスワードを指定します。 これは、キーストア ファイルを作成していて、**Enter keystore password:** (キーストア パスワードを入力) で求められたときに、`keytool` に指定する値です。
+
+  Xamarin.Android 10.0 以前では、このプロパティはプレーンテキストのパスワードのみをサポートしています。
+
+  Xamarin.Android 10.1 以降では、このプロパティは、パスワードを格納する環境変数またはファイルを指定するために使用できる `env:` および `file:` プレフィックスもサポートします。 これらのオプションを使用すると、ビルド ログにパスワードが表示されないようにすることができます。
+
+  たとえば、*AndroidSigningPassword* という名前の環境変数を使用するには、次のようにします。
+
+  ```xml
+  <PropertyGroup>
+      <AndroidSigningStorePass>env:AndroidSigningPassword</AndroidSigningStorePass>
+  </PropertyGroup>
+  ```
+
+  `C:\Users\user1\AndroidSigningPassword.txt` にあるファイルを使用するには、次のようにします。
+
+  ```xml
+  <PropertyGroup>
+      <AndroidSigningStorePass>file:C:\Users\user1\AndroidSigningPassword.txt</AndroidSigningStorePass>
+  </PropertyGroup>
+  ```
+
+  > [!NOTE]
+  > `env:` プレフィックスは、`$(AndroidPackageFormat)` が `aab` に設定されている場合はサポートされません。
+
+- **JarsignerTimestampAuthorityCertificateAlias** &ndash; このプロパティを使用すると、タイムスタンプ機関のキーストアに別名を指定できます。
+  詳細については、Java の[署名のタイムスタンプのサポート](https://docs.oracle.com/javase/8/docs/technotes/guides/security/time-of-signing.html)に関するドキュメントを参照してください。
+
+  ```xml
+  <PropertyGroup>
+      <JarsignerTimestampAuthorityCertificateAlias>Alias</JarsignerTimestampAuthorityCertificateAlias>
+  </PropertyGroup>
+  ```
+
+- **JarsignerTimestampAuthorityUrl** &ndash; このプロパティでは、タイムスタンプ機関サービスへの URL を指定できます。 これを使用して、`.apk` 署名に確実にタイムスタンプを含めるようにすることができます。
+  詳細については、Java の[署名のタイムスタンプのサポート](https://docs.oracle.com/javase/8/docs/technotes/guides/security/time-of-signing.html)に関するドキュメントを参照してください。
+
+  ```xml
+  <PropertyGroup>
+      <JarsignerTimestampAuthorityUrl>http://example.tsa.url</JarsignerTimestampAuthorityUrl>
+  </PropertyGroup>
+  ```
 
 たとえば、次の `keytool` 呼び出しを考えてみます。
 
@@ -775,6 +949,14 @@ Android では、複数のアプリケーション バイナリ インターフ�
   </AndroidResource>
 </ItemGroup>
 ```
+
+### <a name="androidresourceanalysisconfig"></a>AndroidResourceAnalysisConfig
+
+ビルド アクション `AndroidResourceAnalysisConfig` は、Xamarin Android Designer レイアウト診断ツールの重大度レベルの構成ファイルとしてファイルをマークします。 これは現在、レイアウト エディターでのみ使用され、ビルド メッセージでは使用されません。
+
+詳細については、[Android リソース分析のドキュメント](https://aka.ms/androidresourceanalysis)を参照してください。
+
+Xamarin.Android 10.2 で追加されました。
 
 ### <a name="content"></a>Content
 

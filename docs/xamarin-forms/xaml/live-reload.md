@@ -8,17 +8,20 @@ author: pierceboggan
 ms.author: piboggan
 robots: noindex
 ms.date: 10/26/2018
-ms.openlocfilehash: a5a5a9acf47603601461660df689a7a5fa6aee00
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.openlocfilehash: e6c8e7b84ba8e3d0f6e6247798bb9164a3bc994d
+ms.sourcegitcommit: 8df67f0d76ff762b517d27b8d4c217d3a3379a18
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728344"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79423903"
 ---
 # <a name="xamarin-live-reload-preview"></a>Xamarin Live Reload (プレビュー)
 
 > [!NOTE]
-> Xamarin Live Reload のプレビューが終了しました。フィードバックとコメントについては、すべてのユーザーに感謝します。 Xamarin. Forms の新しい生産性向上機能の詳細については、Visual Studio 2019 の[ロードマップ](https://docs.microsoft.com/visualstudio/productinfo/vs-roadmap)を参照してください。 この拡張機能は Visual Studio 2017 で引き続き使用できますが、今後の更新プログラムは受信されません。
+> Xamarin Live Reload のプレビューが終了しました。フィードバックとコメントについては、すべてのユーザーに感謝します。 
+>
+> アプリの実行中に XAML を編集するには、 [Xamarin. フォームに Xaml ホットリロード](~/xamarin-forms/xaml/hot-reload.md)を使用します。
+>
 
 Xamarin Live Reload を使用する**と、XAML を変更してライブに反映することができ、別のコンパイルとデプロイは必要**ありません。 XAML に加えられたすべての変更は保存時に再デプロイされ、デプロイターゲットに反映されます。
 
@@ -46,11 +49,11 @@ Xamarin Live Reload は、Visual Studio Marketplace 経由で配布されます�
 
 2. **LiveReload** NuGet パッケージを追加します。
 
-    キーを押します。 **.NET Standard** – .NET Standard 2.0 ライブラリに**LiveReload** NuGet をインストールします。 これは、プラットフォームプロジェクトにインストールする必要はありません。 **パッケージソース**が**All**に設定されていることを確認します。
+    a. **.NET Standard** – .NET Standard 2.0 ライブラリに**LiveReload** NuGet をインストールします。 これは、プラットフォームプロジェクトにインストールする必要はありません。 **パッケージソース**が**All**に設定されていることを確認します。
     
     b. **共有プロジェクト**–すべてのプラットフォームプロジェクト (Android、IOS、UWP など) に**LiveReload** NuGet をインストールします。 **パッケージソース**が**All**に設定されていることを確認します。
 
-    [![NuGet パッケージマネージャーを使用して Xamarin ライブリロード NuGet を追加](images/addlivereloadnuget.w157-sml.png)](images/addlivereloadnuget.w157.png#lightbox)
+    [NuGet パッケージマネージャーを使用して Xamarin ライブリロード NuGet を追加 ![](images/addlivereloadnuget.w157-sml.png)](images/addlivereloadnuget.w157.png#lightbox)
 
 3. 次のコードスニペットに示すように、`Application` クラスのコンストラクターに `LiveReload.Init();` を追加します。
 

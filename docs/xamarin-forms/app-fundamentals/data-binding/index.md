@@ -39,39 +39,39 @@ Xamarin.Forms アプリケーションは 1 つ以上のページで構成され
 
 データ バインディングついては、次の一連の記事で説明されています。
 
-## <a name="basic-bindingsbasic-bindingsmd"></a>[基本的なバインディング](basic-bindings.md)
+## <a name="basic-bindings"></a>[基本的なバインディング](basic-bindings.md)
 
 データ バインディングのターゲットとソースの違いについて学習し、コードと XAML における単純なデータ バインディングを確認します。
 
-## <a name="binding-modebinding-modemd"></a>[バインディング モード](binding-mode.md)
+## <a name="binding-mode"></a>[バインディング モード](binding-mode.md)
 
 バインディング モードによって 2 つのオブジェクト間のデータ フローを制御する方法について説明します。
 
-## <a name="string-formattingstring-formattingmd"></a>[文字列の形式設定](string-formatting.md)
+## <a name="string-formatting"></a>[文字列の形式設定](string-formatting.md)
 
 データ バインディングを使って、オブジェクトを書式設定して文字列として表示させます。
 
-## <a name="binding-pathbinding-pathmd"></a>[バインディング パス](binding-path.md)
+## <a name="binding-path"></a>[バインディング パス](binding-path.md)
 
 データ バインディングの `Path` プロパティについて詳しく調べ、サブプロパティとコレクションのメンバーにアクセスします。
 
-## <a name="binding-value-convertersconvertersmd"></a>[値コンバーターのバインディング](converters.md)
+## <a name="binding-value-converters"></a>[値コンバーターのバインディング](converters.md)
 
 値コンバーターのバインディングを使って、データ バインディング内の値を変更します。
 
-## <a name="relative-bindingsrelative-bindingsmd"></a>[相対的なバインディング](relative-bindings.md)
+## <a name="relative-bindings"></a>[相対的なバインディング](relative-bindings.md)
 
 相対バインドを使用して、バインド ターゲットの位置に対して相対的なバインド ソースを設定します。
 
-## <a name="binding-fallbacksbinding-fallbacksmd"></a>[フォールバックのバインディング](binding-fallbacks.md)
+## <a name="binding-fallbacks"></a>[フォールバックのバインディング](binding-fallbacks.md)
 
 バインディングのプロセスが失敗した場合に使うフォールバック値を定義することにより、より堅牢なデータ バインディングを実現します。
 
-## <a name="the-command-interfacecommandingmd"></a>[コマンド インターフェイス](commanding.md)
+## <a name="the-command-interface"></a>[コマンド インターフェイス](commanding.md)
 
 データ バインディングを使って `Command` プロパティを実装します。
 
-## <a name="compiled-bindingscompiled-bindingsmd"></a>[コンパイル済みのバインディング](compiled-bindings.md)
+## <a name="compiled-bindings"></a>[コンパイル済みのバインディング](compiled-bindings.md)
 
 コンパイル済みのバインディングを使ってデータ バインディングのパフォーマンスを向上させます。
 
