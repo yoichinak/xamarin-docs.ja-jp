@@ -555,7 +555,7 @@ Interface Builder でユーザー インターフェイスを設計すると、�
 
 手順 (1) から (3) までは Apple の Interface Builder でインターフェイスを構築する方法に関するドキュメントで取り上げられています。
 
-Xamarin.iOS の使用時、UIViewController から誘導されるクラスをアプリケーションで作成する必要があります。 これは次のように実装されます。
+Xamarin.iOS の使用時、UIViewController から派生されるクラスをアプリケーションで作成する必要があります。 これは次のように実装されます。
 
 ```csharp
 public class MyViewController : UIViewController {
@@ -659,7 +659,7 @@ Xamarin.iOS と Xamarin.Mac の両方で、さまざまな通知のキーは、�
 
 ### <a name="memory-management"></a>メモリ管理
 
-Xamarin.iOS に含まれるガベージ コレクターによって、不要になったリソースが解放されます。 ガベージ コレクターに加え、`NSObject` から誘導されるオブジェクトはすべて `System.IDisposable` インターフェイスを実行します。
+Xamarin.iOS に含まれるガベージ コレクターによって、不要になったリソースが解放されます。 ガベージ コレクターに加え、`NSObject` から派生されるオブジェクトはすべて `System.IDisposable` インターフェイスを実装します。
 
 #### <a name="nsobject-and-idisposable"></a>NSObject と IDisposable
 
