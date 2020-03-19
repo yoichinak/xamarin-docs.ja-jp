@@ -9,11 +9,11 @@ ms.author: dabritch
 ms.date: 01/22/2019
 ms.custom: video
 ms.openlocfilehash: 2227e2bd47a5b4960d28be67bac7947a4fb57a93
-ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/30/2019
-ms.locfileid: "75545667"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79303781"
 ---
 # <a name="xamarinforms-basic-bindings"></a>Xamarin.Forms の基本的なバインディング
 

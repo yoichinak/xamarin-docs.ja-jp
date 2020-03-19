@@ -7,29 +7,29 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
 ms.openlocfilehash: b7d69e99327aa3d3e3e1f5e5dbc61697d1fb9b71
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
-ms.translationtype: MT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "75489168"
 ---
 # <a name="using-native-libraries"></a>ネイティブ ライブラリの使用
 
-Xamarin Android では、標準の PInvoke 機構によるネイティブライブラリの使用がサポートされています。 .apk に OS の一部ではないその他のネイティブ ライブラリをバンドルすることもできます。
+Xamarin.Android では、標準の PInvoke メカニズムによるネイティブ ライブラリの使用がサポートされています。 また、OS に含まれていない追加のネイティブ ライブラリを .apk にバンドルすることもできます。
 
-Xamarin Android アプリケーションを使用してネイティブライブラリを配置するには、ライブラリバイナリをプロジェクトに追加し、**ビルドアクション**を**androidのライブラリ**に設定します。
+Xamarin.Android アプリケーションでネイティブ ライブラリをデプロイするには、ライブラリ バイナリをプロジェクトに追加し、その**ビルド アクション**を **AndroidNativeLibrary** に設定します。
 
-Xamarin Android ライブラリプロジェクトを含むネイティブライブラリを配置するには、ライブラリバイナリをプロジェクトに追加し、**ビルドアクション**を**EmbeddedNativeLibrary**に設定します。
+Xamarin.Android ライブラリ プロジェクトでネイティブ ライブラリをデプロイするには、ライブラリ バイナリをプロジェクトに追加し、その**ビルド アクション**を **EmbeddedNativeLibrary** に設定します。
 
-Android では複数のアプリケーションバイナリインターフェイス (ABIs) がサポートされているため、Xamarin では、ネイティブライブラリがどの ABI に対して構築されているかを把握している必要があります。
+Android では、複数のアプリケーション バイナリ インターフェイス (ABI) をサポートしているため、ネイティブ ライブラリがどの ABI に対してビルドされているかが Xamarin.Android で認識される必要があります。
 これを行うには 2 つの方法があります。
 
 1. パス "スニッフィング"
-1. プロジェクトファイル内の `AndroidNativeLibrary/Abi` 要素を使用する
+1. プロジェクト ファイル内で `AndroidNativeLibrary/Abi` 要素を使用する
 
-パス スニッフィングを使用すると、ネイティブ ライブラリの親ディレクトリ名が、ライブラリがターゲットとする ABI を指定するために使用されます。 このため、プロジェクトに `lib/armeabi/libfoo.so` を追加すると、ABI は `armeabi`として "スニッフィングさ" になります。
+パス スニッフィングを使用すると、ネイティブ ライブラリの親ディレクトリ名が、ライブラリがターゲットとする ABI を指定するために使用されます。 したがって、プロジェクトに `lib/armeabi/libfoo.so` を追加すると、ABI は `armeabi` として "スニッフィング" されます。
 
-または、プロジェクトファイルを編集して、使用する ABI を明示的に指定することもできます。
+または、プロジェクト ファイルを編集して、使用する ABI を明示的に指定することもできます。
 
 ```xml
 <ItemGroup>
@@ -39,22 +39,22 @@ Android では複数のアプリケーションバイナリインターフェイ
 </ItemGroup>
 ```
 
-ネイティブライブラリの使用方法の詳細については、「[ネイティブライブラリとの相互運用](https://www.mono-project.com/docs/advanced/pinvoke/)」を参照してください。
+ネイティブ ライブラリの使用に関する詳細については、[ネイティブ ライブラリとの相互運用性](https://www.mono-project.com/docs/advanced/pinvoke/)に関するページを参照してください。
 
-## <a name="debugging-native-code-with-visual-studio"></a>Visual Studio を使用したネイティブコードのデバッグ
+## <a name="debugging-native-code-with-visual-studio"></a>Visual Studio を使用したネイティブ コードのデバッグ
 
-*Visual studio 2019*または*visual studio 2017*を使用している場合は、前述のようにプロジェクトファイルを変更する必要はありません。
-C++ C++ **ダイナミック共有ライブラリ (android)** プロジェクトにプロジェクト参照を追加することによって、Xamarin. android ソリューション内でビルドおよびデバッグを行うことができます。
+*Visual Studio 2019* または *Visual Studio 2017* を使用している場合は、前述のように、プロジェクト ファイルを変更する必要はありません。
+プロジェクト参照を C++ **ダイナミック共有ライブラリ (Android)** プロジェクトに追加することによって、Xamarin.Android ソリューション内の C++ をビルドおよびデバッグできます。
 
-プロジェクトのネイティブC++コードをデバッグするには、次の手順を実行します。
+プロジェクト内のネイティブ C++ コードをデバッグするには、次の手順に従います。
 
-1. プロジェクトの **[プロパティ]** をダブルクリックし、 **[Android のオプション]** ページを選択します。
-2. 下にスクロールして、**デバッグオプションを選択**します。
-3. **デバッガー**のドロップダウンメニューで、 **C++** (既定の **.net (Xamarin)** ではなく) を選択します。
+1. プロジェクトの **[プロパティ]** をダブルクリックし、 **[Android オプション]** ページを選択します。
+2. **[デバッグ オプション]** まで下にスクロールします。
+3. **[デバッガー]** ドロップダウン メニューで、 **[C++]** (既定値の **[.NET (Xamarin)]** ではなく) を選択します。
 
-Visual Studio C++の開発者は、 [SanAngeles_NativeDebug](https://docs.microsoft.com/samples/xamarin/monodroid-samples/sanangeles-ndk)サンプルを参照C++して、Xamarin を使用して Visual studio 2019 または visual studio 2017 からデバッグを試すことができます。詳細については、[ブログの投稿](https://blog.xamarin.com/build-and-debug-c-libraries-in-xamarin-android-apps-with-visual-studio-2015/)を参照してください。
+Visual Studio C++ 開発者は、[SanAngeles_NativeDebug](https://docs.microsoft.com/samples/xamarin/monodroid-samples/sanangeles-ndk) サンプルを参照して、Xamarin を使用して Visual Studio2019 または Visual Studio2017 から C++ をデバッグすることができます。詳細については、Microsoft の[ブログ投稿](https://blog.xamarin.com/build-and-debug-c-libraries-in-xamarin-android-apps-with-visual-studio-2015/)を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 
 - [SanAngeles_NativeDebug (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/sanangeles-ndk)
-- [Xamarin Android ネイティブアプリケーションの開発](https://blogs.msdn.microsoft.com/vcblog/2015/02/23/developing-xamarin-android-native-applications/)
+- [Xamarin Android ネイティブ アプリケーションの開発](https://blogs.msdn.microsoft.com/vcblog/2015/02/23/developing-xamarin-android-native-applications/)

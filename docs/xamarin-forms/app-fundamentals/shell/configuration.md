@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/29/2020
-ms.openlocfilehash: dfa452addd7cfb838091afdfb350484998d0cc9d
-ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
+ms.openlocfilehash: 411c87c25701521bf27fbb863b02a90f8e523574
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77636088"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79303787"
 ---
 # <a name="xamarinforms-shell-page-configuration"></a>Xamarin.Forms シェルのページの構成
 
@@ -112,7 +112,7 @@ XAML スタイルの詳細については、「[XAML スタイルを使用した
 
 ## <a name="enable-navigation-bar-shadow"></a>ナビゲーション バーの影を有効にする
 
-`Shell` クラスでは、ナビゲーション バーを影付きにするかどうかを制御する、`bool` 型の添付プロパティ `NavBarHasShadow` を定義できます。 既定では、このプロパティの値は `false` です。
+`Shell` クラスでは、ナビゲーション バーを影付きにするかどうかを制御する、`bool` 型の添付プロパティ `NavBarHasShadow` を定義できます。 既定では、このプロパティの値は、iOS では `false`、Android では `true` です。
 
 このプロパティはサブクラス化された `Shell` オブジェクト上で設定できますが、ナビゲーション バーの影を有効にする任意のページ上でも設定できます。 たとえば、次の XAML では、[`ContentPage`](xref:Xamarin.Forms.ContentPage) でのナビゲーション バーの影の有効化を示しています。
 

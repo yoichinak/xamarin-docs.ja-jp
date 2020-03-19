@@ -8,11 +8,11 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/22/2020
 ms.openlocfilehash: 5751983bf4a818e8ee91af98b0c05658efaca8b2
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
-ms.translationtype: MT
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78915661"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79303619"
 ---
 # <a name="xamarinforms-supported-platforms"></a>Xamarin.Forms でサポートされているプラットフォーム
 
@@ -44,7 +44,7 @@ Xamarin.Forms は、iOS、Android、および Windows 以外に次のプラッ�
 
 最新の Android SDK Tools と Android API プラットフォームをインストールしておく必要があります。 [Android SDK Manager](~/android/get-started/installation/android-sdk.md) を利用して最新版に更新できます。
 
-また、Android プロジェクトのターゲット/コンパイル バージョンを**インストールされている最新のプラットフォームを使用するように**設定する*必要があります*。 ただし、Android 4.4 以降を使用するデバイスを引き続きサポートできるように、最小バージョンを API 19 に設定できます。 値は**プロジェクト オプション**で設定されます。
+また、Android プロジェクトのターゲット/コンパイル バージョンを*インストールされている最新のプラットフォームを使用するように*設定する**必要があります**。 ただし、Android 4.4 以降を使用するデバイスを引き続きサポートできるように、最小バージョンを API 19 に設定できます。 値は**プロジェクト オプション**で設定されます。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 

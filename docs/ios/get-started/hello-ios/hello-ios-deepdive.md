@@ -10,11 +10,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
 ms.openlocfilehash: 5fadd1ba556b15cb92134471f007e41f04fce69e
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76724773"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79303685"
 ---
 # <a name="hello-ios--deep-dive"></a>Hello, iOS – 深い分析
 
@@ -289,7 +289,7 @@ public partial class ViewController : UIViewController
 これで `ViewController` は、ストーリーボードでこのビュー コントローラーに関連付けられているコンテンツ ビュー階層のやり取りを実行します。 次に、ビュー ライフサイクルと呼ばれるプロセスを紹介することで、ビューの管理でのビュー コントローラーの役割について説明します。
 
 > [!NOTE]
-> ユーザーの操作を必要としない表示専用の画面の場合は、**プロパティ パッド** で **[Class]** プロパティを空白のままにすることができます。 これにより、`UIViewController` の既定の実装としてビュー コントローラーのバッキング クラスを設定します。これは、カスタム コードを追加する予定がない場合に適しています。
+> ユーザーの介入を必要としない表示専用の画面の場合は、**プロパティ パッド** で **[Class]** プロパティを空白のままにすることができます。 これにより、`UIViewController` の既定の実装としてビュー コントローラーのバッキング クラスを設定します。これは、カスタム コードを追加する予定がない場合に適しています。
 
 ### <a name="view-lifecycle"></a>ビュー ライフサイクル
 

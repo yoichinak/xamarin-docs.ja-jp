@@ -6,11 +6,11 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 03/13/2019
 ms.openlocfilehash: 2ee4683bce02e95c52235afa823be21b89863208
-ms.sourcegitcommit: 8ecfa339d0f3e7687977bfe4fc96448942690183
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2019
-ms.locfileid: "67558671"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79303649"
 ---
 # <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials:位置情報
 
@@ -22,7 +22,7 @@ ms.locfileid: "67558671"
 
 **Geolocation** の機能にアクセスするには、次のプラットフォーム固有の設定が必要です。
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 Coarse および Fine Location アクセス許可が必要であり、Android プロジェクトで構成する必要があります。 さらに、アプリの対象が Android 5.0 (API レベル 21) 以降である場合は、アプリがマニフェスト ファイルのハードウェア機能を使用することを宣言する必要があります。 これは次の方法で追加できます。
 
@@ -50,7 +50,7 @@ Coarse および Fine Location アクセス許可が必要であり、Android �
 
 または、Android プロジェクトを右クリックし、プロジェクトのプロパティを開きます。 **[Android マニフェスト]** の下で **[必要なアクセス許可:]** 領域を探し、 **[ACCESS_COARSE_LOCATION]** および **[ACCESS_FINE_LOCATION]** アクセス許可をオンにします。 これにより、**AndroidManifest.xml** ファイルが自動的に更新されます。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 デバイスの位置情報にアクセスするには、アプリの **Info.plist** に `NSLocationWhenInUseUsageDescription` キーが含まれる必要があります。
 
@@ -63,7 +63,7 @@ plist エディターを開き、 **[プライバシー - 位置情報 (使用�
 <string>Fill in a reason why your app needs access to location.</string>
 ```
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 アプリケーションに `Location` アクセス許可を設定する必要があります。 これは、**Package.appxmanifest** を開き、 **[機能]** タブを選択して **[場所]** をオンにすることによって行うことができます。
 

@@ -8,23 +8,23 @@ author: davidortinau
 ms.author: daortin
 ms.date: 07/02/2018
 ms.openlocfilehash: b646893d8bbe63aa537c973c90552e0367735e47
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021218"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79303511"
 ---
 # <a name="signing-the-android-application-package"></a>Android アプリケーション パッケージに署名する
 
 「[リリースに向けてアプリケーションを準備する](~/android/deploy-test/release-prep/index.md)」では、**アーカイブ マネージャー**を使用してアプリをビルドし、署名および公開するためにそれをアーカイブに配置しました。 このセクションでは、Android の署名 ID を作成する方法、Android アプリケーション用の新しい署名証明書を作成する方法、アーカイブしたアプリの*アドホック*をディスクに公開する方法について説明します。 結果として得られる APK は、アプリ ストアを経由せずに Android デバイスにサイドロードすることができます。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [公開のためのアーカイブ](~/android/deploy-test/release-prep/index.md#archive)では、 **[配布チャネル]** ダイアログに 2 種類の配布方法が表示されていました。 **[アドホック]** を選択します。
 
 [![[配布チャネル] ダイアログ](images/vs/01-distribution-channel-sml.png)](images/vs/01-distribution-channel.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 [公開のためのアーカイブ](~/android/deploy-test/release-prep/index.md#archive)では、 **[署名と配布...]** ダイアログに 2 種類の配布方法が表示されました。 **[アドホック]** を選択して **[次へ]** をクリックします。
 
@@ -38,7 +38,7 @@ ms.locfileid: "73021218"
 
 ## <a name="create-a-new-certificate"></a>新しい証明書を作成する
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 **[アドホック]** を選択すると、次のスクリーンショットに示されているように、Visual Studio でダイアログの **[署名 ID]** ページが開きます。 .APK を公開するには、まず署名キー (証明書とも呼ばれます) で署名する必要があります。
 
@@ -67,7 +67,7 @@ ms.locfileid: "73021218"
 
 キーストアの詳細については、「[キーストアの MD5 または SHA1 署名の検索](~/android/deploy-test/signing/keystore-signature.md)」を参照してください。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 **[アドホック]** をクリックすると、次のスクリーンショットに示すように、Visual Studio for Mac で **[Android の署名の識別情報]** ダイアログが開きます。 .APK を公開するには、まず署名キー (証明書とも呼ばれます) で署名する必要があります。 証明書が既に存在する場合は、 **[既存のキーをインポート]** ボタンをクリックしてインポートし、[[APK の署名]](#sign-the-apk) に進みます。または、 **[キーの新規作成]** ボタンをクリックして新しい証明書を作成します。
 
@@ -94,7 +94,7 @@ ms.locfileid: "73021218"
 
 ## <a name="sign-the-apk"></a>APK に署名する
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 **[作成]** をクリックすると、新しいキー ストア (新しい証明書を含む) が保存され、次のスクリーンショットに示すように、 **[署名 ID]** の下に一覧表示されます。 Google Play でアプリを公開するには、 **[キャンセル]** をクリックして「[Google Play に公開する](~/android/deploy-test/publishing/publishing-to-google-play/index.md)」に進みます。
 *アドホック*を公開するには、署名に使用する署名 ID を選択し、 **[名前を付けて保存]** をクリックして独立したディストリビューション用にアプリを公開します。 たとえば、このスクリーンショットでは、(以前に作成した) **chimp** 署名 ID が選択されています。
@@ -118,7 +118,7 @@ ms.locfileid: "73021218"
 
 [![Windows エクスプローラーに表示された APK](images/vs/09-generated-app-vs-sml.png)](images/vs/09-generated-app-vs.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 既に説明したように、新しい証明書がキー ストアに追加されました。 Google Play でアプリを公開するには、 **[キャンセル]** をクリックして「[Google Play に公開する](~/android/deploy-test/publishing/publishing-to-google-play/index.md)」に進みます。
 または、 **[次へ]** をクリックして、この例で示すように (独立したディストリビューション用に) アプリの*アドホック*を公開します。

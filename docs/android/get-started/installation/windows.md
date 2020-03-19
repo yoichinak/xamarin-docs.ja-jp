@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/22/2018
 ms.openlocfilehash: 0caea0c31275a7459286c143cc92ca90731dd93b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73020700"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79303577"
 ---
 # <a name="windows-installation"></a>Windows のインストール
 
@@ -71,9 +71,9 @@ Xamarin Android SDK Manager の使用の詳細については、「[Android SDK 
 
 コンピューターで Android デバイスをエミュレーションするとき、次のコンポーネントが使われます。
 
-- **Google Android Emulator** &ndash; これは [QEMU](https://www.qemu.org/) を基盤とするエミュレーターであり、開発者のワークステーションで動作する仮想化デバイスを作ります。
-- **エミュレーター イメージ** &ndash; _エミュレーター イメージ_は、仮想化するハードウェアやオペレーティング システムのテンプレートまたは仕様です。 たとえば、Google Play サービスがインストールされた Android 7.0 を実行する Nexus 5X のハードウェア要件をエミュレーションしたイメージを用意できます。 あるいは、Android 6.0 を実行する 10 インチ タブレットをエミュレーションできます。
-- **Android 仮想デバイス (AVD)** &ndash; _Android 仮想デバイス_は、エミュレーションされた Android デバイスであり、エミュレーター イメージから作成されます。 Android アプリを実行し、テストすると、Xamarin.Android によって Android Emulator と特定の AVD が起動し、APK がインストールされ、それからアプリが実行されます。
+- **Google Android Emulator**&ndash; これは [QEMU](https://www.qemu.org/) を基盤とするエミュレーターであり、開発者のワークステーションで動作する仮想化デバイスを作ります。
+- **エミュレーター イメージ**&ndash;_エミュレーター イメージ_は、仮想化するハードウェアやオペレーティング システムのテンプレートまたは仕様です。 たとえば、Google Play サービスがインストールされた Android 7.0 を実行する Nexus 5X のハードウェア要件をエミュレーションしたイメージを用意できます。 あるいは、Android 6.0 を実行する 10 インチ タブレットをエミュレーションできます。
+- **Android 仮想デバイス (AVD)** &ndash;_Android 仮想デバイス_は、エミュレーションされた Android デバイスであり、エミュレーター イメージから作成されます。 Android アプリを実行し、テストすると、Xamarin.Android によって Android Emulator と特定の AVD が起動し、APK がインストールされ、それからアプリが実行されます。
 
 x86 基盤のコンピューターで開発するとき、x86 アーキテクチャに合わせて最適化された特別なエミュレーター イメージと次の 2 つの仮想化テクノロジのいずれかを利用することでパフォーマンスが大幅に改善されます。
 

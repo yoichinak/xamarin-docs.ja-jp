@@ -1,6 +1,6 @@
 ---
 title: TestFlight を使用して Xamarin.iOS アプリを配布する
-description: Apple が所有するようになった TestFlight は、Xamarin.iOS アプリのベータ テストを行う主要な方法です。 この記事では、アプリのアップロードから iTunes Connect での使用まで、TestFlight プロセスのすべての手順について説明します。
+description: Apple が所有するようになった TestFlight は、Xamarin.iOS アプリのベータ テストを行う主要な方法です。 この記事では、アプリのアップロードから iTunes Connect での作業まで、TestFlight プロセスのすべての手順について説明します。
 ms.prod: xamarin
 ms.assetid: BA880768-2BC8-41E4-B57E-A56F8EED4690
 ms.technology: xamarin-ios
@@ -8,11 +8,11 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
 ms.openlocfilehash: 2f5d04b49658abe9d366e264d8f1a659732a2c33
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028489"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79303595"
 ---
 # <a name="using-testflight-to-distribute-xamarinios-apps"></a>TestFlight を使用して Xamarin.iOS アプリを配布する
 
@@ -93,7 +93,7 @@ iTunes Connect レコードが作成されたら、新しいビルドをアッ�
 
 <!-- markdownlint-disable MD001 -->
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 ### <a name="create-an-archive"></a>アーカイブを作成する
 
@@ -120,10 +120,10 @@ iTunes Connect レコードが作成されたら、新しいビルドをアッ�
 
  手順について詳しくは、「[Submitting your App to Apple](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)」(Apple へのアプリの送信) セクションをご覧ください。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ### <a name="building-your-final-distributable"></a>最終的な配布可能アプリをビルドする
- Visual Studio 用 Xamarin プラグインは App Store に発行するための Xamarin.iOS アプリのアーカイブをサポートしていないので、Visual Studio から iOS アプリケーションを発行するには 2 つのオプションがあります。 これらの数値は、次のとおりです。
+ Visual Studio 用 Xamarin プラグインは App Store に発行するための Xamarin.iOS アプリのアーカイブをサポートしていないので、Visual Studio から iOS アプリケーションを発行するには 2 つのオプションがあります。 これらのボタンの役割は、次のとおりです。
 
 1. [Build Adhoc IPA]\(アドホック IPA のビルド\) コマンドを使って作成した IPA をアップロードします。
 1. zip 形式の `.app` バンドルをアップロードします。

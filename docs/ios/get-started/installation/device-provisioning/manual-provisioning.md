@@ -6,13 +6,13 @@ ms.assetid: E26ACC94-F4A5-4FF5-B7D4-BE596745A665
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
-ms.date: 07/15/2017
-ms.openlocfilehash: 945a42485486dbfddfd023a72e88d9127651c71f
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
+ms.date: 03/06/2020
+ms.openlocfilehash: 04cb1b9303e571b2a10cdfa621dcd312162e2893
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78911505"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79303751"
 ---
 # <a name="manual-provisioning-for-xamarinios"></a>Xamarin.iOS の手動プロビジョニング
 
@@ -21,74 +21,39 @@ _Xamarin.iOS が正常にインストールされたら、iOS 開発の次の手
 > [!NOTE]
 > このページの指示は、Apple Developer Program に有料でアクセスしている開発者に関連します。 無料アカウントがある場合は、[無料プロビジョニング](~/ios/get-started/installation/device-provisioning/free-provisioning.md)のガイドでデバイス上でのテストの詳細を確認してください。
 
-## <a name="creating-a-signing-identity"></a>署名 ID を作成する
+## <a name="create-a-development-certificate"></a>開発証明書を作成する
 
-開発用デバイスの設定の最初の手順は、署名 ID の作成です。 署名 ID は、次の 2 つで構成されます。
+開発用デバイスの設定の最初の手順は、署名証明書の作成です。 署名証明書は、次の 2 つで構成されます。
 
 - 開発証明書
 - 秘密キー
 
 開発証明書と関連付けられている[キー](#understanding-certificate-key-pairs)は iOS 開発者にとって重要です。つまり、それらは、Apple との間に ID を確立し、開発のために開発者を特定のデバイスおよびプロファイルに関連付け、開発者のアプリケーションに開発者のデジタル署名を付けます。 Apple は、展開を許可されているデバイスへのアクセスをコントロールするために証明書をチェックします。
 
-開発チーム、証明書、およびプロファイルを管理するには、Apple の Member Center の [[Certificates, Identifiers &amp; Profiles]](https://developer.apple.com/account/overview.action) セクションにアクセスします (要ログイン)。 Apple は、デバイスまたはシミュレーター用のコードを構築するために、署名 ID を要求します。  
+開発チーム、証明書、およびプロファイルを管理するには、Apple の Member Center の [[Certificates, Identifiers &amp; Profiles]](https://developer.apple.com/account/resources/certificates/list) セクションにアクセスします (要ログイン)。 Apple は、デバイスまたはシミュレーター用のコードを構築するために、署名 ID を要求します。  
 
 > [!IMPORTANT]
 > 一度に使用できるのは 2 つの iOS 開発証明書だけであることに注意することが重要です。 これ以上作成する必要がある場合は、既存の証明書を取り消す必要があります。 失効した証明書を使用しているコンピューターは、アプリに署名できません。
 
-署名 ID を生成するには、次の手順を実行します。
+手動プロビジョニング プロセスを開始する前に、「[Apple のアカウント管理](~/cross-platform/macios/apple-account-management.md)」ガイドに記載されているとおりに、Visual Studio で Apple 開発者アカウントを確実に追加しておく必要があります。 Apple 開発者アカウントを追加したら、次の手順を実行して署名証明書を生成します。
 
-1. [Developer Portal の [Certificates, Identifiers, and Profiles]\(証明書、ID、プロファイル\) セクション](https://developer.apple.com/account/overview.action)にログインし、 **[iOS Apps]** \(iOS アプリ\) 列から **[Certificates]** \(証明書\) を選択します。 **+** を選択して、新しい証明書を作成します。
+1. Visual Studio の [Apple 開発者アカウント] ウィンドウにアクセスします。
+    1. MAC: **Visual Studio > 基本設定 > Apple 開発者アカウント**
+    2. Windows の場合:**ツール > オプション > Xamarin > Apple アカウント**
 
-    [![](manual-provisioning-images/cert-plus.png "Click the + to create a new certificate")](manual-provisioning-images/cert-plus.png#lightbox)
-
-2. 証明書の種類として **[iOS App Development]** \(iOS アプリの開発\) オプションを選択し、 **[Continue]** \(続行\) をクリックします。 アカウントの時計によっては、この画面の表示が異なる場合があります。
-
-    [![](manual-provisioning-images/cert-first.png "Select the iOS App Development option for the certificate type")](manual-provisioning-images/cert-first.png#lightbox)
-
-3. 証明書署名要求を要求します。これは証明書を生成するために手動でアップロードします。 これを行うには、Mac で**キーチェーン アクセス**を起動します。 メイン メニューに移動し、下の図のように **[Certificate Assistant]** \(証明書アシスタント\) と **[Request a Certificate from a Certificate Authority...]** \(証明機関から証明書を要求\) を選択します。
-
-      [![](manual-provisioning-images/key-first.png "Request a Certificate Signing Request")](manual-provisioning-images/key-first.png#lightbox)
-
-4. 情報を入力し、オプションを選択して **ディスクに保存します**。
-
-    [![](manual-provisioning-images/key-second.png "Fill in your information")](manual-provisioning-images/key-second.png#lightbox)
-
-5. ここで簡単に見つけることができる場所に CSR を保存します。
-
-    [![](manual-provisioning-images/cert-third.png "Save the CSR")](manual-provisioning-images/cert-third.png#lightbox)
-
-6. プロビジョニング ポータルに戻り、証明書をポータルにアップロードして、送信します。
-
-    [![](manual-provisioning-images/cert-second.png "Upload the Certificate to the portal")](manual-provisioning-images/cert-second.png#lightbox)
-
-    管理者特権がない場合は、管理者またはチーム エージェントによって証明書が承認される必要があります。
-
-7. 証明書が承認されたら、プロビジョニング ポータルからダウンロードします。
-
-    [![](manual-provisioning-images/status-dev.png "Download the Certificate from the Provisioning Portal")](manual-provisioning-images/status-dev.png#lightbox)
-
-8. ダウンロードした証明書をダブルクリックして、キーチェーン アクセスを起動し、 **[My Certificates]** \(自分の証明書\) パネルを開いて、新しい証明書と関連付けられている秘密キーを表示します。
-
-    [![](manual-provisioning-images/keychain.png "The Certificate in Keychain Access")](manual-provisioning-images/keychain.png#lightbox)
+2. チームを選択し、 **[詳細の表示]** をクリックします。
+3. **[証明書の作成]** をクリックし、**Apple Development** または **iOS Development**を選択します。 適切なクセス許可がある場合は、数秒後に新しい署名 ID が表示されます。
 
 ### <a name="understanding-certificate-key-pairs"></a>証明書キー ペアについて
 
-# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
-
-開発者プロファイルには、証明書、その関連付けられたキー、およびアカウントに関連付けられているプロビジョニング プロファイルが含まれています。 実際には、開発者のプロファイルの 2 つのバージョンがあり、1 つは Developer Portal にあり、もう 1 つはローカルの Mac 上にあります。 2 つの違いは、含まれているキーの種類です。_ポータル上のプロファイルには、証明書に関連付けられているすべての公開キーが含まれますが、ローカルの Mac 上のコピーには、すべての秘密キーが含まれています_。 この証明書を有効にするには、キーのペアが一致しなければなりません。 秘密キーが失われた場合、すべての証明書とプロビジョニング プロファイルを再生成する必要があるので、ローカルの Mac に開発者プロファイルのバックアップを保管します。
-
-# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
-
-開発者プロファイルには、証明書、その関連付けられたキー、およびアカウントに関連付けられているプロビジョニング プロファイルが含まれています。 実際には、開発者のプロファイルの 2 つのバージョンがあり、1 つは Developer Portal にあり、もう 1 つは Mac 上にあります。 2 つの違いは、含まれているキーの種類です。_ポータル上のプロファイルには、証明書に関連付けられているすべての公開キーが含まれますが、Mac 上のコピーには、すべての秘密キーが含まれています_。 この証明書を有効にするには、キーのペアが一致しなければなりません。 秘密キーが失われた場合、すべての証明書とプロビジョニング プロファイルを再生成する必要があるので、Xamarin Build Host の Mac に開発者プロファイルのバックアップを保管します。
-
------
+開発者プロファイルには、証明書、その関連付けられたキー、およびアカウントに関連付けられているプロビジョニング プロファイルが含まれています。 実際には、開発者のプロファイルの 2 つのバージョンがあり、1 つは Developer Portal にあり、もう 1 つはローカルの Mac 上にあります。 2 つの違いは、含まれているキーの種類です。_ポータル上のプロファイルには、証明書に関連付けられているすべての公開キーが含まれますが、ローカルの Mac 上のコピーには、すべての秘密キーが含まれています_。 この証明書を有効にするには、キーのペアが一致しなければなりません。
 
 > [!WARNING]
 > 証明書および関連付けられたキーが失われると、既存の証明書を失効させる必要があり、さらに一時的な展開のために登録されたものを含む、すべての関連するデバイスを再プロビジョニングする必要があるので、大きな問題になる可能性があります。 開発証明書を正常に設定したら、バックアップ コピーをエクスポートし、安全な場所に保管します。 これを行う方法の詳細については、Apple のドキュメントの「[Maintaining Certificates](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingCertificates/MaintainingCertificates.html)」(証明書の保守) の「Exporting and Importing Certificates and Profiles」(証明書とプロファイルのエクスポートとインポート) セクションを参照してください。
 
 <a name="provisioning" />
 
-## <a name="provisioning-an-ios-device-for-development"></a>開発用の iOS デバイスのプロビジョニング
+## <a name="provision-an-ios-device-for-development"></a>開発用の iOS デバイスのプロビジョニング
 
 Apple と ID を確立し、開発証明書を持っているので、プロビジョニング プロファイルと必要なエンティティをセットアップし、Apple デバイスにアプリを配置できるようにする必要があります。 デバイスでは Xcode でサポートされている iOS のバージョンが実行されている必要があります。場合によっては、デバイス、Xcode、またはその両方を更新する必要があります。
 
@@ -98,124 +63,115 @@ Apple と ID を確立し、開発証明書を持っているので、プロビ�
 
 開発用のプロビジョニング プロファイルを作成するときには、アプリケーションを実行できるデバイスを指定する必要があります。 これを可能にするために、カレンダー年度ごとに最大 100 台のデバイスを Developer Portal に追加することができ、ここから、特定のプロビジョニング プロファイルに追加するデバイスを選択できます。 Developer Portal にデバイスを追加するのには、Mac 上で以下の手順に従います
 
-1. Xcode を起動します。
-2. 指定された USB ケーブルで Mac にプロビジョニングするデバイスを接続します。
-3. **Windows** メニューから **[デバイス]** を選択します。
+1. 指定された USB ケーブルで Mac にプロビジョニングするデバイスを接続します。
+2. Xcode を開き、 **[Window] > [Devices and Simulators]** に移動します。
+3. **[デバイス]** タブで、左側のメニューからデバイスを選択します。
+4. **[識別子]** 文字列を強調表示し、クリップボードにコピーします。
 
-   [![](manual-provisioning-images/add01.png "From the Windows menu select Devices")](manual-provisioning-images/add01.png#lightbox)
+   ![iOS 識別子文字列の場所が強調表示されている Xcode デバイスとシミュレーターウィンドウ。](manual-provisioning-images/xcode-devices.png)
 
-4. デバイス ウィザードの左側にある **デバイス** の一覧から必要な iOS デバイスを選択します。
-5. **[識別子]** 文字列を強調表示し、クリップボードにコピーします。
+5. Web ブラウザーで、[開発者ポータルの [デバイス] セクション](https://developer.apple.com/account/resources/devices/list) にアクセスし、[ **+** ] ボタンをクリックします。
 
-   [![](manual-provisioning-images/add02.png "Highlight the Identifier string")](manual-provisioning-images/add02.png#lightbox)
+   ![[追加] ボタンが強調表示されている Apple Developer サイトのデバイス ページのスクリーンショット。](manual-provisioning-images/developer-portal-devices.png)
 
-6. Safari で、[Apple Developer Center](https://developer.apple.com/membercenter/index.action) に移動してログインします。
-7. **[Certificates, Identifiers & Profiles]** のリンクをクリックします。
+6. 適切な **プラットフォーム** を設定し、新しいデバイスの名前を指定します。 前の手順でコピーした識別子を **[デバイス ID]** フィールドに貼り付けます。
 
-   [![](manual-provisioning-images/add03.png "Click the Certificates, Identifiers  Profiles link")](manual-provisioning-images/add03.png#lightbox)
+    ![フィールドが適切に入力されている新しいデバイス登録ページのスクリーンショットです。](manual-provisioning-images/new-device-info.png)
 
-8. **[Devices]** リンクをクリックします。
-
-   [![](manual-provisioning-images/add04.png "Click on the Devices link")](manual-provisioning-images/add04.png#lightbox)
-
-9. **+** ボタンをクリックします。
-
-   [![](manual-provisioning-images/add05.png "Click the + button")](manual-provisioning-images/add05.png#lightbox)
-
-10. 新しいデバイスの名前を指定し、上でコピーしたデバイスの **ID** を **[UUID]** フィールドに貼り付けます。
-
-    [![](manual-provisioning-images/add06.png "Provide a name for the new device and the device Identifier")](manual-provisioning-images/add06.png#lightbox)
-
-11. **[Continue]** をクリックします。
-12. 情報を確認して、 **[Register]** ボタンをクリックします。
-
-    [![](manual-provisioning-images/add07.png "Review the information")](manual-provisioning-images/add07.png#lightbox)
+7. **[続行]** をクリックします。
+8. 情報を確認して、 **[登録]** をクリックします。
 
 Xamarin.iOS アプリケーションのテストまたはデバッグに使用されるすべての iOS デバイスについて上記の手順を繰り返します。
 
-Developer ポータルにデバイスを追加した後に、プロビジョニング プロファイルを作成し、デバイスを追加する必要があります。
-
 <a name="provisioningprofile" />
 
-## <a name="creating-a-development-provisioning-profile"></a>開発プロビジョニング プロファイルの作成
+## <a name="create-a-development-provisioning-profile"></a>開発プロビジョニング プロファイルの作成
 
-開発証明書と同様に、プロビジョニング プロファイルは Apple の Members Center の [[Certificates, Identifiers & Profiles]](https://developer.apple.com/account/overview.action) セクションで手動で作成できます。
+Developer ポータルにデバイスを追加した後に、プロビジョニング プロファイルを作成し、デバイスを追加する必要があります。 
 
 プロビジョニング プロファイルを作成する前に、*アプリ ID* を作成する必要があります。 アプリ ID は、アプリケーションを一意に識別する逆引き DNS スタイル文字列です。 次の手順は、**ワイルドカード アプリ ID** を作成する方法を示しています。この ID は、ほとんどのアプリケーションのビルドとインストールに使用できます。 **明示的なアプリ ID** は、1 つのアプリケーション (一致するバンドル ID を持つアプリケーション) のインストールのみを許可し、一般的に Apple Pay や HealthKit などの特定の iOS の機能に使用されます 明示的なアプリ ID を作成する方法については、「[機能の使用](~/ios/deploy-test/provisioning/capabilities/index.md)」ガイドを参照してください。
 
-### <a name="app-id"></a>アプリ ID
+### <a name="new-wildcard-app-id"></a>新しいワイルドカード アプリ ID
 
-1. [Developer Portal](https://developer.apple.com/account/overview.action) で、Apple Developer Center の [*Certificate, Identifiers and Profiles*]\(証明書、ID、プロファイル\) セクションを参照します。 **[Identifiers]** \(ID\) の下で **[App IDs]** \(アプリ ID\) を選択します。
-2. **+** ボタンをクリックし、**名前**を指定します。
+1. [開発者ポータルの識別子セクション](https://developer.apple.com/account/resources/identifiers/list) にアクセスし、[ **+** ] ボタンをクリックします。
+2. **App ID** を選択し、[**続行]** をクリックします。
+3. **[説明]** を入力します。 次に **バンドル ID** を **ワイルドカード** に設定し、`com.[DomainName].*` の形式で ID を入力します。
 
-    [![](manual-provisioning-images/appid05a.png "Provide a Name")](manual-provisioning-images/appid05a.png#lightbox)
-3. アプリのプレフィックスが事前設定されている必要があります。 アプリのサフィックスとして **[Wildcard App ID]** を選択します。 次の形式でバンドル ID を入力します`com.[DomainName].*`:
+   ![必須フィールドが入力された新しいアプリ ID 登録ページのスクリーンショット。](manual-provisioning-images/new-app-id.png)
 
-   [![](manual-provisioning-images/appid05b.png "Enter a Bundle ID")](manual-provisioning-images/appid05b.png#lightbox)
+4. **[続行]** をクリックします。
+5. 情報を確認して、 **[登録]** をクリックします。
 
-4. **[Continue]\(続行\)** ボタンをクリックし、画面の指示に従って新しいアプリ ID を作成します。
-
-### <a name="provisioning-profile"></a>プロファイルのプロビジョニング
+### <a name="new-provisioning-profile"></a>新しいプロビジョニング ファイル
 
 アプリ ID が作成されたら、プロビジョニング プロファイルを生成することができます。 このプロビジョニング プロファイルには、このプロファイルが*どの*アプリ (ワイルドカード アプリ ID である場合は複数のアプリ) に関連付けられているか、*誰*がプロファイルを使用できるか (どのような開発者証明書が追加されるかによって決まります)、および*どの*デバイスがアプリをインストールできるかに関する情報が含まれています。
 
 開発のプロビジョニング プロファイルを手動で作成するには、次の操作を行います。
 
-1. Safari を使用して、[Apple Developers Member Center](https://developer.apple.com/membercenter/index.action) を参照し、[*Certificates, Identifiers & Profiles*]\(証明書、ID、プロファイル\) セクションで、[プロビジョニング プロファイル] を選択します。
-2. 右上隅にある **+** ボタンをクリックし、新しいプロファイルを作成します。
-3. **[Development]** \(開発\) セクションで、 **[iOS App Development]** \(iOS アプリの開発\) の横にあるラジオ ボタンを選択し、 **[Continue]** \(続行\) をクリックします。
+1. [開発者ポータルのプロファイル セクション](https://developer.apple.com/account/resources/profiles/list) にアクセスし、[ **+** ] ボタンをクリックします。
 
-    [![](manual-provisioning-images/provisioning-profile01.png "Select the type of profile to create")](manual-provisioning-images/provisioning-profile01.png#lightbox)
-4. ドロップダウン メニューから、使用するアプリ ID を選択します。
+2. **[開発]** で **[iOS アプリの開発]** を選択し、 **[続行]** をクリックします。
 
-    [![](manual-provisioning-images/provisioning-profile02.png "Select the App ID that to use")](manual-provisioning-images/provisioning-profile02.png#lightbox)
-5. プロビジョニング プロファイルに含める証明書を選択し、 **[Continue]** をクリックします。
+3. 使用するアプリ ID をドロップダウンメニューから選択し、 **[続行]** をクリックします。
 
-    [![](manual-provisioning-images/provisioning-profile03.png "Select the Certificates to include in the provisioning profile")](manual-provisioning-images/provisioning-profile03.png#lightbox)
-6. アプリがインストールされるすべてのデバイスを選択します。
+4. プロビジョニング プロファイルに含める証明書を選択し、 **[続行]** をクリックします。
 
-    [![](manual-provisioning-images/provisioning-profile04.png "Select all the devices that the app will be installed on")](manual-provisioning-images/provisioning-profile04.png#lightbox)
-7. プロビジョニング プロファイルのわかりやすい名前を指定し、 **[Continue]** をクリックしてプロファイルを作成します。
+5. アプリがインストールされるすべてのデバイスを選択し、 **[続行]** をクリックします。
 
-    [![](manual-provisioning-images/provisioning-profile05.png "Provide the Provisioning Profile with an identifiable a name")](manual-provisioning-images/provisioning-profile05.png#lightbox)
-8. **[Download]** をクリックして、プロビジョニングプロファイルを Mac にダウンロードします。
+6. **プロビジョニング プロファイル名** を入力し、 **[生成]** をクリックします。
 
-    [![](manual-provisioning-images/provisioning-profile06.png "Download the provisioning profile")](manual-provisioning-images/provisioning-profile06.png#lightbox)
-
-9. Xcode で、プロビジョニング プロファイルをインストールするファイルをダブルクリックします。 Xcode では、開いたときを除いて、プロファイルをインストールしたことを示す視覚的な手がかりが表示されないことがあります。 これを確認するには、 **[Xcode] > [ウィンドウ] > [Devices and Simulators]\(デバイスとシミュレーター\)** を参照します。 デバイスを右クリックし、 **[Show Provisioning Profiles]\(プロビジョニング プロファイルの表示\)** を選択します。
-
-      [![](manual-provisioning-images/provisioning-profile07-sml.png "Viewing the profile in Xcode")](manual-provisioning-images/provisioning-profile07.png#lightbox)
-
-プロビジョニング プロファイルが正常に作成された後に、すべての開発証明書を Visual Studio for Mac および Visual Studio で使用できるようにするために、Xcode の更新が必要な場合があります。
+7. 必要に応じて、次のページで **ダウンロード** をクリックして、プロビジョニング プロファイルを Mac にダウンロードできます。
 
 <a name="download" />
 
-## <a name="downloading-profiles-and-certificates-in-xcode"></a>Xcode でプロファイルと証明書をダウンロードする
+## <a name="download-provisioning-profiles-in-visual-studio"></a>プロビジョニング プロファイルを Visual Studio にダウンロードする
 
-Apple Developer Portal で作成された証明書とプロビジョニング プロファイルが Xcode に自動的に表示されない場合があります。 そのため、Visual Studio for Mac や Visual Studio でアクセスできるようにするために、それらのダウンロードが必要な場合があります。 Apple Developer Portal で作成された証明書を更新およびダウンロードするには、次の手順を実行します。
+Apple 開発者ポータルで新しいプロビジョニング プロファイルを作成したら、Visual Studio を使用してアプリのバンドル署名に使用できるようにダウンロードします。
 
-1. Visual Studio for Mac または Visual Studio を終了します。
-2. Xcode を起動します。
-3. **[Xcode メニュー] > [設定]** を選択します。
-4. **[アカウント]** タブをクリックします。
-5. チームを選択し、 **[Download Manual Profiles]\(手動プロファイルのダウンロード\)** ボタンをクリックします。
+1. Visual Studio の [Apple 開発者アカウント] ウィンドウにアクセスします。
+    1. MAC: **Visual Studio > 基本設定 > Apple 開発者アカウント**
+    2. Windows の場合:**ツール > オプション > Xamarin > Apple アカウント**
 
-    [![手動プロファイルのダウンロード](manual-provisioning-images/selectteam1.png)](manual-provisioning-images/selectteam1.png#lightbox)
+2. チームを選択し、 **[詳細の表示]** をクリックします
+3. 新しいプロファイルが [**プロビジョニング プロファイル]** 一覧に表示されていることを確認します。 場合によって Visual Studio を再起動して、リストを最新の情報に更新する必要があります。 
+4. **すべてのプロファイルのダウンロード** をクリックします。
 
-6. Xcode を終了します。
-7. Visual Studio for Mac または Visual Studio を起動します。
+これで、新しいプロビジョニング プロファイルが Visual Studio で使用できるようになり、準備が整いました。
 
-新しい証明書またはプロビジョニング プロファイルが、Visual Studio for Mac または Visual Studio で使用可能になります。
+## <a name="deploy-to-a-device"></a>デバイスに展開する
+
+この時点で、プロビジョニングが完了し、アプリをデバイスに展開する準備ができている必要があります。 この操作を行うには、次の手順に従います。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-> [!IMPORTANT]
-> 新しい証明書や変更された証明書、または Xcode によって更新されたプロファイルが表示される前に、Visual Studio for Mac の停止と再起動が必要になる場合があります。
+1. お使いのデバイスを Mac に接続します。
+2. **Info.plist** を開き、**バンドル識別子** が前の手順で作成されたアプリ ID と一致していることを確認します (アプリ ID がワイルドカードではない場合)。
+3. **[署名]** セクションで、**スキーム** として **[手動プロビジョニング]** を選択します。
+
+    ![手動プロビジョニングが選択された Visual Studio for Mac の Info.plist のスクリーンショット](manual-provisioning-images/vsm-info-plist.png)
+
+4. **[バンドル署名オプション]** をクリックします
+5. ビルド構成が **Debug | iPhone** に設定されていることを確認します。 **署名 ID** と **プロビジョニング プロファイル** ドロップダウンメニューの両方を開いて、適切な証明書とプロビジョニング プロファイルが表示されていることを確認します。 
+
+   ![アプリの利用可能なすべてのプロビジョニングプロファイルが一覧表示されている、[プロビジョニングプロファイル] ドロップダウンメニューが表示された iOS バンドル署名のプロパティページ。](manual-provisioning-images/vsm-bundle-signing.png)
+
+6. 使用する特定の ID とプロファイルを選択するか、 **[自動]** のままにします。 **[自動]** に設定されている場合、Visual Studio for Macは、**Info.plist** の **バンドル識別子** を基にして ID とプロファイルを選択します。 
+7. **[OK]** をクリックします。
+8. **[実行]** をクリックして、アプリをお使いのデバイスにデプロイします。
+
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-> [!IMPORTANT]
-> 新しい証明書や変更された証明書、または Xcode によって更新されたプロファイルが表示される前に、Visual Studio の停止と再起動が必要になる場合があります。
+1. Mac ビルド ホストにお使いのデバイスを接続します。
+2. **Info.plist** を開き、**バンドル識別子** が前の手順で作成されたアプリ ID と一致していることを確認します (アプリ ID がワイルドカードではない場合)。
+3. **ソリューション エクスプローラー** で [iOS プロジェクト名] を右クリックし、 **[プロパティ]** を選択して、 **[iOS ビルド]** タブに移動します。
+4. ビルド構成が **Debug | iPhone** に設定されていることを確認します。 **[バンドル署名]** で、**スキーム** として **[手動プロビジョニング]** を選択します。
+
+    ![手動プロビジョニングが選択された Visual Studio for Mac の Info.plist のスクリーンショット](manual-provisioning-images/vs-bundle-signing.png)
+
+5. **署名 ID** と **プロビジョニング プロファイル** ドロップダウンメニューの両方を開いて、適切な証明書とプロビジョニング プロファイルが表示されていることを確認します。
+6. 使用する特定の ID とプロファイルを選択するか、 **[自動]** のままにします。 **[自動]** に設定されている場合、Visual Studio は、**Info.plist** の **バンドル識別子** を基にして ID とプロファイルを選択します。 
+7. **[実行]** をクリックして、アプリをお使いのデバイスにデプロイします。
 
 -----
 
@@ -226,52 +182,6 @@ Apple では、Xamarin.iOS アプリケーション用にアクティブ化で�
 - 必要なアプリ サービスを使用してアプリ ID を作成します。
 - このアプリ ID が含まれる新しい[プロビジョニング プロファイル](#provisioningprofile)を作成します。
 - Xamarin.iOS プロジェクトでの権利を設定します。
-
-## <a name="deploying-to-a-device"></a>デバイスへの展開
-
-この時点で、プロビジョニングが完了し、アプリをデバイスに展開する準備ができている必要があります。 この操作を行うには、次の手順に従います。
-
-# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
-
-> [!IMPORTANT]
-> 開始する前に、**Info.plist** で**手動プロビジョニング**を選択します。
-
-1. デバイスを Mac に接続します。
-2. プロジェクトの **Info.plist** で、バンドル ID がアプリ ID と一致していることを確認します (アプリ ID がワイルドカードではない場合)。
-
-   ![識別子の入力](manual-provisioning-images/deploydevice01xs.png)
-
-3. プロジェクトを右クリックして、[プロジェクトのオプション] ダイアログを表示し、 **[ビルド] > [iOS バンドル署名]** を参照します。 **[署名 ID]** と **[プロビジョニング プロファイル]** の両方の横にあるドロップダウン リストで、Visual Studio for Mac が正しいプロファイルを認識できることを確認し、特定の ID とプロファイルを選択します。
-
-   ![特定の ID とプロファイルを選択します](manual-provisioning-images/deploydevice02xs.png)
-
-   これが **[自動]** に設定されている場合、Visual Studio for Mac は、手順 #2 で設定されたバンドル ID を基にして ID とプロファイルを選択します。
-
-4. ビルド構成がシミュレーターではなく **[iPhone]**  /  **[iPad]** に設定されていることを確認します。
-5. Visual Studio for Mac で **[実行]** をクリックして、デバイスで実行されているアプリを表示します。
-
-# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
-
-> [!IMPORTANT]
-> 開始する前に、 **[プロジェクト]、[プロビジョニング プロパティ]** の順に選択し、 **[手動プロビジョニング]** を選択します。
-
-1. Mac ビルド ホストにデバイスを接続します。
-2. プロジェクトの **Info.plist** で、バンドル ID がアプリ ID と一致していることを確認します。
-
-   ![識別子の入力](manual-provisioning-images/servicevs01.png)
-
-3. プロジェクトを右クリックして、[プロジェクトのオプション] ダイアログを表示し、 **[ビルド] > [iOS バンドル署名]** を参照します。 **[署名 ID]** と **[プロビジョニング プロファイル]** の両方の横にあるドロップダウン リストで、Visual Studio が新しいプロファイルを認識できることを確認し、特定の ID とプロファイルを選択します。
-
-    これが **[自動]** に設定されている場合、Visual Studio は、手順 #2 で設定されたバンドル ID を基にして ID とプロファイルを選択します。
-
-4. ビルド構成がシミュレーターではなく **[iPhone]** または **[iPad]** に設定されていることを確認します。
-5. Visual Studio で **[実行]** をクリックして、デバイスで実行されているアプリを表示します。
-
------
-
-## <a name="summary"></a>まとめ
-
-このガイドでは、Xamarin.iOS 用の開発環境のセットアップに必要な手順について説明しました。 開発者、チーム、アプリを実行できるデバイス、個々のアプリ ID に関する情報を使用してアプリケーションのコードに署名する方法について説明しました。
 
 ## <a name="related-links"></a>関連リンク
 

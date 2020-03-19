@@ -1,6 +1,6 @@
 ---
-title: Xamarin. iOS API の設計
-description: Xamarin の iOS Api を設計するために使用された基本原則と、それらが目的の C にどのように関連しているかを説明します。
+title: Xamarin.iOS API の設計
+description: Xamarin.iOS API の設計に使用された指導原理とそれの Objective-C との関連性。
 ms.prod: xamarin
 ms.assetid: 322D2724-AF27-6FFE-BD21-AA1CFE8C0545
 ms.technology: xamarin-ios
@@ -8,120 +8,120 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
 ms.openlocfilehash: a2435b30b7d5b468fca6c55d295c87b9a0d20652
-ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
-ms.translationtype: MT
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/07/2020
-ms.locfileid: "78915186"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79303727"
 ---
-# <a name="xamarinios-api-design"></a>Xamarin. iOS API の設計
+# <a name="xamarinios-api-design"></a>Xamarin.iOS API の設計
 
-[Xamarin.iOS](~/ios/index.yml)には、Mono の一部であるコアの基本クラス ライブラリだけでなく、開発者が Mono を利用してネイティブの iOS アプリケーションの作成を可能にするために、さまざまな iOS Api へのバインドが付属しています。
+Mono に含まれる中心的基底クラス ライブラリに加え、開発者が Mono でネイティブ iOS アプリケーションを作成するためのさまざまな iOS API 向けバインディングが [Xamarin.iOS](~/ios/index.yml) に付属します。
 
-Xamarin.iOS のコアには、C# の世界と OBJECTIVE-C の世界をブリッジする相互運用機能および、CoreGraphics や [OpenGL ES](#opengles) などの iOS C ベースの API のバインドがあります。
+Xamarin.iOS の中心となるのは、C# の領域と Objective-C の領域の橋渡しとなる相互運用エンジンと、CoreGraphics や [OpenGL ES](#opengles) のような、iOS C ベースの API 向けのバインディングです。
 
-Objective-C のコードと通信する低レベルのランタイムは、[MonoTouch.ObjCRuntime](#objcruntime) にあります。 この上には、 [Foundation](#foundation)、CoreFoundation、および[UiKit](#uikit) のバインドが用意されています。
+Objective-C コードと通信するための下位ランタイムが [MonoTouch.ObjCRuntime](#objcruntime) です。 この上にさらに、[Foundation](#foundation)、CoreFoundation、[UIKit](#uikit) 向けのバインディングが与えられます。
 
 ## <a name="design-principles"></a>設計原則
 
-次に、Xamarin の iOS のバインドに関する設計原則をいくつか示します。これらは、macOS での Objective-C の Mono バインドである Xamarin.Mac にも適用されます。
+Xamarin.iOS バインディングには設計原則がいくつかあります (macOS の Objective-C 用 Mono バインディングである Xamarin.Mac にも適用されます)。
 
-- フレームワークの[デザインガイドライン](https://docs.microsoft.com/dotnet/standard/design-guidelines)に従う
-- 開発者が Objective-C クラスをサブクラス化できるようにします。
+- [フレームワーク デザインのガイドライン](https://docs.microsoft.com/dotnet/standard/design-guidelines)に従う
+- Objective-C クラスのサブクラス化を開発者に許可する
 
-  - 既存のクラスからの派生
-  - チェーンする基本コンストラクターの呼び出し
-  - メソッドのオーバーライドは、C# のオーバーライドシステムを使用して行う必要があります。
-  - サブクラス化は C# 標準のコンストラクトで動作する
+  - 既存クラスから派生させる
+  - 連鎖する基本コンストラクターを呼び出す
+  - オーバーライド メソッドは C# のオーバーライド システムで行う
+  - サブクラス化は C# 標準コンストラクトで動作しなければならない
 
-- 開発者を Objective-C セレクターに公開しない
-- 任意の Objective-C ライブラリを呼び出すメカニズムを提供する
-- 一般的な Objective-C のタスクを簡単に、困難な Objective-C タスクを可能にする
-- Objective-C のプロパティを C# のプロパティとして公開する
-- 厳密に型指定された API を公開します。
+- Objective-C セレクターに触れさせない
+- 任意の Objective-C ライブラリを呼び出すメカニズムを与える
+- 一般的な Objective-C タスクを簡単にし、難しい Objective-C タスクを可能にする
+- Objective-C プロパティを C# プロパティとして公開する
+- 厳密に型指定された API を公開する
 
-  - タイプセーフの向上
-  - 実行時エラーの最小化
+  - タイプ セーフ (型の安全性) の程度を大きくする
+  - ランタイム エラーを最小限に抑える
   - 戻り値の型で IDE IntelliSense を取得する
-  - IDE ポップアップドキュメントを許可します
+  - IDE ポップアップ ドキュメントの準備をする
 
-- API の IDE で探索をお勧めします。
+- API の IDE 内でいろいろ試すことを奨励する
 
-  - たとえば、次のように弱く型指定された配列を公開するのではなく、
+  - たとえば、次のような緩やかに型指定された配列を公開する代わりに
 
     ```objc
     NSArray *getViews
     ```
 
-    次のように、厳密な型を公開します。
+    このように厳密な型を公開します
 
     ```csharp
     NSView [] Views { get; set; }
     ```
 
-    これにより、API の参照中にオートコンプリートを実行できるようになり、戻り値ですべての `System.Array` 操作を使用できるようになり、戻り値が LINQ に参加できるように Visual Studio for Mac ます。
+    これで Visual Studio for Mac に、API を閲覧中、オートコンプリート機能が与えられます。また、戻り値であらゆる `System.Array` 操作が可能になり、LINQ に加わることが戻り値に許可されます。
 
 - ネイティブ C# 型:
 
-  - [`NSString` が `string` になります](~/ios/internals/api-design/nsstring.md)
-  - `int` を有効にし、`[Flags]` 属性を持つ列挙C#型とC#列挙型に列挙されている必要があるパラメーターを `uint` します。
-  - 型に依存しない `NSArray` オブジェクトではなく、厳密に型指定された配列として配列を公開します。
-  - イベントと通知の場合は、次のいずれかの選択肢をユーザーに提供します。
+  - [`NSString` は `string`](~/ios/internals/api-design/nsstring.md) になります
+  - 列挙型にすれば良かった `int` パラメーターと `uint` パラメーターを C# 列挙型と `[Flags]` 属性を含む C# 列挙型に変えます
+  - 型に依存しない `NSArray` の代わりに、厳密に型指定された配列として配列を公開します。
+  - イベントと通知については、ユーザーに次から選択してもらいます。
 
-    - 既定では、厳密に型指定されたバージョン
-    - 高度なユースケースの弱い型指定のバージョン
+    - 既定で、厳密に型指定されたバージョン
+    - 上級ユース ケースのための緩やかに型指定されたバージョン
 
-- Objective-C のデリゲートパターンをサポートします。
+- Objective-C デリゲート パターンのサポート:
 
-  - C#イベントシステム
-  - デリゲートC# (ラムダ、匿名メソッド、および`System.Delegate`) をブロックとして Objectie-C の API に公開する
+  - C# イベント システム
+  - C# デリゲート (ラムダ、匿名メソッド、`System.Delegate`) を Objective-C API にブロックとして公開します
 
 ### <a name="assemblies"></a>アセンブリ
 
-Xamarin.iOS には、 *Xamarin.iOS Profile* を構成する多数のアセンブリが含まれています。 [[アセンブリ](~/cross-platform/internals/available-assemblies.md)] ページに詳細情報があります。
+Xamarin.iOS には、*Xamarin.iOS Profile* を構成するアセンブリがたくさん含まれています。 詳細については、[アセンブリ](~/cross-platform/internals/available-assemblies.md)に関するページを参照してください。
 
 ### <a name="major-namespaces"></a>主要な名前空間
 
 #### <a name="objcruntime"></a>ObjCRuntime
 
-[Objcruntime](xref:ObjCRuntime) 名前空間を使用すると、開発者は C# と Objective-C との間で世界を橋渡しできます。
-これは、Cocoa # と Gtk # のエクスペリエンスに基づいて、iOS 専用に設計された新しいバインドです。
+[ObjCRuntime](xref:ObjCRuntime) 名前空間で開発者は C# の領域と Objective-C の領域をつなぐことができます。
+これは、Cocoa# と Gtk# での経験に基づき、iOS のために特別に設計された新しいバインディングです。
 
 #### <a name="foundation"></a>Foundation
 
-[Foundation](xref:Foundation)名前空間は、iOS の一部である Objective-C Foundation フレームワークと相互運用できるように設計された基本データ型を提供します。これは、Objective-C でのオブジェクト指向プログラミングの基本となります。
+[Foundation](xref:Foundation) 名前空間からは、iOS に含まれる Objective-C Foundation フレームワークと相互運用するために設計された基本的なデータ型が与えられます。また、これは Objective-C のオブジェクト指向プログラミングの基本です。
 
-Xamarin.iOS は、C# で Objective-C のクラスの階層をミラーリングしています。 たとえば、NSObject の基本クラスであるC# [NSObject](xref:Foundation.NSObject)を使用することもできます。
+Xamarin.iOS によって C# で Objective-C のクラス階層が忠実に再現されます。 たとえば、Objective-C 基底クラス NSObject は [Foundation.NSObject](xref:Foundation.NSObject) 経由で C# から利用できます。
 
-この名前空間には、基になる Objective-C からの型のバインドが用意されていますが、いくつかのケースでは、基になる型を .NET 型にマップしています。 次に例を示します。
+この名前空間からは基礎となる Objective-C Foundation 型のバインディングが与えられますが、基礎となる型を .NET 型にマッピングしたケースもありました。 次に例を示します。
 
-- このランタイムでは、nsstring と[nsstring](https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html)を処理する代わりにC#、これらを[文字列型](xref:System.String)および厳密に型指定された[配列](xref:System.Array)として API 全体に公開しています。
+- NSString と [NSArray](https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html) を扱う代わりに、このランタイムでは、API 全体でこの 2 つがそれぞれ C# [文字列](xref:System.String)と厳密に型指定された[配列](xref:System.Array)として公開されます。
 
-- ここでは、開発者がサードパーティの Objective-C API、他の iOS API、Xamarin.iOS によって現在バインドされていない API をバインドできるように、さまざまなヘルパー API が公開されています。
+- 開発者がサードパーティの Objective-C API、その他の iOS API、または Xamarin.iOS で現在バインディングされていない API をバインディングできるよう、さまざまなヘルパー API がここで公開されます。
 
-バインディング API の詳細については、「[Xamarin.iOS のバインドジェネレーター](~/cross-platform/macios/binding/binding-types-reference.md)」を参照してください。
+API のバインディングに関する詳細については、[Xamarin.iOS のバインド生成機能](~/cross-platform/macios/binding/binding-types-reference.md)に関するセクションを参照してください。
 
 ##### <a name="nsobject"></a>NSObject
 
-[NSObject](xref:Foundation.NSObject)型は、すべての目的 C バインドの基礎となります。 Xamarin iOS の種類は、iOS CocoaTouch Api からの型の2つのクラスをミラー化します。 C 型 (通常は CoreFoundation 型と呼ばれます) と目的 C 型 (これらはすべて NSObject クラスから派生) です。
+[NSObject](xref:Foundation.NSObject) 型は、すべての Objective-C バインドの基礎となります。 Xamarin.iOS 型は、iOS CocoaTouch API の 2 つの型クラス、C 型 (通常、CoreFoundation 型と呼ばれる) と Objective-C 型 (すべて NSObject クラスから派生) を忠実に再現するものです。
 
-アンマネージ型をミラー化する型ごとに、 [Handle](xref:Foundation.NSObject.Handle)プロパティを使用してネイティブオブジェクトを取得できます。
+アンマネージド型を忠実に再現する型については、[Handle](xref:Foundation.NSObject.Handle) プロパティからネイティブ オブジェクトを与えることができます。
 
-Mono はすべてのオブジェクトに対してガベージコレクションを提供しますが、`Foundation.NSObject` は、 [IDisposable](xref:System.IDisposable)インターフェイスを実装します。 これは、ガベージコレクターが開始されるのを待たずに、特定の NSObject のリソースを明示的に解放できることを意味します。 これは、大量のデータブロックへのポインターを保持している可能性のある UIImages など、ヘビー NSObjects を使用している場合に重要です。
+Mono では、あらゆるオブジェクトがガベージ コレクションされますが、`Foundation.NSObject` では、[System.IDisposable](xref:System.IDisposable) インターフェイスが実装されます。 つまり、あらゆる NSObject のリソースを直接解放できます。ガベージ コレクターが動きだすのを待つ必要がありません。 これは、重い NSObjects を、たとえば、大きなデータ ブロックをポイントしている UIImage を使用しているときに重要です。
 
-型で決定的な終了処理を実行する必要がある場合は、 [NSObject (bool) メソッド](xref:Foundation.NSObject.Dispose(System.Boolean))をオーバーライドして dispose のパラメーターを "bool disposing" にします。 true に設定すると、ユーザーがオブジェクトに対して明示的に dispose () を呼び出したため、dispose メソッドが呼び出されることを意味します。 値が false の場合、これは Dispose (bool disposing) メソッドがファイナライザースレッドでファイナライザーから呼び出されることを意味します。
+お使いの型で最終的なしあげを行う必要がある場合、[NSObject.Dispose(bool) メソッド](xref:Foundation.NSObject.Dispose(System.Boolean))をオーバーライドします。Dispose のパラメーターは "bool disposing" です。true に設定されている場合、Dispose メソッドが呼び出されています。ユーザーがオブジェクトで Dispose () を明示的に呼び出したからです。 値が false の場合、ファイナライザー スレッドのファイナライザーから Dispose(bool disposing) が呼び出されています。
 
 ##### <a name="categories"></a>カテゴリ
 
-Xamarin. iOS 8.10 以降では、C# から Objective-C のカテゴリを作成できます。
+Xamarin.iOS 8.10 以降では、C# から Objective-C カテゴリを作成できます。
 
-これを行うには、属性の引数として拡張する型を指定して、`Category` 属性を使用します。 次の例では、インスタンスを拡張 NSString です。
+これは `Category` 属性を使用して行います。属性の引数として適用範囲を拡張する型を指定します。 たとえば、次の例では、NSString の適用範囲が拡張されます。
 
 ```csharp
 [Category (typeof (NSString))]
 ```
 
-各カテゴリメソッドは、 `Export`属性を使用して Objective-C にメソッドをエクスポートするための通常のメカニズムを使用します。
+各カテゴリ メソッドで、`Export` 属性で Objective-C にメソッドをエクスポートする通常のメカニズムが使用されています。
 
 ```csharp
 [Export ("today")]
@@ -131,7 +131,7 @@ public static string Today ()
 }
 ```
 
-マネージ拡張メソッドはすべて静的である必要がありますが、C# の拡張メソッドの標準構文を使用して、Objective-C インスタンスメソッドを作成することができます。
+マネージド拡張メソッドはすべて静的にする必要がありますが、C# の拡張メソッドの標準構文を使用し、Objective-C インスタンス メソッドを作成できます。
 
 ```csharp
 [Export ("toUpper")]
@@ -143,7 +143,7 @@ public static string ToUpper (this NSString self)
 
 また、拡張メソッドの最初の引数は、メソッドが呼び出されたインスタンスになります。
 
-完全な例:
+コード例全体:
 
 ```csharp
 [Category (typeof (NSString))]
@@ -157,7 +157,7 @@ public static class MyStringCategory
 }
 ```
 
-この例では、native toUpper instance メソッドを NSString クラスに追加します。これは、Objective-C から呼び出すことができます。
+この例では、Objective-C から呼び出せる NSString クラスにネイティブ toUpper インスタンス メソッドが追加されます。
 
 ```csharp
 [Category (typeof (UIViewController))]
@@ -171,7 +171,7 @@ public static class MyViewControllerCategory
 }
 ```
 
-これが役立つ1つのシナリオは、コードベースのクラスのセット全体にメソッドを追加することです。たとえば、すべての `UIViewController` インスタンスがローテーションできることをレポートします。
+これが役に立つシナリオの 1 つは、コードベースのクラス セット全体にメソッドを追加することです。たとえば、これによりすべての `UIViewController` インスタンスでそれがローテーションできることが報告されます。
 
 ```csharp
 [Category (typeof (UINavigationController))]
@@ -186,69 +186,69 @@ class Rotation_IOS6 {
 
 ##### <a name="preserveattribute"></a>PreserveAttribute
 
-PreserveAttribute は、アプリケーションのサイズを小さくするために、アプリケーションの処理中に型または型のメンバーを保持するために、mtouch を指定するために使用されるカスタム属性です。
+PreserveAttribute は、Xamarin.iOS 展開ツールである mtouch に、アプリケーションがそのサイズを減らすように処理されているとき、型または型のメンバーを保存するように指示する目的で使用されるカスタム属性です。
 
-アプリケーションで静的にリンクされないメンバーはすべて、削除の対象となります。 したがって、この属性は、静的に参照されていないが、アプリケーションで依然として必要なメンバーをマークするために使用されます。
+アプリケーションで静的にリンクされないメンバーはすべて、削除の対象となります。 そのため、この属性は、静的に参照されないが、アプリケーションで必要となるメンバーに印を付ける目的で使用されます。
 
 たとえば、型を動的にインスタンス化する場合、型の既定のコンストラクターを保存することもできます。 XML シリアル化を利用する場合、型のプロパティを保持することもできます。
 
-この属性は、ある型のすべてのメンバーに適用するか、型自体に適用できます。 型全体を保持する場合は、型の [Preserve (AllMembers = true)] という構文を使用できます。
+この属性は、ある型のすべてのメンバーに適用するか、型自体に適用できます。 型全体を保持する場合、その型で構文 [Preserve (AllMembers = true)] を利用できます。
 
 #### <a name="uikit"></a>UIKit
 
-[Uikit](xref:UIKit)名前空間には、クラスのC#形式で CocoaTouch を構成するすべての UI コンポーネントに対する一対一のマッピングが含まれています。 API は、 C#言語で使用されている規則に従って変更されています。
+[UIKit](xref:UIKit) 名前空間には、C# クラス形式で CocoaTouch を構成するあらゆる UI コンポーネントに対する一対一のマッピングが含まれます。 API は、C# 言語で使用されている規則に従うように変更されています。
 
-C#デリゲートは、一般的な操作のために用意されています。 詳細については、「[デリゲート](#delegates)」セクションを参照してください。
+C# デリゲートが一般的な操作のために用意されています。 詳細については、「[デリゲート](#delegates)」セクションを参照してください。
 
 #### <a name="opengles"></a>OpenGLES
 
-OpenGLES については、[変更](xref:OpenTK)されたバージョンの[OpenTK](https://opentk.net/) API を配布します。これは、coregraphics データ型と構造体を使用するように変更された OpenGL へのオブジェクト指向のバインドであり、iOS で使用可能な機能のみを公開します。
+OpenGLES については、[OpenTK](https://opentk.net/) API の[改良版](xref:OpenTK)を配布しています。この API は、CoreGraphics のデータ型と構造体を使用するように変更されている OpenGL にオブジェクト指向でバインディングするものであり、また、iOS で利用できる機能のみ公開します。
 
-OpenGLES 1.1 機能は、 [ES11.GL 型](xref:OpenTK.Graphics.ES11.GL)を介して使用できます。
+OpenGLES 1.1 機能は [ES11.GL 型](xref:OpenTK.Graphics.ES11.GL)から利用できます。
 
-OpenGLES 2.0 機能は、 [ES20.GL 型](xref:OpenTK.Graphics.ES20.GL)を介して使用できます。
+OpenGLES 2.0 機能は [ES20.GL 型](xref:OpenTK.Graphics.ES20.GL)から利用できます。
 
-OpenGLES 3.0 機能は、 [ES30.GL 型](xref:OpenTK.Graphics.ES30.GL)を介して使用できます。
+OpenGLES 3.0 機能は [ES30.GL 型](xref:OpenTK.Graphics.ES30.GL)から利用できます。
 
-### <a name="binding-design"></a>バインディングのデザイン
+### <a name="binding-design"></a>バインディング デザイン
 
-Xamarin.iOS は、基礎となる Objective-C プラットフォームへのバインディングにすぎません。 C# と Objective-C を上手く混在させるために、.net 型システムとディスパッチシステムを拡張しています。
+Xamarin.iOS では、基礎となる Objective-C プラットフォームにバインディングするだけではありません。 .NET 型システムとディスパッチ システムを拡張するものであり、C# と Objective-C を一層効果的に混合します。
 
-P/Invoke が、Windows および Linux でネイティブライブラリを呼び出すための便利なツールであるように、また、Windows の COM 相互運用機能に対して IJW サポートを使用できるように、Xamarin はランタイムを拡張して、C# オブジェクトの Objective-C オブジェクトへのバインドオブジェクトをサポートします。
+Windows と Linux でネイティブ ライブラリを呼び出すツールとして P/Invoke が便利なように、あるいは Windows での COM 相互運用に IJW サポートを使用できるように、Xamarin.iOS によって、C# オブジェクトと Objective-C オブジェクトをバインドできるようにランタイムが拡張されます。
 
-次のいくつかのセクションでは、Xamarin アプリケーションを作成しているユーザーには必要ありませんが、複雑なアプリケーションを作成するときに、開発者がどのような作業を行っているかを理解するのに役立ちます。
+後続のセクションで説明する内容は、Xamarin.iOS アプリケーションを作成するユーザーにとって必要ではありませんが、開発者がしくみを理解したり、もっと複雑なアプリケーションを作成したりするときに役立ちます。
 
-#### <a name="types"></a>種類
+#### <a name="types"></a>型
 
-意味があるところでC# 、型は低レベルの Foundation 型ではなく、 C#宇宙に公開されます。  これは[`NSString` は `string` となります](~/ios/internals/api-design/nsstring.md)し、nsstring C#を公開するのではなく、厳密に型指定された配列を使用することを意味します。
+道理にかなうのなら、下位の Foundation 型ではなく C# 型が C# の領域に公開されます。  つまり、[API では NSString ではなく C# "文字列" 型が使用され](~/ios/internals/api-design/nsstring.md)、NSArray を公開せず、厳密に型指定された C# 配列が使用されます。
 
-一般に、Xamarin と Xamarin の設計では、基になる `NSArray` オブジェクトは公開されません。 代わりに、ランタイムは `NSArray`s を、一部の `NSObject` クラスの厳密に型指定された配列に自動的に変換します。 そのため、Xamarin では、NSArray を返す GetViews のように弱く型指定されたメソッドを公開していません。
+一般に、Xamarin.iOS と Xamarin.Mac の設計では、基礎になる `NSArray` オブジェクトは公開されません。 代わりに、ランタイムによって `NSObject` クラスの厳密に型指定された配列に `NSArray` が自動的に変換されます。 そのため、Xamarin.iOS では、NSArray を返す目的で GetViews のような緩やかに型指定されたメソッドを公開することはありません。
 
 ```csharp
 NSArray GetViews ();
 ```
 
-代わりに、次のように、バインディングは厳密に型指定された戻り値を公開します。
+代わりに、次のように、バインディングによって、厳密に型指定された戻り値が公開されます。
 
 ```csharp
 UIView [] GetViews ();
 ```
 
-`NSArray`で公開されているメソッドの中には、`NSArray` を直接使用する必要があるものの、API バインドでは使用しないことをお勧めします。
+`NSArray` を直接使用するような不健全な状況では `NSArray` でいくつかのメソッドが公開されることがありますが、API バインディングではその使用は推奨されていません。
 
-さらに、OpenTK を使用する既存の OpenGL コードを開発者が保持するのに役立つように、CoreGraphics API から `CGRect`、`CGPoint`、および `CGSize` を公開するのではなく、 **Classic API**の `System.Drawing` 実装に置き換えました。 新しい64ビット**Unified API**を使用する場合は、COREGRAPHICS API を使用する必要があります。
+また、**Classic API** では、CoreGraphics API から `CGRect`、`CGPoint`、`CGSize` を公開せず、`System.Drawing` 実装の `RectangleF`、`PointF`、`SizeF` に取って代えました。OpenTK が使用される既存の OpenGL コードを開発者が残せるからです。 新しい 64 ビット **Unified API** を使用する場合、CoreGraphics API を使用してください。
 
 #### <a name="inheritance"></a>継承
 
-Xamarin. iOS API の設計により、開発者は派生クラスで "override" キーワードを使用してC# 型を拡張することも、 "base" C# キーワードを使用して基本実装にチェーンするのと同じ方法でネイティブの Objective-C の型を拡張することもできます。
+Xamarin.iOS API デザインでは、派生クラスにキーワード "override" を使用し、また、C# キーワード "base" を使用して基礎実装に連結することで、C# 型を拡張する場合と同様に、開発者はネイティブ Objective-C 型を拡張できます。
 
-このように設計することで、開発プロセスの一部としての Objective-C のセレクターの処理を避けることができます。これは、Objective-C システム全体が既に Xamarin.iOS ライブラリ内にラップされているためです。
+このデザインでは、開発者は開発プロセスの一環として Objective-C セレクターを扱わずに済みます。Objective-C システム全体が既に Xamarin.iOS ライブラリ内でラップされているためです。
 
 #### <a name="types-and-interface-builder"></a>型と Interface Builder
 
-Interface Builder によって作成された型のインスタンスである .NET クラスを作成する場合は、1つの `IntPtr` パラメーターを受け取るコンストラクターを指定する必要があります。
-これは、マネージオブジェクトインスタンスをアンマネージオブジェクトにバインドするために必要です。
-このコードは、次のような1つの行で構成されます。
+作成した .NET クラスが Interface Builder で作成された型のインスタンスになるとき、`IntPtr` パラメーターを 1 つ受け取るコンストラクターを指定する必要があります。
+これは、マネージド オブジェクト インスタンスをアンマネージド オブジェクトにバインドするために必要です。
+コードは次のような 1 行で構成されます。
 
 ```csharp
 public partial class void MyView : UIView {
@@ -259,37 +259,37 @@ public partial class void MyView : UIView {
 
 #### <a name="delegates"></a>デリゲート
 
-Objective-C と C# の "デリゲート" の意味は、各言語によって異なります。
+Objective-C と C# には、それぞれの言語のワード デリゲートで異なる意味があります。
 
-Objective-C の世界では、CocoaTouch についてのオンラインのドキュメントで、デリゲートは通常、一連のメソッドに応答するクラスのインスタンスになります。 これは C# のインターフェイスによく似ていますが、メソッドが必ずしも必須ではないという点が異なります。
+Objective-C の世界と、CocoaTouch に関してネットで見つかる文書では、デリゲートは通常、一連のメソッドに応答するクラスのインスタンスです。 これは C# インターフェイスに非常に似ています。メソッドが常に必須になるとは限らないところが異なります。
 
-これらのデリゲートは、UIKit およびその他の CocoaTouch API で重要な役割を果たします。 これらは、さまざまなタスクを実行するために使用されます。
+このようなデリゲートは、UIKit とその他の CocoaTouch API で重要な役割を果たします。 次のようなさまざまな作業をこなすために使用されます。
 
-- コードに通知を提供します (C# または Gtk+ でのイベント配信に似ています)。
-- データ視覚化コントロールのモデルを実装します。
-- コントロールの動作を制御します。
+- 通知をコードに与える (C# や Gtk+ のイベント配信に似ている)。
+- データ可視化制御のモデルを実装する。
+- 制御動作を動かす。
 
-プログラミングパターンは、コントロールの動作を変更するための派生クラスの作成を最小限にするように設計されています。 このソリューションは、長年にわたって他の GUI ツールキットによって実行されていたものと似ています。Gtk のシグナル、Qt スロット、Winforms イベント、WPF/Silverlight イベントなど。 数百のインターフェイス (アクションごとに1つ) を使用したり、不要なメソッドを実装したりする必要がないようにするには、省略可能なメソッドの定義をサポートします。 これは、すべてC#のメソッドを実装する必要があるインターフェイスとは異なります。
+プログラミング パターンは、制御動作を変更する派生クラスの作成を最小限に抑えるように設計されました。 このソリューションは、Gtk のシグナル、Qt スロット、Winforms イベント、WPF/Silverlight など、他の GUI ツールキットが長年にわたり行ってきたことに、性質面で似ています。 何百ものインターフェイスを用意する (アクションごとに 1 つのインターフェイス) ことや不要なメソッドを過度に実装することを避けるために、Objective-C では、オプションのメソッド定義がサポートされています。 これは、すべてのメソッドを実装する必要がある C# インターフェイスとは異なります。
 
-Objective-C クラスでは、このプログラミングパターンを使用するクラスは、通常`delegate`と呼ばれるプロパティを公開しています。このプロパティは、インターフェイスの必須の部分および 0 個以上のオプションの部分を実装するために必要です。
+Objective-C クラスでは、このプログラミング パターンが使用されるクラスでプロパティが公開されることがわかります。そのプロパティは通常、`delegate` という名称ですが、インターフェイスの必須および任意部分を実装するために必要です。
 
-Xamarin では、これらのデリゲートにバインドする相互排他的な3つのメカニズムが用意されています。
+Xamarin.iOS からは、これらのデリゲートにバインドする互いに排他的なメカニズムが 3 つ与えられます。
 
-1. [Via イベント](#via-events)。
-2. [`Delegate` プロパティを使用した厳密な型指定](#strongly-typed-via-a-delegate-property)
-3. [`WeakDelegate` プロパティを使用して緩やかに型指定された](#loosely-typed-via-the-weakdelegate-property)
+1. [イベント経由](#via-events)
+2. [`Delegate` プロパティ経由で厳密に型指定される](#strongly-typed-via-a-delegate-property)
+3. [`WeakDelegate` プロパティ経由で緩やかに型指定される](#loosely-typed-via-the-weakdelegate-property)
 
-たとえば、UIWebView クラスを考えてみます。 これにより、delegate プロパティに割り当てられている UIWebViewDelegate インスタンスにディスパッチされます。
+たとえば、UIWebView クラスについて考えてみます。 これは delegate プロパティに割り当てられる UIWebViewDelegate インスタンスにディスパッチされます。
 
-##### <a name="via-events"></a>Via イベント
+##### <a name="via-events"></a>イベント経由
 
-多くの種類の場合、Xamarin では、`UIWebViewDelegate` の呼び出しをイベントにC#転送する適切なデリゲートが自動的に作成されます。 `UIWebView`の場合:
+さまざまな型に対して、Xamarin.iOS によって適切なデリゲートが自動的に作成され、そのデリゲートによって `UIWebViewDelegate` 呼び出しが C# イベントに転送されます。 `UIWebView`の場合:
 
-- WebViewDidStartLoad メソッドは、 [Uiwebview. LoadStarted](xref:UIKit.UIWebView.LoadStarted)イベントにマップされます。
-- WebViewDidFinishLoad メソッドは、 [Uiwebview. LoadFinished](xref:UIKit.UIWebView.LoadFinished)イベントにマップされます。
-- WebView: didFailLoadWithError メソッドは、 [Uiwebview. LoadError](xref:UIKit.UIWebView.LoadError)イベントにマップされます。
+- webViewDidStartLoad メソッドが [UIWebView.LoadStarted](xref:UIKit.UIWebView.LoadStarted) イベントにマッピングされます。
+- webViewDidFinishLoad メソッドが [UIWebView.LoadFinished](xref:UIKit.UIWebView.LoadFinished) イベントにマッピングされます。
+- webView:didFailLoadWithError メソッドが [UIWebView.LoadError](xref:UIKit.UIWebView.LoadError) イベントにマッピングされます。
 
-たとえば、次の単純なプログラムは、web ビューを読み込むときの開始時刻と終了時刻を記録します。
+たとえば、この単純なプログラムでは、Web ビューの読み込み時、開始時刻と終了時刻が記録されます。
 
 ```csharp
 DateTime startTime, endTime;
@@ -298,13 +298,13 @@ web.LoadStarted += (o, e) => startTime = DateTime.Now;
 web.LoadFinished += (o, e) => endTime = DateTime.Now;
 ```
 
-##### <a name="via-properties"></a>Via プロパティ
+##### <a name="via-properties"></a>プロパティ経由
 
-イベントは、イベントに複数のサブスクライバーが存在する可能性がある場合に便利です。 また、イベントは、コードからの戻り値がない場合にのみ制限されます。
+イベントは、イベントのサブスクライバーが複数存在するような場合に便利です。 また、イベントは、コードからの戻り値がない場合に限られます。
 
-コードが値を返すことが予想される場合は、プロパティに対して代わりにを選択します。 これは、オブジェクト内の特定の時刻に設定できるメソッドが1つだけであることを意味します。
+値を返すことがコードに求められる場合、代わりにプロパティを選択しました。 つまり、オブジェクト内の特定の時点にメソッドを 1 つだけ設定できます。
 
-たとえば、このメカニズムを使用して、`UITextField`のハンドラーの画面でキーボードを閉じることができます。
+たとえば、このメカニズムを利用し、`UITextField` のハンドラーでキーボードを画面から消すことができます。
 
 ```csharp
 void SetupTextField (UITextField tf)
@@ -316,13 +316,13 @@ void SetupTextField (UITextField tf)
 }
 ```
 
-この場合の `UITextField`の `ShouldReturn` プロパティは、ブール値を返すデリゲートを引数として受け取り、返されるボタンが押されたときにテキストフィールドが何かを実行する必要があるかどうかを判断します。 このメソッドでは、呼び出し元に*true*を返しますが、画面からもキーボードを削除します (これは、textfield が `ResignFirstResponder`を呼び出すと発生します)。
+この場合の `UITextField` の `ShouldReturn` プロパティはブール値を返すデリゲートを引数として受け取り、[Return] ボタンが押されたとき、TextField で何かすべきかどうかを判断します。 今回のメソッドでは、呼び出し元に "*true*" を返しますが、画面からキーボードを削除することもします (textfield で `ResignFirstResponder` が呼び出されるとこれが発生します)。
 
-##### <a name="strongly-typed-via-a-delegate-property"></a>デリゲートプロパティを使用して厳密に型指定された
+##### <a name="strongly-typed-via-a-delegate-property"></a>Delegate プロパティ経由で厳密に型指定される
 
-イベントを使用しない場合は、独自の[Uiwebviewdelegate](xref:UIKit.UIWebViewDelegate)サブクラスを指定し、それを[uiwebview. delegate](xref:UIKit.UIWebView.Delegate)プロパティに割り当てることができます。 UIWebView. Delegate が割り当てられると、UIWebView イベントディスパッチ機構は機能しなくなり、対応するイベントが発生すると、UIWebViewDelegate メソッドが呼び出されます。
+イベントを使用しないことを望む場合、独自の [UIWebViewDelegate](xref:UIKit.UIWebViewDelegate) サブクラスを指定し、それを [UIWebView.Delegate](xref:UIKit.UIWebView.Delegate) プロパティに割り当てることができます。 UIWebView.Delegate が割り当てられると、UIWebView ビューのディスパッチ メカニズムが機能しなくなります。それに対応するイベントが発生すると、UIWebViewDelegate メソッドが呼び出されます。
 
-たとえば、次の単純型は、web ビューの読み込みにかかる時間を記録します。
+たとえば、この単純な型では、Web ビューを読み込むために必要な時間が記録されます。
 
 ```csharp
 class Notifier : UIWebViewDelegate  {
@@ -340,25 +340,25 @@ class Notifier : UIWebViewDelegate  {
 }
 ```
 
-上記のコードでは、次のようなコードが使用されています。
+上の例はこのようなコードで使用されます。
 
 ```csharp
 var web = new UIWebView (new CGRect (0, 0, 200, 200));
 web.Delegate = new Notifier ();
 ```
 
-上の例では、UIWebViewer を作成し、メッセージに応答するために作成したクラスである Notifier のインスタンスにメッセージを送信するように指示します。
+上の例では、UIWebViewer が作成され、メッセージに応答するものとして今回作成したクラス、Notifier のインスタンスにメッセージを送信するように UIWebViewer に指示します。
 
-このパターンは、特定のコントロールの動作を制御するためにも使用されます。たとえば、UIWebView の場合は、 [uiwebview.](xref:UIKit.UIWebView.ShouldStartLoad)を指定すると、`UIWebView` インスタンスは `UIWebView` がページを読み込むかどうかを制御できます。
+このパターンは、特定のコントロールの動作を制御する目的でも使用されます。たとえば、UIWebView の場合、[UIWebView.ShouldStartLoad](xref:UIKit.UIWebView.ShouldStartLoad) プロパティによって、`UIWebView` インスタンスは `UIWebView` でページを読み込むかどうかを制御できます。
 
-このパターンは、いくつかのコントロールに対して必要に応じてデータを提供するためにも使用されます。 たとえば、 [Uitableview](xref:UIKit.UITableView)コントロールは強力なテーブルレンダリングコントロールで、ルックアンドコンテンツは、 [Uitableviewdatasource](xref:UIKit.UITableViewDataSource)のインスタンスによって駆動されます。
+このパターンは、いくつかのコントロールで必要なときにデータを与える目的でも使用されます。 たとえば、[UITableView](xref:UIKit.UITableView) コントロールは強力なテーブルレンダリング コントロールです。外見も中身も [UITableViewDataSource](xref:UIKit.UITableViewDataSource) のインスタンスによって動きます。
 
-### <a name="loosely-typed-via-the-weakdelegate-property"></a>弱デリゲートプロパティを使用して緩やかに型指定
+### <a name="loosely-typed-via-the-weakdelegate-property"></a>WeakDelegate プロパティ経由で緩やかに型指定される
 
-厳密に型指定されたプロパティに加えて、開発者が必要に応じて異なる方法でバインドできる、弱い型指定のあるデリゲートもあります。
-厳密に型指定された `Delegate` プロパティが Xamarin で公開されているすべての場所で、対応する `WeakDelegate` プロパティも公開されます。
+厳密に型指定されたプロパティに加え、緩やかに型指定されたデリゲートがあります。緩やかに型指定することで、開発者が必要に応じて違ったやり方でバインドできます。
+Xamarin.iOS のバインディングで厳密に型指定された `Delegate` プロパティが公開されると、それに対応する `WeakDelegate` プロパティも必ず公開されます。
 
-`WeakDelegate`を使用する場合は、[エクスポート](xref:Foundation.ExportAttribute)属性を使用してセレクターを指定することにより、クラスを適切に修飾する必要があります。 例えば:
+`WeakDelegate` を使用するとき、[Export](xref:Foundation.ExportAttribute) 属性でクラスを正しく装飾し、セレクターを指定する必要があります。 次に例を示します。
 
 ```csharp
 class Notifier : NSObject  {
@@ -383,31 +383,31 @@ var web = new UIWebView (new CGRect (0, 0, 200, 200));
 web.WeakDelegate = new Notifier ();
 ```
 
-`WeakDelegate` プロパティが割り当てられると、`Delegate` プロパティは使用されないことに注意してください。 さらに、継承された基本クラスで [Export] を使用する場合は、メソッドをパブリックメソッドにする必要があります。
+`WeakDelegate` プロパティが割り当てられると、`Delegate` プロパティが使用されないことにご注意ください。 また、継承された基底クラスをエクスポートすることを望んでいるとすれば、その基底クラスでメソッドを実装する場合、それをパブリック メソッドにする必要があります。
 
-## <a name="mapping-of-the-objective-c-delegate-pattern-to-c"></a>Objective-C デリゲートパターンの C\# へのマッピング
+## <a name="mapping-of-the-objective-c-delegate-pattern-to-c"></a>Objective-C デリゲート パターンを C\# にマッピングする
 
-次のような Objective-C サンプルが表示されます。
+次のような Objective-C サンプルがあります。
 
 ```objc
 foo.delegate = [[SomethingDelegate] alloc] init]
 ```
 
-これにより、言語に対して "すべてのデリゲート" クラスのインスタンスを作成して構築し、値を foo 変数の delegate プロパティに割り当てるように指示します。 このメカニズムは、Xamarin.iOS C# でサポートされています。構文は次のとおりです。
+このサンプルでは、クラス "SomethingDelegate" のインスタンスを作成して構築し、foo 変数の delegate プロパティに値を割り当てるよう、言語が指示されます。 このメカニズムは Xamarin.iOS と C# でサポートされています。構文は次のようになります。
 
 ```csharp
 foo.Delegate = new SomethingDelegate ();
 ```
 
-Xamarin では、Objective-C デリゲートクラスにマップされる厳密に型指定されたクラスを提供しています。 これらを使用するには、Xamarin の実装で定義されているメソッドをサブクラス化し、オーバーライドします。 動作の詳細については、以下の「モデル」を参照してください。
+Xamarin.iOS では、Objective-C デリゲート クラスにマッピングされる、厳密に型指定されたクラスを指定しました。 それを使用するために、Xamarin.iOS の実装で定義されたメソッドをサブクラス化し、オーバーライドします。 しくみについて詳しくは、下の「モデル」セクションを参照してください。
 
-### <a name="mapping-delegates-to-c"></a>デリゲートの C\# へのマッピング
+### <a name="mapping-delegates-to-c"></a>デリゲートを C\# にマッピングする
 
-通常、UIKit では、2 つの形式で Objective-C デリゲートを使用します。
+一般的な UIKit では、Objective-C デリゲートが 2 つの形式で使用されます。
 
-最初のフォームは、コンポーネントのモデルへのインターフェイスを提供します。 たとえば、リストビューのデータストレージ機能など、ビューに必要なデータを提供するメカニズムとして使用できます。  このような場合は、常に適切なクラスのインスタンスを作成し、変数を割り当てる必要があります。
+最初の形式では、コンポーネントのモデルにインターフェイスが与えられます。 たとえば、ビューに必要に応じてデータを提供するメカニズムとしてです。List ビューのデータ ストレージ機能などです。  このような場合、常に適切なクラスのインスタンスを作成し、変数を割り当ててください。
 
-次の例では、文字列を使用するモデルの実装に `UIPickerView` を提供しています。
+次の例では、文字列を使用するモデルの実装で `UIPickerView` を指定します。
 
 ```csharp
 public class SampleTitleModel : UIPickerViewTitleModel {
@@ -423,9 +423,9 @@ public class SampleTitleModel : UIPickerViewTitleModel {
 pickerView.Model = new MyPickerModel ();
 ```
 
-2番目の形式は、イベントの通知を提供することです。 このような場合でも、前に説明した形式で API を公開しますC#が、イベントも提供します。これは、の簡単な操作と、のC#匿名デリゲートおよびラムダ式との統合により簡単に使用できるようにする必要があります。
+2 番目の形式は、イベントの通知を提供することです。 そのような場合、上記のような形式で API を公開しますが、C# イベントも指定します。それにより、簡単な操作で簡単に使用できます。また、C# で匿名のデリゲートやラムダ式と統合されます。
 
-たとえば、`UIAccelerometer` イベントにサブスクライブできます。
+たとえば、`UIAccelerometer` イベントをサブスクライブできます。
 
 ```csharp
 UIAccelerometer.SharedAccelerometer.Acceleration += (sender, args) => {
@@ -434,9 +434,9 @@ UIAccelerometer.SharedAccelerometer.Acceleration += (sender, args) => {
 }
 ```
 
-2つのオプションは意味がありますが、プログラマにとってはどちらか一方を選択する必要があります。 厳密に型指定された応答側/デリゲートの独自のインスタンスを作成しC#て割り当てると、イベントは機能しなくなります。 C#イベントを使用する場合、応答側/デリゲートクラスのメソッドは呼び出されません。
+道理にかなっていれば 2 つのオプションを利用できますが、プログラマーはいずれかを選択する必要があります。 厳密に型指定されたレスポンダー/デリゲートのインスタンスを自分で作成し、それを割り当てると、C# イベントは機能しません。 C# イベントを使用する場合、レスポンダー/デリゲート クラスのメソッドは決して呼び出されません。
 
-`UIWebView` 使用した前の例は、次C#のように3.0 ラムダを使用して記述できます。
+`UIWebView` を使用した前の例は、次のように C# 3.0 ラムダを利用して記述できます。
 
 ```csharp
 var web = new UIWebView (new CGRect (0, 0, 200, 200));
@@ -446,13 +446,13 @@ web.LoadFinished += () => { endTime = DateTime.Now; }
 
 #### <a name="responding-to-events"></a>イベントへの応答
 
-Objective-C のコードでは、複数のコントロールの複数のコントロールとプロバイダーのイベントハンドラーが、同じクラスでホストされることがあります。 クラスはメッセージに応答し、クラスがメッセージに応答する限り、オブジェクトをリンクすることができます。
+Objective-C コードでは、複数のコントロールのイベント ハンドラーと複数のコントロールの情報プロバイダーが同じクラスでホストされることがあります。 これは、クラスがメッセージに応答するために可能です。また、クラスがメッセージに応答する限り、オブジェクトを連結できます。
 
-これまでに説明したように、Xamarin.iOS は、C# のイベントベースのプログラミングモデルと、デリゲートを実装する新しいクラスを作成して目的のメソッドをオーバーライドする  Objective-C のデリゲートパターンの両方をサポートしています。
+前に説明したように、Xamarin.iOS は C# イベントベースのプログラミング モデルに対応しており、かつ、デリゲートを実装し、望むメソッドをオーバーライドする新しいクラスを作成できる Objective-C デリゲート パターンに対応しています。
 
-また、複数の異なる操作のレスポンダーがすべて同じクラスのインスタンスでホストされている、Objective-C のパターンをサポートすることもできます。 ただし、これを行うには、Xamarin.iOS バインドの低レベルの機能を使用する必要があります。
+また、複数の異なる操作のレスポンダーがすべて、あるクラスの同じインスタンスにホストされる Objective-C パターンに対応しています。 ただし、これを行うには、Xamarin.iOS バインディングの下位機能を使用する必要があります。
 
-たとえば、クラスが `UITextFieldDelegate.textFieldShouldClear`: message と `UIWebViewDelegate.webViewDidStartLoad`の両方に応答するようにする場合は、クラスの同じインスタンスで [Export] 属性宣言を使用する必要があります。
+たとえば、あるクラスの同じインスタンスで `UITextFieldDelegate.textFieldShouldClear`: メッセージと `UIWebViewDelegate.webViewDidStartLoad`: の両方に自分のクラスを応答させる場合、[Export] 属性宣言を使用する必要がありました。
 
 ```csharp
 public class MyCallbacks : NSObject {
@@ -470,25 +470,25 @@ public class MyCallbacks : NSObject {
 }
 ```
 
-C# のメソッド名は重要ではありません。重要なのは、[Export] 属性に渡される文字列だけです。
+メソッドの C# 名は重要ではありません。重要なのは [Export] 属性に渡される文字列です。
 
-このスタイルのプログラミングを使用する場合は、 C# パラメーターが、ランタイムエンジンが渡す実際の型と一致していることを確認してください。
+このスタイルのプログラミングを使用するとき、ランタイム エンジンから渡される実際の型と C# プログラミングが一致するようにします。
 
 #### <a name="models"></a>モデル
 
-UIKit ストレージ機能、またはヘルパークラスを使用して実装されたレスポンダーでは、これらは通常、ターゲット C コードではデリゲートとして参照され、プロトコルとして実装されます。
+UIKit ストレージ機能や、ヘルパー クラスを使用して実装されたレスポンダーでは、通常、Objective-C コードでデリゲートとして参照され、プロトコルとして実装されます。
 
-Objective-C プロトコルはインターフェイスに似ていますが、オプションのメソッドをサポートしています。つまり、プロトコルを機能させるためにすべてのメソッドを実装する必要はありません。
+Objective-C プロトコルはインターフェイスのようなものですが、メソッドは自由に選択できます。つまり、全部のメソッドを実装しなくてもプロトコルは動作します。
 
-モデルを実装する方法は2つあります。 これは、手動で実装することも、既存の厳密に型指定された定義を使用することもできます。
+モデルは 2 とおりの方法で実装されます。 手動で実装するか、既存の厳密に型指定された定義を使用できます。
 
-手動のメカニズムは、Xamarin. iOS によってバインドされていないクラスを実装する場合に必要です。 非常に簡単です。
+手動メカニズムは、Xamarin.iOS でバインドされていないクラスを実装するときに必要です。 次のことが簡単にできます。
 
-- ランタイムに登録するクラスにフラグを付ける
-- オーバーライドする各メソッドに対して、実際のセレクター名を持つ [Export] 属性を適用します。
-- クラスをインスタンス化し、それを渡します。
+- ランタイムで登録するためのフラグをクラスに付ける
+- オーバーライドするメソッドごとに実際のセレクター名を付け、[エクスポート] 属性を適用する
+- クラスをインスタンス化し、渡す
 
-たとえば、次の例では、UIApplicationDelegate プロトコル定義にオプションのメソッドを1つだけ実装しています。
+たとえば、次の場合、UIApplicationDelegate プロトコル定義で任意のメソッドのうち、1 つだけが実装されます。
 
 ```csharp
 public class MyAppController : NSObject {
@@ -500,11 +500,11 @@ public class MyAppController : NSObject {
 }
 ```
 
-目標-C セレクター名 ("applicationDidFinishLaunching:") は Export 属性で宣言され、クラスは `[Register]` 属性で登録されます。
+Objective-C セレクター名 ("applicationDidFinishLaunching:") は Export 属性で宣言され、クラスは `[Register]` 属性で登録されます。
 
-Xamarin iOS は、手動バインドを必要としない、厳密に型指定された宣言を提供します。この宣言はすぐに使用できます。 このプログラミングモデルをサポートするために、Xamarin の iOS ランタイムはクラス宣言で [Model] 属性をサポートしています。 これは、メソッドが明示的に実装されている場合を除き、クラス内のすべてのメソッドを接続しないことをランタイムに通知します。
+Xamarin.iOS からは厳密に型指定された宣言が与えられます。これはすぐに使用できるもので、手動でバインドする必要がありません。 このプログラミング モデルをサポートするために、Xamarin.iOS ランタイムでは、クラス宣言で [Model] 属性がサポートされます。 これで、メソッドが明示的に実装されていない限り、クラスのすべてのメソッドを接続するよう、ランタイムに通知します。
 
-これは、UIKit で、オプションのメソッドを使用してプロトコルを表すクラスを次のように記述することを意味します。
+つまり、UIKit では、任意のメソッドを指定したプロトコルを表わすクラスは次のように記述されます。
 
 ```csharp
 [Model]
@@ -517,9 +517,9 @@ public class SomeViewModel : NSObject {
 }
 ```
 
-一部のメソッドのみを実装するモデルを実装する場合は、目的のメソッドをオーバーライドし、他のメソッドを無視するだけで済みます。 ランタイムは、元のメソッドではなく、上書きされたメソッドのみを目的の C 環境にフックします。
+一部のメソッドのみを実装するモデルを実装する場合、必要なことは、関心のあるメソッドをオーバーライドし、その他のメソッドを無視することです。 ランタイムでは、上書きされたメソッドのみが Objective-C の領域に接続され、元のメソッドは接続されません。
 
-前の手動のサンプルに相当するものは次のとおりです。
+前の手動テンプルに相当するものが以下です。
 
 ```csharp
 public class AppController : UIApplicationDelegate {
@@ -530,32 +530,32 @@ public class AppController : UIApplicationDelegate {
 }
 ```
 
-その利点は、セレクター、引数の型、またはへC#のマッピングを検索するために、目的の C ヘッダーファイルを掘り下げ、厳密な型と共に Visual Studio for Mac から intellisense を取得する必要がないことです。
+この長所は、セレクター、引数の種類、C# へのマッピングを見つける目的で Objective-C ヘッダー ファイルを調べる必要がないことと、Visual Studio for Mac の IntelliSense と厳密な型を使用できることです。
 
-#### <a name="xib-outlets-and-c"></a>XIB アウトレットと C\#
+#### <a name="xib-outlets-and-c"></a>XIB Outlets と C\#
 
 > [!IMPORTANT]
-> このセクションでは、XIB ファイルを使用するときの、IDE とアウトレットとの統合について説明します。 Xamarin Designer for iOS を使用する場合、次に示すように、IDE の プロパティ セクションの  **id > 名** に名前を入力することで、これがすべて置き換えられます。
+> このセクションでは、XIB ファイルの使用時、アウトレットとの IDE 統合について説明します。 Xamarin Designer for iOS を使用するとき、下の画像のように、IDE の [プロパティ] セクションにある **[ID] の [名前]** に名前を入力することで、これが全部置換されます。
 >
 > [![](images/designeroutlet.png "Entering an item Name in the iOS Designer")](images/designeroutlet.png#lightbox)
 >
->IOS Designer の詳細については、 [Ios designer の概要](~/ios/user-interface/designer/introduction.md#how-it-works)に関するドキュメントを参照してください。
+>iOS デザイナーの詳細については、「[iOS デザイナーの概要](~/ios/user-interface/designer/introduction.md#how-it-works)」ドキュメントを参照してください。
 
-これは、アウトレットをと統合C#する方法についての低レベルの説明であり、Xamarin の上級ユーザー向けに提供されています。 Visual Studio for Mac を使用すると、フライトで生成されたコードを使用して、バックグラウンドで自動的にマッピングが行われます。
+これは Outlets が C# と統合するしくみを詳しく説明したものであり、Xamarin.iOS の上級ユーザー向けに提供されています。 Visual Studio for Mac を使用するときは、その場で自動的に生成されたコードを利用し、裏側で自動的にマッピングが行われます。
 
-Interface Builder を使用してユーザーインターフェイスを設計すると、アプリケーションの外観をデザインするだけで、いくつかの既定の接続が確立されます。 プログラムによって情報を取得したり、実行時にコントロールの動作を変更したり、実行時にコントロールを変更したりする場合は、一部のコントロールをマネージコードにバインドする必要があります。
+Interface Builder でユーザー インターフェイスを設計すると、アプリケーションの外見を設計し、既定の接続をいくつか確立するだけになります。 プログラムを利用して情報をフェッチする、実行時のコントロールの動作を変更する、あるいは実行時のコントロールを変更する場合、一部のコントロールをマネージド コードにバインドする必要があります。
 
-これを行うには、いくつかの手順を実行します。
+これは数回のステップで行われます。
 
-1. **ファイルの所有者**に**アウトレット宣言**を追加します。
+1. **アウトレット宣言**を**ファイルの所有者**に追加します。
 1. コントロールを**ファイルの所有者**に接続します。
 1. UI と接続を XIB/NIB ファイルに格納します。
 1. 実行時に NIB ファイルを読み込みます。
 1. アウトレット変数にアクセスします。
 
-手順 (1) ~ (3) については、Interface Builder を使用したインターフェイスの構築に関する Apple のドキュメントを参照してください。
+手順 (1) から (3) までは Apple の Interface Builder でインターフェイスを構築する方法に関するドキュメントで取り上げられています。
 
-Xamarin を使用する場合は、アプリケーションで UIViewController から派生したクラスを作成する必要があります。 次のように実装されています。
+Xamarin.iOS の使用時、UIViewController から誘導されるクラスをアプリケーションで作成する必要があります。 これは次のように実装されます。
 
 ```csharp
 public class MyViewController : UIViewController {
@@ -567,13 +567,13 @@ public class MyViewController : UIViewController {
 }
 ```
 
-次に、NIB ファイルから ViewController を読み込むには、次の手順を実行します。
+それから、NIB ファイルから ViewController を読み込みために次を行います。
 
 ```csharp
 var controller = new MyViewController ("HelloWorld", NSBundle.MainBundle, this);
 ```
 
-これにより、NIB からユーザーインターフェイスが読み込まれます。 ここで、アウトレットにアクセスするには、アクセスする必要があることをランタイムに通知する必要があります。 これを行うには、`UIViewController` サブクラスでプロパティを宣言し、[Connect] 属性を使用して注釈を設定する必要があります。 以下に例を示します。
+これにより、NIB からユーザー インターフェイスが読み込まれます。 次に、アウトレットにアクセスするために、アウトレットにアクセスすることをランタイムに知らせる必要があります。 これを行うために、`UIViewController` サブクラスでプロパティを宣言し、[Connect] 属性で注釈を付ける必要があります。 以下に例を示します。
 
 ```csharp
 [Connect]
@@ -587,21 +587,21 @@ UITextField UserName {
 }
 ```
 
-プロパティの実装は、実際のネイティブ型の値を実際にフェッチして格納するものです。
+プロパティ実装は、実際のネイティブ型の値を実際に取得し、格納する実装です。
 
-Visual Studio for Mac と InterfaceBuilder を使用する場合は、このことについて心配する必要はありません。 Visual Studio for Mac は、宣言されたすべてのアウトレットを、プロジェクトの一部としてコンパイルされる部分クラスのコードと共に自動的にミラー化します。
+Visual Studio for Mac と InterfaceBuilder を使用するとき、これに関して心配する必要はありません。 Visual Studio for Mac では、プロジェクトの一部としてコンパイルされた部分的クラスのコードによって、宣言済みのアウトレットがすべて自動的にミラー化されます。
 
 #### <a name="selectors"></a>セレクター
 
-Objective-C プログラミングの中核となる概念はセレクターです。 多くの場合、セレクターを渡す必要がある API や、コードがセレクターに応答することを期待する API が使用されます。
+Objective-C プログラミングの中心的概念はセレクターです。 セレクターを渡すこと要求する API やセレクターに応答することをコードに求める API には頻繁に遭遇します。
 
-でC#新しいセレクターを作成するのは非常に簡単です。 `ObjCRuntime.Selector` クラスの新しいインスタンスを作成し、それを必要とする API 内の任意の場所で結果を使用するだけです。 例:
+C# ではとても簡単に新しいセレクターを作成できます。`ObjCRuntime.Selector` クラスの新しいインスタンスを作成したら、それを必要とする API の場所で使用する。それだけです。 次に例を示します。
 
 ```csharp
 var selector_add = new Selector ("add:plus:");
 ```
 
-メソッドがC#セレクター呼び出しに応答するには、`NSObject` 型から継承する必要がありC# 、メソッドは、`[Export]` 属性を使用してセレクター名で修飾する必要があります。 例えば:
+C# メソッドがセレクターの呼び出しに応答するには、それが `NSObject` 型から派生している必要があり、`[Export]` 属性を利用し、セレクター名で C# メソッドを修飾する必要があります。 次に例を示します。
 
 ```csharp
 public class MyMath : NSObject {
@@ -613,11 +613,11 @@ public class MyMath : NSObject {
 }
 ```
 
-セレクター名が完全に一致している**必要があり**ます。これには、すべての中間コロンと末尾のコロン (":") が含まれます (存在する場合)。
+セレクター名は、中間と末尾にコロン (":") があればそれも含め、厳密に**一致する必要がある**ことにご注意ください。
 
 #### <a name="nsobject-constructors"></a>NSObject コンストラクター
 
-`NSObject` から派生した Xamarin のほとんどのクラスは、オブジェクトの機能に固有のコンストラクターを公開しますが、すぐには明らかではないさまざまなコンストラクターも公開します。
+`NSObject` から派生した Xamarin.iOS クラスのほとんどでオブジェクトの機能に固有のコンストラクターが公開されますが、すぐにはわからないさまざまなコンストラクターも公開されます。
 
 コンストラクターは次のように使用されます。
 
@@ -625,47 +625,47 @@ public class MyMath : NSObject {
 public Foo (IntPtr handle)
 ```
 
-このコンストラクターは、ランタイムがクラスをアンマネージクラスにマップする必要がある場合に、クラスをインスタンス化するために使用されます。 これは、XIB/NIB ファイルを読み込むときに発生します。  この時点で、目的 C ランタイムによってアンマネージ環境にオブジェクトが作成され、このコンストラクターが呼び出されてマネージ側が初期化されます。
+このコンストラクターは、ランタイムでクラスをアンマネージド クラスにマッピングする必要があるとき、クラスをインスタンス化する目的で使用されます。 これは XIB/NIB ファイルを読み込むときに行われます。  この時点で、Objective-C ランタイムによりアンマネージドの領域でオブジェクトが作成されているでしょう。また、このコンストラクターが呼び出され、マネージド側が初期化されます。
 
-通常は、ハンドルパラメーターを使用して基本コンストラクターを呼び出し、本文で必要な初期化を実行するだけです。
+通常、必要な作業は、ハンドル パラメーターで基本コンストラクターを呼び出し、本文で必要な初期化を行うことだけです。
 
 ```csharp
 public Foo ()
 ```
 
-これは、クラスの既定のコンストラクターであり、NSObject クラスと、その間のすべてのクラスと、その間にあるすべてのクラスを初期化し、最後に、これをクラスのメソッド `init` にチェーンします。
+これはクラスの既定のコンストラクターです。Xamarin.iOS 付属のクラスでは、これにより Foundation.NSObject クラスと間にあるすべてのクラスが初期化され、最後に、クラスの Objective-C `init` メソッドにこれが連結されます。
 
 ```csharp
 public Foo (NSObjectFlag x)
 ```
 
-このコンストラクターは、インスタンスを初期化するために使用されますが、最後に Objective-C の "init" メソッドをコードが呼び出さないようにします。 通常、この値は、(コンストラクターで`[Export]`を使用するときに) 初期化を既に登録している場合、または別の平均を通じて初期化を実行した場合に使用します。
+このコンストラクターはインスタンスを初期化する目的で使用されますが、コードが最後に Objective-C "init" メソッドを呼び出すことを禁止します。 初期化に既に登録しているとき (コンストラクターで `[Export]` を使用するとき)、または、別の手段で初期化を既に完了しているとき、通常、これを使用します。
 
 ```csharp
 public Foo (NSCoder coder)
 ```
 
-このコンストラクターは、オブジェクトが NSCoding インスタンスから初期化されている場合に提供されます。
+このコンストラクターは、オブジェクトが NSCoding インスタンスから初期化されている場合に与えられます。
 
 #### <a name="exceptions"></a>例外
 
-Xamarin. iOS API の設計では、例外としてC# C の例外は発生しません。 この設計では、最初に目的の C にガベージを送信することはなく、生成する必要がある例外は、無効なデータを目的の C に渡す前に、バインディング自体によって生成されることになります。
+Xamarin.iOS API デザインでは、Objective-C 例外が C# 例外として発生しません。 このデザインでは、第一に Objective-C の領域にガベージが送信されません。そして、生成しなければならない例外があれば、無効なデータが Objective-C の領域に渡される前にそれが生成されます。
 
 #### <a name="notifications"></a>通知
 
-IOS と OS X の両方で、開発者は、基になるプラットフォームによってブロードキャストされた通知をサブスクライブできます。 これを行うには、`NSNotificationCenter.DefaultCenter.AddObserver` メソッドを使用します。 `AddObserver` メソッドは2つのパラメーターを受け取ります。1つは、サブスクライブする通知です。もう1つは、通知が発生したときに呼び出されるメソッドです。
+iOS と OS X の両方で、基礎となるプラットフォームでブロードキャストされる通知を開発者が定期購読できます。 これは `NSNotificationCenter.DefaultCenter.AddObserver` メソッドを使用して行われます。 `AddObserver` メソッドは 2 つのパラメーターを受け取ります。1 つは、定期購読する通知です。もう 1 つは、通知が発生したときに呼び出すメソッドです。
 
-Xamarin. iOS と Xamarin.Mac の両方で、さまざまな通知のキーが、通知をトリガーするクラスでホストされます。 たとえば、`UIMenuController` によって発生した通知は、"Notification" という名前で終わる `UIMenuController` クラスの `static NSString` プロパティとしてホストされます。
+Xamarin.iOS と Xamarin.Mac の両方で、さまざまな通知のキーは、通知をトリガーするクラスでホストされます。 たとえば、`UIMenuController` で生成される通知は、"Notification" という名前で終わる `UIMenuController` クラスで `static NSString` プロパティとしてホストされます。
 
 ### <a name="memory-management"></a>メモリ管理
 
-Xamarin. iOS には、使用されなくなったときにリソースの解放を処理するガベージコレクターが用意されています。 ガベージコレクターに加えて、から派生したすべてのオブジェクトは、`System.IDisposable` インターフェイスを実装 `NSObject` ます。
+Xamarin.iOS に含まれるガベージ コレクターによって、不要になったリソースが解放されます。 ガベージ コレクターに加え、`NSObject` から誘導されるオブジェクトはすべて `System.IDisposable` インターフェイスを実行します。
 
-#### <a name="nsobject-and-idisposable"></a>NSObject および IDisposable
+#### <a name="nsobject-and-idisposable"></a>NSObject と IDisposable
 
-`IDisposable` インターフェイスを公開すると、大きなメモリブロックをカプセル化する可能性があるオブジェクト (たとえば、`UIImage` は無害なポインターのように見えますが、2メガバイトの画像を指している可能性があります) や、その他の重要で有限のリソース (ビデオデコードバッファーなど) をリリースする開発者を支援する便利な方法です。
+オブジェクトによってカプセル化が行われることがあります。大きなメモリ ブロック (たとえば、`UIImage` は無邪気なポインターのように見えますが、2 メガバイトの画像をポイントしていることがあります) やその他の重要な有限リソース (動画の復号バッファー) がカプセル化されます。そのようなオブジェクトを解放するとき、開発者を支援する便利な方法が `IDisposable` インターフェイスの公開です。
 
-NSObject は IDisposable インターフェイスを実装し、 [.Net Dispose パターン](https://msdn.microsoft.com/library/fs2xkftw.aspx)も実装します。 これにより、NSObject をサブクラス化する開発者は、Dispose の動作をオーバーライドし、必要に応じて独自のリソースを解放できます。 たとえば、次のようなビューコントローラーを考えてみます。
+NSObject では IDisposable interface が実装され、さらに [.NET Dispose パターン](https://msdn.microsoft.com/library/fs2xkftw.aspx)も実装されます。 これにより、開発者は NSObject をサブクラス化し、Dispose 動作をオーバーライドして自分だけのリソースを必要なときに解放できます。 たとえば、画像の集まりを維持するこのビュー コントローラーについて考えてください。
 
 ```csharp
 class MenuViewController : UIViewController {
@@ -683,7 +683,7 @@ class MenuViewController : UIViewController {
 }
 ```
 
-マネージオブジェクトが破棄されると、それは役に立たなくなります。 オブジェクトへの参照がまだ存在する可能性がありますが、この時点では、オブジェクトはすべてのインテントと目的に対して無効です。 一部の .NET Api では、破棄されたオブジェクトのメソッドにアクセスしようとすると、ObjectDisposedException がスローされます。たとえば、次のようになります。
+破棄されたマネージド オブジェクトはもう役に立ちません。 オブジェクトの参照が残っているかもしれませんが、どの点から見ても、破棄後のオブジェクトはこの時点で無効です。 これを確実に行う .NET API もあります。たとえば、次のように、破棄されたオブジェクトでメソッドにアクセスしようとすると、ObjectDisposedException をスローします。
 
 ```csharp
 var image = UIImage.FromFile ("demo.png");
@@ -691,22 +691,22 @@ image.Dispose ();
 image.XXX = false;  // this at this point is an invalid operation
 ```
 
-変数 "image" にアクセスできる場合でも、実際には無効な参照であり、イメージを保持していた Objective-C オブジェクトを指していません。
+引き続き変数 "image" にアクセスできるとしても、それは実際、無効な参照であり、画像を保持していた Objective-C オブジェクトを今はポイントしていません。
 
-ただし、でオブジェクトをC#破棄することは、必ずしもオブジェクトが破棄されるという意味ではありません。 オブジェクトへの参照C#を解放するだけです。 Cocoa 環境が独自に使用するための参照を保持している可能性があります。 たとえば、UIImageView の Image プロパティをイメージに設定してから、イメージを破棄した場合、基になる UIImageView は独自の参照を取得し、このオブジェクトへの参照をそのまま使用するようになります。
+ただし、C# でオブジェクトを破棄しても、そのオブジェクトは必ずしも完全に破壊されていません。 C# で与えられたオブジェクトの参照を解放しただけです。 Cocoa 環境がそこで使用するために参照を維持している可能性があります。 たとえば、UIImageView の Image プロパティをある画像に設定し、その画像を破棄した場合、基礎となる UIImageView では独自の参照を取得しており、このオブジェクトの参照を使い終わるまで維持します。
 
-#### <a name="when-to-call-dispose"></a>Dispose を呼び出すタイミング
+#### <a name="when-to-call-dispose"></a>Dispose を呼び出す状況
 
-オブジェクトを削除するときに Mono が必要な場合は、Dispose を呼び出す必要があります。 考えられるユースケースは、NSObject が実際にメモリや情報プールなどの重要なリソースへの参照を保持していることを Mono が認識していない場合です。 そのような場合は、Mono がガベージコレクションサイクルを実行するのを待つのではなく、Dispose を呼び出して、メモリへの参照を直ちに解放する必要があります。
+オブジェクトを削除するとき Mono が必要であれば、Dispose を呼び出してください。 考えられるユース ケースは、メモリや情報プールなど、重要なリソースの参照が NSObject で実際に維持されていることが Mono で認識されていないときです。 そのようなケースでは、Mono がガベージ コレクションを実行するのを待たず、Dispose を呼び出し、メモリの参照をすぐに解放してください。
 
-内部的には、Mono が[文字列からC# nsstring 参照](~/ios/internals/api-design/nsstring.md)を作成するときに、ガベージコレクターが実行する作業量を減らすために、それらをすぐに破棄します。 処理するオブジェクトの量が減るほど、GC の実行速度が速くなります。
+内部的には、Mono によって [C# 文字列から NSString 参照](~/ios/internals/api-design/nsstring.md)が作成されるとき、参照をすぐに破棄し、ガベージ コレクターが関連する作業量を減らします。 扱うオブジェクトの数が少なければ、それだけ GC の実行時間が短くなります。
 
-#### <a name="when-to-keep-references-to-objects"></a>オブジェクトへの参照を保持する場合
+#### <a name="when-to-keep-references-to-objects"></a>オブジェクトの参照を維持する状況
 
-自動メモリ管理には、参照がない限り、使用されていないオブジェクトが GC によって削除されるという副作用があります。 このような副作用が生じることもあります。たとえば、最上位レベルのビューコントローラーを保持するローカル変数を作成する場合や、最上位のウィンドウを作成し、それらのウィンドウを背面に置いた場合などです。
+自動メモリ管理の副作用の 1 つは、参照がない限り、使用されていないオブジェクトが GC によって削除されることです。 これは意外な副作用を引き起こすことがあります。たとえば、最上位ビュー コントローラーまたは最上位ウィンドウを維持するローカル変数を作成したのに、それがひっそりと消えます。
 
-静的変数またはインスタンス変数内の参照をオブジェクトに対して保持しない場合、Mono はそのオブジェクトに対して Dispose () メソッドを呼び出し、オブジェクトへの参照を解放します。 これは未解決の参照である可能性があるため、Objective-C ランタイムがオブジェクトを破棄します。
+静的変数またはインスタンス変数でオブジェクトの参照を維持しないなら、Mono によって変数で Dispose() メソッドがしっかりと実行され、オブジェクトの参照が解放されます。 これが唯一の未処理の参照という場合もあり、Objective-C ランタイムによってオブジェクトが自動的に破壊されます。
 
 ## <a name="related-links"></a>関連リンク
 
-- [バインド (フィールドを)](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_Fields)
+- [フィールドのバインド](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_Fields)
