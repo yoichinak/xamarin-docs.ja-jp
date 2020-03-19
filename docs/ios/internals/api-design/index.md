@@ -16,7 +16,7 @@ ms.locfileid: "79303727"
 ---
 # <a name="xamarinios-api-design"></a>Xamarin.iOS API の設計
 
-Mono に含まれる中心的基底クラス ライブラリに加え、開発者が Mono でネイティブ iOS アプリケーションを作成するためのさまざまな iOS API 向けバインディングが [Xamarin.iOS](~/ios/index.yml) に付属します。
+[Xamarin.iOS](~/ios/index.yml) には、Mono に含まれる中心的基底クラス ライブラリに加え、開発者が Mono でネイティブ iOS アプリケーションを作成するためのさまざまな iOS API 向けバインディングが付属しています。
 
 Xamarin.iOS の中心となるのは、C# の領域と Objective-C の領域の橋渡しとなる相互運用エンジンと、CoreGraphics や [OpenGL ES](#opengles) のような、iOS C ベースの API 向けのバインディングです。
 
