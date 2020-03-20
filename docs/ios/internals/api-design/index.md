@@ -59,7 +59,7 @@ Xamarin.iOS バインディングには設計原則がいくつかあります (
     NSView [] Views { get; set; }
     ```
 
-    これで Visual Studio for Mac に、API を閲覧中、オートコンプリート機能が与えられます。また、戻り値であらゆる `System.Array` 操作が可能になり、LINQ に加わることが戻り値に許可されます。
+    これによって Visual Studio for Mac は、API の閲覧中に、オートコンプリート機能が利用可能になります。また、戻り値であらゆる `System.Array` 操作が可能になり、戻り値で、LINQ が利用できます。
 
 - ネイティブ C# 型:
 
