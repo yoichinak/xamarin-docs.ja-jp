@@ -1,6 +1,6 @@
 ---
-title: 第 13 章の概要です。 ビットマップ
-description: 'Xamarin.Forms によるモバイル アプリの作成: 第 13 章の概要。 ビットマップ'
+title: '第 13 章の概要: ビットマップ'
+description: 'Xamarin.Forms でモバイル アプリを作成する: 第 13 章の概要: ビットマップ'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 5D153857-B6B7-4A14-8FB9-067DE198C2C7
@@ -8,203 +8,203 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
 ms.openlocfilehash: e4746ed94a008d382ce15bb9cd7c52365d9ba574
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
-ms.translationtype: MT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "76725529"
 ---
-# <a name="summary-of-chapter-13-bitmaps"></a>第 13 章の概要です。 ビットマップ
+# <a name="summary-of-chapter-13-bitmaps"></a>第 13 章の概要: ビットマップ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13)
 
 > [!NOTE]
-> このページに関する注意事項は、この本で説明されている内容が Xamarin.Forms が異なっている領域を示しています。
+> このページのメモでは、Xamarin.Forms が書籍に記載されている資料と異なる部分が示されています。
 
-Xamarin. Forms [`Image`](xref:Xamarin.Forms.Image)要素にはビットマップが表示されます。 すべての Xamarin.Forms プラットフォームは、JPEG、PNG、GIF、および BMP ファイル形式をサポートします。
+Xamarin.Forms の [`Image`](xref:Xamarin.Forms.Image) 要素にはビットマップが表示されます。 すべての Xamarin.Forms プラットフォームは、JPEG、PNG、GIF、および BMP ファイル形式をサポートしています。
 
-ビットマップを Xamarin.Forms では、4 つの場所から取得されます。
+Xamarin.Forms のビットマップは、次の 4 つの場所から取得されます。
 
-- URL で指定された web 経由で
-- 共有ライブラリ内のリソースとして埋め込まれています。
-- プラットフォームのアプリケーション プロジェクトにリソースとして埋め込まれて
-- .NET `Stream` オブジェクトで参照できる任意の場所から (を含む `MemoryStream`)
+- URL で指定された Web 経由
+- 共有ライブラリにリソースとして埋め込まれている
+- プラットフォーム アプリケーション プロジェクトのリソースとして埋め込まれている
+- `MemoryStream` など、.NET `Stream` オブジェクトから参照できる任意の場所から
 
-共有ライブラリでビットマップ リソースはプラットフォームに依存せず、プラットフォーム プロジェクトでビットマップ リソースがプラットフォームに固有です。
+共有ライブラリのビットマップ リソースはプラットフォームに依存しませんが、プラットフォーム プロジェクトのビットマップ リソースはプラットフォーム固有です。
 
 > [!NOTE]
-> 書籍のテキストでは、.NET Standard ライブラリに置き換えられているポータブル クラス ライブラリへの参照。 .NET standard ライブラリを使用するブックからのすべてのサンプル コードが変換されました。
+> 本書の説明では、ポータブル クラス ライブラリについて触れますが、これは .NET Standard ライブラリに置き換えられています。 本書のすべてのサンプル コードは、.NET Standard ライブラリを使用するように変換されています。
 
-ビットマップは、`Image` の[`Source`](xref:Xamarin.Forms.Image.Source)プロパティを[`ImageSource`](xref:Xamarin.Forms.ImageSource)型のオブジェクトに設定することによって指定されます。これは、次の3つの派生クラスを持つ抽象クラスです。
+ビットマップを指定するには、`Image` の [`Source`](xref:Xamarin.Forms.Image.Source) プロパティを、3 つの派生クラスを持つ抽象クラスである [`ImageSource`](xref:Xamarin.Forms.ImageSource) 型のオブジェクトに設定します。
 
-- [`Uri`](xref:Xamarin.Forms.UriImageSource.Uri)プロパティに設定された `Uri` オブジェクトに基づいて、web 経由でビットマップにアクセスするための[`UriImageSource`](xref:Xamarin.Forms.UriImageSource)
-- [`File`](xref:Xamarin.Forms.FileImageSource.File)プロパティに設定されたフォルダーおよびファイルパスに基づいてプラットフォームアプリケーションプロジェクトに格納されているビットマップにアクセスするための[`FileImageSource`](xref:Xamarin.Forms.FileImageSource)
-- [`Stream`](xref:Xamarin.Forms.StreamImageSource.Stream)プロパティに設定された `Func` から `Stream` を返すことによって指定された .net `Stream` オブジェクトを使用してビットマップを読み込む[`StreamImageSource`](xref:Xamarin.Forms.StreamImageSource)
+- [`Uri`](xref:Xamarin.Forms.UriImageSource.Uri) プロパティに設定された `Uri` オブジェクトに基づいて、Web 経由でビットマップにアクセスするための [`UriImageSource`](xref:Xamarin.Forms.UriImageSource)
+- [`File`](xref:Xamarin.Forms.FileImageSource.File) プロパティに設定されたフォルダーとファイルのパスに基づいて、プラットフォーム アプリケーション プロジェクトに格納されているビットマップにアクセスするための [`FileImageSource`](xref:Xamarin.Forms.FileImageSource)
+- [`Stream`](xref:Xamarin.Forms.StreamImageSource.Stream) プロパティに設定された `Func` から `Stream` が返され、それによって指定された .NET `Stream` オブジェクトを使用して、ビットマップを読み込むための [`StreamImageSource`](xref:Xamarin.Forms.StreamImageSource)
 
-別の方法として、`ImageSource` クラスの次の静的メソッドを使用することもできます。これらはすべて `ImageSource` オブジェクトを返します。
+または (より一般的な方法として)、`ImageSource` クラスの次の静的メソッドを使用できます。これらのいずれからも `ImageSource` オブジェクトが返されます。
 
-- `Uri` オブジェクトに基づいて web 上のビットマップにアクセスするための[`ImageSource.FromUri`](xref:Xamarin.Forms.ImageSource.FromUri(System.Uri))
-- アプリケーション PCL に埋め込まれたリソースとして格納されているビットマップにアクセスするための[`ImageSource.FromResource`](xref:Xamarin.Forms.ImageSource.FromResource*) 。別のソースアセンブリのビットマップにアクセスするための[`ImageSource.FromResource`](xref:Xamarin.Forms.ImageSource.FromResource(System.String,System.Type))または[`ImageSource.FromResource`](xref:Xamarin.Forms.ImageSource.FromResource(System.String,System.Reflection.Assembly))
-- プラットフォームアプリケーションプロジェクトからビットマップにアクセスするための[`ImageSource.FromFile`](xref:Xamarin.Forms.ImageSource.FromFile(System.String))
-- `Stream` オブジェクトに基づいてビットマップを読み込むための[`ImageSource.FromStream`](xref:Xamarin.Forms.ImageSource.FromStream(System.Func{System.IO.Stream}))
+- `Uri` オブジェクトに基づいて Web 経由でビットマップにアクセスするための [`ImageSource.FromUri`](xref:Xamarin.Forms.ImageSource.FromUri(System.Uri))
+- アプリケーション PCL に埋め込みリソースとして格納されているビットマップにアクセスするための [`ImageSource.FromResource`](xref:Xamarin.Forms.ImageSource.FromResource*) (別のソース アセンブリのビットマップにアクセスするには [`ImageSource.FromResource`](xref:Xamarin.Forms.ImageSource.FromResource(System.String,System.Type)) または [`ImageSource.FromResource`](xref:Xamarin.Forms.ImageSource.FromResource(System.String,System.Reflection.Assembly)))
+- プラットフォーム アプリケーション プロジェクトからビットマップにアクセスするための [`ImageSource.FromFile`](xref:Xamarin.Forms.ImageSource.FromFile(System.String))
+- `Stream` オブジェクトに基づいてビットマップを読み込むための [`ImageSource.FromStream`](xref:Xamarin.Forms.ImageSource.FromStream(System.Func{System.IO.Stream}))
 
-`Image.FromResource` メソッドに相当するクラスはありません。 `UriImageSource` クラスは、キャッシュを制御する必要がある場合に便利です。 `FileImageSource` クラスは、XAML で役に立ちます。 `StreamImageSource` は `Stream` オブジェクトの非同期読み込みに便利ですが、`ImageSource.FromStream` は同期です。
+`Image.FromResource` メソッドに相当するクラスはありません。 `UriImageSource` クラスは、キャッシュを制御する必要がある場合に役立ちます。 `FileImageSource` クラスは XAML で役立ちます。 `StreamImageSource` は `Stream` オブジェクトの非同期読み込みに、`ImageSource.FromStream` は同期読み込みに役立ちます。
 
 ## <a name="platform-independent-bitmaps"></a>プラットフォームに依存しないビットマップ
 
-[**Webbitmapcode**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/WebBitmapCode)プロジェクトは、`ImageSource.FromUri`を使用して web 上にビットマップを読み込みます。 `Image` 要素は `ContentPage`の `Content` プロパティに設定されているため、ページのサイズに制限されます。 ビットマップのサイズに関係なく、制約付きの `Image` 要素はコンテナーのサイズに拡張され、ビットマップの縦横比を維持したまま、`Image` 要素内の最大サイズでビットマップが表示されます。 ビットマップを超えて `Image` の領域は、 [`BackgroundColor`](xref:Xamarin.Forms.VisualElement.BackgroundColor)で色付けできます。
+[**WebBitmapCode**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/WebBitmapCode) プロジェクトでは、`ImageSource.FromUri` を使用して Web 経由でビットマップを読み込みます。 `Image` 要素は `ContentPage` の `Content` プロパティに設定されているため、ページのサイズに制限されます。 ビットマップのサイズに関係なく、制約付きの `Image` 要素はそのコンテナーのサイズに拡張され、ビットマップの縦横比を維持しながら、`Image` 要素内の最大サイズでビットマップが表示されます。 ビットマップ以外の `Image` の領域は、[`BackgroundColor`](xref:Xamarin.Forms.VisualElement.BackgroundColor) を使用して色付けできます。
 
-[**Webbitmapxaml**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/WebBitmapXaml)サンプルも似ていますが、単純に `Source` プロパティを URL に設定します。 変換は、 [`ImageSourceConverter`](xref:Xamarin.Forms.ImageSourceConverter)クラスによって処理されます。
+[**WebBitmapXaml**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/WebBitmapXaml) サンプルは似ていますが、単に `Source` プロパティを URL に設定したものです。 変換は [`ImageSourceConverter`](xref:Xamarin.Forms.ImageSourceConverter) クラスによって処理されます。
 
-### <a name="fit-and-fill"></a>調整と塗りつぶし
+### <a name="fit-and-fill"></a>自動調整と塗りつぶし
 
-`Image` の[`Aspect`](xref:Xamarin.Forms.Image.Aspect)プロパティを[`Aspect`](xref:Xamarin.Forms.Aspect)列挙体の次のいずれかのメンバーに設定することにより、ビットマップの拡張方法を制御できます。
+`Image` の [`Aspect`](xref:Xamarin.Forms.Image.Aspect) プロパティを [`Aspect`](xref:Xamarin.Forms.Aspect) 列挙体の次のメンバーのいずれかに設定することで、ビットマップの拡大方法を制御できます。
 
-- [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit): 縦横比を尊重します (既定)。
-- [`Fill`](xref:Xamarin.Forms.Aspect.Fill): 塗りつぶし領域、縦横比は考慮されません
-- [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill): 塗りつぶし領域ですが、ビットマップの一部をトリミングすることで達成される縦横比を尊重します。
+- [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit): 縦横比を維持します (既定値)。
+- [`Fill`](xref:Xamarin.Forms.Aspect.Fill): 縦横比を考慮せず、領域全体に拡大します
+- [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill): ビットマップの一部をトリミングすることで、縦横比を維持しながら領域全体に拡大します
 
-### <a name="embedded-resources"></a>埋め込みリソース
+### <a name="embedded-resources"></a>埋め込まれたリソース
 
-ビットマップ ファイルは、PCL、または、PCL のフォルダーに追加できます。 **EmbeddedResource**の**ビルドアクション**を指定します。 [**Resourcebitmapcode**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ResourceBitmapCode)サンプルは、`ImageSource.FromResource` を使用してファイルを読み込む方法を示しています。 メソッドに渡されるリソース名は、アセンブリ名の後にドットの後に省略可能なフォルダー名とファイル名に続けて、ドットで構成されます。
+ビットマップ ファイルを PCL、または PCL のフォルダーに追加できます。 **EmbeddedResource** の **[ビルド アクション]** を指定します。 [**ResourceBitmapCode**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ResourceBitmapCode) サンプルは、`ImageSource.FromResource` を使用してファイルを読み込む方法を示しています。 メソッドに渡されるリソース名は、アセンブリ名、それに続くドット、それに続く省略可能なフォルダー名とドット、それに続くファイル名で構成されます。
 
-プログラムによって、`Image` の `VerticalOptions` と `HorizontalOptions` のプロパティが `LayoutOptions.Center`に設定されます。これにより、`Image` 要素に制約が適用されません。 `Image` とビットマップのサイズは同じです。
+プログラムによって、`Image` の `VerticalOptions` および `HorizontalOptions` プロパティが `LayoutOptions.Center` に設定されます。これにより、`Image` 要素が制約なしになります。 `Image` とビットマップは同じサイズです。
 
-- IOS と Android では、`Image` はビットマップのピクセルサイズです。 ビットマップのピクセルと画面ピクセルの間の一対一のマッピングがあります。
-- ユニバーサル Windows プラットフォームの場合、`Image` は、デバイスに依存しない単位でのビットマップのピクセルサイズです。 ほとんどのデバイスでは、各ビットマップのピクセルは、複数の画面のピクセルを占有します。
+- iOS と Android では、`Image` はビットマップのピクセル サイズです。 ビットマップ ピクセルと画面ピクセルの間には 1 対 1 のマッピングがあります。
+- ユニバーサル Windows プラットフォームでは、`Image` はデバイスに依存しない単位のビットマップのピクセル サイズです。 ほとんどのデバイスでは、各ビットマップ ピクセルは複数の画面ピクセルを占有します。
 
-[**StackedBitmap**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/StackedBitmap)サンプルでは、`Image` を XAML の垂直 `StackLayout` に配置します。 [`ImageResourceExtension`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter13/StackedBitmap/StackedBitmap/StackedBitmap/ImageResourceExtension.cs)という名前のマークアップ拡張機能は、XAML の埋め込みリソースを参照するのに役立ちます。 このクラスはのみ、そのアセンブリからリソースを読み込みますが配置されている、ため、ライブラリ内に配置することはできません。
+[**StackedBitmap**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/StackedBitmap) サンプルでは、XAML で縦の `StackLayout` に `Image` が配置されます。 [`ImageResourceExtension`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter13/StackedBitmap/StackedBitmap/StackedBitmap/ImageResourceExtension.cs) という名前のマークアップ拡張機能は、XAML の埋め込みリソースを参照するために役立ちます。 このクラスでは、それが配置されているアセンブリからのみリソースを読み込むため、ライブラリに配置することはできません。
 
-### <a name="more-on-sizing"></a>詳細については、サイズ変更
+### <a name="more-on-sizing"></a>サイズ変更の詳細
 
-多くの場合、サイズのビットマップのすべてのプラットフォーム間で一貫する必要があります。
-**StackedBitmap**を試してみると、`Image` 要素の `WidthRequest` を垂直 `StackLayout` に設定して、プラットフォーム間でサイズを統一することができますが、この方法を使用してサイズを減らすことしかできません。
+多くの場合、すべてのプラットフォーム間でビットマップのサイズを統一することをお勧めします。
+**StackedBitmap** を試して、縦の `StackLayout` の `Image` 要素に `WidthRequest` を設定して、プラットフォーム間でサイズを統一することができますが、この手法では、サイズを小さくすることしかできません。
 
-また、`HeightRequest` を設定して、イメージのサイズをプラットフォームに合わせて調整することもできますが、ビットマップの制限幅によって、この手法の汎用性が制限されます。 縦 `StackLayout`の画像の場合、`HeightRequest` を避ける必要があります。
+また、`HeightRequest` を設定して、プラットフォームで画像サイズを統一することもできますが、ビットマップの幅が制約されているため、この手法の汎用性が制限されます。 縦の `StackLayout` の画像では、`HeightRequest` を使用しないでください。
 
-最適な方法は、デバイスに依存しない単位で電話の幅よりも大きいビットマップを使用し、デバイスに依存しない単位で `WidthRequest` を目的の幅に設定することです。 これは、 [**Deviceindbitmapsize**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/DeviceIndBitmapSize)サンプルに示されています。
+最適な方法は、デバイスに依存しない単位で電話の幅よりも広いビットマップから始め、デバイスに依存しない単位で `WidthRequest` を目的の幅に設定することです。 これは [**DeviceIndBitmapSize**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/DeviceIndBitmapSize) サンプルで示されています。
 
-[**MadTeaParty**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/MadTeaParty)は、Wonderland におけるルイス Carroll の*Alice の冒険*の第7章を、John が元の図と一緒に表示します。
+[**MadTeaParty**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/MadTeaParty) を使うと、ルイス・キャロルの『*不思議の国のアリス*』の第 7 章と、ジョン・テニエルのオリジナルの挿絵が表示されます。
 
-[![Mad ティーパーティーのトリプルスクリーンショット](images/ch13fg16-small.png "Mad Hatters 茶パーティーの書籍のテキスト")](images/ch13fg16-large.png#lightbox "Mad Hatters 茶パーティーの書籍のテキスト")
+[![マッド ティー パーティーのトリプル スクリーンショット](images/ch13fg16-small.png "マッドハッター ティー パーティーの書籍のテキスト")](images/ch13fg16-large.png#lightbox "マッドハッター ティー パーティーの書籍のテキスト")
 
-### <a name="browsing-and-waiting"></a>参照して、待機しています
+### <a name="browsing-and-waiting"></a>閲覧と待機
 
-[**Imagebrowser**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageBrowser)サンプルを使用すると、ユーザーは Xamarin web サイトに格納されているストックイメージを参照できます。 .NET [`WebRequest`](xref:System.Net.WebRequest)クラスを使用して、ビットマップの一覧を含む JSON ファイルをダウンロードします。
+[**ImageBrowser**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageBrowser) サンプルを使用すると、ユーザーは Xamarin Web サイトに格納されているストック画像を閲覧できます。 .NET [`WebRequest`](xref:System.Net.WebRequest) クラスを使用して、ビットマップの一覧を含む JSON ファイルをダウンロードします。
 
 > [!NOTE]
-> Xamarin. Forms プログラムは、インターネット経由でファイルにアクセスするために[`WebRequest`](xref:System.Net.WebRequest)ではなく[`HttpClient`](xref:System.Net.Http.HttpClient)を使用する必要があります。
+> Xamarin.Forms プログラムでは、インターネット経由でファイルにアクセスするために、[`WebRequest`](xref:System.Net.WebRequest) ではなく [`HttpClient`](xref:System.Net.Http.HttpClient) を使用する必要があります。
 
-プログラムは、何かが起こっていることを示すために[`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator)を使用します。 各ビットマップが読み込まれると、`Image` の読み取り専用の[`IsLoading`](xref:Xamarin.Forms.Image.IsLoading)プロパティが `true`ます。 `IsLoading` プロパティは、バインド可能なプロパティによってサポートされているため、プロパティが変更されたときに `PropertyChanged` イベントが発生します。 プログラムは、このイベントにハンドラーをアタッチし、`IsLoaded` の現在の設定を使用して `ActivityIndicator`の[`IsRunning`](xref:Xamarin.Forms.ActivityIndicator.IsRunning)プロパティを設定します。
+プログラムでは、何かが進行中であることを示すために [`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator) が使用されます。 各ビットマップが読み込まれているとき、`Image` の読み取り専用の [`IsLoading`](xref:Xamarin.Forms.Image.IsLoading) プロパティは `true` になります。 `IsLoading` プロパティはバインド可能なプロパティによってサポートされているため、そのプロパティが変更されると `PropertyChanged` イベントが発生します。 プログラムによって、このイベントにハンドラーがアタッチされ、`IsLoaded` の現在の設定が使用され、`ActivityIndicator` の [`IsRunning`](xref:Xamarin.Forms.ActivityIndicator.IsRunning) プロパティが設定されます。
 
-## <a name="streaming-bitmaps"></a>ビットマップのストリーミング
+## <a name="streaming-bitmaps"></a>ストリーミング ビットマップ
 
-`ImageSource.FromStream` メソッドは、.NET `Stream`に基づいて `ImageSource` を作成します。 メソッドには、`Stream` オブジェクトを返す `Func` オブジェクトを渡す必要があります。
+`ImageSource.FromStream` メソッドを使うと、.NET `Stream` に基づいて `ImageSource` が作成されます。 メソッドには、`Stream` オブジェクトを返す `Func` オブジェクトを渡す必要があります。
 
 ### <a name="accessing-the-streams"></a>ストリームへのアクセス
 
-[**Bitmapstreams**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/BitmapStreams)サンプルでは、`ImaageSource.FromStream` メソッドを使用して、埋め込みリソースとして格納されているビットマップを読み込んで、web 上にビットマップを読み込む方法を示します。
+[**BitmapStreams**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/BitmapStreams) サンプルは、`ImaageSource.FromStream` メソッドを使用して、埋め込みリソースとして格納されているビットマップを読み込み、Web 経由でビットマップを読み込む方法を示しています。
 
-### <a name="generating-bitmaps-at-run-time"></a>実行時にビットマップを生成します。
+### <a name="generating-bitmaps-at-run-time"></a>実行時のビットマップの生成
 
-すべての Xamarin. Forms プラットフォームは、圧縮されていない BMP ファイル形式をサポートしています。これは、コードで簡単に作成し、`MemoryStream`に格納することができます。 この手法を使用する**と、アルゴリズムライブラリの** [`BmpMaker`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BmpMaker.cs)クラスに実装されているように、実行時にビットマップを作成できます。
+すべての Xamarin.Forms プラットフォームは、非圧縮の BMP ファイル形式をサポートしています。これは、コードで簡単に構築し、`MemoryStream` に格納することができます。 **Xamrin.FormsBook.Toolkit** ライブラリの [`BmpMaker`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BmpMaker.cs) クラスに実装されているように、この手法により、実行時にビットマップをアルゴリズム的に作成できます。
 
-"自分で実行する" [**DiyGradientBitmap**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/DiyGradientBitmap)サンプルは、`BmpMaker` を使用して、グラデーションイメージでビットマップを作成する方法を示しています。
+"Do It Yourself" [**DiyGradientBitmap**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/DiyGradientBitmap) サンプルは、`BmpMaker` を使用してグラデーション画像でビットマップを作成する方法を示しています。
 
 ## <a name="platform-specific-bitmaps"></a>プラットフォーム固有のビットマップ
 
-すべての Xamarin.Forms プラットフォームは、プラットフォームのアプリケーション アセンブリにビットマップを格納するを許可します。 Xamarin. Forms アプリケーションによって取得されると、これらのプラットフォームビットマップは[`FileImageSource`](xref:Xamarin.Forms.FileImageSource)型になります。 使用すること。
+すべての Xamarin.Forms プラットフォームでは、プラットフォーム アプリケーション アセンブリにビットマップを格納できます。 Xamarin.Forms アプリケーションによって取得された場合、これらのプラットフォーム ビットマップは [`FileImageSource`](xref:Xamarin.Forms.FileImageSource) 型です。 それらを以下に使用します。
 
-- の[`Icon`](xref:Xamarin.Forms.MenuItem.Icon)プロパティ[`MenuItem`](xref:Xamarin.Forms.MenuItem)
-- の[`Icon`](xref:Xamarin.Forms.MenuItem.Icon)プロパティ[`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)
-- の[`Image`](xref:Xamarin.Forms.Button)プロパティ `Button`
+- [`MenuItem`](xref:Xamarin.Forms.MenuItem) の [`Icon`](xref:Xamarin.Forms.MenuItem.Icon) プロパティ
+- [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) の [`Icon`](xref:Xamarin.Forms.MenuItem.Icon) プロパティ
+- `Button` の [`Image`](xref:Xamarin.Forms.Button) プロパティ
 
-プラットフォーム アセンブリには、アイコンとスプラッシュ スクリーン用のビットマップには既にが含まれます。
+プラットフォーム アセンブリには、アイコンとスプラッシュ スクリーンのビットマップが既に含まれています。
 
-- IOS プロジェクトの**Resources**フォルダー
-- Android プロジェクトでは、 **Resources**フォルダーのサブフォルダーにあります。
-- Windows プロジェクトでは、 **Assets**フォルダーにあります (ただし、windows プラットフォームではビットマップがそのフォルダーに制限されません)。
+- iOS プロジェクトの **Resources** フォルダー
+- Android プロジェクトの **Resources** フォルダーのサブフォルダー
+- Windows プロジェクトでは、**Assets** フォルダー内 (ただし、Windows プラットフォームではビットマップはそのフォルダーに限定されません)
 
-[**Platformbitmaps**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/PlatformBitmaps)サンプルでは、コードを使用して、プラットフォームアプリケーションプロジェクトのアイコンを表示します。
+[**PlatformBitmaps**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/PlatformBitmaps) サンプルでは、コードを使用してプラットフォーム アプリケーション プロジェクトのアイコンを表示します。
 
-### <a name="bitmap-resolutions"></a>ビットマップの解決策
+### <a name="bitmap-resolutions"></a>ビットマップの解像度
 
-すべてのプラットフォームでは、複数のバージョンの別のデバイスの解像度のビットマップ イメージの保存を許可します。 実行時に適切なバージョンがデバイスの画面の解像度に基づいて読み込まれます。
+すべてのプラットフォームで、さまざまなデバイス解像度用にビットマップ画像の複数のバージョンを保存できます。 実行時に、画面のデバイス解像度に基づいて適切なバージョンが読み込まれます。
 
-Ios では、これらのビットマップは、ファイル名にサフィックスによって区別されます。
+iOS では、これらのビットマップはファイル名のサフィックスによって区別されます。
 
-- 160 DPI デバイス (1 ピクセル デバイスに依存しない単位) のサフィックスなし
-- 320 DPI デバイスの '@2x' サフィックス (2 ピクセル x DIU)
-- 480 DPI デバイスの '@3x' サフィックス (3 ピクセル x DIU)
+- 160 DPI デバイスの場合はサフィックスなし (デバイスに依存しない単位に対して 1 ピクセル)
+- 320 DPI デバイスの場合は "@2x" のサフィックス (DIU に対して 2 ピクセル)
+- 480 DPI デバイスの場合は "@3x" のサフィックス (DIU に対して 3 ピクセル)
 
-次の 3 つのバージョンでは、1 インチの四角形として表示するためのビットマップが存在します。
+1 インチ四方として表示することを目的としたビットマップは、次の 3 つのバージョンに存在します。
 
-- 160 ピクセルの正方形に MyImage.jpg
-- 320ピクセル四方の MyImage@2x.jpg
-- 480ピクセル四方の MyImage@3x.jpg
+- 160 ピクセル四方の MyImage.jpg
+- 320 ピクセル四方の MyImage@2x.jpg
+- 480 ピクセル四方の MyImage@3x.jpg
 
-このビットマップとして MyImage.jpg を参照して、プログラムが、画面の解像度に基づいて実行時に適切なバージョンが取得されます。 制約なし、ときに、ビットマップは 160 のデバイスに依存しない単位で常に表示されます。
+このプログラムでは、このビットマップを MyImage.jpg として参照しますが、適切なバージョンは画面の解像度に基づいて実行時に取得されます。 制約なしの場合、ビットマップは常に 160 のデバイスに依存しない単位でレンダリングされます。
 
-Android の場合、ビットマップは**Resources**フォルダーのさまざまなサブフォルダーに格納されます。
+Android の場合、ビットマップは **Resources** フォルダーのさまざまなサブフォルダーに格納されます。
 
-- drawable-ldpi (低 DPI) 120 DPI デバイス (0.75 の単位は DIU をピクセル単位)
-- drawable-mdpi (中) の 160 DPI デバイス (1 ピクセル、単位は DIU を)
-- drawable-hdpi (高) の 240 DPI デバイス (1.5 の単位は DIU をピクセル単位)
-- drawable-xhdpi (超高) 320 DPI デバイス (2 の単位は DIU をピクセル単位)
-- drawable-xxhdpi (場合によっては超高余分な) 480 DPI デバイス (、単位は DIU に 3 つのピクセル単位)
-- drawable-xxxhdpi (3 つの余分な高値) 640 DPI デバイス (4 ピクセル、単位は DIU を)
+- 120 DPI デバイスの場合は drawable-ldpi (低い DPI) (DIU に対して 0.75 ピクセル)
+- 160 DPI デバイスの場合は drawable-mdpi (中) (DIU に対して 1 ピクセル)
+- 240 DPI デバイスの場合は drawable-hdpi (高い) (DIU に対して 1.5 ピクセル)
+- 320 DPI デバイスの場合は drawable-xhdpi (非常に高い) (DIU に対して 2 ピクセル)
+- 480 DPI デバイスの場合は drawable-xxhdpi (2 倍の高さ) (DIU に対して 3 ピクセル)
+- 640 DPI デバイスの場合は drawable-xxxhdpi (3 倍の高さ) (DIU に対して 4 ピクセル)
 
-ビットマップのさまざまなバージョンは正方形の 1 インチで表示するためのもので、ビットマップの名前が同じで別のサイズになり、これらのフォルダーに格納します。
+1 インチ四方でレンダリングされることを目的としたビットマップの場合、ビットマップのさまざまなバージョンは名前は同じですが、サイズが異なり、これらのフォルダーに格納されます。
 
-- drawable-ldpi/MyImage.jpg 120 ピクセルの正方形に
-- drawable-mdpi/MyImage.jpg 160 ピクセルの正方形に
-- drawable-hdpi/MyImage.jpg 240 ピクセルの正方形に
-- drawable-xhdpi/MyImage.jpg 320 ピクセルの正方形で
-- drawable-xxhdpi/MyImage.jpg 480 ピクセルの正方形に
-- drawable-xxxhdpi/MyImage.jpg 640 ピクセルの正方形で
+- 120 ピクセル四方の drawable-ldpi/MyImage.jpg
+- 160 ピクセル四方の drawable-mdpi/MyImage.jpg
+- 240 ピクセル四方 drawable-hdpi/MyImage.jpg
+- 320 ピクセル四方の drawable-xhdpi/MyImage.jpg
+- 480 ピクセル四方の drawable-xxhdpi/MyImage.jpg
+- 640 ピクセル四方の drawable-xxxhdpi/MyImage.jpg
 
-ビットマップは、160 のデバイスに依存しない単位で常に表示されます。 (標準の Xamarin.Forms ソリューション テンプレートのみを含む hdpi、xhdpi、および xxhdpi フォルダー)
+ビットマップは常に 160 のデバイスに依存しない単位でレンダリングされます (標準の Xamarin.Forms ソリューション テンプレートには、hdpi、xhdpi、xxhdpi フォルダーのみが含まれます)。
 
-UWP プロジェクトには、ビットマップの名前付けスキームで構成されているデバイスに依存しない単位あたりのピクセル単位でスケール ファクターのパーセンテージなどがサポートされています。
+UWP プロジェクトでは、デバイスに依存しない単位ごとのピクセル単位のスケール ファクター (%) で構成されるビットマップ名前付け規則をサポートしています。たとえば、次のとおりです。
 
-- MyImage.scale-200.jpg 320 ピクセルの正方形で
+- 320 ピクセル四方の MyImage.scale-200.jpg
 
-いくつかのパーセンテージは有効です。 このブックのサンプルプログラムには、**スケール 200**のサフィックスを持つイメージのみが含まれていますが、現在の Xamarin. Forms ソリューションテンプレートには、**スケール-100**、**スケール-125**、**スケール-150**、および**スケール-400**が含まれています。
+一部のパーセンテージのみが有効です。 本書のサンプル プログラムには、サフィックスが **scale-200** の画像のみが含まれていますが、現在の Xamarin.Forms ソリューション テンプレートには、**scale-100**、**scale-125**、**scale-150**、**scale-400** が含まれています。
 
-プラットフォームプロジェクトにビットマップを追加する場合、**ビルドアクション**は次のようになります。
+プラットフォーム プロジェクトにビットマップを追加する場合、 **[ビルド アクション]** は次のようになります。
 
-- iOS: **BundleResource**
-- Android: **Androidresource**
+- iOS:**BundleResource**
+- Android:**AndroidResource**
 - UWP:**コンテンツ**
 
-[**Imagetap**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageTap)サンプルでは、`TapGestureRecognizer` がインストールされた `Image` 要素で構成される、ボタンに似た2つのオブジェクトを作成します。 オブジェクトが 1 インチの四角形をすることが目的です。 `Image` の `Source` プロパティは `OnPlatform` および `On` オブジェクトを使用して設定され、プラットフォーム上の異なるファイル名を参照します。 ビットマップ イメージには、どのサイズ ビットマップが取得され、表示を表示できるように、ピクセル サイズを示す番号が含まれます。
+[**ImageTap**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ImageTap) サンプルでは、`TapGestureRecognizer` がインストールされた `Image` 要素で構成される 2 つのボタンのようなオブジェクトを作成します。 これは、オブジェクトが 1 インチ四方であることが意図されています。 `Image` の `Source` プロパティは、プラットフォーム上の異なる可能性のあるファイル名を参照するために、`OnPlatform` および `On` オブジェクトを使用して設定されます。 ビットマップ画像にはピクセル サイズを示す数字が含まれているため、ビットマップが取得およびレンダリングされるサイズを確認できます。
 
-### <a name="toolbars-and-their-icons"></a>ツールバーとアイコン
+### <a name="toolbars-and-their-icons"></a>ツールバーとそのアイコン
 
-プラットフォーム固有のビットマップの主な用途の1つは、`Page`で定義された[`ToolbarItems`](xref:Xamarin.Forms.Page.ToolbarItems)コレクションに[`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem)オブジェクトを追加することによって構築される Xamarin. Forms ツールバーです。 `ToobarItem` は、一部のプロパティを継承する[`MenuItem`](xref:Xamarin.Forms.MenuItem)から派生します。
+プラットフォーム固有のビットマップの主な用途の 1 つは、Xamarin.Forms ツールバーです。これを構築するには、[`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) オブジェクトを `Page` で定義された [`ToolbarItems`](xref:Xamarin.Forms.Page.ToolbarItems) コレクションに追加します。 `ToobarItem` は [`MenuItem`](xref:Xamarin.Forms.MenuItem) から派生し、そこからいくつかのプロパティを継承します。
 
-最も重要な `ToolbarItem` プロパティは次のとおりです。
+最も重要な `ToolbarItem` プロパティは、次のとおりです。
 
-- プラットフォームおよび `Order` によって表示される可能性があるテキストの[`Text`](xref:Xamarin.Forms.MenuItem.Text)
-- プラットフォームと `Order` によって表示されるイメージの `FileImageSource` 型の[`Icon`](xref:Xamarin.Forms.MenuItem.Icon)
-- [`ToolbarItemOrder`](xref:Xamarin.Forms.ToolbarItemOrder)型の[`Order`](xref:Xamarin.Forms.ToolbarItem.Order) 、 [`Default`](xref:Xamarin.Forms.ToolbarItemOrder.Default)、 [`Primary`](xref:Xamarin.Forms.ToolbarItemOrder.Primary)、および[`Secondary`](xref:Xamarin.Forms.ToolbarItemOrder.Secondary)の3つのメンバーを持つ列挙体です。
+- プラットフォームと `Order` に応じて表示されるテキストの場合は [`Text`](xref:Xamarin.Forms.MenuItem.Text)
+- プラットフォームと `Order` に応じて表示される可能性のある画像の場合は型 `FileImageSource` の [`Icon`](xref:Xamarin.Forms.MenuItem.Icon)
+- [`Default`](xref:Xamarin.Forms.ToolbarItemOrder.Default)、[`Primary`](xref:Xamarin.Forms.ToolbarItemOrder.Primary)、および [`Secondary`](xref:Xamarin.Forms.ToolbarItemOrder.Secondary) という 3 つのメンバーを持つ列挙体である型 [`ToolbarItemOrder`](xref:Xamarin.Forms.ToolbarItemOrder) の [`Order`](xref:Xamarin.Forms.ToolbarItem.Order)
 
-`Primary` 項目の数は 3 ~ 4 に制限する必要があります。 すべての項目に対して `Text` 設定を含める必要があります。 ほとんどのプラットフォームでは、`Primary` 項目だけが `Icon` を必要としますが、Windows 8.1 にはすべての項目に対して `Icon` が必要です。 32 のデバイスに依存しない単位正方形のアイコンがあります。 `FileImageSource` 型は、それらがプラットフォーム固有であることを示します。
+`Primary` 項目の数は 3 つまたは 4 つに制限する必要があります。 すべての項目に `Text` 設定を含める必要があります。 ほとんどのプラットフォームでは、`Primary` 項目のみに `Icon` が必要ですが、Windows 8.1 ではすべての項目に `Icon` が必要です。 アイコンは、デバイスに依存しない 32 単位四方にする必要があります。 `FileImageSource` 型は、それらがプラットフォーム固有であることを示します。
 
-`ToolbarItem` は、`Button`のように、タップしたときに[`Clicked`](xref:Xamarin.Forms.MenuItem.Clicked)イベントを発生させます。 `ToolbarItem` では、MVVM との接続によく使用される[`Command`](xref:Xamarin.Forms.MenuItem.Command)と[`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter)プロパティもサポートしています。 ( [MVVM の章を](chapter18.md)参照してください)。
+`ToolbarItem` を使うと、タップしたときに `Button` のように [`Clicked`](xref:Xamarin.Forms.MenuItem.Clicked) イベントが発生します。 `ToolbarItem` では、MVVM に関連してよく使用される [`Command`](xref:Xamarin.Forms.MenuItem.Command) および [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter) プロパティもサポートされます (「[第 18 章 MVVM](chapter18.md)」を参照してください)。
 
-IOS と Android のどちらでも、ツールバーを表示するページが[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)か、`NavigationPage`によって移動されるページである必要があります。 [**Toolbardemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ToolbarDemo)プログラムは、`App` クラスの `MainPage` プロパティを、`ContentPage` 引数を使用して[`NavigationPage` コンストラクター](xref:Xamarin.Forms.NavigationPage.%23ctor(Xamarin.Forms.Page))に設定し、ツールバーの構築とイベントハンドラーを示します。
+iOS と Android のいずれでも、ツールバーを表示するページは [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) であるか、`NavigationPage` によってナビゲートされるページである必要があります。 [**ToolbarDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ToolbarDemo) プログラムによって、`ContentPage` 引数を使用して、`App` クラスの `MainPage` プロパティが [`NavigationPage` コンストラクター](xref:Xamarin.Forms.NavigationPage.%23ctor(Xamarin.Forms.Page))に設定されます。これは、ツール バーの構築とイベント ハンドラーを示すものです。
 
-### <a name="button-images"></a>ボタンのイメージ
+### <a name="button-images"></a>ボタンの画像
 
-また、 [**Buttonimage**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ButtonImage)サンプルで示すように、プラットフォーム固有のビットマップを使用して、`Button` の[`Image`](xref:Xamarin.Forms.Button.Image)プロパティを、デバイスに依存しない32の正方形のビットマップに設定することもできます。
+[**ButtonImage**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ButtonImage) サンプルに示されているように、プラットフォーム固有のビットマップを使用して、`Button` の [`Image`](xref:Xamarin.Forms.Button.Image) プロパティを、デバイスに依存しない 32 単位四方のビットマップに設定することもできます。
 
 > [!NOTE]
-> ボタンのイメージの使用が強化されました。 「[ボタンを使用したビットマップの使用」を](~/xamarin-forms/user-interface/button.md#using-bitmaps-with-buttons)参照してください。
+> ボタンでの画像の使用が強化されました。 「[ボタンにビットマップを使用する](~/xamarin-forms/user-interface/button.md#using-bitmaps-with-buttons)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 
-- [第13章フルテキスト (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch13-Apr2016.pdf)
-- [第13章のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13)
+- [第 13 章の全文 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch13-Apr2016.pdf)
+- [第 13 章のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13)
 - [イメージの処理](~/xamarin-forms/user-interface/images.md)
-- [ボタンを使用したビットマップの使用](~/xamarin-forms/user-interface/button.md#using-bitmaps-with-buttons)
+- [ボタンにビットマップを使用する](~/xamarin-forms/user-interface/button.md#using-bitmaps-with-buttons)

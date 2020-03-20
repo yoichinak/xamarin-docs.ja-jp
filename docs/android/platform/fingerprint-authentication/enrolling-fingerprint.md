@@ -8,66 +8,66 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
 ms.openlocfilehash: c0290dfa3b4aa301a07a589f78577899e8282158
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027595"
 ---
 # <a name="enrolling-a-fingerprint"></a>指紋の登録
 
 ## <a name="enrolling-a-fingerprint-overview"></a>指紋の登録の概要
 
-デバイスが指紋認証を使用して既に構成されている場合は、Android アプリケーションで指紋認証を利用することはできません。 このガイドでは、Android デバイスまたはエミュレーターに指紋を登録する方法について説明します。 エミュレーターには指紋スキャンを実行するための実際のハードウェアがありませんが、Android Debug Bridge のヘルプを使用して指紋スキャンをシミュレートすることができます (以下で説明します)。  このガイドでは、Android デバイスで画面のロックを有効にし、認証用の指紋を登録する方法について説明します。
+デバイスが指紋認証を使用して既に構成されている場合は、Android アプリケーションのみで指紋認証を利用するができます。 このガイドでは、Android デバイスまたはエミュレーターに指紋を登録する方法について説明します。 エミュレーターに指紋スキャンを実行するための実際のハードウェアは備わっていませんが、Android Debug Bridge のヘルプを使用して指紋スキャンをシミュレートすることができます (以下で説明)。  このガイドでは、Android デバイスで画面ロックを有効にし、認証用の指紋を登録する方法について説明します。
 
-## <a name="requirements"></a>［要件］
+## <a name="requirements"></a>必要条件
 
-指紋を登録するには、Android デバイス、または API レベル 23 (Android 6.0) を実行するエミュレーターが必要です。
+指紋を登録するには、Android デバイス、または API レベル 23 (Android 6.0) を実行しているエミュレーターが必要です。
 
-Android Debug Bridge (ADB) を使用するには、コマンドプロンプトを使い慣れている必要があります。 **adb**実行可能ファイルは、Bash、PowerShell、またはコマンドプロンプト環境のパスになければなりません。
+Android Debug Bridge (ADB) を使用するには、コマンド プロンプトを使い慣れている必要があります。また、**adb** 実行可能ファイルは、Bash、PowerShell、またはコマンド プロンプト環境の PATH に存在する必要があります。
 
 ## <a name="configuring-a-screen-lock-and-enrolling-a-fingerprint"></a>画面ロックの構成と指紋の登録 
 
-画面のロックを設定するには、次の手順を実行します。
+画面ロックを設定するには、次の手順を行います。
 
-1. **[> 設定]** セキュリティ にアクセスし、 **[画面のロック]** を選択します。
+1. **[設定] > [セキュリティ]** にアクセスし、 **[画面ロック]** を選択します。
 
-    ![セキュリティ画面での画面ロック選択の場所](enrolling-fingerprint-images/testing-01.png)
+    ![[セキュリティ] 画面での画面ロック選択の場所](enrolling-fingerprint-images/testing-01.png)
 
-2. 次の画面が表示されるので、画面ロックのセキュリティメソッドのいずれかを選択して構成できます。 
+2. 次の画面が表示されるので、画面ロックにおけるいずれかのセキュリティの方法を選択して構成できます。 
 
     ![スワイプ、パターン、PIN、またはパスワードの選択](enrolling-fingerprint-images/testing-02.png)
 
-   使用可能な画面ロック方法の1つを選択して完了します。
+   使用可能な画面ロックの方法の 1 つを選択して完了します。
 
-3. Screenlock が構成されたら、 **[Settings > Security]** ページに戻り、 **[フィンガープリント]** を選択します。
+3. 画面ロックが構成されたら、 **[設定] > [セキュリティ]** ページに戻り、 **[指紋]** を選択します。
 
     ![[セキュリティ] 画面での指紋選択の場所](enrolling-fingerprint-images/testing-03.png)
 
-4. そこから、シーケンスに従って、デバイスに指紋を追加します。
+4. そこからシーケンスに従って、デバイスに指紋を追加します。
 
-    [デバイスに指紋を追加するための一連のスクリーンショット![](enrolling-fingerprint-images/testing-04-sml.png)](enrolling-fingerprint-images/testing-04.png#lightbox)
+    [![デバイスに指紋を追加するためのスクリーンショットのシーケンス](enrolling-fingerprint-images/testing-04-sml.png)](enrolling-fingerprint-images/testing-04.png#lightbox)
 
-5. 最後の画面では、指紋スキャナーに指を配置するように求められます。 
+5. 最後の画面で、指紋スキャナーに指を配置するように求められます。 
 
-    ![指をセンサーに入れるように求める画面](enrolling-fingerprint-images/testing-05.png)
+    ![指をセンサーに置くように求められる画面](enrolling-fingerprint-images/testing-05.png)
 
-    Android デバイスを使用している場合は、スキャナーに指を触れることによってプロセスを完了します。 
+    Android デバイスを使用している場合は、スキャナーに指をタッチすることによってプロセスを完了します。 
 
 ### <a name="simulating-a-fingerprint-scan-on-the-emulator"></a>エミュレーターでの指紋スキャンのシミュレーション
 
-Android エミュレーターでは、Android Debug Bridge を使用して指紋スキャンをシミュレートすることができます。 OS X で、Windows on Windows でターミナルセッションを開始するコマンドプロンプトまたは Powershell セッションを起動し、`adb`を実行します。
+Android エミュレーターでは、Android Debug Bridge を使用して指紋スキャンをシミュレートすることができます。 OS X ではターミナル セッションが開始されますが、Windows ではコマンド プロンプトまたは PowerShell セッションが起動され、`adb` が実行されます。
 
 ```shell
 $ adb -e emu finger touch 1
 ```
 
-値**1**は、"スキャン済み" という指の _\_id_です。 仮想指紋ごとに割り当てる一意の整数です。 アプリが実行されている場合は、エミュレーターが指紋の入力を求めるたびに、この同じ ADB コマンドを実行できます。 `adb` コマンドを実行し、それに_指\_id_を渡して、指紋スキャンをシミュレートすることができます。
+値 **1** は、"スキャン済み" となった指の _finger\_id_ です。 これは、仮想指紋ごとに割り当てる一意の整数です。 今後アプリが実行されている際、エミュレーターが指紋を要求するたびに、この同じ ADB コマンドを実行できます。また、`adb` コマンドを実行して _finger\_id_ に渡し、指紋スキャンをシミュレートすることができます。
 
-指紋のスキャンが完了すると、次のように、指紋が追加されたことが Android から通知されます。  
+指紋のスキャンが完了すると、次のように、Android から指紋が追加されたことが通知されます。  
 
-![指紋を追加した画面が表示されます。](enrolling-fingerprint-images/testing-06.png)
+![指紋が追加されたことを示す画面](enrolling-fingerprint-images/testing-06.png)
 
 ## <a name="summary"></a>まとめ 
 
-このガイドでは、画面ロックを設定し、Android デバイスまたは Android エミュレーターに指紋を登録する方法について説明しました。 
+このガイドでは、画面ロックを設定し、Android デバイスまたは Android Emulator に指紋を登録する方法について説明しました。 

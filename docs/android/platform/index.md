@@ -1,6 +1,6 @@
 ---
-title: Xamarin Android のプラットフォーム機能
-description: このセクションのドキュメントでは、Android 固有の機能について説明します。 ここでは、フラグメントの使用、マップの操作、コンテンツプロバイダーを使用したデータのカプセル化などのトピックを紹介します。
+title: Xamarin.Android のプラットフォーム機能
+description: このセクションのドキュメントでは、Android 固有の機能を扱います。 Fragments の使用、マップの操作、Content Providers によるデータのカプセル化などのトピックがあります。
 ms.prod: xamarin
 ms.assetid: DDE54082-6E2B-9ED9-05FB-D9C1D1B1258E
 ms.technology: xamarin-android
@@ -8,51 +8,51 @@ author: davidortinau
 ms.author: daortin
 ms.date: 08/21/2018
 ms.openlocfilehash: 3ad3661ff50ad7f4be95421de57dc5017392a59f
-ms.sourcegitcommit: b751605179bef8eee2df92cb484011a7dceb6fda
-ms.translationtype: MT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "77495673"
 ---
 # <a name="platform-features"></a>プラットフォーム機能
 
-_このセクションのドキュメントでは、Android 固有の機能について説明します。ここでは、フラグメントの使用、マップの操作、コンテンツプロバイダーを使用したデータのカプセル化などのトピックを紹介します。_
+_このセクションのドキュメントでは、Android 固有の機能を扱います。Fragments の使用、マップの操作、Content Providers によるデータのカプセル化などのトピックがあります。_
 
 ## <a name="android-beam"></a>[Android ビーム](~/android/platform/android-beam.md)
 
-Android ビームは、近接しているときにアプリケーションが NFC 経由で情報を共有できるようにする、Android 4 の新しい近距離無線通信 (NFC) テクノロジです。
+Android ビームは、Android 4 の新しい近距離無線通信 (NFC) テクノロジで、アプリケーションが近接している場合に NFC 経由で情報を共有できるようにします。
 
 ## <a name="working-with-files"></a>[ファイルの処理](~/android/platform/files/index.md)
 
-このセクションでは、Xamarin. Android でファイルにアクセスする方法について説明します。
+このセクションでは、Xamarin.Android でファイルにアクセスする方法について説明します。
 
 ## <a name="fingerprint-authentication"></a>[指紋認証](~/android/platform/fingerprint-authentication/index.md)
 
-このセクションでは、初めて Android 6.0 で導入された指紋認証を Xamarin Android アプリケーションに使用する方法について説明します。
+このセクションでは、Android 6.0 で最初に導入された指紋認証を Xamarin.Android アプリケーションに使用する方法について説明します。
 
 ## <a name="firebase-job-dispatcher"></a>[Firebase ジョブ ディスパッチャー](~/android/platform/firebase-job-dispatcher.md)
 
-このガイドでは、焼討ベースのジョブディスパッチャーについて説明し、これを使用して Xamarin Android アプリでのバックグラウンドジョブの実行を簡略化する方法について説明します。
+このガイドでは、Firebase ジョブ ディスパッチャーと、それを使用して Xamarin.Android アプリのバックグラウンド ジョブ実行を簡単にする方法について説明します。
 
 ## <a name="fragments"></a>[フラグメント](~/android/platform/fragments/index.md)
 
-Android 3.0 では、スマートフォンやタブレットで検出されたさまざまな画面サイズに対して、より柔軟なデザインをサポートする方法を示すフラグメントが導入されました。 この記事では、フラグメントを使用して Xamarin Android アプリケーションを開発する方法について説明します。また、Android 3.0 (API レベル 11) デバイスでフラグメントをサポートする方法についても説明します。
+Android 3.0 では、スマートフォンやタブレットで検出されるさまざまな画面サイズに対して、より柔軟なデザインをサポートする方法を示すフラグメントが導入されました。 この記事では、フラグメントを使用して Xamarin.Android アプリケーションを開発する方法について説明します。さらに、Android 3.0 (API レベル 11) の前のデバイスでフラグメントをサポートする方法も説明します。
 
-## <a name="app-linking"></a>[アプリリンク](~/android/platform/app-linking.md)
+## <a name="app-linking"></a>[App-Linking](~/android/platform/app-linking.md)
 
-このガイドでは、モバイルアプリが web サイトの Url に応答できるようにするための手法である Android 6.0 での_アプリリンク_のサポートについて説明します。 Android 6.0 アプリケーションでのアプリリンクの実装方法と、ドメインのアプリリンクを処理するためのアクセス許可をモバイルアプリに付与するように web サイトを構成する方法について説明します。
+このガイドでは、Android 6.0 での "_アプリリンク_" のサポートについて説明します。アプリリンクは、モバイル アプリが Web サイト上の URL に応答できるようにするための手法です。 ここでは、Android 6.0 アプリケーションでアプリリンクを実装する方法、モバイル アプリにドメインのアプリリンクを処理するアクセス許可を付与するように Web サイトを構成する方法について説明します。
 
 ## <a name="android-10"></a>[Android 10](~/android/platform/android-10.md)
 
-この記事では、Android 10 の新機能の概要を説明し、android 10 開発用に Xamarin を準備する方法について説明します。また、Xamarin android アプリで Android Oreo 機能を使用する方法を示すサンプルアプリケーションへのリンクも示します。
+この記事では、Android 10 の新しい機能の概要と、Android 10 開発用に Xamarin.Android を準備する方法について説明し、Xamarin.Android アプリで Android Oreo の機能を使用する方法がわかるサンプル アプリケーションへのリンクを示します。
 
-## <a name="android-9-pie"></a>[Android 9 円](~/android/platform/pie.md)
+## <a name="android-9-pie"></a>[Android 9 Pie](~/android/platform/pie.md)
 
-この記事では、Android 円の新機能の概要を説明し、Android の円開発用に Xamarin を準備する方法について説明します。また、で新しい Android 円グラフのカットアウトと通知機能を使用する方法を示すサンプルアプリを提供します。Xamarin Android アプリ。
+この記事では、Android Pie の新機能の概要と、Android Pie 開発のために Xamarin.Android を準備する方法について説明し、Xamarin.Android アプリで Android Pie の新しいディスプレイ カットアウト機能と通知機能を使用する方法を示すサンプル アプリケーションへのリンクを提供します。
 
 ## <a name="android-8-oreo"></a>[Android 8 Oreo](~/android/platform/oreo.md)
 
-この記事では、Android Oreo の新機能の概要を説明し、android Oreo 開発用に Xamarin を準備する方法について説明します。また、Xamarin Android アプリで Android Oreo 機能を使用する方法を示すサンプルアプリケーションへのリンクも示します。
+この記事では、Android Oreo の新しい機能の概要と、Android Oreo 開発用に Xamarin.Android を準備する方法について説明し、Xamarin.Android アプリで Android Oreo の機能を使用する方法がわかるサンプル アプリケーションへのリンクを示します。
 
 ## <a name="android-7-nougat"></a>[Android 7 Nougat](~/android/platform/nougat.md)
 
@@ -64,49 +64,49 @@ Android 3.0 では、スマートフォンやタブレットで検出された�
 
 ## <a name="android-5-lollipop"></a>[Android 5 Lollipop](~/android/platform/lollipop.md)
 
-このガイドでは、マテリアルテーマ、CardView、RecyclerView、Head Up 通知などの新しい Android 5.0 ロリポップ機能の概要について説明し、アプリでこれらの新機能を使用する際に役立つ詳細な記事へのリンクを示します。
+このガイドでは、Material Theme、CardView、RecyclerView、Heads Up Notifications など、Android 5.0 Lollipop の新機能の概要と、それらの新機能を自分のアプリで使用するときに役立つ詳しい記事へのリンクを提供します。
 
 ## <a name="android-44-kitkat"></a>[Android 4.4 KitKat](~/android/platform/kitkat.md)
 
-Android 4.4 (KitKat) には、ユーザーと開発者の両方の機能が生涯に読み込まれています。 このガイドでは、これらの機能のいくつかについて説明し、KitKat を最大限に活用するのに役立つコード例と実装の詳細を示します。
+Android 4.4 (KitKat) には、ユーザーと開発者の両方のためのさまざまな機能が搭載されています。 このガイドでは、これらの機能のいくつかを取り上げ、KitKat を最大限に活用するために役立つコード例と実装の詳細について説明します。
 
 ## <a name="android-41-jelly-bean"></a>[Android 4.1 Jelly Bean](~/android/platform/jelly-bean.md)
 
-このドキュメントでは、Android 4.1 で導入された開発者向けの新機能の概要について説明します。 これらの機能には、強化された通知、大きなファイルを共有する Android ビームの更新、マルチメディアの更新、ピアツーピアのネットワーク探索、アニメーション、新しいアクセス許可が含まれます。
+このドキュメントでは、Android 4.1 で導入された開発者向けの新機能の概要について説明します。 これらの機能には、強化された通知、大きなファイルを共有するための Android ビームの更新、マルチメディアの更新、ピアツーピア ネットワーク探索、アニメーション、新しいアクセス許可が含まれます。
 
 ## <a name="android-40-ice-cream-sandwich"></a>[Android 4.0 Ice Cream Sandwich](~/android/platform/ice-cream-sandwich.md)
 
-この記事では、 *Android 4 の API アイスクリーム*を使用して、アプリケーション開発者が利用できるいくつかの新機能について説明します。
-新しいユーザーインターフェイステクノロジをいくつか取り上げ、Android 4 がアプリケーション間およびデバイス間でデータを共有するために提供するさまざまな新機能について説明します。
+この記事では、*Android 4 API - Ice Cream Sandwich* でアプリケーション開発者が利用できるいくつかの新機能について説明します。
+ここでは新しいユーザー インターフェイス テクノロジをいくつか取り上げた後、アプリケーション間およびデバイス間でデータを共有するために Android 4 で提供されるさまざまな新機能について説明します。
 
 ## <a name="working-with-the-android-manifest"></a>[Android マニフェストの操作](android-manifest.md)
 
-この記事では、AndroidManifest .xml ファイルと、それを使用して機能を制御し、Mono for Android アプリケーションの要件を記述する方法について説明します。
+この記事では、AndroidManifest.xml ファイルと、それを使用し、Mono for Android アプリケーションの機能を制御し、要件を説明する方法を紹介します。
 
-## <a name="introduction-to-content-providers"></a>[コンテンツプロバイダーの概要](~/android/platform/content-providers/index.md)
+## <a name="introduction-to-content-providers"></a>[コンテンツ プロバイダーの概要](~/android/platform/content-providers/index.md)
 
-ContentProvider は、データリポジトリをカプセル化し、それにアクセスするための API を提供します。 プロバイダーは Android アプリケーションの一部として存在し、データを表示または管理するための UI も提供します。 コンテンツプロバイダーを使用する主な利点は、他のアプリケーションがプロバイダークライアントオブジェクト (ContentResolver と呼ばれます) を使用して、カプセル化されたデータに簡単にアクセスできるようにすることです。 コンテンツプロバイダーとコンテンツリゾルバーは、簡単に構築して使用できるデータアクセスのための一貫したアプリケーション間 API を提供します。 このドキュメントでは、Xamarin Android で ContentProviders にアクセスしてビルドする方法を示します。
+ContentProvider は、データ リポジトリをカプセル化し、そこにアクセスするための API を提供します。 プロバイダーは、Android アプリケーションの一部として存在します。これは、データを表示または管理するための UI も提供します。 コンテンツ プロバイダーを使用する主な利点は、プロバイダー クライアント オブジェクト (ContentResolver) を使用して、カプセル化されたデータに他のアプリケーションが簡単にアクセスできることです。 また、コンテンツ プロバイダーおよびコンテンツ リゾルバーでは、簡単にビルドして使用できるデータ アクセスのための一貫したアプリケーション間 API も提供します。 このドキュメントでは、Xamarin Android で ContentProviders にアクセスしてビルドする方法について示します。
 
 ## <a name="maps-and-location"></a>[マップと場所](~/android/platform/maps-and-location/index.md)
 
-このセクションでは、maps と location を Xamarin Android で使用する方法について説明します。 組み込みの maps アプリケーションを利用して、 [Google Maps ANDROID API v2](https://developers.google.com/maps/documentation/android/)を直接使用する方法のすべてについて説明します。 また、1つの API を使用してロケーションサービスを操作する方法についても説明します。ここでは、携帯電話の三角測量を使用して、アプリケーションが場所の修正、Wi-fi の場所、および GPS を取得できるようにします。
+このセクションでは、Xamarin.Android でマップと位置情報を使用する方法について説明します。 組み込みのマップ アプリケーションの利用方法から [Google Maps Android API v2](https://developers.google.com/maps/documentation/android/) の直接的な使用方法に至るすべての事柄について説明します。 さらに、単一の API を使用して位置情報サービスを操作する方法も説明します。位置情報サービスでは、セルラー方式の三角測量を利用し、位置修正、Wi-Fi 位置、GPS をアプリケーションが取得できるようにします。
 
-## <a name="android-speech"></a>[Android の音声](~/android/platform/speech.md)
+## <a name="android-speech"></a>[Android Speech](~/android/platform/speech.md)
 
-このセクションでは、Android Text to Speech と音声合成機能を使用する方法について説明します。 また、言語パックのインストールと、デバイスに対して話されるテキストの解釈についても説明します。
+このセクションでは、Android のテキスト読み上げ機能と音声テキスト変換機能を使用する方法について説明します。 言語パックのインスタンスやデバイスに入力された会話テキストの解釈も扱います。
 
 ## <a name="binding-a-java-library"></a>[Java ライブラリのバインド](binding-java-library/index.md)
 
-このガイドでは、バインドライブラリを作成して Xamarin Android アプリに Java ライブラリを組み込む方法について説明します。
+このガイドでは、バインディング ライブラリを作成し、Jave ライブラリを Xamarin.Android アプリに組み込む方法を説明します。
 
 ## <a name="bind-a-kotlin-library"></a>[Kotlin ライブラリをバインドする](binding-kotlin-library/index.md)
 
-このガイドでは、Kotlin C#コードへのバインドを作成して、Xamarin Android アプリケーションでネイティブライブラリを使用できるようにする方法について説明します。
+このガイドでは、Kotlin コードへの C# バインドを作成して、Xamarin.Android アプリケーションでネイティブ ライブラリを使用できるようにする方法について説明します。
 
 ## <a name="java-integration"></a>[Java の統合](java-integration/index.md)
 
-この記事では、開発者が Xamarin Android アプリで既存の Java コンポーネントを再利用する方法の概要について説明します。
+この記事では、開発者が Xamarin.Android アプリで既存の Java コンポーネントを再利用する方法について概要を説明します。
 
 ## <a name="renderscript"></a>[Renderscript](renderscript.md)
 
-このガイドでは、Renderscript について説明します。
+このガイドでは Renderscript について説明します。

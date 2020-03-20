@@ -8,29 +8,29 @@ author: davidortinau
 ms.author: daortin
 ms.date: 05/30/2018
 ms.openlocfilehash: 24c70c2e869f59091a1519af6d1165dbea9cc467
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
-ms.translationtype: MT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "76725061"
 ---
 # <a name="which-android-sdk-packages-should-i-install"></a>インストールする必要がある Android SDK パッケージを教えてください
 
-Android SDK をインストールすると、開発に必要な最小限のパッケージが自動的に含まれなくなります。 個々の開発者のニーズは異なりますが、Xamarin を使用した開発には通常、次のパッケージが必要になります。
+Android SDK をインストールしても、開発に必要な最小限のパッケージがすべて自動的に含まれるわけではありません。 開発者のニーズは個々に異なりますが、通常以下のパッケージは、Xamarin Android を使用した開発に必要です。
 
 ## <a name="tools"></a>ツール
 
-SDK manager の Tools フォルダーから最新のツールをインストールします。
+SDK マネージャーの Tools フォルダーから、次の最新のツールをインストールします。
 
 - Android SDK Tools
-- Android SDK プラットフォーム-ツール
-- Android SDK ビルドツール
+- Android SDK Platform-Tools
+- Android SDK Build-Tools
 
-## <a name="android-platforms"></a>Android プラットフォーム
+## <a name="android-platforms"></a>Android Platform(s)
 
-最小 & ターゲットとして設定した Android バージョンの "SDK Platform" をインストールします。
+最小限のターゲットとして設定した Android バージョンの "SDK Platform" をインストールします。
 
-例 :
+次に例を示します。
 
 - ターゲット API 23
 - 最小 API 23
@@ -40,11 +40,11 @@ API 23 の SDK プラットフォームのみをインストールする必要�
 - ターゲット API 23
 - 最小 API 15
 
-API 15 および23の SDK プラットフォームをインストールする必要があります。 最小とターゲットの間に API レベルをインストールする必要がないことに注意してください (これらの API レベルにバック移植している場合でも)。
+API 15 と 23 の SDK プラットフォームをインストールする必要があります 最小とターゲットの間に API レベルをインストールする必要がないことにご注意ください (これらの API レベルに旧バージョンへの移植を行っている場合でも)。
 
-## <a name="system-images"></a>システムイメージ
+## <a name="system-images"></a>システム イメージ
 
-これらは、既定の Android エミュレーターを Google から使用する場合にのみ必要です。 詳細については、「 [Android Emulator セットアップ](~/android/get-started/installation/android-emulator/index.md)」を参照してください。
+これらは、Google の既定の Android エミュレーターを使用する場合にのみ必要です。 詳細については、「[Android Emulator のセットアップ](~/android/get-started/installation/android-emulator/index.md)」をご覧ください。
 
 ## <a name="extras"></a>Extras
-通常、Android SDK エクストラは必須ではありません。ただし、ユースケースによっては必要になる場合があるため、注意が必要です。
+通常、Android SDK Extras は必要ありません。ただし、お客様のユース ケースでは必要な場合もあるため、留意しておく必要はあります。

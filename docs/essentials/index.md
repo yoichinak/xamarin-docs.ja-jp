@@ -5,12 +5,12 @@ ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 02/26/2020
-ms.openlocfilehash: a0d1e397725ca0a60eb68fb0e6b989ee22c3f56a
-ms.sourcegitcommit: 3d39bafe4c56b15cbb695b1f7f02b926e1033f58
+ms.openlocfilehash: 42cdfe6c54354f1616606c9b3a40de78446c5c39
+ms.sourcegitcommit: eedc6032eb5328115cb0d99ca9c8de48be40b6fa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78155268"
+ms.lasthandoff: 03/07/2020
+ms.locfileid: "78910733"
 ---
 # <a name="xamarinessentials"></a>Xamarin.Essentials
 
@@ -28,6 +28,7 @@ Android、iOS、UWP では独自のオペレーティング システムとプ�
 
 * [加速度計](accelerometer.md?context=xamarin/xamarin-forms) – 3 次元空間内のデバイスの加速度データを取得します。
 * [アプリ情報](app-information.md?context=xamarin/xamarin-forms) – アプリケーションに関する情報を見つけます。
+* [アプリのテーマ](app-theme.md?context=xamarin/xamarin-forms) –アプリケーションに対して要求されている現在のテーマを検出します。
 * [バロメーター](barometer.md?context=xamarin/xamarin-forms) – 負荷の変化のバロメーターを監視します。
 * [バッテリ](battery.md?context=xamarin/xamarin-forms) – バッテリ レベル、ソース、および状態を簡単に検出します。
 * [クリップボード](clipboard.md?context=xamarin/xamarin-forms) – クリップボード上のテキストをすばやく簡単に設定したり読み取ったりします。

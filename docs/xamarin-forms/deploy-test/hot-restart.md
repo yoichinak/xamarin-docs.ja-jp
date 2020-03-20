@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: jimmgarrido
 ms.author: jigarrid
 ms.date: 01/14/2020
-ms.openlocfilehash: 2cf925a96e952e6b760da9ca5416e124a3e3716b
-ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
+ms.openlocfilehash: 1f87fffe99656cdc0d0bf0f0178413740a20aa75
+ms.sourcegitcommit: e9d88587aafc912124b87732d81c3910247ad811
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/07/2020
-ms.locfileid: "77071154"
+ms.lasthandoff: 03/05/2020
+ms.locfileid: "78337283"
 ---
 # <a name="xamarin-hot-restart-preview"></a>Xamarin のホット再起動 (プレビュー)
 
@@ -20,19 +20,22 @@ ms.locfileid: "77071154"
 
 Xamarin のホット再起動を使用すると、複数ファイルのコード編集、リソース、参照など、開発中のアプリに対する変更を迅速にテストできます。 新しい変更がデバッグ ターゲットの既存のアプリ バンドルにプッシュされ、ビルドと配置のサイクルが大幅に短縮されます。
 
-> [!NOTE]
+> [!IMPORTANT]
 > Xamarin のホット再起動は現在 Visual Studio 2019 バージョン 16.5 Preview で利用でき、Xamarin.Forms を使用した iOS アプリをサポートしています。 Visual Studio for Mac と Xamarin.Forms 以外のアプリのサポートが計画中です。
 
 ## <a name="requirements"></a>必要条件
 
-- Visual Studio 2019 バージョン 16.5 Preview 2 以降
+- Visual Studio 2019 バージョン 16.5 Preview 3
 - iTunes (64 ビット)
 - Apple 開発者アカウント
 
 
 ## <a name="initial-setup"></a>初期セットアップ
 
-1. iOS プロジェクトがスタートアップ プロジェクトとして設定され、ビルド構成が **[デバッグ | iPhone]** に設定されていることを確認します。
+> [!NOTE]
+> Xamarin のホット再起動は、プレビュー段階の間は既定で無効になっています。 **[ツール] > [オプション] > [環境] > [プレビュー機能] > [Xamarin ホット リスタートを有効にする]** で有効にすることができます。
+
+1. iOS プロジェクトがスタートアップ プロジェクトとして設定され、ビルド構成が **[デバッグ | iPhone]** に設定されていることを確実にします。
 
    1. 既存のプロジェクトの場合は、 **[ビルド]、[構成マネージャー]** の順に移動し、 iOS プロジェクトに対して **[配置]** が有効になっていることを確認します。
 
@@ -58,15 +61,18 @@ Xamarin のホット再起動を使用すると、複数ファイルのコード
 
 [![](hot-restart-images/restart.png "Screenshot of the debug toolbar with the restart button highlighted.")](hot-restart-images/toolbar.png)
 
+また、`HOTRESTART` プリプロセッサ シンボルを使用して、Xamarin のホット再起動でデバッグするときに特定のコードが実行されないようにすることもできます。
+
 ## <a name="limitations"></a>制限事項
 - 現在、Xamarin.Forms および iOS デバイスでビルドされた iOS アプリのみがサポートされています。
-- ストーリーボードと XIB のファイルはサポートされていません。これらを実行時に読み込もうとすると、アプリがクラッシュする可能性があります。 将来的にこのシナリオをサポートすることに関心があるため、アプリでこれらを使用している場合はお知らせください。
-- 静的な iOS ライブラリとフレームワークはサポートされていません。 アプリでこれらを読み込もうとすると、ランタイム エラーまたはクラッシュが発生することがあります。 ただし、動的な iOS ライブラリはサポートされています。
+- ストーリーボードと XIB のファイルはサポートされていません。これらを実行時に読み込もうとすると、アプリがクラッシュする可能性があります。 `HOTRESTART` プリプロセッサ シンボルを使用して、このコードが実行されないようにします。
+- 静的な iOS ライブラリとフレームワークはサポートされていません。アプリがこれらを読み込もうとすると、実行時エラーまたはクラッシュが発生する可能性があります。 `HOTRESTART` プリプロセッサ シンボルを使用して、このコードが実行されないようにします。 動的な iOS ライブラリはサポートされています。
 - Xamarin のホット再起動を使用して、発行用のアプリ バンドルを作成することはできません。 アプリケーションを運用環境に完全にコンパイル、署名、配置するには、引き続き Mac マシンが必要です。
 
 ## <a name="troubleshoot"></a>トラブルシューティング
 - iTunes が Microsoft Store からインストールされた場合、セットアップ ウィザードでは検出されません。 先にそのバージョンをアンインストールしてから、[Apple のインストーラー](https://go.microsoft.com/fwlink/?linkid=2101014)をダウンロードする必要があります。
 - デバイス固有のビルドを有効にすると、アプリがデバッグ モードに移行できない既知のイシューがあります。 回避策は、 **[プロパティ]、[iOS ビルド]** でこれを無効にし、デバッグを再試行することです。 これは今後のリリースで修正される予定です。
 - アプリがデバイスに既に存在する場合、ホット再起動を伴う配置を試行すると、`AMDeviceStartHouseArrestService` エラーが発生して失敗することがあります。 この回避策は、デバイスでアプリをアンインストールして、再度配置することです。
+- Apple Developer Program に含まれていない Apple ID を入力すると、次のエラーが発生します: `Authentication Error. Xcode 7.3 or later is required to continue developing with your Apple ID`。 iOS デバイスで Xamarin のホット再起動を使用するには、有効な Apple Developer アカウントが必要です。 
 
 その他のイシューを報告するには、[[ヘルプ]、[フィードバックの送信]、[問題の報告]](/visualstudio/ide/feedback-options?view=vs-2019#report-a-problem) から、フィードバック ツールを使用してください。
