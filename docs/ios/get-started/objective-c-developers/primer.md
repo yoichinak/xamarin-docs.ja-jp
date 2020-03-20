@@ -85,7 +85,7 @@ C のスーパー セットである Objective-C は、実装ファイルから�
 たとえば、次のコードには `UIKit` 名前空間が含まれているため、その名前空間内のすべてのクラスを実装に使用できます。
 
 ```csharp
-using UIKit
+using UIKit;
 namespace MyAppNamespace
 {
     // implementation of classes
