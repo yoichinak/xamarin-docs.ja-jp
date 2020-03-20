@@ -109,7 +109,7 @@ API のバインディングに関する詳細については、[Xamarin.iOS の
 
 Mono では、あらゆるオブジェクトがガベージ コレクションされますが、`Foundation.NSObject` では、[System.IDisposable](xref:System.IDisposable) インターフェイスが実装されます。 つまり、あらゆる NSObject のリソースを直接解放できます。ガベージ コレクターが動きだすのを待つ必要がありません。 これは、重い NSObjects を、たとえば、大きなデータ ブロックをポイントしている UIImage を使用しているときに重要です。
 
-お使いの型で最終的なしあげを行う必要がある場合、[NSObject.Dispose(bool) メソッド](xref:Foundation.NSObject.Dispose(System.Boolean))をオーバーライドします。Dispose のパラメーターは "bool disposing" です。true に設定されている場合、Dispose メソッドが呼び出されています。ユーザーがオブジェクトで Dispose () を明示的に呼び出したからです。 値が false の場合、ファイナライザー スレッドのファイナライザーから Dispose(bool disposing) が呼び出されています。
+自分で定義した型で確実にファイナライズを行う必要がある場合、[NSObject.Dispose(bool) メソッド](xref:Foundation.NSObject.Dispose(System.Boolean))をオーバーライドします。Dispose のパラメーターは "bool disposing" です。true に設定されている場合、Dispose メソッドが呼び出されています。ユーザーがオブジェクトで Dispose () を明示的に呼び出したからです。 値が false の場合、ファイナライザー スレッドのファイナライザーから Dispose(bool disposing) が呼び出されています。
 
 ##### <a name="categories"></a>カテゴリ
 
