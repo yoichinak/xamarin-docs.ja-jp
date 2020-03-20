@@ -1,6 +1,6 @@
 ---
-title: 第 8 章の概要です。 コードと XAML の調和
-description: Xamarin.Forms によるモバイル アプリの作成。第 8 章の概要です。 コードと XAML の調和
+title: '第 8 章の概要: コードと XAML の調和'
+description: 'Xamarin.Forms でモバイル アプリを作成する: 第 8 章の概要: コードと XAML の調和'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 5970DEEB-1FC9-4F78-B4F6-D403E16D22ED
@@ -8,27 +8,27 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
 ms.openlocfilehash: 75f153499edb6d979f9a0269a1439eaf8ca53878
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
-ms.translationtype: MT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "61334245"
 ---
-# <a name="summary-of-chapter-8-code-and-xaml-in-harmony"></a>第 8 章の概要です。 コードと XAML の調和
+# <a name="summary-of-chapter-8-code-and-xaml-in-harmony"></a>第 8 章の概要: コードと XAML の調和
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08)
 
-この章では XAML をより深くについて説明し、特にコードと XAML の相互作用します。
+この章では、XAML をより深く掘り下げ、特にコードと XAML の連携方法について説明します。
 
 ## <a name="passing-arguments"></a>引数の受け渡し
 
-一般的なケースでは、XAML でインスタンス化されるクラスのパブリック コンス トラクター; が必要結果のオブジェクトは、プロパティの設定を使用して初期化されます。 ただし、オブジェクトのインスタンスが作成され初期化されているその他の 2 つの方法はあります。
+一般的なケースでは、XAML でインスタンス化されるクラスにはパラメーターなしのパブリック コンストラクターが必要です。生成されたオブジェクトは、プロパティの設定によって初期化されます。 ただし、オブジェクトをインスタンス化および初期化する方法は他にも 2 つあります。
 
-これらは、汎用的な手法が、ほとんどの場合 MVVM ビュー モデルに関連して使用されます。
+これらは汎用的な手法ですが、ほとんどの場合、MVVM ビュー モデルと関連して使用されます。
 
-### <a name="constructors-with-arguments"></a>引数を持つコンス トラクター
+### <a name="constructors-with-arguments"></a>引数を持つコンストラクター
 
-[ **ParameteredConstructorDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/ParameteredConstructorDemo)サンプルを使用する方法を示して、`x:Arguments`コンス トラクター引数を指定するタグ。 これらの引数は、引数の型を示す要素タグで区切る必要があります。 .NET の基本のデータ型で、次のタグを使用できます。
+[**ParameteredConstructorDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/ParameteredConstructorDemo) サンプルでは、`x:Arguments` タグを使用してコンストラクターの引数を指定する方法が示されています。 これらの引数は、引数の型を示す要素タグで区切る必要があります。 .NET の基本データ型の場合は、次のタグを使用できます。
 
 - `x:Object`
 - `x:Boolean`
@@ -45,41 +45,41 @@ ms.locfileid: "61334245"
 - `x:Array`
 - `x:DateTime`
 
-### <a name="can-i-call-methods-from-xaml"></a>XAML からメソッドを呼び出すことはできますか。
+### <a name="can-i-call-methods-from-xaml"></a>XAML からメソッドを呼び出すことはできますか?
 
-[ **FactoryMethodDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/FactoryMethodDemo)サンプルを使用する方法を示して、`x:FactoryMethod`オブジェクトを作成するために呼び出されるファクトリ メソッドを指定する要素。 このようなファクトリ メソッドは public と static をする必要があり、定義されている型のオブジェクトを作成する必要があります。 (たとえば、 [ `Color.FromRgb` ](xref:Xamarin.Forms.Color.FromRgb(System.Double,System.Double,System.Double))メソッドを修飾がパブリックであり、静的な型の値を返しますので`Color`)。内でファクトリ メソッドに引数が指定されて`x:Arguments`タグ。
+[**FactoryMethodDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/FactoryMethodDemo) サンプルでは、`x:FactoryMethod` 要素を使用して、オブジェクトを作成するために呼び出されるファクトリ メソッドを指定する方法が示されています。 このようなファクトリ メソッドは、パブリックかつ静的である必要があり、それが定義されている型のオブジェクトが作成される必要があります。 (たとえば、[`Color.FromRgb`](xref:Xamarin.Forms.Color.FromRgb(System.Double,System.Double,System.Double)) メソッドは、パブリックかつ静的であり、`Color` 型の値を返すため、適切です。)ファクトリ メソッドの引数は `x:Arguments` タグ内で指定されます。
 
-## <a name="the-xname-attribute"></a>X:name 属性
+## <a name="the-xname-attribute"></a>x:Name 属性
 
-`x:Name`属性は、名前を指定するのには XAML でインスタンス化されるオブジェクトを使用できます。 これらの名前の規則は、c# 変数名の場合と同様です。 戻り値の後、`InitializeComponent`コンス トラクターで呼び出して、分離コード ファイルは、これらの名前に対応する XAML 要素にアクセスするを参照できます。 名前は、生成された部分クラスのプライベート フィールドに、XAML パーサーによって実際に変換されます。
+`x:Name` 属性を使用すると、XAML でインスタンス化されたオブジェクトに名前を付けることができます。 この名前の規則は、C# の変数名の規則と同じです。 コンストラクターで `InitializeComponent` 呼び出しが返った後は、分離コード ファイルからこれらの名前を参照し、対応する XAML 要素にアクセスできます。 この名前は、実際には、XAML パーサーによって、生成された部分クラスのプライベート フィールドに変換されます。
 
-[ **XamlClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/XamlClock)サンプルの使用を示します`x:Name`して、2 つの分離コード ファイルを許可する`Label`現在の日付と時刻で更新する XAML で定義された要素。
+[**XamlClock**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/XamlClock) サンプルでは、`x:Name` を使用し、分離コード ファイルにおいて XAML で定義されている 2 つの `Label` 要素を現在の日付と時刻に保つ方法が示されています。
 
-同じ名前は、同じページに複数の要素を使用できません。 これを使用する場合、特定の問題は、`OnPlatform`プラットフォームごとに名前付きオブジェクトを並列で作成します。 [ **PlatformSpecificLabele** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/PlatformSpecificLabels)ようなことにより良い方法を示します。
+同じページ上の複数の要素に同じ名前を使用することはできません。 これは、`OnPlatform` を使用して、各プラットフォームに対して並列に名前付きオブジェクトを作成する場合に特に問題となります。 [**PlatformSpecificLabele**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/PlatformSpecificLabels) サンプルは、そのような操作を行うためのより優れた方法を示しています。
 
 ## <a name="custom-xaml-based-views"></a>XAML ベースのカスタム ビュー
 
-XAML のマークアップの繰り返しを回避するためにいくつかの方法はあります。 1 つの一般的な方法は XAML ベースの新しいクラスから派生した[ `ContentView`](xref:Xamarin.Forms.ContentView)します。 この手法の説明については、 [ **ColorViewList** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/ColorViewList)サンプル。 `ColorView`クラスから派生`ContentView`特定の色とその名前を表示するときに、`ColorViewListPage`クラスから派生`ContentPage`通常どおり、明示的に作成のインスタンス数は 17`ColorView`します。
+XAML でマークアップの繰り返しを回避するには、いくつかの方法があります。 一般的な手法の 1 つは、[`ContentView`](xref:Xamarin.Forms.ContentView) から派生する新しい XAML ベースのクラスを作成することです。 この手法は、[**ColorViewList**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/ColorViewList) サンプルで示されています。 `ColorView` クラスは `ContentView` から派生し、特定の色とその名前を表示します。一方、`ColorViewListPage` クラスは通常どおり `ContentPage` から派生し、明示的に `ColorView` のインスタンスを 17 個作成します。
 
-アクセス、 `ColorView` XAML でクラスには、よくという名前の別の XML 名前空間宣言が必要があります`local`同じアセンブリ内のクラス。
+XAML で `ColorView` クラスにアクセスするには、別の XML 名前空間宣言が必要です。これは通常、同じアセンブリ内のクラスのために `local` と名付けれらます。
 
 ## <a name="events-and-handlers"></a>イベントとハンドラー
 
-イベントは、XAML 内のイベント ハンドラーに割り当てることができますが、分離コード ファイルにイベント ハンドラー自体を実装する必要があります。 [ **XamlKeypad** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/XamlKeypad) XAML でのキーボード ユーザー インターフェイスを構築する方法および実装する方法を示しています、`Clicked`分離コード ファイル内のハンドラー。
+イベントは XAML のイベント ハンドラーに割り当てることができますが、そのイベント ハンドラー自体は分離コード ファイルで実装する必要があります。 [**XamlKeypad**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/XamlKeypad) は、XAML でキーパッド ユーザー インターフェイスを構築する方法と、分離コード ファイルで `Clicked` ハンドラーを実装する方法を示しています。
 
-## <a name="tap-gestures"></a>ジェスチャをタップします。
+## <a name="tap-gestures"></a>タップ ジェスチャ
 
-すべて`View`オブジェクトは、タッチ入力を取得し、その入力からイベントを生成します。 `View`クラスを定義、 [ `GestureRecognizers` ](xref:Xamarin.Forms.View.GestureRecognizers)コレクション プロパティから派生するクラスの 1 つまたは複数のインスタンスを含むことのできる[ `GestureRecognizer`](xref:Xamarin.Forms.GestureRecognizer)します。
+`View` オブジェクトでは、タッチ入力を取得し、その入力からイベントを生成することができます。 `View` クラスでは [`GestureRecognizers`](xref:Xamarin.Forms.View.GestureRecognizers) コレクション プロパティが定義されています。これには、[`GestureRecognizer`](xref:Xamarin.Forms.GestureRecognizer) から派生したクラスのインスタンスを 1 つ以上含めることができます。
 
-[ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer)生成[ `Tapped` ](xref:Xamarin.Forms.TapGestureRecognizer.Tapped)イベント。 [ **MonkeyTap** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/MonkeyTap)プログラムは、アタッチする方法を示します`TapGestureRecognizer`オブジェクトを 4 つ`BoxView`偽造品のゲームを作成する要素。
+[`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) によって [`Tapped`](xref:Xamarin.Forms.TapGestureRecognizer.Tapped) イベントが生成されます。 [**MonkeyTap**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/MonkeyTap) プログラムは、`TapGestureRecognizer` オブジェクトを 4 つの `BoxView` 要素にアタッチして、イミテーション ゲームを作成する方法を示しています。
 
-[![Monkey タップの 3 倍になるスクリーン ショット](images/ch08fg07-small.png "まがい物ゲーム")](images/ch08fg07-large.png#lightbox "まがい物ゲーム")
+[![モンキー タップのトリプル スクリーンショット](images/ch08fg07-small.png "イミテーション ゲーム")](images/ch08fg07-large.png#lightbox "イミテーション ゲーム")
 
-**MonkeyTap**プログラムは、サウンドを本当に必要です。 (を参照してください[[次へ] の章](chapter09.md))。
+ただし、実際には、**MonkeyTap** プログラムにはサウンドが必要です。 ([次の章](chapter09.md)をご覧ください。)
 
 ## <a name="related-links"></a>関連リンク
 
-- [第 8 章フル テキスト (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch08-Apr2016.pdf)
+- [第 8 章の全文 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch08-Apr2016.pdf)
 - [第 8 章のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08)
-- [第 8 章F#サンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/FS/XamlKeypad)
-- [XAML で引数の受け渡し](~/xamarin-forms/xaml/passing-arguments.md)
+- [第 8 章の F# サンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08/FS/XamlKeypad)
+- [XAML での引数の受け渡し](~/xamarin-forms/xaml/passing-arguments.md)

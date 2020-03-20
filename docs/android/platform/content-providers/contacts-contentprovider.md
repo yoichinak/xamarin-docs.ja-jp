@@ -7,42 +7,42 @@ author: davidortinau
 ms.author: daortin
 ms.date: 01/22/2018
 ms.openlocfilehash: fca57b7af34ae2b28dda9bf20a95183138cbc641
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73020545"
 ---
 # <a name="using-the-contacts-contentprovider"></a>連絡先の ContentProvider の使用
 
-`ContentProvider` によって公開されるアクセスデータを使用するコードは、`ContentProvider` クラスへの参照をまったく必要としません。 代わりに、Uri を使用して、`ContentProvider`によって公開されるデータの上にカーソルを作成します。 Android では、Uri を使用して、その識別子を持つ `ContentProvider` を公開するアプリケーションのシステムを検索します。 Uri は文字列であり、通常は `com.android.contacts/data`などの逆引き DNS 形式です。
+`ContentProvider` によって公開されるアクセス データを使用するコードでは、`ContentProvider` クラスへの参照はまったく必要ありません。 代わりに、URI を使用して、`ContentProvider` によって公開されるデータに対するカーソルを作成します。 Android では、URI を使用して、その識別子で `ContentProvider` を公開しているアプリケーションがシステムから検索されます。 URI は文字列であり、通常は `com.android.contacts/data` などの逆引き DNS 形式です。
 
-Android の*連絡先*プロバイダーは、この文字列を覚えているのではなく、`android.provider.ContactsContract` クラスでそのメタデータを公開します。 このクラスを使用して、`ContentProvider` の Uri のほか、クエリを実行できるテーブルと列の名前を決定します。
+開発者がこの文字列を記憶するのではなく、Android の "*連絡先*" プロバイダーによって `android.provider.ContactsContract` クラスでそのメタデータが公開されます。 このクラスを使用して、`ContentProvider` の URI と、クエリを実行できるテーブルと列の名前が決定されます。
 
-データ型によっては、にアクセスするための特別なアクセス許可も必要になります。 組み込み連絡先リストには、 **Androidmanifest .xml**ファイルの `android.permission.READ_CONTACTS` アクセス許可が必要です。
+一部のデータ型については、アクセスするために特別なアクセス許可も必要になります。 組み込みの連絡先リストを使用するには、**AndroidManifest.xml** ファイルに `android.permission.READ_CONTACTS` アクセス許可が必要です。
 
-Uri からカーソルを作成するには、次の3つの方法があります。
+URI からカーソルを作成する方法は、3 つあります。
 
-1. **Managedquery ()** &ndash;、Android 2.3 (API レベル 10) 以前では、`ManagedQuery` はカーソルを返します。また、データの更新やカーソルの終了を自動的に管理します。 このメソッドは、Android 3.0 (API レベル 11) では非推奨とされます。
+1. **ManagedQuery()** &ndash; Android 2.3 (API レベル 10) 以前で推奨される方法であり、`ManagedQuery` によってカーソルが返され、データの更新やカーソルのクローズも自動的に管理されます。 このメソッドは、Android 3.0 (API レベル 11) で非推奨になっています。
 
-1. **Contentresolver. Query ()** &ndash; はアンマネージカーソルを返します。つまり、コード内で明示的に更新して閉じる必要があります。
+1. **ContentResolver.Query()** &ndash; アンマネージド カーソルが返されます。これは、カーソルの更新やクローズをコード内で明示的に行う必要があることを意味します。
 
-1. **カーソルローダー ()。LoadInBackground ()** &ndash; Android 3.0 (API レベル 11) で導入されました。 `CursorLoader` は、`ContentProvider` を使用するための推奨される方法です。 `CursorLoader` は、UI がブロックされないように、バックグラウンドスレッドで `ContentResolver` を照会します。
-   このクラスには、旧バージョンの Android の v4 互換性ライブラリを使用してアクセスできます。
+1. **CursorLoader().LoadInBackground()** &ndash; Android 3.0 (API レベル 11) で導入された方法であり、現在では `CursorLoader` が `ContentProvider` を使用するための推奨される方法です。 `CursorLoader` による `ContentResolver` のクエリは、UI がブロックされないように、バックグラウンド スレッドで実行されます。
+   このクラスには、v4 互換性ライブラリを使用する旧バージョンの Android でアクセスできます。
 
 これらの各メソッドには、同じ基本的な入力セットがあります。
 
-- **Uri** &ndash; `ContentProvider` の完全修飾名です。
-- **予測**&ndash;、カーソルに対して選択する列を指定します。
-- **選択**&ndash; SQL `WHERE` 句に似ています。
-- **Selectionargs** &ndash; 選択範囲内で置換されるパラメーターです。
-- 並べ替えの基準となる列 &ndash;**順序**を並べ替えます。
+- **Uri** &ndash; `ContentProvider` の完全修飾名。
+- **Projection** &ndash; カーソルに対して選択する列の指定。
+- **Selection** &ndash; SQL の `WHERE` 句に相当。
+- **SelectionArgs** &ndash; Selection で置き換えるパラメーター。
+- **SortOrder** &ndash; 並べ替えに使用する列。
 
 ## <a name="creating-inputs-for-a-query"></a>クエリの入力の作成
 
-`ContactsProvider` サンプルコードは、Android の組み込み連絡先プロバイダーに対して非常に単純なクエリを実行します。 実際の Uri または列名を知る必要はありません。連絡先 `ContentProvider` のクエリに必要なすべての情報は、`ContactsContract` クラスによって公開されている定数として利用できます。
+`ContactsProvider` サンプルのコードでは、Android の組み込み連絡先プロバイダーに対して、非常に簡単なクエリが実行されます。 実際の URI または列名を知る必要はありません。連絡先 `ContentProvider` のクエリに必要なすべての情報は、`ContactsContract` クラスによって公開されている定数として利用できます。
 
-カーソルの取得に使用されるメソッドに関係なく、これらの同じオブジェクトは、 *ContactsProvider/ContactsAdapter*ファイルに示されているパラメーターとして使用されます。
+カーソルを取得するために使用するメソッドに関係なく、*ContactsProvider/ContactsAdapter.cs* ファイルで示されているように、同じオブジェクトがパラメーターとして使用されます。
 
 ```csharp
 var uri = ContactsContract.Contacts.ContentUri;
@@ -53,15 +53,15 @@ string[] projection = {
 };
 ```
 
-この例では、`selection`、`selectionArgs` および `sortOrder` は `null`に設定することによって無視されます。
+この例では、`selection`、`selectionArgs`、`sortOrder` は、`null` に設定することによって無視されます。
 
-## <a name="creating-a-cursor-from-a-content-provider-uri"></a>コンテンツプロバイダーの Uri からのカーソルの作成
+## <a name="creating-a-cursor-from-a-content-provider-uri"></a>コンテンツ プロバイダーの URI からのカーソルの作成
 
-パラメーターオブジェクトを作成したら、次の3つの方法のいずれかで使用できます。
+パラメーター オブジェクトが作成されたら、次の 3 つの方法のいずれかで使用できます。
 
-### <a name="using-a-managed-query"></a>マネージクエリの使用
+### <a name="using-a-managed-query"></a>マネージド クエリの使用
 
-Android 2.3 (API レベル 10) 以前を対象とするアプリケーションでは、次の方法を使用する必要があります。
+Android 2.3 (API レベル 10) 以前を対象とするアプリケーションでは、次のメソッドを使用する必要があります。
 
 ```csharp
 var cursor = activity.ManagedQuery(uri, projection, null, null, null);
@@ -71,39 +71,39 @@ var cursor = activity.ManagedQuery(uri, projection, null, null, null);
 
 ### <a name="using-contentresolver"></a>ContentResolver の使用
 
-`ContentProvider` に対してカーソルを取得するために `ContentResolver` に直接アクセスするには、次のようにします。
+`ContentResolver` に直接アクセスして `ContentProvider` に対するカーソルを取得するには、次のようにします。
 
 ```csharp
 var cursor = activity.ContentResolver(uri, projection, null, null, null);
 ```
 
-このカーソルはアンマネージドであるため、不要になったときに閉じる必要があります。
-コードが開いているカーソルを閉じるようにします。そうしないと、エラーが発生します。
+このカーソルはアンマネージドであるため、不要になったら閉じる必要があります。
+開かれているカーソルを必ずコードで閉じます。そうしないと、エラーが発生します。
 
 ```csharp
 cursor.Close();
 ```
 
-または、`StartManagingCursor()` を呼び出して、カーソルを ' 管理 ' `StopManagingCursor()` できます。 マネージカーソルは、アクティビティが停止して再起動されたときに、自動的に非アクティブになり、再度クエリが行われます。
+または、`StartManagingCursor()` と `StopManagingCursor()` を呼び出して、カーソルを "管理" することもできます。 マネージド カーソルは、アクティビティが停止されると自動的に非アクティブになり、アクティビティが再度開始されると再度クエリが実行されます。
 
-### <a name="using-cursorloader"></a>カーソルローダーの使用
+### <a name="using-cursorloader"></a>CursorLoader の使用
 
-Android 3.0 (API レベル 11) 以降用にビルドされたアプリケーションでは、次の方法を使用する必要があります。
+Android 3.0 (API レベル 11) 以降用に構築されたアプリケーションでは、次のメソッドを使用する必要があります。
 
 ```csharp
 var loader = new CursorLoader (activity, uri, projection, null, null, null);
 var cursor = (ICursor)loader.LoadInBackground();
 ```
 
-`CursorLoader` は、すべてのカーソル操作がバックグラウンドスレッドで実行されることを保証します。また、アクティビティが再起動されたとき (構成の変更などにより)、アクティビティインスタンス間で既存のカーソルをインテリジェントに再利用し、データを再度読み込むことができます。
+`CursorLoader` では、すべてのカーソル操作がバックグラウンド スレッドで行われることが保証され、アクティビティが再度開始されたときは (構成の変更などにより)、データを再度読み込むのではなく、アクティビティ インスタンス間で既存のカーソルをインテリジェントに再利用できます。
 
-以前のバージョンの Android では、 [v4 サポートライブラリ](https://developer.android.com/tools/support-library/index.html)を使用して `CursorLoader` クラスを使用することもできます。
+以前のバージョンの Android でも、[v4 サポート ライブラリ](https://developer.android.com/tools/support-library/index.html)を使用することで、`CursorLoader` クラスを使用できます。
 
-## <a name="displaying-the-cursor-data-with-a-custom-adapter"></a>カスタムアダプターを使用したカーソルデータの表示
+## <a name="displaying-the-cursor-data-with-a-custom-adapter"></a>カスタム アダプターでのカーソル データの表示
 
-連絡先の画像を表示するには、カスタムアダプターを使用します。これにより、イメージファイルパスへの `PhotoId` 参照を手動で解決できるようになります。
+連絡先の画像を表示するには、カスタム アダプターを使用します。これにより、イメージ ファイル パスへの `PhotoId` 参照を手動で解決できるようになります。
 
-カスタムアダプターを使用してデータを表示する例では、`CursorLoader` を使用して、 **ContactsProvider/ContactsAdapter**から**fillcontacts**メソッドのローカルコレクションにすべての連絡先データを取得します。
+カスタム アダプターを使用してデータを表示するため、例では、`CursorLoader` を使用して、**ContactsProvider/ContactsAdapter.cs** の **FillContacts** メソッドでローカル コレクションにすべての連絡先データを取得します。
 
 ```csharp
 void FillContacts ()
@@ -130,7 +130,7 @@ void FillContacts ()
 }
 ```
 
-次に、`contactList` コレクションを使用して、BaseAdapter のメソッドを実装します。 アダプターは、他のコレクション &ndash; と同様に実装されます。データは `ContentProvider`を基にしているため、ここでは特別な処理は行われません。
+次に、`contactList` コレクションを使用して、BaseAdapter のメソッドを実装します。 アダプターは、他のコレクションと同じように実装されます。データは `ContentProvider` から提供されるため、ここでは特別な処理は行われません。
 
 ```csharp
 Activity activity;
@@ -168,16 +168,16 @@ public override View GetView (int position, View convertView, ViewGroup parent)
 }
 ```
 
-イメージが存在する場合は、デバイス上のイメージファイルの Uri を使用して表示されます。 アプリケーションは次のようになります。
+画像が存在する場合は、画像ファイルへの URI を使用してデバイスに画像が表示されます。 アプリケーションは次のようになります。
 
-[ListView で連絡先を表示するアプリのスクリーンショットを![します。1つのエントリの左側に画像が表示されます。](contacts-contentprovider-images/contactsprovider.png)](contacts-contentprovider-images/contactsprovider.png#lightbox)
+[![ListView に連絡先を表示するアプリのスクリーンショット、1 つのエントリの左側に画像が表示されている](contacts-contentprovider-images/contactsprovider.png)](contacts-contentprovider-images/contactsprovider.png#lightbox)
 
-同様のコードパターンを使用すると、アプリケーションは、ユーザーの写真、ビデオ、音楽などのさまざまなシステムデータにアクセスできます。
-一部のデータ型では、プロジェクトの**Androidmanifest .xml**で特別なアクセス許可を要求する必要があります。
+同様のコード パターンをアプリケーションで使用して、ユーザーの写真、ビデオ、音楽などのさまざまなシステム データにアクセスできます。
+一部のデータ型については、プロジェクトの **AndroidManifest.xml** で特別なアクセス許可を要求する必要があります。
 
-## <a name="displaying-the-cursor-data-with-a-simplecursoradapter"></a>SimpleCursorAdapter を使用してカーソルデータを表示する
+## <a name="displaying-the-cursor-data-with-a-simplecursoradapter"></a>SimpleCursorAdapter でのカーソル データの表示
 
-カーソルは、`SimpleCursorAdapter` と共に表示することもできます (ただし、写真ではなく、名前のみが表示されます)。 このコードは、`SimpleCursorAdapter` で `ContentProvider` を使用する方法を示しています (このコードはサンプルには記載されていません)。
+カーソルは、`SimpleCursorAdapter` で表示することもできます (ただし、名前のみが表示され、写真は表示されません)。 次のコードでは、`SimpleCursorAdapter` で `ContentProvider` を使用する方法を示します (このコードはサンプルにはありません)。
 
 ```csharp
 var uri = ContactsContract.Contacts.ContentUri;
@@ -193,7 +193,7 @@ adapter = new SimpleCursorAdapter (this, Android.Resource.Layout.SimpleListItem1
 listView.Adapter = adapter;
 ```
 
-`SimpleCursorAdapter`の実装の詳細については、 [Listviews とアダプター](~/android/user-interface/layouts/list-view/index.md)に関する説明を参照してください。
+`SimpleCursorAdapter` の実装について詳しくは、[ListView とアダプター](~/android/user-interface/layouts/list-view/index.md)に関する記事をご覧ください。
 
 ## <a name="related-links"></a>関連リンク
 

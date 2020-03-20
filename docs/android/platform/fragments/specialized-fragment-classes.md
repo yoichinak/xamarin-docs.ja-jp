@@ -7,31 +7,31 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/08/2018
 ms.openlocfilehash: b004fbf121374a2bb3bf5d85f45d8cae293573bf
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027314"
 ---
 # <a name="specialized-fragment-classes"></a>特殊なフラグメント クラス
 
-Fragment API は、アプリケーションで検出されたより一般的な機能の一部をカプセル化する他のサブクラスを提供します。 これらのサブクラスは次のとおりです。
+Fragments API では、アプリケーションに含まれるより一般的な機能の一部をカプセル化する他のサブクラスが提供されています。 次のようなサブクラスです。
 
-- **Listfragment** &ndash; このフラグメントは、配列やカーソルなどのデータソースにバインドされた項目の一覧を表示するために使用されます。
+- **ListFragment** &ndash; このフラグメントは、配列やカーソルなどのデータソースにバインドされた項目の一覧を表示するために使用されます。
 
-- ダイアログのラッパーとして使用さ**れる &ndash; このフラグメントを**示します。 フラグメントによって、アクティビティの上にダイアログが表示されます。
+- **DialogFragment** &ndash; このフラグメントは、ダイアログのラッパーとして使用されます。 フラグメントでは、アクティビティの上にダイアログが表示されます。
 
-- **PreferenceFragment** &ndash; このフラグメントは、ユーザー設定オブジェクトを一覧として表示するために使用されます。
+- **PreferenceFragment** &ndash; このフラグメントは、Preference オブジェクトを一覧として表示するために使用されます。
 
 ## <a name="the-listfragment"></a>ListFragment
 
-`ListFragment` は、`ListActivity`との概念と機能によく似ています。これは、フラグメント内の `ListView` をホストするラッパーです。 次の図は、タブレットと電話で実行されている `ListFragment` を示しています。
+`ListFragment` の概念と機能は、`ListActivity` とよく似ています。これは、フラグメント内で `ListView` をホストするラッパーです。 次の図は、タブレットとスマートフォンで実行されている `ListFragment` を示したものです。
 
-[タブレットとスマートフォンで ListFragment のスクリーンショットを![](specialized-fragment-classes-images/intro-screenshot-sml.png)](specialized-fragment-classes-images/intro-screenshot.png#lightbox)
+[![タブレットとスマートフォンでの ListFragment のスクリーンショット](specialized-fragment-classes-images/intro-screenshot-sml.png)](specialized-fragment-classes-images/intro-screenshot.png#lightbox)
 
 ### <a name="binding-data-with-the-listadapter"></a>ListAdapter を使用してデータをバインドする
 
-`ListFragment` クラスは既に既定のレイアウトを提供しているため、`ListFragment`の内容を表示するために `OnCreateView` をオーバーライドする必要はありません。 `ListView` は、`ListAdapter` の実装を使用してデータにバインドされます。 次の例では、文字列の単純な配列を使用してこれを行う方法を示しています。
+`ListFragment` クラスでは既に既定のレイアウトが提供されているため、`ListFragment` の内容を表示するために `OnCreateView` をオーバーライドする必要はありません。 `ListView` をデータにバインドするには、`ListAdapter` の実装を使用します。 次の例では、簡単な文字列の配列を使用してこれを行う方法を示します。
 
 ```csharp
 public override void OnActivityCreated(Bundle savedInstanceState)
@@ -44,11 +44,11 @@ public override void OnActivityCreated(Bundle savedInstanceState)
 }
 ```
 
-`ListAdapter`を設定するときは、`ListView.ListAdapter` プロパティではなく、`ListFragment.ListAdapter` プロパティを使用することが重要です。 `ListView.ListAdapter` を使用すると、重要な初期化コードがスキップされます。
+`ListAdapter` を設定するときは、`ListView.ListAdapter` プロパティではなく、`ListFragment.ListAdapter` プロパティを使用することが重要です。 `ListView.ListAdapter` を使用すると、重要な初期化コードがスキップされます。
 
-### <a name="responding-to-user-selection"></a>ユーザー選択への応答
+### <a name="responding-to-user-selection"></a>ユーザーによる選択に応答する
 
-ユーザーの選択に応答するには、アプリケーションで `OnListItemClick` メソッドをオーバーライドする必要があります。 次の例は、このような可能性を示しています。
+アプリケーションでユーザーの選択に応答するには、`OnListItemClick` メソッドをオーバーライドする必要があります。 考えられる 1 つの例を次に示します。
 
 ```csharp
 public override void OnListItemClick(ListView l, View v, int index, long id)
@@ -74,33 +74,33 @@ public override void OnListItemClick(ListView l, View v, int index, long id)
 }
 ```
 
-上のコードでは、ユーザーが `ListFragment`内の項目を選択すると、ホストアクティビティに新しいフラグメントが表示され、選択された項目の詳細が表示されます。
+上のコードでは、ユーザーが `ListFragment` で項目を選択すると、ホストしているアクティビティに新しいフラグメントが表示され、選択された項目の詳細が表示されます。
 
-## <a name="dialogfragment"></a>"コードフラグメント"
+## <a name="dialogfragment"></a>DialogFragment
 
-表示*フラグメント*は、アクティビティのウィンドウの上でフローティングするフラグメント内のダイアログオブジェクトを表示するために使用されるフラグメントです。 これは、(Android 3.0 以降で) マネージドダイアログ Api を置き換えることを意図しています。 次のスクリーンショットは、`DialogFragment`の例を示しています。
+*DialogFragment* は、アクティビティのウィンドウ上を浮動するダイアログ オブジェクトをフラグメント内の表示するために使用されるフラグメントです。 これは、(Android 3.0 以降で) マネージド ダイアログ API を置き換えることが意図されています。 次のスクリーンショットでは、`DialogFragment` の例を示します。
 
-[![新しい車両の追加エディットボックスを表示している表示フラグメントのスクリーンショット](specialized-fragment-classes-images/dialog-fragment-example.png)](specialized-fragment-classes-images/dialog-fragment-example.png#lightbox)
+[![Add New Vehicle エディット ボックスを表示している DialogFragment のスクリーンショット](specialized-fragment-classes-images/dialog-fragment-example.png)](specialized-fragment-classes-images/dialog-fragment-example.png#lightbox)
 
-`DialogFragment` によって、フラグメントとダイアログの間の状態の一貫性が維持されます。 ダイアログオブジェクトのすべての対話とコントロールは、`DialogFragment` API を介して行われる必要があります。ダイアログオブジェクトの直接呼び出しでは実行されません。 `DialogFragment` API は、フラグメントを表示するために使用される `Show()` メソッドを各インスタンスに提供します。 フラグメントを削除するには、次の2つの方法があります。
+`DialogFragment` により、フラグメントとダイアログの間で状態の整合性が維持されます。 ダイアログ オブジェクトのすべての対話と制御は、ダイアログ オブジェクトでの直接呼び出しで行われるのではなく、`DialogFragment` API を介して行われる必要があります。 `DialogFragment` API では、フラグメントを表示するために使用される `Show()` メソッドが、各インスタンスに提供されます。 フラグメントを削除するには、2 つの方法があります。
 
-- `DialogFragment` インスタンスで `DialogFragment.Dismiss()` を呼び出します。 
+- `DialogFragment` のインスタンスで `DialogFragment.Dismiss()` を呼び出します。 
 
-- 別の `DialogFragment`を表示します。
+- 別の `DialogFragment` を表示します。
 
-`DialogFragment`を作成するために、クラスは `Android.App.DialogFragment,` から継承し、次の2つのメソッドのいずれかをオーバーライドします。
+`DialogFragment` を作成するには、クラスで `Android.App.DialogFragment,` を継承した後、次の 2 つのメソッドのいずれかをオーバーライドします。
 
-- **OnCreateView** &ndash; はビューを作成して返します。
+- **OnCreateView** &ndash; ビューを作成して返します。
 
-- **Oncreatedialog** &ndash; カスタムダイアログを作成します。 これは通常、 *Alertdialog*を示すために使用されます。 このメソッドをオーバーライドする場合、`OnCreateView` をオーバーライドする必要はありません。
+- **OnCreateDialog** &ndash; カスタム ダイアログを作成します。 通常は、*AlertDialog* を表示するために使用されます。 このメソッドをオーバーライドする場合は、`OnCreateView` をオーバーライドする必要はありません。
 
-### <a name="a-simple-dialogfragment"></a>単純なコードフラグメント
+### <a name="a-simple-dialogfragment"></a>簡単な DialogFragment
 
-次のスクリーンショットは、`TextView` があり、`Button`が2つの単純な `DialogFragment` を示しています。
+次のスクリーンショットでは、1 つの `TextView` と 2 つの `Button` が含まれる簡単な `DialogFragment` が示されています。
 
-[TextView と2つのボタンを使用した![の例](specialized-fragment-classes-images/dialog-fragment-example-2.png)](specialized-fragment-classes-images/dialog-fragment-example-2.png#lightbox)
+[![TextView と 2 つのボタンが含まれる DialogFragment の例](specialized-fragment-classes-images/dialog-fragment-example-2.png)](specialized-fragment-classes-images/dialog-fragment-example-2.png#lightbox)
 
-`TextView` には、ユーザーが `DialogFragment`の1つのボタンをクリックした回数が表示されます。 [その他] ボタンをクリックすると、フラグメントが閉じられます。 `DialogFragment` のコードは次のとおりです。
+`TextView` には、ユーザーが `DialogFragment` の 1 つのボタンをクリックした回数が表示されます。他のボタンをクリックすると、フラグメントが閉じられます。 `DialogFragment` のコードは次のとおりです。
 
 ```csharp
 public class MyDialogFragment : DialogFragment
@@ -131,13 +131,13 @@ public class MyDialogFragment : DialogFragment
 }
 ```
 
-### <a name="displaying-a-fragment"></a>フラグメントの表示
+### <a name="displaying-a-fragment"></a>フラグメントを表示する
 
-すべてのフラグメントと同様に、`DialogFragment` は `FragmentTransaction`のコンテキストで表示されます。
+すべてのフラグメントと同様に、`DialogFragment` は `FragmentTransaction` のコンテキストで表示されます。
 
-`DialogFragment` の `Show()` メソッドは、`FragmentTransaction` と `string` を入力として受け取ります。 ダイアログがアクティビティに追加され、`FragmentTransaction` がコミットされます。
+`DialogFragment` の `Show()` メソッドは、`FragmentTransaction` と `string` を入力として受け取ります。 ダイアログがアクティビティに追加されて、`FragmentTransaction` がコミットされます。
 
-次のコードは、アクティビティが `Show()` メソッドを使用して `DialogFragment`を表示する方法の1つを示しています。
+次のコードでは、アクティビティで `Show()` メソッドを使用して `DialogFragment` を表示する方法の 1 つを示します。
 
 ```csharp
 public void ShowDialog()
@@ -151,11 +151,11 @@ public void ShowDialog()
 ### <a name="dismissing-a-fragment"></a>フラグメントを終了する
 
 `DialogFragment` のインスタンスで `Dismiss()` を呼び出すと、フラグメントがアクティビティから削除され、そのトランザクションがコミットされます。
-フラグメントの破棄に関連する標準的なフラグメントライフサイクルメソッドが呼び出されます。
+フラグメントの破棄に関連する標準のフラグメント ライフサイクル メソッドが呼び出されます。
 
-### <a name="alert-dialog"></a>警告ダイアログ
+### <a name="alert-dialog"></a>アラート ダイアログ
 
-`OnCreateView`をオーバーライドする代わりに、`DialogFragment` で `OnCreateDialog`をオーバーライドすることがあります。 これにより、アプリケーションは、フラグメントによって管理される[Alertdialog](xref:Android.App.AlertDialog)を作成できます。 次のコードは、`AlertDialog.Builder` を使用して `Dialog`を作成する例です。
+`OnCreateView` をオーバーライドする代わりに、`DialogFragment` では `OnCreateDialog` をオーバーライドできます。 これにより、アプリケーションでは、フラグメントによって管理される [AlertDialog](xref:Android.App.AlertDialog) を作成できます。 次のコードは、`AlertDialog.Builder` を使用して `Dialog` を作成する例です。
 
 ```csharp
 public class AlertDialogFragment : DialogFragment
@@ -177,16 +177,16 @@ public class AlertDialogFragment : DialogFragment
 
 ## <a name="preferencefragment"></a>PreferenceFragment
 
-基本設定を管理するために、fragment API には `PreferenceFragment` サブクラスが用意されています。 `PreferenceFragment` は[PreferenceActivity](xref:Android.Preferences.PreferenceActivity) &ndash; に似ていますが、フラグメント内のユーザーに対する基本設定の階層が表示されます。 ユーザーが設定を操作すると、自動的に[Sharedpreferences](https://developer.android.com/reference/android/content/SharedPreferences.html)に保存されます。
-Android 3.0 以降のアプリケーションでは、`PreferenceFragment` を使用して、アプリケーションの基本設定を処理します。 次の図は、`PreferenceFragment`の例を示しています。
+基本設定を管理するため、Fragmentst API には `PreferenceFragment` サブクラスが用意されています。 `PreferenceFragment` は [PreferenceActivity](xref:Android.Preferences.PreferenceActivity) に似ており、フラグメントでのユーザーに対する基本設定の階層が表示されます。 ユーザーが基本設定を操作すると、[SharedPreferences](https://developer.android.com/reference/android/content/SharedPreferences.html) に自動的に保存されます。
+Android 3.0 以降のアプリケーションで基本設定を処理するには、`PreferenceFragment` を使用します。 次の図は、`PreferenceFragment` の例を示したものです。
 
-[インライン、ダイアログ、および起動の設定を使用した PreferencesFragment の![例](specialized-fragment-classes-images/preferences-dialog.png)](specialized-fragment-classes-images/preferences-dialog.png#lightbox)
+[![インライン、ダイアログ、起動の基本設定が含まれる PreferencesFragment の例](specialized-fragment-classes-images/preferences-dialog.png)](specialized-fragment-classes-images/preferences-dialog.png#lightbox)
 
 ### <a name="create-a-preference-fragment-from-a-resource"></a>リソースから基本設定フラグメントを作成する
 
-[AddPreferencesFromResource](xref:Android.Preferences.PreferenceFragment.AddPreferencesFromResource*)メソッドを使用して、XML リソースファイルから設定フラグメントを大きくすることができます。 フラグメントのライフサイクル内でこのメソッドを呼び出す論理的な場所は、`OnCreate` メソッドです。
+[PreferenceFragment.AddPreferencesFromResource](xref:Android.Preferences.PreferenceFragment.AddPreferencesFromResource*) メソッドを使用して、XML リソース ファイルから基本設定フラグメントを拡張できる場合があります。 フラグメントのライフサイクル内でこのメソッドを呼び出す論理的な場所は、`OnCreate` メソッドです。
 
-上の図に示した `PreferenceFragment` は、XML からリソースを読み込むことによって作成されました。 リソースファイルは次のとおりです。
+上の図に示した `PreferenceFragment` は、XML からリソースを読み込むことによって作成されました。 リソース ファイルは次のとおりです。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -252,11 +252,11 @@ public class PrefFragment : PreferenceFragment
 }
 ```
 
-### <a name="querying-activities-to-create-a-preference-fragment"></a>アクティビティを照会して基本設定フラグメントを作成する
+### <a name="querying-activities-to-create-a-preference-fragment"></a>アクティビティをクエリして基本設定フラグメントを作成する
 
-`PreferenceFragment` を作成するためのもう1つの方法として、アクティビティのクエリがあります。 各アクティビティでは、XML リソースファイルを指す[メタデータ\_キー\_優先順位](xref:Android.Preferences.PreferenceManager.MetadataKeyPreferences)属性を使用できます。 Xamarin Android では、`MetaDataAttribute`を使用してアクティビティを装飾し、使用するリソースファイルを指定することによってこれを行います。 `PreferenceFragment` クラスは、 [AddPreferenceFromIntent](xref:Android.Preferences.PreferenceFragment.AddPreferencesFromIntent*)メソッドを提供します。このメソッドを使用して、アクティビティを照会し、この XML リソースを検索し、そのリソースの優先順位の階層を拡張することができます。
+`PreferenceFragment` を作成するもう 1 つの方法には、アクティビティのクエリが含まれます。 各アクティビティでは、XML リソース ファイルを指し示す [METADATA\_KEY\_PREFERENCE](xref:Android.Preferences.PreferenceManager.MetadataKeyPreferences) 属性を使用できます。 Xamarin.Android では、`MetaDataAttribute` を使用してアクティビティを装飾し、使用するリソース ファイルを指定することによって、これを行います。 `PreferenceFragment` クラスで提供される [AddPreferenceFromIntent](xref:Android.Preferences.PreferenceFragment.AddPreferencesFromIntent*) メソッドを使用して、アクティビティのクエリを行い、この XML リソースを見つけて、その基本設定階層を拡張できます。
 
-このプロセスの例を次のコードスニペットに示します。このコードでは、`AddPreferencesFromIntent` を使用して `PreferenceFragment`を作成します。
+このプロセスの例を次のコード スニペットに示します。このコードでは、`AddPreferencesFromIntent` を使用して `PreferenceFragment` を作成しています。
 
 ```csharp
 public class MyPreferenceFragment : PreferenceFragment
@@ -270,7 +270,7 @@ public class MyPreferenceFragment : PreferenceFragment
 }
 ```
 
-Android はクラス `MyActivityWithPreference`を確認します。 クラスは、次のコードスニペットに示すように、`MetaDataAttribute,` で装飾する必要があります。
+Android では、`MyActivityWithPreference` クラスが調べられます。 クラスは、次のコード スニペットで示すように、`MetaDataAttribute,` で装飾されている必要があります。
 
 ```csharp
 [Activity(Label = "My Activity with Preferences")]
@@ -285,6 +285,6 @@ public class MyActivityWithPreferences : Activity
 }
 ```
 
-`MetaDataAttribute` は、`PreferenceFragment` が基本設定階層の膨張に使用する XML リソースファイルを宣言します。 `MetatDataAttribute` が指定されていない場合は、実行時に例外がスローされます。 このコードを実行すると、次のスクリーンショットに示すように `PreferenceFragment` が表示されます。
+`MetaDataAttribute` では、`PreferenceFragment` によって基本設定階層の膨張に使用される XML リソース ファイルが宣言されています。 `MetatDataAttribute` が提供されていない場合は、実行時に例外がスローされます。 このコードを実行すると、`PreferenceFragment` が次のスクリーンショットのように表示されます。
 
-[PreferenceFragment が表示されているサンプルアプリのスクリーンショット![](specialized-fragment-classes-images/preference-fragment-getpreferencesfromintent.png)](specialized-fragment-classes-images/preference-fragment-getpreferencesfromintent.png#lightbox)
+[![PreferenceFragment が表示されているアプリの例のスクリーンショット](specialized-fragment-classes-images/preference-fragment-getpreferencesfromintent.png)](specialized-fragment-classes-images/preference-fragment-getpreferencesfromintent.png#lightbox)

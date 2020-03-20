@@ -8,49 +8,49 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
 ms.openlocfilehash: c74cac6a6d669385855999a565711a3fdc85f3b7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73019539"
 ---
 # <a name="smarter-xamarin-android-support-v4--v13-nuget-packages"></a>より高度な Xamarin Android サポート v4/v13 NuGet パッケージ
 
-## <a name="about-the-android-support-libraries"></a>Android サポートライブラリについて
+## <a name="about-the-android-support-libraries"></a>Android サポート ライブラリについて
 
-Google は、旧バージョンの Android で新機能を利用できるようにするためのサポートライブラリを作成しました。 一般に、サポートライブラリの名前にはバージョン番号が付けられます。これは、互換性のある最も低い Android API レベルです (例: Support-v4 は API レベル4以上でのみ使用できます)。 詳細については、この[Stack Overflow の説明](https://stackoverflow.com/questions/9926403/android-support-package-compatibility-library-use-v4-or-v13)) を参照してください。 
+Google は、古いバージョンの Android でも新しい機能を使用できるようにするためのサポート ライブラリを作成しています。 通常、サポート ライブラリには、対応する最も低い Android API レベルであるバージョン番号が名前に含まれています (例: Support-v4 は API レベル 4 以降でのみサポートされます。 詳細については、こちらの [Stack Overflow のディスカッション](https://stackoverflow.com/questions/9926403/android-support-package-compatibility-library-use-v4-or-v13)を参照してください)。 
 
-2つのサポートライブラリ (`Support-v4` と `Support-v13` を同じアプリで同時に使用することはできません。つまり、相互に排他的です。 これは、`Support-v13` 実際に `Support-v4`のすべての型と実装が含まれているためです。 同じプロジェクト内で両方を参照しようとすると、重複する型エラーが発生します。
+2 つのサポートライブラリ (`Support-v4` と `Support-v13`) を同じアプリで同時に使用することはできません。つまり、それらは相互に排他的です。 これは、`Support-v13` には実際には `Support-v4` のすべての型と実装が含まれているためです。 同じプロジェクト内で両方を参照しようとすると、型の重複エラーが発生します。
 
 ## <a name="problems-with-referencing"></a>参照に関する問題
 
-`Support-v4` が広く普及しているため、多くのサードパーティのライブラリがそれに依存するようになりました。 代わりに、v13 に依存するように選択することもできますが、このようなサードパーティのライブラリを使用するすべてのアプリが、すべての API レベルを4までサポートするオプションを提供するため、 _v4_に依存するのが一般的です。
+`Support-v4` は非常に普及しているため、多数のサード パーティ製のライブラリがそれに依存しています。 Support-v13 への依存が選択されている可能性もありますが、サード パーティ製のライブラリを使用しているアプリに 4 に至るまでの API レベルをサポートするオプションが与えられるため、_v4_ に依存するほうが一般的です。
 
-Xamarin サードパーティライブラリが `Support-v4`への `Xamarin.Android.Support.v4.dll` バインドを参照する場合、このライブラリを使用するすべてのアプリは `Xamarin.Android.Support.v4.dll`も参照する必要があります。 これは、同じアプリが `Xamarin.Android.Support.v13.dll` バインドの一部の機能を `Support-v13`に使用する必要がある場合に問題になります。 両方のバインドを参照すると、重複する型エラーが発生します。
+Xamarin のサード パーティ製のライブラリで `Support-v4` にバインドされている `Xamarin.Android.Support.v4.dll` が参照される場合、このライブラリを使用するアプリも、`Xamarin.Android.Support.v4.dll` を参照する必要があります。 これは、同じアプリで、`Support-v13` にバインドされている `Xamarin.Android.Support.v13.dll` の機能の一部も使用したい場合に問題になります。 両方のバインドを参照すると、型重複エラーが発生します。
 
-## <a name="type-forwarded-v4-binding-assembly"></a>タイプ-転送済み v4 バインドアセンブリ
+## <a name="type-forwarded-v4-binding-assembly"></a>型転送される v4 バインド アセンブリ
 
-この問題を回避するために、実装のない特別な `Xamarin.Android.Support.v4.dll` アセンブリを作成しましたが、`Support-v4` のすべての型を `Xamarin.Android.Support.v13.dll` アセンブリ内の実装に転送する属性を単純に `[assembly: TypeForwardedTo (..)]` します。
+この問題を避けるために、特別な `Xamarin.Android.Support.v4.dll` アセンブリが作成されています。これには実装はありませんが、すべての `Support-v4` 型を `Xamarin.Android.Support.v13.dll` アセンブリ内の実装に転送する `[assembly: TypeForwardedTo (..)]` 属性があります。
 
-つまり、開発者は、サードパーティのライブラリによって `Xamarin.Android.Support.v4.dll` への参照を満たすと同時に、アプリで `Xamarin.Android.Support.v13.dll` を使用できるようにする、この_タイプ転送_されたアセンブリをアプリで参照できます。
+これは、開発者がアプリ内でこの "_型転送_" アセンブリを参照すると、サード パーティ製のライブラリによる `Xamarin.Android.Support.v4.dll` への参照に対応できることに加え、アプリ内で `Xamarin.Android.Support.v13.dll` も使用できることを意味します。
 
 ## <a name="nuget-assistance"></a>NuGet のサポート
 
-開発者は、必要な正しい参照を手動で追加できますが、nuget パッケージのインストール時に、NuGet を使用して適切なアセンブリ (通常の_v4_バインドまたはタイプ転送済み_v4_アセンブリ) を選択することができます。
+開発者は、必要な適切な参照を手動で追加できますが、NuGet パッケージのインストール時に、NuGet を使用して、適切なアセンブリ (通常の _v4_ のバインドまたは型転送 _v4_ アセンブリ) を選択できます。
 
-`Xamarin.Android.Support.v4` NuGet パッケージには、次のロジックが含まれています。
+このため、`Xamarin.Android.Support.v4` NuGet パッケージには、次のロジックが含まれるようになりました。
 
-アプリが API レベル 13 (ジンジャー 3.2) 以上を対象としている場合:
+アプリのターゲットが API レベル 13 (Gingerbread 3.2) 以降の場合:
 
-* `Xamarin.Android.Support.v13` NuGet は依存関係として自動的に追加されます
-* _型転送_された `Xamarin.Android.Support.v4.dll` はプロジェクト内で参照されます
+* 依存関係として `Xamarin.Android.Support.v13` NuGet が自動的に追加されます
+* プロジェクトで "_型転送_" `Xamarin.Android.Support.v4.dll` が参照されます
 
-アプリが API レベル13よりも低いものを対象としている場合は、プロジェクトで参照される通常の `Xamarin.Android.Support.v4.dll` バインドを取得します。
+アプリのターゲットが API レベル 13 よりも低い場合は、プロジェクトで通常の `Xamarin.Android.Support.v4.dll` のバインドが参照されます。
 
-## <a name="do-i-have-to-use-support-v13"></a>V13 を使用する必要がありますか?
+## <a name="do-i-have-to-use-support-v13"></a>Support-v13 を使用する必要があるか
 
-アプリが API レベル13以上を対象としており、`Xamarin Android Support-v4` NuGet パッケージを使用することを選択した場合は、`Xamarin Android Support v13` NuGet パッケージが必要な依存関係になります。
+アプリのターゲットが API レベル 13 以降であるときに、`Xamarin Android Support-v4` NuGet パッケージを使用することを選択した場合、`Xamarin Android Support v13` NuGet パッケージは必須の依存関係になります。
 
-アプリのサイズは非常にわずかに増加しています (2 つの .jar ファイルは 17 kb で異なります)。互換性が十分であり、それによって生じる問題が少なくなります。
+アプリのサイズの非常にわずかな増加 (2 つの .jar ファイルの違いは 17 KB) は互換性にとって十分価値のあるものであり、それによって発生する問題はほとんどありません。
 
-API レベル13以上を対象とするアプリで `Support-v4` を使用する方法について adamant ている場合は、いつでも手動で `.nupkg`をダウンロードして抽出し、アセンブリを参照することができます。
+ターゲットが API レベル 13 以降のアプリで `Support-v4` をどうしても使用したければ、いつでも `.nupkg` を手動でダウンロードして展開し、そのアセンブリを参照できます。

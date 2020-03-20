@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms book で Mobile Apps を作成します。
-description: Charles Petzold 著の「Xamarin.Forms で作成の Mobile Apps の電子的なバージョンで Xamarin.Forms アプリケーションの開発について説明します。
+title: Xamarin.Forms Book で Mobile Apps を作成する
+description: Charles Petzold による書籍『Creating Mobile Apps with Xamarin.Forms』の電子バージョンを使用して Xamarin.Forms アプリケーション開発について説明します。
 ms.prod: xamarin
 ms.assetid: CDE99818-689B-4376-9DC4-C4102AC0F931
 ms.technology: xamarin-forms
@@ -8,125 +8,125 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
 ms.openlocfilehash: a350a3ae37b66b8701f977370fcbe79940d84f50
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
-ms.translationtype: MT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "70120485"
 ---
-# <a name="creating-mobile-apps-with-xamarinforms-book"></a>Xamarin.Forms book で Mobile Apps を作成します。
+# <a name="creating-mobile-apps-with-xamarinforms-book"></a>Xamarin.Forms Book で Mobile Apps を作成する
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-book-samples)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples)
 
-<img src="images/cover-sml.png" title="Xamarin.Forms Book でモバイル アプリの作成" align="left" />この書籍*を Xamarin.Forms での Mobile Apps の作成*Xamarin.Forms アプリケーションを作成する方法を学習するためのガイドは、Charles Petzold 著。 唯一の前提条件は、サポート技術情報のC#プログラミング言語。 この書籍は、Xamarin.Forms のユーザー インターフェイスに広範な探索を示し、アニメーション、MVVM、トリガー、動作、カスタム レイアウト、カスタム レンダラーでは、およびその他についても説明します。
+<img src="images/cover-sml.png" title="Xamarin.Forms Book で Mobile Apps を作成する" align="left" />書籍『*Creating Mobile Apps with Xamarin.Forms*』 (Charles Petzold 著) は、Xamarin.Forms アプリケーションを作成する方法について学習するためのガイドです。 唯一の前提条件は、C# プログラミング言語の知識です。 この本では、Xamarin.Forms のユーザー インターフェイスと、アニメーション、MVVM、トリガー、動作、カスタム レイアウト、カスタム レンダラーなどについて詳しく解説されています。
 
-書籍では、2016 年春に公開され、以来更新されていません。 そのままの価値あるが、いくつかは、書籍であまり、[マテリアルの期限が切れて](#ways-in-which-the-book-is-outdated)、いくつかのトピックが適切で完全も完全ではなく。
+この本は 2016 年春に発行されて以降、改訂されていません。 多くの情報はまだ価値がありますが、一部の[資料は古く](#ways-in-which-the-book-is-outdated)なっており、トピックの中にはまったく正しくないものまたは不完全なものもあります。
 
-## <a name="download-ebook-for-free"></a>電子ブックを無料でダウンロードします。
+## <a name="download-ebook-for-free"></a>電子ブックを無料でダウンロードする
 
-Microsoft Virtual Academy から、優先される電子ブックをダウンロードします。
+Microsoft Virtual Academy から、お好きな電子ブック形式をダウンロードしてください。
 
-- [**PDF (56Mb)** ](https://aka.ms/xamebook)
+- [**PDF (56 MB)** ](https://aka.ms/xamebook)
 
-- [**epub 形式 (151 Mb)** ](https://aka.ms/xamebook/epub)
+- [**ePub (151 MB)** ](https://aka.ms/xamebook/epub)
 
-- [**Kindle edition (325 Mb)** ](https://aka.ms/xamebook/mobi)
+- [**Kindle 版 (325 MB)** ](https://aka.ms/xamebook/mobi)
 
-できます[個々 章ダウンロード](#download-chapters-and-summaries)PDF ファイルとして。
+PDF ファイルとして[章ごとにダウンロードする](#download-chapters-and-summaries)こともできます。
 
 ## <a name="samples"></a>サンプル
 
-サンプルは[github で入手できます](https://github.com/xamarin/xamarin-forms-book-samples)iOS、Android、およびユニバーサル Windows プラットフォーム (UWP) プロジェクトを含めるとします。 (Xamarin.Forms は、Windows 10 Mobile のをサポートしていませんが、Xamarin.Forms アプリケーションは、Windows 10 デスクトップで実行されます)。
+サンプルを [GitHub で入手する](https://github.com/xamarin/xamarin-forms-book-samples)ことができ、iOS、Android、およびユニバーサル Windows プラットフォーム (UWP) 用のプロジェクトが含まれています。 (Xamarin.Forms では Windows 10 Mobile はサポートされなくなりましたが、Xamarin.Forms アプリケーションは Windows 10 デスクトップで実行できます)。
 
 ## <a name="chapter-summaries"></a>章の概要
 
-章の概要が表示されます、[章テーブル](#download-chapters-and-summaries)次に示します。 これらの概要では、それぞれの章の内容を記述し、いくつかの種類のリンクを含めます。
+次に示す[章の表](#download-chapters-and-summaries)では、確証の概要を説明します。 これらの概要では、各章の内容が説明されており、複数の種類のリンクが示されています。
 
-- (ページの下部) にある書籍の実際の章および関連する記事へのリンク
+- (ページの下部にある) 本の実際の章および関連記事へのリンク
 
-- すべてのサンプルへのリンク、 [ **xamarin フォーム帳サンプル**](https://github.com/xamarin/xamarin-forms-book-samples) GitHub リポジトリ
+- [**xamarin-forms-book-samples**](https://github.com/xamarin/xamarin-forms-book-samples) GitHub リポジトリにあるすべてのサンプルへのリンク
 
-- 詳細な説明と Xamarin.Forms クラス、構造、プロパティ、列挙型、およびその他の API のドキュメントへのリンク
+- Xamarin.Forms のクラス、構造体、プロパティ、列挙型などが詳細に説明されている API ドキュメントへのリンク
 
-このようにまとめた部分が」の章の内容がありますを指定しても[やや古い](#ways-in-which-the-book-is-outdated)します。
+また、章の資料が[古くなっていっる](#ways-in-which-the-book-is-outdated)場合は、これらの概要でそのことも示されています。
 
-## <a name="download-chapters-and-summaries"></a>ダウンロードの章と概要
+## <a name="download-chapters-and-summaries"></a>章と概要をダウンロードする
 
-| 」の章 | 完全なテキスト | まとめ |
+| 章 | 完全なテキスト | まとめ |
 | ------- | ------------- | ------- |
-| 第 1 章 Xamarin.Forms はどのように調整されますか。 | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch01-Apr2016.pdf) | [まとめ](summaries/chapter01.md) |
-| 第 2 章 アプリの構造 | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch02-Apr2016.pdf) | [まとめ](summaries/chapter02.md) |
-| 第 3 章 テキストを掘り下げる | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch03-Apr2016.pdf) | [まとめ](summaries/chapter03.md) |
-| 第 4 章 スタックをスクロール | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch04-Apr2016.pdf) | [まとめ](summaries/chapter04.md) |
-| 第 5 章 サイズの処理 | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch05-Apr2016.pdf) | [まとめ](summaries/chapter05.md) |
-| 第 6 章 ボタンのクリック | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch06-Apr2016.pdf) | [まとめ](summaries/chapter06.md) |
-| 第 7 章 XAML 対コード | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch07-Apr2016.pdf) | [まとめ](summaries/chapter07.md) |
-| 第 8 章 コードと調和で XAML | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch08-Apr2016.pdf) | [まとめ](summaries/chapter08.md) |
-| 第9章 プラットフォーム固有の API 呼び出し | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch09-Apr2016.pdf) | [まとめ](summaries/chapter09.md) |
-| 第10章 XAML マークアップ拡張機能 | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch10-Apr2016.pdf) | [まとめ](summaries/chapter10.md) |
-| 第 11 章 バインド可能なインフラストラクチャ | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch11-Apr2016.pdf) | [まとめ](summaries/chapter11.md) |
-| 第12章 スタイル | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch12-Apr2016.pdf) | [まとめ](summaries/chapter12.md) |
-| 第 13 章 ビットマップ | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch13-Apr2016.pdf) | [まとめ](summaries/chapter13.md) |
-| 第14章 絶対レイアウト | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch14-Apr2016.pdf) | [まとめ](summaries/chapter14.md) |
-| 第 15 章 対話型のインターフェイス | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch15-Apr2016.pdf) | [まとめ](summaries/chapter15.md) |
-| 第16章 データ バインディング | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch16-Apr2016.pdf) | [まとめ](summaries/chapter16.md) |
-| 第17章 マスター グリッド | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch17-Apr2016.pdf) | [まとめ](summaries/chapter17.md) |
-| 第 18 章 MVVM | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch18-Apr2016.pdf) | [まとめ](summaries/chapter18.md) |
-| 第19 章 コレクション ビュー | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch19-Apr2016.pdf) | [まとめ](summaries/chapter19.md) |
-| 第20章 Async およびファイル I/O | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch20-Apr2016.pdf) | [まとめ](summaries/chapter20.md) |
-| 第21章 変換 | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch21-Apr2016.pdf) | [まとめ](summaries/chapter21.md) |
-| 第22章 アニメーション | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf) | [まとめ](summaries/chapter22.md) |
-| 第23章 トリガーと動作 | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch23-Apr2016.pdf) | [まとめ](summaries/chapter23.md) |
-| 第24章 ページ ナビゲーション | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch24-Apr2016.pdf) | [まとめ](summaries/chapter24.md) |
-| 第 25 章 ページの種類 | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch25-Apr2016.pdf) | [まとめ](summaries/chapter25.md) |
-| 第26章 カスタム レイアウト | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch26-Apr2016.pdf) | [まとめ](summaries/chapter26.md) |
-| 第27章 カスタム レンダラー | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch27-Apr2016.pdf) | [まとめ](summaries/chapter27.md) |
-| 第28章 場所とマップ | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch28-Aug2016.pdf) | [まとめ](summaries/chapter28.md) |
+| 第 1 章: Xamarin.Forms はどのように適合するか | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch01-Apr2016.pdf) | [まとめ](summaries/chapter01.md) |
+| 第 2 章: アプリの構造 | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch02-Apr2016.pdf) | [まとめ](summaries/chapter02.md) |
+| 第 3 章: テキストの詳細 | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch03-Apr2016.pdf) | [まとめ](summaries/chapter03.md) |
+| 第 4 章: スタックのスクロール | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch04-Apr2016.pdf) | [まとめ](summaries/chapter04.md) |
+| 第 5 章: サイズの処理 | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch05-Apr2016.pdf) | [まとめ](summaries/chapter05.md) |
+| 第 6 章: ボタンのクリック | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch06-Apr2016.pdf) | [まとめ](summaries/chapter06.md) |
+| 第 7 章: XAML とコード | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch07-Apr2016.pdf) | [まとめ](summaries/chapter07.md) |
+| 第 8 章: コードと XAML の調和 | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch08-Apr2016.pdf) | [まとめ](summaries/chapter08.md) |
+| 第 9 章: プラットフォーム固有の API 呼び出し | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch09-Apr2016.pdf) | [まとめ](summaries/chapter09.md) |
+| 第 10 章: XAML マークアップ拡張 | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch10-Apr2016.pdf) | [まとめ](summaries/chapter10.md) |
+| 第 11 章: バインド可能なインフラストラクチャ | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch11-Apr2016.pdf) | [まとめ](summaries/chapter11.md) |
+| 第 12 章: スタイル | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch12-Apr2016.pdf) | [まとめ](summaries/chapter12.md) |
+| 第 13 章: ビットマップ | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch13-Apr2016.pdf) | [まとめ](summaries/chapter13.md) |
+| 第 14 章: 絶対レイアウト | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch14-Apr2016.pdf) | [まとめ](summaries/chapter14.md) |
+| 第 15 章: 対話型インターフェイス | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch15-Apr2016.pdf) | [まとめ](summaries/chapter15.md) |
+| 第 16 章: データ バインディング | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch16-Apr2016.pdf) | [まとめ](summaries/chapter16.md) |
+| 第 17 章: グリッドのマスター | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch17-Apr2016.pdf) | [まとめ](summaries/chapter17.md) |
+| 第 18 章: MVVM | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch18-Apr2016.pdf) | [まとめ](summaries/chapter18.md) |
+| 第 19 章: コレクション ビュー | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch19-Apr2016.pdf) | [まとめ](summaries/chapter19.md) |
+| 第 20 章: 非同期 I/O とファイル I/O | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch20-Apr2016.pdf) | [まとめ](summaries/chapter20.md) |
+| 第 21 章: 変換 | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch21-Apr2016.pdf) | [まとめ](summaries/chapter21.md) |
+| 第 22 章: アニメーション | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf) | [まとめ](summaries/chapter22.md) |
+| 第 23 章: トリガーと動作 | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch23-Apr2016.pdf) | [まとめ](summaries/chapter23.md) |
+| 第 24 章: ページのナビゲーション | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch24-Apr2016.pdf) | [まとめ](summaries/chapter24.md) |
+| 第 25 章: さまざまなページ | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch25-Apr2016.pdf) | [まとめ](summaries/chapter25.md) |
+| 第 26 章: カスタム レイアウト | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch26-Apr2016.pdf) | [まとめ](summaries/chapter26.md) |
+| 第 27 章: カスタム レンダラー | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch27-Apr2016.pdf) | [まとめ](summaries/chapter27.md) |
+| 第 28 章: 場所とマップ | [PDF のダウンロード](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch28-Aug2016.pdf) | [まとめ](summaries/chapter28.md) |
 
-## <a name="ways-in-which-the-book-is-outdated"></a>この書籍の古い方法
+## <a name="ways-in-which-the-book-is-outdated"></a>本の内容が古くなっている箇所
 
-以降のパブリケーション*を Xamarin.Forms での Mobile Apps の作成*Xamarin.Forms のいくつかの新しい機能が追加されました。 これらの新機能が個々 の記事で説明されている、 [Xamarin.Forms](/xamarin/)ドキュメント。
+『*Creating Mobile Apps with Xamarin.Forms*』の発行以降、Xamarin. Forms にはいくつかの新機能が追加されています。 これらの新機能については、[Xamarin.Forms](/xamarin/) のドキュメントの個々の記事で説明されています。
 
-旧式である書籍の内容の一部が他の変更が発生しました。
+その他の変更点は、本の一部の内容が古くなったためです。
 
-### <a name="net-standard-20-libraries-have-replaced-portable-class-libraries"></a>.NET standard 2.0 ライブラリがポータブル クラス ライブラリに置き換えられました
+### <a name="net-standard-20-libraries-have-replaced-portable-class-libraries"></a>.NET Standard 2.0 によってポータブル クラス ライブラリが置き換えられた
 
-Xamarin.Forms アプリケーションは通常、異なるプラットフォーム間でコードを共有するのにライブラリを使用します。 当初、ポータブル クラス ライブラリ (PCL) でした。 書籍と章の概要全体を通じて Pcl に多くの参照があります。
+通常、Xamarin.Forms アプリケーションでは、ライブラリを使用して、異なるプラットフォーム間でコードが共有されます。 もともと、これはポータブル クラス ライブラリ (PCL) でした。 書籍と章の概要を通して、PCL への多くの参照があります。
 
-資料」の説明に従って、.NET Standard 2.0 ライブラリで、ポータブル クラス ライブラリが置き換えられました[Xamarin.Forms での .NET Standard 2.0 サポート](~/xamarin-forms/internals/net-standard.md)します。 すべての[サンプル コード](https://github.com/xamarin/xamarin-forms-book-samples)帳から .NET Standard 2.0 ライブラリを使用する更新されました。
+[Xamarin.Forms での .NET Standard 2.0 のサポート](~/xamarin-forms/internals/net-standard.md)に関する記事で説明されているように、ポータブル クラス ライブラリは .NET Standard 2.0 ライブラリに置き換えられています。 本のすべての[サンプル コード](https://github.com/xamarin/xamarin-forms-book-samples)は、.NET Standard 2.0 ライブラリを使用するように更新されています。
 
-ポータブル クラス ライブラリの役割に関する書籍の情報の大部分は、.NET Standard 2.0 ライブラリの同じままです。 1 つの違いは、のみ、PCL に数値「プロファイル」にします。 また、これには .NET Standard 2.0 ライブラリにいくつかの利点があります。 第 20 章、 [Async およびファイル I/O](summaries/chapter20.md)ファイル I/O を実行するための基礎となるプラットフォームを使用する方法について説明します。 これは、必要はなくなりました。 .NET Standard 2.0 ライブラリのサポート、使い慣れた[System.IO](xref:System.IO)クラスのすべての Xamarin.Forms プラットフォーム。
+ポータブル クラス ライブラリの役割に関する本の情報の大部分は、.NET Standard 2.0 ライブラリにも同じように当てはまります。 違いの 1 つは、数値 "プロファイル" があるのは PCL だけだということです。 また、.NET Standard 2.0 ライブラリにはいくつかの利点があります。 たとえば、第20章「[非同期 I/O とファイル I/O](summaries/chapter20.md)」では、基になっているプラットフォームを使用してファイル I/O を実行する方法が説明されています。 これはもう不要です。 .NET Standard 2.0 ライブラリでは、すべての Xamarin.Forms プラットフォームで使い慣れた [System.IO](xref:System.IO) クラスがサポートされています。
 
-により、Xamarin.Forms アプリケーションを使用することも、.NET Standard 2.0 ライブラリ[ `HttpClient` ](xref:System.Net.Http.HttpClient) 、インターネット経由でファイルにアクセスするなく[ `WebRequest` ](xref:System.Net.WebRequest)またはその他のクラス。
+また、.NET Standard 2.0 ライブラリを使用する Xamarin.Forms アプリケーションでは、[`WebRequest`](xref:System.Net.WebRequest) や他のクラスではなく、[`HttpClient`](xref:System.Net.Http.HttpClient) を使用してインターネット経由でファイルにアクセスすることもできます。
 
-### <a name="the-role-of-xaml-has-been-elevated"></a>XAML の役割が昇格されました
+### <a name="the-role-of-xaml-has-been-elevated"></a>XAML の役割が大きくなった
 
-*Xamarin.Forms によるモバイル アプリを作成する*まず C# を使用した Xamarin.Forms アプリケーションを作成する方法について説明します。 までに Extensible Application Markup Language (XAML) が導入されていない[第 7 章です。XAML 対コード](summaries/chapter07.md)します。
+*Xamarin.Forms でのモバイル アプリの作成*の説明は、C# を使用して Xamarin.Forms アプリケーションを記述する方法で始まっています。 Extensible Application Markup Language (XAML) は、「[第 7 章: XAML とコード](summaries/chapter07.md)」まで紹介されていません。
 
-XAML で、Xamarin.Forms ではるかに大きな役割できるようになりました。 Visual Studio を使用した分散 Xamarin.Forms ソリューション テンプレートでは、ページの XAML ベースのファイルを作成します。 Xamarin.Forms を使用して、開発者は、できるだけ早く XAML で使い慣れたなります。 [EXtensible Application Markup Language (XAML)](~/xamarin-forms/xaml/index.yml) Xamarin.Forms ドキュメントのセクションには、開始するための XAML のいくつかのアーティクルが含まれています。
+今では、Xamarin.Forms での XAML の役割は、はるかに大きくなっています。 Visual Studio と共に配布される Xamarin.Forms ソリューション テンプレートでは、XAML ベースのページ ファイルが作成されます。 Xamarin.Forms を使用する開発者は、できるだけ早く XAML に慣れる必要があります。 Xamarin.Forms のドキュメントの [eXtensible Application Markup Language (XAML)](~/xamarin-forms/xaml/index.yml) に関するセクションには、XAML を使い始めるときのための記事がいくつか含まれます。
 
 ### <a name="supported-platforms"></a>サポートされているプラットフォーム
 
-Xamarin.Forms には、Windows 8.1 および Windows Phone 8.1 がサポートされていません。
+Xamarin.Forms では、Windows 8.1 と Windows Phone 8.1 はサポートされなくなりました。
 
-ブックへの参照になります、 _Windows ランタイム_します。 これは、いくつかのバージョンの Windows および Windows Phone で使用される Windows API を包含する用語です。 Xamarin.Forms のより新しいバージョンでは、Windows 10 Mobile と Windows 10 用の API は、ユニバーサル Windows プラットフォームをサポートする自体を制限します。
+本書では、"_Windows ランタイム_" がときどき参照されています。 これは、Windows と Windows Phone のいくつかのバージョンで使用されていた Windows API を含む用語です。 最近のバージョンの Xamarin.Forms では、Windows 10 および Windows 10 Mobile 用の API であるユニバーサル Windows プラットフォームだけがサポートされるようになっています。
 
-.NET Standard 2.0 ライブラリは、Windows 10 Mobile の任意のバージョンをサポートしていません。 そのため、.NET Standard ライブラリを使用した Xamarin.Forms アプリケーションは、Windows 10 Mobile デバイスでは実行されません。 Xamarin.Forms アプリケーションは引き続き以降、Windows 10 のデスクトップ バージョン 10.0.16299.0 でを実行します。
+.NET Standard 2.0 ライブラリでは、Windows 10 Mobile のどのバージョンもサポートされていません。 そのため、.NET Standard ライブラリを使用する Xamarin.Forms アプリケーションは、Windows 10 Mobile デバイスでは実行されません。 Xamarin.Forms アプリケーションは、Windows 10 デスクトップ バージョン 10.0.16299.0 以降で引き続き実行されます。
 
-Xamarin.Forms がサポートするプレビュー、 [Mac](~/xamarin-forms/platform/other/mac.md)、 [WPF](~/xamarin-forms/platform/other/wpf.md)、 [GTK #](~/xamarin-forms/platform/other/gtk.md)、および[Tizen](~/xamarin-forms/platform/other/tizen.md)プラットフォーム。
+Xamarin.Forms には、[Mac](~/xamarin-forms/platform/other/mac.md)、[WPF](~/xamarin-forms/platform/other/wpf.md)、[GTK#](~/xamarin-forms/platform/other/gtk.md)、[Tizen](~/xamarin-forms/platform/other/tizen.md) プラットフォーム用のプレビュー サポートがあります。
 
 ### <a name="chapter-summaries"></a>章の概要
 
-章の概要には、ブックが書き込まれるために、Xamarin.Forms での変更をに関する情報が含まれます。 これらは、ノートの形式で多くの場合は。
+章の概要には、本書が書かれてからの Xamarin.Forms の変更に関する情報が含まれています。 これらは、多くの場合、注の形式になっています。
 
 > [!NOTE]
-> 各ページに関する注意事項は、この本で説明されている内容が Xamarin.Forms が異なっているを指定します。
+> 各ページの注では、Xamarin.Forms が書籍に記載されている資料と異なる部分が示されています。
 
 ### <a name="samples"></a>サンプル
 
-[ **Xamarin フォーム帳サンプル**](https://github.com/xamarin/xamarin-forms-book-samples) GitHub リポジトリ、**元のコードから書籍**ブランチには、この書籍で一貫性のあるプログラムのサンプルが含まれています。 **マスター**ブランチには非推奨の Api を削除して、拡張 Api を反映するアップグレードされたプロジェクトが含まれています。 さらに、プロジェクト、Android、**マスター** Android ブランチがアップグレードされました[AppCompat を介してマテリアル デザイン](~/xamarin-forms/platform/android/index.md)と白の背景に通常黒のテキストが表示されます。
+[**xamarin-forms-book-samples**](https://github.com/xamarin/xamarin-forms-book-samples) GitHub リポジトリの **original-code-from-book** ブランチには、書籍と一致するプログラム サンプルが含まれます。 **master** ブランチには、非推奨の API が削除され、拡張 API が反映されているアップグレードされたプロジェクトが含まれます。 さらに、**master** ブランチの Android プロジェクトは、Android の [AppCompat によるマテリアル設計](~/xamarin-forms/platform/android/index.md)対応にアップグレードされており、通常、黒いテキストが白い背景に表示されます。
 
 ## <a name="related-links"></a>関連リンク
 
-- [Microsoft のブログ](https://blogs.msdn.microsoft.com/microsoft_press/2016/03/31/free-ebook-creating-mobile-apps-with-xamarin-forms/)
-- [ブックからのサンプル コード](https://github.com/xamarin/xamarin-forms-book-samples)
+- [MS Press のブログ](https://blogs.msdn.microsoft.com/microsoft_press/2016/03/31/free-ebook-creating-mobile-apps-with-xamarin-forms/)
+- [書籍のサンプル コード](https://github.com/xamarin/xamarin-forms-book-samples)

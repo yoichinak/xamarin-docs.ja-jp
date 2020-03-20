@@ -1,6 +1,6 @@
 ---
-title: 第 18 章の概要です。 MVVM
-description: Xamarin を使用した Mobile Apps の作成:第 18 章の概要です。 MVVM
+title: 第 18 章の概要。 MVVM
+description: 'Xamarin.Forms でモバイル アプリを作成する: 第 18 章の概要。 MVVM'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 6A774510-7709-4F60-8EF5-29D478176F8F
@@ -8,93 +8,93 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
 ms.openlocfilehash: 32c16409f30d6b6d502b7cc074eafb182898594a
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
-ms.translationtype: MT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "70771076"
 ---
-# <a name="summary-of-chapter-18-mvvm"></a>第 18 章の概要です。 MVVM
+# <a name="summary-of-chapter-18-mvvm"></a>第 18 章の概要。 MVVM
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18)
 
-呼ばれます、基になる、コードからのユーザー インターフェイスを分離することで、アプリケーションを構築する最善の方法の 1 つは、*ビジネス ロジック*します。 いくつかの手法が存在するが、XAML ベースの環境用に調整されているがモデル-ビュー-ビューモデルまたは MVVM と呼ばれます。
+アプリケーションを設計する最良の方法の 1 つは、基になるコード ("*ビジネス ロジック*" とも呼ばれます) からユーザー インターフェイスを分離することです。 いくつかの手法がありますが、XAML ベースの環境に合った手法は Model-View-ViewModel または MVVM と呼ばれます。
 
-## <a name="mvvm-interrelationships"></a>MVVM の相互関係
+## <a name="mvvm-interrelationships"></a>MVVM の相関関係
 
-MVVM アプリケーションでは、3 つの層があります。
+MVVM アプリケーションには、3 つのレイヤーがあります。
 
-- モデルを使用する、データを基になる場合がありますファイルまたは web にアクセスします。
-- ビューは、通常 XAML で実装された、ユーザー インターフェイスまたはプレゼンテーション層
-- モデルとビュー、ビューモデルが接続します。
+- Model によって、基になるデータが提供されます。ファイルや Web アクセスが使用される場合があります
+- View はユーザー インターフェイス レイヤーまたはプレゼンテーション層です。通常は XAML で実装されます
+- ViewModel によって、Model と View が接続されます
 
-モデルでは、ViewModel を意識し、ViewModel はビューの依存します。 これら 3 つの層は、一般に、次のメカニズムを使用して相互に接続します。
+Model は ViewModel について何も知らず、ViewModel は View について何も知りません。 これら 3 つのレイヤーは、通常、次のメカニズムを使用して相互に接続されます。
 
-![ビュー、ビューモデル、およびビュー](images/ch18fg03.png "MVVM")
+![View、ViewModel、View](images/ch18fg03.png "MVVM")
 
-多くの小さいプログラム (とさらに大きなもの) に多くの場合、モデルが存在しないまたはその機能は、ViewModel に統合します。
+多くの小規模なプログラムでは (より大規模なプログラムでも)、Model が存在しないか、その機能が ViewModel に統合されていることがよくあります。
 
-## <a name="viewmodels-and-data-binding"></a>ビューモデル、およびデータ バインディング
+## <a name="viewmodels-and-data-binding"></a>ViewModel とデータ バインディング
 
-データ バインドに参加して、ViewModel は、ViewModel のプロパティが変更されたときに、ビューに通知の対応にあります。 ビューモデルを実装することによって、 [ `INotifyPropertyChanged` ](xref:System.ComponentModel.INotifyPropertyChanged)インターフェイスで、`System.ComponentModel`名前空間。 これは、Xamarin.Forms ではなく、.NET の一部です。 (通常、Viewmodel はプラットフォームの独立性を維持しようとしています)。
+データ バインディングを使用するために、ViewModel では、ViewModel のプロパティが変更されたときに View に通知できる必要があります。 ViewModel では、`System.ComponentModel` 名前空間の [`INotifyPropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged) インターフェイスを実装することによってこれを行います。 これは、Xamarin.Forms ではなく .NET に含まれています。 (通常、ViewModel はプラットフォームに依存しないようにします。)
 
-`INotifyPropertyChanged`インターフェイスという名前の 1 つのイベントを宣言します[ `PropertyChanged` ](xref:System.ComponentModel.INotifyPropertyChanged)プロパティが変更されたことを示します。
+`INotifyPropertyChanged` インターフェイスでは、変更されたプロパティを示す [`PropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged) という名前の単一のイベントが宣言されます。
 
-### <a name="a-viewmodel-clock"></a>ViewModel クロック
+### <a name="a-viewmodel-clock"></a>ViewModel の時計
 
-[ `DateTimeViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/DateTimeViewModel.cs)で、 [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit)ライブラリは、型のプロパティを定義します。`DateTime`変更が、タイマーに基づきます。 クラス実装`INotifyPropertyChanged`を発生させる、`PropertyChanged`イベントたびに、`DateTime`プロパティの変更。
+[**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit) ライブラリの [`DateTimeViewModel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/DateTimeViewModel.cs) によって、タイマーに基づいて変化する `DateTime` 型のプロパティが定義されます。 このクラスでは `INotifyPropertyChanged` が実装され、`DateTime` プロパティが変更されるたびに `PropertyChanged` イベントが発生します。
 
-[ **MvvmClock** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/MvvmClock)サンプルは、このビューモデルをインスタンス化し、ViewModel にデータ バインドを使用して、更新された日付と時刻の情報を表示します。
+[**MvvmClock**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/MvvmClock) サンプルでは、この ViewModel をインスタンス化し、その ViewModel に対してデータ バインディングを使用して、更新された日付と時刻の情報を表示します。
 
-### <a name="interactive-properties-in-a-viewmodel"></a>ViewModel で対話型のプロパティ
+### <a name="interactive-properties-in-a-viewmodel"></a>ViewModel の対話型プロパティ
 
-対話形式より、ViewModel のプロパティに示すように、 [ `SimpleMultiplierViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter18/SimpleMultiplier/SimpleMultiplier/SimpleMultiplier/SimpleMultiplierViewModel.cs)クラスは、一部の[ **SimpleMultiplier** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/SimpleMultiplier)サンプル。 データ バインドから 2 つの被乗数と乗数値を提供する`Slider`要素で製品を表示し、`Label`します。 ただし、このユーザー インターフェイスを XAML でビューモデルまたは分離コード ファイルに見合った変更を加えるに大幅な変更を行うことができます。
+[**SimpleMultiplier**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/SimpleMultiplier) サンプルに含まれている [`SimpleMultiplierViewModel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter18/SimpleMultiplier/SimpleMultiplier/SimpleMultiplier/SimpleMultiplierViewModel.cs) クラスが示しているように、ViewModel のプロパティはより対話的にすることができます。 データ バインディングによって、2 つの `Slider` 要素から被乗数と乗数の値が提供され、`Label` でその積が表示されます。 ただし、XAML でこのユーザー インターフェイスに広範な変更を加えつつ、ViewModel や分離コード ファイルにそれに伴う変更を生じさせないようにすることができます。
 
-### <a name="a-color-viewmodel"></a>色の ViewModel
+### <a name="a-color-viewmodel"></a>カラー ViewModel
 
-[ `ColorViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ColorViewModel.cs)で、 [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit)ライブラリには、RGB、HSL カラー モデルが統合されています。 これは、方法については、 [ **HslSliders** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/HslSliders)サンプル。
+[**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit) ライブラリの [`ColorViewModel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ColorViewModel.cs) では、RGB と HSL のカラー モデルが統合されています。 これは [**HslSliders**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/HslSliders) サンプルで示されています。
 
-[![TK の 3 倍になるスクリーン ショット](images/ch18fg08-small.png "HSL カラー モデル")](images/ch18fg08-large.png#lightbox "HSL カラー モデル")
+[![TK のトリプル スクリーンショット](images/ch18fg08-small.png "HSL カラー モデル")](images/ch18fg08-large.png#lightbox "HSL カラー モデル")
 
-### <a name="streamlining-the-viewmodel"></a>ビューモデルを効率化
+### <a name="streamlining-the-viewmodel"></a>ViewModel の合理化
 
-定義することによって、ビューモデルのコードを効率化されることができます、`OnPropertyChanged`メソッドを使用して、 [ `CallerMemberName` ](xref:System.Runtime.CompilerServices.CallerMemberNameAttribute)属性には、自動的に呼び出し元のプロパティ名を取得します。 [ `ViewModelBase` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ViewModelBase.cs)クラス、 [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit)ライブラリは、このと Viewmodel の基本クラスを提供します。
+ViewModel のコードは、呼び出し元のプロパティ名を自動的に取得する [`CallerMemberName`](xref:System.Runtime.CompilerServices.CallerMemberNameAttribute) 属性を使用して `OnPropertyChanged` メソッドを定義することで、合理化できます。 [**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit) ライブラリの [`ViewModelBase`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ViewModelBase.cs) クラスではこれが行われていて、ViewModel の基底クラスが提供されます。
 
 ## <a name="the-command-interface"></a>コマンド インターフェイス
 
-MVVM はデータのバインドを操作し、MVVM を処理する際に不十分なことだと思いますので、プロパティを使用、データ バインドが動作を`Clicked`のイベントを`Button`または`Tapped`のイベントを`TapGestureRecognizer`します。 このようなイベントを処理するビューモデルを許可するには、Xamarin.Forms をサポートしています、*コマンド インターフェイス*します。
+MVVM ではデータ バインディングが使用され、データ バインディングではプロパティが使用されます。そのため、MVVM は、`Button` の `Clicked` イベントや `TapGestureRecognizer` の `Tapped` イベントを処理する場合には不完全であるように見えます。 ViewModel でこのようなイベントを処理できるようにするために、Xamarin.Forms では "*コマンド インターフェイス*" がサポートされています。
 
-コマンド インターフェイスをマニフェストで自体、`Button`を 2 つのパブリック プロパティ。
+コマンド インターフェイスは、`Button` 内で次の 2 つのパブリック プロパティを使用して明示されます。
 
-- [`Command`](xref:Xamarin.Forms.Button.Command) 型の[ `ICommand` ](xref:System.Windows.Input.ICommand) (で定義されている、`System.Windows.Input`名前空間)
-- [`CommandParameter`](xref:Xamarin.Forms.Button.CommandParameter) 型の `Object`
+- [`ICommand`](xref:System.Windows.Input.ICommand) 型 (`System.Windows.Input` 名前空間で定義されています) の [`Command`](xref:Xamarin.Forms.Button.Command)
+- `Object` 型の [`CommandParameter`](xref:Xamarin.Forms.Button.CommandParameter)
 
-ビューモデル コマンド インターフェイスをサポートする型のプロパティを定義する必要があります`ICommand`しのデータにバインドされている、`Command`のプロパティ、`Button`します。 `ICommand`インターフェイスが 2 つのメソッドと 1 つのイベントを宣言します。
+コマンド インターフェイスをサポートするために、ViewModel では、後で `Button`の `Command` プロパティにデータ バインディングされる `ICommand` 型のプロパティを定義する必要があります。 `ICommand` インターフェイスでは、2 つのメソッドと 1 つのイベントが宣言されています。
 
-- [ `Execute` ](xref:System.Windows.Input.ICommand.Execute(System.Object))型の引数を持つメソッド `object`
-- A [ `CanExecute` ](xref:System.Windows.Input.ICommand.CanExecute(System.Object))型の引数を持つメソッド`object`を返す `bool`
-- A [ `CanExecuteChanged` ](xref:System.Windows.Input.ICommand.CanExecuteChanged)イベント
+- `object` 型の引数を持つ [`Execute`](xref:System.Windows.Input.ICommand.Execute(System.Object)) メソッド
+- `object` 型の引数を持ち、`bool` を返す [`CanExecute`](xref:System.Windows.Input.ICommand.CanExecute(System.Object)) メソッド
+- [`CanExecuteChanged`](xref:System.Windows.Input.ICommand.CanExecuteChanged) イベント
 
-内部的には、型の各プロパティの設定を ViewModel`ICommand`を実装するクラスのインスタンスに、`ICommand`インターフェイス。 データ バインドを介して、`Button`が最初に呼び出す、`CanExecute`メソッド、メソッドを返す場合は無効になり、`false`します。 また、ハンドラーを設定、`CanExecuteChanged`イベントと呼び出し`CanExecute`そのイベントが発生するたびにします。 場合、`Button`が有効にすると、呼び出し、`Execute`メソッドたびに、`Button`がクリックされました。
+ViewModel では、内部的に、`ICommand` 型の各プロパティが、`ICommand` インターフェイスを実装するクラスのインスタンスに設定されます。 データ バインディングを通じて、`Button` では最初に `CanExecute` メソッドが呼び出され、そのメソッドが `false` を返す場合はそれ自体が無効になります。 また、`CanExecuteChanged` イベントのハンドラーも設定され、そのイベントが発生するたびに `CanExecute` が呼び出されます。 `Button` が有効になっている場合は、`Button` がクリックされるたびに `Execute` メソッドが呼び出されます。
 
-以前、Xamarin.Forms をいくつかの Viewmodel がある可能性があり、これらコマンド インターフェイスを既にサポート可能性があります。 新しい Viewmodel は、Xamarin.Forms でのみ使用するのに、Xamarin.Forms が提供、 [ `Command` ](xref:Xamarin.Forms.Command)クラスと[ `Command<T>` ](xref:Xamarin.Forms.Command`1)実装するクラス、`ICommand`インターフェイス。 ジェネリック型は、引数の型、`Execute`と`CanExecute`メソッド。
+Xamarin.Forms よりも前から存在する ViewModel がある場合があり、それらでは既にコマンド インターフェイスがサポートされていることがあります。 Xamarin.Forms とだけ使用することを想定された新しい ViewModel のために、Xamarin.Forms には、`ICommand` インターフェイスを実装する [`Command`](xref:Xamarin.Forms.Command) クラスと [`Command<T>`](xref:Xamarin.Forms.Command`1) クラスが用意されています。 ジェネリック型は、`Execute` および `CanExecute` メソッドに対する引数の型です。
 
-### <a name="simple-method-executions"></a>単純なメソッドの実行
+### <a name="simple-method-executions"></a>シンプルなメソッドの実行
 
-[ **PowersOfThree** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/PowersOfThree)サンプル ViewModel のコマンド インターフェイスを使用する方法を示します。 [ `PowersViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter18/PowersOfThree/PowersOfThree/PowersOfThree/PowersViewModel.cs)クラス型の 2 つのプロパティを定義`ICommand`も、最も簡単なに渡される 2 つのプライベート プロパティを定義および[`Command`コンストラクター](xref:Xamarin.Forms.Command.%23ctor(System.Action))します。 プログラムにはこの ViewModel からのデータ バインドが含まれています、 `Command` 2 つのプロパティ`Button`要素。
+[**PowersOfThree**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/PowersOfThree) サンプルでは、ViewModel でコマンド インターフェイスを使用する方法が示されています。 [`PowersViewModel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter18/PowersOfThree/PowersOfThree/PowersOfThree/PowersViewModel.cs) クラスでは、`ICommand` 型の 2 つのプロパティと、最もシンプルな [`Command` コンストラクター](xref:Xamarin.Forms.Command.%23ctor(System.Action))に渡される 2 つのプライベート プロパティが定義されています。 このプログラムには、この ViewModel から 2 つの `Button` 要素の `Command` プロパティへのデータ バインディングが含まれています。
 
-`Button`で、要素を簡単に置き換えることができます`TapGestureRecognizer`コードの変更を XAML 内のオブジェクト。
+`Button` 要素は、コードを変更せずに、XAML で `TapGestureRecognizer` オブジェクトに簡単に置き換えることができます。
 
-### <a name="a-calculator-almost"></a>電卓、ほぼ
+### <a name="a-calculator-almost"></a>(ほぼ) 電卓
 
-[ **AddingMachine** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/AddingMachine)によりサンプルの両方を使用して、`Execute`と`CanExecute`メソッドの`ICommand`します。 使用して、 [ `AdderViewModel` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs)クラス、 [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs)ライブラリ。 ViewModel には型の 6 つのプロパティが含まれています`ICommand`します。 これらがから初期化される、 [ `Command`コンストラクター](xref:Xamarin.Forms.Command.%23ctor(System.Action))と[`Command`コンストラクター](xref:Xamarin.Forms.Command.%23ctor(System.Action,System.Func{System.Boolean}))の`Command`と[`Command<T>`コンストラクター](https://docs.microsoft.com/dotnet/api/xamarin.forms.command.-ctor?view=xamarin-forms#Xamarin_Forms_Command__ctor_System_Action_System_Object__System_Func_System_Object_System_Boolean__)`Command<T>`します。 計算機の数値キーはすべて使用して初期化されるプロパティにバインド`Command<T>`と`string`引数`Execute`と`CanExecute`特定のキーを識別します。
+[**AddingMachine**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/AddingMachine) サンプルでは、`ICommand` の `Execute` メソッドと `CanExecute` メソッドの両方が使用されています。 [**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs) ライブラリの [`AdderViewModel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs) クラスが使用されています。 ViewModel には、`ICommand` 型のプロパティが 6 つ含まれています。 これらは、`Command` の [`Command` コンストラクター](xref:Xamarin.Forms.Command.%23ctor(System.Action))および [`Command` コンストラクター](xref:Xamarin.Forms.Command.%23ctor(System.Action,System.Func{System.Boolean}))と、`Command<T>` の [`Command<T>` コンストラクター](https://docs.microsoft.com/dotnet/api/xamarin.forms.command.-ctor?view=xamarin-forms#Xamarin_Forms_Command__ctor_System_Action_System_Object__System_Func_System_Object_System_Boolean__)から初期化されます。 足し算プログラムの数値キーは、すべて `Command<T>` で初期化されるプロパティにバインドされます。また、`Execute` と `CanExecute` に対する `string` 引数によって、特定のキーが識別されます。
 
-## <a name="viewmodels-and-the-application-lifecycle"></a>ビューモデル、およびアプリケーションのライフ サイクル
+## <a name="viewmodels-and-the-application-lifecycle"></a>ViewModel とアプリケーションのライフサイクル
 
-`AdderViewModel`で使用される、 **AddingMachine**サンプルでは、という 2 つのメソッドも定義します`SaveState`と`RestoreState`します。 これらのメソッドは、もう一度開始日時をスリープ状態になったときに、アプリケーションから呼び出されます。
+**AddingMachine** サンプルで使用されている `AdderViewModel` では、`SaveState` と `RestoreState` という名前の 2 つのメソッドも定義されています。 これらのメソッドは、アプリケーションがスリープ状態になるときと再び起動するときに呼び出されます。
 
 ## <a name="related-links"></a>関連リンク
 
-- [第 18 章のフル テキスト (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch18-Apr2016.pdf)
+- [第 18 章の全文 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch18-Apr2016.pdf)
 - [第 18 章のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18)
-- [Xamarin.Forms 電子ブックを使用してエンタープライズ アプリケーション パターン](~/xamarin-forms/enterprise-application-patterns/index.md)
+- [Xamarin.Forms を使用したエンタープライズ アプリケーション パターン (電子ブック)](~/xamarin-forms/enterprise-application-patterns/index.md)

@@ -8,25 +8,25 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
 ms.openlocfilehash: 5996cfa3c0a18fc186ea862a2b3d7910594e1281
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027008"
 ---
 # <a name="why-cant-my-android-release-build-connect-to-the-internet"></a>Android のリリース ビルドがインターネットに接続できないのはなぜですか
 
 ## <a name="cause"></a>原因
 
-この問題の最も一般的な原因は、**インターネット**のアクセス許可がデバッグビルドに自動的に含まれ、リリースビルドに対して手動で設定する必要があることです。 これは、[ここで](~/android/deploy-test/building-apps/build-process.md)"debugsymbols" について説明されているように、デバッガーがプロセスにアタッチできるようにするために、インターネットアクセス許可が使用されるためです。
+この問題の最も一般的な原因は、**INTERNET** アクセス許可が、デバッグ ビルドには自動的に含まれるのに対し、リリース ビルドでは手動で設定する必要があることです。 これは、デバッガーがプロセスにアタッチできるようにするために、インターネット アクセス許可が使用されるためです ([こちら](~/android/deploy-test/building-apps/build-process.md)の "DebugSymbols" を参照)。
 
 ## <a name="fix"></a>修正
 
-この問題を解決するには、Android マニフェストでインターネットアクセス許可を要求することができます。 これは、マニフェストエディターまたはマニフェストの sourcecode のいずれかを使用して実行できます。
+この問題を解決するには、Android マニフェストでインターネット アクセス許可を要求することができます。 これは、マニフェスト エディターまたはマニフェストのソース コードのいずれかを使用して実行できます。
 
-- エディターでの修正: Android プロジェクトで、[**プロパティ]-> AndroidManifest .xml-> 必要なアクセス許可**を確認し、 **[インターネット]** を確認します。
+- エディターで修正する場合:Android プロジェクトで、 **[プロパティ] -> AndroidManifest.xml -> [必要なアクセス許可]** に移動し、 **[インターネット]** をオンにします。
 
-- Sourcecode での修正: ソースエディターで AndroidManifest を開き、`<Manifest>` タグ内に permission タグを追加します。
+- ソース コードで修正する場合:ソース エディターで AndroidManifest を開き、`<Manifest>` タグに permission タグを追加します。
 
     ```xml
     <Manifest>

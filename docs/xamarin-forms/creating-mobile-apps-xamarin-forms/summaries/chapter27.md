@@ -1,6 +1,6 @@
 ---
-title: 第 27 章の概要です。 カスタム レンダラー
-description: Xamarin を使用した Mobile Apps の作成:第 27 章の概要です。 カスタム レンダラー
+title: 第 27 章カスタム レンダラーの概要 カスタム レンダラー
+description: 'Xamarin.Forms でモバイル アプリを作成する: 第 27 章カスタム レンダラーの概要 カスタム レンダラー'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 49961953-9336-4FD4-A42F-6D9B05FF52E7
@@ -8,114 +8,114 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
 ms.openlocfilehash: fd4014fa4db4e90596c100d454cf0467512240a4
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
-ms.translationtype: MT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "70760501"
 ---
-# <a name="summary-of-chapter-27-custom-renderers"></a>第 27 章の概要です。 カスタム レンダラー
+# <a name="summary-of-chapter-27-custom-renderers"></a>第 27 章カスタム レンダラーの概要 カスタム レンダラー
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27)
 
 > [!NOTE] 
-> このページに関する注意事項は、この本で説明されている内容が Xamarin.Forms が異なっている領域を示しています。
+> このページのメモでは、Xamarin.Forms が書籍に記載されている資料と異なる部分が示されています。
 
-など、Xamarin.Forms 要素`Button`という名前のクラスにカプセル化されたプラットフォームに固有のボタンでレンダリングされて`ButtonRenderer`します。  ここでは、[の iOS バージョン`ButtonRenderer` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.iOS/Renderers/ButtonRenderer.cs)、[の Android バージョン`ButtonRenderer` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.Android/Renderers/ButtonRenderer.cs)、および[UWP バージョンの`ButtonRenderer` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.UAP/ButtonRenderer.cs)。
+`Button` などの Xamarin.Forms 要素は、`ButtonRenderer` という名前のクラスにカプセル化されたプラットフォーム固有のボタンを使ってレンダリングされます。  [iOS バージョンの `ButtonRenderer`](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.iOS/Renderers/ButtonRenderer.cs)、[Android バージョンの `ButtonRenderer`](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.Android/Renderers/ButtonRenderer.cs)、および [UWP バージョンの `ButtonRenderer`](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.UAP/ButtonRenderer.cs) をご確認ください。
 
-この章では、プラットフォーム固有のオブジェクトにマップするカスタム ビューを作成、独自のレンダラーを作成する方法について説明します。
+この章では、独自のレンダラーを記述して、プラットフォーム固有のオブジェクトにマップするカスタム ビューを作成する方法について説明します。
 
 ## <a name="the-complete-class-hierarchy"></a>完全なクラス階層
 
-Xamarin.Forms のプラットフォーム固有のコードが含まれている 4 つのアセンブリがあります。
-これらのリンクを使用して GitHub でソースを表示できます。
+Xamarin.Forms のプラットフォーム固有のコードを含むアセンブリには次の 4 つがあります。
+次のリンクを使って、GitHub でソースを表示できます。
 
-- [**Xamarin.Forms.Platform** ](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Platform) (非常に小さい)
+- [**Xamarin.Forms.Platform**](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Platform) (少量)
 - [**Xamarin.Forms.Platform.iOS**](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Platform.iOS)
 - [**Xamarin.Forms.Platform.Android**](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Platform.Android)
 - [**Xamarin.Forms.Platform.UAP**](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Platform.UAP)
 
 > [!NOTE]
-> `WinRT`書籍に記載されているアセンブリは、このソリューションの一部では不要になった。 
+> 本書に記載されている `WinRT` アセンブリは、このソリューションの一部ではなくなりました。 
 
-[ **PlatformClassHierarchy** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27/PlatformClassHierarchy)サンプルが実行されているプラットフォームに対して有効なアセンブリのクラス階層が表示されます。
+[**PlatformClassHierarchy**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27/PlatformClassHierarchy) サンプルでは、実行中のプラットフォームに対して有効なアセンブリのクラス階層を表示しています。
 
-という名前の重要なクラスがわかります`ViewRenderer`します。 これは、プラットフォーム固有のレンダラーを作成するときから派生するクラスです。 ターゲット プラットフォームのシステム ビューに結び付けられているので、次の 3 つの異なるバージョンで存在します。
+`ViewRenderer` という名前の重要なクラスがあることに気付くでしょう。 これは、プラットフォーム固有のレンダラーを作成するときに派生するクラスです。 これはターゲット プラットフォームのビュー システムに関連付けられているため、3 つの異なるバージョンに存在します。
 
-IOS [ `ViewRenderer<TView, TNativeView>` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.iOS/ViewRenderer.cs#L25)はジェネリック引数があります。
+iOS [`ViewRenderer<TView, TNativeView>`](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.iOS/ViewRenderer.cs#L25) には、汎用引数があります。
 
-- `TView` 制限されます。 [`Xamarin.Forms.View`](xref:Xamarin.Forms.View)
-- `TNativeView` 制限されます。 [`UIKit.UIView`](xref:UIKit.UIView)
+- [`Xamarin.Forms.View`](xref:Xamarin.Forms.View) に制約された `TView`
+- [`UIKit.UIView`](xref:UIKit.UIView) に制約された `TNativeView`
 
-Android [ `ViewRenderer<TView, TNativeView>` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.Android/ViewRenderer.cs#L17)はジェネリック引数があります。
+Android [`ViewRenderer<TView, TNativeView>`](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.Android/ViewRenderer.cs#L17) には、汎用引数があります。
 
-- `TView` 制限されます。 [`Xamarin.Forms.View`](xref:Xamarin.Forms.View)
-- `TNativeView` 制限されます。 [`Android.Views.View`](xref:Android.Views.View)
+- [`Xamarin.Forms.View`](xref:Xamarin.Forms.View) に制約された `TView`
+- [`Android.Views.View`](xref:Android.Views.View) に制約された `TNativeView`
 
-UWP [ `ViewRenderer<TElement, TNativeElement>` ](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.UAP/ViewRenderer.cs#L6)ジェネリック引数をという名前が異なります。
+UWP [`ViewRenderer<TElement, TNativeElement>`](https://github.com/xamarin/Xamarin.Forms/blob/master/Xamarin.Forms.Platform.UAP/ViewRenderer.cs#L6) には、異なる名前を持つ汎用引数があります。
 
-- `TElement` 制限されます。 [`Xamarin.Forms.View`](xref:Xamarin.Forms.View)
-- `TNativeElement` 制限されます。 [`Windows.UI.Xaml.FrameworkElement`](/uwp/api/Windows.UI.Xaml.FrameworkElement)
+- [`Xamarin.Forms.View`](xref:Xamarin.Forms.View) に制約された `TElement`
+- [`Windows.UI.Xaml.FrameworkElement`](/uwp/api/Windows.UI.Xaml.FrameworkElement) に制約された `TNativeElement`
 
-クラスを派生するレンダラーを作成するときに`View`を作成し、複数`ViewRenderer`クラス、サポートされているプラットフォームごとに 1 つ。 各プラットフォームに固有の実装はネイティブなクラスとして指定した型から派生した、参照、`TNativeView`または`TNativeElement`パラメーター。
+レンダラーを記述するときは、`View` からクラスを派生させ、サポート対象プラットフォームごとに 1 つずつ、複数の `ViewRenderer` クラスを記述します。 各プラットフォーム固有の実装からは、`TNativeView` または `TNativeElement` パラメーターとして指定した型から派生するネイティブ クラスが参照されます。
 
-## <a name="hello-custom-renderers"></a>こんにちは, カスタム レンダラー!
+## <a name="hello-custom-renderers"></a>Hello, custom renderers!
 
-[ **HelloRenderers** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27/HelloRenderers)プログラムという名前のカスタム ビューが参照`HelloView`でその[ `App` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter27/HelloRenderers/HelloRenderers/HelloRenderers/App.cs)クラス。
+[**HelloRenderers**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27/HelloRenderers) プログラムは、自身の [`App`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter27/HelloRenderers/HelloRenderers/HelloRenderers/App.cs) クラスの `HelloView` という名前のカスタム ビューを参照します。
 
-[ `HelloView` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter27/HelloRenderers/HelloRenderers/HelloRenderers/HelloView.cs)でクラスが含まれる、 **HelloRenderers**プロジェクト、単にから派生して`View`します。
+[`HelloView`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter27/HelloRenderers/HelloRenderers/HelloRenderers/HelloView.cs) クラスは **HelloRenderers** プロジェクトに含まれており、単に `View` から派生します。
 
-[ `HelloViewRenderer` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter27/HelloRenderers/HelloRenderers/HelloRenderers.iOS/HelloViewRenderer.cs)クラス、 **HelloRenderers.iOS**から派生したプロジェクト`ViewRenderer<HelloView, UILabel>`します。 `OnElementChanged`のオーバーライドではネイティブの iOS 作成`UILabel`と呼び出し`SetNativeControl`します。
+**HelloRenderers.iOS** プロジェクトの [`HelloViewRenderer`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter27/HelloRenderers/HelloRenderers/HelloRenderers.iOS/HelloViewRenderer.cs) クラスは、`ViewRenderer<HelloView, UILabel>` から派生します。 `OnElementChanged` のオーバーライドで、それはネイティブの iOS `UILabel` を作成して `SetNativeControl` を呼び出します。
 
-[ `HelloViewRenderer` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter27/HelloRenderers/HelloRenderers/HelloRenderers.Droid/HelloViewRenderer.cs)クラス、 **HelloRenderers.Droid**から派生したプロジェクト`ViewRenderer<HelloView, TextView>`します。 `OnElementChanged`のオーバーライドでは、Android 作成`TextView`と呼び出し`SetNativeControl`します。
+**HelloRenderers.Droid** プロジェクトの [`HelloViewRenderer`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter27/HelloRenderers/HelloRenderers/HelloRenderers.Droid/HelloViewRenderer.cs) クラスは、`ViewRenderer<HelloView, TextView>` から派生します。 `OnElementChanged` のオーバーライドで、それは Android `TextView` を作成して `SetNativeControl` を呼び出します。
 
-[ `HelloViewRenderer` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter27/HelloRenderers/HelloRenderers/HelloRenderers.UWP/HelloViewRenderer.cs)クラス、 **HelloRenderers.UWP**から派生したその他の Windows プロジェクトと`ViewRenderer<HelloView, TextBlock>`します。 `OnElementChanged`のオーバーライドでは、Windows 作成`TextBlock`と呼び出し`SetNativeControl`します。
+**HelloRenderers.UWP** とその他の Windows プロジェクトの [`HelloViewRenderer`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter27/HelloRenderers/HelloRenderers/HelloRenderers.UWP/HelloViewRenderer.cs) クラスは、`ViewRenderer<HelloView, TextBlock>` から派生します。 `OnElementChanged` のオーバーライドで、それは Windows `TextBlock` を作成して `SetNativeControl` を呼び出します。
 
-すべて、`ViewRenderer`派生物を含む、`ExportRenderer`を関連付けるアセンブリ レベルの属性、`HelloView`特定のクラス`HelloViewRenderer`クラス。 これは、Xamarin.Forms が個別のプラットフォーム プロジェクトのレンダラーを検索する方法です。
+`ViewRenderer` のすべての派生クラスには、`HelloView` クラスを特定の `HelloViewRenderer` クラスに関連付けるアセンブリ レベルの `ExportRenderer` 属性が含まれています。 これにより、Xamarin.Forms は個々のプラットフォーム プロジェクトでレンダラーを特定します。
 
-[![こんにちはビューのスクリーン ショットをトリプル](images/ch27fg02-small.png "カスタム レンダラー")](images/ch27fg02-large.png#lightbox "カスタム レンダラー")
+[![Hello ビューのトリプル スクリーンショット](images/ch27fg02-small.png "カスタム レンダラー")](images/ch27fg02-large.png#lightbox "カスタム レンダラー")
 
 ## <a name="renderers-and-properties"></a>レンダラーとプロパティ
 
-次の一連のレンダラーが楕円の描画を実装しのさまざまなプロジェクトが配置されている、 [ **Xamarin.FormsBook.Platform** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform)ソリューション。
+次のレンダラーのセットは楕円描画を実装しており、[**Xamarin.FormsBook.Platform**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Platform) ソリューションのさまざまなプロジェクトに配置されています。
 
-[ `EllipseView` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/EllipseView.cs)クラスは、 **Xamarin.FormsBook.Platform**プラットフォーム。 クラスと似ています`BoxView`を 1 つのプロパティを定義します。`Color`型の`Color`します。
+[`EllipseView`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/EllipseView.cs) クラスは、**Xamarin.FormsBook.Platform** プラットフォームにあります。 このクラスは `BoxView` に似ており、単一のプロパティ、`Color` 型の `Color` のみを定義します。
 
-レンダラーに設定されたプロパティ値を転送できる、`View`をオーバーライドすることでネイティブ オブジェクトに、`OnElementPropertyChanged`レンダラーのメソッド。 このメソッド内 (およびレンダラーの多くは、)、2 つのプロパティを使用できます。
+レンダラーは、レンダラーの `OnElementPropertyChanged` メソッドをオーバーライドすることにより、`View` に設定されたプロパティ値をネイティブ オブジェクトに転送できます。 このメソッド内 (およびほとんどのレンダラー内) で、次の 2 つのプロパティを使用できます。
 
-- `Element`、Xamarin.Forms 要素
-- `Control`、、のネイティブ ビューまたはウィジェットまたはコントロールのオブジェクト
+- `Element`: Xamarin.Forms 要素
+- `Control`: ネイティブ ビューまたはウィジェットまたはコントロール オブジェクト
 
-これらのプロパティの種類は、ジェネリック パラメーターによって決まります`ViewRenderer`します。 この例で`Element`の種類は`EllipseView`します。
+これらのプロパティの型は、`ViewRenderer` へのジェネリック パラメーターによって決定されます。 この例では、`Element` の型は `EllipseView` です。
 
-`OnElementPropertyChanged`オーバーライドが転送できるため、`Color`の値、`Element`ネイティブ`Control`オブジェクトは、何らかの変換の可能性があります。 次の 3 つのレンダラーは次のとおりです。
+したがって、`OnElementPropertyChanged` のオーバーライドでは、`Element` の `Color` 値をネイティブの `Control` オブジェクトに転送できます (何らかの変換が必要になることがあります)。 次の 3 つのレンダラーがあります。
 
-- iOS: [ `EllipseViewRenderer` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS/EllipseViewRenderer.cs)、使用、 [ `EllipseUIView` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS/EllipseUIView.cs)楕円のクラス。
-- Android: [ `EllipseViewRenderer` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android/EllipseViewRenderer.cs)、使用、 [ `EllipseDrawableView` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android/EllipseDrawableView.cs)楕円のクラス。
-- UWP: [ `EllipseViewRenderer` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/EllipseViewRenderer.cs)、ネイティブの Windows を使用する[ `Ellipse` ](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse)クラス。
+- iOS: [`EllipseViewRenderer`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS/EllipseViewRenderer.cs)。楕円に [`EllipseUIView`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS/EllipseUIView.cs) クラスを使用します。
+- Android: [`EllipseViewRenderer`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android/EllipseViewRenderer.cs)。楕円に [`EllipseDrawableView`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android/EllipseDrawableView.cs) クラスを使用します。
+- UWP: [`EllipseViewRenderer`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/EllipseViewRenderer.cs)。ネイティブの Windows [`Ellipse`](/uwp/api/Windows.UI.Xaml.Shapes.Ellipse) クラスを使用できます。
 
-[ **EllipseDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27/EllipseDemo)クラスでは、これらのいくつかが表示されます`EllipseView`オブジェクト。
+[**EllipseDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27/EllipseDemo) クラスでは、これらの `EllipseView` オブジェクトのいくつかを表示しています。
 
-[![楕円のデモのスクリーン ショットをトリプル](images/ch27fg03-small.png "EllipseView カスタム レンダラー")](images/ch27fg03-large.png#lightbox "EllipseView カスタム レンダラー")
+[![楕円のデモのトリプル スクリーンショット](images/ch27fg03-small.png "EllipseView カスタム レンダラー")](images/ch27fg03-large.png#lightbox "EllipseView カスタム レンダラー")
 
-[ **BouncingBall** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27/BouncingBall) bounces、`EllipseView`画面の両側はオフです。
+[**BouncingBall**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27/BouncingBall) では、`EllipseView` が画面の端で跳ね返ります。
 
 ## <a name="renderers-and-events"></a>レンダラーとイベント
 
-レンダラーでは直接イベントを生成することもできます。 [ `StepSlider` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/StepSlider.cs)クラスは、通常の Xamarin.Forms のような`Slider`間で個別のステップ数を指定できますが、`Minimum`と`Maximum`値。
+レンダラーでは、イベントを間接的に生成することもできます。 [`StepSlider`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform/StepSlider.cs) クラスは、通常の Xamarin.Forms `Slider` に似ていますが、`Minimum` 値と `Maximum` 値の間に複数の異なるステップを指定できます。
 
-次の 3 つのレンダラーは次のとおりです。
+次の 3 つのレンダラーがあります。
 
 - iOS: [`StepSliderRenderer`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.iOS/StepSliderRenderer.cs)
 - Android: [`StepSliderRenderer`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.Android/StepSliderRenderer.cs)
 - UWP: [`StepSliderRenderer`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Platform/Xamarin.FormsBook.Platform.WinRT/StepSliderRenderer.cs)
 
-レンダラーがネイティブのコントロールへの変更を検出し、呼び出す`SetValueFromRenderer`で定義されているバインド可能なプロパティを参照する、 `StepSlider`、原因となるへの変更、`StepSlider`させる、`ValueChanged`イベント。
+レンダラーは、ネイティブ コントロールに対する変更を検出すると、`StepSlider` で定義されているバインド可能なプロパティを参照する `SetValueFromRenderer` を呼び出します (`StepSlider` によって `ValueChanged` イベントが開始されることになる変更)。
 
-[ **StepSliderDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27/StepSliderDemo)サンプルでは、この新しいスライダー。
+[**StepSliderDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27/StepSliderDemo) サンプルでは、この新しいスライダーの例を示しています。
 
 ## <a name="related-links"></a>関連リンク
 
-- [第 27 章フル テキスト (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch27-Apr2016.pdf)
+- [第 27 章の全文 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch27-Apr2016.pdf)
 - [第 27 章のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter27)
 - [カスタム レンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)

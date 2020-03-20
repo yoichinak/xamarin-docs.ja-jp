@@ -9,10 +9,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 09/07/2018
 ms.openlocfilehash: 0f7499551db7d86d7978b9c3e1f562a2f054c202
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73019527"
 ---
 # <a name="how-do-i-update-the-java-development-kit-jdk-version"></a>Java Development Kit (JDK) のバージョンの更新方法を教えてください
@@ -21,42 +21,42 @@ _この記事では、Windows および Mac で Java Development Kit (JDK) の�
 
 ## <a name="overview"></a>概要
 
-Xamarin Android は、Java Development Kit (JDK) を使用して、Android アプリをビルドし、Android designer を実行するための Android SDK と統合します。 最新バージョンの Android SDK (API 24 以降) には JDK 8 (1.8) が必要です。 または、 [Microsoft Mobile OpenJDK Preview](~/android/get-started/installation/openjdk.md)をインストールすることもできます。 Microsoft Mobile OpenJDK は、最終的には、Xamarin Android の開発用に JDK 8 を置き換えます。
+Xamarin.Android では、Java Development Kit (JDK) を使用して、Android アプリのビルドと Android デザイナーの実行を行う Android SDK を統合します。 最新バージョンの Android SDK (API 24 以降) では JDK 8 (1.8) が必要です。 または、[Microsoft Mobile OpenJDK Preview](~/android/get-started/installation/openjdk.md) をインストールできます。 Xamarin.Android 開発用の JDK 8 は、最終的には Microsoft Mobile OpenJDK に置き換わります。
 
-Microsoft Mobile OpenJDK に更新するには、「 [Microsoft Mobile Openjdk Preview](~/android/get-started/installation/openjdk.md)」を参照してください。 JDK 8 に更新するには、次の手順を実行します。
+Microsoft Mobile OpenJDK に更新するには、[Microsoft Mobile OpenJDK Preview](~/android/get-started/installation/openjdk.md) に関する記事を参照してください。 JDK 8 に更新するには、次の手順を実行します。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. [Oracle web サイト](https://www.oracle.com/technetwork/java/javase/downloads/index.html)から JDK 8 (1.8) をダウンロードします。
+1. [Oracle Web サイト](https://www.oracle.com/technetwork/java/javase/downloads/index.html)から JDK 8 (1.8) をダウンロードします。
 
-    ![Oracle web サイトの JDK ダウンロードページのスクリーンショット](update-jdk-images/image1.png)
+    ![Oracle Web サイトの JDK ダウンロード ページのスクリーンショット](update-jdk-images/image1.png)
 
-2. Xamarin Android designer での[カスタムコントロール](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/vs/xamarin.vs_4/xamarin.vs_4.2/index.md#androiddesignercustomcontrols)の表示を許可するには、64ビットバージョンを選択します。
+2. Xamarin Android デザイナーで、[カスタム コントロール](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/vs/xamarin.vs_4/xamarin.vs_4.2/index.md#androiddesignercustomcontrols)を表示できるように、64 ビット バージョンを選択します。
 
-    ![JDK のダウンロードページからダウンロードする Windows x64 JDK パッケージの選択](update-jdk-images/image2.png)
+    ![JDK のダウンロード ページからダウンロードする Windows x64 JDK パッケージの選択](update-jdk-images/image2.png)
 
-3. .Exe を実行し、**開発ツール**をインストールします。
+3. .exe を実行して **Development Tools** をインストールします。
 
-    ![JDK インストーラーでの開発ツールのインストール](update-jdk-images/image3.png)
+    ![JDK インストーラーでの Development Tools のインストール](update-jdk-images/image3.png)
 
-4. Visual Studio を開き、 **Java Development kit の場所**を更新して、[ツール > オプション] の下の新しい JDK をポイントし **> Xamarin > Android の設定 > java Development kit の場所**に移動します。
+4. Visual Studio を開き、 **[ツール] > [オプション] > [Xamarin] > [Android の設定] > [Java Development Kit の場所]** にある新しい JDK をポイントするように **[Java Development Kit の場所]** を更新します。
 
-    [[Android の設定] ページの JDK の![パス設定](update-jdk-images/image4-sml.png)](update-jdk-images/image4.png#lightbox)
+    [![[Android の設定] ページでの JDK のパス設定](update-jdk-images/image4-sml.png)](update-jdk-images/image4.png#lightbox)
 
 場所を更新した後、必ず Visual Studio を再起動してください。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. [Oracle web サイト](https://www.oracle.com/technetwork/java/javase/downloads/index.html)から JDK 8 (1.8) をダウンロードします。
+1. [Oracle Web サイト](https://www.oracle.com/technetwork/java/javase/downloads/index.html)から JDK 8 (1.8) をダウンロードします。
 
-    ![Oracle web サイトの JDK ダウンロードページのスクリーンショット](update-jdk-images/image1.png)
+    ![Oracle Web サイトの JDK ダウンロード ページのスクリーンショット](update-jdk-images/image1.png)
 
-2. Dmg ファイルを開き、.pkg インストーラーを実行します。
+2. .dmg ファイルを開き、.pkg インストーラーを実行します。
 
-    ![MacOS で JDK インストーラーを実行する](update-jdk-images/image5.png)
+    ![macOS での JDK インストーラーの実行](update-jdk-images/image5.png)
 
-**/System/Library/Frameworks/JavaVM.framework/Versions/Current**を更新すると、新しい JDK バージョンが既定値として自動的に設定されます。 Mac OS 次に、 **JAVA sdk (jdk)** の場所が、予想される既定値である **/usr**に設定されていることを再確認できます。 **Visual Studio for Mac > 基本設定 > プロジェクト > SDK 場所 > ANDROID > 場所 > java Sdk (jdk) の場所**:
+Mac OS では、 **/System/Library/Frameworks/JavaVM.framework/Versions/Current** を更新することで、新しい JDK バージョンが既定値として自動的に設定されます。 その後、**Java SDK (JDK)** の場所が、 **[Visual Studio for Mac] > [ユーザー設定] > [プロジェクト] > [SDK の場所] > [Android] > [場所] > [Java SDK (JDK) の場所]** に、期待される既定値である **/usr** に設定されていることを再確認できます。
 
-[[Android の場所] タブで JDK の場所を設定![](update-jdk-images/image6-sml.png)](update-jdk-images/image6.png#lightbox)
+[![Android の [場所] タブで JDK の場所を設定する](update-jdk-images/image6-sml.png)](update-jdk-images/image6.png#lightbox)
 
 -----

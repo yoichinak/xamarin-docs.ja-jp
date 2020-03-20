@@ -1,6 +1,6 @@
 ---
-title: 第 6 章の概要です。 ボタンのクリック
-description: Xamarin.Forms によるモバイル アプリの作成。第 6 章の概要です。 ボタンのクリック
+title: '第 6 章の概要: ボタンのクリック'
+description: 'Xamarin.Forms で Mobile Apps を作成する: 第 6 章の概要: ボタンのクリック'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: D4F9C429-A6CF-40FA-AC68-3F149307A5F9
@@ -8,17 +8,17 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
 ms.openlocfilehash: 12c8cdc19f9e6765ca25ade97bcfdbffb7b60381
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
-ms.translationtype: MT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "61334714"
 ---
-# <a name="summary-of-chapter-6-button-clicks"></a>第 6 章の概要です。 ボタンのクリック
+# <a name="summary-of-chapter-6-button-clicks"></a>第 6 章の概要: ボタンのクリック
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06)
 
-[ `Button` ](xref:Xamarin.Forms.Button)コマンドを開始するユーザーのビューです。 A`Button`テキストによって識別されます (とで示した必要に応じてイメージ[第 13 章、ビットマップ](chapter13.md))。 その結果、`Button`と同じプロパティを多数定義しています`Label`:
+[`Button`](xref:Xamarin.Forms.Button) は、ユーザーがコマンドを開始するためのビューです。 `Button` は、テキスト (および必要に応じて、「[第 13 章、ビットマップ](chapter13.md)」で示されているように画像) によって識別されます。 そのため、`Button` では `Label` と同じプロパティの多くが定義されています。
 
 - [`Text`](xref:Xamarin.Forms.Button.Text)
 - [`FontFamily`](xref:Xamarin.Forms.Button.FontFamily)
@@ -26,68 +26,68 @@ ms.locfileid: "61334714"
 - [`FontAttributes`](xref:Xamarin.Forms.Button.FontAttributes)
 - [`TextColor`](xref:Xamarin.Forms.Button.TextColor)
 
-`Button` 3 つのプロパティを定義も、境界線の外観が決定されますが、これらのプロパティとその相互独立性のサポートはプラットフォーム固有。
+また、`Button` では、境界線の外観を制御する 3 つのプロパティも定義されていますが、これらのプロパティと相互の独立性のサポートはプラットフォーム固有です。
 
-- [`BorderColor`](xref:Xamarin.Forms.Button.BorderColor) 型の `Color`
-- [`BorderWidth`](xref:Xamarin.Forms.Button.BorderWidth) 型の `Double`
-- [`BorderRadius`](xref:Xamarin.Forms.Button.BorderRadius) 型の `Double`
+- `Color` 型の [`BorderColor`](xref:Xamarin.Forms.Button.BorderColor)
+- `Double` 型の [`BorderWidth`](xref:Xamarin.Forms.Button.BorderWidth)
+- `Double` 型の [`BorderRadius`](xref:Xamarin.Forms.Button.BorderRadius)
 
-`Button` すべてのプロパティも継承`VisualElement`と`View`など、 `BackgroundColor`、 `HorizontalOptions`、および`VerticalOptions`します。
+`Button` では、`BackgroundColor`、`HorizontalOptions`、`VerticalOptions` など、`VisualElement` および `View` のすべてのプロパティも継承されます。
 
 ## <a name="processing-the-click"></a>クリックの処理
 
-`Button`クラスを定義、 [ `Clicked` ](xref:Xamarin.Forms.Button.Clicked) 、ユーザーがタップしたときに発生するイベント、`Button`します。 `Click`ハンドラーが型`EventHandler`します。 最初の引数は、`Button`イベントを生成するオブジェクトは、2 番目の引数は、`EventArgs`しない追加情報を提供するオブジェクト。
+`Button` クラスで定義されている [`Clicked`](xref:Xamarin.Forms.Button.Clicked) イベントは、ユーザーが `Button` をタップしたときに発生します。 `Click` ハンドラーは `EventHandler` 型です。 最初の引数は、イベントを発生させる `Button` オブジェクトです。2 番目の引数は、追加情報を提供しない `EventArgs` オブジェクトです。
 
-[ **ButtonLogger** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/ButtonLogger)単純なサンプル`Clicked`を処理します。
+[**ButtonLogger**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/ButtonLogger) サンプルでは、簡単な `Clicked` の処理が示されています。
 
-## <a name="sharing-button-clicks"></a>クリックしたボタンの共有
+## <a name="sharing-button-clicks"></a>ボタンのクリックの共有
 
-複数`Button`ビューには、同じ共有できる`Clicked`判断するために必要な一般的に、ハンドラーがハンドラー`Button`特定のイベントを担当します。 さまざまなを格納する 1 つの方法も`Button`フィールドとチェックのどれがハンドラーでイベントを発生させるオブジェクト。
+複数の `Button` ビューで同じ `Clicked` ハンドラーを共有できますが、通常、ハンドラーでは特定のイベントに対応する `Button` を特定する必要があります。 1 つの方法は、さまざまな `Button` オブジェクトをフィールドとして格納し、ハンドラーでイベントを発生させているものを調べることです。
 
-[ **TwoButtons** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/TwoButtons)サンプルは、この手法を示します。 プログラムも設定する方法を示します、 [ `IsEnabled` ](xref:Xamarin.Forms.VisualElement.IsEnabled)のプロパティを`Button`に`false`キーを押すと、`Button`が無効になっています。 無効になっている`Button`を生成しません、`Clicked`イベント。
+[**TwoButtons**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/TwoButtons) サンプルでは、この手法が示されています。 そのプログラムでは、`Button` の押下が有効ではなくなったときに、`Button` の [`IsEnabled`](xref:Xamarin.Forms.VisualElement.IsEnabled) プロパティを `false` に設定する方法も示されています。 無効な `Button` では、`Clicked` イベントは生成されません。
 
-## <a name="anonymous-event-handlers"></a>匿名のイベント ハンドラー
+## <a name="anonymous-event-handlers"></a>匿名イベント ハンドラー
 
-定義することは`Clicked`匿名のラムダ関数は、ハンドラーとして、 [ **ButtonLambdas** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/ButtonLambdas)サンプルを示します。 ただし、匿名のハンドラーは、乱雑なリフレクション コードなしに共有ことはできません。
+[**ButtonLambdas**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/ButtonLambdas) サンプルで示されているように、`Clicked` ハンドラーを匿名ラムダ関数として定義できます。 ただし、匿名ハンドラーは、面倒なリフレクション コードを使用しないと共有できません。
 
-## <a name="distinguishing-views-with-ids"></a>Id を持つ特徴的なビュー
+## <a name="distinguishing-views-with-ids"></a>ID によるビューの区別
 
-複数`Button`オブジェクトを設定しても区別できる、 [ `StyleId` ](xref:Xamarin.Forms.Element.StyleId)プロパティまたは[ `AutomationId` ](xref:Xamarin.Forms.Element.AutomationId)プロパティを`string`します。 このプロパティは`Element`Xamarin.Forms 内では使用できません。 アプリケーション プログラムでのみ使用されるものでは。
+[`StyleId`](xref:Xamarin.Forms.Element.StyleId) プロパティまたは [`AutomationId`](xref:Xamarin.Forms.Element.AutomationId) プロパティを `string` に設定することにより、複数の `Button` オブジェクトを区別することもできます。 このプロパティは `Element` で定義されていますが、Xamarin.Forms では使用されていません。 アプリケーション プログラムによる使用のみが想定されています。
 
-[ **SimplestKeypad** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/SimplestKeypad)サンプルは、テンキーのすべての 10 の数字キーを同じイベント ハンドラーを使用しでそれらを識別するため、`StyleId`プロパティ。
+[**SimplestKeypad**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/SimplestKeypad) サンプルでは、テンキーの 10 個の数字キーすべてに同じイベント ハンドラーを使用し、それらを `StyleId` プロパティで区別しています。
 
-[![最も簡単なキーパッドの 3 倍になるスクリーン ショット](images/ch06fg04-small.png "電卓")](images/ch06fg04-large.png#lightbox "計算ツール")
+[![最も簡単なキーパッドのトリプル スクリーンショット](images/ch06fg04-small.png "計算機")](images/ch06fg04-large.png#lightbox "計算機")
 
-## <a name="saving-transient-data"></a>一時的なデータを保存しています
+## <a name="saving-transient-data"></a>一時的なデータの保存
 
-多くのアプリケーションでは、プログラムが終了したときにデータを保存して、プログラムをもう一度起動するときに、そのデータを再読み込みする必要があります。 [ `Application` ](xref:Xamarin.Forms.Application)クラスは、プログラムを保存し、一時的なデータの復元に役立ついくつかのメンバーを定義します。
+多くのアプリケーションでは、プログラムが終了されるときにデータを保存し、プログラムが再び開始されるときにそのデータを再度読み込む必要があります。 [`Application`](xref:Xamarin.Forms.Application) クラスでは、プログラムで一時的なデータを保存および復元するのに役立ついくつかのメンバーが定義されています。
 
-- [ `Properties` ](xref:Xamarin.Forms.Application.Properties)プロパティが使用してディクショナリを`string`キーと`object`項目。 ディクショナリの内容は自動的にプログラムの終了前にアプリケーションのローカル ストレージに保存され、プログラムを起動するときに再度読み込まれます。
-- `Application`クラスは、プログラムの標準的なこと、3 つの保護された仮想メソッドを定義します`App`オーバーライド: [ `OnStart` ](xref:Xamarin.Forms.Application.OnStart)、 [ `OnSleep` ](xref:Xamarin.Forms.Application.OnSleep)、および[ `OnResume` ](xref:Xamarin.Forms.Application.OnResume). これらを参照してください*アプリケーションのライフ サイクル*イベント。
-- [ `SavePropertiesAsync` ](xref:Xamarin.Forms.Application.SavePropertiesAsync)メソッドは、ディクショナリの内容を保存します。
+- [`Properties`](xref:Xamarin.Forms.Application.Properties) プロパティは、`string` キーと `object` 項目のディクショナリです。 ディクショナリの内容は、プログラムの終了前にアプリケーションのローカル ストレージに自動的に保存され、プログラムの起動時に再度読み込まれます。
+- `Application` クラスでは、プログラムの標準の `App` クラスでオーバーライドされる次の 3 つの保護された仮想メソッドが定義されています: [`OnStart`](xref:Xamarin.Forms.Application.OnStart)、[`OnSleep`](xref:Xamarin.Forms.Application.OnSleep)、[`OnResume`](xref:Xamarin.Forms.Application.OnResume)。 これらでは、"*アプリケーション ライフサイクル*" イベントが参照されています。
+- [`SavePropertiesAsync`](xref:Xamarin.Forms.Application.SavePropertiesAsync) メソッドでは、ディクショナリの内容が保存されます。
 
-呼び出す必要はありません`SavePropertiesAsync`します。 ディクショナリの内容は自動的にプログラムの終了前に保存され、プログラムの起動する前に取得します。 プログラムがクラッシュした場合は、データを保存するプログラムがテスト中に便利です。
+`SavePropertiesAsync` を呼び出す必要はありません。 ディクショナリの内容は、プログラムの終了前に自動的に保存され、プログラムの起動前に取得されます。 プログラムをテストするとき、プログラムがクラッシュした場合にデータを保存するのに便利です。
 
-役立ちます。
+次のものも便利です。
 
-- [`Application.Current`](xref:Xamarin.Forms.Application.Current)、、現在を返してを静的プロパティ`Application`オブジェクトを取得し、使用できる、`Properties`ディクショナリ。
+- [`Application.Current`](xref:Xamarin.Forms.Application.Current) は現在の `Application` オブジェクトを返す静的プロパティで、`Properties` ディクショナリを取得するために使用できます。
 
-最初の手順は、プログラムの終了時に保持するページのすべての変数を識別するためにです。 これらの変数を変更するすべての場所がわかっている場合は単に追加する、`Properties`その時点でのディクショナリ。 ページのコンス トラクターから変数を設定することができます、`Properties`ディクショナリ キーが存在する場合。
+最初のステップは、プログラムの終了時に保持する必要がある、ページ上のすべての変数を識別することです。 それらの変数が変更されるすべての場所がわかっている場合は、その時点で `Properties` ディクショナリに追加するだけで済みます。 ページのコンストラクターでは、キーが存在する場合は `Properties` ディクショナリから変数を設定できます。
 
-大規模なプログラムは、アプリケーション ライフ サイクル イベントを処理する必要があります。 最も重要なは、`OnSleep`メソッド。 このメソッドの呼び出しでは、プログラムがフォア グラウンドを離れたことを示します。 ユーザーが押したおそらく、**ホーム**ボタン デバイスをすべてのアプリケーションを表示またはシャット ダウンして、電話します。 呼び出し`OnSleep`only の通知は、それが終了する前にプログラムを受信します。 いることを確認するには、この機会を利用プログラム、`Properties`ディクショナリが最新の状態。
+大規模なプログラムでは、おそらく、アプリケーション ライフサイクル イベントを処理する必要があります。 最も重要なものは、`OnSleep` メソッドです。 このメソッドの呼び出しは、プログラムがフォアグラウンドではなくなったことを示します。 おそらく、ユーザーがデバイスの**ホーム** ボタンを押したか、すべてのアプリケーションを表示したか、または電話をシャットダウンしている可能性があります。 `OnSleep` の呼び出しは、プログラムが終了する前に受け取る唯一の通知です。 プログラムでは、この機会を利用して、`Properties` ディクショナリを最新の状態にする必要があります。
 
-呼び出し`OnResume`プログラムが終了していないこと、最後の呼び出しを次に示します`OnSleep`がフォア グラウンドでもう一度実行されています。 プログラムは、この機会を使用して、(たとえば) インターネット接続を更新する可能性があります。
+`OnResume` の呼び出しは、プログラムが最後の `OnSleep` の呼び出しの後で終了せず、もう一度フォアグラウンドで実行していることを示します。 プログラムでは、この機会を利用して、(たとえば) インターネット接続を更新することができます。
 
-呼び出し`OnStart`プログラムの起動中に発生します。 このメソッドの呼び出しにアクセスするまで待機する必要はありません、`Properties`ディクショナリ内容は既にいるため、復元するときに、`App`コンス トラクターが呼び出されます。
+`OnStart` の呼び出しは、プログラムの起動中に発生します。 このメソッドが呼び出されるまで、`Properties` ディクショナリのアクセスを待つ必要はありません。内容は、`App` コンストラクターが呼び出されたときに既に復元されています。
 
-[ **PersistentKeypad** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/PersistentKeypad)サンプルはほぼ**SimplestKeypad**プログラムを使用する点を除いて、`OnSleep`キーパッドの現在のエントリを保存するオーバーライドとそのデータを復元するページのコンス トラクターです。
+[**PersistentKeypad**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/PersistentKeypad) サンプルは **SimplestKeypad** と非常によく似ていますが、そのプログラムでは `OnSleep` のオーバーライドを使用して現在のキーパッド入力を保存し、ページ コンストラクターを使用してそのデータを復元している点が異なります。
 
 > [!NOTE]
-> プログラムの設定を保存する方法もありますが、Xamarin.Essentials によって提供される[設定](~/essentials/preferences.md)クラス。
+> プログラムの設定を保存するもう 1 つの方法が、Xamarin.Essentials の [Preferences](~/essentials/preferences.md) クラスで提供されています。
 
 ## <a name="related-links"></a>関連リンク
 
-- [第 6 章フル テキスト (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch06-Apr2016.pdf)
+- [第 6 章の全文 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch06-Apr2016.pdf)
 - [第 6 章のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06)
-- [第 6 章F#サンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/FS)
+- [第 6 章の F# サンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06/FS)
 - [Xamarin.Forms のボタン](~/xamarin-forms/user-interface/button.md)

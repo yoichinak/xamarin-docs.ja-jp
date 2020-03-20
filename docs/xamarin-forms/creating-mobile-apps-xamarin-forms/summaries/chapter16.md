@@ -1,6 +1,6 @@
 ---
-title: 16 章の概要です。 データ バインディング
-description: Xamarin を使用した Mobile Apps の作成:16 章の概要です。 データ バインディング
+title: '第 16 章の概要: データ バインディング'
+description: 'Xamarin.Forms でモバイル アプリを作成する: 第 16 章の概要: データ バインディング'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: ED997DB0-C229-4868-A5FB-928703B377D6
@@ -8,139 +8,139 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
 ms.openlocfilehash: 2d61413fb1d8c28a3957da53601d0ad682f35518
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
-ms.translationtype: MT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "70771098"
 ---
-# <a name="summary-of-chapter-16-data-binding"></a>16 章の概要です。 データ バインディング
+# <a name="summary-of-chapter-16-data-binding"></a>第 16 章の概要: データ バインディング
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16)
 
 > [!NOTE] 
-> このページに関する注意事項は、この本で説明されている内容が Xamarin.Forms が異なっている領域を示しています。
+> このページのメモでは、Xamarin.Forms が書籍に記載されている資料と異なる部分が示されています。
 
-多くの場合、プログラマは、1 つのオブジェクトのプロパティが変更されたときを検出するイベント ハンドラーの記述の湧くや、別のオブジェクトのプロパティの値を変更するに使用します。 この処理を自動化するための手法で*データ バインディング*します。 データ バインディングは、通常、XAML で定義されておよびユーザー インターフェイスの定義の一部になります。
+プログラマーは、あるオブジェクトのプロパティが変更されたことを検出するイベント ハンドラーを作成し、それを使って別のオブジェクトのプロパティの値を変更することがよくあります。 このプロセスは、"*データ バインディング*" の手法を使用して自動化できます。 データ バインディングは、通常、XAML で定義され、ユーザー インターフェイスの定義の一部になります。
 
-非常に多くの場合、これらのデータ バインディングは、ユーザー インターフェイス オブジェクトを基になるデータに接続します。 これでさらに調査されている手法[**第 18 章です。MVVM**](chapter18.md)します。 ただし、データ バインドは 2 つ以上のユーザー インターフェイス要素にも接続できます。 この章では、データ バインディングの初期の例のほとんどは、この方法を示しています。
+非常に多くの場合、このようなデータ バインディングによって、ユーザー インターフェイス オブジェクトが基になるデータに接続されます。 これは、次でさらに詳しく調べる手法です: [**第18章: MVVM**](chapter18.md)。 ただし、データ バインディングでは、2 つ以上のユーザー インターフェイス要素を接続することもできます。 この章に記載されているデータ バインディングの初期の例のほとんどは、この手法を示しています。
 
 ## <a name="binding-basics"></a>バインディングの基礎
 
-データ バインディングでは、いくつかのプロパティ、メソッド、およびクラスが関係します。
+データ バインディングでは、いくつかのプロパティ、メソッド、およびクラスが使用されます。
 
-- [ `Binding` ](xref:Xamarin.Forms.Binding)クラスから派生[ `BindingBase` ](xref:Xamarin.Forms.BindingBase)データ バインディングの特性の多くをカプセル化します。
-- [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext)によってプロパティが定義されている、 [ `BindableObject` ](xref:Xamarin.Forms.BindableObject)クラス
-- [ `SetBinding` ](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase))でメソッドが定義されても、 [ `BindableObject` ](xref:Xamarin.Forms.BindableObject)クラス
-- [ `BindableObjectExtensions` ](xref:Xamarin.Forms.BindableObjectExtensions)クラスは、3 つの追加定義`SetBinding`メソッド
+- [`Binding`](xref:Xamarin.Forms.Binding) クラスは [`BindingBase`](xref:Xamarin.Forms.BindingBase) から派生し、データ バインディングの多くの特性をカプセル化します
+- [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) プロパティは、[`BindableObject`](xref:Xamarin.Forms.BindableObject) クラスによって定義されます
+- [`SetBinding`](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase)) メソッドも、[`BindableObject`](xref:Xamarin.Forms.BindableObject) クラスによって定義されます
+- [`BindableObjectExtensions`](xref:Xamarin.Forms.BindableObjectExtensions) クラスは、3 つの追加の `SetBinding` メソッドを定義します
 
-次の 2 つのクラスは、バインドの XAML マークアップ拡張機能をサポートします。
+次の 2 つのクラスでは、バインディング用の XAML マークアップ拡張機能がサポートされています。
 
-- [`BindingExtension`](xref:Xamarin.Forms.Xaml.BindingExtension) サポート、`Binding`マークアップ拡張機能
-- [`ReferenceExtension`](xref:Xamarin.Forms.Xaml.ReferenceExtension) サポート、`x:Reference`マークアップ拡張機能
+- [`BindingExtension`](xref:Xamarin.Forms.Xaml.BindingExtension) では `Binding` マークアップ拡張機能がサポートされています
+- [`ReferenceExtension`](xref:Xamarin.Forms.Xaml.ReferenceExtension) では `x:Reference` マークアップ拡張機能がサポートされています
 
-データ バインディングにおける 2 つのインターフェイスが含まれます。
+データ バインディングでは、次の 2 つのインターフェイスが使用されます。
 
-- [`INotifyPropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged) `System.ComponentModel`名前空間がプロパティが変更されたときに通知を実装するためには
-- [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) 1 つの型から別のデータ バインドの値を変換する小さなクラスを定義するために使用します。
+- `System.ComponentModel` 名前空間の [`INotifyPropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged) を使って、プロパティが変更されたときの通知が実装されます
+- [`IValueConverter`](xref:Xamarin.Forms.IValueConverter) は、データ バインディングにおいて値をある型から別の型に変換する、小規模のクラスを定義するために使用されます
 
-データ バインディングは、同一のオブジェクト、または 2 つの異なるオブジェクト (一般) の 2 つのプロパティを接続します。 これら 2 つのプロパティとして参照されます、*ソース*と*ターゲット*します。 通常、ソース プロパティの変更により、ターゲット プロパティに存在する変更が、方向を反転することがあります。 関係なく。
+データ バインディングによって、同じオブジェクトの 2 つのプロパティ、または (より一般的には) 2 つの異なるオブジェクトの 2 つのプロパティが接続されます。 これらの 2 つのプロパティは、"*ソース*" と "*ターゲット*" と呼ばれます。 一般に、ソース プロパティの変更によってターゲット プロパティの変更が発生しますが、この方向は逆になることがあります。 いずれにしても:
 
-- *ターゲット*プロパティはバックアップする必要があります、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)
-- *ソース*プロパティは通常、実装するクラスのメンバー [`INotifyPropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged)
+- "*ターゲット*" プロパティは [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) によってサポートされている必要があります
+- "*ソース*" プロパティは、通常、[`INotifyPropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged) を実装するクラスのメンバーです
 
-実装するクラス`INotifyPropertyChanged`発生、 [ `PropertyChanged` ](xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged)イベント プロパティの値が変更されたとき。 `BindableObject` 実装`INotifyPropertyChanged`自動的に発生して、`PropertyChanged`イベントによってプロパティがバックアップされている場合、`BindableProperty`値を変更するが、実装する、独自のクラスを記述できます`INotifyPropertyChanged`から派生することがなく`BindableObject`します。
+`INotifyPropertyChanged` を実装するクラスでは、プロパティの値が変更されると [`PropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged) イベントが発生します。 `BindableObject` では `INotifyPropertyChanged` が実装されているため、`BindableProperty` によってサポートされているプロパティの値が変更されると `PropertyChanged` イベントが自動的に発生します。ただし、`INotifyPropertyChanged` を実装する独自のクラスを、`BindableObject` から派生することなく作成することもできます。
 
 ## <a name="code-and-xaml"></a>コードと XAML
 
-[ **OpacityBindingCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/OpacityBindingCode)サンプル コードでデータ バインディングを設定する方法を示します。
+[**OpacityBindingCode**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/OpacityBindingCode) サンプルでは、コードでデータ バインディングを設定する方法が示されています。
 
-- ソースが、`Value`のプロパティを `Slider`
-- ターゲットが、`Opacity`のプロパティを `Label`
+- ソースは、`Slider` の `Value` プロパティです
+- ターゲットは、`Label` の `Opacity` プロパティです
 
-設定して 2 つのオブジェクトが接続されている、`BindingContext`の`Label`オブジェクトを`Slider`オブジェクト。 2 つのプロパティが呼び出すことによって接続されている、 [ `SetBinding` ](xref:Xamarin.Forms.BindableObjectExtensions.SetBinding*)拡張メソッドを`Label`を参照する、`OpacityProperty`バインド可能なプロパティと`Value`のプロパティ、`Slider`で表した、文字列。
+2 つのオブジェクトは、`Label` オブジェクトの `BindingContext` を `Slider` オブジェクトに設定することによって接続されます。 2 つのプロパティは、バインド可能なプロパティ `OpacityProperty` と、文字列として表される `Slider` の `Value` プロパティを参照する、`Label` の [`SetBinding`](xref:Xamarin.Forms.BindableObjectExtensions.SetBinding*) 拡張メソッドを呼び出すことによって接続されます。
 
-操作、`Slider`なります、`Label`フェードインおよびフェードアウトします。
+`Slider` を操作すると、`Label` の表示がフェード イン、フェード アウトされます。
 
-[ **OpacityBindingXaml** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/OpacityBindingXaml)は XAML で設定するデータ バインドで同じプログラムです。 `BindingContext`の`Label`に設定されている、`x:Reference`マークアップ拡張機能を参照する、 `Slider`、および`Opacity`のプロパティ、`Label`に設定されている、`Binding`マークアップ拡張機能をその[ `Path`](xref:Xamarin.Forms.Binding.Path)プロパティを参照する、`Value`のプロパティ、`Slider`します。
+[**OpacityBindingXaml**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/OpacityBindingXaml) は、XAML でデータ バインディングが設定された同じプログラムです。 `Label` の `BindingContext` は、`Slider` を参照する `x:Reference` マークアップ拡張に設定され、`Label` の `Opacity` プロパティは、`Slider` の `Value` プロパティを参照するその [`Path`](xref:Xamarin.Forms.Binding.Path) プロパティを使用して、`Binding` マークアップ拡張に設定されます。
 
 ## <a name="source-and-bindingcontext"></a>ソースと BindingContext
 
-[ **BindingSourceCode** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/BindingSourceCode)サンプル コードでその他の方法を示しています。 A`Binding`設定してオブジェクトが作成される、 [ `Source` ](xref:Xamarin.Forms.Binding.Source)プロパティを`Slider`オブジェクトと[ `Path` ](xref:Xamarin.Forms.Binding.Path)プロパティを「値」にします。 [ `SetBinding` ](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase))メソッドの`BindableObject`がで呼び出され、`Label`オブジェクト。
+[**BindingSourceCode**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/BindingSourceCode) サンプルでは、コードにおける別のアプローチが示されています。 `Binding` オブジェクトは、[`Source`](xref:Xamarin.Forms.Binding.Source) プロパティを `Slider` オブジェクトに設定し、[`Path`](xref:Xamarin.Forms.Binding.Path) プロパティを "Value" に設定することで作成されます。 次に、`Label` オブジェクトで `BindableObject` の [`SetBinding`](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase)) メソッドが呼び出されます。
 
-[ `Binding`コンス トラクター](xref:Xamarin.Forms.Binding.%23ctor(System.String,Xamarin.Forms.BindingMode,Xamarin.Forms.IValueConverter,System.Object,System.String,System.Object))を定義することが使用されても、`Binding`オブジェクト。
+[`Binding` コンストラクター](xref:Xamarin.Forms.Binding.%23ctor(System.String,Xamarin.Forms.BindingMode,Xamarin.Forms.IValueConverter,System.Object,System.String,System.Object))を使用して `Binding` オブジェクトを定義することもできます。
 
-[ **BindingSourceXaml** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/BindingSourceXaml)サンプル XAML で同等の方法を示しています。 `Opacity`のプロパティ、`Label`に設定されている、`Binding`マークアップ拡張機能を[ `Path` ](xref:Xamarin.Forms.Binding.Path)に設定、`Value`プロパティと[ `Source` ](xref:Xamarin.Forms.Binding.Source)に設定、埋め込み`x:Reference`マークアップ拡張機能。
+[**BindingSourceXaml**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/BindingSourceXaml) サンプルには、XAML での同等の手法が示されています。 `Label` の `Opacity` プロパティは `Binding` マークアップ拡張に設定され、[`Path`](xref:Xamarin.Forms.Binding.Path) は `Value` プロパティに、[`Source`](xref:Xamarin.Forms.Binding.Source) は埋め込みの `x:Reference` マークアップ拡張に設定されます。
 
-要約するは、バインディング ソース オブジェクトを参照する 2 つの方法があります。
+要約すると、バインディング ソース オブジェクトを参照するには、次の 2 つの方法があります。
 
-- を通じて、`BindingContext`ターゲットのプロパティ
-- を通じて、`Source`のプロパティ、`Binding`オブジェクト自体
+- ターゲットの `BindingContext` プロパティを使用する
+- `Binding` オブジェクト自体の `Source` プロパティを使用する
 
-両方が指定されている場合は、2 つ目が優先されます。 利点、`BindingContext`ビジュアル ツリーを通じて伝達されるです。 これは*非常に*複数のターゲット プロパティが同じソース オブジェクトにバインドされている場合に便利です。
+両方を指定した場合は、2 番目が優先されます。 `BindingContext` の利点は、それがビジュアル ツリーを通じて伝達されることです。 これは、複数のターゲット プロパティが同じソース オブジェクトにバインドされている場合に、"*非常に*" 便利です。
 
-[ **WebViewDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/WebViewDemo)プログラムでは、この方法を示して、 [ `WebView` ](xref:Xamarin.Forms.WebView)要素。 2 つ`Button`継承前後を移動するための要素を`BindingContext`を参照する親の`WebView`します。 `IsEnabled`の 2 つのボタンのプロパティは、単純なが`Binding`マークアップ拡張機能をボタンを対象とする`IsEnabled`の設定に基づいて、プロパティ、 [ `CanGoBack` ](xref:Xamarin.Forms.WebView.CanGoBack)と[ `CanGoForward`](xref:Xamarin.Forms.WebView.CanGoForward)の読み取り専用プロパティ、`WebView`します。
+[**WebViewDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/WebViewDemo) プログラムでは、[`WebView`](xref:Xamarin.Forms.WebView) 要素を使ってこの手法が示されています。 前後に移動するための 2 つの `Button` 要素は、`WebView` を参照するその親から `BindingContext` を継承します。 次に、2 つのボタンの `IsEnabled` プロパティでは、`WebView` の読み取り専用プロパティ [`CanGoBack`](xref:Xamarin.Forms.WebView.CanGoBack) および [`CanGoForward`](xref:Xamarin.Forms.WebView.CanGoForward) の設定に基づいて、ボタンの `IsEnabled` プロパティをターゲットとする `Binding` マークアップ拡張が設定されています。
 
-## <a name="the-binding-mode"></a>バインド モード
+## <a name="the-binding-mode"></a>バインディング モード
 
-設定、 [ `Mode` ](xref:Xamarin.Forms.BindingBase.Mode)プロパティの`Binding`のメンバーに、 [ `BindingMode` ](xref:Xamarin.Forms.BindingMode)列挙体。
+`Binding` の [`Mode`](xref:Xamarin.Forms.BindingBase.Mode) プロパティを、次の [`BindingMode`](xref:Xamarin.Forms.BindingMode) 列挙型のメンバーに設定します。
 
-- [`OneWay`](xref:Xamarin.Forms.BindingMode.OneWay) ソース プロパティの変更がターゲットに影響するため
-- [`OneWayToSource`](xref:Xamarin.Forms.BindingMode.OneWayToSource) ターゲット プロパティの変更がソースに影響するため
-- [`TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay) ソースとターゲットの変更が互いに影響するため
-- [`Default`](xref:Xamarin.Forms.BindingMode.Default) 使用する、 [ `DefaultBindingMode` ](xref:Xamarin.Forms.BindableProperty.DefaultBindingMode)ときに指定されたターゲット`BindableProperty`が作成されました。 指定されていない場合、既定値は`OneWay`の通常のバインド可能なプロパティと`OneWayToSource`のバインド可能なプロパティが読み取り専用です。
+- [`OneWay`](xref:Xamarin.Forms.BindingMode.OneWay): ソース プロパティに対する変更がターゲットに影響を与えるようにします
+- [`OneWayToSource`](xref:Xamarin.Forms.BindingMode.OneWayToSource): ターゲット プロパティに対する変更がソースに影響を与えるようにします
+- [`TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay): ソースとターゲットに対する変更が相互に影響を与えるようにします
+- [`Default`](xref:Xamarin.Forms.BindingMode.Default): ターゲットの `BindableProperty` が作成されたときに指定された [`DefaultBindingMode`](xref:Xamarin.Forms.BindableProperty.DefaultBindingMode) を使用します。 何も指定されていなかった場合、既定値は、通常のバインド可能なプロパティの場合は `OneWay`、読み取り専用のバインド可能なプロパティの場合は `OneWayToSource` になります。
 
 > [!NOTE]
-> `BindingMode`列挙を今すぐも含まれています。`OnTime`ときではなく、バインディング コンテキストが変更された場合にのみ、バインドを適用するため、ソース プロパティを変更します。
+> `BindingMode` 列挙型には、ソース プロパティが変更されたときではなく、バインディング コンテキストが変更されたときにのみバインディングを適用するための `OnTime` も含まれるようになりました。
 
-一般に MVVM シナリオでのデータ バインドの対象とする可能性があるプロパティを`DefaultBindingMode`の`TwoWay`します。 これらの数値は、次のとおりです。
+MVVM シナリオにおいてデータ バインディングのターゲットとなる可能性のあるプロパティには、通常、`TwoWay` の `DefaultBindingMode` が設定されています。 これらの数値は、次のとおりです。
 
-- `Value` プロパティの`Slider`と `Stepper`
-- `IsToggled` プロパティ `Switch`
-- `Text` プロパティの`Entry`、`Editor`と `SearchBar`
-- `Date` プロパティ `DatePicker`
-- `Time` プロパティ `TimePicker`
+- `Slider` と `Stepper` の `Value` プロパティ
+- `Switch` の `IsToggled` プロパティ
+- `Entry`、`Editor`、`SearchBar` の `Text` プロパティ
+- `DatePicker` の `Date` プロパティ
+- `TimePicker` の `Time` プロパティ
 
-[ **BindingModes** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/BindingModes)サンプルでは、対象のデータ バインディングを次の 4 つのバインド モード、`FontSize`のプロパティを`Label`ソースであり、 `Value`プロパティを`Slider`します。 これにより、各`Slider`の対応するフォント サイズを制御する`Label`します。 `Slider`ために、要素が初期化されていない、`DefaultBindingMode`の`FontSize`プロパティは`OneWay`します。
+[**BindingModes**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/BindingModes) サンプルでは、ターゲットが `Label` の `FontSize` プロパティであり、ソースが `Slider` の `Value` プロパティであるデータ バインディングを使用した、4 つのバインディング モードが示されています。 これにより、各 `Slider` で対応する `Label` のフォント サイズを制御できるようになります。 ただし、`Slider` 要素は初期化されません。`FontSize` プロパティの `DefaultBindingMode` が `OneWay` であるためです。
 
-[ **ReverseBinding** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/ReverseBinding)サンプルでバインディングの設定、`Value`のプロパティ、`Slider`を参照する、`FontSize`の各プロパティ`Label`します。 初期化でより適切にうまく機能する旧バージョンと、これが表示されます、`Slider`要素のため、`Value`のプロパティ、`Slider`が、`DefaultBindingMode`の`TwoWay`します。
+[**ReverseBinding**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/ReverseBinding) サンプルでは、各 `Label` の `FontSize` プロパティを参照する、`Slider` の `Value` プロパティのバインディングが設定されています。 これは後退しているように見えますが、`Slider` の `Value` プロパティの `DefaultBindingMode` が `TwoWay` であるため、`Slider` 要素をより適切に初期化することができます。
 
-[![バインドを逆の 3 倍になるスクリーン ショット](images/ch16fg06-small.png "バインド リバース")](images/ch16fg06-large.png#lightbox "バインドの反転")
+[![リバース バインディングのトリプル スクリーンショット](images/ch16fg06-small.png "Reverse Binding")](images/ch16fg06-large.png#lightbox "Reverse Binding")
 
-これが MVVM では、バインドを定義する方法に似ており、この種類のバインドを頻繁に使用します。
+これは、MVVM でバインディングが定義される方法に似ています。この種類のバインディングは頻繁に使用します。
 
 ## <a name="string-formatting"></a>文字列の書式設定
 
-型のターゲット プロパティが`string`、使用することができます、 [ `StringFormat` ](xref:Xamarin.Forms.BindingBase.StringFormat)プロパティによって定義された`BindingBase`をソースに変換する、`string`します。 設定、`StringFormat`プロパティは、静的で使用する文字列の書式設定、.NET を[ `String.Format` ](xref:System.String.Format(System.String,System.Object))形式オブジェクトを表示します。 マークアップ拡張機能内でこの書式指定文字列を使用する場合は、埋め込みのマークアップ拡張機能の中かっこと混同しないように単一引用符で囲みます。
+ターゲット プロパティの型が `string` の場合、`BindingBase` によって定義されている [`StringFormat`](xref:Xamarin.Forms.BindingBase.StringFormat) プロパティを使用して、ソースを `string` に変換できます。 オブジェクトを表示する静的な [`String.Format`](xref:System.String.Format(System.String,System.Object)) 書式設定を使用して、`StringFormat` プロパティを、使用する .NET 書式設定文字列に設定します。 マークアップ拡張内でこの書式設定文字列を使用する場合は、中かっこが埋め込みマークアップ拡張と間違えられないように、これを単一引用符で囲んでください。
 
-[ **ShowViewValues** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/ShowViewValues)サンプルを使用する方法を示します`StringFormat`XAML でします。
+[**ShowViewValues**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/ShowViewValues) サンプルでは、XAML で `StringFormat` を使用する方法が示されています。
 
-[ **WhatSizeBindings** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/WhatSizeBindings)へのバインドと、ページのサイズを表示するサンプルに示します、`Width`と`Height`のプロパティ、`ContentPage`します。
+[**WhatSizeBindings**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/WhatSizeBindings) サンプルでは、`ContentPage` の `Width` および `Height` プロパティへのバインディングを使用して、ページのサイズを表示する方法が示されています。
 
-## <a name="why-is-it-called-path"></a>"Path"を理由と呼ばれるでしょうか。
+## <a name="why-is-it-called-path"></a>"Path" と呼ばれる理由
 
-[ `Path` ](xref:Xamarin.Forms.Binding.Path)プロパティの`Binding`一連のプロパティとピリオドで区切られたインデクサーがあるためにと呼ばれるようにします。 [ **BindingPathDemos** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/BindingPathDemos)サンプルがいくつかの例を示しています。
+`Binding` の [`Path`](xref:Xamarin.Forms.Binding.Path) プロパティがこのように呼ばれるのは、ピリオドで区切られた一連のプロパティとインデクサーを指定できるためです。 [**BindingPathDemos**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/BindingPathDemos) サンプルでは、いくつかの例が示されています。
 
-## <a name="binding-value-converters"></a>値コンバーターのバインディング
+## <a name="binding-value-converters"></a>バインディングの値コンバーター
 
-バインディングのソースとターゲットのプロパティは、さまざまな種類が、バインディング コンバーターを使用して型の間で変換できます。 これは、実装するクラス、 [ `IValueConverter` ](xref:Xamarin.Forms.IValueConverter)インターフェイスし、2 つのメソッドが含まれています: [ `Convert` ](xref:Xamarin.Forms.IValueConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo))ソースをターゲットに変換して[ `ConvertBack` ](xref:Xamarin.Forms.IValueConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo))ターゲットをソースに変換します。
+バインディングのソース プロパティとターゲット プロパティが異なる型である場合は、バインディング コンバーターを使用して型の間で変換を行うことができます。 これは、[`IValueConverter`](xref:Xamarin.Forms.IValueConverter) インターフェイスを実装したクラスであり、2 つのメソッドが含まれています。ソースをターゲットに変換するための [`Convert`](xref:Xamarin.Forms.IValueConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)) と、ターゲットをソースに変換するための [`ConvertBack`](xref:Xamarin.Forms.IValueConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)) です。
 
-[ `IntToBoolConverter` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/IntToBoolConverter.cs)クラス、 [ **Xamarin.FormsBook.Toolkit** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit)ライブラリは、変換の例を`int`を`bool`します。 示されていることが、 [ **ButtonEnabler** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/ButtonEnabler)サンプルについては、できるだけ、`Button`に少なくとも 1 つの文字が入力した場合、`Entry`します。
+[**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリの [`IntToBoolConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/IntToBoolConverter.cs) クラスは、`int` を `bool` に変換する 1 つの例です。 これは [**ButtonEnabler**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/ButtonEnabler) サンプルで示されています。そこでは、少なくとも 1 つの文字が `Entry` に入力された場合にのみ、`Button` が有効になります。
 
-[ `BoolToStringConverter` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BoolToStringConverter.cs)クラスに変換します、`bool`を`string`にどのようなテキストを返す必要があるかを指定する 2 つのプロパティを定義および`false`と`true`値。
-[ `BoolToColorConverter` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BoolToColorConverter.cs)は似ています。 [ **SwitchText** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/SwitchText)サンプルに基づいてさまざまな色に異なるテキストを表示するこれら 2 つのコンバーターの使用例、`Switch`設定します。
+[`BoolToStringConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BoolToStringConverter.cs) クラスでは、`bool` が `string` に変換され、`false` と `true` の値に対して返されるテキストを指定するために、2 つのプロパティが定義されています。
+[`BoolToColorConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BoolToColorConverter.cs) も似ています。 [**SwitchText**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/SwitchText) サンプルでは、これら 2 つのコンバーターを使用して、`Switch` 設定に基づいてさまざまなテキストをさまざまな色で表示する方法が示されています。
 
-ジェネリック[ `BoolToObjectConverter` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BoolToObjectConverter.cs)置き換えることができます、`BoolToStringConverter`と`BoolToColorConverter`、一般化されたとして機能し、 `bool`-に-任意の型のオブジェクトのコンバーター。
+ジェネリックの [`BoolToObjectConverter`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BoolToObjectConverter.cs) では、`BoolToStringConverter` と `BoolToColorConverter` を置き換えることができます。これは、汎用的な、`bool` からオブジェクトへの任意の型のコンバーターとして機能します。
 
 ## <a name="bindings-and-custom-views"></a>バインディングとカスタム ビュー
 
-データ バインドを使用してカスタム コントロールを簡素化することができます。 [ `NewCheckBox.cs` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NewCheckBox.xaml.cs)コード ファイルを定義します`Text`、 `TextColor`、 `FontSize`、 `FontAttributes`、および`IsChecked`プロパティ、コントロールのビジュアルのすべてのロジックはありません。
-代わりに、 [ `NewCheckBox.cs.xaml` ](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NewCheckBox.xaml)ファイルがデータ バインドを使用で、コントロールのビジュアルのすべてのマークアップを含む、`Label`分離コード ファイルで定義されたプロパティに基づいて要素。
+データ バインディングを使用してカスタム コントロールを簡略化できます。 [`NewCheckBox.cs`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NewCheckBox.xaml.cs) コード ファイルでは、`Text`、`TextColor`、`FontSize`、`FontAttributes`、および `IsChecked` プロパティが定義されていますが、コントロールのビジュアル用のロジックはまったく含まれていません。
+代わりに、[`NewCheckBox.cs.xaml`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/NewCheckBox.xaml) ファイルには、分離コード ファイル内で定義されているプロパティに基づき、`Label` 要素のデータ バインディングを使用して、コントロールのビジュアルに対するすべてのマークアップが含まれています。
 
-[ **NewCheckBoxDemo** ](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/NewCheckBoxDemo)サンプルでは、`NewCheckBox`カスタム コントロール。
+[**NewCheckBoxDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/NewCheckBoxDemo) サンプルでは、`NewCheckBox` カスタム コントロールが示されています。
 
 ## <a name="related-links"></a>関連リンク
 
-- [16 章フル テキスト (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch16-Apr2016.pdf)
-- [16 章のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16)
+- [第 16 章の全文 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch16-Apr2016.pdf)
+- [第 16 章のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16)
 - [データ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)

@@ -1,5 +1,5 @@
 ---
-title: Android サポートパッケージとの下位互換性の提供
+title: Android サポート パッケージとの下位互換性の提供
 ms.prod: xamarin
 ms.assetid: 7511D2F8-2B4F-4200-C74E-E967153B2E8D
 ms.technology: xamarin-android
@@ -7,36 +7,36 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/12/2017
 ms.openlocfilehash: c32d666da1347b947c55209ed7c7ec31a97a70e0
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
-ms.translationtype: MT
+ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 03/10/2020
 ms.locfileid: "73027295"
 ---
-# <a name="providing-backwards-compatibility-with-the-android-support-package"></a>Android サポートパッケージとの下位互換性の提供
+# <a name="providing-backwards-compatibility-with-the-android-support-package"></a>Android サポート パッケージとの下位互換性の提供
 
-フラグメントの有用性は、Android 3.0 (API レベル 11) デバイスとの下位互換性がない限り制限されます。 この機能を提供するために、Google は[サポートライブラリ](https://developer.android.com/sdk/compatibility-library.html)(もともとは*android 互換ライブラリ*がリリースされた時点) を導入しました。これにより、新しいバージョンの android から以前のバージョンの android に api の一部をバックします。 Android 1.6 (API レベル 4) を実行しているデバイスを Android 2.3.3 に対して有効にする Android サポートパッケージです。 (API レベル 10)。
+フラグメントの有用性は、Android 3.0 (API レベル 11) より前のデバイスとの下位互換性がないと限定的です。 この機能を提供するために、Google では[サポート ライブラリ](https://developer.android.com/sdk/compatibility-library.html) (リリース時のもともとの名前は "*Android 互換性ライブラリ*" でした) が導入されました。これにより、新しいバージョンの Android から古いバージョンの Android に API の一部がバックポートされます。 Android サポート パッケージにより、デバイスで Android 1.6 (API レベル 4) から Android 2.3.3 (API レベル 10) を実行できるようになります。
 
 > [!NOTE]
-> Android サポートパッケージを通じて入手できるのは、`ListFragment` と `DialogFragment` のみです。 Android サポートパッケージでは、`PreferenceFragment,` など、他のどのフラグメントサブクラスもサポートされていません。 Android 3.0 より前のアプリケーションでは機能しません。 
+> Android サポート パッケージで使用できるのは、`ListFragment` と `DialogFragment` のみです。 `PreferenceFragment,` などの他の Fragment サブクラスは、Android サポート パッケージではサポートされていません。 Android 3.0 より前のアプリケーションでは機能しません。 
 
-## <a name="adding-the-support-package"></a>サポートパッケージの追加
+## <a name="adding-the-support-package"></a>サポート パッケージの追加
 
-Android サポートパッケージは、Xamarin Android アプリケーションに自動的に追加されません。 Xamarin には、 [Android サポートライブラリ V4 NuGet パッケージ](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)が用意されており、サポートライブラリを xamarin android アプリケーションに簡単に追加できます。サポートパッケージを Xamarin. android アプリケーションに含めるには、次のスクリーンショットに示すように、 [Android サポートライブラリ v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)コンポーネントを xamarin android プロジェクトに追加します。 
+Xamarin.Android アプリケーションには、Android サポート パッケージは自動的に追加されません。 Xamarin では、Xamarin.Android アプリケーションへのサポート ライブラリの追加を簡単にするため、[Android Support Library v4 NuGet パッケージ](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)が提供されています。サポート パッケージを Xamarin.Android アプリケーションに含めるには、次のスクリーンショットに示すように、[Android Support Library v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) コンポーネントを Xamarin.Android プロジェクトに組み込みます。 
 
-[プロジェクトに追加されている Android サポートライブラリ v4 パッケージのスクリーンショット![](providing-backwards-compatibility-images/02-sml.png)](providing-backwards-compatibility-images/02.png#lightbox)
+[![プロジェクトに追加された Android Support Library v4 パッケージのスクリーンショット](providing-backwards-compatibility-images/02-sml.png)](providing-backwards-compatibility-images/02.png#lightbox)
 
-これらの手順を実行すると、以前のバージョンの Android でフラグメントを使用できるようになります。 これらの以前のバージョンでは、Fragment Api は同じように動作しますが、次の例外があります。 
+これらの手順を実行すると、以前のバージョンの Android でフラグメントを使用できるようになります。 Fragment API は以前のバージョンでも同じように動作しますが、次の例外があります。 
 
-- 次に示すように、アプリケーションが Android 3.0 以降を対象にする必要がなくなった &ndash; **android の最小バージョンを変更**します。 
+- **Android の最小バージョンを変更する** &ndash; 次に示すように、アプリケーションでは Android 3.0 以降を対象にする必要がなくなります。 
 
-    [Android マニフェストの下に設定されている最小 Android ターゲットのスクリーンショット![](providing-backwards-compatibility-images/03-sml.png)](providing-backwards-compatibility-images/03.png#lightbox)
+    [![Android マニフェストで設定されている Android 最小ターゲットのスクリーンショット](providing-backwards-compatibility-images/03-sml.png)](providing-backwards-compatibility-images/03.png#lightbox)
 
-- **FragmentActivity &ndash; 拡張**します。これは、ホストフラグメントであるアクティビティが `Android.App.Activity` ではなく `Android.Support.V4.App.FragmentActivity` から継承する必要があるためです。 
+- **FragmentActivity を拡張する** &ndash; フラグメントをホストしているアクティビティは、`Android.App.Activity` ではなく `Android.Support.V4.App.FragmentActivity` から継承する必要があります。 
 
-- `Android.App.Fragment` から継承するクラス &ndash;**名前空間の更新**は `Android.Support.V4.App.Fragment` から継承する必要があります。 ソースコードファイルの先頭にある using ステートメント "`using Android.App;`" を削除し、"`using Android.Support.V4.App`" に置き換えます。 
+- **名前空間を更新する** &ndash; `Android.App.Fragment` から継承しているクラスは、今後は `Android.Support.V4.App.Fragment` から継承する必要があります。 ソース コード ファイルの先頭にある using ステートメント "`using Android.App;`" を削除し、"`using Android.Support.V4.App`" に置き換えます。 
 
-- **SupportFragmentManager** &ndash; `Android.Support.V4.App.FragmentActivity` は、`FragmentManager` への参照を取得するために使用する必要がある `SupportingFragmentManager` プロパティを公開します。 (例: 
+- **SupportFragmentManager を使用する** &ndash; `FragmentManager` への参照を取得するには、`Android.Support.V4.App.FragmentActivity` によって公開されている `SupportingFragmentManager` プロパティを使用する必要があります。 次に例を示します。 
 
 ```csharp
 FragmentTransaction fragmentTx = this.SupportingFragmentManager.BeginTransaction();
@@ -45,8 +45,8 @@ fragmentTx.Add(Resource.Id.fragment_container, detailsFrag);
 fragmentTx.Commit();
 ```
 
-これらの変更が適用されると、Android 1.6 または2.x だけでなく、Honeycomb とアイスクリームでもフラグメントベースのアプリケーションを実行できるようになります。 
+これらの変更を適用すると、フラグメント ベースのアプリケーションを、Android 1.6 または 2.x だけでなく、Honeycomb と Ice Cream Sandwich でも実行できるようになります。 
 
 ## <a name="related-links"></a>関連リンク
 
-- [Android サポートライブラリ v4 NuGet](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)
+- [Android Support Library v4 NuGet](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)
