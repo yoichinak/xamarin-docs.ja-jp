@@ -353,10 +353,10 @@ web.Delegate = new Notifier ();
 
 このパターンは、いくつかのコントロールで必要なときにデータを与える目的でも使用されます。 たとえば、[UITableView](xref:UIKit.UITableView) コントロールは強力なテーブルレンダリング コントロールです。外見も中身も [UITableViewDataSource](xref:UIKit.UITableViewDataSource) のインスタンスによって動きます。
 
-### <a name="loosely-typed-via-the-weakdelegate-property"></a>WeakDelegate プロパティ経由で緩やかに型指定される
+### <a name="loosely-typed-via-the-weakdelegate-property"></a>WeakDelegate プロパティ経由の弱い型付け
 
-厳密に型指定されたプロパティに加え、緩やかに型指定されたデリゲートがあります。緩やかに型指定することで、開発者が必要に応じて違ったやり方でバインドできます。
-Xamarin.iOS のバインディングで厳密に型指定された `Delegate` プロパティが公開されると、それに対応する `WeakDelegate` プロパティも必ず公開されます。
+厳密に型指定されたプロパティに加え、弱く型付けされたデリゲートもあります。弱い型付けをすることで、開発者が必要に応じて違ったやり方でバインドできます。
+Xamarin.iOS のバインディングで厳密に型指定された `Delegate` プロパティが公開されている場合、それに対応する `WeakDelegate` プロパティも必ず公開されています。
 
 `WeakDelegate` を使用するとき、[Export](xref:Foundation.ExportAttribute) 属性でクラスを正しく装飾し、セレクターを指定する必要があります。 次に例を示します。
 
