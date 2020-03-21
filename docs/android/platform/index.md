@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/21/2018
-ms.openlocfilehash: 3ad3661ff50ad7f4be95421de57dc5017392a59f
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.openlocfilehash: 38052eee1b71ace9795f5c16bdf714f9538e353d
+ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "77495673"
+ms.lasthandoff: 03/13/2020
+ms.locfileid: "79303477"
 ---
 # <a name="platform-features"></a>プラットフォーム機能
 
@@ -41,6 +41,10 @@ Android 3.0 では、スマートフォンやタブレットで検出される�
 ## <a name="app-linking"></a>[App-Linking](~/android/platform/app-linking.md)
 
 このガイドでは、Android 6.0 での "_アプリリンク_" のサポートについて説明します。アプリリンクは、モバイル アプリが Web サイト上の URL に応答できるようにするための手法です。 ここでは、Android 6.0 アプリケーションでアプリリンクを実装する方法、モバイル アプリにドメインのアプリリンクを処理するアクセス許可を付与するように Web サイトを構成する方法について説明します。
+
+## <a name="androidx"></a>[AndroidX](~/android/platform/androidx.md)
+
+この記事では、Xamarin.Android プロジェクト内で AndroidX を使用する方法の概要を説明します。また、Android サポート ライブラリから AndroidX にアプリケーションを移行する方法を説明したドキュメントへのリンクを示します。
 
 ## <a name="android-10"></a>[Android 10](~/android/platform/android-10.md)
 

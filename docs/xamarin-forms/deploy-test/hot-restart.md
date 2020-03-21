@@ -4,15 +4,15 @@ description: このドキュメントでは、Xamarin のホット再起動を�
 ms.prod: xamarin
 ms.assetid: 6BC62A88-9368-41BB-8494-760F2A4805DB
 ms.technology: xamarin-forms
-author: jimmgarrido
-ms.author: jigarrid
-ms.date: 01/14/2020
-ms.openlocfilehash: 1f87fffe99656cdc0d0bf0f0178413740a20aa75
-ms.sourcegitcommit: e9d88587aafc912124b87732d81c3910247ad811
+author: maddyleger1
+ms.author: maleger
+ms.date: 03/16/2020
+ms.openlocfilehash: cc5efffd4c3646fbff9cdb1ad1a30ec614cb4921
+ms.sourcegitcommit: 8df67f0d76ff762b517d27b8d4c217d3a3379a18
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78337283"
+ms.lasthandoff: 03/16/2020
+ms.locfileid: "79429568"
 ---
 # <a name="xamarin-hot-restart-preview"></a>Xamarin のホット再起動 (プレビュー)
 
@@ -21,13 +21,13 @@ ms.locfileid: "78337283"
 Xamarin のホット再起動を使用すると、複数ファイルのコード編集、リソース、参照など、開発中のアプリに対する変更を迅速にテストできます。 新しい変更がデバッグ ターゲットの既存のアプリ バンドルにプッシュされ、ビルドと配置のサイクルが大幅に短縮されます。
 
 > [!IMPORTANT]
-> Xamarin のホット再起動は現在 Visual Studio 2019 バージョン 16.5 Preview で利用でき、Xamarin.Forms を使用した iOS アプリをサポートしています。 Visual Studio for Mac と Xamarin.Forms 以外のアプリのサポートが計画中です。
+> Xamarin のホット再起動は現在 Visual Studio 2019 バージョン 16.5 で安定的に利用でき、Xamarin.Forms を使用した iOS アプリをサポートしています。 Visual Studio for Mac と Xamarin.Forms 以外のアプリのサポートが計画中です。
 
 ## <a name="requirements"></a>必要条件
 
-- Visual Studio 2019 バージョン 16.5 Preview 3
+- Visual Studio 2019 バージョン 16.5
 - iTunes (64 ビット)
-- Apple 開発者アカウント
+- Apple 開発者アカウントと有料 [Apple Developer Program](https://developer.apple.com/programs) 登録
 
 
 ## <a name="initial-setup"></a>初期セットアップ
@@ -45,7 +45,7 @@ Xamarin のホット再起動を使用すると、複数ファイルのコード
 
 3. iTunes がインストールされていない場合は、 **[Download iTunes]\(iTunes をダウンロード\)** をクリックして、インストーラーをダウンロードします。 iTunes のインストールが完了したら **[次へ]** をクリックします。
 
-4. iOS デバイスをお使いのマシンに接続します。 デバイス名が検出されると、ウィザードに表示されます。 **[次へ]** をクリックします。
+4. iOS デバイスをお使いのマシンに接続します。 デバイスが既に接続されている場合は、プラグを抜いてから再接続します。 デバイス名が検出されると、ウィザードに表示されます。 **[次へ]** をクリックします。
 
 5. Apple 開発者アカウントの資格情報を入力し、 **[次へ]** をクリックします。
 
@@ -64,15 +64,18 @@ Xamarin のホット再起動を使用すると、複数ファイルのコード
 また、`HOTRESTART` プリプロセッサ シンボルを使用して、Xamarin のホット再起動でデバッグするときに特定のコードが実行されないようにすることもできます。
 
 ## <a name="limitations"></a>制限事項
+
 - 現在、Xamarin.Forms および iOS デバイスでビルドされた iOS アプリのみがサポートされています。
+- 64 ビットの iOS デバイスのみがサポートされています。 iOS 11 以降では、32 ビット アーキテクチャ (iPhone 5s よりも前のデバイス) で iOS アプリを実行することが Apple によって許可されなくなりました。
 - ストーリーボードと XIB のファイルはサポートされていません。これらを実行時に読み込もうとすると、アプリがクラッシュする可能性があります。 `HOTRESTART` プリプロセッサ シンボルを使用して、このコードが実行されないようにします。
 - 静的な iOS ライブラリとフレームワークはサポートされていません。アプリがこれらを読み込もうとすると、実行時エラーまたはクラッシュが発生する可能性があります。 `HOTRESTART` プリプロセッサ シンボルを使用して、このコードが実行されないようにします。 動的な iOS ライブラリはサポートされています。
 - Xamarin のホット再起動を使用して、発行用のアプリ バンドルを作成することはできません。 アプリケーションを運用環境に完全にコンパイル、署名、配置するには、引き続き Mac マシンが必要です。
 
 ## <a name="troubleshoot"></a>トラブルシューティング
+
 - iTunes が Microsoft Store からインストールされた場合、セットアップ ウィザードでは検出されません。 先にそのバージョンをアンインストールしてから、[Apple のインストーラー](https://go.microsoft.com/fwlink/?linkid=2101014)をダウンロードする必要があります。
 - デバイス固有のビルドを有効にすると、アプリがデバッグ モードに移行できない既知のイシューがあります。 回避策は、 **[プロパティ]、[iOS ビルド]** でこれを無効にし、デバッグを再試行することです。 これは今後のリリースで修正される予定です。
 - アプリがデバイスに既に存在する場合、ホット再起動を伴う配置を試行すると、`AMDeviceStartHouseArrestService` エラーが発生して失敗することがあります。 この回避策は、デバイスでアプリをアンインストールして、再度配置することです。
-- Apple Developer Program に含まれていない Apple ID を入力すると、次のエラーが発生します: `Authentication Error. Xcode 7.3 or later is required to continue developing with your Apple ID`。 iOS デバイスで Xamarin のホット再起動を使用するには、有効な Apple Developer アカウントが必要です。 
+- Apple Developer Program に含まれていない Apple ID を入力すると、次のエラーが発生する可能性があります: `Authentication Error. Xcode 7.3 or later is required to continue developing with your Apple ID`。 iOS デバイスで Xamarin のホット再起動を使用するには、有効な Apple Developer アカウントが必要です。 
 
 その他のイシューを報告するには、[[ヘルプ]、[フィードバックの送信]、[問題の報告]](/visualstudio/ide/feedback-options?view=vs-2019#report-a-problem) から、フィードバック ツールを使用してください。

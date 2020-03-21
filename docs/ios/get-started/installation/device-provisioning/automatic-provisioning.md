@@ -8,12 +8,12 @@ author: davidortinau
 ms.author: daortin
 ms.custom: video
 ms.date: 03/05/2020
-ms.openlocfilehash: f0612ca53bc54cf4b15982b7743c64b1997a4455
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.openlocfilehash: 069c40b74876bea1d3a0c8fca23b3d90c4b91635
+ms.sourcegitcommit: 997f7b6a1a1bc50b98c3ca5bbc75d6875ba2ae9a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79031079"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79510680"
 ---
 # <a name="automatic-provisioning-for-xamarinios"></a>Xamarin.iOS の自動プロビジョニング
 
@@ -23,7 +23,9 @@ _Xamarin.iOS が正常にインストールされたら、iOS 開発の次の手
 
 自動プロビジョニングは、Visual Studio for Mac、Visual Studio 2019、Visual Studio 2017 (バージョン 15.7 以降) で利用できます。 
 
-また、この機能を使用するには、Apple Developer 有料アカウントも必要です。 Apple Developer アカウントの詳細については、[デバイス プロビジョニング](~/ios/get-started/installation/device-provisioning/index.md)のガイドを参照してください。
+> [!NOTE]
+> また、この機能を使用するには、Apple Developer 有料アカウントも必要です。 Apple Developer アカウントの詳細については、[デバイス プロビジョニング](~/ios/get-started/installation/device-provisioning/index.md)のガイドを参照してください。
+> 有料の Apple 開発者アカウントをお持ちでない場合は、[Xamarin.iOS の無料プロビジョニング] (~/ios/get-started/installation/device-provisioning/free-provisioning.md) ガイドを参照してください。
 
 > [!NOTE]
 > 開始する前に、[Apple Developer ポータル](https://developer.apple.com/account/)または [App Store Connect](https://appstoreconnect.apple.com/) のいずれかで、まずライセンス契約に同意してください。
