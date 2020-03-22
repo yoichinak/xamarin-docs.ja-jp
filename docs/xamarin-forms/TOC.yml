@@ -38,7 +38,7 @@
               href: ~/get-started/quickstarts/multi-page.md
             - name: データベース
               href: ~/get-started/quickstarts/database.md
-            - name: '[スタイル]'
+            - name: スタイル
               href: ~/get-started/quickstarts/styling.md
             - name: Deep Dive
               href: ~/get-started/quickstarts/deepdive.md
@@ -956,6 +956,8 @@
           href: internals/class-hierarchy.md
         - name: 依存関係の解決
           href: internals/dependency-resolution.md
+        - name: 試験的なフラグ
+          href: internals/experimental-flags.md
         - name: 高速レンダラー
           href: internals/fast-renderers.md
         - name: ソース リンク

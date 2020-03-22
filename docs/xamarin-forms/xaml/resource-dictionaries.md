@@ -8,12 +8,12 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/26/2020
 ms.custom: video
-ms.openlocfilehash: f5266049e1498d902864185a61cba6d3730f9594
-ms.sourcegitcommit: 2836f2003a5b745b042ee6003a3d6a11b9139e44
+ms.openlocfilehash: 496251ec9596b9ef76fb34149acca184b5934c37
+ms.sourcegitcommit: 6c60914b380ff679bbffd7790edd4d5e18005d0a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77618869"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80070392"
 ---
 # <a name="resource-dictionaries"></a>リソース ディクショナリ
 
@@ -150,7 +150,7 @@ Xamarin. Forms 3.0 以降では、明示的な `ResourceDictionary` タグは必
 
 ## <a name="stand-alone-resource-dictionaries"></a>スタンドアロンリソースディクショナリ
 
-`ResourceDictionary` から派生したクラスは、独立したスタンドアロンファイルにも存在できます。 (正確には、`ResourceDictionary` から派生したクラスには、通常、ファイルの_ペア_が必要です。これは、リソースが XAML ファイルで定義されていても、`InitializeComponent` 呼び出しを伴う分離コードファイルが必要なためです)。結果ファイルは、アプリケーション間で共有できます。
+`ResourceDictionary` から派生したクラスは、独立したスタンドアロンファイルにも存在できます。 結果のファイルは、アプリケーション間で共有できます。
 
 このようなファイルを作成するには、新しい**コンテンツビュー**または**コンテンツページ**アイテムをプロジェクトに追加します (ただし、 C#ファイルが含まれている**コンテンツビュー**や**コンテンツページ**は除く)。 XAML ファイルとC#ファイルの両方で、基底クラスの名前を `ContentView` または `ContentPage` から `ResourceDictionary`に変更します。 XAML ファイルでは、基底クラスの名前は、最上位要素です。
 
@@ -215,7 +215,7 @@ Xamarin. Forms 3.0 以降では、明示的な `ResourceDictionary` タグは必
 </ContentPage>
 ```
 
-この構文では、`MyResourceDictionary` クラスはインスタンス化されません。 代わりに、XAML ファイルを参照します。 このため、 [`Source`](xref:Xamarin.Forms.ResourceDictionary.Source)プロパティを設定するときに、分離コードファイル (**MyResourceDictionary.xaml.cs**) は必要なく、`x:Class` 属性は**myresourcedictionary .xaml**ファイルのルートタグから削除できます。 また、この方法を使用してリソースディクショナリをマージする場合、Xamarin. Forms は[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)を自動的にインスタンス化するため、外側の `ResourceDictionary` タグは必要ありません。
+この構文では、`MyResourceDictionary` クラスはインスタンス化されません。 代わりに、XAML ファイルを参照します。 このため、 [`Source`](xref:Xamarin.Forms.ResourceDictionary.Source)プロパティを設定する場合、分離コードファイルは必要ありません。また、`x:Class` 属性は、 **myresourcedictionary .xaml**ファイルのルートタグから削除できます。 また、この方法を使用してリソースディクショナリをマージする場合、Xamarin. Forms は[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)を自動的にインスタンス化するため、外側の `ResourceDictionary` タグは必要ありません。
 
 > [!IMPORTANT]
 > [`Source`](xref:Xamarin.Forms.ResourceDictionary.Source)プロパティは、XAML からのみ設定できます。

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 8640800717a88e800503e93c339eeb080707374e
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: a9dce962c35e5f9cfdcd674da9ad71cf8935e7d4
+ms.sourcegitcommit: 6c60914b380ff679bbffd7790edd4d5e18005d0a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306171"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80070315"
 ---
 # <a name="web-views-in-xamarinios"></a>Xamarin.iOS の Web ビュー
 
@@ -89,31 +89,71 @@ IOS 9 では、アプリトランスポートセキュリティ (または*ATS* 
 
 アプリでの実装方法など、ATS の詳細については、「[アプリトランスポートセキュリティ](~/ios/app-fundamentals/ats.md)ガイド」を参照してください。
 
-## <a name="uiwebview-deprecated"></a>UIWebView (非推奨)
-
-> [!IMPORTANT]
-> `UIWebView` は非推奨とされます。 2020年4月の時点では、このコントロールを使用するアプリは[App Store には受け入れられず、既存のアプリは2020年12月までに削除する必要があり](https://developer.apple.com/news/?id=12232019b)ます。
->
-> [Apple の `UIWebView` ドキュメント](https://developer.apple.com/documentation/uikit/uiwebview)では、アプリで[`WKWebView`](#wkwebview)を使用することを提案します。
-
-> [!IMPORTANT]
-> Xamarin.Forms の使用時に `UIWebView` の非推奨の警告 (ITMS-90809) についてリソースを探している場合は、[Xamarin.Forms WebView](~/xamarin-forms/user-interface/webview.md#uiwebview-deprecation-and-app-store-rejection-itms-90809) のドキュメントを参照してください。
+## <a name="uiwebview-deprecation"></a>UIWebView の廃止
 
 `UIWebView` は、アプリに web コンテンツを提供するための Apple の従来の方法です。 IOS 2.0 でリリースされ、8.0 の時点で非推奨とされています。
 
-UIWebView を Xamarin iOS アプリに追加するには、次のコードを使用します。
+> [!IMPORTANT]
+> `UIWebView` は非推奨とされます。 このコントロールを使用する新しいアプリは[2020 年4月の時点でアプリストアには受け入れられません。このコントロールを使用したアプリの更新は、2020年12月に受け付けられません](https://developer.apple.com/news/?id=12232019b)。
+>
+> [Apple の `UIWebView` ドキュメント](https://developer.apple.com/documentation/uikit/uiwebview)では、アプリで[`WKWebView`](#wkwebview)を使用することを提案します。
+>
+> Xamarin.Forms の使用時に `UIWebView` の非推奨の警告 (ITMS-90809) についてリソースを探している場合は、[Xamarin.Forms WebView](~/xamarin-forms/user-interface/webview.md#uiwebview-deprecation-and-app-store-rejection-itms-90809) のドキュメントを参照してください。
 
-```csharp
-webView = new UIWebView (View.Bounds);
-View.AddSubview(webView);
+過去6か月以内に iOS アプリケーションを送信した開発者 (またはその場合) は、アプリストアから警告を受信した可能性があります。これは `UIWebView` 非推奨とされます。
 
-var url = "https://docs.microsoft.com"; // NOTE: https secure request
-webView.LoadRequest(new NSUrlRequest(new NSUrl(url)));
-```
+Api の廃止は一般的です。 Xamarin では、カスタム属性を使用してこれらの Api を通知し (利用可能な場合は置換を提案します)、開発者に戻します。 今回はどのような違いがありますが、あまり一般的ではありませんが、提出時に Apple の App Store によって廃止が**適用さ**れることになります。
 
-これにより、次の web ビューが生成されます。
+残念ながら、`Xamarin.iOS.dll` からの `UIWebView` 型の削除は、[バイナリの互換性に影響する変更](https://docs.microsoft.com/dotnet/core/compatibility/categories#binary-compatibility)です。 この変更により、サポートされていないものや、再コンパイルされていないものも含めて、既存のサードパーティ製のライブラリが破損します (たとえば、クローズドソース)。 これにより、開発者に対してのみ追加の問題が発生します。 そのため、型を*まだ*削除していません。
 
-[ScalesPagesToFit の効果を ![します。](webview-images/webview.png)](webview-images/webview.png#lightbox)
+Xamarin 以降、`UIWebView`からの移行に役立つ新しい検出とツールを使用できるように[13.16 なります。](https://docs.microsoft.com/xamarin/ios/release-notes/13/13.16)
+
+### <a name="detection"></a>検出
+
+Apple App Store に iOS アプリケーションを最近送信したことがある場合は、この状況がアプリケーションに当てはまるかどうかを疑問に思うかもしれません。
+
+確認するには、プロジェクトの**その他の mtouch 引数**に `--warn-on-type-ref=UIKit.UIWebView` を追加します。 これにより、アプリケーション内の非推奨の `UIWebView` (およびそのすべての依存関係) へ**の参照が**警告されます。 さまざまな警告を使用して、マネージリンカーが実行さ**れる前**と**後**の種類を報告します。
+
+他の警告は、`-warnaserror:`を使用してエラーになることがあります。 これは、検証後に `UIWebView` に対する新しい依存関係が追加されないようにする場合に便利です。 例 :
+
+* リンク済みのアセンブリで参照が見つかった場合、`-warnaserror:1502` はエラーを報告します。
+* リンク後のアセンブリで参照が見つかった場合、`-warnaserror:1503` はエラーを報告します。
+
+また、送信前/ポストリンクの結果が役に立たない場合にも、警告が表示されないようにすることができます。 例 :
+
+* リンク済みのアセンブリで参照が見つかった場合、`-nowarn:1502` は警告を報告し**ません**。
+* リンク後のアセンブリで参照が検出された場合、`-nowarn:1503` は警告を報告し**ません**。
+
+### <a name="removal"></a>削除
+
+すべてのアプリケーションは一意です。 アプリケーションから `UIWebView` を削除するには、どのように使用するかによって異なる手順が必要になることがあります。 最も一般的なシナリオは次のとおりです。
+
+- アプリケーション内に `UIWebView` は使用されません。 すべて問題ありません。 AppStore への送信時に警告が表示**されない**ようにする必要があります。 他に何もする必要はありません。
+- アプリケーションによって `UIWebView` が直接使用されます。 まず、`UIWebView`の使用を削除します。たとえば、新しい `WKWebView` (iOS 8) または `SFSafariViewController` (iOS 9) の種類に置き換えます。 この処理が完了すると、マネージリンカーには `UIWebView` への参照が表示されなくなり、最終的なアプリバイナリにはトレースがありません。
+- 間接的な使用法。 `UIWebView` は、アプリケーションで使用される一部のサードパーティ製ライブラリ (マネージまたはネイティブ) に存在できます。 この状況は新しいリリースで既に解決されている可能性があるため、外部の依存関係を最新のバージョンに更新することから始めます。 それ以外の場合は、ライブラリのメンテナンスツールに問い合わせて、その更新計画について確認してください。
+
+または、次の方法を試すこともできます。
+
+1. **Xamarin. Forms**を使用している場合は、こちらの[ブログ記事](https://devblogs.microsoft.com/xamarin/uiwebview-deprecation-xamarin-forms/)をお読みください。
+1. (プロジェクト全体または少なくとも `UIWebView`を使用した依存関係で) マネージリンカーを有効にします。参照されていない場合は、削除される*可能性があり*ます。 これにより問題は解決されますが、コードリンカーセーフにするために追加の作業が必要になる場合があります。
+1. マネージリンカーの設定を変更できない場合は、次の特殊なケースを参照してください。
+
+#### <a name="applications-cannot-use-the-linker-or-change-its-settings"></a>アプリケーションがリンカーを使用できない (またはその設定を変更する)
+
+何らかの理由でマネージリンカーを使用して**いない**場合 (たとえば、**リンク**していない場合)、`UIWebView` シンボルは Apple に送信するバイナリアプリに残り、拒否される可能性があります。
+
+解決*策として*、プロジェクトの**その他の mtouch 引数**に `--optimization=force-rejected-types-removal` を追加します。 これにより、アプリケーションから `UIWebView` のトレースが削除されます。 ただし、型を参照するすべてのコードは正しく機能し**ません**(例外が発生するか、クラッシュすることが予想されます)。 この方法は、実行時にコードに到達できない (静的分析によって到達可能であった場合でも) ことが確実である場合にのみ使用してください。
+
+#### <a name="support-for-ios-7x-or-earlier"></a>IOS 2.x (またはそれ以前) のサポート
+
+`UIWebView` は、v2.0 以降の iOS に含まれていました。 最も一般的な置換は `WKWebView` (iOS 8) と `SFSafariViewController` (iOS 9) です。 アプリケーションが以前のバージョンの iOS を引き続きサポートしている場合は、次のオプションを考慮する必要があります。
+
+* IOS 8 のターゲットバージョンの最小値 (ビルド時間の決定) を設定します。
+* アプリが iOS 8 以降で実行されている場合にのみ `WKWebView` を使用します (ランタイムの決定)。
+
+#### <a name="applications-not-submitted-to-apple"></a>Apple に送信されていないアプリケーション
+
+アプリケーションが Apple に送信されない場合は、今後の iOS リリースでは削除される可能性があるため、非推奨の API から移動することを計画する必要があります。 ただし、独自のタイムアウトを使用して、この移行を行うことができます。
 
 ## <a name="related-links"></a>関連リンク
 
