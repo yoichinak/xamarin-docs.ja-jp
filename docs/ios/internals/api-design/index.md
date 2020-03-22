@@ -399,7 +399,7 @@ foo.delegate = [[SomethingDelegate] alloc] init]
 foo.Delegate = new SomethingDelegate ();
 ```
 
-Xamarin.iOS では、Objective-C デリゲート クラスにマッピングされる、厳密に型指定されたクラスを指定しました。 それを使用するために、Xamarin.iOS の実装で定義されたメソッドをサブクラス化し、オーバーライドします。 しくみについて詳しくは、下の「モデル」セクションを参照してください。
+Xamarin.iOS では、Objective-C デリゲート クラスにマッピングされる、厳密に型指定されたクラスを指定しました。 それを使用するために、そのクラスをサブクラス化し、Xamarin.iOS の実装で定義されたメソッドをオーバーライドします。 機能の詳細については、下の「モデル」セクションを参照してください。
 
 ### <a name="mapping-delegates-to-c"></a>デリゲートを C\# にマッピングする
 
