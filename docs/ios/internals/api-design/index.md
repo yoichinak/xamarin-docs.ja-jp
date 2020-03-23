@@ -220,7 +220,7 @@ Windows と Linux でネイティブ ライブラリを呼び出すツールと�
 
 #### <a name="types"></a>型
 
-道理にかなうのなら、下位の Foundation 型ではなく C# 型が C# の領域に公開されます。  つまり、[API では NSString ではなく C# "文字列" 型が使用され](~/ios/internals/api-design/nsstring.md)、NSArray を公開せず、厳密に型指定された C# 配列が使用されます。
+道理にかなうのなら、下位の Foundation 型ではなく C# 型が C# の領域に公開されます。  つまり、[API では NSString ではなく C# の sring 型が使用され](~/ios/internals/api-design/nsstring.md)、NSArray を公開せず、厳密に型指定された C# 配列が使用されます。
 
 一般に、Xamarin.iOS と Xamarin.Mac の設計では、基礎になる `NSArray` オブジェクトは公開されません。 代わりに、ランタイムによって `NSObject` クラスの厳密に型指定された配列に `NSArray` が自動的に変換されます。 そのため、Xamarin.iOS では、NSArray を返す目的で GetViews のような緩やかに型指定されたメソッドを公開することはありません。
 
