@@ -7,58 +7,131 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/22/2018
-ms.openlocfilehash: f5b92bc202cbf9765a63219ad653442152c3eb24
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 72e0a2adc79796b3df7b6fb4eca62448f1a1a7a4
+ms.sourcegitcommit: 997f7b6a1a1bc50b98c3ca5bbc75d6875ba2ae9a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73020709"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79510732"
 ---
 # <a name="set-up-device-for-development"></a>開発用のデバイスの設定
 
 _この記事では、デバイスが Xamarin.Android アプリケーションの実行とデバッグに使用できるように、Android デバイスの設定およびコンピューターへの接続方法について説明します。_
 
-Android エミュレーターでテストしたら、実際の Android デバイスでアプリを動かし、テストすることをお勧めします。 以下の手順は、デバッグのためのコンピューターへのデバイスの接続に関するものです。
-
-1. **デバイスでのデバッグを有効にする** - 既定では、Android デバイスでアプリケーションをデバッグすることはできません。
-
-2. **USB ドライバーをインストールする** - この手順は、macOS コンピューターでは必要ありません。 Windows コンピューターでは、USB ドライバーのインストールが必要になる場合があります。
-
-3. **コンピューターにデバイスを接続する** - 最後の手順は、USB または WiFi を介したコンピューターへのデバイスの接続に関するものです。
+Android エミュレーターでテストしたら、実際の Android デバイスでアプリを動かし、テストすることをお勧めします。 デバッグを有効にし、デバイスをコンピューターに接続する必要があります。
 
 各手順については、以下のセクションで詳しく説明します。
 
 ## <a name="enable-debugging-on-the-device"></a>デバイスでのデバッグを有効にする
 
-任意の Android デバイスを使用して、Android アプリケーションをテストすることができます。 ただし、デバッグを行う前に、デバイスを正しく構成する必要があります。 関係する手順は、デバイスで実行されている Android のバージョンによって多少異なります。
+Android アプリケーションをテストするために、デバイスのデバッグを有効にする必要があります。 Android の [開発者向けオプション] は、バージョン 4.2 以降、既定では非表示になっており、これを有効にする方法は Android のバージョンによって異なる場合があります。
 
-### <a name="android-40-to-android-41"></a>Android 4.0 から Android 4.1
+### <a name="android-90"></a>Android 9.0+
 
-Android 4.0.x から Android 4.1.x の場合は、以下の手順に従ってデバッグを有効にします。
+Android 9.0 以上では、以下のステップに従ってデバッグを有効にします。
 
 1. **[設定]** 画面に移動します。
-2. **[開発者向けオプション]** を選択します。
-3. **[USB デバッグ]** オプションをオフにします。
+2. **[端末情報]** を選択します。
+3. **[ビルド番号]** を 7 回をタップすると、 **[これでデベロッパーになりました!]** と表示されます。
 
-このスクリーン ショットは、Android 4.0.3 を実行しているデバイスの **[開発者向けオプション]** 画面を示しています。
+### <a name="android-80-and-android-81"></a>Android 8.0 および Android 8.1
 
-[![開発者向けオプション](set-up-device-for-development-images/developer-options-sml.png)](set-up-device-for-development-images/developer-options.png#lightbox)
+1. **[設定]** 画面に移動します。
+2. **[システム]** を選択します。
+3. **[端末情報]** を選択します。
+4. **[ビルド番号]** を 7 回をタップすると、 **[これでデベロッパーになりました!]** と表示されます。
 
-### <a name="android-42-and-higher"></a>Android 4.2 以降
+### <a name="android-71-and-lower"></a>Android 7.1 以前
 
-Android 4.2 以降では、 **[開発者向けオプション]** は既定で非表示になります。 これを使用可能にするには、 **[設定]、[端末情報]** の順に移動し、 **[ビルド番号]** 項目を 7 回タップして **[開発者向けオプション]** タブを表示します。
+1. **[設定]** 画面に移動します。
+2. **[端末情報]** を選択します。
+3. **[ビルド番号]** を 7 回をタップすると、 **[これでデベロッパーになりました!]** と表示されます。
 
-[![ビルド番号項目](set-up-device-for-development-images/about-phone-sml.png)](set-up-device-for-development-images/about-phone.png#lightbox)
+[![Android 9.0 の [開発者向けオプション] 画面](set-up-device-for-development-images/build-version-sml.png)](set-up-device-for-development-images/build-version.png#lightbox)
+
+### <a name="verify-that-usb-debugging-is-enabled"></a>USB デバッグが有効になっていることを確認する
+
+デバイスで開発者モードを有効にしたら、デバイスで USB デバッグが有効になっていることを確認する必要があります。 これも、Android のバージョンによって異なります。
+
+### <a name="android-90"></a>Android 9.0+
+
+**[設定]、[システム]、[詳細設定] > [開発者向けオプション]** に移動して **[USB デバッグ]** を有効にします。
+
+### <a name="android-80-and-android-81"></a>Android 8.0 および Android 8.1
+
+**[設定]、[システム]、[開発者向けオプション]** に移動して **[USB デバッグ]** を有効にします。
+
+### <a name="android-71-and-lower"></a>Android 7.1 以前
+
+**[設定]、[開発者向けオプション]** に移動して **[USB デバッグ]** を有効にします。
 
 **[設定]、[システム]** の **[開発者向けオプション]** タブが使用可能になったら、それを開いて開発者向け設定を表示します。
 
-[![開発者向け設定画面](set-up-device-for-development-images/developer3.png)](set-up-device-for-development-images/developer3.png#lightbox)
+[![Android 9.0 の [開発者向けオプション] 画面](set-up-device-for-development-images/usb-debugging-sml.png)](set-up-device-for-development-images/usb-debugging.png#lightbox)
 
 ここで、USB デバッグやスリープ モードにしないなどの開発者向けオプションを有効にすることができます。
 
+## <a name="connect-the-device-to-the-computer"></a>デバイスをコンピューターに接続する
+
+最後の手順では、デバイスをコンピューターに接続します。 最も簡単で信頼性の高い方法は、USB 経由で行う方法です。
+
+以前にデバッグに使用していない場合は、デバイス上のコンピューターを信頼するように求めるメッセージが表示されます。 デバイスを接続するたびにこのメッセージが表示されないように、 **[Always allow from this computer]\(このコンピューターを常に許可する\)** をオンにすることもできます。
+
+![](set-up-device-for-development-images/trust-computer-for-usb-debugging.png "Google USB")
+
+## <a name="alternate-connection-via-wifi"></a>Wifi 経由の代替接続
+
+USB ケーブルを使用せずに、WiFi 経由で Android デバイスをコンピューターに接続することができます。 この手法は少しばかり大変ですが、デバイスがコンピューターからかなり離れた位置にあり、ケーブルで常時接続することが難しい場合に便利です。 
+
+### <a name="connecting-over-wifi"></a>WiFi 経由の接続
+
+既定では、[Android Debug Bridge](https://developer.android.com/tools/help/adb.html) (*ADB*) は USB 経由で Android デバイスと通信するように構成されます。 USB の代わりに TCP/IP を使用するように再構成することができます。 これを行うには、デバイスとコンピューターの両方が同じ WiFi ネットワーク上にある必要があります。 WiFi 経由でデバッグを行うために環境を設定するには、コマンド ラインを使用して以下のステップを実行します。
+
+1. Android デバイスの IP アドレスを決定します。 IP アドレスを見つける 1 つの方法は、 **[設定]、[ネットワークとインターネット]、[Wi-Fi]** で確認し、デバイスが接続されている WiFi ネットワークをタップしてから、 **[詳細設定]** をタップすることです。 これで、以下のスクリーン ショットのような、ネットワーク接続に関する情報を示すドロップダウンが開きます。
+
+    [![IP アドレス](set-up-device-for-development-images/ip-settings-sml.png)](set-up-device-for-development-images/ip-settings.png#lightbox)
+
+    一部のバージョンの Android では、IP アドレスはリストされませんが、代わりに **[設定]、[端末情報]、[ステータス]** の順に選択して確認できます。
+
+2. USB 経由で、コンピューターに Android デバイスを接続します。
+
+3. 次に、ADB を再起動して、ポート 5555 で TCP を使用するようにします。 コマンド プロンプトで、次のコマンドを入力します。
+
+    ```command
+    adb tcpip 5555
+    ```
+
+    このコマンドを実行すると、コンピューターは USB 経由で接続されているデバイスをリッスンできなくなります。
+
+4. デバイスをコンピューターに接続している USB ケーブルを外します。
+
+5. 上記の手順 1 で指定されたポートで Android デバイスに接続するように ADB を構成します。
+
+    ```command
+    adb connect 192.168.1.28:5555
+    ```
+
+    このコマンドが完了すると、Android デバイスは WiFi 経由でコンピューターに接続されます。
+
+    WiFi 経由でのデバッグが完了したら、以下のコマンドを使用して、ADB をリセットして USB モードに戻すことができます。
+    
+    ```command
+    adb usb
+    ```
+    
+    コンピューターに接続されているデバイスをリストするように ADB に要求できます。 デバイスの接続方法に関係なく、コマンド プロンプトで次のコマンドを実行することで、接続されているデバイスを表示できます。
+    
+    ```command
+    adb devices
+    ```
+
+## <a name="troubleshooting"></a>トラブルシューティング
+
+場合によっては、デバイスがコンピューターに接続できないことがあります。 この場合は、USB ドライバーがインストールされていることを確認する必要があります。
+
 ## <a name="install-usb-drivers"></a>USB ドライバーをインストールする
 
-この手順は macOS では必要ありません。デバイスを USB ケーブルで Mac に接続するだけです。
+このステップは macOS では必要ありません。デバイスを USB ケーブルで Mac に接続するだけです。
 
 Windows コンピューターが USB で接続された Android デバイスを認識する前に、いくつかの追加のドライバーをインストールする必要がある場合があります。
 
@@ -76,9 +149,9 @@ Google Nexus デバイス (Galaxy Nexus を除く) では、Google USB ドライ
 
 Android SDK マネージャーを起動し、以下のスクリーン ショットに示されているように、**Extras** フォルダーを展開して、**Google USB ドライバー** パッケージをインストールします。
 
-[![選択されている Google USB ドライバー パッケージ](set-up-device-for-development-images/usbdriverpackage.png)](set-up-device-for-development-images/usbdriverpackage.png#lightbox)
+![](set-up-device-for-development-images/google-usb-driver.png "Google USB driver selected")
 
-**[Google USB Driver]\(Google USB ドライバー\)** ボックスをオンにして、 **[インストール]** ボタンをクリックします。
+**[Google USB ドライバー]** ボックスをオンにして、 **[Apply Changes]\(変更の適用\)** ボタンをクリックします。
 次の場所にドライバー ファイルがダウンロードされます。
 
 `[Android SDK install path]\extras\google\usb\_driver`
@@ -108,72 +181,6 @@ Windows 7 でドライバーをインストールする場合は、次のよう�
 7. **[参照]** をクリックして、USB ドライバー フォルダーを見つけます (Google USB ドライバーは **[Android SDK のインストール パス]\extras\google\usb_driver** にあります)。
 
 8. **[次へ]** をクリックして、ドライバーをインストールします。
-
-### <a name="installing-unverified-drivers-in-windows-8"></a>Windows 8 での未確認ドライバーのインストール
-
-Windows 8 で未確認のドライバーをインストールするには、追加の手順が必要になる場合があります。 次の手順では、Galaxy Nexus のドライバーのインストール方法について説明します。
-
-1. **Windows 8 の詳細ブート オプションにアクセスする** - この手順は、詳細ブート オプションにアクセスするためのコンピューターの再起動に関するものです。 コマンド ライン プロンプトを起動し、次のコマンドを使用して、コンピューターを再起動します。
-
-    ```command
-    shutdown.exe /r /o
-    ```
-
-2. **デバイスを接続する** - デバイスをコンピューターに接続します。
-
-3. **デバイス マネージャーを起動する** - **devmgmt.msc** を実行します。黄色の三角形が付いたデバイスがリストされます。
-
-4. **デバイス ドライバーをインストールする** - 前述のようにデバイス ドライバーをインストールします。
-
-## <a name="connect-the-device-to-the-computer"></a>デバイスをコンピューターに接続する
-
-最後の手順では、デバイスをコンピューターに接続します。 これには、以下の 2 つの方法があります。
-
-- **USB ケーブル** - これは最も簡単で一般的な方法です。 USB ケーブルをデバイスに接続してからコンピューターに接続するだけです。
-
-- **WiFi** - USB ケーブルを使用せずに、WiFi 経由で Android デバイスをコンピューターに接続することができます。 この手法は少しばかり大変ですが、デバイスがコンピューターからかなり離れた位置にあり、ケーブルで常時接続することが難しい場合に便利です。 WiFi 経由の接続については、次のセクションで説明します。
-
-### <a name="connecting-over-wifi"></a>WiFi 経由の接続
-
-既定では、[Android Debug Bridge](https://developer.android.com/tools/help/adb.html) (*ADB*) は USB 経由で Android デバイスと通信するように構成されます。 USB の代わりに TCP/IP を使用するように再構成することができます。 これを行うには、デバイスとコンピューターの両方が同じ WiFi ネットワーク上にある必要があります。 WiFi 経由でデバッグを行うために環境を設定するには、コマンド ラインを使用して以下の手順を行います。
-
-1. Android デバイスの IP アドレスを決定します。 IP アドレスを見つける 1 つの方法は、 **[設定]、[Wi-Fi]** で確認し、デバイスが接続されている WiFi ネットワークをタップすることです。 これで、設定画面が表示され、以下のスクリーン ショットのような、ネットワーク接続に関する情報が示されます。
-
-    ![IP アドレス](set-up-device-for-development-images/ip-settings.png)
-
-    一部のバージョンの Android では、IP アドレスはリストされませんが、代わりに **[設定]、[端末情報]、[ステータス]** の順に選択して確認できます。
-
-2. USB 経由で、コンピューターに Android デバイスを接続します。
-
-3. 次に、ADB を再起動して、ポート 5555 で TCP を使用するようにします。 コマンド プロンプトで、次のコマンドを入力します。
-
-    ```command
-    adb tcpip 5555
-    ```
-
-    このコマンドを実行すると、コンピューターは USB 経由で接続されているデバイスをリッスンできなくなります。
-
-4. デバイスをコンピューターに接続している USB ケーブルを外します。
-
-5. 上記の手順 1 で指定されたポートで Android デバイスに接続するように ADB を構成します。
-
-    ```command
-    adb connect 192.168.1.28:5555
-    ```
-
-    このコマンドが完了すると、Android デバイスは WiFi 経由でコンピューターに接続されます。
-
-WiFi 経由でのデバッグが完了したら、以下のコマンドを使用して、ADB をリセットして USB モードに戻すことができます。
-
-```command
-adb usb
-```
-
-コンピューターに接続されているデバイスをリストするように ADB に要求できます。 デバイスの接続方法に関係なく、コマンド プロンプトで次のコマンドを実行することで、接続されているデバイスを表示できます。
-
-```command
-adb devices
-```
 
 ## <a name="summary"></a>まとめ
 

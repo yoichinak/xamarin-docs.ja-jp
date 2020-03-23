@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/15/2019
 ms.custom: video
-ms.openlocfilehash: c7d4e4f7ea27e150752b222e3ea4ce2c4256a43a
-ms.sourcegitcommit: 099b06e311a40c00eeea85465ff9b97867a5c5de
+ms.openlocfilehash: e812ab5b85db396ee3cb473f4a659ac188c9212f
+ms.sourcegitcommit: 98fdc3b4a7ef10d5b45167315dbffe94853af71a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78295405"
+ms.lasthandoff: 03/18/2020
+ms.locfileid: "79497041"
 ---
 # <a name="xamarinessentials-preferences"></a>Xamarin.Essentials:Preferences
 
@@ -44,7 +44,7 @@ var myValue = Preferences.Get("my_key", "default_value");
 特定の _キー_ がユーザー設定に存在するかどうかを確認するには:
 
 ```csharp
-bool hasKey = Preferences.HasKey("my_key");
+bool hasKey = Preferences.ContainsKey("my_key");
 ```
 
 ユーザー設定から "_キー_" を削除するには:
@@ -72,6 +72,15 @@ Preferences.Clear();
 - **long**
 - **string**
 - **DateTime**
+
+## <a name="integrate-with-system-settings"></a>システム設定と統合する
+
+ユーザー設定はネイティブで格納されるため、設定をネイティブ システム設定に統合できます。 プラットフォーム ドキュメントとサンプルに従って、プラットフォームと統合します。
+
+* Apple: [iOS 設定バンドルの実装](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/UserDefaults/Preferences/Preferences.html)
+* [iOS アプリケーションのユーザー設定のサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/appprefs/)
+* [watchOS の設定](https://developer.xamarin.com/guides/ios/watch/working-with/settings/)
+* Android:[設定画面の概要](https://developer.android.com/guide/topics/ui/settings.html)
 
 ## <a name="implementation-details"></a>実装の詳細
 
