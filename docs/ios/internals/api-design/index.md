@@ -47,7 +47,7 @@ Xamarin.iOS バインディングには設計原則がいくつかあります (
 
 - API の IDE 内でいろいろ試すことを奨励する
 
-  - たとえば、次のような緩やかに型指定された配列を公開する代わりに
+  - たとえば、次のような弱く型指定された配列を公開する代わりに
 
     ```objc
     NSArray *getViews
@@ -259,7 +259,7 @@ public partial class void MyView : UIView {
 
 #### <a name="delegates"></a>デリゲート
 
-Objective-C と C# には、それぞれの言語のワード デリゲートで異なる意味があります。
+Objective-C と C# では、それぞれの言語においてデリゲートという言葉の意味が異なります。
 
 Objective-C の世界と、CocoaTouch に関してネットで見つかる文書では、デリゲートは通常、一連のメソッドに応答するクラスのインスタンスです。 これは C# インターフェイスに非常に似ています。メソッドが常に必須になるとは限らないところが異なります。
 
@@ -353,10 +353,10 @@ web.Delegate = new Notifier ();
 
 このパターンは、いくつかのコントロールで必要なときにデータを与える目的でも使用されます。 たとえば、[UITableView](xref:UIKit.UITableView) コントロールは強力なテーブルレンダリング コントロールです。外見も中身も [UITableViewDataSource](xref:UIKit.UITableViewDataSource) のインスタンスによって動きます。
 
-### <a name="loosely-typed-via-the-weakdelegate-property"></a>WeakDelegate プロパティ経由で緩やかに型指定される
+### <a name="loosely-typed-via-the-weakdelegate-property"></a>WeakDelegate プロパティ経由の弱い型付け
 
 厳密に型指定されたプロパティに加え、緩やかに型指定されたデリゲートがあります。緩やかに型指定することで、開発者が必要に応じて違ったやり方でバインドできます。
-Xamarin.iOS のバインディングで厳密に型指定された `Delegate` プロパティが公開されると、それに対応する `WeakDelegate` プロパティも必ず公開されます。
+Xamarin.iOS のバインディングで厳密に型指定された `Delegate` プロパティが公開されている場合、それに対応する `WeakDelegate` プロパティも必ず公開されています。
 
 `WeakDelegate` を使用するとき、[Export](xref:Foundation.ExportAttribute) 属性でクラスを正しく装飾し、セレクターを指定する必要があります。 次に例を示します。
 
@@ -399,7 +399,7 @@ foo.delegate = [[SomethingDelegate] alloc] init]
 foo.Delegate = new SomethingDelegate ();
 ```
 
-Xamarin.iOS では、Objective-C デリゲート クラスにマッピングされる、厳密に型指定されたクラスを指定しました。 それを使用するために、Xamarin.iOS の実装で定義されたメソッドをサブクラス化し、オーバーライドします。 しくみについて詳しくは、下の「モデル」セクションを参照してください。
+Xamarin.iOS では、Objective-C デリゲート クラスにマッピングされる、厳密に型指定されたクラスを指定しました。 それを使用するために、そのクラスをサブクラス化し、Xamarin.iOS の実装で定義されたメソッドをオーバーライドします。 機能の詳細については、下の「モデル」セクションを参照してください。
 
 ### <a name="mapping-delegates-to-c"></a>デリゲートを C\# にマッピングする
 
@@ -478,7 +478,7 @@ public class MyCallbacks : NSObject {
 
 UIKit ストレージ機能や、ヘルパー クラスを使用して実装されたレスポンダーでは、通常、Objective-C コードでデリゲートとして参照され、プロトコルとして実装されます。
 
-Objective-C のプロトコルは C# のインターフェイスのようなものですが、定義されているメソッドを実装するかどうかは自由に選択できます。つまり、全部のメソッドを実装しなくてもプロトコルは動作します。
+Objective-C プロトコルはインターフェイスのようなものですが、メソッドは自由に選択できます。つまり、全部のメソッドを実装しなくてもプロトコルは動作します。
 
 モデルは 2 とおりの方法で実装されます。 手動で実装するか、既存の厳密に型指定された定義を使用できます。
 
