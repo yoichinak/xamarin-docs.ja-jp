@@ -47,7 +47,7 @@ Xamarin.iOS バインディングには設計原則がいくつかあります (
 
 - API の IDE 内でいろいろ試すことを奨励する
 
-  - たとえば、次のような弱く型指定された配列を公開する代わりに
+  - たとえば、次のような緩やかに型指定された配列を公開する代わりに
 
     ```objc
     NSArray *getViews
@@ -59,7 +59,7 @@ Xamarin.iOS バインディングには設計原則がいくつかあります (
     NSView [] Views { get; set; }
     ```
 
-    これによって Visual Studio for Mac は、API の閲覧中に、オートコンプリート機能が利用可能になります。また、戻り値であらゆる `System.Array` 操作が可能になり、戻り値で、LINQ が利用できます。
+    これで Visual Studio for Mac に、API を閲覧中、オートコンプリート機能が与えられます。また、戻り値であらゆる `System.Array` 操作が可能になり、LINQ に加わることが戻り値に許可されます。
 
 - ネイティブ C# 型:
 
@@ -220,7 +220,7 @@ Windows と Linux でネイティブ ライブラリを呼び出すツールと�
 
 #### <a name="types"></a>型
 
-道理にかなうのなら、下位の Foundation 型ではなく C# 型が C# の領域に公開されます。  つまり、[API では NSString ではなく C# の sring 型が使用され](~/ios/internals/api-design/nsstring.md)、NSArray を公開せず、厳密に型指定された C# 配列が使用されます。
+道理にかなうのなら、下位の Foundation 型ではなく C# 型が C# の領域に公開されます。  つまり、[API では NSString ではなく C# "文字列" 型が使用され](~/ios/internals/api-design/nsstring.md)、NSArray を公開せず、厳密に型指定された C# 配列が使用されます。
 
 一般に、Xamarin.iOS と Xamarin.Mac の設計では、基礎になる `NSArray` オブジェクトは公開されません。 代わりに、ランタイムによって `NSObject` クラスの厳密に型指定された配列に `NSArray` が自動的に変換されます。 そのため、Xamarin.iOS では、NSArray を返す目的で GetViews のような緩やかに型指定されたメソッドを公開することはありません。
 
@@ -259,7 +259,7 @@ public partial class void MyView : UIView {
 
 #### <a name="delegates"></a>デリゲート
 
-Objective-C と C# では、それぞれの言語においてデリゲートという言葉の意味が異なります。
+Objective-C と C# には、それぞれの言語のワード デリゲートで異なる意味があります。
 
 Objective-C の世界と、CocoaTouch に関してネットで見つかる文書では、デリゲートは通常、一連のメソッドに応答するクラスのインスタンスです。 これは C# インターフェイスに非常に似ています。メソッドが常に必須になるとは限らないところが異なります。
 
@@ -353,10 +353,10 @@ web.Delegate = new Notifier ();
 
 このパターンは、いくつかのコントロールで必要なときにデータを与える目的でも使用されます。 たとえば、[UITableView](xref:UIKit.UITableView) コントロールは強力なテーブルレンダリング コントロールです。外見も中身も [UITableViewDataSource](xref:UIKit.UITableViewDataSource) のインスタンスによって動きます。
 
-### <a name="loosely-typed-via-the-weakdelegate-property"></a>WeakDelegate プロパティ経由の弱い型付け
+### <a name="loosely-typed-via-the-weakdelegate-property"></a>WeakDelegate プロパティ経由で緩やかに型指定される
 
-厳密に型指定されたプロパティに加え、弱く型付けされたデリゲートもあります。弱い型付けをすることで、開発者が必要に応じて違ったやり方でバインドできます。
-Xamarin.iOS のバインディングで厳密に型指定された `Delegate` プロパティが公開されている場合、それに対応する `WeakDelegate` プロパティも必ず公開されています。
+厳密に型指定されたプロパティに加え、緩やかに型指定されたデリゲートがあります。緩やかに型指定することで、開発者が必要に応じて違ったやり方でバインドできます。
+Xamarin.iOS のバインディングで厳密に型指定された `Delegate` プロパティが公開されると、それに対応する `WeakDelegate` プロパティも必ず公開されます。
 
 `WeakDelegate` を使用するとき、[Export](xref:Foundation.ExportAttribute) 属性でクラスを正しく装飾し、セレクターを指定する必要があります。 次に例を示します。
 
@@ -399,7 +399,7 @@ foo.delegate = [[SomethingDelegate] alloc] init]
 foo.Delegate = new SomethingDelegate ();
 ```
 
-Xamarin.iOS では、Objective-C デリゲート クラスにマッピングされる、厳密に型指定されたクラスを指定しました。 それを使用するために、そのクラスをサブクラス化し、Xamarin.iOS の実装で定義されたメソッドをオーバーライドします。 機能の詳細については、下の「モデル」セクションを参照してください。
+Xamarin.iOS では、Objective-C デリゲート クラスにマッピングされる、厳密に型指定されたクラスを指定しました。 それを使用するために、Xamarin.iOS の実装で定義されたメソッドをサブクラス化し、オーバーライドします。 しくみについて詳しくは、下の「モデル」セクションを参照してください。
 
 ### <a name="mapping-delegates-to-c"></a>デリゲートを C\# にマッピングする
 
@@ -663,7 +663,7 @@ Xamarin.iOS に含まれるガベージ コレクターによって、不要に�
 
 #### <a name="nsobject-and-idisposable"></a>NSObject と IDisposable
 
-オブジェクトによってカプセル化が行われることがあります。大きなメモリ ブロック (たとえば、`UIImage` は単純なポインターのように見えますが、2 メガバイトの画像を指していることがあります) や (動画の復号バッファーのような) その他の重要な有限リソースがカプセル化されます。そのようなオブジェクトを解放するとき、開発者を支援する便利な方法が `IDisposable` インターフェイスの公開です。
+オブジェクトによってカプセル化が行われることがあります。大きなメモリ ブロック (たとえば、`UIImage` は無邪気なポインターのように見えますが、2 メガバイトの画像をポイントしていることがあります) やその他の重要な有限リソース (動画の復号バッファー) がカプセル化されます。そのようなオブジェクトを解放するとき、開発者を支援する便利な方法が `IDisposable` インターフェイスの公開です。
 
 NSObject では IDisposable interface が実装され、さらに [.NET Dispose パターン](https://msdn.microsoft.com/library/fs2xkftw.aspx)も実装されます。 これにより、開発者は NSObject をサブクラス化し、Dispose 動作をオーバーライドして自分だけのリソースを必要なときに解放できます。 たとえば、画像の集まりを維持するこのビュー コントローラーについて考えてください。
 
