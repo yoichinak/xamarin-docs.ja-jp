@@ -519,7 +519,7 @@ public class SomeViewModel : NSObject {
 
 一部のメソッドのみを実装するモデルを実装する場合、必要なことは、関心のあるメソッドをオーバーライドし、その他のメソッドを無視することです。 ランタイムでは、上書きされたメソッドのみが Objective-C の領域に接続され、元のメソッドは接続されません。
 
-前の手動テンプルに相当するものが以下です。
+前の手動サンプルに相当するものが以下です。
 
 ```csharp
 public class AppController : UIApplicationDelegate {
