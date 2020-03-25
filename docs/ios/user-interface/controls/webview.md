@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: a9dce962c35e5f9cfdcd674da9ad71cf8935e7d4
-ms.sourcegitcommit: 6c60914b380ff679bbffd7790edd4d5e18005d0a
+ms.openlocfilehash: 7c469a011a70840cfe94a7f87ed77f03968a3525
+ms.sourcegitcommit: ec112800a76089ab1db66fe24b8bbcc510e067b4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80070315"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80159822"
 ---
 # <a name="web-views-in-xamarinios"></a>Xamarin.iOS の Web ビュー
 
@@ -94,7 +94,7 @@ IOS 9 では、アプリトランスポートセキュリティ (または*ATS* 
 `UIWebView` は、アプリに web コンテンツを提供するための Apple の従来の方法です。 IOS 2.0 でリリースされ、8.0 の時点で非推奨とされています。
 
 > [!IMPORTANT]
-> `UIWebView` は非推奨とされます。 このコントロールを使用する新しいアプリは[2020 年4月の時点でアプリストアには受け入れられません。このコントロールを使用したアプリの更新は、2020年12月に受け付けられません](https://developer.apple.com/news/?id=12232019b)。
+> `UIWebView` は使用されなくなりました。 このコントロールを使用する新しいアプリは[2020 年4月の時点でアプリストアには受け入れられません。このコントロールを使用したアプリの更新は、2020年12月に受け付けられません](https://developer.apple.com/news/?id=12232019b)。
 >
 > [Apple の `UIWebView` ドキュメント](https://developer.apple.com/documentation/uikit/uiwebview)では、アプリで[`WKWebView`](#wkwebview)を使用することを提案します。
 >
@@ -114,12 +114,12 @@ Apple App Store に iOS アプリケーションを最近送信したことが�
 
 確認するには、プロジェクトの**その他の mtouch 引数**に `--warn-on-type-ref=UIKit.UIWebView` を追加します。 これにより、アプリケーション内の非推奨の `UIWebView` (およびそのすべての依存関係) へ**の参照が**警告されます。 さまざまな警告を使用して、マネージリンカーが実行さ**れる前**と**後**の種類を報告します。
 
-他の警告は、`-warnaserror:`を使用してエラーになることがあります。 これは、検証後に `UIWebView` に対する新しい依存関係が追加されないようにする場合に便利です。 例 :
+他の警告は、`-warnaserror:`を使用してエラーになることがあります。 これは、検証後に `UIWebView` に対する新しい依存関係が追加されないようにする場合に便利です。 次に例を示します。
 
 * リンク済みのアセンブリで参照が見つかった場合、`-warnaserror:1502` はエラーを報告します。
 * リンク後のアセンブリで参照が見つかった場合、`-warnaserror:1503` はエラーを報告します。
 
-また、送信前/ポストリンクの結果が役に立たない場合にも、警告が表示されないようにすることができます。 例 :
+また、送信前/ポストリンクの結果が役に立たない場合にも、警告が表示されないようにすることができます。 次に例を示します。
 
 * リンク済みのアセンブリで参照が見つかった場合、`-nowarn:1502` は警告を報告し**ません**。
 * リンク後のアセンブリで参照が検出された場合、`-nowarn:1503` は警告を報告し**ません**。

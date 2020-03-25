@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 03/14/2020
-ms.openlocfilehash: 225b7dc7dc639031b3198a8fb9e7fe9fb9d7ee7f
-ms.sourcegitcommit: 8df67f0d76ff762b517d27b8d4c217d3a3379a18
+ms.openlocfilehash: a6cb5a0e3573ebf998bb2f81c08ff63c81678b54
+ms.sourcegitcommit: ec112800a76089ab1db66fe24b8bbcc510e067b4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2020
-ms.locfileid: "79423877"
+ms.lasthandoff: 03/24/2020
+ms.locfileid: "80159809"
 ---
 # <a name="xaml-hot-reload-for-xamarinforms"></a>Xamarin. フォームの XAML ホットリロード
 
@@ -59,7 +59,7 @@ XAML ホットリロードは、Visual Studio と Visual Studio for Mac での�
 
 ## <a name="known-limitations"></a>既知の制限事項
 
-* UWP や MacOS など、その他の Xamarin 形式のターゲットは、まだサポートされて*いません*。 UWP サポートの進行状況は[ここで](https://developercommunity.visualstudio.com/idea/661682/xaml-hot-reload-for-xamarinforms-on-uwp.html)追跡できます。
+* UWP や macOS など、その他の Xamarin 形式のターゲットは、まだサポートされて*いません*。 UWP サポートの進行状況は[ここで](https://developercommunity.visualstudio.com/idea/661682/xaml-hot-reload-for-xamarinforms-on-uwp.html)追跡できます。
 * XAML ホットリロードセッション中に、ファイルまたは NuGet パッケージを追加、削除、または名前変更することはできません。 ファイルまたは NuGet パッケージを追加または削除する場合は、アプリケーションをリビルドして再デプロイし、引き続き XAML ホットリロードを使用します。
 * 最適なエクスペリエンスを得るには、**リンクしない**ようにリンカーを設定するか、または**リンク**しないようにします。 [ **SDK のみをリンク**する] の設定はほとんどの場合に機能しますが、特定の場合には失敗する可能性があります。 リンカーの設定は、Android および iOS のビルドオプションにあります。
 * 物理的な iPhone でデバッグを行うには、インタープリターで XAML ホットリロードを使用する必要があります。 これを行うには、プロジェクト設定を開き、iOS ビルド タブを選択し、 **Mono インタープリターを有効にする** 設定が有効になっていることを確認します。 場合によっては、プロパティページの上部にある**プラットフォーム**オプションを**iPhone**に変更する必要があります。
