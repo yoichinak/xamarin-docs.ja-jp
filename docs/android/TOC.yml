@@ -513,6 +513,8 @@
       items:
         - name: アプリ パッケージ サイズ
           href: deploy-test/app-package-size.md
+        - name: 変更の適用
+          href: deploy-test/apply-changes.md
         - name: アプリのビルド
           href: deploy-test/building-apps/index.md
           items:
