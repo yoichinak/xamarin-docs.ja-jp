@@ -6,13 +6,13 @@ ms.assetid: 938E85C8-521D-43B9-92CB-D591A06D98A6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/27/2019
-ms.openlocfilehash: fa92409b33717e528c3cfb83a24148c698836594
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.date: 03/23/2020
+ms.openlocfilehash: 9e3e602eda0d2fa78dd25905a2b6ccf3ce5a744d
+ms.sourcegitcommit: d83c6af42ed26947aa7c0ecfce00b9ef60f33319
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72697143"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80247601"
 ---
 # <a name="xamarinforms-data-binding"></a>Xamarin.Forms のデータ バインディング
 
@@ -28,7 +28,7 @@ Xamarin.Forms アプリケーションは 1 つ以上のページで構成され
 
 ## <a name="the-data-binding-solution"></a>データ バインディングのソリューション
 
-データ バインディングによってこのジョブが自動化され、イベント ハンドラーが不要になります。 (ただし、イベントはまだ必要です。データ バインディングのインフラストラクチャで使われるためです。)データ バインディングは、コードまたは XAML のどちらでも実装できますが、分離コード ファイルのサイズを小さくできる XAML での方がはるかに一般的です。 イベント ハンドラーにおける手続き型コードを宣言型コードまたはマークアップに置き換えることで、アプリケーションが簡略化されてわかりやすくなります。
+データ バインディングによってこのジョブが自動化され、イベント ハンドラーが不要になります。 データ バインディングは、コードまたは XAML のどちらでも実装できますが、分離コード ファイルのサイズを小さくできる XAML での方がはるかに一般的です。 イベント ハンドラーにおける手続き型コードを宣言型コードまたはマークアップに置き換えることで、アプリケーションが簡略化されてわかりやすくなります。
 
 データ バインディングに関与する 2 つのオブジェクトのうちの 1 つは、ほとんど常に、`View` から派生してページのビジュアル インターフェイスの一部を形成している要素となります。 もう一方のオブジェクトは次のいずれかです。
 
