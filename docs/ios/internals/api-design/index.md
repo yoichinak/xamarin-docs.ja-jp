@@ -95,7 +95,7 @@ Xamarin.iOS によって C# で Objective-C のクラス階層が忠実に再現
 
 この名前空間からは基礎となる Objective-C Foundation 型のバインディングが与えられますが、基礎となる型を .NET 型にマッピングしたケースもありました。 次に例を示します。
 
-- NSString と [NSArray](https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html) を扱う代わりに、このランタイムでは、API 全体でこの 2 つがそれぞれ C# [文字列](xref:System.String)と厳密に型指定された[配列](xref:System.Array)として公開されます。
+- NSString と [NSArray](https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/NSArray_Class/NSArray.html) を扱う代わりに、このランタイムでは、API 全体でこの 2 つがそれぞれ C# [string](xref:System.String)と厳密に型指定された[array](xref:System.Array)として公開されます。
 
 - 開発者がサードパーティの Objective-C API、その他の iOS API、または Xamarin.iOS で現在バインディングされていない API をバインディングできるよう、さまざまなヘルパー API がここで公開されます。
 
