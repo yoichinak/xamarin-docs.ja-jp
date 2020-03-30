@@ -212,7 +212,7 @@ OpenGLES 3.0 機能は [ES30.GL 型](xref:OpenTK.Graphics.ES30.GL)から利用�
 
 ### <a name="binding-design"></a>バインディング デザイン
 
-Xamarin.iOS では、基礎となる Objective-C プラットフォームにバインディングするだけではありません。 .NET 型システムとディスパッチ システムを拡張するものであり、C# と Objective-C を一層効果的に混合します。
+Xamarin.iOS では、基礎となる Objective-C プラットフォームにバインディングするだけではありません。 .NET 型システムとディスパッチ システムを拡張するものであり、C# と Objective-C を一層効果的に融合させます。
 
 Windows と Linux でネイティブ ライブラリを呼び出すツールとして P/Invoke が便利なように、あるいは Windows での COM 相互運用に IJW サポートを使用できるように、Xamarin.iOS によって、C# オブジェクトと Objective-C オブジェクトをバインドできるようにランタイムが拡張されます。
 
