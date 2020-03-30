@@ -6,13 +6,13 @@ ms.assetid: 58DFFA52-4057-49A8-8682-50A58C7E842C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/03/2019
-ms.openlocfilehash: 46d0b245246d9e93040cd8591dab8ed3a816268d
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.date: 03/23/2020
+ms.openlocfilehash: 712ca4f8f3441e0d3c2aede1b2510b07ca89f829
+ms.sourcegitcommit: d83c6af42ed26947aa7c0ecfce00b9ef60f33319
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75487010"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80247614"
 ---
 # <a name="customizing-a-webview"></a>WebView のカスタマイズ
 
@@ -268,6 +268,15 @@ namespace CustomRenderer.iOS
         {
             ((HybridWebView)Element).InvokeAction(message.Body.ToString());
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                ((HybridWebView)Element).Cleanup();
+            }
+            base.Dispose(disposing);
+        }        
     }
 }
 ```
@@ -282,8 +291,8 @@ namespace CustomRenderer.iOS
 - レンダラー コンストラクターによって [`WKUserContentController.AddScriptMessageHandler`](xref:WebKit.WKUserContentController.AddScriptMessageHandler(WebKit.IWKScriptMessageHandler,System.String)) メソッドが呼び出され、[`WKUserContentController`](xref:WebKit.WKUserContentController) オブジェクトに `invokeAction` というスクリプト メッセージ ハンドラーが追加されます。その結果、`WKUserContentController` オブジェクトを使用するすべての `WebView` インスタンス内のすべてのフレームで JavaScript 関数 `window.webkit.messageHandlers.invokeAction.postMessage(data)` が定義されます。
 - カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされている場合:
   - [`WKWebView.LoadRequest`](xref:WebKit.WKWebView.LoadRequest(Foundation.NSUrlRequest)) メソッドによって、`HybridWebView.Uri` プロパティにより指定されている HTML ファイルが読み込まれます。 このコードにより、ファイルがプロジェクトの `Content` フォルダーに格納されることが指定されます。 Web ページが表示されると、`invokeCSharpAction` JavaScript 関数が Web ページに挿入されます。
-- レンダラーがアタッチされている要素が変更された場合:
-  - リソースがリリースされます。
+- レンダラーがアタッチされている要素が変更されると、リソースが解放されます。
+- レンダラーが破棄されると、Xamarin.Forms 要素がクリーンアップされます。
 
 > [!NOTE]
 > `WKWebView` クラスは、iOS 8 以降でのみサポートされています。
@@ -332,6 +341,15 @@ namespace CustomRenderer.Droid
                 Control.LoadUrl($"file:///android_asset/Content/{((HybridWebView)Element).Uri}");
             }
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                ((HybridWebView)Element).Cleanup();
+            }
+            base.Dispose(disposing);
+        }        
     }
 }
 ```
@@ -363,8 +381,8 @@ public class JavascriptWebViewClient : WebViewClient
   - [`WebView.AddJavascriptInterface`](xref:Android.Webkit.WebView.AddJavascriptInterface*) メソッドによって、新しい `JSBridge` インスタンスが WebView の JavaScript コンテキストのメイン フレームに挿入され、`jsBridge` と名前が付けられます。 これにより、JavaScript から `JSBridge` クラスのメソッドにアクセスできるようになります。
   - [`WebView.LoadUrl`](xref:Android.Webkit.WebView.LoadUrl*) メソッドによって、`HybridWebView.Uri` プロパティに指定された HTML ファイルが読み込まれます。 このコードにより、ファイルがプロジェクトの `Content` フォルダーに格納されることが指定されます。
   - `JavascriptWebViewClient` クラスでは、Web ページの読み込みが完了すると、`invokeCSharpAction` JavaScript 関数がページに挿入されます。
-- レンダラーがアタッチされている要素が変更された場合:
-  - リソースがリリースされます。
+- レンダラーがアタッチされている要素が変更されると、リソースが解放されます。
+- レンダラーが破棄されると、Xamarin.Forms 要素がクリーンアップされます。
 
 `invokeCSharpAction` JavaScript 関数が実行されると、次に `JSBridge.InvokeAction` メソッドが呼び出されます。これを次のコード例に示します。
 
@@ -441,6 +459,15 @@ namespace CustomRenderer.UWP
         {
             ((HybridWebView)Element).InvokeAction(e.Value);
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                ((HybridWebView)Element).Cleanup();
+            }
+            base.Dispose(disposing);
+        }        
     }
 }
 ```
@@ -452,8 +479,8 @@ namespace CustomRenderer.UWP
 - カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされている場合:
   - `NavigationCompleted` および `ScriptNotify` イベントのイベント ハンドラーが登録されています。 `NavigationCompleted` イベントは、ネイティブの `WebView` コントロールが現在のコンテンツの読み込みを完了したとき、またはナビゲーションが失敗したときに発生します。 `ScriptNotify`イベントは、ネイティブの `WebView` コントロールのコンテンツが JavaScript を使用して文字列をアプリケーションに渡したときに発生します。 Web ページは、`string` パラメーターを渡しながら `window.external.notify` を呼び出して `ScriptNotify` イベントを発生させます。
   - `WebView.Source` プロパティは、`HybridWebView.Uri` プロパティに指定された HTML ファイルの URI に設定されます。 このコードでは、ファイルがプロジェクトの `Content` フォルダーに格納されることを想定しています。 Web ページが表示されると、`NavigationCompleted` イベントが発生し、`OnWebViewNavigationCompleted` メソッドが呼び出されます。 ナビゲーションが正常に完了した場合、`WebView.InvokeScriptAsync` メソッドを使用して `invokeCSharpAction` JavaScript 関数が Web ページに挿入されます。
-- レンダラーがアタッチされている要素が変更された場合:
-  - イベントの登録が解除されます。
+- レンダラーがアタッチされている要素が変更されると、イベントのサブスクライブが解除されます。
+- レンダラーが破棄されると、Xamarin.Forms 要素がクリーンアップされます。
 
 ## <a name="related-links"></a>関連リンク
 

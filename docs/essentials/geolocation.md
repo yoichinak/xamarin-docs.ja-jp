@@ -5,12 +5,12 @@ ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 03/13/2019
-ms.openlocfilehash: 2ee4683bce02e95c52235afa823be21b89863208
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 840aadcafea88ef08f53e16f535439be0862fee9
+ms.sourcegitcommit: 6c60914b380ff679bbffd7790edd4d5e18005d0a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79303649"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80070355"
 ---
 # <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials:位置情報
 
@@ -217,6 +217,24 @@ double miles = Location.CalculateDistance(boston, sanFrancisco, DistanceUnits.Mi
 ```
 
 `Location` コンストラクターは、緯度引数と経度引数をこの順序で受け取ります。 正の緯度値は北半球を示し、正の緯度値は東半球を示します。 マイルまたはキロメートルを指定するには、`CalculateDistance` に対する最後の引数を使用します。 `UnitConverters` クラスでは、2 つの単位の間で変換を行う `KilometersToMiles` および `MilesToKilometers` メソッドも定義されています。
+
+## <a name="platform-differences"></a>プラットフォームによる違い
+
+高度は、プラットフォームごとに異なる方法で計算されます。
+
+# <a name="android"></a>[Android](#tab/android)
+
+Android で、[高度](https://developer.android.com/reference/android/location/Location#getAltitude())が表示されている場合は、WGS 84 準拠楕円体のメートル単位で返されます。 この位置に高度がない場合は、0.0 が返されます。
+
+# <a name="ios"></a>[iOS](#tab/ios)
+
+iOS では、[高度](https://developer.apple.com/documentation/corelocation/cllocation/1423820-altitude)はメートル単位で測定されます。 正の値は海面を上回る高度を示し、負の値は海面を下回る高度を示します。
+
+# <a name="uwp"></a>[UWP](#tab/uwp)
+
+UWP では、高度はメートル単位で返されます。 詳細については、[AltitudeReferenceSystem](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint.altitudereferencesystem#Windows_Devices_Geolocation_Geopoint_AltitudeReferenceSystem) のドキュメントを参照してください。
+
+-----
 
 ## <a name="api"></a>API
 

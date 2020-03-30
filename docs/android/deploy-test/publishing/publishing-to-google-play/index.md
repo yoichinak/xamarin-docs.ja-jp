@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 77fc4cbb15c47b87b0fa33e81b0b3749115af076
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 04e83fc68218216fe36cce67e43b83e8ad8feaa5
+ms.sourcegitcommit: 6c60914b380ff679bbffd7790edd4d5e18005d0a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021284"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80070791"
 ---
 # <a name="publishing-to-google-play"></a>GooglePlay に公開する
 
@@ -40,7 +40,7 @@ Google Play でアプリケーションを公開するには、パブリッシ�
 1. 電子メールによる検証を確認します。
 1. アカウントが作成された後は、Google Play を使ってアプリケーションを公開できます。
 
-Google Play では、世界中のすべての国はサポートされません。 サポートされている国の最新の一覧は、次のリンクをご覧ください。
+Google Play では、世界中のすべての国はサポートされません。 対象の国の最新の一覧は、次のリンクをご覧ください。
 
 1. [Supported Locations for Developer &amp; Merchant Registration](https://support.google.com/googleplay/android-developer/bin/answer.py?hl=en&amp;answer=150324) (開発者と販売者の登録をサポートされている場所) &ndash; 開発者が販売者として登録して有料アプリケーションを販売できる国の一覧です。
 
@@ -63,11 +63,11 @@ Google Play でアプリケーションのプロモーションと宣伝を効�
 
 ランチャー アイコンのヒント:
 
-1. **単純ですっきりさせる** &ndash; ランチャー アイコンは単純ですっきりしたものにする必要があります。 これは、アイコンからアプリケーションの名前を除外することを意味します。 アイコンは単純なほど記憶に残りやすく、小さいサイズでも簡単に見分けることができます。
+1. **単純ですっきりさせる**&ndash; ランチャー アイコンは単純ですっきりしたものにする必要があります。 これは、アイコンからアプリケーションの名前を除外することを意味します。 アイコンは単純なほど記憶に残りやすく、小さいサイズでも簡単に見分けることができます。
 
-1. **アイコンを薄い色にしない** &ndash; 過度に薄いアイコンでは、すべての背景で適切に目立たせることができません。
+1. **アイコンを薄い色にしない**&ndash; 過度に薄いアイコンでは、すべての背景で適切に目立たせることができません。
 
-1. **アルファ チャネルを使う** &ndash; アイコンではアルファ チャネルを使い、フル フレーム画像にしないようにする必要があります。
+1. **アルファ チャネルを使う**&ndash; アイコンではアルファ チャネルを使い、フル フレーム画像にしないようにする必要があります。
 
 #### <a name="high-resolution-application-icons"></a>高解像度アプリケーション アイコン
 
@@ -79,7 +79,7 @@ Google Play のアプリケーションでは、アプリケーション アイ�
 
 [Android Asset Studio](https://romannurik.github.io/AndroidAssetStudio/) は、適切なランチャー アイコンと高解像度のアプリケーション アイコンを作るのに便利なツールです。
 
-#### <a name="screen-shots"></a>スクリーンショット
+#### <a name="screenshots"></a>Screenshots (スクリーンショット)
 
 Google play では、2 個以上 8 個以下のアプリケーションのスクリーンショットが必要です。 これらは、Google Play のアプリケーションの詳細ページに表示されます。
 
@@ -95,7 +95,7 @@ Google play では、2 個以上 8 個以下のアプリケーションのスク
 1. 180w x 120h、24 ビットの PNG または JPG、アルファ チャネルなし
 1. アートに枠線なし
 
-#### <a name="feature-graphic"></a>おすすめ用のグラフィック
+#### <a name="feature-graphic"></a>機能のグラフィック
 
 Google Play のおすすめセクションで使われます。 このグラフィックは、アプリケーション アイコンを含まず単独で表示される場合があります。
 
@@ -111,7 +111,7 @@ Google Play のおすすめセクションで使われます。 このグラフ�
 
 <!-- markdownlint-disable MD001 -->
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Xamarin Android 7.0 では、Visual Studio から Google Play にアプリを公開するためのワークフローが統合されました。 Xamarin Android 7.0 より前のバージョンを使っている場合は、Google Play Developer Console を使って APK を手動でアップロードする必要があります。 また、統合されたワークフローを使うには、その前に少なくとも 1 つの APK をアップロードしておく必要があります。 最初の APK をまだアップロードしていない場合は、手動でアップロードする必要があります。 詳細については、「[APK を手動でアップロードする](~/android/deploy-test/publishing/publishing-to-google-play/manually-uploading-the-apk.md)」をご覧ください。
 
@@ -124,7 +124,7 @@ Xamarin Android 7.0 では、Visual Studio から Google Play にアプリを公
 5. 証明書でアプリに署名します。
 6. 署名されたアプリを Google Play に公開します。
 
-[公開のためのアーカイブ](~/android/deploy-test/release-prep/index.md#archive)では、 **[配布チャネル]** ダイアログに 2 種類の配布方法が表示されていました。 **[Ad Hoc]\(アドホック\)** と **[Google Play]** です。 **[署名 ID]** ダイアログが代わりに表示される場合は、 **[戻る]** をクリックして **[配布チャネル]** ダイアログに戻ります。 **[Google Play]** を選択して **[Next]\(次へ\)** をクリックします。
+[公開のためのアーカイブ](~/android/deploy-test/release-prep/index.md#archive)では、 **[配布チャネル]** ダイアログに 2 種類の配布方法が表示されていました。 **[Ad Hoc]\(アドホック\)** と **[Google Play]** です。 **[署名 ID]** ダイアログが代わりに表示される場合は、 **[戻る]** をクリックして **[配布チャネル]** ダイアログに戻ります。 **[Google Play]** を選択します。
 
 [![[配布チャネル] ダイアログ](images/vs/01-distribution-channel-sml.png)](images/vs/01-distribution-channel.png#lightbox)
 
@@ -142,7 +142,7 @@ Xamarin Android 7.0 では、Visual Studio から Google Play にアプリを公
 
 次のセクションでは、新しい Google API プロジェクトを作成し、必要な "_クライアント ID_" と "_クライアント シークレット_" を生成する方法を説明します。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 Visual Studio for Mac は、Google Play にアプリを公開するための統合ワークフローを備えています。
 
@@ -171,18 +171,19 @@ Visual Studio for Mac は、Google Play にアプリを公開するための統�
 
 最初に、[Google Play 開発者アカウント](https://play.google.com/apps/publish)にサインインします。
 Google Play 開発者アカウントがまだない場合は、「[Get Started with Publishing](https://developer.android.com/distribute/googleplay/start.html)」(公開の概要) をご覧ください。
-また、Google Play 開発者 API の「[Getting Started](https://developers.google.com/android-publisher/getting_started)」(概要) でも、Google Play 開発者 API の使い方が説明されています。 Google Play Developer Console にサインインした後、 **[Settings]\(設定\)** をクリックします。
+また、Google Play 開発者 API の「[Getting Started](https://developers.google.com/android-publisher/getting_started)」(概要) でも、Google Play 開発者 API の使い方が説明されています。 Google Play Developer Console にサインインした後、 **[アプリの作成]** をクリックします。
 
-[![[Settings]\(設定\) アイコン](images/01-google-play-developer-console-sml.png)](images/01-google-play-developer-console.png#lightbox)
+[![[Create new project]\(新しいプロジェクトの作成\) ボタン](images/01-create-new-project-sml.png)](images/01-create-new-project.png#lightbox)
 
-**[SETTINGS]\(設定\)** ページで、 **[API access]\(API アクセス\)** を選び、 **[Create new project]\(新しいプロジェクトの作成\)** ボタンをクリックします。
-
-[![[Create new project]\(新しいプロジェクトの作成\) ボタン](images/02-create-new-project-sml.png)](images/02-create-new-project.png#lightbox)
-
-しばらくすると、新しい API プロジェクトが自動的に生成され、Google Play Developer Console アカウントにリンクされます。
+新しいプロジェクトを作成すると、Google Play Developer Console アカウントにリンクされます。
 
 次の手順では、アプリ用の OAuth クライアントを作成します (まだ作成されていない場合)。 ユーザーがアプリを使ってプライベート データへのアクセスを要求すると、アプリの認証に OAuth クライアント ID が使用されます。
-**[Create OAuth Client]\(OAuth クライアントの作成\)** をクリックして、新しい OAuth クライアントを作成します。
+
+**[設定]** ページに移動します。
+
+[![[Settings]\(設定\) アイコン](images/02-google-play-developer-console-sml.png)](images/02-google-play-developer-console.png#lightbox)
+
+**[設定]** ページで、 **[API アクセス]** を選択し、 **[CREATE OAUTH CLIENT]\(OAuth クライアントの作成\)** をクリックして、新しい OAuth クライアントを作成します。
 
 [![[Create OAuth Client]\(OAuth クライアントの作成\) ボタン](images/03-create-oauth-client-sml.png)](images/03-create-oauth-client.png#lightbox)
 
@@ -198,7 +199,7 @@ OAuth クライアントの既定の名前は *Google Play Android Developer* �
 
 [![表示されたクライアント ID とシークレット](images/06-client-id-and-secret-sml.png)](images/06-client-id-and-secret.png#lightbox)
 
-**[Save]\(保存\)** をクリックして変更を保存します。 **[Credentials]\(資格情報\)** ページに戻るので、 **[Download JSON]\(JSON のダウンロード\)** アイコンをクリックして資格情報をダウンロードします。
+**[保存]** をクリックして変更を保存します。 **[Credentials]\(資格情報\)** ページに戻るので、 **[Download JSON]\(JSON のダウンロード\)** アイコンをクリックして資格情報をダウンロードします。
 
 [![[Download JSON]\(JSON のダウンロード\) アイコン](images/07-download-json-sml.png)](images/07-download-json.png#lightbox)
 
@@ -206,7 +207,7 @@ OAuth クライアントの既定の名前は *Google Play Android Developer* �
 
 #### <a name="register-google-api-access"></a>Google API アクセスを登録する
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 クライアント ID とクライアント シークレットを使って、Visual Studio for Mac の **[Google Play API アカウント]** ダイアログを設定します。 アカウントの説明を入力できます。そうすれば、複数の Google Play アカウントを登録し、後で異なる Google Play アカウントに APK をアップロードできます。 クライアント ID とクライアント シークレットをこのダイアログにコピーし、 **[登録]** をクリックします。
 
@@ -223,18 +224,19 @@ Web ブラウザーが開き、Google Play Android 開発者アカウントへ�
 
 [![Google Play アカウントに追加されたアカウント](images/vs/07-account-added-sml.png)](images/vs/07-account-added.png#lightbox)
 
-次に、 **[Google Play トラック]** ダイアログが表示されます。 Google Play では、4 種類のアプリのアップロードのトラックが提供されています。
+次に、 **[Google Play トラック]** ダイアログが表示されます。 Google Play では、5 種類のアプリのアップロードのトラックが提供されています。
 
-- **[アルファ]** &ndash; 少数のテスト担当者一覧にごく初期のバージョンのアプリをアップロードするために使います。
-- **[ベータ]** &ndash; 多数のテスト担当者一覧に初期のバージョンのアプリをアップロードするために使います。
-- **[ロールアウト]** &ndash; ある割合のユーザーが、アプリの更新バージョンを受け取れます。たとえば、10% のユーザーから始めて、バグを解決しながら 100% のユーザーまで割合をゆっくり増やすことができます。
-- **[実稼働]** &ndash; アプリが Google Play ストアから完全に配布できる状態のときは、このトラックを選びます。
+- **[Internal]\(内部\)** &ndash; 内部テストおよび品質保証チェックでアプリを迅速に配布するために使います。
+- **[アルファ]** &ndash; 少数のテスト担当者に初期のバージョンのアプリをアップロードするために使います。
+- **[ベータ]** &ndash; 多数のテスト担当者に初期のバージョンのアプリをアップロードするために使います。
+- **[Production]\(製品版\)** &ndash; Google Play ストアへの完全な配布で使います。
+- **[Custom]\(カスタム\)** &ndash; テスト担当者のリストをメール アドレスで作成し、特定のユーザーがアプリのプレリリース バージョンをテストするために使います。
 
-アプリのアップロードに使う Google Play トラックを選び、 **[アップロード]** をクリックします。 **[ロールアウト]** を選ぶ場合は、割合の値を入力します。
+アプリのアップロードに使う Google Play トラックを選び、 **[アップロード]** をクリックします。
 
-[![[アルファ]、[ベータ]、[ロールアウト]、[実稼働] の選択](images/vs/08-google-play-track-sml.png)](images/vs/08-google-play-track.png#lightbox)
+[![Google Play アカウントに追加されたアカウント](images/vs/08-google-play-track-sml.png)](images/vs/07-account-added.png#lightbox)
 
-Google Play のテストおよび段階的なロールアウトの詳細については、「[Set up alpha/beta tests](https://support.google.com/googleplay/android-developer/answer/3131213?hl=en)」(アルファ/ベータ テストの設定) をご覧ください。
+Google Play テストの詳細については、「[Set up open/closed/internal tests](https://support.google.com/googleplay/android-developer/answer/3131213?hl=en)」(オープン/クローズド/内部テストを設定する) を参照してください。
 
 次に、署名証明書のパスワードを入力するダイアログが表示されます。
 パスワードを入力して、 **[OK]** をクリックします。
@@ -251,6 +253,8 @@ Google Play のテストおよび段階的なロールアウトの詳細につ�
 
 ### <a name="troubleshooting"></a>トラブルシューティング
 
+Google Play トラックを選択するときにカスタム トラックが表示されない場合は、Google Play Developer Console でそのトラックのリリースを作成していることを確認してください。 リリースを作成する方法については、「[Prepare & roll out releases](https://support.google.com/googleplay/android-developer/answer/7159011?hl=en)」(リリースの準備とロールアウト) を参照してください。
+
 **[Google Play に公開する]** が機能するには、Google Play ストアに APK が 1 つ既に送信されている必要があることに注意してください。 APK がまだアップロードされていない場合、公開ウィザードの **[エラー]** ウィンドウに次のエラーが表示されます。
 
 [![このアプリの最初の APK を手動でアップロードする必要があります](images/vs/12-upload-error-sml.png)](images/vs/12-upload-error.png#lightbox)
@@ -261,40 +265,42 @@ Google Play のテストおよび段階的なロールアウトの詳細につ�
 
 このエラーを解決するには、異なるバージョン番号でアプリを再ビルドし、 **[配布チャネル]** ダイアログを使って Google Play に再送信します。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 クライアント ID とクライアント シークレットを使って、Visual Studio for Mac の **[Google Play API アカウント]** ダイアログを設定します。 アカウントの説明を入力できます。そうすれば、複数の Google Play アカウントを登録し、後で異なる Google Play アカウントに APK をアップロードできます。 クライアント ID とクライアント シークレットをこのダイアログにコピーし、 **[登録]** をクリックします。
 
-[![アクセス承認ダイアログ](images/xs/10-register-sml.png)](images/xs/10-register.png#lightbox)
+[![アクセス承認ダイアログ](images/xs/03-register-sml.png)](images/xs/03-register.png#lightbox)
 
 クライアント ID とクライアント シークレットが受け入れられた場合は、"**登録に成功しました**" というメッセージが表示されます。 **[次へ]** をクリックします。
 
-[![登録成功メッセージ](images/xs/11-registration-successful-sml.png)](images/xs/11-registration-successful.png#lightbox)
+[![登録成功メッセージ](images/xs/04-registration-successful-sml.png)](images/xs/04-registration-successful.png#lightbox)
 
 **[Google Play アカウント]** ダイアログで、Google アカウントと、アプリケーションのアップロードのトラックを選びます。
 
-[![Google アカウント選択ダイアログ](images/xs/12-choose-google-account-sml.png)](images/xs/12-choose-google-account.png#lightbox)
+[![Google アカウント選択ダイアログ](images/xs/05-choose-google-account-sml.png)](images/xs/05-choose-google-account.png#lightbox)
 
-Google Play では、4 種類のアプリのアップロードのトラックが提供されています。
+Google Play では、5 種類のアプリのアップロードのトラックが提供されています。
 
-- **[アルファ]** &ndash; 少数のテスト担当者一覧にごく初期のバージョンのアプリをアップロードするために使います。
+- **[Internal]\(内部\)** &ndash; 内部テストおよび品質保証チェックでアプリを迅速に配布するために使います。
+- **[アルファ]** &ndash; 少数のテスト担当者に初期のバージョンのアプリをアップロードするために使います。
+- **[ベータ]** &ndash; 多数のテスト担当者に初期のバージョンのアプリをアップロードするために使います。
+- **[Production]\(製品版\)** &ndash; Google Play ストアへの完全な配布で使います。
+- **[Custom]\(カスタム\)** &ndash; テスト担当者のリストをメール アドレスで作成し、特定のユーザーがアプリのプレリリース バージョンをテストするために使います。
 
-- **[ベータ]** &ndash; 多数のテスト担当者一覧に初期のバージョンのアプリをアップロードするために使います。
-
-- **[ロールアウト]** &ndash; ある割合のユーザーが、アプリの更新バージョンを受け取れます。たとえば、10% のユーザーから始めて、バグを解決しながら 100% のユーザーまで割合をゆっくり増やすことができます。
-
-- **[実稼働]** &ndash; アプリが Google Play ストアから完全に配布できる状態のときは、このトラックを選びます。
-
-Google Play のテストおよび段階的なロールアウトの詳細については、「[Set up alpha/beta tests](https://support.google.com/googleplay/android-developer/answer/3131213?hl=en)」(アルファ/ベータ テストの設定) をご覧ください。
+Google Play のテストの詳細については、「[Set up alpha/beta tests](https://support.google.com/googleplay/android-developer/answer/3131213?hl=en)」(アルファ/ベータ テストの設定) をご覧ください。
 
 次に、アプリの署名に使用される署名 ID を選択します。
 既存の署名 ID を使用する場合は **[既存のキーを使用]** を選択します。それ以外の場合は、「[新しい証明書の作成](~/android/deploy-test/signing/index.md#newcert)」ガイドで新しいキーの作成方法をご覧ください。 アプリケーションに署名する証明書を選んだ後、 **[次へ]** をクリックします。
 
-[![[Android の署名の識別情報] ダイアログ](images/xs/13-android-signing-identity-sml.png)](images/xs/13-android-signing-identity.png#lightbox)
+[![[Android の署名の識別情報] ダイアログ](images/xs/06-android-signing-identity-sml.png)](images/xs/06-android-signing-identity.png#lightbox)
 
 この時点で、アプリを Google Play にアップロードできます。 **[Google Play に公開する]** ダイアログに、アプリに関する情報の要約が表示されます。 **[公開]** をクリックして、Google Play にアプリを公開します。
 
-[![[Google Play に公開する] ダイアログ](images/xs/14-publish-to-google-play-sml.png)](images/xs/14-publish-to-google-play.png#lightbox)
+[![[Google Play に公開する] ダイアログ](images/xs/07-publish-to-google-play-sml.png)](images/xs/07-publish-to-google-play.png#lightbox)
+
+### <a name="troubleshooting"></a>トラブルシューティング
+
+アプリをアップロードする Google Play トラックを選択するときにカスタム トラックが表示されない場合は、Google Play Developer Console でそのトラックのリリースを作成していることを確認してください。 リリースを作成する方法については、「[Prepare & roll out releases](https://support.google.com/googleplay/android-developer/answer/7159011?hl=en)」(リリースの準備とロールアウト) を参照してください。
 
 **[Google Play に公開する]** が機能するには、Google Play ストアに APK が 1 つ既に送信されている必要があることに注意してください。 APK がアップロードされていない場合、次のエラーが発生する可能性があります。
 

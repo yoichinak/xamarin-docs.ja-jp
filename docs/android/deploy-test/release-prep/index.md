@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2018
-ms.openlocfilehash: 8c21895918e4d4ac9a82804d4b140fbf7bf798fe
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: c9c6816115d89212ea720f027d51af6c990cfe8d
+ms.sourcegitcommit: 7fd88ada5b44a62390fe1a73ef08014e4d236a2d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79303523"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80261311"
 ---
 # <a name="preparing-an-application-for-release"></a>リリースに向けてアプリケーションを準備する
 
@@ -27,7 +27,7 @@ ms.locfileid: "79303523"
 
 - **[アプリケーションを保護する](#protect_app)** &ndash; ユーザーや攻撃者によるアプリケーションのデバッグ、改ざん、またはリバース エンジニアリングを防ぐために、デバッグを無効化し、マネージド コードを難読化し、アンチデバッグと改ざん防止を追加し、ネイティブ コンパイルを使用します。
 
-- **[パッケージング プロパティを設定する](#Set_Packaging_Properties)** &ndash; パッケージング プロパティは、Android アプリケーション パッケージ (APK) の作成を制御します。 この手順は APK を最適化し、そのアセットを保護し、必要に応じてパッケージをモジュール化します。
+- **[パッケージング プロパティを設定する](#Set_Packaging_Properties)** &ndash; パッケージング プロパティは、Android アプリケーション パッケージ (APK) の作成を制御します。 この手順は APK を最適化し、そのアセットを保護し、必要に応じてパッケージをモジュール化します。 さらに、デバイス用に最適化された Android App Bundle をユーザーに提供することもできます。
 
 - **[コンパイルする](#Compile)** &ndash; このステップはコードとアセットをコンパイルし、リリース モードでビルドされることを確認します。
 
@@ -268,6 +268,16 @@ _LLVM 最適化コンパイラ_では、より小さく高速なコンパイル�
 参照されるすべてのライブラリのすべてのメソッドをアプリが使用していない場合があるため、ProGuard (上記参照) などのツールを使用して、未使用のメソッドをコードから削除することができます。 **[Multi-Dex を有効にする]** は本当に必要な場合にのみ有効にすることをお勧めします。たとえば、ProGuard を使用してもアプリが 65K を超える Java メソッドを参照する場合などです。
 
 Multi-Dex の詳細については、「[64K を超えるメソッドを使用するアプリの設定](https://developer.android.com/tools/building/multidex.html)」を参照してください。
+
+### <a name="android-app-bundles"></a>Android App Bundle
+
+App Bundle は、デバイスに直接配置できないため、APK とは異なります。 この形式は、コンパイル済みのすべてのコードとリソースと共にアップロードすることを目的としています。 署名済みアプリ バンドルをアップロードすると、アプリケーションの APK をビルドして署名し、動的配信を使用してユーザーに提供するために必要なすべてのものが Google Play に与えられます。
+
+Android App Bundle のサポートを有効にするには、Android プロジェクト オプション内の **[Android パッケージ形式]** プロパティの `bundle` 値をオプトインする必要があります。 アプリ バンドルはリリース パッケージのみを対象としているため、これを行う前に、プロジェクトを必ず `Release` 構成に変更してください。
+
+これで、[アーカイブ フロー](#archive)に従って、アプリ バンドルを生成できるようになりました。 これで、アプリケーションのアプリ バンドルが生成されます。
+
+Android App Bundle の詳細については、「[Android App Bundle について](https://developer.android.com/guide/app-bundle/)」を参照してください。
 
 <a name="Compile" />
 
