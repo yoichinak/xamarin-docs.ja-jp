@@ -649,7 +649,7 @@ public Foo (NSCoder coder)
 
 #### <a name="exceptions"></a>例外
 
-Xamarin.iOS API デザインでは、Objective-C 例外が C# 例外として発生しません。 このデザインでは、第一に Objective-C の領域にガベージが送信されません。そして、生成しなければならない例外があれば、無効なデータが Objective-C の領域に渡される前にそれが生成されます。
+Xamarin.iOS API デザインでは、Objective-C の例外が C# の例外として発生することはありません。 設計上、そもそも Objective-C の領域にガベージが送信されません。そして、生成しなければならない例外があれば、無効なデータが Objective-C の領域に渡される前に、バインディング自体によって強制的に例外が生成されます。
 
 #### <a name="notifications"></a>通知
 
