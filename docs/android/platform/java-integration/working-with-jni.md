@@ -665,7 +665,7 @@ public class Adder : Java.Lang.Object {
 
 1. `[Register]` カスタム属性を持っている
 
-1. `RegisterAttribute.DoNotGenerateAcw` は `true` です
+1. `RegisterAttribute.DoNotGenerateAcw` が `true` である
 
 この場合、GC との相互作用のため、型には、実行時に `Java.Lang.Object` または `Java.Lang.Object` サブクラスを参照する可能性のあるフィールドが "*存在しないようにする必要があります*"。 たとえば、`System.Object` 型およびすべてのインターフェイス型のフィールドは許可されません。 `System.String` や `List<int>` など、`Java.Lang.Object` インスタンスを参照できない型は許可されます。 この制限は、GC によってオブジェクトが早期に収集されないようにするためです。
 
