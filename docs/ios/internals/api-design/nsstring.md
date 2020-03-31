@@ -18,7 +18,7 @@ ms.locfileid: "73022349"
 
 Xamarin.iOS と Xamarin.Mac のどちらの設計でも、API を使用して、C# と他の .NET プログラミング言語での文字列操作のためにネイティブの .NET 文字列型である`string` が公開されます。 `NSString` データ型ではなく API によって公開されるデータ型として `string` が公開されます。
 
-つまり、開発者は、特殊な型 (`Foundation.NSString`) で Xamarin.iOS および Xamarin.Mac の API (統一) の呼び出しに使用するための文字列を保持する必要はなく、すべての操作に Mono の `System.String` を使用し続けることができます。また、Xamarin.iOS または Xamarin.Mac の API で文字列が必要なときはいつでも、API バインドによって情報のマーシャリングが行われます。
+つまり、開発者は、特殊な型 (`Foundation.NSString`) で Xamarin.iOS および Xamarin.Mac の API (Unified) の呼び出しに使用するための文字列を保持する必要はなく、すべての操作に Mono の `System.String` を使用し続けることができます。また、Xamarin.iOS または Xamarin.Mac の API で文字列が必要なときはいつでも、API バインドによって情報のマーシャリングが行われます。
 
 たとえば、`NSString` 型の `UILabel` での Objective-C の "text" プロパティは、次のように宣言されます。
 
