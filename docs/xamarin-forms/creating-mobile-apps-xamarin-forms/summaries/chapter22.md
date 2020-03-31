@@ -1,6 +1,6 @@
 ---
-title: 第 22 章アニメーションの概要 アニメーション
-description: 'Xamarin.Forms でモバイル アプリを作成する: 第 22 章アニメーションの概要 アニメーション'
+title: 第 22 章アニメーションの概要 Animation
+description: 'Xamarin.Forms でモバイル アプリを作成する: 第 22 章アニメーションの概要 Animation'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 47C2B9AB-E688-4412-8AF5-9F633B3DA695
@@ -14,7 +14,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 03/10/2020
 ms.locfileid: "70770995"
 ---
-# <a name="summary-of-chapter-22-animation"></a>第 22 章アニメーションの概要 アニメーション
+# <a name="summary-of-chapter-22-animation"></a>第 22 章アニメーションの概要 Animation
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22)
 
@@ -188,7 +188,7 @@ Xamarin.Forms アニメーション システムには、少しわかりにく�
 
 標準コレクションに含まれていないアニメーションの 1 つに、カラー アニメーションがありす。 問題は、2 つの `Color` 値を補間する適切な方法がないことです。 個々の RGB 値を補間することはできますが、HSL 値を補間することも有効です。
 
-このため、[**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリの [`MoreViewExtensions`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs) クラスには、2 つの `Color` アニメーション メソッド [`RgbColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L166) および [`HslColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L188) が含まれています (2 つのキャンセル メソッド [`CancelRgbColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L183) および [`CancelHslColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L206) もあります)。
+このため、[**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリの [`MoreViewExtensions`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs) クラスには、2 つの `Color` アニメーション メソッド [`RgbColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L166) および [`HslColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L188) が含まれています  (2 つのキャンセル メソッド [`CancelRgbColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L183) および [`CancelHslColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L206) もあります)。
 
 どちらのメソッドでも [`ColorAnimation`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/MoreViewExtensions.cs#L211) を利用し、[`AnimationExtensions`](xref:Xamarin.Forms.AnimationExtensions) で広範なジェネリック [`Animate`](xref:Xamarin.Forms.AnimationExtensions.Animate*) メソッドを呼び出すことでアニメーションを実行します。
 
