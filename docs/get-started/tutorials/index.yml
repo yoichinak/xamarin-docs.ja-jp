@@ -29,7 +29,7 @@ landingContent:
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: group1
+    - text: ラベル
       url: label/index.yml
     - text: Button
       url: button/index.yml
