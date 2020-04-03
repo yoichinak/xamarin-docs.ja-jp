@@ -47,7 +47,7 @@
           items:
             - name: スタック レイアウト
               href: ~/get-started/tutorials/stacklayout/index.yml
-            - name: group1
+            - name: ラベル
               href: ~/get-started/tutorials/label/index.yml
             - name: Button
               href: ~/get-started/tutorials/button/index.yml
@@ -380,7 +380,7 @@
               href: user-interface/boxview.md
             - name: Image
               href: user-interface/images.md
-            - name: group1
+            - name: ラベル
               href: user-interface/text/label.md
             - name: マップ
               items:

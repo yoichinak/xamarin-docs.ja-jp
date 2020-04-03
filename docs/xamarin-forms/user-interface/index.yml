@@ -43,7 +43,7 @@ landingContent:
       url: boxview.md
     - text: Image
       url: images.md
-    - text: group1
+    - text: ラベル
       url: text/label.md
     - text: マップ
       url: map/index.md
