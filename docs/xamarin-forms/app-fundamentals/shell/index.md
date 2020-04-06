@@ -22,7 +22,7 @@ Xamarin.Forms シェルでは、ほとんどのモバイル アプリケーシ�
 
 ## <a name="create-a-xamarinforms-shell-applicationcreatemd"></a>[Xamarin.Forms シェル アプリケーションを作成する](create.md)
 
-Xamarin.Forms シェル アプリケーションを作成するプロセスは、`Shell` クラスをサブクラス化し、アプリケーションの `App` クラスの `MainPage` プロパティにサブクラス化した `Shell` オブジェクトを設定した後に、サブクラス化した `Shell` クラスにアプリケーションのビジュアル階層を記述する XAML ファイルを作成することです。
+Xamarin.Forms シェル アプリケーションを作成するプロセスは、`Shell` クラスをサブクラス化した XAML ファイルを作成し、アプリケーションの `App` クラスの `MainPage` プロパティにサブクラス化した `Shell` オブジェクトを設定した後に、サブクラス化した `Shell` クラスにアプリケーションのビジュアル階層を記述することです。
 
 ## <a name="flyoutflyoutmd"></a>[ポップアップ](flyout.md)
 
