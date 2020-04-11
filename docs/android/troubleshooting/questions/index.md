@@ -51,7 +51,7 @@ Windows で開発しているときに Android デバイスでデバッグを行
 
 ### <a name="how-do-i-automate-an-android-nunit-test-project"></a>[Android NUnit テスト プロジェクトを自動化する方法を教えてください](automate-android-nunit-test.md)
 
-このガイドでは、Xamarin.UITest プロジェクト_ではなく_、Android NUnit テスト プロジェクトを設定する手順について説明します。 Xamarin.UITest のガイドについては、[こちら](/appcenter/test-cloud/preparing-for-upload)をご覧ください。
+このガイドでは、Xamarin.UITest プロジェクト _ではなく_ 、Android NUnit テスト プロジェクトを設定する手順について説明します。 Xamarin.UITest のガイドについては、[こちら](/appcenter/test-cloud/preparing-for-upload)をご覧ください。
 
 ### <a name="why-cant-my-android-release-build-connect-to-the-internet"></a>[Android のリリース ビルドがインターネットに接続できないのはなぜですか](android-internet.md)
 
