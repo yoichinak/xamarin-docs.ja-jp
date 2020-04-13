@@ -1,64 +1,64 @@
 ---
-title: Android レイアウトの診断
-description: Android レイアウトの診断と開始方法について説明します。
+title: アンドロイドレイアウト診断
+description: Android レイアウト診断と開始方法について説明します。
 ms.prod: xamarin
 ms.assetid: BD252EA7-7E69-4DB4-96AB-D52CC0510C8F
 ms.technology: xamarin-android
 author: decriptor
 ms.author: stepsha
 ms.date: 03/24/2020
-ms.openlocfilehash: 5c29a1a80d8c1f599f0bbc750d22d8334ddb3494
-ms.sourcegitcommit: d83c6af42ed26947aa7c0ecfce00b9ef60f33319
+ms.openlocfilehash: 746f74e68fa4816f1f7979980af9506dc0173542
+ms.sourcegitcommit: 765b69ed451a0f48625ea597c3f39de95f3ae693
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80247816"
+ms.lasthandoff: 04/09/2020
+ms.locfileid: "80987583"
 ---
-# <a name="android-layout-diagnostics"></a>Android レイアウトの診断
+# <a name="android-layout-diagnostics"></a>アンドロイドレイアウト診断
 
-Android レイアウト診断は、一般的な品質の問題や便利な最適化を強調することで、Android レイアウトファイルの品質向上に役立つように設計されています。 この機能は、Visual Studio 16.5 + と Visual Studio for Mac 8.5 + の両方で使用できます。
+Android レイアウト診断は、一般的な品質の問題と役に立つ最適化を強調することにより、Android レイアウト ファイルの品質を向上させるために設計されています。 この機能は、Visual Studio 16.5+ と Mac 8.5+ 用の両方で使用できます。
 
-さまざまな問題に対して既定のアナライザーのセットが用意されており、それぞれをカスタマイズして、プロジェクト固有のニーズに対応することができます。 アナライザーは、Android のシステムに大まかに基づいています。
+問題の広い範囲に対して、デフォルトのアナライザーセットが用意されており、プロジェクト固有のニーズに合わせてカスタマイズできます。 アナライザーは、Androidのリンティングシステムに基づいています。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ## <a name="enable-android-layout-diagnostics-on-visual-studio-2019"></a>Visual Studio 2019 で Android レイアウト診断を有効にする
 
-レイアウト診断設定 **[レイアウト診断を有効にする]** が有効になっていることを確認してください。 このオプションページにアクセスするには、 **[ツール]**  >  **[オプション]** の順に選択し、 **[テキストエディター]**  > [ **Android XML** > **詳細設定**] を選択します。
+レイアウト診断設定の [**レイアウト診断を有効にする**] が有効になっていることを確認します。 このオプション ページにアクセスするには、[**ツール** > **オプション]** を選択し、[**テキスト エディター** > **の Android XML** > **詳細設定**] を選択します。
 
-![診断オプションを有効にする方法を示す [オプション] ダイアログ](diagnostics-images/AndroidDiagnosticsEnableOption.png)
+![診断オプションを有効にする方法を示すオプション ダイアログ](diagnostics-images/AndroidDiagnosticsEnableOption.png)
 
-有効にすると、Android レイアウトエディターに問題が表示されます。
+有効にすると、Android レイアウト エディターに問題が表示されます。
 
-![Visual Studio 2019 で有効になっている Android 診断](diagnostics-images/AndroidDiagnosticsEnabled.png)
+![Visual Studio 2019 で有効な Android 診断](diagnostics-images/AndroidDiagnosticsEnabled.png)
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-## <a name="enable-android-layout-diagnostics-on-visual-studio-for-mac"></a>Visual Studio for Mac で Android レイアウト診断を有効にする
+## <a name="enable-android-layout-diagnostics-on-visual-studio-for-mac"></a>Mac 用の Visual Studio で Android レイアウト診断を有効にする
 
-レイアウト診断設定 **[レイアウト診断を有効にする]** が有効になっていることを確認してください。 このオプションページにアクセスするには、[ **Visual Studio** > の**基本設定...** ] を選択し、[**テキストエディター** > **Android XML**] を選択します。
+レイアウト診断設定の [**レイアウト診断を有効にする**] が有効になっていることを確認します。 このオプション ページにアクセスするには **、[Visual Studio** > **Text Editor** > **Android XML****の基本設定.**
 
-![診断オプションを有効にする方法を示す [基本設定] ダイアログ](diagnostics-images/AndroidDiagnosticsEnableOptionVSmac.png)
+![診断オプションを有効にする方法を示す環境設定ダイアログ](diagnostics-images/AndroidDiagnosticsEnableOptionVSmac.png)
 
-有効にすると、Android レイアウトエディターに問題が表示されます。
+有効にすると、Android レイアウト エディターに問題が表示されます。
 
-![Visual Studio for Mac で有効になっている Android 診断](diagnostics-images/AndroidDiagnosticsEnabledVSmac.png)
+![Mac 用の Visual Studio で有効になっている Android 診断](diagnostics-images/AndroidDiagnosticsEnabledVSmac.png)
 
 -----
 
-## <a name="features"></a>[機能]
+## <a name="features"></a>特徴
 
-以下のセクションでは、Android レイアウト診断で使用できる機能の概要を説明します。
+次のセクションでは、Android レイアウト診断で使用可能な機能の概要を説明します。
 
 ### <a name="analyzers"></a>アナライザー
 
-アナライザーは、レイアウトファイルの問題を検出するために使用されます。 ハードコードされた値を減らす方法、パフォーマンスを向上させる方法、エラーにフラグを付ける方法があります。
+アナライザーは、レイアウト ファイルの問題の検出、ハードコードされた値の削減、パフォーマンスの向上、およびエラーのフラグの設定に使用されます。 アナライザーの一覧については[、Android デザイナーの診断アナライザーを](diagnostic-analyzers.md)参照してください。
 
 ### <a name="diagnostic-configuration"></a>診断構成
 
-アナライザーは XML ファイルを使用して構成できます。これにより、既定の重大度レベルを変更し、特定のファイルを無視して、変数を渡すことができます。
+アナライザーは XML ファイルを使用して構成できるため、デフォルトの重大度レベルの変更、特定のファイルの無視、変数の受け渡しを行うことができます。
 
-複数の Android アプリ間で共有する一連の構成がある場合は、ベースラインファイルを使用できます。 この機能を使用するには、新しい構成ファイルを作成し、ファイル名に `-baseline` を追加します。 ベースライン構成が最初に適用され、その後、残りの構成ファイルが適用されます。
+複数の Android アプリで共有する構成のセットがある場合は、ベースライン ファイルを使用できます。 この機能を使用するには、新しい構成ファイルを作成`-baseline`し、ファイル名に追加します。 最初にベースライン構成が適用され、次に残りの構成ファイルが適用されます。
 
 > [!TIP]
 > これは、新規または既存の Android アプリで一連の問題を無視する場合に便利です。
@@ -85,7 +85,7 @@ Android レイアウト診断は、一般的な品質の問題や便利な最適
 ```
 
 > [!NOTE]
-> 現在、唯一の変数は `MAX_VIEW_COUNT` (既定値:80) で、`MAX_DEPTH` (既定:10) が `TooManyViews` と `TooDeepLayout` にそれぞれ使用されます。
+> 現在、`MAX_VIEW_COUNT`変数は(デフォルト: 80)`MAX_DEPTH`と (デフォルト: 10)`TooManyViews`と`TooDeepLayout`の変数だけです。
 
 重大度レベルは次のとおりです。
 
@@ -97,21 +97,21 @@ Android レイアウト診断は、一般的な品質の問題や便利な最適
 
 ### <a name="add-a-configuration-file"></a>構成ファイルを追加する
 
-Android アプリプロジェクトのルートに新しい XML ファイルを作成します。 ファイル名は重要ではありませんが、この例では `AndroidLayoutDiagnostics.xml`を使用します。
+Android アプリ プロジェクトのルートに新しい XML ファイルを作成します。 ファイルの名前は重要ではありませんが、この例では次のコードを`AndroidLayoutDiagnostics.xml`使用します。
 
 ![新しい項目の追加](diagnostics-images/AndroidDiagnosticsNewFileDialog.png)
 
-新しい XML ファイルが追加されると、Android アプリプロジェクトツリーに表示されます。
+新しい XML ファイルが追加されると、Android アプリのプロジェクト ツリーに表示されます。
 
-![Android アプリプロジェクトツリー](diagnostics-images/AndroidDiagnosticsFileAddToTree.png)
+![アンドロイドアプリプロジェクトツリー](diagnostics-images/AndroidDiagnosticsFileAddToTree.png)
 
-プロパティ パネルで、ビルド アクションが  **AndroidResourceAnalysisConfig** に設定されていることを確認します。
-新しいファイルのプロパティパネルをプルする最も簡単な方法は、ファイルを右クリックし、[プロパティ] を選択することです。 [プロパティ] パネルが表示されたら、**ビルドアクション**を**AndroidResourceAnalysisConfig**に変更する必要があります。
+ビルド アクションがプロパティ パネルで **[AndroidResourceAnalysisConfig]** に設定されていることを確認します。
+新しいファイルのプロパティ パネルを表示する最も簡単な方法は、ファイルを右クリックしてプロパティを選択することです。 プロパティ パネルが表示されたら、**ビルド アクション**を変更する必要**があります**。
 
-![項目のプロパティでのビルドアクションの設定](diagnostics-images/AndroidDiagnosticsSetBuildAction.png)
+![アイテムプロパティでのビルド アクションの設定](diagnostics-images/AndroidDiagnosticsSetBuildAction.png)
 
-空の XML ファイルを作成したので、`<configuration>` ルート要素を追加する必要があります。 この時点で、サポートされている問題の既定の動作を調整できます。
-ハードコーディングされた文字列がエラーとして扱われるようにするには、次のように追加します。
+空の XML ファイルが作成できたので、`<configuration>`ルート要素を追加する必要があります。 この時点で、サポートされている問題の既定の動作を調整できます。
+ハードコードされた文字列がエラーとして扱われるようにしたい場合は、次のように追加します。
 
 ```xml
 <issue="HardcodedText" severity="error">
@@ -120,26 +120,26 @@ Android アプリプロジェクトのルートに新しい XML ファイルを�
 
 ![診断構成ファイル](diagnostics-images/AndroidDiagnosticsConfigurationFileExample.png)
 
-ハードコーディングされたテキストはエラーと見なされるようになったので、次はレイアウトエディターで赤い波線でフラグが設定されています。
+ハードコードされたテキストがエラーと見なされるようになりましたが、レイアウトエディタで赤い波線でフラグが付けられます。
 
 ![診断構成を使用したレイアウト](diagnostics-images/AndroidDiagnosticsUsingConfiguration.png)
 
 > [!NOTE]
-> 新しい構成ファイルの変更が有効になるようにするには、現在開いているすべてのレイアウトファイルを再度開く必要があります。
+> 新しい構成ファイルの変更を有効にするには、現在開いているレイアウト ファイルを再び開く必要があります。
 >
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 
-いくつかの一般的な問題を次に示します。
+考えられる一般的な問題を次に示します。
 
-- XML 形式のエラーがないことを確認します。
-- ビルドアクションは**AndroidResourceAnalysisConfig**に正しく設定されています。
+- XML 形式エラーがないことを確認してください。
+- ビルド アクションが正しく設定**されている。**
 
 ## <a name="known-issues"></a>既知の問題
 
-- エラーパッドは、ファイルが最初に変更されるまで設定されません。
+- エラー パッドは、ファイルが最初に変更されるまで設定されません。
 
 ## <a name="related-links"></a>関連リンク
 
-- [Android のけばチェック](http://tools.android.com/tips/lint-checks)
-- [糸くずによるチェックでコードを改良する](https://developer.android.com/studio/write/lint)
+- [アンドロイドリントチェック](http://tools.android.com/tips/lint-checks)
+- [lint チェックでコードを改善する](https://developer.android.com/studio/write/lint)
