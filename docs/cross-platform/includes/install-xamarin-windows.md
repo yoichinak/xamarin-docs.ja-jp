@@ -7,7 +7,7 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 01/23/2020
 ms.locfileid: "70206231"
 ---
-以下の手順に従って、Xamarin を_新しい_ Visual Studio 2017 のインストールの一部としてインストールできます。
+以下の手順に従って、Xamarin を _新しい_ Visual Studio 2017 のインストールの一部としてインストールできます。
 
 1. [Visual Studio](https://visualstudio.microsoft.com/vs/) ページから、Visual Studio 2017 Community、Visual Studio Professional、または Visual Studio Enterprise をダウンロードします (ダウンロード リンクは下部にあります)。
 
