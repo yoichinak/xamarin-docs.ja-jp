@@ -78,14 +78,14 @@ Android SDK の場所を設定するには、 **[Android SDK の場所]** の右
 
 ### <a name="tools-tab"></a>[ツール] タブ
 
-**[ツール]** タブには_ツール_と_その他_の一覧が表示されます。 Android SDK のツール、プラットフォーム ツールおよびビルド ツールをインストールするには、このタブを使用します。
+**[ツール]** タブにはツールとその他の一覧が表示されます。Android SDK のツール、プラットフォーム ツールおよびビルド ツールをインストールするには、このタブを使用します。
 また、Android Emulator、低レベル デバッガー (LLDB)、NDK HAXM アクセラレータ、および Google Play ライブラリをインストールすることもできます。
 
 たとえば、Google Android Emulator パッケージをダウンロードするには、 **[Android Emulator]** の横のチェック マークをクリックし、 **[変更の適用]** ボタンをクリックします。
 
 [![[ツール] タブからの Android Emulator のインストール](android-sdk-images/win/06-install-emulator-sml.png)](android-sdk-images/win/06-install-emulator.png#lightbox)
 
-ダイアログに_次のパッケージでは、インストールする前にライセンス条項に同意することが必要です_というメッセージが表示される場合があります。
+ダイアログに _次のパッケージでは、インストールする前にライセンス条項に同意することが必要です_ というメッセージが表示される場合があります。
 
 ![[ライセンスの同意] 画面](android-sdk-images/win/07-license-acceptance.png)
 
@@ -168,14 +168,14 @@ Android SDK および Java JDK の場所を変更する場合、通常は **[場
 
 ### <a name="tools-tab"></a>[ツール] タブ
 
-**[ツール]** タブには_ツール_と_その他_の一覧が表示されます。 Android SDK のツール、プラットフォーム ツールおよびビルド ツールをインストールするには、このタブを使用します。
+**[ツール]** タブにはツールとその他の一覧が表示されます。Android SDK のツール、プラットフォーム ツールおよびビルド ツールをインストールするには、このタブを使用します。
 また、Android Emulator、低レベル デバッガー (LLDB)、NDK HAXM アクセラレータ、および Google Play ライブラリをインストールすることもできます。
 
 たとえば、Google Android Emulator パッケージをダウンロードするには、 **[Android Emulator]** の横のチェック マークをクリックし、 **[変更の適用]** ボタンをクリックします。
 
 [![[ツール] タブからの Android Emulator のインストール](android-sdk-images/mac/04-tools-tab-m75-sml.png)](android-sdk-images/mac/04-tools-tab-m75.png#lightbox)
 
-ダイアログに_次のパッケージでは、インストールする前にライセンス条項に同意することが必要です_というメッセージが表示される場合があります。
+ダイアログに _次のパッケージでは、インストールする前にライセンス条項に同意することが必要です_ というメッセージが表示される場合があります。
 
 [![[ライセンスの同意] 画面](android-sdk-images/mac/05-license-acceptance-m75-sml.png)](android-sdk-images/mac/05-license-acceptance-m75.png#lightbox)
 
