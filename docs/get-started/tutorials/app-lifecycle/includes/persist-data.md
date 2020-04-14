@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 5d9d5e4eb757d6afd1c13cb4851edd23feaa6e65
-ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "77135066"
 ---
 [`Application`](xref:Xamarin.Forms.Application) サブクラスには、ライフサイクルの状態の変化を通してデータを格納するために使用できる静的 [`Properties`](xref:Xamarin.Forms.Application.Properties) ディクショナリがあります。 このディクショナリでは、`string` キーが使用され、`object` 値が格納されます。 このディクショナリはデバイスに自動的に保存され、アプリケーションの再起動時にデータが再作成されます。
@@ -13,7 +13,7 @@ ms.locfileid: "77135066"
 
 この演習では、バックグラウンド処理時に [`Entry`](xref:Xamarin.Forms.Entry) のテキストを保持し、アプリケーションの再起動時にテキストを `Entry` に復元するようにアプリケーションを変更します。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. **ソリューション エクスプローラー**の **[AppLifecycleTutorial]** プロジェクトで、 **[App.xaml]** を展開し、 **[App.xaml.cs]** をダブルクリックして開きます。 次に、**App.xaml.cs** のテンプレート コードをすべて削除し、次のコードに置き換えます。
 
@@ -117,7 +117,7 @@ ms.locfileid: "77135066"
 
     プロパティ ディクショナリへのデータの永続化の詳細については、「[Xamarin.Forms App Class](~/xamarin-forms/app-fundamentals/application-class.md)」ガイドの「[Properties Dictionary](~/xamarin-forms/app-fundamentals/application-class.md#properties-dictionary)」(プロパティ ディクショナリ) をご覧ください。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. **Solution Pad** の **[AppLifecycleTutorial]** プロジェクトで、 **[App.xaml]** を展開し、 **[App.xaml.cs]** をダブルクリックして開きます。 次に、**App.xaml.cs** のテンプレート コードをすべて削除し、次のコードに置き換えます。
 

@@ -1,14 +1,14 @@
 ---
 ms.openlocfilehash: 90f3f9ff5ed29a1ae2c93e355fc15bc6550d78dd
-ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "77135132"
 ---
 この演習では、`RestService` クラスを使用し、その後、[OpenWeatherMap](https://openweathermap.org/) Web API からデータを取得するためのユーザー インターフェイスを作成します。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. **ソリューション エクスプローラー**の **[WebServiceTutorial]** プロジェクトで、 **[MainPage.xaml]** をダブルクリックして開きます。 次に、 **[MainPage.xaml]** のテンプレート コードをすべて削除し、次のコードに置き換えます。
 
@@ -128,7 +128,7 @@ ms.locfileid: "77135132"
     > [!IMPORTANT]
     > 個人用 OpenWeatherMap API キーは、`Constants` クラスの `OpenWeatherMapAPIKey` 定数値として設定する必要があります。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. **Solution Pad** の **[WebServiceTutorial]** プロジェクトで、 **[MainPage.xaml]** をダブルクリックして開きます。 次に、 **[MainPage.xaml]** のテンプレート コードをすべて削除し、次のコードに置き換えます。
 

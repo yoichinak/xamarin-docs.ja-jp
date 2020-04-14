@@ -1,12 +1,12 @@
 ---
 ms.openlocfilehash: 2185fa243d2bccea046be5c91a2b1e9ed365edfe
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "74062901"
 ---
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. **MainPage.xaml** で、[`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) イベントと [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) イベントのハンドラーを設定するように [`ListView`](xref:Xamarin.Forms.ListView) 宣言を変更します。
 
@@ -45,7 +45,7 @@ ms.locfileid: "74062901"
 
     項目の選択とタップに関する詳細は、「[ListView Interactivity](~/xamarin-forms/user-interface/listview/interactivity.md)」 (ListView インタラクティビティ) ガイドの「[Selection & Taps](~/xamarin-forms/user-interface/listview/interactivity.md#selection-and-taps)」 (選択とタップ) を参照してください。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. **MainPage.xaml** で、[`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) イベントと [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) イベントのハンドラーを設定するように [`ListView`](xref:Xamarin.Forms.ListView) 宣言を変更します。
 

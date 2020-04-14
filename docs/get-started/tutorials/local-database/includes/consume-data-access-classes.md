@@ -1,14 +1,14 @@
 ---
 ms.openlocfilehash: caee3eeda90a560f032c17657072ae5ba5023a69
-ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "77135104"
 ---
 この演習では、以前に作成したデータ アクセス クラスを使用するためのユーザー インターフェイスを作成します。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. **ソリューション エクスプローラー**の **[LocalDatabaseTutorial]** プロジェクトで、 **[MainPage.xaml]** をダブルクリックして開きます。 次に、 **[MainPage.xaml]** のテンプレート コードをすべて削除し、次のコードに置き換えます。
 
@@ -78,7 +78,7 @@ ms.locfileid: "77135104"
 
     Xamarin.Forms のローカル データベースの詳細については、[Xamarin.Forms のローカル データベース (ガイド)](~/xamarin-forms/data-cloud/data/databases.md) に関するページを参照してください
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. **Solution Pad** の **[LocalDatabaseTutorial]** プロジェクトで、 **[MainPage.xaml]** をダブルクリックして開きます。 次に、 **[MainPage.xaml]** のテンプレート コードをすべて削除し、次のコードに置き換えます。
 

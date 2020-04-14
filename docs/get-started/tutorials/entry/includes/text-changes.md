@@ -1,12 +1,12 @@
 ---
 ms.openlocfilehash: deb3516cc134a8b2eecba8460931003de8bb312f
-ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "77135109"
 ---
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. **[MainPage.xaml]** で、[`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) イベントと [`Completed`](xref:Xamarin.Forms.Entry.Completed) イベントのハンドラーを設定するように [`Entry`](xref:Xamarin.Forms.Entry) 宣言を変更します。
 
@@ -48,7 +48,7 @@ ms.locfileid: "77135109"
 
     [`Entry`](xref:Xamarin.Forms.Entry) イベントの詳細については、「[Xamarin.Forms Entry](~/xamarin-forms/user-interface/text/entry.md)」ガイドの「[Events and Interactivity](~/xamarin-forms/user-interface/text/entry.md#events-and-interactivity)」(イベントとインタラクティビティ) をご覧ください。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. **[MainPage.xaml]** で、[`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) イベントと [`Completed`](xref:Xamarin.Forms.Entry.Completed) イベントのハンドラーを設定するように [`Entry`](xref:Xamarin.Forms.Entry) 宣言を変更します。
 

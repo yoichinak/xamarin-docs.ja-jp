@@ -1,16 +1,16 @@
 ---
 ms.openlocfilehash: 3c88b71cea834f5e6ef20d43332904c052c6e3a6
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "61037626"
 ---
 以前は、データ バインディングを使用して [`ListView`](xref:Xamarin.Forms.ListView) にデータが取り込まれていました。 しかし、コレクション内の各オブジェクトが複数のデータ項目を定義しているコレクションへのデータ バインディングであるにもかかわらず、オブジェクトごとに単一のデータ項目のみ (`Monkey` オブジェクトの `Name` プロパティー) が表示されていました。
 
 この演習では、[`ListView`](xref:Xamarin.Forms.ListView) の各行に複数のデータ項目が表示されるように **ListViewTutorial** プロジェクトを変更します。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. **MainPage.xaml** で、[`ListView`](xref:Xamarin.Forms.Image) 宣言を変更して各行の外観をカスタマイズします。
 
@@ -60,7 +60,7 @@ ms.locfileid: "61037626"
 
     [![項目がデータ テンプレートでテンプレート化された ListView のスクリーンショット](../images/customize-cell-appearance.png "テンプレート化されたデータを表示する ListView")](../images/customize-cell-appearance-large.png#lightbox "テンプレート化されたデータを表示する ListView")
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. **MainPage.xaml** で、[`ListView`](xref:Xamarin.Forms.Image) 宣言を変更して各行の外観をカスタマイズします。
 

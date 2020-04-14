@@ -37,7 +37,7 @@
           href: quickstarts/multi-page.md
         - name: データベース
           href: quickstarts/database.md
-        - name: '[スタイル]'
+        - name: スタイル
           href: quickstarts/styling.md
         - name: Deep Dive
           href: quickstarts/deepdive.md

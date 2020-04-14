@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 93ee0681adcc63fe05b4be88ff67f0aeee3e03ca
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "61384584"
 ---
 イメージ ファイルをプラットフォーム プロジェクトに追加したり、Xamarin.Forms 共有コードから参照したりすることができます。 このイメージ配布方法は、イメージがプラットフォーム固有の場合に必要になります。例えば、異なるプラットフォームで異なる解像度を使用する場合や、わずかに異なるデザインを使用する場合などです。
@@ -16,7 +16,7 @@ ms.locfileid: "61384584"
 > [!IMPORTANT]
 > すべてのプラットフォームで単一のイメージを使用するには、*すべてのプラットフォームで同じファイル名を使用する必要があります*。また、ファイル名は有効な Android リソース名である必要があります (つまり、小文字、数字、アンダースコア、およびピリオドのみが許可されます)。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. **ソリューション エクスプローラー**の  **ImageTutorial.iOS** プロジェクトで、 **[資産カタログ]** を展開し、 **[資産]** をダブルクリックして開きます。 次に、 **[Assets.xcassets]** タブで **[プラス]** ボタンをクリックし、 **[イメージ セットの追加]** を選択します。
 
@@ -62,7 +62,7 @@ ms.locfileid: "61384584"
 
     ローカル イメージの詳細については、「[Images in Xamarin.Forms](~/xamarin-forms/user-interface/images.md)」ガイドの「[Local images](~/xamarin-forms/user-interface/images.md#local-images)」(ローカル イメージ) を参照してください。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. **Solution Pad** の**ImageTutorial.iOS** プロジェクトで、 **[Assets.xcassets]** をダブルクリックして開きます。 次に、 **[資産リスト]** で右クリックして **[新しいイメージ セット]** を選択します。
 
