@@ -150,7 +150,7 @@ Visual Studio for Mac は、Google Play にアプリを公開するための統�
 
 1. Google Play 開発者アカウントにサインインし、Google Play 開発者アカウントにリンクされた新しいプロジェクトを作成します。
 2. アプリを認証する "_OAuth クライアント_" を作成します。
-3. 結果の _クライアント ID_ と _クライアント シークレット_ を Visual Studio for Mac に入力します。
+3. 結果のクライアント ID とクライアント シークレットを Visual Studio for Mac に入力します。
 4. アカウントを Visual Studio for Mac に登録します。
 5. 証明書でアプリケーションに署名します。
 6. 署名されたアプリケーションを Google Play に公開します。
