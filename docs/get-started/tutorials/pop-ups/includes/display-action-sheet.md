@@ -1,15 +1,15 @@
 ---
 ms.openlocfilehash: 87eb021e6cc571a9a5522697cde2aa11ee991308
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "66193795"
 ---
 
 Xamarin.Forms には、アクション シートとして知られるモーダル ポップアップが用意されており、タスクの完了までユーザーをガイドするのに使用できます。 この演習では、[`Page`](xref:Xamarin.Forms.Page) クラスから [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) メソッドを使用して、タスクの完了までユーザーをガイドするアクション シートを表示します。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. **MainPage.xaml** で、アクション シートを表示する新しい [`Button`](xref:Xamarin.Forms.Button) 宣言を追加します。
 
@@ -43,7 +43,7 @@ Xamarin.Forms には、アクション シートとして知られるモーダ�
 
     アクション シートの表示に関する詳細は、「[Display Pop-ups (ポップアップの表示)](~/xamarin-forms/user-interface/pop-ups.md)」ガイドの「[Guide users through tasks (タスクを通じたユーザーのガイド)](~/xamarin-forms/user-interface/pop-ups.md#guide-users-through-tasks)」をご覧ください。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. **MainPage.xaml** で、アクション シートを表示する新しい [`Button`](xref:Xamarin.Forms.Button) 宣言を追加します。
 

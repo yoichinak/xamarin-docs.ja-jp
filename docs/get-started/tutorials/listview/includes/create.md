@@ -1,12 +1,12 @@
 ---
 ms.openlocfilehash: 28a0b894d6230810f99ffaec4b93d9d87120e30f
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "67277317"
 ---
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 このチュートリアルを完了するには、 **.NET によるモバイル開発**ワークロードがインストールされた、Visual Studio 2019 (最新リリース) が必要です。 さらに、iOS でチュートリアル アプリケーションを構築するには、ペアリング済みの Mac が必要になります。 Xamarin プラットフォームのインストールについては、「[Xamarin のインストール](~/get-started/installation/index.md)」を参照してください。 Mac ビルド ホストへの Visual Studio 2019 の接続については、「[Xamarin.iOS 開発のために Mac とペアリングする](~/ios/get-started/installation/windows/connecting-to-mac/index.md)」を参照してください。
 
@@ -42,13 +42,13 @@ ms.locfileid: "67277317"
     </ContentPage>
     ```
 
-    このコードでは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) の中の [`ListView`](xref:Xamarin.Forms.Image) から構成されるページのユーザー インターフェイスを宣言によって定義します。 [`ListView.ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) プロパティでは、表示する項目を指定します。これらは文字列の配列で定義されます。
+    このコードでは、[`ListView`](xref:Xamarin.Forms.Image) の中の [`StackLayout`](xref:Xamarin.Forms.StackLayout) から構成されるページのユーザー インターフェイスを宣言によって定義します。 [`ListView.ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) プロパティでは、表示する項目を指定します。これらは文字列の配列で定義されます。
 
 1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
     [![iOS および Android 上の ListView のスクリーンショット](../images/create-listview.png "データを表示する ListView")](../images/create-listview-large.png#lightbox "データを表示する ListView")
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 このチュートリアルを完了するには、iOS と Android のプラットフォームのサポートがインストールされた Visual Studio for Mac (最新リリース) が必要です。 さらに、Xcode (最新リリース) も必要になります。 Xamarin プラットフォームのインストールについて詳しくは、「[Xamarin のインストール](~/get-started/installation/index.md)」を参照してください。
 
@@ -84,7 +84,7 @@ ms.locfileid: "67277317"
     </ContentPage>
     ```
 
-    このコードでは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) の中の [`ListView`](xref:Xamarin.Forms.Image) から構成されるページのユーザー インターフェイスを宣言によって定義します。 [`ListView.ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) プロパティでは、表示する項目を指定します。これらは文字列の配列で定義されます。
+    このコードでは、[`ListView`](xref:Xamarin.Forms.Image) の中の [`StackLayout`](xref:Xamarin.Forms.StackLayout) から構成されるページのユーザー インターフェイスを宣言によって定義します。 [`ListView.ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) プロパティでは、表示する項目を指定します。これらは文字列の配列で定義されます。
 
 1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 

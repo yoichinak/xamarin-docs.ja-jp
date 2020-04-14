@@ -1,14 +1,14 @@
 ---
 ms.openlocfilehash: b11a5972c2aabace8a6991a82f5719f34450297d
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "67841437"
 ---
 この演習では、データ アクセス クラスを **LocalDatabaseTutorial**プロジェクト追加します。これは、人に関するデータをデータベースに保持するために使用されます。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. **ソリューション エクスプローラー**の **[LocalDatabaseTutorial]** プロジェクトで、`Person` という名前の新しいクラスをプロジェクトに追加します。 次に、**Person.cs** のテンプレート コードをすべて削除し、次のコードに置き換えます。
 
@@ -27,7 +27,7 @@ ms.locfileid: "67841437"
     }
     ```
 
-    このコードは、各人に関するデータをアプリケーションに格納する `Person` クラスを定義します。 データベース内の各 `Person` インスタンスが SQLite.NET によって付与される一意の ID 持つようにするため、`ID` プロパティが `PrimaryKey` と `AutoIncrement` の属性によってマークされます。
+    このコードは、各人に関するデータをアプリケーションに格納する `Person` クラスを定義します。 データベース内の各 `ID` インスタンスが SQLite.NET によって付与される一意の ID 持つようにするため、`PrimaryKey` プロパティが `AutoIncrement` と `Person` の属性によってマークされます。
 
 1. **ソリューション エクスプローラー**の **[LocalDatabaseTutorial]** プロジェクトで、`Database` という名前の新しいクラスをプロジェクトに追加します。 次に、**Database.cs** のテンプレート コードをすべて削除し、次のコードに置き換えます。
 
@@ -120,7 +120,7 @@ ms.locfileid: "67841437"
 
 1. エラーがないようにソリューションを構築してください。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. **Solution Pad** の **[LocalDatabaseTutorial]** プロジェクトで、`Person` という名前の新しいクラスをプロジェクトに追加します。 次に、**Person.cs** のテンプレート コードをすべて削除し、次のコードに置き換えます。
 
@@ -139,7 +139,7 @@ ms.locfileid: "67841437"
     }
     ```
 
-    このコードは、各人に関するデータをアプリケーションに格納する `Person` クラスを定義します。 データベース内の各 `Person` インスタンスが SQLite.NET によって付与される一意の ID 持つようにするため、`ID` プロパティが `PrimaryKey` と `AutoIncrement` の属性によってマークされます。
+    このコードは、各人に関するデータをアプリケーションに格納する `Person` クラスを定義します。 データベース内の各 `ID` インスタンスが SQLite.NET によって付与される一意の ID 持つようにするため、`PrimaryKey` プロパティが `AutoIncrement` と `Person` の属性によってマークされます。
 
 1. **Solution Pad** の **[LocalDatabaseTutorial]** プロジェクトで、`Database` という名前の新しいクラスをプロジェクトに追加します。 次に、**Database.cs** のテンプレート コードをすべて削除し、次のコードに置き換えます。
 

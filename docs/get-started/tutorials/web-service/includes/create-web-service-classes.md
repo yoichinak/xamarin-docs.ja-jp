@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 3b1603b6af5ebb5558c3cd764f41fdbe24351b9b
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "68669721"
 ---
 REST 要求は、Web ブラウザーがページの取得やサーバーへのデータ送信に使用するのと同じ HTTP 動詞を使用して HTTP 経由で行われます。 この演習では、GET 動詞を使用して [OpenWeatherMap](https://openweathermap.org/) Web API からデータを取得するクラスを作成します。 この Web API は、指定された場所の天気予報データを取得するために使用できます。 この Web API を使用するには、API キーにサインアップする必要があります。
@@ -11,7 +11,7 @@ REST 要求は、Web ブラウザーがページの取得やサーバーへの�
 > [!div class="nextstepaction"]
 > [API キーにサインアップする](https://home.openweathermap.org/users/sign_up)
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. **ソリューション エクスプローラー**の **[WebServiceTutorial]** プロジェクトで、`Constants` という名前の新しいクラスをプロジェクトに追加します。 次に、**Constants.cs** のテンプレート コードをすべて削除し、次のコードに置き換えます。
 
@@ -131,7 +131,7 @@ REST 要求は、Web ブラウザーがページの取得やサーバーへの�
 
 1. エラーがないようにソリューションを構築してください。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. **Solution Pad** の **[WebServiceTutorial]** プロジェクトで、`Constants` という名前の新しいクラスをプロジェクトに追加します。 次に、**Constants.cs** のテンプレート コードをすべて削除し、次のコードに置き換えます。
 

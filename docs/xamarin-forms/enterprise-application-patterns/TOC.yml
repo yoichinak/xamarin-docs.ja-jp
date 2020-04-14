@@ -14,7 +14,7 @@
       href: dependency-injection.md
     - name: 疎結合コンポーネント間の通信
       href: communicating-between-loosely-coupled-components.md
-    - name: ナビゲーション
+    - name: 「ナビゲーション」
       href: navigation.md
     - name: 検証
       href: validation.md

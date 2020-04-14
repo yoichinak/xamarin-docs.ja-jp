@@ -1,12 +1,12 @@
 ---
 ms.openlocfilehash: d1f7d209eaaca62a55b768646f51024609057a63
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "61372975"
 ---
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. **MainPage.xaml** で、[`Clicked`](xref:Xamarin.Forms.Button.Clicked) イベント用のハンドラーを設定するように [`Button`](xref:Xamarin.Forms.Button) 宣言を変更します。
 
@@ -37,7 +37,7 @@ ms.locfileid: "61372975"
 
     ボタン クリックの処理の詳細については、「[Xamarin.Forms Button](~/xamarin-forms/user-interface/button.md)」ガイドの「[Handling button clicks](~/xamarin-forms/user-interface/button.md#handling-button-clicks)」 (ボタン クリックの処理) を参照してください。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. **MainPage.xaml** で、[`Clicked`](xref:Xamarin.Forms.Button.Clicked) イベント用のハンドラーを設定するように [`Button`](xref:Xamarin.Forms.Button) 宣言を変更します。
 

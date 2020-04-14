@@ -1,14 +1,14 @@
 ---
 ms.openlocfilehash: 653d3677f96d7da78af61531c535b1b7db684e7e
-ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/11/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "77135108"
 ---
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
-1. **[MainPage.xaml]** で、[`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) イベントと [`Completed`](xref:Xamarin.Forms.Editor.Completed) イベントのハンドラーを設定するように [`Editor`](xref:Xamarin.Forms.Editor) 宣言を変更します。
+1. **[MainPage.xaml]** で、[`Editor`](xref:Xamarin.Forms.Editor) イベントと [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) イベントのハンドラーを設定するように [`Completed`](xref:Xamarin.Forms.Editor.Completed) 宣言を変更します。
 
     ```xaml
     <Editor Placeholder="Enter multi-line text here"
@@ -17,7 +17,7 @@ ms.locfileid: "77135108"
             Completed="OnEditorCompleted" />
     ```
 
-    このコードでは、[`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) イベントを `OnEditorTextChanged` という名前のイベント ハンドラーに設定し、[`Completed`](xref:Xamarin.Forms.Editor.Completed) イベントを `OnEditorCompleted` という名前のイベント ハンドラーに設定します。 どちらのイベント ハンドラーも次の手順で作成されます。
+    このコードは、[`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) イベントを `OnEditorTextChanged` という名前のイベント ハンドラーに設定し、[`Completed`](xref:Xamarin.Forms.Editor.Completed) イベントを `OnEditorCompleted` という名前のイベント ハンドラーに設定します。 どちらのイベント ハンドラーも次の手順で作成されます。
 
 1. **ソリューション エクスプローラー**の **[EditorTutorial]** プロジェクトで **[MainPage.xaml]** を展開し、 **[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、 **[MainPage.xaml.cs]** で、`OnEditorTextChanged` と `OnEditorCompleted` のイベント ハンドラーをクラスに追加します。
 
@@ -34,9 +34,9 @@ ms.locfileid: "77135108"
     }
     ```
 
-    [`Editor`](xref:Xamarin.Forms.Editor) のテキストが変更されると、`OnEditorTextChanged` メソッドが実行されます。 `sender` 引数は、`TextChanged` イベントの発生を担当する `Editor` オブジェクトであり、`Editor` オブジェクトへのアクセスに使用できます。 [`TextChangedEventArgs`](xref:Xamarin.Forms.TextChangedEventArgs) 引数では、テキストの変更前と変更後の古いテキスト値と新しいテキスト値を提供します。
+    [`Editor`](xref:Xamarin.Forms.Editor) のテキストが変更されると、`OnEditorTextChanged` メソッドが実行されます。 `sender` 引数は、`Editor` イベントの発生を担当する `TextChanged` オブジェクトであり、`Editor` オブジェクトへのアクセスに使用できます。 [`TextChangedEventArgs`](xref:Xamarin.Forms.TextChangedEventArgs) 引数は、テキストの変更前と変更後の古いテキスト値と新しいテキスト値を提供します。
 
-    編集が完了すると、`OnEditorCompleted` メソッドが実行されます。 これは、[`Editor`](xref:Xamarin.Forms.Editor) からフォーカスを外すか、さらに iOS では [完了] ボタンを押して行います。 `sender` 引数は、`TextChanged` イベントの発生を担当する `Editor` オブジェクトであり、`Editor` オブジェクトへのアクセスに使用できます。
+    編集が完了すると、`OnEditorCompleted` メソッドが実行されます。 これは、[`Editor`](xref:Xamarin.Forms.Editor) からフォーカスを外すか、さらに iOS では [完了] ボタンを押して行います。 `sender` 引数は、`Editor` イベントの発生を担当する `TextChanged` オブジェクトであり、`Editor` オブジェクトへのアクセスに使用できます。
 
     > [!IMPORTANT]
     > [`Editor`](xref:Xamarin.Forms.Editor) に入力されたテキストはすべて [`Text`](xref:Xamarin.Forms.InputView.Text) プロパティに格納されます。
@@ -47,11 +47,11 @@ ms.locfileid: "77135108"
 
     2 つのイベント ハンドラーにブレークポイントを設定し、[`Editor`](xref:Xamarin.Forms.Editor) にテキストを入力して、[`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) イベントの発生を確認します。 `Editor` からフォーカスを外して、[`Completed`](xref:Xamarin.Forms.Entry.Completed) イベントの発生を確認します。
 
-    [`Editor`](xref:Xamarin.Forms.Editor) イベントの詳細については、「[Xamarin.Forms Editor](~/xamarin-forms/user-interface/text/editor.md)」 (Xamarin.Forms のエディター) ガイドの「[Interactivity](~/xamarin-forms/user-interface/text/editor.md#interactivity)」 (インタラクティビティ) を参照してください。
+    [`Editor`](xref:Xamarin.Forms.Editor) イベントの詳細については、「[Xamarin.Forms Editor](~/xamarin-forms/user-interface/text/editor.md#interactivity)」 (Xamarin.Forms のエディター) ガイドの「[Interactivity](~/xamarin-forms/user-interface/text/editor.md)」 (インタラクティビティ) を参照してください。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. **[MainPage.xaml]** で、[`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) イベントと [`Completed`](xref:Xamarin.Forms.Editor.Completed) イベントのハンドラーを設定するように [`Editor`](xref:Xamarin.Forms.Editor) 宣言を変更します。
+1. **[MainPage.xaml]** で、[`Editor`](xref:Xamarin.Forms.Editor) イベントと [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) イベントのハンドラーを設定するように [`Completed`](xref:Xamarin.Forms.Editor.Completed) 宣言を変更します。
 
     ```xaml
     <Editor Placeholder="Enter multi-line text here"
@@ -60,7 +60,7 @@ ms.locfileid: "77135108"
             Completed="OnEditorCompleted" />
     ```
 
-    このコードでは、[`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) イベントを `OnEditorTextChanged` という名前のイベント ハンドラーに設定し、[`Completed`](xref:Xamarin.Forms.Editor.Completed) イベントを `OnEditorCompleted` という名前のイベント ハンドラーに設定します。 どちらのイベント ハンドラーも次の手順で作成されます。
+    このコードは、[`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) イベントを `OnEditorTextChanged` という名前のイベント ハンドラーに設定し、[`Completed`](xref:Xamarin.Forms.Editor.Completed) イベントを `OnEditorCompleted` という名前のイベント ハンドラーに設定します。 どちらのイベント ハンドラーも次の手順で作成されます。
 
 1. **Solution Pad** の **[EditorTutorial]** プロジェクトで **[MainPage.xaml]** を展開し、 **[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、 **[MainPage.xaml.cs]** で、`OnEditorTextChanged` と `OnEditorCompleted` のイベント ハンドラーをクラスに追加します。
 
@@ -77,9 +77,9 @@ ms.locfileid: "77135108"
     }
     ```
 
-    [`Editor`](xref:Xamarin.Forms.Editor) のテキストが変更されると、`OnEditorTextChanged` メソッドが実行されます。 `sender` 引数は、`TextChanged` イベントの発生を担当する `Editor` オブジェクトであり、`Editor` オブジェクトへのアクセスに使用できます。 [`TextChangedEventArgs`](xref:Xamarin.Forms.TextChangedEventArgs) 引数では、テキストの変更前と変更後の古いテキスト値と新しいテキスト値を提供します。
+    [`Editor`](xref:Xamarin.Forms.Editor) のテキストが変更されると、`OnEditorTextChanged` メソッドが実行されます。 `sender` 引数は、`Editor` イベントの発生を担当する `TextChanged` オブジェクトであり、`Editor` オブジェクトへのアクセスに使用できます。 [`TextChangedEventArgs`](xref:Xamarin.Forms.TextChangedEventArgs) 引数は、テキストの変更前と変更後の古いテキスト値と新しいテキスト値を提供します。
 
-    編集が完了すると、`OnEditorCompleted` メソッドが実行されます。 これは、[`Editor`](xref:Xamarin.Forms.Editor) からフォーカスを外すか、さらに iOS では [完了] ボタンを押して行います。 `sender` 引数は、`TextChanged` イベントの発生を担当する `Editor` オブジェクトであり、`Editor` オブジェクトへのアクセスに使用できます。
+    編集が完了すると、`OnEditorCompleted` メソッドが実行されます。 これは、[`Editor`](xref:Xamarin.Forms.Editor) からフォーカスを外すか、さらに iOS では [完了] ボタンを押して行います。 `sender` 引数は、`Editor` イベントの発生を担当する `TextChanged` オブジェクトであり、`Editor` オブジェクトへのアクセスに使用できます。
 
     > [!IMPORTANT]
     > [`Editor`](xref:Xamarin.Forms.Editor) に入力されたテキストはすべて [`Text`](xref:Xamarin.Forms.InputView.Text) プロパティに格納されます。
@@ -90,4 +90,4 @@ ms.locfileid: "77135108"
 
     2 つのイベント ハンドラーにブレークポイントを設定し、[`Editor`](xref:Xamarin.Forms.Editor) にテキストを入力して、[`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) イベントの発生を確認します。 `Editor` からフォーカスを外して、[`Completed`](xref:Xamarin.Forms.Entry.Completed) イベントの発生を確認します。
 
-    [`Editor`](xref:Xamarin.Forms.Editor) イベントの詳細については、「[Xamarin.Forms Editor](~/xamarin-forms/user-interface/text/editor.md)」 (Xamarin.Forms のエディター) ガイドの「[Interactivity](~/xamarin-forms/user-interface/text/editor.md#interactivity)」 (インタラクティビティ) を参照してください。
+    [`Editor`](xref:Xamarin.Forms.Editor) イベントの詳細については、「[Xamarin.Forms Editor](~/xamarin-forms/user-interface/text/editor.md#interactivity)」 (Xamarin.Forms のエディター) ガイドの「[Interactivity](~/xamarin-forms/user-interface/text/editor.md)」 (インタラクティビティ) を参照してください。

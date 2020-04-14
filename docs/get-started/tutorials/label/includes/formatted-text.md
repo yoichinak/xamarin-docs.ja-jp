@@ -1,12 +1,12 @@
 ---
 ms.openlocfilehash: 841dac9486097e27923ccfe582803b4ec50371cf
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "60896725"
 ---
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. **MainPage.xaml** で、[`Label`](xref:Xamarin.Forms.Label) 宣言を変更して、複数の形式を使用するテキストを 1 つの `Label` で示します。
 
@@ -36,7 +36,7 @@ ms.locfileid: "60896725"
 
     [`Span`](xref:Xamarin.Forms.Span) の設定の詳細については、「[Xamarin.Forms Label](~/xamarin-forms/user-interface/text/label.md)」ガイドの「[Formatted text](~/xamarin-forms/user-interface/text/label.md#formatted-text)」 (書式設定されたテキスト) を参照してください。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. **MainPage.xaml** で、[`Label`](xref:Xamarin.Forms.Label) 宣言を変更して、複数の形式を使用するテキストを 1 つの `Label` で示します。
 

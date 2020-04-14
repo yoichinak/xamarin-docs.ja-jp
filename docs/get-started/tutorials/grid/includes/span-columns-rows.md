@@ -1,12 +1,12 @@
 ---
 ms.openlocfilehash: c826ee87c006b05322af8c9312bdf3120df8b357
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "61375986"
 ---
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. **[MainPage.xaml]** で、[`Grid`](xref:Xamarin.Forms.Grid) 宣言を変更して列と行を定義し、列と行にまたがるコンテンツを配置します。
 
@@ -37,7 +37,7 @@ ms.locfileid: "61375986"
 
     列と行のスパニングの詳細については、「[Xamarin.Forms Grid](~/xamarin-forms/user-interface/layouts/grid.md)」 (Xamarin.Forms のグリッド) ガイドの「[Spans](~/xamarin-forms/user-interface/layouts/grid.md#spans)」 (スパン) を参照してください。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. **[MainPage.xaml]** で、[`Grid`](xref:Xamarin.Forms.Grid) 宣言を変更して列と行を定義し、列と行にまたがるコンテンツを配置します。
 

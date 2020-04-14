@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 5c3d829038692635284c447e11ab08ad2afe6885
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "71059716"
 ---
 これでこのチュートリアルは完了です。ここでは以下の方法を学習しました。
@@ -14,7 +14,7 @@ ms.locfileid: "71059716"
 > - `Editor` の変更中にテキストに応答する。
 > - `Editor` の動作をカスタマイズする。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 Xamarin.Forms を使用してモバイル アプリケーションを作成する基本についてさらに学習するには、Image のチュートリアルに進んでください。
 

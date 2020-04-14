@@ -1,12 +1,12 @@
 ---
 ms.openlocfilehash: 1d2bed830af97ce1ff329a5396a415247a43189d
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "61372974"
 ---
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. **[MainPage.xaml]** で、[`Button`](xref:Xamarin.Forms.Button) 宣言を変更してその外観を変更します。
 
@@ -28,9 +28,9 @@ ms.locfileid: "61372974"
 
     [![iOS および Android での、外観が変更された Button のスクリーンショット](../images/change-button-appearance.png "外観が変更された Button")](../images/change-button-appearance-large.png#lightbox "外観が変更された Button")
 
-    [`Button`](xref:Xamarin.Forms.Button) の外観の設定について詳しくは、「[Xamarin.Forms Button](~/xamarin-forms/user-interface/button.md)」 (Xamarin.Forms のボタン) ガイドの「[Button appearance](~/xamarin-forms/user-interface/button.md#button-appearance)」 (ボタンの外観) を参照してください。
+    [`Button`](xref:Xamarin.Forms.Button) の外観の設定について詳しくは、「[Xamarin.Forms Button](~/xamarin-forms/user-interface/button.md#button-appearance)」 (Xamarin.Forms のボタン) ガイドの「[Button appearance](~/xamarin-forms/user-interface/button.md)」 (ボタンの外観) を参照してください。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. **[MainPage.xaml]** で、[`Button`](xref:Xamarin.Forms.Button) 宣言を変更してその外観を変更します。
 
@@ -52,4 +52,4 @@ ms.locfileid: "61372974"
 
     [![iOS および Android での、外観が変更された Button のスクリーンショット](../images/change-button-appearance.png "外観が変更された Button")](../images/change-button-appearance-large.png#lightbox "外観が変更された Button")
 
-    [`Button`](xref:Xamarin.Forms.Button) の外観の設定について詳しくは、「[Xamarin.Forms Button](~/xamarin-forms/user-interface/button.md)」 (Xamarin.Forms のボタン) ガイドの「[Button appearance](~/xamarin-forms/user-interface/button.md#button-appearance)」 (ボタンの外観) を参照してください。
+    [`Button`](xref:Xamarin.Forms.Button) の外観の設定について詳しくは、「[Xamarin.Forms Button](~/xamarin-forms/user-interface/button.md#button-appearance)」 (Xamarin.Forms のボタン) ガイドの「[Button appearance](~/xamarin-forms/user-interface/button.md)」 (ボタンの外観) を参照してください。

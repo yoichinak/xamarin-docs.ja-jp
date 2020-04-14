@@ -11,10 +11,10 @@ metadata:
   ms.author: dabritch
   ms.date: 12/30/2019
   ms.openlocfilehash: bbe7fd52581cd77ed7e7d910dd16264641c15abf
-  ms.sourcegitcommit: 524fc148bad17272bda83c50775771daa45bfd7e
+  ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 02/20/2020
+  ms.lasthandoff: 04/09/2020
   ms.locfileid: "77480595"
 landingContent:
 - title: コントロールのリファレンス
@@ -23,13 +23,13 @@ landingContent:
     links:
     - text: 概要
       url: controls/index.md
-    - text: Pages
+    - text: ページ
       url: controls/pages.md
     - text: レイアウト
       url: controls/layouts.md
-    - text: Views
+    - text: ビュー
       url: controls/views.md
-    - text: セル
+    - text: '[セル]'
       url: controls/cells.md
     - text: 共通のプロパティ、メソッド、およびイベント
       url: controls/common-properties.md
@@ -43,7 +43,7 @@ landingContent:
       url: boxview.md
     - text: Image
       url: images.md
-    - text: ラベル
+    - text: Label
       url: text/label.md
     - text: マップ
       url: map/index.md
@@ -55,7 +55,7 @@ landingContent:
   linkLists:
   - linkListType: concept
     links:
-    - text: Button
+    - text: ボタン
       url: button.md
     - text: ImageButton
       url: imagebutton.md
@@ -73,7 +73,7 @@ landingContent:
       url: checkbox.md
     - text: DatePicker
       url: datepicker.md
-    - text: Slider
+    - text: スライダー
       url: slider.md
     - text: ステッパ
       url: stepper.md
@@ -87,7 +87,7 @@ landingContent:
     links:
     - text: エディター
       url: text/editor.md
-    - text: 入力
+    - text: エントリ
       url: text/entry.md
 - title: アクティビティを示すためのビュー
   linkLists:

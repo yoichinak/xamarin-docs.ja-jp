@@ -1,24 +1,24 @@
-- name: 新着記事
+- name: 新機能
   href: index.yml
   expanded: true
   items:
     - name: 2020
       expanded: true
       items:
-        - name: Ferbruary
+        - name: February
           href: 2020-02.md
     - name: 2019
       expanded: true
       items:
-        - name: 12 月
+        - name: December
           href: 2019-12.md
         - name: 10 月
           href: 2019-10.md
-        - name: 8 月
+        - name: August
           href: 2019-08.md
-        - name: 7 月
+        - name: July
           href: 2019-07.md
         - name: 6 月
           href: 2019-06.md
-        - name: 3 月
+        - name: March
           href: 2019-03.md

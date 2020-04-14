@@ -1,22 +1,22 @@
 ---
 ms.openlocfilehash: cbf301b341f78ae8d8826580d30a13393716f56c
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "71059715"
 ---
 このチュートリアルを試行する前に、以下を正常に完了しておく必要があります。
 
 - [最初の Xamarin.Forms アプリのビルド](~/get-started/first-app/index.md)のクイック スタート。
 
-このチュートリアルでは、次の作業を行う方法について説明します。
+このチュートリアルでは、以下の内容を学習します。
 
 > [!div class="checklist"]
 >
 > - XAML で Xamarin.Forms [`Grid`](xref:Xamarin.Forms.Grid) を作成する。
 > - `Grid` の列と行を指定する。
-> - `Grid` でコンテンツを複数の列または複数の行にまたがって配置する。
+> - `Grid` で複数の列または複数の行にまたがるコンテンツ。
 
 [`Grid`](xref:Xamarin.Forms.Grid) 内にコントロールをレイアウトする方法を示す簡単なアプリケーションを作成するには、Visual Studio 2019 または Visual Studio for Mac を使用します。 次のスクリーンショットは、最終的なアプリケーションです。
 

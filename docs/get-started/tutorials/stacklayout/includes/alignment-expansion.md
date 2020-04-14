@@ -1,9 +1,9 @@
 ---
-ms.openlocfilehash: f87367ce7bc7e364147d087cdd126efaa6bf910c
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.openlocfilehash: d6dbc82e56959399c2befb6a12f0a2cf3793ee5b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "67560007"
 ---
 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 内の子ビューのサイズと位置は、子ビューの [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) プロパティと [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) プロパティの値、および [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) プロパティと [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) プロパティの値によって異なります。
@@ -13,7 +13,7 @@ ms.locfileid: "67560007"
 - **配置** – 子ビューの優先配置で、親レイアウト内での位置とサイズを決定します。
 - **展開** – 追加スペースが使用可能な場合に子ビューが追加スペースを使用する必要があるかどうかを示します ([`StackLayout`](xref:Xamarin.Forms.StackLayout) によってのみ使用されます)。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. **MainPage.xaml** で、[`StackLayout`](xref:Xamarin.Forms.StackLayout) 宣言を変更して、各 [`Label`](xref:Xamarin.Forms.Label) の配置オプションと展開オプションを設定します。
 
@@ -69,7 +69,7 @@ ms.locfileid: "67560007"
 
     配置と展開の詳細については、「[Layout Options in Xamarin.Forms](~/xamarin-forms/user-interface/layouts/layout-options.md)」(Xamarin.Forms のレイアウト オプション) をご覧ください。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. **MainPage.xaml** で、[`StackLayout`](xref:Xamarin.Forms.StackLayout) 宣言を変更して、各 [`Label`](xref:Xamarin.Forms.Label) の配置オプションと展開オプションを設定します。
 
@@ -124,8 +124,3 @@ ms.locfileid: "67560007"
     > [`StackLayout`](xref:Xamarin.Forms.StackLayout) 内のすべてのスペースが使用されている場合、展開設定は無効になります。
 
     配置と展開の詳細については、「[Layout Options in Xamarin.Forms](~/xamarin-forms/user-interface/layouts/layout-options.md)」(Xamarin.Forms のレイアウト オプション) をご覧ください。
-
------
-
-> [!div class="nextstepaction"]
-> [問題が発生しました](https://github.com/MicrosoftDocs/xamarin-docs/issues/new?title=StackLayout+Tutorial+Step+3+Feedback&template=tutorial_template.md)

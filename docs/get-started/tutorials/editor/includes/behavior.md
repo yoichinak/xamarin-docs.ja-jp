@@ -1,12 +1,12 @@
 ---
 ms.openlocfilehash: bd3f37082443e93f10f60d9466fe22aae8571b14
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "61373439"
 ---
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. **[MainPage.xaml]** で、[`Editor`](xref:Xamarin.Forms.Editor) 宣言を変更して、その動作をカスタマイズします。
 
@@ -26,7 +26,7 @@ ms.locfileid: "61373439"
 
     [`Editor`](xref:Xamarin.Forms.Editor) 動作のカスタマイズの詳細については、「[Xamarin.Forms Editor](~/xamarin-forms/user-interface/text/editor.md)」 (Xamarin.Forms のエディター) ガイドを参照してください。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. **[MainPage.xaml]** で、[`Editor`](xref:Xamarin.Forms.Editor) 宣言を変更して、その動作をカスタマイズします。
 

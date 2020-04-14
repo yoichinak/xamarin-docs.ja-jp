@@ -1,12 +1,12 @@
 ---
 ms.openlocfilehash: d8f9445a0fc45c2700e8d9a901cfce9bd6307d2b
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "75490678"
 ---
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. **[MainPage.xaml]** で、[`Image`](xref:Xamarin.Forms.Image) 宣言を変更してその外観をカスタマイズします。
 
@@ -28,7 +28,7 @@ ms.locfileid: "75490678"
 
     [![iOS 上と Android 上とでサイズが異なる画像のスクリーンショット](../images/customize-appearance.png "プラットフォームによってサイズが異なる画像")](../images/customize-appearance-large.png#lightbox "プラットフォームによってサイズが異なる画像")
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. **[MainPage.xaml]** で、[`Image`](xref:Xamarin.Forms.Image) 宣言を変更してその外観をカスタマイズします。
 

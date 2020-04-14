@@ -1,14 +1,14 @@
 ---
 ms.openlocfilehash: 875f00b379879aa131d37018f89e475170e5320e
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "67277329"
 ---
-Xamarin.Forms には、ユーザーにアラートを表示する、または簡単な質問をする、アラートと呼ばれる、モーダル ポップアップがあります。 この演習では、[`Page`](xref:Xamarin.Forms.Page) クラスから [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) メソッドを使用して、ユーザーにアラートを表示したり、簡単な質問をします。
+Xamarin.Forms には、ユーザーにアラートを表示する、または簡単な質問をする、アラートと呼ばれる、モーダル ポップアップがあります。 この演習では、[`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) クラスから [`Page`](xref:Xamarin.Forms.Page) メソッドを使用して、ユーザーにアラートを表示したり、簡単な質問をします。
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 このチュートリアルを完了するには、 **.NET によるモバイル開発**ワークロードがインストールされた、Visual Studio 2019 (最新リリース) が必要です。 さらに、iOS でチュートリアル アプリケーションを構築するには、ペアリング済みの Mac が必要になります。 Xamarin プラットフォームのインストールについては、「[Xamarin のインストール](~/get-started/installation/index.md)」を参照してください。 Mac ビルド ホストへの Visual Studio 2019 の接続については、「[Xamarin.iOS 開発のために Mac とペアリングする](~/ios/get-started/installation/windows/connecting-to-mac/index.md)」を参照してください。
 
@@ -35,9 +35,9 @@ Xamarin.Forms には、ユーザーにアラートを表示する、または簡
     </ContentPage>
     ```
 
-    このコードでは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) の中の 2 つの [`Button`](xref:Xamarin.Forms.Button) オブジェクトから構成される、ページのユーザー インターフェイスを宣言によって定義します。 [`Button.Text`](xref:Xamarin.Forms.Button.Text) プロパティでは、各 `Button` に表示されるテキストを指定し、[`Clicked`](xref:Xamarin.Forms.Button.Clicked) イベントは、次の手順で作成されるイベント ハンドラーに設定されます。
+    このコードでは、[`Button`](xref:Xamarin.Forms.Button) の中の 2 つの [`StackLayout`](xref:Xamarin.Forms.StackLayout) オブジェクトから構成される、ページのユーザー インターフェイスを宣言によって定義します。 [`Button.Text`](xref:Xamarin.Forms.Button.Text) プロパティでは、各 `Button` に表示されるテキストを指定し、[`Clicked`](xref:Xamarin.Forms.Button.Clicked) イベントは、次の手順で作成されるイベント ハンドラーに設定されます。
 
-1. **ソリューション エクスプローラー**の **[PopupsTutorial]** プロジェクトで **[MainPage.xaml]** を展開し、 **[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、 **[MainPage.xaml.cs]** で、`OnDisplayAlertButtonClicked` と `OnDisplayAlertQuestionButtonClicked` のイベント ハンドラーをクラスに追加します。
+1. **ソリューション エクスプローラー**の **PopupsTutorial** プロジェクトで **[MainPage.xaml]** を展開し、 **[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、 **[MainPage.xaml.cs]** で、`OnDisplayAlertButtonClicked` と `OnDisplayAlertQuestionButtonClicked` のイベント ハンドラーをクラスに追加します。
 
     ```csharp
     async void OnDisplayAlertButtonClicked(object sender, EventArgs e)
@@ -61,7 +61,7 @@ Xamarin.Forms には、ユーザーにアラートを表示する、または簡
 
 1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。 次に、最初の [`Button`](xref:Xamarin.Forms.Button) をタップします。
 
-    [![iOS および Android でのアラートのスクリーンショット](../images/alert.png "警告")](../images/alert-large.png#lightbox "警告")
+    [![iOS および Android でのアラートのスクリーンショット](../images/alert.png "アラート:")](../images/alert-large.png#lightbox "アラート:")
 
     アラートを閉じた後、2 番目の [`Button`](xref:Xamarin.Forms.Button) をタップします。
 
@@ -69,9 +69,9 @@ Xamarin.Forms には、ユーザーにアラートを表示する、または簡
 
     質問への回答を選択した後、回答が Visual Studio の **[出力]** ウィンドウに出力されることを確認します。
 
-    アラートの表示について詳しくは、「[Display Pop-ups (ポップアップの表示)](~/xamarin-forms/user-interface/pop-ups.md)」ガイドの「[Display an alert (アラートを表示する)](~/xamarin-forms/user-interface/pop-ups.md#display-an-alert)」をご覧ください。
+    アラートの表示について詳しくは、「[Display Pop-ups (ポップアップの表示)](~/xamarin-forms/user-interface/pop-ups.md#display-an-alert)」ガイドの「[Display an alert (アラートを表示する)](~/xamarin-forms/user-interface/pop-ups.md)」をご覧ください。
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 このチュートリアルを完了するには、iOS と Android のプラットフォームのサポートがインストールされた Visual Studio for Mac (最新リリース) が必要です。 さらに、Xcode (最新リリース) も必要になります。 Xamarin プラットフォームのインストールについて詳しくは、「[Xamarin のインストール](~/get-started/installation/index.md)」を参照してください。
 
@@ -98,7 +98,7 @@ Xamarin.Forms には、ユーザーにアラートを表示する、または簡
     </ContentPage>
     ```
 
-    このコードでは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) の中の 2 つの [`Button`](xref:Xamarin.Forms.Button) オブジェクトから構成される、ページのユーザー インターフェイスを宣言によって定義します。 [`Button.Text`](xref:Xamarin.Forms.Button.Text) プロパティでは、各 `Button` に表示されるテキストを指定し、[`Clicked`](xref:Xamarin.Forms.Button.Clicked) イベントは、次の手順で作成されるイベント ハンドラーに設定されます。
+    このコードでは、[`Button`](xref:Xamarin.Forms.Button) の中の 2 つの [`StackLayout`](xref:Xamarin.Forms.StackLayout) オブジェクトから構成される、ページのユーザー インターフェイスを宣言によって定義します。 [`Button.Text`](xref:Xamarin.Forms.Button.Text) プロパティでは、各 `Button` に表示されるテキストを指定し、[`Clicked`](xref:Xamarin.Forms.Button.Clicked) イベントは、次の手順で作成されるイベント ハンドラーに設定されます。
 
 1. **Solution Pad** の **[PopupsTutorial]** プロジェクトで **[MainPage.xaml]** を展開し、 **[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、 **[MainPage.xaml.cs]** で、`OnDisplayAlertButtonClicked` と `OnDisplayAlertQuestionButtonClicked` のイベント ハンドラーをクラスに追加します。
 
@@ -124,7 +124,7 @@ Xamarin.Forms には、ユーザーにアラートを表示する、または簡
 
 1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。 次に、最初の [`Button`](xref:Xamarin.Forms.Button) をタップします。
 
-    [![iOS および Android でのアラートのスクリーンショット](../images/alert.png "警告")](../images/alert-large.png#lightbox "警告")
+    [![iOS および Android でのアラートのスクリーンショット](../images/alert.png "アラート:")](../images/alert-large.png#lightbox "アラート:")
 
     アラートを閉じた後、2 番目の [`Button`](xref:Xamarin.Forms.Button) をタップします。
 
@@ -132,4 +132,4 @@ Xamarin.Forms には、ユーザーにアラートを表示する、または簡
 
     質問への回答を選択した後、回答が Visual Studio for Mac の **[アプリケーション出力]** ウィンドウに出力されることを確認します。
 
-    アラートの表示について詳しくは、「[Display Pop-ups (ポップアップの表示)](~/xamarin-forms/user-interface/pop-ups.md)」ガイドの「[Display an alert (アラートを表示する)](~/xamarin-forms/user-interface/pop-ups.md#display-an-alert)」をご覧ください。
+    アラートの表示について詳しくは、「[Display Pop-ups (ポップアップの表示)](~/xamarin-forms/user-interface/pop-ups.md#display-an-alert)」ガイドの「[Display an alert (アラートを表示する)](~/xamarin-forms/user-interface/pop-ups.md)」をご覧ください。

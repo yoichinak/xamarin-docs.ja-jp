@@ -89,7 +89,7 @@
           href: bitmaps/pixel-bits.md
         - name: ビットマップのアニメーション化
           href: bitmaps/animating.md
-    - name: 効果
+    - name: エフェクト
       href: effects/index.md
       items:
         - name: シェーダー

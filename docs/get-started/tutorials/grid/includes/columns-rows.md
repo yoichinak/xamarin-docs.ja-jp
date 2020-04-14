@@ -1,12 +1,12 @@
 ---
 ms.openlocfilehash: d87289e481b69592b68627d053e937856d3d6067
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/09/2020
 ms.locfileid: "61376011"
 ---
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
 1. **MainPage.xaml** で、[`Grid`](xref:Xamarin.Forms.Grid) 宣言を変更して列と行を定義し、列と行にコンテンツを配置します。
 
@@ -48,7 +48,7 @@ ms.locfileid: "61376011"
 
     [![iOS と Android で、列と行にレイアウトされたコンテンツがある Grid のスクリーンショット](../images/columns-rows.png "列と行にコンテンツがある Grid")](../images/columns-rows-large.png#lightbox "列と行にコンテンツがある Grid")
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Visual Studio for Mac](#tab/vsmac)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
 1. **MainPage.xaml** で、[`Grid`](xref:Xamarin.Forms.Grid) 宣言を変更して列と行を定義し、列と行にコンテンツを配置します。
 
