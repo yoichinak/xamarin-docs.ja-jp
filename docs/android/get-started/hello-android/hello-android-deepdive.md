@@ -63,7 +63,7 @@ _このガイドは 2 つに分かれています。最初に、Xamarin.Android 
 
 Visual Studio は Microsoft 製の強力な IDE です。 ビジュアル デザイナー、リファクタリング ツール付きのテキスト エディター、アセンブリ ブラウザー、ソース コード統合などの機能が完全に統合されています。 このガイドでは、Xamarin プラグインと基本的な Visual Studio 機能の使用方法について学習します。
 
-Visual Studio は、コードを _ソリューション_ と _プロジェクト_ に分けて整理しています。 ソリューションとは、1 つまたは複数のプロジェクトを保持できるコンテナーです。 プロジェクトは、アプリケーション (iOS、Android など)、サポートするライブラリ、テスト アプリケーションなどの場合があります。 **Phoneword** アプリで、**Android アプリケーション** テンプレートを使用して、[Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) ガイドで作成した **Phoneword** ソリューションに新しい Android プロジェクトを追加しました。
+Visual Studio は、コードをソリューションとプロジェクトに分けて整理しています。ソリューションとは、1 つまたは複数のプロジェクトを保持できるコンテナーです。プロジェクトは、アプリケーション (iOS、Android など)、サポートするライブラリ、テスト アプリケーションなどの場合があります。**Phoneword** アプリで、**Android アプリケーション** テンプレートを使用して、[Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) ガイドで作成した **Phoneword** ソリューションに新しい Android プロジェクトを追加しました。
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -72,7 +72,7 @@ Visual Studio は、コードを _ソリューション_ と _プロジェクト
 
 Visual Studio for Mac は、Visual Studio と類似した無料のオープン ソース IDE です。 ビジュアル デザイナー、リファクタリング ツール付きのテキスト エディター、アセンブリ ブラウザー、ソース コード統合などの機能が完全に統合されています。 このガイドでは、基本的な Visual Studio for Mac 機能の使用方法について学習します。 Visual Studio for Mac を初めて使用する場合、[Visual Studio for Mac の概要](https://docs.microsoft.com/visualstudio/mac/)について詳しい情報を確認したい場合があります。
 
-Visual Studio for Mac は、コードを _ソリューション_ と _プロジェクト_ に分けて整理するという Visual Studio の方法に従っています。 ソリューションとは、1 つまたは複数のプロジェクトを保持できるコンテナーです。 プロジェクトは、アプリケーション (iOS、Android など)、サポートするライブラリ、テスト アプリケーションなどの場合があります。 **Phoneword** アプリで、**Android アプリケーション** テンプレートを使用して、[Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) ガイドで作成した **Phoneword** ソリューションに新しい Android プロジェクトを追加しました。
+Visual Studio for Mac は、コードをソリューションとプロジェクトに分けて整理するという Visual Studio の方法に従っています。ソリューションとは、1 つまたは複数のプロジェクトを保持できるコンテナーです。プロジェクトは、アプリケーション (iOS、Android など)、サポートするライブラリ、テスト アプリケーションなどの場合があります。**Phoneword** アプリで、**Android アプリケーション** テンプレートを使用して、[Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) ガイドで作成した **Phoneword** ソリューションに新しい Android プロジェクトを追加しました。
 
 ::: zone-end
 
@@ -225,7 +225,7 @@ public class MainActivity : Activity
 
 `MainLauncher` プロパティは、アプリケーションが起動するときに、この Activity を表示するように Android に通知します。 「[Hello Android のマルチスクリーン](~/android/get-started/hello-android-multiscreen/index.md)」のガイドで説明されているように、アプリケーションにアクティビティ (画面) を追加するときに、このプロパティが重要になります。
 
-`MainActivity` の基本について説明したので、次に、_アクティビティのライフサイクル_ を紹介することでアクティビティのコードについて詳しく説明します。
+`MainActivity` の基本について説明したので、次に、アクティビティのライフサイクルを紹介することでアクティビティのコードについて詳しく説明します。
 
 ### <a name="activity-lifecycle"></a>アクティビティのライフサイクル
 
