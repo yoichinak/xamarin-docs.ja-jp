@@ -63,7 +63,7 @@ _このガイドは 2 つに分かれています。最初に、Xamarin.Android 
 
 Visual Studio は Microsoft 製の強力な IDE です。 ビジュアル デザイナー、リファクタリング ツール付きのテキスト エディター、アセンブリ ブラウザー、ソース コード統合などの機能が完全に統合されています。 このガイドでは、Xamarin プラグインと基本的な Visual Studio 機能の使用方法について学習します。
 
-Visual Studio は、コードを_ソリューション_と_プロジェクト_に分けて整理しています。 ソリューションとは、1 つまたは複数のプロジェクトを保持できるコンテナーです。 プロジェクトは、アプリケーション (iOS、Android など)、サポートするライブラリ、テスト アプリケーションなどの場合があります。 **Phoneword** アプリで、**Android アプリケーション** テンプレートを使用して、[Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) ガイドで作成した **Phoneword** ソリューションに新しい Android プロジェクトを追加しました。
+Visual Studio は、コードをソリューションとプロジェクトに分けて整理しています。ソリューションとは、1 つまたは複数のプロジェクトを保持できるコンテナーです。プロジェクトは、アプリケーション (iOS、Android など)、サポートするライブラリ、テスト アプリケーションなどの場合があります。**Phoneword** アプリで、**Android アプリケーション** テンプレートを使用して、[Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) ガイドで作成した **Phoneword** ソリューションに新しい Android プロジェクトを追加しました。
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -72,7 +72,7 @@ Visual Studio は、コードを_ソリューション_と_プロジェクト_�
 
 Visual Studio for Mac は、Visual Studio と類似した無料のオープン ソース IDE です。 ビジュアル デザイナー、リファクタリング ツール付きのテキスト エディター、アセンブリ ブラウザー、ソース コード統合などの機能が完全に統合されています。 このガイドでは、基本的な Visual Studio for Mac 機能の使用方法について学習します。 Visual Studio for Mac を初めて使用する場合、[Visual Studio for Mac の概要](https://docs.microsoft.com/visualstudio/mac/)について詳しい情報を確認したい場合があります。
 
-Visual Studio for Mac は、コードを_ソリューション_と_プロジェクト_に分けて整理するという Visual Studio の方法に従っています。 ソリューションとは、1 つまたは複数のプロジェクトを保持できるコンテナーです。 プロジェクトは、アプリケーション (iOS、Android など)、サポートするライブラリ、テスト アプリケーションなどの場合があります。 **Phoneword** アプリで、**Android アプリケーション** テンプレートを使用して、[Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) ガイドで作成した **Phoneword** ソリューションに新しい Android プロジェクトを追加しました。
+Visual Studio for Mac は、コードをソリューションとプロジェクトに分けて整理するという Visual Studio の方法に従っています。ソリューションとは、1 つまたは複数のプロジェクトを保持できるコンテナーです。プロジェクトは、アプリケーション (iOS、Android など)、サポートするライブラリ、テスト アプリケーションなどの場合があります。**Phoneword** アプリで、**Android アプリケーション** テンプレートを使用して、[Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) ガイドで作成した **Phoneword** ソリューションに新しい Android プロジェクトを追加しました。
 
 ::: zone-end
 
@@ -225,7 +225,7 @@ public class MainActivity : Activity
 
 `MainLauncher` プロパティは、アプリケーションが起動するときに、この Activity を表示するように Android に通知します。 「[Hello Android のマルチスクリーン](~/android/get-started/hello-android-multiscreen/index.md)」のガイドで説明されているように、アプリケーションにアクティビティ (画面) を追加するときに、このプロパティが重要になります。
 
-`MainActivity` の基本について説明したので、次に、_アクティビティのライフサイクル_を紹介することでアクティビティのコードについて詳しく説明します。
+`MainActivity` の基本について説明したので、次に、アクティビティのライフサイクルを紹介することでアクティビティのコードについて詳しく説明します。
 
 ### <a name="activity-lifecycle"></a>アクティビティのライフサイクル
 
@@ -243,7 +243,7 @@ Android では、アクティビティは、ユーザーとの対話に応じて
 
 `Activity` でライフサイクル メソッドにカスタム コードを追加する場合、そのライフサイクル メソッドの*基本の実装*を*オーバーライド*します。 既存のライフサイクルメソッド (既にいくつかのコードがアタッチされています) にアクセスし、独自のコードでそのメソッドを拡張します。 メソッドの内部から基本の実装を呼び出し、新しいコードの前に元のコードが実行されるようにします。 次のセクションでこの例を示します。
 
-アクティビティのライフサイクルは、Android の重要かつ複雑な部分です。 _作業の開始_シリーズが終了した後にアクティビティの詳細について学習したい場合は、「[アクティビティのライフ サイクル](~/android/app-fundamentals/activity-lifecycle/index.md)」ガイドを参照してください。 このガイドでは、アクティビティのライフサイクルの最初の段階である `OnCreate` を中心に説明しています。
+アクティビティのライフサイクルは、Android の重要かつ複雑な部分です。 _作業の開始_ シリーズが終了した後にアクティビティの詳細について学習したい場合は、「[アクティビティのライフ サイクル](~/android/app-fundamentals/activity-lifecycle/index.md)」ガイドを参照してください。 このガイドでは、アクティビティのライフサイクルの最初の段階である `OnCreate` を中心に説明しています。
 
 ### <a name="oncreate"></a>OnCreate メソッド
 
