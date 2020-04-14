@@ -18,7 +18,7 @@ ms.locfileid: "75556523"
 
 _このガイドでは、アプリをデバッグしてテストするために Android Emulator で仮想デバイスを起動する方法について説明します。_
 
-Android Emulator ( **.NET によるモバイル開発**のワークロードの一部としてインストールされている) は各種の Android デバイスをシミュレートするために、さまざまな構成で実行することができます。 これらの構成がそれぞれ、_仮想デバイス_ として作成されます。 このガイドでは、Visual Studio からエミュレーターを起動する方法、および仮想デバイスでアプリを実行する方法を説明します。 Android Emulator の構成と、新しい仮想デバイスの作成については、「[Android Emulator のセットアップ](~/android/get-started/installation/android-emulator/index.md)」を参照してください。
+Android Emulator (**.NET によるモバイル開発**のワークロードの一部としてインストールされている) は各種の Android デバイスをシミュレートするために、さまざまな構成で実行することができます。これらの構成がそれぞれ、仮想デバイスとして作成されます。このガイドでは、Visual Studio からエミュレーターを起動する方法、および仮想デバイスでアプリを実行する方法を説明します。Android Emulator の構成と、新しい仮想デバイスの作成については、「[Android Emulator のセットアップ](~/android/get-started/installation/android-emulator/index.md)」を参照してください。
 
 ## <a name="using-a-pre-configured-virtual-device"></a>構成済み仮想デバイスの使用
 
