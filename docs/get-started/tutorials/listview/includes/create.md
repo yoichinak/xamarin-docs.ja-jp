@@ -42,7 +42,7 @@ ms.locfileid: "67277317"
     </ContentPage>
     ```
 
-    このコードでは、[`ListView`](xref:Xamarin.Forms.Image) の中の [`StackLayout`](xref:Xamarin.Forms.StackLayout) から構成されるページのユーザー インターフェイスを宣言によって定義します。 [`ListView.ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) プロパティでは、表示する項目を指定します。これらは文字列の配列で定義されます。
+    このコードでは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) の中の [`ListView`](xref:Xamarin.Forms.Image) から構成されるページのユーザー インターフェイスを宣言によって定義します。 [`ListView.ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) プロパティでは、表示する項目を指定します。これらは文字列の配列で定義されます。
 
 1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
@@ -84,7 +84,7 @@ ms.locfileid: "67277317"
     </ContentPage>
     ```
 
-    このコードでは、[`ListView`](xref:Xamarin.Forms.Image) の中の [`StackLayout`](xref:Xamarin.Forms.StackLayout) から構成されるページのユーザー インターフェイスを宣言によって定義します。 [`ListView.ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) プロパティでは、表示する項目を指定します。これらは文字列の配列で定義されます。
+    このコードでは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) の中の [`ListView`](xref:Xamarin.Forms.Image) から構成されるページのユーザー インターフェイスを宣言によって定義します。 [`ListView.ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) プロパティでは、表示する項目を指定します。これらは文字列の配列で定義されます。
 
 1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 

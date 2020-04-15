@@ -8,7 +8,7 @@ ms.locfileid: "77135108"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
-1. **[MainPage.xaml]** で、[`Editor`](xref:Xamarin.Forms.Editor) イベントと [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) イベントのハンドラーを設定するように [`Completed`](xref:Xamarin.Forms.Editor.Completed) 宣言を変更します。
+1. **[MainPage.xaml]** で、[`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) イベントと [`Completed`](xref:Xamarin.Forms.Editor.Completed) イベントのハンドラーを設定するように [`Editor`](xref:Xamarin.Forms.Editor) 宣言を変更します。
 
     ```xaml
     <Editor Placeholder="Enter multi-line text here"
@@ -34,9 +34,9 @@ ms.locfileid: "77135108"
     }
     ```
 
-    [`Editor`](xref:Xamarin.Forms.Editor) のテキストが変更されると、`OnEditorTextChanged` メソッドが実行されます。 `sender` 引数は、`Editor` イベントの発生を担当する `TextChanged` オブジェクトであり、`Editor` オブジェクトへのアクセスに使用できます。 [`TextChangedEventArgs`](xref:Xamarin.Forms.TextChangedEventArgs) 引数は、テキストの変更前と変更後の古いテキスト値と新しいテキスト値を提供します。
+    [`Editor`](xref:Xamarin.Forms.Editor) のテキストが変更されると、`OnEditorTextChanged` メソッドが実行されます。 `sender` 引数は、`TextChanged` イベントの発生を担当する `Editor` オブジェクトであり、`Editor` オブジェクトへのアクセスに使用できます。 [`TextChangedEventArgs`](xref:Xamarin.Forms.TextChangedEventArgs) 引数は、テキストの変更前と変更後の古いテキスト値と新しいテキスト値を提供します。
 
-    編集が完了すると、`OnEditorCompleted` メソッドが実行されます。 これは、[`Editor`](xref:Xamarin.Forms.Editor) からフォーカスを外すか、さらに iOS では [完了] ボタンを押して行います。 `sender` 引数は、`Editor` イベントの発生を担当する `TextChanged` オブジェクトであり、`Editor` オブジェクトへのアクセスに使用できます。
+    編集が完了すると、`OnEditorCompleted` メソッドが実行されます。 これは、[`Editor`](xref:Xamarin.Forms.Editor) からフォーカスを外すか、さらに iOS では [完了] ボタンを押して行います。 `sender` 引数は、`TextChanged` イベントの発生を担当する `Editor` オブジェクトであり、`Editor` オブジェクトへのアクセスに使用できます。
 
     > [!IMPORTANT]
     > [`Editor`](xref:Xamarin.Forms.Editor) に入力されたテキストはすべて [`Text`](xref:Xamarin.Forms.InputView.Text) プロパティに格納されます。
@@ -51,7 +51,7 @@ ms.locfileid: "77135108"
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. **[MainPage.xaml]** で、[`Editor`](xref:Xamarin.Forms.Editor) イベントと [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) イベントのハンドラーを設定するように [`Completed`](xref:Xamarin.Forms.Editor.Completed) 宣言を変更します。
+1. **[MainPage.xaml]** で、[`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) イベントと [`Completed`](xref:Xamarin.Forms.Editor.Completed) イベントのハンドラーを設定するように [`Editor`](xref:Xamarin.Forms.Editor) 宣言を変更します。
 
     ```xaml
     <Editor Placeholder="Enter multi-line text here"
@@ -77,9 +77,9 @@ ms.locfileid: "77135108"
     }
     ```
 
-    [`Editor`](xref:Xamarin.Forms.Editor) のテキストが変更されると、`OnEditorTextChanged` メソッドが実行されます。 `sender` 引数は、`Editor` イベントの発生を担当する `TextChanged` オブジェクトであり、`Editor` オブジェクトへのアクセスに使用できます。 [`TextChangedEventArgs`](xref:Xamarin.Forms.TextChangedEventArgs) 引数は、テキストの変更前と変更後の古いテキスト値と新しいテキスト値を提供します。
+    [`Editor`](xref:Xamarin.Forms.Editor) のテキストが変更されると、`OnEditorTextChanged` メソッドが実行されます。 `sender` 引数は、`TextChanged` イベントの発生を担当する `Editor` オブジェクトであり、`Editor` オブジェクトへのアクセスに使用できます。 [`TextChangedEventArgs`](xref:Xamarin.Forms.TextChangedEventArgs) 引数は、テキストの変更前と変更後の古いテキスト値と新しいテキスト値を提供します。
 
-    編集が完了すると、`OnEditorCompleted` メソッドが実行されます。 これは、[`Editor`](xref:Xamarin.Forms.Editor) からフォーカスを外すか、さらに iOS では [完了] ボタンを押して行います。 `sender` 引数は、`Editor` イベントの発生を担当する `TextChanged` オブジェクトであり、`Editor` オブジェクトへのアクセスに使用できます。
+    編集が完了すると、`OnEditorCompleted` メソッドが実行されます。 これは、[`Editor`](xref:Xamarin.Forms.Editor) からフォーカスを外すか、さらに iOS では [完了] ボタンを押して行います。 `sender` 引数は、`TextChanged` イベントの発生を担当する `Editor` オブジェクトであり、`Editor` オブジェクトへのアクセスに使用できます。
 
     > [!IMPORTANT]
     > [`Editor`](xref:Xamarin.Forms.Editor) に入力されたテキストはすべて [`Text`](xref:Xamarin.Forms.InputView.Text) プロパティに格納されます。
