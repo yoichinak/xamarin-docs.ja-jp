@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 08/09/2018
 ms.openlocfilehash: 6e80daf2be1b672dc7d0de3e303dfb9261c10472
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "76940914"
 ---
 # <a name="setting-up-the-android-sdk-for-xamarinandroid"></a>Xamarin.Android 向け Android SDK を設定する
@@ -27,7 +27,7 @@ _Visual Studio には、Xamarin.Android アプリの開発に必要な Android S
 
 ( **.NET によるモバイル開発**の一部分としてインストールされる) Xamarin Android SDK Manager を使用すると、Xamarin.Android アプリを開発するために必要な最新の Android コンポーネントをダウンロードできます。 これは非推奨とされた Google のスタンドアロン SDK Manager の代わりとなります。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ## <a name="requirements"></a>必要条件
 
@@ -78,14 +78,14 @@ Android SDK の場所を設定するには、 **[Android SDK の場所]** の右
 
 ### <a name="tools-tab"></a>[ツール] タブ
 
-**[ツール]** タブにはツールとその他の一覧が表示されます。Android SDK のツール、プラットフォーム ツールおよびビルド ツールをインストールするには、このタブを使用します。
+**[ツール]** タブには_ツール_と_その他_の一覧が表示されます。 Android SDK のツール、プラットフォーム ツールおよびビルド ツールをインストールするには、このタブを使用します。
 また、Android Emulator、低レベル デバッガー (LLDB)、NDK HAXM アクセラレータ、および Google Play ライブラリをインストールすることもできます。
 
 たとえば、Google Android Emulator パッケージをダウンロードするには、 **[Android Emulator]** の横のチェック マークをクリックし、 **[変更の適用]** ボタンをクリックします。
 
 [![[ツール] タブからの Android Emulator のインストール](android-sdk-images/win/06-install-emulator-sml.png)](android-sdk-images/win/06-install-emulator.png#lightbox)
 
-ダイアログに _次のパッケージでは、インストールする前にライセンス条項に同意することが必要です_ というメッセージが表示される場合があります。
+ダイアログに_次のパッケージでは、インストールする前にライセンス条項に同意することが必要です_というメッセージが表示される場合があります。
 
 ![[ライセンスの同意] 画面](android-sdk-images/win/07-license-acceptance.png)
 
@@ -123,7 +123,7 @@ Google リポジトリを選択すると、以前は使用できなかった追�
 
 プラットフォームとツールのサポート対象のリポジトリに戻すには、 **[Microsoft (推奨)]** をクリックします。 これにより、パッケージとツールの一覧が、既定の選択に戻ります。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 ## <a name="requirements"></a>必要条件
 
@@ -168,14 +168,14 @@ Android SDK および Java JDK の場所を変更する場合、通常は **[場
 
 ### <a name="tools-tab"></a>[ツール] タブ
 
-**[ツール]** タブにはツールとその他の一覧が表示されます。Android SDK のツール、プラットフォーム ツールおよびビルド ツールをインストールするには、このタブを使用します。
+**[ツール]** タブには_ツール_と_その他_の一覧が表示されます。 Android SDK のツール、プラットフォーム ツールおよびビルド ツールをインストールするには、このタブを使用します。
 また、Android Emulator、低レベル デバッガー (LLDB)、NDK HAXM アクセラレータ、および Google Play ライブラリをインストールすることもできます。
 
 たとえば、Google Android Emulator パッケージをダウンロードするには、 **[Android Emulator]** の横のチェック マークをクリックし、 **[変更の適用]** ボタンをクリックします。
 
 [![[ツール] タブからの Android Emulator のインストール](android-sdk-images/mac/04-tools-tab-m75-sml.png)](android-sdk-images/mac/04-tools-tab-m75.png#lightbox)
 
-ダイアログに _次のパッケージでは、インストールする前にライセンス条項に同意することが必要です_ というメッセージが表示される場合があります。
+ダイアログに_次のパッケージでは、インストールする前にライセンス条項に同意することが必要です_というメッセージが表示される場合があります。
 
 [![[ライセンスの同意] 画面](android-sdk-images/mac/05-license-acceptance-m75-sml.png)](android-sdk-images/mac/05-license-acceptance-m75.png#lightbox)
 

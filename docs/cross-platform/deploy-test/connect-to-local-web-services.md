@@ -7,10 +7,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/16/2019
 ms.openlocfilehash: 29261f2ef6366c0dac8ac82e63584366a5cca0b0
-ms.sourcegitcommit: 233aaa1ac3d8f40c09b6daf6d944ea0b4cbee381
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "74135272"
 ---
 # <a name="connect-to-local-web-services-from-ios-simulators-and-android-emulators"></a>iOS シミュレーターと Android エミュレーターからローカル Web サービスに接続する

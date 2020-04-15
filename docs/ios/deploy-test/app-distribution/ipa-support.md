@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
 ms.openlocfilehash: 58fbe6d688ffb506db4316ee29d79a364f849a97
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73030420"
 ---
 # <a name="ipa-support-in-xamarinios"></a>Xamarin.iOS の IPA サポート
@@ -54,7 +54,7 @@ iTunes アートワークは次の手順で指定します。
 
 ## <a name="creating-an-ipa"></a>IPA を作成する
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 IPA 作成は新しい公開ワークフローに組み込まれました。 IPA を作成するには、以下の指示に従い、アプリをアーカイブに収め、署名し、IPA を保存します。
 
@@ -133,7 +133,7 @@ CI 環境などでは、コマンド ラインから IPA をビルドしなけ�
     /Library/Frameworks/Mono.framework/Commands/msbuild YourSolution.sln /p:Configuration=Ad-Hoc /p:Platform=iPhone /p:BuildIpa=true
     ```
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 プロビジョニング プロファイルが作成され、選択され、任意の **iTunesMetadata.plist** ファイルが作成され、iTunes アートワークが Visual Studio に設定されていれば、配布のために IPA をビルドできます。 次に、プロジェクトを構成します。 次の手順で行います。
 
@@ -229,11 +229,11 @@ msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/
 
 新しい iOS アプリケーションが **[マイ アプリ]** セクションに表示されます。アプリケーションを右クリックすると、アプリケーションに関する情報が表示されます。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
  ![](ipa-support-images/installxs01.png "The new iOS application in the My Apps section")
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
  ![](ipa-support-images/installvs01.png "The new iOS application in the My Apps section")
 

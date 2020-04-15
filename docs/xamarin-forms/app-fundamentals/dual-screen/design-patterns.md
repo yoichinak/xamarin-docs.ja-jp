@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidortinau
 ms.author: daortin
 ms.date: 02/08/2020
-ms.openlocfilehash: d8a57ac8688a0113ef267ea25fb54cbaaf562957
-ms.sourcegitcommit: 6c60914b380ff679bbffd7790edd4d5e18005d0a
+ms.openlocfilehash: ab83869a4e865d1ce3b1fee83e84ce4e2fd913c6
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80070378"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "80628317"
 ---
 # <a name="xamarinforms-dual-screen-design-patterns"></a>Xamarin.Forms のデュアル画面の設計パターン
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/DualScreenDemos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 
 このガイドでは、魅力的で便利なユーザー エクスペリエンスを提供するインターフェイスの作成に役立つコードとサンプルが含まれる、デュアル画面デバイス向けに推奨される設計パターンについて説明します。
 
@@ -270,5 +270,5 @@ ms.locfileid: "80070378"
 
 ## <a name="related-links"></a>関連リンク
 
-- [デュアル画面のサンプル (GitHub)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/DualScreenDemos)
+- [DualScreen (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 - [デュアル画面デバイス用のアプリを作成する](index.md)

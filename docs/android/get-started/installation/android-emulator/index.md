@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 08/27/2018
 ms.openlocfilehash: 148afe5354d7995f15dc19c6257ed2a1567162ec
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73027952"
 ---
 # <a name="android-emulator-setup"></a>Android Emulator のセットアップ
@@ -20,25 +20,25 @@ _このガイドでは、アプリをテストするために Android Emulator �
 
 ## <a name="overview"></a>概要
 
-Android Emulator は、さまざまなデバイスをシミュレートするために、多様な構成で実行できます。 各構成は、 _仮想デバイス_ と呼ばれます。 エミュレーターでアプリを展開してテストする場合は、Nexus や Pixel Phone などの物理的な Android デバイスをシミュレートする事前構成済みまたはカスタム仮想デバイスを選択します。
+Android Emulator は、さまざまなデバイスをシミュレートするために、多様な構成で実行できます。 各構成は、_仮想デバイス_と呼ばれます。 エミュレーターでアプリを展開してテストする場合は、Nexus や Pixel Phone などの物理的な Android デバイスをシミュレートする事前構成済みまたはカスタム仮想デバイスを選択します。
 
 以下のセクションでは、Android Emulator を高速化してパフォーマンスを最大化する方法、Android Device Manager を使用して仮想デバイスを作成し、カスタマイズする方法、そして仮想デバイスのプロファイル プロパティをカスタマイズする方法について説明します。 さらに、トラブルシューティングのセクションでは、よくあるエミュレーターの問題とその回避策について説明します。
 
 ## <a name="sections"></a>セクション
 
-### <a name="hardware-acceleration-for-emulator-performanceandroidget-startedinstallationandroid-emulatorhardware-accelerationmd"></a>[エミュレーター パフォーマンスのためのハードウェア高速化](~/android/get-started/installation/android-emulator/hardware-acceleration.md)
+### <a name="hardware-acceleration-for-emulator-performance"></a>[エミュレーター パフォーマンスのためのハードウェア高速化](~/android/get-started/installation/android-emulator/hardware-acceleration.md)
 
 Hyper-V または HAXM 仮想化テクノロジを使用して、Android Emulator のパフォーマンスを最大にするためにコンピューターを準備する方法。 Android Emulator はハードウェアの高速化なしでは非常に低速なため、このエミュレーターを使用する前に、お使いのコンピューターでハードウェア アクセラレータを有効にすることをお勧めします。
 
-### <a name="managing-virtual-devices-with-the-android-device-managerandroidget-startedinstallationandroid-emulatordevice-managermd"></a>[Android Device Manager による仮想デバイスの管理](~/android/get-started/installation/android-emulator/device-manager.md)
+### <a name="managing-virtual-devices-with-the-android-device-manager"></a>[Android Device Manager による仮想デバイスの管理](~/android/get-started/installation/android-emulator/device-manager.md)
 
 Android Device Manager を使って仮想デバイスを作成およびカスタマイズする方法。
 
-### <a name="editing-android-virtual-device-propertiesandroidget-startedinstallationandroid-emulatordevice-propertiesmd"></a>[Android 仮想デバイス プロパティの編集](~/android/get-started/installation/android-emulator/device-properties.md)
+### <a name="editing-android-virtual-device-properties"></a>[Android 仮想デバイス プロパティの編集](~/android/get-started/installation/android-emulator/device-properties.md)
 
 Android Device Manager を使用して仮想デバイスのプロファイル プロパティを編集する方法。
 
-### <a name="android-emulator-troubleshootingandroidget-startedinstallationandroid-emulatortroubleshootingmd"></a>[Android Emulator のトラブルシューティング](~/android/get-started/installation/android-emulator/troubleshooting.md)
+### <a name="android-emulator-troubleshooting"></a>[Android Emulator のトラブルシューティング](~/android/get-started/installation/android-emulator/troubleshooting.md)
 
 この記事では、Android Emulator の実行中に発生する、特に一般的な警告メッセージと問題をその回避策やヒントと共に説明します。
 

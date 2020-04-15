@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/28/2019
 ms.openlocfilehash: 20ac6ad748e7056f7f8037a73a95de66b9eae3b6
-ms.sourcegitcommit: 5f972a757030a1f17f99177127b4b853816a1173
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "69888914"
 ---
 # <a name="xamarinforms-shell"></a>Xamarin.Forms シェル

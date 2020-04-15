@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 05/01/2017
 ms.openlocfilehash: d40a23076ec8f405e57ec40de47ec9ad2261d85d
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73027607"
 ---
 # <a name="binding-a-java-library"></a>Java ライブラリのバインド
@@ -101,7 +101,7 @@ API ドキュメントは、Java8、Java7、または Java6 SDK の既定の doc
 
 ## <a name="including-a-native-library-in-a-binding"></a>バインドにネイティブ ライブラリを含める
 
-Java ライブラリのバインドの一部として、Xamarin.Android バインド プロジェクトに **.so** ライブラリを含める必要がある場合があります。 ラップされた Java コードを実行すると、Xamarin.Android は JNI の呼び出しに失敗し、エラーメッセージ _java.lang.UnsatisfiedLinkErr または Native method not found:_ がアプリケーションの logcat 出力に表示されます。
+Java ライブラリのバインドの一部として、Xamarin.Android バインド プロジェクトに **.so** ライブラリを含める必要がある場合があります。 ラップされた Java コードを実行すると、Xamarin.Android は JNI の呼び出しに失敗し、アプリケーションの logcat 出力に、_java.lang.UnsatisfiedLinkError: Native method not found:_ というエラー メッセージが表示されます。
 
 これを解決するには、`Java.Lang.JavaSystem.LoadLibrary` を呼び出して **.so** ライブラリを手動で読み込みます。 たとえば、Xamarin.Android プロジェクトに、ビルド アクションが **EmbeddedNativeLibrary** のバインド プロジェクトに含まれる共有ライブラリ **libpocketsphinx_jni.so** があるとします。次のスニペット (共有ライブラリを使用する前に実行) によって **.so** ライブラリが読み込まれます。
 

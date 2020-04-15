@@ -1,18 +1,18 @@
 ---
-title: 'Xamarin.Essentials: コンパス'
+title: Xamarin.Essentials:コンパス
 description: このドキュメントで説明する Xamarin.Essentials の Compass クラスを使用すると、デバイスの磁北方位を監視することができます。
 ms.assetid: BF85B0C3-C686-43D9-811A-07DCAF8CDD86
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
 ms.openlocfilehash: 55dd10bff21b7d082b225277d0100232d5efd4f3
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898785"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "61356878"
 ---
-# <a name="xamarinessentials-compass"></a>Xamarin.Essentials: コンパス
+# <a name="xamarinessentials-compass"></a>Xamarin.Essentials:コンパス
 
 **Compass** クラスを使用すると、デバイスの磁北方位を監視することができます。
 
@@ -74,7 +74,7 @@ public class CompassTest
 
 ## <a name="platform-implementation-specifics"></a>プラットフォームの実装の詳細
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 Android には、コンパスの方位を取得するための API はありません。 Google の推奨に従い、加速度計と磁気探知器を利用して磁北方位を計算します。
 

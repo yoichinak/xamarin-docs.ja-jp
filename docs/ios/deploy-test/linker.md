@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
 ms.openlocfilehash: 284705973f9c0ec606572170f7e927ed4745ddd1
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73030231"
 ---
 # <a name="linking-xamarinios-apps"></a>Xamarin.iOS アプリをリンクする
@@ -26,13 +26,13 @@ ms.locfileid: "73030231"
 
 ## <a name="linker-behavior"></a>リンカーの動作
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 リンク プロセスは、 **[プロジェクト オプション]** のリンカーの動作ドロップダウンからカスタマイズできます。 これにアクセスするには、iOS プロジェクトをダブルクリックし、 **[iOS ビルド]、[リンカーのオプション]** の順に選択します。下の画像をご覧ください。
 
 [![](linker-images/image1.png "Linker Options")](linker-images/image1.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 リンク プロセスは、Visual Studio の **[プロジェクトのプロパティ]** のリンカーの動作ドロップダウンからカスタマイズできます。
 

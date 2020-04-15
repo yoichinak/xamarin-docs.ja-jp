@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
 ms.openlocfilehash: 283273e6ee28cc5cd1a61169f38bfcd1dd1726d8
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771040"
 ---
 # <a name="summary-of-chapter-20-async-and-file-io"></a>第 20 章の概要: 非同期およびファイル I/O
@@ -83,7 +83,7 @@ Xamarin.iOS と Xamarin.Android のライブラリには、これらの 2 つの
 つまり、[`DependencyService`](xref:Xamarin.Forms.DependencyService) を使用して (最初に「[**第 9 章: プラットフォーム固有の API 呼び出し**](chapter09.md)」で説明されています)、ファイル I/O を実装する必要があります。
 
 > [!NOTE]
-> ポータブル クラス ライブラリは .NET Standard 2.0 ライブラリに置き換えられています。 .NET Standard 2.0 では、すべての Xamarin.Forms プラットフォーム向けに [`System.IO`](xref:System.IO) 型がサポートされています。 ほとんどのファイル I/O タスクでは、`DependencyService` を使用する必要がなくなりました。 ファイル I/O に対するより新しいアプローチについては、「[Xamarin.Forms でのファイル処理](~/xamarin-forms/data-cloud/data/files.md)」をご覧ください。
+> ポータブル クラス ライブラリは .NET Standard 2.0 ライブラリに置き換えられています。.NET Standard 2.0 では、すべての Xamarin.Forms プラットフォーム向けに [`System.IO`](xref:System.IO) 型がサポートされています。 ほとんどのファイル I/O タスクでは、`DependencyService` を使用する必要がなくなりました。 ファイル I/O に対するより新しいアプローチについては、「[Xamarin.Forms でのファイル処理](~/xamarin-forms/data-cloud/data/files.md)」をご覧ください。
 
 ### <a name="a-first-shot-at-cross-platform-file-io"></a>最初のクロスプラットフォーム ファイル I/O
 

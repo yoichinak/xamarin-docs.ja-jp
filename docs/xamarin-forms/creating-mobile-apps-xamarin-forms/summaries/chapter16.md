@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
 ms.openlocfilehash: 2d61413fb1d8c28a3957da53601d0ad682f35518
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771098"
 ---
 # <a name="summary-of-chapter-16-data-binding"></a>第 16 章の概要: データ バインディング
@@ -93,7 +93,7 @@ ms.locfileid: "70771098"
 > [!NOTE]
 > `BindingMode` 列挙型には、ソース プロパティが変更されたときではなく、バインディング コンテキストが変更されたときにのみバインディングを適用するための `OnTime` も含まれるようになりました。
 
-MVVM シナリオにおいてデータ バインディングのターゲットとなる可能性のあるプロパティには、通常、`TwoWay` の `DefaultBindingMode` が設定されています。 これらの数値は、次のとおりです。
+MVVM シナリオにおいてデータ バインディングのターゲットとなる可能性のあるプロパティには、通常、`TwoWay` の `DefaultBindingMode` が設定されています。 これらのボタンの役割は、次のとおりです。
 
 - `Slider` と `Stepper` の `Value` プロパティ
 - `Switch` の `IsToggled` プロパティ

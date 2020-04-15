@@ -7,15 +7,15 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
 ms.openlocfilehash: d0b195b90bb57b6d0717c0fb06d0202857851fe7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73016524"
 ---
 # <a name="cross-platform-performance"></a>クロスプラットフォームのパフォーマンス
 
-アプリケーションのパフォーマンス低下は、さまざまな挙動で現れます。 たとえば、アプリケーションが応答しなかったり、スクロールが遅くなったり、電池の寿命が縮まったりすることがあります。 ただし、パフォーマンスを最適化するには、単に効率的なコードを実装するだけでは不十分です。 アプリケーション パフォーマンスに関わるユーザー エクスペリエンスも考慮する必要があります。 たとえば、操作の実行によって、ユーザーが他の操作を実行できない状況にならないようにすることで、ユーザー エクスペリエンスを改善できます。
+アプリケーションのパフォーマンス低下は、さまざまな挙動で現れます。 たとえば、アプリケーションが応答しなかったり、スクロールが遅くなったり、バッテリーの寿命が縮まったりすることがあります。 ただし、パフォーマンスを最適化するには、単に効率的なコードを実装するだけでは不十分です。 アプリケーション パフォーマンスに関わるユーザー エクスペリエンスも考慮する必要があります。 たとえば、操作の実行によって、ユーザーが他の操作を実行できない状況にならないようにすることで、ユーザー エクスペリエンスを改善できます。
 
 <a name="profiler" />
 
@@ -254,8 +254,8 @@ public class FaceDetection
 
 使用されなくなったオブジェクトに割り当てられているメモリを再利用するために、C# などのマネージド言語ではガーベジ コレクションが使用されます。 Xamarin プラットフォームで使用される 2 つのガベージ コレクターは次のとおりです。
 
-- [**SGen** ](https://www.mono-project.com/docs/advanced/garbage-collector/sgen/) – これは世代別ガベージ コレクターであり、Xamarin のプラットフォームの既定のガベージ コレクターです。
-- [**Boehm** ](http://www.hboehm.info/gc/) – これは、保守的な、非世代別ガベージ コレクターです。 これは、Classic API を使用する Xamarin.iOS アプリケーションで使用される既定のガベージ コレクターです。
+- [**SGen**](https://www.mono-project.com/docs/advanced/garbage-collector/sgen/) – これは世代別ガベージ コレクターであり、Xamarin のプラットフォームの既定のガベージ コレクターです。
+- [**Boehm**](http://www.hboehm.info/gc/) – これは、保守的な、非世代別ガベージ コレクターです。 これは、Classic API を使用する Xamarin.iOS アプリケーションで使用される既定のガベージ コレクターです。
 
 SGen では、オブジェクトにスペースを割り当てる際に、次の 3 つのヒープのいずれかが利用されます。
 

@@ -6,10 +6,10 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
 ms.openlocfilehash: 2e4cf713f9ad7478c0d8e288fd3beff4b5015ef5
-ms.sourcegitcommit: 1dd7d09b60fcb1bf15ba54831ed3dd46aa5240cb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70120116"
 ---
 # <a name="xamarinessentials-vibration"></a>Xamarin.Essentials:振動
@@ -22,7 +22,7 @@ ms.locfileid: "70120116"
 
 **Vibration** の機能にアクセスするには、次のプラットフォーム固有の設定が必要です。
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 Vibrate アクセス許可が必要です。Android プロジェクト内で構成する必要があります。 これは次の方法で追加できます。
 
@@ -42,11 +42,11 @@ Vibrate アクセス許可が必要です。Android プロジェクト内で構�
 
 または、Android プロジェクトを右クリックし、プロジェクトのプロパティを開きます。 **[Android マニフェスト]** の下で **[必要なアクセス許可:]** 領域を探し、**VIBRATE** アクセス許可をオンにします。 これにより、**AndroidManifest.xml** ファイルが自動的に更新されます。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 追加の設定は必要ありません。
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 プラットフォームによる違いはありません。
 
@@ -101,17 +101,17 @@ catch (Exception ex)
 
 ## <a name="platform-differences"></a>プラットフォームによる違い
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 プラットフォームによる違いはありません。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 - デバイスが "着信時にバイブレーション" に設定されているときにのみバイブレーションします。
 - 常に 500 ミリ秒だけバイブレーションします。
 - バイブレーションを取り消すことはできません。
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 プラットフォームによる違いはありません。
 

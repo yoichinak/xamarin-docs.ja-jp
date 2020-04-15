@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
 ms.openlocfilehash: 49d67db46416584248a9b15db606538f5ebfba79
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73021019"
 ---
 # <a name="finding-your-keystores-signature"></a>キーストアの署名の検索
@@ -21,7 +21,7 @@ Xamarin.Android アプリの MD5 または SHA1 署名は、APK の署名に使�
 
 Xamarin.Android は同じ **debug.keystore** ファイルですべてのデバッグ ビルドに署名します。 このファイルは Xamarin.Android が最初にインストールされたときに生成されます。以下の手順で、既定の Xamarin.Android **debug.keystore** ファイルの MD5 または SHA1 署名を探すプロセスについて説明します。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 アプリの署名に利用された Xamarin **debug.keystore** ファイルを見つけます。 既定では、Xamarin.Android アプリケーションのデバッグ バージョンの署名に利用されたキーストアは次の場所にあります。
 
@@ -59,7 +59,7 @@ Certificate fingerprints:
          Version: 3
 ```
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 アプリの署名に利用された Xamarin **debug.keystore** ファイルを見つけます。 既定では、Xamarin.Android アプリケーションのデバッグ バージョンの署名に利用されたキーストアは次の場所にあります。
 
@@ -112,7 +112,7 @@ KeyIdentifier [
 
 カスタム **.keystore** ファイルで署名されたリリース ビルドのプロセスは上と同じですが、リリース **.keystore** ファイルが Xamarin.Android で使用される **debug.keystore** ファイルに代わります。 リリース キーストア ファイルの作成時のキーストア パスワードとエイリアス名を独自の値に変更します。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Visual Studio の **[配布]** ウィザードで Xamarin.Android アプリに署名すると、キーストアは次の場所に置かれます。
 
@@ -124,7 +124,7 @@ Visual Studio の **[配布]** ウィザードで Xamarin.Android アプリに�
 
 Xamarin.Android アプリに署名する方法については、「[Android アプリケーション パッケージに署名する](~/android/deploy-test/signing/index.md)」を参照してください。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 Visual Studio for Mac の **[署名と配布...]** ウィザードでアプリに署名すると、結果のキーストアは次の場所に置かれます。
 

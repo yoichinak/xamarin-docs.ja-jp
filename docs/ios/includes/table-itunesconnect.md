@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 3560c365df18f0331d5834de20dbc5585615dbeb
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70763228"
 ---
 |デバイス|縦 (ステータス バーを除く)|縦 (全画面表示)|横 (ステータス バーを除く)|横 (全画面表示)|

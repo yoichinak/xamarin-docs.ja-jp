@@ -7,10 +7,10 @@ ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
 ms.openlocfilehash: f8e5a31b855158e1f801354c66f3d3d255eca559
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75488492"
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials:セキュリティで保護されたストレージ
@@ -67,7 +67,7 @@ ms.locfileid: "75488492"
 
 iOS プロジェクト内の **Entitlements.plist** を開き、**キーチェーン** エンタイトルメントを見つけて有効にします。 これで、アプリケーションの ID がグループとして自動的に追加されます。
 
-プロジェクトのプロパティの **[iOS バンドル署名]** で、 **[カスタム エンタイトルメント]** を **Entitlements.plist** に設定します。
+プロジェクトのプロパティの **[iOS バンドル署名]** で、 **[カスタムの権利]** を **Entitlements.plist** に設定します。
 
 > [!TIP]
 > iOS デバイスに展開する場合は、このエンタイトルメントは不要であり、削除する必要があります。

@@ -7,10 +7,10 @@ ms.author: jamont
 ms.date: 01/15/2019
 ms.custom: video
 ms.openlocfilehash: e812ab5b85db396ee3cb473f4a659ac188c9212f
-ms.sourcegitcommit: 98fdc3b4a7ef10d5b45167315dbffe94853af71a
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/18/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "79497041"
 ---
 # <a name="xamarinessentials-preferences"></a>Xamarin.Essentials:Preferences
@@ -106,7 +106,7 @@ iOS デバイスに値を格納するには、[NSUserDefaults](https://docs.micr
 
 ## <a name="persistence"></a>永続性
 
-アプリケーションをアンインストールすると、すべての "_ユーザー設定_" が削除されます。これには例外が 1 つあり、Android 6.0 (API レベル 23) 以降で実行されていて[__自動バックアップ__](https://developer.android.com/guide/topics/data/autobackup)を使用しているアプリの場合です。この機能は既定で有効にされて、__Shared Preferences__ などのアプリ データを保持し、**Preferences** API はそれを利用します。この機能は、Google の [ドキュメント](https://developer.android.com/guide/topics/data/autobackup)に従って無効にできます。
+アプリケーションをアンインストールすると、すべての "_ユーザー設定_" が削除されます。 これには例外が 1 つあり、Android 6.0 (API レベル 23) 以降で実行されていて [__自動バックアップ__](https://developer.android.com/guide/topics/data/autobackup)を使用しているアプリの場合です。 この機能は既定で有効にされて、__Shared Preferences__などのアプリ データを保持し、**Preferences** API はそれを利用します。 この機能は、Google の [ドキュメント](https://developer.android.com/guide/topics/data/autobackup)に従って無効にできます。
 
 ## <a name="limitations"></a>制限事項
 

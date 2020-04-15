@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
 ms.openlocfilehash: 28f48766dc62ac31fc357410eac27c33c9cae6d8
-ms.sourcegitcommit: 52fb214c0e0243587d4e9ad9306b75e92a8cc8b7
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/01/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "76940689"
 ---
 # <a name="proguard"></a>ProGuard
@@ -316,11 +316,11 @@ Windows でこの問題が発生するのは、通常、`.cfg` ファイルの�
 
 <!-- markdownlint-disable MD001 -->
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 この問題を回避するには、BOM なしでファイルを保存できるテキスト エディターでカスタム構成ファイルを編集します。 この問題を解決するには、テキスト エディターのエンコードを `UTF-8` に設定します。 たとえば、[Notepad++](https://notepad-plus-plus.org/) テキスト エディターでは、 **[Encoding]\(エンコード\) &gt; [Encode in UTF-8 Without BOM]\(BOM なしの UTF-8 でエンコードする\)** を選ぶことにより、BOM を使わずにファイルを保存できます。 
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 この問題を回避するには、BOM を省略することができるテキスト エディターから、カスタム構成ファイルを保存します。 
 

@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
 ms.openlocfilehash: 297c7806ce8a880d65c38ef0e4672e41fee5acfe
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "76724443"
 ---
 # <a name="lollipop-features"></a>Lollipop 機能
@@ -60,7 +60,7 @@ Android 5.0 プロジェクトを作成するには、最新のツールと SDK 
 
 2. Visual Studio for Mac を使用している場合は、最新の Android 5.0 更新プログラムをインストールします。
 
-3. Android SDK マネージャーを起動し (Visual Studio for Mac では **[ツール] &gt; [Android SDK マネージャーを開く]&hellip;**)、Android SDK Tools 23.0.5 以降をインストールします。
+3. Android SDK マネージャーを起動し (Visual Studio for Mac では **[ツール] &gt; [Android SDK マネージャーを開く]&hellip;** )、Android SDK Tools 23.0.5 以降をインストールします。
 
     [![Android SDK マネージャーでの Android SDK Tools の選択](lollipop-images/android-l-tools-sml.png)](lollipop-images/android-l-tools.png#lightbox)
 
@@ -71,7 +71,7 @@ Android 5.0 プロジェクトを作成するには、最新のツールと SDK 
    Android SDK Manager の使用の詳細については、[SDK マネージャー](https://developer.android.com/tools/help/sdk-manager.html)に関するページを参照してください。
 
 4. 新しい Xamarin.Android プロジェクトを作成します。 Xamarin を使用した Android の開発を初めて行う場合は、「[Hello, Android](~/android/get-started/hello-android/index.md)」を参照して、Android プロジェクトの作成について学習してください。 Android プロジェクトを作成するときは、Android 5.0 用のバージョン設定を構成してください。
-   Visual Studio for Mac で、**[プロジェクト オプション] &gt; [ビルド] &gt; [全般]** に移動し、**[ターゲット フレームワーク]** を **[Android 5.0 (Lollipop)]** 以降に設定します。
+   Visual Studio for Mac で、 **[プロジェクト オプション] &gt; [ビルド] &gt; [全般]** に移動し、 **[ターゲット フレームワーク]** を **[Android 5.0 (Lollipop)]** 以降に設定します。
 
     ![ターゲット フレームワークを Android 5.0 Lollipop に設定する](lollipop-images/target-framework.png)
 
@@ -81,7 +81,7 @@ Android 5.0 プロジェクトを作成するには、最新のツールと SDK 
 
 5. アプリをテストするためのエミュレーターまたは Android デバイスを構成します。 エミュレーターを使用している場合、Xamarin Studio または Visual Studio で使用するために Android エミュレーターを構成する方法については、「[Android Emulator のセットアップ](~/android/get-started/installation/android-emulator/index.md)」を参照してください。 Android デバイスを使用している場合、Android 5.0 のデバイスを更新する方法については、[プレビュー版 SDK のセットアップ](https://developer.android.com/preview/setup-sdk.html)に関するページを参照してください。 Xamarin.Android アプリケーションの実行とデバッグのために Android デバイスを構成するには、「[開発用のデバイスの設定](~/android/get-started/installation/set-up-device-for-development.md)」を参照してください。
 
-メモ:Android L Preview を対象としていた既存の Android プロジェクトを更新する場合は、**[ターゲット フレームワーク]** と **[Android バージョン]** を前述の値に更新する必要があります。
+メモ:Android L Preview を対象としていた既存の Android プロジェクトを更新する場合は、 **[ターゲット フレームワーク]** と **[Android バージョン]** を前述の値に更新する必要があります。
 
 ## <a name="important-changes"></a>重要な変更点
 

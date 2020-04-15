@@ -1,18 +1,18 @@
 ---
-title: 'Xamarin.Essentials: ジャイロスコープ'
+title: Xamarin.Essentials:ジャイロスコープ
 description: Xamarin.Essentials の Gyroscope クラスを使用すると、デバイスの 3 つの主軸の周りの回転角度を測定するデバイスのジャイロスコープ センサーを監視できます。
 ms.assetid: DA4F968A-D988-41F5-8745-1BEE693660A1
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
 ms.openlocfilehash: 1e19585e238d66568364be7ccdbdb52d22b04066
-ms.sourcegitcommit: 01f93a34b466f8d4043cef68fab9b35cd8decee6
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52898512"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "61259484"
 ---
-# <a name="xamarinessentials-gyroscope"></a>Xamarin.Essentials: ジャイロスコープ
+# <a name="xamarinessentials-gyroscope"></a>Xamarin.Essentials:ジャイロスコープ
 
 **Gyroscope** クラスを使用すると、デバイスの 3 つの主軸の周りの回転角度であるデバイスのジャイロスコープ センサーを監視できます。
 

@@ -7,13 +7,13 @@ ms.author: jamont
 ms.date: 05/28/2019
 ms.custom: video
 ms.openlocfilehash: d2aef2c32b3fe2815f1176779a8c28ae8d421ed1
-ms.sourcegitcommit: 654df48758cea602946644d2175fbdfba59a64f3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/11/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "67832590"
 ---
-# <a name="xamarinessentials-detect-shake"></a>Xamarin.Essentials:Detect Shake
+# <a name="xamarinessentials-detect-shake"></a>Xamarin.Essentials:シェイクの検出
 
 **[Accelerometer](accelerometer.md)** クラスでは、デバイスの加速度を 3 次元空間で示す、デバイスの加速度計センサーを監視できます。 また、ユーザーがデバイスを振るイベントを登録できます。
 

@@ -8,21 +8,21 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/22/2018
 ms.openlocfilehash: 2bc8f82db29ed3c07c67293a83e6874f0cc6acb2
-ms.sourcegitcommit: 5821c9709bf5e06e6126233932f94f9cf3524577
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/31/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75556523"
 ---
 # <a name="debug-on-the-android-emulator"></a>Android Emulator でのデバッグ
 
 _このガイドでは、アプリをデバッグしてテストするために Android Emulator で仮想デバイスを起動する方法について説明します。_
 
-Android Emulator (**.NET によるモバイル開発**のワークロードの一部としてインストールされている) は各種の Android デバイスをシミュレートするために、さまざまな構成で実行することができます。これらの構成がそれぞれ、仮想デバイスとして作成されます。このガイドでは、Visual Studio からエミュレーターを起動する方法、および仮想デバイスでアプリを実行する方法を説明します。Android Emulator の構成と、新しい仮想デバイスの作成については、「[Android Emulator のセットアップ](~/android/get-started/installation/android-emulator/index.md)」を参照してください。
+Android Emulator ( **.NET によるモバイル開発**のワークロードの一部としてインストールされている) は各種の Android デバイスをシミュレートするために、さまざまな構成で実行することができます。 これらの構成がそれぞれ、_仮想デバイス_として作成されます。 このガイドでは、Visual Studio からエミュレーターを起動する方法、および仮想デバイスでアプリを実行する方法を説明します。 Android Emulator の構成と、新しい仮想デバイスの作成については、「[Android Emulator のセットアップ](~/android/get-started/installation/android-emulator/index.md)」を参照してください。
 
 ## <a name="using-a-pre-configured-virtual-device"></a>構成済み仮想デバイスの使用
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Visual Studio には、デバイスのドロップダウン メニューに表示される構成済みの仮想デバイスが含まれます。 たとえば、次の Visual Studio 2017 のスクリーンショットでは、いくつかの構成済み仮想デバイスが使用可能です。
 
@@ -45,7 +45,7 @@ Xamarin.Android プロジェクトで、使用可能な仮想マシンと互換�
 使用可能な仮想デバイスの API レベルと一致するように、 **[最小 Android ターゲットの変更]** をクリックして、プロジェクトの最小 Android バージョンを変更することができます。 また、[Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md) を使用して、ターゲット API レベルをサポートする新しい仮想デバイスを作成することもできます。
 新しい API レベル用に仮想デバイスを構成するには、まず、その API レベルに対応するシステム イメージをインストールする必要があります (「[Xamarin.Android 向け Android SDK を設定する](~/android/get-started/installation/android-sdk.md)」を参照)。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 Visual Studio for Mac には、デバイスのドロップダウン メニューに表示される構成済みの仮想デバイスが含まれます。 たとえば、次のスクリーンショットでは、2 つの構成済み仮想デバイスを使用できます。
 
@@ -69,11 +69,11 @@ Visual Studio for Mac には、デバイスのドロップダウン メニュー
 
 VisuaI Studio の上部近くにドロップダウン メニューがあります。このメニューを使用して、**デバッグ** モードまたは**リリース** モードを選択できます。 **[デバッグ]** を選択すると、アプリの起動後にエミュレーター内で実行されているアプリケーション プロセスにデバッガーがアタッチされます。 **[リリース]** モードを選択すると、デバッガーが無効になります (ただし、アプリを実行し、ログ ステートメントを使用してデバッグすることはできます)。 デバイスのドロップダウン メニューから仮想デバイスを選択した後、 **[デバッグ]** または **[リリース]** のいずれかのモードを選択し、[再生] ボタンをクリックしてアプリケーションを実行します。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [![[デバッグ] および [リリース] モードと [再生] ボタン](debug-on-emulator-images/win/17-debug-release-sml.png)](debug-on-emulator-images/win/17-debug-release.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 [![[デバッグ] および [リリース] モードと [再生] ボタン](debug-on-emulator-images/mac/16-debug-release-sml.png)](debug-on-emulator-images/mac/16-debug-release.png#lightbox)
 
@@ -89,7 +89,7 @@ VisuaI Studio の上部近くにドロップダウン メニューがありま�
 
 ## <a name="quick-boot"></a>クイック ブート
 
-新しいバージョンの Android Emulator には、ほんの数秒でエミュレーターを起動する _クイック ブート_ と呼ばれる機能が含まれています。 エミュレーターを閉じるときに、仮想デバイスの状態のスナップショットが取得されるため、再起動時にその状態をすばやく復元できます。
+新しいバージョンの Android Emulator には、ほんの数秒でエミュレーターを起動する_クイック ブート_と呼ばれる機能が含まれています。 エミュレーターを閉じるときに、仮想デバイスの状態のスナップショットが取得されるため、再起動時にその状態をすばやく復元できます。
 この機能にアクセスするには、次が必要になります。
 
 - Android Emulator バージョン 27.0.2 またはそれ以降

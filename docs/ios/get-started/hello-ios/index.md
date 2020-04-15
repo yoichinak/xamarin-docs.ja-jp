@@ -9,19 +9,19 @@ author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
 ms.openlocfilehash: af0b9b4a73a82afbaef314384b10d6b9465a4b29
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73022816"
 ---
 # <a name="sample-app-hello-ios"></a>サンプル アプリ:Hello, iOS
 
-## <a name="part-1-quickstartiosget-startedhello-ioshello-ios-quickstartmd"></a>[第 1 部: クイック スタート](~/ios/get-started/hello-ios/hello-ios-quickstart.md)
+## <a name="part-1-quickstart"></a>[第 1 部: クイック スタート](~/ios/get-started/hello-ios/hello-ios-quickstart.md)
 
 このガイドの前半では、ユーザーが入力した英字の電話番号を数値の電話番号に変換してから、その番号に電話をかけるアプリケーションの作成方法を説明します。
 
-## <a name="part-2-deep-diveiosget-startedhello-ioshello-ios-deepdivemd"></a>[第 2 部: 詳しく調べる](~/ios/get-started/hello-ios/hello-ios-deepdive.md)
+## <a name="part-2-deep-dive"></a>[第 2 部: 詳しく調べる](~/ios/get-started/hello-ios/hello-ios-deepdive.md)
 
 このドキュメントの後半では、どのようなアプリケーションがビルドされるかを確認し、iOS アプリケーションがどのように機能するかについての基本的な知識を提供します。
 

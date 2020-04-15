@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
 ms.openlocfilehash: 73e312a1af56091a7e579d3fcbcea810ee0efb1e
-ms.sourcegitcommit: 266e75fa6893d3732e4e2c0c8e79c62be2804468
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "68820972"
 ---
 # <a name="adding-a-pan-gesture-recognizer"></a>パン ジェスチャ認識エンジンの追加

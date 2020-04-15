@@ -7,10 +7,10 @@ ms.author: jamont
 ms.date: 01/08/2019
 ms.custom: video
 ms.openlocfilehash: c70510f7b47f93c6119532b6a1c06f6c2e9e56ea
-ms.sourcegitcommit: afe9d93373d66eb45d82cabefca83b5733969634
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "67855759"
 ---
 # <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials:接続
@@ -23,7 +23,7 @@ ms.locfileid: "67855759"
 
 **接続**の機能にアクセスするには、次のプラットフォーム固有の設定が必要です。
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 `AccessNetworkState` アクセス許可が必要です。Android プロジェクト内で構成する必要があります。 これは次の方法で追加できます。
 
@@ -43,11 +43,11 @@ ms.locfileid: "67855759"
 
 または、Android プロジェクトを右クリックし、プロジェクトのプロパティを開きます。 **[Android マニフェスト]** の下で **[必要なアクセス許可:]** 領域を探し、 **[Access Network State]\(ネットワーク アクセスの状態\)** アクセス許可を確認します。 これにより、**AndroidManifest.xml** ファイルが自動的に更新されます。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 追加の設定は必要ありません。
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 追加の設定は必要ありません。
 
