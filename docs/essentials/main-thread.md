@@ -6,10 +6,10 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 08/20/2019
 ms.openlocfilehash: 9109e7bff4cfe60479e711240d290d77b60a9af6
-ms.sourcegitcommit: 9a46ee759ec4a738da348e8f8904d0f482ef0f25
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70060122"
 ---
 # <a name="xamarinessentials-mainthread"></a>Xamarin.Essentials:MainThread
@@ -18,7 +18,7 @@ ms.locfileid: "70060122"
 
 ## <a name="background"></a>背景
 
-ほとんどのオペレーティング システム — iOS、Android、ユニバーサル Windows プラットフォームなど — では、ユーザー インターフェイスに関連するコードのためにシングル スレッド モデルが使用されます。このモデルは、ユーザー インターフェイスのイベント (キーストローク、タッチ入力など) をシリアル化するために必要です。多くの場合、このスレッドはメイン スレッド、ユーザー インターフェイス スレッド、または UI スレッドと呼ばれます。このモデルの欠点は、ユーザー インターフェイス要素にアクセスするすべてのコードを、アプリケーションのメイン スレッドで実行させなければならないという点です。 
+ほとんどのオペレーティング システム — iOS、Android、ユニバーサル Windows プラットフォームなど — では、ユーザー インターフェイスに関連するコードのためにシングル スレッド モデルが使用されます。 このモデルは、ユーザー インターフェイスのイベント (キーストローク、タッチ入力など) をシリアル化するために必要です。 多くの場合、このスレッドは_メイン スレッド_、_ユーザー インターフェイス スレッド_、または _UI スレッド_と呼ばれます。 このモデルの欠点は、ユーザー インターフェイス要素にアクセスするすべてのコードを、アプリケーションのメイン スレッドで実行させなければならないという点です。 
 
 アプリケーションでは、イベント ハンドラーを実行のセカンダリ スレッドで呼び出すイベントを使用することが必要な場合があります。 (Xamarin.Essentials のクラス [`Accelerometer`](accelerometer.md)、[`Compass`](compass.md)、[`Gyroscope`](gyroscope.md)、[`Magnetometer`](magnetometer.md)、[`OrientationSensor`](orientation-sensor.md) はすべて、高速で使用すると、セカンダリ スレッドに関する情報を返す可能性があります。)イベント ハンドラーがユーザー インターフェイス要素にアクセスする必要がある場合は、そのコードをメイン スレッドで実行させる必要があります。 **MainThread** クラスを使用すると、アプリケーションでこのコードをメイン スレッドで実行させることができます。
 

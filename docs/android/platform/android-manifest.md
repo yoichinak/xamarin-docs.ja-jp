@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/05/2018
 ms.openlocfilehash: 1438c012608b367c21ebcc401c058b186b917f53
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73027804"
 ---
 # <a name="working-with-the-android-manifest"></a>Android マニフェストの操作
@@ -166,7 +166,7 @@ Android マニフェストにアクセス許可を追加すると (「[Android �
 Android マニフェストでは、アクティビティの機能を記述する方法が提供されています。 これは、[インテント](https://developer.android.com/guide/topics/manifest/intent-filter-element.html)と [`[IntentFilter]`](xref:Android.App.IntentFilterAttribute)
 カスタム属性によって行われます。 アクティビティに適したアクションを指定するには [`IntentFilter`](xref:Android.App.IntentFilterAttribute#ctor*)
 コンストラクターを使用し、どのカテゴリが適しているかを指定するには [`Categories`](xref:Android.App.IntentFilterAttribute.Categories)
-プロパティを使用します。 少なくとも 1 つのアクティビティを指定する必要があります (アクティビティがコンストラクターで提供されているのはこのためです)。 `[IntentFilter]` は複数回指定することができ、使用するたびに `<activity/>` 内に異なる `<intent-filter/>` 要素が作成されます。 次に例を示します。
+プロパティを使用する方法を示します。 少なくとも 1 つのアクティビティを指定する必要があります (アクティビティがコンストラクターで提供されているのはこのためです)。 `[IntentFilter]` は複数回指定することができ、使用するたびに `<activity/>` 内に異なる `<intent-filter/>` 要素が作成されます。 次に例を示します。
 
 ```csharp
 [Activity (Label="Awesome Demo App", MainLauncher=true, Icon="@drawable/myicon")] 

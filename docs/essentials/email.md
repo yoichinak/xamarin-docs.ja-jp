@@ -6,10 +6,10 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 08/20/2019
 ms.openlocfilehash: cccbe5f539e2807e749433623e938438e67965e8
-ms.sourcegitcommit: 9a46ee759ec4a738da348e8f8904d0f482ef0f25
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70060094"
 ---
 # <a name="xamarinessentials-email"></a>Xamarin.Essentials:電子メール
@@ -86,15 +86,15 @@ await Email.ComposeAsync(message);
 
 ## <a name="platform-differences"></a>プラットフォームによる違い
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 Android の一部のメール クライアントは `Html` を検出する手段がなく、これをサポートしていないため、メールを送信するときは `PlainText` を使用することをお勧めします。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 プラットフォームによる違いはありません。
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 `Html` を送信しようとしている `BodyFormat` で `FeatureNotSupportedException` がスローされるため、`PlainText` のみをサポートします。
 

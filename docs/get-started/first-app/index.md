@@ -10,10 +10,10 @@ author: conceptdev
 ms.author: crdun
 ms.date: 05/23/2019
 ms.openlocfilehash: fd2fcf6ebe11df27444f2ecc1d89955debf56cb4
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75502801"
 ---
 # <a name="build-your-first-xamarinforms-app"></a>最初の Xamarin.Forms アプリのビルド
@@ -213,4 +213,4 @@ _このビデオを視聴し、作業を進めて、Xamarin.Forms による最�
 
 - [単一ページのクイックスタート](~/get-started/quickstarts/single-page.md) &ndash; さらに機能的なアプリをビルドする。
 - [Xamarin.Forms のサンプル](~/xamarin-forms/samples/index.md) &ndash; コード例とサンプル アプリをダウンロードして実行する。
-- Mobile Apps 電子ブックの作成](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md) &ndash; PDF で提供され、数百の追加のサンプルを含む Xamarin.Forms 開発について解説する詳細な章。
+- [Mobile Apps の電子ブックの作成](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md) &ndash; PDF で提供され、数百の追加のサンプルを含む Xamarin.Forms 開発について解説する詳細な章。

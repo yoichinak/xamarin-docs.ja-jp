@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2018
 ms.openlocfilehash: c9c6816115d89212ea720f027d51af6c990cfe8d
-ms.sourcegitcommit: 7fd88ada5b44a62390fe1a73ef08014e4d236a2d
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/25/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "80261311"
 ---
 # <a name="preparing-an-application-for-release"></a>リリースに向けてアプリケーションを準備する
@@ -228,7 +228,7 @@ Dotfuscator CE を構成するには、「[Using Dotfuscator Community Edition w
 
 #### <a name="llvm-optimizing-compiler"></a>LLVM 最適化コンパイラ
 
-_LLVM 最適化コンパイラ_ では、より小さく高速なコンパイル済みコードを作成し、AOT コンパイルによるアセンブリをネイティブ コードに変換しますが、その分ビルド時間がかかります。 LLVM コンパイラは既定では無効です。 LLVM コンパイラを使用するには、最初に ([[パッケージング プロパティ]](#Set_Packaging_Properties) ページで) **[AOT コンパイル]** オプションを有効にする必要があります。
+_LLVM 最適化コンパイラ_では、より小さく高速なコンパイル済みコードを作成し、AOT コンパイルによるアセンブリをネイティブ コードに変換しますが、その分ビルド時間がかかります。 LLVM コンパイラは既定では無効です。 LLVM コンパイラを使用するには、最初に ([[パッケージング プロパティ]](#Set_Packaging_Properties) ページで) **[AOT コンパイル]** オプションを有効にする必要があります。
 
 > [!NOTE]
 > **LLVM 最適化コンパイラ** オプションには、エンタープライズ ライセンスが必要です。  
@@ -263,7 +263,7 @@ _LLVM 最適化コンパイラ_ では、より小さく高速なコンパイル
 
 ### <a name="multi-dex"></a>Multi-Dex
 
-**[Multi-Dex を有効にする]** オプションが有効になっていると、Android SDK ツールを使用して **.dex** ファイル形式の 65K のメソッド制限が回避されます。 65K のメソッド制限は、アプリが _参照する_ Java メソッドの数に基づいています (アプリが依存しているすべてのライブラリのメソッドも含む)。_ソース コードに記述されている_ メソッドの数には基づいていません。 アプリケーションで定義しているメソッドの数が 2、3 個で、使用するメソッドが多い (またはライブラリが大きい) 場合、65K の制限を超過する可能性があります。
+**[Multi-Dex を有効にする]** オプションが有効になっていると、Android SDK ツールを使用して **.dex** ファイル形式の 65K のメソッド制限が回避されます。 65K のメソッド制限は、アプリが_参照する_ Java メソッドの数に基づいています (アプリが依存しているすべてのライブラリのメソッドも含む)。_ソース コードに記述されている_メソッドの数には基づいていません。 アプリケーションで定義しているメソッドの数が 2、3 個で、使用するメソッドが多い (またはライブラリが大きい) 場合、65K の制限を超過する可能性があります。
 
 参照されるすべてのライブラリのすべてのメソッドをアプリが使用していない場合があるため、ProGuard (上記参照) などのツールを使用して、未使用のメソッドをコードから削除することができます。 **[Multi-Dex を有効にする]** は本当に必要な場合にのみ有効にすることをお勧めします。たとえば、ProGuard を使用してもアプリが 65K を超える Java メソッドを参照する場合などです。
 
@@ -353,7 +353,7 @@ Android App Bundle の詳細については、「[Android App Bundle につい�
 
 次の配布チャネルのいずれかを選択できます。
 
-- **アドホック** &ndash; Android デバイスにサイドロードできるように、署名済み APK をディスクに保存します。 引き続き[アプリ パッケージの署名](~/android/deploy-test/signing/index.md)に関するセクションに進み、Android の署名 ID を作成する方法、Android アプリケーション用の新しい署名証明書を作成する方法、アプリの _アドホック_ バージョンをディスクに発行する方法を学習してください。 これは、テスト用の APK を作成するための効果的な方法です。
+- **アドホック** &ndash; Android デバイスにサイドロードできるように、署名済み APK をディスクに保存します。 引き続き[アプリ パッケージの署名](~/android/deploy-test/signing/index.md)に関するセクションに進み、Android の署名 ID を作成する方法、Android アプリケーション用の新しい署名証明書を作成する方法、アプリの_アドホック_ バージョンをディスクに発行する方法を学習してください。 これは、テスト用の APK を作成するための効果的な方法です。
 
 - **Google Play** &ndash; 署名済み APK を Google Play に発行します。 引き続き「[Google Play に公開する](~/android/deploy-test/publishing/publishing-to-google-play/index.md)」に進み、APK を署名して Google Play ストアに発行する方法について学習してください。
 

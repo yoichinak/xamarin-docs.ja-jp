@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
 ms.openlocfilehash: 1a14bcc15299360a17b4c9e7a363b6d6e6f2e69a
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "76725026"
 ---
 # <a name="publishing-xamarinmac-apps-to-the-mac-app-store"></a>Mac App Store に Xamarin.Mac アプリを公開する
@@ -36,27 +36,27 @@ Xamarin.Mac アプリは、2 つの異なる方法で配布することができ
 > [!NOTE]
 > ここで選択した内容は、開発者アカウントを構成するときに、一部の画面の表示方法に影響します。 このドキュメントの説明とスクリーンショットは、**個人**の開発者アカウントの観点から示しています。 **会社**では、いくつかのオプションは**チーム管理者**ユーザーのみが使用できます。
 
-### <a name="certificates-and-identifiersmacdeploy-testpublishing-to-the-app-storecertificates-identifiersmd"></a>[証明書と ID](~/mac/deploy-test/publishing-to-the-app-store/certificates-identifiers.md)
+### <a name="certificates-and-identifiers"></a>[証明書と ID](~/mac/deploy-test/publishing-to-the-app-store/certificates-identifiers.md)
 
 このガイドでは、Xamarin.Mac アプリを発行するのに必要な証明書と ID を作成する手順について説明します。
 
-### <a name="create-provisioning-profilemacdeploy-testpublishing-to-the-app-storeprofilesmd"></a>[プロビジョニング プロファイルを作成する](~/mac/deploy-test/publishing-to-the-app-store/profiles.md)
+### <a name="create-provisioning-profile"></a>[プロビジョニング プロファイルを作成する](~/mac/deploy-test/publishing-to-the-app-store/profiles.md)
 
 このガイドでは、Xamarin.Mac アプリを発行するのに必要なプロビジョニング プロファイルを作成する手順について説明します。
 
-### <a name="mac-app-configurationmacdeploy-testpublishing-to-the-app-storeapp-configurationmd"></a>[Mac アプリの構成](~/mac/deploy-test/publishing-to-the-app-store/app-configuration.md)
+### <a name="mac-app-configuration"></a>[Mac アプリの構成](~/mac/deploy-test/publishing-to-the-app-store/app-configuration.md)
 
 このガイドでは、パブリケーション用の Xamarin.Mac アプリの構成の手順を説明します。
 
-### <a name="sign-with-developer-idmacdeploy-testpublishing-to-the-app-storesigningmd"></a>[Developer ID を使用して署名する](~/mac/deploy-test/publishing-to-the-app-store/signing.md)
+### <a name="sign-with-developer-id"></a>[Developer ID を使用して署名する](~/mac/deploy-test/publishing-to-the-app-store/signing.md)
 
 このガイドでは、パブリケーションのために Developer ID を使用して Xamarin.Mac アプリを署名する方法について説明します。
 
-### <a name="bundle-for-mac-app-storemacdeploy-testpublishing-to-the-app-storebundlingmd"></a>[Mac App Store 用のバンドル](~/mac/deploy-test/publishing-to-the-app-store/bundling.md)
+### <a name="bundle-for-mac-app-store"></a>[Mac App Store 用のバンドル](~/mac/deploy-test/publishing-to-the-app-store/bundling.md)
 
 このガイドでは、Mac App Store に Xamarin.Mac アプリを発行するためのバンドルの手順について説明します。
 
-### <a name="upload-to-mac-app-storemacdeploy-testpublishing-to-the-app-storeuploadingmd"></a>[Mac App Store へのアップロード](~/mac/deploy-test/publishing-to-the-app-store/uploading.md)
+### <a name="upload-to-mac-app-store"></a>[Mac App Store へのアップロード](~/mac/deploy-test/publishing-to-the-app-store/uploading.md)
 
 このガイドでは、Mac App Store に Xamarin.Mac アプリを発行するためのアップロード手順について説明します。
 

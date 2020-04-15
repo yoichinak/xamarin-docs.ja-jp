@@ -9,10 +9,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 10/16/2019
 ms.openlocfilehash: b335533bfddf78e5fe2770356d29e27dbdccd0f2
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73022774"
 ---
 # <a name="get-started-with-xamarinios"></a>Xamarin.iOS の概要
@@ -36,19 +36,19 @@ Xcode の最新バージョンは、[iOS Developer Center](https://developer.app
 
 ## <a name="getting-started-series"></a>概要シリーズ
 
-### <a name="setup-and-installationiosget-startedinstallationindexmd"></a>[セットアップとインストール](~/ios/get-started/installation/index.md)
+### <a name="setup-and-installation"></a>[セットアップとインストール](~/ios/get-started/installation/index.md)
 
 Xamarin.iOS をセットアップして、Visual Studio for Mac または Visual Studio で実行します。 このセクションでは、ダウンロード、Xamarin インストーラーを使用したインストール、Microsoft アカウントを使用したサインイン、一般的なトラブルシューティングの項目、デバイスのプロビジョニングなどについて説明します。
 
-### <a name="hello-iosiosget-startedhello-iosindexmd"></a>[Hello, iOS](~/ios/get-started/hello-ios/index.md)
+### <a name="hello-ios"></a>[Hello, iOS](~/ios/get-started/hello-ios/index.md)
 
 この 2 部構成のガイドでは、Visual Studio for Mac または Visual Studio を使用して、初めて Xamarin.iOS アプリケーションを作成する方法および Xamarin での iOS アプリケーション開発の基礎について説明します。 また、このガイドでは、Xamarin.iOS アプリケーションの作成と展開に必要なツール、概念および手順も紹介します。
 
-### <a name="hello-ios-multiscreeniosget-startedhello-ios-multiscreenindexmd"></a>[Hello, iOS マルチスクリーン](~/ios/get-started/hello-ios-multiscreen/index.md)
+### <a name="hello-ios-multiscreen"></a>[Hello, iOS マルチスクリーン](~/ios/get-started/hello-ios-multiscreen/index.md)
 
 この 2 部構成のガイドでは、「Hello, iOS」ガイドで作成されたアプリケーションの2つ目の画面を処理するための機能拡張について説明します。 また、 Model-View-Controller 設計パターン、iOS ナビゲーションの実装、および iOS アプリケーションの構造と機能についての理解を深めるための概念を紹介します。
 
-## <a name="xamarin-for-objective-c-developersobjective-c-developersindexmd"></a>[Objective-C 開発者向けの Xamarin](objective-c-developers/index.md)
+## <a name="xamarin-for-objective-c-developers"></a>[Objective-C 開発者向けの Xamarin](objective-c-developers/index.md)
 
 Xamarin プラットフォームに移行している Objective-C 開発者向けの情報を提供します。
 

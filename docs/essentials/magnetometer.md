@@ -6,10 +6,10 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
 ms.openlocfilehash: 7682afd26bc09e467c5badbea25c9d478c7bb842
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70226805"
 ---
 # <a name="xamarinessentials-magnetometer"></a>Xamarin.Essentials:磁力計
@@ -22,7 +22,7 @@ ms.locfileid: "70226805"
 
 ## <a name="using-magnetometer"></a>Magnetometer の使用
 
-自分のクラスの Xamarin.Essentials に参照を追加します。
+自分のクラスに Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;

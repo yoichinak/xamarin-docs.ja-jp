@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 01/18/2017
 ms.openlocfilehash: ecaa02e036c74074b4fa922ea079355b72ff02e2
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73020096"
 ---
 # <a name="java-integration-with-xamarinandroid"></a>Java と Xamarin.Android の統合
@@ -47,5 +47,5 @@ JNI を使用する 2 番目の手法は、はるかに低いレベルで機能�
 - [アーキテクチャ](~/android/internals/architecture.md)
 - [Java ライブラリのバインド](~/android/platform/binding-java-library/index.md)
 - [JNI の使用](~/android/platform/java-integration/working-with-jni.md)
-- [Sharpen](https://github.com/slluis/sharpen)
+- [シャープにする](https://github.com/slluis/sharpen)
 - [Java Native Interface](https://docs.oracle.com/javase/7/docs/technotes~/jni/index.html)

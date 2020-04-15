@@ -7,10 +7,10 @@ ms.author: jamont
 ms.date: 01/29/2019
 ms.custom: video
 ms.openlocfilehash: 69d0cb503d329ccfb4c29fb6cc4a589bef97e893
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70756989"
 ---
 # <a name="xamarinessentials-app-information"></a>Xamarin.Essentials:アプリ情報
@@ -60,7 +60,7 @@ AppInfo.ShowSettingsUI();
 
 ## <a name="platform-implementation-specifics"></a>プラットフォームの実装の詳細
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 アプリの情報は、`AndroidManifest.xml` の次のフィールドから取得します。
 
@@ -69,7 +69,7 @@ AppInfo.ShowSettingsUI();
 - **パッケージ名**: `manifest` ノードの `package`
 - **バージョン文字列** – `application` ノードの `android:versionName`
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 アプリの情報は、`Info.plist` の次のフィールドから取得します。
 
@@ -78,12 +78,12 @@ AppInfo.ShowSettingsUI();
 - **パッケージ名**: `CFBundleIdentifier`
 - **バージョン文字列** – `CFBundleShortVersionString`
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 アプリの情報は、`Package.appxmanifest` の次のフィールドから取得します。
 
 - **ビルド** – `Identity` ノードの `Version` にある `Build` を使用します
-- **名前** -  `Properties` ノードの `DisplayName`
+- **名前** - `Properties` ノードの `DisplayName`
 - **パッケージ名**: `Identity` ノードの `Name`
 - **バージョン文字列** – `Identity` ノードの `Version`
 

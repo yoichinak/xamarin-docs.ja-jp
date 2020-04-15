@@ -8,18 +8,18 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/13/2020
 ms.openlocfilehash: d5610a37d4700edb9cd2b9d8fb90a7506b66ca68
-ms.sourcegitcommit: 211fed94fb96127a3e158ae1ff5d7eb831a203d8
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75955693"
 ---
 # <a name="xamarinforms-templates"></a>Xamarin.Forms のテンプレート
 
-## <a name="control-templatescontrol-templatemd"></a>[コントロール テンプレート](control-template.md)
+## <a name="control-templates"></a>[コントロール テンプレート](control-template.md)
 
 Xamarin.Forms コントロール テンプレートには、[`ContentView`](xref:Xamarin.Forms.ContentView) 派生カスタム コントロールと [`ContentPage`](xref:Xamarin.Forms.ContentPage) 派生ページの視覚的な構造が定義されています。
 
-## <a name="data-templatesdata-templatesindexmd"></a>[データ テンプレート](data-templates/index.md)
+## <a name="data-templates"></a>[データ テンプレート](data-templates/index.md)
 
 Xamarin.Forms データ テンプレートには、サポートされているコントロール上でのデータの表示が定義されています。

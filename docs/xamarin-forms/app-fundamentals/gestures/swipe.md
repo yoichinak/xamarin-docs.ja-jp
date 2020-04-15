@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/14/2018
 ms.openlocfilehash: ae9b5eb5b768b50ddcbc199040074de855f220de
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "68649456"
 ---
 # <a name="adding-a-swipe-gesture-recognizer"></a>スワイプ ジェスチャ認識エンジンの追加
@@ -69,7 +69,7 @@ var swipeGesture = new SwipeGestureRecognizer { Direction = SwipeDirection.Up | 
 </BoxView>
 ```
 
-次に示すのは、同等の C# コードです。
+C# での同等のコードを次に示します。
 
 ```csharp
 var boxView = new BoxView { Color = Color.Teal, ... };

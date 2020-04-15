@@ -7,10 +7,10 @@ ms.author: jamont
 ms.date: 05/28/2019
 ms.custom: video
 ms.openlocfilehash: 157eb3116f09268790036f8983543114e7a58276
-ms.sourcegitcommit: 4a1520dee7759f8355ea65c8bb3d1bac8ba58122
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "66354108"
 ---
 # <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials:ジオコーディング
@@ -23,15 +23,15 @@ ms.locfileid: "66354108"
 
 **Geocoding** の機能にアクセスするには、次のプラットフォーム固有の設定が必要です。
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 追加の設定は必要ありません。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 追加の設定は必要ありません。
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 ジオコーディング機能を使用するには、Bing Maps API キーが必要です。 無料の [Bing Maps](https://www.bingmapsportal.com/) アカウントにサインアップします。 **[My account]\(マイ アカウント\) > [My keys]\(マイ キー\)** で、新しいキーを作成し、アプリケーションの種類に基づいて情報を入力します (UWP アプリの場合は、 **[Public Windows App (UWP, 8.x, and earlier)]\(パブリック Windows アプリ (UWP、8.x 以前向け)\)** にする必要があります)。
 

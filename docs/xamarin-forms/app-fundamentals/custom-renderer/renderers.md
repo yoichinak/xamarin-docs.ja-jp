@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2019
 ms.openlocfilehash: f4c2663e4e4e298975fc1e230750ec562547b0da
-ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/26/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "77636030"
 ---
 # <a name="renderer-base-classes-and-native-controls"></a>レンダラーの基本クラスおよびネイティブ コントロール

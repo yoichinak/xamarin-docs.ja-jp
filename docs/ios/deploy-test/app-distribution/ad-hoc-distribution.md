@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
 ms.openlocfilehash: 16ae440ec2fe3b5898c8f92d993279ef5e7e9794
-ms.sourcegitcommit: 6f09bc2b760e76a61a854f55d6a87c4f421ac6c8
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/02/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75607920"
 ---
 # <a name="ad-hoc-distribution-for-xamarinios-apps"></a>Xamarin.iOS アプリ用のアドホック配布
@@ -109,11 +109,11 @@ Xamarin.iOS アプリケーションは、*アドホック*配布を使用して
 
 6. **[Generate]\(生成\)** ボタンをクリックし、新しいプロファイルを作成してプロセスを終了します。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 Visual Studio for Mac で新しい配布プロファイルを使用可能にするには、Visual Studio for Mac を終了して、(「[Xcode でプロファイルと証明書をダウンロードする](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)」セクションの手順に従って) Xcode で使用可能な署名 ID とプロビジョニング プロファイルのリストを更新する必要がある場合があります。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Visual Studio で新しい配布プロファイルを使用可能にするには、Visual Studio を終了して、(「[Xcode でプロファイルと証明書をダウンロードする](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#download)」セクションの手順に従って、ビルド ホストの Mac で) Xcode で使用可能な署名 ID とプロビジョニング プロファイルのリストを更新する必要がある場合があります。
 
@@ -125,7 +125,7 @@ Visual Studio で新しい配布プロファイルを使用可能にするには
 
 Xamarin.iOS アプリケーションの最終ビルドを行う準備ができたら、作成済みの配布プロファイルを選択します。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
  Visual Studio for Mac で、次の操作を行います。
 
@@ -141,7 +141,7 @@ Xamarin.iOS アプリケーションの最終ビルドを行う準備ができ�
     ![署名 ID と配布プロファイルを選択します](ad-hoc-distribution-images/releasexs03.png)
 5. **[OK]** ボタンをクリックして、変更を保存します。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
  Visual Studio で、次の操作を行います。
 
 1. **ソリューション エクスプローラー**でプロジェクト名を右クリックし、 **[プロパティ]** を選択して編集用に開きます。

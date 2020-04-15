@@ -1,18 +1,18 @@
 ---
-title: Xamarin.Essentials:懐中電灯
+title: Xamarin.Essentials:Flashlight
 description: このドキュメントでは、デバイスのカメラのフラッシュを懐中電灯にする機能をオンまたはオフにできる Xamarin.Essentials の Flashlight クラスについて説明します。
 ms.assetid: 06A03553-D212-43A2-9E6E-C2D2D93EB136
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
 ms.openlocfilehash: b94ba73b334ac68b256ca840956f987a4ef670ce
-ms.sourcegitcommit: 3489c281c9eb5ada2cddf32d73370943342a1082
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58870106"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "61075580"
 ---
-# <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials:懐中電灯
+# <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials:Flashlight
 
 **Flashlight** クラスを使用すると、デバイスのカメラのフラッシュを懐中電灯にする機能をオンまたはオフにできます。
 
@@ -22,7 +22,7 @@ ms.locfileid: "58870106"
 
 **Flashlight** の機能にアクセスするには、次のプラットフォーム固有の設定が必要です。
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 Flashlight および Camera アクセス許可が必要であり、Android プロジェクトで構成する必要があります。 これは次の方法で追加できます。
 
@@ -51,11 +51,11 @@ Flashlight および Camera アクセス許可が必要であり、Android プ�
 [assembly: UsesFeature("android.hardware.camera.autofocus", Required = false)]
 ```
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 追加の設定は必要ありません。
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 追加の設定は必要ありません。
 
@@ -96,7 +96,7 @@ catch (Exception ex)
 
 ## <a name="platform-implementation-specifics"></a>プラットフォームの実装の詳細
 
-### <a name="androidtabandroid"></a>[Android](#tab/android)
+### <a name="android"></a>[Android](#tab/android)
 
 Flashlight クラスは、デバイスのオペレーティング システムに基づいて最適化されています。
 
@@ -108,11 +108,11 @@ Flashlight クラスは、デバイスのオペレーティング システム�
 
 カメラ ユニットの `FlashMode` をオン/オフするために、カメラ サーフェス テクスチャが作成されます。 
 
-### <a name="iostabios"></a>[iOS](#tab/ios)
+### <a name="ios"></a>[iOS](#tab/ios)
 
 デバイスの Torch モードと Flash モードをオン/オフするには、[AVCaptureDevice](xref:AVFoundation.AVCaptureDevice) を使用します。
 
-### <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+### <a name="uwp"></a>[UWP](#tab/uwp)
 
 オン/オフするデバイス背面の最初のランプを検出するには、[Lamp](https://docs.microsoft.com/uwp/api/windows.devices.lights.lamp) を使用します。
 

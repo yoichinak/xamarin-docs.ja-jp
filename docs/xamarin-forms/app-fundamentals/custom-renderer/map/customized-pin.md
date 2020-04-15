@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/06/2019
 ms.openlocfilehash: dfb7f12affc8b0b41ec56cd17894c0f0a4b5fc6e
-ms.sourcegitcommit: 283810340de5310f63ef7c3e4b266fe9dc2ffcaf
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73662352"
 ---
 # <a name="customizing-a-map-pin"></a>マップ ピンのカスタマイズ
@@ -26,7 +26,7 @@ _この記事では、各プラットフォーム上でカスタマイズされ�
 
 ![](customized-pin-images/map-classes.png "Relationship Between the Map Control and the Implementing Native Controls")
 
-レンダリング プロセスを使用して各プラットフォーム上の [`Map`](xref:Xamarin.Forms.Maps.Map) にカスタム レンダラーを作成することで、プラットフォーム固有のカスタマイズを実装することができます。 これを行うプロセスは次のとおりです。
+レンダリング プロセスを使用して各プラットフォーム上の [`Map`](xref:Xamarin.Forms.Maps.Map) にカスタム レンダラーを作成することで、プラットフォーム固有のカスタマイズを実装することができます。 その実行プロセスは次のとおりです。
 
 1. Xamarin.Forms カスタム マップを[作成](#Creating_the_Custom_Map)します。
 1. Xamarin.Forms からカスタム マップを[使用](#Consuming_the_Custom_Map)します。
@@ -144,7 +144,7 @@ public MapPage()
 
 ![](customized-pin-images/screenshots.png "CustomMap on each Platform")
 
-`MapRenderer` クラスでは `OnElementChanged` メソッドを公開します。このメソッドは、対応するネイティブ コントロールをレンダリングするために、Xamarin.Forms カスタム マップの作成時に呼び出されます。 このメソッドでは、`OldElement` および `NewElement` プロパティを含む `ElementChangedEventArgs` パラメーターを受け取ります。 これらのプロパティは、レンダラーが接続して*いた* Xamarin.Forms 要素と、レンダラーが現在接続して*いる* Xamarin.Forms 要素をそれぞれ表しています。 サンプル アプリケーションでは、`OldElement` プロパティが `null` になり、`NewElement` プロパティに `CustomMap` インスタンスへの参照が含まれます。
+`MapRenderer` クラスでは `OnElementChanged` メソッドを公開します。このメソッドは、対応するネイティブ コントロールをレンダリングするために、Xamarin.Forms カスタム マップの作成時に呼び出されます。 このメソッドでは、`OldElement` および `NewElement` プロパティを含む `ElementChangedEventArgs` パラメーターを受け取ります。 これらのプロパティは、レンダラーがアタッチされて*いた* Xamarin.Forms 要素と、レンダラーが現在アタッチされて*いる* Xamarin.Forms 要素をそれぞれ表しています。 サンプル アプリケーションでは、`OldElement` プロパティが `null` になり、`NewElement` プロパティに `CustomMap` インスタンスへの参照が含まれます。
 
 各プラットフォーム固有のレンダラー クラス内の、オーバーライドされたバージョンの `OnElementChanged` メソッドは、ネイティブ コントロールのカスタマイズを行う場所です。 プラットフォーム上で使用されているネイティブ コントロールへの型指定された参照には、`Control` プロパティを使用してアクセスすることができます。 さらに、レンダリングされている Xamarin.Forms コントロールへの参照は、`Element` プロパティを使用して取得することができます。
 

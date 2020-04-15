@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/19/2016
 ms.openlocfilehash: ad2868a82f662f45066a6111a1dd3bd2aacad671
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771879"
 ---
 # <a name="introduction-to-custom-renderers"></a>カスタム レンダラーの概要
@@ -66,10 +66,10 @@ public class MyEntry : Entry
 
 1. ネイティブ コントロールをレンダリングするレンダラー クラスのサブクラスを作成します。
 1. ネイティブ コントロールをレンダリングするメソッドをオーバーライドして、ロジックを書き込み、コントロールをカスタマイズします。 多くの場合、`OnElementChanged` メソッドはネイティブ コントロールのレンダリングに使用され、対応する Xamarin.Forms コントロールが作成されるときに呼び出されます。
-1. `ExportRenderer` 属性をカスタム レンダラー クラスに追加して、Xamarin.Forms コントロールのレンダリングに使用されるように指定します。 この属性は、Xamarin.Forms にカスタム レンダラーを登録するために使用します。
+1. `ExportRenderer` 属性をカスタム レンダラー クラスに追加して、Xamarin.Forms コントロールのレンダリングに使用されるように指定します。 この属性は、Xamarin.Forms にカスタム レンダラーを登録するために使用されます。
 
 > [!NOTE]
-> ほとんどの Xamarin.Forms 要素では、プラットフォーム プロジェクトごとにカスタム レンダラーを指定するかどうかは任意です。 カスタム レンダラーが登録されていない場合は、コントロールの基底クラスの既定のレンダラーが使用されます。 ただし、[View](xref:Xamarin.Forms.View) または [ViewCell](xref:Xamarin.Forms.ViewCell) 要素をレンダリングするときは、各プラットフォーム プロジェクトにカスタム レンダラーが必要です。
+> ほとんどの Xamarin.Forms 要素では、プラットフォーム プロジェクトごとにカスタム レンダラーを指定するかどうかは任意です。 カスタム レンダラーが登録されていない場合は、コントロールの基底クラス用の既定のレンダラーが使用されます。 ただし、[View](xref:Xamarin.Forms.View) または [ViewCell](xref:Xamarin.Forms.ViewCell) 要素をレンダリングするときは、各プラットフォーム プロジェクトにカスタム レンダラーが必要です。
 
 このシリーズのトピックでは、さまざまな Xamarin.Forms 要素に対するこのプロセスの例を示し、説明します。
 

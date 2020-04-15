@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/05/2017
 ms.openlocfilehash: 2a0f9d063b319c0f412f6e8f47a59f0f994678ae
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73026281"
 ---
 # <a name="using-mtouch-to-bundle-xamarinios-apps"></a>mtouch を使用する Xamarin.iOS アプリのバンドル
@@ -102,7 +102,7 @@ Press enter to terminate the application
 
 アプリケーションにエラーが発生した場合、出力とエラーを表示し、問題を診断できます。
 
-### <a name="deploying-to-a-device"></a>デバイスへの展開
+### <a name="deploying-to-a-device"></a>デバイスの展開
 
 デバイスに配置するには、Apple の[デバイスの管理](https://developer.apple.com/library/ios/#documentation/Xcode/Conceptual/ios_development_workflow/00-About_the_iOS_Application_Development_Workflow/introduction.html)に関するドキュメントに基づいてデバイスをプロビジョニングする必要があります。 デバイスが適切にプロビジョニングされると、mtouch コマンドを利用し、コンパイル済みの ".app" をデバイスに配置できます。 これは次のコマンドで行います。
 

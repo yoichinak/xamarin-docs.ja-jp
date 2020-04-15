@@ -6,10 +6,10 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 02/20/2020
 ms.openlocfilehash: ad6ea2f68fc01183f7ed42e85094f6be5fb3d9f9
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "77618912"
 ---
 # <a name="androidx-with-xamarin"></a>Xamarin を使用した AndroidX
@@ -32,7 +32,7 @@ Xamarin ベースのアプリで AndroidX の機能を使用するのに必要�
 
 - **Visual Studio** - Windows 上では、Visual Studio 2019 バージョン 16.4 以降に更新します。 macOS 上では、Visual Studio 2019 for Mac バージョン 8.4 以降に更新します。
 - **Xamarin.Android** - Xamarin.Android 10.0 以降を Visual Studio と共にインストールする必要があります (Xamarin.Android は、Windows 上で **[.NET によるモバイル開発]** ワークロードの一部として、また、**Visual Studio for Mac インストーラー**の一部として自動的にインストールされます)。
-- **Java Developer Kit** - Xamarin.Android 10.0 開発には JDK 8 が必要です。 Microsoft の OpenJDK の配布は、Visual Studio の一部として自動的にインストールされます。
+- **Java Developer Kit** - Xamarin.Android 10.0 の開発には JDK 8 が必要です。 Microsoft の OpenJDK の配布は、Visual Studio の一部として自動的にインストールされます。
 - **Android SDK** - Android SDK マネージャーを使用して Android SDK API 28 以降をインストールする必要があります。
 
 ## <a name="get-started"></a>作業開始

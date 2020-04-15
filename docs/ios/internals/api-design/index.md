@@ -8,15 +8,15 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
 ms.openlocfilehash: a2435b30b7d5b468fca6c55d295c87b9a0d20652
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "79303727"
 ---
 # <a name="xamarinios-api-design"></a>Xamarin.iOS API の設計
 
-[Xamarin.iOS](~/ios/index.yml) には、Mono に含まれるコアとなる基本クラス ライブラリに加え、開発者が Mono でネイティブ iOS アプリケーションを作成するためのさまざまな iOS API 向けバインディングが付属しています。
+[Xamarin.iOS](~/ios/index.yml) には、Mono に含まれる中心的基底クラス ライブラリに加え、開発者が Mono でネイティブ iOS アプリケーションを作成するためのさまざまな iOS API 向けバインディングが付属しています。
 
 Xamarin.iOS の中心となるのは、C# の領域と Objective-C の領域の橋渡しとなる相互運用エンジンと、CoreGraphics や [OpenGL ES](#opengles) のような、iOS C ベースの API 向けのバインディングです。
 

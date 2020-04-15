@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
 ms.openlocfilehash: efe41fa5f25f6257587fd97a2711e9037b94dc6e
-ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/26/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "77636017"
 ---
 # <a name="custom-video-transport-controls"></a>カスタムのビデオ トランスポート コントロール
@@ -522,7 +522,7 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="play-pause-and-stop-buttons"></a>再生、一時停止、および停止ボタン
 
-シンボリックな**再生**、**一時停止**、および**停止**イメージに対して Unicode 文字を使用することには、問題があります。 Unicode 標準の「[Miscellaneous Technical](https://unicode-table.com/en/blocks/miscellaneous-technical/)」 (その他の技術用記号) セクションに、外見的にはこの目的に適した 3 つの記号が定義されています。 これらの数値は、次のとおりです。
+シンボリックな**再生**、**一時停止**、および**停止**イメージに対して Unicode 文字を使用することには、問題があります。 Unicode 標準の「[Miscellaneous Technical](https://unicode-table.com/en/blocks/miscellaneous-technical/)」 (その他の技術用記号) セクションに、外見的にはこの目的に適した 3 つの記号が定義されています。 これらのボタンの役割は、次のとおりです。
 
 - 0x23F5 (黒の中サイズの右向き三角形) &#x23F5;、**再生**向け
 - 0x23F8 (二重の縦棒) &#x23F8;、**一時停止**向け

@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
 ms.openlocfilehash: 92bf7934b1ad4f6d959fc458f536cf3b3426df51
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73026369"
 ---
 # <a name="ios-build-mechanics"></a>iOS ビルドのしくみ
@@ -26,7 +26,7 @@ Xamarin ビルドのスピードは、パフォーマンスに影響を与える
 
 ## <a name="timing-apps"></a>アプリの時間を調整する
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 Visual Studio for Mac 内で診断用 MSBuild 出力を有効にするには:
 
@@ -38,7 +38,7 @@ Visual Studio for Mac 内で診断用 MSBuild 出力を有効にするには:
 6. パッケージから不要な要素を取り除き、再ビルドします。
 7. [ビルド出力] ボタンをクリックし、エラー パッド内で診断出力を表示します ([表示]、[パッド]、[エラー])。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 Visual Studio 内で診断 MSBuild 出力を有効にするには:
 

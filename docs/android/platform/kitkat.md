@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
 ms.openlocfilehash: 43061272f3d3486926f38af792ee3b9df0c53670
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73027242"
 ---
 # <a name="kitkat-features"></a>KitKat の機能
@@ -318,8 +318,8 @@ KitKat では、オプションの半透明のステータス バーとナビゲ
 
 ストレージ アクセス フレームワーク (SAF) は、画像、ビデオ、ドキュメントなどの格納されているコンテンツをユーザーが操作するための新しい方法です。 KitKat では、コンテンツを処理するアプリケーションを選択するダイアログをユーザーに表示するのではなく、ユーザーが 1 つの集約された場所でデータにアクセスできる新しい UI が開かれます。 コンテンツが選択されると、ユーザーはコンテンツを要求したアプリケーションに戻り、アプリのエクスペリエンスは通常どおり続行されます。
 
-この変更には、開発者側で 2 つのアクションが必要です。まず、プロバイダーからのコンテンツを必要とするアプリを、コンテンツを要求する新しい方法に更新する必要があります。 次に、`ContentProvider` にデータを書き込むアプリケーションを、新しいフレームワークを使用するように変更する必要があります。 どちらのシナリオも、新しい [`DocumentsProvider`](xref:Android.Provider.DocumentsProvider)
-API に依存しています。
+この変更には、開発者側で 2 つのアクションが必要です。まず、プロバイダーからのコンテンツを必要とするアプリを、コンテンツを要求する新しい方法に更新する必要があります。 次に、`ContentProvider` にデータを書き込むアプリケーションを、新しいフレームワークを使用するように変更する必要があります。 どちらのシナリオも、新しい [`DocumentsProvider`](xref:Android.Provider.DocumentsProvider) に依存しています
+[API]。
 
 #### <a name="documentsprovider"></a>DocumentsProvider
 
@@ -397,7 +397,7 @@ protected override void OnActivityResult(int requestCode, Result resultCode, Int
 ### <a name="printing"></a>印刷
 
 KitKat では、[印刷サービス](xref:Android.PrintServices)と `PrintManager` が導入されたことで、コンテンツの印刷コンテンツが簡単になりました。 また、KitKat は、[Google クラウド プリント アプリケーション](https://play.google.com/store/apps/details?id=com.google.android.apps.cloudprint)を使用して [Google のクラウド プリント サービス API](https://developers.google.com/cloud-print/) を完全に活用する最初の API バージョンでもあります。
-KitKat が搭載されているほとんどのデバイスでは、初めて WiFi に接続するときに、Google クラウド プリント アプリと [HP プリント サービス プラグイン](https://play.google.com/store/apps/details?id=com.hp.android.printservice)が自動的にダウンロードされます。 ユーザーは、**[設定] > [システム] > [印刷]** に移動して、デバイスの印刷設定を確認できます。
+KitKat が搭載されているほとんどのデバイスでは、初めて WiFi に接続するときに、Google クラウド プリント アプリと [HP プリント サービス プラグイン](https://play.google.com/store/apps/details?id=com.hp.android.printservice)が自動的にダウンロードされます。 ユーザーは、 **[設定] > [システム] > [印刷]** に移動して、デバイスの印刷設定を確認できます。
 
 [![[印刷設定] 画面のスクリーンショットの例](kitkat-images/printing.png)](kitkat-images/printing.png#lightbox)
 
@@ -555,7 +555,7 @@ class HceService : HostApduService
 }
 ```
 
-前述のサービスには、NFC リーダーがアプリケーションと対話する方法が用意されていますが、このサービスでスキャンに必要な NFC カードがエミュレートされているかどうかを知る手段が NFC リーダーにはまだありません。 NFC リーダーでサービスを識別できるように、サービスに一意の "*アプリケーション ID (AID)*" を割り当てることができます。 `MetaData` 属性を使用して登録された xml リソース ファイル (上のコード例を参照してください) で、HCE サービスに関する他のメタデータと共に、AID を指定します。 このリソース ファイルには、1 つ以上の AID フィルター (1 台以上の NFC リーダー デバイスの AID に対応する 16 進形式の一意の識別子文字列) を指定します。
+前述のサービスには、NFC リーダーがアプリケーションと対話する方法が用意されていますが、このサービスでスキャンに必要な NFC カードがエミュレートされているかどうかを知る手段が NFC リーダーにはまだありません。 NFC リーダーでサービスを識別できるように、サービスに一意の "*アプリケーション ID (AID)* " を割り当てることができます。 `MetaData` 属性を使用して登録された xml リソース ファイル (上のコード例を参照してください) で、HCE サービスに関する他のメタデータと共に、AID を指定します。 このリソース ファイルには、1 つ以上の AID フィルター (1 台以上の NFC リーダー デバイスの AID に対応する 16 進形式の一意の識別子文字列) を指定します。
 
 ```xml
 <host-apdu-service xmlns:android="http://schemas.android.com/apk/res/android"
@@ -653,8 +653,8 @@ KitKat には新しい画面記録機能が追加されたので、開発者が�
 adb shell screenrecord /sdcard/screencast.mp4
 ```
 
-上のコマンドを実行すると、既定の 4 Mbps の解像度で既定の 3 分間のビデオが記録されます。 長さを編集するには、*--time-limit* フラグを追加します。
-解像度を変更するには、*--bit-rate* フラグを追加します。 次のコマンドを実行すると、8 Mbps で 1 分間のビデオが記録されます。
+上のコマンドを実行すると、既定の 4 Mbps の解像度で既定の 3 分間のビデオが記録されます。 長さを編集するには、 *--time-limit* フラグを追加します。
+解像度を変更するには、 *--bit-rate* フラグを追加します。 次のコマンドを実行すると、8 Mbps で 1 分間のビデオが記録されます。
 
 ```shell
 adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4
@@ -674,8 +674,8 @@ adb shell screenrecord --bit-rate 8000000 --time-limit 60 /sdcard/screencast.mp4
 - *ドローアブル リソースの反転* - ドローアブル リソースには新しい [`autoMirrored`](https://developer.android.com/reference/android/R.attr.html#autoMirrored)
   属性があり、これを使用して、左から右へのレイアウトの場合に、反転が必要な画像の反転バージョンを作成するようにシステムに指示できます。
 
-- *アニメーションの一時停止* - [`Animator`](xref:Android.Animation.Animator)
-  クラスを使用して作成されたアニメーションの一時停止と再開を行います。
+- *アニメーションの一時停止* - [`Animator`](xref:Android.Animation.Animator) を使用して作成されたアニメーションの一時停止と再開を行います。
+  クラスの新しいインスタンスを初期化します。
 
 - *動的に変化するテキストの読み取り* - 新しいテキストを "ライブ領域" として動的に更新する UI の部分を示すために、新しい [`accessibilityLiveRegion`](https://developer.android.com/reference/android/R.attr.html#accessibilityLiveRegion)
   属性を使用し、アクセシビリティ モードで新しいテキストが自動的に読み込まれるようにすることができます。

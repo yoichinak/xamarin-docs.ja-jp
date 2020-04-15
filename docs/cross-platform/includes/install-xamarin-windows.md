@@ -1,13 +1,13 @@
 ---
 ms.topic: include
 ms.openlocfilehash: fedf918a2217a5fd1d5863ee5926057317fd3294
-ms.sourcegitcommit: 3f0e4f10e5def19122588bb05f26ab2baa9df6eb
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/23/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70206231"
 ---
-以下の手順に従って、Xamarin を _新しい_ Visual Studio 2017 のインストールの一部としてインストールできます。
+以下の手順に従って、Xamarin を_新しい_ Visual Studio 2017 のインストールの一部としてインストールできます。
 
 1. [Visual Studio](https://visualstudio.microsoft.com/vs/) ページから、Visual Studio 2017 Community、Visual Studio Professional、または Visual Studio Enterprise をダウンロードします (ダウンロード リンクは下部にあります)。
 

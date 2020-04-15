@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
 ms.openlocfilehash: be7a145e93aa4720b38921efc895ca3f3f33edb3
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "68656028"
 ---
 # <a name="adding-a-pinch-gesture-recognizer"></a>ピンチ ジェスチャ認識エンジンの追加
@@ -20,7 +20,7 @@ ms.locfileid: "68656028"
 
 "_ピンチ ジェスチャは対話型のズームを実行するために使用され、PinchGestureRecognizer クラスを使用して実装されます。ピンチ ジェスチャの一般的なシナリオは、ピンチ場所の画像に対して対話型のズームを実行することです。これは、ビューポートのコンテンツを拡大縮小することによって実現され、この記事でその方法について説明します。_ "
 
-ユーザー インターフェース要素をピンチ ジェスチャを使用してズームできるようにするには、[`PinchGestureRecognizer`](xref:Xamarin.Forms.PinchGestureRecognizer) インスタンスを作成し、[`PinchUpdated`](xref:Xamarin.Forms.PinchGestureRecognizer.PinchUpdated) イベントを処理し、新しいジェスチャ認識エンジンをユーザー インターフェイス要素の [`GestureRecognizers`](xref:Xamarin.Forms.View.GestureRecognizers) コレクションに追加します。 次に示すのは、[`Image`](xref:Xamarin.Forms.Image) 要素に関連付けられている `PinchGestureRecognizer` のコード例です。
+ユーザー インターフェース要素をピンチ ジェスチャを使用してズームできるようにするには、[`PinchGestureRecognizer`](xref:Xamarin.Forms.PinchGestureRecognizer) インスタンスを作成し、[`PinchUpdated`](xref:Xamarin.Forms.PinchGestureRecognizer.PinchUpdated) イベントを処理し、新しいジェスチャ認識エンジンをユーザー インターフェイス要素の [`GestureRecognizers`](xref:Xamarin.Forms.View.GestureRecognizers) コレクションに追加します。 [`Image`](xref:Xamarin.Forms.Image) 要素にアタッチされている `PinchGestureRecognizer` のコード例を次に示します。
 
 ```csharp
 var pinchGesture = new PinchGestureRecognizer();

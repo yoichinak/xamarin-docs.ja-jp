@@ -7,10 +7,10 @@ ms.author: jamont
 ms.date: 01/22/2019
 ms.custom: video
 ms.openlocfilehash: cba17707f9129feecc618c9a7c2f144ad40f0168
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70756923"
 ---
 # <a name="xamarinessentials-battery"></a>Xamarin.Essentials:バッテリ
@@ -23,7 +23,7 @@ ms.locfileid: "70756923"
 
 **Battery** の機能にアクセスするには、次のプラットフォーム固有の設定が必要です。
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 `Battery` アクセス許可が必要です。Android プロジェクト内で構成する必要があります。 これは次の方法で追加できます。
 
@@ -43,11 +43,11 @@ ms.locfileid: "70756923"
 
 または、Android プロジェクトを右クリックし、プロジェクトのプロパティを開きます。 **[Android マニフェスト]** の下で **[必要なアクセス許可:]** 領域を探し、**Battery** アクセス許可をオンにします。 これにより、**AndroidManifest.xml** ファイルが自動的に更新されます。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 追加の設定は必要ありません。
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 追加の設定は必要ありません。
 
@@ -164,16 +164,16 @@ public class EnergySaverTest
 
 ## <a name="platform-differences"></a>プラットフォームによる違い
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+# <a name="android"></a>[Android](#tab/android)
 
 プラットフォームによる違いはありません。
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
+# <a name="ios"></a>[iOS](#tab/ios)
 
 - API をテストするには、デバイスを使用する必要があります。 
 - `PowerSource` に対しては、`AC` または `Battery` しか返されません。
 
-# <a name="uwptabuwp"></a>[UWP](#tab/uwp)
+# <a name="uwp"></a>[UWP](#tab/uwp)
 
 - `PowerSource` に対しては、`AC` または `Battery` しか返されません。
 

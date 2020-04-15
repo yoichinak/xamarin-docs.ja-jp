@@ -7,18 +7,18 @@ ms.technology: xamarin-forms
 author: davidortinau
 ms.author: daortin
 ms.date: 02/08/2020
-ms.openlocfilehash: e961dc537d8b793feb3587ec89b69c53ab821088
-ms.sourcegitcommit: 5b6d3bddf7148f8bb374de5657bdedc125d72ea7
+ms.openlocfilehash: 44f7701adbe742828d8ec33dec21c316d11bf93e
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78160578"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "80628289"
 ---
 # <a name="xamarinforms-dual-screen-layout"></a>Xamarin.Forms のデュアル画面のレイアウト
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/DualScreenDemos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 
 `TwoPaneView` クラスはコンテンツのサイズを変更し、左右または上下の使用可能な領域に配置する 2 つのビューを持つコンテナーを表しています。 `TwoPaneView` は `Grid` から継承するため、これらのプロパティについてはグリッドに適用されているかのように考える方法が最も簡単です。
 
@@ -73,4 +73,4 @@ ms.locfileid: "78160578"
 
 ## <a name="related-links"></a>関連リンク
 
-- [DualScreen (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/DualScreenDemos)
+- [DualScreen (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
