@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/26/2018
 ms.openlocfilehash: dccc47d8ee69686fe2ac7409f75284c64c99a2d4
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70772014"
 ---
 # <a name="customizing-an-entry"></a>Entry のカスタマイズ
@@ -24,9 +24,9 @@ _Xamarin.Forms の Entry コントロールによって、1 行のテキスト�
 
 次の図は、[`Entry`](xref:Xamarin.Forms.Entry) コントロールと、それを実装する、対応するネイティブ コントロールの関係を示しています。
 
-![](entry-images/entry-classes.png "Entry コントロールと実装するネイティブ コントロールの関係")
+![](entry-images/entry-classes.png "Relationship Between Entry Control and Implementing Native Controls")
 
-レンダリング プロセスを活用して各プラットフォーム上の [`Entry`](xref:Xamarin.Forms.Entry) コントロールにカスタム レンダラーを作成することで、プラットフォーム固有のカスタマイズを実装することができます。 これを行うプロセスは次のとおりです。
+レンダリング プロセスを活用して各プラットフォーム上の [`Entry`](xref:Xamarin.Forms.Entry) コントロールにカスタム レンダラーを作成することで、プラットフォーム固有のカスタマイズを実装することができます。 その実行プロセスは次のとおりです。
 
 1. Xamarin.Forms カスタム コントロールを[作成](#Creating_the_Custom_Entry_Control)します。
 1. Xamarin.Forms からカスタム コントロールを[使用](#Consuming_the_Custom_Control)します。
@@ -111,11 +111,11 @@ public class MainPage : ContentPage
 
 次の図に、サンプル アプリケーション内の各プロジェクトの役割と、それらの関係を示します。
 
-![](entry-images/solution-structure.png "MyEntry カスタム レンダラーのプロジェクトの役割")
+![](entry-images/solution-structure.png "MyEntry Custom Renderer Project Responsibilities")
 
 `MyEntry` コントロールはプラットフォーム固有の `MyEntryRenderer` クラスによってレンダリングされます。このクラスはすべて各プラットフォームの `EntryRenderer` クラスから派生しています。 この結果、次のスクリーンショットに示すように、プラットフォーム固有の背景色を使用してそれぞれの `MyEntry` コントロールがレンダリングされます。
 
-![](entry-images/screenshots.png "プラットフォームごとの MyEntry コントロール")
+![](entry-images/screenshots.png "MyEntry Control on each Platform")
 
 `EntryRenderer` クラスは `OnElementChanged` メソッドを公開します。このメソッドは、該当するネイティブ コントロールをレンダリングするために、Xamarin.Forms カスタム コントロールの作成時に呼び出されます。 このメソッドでは、`OldElement` および `NewElement` プロパティを含む `ElementChangedEventArgs` パラメーターを受け取ります。 これらのプロパティは、レンダラーがアタッチされて*いた* Xamarin.Forms 要素と、レンダラーが現在アタッチされて*いる* Xamarin.Forms 要素をそれぞれ表しています。 サンプル アプリケーションでは、`OldElement` プロパティが `null` になり、`NewElement` プロパティに `MyEntry` コントロールへの参照が含まれます。
 
@@ -186,7 +186,7 @@ namespace CustomRenderer.Android
 
 ### <a name="creating-the-custom-renderer-on-uwp"></a>UWP 上でのカスタム レンダラーの作成
 
-次のコード例は、UWP 用のカスタム レンダラーを示します。
+次のコード例で、UWP 用のカスタム レンダラーを示します。
 
 ```csharp
 [assembly: ExportRenderer(typeof(MyEntry), typeof(MyEntryRenderer))]

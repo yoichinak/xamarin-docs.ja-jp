@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
 ms.openlocfilehash: 288ff00b35c369581e50b8e8777f85b7b6119590
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73021301"
 ---
 # <a name="publishing-to-the-amazon-app-store"></a>Amazon App Store に公開する
@@ -27,7 +27,7 @@ Amazon App Store にアプリケーションを提出する作業は、Google Pl
 
 - **アイコン** &ndash;   114 x 114 の .png ファイルで、背景が透明のものです。 これは必須です。
 - **サムネイル** &ndash;   上記のアイコンを大きくしたものです。 512 x 512 ピクセルであり、背景は透明にします。 このアイコンも必須です。
-- **スクリーンショット** &ndash;   Amazon では 3 ～ 10 枚のスクリーンショットが必要になります。 スクリーンショットは 1024w x 600h ピクセルまたは 800w x 480h ピクセルにします。 .png 形式と .jpg 形式を利用できます。
+- **スクリーンショット** &ndash;   Amazon では、3 枚から 10 枚までのスクリーンショットが必要になります。 スクリーンショットは 1024w x 600h ピクセルまたは 800w x 480h ピクセルにします。 .png 形式と .jpg 形式を利用できます。
 - **宣伝画像** &ndash;   ホーム ページなど、宣伝できる場所でアプリケーションを取り上げてもらうために、宣伝画像を任意で提出できます。 これは 1024w x 500h ピクセルの .png または .jpg ファイルにします。方向は横向きにします。 アニメーションを入れることはできません。
 - 5 つの動画の更新を指定できます。
 

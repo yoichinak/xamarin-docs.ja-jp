@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/11/2017
 ms.openlocfilehash: 399f411acd497b9d55ca81f670556430fe5f5503
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771287"
 ---
 # <a name="creating-a-xamarinforms-datatemplate"></a>Xamarin.Forms DataTemplate の作成
@@ -28,7 +28,7 @@ _データ テンプレートは、ResourceDictionary 内でインラインで�
 
 使用する手法に関係なく、次のスクリーンショットに示すように、結果として [`ListView`](xref:Xamarin.Forms.ListView) の各セルの外観は [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) で定義されます。
 
-![](creating-images/data-template-appearance.png "DataTemplate を使用する ListView")
+![](creating-images/data-template-appearance.png "ListView with a DataTemplate")
 
 <a name="inline" />
 

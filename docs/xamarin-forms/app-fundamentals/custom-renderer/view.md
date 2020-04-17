@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/10/2018
 ms.openlocfilehash: c93feb9527892b7b4c60c9d213361d19d3bc4b93
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771726"
 ---
 # <a name="implementing-a-view"></a>ページの実装
@@ -20,13 +20,13 @@ ms.locfileid: "70771726"
 
 _Xamarin.Forms のカスタム ユーザー インターフェイス コントロールは、View クラスから派生させる必要があります。これは画面上にレイアウトとコントロールを配置するために使われます。この記事では、デバイスのカメラからビデオ ストリームのプレビューを表示するために使う、Xamarin.Forms のカスタム コントロール用のカスタム レンダラーを作成する方法を示します。_
 
-すべての Xamarin.Forms ビューに、ネイティブ コントロールのインスタンスを作成する各プラットフォーム用のレンダラーが付属しています。 iOS で Xamarin.Forms アプリケーションによって [`View`](xref:Xamarin.Forms.View) がレンダリングされると、`ViewRenderer` クラスがインスタンス化され、次に、ネイティブの `UIView` コントロールがインスタンス化されます。 Android プラットフォーム上では、`ViewRenderer` クラスによってネイティブの `View` コントロールがインスタンス化されます。 ユニバーサル Windows プラットフォーム (UWP) 上では、`ViewRenderer` クラスによってネイティブの `FrameworkElement` コントロールがインスタンス化されます。 Xamarin.Forms コントロールがマップするレンダラーとネイティブ コントロール クラスの詳細については、「[レンダラーの基本クラスおよびネイティブ コントロール](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)」を参照してください。
+すべての Xamarin.Forms ビューに、ネイティブ コントロールのインスタンスを作成する各プラットフォーム用のレンダラーが付属しています。 iOS で Xamarin.Forms アプリケーションによって [`View`](xref:Xamarin.Forms.View) がレンダリングされると、`ViewRenderer` クラスがインスタンス化され、次に、ネイティブの `UIView` コントロールがインスタンス化されます。 Android プラットフォーム上では、`ViewRenderer` クラスによってネイティブの `View` コントロールがインスタンス化されます。 ユニバーサル Windows プラットフォーム (UWP) 上では、`ViewRenderer` クラスによってネイティブの `FrameworkElement` コントロールがインスタンス化されます。 Xamarin.Forms コントロールによってマップされるレンダラーとネイティブ コントロール クラスの詳細については、「[Renderer Base Classes and Native Controls](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)」 (レンダラーの基底クラスおよびネイティブ コントロール) を参照してください。
 
 次の図は、[`View`](xref:Xamarin.Forms.View) と、それを実装する、対応しているネイティブ コントロールの関係を示しています。
 
-![](view-images/view-classes.png "View クラスとそれを実装するネイティブ クラス間の関係")
+![](view-images/view-classes.png "Relationship Between the View Class and its Implementing Native Classes")
 
-レンダリング プロセスを使用して各プラットフォーム上の [`View`](xref:Xamarin.Forms.View) にカスタム レンダラーを作成することで、プラットフォーム固有のカスタマイズを実装することができます。 これを行うプロセスは次のとおりです。
+レンダリング プロセスを使用して各プラットフォーム上の [`View`](xref:Xamarin.Forms.View) にカスタム レンダラーを作成することで、プラットフォーム固有のカスタマイズを実装することができます。 その実行プロセスは次のとおりです。
 
 1. Xamarin.Forms カスタム コントロールを[作成](#Creating_the_Custom_Control)します。
 1. Xamarin.Forms からカスタム コントロールを[使用](#Consuming_the_Custom_Control)します。
@@ -114,20 +114,20 @@ public class MainPageCS : ContentPage
 
 1. カスタム コントロールをレンダリングする `ViewRenderer<T1,T2>` クラスのサブクラスを作成します。 最初の型引数は、レンダラーが使用するカスタム コントロール (この場合は `CameraPreview`) にする必要があります。 2 つ目の型引数は、カスタム コントロールを実装するネイティブ コントロールにする必要があります。
 1. カスタム コントロールをレンダリングする `OnElementChanged` メソッドをオーバーライドして、ロジックを書き込んでカスタマイズします。 対応する Xamarin.Forms コントロールが作成されると、このメソッドが呼び出されます。
-1. `ExportRenderer` 属性をカスタム レンダラー クラスに追加して、Xamarin.Forms カスタム コントロールのレンダリングに使用されるように指定します。 この属性は、Xamarin.Forms にカスタム レンダラーを登録するために使用します。
+1. `ExportRenderer` 属性をカスタム レンダラー クラスに追加して、Xamarin.Forms カスタム コントロールのレンダリングに使用されるように指定します。 この属性は、Xamarin.Forms にカスタム レンダラーを登録するために使用されます。
 
 > [!NOTE]
 > ほとんどの Xamarin.Forms 要素では、プラットフォーム プロジェクトごとにカスタム レンダラーを指定するかどうかは任意です。 カスタム レンダラーが登録されていない場合は、コントロールの基底クラスの既定のレンダラーが使用されます。 ただし、[View](xref:Xamarin.Forms.View) 要素をレンダリングするときは、各プラットフォーム プロジェクトにカスタム レンダラーが必要です。
 
-次の図に、サンプル アプリケーション内の各プロジェクトの役割とそれらの関係を示します。
+次の図に、サンプル アプリケーション内の各プロジェクトの役割と、それらの関係を示します。
 
-![](view-images/solution-structure.png "CameraPreview カスタム レンダラーのプロジェクトの役割")
+![](view-images/solution-structure.png "CameraPreview Custom Renderer Project Responsibilities")
 
 `CameraPreview` カスタム コントロールはプラットフォーム固有のレンダラー クラスによってレンダリングされます。このクラスはすべて各プラットフォームの `ViewRenderer` クラスから派生しています。 この結果、次のスクリーンショットに示すように、プラットフォーム固有のコントロールを使用してそれぞれの `CameraPreview` カスタム コントロールがレンダリングされます。
 
-![](view-images/screenshots.png "各プラットフォーム上の CameraPreview")
+![](view-images/screenshots.png "CameraPreview on each Platform")
 
-`ViewRenderer` クラスは `OnElementChanged` メソッドを公開します。このメソッドは、該当するネイティブ コントロールをレンダリングするために、Xamarin.Forms カスタム コントロールの作成時に呼び出されます。 このメソッドは、`OldElement` および `NewElement` プロパティを含む `ElementChangedEventArgs` パラメーターを取得します。 これらのプロパティは、レンダラーが接続して*いた* Xamarin.Forms 要素と、レンダラーが現在接続して*いる* Xamarin.Forms 要素をそれぞれ表しています。 サンプル アプリケーションでは、`OldElement` プロパティが `null` になり、`NewElement` プロパティに `CameraPreview` インスタンスへの参照が含まれます。
+`ViewRenderer` クラスは `OnElementChanged` メソッドを公開します。このメソッドは、該当するネイティブ コントロールをレンダリングするために、Xamarin.Forms カスタム コントロールの作成時に呼び出されます。 このメソッドでは、`OldElement` および `NewElement` プロパティを含む `ElementChangedEventArgs` パラメーターを受け取ります。 これらのプロパティは、レンダラーが接続して*いた* Xamarin.Forms 要素と、レンダラーが現在接続して*いる* Xamarin.Forms 要素をそれぞれ表しています。 サンプル アプリケーションでは、`OldElement` プロパティが `null` になり、`NewElement` プロパティに `CameraPreview` インスタンスへの参照が含まれます。
 
 各プラットフォーム固有のレンダラー クラス内の `OnElementChanged` メソッドのオーバーライドされたバージョンは、ネイティブ コントロールのインスタンス化とカスタマイズを実行する場所です。 `SetNativeControl` メソッドはネイティブ コントロールのインスタンス化に使用されます。このメソッドはまた、コントロール参照を `Control` プロパティに割り当てます。 さらに、レンダリングされている Xamarin.Forms コントロールへの参照は、`Element` プロパティを使用して取得することができます。
 

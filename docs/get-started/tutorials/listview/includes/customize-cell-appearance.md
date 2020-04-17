@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 3c88b71cea834f5e6ef20d43332904c052c6e3a6
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 04d2a244482c92a615c3eec2130cec1df8aaaf1f
+ms.sourcegitcommit: 89b3e383a37db5b940f0c63bbfe9cb806dc7d5d1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "61037626"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389997"
 ---
 以前は、データ バインディングを使用して [`ListView`](xref:Xamarin.Forms.ListView) にデータが取り込まれていました。 しかし、コレクション内の各オブジェクトが複数のデータ項目を定義しているコレクションへのデータ バインディングであるにもかかわらず、オブジェクトごとに単一のデータ項目のみ (`Monkey` オブジェクトの `Name` プロパティー) が表示されていました。
 
@@ -12,7 +12,7 @@ ms.locfileid: "61037626"
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
-1. **MainPage.xaml** で、[`ListView`](xref:Xamarin.Forms.Image) 宣言を変更して各行の外観をカスタマイズします。
+1. **MainPage.xaml** で、[`ListView`](xref:Xamarin.Forms.ListView) 宣言を変更して各行の外観をカスタマイズします。
 
     ```xaml
     <ListView ItemsSource="{Binding Monkeys}"
@@ -62,7 +62,7 @@ ms.locfileid: "61037626"
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
-1. **MainPage.xaml** で、[`ListView`](xref:Xamarin.Forms.Image) 宣言を変更して各行の外観をカスタマイズします。
+1. **MainPage.xaml** で、[`ListView`](xref:Xamarin.Forms.ListView) 宣言を変更して各行の外観をカスタマイズします。
 
     ```xaml
     <ListView ItemsSource="{Binding Monkeys}"

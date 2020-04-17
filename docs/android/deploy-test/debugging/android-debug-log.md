@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 06/22/2018
 ms.openlocfilehash: 39ee1039104052b8799debf19f09439f57a1791d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73028097"
 ---
 # <a name="android-debug-log"></a>Android のデバッグ ログ
@@ -32,7 +32,7 @@ ms.locfileid: "73028097"
 
 ## <a name="accessing-the-debug-log-from-visual-studio"></a>Visual Studio からデバッグ ログにアクセスする
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 **デバイス ログ** ツールを開くには、ツール バーの **[デバイス ログ (logcat)]** アイコンをクリックします。
 
@@ -65,7 +65,7 @@ ms.locfileid: "73028097"
 
 デバイスを選択すると、**デバイス ログ** ツールは実行中のアプリからのログ エントリを自動的に追加します。これらのログ エントリは、ログ エントリのテーブルに表示されます。 デバイスを切り替えると、デバイスのログはいったん停止してから開始します。 デバイス セレクターにデバイスが表示されるためには、先に Android プロジェクトを読み込む必要があることに注意してください。 デバイスがデバイス セレクターに表示されない場合は、Visual Studio の **[開始]** ボタンの横にあるデバイス ドロップダウン メニューでデバイスが使用できることを確認します。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 **デバイス ログ**を開くには、 **[表示] > [パッド] > [デバイス ログ]** の順にクリックします。
 
@@ -103,7 +103,7 @@ ms.locfileid: "73028097"
 
 ## <a name="accessing-from-the-command-line"></a>コマンド ラインからのアクセス
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 デバッグ ログを表示するには、コマンド ラインを使う方法もあります。 コマンド プロンプト ウィンドウを開き、Android SDK の platform-tools フォルダーに移動します (SDK platform-tools フォルダーの通常の位置: **C:\\Program Files (x86)\\Android\\android-sdk\\platform-tools**)。
 
@@ -113,7 +113,7 @@ ms.locfileid: "73028097"
 $ adb logcat
 ```
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 デバッグ ログを表示するには、コマンド ラインを使う方法もあります。 ターミナル ウィンドウを開き、Android SDK の platform-tools フォルダーに移動します (SDK platform-tools フォルダーの通常の位置: **/Users/username/Library/Developer/Xamarin/android-sdk-macosx/platform-tools**)。
 

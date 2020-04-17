@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
 ms.openlocfilehash: 702ec35bca051f7255c5c9d67d2dc68d4f89ca52
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "68645952"
 ---
 # <a name="xamarinforms-master-detail-page"></a>Xamarin.Forms のマスター詳細ページ
@@ -24,7 +24,7 @@ _Xamarin.Forms の MasterDetailPage は、2 つの関連する情報ページ、
 
 通常、マスター ページには、次のスクリーンショットのように、項目の一覧が表示されます。
 
-[![](master-detail-page-images/masterpage-components.png "マスター ページのコンポーネント")](master-detail-page-images/masterpage-components-large.png#lightbox "マスター ページのコンポーネント")
+[![](master-detail-page-images/masterpage-components.png "Master Page Components")](master-detail-page-images/masterpage-components-large.png#lightbox "Master Page Components")
 
 項目の一覧の場所は各プラットフォームで同じであり、いずれかの項目を選択すると対応する詳細ページに移動します。 さらに、マスター ページのナビゲーション バーに含まれるボタンを使用してアクティブな詳細ページに移動することもできます。
 
@@ -34,12 +34,12 @@ _Xamarin.Forms の MasterDetailPage は、2 つの関連する情報ページ、
 
 次のスクリーンショットのように、詳細ページには、マスター ページで選択されている項目に対応するデータと、詳細ページの主要コンポーネントが表示されます。
 
-![](master-detail-page-images/detailpage-components.png "詳細ページのコンポーネント")
+![](master-detail-page-images/detailpage-components.png "Detail Page Components")
 
 詳細ページにはナビゲーション バーが含まれ、その内容はプラットフォームによって異なります。
 
 - iOS では、ナビゲーション バーはページの上部に存在し、タイトルが表示されています。また、詳細ページのインスタンスが [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) インスタンスにラップされている場合は、マスター ページに戻るボタンがあります。 さらに、マスター ページには、詳細ページを右にスワイプすることによって戻ることができます。
-- Android では、ナビゲーション バーはページの上部にあり、タイトル、アイコン、マスター ページに戻るボタンが表示されます。 アイコンは、Android プラットフォーム固有プロジェクトにおいて `MainActivity` クラスを修飾する `[Activity]` 属性で定義されています。
+- Android では、ナビゲーション バーはページの上部にあり、タイトル、アイコン、マスター ページに戻るボタンが表示されます。 Android プラットフォーム固有プロジェクトでは、アイコンは `MainActivity` クラスを修飾する `[Activity]` 属性で定義されています。
 - UWP では、ナビゲーション バーはページの上部にあり、タイトルが表示され、マスター ページに戻るボタンがあります。
 
 ### <a name="navigation-behavior"></a>ナビゲーションの動作
@@ -81,7 +81,7 @@ _Xamarin.Forms の MasterDetailPage は、2 つの関連する情報ページ、
 </MasterDetailPage>
 ```
 
-次に示すのは、C# で作成された同等の [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) のコード例です。
+次のコード例は、同じ [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) を C# で作成します。
 
 ```csharp
 public class MainPageCS : MasterDetailPage
@@ -210,7 +210,7 @@ public class MasterPageCS : ContentPage
 
 次のスクリーンショットでは、各プラットフォームでのマスター ページを示します。
 
-![](master-detail-page-images/masterpage.png "マスター ページの例")
+![](master-detail-page-images/masterpage.png "Master Page Example")
 
 ### <a name="creating-and-displaying-the-detail-page"></a>詳細ページを作成して表示する
 
@@ -245,7 +245,7 @@ public partial class MainPage : MasterDetailPage
 
 次のスクリーンショットでは、`ContactPage` の詳細ページを示します。これは、マスター ページで選択された後に表示されます。
 
-![](master-detail-page-images/detailpage.png "詳細ページの例")
+![](master-detail-page-images/detailpage.png "Detail Page Example")
 
 <a name="Controlling_the_Detail_Page_Display_Behavior" />
 
@@ -271,7 +271,7 @@ public partial class MainPage : MasterDetailPage
 </MasterDetailPage>
 ```
 
-次に示すのは、C# で作成された同等の [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) のコード例です。
+次のコード例は、同じ [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) を C# で作成します。
 
 ```csharp
 public class MainPageCS : MasterDetailPage
@@ -294,6 +294,6 @@ public class MainPageCS : MasterDetailPage
 
 ## <a name="related-links"></a>関連リンク
 
-- [さまざまなページ](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)
+- [ページの変数](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)
 - [MasterDetailPage (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-masterdetailpage)
 - [MasterDetailPage](xref:Xamarin.Forms.MasterDetailPage)

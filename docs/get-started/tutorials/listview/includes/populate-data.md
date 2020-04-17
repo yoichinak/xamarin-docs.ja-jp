@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e03d0ada982cbf1d2954f4b677accc7ce7da793e
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: c1eeece93d5da3092f1bd46c82c98e2304d25139
+ms.sourcegitcommit: 89b3e383a37db5b940f0c63bbfe9cb806dc7d5d1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "69541495"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389998"
 ---
 [ 型の `ListView`](xref:Xamarin.Forms.ListView)[ プロパティを使用して、`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource)`IEnumerable` にデータが取り込まれます。 前の手順で、XAML の `ListView` に文字列の配列を取り込みました。 ただし、通常 `ListView` には、`IEnumerable` を実装するコードビハインドで定義されたコレクションからのデータが取り込まれます。
 
@@ -177,7 +177,7 @@ ms.locfileid: "69541495"
     > [!IMPORTANT]
     > [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) プロパティはビジュアル ツリーを介して継承されます。 したがって、それが [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトに設定されているため、`ContentPage` の子オブジェクトは [`ListView`](xref:Xamarin.Forms.ListView) を含むその値を継承します。
 
-1. **MainPage.xaml** で、[`ListView`](xref:Xamarin.Forms.Image) プロパティを [ コレクションに設定するように `ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource)`Monkeys` 宣言を変更します。
+1. **MainPage.xaml** で、[`ListView`](xref:Xamarin.Forms.ListView) プロパティを [ コレクションに設定するように `ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource)`Monkeys` 宣言を変更します。
 
     ```xaml
     <ListView ItemsSource="{Binding Monkeys}" />
@@ -358,7 +358,7 @@ ms.locfileid: "69541495"
     > [!IMPORTANT]
     > [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) プロパティはビジュアル ツリーを介して継承されます。 したがって、それが [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトに設定されているため、`ContentPage` の子オブジェクトは [`ListView`](xref:Xamarin.Forms.ListView) を含むその値を継承します。
 
-1. **MainPage.xaml** で、[`ListView`](xref:Xamarin.Forms.Image) プロパティを [ コレクションに設定するように `ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource)`Monkeys` 宣言を変更します。
+1. **MainPage.xaml** で、[`ListView`](xref:Xamarin.Forms.ListView) プロパティを [ コレクションに設定するように `ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource)`Monkeys` 宣言を変更します。
 
     ```xaml
     <ListView ItemsSource="{Binding Monkeys}" />

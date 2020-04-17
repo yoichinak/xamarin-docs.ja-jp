@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
 ms.openlocfilehash: 12633b728240c2f90d0265fe7b9efb65ea49bf1f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "68650645"
 ---
 # <a name="custom-video-positioning"></a>カスタムのビデオ位置
@@ -475,7 +475,7 @@ UWP [`MediaElement`](/uwp/api/Windows.UI.Xaml.Controls.MediaElement/) に関す�
 
 最初の省略記号 (...) には `ActivityIndicator` が隠れています。以前の **[Custom Transport]\(カスタム トランスポート\)** ページと同じです。 2 つの `Label` 要素は、`Position` および `TimeToEnd` プロパティを示している点に注意してください。 これら 2 つの `Label` 要素の間にある省略記号には、再生、一時停止、および停止に関する **[Custom Transport]\(カスタム トランスポート\)** ページに表示される 2 つの `Button` 要素が隠れています。 コードビハインド ロジックは、 **[Custom Transport]\(カスタム トランスポート\)** ページと同じです。
 
-[![カスタムの位置設定](custom-positioning-images/custompositioning-small.png "カスタムの位置設定")](custom-positioning-images/custompositioning-large.png#lightbox "カスタムの位置設定")
+[![カスタム位置](custom-positioning-images/custompositioning-small.png "カスタム位置")](custom-positioning-images/custompositioning-large.png#lightbox "カスタム位置")
 
 以上で `VideoPlayer` の説明は終了です。
 

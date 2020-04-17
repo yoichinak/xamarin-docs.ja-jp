@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2016
 ms.openlocfilehash: c07848b808d023439c88117924e69c336984630b
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771509"
 ---
 # <a name="creating-an-effect"></a>エフェクトの作成
@@ -33,14 +33,14 @@ ms.locfileid: "70771509"
 > [!NOTE]
 > 各プラットフォーム プロジェクトにエフェクトを提供するかどうかは任意です。 エフェクトが登録されていない場合にそれを使用しようとすると、何も実行しない null 以外の値が返されます。
 
-サンプル アプリケーションでは、コントロールがフォーカスを取得したときに背景色を変更する `FocusEffect` を示します。 次の図に、サンプル アプリケーション内の各プロジェクトの役割とそれらの関係を示します。
+サンプル アプリケーションでは、コントロールがフォーカスを取得したときに背景色を変更する `FocusEffect` を示します。 次の図に、サンプル アプリケーション内の各プロジェクトの役割と、それらの関係を示します。
 
-![](creating-images/focus-effect.png "フォーカス効果プロジェクトの責任")
+![](creating-images/focus-effect.png "Focus Effect Project Responsibilities")
 
 `HomePage` 上の [`Entry`](xref:Xamarin.Forms.Entry) コントロールが、各プラットフォーム固有のプロジェクト内の `FocusEffect` クラスによってカスタマイズされます。 各プラットフォームの `PlatformEffect` クラスから、各 `FocusEffect` クラスが派生します。 この結果、次のスクリーンショットに示すように、プラットフォーム固有の背景色を使用して `Entry` コントロールがレンダリングされ、フォーカスを取得するとその色が変更されます。
 
-![](creating-images/screenshots-1.png "各プラットフォームでのフォーカス効果")
-![](creating-images/screenshots-2.png "各プラットフォームでのフォーカス効果")
+![](creating-images/screenshots-1.png "Focus Effect on each Platform")
+![](creating-images/screenshots-2.png "Focus Effect on each Platform")
 
 ## <a name="creating-the-effect-on-each-platform"></a>各プラットフォームでのエフェクトの作成
 
@@ -269,7 +269,7 @@ public HomePageCS ()
 ## <a name="related-links"></a>関連リンク
 
 - [カスタム レンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)
-- [エフェクト](xref:Xamarin.Forms.Effect)
+- [Effect](xref:Xamarin.Forms.Effect)
 - [PlatformEffect](xref:Xamarin.Forms.PlatformEffect`2)
 - [背景色エフェクト (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-backgroundcoloreffect)
 - [フォーカス エフェクト (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-focuseffect)

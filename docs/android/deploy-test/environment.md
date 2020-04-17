@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 02/15/2018
 ms.openlocfilehash: 54fc52c2f2460726fe1c22149d4e7cc0e8a92609
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73028073"
 ---
 # <a name="xamarinandroid-environment"></a>Xamarin.Android Environment
@@ -133,7 +133,7 @@ debug.mono.max_grefc` でのみ使用できます。
 - `jni`:`JNIEnv::NewWeakGlobalRef()` で作成され、`JNIEnv::DeleteWeakGlobalREf()` によって破棄される JNI の弱い参照を使用します。
 - `java`:`java.lang.WeakReference` インスタンスを参照する JNI グローバル参照を使用します。
 
-`java` は、既定では API-7 までと、ART が有効な場合は API-19 (Kit Kat) で使用されます (API-8 では `jni` の参照が追加され、ART によって `jni` の参照が*破棄されました*)。
+`java` は、既定では API-7 までと、ART が有効な場合は API-19 (Kit Kat) で使用されます (API-8 では `jni` の参照が追加され、ART によって `jni` の参照が "*破棄されました*")。
 
 このシステム プロパティは、テストや特定の形式の調査に役立ちます。
 *一般的に*、変更はお勧めしません。

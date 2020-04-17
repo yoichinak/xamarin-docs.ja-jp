@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/16/2018
 ms.openlocfilehash: 67fd8070ae36bdc1a90b8a33b25f13369d8d995d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "68650212"
 ---
 # <a name="xamarinforms-binding-fallbacks"></a>Xamarin.Forms のバインドのフォールバック

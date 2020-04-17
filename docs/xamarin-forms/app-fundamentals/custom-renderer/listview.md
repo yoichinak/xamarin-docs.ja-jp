@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
 ms.openlocfilehash: 384ad20cc1456f3de01ddbe241bf2d8b58de387f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771930"
 ---
 # <a name="customizing-a-listview"></a>ListView のカスタマイズ
@@ -24,7 +24,7 @@ _Xamarin.Forms の ListView は、データのコレクションを縦方向の�
 
 次の図は、[`ListView`](xref:Xamarin.Forms.ListView) コントロールと、それを実装する、対応するネイティブ コントロールの関係を示しています。
 
-![](listview-images/listview-classes.png "ListView コントロールと実装するネイティブ コントロールの関係")
+![](listview-images/listview-classes.png "Relationship Between the ListView Control and the Implementing Native Controls")
 
 レンダリング プロセスを活用して各プラットフォーム上で [`ListView`](xref:Xamarin.Forms.ListView) 用のカスタム レンダラーを作成することで、プラットフォーム固有のカスタマイズを実装できます。 これを行うための実行プロセスは次のとおりです。
 
@@ -155,11 +155,11 @@ public class MainPageCS : ContentPage
 
 次の図に、サンプル アプリケーション内の各プロジェクトの役割と、それらの関係を示します。
 
-![](listview-images/solution-structure.png "NativeListView カスタム レンダラーのプロジェクトの役割")
+![](listview-images/solution-structure.png "NativeListView Custom Renderer Project Responsibilities")
 
 `NativeListView` カスタム コントロールはプラットフォーム固有のレンダラー クラスによってレンダリングされます。このクラスはすべて各プラットフォームの `ListViewRenderer` クラスから派生しています。 この結果、次のスクリーンショットに示すように、プラットフォーム固有のリスト コントロールとネイティブ のセルのレイアウトを使用してそれぞれの `NativeListView` カスタム コントロールがレンダリングされます。
 
-![](listview-images/screenshots.png "各プラットフォーム上の NativeListView")
+![](listview-images/screenshots.png "NativeListView on each Platform")
 
 `ListViewRenderer` クラスは `OnElementChanged` メソッドを公開します。このメソッドは、該当するネイティブ コントロールをレンダリングするために、Xamarin.Forms カスタム コントロールの作成時に呼び出されます。 このメソッドでは、`OldElement` および `NewElement` プロパティを含む `ElementChangedEventArgs` パラメーターを受け取ります。 これらのプロパティは、レンダラーがアタッチされて*いた* Xamarin.Forms 要素と、レンダラーが現在アタッチされて*いる* Xamarin.Forms 要素をそれぞれ表しています。 サンプル アプリケーションでは、`OldElement` プロパティが `null` になり、`NewElement` プロパティに `NativeListView` インスタンスへの参照が含まれます。
 

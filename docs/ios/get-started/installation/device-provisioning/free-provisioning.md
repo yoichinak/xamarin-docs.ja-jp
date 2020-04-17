@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 07/16/2018
 ms.openlocfilehash: 951b019a4a0bf503629b6ac63853bd5b1c818bce
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73022757"
 ---
 # <a name="free-provisioning-for-xamarinios-apps"></a>Xamarin.iOS アプリの無料プロビジョニング
@@ -63,7 +63,7 @@ ms.locfileid: "73022757"
     ![Xcode ビルド スキームを選択する](free-provisioning-images/xcodescheme.png "Xcode ビルド スキームを選択する")
 
 9. Xcode の**プロジェクト ナビゲーター**で最上位のノードを選択して、アプリのプロジェクトの設定を開きます。
-10. **[General]\(一般\)、[Identity]\(ID\)** の下で、**バンドル ID** が Xamarin.iOS アプリのバンドル ID と_完全に一致している_ことを確認します。
+10. **[General]\(一般\)、[Identity]\(ID\)** の下で、**バンドル ID** が Xamarin.iOS アプリのバンドル ID と "_完全に一致している_" ことを確認します。
 
     ![バンドル ID を設定する](free-provisioning-images/launchapp5.png "バンドル ID を設定する")
 
@@ -87,7 +87,7 @@ ms.locfileid: "73022757"
 
 ### <a name="deploy-your-xamarinios-app"></a>Xamarin.iOS アプリを展開する
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 1. iOS デバイスを USB 経由または[ワイヤレス](~/ios/deploy-test/wireless-deployment.md)で Mac ビルド ホストに接続します。
 2. Visual Studio for Mac の **Solution Pad** で **Info.plist** をダブルクリックします。
@@ -106,7 +106,7 @@ ms.locfileid: "73022757"
 9. **[OK]** をクリックし、 **[プロジェクト オプション]** を保存して閉じます。
 10. iOS デバイスを選択し、アプリを実行します。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. Visual Studio 2019 または Visual Studio 2017 が [Mac ビルド ホストとペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)されていることを確認します。
 2. iOS デバイスを USB 経由または[ワイヤレス](~/ios/deploy-test/wireless-deployment.md)で Mac ビルド ホストに接続します。

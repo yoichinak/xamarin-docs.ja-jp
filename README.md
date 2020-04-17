@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: c2a49af1a2d55011ef3579ddfe994e5455fed303
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "60857446"
+---
 # <a name="xamarin-documentation"></a>Xamarin ドキュメント
 
 このリポジトリでのドキュメントは [**docs.microsoft.com/xamarin**](https://docs.microsoft.com/xamarin) でホストされています。
@@ -15,11 +23,11 @@ pull request を送信すると、CLA を提供して PR (ラベル、コメン�
 
 [**投稿プロセス**](CONTRIBUTING.md)を参照し、次の状況のうち最も当てはまるものを特定してください。
 
-* **コミュニティ - マイナー更新**: 改善のためにマイナー更新を投稿する場合は、このリポジトリで記事を見つけるか、[https://docs.microsoft.com/xamarin](https://docs.microsoft.com/xamarin) で記事にアクセスするか、または記事内の **[編集]** リンクをクリックして GitHub ソースに移動します。 その後は、GitHub Web サイトを使用して更新を行うだけです。 または、[リポジトリをフォーク](CONTRIBUTING.md)し、フォークしたものから更新を送信することもできます。
+* **コミュニティ - マイナー更新**:ご厚意からマイナー更新を投稿していただける場合は、このリポジトリで記事を見つけるか、[https://docs.microsoft.com/xamarin](https://docs.microsoft.com/xamarin) で記事にアクセスし、記事内の **[編集]** リンクをクリックして GitHub ソースに移動することができます。 その後は、GitHub Web サイトを使用して更新を行うだけです。 または、[リポジトリをフォーク](CONTRIBUTING.md)し、フォークしたものから更新を送信することもできます。
 
-* **コミュニティ - 新しい記事**: Xamarin コミュニティに属していて、新しい記事を作成する場合は、従業員と協力して、パブリック リポジトリとプライベート リポジトリでの作業の組み合わせを通して、その新しいコンテンツを取り込む必要があります。 このリポジトリで、提案したコンテンツの概要を示す [GitHub の問題](https://github.com/MicrosoftDocs/xamarin-docs/issues)を取り上げることから開始します。
+* **コミュニティ - 新しい記事**:あなたが Xamarin コミュニティに属していて、新しい記事を作成したい場合は、従業員と協力して、パブリック リポジトリとプライベート リポジトリでの作業の組み合わせによってその新しいコンテンツを取り込む必要があります。 このリポジトリで、提案したコンテンツの概要を示す [GitHub の問題](https://github.com/MicrosoftDocs/xamarin-docs/issues)を取り上げることから開始します。
 
-* **従業員**: テクニカル ライター、プログラム マネージャー、または Xamarin 製品の製品チームの開発者であり、投稿または技術記事の作成に従事する場合は、プライベート リポジトリを使用する必要があります (https://github.com/MicrosoftDocs/xamarin-docs-pr)。 既存の記事に対して大幅な変更を行うか、イメージを追加または変更するか、または新しい記事を投稿する場合は、このリポジトリをフォークし、Git (マークダウン エディター) をインストールして、いくつかの git コマンドについて学ぶ必要があります。 詳細については、[内部共同作成者ガイド](https://review.docs.microsoft.com/help/contribute/?branch=master)を参照してください。
+* **従業員**:あなたがテクニカル ライター、プログラム マネージャー、または Xamarin 製品の製品チームの開発者であり、技術記事の投稿または作成を担当している場合は、プライベート リポジトリを使用する必要があります (https://github.com/MicrosoftDocs/xamarin-docs-pr) 。 既存の記事に対して大幅な変更を行うか、イメージを追加または変更するか、または新しい記事を投稿する場合は、このリポジトリをフォークし、Git (マークダウン エディター) をインストールして、いくつかの git コマンドについて学ぶ必要があります。 詳細については、[内部共同作成者ガイド](https://review.docs.microsoft.com/help/contribute/?branch=master)を参照してください。
 
 ## <a name="legal-notices"></a>法的通知
 
