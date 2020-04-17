@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 9d78f0e9bf3b8d6d227f76b2729be849e5cdd3a6
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 1bcd808221ee319fa2818563418d2362b146e354
+ms.sourcegitcommit: 89b3e383a37db5b940f0c63bbfe9cb806dc7d5d1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "72678725"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389938"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
@@ -31,7 +31,7 @@ ms.locfileid: "72678725"
     </ContentPage>
     ```
 
-    このコードでは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) の中の [`Label`](xref:Xamarin.Forms.Label) から構成されるページのユーザー インターフェイスを宣言によって定義します。 [`Label.Text`](xref:Xamarin.Forms.Button.Text) プロパティは表示されるテキストを指定し、[`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) プロパティは `Label` が水平方向の中央に配置されるように指定します。
+    このコードでは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) の中の [`Label`](xref:Xamarin.Forms.Label) から構成されるページのユーザー インターフェイスを宣言によって定義します。 [`Label.Text`](xref:Xamarin.Forms.Label.Text) プロパティは表示されるテキストを指定し、[`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) プロパティは `Label` が水平方向の中央に配置されるように指定します。
 
 1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
@@ -62,7 +62,7 @@ ms.locfileid: "72678725"
     </ContentPage>
     ```
 
-    このコードは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) の中の [`Label`](xref:Xamarin.Forms.Label) から構成されるページのユーザー インターフェイスを宣言によって定義します。 [`Label.Text`](xref:Xamarin.Forms.Button.Text) プロパティは表示されるテキストを指定し、[`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) プロパティはテキストが水平方向の中央に配置されるように指定します。
+    このコードは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) の中の [`Label`](xref:Xamarin.Forms.Label) から構成されるページのユーザー インターフェイスを宣言によって定義します。 [`Label.Text`](xref:Xamarin.Forms.Label.Text) プロパティは表示されるテキストを指定し、[`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) プロパティはテキストが水平方向の中央に配置されるように指定します。
 
 1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 

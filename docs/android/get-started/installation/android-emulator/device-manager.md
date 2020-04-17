@@ -10,10 +10,10 @@ ms.author: daortin
 ms.custom: video
 ms.date: 01/22/2019
 ms.openlocfilehash: 64e637648b03dff81468f2d7ad072c7acc50868b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73021157"
 ---
 # <a name="managing-virtual-devices-with-the-android-device-manager"></a>Android Device Manager による仮想デバイスの管理
@@ -90,7 +90,7 @@ Android Device Manager を初めて起動すると、現在構成されている
 
 [![Device Manager の [New Device]\(新しいデバイス\) 画面](device-manager-images/win/09-new-device-editor-sml.png)](device-manager-images/win/09-new-device-editor.png#lightbox)
 
-**[New Device](新しいデバイス)** 画面で新しいデバイスを構成するには、次の手順を実行します。
+**[New Device]\(新しいデバイス)** 画面で新しいデバイスを構成するには、次の手順を実行します。
 
 1. デバイスの新しい名前を指定します。 次の例では、新しいデバイスに「**Pixel_API_27**」という名前を指定しています。
 
@@ -171,7 +171,7 @@ Android Device Manager を初めて起動すると、現在構成されている
 
 その他のオプションのメニューには、次の項目が含まれます。
 
-- **[Duplicate and Edit]\(複製して編集\)** &ndash; 現在選ばれているデバイスを複製し、異なる一意名を付けて **[New Device]\(新しいデバイス\)** 画面で開きます。 たとえば、 **[Pixel_API_27]** を選択し、 **[Duplicate and Edit]\(複製して編集\)** をクリックすると、名前にカウンターが追加されます。
+- **[Duplicate and Edit]\(複製して編集\)** &ndash; 現在選択しているデバイスを複製し、異なる一意の名前を付けて **[New Device]\(新しいデバイス\)** 画面で開きます。 たとえば、 **[Pixel_API_27]** を選択し、 **[Duplicate and Edit]\(複製して編集\)** をクリックすると、名前にカウンターが追加されます。
 
   [![[Duplicate and Edit]\(複製して編集\) 画面](device-manager-images/win/25-dupe-and-edit-sml.png)](device-manager-images/win/25-dupe-and-edit.png#lightbox)
 
@@ -179,7 +179,7 @@ Android Device Manager を初めて起動すると、現在構成されている
 
   [![[Reveal in Explorer]\(エクスプローラーで表示\) をクリックした結果](device-manager-images/win/26-reveal-in-explorer-sml.png)](device-manager-images/win/26-reveal-in-explorer.png#lightbox)
 
-- **[Factory Reset]\(出荷時の設定にリセット\)** &ndash; 選んだデバイスを既定の設定にリセットし、デバイスの実行中にユーザーが行ったデバイスの内部状態に対する変更を消去します (現在の[クイック ブート](~/android/deploy-test/debugging/debug-on-emulator.md#quick-boot)のスナップショットが存在する場合は、それも消去されます)。 仮想デバイスを作成または編集するときに行った変更は消去されません。 このリセットは元に戻すことができないという警告がダイアログ ボックスに表示されます。 **[Factory Reset]\(出荷時の設定にリセット\)** をクリックしてリセットを確定します。
+- **[Factory Reset]\(出荷時の設定にリセット\)** &ndash; 選択したデバイスをその既定の設定にリセットし、デバイスの実行中にユーザーが行ったデバイスの内部状態に対する変更を消去します (現在の[クイック ブート](~/android/deploy-test/debugging/debug-on-emulator.md#quick-boot)のスナップショットが存在する場合は、それも消去されます)。 仮想デバイスを作成または編集するときに行った変更は消去されません。 このリセットは元に戻すことができないという警告がダイアログ ボックスに表示されます。 **[Factory Reset]\(出荷時の設定にリセット\)** をクリックしてリセットを確定します。
 
   ![[Factory Reset]\(出荷時の設定にリセット\) ダイアログ](device-manager-images/win/27-factory-reset.png)
 
@@ -337,9 +337,9 @@ Android Device Manager を初めて起動すると、現在構成されている
 
 その他のオプションのメニューには、次の項目が含まれます。
 
-- **[Edit]\(編集\)** &ndash; 前述のとおり、現在選ばれているデバイスがデバイス エディターで開かれます。
+- **[Edit]\(編集\)** &ndash; 前述のとおり、現在選択しているデバイスがデバイス エディターで開かれます。
 
-- **[Duplicate and Edit]\(複製して編集\)** &ndash; 現在選ばれているデバイスを複製し、異なる一意名を付けて **[New Device]\(新しいデバイス\)** 画面で開きます。 たとえば、 **[Pixel 2 API 28]** を選択し、 **[Duplicate and Edit]\(複製して編集\)** をクリックすると、名前にカウンターが追加されます。
+- **[Duplicate and Edit]\(複製して編集\)** &ndash; 現在選択しているデバイスを複製し、異なる一意の名前を付けて **[New Device]\(新しいデバイス\)** 画面で開きます。 たとえば、 **[Pixel 2 API 28]** を選択し、 **[Duplicate and Edit]\(複製して編集\)** をクリックすると、名前にカウンターが追加されます。
 
   [![[Duplicate and Edit]\(複製して編集\) 画面](device-manager-images/mac/25-dupe-and-edit-sml.png)](device-manager-images/mac/25-dupe-and-edit.png#lightbox)
 
@@ -347,7 +347,7 @@ Android Device Manager を初めて起動すると、現在構成されている
 
   [![[Reveal in Finder]\(Finder で表示\) をクリックした結果](device-manager-images/mac/26-reveal-in-finder-sml.png)](device-manager-images/mac/26-reveal-in-finder.png#lightbox)
 
-- **[Factory Reset]\(出荷時の設定にリセット\)** &ndash; 選んだデバイスを既定の設定にリセットし、デバイスの実行中にユーザーが行ったデバイスの内部状態に対する変更を消去します (現在の[クイック ブート](~/android/deploy-test/debugging/debug-on-emulator.md#quick-boot)のスナップショットが存在する場合は、それも消去されます)。 仮想デバイスを作成または編集するときに行った変更は消去されません。 このリセットは元に戻すことができないという警告がダイアログ ボックスに表示されます。 **[Factory Reset]\(出荷時の設定にリセット\)** をクリックしてリセットを確定します。
+- **[Factory Reset]\(出荷時の設定にリセット\)** &ndash; 選択したデバイスをその既定の設定にリセットし、デバイスの実行中にユーザーが行ったデバイスの内部状態に対する変更を消去します (現在の[クイック ブート](~/android/deploy-test/debugging/debug-on-emulator.md#quick-boot)のスナップショットが存在する場合は、それも消去されます)。 仮想デバイスを作成または編集するときに行った変更は消去されません。 このリセットは元に戻すことができないという警告がダイアログ ボックスに表示されます。 **[Factory Reset]\(出荷時の設定にリセット\)** をクリックしてリセットを確定します。
 
   ![[Factory Reset]\(出荷時の設定にリセット\) ダイアログ](device-manager-images/mac/27-factory-reset-m76.png)
 
@@ -365,7 +365,7 @@ Android Device Manager を初めて起動すると、現在構成されている
 
 <!-- markdownlint-disable MD001 -->
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ### <a name="android-sdk-in-non-standard-location"></a>標準以外の場所にある Android SDK
 
@@ -429,7 +429,7 @@ Android Oreo 用に構成された AVD で Wi-Fi アクセスをシミュレー�
 
 これらの変更を行った後は、AVD は Wi-Fi が再び機能する状態で再起動します。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 ### <a name="wrong-version-of-android-sdk-tools"></a>不適切なバージョンの Android SDK Tools
 
@@ -467,13 +467,13 @@ Android Oreo 用に構成された AVD で Wi-Fi アクセスをシミュレー�
 
 ### <a name="generating-a-bug-report"></a>バグ報告の生成
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 上記のトラブルシューティングのヒントで解決できない問題が Android Device Manager で見つかった場合は、タイトル バーを右クリックし、 **[Generate Bug Report]\(バグ報告の生成\)** を選択して、バグ報告を提出してください。
 
 [![バグ報告の提出に関するメニュー項目の場所](device-manager-images/win/34-bug-report-sml.png)](device-manager-images/win/34-bug-report.png#lightbox)
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 上記のトラブルシューティングのヒントで解決できない問題が Android Device Manager で見つかった場合は、 **[Help]\(ヘルプ\)、[Report a Problem]\(問題の報告\)** の順にクリックして、バグ報告を提出してください。
 
