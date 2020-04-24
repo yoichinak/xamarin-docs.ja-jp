@@ -7,28 +7,28 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 09/17/2019
-ms.openlocfilehash: 3a0fe7159e6af24d58e49dea4166d012605c9985
-ms.sourcegitcommit: e71474f91639bb43159b22f5d534325c3270ba93
+ms.openlocfilehash: 8360123b01f36bde084b4dc315109e6bdaef2207
+ms.sourcegitcommit: 99aa05bd9b5e3f66d134066b860f41b54fa2d850
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72749802"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82103283"
 ---
 # <a name="xamarinforms-collectionview-grouping"></a>CollectionView グループ化
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+[![](~/media/shared/download.png)サンプルをダウンロードするサンプルをダウンロードする](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
 多くの場合、頻繁にスクロールするリストに表示すると、大きなデータセットが扱いにくくなる可能性があります。 このシナリオでは、データをグループにまとめると、データの移動が容易になるため、ユーザーエクスペリエンスが向上します。
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)は、グループ化されたデータの表示をサポートし、次のプロパティを定義します。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)グループ化されたデータの表示をサポートし、表示方法を制御する次のプロパティを定義します。
 
-- `bool` 型の `IsGrouped` は、基になるデータをグループに表示するかどうかを示します。 このプロパティの既定値は `false` です。
-- 各グループのヘッダーに使用するテンプレート[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)型の `GroupHeaderTemplate`。
-- 各グループのフッターに使用するテンプレート[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)型の `GroupFooterTemplate`。
+- `IsGrouped`型`bool`のは、基になるデータをグループに表示するかどうかを示します。 このプロパティの既定値は `false` です。
+- `GroupHeaderTemplate`型[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)の。各グループのヘッダーに使用するテンプレート。
+- `GroupFooterTemplate`型[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)の。各グループのフッターに使用するテンプレート。
 
-これらのプロパティは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)のオブジェクトによってサポートされています。これは、プロパティをデータバインディングのターゲットにできることを意味します。
+これらのプロパティは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)オブジェクトによって支えられています。これは、プロパティをデータバインディングのターゲットにできることを意味します。
 
-次のスクリーンショットは、グループ化されたデータを表示する[`CollectionView`](xref:Xamarin.Forms.CollectionView)を示しています。
+次のスクリーンショットは[`CollectionView`](xref:Xamarin.Forms.CollectionView) 、グループ化されたデータの表示を示しています。
 
 [![CollectionView のグループ化されたデータのスクリーンショット (iOS と Android)](grouping-images/grouped-data.png "グループ化されたデータを含む CollectionView")](grouping-images/grouped-data-large.png#lightbox "グループ化されたデータを含む CollectionView")
 
@@ -36,21 +36,21 @@ ms.locfileid: "72749802"
 
 ## <a name="group-data"></a>データのグループ化
 
-データは、表示する前にグループ化する必要があります。 これを行うには、グループの一覧を作成します。各グループは項目のリストです。 グループの一覧は `IEnumerable<T>` コレクションである必要があります。ここで `T` は2つのデータを定義します。
+データは、表示する前にグループ化する必要があります。 これを行うには、グループの一覧を作成します。各グループは項目のリストです。 グループの一覧は`IEnumerable<T>`コレクションである必要があり`T`ます。ここで、は2つのデータを定義します。
 
 - グループ名。
-- グループに属する項目を定義する `IEnumerable` コレクション。
+- グループ`IEnumerable`に属する項目を定義するコレクション。
 
 このため、データをグループ化するプロセスは次のようになります。
 
 - 1つの項目をモデル化する型を作成します。
 - 項目の1つのグループをモデル化する型を作成します。
-- @No__t_0 コレクションを作成します。 `T` は、1つの項目グループをモデル化する型です。 このコレクションは、グループ化されたデータを格納するグループのコレクションです。
-- @No__t_0 コレクションにデータを追加します。
+- `IEnumerable<T>`コレクションを作成します`T` 。は、単一の項目グループをモデル化する型です。 このコレクションは、グループ化されたデータを格納するグループのコレクションです。
+- `IEnumerable<T>`コレクションにデータを追加します。
 
 ### <a name="example"></a>例
 
-データをグループ化する場合の最初の手順は、1つの項目をモデル化する型を作成することです。 次の例は、サンプルアプリケーションの `Animal` クラスを示しています。
+データをグループ化する場合の最初の手順は、1つの項目をモデル化する型を作成することです。 次の例は、 `Animal`サンプルアプリケーションのクラスを示しています。
 
 ```csharp
 public class Animal
@@ -62,7 +62,7 @@ public class Animal
 }
 ```
 
-@No__t_0 クラスは、1つの項目をモデル化します。 その後、項目のグループをモデル化する型を作成できます。 次の例は、サンプルアプリケーションの `AnimalGroup` クラスを示しています。
+クラス`Animal`は、1つの項目をモデル化します。 その後、項目のグループをモデル化する型を作成できます。 次の例は、 `AnimalGroup`サンプルアプリケーションのクラスを示しています。
 
 ```csharp
 public class AnimalGroup : List<Animal>
@@ -76,17 +76,17 @@ public class AnimalGroup : List<Animal>
 }
 ```
 
-@No__t_0 クラスは `List<T>` クラスから継承され、グループ名を表す `Name` プロパティを追加します。
+クラス`AnimalGroup`は、 `List<T>`クラスから継承され、 `Name`グループ名を表すプロパティを追加します。
 
-グループの `IEnumerable<T>` コレクションを作成できます。
+次`IEnumerable<T>`に、グループのコレクションを作成できます。
 
 ```csharp
 public List<AnimalGroup> Animals { get; private set; } = new List<AnimalGroup>();
 ```
 
-このコードは `Animals` という名前のコレクションを定義します。コレクション内の各項目は `AnimalGroup` オブジェクトです。 各 `AnimalGroup` オブジェクトは、名前と、グループ内の `Animal` オブジェクトを定義する `List<Animal>` コレクションで構成されます。
+このコードは、コレクション内`Animals`の各項目が`AnimalGroup`オブジェクトであるという名前のコレクションを定義します。 各`AnimalGroup`オブジェクトは、名前と、グループ`List<Animal>`内の`Animal`オブジェクトを定義するコレクションで構成されます。
 
-次に、グループ化されたデータを `Animals` コレクションに追加できます。
+次に、 `Animals`グループ化されたデータをコレクションに追加できます。
 
 ```csharp
 Animals.Add(new AnimalGroup("Bears", new List<Animal>
@@ -115,31 +115,31 @@ Animals.Add(new AnimalGroup("Monkeys", new List<Animal>
         Name = "Baboon",
         Location = "Africa & Asia",
         Details = "Details about the monkey go here.",
-        ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Papio_anubis_%28Serengeti%2C_2009%29.jpg/200px-Papio_anubis_%28Serengeti%2C_2009%29.jpg"
+        ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Papio_anubis_%28Serengeti%2C_2009%29.jpg/200px-Papio_anubis_%28Serengeti%2C_2009%29.jpg"
     },
     new Animal
     {
         Name = "Capuchin Monkey",
         Location = "Central & South America",
         Details = "Details about the monkey go here.",
-        ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Capuchin_Costa_Rica.jpg/200px-Capuchin_Costa_Rica.jpg"
+        ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Capuchin_Costa_Rica.jpg/200px-Capuchin_Costa_Rica.jpg"
     },
     new Animal
     {
         Name = "Blue Monkey",
         Location = "Central and East Africa",
         Details = "Details about the monkey go here.",
-        ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/8/83/BlueMonkey.jpg/220px-BlueMonkey.jpg"
+        ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/BlueMonkey.jpg/220px-BlueMonkey.jpg"
     },
     // ...
 }));
 ```
 
-このコードでは、`Animals` コレクションに2つのグループを作成します。 最初の `AnimalGroup` には `Bears` という名前が付けられ、詳細の `List<Animal>` コレクションが含まれています。 2番目の `AnimalGroup` には `Monkeys` という名前が付けられ、[サルの詳細] の `List<Animal>` コレクションが含まれています。
+このコードにより、 `Animals`コレクションに2つのグループが作成されます。 1つ`AnimalGroup`目は`Bears`という名前で`List<Animal>` 、詳細なコレクションが含まれています。 2番`AnimalGroup`目の`Monkeys`はという名前`List<Animal>`で、サルの詳細のコレクションが含まれています。
 
 ## <a name="display-grouped-data"></a>グループ化されたデータの表示
 
-データが正しくグループ化されている場合は、[`IsGrouped`] プロパティを `true` に設定すると、グループ化されたデータが[`CollectionView`](xref:Xamarin.Forms.CollectionView)に表示されます。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)データが正しくグループ化されている場合は、 `IsGrouped`プロパティをに`true`設定して、グループ化されたデータを表示します。
 
 ```xaml
 <CollectionView ItemsSource="{Binding Animals}"
@@ -167,7 +167,7 @@ Animals.Add(new AnimalGroup("Monkeys", new List<Animal>
 </CollectionView>
 ```
 
-これに相当する C# コードを次に示します。
+該当の C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -178,14 +178,14 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Animals");
 // ...
 ```
 
-[@No__t_1](xref:Xamarin.Forms.CollectionView)内の各項目の外観は、 [`CollectionView.ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)プロパティを[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)に設定することによって定義されます。 詳細については、「[アイテムの外観を定義](~/xamarin-forms/user-interface/collectionview/populate-data.md#define-item-appearance)する」を参照してください。
+の[`CollectionView`](xref:Xamarin.Forms.CollectionView)各項目の外観は、 [`CollectionView.ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)プロパティをに設定することによっ[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)て定義されます。 詳細については、「[アイテムの外観を定義](~/xamarin-forms/user-interface/collectionview/populate-data.md#define-item-appearance)する」を参照してください。
 
 > [!NOTE]
-> 既定では、グループのヘッダーとフッターにグループ名が表示さ[`CollectionView`](xref:Xamarin.Forms.CollectionView)ます。 この動作は、グループヘッダーとグループフッターをカスタマイズすることによって変更できます。
+> 既定では[`CollectionView`](xref:Xamarin.Forms.CollectionView) 、グループのヘッダーとフッターにグループ名が表示されます。 この動作は、グループヘッダーとグループフッターをカスタマイズすることによって変更できます。
 
 ## <a name="customize-the-group-header"></a>グループヘッダーをカスタマイズする
 
-各グループヘッダーの外観をカスタマイズするには、`CollectionView.GroupHeaderTemplate` プロパティを[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)に設定します。
+各グループヘッダーの外観は、 `CollectionView.GroupHeaderTemplate`プロパティをに設定することによっ[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)てカスタマイズできます。
 
 ```xaml
 <CollectionView ItemsSource="{Binding Animals}"
@@ -202,13 +202,13 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Animals");
 </CollectionView>
 ```
 
-この例では、各グループヘッダーは、グループ名を表示する[`Label`](xref:Xamarin.Forms.Label)に設定されており、その他の外観プロパティが設定されています。 次のスクリーンショットは、カスタマイズされたグループヘッダーを示しています。
+この例では、各グループヘッダーは、グループ[`Label`](xref:Xamarin.Forms.Label)名を表示するに設定され、その他の外観プロパティが設定されています。 次のスクリーンショットは、カスタマイズされたグループヘッダーを示しています。
 
 [![IOS と Android での CollectionView のカスタマイズされたグループヘッダーのスクリーンショット](grouping-images/customized-header.png "カスタマイズされたグループヘッダーを含む CollectionView")](grouping-images/customized-header-large.png#lightbox "カスタマイズされたグループヘッダーを含む CollectionView")
 
 ## <a name="customize-the-group-footer"></a>グループフッターをカスタマイズする
 
-各グループフッターの外観をカスタマイズするには、[`CollectionView.GroupFooterTemplate`] プロパティを[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)に設定します。
+各グループフッターの外観は、 `CollectionView.GroupFooterTemplate`プロパティをに設定することによっ[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)てカスタマイズできます。
 
 ```xaml
 <CollectionView ItemsSource="{Binding Animals}"
@@ -223,31 +223,31 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Animals");
 </CollectionView>
 ```
 
-この例では、各グループフッターは、グループ内の項目数を表示する[`Label`](xref:Xamarin.Forms.Label)に設定されています。 次のスクリーンショットは、カスタマイズされたグループフッターを示しています。
+この例では、各グループフッターは、グループ[`Label`](xref:Xamarin.Forms.Label)内の項目数を表示するに設定されています。 次のスクリーンショットは、カスタマイズされたグループフッターを示しています。
 
 [![IOS と Android での CollectionView のカスタマイズされたグループフッターのスクリーンショット](grouping-images/customized-footer.png "カスタマイズされたグループフッターを含む CollectionView")](grouping-images/customized-footer-large.png#lightbox "カスタマイズされたグループフッターを含む CollectionView")
 
 ## <a name="empty-groups"></a>空のグループ
 
-[@No__t_1](xref:Xamarin.Forms.CollectionView)にグループ化されたデータが表示されると、空のグループが表示されます。 このようなグループは、グループのヘッダーとフッターと共に表示され、グループが空であることを示します。 次のスクリーンショットは、空のグループを示しています。
+に[`CollectionView`](xref:Xamarin.Forms.CollectionView)グループ化されたデータが表示されると、空のグループが表示されます。 このようなグループは、グループのヘッダーとフッターと共に表示され、グループが空であることを示します。 次のスクリーンショットは、空のグループを示しています。
 
 [![IOS と Android の CollectionView の空のグループのスクリーンショット](grouping-images/empty-group.png "空のグループを含む CollectionView")](grouping-images/empty-group-large.png#lightbox "空のグループを含む CollectionView")
 
 > [!NOTE]
-> IOS 10 以降では、空のグループのグループヘッダーとフッターは、すべて `CollectionView` の先頭に表示される場合があります。
+> IOS 10 以降では、 `CollectionView`空のグループのグループヘッダーとグループフッターがの先頭に表示されることがあります。
 
 ## <a name="group-without-templates"></a>テンプレートのないグループ
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)では、 [`CollectionView.ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)プロパティを[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)に設定しなくても、適切にグループ化されたデータを表示できます。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)[`CollectionView.ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate)プロパティをに設定せずに、正しくグループ化[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)されたデータを表示できます。
 
 ```xaml
 <CollectionView ItemsSource="{Binding Animals}"
                 IsGrouped="true" />
 ```
 
-このシナリオでは、1つの項目をモデル化する型の `ToString` メソッドと、1つの項目グループをモデル化する型をオーバーライドすることによって、意味のあるデータを表示できます。
+このシナリオでは、1つの項目をモデル化`ToString`する型のメソッドをオーバーライドすることによって意味のあるデータを表示し、単一の項目グループをモデル化する型を表示できます。
 
 ## <a name="related-links"></a>関連リンク
 
 - [CollectionView (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
-- [Xamarin. フォームデータテンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
+- [Xamarin.Forms のデータ テンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
