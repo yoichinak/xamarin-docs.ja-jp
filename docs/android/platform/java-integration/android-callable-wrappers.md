@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: 7278fd624bb3147c2e1a1a1a79adde68813a9888
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: ef2f8e0375786ba7b627fdf75545cbb48318c1aa
+ms.sourcegitcommit: 854798de42566750d9c70b6d0539b7ee73ff6ddc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73020154"
+ms.lasthandoff: 04/20/2020
+ms.locfileid: "81646599"
 ---
 # <a name="android-callable-wrappers-for-xamarinandroid"></a>Xamarin.Android の Android 呼び出し可能ラッパー
 
@@ -74,7 +74,7 @@ MD5SUM ベースの ACW の名前付け規則は、Xamarin. Android 5.0 で導�
 
 Android インターフェイス ([Android.Content.IComponentCallbacks](xref:Android.Content.IComponentCallbacks) など) の実装が必要になる場合があります。 Android のすべてのクラスとインターフェイスでは、[Android.Runtime.IJavaObject](xref:Android.Runtime.IJavaObject) インターフェイスが拡張されるため、`IJavaObject` をどのように実装するかという疑問が生じます。 
 
-この疑問には上記で答えています。つまり、Android のすべての型で `IJavaObject` を実装する必要がある理由は、Android に提供される Android 呼び出し可能ラッパー (つまり、特定の種類の Java プロキシ) を Xamarin.Android に提供できるようにすることです。 **monodroid.exe** では `Java.Lang.Object` サブクラスだけが検索され、`Java.Lang.Object` によって `IJavaObject,` が実装されるため、答えは明らかにサブクラス `Java.Lang.Object` になります。 
+この疑問には上記で答えています。つまり、Android のすべての型で `IJavaObject` を実装する必要がある理由は、Android に提供される Android 呼び出し可能ラッパー (つまり、特定の種類の Java プロキシ) を Xamarin.Android に提供できるようにすることです。 **monodroid.exe** では `Java.Lang.Object` サブクラスだけが検索され、`Java.Lang.Object` によって `IJavaObject` が実装されるため、答えは明らかにサブクラス `Java.Lang.Object` になります。 
 
 ```csharp
 class MyComponentCallbacks : Java.Lang.Object, Android.Content.IComponentCallbacks {

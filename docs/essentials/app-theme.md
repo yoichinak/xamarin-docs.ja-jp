@@ -5,12 +5,12 @@ ms.assetid: F6F6D496-A8A9-4B9A-AF1A-370D937E5073
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/06/2020
-ms.openlocfilehash: e31cae6ff639dbe261599a7cf78ae31fc09318b3
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: f322855f26d7a57acc06e97e0c97ab201c3fa586
+ms.sourcegitcommit: a9280318bf7bb69e4e5744ee739e76a9cba36b28
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79190312"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82047401"
 ---
 # <a name="xamarinessentials-app-theme"></a>Xamarin.Essentials:アプリのテーマ
 
@@ -62,7 +62,7 @@ Android では、要求するテーマの種類を指定するために、ユー
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-既定では、アプリは、ユーザーが Windows の設定 ( **[設定] > [個人用設定] > [色] > [既定のアプリ モードを選択します]** ) で設定したテーマを使用して実行されます。 アプリの RequestedTheme プロパティを設定して、ユーザーの既定値をオーバーライドし、使用するテーマを指定することができます。
+UWP アプリケーションでは、**RequestedTheme** で UWP App.xaml の設定が尊重されます。 特定のテーマに設定されている場合、Xamarin. Essentials は常にこの設定を返します。 OS の動的テーマを使用するには、アプリケーションからこのノードを削除します。その後、アプリが実行されると、Windows の設定でユーザーが設定したテーマが返されます ( **[設定] > [パーソナル化] > [色] > [Choose your default app mode]\(既定のアプリ モードを選択する\)** )。
 
 詳細については、[UWP の要求されたテーマに関するドキュメント](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.requestedtheme)を参照してください。
 
