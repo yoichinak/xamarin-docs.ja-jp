@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 05/22/2018
-ms.openlocfilehash: e027d41e98c26ef1659c27ab05df3052e19cc670
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.openlocfilehash: 0fc74ae2307ffd14f8c52515c93993a51455997a
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "73027134"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "80805953"
 ---
 # <a name="location-services-on-android"></a>Android での位置情報サービス
 
@@ -84,7 +84,7 @@ Fused Location Provider API では、ジオフェンシングやアクティビ�
 Fused Location Provider は、[Google Play 開発者サービス](https://developer.android.com/google/play-services/index.html)の一部です。
 Fused Location Provider API が機能するには、Google Play 開発者サービス パッケージをインストールし、アプリケーションで適切に構成する必要があり、デバイスに Google Play 開発者サービス APK がインストールされている必要があります。
 
-Xamarin.Android アプリケーションで Fused Location Provider を使用する前に、**Xamarin.GooglePlayServices.Maps** パッケージをプロジェクトに追加しておく必要があります。 さらに、次の `using` ステートメントを、以下で説明するクラスを参照するすべてのソース ファイルに追加する必要があります。
+Xamarin.Android アプリケーションで Fused Location Provider を使用する前に、**Xamarin.GooglePlayServices.Location** パッケージをプロジェクトに追加しておく必要があります。 さらに、次の `using` ステートメントを、以下で説明するクラスを参照するすべてのソース ファイルに追加する必要があります。
 
 ```csharp
 using Android.Gms.Common;

@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 09/18/2019
 ms.openlocfilehash: 531d9719eb4bf5c23001ebe4260254e13f9989eb
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "72697155"
 ---
 # <a name="xamarinforms-compiled-bindings"></a>Xamarin.Forms のコンパイル済みのバインド
@@ -128,7 +128,7 @@ _コンパイル済みのバインドは、従来のバインドより迅速に�
 
 アプリケーションの最初の実行時に、[`ListView`](xref:Xamarin.Forms.ListView) には `NamedColor` インスタンスが取り込まれます。 `ListView` 内の項目が選択されると、[`BoxView.Color`](xref:Xamarin.Forms.BoxView.Color) プロパティは、`ListView` 内の選択された項目の色に設定されます。
 
-[![コンパイルされた色の一覧](compiled-bindings-images/compiledcolorlist-small.png "コンパイルされたカラー リスト]")](compiled-bindings-images/compiledcolorlist-large.png#lightbox "Compiled Color List")
+[![コンパイルされた色の一覧](compiled-bindings-images/compiledcolorlist-small.png "コンパイルされたカラー リスト]")](compiled-bindings-images/compiledcolorlist-large.png#lightbox "コンパイルされたカラー リスト")
 
 [`ListView`](xref:Xamarin.Forms.BoxView) のその他の項目を選択すると、[`BoxView`](xref:Xamarin.Forms.BoxView) の色が更新されます。
 

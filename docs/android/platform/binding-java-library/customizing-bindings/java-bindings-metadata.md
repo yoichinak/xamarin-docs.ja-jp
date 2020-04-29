@@ -8,10 +8,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
 ms.openlocfilehash: 25a5d79084f7caa78eec4011c047bd19a63ef748
-ms.sourcegitcommit: 9ee02a2c091ccb4a728944c1854312ebd51ca05b
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "75487790"
 ---
 # <a name="java-bindings-metadata"></a>Java バインド メタデータ
@@ -216,7 +216,7 @@ NavigationManager.2DSignNextManueverEventArgs
 
 `managedType` は、メソッドの戻り値の型を変更するために使用されます。 場合によっては、バインド ジェネレーターが Java メソッドの戻り値の型を誤って推論し、コンパイル時エラーが発生することがあります。 このような状況で考えられる解決策の 1 つは、メソッドの戻り値の型を変更することです。
 
-たとえば、バインド ジェネレーターが、Java メソッド `de.neom.neoreadersdk.resolution.compareTo()` が `int` を返し、パラメーターとして `Object` を受け取る必要があると認識するとします。これにより、エラーメッセージ「**Error CS0535: 'DE.Neom.Neoreadersdk.Resolution' does not implement interface member 'Java.Lang.IComparable.CompareTo(Java.Lang.Object)' (エラー CS0535: 'DE.Neom.Neoreadersdk.Resolution' でインターフェイス メンバー 'Java.Lang.IComparable.CompareTo(Java.Lang.Object)' が実装されていません)** 」が発生します。 次のスニペットは、生成された C# メソッドの最初のパラメーターの型を `DE.Neom.Neoreadersdk.Resolution` から `Java.Lang.Object` に変更する方法を示しています。 
+たとえば、バインド ジェネレーターによって、Java メソッド `de.neom.neoreadersdk.resolution.compareTo()` は `int` を返し、パラメーターとして `Object` を受け取ると推論されたとします。この場合、次のエラー メッセージが発生します: **エラー CS0535:'DE.Neom.Neoreadersdk.Resolution' はインターフェイス メンバー 'Java.Lang.IComparable.CompareTo(Java.Lang.Object)' を実装しません**。 次のスニペットは、生成された C# メソッドの最初のパラメーターの型を `DE.Neom.Neoreadersdk.Resolution` から `Java.Lang.Object` に変更する方法を示しています。 
 
 ```xml
 <attr path="/api/package[@name='de.neom.neoreadersdk']/

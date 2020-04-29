@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 02/12/2018
 ms.openlocfilehash: 28e424f4946d05798b9ba309891845d9eab998b1
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771819"
 ---
 # <a name="implementing-a-video-player"></a>ビデオ プレーヤーの実装
@@ -38,31 +38,31 @@ Xamarin.Forms アプリケーション内でビデオ ファイルを再生す�
 
 次の一連の記事では、プラットフォーム レンダラーとサポート クラスの構築方法を段階的に説明していきます。
 
-## <a name="creating-the-platform-video-playersplayer-creationmd"></a>[プラットフォーム ビデオ プレーヤーの作成](player-creation.md)
+## <a name="creating-the-platform-video-players"></a>[プラットフォーム ビデオ プレーヤーの作成](player-creation.md)
 
 各プラットフォームには、プラットフォームによってサポートされているビデオ プレーヤーのコントロールを作成および管理する `VideoPlayerRenderer` クラスが必要です。 この記事では、レンダラー クラスの構造と、プレーヤーの作成方法について説明します。
 
-## <a name="playing-a-web-videoweb-videosmd"></a>[Web ビデオの再生](web-videos.md)
+## <a name="playing-a-web-video"></a>[Web ビデオの再生](web-videos.md)
 
 おそらく、ビデオ プレーヤー用のビデオのソースとして最も一般的なものは、インターネットです。 この記事では、Web ビデオを参照し、ビデオ プレーヤーのソースとして使う方法について説明します。
 
-## <a name="binding-video-sources-to-the-playersource-bindingsmd"></a>[プレーヤーへのビデオ ソースのバインド](source-bindings.md)
+## <a name="binding-video-sources-to-the-player"></a>[プレーヤーへのビデオ ソースのバインド](source-bindings.md)
 
 この記事では `ListView` を使って、再生するビデオのコレクションを表現します。 1 つのプログラムでは分離コード ファイルを使ってビデオ プレーヤーのビデオ ソースを設定する方法が示されていますが、2 つ目のプログラムでは `ListView` とビデオ プレーヤーの間でデータ バインディングを使う方法が示されています。
 
-## <a name="loading-application-resource-videosloading-resourcesmd"></a>[アプリケーション リソース ビデオの読み込み](loading-resources.md)
+## <a name="loading-application-resource-videos"></a>[アプリケーション リソース ビデオの読み込み](loading-resources.md)
 
 ビデオはリソースとしてプラットフォーム プロジェクトに埋め込むことができます。 この記事では、それらのリソースを格納して、ビデオ プレーヤーで再生するために後でプログラムに読み込む方法を示します。
 
-## <a name="accessing-the-devices-video-libraryaccessing-librarymd"></a>[デバイスのビデオ ライブラリへのアクセス](accessing-library.md)
+## <a name="accessing-the-devices-video-library"></a>[デバイスのビデオ ライブラリへのアクセス](accessing-library.md)
 
 デバイスのカメラを使用してビデオを作成した場合、そのビデオ ファイルはデバイスのイメージ ライブラリに格納されます。 この記事では、デバイスのイメージ ピッカーを使ってビデオを選択し、それをビデオ プレイヤーを使って再生する方法について説明します。
 
-## <a name="custom-video-transport-controlscustom-transportmd"></a>[カスタムのビデオ トランスポート コントロール](custom-transport.md)
+## <a name="custom-video-transport-controls"></a>[カスタムのビデオ トランスポート コントロール](custom-transport.md)
 
-各プラットフォーム上のビデオ プレーヤーには、**[再生]** や **[一時停止]** ボタンという形でそれぞれのトランスポート コントロールが備わっていますが、そのボタンを表示させないようにしてご自身のものを指定できます。 この記事ではその方法を説明します。
+各プラットフォーム上のビデオ プレーヤーには、 **[再生]** や **[一時停止]** ボタンという形でそれぞれのトランスポート コントロールが備わっていますが、そのボタンを表示させないようにしてご自身のものを指定できます。 この記事ではその方法を説明します。
 
-## <a name="custom-video-positioningcustom-positioningmd"></a>[ビデオのカスタム配置](custom-positioning.md)
+## <a name="custom-video-positioning"></a>[ビデオのカスタム配置](custom-positioning.md)
 
 各プラットフォームのビデオ プレーヤーには、ビデオの進行状況を示し、特定の位置まで前後にスキップできる位置バーが備わっています。 この記事では、その位置バーをカスタム コントロールで置き換える方法を示します。
 

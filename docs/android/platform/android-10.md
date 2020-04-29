@@ -5,12 +5,12 @@ ms.assetid: B3342772-FB88-4B7F-BC15-8BC78EED749E
 author: JonDouglas
 ms.author: jodou
 ms.date: 09/17/2019
-ms.openlocfilehash: c19c9e5bd279824ea2d3e4e9f88857388f786a2c
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: b26d99c131e9759da3077a767476de38712bcb18
+ms.sourcegitcommit: a9280318bf7bb69e4e5744ee739e76a9cba36b28
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73612277"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "82047574"
 ---
 # <a name="android-10-with-xamarin"></a>Xamarin を使用する Android 10
 
@@ -78,7 +78,7 @@ Android プロジェクトを作成するときは、Android 10.0 以降をタ�
 
 ### <a name="configure-a-device-or-emulator"></a>デバイスまたはエミュレーターを構成する
 
-Pixel などの物理デバイスを使用している場合は、携帯電話の設定で [システム] > [システム アップデート] > [アップデートを確認] の順に移動して、Android 10 のアップデートをダウンロードできます。`System``System update``Check for update` デバイスをフラッシュする場合は、デバイスへの[ファクトリ イメージ](https://developers.google.com/android/images)または [OTA イメージ](https://developers.google.com/android/ota)のフラッシュに関する手順を参照してください。
+Pixel などの物理デバイスを使用している場合は、携帯電話の設定で [システム] > [システム アップデート] > [アップデートを確認] の順に移動して、Android 10 のアップデートをダウンロードできます。 デバイスをフラッシュする場合は、デバイスへの[ファクトリ イメージ](https://developers.google.com/android/images)または [OTA イメージ](https://developers.google.com/android/ota)のフラッシュに関する手順を参照してください。
 
 エミュレーターを使用している場合は、API レベル 29 の仮想デバイスを作成し、x86 ベースのイメージを選択します。 Android Device Manager を使用する仮想デバイスの作成および管理の詳細については、「[Android Device Manager による仮想デバイスの管理](https://docs.microsoft.com/xamarin/android/get-started/installation/android-emulator/device-manager)」を参照してください。 テストとデバッグでの Android Emulator の使用の詳細については、[Android Emulator でのデバッグ](https://docs.microsoft.com/xamarin/android/deploy-test/debugging/debug-on-emulator)に関するページを参照してください。
 

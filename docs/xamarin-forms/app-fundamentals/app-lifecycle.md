@@ -8,19 +8,19 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/31/2018
 ms.openlocfilehash: 41e8d073982bf7963b3a77a939bf28e52e86feaa
-ms.sourcegitcommit: 58d8bbc19ead3eb535fb8248710d93ba0892e05d
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "67675174"
 ---
 # <a name="xamarinforms-app-lifecycle"></a>Xamarin.Forms アプリのライフサイクル
 
 [`Application`](xref:Xamarin.Forms.Application) の基底クラスでは、次の機能が提供されています。
 
-- [ライフサイクル メソッド](#Lifecycle_Methods): `OnStart`、`OnSleep`、`OnResume`。
-- [ページ ナビゲーション イベント](#page): [`PageAppearing`](xref:Xamarin.Forms.Application.PageAppearing)、[`PageDisappearing`](xref:Xamarin.Forms.Application.PageDisappearing)。
-- [モーダル ナビゲーション イベント](#modal): `ModalPushing`、`ModalPushed`、`ModalPopping`、`ModalPopped`。
+- [ライフサイクル メソッド](#Lifecycle_Methods) `OnStart`、`OnSleep`、`OnResume`。
+- [ページ ナビゲーション イベント](#page) [`PageAppearing`](xref:Xamarin.Forms.Application.PageAppearing)、[`PageDisappearing`](xref:Xamarin.Forms.Application.PageDisappearing)。
+- [モーダル ナビゲーション イベント](#modal) `ModalPushing`、`ModalPushed`、`ModalPopping`、`ModalPopped`。
 
 <a name="Lifecycle_Methods" />
 

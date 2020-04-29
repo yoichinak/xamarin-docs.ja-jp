@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 04/06/2016
 ms.openlocfilehash: ca03dce3bd39664a07b7bf56d22d7c2e000e931f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771999"
 ---
 # <a name="reusable-effectbehavior"></a>再利用可能な EffectBehavior
@@ -155,9 +155,9 @@ label.Behaviors.Add (new EffectBehavior {
 
 ビヘイビアーの `Group` プロパティと `Name` プロパティは、プラットフォーム固有のプロジェクトごとに、エフェクト クラスの [`ResolutionGroupName`](xref:Xamarin.Forms.ResolutionGroupNameAttribute) 属性と [`ExportEffect`](xref:Xamarin.Forms.ExportEffectAttribute) 属性の値に設定されます。
 
-実行時、ビヘイビアーが [`Label`](xref:Xamarin.Forms.Label) コントロールにアタッチされていると、コントロールの [`Effects`](xref:Xamarin.Forms.Element.Effects) コレクションに `Xamarin.LabelShadowEffect` が追加されます。 これにより、次のスクリーンショットに示すように、`Label` コントロールによって表示されるテキストにシャドウが追加されます。
+実行時、ビヘイビアーが [`Label`](xref:Xamarin.Forms.Label) コントロールにアタッチされていると、コントロールの [`Effects`](xref:Xamarin.Forms.Element.Effects) コレクションに `Xamarin.LabelShadowEffect` が追加されます。 これにより、次のスクリーンショットに示すように、`Label` コントロールによって表示されるテキストに影が追加されます。
 
-![](effect-behavior-images/screenshots.png "EffectsBehavior を含むサンプル アプリケーション")
+![](effect-behavior-images/screenshots.png "Sample Application with EffectsBehavior")
 
 このビヘイビアーを使用してコントロールとの間でエフェクトを追加/削除することの長所は、エフェクトを処理する定型コードを分離コード ファイルから削除できることです。
 

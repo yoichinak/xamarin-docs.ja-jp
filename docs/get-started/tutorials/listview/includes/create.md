@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 28a0b894d6230810f99ffaec4b93d9d87120e30f
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: c864f5d97e72a58e4b3c28fdeb97b7cfaea75992
+ms.sourcegitcommit: 89b3e383a37db5b940f0c63bbfe9cb806dc7d5d1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "67277317"
+ms.lasthandoff: 04/15/2020
+ms.locfileid: "81389958"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
@@ -42,7 +42,7 @@ ms.locfileid: "67277317"
     </ContentPage>
     ```
 
-    このコードでは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) の中の [`ListView`](xref:Xamarin.Forms.Image) から構成されるページのユーザー インターフェイスを宣言によって定義します。 [`ListView.ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) プロパティでは、表示する項目を指定します。これらは文字列の配列で定義されます。
+    このコードでは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) の中の [`ListView`](xref:Xamarin.Forms.ListView) から構成されるページのユーザー インターフェイスを宣言によって定義します。 [`ListView.ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) プロパティでは、表示する項目を指定します。これらは文字列の配列で定義されます。
 
 1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
@@ -84,7 +84,7 @@ ms.locfileid: "67277317"
     </ContentPage>
     ```
 
-    このコードでは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) の中の [`ListView`](xref:Xamarin.Forms.Image) から構成されるページのユーザー インターフェイスを宣言によって定義します。 [`ListView.ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) プロパティでは、表示する項目を指定します。これらは文字列の配列で定義されます。
+    このコードでは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) の中の [`ListView`](xref:Xamarin.Forms.ListView) から構成されるページのユーザー インターフェイスを宣言によって定義します。 [`ListView.ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) プロパティでは、表示する項目を指定します。これらは文字列の配列で定義されます。
 
 1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 

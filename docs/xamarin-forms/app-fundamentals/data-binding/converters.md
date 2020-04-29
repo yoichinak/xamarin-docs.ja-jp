@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
 ms.openlocfilehash: 05ad12de77e8895a23cd364b90abfbfb567ac573
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771621"
 ---
 # <a name="xamarinforms-binding-value-converters"></a>Xamarin.Forms バインディングの値コンバーター
@@ -97,7 +97,7 @@ public class IntToBoolConverter : IValueConverter
 
 **Enable Buttons** のページでは、ユーザーが `Entry` ビューに入力するテキストに基づいて `Button` による操作が実行される場合の、一般的なニーズを示しています。 `Entry` に何も入力されなかった場合は、`Button` を無効にする必要があります。 各 `Button` は、`IsEnabled` プロパティ上にデータ バインディングを含みます。 データ バインディング ソースは、対応する `Entry` の `Text` プロパティの `Length` プロパティです。 その `Length` プロパティが 0 ではない場合、値コンバーターは `true` を返し、`Button` は有効になります。
 
-[![Enable Buttons (ボタンの有効化)](converters-images/enablebuttons-small.png "Enable Buttons (ボタンの有効化)")](converters-images/enablebuttons-large.png#lightbox "Enable Buttons (ボタンの有効化)")
+[![ボタンの有効化](converters-images/enablebuttons-small.png "ボタンの有効化")](converters-images/enablebuttons-large.png#lightbox "ボタンの有効化")
 
 各 `Entry` の `Text` プロパティは、空の文字列に初期化されることに注目してください。 `Text` プロパティは既定で `null` であり、その場合、データ バインディングは機能しません。
 
@@ -238,7 +238,7 @@ public class BoolToObjectConverter<T> : IValueConverter
 
 最後の 3 つの `Switch` と `Label` のペアでは、汎用の引数が `Style` に設定され、`Style` オブジェクト全体が `TrueObject` および `FalseObject` の値に指定されています。 これらは、リソース ディクショナリ内の `Label` 設定の暗黙的な形式をオーバーライドしているので、その形式のプロパティが `Label` に明示的に割り当てられます。 `Switch` を切り替えると、対応する `Label` に変更が反映されます。
 
-[![Switch Indicators (インジケーターの切り替え)](converters-images/switchindicators-small.png "Switch Indicators (インジケーターの切り替え)")](converters-images/switchindicators-large.png#lightbox "Switch Indicators (インジケーターの切り替え)")
+[![インジケーターの切り替え](converters-images/switchindicators-small.png "インジケーターの切り替え")](converters-images/switchindicators-large.png#lightbox "インジケーターの切り替え")
 
 また、[`Triggers`](~/xamarin-forms/app-fundamentals/triggers.md) を使用して、他のビューに基づくユーザー インターフェイス内に類似の変更を実装することも可能です。
 
@@ -462,7 +462,7 @@ binding.ConverterParameter = 255;
 
 結果は次のようになります。
 
-[![RGB Color Selector (RGB カラー セレクター)](converters-images/rgbcolorselector-small.png "RGB Color Selector (RGB カラー セレクター)")](converters-images/rgbcolorselector-large.png#lightbox "RGB Color Selector (RGB カラー セレクター)")
+[![RGB カラー セレクター](converters-images/rgbcolorselector-small.png "RGB カラー セレクター")](converters-images/rgbcolorselector-large.png#lightbox "RGB カラー セレクター")
 
 ## <a name="related-links"></a>関連リンク
 

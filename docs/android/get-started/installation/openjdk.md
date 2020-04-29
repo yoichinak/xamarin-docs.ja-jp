@@ -8,11 +8,11 @@ author: vyedin
 ms.author: vyedin
 ms.date: 07/22/2018
 ms.openlocfilehash: a24edbc10d529878092b474df7f186d14049d5e0
-ms.sourcegitcommit: f8e22a3b0642179bf44a312e9a2fac0fbad8683c
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57239114"
+ms.lasthandoff: 04/13/2020
+ms.locfileid: "60955083"
 ---
 # <a name="microsofts-mobile-openjdk-distribution"></a>Microsoft のモバイル OpenJDK ディストリビューション
 
@@ -51,11 +51,11 @@ OpenJDK が、コンピューターの正しい場所にインストールされ
 
 IDE に新しい JDK を示します。
 
-- **Mac** &ndash; **[ツール] > [SDK マネージャー] > [場所]** の順にクリックして、**[Java SDK (JDK) の場所]** を OpenJDK インストールの完全なパスに変更します。 次の例では、このパスに **$HOME/Library/Developer/Xamarin/jdk/microsoft_dist_openjdk_1.8.0.9** を設定していますが、お使いのバージョンがより新しい可能性もあります。
+- **Mac** &ndash; **[ツール] > [SDK マネージャー] > [場所]** の順にクリックして、 **[Java SDK (JDK) の場所]** を OpenJDK インストールの完全なパスに変更します。 次の例では、このパスに **$HOME/Library/Developer/Xamarin/jdk/microsoft_dist_openjdk_1.8.0.9** を設定していますが、お使いのバージョンがより新しい可能性もあります。
 
 ![Mac での Microsoft の Mobile OpenJDK ディストリビューションに向けた JDK パスの設定](openjdk-images/vsm.png)
 
-- **Windows** &ndash; **[ツール] > [オプション] > [Xamarin] > [Android 設定]** の順にクリックして、**[Java Development Kit の位置情報]** を OpenJDK インストールの完全なパスに変更します。 次の例では、このパスに **C:\\Program Files\\Android\\jdk\\microsoft_dist_openjdk_1.8.0.9** を設定していますが、お使いのバージョンがより新しい可能性もあります。
+- **Windows** &ndash; **[ツール] > [オプション] > [Xamarin] > [Android 設定]** の順にクリックして、 **[Java Development Kit の位置情報]** を OpenJDK インストールの完全なパスに変更します。 次の例では、このパスに **C:\\Program Files\\Android\\jdk\\microsoft_dist_openjdk_1.8.0.9** を設定していますが、お使いのバージョンがより新しい可能性もあります。
 
 ![Windows での Microsoft の Mobile OpenJDK ディストリビューションに向けた JDK パスの設定](openjdk-images/vs.png)
 

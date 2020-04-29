@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/06/2019
 ms.openlocfilehash: 70f8f630558730f6074373eb3a814209921235de
-ms.sourcegitcommit: 2798da316a3e9d9de3ea36ff6444f60f60553424
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "71674564"
 ---
 # <a name="xamarinforms-shell-navigation"></a>Xamarin.Forms シェルのナビゲーション
@@ -211,7 +211,7 @@ bears
 
 `Shell` クラスでは、プログラムによるナビゲーションまたはユーザー操作のどちらかに起因して、ナビゲーションが実行されるときに発生する `Navigating` イベントを定義しています。 `Navigating` イベントに伴う `ShellNavigatingEventArgs` オブジェクトでは、次のプロパティを提供しています。
 
-| プロパティ | 型 | 説明 |
+| プロパティ | 種類 | 説明 |
 |---|---|---|
 | `Current` | `ShellNavigationState` | 現在のページの URI。 |
 | `Source` | `ShellNavigationSource` | 発生したナビゲーションの種類。 |
@@ -226,7 +226,7 @@ bears
 
 また、`Shell` クラスでは、ナビゲーションが完了したときに発生する `Navigated` イベントも定義しています。 `Navigating` イベントに伴う `ShellNavigatedEventArgs` オブジェクトでは、次のプロパティを提供しています。
 
-| プロパティ | 型 | 説明 |
+| プロパティ | 種類 | 説明 |
 |---|---|---|
 | `Current` | `ShellNavigationState` | 現在のページの URI。 |
 | `Previous`| `ShellNavigationState` | 前のページの URI。 |

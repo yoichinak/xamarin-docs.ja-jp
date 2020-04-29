@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 05/09/2019
 ms.openlocfilehash: b8c6ed9e803b8dec05b2279ed93f956ed11a1c07
-ms.sourcegitcommit: 4cf434b126eb7df6b2fd9bb1d71613bf2b6aac0e
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "71997107"
 ---
 # <a name="keyboard-accessibility-in-xamarinforms"></a>Xamarin.Forms でのキーボードアクセシビリティ
@@ -53,7 +53,7 @@ ms.locfileid: "71997107"
 
 次のスクリーンショットは、このコード例での既定のタブ オーダーです。
 
-![](keyboard-images/default-tab-order.png "既定の行ベースのタブ オーダー")
+![](keyboard-images/default-tab-order.png "Default Row-based Tab Order")
 
 このタブ オーダーは行ベースであり、XAML でコントロールが列記されている順序です。 したがって、Tab キーを押すと、名の 2 つの [`Entry`](xref:Xamarin.Forms.Entry) インスタンス、姓の 2 つの `Entry` インスタンスの順に移動します。 しかし、列優先のタブ ナビゲーションを使用して、Tab キーを押すと名と姓のペアの順に移動するようにした方が、エクスペリエンスがわかりやすくなります。 これは、入力コントロールのタブ オーダーを指定することで実現できます。
 
@@ -110,7 +110,7 @@ ms.locfileid: "71997107"
 
 次のスクリーンショットは、このコード例でのタブ オーダーです。
 
-![](keyboard-images/correct-tab-order.png "列ベースのタブ オーダー")
+![](keyboard-images/correct-tab-order.png "Column-based Tab Order")
 
 ここでのタブ オーダーは列ベースです。 したがって、Tab キーを押すと、名と姓の [`Entry`](xref:Xamarin.Forms.Entry) ペアの順に移動します。
 

@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
 ms.openlocfilehash: 2fcfbfa8a1780a9da4e9bfe187dc99a5172e95f0
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771484"
 ---
 # <a name="passing-effect-parameters-as-attached-properties"></a>エフェクトのパラメーターを添付プロパティとして渡す
@@ -33,13 +33,13 @@ _添付プロパティは、実行時のプロパティの変更に応答する�
 > [!NOTE]
 > 添付プロパティは特殊な型のバインド可能なプロパティで、1 つのクラスで定義される一方で他のオブジェクトに添付され、XAML 内でピリオドで区切られたクラスとプロパティ名が含まれる属性として認識されます。 詳しくは、「[Attached Properties](~/xamarin-forms/xaml/attached-properties.md)」(添付プロパティ) をご覧ください。
 
-サンプル アプリケーションは、[`Label`](xref:Xamarin.Forms.Label) コントロールによって表示されるテキストに影を追加する `ShadowEffect` を示します。 さらに、実行時に影の色を変更できます。 次の図に、サンプル アプリケーション内の各プロジェクトの役割とそれらの関係を示します。
+サンプル アプリケーションは、[`Label`](xref:Xamarin.Forms.Label) コントロールによって表示されるテキストに影を追加する `ShadowEffect` を示します。 さらに、実行時に影の色を変更できます。 次の図に、サンプル アプリケーション内の各プロジェクトの役割と、それらの関係を示します。
 
-![](attached-properties-images/shadow-effect.png "影エフェクト プロジェクトの責任")
+![](attached-properties-images/shadow-effect.png "Shadow Effect Project Responsibilities")
 
-`HomePage` 上の [`Label`](xref:Xamarin.Forms.Label) コントロールが、各プラットフォーム固有のプロジェクト内の `LabelShadowEffect` によってカスタマイズされます。 パラメーターは `ShadowEffect` クラス内の添付プロパティを通じて各 `LabelShadowEffect` に渡されます。 各プラットフォームの `PlatformEffect` クラスから、各 `LabelShadowEffect` クラスが派生します。 これにより、次のスクリーンショットに示すように、`Label` コントロールによって表示されるテキストに影が追加されます。
+`HomePage` 上の [`Label`](xref:Xamarin.Forms.Label) コントロールは、各プラットフォーム固有のプロジェクト内の `LabelShadowEffect` によってカスタマイズされます。 パラメーターは `ShadowEffect` クラス内の添付プロパティを通じて各 `LabelShadowEffect` に渡されます。 各プラットフォームの `PlatformEffect` クラスから、各 `LabelShadowEffect` クラスが派生します。 これにより、次のスクリーンショットに示すように、`Label` コントロールによって表示されるテキストに影が追加されます。
 
-![](attached-properties-images/screenshots.png "各プラットフォーム上の影エフェクト")
+![](attached-properties-images/screenshots.png "Shadow Effect on each Platform")
 
 ## <a name="creating-effect-parameters"></a>エフェクトのパラメーターの作成
 

@@ -7,10 +7,10 @@ author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
 ms.openlocfilehash: dee49d556173ec0b9544820f129eef8a9cce404f
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "73021322"
 ---
 # <a name="publishing-independently"></a>個別公開
@@ -21,7 +21,7 @@ ms.locfileid: "73021322"
 
 Xamarin.Android アプリの開発、デプロイ、および配信には、多数のライセンスが利用可能です。
 
-- **Visual Studio Community** &ndash; Windows を使用する学生、小規模なチーム、およびオープン ソース ソフトウェア (OSS) の開発者向け。
+- **Visual Studio Community** &ndash; Windows を使用する学生、小規模なチーム、および OSS 開発者向け。
 
 - **Visual Studio Professional** &ndash; 個々の開発者や小規模なチーム向け (Windows のみ)。 このライセンスでは、標準またはクラウド サブスクリプションを提供し、使用制限はありません。
 

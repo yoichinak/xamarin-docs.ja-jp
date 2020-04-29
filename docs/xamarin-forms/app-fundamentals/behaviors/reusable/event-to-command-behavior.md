@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/09/2018
 ms.openlocfilehash: 292a6aaaea4fb0f84138e04c88f001c72ddd096d
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "68650909"
 ---
 # <a name="reusable-eventtocommandbehavior"></a>再利用可能な EventToCommandBehavior
@@ -198,7 +198,7 @@ selectedItemLabel.SetBinding(Label.TextProperty, "SelectedItemText");
 
 実行時、ビヘイビアーはコントロールとのやりとりに応答します。 [`ListView`](xref:Xamarin.Forms.ListView) において項目を選択すると、[`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) イベントが発生し、これによって、ViewModel の `OutputAgeCommand` が実行されます。 さらに、これによって、次のスクリーンショットに示すように、[`Label`](xref:Xamarin.Forms.Label) のバインド先である、ViewModel の `SelectedItemText` プロパティが更新されます。
 
-[![](event-to-command-behavior-images/screenshots-sml.png "EventToCommandBehavior を使用したサンプル アプリケーション")](event-to-command-behavior-images/screenshots.png#lightbox "EventToCommandBehavior を使用したサンプル アプリケーション")
+[![](event-to-command-behavior-images/screenshots-sml.png "Sample Application with EventToCommandBehavior")](event-to-command-behavior-images/screenshots.png#lightbox "Sample Application with EventToCommandBehavior")
 
 イベントが発生したときにこのビヘイビアーを使用してコマンドを実行することの利点は、コマンドとやりとりするように設計されていないコントロールにコマンドを関連付けできることです。 さらに、これによって、イベントを処理する定型コードが分離コード ファイルから削除されます。
 

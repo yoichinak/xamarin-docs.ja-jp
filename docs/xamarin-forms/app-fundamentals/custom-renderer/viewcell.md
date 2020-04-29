@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
 ms.openlocfilehash: 5cd0a1ec43f0e56ec1ec72ebd614a7e0a5fa2225
-ms.sourcegitcommit: a5ef4497db04dfa016865bc7454b3de6ff088554
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/15/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70998054"
 ---
 # <a name="customizing-a-viewcell"></a>ViewCell のカスタマイズ
@@ -22,9 +22,9 @@ ms.locfileid: "70998054"
 
 Xamarin.Forms のすべてのセルには、ネイティブ コントロールのインスタンスを作成する各プラットフォーム用のレンダラーが付属しています。 iOS で Xamarin.Forms アプリケーションによって [`ViewCell`](xref:Xamarin.Forms.ViewCell) がレンダリングされると、iOS では `ViewCellRenderer` クラスがインスタンス化され、それによってネイティブの `UITableViewCell` コントロールもインスタンス化されます。 Android プラットフォーム上では、`ViewCellRenderer` クラスによってネイティブの `View` コントロールがインスタンス化されます。 ユニバーサル Windows プラットフォーム (UWP) 上では、`ViewCellRenderer` クラスによってネイティブの `DataTemplate` がインスタンス化されます。 Xamarin.Forms コントロールによってマップされるレンダラーとネイティブ コントロール クラスの詳細については、「[Renderer Base Classes and Native Controls](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)」(レンダラーの基底クラスとネイティブ コントロール) を参照してください。
 
-次の図に、[`ViewCell`](xref:Xamarin.Forms.ViewCell) と、それを実装する、対応するネイティブ コントロールの関係を示します。
+次の図は、[`ViewCell`](xref:Xamarin.Forms.ViewCell) と、それを実装する、対応しているネイティブ コントロールの関係を示しています。
 
-![](viewcell-images/viewcell-classes.png "ViewCell コントロールとネイティブ コントロールの実装間の関係")
+![](viewcell-images/viewcell-classes.png "Relationship Between the ViewCell Control and the Implementing Native Controls")
 
 レンダリング プロセスを活用して各プラットフォーム上で [`ViewCell`](xref:Xamarin.Forms.ViewCell) 用のカスタム レンダラーを作成することで、プラットフォーム固有のカスタマイズを実装できます。 その実行プロセスは次のとおりです。
 
@@ -165,13 +165,13 @@ Xamarin.Forms の [`ListView`](xref:Xamarin.Forms.ListView) コントロール�
 > [!NOTE]
 > ほとんどの Xamarin.Forms 要素では、プラットフォーム プロジェクトごとにカスタム レンダラーを指定するかどうかは任意です。 カスタム レンダラーが登録されていない場合は、コントロールの基底クラス用の既定のレンダラーが使用されます。 ただし、[ViewCell](xref:Xamarin.Forms.ViewCell) 要素をレンダリングするときは、各プラットフォーム プロジェクト内にカスタム レンダラーが必要です。
 
-次の図に、サンプル アプリケーション内の各プロジェクトの役割とそれらの関係を示します。
+次の図に、サンプル アプリケーション内の各プロジェクトの役割と、それらの関係を示します。
 
-![](viewcell-images/solution-structure.png "NativeCell カスタム レンダラーのプロジェクトの役割")
+![](viewcell-images/solution-structure.png "NativeCell Custom Renderer Project Responsibilities")
 
 `NativeCell` カスタム セルはプラットフォーム固有のレンダラー クラスによってレンダリングされます。このクラスはすべて各プラットフォームの `ViewCellRenderer` クラスから派生します。 この結果、次のスクリーンショットに示すように、プラットフォーム固有のレイアウトを使用して、それぞれの `NativeCell` カスタム セルがレンダリングされます。
 
-![](viewcell-images/screenshots.png "各プラットフォーム上の NativeCell")
+![](viewcell-images/screenshots.png "NativeCell on each Platform")
 
 `ViewCellRenderer` クラスによって、カスタム セルを表示するためのプラットフォーム固有のメソッドが公開されます。 これは、iOS プラットフォームでは `GetCell` メソッド、Android プラットフォームでは `GetCellCore` メソッド、および UWP では `GetTemplate` メソッドになります。
 

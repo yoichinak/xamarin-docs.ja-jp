@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
 ms.openlocfilehash: e9a17bff9bd0a23d59faf7602544b25c7ec05a86
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771256"
 ---
 # <a name="creating-a-xamarinforms-datatemplateselector"></a>Xamarin.Forms DataTemplateSelector の作成
@@ -91,7 +91,7 @@ XAML で `PersonDataTemplateSelector` をインスタンス化するには、次
 
 次のスクリーンショットは、[`ListView`](xref:Xamarin.Forms.ListView) によって、基となるコレクション内の各オブジェクトに対して `PersonDataTemplateSelector` が適用された結果を示しています。
 
-![](selector-images/data-template-selector.png "データ テンプレート セレクターを使用する ListView")
+![](selector-images/data-template-selector.png "ListView with a Data Template Selector")
 
 `DateOfBirth` プロパティ値が 1980 以上のすべての `Person` オブジェクトは緑色で表示され、その他のオブジェクトは赤色で表示されます。
 

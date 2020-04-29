@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
 ms.openlocfilehash: 64367ded8dcd173f7c9e57cfc234aa66712aefd4
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70772025"
 ---
 # <a name="customizing-a-contentpage"></a>ContentPage のカスタマイズ
@@ -22,9 +22,9 @@ _ContentPage は、単一ビューを表示し、画面の大部分を占める�
 
 すべての Xamarin.Forms コントロールには、ネイティブ コントロールのインスタンスを作成する各プラットフォーム用のレンダラーが付属しています。 Xamarin.Forms アプリケーションによって [`ContentPage`](xref:Xamarin.Forms.ContentPage) がレンダリングされると、iOS では `PageRenderer` クラスがインスタンス化され、それによってネイティブの `UIViewController` コントロールもインスタンス化されます。 Android プラットフォーム上では、`PageRenderer` クラスによって `ViewGroup` コントロールがインスタンス化されます。 ユニバーサル Windows プラットフォーム (UWP) 上では、`PageRenderer` クラスによって `FrameworkElement` コントロールがインスタンス化されます。 Xamarin.Forms コントロールがマップするレンダラーとネイティブ コントロール クラスの詳細については、「[レンダラーの基本クラスおよびネイティブ コントロール](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)」を参照してください。
 
-次の図は、[`ContentPage`](xref:Xamarin.Forms.ContentPage) と、それを実装する、対応するネイティブ コントロールの関係を示しています。
+次の図は、[`ContentPage`](xref:Xamarin.Forms.ContentPage) と、それを実装する、対応しているネイティブ コントロールの関係を示しています。
 
-![](contentpage-images/contentpage-classes.png "ContentPage クラスと実装するネイティブ コントロール間の関係")
+![](contentpage-images/contentpage-classes.png "Relationship Between ContentPage Class and Implementing Native Controls")
 
 レンダリング プロセスを活用して各プラットフォーム上で [`ContentPage`](xref:Xamarin.Forms.ContentPage) 用のカスタム レンダラーを作成することで、プラットフォーム固有のカスタマイズを実装できます。 これを行うプロセスは次のとおりです。
 
@@ -105,13 +105,13 @@ async void OnTakePhotoButtonClicked (object sender, EventArgs e)
 
 次の図に、サンプル アプリケーション内の各プロジェクトの役割とそれらの関係を示します。
 
-![](contentpage-images/solution-structure.png "CameraPage カスタム レンダラーのプロジェクトの役割")
+![](contentpage-images/solution-structure.png "CameraPage Custom Renderer Project Responsibilities")
 
 `CameraPage` インスタンスはプラットフォーム固有の `CameraPageRenderer` クラスによってレンダリングされます。このクラスはすべてそのプラットフォームの `PageRenderer` クラスから派生しています。 この結果、次のスクリーンショットに示すように、各 `CameraPage` インスタンスがライブ カメラ フィードでレンダリングされます。
 
-![](contentpage-images/screenshots.png "各プラットフォーム上の CameraPage")
+![](contentpage-images/screenshots.png "CameraPage on each Platform")
 
-`PageRenderer` クラスは `OnElementChanged` メソッドを公開します。このメソッドは、該当するネイティブ コントロールをレンダリングするために、Xamarin.Forms ページの作成時に呼び出されます。 このメソッドは、`OldElement` および `NewElement` プロパティを含む `ElementChangedEventArgs` パラメーターを取得します。 これらのプロパティは、レンダラーが接続して*いた* Xamarin.Forms 要素と、レンダラーが現在接続して*いる* Xamarin.Forms 要素をそれぞれ表しています。 サンプル アプリケーションでは、`OldElement` プロパティが `null` になり、`NewElement` プロパティに `CameraPage` インスタンスへの参照が含まれます。
+`PageRenderer` クラスは `OnElementChanged` メソッドを公開します。このメソッドは、該当するネイティブ コントロールをレンダリングするために、Xamarin.Forms ページの作成時に呼び出されます。 このメソッドは、`OldElement` および `NewElement` プロパティを含む `ElementChangedEventArgs` パラメーターを取得します。 これらのプロパティは、レンダラーがアタッチされて*いた* Xamarin.Forms 要素と、レンダラーが現在アタッチされて*いる* Xamarin.Forms 要素をそれぞれ表しています。 サンプル アプリケーションでは、`OldElement` プロパティが `null` になり、`NewElement` プロパティに `CameraPage` インスタンスへの参照が含まれます。
 
 `CameraPageRenderer` クラスの `OnElementChanged` メソッドのオーバーライドされたバージョンで、ネイティブ ページのカスタマイズが実行されます。 レンダリングされている Xamarin.Forms ページ インスタンスへの参照は、`Element` プロパティを使用して取得することができます。
 

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e03d0ada982cbf1d2954f4b677accc7ce7da793e
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 68ab1ae3d77f23f33d542f6d97d35bde51959f95
+ms.sourcegitcommit: 99aa05bd9b5e3f66d134066b860f41b54fa2d850
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "69541495"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82109676"
 ---
 `IEnumerable` 型の [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) プロパティを使用して、[`ListView`](xref:Xamarin.Forms.ListView) にデータが取り込まれます。 前の手順で、XAML の `ListView` に文字列の配列を取り込みました。 ただし、通常 `ListView` には、`IEnumerable` を実装するコードビハインドで定義されたコレクションからのデータが取り込まれます。
 
@@ -51,63 +51,63 @@ ms.locfileid: "69541495"
                 {
                     Name = "Baboon",
                     Location = "Africa & Asia",
-                    ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Papio_anubis_%28Serengeti%2C_2009%29.jpg/200px-Papio_anubis_%28Serengeti%2C_2009%29.jpg"
+                    ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Papio_anubis_%28Serengeti%2C_2009%29.jpg/200px-Papio_anubis_%28Serengeti%2C_2009%29.jpg"
                 });
 
                 Monkeys.Add(new Monkey
                 {
                     Name = "Capuchin Monkey",
                     Location = "Central & South America",
-                    ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Capuchin_Costa_Rica.jpg/200px-Capuchin_Costa_Rica.jpg"
+                    ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Capuchin_Costa_Rica.jpg/200px-Capuchin_Costa_Rica.jpg"
                 });
 
                 Monkeys.Add(new Monkey
                 {
                     Name = "Blue Monkey",
                     Location = "Central and East Africa",
-                    ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/8/83/BlueMonkey.jpg/220px-BlueMonkey.jpg"
+                    ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/BlueMonkey.jpg/220px-BlueMonkey.jpg"
                 });
 
                 Monkeys.Add(new Monkey
                 {
                     Name = "Squirrel Monkey",
                     Location = "Central & South America",
-                    ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Saimiri_sciureus-1_Luc_Viatour.jpg/220px-Saimiri_sciureus-1_Luc_Viatour.jpg"
+                    ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Saimiri_sciureus-1_Luc_Viatour.jpg/220px-Saimiri_sciureus-1_Luc_Viatour.jpg"
                 });
 
                 Monkeys.Add(new Monkey
                 {
                     Name = "Golden Lion Tamarin",
                     Location = "Brazil",
-                    ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Golden_lion_tamarin_portrait3.jpg/220px-Golden_lion_tamarin_portrait3.jpg"
+                    ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Golden_lion_tamarin_portrait3.jpg/220px-Golden_lion_tamarin_portrait3.jpg"
                 });
 
                 Monkeys.Add(new Monkey
                 {
                     Name = "Howler Monkey",
                     Location = "South America",
-                    ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Alouatta_guariba.jpg/200px-Alouatta_guariba.jpg"
+                    ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Alouatta_guariba.jpg/200px-Alouatta_guariba.jpg"
                 });
 
                 Monkeys.Add(new Monkey
                 {
                     Name = "Japanese Macaque",
                     Location = "Japan",
-                    ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Macaca_fuscata_fuscata1.jpg/220px-Macaca_fuscata_fuscata1.jpg"
+                    ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Macaca_fuscata_fuscata1.jpg/220px-Macaca_fuscata_fuscata1.jpg"
                 });
 
                 Monkeys.Add(new Monkey
                 {
                     Name = "Mandrill",
                     Location = "Southern Cameroon, Gabon, Equatorial Guinea, and Congo",
-                    ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Mandrill_at_san_francisco_zoo.jpg/220px-Mandrill_at_san_francisco_zoo.jpg"
+                    ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Mandrill_at_san_francisco_zoo.jpg/220px-Mandrill_at_san_francisco_zoo.jpg"
                 });
 
                 Monkeys.Add(new Monkey
                 {
                     Name = "Proboscis Monkey",
                     Location = "Borneo",
-                    ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Proboscis_Monkey_in_Borneo.jpg/250px-Proboscis_Monkey_in_Borneo.jpg"
+                    ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Proboscis_Monkey_in_Borneo.jpg/250px-Proboscis_Monkey_in_Borneo.jpg"
                 });
 
                 Monkeys.Add(new Monkey
@@ -177,7 +177,7 @@ ms.locfileid: "69541495"
     > [!IMPORTANT]
     > [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) プロパティはビジュアル ツリーを介して継承されます。 したがって、それが [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトに設定されているため、`ContentPage` の子オブジェクトは [`ListView`](xref:Xamarin.Forms.ListView) を含むその値を継承します。
 
-1. **MainPage.xaml** で、[`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) プロパティを `Monkeys` コレクションに設定するように [`ListView`](xref:Xamarin.Forms.Image) 宣言を変更します。
+1. **MainPage.xaml** で、[`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) プロパティを `Monkeys` コレクションに設定するように [`ListView`](xref:Xamarin.Forms.ListView) 宣言を変更します。
 
     ```xaml
     <ListView ItemsSource="{Binding Monkeys}" />
@@ -232,63 +232,63 @@ ms.locfileid: "69541495"
                 {
                     Name = "Baboon",
                     Location = "Africa & Asia",
-                    ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Papio_anubis_%28Serengeti%2C_2009%29.jpg/200px-Papio_anubis_%28Serengeti%2C_2009%29.jpg"
+                    ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Papio_anubis_%28Serengeti%2C_2009%29.jpg/200px-Papio_anubis_%28Serengeti%2C_2009%29.jpg"
                 });
 
                 Monkeys.Add(new Monkey
                 {
                     Name = "Capuchin Monkey",
                     Location = "Central & South America",
-                    ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Capuchin_Costa_Rica.jpg/200px-Capuchin_Costa_Rica.jpg"
+                    ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Capuchin_Costa_Rica.jpg/200px-Capuchin_Costa_Rica.jpg"
                 });
 
                 Monkeys.Add(new Monkey
                 {
                     Name = "Blue Monkey",
                     Location = "Central and East Africa",
-                    ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/8/83/BlueMonkey.jpg/220px-BlueMonkey.jpg"
+                    ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/BlueMonkey.jpg/220px-BlueMonkey.jpg"
                 });
 
                 Monkeys.Add(new Monkey
                 {
                     Name = "Squirrel Monkey",
                     Location = "Central & South America",
-                    ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Saimiri_sciureus-1_Luc_Viatour.jpg/220px-Saimiri_sciureus-1_Luc_Viatour.jpg"
+                    ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Saimiri_sciureus-1_Luc_Viatour.jpg/220px-Saimiri_sciureus-1_Luc_Viatour.jpg"
                 });
 
                 Monkeys.Add(new Monkey
                 {
                     Name = "Golden Lion Tamarin",
                     Location = "Brazil",
-                    ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Golden_lion_tamarin_portrait3.jpg/220px-Golden_lion_tamarin_portrait3.jpg"
+                    ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Golden_lion_tamarin_portrait3.jpg/220px-Golden_lion_tamarin_portrait3.jpg"
                 });
 
                 Monkeys.Add(new Monkey
                 {
                     Name = "Howler Monkey",
                     Location = "South America",
-                    ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Alouatta_guariba.jpg/200px-Alouatta_guariba.jpg"
+                    ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Alouatta_guariba.jpg/200px-Alouatta_guariba.jpg"
                 });
 
                 Monkeys.Add(new Monkey
                 {
                     Name = "Japanese Macaque",
                     Location = "Japan",
-                    ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Macaca_fuscata_fuscata1.jpg/220px-Macaca_fuscata_fuscata1.jpg"
+                    ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Macaca_fuscata_fuscata1.jpg/220px-Macaca_fuscata_fuscata1.jpg"
                 });
 
                 Monkeys.Add(new Monkey
                 {
                     Name = "Mandrill",
                     Location = "Southern Cameroon, Gabon, Equatorial Guinea, and Congo",
-                    ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Mandrill_at_san_francisco_zoo.jpg/220px-Mandrill_at_san_francisco_zoo.jpg"
+                    ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Mandrill_at_san_francisco_zoo.jpg/220px-Mandrill_at_san_francisco_zoo.jpg"
                 });
 
                 Monkeys.Add(new Monkey
                 {
                     Name = "Proboscis Monkey",
                     Location = "Borneo",
-                    ImageUrl = "http://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Proboscis_Monkey_in_Borneo.jpg/250px-Proboscis_Monkey_in_Borneo.jpg"
+                    ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Proboscis_Monkey_in_Borneo.jpg/250px-Proboscis_Monkey_in_Borneo.jpg"
                 });
 
                 Monkeys.Add(new Monkey
@@ -358,7 +358,7 @@ ms.locfileid: "69541495"
     > [!IMPORTANT]
     > [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) プロパティはビジュアル ツリーを介して継承されます。 したがって、それが [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトに設定されているため、`ContentPage` の子オブジェクトは [`ListView`](xref:Xamarin.Forms.ListView) を含むその値を継承します。
 
-1. **MainPage.xaml** で、[`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) プロパティを `Monkeys` コレクションに設定するように [`ListView`](xref:Xamarin.Forms.Image) 宣言を変更します。
+1. **MainPage.xaml** で、[`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) プロパティを `Monkeys` コレクションに設定するように [`ListView`](xref:Xamarin.Forms.ListView) 宣言を変更します。
 
     ```xaml
     <ListView ItemsSource="{Binding Monkeys}" />

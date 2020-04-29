@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/05/2016
 ms.openlocfilehash: 04d96dad455cbcf8360f12ee97a0540e7e746d62
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 04/13/2020
 ms.locfileid: "70771470"
 ---
 # <a name="passing-effect-parameters-as-common-language-runtime-properties"></a>共通言語ランタイム プロパティとしてエフェクトのパラメーターを渡す
@@ -28,15 +28,15 @@ _共通言語ランタイム (CLR) プロパティは、実行時のプロパテ
 
 エフェクトをインスタンス化するときに各プロパティの値を指定することで、パラメーターをエフェクトに渡すことができます。
 
-このサンプル アプリケーションは、[`Label`](xref:Xamarin.Forms.Label) コントロールによって表示されるテキストに影を追加する `ShadowEffect` を示しています。 次の図に、サンプル アプリケーション内の各プロジェクトの役割とそれらの関係を示します。
+このサンプル アプリケーションは、[`Label`](xref:Xamarin.Forms.Label) コントロールによって表示されるテキストに影を追加する `ShadowEffect` を示しています。 次の図に、サンプル アプリケーション内の各プロジェクトの役割と、それらの関係を示します。
 
-![](clr-properties-images/shadow-effect.png "影効果プロジェクトの役割")
+![](clr-properties-images/shadow-effect.png "Shadow Effect Project Responsibilities")
 
 `HomePage` 上の [`Label`](xref:Xamarin.Forms.Label) コントロールは、各プラットフォーム固有のプロジェクト内の `LabelShadowEffect` によってカスタマイズされます。 パラメーターは `ShadowEffect` クラス内のプロパティを介して各 `LabelShadowEffect` に渡されます。 各プラットフォームの `PlatformEffect` クラスから、各 `LabelShadowEffect` クラスが派生します。 これにより、次のスクリーンショットに示すように、`Label` コントロールによって表示されるテキストに影が追加されます。
 
-![](clr-properties-images/screenshots.png "各プラットフォーム上の影効果")
+![](clr-properties-images/screenshots.png "Shadow Effect on each Platform")
 
-## <a name="creating-effect-parameters"></a>エフェクトのパラメーターを作成する
+## <a name="creating-effect-parameters"></a>エフェクトのパラメーターの作成
 
 次のコード例に示すように、エフェクトのパラメーターを表すには、[`RoutingEffect`](xref:Xamarin.Forms.RoutingEffect) クラスをサブクラス化する `public` クラスを作成する必要があります。
 
