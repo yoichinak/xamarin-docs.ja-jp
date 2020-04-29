@@ -6,58 +6,58 @@ ms.assetId: 602456B5-701B-4948-B454-B1F31283F1CF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/11/2020
-ms.openlocfilehash: 6131287b200846a033e0c476d7039dfd774cab68
-ms.sourcegitcommit: 10b4d7952d78f20f753372c53af6feb16918555c
+ms.date: 03/26/2020
+ms.openlocfilehash: da6dbe63b7151ef0f9a1defca66fbb3abb25ad1d
+ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77635590"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82517554"
 ---
 # <a name="xamarinforms-swipeview"></a>SwipeView
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-swipeviewdemos/)
+[![](~/media/shared/download.png)サンプルをダウンロードするサンプルをダウンロードする](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-swipeviewdemos/)
 
-`SwipeView` は、コンテンツの項目をラップするコンテナーコントロールであり、スワイプジェスチャによって表示されるコンテキストメニュー項目を提供します。
+は`SwipeView` 、コンテンツの項目をラップするコンテナーコントロールであり、スワイプジェスチャによって表示されるコンテキストメニュー項目を提供します。
 
 [![IOS と Android の CollectionView の SwipeView スワイプ項目のスクリーンショット](swipeview-images/swipeview-collectionview.png "SwipeView スワイプ項目")](swipeview-images/swipeview-collectionview-large.png#lightbox "SwipeView スワイプ項目")
 
-`SwipeView` は、Xamarin. Forms 4.4 で使用できます。 ただし、現在は実験的で、次のコード行を iOS の `AppDelegate` クラス、Android の `MainActivity` クラス、または UWP の `App` クラスに追加してから、`Forms.Init`を呼び出す前に使用することができます。
+`SwipeView`は、Xamarin. Forms 4.4 で使用できます。 ただし、現在は実験的であり、次のコード`AppDelegate`行を iOS `MainActivity`上のクラス、Android 上のクラス、または`App` UWP のクラスに追加してからを呼び出す`Forms.Init`必要があります。
 
 ```csharp
 Forms.SetFlags("SwipeView_Experimental");
 ```
 
-`SwipeView` は、次のプロパティを定義します。
+`SwipeView` は次の特性を定義します。
 
-- `SwipeItems`型の `LeftItems`。これは、コントロールが左側からスワイプたときに呼び出すことができるスワイプ項目を表します。
-- `SwipeItems`型の `RightItems`。コントロールが右側からスワイプたときに呼び出すことができるスワイプ項目を表します。
-- `SwipeItems`型の `TopItems`。コントロールが一番上からスワイプたときに呼び出すことができるスワイプ項目を表します。
-- `SwipeItems`型の `BottomItems`。コントロールが下からスワイプされたときに呼び出すことができるスワイプ項目を表します。
+- `LeftItems`型`SwipeItems`の。これは、コントロールが左側からスワイプたときに呼び出すことができるスワイプ項目を表します。
+- `RightItems`型`SwipeItems`の。コントロールが右側からスワイプたときに呼び出すことができるスワイプ項目を表します。
+- `TopItems`コントロールが上`SwipeItems`からスワイプされたときに呼び出すことができるスワイプ項目を表す、型の。
+- `BottomItems`コントロールが下`SwipeItems`からスワイプされたときに呼び出すことができるスワイプ項目を表す、型の。
 
-これらのプロパティは[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)のオブジェクトによって支えられています。これは、データバインディングのターゲットとスタイルを設定できることを意味します。
+これらのプロパティは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)オブジェクトによって支えられています。これは、データバインディングのターゲットとスタイルを設定できることを意味します。
 
-さらに、`SwipeView` は、 [`ContentView`](xref:Xamarin.Forms.ContentView)クラスから[`Content`](xref:Xamarin.Forms.ContentView.Content)プロパティを継承します。 `Content` プロパティは `SwipeView` クラスの content プロパティであるため、明示的に設定する必要はありません。
+さらに、は`SwipeView` 、 [`ContentView`](xref:Xamarin.Forms.ContentView)クラス[`Content`](xref:Xamarin.Forms.ContentView.Content)からプロパティを継承します。 `Content`プロパティは`SwipeView`クラスの content プロパティであるため、明示的に設定する必要はありません。
 
-`SwipeView` クラスは、次の4つのイベントも定義します。
+クラス`SwipeView`は、次の4つのイベントも定義します。
 
-- `SwipeStarted` は、スワイプが開始されるときに発生します。 このイベントに付随する `SwipeStartedEventArgs` オブジェクトには、`SwipeDirection`型の `SwipeDirection` プロパティがあります。
-- スワイプが移動すると `SwipeChanging` が発生します。 このイベントに付随する `SwipeChangingEventArgs` オブジェクトには、`SwipeDirection`型の `SwipeDirection` プロパティ、および型 `double`の `Offset` プロパティがあります。
-- `SwipeEnded` は、スワイプが終了したときに発生します。 このイベントに付随する `SwipeEndedEventArgs` オブジェクトには、`SwipeDirection`型の `SwipeDirection` プロパティがあります。
-- `CloseRequested` は、スワイプ項目が閉じられたときに発生します。
+- `SwipeStarted`スワイプが開始されたときに発生します。 この`SwipeStartedEventArgs`イベントに付随するオブジェクトには`SwipeDirection` 、型`SwipeDirection`のプロパティがあります。
+- `SwipeChanging`スワイプが移動したときに発生します。 この`SwipeChangingEventArgs`イベントに付随するオブジェクトには`SwipeDirection` 、型`SwipeDirection`のプロパティと型`Offset` `double`のプロパティがあります。
+- `SwipeEnded`スワイプが終了したときに発生します。 この`SwipeEndedEventArgs`イベントに付随するオブジェクトには`SwipeDirection` 、型`SwipeDirection`のプロパティがあります。
+- `CloseRequested`スワイプ項目が閉じられたときに発生します。
 
-さらに、`SwipeView` は、スワイプ項目を閉じる `Close` メソッドを定義します。
+さらに、 `SwipeView`に`Open`は`Close`メソッドとメソッドが含まれており、プログラムを使用してスワイプ項目を開いたり閉じたりすることができます。
 
 > [!NOTE]
-> `SwipeView` には、iOS と Android のプラットフォーム固有のものがあり、`SwipeView`を開くときに使用される移行を制御します。 詳細については、「 [SwipeView スワイプ Transition mode On iOS](~/xamarin-forms/platform/ios/swipeview-swipetransitionmode.md) 」および「 [SwipeView スワイプ Transition mode on Android](~/xamarin-forms/platform/android/swipeview-swipetransitionmode.md)」を参照してください。
+> `SwipeView`には、iOS および Android のプラットフォーム固有のがあり、を開くときに使用される`SwipeView`遷移を制御します。 詳細については、「 [SwipeView スワイプ Transition mode On iOS](~/xamarin-forms/platform/ios/swipeview-swipetransitionmode.md) 」および「 [SwipeView スワイプ Transition mode on Android](~/xamarin-forms/platform/android/swipeview-swipetransitionmode.md)」を参照してください。
 
 ## <a name="create-a-swipeview"></a>SwipeView を作成する
 
-`SwipeView` では、`SwipeView` がラップするコンテンツと、スワイプジェスチャによって公開されるスワイプ項目を定義する必要があります。 スワイプ項目は、`LeftItems`、`RightItems`、`TopItems`、または `BottomItems`の4つの `SwipeView` 方向コレクションのいずれかに配置される1つ以上の `SwipeItem` オブジェクトです。
+は`SwipeView` 、が`SwipeView`ラップするコンテンツと、スワイプジェスチャによって公開されるスワイプ項目を定義する必要があります。 スワイプ項目`LeftItems`は、、 `RightItems`、 `TopItems`、 `SwipeItem`の 4 `SwipeView`つの方向のコレクションのいずれかに配置される1つ`BottomItems`以上のオブジェクトです。
 
-次の例は、XAML で `SwipeView` をインスタンス化する方法を示しています。
+次の例は、XAML でを`SwipeView`インスタンス化する方法を示しています。
 
 ```xaml
 <SwipeView>
@@ -84,7 +84,7 @@ Forms.SetFlags("SwipeView_Experimental");
 </SwipeView>
 ```
 
-同等の C# コードを次に示します。
+該当の C# コードを次に示します。
 
 ```csharp
 // SwipeItems
@@ -127,39 +127,39 @@ SwipeView swipeView = new SwipeView
 };
 ```
 
-この例では、`SwipeView` コンテンツは[`Label`](xref:Xamarin.Forms.Label)を含む[`Grid`](xref:Xamarin.Forms.Grid)です。
+この例では、 `SwipeView`コンテンツは[`Grid`](xref:Xamarin.Forms.Grid) 、を含むです[`Label`](xref:Xamarin.Forms.Label)。
 
 [![IOS と Android の SwipeView コンテンツのスクリーンショット](swipeview-images/swipeview-content.png "SwipeView コンテンツ")](swipeview-images/swipeview-content-large.png#lightbox "SwipeView コンテンツ")
 
-スワイプ項目は `SwipeView` の内容に対してアクションを実行するために使用され、コントロールが左側からスワイプされると明らかになります。
+スワイプ項目は、 `SwipeView`コンテンツに対する操作を実行するために使用されます。また、コントロールが左側からスワイプされると、次の項目が明らかになります。
 
 [![IOS と Android の SwipeView スワイプ項目のスクリーンショット](swipeview-images/swipeview-swipeitems.png "SwipeView スワイプ項目")](swipeview-images/swipeview-swipeitems-large.png#lightbox "SwipeView スワイプ項目")
 
 既定では、スワイプ項目はユーザーによってタップされると実行されます。 ただし、この動作は変更可能です。 詳細については、「[スワイプモード](#swipe-mode)」を参照してください。
 
-スワイプ項目が実行されると、スワイプ項目は非表示になり、`SwipeView` の内容が再表示されます。 ただし、この動作は変更可能です。 詳細については、「[スワイプ動作](#swipe-behavior)」を参照してください。
+スワイプ項目が実行されると、スワイプ項目が非表示に`SwipeView`なり、コンテンツが再度表示されます。 ただし、この動作は変更可能です。 詳細については、「[スワイプ動作](#swipe-behavior)」を参照してください。
 
 > [!NOTE]
 > コンテンツのスワイプとスワイプは、インラインに配置したり、リソースとして定義したりすることができます。
 
 ## <a name="swipe-items"></a>項目のスワイプ
 
-`LeftItems`、`RightItems`、`TopItems`、および `BottomItems` の各コレクションは、すべて型の `SwipeItems`です。 `SwipeItems` クラスは、次のプロパティを定義します。
+、 `LeftItems` `RightItems`、 `TopItems`、および`BottomItems`の各コレクションは、すべて`SwipeItems`型です。 クラス`SwipeItems`は、次のプロパティを定義します。
 
-- `SwipeMode`型の `Mode`。スワイプ操作の効果を示します。 スワイプモードの詳細については、「[スワイプモード](#swipe-mode)」を参照してください。
-- `SwipeBehaviorOnInvoked`型の `SwipeBehaviorOnInvoked`。スワイプ項目が呼び出された後の `SwipeView` の動作を示します。 スワイプ動作の詳細については、「[スワイプ動作](#swipe-behavior)」を参照してください。
+- `Mode`スワイプ操作の`SwipeMode`効果を示す型の。 スワイプモードの詳細については、「[スワイプモード](#swipe-mode)」を参照してください。
+- `SwipeBehaviorOnInvoked`型`SwipeBehaviorOnInvoked`の。スワイプ項目が呼び出され`SwipeView`た後のの動作を示します。 スワイプ動作の詳細については、「[スワイプ動作](#swipe-behavior)」を参照してください。
 
-これらのプロパティは[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)のオブジェクトによって支えられています。これは、データバインディングのターゲットとスタイルを設定できることを意味します。
+これらのプロパティは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)オブジェクトによって支えられています。これは、データバインディングのターゲットとスタイルを設定できることを意味します。
 
-各スワイプ項目は、4つの `SwipeItems` 方向のコレクションのいずれかに配置される `SwipeItem` オブジェクトとして定義されます。 `SwipeItem` クラスは[`MenuItem`](xref:Xamarin.Forms.MenuItem)クラスから派生し、次のメンバーを追加します。
+各スワイプ項目は、4つ`SwipeItem` `SwipeItems`の方向のコレクションのいずれかに配置されるオブジェクトとして定義されます。 クラス`SwipeItem`は[`MenuItem`](xref:Xamarin.Forms.MenuItem)クラスから派生し、次のメンバーを追加します。
 
-- スワイプ項目の背景色を定義する、`Color`型の `BackgroundColor` プロパティ。 このプロパティは、バインド可能なプロパティによってサポートされます。
-- スワイプ項目が実行されるときに発生する `Invoked` イベント。
+- スワイプ`BackgroundColor`項目の背景色`Color`を定義する型のプロパティ。 このプロパティは、バインド可能なプロパティによってサポートされます。
+- スワイプ`Invoked`項目が実行されるときに発生するイベント。
 
 > [!IMPORTANT]
-> [`MenuItem`](xref:Xamarin.Forms.MenuItem)クラスは、`Command`、`CommandParameter`、`IconImageSource`、`Text`など、いくつかのプロパティを定義します。 これらのプロパティは、`SwipeItem` オブジェクトに設定して外観を定義したり、スワイプ項目が呼び出されたときに実行される `ICommand` を定義したりできます。 詳細については、「 [Xamarin. フォーム MenuItem](~/xamarin-forms/user-interface/menuitem.md)」を参照してください。
+> クラス[`MenuItem`](xref:Xamarin.Forms.MenuItem)は`Command`、 `CommandParameter`、、 `IconImageSource`、など、いくつかの`Text`プロパティを定義します。 これらのプロパティは、 `SwipeItem`オブジェクトの外観を定義したり、スワイプ項目が呼び出さ`ICommand`れたときに実行されるを定義したりするために設定できます。 詳細については、「 [Xamarin. フォーム MenuItem](~/xamarin-forms/user-interface/menuitem.md)」を参照してください。
 
-次の例は、`SwipeView`の `LeftItems` コレクション内の2つの `SwipeItem` オブジェクトを示しています。
+次の例では`SwipeItem` 、の`LeftItems`コレクション内の 2 `SwipeView`つのオブジェクトを示します。
 
 ```xaml
 <SwipeView>
@@ -179,20 +179,20 @@ SwipeView swipeView = new SwipeView
 </SwipeView>
 ```
 
-各 `SwipeItem` の外観は、`Text`、`IconImageSource`、および `BackgroundColor` の各プロパティの組み合わせによって定義されます。
+それぞれの外観は`SwipeItem` `Text`、、 `IconImageSource`、および`BackgroundColor`の各プロパティの組み合わせによって定義されます。
 
 [![IOS と Android の SwipeView スワイプ項目のスクリーンショット](swipeview-images/swipeview-swipeitems.png "SwipeView スワイプ項目")](swipeview-images/swipeview-swipeitems-large.png#lightbox "SwipeView スワイプ項目")
 
-`SwipeItem` がタップされると、その `Invoked` イベントが発生し、登録されているイベントハンドラーによって処理されます。 または、`Command` プロパティを、`SwipeItem` が呼び出されたときに実行される `ICommand` の実装に設定することもできます。
+`SwipeItem`がタップされると、 `Invoked`そのイベントが発生し、登録されているイベントハンドラーによって処理されます。 また`SwipeItem`は、 `Command`が呼び出されたときに`ICommand`実行される実装にプロパティを設定することもできます。
 
 > [!NOTE]
-> `SwipeItem` の外観が `Text` または `IconImageSource` プロパティを使用してのみ定義されている場合、コンテンツは常に中央揃えになります。
+> の外観`SwipeItem`がプロパティ`Text`または`IconImageSource`プロパティを使用してのみ定義されている場合、コンテンツは常に中央揃えになります。
 
-スワイプ項目を `SwipeItem` オブジェクトとして定義するだけでなく、カスタムスワイプ項目ビューを定義することもできます。 詳細については、「[カスタムスワイプ項目](#custom-swipe-items)」を参照してください。
+スワイプ項目をオブジェクトとして`SwipeItem`定義するだけでなく、カスタムスワイプ項目ビューを定義することもできます。 詳細については、「[カスタムスワイプ項目](#custom-swipe-items)」を参照してください。
 
 ## <a name="swipe-direction"></a>スワイプ方向
 
-`SwipeView` では、4つの異なるスワイプ方向がサポートされます。スワイプ方向は、`SwipeItem` オブジェクトが追加される方向 `SwipeItems` コレクションによって定義されます。 スワイプの方向は、それぞれ独自のスワイプ項目を保持できます。 たとえば、次の例は、スワイプ項目がスワイプ方向に依存している `SwipeView` を示しています。
+`SwipeView`4つの異なるスワイプ方向をサポートします。スワイプ方向は、 `SwipeItems` `SwipeItem`オブジェクトが追加される方向のコレクションによって定義されます。 スワイプの方向は、それぞれ独自のスワイプ項目を保持できます。 たとえば、次の例は、スワイプ`SwipeView`項目がスワイプ方向に依存しているを示しています。
 
 ```xaml
 <SwipeView>
@@ -220,28 +220,28 @@ SwipeView swipeView = new SwipeView
 </SwipeView>
 ```
 
-この例では、`SwipeView` の内容を右または左にスワイプできます。 右側にスワイプすると、[**スワイプ] 項目が表示**されます。左側にスワイプすると、**お気に入り**と**共有**スワイプ項目が表示されます。
+この例では、 `SwipeView`コンテンツを右または左にスワイプことができます。 右側にスワイプすると、[**スワイプ] 項目が表示**されます。左側にスワイプすると、**お気に入り**と**共有**スワイプ項目が表示されます。
 
 > [!WARNING]
-> `SwipeView`で一度に設定できる方向 `SwipeItems` コレクションのインスタンスは1つだけです。 したがって、`SwipeView`に2つの `LeftItems` 定義を設定することはできません。
+> で一度に設定できるの`SwipeItems`は、一方向のコレクションの1つ`SwipeView`のインスタンスだけです。 そのため、に2つ`LeftItems`の定義を`SwipeView`含めることはできません。
 
-`SwipeStarted`、`SwipeChanging`、および `SwipeEnded` イベントは、イベント引数の `SwipeDirection` プロパティを使用して、スワイプの方向を報告します。 このプロパティの型は `SwipeDirection`です。これは、次の4つのメンバーで構成される列挙体です。
+、 `SwipeStarted` `SwipeChanging`、および`SwipeEnded`の各イベントは、イベント引数の`SwipeDirection`プロパティを使用して、スワイプの方向を報告します。 このプロパティの型`SwipeDirection`はで、次の4つのメンバーで構成される列挙体です。
 
-- `Right` は、右スワイプが発生したことを示します。
-- `Left` は、左スワイプが発生したことを示します。
-- `Up` は、上向きのスワイプが発生したことを示します。
-- `Down` は、下方向のスワイプが発生したことを示します。
+- `Right`右スワイプが発生したことを示します。
+- `Left`左スワイプが発生したことを示します。
+- `Up`上向きのスワイプが発生したことを示します。
+- `Down`下方向のスワイプが発生したことを示します。
 
 ## <a name="swipe-mode"></a>スワイプモード
 
-`SwipeItems` クラスには、スワイプ操作の効果を示す `Mode` プロパティがあります。 このプロパティは、`SwipeMode` 列挙型のメンバーのいずれかに設定する必要があります。
+クラス`SwipeItems`には、 `Mode`スワイプ操作の効果を示すプロパティがあります。 このプロパティは、 `SwipeMode`列挙体のメンバーのいずれかに設定する必要があります。
 
-- `Reveal` は、スワイプによってスワイプ項目が表示されることを示します。 これは、`SwipeItems.Mode` プロパティの既定値です。
-- `Execute` は、スワイプがスワイプ項目を実行することを示します。
+- `Reveal`スワイプによってスワイプ項目が表示されることを示します。 これは、`SwipeItems.Mode` プロパティの既定値です。
+- `Execute`スワイプがスワイプ項目を実行することを示します。
 
-[表示モード] では、ユーザーは `SwipeView` をスワイプして、1つまたは複数のスワイプ項目で構成されるメニューを開くことができます。また、スワイプ項目を明示的にタップして実行する必要があります。 スワイプ項目が実行されると、スワイプ項目が閉じられ、`SwipeView` の内容が再表示されます。 実行モードでは、ユーザーは `SwipeView` をスワイプして、1つのスワイプ項目で構成されるメニューを開き、自動的に実行されます。 実行後、スワイプ項目が閉じられ、`SwipeView` の内容が再表示されます。
+[表示モード] では、スワイプ`SwipeView`は、1つまたは複数のスワイプ項目で構成されるメニューを開き、スワイプ項目を明示的にタップして実行する必要があります。 スワイプ項目が実行されると、スワイプ項目が閉じられ`SwipeView` 、コンテンツが再度表示されます。 実行モードでは`SwipeView` 、ユーザーはスワイプを使用して1つのスワイプ項目で構成されるメニューを開き、自動的に実行されます。 実行後、スワイプ項目が閉じられ、 `SwipeView`コンテンツが再度表示されます。
 
-次の例は、実行モードを使用するように構成された `SwipeView` を示しています。
+次の例は、 `SwipeView`実行モードを使用するように構成されたを示しています。
 
 ```xaml
 <SwipeView>
@@ -257,17 +257,17 @@ SwipeView swipeView = new SwipeView
 </SwipeView>
 ```
 
-この例では、`SwipeView` コンテンツをスワイプして、スワイプ項目を表示することができます。これはすぐに実行されます。 次に実行すると、`SwipeView` コンテンツが再表示されます。
+この例では、 `SwipeView`コンテンツは、すぐに実行されるスワイプ項目を表示するためにスワイプ権限を持つことができます。 実行後に`SwipeView`コンテンツが再表示されます。
 
 ## <a name="swipe-behavior"></a>スワイプ動作
 
-`SwipeItems` クラスには `SwipeBehaviorOnInvoked` プロパティがあります。これは、スワイプ項目が呼び出された後の `SwipeView` の動作を示します。 このプロパティは、`SwipeBehaviorOnInvoked` 列挙型のメンバーのいずれかに設定する必要があります。
+`SwipeItems`クラスには`SwipeBehaviorOnInvoked`プロパティがあり、これはスワイプ項目が呼び出された後のの`SwipeView`動作を示します。 このプロパティは、 `SwipeBehaviorOnInvoked`列挙体のメンバーのいずれかに設定する必要があります。
 
-- `Auto` は、[表示] モードでは、スワイプ項目が呼び出された後 `SwipeView` が閉じることを示します。実行モードでは、スワイプ項目が呼び出された後も `SwipeView` は開いたままになります。 これは、`SwipeItems.SwipeBehaviorOnInvoked` プロパティの既定値です。
-- `Close` は、スワイプ項目が呼び出された後に `SwipeView` を閉じることを示します。
-- `RemainOpen` は、スワイプ項目が呼び出された後も `SwipeView` が開いたままになることを示します。
+- `Auto`[表示モード] で、 `SwipeView`スワイプ項目が呼び出された後にがを閉じることを`SwipeView`示します。実行モードでは、スワイプ項目が呼び出された後もが開いたままになります。 これは、`SwipeItems.SwipeBehaviorOnInvoked` プロパティの既定値です。
+- `Close`スワイプ項目が`SwipeView`呼び出された後にが閉じることを示します。
+- `RemainOpen`スワイプ項目が`SwipeView`呼び出された後もが開いたままになることを示します。
 
-次の例は、スワイプ項目が呼び出された後も開いたままになるように構成された `SwipeView` を示しています。
+次の例は、 `SwipeView`スワイプ項目が呼び出された後も開いたままになるように構成されたを示しています。
 
 ```xaml
 <SwipeView>
@@ -289,16 +289,16 @@ SwipeView swipeView = new SwipeView
 
 ## <a name="custom-swipe-items"></a>カスタムスワイプ項目
 
-カスタムスワイプ項目は、`SwipeItemView` の種類を使用して定義できます。 `SwipeItemView` クラスは[`ContentView`](xref:Xamarin.Forms.ContentView)クラスから派生し、次のプロパティを追加します。
+カスタムスワイプ項目は、 `SwipeItemView`型を使用して定義できます。 クラス`SwipeItemView`は[`ContentView`](xref:Xamarin.Forms.ContentView)クラスから派生し、次のプロパティを追加します。
 
-- `ICommand`型の `Command`。スワイプ項目がタップされると実行されます。
-- `CommandParameter`: `object` 型、`Command` に渡されるパラメーター。
+- `Command`型`ICommand`の。スワイプ項目がタップされると実行されます。
+- `CommandParameter`: `object` 型、`Command`に渡されるパラメーターです。
 
-これらのプロパティは[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)のオブジェクトによって支えられています。これは、データバインディングのターゲットとスタイルを設定できることを意味します。
+これらのプロパティは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)オブジェクトによって支えられています。これは、データバインディングのターゲットとスタイルを設定できることを意味します。
 
-`SwipeItemView` クラスは、`Command` の実行後に項目がタップされたときに発生する `Invoked` イベントも定義します。
+クラスは、の`Command`実行`Invoked`後に項目がタップされたときに発生するイベントも定義します。 `SwipeItemView`
 
-次の例は、`SwipeView`の `LeftItems` コレクション内の `SwipeItemView` オブジェクトを示しています。
+次の例は、 `SwipeItemView` `LeftItems` `SwipeView`のコレクション内のオブジェクトを示しています。
 
 ```xaml
 <SwipeView>
@@ -322,13 +322,39 @@ SwipeView swipeView = new SwipeView
 </SwipeView>
 ```
 
-この例では、`SwipeItemView` は[`Entry`](xref:Xamarin.Forms.Entry)と[`Label`](xref:Xamarin.Forms.Label)を含む[`StackLayout`](xref:Xamarin.Forms.StackLayout)で構成されています。 ユーザーが `Entry`に入力を入力すると、`SwipeViewItem` の残りの部分をタップして、`SwipeItemView.Command` プロパティで定義されている `ICommand` を実行できます。
+この例では、 `SwipeItemView`は[`StackLayout`](xref:Xamarin.Forms.StackLayout) [`Entry`](xref:Xamarin.Forms.Entry)とを[`Label`](xref:Xamarin.Forms.Label)含むを構成しています。 `Entry`ユーザーがに入力を入力すると、の残りの`SwipeViewItem`部分をタップして、 `ICommand` `SwipeItemView.Command`プロパティで定義されているを実行できます。
+
+## <a name="open-and-close-a-swipeview-programmatically"></a>プログラムによって SwipeView を開いて閉じる
+
+`SwipeView`に`Open`は`Close`メソッドとメソッドが含まれています。これらのメソッドは、プログラムによってスワイプ項目を開いたり閉じたりします。
+
+`Open`メソッドには、 `OpenSwipeItem`を開く方向`SwipeView`を指定するための引数が必要です。 列挙`OpenSwipeItem`体には、次の4つのメンバーがあります。
+
+- `LeftItems`。 `LeftItems`コレクション内のスワイプ`SwipeView`項目を表示するために、が左から開かれることを示します。
+- `TopItems`。 `TopItems`コレクション内のスワイプ`SwipeView`項目を表示するために、上部からが開かれることを示します。
+- `RightItems`。 `RightItems`コレクション内のスワイプ`SwipeView`項目を表示するために、右側からが開かれることを示します。
+- `BottomItems`。 `BottomItems`コレクション内のスワイプ`SwipeView`項目を表示するために、下部からが開かれることを示します。
+
+`SwipeView`という名前`swipeView`のを指定した場合、次の`SwipeView`例では、を開いて`LeftItems`コレクション内のスワイプ項目を表示する方法を示しています。
+
+```csharp
+swipeView.Open(OpenSwipeItem.LeftItems);
+```
+
+その`swipeView`後、 `Close`メソッドを使用してを閉じることができます。
+
+```csharp
+swipeView.Close();
+```
+
+> [!NOTE]
+> `Close`メソッドが呼び出されると、 `CloseRequested`イベントが発生します。
 
 ## <a name="disable-a-swipeview"></a>SwipeView を無効にする
 
-アプリケーションで、コンテンツの項目が有効な操作ではない状態になる場合があります。 このような場合は、`IsEnabled` プロパティを `false`に設定することによって、`SwipeView` を無効にできます。 これにより、ユーザーがコンテンツをスワイプしてスワイプした項目を表示できなくなります。
+アプリケーションで、コンテンツの項目が有効な操作ではない状態になる場合があります。 このような場合は`SwipeView` 、 `IsEnabled`プロパティをに設定する`false`ことで、を無効にすることができます。 これにより、ユーザーがコンテンツをスワイプしてスワイプした項目を表示できなくなります。
 
-また、`SwipeItem` または `SwipeItemView`の `Command` プロパティを定義する場合は、スワイプ項目を有効または無効にするために、`ICommand` の `CanExecute` デリゲートを指定できます。
+`SwipeItem`また、または`SwipeItemView` `CanExecute`の`ICommand` `Command`プロパティを定義するときに、のデリゲートを指定して、スワイプ項目を有効または無効にすることができます。
 
 ## <a name="related-links"></a>関連リンク
 

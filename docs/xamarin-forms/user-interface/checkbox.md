@@ -1,5 +1,5 @@
 ---
-title: Xamarin. フォームチェックボックス
+title: Xamarin.Forms CheckBox
 description: '[Xamarin. Forms] チェックボックスは、オンまたはオフにできるボタンの種類です。 チェックボックスがオンになっている場合は、オンになっていると見なされます。 チェックボックスが空の場合は、オフになっていると見なされます。'
 ms.prod: xamarin
 ms.assetid: B8B9268B-BCB8-42B9-B08C-C0F22C137238
@@ -7,29 +7,29 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/11/2019
-ms.openlocfilehash: f78ca9d2cf7a9e57b81c5d923c64b36a7982c4b0
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: 10b7c4c3478545863ef49a23ef0f1be777e7eda9
+ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "68739156"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82517123"
 ---
-# <a name="xamarinforms-checkbox"></a>Xamarin. フォームチェックボックス
+# <a name="xamarinforms-checkbox"></a>Xamarin.Forms CheckBox
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos/)
+[![](~/media/shared/download.png)サンプルをダウンロードするサンプルをダウンロードする](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos/)
 
-Xamarin `CheckBox` は、チェックまたは空にすることができるボタンの一種です。 チェックボックスがオンになっている場合は、オンになっていると見なされます。 チェックボックスが空の場合は、オフになっていると見なされます。
+Xamarin. Forms `CheckBox`は、チェックまたは空にすることができるボタンの一種です。 チェックボックスがオンになっている場合は、オンになっていると見なされます。 チェックボックスが空の場合は、オフになっていると見なされます。
 
-`CheckBox` は、`CheckBox` がチェックされるかどうかを示す、`IsChecked` という名前の `bool` プロパティを定義します。 このプロパティは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)オブジェクトによってもサポートされます。これは、データバインディングのターゲットとしてスタイルを設定できることを意味します。
+`CheckBox`がチェック`bool`され`IsChecked`て`CheckBox`いるかどうかを示す、という名前のプロパティを定義します。 このプロパティは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)オブジェクトによってもサポートされます。これは、データバインディングのターゲットとしてスタイルを設定できることを意味します。
 
 > [!NOTE]
-> @No__t_0 バインド可能なプロパティには、 [`BindingMode.TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay)の既定のバインディングモードがあります。
+> バインド`IsChecked`可能なプロパティには、の既定[`BindingMode.TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay)のバインディングモードがあります。
 
-`CheckBox` は、ユーザー操作によって、またはアプリケーションが `IsChecked` プロパティを設定するときに、`IsChecked` プロパティが変更されたときに発生する `CheckedChanged` イベントを定義します。 @No__t_1 イベントに付随する `CheckedChangedEventArgs` オブジェクトには、`bool` 型の `Value` という名前のプロパティが1つあります。 イベントが発生すると、`Value` プロパティの値が `IsChecked` プロパティの新しい値に設定されます。
+`CheckBox`ユーザー操作`CheckedChanged`によって、または`IsChecked`アプリケーションによってプロパティが`IsChecked`設定されたときに、プロパティが変更されたときに発生するイベントを定義します。 イベント`CheckedChangedEventArgs`に`CheckedChanged`付随するオブジェクトには、型`Value` `bool`のという名前のプロパティが1つあります。 イベントが発生すると、プロパティの値`Value`は`IsChecked`プロパティの新しい値に設定されます。
 
 ## <a name="create-a-checkbox"></a>チェックボックスを作成する
 
-次の例は、XAML で `CheckBox` をインスタンス化する方法を示しています。
+次の例は、XAML でを`CheckBox`インスタンス化する方法を示しています。
 
 ```xaml
 <CheckBox />
@@ -39,7 +39,7 @@ Xamarin `CheckBox` は、チェックまたは空にすることができるボ�
 
 ![IOS と Android の空のチェックボックスのスクリーンショット](checkbox-images/checkbox-empty.png "空のチェックボックス")
 
-既定では、`CheckBox` は空です。 @No__t_0 を確認するには、ユーザー操作を使用するか、`IsChecked` プロパティを `true` に設定します。
+既定では、 `CheckBox`は空です。 は`CheckBox` 、ユーザー操作によって確認することも、 `IsChecked`プロパティを`true`に設定することによって確認することもできます。
 
 ```xaml
 <CheckBox IsChecked="true" />
@@ -49,7 +49,7 @@ Xamarin `CheckBox` は、チェックまたは空にすることができるボ�
 
 ![IOS と Android のチェックボックスがオンになっているスクリーンショット](checkbox-images/checkbox-checked.png "チェックされたチェックボックス")
 
-また、コードで `CheckBox` を作成することもできます。
+また、コード`CheckBox`でを作成することもできます。
 
 ```csharp
 CheckBox checkBox = new CheckBox { IsChecked = true };
@@ -57,13 +57,13 @@ CheckBox checkBox = new CheckBox { IsChecked = true };
 
 ## <a name="respond-to-a-checkbox-changing-state"></a>チェックボックスの状態の変更に応答する
 
-ユーザー操作によって、またはアプリケーションが `IsChecked` プロパティを設定したときに `IsChecked` プロパティが変更されると、`CheckedChanged` イベントが発生します。 このイベントのイベントハンドラーは、変更に応答するように登録できます。
+ユーザー操作`IsChecked`によって、またはアプリケーションが`IsChecked`プロパティを設定するときに、プロパティ`CheckedChanged`が変更されると、イベントが発生します。 このイベントのイベントハンドラーは、変更に応答するように登録できます。
 
 ```xaml
 <CheckBox CheckedChanged="OnCheckBoxCheckedChanged" />
 ```
 
-分離コードファイルには、`CheckedChanged` イベントのハンドラーが含まれています。
+分離コードファイルには、 `CheckedChanged`イベントのハンドラーが含まれています。
 
 ```csharp
 void OnCheckBoxCheckedChanged(object sender, CheckedChangedEventArgs e)
@@ -72,9 +72,9 @@ void OnCheckBoxCheckedChanged(object sender, CheckedChangedEventArgs e)
 }
 ```
 
-@No__t_0 引数は、このイベントを担当する `CheckBox` です。 これを使用すると、`CheckBox` オブジェクトにアクセスしたり、同じ `CheckedChanged` イベントを共有する複数の `CheckBox` オブジェクトを区別したりできます。
+`sender`引数は、この`CheckBox`イベントを担当するです。 これを使用すると、 `CheckBox`オブジェクトにアクセスしたり、同じ`CheckBox` `CheckedChanged`イベントハンドラーを共有する複数のオブジェクトを区別したりできます。
 
-または、`CheckedChanged` イベントのイベントハンドラーをコードに登録できます。
+または、 `CheckedChanged`イベントのイベントハンドラーをコードに登録できます。
 
 ```csharp
 CheckBox checkBox = new CheckBox { ... };
@@ -86,7 +86,7 @@ checkBox.CheckedChanged += (sender, e) =>
 
 ## <a name="data-bind-a-checkbox"></a>チェックボックスのデータバインド
 
-@No__t_0 イベントハンドラーを削除するには、データバインディングとトリガーを使用して、確認または空の `CheckBox` に応答します。
+`CheckedChanged`イベントハンドラーを削除するには、データバインディングとトリガーを使用して`CheckBox` 、チェックされるまたは空のに応答します。
 
 ```xaml
 <CheckBox x:Name="checkBox" />
@@ -104,9 +104,9 @@ checkBox.CheckedChanged += (sender, e) =>
 </Label>
 ```
 
-この例では、 [`Label`](xref:Xamarin.Forms.Label)はデータトリガーでバインド式を使用して、`CheckBox` の `IsChecked` プロパティを監視します。 このプロパティが `true` になると、`Label` の `FontAttributes` と `FontSize` のプロパティが変更されます。 @No__t_0 プロパティが `false` に戻ると、`Label` の `FontAttributes` および `FontSize` プロパティが初期状態にリセットされます。
+この例では、 [`Label`](xref:Xamarin.Forms.Label)はデータトリガーでバインド式を使用して、 `IsChecked` `CheckBox`のプロパティを監視します。 このプロパティがに`true`なると`FontAttributes` 、 `FontSize`のプロパティと`Label`プロパティが変更されます。 プロパティが`IsChecked`に`false`戻ると、の`FontAttributes`プロパティ`FontSize`とプロパティ`Label`が初期状態にリセットされます。
 
-次のスクリーンショットでは、iOS のスクリーンショットに、`CheckBox` が空の場合の[`Label`](xref:Xamarin.Forms.Label)の書式設定が示されています。一方、Android のスクリーンショットでは、`CheckBox` が確認されたときに `Label` の書式が示されています。
+次のスクリーンショット[`Label`](xref:Xamarin.Forms.Label)では、 `CheckBox`が空の場合、iOS のスクリーンショットに書式が表示され`Label`ます。一方`CheckBox` 、Android のスクリーンショットでは、がオンになっているときに書式が示されています。
 
 [![IOS と Android でのデータバインドチェックボックスのスクリーンショット](checkbox-images/checkbox-databinding.png "データバインドチェックボックス")](checkbox-images/checkbox-databinding-large.png#lightbox "データバインドチェックボックス")
 
@@ -114,25 +114,25 @@ checkBox.CheckedChanged += (sender, e) =>
 
 ## <a name="disable-a-checkbox"></a>チェックボックスを無効にする
 
-アプリケーションが、チェックされている `CheckBox` が有効な操作ではない状態になることがあります。 このような場合は、`IsEnabled` プロパティを `false` に設定することによって、`CheckBox` を無効にできます。
+アプリケーションが、チェック`CheckBox`されるが有効な操作ではない状態になることがあります。 このような場合は`CheckBox` 、 `IsEnabled`プロパティをに設定する`false`ことで、を無効にすることができます。
 
-## <a name="checkbox-appearance"></a>チェックボックスの外観
+## <a name="checkbox-appearance"></a>CheckBox の外観
 
-[@No__t_2](xref:Xamarin.Forms.View)クラスから継承 `CheckBox` プロパティに加えて、`CheckBox` の色を[`Color`](xref:Xamarin.Forms.Color)に設定する `Color` プロパティも定義します。
+[`View`](xref:Xamarin.Forms.View)クラスから継承される`CheckBox` `Color` [`Color`](xref:Xamarin.Forms.Color) `CheckBox`プロパティに加えて、は、その色をに設定するプロパティも定義します。
 
 ```xaml
 <CheckBox Color="Red" />
 ```
 
-次のスクリーンショットは、一連のチェックされた `CheckBox` オブジェクトを示しています。各オブジェクトは、`Color` プロパティを別の[`Color`](xref:Xamarin.Forms.Color)に設定しています。
+次のスクリーンショットは、一連の`CheckBox`チェックされたオブジェクトを示し`Color`ています。各[`Color`](xref:Xamarin.Forms.Color)オブジェクトでは、プロパティが別のに設定されています。
 
 ![IOS と Android の色分けされたチェックボックスのスクリーンショット](checkbox-images/checkbox-colors.png "色付きのチェックボックス")
 
 ## <a name="checkbox-visual-states"></a>チェックボックスの表示状態
 
-`CheckBox` には `IsChecked` [`VisualState`](xref:Xamarin.Forms.VisualState)があります。これを使用すると、`CheckBox` がチェックされたときに変更を開始できます。
+`CheckBox`には、がチェックされたときに、への`CheckBox`ビジュアル変更を開始するために使用できるがあります。 `IsChecked` [`VisualState`](xref:Xamarin.Forms.VisualState)
 
-次の XAML の例は、`IsChecked` 状態の表示状態を定義する方法を示しています。
+次の XAML の例は、 `IsChecked`状態の表示状態を定義する方法を示しています。
 
 ```xaml
 <CheckBox ...>
@@ -156,12 +156,12 @@ checkBox.CheckedChanged += (sender, e) =>
 </CheckBox>
 ```
 
-この例では、`IsChecked` [`VisualState`](xref:Xamarin.Forms.VisualState)は、`CheckBox` がチェックされると、その `Color` プロパティが緑色に設定されることを指定します。 @No__t_0 `VisualState` は、`CheckBox` が通常の状態であるときに、その `Color` プロパティが赤に設定されることを指定します。 したがって、全体的な効果として、`CheckBox` が空の場合は赤、チェックされる場合は緑色になります。
+この例`IsChecked` [`VisualState`](xref:Xamarin.Forms.VisualState)では、をオンにする`CheckBox`と、 `Color`プロパティが緑色に設定されることを指定します。 `Normal` `VisualState`は、 `CheckBox`が通常の状態のときに、 `Color`プロパティを赤に設定することを指定します。 したがって、全体の効果とし`CheckBox`て、が空の場合は赤色になり、チェックされる場合は緑色になります。
 
 表示状態の詳細については、「 [Xamarin. Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 
 - [チェックボックスのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos/)
-- [Xamarin. フォームトリガー](~/xamarin-forms/app-fundamentals/triggers.md)
+- [Xamarin.Forms のトリガー](~/xamarin-forms/app-fundamentals/triggers.md)
 - [Xamarin Forms State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)

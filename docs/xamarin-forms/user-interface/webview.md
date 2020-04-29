@@ -1,42 +1,42 @@
 ---
-title: Xamarin.Forms の WebView
-description: この記事では、ユーザーに Xamarin.Forms WebView クラスを使用して、ローカルを表示する方法、またはネットワークの web コンテンツおよびドキュメントについて説明します。
+title: Xamarin. Forms WebView
+description: この記事では、Xamarin. Forms WebView クラスを使用して、ローカルまたはネットワークの web コンテンツとドキュメントをユーザーに表示する方法について説明します。
 ms.prod: xamarin
 ms.assetid: E44F5D0F-DB8E-46C7-8789-114F1652A6C5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/04/2019
-ms.openlocfilehash: 26fbe6af639c67a94408605ba456bb3a100d2355
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.date: 03/11/2020
+ms.openlocfilehash: 7a2671c47a6d2fceaf2b444cfa8988b4bb8c249c
+ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79305889"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82517259"
 ---
-# <a name="xamarinforms-webview"></a>Xamarin.Forms の WebView
+# <a name="xamarinforms-webview"></a>Xamarin. Forms WebView
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithwebview)
+[![](~/media/shared/download.png)サンプルをダウンロードするサンプルをダウンロードする](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithwebview)
 
-[`WebView`](xref:Xamarin.Forms.WebView)は、アプリで WEB および HTML コンテンツを表示するためのビューです。
+[`WebView`](xref:Xamarin.Forms.WebView)は、アプリで web および HTML コンテンツを表示するためのビューです。
 
 ![アプリブラウザーで](webview-images/in-app-browser.png)
 
 ## <a name="content"></a>コンテンツ
 
-`WebView` は、次の種類のコンテンツをサポートしています。
+`WebView`では、次の種類のコンテンツをサポートしています。
 
-- HTML & CSS websites &ndash; web ビューでは、JavaScript のサポートを含む HTML & CSS を使用して作成された web サイトが完全にサポートされています。
-- ドキュメント &ndash; web ビューは各プラットフォームでネイティブコンポーネントを使用して実装されているため、WebView は各プラットフォームで表示できるドキュメントを表示できます。 IOS と Android で PDF ファイルが動作することを意味します。
-- WebView &ndash; HTML 文字列では、メモリから HTML 文字列を表示できます。
-- Web ビュー &ndash; ローカルファイルでは、上に示したコンテンツの種類のいずれかをアプリに埋め込むことができます。
+- HTML & CSS websites &ndash; WebView では、JavaScript のサポートを含む HTML & css を使用して作成された web サイトが完全にサポートされています。
+- ドキュメント&ndash; webview は各プラットフォームのネイティブコンポーネントを使用して実装されているため、web ビューでは、各プラットフォームで表示できるドキュメントを表示できます。 つまり、PDF ファイルは iOS と Android で動作します。
+- HTML 文字列&ndash; WebView では、メモリから html 文字列を表示できます。
+- ローカルファイル&ndash; WebView では、アプリに埋め込まれている任意のコンテンツの種類を表示できます。
 
 > [!NOTE]
-> Windows の `WebView` は、そのプラットフォームの Internet Explorer でサポートされている場合でも、Silverlight、Flash、または ActiveX コントロールをサポートしていません。
+> `WebView`では、Silverlight、Flash、または ActiveX コントロールが、そのプラットフォームの Internet Explorer でサポートされている場合でも、Windows ではサポートされません。
 
-### <a name="websites"></a>Web サイト
+### <a name="websites"></a>Websites
 
-インターネットから web サイトを表示するには、`WebView`の[`Source`](xref:Xamarin.Forms.WebViewSource)プロパティを文字列の URL に設定します。
+インターネットから web サイトを表示するには、 `WebView`の[`Source`](xref:Xamarin.Forms.WebViewSource)プロパティを文字列の URL に設定します。
 
 ```csharp
 var browser = new WebView
@@ -46,16 +46,16 @@ var browser = new WebView
 ```
 
 > [!NOTE]
-> Url が指定されているプロトコルに完全形式でなければなりません (つまりが必要"http://"または先頭に"https://")。
+> Url は、指定されたプロトコルで完全に形成されている必要があります (つまり、"http://" または "https://" が付加されている必要があります)。
 
-#### <a name="ios-and-ats"></a>iOS および ATS
+#### <a name="ios-and-ats"></a>iOS と ATS
 
-バージョン 9、以降、iOS は、既定でセキュリティのベスト プラクティスを実装しているサーバーと通信するアプリケーションにのみ許可はします。 セキュリティで保護されていないサーバーとの通信を可能にするには `Info.plist` で値を設定する必要があります
+バージョン9以降では、アプリケーションは、ベストプラクティスセキュリティを実装しているサーバーとの通信のみが既定で許可されます。 安全でないサーバーと`Info.plist`の通信を可能にするには、で値を設定する必要があります。
 
 > [!NOTE]
-> アプリケーションがセキュリティで保護されていない web サイトへの接続を必要とする場合は、常に `NSAllowsArbitraryLoads`を使用して完全に有効にするのではなく、必ず `NSExceptionDomains` を使用してドメインを例外として入力してください。 `NSAllowsArbitraryLoads` は、極端な緊急の場合にのみ使用してください。
+> アプリケーションがセキュリティで保護されていない web サイトへの接続を必要とする場合は`NSExceptionDomains` 、を`NSAllowsArbitraryLoads`使用して完全にオフにするのではなく、常にを使用してドメインを例外として入力してください。 `NSAllowsArbitraryLoads`非常に緊急な状況でのみ使用してください。
 
-ATS 要件をバイパスする (このケース xamarin.com) で特定のドメインを有効にする方法を次に示します。
+次の例では、特定のドメイン (この場合は xamarin.com) を有効にして、ATS の要件を回避する方法を示しています。
 
 ```xml
 <key>NSAppTransportSecurity</key>
@@ -77,7 +77,7 @@ ATS 要件をバイパスする (このケース xamarin.com) で特定のドメ
 </key>
 ```
 
-ベスト プラクティスのみを信頼済みサイトを使用して、信頼されていないドメインに追加のセキュリティを活用しながら、ATS をバイパスする一部のドメインを有効にすることをお勧めします。 アプリの ATS を無効にするとの安全性の低いメソッドを次に示します。
+信頼されていないドメインのセキュリティを強化することをドラマしながら、信頼済みサイトを使用できるようにするには、一部のドメインのみを有効にすることをお勧めします。 次の例では、アプリの ATS を無効にする安全性の低い方法を示しています。
 
 ```xml
 <key>NSAppTransportSecurity</key>
@@ -93,7 +93,7 @@ IOS 9 のこの新機能の詳細については、「[アプリトランスポ�
 
 ### <a name="html-strings"></a>HTML 文字列
 
-コードで動的に定義された HTML の文字列を表示する場合は、 [`HtmlWebViewSource`](xref:Xamarin.Forms.HtmlWebViewSource)のインスタンスを作成する必要があります。
+コードで動的に定義された HTML の文字列を表示する場合は、の[`HtmlWebViewSource`](xref:Xamarin.Forms.HtmlWebViewSource)インスタンスを作成する必要があります。
 
 ```csharp
 var browser = new WebView();
@@ -107,14 +107,14 @@ browser.Source = htmlSource;
 
 ![WebView HTML 文字列を表示する](webview-images/html-string.png)
 
-上記のコードでは、`@` を使用して、HTML を[逐語的文字列リテラル](/dotnet/csharp/programming-guide/strings/#regular-and-verbatim-string-literals)としてマークしています。これは、ほとんどのエスケープ文字が無視されることを意味します。
+上記のコードでは`@` 、を使用して、HTML を[逐語的文字列リテラル](/dotnet/csharp/programming-guide/strings/#regular-and-verbatim-string-literals)としてマークしています。これは、ほとんどのエスケープ文字が無視されることを意味します。
 
 > [!NOTE]
-> `WebView` が子であるレイアウトに応じて、HTML コンテンツを表示するには、 [`WebView`](xref:Xamarin.Forms.WebView)の `WidthRequest` と `HeightRequest` のプロパティを設定することが必要になる場合があります。 たとえば、 [`StackLayout`](xref:Xamarin.Forms.StackLayout)ではこれが必須です。
+> が子であるレイアウトに応じ`WidthRequest`て`HeightRequest` 、HTML コンテンツ[`WebView`](xref:Xamarin.Forms.WebView)を表示するには、のプロパティとプロパティを設定する必要がある場合があります。 `WebView` たとえば、ではこれが必須です[`StackLayout`](xref:Xamarin.Forms.StackLayout)。
 
-### <a name="local-html-content"></a>ローカルの HTML コンテンツ
+### <a name="local-html-content"></a>ローカル HTML コンテンツ
 
-WebView は、HTML、CSS からのコンテンツを表示でき、アプリ内で Javascript が埋め込まれています。 例 :
+WebView では、アプリ内に埋め込まれている HTML、CSS、JavaScript のコンテンツを表示できます。 次に例を示します。
 
 ```html
 <html>
@@ -129,7 +129,7 @@ WebView は、HTML、CSS からのコンテンツを表示でき、アプリ内�
 </html>
 ```
 
-CSS の場合:
+スタイル
 
 ```css
 html,body {
@@ -141,34 +141,34 @@ body,p,h1 {
 }
 ```
 
-上記の CSS で指定したフォントは、すべてのプラットフォームに同じフォントをプラットフォームごとにカスタマイズする必要に注意してください。
+すべてのプラットフォームで同じフォントが使用されるわけではないため、上記の CSS で指定したフォントはプラットフォームごとにカスタマイズする必要があることに注意してください。
 
-`WebView`を使用してローカルコンテンツを表示するには、他のように HTML ファイルを開き、`HtmlWebViewSource`の `Html` プロパティに文字列として内容を読み込む必要があります。 ファイルを開く方法の詳細については、「[ファイルの操作](~/xamarin-forms/data-cloud/data/files.md)」を参照してください。
+を使用してローカルコンテンツ`WebView`を表示するには、HTML ファイルを他のものと同様に開いてから、の`Html`プロパティに内容を文字列`HtmlWebViewSource`として読み込む必要があります。 ファイルを開く方法の詳細については、「[ファイルの操作](~/xamarin-forms/data-cloud/data/files.md)」を参照してください。
 
-次のスクリーン ショットは、ローカル コンテンツを表示する各プラットフォームでの結果を表示します。
+次のスクリーンショットは、各プラットフォームでローカルコンテンツを表示した結果を示しています。
 
 ![Web ビューでローカルコンテンツを表示する](webview-images/local-content.png)
 
-最初のページが読み込まれていますが、`WebView` は HTML の取得元についての情報を持っていません。 ローカル リソースを参照するページを処理するときに問題です。 ときに発生する可能性がありますの例には、それぞれにその他 ページは、ローカルのページ リンクを別の JavaScript ファイルの使用し、CSS スタイル シートにページが含まれます。  
+最初のページが読み込まれてい`WebView`ますが、は HTML の取得元についての情報を持っていません。 これは、ローカルリソースを参照するページを処理するときに問題になります。 ローカルページが相互にリンクされている場合、ページで個別の JavaScript ファイルが使用される場合、またはページが CSS スタイルシートにリンクされる場合などに、このような状況が発生する可能性があります。  
 
-この問題を解決するには、ファイルシステム上のファイルを検索する場所を `WebView` に指示する必要があります。 そのためには、`WebView`によって使用される `HtmlWebViewSource` の `BaseUrl` プロパティを設定します。
+この問題を解決するには`WebView` 、ファイルシステム上のファイルの検索場所を指定する必要があります。 これを行うには`BaseUrl` 、 `WebView`によっ`HtmlWebViewSource`て使用されるのプロパティを設定します。
 
-各オペレーティング システム上のファイル システムが異なるため、確認する必要があります。 各プラットフォームでその URL。 Xamarin は、各プラットフォームで実行時に依存関係を解決するための `DependencyService` を公開します。
+各オペレーティングシステム上のファイルシステムが異なるため、各プラットフォームでその URL を確認する必要があります。 Xamarin は、各プラットフォーム`DependencyService`で実行時に依存関係を解決するためのを公開します。
 
-`DependencyService`を使用するには、まず、各プラットフォームに実装できるインターフェイスを定義します。
+を使用する`DependencyService`には、まず、各プラットフォームに実装できるインターフェイスを定義します。
 
 ```csharp
 public interface IBaseUrl { string Get(); }
 ```
 
-各プラットフォームで、インターフェイスを実装するまで、アプリを実行できないことに注意してください。 Common プロジェクトでは、必ず `DependencyService`を使用して `BaseUrl` を設定してください。
+各プラットフォームにインターフェイスが実装されるまで、アプリは実行されません。 Common プロジェクトでは、必ず`BaseUrl`を使用してを設定してください`DependencyService`。
 
 ```csharp
 var source = new HtmlWebViewSource();
 source.BaseUrl = DependencyService.Get<IBaseUrl>().Get();
 ```
 
-各プラットフォーム用のインターフェイスの実装が提供する必要があります。
+その後、各プラットフォームのインターフェイスの実装を提供する必要があります。
 
 #### <a name="ios"></a>iOS
 
@@ -184,7 +184,7 @@ IOS では、次に示すように、web コンテンツは、build action *Bund
 
 -----
 
-`BaseUrl` は、メインバンドルのパスに設定する必要があります。
+は`BaseUrl` 、メインバンドルのパスに設定する必要があります。
 
 ```csharp
 [assembly: Dependency (typeof (BaseUrl_iOS))]
@@ -214,7 +214,7 @@ Android では、次に示すように、ビルドアクション*Androidasset*�
 
 -----
 
-Android では、`BaseUrl` を `"file:///android_asset/"`に設定する必要があります。
+Android では、 `BaseUrl`を次のよう`"file:///android_asset/"`に設定する必要があります。
 
 ```csharp
 [assembly: Dependency (typeof(BaseUrl_Android))]
@@ -230,7 +230,7 @@ namespace WorkingWithWebview.Android
 }
 ```
 
-Android では、`MainActivity.Instance` プロパティによって公開されている現在の Android コンテキストを使用して、 **Assets**フォルダー内のファイルにアクセスすることもできます。
+Android では、次の**Assets**ように`MainActivity.Instance`プロパティによって公開されている現在の android コンテキストから Assets フォルダー内のファイルにアクセスすることもできます。
 
 ```csharp
 var assetManager = MainActivity.Instance.Assets;
@@ -244,7 +244,7 @@ using (var streamReader = new StreamReader (assetManager.Open ("local.html")))
 
 ユニバーサル Windows プラットフォーム (UWP) プロジェクトで、[ビルドアクション] を [*コンテンツ*] に設定して、HTML、CSS、およびイメージをプロジェクトルートに配置します。
 
-`BaseUrl` を `"ms-appx-web:///"`に設定する必要があります。
+は`BaseUrl` 、次のよう`"ms-appx-web:///"`に設定する必要があります。
 
 ```csharp
 [assembly: Dependency(typeof(BaseUrl))]
@@ -262,20 +262,20 @@ namespace WorkingWithWebview.UWP
 
 ## <a name="navigation"></a>ナビゲーション
 
-Web ビューには、いくつかのメソッドとプロパティが使用可能なナビゲーションがサポートされています。
+WebView では、使用できるようにするいくつかのメソッドとプロパティによるナビゲーションがサポートされています。
 
-- **Goforward ()** &ndash; `CanGoForward` が true の場合、`GoForward` を呼び出すと、次に閲覧されたページに移動します。
-- **GoBack ()** &ndash; `CanGoBack` が true の場合、`GoBack` を呼び出すと最後に閲覧されたページに移動します。
-- **CanGoBack** &ndash; `true` 戻るページがある場合は、ブラウザーが開始 URL にあるかどうか `false` ます。
-- ユーザーが後方に移動し、既にアクセスされているページに進むことができる場合は、 **CanGoForward** &ndash; `true` ます。
+- **Goforward ()** &ndash;が`CanGoForward` true の場合、 `GoForward`を呼び出すと、次のページに移動します。
+- **GoBack ()** &ndash;が`CanGoBack` true の場合、 `GoBack`を呼び出すと、最後にアクセスしたページに移動します。
+- **CanGoBack** &ndash; `true`ブラウザーが開始 URL にある場合は、 `false`戻るページがある場合は CanGoBack。
+- ユーザーが後方に移動し、既にアクセスされているページに進むことができる場合は**CanGoForward** &ndash; `true` 。
 
-ページ内では、`WebView` はマルチタッチジェスチャをサポートしていません。 重要なことを確認するコンテンツをモバイルに最適化されたし、ズームがなくても表示されます。
+ページ内で`WebView`は、はマルチタッチジェスチャをサポートしていません。 コンテンツがモバイルに最適化されており、ズームを必要とせずに表示されることを確認することが重要です。
 
-アプリケーションでは、デバイスのブラウザーではなく、`WebView`内にリンクを表示するのが一般的です。 これらの状況では、通常のナビゲーションを許可すると便利ですが、ユーザーからのバックアップ開始リンク上にあるときに、アプリは、通常のアプリ ビューを返す必要があります。
+アプリケーションでは、デバイスのブラウザーではなく、 `WebView`内のリンクを表示するのが一般的です。 このような状況では、通常のナビゲーションを許可すると便利ですが、ユーザーが開始リンクを使用しているときにユーザーが戻ると、アプリは通常のアプリビューに戻る必要があります。
 
-このシナリオを有効にするのにには、組み込みのナビゲーション メソッドとプロパティを使用します。
+組み込みのナビゲーションメソッドとプロパティを使用して、このシナリオを有効にします。
 
-ブラウザー ビューのページを作成して開始します。
+まず、ブラウザービューのページを作成します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -293,7 +293,7 @@ Web ビューには、いくつかのメソッドとプロパティが使用可�
 </ContentPage>
 ```
 
-コードの分離。
+コードビハインドで、次のようにします。
 
 ```csharp
 public partial class InAppBrowserXaml : ContentPage
@@ -326,33 +326,33 @@ public partial class InAppBrowserXaml : ContentPage
 }
 ```
 
-以上で終わりです。
+これで完了です。
 
 ![WebView ナビゲーションボタン](webview-images/in-app-browser.png)
 
-## <a name="events"></a>イベント
+## <a name="events"></a>events
 
-Web ビューは、状態の変化に対応するために、次のイベントを発生させます。
+WebView は、状態の変化に対応するために次のイベントを発生させます。
 
-- [`Navigating`](xref:Xamarin.Forms.WebView.Navigating) – WebView が新しいページの読み込みを開始するときに発生するイベントです。
-- [`Navigated`](xref:Xamarin.Forms.WebView.Navigated) –ページが読み込まれ、ナビゲーションが停止したときに発生するイベントです。
-- [`ReloadRequested`](xref:Xamarin.Forms.WebView.ReloadRequested) –現在のコンテンツを再読み込みする要求が行われたときに発生するイベントです。
+- [`Navigating`](xref:Xamarin.Forms.WebView.Navigating)– WebView が新しいページの読み込みを開始するときに発生するイベントです。
+- [`Navigated`](xref:Xamarin.Forms.WebView.Navigated)–ページが読み込まれ、ナビゲーションが停止したときに発生するイベントです。
+- [`ReloadRequested`](xref:Xamarin.Forms.WebView.ReloadRequested)–現在のコンテンツを再読み込みする要求が行われたときに発生するイベントです。
 
-[`Navigating`](xref:Xamarin.Forms.WebView.Navigating)イベントに付随する[`WebNavigatingEventArgs`](xref:Xamarin.Forms.WebNavigatingEventArgs)オブジェクトには、次の4つのプロパティがあります。
+イベント[`WebNavigatingEventArgs`](xref:Xamarin.Forms.WebNavigatingEventArgs)に[`Navigating`](xref:Xamarin.Forms.WebView.Navigating)付随するオブジェクトには、次の4つのプロパティがあります。
 
-- `Cancel` –ナビゲーションを取り消すかどうかを示します。
-- `NavigationEvent` –発生したナビゲーションイベント。
-- `Source` –ナビゲーションを実行した要素。
-- `Url` –ナビゲーション先。
+- `Cancel`–ナビゲーションを取り消すかどうかを示します。
+- `NavigationEvent`–発生したナビゲーションイベント。
+- `Source`–ナビゲーションを実行した要素。
+- `Url`: ナビゲーション先。
 
-[`Navigated`](xref:Xamarin.Forms.WebView.Navigated)イベントに付随する[`WebNavigatedEventArgs`](xref:Xamarin.Forms.WebNavigatedEventArgs)オブジェクトには、次の4つのプロパティがあります。
+イベント[`WebNavigatedEventArgs`](xref:Xamarin.Forms.WebNavigatedEventArgs)に[`Navigated`](xref:Xamarin.Forms.WebView.Navigated)付随するオブジェクトには、次の4つのプロパティがあります。
 
-- `NavigationEvent` –発生したナビゲーションイベント。
-- `Result` – [`WebNavigationResult`](xref:Xamarin.Forms.WebNavigationResult)列挙メンバーを使用した、ナビゲーションの結果について説明します。 有効な値は `Cancel`、`Failure`、`Success`、および `Timeout` です。
-- `Source` –ナビゲーションを実行した要素。
-- `Url` –ナビゲーション先。
+- `NavigationEvent`–発生したナビゲーションイベント。
+- `Result`– [`WebNavigationResult`](xref:Xamarin.Forms.WebNavigationResult)列挙メンバーを使用したナビゲーションの結果について説明します。 有効な値は `Cancel`、`Failure`、`Success`、および `Timeout` です。
+- `Source`–ナビゲーションを実行した要素。
+- `Url`: ナビゲーション先。
 
-読み込みに長い時間がかかる web ページを使用することが予想される場合は、 [`Navigating`](xref:Xamarin.Forms.WebView.Navigating)イベントと[`Navigated`](xref:Xamarin.Forms.WebView.Navigated)イベントを使用して状態インジケーターを実装することを検討してください。 例 :
+読み込みに長い時間がかかる web ページを使用することが予想される[`Navigating`](xref:Xamarin.Forms.WebView.Navigating)場合[`Navigated`](xref:Xamarin.Forms.WebView.Navigated)は、イベントとイベントを使用して状態インジケーターを実装することを検討してください。 次に例を示します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -367,7 +367,7 @@ Web ビューは、状態の変化に対応するために、次のイベント�
 </ContentPage>
 ```
 
-2 つのイベントのハンドラー:
+2つのイベントハンドラー:
 
 ```csharp
 void webviewNavigating(object sender, WebNavigatingEventArgs e)
@@ -381,17 +381,17 @@ void webviewNavigated(object sender, WebNavigatedEventArgs e)
 }
 ```
 
-これは、(読み込み)、次の出力が得られます。
+この結果、次の出力 (読み込み) が行われます。
 
 ![WebView ナビゲーションイベントの例](webview-images/loading-start.png)
 
-完成した読み込み:
+読み込みが完了しました:
 
 ![WebView ナビゲーションイベントの例](webview-images/loading-end.png)
 
-## <a name="reloading-content"></a>コンテンツを再読み込み
+## <a name="reloading-content"></a>コンテンツの再読み込み
 
-[`WebView`](xref:Xamarin.Forms.WebView)には、現在のコンテンツを再読み込みするために使用できる `Reload` メソッドがあります。
+[`WebView`](xref:Xamarin.Forms.WebView)には`Reload` 、現在のコンテンツを再読み込みするために使用できるメソッドがあります。
 
 ```csharp
 var webView = new WebView();
@@ -399,41 +399,41 @@ var webView = new WebView();
 webView.Reload();
 ```
 
-`Reload` メソッドが呼び出されると、`ReloadRequested` イベントが発生し、現在のコンテンツを再読み込みする要求が行われたことを示します。
+`Reload`メソッドが呼び出されると、 `ReloadRequested`イベントが発生し、現在のコンテンツを再読み込みする要求が行われたことを示します。
 
-## <a name="performance"></a>パフォーマンス テスト
+## <a name="performance"></a>パフォーマンス
 
-人気の web ブラウザーでは、ハードウェアアクセラレータレンダリングや JavaScript コンパイルなどのテクノロジが採用されています。 Xamarin. Forms 4.4 より前では、`UIWebView` クラスによって `WebView` が iOS に実装されていました。 ただし、この実装では、これらのテクノロジの多くを利用できませんでした。 そのため、Xamarin. 4.4 フォーム `WebView` は、より高速な参照をサポートする `WkWebView` クラスによって iOS に実装されます。
+人気の web ブラウザーでは、ハードウェアアクセラレータレンダリングや JavaScript コンパイルなどのテクノロジが採用されています。 Xamarin. Forms 4.4 より前では、 `WebView` `UIWebView`クラスによって、Xamarin. フォームが iOS に実装されていました。 ただし、この実装では、これらのテクノロジの多くを利用できませんでした。 そのため、Xamarin. Forms 4.4 以降では、より`WebView`高速な参照をサポートする`WkWebView`クラスによって、iOS に xamarin 形式が実装されています。
 
 > [!NOTE]
-> IOS では、`WkWebViewRenderer` には `WkWebViewConfiguration` 引数を受け取るコンストラクターオーバーロードがあります。 これにより、作成時にレンダラーを構成できます。
+> IOS では、 `WkWebViewRenderer`に引数を`WkWebViewConfiguration`受け取るコンストラクターオーバーロードがあります。 これにより、作成時にレンダラーを構成できます。
 
-アプリケーションは、iOS `UIWebView` クラスを使用して、互換性上の理由から Xamarin. フォーム `WebView`を実装することができます。 これを実現するには、アプリケーションの iOS platform プロジェクトの**AssemblyInfo.cs**ファイルに次のコードを追加します。
+アプリケーションは、iOS `UIWebView`クラスを使用して、互換性の理由から、 `WebView`Xamarin. フォームを実装することができます。 これを実現するには、アプリケーションの iOS platform プロジェクトの**AssemblyInfo.cs**ファイルに次のコードを追加します。
 
 ```csharp
 // Opt-in to using UIWebView instead of WkWebView.
 [assembly: ExportRenderer(typeof(Xamarin.Forms.WebView), typeof(Xamarin.Forms.Platform.iOS.WebViewRenderer))]
 ```
 
-既定では、Android の `WebView` は、組み込みのブラウザーほど高速です。
+`WebView`既定では、Android では、組み込みのブラウザーほど高速です。
 
-[UWP WebView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/web-view)では、Microsoft Edge レンダリングエンジンを使用します。 デスクトップ、タブレット デバイスには、Edge ブラウザー自体を使用する場合と同じパフォーマンスが表示されます。
+[UWP WebView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/web-view)では、Microsoft Edge レンダリングエンジンを使用します。 デスクトップデバイスとタブレットデバイスでは、Edge ブラウザー自体を使用した場合と同じパフォーマンスが表示されます。
 
 ## <a name="permissions"></a>アクセス許可
 
-`WebView` を機能させるには、プラットフォームごとにアクセス許可が設定されていることを確認する必要があります。 一部のプラットフォームでは、`WebView` はデバッグモードで機能しますが、リリース用にビルドされる場合は動作しないことに注意してください。 Android では、インターネット アクセスと同様の一部のアクセス許可は、デバッグ モードでの Mac の Visual Studio によって既定で設定されているためにです。
+`WebView`を機能させるには、各プラットフォームに対してアクセス許可が設定されていることを確認する必要があります。 一部のプラットフォームでは、 `WebView`はデバッグモードで機能しますが、リリース用にビルドされる場合は動作しないことに注意してください。 これは、Android でのインターネットアクセスのような一部のアクセス許可は、既定でデバッグモードのときに Visual Studio for Mac 設定されているためです。
 
-- **UWP** &ndash; には、ネットワークコンテンツを表示するときにインターネット (クライアント & サーバー) 機能が必要です。
-- **Android** &ndash; では、ネットワークからコンテンツを表示する場合にのみ `INTERNET` が必要です。 ローカル コンテンツには、特殊なアクセス許可は不要です。
-- **iOS** &ndash; には特別なアクセス許可は必要ありません。
+- **UWP** &ndash;では、ネットワークコンテンツを表示するときに、インターネット (クライアント & サーバー) 機能が必要です。
+- **Android** &ndash;で`INTERNET`は、ネットワークからコンテンツを表示する場合にのみ必要です。 ローカルコンテンツには特別なアクセス許可は必要ありません。
+- **iOS** &ndash;には特別なアクセス許可は必要ありません。
 
-## <a name="layout"></a>[レイアウト]
+## <a name="layout"></a>レイアウト
 
-他の多くの Xamarin 形式のビューとは異なり、`WebView` では、StackLayout または RelativeLayout に含まれるときに `HeightRequest` と `WidthRequest` を指定する必要があります。 これらのプロパティを指定しなかった場合、`WebView` は表示されません。
+他の多くの Xamarin 形式のビュー `WebView`とは`HeightRequest`異なり`WidthRequest` 、では、stacklayout または RelativeLayout に含まれているときにとを指定する必要があります。 これらのプロパティを指定しなかった場合`WebView` 、は表示されません。
 
-次の例では、`WebView`s をレンダリングするために動作するレイアウトを示します。
+次の例では、をレンダリング`WebView`するためのレイアウトを示します。
 
-WidthRequest & HeightRequest StackLayout:
+幅の要求 & 高さ要求の StackLayout:
 
 ```xaml
 <StackLayout>
@@ -444,7 +444,7 @@ WidthRequest & HeightRequest StackLayout:
 </StackLayout>
 ```
 
-WidthRequest & HeightRequest [相対レイアウト]:
+RelativeLayout with 幅要求 & 高さ要求:
 
 ```xaml
 <RelativeLayout>
@@ -472,7 +472,7 @@ AbsoluteLayout の幅を & 要求し*ない*の高さの要求:
 </AbsoluteLayout>
 ```
 
-高さ要求の*ない*グリッドは、高さ要求を & ます。 グリッドは、要求された高さと幅を指定することを必要としないいくつかのレイアウトの 1 つです。 します。
+高さ要求の*ない*グリッドは、高さ要求を & ます。 Grid は、要求された高さと幅の指定を必要としない、いくつかのレイアウトの1つです。
 
 ```xaml
 <Grid>
@@ -487,7 +487,7 @@ AbsoluteLayout の幅を & 要求し*ない*の高さの要求:
 
 ## <a name="invoking-javascript"></a>JavaScript の呼び出し
 
-[`WebView`](xref:Xamarin.Forms.WebView)には、からC#JavaScript 関数を呼び出し、結果を呼び出し元C#のコードに返す機能が含まれています。 これを行うには、 [WebView](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-webview)サンプルの次の例に示すように、 [`WebView.EvaluateJavaScriptAsync`](xref:Xamarin.Forms.WebView.EvaluateJavaScriptAsync*)メソッドを使用します。
+[`WebView`](xref:Xamarin.Forms.WebView)c# から JavaScript 関数を呼び出して、呼び出し元の C# コードに結果を返す機能が含まれています。 これは、次の[`WebView.EvaluateJavaScriptAsync`](xref:Xamarin.Forms.WebView.EvaluateJavaScriptAsync*) [WebView](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-webview)サンプルの例に示すように、メソッドを使用して実現されます。
 
 ```csharp
 var numberEntry = new Entry { Text = "5" };
@@ -500,7 +500,7 @@ string result = await webView.EvaluateJavaScriptAsync($"factorial({number})");
 resultLabel.Text = $"Factorial of {number} is {result}.";
 ```
 
-[`WebView.EvaluateJavaScriptAsync`](xref:Xamarin.Forms.WebView.EvaluateJavaScriptAsync*)メソッドは、引数として指定された JavaScript を評価し、すべての結果を `string`として返します。 この例では、`factorial` JavaScript 関数が呼び出され、結果として `number` の階乗が返されます。 この JavaScript 関数は、 [`WebView`](xref:Xamarin.Forms.WebView)によって読み込まれるローカルの HTML ファイルで定義されています。次の例を参照してください。
+メソッド[`WebView.EvaluateJavaScriptAsync`](xref:Xamarin.Forms.WebView.EvaluateJavaScriptAsync*)は、引数として指定された JavaScript を評価し、結果を`string`として返します。 この例では、 `factorial` JavaScript 関数が呼び出され、結果として`number`の階乗が返されます。 この JavaScript 関数は、によっ[`WebView`](xref:Xamarin.Forms.WebView)て読み込まれるローカルの HTML ファイルで定義され、次の例のようになります。
 
 ```html
 <html>
@@ -519,45 +519,72 @@ function factorial(num) {
 </html>
 ```
 
+## <a name="cookies"></a>クッキー
+
+クッキーはに設定でき[`WebView`](xref:Xamarin.Forms.WebView)、その後、web 要求と共に指定された URL に送信されます。 これを実現するに`Cookie`は、オブジェクト`CookieContainer`をに追加します。このオブジェクトは、 `WebView.Cookies`バインド可能なプロパティの値として設定されます。 この例を次のコードに示します。
+
+```csharp
+using System.Net;
+using Xamarin.Forms;
+// ...
+
+CookieContainer cookieContainer = new CookieContainer();
+Uri uri = new Uri("https://dotnet.microsoft.com/apps/xamarin", UriKind.RelativeOrAbsolute);
+
+Cookie cookie = new Cookie
+{
+    Name = "XamarinCookie",
+    Expires = DateTime.Now.AddDays(1),
+    Value = "My cookie",
+    Domain = uri.Host,
+    Path = "/"
+};
+cookieContainer.Add(uri, cookie);
+webView.Cookies = cookieContainer;
+webView.Source = new UrlWebViewSource { Url = uri.ToString() };
+```
+
+この例では、1 `Cookie`つのが`CookieContainer`オブジェクトに追加され、その後、 `WebView.Cookies`プロパティの値として設定されます。 が[`WebView`](xref:Xamarin.Forms.WebView)指定された URL に web 要求を送信すると、クッキーが要求と共に送信されます。
+
 ## <a name="uiwebview-deprecation-and-app-store-rejection-itms-90809"></a>UIWebView の廃止と App Store の拒否 (ITMS-90809)
 
-2020年4月以降、 [Apple は](https://developer.apple.com/news/?id=12232019b)非推奨の `UIWebView` API を引き続き使用するアプリを拒否します。 Xamarin. Forms が既定の `WKWebView` に切り替えられましたが、Xamarin のバイナリに古い SDK への参照が残っています。 現在の[iOS リンカー](~/ios/deploy-test/linker.md)の動作では、これは削除されません。そのため、アプリストアに送信するときに、非推奨の `UIWebView` API はアプリから参照されているように見えます。
+2020年4月以降、 [Apple は](https://developer.apple.com/news/?id=12232019b)非推奨`UIWebView`の API をまだ使用しているアプリを拒否します。 Xamarin. Forms が既定値と`WKWebView`してに切り替えられていても、Xamarin. forms バイナリに以前の SDK への参照があります。 現在の[iOS リンカー](~/ios/deploy-test/linker.md)の動作では、これは削除されませ`UIWebView`ん。そのため、アプリストアに送信するときに、非推奨の API はアプリから参照されているように見えます。
 
-この問題を解決するには、リンカーのプレビューバージョンを使用できます。 プレビューを有効にするには、リンカーに `--optimize=experimental-xforms-product-type` 追加の引数を指定する必要があります。 
+この問題を解決するには、リンカーのプレビューバージョンを使用できます。 プレビューを有効にするには、リンカーに追加の引数`--optimize=experimental-xforms-product-type`を指定する必要があります。
 
 これを行うための前提条件は次のとおりです。
 
-- Xamarin. **forms 4.5 以降**&ndash; プレリリースバージョンの Xamarin. forms 4.5 を使用できます。
-- **13.10.0.17 以降**&ndash; [Visual Studio で](~/cross-platform/troubleshooting/questions/version-logs.md#version-information)xamarin の ios バージョンを確認します。 このバージョンの Xamarin. iOS は Visual Studio for Mac dbms-guide-8.4.1 と Visual Studio 16.4.3 に含まれています。
-- &ndash; **`UIWebView`への参照を削除**します。コードには、`UIWebView` または `UIWebView`を使用するクラスへの参照を含めることはできません。
+- Xamarin. forms **4.5 以降** &ndash;のプレリリースバージョンの xamarin. forms 4.5 を使用できます。
+- **13.10.0.17 以上では** &ndash; 、 [Visual Studio で](~/cross-platform/troubleshooting/questions/version-logs.md#version-information)xamarin の ios バージョンを確認します。 このバージョンの Xamarin. iOS は Visual Studio for Mac dbms-guide-8.4.1 と Visual Studio 16.4.3 に含まれています。
+- コード**へ`UIWebView` ** &ndash;の参照の削除には、または`UIWebView`を使用するクラスへの`UIWebView`参照を含めることはできません。
 
 ### <a name="configure-the-linker-preview"></a>リンカープレビューの構成
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-リンカーで `UIWebView` 参照を削除するには、次の手順に従います。
+リンカーで参照を削除`UIWebView`するには、次の手順に従います。
 
-1. Ios**プロジェクトのプロパティを開き**&ndash; ios プロジェクトを右クリックし、 **[プロパティ]** を選択します。
-1. [ **Ios ビルド] セクションに移動**し、 **[ios ビルド]** セクション &ndash; 選択します。
-1. 追加の mtouch 引数に &ndash; 追加の**mtouch 引数を更新**します。このフラグは、既に存在している可能性がある値に加え**て、このフラグ `--optimize=experimental-xforms-product-type` 追加し**ます。 注: このフラグは、SDK に対して**のみ**設定される**リンカーの動作**、またはすべてを**リンク**します。 何らかの理由で、リンカーの動作を All に設定したときにエラーが発生した場合は、おそらく、アプリケーションコードまたはリンカーセーフではないサードパーティ製のライブラリ内で問題が発生している可能性があります。 リンカーの詳細については、「 [Xamarin IOS アプリのリンク](~/ios/deploy-test/linker.md)」を参照してください。
-1. **すべてのビルド構成を更新**し &ndash; ウィンドウの上部にある **[構成]** と **[プラットフォーム]** の一覧を使用して、すべてのビルド構成を更新します。 更新する最も重要な構成は、**リリース/iPhone**の構成です。通常、これは、App Store の送信用にビルドを作成するために使用されるためです。
+1. **Ios プロジェクトのプロパティ** &ndash;を開き、ios プロジェクトを右クリックして、[**プロパティ**] を選択します。
+1. **Ios のビルドセクション** &ndash;に移動し、[ **ios ビルド**] セクションを選択します。
+1. 追加の**mtouch 引数**の**追加の mtouch 引数** &ndash;を更新します`--optimize=experimental-xforms-product-type` 。このフラグは、既に存在している可能性がある値に加えて追加します。 注: このフラグは、SDK に対して**のみ**設定される**リンカーの動作**、またはすべてを**リンク**します。 何らかの理由で、リンカーの動作を All に設定したときにエラーが発生した場合は、おそらく、アプリケーションコードまたはリンカーセーフではないサードパーティ製のライブラリ内で問題が発生している可能性があります。 リンカーの詳細については、「 [Xamarin IOS アプリのリンク](~/ios/deploy-test/linker.md)」を参照してください。
+1. **すべてのビルド構成** &ndash;を更新するウィンドウの上部にある [**構成**] と [**プラットフォーム**] の一覧を使用して、すべてのビルド構成を更新します。 更新する最も重要な構成は、**リリース/iPhone**の構成です。通常、これは、App Store の送信用にビルドを作成するために使用されるためです。
 
 このスクリーンショットでは、新しいフラグが設定されたウィンドウが表示されます。
 
-[iOS ビルドセクションでフラグを設定 ![](webview-images/iosbuildblade-vs-sml.png)](webview-images/iosbuildblade-vs.png#lightbox)
+[![IOS のビルドセクションでフラグを設定する](webview-images/iosbuildblade-vs-sml.png)](webview-images/iosbuildblade-vs.png#lightbox)
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-リンカーで `UIWebView` 参照を削除するには、次の手順に従います。
+リンカーで参照を削除`UIWebView`するには、次の手順に従います。
 
-1. Ios**プロジェクトオプション &ndash; 開き**、ios プロジェクトを右クリックして、 **[オプション]** を選択します。
-1. [ **Ios ビルド] セクションに移動**し、 **[ios ビルド]** セクション &ndash; 選択します。
-1. 追加の mtouch 引数に &ndash; 追加の mtouch 引数を更新します。このフラグは、既に存在している可能性がある値に加え**て、このフラグ `--optimize=experimental-xforms-product-type` 追加し** ます。 注: このフラグは、SDK に対して**のみ**設定される**リンカーの動作**、またはすべてを**リンク**します。 何らかの理由で、リンカーの動作を All に設定したときにエラーが発生した場合は、おそらく、アプリケーションコードまたはリンカーセーフではないサードパーティ製のライブラリ内で問題が発生している可能性があります。 リンカーの詳細については、「 [Xamarin IOS アプリのリンク](~/ios/deploy-test/linker.md)」を参照してください。
-1. **すべてのビルド構成を更新**し &ndash; ウィンドウの上部にある **[構成]** と **[プラットフォーム]** の一覧を使用して、すべてのビルド構成を更新します。 更新する最も重要な構成は、**リリース/iPhone**の構成です。通常、これは、App Store の送信用にビルドを作成するために使用されるためです。
+1. **Ios プロジェクトのオプション** &ndash;を開く ios プロジェクトを右クリックし、[**オプション**] を選択します。
+1. **Ios のビルドセクション** &ndash;に移動し、[ **ios ビルド**] セクションを選択します。
+1. **_mtouch_ **追加の&ndash; ** _mtouch_引数**の追加の mtouch 引数を更新します`--optimize=experimental-xforms-product-type` 。このフラグは、既に存在している可能性がある値に加えて追加します。 注: このフラグは、SDK に対して**のみ**設定される**リンカーの動作**、またはすべてを**リンク**します。 何らかの理由で、リンカーの動作を All に設定したときにエラーが発生した場合は、おそらく、アプリケーションコードまたはリンカーセーフではないサードパーティ製のライブラリ内で問題が発生している可能性があります。 リンカーの詳細については、「 [Xamarin IOS アプリのリンク](~/ios/deploy-test/linker.md)」を参照してください。
+1. **すべてのビルド構成** &ndash;を更新するウィンドウの上部にある [**構成**] と [**プラットフォーム**] の一覧を使用して、すべてのビルド構成を更新します。 更新する最も重要な構成は、**リリース/iPhone**の構成です。通常、これは、App Store の送信用にビルドを作成するために使用されるためです。
 
 このスクリーンショットでは、新しいフラグが設定されたウィンドウが表示されます。
 
-[iOS ビルドセクションでフラグを設定 ![](webview-images/iosbuildblade-xs-sml.png)](webview-images/iosbuildblade-xs.png#lightbox)
+[![IOS のビルドセクションでフラグを設定する](webview-images/iosbuildblade-xs-sml.png)](webview-images/iosbuildblade-xs.png#lightbox)
 
 -----
 

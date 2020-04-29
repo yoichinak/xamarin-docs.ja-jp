@@ -1,24 +1,24 @@
 ---
 title: IOS のモーダルページプレゼンテーションスタイル
-description: プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォーム上でのみ利用できる機能の使用を可能にします。 この記事では、iOS プラットフォーム固有の設定を使用して、モーダルページのプレゼンテーションスタイルを設定する方法について説明します。
+description: プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、iOS プラットフォーム固有の設定を使用して、モーダルページのプレゼンテーションスタイルを設定する方法について説明します。
 ms.prod: xamarin
 ms.assetid: C791F7CF-330A-44BA-987A-4CFCCBB9278B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/24/2018
-ms.openlocfilehash: 3b1a88968334bed42be53119c26de43ef9cd1419
-ms.sourcegitcommit: eb23b7d745d1090376f9def07e0f11cb089494d0
+ms.date: 04/02/2020
+ms.openlocfilehash: 5078b280499929e0e2e3691539cf1927b4c79fe7
+ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72171065"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82517535"
 ---
 # <a name="modal-page-presentation-style-on-ios"></a>IOS のモーダルページプレゼンテーションスタイル
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![](~/media/shared/download.png)サンプルをダウンロードするサンプルをダウンロードする](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-この iOS プラットフォーム固有のは、モーダルページのプレゼンテーションスタイルを設定するために使用されます。 XAML で設定して使用される、`Page.ModalPresentationStyle`バインド可能なプロパティを`UIModalPresentationStyle`列挙値。
+この iOS プラットフォーム固有のは、モーダルページのプレゼンテーションスタイルを設定するために使用されます。 これは、バインド可能な`Page.ModalPresentationStyle` `UIModalPresentationStyle`プロパティを列挙値に設定することによって XAML で使用されます。
 
 ```xaml
 <ContentPage ...
@@ -28,7 +28,7 @@ ms.locfileid: "72171065"
 </ContentPage>
 ```
 
-代わりに、fluent API を使用して c# から使用できます。
+または、fluent API を使用して C# から使用することもできます。
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -45,22 +45,25 @@ public class iOSModalFormSheetPageCS : ContentPage
 }
 ```
 
-`Page.On<iOS>`メソッドは、このプラットフォーム仕様が iOS上 でのみ動作することを指定します。 `Page.SetModalPresentationStyle`メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)でモーダル プレゼンテーションのスタイルを設定する名前空間が使用される、 [ `Page` ](xref:Xamarin.Forms.Page) 、次のいずれかを指定することによって`UIModalPresentationStyle`列挙型値:
+メソッド`Page.On<iOS>`は、このプラットフォーム固有のが iOS 上でのみ実行されることを指定します。 名前空間のメソッド`Page.SetModalPresentationStyle`は、次`UIModalPresentationStyle`の列挙値のいずれかを指定すること[`Page`](xref:Xamarin.Forms.Page)によって、のモーダルプレゼンテーションスタイルを設定するために使用されます。 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)
 
-- `FullScreen`、画面全体を網羅するモーダル表示スタイルを設定します。 既定では、このプレゼンテーションのスタイルを使用してモーダル ページが表示されます。
-- `FormSheet`、モーダル プレゼンテーションのスタイルを中心とした、画面より小さいを設定します。
+- `FullScreen`。画面全体を囲むようにモーダルプレゼンテーションスタイルを設定します。 既定では、このプレゼンテーションスタイルを使用してモーダルページが表示されます。
+- `FormSheet`。画面の中央に配置されるモーダルプレゼンテーションスタイルを設定します。
+- `Automatic`。モーダルプレゼンテーションスタイルを、システムによって選択された既定値に設定します。 ほとんどのビューコントローラーで`UIKit`は、が`UIModalPresentationStyle.PageSheet`にマップされますが、システムビューコントローラーによっては別のスタイルにマップされる場合があります。
+- `OverFullScreen`。画面を覆うようにモーダルプレゼンテーションスタイルを設定します。
+- `PageSheet`。基になるコンテンツに対応するモーダルプレゼンテーションスタイルを設定します。
 
-さらに、`GetModalPresentationStyle`の現在の値を取得するメソッドを使用することができます、`UIModalPresentationStyle`列挙型に適用される、 [ `Page`](xref:Xamarin.Forms.Page)します。
+また、 `GetModalPresentationStyle`メソッドを使用して、 `UIModalPresentationStyle` [`Page`](xref:Xamarin.Forms.Page)に適用されている列挙体の現在の値を取得することもできます。
 
-その結果にモーダル プレゼンテーション スタイル、 [ `Page` ](xref:Xamarin.Forms.Page)設定できます。
+結果として、のモーダルプレゼンテーションスタイルを[`Page`](xref:Xamarin.Forms.Page)設定できます。
 
-[![](page-presentation-style-images/modal-presentation-style-small.png "IPad のモーダルプレゼンテーションスタイル")](page-presentation-style-images/modal-presentation-style-large.png#lightbox "IPad のモーダルプレゼンテーションスタイル")
+[![](page-presentation-style-images/modal-presentation-style-small.png "Modal Presentation Styles")](page-presentation-style-images/modal-presentation-style-large.png#lightbox "Modal Presentation Styles")
 
 > [!NOTE]
-> モーダルの表示スタイルを設定するプラットフォームに固有のこのを使用するページには、モーダル ナビゲーションを使用する必要があります。 詳細については、次を参照してください。 [Xamarin.Forms のモーダル ページ](~/xamarin-forms/app-fundamentals/navigation/modal.md)します。
+> このプラットフォーム固有のを使用してモーダル表示スタイルを設定するページでは、モーダルナビゲーションを使用する必要があります。 詳細については、「 [Xamarin. フォームモーダルページ](~/xamarin-forms/app-fundamentals/navigation/modal.md)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 
-- [プラットフォーム仕様 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
-- [プラットフォーム仕様の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
+- [PlatformSpecifics (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [プラットフォーム固有設定の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific の API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)
