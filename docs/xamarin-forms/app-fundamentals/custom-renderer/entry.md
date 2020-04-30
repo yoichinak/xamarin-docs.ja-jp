@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/26/2018
-ms.openlocfilehash: dccc47d8ee69686fe2ac7409f75284c64c99a2d4
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 86714c2041edcd98c2bdd7b740a897dab8069752
+ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70772014"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82516475"
 ---
 # <a name="customizing-an-entry"></a>Entry のカスタマイズ
 
@@ -35,7 +35,7 @@ _Xamarin.Forms の Entry コントロールによって、1 行のテキスト�
 プラットフォームごとに背景色が異なる [`Entry`](xref:Xamarin.Forms.Entry) コントロールを実装するため、項目ごとに順番に説明します。
 
 > [!IMPORTANT]
-> この記事では、単純なカスタム レンダラーを作成する方法について説明します。 ただし、プラットフォームごとに背景色が異なる `Entry` を実装するためにカスタム レンダラーを作成する必要はありません。 これは、[`Device`](xref:Xamarin.Forms.Device) クラス、またはプラットフォーム固有の値を提供する `OnPlatform` マークアップ拡張を使用すると、より簡単に実行できます。 詳細については、「[Providing Platform-Specific Values](~/xamarin-forms/platform/device.md#providing-platform-specific-values)」(プラットフォーム固有の値の提供) と「[OnPlatform マークアップ拡張機能](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform-markup-extension)」を参照してください。
+> この記事では、単純なカスタム レンダラーを作成する方法について説明します。 ただし、プラットフォームごとに背景色が異なる `Entry` を実装するためにカスタム レンダラーを作成する必要はありません。 これは、[`Device`](xref:Xamarin.Forms.Device) クラス、またはプラットフォーム固有の値を提供する `OnPlatform` マークアップ拡張を使用すると、より簡単に実行できます。 詳細については、「[Providing Platform-Specific Values](~/xamarin-forms/platform/device.md#provide-platform-specific-values)」(プラットフォーム固有の値の提供) と「[OnPlatform マークアップ拡張機能](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform-markup-extension)」を参照してください。
 
 <a name="Creating_the_Custom_Entry_Control" />
 
