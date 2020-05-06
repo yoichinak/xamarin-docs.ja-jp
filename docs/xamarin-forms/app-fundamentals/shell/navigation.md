@@ -6,13 +6,13 @@ ms.assetid: 57079D89-D1CB-48BD-9FEE-539CEC29EABB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/06/2019
-ms.openlocfilehash: 70f8f630558730f6074373eb3a814209921235de
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.date: 04/02/2020
+ms.openlocfilehash: a40a2dc01c37773539089287d561f4c52ef7f6de
+ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "71674564"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82516526"
 ---
 # <a name="xamarinforms-shell-navigation"></a>Xamarin.Forms シェルのナビゲーション
 
@@ -173,6 +173,36 @@ bears
 ```
 
 `monkeys` ルートに登録したページが表示されているときに、`details` ルートに移動すると、`monkeys/details` ルートに登録したページが表示されます。 同様に、`bears` ルートに登録したページが表示されているときに、`details` ルートに移動すると、`bears/details` ルートに登録したページが表示されます。 この例でのルートの登録方法については、「[ページのルートを登録する](#register-page-routes)」をご覧ください。
+
+### <a name="backwards-navigation"></a>後方ナビゲーション
+
+".." を `GotoAsync` メソッドへの引数として指定することで、後方ナビゲーションを実行できます。
+
+```csharp
+await Shell.Current.GoToAsync("..");
+```
+
+".." を使用した後方ナビゲーションは、次のようにルートと組み合わせることもできます。
+
+```csharp
+await Shell.Current.GoToAsync("../route");
+```
+
+この例では、まず後方に移動してから、指定したルートに移動しています。
+
+> [!IMPORTANT]
+> 後方ナビゲーション後に指定したルートに移動するには、指定したルートに移動するように、後方ナビゲーションによってルート階層の現在の場所に移動する必要があります。
+
+同様に、後方に複数回移動してから、指定したルートに移動することもできます。
+
+```csharp
+await Shell.Current.GoToAsync("../../route");
+```
+
+この例では、後方に 2 回移動してから、指定したルートに移動しています。
+
+> [!NOTE]
+> ".." で移動してデータを渡すこともできます。 詳細については、「[データを渡す](#pass-data)」を参照してください。
 
 ### <a name="invalid-routes"></a>無効なルート
 

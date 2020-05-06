@@ -6,13 +6,13 @@ ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/21/2020
-ms.openlocfilehash: bf9c06dae0df7da1cc69a85d8436376494039959
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.date: 04/17/2020
+ms.openlocfilehash: b4eeb776cafa131f13eb70aca5bd20df6eafa07f
+ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303835"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82516727"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms のトリガー
 
@@ -101,7 +101,7 @@ ms.locfileid: "79303835"
 ```
 
 > [!TIP]
-> `Path=Text.Length` を評価するときは常に、ターゲット プロパティの既定値が提供されます (例: `Text=""`)。そうしないと `null` になって、トリガーが意図したとおりに動作しないためです。
+> `Path=Text.Length` を評価するときは常に、ターゲット プロパティの既定値が提供されます (例:  `Text=""`)。そうしないと `null` になって、トリガーが意図したとおりに動作しないためです。
 
 `Setter` を指定するだけでなく、[`EnterActions` と `ExitActions`](#enteractions-and-exitactions) を提供することもできます。
 
@@ -341,7 +341,7 @@ Device.SetFlags(new string[]{ "StateTriggers_Experimental" });
 
 [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) クラスから派生する [`StateTrigger`](xref:Xamarin.Forms.StateTrigger) クラスには、バインド可能な [`IsActive`](xref:Xamarin.Forms.StateTrigger.IsActive) プロパティがあります。 `StateTrigger` では、`IsActive` プロパティの値が変更されたときに [`VisualState`](xref:Xamarin.Forms.VisualState) の変更がトリガーされます。
 
-すべての状態トリガーの基底クラスである [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) クラスには、[`IsActive`](xref:Xamarin.Forms.StateTriggerBase.IsActive) プロパティと [`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged) イベントがあります。 このイベントは、[`VisualState`](xref:Xamarin.Forms.VisualState) が変更されるたびに発生します。
+すべての状態トリガーの基底クラスである [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) クラスには、[`IsActive`](xref:Xamarin.Forms.StateTriggerBase.IsActive) プロパティと [`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged) イベントがあります。 このイベントは、[`VisualState`](xref:Xamarin.Forms.VisualState) が変更されるたびに発生します。 さらに、`StateTriggerBase` クラスには、オーバーライド可能な `OnAttached` メソッドと `OnDetached` メソッドがあります。
 
 > [!IMPORTANT]
 > バインド可能な [`StateTrigger.IsActive`](xref:Xamarin.Forms.StateTrigger.IsActive) プロパティによって、継承された [`StateTriggerBase.IsActive`](xref:Xamarin.Forms.StateTriggerBase.IsActive) プロパティが隠されます。
@@ -405,7 +405,7 @@ Unchecked state active: True
 ```
 
 > [!NOTE]
-> カスタムの状態トリガーは、[`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) クラスから派生して作成できます。
+> カスタム状態のトリガーを作成するには、[`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) クラスから派生させ、`OnAttached` メソッドと `OnDetached` メソッドをオーバーライドして、必要な登録とクリーンアップを実行します。
 
 ### <a name="adaptive-trigger"></a>アダプティブ トリガー
 

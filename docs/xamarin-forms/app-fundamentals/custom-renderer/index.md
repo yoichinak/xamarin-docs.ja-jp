@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/03/2019
-ms.openlocfilehash: b87e713f89951d03408fa559bcf6e02cdae65e28
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 04d40aa4cafe663113957d31bdb8a6463ba58ba5
+ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "74824245"
+ms.lasthandoff: 04/29/2020
+ms.locfileid: "82516456"
 ---
 # <a name="xamarinforms-custom-renderers"></a>Xamarin.Forms のカスタム レンダラー
 
@@ -34,7 +34,7 @@ Xamarin.Forms の [`Entry`](xref:Xamarin.Forms.Entry) コントロールによ�
 
 [`ContentPage`](xref:Xamarin.Forms.ContentPage) は、単一ビューを表示し、画面の大部分を占めるビジュアル要素です。 この記事では、`ContentPage` ページ用のカスタム レンダラーを作成する方法を示します。これにより、開発者は既定のネイティブ レンダリングを、各自のプラットフォームに固有のカスタマイズでオーバーライドできるようになります。
 
-## <a name="customizing-a-map"></a>[マップのカスタマイズ](map/index.md)
+## <a name="customizing-a-map-pin"></a>[マップ ピンのカスタマイズ](map-pin.md)
 
 Xamarin.Forms.Maps には、プラットフォームごとのネイティブ マップ API を使ったマップ表示用の抽象化がクロスプラットフォームで用意されていて、高速で使い慣れたマップのユーザー エクスペリエンスが提供されます。 このトピックでは、`Map` コントロール用のカスタム レンダラーを作成する方法を示します。これにより、開発者は既定のネイティブ レンダリングを、各自のプラットフォームに固有のカスタマイズでオーバーライドできるようになります。
 

@@ -9,13 +9,13 @@ metadata:
   ms.assetid: 391B4A77-7CAC-42D2-9E77-BD8E170E9BE6
   author: davidbritch
   ms.author: dabritch
-  ms.date: 12/30/2019
-  ms.openlocfilehash: bbe7fd52581cd77ed7e7d910dd16264641c15abf
-  ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+  ms.date: 03/19/2020
+  ms.openlocfilehash: 334c6afaffdec3ccc99d251bfc021edaa0cd9d2a
+  ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 04/09/2020
-  ms.locfileid: "77480595"
+  ms.lasthandoff: 04/29/2020
+  ms.locfileid: "82517430"
 landingContent:
 - title: コントロールのリファレンス
   linkLists:
@@ -23,27 +23,35 @@ landingContent:
     links:
     - text: 概要
       url: controls/index.md
-    - text: ページ
+    - text: Pages
       url: controls/pages.md
     - text: レイアウト
       url: controls/layouts.md
-    - text: ビュー
+    - text: Views
       url: controls/views.md
-    - text: '[セル]'
+    - text: セル
       url: controls/cells.md
     - text: 共通のプロパティ、メソッド、およびイベント
       url: controls/common-properties.md
     - text: サードパーティ コントロール
       url: controls/thirdparty.md
+- title: C# の宣言型 UI
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: C# のマークアップ
+      url: csharp-markup.md
 - title: 表示用のビュー
   linkLists:
   - linkListType: concept
     links:
     - text: BoxView
       url: boxview.md
+    - text: Expander
+      url: expander.md
     - text: Image
       url: images.md
-    - text: Label
+    - text: ラベル
       url: text/label.md
     - text: マップ
       url: map/index.md
@@ -55,10 +63,12 @@ landingContent:
   linkLists:
   - linkListType: concept
     links:
-    - text: ボタン
+    - text: Button
       url: button.md
     - text: ImageButton
       url: imagebutton.md
+    - text: RadioButton
+      url: radiobutton.md
     - text: RefreshView
       url: refreshview.md
     - text: SearchBar
@@ -73,7 +83,7 @@ landingContent:
       url: checkbox.md
     - text: DatePicker
       url: datepicker.md
-    - text: スライダー
+    - text: Slider
       url: slider.md
     - text: ステッパ
       url: stepper.md
@@ -87,7 +97,7 @@ landingContent:
     links:
     - text: エディター
       url: text/editor.md
-    - text: エントリ
+    - text: 入力
       url: text/entry.md
 - title: アクティビティを示すためのビュー
   linkLists:
