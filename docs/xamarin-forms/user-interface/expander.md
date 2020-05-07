@@ -7,16 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/15/2020
-ms.openlocfilehash: f47dc08d11a97598966ba7af620cfc81e5fe284f
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+ms.openlocfilehash: b1e573a6070a637ef2fdfa65bb0fc1375522fc3c
+ms.sourcegitcommit: 443ecd9146fe2a7bbb9b5ab6d33c835876efcf1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82532887"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82852494"
 ---
 # <a name="xamarinforms-expander"></a>Xamarin. フォームの展開
 
-[![](~/media/shared/download.png)サンプルをダウンロードするサンプルをダウンロードする](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-expanderdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-expanderdemos/)
 
 Xamarin. Forms `Expander`コントロールには、任意のコンテンツをホストするための拡張可能なコンテナーが用意されています。 コントロールはヘッダーとコンテンツを持ち、 `Expander`ヘッダーをタップすることによってコンテンツを表示または非表示にします。 `Expander`ヘッダーのみが表示されている`Expander`場合は、が*折りたたま*れています。 `Expander`コンテンツが表示されると`Expander` 、が*展開*されます。
 
@@ -26,6 +26,8 @@ Xamarin. Forms `Expander`コントロールには、任意のコンテンツを�
 
 > [!IMPORTANT]
 > `Expander`は現在試験段階であり、 `Expander_Experimental`フラグを設定することによってのみ使用できます。 詳細については、「試験的な[フラグ](~/xamarin-forms/internals/experimental-flags.md)」を参照してください。
+>
+> また、 `Expander`コントロールは`Xamarin.Forms`名前空間に完全に実装されます。 そのため、Xamarin. Forms でサポートされているすべてのプラットフォームで使用できます。
 
 コントロール`Expander`は、次のプロパティを定義します。
 

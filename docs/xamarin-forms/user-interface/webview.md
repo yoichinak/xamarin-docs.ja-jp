@@ -6,17 +6,17 @@ ms.assetid: E44F5D0F-DB8E-46C7-8789-114F1652A6C5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/11/2020
-ms.openlocfilehash: 7a2671c47a6d2fceaf2b444cfa8988b4bb8c249c
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+ms.date: 05/06/2020
+ms.openlocfilehash: 31b705a51e405285cc5eaae391dd0794bfacfd9c
+ms.sourcegitcommit: 443ecd9146fe2a7bbb9b5ab6d33c835876efcf1f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82517259"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82852481"
 ---
 # <a name="xamarinforms-webview"></a>Xamarin. Forms WebView
 
-[![](~/media/shared/download.png)サンプルをダウンロードするサンプルをダウンロードする](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithwebview)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithwebview)
 
 [`WebView`](xref:Xamarin.Forms.WebView)は、アプリで web および HTML コンテンツを表示するためのビューです。
 
@@ -554,11 +554,13 @@ webView.Source = new UrlWebViewSource { Url = uri.ToString() };
 
 これを行うための前提条件は次のとおりです。
 
-- Xamarin. forms **4.5 以降** &ndash;のプレリリースバージョンの xamarin. forms 4.5 を使用できます。
-- **13.10.0.17 以上では** &ndash; 、 [Visual Studio で](~/cross-platform/troubleshooting/questions/version-logs.md#version-information)xamarin の ios バージョンを確認します。 このバージョンの Xamarin. iOS は Visual Studio for Mac dbms-guide-8.4.1 と Visual Studio 16.4.3 に含まれています。
-- コード**へ`UIWebView` ** &ndash;の参照の削除には、または`UIWebView`を使用するクラスへの`UIWebView`参照を含めることはできません。
+- **Xamarin. Forms 4.5 以降**。 アプリで素材ビジュアルを使用する場合は、Xamarin. Forms 4.6 以降が必要です。
+- **13.10.0.17 以上**。 [Visual Studio で](~/cross-platform/troubleshooting/questions/version-logs.md#version-information)Xamarin iOS のバージョンを確認します。 このバージョンの Xamarin. iOS は Visual Studio for Mac dbms-guide-8.4.1 と Visual Studio 16.4.3 に含まれています。
+- **への参照`UIWebView`を削除**します。 コードには、またはを使用`UIWebView`するクラスへの`UIWebView`参照を含めることはできません。
 
-### <a name="configure-the-linker-preview"></a>リンカープレビューの構成
+参照の検出と削除`UIWebView`の詳細については、「 [uiwebview の廃止](~/ios/user-interface/controls/webview.md#uiwebview-deprecation)」を参照してください。
+
+### <a name="configure-the-linker"></a>リンカーを構成する
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -594,3 +596,4 @@ webView.Source = new UrlWebViewSource { Url = uri.ToString() };
 
 - [WebView の操作 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithwebview)
 - [WebView (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-webview)
+- [UIWebView の廃止](~/ios/user-interface/controls/webview.md#uiwebview-deprecation)
