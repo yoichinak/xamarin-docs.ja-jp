@@ -6,12 +6,12 @@ ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: d0b195b90bb57b6d0717c0fb06d0202857851fe7
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: f99b64b67f4f1cabf3a5884fabb1301e5ee39eee
+ms.sourcegitcommit: 06043f6a5628a7326ac6690eb62ead8e4780f4a7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73016524"
+ms.lasthandoff: 05/04/2020
+ms.locfileid: "82738791"
 ---
 # <a name="cross-platform-performance"></a>クロスプラットフォームのパフォーマンス
 
@@ -264,6 +264,8 @@ SGen では、オブジェクトにスペースを割り当てる際に、次の
 - **ラージ オブジェクト スペース** – 8000 を超えるバイトが必要なオブジェクトが保持されます。 ラージ オブジェクトは新世代では開始されませんが、代わりにこのヒープで割り当てられます。
 
 SGen の利点の 1 つは、マイナー ガベージ コレクションの実行にかかる時間が、最後のマイナー ガベージ コレクション以降に作成された新しいライブ オブジェクトの数に比例することです。 したがって、これらのマイナー ガベージ コレクションの実行にかかる時間がメジャー ガベージ コレクションより短くなるため、アプリケーションのパフォーマンス上のガベージ コレクションの影響が軽減されます。 メジャー ガベージ コレクションは引き続き発生しますが、頻度は低くなります。
+
+SGen ガベージ コレクターは、Xamarin.iOS 9.2.1 以上の既定であるため、自動的に使用されます。 新しいバージョンの Visual Studio からは、ガベージ コレクターを変更する機能が削除されていることに注意してください。 詳細については、[新しい参照カウント システム](~/ios/internals/newrefcount.md)に関する記事を参照してください。
 
 ### <a name="reducing-pressure-on-the-garbage-collector"></a>ガベージ コレクターの負荷の軽減
 

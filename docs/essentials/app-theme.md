@@ -5,12 +5,12 @@ ms.assetid: F6F6D496-A8A9-4B9A-AF1A-370D937E5073
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/06/2020
-ms.openlocfilehash: f322855f26d7a57acc06e97e0c97ab201c3fa586
-ms.sourcegitcommit: a9280318bf7bb69e4e5744ee739e76a9cba36b28
+ms.openlocfilehash: e27f43ae17fcdaf7bb40b75907a7595c5c20988b
+ms.sourcegitcommit: 9c517f2c5af21aab0775f91286f42e919ff52292
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82047401"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82619874"
 ---
 # <a name="xamarinessentials-app-theme"></a>Xamarin.Essentials:アプリのテーマ
 
@@ -61,6 +61,8 @@ Android では、要求するテーマの種類を指定するために、ユー
 
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
+
+`RequestedTheme` の呼び出しは UI スレッドで行う必要があります。そうしないと、例外がスローされます。
 
 UWP アプリケーションでは、**RequestedTheme** で UWP App.xaml の設定が尊重されます。 特定のテーマに設定されている場合、Xamarin. Essentials は常にこの設定を返します。 OS の動的テーマを使用するには、アプリケーションからこのノードを削除します。その後、アプリが実行されると、Windows の設定でユーザーが設定したテーマが返されます ( **[設定] > [パーソナル化] > [色] > [Choose your default app mode]\(既定のアプリ モードを選択する\)** )。
 

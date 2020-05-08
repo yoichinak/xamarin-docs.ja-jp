@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/22/2020
-ms.openlocfilehash: cd5ee471385761cad9f99c4b78103b9773415ddb
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+ms.openlocfilehash: 5e5c50a9195ceb2716e3ca5306b72654fedc46e8
+ms.sourcegitcommit: 443ecd9146fe2a7bbb9b5ab6d33c835876efcf1f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82517081"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82852472"
 ---
 # <a name="xamarinforms-shell-flyout"></a>Xamarin.Forms シェルのポップアップ
 
@@ -480,7 +480,13 @@ Shell.Current.FlyoutIsPresented = false;
 
 このコードでは、`aboutItem` という名前の `ShellContent` オブジェクトを `CurrentItem` プロパティとして設定し、それが表示されるようにしています。 この例では暗黙的な変換が使われ、`ShellContent` オブジェクトが `Tab` オブジェクトでラップされ、それが `FlyoutItem` オブジェクトでラップされています。
 
-これに相当する C# コードを次に示します。
+`aboutItem` という名前の `ShellContent` オブジェクトを指定した場合、同等の C# コードは次のようになります。
+
+```csharp
+CurrentItem = aboutItem;
+```
+
+この例では、`CurrentItem` プロパティはサブクラス化された `Shell` クラスに設定されています。 また、`Shell.Current` 静的プロパティを使用して、任意のクラスで `CurrentItem` プロパティを設定することもできます。
 
 ```csharp
 Shell.Current.CurrentItem = aboutItem;

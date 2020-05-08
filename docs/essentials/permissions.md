@@ -5,12 +5,12 @@ ms.assetid: 34062D84-3E55-4AF7-A688-8551068B1E57
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/06/2020
-ms.openlocfilehash: 21f2079ace4adae6fd84d89426e5d66692af2a0a
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 3d61267ae78a4b84907a2bcf6e944eb286b113dd
+ms.sourcegitcommit: 8b94b2af2ac69e4a60e210ddc764f4d276c8d88d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "78289807"
+ms.lasthandoff: 04/30/2020
+ms.locfileid: "82605447"
 ---
 # <a name="xamarinessentials-permissions"></a>Xamarin.Essentials:アクセス許可
 
@@ -37,6 +37,8 @@ var status = await Permissions.CheckStatusAsync<Permissions.LocationWhenInUse>()
 ```
 
 必要なアクセス許可が宣言されていない場合は、`PermissionException` がスローされます。
+
+アクセス許可を要求する前に、状態を確認することをお勧めします。 ユーザーにメッセージが表示されない場合は、オペレーティング システムごとに異なる既定の状態を返します。 iOS は `Unknown` を返し、その他は `Denied` を返します。
 
 ## <a name="requesting-permissions"></a>権限の要求
 
@@ -96,7 +98,7 @@ Xamarin.Essentials では可能な限り多くのアクセス許可を抽象化�
 アクセス許可を処理するための一般的な使用パターンを次に示します。
 
 ```csharp
-public async Task<PermissionStatus> CheckAndRequestPermissionAsync<TPermission>()
+public async Task<PermissionStatus> CheckAndRequestLocationPermission()
 {
     var status = await Permissions.CheckStatusAsync<Permissions.LocationWhenInUse>();
     if (status != PermissionStatus.Granted)

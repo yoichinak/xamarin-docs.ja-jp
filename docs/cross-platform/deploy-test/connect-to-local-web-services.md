@@ -6,12 +6,12 @@ ms.assetid: FD8FE199-898B-4841-8041-CC9CA1A00917
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/29/2020
-ms.openlocfilehash: 3dc1a2cb99c5ef018807a8ac81139a6cace3c66f
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+ms.openlocfilehash: 29875b3f6c747d5dc2f45eb876a269d2bc7e85c6
+ms.sourcegitcommit: 443ecd9146fe2a7bbb9b5ab6d33c835876efcf1f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82516496"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82852464"
 ---
 # <a name="connect-to-local-web-services-from-ios-simulators-and-android-emulators"></a>iOS シミュレーターと Android エミュレーターからローカル Web サービスに接続する
 
@@ -113,7 +113,16 @@ public HttpClientHandler GetInsecureHandler()
 }
 ```
 
-このコード例では、検証が行われた証明書が `localhost` 証明書ではない場合に、サーバー証明書の検証結果が返されます。 この証明書に対して、検証結果が無視され、証明書が有効であることを示す `true` が返されます。 生成される `HttpClientHandler` オブジェクトを、`HttpClient` コンストラクターに対する引数として渡す必要があります。
+このコード例では、検証が行われた証明書が `localhost` 証明書ではない場合に、サーバー証明書の検証結果が返されます。 この証明書に対して、検証結果が無視され、証明書が有効であることを示す `true` が返されます。 生成される `HttpClientHandler` オブジェクトを、デバッグ ビルド用に `HttpClient` コンストラクターに対する引数として渡す必要があります。
+
+```csharp
+#if DEBUG
+    HttpClientHandler insecureHandler = GetInsecureHandler();
+    HttpClient client = new HttpClient(insecureHandler);
+#else
+    HttpClient client = new HttpClient();
+#endif
+```
 
 ## <a name="related-links"></a>関連リンク
 
