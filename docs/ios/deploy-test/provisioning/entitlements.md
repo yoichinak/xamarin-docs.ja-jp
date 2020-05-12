@@ -16,13 +16,13 @@ ms.locfileid: "75655361"
 ---
 # <a name="working-with-entitlements-in-xamarinios"></a>Xamarin.iOS での権利の使用
 
-_権利は特殊なアプリの機能およびセキュリティのアクセス許可であり、これらを使用するように正しく構成されたアプリケーションに付与されます。_
+"_権利は特殊なアプリの機能およびセキュリティのアクセス許可であり、これらを使用するように正しく構成されたアプリケーションに付与されます。_"
 
-iOS では、アプリは_サンドボックス_で実行されます。このサンドボックスでは、アプリケーションと特定のシステム リソースまたはユーザー データ間のアクセスを制限する一連の規則が提供されます。 _権利_は、アプリに追加機能を提供するためにシステムでサンドボックスを拡張することを要求する場合に使用されます。
+iOS では、アプリは "_サンドボックス_" で実行されます。このサンドボックスでは、アプリケーションと特定のシステム リソースまたはユーザー データ間のアクセスを制限する一連の規則が提供されます。 "_権利_" は、アプリに追加機能を提供するためにシステムでサンドボックスを拡張することを要求する場合に使用されます。
 
-アプリの機能を拡張するには、アプリの Entitlements.plist ファイルで権利を指定する必要があります。 特定の機能のみを拡張することができ、これらの機能については、「[機能の使用](~/ios/deploy-test/provisioning/capabilities/index.md)」ガイドにリストされており、[以下](#entitlement-key-reference)で説明します。 権利はキー/値ペアとしてシステムに渡され、通常は機能ごとに 1 つだけ必要になります。 特定のキーと値については、このガイドの後述の「[権利キー参照](#entitlement-key-reference)」で説明します。
+アプリの機能を拡張するには、アプリの Entitlements.plist ファイルで権利を指定する必要があります。 特定の機能のみを拡張することができ、これらの機能については、「[機能の使用](~/ios/deploy-test/provisioning/capabilities/index.md)」ガイドにリストされており、[以下](#entitlement-key-reference)で説明します。 権利はキー/値ペアとしてシステムに渡され、通常は機能ごとに 1 つだけ必要になります。 特定のキーと値については、このガイドの後述の「[権利キー リファレンス](#entitlement-key-reference)」で説明します。
 Visual Studio for Mac と Visual Studio では、Entitlements.plist エディターを介して Xamarin.iOS アプリで権利を追加するためのわかりやすいインターフェイスが提供されます。
-このガイドでは、Entitlements.plist エディターおよびその使用方法を紹介します。 また、機能ごとに iOS プロジェクトに追加可能なすべての権利の参照も提供します。
+このガイドでは、Entitlements.plist エディターおよびその使用方法を紹介します。 また、機能ごとに iOS プロジェクトに追加可能なすべての権利のリファレンスも提供します。
 
 ## <a name="entitlements-and-provisioning"></a>権利とプロビジョニング
 
@@ -41,7 +41,7 @@ Entitlements.plist ファイルは権利の指定と、アプリケーション 
 
 Visual Studio for Mac で権利を構成するには、次の操作を行います。
 
-1. **Solution Pad** で、**Info.plist** ファイルをダブルクリックして開きします。
+1. **Solution Pad** で、**Info.plist** ファイルをダブルクリックして開きます。
 2. **[ID]** セクションで、アプリケーションの名前を入力し、アプリ ID が定義されたときに作成された**バンドル ID** を入力します。
 
     ![バンドル ID を入力します](entitlements-images/servicexs01-sml.png)
@@ -68,7 +68,7 @@ Visual Studio で権利を構成するには、次の操作を行います。
 
     ![権利の編集](entitlements-images/servicevs02-sml.png)
 
-    **Entitlements.plist** ファイルを右クリックし、 **[プログラムから開く]** で XML ソース エディターを選択することもできます。このエディターでは、後述の[権利キー参照](#entitlement-key-reference)に関するセクションで詳しく説明されているように、権利プロパティとキーの値を設定することができます。
+    **Entitlements.plist** ファイルを右クリックし、 **[プログラムから開く]** で XML ソース エディターを選択することもできます。このエディターでは、後述の[権利キー リファレンス](#entitlement-key-reference)に関するセクションで詳しく説明されているように、権利プロパティとキーの値を設定することができます。
 
 5. Xamarin.iOS アプリケーションに必要な権利を選択して構成し、アプリ ID が作成されたときに定義された設定と一致するようにします。
 6. 変更内容を **Entitlements.plist** ファイルに保存します。
@@ -88,7 +88,7 @@ Xamarin.iOS に Entitlements.plist ファイルを追加するには、次の操
 
     ![[新しいファイル] ダイアログ](entitlements-images/image2-sml.png)
 
-## <a name="entitlement-key-reference"></a>権利キー参照
+## <a name="entitlement-key-reference"></a>権利キー リファレンス
 
 Entitlements.plist エディターの [ソース] パネルを使用して、権利キーを追加することができます。 必要なキーは通常、Entitlements.plist エディターを使用する際に追加されますが、参考までに以下にリストします。
 
@@ -184,7 +184,7 @@ Entitlements.plist エディターの [ソース] パネルを使用して、権
 
 ### <a name="healthkit"></a>HealthKit
 
-- **説明**: HealthKit は iOS 8 で導入されたフレームワークです。これにより、正常性に関する情報のための集中型の調整されたセキュア データ ストアが提供されます。 HealthKit の使用の詳細については、HealthKit の概要に関するガイドを参照してください。
+- **説明**: HealthKit は iOS 8 で導入されたフレームワークです。これにより、健康に関する情報のための集中型の調整されたセキュア データ ストアが提供されます。 HealthKit の使用の詳細については、HealthKit の概要に関するガイドを参照してください。
   - **キー**: com.apple.developer.healthkit
   - **ブール値**: YES
 
@@ -202,4 +202,4 @@ Entitlements.plist エディターの [ソース] パネルを使用して、権
 
 ## <a name="summary"></a>まとめ
 
-このガイドでは、権利について説明し、Visual Studio for Mac と Visual Studio での権利の使用方法について紹介しました。 また、機能ごとにキー/値ペアの参照も提供しました。
+このガイドでは、権利について説明し、Visual Studio for Mac と Visual Studio での権利の使用方法について紹介しました。 また、機能ごとにキー/値ペアのリファレンスも提供しました。
