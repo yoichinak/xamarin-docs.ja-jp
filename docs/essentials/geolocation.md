@@ -3,14 +3,15 @@ title: Xamarin.Essentials:位置情報
 description: このドキュメントでは、デバイスの現在の位置座標を取得する API を提供する Xamarin.Essentials の Geolocation クラスについて説明します。
 ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
 author: jamesmontemagno
+ms.custom: video
 ms.author: jamont
 ms.date: 03/13/2019
-ms.openlocfilehash: 840aadcafea88ef08f53e16f535439be0862fee9
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 99b439e70038d27ed8bffcf20b908c52a10ede82
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "80070355"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83149743"
 ---
 # <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials:位置情報
 
@@ -49,6 +50,8 @@ Coarse および Fine Location アクセス許可が必要であり、Android �
 ```
 
 または、Android プロジェクトを右クリックし、プロジェクトのプロパティを開きます。 **[Android マニフェスト]** の下で **[必要なアクセス許可:]** 領域を探し、 **[ACCESS_COARSE_LOCATION]** および **[ACCESS_FINE_LOCATION]** アクセス許可をオンにします。 これにより、**AndroidManifest.xml** ファイルが自動的に更新されます。
+
+[!include[](~/essentials/includes/android-permissions.md)]
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
@@ -240,3 +243,9 @@ UWP では、高度はメートル単位で返されます。 詳細について
 
 - [Geolocation のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Geolocation)
 - [Geolocation API のドキュメント](xref:Xamarin.Essentials.Geolocation)
+
+## <a name="related-video"></a>関連ビデオ
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Geolocation-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

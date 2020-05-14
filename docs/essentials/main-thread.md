@@ -3,14 +3,15 @@ title: Xamarin.Essentials:MainThread
 description: MainThread クラスを使用すると、アプリケーションでコードをメインの実行スレッドで実行させることができます。
 ms.assetid: CD6D51E7-D933-4FE7-A7F7-392EF27812E1
 author: jamesmontemagno
+ms.custom: video
 ms.author: jamont
 ms.date: 08/20/2019
-ms.openlocfilehash: 9109e7bff4cfe60479e711240d290d77b60a9af6
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: dfef9fc5d1b8e4acaec8d9e1d653b141b04cead6
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70060122"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83150057"
 ---
 # <a name="xamarinessentials-mainthread"></a>Xamarin.Essentials:MainThread
 
@@ -18,7 +19,7 @@ ms.locfileid: "70060122"
 
 ## <a name="background"></a>背景
 
-ほとんどのオペレーティング システム — iOS、Android、ユニバーサル Windows プラットフォームなど — では、ユーザー インターフェイスに関連するコードのためにシングル スレッド モデルが使用されます。 このモデルは、ユーザー インターフェイスのイベント (キーストローク、タッチ入力など) をシリアル化するために必要です。 多くの場合、このスレッドは _メイン スレッド_、_ユーザー インターフェイス スレッド_、または _UI スレッド_ と呼ばれます。 このモデルの欠点は、ユーザー インターフェイス要素にアクセスするすべてのコードを、アプリケーションのメイン スレッドで実行させなければならないという点です。 
+ほとんどのオペレーティング システム — iOS、Android、ユニバーサル Windows プラットフォームなど — では、ユーザー インターフェイスに関連するコードのためにシングル スレッド モデルが使用されます。 このモデルは、ユーザー インターフェイスのイベント (キーストローク、タッチ入力など) をシリアル化するために必要です。 多くの場合、このスレッドは_メイン スレッド_、_ユーザー インターフェイス スレッド_、または _UI スレッド_と呼ばれます。 このモデルの欠点は、ユーザー インターフェイス要素にアクセスするすべてのコードを、アプリケーションのメイン スレッドで実行させなければならないという点です。 
 
 アプリケーションでは、イベント ハンドラーを実行のセカンダリ スレッドで呼び出すイベントを使用することが必要な場合があります。 (Xamarin.Essentials のクラス [`Accelerometer`](accelerometer.md)、[`Compass`](compass.md)、[`Gyroscope`](gyroscope.md)、[`Magnetometer`](magnetometer.md)、[`OrientationSensor`](orientation-sensor.md) はすべて、高速で使用すると、セカンダリ スレッドに関する情報を返す可能性があります。)イベント ハンドラーがユーザー インターフェイス要素にアクセスする必要がある場合は、そのコードをメイン スレッドで実行させる必要があります。 **MainThread** クラスを使用すると、アプリケーションでこのコードをメイン スレッドで実行させることができます。
 
@@ -110,3 +111,9 @@ _しかし、このチェックは必要ではありません。_ プラット�
 
 - [MainThread のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/MainThread)
 - [MainThread API ドキュメント](xref:Xamarin.Essentials.MainThread)
+
+## <a name="related-video"></a>関連ビデオ
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Main-Thread-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

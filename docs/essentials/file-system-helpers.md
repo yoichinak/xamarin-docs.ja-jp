@@ -3,14 +3,15 @@ title: Xamarin.Essentials:ファイル システム ヘルパー
 description: Xamarin.Essentials の FileSystem クラスには、アプリケーションのキャッシュ ディレクトリやデータ ディレクトリを検索したり、アプリ パッケージ内のファイルを開いたりする、一連のヘルパーが含まれています。
 ms.assetid: B3EC2DE0-EFC0-410C-AF71-7410AE84CF84
 author: jamesmontemagno
+ms.custom: video
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 5b155e4976a67bda36e66d2ca3565c9237fde3c6
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: e42cb3764e993ecd6063aab6f38b1cdf5e870a58
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "68738865"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83150000"
 ---
 # <a name="xamarinessentials-file-system-helpers"></a>Xamarin.Essentials:ファイル システム ヘルパー
 
@@ -81,3 +82,9 @@ UWP プロジェクトのルートにファイルを追加し、`OpenAppPackageF
 
 - [FileSystem のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/FileSystem)
 - [FileSystem API のドキュメント](xref:Xamarin.Essentials.FileSystem)
+
+## <a name="related-video"></a>関連ビデオ
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/File-System-Helpers-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

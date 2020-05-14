@@ -10,12 +10,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/27/2018
-ms.openlocfilehash: c0e8ec27898cc842d485967e525c2936d7a0f56d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: def54534d30b92b3d6ea8b5a0e7cac2c93293710
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77131050"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83149825"
 ---
 # <a name="xamarinforms-quickstart-deep-dive"></a>Xamarin.Forms クイックスタートの詳細
 
@@ -266,7 +266,7 @@ Notes アプリケーションでは、[`StackLayout`](xref:Xamarin.Forms.StackL
 > [!NOTE]
 > ビューのサイズは、`HeightRequest` と `WidthRequest` のプロパティを使用して設定できます。
 
-[`StackLayout`](xref:Xamarin.Forms.StackLayout) クラスの詳細については、「[StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md)」を参照してください。
+[`StackLayout`](xref:Xamarin.Forms.StackLayout) クラスの詳細については、「[StackLayout](~/xamarin-forms/user-interface/layouts/stacklayout.md)」を参照してください。
 
 ### <a name="responding-to-user-interaction"></a>ユーザー操作に対する応答
 

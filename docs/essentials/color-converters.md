@@ -5,12 +5,13 @@ ms.assetid: B10428D6-89E2-4714-A39F-7E6E626391B2
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/06/2020
-ms.openlocfilehash: 5d64967dfaa6ce7ef746a97f739cac67f5102fc2
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.custom: video
+ms.openlocfilehash: 159add7ee83f3c65d791fc49ee3a85ddaaabae1d
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77545164"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83150137"
 ---
 # <a name="xamarinessentials-color-converters"></a>Xamarin.Essentials:Color Converters
 
@@ -83,3 +84,9 @@ var system = platform.ToSystemColor();
 - [Color Converters の API ドキュメント](xref:Xamarin.Essentials.ColorConverters)
 - [Color Extensions のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Types/ColorConverters.shared.cs)
 - [Color Extensions の API ドキュメント](xref:Xamarin.Essentials.ColorExtensions)
+
+## <a name="related-video"></a>関連ビデオ
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Color-Converters-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]
