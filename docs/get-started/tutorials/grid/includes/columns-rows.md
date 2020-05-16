@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: d87289e481b69592b68627d053e937856d3d6067
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: e1705e9311d4875a5b866ac5acb7d20aa107a2bb
+ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "61376011"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83435407"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
@@ -42,7 +42,7 @@ ms.locfileid: "61376011"
     [`Grid`](xref:Xamarin.Forms.Grid) 内の各[`Label`](xref:Xamarin.Forms.Label) の位置は、0 から始まるインデックスを使用して、[`Grid.Column`](xref:Xamarin.Forms.Grid.ColumnProperty) と [`Grid.Row`](xref:Xamarin.Forms.Grid.RowProperty) の添付プロパティで指定されます。 したがって、最初の列は列 0 で、最初の行は行 0 です。 最初の `Label` には、これらの添付プロパティがありません。これは、添付プロパティを設定しない子ビューはすべて自動的に列 0 と行 0 にレンダリングされるためです。
 
     > [!NOTE]
-    > [`Grid`](xref:Xamarin.Forms.Grid) 内の列と行の間隔は、[`ColumnSpacing`](xref:Xamarin.Forms.Grid.ColumnSpacing) プロパティと [`RowSpacing`](xref:Xamarin.Forms.Grid.RowSpacing) プロパティで設定できます。 詳しくは、「[Xamarin.Forms Grid](~/xamarin-forms/user-interface/layouts/grid.md)」ガイドの「[Spacing](~/xamarin-forms/user-interface/layouts/grid.md#spacing)」 (間隔) を参照してください。
+    > [`Grid`](xref:Xamarin.Forms.Grid) 内の列と行の間隔は、[`ColumnSpacing`](xref:Xamarin.Forms.Grid.ColumnSpacing) プロパティと [`RowSpacing`](xref:Xamarin.Forms.Grid.RowSpacing) プロパティで設定できます。 詳しくは、「[Xamarin.Forms Grid](~/xamarin-forms/user-interface/layouts/grid.md)」ガイドの「[Spacing](~/xamarin-forms/user-interface/layouts/grid.md#space-between-rows-and-columns)」 (間隔) を参照してください。
 
 1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
@@ -84,7 +84,7 @@ ms.locfileid: "61376011"
     [`Grid`](xref:Xamarin.Forms.Grid) 内の各[`Label`](xref:Xamarin.Forms.Label) の位置は、0 から始まるインデックスを使用して、[`Grid.Column`](xref:Xamarin.Forms.Grid.ColumnProperty) と [`Grid.Row`](xref:Xamarin.Forms.Grid.RowProperty) の添付プロパティで指定されます。 したがって、最初の列は列 0 で、最初の行は行 0 です。 最初の `Label` には、これらの添付プロパティがありません。これは、添付プロパティを設定しない子ビューはすべて自動的に列 0 と行 0 にレンダリングされるためです。
 
     > [!NOTE]
-    > [`Grid`](xref:Xamarin.Forms.Grid) 内の列と行の間隔は、[`ColumnSpacing`](xref:Xamarin.Forms.Grid.ColumnSpacing) プロパティと [`RowSpacing`](xref:Xamarin.Forms.Grid.RowSpacing) プロパティで設定できます。 詳しくは、「[Xamarin.Forms Grid](~/xamarin-forms/user-interface/layouts/grid.md)」ガイドの「[Spacing](~/xamarin-forms/user-interface/layouts/grid.md#spacing)」 (間隔) を参照してください。
+    > [`Grid`](xref:Xamarin.Forms.Grid) 内の列と行の間隔は、[`ColumnSpacing`](xref:Xamarin.Forms.Grid.ColumnSpacing) プロパティと [`RowSpacing`](xref:Xamarin.Forms.Grid.RowSpacing) プロパティで設定できます。 詳しくは、「[Xamarin.Forms Grid](~/xamarin-forms/user-interface/layouts/grid.md)」ガイドの「[Spacing](~/xamarin-forms/user-interface/layouts/grid.md#space-between-rows-and-columns)」 (間隔) を参照してください。
 
 1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
