@@ -3,14 +3,15 @@ title: Xamarin.Essentials:コンパス
 description: このドキュメントで説明する Xamarin.Essentials の Compass クラスを使用すると、デバイスの磁北方位を監視することができます。
 ms.assetid: BF85B0C3-C686-43D9-811A-07DCAF8CDD86
 author: jamesmontemagno
+ms.custom: video
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 55dd10bff21b7d082b225277d0100232d5efd4f3
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 54ce725a319e0222179945ece558338c8a152653
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "61356878"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83150123"
 ---
 # <a name="xamarinessentials-compass"></a>Xamarin.Essentials:コンパス
 
@@ -80,7 +81,7 @@ Android には、コンパスの方位を取得するための API はありま�
 
 まれに、8 の字を描くようにデバイスを動かしたときなど、センサーの調整が必要なために、一貫性のない結果が表示されることがあります。 これを行う最善の方法は、Google マップを開き、場所のドットをタップして、 **[Calibrate compass]\(場所の調整\)** を選択します。
 
-アプリから同時に複数のセンサーを実行すると、センサーの速度が調整される場合があることに注意してください。
+アプリから同時に複数のセンサーを実行すると、センサーの速度が調整されます。
 
 ## <a name="low-pass-filter"></a>ローパス フィルター
 
@@ -98,3 +99,9 @@ Compass.Start(SensorSpeed.UI, applyLowPassFilter: true);
 
 - [Compass のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Compass)
 - [Compass API のドキュメント](xref:Xamarin.Essentials.Compass)
+
+## <a name="related-video"></a>関連ビデオ
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Compass-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]
