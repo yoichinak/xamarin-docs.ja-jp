@@ -30,7 +30,7 @@ ms.locfileid: "67277320"
     </ContentPage>
     ```
 
-    このコードでは、[`Button`](xref:Xamarin.Forms.Button) の中の [`StackLayout`](xref:Xamarin.Forms.StackLayout) から構成されるページのユーザー インターフェイスを宣言によって定義します。 [`Button.Text`](xref:Xamarin.Forms.Button.Text) プロパティは、`Button` に表示するテキストを指定します。
+    このコードでは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) の中の [`Button`](xref:Xamarin.Forms.Button) から構成されるページのユーザー インターフェイスを宣言によって定義します。 [`Button.Text`](xref:Xamarin.Forms.Button.Text) プロパティは、`Button` に表示するテキストを指定します。
 
 1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
@@ -62,7 +62,7 @@ ms.locfileid: "67277320"
     </ContentPage>
     ```
 
-    このコードでは、[`Button`](xref:Xamarin.Forms.Button) の中の [`StackLayout`](xref:Xamarin.Forms.StackLayout) から構成されるページのユーザー インターフェイスを宣言によって定義します。 [`Button.Text`](xref:Xamarin.Forms.Button.Text) プロパティは、`Button` に表示するテキストを指定します。
+    このコードでは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) の中の [`Button`](xref:Xamarin.Forms.Button) から構成されるページのユーザー インターフェイスを宣言によって定義します。 [`Button.Text`](xref:Xamarin.Forms.Button.Text) プロパティは、`Button` に表示するテキストを指定します。
 
 1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 

@@ -27,7 +27,7 @@ ms.locfileid: "67841437"
     }
     ```
 
-    このコードは、各人に関するデータをアプリケーションに格納する `Person` クラスを定義します。 データベース内の各 `ID` インスタンスが SQLite.NET によって付与される一意の ID 持つようにするため、`PrimaryKey` プロパティが `AutoIncrement` と `Person` の属性によってマークされます。
+    このコードは、各人に関するデータをアプリケーションに格納する `Person` クラスを定義します。 データベース内の各 `Person` インスタンスが SQLite.NET によって付与される一意の ID 持つようにするため、`ID` プロパティが `PrimaryKey` と `AutoIncrement` の属性によってマークされます。
 
 1. **ソリューション エクスプローラー**の **[LocalDatabaseTutorial]** プロジェクトで、`Database` という名前の新しいクラスをプロジェクトに追加します。 次に、**Database.cs** のテンプレート コードをすべて削除し、次のコードに置き換えます。
 
@@ -139,7 +139,7 @@ ms.locfileid: "67841437"
     }
     ```
 
-    このコードは、各人に関するデータをアプリケーションに格納する `Person` クラスを定義します。 データベース内の各 `ID` インスタンスが SQLite.NET によって付与される一意の ID 持つようにするため、`PrimaryKey` プロパティが `AutoIncrement` と `Person` の属性によってマークされます。
+    このコードは、各人に関するデータをアプリケーションに格納する `Person` クラスを定義します。 データベース内の各 `Person` インスタンスが SQLite.NET によって付与される一意の ID 持つようにするため、`ID` プロパティが `PrimaryKey` と `AutoIncrement` の属性によってマークされます。
 
 1. **Solution Pad** の **[LocalDatabaseTutorial]** プロジェクトで、`Database` という名前の新しいクラスをプロジェクトに追加します。 次に、**Database.cs** のテンプレート コードをすべて削除し、次のコードに置き換えます。
 
