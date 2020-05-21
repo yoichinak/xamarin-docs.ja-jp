@@ -1,387 +1,740 @@
 ---
-title: Xamarin.Forms のグリッド
-description: この記事では、Xamarin.Forms グリッド クラスを使用して、グリッドで、行と列を持つでビューを表示する方法について説明します。
+title: Xamarin. フォームグリッド
+description: Xamarin Grid は、その子をセルの行と列に編成するレイアウトです。
 ms.prod: xamarin
 ms.assetid: 762B1802-D185-494C-B643-74EED55882FE
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/26/2017
-ms.openlocfilehash: 7a6c737bff6c504fea10fd2e34e4b26249f73aff
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.date: 05/15/2020
+ms.openlocfilehash: 4f1d9d0f2d597018b9832d918bbec3f0b2594773
+ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770395"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83425918"
 ---
-# <a name="xamarinforms-grid"></a>Xamarin.Forms のグリッド
+# <a name="xamarinforms-grid"></a>Xamarin. フォームグリッド
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-griddemos)
 
-[`Grid`](xref:Xamarin.Forms.Grid) ビューの行と列に配置をサポートします。 比例サイズや絶対サイズを持つ行と列を設定できます。 `Grid`レイアウトは、従来のテーブルに混同しない必要があり、表形式のデータを提示するものではありません。 `Grid` 行、列またはセルの書式の概念はありません。 HTML のテーブルとは異なり`Grid`コンテンツをレイアウトするためのものが純粋です。
+[![Xamarin. フォームグリッド](grid-images/layouts.png "Xamarin. フォームグリッド")](grid-images/layouts-large.png#lightbox "Xamarin. フォームグリッド")
 
-[![](grid-images/layouts-sml.png "Xamarin.Forms のレイアウト")](grid-images/layouts.png#lightbox "Xamarin.Forms のレイアウト")
+は、 [`Grid`](xref:Xamarin.Forms.Grid) その子を行と列に編成するレイアウトであり、比例または絶対的なサイズを持つことができます。 既定では、には `Grid` 1 つの行と1つの列が含まれます。 また、は、 `Grid` 他の子レイアウトを含む親レイアウトとして使用できます。
 
-この記事では説明します。
+[`Grid`](xref:Xamarin.Forms.Grid)レイアウトはテーブルと混同しないようにしてください。表形式のデータを表示するためのものではありません。 HTML テーブルとは異なり、は、コンテンツをレイアウトすることを目的とし `Grid` ています。 表形式データを表示する場合は、 [ListView](~/xamarin-forms/user-interface/listview/index.md)、 [CollectionView](~/xamarin-forms/user-interface/collectionview/index.md)、または[TableView](~/xamarin-forms/user-interface/tableview.md)を使用することを検討してください。
 
-- **[目的](#purpose)** &ndash;の一般的な使用`Grid`します。
-- **[使用状況](#usage)** &ndash;を使用する`Grid`目的の設計を実現するためにします。
-  - **[行と列](#rows-and-columns)** &ndash;行と列の指定、`Grid`します。
-  - **[ビューを配置する](#placing-views-in-a-grid)** &ndash;ビューを特定の行と列のグリッドに追加します。
-  - **[間隔](#spacing)** &ndash;行と列の間のスペースを構成します。
-  - **[スパン](#spans)** &ndash;複数の行または列にまたがるように要素を構成します。
+[`Grid`](xref:Xamarin.Forms.Grid)クラスは、次のプロパティを定義します。
 
-![](grid-images/grid.png "グリッド探索")
+- [`Column`](xref:Xamarin.Forms.Grid.ColumnProperty)型の `int` 。これは、親内のビューの列の配置を示す添付プロパティです `Grid` 。 このプロパティの既定値は 0 です。 検証コールバックは、プロパティが設定されている場合に、その値が0以上であることを確認します。
+- [`ColumnDefinitions`](xref:Xamarin.Forms.Grid.ColumnDefinitions)型の [`ColumnDefinitionCollection`](xref:Xamarin.Forms.ColumnDefinitionCollection) は、 [`ColumnDefinition`](xref:Xamarin.Forms.ColumnDefinition) グリッド列の幅を定義するオブジェクトの一覧です。
+- [`ColumnSpacing`](xref:Xamarin.Forms.Grid.ColumnSpacing)型のは、 `double` グリッド列間の距離を示します。 このプロパティの既定値は、デバイスに依存しない6つの単位です。
+- [`ColumnSpan`](xref:Xamarin.Forms.Grid.ColumnSpanProperty)型の。 `int` これは、親内のビューがまたがる列の合計数を示す添付プロパティです `Grid` 。 このプロパティの既定値は 1 です。 検証コールバックは、プロパティが設定されている場合、その値が1以上であることを確認します。
+- [`Row`](xref:Xamarin.Forms.Grid.RowProperty)型の `int` 。これは、親内のビューの行の配置を示す添付プロパティです `Grid` 。 このプロパティの既定値は 0 です。 検証コールバックは、プロパティが設定されている場合に、その値が0以上であることを確認します。
+- [`RowDefinitions`](xref:Xamarin.Forms.Grid.RowDefinitions)型の [`RowDefinitionCollection`](xref:Xamarin.Forms.RowDefinitionCollection) は、 [`RowDefintion`](xref:Xamarin.Forms.RowDefinition) グリッド行の高さを定義するオブジェクトのリストです。
+- [`RowSpacing`](xref:Xamarin.Forms.Grid.RowSpacing)型のは、 `double` グリッド行間の距離を示します。 このプロパティの既定値は、デバイスに依存しない6つの単位です。
+- [`RowSpan`](xref:Xamarin.Forms.Grid.RowSpanProperty)型の。 `int` これは、親内のビューがまたがる行の合計数を示す添付プロパティです `Grid` 。 このプロパティの既定値は 1 です。 検証コールバックは、プロパティが設定されている場合、その値が1以上であることを確認します。
 
-## <a name="purpose"></a>目的
+これらのプロパティは、オブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。つまり、プロパティは、データバインディングのターゲットとスタイルを設定できます。
 
-`Grid` グリッド ビューを配置するために使用できます。 これはさまざまなケースで役立ちます。
+クラスは、 [`Grid`](xref:Xamarin.Forms.Grid) `Layout<T>` 型のプロパティを定義するクラスから派生 `Children` `IList<T>` します。 `Children`プロパティは `ContentProperty` クラスのである `Layout<T>` ため、XAML から明示的に設定する必要はありません。
 
-- 電卓アプリ内のボタンの配置
-- IOS または Android のホーム画面のように、グリッドに整列ボタン/選択肢
-- 1 つのディメンション (一部のツールバーのように) に等しいサイズのように、ビューを配置します。
+> [!TIP]
+> レイアウトの最適なパフォーマンスを得るには、「[レイアウトのパフォーマンスを最適化](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)する」のガイドラインに従ってください。
 
-## <a name="usage"></a>使用法
+## <a name="rows-and-columns"></a>行と列
 
-従来のテーブルとは異なり`Grid`コンテンツから行と列のサイズと数を推論することはありません。 代わりに、`Grid`が`RowDefinitions`と`ColumnDefinitions`コレクション。 これらは、行と列の数がレイアウトの定義を保持します。ビューに追加されます`Grid`行と列でビューを配置する必要がありますを識別する指定された行および列のインデックスを使用します。
-
-### <a name="rows-and-columns"></a>行と列
-
-行および列情報が格納されている`Grid`の`RowDefinitions`  &  `ColumnDefinitions`は各コレクションのプロパティの[ `RowDefinition` ](xref:Xamarin.Forms.RowDefinition)と[ `ColumnDefinition` ](xref:Xamarin.Forms.ColumnDefinition)オブジェクトをそれぞれします。 `RowDefinition` 1 つのプロパティを持つ`Height`と`ColumnDefinition`1 つのプロパティを持つ`Width`します。 高さと幅のオプションは次のとおりです。
-
-- **自動**&ndash;行または列の内容に合わせて自動的にサイズ。 として指定された[ `GridUnitType.Auto` ](xref:Xamarin.Forms.GridUnitType) (C#) またはとして`Auto`XAML でします。
-- **Proportional(*)** &ndash;残りの領域の割合としての列と行のサイズを設定します。 値として指定し、 `GridUnitType.Star` (C#) と`#*`、XAML で`#`目的の値をされています。 1 つの行/列を指定する`*`使用可能な領域をいっぱいになるようになります。
-- **絶対**&ndash;列と、特定の固定の高さと幅の値を持つ行のサイズを設定します。 値として指定し、 `GridUnitType.Absolute` (C#) と`#`、XAML で`#`目的の値をされています。
-
-> [!NOTE]
-> 列の幅の値は、既定`*`ではとして設定されます。これにより、列が使用可能な領域に収まるようになります。 行の高さの値も、既定で`*`として設定されます。
-
-次の 3 つの行と 2 つの列が必要なアプリケーションを考えてみます。 一番下の行を正確に 200px (縦) をある必要があり、一番上の行は、中央の行と高さが同じである 2 回必要があります。 左側の列に合わせたコンテンツ幅にする必要があるし、右側の列は、残りのスペースを埋める必要があります。
-
-で XAML:
+既定では、に [`Grid`](xref:Xamarin.Forms.Grid) 1 つの行と1つの列が含まれます。
 
 ```xaml
-<Grid>
-  <Grid.RowDefinitions>
-    <RowDefinition Height="2*" />
-    <RowDefinition Height="*" />
-    <RowDefinition Height="200" />
-  </Grid.RowDefinitions>
-  <Grid.ColumnDefinitions>
-    <ColumnDefinition Width="Auto" />
-    <ColumnDefinition Width="*" />
-  </Grid.ColumnDefinitions>
-</Grid>
-```
-
-C# の場合:
-
-```csharp
-Grid grid = new Grid();
-grid.RowDefinitions.Add (new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
-grid.RowDefinitions.Add (new RowDefinition { Height = new GridLength (1, GridUnitType.Star) });
-grid.RowDefinitions.Add (new RowDefinition { Height = new GridLength(200)});
-grid.ColumnDefinitions.Add (new ColumnDefinition{ Width = new GridLength (200) });
-grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Auto) });
-```
-
-### <a name="placing-views-in-a-grid"></a>グリッド ビューを配置します。
-
-ビューを配置する、`Grid`をグリッドに子として追加しに属している行と列を指定する必要があります。
-
-XAML を使用して`Grid.Row`と`Grid.Column`配置を指定する各個々 のビュー。 なお`Grid.Row`と`Grid.Column`行と列の 0 から始まるリストに基づく場所を指定します。 つまり、4 × 4 のグリッドで右下のセルは (3, 3)、左上のセルは (0, 0)。
-
-`Grid`に示す次の 4 つのセルが含まれています。
-
-![](grid-images/label-grid.png "4 つのビューとグリッド")
-
-で XAML:
-
-```xaml
-<Grid>
-  <Grid.RowDefinitions>
-    <RowDefinition Height="*" />
-    <RowDefinition Height="*" />
-  </Grid.RowDefinitions>
-  <Grid.ColumnDefinitions>
-    <ColumnDefinition Width="*" />
-    <ColumnDefinition Width="*" />
-  </Grid.ColumnDefinitions>
-  <Label Text="Top Left" Grid.Row="0" Grid.Column="0" />
-  <Label Text="Top Right" Grid.Row="0" Grid.Column="1" />
-  <Label Text="Bottom Left" Grid.Row="1" Grid.Column="0" />
-  <Label Text="Bottom Right" Grid.Row="1" Grid.Column="1" />
-</Grid>
-```
-
-C# の場合:
-
-```csharp
-var grid = new Grid();
-
-grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
-grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star)});
-grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)});
-grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star)});
-
-var topLeft = new Label { Text = "Top Left" };
-var topRight = new Label { Text = "Top Right" };
-var bottomLeft = new Label { Text = "Bottom Left" };
-var bottomRight = new Label { Text = "Bottom Right" };
-
-grid.Children.Add(topLeft, 0, 0);
-grid.Children.Add(topRight, 1, 0);
-grid.Children.Add(bottomLeft, 0, 1);
-grid.Children.Add(bottomRight, 1, 1);
-```
-
-上記のコードでは、4 つのラベル、2 つの列では、2 つの行とグリッドを作成します。 各ラベルが同じサイズにあるし、行をすべて使用可能な領域を使用する展開はことに注意してください。
-
-上記の例ではビューに追加されます、 [ `Grid.Children` ](xref:Xamarin.Forms.Grid.Children)コレクションを使用して、 [ `Add` ](xref:Xamarin.Forms.Grid.IGridList`1.Add*)左と上の引数を指定するオーバー ロードします。 使用する場合、 [ `Add` ](xref:Xamarin.Forms.Grid.IGridList`1.Add*) left を指定するオーバー ロード、右、上、および、下部にある引数の中に、左と上の引数は、常に内のセルを参照、 [ `Grid`](xref:Xamarin.Forms.Grid)右と外部にあるセルを参照する引数の下部にある場合があります、`Grid`します。 これは、右の引数は、左の引数より大きい必ず下部にある引数を最上位の引数よりも大きい必ずためです。 次の例は、両方を使用して同等のコードを示しています。`Add`オーバー ロードします。
-
-```csharp
-// left, top
-grid.Children.Add(topLeft, 0, 0);
-grid.Children.Add(topRight, 1, 0);
-grid.Children.Add(bottomLeft, 0, 1);
-grid.Children.Add(bottomRight, 1, 1);
-
-// left, right, top, bottom
-grid.Children.Add(topLeft, 0, 1, 0, 1);
-grid.Children.Add(topRight, 1, 2, 0, 1);
-grid.Children.Add(bottomLeft, 0, 1, 1, 2);
-grid.Children.Add(bottomRight, 1, 2, 1, 2);
-```
-
-### <a name="spacing"></a>スペース
-
-`Grid` 行と列の間隔を制御するプロパティがあります。 次のプロパティをカスタマイズするために使用できる、 `Grid`:
-
-- **ColumnSpacing** &ndash;列間のスペース量。 このプロパティの既定値は、6 です。
-- **間隔を広げる**&ndash;行の間の領域の量。 このプロパティの既定値は、6 です。
-
-次の XAML を指定します、`Grid`で 2 つの列、1 行、および 5 px 列間の間隔。
-
-```xaml
-<Grid ColumnSpacing="5">
-  <Grid.ColumnDefinitions>
-    <ColumnDefinition Width="*" />
-    <ColumnDefinition Width="*" />
-  </Grid.ColumnDefinitions>
-</Grid>
-```
-
-C# の場合:
-
-```csharp
-var grid = new Grid { ColumnSpacing = 5 };
-grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength (1, GridUnitType.Star)});
-grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength (1, GridUnitType.Star)});
-```
-
-### <a name="spans"></a>範囲
-
-グリッドを使用する場合に多くの場合は、要素を 1 つ以上の行または列を占有する必要があります。 簡単な電卓アプリケーションを検討してください。
-
-![](grid-images/calculator.png "Calulator アプリケーション")
-
-0 のボタンにまたがって表示される 2 つの列と同じように各プラットフォーム用の組み込みの計算ツールに注目してください。 これは、`ColumnSpan`プロパティで、要素が列の数が占有するを指定します。 そのボタンの XAML:
-
-```xaml
-<Button Text = "0" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" />
-```
-
-および C# の場合。
-
-```csharp
-Button zeroButton = new Button { Text = "0" };
-controlGrid.Children.Add (zeroButton, 0, 4);
-Grid.SetColumnSpan (zeroButton, 2);
-```
-
-静的メソッドのコードを注意してください、`Grid`クラスへの変更をなどの変更を配置する際に使用`ColumnSpan`と`RowSpan`します。 また、いつでも設定できるその他のプロパティとは異なりプロパティの静的メソッドを使用して設定する必要が既に、グリッドで前に、変更されました。
-
-上記の電卓アプリケーションの完全な XAML は次のとおりです。
-
-```xaml
-<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-x:Class="LayoutSamples.CalculatorGridXAML"
-Title = "Calculator - XAML"
-BackgroundColor="#404040">
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Style x:Key="plainButton" TargetType="Button">
-                <Setter Property="BackgroundColor" Value="#eee"/>
-                <Setter Property="TextColor" Value="Black" />
-                <Setter Property="BorderRadius" Value="0"/>
-                <Setter Property="FontSize" Value="40" />
-            </Style>
-            <Style x:Key="darkerButton" TargetType="Button">
-                <Setter Property="BackgroundColor" Value="#ddd"/>
-                <Setter Property="TextColor" Value="Black" />
-                <Setter Property="BorderRadius" Value="0"/>
-                <Setter Property="FontSize" Value="40" />
-            </Style>
-            <Style x:Key="orangeButton" TargetType="Button">
-                <Setter Property="BackgroundColor" Value="#E8AD00"/>
-                <Setter Property="TextColor" Value="White" />
-                <Setter Property="BorderRadius" Value="0"/>
-                <Setter Property="FontSize" Value="40" />
-            </Style>
-        </ResourceDictionary>
-    </ContentPage.Resources>
-    <ContentPage.Content>
-        <Grid x:Name="controlGrid" RowSpacing="1" ColumnSpacing="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="150" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <Label Text="0" Grid.Row="0" HorizontalTextAlignment="End" VerticalTextAlignment="End" TextColor="White"
-        FontSize="60" Grid.ColumnSpan="4" />
-            <Button Text = "C" Grid.Row="1" Grid.Column="0"
-        Style="{StaticResource darkerButton}" />
-            <Button Text = "+/-" Grid.Row="1" Grid.Column="1"
-        Style="{StaticResource darkerButton}" />
-            <Button Text = "%" Grid.Row="1" Grid.Column="2"
-        Style="{StaticResource darkerButton}" />
-            <Button Text = "div" Grid.Row="1" Grid.Column="3"
-        Style="{StaticResource orangeButton}" />
-            <Button Text = "7" Grid.Row="2" Grid.Column="0"
-        Style="{StaticResource plainButton}" />
-            <Button Text = "8" Grid.Row="2" Grid.Column="1"
-        Style="{StaticResource plainButton}" />
-            <Button Text = "9" Grid.Row="2" Grid.Column="2"
-        Style="{StaticResource plainButton}" />
-            <Button Text = "X" Grid.Row="2" Grid.Column="3"
-        Style="{StaticResource orangeButton}" />
-            <Button Text = "4" Grid.Row="3" Grid.Column="0"
-        Style="{StaticResource plainButton}" />
-            <Button Text = "5" Grid.Row="3" Grid.Column="1"
-        Style="{StaticResource plainButton}" />
-            <Button Text = "6" Grid.Row="3" Grid.Column="2"
-        Style="{StaticResource plainButton}" />
-            <Button Text = "-" Grid.Row="3" Grid.Column="3"
-        Style="{StaticResource orangeButton}" />
-            <Button Text = "1" Grid.Row="4" Grid.Column="0"
-        Style="{StaticResource plainButton}" />
-            <Button Text = "2" Grid.Row="4" Grid.Column="1"
-        Style="{StaticResource plainButton}" />
-            <Button Text = "3" Grid.Row="4" Grid.Column="2"
-        Style="{StaticResource plainButton}" />
-            <Button Text = "+" Grid.Row="4" Grid.Column="3"
-        Style="{StaticResource orangeButton}" />
-            <Button Text = "0" Grid.ColumnSpan="2"
-        Grid.Row="5" Grid.Column="0" Style="{StaticResource plainButton}" />
-            <Button Text = "." Grid.Row="5" Grid.Column="2"
-        Style="{StaticResource plainButton}" />
-            <Button Text = "=" Grid.Row="5" Grid.Column="3"
-        Style="{StaticResource orangeButton}" />
-        </Grid>
-    </ContentPage.Content>
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GridTutorial.MainPage">
+    <Grid Margin="20,35,20,20">
+        <Label Text="By default, a Grid contains one row and one column." />
+    </Grid>
 </ContentPage>
 ```
 
-両方のグリッドの上部にあるラベルと 0 個、ボタンが occuping 複数の列があることを確認します。 入れ子になったグリッドを使用して同様のレイアウトを達成できるが、 `ColumnSpan`  &  `RowSpan`アプローチの方が簡単です。
+この例では、 [`Grid`](xref:Xamarin.Forms.Grid) に、1つの [`Label`](xref:Xamarin.Forms.Label) 場所に自動的に配置される単一の子が含まれています。
 
-C# で実装します。
+[![既定のグリッドレイアウトのスクリーンショット](grid-images/default.png "既定のグリッドレイアウト")](grid-images/default-large.png#lightbox "既定のグリッドレイアウト")
+
+のレイアウト動作は、 [`Grid`](xref:Xamarin.Forms.Grid) プロパティとプロパティを使用して定義でき [`RowDefinitions`](xref:Xamarin.Forms.Grid.RowDefinitions) ます。このプロパティは、 [`ColumnDefinitions`](xref:Xamarin.Forms.Grid.ColumnDefinitions) [`RowDefinition`](xref:Xamarin.Forms.RowDefinition) それぞれオブジェクトとオブジェクトのコレクションです [`ColumnDefinition`](xref:Xamarin.Forms.ColumnDefinition) 。 これらのコレクションは、の行と列の特性を定義 `Grid` します。には、の各行に1つの [`RowDefinition`](xref:Xamarin.Forms.RowDefinition) オブジェクト、およびの `Grid` 各列に1つのオブジェクトを含める必要があり [`ColumnDefinition`](xref:Xamarin.Forms.ColumnDefinition) `Grid` ます。
+
+クラスは、 [`RowDefinition`](xref:Xamarin.Forms.RowDefinition) [`Height`](xref:Xamarin.Forms.RowDefinition.Height) 型のプロパティを定義 [`GridLength`](xref:Xamarin.Forms.GridLength) し、 [`ColumnDefinition`](xref:Xamarin.Forms.ColumnDefinition) クラスは [`Width`](xref:Xamarin.Forms.ColumnDefinition.Width) 型のプロパティを定義し [`GridLength`](xref:Xamarin.Forms.GridLength) ます。 [`GridLength`](xref:Xamarin.Forms.GridLength)構造体は、 [`GridUnitType`](xref:Xamarin.Forms.GridUnitType) 次の3つのメンバーを持つ列挙体に関して行の高さまたは列の幅を指定します。
+
+- `Absolute`–行の高さまたは列の幅は、デバイスに依存しない単位 (XAML の数値) の値です。
+- `Auto`–行の高さまたは列の幅は、(XAML の) セルの内容に基づいて自動的に設定され `Auto` ます。
+- `Star`–未使用の行の高さまたは列の幅が比例して割り当てられます (XAML の数値の後に `*` )。
+
+[`Grid`](xref:Xamarin.Forms.Grid)のプロパティを持つ行では、 `Height` `Auto` 垂直方向と同じように、その行のビューの高さが制限され [`StackLayout`](xref:Xamarin.Forms.StackLayout) ます。 同様に、のプロパティを持つ列は、 `Width` `Auto` 水平方向と同様に機能し `StackLayout` ます。
+
+> [!CAUTION]
+> できるだけ少ない数の行と列が size に設定されるようにしてください [`Auto`](xref:Xamarin.Forms.GridLength.Auto) 。 自動サイズ調整された行または列はそれぞれ、レイアウト エンジンに追加のレイアウト計算を実行させることになります。 その代わりに可能であれば、固定サイズの行と列を使用してください。 または、行と列に対して、列挙値を使用して比例した領域を占めるように設定し [`GridUnitType.Star`](xref:Xamarin.Forms.GridUnitType.Star) ます。
+
+次の XAML は、 [`Grid`](xref:Xamarin.Forms.Grid) 3 つの行と2つの列を持つを作成する方法を示しています。
+
+```xaml
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GridDemos.Views.BasicGridPage"
+             Title="Basic Grid demo">
+   <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        ...
+    </Grid>
+</ContentPage>
+```
+
+この例では、の [`Grid`](xref:Xamarin.Forms.Grid) 高さがページ全体の高さになります。 は、 `Grid` 3 番目の行の高さが100デバイスに依存しない単位であることを認識します。 その高さを独自の高さから減算し、残りの高さを、星の前の数値に基づいて最初の行と2番目の行の間に均等に割り当てます。 この例では、最初の行の高さが2番目の行の2倍になっています。
+
+2つの [`ColumnDefinition`](xref:Xamarin.Forms.ColumnDefinition) オブジェクトは両方ともに設定されます [`Width`](xref:Xamarin.Forms.ColumnDefinition.Width) `*` 。これは、 `1*` 画面の幅が2つの列の下に均等に分割されることを意味します。
+
+> [!IMPORTANT]
+> プロパティの既定値 [`RowDefinition.Height`](xref:Xamarin.Forms.RowDefinition.Height) は `*` です。 同様に、プロパティの既定値 [`ColumnDefinition.Width`](xref:Xamarin.Forms.ColumnDefinition.Width) は `*` です。 そのため、これらの既定値が許容される場合は、これらのプロパティを設定する必要はありません。
+
+子ビューは [`Grid`](xref:Xamarin.Forms.Grid) 、および添付プロパティを使用して特定のセルに配置でき [`Grid.Column`](xref:Xamarin.Forms.Grid.ColumnProperty) [`Grid.Row`](xref:Xamarin.Forms.Grid.RowProperty) ます。 さらに、複数の行と列にまたがる子ビューを作成するには、 [`Grid.RowSpan`](xref:Xamarin.Forms.Grid.RowSpanProperty) プロパティと添付プロパティを使用し [`Grid.ColumnSpan`](xref:Xamarin.Forms.Grid.ColumnSpanProperty) ます。
+
+次の XAML は同じ [`Grid`](xref:Xamarin.Forms.Grid) 定義を示しています。また、特定のセルに子ビューを配置し `Grid` ます。
+
+```xaml
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GridDemos.Views.BasicGridPage"
+             Title="Basic Grid demo">
+   <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition />
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <BoxView Color="Green" />
+        <Label Text="Row 0, Column 0"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+        <BoxView Grid.Column="1"
+                 Color="Blue" />
+        <Label Grid.Column="1"
+               Text="Row 0, Column 1"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+        <BoxView Grid.Row="1"
+                 Color="Teal" />
+        <Label Grid.Row="1"
+               Text="Row 1, Column 0"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+        <BoxView Grid.Row="1"
+                 Grid.Column="1"
+                 Color="Purple" />
+        <Label Grid.Row="1"
+               Grid.Column="1"
+               Text="Row1, Column 1"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+        <BoxView Grid.Row="2"
+                 Grid.ColumnSpan="2"
+                 Color="Red" />
+        <Label Grid.Row="2"
+               Grid.ColumnSpan="2"
+               Text="Row 2, Columns 0 and 1"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+    </Grid>
+</ContentPage>
+```
+
+> [!NOTE]
+> `Grid.Row`プロパティと `Grid.Column` プロパティは両方とも0からインデックスが付けられます。したがって、は3番目 `Grid.Row="2"` の行を参照し、は `Grid.Column="1"` 2 番目の列を参照します。 さらに、これらのプロパティのどちらも既定値は0であるため、の最初の行または最初の列を占有する子ビューに対して設定する必要はありません [`Grid`](xref:Xamarin.Forms.Grid) 。
+
+この例では、3つの [`Grid`](xref:Xamarin.Forms.Grid) 行すべてがビューとビューで占有されてい [`BoxView`](xref:Xamarin.Forms.BoxView) [`Label`](xref:Xamarin.Forms.Label) ます。 3番目の行は、デバイスに依存しない単位の上限である100です。最初の2つの行は、残りの領域を占めます (最初の行は2番目の行の2倍の2行になります)。 2つの列の幅は同じで、を `Grid` 半分に分割します。 `BoxView`3 番目の行のは、両方の列にまたがります。
+
+[![基本的なグリッドレイアウトのスクリーンショット](grid-images/basic.png "基本的なグリッドレイアウト")](grid-images/basic-large.png#lightbox "基本的なグリッドレイアウト")
+
+また、内の子ビューでは、 [`Grid`](xref:Xamarin.Forms.Grid) セルを共有できます。 子が XAML に表示される順序は、子がに配置される順序です `Grid` 。 前の例では、オブジェクトは [`Label`](xref:Xamarin.Forms.Label) オブジェクトの上にレンダリングされるため、表示されるだけです [`BoxView`](xref:Xamarin.Forms.BoxView) 。 オブジェクトがオブジェクトの `Label` 上にレンダリングされた場合、オブジェクトは表示されません `BoxView` 。
+
+同等の C# コードを次に示します。
 
 ```csharp
-public CalculatorGridCode ()
+public class BasicGridPageCS : ContentPage
 {
-  Title = "Calculator - C#";
-  BackgroundColor = Color.FromHex ("#404040");
+    public BasicGridPageCS()
+    {
+        Grid grid = new Grid
+        {
+            RowDefinitions =
+            {
+                new RowDefinition { Height = new GridLength(2, GridUnitType.Star) },
+                new RowDefinition(),
+                new RowDefinition { Height = new GridLength(100) }
+            },
+            ColumnDefinitions =
+            {
+                new ColumnDefinition(),
+                new ColumnDefinition()
+            }
+        };
 
-  var plainButton = new Style (typeof(Button)) {
-    Setters = {
-      new Setter { Property = Button.BackgroundColorProperty, Value = Color.FromHex ("#eee") },
-      new Setter { Property = Button.TextColorProperty, Value = Color.Black },
-      new Setter { Property = Button.BorderRadiusProperty, Value = 0 },
-      new Setter { Property = Button.FontSizeProperty, Value = 40 }
+        // Row 0
+        // The BoxView and Label are in row 0 and column 0, and so only needs to be added to the
+        // Grid.Children collection to get default row and column settings.
+        grid.Children.Add(new BoxView
+        {
+            Color = Color.Green
+        });
+        grid.Children.Add(new Label
+        {
+            Text = "Row 0, Column 0",
+            HorizontalOptions = LayoutOptions.Center,
+            VerticalOptions = LayoutOptions.Center
+        });
+
+        // This BoxView and Label are in row 0 and column 1, which are specified as arguments
+        // to the Add method.
+        grid.Children.Add(new BoxView
+        {
+            Color = Color.Blue
+        }, 1, 0);
+        grid.Children.Add(new Label
+        {
+            Text = "Row 0, Column 1",
+            HorizontalOptions = LayoutOptions.Center,
+            VerticalOptions = LayoutOptions.Center
+        }, 1, 0);
+
+        // Row 1
+        // This BoxView and Label are in row 1 and column 0, which are specified as arguments
+        // to the Add method overload.
+        grid.Children.Add(new BoxView
+        {
+            Color = Color.Teal
+        }, 0, 1, 1, 2);
+        grid.Children.Add(new Label
+        {
+            Text = "Row 1, Column 0",
+            HorizontalOptions = LayoutOptions.Center,
+            VerticalOptions = LayoutOptions.Center
+        }, 0, 1, 1, 2); // These arguments indicate that that the child element goes in the column starting at 0 but ending before 1.
+                        // They also indicate that the child element goes in the row starting at 1 but ending before 2.
+
+        grid.Children.Add(new BoxView
+        {
+            Color = Color.Purple
+        }, 1, 2, 1, 2);
+        grid.Children.Add(new Label
+        {
+            Text = "Row1, Column 1",
+            HorizontalOptions = LayoutOptions.Center,
+            VerticalOptions = LayoutOptions.Center
+        }, 1, 2, 1, 2);
+
+        // Row 2
+        // Alternatively, the BoxView and Label can be positioned in cells with the Grid.SetRow
+        // and Grid.SetColumn methods.
+        BoxView boxView = new BoxView { Color = Color.Red };
+        Grid.SetRow(boxView, 2);
+        Grid.SetColumnSpan(boxView, 2);
+        Label label = new Label
+        {
+            Text = "Row 2, Column 0 and 1",
+            HorizontalOptions = LayoutOptions.Center,
+            VerticalOptions = LayoutOptions.Center
+        };
+        Grid.SetRow(label, 2);
+        Grid.SetColumnSpan(label, 2);
+
+        grid.Children.Add(boxView);
+        grid.Children.Add(label);
+
+        Title = "Basic Grid demo";
+        Content = grid;
     }
-  };
-  var darkerButton = new Style (typeof(Button)) {
-    Setters = {
-      new Setter { Property = Button.BackgroundColorProperty, Value = Color.FromHex ("#ddd") },
-      new Setter { Property = Button.TextColorProperty, Value = Color.Black },
-      new Setter { Property = Button.BorderRadiusProperty, Value = 0 },
-      new Setter { Property = Button.FontSizeProperty, Value = 40 }
+}
+```
+
+コードでは、オブジェクトの高さとオブジェクトの幅を指定するために、 [`RowDefinition`](xref:Xamarin.Forms.RowDefinition) [`ColumnDefinition`](xref:Xamarin.Forms.ColumnDefinition) 多くの場合、 [`GridLength`](xref:Xamarin.Forms.GridLength) 列挙と組み合わせて構造体の値を使用し [`GridUnitType`](xref:Xamarin.Forms.GridUnitType) ます。
+
+上のコード例では、に子を追加し、それらが存在するセルを指定するためのいくつかの異なる方法も示して [`Grid`](xref:Xamarin.Forms.Grid) います。 `Add` *Left*、 *right*、 *top*、および*bottom*の各引数を指定するオーバーロードを使用しているときに、 *left*および*top*引数が常に内のセルを参照しているときに、 `Grid` *右*と*下*の引数がの外部にあるセルを参照しているように見え `Grid` ます。 これは、 *right*引数は常に*左*の引数よりも大きくする必要があり、*下*の引数は常に*top*引数よりも大きくする必要があるためです。 次の例では、2x2 を前提とし `Grid` て、両方のオーバーロードを使用して同等のコードを示してい `Add` ます。
+
+```csharp
+// left, top
+grid.Children.Add(topLeft, 0, 0);           // first column, first row
+grid.Children.Add(topRight, 1, 0);          // second column, first tow
+grid.Children.Add(bottomLeft, 0, 1);        // first column, second row
+grid.Children.Add(bottomRight, 1, 1);       // second column, second row
+
+// left, right, top, bottom
+grid.Children.Add(topLeft, 0, 1, 0, 1);     // first column, first row
+grid.Children.Add(topRight, 1, 2, 0, 1);    // second column, first tow
+grid.Children.Add(bottomLeft, 0, 1, 1, 2);  // first column, second row
+grid.Children.Add(bottomRight, 1, 2, 1, 2); // second column, second row
+```
+
+> [!NOTE]
+> さらに、子ビューをに追加するには、 [`Grid`](xref:Xamarin.Forms.Grid) メソッドとメソッドを使用します。これにより、 [`AddHorizontal`](xref:Xamarin.Forms.Grid.IGridList`1.AddHorizontal*) [`AddVertical`](xref:Xamarin.Forms.Grid.IGridList`1.AddVertical*) 1 つの行または単一の列に子が追加され `Grid` ます。 これらの呼び出しが行われたときに、が `Grid` 行または列で展開され、適切なセルに子が自動的に配置されます。
+
+## <a name="space-between-rows-and-columns"></a>行と列の間のスペース
+
+既定で [`Grid`](xref:Xamarin.Forms.Grid) は、行はデバイスに依存しない6つの領域単位で区切られます。 同様に、 `Grid` 列は、デバイスに依存しない6つの領域単位で区切られます。 これらの既定値は、 [`RowSpacing`](xref:Xamarin.Forms.Grid.RowSpacing) プロパティとプロパティをそれぞれ設定することによって変更でき [`ColumnSpacing`](xref:Xamarin.Forms.Grid.ColumnSpacing) ます。
+
+```xaml
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GridDemos.Views.GridSpacingPage"
+             Title="Grid spacing demo">
+    <Grid RowSpacing="0"
+          ColumnSpacing="0">
+        ..
+    </Grid>
+</ContentPage>
+```
+
+次の例では、 [`Grid`](xref:Xamarin.Forms.Grid) 行と列の間に空白を含まないを作成します。
+
+[![セル間にスペースを使用しないグリッドのスクリーンショット](grid-images/spacing.png "セル間にスペースがないグリッド")](grid-images/spacing-large.png#lightbox "セル間にスペースがないグリッド")
+
+> [!TIP]
+> [`RowSpacing`](xref:Xamarin.Forms.Grid.RowSpacing)プロパティと [`ColumnSpacing`](xref:Xamarin.Forms.Grid.ColumnSpacing) プロパティを負の値に設定すると、セルの内容を重ねることができます。
+
+同等の C# コードを次に示します。
+
+```csharp
+public GridSpacingPageCS()
+{
+    Grid grid = new Grid
+    {
+        RowSpacing = 0,
+        ColumnSpacing = 0,
+        // ...
+    };
+    // ...
+
+    Content = grid;
+}
+```
+
+## <a name="alignment"></a>アラインメント
+
+の子ビューは、 [`Grid`](xref:Xamarin.Forms.Grid) プロパティとプロパティによってセル内に配置でき [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) ます。 これらのプロパティは、構造体から次のフィールドに設定でき [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) ます。
+
+- [`Start`](xref:Xamarin.Forms.LayoutOptions.Start)
+- [`Center`](xref:Xamarin.Forms.LayoutOptions.Center)
+- [`End`](xref:Xamarin.Forms.LayoutOptions.End)
+- [`Fill`](xref:Xamarin.Forms.LayoutOptions.Fill)
+
+> [!IMPORTANT]
+> `AndExpands`構造体のフィールド [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) は、オブジェクトにのみ適用され [`StackLayout`](xref:Xamarin.Forms.StackLayout) ます。
+
+次の XAML は、 [`Grid`](xref:Xamarin.Forms.Grid) 9 個の同じサイズのセルを持つを作成し、それぞれの [`Label`](xref:Xamarin.Forms.Label) セルに異なる配置でを配置します。
+
+```xaml
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GridDemos.Views.GridAlignmentPage"
+             Title="Grid alignment demo">
+    <Grid RowSpacing="0"
+          ColumnSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <BoxView Color="AliceBlue" />
+        <Label Text="Upper left"
+               HorizontalOptions="Start"
+               VerticalOptions="Start" />
+        <BoxView Grid.Column="1"
+                 Color="LightSkyBlue" />
+        <Label Grid.Column="1"
+               Text="Upper center"
+               HorizontalOptions="Center"
+               VerticalOptions="Start"/>
+        <BoxView Grid.Column="2"
+                 Color="CadetBlue" />
+        <Label Grid.Column="2"
+               Text="Upper right"
+               HorizontalOptions="End"
+               VerticalOptions="Start" />
+        <BoxView Grid.Row="1"
+                 Color="CornflowerBlue" />
+        <Label Grid.Row="1"
+               Text="Center left"
+               HorizontalOptions="Start"
+               VerticalOptions="Center" />
+        <BoxView Grid.Row="1"
+                 Grid.Column="1"
+                 Color="DodgerBlue" />
+        <Label Grid.Row="1"
+               Grid.Column="1"
+               Text="Center center"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+        <BoxView Grid.Row="1"
+                 Grid.Column="2"
+                 Color="DarkSlateBlue" />
+        <Label Grid.Row="1"
+               Grid.Column="2"
+               Text="Center right"
+               HorizontalOptions="End"
+               VerticalOptions="Center" />
+        <BoxView Grid.Row="2"
+                 Color="SteelBlue" />
+        <Label Grid.Row="2"
+               Text="Lower left"
+               HorizontalOptions="Start"
+               VerticalOptions="End" />
+        <BoxView Grid.Row="2"
+                 Grid.Column="1"
+                 Color="LightBlue" />
+        <Label Grid.Row="2"
+               Grid.Column="1"
+               Text="Lower center"
+               HorizontalOptions="Center"
+               VerticalOptions="End" />
+        <BoxView Grid.Row="2"
+                 Grid.Column="2"
+                 Color="BlueViolet" />
+        <Label Grid.Row="2"
+               Grid.Column="2"
+               Text="Lower right"
+               HorizontalOptions="End"
+               VerticalOptions="End" />
+    </Grid>
+</ContentPage>
+```
+
+この例では、各行 [`Label`](xref:Xamarin.Forms.Label) のオブジェクトはすべて垂直方向に整列されていますが、水平方向の配置は異なります。 別の方法として、 `Label` 各列のオブジェクトが水平方向に同一に配置されているが、異なる垂直方向の配置を使用していると考えることもできます。
+
+[![グリッド内のセルの配置のスクリーンショット](grid-images/alignment.png "グリッド内のセルの配置")](grid-images/alignment-large.png#lightbox "グリッド内のセルの配置")
+
+同等の C# コードを次に示します。
+
+```csharp
+public class GridAlignmentPageCS : ContentPage
+{
+    public GridAlignmentPageCS()
+    {
+        Grid grid = new Grid
+        {
+            RowSpacing = 0,
+            ColumnSpacing = 0,
+            RowDefinitions =
+            {
+                new RowDefinition(),
+                new RowDefinition(),
+                new RowDefinition()
+            },
+            ColumnDefinitions =
+            {
+                new ColumnDefinition(),
+                new ColumnDefinition(),
+                new ColumnDefinition()
+            }
+        };
+
+        // Row 0
+        grid.Children.Add(new BoxView
+        {
+            Color = Color.AliceBlue
+        });
+        grid.Children.Add(new Label
+        {
+            Text = "Upper left",
+            HorizontalOptions = LayoutOptions.Start,
+            VerticalOptions = LayoutOptions.Start
+        });
+
+        grid.Children.Add(new BoxView
+        {
+            Color = Color.LightSkyBlue
+        }, 1, 0);
+        grid.Children.Add(new Label
+        {
+            Text = "Upper center",
+            HorizontalOptions = LayoutOptions.Center,
+            VerticalOptions = LayoutOptions.Start
+        }, 1, 0);
+
+        grid.Children.Add(new BoxView
+        {
+            Color = Color.CadetBlue
+        }, 2, 0);
+        grid.Children.Add(new Label
+        {
+            Text = "Upper right",
+            HorizontalOptions = LayoutOptions.End,
+            VerticalOptions = LayoutOptions.Start
+        }, 2, 0);
+
+        // Row 1
+        grid.Children.Add(new BoxView
+        {
+            Color = Color.CornflowerBlue
+        }, 0, 1);
+        grid.Children.Add(new Label
+        {
+            Text = "Center left",
+            HorizontalOptions = LayoutOptions.Start,
+            VerticalOptions = LayoutOptions.Center
+        }, 0, 1);
+
+        grid.Children.Add(new BoxView
+        {
+            Color = Color.DodgerBlue
+        }, 1, 1);
+        grid.Children.Add(new Label
+        {
+            Text = "Center center",
+            HorizontalOptions = LayoutOptions.Center,
+            VerticalOptions = LayoutOptions.Center
+        }, 1, 1);
+
+        grid.Children.Add(new BoxView
+        {
+            Color = Color.DarkSlateBlue
+        }, 2, 1);
+        grid.Children.Add(new Label
+        {
+            Text = "Center right",
+            HorizontalOptions = LayoutOptions.End,
+            VerticalOptions = LayoutOptions.Center
+        }, 2, 1);
+
+        // Row 2
+        grid.Children.Add(new BoxView
+        {
+            Color = Color.SteelBlue
+        }, 0, 2);
+        grid.Children.Add(new Label
+        {
+            Text = "Lower left",
+            HorizontalOptions = LayoutOptions.Start,
+            VerticalOptions = LayoutOptions.End
+        }, 0, 2);
+
+        grid.Children.Add(new BoxView
+        {
+            Color = Color.LightBlue
+        }, 1, 2);
+        grid.Children.Add(new Label
+        {
+            Text = "Lower center",
+            HorizontalOptions = LayoutOptions.Center,
+            VerticalOptions = LayoutOptions.End
+        }, 1, 2);
+
+        grid.Children.Add(new BoxView
+        {
+            Color = Color.BlueViolet
+        }, 2, 2);
+        grid.Children.Add(new Label
+        {
+            Text = "Lower right",
+            HorizontalOptions = LayoutOptions.End,
+            VerticalOptions = LayoutOptions.End
+        }, 2, 2);
+
+        Title = "Grid alignment demo";
+        Content = grid;
     }
-  };
-  var orangeButton = new Style (typeof(Button)) {
-    Setters = {
-      new Setter { Property = Button.BackgroundColorProperty, Value = Color.FromHex ("#E8AD00") },
-      new Setter { Property = Button.TextColorProperty, Value = Color.White },
-      new Setter { Property = Button.BorderRadiusProperty, Value = 0 },
-      new Setter { Property = Button.FontSizeProperty, Value = 40 }
+}
+```
+
+## <a name="nested-grid-objects"></a>入れ子になった Grid オブジェクト
+
+は、 [`Grid`](xref:Xamarin.Forms.Grid) 入れ子になった子 `Grid` オブジェクトまたはその他の子レイアウトを含む親レイアウトとして使用できます。 オブジェクトを入れ子にする場合、 `Grid` `Grid.Row` 、、 `Grid.Column` `Grid.RowSpan` 、およびの `Grid.ColumnSpan` 各添付プロパティは、常に親内のビューの位置を参照し `Grid` ます。
+
+次の XAML は、オブジェクトの入れ子の例を示してい [`Grid`](xref:Xamarin.Forms.Grid) ます。
+
+```xaml
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:GridDemos.Converters"
+             x:Class="GridDemos.Views.ColorSlidersGridPage"
+             Title="Nested Grids demo">
+
+    <ContentPage.Resources>
+        <converters:DoubleToIntConverter x:Key="doubleToInt" />
+
+        <Style TargetType="Label">
+            <Setter Property="HorizontalTextAlignment"
+                    Value="Center" />
+        </Style>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <BoxView x:Name="boxView"
+                 Color="Black" />
+        <Grid Grid.Row="1"
+              Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Slider x:Name="redSlider"
+                    ValueChanged="OnSliderValueChanged" />
+            <Label Grid.Row="1"
+                   Text="{Binding Source={x:Reference redSlider},
+                                  Path=Value,
+                                  Converter={StaticResource doubleToInt},
+                                  ConverterParameter=255,
+                                  StringFormat='Red = {0}'}" />
+            <Slider x:Name="greenSlider"
+                    Grid.Row="2"
+                    ValueChanged="OnSliderValueChanged" />
+            <Label Grid.Row="3"
+                   Text="{Binding Source={x:Reference greenSlider},
+                                  Path=Value,
+                                  Converter={StaticResource doubleToInt},
+                                  ConverterParameter=255,
+                                  StringFormat='Green = {0}'}" />
+            <Slider x:Name="blueSlider"
+                    Grid.Row="4"
+                    ValueChanged="OnSliderValueChanged" />
+            <Label Grid.Row="5"
+                   Text="{Binding Source={x:Reference blueSlider},
+                                  Path=Value,
+                                  Converter={StaticResource doubleToInt},
+                                  ConverterParameter=255,
+                                  StringFormat='Blue = {0}'}" />
+        </Grid>
+    </Grid>
+</ContentPage>
+```
+
+この例では、ルート [`Grid`](xref:Xamarin.Forms.Grid) レイアウトの [`BoxView`](xref:Xamarin.Forms.BoxView) 最初の行にが、2番目の行に子が含まれてい `Grid` ます。 子に `Grid` は、に [`Slider`](xref:Xamarin.Forms.Slider) よって表示される色を操作するオブジェクト `BoxView` と、 [`Label`](xref:Xamarin.Forms.Label) それぞれの値を表示するオブジェクトが含まれ `Slider` ます。
+
+[![入れ子になったグリッドのスクリーンショット](grid-images/nesting.png "入れ子になった Grid オブジェクト")](grid-images/nesting-large.png#lightbox "入れ子になった Grid オブジェクト")
+
+> [!IMPORTANT]
+> [`Grid`](xref:Xamarin.Forms.Grid)オブジェクトやその他のレイアウトの入れ子を深くするほど、入れ子になったレイアウトの方がパフォーマンスに影響します。 詳細については、「[適切なレイアウトを選択する](~/xamarin-forms/deploy-test/performance.md#choose-the-correct-layout)」を参照してください。
+
+同等の C# コードを次に示します。
+
+```csharp
+public class ColorSlidersGridPageCS : ContentPage
+{
+    BoxView boxView;
+    Slider redSlider;
+    Slider greenSlider;
+    Slider blueSlider;
+
+    public ColorSlidersGridPageCS()
+    {
+        // Create an implicit style for the Labels
+        Style labelStyle = new Style(typeof(Label))
+        {
+            Setters =
+            {
+                new Setter { Property = Label.HorizontalTextAlignmentProperty, Value = TextAlignment.Center }
+            }
+        };
+        Resources.Add(labelStyle);
+
+        // Root page layout
+        Grid rootGrid = new Grid
+        {
+            RowDefinitions =
+            {
+                new RowDefinition(),
+                new RowDefinition()
+            }
+        };
+
+        boxView = new BoxView { Color = Color.Black };
+        rootGrid.Children.Add(boxView);
+
+        // Child page layout
+        Grid childGrid = new Grid
+        {
+            Margin = new Thickness(20),
+            RowDefinitions =
+            {
+                new RowDefinition(),
+                new RowDefinition(),
+                new RowDefinition(),
+                new RowDefinition(),
+                new RowDefinition(),
+                new RowDefinition()
+            }
+        };
+
+        DoubleToIntConverter doubleToInt = new DoubleToIntConverter();
+
+        redSlider = new Slider();
+        redSlider.ValueChanged += OnSliderValueChanged;
+        childGrid.Children.Add(redSlider);
+
+        Label redLabel = new Label();
+        redLabel.SetBinding(Label.TextProperty, new Binding("Value", converter: doubleToInt, converterParameter: "255", stringFormat: "Red = {0}", source: redSlider));
+        Grid.SetRow(redLabel, 1);
+        childGrid.Children.Add(redLabel);
+
+        greenSlider = new Slider();
+        greenSlider.ValueChanged += OnSliderValueChanged;
+        Grid.SetRow(greenSlider, 2);
+        childGrid.Children.Add(greenSlider);
+
+        Label greenLabel = new Label();
+        greenLabel.SetBinding(Label.TextProperty, new Binding("Value", converter: doubleToInt, converterParameter: "255", stringFormat: "Green = {0}", source: greenSlider));
+        Grid.SetRow(greenLabel, 3);
+        childGrid.Children.Add(greenLabel);
+
+        blueSlider = new Slider();
+        blueSlider.ValueChanged += OnSliderValueChanged;
+        Grid.SetRow(blueSlider, 4);
+        childGrid.Children.Add(blueSlider);
+
+        Label blueLabel = new Label();
+        blueLabel.SetBinding(Label.TextProperty, new Binding("Value", converter: doubleToInt, converterParameter: "255", stringFormat: "Blue = {0}", source: blueSlider));
+        Grid.SetRow(blueLabel, 5);
+        childGrid.Children.Add(blueLabel);
+
+        // Place the child Grid in the root Grid
+        rootGrid.Children.Add(childGrid, 0, 1);
+
+        Title = "Nested Grids demo";
+        Content = rootGrid;
     }
-  };
 
-  var controlGrid = new Grid { RowSpacing = 1, ColumnSpacing = 1 };
-  controlGrid.RowDefinitions.Add (new RowDefinition { Height = new GridLength (150) });
-  controlGrid.RowDefinitions.Add (new RowDefinition { Height = new GridLength (1, GridUnitType.Star) });
-  controlGrid.RowDefinitions.Add (new RowDefinition { Height = new GridLength (1, GridUnitType.Star) });
-  controlGrid.RowDefinitions.Add (new RowDefinition { Height = new GridLength (1, GridUnitType.Star) });
-  controlGrid.RowDefinitions.Add (new RowDefinition { Height = new GridLength (1, GridUnitType.Star) });
-  controlGrid.RowDefinitions.Add (new RowDefinition { Height = new GridLength (1, GridUnitType.Star) });
-
-  controlGrid.ColumnDefinitions.Add (new ColumnDefinition { Width = new GridLength (1, GridUnitType.Star) });
-  controlGrid.ColumnDefinitions.Add (new ColumnDefinition { Width = new GridLength (1, GridUnitType.Star) });
-  controlGrid.ColumnDefinitions.Add (new ColumnDefinition { Width = new GridLength (1, GridUnitType.Star) });
-  controlGrid.ColumnDefinitions.Add (new ColumnDefinition { Width = new GridLength (1, GridUnitType.Star) });
-
-  var label = new Label {
-    Text = "0",
-    HorizontalTextAlignment = TextAlignment.End,
-    VerticalTextAlignment = TextAlignment.End,
-    TextColor = Color.White,
-    FontSize = 60
-  };
-  controlGrid.Children.Add (label, 0, 0);
-
-  Grid.SetColumnSpan (label, 4);
-
-  controlGrid.Children.Add (new Button { Text = "C", Style = darkerButton }, 0, 1);
-  controlGrid.Children.Add (new Button { Text = "+/-", Style = darkerButton }, 1, 1);
-  controlGrid.Children.Add (new Button { Text = "%", Style = darkerButton }, 2, 1);
-  controlGrid.Children.Add (new Button { Text = "div", Style = orangeButton }, 3, 1);
-  controlGrid.Children.Add (new Button { Text = "7", Style = plainButton }, 0, 2);
-  controlGrid.Children.Add (new Button { Text = "8", Style = plainButton }, 1, 2);
-  controlGrid.Children.Add (new Button { Text = "9", Style = plainButton }, 2, 2);
-  controlGrid.Children.Add (new Button { Text = "X", Style = orangeButton }, 3, 2);
-  controlGrid.Children.Add (new Button { Text = "4", Style = plainButton }, 0, 3);
-  controlGrid.Children.Add (new Button { Text = "5", Style = plainButton }, 1, 3);
-  controlGrid.Children.Add (new Button { Text = "6", Style = plainButton }, 2, 3);
-  controlGrid.Children.Add (new Button { Text = "-", Style = orangeButton }, 3, 3);
-  controlGrid.Children.Add (new Button { Text = "1", Style = plainButton }, 0, 4);
-  controlGrid.Children.Add (new Button { Text = "2", Style = plainButton }, 1, 4);
-  controlGrid.Children.Add (new Button { Text = "3", Style = plainButton }, 2, 4);
-  controlGrid.Children.Add (new Button { Text = "+", Style = orangeButton }, 3, 4);
-  controlGrid.Children.Add (new Button { Text = ".", Style = plainButton }, 2, 5);
-  controlGrid.Children.Add (new Button { Text = "=", Style = orangeButton }, 3, 5);
-
-  var zeroButton = new Button { Text = "0", Style = plainButton };
-  controlGrid.Children.Add (zeroButton, 0, 5);
-  Grid.SetColumnSpan (zeroButton, 2);
-
-  Content = controlGrid;
+    void OnSliderValueChanged(object sender, ValueChangedEventArgs e)
+    {
+        boxView.Color = new Color(redSlider.Value, greenSlider.Value, blueSlider.Value);
+    }
 }
 ```
 
 ## <a name="related-links"></a>関連リンク
 
-- [第 17 章である Xamarin.Forms によるモバイル アプリの作成](https://developer.xamarin.com/r/xamarin-forms/book/chapter17.pdf)
-- [グリッド](xref:Xamarin.Forms.Grid)
-- [レイアウト (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
-- [BusinessTumble 例 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)
+- [グリッドのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-griddemos)
+- [Xamarin. Forms のレイアウトオプション](layout-options.md)
+- [Xamarin. フォームレイアウトを選択する](choose-layout.md)
+- [Xamarin.Forms アプリ パフォーマンスの改善](~/xamarin-forms/deploy-test/performance.md)

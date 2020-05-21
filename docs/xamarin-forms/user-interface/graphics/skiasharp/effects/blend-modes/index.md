@@ -1,34 +1,34 @@
 ---
-title: SkiaSharp のブレンド モード
-description: Blend のグラフィカル オブジェクトは、相互に積み重ねられているときの動作を定義するモードを使用。
+title: SkiaSharp blend モード
+description: Blend モードを使用すると、グラフィカルオブジェクトが互いに積み上げられている場合の動作を定義できます。
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: CE1B222E-A2D0-4016-A532-EC1E59EE3D6B
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/23/2018
-ms.openlocfilehash: 8071f310e899575699e1d0b925541f2863b00676
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+ms.openlocfilehash: 829d764f03dd77c6126c2f4bced750ae570a3bc6
+ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645186"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83425695"
 ---
-# <a name="skiasharp-blend-modes"></a>SkiaSharp のブレンド モード
+# <a name="skiasharp-blend-modes"></a>SkiaSharp blend モード
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-これらの記事の重点、 [ `BlendMode` ](xref:SkiaSharp.SKPaint.BlendMode)プロパティの[ `SKPaint`](xref:SkiaSharp.SKPaint)します。 `BlendMode`プロパティの型は[ `SKBlendMode` ](xref:SkiaSharp.SKBlendMode)、29 のメンバーを持つ列挙体。
+これらの記事では、のプロパティに焦点を当てて [`BlendMode`](xref:SkiaSharp.SKPaint.BlendMode) [`SKPaint`](xref:SkiaSharp.SKPaint) います。 `BlendMode`プロパティの型は [`SKBlendMode`](xref:SkiaSharp.SKBlendMode) で、値は29メンバーで列挙されます。
 
-`BlendMode`プロパティは、グラフィカル オブジェクトの動作を決定します。 (多くの場合と呼ばれる、_ソース_) 既存のグラフィカル オブジェクト上に描画されます (と呼ばれる、_先_)。 通常、その下にあるオブジェクトがわかりにくくなる新しいグラフィカル オブジェクトを予定です。 Blend の既定のモードはためのみに発生するが、 `SKBlendMode.SrcOver`、ソースを描画することを意味する_経由で_先。 他の 28 メンバー`SKBlendMode`その他の効果が発生します。 グラフィックス プログラミングでは、さまざまな方法でのグラフィカル オブジェクトを組み合わせた手法と呼ばれます_合成_します。
+プロパティは、( `BlendMode` 通常は_ソース_と呼ばれる) グラフィックオブジェクトが既存のグラフィカルオブジェクト (_変換先_と呼ばれます) の上に描画されるときの動作を決定します。 通常、新しいグラフィカルオブジェクトでは、その下のオブジェクトが見えにくくなることが予想されます。 ただし、これは既定の blend モードがであるためにのみ発生し `SKBlendMode.SrcOver` ます。 _over_つまり、ソースが変換先に描画されます。 他の28のメンバーは、 `SKBlendMode` 他の効果を引き起こします。 グラフィックスプログラミングでは、さまざまな方法でグラフィカルオブジェクトを組み合わせる手法を_複合_と呼びます。
 
 ## <a name="the-skblendmodes-enumeration"></a>SKBlendModes 列挙型
 
-SkiaSharp のブレンド モードは、W3C で説明したものに密接に対応[**合成とレベル 1 のブレンド**](https://www.w3.org/TR/compositing-1/)仕様。 Skia [ **SkBlendMode 参照**](https://skia.org/user/api/SkBlendMode_Reference)役立つ背景情報も提供します。 Blend のモードでは、一般的な概要について、 [**ブレンド モード**](https://en.wikipedia.org/wiki/Blend_modes) wikipedia の記事では有効な出発点です。 ブレンド モードは、そのコンテキストでの blend モードの詳細についての追加のオンライン情報があるために、Adobe の Photoshop でサポートされます。
+SkiaSharp blend モードは、W3C[**合成および Blend Level 1**](https://www.w3.org/TR/compositing-1/)仕様で説明されているものと密接に対応しています。 Skia [**Skblendmode の概要**](https://skia.org/user/api/SkBlendMode_Overview)では、有益な背景情報も提供されます。 Blend モードの概要については、Wikipedia の[**blend モード**](https://en.wikipedia.org/wiki/Blend_modes)に関する記事をお勧めします。 Blend モードは Adobe Photoshop でサポートされているため、そのコンテキストでは blend モードに関する追加のオンライン情報が追加されています。
 
-29 のメンバー、`SKBlendMode`列挙体は、次の 3 つのカテゴリに分類できます。
+列挙体の29メンバーは、 `SKBlendMode` 次の3つのカテゴリに分けることができます。
 
-| Porter Duff | 分離可能    | 非分離 |
+| Porter-Duff | 分離可能な    | 分離不可 |
 | ----------- | ------------ | ------------- |
 | `Clear`     | `Modulate`   | `Hue`         |
 | `Src`       | `Screen`     | `Saturation`  |
@@ -44,53 +44,53 @@ SkiaSharp のブレンド モードは、W3C で説明したものに密接に�
 | `Xor`       | `Multiply`   |               |
 | `Plus`      |              |               |
 
-これら 3 つのカテゴリの名前は、次のセクションでより多くの意味になる予定です。 メンバーがここに表示されていること、順序は、の定義と同様、`SKBlendMode`列挙体。 最初の列内の 13 の列挙体のメンバーでは、0 ~ 12 の整数値があります。 2 番目の列は整数 13 ~ 24 に対応する列挙型メンバーを 3 番目の列内のメンバーの 25 ~ 28 の値がします。
+これら3つのカテゴリの名前は、次のディスカッションでより多くの意味を持ちます。 メンバーが一覧表示される順序は、列挙型の定義と同じです `SKBlendMode` 。 最初の列の13個の列挙型のメンバーは、0 ~ 12 の整数値を持ちます。 2番目の列は、13 ~ 24 の整数に対応する列挙メンバーで、3番目の列のメンバーは 25 ~ 28 の値を持ちます。
 
-これらの blend モードについては、W3C**合成および Blend Level 1**のドキュメントと_ほぼ_同じ順序で説明されていますが、いくつか違いがあります。このモードは `Plus` W3C ドキュメントでは Copy と呼ばれ、軽いと呼ばれます。 `Src` W3C のドキュメント定義、_標準_に含まれていない blend モード`SKBlendModes`と同じであるため`SrcOver`します。 `Modulate` Blend モード (最初の列の上部) には、W3C のドキュメントとのディスカッションに含まれていない、`Multiply`モードよりも前`Screen`します。
+これらの blend モードについては、W3C**合成および Blend Level 1**のドキュメントと_ほぼ_同じ順序で説明されていますが、いくつかの違いがあります。 `Src` モードは w3c ドキュメントでは_Copy_と呼ばれ、 `Plus` _軽い_と呼ばれます。 W3C ドキュメントでは、と同じであるためにに含まれていない_通常_の blend モードが定義されてい `SKBlendModes` `SrcOver` ます。 `Modulate`(最初の列の一番上にある) blend モードは W3C ドキュメントに含まれていません。また、モードの説明は `Multiply` 前に `Screen` あります。
 
-`Modulate` Blend モードは Skia に一意な追加の Porter Duff モードとは分離モードとして、説明します。
+`Modulate`Blend モードは Skia に固有であるため、追加の Porter ff モードとして、分離可能モードとして説明されます。
 
-## <a name="the-importance-of-transparency"></a>透過性の重要性
+## <a name="the-importance-of-transparency"></a>透明度の重要性
 
-従来は、合成がと共に開発の概念、_アルファ チャネル_します。 オブジェクトやフルカラービットマップなどの`SKCanvas`表示画面では、各ピクセルは4バイトで構成されます。赤、緑、および青のコンポーネントの場合はそれぞれ1バイト、透明度の場合は追加のバイト。 このアルファ コンポーネントは完全な透明性の 0 のこれらの値の間での透過性のさまざまなレベルでの完全な不透明度 0 xff までです。
+従来、複合は、_アルファチャネル_の概念と共に開発されました。 オブジェクトやフルカラービットマップなどの表示画面では `SKCanvas` 、各ピクセルは4バイトで構成されます。各ピクセルは、赤、緑、および青のコンポーネント用に1バイト、透明度の追加のバイトです。 このアルファ成分は、完全な透過性の場合は0、完全な不透明度の場合は0xFF であり、これらの値の間には異なるレベルの透明度があります。
 
-ブレンド モードの多くは、透過性に依存します。 通常はときに、`SKCanvas`で最初に取得されます、`PaintSurface`ハンドラー、または、`SKCanvas`が作成されるビットマップを描画するには、最初の手順はこの呼び出しです。
+Blend モードの多くは、透明度に依存しています。 通常、が最初にハンドラーで取得されるとき、またはが作成されてビットマップに描画されるときには、 `SKCanvas` `PaintSurface` `SKCanvas` 最初の手順は次の呼び出しです。
 
 ```csharp
 canvas.Clear();
 ```
 
-このメソッドは、キャンバスのすべてのピクセルを透明な黒 (ピクセル単位) に相当置き換えます`new SKColor(0, 0, 0, 0)`または 0x00000000 の整数。 すべてのすべてのピクセルのバイト数は 0 に初期化されます。
+このメソッドは、キャンバスのすべてのピクセルを、 `new SKColor(0, 0, 0, 0)` または整数の0x00000000 に相当する透明な黒いピクセルに置き換えます。 すべてのピクセルのすべてのバイトがゼロに初期化されます。
 
-描画サーフェイス、`SKCanvas`で取得した、`PaintSurface`ためだけのですが、ハンドラーが白の背景に表示される、`SKCanvasView`自体に含まれて、透明な背景と、ページには白の背景。 Xamarin.Forms を設定して、自分にこの事実を示すことができます`BackgroundColor`プロパティの`SKCanvasView`Xamarin.Forms 色。
+`SKCanvas`ハンドラーで取得されるの描画サーフェイスは、 `PaintSurface` 白い背景を持つように見えることがありますが、それは背景が透明で、ページに白い背景があるためです `SKCanvasView` 。 `BackgroundColor`の xamarin プロパティを `SKCanvasView` Xamarin. forms の色に設定することによって、この事実を示すことができます。
 
 ```csharp
 canvasView.BackgroundColor = Color.Red;
 ```
 
-またはから派生したクラスで`ContentPage`ページの背景色を設定することができます。
+または、から派生したクラスで、 `ContentPage` ページの背景色を設定できます。
 
 ```csharp
 BackgroundColor = Color.Red;
 ```
 
-この赤い背景、SkiaSharp グラフィックスの背後にあるため、SkiaSharp キャンバス自体は透過的ですが表示されます。
+SkiaSharp キャンバス自体は透明であるため、SkiaSharp グラフィックスの背後にこの赤の背景が表示されます。
 
-この記事[ **SkiaSharp の透明度**](../../basics/transparency.md)複合イメージで複数のグラフィックの配置に透明度を使用して基本的な手法を説明しました。 ブレンド モードがさらに、移動しますが、透過性は blend モードに非常に重要です。 
+[**SkiaSharp**](../../basics/transparency.md)の記事では、透明度を使用して複合画像に複数のグラフィックを配置する基本的な手法をいくつか紹介しました。 Blend モードはそれ以上ではありませんが、blend モードでは透明度が重要です。
 
-## <a name="skiasharp-porter-duff-blend-modesporter-duffmd"></a>[SkiaSharp の Porter Duff ブレンド モード](porter-duff.md)
+## <a name="skiasharp-porter-duff-blend-modes"></a>[SkiaSharp Porter-Duff blend モード](porter-duff.md)
 
-Porter Duff blend モードを使用すると、ソースと宛先のイメージに基づくシーンを作成できます。
+Porter-Duff blend モードを使用して、コピー元とコピー先のイメージに基づいてシーンを作成します。
 
-## <a name="skiasharp-separable-blend-modesseparablemd"></a>[SkiaSharp 分離可能なブレンド モード](separable.md)
+## <a name="skiasharp-separable-blend-modes"></a>[SkiaSharp 分離可能 blend モード](separable.md)
 
-Blend の分離モードを使用すると、赤、緑、および青の色を変更できます。
+分離可能な blend モードを使用して、赤、緑、および青の色を変更します。
 
-## <a name="skiasharp-non-separable-blend-modesnon-separablemd"></a>[SkiaSharp の分離を可能なブレンド モード](non-separable.md)
+## <a name="skiasharp-non-separable-blend-modes"></a>[SkiaSharp 分離不可ブレンドモード](non-separable.md)
 
-Blend のない分離モードを使用すると、色相、彩度、または明るさを変更できます。
+分離不可能な blend モードを使用して、色合い、鮮やかさ、または輝度を変更します。
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

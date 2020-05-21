@@ -6,21 +6,21 @@ ms.assetid: D41B9DCD-5C34-4C2F-B177-FC082AB2E9E0
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/25/2020
-ms.openlocfilehash: fa758b1240570f90ebf8a723401176f6be9dd6ac
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+ms.date: 05/15/2020
+ms.openlocfilehash: 4fa8397dafbbdd836f88193081720b4960f1ce5d
+ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82532875"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83425806"
 ---
 # <a name="xamarinforms-c-markup"></a>Xamarin. フォーム C# マークアップ
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![](~/media/shared/download.png)サンプルをダウンロードするサンプルをダウンロードする](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
 
-C# マークアップは、c# で宣言型の Xamarin. フォームユーザーインターフェイスを構築するプロセスを簡略化するための、fluent ヘルパーメソッドとクラスのオプトインセットです。 C# マークアップによって提供される fluent API `Xamarin.Forms.Markup`は、名前空間で使用できます。
+C# マークアップは、c# で宣言型の Xamarin. フォームユーザーインターフェイスを構築するプロセスを簡略化するための、fluent ヘルパーメソッドとクラスのオプトインセットです。 C# マークアップによって提供される fluent API は、名前空間で使用でき `Xamarin.Forms.Markup` ます。
 
 XAML の場合と同様に、C# のマークアップでは、UI マークアップと UI ロジックを明確に分離できます。 これは、UI マークアップと UI ロジックを個別の部分クラスファイルに分割することで実現できます。 たとえば、ログインページの場合、UI マークアップは*LoginPage.cs*という名前のファイルにありますが、ui ロジックは*LoginPage.logic.cs*という名前のファイルにあります。
 
@@ -35,9 +35,14 @@ Device.SetFlags(new string[]{ "Markup_Experimental" });
 
 ## <a name="basic-example"></a>基本的な例
 
-次の例は、C# [`Entry`](xref:Xamarin.Forms.Entry)でのオブジェクトの作成を示しています。
+次の例では、C# でとを含む新しいにページコンテンツを設定してい [`Grid`](xref:Xamarin.Forms.Grid) [`Label`](xref:Xamarin.Forms.Label) [`Entry`](xref:Xamarin.Forms.Entry) ます。
 
 ```csharp
+Grid grid = new Grid();
+
+Label label = new Label { Text = "Code: " };
+grid.Children.Add(label, 0, 1);
+
 Entry entry = new Entry
 {
     Placeholder = "Enter number",
@@ -48,12 +53,14 @@ Entry entry = new Entry
     HeightRequest = 44,
     Margin = fieldMargin
 };
-entry.SetBinding(Entry.TextProperty, new Binding("RegistrationCode", BindingMode.TwoWay));
 grid.Children.Add(entry, 0, 2);
 Grid.SetColumnSpan(entry, 2);
+entry.SetBinding(Entry.TextProperty, new Binding("RegistrationCode"));
+
+Content = grid;
 ```
 
-この例では[`Entry`](xref:Xamarin.Forms.Entry) 、 `TwoWay`バインディングを使用して`RegistrationCode` 、データをビューモデルのプロパティにバインドするオブジェクトを作成します。 この値は、内の[`Grid`](xref:Xamarin.Forms.Grid)特定の行に表示されるように設定され、 `Grid`内のすべての列にまたがります。 さらに、の高さは、 `Entry`そのテキストのフォントサイズと共に設定され`Margin`ます。
+この例では [`Grid`](xref:Xamarin.Forms.Grid) 、子オブジェクトとオブジェクトを使用してオブジェクトを作成し [`Label`](xref:Xamarin.Forms.Label) [`Entry`](xref:Xamarin.Forms.Entry) ます。 は `Label` テキストを表示し、 `Entry` データは `RegistrationCode` ビューモデルのプロパティにバインドされます。 各子ビューは、の特定の行に表示されるように設定され、はの `Grid` `Entry` すべての列にまたがり `Grid` ます。 さらに、の高さは、 `Entry` キーボード、色、テキストのフォントサイズ、およびの高さと共に設定され `Margin` ます。 最後に、 `Page.Content` プロパティがオブジェクトに設定され `Grid` ます。
 
 C# マークアップでは、fluent API を使用してこのコードを再記述できます。
 
@@ -61,9 +68,18 @@ C# マークアップでは、fluent API を使用してこのコードを再記
 using Xamarin.Forms.Markup;
 using static Xamarin.Forms.Markup.GridRowsColumns;
 
-Entry entry = new Entry { Placeholder = "Enter number", Keyboard = Keyboard.Numeric, BackgroundColor = Color.AliceBlue, TextColor = Color.Black } .Font (15)
-                         .Row (BodyRow.CodeEntry) .ColumnSpan (All<BodyCol>()) .Margin (fieldMargin) .Height (44)
-                         .Bind (nameof(vm.RegistrationCode), BindingMode.TwoWay);
+Content = new Grid
+{
+  Children =
+  {
+    new Label { Text = "Code:" }
+               .Row (BodyRow.CodeHeader) .Column (BodyCol.Header),
+
+    new Entry { Placeholder = "Enter number", Keyboard = Keyboard.Numeric, BackgroundColor = Color.AliceBlue, TextColor = Color.Black } .Font (15)
+               .Row (BodyRow.CodeEntry) .ColumnSpan (All<BodyCol>()) .Margin (fieldMargin) .Height (44)
+               .Bind (nameof(vm.RegistrationCode))
+  }
+}};
 ```
 
 この例は前の例と同じですが、C# のマークアップ fluent API を使用すると、c# で UI を構築するプロセスが単純化されます。
@@ -73,7 +89,7 @@ Entry entry = new Entry { Placeholder = "Enter number", Keyboard = Keyboard.Nume
 
 ## <a name="data-binding"></a>データ バインディング
 
-C# マークアップに`Bind`は、ビューのバインド可能なプロパティと指定されたプロパティの間にデータバインディングを作成する拡張メソッドとオーバーロードが含まれています。 メソッド`Bind`は、Xamarin. Forms に含まれるほとんどのコントロールの既定のバインド可能プロパティを認識します。 このため、このメソッドを使用する場合は、通常、ターゲットプロパティを指定する必要はありません。 ただし、追加のコントロールの既定のバインド可能なプロパティを登録することもできます。
+C# マークアップには、ビューのバインド可能な `Bind` プロパティと指定されたプロパティの間にデータバインディングを作成する拡張メソッドとオーバーロードが含まれています。 メソッドは、 `Bind` Xamarin. Forms に含まれるほとんどのコントロールの既定のバインド可能プロパティを認識します。 このため、このメソッドを使用する場合は、通常、ターゲットプロパティを指定する必要はありません。 ただし、追加のコントロールの既定のバインド可能なプロパティを登録することもできます。
 
 ```csharp
 using Xamarin.Forms.Markup;
@@ -82,7 +98,7 @@ using Xamarin.Forms.Markup;
 DefaultBindableProperties.Register(HoverButton.CommandProperty, RadialGauge.ValueProperty);
 ```
 
-メソッド`Bind`は、任意のバインド可能なプロパティにバインドするために使用できます。
+メソッドは、任意のバインド `Bind` 可能なプロパティにバインドするために使用できます。
 
 ```csharp
 using Xamarin.Forms.Markup;
@@ -92,7 +108,7 @@ new Label { Text = "No data available" }
            .Bind (Label.IsVisibleProperty, nameof(vm.Empty))
 ```
 
-さらに、この`BindCommand`拡張メソッドは、1つのメソッド呼び出し`Command`で`CommandParameter`コントロールの既定のプロパティとプロパティにバインドできます。
+さらに、この `BindCommand` 拡張メソッドは、 `Command` 1 つのメソッド呼び出しでコントロールの既定のプロパティとプロパティにバインドでき `CommandParameter` ます。
 
 ```csharp
 using Xamarin.Forms.Markup;
@@ -102,7 +118,7 @@ new TextCell { Text = "Tap me" }
               .BindCommand (nameof(vm.TapCommand))
 ```
 
-既定では、 `CommandParameter`はバインドコンテキストにバインドされています。 バインドパスとバインドのソース`Command` `CommandParameter`を指定することもできます。
+既定では、は `CommandParameter` バインドコンテキストにバインドされています。 バインドパスとバインドのソースを指定することもでき `Command` `CommandParameter` ます。
 
 ```csharp
 using Xamarin.Forms.Markup;
@@ -112,11 +128,11 @@ new TextCell { Text = "Tap Me" }
               .BindCommand (nameof(vm.TapCommand), vm, nameof(Item.Id))
 ```
 
-この例では、バインディングコンテキストはインスタンス`Item`なので、 `Id` `CommandParameter`バインディングのソースを指定する必要はありません。
+この例では、バインディングコンテキストはインスタンスなので、 `Item` バインディングのソースを指定する必要はありません `Id` `CommandParameter` 。
 
-に`Command`バインドするだけの場合は、 `null` `parameterPath` `BindCommand`メソッドの引数にを渡すことができます。 または`Bind` 、メソッドを使用します。
+にバインドするだけの場合は、 `Command` `null` メソッドの引数にを渡すことができ `parameterPath` `BindCommand` ます。 または、メソッドを使用し `Bind` ます。
 
-追加のコントロールの既定`Command`のプロパティ`CommandParameter`とプロパティを登録することもできます。
+`Command`追加のコントロールの既定のプロパティとプロパティを登録することもでき `CommandParameter` ます。
 
 ```csharp
 using Xamarin.Forms.Markup;
@@ -128,7 +144,7 @@ DefaultBindableProperties.RegisterCommand(
 );
 ```
 
-インラインコンバーターコードは、パラメーター `Bind` `convert`と`convertBack`パラメーターを使用してメソッドに渡すことができます。
+インラインコンバーターコードは、 `Bind` パラメーターとパラメーターを使用してメソッドに渡すことができ `convert` `convertBack` ます。
 
 ```csharp
 using Xamarin.Forms.Markup;
@@ -150,7 +166,7 @@ new Label { }
                   convert: (string text, int repeat) => string.Concat(Enumerable.Repeat(text, repeat)))
 ```
 
-さらに、コンバーターコードとインスタンスを`FuncConverter`クラスで再利用できます。
+さらに、コンバーターコードとインスタンスをクラスで再利用でき `FuncConverter` ます。
 
 ```csharp
 using Xamarin.Forms.Markup;
@@ -161,7 +177,7 @@ new Label { Text = "Tree" }
            .Bind (Label.MarginProperty, nameof(TreeNode.TreeDepth), converter: treeMarginConverter),
 ```
 
-クラス`FuncConverter`は、次`CultureInfo`のオブジェクトもサポートしています。
+クラスは、 `FuncConverter` 次のオブジェクトもサポートしてい `CultureInfo` ます。
 
 ```csharp
 using Xamarin.Forms.Markup;
@@ -172,7 +188,7 @@ cultureAwareConverter = new FuncConverter<DateTimeOffset, string, int>(
 );
 ```
 
-プロパティで指定されたオブジェクトに`Span`データをバインドすることもできます。 `FormattedText`
+プロパティで指定されたオブジェクトにデータをバインドすることもでき `Span` `FormattedText` ます。
 
 ```csharp
 using Xamarin.Forms.Markup;
@@ -188,7 +204,7 @@ new Label { } .FormattedText (
 
 ### <a name="gesture-recognizers"></a>ジェスチャ認識エンジン
 
-`Command`および`CommandParameter`プロパティは`BindClickGesture`、 `BindSwipeGesture`、、および`BindTapGesture`の`View`各拡張メソッドを使用して、型および型に`GestureElement`データをバインドできます。
+`Command`および `CommandParameter` プロパティは `GestureElement` `View` `BindClickGesture` 、、、およびの各拡張メソッドを使用して、型および型にデータをバインドでき `BindSwipeGesture` `BindTapGesture` ます。
 
 ```csharp
 using Xamarin.Forms.Markup;
@@ -198,9 +214,9 @@ new Label { Text = "Tap Me" }
            .BindTapGesture (nameof(vm.TapCommand))
 ```
 
-この例では、指定された型のジェスチャ認識エンジンを作成[`Label`](xref:Xamarin.Forms.Label)し、に追加します。 拡張`Bind*Gesture`メソッドには、 `BindCommand`拡張メソッドと同じパラメーターが用意されています。 ただし、では`Bind*Gesture` 、既定で`CommandParameter`はバインド`BindCommand`されません。
+この例では、指定された型のジェスチャ認識エンジンを作成し、に追加し [`Label`](xref:Xamarin.Forms.Label) ます。 拡張メソッドには、 `Bind*Gesture` 拡張メソッドと同じパラメーターが用意されて `BindCommand` います。 ただし、では、既定で `Bind*Gesture` はバインドされません `CommandParameter` `BindCommand` 。
 
-パラメーターを使用してジェスチャ認識エンジンを初期化`ClickGesture`する`PanGesture`に`PinchGesture`は`SwipeGesture`、、 `TapGesture` 、、、およびの各拡張メソッドを使用します。
+パラメーターを使用してジェスチャ認識エンジンを初期化するには、 `ClickGesture` 、、 `PanGesture` `PinchGesture` 、、およびの各拡張メソッドを使用し `SwipeGesture` `TapGesture` ます。
 
 ```csharp
 using Xamarin.Forms.Markup;
@@ -210,13 +226,13 @@ new Label { Text = "Tap Me" }
            .TapGesture (g => g.Bind(nameof(vm.DoubleTapCommand)).NumberOfTapsRequired = 2)
 ```
 
-ジェスチャ認識エンジンはである`BindableObject`ため、初期化時に`Bind`および`BindCommand`拡張メソッドを使用できます。 `Gesture<TGestureElement, TGestureRecognizer>`拡張メソッドを使用してカスタムジェスチャ認識エンジンの種類を初期化することもできます。
+ジェスチャ認識エンジンはであるため `BindableObject` 、 `Bind` `BindCommand` 初期化時におよび拡張メソッドを使用できます。 拡張メソッドを使用してカスタムジェスチャ認識エンジンの種類を初期化することもでき `Gesture<TGestureElement, TGestureRecognizer>` ます。
 
-## <a name="layout"></a>レイアウト
+## <a name="layout"></a>Layout
 
 C# マークアップには、レイアウト内のビューの配置をサポートする一連のレイアウト拡張メソッドと、ビューのコンテンツが含まれています。
 
-| Type | 拡張メソッド |
+| 種類 | 拡張メソッド |
 |---|---|
 | `FlexLayout` | `AlignSelf`, `Basis`, `Grow`, `Menu`, `Order`, `Shrink` |
 | `Grid` | `Row`, `Column`, `RowSpan`, `ColumnSpan` |
@@ -228,13 +244,13 @@ C# マークアップには、レイアウト内のビューの配置をサポ�
 
 ### <a name="left-to-right-and-right-to-left-support"></a>左から右、右から左へのサポート
 
-左から`Left`右 (LTR) または右から左 (RTL) のフロー方向をサポートするように設計された C# マークアップでは、上に示した拡張メソッドによって、最も`Right`直感的`Top`な`Bottom`名前のセット (、、) が提供されます。
+左から右 (LTR) または右から左 (RTL) のフロー方向をサポートするように設計された C# マークアップでは、上に示した拡張メソッドによって、最も直感的な名前のセット `Left` (、、) が提供されます `Right` `Top` `Bottom` 。
 
-左および右の拡張メソッドの適切なセットを使用できるようにするには、プロセス内で`using` `using Xamarin.Forms.Markup.LeftToRight;`、マークアップが設計されているフロー方向を明確にするに`using Xamarin.Forms.Markup.RightToLeft;`は、次の2つのディレクティブ (、または) のいずれかを指定します。
+左および右の拡張メソッドの適切なセットを使用できるようにするには、プロセス内で、マークアップが設計されているフロー方向を明確にするには、次の2つの `using` ディレクティブ `using Xamarin.Forms.Markup.LeftToRight;` (、または) のいずれかを指定し `using Xamarin.Forms.Markup.RightToLeft;` ます。
 
 左から右方向と右から左方向のフロー方向をサポートするように設計された C# マークアップでは、上記の名前空間のいずれかではなく、次の表に示す拡張メソッドを使用することをお勧めします。
 
-| Type | 拡張メソッド |
+| 種類 | 拡張メソッド |
 |---|---|
 | `Label` | `TextStart`, `TextEnd` |
 | `LayoutOptions` | `Start`, `End` <br/> `StartExpand`, `EndExpand` |
@@ -261,12 +277,12 @@ new Label { }
 
 ## <a name="grid-rows-and-columns"></a>Grid の行と列
 
-列挙は、数値を使用[`Grid`](xref:Xamarin.Forms.Grid)する代わりに、行と列を定義するために使用できます。 これには、行または列を追加または削除するときに、番号を振り直す必要がないという利点があります。
+列挙は [`Grid`](xref:Xamarin.Forms.Grid) 、数値を使用する代わりに、行と列を定義するために使用できます。 これには、行または列を追加または削除するときに、番号を振り直す必要がないという利点があります。
 
 > [!IMPORTANT]
-> 列挙[`Grid`](xref:Xamarin.Forms.Grid)を使用して行と列を`using`定義するには、次のディレクティブが必要です。`using static Xamarin.Forms.Markup.GridRowsColumns;`
+> [`Grid`](xref:Xamarin.Forms.Grid)列挙を使用して行と列を定義するには、次のディレクティブが必要です `using` 。`using static Xamarin.Forms.Markup.GridRowsColumns;`
 
-次のコードは、列挙型を使用して行[`Grid`](xref:Xamarin.Forms.Grid)と列を定義および使用する方法の例を示しています。
+次のコードは、 [`Grid`](xref:Xamarin.Forms.Grid) 列挙型を使用して行と列を定義および使用する方法の例を示しています。
 
 ```csharp
 using Xamarin.Forms.Markup;
@@ -340,7 +356,7 @@ new Grid
 
 ## <a name="fonts"></a>フォント
 
-次の`FontSize`一覧のコントロールでは、、 `Bold`、 `Italic`、および`Font`の各拡張メソッドを呼び出して、コントロールによって表示されるテキストの外観を設定できます。
+次の一覧のコントロールでは `FontSize` 、、、 `Bold` `Italic` 、およびの各拡張メソッドを呼び出し `Font` て、コントロールによって表示されるテキストの外観を設定できます。
 
 - `Button`
 - `DatePicker`
@@ -354,7 +370,7 @@ new Grid
 
 ## <a name="effects"></a>効果
 
-拡張メソッドを使用して、 `Effect`コントロールに効果を適用できます。
+拡張メソッドを使用して、コントロールに効果を適用でき `Effect` ます。
 
 ```csharp
 using Xamarin.Forms.Markup;
@@ -375,7 +391,7 @@ using Xamarin.Forms.Markup;
 new ListView { } .Invoke (l => l.ItemTapped += OnListViewItemTapped)
 ```
 
-さらに、 `Assign`拡張メソッドを使用して、ui マークアップ (ui ロジックファイル内) の外部からコントロールにアクセスすることもできます。
+さらに、拡張メソッドを使用して、 `Assign` ui マークアップ (ui ロジックファイル内) の外部からコントロールにアクセスすることもできます。
 
 ```csharp
 using Xamarin.Forms.Markup;
@@ -446,7 +462,7 @@ public App()
 }
 ```
 
-明示的なスタイルは、 `Style`拡張メソッドで使用できます。
+明示的なスタイルは、拡張メソッドで使用でき `Style` ます。
 
 ```csharp
 using static CSharpForMarkupExample.Styles;
@@ -456,7 +472,7 @@ new Button { Text = "Tap Me" } .Style (FilledButton),
 ```
 
 > [!NOTE]
-> `Style`拡張メソッドに加えて`ApplyToDerivedTypes`、、、 `BasedOn` `Add`、および`CanCascade`の各拡張メソッドもあります。
+> 拡張メソッドに加えて、、、 `Style` 、およびの各拡張メソッドもあり `ApplyToDerivedTypes` `BasedOn` `Add` `CanCascade` ます。
 
 または、独自のスタイル拡張メソッドを作成することもできます。
 
@@ -470,7 +486,7 @@ public static TButton Filled<TButton>(this TButton button) where TButton : Butto
 }
 ```
 
-拡張`Filled`メソッドは次のように使用できます。
+拡張メソッドは次のように `Filled` 使用できます。
 
 ```csharp
 new Button { Text = "Tap Me" } .Filled ()
@@ -478,7 +494,7 @@ new Button { Text = "Tap Me" } .Filled ()
 
 ## <a name="platform-specifics"></a>プラットフォーム固有設定
 
-拡張`Invoke`メソッドを使用して、プラットフォーム固有のを適用できます。 ただし、あいまいさのエラーを回避する`using`には、 `Xamarin.Forms.PlatformConfiguration.*Specific`名前空間のディレクティブを直接含めないでください。 代わりに、名前空間エイリアスを作成し、エイリアスを使用してプラットフォーム固有のを使用します。
+拡張メソッドを使用して、 `Invoke` プラットフォーム固有のを適用できます。 ただし、あいまいさのエラーを回避するには、 `using` 名前空間のディレクティブを直接含めないで `Xamarin.Forms.PlatformConfiguration.*Specific` ください。 代わりに、名前空間エイリアスを作成し、エイリアスを使用してプラットフォーム固有のを使用します。
 
 ```csharp
 using Xamarin.Forms.Markup;
@@ -510,7 +526,7 @@ new ListView { } .iOSGroupHeaderStyle(PciOS.GroupHeaderStyle.Grouped)
 
 プロパティとヘルパーメソッドの推奨される順序とグループは次のとおりです。
 
-- **目的**: コントロールの目的を識別する値`Text`を`Placeholder`持つプロパティまたはヘルパーメソッド (、など`Assign`)。
+- **目的**: コントロールの目的を識別する値を持つプロパティまたはヘルパーメソッド (、など `Text` `Placeholder` `Assign` )。
 - [**その他**]: レイアウトまたはバインドではない、同じ行または複数の行にあるすべてのプロパティまたはヘルパーメソッド。
 - **Layout**: レイアウトは、行と列、レイアウトオプション、余白、サイズ、埋め込み、およびコンテンツの配置の内側に並べられています。
 - **Bind**: データバインディングは、1行に1つのバインドプロパティを持つメソッドチェーンの最後に実行されます。 バインド可能な*既定*のプロパティがバインドされている場合は、メソッドチェーンの最後に配置する必要があります。

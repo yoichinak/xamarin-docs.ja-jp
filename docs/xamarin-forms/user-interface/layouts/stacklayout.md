@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/11/2020
-ms.openlocfilehash: 56da2b137475ef258d780fba0a7cdec3c91323b8
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
+ms.openlocfilehash: 2535a92814181c5039256ea1e42b06419ed427aa
+ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83152331"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83426027"
 ---
 # <a name="xamarinforms-stacklayout"></a>Xamarin. フォーム StackLayout
 
@@ -240,12 +240,12 @@ public class StackLayoutSpacingPageCS : ContentPage
 
 [![アラインメントオプションが設定される StackLayout のスクリーンショット](stacklayout-images/alignment.png "アラインメントオプション付き StackLayout")](stacklayout-images/alignment-large.png#lightbox "アラインメントオプション付き StackLayout")
 
-は、 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 逆方向にある子ビューの配置設定についてのみ、向きを尊重し `StackLayout` ます。 したがって、 [`Label`](xref:Xamarin.Forms.Label) 垂直方向の子ビューでは、 `StackLayout` [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) プロパティが整列フィールドのいずれかに設定されます。
+[`StackLayout`](xref:Xamarin.Forms.StackLayout) は、`StackLayout` の方向とは反対方向にある子ビューの配置設定のみに従います。 したがって、垂直方向の `StackLayout` 内の [`Label`](xref:Xamarin.Forms.Label) 子ビューは、それらの [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) プロパティを次の配置フィールドの 1 つに設定します。
 
 - [`Start`](xref:Xamarin.Forms.LayoutOptions.Start)。をの [`Label`](xref:Xamarin.Forms.Label) 左辺に配置し [`StackLayout`](xref:Xamarin.Forms.StackLayout) ます。
-- [`Center`](xref:Xamarin.Forms.LayoutOptions.Center)。のを中央 [`Label`](xref:Xamarin.Forms.Label) に揃え [`StackLayout`](xref:Xamarin.Forms.StackLayout) ます。
+- [`Center`](xref:Xamarin.Forms.LayoutOptions.Center)。これは [`Label`](xref:Xamarin.Forms.Label) を [`StackLayout`](xref:Xamarin.Forms.StackLayout) の中央に配置します。
 - [`End`](xref:Xamarin.Forms.LayoutOptions.End)。をの [`Label`](xref:Xamarin.Forms.Label) 右側に配置し [`StackLayout`](xref:Xamarin.Forms.StackLayout) ます。
-- [`Fill`](xref:Xamarin.Forms.LayoutOptions.Fill)。を使用すると、の [`Label`](xref:Xamarin.Forms.Label) 幅がいっぱいになり [`StackLayout`](xref:Xamarin.Forms.StackLayout) ます。
+- [`Fill`](xref:Xamarin.Forms.LayoutOptions.Fill)。これにより、[`Label`](xref:Xamarin.Forms.Label) によって [`StackLayout`](xref:Xamarin.Forms.StackLayout) の幅が埋まるようになります。
 
 同等の C# コードを次に示します。
 
@@ -310,7 +310,7 @@ public class AlignmentPageCS : ContentPage
 
 [![拡張オプションが設定される StackLayout のスクリーンショット](stacklayout-images/expansion.png "StackLayout と拡張オプション")](stacklayout-images/expansion-large.png#lightbox "StackLayout と拡張オプション")
 
-では、 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 子ビューの方向を展開することしかできません。 したがって、垂直方向では、 `StackLayout` [`Label`](xref:Xamarin.Forms.Label) プロパティを [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 拡張フィールドのいずれかに設定する子ビューを展開できます。 つまり、垂直方向の配置では、各 `Label` が `StackLayout` 内で同じ量のスペースを占有します。 ただし、 `Label` その [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) プロパティをに設定する最後のだけ [`FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand) が異なるサイズになります。
+[`StackLayout`](xref:Xamarin.Forms.StackLayout) は子ビューをその方向にのみ展開できます。 したがって、垂直方向の `StackLayout` は、[`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) プロパティをいずれかの展開フィールドに設定する [`Label`](xref:Xamarin.Forms.Label) 子ビューを展開できます。 つまり、垂直方向の配置では、各 `Label` が `StackLayout` 内で同じ量のスペースを占有します。 ただし、[`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) プロパティを [`FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand) に設定する最後の `Label` のみ、サイズが異なります。
 
 > [!TIP]
 > を使用する場合 [`StackLayout`](xref:Xamarin.Forms.StackLayout) は、子ビューが1つだけに設定されていることを確認して [`LayoutOptions.Expands`](xref:Xamarin.Forms.LayoutOptions.Expands) ください。 このプロパティにより、指定された子は、`StackLayout` がそれに与えられる最大の領域を占有します。このような計算を複数回実行することは無駄です。
@@ -341,7 +341,7 @@ public ExpansionPageCS()
 ```
 
 > [!IMPORTANT]
-> 内のすべての領域 [`StackLayout`](xref:Xamarin.Forms.StackLayout) が使用されている場合、拡張設定は無効です。
+> [`StackLayout`](xref:Xamarin.Forms.StackLayout) 内のすべてのスペースが使用されている場合、展開設定は無効になります。
 
 配置と展開の詳細については、「[Layout Options in Xamarin.Forms](layout-options.md)」(Xamarin.Forms のレイアウト オプション) をご覧ください。
 
@@ -398,7 +398,7 @@ public ExpansionPageCS()
 [![入れ子になった StackLayout オブジェクトのスクリーンショット](stacklayout-images/combined.png "入れ子になった StackLayouts")](stacklayout-images/combined-large.png#lightbox "入れ子になった StackLayouts")
 
 > [!IMPORTANT]
-> 入れ子に `StackLayout` なったオブジェクトが多すぎると、レイアウトの計算量が必要になるため、パフォーマンスの低いページが生成される可能性があります。 詳細については、「[適切なレイアウトを選択する](~/xamarin-forms/deploy-test/performance.md#choose-the-correct-layout)」を参照してください。
+> [`StackLayout`](xref:Xamarin.Forms.StackLayout)オブジェクトやその他のレイアウトの入れ子を深くするほど、入れ子になったレイアウトの方がパフォーマンスに影響します。 詳細については、「[適切なレイアウトを選択する](~/xamarin-forms/deploy-test/performance.md#choose-the-correct-layout)」を参照してください。
 
 同等の C# コードを次に示します。
 

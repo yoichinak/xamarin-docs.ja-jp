@@ -7,45 +7,45 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/10/2020
-ms.openlocfilehash: e1edbc4d7376023c9d3051b0518c8dc7368e63a7
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+ms.openlocfilehash: 3a7c31f7d9c30e812e955a164404c357fe9aa340
+ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82517323"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83425822"
 ---
 # <a name="xamarinforms-map-polygons-and-polylines"></a>Xamarin. フォームマップの多角形とポリライン
 
-[![](~/media/shared/download.png)サンプルをダウンロードするサンプルをダウンロードする](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
-`Polygon`、 `Polyline`、および`Circle`の各要素を使用すると、マップ上の特定の領域を強調表示できます。 は`Polygon` 、ストロークと塗りつぶしの色を持つことができる、完全に囲まれた形状です。 は`Polyline` 、領域を完全に囲む線ではありません。 は`Circle` 、マップの円形の領域を強調表示します。
+`Polygon`、、およびの各要素を使用すると、 `Polyline` `Circle` マップ上の特定の領域を強調表示できます。 は、 `Polygon` ストロークと塗りつぶしの色を持つことができる、完全に囲まれた形状です。 は、 `Polyline` 領域を完全に囲む線ではありません。 は、 `Circle` マップの円形の領域を強調表示します。
 
-[!["Ios および android でのマップの多角形とポリラインのスクリーンショット (ios](polygons-images/polygon-polyline.png "マップ上の多角形とポリライン")](polygons-images/polygon-polyline-large.png#lightbox "マップ上の多角形とポリライン")
-と android での[![マップ円の](polygons-images/circle.png "マップ上の円")スクリーンショット)"](polygons-images/circle-large.png#lightbox "マップ上の円")
+[!["IOS および Android でのマップの多角形とポリラインのスクリーンショット"](polygons-images/polygon-polyline.png "マップ上の多角形とポリライン")](polygons-images/polygon-polyline-large.png#lightbox "マップ上の多角形とポリライン") 
+[ !["IOS および Android でのマップの円のスクリーンショット"](polygons-images/circle.png "マップ上の円")](polygons-images/circle-large.png#lightbox "マップ上の円")
 
-、 `Polygon` `Polyline`、および`Circle`の各クラスは、 `MapElement`次のバインド可能なプロパティを公開するクラスから派生します。
+`Polygon`、 `Polyline` 、およびの `Circle` 各クラスは、 `MapElement` 次のバインド可能なプロパティを公開するクラスから派生します。
 
-- `StrokeColor`線の`Color`色を決定するオブジェクトです。
-- `StrokeWidth`線の`float`幅を決定するオブジェクトです。
+- `StrokeColor``Color`線の色を決定するオブジェクトです。
+- `StrokeWidth``float`線の幅を決定するオブジェクトです。
 
-クラス`Polygon`は、追加のバインド可能なプロパティを定義します。
+クラスは、 `Polygon` 追加のバインド可能なプロパティを定義します。
 
-- `FillColor`多角形の`Color`背景色を決定するオブジェクトです。
+- `FillColor``Color`多角形の背景色を決定するオブジェクトです。
 
-また、クラスと`Polygon` `Polyline`クラスはどちらも`GeoPath`プロパティを定義します。これは[`Position`](xref:Xamarin.Forms.Maps.Position) 、図形の点を指定するオブジェクトのリストです。
+また、 `Polygon` `Polyline` クラスとクラスはどちらも `GeoPath` プロパティを定義します。これは、 [`Position`](xref:Xamarin.Forms.Maps.Position) 図形の点を指定するオブジェクトのリストです。
 
-クラス`Circle`は、次のバインド可能なプロパティを定義します。
+クラスは、 `Circle` 次のバインド可能なプロパティを定義します。
 
-- `Center`緯度と[`Position`](xref:Xamarin.Forms.Maps.Position)経度の円の中心を定義するオブジェクトです。
-- `Radius`は、 [`Distance`](xref:Xamarin.Forms.Maps.Distance)円の半径をメートル、キロメートル、またはマイル単位で定義するオブジェクトです。
-- `FillColor`は、 `Color`円の境界内の色を決定するプロパティです。
+- `Center`[`Position`](xref:Xamarin.Forms.Maps.Position)緯度と経度の円の中心を定義するオブジェクトです。
+- `Radius`は、 [`Distance`](xref:Xamarin.Forms.Maps.Distance) 円の半径をメートル、キロメートル、またはマイル単位で定義するオブジェクトです。
+- `FillColor`は、 `Color` 円の境界内の色を決定するプロパティです。
 
 > [!NOTE]
 > `StrokeColor`プロパティが指定されていない場合、ストロークは既定で黒に設定されます。 `FillColor`プロパティが指定されていない場合、塗りつぶしは既定で透過的になります。 したがって、どちらのプロパティも指定されていない場合、図形は塗りつぶされていない黒いアウトラインを持ちます。
 
 ## <a name="create-a-polygon"></a>多角形を作成する
 
-オブジェクト`Polygon`をインスタンス化してマップの`MapElements`コレクションに追加することで、そのオブジェクトをマップに追加できます。 XAML では次のようにしてこれを実現できます。
+`Polygon`オブジェクトをインスタンス化してマップのコレクションに追加することで、そのオブジェクトをマップに追加でき `MapElements` ます。 XAML では次のようにしてこれを実現できます。
 
 ```xaml
 <ContentPage ...
@@ -70,7 +70,7 @@ ms.locfileid: "82517323"
 </ContentPage>
 ```
 
-該当の C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 using Xamarin.Forms.Maps;
@@ -104,14 +104,14 @@ Polygon polygon = new Polygon
 map.MapElements.Add(polygon);
 ```
 
-プロパティ`StrokeColor`と`StrokeWidth`プロパティは、多角形のアウトラインをカスタマイズするために指定されます。 `FillColor`プロパティ値は`StrokeColor`プロパティ値と一致しますが、透明にするために指定されたアルファ値を持っています。これにより、基になるマップを図形で表示できるようになります。 プロパティ`GeoPath`には、多角形の`Position`ポイントの地理的座標を定義するオブジェクトの一覧が含まれています。 `Polygon`オブジェクトは、 `MapElements` `Map`のコレクションに追加されると、マップに表示されます。
+`StrokeColor`プロパティと `StrokeWidth` プロパティは、多角形のアウトラインをカスタマイズするために指定されます。 `FillColor`プロパティ値はプロパティ値と一致します `StrokeColor` が、透明にするために指定されたアルファ値を持っています。これにより、基になるマップを図形で表示できるようになります。 プロパティには、 `GeoPath` 多角形の `Position` ポイントの地理的座標を定義するオブジェクトの一覧が含まれています。 `Polygon`オブジェクトは、のコレクションに追加されると、マップに表示され `MapElements` `Map` ます。
 
 > [!NOTE]
-> `Polygon`は、完全に囲まれた図形です。 最初と最後のポイントが一致しない場合は、自動的に接続されます。
+> は、 `Polygon` 完全に囲まれた図形です。 最初と最後のポイントが一致しない場合は、自動的に接続されます。
 
 ## <a name="create-a-polyline"></a>ポリラインを作成する
 
-オブジェクト`Polyline`をインスタンス化してマップの`MapElements`コレクションに追加することで、そのオブジェクトをマップに追加できます。 XAML では次のようにしてこれを実現できます。
+`Polyline`オブジェクトをインスタンス化してマップのコレクションに追加することで、そのオブジェクトをマップに追加でき `MapElements` ます。 XAML では次のようにしてこれを実現できます。
 
 ```xaml
 <ContentPage ...
@@ -166,11 +166,11 @@ Polyline polyline = new Polyline
 map.MapElements.Add(polyline);
 ```
 
-`StrokeColor`および`StrokeWidth`プロパティは、線をカスタマイズするために指定されます。 プロパティ`GeoPath`には、ポリラインポイント`Position`の地理的座標を定義するオブジェクトの一覧が含まれています。 `Polyline`オブジェクトは、 `MapElements` `Map`のコレクションに追加されると、マップに表示されます。
+`StrokeColor`および `StrokeWidth` プロパティは、線をカスタマイズするために指定されます。 プロパティには、 `GeoPath` `Position` ポリラインポイントの地理的座標を定義するオブジェクトの一覧が含まれています。 `Polyline`オブジェクトは、のコレクションに追加されると、マップに表示され `MapElements` `Map` ます。
 
 ## <a name="create-a-circle"></a>円を作成する
 
-オブジェクト`Circle`をインスタンス化してマップの`MapElements`コレクションに追加することで、そのオブジェクトをマップに追加できます。 XAML では次のようにしてこれを実現できます。
+`Circle`オブジェクトをインスタンス化してマップのコレクションに追加することで、そのオブジェクトをマップに追加でき `MapElements` ます。 XAML では次のようにしてこれを実現できます。
 
 ```xaml
 <ContentPage ...
@@ -202,7 +202,7 @@ map.MapElements.Add(polyline);
 </ContentPage>
 ```
 
-該当の C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 using Xamarin.Forms.Maps;
@@ -212,7 +212,7 @@ Map map = new Map();
 // Instantiate a Circle
 Circle circle = new Circle
 {
-    Center = new Position(37.79752, -122.40183);,
+    Center = new Position(37.79752, -122.40183),
     Radius = new Distance(250),
     StrokeColor = Color.FromHex("#88FF0000"),
     StrokeWidth = 8,
@@ -223,10 +223,10 @@ Circle circle = new Circle
 map.MapElements.Add(circle);
 ```
 
-マップ`Circle`上のの場所は、プロパティ`Center`と`Radius`プロパティの値によって決まります。 プロパティ`Center`は、円の中心 (緯度と経度) を定義し、プロパティ`Radius`は円の半径をメートル単位で定義します。 および`StrokeColor` `StrokeWidth`プロパティは、円の輪郭をカスタマイズするために指定されます。 プロパティ`FillColor`値は、円の境界内の色を指定します。 どちらの色の値も、アルファチャネルを指定します。これにより、基になるマップを円で見ることができます。 `Circle`オブジェクトは、 `MapElements` `Map`のコレクションに追加されると、マップに表示されます。
+マップ上のの場所 `Circle` は、プロパティとプロパティの値によって決まり `Center` `Radius` ます。 プロパティは、 `Center` 円の中心 (緯度と経度) を定義し、 `Radius` プロパティは円の半径をメートル単位で定義します。 `StrokeColor`および `StrokeWidth` プロパティは、円の輪郭をカスタマイズするために指定されます。 `FillColor`プロパティ値は、円の境界内の色を指定します。 どちらの色の値も、アルファチャネルを指定します。これにより、基になるマップを円で見ることができます。 `Circle`オブジェクトは、のコレクションに追加されると、マップに表示され `MapElements` `Map` ます。
 
 > [!NOTE]
-> クラス`GeographyUtils`には、 `ToCircumferencePositions` `Circle`オブジェクト (および`Center` `Radius`プロパティの値を定義する) を、円の境界の緯度`Position`と経度の座標を構成するオブジェクトのリストに変換する拡張メソッドがあります。
+> `GeographyUtils`クラスには、 `ToCircumferencePositions` `Circle` オブジェクト (およびプロパティの値を定義する `Center` ) を、 `Radius` `Position` 円の境界の緯度と経度の座標を構成するオブジェクトのリストに変換する拡張メソッドがあります。
 
 ## <a name="related-links"></a>関連リンク
 

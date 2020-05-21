@@ -7,39 +7,42 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2019
-ms.openlocfilehash: 43626c1f1581966a5b1ef65f97c177b83f19d0c2
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+ms.openlocfilehash: 2f751549bdbd54b920a99b04d0068ab726600336
+ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82517598"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83425793"
 ---
 # <a name="theme-a-xamarinforms-application"></a>テーマ a Xamarin. フォームアプリケーション
 
-[![](~/media/shared/download.png)サンプルをダウンロードするサンプルをダウンロードする](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-theming/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-theming/)
 
-Xamarin アプリケーションは、マークアップ拡張機能を使用して、実行時`DynamicResource`に動的にスタイルの変更に応答できます。 このマークアップ拡張機能は、 `StaticResource`マークアップ拡張機能に似てい[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)ます。では、ディクショナリキーを使用してから値をフェッチします。 ただし、 `StaticResource`マークアップ拡張機能は、単一の辞書参照を`DynamicResource`実行しますが、マークアップ拡張機能はディクショナリキーへのリンクを保持します。 このため、キーに関連付けられている値が置換された場合[`VisualElement`](xref:Xamarin.Forms.VisualElement)、変更はに適用されます。 これにより、実行時のテーマを Xamarin. Forms アプリケーションで実装できるようになります。
+Xamarin アプリケーションは、 `DynamicResource` マークアップ拡張機能を使用して、実行時に動的にスタイルの変更に応答できます。 このマークアップ拡張機能は、 `StaticResource` マークアップ拡張機能に似ています。では、ディクショナリキーを使用してから値をフェッチし [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) ます。 ただし、 `StaticResource` マークアップ拡張機能は、単一の辞書参照を実行しますが、 `DynamicResource` マークアップ拡張機能はディクショナリキーへのリンクを保持します。 このため、キーに関連付けられている値が置換された場合、変更はに適用され [`VisualElement`](xref:Xamarin.Forms.VisualElement) ます。 これにより、実行時のテーマを Xamarin. Forms アプリケーションで実装できるようになります。
 
 Xamarin. フォームアプリケーションでランタイムテーマを実装するプロセスは次のとおりです。
 
-1. 内の各テーマのリソースを定義[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)します。
-1. `DynamicResource`マークアップ拡張機能を使用して、アプリケーションでテーマリソースを使用します。
+1. 内の各テーマのリソースを定義 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) します。
+1. マークアップ拡張機能を使用して、アプリケーションでテーマリソースを使用し `DynamicResource` ます。
 1. アプリケーションの**app.xaml**ファイルに既定のテーマを設定します。
 1. 実行時にテーマを読み込むコードを追加します。
+
+> [!IMPORTANT]
+> `StaticResource`実行時にアプリのテーマを変更する必要がない場合は、マークアップ拡張機能を使用します。
+
+次のスクリーンショットは、テーマが適用されたページを示しています。 iOS アプリケーションでは、明るいテーマと Android アプリケーションを使用して、ダークテーマを使用しています。
+
+[![IOS および Android でのテーマ付きアプリのメインページのスクリーンショット](theming-images/main-page-both-themes.png "テーマ付きアプリのメインページ")](theming-images/main-page-both-themes-large.png#lightbox "テーマ付きアプリのメインページ") 
+テーマが適用さ[![れたアプリの詳細ページのスクリーンショット (IOS と Android)](theming-images/detail-page-both-themes.png "テーマ付きアプリの詳細ページ")](theming-images/detail-page-both-themes-large.png#lightbox "テーマ付きアプリの詳細ページ")
 
 > [!NOTE]
 > 実行時にテーマを変更するには、XAML スタイルを使用する必要があります。現在、CSS を使用することはできません。
 
-次のスクリーンショットは、テーマが適用されたページを示しています。 iOS アプリケーションでは、明るいテーマと Android アプリケーションを使用して、ダークテーマを使用しています。
-
-[![Screenshot of the main page of a themed app, on iOS and Android](theming-images/main-page-both-themes.png "テーマ付きアプリのメインページ")](theming-images/main-page-both-themes-large.png#lightbox "テーマ付きアプリのメインページ")
-テーマが適用されたアプリのメインページのスクリーンショット、[![テーマ付きアプリの詳細ページ (ios および android)](theming-images/detail-page-both-themes.png "テーマ付きアプリの詳細ページ")](theming-images/detail-page-both-themes-large.png#lightbox "テーマ付きアプリの詳細ページ")
-
 ## <a name="define-themes"></a>テーマを定義する
 
-テーマは、 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)に格納されているリソースオブジェクトのコレクションとして定義されます。
+テーマは、に格納されているリソースオブジェクトのコレクションとして定義され [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) ます。
 
-次の例は、 `LightTheme`サンプルアプリケーションのを示しています。
+次の例は、サンプルアプリケーションのを示してい `LightTheme` ます。
 
 ```xaml
 <ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
@@ -56,7 +59,7 @@ Xamarin. フォームアプリケーションでランタイムテーマを実�
 </ResourceDictionary>
 ```
 
-次の例は、 `DarkTheme`サンプルアプリケーションのを示しています。
+次の例は、サンプルアプリケーションのを示してい `DarkTheme` ます。
 
 ```xaml
 <ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
@@ -73,14 +76,14 @@ Xamarin. フォームアプリケーションでランタイムテーマを実�
 </ResourceDictionary>
 ```
 
-各[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)に[`Color`](xref:Xamarin.Forms.Color)は、それぞれのテーマを定義するリソース`ResourceDictionary`が含まれており、それぞれが同一のキー値を使用します。 リソースディクショナリの詳細については、「[リソースディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)」を参照してください。
+各 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) には、それぞれの [`Color`](xref:Xamarin.Forms.Color) テーマを定義するリソースが含まれており、それぞれが `ResourceDictionary` 同一のキー値を使用します。 リソースディクショナリの詳細については、「[リソースディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)」を参照してください。
 
 > [!IMPORTANT]
-> `InitializeComponent`メソッドを呼び出すそれぞれ`ResourceDictionary`に、分離コードファイルが必要です。 これは、選択したテーマを表す CLR オブジェクトを実行時に作成できるようにするために必要です。
+> メソッドを呼び出すそれぞれに、分離コードファイルが必要です `ResourceDictionary` `InitializeComponent` 。 これは、選択したテーマを表す CLR オブジェクトを実行時に作成できるようにするために必要です。
 
 ## <a name="set-a-default-theme"></a>既定のテーマを設定する
 
-アプリケーションには既定のテーマが必要であるため、コントロールには、使用するリソースの値を設定できます。 既定のテーマを設定するには、 **app.xaml**に[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)定義されている`ResourceDictionary`アプリケーションレベルにテーマをマージします。
+アプリケーションには既定のテーマが必要であるため、コントロールには、使用するリソースの値を設定できます。 既定のテーマを設定するには、 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) `ResourceDictionary` **app.xaml**に定義されているアプリケーションレベルにテーマをマージします。
 
 ```xaml
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
@@ -96,9 +99,9 @@ Xamarin. フォームアプリケーションでランタイムテーマを実�
 
 ## <a name="consume-theme-resources"></a>テーマリソースの使用
 
-テーマを表すに格納され[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)ているリソースをアプリケーションが使用する場合は、 `DynamicResource`マークアップ拡張機能を使用して実行する必要があります。 これにより、実行時に別のテーマが選択された場合に、新しいテーマの値が適用されるようになります。
+テーマを表すに格納されているリソースをアプリケーションが使用する場合は、 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) マークアップ拡張機能を使用して実行する必要があり `DynamicResource` ます。 これにより、実行時に別のテーマが選択された場合に、新しいテーマの値が適用されるようになります。
 
-次の例は、オブジェクトに[`Label`](xref:Xamarin.Forms.Label)適用できるサンプルアプリケーションの3つのスタイルを示しています。
+次の例は、オブジェクトに適用できるサンプルアプリケーションの3つのスタイルを示してい [`Label`](xref:Xamarin.Forms.Label) ます。
 
 ```xaml
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
@@ -134,7 +137,7 @@ Xamarin. フォームアプリケーションでランタイムテーマを実�
 </Application>
 ```
 
-これらのスタイルは、アプリケーションレベルのリソースディクショナリで定義されているので、複数のページで使用できます。 各スタイルは、 `DynamicResource`マークアップ拡張機能を使用してテーマリソースを使用します。
+これらのスタイルは、アプリケーションレベルのリソースディクショナリで定義されているので、複数のページで使用できます。 各スタイルは、マークアップ拡張機能を使用してテーマリソースを使用 `DynamicResource` します。
 
 これらのスタイルは、次のページによって使用されます。
 
@@ -177,20 +180,20 @@ Xamarin. フォームアプリケーションでランタイムテーマを実�
 </ContentPage>
 ```
 
-テーマリソースを直接使用する場合は、 `DynamicResource`マークアップ拡張機能で使用する必要があります。 ただし、 `DynamicResource`マークアップ拡張機能を使用するスタイルが使用されている場合は、 `StaticResource`マークアップ拡張機能で使用する必要があります。
+テーマリソースを直接使用する場合は、マークアップ拡張機能で使用する必要があり `DynamicResource` ます。 ただし、 `DynamicResource` マークアップ拡張機能を使用するスタイルが使用されている場合は、 `StaticResource` マークアップ拡張機能で使用する必要があります。
 
-スタイル設定の詳細については、「 [XAML スタイルを使用した Xamarin. Forms アプリのスタイル](~/xamarin-forms/user-interface/styles/xaml/index.md)設定」を参照してください。 マークアップ拡張機能の`DynamicResource`詳細については、「 [Xamarin. Forms の動的スタイル](~/xamarin-forms/user-interface/styles/xaml/dynamic.md)」を参照してください。
+スタイル設定の詳細については、「 [XAML スタイルを使用した Xamarin. Forms アプリのスタイル](~/xamarin-forms/user-interface/styles/xaml/index.md)設定」を参照してください。 マークアップ拡張機能の詳細については `DynamicResource` 、「 [Xamarin. Forms の動的スタイル](~/xamarin-forms/user-interface/styles/xaml/dynamic.md)」を参照してください。
 
 ## <a name="load-a-theme-at-runtime"></a>実行時にテーマを読み込む
 
 実行時にテーマを選択すると、アプリケーションは次のことを行う必要があります。
 
-1. 現在のテーマをアプリケーションから削除します。 これは、アプリケーションレベル[`MergedDictionaries`](xref:Xamarin.Forms.ResourceDictionary.MergedDictionaries) [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)のプロパティをクリアすることで実現されます。
-2. 選択したテーマを読み込みます。 これを実現するには、選択したテーマのインスタンス`MergedDictionaries`をアプリケーションレベル`ResourceDictionary`のプロパティに追加します。
+1. 現在のテーマをアプリケーションから削除します。 これは [`MergedDictionaries`](xref:Xamarin.Forms.ResourceDictionary.MergedDictionaries) 、アプリケーションレベルのプロパティをクリアすることで実現され [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) ます。
+2. 選択したテーマを読み込みます。 これを実現するには、選択したテーマのインスタンスを `MergedDictionaries` アプリケーションレベルのプロパティに追加し `ResourceDictionary` ます。
 
-マークアップ拡張機能を使用してプロパティを設定するすべて[`VisualElement`](xref:Xamarin.Forms.VisualElement)のオブジェクトで、新しいテーマの値が適用されます。 `DynamicResource` これは、マーク`DynamicResource`アップ拡張機能がディクショナリキーへのリンクを保持しているために発生します。 そのため、キーに関連付けられている値が置換されると`VisualElement` 、その変更がオブジェクトに適用されます。
+[`VisualElement`](xref:Xamarin.Forms.VisualElement)マークアップ拡張機能を使用してプロパティを設定するすべてのオブジェクトで、 `DynamicResource` 新しいテーマの値が適用されます。 これは、 `DynamicResource` マークアップ拡張機能がディクショナリキーへのリンクを保持しているために発生します。 そのため、キーに関連付けられている値が置換されると、その変更がオブジェクトに適用され `VisualElement` ます。
 
-サンプルアプリケーションでは、を[`Picker`](xref:Xamarin.Forms.Picker)含むモーダルページを使用してテーマを選択します。 次のコードは、 `OnPickerSelectionChanged`選択したテーマが変更されたときに実行されるメソッドを示しています。
+サンプルアプリケーションでは、を含むモーダルページを使用してテーマを選択し [`Picker`](xref:Xamarin.Forms.Picker) ます。 次のコードは、 `OnPickerSelectionChanged` 選択したテーマが変更されたときに実行されるメソッドを示しています。
 
 ```csharp
 void OnPickerSelectionChanged(object sender, EventArgs e)
@@ -220,7 +223,7 @@ void OnPickerSelectionChanged(object sender, EventArgs e)
 ## <a name="related-links"></a>関連リンク
 
 - [テーマ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-theming/)
-- [システムテーマの変更に応答する](system-theme-changes.md)
-- [リソースディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [システム テーマの変更に対応する](system-theme-changes.md)
+- [リソース ディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [Xamarin 形式の動的スタイル](~/xamarin-forms/user-interface/styles/xaml/dynamic.md)
 - [XAML スタイルを使用した Xamarin.Forms アプリのスタイル設定](~/xamarin-forms/user-interface/styles/xaml/index.md)

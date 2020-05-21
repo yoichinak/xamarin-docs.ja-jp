@@ -1,29 +1,29 @@
 ---
 title: IOS のモーダルページプレゼンテーションスタイル
-description: プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、iOS プラットフォーム固有の設定を使用して、モーダルページのプレゼンテーションスタイルを設定する方法について説明します。
+description: プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、モーダルページのプレゼンテーションスタイルを設定する iOS プラットフォーム固有のを使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: C791F7CF-330A-44BA-987A-4CFCCBB9278B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/02/2020
-ms.openlocfilehash: 5078b280499929e0e2e3691539cf1927b4c79fe7
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+ms.openlocfilehash: 19175a6d97afb9d2d985d8a1bf8e1ce4c0179242
+ms.sourcegitcommit: 87035b654434c22ca1b0d70ee8d2496dcb63b365
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82517535"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "83546507"
 ---
 # <a name="modal-page-presentation-style-on-ios"></a>IOS のモーダルページプレゼンテーションスタイル
 
-[![](~/media/shared/download.png)サンプルをダウンロードするサンプルをダウンロードする](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-この iOS プラットフォーム固有のは、モーダルページのプレゼンテーションスタイルを設定するために使用されます。 これは、バインド可能な`Page.ModalPresentationStyle` `UIModalPresentationStyle`プロパティを列挙値に設定することによって XAML で使用されます。
+この iOS プラットフォーム固有のは、モーダルページのプレゼンテーションスタイルを設定するために使用され、さらに、透明な背景を持つモーダルページを表示するために使用できます。 これは、 `Page.ModalPresentationStyle` バインド可能なプロパティを列挙値に設定することによって XAML で使用され `UIModalPresentationStyle` ます。
 
 ```xaml
 <ContentPage ...
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-             ios:Page.ModalPresentationStyle="FormSheet">
+             ios:Page.ModalPresentationStyle="OverFullScreen">
     ...
 </ContentPage>
 ```
@@ -39,23 +39,23 @@ public class iOSModalFormSheetPageCS : ContentPage
 {
     public iOSModalFormSheetPageCS()
     {
-        On<iOS>().SetModalPresentationStyle(UIModalPresentationStyle.FormSheet);
+        On<iOS>().SetModalPresentationStyle(UIModalPresentationStyle.OverFullScreen);
         ...
     }
 }
 ```
 
-メソッド`Page.On<iOS>`は、このプラットフォーム固有のが iOS 上でのみ実行されることを指定します。 名前空間のメソッド`Page.SetModalPresentationStyle`は、次`UIModalPresentationStyle`の列挙値のいずれかを指定すること[`Page`](xref:Xamarin.Forms.Page)によって、のモーダルプレゼンテーションスタイルを設定するために使用されます。 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)
+メソッドは、 `Page.On<iOS>` このプラットフォーム固有のが iOS 上でのみ実行されることを指定します。 `Page.SetModalPresentationStyle`名前空間のメソッドは、 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) [`Page`](xref:Xamarin.Forms.Page) 次の列挙値のいずれかを指定することによって、のモーダルプレゼンテーションスタイルを設定するために使用され `UIModalPresentationStyle` ます。
 
 - `FullScreen`。画面全体を囲むようにモーダルプレゼンテーションスタイルを設定します。 既定では、このプレゼンテーションスタイルを使用してモーダルページが表示されます。
 - `FormSheet`。画面の中央に配置されるモーダルプレゼンテーションスタイルを設定します。
-- `Automatic`。モーダルプレゼンテーションスタイルを、システムによって選択された既定値に設定します。 ほとんどのビューコントローラーで`UIKit`は、が`UIModalPresentationStyle.PageSheet`にマップされますが、システムビューコントローラーによっては別のスタイルにマップされる場合があります。
+- `Automatic`。モーダルプレゼンテーションスタイルを、システムによって選択された既定値に設定します。 ほとんどのビューコントローラーでは、が `UIKit` にマップさ `UIModalPresentationStyle.PageSheet` れますが、システムビューコントローラーによっては別のスタイルにマップされる場合があります。
 - `OverFullScreen`。画面を覆うようにモーダルプレゼンテーションスタイルを設定します。
 - `PageSheet`。基になるコンテンツに対応するモーダルプレゼンテーションスタイルを設定します。
 
-また、 `GetModalPresentationStyle`メソッドを使用して、 `UIModalPresentationStyle` [`Page`](xref:Xamarin.Forms.Page)に適用されている列挙体の現在の値を取得することもできます。
+また、メソッドを `GetModalPresentationStyle` 使用して `UIModalPresentationStyle` 、に適用されている列挙体の現在の値を取得することもでき [`Page`](xref:Xamarin.Forms.Page) ます。
 
-結果として、のモーダルプレゼンテーションスタイルを[`Page`](xref:Xamarin.Forms.Page)設定できます。
+結果として、のモーダルプレゼンテーションスタイルを [`Page`](xref:Xamarin.Forms.Page) 設定できます。
 
 [![](page-presentation-style-images/modal-presentation-style-small.png "Modal Presentation Styles")](page-presentation-style-images/modal-presentation-style-large.png#lightbox "Modal Presentation Styles")
 
