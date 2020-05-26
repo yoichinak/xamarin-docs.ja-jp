@@ -28,7 +28,7 @@ ms.locfileid: "61372974"
 
     [![iOS および Android での、外観が変更された Button のスクリーンショット](../images/change-button-appearance.png "外観が変更された Button")](../images/change-button-appearance-large.png#lightbox "外観が変更された Button")
 
-    [`Button`](xref:Xamarin.Forms.Button) の外観の設定について詳しくは、「[Xamarin.Forms Button](~/xamarin-forms/user-interface/button.md#button-appearance)」 (Xamarin.Forms のボタン) ガイドの「[Button appearance](~/xamarin-forms/user-interface/button.md)」 (ボタンの外観) を参照してください。
+    [`Button`](xref:Xamarin.Forms.Button) の外観の設定について詳しくは、「[Xamarin.Forms Button](~/xamarin-forms/user-interface/button.md)」 (Xamarin.Forms のボタン) ガイドの「[Button appearance](~/xamarin-forms/user-interface/button.md#button-appearance)」 (ボタンの外観) を参照してください。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/vsmac)
 
@@ -52,4 +52,4 @@ ms.locfileid: "61372974"
 
     [![iOS および Android での、外観が変更された Button のスクリーンショット](../images/change-button-appearance.png "外観が変更された Button")](../images/change-button-appearance-large.png#lightbox "外観が変更された Button")
 
-    [`Button`](xref:Xamarin.Forms.Button) の外観の設定について詳しくは、「[Xamarin.Forms Button](~/xamarin-forms/user-interface/button.md#button-appearance)」 (Xamarin.Forms のボタン) ガイドの「[Button appearance](~/xamarin-forms/user-interface/button.md)」 (ボタンの外観) を参照してください。
+    [`Button`](xref:Xamarin.Forms.Button) の外観の設定について詳しくは、「[Xamarin.Forms Button](~/xamarin-forms/user-interface/button.md)」 (Xamarin.Forms のボタン) ガイドの「[Button appearance](~/xamarin-forms/user-interface/button.md#button-appearance)」 (ボタンの外観) を参照してください。
