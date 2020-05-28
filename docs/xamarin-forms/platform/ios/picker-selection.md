@@ -1,24 +1,27 @@
 ---
-title: IOS でのピッカー項目の選択
-description: プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。 この記事では、ピッカーで項目の選択が行われるタイミングを制御する iOS プラットフォーム固有のを使用する方法について説明します。
-ms.prod: xamarin
-ms.assetid: 26B0604A-BD30-49FD-83A6-F0EDFBB0524B
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/24/2018
-ms.openlocfilehash: 57420921100c99db1e2c3a5259ece30cfda719f2
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 75ef118b642a8c6a66205c6f7e3bc03089c6593c
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651847"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84127895"
 ---
 # <a name="picker-item-selection-on-ios"></a>IOS でのピッカー項目の選択
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-この iOS プラットフォーム固有のコントロールでは[`Picker`](xref:Xamarin.Forms.Picker)、で項目の選択が発生したときに、ユーザーがコントロールの項目を参照するときに項目の選択を行うように指定できます。または、 **[完了]** ボタンをクリックしたときにのみ、項目の選択が行われます。 これは、 XAML で `Picker.UpdateMode` 添付プロパティを `UpdateMode` 列挙型の値に設定して使用します。
+この iOS プラットフォーム固有のコントロールでは、で項目の選択が発生したときに、 [`Picker`](xref:Xamarin.Forms.Picker) ユーザーがコントロールの項目を参照するときに項目の選択を行うように指定できます。または、[**完了**] ボタンをクリックしたときにのみ、項目の選択が行われます。 これは、 `Picker.UpdateMode` 添付プロパティを列挙体の値に設定することによって XAML で使用され `UpdateMode` ます。
 
 ```xaml
 <ContentPage ...
@@ -32,7 +35,7 @@ ms.locfileid: "68651847"
 </ContentPage>
 ```
 
-代わりに、fluent API を使用して C# から使用できます。
+または、fluent API を使用して C# から使用することもできます。
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -42,12 +45,12 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 picker.On<iOS>().SetUpdateMode(UpdateMode.WhenFinished);
 ```
 
-`Picker.On<iOS>`メソッドは、このプラットフォーム仕様が iOS上 でのみ動作することを指定します。 `Picker.SetUpdateMode`メソッドは、 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 名前空間に存在し、 `UpdateMode` 列挙型が提供する次の 2 つの値を使って、アイテム選択が発生するタイミングを制御するために使用されます。
+メソッドは、 `Picker.On<iOS>` このプラットフォーム固有のが iOS 上でのみ実行されることを指定します。 `Picker.SetUpdateMode`名前空間のメソッドは、 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 項目の選択が行われるタイミングを制御するために使用され `UpdateMode` ます。列挙体では、次の2つの値を指定できます。
 
-- `Immediately` – [`Picker`](xref:Xamarin.Forms.Picker)でユーザーがアイテムを動かしているときにアイテム選択が発生します。 これは Xamarin.Forms の既定の動作です。
-- `WhenFinished` – [`Picker`](xref:Xamarin.Forms.Picker) でユーザーが**完了**ボタンを押した時に 1 回だけアイテムの選択が発生します。
+- `Immediately`–項目の選択は、ユーザーが内の項目を参照したときに発生し [`Picker`](xref:Xamarin.Forms.Picker) ます。 これは、の既定の動作です Xamarin.Forms 。
+- `WhenFinished`–項目の選択は、ユーザーがの [**完了**] ボタンをクリックしたときにのみ発生し [`Picker`](xref:Xamarin.Forms.Picker) ます。
 
-さらに、`SetUpdateMode` メソッドは、現在の`UpdateMode`を返す`UpdateMode`メソッドを呼んで列挙型の値を切り替えることに使用できます。
+また、メソッドを `SetUpdateMode` 使用して、現在のを返すメソッドを呼び出すことにより、列挙値を切り替えることもでき `UpdateMode` `UpdateMode` ます。
 
 ```csharp
 switch (picker.On<iOS>().UpdateMode())
@@ -61,12 +64,12 @@ switch (picker.On<iOS>().UpdateMode())
 }
 ```
 
-その結果、[`Picker`](xref:Xamarin.Forms.Picker)に指定された`UpdateMode`が適用され、アイテム選択が発生するタイミングを制御します。
+結果として、指定された `UpdateMode` がに適用され [`Picker`](xref:Xamarin.Forms.Picker) ます。これは、項目の選択が行われるタイミングを制御します。
 
-[![](picker-selection-images/picker-updatemode.png "ピッカー UpdateMode プラットフォーム固有")](picker-selection-images/picker-updatemode-large.png#lightbox "ピッカー UpdateMode プラットフォームに固有")
+[![](picker-selection-images/picker-updatemode.png "Picker UpdateMode Platform-Specific")](picker-selection-images/picker-updatemode-large.png#lightbox "Picker UpdateMode Platform-Specific")
 
 ## <a name="related-links"></a>関連リンク
 
-- [プラットフォーム仕様 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
-- [プラットフォーム仕様の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
+- [PlatformSpecifics (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [プラットフォーム固有設定の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific の API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

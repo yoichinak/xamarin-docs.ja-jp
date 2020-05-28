@@ -1,24 +1,27 @@
 ---
-title: Xamarin. Forms の共通コントロールのプロパティ、メソッド、およびイベント
-description: この記事では、派生クラスで一般的に使用される、VisualElement クラスで定義されている共通のプロパティ、メソッド、およびイベントについて説明します。
-ms.prod: xamarin
-ms.assetId: 85A0CCF5-C1D8-40BB-927F-A4D944E5534D
-ms.technology: xamarin-forms
-author: profexorgeek
-ms.author: jusjohns
-ms.date: 08/21/2019
-ms.openlocfilehash: 7d8f5309d14c2a99afff0998a7013a9ebec338c1
-ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
+title: Xamarin.Formsコモンコントロールのプロパティ、メソッド、およびイベント
+description: ''
+ms.prod: ''
+ms.assetId: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: deb894cccd5b6a2a9d908ef8967de91f00e7d297
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83425833"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136423"
 ---
-# <a name="xamarinforms-common-control-properties-methods-and-events"></a>Xamarin. Forms の共通コントロールのプロパティ、メソッド、およびイベント
+# <a name="xamarinforms-common-control-properties-methods-and-events"></a>Xamarin.Formsコモンコントロールのプロパティ、メソッド、およびイベント
 
-Xamarin. Forms `VisualElement` クラスは、xamarin アプリケーションで使用されるほとんどのコントロールの基本クラスです。 クラスは、 `VisualElement` 派生クラスで使用される多くの[プロパティ](#properties)、[メソッド](#methods)、および[イベント](#events)を定義します。
+クラスは、 Xamarin.Forms `VisualElement` アプリケーションで使用されるほとんどのコントロールの基本クラスです Xamarin.Forms 。 クラスは、 `VisualElement` 派生クラスで使用される多くの[プロパティ](#properties)、[メソッド](#methods)、および[イベント](#events)を定義します。
 
-## <a name="properties"></a>Properties
+## <a name="properties"></a>プロパティ
 
 インスタンスでは、次のプロパティを使用でき `VisualElement` ます。 完全な一覧については、「 [Visualelement API のプロパティ](xref:Xamarin.Forms.VisualElement#properties)」を参照してください。
 
@@ -36,15 +39,15 @@ Xamarin. Forms `VisualElement` クラスは、xamarin アプリケーション�
 
 ### [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors)
 
-`Behaviors`プロパティは `List` オブジェクトのです `Behavior` 。 ビヘイビアーを使用すると、要素をリストに追加することで、要素に再利用可能な機能をアタッチでき `Behaviors` ます。 クラスの詳細については `Behavior` 、「 [Xamarin の動作](~/xamarin-forms/app-fundamentals/behaviors/index.md)」を参照してください。
+`Behaviors`プロパティは `List` オブジェクトのです `Behavior` 。 ビヘイビアーを使用すると、要素をリストに追加することで、要素に再利用可能な機能をアタッチでき `Behaviors` ます。 クラスの詳細については `Behavior` 、「 [ Xamarin.Forms 動作](~/xamarin-forms/app-fundamentals/behaviors/index.md)」を参照してください。
 
 ### [`Bounds`](xref:Xamarin.Forms.VisualElement.Bounds)
 
-プロパティは、 `Bounds` `Rectangle` コントロールによって占有される領域を表す読み取り専用のオブジェクトです。 `Bounds`プロパティ値は、レイアウトサイクル中に割り当てられます。 には、 `Rectangle` `struct` 四角形の交点と含有をテストするための便利なプロパティとメソッドが含まれています。 詳細については、「 [Xamarin. Forms RECTANGLE API](xref:Xamarin.Forms.Rectangle)」を参照してください。
+プロパティは、 `Bounds` `Rectangle` コントロールによって占有される領域を表す読み取り専用のオブジェクトです。 `Bounds`プロパティ値は、レイアウトサイクル中に割り当てられます。 には、 `Rectangle` `struct` 四角形の交点と含有をテストするための便利なプロパティとメソッドが含まれています。 詳細については、「 [ Xamarin.Forms Rectangle API](xref:Xamarin.Forms.Rectangle)」を参照してください。
 
 ### [`Effects`](xref:Xamarin.Forms.Element.Effects)
 
-プロパティは、 `Effects` `List` `Effect` `Element` (Xref: Xamarin. Forms. Element) クラスから継承されたオブジェクトのです。 効果を使用すると、ネイティブコントロールをカスタマイズでき、通常は小さなスタイル変更に使用されます。 クラスの詳細については `Effect` 、「 [Xamarin の効果](~/xamarin-forms/app-fundamentals/effects/index.md)」を参照してください。
+プロパティは、 `Effects` から継承された `List` オブジェクトのです `Effect` `Element` (xref: Xamarin.Forms要素) クラス。 効果を使用すると、ネイティブコントロールをカスタマイズでき、通常は小さなスタイル変更に使用されます。 クラスの詳細については `Effect` 、「 [ Xamarin.Forms 効果](~/xamarin-forms/app-fundamentals/effects/index.md)」を参照してください。
 
 ### [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)
 
@@ -130,11 +133,11 @@ Xamarin. Forms `VisualElement` クラスは、xamarin アプリケーション�
 
 ### [`Style`](xref:Xamarin.Forms.NavigableElement.Style)
 
-`Style` プロパティは、`NavigableElement` クラスから継承されます。 このプロパティは、クラスのインスタンスです `Style` 。 クラスには、 `Style` ビジュアル要素の外観と動作を定義するトリガー、セッター、および動作が含まれています。 詳細については、「 [Xamarin の XAML スタイル](~/xamarin-forms/user-interface/styles/xaml/index.md)」を参照してください。
+`Style` プロパティは、`NavigableElement` クラスから継承されます。 このプロパティは、クラスのインスタンスです `Style` 。 クラスには、 `Style` ビジュアル要素の外観と動作を定義するトリガー、セッター、および動作が含まれています。 詳細については、「 [ Xamarin.Forms XAML スタイル](~/xamarin-forms/user-interface/styles/xaml/index.md)」を参照してください。
 
 ### [`StyleClass`](xref:Xamarin.Forms.NavigableElement.StyleClass)
 
-`StyleClass`プロパティは、 `string` クラスの名前を表すオブジェクトのリストです `Style` 。 このプロパティは、`NavigableElement` クラスから継承されます。 プロパティを使用すると、 `StyleClass` 複数のスタイル属性をインスタンスに適用でき `VisualElement` ます。 詳細については、「 [Xamarin のスタイルクラス](~/xamarin-forms/user-interface/styles/xaml/style-class.md)」を参照してください。
+`StyleClass`プロパティは、 `string` クラスの名前を表すオブジェクトのリストです `Style` 。 このプロパティは、`NavigableElement` クラスから継承されます。 プロパティを使用すると、 `StyleClass` 複数のスタイル属性をインスタンスに適用でき `VisualElement` ます。 詳細については、「 [ Xamarin.Forms スタイルクラス](~/xamarin-forms/user-interface/styles/xaml/style-class.md)」を参照してください。
 
 ### [`TabIndex`](xref:Xamarin.Forms.VisualElement.TabIndex)
 
@@ -144,21 +147,21 @@ Xamarin. Forms `VisualElement` クラスは、xamarin アプリケーション�
 
 `TranslationX`プロパティは、 `double` X 軸に適用するデルタ平行移動を定義する値です。 翻訳はレイアウトの後に適用され、通常はアニメーションを適用するために使用されます。 親コンテナーの境界の外側にある要素を変換すると、入力が禁止されます。
 
-詳細については、「 [Xamarin. Forms でのアニメーション](~/xamarin-forms/user-interface/animation/index.md)」を参照してください。
+詳細については、「 [」の Xamarin.Forms 「アニメーション](~/xamarin-forms/user-interface/animation/index.md)」を参照してください。
 
 ### [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY)
 
 `TranslationY`プロパティは、 `double` Y 軸に適用するデルタ平行移動を定義する値です。 翻訳はレイアウトの後に適用され、通常はアニメーションを適用するために使用されます。 親コンテナーの境界の外側にある要素を変換すると、入力が禁止されます。
 
-詳細については、「 [Xamarin. Forms でのアニメーション](~/xamarin-forms/user-interface/animation/index.md)」を参照してください。
+詳細については、「 [」の Xamarin.Forms 「アニメーション](~/xamarin-forms/user-interface/animation/index.md)」を参照してください。
 
 ### [`Triggers`](xref:Xamarin.Forms.VisualElement.Triggers)
 
-プロパティは、 `Triggers` オブジェクトの読み取り専用 `List` です `TriggerBase` 。 トリガーを使用すると、アプリケーション開発者は、イベントまたはプロパティの変更に応じてコントロールの外観を変更するアクションを XAML で表現できます。 詳細については、「 [Xamarin. Forms Triggers](~/xamarin-forms/app-fundamentals/triggers.md)」を参照してください。
+プロパティは、 `Triggers` オブジェクトの読み取り専用 `List` です `TriggerBase` 。 トリガーを使用すると、アプリケーション開発者は、イベントまたはプロパティの変更に応じてコントロールの外観を変更するアクションを XAML で表現できます。 詳細については、「 [ Xamarin.Forms トリガー](~/xamarin-forms/app-fundamentals/triggers.md)」を参照してください。
 
 ### [`Visual`](xref:Xamarin.Forms.VisualElement.Visual)
 
-`Visual`プロパティは、 `IVisual` レンダラーを作成し、インスタンスに対して選択的に適用できるようにするインスタンスです `VisualElement` 。 `Visual`プロパティはその親に一致するように設定されているため、コンポーネントでレンダラーを定義すると、そのコンポーネントのすべての子にも適用されます。 コントロールまたはその先祖にカスタムレンダラーが設定されていない場合は、既定の Xamarin. Forms レンダラーが使用されます。 詳細については、「 [Xamarin. フォームビジュアル](~/xamarin-forms/user-interface/visual/index.md)」を参照してください。
+`Visual`プロパティは、 `IVisual` レンダラーを作成し、インスタンスに対して選択的に適用できるようにするインスタンスです `VisualElement` 。 `Visual`プロパティはその親に一致するように設定されているため、コンポーネントでレンダラーを定義すると、そのコンポーネントのすべての子にも適用されます。 コントロールまたはその先祖にカスタムレンダラーが設定されていない場合は、既定の Xamarin.Forms レンダラーが使用されます。 詳細については、「 [ Xamarin.Forms ビジュアル](~/xamarin-forms/user-interface/visual/index.md)」を参照してください。
 
 ### [`Width`](xref:Xamarin.Forms.VisualElement.Width)
 
@@ -210,13 +213,13 @@ public void Unfocus ()
 
 要素には、このメソッドが機能するために既にフォーカスがある必要があります。
 
-## <a name="events"></a>イベント
+## <a name="events"></a>events
 
-クラスでは、次のイベントを使用でき `VisualElement` ます。 完全な一覧については、「 [Xamarin の VisualElement イベント](xref:Xamarin.Forms.VisualElement#events)」を参照してください。
+クラスでは、次のイベントを使用でき `VisualElement` ます。 完全な一覧については、「 [ Xamarin.Forms Visualelement イベント](xref:Xamarin.Forms.VisualElement#events)」を参照してください。
 
 ### [`Focused`](xref:Xamarin.Forms.VisualElement.Focused)
 
-`Focused`イベントは、 `VisualElement` インスタンスがフォーカスを受け取ったときに発生します。 このイベントは、Xamarin. Forms スタックではバブルされません。ネイティブコントロールから直接受信します。 このイベントは、プロパティ set アクセス操作子によって生成され [`IsFocused`](#isfocused) ます。
+`Focused`イベントは、 `VisualElement` インスタンスがフォーカスを受け取ったときに発生します。 このイベントはスタックを経由せず Xamarin.Forms 、ネイティブコントロールから直接取得されます。 このイベントは、プロパティ set アクセス操作子によって生成され [`IsFocused`](#isfocused) ます。
 
 ### [`SizeChanged`](xref:Xamarin.Forms.VisualElement.SizeChanged)
 
@@ -224,11 +227,11 @@ public void Unfocus ()
 
 ### [`Unfocused`](xref:Xamarin.Forms.VisualElement.Unfocused)
 
-イベントは、 `Unfocused` インスタンスがフォーカスを失ったときに発生し `VisualElement` ます。 このイベントは、Xamarin. Forms スタックではバブルされません。ネイティブコントロールから直接受信します。 このイベントは、プロパティ set アクセス操作子によって生成され [`IsFocused`](#isfocused) ます。
+イベントは、 `Unfocused` インスタンスがフォーカスを失ったときに発生し `VisualElement` ます。 このイベントはスタックを経由せず Xamarin.Forms 、ネイティブコントロールから直接取得されます。 このイベントは、プロパティ set アクセス操作子によって生成され [`IsFocused`](#isfocused) ます。
 
 ## <a name="units-of-measurement"></a>測定単位
 
-Android、iOS、UWP の各プラットフォームには、デバイスによって異なる測定単位があります。 Xamarin では、プラットフォームに依存しない測定単位を使用して、デバイスとプラットフォームの単位を正規化します。 Xamarin. Forms には、1インチあたり160ユニットまたは 1 cm あたりの64ユニットがあります。
+Android、iOS、UWP の各プラットフォームには、デバイスによって異なる測定単位があります。 Xamarin.Formsでは、デバイスとプラットフォームの単位を正規化するプラットフォームに依存しない測定単位が使用されます。 には、1インチあたり160ユニットまたは 1 cm あたりの64ユニットがあり Xamarin.Forms ます。
 
 ## <a name="request-properties"></a>要求のプロパティ
 
@@ -261,7 +264,7 @@ Android、iOS、UWP の各プラットフォームには、デバイスによっ
 
 ### <a name="minimum-properties-within-a-grid"></a>グリッド内の最小プロパティ
 
-`Grid`レイアウトには、行と列の相対サイズを調整するための独自のシステムがあります。 レイアウト内でまたはを使用しても効果はあり `MinimumWidthRequest` `MinimumHeightRequest` `Grid` ません。 詳細については、「 [Xamarin. Forms Grid](~/xamarin-forms/user-interface/layouts/grid.md)」を参照してください。
+`Grid`レイアウトには、行と列の相対サイズを調整するための独自のシステムがあります。 レイアウト内でまたはを使用しても効果はあり `MinimumWidthRequest` `MinimumHeightRequest` `Grid` ません。 詳細については、「 [ Xamarin.Forms Grid](~/xamarin-forms/user-interface/layouts/grid.md)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 

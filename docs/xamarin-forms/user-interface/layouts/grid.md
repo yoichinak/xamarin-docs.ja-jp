@@ -1,24 +1,27 @@
 ---
-title: Xamarin. フォームグリッド
-description: Xamarin Grid は、その子をセルの行と列に編成するレイアウトです。
-ms.prod: xamarin
-ms.assetid: 762B1802-D185-494C-B643-74EED55882FE
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/15/2020
-ms.openlocfilehash: 4f1d9d0f2d597018b9832d918bbec3f0b2594773
-ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
+title: Xamarin.Forms行列
+description: Xamarin.Formsグリッドは、その子をセルの行と列に編成するレイアウトです。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c4e63d6c1701d9eb247ecb7c52188e5dbc045934
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83425918"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138074"
 ---
-# <a name="xamarinforms-grid"></a>Xamarin. フォームグリッド
+# <a name="xamarinforms-grid"></a>Xamarin.Forms行列
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-griddemos)
 
-[![Xamarin. フォームグリッド](grid-images/layouts.png "Xamarin. フォームグリッド")](grid-images/layouts-large.png#lightbox "Xamarin. フォームグリッド")
+[![Xamarin.Forms行列](grid-images/layouts.png "[!ファンド.NO LOC (Xamarin)] グリッド")](grid-images/layouts-large.png#lightbox "[!ファンド.NO LOC (Xamarin)] グリッド")
 
 は、 [`Grid`](xref:Xamarin.Forms.Grid) その子を行と列に編成するレイアウトであり、比例または絶対的なサイズを持つことができます。 既定では、には `Grid` 1 つの行と1つの列が含まれます。 また、は、 `Grid` 他の子レイアウトを含む親レイアウトとして使用できます。
 
@@ -735,6 +738,6 @@ public class ColorSlidersGridPageCS : ContentPage
 ## <a name="related-links"></a>関連リンク
 
 - [グリッドのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-griddemos)
-- [Xamarin. Forms のレイアウトオプション](layout-options.md)
-- [Xamarin. フォームレイアウトを選択する](choose-layout.md)
-- [Xamarin.Forms アプリ パフォーマンスの改善](~/xamarin-forms/deploy-test/performance.md)
+- [レイアウトオプションXamarin.Forms](layout-options.md)
+- [レイアウトの選択 Xamarin.Forms](choose-layout.md)
+- [アプリのパフォーマンスを向上させる Xamarin.Forms](~/xamarin-forms/deploy-test/performance.md)

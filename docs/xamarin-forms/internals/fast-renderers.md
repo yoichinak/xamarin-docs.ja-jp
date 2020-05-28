@@ -1,56 +1,59 @@
 ---
-title: Xamarin.Forms の高速レンダラー
-description: この記事では、高速レンダラーは、結果として得られるネイティブ コントロール階層をフラット化して、増加し、android、Xamarin.Forms コントロールのレンダリング コストを削減について説明します。
-ms.prod: xamarin
-ms.assetid: 097f87f2-d891-4f3c-be02-fb7d195a481a
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/09/2019
-ms.openlocfilehash: 861d9e3f898dcd61015d9aca27ae66c3fe72d1a9
-ms.sourcegitcommit: 482aef652bdaa440561252b6a1a1c0a40583cd32
+title: Xamarin.Forms高速レンダラー
+description: この記事では、 Xamarin.Forms 結果として得られるネイティブコントロール階層をフラット化することによって、Android でのコントロールのインフレとレンダリングのコストを削減する高速レンダラーについて説明します。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3f25f4c2da5b2a426673b49045b5d2d05b0c6ac4
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65970721"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139075"
 ---
-# <a name="xamarinforms-fast-renderers"></a>Xamarin.Forms の高速レンダラー
+# <a name="xamarinforms-fast-renderers"></a>Xamarin.Forms高速レンダラー
 
-これまでは、Android で元のコントロールのレンダラーのほとんどは、2 つのビューから構成されます。
+従来、Android での元のコントロールレンダラーのほとんどは、次の2つのビューで構成されています。
 
-- ネイティブ コントロールなど、`Button`または`TextView`します。
-- コンテナー`ViewGroup`レイアウト作業、ジェスチャの処理、およびその他のタスクの一部を処理します。
+- やなどのネイティブコントロール `Button` `TextView` 。
+- `ViewGroup`一部のレイアウト作業、ジェスチャ処理、およびその他のタスクを処理するコンテナー。
 
-ただし、この方法には大容量メモリ、および詳細画面にレンダリングするために処理を必要とするより複雑なビジュアル ツリー内の結果、論理各コントロールの 2 つのビューを作成することで、パフォーマンスに影響します。
+ただし、この方法では、論理コントロールごとに2つのビューが作成され、より多くのメモリを必要とするより複雑なビジュアルツリーが生成され、画面に表示される処理が増えます。
 
-高速レンダラーは、1 つのビューに増加を抑制し、Xamarin.Forms コントロールのレンダリング コストを削減します。 そのため、2 つのビューを作成し、ビュー、ツリーに追加するではなく 1 つだけが作成されます。 これにより、あまり複雑なツリーの表示をさらには、少数のオブジェクトを作成し、メモリ使用量 (その結果が少ないガベージ コレクションの一時停止、また) 以下のパフォーマンスが向上します。
+[高速レンダラー] を指定すると、コントロールのインフレとレンダリングのコストを Xamarin.Forms 1 つのビューに削減できます。 したがって、2つのビューを作成してビューツリーに追加するのではなく、1つだけを作成します。 これにより、より少ないオブジェクトを作成することによってパフォーマンスが向上します。これは、より複雑なビューツリーで、メモリ使用量が少なくなります (これにより、ガベージコレクションの一時停止も少なくなります)。
 
-高速レンダラーは、Android で次のコントロールを Xamarin.Forms で利用できます。
+Android 上のでは、次のコントロールに対して高速レンダラーを使用でき Xamarin.Forms ます。
 
 - [`Button`](xref:Xamarin.Forms.Button)
 - [`Image`](xref:Xamarin.Forms.Image)
 - [`Label`](xref:Xamarin.Forms.Label)
 - [`Frame`](xref:Xamarin.Forms.Frame)
 
-機能的には、これらの高速レンダラーは、従来のレンダラーと変わりません。 Xamarin.Forms 4.0 以降では、対象とするすべてのアプリケーションから`FormsAppCompatActivity`既定ではこれらの高速レンダラーを使用します。 など、すべての新しいコントロールのレンダラー [ `ImageButton` ](xref:Xamarin.Forms.ImageButton)と[ `CollectionView` ](xref:Xamarin.Forms.CollectionView)、高速レンダラー アプローチを使用します。
+機能的には、これらの高速レンダラーは従来のレンダラーとは異なります。 Xamarin.Forms4.0 以降では、を対象 `FormsAppCompatActivity` とするすべてのアプリケーションは、これらの高速レンダラーを既定で使用します。 やなど、すべての新しいコントロールのレンダラーでは、 [`ImageButton`](xref:Xamarin.Forms.ImageButton) [`CollectionView`](xref:Xamarin.Forms.CollectionView) 高速レンダラーアプローチを使用します。
 
-高速レンダラーを使用する場合、パフォーマンスの向上は、レイアウトの複雑さに応じて、アプリケーションごとに異なります。 たとえば、x2 のパフォーマンスの向上する場合は、スクロール、 [ `ListView` ](xref:Xamarin.Forms.ListView)何千もの行の行ごとのセルが高速レンダラーを使用するコントロールの行われる場所、データを格納しているその結果は非表示スムーズにスクロールします。
+高速レンダラーを使用する場合のパフォーマンスの向上は、レイアウトの複雑さに応じて、アプリケーションごとに異なります。 たとえば、何千ものデータを含むをスクロールするときに、x2 のパフォーマンスを向上させることができます。この場合、各行 [`ListView`](xref:Xamarin.Forms.ListView) のセルは高速レンダラーを使用するコントロールによって作成されるため、スクロールが滑らかになります。
 
 > [!NOTE]
-> カスタム レンダラーは、従来のレンダラーを使用したのと同じアプローチを使用して高速レンダラーを作成できます。 詳細については、「[Custom Renderers](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)」 (カスタム レンダラー) を参照してください。
+> 従来のレンダラーと同じ方法を使用して、高速レンダラー用にカスタムレンダラーを作成できます。 詳細については、「[Custom Renderers](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)」 (カスタム レンダラー) を参照してください。
 
 ## <a name="backwards-compatibility"></a>下位互換性
 
-高速レンダラーは、次の方法で上書きできます。
+高速レンダラーは、次の方法でオーバーライドできます。
 
-1. 次のコードの行を追加することで従来のレンダラーを有効にすると、`MainActivity`クラスを呼び出す前に`Forms.Init`:
+1. を呼び出す前に、次のコード行をクラスに追加して、従来のレンダラーを有効にし `MainActivity` `Forms.Init` ます。
 
     ```csharp
     Forms.SetFlags("UseLegacyRenderers");
     ```
 
-1. 従来のレンダラーを対象とするカスタム レンダラーを使用します。 任意の既存のカスタム レンダラーは引き続き従来のレンダラーで機能します。
-1. 別の指定`View.Visual`など`Material`、さまざまなレンダラーを使用します。 マテリアルのビジュアルの詳細については、次を参照してください。 [Xamarin.Forms マテリアル Visual](~/xamarin-forms/user-interface/visual/material-visual.md)します。
+1. レガシレンダラーを対象とするカスタムレンダラーを使用します。 既存のカスタムレンダラーは、従来のレンダラーと引き続き機能します。
+1. さまざまなレンダラーを使用する、などの別のを指定し `View.Visual` `Material` ます。 素材の詳細については、「 [ Xamarin.Forms 素材ビジュアル](~/xamarin-forms/user-interface/visual/material-visual.md)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 

@@ -1,18 +1,21 @@
 ---
-title: IOS のモーダルページプレゼンテーションスタイル
-description: プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、モーダルページのプレゼンテーションスタイルを設定する iOS プラットフォーム固有のを使用する方法について説明します。
-ms.prod: xamarin
-ms.assetid: C791F7CF-330A-44BA-987A-4CFCCBB9278B
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/02/2020
-ms.openlocfilehash: 19175a6d97afb9d2d985d8a1bf8e1ce4c0179242
-ms.sourcegitcommit: 87035b654434c22ca1b0d70ee8d2496dcb63b365
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2abc255964df35fbdfeb4191911c57df9be99fd9
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83546507"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84128012"
 ---
 # <a name="modal-page-presentation-style-on-ios"></a>IOS のモーダルページプレゼンテーションスタイル
 
@@ -60,7 +63,7 @@ public class iOSModalFormSheetPageCS : ContentPage
 [![](page-presentation-style-images/modal-presentation-style-small.png "Modal Presentation Styles")](page-presentation-style-images/modal-presentation-style-large.png#lightbox "Modal Presentation Styles")
 
 > [!NOTE]
-> このプラットフォーム固有のを使用してモーダル表示スタイルを設定するページでは、モーダルナビゲーションを使用する必要があります。 詳細については、「 [Xamarin. フォームモーダルページ](~/xamarin-forms/app-fundamentals/navigation/modal.md)」を参照してください。
+> このプラットフォーム固有のを使用してモーダル表示スタイルを設定するページでは、モーダルナビゲーションを使用する必要があります。 詳細については、「 [ Xamarin.Forms モーダルページ](~/xamarin-forms/app-fundamentals/navigation/modal.md)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 

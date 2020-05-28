@@ -1,18 +1,21 @@
 ---
-title: SkiaSharp blend モード
-description: Blend モードを使用すると、グラフィカルオブジェクトが互いに積み上げられている場合の動作を定義できます。
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: CE1B222E-A2D0-4016-A532-EC1E59EE3D6B
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/23/2018
-ms.openlocfilehash: 829d764f03dd77c6126c2f4bced750ae570a3bc6
-ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b5b03779b9f0847621456b25582fb8ea04f8386d
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83425695"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84131704"
 ---
 # <a name="skiasharp-blend-modes"></a>SkiaSharp blend モード
 
@@ -29,20 +32,60 @@ SkiaSharp blend モードは、W3C[**合成および Blend Level 1**](https://ww
 列挙体の29メンバーは、 `SKBlendMode` 次の3つのカテゴリに分けることができます。
 
 | Porter-Duff | 分離可能な    | 分離不可 |
-| ----------- | ------------ | ------------- |
-| `Clear`     | `Modulate`   | `Hue`         |
-| `Src`       | `Screen`     | `Saturation`  |
-| `Dst`       | `Overlay`    | `Color`       |
-| `SrcOver`   | `Darken`     | `Luminosity`  |
-| `DstOver`   | `Lighten`    |               |
-| `SrcIn`     | `ColorDodge` |               |
-| `DstIn`     | `ColorBurn`  |               |
-| `SrcOut`    | `HardLight`  |               |
-| `DstOut`    | `SoftLight`  |               |
-| `SrcATop`   | `Difference` |               |
-| `DstATop`   | `Exclusion`  |               |
-| `Xor`       | `Multiply`   |               |
-| `Plus`      |              |               |
+| ---
+タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+------ |---title: description: ms. 製品: ms. テクノロジ: ms. assetid: author: ms. author: ms. date: no loc:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+------ |---title: description: ms. 製品: ms. テクノロジ: ms. assetid: author: ms. author: ms. date: no loc:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+------- | | `Clear`     | `Modulate`   | `Hue`         | | `Src`       | `Screen`     | `Saturation`  | | `Dst`       | `Overlay`    | `Color`       | | `SrcOver`   | `Darken`     | `Luminosity`  | | `DstOver`   | `Lighten`    |               | | `SrcIn`     | `ColorDodge` |               | | `DstIn`     | `ColorBurn`  |               | | `SrcOut`    | `HardLight`  |               | | `DstOut`    | `SoftLight`  |               | | `SrcATop`   | `Difference` |               | | `DstATop`   | `Exclusion`  |               | | `Xor`       | `Multiply`   |               | | `Plus`      |              |               |
 
 これら3つのカテゴリの名前は、次のディスカッションでより多くの意味を持ちます。 メンバーが一覧表示される順序は、列挙型の定義と同じです `SKBlendMode` 。 最初の列の13個の列挙型のメンバーは、0 ~ 12 の整数値を持ちます。 2番目の列は、13 ~ 24 の整数に対応する列挙メンバーで、3番目の列のメンバーは 25 ~ 28 の値を持ちます。
 
@@ -62,7 +105,7 @@ canvas.Clear();
 
 このメソッドは、キャンバスのすべてのピクセルを、 `new SKColor(0, 0, 0, 0)` または整数の0x00000000 に相当する透明な黒いピクセルに置き換えます。 すべてのピクセルのすべてのバイトがゼロに初期化されます。
 
-`SKCanvas`ハンドラーで取得されるの描画サーフェイスは、 `PaintSurface` 白い背景を持つように見えることがありますが、それは背景が透明で、ページに白い背景があるためです `SKCanvasView` 。 `BackgroundColor`の xamarin プロパティを `SKCanvasView` Xamarin. forms の色に設定することによって、この事実を示すことができます。
+`SKCanvas`ハンドラーで取得されるの描画サーフェイスは、 `PaintSurface` 白い背景を持つように見えることがありますが、それは背景が透明で、ページに白い背景があるためです `SKCanvasView` 。 のプロパティを色に設定することによって、この事実を実際に示すことができ Xamarin.Forms `BackgroundColor` `SKCanvasView` Xamarin.Forms ます。
 
 ```csharp
 canvasView.BackgroundColor = Color.Red;

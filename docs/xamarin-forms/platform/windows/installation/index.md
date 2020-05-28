@@ -1,30 +1,33 @@
 ---
-title: Windows プロジェクトのセットアップ
-description: 以前の Xamarin. Forms ソリューション (または macOS で作成されたもの) にはユニバーサル Windows プラットフォームプロジェクトはありません。この記事では、既存の Xamarin. Forms ソリューションに新しい UWP プロジェクトを追加する方法について説明します。
-ms.prod: xamarin
-ms.assetid: A0774D2E-6994-4D91-84E8-DAB66FC92320
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/10/2018
-ms.openlocfilehash: 5d2d9c8c2104e96f16c3a3ff169f795068605f59
-ms.sourcegitcommit: 7011303ff1868f3dd3858415706f4b5732ee44f1
+title: ''
+description: 以前 Xamarin.Forms のソリューション (または macOS で作成されたソリューション) にはユニバーサル Windows プラットフォームプロジェクトはありません。この記事では、既存のソリューションに新しい UWP プロジェクトを追加する方法について説明し Xamarin.Forms ます。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 87ad78e97046eef7fd6c2e062fa9f84d92c11b38
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83696088"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84132211"
 ---
 # <a name="setup-windows-projects"></a>Windows プロジェクトのセットアップ
 
-_既存の Xamarin. Forms ソリューションへの新しい Windows プロジェクトの追加_
+_既存のソリューションへの新しい Windows プロジェクトの追加 Xamarin.Forms_
 
-以前の Xamarin. Forms ソリューション (または macOS で作成されたもの) には、ユニバーサル Windows プラットフォーム (UWP) アプリプロジェクトはありません。 そのため、Windows 10 (UWP) アプリをビルドするには、UWP プロジェクトを手動で追加する必要があります。
+以前 Xamarin.Forms のソリューション (または macOS で作成されたソリューション) には、ユニバーサル Windows プラットフォーム (UWP) アプリプロジェクトはありません。 そのため、Windows 10 (UWP) アプリをビルドするには、UWP プロジェクトを手動で追加する必要があります。
 
 ## <a name="add-a-universal-windows-platform-app"></a>ユニバーサル Windows プラットフォームアプリを追加する
 
 UWP アプリをビルドするには、 **Windows 10**上の**Visual Studio 2019**をお勧めします。 ユニバーサル Windows プラットフォームの詳細については、「[ユニバーサル Windows プラットフォームの概要](/windows/uwp/get-started/universal-application-platform-guide/)」を参照してください。
 
-UWP は、xamarin. forms 2.2 以降でサポートされています。また、xamarin では、forms 2.1 以降および xamarin. forms. マップがサポートされています。
+UWP は Xamarin.Forms 、2.1 以降、およびで使用でき Xamarin.Forms ます。マップは2.2 以降でサポートされてい Xamarin.Forms ます。
 
 <a href="#troubleshooting">トラブルシューティング</a>のセクションで役立つヒントを確認してください。
 
@@ -38,13 +41,13 @@ Windows 10 の電話、タブレット、デスクトップで実行する UWP �
 
   ![](universal-images/target-version.png "New Universal Windows Platform Project Dialog")
 
- 番. UWP プロジェクトを右クリックし、[ **NuGet パッケージの管理**] を選択して、 **Xamarin. Forms**パッケージを追加します。 ソリューション内の他のプロジェクトが、同じバージョンの Xamarin. Forms パッケージにも更新されていることを確認します。
+ 番. UWP プロジェクトを右クリックし、[ **NuGet パッケージの管理...** ] を選択して、パッケージを追加します。 **Xamarin.Forms** ソリューション内の他のプロジェクトが同じバージョンのパッケージにも更新されていることを確認し Xamarin.Forms ます。
 
  4/4. 新しい UWP プロジェクトが**ビルド > Configuration Manager**ウィンドウにビルドされることを確認します (これは既定では発生しない可能性があります)。 ユニバーサルプロジェクトの [**ビルド**] ボックスと [**配置**] ボックスを目盛りします。
 
   [![](universal-images/configuration-sml.png "Configuration Manager Window")](universal-images/configuration.png#lightbox "Configuration Manager Window")
 
- 5/5. プロジェクトを右クリックし、[ **> の参照の追加**] を選択して、Xamarin. フォームアプリケーションプロジェクト (.NET Standard または共有プロジェクト) への参照を作成します。
+ 5/5. プロジェクトを右クリックし、[ **> の参照の追加**] を選択して、 Xamarin.Forms アプリケーションプロジェクト (.NET Standard または共有プロジェクト) への参照を作成します。
 
   ![](universal-images/addref-sml.png "Reference Manager Dialog")
 
@@ -81,7 +84,7 @@ xmlns:forms="using:Xamarin.Forms.Platform.UWP"
 public sealed partial class MainPage  // REMOVE ": Page"
 ```
 
- 個. **MainPage.xaml.cs**で、 `LoadApplication` コンストラクターに呼び出しを追加して、 `MainPage` Xamarin. Forms アプリを起動します。
+ 個. **MainPage.xaml.cs**で、アプリを `LoadApplication` 起動するための呼び出しをコンストラクターに追加し `MainPage` Xamarin.Forms ます。
 
 ```csharp
 // below this existing line
@@ -111,7 +114,7 @@ vdc. ローカルリソースを追加します (例 必要な既存のプラッ
 
 ### <a name="target-invocation-exception-when-using-compile-with-net-native-tool-chain"></a>".NET ネイティブツールチェーンを使用したコンパイル" を使用する場合の "ターゲット呼び出しの例外"
 
-UWP アプリが複数のアセンブリを参照している場合 (たとえば、サードパーティ製のコントロールライブラリの場合、またはアプリ自体が複数のライブラリに分割されている場合)、Xamarin. Forms はこれらのアセンブリからオブジェクトを読み込むことができない可能性があります (カスタムレンダラーなど)。
+UWP アプリが複数のアセンブリを参照している場合 (たとえば、サードパーティ製のコントロールライブラリの場合、またはアプリ自体が複数のライブラリに分割されている場合)、は Xamarin.Forms それらのアセンブリからオブジェクトを読み込むことができない可能性があります (カスタムレンダラーなど)。
 
 このような状況は、プロジェクトの **[プロパティ > ビルド > 全般**] ウィンドウで UWP アプリのオプションとして [ **.NET ネイティブのコンパイル] ツールチェーン**を使用した場合に発生する可能性があります。
 

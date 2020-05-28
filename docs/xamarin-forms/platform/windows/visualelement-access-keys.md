@@ -1,28 +1,31 @@
 ---
-title: Windows 上の VisualElement アクセスキー
-description: プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。 この記事では、VisualElement のアクセスキーを指定する Windows プラットフォーム固有のを使用する方法について説明します。
-ms.prod: xamarin
-ms.assetid: 771AF785-76B8-4372-89F5-E4D521D21E0C
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/24/2018
-ms.openlocfilehash: ce1d682678c17bb24e7a4fd528c84554465c4fa6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1bfd61e79a2b4697e884afb45e4b9080ee939b87
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68656833"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136527"
 ---
 # <a name="visualelement-access-keys-on-windows"></a>Windows 上の VisualElement アクセスキー
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-アクセスキーは、ユニバーサル Windows プラットフォーム (UWP) 上のアプリの使いやすさとアクセシビリティを向上させるキーボードショートカットです。タッチではなくキーボードを使用して、ユーザーがアプリの表示可能な UI をすばやく移動して操作できるようにします。またはマウス。 これらは、Alt キーと 1 つまたは複数英数字キー、順番に押された通常の組み合わせです。 キーボード ショートカットは自動的に 1 つの英数字を使用して、アクセス キーのサポートします。
+アクセスキーは、ユニバーサル Windows プラットフォーム (UWP) 上のアプリの使いやすさとアクセシビリティを向上させるキーボードショートカットです。タッチやマウスを使用する代わりに、ユーザーがキーボードを使用してアプリの表示可能な UI をすばやく移動したり操作したりできるようにします。 これらは、Alt キーと1つ以上の英数字キーの組み合わせであり、通常は順番に押されています。 キーボードショートカットは、1つの英数字を使用するアクセスキーに対して自動的にサポートされます。
 
-アクセス キーのヒントの縦棒は浮動バッジのアクセス キーを含むコントロールの横に表示されます。 各アクセス キーのヒントには、関連付けられているコントロールをアクティブ化する英数字キーが含まれています。 ユーザーは、Alt キーを押すと、アクセス キーのヒントが表示されます。
+アクセスキーのヒントは、アクセスキーを含むコントロールの横に表示されるフローティングバッジです。 各アクセスキーのヒントには、関連付けられたコントロールをアクティブにするための英数字のキーが含まれています。 ユーザーが Alt キーを押すと、アクセスキーのヒントが表示されます。
 
-この UWP プラットフォーム固有のは、 [`VisualElement`](xref:Xamarin.Forms.VisualElement)のアクセスキーを指定するために使用されます。 XAML で設定して使用される、 [ `VisualElement.AccessKey` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyProperty)添付プロパティの英数字の値に設定し、必要に応じて、 [ `VisualElement.AccessKeyPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyPlacementProperty)添付プロパティを@property[ `AccessKeyPlacement` ](xref:Xamarin.Forms.AccessKeyPlacement)列挙型で、 [ `VisualElement.AccessKeyHorizontalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyHorizontalOffsetProperty)添付プロパティを`double`、および[ `VisualElement.AccessKeyVerticalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyVerticalOffsetProperty)添付プロパティを`double`:
+この UWP プラットフォーム固有のは、のアクセスキーを指定するために使用され [`VisualElement`](xref:Xamarin.Forms.VisualElement) ます。 XAML で使用されるのは、 [`VisualElement.AccessKey`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyProperty) 添付プロパティを英数字の値に設定し、必要に応じて添付プロパティを列挙値に設定し、添付プロパティをに、添付プロパティをに設定することによって [`VisualElement.AccessKeyPlacement`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyPlacementProperty) [`AccessKeyPlacement`](xref:Xamarin.Forms.AccessKeyPlacement) [`VisualElement.AccessKeyHorizontalOffset`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyHorizontalOffsetProperty) `double` [`VisualElement.AccessKeyVerticalOffset`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.AccessKeyVerticalOffsetProperty) `double` 行います。
 
 ```xaml
 <TabbedPage ...
@@ -49,7 +52,7 @@ ms.locfileid: "68656833"
 </TabbedPage>
 ```
 
-代わりに、fluent API を使用して C# から使用できます。
+または、fluent API を使用して C# から使用することもできます。
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -75,35 +78,35 @@ button4.On<Windows>()
 ...
 ```
 
-`VisualElement.On<Windows>`メソッドは、このプラットフォームに固有はユニバーサル Windows プラットフォームでのみ実行されるを指定します。 [ `VisualElement.SetAccessKey` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.SetAccessKey(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement},System.String))メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)名前空間のアクセス キーの値を設定するため、`VisualElement`します。 [ `VisualElement.SetAccessKeyPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.SetAccessKeyPlacement(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement},Xamarin.Forms.AccessKeyPlacement))メソッドでアクセス キーのヒントを表示するために使用する位置を指定、 [ `AccessKeyPlacement` ](xref:Xamarin.Forms.AccessKeyPlacement)次の値を提供する列挙体。
+`VisualElement.On<Windows>`メソッドは、このプラットフォーム固有のがユニバーサル Windows プラットフォームでのみ実行されることを指定します。 [ `VisualElement.SetAccessKey` ] (Xref: Xamarin.FormsPlatformConfiguration. WindowsSpecific VisualElement. SetAccessKey ( Xamarin.Forms .IPlatformElementConfiguration { Xamarin.Forms .PlatformConfiguration. Windows、 Xamarin.Forms 。VisualElement}, System.string) メソッドを名前空間で使用して、の [`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) アクセスキーの値を設定し `VisualElement` ます。 [ `VisualElement.SetAccessKeyPlacement` ] (Xref: Xamarin.FormsPlatformConfiguration. WindowsSpecific. SetAccessKeyPlacement ( Xamarin.Forms .IPlatformElementConfiguration { Xamarin.Forms .PlatformConfiguration. Windows、 Xamarin.Forms 。VisualElement}、 Xamarin.Forms 。AccessKeyPlacement) メソッド。必要に応じて、 [`AccessKeyPlacement`](xref:Xamarin.Forms.AccessKeyPlacement) 次の有効な値を提供する列挙体を使用して、アクセスキーのヒントを表示する位置を指定します。
 
-- [`Auto`](xref:Xamarin.Forms.AccessKeyPlacement.Auto) – アクセス キーのヒントの配置は、オペレーティング システムによって決定されることを示します。
-- [`Top`](xref:Xamarin.Forms.AccessKeyPlacement.Top) – より上のアクセス キーのヒントが表示されることを示します、`VisualElement`します。
-- [`Bottom`](xref:Xamarin.Forms.AccessKeyPlacement.Bottom) – アクセス キーのヒントが下のエッジの下に表示されることを示します、`VisualElement`します。
-- [`Right`](xref:Xamarin.Forms.AccessKeyPlacement.Right) – アクセス キーのヒントの右端の右側に表示されることを示します、`VisualElement`します。
-- [`Left`](xref:Xamarin.Forms.AccessKeyPlacement.Left) – の左エッジから左へのアクセス キーのヒントが表示されることを示します、`VisualElement`します。
-- [`Center`](xref:Xamarin.Forms.AccessKeyPlacement.Center) – の中心をアクセス キーのヒントを重ねて表示はことを示します、`VisualElement`します。
+- [`Auto`](xref:Xamarin.Forms.AccessKeyPlacement.Auto)–アクセスキーのヒントの配置がオペレーティングシステムによって決定されることを示します。
+- [`Top`](xref:Xamarin.Forms.AccessKeyPlacement.Top)–アクセスキーのヒントがの上端の上に表示されることを示し `VisualElement` ます。
+- [`Bottom`](xref:Xamarin.Forms.AccessKeyPlacement.Bottom)–アクセスキーのヒントがの下端の下に表示されることを示し `VisualElement` ます。
+- [`Right`](xref:Xamarin.Forms.AccessKeyPlacement.Right)–アクセスキーのヒントがの右端の右側に表示されることを示し `VisualElement` ます。
+- [`Left`](xref:Xamarin.Forms.AccessKeyPlacement.Left)–アクセスキーのヒントがの左端の左側に表示されることを示し `VisualElement` ます。
+- [`Center`](xref:Xamarin.Forms.AccessKeyPlacement.Center)–アクセスキーのヒントがの中央に表示されることを示し `VisualElement` ます。
 
 > [!NOTE]
-> 通常、 [ `Auto` ](xref:Xamarin.Forms.AccessKeyPlacement.Auto)キー ヒントの配置が不十分で、適応ユーザー インターフェイスのサポートが含まれています。
+> 通常、 [`Auto`](xref:Xamarin.Forms.AccessKeyPlacement.Auto) キーヒントの配置は十分であり、アダプティブユーザーインターフェイスがサポートされています。
 
-[ `VisualElement.SetAccessKeyHorizontalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.SetAccessKeyHorizontalOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement},System.Double))と[ `VisualElement.SetAccessKeyVerticalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.SetAccessKeyVerticalOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement},System.Double))アクセス キーのヒントの場所のより詳細なコントロールには、メソッドを使用することができます。 引数、`SetAccessKeyHorizontalOffset`メソッドは、アクセス キー ヒント左に移動する距離または右側に、方法と引数を示します、`SetAccessKeyVerticalOffset`メソッドは、アクセス キーのヒントを上下に移動するまでの方法を示します。
+[ `VisualElement.SetAccessKeyHorizontalOffset` ] (Xref: Xamarin.FormsPlatformConfiguration. WindowsSpecific Xamarin.Forms ()。IPlatformElementConfiguration { Xamarin.Forms .PlatformConfiguration. Windows、 Xamarin.Forms 。VisualElement}、system.string)、および [ `VisualElement.SetAccessKeyVerticalOffset` ] (xref: Xamarin.Forms 。PlatformConfiguration. WindowsSpecific Xamarin.Forms ()。IPlatformElementConfiguration { Xamarin.Forms .PlatformConfiguration. Windows、 Xamarin.Forms 。VisualElement}, system.string) メソッドを使用すると、アクセスキーヒントの場所をより細かく制御できます。 メソッドの引数は、 `SetAccessKeyHorizontalOffset` アクセスキーヒントを左または右に移動する距離を示します。メソッドの引数は、 `SetAccessKeyVerticalOffset` アクセスキーのヒントを上下に移動する距離を示します。
 
 >[!NOTE]
-> アクセス キーの配置が設定されている場合は、アクセス キーのヒントのオフセットを設定することはできません`Auto`します。
+> アクセスキーの位置が設定されている場合、アクセスキーのオフセットを設定することはできません `Auto` 。
 
-さらに、 [ `GetAccessKey` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.GetAccessKey(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement}))、 [ `GetAccessKeyPlacement` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.GetAccessKeyPlacement(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement}))、 [ `GetAccessKeyHorizontalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.GetAccessKeyHorizontalOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement}))、および[ `GetAccessKeyVerticalOffset` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.VisualElement.GetAccessKeyVerticalOffset(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.VisualElement}))メソッドを使用することができますアクセスを取得するキーの値とその場所。
+また、[ `GetAccessKey` ] (xref: Xamarin.FormsPlatformConfiguration. WindowsSpecific. VisualElement ( Xamarin.Forms .IPlatformElementConfiguration { Xamarin.Forms .PlatformConfiguration. Windows、 Xamarin.Forms 。VisualElement})、[ `GetAccessKeyPlacement` ] (xref: Xamarin.Forms 。PlatformConfiguration. WindowsSpecific. GetAccessKeyPlacement ( Xamarin.Forms .IPlatformElementConfiguration { Xamarin.Forms .PlatformConfiguration. Windows、 Xamarin.Forms 。VisualElement})、[ `GetAccessKeyHorizontalOffset` ] (xref: Xamarin.Forms 。PlatformConfiguration. WindowsSpecific Xamarin.Forms ()。IPlatformElementConfiguration { Xamarin.Forms .PlatformConfiguration. Windows、 Xamarin.Forms 。VisualElement})、および [ `GetAccessKeyVerticalOffset` ] (xref: Xamarin.Forms 。PlatformConfiguration. WindowsSpecific Xamarin.Forms ()。IPlatformElementConfiguration { Xamarin.Forms .PlatformConfiguration. Windows、 Xamarin.Forms 。VisualElement})) メソッドを使用して、アクセスキーの値とその場所を取得できます。
 
-結果は、アクセス キーのヒントは、いずれかの横に表示できる[ `VisualElement` ](xref:Xamarin.Forms.VisualElement) Alt キーを押してアクセス キーを定義するインスタンス。
+結果として、Alt キーを押すと、アクセスキーを定義するインスタンスの横にアクセスキーのヒントが表示され [`VisualElement`](xref:Xamarin.Forms.VisualElement) ます。
 
-![VisualElement アクセス プラットフォームに固有のキー](visualelement-access-keys-images/visualelement-accesskeys.png "VisualElement アクセス プラットフォームに固有のキー")
+![VisualElement アクセスキープラットフォーム固有](visualelement-access-keys-images/visualelement-accesskeys.png "VisualElement アクセスキープラットフォーム固有")
 
-ユーザー アクセス後に Alt キーを押してアクセス キーをアクティブにしたときのキーの既定のアクション、`VisualElement`が実行されます。 などの場合、ユーザーがアクティブにアクセス キーで、 [ `Switch` ](xref:Xamarin.Forms.Switch)、`Switch`が切り替えられました。 ユーザーがアクセス キーをアクティブ化のときに、 [ `Entry` ](xref:Xamarin.Forms.Entry)、`Entry`がフォーカスを取得します。 ユーザーがアクセス キーをアクティブ化のときに、 [ `Button`](xref:Xamarin.Forms.Button)のイベント ハンドラー、 [ `Clicked` ](xref:Xamarin.Forms.Button.Clicked)イベントを実行します。
+ユーザーがアクセスキーをアクティブにすると、Alt キーを押した後にアクセスキーを押すと、の既定のアクションが `VisualElement` 実行されます。 たとえば、ユーザーがでアクセスキーをアクティブ化すると、 [`Switch`](xref:Xamarin.Forms.Switch) `Switch` が切り替わります。 ユーザーがでアクセスキーをアクティブ化すると、に [`Entry`](xref:Xamarin.Forms.Entry) よって `Entry` フォーカスが得られます。 ユーザーがでアクセスキーをアクティブ化すると [`Button`](xref:Xamarin.Forms.Button) 、イベントのイベントハンドラー [`Clicked`](xref:Xamarin.Forms.Button.Clicked) が実行されます。
 
-アクセス キーの詳細については、[アクセス キー](/windows/uwp/design/input/access-keys#key-tip-positioning)を参照してください。
+アクセスキーの詳細については、「[アクセスキー](/windows/uwp/design/input/access-keys#key-tip-positioning)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 
-- [プラットフォーム仕様 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
-- [プラットフォーム仕様の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
+- [PlatformSpecifics (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [プラットフォーム固有設定の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [WindowsSpecific の API](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

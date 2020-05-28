@@ -1,18 +1,21 @@
 ---
-title: XAML プレビューアーでデザイン時データを使用する
-description: この記事では、デザイン時データを使用して、アプリを実行せずに XAML プレビューアーにデータを多用するレイアウトを表示する方法について説明します。
-ms.prod: xamarin
-ms.assetid: 0F608019-5951-4BE6-80E0-9EEE1733D642
-ms.technology: xamarin-forms
-author: maddyleger1
-ms.author: maleger
-ms.date: 03/27/2019
-ms.openlocfilehash: 47171c3853fa8f5eb572971e119d51733cb53a40
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 182256fd572a370a7b322898b1e24ade12e971fd
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72303245"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84127368"
 ---
 # <a name="use-design-time-data-with-the-xaml-previewer"></a>XAML プレビューアーでデザイン時データを使用する
 
@@ -28,7 +31,7 @@ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 mc:Ignorable="d"
 ```
 
-名前空間を追加した後、任意の属性またはコントロールの前に `d:` を配置して、XAML プレビューアーに表示することができます。 @No__t_0 の要素は実行時に表示されません。
+名前空間を追加した後、 `d:` 任意の属性またはコントロールの前に配置して、XAML プレビューアーに表示することができます。 の要素は `d:` 実行時に表示されません。
 
 たとえば、通常、データがバインドされているラベルにテキストを追加できます。
 
@@ -38,9 +41,9 @@ mc:Ignorable="d"
 
 [![ラベル内のテキストを使用したデザイン時データ](xaml-previewer-images/designtimedata-label-sm.png "テキストでラベルをデザインする時間データ")](xaml-previewer-images/designtimedata-label-lg.png#lightbox)
 
-この例では、`d:Text` を指定しないと、XAML プレビューアーによってラベルに対して何も表示されません。 代わりに、"Name!" と表示されます。 実行時に、ラベルに実際のデータが格納されます。
+この例では、を指定しないと、XAML プレビューアーによって `d:Text` ラベルに対して何も表示されません。 代わりに、"Name!" と表示されます。 実行時に、ラベルに実際のデータが格納されます。
 
-@No__t_0 は、カラー、フォントサイズ、間隔など、Xamarin の任意の属性と共に使用できます。 コントロール自体に追加することもできます。
+`d:` Xamarin.Forms 色、フォントサイズ、間隔などのコントロールに対して、任意の属性と共にを使用できます。 コントロール自体に追加することもできます。
 
 ```xaml
 <d:Button Text="Design Time Button" />
@@ -52,7 +55,7 @@ mc:Ignorable="d"
 
 ## <a name="preview-images-at-design-time"></a>デザイン時にイメージをプレビューする
 
-ページにバインドされている、または動的に読み込まれたイメージのデザイン時のソースを設定できます。 Android プロジェクトで、XAML プレビューアーに表示するイメージを **[リソース >]** [作成] フォルダーに追加します。 IOS プロジェクトで、 **[リソース]** フォルダーにイメージを追加します。 その後、デザイン時に XAML プレビューアーにそのイメージを表示できます。
+ページにバインドされている、または動的に読み込まれたイメージのデザイン時のソースを設定できます。 Android プロジェクトで、XAML プレビューアーに表示するイメージを [**リソース >** ] [作成] フォルダーに追加します。 IOS プロジェクトで、[**リソース**] フォルダーにイメージを追加します。 その後、デザイン時に XAML プレビューアーにそのイメージを表示できます。
 
 ```xaml
 <Image Source={Binding ProfilePicture} d:Source="DesignTimePicture.jpg" />
@@ -86,9 +89,9 @@ ListViews は、モバイルアプリでデータを表示するための一般�
 
 [![ListView を使用したデザイン時データ](xaml-previewer-images/designtimedata-itemssource-sm.png "ListView を使用したデザイン時データ")](xaml-previewer-images/designtimedata-itemssource-lg.png#lightbox)
 
-この例では、XAML プレビューアー内の3つの TextCells の ListView が表示されます。 @No__t_0 は、プロジェクトの既存のデータモデルに変更できます。
+この例では、XAML プレビューアー内の3つの TextCells の ListView が表示されます。 `x:String`プロジェクト内の既存のデータモデルに変更できます。
 
-また、データオブジェクトの配列を作成することもできます。 たとえば、`Monkey` データオブジェクトのパブリックプロパティは、デザイン時のデータとして構築できます。
+また、データオブジェクトの配列を作成することもできます。 たとえば、データオブジェクトのパブリックプロパティは、 `Monkey` デザイン時のデータとして構築できます。
 
 ```csharp
 namespace Monkeys.Models
@@ -135,9 +138,9 @@ xmlns:models="clr-namespace:Monkeys.Models"
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 
-### <a name="requirements"></a>［要件］
+### <a name="requirements"></a>要件
 
-デザイン時データには、Xamarin. Forms 3.6 の最小バージョンが必要です。
+デザイン時データには、3.6 の最小バージョンが必要です Xamarin.Forms 。
 
 ### <a name="intellisense-shows-squiggly-lines-under-my-design-time-data"></a>IntelliSense でデザイン時データの下に波線が表示される
 

@@ -1,45 +1,81 @@
 ---
-title: Xamarin. フォームの XAML ホットリロード
-description: 実行中のアプリケーションに直ちに XAML ファイルへの変更を再度読み込みます。これにより、XAML を変更するたびに Xamarin. Forms プロジェクトをビルドする必要がなくなります。
-ms.prod: xamarin
-ms.assetid: E220F054-32EE-424C-A7E5-6156BE271519
-ms.technology: xamarin-forms
-author: maddyleger1
-ms.author: maleger
-ms.date: 03/14/2020
-ms.openlocfilehash: a6cb5a0e3573ebf998bb2f81c08ff63c81678b54
-ms.sourcegitcommit: ec112800a76089ab1db66fe24b8bbcc510e067b4
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80159809"
+title: ' XAML ホットリロード for Xamarin.Forms ' description: ' 実行中のアプリケーションに直ちに xaml ファイルへの変更を再度読み込みます。これにより、すべての xaml の変更後にプロジェクトをビルドする必要がなく Xamarin.Forms なります。 '
+ms. 製品: ms. assetid: ms. テクノロジ: 作成者: ms. 作成者: ms. 日付: なし:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
-# <a name="xaml-hot-reload-for-xamarinforms"></a>Xamarin. フォームの XAML ホットリロード
+
+# <a name="xaml-hot-reload-for-xamarinforms"></a>XAML ホットリロード ()Xamarin.Forms
 
 XAML ホットリロードは、生産性を向上させ、時間を節約するために、既存のワークフローにプラグインします。 Xaml のホットリロードを使用しない場合は、XAML の変更を確認するたびに、アプリをビルドして配置する必要があります。 ホットリロードでは、XAML ファイルを保存すると、実行中のアプリに変更が反映されます。 また、ナビゲーションの状態とデータが保持されるため、アプリ内の場所を失うことなく、UI をすばやく繰り返すことができます。 そのため、XAML のホットリロードでは、UI の変更を検証するためのアプリの再構築とデプロイにかかる時間が短縮されます。
 
 > [!NOTE]
 > WPF または UWP アプリを作成する場合は、「 [uwp と wpf の XAML ホットリロード](/visualstudio/debugger/xaml-hot-reload)」を参照してください。
 >
-> Xamarin の XAML ホットリロードは、現在、Xamarin. Forms UWP プロジェクトでは使用_できません_。
+> の XAML ホットリロード Xamarin.Forms は、現在 UWP プロジェクトに対しては機能し_ません_ Xamarin.Forms 。
 
 ## <a name="system-requirements"></a>システム要件
 
 | IDE/フレームワーク | バージョンが必要です |
-|------|------------------|
-|Visual Studio 2019 | 16.4 以上
-Visual Studio 2019 for Mac | 8.4 以上
-Xamarin.Forms | 4.1 以上
+|---
+title: ' XAML ホットリロード for Xamarin.Forms ' description: ' 実行中のアプリケーションに直ちに xaml ファイルへの変更を再度読み込みます。これにより、すべての xaml の変更後にプロジェクトをビルドする必要がなく Xamarin.Forms なります。 '
+ms. 製品: ms. assetid: ms. テクノロジ: 作成者: ms. 作成者: ms. 日付: なし:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
 
-## <a name="enable-xaml-hot-reload-for-xamarinforms"></a>Xamarin. Forms の XAML ホットリロードを有効にする
+---|---title: ' XAML ホットリロード for Xamarin.Forms ' description: ' 実行中のアプリケーションで xaml ファイルへの変更を直ちに再読み込みするため、xaml の変更が行われるたびにプロジェクトをビルドする必要はありませ Xamarin.Forms ん。 '
+ms. 製品: ms. assetid: ms. テクノロジ: 作成者: ms. 作成者: ms. 日付: なし:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+title: ' XAML ホットリロード for Xamarin.Forms ' description: ' 実行中のアプリケーションに直ちに xaml ファイルへの変更を再度読み込みます。これにより、すべての xaml の変更後にプロジェクトをビルドする必要がなく Xamarin.Forms なります。 '
+ms. 製品: ms. assetid: ms. テクノロジ: 作成者: ms. 作成者: ms. 日付: なし:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+title: ' XAML ホットリロード for Xamarin.Forms ' description: ' 実行中のアプリケーションに直ちに xaml ファイルへの変更を再度読み込みます。これにより、すべての xaml の変更後にプロジェクトをビルドする必要がなく Xamarin.Forms なります。 '
+ms. 製品: ms. assetid: ms. テクノロジ: 作成者: ms. 作成者: ms. 日付: なし:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+title: ' XAML ホットリロード for Xamarin.Forms ' description: ' 実行中のアプリケーションに直ちに xaml ファイルへの変更を再度読み込みます。これにより、すべての xaml の変更後にプロジェクトをビルドする必要がなく Xamarin.Forms なります。 '
+ms. 製品: ms. assetid: ms. テクノロジ: 作成者: ms. 作成者: ms. 日付: なし:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+title: ' XAML ホットリロード for Xamarin.Forms ' description: ' 実行中のアプリケーションに直ちに xaml ファイルへの変更を再度読み込みます。これにより、すべての xaml の変更後にプロジェクトをビルドする必要がなく Xamarin.Forms なります。 '
+ms. 製品: ms. assetid: ms. テクノロジ: 作成者: ms. 作成者: ms. 日付: なし:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+title: ' XAML ホットリロード for Xamarin.Forms ' description: ' 実行中のアプリケーションに直ちに xaml ファイルへの変更を再度読み込みます。これにより、すべての xaml の変更後にプロジェクトをビルドする必要がなく Xamarin.Forms なります。 '
+ms. 製品: ms. assetid: ms. テクノロジ: 作成者: ms. 作成者: ms. 日付: なし:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+-
+title: ' XAML ホットリロード for Xamarin.Forms ' description: ' 実行中のアプリケーションに直ちに xaml ファイルへの変更を再度読み込みます。これにより、すべての xaml の変更後にプロジェクトをビルドする必要がなく Xamarin.Forms なります。 '
+ms. 製品: ms. assetid: ms. テクノロジ: 作成者: ms. 作成者: ms. 日付: なし:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
+---------| |Visual Studio 2019 |16.4 以上の Visual Studio 2019 (Mac の場合) |8.4 以上 Xamarin.Forms | 4.1 以上
+
+## <a name="enable-xaml-hot-reload-for-xamarinforms"></a>XAML ホットリロードを有効にするXamarin.Forms
 
 テンプレートから開始する場合は、XAML ホットリロードが既定で有効になり、プロジェクトは追加設定なしで動作するように構成されます。 Android または iOS エミュレーター、シミュレーター、または物理デバイスでアプリをデバッグし、XAML を変更して、XAML ホットリロードをトリガーするようにファイルを保存します。
 
-既存の Xamarin. Forms ソリューションから作業している場合は、XAML ホットリロードを使用するための追加のインストールは必要ありませんが、最適なエクスペリエンスを得るために構成を再確認する必要がある場合があります。 まず、IDE の設定で有効にします。
+既存のソリューションから作業している場合は Xamarin.Forms 、XAML ホットリロードを使用するための追加のインストールは必要ありませんが、最適なエクスペリエンスを得るために構成を再確認する必要がある場合があります。 まず、IDE の設定で有効にします。
 
-* Windows の場合は、**ツール** > **オプション**の  **xamarin > ** **ホットリロード** > **xamarin のホットリロードを有効にする** チェックボックスをオンにします。
-* Mac の場合は、 **Visual Studio**の [ > の**設定**] の [xamarin**の** **ホットリロードを有効にする**] チェックボックスをオンにして、xamarin > **XAML のホットリロード**を > ます。
-  * 以前のバージョンの Visual Studio for Mac では、メニューは**Visual Studio** > **ユーザー設定** > **プロジェクト** > **Xamarin ホットリロード**) にあります。
+* Windows の場合は、[**ツール**] [オプション] [xamarin ホットリロード] の [ **xamarin ホットリロードを有効にする**] チェックボックスをオンにし  >  **Options**  >  **Xamarin**  >  **Hot Reload**ます。
+* Mac の場合**は、** **Visual Studio**の [  >  **基本設定**] [xamarin  >  XAML**用ツール**] [  >  **ホットリロード**] のチェックボックスをオンにします。
+  * 以前のバージョンの Visual Studio for Mac では、メニューは**Visual Studio**の  >  **ユーザー設定**  >  **プロジェクト**  >  **Xamarin のホットリロード**にあります。
 
 次に、Android および iOS のビルド設定で、リンカーが "リンクしない" または "リンクなし" に設定されていることを確認します。 物理 iOS デバイスで XAML ホットリロードを使用するには、 **Mono インタープリターを有効**にする (visual studio 16.4 以上) か、追加の**mtouch 引数**に **--インタープリター**を追加する必要があります (visual studio 16.3 以下)。
 
@@ -59,26 +95,26 @@ XAML ホットリロードは、Visual Studio と Visual Studio for Mac での�
 
 ## <a name="known-limitations"></a>既知の制限事項
 
-* UWP や macOS など、その他の Xamarin 形式のターゲットは、まだサポートされて*いません*。 UWP サポートの進行状況は[ここで](https://developercommunity.visualstudio.com/idea/661682/xaml-hot-reload-for-xamarinforms-on-uwp.html)追跡できます。
+* UWP や macOS などの他の Xamarin.Forms ターゲットは、まだサポートされて*いません*。 UWP サポートの進行状況は[ここで](https://developercommunity.visualstudio.com/idea/661682/xaml-hot-reload-for-xamarinforms-on-uwp.html)追跡できます。
 * XAML ホットリロードセッション中に、ファイルまたは NuGet パッケージを追加、削除、または名前変更することはできません。 ファイルまたは NuGet パッケージを追加または削除する場合は、アプリケーションをリビルドして再デプロイし、引き続き XAML ホットリロードを使用します。
 * 最適なエクスペリエンスを得るには、**リンクしない**ようにリンカーを設定するか、または**リンク**しないようにします。 [ **SDK のみをリンク**する] の設定はほとんどの場合に機能しますが、特定の場合には失敗する可能性があります。 リンカーの設定は、Android および iOS のビルドオプションにあります。
-* 物理的な iPhone でデバッグを行うには、インタープリターで XAML ホットリロードを使用する必要があります。 これを行うには、プロジェクト設定を開き、iOS ビルド タブを選択し、 **Mono インタープリターを有効にする** 設定が有効になっていることを確認します。 場合によっては、プロパティページの上部にある**プラットフォーム**オプションを**iPhone**に変更する必要があります。
-* `x:Name` 値を使用してコントロールを別のフィールドまたはプロパティに割り当てることによって作成された参照は、再読み込みされません。
+* 物理的な iPhone でデバッグを行うには、インタープリターで XAML ホットリロードを使用する必要があります。 これを行うには、プロジェクト設定を開き、[iOS ビルド] タブを選択し、[ **Mono インタープリターを有効にする**] 設定が有効になっていることを確認します。 場合によっては、プロパティページの上部にある**プラットフォーム**オプションを**iPhone**に変更する必要があります。
+* 値を使用してコントロールを別のフィールドまたはプロパティに割り当てることによって作成された参照は、再 `x:Name` 読み込みされません。
 * AppShell でシェルアプリケーションのビジュアル階層を更新すると、アプリケーションの状態を維持する際に問題が発生する可能性があります。 問題が発生した場合は、アプリをリビルドして再読み込みを続行します。
-* XAML ホットリロードではC# 、イベントハンドラー、カスタムコントロール、ページ分離コード、およびその他のクラスを含むコードを再読み込みすることはできません。
+* XAML ホットリロードでは、イベントハンドラー、カスタムコントロール、ページ分離コード、およびその他のクラスを含む C# コードを再読み込みすることはできません。
 
 ## <a name="more-resources"></a>その他のリソース
 
 * [XAML ホットリロードのヒントとコツ](https://devblogs.microsoft.com/xamarin/tips-tricks-xaml-hot-reload/)
-* [Xamarin の XAML ホットリロード: Xamarin の表示](https://www.youtube.com/watch?v=crhjjPjzknk)
+* [詳細については、XAML のホットリロード Xamarin.Forms : Xamarin の表示](https://www.youtube.com/watch?v=crhjjPjzknk)
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 
 * XAML ホットリロードが初期化に失敗した場合:
-  * Xamarin. Forms バージョンを更新します。
+  * Xamarin.Formsバージョンを更新します。
   * 最新バージョンの IDE を使用していることを確認します。
   * Android または iOS のリンカー設定をプロジェクトのビルド設定で**リンクしない**ように設定します。
 * XAML ファイルの保存時に何も起こらない場合は、IDE で XAML ホットリロードが有効になっていることを確認します。
-* 物理 iPhone でデバッグしているときに、アプリが応答しなくなった場合は、インタープリターが有効になっていることを確認します。 有効にするには、iOS のビルド設定で **[Mono インタープリターを有効に]** する (visual studio 16.4/8.4 以上) または 追加の **[mtouch 引数]** フィールド (visual studio 16.3/8.3 以前) に **[-インタープリター]** をオンにします。
+* 物理 iPhone でデバッグしているときに、アプリが応答しなくなった場合は、インタープリターが有効になっていることを確認します。 有効にするには、iOS のビルド設定で [ **Mono インタープリターを有効に**する (visual studio 16.4/8.4 以上)] または [追加の**mtouch 引数**] フィールド (visual studio 16.3/8.3 以前) に [ **-インタープリター** ] をオンにします。
 
-バグを報告するには**Help** 、ヘルプ ** > 使用**して、Windows で**問題を報告**し > 、Mac で**問題を報告** ** > て**ください。
+バグを報告するには、**ヘルプ**を使用して  >  **Send Feedback**  >  Windows で**問題**を報告し、 **Help**  >  Mac で**問題を報告**してください。

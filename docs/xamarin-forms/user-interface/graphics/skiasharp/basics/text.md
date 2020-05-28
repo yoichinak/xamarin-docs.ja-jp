@@ -1,34 +1,37 @@
 ---
-title: テキストとグラフィックスの統合
-description: この記事では、Xamarin.Forms アプリケーションに SkiaSharp グラフィックスとテキストを統合するレンダリングされたテキスト文字列のサイズを決定する方法について説明し、サンプル コードを示します。
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: A0B5AC82-7736-4AD8-AA16-FE43E18D203C
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/10/2017
-ms.openlocfilehash: d23b4dbb97f4f98ff0361bb056e394bb7cbd941a
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: この記事では、SkiaSharp グラフィックスを使用してテキストをアプリケーションに統合するためにレンダリングされるテキスト文字列のサイズを決定する方法について説明 Xamarin.Forms し、サンプルコードを使用してこれを示します。
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ee97ee2aae11e4e54a0d25e80ffd7bce301fa2f3
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68645641"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137684"
 ---
 # <a name="integrating-text-and-graphics"></a>テキストとグラフィックスの統合
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_SkiaSharp のグラフィックスとテキストを統合するレンダリングされたテキスト文字列のサイズを決定する方法を参照してください。_
+_テキストを SkiaSharp グラフィックスと統合するために表示されるテキスト文字列のサイズを確認する方法を参照してください。_
 
-この記事では、テキストを計測、特定のサイズにテキストを拡大、およびその他のグラフィックスとテキストを統合する方法を示しています。
+この記事では、テキストを測定し、テキストを特定のサイズにスケーリングし、テキストを他のグラフィックスと統合する方法について説明します。
 
-![](text-images/textandgraphicsexample.png "四角形で囲まれたテキスト")
+![](text-images/textandgraphicsexample.png "Text surrounded by rectangles")
 
-そのイメージには、角の丸い四角形も含まれています。 SkiaSharp、`Canvas`クラスが含まれています[ `DrawRect` ](xref:SkiaSharp.SKCanvas.DrawRect*)四角形を描画するメソッドをおよび[ `DrawRoundRect` ](xref:SkiaSharp.SKCanvas.DrawRoundRect*)メソッドを使用して四角形を描画するために角を丸きます。 これらのメソッドとして定義される四角形を許可する、`SKRect`値またはその他の方法でします。
+このイメージには、角丸四角形も含まれます。 SkiaSharp クラスには、四角形を描画し、 `Canvas` [`DrawRect`](xref:SkiaSharp.SKCanvas.DrawRect*) [`DrawRoundRect`](xref:SkiaSharp.SKCanvas.DrawRoundRect*) 角が丸い四角形を描画するメソッドが含まれています。 これらのメソッドを使用すると、四角形を値として、 `SKRect` またはその他の方法で定義できます。
 
-**テキストを囲む**ページ センター ページとの角の丸い四角形のペアから成るフレームでグループ化に短いテキスト文字列。 [ `FramedTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/FramedTextPage.cs)クラスを行う方法を示しています。
+[フレーム**テキスト**] ページでは、ページに短いテキスト文字列が中央揃えで表示され、角丸四角形のペアで構成されるフレームで囲まれます。 クラスは、 [`FramedTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/FramedTextPage.cs) その方法を示しています。
 
-SkiaSharp でを使用して、`SKPaint`セットのテキストとフォント属性をクラスも使用できます、レンダリングされるテキストのサイズを取得します。 次の先頭`PaintSurface`イベント ハンドラーを呼び出す 2 つの異なる`MeasureText`メソッド。 最初の[ `MeasureText` ](xref:SkiaSharp.SKPaint.MeasureText(System.String))の呼び出しでは、単純な`string`引数と現在のフォント属性に基づいて、テキストのピクセル幅を返します。 プログラムは、新しい計算`TextSize`のプロパティ、`SKPaint`オブジェクトが現在その描画時の幅に基づく`TextSize`プロパティ、および表示領域の幅。 この計算を設定するためのものが`TextSize`文字列が画面の幅の 90% に表示されるようにします。
+SkiaSharp では、クラスを使用して `SKPaint` テキストとフォントの属性を設定しますが、テキストの表示サイズを取得することもできます。 次のイベントハンドラーの先頭は、 `PaintSurface` 2 つの異なるメソッドを呼び出し `MeasureText` ます。 最初の [`MeasureText`](xref:SkiaSharp.SKPaint.MeasureText(System.String)) 呼び出しには単純な引数があり、 `string` 現在のフォント属性に基づいて、テキストのピクセル幅が返されます。 次に、レンダリングされ `TextSize` `SKPaint` た幅、現在の `TextSize` プロパティ、および表示領域の幅に基づいて、オブジェクトの新しいプロパティを計算します。 この計算は、 `TextSize` テキスト文字列が画面の幅の90% で表示されるように設定することを目的としています。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -58,18 +61,18 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-2 番目の[ `MeasureText` ](xref:SkiaSharp.SKPaint.MeasureText(System.String,SkiaSharp.SKRect@))の呼び出しでは、`SKRect`引数、幅と表示されるテキストの高さの両方を取得するようにします。 `Height`プロパティのこの`SKRect`値は、英大文字、アセンダー、およびテキスト文字列内のディセンダーの存在に依存します。 異なる`Height`値がテキスト文字列"mom"、"cat"および"dog"、たとえば報告されます。
+2番目の [`MeasureText`](xref:SkiaSharp.SKPaint.MeasureText(System.String,SkiaSharp.SKRect@)) 呼び出しには引数があるため、表示される `SKRect` テキストの幅と高さの両方を取得します。 `Height`この値のプロパティは、 `SKRect` テキスト文字列に大文字、アセンダー、およびディセンダーが存在するかどうかによって異なります。 `Height`たとえば、テキスト文字列 "mom"、"cat"、および "dog" に対して異なる値が報告されます。
 
-`Left`と`Top`のプロパティ、`SKRect`によってテキストが表示されている場合、構造体がレンダリングされたテキストの左上隅の座標を示します、`DrawText`呼び出しが 0 の位置 X と Y 位置。 IPhone 7 シミュレーターでは、このプログラムが実行されている場合など、 `TextSize` 90.6254 最初の呼び出しを次の計算の結果としての値が割り当てられている`MeasureText`します。 `SKRect` 2 番目の呼び出しから取得した値`MeasureText`は次のプロパティ値があります。
+`Left` `Top` 構造体のプロパティとプロパティは、 `SKRect` テキストが `DrawText` X および Y 位置が0の呼び出しによって表示される場合に、表示されるテキストの左上隅の座標を示します。 たとえば、このプログラムが iPhone 7 シミュレーターで実行されている場合、の `TextSize` 最初の呼び出しに続く計算の結果、には値90.6254 が割り当てられ `MeasureText` ます。 の `SKRect` 2 回目の呼び出しから取得された値に `MeasureText` は、次のプロパティ値があります。
 
-- `Left` = 6
+- `Left`= 6
 - `Top` = &ndash;68
-- `Width` = 664.8214
-- `Height` = 88;
+- `Width`= 664.8214
+- `Height`= 88;
 
-留意すること、X 座標と Y 座標を渡す、`DrawText`メソッドは、基本的には、テキストの左側にあるを指定します。 `Top`値では、テキストが 68 ピクセル ベースラインで (88 から 68 it を減算) 上に拡張されていることを示します、ベースラインを下回る 20 ピクセルです。 `Left`値 6 は、6 つのピクセルの X 値の右側に始まることを示します、`DrawText`呼び出します。 これにより、通常の文字間の間隔。 ディスプレイ画面の左上隅にぴったり収まりましたテキストを表示する場合は、これらの欠点を渡す`Left`と`Top`座標 X と Y 座標と値の`DrawText`、この例で&ndash;6 および 68。
+メソッドに渡す X 座標と Y 座標は、 `DrawText` ベースラインでのテキストの左側を指定することに注意してください。 `Top`88 この値は、テキストがそのベースラインの上の68ピクセルまで拡張されていることを示します。また、ベースラインの下の20ピクセル下に68を引いたです。 `Left`値6は、呼び出しの X 値の右側にある6ピクセルのテキストを開始することを示し `DrawText` ます。 これにより、通常の文字間隔を使用できます。 ディスプレイの左上隅にテキストを表示する場合は、これらの `Left` 値と値の負の `Top` 値をの X 座標と Y 座標として渡し `DrawText` ます (この例では &ndash; 6 と 68)。
 
-`SKRect`構造は、いくつかの便利なプロパティとメソッド、うちいくつかの残りの部分で使用を定義、`PaintSurface`ハンドラー。 `MidX`と`MidY`値は、四角形の中心の座標を示します。 (IPhone 7 の例でこれらの値が 338.4107 と&ndash;24)。次のコードでは、座標の最も簡単な計算のこれらの値を使用して、中央揃えで表示。
+`SKRect`構造体は、いくつかの便利なプロパティとメソッドを定義します。その一部は、ハンドラーの残りの部分で使用され `PaintSurface` ます。 との値は、 `MidX` `MidY` 四角形の中心の座標を示します。 (IPhone 7 の例では、これらの値は338.4107 と &ndash; 24 です)。次のコードでは、これらの値を使用して、画面上にテキストを中央揃えで表示する最も簡単な座標を計算します。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -85,14 +88,14 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-`SKImageInfo`情報構造体も定義、 [ `Rect` ](xref:SkiaSharp.SKImageInfo.Rect)型のプロパティ`SKRect`で計算することもあるため、`xText`と`yText`次のように。
+`SKImageInfo`Info 構造体は、型のプロパティも定義するので、次 [`Rect`](xref:SkiaSharp.SKImageInfo.Rect) `SKRect` のように計算することもでき `xText` `yText` ます。
 
 ```csharp
 float xText = info.Rect.MidX - textBounds.MidX;
 float yText = info.Rect.MidY - textBounds.MidY;
 ```
 
-`PaintSurface`ハンドラーの 2 つの呼び出しで終了`DrawRoundRect`の引数を必要とする`SKRect`します。 これは、`SKRect`値がに基づいて、`SKRect`から取得した値、`MeasureText`メソッドは同じであることはできません。 最初に、その角丸四角形は、テキストの端を描画しないように少し大きくする必要があります。 次に、領域にシフトするときに必要なように、`Left`と`Top`値は左上隅を四角形が配置される場所に対応します。 これら 2 つのジョブは、によって実現されます、 [ `Offset` ](xref:SkiaSharp.SKRect.Offset*)と[ `Inflate` ](xref:SkiaSharp.SKRect.Inflate*)によって定義されたメソッド`SKRect`:
+ハンドラーはの2つの呼び出しを終了し `PaintSurface` `DrawRoundRect` ます。どちらもの引数を必要と `SKRect` します。 この `SKRect` 値は、メソッドから取得した値に基づいていますが、同じにすることはでき `SKRect` `MeasureText` ません。 まず、丸みのある四角形がテキストの端に描画されないように、少し大きめにする必要があります。 また、との値が、 `Left` `Top` 四角形が配置される左上隅に対応するように、スペースでシフトする必要があります。 これらの2つのジョブは、 [`Offset`](xref:SkiaSharp.SKRect.Offset*) によって定義されたメソッドとメソッドによって実現され [`Inflate`](xref:SkiaSharp.SKRect.Inflate*) `SKRect` ます。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -121,19 +124,19 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-次に、メソッドの残りの部分は簡単です。 別に作成します`SKPaint`オブジェクトの枠線と呼び出し`DrawRoundRect`2 回です。 2 番目の呼び出しでは、拡大しても、別の 10 ピクセルの四角形を使用します。 最初の呼び出しでは、20 ピクセルの角の半径を指定します。 2 つ目は並列がないように見えるように 30 (ピクセル単位) の角の半径があります。
+その後、メソッドの残りの部分はストレートになります。 この例で `SKPaint` は、境界に対して別のオブジェクトを作成し、を `DrawRoundRect` 2 回呼び出します。 2番目の呼び出しでは、別の10ピクセルで拡大された四角形を使用します。 最初の呼び出しでは、角の半径として20ピクセルが指定されています。 2番目の角の半径は30ピクセルであるため、並列であるように見えます。
 
- [![](text-images/framedtext-small.png "フレームのテキスト ページのスクリーン ショットをトリプル")](text-images/framedtext-large.png#lightbox "囲むテキスト ページの 3 倍になるスクリーン ショット")
+ [![](text-images/framedtext-small.png "Triple screenshot of the Framed Text page")](text-images/framedtext-large.png#lightbox "Triple screenshot of the Framed Text page")
 
-フレーム サイズが大きくなるとテキストを表示するには、電話またはシミュレーターを横方向にすることができます。
+電話またはシミュレーターを横向きにして、テキストとフレームのサイズの増加を確認することができます。
 
-画面上のテキストを中央にのみ必要がある場合は、テキストを測定することがなく約実行できます。 代わりに、設定、 [ `TextAlign` ](xref:SkiaSharp.SKPaint.TextAlign)プロパティの`SKPaint`列挙メンバー [ `SKTextAlign.Center`](xref:SkiaSharp.SKTextAlign)します。 指定した X 座標、`DrawText`しメソッドでは、テキストの水平方向の中心が配置されていることを示します。 画面の中間点を渡した場合、`DrawText`メソッドでは、テキストは水平方向に中央揃えと*ほぼ*ベースラインに垂直方向に表示するために垂直方向に中央揃え。
+画面上で一部のテキストを中央揃えにする必要があるだけの場合は、テキストを測定せずに、おおよその操作を行うことができます。 代わりに、 [`TextAlign`](xref:SkiaSharp.SKPaint.TextAlign) のプロパティを `SKPaint` 列挙体のメンバーに設定し [`SKTextAlign.Center`](xref:SkiaSharp.SKTextAlign) ます。 メソッドで指定した X 座標は、 `DrawText` テキストの水平方向の位置を示します。 画面の中間点をメソッドに渡すと、ベースラインが垂直方向に中央揃えになるため、テキストが中央揃えになり、 `DrawText` 垂直方向に中央揃えで*nearly*配置されます。
 
-テキストは、その他のすべてのグラフィカル オブジェクトのようにはるか扱うことができます。 1 つの単純なオプションは、テキスト文字のアウトラインを表示するのには。
+テキストは、他のグラフィカルオブジェクトと同様に扱うことができます。 簡単な方法の1つとして、テキスト文字のアウトラインを表示する方法があります。
 
-[![](text-images/outlinedtext-small.png "中抜きの文字列をページのスクリーン ショットが 3 倍します。")](text-images/outlinedtext-large.png#lightbox "Triple screenshot of the Outlined Text page")
+[![](text-images/outlinedtext-small.png "Triple screen shot of the Outlined Text page")](text-images/outlinedtext-large.png#lightbox "Triple screenshot of the Outlined Text page")
 
-法線を変更するだけでこれは`Style`のプロパティ、`SKPaint`オブジェクトの既定の設定から`SKPaintStyle.Fill`に`SKPaintStyle.Stroke`ストロークの幅を指定することで。 `PaintSurface`のハンドラー、**中抜きの文字列を**ページは、これをどのように表示されます。
+これを実現するには、 `Style` オブジェクトの通常のプロパティを `SKPaint` の既定の設定から `SKPaintStyle.Fill` に変更し、ストロークの幅を指定し `SKPaintStyle.Stroke` ます。 アウトライン表示された `PaintSurface` **テキスト**ページのハンドラーは、その方法を示しています。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -172,9 +175,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-もう 1 つの一般的なグラフィカル オブジェクトは、ビットマップです。 大きなトピックのセクションで詳しく説明されている[ **SkiaSharp ビットマップ**](../bitmaps/index.md)が、次の記事では、 [ **SkiaSharp のビットマップ基本**](bitmaps.md)、場合の概要を提供します。
+もう1つの一般的なグラフィックオブジェクトはビットマップです。 「 [**SkiaSharp**](../bitmaps/index.md)Bitmap」セクションで詳しく説明されている大きなトピックですが、次の記事「 [**SkiaSharp でのビットマップの基礎**](bitmaps.md)」ではより簡単の概要を説明しています。
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

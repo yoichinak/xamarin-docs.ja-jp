@@ -1,34 +1,37 @@
 ---
-title: XAML マークアップ拡張機能の作成
-description: この記事では、独自のカスタム Xamarin.Forms XAML マークアップ拡張を定義する方法について説明します。 XAML マークアップ拡張機能は、IMarkupExtension インターフェイスまたは IMarkupExtension<T>インターフェイスを実装するクラスです。
-ms.prod: xamarin
-ms.assetid: 797C1EF9-1C8E-4208-8610-9B79CCF17D46
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/05/2018
-ms.openlocfilehash: 4d26713f258a8c97abd4b4e9970ebdd4d490f485
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: この記事では、独自のカスタム XAML マークアップ拡張機能を定義する方法について説明 Xamarin.Forms します。 XAML マークアップ拡張機能は、IMarkupExtension インターフェイスまたは IMarkupExtension インターフェイスを実装するクラスです <T> 。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 878ebcaa5249261afac2776a9e7cf47c0c047135
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655864"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84130534"
 ---
 # <a name="creating-xaml-markup-extensions"></a>XAML マークアップ拡張の作成
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 
-プログラムのレベルでは、XAML マークアップ拡張機能が実装するクラス、 [ `IMarkupExtension` ](xref:Xamarin.Forms.Xaml.IMarkupExtension)または[ `IMarkupExtension<T>` ](xref:Xamarin.Forms.Xaml.IMarkupExtension`1)インターフェイス。 次で説明する標準のマークアップ拡張機能のソース コードを調べることができます、 [ **Markupextension**ディレクトリ](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions)Xamarin.Forms の GitHub リポジトリの。
+プログラムレベルでは、XAML マークアップ拡張機能は、 [`IMarkupExtension`](xref:Xamarin.Forms.Xaml.IMarkupExtension) インターフェイスまたはインターフェイスを実装するクラスです [`IMarkupExtension<T>`](xref:Xamarin.Forms.Xaml.IMarkupExtension`1) 。 GitHub リポジトリの[**マークアップ拡張**ディレクトリ](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions)で、以下に説明する標準のマークアップ拡張機能のソースコードを調べることができ Xamarin.Forms ます。
 
-派生することによって、独自のカスタム XAML マークアップ拡張を定義することも`IMarkupExtension`または`IMarkupExtension<T>`します。 マークアップ拡張機能が特定の型の値を取得する場合は、一般的な形式を使用します。 これは、Xamarin.Forms のマークアップ拡張機能のいくつかの場合です。
+またはから派生することで、独自のカスタム XAML マークアップ拡張機能を定義することもでき `IMarkupExtension` `IMarkupExtension<T>` ます。 マークアップ拡張機能が特定の型の値を取得する場合は、汎用フォームを使用します。 これは、いくつかのマークアップ拡張機能がある場合に当てはまり Xamarin.Forms ます。
 
-- `TypeExtension` を派生します。 `IMarkupExtension<Type>`
-- `ArrayExtension` を派生します。 `IMarkupExtension<Array>`
-- `DynamicResourceExtension` を派生します。 `IMarkupExtension<DynamicResource>`
-- `BindingExtension` を派生します。 `IMarkupExtension<BindingBase>`
-- `ConstraintExpression` を派生します。 `IMarkupExtension<Constraint>`
+- `TypeExtension`派生元`IMarkupExtension<Type>`
+- `ArrayExtension`派生元`IMarkupExtension<Array>`
+- `DynamicResourceExtension`派生元`IMarkupExtension<DynamicResource>`
+- `BindingExtension`派生元`IMarkupExtension<BindingBase>`
+- `ConstraintExpression`派生元`IMarkupExtension<Constraint>`
 
-2 つ`IMarkupExtension`インターフェイスは、それぞれ 1 つのメソッドを定義という`ProvideValue`:
+2つの `IMarkupExtension` インターフェイスは、それぞれ1つのメソッドを定義し `ProvideValue` ます。
 
 ```csharp
 public interface IMarkupExtension
@@ -42,13 +45,13 @@ public interface IMarkupExtension<out T> : IMarkupExtension
 }
 ```
 
-`IMarkupExtension<T>`から派生した`IMarkupExtension`が含まれています、`new`キーワードを`ProvideValue`、両方が含まれている`ProvideValue`メソッド。
+は `IMarkupExtension<T>` から派生 `IMarkupExtension` し、にキーワードが含まれているため `new` `ProvideValue` 、両方のメソッドが含まれてい `ProvideValue` ます。
 
-非常に多くの場合、XAML マークアップ拡張機能は、戻り値に影響を与えるプロパティを定義します。 (明らかな例外`NullExtension`を`ProvideValue`を単純に返します`null`)。`ProvideValue`メソッドが 1 つの引数型の`IServiceProvider`は、この記事の後半で説明します。
+多くの場合、XAML マークアップ拡張機能は、戻り値に寄与するプロパティを定義します。 (明らかな例外はで `NullExtension` 、は `ProvideValue` 単にを返し `null` ます)。`ProvideValue`このメソッドには、 `IServiceProvider` この記事の後半で説明する型の引数が1つあります。
 
 ## <a name="a-markup-extension-for-specifying-color"></a>色を指定するためのマークアップ拡張機能
 
-次の XAML マークアップ拡張機能を使用すると、構築、`Color`色合い、鮮やかさ、および明るさのコンポーネントを使用する値します。 1 に初期化される、アルファ コンポーネントを含む、色の 4 つのコンポーネントの 4 つのプロパティを定義します。 クラスの派生元`IMarkupExtension<Color>`を示すために、`Color`値を返します。
+次の XAML マークアップ拡張機能を使用すると、 `Color` 色合い、鮮やかさ、および輝度のコンポーネントを使用して値を構築できます。 ここでは、1に初期化されるアルファコンポーネントを含む、色の4つのコンポーネントの4つのプロパティを定義します。 クラスはから派生 `IMarkupExtension<Color>` し、 `Color` 戻り値を示します。
 
 ```csharp
 public class HslColorExtension : IMarkupExtension<Color>
@@ -73,9 +76,9 @@ public class HslColorExtension : IMarkupExtension<Color>
 }
 ```
 
-`IMarkupExtension<T>`から派生`IMarkupExtension`、クラスには、2 つ含める必要があります`ProvideValue`メソッド、1 つを返す`Color`を返すもう`object`、2 番目のメソッドは、最初のメソッドを呼び出すことができますだけですが。
+は `IMarkupExtension<T>` から派生するため `IMarkupExtension` 、クラスにはを返すメソッドと、を返すメソッドの2つが含まれている必要があり `ProvideValue` `Color` `object` ますが、2番目のメソッドは単に最初のメソッドを呼び出すことができます。
 
-**HSL カラー デモ**ページの表示方法のさまざまな`HslColorExtension`の色を指定する XAML ファイルに含めることができます、 `BoxView`:
+[ **HSL 色のデモ**] ページには、 `HslColorExtension` XAML ファイルに表示されるの色を指定するさまざまな方法が示されてい `BoxView` ます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -117,15 +120,15 @@ public class HslColorExtension : IMarkupExtension<Color>
 </ContentPage>
 ```
 
-その場合に注意してください`HslColorExtension`XML タグには、4 つのプロパティは、属性として設定されますが、4 つのプロパティが引用符なしのコンマで区切られた中かっこの間が表示されたら、します。 既定値`H`、 `S`、および`L`は 0、および既定値の`A`1 は既定値に設定したい場合、これらのプロパティを省略できます。 最後の例では、例、明るさが 0、黒で結果は、通常、これがアルファ チャネル 0.5、ため、透過的半分が表示されます、ページの白い背景に対してグレー。
+`HslColorExtension`が XML タグの場合、4つのプロパティは属性として設定されますが、中かっこの間に出現すると、4つのプロパティは引用符なしでコンマで区切られます。 `H`、、およびの既定値 `S` `L` は0で、の既定値 `A` は1であるため、既定値に設定する場合は、これらのプロパティを省略できます。 最後の例では、明度が0の例を示しています。通常は黒が使用されますが、アルファチャネルは0.5 であるため、半透明で、ページの白い背景に対して灰色で表示されます。
 
-[![HSL カラー デモ](creating-images/hslcolordemo-small.png "HSL カラー デモ")](creating-images/hslcolordemo-large.png#lightbox "HSL の色のデモ")
+[![HSL の色のデモ](creating-images/hslcolordemo-small.png "HSL の色のデモ")](creating-images/hslcolordemo-large.png#lightbox "HSL の色のデモ")
 
 ## <a name="a-markup-extension-for-accessing-bitmaps"></a>ビットマップにアクセスするためのマークアップ拡張機能
 
-引数に`ProvideValue`を実装するオブジェクトには、 [ `IServiceProvider` ](xref:System.IServiceProvider)インターフェイスは、.NET で定義されている`System`名前空間。 このインターフェイスは、1 つのメンバーであるという名前のメソッドを持って`GetService`で、`Type`引数。
+の引数は、 `ProvideValue` [`IServiceProvider`](xref:System.IServiceProvider) .net 名前空間で定義されているインターフェイスを実装するオブジェクトです `System` 。 このインターフェイスには、引数を持つという名前のメソッドを持つ1つのメンバーがあり `GetService` `Type` ます。
 
-`ImageResourceExtension`次に示すクラスの用途の 1 つを示しています。`IServiceProvider`と`GetService`を取得する、`IXmlLineInfoProvider`が特定のエラーが検出されたことを示す行や文字の情報を提供するオブジェクト。 この場合、例外が発生時に、`Source`プロパティが設定されていません。
+`ImageResourceExtension`次に示すクラスは、との1つの使用方法を示して `IServiceProvider` `GetService` います。これは、 `IXmlLineInfoProvider` 特定のエラーが検出された場所を示す行と文字の情報を提供できるオブジェクトを取得するためです。 この場合、 `Source` プロパティが設定されていないときに例外が発生します。
 
 ```csharp
 [ContentProperty("Source")]
@@ -153,9 +156,9 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
 }
 ```
 
-`ImageResourceExtension` XAML ファイルは、.NET Standard ライブラリ プロジェクト内の埋め込みリソースとして格納されているイメージ ファイルにアクセスする必要がある場合に役立ちます。 使用して、`Source`プロパティを呼び出す静的`ImageSource.FromResource`メソッド。 このメソッドでは、完全修飾リソース名、アセンブリ名、フォルダー名とピリオドで区切られたファイル名で構成される必要があります。 2 番目の引数、`ImageSource.FromResource`メソッド、アセンブリ名を提供し、のみが UWP のリリースのビルドに必要な。 いずれにせよ、`ImageSource.FromResource`イメージはライブラリでもない限り、この XAML リソース拡張機能に外部ライブラリの一部をすることはできませんが、ビットマップを格納しているアセンブリから呼び出す必要があります。 (を参照してください、 [**埋め込み画像**](~/xamarin-forms/user-interface/images.md#embedded-images)埋め込みリソースとして格納されているビットマップへのアクセスの詳細については資料)。
+`ImageResourceExtension`は、XAML ファイルが、.NET Standard ライブラリプロジェクトに埋め込まれたリソースとして格納されているイメージファイルにアクセスする必要がある場合に便利です。 このメソッドは、プロパティを使用して `Source` 静的メソッドを呼び出し `ImageSource.FromResource` ます。 このメソッドには完全修飾リソース名が必要です。これは、アセンブリ名、フォルダー名、およびピリオドで区切られたファイル名で構成されます。 メソッドの2番目の引数は `ImageSource.FromResource` アセンブリ名を提供し、UWP のリリースビルドにのみ必要です。 に関係なく、は `ImageSource.FromResource` ビットマップを含むアセンブリから呼び出す必要があります。つまり、この XAML リソース拡張機能を外部ライブラリに含めることはできません。ただし、そのライブラリにも画像が含まれている必要はありません。 (埋め込みリソースとして格納されているビットマップへのアクセスの詳細については、[**埋め込み画像**](~/xamarin-forms/user-interface/images.md#embedded-images)に関する記事を参照してください)。
 
-`ImageResourceExtension`が必要です、`Source`プロパティを設定する、`Source`プロパティは、クラスの content プロパティとして属性で示されます。 つまり、`Source=`中かっこで式の一部を省略できます。 **イメージ リソースのデモ** ページで、`Image`要素は、フォルダー名とピリオドで区切られたファイル名を使用して 2 つのイメージを取得します。
+ではプロパティが設定されている `ImageResourceExtension` 必要があり `Source` ますが、 `Source` プロパティは、クラスの content プロパティとして属性で示されています。 これは、 `Source=` 中かっこ内の式の一部を省略できることを意味します。 **イメージリソースのデモ**ページでは、 `Image` 要素はフォルダー名とファイル名をピリオドで区切って2つのイメージをフェッチします。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -181,27 +184,27 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
 
 実行中のプログラムを次に示します。
 
-[![イメージのリソースのデモ](creating-images/imageresourcedemo-small.png "イメージ リソース デモ")](creating-images/imageresourcedemo-large.png#lightbox "イメージ リソースのデモ")
+[![イメージリソースのデモ](creating-images/imageresourcedemo-small.png "イメージリソースのデモ")](creating-images/imageresourcedemo-large.png#lightbox "イメージリソースのデモ")
 
 ## <a name="service-providers"></a>サービス プロバイダー
 
-使用して、`IServiceProvider`引数`ProvideValue`、XAML マークアップ拡張機能は、使用しているされて、XAML ファイルに関する役立つ情報へのアクセスを取得できます。 使用する、`IServiceProvider`引数が正常にする必要がある特定のコンテキストで使用可能なサービスの種類を把握します。 この機能を理解する最善の方法は、既存の XAML マークアップ拡張機能でのソース コードを調べることで、 [ **Markupextension**フォルダー](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions)の Xamarin.Forms GitHub リポジトリ。 いくつかの種類のサービスが Xamarin.Forms の内部にあることに注意します。
+の引数を使用 `IServiceProvider` する `ProvideValue` と、xaml マークアップ拡張機能は、使用されている xaml ファイルに関する有用な情報にアクセスできます。 ただし、引数を正常に使用するに `IServiceProvider` は、特定のコンテキストで使用できるサービスの種類を把握しておく必要があります。 この機能を理解する最善の方法は、GitHub のリポジトリの[**マークアップ拡張**フォルダー](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions)にある既存の XAML マークアップ拡張機能のソースコードを調べることです Xamarin.Forms 。 一部の種類のサービスは内部にあることに注意 Xamarin.Forms してください。
 
-一部の XAML マークアップ拡張機能では、このサービスが便利な可能性があります。
+一部の XAML マークアップ拡張機能では、このサービスが役に立つ場合があります。
 
 ```csharp
  IProvideValueTarget provideValueTarget = serviceProvider.GetService(typeof(IProvideValueTarget)) as IProvideValueTarget;
 ```
 
-`IProvideValueTarget`インターフェイスは、2 つのプロパティを定義します。`TargetObject`と`TargetProperty`します。 この情報を取得するときに、`ImageResourceExtension`クラス、`TargetObject`は、`Image`と`TargetProperty`は、`BindableProperty`オブジェクト、`Source`プロパティの`Image`します。 これは XAML マークアップ拡張機能が設定されているプロパティです。
+インターフェイスは、 `IProvideValueTarget` とという2つのプロパティを定義し `TargetObject` `TargetProperty` ます。 この情報がクラスで取得されると、はで、は `ImageResourceExtension` `TargetObject` `Image` `TargetProperty` `BindableProperty` `Source` のプロパティのオブジェクトです `Image` 。 これは、XAML マークアップ拡張機能が設定されているプロパティです。
 
-`GetService`呼び出しの引数を持つ`typeof(IProvideValueTarget)`型のオブジェクトを実際に返す`SimpleValueTargetProvider`、定義されている、`Xamarin.Forms.Xaml.Internals`名前空間。 戻り値をキャストする場合`GetService`、その型にアクセスすることも、`ParentObjects`を含む配列であるプロパティ、`Image`要素、`Grid`親、および`ImageResourceDemoPage`の親、 `Grid`。
+`GetService`引数を指定した呼び出しは、実際には `typeof(IProvideValueTarget)` `SimpleValueTargetProvider` 、名前空間で定義されている型のオブジェクトを返し `Xamarin.Forms.Xaml.Internals` ます。 の戻り値をその型にキャストした場合は、の `GetService` `ParentObjects` `Image` 要素、 `Grid` 親、および `ImageResourceDemoPage` の親を含む配列であるプロパティにもアクセスできます `Grid` 。
 
 ## <a name="conclusion"></a>まとめ
 
-XAML マークアップ拡張機能では、さまざまなソースからの属性を設定する機能を拡張することによって、XAML で重要な役割を果たします。 さらに、必要な既存の XAML マークアップ拡張機能が提供されない場合、記述することも、独自です。
+XAML マークアップ拡張機能は、さまざまなソースから属性を設定する機能を拡張することによって、XAML の重要な役割を果たします。 また、既存の XAML マークアップ拡張機能が必要なものを正確に提供していない場合は、独自の拡張機能を作成することもできます。
 
 ## <a name="related-links"></a>関連リンク
 
 - [マークアップ拡張機能 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
-- [Xamarin.Forms book から XAML マークアップ拡張機能の章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
+- [本の XAML マークアップ拡張機能の章 Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)

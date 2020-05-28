@@ -1,27 +1,30 @@
 ---
-title: IOS 固有の書式設定の追加
-description: この記事では、Xamarin. Forms カスタムレンダラーを使用せずに、iOS 固有の外観を設定する方法について説明します。
-ms.prod: xamarin
-ms.assetid: CE50E207-D092-4D88-8439-1B51F178E7ED
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/29/2016
-ms.openlocfilehash: 24d86c54ea4b346e1c165b28c6b62f5a98390d64
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+title: ''
+description: この記事では、カスタムレンダラーを使用せずに iOS 固有の外観を設定する方法について説明 Xamarin.Forms します。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: eb44b7d756fee4fa4f452b79292effb45ab98154
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306417"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138516"
 ---
 # <a name="adding-ios-specific-formatting"></a>IOS 固有の書式設定の追加
 
 IOS 固有の書式設定を行う1つの方法は、コントロールの[カスタムレンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)を作成し、プラットフォームごとにプラットフォーム固有のスタイルと色を設定することです。
 
-次に、Xamarin の iOS アプリの外観の方法を制御するためのオプションを示します。
+IOS アプリの外観を制御する他のオプションは Xamarin.Forms 次のとおりです。
 
-- [**情報**](#info-plist)の表示オプションの構成
-- [`UIAppearance` API](#uiappearance)を使用したコントロールスタイルの設定
+- 情報の表示オプションの構成[ **Info.plist**](#info-plist)
+- [ `UIAppearance` API](#uiappearance)を使用したコントロールスタイルの設定
 
 これらの代替方法については、以下で説明します。
 
@@ -39,7 +42,7 @@ nav.BarBackgroundColor = Color.FromHex("91CA47");
 nav.BarTextColor = Color.White;
 ```
 
-結果は、次の画面スニペットに示されています。 ステータスバーの項目は黒であることに注意してください (これはプラットフォーム固有の機能であるため、Xamarin では設定できません)。
+結果は、次の画面スニペットに示されています。 ステータスバーの項目は黒であることに注意してください (これ Xamarin.Forms はプラットフォーム固有の機能であるため、この項目を設定することはできません)。
 
 ![](theme-images/status-default-sml.png "iOS Theming")
 
@@ -56,7 +59,7 @@ nav.BarTextColor = Color.White;
 <false/>
 ```
 
-これでアプリが実行されると、ナビゲーションバーは緑色になり、テキストは白になり (Xamarin 形式の書式設定に*よる)、iOS 固有の構成*によりステータスバーのテキストも白になります。
+アプリを実行すると、ナビゲーションバーは緑色になり、テキストは (書式設定により) 白になり Xamarin.Forms ます。また、iOS 固有の構成により、ステータスバー*の*テキストも白になります。
 
 ![](theme-images/status-white-sml.png "iOS Theming")
 
@@ -64,9 +67,9 @@ nav.BarTextColor = Color.White;
 
 ## <a name="uiappearance-api"></a>UIAppearance API
 
-[`UIAppearance` API](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md)を使用すると、[カスタムレンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)を作成し*なく*ても、多くの iOS コントロールでビジュアルプロパティを設定できます。
+[ `UIAppearance` API](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md)を使用すると、[カスタムレンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)を作成し*なく*ても、多くの iOS コントロールでビジュアルプロパティを設定できます。
 
-**AppDelegate.cs** `FinishedLaunching` メソッドに1行のコードを追加すると、`Appearance` プロパティを使用して、特定の種類のすべてのコントロールのスタイルを設定できます。 次のコードには、タブバーとスイッチコントロールをグローバルにスタイル設定するという2つの例が含まれています。
+**AppDelegate.cs**メソッドに1行のコードを追加すると、 `FinishedLaunching` そのプロパティを使用して、特定の種類のすべてのコントロールのスタイルを設定でき `Appearance` ます。 次のコードには、タブバーとスイッチコントロールをグローバルにスタイル設定するという2つの例が含まれています。
 
 IOS プロジェクトの**AppDelegate.cs**
 
@@ -86,12 +89,12 @@ public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 
 ### <a name="uitabbar"></a>UITabBar
 
-既定では、 [`TabbedPage`](~/xamarin-forms/app-fundamentals/navigation/tabbed-page.md)内の選択されたタブバーアイコン
+既定では、で選択されたタブバーアイコンが[`TabbedPage`](~/xamarin-forms/app-fundamentals/navigation/tabbed-page.md)
 青になります。
 
 ![](theme-images/tabbar-default.png "Default iOS Tab Bar Icon in TabbedPage")
 
-この動作を変更するには、`UITabBar.Appearance` プロパティを設定します。
+この動作を変更するには、次のようにプロパティを設定し `UITabBar.Appearance` ます。
 
 ```csharp
 UITabBar.Appearance.SelectedImageTintColor = UIColor.FromRGB(0x91, 0xCA, 0x47); // green
@@ -101,23 +104,24 @@ UITabBar.Appearance.SelectedImageTintColor = UIColor.FromRGB(0x91, 0xCA, 0x47); 
 
 ![](theme-images/tabbar-custom.png "Green iOS Tab Bar Icon in TabbedPage")
 
-この API を使用すると、非常に少ないコードで iOS 上の Xamarin. Forms `TabbedPage` の外観をカスタマイズできます。 カスタムレンダラーを使用してタブに特定のフォントを設定する方法の詳細については、[タブのカスタマイズ](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/iOS/customize-tabs)に関するレシピを参照してください。
+この API を使用すると、次のような外観をカスタマイズできます。Xamarin.Forms
+`TabbedPage`コードがほとんどない iOS の場合。 カスタムレンダラーを使用してタブに特定のフォントを設定する方法の詳細については、[タブのカスタマイズ](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/iOS/customize-tabs)に関するレシピを参照してください。
 
 ### <a name="uiswitch"></a>UISwitch
 
-`Switch` コントロールは、簡単にスタイルを設定できるもう1つの例です。
+コントロールは、 `Switch` 簡単にスタイルを設定できるもう1つの例です。
 
 ```csharp
 UISwitch.Appearance.OnTintColor = UIColor.FromRGB(0x91, 0xCA, 0x47); // green
 ```
 
-次の2つの画面キャプチャでは、 [Todo サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)の左側にある既定の `UISwitch` コントロールと、右側のカスタマイズされたバージョン (`Appearance`設定) が表示されます。
+次の2つの画面キャプチャでは、既定のコントロールが左側に表示され、カスタマイズされた `UISwitch` バージョン (設定 `Appearance` ) が[Todo サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)の右側に表示されます。
 
 ![](theme-images/switch-default.png "既定の UISwitch の色") ![](theme-images/switch-custom.png "カスタマイズされた UISwitch の色")
 
-### <a name="other-controls"></a>その他のコントロール
+### <a name="other-controls"></a>その他の制御
 
-多くの iOS ユーザーインターフェイスコントロールには、 [`UIAppearance` API](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md)を使用して既定の色とその他の属性を設定できます。
+多くの iOS ユーザーインターフェイスコントロールは、既定の色やその他の属性を[ `UIAppearance` API](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md)を使用して設定できます。
 
 ## <a name="related-links"></a>関連リンク
 

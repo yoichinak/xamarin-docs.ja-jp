@@ -1,33 +1,36 @@
 ---
-title: Xamarin.Forms との統合
-description: この記事では、Xamarin.Forms 要素、およびタッチに応答する SkiaSharp グラフィックを作成する方法について説明し、サンプル コードを示します。
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 288224F1-7AEE-4148-A88D-A70C03F83D7A
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/09/2017
-ms.openlocfilehash: 33ed7f3477f44662f3392d2125b61818b3ed885f
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+title: との統合Xamarin.Forms
+description: この記事では、タッチ要素と要素に応答する SkiaSharp グラフィックスを作成する方法について説明 Xamarin.Forms し、サンプルコードを使用してこれを示します。
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9e763184f38719cda4526eb0a2dfdf39b2191a03
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759449"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137697"
 ---
-# <a name="integrating-with-xamarinforms"></a>Xamarin.Forms との統合
+# <a name="integrating-with-xamarinforms"></a>との統合Xamarin.Forms
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_タッチと Xamarin.Forms 要素に応答する SkiaSharp グラフィックスを作成します。_
+_タッチおよび要素に応答する SkiaSharp グラフィックスを作成する Xamarin.Forms_
 
-SkiaSharp のグラフィックスは、Xamarin.Forms のいくつかの方法で残りの部分と統合できます。 SkiaSharp のキャンバスと同じ ページで、Xamarin.Forms 要素 SkiaSharp キャンバス上にあっても位置 Xamarin.Forms 要素を組み合わせることができます。
+SkiaSharp グラフィックスは、いくつかの方法で、の残りの部分と統合でき Xamarin.Forms ます。 同じページ上の SkiaSharp キャンバスと Xamarin.Forms 要素を結合し、SkiaSharp canvas の上に要素を配置することもでき Xamarin.Forms ます。
 
-![](integration-images/integrationexample.png "スライダーの色の選択")
+![](integration-images/integrationexample.png "Selecting a color with sliders")
 
-Xamarin.Forms で SkiaSharp の対話型のグラフィックスを作成するもう 1 つの方法は、タッチ機能によるです。
-2 番目のページで、 [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラムが使用権を持って**トグルの塗りつぶしをタップ**します。 2 つの方法の単純な円を描画&mdash;塗りつぶしと塗りつぶしを&mdash;をタップして切り替えます。 [ `TapToggleFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs)クラスは、ユーザー入力への応答で SkiaSharp グラフィックを変更する方法を示しています。
+で対話型の SkiaSharp グラフィックスを作成するもう1つの方法は、タッチを使用すること Xamarin.Forms です。
+[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラムの2番目のページには、[**塗りつぶし**の設定/解除] があります。 この例では、塗りつぶしのない2つの方法で、 &mdash; &mdash; タップによって塗りつぶしが切り替わります。 クラスは、 [`TapToggleFillPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs) ユーザー入力に応じて SkiaSharp グラフィックスを変更する方法を示しています。
 
-このページで、`SKCanvasView`でクラスをインスタンス化、 [TapToggleFill.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml)ファイルで、また、Xamarin.Forms を設定[ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer)ビュー。
+このページでは、 `SKCanvasView` クラスは[TapToggleFill](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml)ファイルでインスタンス化されます。このファイルは Xamarin.Forms ビューにもを設定します [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) 。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -44,9 +47,9 @@ Xamarin.Forms で SkiaSharp の対話型のグラフィックスを作成する�
 </ContentPage>
 ```
 
-通知、 `skia` XML 名前空間宣言。
+XML 名前空間の宣言に注意して `skia` ください。
 
-`Tapped`のハンドラー、`TapGestureRecognizer`オブジェクトのブール型フィールドと呼び出しの値を切り替えます、 [ `InvalidateSurface` ](xref:SkiaSharp.Views.Forms.SKCanvasView.InvalidateSurface)メソッドの`SKCanvasView`:
+`Tapped`オブジェクトのハンドラーは、 `TapGestureRecognizer` ブール型フィールドの値を単純に切り替え、 [`InvalidateSurface`](xref:SkiaSharp.Views.Forms.SKCanvasView.InvalidateSurface) のメソッドを呼び出し `SKCanvasView` ます。
 
 ```csharp
 bool showFill = true;
@@ -58,7 +61,7 @@ void OnCanvasViewTapped(object sender, EventArgs args)
 }
 ```
 
-呼び出し`InvalidateSurface`への呼び出しを効果的に生成されます、`PaintSurface`ハンドラーで、使用、`showFill`フィールドを入力するか、または円は入力しません。
+を呼び出すと、 `InvalidateSurface` ハンドラーへの呼び出しが実質的に生成されます。このハンドラーは、 `PaintSurface` 次のようにフィールドを使用して円を塗りつぶし `showFill` ます。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -86,23 +89,23 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-`StrokeWidth`プロパティが、違いを強調したり 50 に設定されています。 最初の内部を描画し、アウトライン、全体の線の幅を確認できます。 後で描画するグラフィックス既定では、図、`PaintSurface`イベント ハンドラーでは、ハンドラーの前で描画されるものが見えにくきます。
+`StrokeWidth`差分を強調するには、プロパティが50に設定されています。 線の幅全体を表示するには、最初に内部を描き、次にアウトラインを描画します。 既定では、イベントハンドラーの後の方で描画されるグラフィックスの数値は、ハンドラーの前に描画された `PaintSurface` ものに見えません。
 
-**色探索**ページと他の Xamarin.Forms 要素 SkiaSharp グラフィックスも統合する方法について説明および SkiaSharp で色を定義するための 2 つの代替方法の違いについても示します。 静的な[ `SKColor.FromHsl` ](xref:SkiaSharp.SKColor.FromHsl(System.Single,System.Single,System.Single,System.Byte))メソッドを作成、`SKColor`色合い-鮮やかさ-明るさモデルに基づいて、値。
+[**カラー探索**] ページでは、SkiaSharp グラフィックスを他の要素と統合する方法についても説明 Xamarin.Forms します。また、SkiaSharp で色を定義するための2つの代替方法の違いについても説明します。 静的メソッドは、 [`SKColor.FromHsl`](xref:SkiaSharp.SKColor.FromHsl(System.Single,System.Single,System.Single,System.Byte)) `SKColor` 色合いと鮮やかさの輝度モデルに基づいて値を作成します。
 
 ```csharp
 public static SKColor FromHsl (Single h, Single s, Single l, Byte a)
 ```
 
-静的な[ `SKColor.FromHsv` ](xref:SkiaSharp.SKColor.FromHsv(System.Single,System.Single,System.Single,System.Byte))メソッドを作成、`SKColor`値色合い-鮮やかさ-値の類似のモデルに基づいています。
+静的メソッドは、 [`SKColor.FromHsv`](xref:SkiaSharp.SKColor.FromHsv(System.Single,System.Single,System.Single,System.Byte)) 同様の色合いと鮮やかさの値の `SKColor` モデルに基づいて値を作成します。
 
 ```csharp
 public static SKColor FromHsv (Single h, Single s, Single v, Byte a)
 ```
 
-どちらの場合で、`h`引数の範囲は 0 ~ 360 です。 `s`、 `l`、および`v`引数の範囲は 0 ~ 100 です。 `a` (アルファまたは不透明度) 引数範囲は 0 ~ 255 です。
+どちらの場合も、 `h` 引数の範囲は 0 ~ 360 です。 `s`、、およびの各引数は、0 ~ 100 の `l` `v` 範囲です。 `a`(アルファまたは不透明度) 引数は 0 ~ 255 の範囲です。
 
-[ **ColorExplorePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml)ファイルには、2 つ作成されます`SKCanvasView`内のオブジェクトを`StackLayout`サイドで`Slider`と`Label`HSL および HSV を選択するユーザーを許可するビュー色の値。
+[**ColorExplorePage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml)ファイルは、 `SKCanvasView` `StackLayout` `Slider` `Label` ユーザーが HSL と HSV の色の値を選択できるようにするために、とビューを使用して、2つのオブジェクトをサイドバイサイドで作成します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -182,9 +185,9 @@ public static SKColor FromHsv (Single h, Single s, Single v, Byte a)
 </ContentPage>
 ```
 
-2 つ`SKCanvasView`要素は、1 つのセル`Grid`で、`Label`結果の RGB 色の値を表示するための上部にします。
+2つの要素は、結果として得られる `SKCanvasView` `Grid` RGB カラー値を表示するために、上にあるを持つ1つのセルにあり `Label` ます。
 
-[ **ColorExplorePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml.cs)分離コード ファイルは比較的単純です。 共有`ValueChanged`、3 つのハンドラー`Slider`要素を単に無効化両方`SKCanvasView`要素。 `PaintSurface`ハンドラーによって示される色でキャンバスをクリア、`Slider`要素も設定して、`Label`の上に座って、`SKCanvasView`要素。
+[**ColorExplorePage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ColorExplorePage.xaml.cs)分離コードファイルは比較的単純です。 `ValueChanged`3 つの要素の共有ハンドラーは、両方の要素を無効にする `Slider` だけ `SKCanvasView` です。 これらのハンドラーは、 `PaintSurface` 要素によって示される色でキャンバスをクリア `Slider` し、要素の上にあるを設定し `Label` `SKCanvasView` ます。
 
 ```csharp
 public partial class ColorExplorePage : ContentPage
@@ -229,17 +232,17 @@ public partial class ColorExplorePage : ContentPage
 }
 ```
 
-HSV と HSL の色モデルでは、色合いの値は、0 ~ 360 範囲し、色の色合いを基準となることを示します。 これらは、虹の従来の色: 赤、オレンジ色、黄、緑、青、indigo、バイオレット、赤に円の中のバックします。
+HSL と HSV の両方のカラーモデルでは、色合いの値は 0 ~ 360 の範囲で、最も重要な色の色合いを示します。 これらは従来のレインボー色です。赤、オレンジ、黄、緑、青、indigo、紫、赤の円に戻ります。
 
-HSL モデルで明るさの値 0 は常に黒、および 100 の値が空白では常にします。 鮮やかさの値が 0 の場合、0 から 100 までの輝度値は、灰色の網掛けになります。 彩度を増やすには、その他の色が追加されます。 (これは、RGB 値 255、0 と 255 までの 0 から 3 番目までの間に等しい 1 つのコンポーネントを)、純粋な色は、鮮やかさは 100 と輝度が 50 に発生します。
+HSL モデルでは、明るさに0を指定した場合は常に黒、100の値は常に白になります。 鮮やかさの値が0の場合、0 ~ 100 の明るさの値は灰色の網掛けになります。 鮮やかさを増やすと、より多くの色が追加されます。 純粋な色 (1 つのコンポーネントが255と等しい RGB 値、もう1つは0に等しい、3番目の値は0から 255) は、鮮やかさが100、輝度が50の場合に発生します。
 
-HSV モデルでは、純粋な色は、飽和状態と値の両方が 100 を発生します。 値が、他の設定に関係なく、0 の場合は、色は黒です。 鮮やかさが 0 と値の範囲は 0 ~ 100 の場合は、灰色の網かけにあります。
+HSV モデルでは、鮮やかさと値の両方が100の場合、純粋な色が生成されます。 値が0の場合、他の設定に関係なく、色は黒です。 灰色の網掛けは、鮮やかさが0で、値の範囲が 0 ~ 100 の場合に発生します。
 
-それらを自分で実験の 2 つのモデルを理解する最善の方法です。
+しかし、2つのモデルの感覚を得る最良の方法は、自分で試してみることです。
 
-[![](integration-images/colorexplore-large.png "色の詳細ページのスクリーン ショットをトリプル")](integration-images/colorexplore-small.png#lightbox "色の詳細ページの 3 倍になるスクリーン ショット")
+[![](integration-images/colorexplore-large.png "Triple screenshot of the Color Explore page")](integration-images/colorexplore-small.png#lightbox "Triple screenshot of the Color Explore page")
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

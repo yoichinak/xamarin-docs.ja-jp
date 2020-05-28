@@ -1,28 +1,31 @@
 ---
-title: ListView のデータ ソース
-description: この記事では、データ、Xamarin.Forms の ListView を設定する方法と、ListView でのデータ バインディングを使用する方法について説明します。
-ms.prod: xamarin
-ms.assetid: B5571660-1E82-4379-95C3-0725288CF5D9
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/23/2020
-ms.openlocfilehash: e51f0bd011750b030c0a11b9b89a2c2473f2a9ed
-ms.sourcegitcommit: d83c6af42ed26947aa7c0ecfce00b9ef60f33319
+title: ''
+description: この記事では、listview にデータを設定する方法 Xamarin.Forms と、listview でデータバインディングを使用する方法について説明します。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 38a895c9064fc012aec35b37eac78bb16ff009a9
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80247588"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84131509"
 ---
-# <a name="listview-data-sources"></a>ListView のデータ ソース
+# <a name="listview-data-sources"></a>ListView データソース
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-switchentrytwobinding)
 
-データの一覧を表示するには、Xamarin. Forms [`ListView`](xref:Xamarin.Forms.ListView)を使用します。 この記事では、`ListView` にデータを設定する方法と、選択した項目にデータをバインドする方法について説明します。
+は、 Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) データのリストを表示するために使用されます。 この記事では、にデータを設定する方法 `ListView` と、選択した項目にデータをバインドする方法について説明します。
 
 ## <a name="itemssource"></a>ItemsSource
 
-[`ListView`](xref:Xamarin.Forms.ListView)には、 [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource)プロパティを使用してデータが設定されます。このプロパティは、`IEnumerable`を実装する任意のコレクションを受け入れることができます。 `ListView` を設定する最も簡単な方法は、文字列の配列を使用することです。
+には、を [`ListView`](xref:Xamarin.Forms.ListView) [`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) 実装する任意のコレクションを受け入れることができるプロパティを使用してデータが設定され `IEnumerable` ます。 にデータを設定する最も簡単な方法は、 `ListView` 文字列の配列を使用することです。
 
 ```xaml
 <ListView>
@@ -62,9 +65,9 @@ listView.ItemsSource = new string[]
 
 ![](data-and-databinding-images/itemssource-simple.png "ListView Displaying List of Strings")
 
-この方法では、`ListView` に文字列の一覧が設定されます。 既定では、`ListView` は `ToString` を呼び出し、各行の `TextCell` に結果を表示します。 データの表示方法をカスタマイズするには、「[セルの外観](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)」を参照してください。
+この方法では、に文字列のリストが設定され `ListView` ます。 既定で `ListView` は、はを呼び出し、 `ToString` 各行のに結果を表示し `TextCell` ます。 データの表示方法をカスタマイズするには、「[セルの外観](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)」を参照してください。
 
-`ItemsSource` が配列に送信されているため、基になるリストまたは配列の変更に応じてコンテンツは更新されません。 基になるリストで項目が追加、削除、および変更されたときに ListView を自動的に更新する場合は、`ObservableCollection`を使用する必要があります。 [`ObservableCollection`](xref:System.Collections.ObjectModel.ObservableCollection`1)は `System.Collections.ObjectModel` で定義されており、`List`の場合と同じようになります。ただし、すべての変更を `ListView` に通知できます。
+`ItemsSource`は配列に送信されているため、基になるリストまたは配列の変更に応じてコンテンツは更新されません。 基になるリストで項目が追加、削除、および変更されたときに ListView を自動的に更新する場合は、を使用する必要があり `ObservableCollection` ます。 [`ObservableCollection`](xref:System.Collections.ObjectModel.ObservableCollection`1)はで定義されて `System.Collections.ObjectModel` おり `List` 、変更を通知できる点を除いて、と同じです `ListView` 。
 
 ```csharp
 ObservableCollection<Employee> employees = new ObservableCollection<Employee>();
@@ -76,15 +79,15 @@ employees.Add(new Employee(){ DisplayName="Mr. Mono"});
 
 ## <a name="data-binding"></a>データ バインディング
 
-データバインディングは、ユーザーインターフェイスオブジェクトのプロパティを、ビューモデルのクラスなど、一部の CLR オブジェクトのプロパティにバインドする "グルー" です。 データ バインディングは、多くの退屈な定型コードを置き換えることで、ユーザー インターフェイスの開発が簡略化されますので便利です。
+データバインディングは、ユーザーインターフェイスオブジェクトのプロパティを、ビューモデルのクラスなど、一部の CLR オブジェクトのプロパティにバインドする "グルー" です。 データバインディングは、多数の退屈な定型コードを置き換えることでユーザーインターフェイスの開発を簡略化するため、便利です。
 
-データ バインディングは、バインドされた値が変更、オブジェクトを同期維持することで動作します。 コントロールの値が変更されるたびにイベントハンドラーを作成するのではなく、バインドを確立し、ビューモデルでバインドを有効にします。
+データバインディングは、バインドされた値の変更に応じてオブジェクトの同期を維持することによって機能します。 コントロールの値が変更されるたびにイベントハンドラーを作成するのではなく、バインドを確立し、ビューモデルでバインドを有効にします。
 
-データバインディングの詳細については、「[データバインディングの基本](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)」を参照してください。これは、 [Xamarin の XAML の基本記事シリーズ](~/xamarin-forms/xaml/xaml-basics/index.md)の第4部です。
+データバインディングの詳細については、「 [ Xamarin.Forms XAML の基本」記事シリーズ](~/xamarin-forms/xaml/xaml-basics/index.md)の第4部である「[データバインディングの基本](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)」を参照してください。
 
 ### <a name="binding-cells"></a>セルのバインド
 
-セル (およびセルの子) のプロパティは、`ItemsSource`内のオブジェクトのプロパティにバインドできます。 たとえば、`ListView` を使用すると、従業員の一覧を表示できます。
+セル (およびセルの子) のプロパティは、内のオブジェクトのプロパティにバインドでき `ItemsSource` ます。 たとえば、を使用して `ListView` 従業員の一覧を表示できます。
 
 Employee クラス:
 
@@ -95,7 +98,7 @@ public class Employee
 }
 ```
 
-`ObservableCollection<Employee>` が作成され、`ListView` `ItemsSource`として設定され、一覧にデータが設定されます。
+が作成され、 `ObservableCollection<Employee>` として設定され、 `ListView` `ItemsSource` リストにデータが設定されます。
 
 ```csharp
 ObservableCollection<Employee> employees = new ObservableCollection<Employee>();
@@ -117,9 +120,9 @@ public EmployeeListPage()
 ```
 
 > [!WARNING]
-> `ListView` は、基になる `ObservableCollection`の変更に応じて更新されますが、別の `ObservableCollection` インスタンスが元の `ObservableCollection` 参照 (`employees = otherObservableCollection;`など) に割り当てられている場合、`ListView` は更新されません。
+> は、 `ListView` 基になるの変更に応じて更新されますが、 `ObservableCollection` `ListView` 別の `ObservableCollection` インスタンスが元の参照に割り当てられている場合 `ObservableCollection` (など)、は更新されません `employees = otherObservableCollection;` 。
 
-次のスニペットは、従業員の一覧にバインドされている `ListView` を示しています。
+次のスニペットは、 `ListView` 従業員の一覧にバインドされたを示しています。
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -139,16 +142,16 @@ public EmployeeListPage()
 </ContentPage>
 ```
 
-この XAML の例では、`ListView`を含む `ContentPage` を定義します。 `ListView` のデータソースは、`ItemsSource` 属性を使用して設定されます。 `ItemsSource` 内の各行のレイアウトは、`ListView.ItemTemplate` 要素内で定義されます。 この結果、次のスクリーンショットが表示されます。
+この XAML の例では `ContentPage` 、を含むを定義 `ListView` します。 `ListView` のデータ ソースは、`ItemsSource` 属性を使用して設定されます。 `ItemsSource` の各行のレイアウトは、`ListView.ItemTemplate` 要素内で定義されます。 この結果、次のスクリーンショットが表示されます。
 
 ![](data-and-databinding-images/bound-data.png "ListView using Data Binding")
 
 > [!WARNING]
-> `ObservableCollection` はスレッドセーフではありません。 `ObservableCollection` を変更すると、変更を行ったのと同じスレッドで UI の更新が発生します。 スレッドがプライマリ UI スレッドでない場合は、例外が発生します。
+> `ObservableCollection` はスレッド セーフではありません。 を変更する `ObservableCollection` と、変更を行ったのと同じスレッドで UI の更新が発生します。 スレッドがプライマリ UI スレッドでない場合は、例外が発生します。
 
-### <a name="binding-selecteditem"></a>SelectedItem にバインド
+### <a name="binding-selecteditem"></a>SelectedItem のバインド
 
-多くの場合、変更に応答するためにイベントハンドラーを使用するのではなく、`ListView`の選択した項目にバインドします。 XAML でこれを行うには、`SelectedItem` プロパティをバインドします。
+多くの場合、 `ListView` 変更に応答するためにイベントハンドラーを使用するのではなく、の選択した項目にバインドします。 XAML でこれを行うには、次のようにプロパティをバインドし `SelectedItem` ます。
 
 ```xaml
 <ListView x:Name="listView"
@@ -158,7 +161,7 @@ public EmployeeListPage()
 </ListView>
 ```
 
-`listView`の `ItemsSource` が文字列のリストであると仮定すると、`SomeLabel` の `Text` プロパティが `SelectedItem`にバインドされます。
+が文字列のリストであると仮定すると、 `listView` `ItemsSource` プロパティが `SomeLabel` `Text` にバインドされ `SelectedItem` ます。
 
 ## <a name="related-links"></a>関連リンク
 
