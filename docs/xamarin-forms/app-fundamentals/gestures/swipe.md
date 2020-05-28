@@ -1,18 +1,21 @@
 ---
-title: スワイプ ジェスチャ認識エンジンの追加
-description: この記事では、ビューで発生したスワイプ ジェスチャを認識する方法について説明します。
-ms.prod: xamarin
-ms.assetid: 164976C2-1429-49FB-9EB6-621E2681C19B
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/14/2018
-ms.openlocfilehash: ae9b5eb5b768b50ddcbc199040074de855f220de
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 03663803313c870a3361c6e1ffc85cf1f8999068
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "68649456"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137886"
 ---
 # <a name="adding-a-swipe-gesture-recognizer"></a>スワイプ ジェスチャ認識エンジンの追加
 

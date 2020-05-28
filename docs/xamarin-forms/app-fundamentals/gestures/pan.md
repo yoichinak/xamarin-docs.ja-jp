@@ -1,18 +1,21 @@
 ---
-title: パン ジェスチャ認識エンジンの追加
-description: この記事では、パン ジェスチャを使用してイメージを水平方向や垂直方向にパンし、イメージをそのイメージのディメンションより小さいビューポートで表示するときに、そのコンテンツがすべて表示されるようにする方法について説明します。
-ms.prod: xamarin
-ms.assetid: 42CBD2CF-432D-4F19-A05E-D569BB7F8713
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/21/2016
-ms.openlocfilehash: 73e312a1af56091a7e579d3fcbcea810ee0efb1e
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 53122991811c06360e8d015a753096cb35c1cca0
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "68820972"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137632"
 ---
 # <a name="adding-a-pan-gesture-recognizer"></a>パン ジェスチャ認識エンジンの追加
 
