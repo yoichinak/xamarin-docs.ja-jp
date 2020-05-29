@@ -6,12 +6,12 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
-ms.openlocfilehash: f8e5a31b855158e1f801354c66f3d3d255eca559
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 41d9efa66318f4c3f5315351d3c1f51b4e503521
+ms.sourcegitcommit: 44c44ad60c5c880a39006493aedd2d7aa834a27e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75488492"
+ms.lasthandoff: 05/18/2020
+ms.locfileid: "83550901"
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials:セキュリティで保護されたストレージ
 
@@ -133,11 +133,11 @@ SecureStorage.RemoveAll();
 
 [Android キーストア](https://developer.android.com/training/articles/keystore.html)は、[共有の設定](https://developer.android.com/training/data-storage/shared-preferences.html)に **[アプリのパッケージ ID].xamarinessentials** というファイル名で保存する前に、値を暗号化するための暗号キーを格納するために使用されます。  共有の設定ファイルで使用されるキー (暗号化キーではなく_値_の_キー_) は、`SecureStorage` API に渡されるキーの _MD5 ハッシュ_です。
 
-## <a name="api-level-23-and-higher"></a>API レベル 23 以上
+**API レベル 23 以上**
 
 新しい API レベルでは、Android キーストアから **AES** キーを取得し、**AES/GCM/NoPadding** 暗号と共に使用して、共有の設定ファイルに格納する前に値を暗号化します。
 
-## <a name="api-level-22-and-lower"></a>API レベル 22 以下
+**API レベル 22 以下**
 
 古い API レベルでは、Android キーストアは **RSA** キーの格納のみをサポートしています。これは **RSA/ECB/PKCS1Padding** 暗号と共に使用され、**AES** キー (実行時にランダムで生成されます) を暗号化し、キー _SecureStorageKey_ の下で共有の設定ファイルに格納されます (まだ作成されていない場合)。
 

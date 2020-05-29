@@ -7,12 +7,14 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 11/27/2019
-ms.openlocfilehash: 778f56ec844e2802c1e1bc783824d55218678761
-ms.sourcegitcommit: e9d88587aafc912124b87732d81c3910247ad811
+no-loc:
+- Firebase
+ms.openlocfilehash: 88926fe2c132ac03a07a7a2e18ee64b61fde43ad
+ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78337288"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83425849"
 ---
 # <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-xamarinforms"></a>Azure Notification Hubs と Xamarin.Forms を使用してプッシュ通知を送受信する
 
@@ -35,10 +37,10 @@ ms.locfileid: "78337288"
 
 ## <a name="set-up-push-notification-services-and-azure-notification-hub"></a>プッシュ通知サービスと Azure Notification Hub を設定する
 
-Azure Notification Hubs と Xamarin.Forms モバイル アプリの統合は、Azure Notification Hubs と Xamarin ネイティブ アプリケーションの統合と似ています。 [Azure Notification Hubs を使用した Xamarin.Android へのプッシュ通知](/azure/notification-hubs/xamarin-notification-hubs-push-notifications-android-gcm#create-a-firebase-project-and-enable-firebase-cloud-messaging)に関する記事の Firebase コンソールの手順に従って、**FCM アプリケーション**を設定します。 Xamarin.Android のチュートリアルを使用して、次の手順を行います。
+Azure Notification Hubs と Xamarin.Forms モバイル アプリの統合は、Azure Notification Hubs と Xamarin ネイティブ アプリケーションの統合と似ています。 [Azure Notification Hubs を使用した Xamarin.Android へのプッシュ通知](/azure/notification-hubs/xamarin-notification-hubs-push-notifications-android-gcm#create-a-firebase-project-and-enable-firebase-cloud-messaging)に関する記事のコンソールの手順に従って、Firebase Cloud Messaging (FCM) アプリケーションFirebaseを設定します。 Xamarin.Android のチュートリアルを使用して、次の手順を行います。
 
 1. Android パッケージ名を定義します。たとえば、サンプルでは `com.xamarin.notifysample` を使用しています。
-1. Firebase コンソールから **google-services.json** をダウンロードします。 このファイルは、後の手順で Android アプリケーションに追加します。
+1. Firebase コンソールから `google-services.json` をダウンロードします。 このファイルは、後の手順で Android アプリケーションに追加します。
 1. Azure Notification Hub インスタンスを作成して名前を付けます。 この記事とサンプルでは、ハブ名として `xdocsnotificationhub` を使用します。
 1. FCM **サーバー キー**をコピーして、**API キー**として Azure Notification Hub の **Google (GCM/FCM)** の下に保存します。
 
@@ -46,7 +48,7 @@ Azure Notification Hubs と Xamarin.Forms モバイル アプリの統合は、A
 
 ![Azure Notification Hub の Google 構成のスクリーンショット](azure-notification-hub-images/fcm-notification-hub-config.png "Azure Notification Hub の Google 構成")
 
-iOS デバイスのセットアップを完了するには、macOS コンピューターが必要です。 [Azure Notification Hubs を使用して Xamarin.iOS に通知をプッシュする](/azure/notification-hubs/xamarin-notification-hubs-ios-push-notification-apns-get-started#generate-the-certificate-signing-request-file)に関する記事の初期手順に従って APNS を設定します。 Xamarin.iOS のチュートリアルを使用して、次の手順を行います。
+iOS デバイスのセットアップを完了するには、macOS コンピューターが必要です。 [Azure Notification Hubs を使用した Xamarin.iOS へのプッシュ通知](/azure/notification-hubs/xamarin-notification-hubs-ios-push-notification-apns-get-started#generate-the-certificate-signing-request-file)に関するページの最初の手順に従って、Apple Push Notification Service (APNS) を設定します。 Xamarin.iOS のチュートリアルを使用して、次の手順を行います。
 
 1. iOS バンドル識別子を定義します。 この記事とサンプルでは、バンドル識別子として `com.xamarin.notifysample` を使用します。
 1. 証明書署名要求 (CSR) ファイルを作成し、それを使用してプッシュ通知証明書を生成します。
@@ -100,7 +102,7 @@ public void AddMessage(string message)
 }
 ```
 
-サンプル アプリケーションに含まれる **AppConstants.cs** ファイルには、プラットフォーム プロジェクトで使用されるプロパティが定義されています。 このファイルを Azure Notification Hub の値を使用してカスタマイズする必要があります。 次のコードは、**AppConstants.cs** ファイルを示しています。
+サンプル アプリケーションには、プラットフォーム プロジェクトに使用されるプロパティを定義する `AppConstants.cs` ファイルが含まれています。 このファイルを Azure Notification Hub の値を使用してカスタマイズする必要があります。 `AppConstants.cs` ファイルのコードを次に示します。
 
 ```csharp
 public static class AppConstants
@@ -129,21 +131,21 @@ public static class AppConstants
 次の手順を行って、通知を受信して処理するように Android アプリケーションを構成します。
 
 1. Firebase コンソールのパッケージ名と一致するように、Android の**パッケージ名**を構成します。
-1. 次の NuGet パッケージをインストールして、Google Play、Firebase、Azure Notification Hubs と通信します。
-    1. Xamarin.GooglePlayServices.Base
-    1. Xamarin.Firebase.Messaging
-    1. Xamarin.Azure.NotificationHubs.Android
+1. 次の NuGet パッケージをインストールして、Google Play、Firebase、Azure Notification Hubs とやりとり通信します。
+    1. `Xamarin.GooglePlayServices.Base`
+    1. `Xamarin.Firebase.Messaging`
+    1. `Xamarin.Azure.NotificationHubs.Android`
 1. FCM セットアップ中にダウンロードした `google-services.json` ファイルをプロジェクトにコピーし、ビルド アクションを `GoogleServicesJson` に設定します。
-1. [Firebase と通信するように AndroidManifest.xml を構成します](#configure-android-manifest)。
-1. [メッセージを処理するように FirebaseMessagingService をオーバーライドします](#override-firebasemessagingservice-to-handle-messages)。
-1. [受信通知を Xamarin.Forms UI に追加します](#add-incoming-notifications-to-the-xamarinforms-ui)。
+1. Firebase と通信するように `AndroidManifest.xml` を[構成](#configure-android-manifest)します。
+1. `FirebaseMessagingService` を[オーバーライド](#override-firebasemessagingservice-to-handle-messages)してメッセージを処理します。
+1. 受信通知を Xamarin.Forms UI に[追加](#add-incoming-notifications-to-the-xamarinforms-ui)します。
 
 > [!NOTE]
-> **GoogleServicesJson** ビルド アクションは、**Xamarin.GooglePlayServices.Base** NuGet パッケージの一部です。 Visual Studio 2019 では、起動時に使用可能なビルド アクションが設定されます。 **GoogleServicesJson** がビルド アクションとして表示されない場合は、NuGet パッケージをインストールした後に Visual Studio 2019 を再起動します。
+> `GoogleServicesJson` ビルド アクションは、`Xamarin.GooglePlayServices.Base` NuGet パッケージの一部です。 Visual Studio 2019 では、起動時に使用可能なビルド アクションが設定されます。 ビルド アクションとして `GoogleServicesJson` が表示されない場合は、NuGet パッケージのインストール後に Visual Studio 2019 を再起動します。
 
 ### <a name="configure-android-manifest"></a>Android マニフェストを構成する
 
-`application` 要素内に `receiver` 要素を使用すると、アプリから Firebase と通信できます。 `uses-permission` 要素を使用すると、アプリでメッセージを処理し、Azure Notification Hub に登録できます。 完全な **AndroidManifest.xml** は、次の例のようになります。
+`application` 要素内の `receiver` 要素により、アプリから Firebase と通信することができます。 `uses-permission` 要素を使用すると、アプリでメッセージを処理し、Azure Notification Hub に登録できます。 完全な `AndroidManifest.xml` は、次の例のようになります。
 
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="YOUR_PACKAGE_NAME" android:installLocation="auto">
@@ -165,7 +167,7 @@ public static class AppConstants
 </manifest>
 ```
 
-### <a name="override-firebasemessagingservice-to-handle-messages"></a>メッセージを処理するように FirebaseMessagingService をオーバーライドする
+### <a name="override-firebasemessagingservice-to-handle-messages"></a>`FirebaseMessagingService` をオーバーライドしてメッセージを処理する
 
 Firebase に登録してメッセージを処理するには、`FirebaseMessagingService` クラスをサブクラス化します。 このサンプル アプリケーションでは、`FirebaseMessagingService` をサブクラス化する `FirebaseService` クラスを定義しています。 このクラスには、`com.google.firebase.MESSAGING_EVENT` フィルターを含む `IntentFilter` 属性がタグ付けされています。 このフィルターにより、Android では、次の処理を行うために、このクラスに受信メッセージを渡すことができます。
 
@@ -209,7 +211,7 @@ void SendRegistrationToServer(string token)
 }
 ```
 
-`SendRegistrationToServer` メソッドは、Azure Notification Hub にデバイスを登録し、テンプレートを使用してタグをサブスクライブします。 このサンプル アプリケーションでは、**AppConstants.cs** ファイルで、`default` という 1 つのタグと `messageParam` という 1 つのパラメーターを持つテンプレートを定義しています。 登録、タグ、テンプレートの詳細については、「[Azure Notification Hub でテンプレートとタグを登録する](#register-templates-and-tags-with-the-azure-notification-hub)」を参照してください。
+`SendRegistrationToServer` メソッドは、Azure Notification Hub にデバイスを登録し、テンプレートを使用してタグをサブスクライブします。 このサンプル アプリケーションでは、`AppConstants.cs` ファイルで、`default` という 1 つのタグと `messageParam` という 1 つのパラメーターを持つテンプレートを定義しています。 登録、タグ、テンプレートの詳細については、「[Azure Notification Hub でテンプレートとタグを登録する](#register-templates-and-tags-with-the-azure-notification-hub)」を参照してください。
 
 メッセージを受信すると、`OnMessageReceived` メソッドが `FirebaseService` クラスで呼び出されます。
 
@@ -242,7 +244,7 @@ void SendLocalNotification(string body)
     var intent = new Intent(this, typeof(MainActivity));
     intent.AddFlags(ActivityFlags.ClearTop);
     intent.PutExtra("message", body);
-    
+
     //Unique request code to avoid PendingIntent collision.
     var requestCode = new Random().Next();
     var pendingIntent = PendingIntent.GetActivity(this, requestCode, intent, PendingIntentFlags.OneShot);
@@ -352,26 +354,26 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
 
 `Activity` 属性で、アプリケーションの `LaunchMode` を `SingleTop` に設定します。 この起動モードにより、このアクティビティの 1 つのインスタンスのみを許可するように Android OS に指示されます。 この起動モードでは、受信 `Intent` データは `OnNewIntent` メソッドにルーティングされます。このメソッドでは、メッセージ データを抽出して、`AddMessage` メソッドを使用して `MainPage` インスタンスに送信します。 アプリケーションで別の起動モードを使用する場合は、`Intent` データを異なる方法で処理する必要があります。
 
-`OnCreate` メソッドでは、`IsPlayServiceAvailable` と呼ばれるヘルパー メソッドを使用して、デバイスが Google Play サービスをサポートしていることを保証します。 Google Play サービスをサポートしないエミュレーターまたはデバイスでは、Firebase からプッシュ通知を受信できません。
+`OnCreate` メソッドでは、`IsPlayServiceAvailable` と呼ばれるヘルパー メソッドを使用して、デバイスが Google Play サービスをサポートしていることを保証します。 Google Play サービスがサポートされていないエミュレーターまたはデバイスでは、Firebase からプッシュ通知を受信できません。
 
 ## <a name="configure-ios-for-notifications"></a>通知用に iOS を構成する
 
 通知を受信するように iOS アプリケーションを構成するプロセスは次のとおりです。
 
-1. プロビジョニング プロファイルで使用されている値と一致するように、**Info.plist** ファイルの**バンドル識別子**を構成します。
-1. **[プッシュ通知を有効にする]** オプションを **Entitlements.plist** ファイルに追加します。
-1. **Xamarin.Azure.NotificationHubs.iOS** NuGet パッケージをプロジェクトに追加します。
-1. [APNS で通知を登録します](#register-for-notifications-with-apns)。
-1. [アプリケーションを Azure Notification Hub に登録して、タグをサブスクライブします](#register-with-azure-notification-hub-and-subscribe-to-tags)。
-1. [APNS の通知を Xamarin.Forms UI に追加します](#add-apns-notifications-to-xamarinforms-ui)。
+1. プロビジョニング プロファイルで使用されている値と一致するように、`Info.plist` ファイルの**バンドル識別子**を構成します。
+1. `Entitlements.plist` ファイルに **[プッシュ通知を有効にする]** オプションを追加します。
+1. `Xamarin.Azure.NotificationHubs.iOS` NuGet パッケージをプロジェクトに追加します。
+1. APNS で通知を[登録](#register-for-notifications-with-apns)します。
+1. アプリケーションを Azure Notification Hub に[登録](#register-with-azure-notification-hub-and-subscribe-to-tags)して、タグをサブスクライブします。
+1. APNS の通知を Xamarin.Forms UI に[追加](#add-apns-notifications-to-xamarinforms-ui)します。
 
-次のスクリーンショットは、Visual Studio 内で、**Entitlements.plist** ファイルで選択されている **[プッシュ通知を有効にする]** オプションを示しています。
+次のスクリーンショットは、Visual Studio 内で、`Entitlements.plist` ファイルで選択されている **[プッシュ通知を有効にする]** オプションを示しています。
 
 ![プッシュ通知のエンタイトルメントのスクリーンショット](azure-notification-hub-images/push-notification-entitlement.png "プッシュ通知のエンタイトルメント")
 
 ### <a name="register-for-notifications-with-apns"></a>APNS で通知を登録する
 
-リモート通知に登録するには、**AppDelegate.cs** ファイルの `FinishedLaunching` メソッドをオーバーライドする必要があります。 登録は、デバイスで使用されている iOS のバージョンによって異なります。 サンプル アプリケーションの iOS プロジェクトは、次の例に示すように、`RegisterForRemoteNotifications` を呼び出すように `FinishedLaunching` メソッドをオーバーライドしています。
+リモート通知を登録するには、`AppDelegate.cs` ファイルの `FinishedLaunching` メソッドをオーバーライドする必要があります。 登録は、デバイスで使用されている iOS のバージョンによって異なります。 サンプル アプリケーションの iOS プロジェクトは、次の例に示すように、`RegisterForRemoteNotifications` を呼び出すように `FinishedLaunching` メソッドをオーバーライドしています。
 
 ```csharp
 public override bool FinishedLaunching(UIApplication app, NSDictionary options)
@@ -522,7 +524,7 @@ Azure Notification Hubs では、アプリケーションがテスト メッセ�
 
 ## <a name="create-a-notification-dispatcher"></a>通知ディスパッチャーを作成する
 
-Azure Notification Hubs では、バックエンド アプリケーションから、異なるプラットフォームにわたってデバイスに通知をディスパッチできるようにします。 このサンプルは、**NotificationDispatcher** コンソール アプリケーションを使用した通知ディスパッチを示しています。 このアプリケーションには、次のプロパティを定義する **DispatcherConstants.cs** ファイルが含まれています。
+Azure Notification Hubs では、バックエンド アプリケーションから、異なるプラットフォームにわたってデバイスに通知をディスパッチできるようにします。 このサンプルは、コンソール アプリケーションを使用した通知のディスパッチを示しています。 アプリケーションには、以下のプロパティを定義する `DispatcherConstants.cs` ファイルが含まれています。
 
 ```csharp
 public static class DispatcherConstants
@@ -533,7 +535,7 @@ public static class DispatcherConstants
 }
 ```
 
-Azure Notification Hub の構成と一致するように、**DispatcherConstants.cs** を構成する必要があります。 `SubscriptionTags` プロパティの値は、クライアント アプリで使用される値と一致している必要があります。 `NotificationHubName` プロパティは、Azure Notification Hub インスタンスの名前です。 `FullAccessConnectionString` プロパティは、通知ハブの**アクセス ポリシー**内にあるアクセス キーです。 次のスクリーンショットは、Azure portal 内の `NotificationHubName` と `FullAccessConnectionString` のプロパティの場所を示しています。
+Azure Notification Hub の構成と一致するように `DispatcherConstants.cs` ファイルを構成する必要があります。 `SubscriptionTags` プロパティの値は、クライアント アプリで使用される値と一致している必要があります。 `NotificationHubName` プロパティは、Azure Notification Hub インスタンスの名前です。 `FullAccessConnectionString` プロパティは、通知ハブの**アクセス ポリシー**内にあるアクセス キーです。 次のスクリーンショットは、Azure portal 内の `NotificationHubName` と `FullAccessConnectionString` のプロパティの場所を示しています。
 
 ![Azure Notification Hub の名前と FullAccessConnectionString のスクリーンショット](azure-notification-hub-images/notification-hub-full-access-policy.png "Azure Notification Hub の名前と FullAccessConnectionString")
 
