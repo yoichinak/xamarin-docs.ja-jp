@@ -1,37 +1,40 @@
 ---
-title: Xamarin. フォーム C# マークアップ
-description: C# マークアップは、c# で宣言型の Xamarin. フォームユーザーインターフェイスを構築するプロセスを簡略化するための、fluent ヘルパーメソッドとクラスのオプトインセットです。
-ms.prod: xamarin
-ms.assetid: D41B9DCD-5C34-4C2F-B177-FC082AB2E9E0
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/15/2020
-ms.openlocfilehash: 4fa8397dafbbdd836f88193081720b4960f1ce5d
-ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
+title: Xamarin.FormsC# マークアップ
+description: C# マークアップは、c# で宣言型のユーザーインターフェイスを構築するプロセスを簡略化するための、fluent ヘルパーメソッドとクラスのオプトインセットです Xamarin.Forms 。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 939727d3dd8d419cdc020d33d3e7241dcedb8158
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83425806"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137749"
 ---
-# <a name="xamarinforms-c-markup"></a>Xamarin. フォーム C# マークアップ
+# <a name="xamarinforms-c-markup"></a>Xamarin.FormsC# マークアップ
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
 
-C# マークアップは、c# で宣言型の Xamarin. フォームユーザーインターフェイスを構築するプロセスを簡略化するための、fluent ヘルパーメソッドとクラスのオプトインセットです。 C# マークアップによって提供される fluent API は、名前空間で使用でき `Xamarin.Forms.Markup` ます。
+C# マークアップは、c# で宣言型のユーザーインターフェイスを構築するプロセスを簡略化するための、fluent ヘルパーメソッドとクラスのオプトインセットです Xamarin.Forms 。 C# マークアップによって提供される fluent API は、名前空間で使用でき `Xamarin.Forms.Markup` ます。
 
 XAML の場合と同様に、C# のマークアップでは、UI マークアップと UI ロジックを明確に分離できます。 これは、UI マークアップと UI ロジックを個別の部分クラスファイルに分割することで実現できます。 たとえば、ログインページの場合、UI マークアップは*LoginPage.cs*という名前のファイルにありますが、ui ロジックは*LoginPage.logic.cs*という名前のファイルにあります。
 
-C# マークアップは、Xamarin. Forms 4.6 から入手できます。 ただし、現在は実験的であり、 *App.cs*ファイルに次のコード行を追加することによってのみ使用できます。
+C# マークアップは4.6 から入手でき Xamarin.Forms ます。 ただし、現在は実験的であり、 *App.cs*ファイルに次のコード行を追加することによってのみ使用できます。
 
 ```csharp
 Device.SetFlags(new string[]{ "Markup_Experimental" });
 ```
 
 > [!NOTE]
-> C# マークアップは、Xamarin. Forms でサポートされているすべてのプラットフォームで使用できます。
+> C# マークアップは、でサポートされているすべてのプラットフォームで使用でき Xamarin.Forms ます。
 
 ## <a name="basic-example"></a>基本的な例
 
@@ -89,7 +92,7 @@ Content = new Grid
 
 ## <a name="data-binding"></a>データ バインディング
 
-C# マークアップには、ビューのバインド可能な `Bind` プロパティと指定されたプロパティの間にデータバインディングを作成する拡張メソッドとオーバーロードが含まれています。 メソッドは、 `Bind` Xamarin. Forms に含まれるほとんどのコントロールの既定のバインド可能プロパティを認識します。 このため、このメソッドを使用する場合は、通常、ターゲットプロパティを指定する必要はありません。 ただし、追加のコントロールの既定のバインド可能なプロパティを登録することもできます。
+C# マークアップには、ビューのバインド可能な `Bind` プロパティと指定されたプロパティの間にデータバインディングを作成する拡張メソッドとオーバーロードが含まれています。 メソッドは、 `Bind` に含まれるほとんどのコントロールの既定のバインド可能プロパティを認識し Xamarin.Forms ます。 このため、このメソッドを使用する場合は、通常、ターゲットプロパティを指定する必要はありません。 ただし、追加のコントロールの既定のバインド可能なプロパティを登録することもできます。
 
 ```csharp
 using Xamarin.Forms.Markup;
@@ -232,7 +235,7 @@ new Label { Text = "Tap Me" }
 
 C# マークアップには、レイアウト内のビューの配置をサポートする一連のレイアウト拡張メソッドと、ビューのコンテンツが含まれています。
 
-| 種類 | 拡張メソッド |
+| Type | 拡張メソッド |
 |---|---|
 | `FlexLayout` | `AlignSelf`, `Basis`, `Grow`, `Menu`, `Order`, `Shrink` |
 | `Grid` | `Row`, `Column`, `RowSpan`, `ColumnSpan` |
@@ -250,7 +253,7 @@ C# マークアップには、レイアウト内のビューの配置をサポ�
 
 左から右方向と右から左方向のフロー方向をサポートするように設計された C# マークアップでは、上記の名前空間のいずれかではなく、次の表に示す拡張メソッドを使用することをお勧めします。
 
-| 種類 | 拡張メソッド |
+| Type | 拡張メソッド |
 |---|---|
 | `Label` | `TextStart`, `TextEnd` |
 | `LayoutOptions` | `Start`, `End` <br/> `StartExpand`, `EndExpand` |

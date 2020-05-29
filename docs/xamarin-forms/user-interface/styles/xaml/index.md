@@ -1,49 +1,52 @@
 ---
-title: XAML スタイルを使用した Xamarin.Forms アプリのスタイル設定
-description: このガイドでは、XAML スタイルを使用して、Xamarin.Forms アプリケーションの外観をカスタマイズする方法について説明します。
-ms.prod: xamarin
-ms.assetid: 344A34AA-B19A-4765-BC8A-875D9A6B5EA8
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/30/2019
-ms.openlocfilehash: adafcb85f4e3d3bd93f7b2afe69c0ca0bb37f3d0
-ms.sourcegitcommit: b23a107b0fe3d2f814ae35b52a5855b6ce2a3513
+title: Xamarin.FormsXAML スタイルを使用したアプリのスタイル設定
+description: このガイドでは、XAML スタイルを使用してアプリケーションの外観をカスタマイズする方法について説明 Xamarin.Forms します。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 72effe15d3456b5a48cbf5d09e889600134ac686
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65926607"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138802"
 ---
-# <a name="styling-xamarinforms-apps-using-xaml-styles"></a>XAML スタイルを使用した Xamarin.Forms アプリのスタイル設定
+# <a name="styling-xamarinforms-apps-using-xaml-styles"></a>Xamarin.FormsXAML スタイルを使用したアプリのスタイル設定
 
-## <a name="introductionintroductionmd"></a>[はじめに](introduction.md)
+## <a name="introduction"></a>[はじめに](introduction.md)
 
-Xamarin.Forms アプリケーションには、複数のコントロール同一の外観を持つには多くの場合が含まれます。 個々 のコントロールの外観の設定は繰り返し発生することがあります、エラーが発生します。 代わりに、スタイルを作成できますで、コントロールの外観をカスタマイズするには、グループ化とコントロールの種類に使用可能なプロパティを設定します。
+Xamarin.Forms多くの場合、アプリケーションには同じ外観を持つ複数のコントロールが含まれています。 個々のコントロールの外観を設定すると、繰り返しが発生し、エラーが発生しやすくなります。 代わりに、コントロールの種類で使用可能なプロパティをグループ化および設定することによって、コントロールの外観をカスタマイズするスタイルを作成できます。
 
-## <a name="explicit-stylesexplicitmd"></a>[明示的なスタイル](explicit.md)
+## <a name="explicit-styles"></a>[明示的なスタイル](explicit.md)
 
-*明示的な*スタイルがコントロールに設定して選択的に適用される 1 つ、 [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)プロパティ。
+*明示的*なスタイルとは、プロパティを設定することによってコントロールに選択的に適用されるスタイルです [`Style`](xref:Xamarin.Forms.NavigableElement.Style) 。
 
-## <a name="implicit-stylesimplicitmd"></a>[暗黙的なスタイル](implicit.md)
+## <a name="implicit-styles"></a>[暗黙的なスタイル](implicit.md)
 
-*暗黙的な*スタイルは、同一のすべてのコントロールで使用される 1 つ[ `TargetType`](xref:Xamarin.Forms.Style.TargetType)スタイルを参照するには、各コントロールを必要とせずします。
+*暗黙的*なスタイルとは、 [`TargetType`](xref:Xamarin.Forms.Style.TargetType) 各コントロールがスタイルを参照する必要がなく、同じのすべてのコントロールで使用されるスタイルです。
 
-## <a name="global-stylesapplicationmd"></a>[グローバル スタイル](application.md)
+## <a name="global-styles"></a>[グローバル スタイル](application.md)
 
-スタイルが利用できるグローバルに、アプリケーションに追加することによって[ `ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)します。 これは、ページまたはコントロールの間でスタイルの重複を回避するのに役立ちます。
+スタイルは、アプリケーションのに追加することで、グローバルに使用でき [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) ます。 これは、ページまたはコントロール間でスタイルが重複しないようにするために役立ちます。
 
-## <a name="style-inheritanceinheritancemd"></a>[スタイルの継承](inheritance.md)
+## <a name="style-inheritance"></a>[スタイルの継承](inheritance.md)
 
-スタイルは、重複を削減し、再利用を有効にするには、その他のスタイルを継承できます。
+スタイルを他のスタイルから継承して、重複を減らし、再利用できるようにすることができます。
 
-## <a name="dynamic-stylesdynamicmd"></a>[動的なスタイル](dynamic.md)
+## <a name="dynamic-styles"></a>[動的なスタイル](dynamic.md)
 
-スタイルはないプロパティの変更に応答し、アプリケーションの実行中は変更されません。 ただし、アプリケーションは、動的リソースを使用して実行時に動的にスタイルの変更に応答することができます。
+スタイルは、プロパティの変更に応答せず、アプリケーションの継続中は変更されません。 ただし、アプリケーションは動的リソースを使用して、実行時に動的にスタイルの変更に応答できます。
 
-## <a name="device-stylesdevicemd"></a>[デバイスのスタイル](device.md)
+## <a name="device-styles"></a>[デバイスのスタイル](device.md)
 
-Xamarin.Forms には、6 が含まれます*動的*と呼ばれるスタイル*デバイス*スタイル設定で、 [ `Devices.Styles` ](xref:Xamarin.Forms.Device.Styles)クラス。 6 つのすべてのスタイルを適用できる[ `Label` ](xref:Xamarin.Forms.Label)インスタンスのみです。
+Xamarin.Formsには、クラスに、*デバイス*スタイルと呼ばれる6つの*動的*スタイルが含まれてい [`Devices.Styles`](xref:Xamarin.Forms.Device.Styles) ます。 6つのスタイルはすべてインスタンスにのみ適用でき [`Label`](xref:Xamarin.Forms.Label) ます。
 
-## <a name="style-classesstyle-classmd"></a>[スタイル クラス](style-class.md)
+## <a name="style-classes"></a>[スタイル クラス](style-class.md)
 
-Xamarin.Forms のスタイル クラスには、スタイルの継承を使用しなくても、コントロールに適用する複数のスタイルが有効にします。
+Xamarin.Formsスタイルクラスを使用すると、スタイルの継承を使用せずに、コントロールに複数のスタイルを適用できます。

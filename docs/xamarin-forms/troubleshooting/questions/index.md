@@ -1,29 +1,32 @@
 ---
-title: Xamarin.Forms についてよく寄せられる質問
-ms.topic: troubleshooting
-ms.prod: xamarin
-ms.assetid: 89364175-53BA-4A09-B3E2-44AC67DD971C
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/25/2017
-ms.openlocfilehash: 24e2ae456e478585f30aa704917f66bb0bf11da9
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+title: Xamarin.Formsよく寄せられる質問
+ms.topic: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: edd6cfefe18ff3d5cc97ec58f3bce867f11df7c8
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61247797"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135877"
 ---
-# <a name="xamarinforms-frequently-asked-questions"></a>Xamarin.Forms についてよく寄せられる質問
+# <a name="xamarinforms-frequently-asked-questions"></a>Xamarin.Formsよく寄せられる質問
 
-## <a name="can-i-update-the-xamarinforms-default-template-to-a-newer-nuget-packageupdate-forms-templatemd"></a>[Xamarin.Forms の既定のテンプレートを新しい NuGet パッケージに更新することはできますか。](update-forms-template.md)
-このガイドは、例として、Xamarin.Forms .NET Standard ライブラリ テンプレートを使用しますが、同じ一般的な方法は、Xamarin.Forms 共有プロジェクト テンプレートの動作も。
+## <a name="can-i-update-the-xamarinforms-default-template-to-a-newer-nuget-packageupdate-forms-templatemd"></a>[Xamarin.Forms既定のテンプレートを新しい NuGet パッケージに更新することはできますか。](update-forms-template.md)
+このガイドでは、 Xamarin.Forms 例として .NET Standard ライブラリテンプレートを使用しますが、共有プロジェクトテンプレートでも同じ一般的な方法を使用でき Xamarin.Forms ます。
 
-## <a name="why-doesnt-the-visual-studio-xaml-designer-work-for-xamarinforms-xaml-filesforms-xaml-designermd"></a>[Visual Studio XAML デザイナーが Xamarin.Forms XAML ファイルに有効でない理由を教えてください。](forms-xaml-designer.md)
-Xamarin.Forms は XAML ファイルのビジュアル デザイナーをサポートされていません。
+## <a name="why-doesnt-the-visual-studio-xaml-designer-work-for-xamarinforms-xaml-filesforms-xaml-designermd"></a>[Xaml ファイルに対して Visual Studio XAML デザイナーが動作しないのはなぜです Xamarin.Forms か。](forms-xaml-designer.md)
+Xamarin.Formsでは、XAML ファイルのビジュアルデザイナーは現在サポートされていません。
 
-## <a name="android-build-error-the-linkassemblies-task-failed-unexpectedlyandroid-linkassemblies-errormd"></a>[Android のビルド エラー: "LinkAssemblies" タスクが予期せず失敗しました](android-linkassemblies-error.md)
-エラー メッセージが表示することがあります`The "LinkAssemblies" task failed unexpectedly`Xamarin.Android プロジェクトのビルドがフォームを使用している場合。 リンカーは、アクティブな場合 (通常で、*リリース*アプリ パッケージのサイズを小さくビルド); Android ターゲットが最新のフレームワークに更新されないために発生するとします。 
+## <a name="android-build-error-the-linkassemblies-task-failed-unexpectedly"></a>[Android のビルドエラー: "LinkAssemblies" タスクが予期せず失敗しました](android-linkassemblies-error.md)
+`The "LinkAssemblies" task failed unexpectedly`フォームを使用する Xamarin Android プロジェクトをビルドすると、エラーメッセージが表示される場合があります。 これは、リンカーがアクティブなときに発生します (通常は*リリース*ビルドで、アプリケーションパッケージのサイズを小さくします)。また、Android ターゲットが最新のフレームワークに更新されないために発生します。 
 
-## <a name="why-does-my-xamarinformsmaps-android-project-fail-with-compiletodalvik--unexpected-top-level-errormaps-compiletodalvik-errormd"></a>["なぜは Xamarin.Forms.Maps Android プロジェクトで失敗 COMPILETODALVIK:予期しない最上位レベル エラーの場合ですか?"](maps-compiletodalvik-error.md)
-このエラーは for Mac または Visual Studio のビルド出力 ウィンドウで、Visual Studio のエラー パッドで発生する可能性があります。Xamarin.Forms.Maps を使用して Android のプロジェクト。 最もよくは、Xamarin.Android プロジェクト用の Java ヒープ サイズを増やすことで解決します。
+## <a name="why-does-my-xamarinformsmaps-android-project-fail-with-compiletodalvik--unexpected-top-level-errormaps-compiletodalvik-errormd"></a>["なぜですか Xamarin.Forms 。Maps Android プロジェクトが COMPILETODALVIK で失敗する: 予期しないトップレベルのエラーが発生した場合は、"](maps-compiletodalvik-error.md)
+このエラーは、Visual Studio for Mac のエラーパッドまたは Visual Studio のビルド出力ウィンドウに表示されることがあります。Android プロジェクトでは、を使用 Xamarin.Forms します。マップ. 最も一般的に解決されるのは、Xamarin Android プロジェクトの Java ヒープサイズを増やすことによって解決されます。

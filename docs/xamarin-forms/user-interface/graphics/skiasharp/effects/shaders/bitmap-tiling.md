@@ -1,48 +1,51 @@
 ---
-title: SkiaSharp のビットマップのタイル
-description: 水平および垂直方向に繰り返されるビットマップを使用して領域を並べて表示します。
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 9ED14E07-4DC8-4B03-8A33-772838BF51EA
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/23/2018
-ms.openlocfilehash: f019b6e031774d7bcdf593015394d0c73c96949b
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 6a28dd20eb8978334365ac217df1241e5288fd28
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198648"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137425"
 ---
-# <a name="skiasharp-bitmap-tiling"></a>SkiaSharp のビットマップのタイル
+# <a name="skiasharp-bitmap-tiling"></a>SkiaSharp ビットマップのタイル
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock)
 
-2 つの以前の記事で説明したように、 [ `SKShader` ](xref:SkiaSharp.SKShader)クラスは、線形または円形グラデーションを作成できます。 この記事の重点、`SKShader`領域をタイルにビットマップを使用するオブジェクト。 水平および垂直に、ビットマップを繰り返すことが元の方向のいずれかであるかまたは水平方向および垂直方向を反転します。 タイルの間の不連続性を回避、反転します。
+前の2つの記事で説明したように、 [`SKShader`](xref:SkiaSharp.SKShader) クラスは線状または円形のグラデーションを作成できます。 この記事では、ビットマップを使用して領域をタイルするオブジェクトに焦点を当てて `SKShader` います。 ビットマップは、水平方向および垂直方向に繰り返すことができます。元の向きにするか、水平方向と垂直方向に反転させることができます。 反転を行うと、タイル間の不連続性が回避されます。
 
-![タイル サンプルのビットマップ](bitmap-tiling-images/BitmapTilingSample.png "ビットマップ タイルのサンプル")
+![ビットマップタイルのサンプル](bitmap-tiling-images/BitmapTilingSample.png "ビットマップタイルのサンプル")
 
-静的な[ `SKShader.CreateBitmap` ](xref:SkiaSharp.SKShader.CreateBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKShaderTileMode,SkiaSharp.SKShaderTileMode))このシェーダーを作成するメソッドが、`SKBitmap`パラメーターと 2 つのメンバー、 [ `SKShaderTileMode` ](xref:SkiaSharp.SKShaderTileMode)列挙体。
+[`SKShader.CreateBitmap`](xref:SkiaSharp.SKShader.CreateBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKShaderTileMode,SkiaSharp.SKShaderTileMode))このシェーダーを作成する静的メソッドには、 `SKBitmap` パラメーターと列挙体の2つのメンバーがあり [`SKShaderTileMode`](xref:SkiaSharp.SKShaderTileMode) ます。
 
 ```csharp
 public static SKShader CreateBitmap (SKBitmap src, SKShaderTileMode tmx, SKShaderTileMode tmy)
 ```
 
-2 つのパラメーターは、タイルが水平方向と垂直方向のタイルを使用するモードを示します。 これは、同じ`SKShaderTileMode`グラデーション メソッドでも使用される列挙体。
+2つのパラメーターは、水平方向のタイル分割と垂直方向の並べ表示に使用されるモードを示します。 これは、 `SKShaderTileMode` グラデーションメソッドでも使用される同じ列挙体です。
 
-A [ `CreateBitmap` ](xref:SkiaSharp.SKShader.CreateBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKShaderTileMode,SkiaSharp.SKShaderTileMode,SkiaSharp.SKMatrix))オーバー ロードが含まれています、`SKMatrix`タイル化されたビットマップの変換を実行する引数。
+オーバーロードには、タイル化され [`CreateBitmap`](xref:SkiaSharp.SKShader.CreateBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKShaderTileMode,SkiaSharp.SKShaderTileMode,SkiaSharp.SKMatrix)) `SKMatrix` たビットマップに対して変換を実行するための引数が含まれています。
 
 ```csharp
 public static SKShader CreateBitmap (SKBitmap src, SKShaderTileMode tmx, SKShaderTileMode tmy, SKMatrix localMatrix)
 ```
 
-この記事には、このマトリックス変換を使用して、ビットマップが並べて表示されたいくつかの例が含まれています。
+この記事では、タイル化されたビットマップでこのマトリックス変換を使用する例をいくつか紹介します。
 
-## <a name="exploring-the-tile-modes"></a>タイル モードの調査
+## <a name="exploring-the-tile-modes"></a>タイルモードの調査
 
-最初のプログラム、**ビットマップ タイル**のセクション、**シェーダーとその他の効果**のページ、 [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプル2 つの効果を示します`SKShaderTileMode`引数。 **ビットマップ タイル反転モード**XAML ファイルのインスタンスを作成、`SKCanvasView`と 2 つ`Picker`ビューを選択するための`SKShaderTilerMode`水平および垂直に並べて表示の値。 注意の配列、`SKShaderTileMode`でメンバーが定義されている、`Resources`セクション。
+[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルの [**シェーダーとその他の効果**] ページの [**ビットマップのタイル**] セクションにある最初のプログラムは、2つの引数の効果を示して `SKShaderTileMode` います。 **ビットマップタイルフリップモード**XAML ファイルは、 `SKCanvasView` `Picker` `SKShaderTilerMode` 水平および垂直のタイルの値を選択できるようにすると2つのビューをインスタンス化します。 次のように、メンバーの配列 `SKShaderTileMode` がセクションで定義されていることに注意して `Resources` ください。
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -85,7 +88,7 @@ public static SKShader CreateBitmap (SKBitmap src, SKShaderTileMode tmx, SKShade
 </ContentPage>
 ```
 
-分離コード ファイルのコンス トラクターは、座って monkey を示しているビットマップ リソースで読み込まれます。 使用してイメージをトリミングが、 [ `ExtractSubset` ](xref:SkiaSharp.SKBitmap.ExtractSubset(SkiaSharp.SKBitmap,SkiaSharp.SKRectI))メソッドの`SKBitmap`ヘッドとフィートがビットマップの端を触れることができるようにします。 コンス トラクターを使用し、 [ `Resize` ](xref:SkiaSharp.SKBitmap.Resize(SkiaSharp.SKImageInfo,SkiaSharp.SKBitmapResizeMethod))サイズの半分のもう 1 つのビットマップを作成します。 これらの変更は、並べて表示用、もう少し適切なビットマップをによりします。
+分離コードファイルのコンストラクターは、サルを示すビットマップリソースに読み込まれます。 まず、のメソッドを使用してイメージをトリミングし、 [`ExtractSubset`](xref:SkiaSharp.SKBitmap.ExtractSubset(SkiaSharp.SKBitmap,SkiaSharp.SKRectI)) `SKBitmap` ヘッドと脚がビットマップの端に接するようにします。 次に、コンストラクターはメソッドを使用して、 [`Resize`](xref:SkiaSharp.SKBitmap.Resize(SkiaSharp.SKImageInfo,SkiaSharp.SKBitmapResizeMethod)) サイズの半分の別のビットマップを作成します。 これらの変更により、ビットマップがより適したタイルになります。
 
 ```csharp
 public partial class BitmapTileFlipModesPage : ContentPage
@@ -141,21 +144,21 @@ public partial class BitmapTileFlipModesPage : ContentPage
 }
 ```
 
-`PaintSurface`ハンドラーを取得、 `SKShaderTileMode` 2 つからの設定`Picker`を表示し、作成、`SKShader`ビットマップ、およびこれら 2 つの値に基づいて、オブジェクト。 このシェーダーは、キャンバスの塗りつぶしに使用します。
+ハンドラーは、 `PaintSurface` `SKShaderTileMode` 2 つのビューから設定を取得 `Picker` し、 `SKShader` ビットマップとその2つの値に基づいてオブジェクトを作成します。 このシェーダーは、キャンバスの塗りつぶしに使用されます。
 
-[![ビットマップのタイルにフリップ モード](bitmap-tiling-images/BitmapTileFlipModes.png "ビットマップのタイルにフリップ モード")](bitmap-tiling-images/BitmapTileFlipModes-Large.png#lightbox)
+[![ビットマップタイルフリップモード](bitmap-tiling-images/BitmapTileFlipModes.png "ビットマップタイルフリップモード")](bitmap-tiling-images/BitmapTileFlipModes-Large.png#lightbox)
 
-左側にある iOS の画面は、の既定値の効果を示しています。`SKShaderTileMode.Clamp`します。 ビットマップは、左上隅に配置します。 ビットマップの下の最後まですべてのピクセルの一番下の行が繰り返されます。 ビットマップの右側に、すべてのピクセルの右端の列が繰り返されます。 キャンバスの残りの部分は、ビットマップの右上隅にある濃い茶色ピクセル色が設定します。 明らかな場合がある、`Clamp`オプションがほとんど使用されないビットマップのタイルを使用。
+左側の iOS 画面は、の既定値の効果を示して `SKShaderTileMode.Clamp` います。 ビットマップは、左上隅にあります。 ビットマップの下には、ピクセルの一番下の行がすべての方向に繰り返されます。 ビットマップの右側には、ピクセルの右端の列が全体にわたって繰り返されます。 キャンバスの残りの部分は、ビットマップの右下隅にある濃い茶色のピクセルで色付けされます。 この `Clamp` オプションはビットマップのタイルではほとんど使用されないことが明らかです。
 
-Android の画面中央には、結果を示しています。`SKShaderTileMode.Repeat`両方の引数。 タイルが水平および垂直方向に繰り返されます。 ユニバーサル Windows プラットフォームの画面に示す`SKShaderTileMode.Mirror`します。 タイルは繰り返されますが、または水平方向および垂直方向を反転します。 このオプションの利点は、タイル間で不連続性がないことです。
+中央の Android 画面には、両方の引数のの結果が表示され `SKShaderTileMode.Repeat` ます。 タイルは水平方向および垂直方向に繰り返されます。 ユニバーサル Windows プラットフォーム画面が表示さ `SKShaderTileMode.Mirror` れます。 タイルは繰り返しますが、水平方向と垂直方向に反転されます。 このオプションの利点は、タイル間に不連続性がないことです。
 
-水平および垂直の繰り返しのさまざまなオプションを使用できることに注意してください。 指定できる`SKShaderTileMode.Mirror`2 番目の引数として`CreateBitmap`が`SKShaderTileMode.Repeat`3 番目の引数として。 行ごとに、通常のイメージと、ミラー イメージですが、猿はいずれも代替猿が上下します。
+水平および垂直の繰り返しでは、異なるオプションを使用できることに注意してください。 `SKShaderTileMode.Mirror`2 番目の引数として、 `CreateBitmap` 3 番目の引数としてを指定でき `SKShaderTileMode.Repeat` ます。 各行では、猿は通常のイメージとミラーイメージの間で交互に切り替わりますが、猿は反転されません。
 
-## <a name="patterned-backgrounds"></a>背景のパターン
+## <a name="patterned-backgrounds"></a>パターンの背景
 
-ビットマップのタイルは、比較的小さなビットマップからパターンの背景を作成する通常使用されます。 典型的な例では、レンガの壁です。
+ビットマップのタイルは、通常、比較的小さいビットマップからパターン化された背景を作成するために使用されます。 従来の例は、ブリックウォールです。
 
-**アルゴリズム レンガの壁**ページ全体のブリックと従来型で区切られたブリックの 2 つの要素のような小さいビットマップを作成します。 このブリックで次のサンプルにも使用しているため、静的コンス トラクターによって作成され、パブリックな静的プロパティは。
+**アルゴリズムブリックの壁**のページでは、ブリック全体に似た小さなビットマップが作成され、ブリックの2つの半分が従来のように分離されています。 このブリックは次のサンプルでも使用されるため、静的コンストラクターによって作成され、静的なプロパティを使用してパブリックになります。
 
 ```csharp
 public class AlgorithmicBrickWallPage : ContentPage
@@ -206,11 +209,11 @@ public class AlgorithmicBrickWallPage : ContentPage
 }
 ```
 
-結果のビットマップは、60 ピクセル、高さ、幅 70 のピクセルには。
+結果のビットマップの幅は70ピクセル、高さは60ピクセルです。
 
-![アルゴリズムのレンガ壁タイル](bitmap-tiling-images/AlgorithmicBrickWallTile.png "アルゴリズム レンガ壁のタイル")
+![アルゴリズムブリックの壁面タイル](bitmap-tiling-images/AlgorithmicBrickWallTile.png "アルゴリズムブリックの壁面タイル")
 
-残りの部分、**アルゴリズム レンガの壁**ページを作成、`SKShader`オブジェクトを水平および垂直には、このイメージを繰り返します。
+**アルゴリズムブリックの壁**のページの残りの部分では、 `SKShader` このイメージを水平方向および垂直方向に繰り返すオブジェクトを作成します。
 
 ```csharp
 public class AlgorithmicBrickWallPage : ContentPage
@@ -247,15 +250,15 @@ public class AlgorithmicBrickWallPage : ContentPage
 }
 ```
 
-結果を次に示します。
+結果は次のとおりです。
 
-[![アルゴリズムのレンガの壁](bitmap-tiling-images/AlgorithmicBrickWall.png "アルゴリズム レンガの壁")](bitmap-tiling-images/AlgorithmicBrickWall-Large.png#lightbox)
+[![アルゴリズムブリックの壁面](bitmap-tiling-images/AlgorithmicBrickWall.png "アルゴリズムブリックの壁面")](bitmap-tiling-images/AlgorithmicBrickWall-Large.png#lightbox)
 
-もう少し現実的なものをお勧めします。 その場合を実際のレンガの壁の写真を取得し、それをトリミングできます。 このビットマップは、幅 300 ピクセル、高さ 150 ピクセルです。
+もう少し現実的なことをお勧めします。 このような場合は、実際のレンガ壁の写真を撮影し、トリミングすることができます。 このビットマップの幅は300ピクセル、高さは150ピクセルです。
 
-![レンガ壁タイル](bitmap-tiling-images/BrickWallTile.jpg "レンガ壁のタイル")
+![ブリックウォールタイル](bitmap-tiling-images/BrickWallTile.jpg "ブリックウォールタイル")
 
-このビットマップがで使用される、 **Photographic レンガの壁**ページ。
+このビットマップは、**写真ブリックの壁**のページで使用されます。
 
 ```csharp
 public class PhotographicBrickWallPage : ContentPage
@@ -294,17 +297,17 @@ public class PhotographicBrickWallPage : ContentPage
 }
 ```
 
-注意、`SKShaderTileMode`引数`CreateBitmap`はどちらも`Mirror`します。 このオプションは、実際のイメージから作成されたタイルを使用する場合は、通常必要があります。 タイルをミラーリング不連続性を回避できます。
+の引数は両方とも同じであることに注意して `SKShaderTileMode` `CreateBitmap` `Mirror` ください。 このオプションは、通常、実際のイメージから作成されたタイルを使用する場合に必要です。 タイルをミラーリングすると、不連続性が回避されます。
 
-[![写真レンガの壁](bitmap-tiling-images/PhotographicBrickWall.png "Photographic レンガの壁")](bitmap-tiling-images/PhotographicBrickWall-Large.png#lightbox)
+[![写真ブリックの壁面](bitmap-tiling-images/PhotographicBrickWall.png "写真ブリックの壁面")](bitmap-tiling-images/PhotographicBrickWall-Large.png#lightbox)
 
-タイルの適切なビットマップを取得するには、いくつか作業が必要です。 この 1 つは、うまく非常に濃いブリックが目立つのでが多すぎます。 このレンガの壁が、小さいビットマップから構築されたという事実を公開、繰り返されるイメージ内で定期的に表示します。
+タイルに適切なビットマップを取得するには、いくつかの作業が必要です。 これは、暗いブリックがあまり大きくないため、非常にうまく機能しません。 繰り返し画像内に定期的に表示されます。このブリック壁面は小さいビットマップから構築されたという事実を明らかにしています。
 
-**メディア**のフォルダー、 [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルには、石壁のこのイメージも含まれています。
+[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルの**メディア**フォルダーには、次のようなストーンウォールのイメージも含まれています。
 
-![石壁タイル](bitmap-tiling-images/StoneWallTile.jpg "石壁タイル")
+![ストーンウォールタイル](bitmap-tiling-images/StoneWallTile.jpg "ストーンウォールタイル")
 
-ただし、元のビットマップは少しタイルに対して大きすぎます。 このサイズを変更する可能性がありますが、`SKShader.CreateBitmap`メソッドが、変換を適用することでタイルのサイズ変更できることもできます。 このオプションの説明については、**石壁**ページ。
+ただし、元のビットマップはタイルには大きすぎます。 サイズを変更することもでき `SKShader.CreateBitmap` ますが、変換を適用してタイルのサイズを変更することもできます。 このオプションを**次に示し**ます。
 
 ```csharp
 public class StoneWallPage : ContentPage
@@ -347,42 +350,42 @@ public class StoneWallPage : ContentPage
 }
 ```
 
-`SKMatrix`元の半分のサイズにイメージをスケールする値が作成されます。
+次のように、 `SKMatrix` イメージを元のサイズの半分にスケーリングするための値が作成されます。
 
-[![壁を石](bitmap-tiling-images/StoneWall.png "石壁")](bitmap-tiling-images/StoneWall-Large.png#lightbox)
+[![石の壁](bitmap-tiling-images/StoneWall.png "石の壁")](bitmap-tiling-images/StoneWall-Large.png#lightbox)
 
-変換で使用される元のビットマップの動作、`CreateBitmap`メソッドでしょうか。 または、タイルの結果の配列が変換されることですか。 
+変換は、メソッドで使用されている元のビットマップに対して動作し `CreateBitmap` ますか。 または、タイルの結果配列を変換しますか。 
 
-この質問に回答する簡単な方法は、変換の一部としての回転を含めるには。
+この質問に答える簡単な方法は、変換の一部として回転を含めることです。
 
 ```csharp
 SKMatrix matrix = SKMatrix.MakeScale(0.5f, 0.5f);
 SKMatrix.PostConcat(ref matrix, SKMatrix.MakeRotationDegrees(15));
 ```
 
-個々 のタイルに、変換を適用する場合、タイルの各繰り返しのイメージを回転するか、および結果には、多数の不連続性にが含まれます。 このスクリーン ショットのタイルの複合配列が変換されることから明らかです。
+変換が個々のタイルに適用されている場合は、タイルのそれぞれの繰り返し画像を回転させる必要があり、結果には多数の不連続性が含まれます。 ただし、このスクリーンショットでは、タイルの複合配列が変換されていることがわかります。
 
-[![回転の壁を石](bitmap-tiling-images/StoneWallRotated.png "石壁の回転")](bitmap-tiling-images/StoneWallRotated-Large.png#lightbox)
+[![石の壁が横](bitmap-tiling-images/StoneWallRotated.png "石の壁が横")](bitmap-tiling-images/StoneWallRotated-Large.png#lightbox)
 
-セクションで[**タイルの配置**](#tile-alignment)、平行移動変換が、シェーダーを適用する例を確認します。
+セクションタイルの[**配置**](#tile-alignment)では、シェーダーに適用された変換変換の例が表示されます。
 
-スタンドアロン[ **Cat クロック**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock)サンプル (の一部ではなく**SkiaSharpFormsDemos**) この 240 ピクセルの正方形のビットマップに基づくビットマップのタイルを使用して粒度が木の背景をシミュレートします。
+スタンドアロンの[**Cat Clock**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock)サンプル ( **SkiaSharpFormsDemos**の一部ではありません) は、この240ピクセルの四角形のビットマップに基づいてビットマップのタイルを使用して、木材粒子の背景をシミュレートします。
 
-![粒度の木](bitmap-tiling-images/WoodGrain.png "粒度の木")
+![木材粒子](bitmap-tiling-images/WoodGrain.png "木材粒子")
 
-木の床面の写真です。 `SKShaderTileMode.Mirror`木に大きな領域として表示するオプションを使用できます。
+これは、木の写真です。 `SKShaderTileMode.Mirror`オプションを使用すると、木のより大きな領域として表示できます。
 
-[![クロックを cat](bitmap-tiling-images/CatClock.png "Cat クロック")](bitmap-tiling-images/CatClock-Large.png#lightbox)
+[![Cat の時計](bitmap-tiling-images/CatClock.png "Cat の時計")](bitmap-tiling-images/CatClock-Large.png#lightbox)
 
 ## <a name="tile-alignment"></a>タイルの配置
 
-これまでに示したすべての例は、によって作成されたシェーダーを使用して`SKShader.CreateBitmap`キャンバス全体をカバーします。 ほとんどの場合に使用するビットマップ タイル小さな領域または (複数ことはほとんどありません) を提出するための太い線の内側を塗りつぶすとき。 レンガ壁の写真タイルが小さい四角形の使用を示します。
+これまでに示したすべての例では、によって作成されたシェーダーを使用して、キャンバス全体をカバーしてい `SKShader.CreateBitmap` ます。 ほとんどの場合、小さな領域をファイリングする場合はビットマップタイルを使用し、太い線の場合は (よりまれに) を使用します。 次に、小さな四角形に使用される写真ブリック壁面タイルを示します。
 
 [![タイルの配置](bitmap-tiling-images/TileAlignment.png "タイルの配置")](bitmap-tiling-images/TileAlignment-Large.png#lightbox)
 
-違いますは、問題になります。 タイル パターンの先頭が四角形の左上隅で完全なブリックでないことを望んでいるかもしれません。 シェーダーは、キャンバスと、グラフィカル オブジェクトではなくで使用するために調整されているためにです。
+これには問題がないかもしれません。 タイルパターンが四角形の左上隅の完全なブリックから始まっていない可能性があります。 これは、装飾したグラフィックオブジェクトではなく、キャンバスにシェーダーがアラインされているためです。
 
-修正プログラムは簡単です。 作成、`SKMatrix`値変換の変換に基づいています。 変換は、配置するタイルの左上隅にあるポイントを並べて表示されたパターンを効果的に移ります。 この方法の説明については、**タイルの配置**ページで前に、示したアラインされていないタイルの画像の作成します。
+修正は単純です。 `SKMatrix`変換変換に基づいて値を作成します。 この変換は、タイルの左上隅を配置するポイントに、タイル化されたパターンを効果的にシフトします。 この方法は、上に示した整列されていないタイルのイメージを作成した [**タイルの配置**] ページで示されています。
 
 ```csharp
 public class TileAlignmentPage : ContentPage
@@ -450,11 +453,11 @@ public class TileAlignmentPage : ContentPage
 }
 ```
 
-**タイルの配置**ページが含まれています、`TapGestureRecognizer`します。 タップまたはクリックして、画面とプログラムにスイッチ、`SKShader.CreateBitmap`メソッドを`SKMatrix`引数。 この変換は、左上隅にあるすべてのブリックに含まれるように、パターンをシフトします。
+**タイルの配置**ページにはが含まれてい `TapGestureRecognizer` ます。 画面をタップまたはクリックすると、プログラムは引数を使用してメソッドに切り替わり `SKShader.CreateBitmap` `SKMatrix` ます。 この変換は、左上隅に完全なブリックが含まれるようにパターンをシフトします。
 
-[![タップされた位置をタイル](bitmap-tiling-images/TileAlignmentTapped.png "タップの配置を並べて表示")](bitmap-tiling-images/TileAlignmentTapped-Large.png#lightbox)
+[![タップしたタイルの配置](bitmap-tiling-images/TileAlignmentTapped.png "タップしたタイルの配置")](bitmap-tiling-images/TileAlignmentTapped-Large.png#lightbox)
 
-ビットマップが並べて表示されたパターンを描画する領域の中央に配置することを確認するのにこの手法を使用することもできます。 **タイルの中心** ページで、`PaintSurface`ハンドラーは、キャンバスの中央に 1 つのビットマップを表示する場合、最初の座標を計算します。 使用して、これらの座標に平行移動変換を作成する`SKShader.CreateBitmap`します。 この変換は、タイルが中央に配置されるように、パターン全体を移動します。
+また、この方法を使用すると、タイル化されたビットマップパターンを、描画する領域内の中央に配置することもできます。 中央の**タイル**ページでは、 `PaintSurface` 最初に、キャンバスの中央に1つのビットマップを表示する場合のように、ハンドラーによって座標が計算されます。 次に、これらの座標を使用して、の変換変換を作成し `SKShader.CreateBitmap` ます。 この変換は、タイルが中央揃えになるように、パターン全体をシフトします。
 
 ```csharp
 public class CenteredTilesPage : ContentPage
@@ -502,35 +505,35 @@ public class CenteredTilesPage : ContentPage
 }
 ```
 
-`PaintSurface`ハンドラーの最後に、キャンバスの中央に円を描画します。 確か、円の中心で正確には、タイルのいずれかと、対称パターンでは、他の配置。
+この `PaintSurface` ハンドラーの最後には、キャンバスの中央に円を描画します。 十分であることを確認してください。タイルの1つは、円の中央にあり、他のタイルは対称パターンで並べられています。
 
-[![タイルを中央揃え](bitmap-tiling-images/CenteredTiles.png "タイルを中央揃え")](bitmap-tiling-images/CenteredTiles-Large.png#lightbox)
+[![中央のタイル](bitmap-tiling-images/CenteredTiles.png "中央のタイル")](bitmap-tiling-images/CenteredTiles-Large.png#lightbox)
 
-中央の別の方法は、実際には少し簡単になります。 タイルを中央に格納された平行移動変換を構築するのではなく、並べて表示するパターンの中央に配置できます。 `SKMatrix.MakeTranslation`呼び出すをキャンバスの中央の引数を使用します。
+もう1つのセンタリングアプローチは少し簡単です。 タイルを中央に配置する変換を作成するのではなく、タイル化されたパターンのコーナーを中心にすることができます。 呼び出しで `SKMatrix.MakeTranslation` 、キャンバスの中央の引数を使用します。
 
 ```csharp
 SKMatrix matrix = SKMatrix.MakeTranslation(info.Rect.MidX, info.Rect.MidY);
 ```
 
-パターンには、中央揃えであり、対称ですがタイルの中心ではありません。
+このパターンは、中央および対称になっていますが、中央にタイルがありません。
 
-[![タイルの代替を中央揃え](bitmap-tiling-images/CenteredTilesAlternate.png "タイルの代替を中央揃え")](bitmap-tiling-images/CenteredTilesAlternate-Large.png#lightbox)
+[![中央のタイルの代替](bitmap-tiling-images/CenteredTilesAlternate.png "中央のタイルの代替")](bitmap-tiling-images/CenteredTilesAlternate-Large.png#lightbox)
 
-## <a name="simplification-through-rotation"></a>回転を単純化
+## <a name="simplification-through-rotation"></a>ローテーションによる単純化
 
-回転変換を使用する、`SKShader.CreateBitmap`メソッドは、ビットマップのタイルを簡略化できます。 これは、チェーン リンク フェンスのタイルを定義しようとしています。 明らかになります。 **ChainLinkTile.cs**ファイルは、次に示します (わかりやすくするためのピンク色の背景) タイルを作成します。
+メソッドで回転変換を使用すると `SKShader.CreateBitmap` 、ビットマップタイルが簡略化される場合があります。 これは、チェーンリンクフェンスのタイルを定義しようとしたときに明らかになります。 **ChainLinkTile.cs**ファイルにより、ここに表示されるタイルが作成されます (わかりやすくするためにピンク色の背景があります)。
 
-![チェーン ハードリンク タイル](bitmap-tiling-images/HardChainLinkTile.png "チェーン ハードリンク タイル")
+![ハードチェーン-リンクタイル](bitmap-tiling-images/HardChainLinkTile.png "ハードチェーン-リンクタイル")
 
-タイルは、コードは、4 つの象限タイルに分割するために 2 つのリンクを含める必要があります。 左上隅および右下の四分区間は同じですが完全ではありません。 ワイヤでは、右上および左下の四分区間にいくつか追加の描画に少しノッチ処理する必要があります。 このすべての処理を行うファイルは、長い 174 行です。
+タイルには2つのリンクが含まれている必要があるため、コードによってタイルが4つの作業領域に分割されます。 左上隅と右下の作業領域は同じですが、完了していません。 このワイヤには、右上および左下にあるいくつかの描画で処理する必要がある小さなノッチがあります。 この作業をすべて実行するファイルは、174行の長さです。
 
-実はこのタイルを作成する方が楽になります。
+このタイルを作成する方がはるかに簡単であることがわかります。
 
-![簡単にチェーン リンク タイル](bitmap-tiling-images/EasierChainLinkTile.png "簡単チェーン リンク タイル")
+![より簡単なチェーンリンクタイル](bitmap-tiling-images/EasierChainLinkTile.png "より簡単なチェーンリンクタイル")
 
-ビットマップ タイル シェーダーが 90 度回転の場合は、ビジュアルはほぼ同じです。
+ビットマップタイルシェーダーが90°回転している場合、ビジュアルはほぼ同じです。
 
-簡単チェーン リンク タイルを作成するコードの一部である、**チェーン リンク タイル**ページ。 コンス トラクターは、プログラムで実行されているデバイスと、呼び出しの種類に基づくタイルのサイズを決定します。 `CreateChainLinkTile`、行、パス、およびグラデーション シェーダーを使用してビットマップを描画します。
+より簡単なチェーンリンクタイルを作成するコードは、[**チェーンリンク] タイル**ページの一部です。 コンストラクターは、プログラムが実行されているデバイスの種類に基づいてタイルサイズを決定した後 `CreateChainLinkTile` 、を呼び出します。これは、線、パス、およびグラデーションシェーダーを使用してビットマップに描画します。
 
 ```csharp
 public class ChainLinkFencePage : ContentPage
@@ -618,7 +621,7 @@ public class ChainLinkFencePage : ContentPage
 }
 ```
 
-ワイヤ、を除き、タイルは透過的なつまりことは、別のものの上に表示できます。 プログラムは、ビットマップ リソースのいずれかで読み込み、キャンバスがいっぱいになるようを表示し、上部で、シェーダーを描画します。
+ワイヤを除き、タイルは透明になっています。つまり、タイルを別のものの上に表示できます。 このプログラムは、ビットマップリソースの1つを読み込み、キャンバスに収まるようにそのファイルを表示して、シェーダーを上に描画します。
 
 ```csharp
 public class ChainLinkFencePage : ContentPage
@@ -650,17 +653,17 @@ public class ChainLinkFencePage : ContentPage
 }
 ```
 
-シェーダーは、実際のチェーン リンク フェンスのような向きがあるため 45 度回転させることに注意してください。
+シェーダーが45°回転して、実際のチェーンリンクフェンスのようになっていることに注意してください。
 
-[![チェーン リンク フェンス](bitmap-tiling-images/ChainLinkFence.png "チェーン リンク フェンス")](bitmap-tiling-images/ChainLinkFence-Large.png#lightbox)
+[![チェーンリンクフェンス](bitmap-tiling-images/ChainLinkFence.png "チェーンリンクフェンス")](bitmap-tiling-images/ChainLinkFence-Large.png#lightbox)
 
-## <a name="animating-bitmap-tiles"></a>アニメーションのビットマップのタイル
+## <a name="animating-bitmap-tiles"></a>ビットマップタイルのアニメーション化
 
-行列変換をアニメーション化して、全体のビットマップ タイル パターンをアニメーション化することができます。 おそらく横方向または垂直方向に移動するパターンまたはその両方が必要です。 変化の激しい座標に基づいて変換を作成しているを行うことができます。
+マトリックス変換をアニメーション化することにより、ビットマップタイルパターン全体をアニメーション化することができます。 パターンを水平方向または垂直方向、または両方に移動させたい場合があります。 これを行うには、シフト座標に基づいて平行移動変換を作成します。
 
-小規模のビットマップを描画する、または秒間に 60 回の割合で、ビットマップのピクセル ビットを操作することもできます。 そのビットマップを並べて表示、使用でき、全体に並べて表示されたパターンがアニメーション化すると思われることができます。 
+また、小さなビットマップを描画したり、1秒あたり60倍の速度でビットマップのピクセルビットを操作したりすることもできます。 そのビットマップを並べて表示することができ、タイル化されたパターン全体をアニメーション化することができます。 
 
-**アニメーション ビットマップ タイル**ページは、この方法を示します。 ビットマップは、64 ピクセルの正方形にするフィールドとしてインスタンス化されます。 コンス トラクター呼び出し`DrawBitmap`を初期の外観を付けます。 場合、`angle`フィールドは 0 (は、メソッドが初めて呼び出された場合) と、ビットマップが x マークを超えました。 2 つの行が含まれます。行が行われるに関係なく、ビットマップの端に常に到達するのに十分な長さ、`angle`値。 
+アニメーション化された**ビットマップタイル**ページは、この方法を示しています。 ビットマップは、64ピクセルの四角形として、フィールドとしてインスタンス化されます。 コンストラクターは `DrawBitmap` を呼び出して、初期外観を与えます。 `angle`フィールドがゼロの場合 (メソッドが最初に呼び出されたときと同じ)、ビットマップには X として交差する2つの行が含まれます。次の行は、値に関係なく、常にビットマップの端に移動できるようになり `angle` ます。 
 
 ```csharp
 public class AnimatedBitmapTilePage : ContentPage
@@ -705,7 +708,7 @@ public class AnimatedBitmapTilePage : ContentPage
 }
 ```
 
-アニメーションのオーバーヘッドが発生した、`OnAppearing`と`OnDisappearing`よりも優先されます。 `OnTimerTick`メソッドをアニメーション化、`angle`値 0 度から 360 度を 10 秒ごとに、ビットマップ内の図は、X を回転します。
+アニメーションのオーバーヘッドはに発生し、は `OnAppearing` を `OnDisappearing` オーバーライドします。 この `OnTimerTick` メソッドは、 `angle` 0 ~ 360 度の値を10秒ごとにアニメーション化して、ビットマップ内の X 図形を回転させます。
 
 ```csharp
 public class AnimatedBitmapTilePage : ContentPage
@@ -746,9 +749,9 @@ public class AnimatedBitmapTilePage : ContentPage
 }
 ```
 
-X の図の対称性のためこれは、回転と同じ、`angle`値を 0 度から 90 度、2.5 秒ごとにします。
+X の図が対称であるため、これは、 `angle` 2.5 秒ごとに0°から90度に値を回転させることと同じです。
 
-`PaintSurface`ハンドラーがビットマップからシェーダーを作成し、キャンバス全体に色をペイント オブジェクトを使用します。
+`PaintSurface`ハンドラーはビットマップからシェーダーを作成し、描画オブジェクトを使用してキャンバス全体に色を設定します。
 
 ```csharp
 public class AnimatedBitmapTilePage : ContentPage
@@ -773,12 +776,12 @@ public class AnimatedBitmapTilePage : ContentPage
 }
 ```
 
-`SKShaderTileMode.Mirror`を推奨します。 単純なアニメーションよりも複雑になるほどの多くと思われる全体的なアニメーション化されたパターンを作成する隣接するビットマップの X 印が付いた各ビットマップの X の腕が参加オプションを確認します。
+`SKShaderTileMode.Mirror`オプションを使用すると、各ビットマップ内の x のアームが隣接するビットマップの x と結合して、単純なアニメーションよりもはるかに複雑なアニメーションパターンを作成できます。
 
-[![ビットマップのタイルをアニメーション化](bitmap-tiling-images/AnimatedBitmapTile.png "ビットマップのタイルをアニメーション化")](bitmap-tiling-images/AnimatedBitmapTile-Large.png#lightbox)
+[![アニメーション化したビットマップタイル](bitmap-tiling-images/AnimatedBitmapTile.png "アニメーション化したビットマップタイル")](bitmap-tiling-images/AnimatedBitmapTile-Large.png#lightbox)
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 - [CatClock (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/catclock)

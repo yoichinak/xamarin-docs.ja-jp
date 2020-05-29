@@ -1,18 +1,21 @@
 ---
-title: パスの塗りつぶしの種類
-description: この記事では、SkiaSharp パスの塗りつぶしの種類、使用可能なさまざまな効果を検査し、サンプル コードを示します。
-ms.prod: xamarin
-ms.assetid: 57103A7A-49A2-46AE-894C-7C2664682644
-ms.technology: xamarin-skiasharp
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/10/2017
-ms.openlocfilehash: 98081ed1a9aef1260150671d4fd026dd64c20b62
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c8c54f3d3815e418d2f71960dc7733711cb40ae2
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76723640"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139049"
 ---
 # <a name="the-path-fill-types"></a>パスの塗りつぶしの種類
 
@@ -20,22 +23,22 @@ ms.locfileid: "76723640"
 
 _SkiaSharp path fill 型で可能なさまざまな効果を発見する_
 
-パス内の 2 つの輪郭がオーバー ラップできるし、1 つの輪郭を構成する行が重複することができます。 任意の囲まれた領域は塗りつぶさ可能性があることができますが含まれているすべての領域を塗りつぶすしない可能性があります。 次に例を示します。
+パスの2つの輪郭が重なり、1つの輪郭を構成する線が重なり合うことがあります。 囲まれた領域はすべて塗りつぶされる可能性がありますが、囲まれたすべての領域を塗りつぶす必要はありません。 次に例を示します。
 
 ![](fill-types-images/filltypeexample.png "Five-pointed star partially filles")
 
-この少しのコントロールがあります。 入力アルゴリズムは、`SKPath`の[`SKFillType`](xref:SkiaSharp.SKPath.FillType)プロパティによって制御されます。これは、 [`SKPathFillType`](xref:SkiaSharp.SKPathFillType)列挙体のメンバーに設定します。
+これについては、簡単に制御できます。 入力アルゴリズムは、 [`SKFillType`](xref:SkiaSharp.SKPath.FillType) `SKPath` 列挙体のメンバーに設定したのプロパティによって管理され [`SKPathFillType`](xref:SkiaSharp.SKPathFillType) ます。
 
 - `Winding`、既定値
 - `EvenOdd`
 - `InverseWinding`
 - `InverseEvenOdd`
 
-ワインディングと偶の両方のアルゴリズムでは、任意の囲まれた領域が入力または無限にその領域から抽出された架空の行に基づいて入力されていないかどうかを決定します。 その行には、パスを構成する 1 つまたは複数の境界の行が交差します。 ワインディングのモードでは、逆方向の領域に描画される線の数を 1 つの方向のバランスに描画される境界線の数でない場合が入力されます。 それ以外の場合、領域が塗りつぶされます。 偶アルゴリズムは、境界の行の数が奇数の場合、領域を塗りつぶします。
+ワインディングアルゴリズムと偶数奇数アルゴリズムは、囲まれた領域が塗りつぶされるか、またはその領域から無限大に描画された架空の線に基づいて塗りつぶされるかを決定します。 この線は、パスを構成する1つ以上の境界線と交差します。 ワインディングモードでは、ある方向に描画される境界線の数が、もう一方の方向に描画される直線の数とのバランスを取る場合、領域は塗りつぶされません。 それ以外の場合、領域は塗りつぶされます。 境界線の数が奇数の場合、偶数のアルゴリズムは領域を塗りつぶします。
 
-多くの日常的なパスを持つワインディングのアルゴリズムは多くの場合、パスのすべての囲まれた領域を塗りつぶします。 一般に、偶アルゴリズムより興味深い結果が生成されます。
+多くのルーチンパスでは、ワインディングアルゴリズムによって、パスのすべての囲まれた領域がいっぱいになることがよくあります。 偶数の奇数のアルゴリズムでは、通常、より興味深い結果が生成されます。
 
-クラシックの例は、5つの**星**のページで説明されているように、星5つの星です。 [**Fivepointedstarpage .xaml**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/FivePointedStarPage.xaml)ファイルは、2つの `Picker` ビューをインスタンス化してパスの塗りつぶしの種類を選択し、パスがストロークされるか、または塗りつぶされるか、またはその両方を順番に指定します。
+クラシックの例は、5つの**星**のページで説明されているように、星5つの星です。 [**Fivepointedstarpage .xaml**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/FivePointedStarPage.xaml)ファイルは、2つのビューをインスタンス化して `Picker` パスの塗りつぶしの種類を選択し、パスがストロークされるか、または塗りつぶされるか、またはその両方を順番に指定します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -102,7 +105,7 @@ _SkiaSharp path fill 型で可能なさまざまな効果を発見する_
 </ContentPage>
 ```
 
-分離コードファイルでは、両方の `Picker` 値を使用して、次の5つの星を描画します。
+分離コードファイルは、両方の値を使用して、 `Picker` 次の5つの星を描画します。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -168,18 +171,18 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-通常、パスの塗りつぶしの種類は塗りつぶしにのみ影響し、ストロークは影響しませんが、2つの `Inverse` モードは塗りつぶしとストロークの両方に影響します。 塗りつぶしの場合、2つの `Inverse` の種類は oppositely の外側の領域を塗りつぶすように塗りつぶします。 ストロークの場合、2つの `Inverse` の種類はストロークを除くすべての色になります。 これらの逆の塗りつぶしの種類を使用すると、iOS のスクリーン ショットに示すように、奇数の効果をいくつかが生成することができます。
+通常、パスの塗りつぶしの種類は塗りつぶしにのみ影響し、ストロークは影響しませんが、2つの `Inverse` モードは塗りつぶしとストロークの両方に影響します。 塗りつぶしの場合、2つの型は、 `Inverse` 星の外側の領域が塗りつぶされるように、塗りつぶし領域を oppositely ます。 ストロークの場合、この 2 `Inverse` 種類の色はストロークを除くすべての色になります。 これらの逆フィルの種類を使用すると、iOS のスクリーンショットに示すように、いくつかの奇妙な効果が生じる可能性があります。
 
 [![](fill-types-images/fivepointedstar-small.png "Triple screenshot of the Five-Pointed Star page")](fill-types-images/fivepointedstar-large.png#lightbox "Triple screenshot of the Five-Pointed Star page")
 
 Android のスクリーンショットには、通常の奇数とワインディングの効果が示されていますが、ストロークと塗りつぶしの順序も結果に影響します。
 
-ワインディングのアルゴリズムでは、線が描画される方向に依存します。 通常、パスを作成する際を制御できますその方向の行が 1 つの点から描画される間を指定します。 ただし、`SKPath` クラスは、輪郭全体を描画する `AddRect` や `AddCircle` などのメソッドも定義します。 これらのオブジェクトの描画方法を制御するために、メソッドには[`SKPathDirection`](xref:SkiaSharp.SKPathDirection)型のパラメーターが含まれています。このパラメーターには、次の2つのメンバーがあります。
+ワインディングアルゴリズムは、線が描画される方向に依存します。 通常、パスを作成するときは、線がある点から別の点へと描画されるように指定するときに、その方向を制御できます。 ただし、クラスは、 `SKPath` `AddRect` 輪郭全体を描画するやなどのメソッドも定義し `AddCircle` ます。 これらのオブジェクトを描画する方法を制御するために、メソッドには、2つのメンバーを持つ型のパラメーターが含まれて [`SKPathDirection`](xref:SkiaSharp.SKPathDirection) います。
 
 - `Clockwise`
 - `CounterClockwise`
 
-`SKPathDirection` パラメーターを含む `SKPath` 内のメソッドには、`Clockwise`の既定値が与えられます。
+パラメーターを含むのメソッドでは、 `SKPath` `SKPathDirection` 既定値のが指定さ `Clockwise` れます。
 
 **重なった円**ページにより、偶数の円で始まるパスが作成されます。
 
@@ -221,7 +224,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-最小限のコードで作成した興味深いイメージであります。
+これは、最小限のコードで作成された興味深いイメージです。
 
 [![](fill-types-images/overlappingcircles-small.png "Triple screenshot of the Overlapping Circles page")](fill-types-images/overlappingcircles-large.png#lightbox "Triple screenshot of the Overlapping Circles page")
 

@@ -1,43 +1,46 @@
 ---
-title: Xamarin. フォームマップのピン
-description: この記事では、Xamarin. Forms マップでピンを作成する方法について説明します。
-ms.prod: xamarin
-ms.assetid: F8FC081B-A811-4FBB-B8F8-30D6FD36BD40
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/23/2019
-ms.openlocfilehash: 3df78a7c8eaf12306ade182f134f8d294d203af5
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+title: Xamarin.Formsピンのマップ
+description: この記事では、マップにピンを作成する方法について説明 Xamarin.Forms します。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5e22888291a430863b8e45ee21d359a5acec750f
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82517585"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138438"
 ---
-# <a name="xamarinforms-map-pins"></a>Xamarin. フォームマップのピン
+# <a name="xamarinforms-map-pins"></a>Xamarin.Formsピンのマップ
 
-[![](~/media/shared/download.png)サンプルをダウンロードするサンプルをダウンロードする](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
-Xamarin. フォーム[`Map`](xref:Xamarin.Forms.Maps.Map)コントロールでは、オブジェクトを使用し[`Pin`](xref:Xamarin.Forms.Maps.Pin)て場所をマークできます。 `Pin`は、タップしたときに情報ウィンドウを開くマップマーカーです。
+コントロールを使用 Xamarin.Forms [`Map`](xref:Xamarin.Forms.Maps.Map) すると、位置をオブジェクトでマークでき [`Pin`](xref:Xamarin.Forms.Maps.Pin) ます。 は、 `Pin` タップしたときに情報ウィンドウを開くマップマーカーです。
 
 [![IOS と Android のマップピンとその情報ウィンドウのスクリーンショット](pins-images/pin-and-information-window.png "Pin を情報ウィンドウにマップする")](pins-images/pin-and-information-window-large.png#lightbox "Pin を情報ウィンドウにマップする")
 
-[`Pin`](xref:Xamarin.Forms.Maps.Pin)オブジェクトが[`Map.Pins`](xref:Xamarin.Forms.Maps.Pin)コレクションに追加されると、ピンがマップに表示されます。
+[`Pin`](xref:Xamarin.Forms.Maps.Pin)オブジェクトがコレクションに追加されると、 [`Map.Pins`](xref:Xamarin.Forms.Maps.Pin) ピンがマップに表示されます。
 
 [`Pin`](xref:Xamarin.Forms.Maps.Pin)クラスには、次のプロパティがあります。
 
-- [`Address`](xref:Xamarin.Forms.Maps.Pin.Address)型`string`の。通常は、pin の場所のアドレスを表します。 ただし、アドレスだけでなく`string` 、任意のコンテンツを指定できます。
-- [`Label`](xref:Xamarin.Forms.Maps.Pin.Label)型`string`の。通常は pin のタイトルを表します。
-- [`Position`](xref:Xamarin.Forms.Maps.Pin.Position)ピンの緯度[`Position`](xref:Xamarin.Forms.Maps.Position)と経度を表す、型の。
-- [`Type`](xref:Xamarin.Forms.Maps.Pin.Type)ピンの種類[`PinType`](xref:Xamarin.Forms.Maps.PinType)を表す、型の。
+- [`Address`](xref:Xamarin.Forms.Maps.Pin.Address)型の `string` 。通常は、pin の場所のアドレスを表します。 ただし、アドレスだけでなく、任意のコンテンツを指定でき `string` ます。
+- [`Label`](xref:Xamarin.Forms.Maps.Pin.Label)型の `string` 。通常は pin のタイトルを表します。
+- [`Position`](xref:Xamarin.Forms.Maps.Pin.Position)[`Position`](xref:Xamarin.Forms.Maps.Position)ピンの緯度と経度を表す、型の。
+- [`Type`](xref:Xamarin.Forms.Maps.Pin.Type)[`PinType`](xref:Xamarin.Forms.Maps.PinType)ピンの種類を表す、型の。
 
-これらのプロパティは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)オブジェクトによって支え`Pin`られています。つまり、はデータバインディングのターゲットにすることができます。 データバインディング`Pin`オブジェクトの詳細については、「 [Pin コレクションの表示](#display-a-pin-collection)」を参照してください。
+これらのプロパティは、オブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。つまり、は `Pin` データバインディングのターゲットにすることができます。 データバインディングオブジェクトの詳細については `Pin` 、「 [pin コレクションの表示](#display-a-pin-collection)」を参照してください。
 
-さらに、クラス[`Pin`](xref:Xamarin.Forms.Maps.Pin)は、 `MarkerClicked`イベント`InfoWindowClicked`とイベントを定義します。 Pin `MarkerClicked`がタップされるとイベントが発生し、情報`InfoWindowClicked`ウィンドウがタップされるとイベントが発生します。 両方`PinClickedEventArgs`のイベントに付随するオブジェクトには`HideInfoWindow` 、型`bool`の1つのプロパティがあります。
+さらに、 [`Pin`](xref:Xamarin.Forms.Maps.Pin) クラスは、 `MarkerClicked` イベントとイベントを定義し `InfoWindowClicked` ます。 `MarkerClicked`Pin がタップされるとイベントが発生し、 `InfoWindowClicked` 情報ウィンドウがタップされるとイベントが発生します。 `PinClickedEventArgs`両方のイベントに付随するオブジェクトには `HideInfoWindow` 、型の1つのプロパティがあり `bool` ます。
 
 ## <a name="display-a-pin"></a>Pin を表示する
 
-は[`Pin`](xref:Xamarin.Forms.Maps.Pin) 、XAML [`Map`](xref:Xamarin.Forms.Maps.Map)のに追加できます。
+は、 [`Pin`](xref:Xamarin.Forms.Maps.Pin) XAML のに追加でき [`Map`](xref:Xamarin.Forms.Maps.Map) ます。
 
 ```xaml
 <ContentPage ...
@@ -77,9 +80,9 @@ Xamarin. フォーム[`Map`](xref:Xamarin.Forms.Maps.Map)コントロールで�
 </ContentPage>
 ```
 
-この XAML は、 [`Map`](xref:Xamarin.Forms.Maps.Map) [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan)オブジェクトによって指定された領域を表示するオブジェクトを作成します。 `MapSpan`オブジェクトは、 [`Position`](xref:Xamarin.Forms.Maps.Position)オブジェクトによって表される緯度と経度の中央にあり、0.01 緯度と経度の角度を超えています。 [`Pin`](xref:Xamarin.Forms.Maps.Pin)オブジェクト[`Map.Pins`](xref:Xamarin.Forms.Maps.Pin)がコレクションに追加され、 [`Position`](xref:Xamarin.Forms.Maps.Pin.Position)プロパティによって`Map`指定された位置のに描画されます。 構造体の[`Position`](xref:Xamarin.Forms.Maps.Position)詳細については、「[マップの位置と距離](position-distance.md)」を参照してください。 既定のコンストラクターを持たないオブジェクトに XAML の引数を渡す方法については、「 [xaml で引数を渡す](~/xamarin-forms/xaml/passing-arguments.md)」を参照してください。
+この XAML は、 [`Map`](xref:Xamarin.Forms.Maps.Map) オブジェクトによって指定された領域を表示するオブジェクトを作成し [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) ます。 オブジェクトは、 `MapSpan` オブジェクトによって表される緯度と経度の中央に [`Position`](xref:Xamarin.Forms.Maps.Position) あり、0.01 緯度と経度の角度を超えています。 [`Pin`](xref:Xamarin.Forms.Maps.Pin)オブジェクトがコレクションに追加され、 [`Map.Pins`](xref:Xamarin.Forms.Maps.Pin) `Map` プロパティによって指定された位置のに描画され [`Position`](xref:Xamarin.Forms.Maps.Pin.Position) ます。 構造体の詳細については [`Position`](xref:Xamarin.Forms.Maps.Position) 、「[マップの位置と距離](position-distance.md)」を参照してください。 既定のコンストラクターを持たないオブジェクトに XAML の引数を渡す方法については、「 [xaml で引数を渡す](~/xamarin-forms/xaml/passing-arguments.md)」を参照してください。
 
-該当の C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 using Xamarin.Forms.Maps;
@@ -99,7 +102,7 @@ map.Pins.Add(pin);
 ```
 
 > [!WARNING]
-> [`Pin.Label`](xref:Xamarin.Forms.Maps.Pin.Label)プロパティを設定しなかった場合は、 `ArgumentException` [`Pin`](xref:Xamarin.Forms.Maps.Pin)がに追加されると、が[`Map`](xref:Xamarin.Forms.Maps.Map)スローされます。
+> プロパティを設定しなかっ [`Pin.Label`](xref:Xamarin.Forms.Maps.Pin.Label) た場合は、 `ArgumentException` がに追加されると、がスローされ [`Pin`](xref:Xamarin.Forms.Maps.Pin) [`Map`](xref:Xamarin.Forms.Maps.Map) ます。
 
 このコード例では、マップに1つの pin がレンダリングされます。
 
@@ -107,15 +110,15 @@ map.Pins.Add(pin);
 
 ## <a name="interact-with-a-pin"></a>Pin を操作する
 
-既定では、 [`Pin`](xref:Xamarin.Forms.Maps.Pin)がタップされると、その情報ウィンドウが表示されます。
+既定では、 [`Pin`](xref:Xamarin.Forms.Maps.Pin) がタップされると、その情報ウィンドウが表示されます。
 
 [![IOS と Android のマップピンとその情報ウィンドウのスクリーンショット](pins-images/pin-and-information-window.png "Pin を情報ウィンドウにマップする")](pins-images/pin-and-information-window-large.png#lightbox "Pin を情報ウィンドウにマップする")
 
 マップ上の他の場所をタップすると、情報ウィンドウが閉じます。
 
-クラス[`Pin`](xref:Xamarin.Forms.Maps.Pin)は、 `Pin`が`MarkerClicked`タップされたときに発生するイベントを定義します。 情報ウィンドウを表示するためにこのイベントを処理する必要はありません。 代わりに、特定の pin がタップされたことを通知する必要がある場合に、このイベントを処理する必要があります。
+クラスは、 [`Pin`](xref:Xamarin.Forms.Maps.Pin) `MarkerClicked` がタップされたときに発生するイベントを定義し `Pin` ます。 情報ウィンドウを表示するためにこのイベントを処理する必要はありません。 代わりに、特定の pin がタップされたことを通知する必要がある場合に、このイベントを処理する必要があります。
 
-また[`Pin`](xref:Xamarin.Forms.Maps.Pin) 、クラスは、 `InfoWindowClicked`情報ウィンドウがタップされたときに発生するイベントも定義します。 このイベントは、特定の情報ウィンドウがタップされたことを通知する必要がある場合に処理する必要があります。
+[`Pin`](xref:Xamarin.Forms.Maps.Pin)また、クラスは、 `InfoWindowClicked` 情報ウィンドウがタップされたときに発生するイベントも定義します。 このイベントは、特定の情報ウィンドウがタップされたことを通知する必要がある場合に処理する必要があります。
 
 次のコードは、これらのイベントを処理する例を示しています。
 
@@ -150,31 +153,31 @@ wharfPin.InfoWindowClicked += async (s, args) =>
 };
 ```
 
-両方`PinClickedEventArgs`のイベントに付随するオブジェクトには`HideInfoWindow` 、型`bool`の1つのプロパティがあります。 イベントハンドラー内でこのプロパティ`true`がに設定されている場合、情報ウィンドウは非表示になります。
+`PinClickedEventArgs`両方のイベントに付随するオブジェクトには `HideInfoWindow` 、型の1つのプロパティがあり `bool` ます。 イベントハンドラー内でこのプロパティがに設定さ `true` れている場合、情報ウィンドウは非表示になります。
 
 ## <a name="pin-types"></a>Pin の種類
 
-[`Pin`](xref:Xamarin.Forms.Maps.Pin)オブジェクトには[`Type`](xref:Xamarin.Forms.Maps.Pin.Type) 、pin の種類[`PinType`](xref:Xamarin.Forms.Maps.PinType)を表す型のプロパティが含まれます。 `PinType` 列挙体を使って、次のメンバーを定義できます。
+[`Pin`](xref:Xamarin.Forms.Maps.Pin)オブジェクトには、 [`Type`](xref:Xamarin.Forms.Maps.Pin.Type) pin の種類を表す型のプロパティが含ま [`PinType`](xref:Xamarin.Forms.Maps.PinType) れます。 `PinType` 列挙体を使って、次のメンバーを定義できます。
 
 - `Generic`は汎用的な pin を表します。
 - `Place`は、場所の pin を表します。
 - `SavedPin`は、保存された場所の pin を表します。
 - `SearchResult`は、検索結果の pin を表します。
 
-ただし、 [`Pin.Type`](xref:Xamarin.Forms.Maps.Pin.Type)プロパティを任意[`PinType`](xref:Xamarin.Forms.Maps.PinType)のメンバーに設定しても、表示される pin の外観は変わりません。 代わりに、カスタムレンダラーを作成して、pin の外観をカスタマイズする必要があります。 詳細については、「[マップのピン留めをカスタマイズする](~/xamarin-forms/app-fundamentals/custom-renderer/map-pin.md)」を参照してください。
+ただし、プロパティを [`Pin.Type`](xref:Xamarin.Forms.Maps.Pin.Type) 任意のメンバーに設定しても、 [`PinType`](xref:Xamarin.Forms.Maps.PinType) 表示される pin の外観は変わりません。 代わりに、カスタムレンダラーを作成して、pin の外観をカスタマイズする必要があります。 詳細については、「[マップのピン留めをカスタマイズする](~/xamarin-forms/app-fundamentals/custom-renderer/map-pin.md)」を参照してください。
 
 ## <a name="display-a-pin-collection"></a>Pin コレクションを表示する
 
-クラス[`Map`](xref:Xamarin.Forms.Maps.Map)は、次のプロパティを定義します。
+[`Map`](xref:Xamarin.Forms.Maps.Map)クラスは、次のプロパティを定義します。
 
-- [`ItemsSource`](xref:Xamarin.Forms.Maps.Map.ItemsSource)表示する項目`IEnumerable`の`IEnumerable`コレクションを指定する型の。
-- [`ItemTemplate`](xref:Xamarin.Forms.Maps.Map.ItemTemplate)型[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)の。これは、表示[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)されている項目のコレクション内の各項目に適用するを指定します。
-- `ItemTemplateSelector`型[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)の。これは、実行[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)時に項目のを[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)選択するために使用されるを指定します。
+- [`ItemsSource`](xref:Xamarin.Forms.Maps.Map.ItemsSource)`IEnumerable`表示する項目のコレクションを指定する型の。 `IEnumerable`
+- [`ItemTemplate`](xref:Xamarin.Forms.Maps.Map.ItemTemplate)型の。 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) これは、 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 表示されている項目のコレクション内の各項目に適用するを指定します。
+- `ItemTemplateSelector`型の。 [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) これは、 [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 実行時に項目のを選択するために使用されるを指定します。
 
 > [!IMPORTANT]
-> プロパティ[`ItemTemplate`](xref:Xamarin.Forms.Maps.Map.ItemTemplate) `ItemTemplate`と`ItemTemplateSelector`プロパティの両方が設定されている場合は、プロパティが優先されます。
+> [`ItemTemplate`](xref:Xamarin.Forms.Maps.Map.ItemTemplate)プロパティ `ItemTemplate` とプロパティの両方が設定されている場合は、プロパティが優先 `ItemTemplateSelector` されます。
 
-データ[`Map`](xref:Xamarin.Forms.Maps.Map)バインディングを使用して、 [`ItemsSource`](xref:Xamarin.Forms.Maps.Map.ItemsSource)プロパティを`IEnumerable`コレクションにバインドすることにより、にピンを設定できます。
+データバインディングを使用して、 [`Map`](xref:Xamarin.Forms.Maps.Map) プロパティをコレクションにバインドすることにより、にピンを設定でき [`ItemsSource`](xref:Xamarin.Forms.Maps.Map.ItemsSource) `IEnumerable` ます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -198,17 +201,17 @@ wharfPin.InfoWindowClicked += async (s, args) =>
 </ContentPage>
 ```
 
-プロパティ[`ItemsSource`](xref:Xamarin.Forms.Maps.Map.ItemsSource)データは、接続さ`Locations`れたビューモデルのプロパティにバインドさ`ObservableCollection`れ`Location`ます。このプロパティは、カスタム型のオブジェクトのを返します。 各`Location`オブジェクトは`Address` 、 `Description`型のプロパティと`string`プロパティ`Position` 、および型[`Position`](xref:Xamarin.Forms.Maps.Position)のプロパティを定義します。
+[`ItemsSource`](xref:Xamarin.Forms.Maps.Map.ItemsSource)プロパティデータは、 `Locations` 接続されたビューモデルのプロパティにバインドされます。このプロパティ `ObservableCollection` は、カスタム型のオブジェクトのを返し `Location` ます。 各オブジェクトは、型の `Location` プロパティとプロパティ、および型のプロパティを定義し `Address` `Description` `string` `Position` [`Position`](xref:Xamarin.Forms.Maps.Position) ます。
 
-コレクション内の各項目の外観を定義するには、 [`ItemTemplate`](xref:Xamarin.Forms.Maps.Map.ItemTemplate)適切なプロパティ[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)にデータを[`Pin`](xref:Xamarin.Forms.Maps.Pin)バインドするオブジェクトを含むにプロパティを設定します。 `IEnumerable`
+コレクション内の各項目の外観を `IEnumerable` 定義するには、 [`ItemTemplate`](xref:Xamarin.Forms.Maps.Map.ItemTemplate) [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) [`Pin`](xref:Xamarin.Forms.Maps.Pin) 適切なプロパティにデータをバインドするオブジェクトを含むにプロパティを設定します。
 
-次のスクリーンショットは[`Map`](xref:Xamarin.Forms.Maps.Map) 、データ[`Pin`](xref:Xamarin.Forms.Maps.Pin)バインディングを使用してコレクションを表示する方法を示しています。
+次のスクリーンショットは、 [`Map`](xref:Xamarin.Forms.Maps.Map) [`Pin`](xref:Xamarin.Forms.Maps.Pin) データバインディングを使用してコレクションを表示する方法を示しています。
 
 [![IOS と Android でのデータバインドされた pin を使用したマップのスクリーンショット](pins-images/pins-itemsource.png "データバインドされた pin を使用したマップ")](pins-images/pins-itemsource-large.png#lightbox "データバインドされた pin を使用したマップ")
 
 ### <a name="choose-item-appearance-at-runtime"></a>実行時に項目の外観を選択する
 
-`IEnumerable`コレクション内の各項目の外観は、 `ItemTemplateSelector`プロパティをに設定することにより、項目の値に基づいて実行時に選択でき[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)ます。
+コレクション内の各項目の外観は、プロパティをに `IEnumerable` 設定することにより、項目の値に基づいて実行時に選択でき `ItemTemplateSelector` [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) ます。
 
 ```xaml
 <ContentPage ...
@@ -244,7 +247,7 @@ wharfPin.InfoWindowClicked += async (s, args) =>
 </ContentPage>
 ```
 
-クラスの`MapItemTemplateSelector`例を次に示します。
+クラスの例を次に示し `MapItemTemplateSelector` ます。
 
 ```csharp
 public class MapItemTemplateSelector : DataTemplateSelector
@@ -259,16 +262,16 @@ public class MapItemTemplateSelector : DataTemplateSelector
 }
 ```
 
-クラス`MapItemTemplateSelector`は、 `DefaultTemplate`さまざま`XamarinTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)なデータテンプレートに設定されるプロパティとプロパティを定義します。 メソッド`OnSelectTemplate`はを返し`XamarinTemplate`ます。このメソッドは、 `Pin`がタップされたときに "Xamarin" をラベルとして表示し、項目に "サンフランシスコ" を含むアドレスがある場合はそれを表示します。 "サンフランシスコ" を含むアドレスが項目に含まれていない`OnSelectTemplate`場合、メソッド`DefaultTemplate`はを返します。
+`MapItemTemplateSelector`クラスは、 `DefaultTemplate` `XamarinTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) さまざまなデータテンプレートに設定されるプロパティとプロパティを定義します。 メソッドはを返します。このメソッドは、 `OnSelectTemplate` `XamarinTemplate` がタップされたときに "Xamarin" をラベルとして表示し、 `Pin` 項目に "サンフランシスコ" を含むアドレスがある場合はそれを表示します。 "サンフランシスコ" を含むアドレスが項目に含まれていない場合、メソッドはを `OnSelectTemplate` 返し `DefaultTemplate` ます。
 
 > [!NOTE]
-> この機能のユースケースは、サブ型に基づいて[`Pin`](xref:Xamarin.Forms.Maps.Pin) `Pin` 、サブ分類されたオブジェクトのプロパティを別のプロパティにバインドすることです。
+> この機能のユースケースは、サブ型に基づいて、サブ分類されたオブジェクトのプロパティ [`Pin`](xref:Xamarin.Forms.Maps.Pin) を別のプロパティにバインドすることです `Pin` 。
 
-データテンプレートセレクターの詳細については、「 [DataTemplateSelector の作成](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)」を参照してください。
+データテンプレートセレクターの詳細については、「 [ Xamarin.Forms DataTemplateSelector の作成](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 
 - [Maps サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 - [カスタムレンダラーのマップ](~/xamarin-forms/app-fundamentals/custom-renderer/map-pin.md)
-- [渡す (引数を XAML で)](~/xamarin-forms/xaml/passing-arguments.md)
-- [Xamarin.Forms DataTemplateSelector の作成](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)
+- [XAML での引数の受け渡し](~/xamarin-forms/xaml/passing-arguments.md)
+- [DataTemplateSelector の作成 Xamarin.Forms](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

@@ -1,24 +1,27 @@
 ---
-title: Windows 上の TabbedPage アイコン
-description: プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。 この記事では、TabbedPage ツールバーにページアイコンを表示できるようにする、Windows プラットフォーム固有のを使用する方法について説明します。
-ms.prod: xamarin
-ms.assetid: 7C5031A5-74EE-4469-994E-BEA7BA9D33CB
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/24/2018
-ms.openlocfilehash: a40203e4d01f45ef36ee6988198400a259600aac
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f6db5014050ad3f037869120d017e51803a7c48f
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198098"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136540"
 ---
 # <a name="tabbedpage-icons-on-windows"></a>Windows 上の TabbedPage アイコン
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-これユニバーサル Windows プラットフォームプラットフォーム固有の機能により、 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)ツールバーにページアイコンが表示されるようになります。また、必要に応じてアイコンのサイズを指定することもできます。 XAML で設定して使用される、 [ `TabbedPage.HeaderIconsEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.HeaderIconsEnabledProperty)添付プロパティを`true`、および必要に応じて設定して、 [ `TabbedPage.HeaderIconsSize` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.HeaderIconsSizeProperty)添付プロパティを[ `Size`](xref:Xamarin.Forms.Size)値。
+これユニバーサル Windows プラットフォームプラットフォーム固有の機能により、ツールバーにページアイコンが表示されるようになり [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) ます。また、必要に応じてアイコンのサイズを指定することもできます。 添付プロパティをに設定し、 [`TabbedPage.HeaderIconsEnabled`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.HeaderIconsEnabledProperty) `true` 必要に応じて添付プロパティを値に設定することにより、XAML で使用され [`TabbedPage.HeaderIconsSize`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.HeaderIconsSizeProperty) [`Size`](xref:Xamarin.Forms.Size) ます。
 
 ```xaml
 <TabbedPage ...
@@ -44,7 +47,7 @@ ms.locfileid: "70198098"
 </TabbedPage>
 ```
 
-代わりに、fluent API を使用して C# から使用できます。
+または、fluent API を使用して C# から使用することもできます。
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -65,16 +68,16 @@ public class WindowsTabbedPageIconsCS : Xamarin.Forms.TabbedPage
 }
 ```
 
-`TabbedPage.On<Windows>`メソッドは、このプラットフォームに固有はユニバーサル Windows プラットフォームでのみ実行されるを指定します。 [ `TabbedPage.SetHeaderIconsEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.SetHeaderIconsEnabled(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.TabbedPage},System.Boolean))メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)名前空間はヘッダー アイコンをオンまたはオフにするために使用します。 [ `TabbedPage.SetHeaderIconsSize` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.SetHeaderIconsSize(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Windows,Xamarin.Forms.TabbedPage},Xamarin.Forms.Size))メソッドは、必要に応じてでヘッダーのアイコンのサイズを指定します、 [ `Size` ](xref:Xamarin.Forms.Size)値。
+`TabbedPage.On<Windows>`メソッドは、このプラットフォーム固有のがユニバーサル Windows プラットフォームでのみ実行されることを指定します。 [ `TabbedPage.SetHeaderIconsEnabled` ] (Xref: Xamarin.FormsPlatformConfiguration. TabbedPage. SetHeaderIconsEnabled ( Xamarin.Forms .IPlatformElementConfiguration { Xamarin.Forms .PlatformConfiguration. Windows、 Xamarin.Forms 。TabbedPage}, System. Boolean) メソッドを [`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) 名前空間で使用して、ヘッダーアイコンのオンとオフを切り替えます。 [ `TabbedPage.SetHeaderIconsSize` ] (Xref: Xamarin.FormsPlatformConfiguration. TabbedPage. SetHeaderIconsSize ( Xamarin.Forms .IPlatformElementConfiguration { Xamarin.Forms .PlatformConfiguration. Windows、 Xamarin.Forms 。TabbedPage}, Xamarin.Forms 。Size) メソッドオプションで、ヘッダーアイコンのサイズを値で指定し [`Size`](xref:Xamarin.Forms.Size) ます。
 
-さらに、`TabbedPage`クラス、`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`名前空間があります、 [ `EnableHeaderIcons` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.EnableHeaderIcons*)ヘッダーのアイコンをできるようにするメソッド、 [ `DisableHeaderIcons` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.DisableHeaderIcons*)ヘッダーのアイコンを無効にするメソッドと[ `IsHeaderIconsEnabled` ](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.IsHeaderIconsEnabled*)を返すメソッドを`boolean`ヘッダーのアイコンが有効になっているかどうかを示す値です。
+さらに、名前空間のクラスには、ヘッダーアイコンを有効にするメソッド、ヘッダーアイコンを `TabbedPage` `Xamarin.Forms.PlatformConfiguration.WindowsSpecific` [`EnableHeaderIcons`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.EnableHeaderIcons*) [`DisableHeaderIcons`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.DisableHeaderIcons*) 無効にするメソッド、および [`IsHeaderIconsEnabled`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.IsHeaderIconsEnabled*) `boolean` ヘッダーアイコンが有効かどうかを示す値を返すメソッドもあります。
 
-結果は、そのページのアイコンを表示することができます、 [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) 、オプションで必要なサイズに設定されているアイコンのサイズを含むツールバー。
+その結果、ページアイコンがツールバーに表示されるようになり [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) ます。アイコンのサイズは必要に応じて必要なサイズに設定されます。
 
-![TabbedPage プラットフォーム固有のアイコンが有効になっている](tabbedpage-icons-images/tabbedpage-icons.png "TabbedPage プラットフォーム固有のアイコンが有効になっています。")
+![TabbedPage アイコンが有効になっているプラットフォーム固有](tabbedpage-icons-images/tabbedpage-icons.png "TabbedPage アイコンが有効になっているプラットフォーム固有")
 
 ## <a name="related-links"></a>関連リンク
 
-- [プラットフォーム仕様 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
-- [プラットフォーム仕様の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
+- [PlatformSpecifics (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [プラットフォーム固有設定の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [WindowsSpecific の API](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

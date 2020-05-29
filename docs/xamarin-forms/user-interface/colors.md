@@ -1,39 +1,42 @@
 ---
-title: Xamarin 形式の色
-description: Xamarin Forms は、柔軟なクロスプラットフォームカラークラスを提供します。 この記事では、Color クラスによって提供される機能とその使用方法について説明します。
-ms.prod: xamarin
-ms.assetid: 22288ABF-57BE-47A9-ACC3-AC604D787C46
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/02/2020
-ms.openlocfilehash: 42b532b8565d2d8e0289b8fd446e1dd7762a09ac
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+title: 色Xamarin.Forms
+description: Xamarin.Forms柔軟なクロスプラットフォームカラークラスを提供します。 この記事では、Color クラスによって提供される機能とその使用方法について説明します。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a02fe7451702367d85d322b756df4a547a009454
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82517034"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137346"
 ---
-# <a name="colors-in-xamarinforms"></a>Xamarin 形式の色
+# <a name="colors-in-xamarinforms"></a>色Xamarin.Forms
 
-[![](~/media/shared/download.png)サンプルをダウンロードするサンプルをダウンロードする](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithcolors)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithcolors)
 
 _Xamarin Forms は、柔軟なクロスプラットフォームカラークラスを提供します。_
 
-この記事では、Xamarin で[`Color`](xref:Xamarin.Forms.Color)クラスを使用するさまざまな方法を紹介します。
+この記事では、でクラスを使用するさまざまな方法について説明し [`Color`](xref:Xamarin.Forms.Color) Xamarin.Forms ます。
 
-クラス[`Color`](xref:Xamarin.Forms.Color)には、インスタンスを`Color`構築するためのメソッドがいくつか用意されています。
+クラスには、 [`Color`](xref:Xamarin.Forms.Color) インスタンスを構築するためのメソッドがいくつか用意されてい `Color` ます。
 
-- **名前**付きの色- `Red`、 `Green`、など、一般的な名前付きの色`Blue`のコレクション。
+- **名前**付きの色-、、など、一般的な名前付きの色のコレクション `Red` `Green` `Blue` 。
 - `FromHex`-HTML で使用される構文 ("00FF00" など) に類似した文字列値。 必要に応じて、最初の文字ペア ("CC00FF00") として Alpha を指定できます。
-- `FromHsla`-色合い、鮮やかさ、および`double`明るさの値 (オプションのアルファ値 (0.0 ~ 1.0))。
-- `FromHsv`-色相、鮮やかさ、値`int`または`double`値。
-- `FromHsva`-色相、鮮やかさ、値`int`または`double`値。
-- `FromRgb`-赤、緑、および青`int`の値 (0-255)。
-- `FromRgba`-赤、緑、青、およびアルファ`int`値 (0-255)。
-- `FromUint`-argb を表す`double`単一の**argb**値を設定します。
+- `FromHsla`-色合い、鮮やかさ、および明るさの `double` 値 (オプションのアルファ値 (0.0 ~ 1.0))。
+- `FromHsv`-色相、鮮やかさ、値 `int` または値 `double` 。
+- `FromHsva`-色相、鮮やかさ、値 `int` または値 `double` 。
+- `FromRgb`-赤、緑、および青の `int` 値 (0-255)。
+- `FromRgba`-赤、緑、青、およびアルファ `int` 値 (0-255)。
+- `FromUint`- `double` **argb**を表す単一の値を設定します。
 
-次に、許可されている構文`BackgroundColor`のさまざまなバリエーションを使用して、一部のラベルのに割り当てられている色の例を示します。
+次に、 `BackgroundColor` 許可されている構文のさまざまなバリエーションを使用して、一部のラベルのに割り当てられている色の例を示します。
 
 ```csharp
 var red    = new Label { Text = "Red",   BackgroundColor = Color.Red };
@@ -49,15 +52,15 @@ var @default = new Label    { Text = "Default",    BackgroundColor = Color.Defau
 var accent = new Label      { Text = "Accent",     BackgroundColor = Color.Accent };
 ```
 
-これらの色は、以下のプラットフォームごとに表示されます。 最終的な色`Accent`に注意してください。 IOS と Android では、青の色が使用されます。この値は、Xamarin. Forms によって定義されます。
+これらの色は、以下のプラットフォームごとに表示されます。 最終的な色は、iOS と Android の青色の色であることに注意して `Accent` ください。この値はによって定義され Xamarin.Forms ます。
 
  [![色のデモ](colors-images/colors-sml.png "色のデモ")](colors-images/colors.png#lightbox "色のデモ")
 
 ## <a name="colordefault"></a>色。既定値
 
-を使用`Default`して、色の値をプラットフォームの既定値に戻します (または再設定します)。これは、各プロパティのプラットフォームごとに、基になる色が異なることを理解しています。
+を使用して、 `Default` 色の値をプラットフォームの既定値に戻します (または再設定します)。これは、各プロパティのプラットフォームごとに、基になる色が異なることを理解しています。
 
-開発者はこの値を使用し`Color`てプロパティを設定できますが、コンポーネントの RGB 値に対してこのインスタンスのクエリを実行することはできません (すべて-1 に設定**されてい**ます)。
+開発者はこの値を使用し `Color` てプロパティを設定できますが、コンポーネントの RGB 値に対してこのインスタンスのクエリを実行することはできません (すべて-1 に設定**されてい**ます)。
 
 ## <a name="colortransparent"></a>色透明
 
@@ -71,16 +74,16 @@ IOS および Android では、このインスタンスは、既定の背景に�
 
 [`Color`](xref:Xamarin.Forms.Color)インスタンスには、次の追加メソッドが含まれます。
 
-- `AddLuminosity`-指定さ`Color`れたデルタによって輝度を変更することによって、を返します。
-- `MultiplyAlpha`-指定さ`Color`れたアルファ値で乗算されたアルファを変更することによって、を返します。
-- `ToHex`-の16進数`string`表現を返し`Color`ます。
-- `WithHue`-を返し`Color`ます。色合いを指定された値に置き換えます。
-- `WithLuminosity`-を返し`Color`ます。これは、指定された値で明るさを置き換えます。
-- `WithSaturation`-を返し`Color`ます。鮮やかさを指定された値に置き換えます。
+- `AddLuminosity`-指定された `Color` デルタによって輝度を変更することによって、を返します。
+- `MultiplyAlpha`-指定された `Color` アルファ値で乗算されたアルファを変更することによって、を返します。
+- `ToHex`-の16進数 `string` 表現を返し `Color` ます。
+- `WithHue`-を返し `Color` ます。色合いを指定された値に置き換えます。
+- `WithLuminosity`-を返します。これは、指定された `Color` 値で明るさを置き換えます。
+- `WithSaturation`-を返し `Color` ます。鮮やかさを指定された値に置き換えます。
 
 ## <a name="implicit-conversions"></a>暗黙の変換
 
-型と`System.Drawing.Color`型の`Xamarin.Forms.Color`間の暗黙的な変換は、次のように実行できます。
+型と型の間の暗黙的な変換は、次のように `Xamarin.Forms.Color` `System.Drawing.Color` 実行できます。
 
 ```csharp
 Xamarin.Forms.Color xfColor = Xamarin.Forms.Color.FromRgb(0, 72, 255);
@@ -95,7 +98,7 @@ Xamarin.Forms.Color xfColor2 = sdColor;
 
 ## <a name="deviceruntimeplatform"></a>デバイス. RuntimePlatform
 
-このコードスニペットでは`Device.RuntimePlatform` 、プロパティを使用して、 `ActivityIndicator`の色を選択的に設定します。
+このコードスニペットでは、プロパティを使用して `Device.RuntimePlatform` 、の色を選択的に設定し `ActivityIndicator` ます。
 
 ```csharp
 ActivityIndicator activityIndicator = new ActivityIndicator

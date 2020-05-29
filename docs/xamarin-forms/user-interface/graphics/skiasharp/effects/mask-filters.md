@@ -1,49 +1,52 @@
 ---
-title: SkiaSharp マスク フィルター
-description: マスクのフィルタを使用して、ぼかしやその他のアルファのエフェクトを作成する方法について説明します。
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 940422A1-8BC0-4039-8AD7-26C61320F858
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/27/2018
-ms.openlocfilehash: 36a8b5c32261d4f508c82feea1e6127574db6a20
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 10192e93d2e20f9aa58ca95dd81c07f560193905
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70198249"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136410"
 ---
-# <a name="skiasharp-mask-filters"></a>SkiaSharp マスク フィルター
+# <a name="skiasharp-mask-filters"></a>SkiaSharp mask フィルター
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-フィルターのマスクは、ジオメトリとグラフィカル オブジェクトのアルファ チャネルを操作する効果。 マスクのフィルタを使用する設定、 [ `MaskFilter` ](xref:SkiaSharp.SKPaint.MaskFilter)プロパティの`SKPaint`型のオブジェクトに[ `SKMaskFilter` ](xref:SkiaSharp.SKMaskFilter)のいずれかを呼び出すことで作成したこと、`SKMaskFilter`静的メソッド。
+マスクフィルターは、グラフィカルオブジェクトのジオメトリおよびアルファチャネルを操作する効果です。 マスクフィルターを使用するには、 [`MaskFilter`](xref:SkiaSharp.SKPaint.MaskFilter) のプロパティを、 `SKPaint` [`SKMaskFilter`](xref:SkiaSharp.SKMaskFilter) いずれかの静的メソッドを呼び出すことによって作成した型のオブジェクトに設定し `SKMaskFilter` ます。
 
-フィルターのマスクを理解する最善の方法では、これらの静的メソッドを使って試してみるです。 マスクのフィルタを最も役に立つには、ぼかしが作成されます。
+マスクフィルターを理解する最善の方法は、これらの静的メソッドを試してみることです。 最も役に立つマスクフィルターは、ぼかしを作成します。
 
-![例のぼかし](mask-filters-images/MaskFilterExample.png "ぼかしの例")
+![ぼかしの例](mask-filters-images/MaskFilterExample.png "ぼかしの例")
 
-この記事で説明されている唯一のマスク フィルター機能です。 次の記事[ **SkiaSharp イメージ フィルター** ](image-filters.md)に望ましいと考えられるぼかし効果についても説明します。 
+これは、この記事で説明されている唯一のマスクフィルター機能です。 また、 [**SkiaSharp イメージフィルター**](image-filters.md)に関する次の記事でも、このようなぼかし効果について説明します。 
 
-静的な[ `SKMaskFilter.CreateBlur` ](xref:SkiaSharp.SKMaskFilter.CreateBlur(SkiaSharp.SKBlurStyle,System.Single))メソッドには、次の構文。
+静的 [`SKMaskFilter.CreateBlur`](xref:SkiaSharp.SKMaskFilter.CreateBlur(SkiaSharp.SKBlurStyle,System.Single)) メソッドの構文は次のとおりです。
 
 ```csharp
 public static SKMaskFilter CreateBlur (SKBlurStyle blurStyle, float sigma);
 ```
 
-ブラ ―、およびその他のグラフィカル オブジェクトでカバーされます領域にぼかし効果を回避するために四角形を作成するために使用するアルゴリズムのフラグを指定することができるオーバー ロードします。
+オーバーロードでは、ぼかしの作成に使用されるアルゴリズムにフラグを指定したり、他のグラフィカルオブジェクトで覆われる領域のぼかしを避けるための四角形を使用したりできます。
 
-[`SKBlurStyle`](xref:SkiaSharp.SKBlurStyle) 次のメンバーを持つ列挙型を示します。
+[`SKBlurStyle`](xref:SkiaSharp.SKBlurStyle)は、次のメンバーを持つ列挙体です。
 
 - `Normal`
 - `Solid`
 - `Outer`
 - `Inner`
 
-次の例では、これらのスタイルの効果が表示されます。 `sigma`ぼかしの範囲を指定します。 Skia の以前のバージョンでは、ぼかしのエクステントは、半径の値で示されていました。 静的ながある場合は、半径の値が、アプリケーションの推奨[ `SKMaskFilter.ConvertRadiusToSigma` ](xref:SkiaSharp.SKMaskFilter.ConvertRadiusToSigma*)メソッドを他のいずれかから変換できます。 メソッドは、0.57735 半径を乗算し、0.5 を追加します。
+これらのスタイルの効果を次の例に示します。 パラメーターは、 `sigma` ぼかしの範囲を指定します。 以前のバージョンの Skia では、ぼかしの範囲は半径値で示されていました。 Radius 値がアプリケーションに適している場合は、 [`SKMaskFilter.ConvertRadiusToSigma`](xref:SkiaSharp.SKMaskFilter.ConvertRadiusToSigma*) 一方を別のに変換できる静的メソッドがあります。 このメソッドは、半径を0.57735 で乗算し、0.5 を追加します。
 
-**マスクぼかし実験**ページで、 [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)ぼかしスタイル シグマ値で実験することができます。 XAML ファイルのインスタンスを作成、 `Picker` 4 つの`SKBlurStyle`列挙型メンバー、`Slider`シグマ値を指定します。
+[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルの**マスクのぼかし実験**ページでは、ぼかしのスタイルとシグマの値を試すことができます。 XAML ファイルは、 `Picker` 4 つの `SKBlurStyle` 列挙体メンバーと、シグマ値を指定するを使用してをインスタンス化し `Slider` ます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -89,7 +92,7 @@ public static SKMaskFilter CreateBlur (SKBlurStyle blurStyle, float sigma);
 </ContentPage>
 ```
 
-分離コード ファイルでは、これらの値を使用して、作成、`SKMaskFilter`オブジェクトし、設定、`MaskFilter`のプロパティ、`SKPaint`オブジェクト。 これは、`SKPaint`オブジェクトは、テキスト文字列とビットマップの両方を描画するために使用します。
+分離コードファイルでは、これらの値を使用してオブジェクトを作成し、オブジェクト `SKMaskFilter` のプロパティに設定し `MaskFilter` `SKPaint` ます。 この `SKPaint` オブジェクトは、テキスト文字列とビットマップの両方を描画するために使用されます。
 
 ```csharp
 public partial class MaskBlurExperimentPage : ContentPage
@@ -157,40 +160,40 @@ public partial class MaskBlurExperimentPage : ContentPage
 }
 ```
 
-ここでは、iOS、Android、およびとユニバーサル Windows プラットフォーム (UWP) で実行されているプログラム、`Normal`スタイル、および増加のぼかし`sigma`レベル。
+次の例では、iOS、Android、およびユニバーサル Windows プラットフォーム (UWP) で、ぼかしスタイルを使用して、レベルを上げるプログラムを実行してい `Normal` `sigma` ます。
 
-[![マスクのぼかし実験 - Normal](mask-filters-images/MaskBlurExperiment-Normal.png "マスクぼかし実験 - 標準")](mask-filters-images/MaskBlurExperiment-Normal-Large.png#lightbox)
+[![マスクのぼかし実験-標準](mask-filters-images/MaskBlurExperiment-Normal.png "マスクのぼかし実験-標準")](mask-filters-images/MaskBlurExperiment-Normal-Large.png#lightbox)
 
-ビットマップの端だけがぼかしによって影響を受けることがわかります。 `SKMaskFilter`クラスは、ビットマップ全体のイメージがぼかしたい場合に使用する適切な効果はありません。 そのを使用する、 [ `SKImageFilter` ](xref:SkiaSharp.SKImageFilter)クラスでは、次の記事で説明されている[ **SkiaSharp イメージ フィルター**](image-filters.md)します。
+ビットマップの端だけがぼかしの影響を受けていることがわかります。 `SKMaskFilter`ビットマップイメージ全体をぼかす必要がある場合、クラスは正しい効果を持ちません。 そのためには、 [`SKImageFilter`](xref:SkiaSharp.SKImageFilter) [**SkiaSharp イメージフィルター**](image-filters.md)に関する次の記事で説明されているように、クラスを使用します。
 
-複数の値を増やすことで、テキストがあいまい、`sigma`引数。 このプログラムをみることがわかります特定の`sigma`値、ぼかしは、Windows 10 デスクトップより極端な。 この違いは、ピクセル密度は、モバイル デバイスでよりもデスクトップ モニターの下部のテキストの高さ (ピクセル単位) が低いためために発生します。 `sigma`値はピクセル単位でぼかしエクステントに比例ため、指定された`sigma`値、効果は極端な解像度。 運用環境のアプリケーションでおそらくたい計算、`sigma`グラフィックのサイズに比例した値。 
+引数の値を大きくすると、テキストがぼやけて表示され `sigma` ます。 このプログラムを試してみると、特定の値について `sigma` は、Windows 10 デスクトップでのぼかしがより極端に増えていることがわかります。 この違いが発生するのは、ピクセル密度がモバイルデバイスよりもデスクトップモニターで低いため、テキストの高さ (ピクセル単位) が低いためです。 `sigma`値はぼかしの範囲 (ピクセル単位) に比例します。したがって、特定の値に対しては、 `sigma` 解像度が低いほど高い効果が得られます。 実稼働アプリケーションでは、 `sigma` グラフィックのサイズに比例した値を計算することが必要になる場合があります。 
 
-ぼかし、アプリケーションの最適なを検索する前に、いくつかの値をお試しください。 たとえば、**マスクぼかし実験** ページで、設定を試みてください`sigma`次のように。
+アプリケーションに最適なぼかしレベルを使用する前に、いくつかの値を試してください。 たとえば、[ぼかしの**マスクの実験**] ページで、次のように設定し `sigma` ます。
 
 ```csharp
 sigma = paint.TextSize / 18;
 paint.MaskFilter = SKMaskFilter.CreateBlur(blurStyle, sigma);
 ```
 
-これで、`Slider`影響を与えませんが、ぼかしの度合いは、プラットフォーム間で一貫性のあります。
+では `Slider` 効果はありませんが、ぼかしの程度はプラットフォーム間で一貫しています。
 
-[![マスクのぼかし実験 - 一貫性のある](mask-filters-images/MaskBlurExperiment-Consistent.png "ぼかし実験 - 一貫性のあるマスク")](mask-filters-images/MaskBlurExperiment-Consistent-Large.png#lightbox)
+[![マスクのぼかし実験-整合](mask-filters-images/MaskBlurExperiment-Consistent.png "マスクのぼかし実験-整合")](mask-filters-images/MaskBlurExperiment-Consistent-Large.png#lightbox)
 
-すべてのスクリーン ショットはこれまでにで作成されたぼかしを示すが、`SKBlurStyle.Normal`列挙型のメンバー。 次のスクリーン ショットの効果を表示する、 `Solid`、 `Outer`、および`Inner`ぼかしスタイル。
+これまでのすべてのスクリーンショットには、列挙メンバーを使用して作成されたぼかしが示されてい `SKBlurStyle.Normal` ます。 次のスクリーンショットは `Solid` 、、、ぼかしスタイルの効果を示してい `Outer` `Inner` ます。
 
-[![ぼかしの実験をマスク](mask-filters-images/MaskBlurExperiment.png "ぼかし実験のマスク")](mask-filters-images/MaskBlurExperiment-Large.png#lightbox)
+[![マスクのぼかし実験](mask-filters-images/MaskBlurExperiment.png "マスクのぼかし実験")](mask-filters-images/MaskBlurExperiment-Large.png#lightbox)
 
-IOS のスクリーンショットに`Solid`は、次のスタイルが示されています。テキスト文字は塗りつぶされた黒いストロークとして引き続き存在し、ぼかしはこれらのテキスト文字の外側に追加されます。 
+IOS のスクリーンショットにはスタイルが表示されて `Solid` います。テキスト文字はまだ黒の実線で表示され、ぼかしはこれらのテキスト文字の外側に追加されます。 
 
-中央の Android スクリーンショットには、 `Outer`次のスタイルが表示されます。文字ストローク自体は (ビットマップと同様に) 削除され、ぼかしはテキスト文字が1回出現した空の領域を囲みます。 
+中央の Android スクリーンショットは、スタイルを示し `Outer` ています。 (ビットマップと同様に) 文字ストローク自体は削除され、ぼかしはテキストが1回出現した場所の空の領域を囲みます。 
 
-適切な番組で UWP スクリーン ショット、`Inner`スタイル。 ぼかしは、通常、テキスト文字が占める領域に限定されます。
+右側の UWP スクリーンショットにスタイルが表示され `Inner` ます。 ぼかしは、テキスト文字が通常占有する領域に制限されます。
 
-[ **SkiaSharp 線状グラデーション**](shaders/linear-gradient.md#transparency-and-gradients)記事で説明されている、**リフレクション グラデーション**線形グラデーションと変換をテキスト文字列の反射を模倣するために使用するプログラム。
+[**SkiaSharp 線形グラデーション**](shaders/linear-gradient.md#transparency-and-gradients)に関する記事では、線形グラデーションと変換を使用してテキスト文字列の反射を模倣した**反射グラデーション**プログラムについて説明しています。
 
-[![リフレクション グラデーション](shaders/linear-gradient-images/ReflectionGradient.png "リフレクション グラデーション")](shaders/linear-gradient-images/ReflectionGradient-Large.png#lightbox)
+[![反射のグラデーション](shaders/linear-gradient-images/ReflectionGradient.png "反射のグラデーション")](shaders/linear-gradient-images/ReflectionGradient-Large.png#lightbox)
 
-**ぼやけてリフレクション**ページは、そのコードを 1 つのステートメントを追加します。
+**ぼやけた反射**のページでは、そのコードに1つのステートメントが追加されます。
 
 ```csharp
 public class BlurryReflectionPage : ContentPage
@@ -261,17 +264,17 @@ public class BlurryReflectionPage : ContentPage
 }
 ```
 
-新しいステートメントは、テキストのサイズに基づいているテキストの blur フィルターを追加します。
+新しいステートメントでは、テキストサイズに基づいて、反射されたテキストのぼかしフィルターを追加します。
 
 ```csharp
 paint.MaskFilter = SKMaskFilter.CreateBlur(SKBlurStyle.Normal, paint.TextSize / 36);
 ```
 
-この blur フィルターより現実的なようにリフレクションが発生します。
+このぼかしフィルターを適用すると、リフレクションがより現実的になります。
 
-[![画像がぼやけるリフレクション](mask-filters-images/BlurryReflection.png "ぼやけてリフレクション")](mask-filters-images/BlurryReflection-Large.png#lightbox)
+[![反射がぼやけています](mask-filters-images/BlurryReflection.png "反射がぼやけています")](mask-filters-images/BlurryReflection-Large.png#lightbox)
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

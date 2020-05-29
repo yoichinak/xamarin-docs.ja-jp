@@ -1,24 +1,27 @@
 ---
-title: IOS の SwipeView スワイプ切り替えモード
-description: Platform-specifics は custom renderers や effects を実装することなく、特定のプラットフォーム上でのみ利用できる機能の使用を可能にします。 この記事では、SwipeView を開くときに使用される遷移を制御する iOS プラットフォーム固有のを使用する方法について説明します。
-ms.prod: xamarin
-ms.assetid: C667F24C-BAD8-47E0-9285-D3546BEF703B
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 12/11/2019
-ms.openlocfilehash: d5ba92d008cf3431bce2c197aca45c894eb3d5c7
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 4b2030461025c1cd647595a1ecc22c5589e99fef
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75490452"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137047"
 ---
 # <a name="swipeview-swipe-transition-mode-on-ios"></a>IOS の SwipeView スワイプ切り替えモード
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-この iOS プラットフォーム固有の設定は、`SwipeView`を開くときに使用される遷移を制御します。 XAML では、`SwipeView.SwipeTransitionMode` バインド可能なプロパティを `SwipeTransitionMode` 列挙値に設定することによって使用されます。
+この iOS プラットフォーム固有のは、を開くときに使用される遷移を制御し `SwipeView` ます。 このメソッドは、バインド可能な `SwipeView.SwipeTransitionMode` プロパティを列挙体の値に設定することにより、XAML で使用され `SwipeTransitionMode` ます。
 
 ```xaml
 <ContentPage ...
@@ -39,7 +42,7 @@ ms.locfileid: "75490452"
 </ContentPage>
 ```
 
-代わりに、fluent API を使用して c# から使用できます。
+または、fluent API を使用して C# から使用することもできます。
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -51,19 +54,19 @@ swipeView.On<iOS>().SetSwipeTransitionMode(SwipeTransitionMode.Drag);
 // ...
 ```
 
-`SwipeView.On<iOS>`メソッドは、このプラットフォーム仕様が iOS でのみ動作することを指定します。 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)名前空間の `SwipeView.SetSwipeTransitionMode` メソッドを使用して、`SwipeView`を開くときに使用される遷移を制御します。 `SwipeTransitionMode` 列挙体には、次の2つの値があります。
+メソッドは、 `SwipeView.On<iOS>` このプラットフォーム固有のが iOS 上でのみ実行されることを指定します。 `SwipeView.SetSwipeTransitionMode`名前空間のメソッドは、 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) を開くときに使用される遷移を制御するために使用され `SwipeView` ます。 `SwipeTransitionMode`列挙体には、次の2つの値があります。
 
-- `Reveal` は、`SwipeView` コンテンツがスワイプされるとスワイプ項目が表示されることを示し、は `SwipeView.SwipeTransitionMode` プロパティの既定値です。
-- `Drag` は、`SwipeView` コンテンツがスワイプとして、スワイプ項目がビューにドラッグされることを示します。
+- `Reveal`コンテンツがスワイプされたときにスワイプ項目が表示されることを示し `SwipeView` ます。は、プロパティの既定値です `SwipeView.SwipeTransitionMode` 。
+- `Drag`コンテンツがスワイプされると、スワイプ項目がビューにドラッグされることを示し `SwipeView` ます。
 
-さらに、`SwipeView.GetSwipeTransitionMode` メソッドを使用して、`SwipeView`に適用される `SwipeTransitionMode` を返すことができます。
+また、メソッドを `SwipeView.GetSwipeTransitionMode` 使用して、に適用されたを返すこともでき `SwipeTransitionMode` `SwipeView` ます。
 
-結果として、指定された `SwipeTransitionMode` 値が `SwipeView`に適用され、`SwipeView`を開くときに使用される遷移を制御します。
+結果として、指定された `SwipeTransitionMode` 値がに適用され `SwipeView` ます。これは、を開くときに使用される遷移を制御し `SwipeView` ます。
 
 [![IOS 上の SwipeView SwipeTransitionModes のスクリーンショット](swipeview-swipetransitionmode-images/swipetransitionmode.png "IOS での SwipeTransitionModes")](swipeview-swipetransitionmode-images/swipetransitionmode-large.png#lightbox "IOS での SwipeTransitionModes")
 
 ## <a name="related-links"></a>関連リンク
 
-- [プラットフォーム仕様 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [プラットフォーム固有設定の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific の API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

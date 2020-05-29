@@ -1,27 +1,30 @@
 ---
-title: カスケード スタイル シート (CSS) を使用した Xamarin.Forms アプリのスタイル設定
-description: Xamarin は、カスケードスタイルシート (CSS) を使用したビジュアル要素のスタイル設定をサポートしています。
-ms.prod: xamarin
-ms.assetid: C89D57A6-DAB9-4C42-963F-26D67627DDC2
-ms.technology: xamarin-forms
-ms.custom: xamu-video
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/17/2020
-ms.openlocfilehash: 182bd088ba169dad6bdbbb4315a033925964f64e
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+title: Xamarin.Formsカスケードスタイルシートを使用したアプリのスタイル設定 (CSS)
+description: Xamarin.Formsカスケードスタイルシート (CSS) を使用したビジュアル要素のスタイル設定をサポートします。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+ms.custom: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3e333fcdca12a6bd2f71a1ecbeeb1fd3d5f5be13
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82517563"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84140141"
 ---
-# <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>カスケードスタイルシートを使用した Xamarin. フォームアプリのスタイル設定 (CSS)
+# <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>Xamarin.Formsカスケードスタイルシートを使用したアプリのスタイル設定 (CSS)
 
-[![](~/media/shared/download.png)サンプルをダウンロードするサンプルをダウンロードする](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
 
 _Xamarin は、カスケードスタイルシート (CSS) を使用したビジュアル要素のスタイル設定をサポートしています。_
 
-Xamarin. フォームアプリケーションは、CSS を使用してスタイルを設定できます。 スタイルシートは、ルールの一覧で構成され、各ルールは1つ以上のセレクターと宣言ブロックで構成されます。 宣言ブロックは、中かっこで囲まれた宣言のリストで構成され、各宣言はプロパティ、コロン、および値で構成されます。 1つのブロックに複数の宣言がある場合、セミコロンは区切り記号として挿入されます。 次のコード例は、いくつかの Xamarin. Forms に準拠した CSS を示しています。
+Xamarin.Formsアプリケーションは、CSS を使用してスタイルを設定できます。 スタイルシートは、ルールの一覧で構成され、各ルールは1つ以上のセレクターと宣言ブロックで構成されます。 宣言ブロックは、中かっこで囲まれた宣言のリストで構成され、各宣言はプロパティ、コロン、および値で構成されます。 1つのブロックに複数の宣言がある場合、セミコロンは区切り記号として挿入されます。 次のコード例は、準拠している CSS を示してい Xamarin.Forms ます。
 
 ```css
 navigationpage {
@@ -71,10 +74,10 @@ stacklayout>image {
 }
 ```
 
-Xamarin. Forms では、CSS スタイルシートはコンパイル時ではなく実行時に解析および評価され、使用時にスタイルシートが再解析されます。
+では、 Xamarin.Forms CSS スタイルシートはコンパイル時ではなく実行時に解析および評価され、使用時にスタイルシートが再解析されます。
 
 > [!NOTE]
-> 現時点では、XAML スタイルで可能なすべてのスタイル設定を CSS で実行することはできません。 ただし、現在、Xamarin. フォームではサポートされていないプロパティの CSS を補うために、XAML スタイルを使用できます。 XAML スタイルの詳細については、「[XAML スタイルを使用した Xamarin.Forms アプリのスタイル設定](~/xamarin-forms/user-interface/styles/xaml/index.md)」をご覧ください。
+> 現時点では、XAML スタイルで可能なすべてのスタイル設定を CSS で実行することはできません。 ただし、XAML スタイルを使用して、で現在サポートされていないプロパティの CSS を補うことができ Xamarin.Forms ます。 XAML スタイルの詳細については、「 [ Xamarin.Forms xaml スタイルを使用したアプリのスタイル](~/xamarin-forms/user-interface/styles/xaml/index.md)設定」を参照してください。
 
 [Monkeyappcss](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)サンプルでは、単純なアプリのスタイルを CSS で使用する方法を示しています。次のスクリーンショットを参照してください。
 
@@ -98,7 +101,7 @@ Xamarin. Forms では、CSS スタイルシートはコンパイル時ではな�
 
 ### <a name="xaml"></a>XAML
 
-スタイルシートは、 [`StyleSheet`](xref:Xamarin.Forms.StyleSheets.StyleSheet) [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)に追加する前に、クラスで読み込んで解析することができます。
+スタイルシートは [`StyleSheet`](xref:Xamarin.Forms.StyleSheets.StyleSheet) 、に追加する前に、クラスで読み込んで解析することができ [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) ます。
 
 ```xaml
 <Application ...>
@@ -108,12 +111,12 @@ Xamarin. Forms では、CSS スタイルシートはコンパイル時ではな�
 </Application>
 ```
 
-プロパティ[`StyleSheet.Source`](xref:Xamarin.Forms.Xaml.StyleSheetExtension.Source)は、外側の XAML ファイルの位置からの相対 uri としてスタイルシートを指定し`/`ます。または、uri がで始まる場合は、プロジェクトのルートからの相対 uri として指定します。
+プロパティは、 [`StyleSheet.Source`](xref:Xamarin.Forms.Xaml.StyleSheetExtension.Source) 外側の XAML ファイルの位置からの相対 uri としてスタイルシートを指定します。または、uri がで始まる場合は、プロジェクトのルートからの相対 uri として指定し `/` ます。
 
 > [!WARNING]
 > ビルドアクションが**EmbeddedResource**に設定されていない場合、CSS ファイルの読み込みに失敗します。
 
-または[`StyleSheet`](xref:Xamarin.Forms.StyleSheets.StyleSheet) [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)、スタイルシートをに追加する前に、クラスを使用してスタイルシートを読み込んで解析すること`CDATA`もできます。これを行うには、セクションにインライン展開します。
+または、スタイルシートをに追加する前に、クラスを使用してスタイルシートを読み込んで解析することもできます。これを行うには、 [`StyleSheet`](xref:Xamarin.Forms.StyleSheets.StyleSheet) [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) セクションにインライン展開し `CDATA` ます。
 
 ```xaml
 <ContentPage ...>
@@ -134,7 +137,7 @@ Xamarin. Forms では、CSS スタイルシートはコンパイル時ではな�
 
 ### <a name="c"></a>C\#
 
-C# では、スタイルシートをから`StringReader`読み込んで、 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)に追加することができます。
+C# では、スタイルシートをから読み込んで、に追加することができ `StringReader` [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) ます。
 
 ```csharp
 public partial class MyPage : ContentPage
@@ -151,7 +154,7 @@ public partial class MyPage : ContentPage
 }
 ```
 
-メソッドの`StyleSheet.FromReader`引数は、 `TextReader`スタイルシートを読み取ったです。
+メソッドの引数は `StyleSheet.FromReader` 、 `TextReader` スタイルシートを読み取ったです。
 
 ## <a name="selecting-elements-and-applying-properties"></a>要素の選択とプロパティの適用
 
@@ -164,7 +167,7 @@ CSS では、プロパティを使用して、選択した要素のスタイル�
 
 ### <a name="selecting-elements-by-type"></a>種類別の要素の選択
 
-ビジュアルツリー内の要素は、大文字と小文字を区別`element`しないセレクターを使用して、型で選択できます。
+ビジュアルツリー内の要素は、大文字と小文字を区別しないセレクターを使用して、型で選択でき `element` ます。
 
 ```css
 stacklayout {
@@ -172,14 +175,14 @@ stacklayout {
 }
 ```
 
-このセレクターは、 [`StackLayout`](xref:Xamarin.Forms.StackLayout)スタイルシートを使用するページ上のすべての要素を識別し、それらの余白を均一の太さ20に設定します。
+このセレクターは、 [`StackLayout`](xref:Xamarin.Forms.StackLayout) スタイルシートを使用するページ上のすべての要素を識別し、それらの余白を均一の太さ20に設定します。
 
 > [!NOTE]
-> `element`セレクターは、指定された型のサブクラスを識別しません。
+> セレクターは、 `element` 指定された型のサブクラスを識別しません。
 
 ### <a name="selecting-elements-by-base-class"></a>基本クラスによる要素の選択
 
-ビジュアルツリー内の要素は、大文字と小文字を区別`^base`しないセレクターを使用して、基本クラスで選択できます。
+ビジュアルツリー内の要素は、大文字と小文字を区別しないセレクターを使用して、基本クラスで選択でき `^base` ます。
 
 ```css
 ^contentpage {
@@ -187,14 +190,14 @@ stacklayout {
 }
 ```
 
-このセレクターは、 [`ContentPage`](xref:Xamarin.Forms.ContentPage)スタイルシートを使用するすべての要素を識別し、その`lightgray`背景色をに設定します。
+このセレクターは、 [`ContentPage`](xref:Xamarin.Forms.ContentPage) スタイルシートを使用するすべての要素を識別し、その背景色をに設定し `lightgray` ます。
 
 > [!NOTE]
-> `^base`セレクターは、Xamarin. Forms に固有のものであり、CSS 仕様には含まれていません。
+> `^base`セレクターはに固有であり、 Xamarin.Forms CSS 仕様には含まれていません。
 
 ### <a name="selecting-an-element-by-name"></a>名前による要素の選択
 
-大文字と小文字を区別`#id`するセレクターを使用して、ビジュアルツリー内の個々の要素を選択できます。
+大文字と小文字を区別するセレクターを使用して、ビジュアルツリー内の個々の要素を選択でき `#id` ます。
 
 ```css
 #listView {
@@ -202,7 +205,7 @@ stacklayout {
 }
 ```
 
-このセレクターは、 [`StyleId`](xref:Xamarin.Forms.Element.StyleId)プロパティがに`listView`設定されている要素を識別します。 ただし、 `StyleId`プロパティが設定されていない場合、セレクターは要素`x:Name`のを使用するようにフォールバックします。 したがって、次の XAML の例で`#listView`は、セレクターが[`ListView`](xref:Xamarin.Forms.ListView) `x:Name`属性がに`listView`設定されているを識別し、背景色`lightgray`をに設定します。
+このセレクター [`StyleId`](xref:Xamarin.Forms.Element.StyleId) は、プロパティがに設定されている要素を識別 `listView` します。 ただし、 `StyleId` プロパティが設定されていない場合、セレクターは要素のを使用するようにフォールバックし `x:Name` ます。 したがって、次の XAML の例では、 `#listView` セレクターが属性がに設定されているを識別 [`ListView`](xref:Xamarin.Forms.ListView) し、 `x:Name` `listView` 背景色をに設定し `lightgray` ます。
 
 ```xaml
 <ContentPage ...>
@@ -219,7 +222,7 @@ stacklayout {
 
 ### <a name="selecting-elements-with-a-specific-class-attribute"></a>特定のクラス属性を持つ要素の選択
 
-特定のクラス属性を持つ要素は、大文字と小`.class`文字を区別するセレクターで選択できます。
+特定のクラス属性を持つ要素は、大文字と小文字を区別するセレクターで選択でき `.class` ます。
 
 ```css
 .detailPageTitle {
@@ -234,7 +237,7 @@ stacklayout {
 }
 ```
 
-Css クラスは、要素の[`StyleClass`](xref:Xamarin.Forms.NavigableElement.StyleClass)プロパティを css クラス名に設定することによって、XAML 要素に割り当てることができます。 したがって、次の XAML の`.detailPageTitle`例では、クラスで定義されているスタイル[`Label`](xref:Xamarin.Forms.Label)が最初のに割り当てられ`.detailPageSubtitle` 、クラスで定義され`Label`ているスタイルが2番目のに割り当てられます。
+Css クラスは、 [`StyleClass`](xref:Xamarin.Forms.NavigableElement.StyleClass) 要素のプロパティを css クラス名に設定することによって、XAML 要素に割り当てることができます。 したがって、次の XAML の例では、クラスで定義されているスタイルが最初のに割り当てられ、クラスで定義されている `.detailPageTitle` [`Label`](xref:Xamarin.Forms.Label) スタイルが `.detailPageSubtitle` 2 番目のに割り当てられ `Label` ます。
 
 ```xaml
 <ContentPage ...>
@@ -253,7 +256,7 @@ Css クラスは、要素の[`StyleClass`](xref:Xamarin.Forms.NavigableElement.S
 
 ### <a name="selecting-child-elements"></a>子要素の選択
 
-大文字と小文字を区別`element element`しないセレクターを使用して、ビジュアルツリー内の子要素を選択できます。
+大文字と小文字を区別しないセレクターを使用して、ビジュアルツリー内の子要素を選択でき `element element` ます。
 
 ```css
 listview image {
@@ -262,7 +265,7 @@ listview image {
 }
 ```
 
-このセレクターは、 [`Image`](xref:Xamarin.Forms.Image)要素の[`ListView`](xref:Xamarin.Forms.ListView)子である要素を識別し、それらの高さと幅を60に設定します。 したがって、次の XAML の例で`listview image`は、セレクターが[`Image`](xref:Xamarin.Forms.Image)の子[`ListView`](xref:Xamarin.Forms.ListView)であるを識別し、その高さと幅を60に設定します。
+このセレクター [`Image`](xref:Xamarin.Forms.Image) は、要素の子である要素を識別 [`ListView`](xref:Xamarin.Forms.ListView) し、それらの高さと幅を60に設定します。 したがって、次の XAML の例では、セレクターがの `listview image` 子であるを識別し、その [`Image`](xref:Xamarin.Forms.Image) [`ListView`](xref:Xamarin.Forms.ListView) 高さと幅を60に設定します。
 
 ```xaml
 <ContentPage ...>
@@ -288,11 +291,11 @@ listview image {
 ```
 
 > [!NOTE]
-> この`element element`セレクターでは、子要素が親の_直接_の子である必要はありません。子要素は、親が異なる場合があります。 先祖が指定された最初の要素である場合、選択が行われます。
+> このセレクターでは、 `element element` 子要素が親の_直接_の子である必要はありません。子要素は、親が異なる場合があります。 先祖が指定された最初の要素である場合、選択が行われます。
 
 ### <a name="selecting-direct-child-elements"></a>直接の子要素の選択
 
-ビジュアルツリー内の直接の子要素は、大文字と小`element>element`文字を区別しないセレクターで選択できます。
+ビジュアルツリー内の直接の子要素は、大文字と小文字を区別しないセレクターで選択でき `element>element` ます。
 
 ```css
 stacklayout>image {
@@ -301,7 +304,7 @@ stacklayout>image {
 }
 ```
 
-このセレクターは、 [`Image`](xref:Xamarin.Forms.Image)要素の直接の[`StackLayout`](xref:Xamarin.Forms.StackLayout)子である要素を識別し、それらの高さと幅を200に設定します。 したがって、次の XAML の例で`stacklayout>image`は、セレクターが[`Image`](xref:Xamarin.Forms.Image)の直接の子[`StackLayout`](xref:Xamarin.Forms.StackLayout)であるを識別し、その高さと幅を200に設定します。
+このセレクター [`Image`](xref:Xamarin.Forms.Image) は、要素の直接の子である要素を識別 [`StackLayout`](xref:Xamarin.Forms.StackLayout) し、それらの高さと幅を200に設定します。 したがって、次の XAML の例では、セレクターがの `stacklayout>image` 直接の子であるを識別し、その [`Image`](xref:Xamarin.Forms.Image) [`StackLayout`](xref:Xamarin.Forms.StackLayout) 高さと幅を200に設定します。
 
 ```xaml
 <ContentPage ...>
@@ -319,29 +322,29 @@ stacklayout>image {
 ```
 
 > [!NOTE]
-> セレクター `element>element`では、子要素が親の_直接_の子である必要があります。
+> `element>element`セレクターでは、子要素が親の_直接_の子である必要があります。
 
 ## <a name="selector-reference"></a>セレクターリファレンス
 
-次の CSS セレクターが Xamarin. Forms でサポートされています。
+では、次の CSS セレクターがサポートされてい Xamarin.Forms ます。
 
 |セレクター|例|説明|
 |---|---|---|
-|`.class`|`.header`|' Header ' を含む`StyleClass`プロパティを持つすべての要素を選択します。 このセレクターでは大文字と小文字が区別されることに注意してください。|
-|`#id`|`#email`|がに`email`設定さ`StyleId`れているすべての要素を選択します。 が`StyleId`設定されていない`x:Name`場合は、にフォールバックします。 XAML を使用する`x:Name`場合は、 `StyleId`よりも優先されます。 このセレクターでは大文字と小文字が区別されることに注意してください。|
+|`.class`|`.header`|' Header ' を含むプロパティを持つすべての要素を選択 `StyleClass` します。 このセレクターでは大文字と小文字が区別されることに注意してください。|
+|`#id`|`#email`|がに設定されているすべての要素を選択 `StyleId` `email` します。 `StyleId`が設定されていない場合は、にフォールバック `x:Name` します。 XAML を使用する場合 `x:Name` は、よりも優先され `StyleId` ます。 このセレクターでは大文字と小文字が区別されることに注意してください。|
 |`*`|`*`|すべての要素を選択します。|
-|`element`|`label`|型`Label`のすべての要素を選択しますが、サブクラスは選択しません。 このセレクターは大文字と小文字が区別されないことに注意してください。|
-|`^base`|`^contentpage`|を`ContentPage`含む`ContentPage`すべての要素を基底クラスとして選択します。 このセレクターでは大文字と小文字が区別されず、CSS 仕様の一部ではないことに注意してください。|
-|`element,element`|`label,button`|すべて`Button`の要素とすべて`Label`の要素を選択します。 このセレクターは大文字と小文字が区別されないことに注意してください。|
-|`element element`|`stacklayout label`|内の`Label`すべての要素`StackLayout`を選択します。 このセレクターは大文字と小文字が区別されないことに注意してください。|
-|`element>element`|`stacklayout>label`|を直接`Label`の親`StackLayout`として使用しているすべての要素を選択します。 このセレクターは大文字と小文字が区別されないことに注意してください。|
-|`element+element`|`label+entry`|の直後`Entry`にあるすべての`Label`要素を選択します。 このセレクターは大文字と小文字が区別されないことに注意してください。|
-|`element~element`|`label~entry`|の前`Entry`にあるすべての`Label`要素を選択します。 このセレクターは大文字と小文字が区別されないことに注意してください。|
+|`element`|`label`|型のすべての要素 `Label` を選択しますが、サブクラスは選択しません。 このセレクターは大文字と小文字が区別されないことに注意してください。|
+|`^base`|`^contentpage`|を含むすべての要素 `ContentPage` を基底クラスとして選択し `ContentPage` ます。 このセレクターでは大文字と小文字が区別されず、CSS 仕様の一部ではないことに注意してください。|
+|`element,element`|`label,button`|すべて `Button` の要素とすべて `Label` の要素を選択します。 このセレクターは大文字と小文字が区別されないことに注意してください。|
+|`element element`|`stacklayout label`|`Label`内のすべての要素を選択 `StackLayout` します。 このセレクターは大文字と小文字が区別されないことに注意してください。|
+|`element>element`|`stacklayout>label`|`Label`を直接の親として使用しているすべての要素を選択 `StackLayout` します。 このセレクターは大文字と小文字が区別されないことに注意してください。|
+|`element+element`|`label+entry`|`Entry`の直後にあるすべての要素を選択 `Label` します。 このセレクターは大文字と小文字が区別されないことに注意してください。|
+|`element~element`|`label~entry`|`Entry`の前にあるすべての要素を選択 `Label` します。 このセレクターは大文字と小文字が区別されないことに注意してください。|
 
 セレクターが一致するスタイルは、定義の順序で連続して適用されます。 特定の項目に定義されているスタイルは、常に最後に適用されます。
 
 > [!TIP]
-> セレクターは、などの制限なしで組み合わせる`StackLayout>ContentView>label.email`ことができます。
+> セレクターは、などの制限なしで組み合わせることができ `StackLayout>ContentView>label.email` ます。
 
 現在、次のセレクターはサポートされていません。
 
@@ -354,7 +357,7 @@ stacklayout>image {
 
 ## <a name="property-reference"></a>プロパティ リファレンス
 
-次の CSS プロパティは、Xamarin. Forms でサポートされています ([**値**] 列では、 `gray`型は_斜体_、文字列リテラルは)。
+では、次の CSS プロパティがサポートされてい Xamarin.Forms ます ([**値**] 列では、型は_斜体_、文字列リテラルは `gray` )。
 
 |プロパティ|適用対象|値|例|
 |---|---|---|---|
@@ -362,7 +365,7 @@ stacklayout>image {
 |`align-items`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| `flex-end` \| `initial` |`align-items: flex-start;`|
 |`align-self`|`VisualElement`| `auto` \| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| `flex-end` \| `initial`|`align-self: flex-end;`|
 |`background-color`|`VisualElement`|_色_ \|`initial` |`background-color: springgreen;`|
-|`background-image`|`Page`|_文字列_ \|`initial` |`background-image: bg.png;`|
+|`background-image`|`Page`|_string_ \| `initial` |`background-image: bg.png;`|
 |`border-color`|`Button`, `Frame`, `ImageButton`|_色_ \|`initial`|`border-color: #9acd32;`|
 |`border-radius`|`BoxView`, `Button`, `Frame`, `ImageButton`|_double_ \|`initial` |`border-radius: 10;`|
 |`border-width`|`Button`, `ImageButton`|_double_ \|`initial` |`border-width: .5;`|
@@ -370,12 +373,12 @@ stacklayout>image {
 |`column-gap`|`Grid`|_double_ \|`initial`|`column-gap: 9;`|
 |`direction`|`VisualElement`|`ltr` \| `rtl` \| `inherit` \| `initial` |`direction: rtl;`|
 |`flex-direction`|`FlexLayout`| `column` \| `columnreverse` \| `row` \| `rowreverse` \| `row-reverse` \| `column-reverse` \| `initial`|`flex-direction: column-reverse;`|
-|`flex-basis`|`VisualElement`|_float_ \| float `auto` 。 \| `initial` さらに、0 ~ 100% の範囲のパーセンテージを`%`符号と共に指定できます。|`flex-basis: 25%;`|
-|`flex-grow`|`VisualElement`|_float_ \| `initial`|`flex-grow: 1.5;`|
-|`flex-shrink`|`VisualElement`|_float_ \| `initial`|`flex-shrink: 1;`|
+|`flex-basis`|`VisualElement`|_float_ \|`auto` \| `initial`. さらに、0 ~ 100% の範囲のパーセンテージを符号と共に指定でき `%` ます。|`flex-basis: 25%;`|
+|`flex-grow`|`VisualElement`|_float_ \|`initial`|`flex-grow: 1.5;`|
+|`flex-shrink`|`VisualElement`|_float_ \|`initial`|`flex-shrink: 1;`|
 |`flex-wrap`|`VisualElement`| `nowrap` \| `wrap` \| `reverse` \| `wrap-reverse` \| `initial`|`flex-wrap: wrap-reverse;`|
-|`font-family`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_文字列_ \|`initial` |`font-family: Consolas;`|
-|`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_2_ \|つの_namedsize_ \|  `initial` |`font-size: 12;`|
+|`font-family`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_string_ \| `initial` |`font-family: Consolas;`|
+|`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_double_ \|_namedsize_ \|  `initial` |`font-size: 12;`|
 |`font-style`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|`bold` \| `italic` \| `initial` |`font-style: bold;`|
 |`height`|`VisualElement`|_double_ \|`initial` |`min-height: 250;`|
 |`justify-content`|`FlexLayout`| `start` \| `center` \| `end` \| `spacebetween` \| `spacearound` \| `spaceevenly` \| `flex-start` \| `flex-end` \| `space-between` \| `space-around` \| `initial`|`justify-content: flex-end;`|
@@ -398,7 +401,7 @@ stacklayout>image {
 |`padding-bottom`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \|`initial` |`padding-bottom: 6;`|
 |`position`|`FlexLayout`| `relative` \| `absolute` \| `initial`|`position: absolute;`|
 |`row-gap`|`Grid`| _double_ \|`initial`|`row-gap: 12;`|
-|`text-align`| `Entry`, `EntryCell`, `Label`, `SearchBar`|`left` \| `top` \| `right` \| `bottom` \| `start` \| `center` \| `middle` \| `end` \| `initial`. `left`右`right`から左に記述された環境では回避する必要があります。| `text-align: right;`|
+|`text-align`| `Entry`, `EntryCell`, `Label`, `SearchBar`|`left` \| `top` \| `right` \| `bottom` \| `start` \| `center` \| `middle` \| `end` \| `initial`. `left``right`右から左に記述された環境では回避する必要があります。| `text-align: right;`|
 |`text-decoration`|`Label`, `Span`|`none` \| `underline` \| `strikethrough` \| `line-through` \| `initial`|`text-decoration: underline, line-through;`|
 |`transform`|`VisualElement`| `none`, `rotate`, `rotateX`, `rotateY`, `scale`, `scaleX`, `scaleY`, `translate`, `translateX`, `translateY`, `initial` |`transform: rotate(180), scaleX(2.5);`|
 |`transform-origin`|`VisualElement`| _double_、 _double_ \|`initial` |`transform-origin: 7.5, 12.5;`|
@@ -413,15 +416,15 @@ stacklayout>image {
 
 - `all: initial`.
 - レイアウトのプロパティ (ボックスまたはグリッド)。
-- `font`、などの短縮形のプロパティ`border`。
+- 、などの短縮形のプロパティ `font` `border` 。
 
-また、値はない`inherit`ため、継承はサポートされません。 したがって、たとえば、レイアウトの`font-size`プロパティを設定して、レイアウト内のすべて[`Label`](xref:Xamarin.Forms.Label)のインスタンスが値を継承することを想定することはできません。 1つの例外は`direction`プロパティで、既定値は`inherit`です。
+また、値はない `inherit` ため、継承はサポートされません。 したがって、たとえば、レイアウトのプロパティを設定して、 `font-size` レイアウト内のすべてのインスタンスが値を継承することを想定することはできません [`Label`](xref:Xamarin.Forms.Label) 。 1つの例外は `direction` プロパティで、既定値は `inherit` です。
 
-ターゲット`Span`要素には既知の問題があり、範囲が CSS スタイルのターゲットになるのを防ぐために`#` 、要素と名前の両方 (記号を使用) になります。 要素`Span`はから派生`GestureElement`します。これには`StyleClass`プロパティがないため、span では CSS クラスのターゲット設定がサポートされません。 詳細については、「 [Span コントロールに CSS スタイルを適用できない](https://github.com/xamarin/Xamarin.Forms/issues/5979)」を参照してください。
+ターゲット `Span` 要素には既知の問題があり、範囲が CSS スタイルのターゲットになるのを防ぐために、要素と名前の両方 (記号を使用 `#` ) になります。 `Span`要素はから派生 `GestureElement` します。これにはプロパティがないため、 `StyleClass` SPAN では CSS クラスのターゲット設定がサポートされません。 詳細については、「 [Span コントロールに CSS スタイルを適用できない](https://github.com/xamarin/Xamarin.Forms/issues/5979)」を参照してください。
 
-### <a name="xamarinforms-specific-properties"></a>Xamarin. フォーム固有のプロパティ
+### <a name="xamarinforms-specific-properties"></a>Xamarin.Forms特定のプロパティ
 
-次の Xamarin. Forms 固有の CSS プロパティもサポートされています ([**値**] 列では、型`gray`は_斜体_ですが、文字列リテラルは)。
+次の Xamarin.Forms 特定の CSS プロパティもサポートされています ([**値**] 列では、型は_斜体_ですが、文字列リテラルは `gray` )。
 
 |プロパティ|適用対象|値|例|
 |---|---|---|---|
@@ -431,18 +434,18 @@ stacklayout>image {
 |`-xf-max-length`|`Entry`, `Editor`, `SearchBar`|_INT_ \| `initial` |`-xf-max-length: 20;`|
 |`-xf-max-track-color`|`Slider`|_色_ \|`initial` |`-xf-max-track-color: red;`|
 |`-xf-min-track-color`|`Slider`|_色_ \|`initial` |`-xf-min-track-color: yellow;`|
-|`-xf-orientation`|`ScrollView`, `StackLayout`| `horizontal` \| `vertical` \| `both` \| `initial`. `both`は、 `ScrollView`でのみサポートされています。 |`-xf-orientation: horizontal;`|
-|`-xf-placeholder`|`Entry`, `Editor`, `SearchBar`|_引用符で囲ま_ \|れたテキスト`initial` |`-xf-placeholder: Enter name;`|
+|`-xf-orientation`|`ScrollView`, `StackLayout`| `horizontal` \| `vertical` \| `both` \| `initial`. `both`は、でのみサポートされてい `ScrollView` ます。 |`-xf-orientation: horizontal;`|
+|`-xf-placeholder`|`Entry`, `Editor`, `SearchBar`|_引用符で囲まれたテキスト_ \|`initial` |`-xf-placeholder: Enter name;`|
 |`-xf-placeholder-color`|`Entry`, `Editor`, `SearchBar`|_色_ \|`initial` |`-xf-placeholder-color: green;`|
 |`-xf-spacing`|`StackLayout`|_double_ \|`initial` |`-xf-spacing: 8;`|
 |`-xf-thumb-color`|`Slider`, `Switch`|_色_ \|`initial` |`-xf-thumb-color: limegreen;`|
 |`-xf-vertical-scroll-bar-visibility`|`ScrollView`| `default` \| `always` \| `never` \| `initial` |`-xf-vertical-scroll-bar-visibility: always;`|
 |`-xf-vertical-text-alignment`|`Label`| `start` \| `center` \| `end` \| `initial`|`-xf-vertical-text-alignment: end;`|
-|`-xf-visual`|`VisualElement`|_文字列_ \|`initial` |`-xf-visual: material;`|
+|`-xf-visual`|`VisualElement`|_string_ \| `initial` |`-xf-visual: material;`|
 
-### <a name="xamarinforms-shell-specific-properties"></a>Xamarin.Forms シェル固有のプロパティ
+### <a name="xamarinforms-shell-specific-properties"></a>Xamarin.Formsシェル固有のプロパティ
 
-次の Xamarin. フォームシェル固有の CSS プロパティもサポートされています ([**値**] 列では、型`gray`は_斜体_ですが、文字列リテラルは)。
+次の Xamarin.Forms シェル固有の CSS プロパティもサポートされています ([**値**] 列では、型は_斜体_ですが、文字列リテラルは `gray` )。
 
 |プロパティ|適用対象|値|例|
 |---|---|---|---|
@@ -460,18 +463,18 @@ stacklayout>image {
 
 ### <a name="color"></a>Color
 
-次`color`の値がサポートされています。
+次の `color` 値がサポートされています。
 
-- `X11`CSS の色、UWP の定義済みの色、および Xamarin 形式の色と一致する[色](https://en.wikipedia.org/wiki/X11_color_names)。 これらの色の値は大文字と小文字を区別しないことに注意してください。
-- 16進数の`#rgb`色`#argb`: `#rrggbb`、、、`#aarrggbb`
-- rgb 色: `rgb(255,0,0)`、 `rgb(100%,0%,0%)`。 値の範囲は 0-255 ~ 0%-100% です。
-- rgba 色: `rgba(255, 0, 0, 0.8)`、 `rgba(100%, 0%, 0%, 0.8)`。 不透明度の値は、0.0 ~ 1.0 の範囲で指定します。
-- hsl の色`hsl(120, 100%, 50%)`:。 H 値は0-360 の範囲にあり、s と l の範囲は 0%-100% です。
-- hsla の色`hsla(120, 100%, 50%, .8)`:。 不透明度の値は、0.0 ~ 1.0 の範囲で指定します。
+- `X11`CSS の色、UWP の定義済みの色、および色に一致する[色](https://en.wikipedia.org/wiki/X11_color_names) Xamarin.Forms 。 これらの色の値は大文字と小文字を区別しないことに注意してください。
+- 16進数の色: `#rgb` 、、 `#argb` `#rrggbb` 、`#aarrggbb`
+- rgb 色: `rgb(255,0,0)` 、 `rgb(100%,0%,0%)` 。 値の範囲は 0-255 ~ 0%-100% です。
+- rgba 色: `rgba(255, 0, 0, 0.8)` 、 `rgba(100%, 0%, 0%, 0.8)` 。 不透明度の値は、0.0 ~ 1.0 の範囲で指定します。
+- hsl の色: `hsl(120, 100%, 50%)` 。 H 値は0-360 の範囲にあり、s と l の範囲は 0%-100% です。
+- hsla の色: `hsla(120, 100%, 50%, .8)` 。 不透明度の値は、0.0 ~ 1.0 の範囲で指定します。
 
 ### <a name="thickness"></a>太さ
 
-1つ、2つ、3つ`thickness` 、または4つの値がサポートされており、それぞれが空白で区切られています。
+1つ、2つ、3つ、または4つの `thickness` 値がサポートされており、それぞれが空白で区切られています。
 
 - 1つの値が均一の太さを示します。
 - 2つの値は、垂直方向の幅を示します。
@@ -479,11 +482,11 @@ stacklayout>image {
 - 4つの値は、top、right、bottom、left の各太さを示します。
 
 > [!NOTE]
-> CSS `thickness`値は XAML [`Thickness`](xref:Xamarin.Forms.Thickness)値とは異なります。 たとえば、XAML では、2つの`Thickness`値は水平方向の幅を示し、4つ`Thickness`の値は left、top、right、bottom の各太さを示します。 また、XAML `Thickness`値はコンマで区切られます。
+> CSS `thickness` 値は XAML 値とは異なり [`Thickness`](xref:Xamarin.Forms.Thickness) ます。 たとえば、XAML では、2つの値は `Thickness` 水平方向の幅を示し、4つの値は `Thickness` left、top、right、bottom の各太さを示します。 また、XAML `Thickness` 値はコンマで区切られます。
 
 ### <a name="namedsize"></a>NamedSize
 
-次の大文字`namedsize`と小文字を区別しない値がサポートされています。
+次の大文字と小文字を区別しない `namedsize` 値がサポートされています。
 
 - `default`
 - `micro`
@@ -491,16 +494,16 @@ stacklayout>image {
 - `medium`
 - `large`
 
-各`namedsize`値の正確な意味は、プラットフォームに依存し、ビューに依存します。
+各値の正確な意味 `namedsize` は、プラットフォームに依存し、ビューに依存します。
 
-## <a name="css-in-xamarinforms-with-xamarinuniversity"></a>Xamarin. 大学を使用した Xamarin 形式の CSS
+## <a name="css-in-xamarinforms-with-xamarinuniversity"></a>Xamarin 大学での CSS Xamarin.Forms
 
 > [!VIDEO https://youtube.com/embed/va-Vb7vtan8]
 
-**Xamarin. Forms 3.0 CSS ビデオ**
+**Xamarin.Forms3.0 CSS ビデオ**
 
 ## <a name="related-links"></a>関連リンク
 
 - [MonkeyAppCSS (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
-- [リソースディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
-- [XAML スタイルを使用した Xamarin.Forms アプリのスタイル設定](~/xamarin-forms/user-interface/styles/xaml/index.md)
+- [リソース ディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [Xamarin.FormsXAML スタイルを使用したアプリのスタイル設定](~/xamarin-forms/user-interface/styles/xaml/index.md)

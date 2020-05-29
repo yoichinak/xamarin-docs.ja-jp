@@ -1,53 +1,56 @@
 ---
-title: CarouselView レイアウト
-description: 既定では、CarouselView はその項目を水平方向に表示します。 ただし、垂直方向も可能です。
-ms.prod: xamarin
-ms.assetid: fede0382-c972-4023-a4ea-fe5cadec91a6
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/28/2020
-ms.openlocfilehash: 3242148fa97e6b3795b57b2fed86f3643a5ecdf6
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+title: Xamarin.FormsCarouselView レイアウト
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 44df710df0272afe3c6f6911381af1a88c8cf923
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82517421"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84140284"
 ---
-# <a name="xamarinforms-carouselview-layout"></a>CarouselView レイアウト
+# <a name="xamarinforms-carouselview-layout"></a>Xamarin.FormsCarouselView レイアウト
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![](~/media/shared/download.png)サンプルをダウンロードするサンプルをダウンロードする](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)レイアウトを制御する次のプロパティを定義します。
 
-- [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)型`LinearItemsLayout`ので、使用するレイアウトを指定します。
-- `PeekAreaInsets`型[`Thickness`](xref:Xamarin.Forms.Thickness)の。は、隣接する項目を部分的に表示する方法を指定します。
+- [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)型ので、 `LinearItemsLayout` 使用するレイアウトを指定します。
+- `PeekAreaInsets`型の。は、 [`Thickness`](xref:Xamarin.Forms.Thickness) 隣接する項目を部分的に表示する方法を指定します。
 
-これらのプロパティは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)オブジェクトによって支えられています。これは、プロパティをデータバインディングのターゲットにできることを意味します。
+これらのプロパティは、オブジェクトによって支えられてい [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ます。これは、プロパティをデータバインディングのターゲットにできることを意味します。
 
-既定では、 [`CarouselView`](xref:Xamarin.Forms.CarouselView)の項目は水平方向に表示されます。 1つの項目が画面に表示されます。スワイプジェスチャを使用すると、項目のコレクションの前後に移動します。 ただし、垂直方向も可能です。 これは、 [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)プロパティが型`LinearItemsLayout`であり、 [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)クラスから継承されるためです。 クラス`ItemsLayout`は、次のプロパティを定義します。
+既定では、の [`CarouselView`](xref:Xamarin.Forms.CarouselView) 項目は水平方向に表示されます。 1つの項目が画面に表示されます。スワイプジェスチャを使用すると、項目のコレクションの前後に移動します。 ただし、垂直方向も可能です。 これは、 [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout) プロパティが型であり `LinearItemsLayout` 、クラスから継承されるためです [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout) 。 `ItemsLayout`クラスは、次のプロパティを定義します。
 
-- [`Orientation`](xref:Xamarin.Forms.ItemsLayout.Orientation)型[`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)の。は、を項目として[`CarouselView`](xref:Xamarin.Forms.CarouselView)追加する方向を指定します。
-- [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment)(型[`SnapPointsAlignment`](xref:Xamarin.Forms.SnapPointsAlignment)) では、スナップポイントを項目と整列する方法を指定します。
-- [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType)型[`SnapPointsType`](xref:Xamarin.Forms.SnapPointsType)のは、スクロール時のスナップポイントの動作を指定します。
+- [`Orientation`](xref:Xamarin.Forms.ItemsLayout.Orientation)型の。は、を [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation) [`CarouselView`](xref:Xamarin.Forms.CarouselView) 項目として追加する方向を指定します。
+- [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment)(型) では、 [`SnapPointsAlignment`](xref:Xamarin.Forms.SnapPointsAlignment) スナップポイントを項目と整列する方法を指定します。
+- [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType)型のは、 [`SnapPointsType`](xref:Xamarin.Forms.SnapPointsType) スクロール時のスナップポイントの動作を指定します。
 
-これらのプロパティは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)オブジェクトによって支えられています。これは、プロパティをデータバインディングのターゲットにできることを意味します。 スナップポイントの詳細については、「 [CollectionView スクロール](scrolling.md)ガイド」の「[スナップポイント](scrolling.md#snap-points)」を参照してください。
+これらのプロパティは、オブジェクトによって支えられてい [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ます。これは、プロパティをデータバインディングのターゲットにできることを意味します。 スナップポイントの詳細については、「 [ Xamarin.Forms CollectionView スクロール](scrolling.md)ガイド」の「[スナップポイント](scrolling.md#snap-points)」を参照してください。
 
-列挙[`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)体は、次のメンバーを定義します。
+[`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)列挙体は、次のメンバーを定義します。
 
-- `Vertical`項目が追加[`CarouselView`](xref:Xamarin.Forms.CarouselView)されると、が垂直方向に展開されることを示します。
-- `Horizontal`項目が追加[`CarouselView`](xref:Xamarin.Forms.CarouselView)されると、が水平方向に展開されることを示します。
+- `Vertical`項目が追加されると、が垂直方向に展開されることを示し [`CarouselView`](xref:Xamarin.Forms.CarouselView) ます。
+- `Horizontal`項目が追加されると、が水平方向に展開されることを示し [`CarouselView`](xref:Xamarin.Forms.CarouselView) ます。
 
-クラス`LinearItemsLayout`は、 [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)クラスから継承され、各`ItemSpacing`項目の周囲の`double`空白を表す型のプロパティを定義します。 このプロパティの既定値は0で、値は常に0以上である必要があります。 クラス`LinearItemsLayout`は、静的`Vertical`メンバーと`Horizontal`メンバーも定義します。 これらのメンバーを使用すると、縦または横のリストをそれぞれ作成できます。 または、 `LinearItemsLayout`オブジェクトを作成し、 [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)列挙型のメンバーを引数として指定することもできます。
+クラスは、 `LinearItemsLayout` クラスから継承され、 [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout) `ItemSpacing` 各項目の周囲の空白を表す型のプロパティを定義し `double` ます。 このプロパティの既定値は0で、値は常に0以上である必要があります。 クラスは、 `LinearItemsLayout` 静的 `Vertical` メンバーとメンバーも定義し `Horizontal` ます。 これらのメンバーを使用すると、縦または横のリストをそれぞれ作成できます。 または、 `LinearItemsLayout` オブジェクトを作成し、 [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation) 列挙型のメンバーを引数として指定することもできます。
 
 > [!NOTE]
 > [`CarouselView`](xref:Xamarin.Forms.CarouselView)ネイティブレイアウトエンジンを使用してレイアウトを実行します。
 
 ## <a name="horizontal-layout"></a>水平方向のレイアウト
 
-既定では[`CarouselView`](xref:Xamarin.Forms.CarouselView) 、アイテムは水平方向に表示されます。 このため、このレイアウトを使用するよう[`ItemsLayout`](xref:Xamarin.Forms.CarouselView.ItemsLayout)にプロパティを設定する必要はありません。
+既定で [`CarouselView`](xref:Xamarin.Forms.CarouselView) は、アイテムは水平方向に表示されます。 このため、 [`ItemsLayout`](xref:Xamarin.Forms.CarouselView.ItemsLayout) このレイアウトを使用するようにプロパティを設定する必要はありません。
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}">
@@ -87,7 +90,7 @@ ms.locfileid: "82517421"
 </CarouselView>
 ```
 
-または[`ItemsLayout`](xref:Xamarin.Forms.CarouselView.ItemsLayout) 、プロパティを`LinearItemsLayout`オブジェクトに設定し、 `Horizontal` [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)列挙型のメンバーを`Orientation`プロパティ値として指定することで、このレイアウトを実現することもできます。
+または、プロパティを [`ItemsLayout`](xref:Xamarin.Forms.CarouselView.ItemsLayout) オブジェクトに設定し `LinearItemsLayout` 、 `Horizontal` [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation) 列挙型のメンバーをプロパティ値として指定することで、このレイアウトを実現することもでき `Orientation` ます。
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}">
@@ -98,7 +101,7 @@ ms.locfileid: "82517421"
 </CarouselView>
 ```
 
-該当の C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView
@@ -114,7 +117,7 @@ CarouselView carouselView = new CarouselView
 
 ## <a name="vertical-layout"></a>縦方向のレイアウト
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)では、プロパティ[`ItemsLayout`](xref:Xamarin.Forms.CarouselView.ItemsLayout)を`LinearItemsLayout`オブジェクトに設定して、プロパティ値とし`Vertical` [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)て`Orientation`列挙メンバーを指定することで、項目を垂直方向に表示できます。
+[`CarouselView`](xref:Xamarin.Forms.CarouselView)では、プロパティをオブジェクトに設定して、プロパティ [`ItemsLayout`](xref:Xamarin.Forms.CarouselView.ItemsLayout) `LinearItemsLayout` `Vertical` [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation) 値として列挙メンバーを指定することで、項目を垂直方向に表示でき `Orientation` ます。
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}">
@@ -157,7 +160,7 @@ CarouselView carouselView = new CarouselView
 </CarouselView>
 ```
 
-該当の C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView
@@ -173,7 +176,7 @@ CarouselView carouselView = new CarouselView
 
 ## <a name="partially-visible-adjacent-items"></a>部分的に表示される隣接項目
 
-既定では[`CarouselView`](xref:Xamarin.Forms.CarouselView) 、はすべての項目を一度に表示します。 ただし、この動作は、によって、 `PeekAreaInsets`隣接する項目`Thickness`を部分的に表示する方法を指定する値にプロパティを設定することによって変更できます。 これは、表示する追加項目があることをユーザーに示す場合に便利です。 次の XAML は、このプロパティを設定する例を示しています。
+既定では、は [`CarouselView`](xref:Xamarin.Forms.CarouselView) すべての項目を一度に表示します。 ただし、この動作は、 `PeekAreaInsets` `Thickness` によって、隣接する項目を部分的に表示する方法を指定する値にプロパティを設定することによって変更できます。 これは、表示する追加項目があることをユーザーに示す場合に便利です。 次の XAML は、このプロパティを設定する例を示しています。
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}"
@@ -182,7 +185,7 @@ CarouselView carouselView = new CarouselView
 </CarouselView>
 ```
 
-該当の C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView
@@ -198,9 +201,9 @@ CarouselView carouselView = new CarouselView
 
 ## <a name="item-spacing"></a>項目の間隔
 
-既定では、内の各項目の間にスペース[`CarouselView`](xref:Xamarin.Forms.CarouselView)はありません。 この動作は、 `ItemSpacing` `CarouselView`によって使用される項目のレイアウトのプロパティを設定することによって変更できます。
+既定では、内の各項目の間にスペースはありません [`CarouselView`](xref:Xamarin.Forms.CarouselView) 。 この動作は `ItemSpacing` 、によって使用される項目のレイアウトのプロパティを設定することによって変更でき `CarouselView` ます。
 
-が[`CarouselView`](xref:Xamarin.Forms.CarouselView) [`ItemsLayout`](xref:Xamarin.Forms.CarouselView.ItemsLayout)プロパティを`LinearItemsLayout`オブジェクトに設定すると、プロパティ`LinearItemsLayout.ItemSpacing`は、項目間のスペース`double`を表す値に設定できます。
+が [`CarouselView`](xref:Xamarin.Forms.CarouselView) [`ItemsLayout`](xref:Xamarin.Forms.CarouselView.ItemsLayout) プロパティをオブジェクトに設定すると、 `LinearItemsLayout` プロパティは、 `LinearItemsLayout.ItemSpacing` `double` 項目間のスペースを表す値に設定できます。
 
 ```xaml
 <CarouselView ItemsSource="{Binding Monkeys}">
@@ -213,9 +216,9 @@ CarouselView carouselView = new CarouselView
 ```
 
 > [!NOTE]
-> `LinearItemsLayout.ItemSpacing`プロパティには、プロパティの値が常に0以上であることを保証する検証コールバックセットがあります。
+> プロパティには、 `LinearItemsLayout.ItemSpacing` プロパティの値が常に0以上であることを保証する検証コールバックセットがあります。
 
-該当の C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView
@@ -232,7 +235,7 @@ CarouselView carouselView = new CarouselView
 
 ## <a name="dynamic-resizing-of-items"></a>項目の動的なサイズ変更
 
-内の項目[`CarouselView`](xref:Xamarin.Forms.CarouselView)は、 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)内の要素のレイアウトに関連するプロパティを変更することで、実行時に動的に変更できます。 たとえば、次のコード例では、 [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) [`Image`](xref:Xamarin.Forms.Image)オブジェクトのプロパティとプロパティ、およびその`HeightRequest`親[`Frame`](xref:Xamarin.Forms.Frame)のプロパティを変更します。
+内の項目は [`CarouselView`](xref:Xamarin.Forms.CarouselView) 、内の要素のレイアウトに関連するプロパティを変更することで、実行時に動的に変更でき [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ます。 たとえば、次のコード例では、 [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) オブジェクトのプロパティとプロパティ、 [`Image`](xref:Xamarin.Forms.Image) および `HeightRequest` その親のプロパティを変更し [`Frame`](xref:Xamarin.Forms.Frame) ます。
 
 ```csharp
 void OnImageTapped(object sender, EventArgs e)
@@ -244,13 +247,13 @@ void OnImageTapped(object sender, EventArgs e)
 }
 ```
 
-`OnImageTapped`イベントハンドラーは、タップされる[`Image`](xref:Xamarin.Forms.Image)オブジェクトに応答して実行され、イメージ (およびその親`Frame`) のサイズを変更して、より簡単に表示できるようにします。
+`OnImageTapped`イベントハンドラーは、タップされるオブジェクトに応答して実行され [`Image`](xref:Xamarin.Forms.Image) 、イメージ (およびその親) のサイズを変更して `Frame` 、より簡単に表示できるようにします。
 
 [![IOS と Android での動的な項目サイズ設定を使用した CarouselView のスクリーンショット](layout-images/runtime-resizing.png "CarouselView 動的な項目のサイズ変更")](layout-images/runtime-resizing-large.png#lightbox "CarouselView 動的な項目のサイズ変更")
 
 ## <a name="right-to-left-layout"></a>右から左へのレイアウト
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)では、 [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)プロパティをに設定する[`RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft)ことによって、右から左へのフロー方向にコンテンツをレイアウトできます。 ただし、プロパティ`FlowDirection`はページまたはルートレイアウトで設定することをお勧めします。これにより、ページ内のすべての要素、またはルートレイアウトがフロー方向に応答するようになります。
+[`CarouselView`](xref:Xamarin.Forms.CarouselView)では、プロパティをに設定することによって、右から左へのフロー方向にコンテンツをレイアウトでき [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) [`RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft) ます。 ただし、 `FlowDirection` プロパティはページまたはルートレイアウトで設定することをお勧めします。これにより、ページ内のすべての要素、またはルートレイアウトがフロー方向に応答するようになります。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -264,7 +267,7 @@ void OnImageTapped(object sender, EventArgs e)
 </ContentPage>
 ```
 
-親を[`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)持つ要素の既定値は[`MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent)です。 したがって、 [`CarouselView`](xref:Xamarin.Forms.CarouselView)は、 `FlowDirection`からプロパティ値を[`ContentPage`](xref:Xamarin.Forms.ContentPage)継承します。
+親を [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) 持つ要素の既定値は [`MatchParent`](xref:Xamarin.Forms.FlowDirection.MatchParent) です。 したがって、は、 [`CarouselView`](xref:Xamarin.Forms.CarouselView) `FlowDirection` からプロパティ値を継承し [`ContentPage`](xref:Xamarin.Forms.ContentPage) ます。
 
 フローの方向の詳細については、「[右から左へのローカライズ](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)」を参照してください。
 
@@ -272,4 +275,4 @@ void OnImageTapped(object sender, EventArgs e)
 
 - [CarouselView (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 - [右から左へのローカライズ](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)
-- [CarouselView のスクロール](scrolling.md)
+- [Xamarin.FormsCarouselView スクロール](scrolling.md)

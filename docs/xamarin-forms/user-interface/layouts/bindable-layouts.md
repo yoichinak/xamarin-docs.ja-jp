@@ -1,58 +1,61 @@
 ---
-title: Xamarin. Forms のバインド可能なレイアウト
-description: バインド可能なレイアウトでは、レイアウトクラスが項目のコレクションにバインドすることによってコンテンツを生成できます。また、各項目の外観を System.windows.datatemplate> で設定することもできます。
-ms.prod: xamarin
-ms.assetid: 824C3319-20A0-42D0-8632-CDECD98349C3
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/09/2020
-ms.openlocfilehash: d084d910786c24a4b0333ecbc3e893cfe144d404
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+title: バインド可能なレイアウトXamarin.Forms
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9d0497c0c0593b54f69bac84307976c4050e9c95
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82517205"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138243"
 ---
-# <a name="bindable-layouts-in-xamarinforms"></a>Xamarin. Forms のバインド可能なレイアウト
+# <a name="bindable-layouts-in-xamarinforms"></a>バインド可能なレイアウトXamarin.Forms
 
-[![](~/media/shared/download.png)サンプルをダウンロードするサンプルをダウンロードする](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)
 
-バインド可能なレイアウトでは、 [`Layout<T>`](xref:Xamarin.Forms.Layout`1)クラスから派生した任意のレイアウトクラスを使用して、項目のコレクションにバインドすることによってコンテンツを生成でき[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)ます。また、を使用して各項目の外観を設定することもできます。 バインド可能なレイアウトは、 `BindableLayout`クラスによって提供されます。このクラスは、次の添付プロパティを公開します。
+バインド可能なレイアウトでは、クラスから派生した任意のレイアウトクラスを使用し [`Layout<T>`](xref:Xamarin.Forms.Layout`1) て、項目のコレクションにバインドすることによってコンテンツを生成できます。また、を使用して各項目の外観を設定することも [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) できます。 バインド可能なレイアウトは、クラスによって提供され `BindableLayout` ます。このクラスは、次の添付プロパティを公開します。
 
-- `ItemsSource`–レイアウトによって`IEnumerable`表示される項目のコレクションを指定します。
-- `ItemTemplate`–レイアウトに[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)よって表示される項目のコレクション内の各項目に適用するを指定します。
-- `ItemTemplateSelector`–実行時[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)に項目のを[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)選択するために使用されるを指定します。
-
-> [!NOTE]
-> プロパティ`ItemTemplate` `ItemTemplate`と`ItemTemplateSelector`プロパティの両方が設定されている場合は、プロパティが優先されます。
-
-さらに、クラス`BindableLayout`は、次のバインド可能なプロパティを公開します。
-
-- `EmptyView`– `string` `ItemsSource`プロパティが`null`の場合、または`ItemsSource`プロパティによって指定されたコレクションが`null`または空の場合に表示されるビューまたはビューを指定します。 既定値は `null` です。
-- `EmptyViewTemplate`– [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) `ItemsSource`プロパティが`null`の場合、または`ItemsSource`プロパティによって指定されたコレクションが`null`または空の場合に表示されるを指定します。 既定値は `null` です。
+- `ItemsSource`– `IEnumerable` レイアウトによって表示される項目のコレクションを指定します。
+- `ItemTemplate`– [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) レイアウトによって表示される項目のコレクション内の各項目に適用するを指定します。
+- `ItemTemplateSelector`– [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 実行時に項目のを選択するために使用されるを指定します。
 
 > [!NOTE]
-> プロパティ`EmptyViewTemplate` `EmptyView`と`EmptyViewTemplate`プロパティの両方が設定されている場合は、プロパティが優先されます。
+> `ItemTemplate`プロパティ `ItemTemplate` とプロパティの両方が設定されている場合は、プロパティが優先 `ItemTemplateSelector` されます。
 
-これら[`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)すべてのプロパティは、 [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) [`Grid`](xref:Xamarin.Forms.Grid) [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) [`StackLayout`](xref:Xamarin.Forms.StackLayout) [`Layout<T>`](xref:Xamarin.Forms.Layout`1)クラスから派生する、、、、およびの各クラスにアタッチできます。
+さらに、クラスは、 `BindableLayout` 次のバインド可能なプロパティを公開します。
 
-クラス`Layout<T>`は、レイアウト[`Children`](xref:Xamarin.Forms.Layout`1.Children)の子要素が追加されるコレクションを公開します。 `BinableLayout.ItemsSource`プロパティが項目のコレクションに設定され、 [`Layout<T>`](xref:Xamarin.Forms.Layout`1)から派生したクラスに関連付けられている場合、コレクション内の各項目は、レイアウトによって表示されるように`Layout<T>.Children`コレクションに追加されます。 `Layout<T>`派生クラスは、基になるコレクションが変更されたときに、その子ビューを更新します。 Xamarin のレイアウトサイクルの詳細については、「[カスタムレイアウトを作成する](~/xamarin-forms/user-interface/layouts/custom.md)」を参照してください。
+- `EmptyView`– `string` プロパティがの場合、または `ItemsSource` `null` プロパティによって指定されたコレクション `ItemsSource` が `null` または空の場合に表示されるビューまたはビューを指定します。 既定値は `null` です。
+- `EmptyViewTemplate`– [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) `ItemsSource` プロパティがの場合 `null` 、またはプロパティによって指定されたコレクション `ItemsSource` が `null` または空の場合に表示されるを指定します。 既定値は `null` です。
 
-バインド可能なレイアウトは、表示される項目のコレクションが小さく、スクロールと選択が不要な場合にのみ使用してください。 では、バインド可能なレイアウトをラップすることに[`ScrollView`](xref:Xamarin.Forms.ScrollView)よってスクロールできますが、バインド可能なレイアウトに UI 仮想化が存在しない場合は推奨されません。 スクロールが必要な場合[`ListView`](xref:Xamarin.Forms.ListView)は、や[`CollectionView`](xref:Xamarin.Forms.CollectionView)などの UI 仮想化を含むスクロール可能なビューを使用する必要があります。 この推奨事項に従わないと、パフォーマンスの問題が発生する可能性があります。
+> [!NOTE]
+> `EmptyViewTemplate`プロパティ `EmptyView` とプロパティの両方が設定されている場合は、プロパティが優先 `EmptyViewTemplate` されます。
+
+これらすべてのプロパティは [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) 、 [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) [`Grid`](xref:Xamarin.Forms.Grid) [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) [`StackLayout`](xref:Xamarin.Forms.StackLayout) クラスから派生する、、、、およびの各クラスにアタッチでき [`Layout<T>`](xref:Xamarin.Forms.Layout`1) ます。
+
+クラスは、 `Layout<T>` [`Children`](xref:Xamarin.Forms.Layout`1.Children) レイアウトの子要素が追加されるコレクションを公開します。 `BinableLayout.ItemsSource`プロパティが項目のコレクションに設定され、から派生したクラスに関連付けられている場合 [`Layout<T>`](xref:Xamarin.Forms.Layout`1) 、コレクション内の各項目は、 `Layout<T>.Children` レイアウトによって表示されるようにコレクションに追加されます。 `Layout<T>`派生クラスは、基になるコレクションが変更されたときに、その子ビューを更新します。 レイアウトサイクルの詳細については Xamarin.Forms 、「[カスタムレイアウトの作成](~/xamarin-forms/user-interface/layouts/custom.md)」を参照してください。
+
+バインド可能なレイアウトは、表示される項目のコレクションが小さく、スクロールと選択が不要な場合にのみ使用してください。 では、バインド可能なレイアウトをラップすることによってスクロールでき [`ScrollView`](xref:Xamarin.Forms.ScrollView) ますが、バインド可能なレイアウトに UI 仮想化が存在しない場合は推奨されません。 スクロールが必要な場合は、やなどの UI 仮想化を含むスクロール可能なビューを [`ListView`](xref:Xamarin.Forms.ListView) [`CollectionView`](xref:Xamarin.Forms.CollectionView) 使用する必要があります。 この推奨事項に従わないと、パフォーマンスの問題が発生する可能性があります。
 
 > [!IMPORTANT]
-> [`Layout<T>`](xref:Xamarin.Forms.Layout`1)クラスから派生した任意のレイアウトクラスにバインド可能なレイアウトをアタッチすることは技術的に可能ですが、特に[`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)、 [`Grid`](xref:Xamarin.Forms.Grid)、および[`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout)の各クラスでは、これを行うことは実用的ではありません。 たとえば、バインド可能なレイアウトを[`Grid`](xref:Xamarin.Forms.Grid)使用してのデータのコレクションを表示するシナリオを考えてみます。コレクション内の各項目は、複数のプロパティを含むオブジェクトです。 `Grid`の各行には、コレクションのオブジェクトが表示されます。各列に`Grid`は、オブジェクトのプロパティの1つが表示されます。 バインド可能[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)なレイアウトのには1つのオブジェクトのみを含めることができるため、そのオブジェクトは、それぞれが特定`Grid`の列にあるオブジェクトのプロパティの1つを表示する複数のビューを含むレイアウトクラスである必要があります。 このシナリオはバインド可能なレイアウトと realised ことができますが、 `Grid`バインドされ`Grid`たコレクション内の各項目の子を含む親になります。これは、 `Grid`レイアウトの非常に非効率的で問題のある使用です。
+> クラスから派生した任意のレイアウトクラスにバインド可能なレイアウトをアタッチすることは技術的に可能ですが、特に、、およびの各 [`Layout<T>`](xref:Xamarin.Forms.Layout`1) クラスでは、これを行うことは実用的ではありません [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) [`Grid`](xref:Xamarin.Forms.Grid) [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) 。 たとえば、バインド可能なレイアウトを使用してのデータのコレクションを表示するシナリオを考えてみ [`Grid`](xref:Xamarin.Forms.Grid) ます。コレクション内の各項目は、複数のプロパティを含むオブジェクトです。 の各行には、 `Grid` コレクションのオブジェクトが表示されます。各列には、 `Grid` オブジェクトのプロパティの1つが表示されます。 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)バインド可能なレイアウトのには1つのオブジェクトのみを含めることができるため、そのオブジェクトは、それぞれが特定の列にあるオブジェクトのプロパティの1つを表示する複数のビューを含むレイアウトクラスである必要があり `Grid` ます。 このシナリオはバインド可能なレイアウトと realised ことができますが、 `Grid` バインドされ `Grid` たコレクション内の各項目の子を含む親になります。これは、レイアウトの非常に非効率的で問題のある使用です `Grid` 。
 
 ## <a name="populate-a-bindable-layout-with-data"></a>バインド可能なレイアウトにデータを設定する
 
-バインド可能なレイアウトには、 `ItemsSource`プロパティをが実装`IEnumerable`されている任意のコレクションに設定し、 [`Layout<T>`](xref:Xamarin.Forms.Layout`1)それを派生クラスにアタッチすることによって、データを設定します。
+バインド可能なレイアウトには、プロパティをが実装されて `ItemsSource` いる任意のコレクションに設定 `IEnumerable` し、それを派生クラスにアタッチすることによって、データを設定し [`Layout<T>`](xref:Xamarin.Forms.Layout`1) ます。
 
 ```xaml
 <Grid BindableLayout.ItemsSource="{Binding Items}" />
 ```
 
-該当の C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 IEnumerable<string> items = ...;
@@ -60,11 +63,11 @@ var grid = new Grid();
 BindableLayout.SetItemsSource(grid, items);
 ```
 
-`BindableLayout.ItemsSource`添付プロパティがレイアウトに設定されていても`BindableLayout.ItemTemplate` 、添付プロパティが設定されてい`IEnumerable`ない場合、コレクション内の[`Label`](xref:Xamarin.Forms.Label)すべての項目は、 `BindableLayout`クラスによって作成されたによって表示されます。
+`BindableLayout.ItemsSource`添付プロパティがレイアウトに設定されていても、添付プロパティが設定されて `BindableLayout.ItemTemplate` いない場合、コレクション内のすべての項目 `IEnumerable` は、 [`Label`](xref:Xamarin.Forms.Label) クラスによって作成されたによって表示され `BindableLayout` ます。
 
 ## <a name="define-item-appearance"></a>項目の外観を定義する
 
-バインド可能な`BindableLayout.ItemTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)レイアウトの各項目の外観は、添付プロパティをに設定することによって定義できます。
+バインド可能なレイアウトの各項目の外観は、添付プロパティをに設定することによって定義でき `BindableLayout.ItemTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ます。
 
 ```xaml
 <StackLayout BindableLayout.ItemsSource="{Binding User.TopFollowers}"
@@ -82,7 +85,7 @@ BindableLayout.SetItemsSource(grid, items);
 </StackLayout>
 ```
 
-該当の C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 DataTemplate circleImageTemplate = ...;
@@ -91,15 +94,15 @@ BindableLayout.SetItemsSource(stackLayout, viewModel.User.TopFollowers);
 BindableLayout.SetItemTemplate(stackLayout, circleImageTemplate);
 ```
 
-この例では、 `TopFollowers`コレクション内のすべての項目が、 `CircleImage` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)で定義されているビューによって表示されます。
+この例では、コレクション内のすべての項目 `TopFollowers` が `CircleImage` 、で定義されているビューによって表示され [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ます。
 
 ![System.windows.datatemplate> を使用したバインド可能なレイアウト](bindable-layouts-images/top-followers.png "データテンプレートを使用したバインド可能なレイアウト")
 
-データ テンプレートについて詳しくは「[Xamarin.Forms Data Templates](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)」(Xamarin.Forms のデータ テンプレート) をご覧ください。
+データテンプレートの詳細については、「 [ Xamarin.Forms データテンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)」を参照してください。
 
 ## <a name="choose-item-appearance-at-runtime"></a>実行時に項目の外観を選択する
 
-バインド可能な`BindableLayout.ItemTemplateSelector` [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)レイアウトの各項目の外観は、添付プロパティをに設定することによって、項目の値に基づいて実行時に選択できます。
+バインド可能なレイアウトの各項目の外観は、添付プロパティをに設定することによって、項目の値に基づいて実行時に選択でき `BindableLayout.ItemTemplateSelector` [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) ます。
 
 ```xaml
 <FlexLayout BindableLayout.ItemsSource="{Binding User.FavoriteTech}"
@@ -107,7 +110,7 @@ BindableLayout.SetItemTemplate(stackLayout, circleImageTemplate);
             ... />
 ```
 
-該当の C# コードを次に示します。
+同等の C# コードを次に示します。
 
 ```csharp
 DataTemplateSelector dataTemplateSelector = new TechItemTemplateSelector { ... };
@@ -116,7 +119,7 @@ BindableLayout.SetItemsSource(flexLayout, viewModel.User.FavoriteTech);
 BindableLayout.SetItemTemplateSelector(flexLayout, dataTemplateSelector);
 ```
 
-サンプル[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)アプリケーションで使用されているは、次の例のようになります。
+サンプルアプリケーションで使用されているは、次の例のようになり [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) ます。
 
 ```csharp
 public class TechItemTemplateSelector : DataTemplateSelector
@@ -131,15 +134,15 @@ public class TechItemTemplateSelector : DataTemplateSelector
 }
 ```
 
-クラス`TechItemTemplateSelector`は、 `DefaultTemplate`さまざま`XamarinFormsTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)なデータテンプレートに設定されるプロパティとプロパティを定義します。 メソッド`OnSelectTemplate`はを返し`XamarinFormsTemplate`ます。これにより、項目が "Xamarin. Forms" に等しい場合は、その横にハートが付いた濃い赤の項目が表示されます。 項目が "Xamarin. Forms" と等しくない場合、メソッド`OnSelectTemplate`はを返し`DefaultTemplate` [`Label`](xref:Xamarin.Forms.Label)ます。これは、の既定の色を使用して項目を表示します。
+`TechItemTemplateSelector`クラスは、 `DefaultTemplate` `XamarinFormsTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) さまざまなデータテンプレートに設定されるプロパティとプロパティを定義します。 メソッドはを返します。これにより、項目 `OnSelectTemplate` `XamarinFormsTemplate` が "" に等しい場合に、その横にハートが付いた濃い赤の項目が表示され Xamarin.Forms ます。 項目が "" と等しくない場合 Xamarin.Forms 、メソッドはを `OnSelectTemplate` 返し `DefaultTemplate` ます。これは、の既定の色を使用して項目を表示し [`Label`](xref:Xamarin.Forms.Label) ます。
 
 ![DataTemplateSelector を使用したバインド可能なレイアウト](bindable-layouts-images/favorite-tech.png "データテンプレートセレクターを使用したバインド可能なレイアウト")
 
-データテンプレートセレクターの詳細については、「 [DataTemplateSelector の作成](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)」を参照してください。
+データテンプレートセレクターの詳細については、「 [ Xamarin.Forms DataTemplateSelector の作成](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)」を参照してください。
 
 ## <a name="display-a-string-when-data-is-unavailable"></a>データが使用できないときに文字列を表示する
 
-`EmptyView`プロパティは、プロパティ[`Label`](xref:Xamarin.Forms.Label)が`ItemsSource` `null`のときはによって表示される文字列に設定できます。また、 `ItemsSource`プロパティによって指定され`null`たコレクションがまたは空の場合にも表示されます。 次の XAML は、このシナリオの例を示しています。
+プロパティは、プロパティ `EmptyView` がのときはによって表示される文字列に設定でき [`Label`](xref:Xamarin.Forms.Label) `ItemsSource` `null` ます。また、プロパティによって指定されたコレクション `ItemsSource` が `null` または空の場合にも表示されます。 次の XAML は、このシナリオの例を示しています。
 
 ```xaml
 <StackLayout BindableLayout.ItemsSource="{Binding UserWithoutAchievements.Achievements}"
@@ -148,13 +151,13 @@ public class TechItemTemplateSelector : DataTemplateSelector
 </StackLayout>
 ```
 
-その結果、データバインドされたコレクションが`null`の場合、 `EmptyView`プロパティ値として設定された文字列が表示されます。
+その結果、データバインドされたコレクションがの場合 `null` 、プロパティ値として設定された文字列 `EmptyView` が表示されます。
 
 [![IOS と Android のバインド可能なレイアウト文字列の空のビューのスクリーンショット](bindable-layouts-images/emptyview-string.png "バインド可能なレイアウト文字列の空の表示")](bindable-layouts-images/emptyview-string-large.png#lightbox "バインド可能なレイアウト文字列の空の表示")
 
 ## <a name="display-views-when-data-is-unavailable"></a>データが使用できないときにビューを表示する
 
-`EmptyView` `ItemsSource`プロパティは、プロパティが`null`の場合、またはプロパティで`ItemsSource`指定されたコレクションが`null`または空の場合に表示されるビューに設定できます。 1つのビュー、または複数の子ビューを含むビューを指定できます。 次の XAML の例は`EmptyView` 、複数の子ビューを含むビューに設定されたプロパティを示しています。
+プロパティは、プロパティ `EmptyView` がの場合 `ItemsSource` 、またはプロパティ `null` で指定されたコレクション `ItemsSource` がまたは空の場合に表示されるビューに設定でき `null` ます。 1つのビュー、または複数の子ビューを含むビューを指定できます。 次の XAML の例は、 `EmptyView` 複数の子ビューを含むビューに設定されたプロパティを示しています。
 
 ```xaml
 <StackLayout BindableLayout.ItemsSource="{Binding UserWithoutAchievements.Achievements}">
@@ -172,11 +175,11 @@ public class TechItemTemplateSelector : DataTemplateSelector
 </StackLayout>
 ```
 
-その結果、データバインドコレクションが`null`の場合、 [`StackLayout`](xref:Xamarin.Forms.StackLayout)とその子ビューが表示されます。
+その結果、データバインドコレクションがの場合、 `null` [`StackLayout`](xref:Xamarin.Forms.StackLayout) とその子ビューが表示されます。
 
 [![IOS と Android での複数のビューを含む、バインド可能なレイアウトの空のビューのスクリーンショット](bindable-layouts-images/emptyview-views.png "バインド可能なレイアウトの空のビュー")](bindable-layouts-images/emptyview-views-large.png#lightbox "バインド可能なレイアウトの空のビュー")
 
-同様に、 `EmptyViewTemplate`をに[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)設定することもできます。これは、 `ItemsSource`プロパティが`null`の場合、または`ItemsSource`プロパティによって指定`null`されたコレクションがまたは空の場合に表示されます。 に`DataTemplate`は、1つのビュー、または複数の子ビューを含むビューを含めることができます。 また`BindingContext` 、のは、の`EmptyViewTemplate`から`BindingContext`継承され`BindableLayout`ます。 次の XAML の例は`EmptyViewTemplate` 、1つの`DataTemplate`ビューを含むに設定されたプロパティを示しています。
+同様に、を `EmptyViewTemplate` に設定することもできます [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 。これは、 `ItemsSource` プロパティがの場合 `null` 、またはプロパティによって指定されたコレクション `ItemsSource` が `null` または空の場合に表示されます。 には、 `DataTemplate` 1 つのビュー、または複数の子ビューを含むビューを含めることができます。 また、のは、の `BindingContext` `EmptyViewTemplate` から継承され `BindingContext` `BindableLayout` ます。 次の XAML の例は、 `EmptyViewTemplate` 1 つのビューを含むに設定されたプロパティを示して `DataTemplate` います。
 
 ```xaml
 <StackLayout BindableLayout.ItemsSource="{Binding UserWithoutAchievements.Achievements}">
@@ -189,16 +192,16 @@ public class TechItemTemplateSelector : DataTemplateSelector
 </StackLayout>
 ```
 
-その結果、データバインドされたコレクションが`null`の場合[`Label`](xref:Xamarin.Forms.Label) 、内[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)のが表示されます。
+その結果、データバインドされたコレクションがの場合、内のが `null` [`Label`](xref:Xamarin.Forms.Label) [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 表示されます。
 
 [![IOS と Android のバインド可能なレイアウトの空のビューテンプレートのスクリーンショット](bindable-layouts-images/emptyviewtemplate.png "バインド可能なレイアウト空のビューテンプレート")](bindable-layouts-images/emptyviewtemplate-large.png#lightbox "バインド可能なレイアウト空のビューテンプレート")
 
 > [!NOTE]
-> プロパティ`EmptyViewTemplate`は、を[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)使用して設定することはできません。
+> `EmptyViewTemplate`プロパティは、を使用して設定することはできません [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) 。
 
 ## <a name="choose-an-emptyview-at-runtime"></a>実行時に EmptyView を選択する
 
-データが使用できない`EmptyView`ときにとして表示されるビューは[`ContentView`](xref:Xamarin.Forms.ContentView) [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)、内のオブジェクトとして定義できます。 この`EmptyView`プロパティは、実行時に何らか`ContentView`のビジネスロジックに基づいて、特定のに設定できます。 次の XAML は、このシナリオの例を示しています。
+データが使用できないときにとして表示されるビュー `EmptyView` は、 [`ContentView`](xref:Xamarin.Forms.ContentView) 内のオブジェクトとして定義でき [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) ます。 この `EmptyView` プロパティは、 `ContentView` 実行時に何らかのビジネスロジックに基づいて、特定のに設定できます。 次の XAML は、このシナリオの例を示しています。
 
 ```xaml
 <ContentPage ...>
@@ -234,7 +237,7 @@ public class TechItemTemplateSelector : DataTemplateSelector
 </ContentPage>
 ```
 
-XAML は、ページ[`ContentView`](xref:Xamarin.Forms.ContentView)レベル[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)で2つのオブジェクトを定義し[`Switch`](xref:Xamarin.Forms.Switch)ます。オブジェクト`ContentView`は、 `EmptyView`プロパティ値として設定するオブジェクトを制御します。 `Switch`が切り替えられると、 `OnEmptyViewSwitchToggled`イベントハンドラーによっ`ToggleEmptyView`てメソッドが実行されます。
+XAML は、ページレベルで2つのオブジェクトを定義し [`ContentView`](xref:Xamarin.Forms.ContentView) [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) [`Switch`](xref:Xamarin.Forms.Switch) ます。オブジェクトは、 `ContentView` プロパティ値として設定するオブジェクトを制御し `EmptyView` ます。 `Switch`が切り替えられると、 `OnEmptyViewSwitchToggled` イベントハンドラーによってメソッドが実行され `ToggleEmptyView` ます。
 
 ```csharp
 void ToggleEmptyView(bool isToggled)
@@ -244,7 +247,7 @@ void ToggleEmptyView(bool isToggled)
 }
 ```
 
-メソッド`ToggleEmptyView` `EmptyView`は、 [`Switch.IsToggled`](xref:Xamarin.Forms.Switch.IsToggled)プロパティの値に`stackLayout`基づいて、オブジェクトのプロパティ[`ContentView`](xref:Xamarin.Forms.ContentView)を、に格納[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)されている2つのオブジェクトのいずれかに設定します。 次に、データバインドコレクションが`null`の場合、 `ContentView` `EmptyView`プロパティとして設定されたオブジェクトが表示されます。
+メソッドは、 `ToggleEmptyView` `EmptyView` `stackLayout` プロパティの値に基づいて、オブジェクトのプロパティを [`ContentView`](xref:Xamarin.Forms.ContentView) 、に格納されている2つのオブジェクトのいずれかに設定し [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) [`Switch.IsToggled`](xref:Xamarin.Forms.Switch.IsToggled) ます。 次に、データバインドコレクションがの場合、 `null` `ContentView` プロパティとして設定されたオブジェクト `EmptyView` が表示されます。
 
 [![実行時に選択した空のビューのスクリーンショット (iOS と Android)](bindable-layouts-images/emptyview-runtime.png "バインド可能なレイアウト空のビューランタイムの選択")](bindable-layouts-images/emptyview-runtime-large.png#lightbox "バインド可能なレイアウト空のビューランタイムの選択")
 
@@ -252,5 +255,5 @@ void ToggleEmptyView(bool isToggled)
 
 - [バインド可能なレイアウトのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)
 - [カスタム レイアウトの作成](~/xamarin-forms/user-interface/layouts/custom.md)
-- [Xamarin.Forms のデータ テンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
-- [Xamarin.Forms DataTemplateSelector の作成](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)
+- [Xamarin.Formsデータテンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
+- [DataTemplateSelector の作成 Xamarin.Forms](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

@@ -1,32 +1,35 @@
 ---
-title: Blend の分離モード
-description: Blend の分離モードを使用すると、赤、緑、および青の色を変更できます。
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 66D1A537-A247-484E-B5B9-FBCB7838FBE9
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/23/2018
-ms.openlocfilehash: 621bc872a80cf023bb9428e2d3183e8af611211f
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c1939c30cbefdbf8d6546761a8c6ac7199bfff62
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200391"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139686"
 ---
-# <a name="the-separable-blend-modes"></a>Blend の分離モード
+# <a name="the-separable-blend-modes"></a>分離可能 blend モード
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-この記事で示した[ **SkiaSharp の Porter Duff ブレンド モード**](porter-duff.md)、Porter Duff blend モードは、一般にクリッピングの操作を実行します。 Blend の分離モードは異なります。 分離モードでは、イメージの個々 の赤、緑、および青の色のコンポーネントを変更します。 Blend の分離モードでは、赤、緑、青の組み合わせが本当に白いことを示すための色を混在させることが。
+記事「 [**SkiaSharp Porter-Duff blend**](porter-duff.md)mode」に示されているように、Porter-duff blend モードでは一般にクリッピング操作が実行されます。 分離可能な blend モードは異なります。 分離可能モードでは、イメージの赤、緑、および青の各色要素が変更されます。 分離可能な blend モードでは、色を混ぜて、赤、緑、および青の組み合わせが実際に白であることを示すことができます。
 
-![色の原色](separable-images/SeparableSample.png "色の原色")
+![原色](separable-images/SeparableSample.png "原色")
 
-## <a name="lighten-and-darken-two-ways"></a>明るくして、2 つの方法を暗くします。 
+## <a name="lighten-and-darken-two-ways"></a>2つの方法を比較して暗くする 
 
-通常、ビットマップがいくらかを暗すぎる、または明るすぎます。 Blend の分離モードは、明るく/暗く、imabe を使用できます。  実際には、2 つの分離の blend モードの[ `SKBlendMode` ](xref:SkiaSharp.SKBlendMode)列挙体の名前は`Lighten`と`Darken`します。 
+ビットマップは、暗すぎるか、または小さすぎることがよくあります。 分離可能な blend モードを使用すると、imabe を明るくしたり暗くしたりできます。  実際には、列挙型の分離可能な blend モードのうちの2つ [`SKBlendMode`](xref:SkiaSharp.SKBlendMode) はとという名前です `Lighten` `Darken` 。 
 
-これら 2 つのモードがで示されています、**明るくと暗く**ページ。 XAML ファイルでは、2 つのインスタンス化します`SKCanvasView`オブジェクトと 2 つ`Slider`ビュー。
+この2つのモードについては、「**明るくと暗く**」ページで説明しています。 XAML ファイルは、2つの `SKCanvasView` オブジェクトと2つのビューをインスタンス化し `Slider` ます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -54,7 +57,7 @@ ms.locfileid: "70200391"
 </ContentPage>
 ```
 
-最初の`SKCanvasView`と`Slider`デモンストレーション`SKBlendMode.Lighten`し、2 番目のペアを示します`SKBlendMode.Darken`します。 2 つ`Slider`ビューでは、同じ共有`ValueChanged`ハンドラー、および 2 つ`SKCanvasView`同じ共有`PaintSurface`ハンドラー。 オブジェクトが両方のイベント ハンドラーのチェックがイベントを発生させます。
+最初のとを示し、 `SKCanvasView` `Slider` `SKBlendMode.Lighten` 2 番目のペアを示し `SKBlendMode.Darken` ます。 2つの `Slider` ビューは同じ `ValueChanged` ハンドラーを共有し、2つのビューは同じハンドラーを共有し `SKCanvasView` `PaintSurface` ます。 どちらのイベントハンドラーも、どのオブジェクトがイベントを発生させているかを確認します。
 
 ```csharp
 public partial class LightenAndDarkenPage : ContentPage
@@ -121,67 +124,92 @@ public partial class LightenAndDarkenPage : ContentPage
 }
 ```
 
-`PaintSurface`ハンドラーは、ビットマップに適した四角形を計算します。 ハンドラーは、そのビットマップを表示し、ビットマップを使用して、上の四角形を表示、`SKPaint`オブジェクトをその`BlendMode`プロパティに設定`SKBlendMode.Lighten`または`SKBlendMode.Darken`します。 `Color`プロパティは、灰色の網かけに基づく、`Slider`します。 `Lighten`モードでは、色の範囲黒から白には、`Darken`白から黒に範囲がモード。
+ハンドラーは、 `PaintSurface` ビットマップに適した四角形を計算します。 ハンドラーはビットマップを表示し、 `SKPaint` `BlendMode` プロパティがまたはに設定されたオブジェクトを使用して、ビットマップの上に四角形を表示し `SKBlendMode.Lighten` `SKBlendMode.Darken` ます。 `Color`プロパティは、に基づく灰色の網掛けです `Slider` 。 モードでは、 `Lighten` 色は黒から白までの範囲になりますが、モードの場合は `Darken` 白から黒までの範囲になります。
 
-左から右にスクリーン ショットはますます大きく表示`Slider`値薄色一番上のイメージを取得し、暗い、下の画像を取得します。
+左から右へのスクリーンショットは、上位の画像が明るくなり、下の画像が暗くなるほど、より大きな値を示し `Slider` ています。
 
-[![明るくして、画面の](separable-images/LightenAndDarken.png "明るくし、暗くします。")](separable-images/LightenAndDarken-Large.png#lightbox)
+[![明るくして暗くする](separable-images/LightenAndDarken.png "明るくして暗くする")](separable-images/LightenAndDarken-Large.png#lightbox)
 
-このプログラムは、分離可能な blend モードを使用する通常の方法を示しています。変換先は、何らかの種類の画像であり、非常に多くの場合ビットマップです。 使用して表示される四角形は、ソースは、`SKPaint`オブジェクトをその`BlendMode`プロパティを分離できる blend モードに設定します。 四角形は、純色を指定できます (ここでは、)、またはグラデーションをします。 透過性は_いない_通常、blend の分離モードで使用します。
+このプログラムは、分離可能な blend モードを使用する通常の方法を示しています。変換先は、何らかの種類の画像であり、非常に多くの場合、ビットマップです。 ソースは、 `SKPaint` `BlendMode` プロパティが分離可能な blend モードに設定されたオブジェクトを使用して表示される四角形です。 四角形は、(ここに示すように) 純色でもグラデーションでもかまいません。 透明度は、分離可能な blend モードでは通常使用され_ません_。
 
-このプログラムで実験するときこれら 2 つの blend のモードのされませんは明るくし、一様にイメージが暗く説明します。 代わりに、`Slider`に何らかのしきい値を設定します。 たとえば、するとして次のように向上します。、`Slider`の、`Lighten`モードでは、イメージの暗い部分の取得光最初明るい部分は同じままです。
+このプログラムを試してみると、これら2つの blend モードではイメージの明るさと暗くが統一されていないことがわかります。 代わりに、に `Slider` よって、ある種のしきい値が設定されているように見えます。 たとえば、モードのを大きくすると、 `Slider` `Lighten` 明るい領域が同じままでも、画像の暗い領域が最初に明るくなります。
 
-`Lighten`モード、対象のピクセルは RGB カラー値 (Dr, Dg, Db) と、出力は、ソース ピクセルが色 (Sr、Sg、Sb) の場合 (Or, Og, Ob) として計算されます。
+モードでは、 `Lighten` 変換先のピクセルが RGB カラー値 (Dr、Dg、Db) で、ソースピクセルが色 (Sr、Sg、Sb) の場合、出力は次のように計算されます (または、Og、Ob)。
 
  `Or = max(Dr, Sr)` `Og = max(Dg, Sg)`
  `Ob = max(Db, Sb)`
 
-赤、緑、青のとは別に、結果が大きいの送信先と送信元です。 これには、最初に、変換先の暗い領域を明るくの効果が生成されます。
+赤、緑、および青の場合は、出力先とコピー元の値が大きくなります。 これにより、最初に変換先の暗い領域を明るくする効果が得られます。
 
-`Darken`モードは、結果の送信先と送信元のうちの小さい方がある点が似ています。
+`Darken`モードは似ていますが、結果はコピー先とコピー元の方が小さい点が異なります。
 
  `Or = min(Dr, Sr)` `Og = min(Dg, Sg)`
  `Ob = min(Db, Sb)`
 
-赤、緑、青のコンポーネントは、個別に処理がこれらの描画モードと呼ばれます、_分離_ブレンド モード。 このため、省略形**Dc**と**Sc**宛先と元の色に使用でき、計算が個別に適用する赤、緑、青のコンポーネントの各が認識されます。
+赤、緑、および青のコンポーネントはそれぞれ個別に処理されるため、これらの blend モードは_分離_可能な blend モードと呼ばれます。 このため、ターゲットとソースの色には、省略形**Dc**と**Sc**を使用できます。また、計算は、赤、緑、および青の各コンポーネントに個別に適用されることがわかります。
 
-次の表では、その実行内容について簡単に説明とすべての blend の分離モードを示します。 2 番目の列には、変更が生成されない元の色が表示されます。
+次の表に、すべての分離可能な blend モードの概要とその説明を示します。 2番目の列には、変更されていないソースの色が表示されます。
 
-| ブレンド モード   | 変更なし | 操作 |
-| ------------ | --------- | --------- |
-| `Plus`       | 黒     | 色を追加して明るくする:Sc + Dc |
-| `Modulate`   | 白     | 色を乗算して暗くする:Sc修飾 | 
-| `Screen`     | 黒     | 補完の製品を補完します。Sc + Dc &ndash; Sc修飾 |
-| `Overlay`    | 灰色      | 逆関数 `HardLight` |
-| `Darken`     | 白     | 色の最小: min (Sc, Dc) |
-| `Lighten`    | 黒     | 色の最大: max (Sc、Dc) |
-| `ColorDodge` | 黒     | ソースに基づいて変換先を明るきます。 |
-| `ColorBurn`  | 白     | ソースに基づいて変換先を暗くなります。 | 
-| `HardLight`  | 灰色      | 同様に、過酷なスポット ライトの効果 |
-| `SoftLight`  | 灰色      | 論理的なスポット ライトの効果に似ています | 
-| `Difference` | 黒     | 明るい方から暗い方を減算します。Abs (Dc &ndash; Sc) | 
-| `Exclusion`  | 黒     | ような`Difference`がコントラストを下げる |
-| `Multiply`   | 白     | 色を乗算して暗くする:Sc修飾 |
+| Blend モード   | 変更なし | 操作 |
+| ---
+タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
 
-詳細なアルゴリズムは、W3C で見つかる[**合成とレベル 1 のブレンド**](https://www.w3.org/TR/compositing-1/)仕様と、Skia [ **SkBlendMode 参照**](https://skia.org/user/api/SkBlendMode_Reference)これら 2 つのソースでの表記は同じはなりません。 注意`Plus`Porter Duff blend モードと見なされることがよくと`Modulate`W3C 仕様の一部ではありません。
+-
+タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
 
-ソースが透過的な場合は、し、すべての分離の描画モードを除く`Modulate`、blend モードが影響を与えません。 前に説明したように、 `Modulate` blend モードには、乗算でアルファ チャネルが組み込まれています。 それ以外の場合、`Modulate`と同じ効果`Multiply`します。 
+-
+タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
 
-という名前の 2 つのモードに注意してください`ColorDodge`と`ColorBurn`します。 単語_覆い_と_書き込む_photographic 暗室プラクティスで開始されます。 ツールでは、負の値を光が当たって写真印刷。 ライトが点灯しない、印刷は白です。 時間の長い期間の印刷に多くの光が当たる、暗い、印刷を取得します。 印刷者では、一部が、印刷、薄色領域の特定部分の光のブロックを手動または小さなオブジェクトをよく使用されます。 これと呼ばれます_を回避する_します。 逆に、(または手光のほとんどをブロックしている) に穴が不透明なマテリアルを暗くと呼ばれる特定の位置より多くの光に出力するため使用でした_書き込み_します。
+-
+タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
 
-**覆いし、Burn**プログラムはほぼ**明るくと暗く**。 XAML ファイルは同じですが、別の要素の名前を持つ構造化し分離コード ファイルはよく似ていますが、同様に、これら 2 つのブレンド モードの影響は大きく異なります。
+------ |---title: description: ms. 製品: ms. テクノロジ: ms. assetid: author: ms. author: ms. date: no loc:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
 
-[![覆いし、Burn](separable-images/DodgeAndBurn.png "覆いし、Burn")](separable-images/DodgeAndBurn-Large.png#lightbox)
+-
+タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
 
-小規模`Slider`値、`Lighten`暗い領域を明るくモード中に最初に、`ColorDodge`一様により明るくなります。
+----- |---title: description: ms. 製品: ms. テクノロジ: ms. assetid: author: ms. author: ms. date: no loc:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
 
-多くの場合、イメージ処理アプリケーションのプログラムを回避して、暗室のと同じように、特定の領域に制限するへの書き込みを許可します。 これは、グラデーション、またはさまざまな種類の灰色のビットマップに実現できます。
+-
+タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
 
-## <a name="exploring-the-separable-blend-modes"></a>Blend の分離モードの調査
+----- | |`Plus`       |黒 |色の追加による明るく: Sc + Dc | |`Modulate`   |白 |色を乗算して暗くする: Sc ·Dc | |`Screen`     |黒 |補完の製品を補完する: Sc + Dc &ndash; Sc ·Dc | |`Overlay`    |灰色 |`HardLight`| | `Darken` の逆関数    |白 |最小色: 最小値 (Sc、Dc) | |`Lighten`    |黒 |最大色: 最大値 (Sc、Dc) | |`ColorDodge` |黒 |ソースに基づいてターゲットを明るくする | |`ColorBurn`  |白 |ソースに基づいて変換先を暗くする | |`HardLight`  |灰色 |厳格なスポットライトの効果と似ています | |`SoftLight`  |灰色 |ソフトスポットライトスポットの場合と同様の効果 | |`Difference` |黒 |淡い: Abs (Dc &ndash; Sc) `Exclusion` から濃い色を減算します。 |黒 |と似て `Difference` いますが、コントラストが低い | | `Multiply`  |白 |色を乗算して暗くする: Sc ·Dc |
 
-**Blend の分離モード** ページでは、すべての blend の分離モードを確認できます。 ビットマップの保存先と blend モードのいずれかを使用して、色付きの四角形のソースが表示されます。 
+より詳細なアルゴリズムについては、W3C[**合成とブレンドレベル 1**](https://www.w3.org/TR/compositing-1/)仕様と Skia [**Skblendmode リファレンスを参照**](https://skia.org/user/api/SkBlendMode_Reference)してください。ただし、これらの2つのソースの表記は同じではありません。 は、通常、 `Plus` Porter-Duff blend モードと見なされ、W3C 仕様には含まれていないことに注意してください `Modulate` 。
 
-XAML ファイルの定義、 `Picker` (blend モードを選択) して 4 つのスライダー。 最初の 3 つのスライダーを使用して、ソースの赤、緑、および青のコンポーネントを設定できます。 4 番目のスライダーは、灰色の網かけに設定してこれらの値をオーバーライドするものです。 個々 のスライダーは識別されませんが、色はそれぞれの機能を示します。
+ソースが透明である場合、を除くすべての分離可能な blend モードでは、 `Modulate` blend モードでは効果がありません。 前に見たように、 `Modulate` blend モードでは、乗算にアルファチャネルが組み込まれています。 それ以外の場合、 `Modulate` はと同じ効果を持ち `Multiply` ます。 
+
+とという2つのモードに注意して `ColorDodge` `ColorBurn` ください。 「_覆い焼き_」と「焼き_込み_」という言葉は、写真の暗室プラクティスに由来しています。 たまにを使用すると、光が負の値になるように写真を印刷できます。 ライトを使用しない場合、印刷は白になります。 印刷により長い時間がかかるほど、印刷が暗くなります。 多くの場合、紙または小さいオブジェクトを使用して、ある種の光が印刷の特定の部分に落下するのをブロックし、その領域を明るくしています。 これは_dodging_と呼ばれています。 反対に、穴がある不透明なマテリアル (または、ほとんどの光を手でブロックする) を使用して、特定のスポットに光を追加して、_書き込み_と呼ばれる暗くすることができます。
+
+**覆い焼きと書き込み**プログラムは、**明るく、暗く**するのとよく似ています。 XAML ファイルは同じように構成されていますが、要素名が異なるため、分離コードファイルも同様に似ていますが、これら2つの blend モードの効果は大きく異なります。
+
+[![覆い焼きと書き込み](separable-images/DodgeAndBurn.png "覆い焼きと書き込み")](separable-images/DodgeAndBurn-Large.png#lightbox)
+
+小さい値の場合 `Slider` 、このモードでは最初に `Lighten` 暗い領域が明るく `ColorDodge` なり、より均一に明るくなります。
+
+多くの場合、イメージ処理アプリケーションプログラムでは、暗室の場合と同様に、dodging と書き込みを特定の領域に制限することができます。 これを行うには、グラデーション、または灰色の網掛けを持つビットマップを使用します。
+
+## <a name="exploring-the-separable-blend-modes"></a>分離可能 blend モードの調査
+
+[**分離可能な Blend モード**] ページでは、すべての分離可能な blend モードを調べることができます。 ブレンドモードの1つを使用して、ビットマップの変換先と色付きの四角形のソースが表示されます。 
+
+XAML ファイルでは、 `Picker` (blend モードを選択するための) と4つのスライダーが定義されています。 最初の3つのスライダーを使用すると、ソースの赤、緑、および青のコンポーネントを設定できます。 4番目のスライダーは、灰色の網掛けを設定してこれらの値をオーバーライドすることを目的としています。 個々のスライダーは識別されませんが、色はその機能を示しています。
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -255,7 +283,7 @@ XAML ファイルの定義、 `Picker` (blend モードを選択) して 4 つ�
 </ContentPage>
 ```
 
-分離コード ファイルを選択し、ビットマップ リソースの 1 つを読み込み、キャンバスの上部に 1 回と、もう一度下には、2 回、描画キャンバスの半分。
+分離コードファイルは、ビットマップリソースの1つを読み込み、キャンバスの上半分に1回、キャンバスの下半分にもう一度描画します。
 
 ```csharp
 public partial class SeparableBlendModesPage : ContentPage
@@ -325,19 +353,19 @@ public partial class SeparableBlendModesPage : ContentPage
 }
 ```
 
-下部の`PaintSurface`ハンドラー、四角形は、選択した blend モードと選択した色で 2 つ目のビットマップを描画します。 上部にある元のビットマップの下部にある変更されたビットマップを比較することができます。
+ハンドラーの下部に向かって `PaintSurface` 、選択した blend モードと選択した色で2番目のビットマップに四角形が描画されます。 一番下にある変更されたビットマップを、一番上にある元のビットマップと比較できます。
 
-[![Blend の分離モード](separable-images/SeparableBlendModes.png "分離可能なブレンド モード")](separable-images/SeparableBlendModes-Large.png#lightbox)
+[![分離可能なブレンド モード](separable-images/SeparableBlendModes.png "分離可能なブレンド モード")](separable-images/SeparableBlendModes-Large.png#lightbox)
 
-## <a name="additive-and-subtractive-primary-colors"></a>加算と減算の色の原色
+## <a name="additive-and-subtractive-primary-colors"></a>加法および減法混色の原色
 
-**色の原色**ページは、赤、緑、青の 3 つの重なり合う円を描画します。
+[**原色**] ページでは、赤、緑、および青の3つの重なり合う円が描画されます。
 
-[![付加的な色の原色](separable-images/PrimaryColors-Additive.png "加法色の原色")](separable-images/PrimaryColors-Additive.png#lightbox)
+[![加法主色](separable-images/PrimaryColors-Additive.png "加法主色")](separable-images/PrimaryColors-Additive.png#lightbox)
 
-これらは、付加的な色の原色です。 任意の 2 つの組み合わせによって生成されるシアン、マゼンタ、黄、3 つすべての組み合わせは白です。
+これらは加算主色です。 任意の2つの組み合わせ (シアン、マゼンタ、黄) と、3つすべての組み合わせが白です。
 
-これら 3 つの円を描画、`SKBlendMode.Plus`がモードを使用できますも`Screen`、 `Lighten`、または`Difference`同じ効果です。 プログラムを次に示します。
+この3つの円は、モードで描画され `SKBlendMode.Plus` ますが `Screen` 、 `Lighten` 同じ効果を得るために、、またはを使用することもでき `Difference` ます。 プログラムは次のようになります。
 
 ```csharp
 public class PrimaryColorsPage : ContentPage
@@ -419,13 +447,13 @@ public class PrimaryColorsPage : ContentPage
 }
 ```
 
-プログラムが含まれています、`TabGestureRecognizer`します。 タップまたは画面をクリックすると、プログラムを使用して`SKBlendMode.Multiply`減算の 3 つのプライマリを表示します。
+プログラムにはが含まれてい `TabGestureRecognizer` ます。 画面をタップまたはクリックすると、プログラムは `SKBlendMode.Multiply` を使用して3つの減法三原色を表示します。
 
-[![減算の色の原色](separable-images/PrimaryColors-Subtractive.png "減算の色の原色")](separable-images/PrimaryColors-Subtractive-Large.png#lightbox)
+[![主色を減法ます](separable-images/PrimaryColors-Subtractive.png "主色を減法ます")](separable-images/PrimaryColors-Subtractive-Large.png#lightbox)
 
-`Darken`モードは、これと同じ効果に対しても機能します。
+モードは、 `Darken` この同じ効果にも有効です。
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

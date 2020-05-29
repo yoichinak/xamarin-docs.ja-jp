@@ -1,37 +1,40 @@
 ---
-title: SkiaSharp の色フィルター
-description: カラー フィルターを使用して、色変換またはテーブルに変換します。
-ms.prod: xamarin
-ms.technology: xamarin-skiasharp
-ms.assetid: 774E7B55-AEC8-4F12-B657-1C0CEE01AD63
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/28/2018
-ms.openlocfilehash: 5aa8b2e85d5a7d547af5333dcaf350025b86cc26
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b9c89d4d426884d678e77687ffa226cced97be58
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68647697"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136384"
 ---
-# <a name="skiasharp-color-filters"></a>SkiaSharp の色フィルター
+# <a name="skiasharp-color-filters"></a>SkiaSharp カラーフィルター
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-カラー フィルターは、ポスタリゼーションなどの効果の他の色をビットマップ (またはその他の画像) での色を変換することができます。
+色フィルターは、ビットマップ (またはその他のイメージ) の色を、posterization などの効果のために他の色に変換できます。
 
-![カラー フィルター例](color-filters-images/ColorFiltersExample.png "カラー フィルターの例")
+![色フィルターの例](color-filters-images/ColorFiltersExample.png "色フィルターの例")
 
-色フィルターを使用する設定、 [ `ColorFilter` ](xref:SkiaSharp.SKPaint.ColorFilter)プロパティの`SKPaint`型のオブジェクトに[ `SKColorFilter` ](xref:SkiaSharp.SKColorFilter)そのクラスの静的メソッドのいずれかで作成します。 この記事を示しています。 
+色フィルターを使用するには、 [`ColorFilter`](xref:SkiaSharp.SKPaint.ColorFilter) のプロパティを、 `SKPaint` [`SKColorFilter`](xref:SkiaSharp.SKColorFilter) そのクラスのいずれかの静的メソッドによって作成された型のオブジェクトに設定します。 この記事では、次のことを示します。 
 
-- 色変換を使用して作成、 [ `CreateColorMatrix` ](xref:SkiaSharp.SKColorFilter.CreateColorMatrix*)メソッド。
-- カラー テーブルが作成、 [ `CreateTable` ](xref:SkiaSharp.SKColorFilter.CreateTable*)メソッド。
+- メソッドを使用して作成されたカラー変換 [`CreateColorMatrix`](xref:SkiaSharp.SKColorFilter.CreateColorMatrix*) 。
+- メソッドを使用して作成されたカラーテーブル [`CreateTable`](xref:SkiaSharp.SKColorFilter.CreateTable*) 。
 
-## <a name="the-color-transform"></a>色の変換
+## <a name="the-color-transform"></a>カラー変換
 
-色変換では、行列を使用して色を変更する必要があります。 SkiaSharp ほとんどの 2D グラフィックス システムと同様に、情報の記事で iscussed として座標点を変換するためには、ほとんどの場合マトリックスを使用して[ **SkiaSharp の変換の行列**](../transforms/matrix.md)します。 [ `SKColorFilter` ](xref:SkiaSharp.SKColorFilter)も行列の変換が RGB カラー行列変換をサポートしています。 マトリックスの概念をある程度は、これらの色変換を理解する必要があります。 
+カラー変換では、マトリックスを使用して色を変更します。 ほとんどの2D グラフィックスシステムと同様に、SkiaSharp では、 [**SkiaSharp の行列変換**](../transforms/matrix.md)の iscussed として座標点を変換するために、ほとんどの場合、マトリックスを使用します。 は [`SKColorFilter`](xref:SkiaSharp.SKColorFilter) マトリックス変換もサポートしていますが、マトリックスは RGB 色を変換します。 これらの色の変換を理解するには、マトリックスの概念に関する知識が必要です。 
 
-色変換マトリックスでは、4 つの行と列の 5 つのディメンションがあります。
+カラー変換行列には、4つの行と5つの列からなるディメンションがあります。
 
 <pre>
 | M11 M12 M13 M14 M15 |
@@ -40,9 +43,9 @@ ms.locfileid: "68647697"
 | M41 M42 M43 M44 M45 |
 </pre>
 
-コピー先の色を RGB ソース色 (R、G、B、A) を変換し (R'、G'、B ',')。 
+RGB のソースカラー (R、G、B、A) をコピー先の色 (R '、G '、B '、A ') に変換します。 
 
-行列乗算の準備として、元の色は、5 × 1 マトリックスに変換されます。
+行列乗算の準備として、ソースの色は5×1の行列に変換されます。
 
 <pre>
 | R |
@@ -52,11 +55,11 @@ ms.locfileid: "68647697"
 | 1 |
 </pre>
 
-これらの R、G、B、および A の値は、元のバイト 0 から 255 までです。 _いない_0 ~ 1 の範囲の浮動小数点値に正規化されます。
+これらの R、G、B、値は、0 ~ 255 の範囲の元のバイトです。 これらは、0 ~ 1 の範囲の浮動小数点値に正規化され_ません_。
 
-余分なセルでは、変換係数必要があります。 これは、セクションで説明した 2 次元座標点を変換するマトリックスを 3 × 3 の使用に似ています[ **、理由、3-3 でマトリックスの**](../transforms/matrix.md#the-reason-for-the-3-by-3-matrix)マトリックスを使用して変換するための記事ポイントを調整します。
+翻訳要素には余分なセルが必要です。 これは、座標点を変換するためのマトリックスの使用に関する[**記事で、3×**](../transforms/matrix.md#the-reason-for-the-3-by-3-matrix) 3 の行列を使用して2次元の座標点を変換することに似ています。
 
-5 × 1 行列によって 4 × 5 マトリックスが乗算され、製品は、変換後の色で 4 × 1 マトリックス。
+4×5行列は5×1行列で乗算され、製品は変換された色を持つ4×1行列になります。
 
 <pre>
 | M11 M12 M13 M14 M15 |    | R |   | R' |
@@ -66,7 +69,7 @@ ms.locfileid: "68647697"
                            | 1 |
 </pre>
 
-R の別の数式をここでは '、G'、B' と A'。
+R '、G '、B '、および A ' の個別の式を次に示します。
 
 `R' = M11·R + M12·G + M13·B + M14·A + M15` 
 
@@ -76,9 +79,9 @@ R の別の数式をここでは '、G'、B' と A'。
 
 `A' = M41·R + M42·G + M43·B + M44·A + M45` 
 
-行列のほとんどは、通常 0 ~ 2 の範囲内にある乗法の要素で構成されます。 ただし、最後の列 (M15 M45 経由) は、数式で追加された値が含まれています。 これらの値は、一般に、255 0 範囲です。 結果は、値を 0 ~ 255 の範囲にクランプされます。
+ほとんどのマトリックスは、通常 0 ~ 2 の範囲で構成される乗法要因で構成されています。 ただし、最後の列 (M15 から M45) には、数式に追加された値が含まれています。 通常、これらの値は 0 ~ 255 の範囲です。 結果は 0 ~ 255 の値にクランプされます。
 
-行列は次のとおりです。
+Id 行列は次のとおりです。
 
 <pre>
 | 1 0 0 0 0 |
@@ -87,7 +90,7 @@ R の別の数式をここでは '、G'、B' と A'。
 | 0 0 0 1 0 |
 </pre>
 
-これは、色を変化なし。 変換式は次のとおりです。
+これにより、色が変更されることはありません。 変換式は次のとおりです。
 
 `R' = R` 
 
@@ -97,13 +100,13 @@ R の別の数式をここでは '、G'、B' と A'。
 
 `A' = A`
 
-不透明度を保持するので、M44 セルは非常に重要です。 おそらく、赤、緑、および青の値に基づいて、不透明度をしたくないため、M41、M42、および M43 はすべて 0 の場合、あるケースは一般的に。 M44 が 0、A の場合は ' は、0 になり、何が表示されます。
+M44 セルは、不透明度を維持するため、非常に重要です。 通常、M41、M42、および M43 はすべて0です。これは、赤、緑、および青の値に基づいて不透明度を設定したくない場合があるためです。 ただし、M44 が0の場合、' は0になり、何も表示されません。
 
-カラー マトリックスの最も一般的な用途の 1 つは、グレースケールのビットマップにカラー ビットマップを変換します。 これには、赤、緑、青の値の加重平均の式が含まれます。 ビデオが表示されたら、(「標準的な赤、緑 blue」) の sRGB 色空間を使用して、この数式は次のとおりです。
+カラーマトリックスを使用する最も一般的な用途の1つは、カラービットマップをグレースケールビットマップに変換することです。 これには、赤、緑、および青の値の加重平均を計算する数式が含まれます。 SRGB ("標準の赤緑の青") の色空間を使用してビデオを表示する場合、この式は次のようになります。
 
-グレースケール = 0.2126・R + 0.7152・G + 0.0722・B
+灰色-網掛け = 0.2126 ·R + 0.7152 ·G + 0.0722 ·B
 
-カラービットマップをグレースケールビットマップに変換するには、R '、G'、およびB 'の結果がすべて同じ値に等しくなければなりません マトリックスは。
+カラービットマップをグレースケールビットマップに変換するには、R '、G '、および B ' の結果がすべて同じ値である必要があります。 マトリックスは次のとおりです。
 
 <pre>
 | 0.21 0.72 0.07 0 0 |
@@ -112,15 +115,15 @@ R の別の数式をここでは '、G'、B' と A'。
 | 0    0    0    1 0 |
 </pre>
 
-このマトリックスに対応する SkiaSharp データ型はありません。 代わりに、マトリックスを 20 の配列として表す必要があります`float`行の順序の値: 最初行、し、2 番目の行となどです。
+このマトリックスに対応する SkiaSharp データ型はありません。 代わりに、マトリックスを行の順序にした20の値の配列 ( `float` 最初の行、2番目の行など) として表す必要があります。
 
-静的な[ `SKColorFilter.CreateColorMatrix` ](xref:SkiaSharp.SKColorFilter.CreateColorMatrix*)メソッドには、次の構文。
+静的 [`SKColorFilter.CreateColorMatrix`](xref:SkiaSharp.SKColorFilter.CreateColorMatrix*) メソッドの構文は次のとおりです。
 
 ```csharp
 public static SKColorFilter CreateColorMatrix (float[] matrix);
 ```
 
-場所`matrix`、20 の配列は、`float`値。 内の配列を作成するときにC#、4 × 5 マトリックスに似ているため、数値の書式を設定するは簡単です。 これは、方法については、**グレースケール マトリックス**ページで、 [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプル。
+ここで `matrix` 、は20の値の配列 `float` です。 C# で配列を作成すると、4×5行列に似た数値を書式設定することが簡単になります。 これは、 [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルの**グレースケールマトリックス**ページで説明されています。
 
 ```csharp
 public class GrayScaleMatrixPage : ContentPage
@@ -163,19 +166,19 @@ public class GrayScaleMatrixPage : ContentPage
 }
 ```
 
-`DrawBitmap`からがこのコードで使用する方法、 **BitmapExtension.cs**ファイルに含まれている、 [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプル。 
+`DrawBitmap`このコードで使用されるメソッドは、 [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルに含まれている**BitmapExtension.cs**ファイルからのものです。 
 
-IOS、Android、およびユニバーサル Windows プラットフォームで実行されている結果を次に示します。
+IOS、Android、ユニバーサル Windows プラットフォームで実行されている結果を次に示します。
 
 [![グレースケールのマトリックス](color-filters-images/GrayScaleMatrix.png "グレースケールのマトリックス")](color-filters-images/GrayScaleMatrix-Large.png#lightbox)
 
-4 番目の行、第 4 列の値に注意します。 A の元の色の A の値を乗算した重要な要素 ' 変換後の色の値。 そのセルが 0 の場合は、何もしないして、問題を見つけにくいことがあります。
+4番目の行と4番目の列の値を確認します。 これは、変換された色の "値" の元の色の値を乗算した重要な要素です。 そのセルが0の場合は何も表示されず、問題を見つけるのが困難な場合があります。
 
-カラー行列をみると扱うことができます、変換のソースのパースペクティブまたは変換先の観点から。 ソースの赤のピクセルが、変換先の赤、緑、および青のピクセルに協力する必要がある方法をでしょうか。 最初の値によって決まる_列_行列。 または、する必要があります、赤の送信先のピクセル影響ソースの赤、緑、および青のピクセルでしょうか。 まずによって決まる_行_行列。
+カラーマトリックスを試してみると、変換元の観点から、または変換先の観点から変換を処理できます。 ソースの赤のピクセルが変換先の赤、緑、および青のピクセルにどのように作用するかを指定します。 これは、マトリックスの最初の_列_の値によって決まります。 または、変換先の赤のピクセルがソースの赤、緑、および青のピクセルにどのように影響するかを確認します。 これは、マトリックスの最初の_行_によって決まります。
 
-いくつかのアイデア色変換を使用する方法については、次を参照してください。、 [**イメージのカラー変更情報**](https://docs.microsoft.com/dotnet/framework/winforms/advanced/recoloring-images)ページ。 については、Windows フォームに関係し、マトリックスが別の形式が、概念は同じです。
+色の変換を使用する方法については、「[**画像**](https://docs.microsoft.com/dotnet/framework/winforms/advanced/recoloring-images)の色の設定」ページを参照してください。 ディスカッションには Windows フォームがあり、マトリックスは異なる形式ですが、概念は同じです。
 
-**パステル マトリックス**赤いソース ピクセルの減衰と少し赤と緑のピクセルに重点を置いたして対象の赤のピクセルを計算します。 このプロセスは、緑、青のピクセルの同様に発生します。
+**パステル行列**は、ソースの赤ピクセルを attenuating し、赤と緑のピクセルを少し強調することで、宛先の赤のピクセルを計算します。 このプロセスは、緑と青のピクセルに対しても同様に発生します。
 
 ```csharp
 public class PastelMatrixPage : ContentPage
@@ -218,13 +221,13 @@ public class PastelMatrixPage : ContentPage
 }
 ```
 
-結果は、ここでわかるように、色の彩度をミュートするのには。
+結果として、次に示すように色の輝度がミュートされます。
 
-[![パステル マトリックス](color-filters-images/PastelMatrix.png "パステル マトリックス")](color-filters-images/PastelMatrix-Large.png#lightbox)
+[![パステル行列](color-filters-images/PastelMatrix.png "パステル行列")](color-filters-images/PastelMatrix-Large.png#lightbox)
 
-## <a name="color-tables"></a>カラー テーブル
+## <a name="color-tables"></a>カラーテーブル
 
-静的な[ `SKColorFilter.CreateTable` ](xref:SkiaSharp.SKColorFilter.CreateTable*)メソッドが 2 つのバージョン。
+静的メソッドには、 [`SKColorFilter.CreateTable`](xref:SkiaSharp.SKColorFilter.CreateTable*) 次の2つのバージョンがあります。
 
 ```csharp
 public static SKColorFilter CreateTable (byte[] table);
@@ -232,7 +235,7 @@ public static SKColorFilter CreateTable (byte[] table);
 public static SKColorFilter CreateTable (byte[] tableA, byte[] tableR, byte[] tableG, byte[] tableB);
 ```
 
-常に、配列には、256 エントリが含まれます。 `CreateTable`赤、緑、青のコンポーネントの 1 つのテーブル、同じテーブルを持つメソッドを使用します。 単純な参照テーブルです。ソースの色が (r、g、b) で、変換先の色が (r '、B '、g ') の場合、変換先コンポーネントは、ソース`table`コンポーネントでインデックスを作成することによって取得されます。
+配列には、常に256エントリが含まれています。 `CreateTable`1 つのテーブルを持つメソッドでは、赤、緑、および青のコンポーネントに同じテーブルが使用されます。 単純な参照テーブルです。ソースの色が (R、G、B) で、ターゲットの色が (R '、B '、G ') の場合、変換先コンポーネントは、ソースコンポーネントでインデックスを作成することによって取得され `table` ます。
 
 `R' = table[R]`
 
@@ -240,13 +243,13 @@ public static SKColorFilter CreateTable (byte[] tableA, byte[] tableR, byte[] ta
 
 `B' = table[B]`
 
-2 番目のメソッドでの各色コンポーネントの 4 つは個別のカラー テーブル、または同じカラー テーブルは、2 つまたは複数のコンポーネント間で共有する可能性があります。
+2番目の方法では、4つの各カラーコンポーネントに個別の色テーブルを含めることも、同じ色テーブルを複数のコンポーネント間で共有することもできます。
 
-2 番目の引数のいずれかに設定する`CreateTable`使用する方法をシーケンス内の 0 255 までからの値を含むカラー テーブルは、`null`代わりにします。 非常に多くの場合、`CreateTable`の呼び出しでは、`null`アルファ チャネルの最初の引数。
+2番目のメソッドへの引数の1つを、 `CreateTable` 順序が 0 ~ 255 の値を含むカラーテーブルに設定する場合は、代わりにを使用でき `null` ます。 多くの場合、 `CreateTable` 呼び出しには `null` アルファチャネルの最初の引数があります。
 
-セクションで**ポスタリゼーション**についての記事で[にアクセスする SkiaSharp ビットマップのピクセル ビット](../bitmaps/pixel-bits.md#posterization)、その色の解像度を低くビットマップの個々 のピクセル ビットを変更する方法を説明しました。 これと呼ばれる手法_ポスタリゼーション_します。 
+[SkiaSharp ビットマップピクセルビット](../bitmaps/pixel-bits.md#posterization)へのアクセスに関する記事の**Posterization**のセクションでは、ビットマップのピクセルビットを変更して色解像度を下げる方法を説明しました。 これは、 _posterization_と呼ばれる手法です。 
 
-カラー テーブルを持つビットマップもポスタリゼーションことができます。 コンストラクター、**ポスタリゼーション テーブル**ページ 6 ビットが 0 に設定を下部にバイトのインデックスをマップするカラー テーブルを作成します。
+カラーテーブルを使用してビットマップを表示することもできます。 [**ポスタリゼーションテーブル**] ページのコンストラクターは、下位6ビットがゼロに設定されたバイトにインデックスをマップするカラーテーブルを作成します。
 
 ```csharp
 public class PosterizeTablePage : ContentPage
@@ -291,13 +294,13 @@ public class PosterizeTablePage : ContentPage
 }
 ```
 
-プログラムは、このカラー テーブルを使用して、緑、青のチャネルに対してのみを選択します。 赤チャネルは引き続きフル解像度に。
+この色テーブルを使用するのは、緑と青のチャネルに対してのみです。 赤のチャネルは引き続き完全に解決されます。
 
-[![テーブルをポスタリゼーション](color-filters-images/PosterizeTable.png "ポスタリゼーション テーブル")](color-filters-images/PosterizeTable-Large.png#lightbox)
+[![ポスタリゼーションテーブル](color-filters-images/PosterizeTable.png "ポスタリゼーションテーブル")](color-filters-images/PosterizeTable-Large.png#lightbox)
 
-さまざまなカラー テーブルは、さまざまな効果のさまざまなカラー チャネルを使用できます。 
+さまざまな色のテーブルを使用して、さまざまな効果を適用できます。 
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

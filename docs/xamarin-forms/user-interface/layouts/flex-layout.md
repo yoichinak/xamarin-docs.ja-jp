@@ -1,29 +1,32 @@
 ---
-title: Xamarin. フォーム FlexLayout
-description: 子ビューのコレクションを積み重ねる場合やラッピングする場合は、FlexLayout を使用します。
-ms.prod: xamarin
-ms.assetid: 6A91EA70-268C-462C-AAAF-F8DA011403F8
-ms.technology: xamarin-forms
-ms.custom: xamu-video
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/07/2018
-ms.openlocfilehash: 507f78bf887d8d11e93a5a6a1f7d074c55e69360
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
+title: Xamarin.FormsFlexlayout
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+ms.custom: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 031a846b7546c204d45c7437acd829d6cb49bfbb
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83149967"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137216"
 ---
-# <a name="the-xamarinforms-flexlayout"></a>Xamarin. フォーム FlexLayout
+# <a name="the-xamarinforms-flexlayout"></a>Xamarin.FormsFlexlayout
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)
 
 _子ビューのコレクションを積み重ねる場合やラッピングする場合は、FlexLayout を使用します。_
 
-Xamarin. forms [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) は、xamarin. forms バージョン3.0 で新しく追加されたものです。 これは、CSS の[柔軟なボックスレイアウトモジュール](https://www.w3.org/TR/css-flexbox-1/)に基づいています。_フレックスレイアウト_または_フレックスボックス_と呼ばれます。これは、レイアウト内に子を配置するための柔軟なオプションが多数含まれているためです。
+は、 Xamarin.Forms [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) Xamarin.Forms バージョン3.0 の新バージョンです。 これは、CSS の[柔軟なボックスレイアウトモジュール](https://www.w3.org/TR/css-flexbox-1/)に基づいています。_フレックスレイアウト_または_フレックスボックス_と呼ばれます。これは、レイアウト内に子を配置するための柔軟なオプションが多数含まれているためです。
 
-`FlexLayout`は、その子を積み重ねて [`StackLayout`](~/xamarin-forms/user-interface/layouts/stacklayout.md) 水平方向および垂直方向に整列させることができるという点で、Xamarin. フォームに似ています。 ただし、では、 `FlexLayout` 1 つの行または列に収まりきらない場合に、子をラップすることもできます。また、さまざまな画面サイズに合わせて向きや配置を行うためのオプションも多数用意されています。
+`FlexLayout`はと似ていますが、 Xamarin.Forms [`StackLayout`](~/xamarin-forms/user-interface/layouts/stacklayout.md) スタック内で子を水平方向および垂直方向に整列させることができます。 ただし、では、 `FlexLayout` 1 つの行または列に収まりきらない場合に、子をラップすることもできます。また、さまざまな画面サイズに合わせて向きや配置を行うためのオプションも多数用意されています。
 
 `FlexLayout`[`Layout<View>`](xref:Xamarin.Forms.Layout`1)は、から派生し、 [`Children`](xref:Xamarin.Forms.Layout`1.Children) 型のプロパティを継承し `IList<View>` ます。
 
@@ -68,7 +71,7 @@ IOS、Android、ユニバーサル Windows プラットフォームで実行さ�
 
 `FlexLayout` **Simplestackpage .xaml**ファイルには、次の3つのプロパティが表示されます。
 
-- [`Direction`](xref:Xamarin.Forms.FlexLayout.Direction)プロパティは、列挙体の値に設定され [`FlexDirection`](xref:Xamarin.Forms.FlexDirection) ます。 既定では、 `Row`です。 プロパティをに設定する `Column` と、の子が `FlexLayout` 項目の1つの列に配置されます。
+- [`Direction`](xref:Xamarin.Forms.FlexLayout.Direction)プロパティは、列挙体の値に設定され [`FlexDirection`](xref:Xamarin.Forms.FlexDirection) ます。 既定値は、`Row` です。 プロパティをに設定する `Column` と、の子が `FlexLayout` 項目の1つの列に配置されます。
 
     内の項目 `FlexLayout` が列に配置されている場合、は、 `FlexLayout` 垂直方向の_メイン軸_と横方向の_交差軸_を持つと言います。
 
@@ -609,11 +612,11 @@ Android のスクリーンショットで `Shrink` は、2番目の値が0に設
 
 ## <a name="css-styling-with-flexlayout"></a>FlexLayout を使用した CSS スタイル
 
-との接続には、Xamarin. Forms 3.0 で導入された[CSS スタイル](~/xamarin-forms/user-interface/styles/css/index.md)設定機能を使用でき `FlexLayout` ます。 **[Flexlayoutdemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** サンプルの [ **css catalog items** ] ページでは、[**カタログアイテム**] ページのレイアウトが複製されますが、多くのスタイルの css スタイルシートがあります。
+3.0 で導入された[CSS スタイル](~/xamarin-forms/user-interface/styles/css/index.md)機能は、 Xamarin.Forms との接続に使用でき `FlexLayout` ます。 **[Flexlayoutdemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** サンプルの [ **css catalog items** ] ページでは、[**カタログアイテム**] ページのレイアウトが複製されますが、多くのスタイルの css スタイルシートがあります。
 
 [![[CSS カタログアイテム] ページ](flex-layout-images/CssCatalogItems.png "[CSS カタログアイテム] ページ")](flex-layout-images/CssCatalogItems-Large.png#lightbox)
 
-元の**CatalogItemsPage**ファイルのセクションには、15個の `Style` オブジェクトを含む5つの定義があり `Resources` `Setter` ます。 **CssCatalogItemsPage**ファイルでは、4つのオブジェクトだけを持つ2つの定義に縮小されてい `Style` `Setter` ます。 これらのスタイルは、現在、Xamarin の CSS スタイル機能がサポートしていないプロパティの CSS スタイルシートを補完します。
+元の**CatalogItemsPage**ファイルのセクションには、15個の `Style` オブジェクトを含む5つの定義があり `Resources` `Setter` ます。 **CssCatalogItemsPage**ファイルでは、4つのオブジェクトだけを持つ2つの定義に縮小されてい `Style` `Setter` ます。 これらのスタイルは、css スタイル機能で現在サポートされていないプロパティの CSS スタイルシートを補完し Xamarin.Forms ます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -738,7 +741,7 @@ button {
 
 > [!VIDEO https://youtube.com/embed/Ng3sel_5D_0]
 
-**Xamarin. Forms 3.0 のフレックスレイアウトビデオ**
+**Xamarin.Forms3.0 フレックスレイアウトビデオ**
 
 ## <a name="related-links"></a>関連リンク
 

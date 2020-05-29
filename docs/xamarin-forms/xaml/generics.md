@@ -1,38 +1,41 @@
 ---
-title: Xamarin. Forms XAML のジェネリック
-description: Xamarin XAML は、ジェネリック型の制約を型引数として指定することによって、ジェネリック CLR 型を使用するためのサポートを提供します。
-ms.prod: xamarin
-ms.assetid: 97B73048-4F90-41AD-AB48-8EB804C4998B
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/28/2020
-ms.openlocfilehash: 9cda08a3bab0e25db2315c9795721e25d47d2429
-ms.sourcegitcommit: 154a3e7aec775327565bb54eda1a610976af1d6f
+title: XAML のジェネリック Xamarin.Forms
+description: Xamarin.FormsXAML は、ジェネリック型の制約を型引数として指定することによって、ジェネリック CLR 型を使用するためのサポートを提供します。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 814e622a822e2eb1cf07f71bfb1da1d6eac5631f
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82624710"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138113"
 ---
-# <a name="generics-in-xamarinforms-xaml"></a>Xamarin. Forms XAML のジェネリック
+# <a name="generics-in-xamarinforms-xaml"></a>XAML のジェネリック Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-generics/)
 
-Xamarin XAML は、ジェネリック型の制約を型引数として指定することによって、ジェネリック CLR 型を使用するためのサポートを提供します。 このサポートは`x:TypeArguments`ディレクティブによって提供されます。このディレクティブは、ジェネリックの制約型引数をジェネリック型のコンストラクターに渡します。
+Xamarin.FormsXAML は、ジェネリック型の制約を型引数として指定することによって、ジェネリック CLR 型を使用するためのサポートを提供します。 このサポートはディレクティブによって提供され `x:TypeArguments` ます。このディレクティブは、ジェネリックの制約型引数をジェネリック型のコンストラクターに渡します。
 
 > [!IMPORTANT]
-> Xamarin でジェネリッククラスを定義する`x:TypeArguments` XAML は、ディレクティブを使用してサポートされていません。
+> ディレクティブを使用した XAML でのジェネリッククラスの定義 Xamarin.Forms `x:TypeArguments` はサポートされていません。
 
-型引数は文字列として指定され、通常は`sys:String`や`sys:Int32`のようにプレフィックスが付けられます。 一般的な CLR ジェネリック制約の型は、既定の Xamarin. Forms 名前空間にマップされていないライブラリから取得されるため、プレフィックスを付ける必要があります。 ただし、XAML 2009 の組み込み型 ( `x:String`や`x:Int32`など) は、型引数として指定することも`x`できます。ここで、は xaml 2009 の xaml 言語名前空間です。 XAML 2009 組み込み型の詳細については、「 [xaml 2009 言語プリミティブ](/dotnet/desktop-wpf/xaml-services/types-for-primitives#xaml-2009-language-primitives)」を参照してください。
+型引数は文字列として指定され、通常はやのようにプレフィックスが付けられ `sys:String` `sys:Int32` ます。 既定の型の名前空間にマップされていないライブラリから CLR ジェネリック制約の一般的な型が取得されるため、プレフィックスを付ける必要が Xamarin.Forms あります。 ただし、XAML 2009 の組み込み型 (やなど) は、 `x:String` `x:Int32` 型引数として指定することもできます。ここで、 `x` は XAML 2009 の xaml 言語名前空間です。 XAML 2009 組み込み型の詳細については、「 [xaml 2009 言語プリミティブ](/dotnet/desktop-wpf/xaml-services/types-for-primitives#xaml-2009-language-primitives)」を参照してください。
 
 コンマ区切り記号を使用して、複数の型引数を指定できます。 また、ジェネリック制約でジェネリック型を使用する場合は、入れ子になった制約型の引数をかっこで囲む必要があります。
 
 > [!NOTE]
-> マーク`x:Type`アップ拡張機能は、ジェネリック型の CLR 型参照を提供し、C# の`typeof`演算子と同様の関数を備えています。 詳細については、「 [x:Type markup extension](~/xamarin-forms/xaml/markup-extensions/consuming.md#type)」を参照してください。
+> `x:Type`マークアップ拡張機能は、ジェネリック型の CLR 型参照を提供し、C# の演算子と同様の関数を備えてい `typeof` ます。 詳細については、「 [x:Type markup extension](~/xamarin-forms/xaml/markup-extensions/consuming.md#type)」を参照してください。
 
 ## <a name="single-primitive-type-argument"></a>1つのプリミティブ型の引数
 
-`x:TypeArguments`ディレクティブを使用して、1つのプリミティブ型の引数をプレフィックス付きの文字列引数として指定できます。
+ディレクティブを使用して、1つのプリミティブ型の引数をプレフィックス付きの文字列引数として指定でき `x:TypeArguments` ます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -55,9 +58,9 @@ Xamarin XAML は、ジェネリック型の制約を型引数として指定す�
 </ContentPage>
 ```
 
-この例では`System.Collections.Generic` 、が`scg` XAML 名前空間として定義されています。 `CollectionView.ItemsSource`プロパティは、XAML 2009 組み込み`List<T>` `x:String`型を使用して`string` 、型引数を使用してインスタンス化されたに設定されます。 `List<string>`コレクションが複数`string`の項目で初期化されています。
+この例で `System.Collections.Generic` は、が XAML 名前空間として定義されて `scg` います。 `CollectionView.ItemsSource`プロパティは、 `List<T>` `string` XAML 2009 組み込み型を使用して、型引数を使用してインスタンス化されたに設定され `x:String` ます。 `List<string>`コレクションが複数の項目で初期化されて `string` います。
 
-また、同様に、CLR `List<T>` `String`型を使用してコレクションをインスタンス化することもできます。
+また、同様に、 `List<T>` CLR 型を使用してコレクションをインスタンス化することもでき `String` ます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -83,7 +86,7 @@ Xamarin XAML は、ジェネリック型の制約を型引数として指定す�
 
 ## <a name="single-object-type-argument"></a>単一オブジェクト型の引数
 
-`x:TypeArguments`ディレクティブを使用して、1つのオブジェクト型引数をプレフィックス付き文字列引数として指定できます。
+ディレクティブを使用して、1つのオブジェクト型引数をプレフィックス付き文字列引数として指定でき `x:TypeArguments` ます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -136,11 +139,11 @@ Xamarin XAML は、ジェネリック型の制約を型引数として指定す�
 </ContentPage>
 ```
 
-この例では`GenericsDemo.Models` 、が`models` xaml 名前空間として`System.Collections.Generic`定義され、 `scg`が xaml 名前空間として定義されています。 `CollectionView.ItemsSource`プロパティは、 `Monkey`型引数を使用してインスタンス化され`List<T>`たに設定されます。 `List<Monkey>` `Monkey`コレクションは複数の項目で初期化され、 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)各`Monkey`オブジェクトの外観を定義するは、 `ItemTemplate` [`CollectionView`](xref:Xamarin.Forms.CollectionView)のとして設定されます。
+この例では、が xaml 名前空間として定義され、 `GenericsDemo.Models` `models` `System.Collections.Generic` が xaml 名前空間として定義されてい `scg` ます。 `CollectionView.ItemsSource`プロパティは、 `List<T>` 型引数を使用してインスタンス化されたに設定され `Monkey` ます。 `List<Monkey>`コレクションは複数の項目で初期化され、 `Monkey` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 各オブジェクトの外観を定義するは `Monkey` 、のとして設定され `ItemTemplate` [`CollectionView`](xref:Xamarin.Forms.CollectionView) ます。
 
 ## <a name="multiple-type-arguments"></a>複数の型引数
 
-`x:TypeArguments`ディレクティブを使用して、複数の型引数をプレフィックス付き文字列引数としてコンマで区切って指定できます。 ジェネリック制約でジェネリック型を使用する場合、入れ子になった制約型の引数はかっこ内に含まれます。
+ディレクティブを使用して、複数の型引数をプレフィックス付き文字列引数としてコンマで区切って指定でき `x:TypeArguments` ます。 ジェネリック制約でジェネリック型を使用する場合、入れ子になった制約型の引数はかっこ内に含まれます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -205,7 +208,7 @@ Xamarin XAML は、ジェネリック型の制約を型引数として指定す�
 </ContentPage    
 ```
 
-この例では`GenericsDemo.Models` 、が`models` xaml 名前空間として`System.Collections.Generic`定義され、 `scg`が xaml 名前空間として定義されています。 `CollectionView.ItemsSource`プロパティは、内部制約型`List<T>`の引数`string`と`Monkey`を使用`KeyValuePair<TKey, TValue>`して、制約でインスタンス化されたに設定されます。 `List<KeyValuePair<string,Monkey>>`コレクションは`KeyValuePair` 、既定`KeyValuePair`以外のコンストラクターを使用して複数の項目で初期化さ[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)れます。また、各`Monkey`オブジェクトの外観を定義`ItemTemplate`するは[`CollectionView`](xref:Xamarin.Forms.CollectionView)、のとして設定されます。 既定以外のコンストラクターに引数を渡す方法については、「[コンストラクター引数の引き渡し](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments)」を参照してください。
+この例では、が xaml 名前空間として定義され、 `GenericsDemo.Models` `models` `System.Collections.Generic` が xaml 名前空間として定義されてい `scg` ます。 `CollectionView.ItemsSource`プロパティは、 `List<T>` 内部制約型の引数とを使用して、制約でインスタンス化されたに設定され `KeyValuePair<TKey, TValue>` `string` `Monkey` ます。 コレクションは、 `List<KeyValuePair<string,Monkey>>` 既定以外のコンストラクターを使用して複数の項目で初期化され `KeyValuePair` `KeyValuePair` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ます。また、各オブジェクトの外観を定義するは `Monkey` 、のとして設定され `ItemTemplate` [`CollectionView`](xref:Xamarin.Forms.CollectionView) ます。 既定以外のコンストラクターに引数を渡す方法については、「[コンストラクター引数の引き渡し](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 

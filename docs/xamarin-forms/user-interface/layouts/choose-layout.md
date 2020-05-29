@@ -1,28 +1,31 @@
 ---
-title: Xamarin. フォームレイアウトを選択する
-description: Xamarin. Forms layout クラスを使用すると、アプリケーションで UI コントロールを配置してグループ化できます。
-ms.prod: xamarin
-ms.assetid: 05A39752-A174-447E-A30D-3CC9EF98CB96
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/21/2018
-ms.openlocfilehash: 14e48d04696bb758a2010bd1d56ecaa125bbd30a
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
+title: レイアウトの選択 Xamarin.Forms
+description: Xamarin.Formsレイアウトクラスを使用すると、アプリケーションに UI コントロールを配置してグループ化できます。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 16a48423d05ce1cede75c0020bf18f4f398f5adc
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83150009"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138503"
 ---
-# <a name="choose-a-xamarinforms-layout"></a>Xamarin. フォームレイアウトを選択する
+# <a name="choose-a-xamarinforms-layout"></a>レイアウトの選択 Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
-Xamarin. Forms layout クラスを使用すると、アプリケーションで UI コントロールを配置してグループ化できます。 レイアウトクラスを選択するには、レイアウトが子要素を配置する方法と、レイアウトがその子要素をどのようにサイズ調整するかについての知識が必要です。 また、レイアウトを入れ子にして目的のレイアウトを作成することが必要になる場合もあります。
+Xamarin.Formsレイアウトクラスを使用すると、アプリケーションに UI コントロールを配置してグループ化できます。 レイアウトクラスを選択するには、レイアウトが子要素を配置する方法と、レイアウトがその子要素をどのようにサイズ調整するかについての知識が必要です。 また、レイアウトを入れ子にして目的のレイアウトを作成することが必要になる場合もあります。
 
-次の図は、メインの Xamarin. フォームレイアウトクラスで実現できる典型的なレイアウトを示しています。
+次の図は、メインレイアウトクラスを使用して実現できる一般的なレイアウトを示してい Xamarin.Forms ます。
 
-[![Xamarin. Forms のメインレイアウトクラス](images/layouts.png "Xamarin. フォームレイアウトクラス")](images/layouts-large.png#lightbox "Xamarin. フォームレイアウトクラス")
+[![のメインレイアウトクラスXamarin.Forms](images/layouts.png "[!ファンド.NO LOC (Xamarin)] レイアウトクラス")](images/layouts-large.png#lightbox "[!ファンド.NO LOC (Xamarin)] レイアウトクラス")
 
 ## <a name="stacklayout"></a>StackLayout
 
@@ -73,7 +76,7 @@ Xamarin. Forms layout クラスを使用すると、アプリケーションで 
 > [!TIP]
 > を使用する場合 [`StackLayout`](xref:Xamarin.Forms.StackLayout) は、子要素が1つだけに設定されていることを確認して [`LayoutOptions.Expands`](xref:Xamarin.Forms.LayoutOptions.Expands) ください。 このプロパティにより、指定された子は、`StackLayout` がそれに与えられる最大の領域を占有します。このような計算を複数回実行することは無駄です。
 
-詳細については、「 [Xamarin の StackLayout](stacklayout.md)」を参照してください。
+詳細については、「 [ Xamarin.Forms stacklayout](stacklayout.md)」を参照してください。
 
 ## <a name="grid"></a>グリッド
 
@@ -118,7 +121,7 @@ Xamarin. Forms layout クラスを使用すると、アプリケーションで 
 > [!CAUTION]
 > できるだけ少ない数の行と列が size に設定されるようにしてください [`Auto`](xref:Xamarin.Forms.GridLength.Auto) 。 自動サイズ調整された行または列はそれぞれ、レイアウト エンジンに追加のレイアウト計算を実行させることになります。 その代わりに可能であれば、固定サイズの行と列を使用してください。 または、行と列に対して、列挙値を使用して比例した領域を占めるように設定し [`GridUnitType.Star`](xref:Xamarin.Forms.GridUnitType.Star) ます。
 
-詳細については、「 [Xamarin. Forms Grid](grid.md)」を参照してください。
+詳細については、「 [ Xamarin.Forms Grid](grid.md)」を参照してください。
 
 ## <a name="flexlayout"></a>FlexLayout
 
@@ -142,7 +145,7 @@ Xamarin. Forms layout クラスを使用すると、アプリケーションで 
 - [`AlignItems`](xref:Xamarin.Forms.FlexLayout.AlignItems)プロパティはに設定されます `Center` 。これにより、各項目が水平方向に中央揃えになります。
 - [`JustifyContent`](xref:Xamarin.Forms.FlexLayout.JustifyContent)プロパティがに設定されてい `SpaceEvenly` ます。これにより、すべての項目と最初の項目の上、および最後の項目の下のすべての領域が均等に割り当てられます。
 
-詳細については、「 [Xamarin. Forms FlexLayout](flex-layout.md)」を参照してください。
+詳細については、「 [ Xamarin.Forms flexlayout](flex-layout.md)」を参照してください。
 
 ## <a name="relativelayout"></a>RelativeLayout
 
@@ -191,7 +194,7 @@ Xamarin. Forms layout クラスを使用すると、アプリケーションで 
 > [!WARNING]
 > 可能であれば、`RelativeLayout` は使用しないでください。 CPU で相当な量の作業を実行しなければならなくなります。
 
-詳細については、「 [RelativeLayout](relative-layout.md)」を参照してください。
+詳細については、「 [ Xamarin.Forms RelativeLayout](relative-layout.md)」を参照してください。
 
 ## <a name="absolutelayout"></a>AbsoluteLayout
 
@@ -231,7 +234,7 @@ Xamarin. Forms layout クラスを使用すると、アプリケーションで 
 > [!CAUTION]
 > [`AbsoluteLayout.AutoSize`](xref:Xamarin.Forms.AbsoluteLayout.AutoSize)レイアウトエンジンでは追加のレイアウト計算が実行されるため、可能な限りプロパティを使用しないでください。
 
-詳細については、「 [AbsoluteLayout](absolute-layout.md)」を参照してください。
+詳細については、「 [ Xamarin.Forms AbsoluteLayout](absolute-layout.md)」を参照してください。
 
 ## <a name="input-transparency"></a>入力の透明度
 
@@ -248,11 +251,11 @@ Xamarin. Forms layout クラスを使用すると、アプリケーションで 
 ## <a name="related-links"></a>関連リンク
 
 - [レイアウト (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
-- [Xamarin. フォームレイアウト (ビデオ)](https://youtu.be/4HlLjTZQzjM)
-- [Xamarin. フォーム StackLayout](stacklayout.md)
-- [Xamarin. フォームグリッド](grid.md)
-- [Xamarin. フォーム FlexLayout](flex-layout.md)
-- [AbsoluteLayout](absolute-layout.md)
-- [RelativeLayout](relative-layout.md)
+- [Xamarin.Formsレイアウト (ビデオ)](https://youtu.be/4HlLjTZQzjM)
+- [Xamarin.FormsStackLayout](stacklayout.md)
+- [Xamarin.Forms行列](grid.md)
+- [Xamarin.FormsFlexLayout](flex-layout.md)
+- [Xamarin.FormsAbsoluteLayout](absolute-layout.md)
+- [Xamarin.FormsRelativeLayout](relative-layout.md)
 - [レイアウトのパフォーマンスを最適化する](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)
 - [レイアウトの圧縮](layout-compression.md)

@@ -1,18 +1,21 @@
 ---
-title: エンタープライズアプリの単体テスト
-description: この章では、eShopOnContainers モバイルアプリでの単体テストの実行方法について説明します。
-ms.prod: xamarin
-ms.assetid: 4af82e52-f99b-4cad-b278-1745f190c240
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 08/07/2017
-ms.openlocfilehash: 0fb63c650e73bce5a08b204f942f0c19583e4899
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a05de34089fdf6ad90740067b88edea0b62f55a7
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770685"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84134655"
 ---
 # <a name="unit-testing-enterprise-apps"></a>エンタープライズアプリの単体テスト
 
@@ -35,7 +38,7 @@ ms.locfileid: "70770685"
 
 ## <a name="dependency-injection-and-unit-testing"></a>依存関係の挿入と単体テスト
 
-疎結合アーキテクチャを採用する動機の1つは、単体テストを容易にすることです。 Autofac に登録されている型の`OrderService` 1 つは、クラスです。 次のコード例は、このクラスの概要を示しています。
+疎結合アーキテクチャを採用する動機の1つは、単体テストを容易にすることです。 Autofac に登録されている型の1つは、 `OrderService` クラスです。 次のコード例は、このクラスの概要を示しています。
 
 ```csharp
 public class OrderDetailViewModel : ViewModelBase  
@@ -50,13 +53,13 @@ public class OrderDetailViewModel : ViewModelBase
 }
 ```
 
-クラス`OrderDetailViewModel`は、オブジェクトを`OrderDetailViewModel`インスタンス化`IOrderService`するときに、コンテナーが解決する型に依存しています。 ただし、クラスの`OrderService` `OrderDetailViewModel`単体テストを行うためのオブジェクトを作成するのでは`OrderService`なく、オブジェクトをテストの目的のモックに置き換えます。 図10-1 は、この関係を示しています。
+クラスは、 `OrderDetailViewModel` `IOrderService` オブジェクトをインスタンス化するときに、コンテナーが解決する型に依存してい `OrderDetailViewModel` ます。 ただし、 `OrderService` クラスの単体テストを行うためのオブジェクトを作成するのではなく、 `OrderDetailViewModel` `OrderService` オブジェクトをテストの目的のモックに置き換えます。 図10-1 は、この関係を示しています。
 
-![](unit-testing-images/unittesting.png "IOrderService インターフェイスを実装するクラス")
+![](unit-testing-images/unittesting.png "Classes that implement the IOrderService interface")
 
 **図 10-1:** IOrderService インターフェイスを実装するクラス
 
-この方法では`OrderService` 、実行時にオブジェクトを`OrderDetailViewModel`クラスに渡すことができます。また、テストの`OrderMockService`容易性のために、クラスを`OrderDetailViewModel`テスト時にクラスに渡すことができます。 この方法の主な利点は、web サービスやデータベースなどの扱いにくいリソースを必要とせずに、単体テストを実行できることです。
+この方法では、 `OrderService` 実行時にオブジェクトをクラスに渡すことができます `OrderDetailViewModel` 。また、テストの容易性のために、クラス `OrderMockService` をテスト時にクラスに渡すことができ `OrderDetailViewModel` ます。 この方法の主な利点は、web サービスやデータベースなどの扱いにくいリソースを必要とせずに、単体テストを実行できることです。
 
 ## <a name="testing-mvvm-applications"></a>MVVM アプリケーションのテスト
 
@@ -70,7 +73,7 @@ EShopOnContainers モバイルアプリでは、 [Xunit](https://xunit.github.io
 - ファクトは常に true であり、インバリアント条件をテストするテストです。
 - 理論は、特定のデータセットに対してのみ当てはまるテストです。
 
-EShopOnContainers モバイルアプリに含まれる単体テストはファクトテストであるため、各単体テストメソッドは`[Fact]`属性で修飾されます。
+EShopOnContainers モバイルアプリに含まれる単体テストはファクトテストであるため、各単体テストメソッドは属性で修飾され `[Fact]` ます。
 
 > [!NOTE]
 > xUnit テストはテストランナーによって実行されます。 テストランナーを実行するには、必要なプラットフォームの eShopOnContainers プロジェクトを実行します。
@@ -93,15 +96,15 @@ public async Task OrderPropertyIsNotNullAfterViewModelInitializationTest()
 }
 ```
 
-この単体テストでは、 `Order` `InitializeAsync`メソッドが呼び出さ`OrderDetailViewModel`れた後に、インスタンスのプロパティに値が設定されていることを確認します。 `InitializeAsync`メソッドは、ビューモデルの対応するビューに移動したときに呼び出されます。 ナビゲーションの詳細については、「[ナビゲーション](~/xamarin-forms/enterprise-application-patterns/navigation.md)」を参照してください。
+この単体テストでは、 `Order` `OrderDetailViewModel` メソッドが呼び出された後に、インスタンスのプロパティに値が設定されていることを確認 `InitializeAsync` します。 メソッドは、 `InitializeAsync` ビューモデルの対応するビューに移動したときに呼び出されます。 ナビゲーションの詳細については、「[ナビゲーション](~/xamarin-forms/enterprise-application-patterns/navigation.md)」を参照してください。
 
-インスタンスが作成されるときには、 `OrderService`インスタンスが引数として指定されることを想定しています。 `OrderDetailViewModel` ただし、は`OrderService` 、web サービスからデータを取得します。 したがって、 `OrderService`クラスのモックバージョンである`OrderDetailViewModel` インスタンスは、コンストラクターの引数として指定されます。`OrderMockService` 次に、ビューモデルの`InitializeAsync`メソッドが呼び出され、 `IOrderService`操作が呼び出されると、web サービスと通信するのではなく、モックデータが取得されます。
+インスタンスが作成されるときに `OrderDetailViewModel` は、 `OrderService` インスタンスが引数として指定されることを想定しています。 ただし、は、 `OrderService` web サービスからデータを取得します。 したがって、 `OrderMockService` クラスのモックバージョンであるインスタンスは、 `OrderService` コンストラクターの引数として指定され `OrderDetailViewModel` ます。 次に、ビューモデルの `InitializeAsync` メソッドが呼び出され、操作が呼び出されると、 `IOrderService` web サービスと通信するのではなく、モックデータが取得されます。
 
 ### <a name="testing-inotifypropertychanged-implementations"></a>INotifyPropertyChanged 実装のテスト
 
-インターフェイスを`INotifyPropertyChanged`実装することで、ビューモデルおよびモデルから生じる変更にビューを対応させることができます。 これらの変更は、コントロールに表示されるデータに限定されません。アニメーションを開始したり、コントロールを無効にしたりするビューモデルの状態など、ビューの制御にも使用されます。
+インターフェイスを実装する `INotifyPropertyChanged` ことで、ビューモデルおよびモデルから生じる変更にビューを対応させることができます。 これらの変更は、コントロールに表示されるデータに限定されません。アニメーションを開始したり、コントロールを無効にしたりするビューモデルの状態など、ビューの制御にも使用されます。
 
-単体テストによって直接更新できるプロパティをテストするには、イベントハンドラーを`PropertyChanged`イベントにアタッチし、プロパティの新しい値を設定した後にイベントが発生するかどうかを確認します。 次のコード例は、このようなテストを示しています。
+単体テストによって直接更新できるプロパティをテストするには、イベントハンドラーをイベントにアタッチ `PropertyChanged` し、プロパティの新しい値を設定した後にイベントが発生するかどうかを確認します。 次のコード例は、このようなテストを示しています。
 
 ```csharp
 [Fact]  
@@ -123,11 +126,11 @@ public async Task SettingOrderPropertyShouldRaisePropertyChanged()
 }
 ```
 
-この単体テストでは`InitializeAsync` 、 `OrderViewModel` `Order`クラスのメソッドを呼び出します。これにより、プロパティが更新されます。 プロパティに対して`PropertyChanged`イベントが発生した場合、単体テストは成功します。 `Order`
+この単体テストでは、 `InitializeAsync` クラスのメソッドを呼び出します `OrderViewModel` 。これにより、プロパティが `Order` 更新されます。 プロパティに対してイベントが発生した場合、単体テストは成功し `PropertyChanged` `Order` ます。
 
 ### <a name="testing-message-based-communication"></a>メッセージベースの通信のテスト
 
-[`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter)クラスを使用して疎結合クラス間の通信を行うビューモデルは、次のコード例に示すように、テスト対象のコードによって送信されるメッセージをサブスクライブすることによって、単体テストを行うことができます。
+クラスを使用して [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 疎結合クラス間の通信を行うビューモデルは、次のコード例に示すように、テスト対象のコードによって送信されるメッセージをサブスクライブすることによって、単体テストを行うことができます。
 
 ```csharp
 [Fact]  
@@ -148,7 +151,7 @@ public void AddCatalogItemCommandSendsAddProductMessageTest()
 }
 ```
 
-この単体テストでは、 `CatalogViewModel`が実行`AddProduct` `AddCatalogItemCommand`されたことに応じて、がメッセージを公開することを確認します。 クラスは[`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter)マルチキャストメッセージサブスクリプションをサポートしているので、単体`AddProduct`テストはメッセージをサブスクライブし、受信に応答してコールバックデリゲートを実行できます。 このコールバックデリゲートは、ラムダ式として指定`boolean`され、テストの動作`Assert`を検証するためにステートメントによって使用されるフィールドを設定します。
+この単体テストでは、が `CatalogViewModel` `AddProduct` 実行されたことに応じて、がメッセージを公開することを確認し `AddCatalogItemCommand` ます。 クラスは [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) マルチキャストメッセージサブスクリプションをサポートしているので、単体テストはメッセージをサブスクライブ `AddProduct` し、受信に応答してコールバックデリゲートを実行できます。 このコールバックデリゲートは、ラムダ式として指定され、 `boolean` `Assert` テストの動作を検証するためにステートメントによって使用されるフィールドを設定します。
 
 ### <a name="testing-exception-handling"></a>例外処理のテスト
 
@@ -168,16 +171,16 @@ public void InvalidEventNameShouldThrowArgumentExceptionText()
 }
 ```
 
-この単体テストは例外をスローします。 [`ListView`](xref:Xamarin.Forms.ListView)これは、コントロールにという`OnItemTapped`名前のイベントがないためです。 メソッドは、 `T`が予期される例外の型であるジェネリックメソッドです。 `Assert.Throws<T>` `Assert.Throws<T>`メソッドに渡される引数は、例外をスローするラムダ式です。 したがって、ラムダ式からが`ArgumentException`スローされた場合、単体テストは成功します。
+この単体テストは例外をスローします。これは、 [`ListView`](xref:Xamarin.Forms.ListView) コントロールにという名前のイベントがないため `OnItemTapped` です。 メソッドは、 `Assert.Throws<T>` `T` が予期される例外の型であるジェネリックメソッドです。 メソッドに渡される引数 `Assert.Throws<T>` は、例外をスローするラムダ式です。 したがって、ラムダ式からがスローされた場合、単体テストは成功し `ArgumentException` ます。
 
 > [!TIP]
 > 例外メッセージ文字列を調べる単体テストを記述することは避けてください。 例外メッセージ文字列は時間の経過と共に変わる可能性があります。そのため、その存在に依存する単体テストは、不安定であると見なされます。
 
 ### <a name="testing-validation"></a>検証のテスト
 
-検証の実装をテストするには、検証規則が正しく実装されていることをテストし、 `ValidatableObject<T>`クラスが期待どおりに動作することをテストするという2つの側面があります。
+検証の実装をテストするには、検証規則が正しく実装されていることをテストし、 `ValidatableObject<T>` クラスが期待どおりに動作することをテストするという2つの側面があります。
 
-通常、検証ロジックは、出力が入力に依存する自己完結型のプロセスであるため、テストが簡単です。 次のコード例に示すように、少なく`Validate`とも1つの関連する検証規則を持つ各プロパティに対してメソッドを呼び出した結果に対してテストを行う必要があります。
+通常、検証ロジックは、出力が入力に依存する自己完結型のプロセスであるため、テストが簡単です。 `Validate`次のコード例に示すように、少なくとも1つの関連する検証規則を持つ各プロパティに対してメソッドを呼び出した結果に対してテストを行う必要があります。
 
 ```csharp
 [Fact]  
@@ -193,9 +196,9 @@ public void CheckValidationPassesWhenBothPropertiesHaveDataTest()
 }
 ```
 
-この単体テストでは、 `ValidatableObject<T>` `MockViewModel`インスタンスの2つのプロパティの両方にデータがある場合に、検証が成功するかどうかを確認します。
+この単体テストでは、インスタンスの2つのプロパティの両方にデータがある場合に、検証が成功するかどうかを確認 `ValidatableObject<T>` `MockViewModel` します。
 
-検証単体テストでは、検証が成功したかどうかを確認するだけ`Value`で`IsValid`なく、 `Errors`各`ValidatableObject<T>`インスタンスの、、およびプロパティの値を確認して、クラスが想定どおりに動作することを確認する必要もあります。 次のコード例は、これを実行する単体テストを示しています。
+検証単体テストでは、検証が成功したかどうかを確認するだけでなく、各インスタンスの、、およびプロパティの値を確認して、 `Value` `IsValid` `Errors` `ValidatableObject<T>` クラスが想定どおりに動作することを確認する必要もあります。 次のコード例は、これを実行する単体テストを示しています。
 
 ```csharp
 [Fact]  
@@ -216,9 +219,9 @@ public void CheckValidationFailsWhenOnlyForenameHasDataTest()
 }
 ```
 
-この単体テストで`Surname`は、 `MockViewModel`のプロパティにデータ`Value`が含まれておらず、各`ValidatableObject<T>`インスタンスの`IsValid`、、 `Errors`およびプロパティが正しく設定されている場合に、検証が失敗することを確認します。
+この単体テストで `Surname` は、のプロパティにデータが含まれておらず、 `MockViewModel` `Value` `IsValid` `Errors` 各インスタンスの、、およびプロパティ `ValidatableObject<T>` が正しく設定されている場合に、検証が失敗することを確認します。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>[概要]
 
 単体テストでは、アプリの小さな単位 (通常はメソッド) を受け取り、それをコードの残りの部分から分離し、想定どおりに動作することを確認します。 その目的は、機能の各単位が想定どおりに動作することを確認することです。これにより、エラーがアプリ全体に伝達されることがなくなります。
 

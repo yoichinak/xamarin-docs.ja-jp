@@ -1,24 +1,27 @@
 ---
-title: IOS でのメインスレッド制御の更新
-description: プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。 この記事では、メインスレッドでコントロールのレイアウトとレンダリングの更新を実行できるようにする iOS プラットフォーム固有のを使用する方法について説明します。
-ms.prod: xamarin
-ms.assetid: 945E711D-9BD2-4BF9-9FB3-CBE0D5B25A49
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/24/2018
-ms.openlocfilehash: d55ef4a97d5d4f320bf152ba05c86aff82eb2f1e
-ms.sourcegitcommit: 1e3a0d853669dcc57d5dee0894d325d40c7d8009
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 005e8216b887b694b33916179ca276cf8091e006
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70200118"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135981"
 ---
 # <a name="main-thread-control-updates-on-ios"></a>IOS でのメインスレッド制御の更新
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-この iOS プラットフォーム固有では、バックグラウンドスレッドで実行するのではなく、メインスレッドでコントロールレイアウトとレンダリング更新を実行できます。 ほとんど必要する必要がありますが、場合によってはクラッシュができない可能性があります。 設定してそので消費された XAML、`Application.HandleControlUpdatesOnMainThread`バインド可能なプロパティを`true`:
+この iOS プラットフォーム固有では、バックグラウンドスレッドで実行するのではなく、メインスレッドでコントロールレイアウトとレンダリング更新を実行できます。 これはほとんど必要ありませんが、場合によってはクラッシュを防ぐことができます。 バインド可能なプロパティをに設定することにより、XAML で使用され `Application.HandleControlUpdatesOnMainThread` `true` ます。
 
 ```xaml
 <Application ...
@@ -28,7 +31,7 @@ ms.locfileid: "70200118"
 </Application>
 ```
 
-代わりに、fluent API を使用して C# から使用できます。
+または、fluent API を使用して C# から使用することもできます。
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -38,10 +41,10 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 Xamarin.Forms.Application.Current.On<iOS>().SetHandleControlUpdatesOnMainThread(true);
 ```
 
-`Application.On<iOS>`メソッドは、このプラットフォーム仕様が iOS上 でのみ動作することを指定します。 `Application.SetHandleControlUpdatesOnMainThread`メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)名前空間を使用してコントロールのレイアウトとレンダリングの更新プログラムがバック グラウンド スレッドで実行されているのではなく、メイン スレッドで実行されるかどうか。 さらに、`Application.GetHandleControlUpdatesOnMainThread`をコントロールのレイアウトとレンダリングの更新プログラムをメイン スレッドで実行されているかどうかを返すメソッドを使用できます。
+メソッドは、 `Application.On<iOS>` このプラットフォーム固有のが iOS 上でのみ実行されることを指定します。 `Application.SetHandleControlUpdatesOnMainThread`名前空間のメソッドは、 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) バックグラウンドスレッドで実行されるのではなく、コントロールのレイアウトとレンダリングの更新をメインスレッドで実行するかどうかを制御するために使用されます。 また、メソッドを使用して、 `Application.GetHandleControlUpdatesOnMainThread` コントロールのレイアウトとレンダリングの更新がメインスレッドで実行されているかどうかを返すことができます。
 
 ## <a name="related-links"></a>関連リンク
 
-- [プラットフォーム仕様 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
-- [プラットフォーム仕様の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
+- [PlatformSpecifics (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [プラットフォーム固有設定の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific の API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

@@ -1,42 +1,45 @@
 ---
-title: Xamarin. Forms CarouselView EmptyView
-description: CarouselView では、表示可能なデータがない場合にユーザーにフィードバックを提供する空のビューを指定できます。 `EmptyView` には、文字列、ビュー、または複数のビューが使用できます。
-ms.prod: xamarin
-ms.assetid: C6DEE1A9-63FC-4889-BC77-F401D5D7DF32
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/03/2019
-ms.openlocfilehash: 8359e5f5008205237d602d7d364ebea376b57cf0
-ms.sourcegitcommit: ccbf914615c0ce6b3f308d930f7a77418aeb4dbc
+title: Xamarin.FormsCarouselView EmptyView
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a9f952da75e68e9ad39e0a15f57fbd0379233d7e
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77131076"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137398"
 ---
-# <a name="xamarinforms-carouselview-emptyview"></a>Xamarin. Forms CarouselView EmptyView
+# <a name="xamarinforms-carouselview-emptyview"></a>Xamarin.FormsCarouselView EmptyView
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)は、表示するデータがない場合にユーザーフィードバックを提供するために使用できる次のプロパティを定義します。
+[`CarouselView`](xref:Xamarin.Forms.CarouselView)表示するデータがない場合にユーザーフィードバックを提供するために使用できる次のプロパティを定義します。
 
-- 型 `object`の[`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)、 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)プロパティが `null`したときに表示される文字列、バインディング、またはビュー、または `ItemsSource` プロパティによって指定されたコレクションが `null` または空の場合に表示されます。 既定値は `null` です。
-- 指定した `EmptyView`の書式設定に使用するテンプレート[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)型の[`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)。 既定値は `null` です。
+- [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)型の、 `object` プロパティがのときに表示される文字列、バインディング、またはビュー、または [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) `null` プロパティによって指定されたコレクション `ItemsSource` が `null` または空の場合に表示される。 既定値は `null` です。
+- [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)型の [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 。指定したの書式設定に使用するテンプレート `EmptyView` 。 既定値は `null` です。
 
-これらのプロパティは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)のオブジェクトによってサポートされています。これは、プロパティをデータバインディングのターゲットにできることを意味します。
+これらのプロパティは、オブジェクトによって支えられてい [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ます。これは、プロパティをデータバインディングのターゲットにできることを意味します。
 
-[`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)プロパティを設定するための主な使用シナリオでは、 [`CarouselView`](xref:Xamarin.Forms.CarouselView)でのフィルター処理操作によってデータが得られず、web サービスからデータを取得しているときにユーザーフィードバックが表示される場合に、ユーザーからのフィードバックが表示されます。
+プロパティを設定するための主な使用シナリオで [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) は、に対するフィルター処理操作によってデータが得られ [`CarouselView`](xref:Xamarin.Forms.CarouselView) ず、web サービスからデータを取得しているときにユーザーフィードバックが表示される場合に、ユーザーフィードバックが表示されます。
 
 > [!NOTE]
-> [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)プロパティは、必要に応じて、対話型コンテンツを含むビューに設定できます。
+> プロパティは、 [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) 必要に応じて、対話型コンテンツを含むビューに設定できます。
 
-データ テンプレートについて詳しくは「[Xamarin.Forms Data Templates](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)」(Xamarin.Forms のデータ テンプレート) をご覧ください。
+データテンプレートの詳細については、「 [ Xamarin.Forms データテンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)」を参照してください。
 
 ## <a name="display-a-string-when-data-is-unavailable"></a>データが使用できないときに文字列を表示する
 
-[`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)プロパティは、 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)プロパティが `null`とき、または `ItemsSource` プロパティによって指定されたコレクションが `null` または空のときに表示される文字列に設定できます。 次の XAML は、このシナリオの例を示しています。
+プロパティは、プロパティ [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) がの場合 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) 、またはプロパティ `null` で指定されたコレクション `ItemsSource` がまたは空の場合に表示される文字列に設定でき `null` ます。 次の XAML は、このシナリオの例を示しています。
 
 ```xaml
 <CarouselView ItemsSource="{Binding EmptyMonkeys}"
@@ -53,11 +56,11 @@ CarouselView carouselView = new CarouselView
 carouselView.SetBinding(ItemsView.ItemsSourceProperty, "EmptyMonkeys");
 ```
 
-その結果、データバインドコレクションが `null`ため、 [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)プロパティ値として設定された文字列が表示されます。
+その結果、データバインドコレクションがであるため、 `null` プロパティ値として設定された文字列が [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) 表示されます。
 
 ## <a name="display-views-when-data-is-unavailable"></a>データが使用できないときにビューを表示する
 
-[`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)プロパティは、 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)プロパティが `null`とき、または `ItemsSource` プロパティによって指定されたコレクションが `null` または空のときに表示されるビューに設定できます。 1つのビュー、または複数の子ビューを含むビューを指定できます。 次の XAML の例は、複数の子ビューを含むビューに設定された `EmptyView` プロパティを示しています。
+プロパティは、プロパティ [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) がの場合 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) 、またはプロパティ `null` で指定されたコレクション `ItemsSource` がまたは空の場合に表示されるビューに設定でき `null` ます。 1つのビュー、または複数の子ビューを含むビューを指定できます。 次の XAML の例は、 `EmptyView` 複数の子ビューを含むビューに設定されたプロパティを示しています。
 
 ```xaml
 <StackLayout Margin="20">
@@ -105,11 +108,11 @@ CarouselView carouselView = new CarouselView
 carouselView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
 
-[`SearchBar`](xref:Xamarin.Forms.SearchBar)が `FilterCommand`を実行すると、 [`CarouselView`](xref:Xamarin.Forms.CarouselView)によって表示されるコレクションが、 [`SearchBar.Text`](xref:Xamarin.Forms.InputView.Text)プロパティに格納されている検索用語に対してフィルター処理されます。 フィルター処理操作によってデータが生成されない場合は、 [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)プロパティ値として設定される[`StackLayout`](xref:Xamarin.Forms.StackLayout)ます。
+がを実行すると、に [`SearchBar`](xref:Xamarin.Forms.SearchBar) `FilterCommand` よって表示されるコレクション [`CarouselView`](xref:Xamarin.Forms.CarouselView) は、プロパティに格納されている検索用語に対してフィルター処理され [`SearchBar.Text`](xref:Xamarin.Forms.InputView.Text) ます。 フィルター処理操作によってデータが生成されない場合は、 [`StackLayout`](xref:Xamarin.Forms.StackLayout) プロパティ値として設定 [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) されます。
 
 ## <a name="display-a-templated-custom-type-when-data-is-unavailable"></a>データが使用できないときに、テンプレート化されたカスタム型を表示する
 
-[`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)プロパティは、 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)プロパティが `null`とき、または `ItemsSource` プロパティで指定されたコレクションが `null` または空の場合に、テンプレートが表示されるカスタム型に設定できます。 [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)プロパティは、`EmptyView`の外観を定義する[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)に設定できます。 次の XAML は、このシナリオの例を示しています。
+プロパティは [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) カスタム型に設定できます。これは、プロパティがの場合 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) `null` 、またはプロパティで指定されたコレクション `ItemsSource` がまたは空の場合に、そのテンプレートが表示され `null` ます。 プロパティは、 [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate) [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) の外観を定義するに設定でき `EmptyView` ます。 次の XAML は、このシナリオの例を示しています。
 
 ```xaml
 <StackLayout Margin="20">
@@ -152,7 +155,7 @@ CarouselView carouselView = new CarouselView
 };
 ```
 
-`FilterData` 型は、`Filter` プロパティ、および対応する[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)を定義します。
+型は、 `FilterData` `Filter` プロパティ、および対応するを定義し [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ます。
 
 ```csharp
 public class FilterData : BindableObject
@@ -167,14 +170,14 @@ public class FilterData : BindableObject
 }
 ```
 
-[`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)プロパティは `FilterData` オブジェクトに設定され、`Filter` プロパティデータは[`SearchBar.Text`](xref:Xamarin.Forms.InputView.Text)プロパティにバインドされます。 [`SearchBar`](xref:Xamarin.Forms.SearchBar)が `FilterCommand`を実行すると、 [`CarouselView`](xref:Xamarin.Forms.CarouselView)によって表示されるコレクションが、`Filter` プロパティに格納されている検索用語に対してフィルター処理されます。 フィルター処理操作によってデータが生成されない場合は、 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate)で定義されている[`Label`](xref:Xamarin.Forms.Label) [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)プロパティ値として設定されます。
+プロパティ [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) はオブジェクトに設定され、プロパティ `FilterData` データはプロパティ `Filter` にバインドされ [`SearchBar.Text`](xref:Xamarin.Forms.InputView.Text) ます。 がを実行すると、に [`SearchBar`](xref:Xamarin.Forms.SearchBar) `FilterCommand` よって表示されるコレクション [`CarouselView`](xref:Xamarin.Forms.CarouselView) は、プロパティに格納されている検索用語に対してフィルター処理され `Filter` ます。 フィルター処理操作によってデータが生成されない場合、 [`Label`](xref:Xamarin.Forms.Label) [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) プロパティ値として設定されたで定義されているが [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate) 表示されます。
 
 > [!NOTE]
-> データが使用できないときに、テンプレート化されたカスタム型を表示する場合、 [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)プロパティは、複数の子ビューを含むビューに設定できます。
+> データが使用できないときに、テンプレート化されたカスタム型を表示する場合は、 [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate) 複数の子ビューを含むビューにプロパティを設定できます。
 
 ## <a name="choose-an-emptyview-at-runtime"></a>実行時に EmptyView を選択する
 
-データが使用できないときに[`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)として表示されるビューは、 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)内の[`ContentView`](xref:Xamarin.Forms.ContentView)オブジェクトとして定義できます。 `EmptyView` プロパティは、実行時にいくつかのビジネスロジックに基づいて、特定の `ContentView`に設定できます。 次の XAML の例は、このシナリオの例を示しています。
+データが使用できないときにとして表示されるビュー [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) は、 [`ContentView`](xref:Xamarin.Forms.ContentView) 内のオブジェクトとして定義でき [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) ます。 この `EmptyView` プロパティは、 `ContentView` 実行時に何らかのビジネスロジックに基づいて、特定のに設定できます。 次の XAML の例は、このシナリオの例を示しています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -230,7 +233,7 @@ public class FilterData : BindableObject
 </ContentPage>
 ```
 
-この XAML は、ページレベル[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)内の2つの[`ContentView`](xref:Xamarin.Forms.ContentView)オブジェクトを定義します。 [`Switch`](xref:Xamarin.Forms.Switch)オブジェクトは、どの `ContentView` オブジェクトを[`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)プロパティ値として設定するかを制御します。 [`Switch`](xref:Xamarin.Forms.Switch)が切り替えられると、`OnEmptyViewSwitchToggled` イベントハンドラーは `ToggleEmptyView` メソッドを実行します。
+この XAML は、ページレベルで2つのオブジェクトを定義し [`ContentView`](xref:Xamarin.Forms.ContentView) [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) [`Switch`](xref:Xamarin.Forms.Switch) ます。オブジェクトは、 `ContentView` プロパティ値として設定するオブジェクトを制御し [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) ます。 [`Switch`](xref:Xamarin.Forms.Switch)が切り替えられると、 `OnEmptyViewSwitchToggled` イベントハンドラーによってメソッドが実行され `ToggleEmptyView` ます。
 
 ```csharp
 void ToggleEmptyView(bool isToggled)
@@ -239,13 +242,13 @@ void ToggleEmptyView(bool isToggled)
 }
 ```
 
-`ToggleEmptyView` メソッドは、`carouselView` オブジェクトの[`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)プロパティを、 [`ResourceDictionary`プロパティの](xref:Xamarin.Forms.Switch.IsToggled)値に基づいて、 [`Switch.IsToggled`](xref:Xamarin.Forms.ResourceDictionary)に格納されている2つの[`ContentView`](xref:Xamarin.Forms.ContentView)オブジェクトのいずれかに設定します。 [`SearchBar`](xref:Xamarin.Forms.SearchBar)が `FilterCommand`を実行すると、 [`CarouselView`](xref:Xamarin.Forms.CarouselView)によって表示されるコレクションが、 [`SearchBar.Text`](xref:Xamarin.Forms.InputView.Text)プロパティに格納されている検索用語に対してフィルター処理されます。 フィルター処理操作によってデータが生成されない場合は、`EmptyView` プロパティとして設定された `ContentView` オブジェクトが表示されます。
+メソッドは、 `ToggleEmptyView` [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) `carouselView` プロパティの値に基づいて、オブジェクトのプロパティを [`ContentView`](xref:Xamarin.Forms.ContentView) 、に格納されている2つのオブジェクトのいずれかに設定し [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) [`Switch.IsToggled`](xref:Xamarin.Forms.Switch.IsToggled) ます。 がを実行すると、に [`SearchBar`](xref:Xamarin.Forms.SearchBar) `FilterCommand` よって表示されるコレクション [`CarouselView`](xref:Xamarin.Forms.CarouselView) は、プロパティに格納されている検索用語に対してフィルター処理され [`SearchBar.Text`](xref:Xamarin.Forms.InputView.Text) ます。 フィルター処理操作によってデータが生成されない場合は、 `ContentView` プロパティとして設定されたオブジェクト `EmptyView` が表示されます。
 
-リソースディクショナリの詳細については、「 [Xamarin. フォームリソースディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)」を参照してください。
+リソースディクショナリの詳細については、「 [ Xamarin.Forms リソースディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)」を参照してください。
 
 ## <a name="choose-an-emptyviewtemplate-at-runtime"></a>実行時に EmptyViewTemplate を選択する
 
-[`CarouselView.EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)プロパティを[`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector)オブジェクトに設定することにより、実行時に[`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)の外観をその値に基づいて選択できます。
+の外観は、 [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) プロパティをオブジェクトに設定することによって、実行時に値に基づいて選択でき [`CarouselView.EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate) [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) ます。
 
 ```xaml
 <ContentPage ...
@@ -292,11 +295,11 @@ CarouselView carouselView = new CarouselView()
 carouselView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 ```
 
-[`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)プロパティは[`SearchBar.Text`](xref:Xamarin.Forms.InputView.Text)プロパティに設定され、 [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)プロパティは `SearchTermDataTemplateSelector` オブジェクトに設定されます。
+プロパティが [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) プロパティに設定され、 [`SearchBar.Text`](xref:Xamarin.Forms.InputView.Text) [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate) プロパティがオブジェクトに設定されてい `SearchTermDataTemplateSelector` ます。
 
-[`SearchBar`](xref:Xamarin.Forms.SearchBar)が `FilterCommand`を実行すると、 [`CarouselView`](xref:Xamarin.Forms.CarouselView)によって表示されるコレクションが、 [`SearchBar.Text`](xref:Xamarin.Forms.InputView.Text)プロパティに格納されている検索用語に対してフィルター処理されます。 フィルター処理操作によってデータが生成されない場合は、`SearchTermDataTemplateSelector` オブジェクトによって選択された[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)が[`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)プロパティとして設定され、表示されます。
+がを実行すると、に [`SearchBar`](xref:Xamarin.Forms.SearchBar) `FilterCommand` よって表示されるコレクション [`CarouselView`](xref:Xamarin.Forms.CarouselView) は、プロパティに格納されている検索用語に対してフィルター処理され [`SearchBar.Text`](xref:Xamarin.Forms.InputView.Text) ます。 フィルター処理操作によってデータが生成されない場合、 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) オブジェクトによって選択されたがプロパティとし `SearchTermDataTemplateSelector` て設定さ [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate) れ、表示されます。
 
-次の例は、`SearchTermDataTemplateSelector` クラスを示しています。
+クラスの例を次に示し `SearchTermDataTemplateSelector` ます。
 
 ```csharp
 public class SearchTermDataTemplateSelector : DataTemplateSelector
@@ -312,13 +315,13 @@ public class SearchTermDataTemplateSelector : DataTemplateSelector
 }
 ```
 
-`SearchTermTemplateSelector` クラスは、さまざまなデータテンプレートに設定されている[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)プロパティの `DefaultTemplate` と `OtherTemplate` を定義します。 `OnSelectTemplate` のオーバーライドは、検索クエリが "xamarin" と等しくない場合に、ユーザーにメッセージを表示する `DefaultTemplate`を返します。 検索クエリが "xamarin" と等しい場合、`OnSelectTemplate` のオーバーライドは `OtherTemplate`を返します。これにより、ユーザーに基本メッセージが表示されます。
+`SearchTermTemplateSelector`クラスは、 `DefaultTemplate` `OtherTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) さまざまなデータテンプレートに設定されるプロパティとプロパティを定義します。 `OnSelectTemplate`上書きは `DefaultTemplate` 、検索クエリが "xamarin" と等しくない場合に、ユーザーにメッセージを表示するを返します。 検索クエリが "xamarin" と等しい場合、オーバーライドはを `OnSelectTemplate` 返し `OtherTemplate` ます。これにより、ユーザーに基本メッセージが表示されます。
 
-データテンプレートセレクターの詳細については、「 [DataTemplateSelector を作成する](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)」を参照してください。
+データテンプレートセレクターの詳細については、「 [Create a Xamarin.Forms DataTemplateSelector](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 
 - [CarouselView (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
-- [Xamarin. フォームデータテンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
-- [Xamarin.Forms のリソース ディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
-- [DataTemplateSelector を作成する](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)
+- [Xamarin.Formsデータテンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
+- [Xamarin.Formsリソースディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [DataTemplateSelector を作成する Xamarin.Forms](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

@@ -1,37 +1,29 @@
 ---
-title: Xamarin.Forms ScrollView
-description: この記事では、Xamarin.Forms ScrollView クラスを使用して、1 つだけの画面上に一致することはできませんし、キーボードのためのコンテンツがあるが、レイアウトを表示する方法について説明します。
-ms.prod: xamarin
-ms.assetid: 7B542872-B3D1-49B3-B15E-0E98F53C1F6E
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 12/18/2019
-ms.openlocfilehash: bb10cda7c9899f176861ceee712cc876984c56ef
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75488271"
+title: ' Xamarin.Forms ScrollView ' 説明: ' この記事では、ScrollView クラスを使用して、 Xamarin.Forms 1 つの画面に収めることができないレイアウトと、キーボードのためのスペースを作成する方法について説明します。 "
+ms. 製品: ms. assetid: ms. テクノロジ: 作成者: ms. 作成者: ms. 日付: なし:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
-# <a name="xamarinforms-scrollview"></a>Xamarin.Forms ScrollView
+
+# <a name="xamarinforms-scrollview"></a>Xamarin.FormsScrollView
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
-[`ScrollView`](xref:Xamarin.Forms.ScrollView) レイアウトを含み、オフスクリーン スクロールを有効になります。 `ScrollView` キーボードを表示するときに、画面の表示部分に自動的に移動するビューを許可するも使用されます。
+[`ScrollView`](xref:Xamarin.Forms.ScrollView)レイアウトが含まれており、スクリーンオフでスクロールできます。 `ScrollView`は、キーボードが表示されているときに、画面の可視部分にビューを自動的に移動できるようにするためにも使用されます。
 
 [![](scroll-view-images/layouts-sml.png "Xamarin.Forms Layouts")](scroll-view-images/layouts.png#lightbox "Xamarin.Forms Layouts")
 
 ## <a name="purpose"></a>目的
 
-[`ScrollView`](xref:Xamarin.Forms.ScrollView)を使用すると、より大きなビューが小さい電話でも表示されるようにすることができます。 たとえば、iPhone 6 s で動作するレイアウトを iPhone 4 秒で切れる可能性があります。 使用して、`ScrollView`できるよう、小さい画面に表示されるレイアウトのクリップの一部になります。
+[`ScrollView`](xref:Xamarin.Forms.ScrollView)を使用すると、より大きなビューを小さい電話でも確実に表示できます。 たとえば、iPhone 6s で動作するレイアウトは、iPhone 4s でクリップすることができます。 を使用する `ScrollView` と、レイアウトのクリップ部分を小さい画面に表示できます。
 
-## <a name="usage"></a>使用状況
+## <a name="usage"></a>使用
 
 > [!NOTE]
-> [`ScrollView`](xref:Xamarin.Forms.ScrollView)オブジェクトを入れ子にすることはできません。 さらに、 `ScrollView`s が他のコントロールなどスクロールなどを提供すると入れ子にする必要がありますできません`ListView`と`WebView`します。
+> [`ScrollView`](xref:Xamarin.Forms.ScrollView)オブジェクトを入れ子にすることはできません。 また、は、 `ScrollView` やなど、スクロールを提供する他のコントロールと入れ子にすることはできません `ListView` `WebView` 。
 
-[`ScrollView`](xref:Xamarin.Forms.ScrollView)は `Content` プロパティを公開します。これは、1つのビューまたはレイアウトに設定できます。 この例の後に、非常に大きな boxView のレイアウトを検討してください、 `Entry`:
+[`ScrollView`](xref:Xamarin.Forms.ScrollView)`Content`1 つのビューまたはレイアウトに設定できるプロパティを公開します。 この例では、サイズが非常に大きい boxView を使用し、その後に次のようなレイアウトを使用し `Entry` ます。
 
 ```xaml
 <ContentPage.Content>
@@ -61,33 +53,33 @@ public class ScrollingDemoCode : ContentPage
 }
 ```
 
-ユーザーがスクロール ダウンしているだけ前に、`BoxView`が表示されます。
+ユーザーが下へスクロールする前に、のみ `BoxView` が表示されます。
 
 ![](scroll-view-images/scroll-start.png "BoxView in ScrollView")
 
-ユーザーが画面にテキストを入力すると、`Entry`画面に表示されるようにする、ビューをスクロールします。
+ユーザーがのテキストの入力を開始すると、 `Entry` 画面に表示されるようにビューがスクロールします。
 
 ![](scroll-view-images/scroll-end.png "Entry in ScrollView")
 
-## <a name="properties"></a>[プロパティ]
+## <a name="properties"></a>プロパティ
 
-[`ScrollView`](xref:Xamarin.Forms.ScrollView) は次の特性を定義します。
+[`ScrollView`](xref:Xamarin.Forms.ScrollView)では、次のプロパティが定義されています。
 
-- [`ContentSize`](xref:Xamarin.Forms.ScrollView.ContentSizeProperty) 取得、 [ `Size` ](xref:Xamarin.Forms.Size)コンテンツのサイズを表す値です。
-- [`Orientation`](xref:Xamarin.Forms.ScrollView.OrientationProperty) 取得または設定します、 [ `ScrollOrientation` ](xref:Xamarin.Forms.ScrollOrientation)のスクロール方向を表す列挙値、`ScrollView`します。
-- [`ScrollX`](xref:Xamarin.Forms.ScrollView.ScrollXProperty) 取得、`double`現在スクロール位置を表します。
-- [`ScrollY`](xref:Xamarin.Forms.ScrollView.ScrollYProperty) 取得、 `double` Y の現在のスクロール位置を表します。
-- [`HorizontalScrollBarVisibility`](xref:Xamarin.Forms.ScrollView.HorizontalScrollBarVisibilityProperty) 取得または設定します、 [ `ScrollBarVisibility` ](xref:Xamarin.Forms.ScrollBarVisibility)水平スクロール バーが表示されるときを表す値です。
-- [`VerticalScrollBarVisibility`](xref:Xamarin.Forms.ScrollView.VerticalScrollBarVisibilityProperty) 取得または設定します、 [ `ScrollBarVisibility` ](xref:Xamarin.Forms.ScrollBarVisibility)垂直スクロール バーが表示されるときを表す値です。
+- [`ContentSize`](xref:Xamarin.Forms.ScrollView.ContentSizeProperty)[`Size`](xref:Xamarin.Forms.Size)コンテンツのサイズを表す値を取得します。
+- [`Orientation`](xref:Xamarin.Forms.ScrollView.OrientationProperty)[`ScrollOrientation`](xref:Xamarin.Forms.ScrollOrientation)のスクロール方向を表す列挙値を取得または設定し `ScrollView` ます。
+- [`ScrollX`](xref:Xamarin.Forms.ScrollView.ScrollXProperty)現在の `double` X スクロール位置を表すを取得します。
+- [`ScrollY`](xref:Xamarin.Forms.ScrollView.ScrollYProperty)現在の `double` Y スクロール位置を表すを取得します。
+- [`HorizontalScrollBarVisibility`](xref:Xamarin.Forms.ScrollView.HorizontalScrollBarVisibilityProperty)[`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollBarVisibility)水平スクロールバーが表示されるタイミングを表す値を取得または設定します。
+- [`VerticalScrollBarVisibility`](xref:Xamarin.Forms.ScrollView.VerticalScrollBarVisibilityProperty)[`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollBarVisibility)垂直スクロールバーが表示されるタイミングを表す値を取得または設定します。
 
 > [!NOTE]
-> [`Orientation`](xref:Xamarin.Forms.ScrollView.OrientationProperty)プロパティを `Neither`に設定すると、スクロールを無効にすることができます。
+> プロパティをに設定すると、スクロールを無効にすることができ [`Orientation`](xref:Xamarin.Forms.ScrollView.OrientationProperty) `Neither` ます。
 
 ## <a name="methods"></a>メソッド
 
-[`ScrollView`](xref:Xamarin.Forms.ScrollView)には、`ScrollToAsync` メソッドが用意されています。このメソッドを使用すると、座標を使用してビューをスクロールしたり、表示する必要のある特定のビューを指定したりできます。
+[`ScrollView`](xref:Xamarin.Forms.ScrollView)メソッドを提供します。このメソッドを使用すると `ScrollToAsync` 、座標を使用して、または表示する必要がある特定のビューを指定することによって、ビューをスクロールできます。
 
-座標を使用する場合は、指定、`x`と`y`と共にスクロールをアニメーション化するかどうかを示すブール値の座標。
+座標を使用する場合は、との座標と、スクロールをアニメーション化する `x` `y` かどうかを示すブール値を指定します。
 
 ```csharp
 scroll.ScrollToAsync(0, 150, true); //scrolls so that the position at 150px from the top is visible
@@ -96,20 +88,20 @@ scroll.ScrollToAsync(label, ScrollToPosition.Start, true); //scrolls so that the
 ```
 
 > [!IMPORTANT]
-> [`ScrollView.Orientation`](xref:Xamarin.Forms.ScrollView.OrientationProperty)プロパティが `Neither`に設定されている場合、`ScrollToAsync` メソッドはスクロールしません。
+> `ScrollToAsync` [`ScrollView.Orientation`](xref:Xamarin.Forms.ScrollView.OrientationProperty) プロパティがに設定されている場合、メソッドはスクロール `Neither` しません。
 
-`ScrollToPosition` 列挙体は、特定の要素にスクロールするときに、要素が表示されるビュー内の場所を指定します。
+特定の要素にスクロールすると、 `ScrollToPosition` ビュー内の要素の表示位置が列挙体によって指定されます。
 
-- **Center** &ndash;ビューの表示部分の中央に要素をスクロールします。
-- **終了**&ndash;ビューの表示部分の末尾に要素をスクロールします。
-- **MakeVisible** &ndash;ビュー内で表示されるように要素をスクロールします。
-- **開始**&ndash;ビューの表示部分の先頭に要素をスクロールします。
+- **中央** &ndash;要素をビューの表示部分の中央にスクロールします。
+- **終了** &ndash;要素をビューの可視部分の末尾までスクロールします。
+- **Makevisible** &ndash;要素をスクロールして、ビュー内に表示されるようにします。
+- **開始** &ndash;要素をビューの可視部分の先頭までスクロールします。
 
-`IsAnimated`プロパティは、ビューのスクロール方法を指定します。 `true`に設定すると、コンテンツをすぐに表示に移動するのではなく、滑らかなアニメーションが使用されます。
+プロパティは、 `IsAnimated` ビューをどのようにスクロールするかを指定します。 に設定すると、 `true` コンテンツをすぐにビューに移動するのではなく、滑らかなアニメーションが使用されます。
 
-## <a name="events"></a>Events
+## <a name="events"></a>events
 
-[`ScrollView`](xref:Xamarin.Forms.ScrollView)は、1つのイベント、`Scrolled`を定義します。 `Scrolled` スクロール、表示が完了したときに発生します。 イベント ハンドラー`Scrolled`は`ScrolledEventArgs`を持つ、`ScrollX`と`ScrollY`プロパティ。 次の現在のスクロール位置にラベルを更新する方法を示します、 `ScrollView`:
+[`ScrollView`](xref:Xamarin.Forms.ScrollView)1つのイベントだけを定義 `Scrolled` します。 `Scrolled`ビューのスクロールが終了したときに発生します。 のイベントハンドラーは `Scrolled` `ScrolledEventArgs` 、プロパティとプロパティを持つを受け取り `ScrollX` `ScrollY` ます。 次の例は、の現在のスクロール位置でラベルを更新する方法を示してい `ScrollView` ます。
 
 ```csharp
 Label label = new Label { Text = "Position: " };
@@ -119,9 +111,9 @@ scroll.Scrolled += (object sender, ScrolledEventArgs e) => {
 };
 ```
 
-負の場合、一覧の最後にスクロールする場合、バウンド効果のためのスクロール位置である可能性がありますに注意してください。
+スクロールの位置は、リストの末尾でスクロールするときのバウンス効果のため、負の値になることがあります。
 
 ## <a name="related-links"></a>関連リンク
 
 - [レイアウト (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
-- [BusinessTumble 例 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)
+- [BusinessTumble の例 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)

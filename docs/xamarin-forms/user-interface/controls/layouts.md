@@ -1,28 +1,31 @@
 ---
-title: Xamarin.Forms のレイアウト
-description: Xamarin. フォームレイアウトは、ユーザーインターフェイスコントロールをビジュアル構造に作成するために使用されます。 この記事では、Xamarin. フォームに含まれているレイアウトの一覧を示します。
-ms.prod: xamarin
-ms.assetid: F4180997-BA21-453A-9958-D1E2940DF050
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/21/2018
-ms.openlocfilehash: fa08c5012adf74a17852a72b8faf2c0311d16cfa
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
+title: Xamarin.Formsレイアウト
+description: Xamarin.Formsレイアウトは、ビジュアル構造にユーザーインターフェイスコントロールを作成するために使用されます。 この記事では、に含まれているレイアウトの一覧を示し Xamarin.Forms ます。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c39bf29feceaf598ac8fd38e6af3d227b6deddc0
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83150035"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137307"
 ---
-# <a name="xamarinforms-layouts"></a>Xamarin.Forms のレイアウト
+# <a name="xamarinforms-layouts"></a>Xamarin.Formsレイアウト
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
 
 _Xamarin. フォームレイアウトは、ユーザーインターフェイスコントロールをビジュアル構造に作成するために使用されます。_
 
-[`Layout`](xref:Xamarin.Forms.Layout) [`Layout<T>`](xref:Xamarin.Forms.Layout`1) Xamarin. Forms のクラスとクラスは、ビューおよびその他のレイアウトのコンテナーとして機能するビューの特殊なサブタイプです。 `Layout`クラス自体は、から派生 [`View`](views.md) します。 通常、派生要素には、 `Layout` Xamarin. Forms アプリケーションで子要素の位置とサイズを設定するロジックが含まれています。
+[`Layout`](xref:Xamarin.Forms.Layout) [`Layout<T>`](xref:Xamarin.Forms.Layout`1) のクラスとクラス Xamarin.Forms は、ビューおよびその他のレイアウトのコンテナーとして機能するビューの特殊なサブタイプです。 `Layout`クラス自体は、から派生 [`View`](views.md) します。 通常、派生には、 `Layout` アプリケーション内の子要素の位置とサイズを設定するロジックが含まれ Xamarin.Forms ます。
 
-[![Xamarin. Forms レイアウトの種類](layouts-images/layouts-sml.png "Xamarin. Forms レイアウトの種類")](layouts-images/layouts.png#lightbox "Xamarin. Forms レイアウトの種類")
+[![Xamarin.Formsレイアウトの種類](layouts-images/layouts-sml.png "[!ファンド.NO LOC (Xamarin)] レイアウトの種類")](layouts-images/layouts.png#lightbox "[!ファンド.NO LOC (Xamarin)] レイアウトの種類")
 
 から派生するクラスは、 `Layout` 次の2つのカテゴリに分けることができます。
 
@@ -41,7 +44,7 @@ _Xamarin. フォームレイアウトは、ユーザーインターフェイス�
 
 <a named="frame" />
 
-### <a name="frame"></a>フレーム
+### <a name="frame"></a>Frame
 
 |     |     |
 | --- | --- |
@@ -116,6 +119,6 @@ _Xamarin. フォームレイアウトは、ユーザーインターフェイス�
 
 ## <a name="related-links"></a>関連リンク
 
-- [Xamarin フォームギャラリーのサンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
-- [Xamarin.Forms のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
-- [Xamarin.Forms API ドキュメント](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)
+- [Xamarin.Formsフォームギャラリーのサンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
+- [Xamarin.FormsSamples](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
+- [Xamarin.FormsAPI ドキュメント](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

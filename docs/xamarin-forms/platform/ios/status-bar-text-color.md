@@ -1,24 +1,27 @@
 ---
-title: IOS の NavigationPage バーテキストカラーモード
-description: プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。 この記事では、NavigationPage のステータスバーのテキストの色がナビゲーションバーの輝度と一致するかどうかを制御する iOS プラットフォーム固有のを使用する方法について説明します。
-ms.prod: xamarin
-ms.assetid: 03698A44-39F1-4030-9AF5-F10A6713828A
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/24/2018
-ms.openlocfilehash: 5b12fbb3f7a0284dc78c51159b173dfdda300dc7
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: dcbc20139b989ced11f2d1d890ca7dd99a780e96
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68651706"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137060"
 ---
 # <a name="navigationpage-bar-text-color-mode-on-ios"></a>IOS の NavigationPage バーテキストカラーモード
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-このプラットフォーム仕様は、[`NavigationPage`](xref:Xamarin.Forms.NavigationPage) のステータスバーのテキストの色をナビゲーションバーの明るさに合うように調整するかどうかを制御します。 これは、 XAML で[`NavigationPage.StatusBarTextColorMode`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.StatusBarTextColorModeProperty)添付プロパティを[`StatusBarTextColorMode`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode)列挙型の値に設定して使用します。
+このプラットフォーム固有の設定は、のステータスバーのテキストの色を、 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) ナビゲーションバーの明るさに合わせて調整するかどうかを制御します。 これは、 [`NavigationPage.StatusBarTextColorMode`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.StatusBarTextColorModeProperty) 添付プロパティを列挙体の値に設定することによって XAML で使用され [`StatusBarTextColorMode`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode) ます。
 
 ```xaml
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -42,7 +45,7 @@ ms.locfileid: "68651706"
 
 ```
 
-代わりに、fluent API を使用して C# から使用できます。
+または、fluent API を使用して C# から使用することもできます。
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -63,19 +66,19 @@ IsPresentedChanged += (sender, e) =>
 };
 ```
 
-`NavigationPage.On<iOS>` メソッドは、このプラットフォーム仕様が iOS上 でのみ動作することを指定します。 [`NavigationPage.SetStatusBarTextColorMode`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.SetStatusBarTextColorMode(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage},Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode)) メソッドは、 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 名前空間に存在し、[`NavigationPage`](xref:Xamarin.Forms.NavigationPage) のステータスバーのテキスト色をナビゲーションバーの明るさに合うように調整するかどうかを、[`StatusBarTextColorMode`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode)列挙型が提供する2つの値を使って制御します。
+メソッドは、 `NavigationPage.On<iOS>` このプラットフォーム固有のが iOS 上でのみ実行されることを指定します。 [ `NavigationPage.SetStatusBarTextColorMode` ] (Xref: Xamarin.FormsPlatformConfiguration. Xamarin.Forms SetStatusBarTextColorMode () を指定します。IPlatformElementConfiguration { Xamarin.Forms .PlatformConfiguration。 iOS、 Xamarin.Forms 。NavigationPage}、 Xamarin.Forms 。StatusBarTextColorMode) メソッドは、 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 名前空間で、のステータスバーのテキストの色 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) がナビゲーションバーの輝度と一致するように調整されているかどうかを制御します。列挙体では、 [`StatusBarTextColorMode`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode) 2 つの値を指定できます。
 
-- [`DoNotAdjust`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode.DoNotAdjust) – ステータスバーのテキストの色を調整しないことを示します。
-- [`MatchNavigationBarTextLuminosity`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode.MatchNavigationBarTextLuminosity) – ステータスバーのテキスト色をナビゲーションバーの明るさに合わせることを示します。
+- [`DoNotAdjust`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode.DoNotAdjust)–ステータスバーのテキストの色を調整しないことを示します。
+- [`MatchNavigationBarTextLuminosity`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode.MatchNavigationBarTextLuminosity)–ステータスバーのテキストの色がナビゲーションバーの輝度と一致する必要があることを示します。
 
-さらに、 [`GetStatusBarTextColorMode`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.GetStatusBarTextColorMode(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage}))メソッドは[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)に適用された現在の[`StatusBarTextColorMode` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode)列挙型の値を取得するために使用できます。
+また、[ `GetStatusBarTextColorMode` ] (xref: Xamarin.FormsPlatformConfiguration. Xamarin.Forms GetStatusBarTextColorMode () を指定します。IPlatformElementConfiguration { Xamarin.Forms .PlatformConfiguration。 iOS、 Xamarin.Forms 。NavigationPage})) メソッドを使用して [`StatusBarTextColorMode`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.StatusBarTextColorMode) 、に適用されている列挙体の現在の値を取得でき [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) ます。
 
-その結果、[`NavigationPage`](xref:Xamarin.Forms.NavigationPage)のステータスバーのテキストの色はナビゲーションバーの明るさに合わせて調整されます。 この例では、ステータスバーのテキストの色は [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) の [`Master`](xref:Xamarin.Forms.MasterDetailPage.Master) ページと[`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) ページをユーザが切り替えたときに変化します。
+結果として、ナビゲーションバーの明るさに合わせて、のステータスバーのテキストの色を [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 調整できます。 この例では、ユーザーがのページとページを切り替えると、ステータスバーのテキストの色が変わり [`Master`](xref:Xamarin.Forms.MasterDetailPage.Master) [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) ます。
 
-![](status-bar-text-color-images/status-bar-text-color-mode.png "ステータス バーのテキストの色モードのプラットフォーム仕様")
+![](status-bar-text-color-images/status-bar-text-color-mode.png "Status Bar Text Color Mode Platform-Specific")
 
 ## <a name="related-links"></a>関連リンク
 
-- [プラットフォーム仕様 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
-- [プラットフォーム仕様の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
+- [PlatformSpecifics (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [プラットフォーム固有設定の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific の API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

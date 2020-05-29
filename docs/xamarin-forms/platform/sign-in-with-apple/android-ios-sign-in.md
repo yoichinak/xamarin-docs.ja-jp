@@ -1,24 +1,27 @@
 ---
-title: Xamarin 用の Apple でのサインインの使用
-description: Xamarin. Forms モバイルアプリケーションで Apple とのサインインを実装する方法について説明します。
-ms.prod: xamarin
-ms.assetid: 2E47E7F2-93D4-4CA3-9E66-247466D25E4D
-ms.technology: xamarin-forms
-author: davidortinau
-ms.author: daortin
-ms.date: 09/10/2019
-ms.openlocfilehash: df011a6eb72b6eb30af0a197d4be48b0f2494384
-ms.sourcegitcommit: fc689c1a6b641c124378dedc1bd157d96fc759a7
+title: での Apple でのサインインの使用Xamarin.Forms
+description: モバイルアプリケーションで Apple でサインインを実装する方法について説明 Xamarin.Forms します。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: fb37f8fb2d01154bf2e749e685c4e96c12d6bc5e
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71319522"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139491"
 ---
-# <a name="use-sign-in-with-apple-in-xamarinforms"></a>Xamarin での Apple でのサインインの使用
+# <a name="use-sign-in-with-apple-in-xamarinforms"></a>での Apple でのサインインの使用Xamarin.Forms
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/signinwithapple/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/signinwithapple/)
 
-Apple でのサインインは、サードパーティの認証サービスを使用する iOS 13 のすべての新しいアプリケーションを対象としています。 IOS と Android の間の実装の詳細は大きく異なります。 このガイドでは、Xamarin. フォームでこの操作を行う方法について説明します。
+Apple でのサインインは、サードパーティの認証サービスを使用する iOS 13 のすべての新しいアプリケーションを対象としています。 IOS と Android の間の実装の詳細は大きく異なります。 このガイドでは、で現在この操作を行う方法について説明 Xamarin.Forms します。
 
 このガイドとサンプルでは、Apple でのサインインを処理するために、特定のプラットフォームサービスが使用されています。
 
@@ -27,25 +30,25 @@ Apple でのサインインは、サードパーティの認証サービスを�
 
 ## <a name="a-sample-apple-sign-in-flow"></a>Apple サインインフローのサンプル
 
-このサンプルは、Xamarin. Forms アプリで機能するために Apple サインインを取得するためのこだわり実装を提供します。
+このサンプルでは、Apple サインインをアプリで動作させるためのこだわり実装を提供 Xamarin.Forms します。
 
 認証フローに役立つ2つの Azure Functions を使用します。
 
 1. `applesignin_auth`-Apple サインイン承認 URL を生成し、それにリダイレクトします。  これは、モバイルアプリではなくサーバー側で実行します。これにより、 `state` Apple のサーバーがコールバックを送信するときに、をキャッシュして検証することができます。
 2. `applesignin_callback`-Apple からのポストコールバックを処理し、アクセストークンと ID トークンの認証コードを安全に交換します。  最後に、アプリの URI スキームにリダイレクトし、URL フラグメント内のトークンを返します。
 
-モバイルアプリは、選択されたカスタム URI スキーム (この場合`xamarinformsapplesignin://`は) を処理するように自身を登録します。これにより、関数は`applesignin_callback`トークンを再びリレーできるようになります。
+モバイルアプリは、選択されたカスタム URI スキーム (この場合は) を処理するように自身を登録し `xamarinformsapplesignin://` `applesignin_callback` ます。これにより、関数はトークンを再びリレーできるようになります。
 
 ユーザーが認証を開始すると、次の手順が実行されます。
 
-1. モバイルアプリによって`nonce`と`state`の値が生成され`applesignin_auth` 、Azure 関数に渡されます。
-2. Azure `applesignin_auth`関数は、(指定さ`state`れたと`nonce`を使用して) Apple サインイン承認 URL を生成し、モバイルアプリブラウザーをそれにリダイレクトします。
+1. モバイルアプリによってとの値が生成され、 `nonce` `state` Azure 関数に渡され `applesignin_auth` ます。
+2. `applesignin_auth`Azure 関数は、(指定されたとを使用して) Apple サインイン承認 URL を生成 `state` し、 `nonce` モバイルアプリブラウザーをそれにリダイレクトします。
 3. ユーザーは、Apple のサーバーでホストされている Apple サインイン承認ページで資格情報を安全に入力します。
-4. Apple のサーバーで apple サインインフローが完了する`redirect_uri` `applesignin_callback`と、apple は Azure 関数になるにリダイレクトします。
-5. `applesignin_callback`関数に送信される Apple からの要求は、正しい`state`が返されること、および ID トークンの要求が有効であることを確認するために検証されます。
-6. Azure `applesignin_callback`関数は、Apple `code`によって投稿されたを、_アクセストークン_、_更新トークン_、および_id トークン_(ユーザー ID、名前、および電子メールに関する要求を含む) に対して交換します。
-7. 最後`applesignin_callback`に、Azure 関数は、uri フラグメントをトークンと共`xamarinformsapplesignin://`に追加して、アプリの uri スキーム () `xamarinformsapplesignin://#access_token=...&refresh_token=...&id_token=...`にリダイレクトします (例:)。
-8. モバイルアプリは URI フラグメント`AppleAccount`をに解析し、受信した要求が`nonce`フローの`nonce`開始時に生成されたと一致することを検証します。
+4. Apple のサーバーで Apple サインインフローが完了すると、Apple は Azure 関数になるにリダイレクトし `redirect_uri` `applesignin_callback` ます。
+5. 関数に送信される Apple からの要求 `applesignin_callback` は、正しいが返されること、 `state` および ID トークンの要求が有効であることを確認するために検証されます。
+6. `applesignin_callback`Azure 関数は、Apple に `code` よって投稿されたを、_アクセストークン_、_更新トークン_、および_id トークン_(ユーザー ID、名前、および電子メールに関する要求を含む) に対して交換します。
+7. `applesignin_callback`最後に、Azure 関数は、uri フラグメントをトークンと共に追加して、アプリの uri スキーム () にリダイレクト `xamarinformsapplesignin://` します (例: `xamarinformsapplesignin://#access_token=...&refresh_token=...&id_token=...` )。
+8. モバイルアプリは URI フラグメントをに解析し、 `AppleAccount` 受信した `nonce` 要求が `nonce` フローの開始時に生成されたと一致することを検証します。
 9. モバイルアプリは認証されました。
 
 ## <a name="azure-functions"></a>Azure Functions
@@ -56,22 +59,22 @@ Apple でのサインインは、サードパーティの認証サービスを�
 
 Azure Functions を使用する場合は、いくつかのアプリ設定を構成する必要があります。
 
-- `APPLE_SIGNIN_KEY_ID`-これは`KeyId`以前のバージョンです。
+- `APPLE_SIGNIN_KEY_ID`-これは `KeyId` 以前のバージョンです。
 - `APPLE_SIGNIN_TEAM_ID`-これは通常、[メンバーシッププロファイル](https://developer.apple.com/account/#/membership)にある_チーム ID_です
-- `APPLE_SIGNIN_SERVER_ID`:これは、 `ServerId`以前のです。  アプリ_バンドル id_で*はなく、* 作成した*サービス ID*の*識別子*です。
-- `APPLE_SIGNIN_APP_CALLBACK_URI`-これは、アプリケーションにリダイレクトするカスタム URI スキームです。  このサンプル`xamarinformsapplesignin://`では、を使用します。
+- `APPLE_SIGNIN_SERVER_ID`: これは、 `ServerId` 以前のです。  アプリ_バンドル id_で*はなく、* 作成した*サービス ID*の*識別子*です。
+- `APPLE_SIGNIN_APP_CALLBACK_URI`-これは、アプリケーションにリダイレクトするカスタム URI スキームです。  このサンプルで `xamarinformsapplesignin://` は、を使用します。
 - `APPLE_SIGNIN_REDIRECT_URI`-*サービス ID*を作成するときに設定した*リダイレクト URL*が、 *Apple サインイン*構成セクションに表示されます。  テストするには、次のようになります。`http://local.test:7071/api/applesignin_callback`
-- `APPLE_SIGNIN_P8_KEY`- `.p8`ファイルのテキストの内容。 `\n`すべての改行が削除され、1つの長い文字列になります。
+- `APPLE_SIGNIN_P8_KEY`-ファイルのテキストの内容。 `.p8` すべての改行が `\n` 削除され、1つの長い文字列になります。
 
-### <a name="security-considerations"></a>セキュリティの考慮事項
+### <a name="security-considerations"></a>セキュリティに関する考慮事項
 
 アプリケーションコード内に P8 キーを格納**しない**でください。 アプリケーションコードは、簡単にダウンロードして逆アセンブルできます。 
 
-また、を`WebView`使用して認証フローをホストし、URL ナビゲーションイベントをインターセプトして認証コードを取得することは、不適切な方法であると考えられます。 現時点では、トークン交換を処理するためにサーバーでコードをホストすることなく、iOS13 + 以外のデバイスでのサインインを完全に安全に処理することはできません。 サーバーで認証 url 生成コードをホストすることをお勧めします。これにより、Apple がサーバーへのポストコールバックを発行したときに、状態をキャッシュして検証することができます。
+また、を使用して `WebView` 認証フローをホストし、URL ナビゲーションイベントをインターセプトして認証コードを取得することは、不適切な方法であると考えられます。 現時点では、トークン交換を処理するためにサーバーでコードをホストすることなく、iOS13 + 以外のデバイスでのサインインを完全に安全に処理することはできません。 サーバーで認証 url 生成コードをホストすることをお勧めします。これにより、Apple がサーバーへのポストコールバックを発行したときに、状態をキャッシュして検証することができます。
 
 ## <a name="a-cross-platform-sign-in-service"></a>クロスプラットフォームサインインサービス
 
-Xamarin DependencyService を使用すると、iOS のプラットフォームサービスを使用する別個の認証サービスと、共有インターフェイスに基づく Android およびその他の iOS 以外のプラットフォーム用の汎用 web サービスを作成できます。
+Dependencyservice を使用すると、 Xamarin.Forms iOS 上のプラットフォームサービスを使用する別個の認証サービスと、共有インターフェイスに基づく Android およびその他の iOS 以外のプラットフォーム用の汎用 web サービスを作成できます。
 
 ```csharp
 public interface IAppleSignInService
@@ -174,7 +177,7 @@ class AuthManager : NSObject, IASAuthorizationControllerDelegate, IASAuthorizati
 #endif
 ```
 
-コンパイルフラグ`__IOS__13`は、汎用 web サービスにフォールバックする iOS 13 および従来のバージョンのサポートを提供するために使用されます。
+コンパイルフラグ `__IOS__13` は、汎用 web サービスにフォールバックする iOS 13 および従来のバージョンのサポートを提供するために使用されます。
 
 Android では、Azure Functions を使用した汎用 web サービスが使用されます。
 
@@ -241,9 +244,9 @@ public class WebAppleSignInService : IAppleSignInService
 }
 ```
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>[概要]
 
-この記事では、Xamarin アプリケーションで使用するために Apple でサインインを設定するために必要な手順について説明しました。
+この記事では、アプリケーションで使用するために Apple でサインインを設定するために必要な手順について説明しました Xamarin.Forms 。
 
 ## <a name="related-links"></a>関連リンク
 

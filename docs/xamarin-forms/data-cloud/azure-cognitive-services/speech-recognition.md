@@ -1,18 +1,21 @@
 ---
-title: Speech サービス API を使用した音声認識
-description: この記事では、Azure Speech Service API を使用して、Xamarin. フォームアプリケーションで音声をテキストにする方法について説明します。
-ms.prod: xamarin
-ms.assetid: B435FF6B-8785-48D9-B2D9-1893F5A87EA1
-ms.technology: xamarin-forms
-author: profexorgeek
-ms.author: jusjohns
-ms.date: 01/14/2020
-ms.openlocfilehash: c10b8feea5fbec21fc127262c3f1bfda50beba7f
-ms.sourcegitcommit: ba83c107c87b015dbcc9db13964fe111a0573dca
+title: ''
+description: この記事では、Azure Speech Service API を使用して、音声をアプリケーションのテキストに表示する方法について説明し Xamarin.Forms ます。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 171ecc02fda304135e5f535c3e798067595d7047
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76265155"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139322"
 ---
 # <a name="speech-recognition-using-azure-speech-service"></a>Azure Speech Service を使用した音声認識
 
@@ -25,9 +28,9 @@ Azure Speech Service は、次の機能を提供するクラウドベースの A
 - **音声翻訳**を使用すると、音声からテキストへの変換と音声合成音声の両方について、リアルタイムで多言語翻訳を行うことができます。
 - **音声アシスタント**は、アプリケーション用の人間に似たメッセージ交換インターフェイスを作成できます。
 
-この記事では、Azure Speech サービスを使用したサンプルの Xamarin. フォームアプリケーションでの音声からテキストの実装方法について説明します。 次のスクリーンショットは、iOS と Android のサンプルアプリケーションを示しています。
+この記事では Xamarin.Forms 、Azure Speech サービスを使用して、サンプルアプリケーションで音声からテキストを実装する方法について説明します。 次のスクリーンショットは、iOS と Android のサンプルアプリケーションを示しています。
 
-[iOS と Android のサンプルアプリケーションのスクリーンショットを ![する](speech-recognition-images/speech-recognition-cropped.png)](speech-recognition-images/speech-recognition.png#lightbox "IOS と Android のサンプルアプリケーションのスクリーンショット")
+[![IOS と Android のサンプルアプリケーションのスクリーンショット](speech-recognition-images/speech-recognition-cropped.png)](speech-recognition-images/speech-recognition.png#lightbox "IOS と Android のサンプルアプリケーションのスクリーンショット")
 
 ## <a name="create-an-azure-speech-service-resource"></a>Azure Speech Service リソースを作成する
 
@@ -63,7 +66,7 @@ public static class Constants
 
 ## <a name="create-an-imicrophoneservice-interface"></a>IMicrophoneService インターフェイスを作成する
 
-各プラットフォームには、マイクにアクセスするためのアクセス許可が必要です。 サンプルプロジェクトでは、共有プロジェクトに `IMicrophoneService` インターフェイスが用意されています。また、Xamarin. Forms `DependencyService` を使用して、インターフェイスのプラットフォーム実装を取得します。
+各プラットフォームには、マイクにアクセスするためのアクセス許可が必要です。 サンプルプロジェクトは `IMicrophoneService` 共有プロジェクトにインターフェイスを提供し、を使用して Xamarin.Forms `DependencyService` インターフェイスのプラットフォーム実装を取得します。
 
 ```csharp
 public interface IMicrophoneService
@@ -75,7 +78,7 @@ public interface IMicrophoneService
 
 ## <a name="create-the-page-layout"></a>ページレイアウトを作成する
 
-サンプルプロジェクトでは、 **mainpage.xaml**ファイルに基本的なページレイアウトを定義しています。 キーレイアウト要素は、議事録を開始する `Button`、書き起こしテキストを格納する `Label`、および議事録の処理が進行中であることを示す `ActivityIndicator` です。
+サンプルプロジェクトでは、 **mainpage.xaml**ファイルに基本的なページレイアウトを定義しています。 キーレイアウト要素は、 `Button` 議事録の処理を開始する、 `Label` 書き起こしテキストを格納する、および `ActivityIndicator` 議事録の処理が進行中であることを示すためのです。
 
 ```xaml
 <ContentPage ...>
@@ -101,7 +104,7 @@ public interface IMicrophoneService
 
 **MainPage.xaml.cs**分離コードファイルには、Azure Speech サービスから音声を送信し、書き起こしテキストを受信するためのすべてのロジックが含まれています。
 
-`MainPage` コンストラクターは、`DependencyService`から `IMicrophoneService` インターフェイスのインスタンスを取得します。
+`MainPage`コンストラクターは、からインターフェイスのインスタンスを取得し `IMicrophoneService` `DependencyService` ます。
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -121,7 +124,7 @@ public partial class MainPage : ContentPage
 }
 ```
 
-`TranscribeClicked` メソッドは、`transcribeButton` インスタンスがタップされると呼び出されます。
+`TranscribeClicked`インスタンスがタップされると、メソッドが呼び出され `transcribeButton` ます。
 
 ```csharp
 async void TranscribeClicked(object sender, EventArgs e)
@@ -184,12 +187,12 @@ async void TranscribeClicked(object sender, EventArgs e)
 `TranscribeClicked` メソッドは以下を実行します。
 
 1. アプリケーションがマイクにアクセスできるかどうかを確認し、存在しない場合は早期に終了します。
-1. `SpeechRecognizer` クラスのインスタンスを作成します (まだ存在しない場合)。
+1. クラスがまだ存在しない場合は、そのインスタンスを作成し `SpeechRecognizer` ます。
 1. 進行中の場合は、連続した議事録を停止します。
 1. タイムスタンプを挿入し、進行中でない場合は継続的な議事録を開始します。
 1. アプリケーションに、新しいアプリケーションの状態に基づいて外観を更新するように通知します。
 
-`MainPage` クラスのメソッドの残りの部分は、アプリケーションの状態を表示するためのヘルパーです。
+クラスメソッドの残りの部分 `MainPage` は、アプリケーションの状態を表示するためのヘルパーです。
 
 ```csharp
 void UpdateTranscription(string newText)
@@ -229,15 +232,15 @@ void UpdateDisplayState()
 }
 ```
 
-`UpdateTranscription` メソッドは、指定された `newText` `string` を `transcribedText`という名前の `Label` 要素に書き込みます。 この更新は、UI スレッドで強制的に実行されるため、例外を発生させずに任意のコンテキストから呼び出すことができます。 `InsertDateTimeRecord` は、現在の日付と時刻を `transcribedText` インスタンスに書き込み、新しい議事録の開始をマークします。 最後に、`UpdateDisplayState` メソッドは、`Button` と `ActivityIndicator` の要素を更新して、議事録が進行中かどうかを反映します。
+メソッドは、 `UpdateTranscription` 指定されたを `newText` `string` `Label` という名前の要素に書き込み `transcribedText` ます。 この更新は、UI スレッドで強制的に実行されるため、例外を発生させずに任意のコンテキストから呼び出すことができます。 は、 `InsertDateTimeRecord` 現在の日付と時刻をインスタンスに書き込み、 `transcribedText` 新しい議事録の開始をマークします。 最後に、メソッドは、との各要素を更新して、 `UpdateDisplayState` `Button` `ActivityIndicator` 議事録が進行中かどうかを反映します。
 
 ## <a name="create-platform-microphone-services"></a>プラットフォームマイクサービスを作成する
 
-音声データを収集するには、アプリケーションがマイクにアクセスできる必要があります。 アプリケーションを機能させるには、`IMicrophoneService` インターフェイスを実装し、各プラットフォームの `DependencyService` に登録する必要があります。
+音声データを収集するには、アプリケーションがマイクにアクセスできる必要があります。 `IMicrophoneService`アプリケーションが機能するためには、インターフェイスを実装し、各プラットフォームのに登録する必要があり `DependencyService` ます。
 
 ### <a name="android"></a>Android
 
-サンプルプロジェクトでは、`AndroidMicrophoneService`と呼ばれる Android の `IMicrophoneService` の実装を定義します。
+サンプルプロジェクトでは、 `IMicrophoneService` という名前の Android の実装を定義し `AndroidMicrophoneService` ます。
 
 ```csharp
 [assembly: Dependency(typeof(AndroidMicrophoneService))]
@@ -301,14 +304,14 @@ namespace CognitiveSpeechService.Droid.Services
 }
 ```
 
-`AndroidMicrophoneService` には、次の機能があります。
+には、 `AndroidMicrophoneService` 次の機能があります。
 
-1. `Dependency` 属性は、クラスを `DependencyService`に登録します。
-1. `GetPermissionAsync` メソッドは、Android SDK のバージョンに基づいてアクセス許可が必要かどうかをチェックし、アクセス許可がまだ付与されていない場合は `RequestMicPermissions` を呼び出します。
-1. `RequestMicPermissions` メソッドは、`Snackbar` クラスを使用して、論理的な権限が必要な場合にユーザーにアクセス許可を要求します。それ以外の場合は、オーディオ記録アクセス許可を直接要求します。
-1. `OnRequestPermissionResult` メソッドは、ユーザーがアクセス許可要求に応答した後、`bool` の結果と共に呼び出されます。
+1. `Dependency`属性は、クラスをに登録し `DependencyService` ます。
+1. メソッドは、 `GetPermissionAsync` Android SDK のバージョンに基づいてアクセス許可が必要かどうかをチェックし、 `RequestMicPermissions` アクセス許可がまだ付与されていない場合はを呼び出します。
+1. このメソッドは、クラスを使用して、 `RequestMicPermissions` `Snackbar` 論理的な根拠が必要な場合にユーザーにアクセス許可を要求します。それ以外の場合は、オーディオ記録アクセス許可を直接要求します。
+1. この `OnRequestPermissionResult` メソッドは、ユーザーが `bool` アクセス許可要求に応答した後に、結果と共に呼び出されます。
 
-`MainActivity` クラスは、アクセス許可要求の完了時に `AndroidMicrophoneService` インスタンスを更新するようにカスタマイズされています。
+クラスは、 `MainActivity` `AndroidMicrophoneService` アクセス許可要求の完了時にインスタンスを更新するようにカスタマイズされています。
 
 ```csharp
 public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
@@ -342,7 +345,7 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
 }
 ```
 
-`MainActivity` クラスは `Instance`と呼ばれる静的参照を定義します。これは、アクセス許可を要求するときに `AndroidMicrophoneService` オブジェクトが必要とします。 `OnRequestPermissionsResult` メソッドをオーバーライドして、ユーザーがアクセス許可要求を承認または拒否したときに `AndroidMicrophoneService` オブジェクトを更新します。
+`MainActivity`クラスは、という静的参照を定義し `Instance` ます。これは、 `AndroidMicrophoneService` アクセス許可を要求するときにオブジェクトによって要求されます。 `OnRequestPermissionsResult` `AndroidMicrophoneService` アクセス許可の要求がユーザーによって承認または拒否されたときに、メソッドをオーバーライドしてオブジェクトを更新します。
 
 最後に、Android アプリケーションには、 **Androidmanifest .xml**ファイルにオーディオを記録するためのアクセス許可が含まれている必要があります。
 
@@ -355,7 +358,7 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
 
 ### <a name="ios"></a>iOS
 
-サンプルプロジェクトでは、`iOSMicrophoneService`と呼ばれる iOS の `IMicrophoneService` の実装を定義します。
+サンプルプロジェクトでは、 `IMicrophoneService` という iOS の実装を定義してい `iOSMicrophoneService` ます。
 
 ```csharp
 [assembly: Dependency(typeof(iOSMicrophoneService))]
@@ -389,14 +392,14 @@ namespace CognitiveSpeechService.iOS.Services
 }
 ```
 
-`iOSMicrophoneService` には、次の機能があります。
+には、 `iOSMicrophoneService` 次の機能があります。
 
-1. `Dependency` 属性は、クラスを `DependencyService`に登録します。
-1. `GetPermissionAsync` メソッドは `RequestMicPermissions` を呼び出して、デバイスユーザーにアクセス許可を要求します。
-1. `RequestMicPermissions` メソッドは、共有 `AVAudioSession` インスタンスを使用して、記録アクセス許可を要求します。
-1. `OnRequestPermissionResult` メソッドは、指定された `bool` 値を使用して `TaskCompletionSource` インスタンスを更新します。
+1. `Dependency`属性は、クラスをに登録し `DependencyService` ます。
+1. `GetPermissionAsync`メソッドはを呼び出して、 `RequestMicPermissions` デバイスユーザーからアクセス許可を要求します。
+1. メソッドは、 `RequestMicPermissions` 共有インスタンスを使用して `AVAudioSession` 記録アクセス許可を要求します。
+1. メソッドは、 `OnRequestPermissionResult` 指定された値を使用してインスタンスを更新し `TaskCompletionSource` `bool` ます。
 
-最後に、iOS アプリ**情報 plist**には、アプリがマイクへのアクセスを要求している理由をユーザーに通知するメッセージが含まれている必要があります。 情報の plist ファイルを編集して、`<dict>` 要素内に次のタグを含めます。
+最後に、iOS アプリ**情報 plist**には、アプリがマイクへのアクセスを要求している理由をユーザーに通知するメッセージが含まれている必要があります。 情報の plist ファイルを編集して、要素内に次のタグを追加し `<dict>` ます。
 
 ```xml
 <plist>
@@ -410,7 +413,7 @@ namespace CognitiveSpeechService.iOS.Services
 
 ### <a name="uwp"></a>UWP
 
-サンプルプロジェクトでは、`UWPMicrophoneService`と呼ばれる UWP の `IMicrophoneService` 実装を定義しています。
+サンプルプロジェクトでは、 `IMicrophoneService` という UWP の実装を定義してい `UWPMicrophoneService` ます。
 
 ```csharp
 [assembly: Dependency(typeof(UWPMicrophoneService))]
@@ -449,19 +452,19 @@ namespace CognitiveSpeechService.UWP.Services
 }
 ```
 
-`UWPMicrophoneService` には、次の機能があります。
+には、 `UWPMicrophoneService` 次の機能があります。
 
-1. `Dependency` 属性は、クラスを `DependencyService`に登録します。
-1. `GetPermissionAsync` メソッドは、`MediaCapture` インスタンスの初期化を試みます。 失敗した場合は、マイクを有効にするためのユーザー要求を起動します。
-1. `OnRequestPermissionResult` メソッドはインターフェイスを満たすために存在しますが、UWP 実装には必要ありません。
+1. `Dependency`属性は、クラスをに登録し `DependencyService` ます。
+1. メソッドは、 `GetPermissionAsync` インスタンスの初期化を試み `MediaCapture` ます。 失敗した場合は、マイクを有効にするためのユーザー要求を起動します。
+1. この `OnRequestPermissionResult` メソッドはインターフェイスを満たすために存在しますが、UWP 実装には必要ありません。
 
-最後に、 **package.appxmanifest**は、アプリケーションでマイクを使用するように指定する必要があります。 Package.appxmanifest ファイルをダブルクリックし、Visual Studio 2019 の **[機能]** タブで **[マイク]** オプションを選択します。
+最後に、 **package.appxmanifest**は、アプリケーションでマイクを使用するように指定する必要があります。 Package.appxmanifest ファイルをダブルクリックし、Visual Studio 2019 の [**機能**] タブで [**マイク**] オプションを選択します。
 
-[Visual Studio 2019 のマニフェストの ![スクリーンショット](speech-recognition-images/package-manifest-cropped.png)](speech-recognition-images/package-manifest.png#lightbox "Visual Studio 2019 のマニフェストのスクリーンショット")
+[![Visual Studio 2019 のマニフェストのスクリーンショット](speech-recognition-images/package-manifest-cropped.png)](speech-recognition-images/package-manifest.png#lightbox "Visual Studio 2019 のマニフェストのスクリーンショット")
 
-## <a name="test-the-application"></a>アプリのテスト
+## <a name="test-the-application"></a>アプリケーションをテストする
 
-アプリを実行し、 **[議事録]** ボタンをクリックします。 アプリはマイクへのアクセスを要求し、議事録の処理を開始する必要があります。 `ActivityIndicator` がアニメーション化され、議事録がアクティブであることが示されます。 話すと、アプリは Azure Speech Services リソースにオーディオデータをストリーミングし、書き起こしテキストで応答します。 書き起こしテキストは、受信時に `Label` 要素に表示されます。
+アプリを実行し、[**議事録**] ボタンをクリックします。 アプリはマイクへのアクセスを要求し、議事録の処理を開始する必要があります。 が `ActivityIndicator` アニメーション化され、議事録がアクティブであることが示されます。 話すと、アプリは Azure Speech Services リソースにオーディオデータをストリーミングし、書き起こしテキストで応答します。 書き起こしテキストは、受信時に要素に表示され `Label` ます。
 
 > [!NOTE]
 > Android エミュレーターは、Speech サービスライブラリの読み込みと初期化に失敗します。 Android プラットフォームでは、物理デバイスでのテストをお勧めします。
@@ -470,5 +473,5 @@ namespace CognitiveSpeechService.UWP.Services
 
 - [Azure Speech Service のサンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-cognitivespeechservice)
 - [Azure Speech Service の概要](https://docs.microsoft.com/azure/cognitive-services/speech-service/overview)
-- [Cognitive Services リソースを作成する](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account)
-- [クイックスタート: マイクから音声を認識する](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstarts/speech-to-text-from-microphone)
+- [Cognitive Services リソースの作成](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account)
+- [クイック スタート: マイクから音声を認識する](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstarts/speech-to-text-from-microphone)

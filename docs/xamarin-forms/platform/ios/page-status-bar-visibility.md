@@ -1,24 +1,27 @@
 ---
-title: IOS でのページステータスバーの表示
-description: プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。 この記事では、ページのステータスバーの表示を設定する iOS プラットフォーム固有のを使用する方法について説明します。
-ms.prod: xamarin
-ms.assetid: D8BB7C24-A27F-4758-8557-6A81F909ABD9
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 10/24/2018
-ms.openlocfilehash: a187efa9310fa150ddc884d8b42da5ccb9ecee11
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 69594924f26afff133d8f211199cac44e66254d9
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655842"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84128027"
 ---
 # <a name="page-status-bar-visibility-on-ios"></a>IOS でのページステータスバーの表示
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-この iOS プラットフォーム固有のは、のステータスバー [`Page`](xref:Xamarin.Forms.Page)の表示を設定するために使用され`Page`ます。また、ステータスバーがを入力または脱退する方法を制御することもできます。 これは、 XAML で `Page.PrefersStatusBarHidden` 添付プロパティを `StatusBarHiddenMode` 列挙型の値に設定して使用します。そして任意で `Page.PreferredStatusBarUpdateAnimation` 添付プロパティを `UIStatusBarAnimation` 列挙型の値に設定します。
+この iOS プラットフォーム固有のは、のステータスバーの表示を設定するために使用され [`Page`](xref:Xamarin.Forms.Page) ます。また、ステータスバーがを入力または脱退する方法を制御することもでき `Page` ます。 XAML で使用されるのは、 `Page.PrefersStatusBarHidden` 添付プロパティを列挙値に設定 `StatusBarHiddenMode` し、必要に応じて、 `Page.PreferredStatusBarUpdateAnimation` 添付プロパティを列挙値に設定すること `UIStatusBarAnimation` です。
 
 ```xaml
 <ContentPage ...
@@ -29,7 +32,7 @@ ms.locfileid: "68655842"
 </ContentPage>
 ```
 
-代わりに、fluent API を使用して C# から使用できます。
+または、fluent API を使用して C# から使用することもできます。
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -40,19 +43,19 @@ On<iOS>().SetPrefersStatusBarHidden(StatusBarHiddenMode.True)
          .SetPreferredStatusBarUpdateAnimation(UIStatusBarAnimation.Fade);
 ```
 
-`Page.On<iOS>`メソッドは、このプラットフォーム仕様が iOS上 でのみ動作することを指定します。 `Page.SetPrefersStatusBarHidden` メソッドは、`Xamarin.Forms.PlatformConfiguration.iOSSpecific` 名前空間に存在し、`StatusBarHiddenMode` 列挙型の値（`Default`、`True`、`False`）の 1 つを指定することで [`Page`](xref:Xamarin.Forms.Page) 上のステータスバーの可視性を設定するために使用されます。 `StatusBarHiddenMode.True` と `StatusBarHiddenMode.False` のそれぞれの値は、デバイスの方向に関係なくステータスバーの可視性を設定し、`StatusBarHiddenMode.Default` の値は縦向きの小さな環境でステータス バーを非表示にします。
+メソッドは、 `Page.On<iOS>` このプラットフォーム固有のが iOS 上でのみ実行されることを指定します。 `Page.SetPrefersStatusBarHidden`名前空間のメソッドは、 `Xamarin.Forms.PlatformConfiguration.iOSSpecific` [`Page`](xref:Xamarin.Forms.Page) 列挙値のいずれか `StatusBarHiddenMode` `Default` (、 `True` 、または) を指定することによって、のステータスバーの表示を設定するために使用されます `False` 。 との値は、 `StatusBarHiddenMode.True` `StatusBarHiddenMode.False` デバイスの向きに関係なくステータスバーの可視性を設定し、 `StatusBarHiddenMode.Default` 値は垂直方向のコンパクトな環境でステータスバーを非表示にします。
 
-その結果、[`Page`](xref:Xamarin.Forms.Page)のステータスバーの可視性を設定することができます。
+結果として、のステータスバーの可視性は次のように [`Page`](xref:Xamarin.Forms.Page) 設定できます。
 
-![](page-status-bar-visibility-images/hide-status-bar.png "ステータス バーの可視性のプラットフォーム仕様")
+![](page-status-bar-visibility-images/hide-status-bar.png "Status Bar Visibility Platform-Specific")
 
 > [!NOTE]
-> [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage)では、`StatusBarHiddenMode` 列挙型の値にが設定されると、すべての子ページのステータスバーも更新されます。 [`Page`](xref:Xamarin.Forms.Page)から派生する他のすべての型では、`StatusBarHiddenMode` 列挙型の値が設定されると、現在のページのステータスバーだけが更新されます。
+> では [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 、指定された列挙値によって、 `StatusBarHiddenMode` すべての子ページのステータスバーも更新されます。 その他のすべての [`Page`](xref:Xamarin.Forms.Page) 派生型では、指定された `StatusBarHiddenMode` 列挙値は現在のページのステータスバーのみを更新します。
 
-`Page.SetPreferredStatusBarUpdateAnimation` メソッドは、`UIStatusBarAnimation` 列挙型の値（`None`、`Fade`、`Slide`）の1つを指定することによって、ステータス バーがどのようにして [`Page`](xref:Xamarin.Forms.Page)に出入りするかを設定するのに使用されます。 `Fade` か `Slide` を指定すると、ステータスバーが `Page` を出入りする際に0.25秒のアニメーションが実行されます。
+メソッドは、、、 `Page.SetPreferredStatusBarUpdateAnimation` [`Page`](xref:Xamarin.Forms.Page) またはのいずれかの列挙値を指定して、ステータスバーがをどのように入力または脱退するかを設定するために使用されます `UIStatusBarAnimation` `None` `Fade` `Slide` 。 `Fade`または `Slide` 列挙値が指定されている場合は、ステータスバーがを出入りするときに 0.25 2 番目のアニメーションが実行され `Page` ます。
 
 ## <a name="related-links"></a>関連リンク
 
-- [プラットフォーム仕様 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
-- [プラットフォーム仕様の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
+- [PlatformSpecifics (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [プラットフォーム固有設定の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific の API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

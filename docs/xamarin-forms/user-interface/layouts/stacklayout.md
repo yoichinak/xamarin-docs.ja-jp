@@ -1,24 +1,27 @@
 ---
-title: Xamarin. フォーム StackLayout
-description: StackLayout は、1次元のスタック内の子ビューを水平方向または垂直方向に整理します。
-ms.prod: xamarin
-ms.assetid: 6A91EA70-268C-462C-AAAF-F8DA011403F8
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/11/2020
-ms.openlocfilehash: 2535a92814181c5039256ea1e42b06419ed427aa
-ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
+title: Xamarin.FormsStackLayout
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f624674cc6d4ba1bdc34a42fb52fb63ff8a7135a
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83426027"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137970"
 ---
-# <a name="xamarinforms-stacklayout"></a>Xamarin. フォーム StackLayout
+# <a name="xamarinforms-stacklayout"></a>Xamarin.FormsStackLayout
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stacklayoutdemos)
 
-[![Xamarin. フォーム StackLayout](stacklayout-images/layouts.png "Xamarin. フォーム StackLayout")](stacklayout-images/layouts-large.png#lightbox "Xamarin. フォーム StackLayout")
+[![Xamarin.FormsStackLayout](stacklayout-images/layouts.png "[!ファンド.NO LOC (Xamarin. Forms)] StackLayout")](stacklayout-images/layouts-large.png#lightbox "[!ファンド.NO LOC (Xamarin. Forms)] StackLayout")
 
 は、 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 1 次元のスタック内の子ビューを水平方向または垂直方向に整理します。 既定では、は `StackLayout` 垂直方向に配置されます。 また、は、 `StackLayout` 他の子レイアウトを含む親レイアウトとして使用できます。
 
@@ -343,7 +346,7 @@ public ExpansionPageCS()
 > [!IMPORTANT]
 > [`StackLayout`](xref:Xamarin.Forms.StackLayout) 内のすべてのスペースが使用されている場合、展開設定は無効になります。
 
-配置と展開の詳細については、「[Layout Options in Xamarin.Forms](layout-options.md)」(Xamarin.Forms のレイアウト オプション) をご覧ください。
+配置と展開の詳細については、「 [」 Xamarin.Forms の「レイアウトオプション](layout-options.md)」を参照してください。
 
 ## <a name="nested-stacklayout-objects"></a>入れ子になった StackLayout オブジェクト
 
@@ -469,6 +472,6 @@ public class CombinedStackLayoutPageCS : ContentPage
 ## <a name="related-links"></a>関連リンク
 
 - [StackLayout のデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stacklayoutdemos)
-- [Xamarin. Forms のレイアウトオプション](layout-options.md)
-- [Xamarin. フォームレイアウトを選択する](choose-layout.md)
-- [Xamarin.Forms アプリ パフォーマンスの改善](~/xamarin-forms/deploy-test/performance.md)
+- [レイアウトオプションXamarin.Forms](layout-options.md)
+- [レイアウトの選択 Xamarin.Forms](choose-layout.md)
+- [アプリのパフォーマンスを向上させる Xamarin.Forms](~/xamarin-forms/deploy-test/performance.md)

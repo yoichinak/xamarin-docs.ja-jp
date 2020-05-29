@@ -1,44 +1,36 @@
 ---
-title: Xamarin. フォームマップの初期化と構成
-description: アプリケーションで maps 機能を使用するには、Xamarin. Forms. Map NuGet パッケージが必要です。 さらに、ユーザーの場所にアクセスするには、アプリケーションに対する場所のアクセス許可が必要です。
-ms.prod: xamarin
-ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/07/2020
-ms.openlocfilehash: 177359dfe081cba3cc43031d807f669f93a31ee9
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82516535"
+タイトル: ' Xamarin.Forms マップの初期化と構成 ' 説明: ' Xamarin.Forms 。Maps NuGet パッケージは、アプリケーションで maps 機能を使用するために必要です。 さらに、ユーザーの場所にアクセスするには、アプリケーションに対して場所のアクセス許可が付与されている必要があります。
+ms. 製品: ms. assetid: ms. テクノロジ: 作成者: ms. 作成者: ms. 日付: なし:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
-# <a name="xamarinforms-map-initialization-and-configuration"></a>Xamarin. フォームマップの初期化と構成
 
-[![](~/media/shared/download.png)サンプルをダウンロードするサンプルをダウンロードする](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+# <a name="xamarinforms-map-initialization-and-configuration"></a>Xamarin.Formsマップの初期化と構成
 
-コントロール[`Map`](xref:Xamarin.Forms.Maps.Map)は、各プラットフォームでネイティブマップコントロールを使用します。 これにより、ユーザーのための高速で使い慣れたマップエクスペリエンスが提供されますが、各プラットフォーム API の要件に準拠するためにはいくつかの構成手順が必要になります。
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+
+コントロールは、 [`Map`](xref:Xamarin.Forms.Maps.Map) 各プラットフォームでネイティブマップコントロールを使用します。 これにより、ユーザーのための高速で使い慣れたマップエクスペリエンスが提供されますが、各プラットフォーム API の要件に準拠するためにはいくつかの構成手順が必要になります。
 
 ## <a name="map-initialization"></a>マップの初期化
 
-[`Map`](xref:Xamarin.Forms.Maps.Map)コントロールは、ソリューション内のすべてのプロジェクトに追加する必要がある、 [Xamarin. Forms. map](https://www.nuget.org/packages/Xamarin.Forms.Maps/) NuGet パッケージによって提供されます。
+[`Map`](xref:Xamarin.Forms.Maps.Map)コントロールは、によって提供され[ Xamarin.Forms ます。](https://www.nuget.org/packages/Xamarin.Forms.Maps/)ソリューション内のすべてのプロジェクトに追加する必要がある、NuGet パッケージをマップします。
 
-[Xamarin. Forms. map](https://www.nuget.org/packages/Xamarin.Forms.Maps/) NuGet パッケージをインストールした後は、各プラットフォームプロジェクトで初期化する必要があります。
+をインストールした後[ Xamarin.Forms 。マップ](https://www.nuget.org/packages/Xamarin.Forms.Maps/)NuGet パッケージは、各プラットフォームプロジェクトで初期化する必要があります。
 
-IOS では`Xamarin.Forms.Forms.Init` 、メソッドの*後*にメソッドを`Xamarin.FormsMaps.Init`呼び出すことによって、 **AppDelegate.cs**でこれを行う必要があります。
+IOS では、メソッドの後にメソッドを呼び出すことによって、 **AppDelegate.cs**でこれを行う必要があり `Xamarin.FormsMaps.Init` *after* `Xamarin.Forms.Forms.Init` ます。
 
 ```csharp
 Xamarin.FormsMaps.Init();
 ```
 
-Android では`Xamarin.Forms.Forms.Init` 、メソッドの*後*にメソッドを`Xamarin.FormsMaps.Init`呼び出すことによって、 **MainActivity.cs**でこれを行う必要があります。
+Android では、メソッドの後にメソッドを呼び出すことによって、 **MainActivity.cs**でこれを行う必要があり `Xamarin.FormsMaps.Init` *after* `Xamarin.Forms.Forms.Init` ます。
 
 ```csharp
 Xamarin.FormsMaps.Init(this, savedInstanceState);
 ```
 
-ユニバーサル Windows プラットフォーム (UWP) では、 `Xamarin.FormsMaps.Init` `MainPage`コンストラクターからメソッドを呼び出すことによって**MainPage.xaml.cs**でこれを行う必要があります。
+ユニバーサル Windows プラットフォーム (UWP) では、コンストラクターからメソッドを呼び出すことによって**MainPage.xaml.cs**でこれを行う必要があり `Xamarin.FormsMaps.Init` `MainPage` ます。
 
 ```csharp
 Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
@@ -46,7 +38,7 @@ Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 
 UWP に必要な認証トークンの詳細については、「[ユニバーサル Windows プラットフォーム](#universal-windows-platform)」を参照してください。
 
-NuGet パッケージが追加され、各アプリケーション内部で初期化メソッドが呼び出される`Xamarin.Forms.Maps`と、共有コードプロジェクトで api を使用できるようになります。
+NuGet パッケージが追加され、各アプリケーション内部で初期化メソッドが呼び出されると、 `Xamarin.Forms.Maps` 共有コードプロジェクトで api を使用できるようになります。
 
 ## <a name="platform-configuration"></a>プラットフォームの構成
 
@@ -63,9 +55,9 @@ IOS でマップを表示して操作する場合、追加の構成は必要あ�
   - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26)–アプリケーションの使用時にロケーションサービスを使用する場合
   - [`NSLocationAlwaysUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18)–常にロケーションサービスを使用する場合    
 
-IOS 11 以前をサポートするには、 `NSLocationWhenInUseUsageDescription`、 `NSLocationAlwaysAndWhenInUseUsageDescription`、および`NSLocationAlwaysUsageDescription`の3つのキーすべてを含めることができます。
+IOS 11 以前をサポートするには、、、およびの3つのキーすべてを含めることができ `NSLocationWhenInUseUsageDescription` `NSLocationAlwaysAndWhenInUseUsageDescription` `NSLocationAlwaysUsageDescription` ます。
 
-次に、これらのキーの XML 表現を**情報 plist**で示します。 アプリケーションが場所情報`string`をどのように使用しているかを反映するように値を更新する必要があります。
+次に、これらのキーの XML 表現を**情報 plist**で示します。 `string`アプリケーションが場所情報をどのように使用しているかを反映するように値を更新する必要があります。
 
 ```xml
 <key>NSLocationAlwaysUsageDescription</key>
@@ -93,7 +85,7 @@ Android でマップを表示して操作するための構成プロセスは次
 1. マニフェストで Apache HTTP レガシライブラリの要件を指定します。
 1. optionalマニフェストで WRITE_EXTERNAL_STORAGE アクセス許可を指定します。
 1. optionalマニフェストでの場所のアクセス許可を指定します。
-1. optional`MainActivity`クラスのランタイムの場所のアクセス許可を要求します。
+1. optionalクラスのランタイムの場所のアクセス許可を要求 `MainActivity` します。
 
 正しく構成されたマニフェストファイルの例については、サンプルアプリケーションの「 [Androidmanifest .xml](https://github.com/xamarin/xamarin-forms-samples/blob/master/WorkingWithMaps/WorkingWithMaps/WorkingWithMaps.Android/Properties/AndroidManifest.xml) 」を参照してください。
 
@@ -109,16 +101,16 @@ API キーを取得したら、 `<application>` **Properties/AndroidManifest**�
 </application>
 ```
 
-これにより、API キーがマニフェストに埋め込まれます。 有効な API キーがない[`Map`](xref:Xamarin.Forms.Maps.Map)場合、コントロールには空のグリッドが表示されます。
+これにより、API キーがマニフェストに埋め込まれます。 有効な API キーがない場合、コントロールには [`Map`](xref:Xamarin.Forms.Maps.Map) 空のグリッドが表示されます。
 
 > [!NOTE]
-> `com.google.android.geo.API_KEY`は、API キーの推奨されるメタデータ名です。 旧バージョンとの互換性`com.google.android.maps.v2.API_KEY`のために、メタデータ名を使用できますが、ANDROID Maps API v2 での認証のみが許可されます。
+> `com.google.android.geo.API_KEY`は、API キーの推奨されるメタデータ名です。 旧バージョンとの互換性のために、 `com.google.android.maps.v2.API_KEY` メタデータ名を使用できますが、Android MAPS API v2 での認証のみが許可されます。
 
 APK が Google Maps にアクセスするには、APK に署名するために使用するすべてのキーストア (デバッグとリリース) に SHA-1 の指紋名とパッケージ名を含める必要があります。 たとえば、デバッグに1台のコンピューターを使用し、リリース APK を生成する別のコンピューターを使用する場合は、最初のコンピューターのデバッグキーストアから SHA-1 証明書のフィンガープリントを、2番目のコンピューターのリリースキーストアから SHA-1 証明書のフィンガープリントを含める必要があります。 また、アプリの**パッケージ名**が変更された場合は、キーの資格情報を編集することも忘れないでください。 「 [Google MAPS API キーを取得する」を](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)参照してください。
 
 #### <a name="specify-the-google-play-services-version-number"></a>Google Play services のバージョン番号を指定してください
 
-**Androidmanifest .xml**の`<application>`要素内に次の宣言を追加します。
+`<application>` **Androidmanifest .xml**の要素内に次の宣言を追加します。
 
 ```xml
 <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
@@ -128,17 +120,17 @@ APK が Google Maps にアクセスするには、APK に署名するために�
 
 #### <a name="specify-the-requirement-for-the-apache-http-legacy-library"></a>Apache HTTP レガシライブラリの要件を指定します
 
-Xamarin アプリケーションが API 28 以上を対象としている場合は、 `<application>` **Androidmanifest .xml**の要素内に次の宣言を追加する必要があります。
+Xamarin.Formsアプリケーションが API 28 以上を対象としている場合は、 `<application>` **Androidmanifest .xml**の要素内に次の宣言を追加する必要があります。
 
 ```xml
 <uses-library android:name="org.apache.http.legacy" android:required="false" />    
 ```
 
-これにより、Android 9 `bootclasspath`でから削除された Apache Http クライアントライブラリを使用するようにアプリケーションに指示します。
+これにより、Android 9 でから削除された Apache Http クライアントライブラリを使用するようにアプリケーションに指示し `bootclasspath` ます。
 
 #### <a name="specify-the-write_external_storage-permission"></a>WRITE_EXTERNAL_STORAGE のアクセス許可を指定する
 
-アプリケーションが API 22 以下を対象としている場合は、 `WRITE_EXTERNAL_STORAGE` `<manifest>`要素の子としてマニフェストにアクセス許可を追加する必要があります。
+アプリケーションが API 22 以下を対象としている場合は、 `WRITE_EXTERNAL_STORAGE` 要素の子としてマニフェストにアクセス許可を追加する必要があり `<manifest>` ます。
 
 ```xml
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -148,7 +140,7 @@ Xamarin アプリケーションが API 28 以上を対象としている場合�
 
 #### <a name="specify-location-permissions"></a>場所のアクセス許可の指定
 
-アプリケーションでユーザーの場所にアクセスする必要がある場合`ACCESS_COARSE_LOCATION`は、 `ACCESS_FINE_LOCATION` `<manifest>`要素の子として、またはのアクセス許可をマニフェスト (またはその両方) に追加することによって、アクセス許可を要求する必要があります。
+アプリケーションでユーザーの場所にアクセスする必要がある場合 `ACCESS_COARSE_LOCATION` は、 `ACCESS_FINE_LOCATION` 要素の子として、またはのアクセス許可をマニフェスト (またはその両方) に追加することによって、アクセス許可を要求する必要があり `<manifest>` ます。
 
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.myapp">
@@ -158,7 +150,7 @@ Xamarin アプリケーションが API 28 以上を対象としている場合�
 </manifest>
 ```
 
-この`ACCESS_COARSE_LOCATION`アクセス許可によって、API は、デバイスの場所を特定するために、WiFi またはモバイルデータ (またはその両方) を使用できます。 `ACCESS_FINE_LOCATION`アクセス許可によって、API は、GLOBAL POSITIONING SYSTEM (GPS)、WiFi、またはモバイルデータを使用して、可能な限り正確な場所を判断できます。
+この `ACCESS_COARSE_LOCATION` アクセス許可によって、API は、デバイスの場所を特定するために、WiFi またはモバイルデータ (またはその両方) を使用できます。 アクセス許可によって、 `ACCESS_FINE_LOCATION` API は、Global Positioning System (GPS)、WiFi、またはモバイルデータを使用して、可能な限り正確な場所を判断できます。
 
 または、マニフェストエディターを使用して次のアクセス許可を追加することによって、これらのアクセス許可を有効にすることもできます。
 
@@ -173,7 +165,7 @@ Xamarin アプリケーションが API 28 以上を対象としている場合�
 
 アプリケーションが API 23 以降を対象としていて、ユーザーの場所にアクセスする必要がある場合は、実行時に必要なアクセス許可があるかどうかを確認し、存在しない場合は要求する必要があります。 これは次のようにして実装します。
 
-1. `MainActivity`クラスに、次のフィールドを追加します。
+1. クラスに、 `MainActivity` 次のフィールドを追加します。
 
     ```csharp
     const int RequestLocationId = 0;
@@ -185,7 +177,7 @@ Xamarin アプリケーションが API 28 以上を対象としている場合�
     };
     ```
 
-1. `MainActivity`クラスで、次`OnStart`のオーバーライドを追加します。
+1. クラスで `MainActivity` 、次のオーバーライドを追加し `OnStart` ます。
 
     ```csharp
     protected override void OnStart()
@@ -206,9 +198,9 @@ Xamarin アプリケーションが API 28 以上を対象としている場合�
     }
     ```
 
-    アプリケーションが API 23 以上を対象としている場合、このコードは、 `AccessFineLocation`アクセス許可に対するランタイムアクセス許可チェックを実行します。 アクセス許可が付与されていない場合は、 `RequestPermissions`メソッドを呼び出すことによってアクセス許可要求が行われます。
+    アプリケーションが API 23 以上を対象としている場合、このコードは、アクセス許可に対するランタイムアクセス許可チェックを実行し `AccessFineLocation` ます。 アクセス許可が付与されていない場合は、メソッドを呼び出すことによってアクセス許可要求が行われ `RequestPermissions` ます。
 
-1. `MainActivity`クラスで、次`OnRequestPermissionsResult`のオーバーライドを追加します。
+1. クラスで `MainActivity` 、次のオーバーライドを追加し `OnRequestPermissionsResult` ます。
 
     ```csharp
     public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
@@ -235,15 +227,15 @@ Xamarin アプリケーションが API 28 以上を対象としている場合�
 
 ### <a name="universal-windows-platform"></a>ユニバーサル Windows プラットフォーム
 
-UWP では、マップを表示してマップサービスを使用する前に、アプリケーションを認証する必要があります。 アプリケーションを認証するには、maps 認証キーを指定する必要があります。 詳細については、「 [Request a maps authentication key](/windows/uwp/maps-and-location/authentication-key)」を参照してください。 その後、 `FormsMaps.Init("AUTHORIZATION_TOKEN")`メソッドの呼び出しで認証トークンを指定し、Bing Maps でアプリケーションを認証する必要があります。
+UWP では、マップを表示してマップサービスを使用する前に、アプリケーションを認証する必要があります。 アプリケーションを認証するには、maps 認証キーを指定する必要があります。 詳細については、「 [Request a maps authentication key](/windows/uwp/maps-and-location/authentication-key)」を参照してください。 その後、メソッドの呼び出しで認証トークンを指定し、 `FormsMaps.Init("AUTHORIZATION_TOKEN")` Bing Maps でアプリケーションを認証する必要があります。
 
 > [!NOTE]
-> UWP では、ジオコーディングなどのマップサービスを使用するには、 `MapService.ServiceToken`プロパティを認証キーの値に設定する必要もあります。 これは、次のコード行を使用`Windows.Services.Maps.MapService.ServiceToken = "INSERT_AUTH_TOKEN_HERE";`して実現できます。
+> UWP では、ジオコーディングなどのマップサービスを使用するには、 `MapService.ServiceToken` プロパティを認証キーの値に設定する必要もあります。 これは、次のコード行を使用して実現できます。 `Windows.Services.Maps.MapService.ServiceToken = "INSERT_AUTH_TOKEN_HERE";`
 
 また、アプリケーションがユーザーの場所にアクセスする必要がある場合は、パッケージマニフェストで場所の機能を有効にする必要があります。 これは次のようにして実装します。
 
 1. **ソリューション エクスプローラー**で、**package.appxmanifest** をダブルクリックし、**[機能]** タブを選びます。
-1. **[機能]** ボックスの一覧で、**[位置情報]** チェックボックスをオンにします。 これにより`location` 、デバイスの機能がパッケージマニフェストファイルに追加されます。
+1. **[機能]** ボックスの一覧で、**[位置情報]** チェックボックスをオンにします。 これにより、 `location` デバイスの機能がパッケージマニフェストファイルに追加されます。
 
     ```xml
     <Capabilities>
@@ -254,21 +246,21 @@ UWP では、マップを表示してマップサービスを使用する前に�
 
 #### <a name="release-builds"></a>リリースビルド
 
-UWP リリースビルドでは、.NET ネイティブコンパイルを使用して、アプリケーションを直接ネイティブコードにコンパイルします。 ただし、このような結果として、UWP の[`Map`](xref:Xamarin.Forms.Maps.Map)コントロールのレンダラーが実行可能ファイルからリンクされている可能性があります。 これは、 `Forms.Init` **App.xaml.cs**のメソッドの UWP 固有のオーバーロードを使用して修正できます。
+UWP リリースビルドでは、.NET ネイティブコンパイルを使用して、アプリケーションを直接ネイティブコードにコンパイルします。 ただし、このような結果として、UWP のコントロールのレンダラーが [`Map`](xref:Xamarin.Forms.Maps.Map) 実行可能ファイルからリンクされている可能性があります。 これは、App.xaml.cs のメソッドの UWP 固有のオーバーロードを使用して修正でき `Forms.Init` ます。 **App.xaml.cs**
 
 ```csharp
 var assembliesToInclude = new [] { typeof(Xamarin.Forms.Maps.UWP.MapRenderer).GetTypeInfo().Assembly };
 Xamarin.Forms.Forms.Init(e, assembliesToInclude);
 ```
 
-このコードは、クラスが`Xamarin.Forms.Maps.UWP.MapRenderer`存在するアセンブリを`Forms.Init`メソッドに渡します。 これにより、.NET ネイティブコンパイルプロセスによってアセンブリが実行可能ファイルからリンクされなくなります。
+このコードは、クラスが存在するアセンブリを `Xamarin.Forms.Maps.UWP.MapRenderer` メソッドに渡し `Forms.Init` ます。 これにより、.NET ネイティブコンパイルプロセスによってアセンブリが実行可能ファイルからリンクされなくなります。
 
 > [!IMPORTANT]
-> この操作を行わないと、リリース[`Map`](xref:Xamarin.Forms.Maps.Map)ビルドの実行時にコントロールが表示されなくなります。
+> この操作を行わない [`Map`](xref:Xamarin.Forms.Maps.Map) と、リリースビルドの実行時にコントロールが表示されなくなります。
 
 ## <a name="related-links"></a>関連リンク
 
 - [Maps サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
-- [Xamarin. Forms. マップの pin](~/xamarin-forms/user-interface/map/pins.md)。
+- [Xamarin.Forms.ピンをマップ](~/xamarin-forms/user-interface/map/pins.md)します。
 - [Maps API](xref:Xamarin.Forms.Maps)
 - [カスタムレンダラーのマップ](~/xamarin-forms/app-fundamentals/custom-renderer/map-pin.md)

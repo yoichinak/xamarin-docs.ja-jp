@@ -1,20 +1,23 @@
 ---
-title: Xamarin. フォームのバインド可能なプロパティ
-description: この記事では、バインド可能なプロパティの概要と、それらを作成して使用する方法を示します。
-ms.prod: xamarin
-ms.assetid: 1EE869D8-6FE1-45CA-A0AD-26EC7D032AD7
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/16/2020
-ms.openlocfilehash: 4151ac6f8cd9d860251ce1f27c7b342e0caa465c
-ms.sourcegitcommit: bc0c1740aa0708459729c0e671ab3ff7de3e2eee
+title: Xamarin.Formsバインド可能なプロパティ
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 33b3763075b64ea8af615465825313a527d20db2
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83425776"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138178"
 ---
-# <a name="xamarinforms-bindable-properties"></a>Xamarin. フォームのバインド可能なプロパティ
+# <a name="xamarinforms-bindable-properties"></a>Xamarin.Formsバインド可能なプロパティ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
 
@@ -28,7 +31,7 @@ ms.locfileid: "83425776"
 - プロパティの値を検証しています。
 - プロパティの変更を監視します。
 
-Xamarin. フォームバインド可能プロパティの例として、、、などがあり [`Label.Text`](xref:Xamarin.Forms.Label.Text) [`Button.BorderRadius`](xref:Xamarin.Forms.Button.BorderRadius) [`StackLayout.Orientation`](xref:Xamarin.Forms.StackLayout.Orientation) ます。 バインド可能な各プロパティには、 `public static readonly` [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 同じクラスで公開され、バインド可能なプロパティの識別子である、型の対応するフィールドがあります。 たとえば、プロパティの対応するバインド可能なプロパティ id `Label.Text` は [`Label.TextProperty`](xref:Xamarin.Forms.Label.TextProperty) です。
+バインド可能なプロパティの例 Xamarin.Forms として、、、などがあり [`Label.Text`](xref:Xamarin.Forms.Label.Text) [`Button.BorderRadius`](xref:Xamarin.Forms.Button.BorderRadius) [`StackLayout.Orientation`](xref:Xamarin.Forms.StackLayout.Orientation) ます。 バインド可能な各プロパティには、 `public static readonly` [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 同じクラスで公開され、バインド可能なプロパティの識別子である、型の対応するフィールドがあります。 たとえば、プロパティの対応するバインド可能なプロパティ id `Label.Text` は [`Label.TextProperty`](xref:Xamarin.Forms.Label.TextProperty) です。
 
 ## <a name="create-a-bindable-property"></a>バインド可能なプロパティを作成する
 
@@ -43,14 +46,14 @@ Xamarin. フォームバインド可能プロパティの例として、、、�
 
 インスタンスを作成するには `BindableProperty` 、含んでいるクラスがクラスから派生している必要があり [`BindableObject`](xref:Xamarin.Forms.BindableObject) ます。 ただし、クラスは `BindableObject` クラス階層内で高いため、ユーザーインターフェイス機能に使用されるクラスの大部分は、バインド可能なプロパティをサポートしています。
 
-バインド可能なプロパティを作成するには、 `public static readonly` 型のプロパティを宣言し [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ます。 バインド可能なプロパティは、いずれかのメソッドオーバーロードの戻り値に設定する必要があり [`BindableProperty.Create`](xref:Xamarin.Forms.BindableProperty.Create(System.String,System.Type,System.Type,System.Object,Xamarin.Forms.BindingMode,Xamarin.Forms.BindableProperty.ValidateValueDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangedDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangingDelegate,Xamarin.Forms.BindableProperty.CoerceValueDelegate,Xamarin.Forms.BindableProperty.CreateDefaultValueDelegate)) ます。 宣言は、派生クラスの本体内で [`BindableObject`](xref:Xamarin.Forms.BindableObject) 、メンバー定義の外部にある必要があります。
+バインド可能なプロパティを作成するには、 `public static readonly` 型のプロパティを宣言し [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ます。 バインド可能なプロパティは、[ `BindableProperty.Create` ] (xref: のいずれかの戻り値に設定する必要があります Xamarin.Forms 。BindableProperty。 Create (System.string, System.string, System.string, System.object, Xamarin.Forms ...)BindingMode、 Xamarin.Forms 。BindableProperty. ValidateValueDelegate、 Xamarin.Forms 。BindableProperty。 BindingPropertyChangedDelegate、 Xamarin.Forms 。BindableProperty。 Bindingpropertydelegate、 Xamarin.Forms 。BindableProperty. CoerceValueDelegate、 Xamarin.Forms 。BindableProperty. CreateDefaultValueDelegate)) メソッドオーバーロード。 宣言は、派生クラスの本体内で [`BindableObject`](xref:Xamarin.Forms.BindableObject) 、メンバー定義の外部にある必要があります。
 
 少なくとも、次のパラメーターと共に、を作成するときに識別子を指定する必要があり [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ます。
 
 - の名前 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。
 - プロパティの型。
 - 所有しているオブジェクトの型。
-- プロパティの既定値。 これにより、プロパティが設定解除されるときに常に特定の既定値が返されるようになります。また、プロパティの型の既定値とは異なる場合があります。 既定値は、 [`ClearValue`](xref:Xamarin.Forms.BindableObject.ClearValue(Xamarin.Forms.BindableProperty)) バインド可能なプロパティでメソッドが呼び出されたときに復元されます。
+- プロパティの既定値。 これにより、プロパティが設定解除されるときに常に特定の既定値が返されるようになります。また、プロパティの型の既定値とは異なる場合があります。 既定値は、[ `ClearValue` ] (xref: Xamarin.Forms .BindableObject。 ClearValue ( Xamarin.Forms .BindableProperty)) メソッドが、バインド可能なプロパティで呼び出されます。
 
 次のコードは、バインド可能なプロパティの例を示しています。この例では、4つの必須パラメーターの識別子と値が使用されています。
 
@@ -72,7 +75,7 @@ public static readonly BindableProperty EventNameProperty =
 
 ### <a name="create-accessors"></a>アクセサーの作成
 
-プロパティアクセサーは、プロパティの構文を使用して、バインド可能なプロパティにアクセスするために必要です。 アクセサーは、 `Get` 対応するバインド可能なプロパティに格納されている値を返す必要があります。 これを実現するには、 [`GetValue`](xref:Xamarin.Forms.BindableObject.GetValue(Xamarin.Forms.BindableProperty)) メソッドを呼び出し、値を取得するバインド可能なプロパティ識別子を渡してから、結果を必要な型にキャストします。 アクセサーは、 `Set` 対応するバインド可能なプロパティの値を設定する必要があります。 これを実現するには、メソッドを呼び出して、 [`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) 値を設定するバインド可能なプロパティ識別子と、設定する値を渡します。
+プロパティアクセサーは、プロパティの構文を使用して、バインド可能なプロパティにアクセスするために必要です。 アクセサーは、 `Get` 対応するバインド可能なプロパティに格納されている値を返す必要があります。 これは、[ `GetValue` ] (xref: を呼び出すことによって実現できます Xamarin.Forms 。BindableObject。 GetValue ( Xamarin.Forms .BindableProperty) メソッドを使用して、値を取得するバインド可能なプロパティ識別子を渡し、その結果を必要な型にキャストします。 アクセサーは、 `Set` 対応するバインド可能なプロパティの値を設定する必要があります。 これは、[ `SetValue` ] (xref: を呼び出すことによって実現できます Xamarin.Forms 。BindableObject. SetValue ( Xamarin.Forms .BindableProperty, System.object) メソッドを使用して、値を設定するバインド可能なプロパティ識別子と設定する値を渡します。
 
 次のコード例は、バインド可能なプロパティのアクセサーを示してい `EventName` ます。
 
@@ -123,7 +126,7 @@ listView.Behaviors.Add (new EventToCommandBehavior
 
 ### <a name="detect-property-changes"></a>プロパティの変更の検出
 
-`static`プロパティによって変更されたコールバックメソッドは、メソッドのパラメーターを指定することによって、バインド可能なプロパティで登録でき `propertyChanged` [`BindableProperty.Create`](xref:Xamarin.Forms.BindableProperty.Create(System.String,System.Type,System.Type,System.Object,Xamarin.Forms.BindingMode,Xamarin.Forms.BindableProperty.ValidateValueDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangedDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangingDelegate,Xamarin.Forms.BindableProperty.CoerceValueDelegate,Xamarin.Forms.BindableProperty.CreateDefaultValueDelegate)) ます。 バインド可能なプロパティの値が変更されると、指定したコールバックメソッドが呼び出されます。
+`static`プロパティによって変更されたコールバックメソッドは `propertyChanged` 、[ `BindableProperty.Create` ] (xref: のパラメーターを指定することによって、バインド可能なプロパティで登録できます Xamarin.Forms 。BindableProperty。 Create (System.string, System.string, System.string, System.object, Xamarin.Forms ...)BindingMode、 Xamarin.Forms 。BindableProperty. ValidateValueDelegate、 Xamarin.Forms 。BindableProperty。 BindingPropertyChangedDelegate、 Xamarin.Forms 。BindableProperty。 Bindingpropertydelegate、 Xamarin.Forms 。BindableProperty. CoerceValueDelegate、 Xamarin.Forms 。BindableProperty. CreateDefaultValueDelegate) メソッド。 バインド可能なプロパティの値が変更されると、指定したコールバックメソッドが呼び出されます。
 
 次のコード例は、 `EventName` バインド可能なプロパティが `OnEventNameChanged` メソッドをプロパティ変更コールバックメソッドとして登録する方法を示しています。
 
@@ -143,7 +146,7 @@ static void OnEventNameChanged (BindableObject bindable, object oldValue, object
 
 ### <a name="validation-callbacks"></a>検証コールバック
 
-`static`検証コールバックメソッドは、メソッドのパラメーターを指定することによって、バインド可能なプロパティで登録でき `validateValue` [`BindableProperty.Create`](xref:Xamarin.Forms.BindableProperty.Create(System.String,System.Type,System.Type,System.Object,Xamarin.Forms.BindingMode,Xamarin.Forms.BindableProperty.ValidateValueDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangedDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangingDelegate,Xamarin.Forms.BindableProperty.CoerceValueDelegate,Xamarin.Forms.BindableProperty.CreateDefaultValueDelegate)) ます。 バインド可能なプロパティの値が設定されると、指定されたコールバックメソッドが呼び出されます。
+`static`検証コールバックメソッドは `validateValue` 、[ `BindableProperty.Create` ] (xref: のパラメーターを指定することによって、バインド可能なプロパティで登録できます Xamarin.Forms 。BindableProperty。 Create (System.string, System.string, System.string, System.object, Xamarin.Forms ...)BindingMode、 Xamarin.Forms 。BindableProperty. ValidateValueDelegate、 Xamarin.Forms 。BindableProperty。 BindingPropertyChangedDelegate、 Xamarin.Forms 。BindableProperty。 Bindingpropertydelegate、 Xamarin.Forms 。BindableProperty. CoerceValueDelegate、 Xamarin.Forms 。BindableProperty. CreateDefaultValueDelegate) メソッド。 バインド可能なプロパティの値が設定されると、指定されたコールバックメソッドが呼び出されます。
 
 次のコード例は、バインド可能な `Angle` プロパティが `IsValidValue` メソッドを検証コールバックメソッドとして登録する方法を示しています。
 
@@ -164,7 +167,7 @@ static bool IsValidValue (BindableObject view, object value)
 
 ### <a name="coerce-value-callbacks"></a>強制値のコールバック
 
-`static`強制値のコールバックメソッドは、メソッドのパラメーターを指定することによって、バインド可能なプロパティで登録でき `coerceValue` [`BindableProperty.Create`](xref:Xamarin.Forms.BindableProperty.Create(System.String,System.Type,System.Type,System.Object,Xamarin.Forms.BindingMode,Xamarin.Forms.BindableProperty.ValidateValueDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangedDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangingDelegate,Xamarin.Forms.BindableProperty.CoerceValueDelegate,Xamarin.Forms.BindableProperty.CreateDefaultValueDelegate)) ます。 バインド可能なプロパティの値が変更されると、指定したコールバックメソッドが呼び出されます。
+`static`強制値のコールバックメソッドは `coerceValue` 、[ `BindableProperty.Create` ] (xref: のパラメーターを指定することによって、バインド可能なプロパティで登録できます Xamarin.Forms 。BindableProperty。 Create (System.string, System.string, System.string, System.object, Xamarin.Forms ...)BindingMode、 Xamarin.Forms 。BindableProperty. ValidateValueDelegate、 Xamarin.Forms 。BindableProperty。 BindingPropertyChangedDelegate、 Xamarin.Forms 。BindableProperty。 Bindingpropertydelegate、 Xamarin.Forms 。BindableProperty. CoerceValueDelegate、 Xamarin.Forms 。BindableProperty. CreateDefaultValueDelegate) メソッド。 バインド可能なプロパティの値が変更されると、指定したコールバックメソッドが呼び出されます。
 
 > [!IMPORTANT]
 > `BindableObject`型には、 `CoerceValue` `BindableProperty` 強制値コールバックを呼び出すことによって、引数の値を強制的に再評価するために呼び出すことができるメソッドがあります。
@@ -210,7 +213,7 @@ public static readonly BindableProperty SizeProperty =
   defaultValueCreator: bindable => Device.GetNamedSize (NamedSize.Large, (Label)bindable));
 ```
 
-`defaultValueCreator`パラメーターは、 `Func` [`Device.GetNamedSize`](xref:Xamarin.Forms.Device.GetNamedSize(Xamarin.Forms.NamedSize,System.Type)) `double` ネイティブプラットフォーム上ので使用されるフォントの名前付きサイズを表すを返すために、メソッドを呼び出すに設定され [`Label`](xref:Xamarin.Forms.Label) ます。
+`defaultValueCreator`パラメーターは、 `Func` [ `Device.GetNamedSize` ] (xref: を呼び出すに設定されます Xamarin.Forms 。デバイス. GetNamedSize ( Xamarin.Forms .NamedSize, system.string) メソッドを返します。このメソッドは、 `double` ネイティブプラットフォームので使用されるフォントの名前付きサイズを表すを返し [`Label`](xref:Xamarin.Forms.Label) ます。
 
 ## <a name="related-links"></a>関連リンク
 
