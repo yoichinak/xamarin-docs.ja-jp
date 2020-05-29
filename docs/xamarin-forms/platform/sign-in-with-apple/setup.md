@@ -1,20 +1,9 @@
 ---
-title: セットアップ手順-Apple for Xamarin を使用してサインインする
-description: Apple セットアップでのサインインは、モバイルアプリケーションが対象とするさまざまなプラットフォームによって異なります。
-ms.prod: xamarin
-ms.assetid: 8F712802-395B-469B-B5BE-C927AD1A8391
-ms.technology: xamarin-forms
-author: davidortinau
-ms.author: daortin
-ms.date: 09/10/2019
-ms.openlocfilehash: c1f75f4872d787e261ab6bbac3624e31538c6ff0
-ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71206528"
+title: "セットアップ手順-Apple でのサインイン Xamarin.Forms " の説明: "apple セットアップでのサインインは、モバイルアプリケーションが対象とするさまざまなプラットフォームによって異なります。"
+ms. 製品: xamarin ms. assetid: 8f712802氏 395b47 69b5davidortinau c927ad1a8391 ミリ秒。テクノロジ: xamarin-forms author: ms. 09/10/2019 author:: [ Xamarin.Forms ,] のように指定します。 Xamarin.Essentials
 ---
-# <a name="setup-sign-in-with-apple-for-xamarinforms"></a>Xamarin 用の Apple でのサインインの設定
+
+# <a name="setup-sign-in-with-apple-for-xamarinforms"></a>Apple でのサインインのセットアップXamarin.Forms
 
 このガイドでは、Apple で高度なサインインを行うためにクロスプラットフォームアプリケーションをセットアップするために必要な一連の手順について説明します。 Apple のセットアップは Apple Developer Portal で簡単に実行できますが、Android と Apple の間にセキュリティで保護された関係を作成するには追加の手順が必要です。 
 
@@ -28,25 +17,25 @@ ms.locfileid: "71206528"
 
 ![その他のセクション](sign-in-images/readme-signin-domain-configure.png)
 
-ドメインを追加し、 **[登録]** をクリックします。
+ドメインを追加し、[**登録**] をクリックします。
 
 ![ドメインの登録フォーム](sign-in-images/readme-signin-domain-more.png)
 
 > [!NOTE]
-> ドメインが SPF に準拠していないことに関するエラーが表示された場合は、次に進む前に、SPF DNS TXT レコードをドメインに追加し、それが反映されるまで待機する必要があります。SPF TXT は次のようになります。`v=spf1 a a:myapp.com -all`
+> ドメインが SPF に準拠していないことに関するエラーが表示された場合は、次のように spf DNS TXT レコードをドメインに追加し、それが反映されるまで待機する必要があります。 SPF TXT は次のようになります。`v=spf1 a a:myapp.com -all`
 
-次に、 **[ダウンロード]** をクリックして`apple-developer-domain-association.txt`ファイルを取得し、ドメインの web サイトの`.well-known`フォルダーにアップロードすることで、ドメインの所有権を確認する必要があります。
+次に、[**ダウンロード**] をクリックしてファイルを取得 `apple-developer-domain-association.txt` し、ドメインの web サイトのフォルダーにアップロードすることで、ドメインの所有権を確認する必要があり `.well-known` ます。
 
-ファイルがアップロードされ、到達可能になったら、[確認] をクリックして、Apple がドメインの所有権を確認できるようにします。 `.well-known/apple-developer-domain-association.txt`
+`.well-known/apple-developer-domain-association.txt`ファイルがアップロードされ、到達可能になったら、[**確認**] をクリックして、Apple がドメインの所有権を確認できるようにします。
 
 > [!NOTE]
-> Apple は、との`https://`所有権を確認します。 SSL がセットアップされていて、セキュリティで保護された URL でファイルにアクセスできることを確認します。
+> Apple は、との所有権を確認し `https://` ます。 SSL がセットアップされていて、セキュリティで保護された URL でファイルにアクセスできることを確認します。
 
 続行する前に、このプロセスを正常に完了してください。
 
 ## <a name="setup-your-app-id"></a>アプリ ID を設定する
 
-[[識別子](https://developer.apple.com/account/resources/identifiers/list)] セクションで、新しい識別子を作成し、 **[アプリ id]** を選択します。 既にアプリ ID を持っている場合は、代わりにそれを編集することを選択します。
+[[識別子](https://developer.apple.com/account/resources/identifiers/list)] セクションで、新しい識別子を作成し、[**アプリ id**] を選択します。 既にアプリ ID を持っている場合は、代わりにそれを編集することを選択します。
 
 ![新しいアプリ ID を作成する](sign-in-images/readme-appid-create.png)
 
@@ -58,22 +47,22 @@ ms.locfileid: "71206528"
 
 ## <a name="create-a-service-id"></a>サービス ID を作成する
 
-[[識別子](https://developer.apple.com/account/resources/identifiers/list/serviceId)] セクションで、新しい識別子を作成し、 **[サービス id]** を選択します。
+[[識別子](https://developer.apple.com/account/resources/identifiers/list/serviceId)] セクションで、新しい識別子を作成し、[**サービス id**] を選択します。
 
 ![新しいサービス ID を作成します](sign-in-images/readme-serviceid-create.png)
 
-サービス ID に説明と識別子を指定します。  この識別子は、に`ServerId`なります。  必ず**Apple でのサインイン**を有効にしてください。
+サービス ID に説明と識別子を指定します。  この識別子は、になり `ServerId` ます。  必ず**Apple でのサインイン**を有効にしてください。
 
-続行する前に、有効にした [ _Apple でサインイン_] オプションの横にある **[構成]** をクリックします。
+続行する前に、有効にした [ _Apple でサインイン_] オプションの横にある [**構成**] をクリックします。
 
 [構成] パネルで、正しい**プライマリアプリ ID**が選択されていることを確認します。
 
 次に、以前に構成した**Web ドメイン**を選択します。
 
-最後に、1つまたは複数の**リターン url**を追加します。  `redirect_uri`後で使用する場合は、使用しているとおりにここに登録する必要があります。  入力時には、 `http://` URL `https://`にまたはが含まれていることを確認してください。
+最後に、1つまたは複数の**リターン url**を追加します。  後で使用する場合は、使用しているとおりに `redirect_uri` ここに登録する必要があります。  `http://`入力時には、URL にまたはが含まれていることを確認してください `https://` 。
 
 > [!NOTE]
-> テスト目的では、または`127.0.0.1` `localhost`を使用することはできませんが、 `local.test`などの他のドメインを使用することもできます。  これを選択した場合は、コンピューターのファイルを編集`hosts`して、この架空のドメインをローカル IP アドレスに解決することができます。
+> テスト目的では、またはを使用することはできませんが、など `127.0.0.1` `localhost` の他のドメインを使用することもでき `local.test` ます。  これを選択した場合は、コンピューターのファイルを編集して、 `hosts` この架空のドメインをローカル IP アドレスに解決することができます。
 
 ![Apple サインインを構成する](sign-in-images/readme-serviceid-configure.png)
 
@@ -87,19 +76,19 @@ ms.locfileid: "71206528"
 
 ![新しいキーを作成する](sign-in-images/readme-key-create.png)
 
-[ _Apple でサインイン_] の横にある **[構成]** をクリックします。
+[ _Apple でサインイン_] の横にある [**構成**] をクリックします。
 
-正しい**プライマリアプリ ID**が選択されていることを確認し、 **[保存]** をクリックします。
+正しい**プライマリアプリ ID**が選択されていることを確認し、[**保存**] をクリックします。
 
-**[続行]** をクリックし、 **[登録]** をクリックして新しいキーを作成します。
+[**続行**] をクリックし、[**登録**] をクリックして新しいキーを作成します。
 
-次に、生成したキーをダウンロードする機会が1つだけあります。  **[ダウンロード]** をクリックします。
+次に、生成したキーをダウンロードする機会が1つだけあります。  **[Download]** をクリックします。
 
 ![キーのダウンロード](sign-in-images/readme-key-download.png)
 
-また、この手順で**キー ID**をメモしておきます。 これは、 `KeyId`後でに使用されます。
+また、この手順で**キー ID**をメモしておきます。 これは、後でに使用され `KeyId` ます。
 
-`.p8`キーファイルがダウンロードされます。  このファイルをメモ帳で開くことも、VSCode を使用してテキストの内容を表示することもできます。  次のようになります。
+キーファイルがダウンロードされ `.p8` ます。  このファイルをメモ帳で開くことも、VSCode を使用してテキストの内容を表示することもできます。  次のようになります。
 
 ```
 -----BEGIN PRIVATE KEY-----
@@ -110,11 +99,11 @@ DHF5Svq0
 -----END PRIVATE KEY-----
 ```
 
-このキー `P8FileContents`に名前を設定し、安全な場所に保管します。 このサービスをモバイルアプリケーションに統合するときに使用します。
+このキー `P8FileContents` に名前を設定し、安全な場所に保管します。 このサービスをモバイルアプリケーションに統合するときに使用します。
 
 ## <a name="summary"></a>まとめ
 
-この記事では、Xamarin アプリケーションで使用するために Apple でサインインを設定するために必要な手順について説明しました。
+この記事では、アプリケーションで使用するために Apple でサインインを設定するために必要な手順について説明しました Xamarin.Forms 。
 
 ## <a name="related-links"></a>関連リンク
 

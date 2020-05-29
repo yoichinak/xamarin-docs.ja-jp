@@ -1,22 +1,8 @@
 ---
-title: ''
-description: この章では、を使用したエンタープライズアプリケーションパターンの概要について説明し Xamarin.Forms ます。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b587bd8cacda9024103757a585c11fba2ed09fda
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130833"
+title: "先頭からエンタープライズアプリへの開発" の説明: "この章では、を使用したエンタープライズアプリケーションパターンの概要について説明し Xamarin.Forms ます。
+ms. 製品: xamarin ms. assetid: fbf32a44-1d33-4e16-a904-dc7ee5991e7c: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 08/07/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="preface-to-enterprise-app-development"></a>はじめにエンタープライズアプリ開発
 
 この電子ブックでは、を使用してクロスプラットフォームのエンタープライズアプリを構築するためのガイダンスを提供 Xamarin.Forms します。 Xamarin.Formsは、iOS、Android、ユニバーサル Windows プラットフォーム (UWP) などのプラットフォーム間で共有できるネイティブユーザーインターフェイスレイアウトを開発者が簡単に作成できるようにする、クロスプラットフォーム UI ツールキットです。 これにより、企業間 (B2E)、企業間 (B2B)、および B2C (B2C) アプリ向けの包括的なソリューションが提供され、すべてのターゲットプラットフォームでコードを共有し、総保有コスト (TCO) を削減することができます。
@@ -27,7 +13,7 @@ ms.locfileid: "84130833"
 
 ## <a name="whats-left-out-of-this-guides-scope"></a>このガイドの範囲の残りの部分
 
-このガイドは、に既に慣れている読者を対象としてい Xamarin.Forms ます。 の詳細については、の Xamarin.Forms [ Xamarin.Forms ドキュメント](~/xamarin-forms/index.yml)を参照し、を使用[ Xamarin.Forms ](https://aka.ms/xamebook)して Mobile Apps を作成してください。
+このガイドは、に既に慣れている読者を対象としてい Xamarin.Forms ます。 の詳細については、の Xamarin.Forms [ Xamarin.Forms ドキュメント](~/xamarin-forms/index.yml)を参照し、を使用[ Xamarin.Forms ](https://aka.ms/xamformsebook)して Mobile Apps を作成してください。
 
 このガイドは、コンテナー化されたマイクロサービスの開発と展開に重点を置いた、 [.Net マイクロサービス: コンテナー化された .Net アプリケーションのアーキテクチャ](https://aka.ms/microservicesebook)を補完しています。 参考になるその他のガイドには、 [ASP.NET Core と Microsoft Azure を使用した最新の Web アプリケーションの設計と開発](https://aka.ms/WebAppEbook)、 [microsoft のプラットフォームとツールを使用](https://aka.ms/dockerlifecycleebook)したコンテナー化された Docker アプリケーションのライフサイクル、[モバイルアプリ開発用の microsoft プラットフォームとツール](https://aka.ms/MobAppDev/StndPDF)が含まれます。
 

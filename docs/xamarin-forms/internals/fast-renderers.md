@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms高速レンダラー
-description: この記事では、 Xamarin.Forms 結果として得られるネイティブコントロール階層をフラット化することによって、Android でのコントロールのインフレとレンダリングのコストを削減する高速レンダラーについて説明します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 3f25f4c2da5b2a426673b49045b5d2d05b0c6ac4
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139075"
+title: " Xamarin.Forms Fast レンダラー" の説明: "この記事では、 Xamarin.Forms 結果として得られるネイティブコントロール階層をフラット化することにより、Android でのコントロールのインフレとレンダリングのコストを削減する高速レンダラーを紹介します。"
+ms. 製品: xamarin ms. assetid: 095287 f2-d891-4f3c-be02-fb7d195a481a ms. テクノロジ: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 05/28/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-fast-renderers"></a>Xamarin.Forms高速レンダラー
 
 従来、Android での元のコントロールレンダラーのほとんどは、次の2つのビューで構成されています。
@@ -31,9 +17,10 @@ ms.locfileid: "84139075"
 Android 上のでは、次のコントロールに対して高速レンダラーを使用でき Xamarin.Forms ます。
 
 - [`Button`](xref:Xamarin.Forms.Button)
+- [`Frame`](xref:Xamarin.Forms.Frame)
 - [`Image`](xref:Xamarin.Forms.Image)
 - [`Label`](xref:Xamarin.Forms.Label)
-- [`Frame`](xref:Xamarin.Forms.Frame)
+- [`MediaElement`](xref:Xamarin.Forms.MediaElement)
 
 機能的には、これらの高速レンダラーは従来のレンダラーとは異なります。 Xamarin.Forms4.0 以降では、を対象 `FormsAppCompatActivity` とするすべてのアプリケーションは、これらの高速レンダラーを既定で使用します。 やなど、すべての新しいコントロールのレンダラーでは、 [`ImageButton`](xref:Xamarin.Forms.ImageButton) [`CollectionView`](xref:Xamarin.Forms.CollectionView) 高速レンダラーアプローチを使用します。
 

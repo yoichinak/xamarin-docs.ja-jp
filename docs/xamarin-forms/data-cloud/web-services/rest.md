@@ -1,22 +1,8 @@
 ---
-title: ''
-description: Web サービスをアプリケーションに統合することは、一般的なシナリオです。 この記事では、アプリケーションから RESTful web サービスを使用する方法について説明 Xamarin.Forms します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: ecfcede22e96a4a91f5367dae49b0d837ca2416f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139166"
+title: "RESTful Web サービスの使用" の説明: 「web サービスをアプリケーションに統合することは一般的なシナリオです。 この記事では、アプリケーションから RESTful web サービスを使用する方法について説明 Xamarin.Forms します。 "
+ms. 製品: xamarin ms. assetid: B540910C-9C51-416A-AAB9-057BF76489C3: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 05/28/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="consume-a-restful-web-service"></a>RESTful Web サービスを使用する
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
@@ -92,12 +78,12 @@ REST サービスは基本認証を使用します。 詳細について[は、�
 ```csharp
 public class RestService : IRestService
 {
-  HttpClient _client;
+  HttpClient client;
   ...
 
   public RestService ()
   {
-    _client = new HttpClient ();
+    client = new HttpClient ();
   }
   ...
 }
@@ -111,12 +97,12 @@ public class RestService : IRestService
 public async Task<List<TodoItem>> RefreshDataAsync ()
 {
   ...
-  var uri = new Uri (string.Format (Constants.TodoItemsUrl, string.Empty));
+  Uri uri = new Uri (string.Format (Constants.TodoItemsUrl, string.Empty));
   ...
-  var response = await _client.GetAsync (uri);
+  HttpResponseMessage response = await client.GetAsync (uri);
   if (response.IsSuccessStatusCode)
   {
-      var content = await response.Content.ReadAsStringAsync ();
+      string content = await response.Content.ReadAsStringAsync ();
       Items = JsonConvert.DeserializeObject <List<TodoItem>> (content);
   }
   ...
@@ -127,6 +113,9 @@ REST サービスは、http `HttpResponseMessage.IsSuccessStatusCode` 要求が�
 
 HTTP 操作が成功した場合は、応答の内容が読み取られて表示されます。 `HttpResponseMessage.Content`プロパティは http 応答の内容を表し、 `HttpContent.ReadAsStringAsync` メソッドは http コンテンツを非同期的に文字列に書き込みます。 このコンテンツは、JSON からインスタンスのに変換され `List` `TodoItem` ます。
 
+> [!WARNING]
+> メソッドを使用して `ReadAsStringAsync` 大きな応答を取得すると、パフォーマンスに悪影響を及ぼす可能性があります。 このような場合は、応答を直接逆シリアル化して、完全にバッファーに格納する必要がないようにする必要があります。
+
 ### <a name="creating-data"></a>データの作成
 
 `HttpClient.PostAsync`メソッドは、URI で指定された web サービスに POST 要求を送信し、次のコード例に示すように web サービスから応答を受信するために使用されます。
@@ -134,23 +123,22 @@ HTTP 操作が成功した場合は、応答の内容が読み取られて表示
 ```csharp
 public async Task SaveTodoItemAsync (TodoItem item, bool isNewItem = false)
 {
-  var uri = new Uri (string.Format (Constants.TodoItemsUrl, string.Empty));
+  Uri uri = new Uri (string.Format (Constants.TodoItemsUrl, string.Empty));
 
   ...
-  var json = JsonConvert.SerializeObject (item);
-  var content = new StringContent (json, Encoding.UTF8, "application/json");
+  string json = JsonConvert.SerializeObject (item);
+  StringContent content = new StringContent (json, Encoding.UTF8, "application/json");
 
   HttpResponseMessage response = null;
   if (isNewItem)
   {
-    response = await _client.PostAsync (uri, content);
+    response = await client.PostAsync (uri, content);
   }
   ...
 
   if (response.IsSuccessStatusCode)
   {
     Debug.WriteLine (@"\tTodoItem successfully saved.");
-
   }
   ...
 }
@@ -172,7 +160,7 @@ REST サービスは、http `HttpResponseMessage.IsSuccessStatusCode` 要求が�
 public async Task SaveTodoItemAsync (TodoItem item, bool isNewItem = false)
 {
   ...
-  response = await _client.PutAsync (uri, content);
+  response = await client.PutAsync (uri, content);
   ...
 }
 ```
@@ -192,9 +180,9 @@ REST サービスは、http `HttpResponseMessage.IsSuccessStatusCode` 要求が�
 ```csharp
 public async Task DeleteTodoItemAsync (string id)
 {
-  var uri = new Uri (string.Format (Constants.TodoItemsUrl, id));
+  Uri uri = new Uri (string.Format (Constants.TodoItemsUrl, id));
   ...
-  var response = await _client.DeleteAsync (uri);
+  HttpResponseMessage response = await client.DeleteAsync (uri);
   if (response.IsSuccessStatusCode)
   {
     Debug.WriteLine (@"\tTodoItem successfully deleted.");

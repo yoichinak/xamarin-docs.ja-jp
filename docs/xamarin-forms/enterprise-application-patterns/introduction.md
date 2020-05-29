@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 12582c567a439cf4e0236724bd373c3508f18748
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139360"
+title: "エンタープライズアプリ開発の概要" 説明: "この章では、エンタープライズアプリ開発の概要について説明し、eShopOnContainers mobile アプリを紹介します。"
+ms cbce0659: xamarin ms. assetid: fa03-447a-86ec-140438143230 ms. テクノロジ: xamarin-forms author: davidbritch ミリ秒: dabritch ms. date: 08/07/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="introduction-to-enterprise-app-development"></a>エンタープライズアプリ開発の概要
 
 プラットフォームに関係なく、エンタープライズアプリの開発者はいくつかの課題に直面します。
@@ -105,16 +91,16 @@ EShopOnContainers mobile アプリでは、次の Xamarin.Forms 機能を実行�
 - バインド
 - コンバーター
 - スタイル
-- アニメーション
+- Animations
 - コマンド
-- 動作
+- ビヘイビアー
 - トリガー
-- 効果
+- エフェクト
 - カスタム レンダラー
 - MessagingCenter
 - カスタム コントロール
 
-この機能の詳細については、の[ Xamarin.Forms ドキュメント](~/xamarin-forms/index.yml)を参照し、[を使用 Xamarin.Forms ](https://aka.ms/xamebook)して Mobile Apps を作成してください。
+この機能の詳細については、の[ Xamarin.Forms ドキュメント](~/xamarin-forms/index.yml)を参照し、[を使用 Xamarin.Forms ](https://aka.ms/xamformsebook)して Mobile Apps を作成してください。
 
 また、eShopOnContainers モバイルアプリの一部のクラスに対して単体テストが提供されます。
 
@@ -141,27 +127,27 @@ EShopOnContainers PCL プロジェクトには、次のフォルダーが含ま�
 
 |フォルダー|説明|
 |--- |--- |
-|アニメーション|XAML でアニメーションを使用できるようにするクラスが含まれています。|
-|動作|ビュークラスに公開される動作を格納します。|
+|Animations|XAML でアニメーションを使用できるようにするクラスが含まれています。|
+|ビヘイビアー|ビュークラスに公開される動作を格納します。|
 |コントロール|アプリによって使用されるカスタムコントロールが含まれます。|
 |コンバーター|カスタムロジックをバインディングに適用する値コンバーターを格納します。|
-|効果|特定の `EntryLineColorEffect` コントロールの境界線の色を変更するために使用されるクラスが含まれてい `Entry` ます。|
+|エフェクト|特定の `EntryLineColorEffect` コントロールの境界線の色を変更するために使用されるクラスが含まれてい `Entry` ます。|
 |例外|カスタムを格納し `ServiceAuthenticationException` ます。|
 |拡張機能|クラスおよびクラスの拡張メソッドが含まれてい `VisualElement` `IEnumerable` ます。|
 |ヘルパー|アプリのヘルパークラスが含まれています。|
 |モデル|アプリのモデルクラスが含まれています。|
-|プロパティ|`AssemblyInfo.cs`.Net アセンブリメタデータファイルを含みます。|
+|Properties|`AssemblyInfo.cs`.Net アセンブリメタデータファイルを含みます。|
 |サービス|アプリに提供されるサービスを実装するインターフェイスとクラスが含まれています。|
 |トリガー|`BeginAnimation`XAML でアニメーションを呼び出すために使用されるトリガーが含まれています。|
 |Validations (検証)|データ入力の検証に関連するクラスが含まれています。|
 |ViewModels|ページに公開されているアプリケーションロジックを格納します。|
-|ビュー|アプリのページが含まれています。|
+|Views|アプリのページが含まれています。|
 
 ##### <a name="platform-projects"></a>プラットフォームプロジェクト
 
 プラットフォームプロジェクトには、効果の実装、カスタムレンダラーの実装、およびその他のプラットフォーム固有のリソースが含まれています。
 
-## <a name="summary"></a>[概要]
+## <a name="summary"></a>まとめ
 
 Xamarin のクロスプラットフォームモバイルアプリ開発ツールとプラットフォームは、B2E、B2B、B2C モバイルクライアントアプリ向けの包括的なソリューションを提供し、すべてのターゲットプラットフォーム (iOS、Android、および Windows) 間でコードを共有し、総保有コストを削減する機能を提供します。 アプリは、ネイティブプラットフォームのルックアンドフィールを維持しながら、ユーザーインターフェイスとアプリロジックコードを共有できます。
 

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Formsレイアウト
-description: Xamarin.Formsレイアウトは、ビジュアル構造にユーザーインターフェイスコントロールを作成するために使用されます。 この記事では、に含まれているレイアウトの一覧を示し Xamarin.Forms ます。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: c39bf29feceaf598ac8fd38e6af3d227b6deddc0
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137307"
+title: " Xamarin.Forms レイアウト" の説明: " Xamarin.Forms レイアウトは、ビジュアル構造にユーザーインターフェイスコントロールを作成するために使用されます。 この記事では、に含まれるレイアウトの一覧を示し Xamarin.Forms ます。
+ms. 製品: xamarin ms. assetid: F4180997-BA21-453A-9958-D1E2940DF050 davidbritch: xamarin-forms author:: dabritch ms. date: 05/21/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-layouts"></a>Xamarin.Formsレイアウト
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
@@ -44,7 +30,7 @@ _Xamarin. フォームレイアウトは、ユーザーインターフェイス�
 
 <a named="frame" />
 
-### <a name="frame"></a>Frame
+### <a name="frame"></a>フレーム
 
 |     |     |
 | --- | --- |
@@ -57,7 +43,7 @@ _Xamarin. フォームレイアウトは、ユーザーインターフェイス�
 
 |     |     |
 | --- | --- |
-| [`ScrollView`](xref:Xamarin.Forms.ScrollView)はその内容をスクロールできます。 プロパティを [`Content`](xref:Xamarin.Forms.ScrollView.Content) ビューまたはレイアウトが大きすぎて画面に収まりません。 (のコンテンツは `ScrollView` 非常によくあり [`StackLayout`](#stackLayout) ます)。[`Orientation`](xref:Xamarin.Forms.ScrollView.Orientation)垂直方向、水平方向、または両方のスクロールを使用するかどうかを示すプロパティを設定します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.ScrollView)  / [ガイド](~/xamarin-forms/user-interface/layouts/scroll-view.md)  / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout) | [![ScrollView の例](layouts-images/ScrollView.png "ScrollView の例")](layouts-images/ScrollView-Large.png#lightbox "ScrollView の例")<br />[このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ScrollViewDemoPage.cs)  /  の C# コード[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ScrollViewDemoPage.xaml) |
+| [`ScrollView`](xref:Xamarin.Forms.ScrollView)はその内容をスクロールできます。 プロパティを [`Content`](xref:Xamarin.Forms.ScrollView.Content) ビューまたはレイアウトが大きすぎて画面に収まりません。 (のコンテンツは `ScrollView` 非常によくあり [`StackLayout`](#stackLayout) ます)。[`Orientation`](xref:Xamarin.Forms.ScrollView.Orientation)垂直方向、水平方向、または両方のスクロールを使用するかどうかを示すプロパティを設定します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.ScrollView)  / [ガイド](~/xamarin-forms/user-interface/layouts/scrollview.md)  / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout) | [![ScrollView の例](layouts-images/ScrollView.png "ScrollView の例")](layouts-images/ScrollView-Large.png#lightbox "ScrollView の例")<br />[このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ScrollViewDemoPage.cs)  /  の C# コード[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ScrollViewDemoPage.xaml) |
 |     |     |
 
 ### <a name="templatedview"></a>TemplatedView

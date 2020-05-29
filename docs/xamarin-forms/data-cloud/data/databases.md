@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Formsローカルデータベース
-description: Xamarin.Formsは、SQLite データベースエンジンを使用したデータベース駆動型アプリケーションをサポートします。これにより、共有コードでオブジェクトを読み込んで保存できるようになります。 この記事で Xamarin.Forms は、SQLite.Net を使用して、アプリケーションがローカルの SQLite データベースに対してデータの読み取りと書き込みを行う方法について説明します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 04d813baae5796da68ea27389df33738af5cde3e
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84131002"
+title: " Xamarin.Forms Local Databases" description: " Xamarin.Forms は、SQLite データベースエンジンを使用したデータベース駆動型アプリケーションをサポートします。これにより、共有コードでオブジェクトを読み込んで保存できるようになります。 この記事で Xamarin.Forms は、SQLite.Net を使用して、アプリケーションがローカルの SQLite データベースに対してデータの読み取りと書き込みを行う方法について説明します。
+ms. 製品: xamarin ms. assetid: F687B24B-7DF0-4F8E-A21A-A9BB507480EB: xamarin-forms author: profexorgeek ms. author: jusjohns ms. date: 12/05/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-local-databases"></a>Xamarin.Formsローカルデータベース
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
@@ -39,7 +25,7 @@ NuGet パッケージマネージャーを使用して、 **sqlite-pcl**を検�
 
 類似した名前を持つ NuGet パッケージが多数あります。 正しいパッケージには、次の属性があります。
 
-- **作成者:** Frank A. Krueger
+- **作成者:** Frank A. Kpraeclarum ()
 - **ID:** sqlite-net-pcl
 - **NuGet リンク:** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
@@ -236,7 +222,7 @@ public static TodoItemDatabase Database
 }
 ```
 
-このプロパティを使用 Xamarin.Forms すると、コンポーネントは、 `Database` ユーザーの操作に応じてインスタンスのデータの取得と操作のメソッドを呼び出すことができます。 次に例を示します。
+このプロパティを使用 Xamarin.Forms すると、コンポーネントは、 `Database` ユーザーの操作に応じてインスタンスのデータの取得と操作のメソッドを呼び出すことができます。 例:
 
 ```csharp
 var saveButton = new Button { Text = "Save" };
