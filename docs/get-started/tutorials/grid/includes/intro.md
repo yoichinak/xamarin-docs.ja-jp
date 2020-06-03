@@ -10,13 +10,13 @@ ms.locfileid: "71059715"
 
 - [最初の Xamarin.Forms アプリのビルド](~/get-started/first-app/index.md)のクイック スタート。
 
-このチュートリアルでは、以下の内容を学習します。
+このチュートリアルでは、次の作業を行う方法について説明します。
 
 > [!div class="checklist"]
 >
 > - XAML で Xamarin.Forms [`Grid`](xref:Xamarin.Forms.Grid) を作成する。
 > - `Grid` の列と行を指定する。
-> - `Grid` で複数の列または複数の行にまたがるコンテンツ。
+> - `Grid` でコンテンツを複数の列または複数の行にまたがって配置する。
 
 [`Grid`](xref:Xamarin.Forms.Grid) 内にコントロールをレイアウトする方法を示す簡単なアプリケーションを作成するには、Visual Studio 2019 または Visual Studio for Mac を使用します。 次のスクリーンショットは、最終的なアプリケーションです。
 
