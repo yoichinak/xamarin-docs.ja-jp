@@ -1,20 +1,23 @@
 ---
 title: 単一ページの Xamarin.Forms アプリケーションを作成する
-description: この記事では、単一ページのクロスプラットフォーム Xamarin.Forms アプリケーションを作成する方法について説明します。これにより、メモを入力して、デバイス ストレージに保持できるようになります。
-zone_pivot_groups: platform-dev16
-ms.topic: quickstart
-ms.prod: xamarin
-ms.assetid: E8CF05B1-54B9-428B-8518-D068837BD61E
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/01/2019
-ms.openlocfilehash: c1d7aa1535fe979df222aaedc6ba2cf3bae0d51c
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: この記事では、単一ページのクロスプラットフォーム Xamarin.Forms アプリケーションを作成する方法について説明します。このアプリにより、メモを入力し、デバイス ストレージに保持できるようになります。
+zone_pivot_groups: ''
+ms.topic: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b9a3017fc8188d3669b64d95c968b2d0a5325358
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303631"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136072"
 ---
 # <a name="create-a-single-page-xamarinforms-application"></a>単一ページの Xamarin.Forms アプリケーションを作成する
 
@@ -22,11 +25,11 @@ ms.locfileid: "79303631"
 
 このクイックスタートでは、次の方法について学習します。
 
-- クロスプラットフォーム Xamarin.Forms アプリケーションのスタイルを作成する
+- クロスプラットフォーム Xamarin.Forms インターフェイスを作成する。
 - Extensible Application Markup Language (XAML) を使用して、ページのユーザー インターフェイスを定義する。
 - コードから XAML ユーザー インターフェイス要素を操作する。
 
-このクイックスタートでは、クロスプラットフォーム Xamarin.Forms アプリケーションを作成する方法について説明します。これにより、メモを入力して、デバイス ストレージに保持できるようになります。 最終的なアプリケーションは、次のとおりです。
+このクイックスタートでは、クロスプラットフォーム Xamarin.Forms アプリケーションを作成する方法について説明します。このアプリにより、メモを入力し、デバイス ストレージに保持できるようになります。 最終的なアプリケーションは、次のとおりです。
 
 [![](single-page-images/screenshots-sml.png "Notes Application")](single-page-images/screenshots.png#lightbox "Notes Application")
 
@@ -46,7 +49,7 @@ ms.locfileid: "79303631"
 
     ![](single-page-images/vs/new-solution-2019.png "New Project")
 
-2. **[新しいプロジェクトを作成する]** ウィンドウの **[プロジェクト タイプ]** ドロップ ダウンで **[モバイル]** を選択し、 **[モバイル アプリ (Xamarin)]** テンプレートを選択して、 **[次へ]** ボタンをクリックします。
+2. **[新しいプロジェクトを作成する]** ウィンドウの **[プロジェクト タイプ]** ドロップ ダウンで **[モバイル]** を選択し、 **[モバイル アプリ (Xamarin.Forms]** テンプレートを選択して、 **[次へ]** ボタンをクリックします。
 
     ![](single-page-images/vs/new-project-2019.png "Cross-Platform Project Templates")
 
@@ -61,7 +64,7 @@ ms.locfileid: "79303631"
 
     ![](single-page-images/vs/new-app-2019.png "New Cross-Platform App")
 
-    作成される .NET Standard ライブラリの詳細については、[Xamarin.Forms クイック スタート Deep Dive](deepdive.md) の [Xamarin.Forms アプリケーションの構造](deepdive.md#anatomy-of-a-xamarinforms-application)に関するページを参照してください。
+    作成される .NET Standard ライブラリの詳細については、[Xamarin.Forms クイック スタート Deep Dive](deepdive.md) の「[Xamarin.Forms アプリケーションの構造](deepdive.md#anatomy-of-a-xamarinforms-application)」を参照してください。
 
 5. **ソリューション エクスプローラー**の **Notes** プロジェクトで、 **[MainPage.xaml]** をダブルクリックして開きます。
 
@@ -96,7 +99,7 @@ ms.locfileid: "79303631"
     </ContentPage>
     ```
 
-    このコードにより、ページにユーザー インターフェイスが宣言的に定義されます。これは、テキストを表示する [`Label`](xref:Xamarin.Forms.Label)、テキスト入力用の [`Editor`](xref:Xamarin.Forms.Editor)、およびファイルの保存または削除をアプリケーションに指示する 2 つの [`Button`](xref:Xamarin.Forms.Button) インスタンスで構成されます。 この 2 つの `Button` インスタンスは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) に垂直に配置されている `Label`、`Editor`、`Grid` と共に、[`Grid`](xref:Xamarin.Forms.Grid) に水平に配置されます。 ユーザー インターフェイスの作成の詳細については、「[Xamarin.Forms クイック スタートの詳細](deepdive.md)」の「[ユーザー インターフェイス](deepdive.md#user-interface)」を参照してください。
+    このコードにより、ページにユーザー インターフェイスが宣言的に定義されます。これは、テキストを表示する [`Label`](xref:Xamarin.Forms.Label)、テキスト入力用の [`Editor`](xref:Xamarin.Forms.Editor)、およびファイルの保存または削除をアプリケーションに指示する 2 つの [`Button`](xref:Xamarin.Forms.Button) インスタンスで構成されます。 この 2 つの `Button` インスタンスは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) に垂直に配置されている `Label`、`Editor`、`Grid` と共に、[`Grid`](xref:Xamarin.Forms.Grid) に水平に配置されます。 ユーザー インターフェイスの作成の詳細については、「[Xamarin.Forms クイック スタート Deep Dive](deepdive.md)」の「[ユーザー インターフェイス](deepdive.md#user-interface)」を参照してください。
 
     **CTRL + S** を押し、**MainPage.xaml** への変更内容を保存してから、ファイルを閉じます。
 
@@ -144,7 +147,7 @@ ms.locfileid: "79303631"
     }
     ```
 
-    このコードでは、`notes.txt` という名前のファイルを参照する `_fileName` フィールドを定義します。このファイルで、アプリケーション用のローカル アプリケーション データ フォルダーにメモ データが保存されます。 ページ コンストラクターが実行されると、ファイルが存在する場合は読み取られ、[`Editor`](xref:Xamarin.Forms.Editor) に表示されます。 **[保存]** [`Button`](xref:Xamarin.Forms.Button) が押されると、`OnSaveButtonClicked` イベント ハンドラーが実行されます。これにより、`Editor` のコンテンツがファイルに保存されます。 **[削除]** `Button` が押されると、`OnDeleteButtonClicked` イベント ハンドラーが実行されます。これにより、ファイルが存在する場合は削除され、`Editor` から任意のテキストが削除されます。 ユーザーの操作の詳細については、「[Xamarin.Forms クイック スタートの詳細](deepdive.md)」の「[ユーザー操作に対する対応](deepdive.md#responding-to-user-interaction)」を参照してください。
+    このコードでは、`notes.txt` という名前のファイルを参照する `_fileName` フィールドを定義します。このファイルで、アプリケーション用のローカル アプリケーション データ フォルダーにメモ データが保存されます。 ページ コンストラクターが実行されると、ファイルが存在する場合は読み取られ、[`Editor`](xref:Xamarin.Forms.Editor) に表示されます。 **[保存]** [`Button`](xref:Xamarin.Forms.Button) が押されると、`OnSaveButtonClicked` イベント ハンドラーが実行されます。これにより、`Editor` のコンテンツがファイルに保存されます。 **[削除]** `Button` が押されると、`OnDeleteButtonClicked` イベント ハンドラーが実行されます。これにより、ファイルが存在する場合は削除され、`Editor` から任意のテキストが削除されます。 ユーザーの操作の詳細については、「[Xamarin.Forms クイック スタート Deep Dive](deepdive.md)」の「[ユーザー操作に対する応答](deepdive.md#responding-to-user-interaction)」を参照してください。
 
     **CTRL + S** を押し、**MainPage.xaml.cs** への変更内容を保存してから、ファイルを閉じます。
 
@@ -164,10 +167,10 @@ ms.locfileid: "79303631"
 
     メモを入力して **[保存]** ボタンを押します。
 
-    各プラットフォームでアプリケーションを起動する方法の詳細については、「[Xamarin.Forms クイック スタートの詳細](deepdive.md)」の「[各プラットフォームでアプリケーションを起動する](deepdive.md#launching-the-application-on-each-platform)」を参照してください。
+    各プラットフォームでアプリケーションを起動する方法の詳細については、「[Xamarin.Forms クイック スタート Deep Dive](deepdive.md)」の「[各プラットフォームでアプリケーションを起動する](deepdive.md#launching-the-application-on-each-platform)」を参照してください。
 
     > [!NOTE]
-    > 次の手順は、Xamarin.Forms 開発のシステム要件を満たしている、[ペアリングされた Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) がある場合にのみ実行する必要があります。
+    > 次の手順は、[ 開発のシステム要件を満たしている、](~/ios/get-started/installation/windows/connecting-to-mac/index.md)ペアリングされた MacXamarin.Forms がある場合にのみ実行する必要があります。
 
 3. Visual Studio ツール バーで、 **[Notes.iOS]** プロジェクトを右クリックして、 **[スタートアップ プロジェクトに設定]** を選択します。
 
@@ -181,7 +184,7 @@ ms.locfileid: "79303631"
 
     メモを入力して **[保存]** ボタンを押します。
 
-    各プラットフォームでアプリケーションを起動する方法の詳細については、「[Xamarin.Forms クイック スタートの詳細](deepdive.md)」の「[各プラットフォームでアプリケーションを起動する](deepdive.md#launching-the-application-on-each-platform)」を参照してください。
+    各プラットフォームでアプリケーションを起動する方法の詳細については、「[Xamarin.Forms クイック スタート Deep Dive](deepdive.md)」の「[各プラットフォームでアプリケーションを起動する](deepdive.md#launching-the-application-on-each-platform)」を参照してください。
 
 ::: zone-end
 ::: zone pivot="win-vs2017"
@@ -200,7 +203,7 @@ ms.locfileid: "79303631"
 
     ![](single-page-images/vs/new-solution.png "New Project")
 
-2. **[新しいプロジェクト]** ダイアログで、 **[クロスプラットフォーム]** をクリックして、 **[モバイル アプリ (Xamarin.Forms)]** テンプレートを選択し、[名前] を「**Notes**」に設定し、プロジェクトの適切な場所を選んで **[OK]** ボタンをクリックします。
+2. **[新しいプロジェクト]** ダイアログで、 **[クロスプラットフォーム]** をクリックして、 **[モバイル アプリ (Xamarin.Forms)]** テンプレートを選択し、[名前] を "**Notes**" に設定し、プロジェクトの適切な場所を選んで **[OK]** ボタンをクリックします。
 
     ![](single-page-images/vs/new-project.png "Cross-Platform Project Templates")
 
@@ -211,7 +214,7 @@ ms.locfileid: "79303631"
 
     ![](single-page-images/vs/new-app.png "New Cross-Platform App")
 
-    作成される .NET Standard ライブラリの詳細については、[Xamarin.Forms クイック スタート Deep Dive](deepdive.md) の [Xamarin.Forms アプリケーションの構造](deepdive.md#anatomy-of-a-xamarinforms-application)に関するページを参照してください。
+    作成される .NET Standard ライブラリの詳細については、[Xamarin.Forms クイック スタート Deep Dive](deepdive.md) の「[Xamarin.Forms アプリケーションの構造](deepdive.md#anatomy-of-a-xamarinforms-application)」を参照してください。
 
 4. **ソリューション エクスプローラー**の **Notes** プロジェクトで、 **[MainPage.xaml]** をダブルクリックして開きます。
 
@@ -246,7 +249,7 @@ ms.locfileid: "79303631"
     </ContentPage>
     ```
 
-    このコードにより、ページにユーザー インターフェイスが宣言的に定義されます。これは、テキストを表示する [`Label`](xref:Xamarin.Forms.Label)、テキスト入力用の [`Editor`](xref:Xamarin.Forms.Editor)、およびファイルの保存または削除をアプリケーションに指示する 2 つの [`Button`](xref:Xamarin.Forms.Button) インスタンスで構成されます。 この 2 つの `Button` インスタンスは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) に垂直に配置されている `Label`、`Editor`、`Grid` と共に、[`Grid`](xref:Xamarin.Forms.Grid) に水平に配置されます。 ユーザー インターフェイスの作成の詳細については、「[Xamarin.Forms クイック スタートの詳細](deepdive.md)」の「[ユーザー インターフェイス](deepdive.md#user-interface)」を参照してください。
+    このコードにより、ページにユーザー インターフェイスが宣言的に定義されます。これは、テキストを表示する [`Label`](xref:Xamarin.Forms.Label)、テキスト入力用の [`Editor`](xref:Xamarin.Forms.Editor)、およびファイルの保存または削除をアプリケーションに指示する 2 つの [`Button`](xref:Xamarin.Forms.Button) インスタンスで構成されます。 この 2 つの `Button` インスタンスは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) に垂直に配置されている `Label`、`Editor`、`Grid` と共に、[`Grid`](xref:Xamarin.Forms.Grid) に水平に配置されます。 ユーザー インターフェイスの作成の詳細については、「[Xamarin.Forms クイック スタート Deep Dive](deepdive.md)」の「[ユーザー インターフェイス](deepdive.md#user-interface)」を参照してください。
 
     **CTRL + S** を押し、**MainPage.xaml** への変更内容を保存してから、ファイルを閉じます。
 
@@ -294,7 +297,7 @@ ms.locfileid: "79303631"
     }
     ```
 
-    このコードでは、`notes.txt` という名前のファイルを参照する `_fileName` フィールドを定義します。このファイルで、アプリケーション用のローカル アプリケーション データ フォルダーにメモ データが保存されます。 ページ コンストラクターが実行されると、ファイルが存在する場合は読み取られ、[`Editor`](xref:Xamarin.Forms.Editor) に表示されます。 **[保存]** [`Button`](xref:Xamarin.Forms.Button) が押されると、`OnSaveButtonClicked` イベント ハンドラーが実行されます。これにより、`Editor` のコンテンツがファイルに保存されます。 **[削除]** `Button` が押されると、`OnDeleteButtonClicked` イベント ハンドラーが実行されます。これにより、ファイルが存在する場合は削除され、`Editor` から任意のテキストが削除されます。 ユーザーの操作の詳細については、「[Xamarin.Forms クイック スタートの詳細](deepdive.md)」の「[ユーザー操作に対する対応](deepdive.md#responding-to-user-interaction)」を参照してください。
+    このコードでは、`notes.txt` という名前のファイルを参照する `_fileName` フィールドを定義します。このファイルで、アプリケーション用のローカル アプリケーション データ フォルダーにメモ データが保存されます。 ページ コンストラクターが実行されると、ファイルが存在する場合は読み取られ、[`Editor`](xref:Xamarin.Forms.Editor) に表示されます。 **[保存]** [`Button`](xref:Xamarin.Forms.Button) が押されると、`OnSaveButtonClicked` イベント ハンドラーが実行されます。これにより、`Editor` のコンテンツがファイルに保存されます。 **[削除]** `Button` が押されると、`OnDeleteButtonClicked` イベント ハンドラーが実行されます。これにより、ファイルが存在する場合は削除され、`Editor` から任意のテキストが削除されます。 ユーザーの操作の詳細については、「[Xamarin.Forms クイック スタート Deep Dive](deepdive.md)」の「[ユーザー操作に対する応答](deepdive.md#responding-to-user-interaction)」を参照してください。
 
     **CTRL + S** を押し、**MainPage.xaml.cs** への変更内容を保存してから、ファイルを閉じます。
 
@@ -314,10 +317,10 @@ ms.locfileid: "79303631"
 
     メモを入力して **[保存]** ボタンを押します。
 
-    各プラットフォームでアプリケーションを起動する方法の詳細については、「[Xamarin.Forms クイック スタートの詳細](deepdive.md)」の「[各プラットフォームでアプリケーションを起動する](deepdive.md#launching-the-application-on-each-platform)」を参照してください。
+    各プラットフォームでアプリケーションを起動する方法の詳細については、「[Xamarin.Forms クイック スタート Deep Dive](deepdive.md)」の「[各プラットフォームでアプリケーションを起動する](deepdive.md#launching-the-application-on-each-platform)」を参照してください。
 
     > [!NOTE]
-    > 次の手順は、Xamarin.Forms 開発のシステム要件を満たしている、[ペアリングされた Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) がある場合にのみ実行する必要があります。
+    > 次の手順は、[ 開発のシステム要件を満たしている、](~/ios/get-started/installation/windows/connecting-to-mac/index.md)ペアリングされた MacXamarin.Forms がある場合にのみ実行する必要があります。
 
 3. Visual Studio ツール バーで、 **[Notes.iOS]** プロジェクトを右クリックして、 **[スタートアップ プロジェクトに設定]** を選択します。
 
@@ -331,7 +334,7 @@ ms.locfileid: "79303631"
 
     メモを入力して **[保存]** ボタンを押します。
 
-    各プラットフォームでアプリケーションを起動する方法の詳細については、「[Xamarin.Forms クイック スタートの詳細](deepdive.md)」の「[各プラットフォームでアプリケーションを起動する](deepdive.md#launching-the-application-on-each-platform)」を参照してください。
+    各プラットフォームでアプリケーションを起動する方法の詳細については、「[Xamarin.Forms クイック スタート Deep Dive](deepdive.md)」の「[各プラットフォームでアプリケーションを起動する](deepdive.md#launching-the-application-on-each-platform)」を参照してください。
 
 ::: zone-end
 ::: zone pivot="macos"
@@ -365,7 +368,7 @@ ms.locfileid: "79303631"
     > [!IMPORTANT]
     > このクイックスタートの C# スニペットと XAML スニペットでは、ソリューションとプロジェクトの両方の名前が **Notes** である必要があります。 別の名前を使用すると、コードをこのクイック スタートからプロジェクトにコピーするときに、ビルド エラーが発生します。
 
-    作成される .NET Standard ライブラリの詳細については、[Xamarin.Forms クイック スタート Deep Dive](deepdive.md) の [Xamarin.Forms アプリケーションの構造](deepdive.md#anatomy-of-a-xamarinforms-application)に関するページを参照してください。
+    作成される .NET Standard ライブラリの詳細については、[Xamarin.Forms クイック スタート Deep Dive](deepdive.md) の「[Xamarin.Forms アプリケーションの構造](deepdive.md#anatomy-of-a-xamarinforms-application)」を参照してください。
 
 5. **Solution Pad** の **Notes** プロジェクトで、 **[MainPage.xaml]** をダブルクリックして開きます。
 
@@ -400,7 +403,7 @@ ms.locfileid: "79303631"
     </ContentPage>
     ```
 
-    このコードにより、ページにユーザー インターフェイスが宣言的に定義されます。これは、テキストを表示する [`Label`](xref:Xamarin.Forms.Label)、テキスト入力用の [`Editor`](xref:Xamarin.Forms.Editor)、およびファイルの保存または削除をアプリケーションに指示する 2 つの [`Button`](xref:Xamarin.Forms.Button) インスタンスで構成されます。 この 2 つの `Button` インスタンスは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) に垂直に配置されている `Label`、`Editor`、`Grid` と共に、[`Grid`](xref:Xamarin.Forms.Grid) に水平に配置されます。 ユーザー インターフェイスの作成の詳細については、「[Xamarin.Forms クイック スタートの詳細](deepdive.md)」の「[ユーザー インターフェイス](deepdive.md#user-interface)」を参照してください。
+    このコードにより、ページにユーザー インターフェイスが宣言的に定義されます。これは、テキストを表示する [`Label`](xref:Xamarin.Forms.Label)、テキスト入力用の [`Editor`](xref:Xamarin.Forms.Editor)、およびファイルの保存または削除をアプリケーションに指示する 2 つの [`Button`](xref:Xamarin.Forms.Button) インスタンスで構成されます。 この 2 つの `Button` インスタンスは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) に垂直に配置されている `Label`、`Editor`、`Grid` と共に、[`Grid`](xref:Xamarin.Forms.Grid) に水平に配置されます。 ユーザー インターフェイスの作成の詳細については、「[Xamarin.Forms クイック スタート Deep Dive](deepdive.md)」の「[ユーザー インターフェイス](deepdive.md#user-interface)」を参照してください。
 
     **[ファイル]、[保存]** の順に選択し (または **&#8984; + S** キーを押し)、**MainPage.xaml** への変更内容を保存してから、ファイルを閉じます。
 
@@ -448,7 +451,7 @@ ms.locfileid: "79303631"
     }
     ```
 
-    このコードでは、`notes.txt` という名前のファイルを参照する `_fileName` フィールドを定義します。このファイルで、アプリケーション用のローカル アプリケーション データ フォルダーにメモ データが保存されます。 ページ コンストラクターが実行されると、ファイルが存在する場合は読み取られ、[`Editor`](xref:Xamarin.Forms.Editor) に表示されます。 **[保存]** [`Button`](xref:Xamarin.Forms.Button) が押されると、`OnSaveButtonClicked` イベント ハンドラーが実行されます。これにより、`Editor` のコンテンツがファイルに保存されます。 **[削除]** `Button` が押されると、`OnDeleteButtonClicked` イベント ハンドラーが実行されます。これにより、ファイルが存在する場合は削除され、`Editor` から任意のテキストが削除されます。 ユーザーの操作の詳細については、「[Xamarin.Forms クイック スタートの詳細](deepdive.md)」の「[ユーザー操作に対する対応](deepdive.md#responding-to-user-interaction)」を参照してください。
+    このコードでは、`notes.txt` という名前のファイルを参照する `_fileName` フィールドを定義します。このファイルで、アプリケーション用のローカル アプリケーション データ フォルダーにメモ データが保存されます。 ページ コンストラクターが実行されると、ファイルが存在する場合は読み取られ、[`Editor`](xref:Xamarin.Forms.Editor) に表示されます。 **[保存]** [`Button`](xref:Xamarin.Forms.Button) が押されると、`OnSaveButtonClicked` イベント ハンドラーが実行されます。これにより、`Editor` のコンテンツがファイルに保存されます。 **[削除]** `Button` が押されると、`OnDeleteButtonClicked` イベント ハンドラーが実行されます。これにより、ファイルが存在する場合は削除され、`Editor` から任意のテキストが削除されます。 ユーザーの操作の詳細については、「[Xamarin.Forms クイック スタート Deep Dive](deepdive.md)」の「[ユーザー操作に対する応答](deepdive.md#responding-to-user-interaction)」を参照してください。
 
     **[ファイル]、[保存]** の順に選択し (または **&#8984; + S** キーを押し)、**MainPage.xaml.cs** への変更内容を保存してから、ファイルを閉じます。
 
@@ -472,7 +475,7 @@ ms.locfileid: "79303631"
 
     メモを入力して **[保存]** ボタンを押します。
 
-    各プラットフォームでアプリケーションを起動する方法の詳細については、「[Xamarin.Forms クイック スタートの詳細](deepdive.md)」の「[各プラットフォームでアプリケーションを起動する](deepdive.md#launching-the-application-on-each-platform)」を参照してください。
+    各プラットフォームでアプリケーションを起動する方法の詳細については、「[Xamarin.Forms クイック スタート Deep Dive](deepdive.md)」の「[各プラットフォームでアプリケーションを起動する](deepdive.md#launching-the-application-on-each-platform)」を参照してください。
 
 4. **Solution Pad** で **[Notes.Droid]** プロジェクトを選択して右クリックし、 **[スタートアップ プロジェクトに設定]** を選択します。
 
@@ -484,7 +487,7 @@ ms.locfileid: "79303631"
 
     メモを入力して **[保存]** ボタンを押します。
 
-    各プラットフォームでアプリケーションを起動する方法の詳細については、「[Xamarin.Forms クイック スタートの詳細](deepdive.md)」の「[各プラットフォームでアプリケーションを起動する](deepdive.md#launching-the-application-on-each-platform)」を参照してください。
+    各プラットフォームでアプリケーションを起動する方法の詳細については、「[Xamarin.Forms クイック スタート Deep Dive](deepdive.md)」の「[各プラットフォームでアプリケーションを起動する](deepdive.md#launching-the-application-on-each-platform)」を参照してください。
 
 ::: zone-end
 
@@ -492,7 +495,7 @@ ms.locfileid: "79303631"
 
 このクイックスタートでは、次の方法について学習しました。
 
-- クロスプラットフォーム Xamarin.Forms アプリケーションのスタイルを作成する
+- クロスプラットフォーム Xamarin.Forms インターフェイスを作成する。
 - Extensible Application Markup Language (XAML) を使用して、ページのユーザー インターフェイスを定義する。
 - コードから XAML ユーザー インターフェイス要素を操作する。
 
@@ -504,4 +507,4 @@ ms.locfileid: "79303631"
 ## <a name="related-links"></a>関連リンク
 
 - [Notes (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)
-- [Xamarin.Forms クイックスタートの詳細](deepdive.md)
+- [Xamarin.Forms クイックスタート Deep Dive](deepdive.md)

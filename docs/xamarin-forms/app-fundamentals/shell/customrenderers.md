@@ -1,19 +1,11 @@
 ---
-title: Xamarin.Forms シェルのカスタム レンダラー
-description: Xamarin.Forms シェル アプリケーションでは、さまざまなシェル クラスが公開しているプロパティとメソッドを利用して、高度なカスタマイズが可能です。 ただし、プラットフォーム固有のより詳細なカスタマイズが必要な場合は、シェルのカスタム レンダラーを作成することも可能です。
-ms.prod: xamarin
-ms.assetid: 3B1A6AE8-1D1E-4C34-B9AB-48F4444FEF32
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/06/2019
-ms.openlocfilehash: ecb68d662c64b65346ffd04f0d3d3cd525533151
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "66178039"
+title:'Xamarin.Formsシェルのカスタム レンダラー' description:'Xamarin.Formsシェル アプリケーションでは、さまざまなシェル クラスが公開しているプロパティとメソッドを利用して、高度なカスタマイズが可能です。 ただし、プラットフォーム固有のより詳細なカスタマイズが必要な場合は、シェルのカスタム レンダラーを作成することも可能です。'
+ms.prod: ms.assetid: ms.technology: author: ms.author: ms.date: no-loc:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
+
 # <a name="xamarinforms-shell-custom-renderers"></a>Xamarin.Forms シェルのカスタム レンダラー
 
 Xamarin.Forms シェル アプリケーションの 1 つのメリットは、さまざまなシェル クラスが公開しているプロパティとメソッドを利用して、外観と動作を高度にカスタマイズできることです。 ただし、プラットフォーム固有のより詳細なカスタマイズが必要な場合は、シェルのカスタム レンダラーを作成することも可能です。 他のカスタム レンダラーと同様に、シェルのカスタム レンダラーは、他のプラットフォーム上での既定の動作を可能にしたまま、1 つのプラットフォーム プロジェクトのみに追加して外観と動作をカスタマイズできます。また、iOS および Android 上の両方で外観と動作をカスタマイズするために、別のシェル カスタム レンダラーを各プラットフォーム プロジェクトに追加することもできます。

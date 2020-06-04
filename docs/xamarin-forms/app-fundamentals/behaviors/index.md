@@ -1,18 +1,21 @@
 ---
 title: Xamarin.Forms のビヘイビアー
-description: ビヘイビアーを使うと、ユーザー インターフェイス コントロールをサブクラス化することなくそれらに機能を追加できます。 ビヘイビアーはコードとして記述され、XAML のコントロールまたはコードに追加されます。
-ms.prod: xamarin
-ms.assetid: 42E32AD7-8E3B-48B3-B402-E75B758DA913
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/06/2016
-ms.openlocfilehash: df0a767976247166205ae8a3d70fd59c521646f6
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 83952982bd163725fb931c860cac3e267726315c
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "61197540"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135812"
 ---
 # <a name="xamarinforms-behaviors"></a>Xamarin.Forms のビヘイビアー
 
@@ -26,7 +29,7 @@ _ビヘイビアーを使うと、ユーザー インターフェイス コン�
 
 アタッチされたビヘイビアーは、1 つ以上のプロパティがアタッチされた `static` クラスです。 この記事では、アタッチされたビヘイビアーを作成して使用する方法を示します。
 
-## <a name="xamarinforms-behaviors"></a>[Xamarin.Forms のビヘイビアー](creating.md)
+## <a name="xamarinforms-behaviorscreatingmd"></a>[Xamarin.Forms のビヘイビアー](creating.md)
 
 Xamarin.Forms のビヘイビアーは、[`Behavior`](xref:Xamarin.Forms.Behavior) または [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) クラスから派生させて作成されます。 この記事では、Xamarin.Forms のビヘイビアーを作成して使用する方法を示します。
 

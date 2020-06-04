@@ -1,18 +1,21 @@
 ---
-title: 再利用可能な EffectBehavior
+title: ''
 description: ビヘイビアーは、コントロールにエフェクトを追加するために役立つ方法です。エフェクトを処理する定型コードを分離コード ファイルから削除します。 この記事では、Xamarin.Forms のビヘイビアーを作成および使用して、コントロールにエフェクトを追加する方法を示します。
-ms.prod: xamarin
-ms.assetid: A909B24D-960A-4023-AFF6-4B9256C55ADD
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/06/2016
-ms.openlocfilehash: ca03dce3bd39664a07b7bf56d22d7c2e000e931f
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0a105548f869eb448a990a1cc12e6feff4197d48
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771999"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135786"
 ---
 # <a name="reusable-effectbehavior"></a>再利用可能な EffectBehavior
 
@@ -67,7 +70,7 @@ public class EffectBehavior : Behavior<View>
 
 ### <a name="implementing-the-overrides"></a>オーバーライドの実装
 
-次のコード例に示すように、[`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) クラスの [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) メソッドと [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) メソッドは `EffectBehavior` クラスによってオーバーライドされます。
+次のコード例に示すように、[`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) クラスの [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) and [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) メソッドは `EffectBehavior` クラスによってオーバーライドされます。
 
 ```csharp
 public class EffectBehavior : Behavior<View>
@@ -88,7 +91,7 @@ public class EffectBehavior : Behavior<View>
 }
 ```
 
-[`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) メソッドでは、`AddEffect` メソッドを呼び出してセットアップが実行され、アタッチされているコントロールがパラメーターとして渡されます。 [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) メソッドでは、`RemoveEffect` メソッドを呼び出してクリーンアップが実行され、アタッチされているコントロールがパラメーターとして渡されます。
+[`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) method performs setup by calling the `AddEffect` method, passing in the attached control as a parameter. The [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) メソッドでは、`RemoveEffect` メソッドを呼び出し、アタッチされているコントロールをパラメーターとして渡すことで、クリーンアップが実行されます。
 
 ### <a name="implementing-the-behavior-functionality"></a>ビヘイビアー機能の実装
 

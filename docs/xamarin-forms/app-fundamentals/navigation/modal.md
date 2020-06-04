@@ -1,18 +1,21 @@
 ---
 title: Xamarin.Forms モーダル ページ
 description: Xamarin.Forms はモーダル ページをサポートしています。 モーダル ページは、そのタスクが完了するかキャンセルされるまで、他の操作ができない自己完結型のタスクを完了させるようユーザーに促します。 この記事では、モーダル ページに移動する方法について説明します。
-ms.prod: xamarin
-ms.assetid: 486CB7FD-2B9A-4DE3-94BD-C8D904E5D3C6
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 12/01/2017
-ms.openlocfilehash: 7a4c67f067b73873c3d1de4499abda2703217ddf
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 4f6547049f2801e5d15115c0ae80af9a07034731
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70760825"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137827"
 ---
 # <a name="xamarinforms-modal-pages"></a>Xamarin.Forms モーダル ページ
 

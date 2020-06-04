@@ -1,42 +1,45 @@
 ---
-title: レンダラーの基本クラスおよびネイティブ コントロール
-description: すべての Xamarin.Forms コントロールには、ネイティブ コントロールのインスタンスを作成する各プラットフォーム用のレンダラーが付属しています。 この記事では、Xamarin.Forms の各ページ、レイアウト、ビュー、およびセルを実装する、レンダラーおよびネイティブ コントロールのクラスの一覧を示します。
-ms.prod: xamarin
-ms.assetid: A8909AE3-ED0E-4D24-BF96-B49E732E3B93
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/17/2020
-ms.openlocfilehash: 986b1f7dce05451b96a78e4b39b0091309d93973
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+title: ''
+description: すべての Xamarin.Forms コントロールには、ネイティブ コントロールのインスタンスを作成する各プラットフォーム用のレンダラーが付属しています。 この記事では、Xamarin.Forms のページ、レイアウト、ビュー、およびセルのそれぞれを実装するレンダラーとネイティブ コントロールのクラスの一覧を示します。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a56f05f8ff4eb8ece43a9f4f38a669cfdc85c4be
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82517469"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135188"
 ---
 # <a name="renderer-base-classes-and-native-controls"></a>レンダラーの基本クラスおよびネイティブ コントロール
 
-_すべての Xamarin.Forms コントロールには、ネイティブ コントロールのインスタンスを作成する各プラットフォーム用のレンダラーが付属しています。この記事では、Xamarin.Forms の各ページ、レイアウト、ビュー、およびセルを実装する、レンダラーおよびネイティブ コントロールのクラスの一覧を示します。_
+_すべての Xamarin.Forms コントロールには、ネイティブ コントロールのインスタンスを作成する各プラットフォーム用のレンダラーが付属しています。この記事では、Xamarin.Forms のページ、レイアウト、ビュー、およびセルのそれぞれを実装するレンダラーとネイティブ コントロールのクラスの一覧を示します。_
 
 `MapRenderer` クラスを除いて、プラットフォーム固有のレンダラーは、次の名前空間にあります。
 
-- **iOS** - Xamarin.Forms.Platform.iOS
-- **Android** - Xamarin.Forms.Platform.Android
-- **Android (AppCompat)** - Xamarin.Forms.Platform.Android.AppCompat
-- **ユニバーサル Windows プラットフォーム (UWP)** - Xamarin.Forms.Platform.UWP
+- **iOS** – Xamarin.Forms.Platform.iOS
+- **Android** – Xamarin.Forms.Platform.Android
+- **Android (AppCompat)** – Xamarin.Forms.Platform.Android.AppCompat
+- **ユニバーサル Windows プラットフォーム (UWP)** – Xamarin.Forms.Platform.UWP
 
 `MapRenderer`クラスは、次の名前空間にあります。
 
-- **iOS** - Xamarin.Forms.Maps.iOS
-- **Android** - Xamarin.Forms.Maps.Android
-- **ユニバーサル Windows プラットフォーム (UWP)** - Xamarin.Forms.Maps.UWP
+- **iOS** – Xamarin.Forms.Maps.iOS
+- **Android** – Xamarin.Forms.Maps.Android
+- **ユニバーサル Windows プラットフォーム (UWP)** – Xamarin.Forms.Maps.UWP
 
 > [!NOTE]
-> シェル アプリケーションに対するカスタム レンダラーの作成について詳しくは、「[Xamarin.Forms Shell Custom Renderers (Xamarin.Forms シェルのカスタム レンダラー)](~/xamarin-forms/app-fundamentals/shell/customrenderers.md)」をご覧ください。
+> シェル アプリケーション用のカスタム レンダラーの作成について詳しくは、「[Xamarin.Forms シェルのカスタム レンダラー](~/xamarin-forms/app-fundamentals/shell/customrenderers.md)」を参照してください。
 
 ## <a name="pages"></a>Pages
 
-次の表は、Xamarin.Forms の各[ページ](~/xamarin-forms/user-interface/controls/pages.md)型を実装する、レンダラーおよびネイティブ コントロールのクラスの一覧を示します。
+次の表に、Xamarin.Forms の各[ページ](~/xamarin-forms/user-interface/controls/pages.md)型を実装する、レンダラーおよびネイティブ コントロールのクラスの一覧を示します。
 
 |ページ|レンダラー|iOS|Android|Android (AppCompat)|UWP|
 |--- |--- |--- |--- |--- |--- |
@@ -49,7 +52,7 @@ _すべての Xamarin.Forms コントロールには、ネイティブ コント
 
 ## <a name="layouts"></a>レイアウト
 
-次の表は、Xamarin.Forms の各[レイアウト](~/xamarin-forms/user-interface/controls/layouts.md)の種類を実装する、レンダラーおよびネイティブ コントロールのクラスの一覧を示します。
+次の表に、Xamarin.Forms の各[レイアウト](~/xamarin-forms/user-interface/controls/layouts.md)型を実装する、レンダラーおよびネイティブ コントロールのクラスの一覧を示します。
 
 |レイアウト|レンダラー|iOS|Android|UWP|
 |--- |--- |--- |--- |--- |
@@ -66,7 +69,7 @@ _すべての Xamarin.Forms コントロールには、ネイティブ コント
 
 ## <a name="views"></a>Views
 
-次の表は、Xamarin.Forms の各[ビュー](~/xamarin-forms/user-interface/controls/views.md)の種類を実装する、レンダラーおよびネイティブ コントロールのクラスの一覧を示します。
+次の表に、Xamarin.Forms の各[ビュー](~/xamarin-forms/user-interface/controls/views.md)型を実装する、レンダラーおよびネイティブ コントロールのクラスの一覧を示します。
 
 |Views|レンダラー|iOS|Android|Android (AppCompat)|UWP|
 |--- |--- |--- |--- |--- |--- |
@@ -104,7 +107,7 @@ _すべての Xamarin.Forms コントロールには、ネイティブ コント
 
 ## <a name="cells"></a>セル
 
-次の表は、Xamarin.Forms の各[セル](~/xamarin-forms/user-interface/controls/cells.md)の種類を実装する、レンダラーおよびネイティブ コントロールのクラスの一覧を示します。
+次の表に、Xamarin.Forms の各[セル](~/xamarin-forms/user-interface/controls/cells.md)型を実装する、レンダラーおよびネイティブ コントロールのクラスの一覧を示します。
 
 |セル|レンダラー|iOS|Android|UWP|
 |--- |--- |--- |--- |--- |
@@ -116,4 +119,4 @@ _すべての Xamarin.Forms コントロールには、ネイティブ コント
 
 ## <a name="summary"></a>まとめ
 
-この記事では、Xamarin.Forms の各ページ、レイアウト、ビュー、およびセルを実装する、レンダラーおよびネイティブ コントロールのクラスの一覧を示しました。 すべての Xamarin.Forms コントロールには、ネイティブ コントロールのインスタンスを作成する各プラットフォーム用のレンダラーが付属しています。
+この記事では、Xamarin.Forms のページ、レイアウト、ビュー、およびセルのそれぞれを実装するレンダラーとネイティブ コントロールのクラスの一覧を示しました。 すべての Xamarin.Forms コントロールには、ネイティブ コントロールのインスタンスを作成する各プラットフォーム用のレンダラーが付属しています。

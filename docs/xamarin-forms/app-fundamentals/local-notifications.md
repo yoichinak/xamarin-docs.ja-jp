@@ -1,18 +1,21 @@
 ---
 title: Xamarin.Forms のローカル通知
-description: この記事では、Xamarin. Forms でローカル通知を送受信する方法について説明します。
-ms.prod: xamarin
-ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7
-ms.technology: xamarin-forms
-author: profexorgeek
-ms.author: jusjohns
-ms.date: 10/10/2019
-ms.openlocfilehash: ef2ef004378212fac593179d7aa38b3688fa82c3
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: この記事では、Xamarin.Forms でローカル通知を送受信する方法について説明します。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 40e040f216ddda40931273f4e7f5614964862fe8
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "72371539"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137595"
 ---
 # <a name="local-notifications-in-xamarinforms"></a>Xamarin.Forms でのローカル通知
 
@@ -111,11 +114,11 @@ public partial class MainPage : ContentPage
 
 `MainPage` クラスのコンストラクターでは、プラットフォーム固有の `INotificationManager` のインスタンスを取得するために Xamarin.Forms の `DependencyService` が使用されています。 `OnScheduleClicked` メソッドでは、新しい通知のスケジュールを設定するために `INotificationManager` インスタンスが使用されています。 `NotificationReceived` イベントにアタッチされたイベント ハンドラーから呼び出される `ShowNotification` メソッドでは、そのイベントが呼び出されたときに、ページに新しい `Label` が挿入されます。
 
-Xamarin.Forms `DependencyService` の詳細については、[Xamarin.Forms DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/introduction.md) に関するページをご覧ください。
+Xamarin.Forms の `DependencyService` の詳細については、[Xamarin.Forms の DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/introduction.md) に関するページを参照してください。
 
 ## <a name="create-the-android-interface-implementation"></a>Android 用のインターフェイスの実装を作成する
 
-Android 上で Xamarin.Forms アプリケーションによる通知の送受信を実現するには、アプリケーションで `INotificationManager` インターフェイスの実装を提供する必要があります。
+Android 上で `INotificationManager` アプリケーションによる通知の送受信を実現するには、アプリケーションで Xamarin.Forms インターフェイスの実装を提供する必要があります。
 
 ### <a name="create-the-androidnotificationmanager-class"></a>AndroidNotificationManager クラスの作成
 

@@ -1,24 +1,27 @@
 ---
 title: Xamarin.Forms のコントロール テンプレート
-description: Xamarin.Forms コントロール テンプレートには、ContentView 派生カスタム コントロールと ContentPage 派生ページのビジュアル構造が定義されています。
-ms.prod: xamarin
-ms.assetid: 8B8E2360-6531-44A3-A7C8-9A8808DE9B86
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/13/2020
-ms.openlocfilehash: a73123b89cba932f2e2cb907645f6fe858cf6176
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: Xamarin.Forms のコントロール テンプレートには、ContentView 派生カスタム コントロールと ContentPage 派生ページのビジュアル構造が定義されています。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 44eebed2a49fbdda5504f9a09873f93466d0326c
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303841"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84132549"
 ---
 # <a name="xamarinforms-control-templates"></a>Xamarin.Forms のコントロール テンプレート
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-controltemplatedemos)
 
-Xamarin.Forms コントロール テンプレートを使うと、[`ContentView`](xref:Xamarin.Forms.ContentView) 派生カスタム コントロールと [`ContentPage`](xref:Xamarin.Forms.ContentPage) 派生ページのビジュアル構造を定義できます。 コントロール テンプレートを使うと、カスタム コントロールまたはページのユーザー インターフェイス (UI) を、コントロールまたはページを実装するロジックから分離できます。 また、事前に定義した場所にあるテンプレート化されたカスタム コントロールまたはテンプレート化されたページに追加のコンテンツを挿入することもできます。
+Xamarin.Forms のコントロール テンプレートを使うと、[`ContentView`](xref:Xamarin.Forms.ContentView) 派生カスタム コントロールと [`ContentPage`](xref:Xamarin.Forms.ContentPage) 派生ページのビジュアル構造を定義できます。 コントロール テンプレートを使うと、カスタム コントロールまたはページのユーザー インターフェイス (UI) を、コントロールまたはページを実装するロジックから分離できます。 また、事前に定義した場所にあるテンプレート化されたカスタム コントロールまたはテンプレート化されたページに追加のコンテンツを挿入することもできます。
 
 たとえば、カスタム コントロールで提供された UI を再定義するコントロール テンプレートを作成できます。 コントロール テンプレートは、必要なカスタム コントロール インスタンスで使用できます。 または、アプリケーションの複数のページで使用される共通の UI を定義するコントロール テンプレートを作成できます。 コントロール テンプレートを複数のページに使用し、さらに各ページに固有のコンテンツを表示することができます。
 
@@ -52,7 +55,7 @@ public class CardView : ContentView
 
 コントロール テンプレートは、[`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 型を使用して作成されます。 `ControlTemplate` を作成するときは、[`View`](xref:Xamarin.Forms.View) オブジェクトを組み合わせてカスタム コントロールまたはページの UI を構築します。 `ControlTemplate` は、ルート要素として `View` を 1 つだけ持つ必要があります。 ただし、通常、ルート要素には他の `View` オブジェクトが含まれます。 複数のオブジェクトを組み合わせて、コントロールの視覚的な構造を構成します。
 
-[`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) をインラインで定義することはできますが、リソース ディクショナリのリソースとして [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) を宣言する方法が一般的です。 コントロール テンプレートはリソースなので、すべてのリソースに適用されるものと同じスコープ規則に従います。 たとえば、アプリケーション定義 XAML ファイルのルート要素でコントロール テンプレートを宣言すると、そのテンプレートはアプリケーションのどこでも使用できます。 ページでテンプレートを定義すると、そのページでのみ、コントロール テンプレートを使用できます。 リソースの詳細については、[Xamarin.Forms のリソース ディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)に関する記事を参照してください。
+[`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) をインラインで定義することはできますが、リソース ディクショナリのリソースとして [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) を宣言する方法が一般的です。 コントロール テンプレートはリソースなので、すべてのリソースに適用されるものと同じスコープ規則に従います。 たとえば、アプリケーション定義 XAML ファイルのルート要素でコントロール テンプレートを宣言すると、そのテンプレートはアプリケーションのどこでも使用できます。 ページでテンプレートを定義すると、そのページでのみ、コントロール テンプレートを使用できます。 リソースの詳細については、「[Xamarin.Forms のリソース ディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)」を参照してください。
 
 次の XAML の例は、`CardView` オブジェクトの [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) を示しています。
 
@@ -119,7 +122,7 @@ public class CardView : ContentView
 </ContentPage>
 ```
 
-[`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) がリソースとして宣言される場合、リソース ディクショナリで識別できるように、`x:Key` 属性を使用して指定したキーが必要です。 この例では、`CardViewControlTemplate` のルート要素は [`Frame`](xref:Xamarin.Forms.Frame) オブジェクトです。 `Frame` オブジェクトでは、`RelativeSource` マークアップ拡張機能を使用して、その `BindingContext` をテンプレートが適用されるランタイム オブジェクト インスタンスに設定します。これは、"*テンプレート化された親*" と呼ばれます。 `CardView` オブジェクトのビジュアル構造を定義するために、`Frame` オブジェクトには [`Grid`](xref:Xamarin.Forms.Grid)、`Frame`、[`Image`](xref:Xamarin.Forms.Image)、[`Label`](xref:Xamarin.Forms.Label)、および [`BoxView`](xref:Xamarin.Forms.BoxView) の組み合わせが使用されます。 このようなオブジェクトのバインド式を使うと、ルート `Frame` エレメントから `BindingContext` が継承されるため、`CardView` プロパティに対して解決されます。 `RelativeSource` マークアップ拡張機能の詳細については、「[Xamarin.Forms の相対バインド](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)」を参照してください。
+[`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) がリソースとして宣言される場合、リソース ディクショナリで識別できるように、`x:Key` 属性を使用して指定したキーが必要です。 この例では、`CardViewControlTemplate` のルート要素は [`Frame`](xref:Xamarin.Forms.Frame) オブジェクトです。 `Frame` オブジェクトでは、`RelativeSource` マークアップ拡張機能を使用して、その `BindingContext` をテンプレートが適用されるランタイム オブジェクト インスタンスに設定します。これは、"*テンプレート化された親*" と呼ばれます。 `CardView` オブジェクトのビジュアル構造を定義するために、`Frame` オブジェクトには [`Grid`](xref:Xamarin.Forms.Grid)、`Frame`、[`Image`](xref:Xamarin.Forms.Image)、[`Label`](xref:Xamarin.Forms.Label)、および [`BoxView`](xref:Xamarin.Forms.BoxView) の組み合わせが使用されます。 このようなオブジェクトのバインド式を使うと、ルート `Frame` エレメントから `BindingContext` が継承されるため、`CardView` プロパティに対して解決されます。 `RelativeSource` マークアップ拡張機能の詳細については、「[Xamarin.Forms の相対的なバインディング](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)」を参照してください。
 
 ## <a name="consume-a-controltemplate"></a>ControlTemplate を使用する
 
@@ -179,7 +182,7 @@ public class CardView : ContentView
 - `ConverterParameter` (`object` 型)。バインディング値コンバーターへのパラメーター。
 - `StringFormat` (`string` 型)。バインディングの文字列形式。
 
-`TemplateBinding` マークアップ拡張機能の `ContentProperty` は `Path` です。 そのため、マークアップ拡張機能の "Path =" 部分は、そのパスが `TemplateBinding` 式の最初の項目である場合、省略できます。 バインディング式でこれらのプロパティを使用する方法の詳細については、[Xamarin.Forms のデータ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)に関する記事を参照してください。
+`TemplateBinding` マークアップ拡張機能の `ContentProperty` は `Path` です。 そのため、マークアップ拡張機能の "Path =" 部分は、そのパスが `TemplateBinding` 式の最初の項目である場合、省略できます。 バインディング式でこれらのプロパティを使用することの詳細については、「[Xamarin.Forms のデータ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)」を参照してください。
 
 > [!WARNING]
 > `TemplateBinding` マークアップ拡張機能は、[`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 内でのみ使用することをお勧めします。 ただし、`ControlTemplate` の外部で `TemplateBinding` 式を使用しようとしても、ビルド エラーや例外はスローされません。
@@ -298,7 +301,7 @@ public class CardView : ContentView
 
 この例では、"*暗黙的な*" [`Style`](xref:Xamarin.Forms.Style) は各 `CardView` オブジェクトに自動的に適用され、各 `CardView` の [`ControlTemplate`](xref:Xamarin.Forms.TemplatedView.ControlTemplate) プロパティは `CardViewControlTemplate` に設定されます。
 
-スタイルの詳細については、[Xamarin.Forms のスタイル](~/xamarin-forms/user-interface/styles/index.md)に関する記事を参照してください。
+スタイルの詳細については、[Xamarin.Forms のスタイル](~/xamarin-forms/user-interface/styles/index.md)に関するページを参照してください。
 
 ## <a name="redefine-a-controls-ui"></a>コントロールの UI を再定義する
 
@@ -630,13 +633,13 @@ public partial class AccessTemplateElementPage : HeaderFooterPage
 
 [![iOS および Android 上のテンプレート化された CardView オブジェクトのスクリーンショット](control-template-images/viewmodel-itemdeleted.png "テンプレート化された CardView オブジェクト")](control-template-images/viewmodel-itemdeleted-large.png#lightbox "テンプレート化された CardView オブジェクト")
 
-相対バインドの詳細については、「[Xamarin.Forms の相対バインド](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)」を参照してください。
+相対的なバインディングの詳細については、「[Xamarin.Forms の相対的なバインディング](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 
 - [ControlTemplateDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-controltemplatedemos)
 - [Xamarin.Forms ContentView](~/xamarin-forms/user-interface/layouts/contentview.md)
-- [Xamarin.Forms の相対バインド](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)
+- [Xamarin.Forms の相対的なバインディング](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)
 - [Xamarin.Forms のリソース ディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [Xamarin.Forms のデータ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 - [Xamarin.Forms のスタイル](~/xamarin-forms/user-interface/styles/index.md)

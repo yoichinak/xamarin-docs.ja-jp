@@ -1,18 +1,21 @@
 ---
-title: Xamarin のホット再起動
-description: このドキュメントでは、Xamarin のホット再起動を設定して使用し、iOS アプリをデバッグする方法について説明します。
-ms.prod: xamarin
-ms.assetid: 6BC62A88-9368-41BB-8494-760F2A4805DB
-ms.technology: xamarin-forms
-author: maddyleger1
-ms.author: maleger
-ms.date: 03/16/2020
-ms.openlocfilehash: cc5efffd4c3646fbff9cdb1ad1a30ec614cb4921
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 45b7d0d20c43aa22ebde3a17552f10ceea77a48b
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79429568"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139140"
 ---
 # <a name="xamarin-hot-restart-preview"></a>Xamarin のホット再起動 (プレビュー)
 
@@ -21,7 +24,7 @@ ms.locfileid: "79429568"
 Xamarin のホット再起動を使用すると、複数ファイルのコード編集、リソース、参照など、開発中のアプリに対する変更を迅速にテストできます。 新しい変更がデバッグ ターゲットの既存のアプリ バンドルにプッシュされ、ビルドと配置のサイクルが大幅に短縮されます。
 
 > [!IMPORTANT]
-> Xamarin のホット再起動は現在 Visual Studio 2019 バージョン 16.5 で安定的に利用でき、Xamarin.Forms を使用した iOS アプリをサポートしています。 Visual Studio for Mac と Xamarin.Forms 以外のアプリのサポートが計画中です。
+> Xamarin のホット再起動は現在 Visual Studio 2019 バージョン 16.5 で安定的に利用でき、Xamarin.Forms を使用する iOS アプリをサポートしています。 Visual Studio for Mac と Xamarin.Forms 以外のアプリのサポートが計画中です。
 
 ## <a name="requirements"></a>必要条件
 

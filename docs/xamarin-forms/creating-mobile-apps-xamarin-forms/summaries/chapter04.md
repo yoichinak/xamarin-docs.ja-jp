@@ -1,29 +1,33 @@
 ---
-title: '第 4 章の概要: スタックのスクロール'
-description: 'Xamarin.Forms を使用したモバイル アプリの作成: 第 4 章の概要: スタックのスクロール'
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/19/2018
-ms.openlocfilehash: 5313dd34839d6a5d21432161b9fd3a0ffce6e816
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 4. Scrolling the stack''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9890ecdf286ee33d7af28fd20847788b063df8f5
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83149941"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136891"
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>第 4 章の概要: スタックのスクロール
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04)
 
-この章では、主に、"*レイアウト*" の概念を紹介します。これは、ページ上の複数のビューの視覚的な表示を整理するために Xamarin.Forms で使用されるクラスと手法に対する全体的な用語です。
+この章では、主に、"*レイアウト*" の概念を紹介します。これは、Xamarin.Forms でページ上の複数のビューの視覚的な表示を整理するために使用されるクラスと手法を表す包括的な用語です。
 
 レイアウトに含まれる複数のクラスは、[`Layout`](xref:Xamarin.Forms.Layout) と [`Layout<T>`](xref:Xamarin.Forms.Layout`1) から派生します。 この章では、[`StackLayout`](xref:Xamarin.Forms.StackLayout) に焦点を当てます。
 
 > [!NOTE]
-> Xamarin.Forms 3.0 で導入された [`FlexLayout`](~/xamarin-forms/user-interface/layouts/flex-layout.md) は、`StackLayout` と似た方法で使用できますが、いっそう高い柔軟性を備えています。
+> Xamarin.Forms 3.0 で導入された [`FlexLayout`](~/xamarin-forms/user-interface/layouts/flex-layout.md) は、`StackLayout` と似た方法で使用できますが、より高い柔軟性を備えています。
 
 この章では、[`ScrollView`](xref:Xamarin.Forms.ScrollView)、[`Frame`](xref:Xamarin.Forms.Frame)、[`BoxView`](xref:Xamarin.Forms.BoxView) の各クラスについても紹介します。
 

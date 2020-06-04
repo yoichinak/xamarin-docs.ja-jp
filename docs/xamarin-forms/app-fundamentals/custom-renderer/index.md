@@ -1,22 +1,25 @@
 ---
 title: Xamarin.Forms のカスタム レンダラー
 description: カスタム レンダラーにより、開発者は各プラットフォーム上のネイティブ コントロールのレンダリングをオーバーライドして、Xamarin.Forms コントロールの外観とビヘイビアーをカスタマイズできるようになります。
-ms.prod: xamarin
-ms.assetid: BF1CF23A-3BC9-4226-92E6-DAEEB91422F1
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 12/03/2019
-ms.openlocfilehash: 04d40aa4cafe663113957d31bdb8a6463ba58ba5
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: be281f9b7987a8d23ba6ac93f0771e432f277d45
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82516456"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138919"
 ---
 # <a name="xamarinforms-custom-renderers"></a>Xamarin.Forms のカスタム レンダラー
 
-_Xamarin.Forms のユーザー インターフェイスは、ターゲット プラットフォームのネイティブ コントロールを使用してレンダリングされるため、Xamarin.Forms アプリケーションでは各プラットフォームの適切な外観を維持できます。カスタム レンダラーにより、開発者はこのプロセスをオーバーライドして、各プラットフォーム上で Xamarin.Forms コントロールの外観とビヘイビアーをカスタマイズできるようになります。_
+_Xamarin.Forms ユーザー インターフェイスは、ターゲット プラットフォームのネイティブ コントロールを使用してレンダリングされるため、Xamarin.Forms アプリケーションでは各プラットフォームの外観を維持できます。カスタム レンダラーにより、開発者はこのプロセスをオーバーライドして、各プラットフォーム上で Xamarin.Forms コントロールの外観とビヘイビアーをカスタマイズできるようになります。_
 
 ## <a name="introduction-to-custom-renderers"></a>[カスタム レンダラーの概要](introduction.md)
 
@@ -24,11 +27,11 @@ _Xamarin.Forms のユーザー インターフェイスは、ターゲット プ
 
 ## <a name="renderer-base-classes-and-native-controls"></a>[レンダラーの基本クラスおよびネイティブ コントロール](renderers.md)
 
-すべての Xamarin.Forms コントロールには、ネイティブ コントロールのインスタンスを作成する各プラットフォーム用のレンダラーが付属しています。 この記事では、Xamarin.Forms の各ページ、レイアウト、ビュー、およびセルを実装する、レンダラーおよびネイティブ コントロールのクラスの一覧を示します。
+すべての Xamarin.Forms コントロールには、ネイティブ コントロールのインスタンスを作成する各プラットフォーム用のレンダラーが付属しています。 この記事では、Xamarin.Forms のページ、レイアウト、ビュー、およびセルのそれぞれを実装するレンダラーとネイティブ コントロールのクラスの一覧を示します。
 
 ## <a name="customizing-an-entry"></a>[エントリのカスタマイズ](entry.md)
 
-Xamarin.Forms の [`Entry`](xref:Xamarin.Forms.Entry) コントロールによって、テキストの 1 行を編集対象にできます。 この記事では、`Entry` コントロール用のカスタム レンダラーを作成する方法を示します。これにより、開発者は既定のネイティブ レンダリングを、各自のプラットフォームに固有のカスタマイズでオーバーライドできるようになります。
+Xamarin.Forms の [`Entry`](xref:Xamarin.Forms.Entry) コントロールによって、1 行のテキストを編集対象にできます。 この記事では、`Entry` コントロール用のカスタム レンダラーを作成する方法を示します。これにより、開発者は既定のネイティブ レンダリングを、各自のプラットフォームに固有のカスタマイズでオーバーライドできるようになります。
 
 ## <a name="customizing-a-contentpage"></a>[コンテンツ ページのカスタマイズ](contentpage.md)
 
@@ -40,7 +43,7 @@ Xamarin.Forms.Maps には、プラットフォームごとのネイティブ マ
 
 ## <a name="customizing-a-listview"></a>[ListView のカスタマイズ](listview.md)
 
-Xamarin.Forms の [`ListView`](xref:Xamarin.Forms.ListView) は、データのコレクションを垂直方向の一覧として表示するビューです。 この記事では、プラットフォーム固有のリスト コントロールとネイティブのセルのレイアウトをカプセル化するカスタム レンダラーを作成し、ネイティブ リスト コントロールのパフォーマンスをより厳密に制御する方法を示します。
+Xamarin.Forms の [`ListView`](xref:Xamarin.Forms.ListView) は、データのコレクションを縦方向の一覧として表示するビューです。 この記事では、プラットフォーム固有のリスト コントロールとネイティブのセルのレイアウトをカプセル化するカスタム レンダラーを作成し、ネイティブ リスト コントロールのパフォーマンスをより厳密に制御する方法を示します。
 
 ## <a name="customizing-a-viewcell"></a>[ViewCell のカスタマイズ](viewcell.md)
 
@@ -48,7 +51,7 @@ Xamarin.Forms の [`ViewCell`](xref:Xamarin.Forms.ViewCell) は、[`ListView`](x
 
 ## <a name="customizing-a-webview"></a>[WebView のカスタマイズ](hybridwebview.md)
 
-Xamarin.Forms [`WebView`](xref:Xamarin.Forms.WebView) は、アプリに Web コンテンツと HTML コンテンツを表示するビューです。 この記事では、JavaScript から C# コードを呼び出せるように `WebView` を拡張するカスタム レンダラーを作成する方法について説明します。
+Xamarin.Forms の [`WebView`](xref:Xamarin.Forms.WebView) は、アプリに Web コンテンツと HTML コンテンツを表示するビューです。 この記事では、JavaScript から C# コードを呼び出せるように `WebView` を拡張するカスタム レンダラーを作成する方法について説明します。
 
 ## <a name="implementing-a-view"></a>[ページの実装](view.md)
 

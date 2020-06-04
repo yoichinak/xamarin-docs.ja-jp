@@ -1,18 +1,22 @@
 ---
-title: 第 3 章の概要。 テキストの詳細
-description: Xamarin.Forms で Mobile Apps を作成する:第 3 章の概要。 テキストの詳細
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: 2E5581A6-4D3E-4BD5-9FDB-ACBA0F0FC734
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/18/2018
-ms.openlocfilehash: 69415b59bbd376330454302981e3216c236a16bb
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 3. Deeper into text''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5423a9f716f384eca107003bdeca69615f8b459f
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "72980928"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136904"
 ---
 # <a name="summary-of-chapter-3-deeper-into-text"></a>第 3 章の概要。 テキストの詳細
 
@@ -119,7 +123,7 @@ Windows プラットフォームの場合、通常、ユーザーが配色を選
 
 フォントのおおよその高さを指定するには、`Label` の [`FontSize`](xref:Xamarin.Forms.Label.FontSize) プロパティを `double` に設定します。 フォント サイズをインテリジェントに選択する方法の詳細については、[第 5 章 サイズの処理](chapter05.md)のページを参照してください。
 
-または、いくつかのプリセットされたプラットフォーム依存のフォント サイズのいずれかを取得できます。 静的な [`Device.GetNamedSize`](xref:Xamarin.Forms.Device.GetNamedSize(Xamarin.Forms.NamedSize,System.Type)) メソッドと [overload](xref:Xamarin.Forms.Device.GetNamedSize(Xamarin.Forms.NamedSize,Xamarin.Forms.Element)) のいずれを使用しても、[`NamedSize`](xref:Xamarin.Forms.NamedSize) 列挙体のメンバー ([`Default`](xref:Xamarin.Forms.NamedSize.Default)、[`Micro`](xref:Xamarin.Forms.NamedSize.Micro)、[`Small`](xref:Xamarin.Forms.NamedSize.Small)、[`Medium`](xref:Xamarin.Forms.NamedSize.Medium)、および[`Large`](xref:Xamarin.Forms.NamedSize.Large)) に基づいて、プラットフォームに適した `double` フォント サイズ値が返されます。 `Medium` メンバーから返される値は、必ずしも `Default` と同じにはなりません。 [**NamedFontSizes**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/NamedFontSizes) サンプルでは、これら名前付きサイズを使用してテキストが表示されます。
+または、いくつかのプリセットされたプラットフォーム依存のフォント サイズのいずれかを取得できます。 静的な [`Device.GetNamedSize`](xref:Xamarin.Forms.Device.GetNamedSize(Xamarin.Forms.NamedSize,System.Type)) メソッドと [オーバーロード](xref:Xamarin.Forms.Device.GetNamedSize(Xamarin.Forms.NamedSize,Xamarin.Forms.Element)) はどちらも、[`NamedSize`](xref:Xamarin.Forms.NamedSize) 列挙型 ([`Default`](xref:Xamarin.Forms.NamedSize.Default)、[`Micro`](xref:Xamarin.Forms.NamedSize.Micro)、[`Small`](xref:Xamarin.Forms.NamedSize.Small)、[`Medium`](xref:Xamarin.Forms.NamedSize.Medium)、および [`Large`](xref:Xamarin.Forms.NamedSize.Large)) のメンバーに基づいて、そのプラットフォームにとって適切な `double` のフォント サイズ値を返します。 `Medium` メンバーから返される値は、必ずしも `Default` と同じにはなりません。 [**NamedFontSizes**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03/NamedFontSizes) サンプルでは、これら名前付きサイズを使用してテキストが表示されます。
 
 `Label` の [`FontAttributes`](xref:Xamarin.Forms.Label.FontAttributes) プロパティを、これらの [`FontAttributes`](xref:Xamarin.Forms.FontAttributes) 列挙対のメンバー ([`Bold`](xref:Xamarin.Forms.FontAttributes.Bold)、[`Italic`](xref:Xamarin.Forms.FontAttributes.Italic)、または [`None`](xref:Xamarin.Forms.FontAttributes.None)) に設定します。 `Bold` および `Italic` のメンバーは、C# のビットごとの OR 演算子で結合することができます。
 

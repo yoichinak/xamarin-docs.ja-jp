@@ -1,18 +1,21 @@
 ---
-title: カスタムのビデオ位置
+title: ''
 description: この記事では、Xamarin.Forms を使用してビデオ プレーヤー アプリケーションのカスタムの位置バーを実装する方法について説明します。
-ms.prod: xamarin
-ms.assetid: 6D792264-30FF-46F7-8C1B-2FEF9D277DF4
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/12/2018
-ms.openlocfilehash: 12633b728240c2f90d0265fe7b9efb65ea49bf1f
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 97d32a03ee10e2f3b0a7442d1d70dab9236059b4
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "68650645"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135084"
 ---
 # <a name="custom-video-positioning"></a>カスタムのビデオ位置
 

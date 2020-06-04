@@ -1,19 +1,11 @@
 ---
-title: Xamarin.Forms シェル アプリケーションを作成する
-description: Xamarin.Forms シェル アプリケーションを作成するプロセスは、Shell クラスがサブクラス化された XAML ファイルを作成し、アプリケーションの App クラスの MainPage プロパティをサブクラス化した Shell オブジェクトに設定した後、サブクラス化した Shell クラスにアプリケーションのビジュアル階層を記述することです。
-ms.prod: xamarin
-ms.assetid: 2A51D78F-6CD5-4BC4-A62E-11CEFA799987
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/24/2019
-ms.openlocfilehash: eec20ff6ceb4aee7e8fde59992576899690616c3
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "68739309"
+title:'Xamarin.Forms シェル アプリケーションを作成する' description:'Xamarin.Forms シェル アプリケーションを作成するプロセスは、Shell クラスがサブクラス化された XAML ファイルを作成し、アプリケーションの App クラスの MainPage プロパティをサブクラス化した Shell オブジェクトに設定した後、サブクラス化した Shell クラス内にアプリケーションのビジュアル階層を記述することです。
+ms.prod: ms.assetid: ms.technology: author: ms.author: ms.date: no-loc:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
+
 # <a name="create-a-xamarinforms-shell-application"></a>Xamarin.Forms シェル アプリケーションを作成する
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
@@ -27,7 +19,7 @@ Xamarin.Forms シェル アプリケーションを作成するプロセスは�
 
 ## <a name="subclass-the-shell-class"></a>Shell クラスをサブクラス化する
 
-Xamarin.Forms シェル アプリケーションを作成する最初の手順は、`Shell` クラスをサブクラス化した XAML ファイルを共有コード プロジェクトに追加することです。 このファイルには任意の名前を付けることができますが、**AppShell** がお勧めです。 次のコード例は、新しく作成した **AppShell.xaml** ファイルを示しています。
+Xamarin.Forms シェル アプリケーションを作成する最初の手順は、`Shell` クラスをサブクラス化する XAML ファイルを共有コード プロジェクトに追加することです。 このファイルには任意の名前を付けることができますが、**AppShell** がお勧めです。 次のコード例は、新しく作成した **AppShell.xaml** ファイルを示しています。
 
 ```xaml
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
@@ -80,7 +72,7 @@ namespace Xaminals
 
 ## <a name="describe-the-visual-hierarchy-of-the-application"></a>アプリケーションのビジュアル階層を記述する
 
-Xamarin.Forms シェル アプリケーションを作成する最後の手順は、サブクラス化された `Shell` クラスに、アプリケーションのビジュアル階層を記述することです。 サブクラス化された `Shell` クラスは、次の 3 つの主な階層オブジェクトで構成されています。
+Xamarin.Forms シェル アプリケーション作成の最後の手順は、サブクラス化された `Shell` クラス内に、アプリケーションのビジュアル階層を記述することです。 サブクラス化された `Shell` クラスは、次の 3 つの主な階層オブジェクトで構成されています。
 
 - `FlyoutItem` または `TabBar`。 `FlyoutItem` ではポップアップ内の 1 つまたは複数の項目を表します。これは、アプリケーションのナビゲーション パターンにポップアップが含まれている場合に使う必要があります。 `TabBar` では下部にあるタブ バーを表します。これは、アプリケーションのナビゲーション パターンが下部のタブから開始される場合に使う必要があります。 `FlyoutItem` オブジェクトまたは `TabBar` オブジェクトは、すべて `Shell` オブジェクトの子です。
 - `Tab`。これは、下部のタブによって移動できるグループ化されたコンテンツを表します。 `Tab` オブジェクトはすべて、`FlyoutItem` オブジェクトか `TabBar` オブジェクトの子です。
@@ -135,7 +127,7 @@ Xamarin.Forms シェル アプリケーションを作成する最後の手順�
 [![iOS および Android 上のシェル フライアウトのスクリーンショット](create-images/flyout-reduced.png "シェル ポップアップ")](create-images/flyout-reduced-large.png#lightbox "シェル ポップアップ")
 
 > [!IMPORTANT]
-> シェル アプリケーションでは、`ShellContent` オブジェクトの子である各 [`ContentPage`](xref:Xamarin.Forms.ContentPage) は、アプリケーションの起動中に作成されます。 この手法を利用してその他の `ShellContent` オブジェクトを追加すると、アプリケーションの起動時に追加のページが作成され、起動エクスペリエンスの低下を引き起こす場合があります。 ただし、シェルでは、ナビゲーションに応答して、必要に応じてページを作成することも可能です。 詳しくは、「[Xamarin.Forms シェルのタブ](tabs.md)」ガイドにある「[効率的なページの読み込み](tabs.md#efficient-page-loading)」をご覧ください。
+> シェル アプリケーションでは、`ShellContent` オブジェクトの子である各 [`ContentPage`](xref:Xamarin.Forms.ContentPage) は、アプリケーションの起動中に作成されます。 この手法を利用してその他の `ShellContent` オブジェクトを追加すると、アプリケーションの起動時に追加のページが作成され、起動エクスペリエンスの低下を引き起こす場合があります。 ただし、シェルでは、ナビゲーションに応答して、必要に応じてページを作成することも可能です。 詳細については、「[Xamarin.Forms シェルのタブ](tabs.md)」ガイドにある「[効率的なページの読み込み](tabs.md#efficient-page-loading)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 

@@ -1,18 +1,21 @@
 ---
-title: 再利用可能な EventToCommandBehavior
+title: ''
 description: ビヘイビアーを使用すると、コマンドとやりとりするように設計されていないコントロールにコマンドを関連付けることができます。 この記事では、Xamarin.Forms のビヘイビアーを作成および使用して、イベントが発生したときにコマンドを呼び出す方法を示します。
-ms.prod: xamarin
-ms.assetid: EC7F6556-9776-40B8-9424-A8094482A2F3
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/09/2018
-ms.openlocfilehash: 292a6aaaea4fb0f84138e04c88f001c72ddd096d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 46d1566c89de763a469f30ce8ed2c6ef919f1426
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "68650909"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135799"
 ---
 # <a name="reusable-eventtocommandbehavior"></a>再利用可能な EventToCommandBehavior
 
@@ -41,7 +44,7 @@ _ビヘイビアーを使用すると、コマンドとやりとりするよう�
 
 `EventToCommandBehavior` クラスは、[`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) クラスから派生した `BehaviorBase<T>` クラスから派生したものです。 `BehaviorBase<T>` クラスの目的は、ビヘイビアーの [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) をアタッチされたコントロールに設定することが求められる Xamarin.Forms ビヘイビアーに対して基底クラスを提供することにあります。 これにより、確実に、ビヘイビアーを使用するときに `ICommand` プロパティによって指定される `Command` にビヘイビアーがバインドされ、それがビヘイビアーによって実行されます。
 
-`BehaviorBase<T>` クラスでは、ビヘイビアーの [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) を設定するオーバーライド可能な [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) メソッドと、`BindingContext` をクリーンアップするオーバーライド可能な [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) メソッドが指定されます。 さらに、このクラスでは、アタッチされたコントロールへの参照が `AssociatedObject` プロパティに格納されます。
+`BehaviorBase<T>` クラスでは、`BindingContext` をクリーンアップするオーバーライド可能な [`OnAttachedTo`] (xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) method that sets the [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) of the behavior and an overridable [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) メソッドが指定されます。 さらに、このクラスでは、アタッチされたコントロールへの参照が `AssociatedObject` プロパティに格納されます。
 
 ### <a name="implementing-bindable-properties"></a>バインド可能プロパティの実装
 
@@ -73,7 +76,7 @@ public class EventToCommandBehavior : BehaviorBase<View>
 
 ### <a name="implementing-the-overrides"></a>オーバーライドの実装
 
-次のコード例に示すように、`BehaviorBase<T>` クラスの [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) メソッドと [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) メソッドは `EventToCommandBehavior` クラスによってオーバーライドされます。
+次のコード例に示すように、`BehaviorBase<T>` クラスの [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) and [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) メソッドは `EventToCommandBehavior` クラスによってオーバーライドされます。
 
 ```csharp
 public class EventToCommandBehavior : BehaviorBase<View>
@@ -94,7 +97,7 @@ public class EventToCommandBehavior : BehaviorBase<View>
 }
 ```
 
-[`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) メソッドでは、`RegisterEvent` メソッドを呼び出してセットアップが実行され、`EventName` プロパティの値がパラメーターとして渡されます。 [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) メソッドでは、`DeregisterEvent` メソッドを呼び出してクリーンアップが実行され、`EventName` プロパティの値がパラメーターとして渡されます。
+[`OnAttachedTo`] (xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) method performs setup by calling the `RegisterEvent` method, passing in the value of the `EventName` property as a parameter. The [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) メソッドでは、`DeregisterEvent` メソッドを呼び出し、`EventName` プロパティの値をパラメーターとして渡すことで、クリーンアップが実行されます。
 
 ### <a name="implementing-the-behavior-functionality"></a>ビヘイビアー機能の実装
 
@@ -152,7 +155,7 @@ public class EventToCommandBehavior : BehaviorBase<View>
 
 [`CanExecute`](xref:Xamarin.Forms.Command.CanExecute(System.Object)) メソッドから `true` が返されると、データ バインドされた `ICommand` が実行され、パラメーターがコマンドに渡されます。
 
-ここでは示していませんが、`EventToCommandBehavior` にも [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) メソッドによって実行される `DeregisterEvent` メソッドが含まれています。 `DeregisterEvent` メソッドを使用することで、`EventName` プロパティに定義されたイベントを検索して再登録すると、潜在的なメモリ リークがクリーンアップされます。
+ここでは示していませんが、`EventToCommandBehavior` にも潜在的なメモリ リークをクリーンアップするために [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) method. The `DeregisterEvent` method is used to locate and deregister the event defined in the `EventName` プロパティによって実行される `DeregisterEvent` メソッドが含まれています。
 
 ## <a name="consuming-the-behavior"></a>ビヘイビアーの使用
 
@@ -204,7 +207,7 @@ selectedItemLabel.SetBinding(Label.TextProperty, "SelectedItemText");
 
 ## <a name="summary"></a>まとめ
 
-この記事では、Xamarin.Forms のビヘイビアーを使用して、イベントが発生したときにコマンドを呼び出す方法を示します。 ビヘイビアーを使用すると、コマンドとやりとりするように設計されていないコントロールにコマンドを関連付けることができます。
+この記事では、Xamarin.Forms のビヘイビアーを使用して、イベントが発生したときにコマンドを呼び出す方法を示しました。 ビヘイビアーを使用すると、コマンドとやりとりするように設計されていないコントロールにコマンドを関連付けることができます。
 
 ## <a name="related-links"></a>関連リンク
 

@@ -1,18 +1,21 @@
 ---
 title: Xamarin.Forms シェルのレイアウト
-description: シェル アプリケーションにおけるポップアップの次のレベルのナビゲーションは、下部のタブ バーです。 または、アプリケーションのナビゲーション パターンを下部のタブから始めて、ポップアップを使用しないようにすることができます。 どちらの場合も下部のタブに複数のページが含まれる場合は、上部のタブからページをナビゲートできます。
-ms.prod: xamarin
-ms.assetid: 318D81DB-E456-4E44-B083-36A27DBD9523
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/06/2019
-ms.openlocfilehash: 0ffcbe99ef9696c5fde501809bea5ddcc7a793a7
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: fa49cdb7944e3ab942ccda611af906e2822b072a
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303847"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139959"
 ---
 # <a name="xamarinforms-shell-tabs"></a>Xamarin.Forms シェルのタブ
 
@@ -27,7 +30,7 @@ ms.locfileid: "79303847"
 
 各 `FlyoutItem` または `TabBar` オブジェクトには 1 つ以上の `Tab` オブジェクトを含めることができ、各 `Tab` オブジェクトは下部のタブ バー上の 1 つのタブを表します。 各 `Tab` オブジェクトには 1 つ以上の `ShellContent` オブジェクトを含めることができ、各 `ShellContent` オブジェクトにより 1 つの [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトが表示されます。 複数の `ShellContent` オブジェクトが `Tab` オブジェクト内にある場合は、上部タブから `ContentPage` オブジェクトをナビゲートできます。
 
-各 [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクト内で、追加の `ContentPage` オブジェクトに移動できます。 ナビゲーションについて詳しくは、「[Xamarin.Forms シェルのナビゲーション](navigation.md)」をご覧ください。
+各 [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクト内で、追加の `ContentPage` オブジェクトに移動できます。 ナビゲーションの詳細については、「[Xamarin.Forms シェルのナビゲーション](navigation.md)」を参照してください。
 
 ## <a name="single-page-application"></a>シングル ページ アプリケーション
 
@@ -166,7 +169,7 @@ ms.locfileid: "79303847"
 </Shell>
 ```
 
-各 [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクト内で、追加の `ContentPage` オブジェクトに移動できます。 ナビゲーションについて詳しくは、「[Xamarin.Forms シェルのナビゲーション](navigation.md)」をご覧ください。
+各 [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクト内で、追加の `ContentPage` オブジェクトに移動できます。 ナビゲーションの詳細については、「[Xamarin.Forms シェルのナビゲーション](navigation.md)」を参照してください。
 
 > [!NOTE]
 > 各 `ShellContent` オブジェクトの [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) は、親 `Tab` オブジェクトから継承されます。
@@ -293,7 +296,7 @@ ms.locfileid: "79303847"
 </Style>
 ```
 
-さらに、タブはカスケード スタイル シート (CSS) を使ってスタイル設定することもできます。 詳しくは、「[Xamarin.Forms シェル固有のプロパティ](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties)」をご覧ください。
+さらに、タブはカスケード スタイル シート (CSS) を使ってスタイル設定することもできます。 詳細については、「[Xamarin.Forms シェル固有のプロパティ](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 

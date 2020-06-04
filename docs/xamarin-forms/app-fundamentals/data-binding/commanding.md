@@ -1,20 +1,23 @@
 ---
-title: Xamarin.Forms のコマンド インターフェイス
+title: Xamarin.Forms コマンド インターフェイス
 description: この記事では、Xamarin.Forms のデータ バインディングで Command プロパティを実装する方法について説明します。 コマンド実行インターフェイスでは、MVVM アーキテクチャにいっそうよく適した代わりのコマンド実装方法が提供されます。
-ms.prod: xamarin
-ms.assetid: 69922284-F398-45C3-B4CC-B8E29BB4C533
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/05/2018
-ms.openlocfilehash: 185aebf48b24a6abbdd8f56dbbfc32f6e99f6e63
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 253255f08cec6f08e03df94798c8572f7cf10f30
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75545612"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139725"
 ---
-# <a name="the-xamarinforms-command-interface"></a>Xamarin.Forms のコマンド インターフェイス
+# <a name="the-xamarinforms-command-interface"></a>Xamarin.Forms コマンド インターフェイス
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
@@ -80,7 +83,7 @@ ViewModel では、`ICommand` インターフェイスを実装するクラス�
 
 ViewModel で `ICommand` 型のプロパティを定義するときは、`ICommand` インターフェイスを実装するクラスも ViewModel に含まれるか、または ViewModel で参照されている必要があります。 このクラスでは、`Execute` および `CanExecute` メソッドが含まれるか参照されていて、`CanExecute` メソッドで異なる値が返されたときは常に `CanExecuteChanged` イベントが生成される必要があります。
 
-このようなクラスは、自分で作成しても、他で作成されたものを使用してもかまいません。 `ICommand` は Microsoft Windows の一部なので、何年も Windows MVVM アプリケーションで使用されてきました。 `ICommand` を実装する Windows クラスを使用すると、Windows アプリケーションと Xamarin.Forms アプリケーションの間で、ViewModel を共有することができます。
+このようなクラスは、自分で作成しても、他で作成されたものを使用してもかまいません。 `ICommand` は Microsoft Windows の一部なので、何年も Windows MVVM アプリケーションで使用されてきました。 `ICommand` を実装する Windows クラスを使用すると、Windows アプリケーションと Xamarin.Forms アプリケーションの間で、ViewModel を共有できます。
 
 Windows と Xamarin.Forms の間で ViewModel を共有する必要がない場合は、Xamarin.Forms に含まれる [`Command`](xref:Xamarin.Forms.Command) または [`Command<T>`](xref:Xamarin.Forms.Command`1) クラスを使用して、`ICommand` インターフェイスを実装できます。 これらのクラスを使用すると、クラスのコンストラクターで `Execute` および `CanExecute` メソッドの本体を指定できます。 同じ `ICommand` プロパティにバインドされている複数のビューを区別するために `CommandParameter` プロパティを使用する必要がある場合は `Command<T>` を使用し、その必要がない場合はより単純な `Command` クラスを使用します。
 
@@ -767,4 +770,4 @@ public partial class MainPage : ContentPage
 ## <a name="related-links"></a>関連リンク
 
 - [データ バインディングのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
-- [Xamarin.Forms 書籍のデータ バインディングに関する章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter18.md)
+- [Xamarin.Forms ブックのデータ バインディングに関する章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter18.md)

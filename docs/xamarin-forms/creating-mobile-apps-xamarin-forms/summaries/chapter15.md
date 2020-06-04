@@ -1,18 +1,22 @@
 ---
-title: '第 15 章の概要: 対話型インターフェイス'
-description: 'Xamarin.Forms でモバイル アプリを作成する:第 15 章の概要: 対話型インターフェイス'
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: F54E86F4-1CDA-474E-9B09-242060C2C13D
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/07/2017
-ms.openlocfilehash: 5f96d2f4b619bbb10bb58e9b1b5dc7007c1ce888
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 15. The interactive interface''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9bb930c2d0e4b6281b1aa48589ea5245eedc1a60
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77131102"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136748"
 ---
 # <a name="summary-of-chapter-15-the-interactive-interface"></a>第 15 章の概要: 対話型インターフェイス
 
@@ -22,7 +26,7 @@ ms.locfileid: "77131102"
 
 ## <a name="view-overview"></a>ビューの概要
 
-Xamarin.Forms には、`View` から派生し、`Layout` からは派生しない、20 個のインスタンス化可能なクラスが含まれています。 それらのうち 6 つについては、これまでの章で説明しました。
+Xamarin.Forms には、`View` から派生するが `Layout` からは派生しない、20 個のインスタンス化可能なクラスが含まれています。 それらのうち 6 つについては、これまでの章で説明しました。
 
 - `Label`:[**第 2 章: アプリの詳細**](chapter02.md)
 - `BoxView`:[**第 3 章: スタックのスクロール**](chapter03.md)
@@ -122,7 +126,7 @@ Xamarin.Forms には、`View` から派生し、`Layout` からは派生しな�
 
 ## <a name="typing-text"></a>テキスト入力
 
-Xamarin.Forms には、ユーザーがテキストの入力と編集ができるようにする 3 つのビューが定義されています。
+Xamarin.Forms では、ユーザーがテキストの入力と編集ができるようにする 3 つのビューが定義されています。
 
 - 1 行のテキスト用の [`Entry`](xref:Xamarin.Forms.Entry)
 - 複数行のテキスト用の [`Editor`](xref:Xamarin.Forms.Editor)
@@ -150,7 +154,7 @@ Xamarin.Forms には、ユーザーがテキストの入力と編集ができる
 
 これにより、表示されるキーボードの種類が示されます。 一部のキーボードは、URI または数値用に最適化されています。
 
-`Keyboard` クラスを使用すると、静的な [`Keyboard.Create`](xref:Xamarin.Forms.Keyboard.Create(Xamarin.Forms.KeyboardFlags)) メソッドで、次のビット フラグを持つ列挙型である [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) 型の引数を持つキーボードを定義できます。
+`Keyboard` クラスを使用すると、静的な [`Keyboard.Create`](xref:Xamarin.Forms.Keyboard.Create(Xamarin.Forms.KeyboardFlags)) メソッドで、以下のビット フラグを持つ列挙型である [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) 型の引数を持つキーボードを定義できます。
 
 - 0 に設定された `None`
 - 1 に設定された [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence)

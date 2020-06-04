@@ -1,18 +1,21 @@
 ---
 title: Xamarin.Forms のトリガー
 description: この記事では、Xamarin.Forms のトリガーを使用して、XAML でのユーザー インターフェイスの変更に応答する方法について説明します。 トリガーを使用すると、イベントまたはプロパティの変更に基づいてコントロールの外観を変更するアクションを XAML での宣言として表すことができます。
-ms.prod: xamarin
-ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/17/2020
-ms.openlocfilehash: b4eeb776cafa131f13eb70aca5bd20df6eafa07f
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f92ad47ae883f4b1b413ae5192a9add83045bb77
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82516727"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136956"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms のトリガー
 
@@ -101,7 +104,7 @@ ms.locfileid: "82516727"
 ```
 
 > [!TIP]
-> `Path=Text.Length` を評価するときは常に、ターゲット プロパティの既定値が提供されます (例:  `Text=""`)。そうしないと `null` になって、トリガーが意図したとおりに動作しないためです。
+> `Path=Text.Length` を評価するときは常に、ターゲット プロパティの既定値が提供されます (例: `Text=""`)。そうしないと `null` になって、トリガーが意図したとおりに動作しないためです。
 
 `Setter` を指定するだけでなく、[`EnterActions` と `ExitActions`](#enteractions-and-exitactions) を提供することもできます。
 

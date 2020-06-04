@@ -1,19 +1,22 @@
 ---
 title: Xamarin.Forms の App クラス
-description: この記事では、既定の App クラスの機能について説明します。このクラスには、アプリの最初のページを設定されるプロパティと、ライフサイクルの状態変化をまたいで格納されるシンプルな値のための永続ディクショナリが含まれます。
-ms.prod: xamarin
-ms.assetid: 421F8294-1944-46A4-8459-D2BD5AAABC9D
-ms.technology: xamarin-forms
-ms.custom: video
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/19/2016
-ms.openlocfilehash: aaf2086fd8128d68baa401ab646b31bcbc279545
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+ms.custom: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2f4b568809f949d813de86ae88cbe621cfa3161c
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303769"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84129689"
 ---
 # <a name="xamarinforms-app-class"></a>Xamarin.Forms の App クラス
 
@@ -112,7 +115,7 @@ if (Application.Current.Properties.ContainsKey("id"))
 
 Xamarin.Forms 1.4 では、`Application` クラスに追加メソッド `SavePropertiesAsync()` が導入されました。このメソッドを呼び出すと、`Properties` ディクショナリを事前に保存できます。 これにより、クラッシュまたは OS による強制終了のためにプロパティがシリアル化されないリスクなしに、重要な更新後にプロパティを保存できます。
 
-`Properties` ディクショナリの使用に関する参考資料については、「**Creating Mobile Apps with Xamarin.Forms**」(Xamarin.Forms でモバイル アプリを作成する) の第 [6](https://developer.xamarin.com/r/xamarin-forms/book/chapter06.pdf)、[15](https://developer.xamarin.com/r/xamarin-forms/book/chapter15.pdf)、[20](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf) 章、および関連する[サンプル](https://github.com/xamarin/xamarin-forms-book-preview-2)をご覧ください。
+`Properties` ディクショナリの使用に関する参考資料については、『**Creating Mobile Apps with Xamarin.Forms** 』(Xamarin.Forms でモバイル アプリを作成する) の第 [6](https://developer.xamarin.com/r/xamarin-forms/book/chapter06.pdf)、[15](https://developer.xamarin.com/r/xamarin-forms/book/chapter15.pdf)、[20](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf) 章、および関連する[サンプル](https://github.com/xamarin/xamarin-forms-book-preview-2)をご覧ください。
 
 ## <a name="the-application-class"></a>Application クラス
 

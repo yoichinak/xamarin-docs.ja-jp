@@ -1,18 +1,21 @@
 ---
-title: Entry のカスタマイズ
+title: ''
 description: Xamarin.Forms の Entry コントロールによって、1 行のテキストを編集対象にできます。 この記事では、Entry コントロール用のカスタム レンダラーを作成する方法を示します。これにより、開発者は既定のネイティブ レンダリングを、各自のプラットフォームに固有のカスタマイズでオーバーライドできるようになります。
-ms.prod: xamarin
-ms.assetid: 7B5DD10D-0411-424F-88D8-8A474DF16D8D
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/26/2018
-ms.openlocfilehash: 86714c2041edcd98c2bdd7b740a897dab8069752
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 61bd66fd25b7aea3e5be346f79e63d410164b002
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82516475"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138984"
 ---
 # <a name="customizing-an-entry"></a>Entry のカスタマイズ
 
@@ -20,7 +23,7 @@ ms.locfileid: "82516475"
 
 _Xamarin.Forms の Entry コントロールによって、1 行のテキストを編集対象にできます。この記事では、Entry コントロール用のカスタム レンダラーを作成する方法を示します。これにより、開発者は既定のネイティブ レンダリングを、各自のプラットフォームに固有のカスタマイズでオーバーライドできるようになります。_
 
-すべての Xamarin.Forms コントロールには、ネイティブ コントロールのインスタンスを作成する各プラットフォーム用のレンダラーが付属しています。 [`Entry`](xref:Xamarin.Forms.Entry) コントロールが Xamarin.Forms アプリケーションによってレンダリングされると、iOS で `EntryRenderer` クラスがインスタンス化され、それによってネイティブの `UITextField` コントロールもインスタンス化されます。 Android プラットフォーム上では、`EntryRenderer` クラスによって `EditText` コントロールがインスタンス化されます。 ユニバーサル Windows プラットフォーム (UWP) 上では、`EntryRenderer` クラスによって `TextBox` コントロールがインスタンス化されます。 Xamarin.Forms コントロールによってマップされるレンダラーとネイティブ コントロール クラスの詳細については、「[Renderer Base Classes and Native Controls](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)」 (レンダラーの基底クラスおよびネイティブ コントロール) を参照してください。
+すべての Xamarin.Forms コントロールには、ネイティブ コントロールのインスタンスを作成する各プラットフォーム用のレンダラーが付属しています。 [`Entry`](xref:Xamarin.Forms.Entry) コントロールが Xamarin.Forms アプリケーションによってレンダリングされると、iOS で `EntryRenderer` クラスがインスタンス化され、それによってネイティブの `UITextField` コントロールもインスタンス化されます。 Android プラットフォーム上では、`EntryRenderer` クラスによって `EditText` コントロールがインスタンス化されます。 ユニバーサル Windows プラットフォーム (UWP) 上では、`EntryRenderer` クラスによって `TextBox` コントロールがインスタンス化されます。 Xamarin.Forms コントロールによってマップされるレンダラーとネイティブ コントロール クラスの詳細については、「[Renderer Base Classes and Native Controls](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)」(レンダラーの基底クラスおよびネイティブ コントロール) を参照してください。
 
 次の図は、[`Entry`](xref:Xamarin.Forms.Entry) コントロールと、それを実装する、対応するネイティブ コントロールの関係を示しています。
 
@@ -117,11 +120,11 @@ public class MainPage : ContentPage
 
 ![](entry-images/screenshots.png "MyEntry Control on each Platform")
 
-`EntryRenderer` クラスは `OnElementChanged` メソッドを公開します。このメソッドは、該当するネイティブ コントロールをレンダリングするために、Xamarin.Forms カスタム コントロールの作成時に呼び出されます。 このメソッドでは、`OldElement` および `NewElement` プロパティを含む `ElementChangedEventArgs` パラメーターを受け取ります。 これらのプロパティは、レンダラーがアタッチされて*いた* Xamarin.Forms 要素と、レンダラーが現在アタッチされて*いる* Xamarin.Forms 要素をそれぞれ表しています。 サンプル アプリケーションでは、`OldElement` プロパティが `null` になり、`NewElement` プロパティに `MyEntry` コントロールへの参照が含まれます。
+`EntryRenderer` クラスは `OnElementChanged` メソッドを公開します。このメソッドは、該当するネイティブ コントロールをレンダリングするために、Xamarin.Forms コントロールの作成時に呼び出されます。 このメソッドでは、`OldElement` および `NewElement` プロパティを含む `ElementChangedEventArgs` パラメーターを受け取ります。 これらのプロパティは、レンダラーがアタッチされて*いた* Xamarin.Forms 要素と、レンダラーが現在アタッチされて*いる* Xamarin.Forms 要素をそれぞれ表しています。 サンプル アプリケーションでは、`OldElement` プロパティが `null` になり、`NewElement` プロパティに `MyEntry` コントロールへの参照が含まれます。
 
 `MyEntryRenderer` クラスの `OnElementChanged` メソッドのオーバーライドされたバージョンで、ネイティブ コントロールのカスタマイズが実行されます。 プラットフォーム上で使用されているネイティブ コントロールへの型指定された参照には、`Control` プロパティを使用してアクセスすることができます。 さらに、サンプル アプリケーションでは使用されていませんが、レンダリングされている Xamarin.Forms コントロールへの参照は、`Element` プロパティを使用して取得することができます。
 
-各カスタム レンダラー クラスは、レンダラーを Xamarin.Forms に登録する `ExportRenderer` 属性で修飾されます。 属性は、レンダリングされている Xamarin.Forms コントロールの型名と、カスタム レンダラーの型名の 2 つのパラメーターを取得します。 属性の `assembly` プレフィックスでは、属性がアセンブリ全体に適用されることを指定します。
+各カスタム レンダラー クラスは、レンダラーを Xamarin.Forms に登録する `ExportRenderer` 属性で修飾されます。 この属性は、レンダリングされている Xamarin.Forms コントロールの型名と、カスタム レンダラーの型名という 2 つのパラメーターを受け取ります。 属性の `assembly` プレフィックスでは、属性がアセンブリ全体に適用されることを指定します。
 
 次のセクションで、各プラットフォーム固有の `MyEntryRenderer` カスタム レンダラー クラスの実装について説明します。
 

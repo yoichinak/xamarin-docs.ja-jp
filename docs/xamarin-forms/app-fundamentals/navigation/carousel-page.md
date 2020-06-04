@@ -1,18 +1,21 @@
 ---
 title: Xamarin.Forms のカルーセル ページ
 description: Xamarin.Forms の CarouselPage は、ギャラリーのように、ユーザーが端から端までスワイプしてコンテンツの各ページをナビゲートできるページです。 この記事では、CarouselPage を使用してページのコレクション内を移動する方法を示します。
-ms.prod: xamarin
-ms.assetid: 2D14FC9D-DF5F-427E-9006-2AAE61ECF8DC
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 12/01/2017
-ms.openlocfilehash: 5cfaeb8589514972dfcccd11009a02c00f95bfac
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 4d0cebe98b66f3596e72624efed90e965b942bfc
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "72696443"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137528"
 ---
 # <a name="xamarinforms-carousel-page"></a>Xamarin.Forms のカルーセル ページ
 

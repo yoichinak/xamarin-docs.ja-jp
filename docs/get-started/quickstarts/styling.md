@@ -1,20 +1,23 @@
 ---
 title: クロスプラットフォーム Xamarin.Forms アプリケーションのスタイルを設定する
 description: この記事では、XAML スタイルで、クロスプラットフォーム Xamarin.Forms アプリケーションのスタイルを設定する方法を説明します。
-zone_pivot_groups: platform
-ms.topic: quickstart
-ms.prod: xamarin
-ms.assetid: CCCF8E57-D021-4542-8709-5808570FC26A
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/07/2020
-ms.openlocfilehash: fbd957c68d7a9aa2f8e44c91fab6174d8ed72014
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+zone_pivot_groups: ''
+ms.topic: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2d458bafc5bb1c8dcffc7858fd15734187f7612b
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77068748"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84134070"
 ---
 # <a name="style-a-cross-platform-xamarinforms-application"></a>クロスプラットフォーム Xamarin.Forms アプリケーションのスタイルを設定する
 
@@ -73,7 +76,7 @@ ms.locfileid: "77068748"
     </Application>
     ```
 
-    このコードにより、[`Thickness`](xref:Xamarin.Forms.Thickness) 値、一連の [`Color`](xref:Xamarin.Forms.Color) 値、および [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) と [`ContentPage`](xref:Xamarin.Forms.ContentPage) の暗黙的なスタイルが定義されます。 アプリケーション レベル [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) にあるこれらのスタイルは、アプリケーション全体で使用できることに注意してください。 XAML のスタイル設定の詳細については、「[Xamarin.Forms クイックスタートの詳細](deepdive.md)」の「[スタイル設定](deepdive.md#styling)」を参照してください。
+    このコードにより、[`Thickness`](xref:Xamarin.Forms.Thickness) 値、一連の [`Color`](xref:Xamarin.Forms.Color) 値、および [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) と [`ContentPage`](xref:Xamarin.Forms.ContentPage) の暗黙的なスタイルが定義されます。 アプリケーション レベル [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) にあるこれらのスタイルは、アプリケーション全体で使用できることに注意してください。 XAML のスタイル設定の詳細については、「[Xamarin.Forms クイックスタート Deep Dive](deepdive.md)」の「[スタイル設定](deepdive.md#styling)」を参照してください。
 
     **CTRL + S** を押し、**App.xaml** への変更内容を保存してから、ファイルを閉じます。
 
@@ -113,7 +116,7 @@ ms.locfileid: "77068748"
     </ContentPage>
     ```
 
-    このコードにより、[`ListView`](xref:Xamarin.Forms.ListView) に対する暗黙的なスタイルがページ レベル [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) に追加され、`ListView.Margin` プロパティがアプリケーション レベル `ResourceDictionary` で定義されている値に設定されます。 暗黙的なスタイル `ListView` は、`NotesPage` によってのみ使用されるため、ページ レベル `ResourceDictionary` に追加されていることに注意してください。 XAML のスタイル設定の詳細については、「[Xamarin.Forms クイックスタートの詳細](deepdive.md)」の「[スタイル設定](deepdive.md#styling)」を参照してください。
+    このコードにより、[`ListView`](xref:Xamarin.Forms.ListView) に対する暗黙的なスタイルがページ レベル [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) に追加され、`ListView.Margin` プロパティがアプリケーション レベル `ResourceDictionary` で定義されている値に設定されます。 暗黙的なスタイル `ListView` は、`NotesPage` によってのみ使用されるため、ページ レベル `ResourceDictionary` に追加されていることに注意してください。 XAML のスタイル設定の詳細については、「[Xamarin.Forms クイックスタート Deep Dive](deepdive.md)」の「[スタイル設定](deepdive.md#styling)」を参照してください。
 
     **Ctrl + S** キーを押して **NotesPage.xaml** への変更内容を保存してから、ファイルを閉じます。
 
@@ -162,7 +165,7 @@ ms.locfileid: "77068748"
     </ContentPage>
     ```
 
-    このコードにより、[`Editor`](xref:Xamarin.Forms.Editor) ビューと [`Button`](xref:Xamarin.Forms.Button) ビューに対する暗黙的なスタイルがページ レベル [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) に追加され、`StackLayout.Margin` プロパティがアプリケーション レベル `ResourceDictionary` で定義されている値に設定されます。 暗黙的なスタイル `Editor` と `Button` は、`NoteEntryPage` によってのみ使用されるため、ページ レベル `ResourceDictionary` に追加されていることに注意してください。 XAML のスタイル設定の詳細については、「[Xamarin.Forms クイックスタートの詳細](deepdive.md)」の「[スタイル設定](deepdive.md#styling)」を参照してください。
+    このコードにより、[`Editor`](xref:Xamarin.Forms.Editor) ビューと [`Button`](xref:Xamarin.Forms.Button) ビューに対する暗黙的なスタイルがページ レベル [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) に追加され、`StackLayout.Margin` プロパティがアプリケーション レベル `ResourceDictionary` で定義されている値に設定されます。 暗黙的なスタイル `Editor` と `Button` は、`NoteEntryPage` によってのみ使用されるため、ページ レベル `ResourceDictionary` に追加されていることに注意してください。 XAML のスタイル設定の詳細については、「[Xamarin.Forms クイックスタート Deep Dive](deepdive.md)」の「[スタイル設定](deepdive.md#styling)」を参照してください。
 
     **Ctrl + S** キーを押して **NoteEntryPage.xaml** への変更内容を保存してから、ファイルを閉じます。
 
@@ -211,7 +214,7 @@ ms.locfileid: "77068748"
     </Application>
     ```
 
-    このコードにより、[`Thickness`](xref:Xamarin.Forms.Thickness) 値、一連の [`Color`](xref:Xamarin.Forms.Color) 値、および [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) と [`ContentPage`](xref:Xamarin.Forms.ContentPage) の暗黙的なスタイルが定義されます。 アプリケーション レベル [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) にあるこれらのスタイルは、アプリケーション全体で使用できることに注意してください。 XAML のスタイル設定の詳細については、「[Xamarin.Forms クイックスタートの詳細](deepdive.md)」の「[スタイル設定](deepdive.md#styling)」を参照してください。
+    このコードにより、[`Thickness`](xref:Xamarin.Forms.Thickness) 値、一連の [`Color`](xref:Xamarin.Forms.Color) 値、および [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) と [`ContentPage`](xref:Xamarin.Forms.ContentPage) の暗黙的なスタイルが定義されます。 アプリケーション レベル [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) にあるこれらのスタイルは、アプリケーション全体で使用できることに注意してください。 XAML のスタイル設定の詳細については、「[Xamarin.Forms クイックスタート Deep Dive](deepdive.md)」の「[スタイル設定](deepdive.md#styling)」を参照してください。
 
     **[ファイル]、[保存]** の順に選択し (または **& #8984; + S** キーを押し)、**App.xaml** への変更内容を保存してから、ファイルを閉じます。
 
@@ -251,7 +254,7 @@ ms.locfileid: "77068748"
     </ContentPage>
     ```
 
-    このコードにより、[`ListView`](xref:Xamarin.Forms.ListView) に対する暗黙的なスタイルがページ レベル [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) に追加され、`ListView.Margin` プロパティがアプリケーション レベル `ResourceDictionary` で定義されている値に設定されます。 暗黙的なスタイル `ListView` は、`NotesPage` によってのみ使用されるため、ページ レベル `ResourceDictionary` に追加されていることに注意してください。 XAML のスタイル設定の詳細については、「[Xamarin.Forms クイックスタートの詳細](deepdive.md)」の「[スタイル設定](deepdive.md#styling)」を参照してください。
+    このコードにより、[`ListView`](xref:Xamarin.Forms.ListView) に対する暗黙的なスタイルがページ レベル [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) に追加され、`ListView.Margin` プロパティがアプリケーション レベル `ResourceDictionary` で定義されている値に設定されます。 暗黙的なスタイル `ListView` は、`NotesPage` によってのみ使用されるため、ページ レベル `ResourceDictionary` に追加されていることに注意してください。 XAML のスタイル設定の詳細については、「[Xamarin.Forms クイックスタート Deep Dive](deepdive.md)」の「[スタイル設定](deepdive.md#styling)」を参照してください。
 
     **[ファイル]、[保存]** の順に選択し (または **&#8984; + S** キーを押し)、**NotesPage.xaml** への変更内容を保存してから、ファイルを閉じます。
 
@@ -300,7 +303,7 @@ ms.locfileid: "77068748"
     </ContentPage>
     ```
 
-    このコードにより、[`Editor`](xref:Xamarin.Forms.Editor) ビューと [`Button`](xref:Xamarin.Forms.Button) ビューに対する暗黙的なスタイルがページ レベル [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) に追加され、`StackLayout.Margin` プロパティがアプリケーション レベル `ResourceDictionary` で定義されている値に設定されます。 暗黙的なスタイル `Editor` と `Button` は、`NoteEntryPage` によってのみ使用されるため、ページ レベル `ResourceDictionary` に追加されていることに注意してください。 XAML のスタイル設定の詳細については、「[Xamarin.Forms クイックスタートの詳細](deepdive.md)」の「[スタイル設定](deepdive.md#styling)」を参照してください。
+    このコードにより、[`Editor`](xref:Xamarin.Forms.Editor) ビューと [`Button`](xref:Xamarin.Forms.Button) ビューに対する暗黙的なスタイルがページ レベル [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) に追加され、`StackLayout.Margin` プロパティがアプリケーション レベル `ResourceDictionary` で定義されている値に設定されます。 暗黙的なスタイル `Editor` と `Button` は、`NoteEntryPage` によってのみ使用されるため、ページ レベル `ResourceDictionary` に追加されていることに注意してください。 XAML のスタイル設定の詳細については、「[Xamarin.Forms クイックスタート Deep Dive](deepdive.md)」の「[スタイル設定](deepdive.md#styling)」を参照してください。
 
     **[ファイル]、[保存]** の順に選択し (または **&#8984; + S** キーを押し)、**NoteEntryPage.xaml** への変更内容を保存してから、ファイルを閉じます。
 
@@ -316,7 +319,7 @@ ms.locfileid: "77068748"
 
 - XAML スタイルを使用して Xamarin.Forms アプリケーションのスタイルを設定する。
 
-Xamarin. Forms を使用したアプリケーション開発の基礎の詳細については、クイックスタートの詳細に進みます。
+Xamarin.Forms を使用したアプリケーション開発の基礎の詳細については、クイックスタート Deep Dive に進みます。
 
 > [!div class="nextstepaction"]
 > [次へ](deepdive.md)
@@ -324,4 +327,4 @@ Xamarin. Forms を使用したアプリケーション開発の基礎の詳細�
 ## <a name="related-links"></a>関連リンク
 
 - [Notes (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-styled/)
-- [Xamarin.Forms クイックスタートの詳細](deepdive.md)
+- [Xamarin.Forms クイックスタート Deep Dive](deepdive.md)

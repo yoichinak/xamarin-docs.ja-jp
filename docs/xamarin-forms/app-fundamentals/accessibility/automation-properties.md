@@ -1,20 +1,23 @@
 ---
-title: オートメーションのプロパティ
+title: ''
 description: この記事では、スクリーン リーダーでページの要素について読み上げることができるように、Xamarin.Forms アプリケーションで AutomationProperties クラスを使用する方法について説明します。
-ms.prod: xamarin
-ms.assetid: c0bb6893-fd26-47e7-88e5-3c333c9f786c
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 12/18/2018
-ms.openlocfilehash: 12c6229c1922f0bd4a4d25ca796bcb46141a326c
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ad6d315ccc5be0a7709164d40685c842b61b90b4
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77131139"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84129962"
 ---
-# <a name="automation-properties-in-xamarinforms"></a>Xamarin.Forms でのオートメーション プロパティ
+# <a name="automation-properties-in-xamarinforms"></a>Xamarin.Forms でのオートメーションのプロパティ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)
 

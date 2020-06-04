@@ -1,18 +1,21 @@
 ---
-title: マップ ピンのカスタマイズ
-description: この記事では、各プラットフォーム上でカスタマイズされたピンとピン データのカスタマイズされたビューを含むネイティブ マップを表示する、マップ コントロール用のカスタム レンダラーを作成する方法を示します。
-ms.prod: xamarin
-ms.assetid: C5481D86-80E9-4E3D-9FB6-57B0F93711A6
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/06/2019
-ms.openlocfilehash: 513ba16f0cb74e330cc3b681e0880b685f0c226c
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 30fcc8304d32d8ebdef38df8550bcd8c26514701
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82532597"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135331"
 ---
 # <a name="customizing-a-map-pin"></a>マップ ピンのカスタマイズ
 
@@ -20,7 +23,7 @@ ms.locfileid: "82532597"
 
 _この記事では、各プラットフォーム上でカスタマイズされたピンとピン データのカスタマイズされたビューを含むネイティブ マップを表示する、マップ コントロール用のカスタム レンダラーを作成する方法を示します。_
 
-すべての Xamarin.Forms ビューに、ネイティブ コントロールのインスタンスを作成する各プラットフォーム用のレンダラーが付属しています。 iOS で Xamarin.Forms アプリケーションによって [`Map`](xref:Xamarin.Forms.Maps.Map) がレンダリングされると、`MapRenderer` クラスがインスタンス化され、次に、ネイティブの `MKMapView` コントロールがインスタンス化されます。 Android プラットフォーム上では、`MapRenderer` クラスによってネイティブの `MapView` コントロールがインスタンス化されます。 ユニバーサル Windows プラットフォーム (UWP) 上では、`MapRenderer` クラスによってネイティブの `MapControl` がインスタンス化されます。 Xamarin.Forms コントロールによってマップされるレンダラーとネイティブ コントロール クラスの詳細については、「[Renderer Base Classes and Native Controls](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)」(レンダラーの基底クラスとネイティブ コントロール) を参照してください。
+すべての Xamarin.Forms ビューには、ネイティブ コントロールのインスタンスを作成する各プラットフォーム用のレンダラーが付属しています。 Xamarin.Forms アプリケーションによって [`Map`](xref:Xamarin.Forms.Maps.Map) がレンダリングされると、iOS では `MapRenderer` クラスがインスタンス化され、それによってネイティブの `MKMapView` コントロールもインスタンス化されます。 Android プラットフォーム上では、`MapRenderer` クラスによってネイティブの `MapView` コントロールがインスタンス化されます。 ユニバーサル Windows プラットフォーム (UWP) 上では、`MapRenderer` クラスによってネイティブの `MapControl` がインスタンス化されます。 Xamarin.Forms コントロールによってマップされるレンダラーとネイティブ コントロール クラスの詳細については、「[Renderer Base Classes and Native Controls](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)」(レンダラーの基底クラスおよびネイティブ コントロール) を参照してください。を参照してください。
 
 次の図は、[`Map`](xref:Xamarin.Forms.Maps.Map) と、それを実装する、対応しているネイティブ コントロールの関係を示しています。
 
@@ -28,7 +31,7 @@ _この記事では、各プラットフォーム上でカスタマイズされ�
 
 レンダリング プロセスを使用して各プラットフォーム上の [`Map`](xref:Xamarin.Forms.Maps.Map) にカスタム レンダラーを作成することで、プラットフォーム固有のカスタマイズを実装することができます。 その実行プロセスは次のとおりです。
 
-1. Xamarin.Forms カスタム マップを[作成](#Creating_the_Custom_Map)します。
+1. Xamarin.Forms のカスタム マップを[作成](#Creating_the_Custom_Map)します。
 1. Xamarin.Forms からカスタム マップを[使用](#Consuming_the_Custom_Map)します。
 1. 各プラットフォーム上でマップのカスタム レンダラーを[作成](#Creating_the_Custom_Renderer_on_each_Platform)します。
 
@@ -130,8 +133,8 @@ public MapPage()
 カスタム レンダラー クラスを作成するプロセスは次のとおりです。
 
 1. カスタム マップをレンダリングする `MapRenderer` クラスのサブクラスを作成します。
-1. カスタム マップをレンダリングする `OnElementChanged` メソッドをオーバーライドし、ロジックを書き込んでカスタマイズします。 対応する Xamarin.Forms カスタム マップの作成時に、このメソッドが呼び出されます。
-1. `ExportRenderer` 属性をカスタム レンダラー クラスに追加し、Xamarin.Forms カスタム マップのレンダリングに使用されるように指定します。 この属性は、Xamarin.Forms にカスタム レンダラーを登録するために使用されます。
+1. カスタム マップをレンダリングする `OnElementChanged` メソッドをオーバーライドし、ロジックを書き込んでカスタマイズします。 対応する Xamarin.Forms カスタム マップが作成されるときに、このメソッドが呼び出されます。
+1. `ExportRenderer` 属性をカスタム レンダラー クラスに追加し、それを使用して Xamarin.Forms のカスタム マップをレンダリングすることを指定します。 この属性は、Xamarin.Forms にカスタム レンダラーを登録するために使用されます。
 
 > [!NOTE]
 > プラットフォーム プロジェクトごとにカスタム レンダラーを指定するかどうかは任意です。 カスタム レンダラーが登録されていない場合は、コントロールの基底クラス用の既定のレンダラーが使用されます。
@@ -144,7 +147,7 @@ public MapPage()
 
 ![](map-pin-images/screenshots.png "CustomMap on each Platform")
 
-`MapRenderer` クラスでは `OnElementChanged` メソッドを公開します。このメソッドは、対応するネイティブ コントロールをレンダリングするために、Xamarin.Forms カスタム マップの作成時に呼び出されます。 このメソッドでは、`OldElement` および `NewElement` プロパティを含む `ElementChangedEventArgs` パラメーターを受け取ります。 これらのプロパティは、レンダラーがアタッチされて*いた* Xamarin.Forms 要素と、レンダラーが現在アタッチされて*いる* Xamarin.Forms 要素をそれぞれ表しています。 サンプル アプリケーションでは、`OldElement` プロパティが `null` になり、`NewElement` プロパティに `CustomMap` インスタンスへの参照が含まれます。
+`MapRenderer` クラスは `OnElementChanged` メソッドを公開しています。このメソッドは、該当するネイティブ コントロールをレンダリングするために、Xamarin.Forms カスタム マップが作成されるときに呼び出されます。 このメソッドでは、`OldElement` および `NewElement` プロパティを含む `ElementChangedEventArgs` パラメーターを受け取ります。 これらのプロパティは、レンダラーがアタッチされて*いた* Xamarin.Forms 要素と、レンダラーが現在アタッチされて*いる* Xamarin.Forms 要素をそれぞれ表しています。 サンプル アプリケーションでは、`OldElement` プロパティが `null` になり、`NewElement` プロパティに `CustomMap` インスタンスへの参照が含まれます。
 
 各プラットフォーム固有のレンダラー クラス内の、オーバーライドされたバージョンの `OnElementChanged` メソッドは、ネイティブ コントロールのカスタマイズを行う場所です。 プラットフォーム上で使用されているネイティブ コントロールへの型指定された参照には、`Control` プロパティを使用してアクセスすることができます。 さらに、レンダリングされている Xamarin.Forms コントロールへの参照は、`Element` プロパティを使用して取得することができます。
 
@@ -167,9 +170,9 @@ protected override void OnElementChanged (ElementChangedEventArgs<Xamarin.Forms.
 }
 ```
 
-カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされているときにのみ、ネイティブ コントロールを構成し、イベント ハンドラーをサブスクライブする必要があります。 同様に、レンダラーがアタッチされている要素が変わるときにのみ、サブスクライブしていたイベント ハンドラーのサブスクライブをすべて解除する必要があります。 この手法を採用することは、メモリ リークが発生しないカスタム レンダラーの作成に役立ちます。
+カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされるときにのみ、ネイティブ コントロールを設定し、イベント ハンドラーを登録する必要があります。 同様に、レンダラーがアタッチされている要素が変わるときにのみ、サブスクライブしていたイベント ハンドラーのサブスクライブをすべて解除する必要があります。 この手法を採用することは、メモリ リークが発生しないカスタム レンダラーの作成に役立ちます。
 
-各カスタム レンダラー クラスは、レンダラーを Xamarin.Forms に登録する `ExportRenderer` 属性で修飾されます。 この属性は、レンダリングされている Xamarin.Forms カスタム コントロールの種類名と、カスタム レンダラーの種類名という 2 つのパラメーターを受け取ります。 属性の `assembly` プレフィックスでは、属性がアセンブリ全体に適用されることを指定します。
+各カスタム レンダラー クラスは、レンダラーを Xamarin.Forms に登録する `ExportRenderer` 属性で修飾されます。 この属性は、レンダリングされている Xamarin.Forms カスタム コントロールの型名と、カスタム レンダラーの型名という 2 つのパラメーターを受け取ります。 属性の `assembly` プレフィックスでは、属性がアセンブリ全体に適用されることを指定します。
 
 次のセクションで、各プラットフォーム固有のカスタム レンダラー クラスの実装について説明します。
 
@@ -226,7 +229,7 @@ namespace CustomRenderer.iOS
 }
 ```
 
-`OnElementChanged` メソッドでは、カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされている場合、次の [`MKMapView`](xref:MapKit.MKMapView) インスタンスの構成が実行されます。
+`OnElementChanged` メソッドでは、カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされる場合、次の [`MKMapView`](xref:MapKit.MKMapView) インスタンスの構成が実行されます。
 
 - [`GetViewForAnnotation`](xref:MapKit.MKMapView.GetViewForAnnotation*) プロパティは `GetViewForAnnotation` メソッドに設定されます。 このメソッドは、[注釈の場所がマップで表示されるようになった](#Displaying_the_Annotation)ときに呼び出され、表示する前に注釈をカスタマイズするために使用されます。
 - `CalloutAccessoryControlTapped`、`DidSelectAnnotationView`、および `DidDeselectAnnotationView` イベントのイベント ハンドラーが登録されます。 これらのイベントは、ユーザーが[吹き出しの右側のアクセサリをタップ](#Tapping_on_the_Right_Callout_Accessory_View)したとき、およびユーザーが注釈を[選択](#Selecting_the_Annotation)および[選択解除](#Deselecting_the_Annotation)したときに、それぞれ発生します。 レンダラーがアタッチされているイベントが変わった場合にのみ、イベントのサブスクライブが解除されます。
@@ -404,7 +407,7 @@ namespace CustomRenderer.Droid
 }
 ```
 
-カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされている場合は、`OnElementChanged` メソッドによってコントロールからカスタム ピンの一覧が取得されます。 `GoogleMap` インスタンスが使用できるようになったら、`OnMapReady` オーバーライドが呼び出されます。 このメソッドでは `InfoWindowClick` イベントのイベント ハンドラーが登録され、イベントは[情報ウィンドウがクリックされた](#Clicking_on_the_Info_Window)ときに発生し、レンダラーがアタッチされている要素が変わったときにのみ、サブスクライブが解除されます。 また、`OnMapReady` オーバーライドでは `SetInfoWindowAdapter` メソッドを呼び出し、`CustomMapRenderer` クラス インスタンスで、情報ウィンドウをカスタマイズするためのメソッドが提供されるように指定します。
+カスタム レンダラーが新しい `OnElementChanged` 要素にアタッチされる場合は、Xamarin.Forms メソッドによって、コントロールからカスタム ピンの一覧が取得されます。 `GoogleMap` インスタンスが使用できるようになったら、`OnMapReady` オーバーライドが呼び出されます。 このメソッドでは `InfoWindowClick` イベントのイベント ハンドラーが登録され、イベントは[情報ウィンドウがクリックされた](#Clicking_on_the_Info_Window)ときに発生し、レンダラーがアタッチされている要素が変わったときにのみ、サブスクライブが解除されます。 また、`OnMapReady` オーバーライドでは `SetInfoWindowAdapter` メソッドを呼び出し、`CustomMapRenderer` クラス インスタンスで、情報ウィンドウをカスタマイズするためのメソッドが提供されるように指定します。
 
 `CustomMapRenderer` クラスでは、[情報ウィンドウをカスタマイズする](#Customizing_the_Info_Window)ための `GoogleMap.IInfoWindowAdapter` インターフェイスが実装されます。 このインターフェイスで、次のメソッドを実装する必要があることを指定します。
 
@@ -583,7 +586,7 @@ namespace CustomRenderer.UWP
 }
 ```
 
-カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされている場合、`OnElementChanged` メソッドでは次の操作が行われます。
+カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされる場合、`OnElementChanged` メソッドでは次の操作が行われます。
 
 - `MapControl.Children` コレクションがクリアされ、`MapElementClick` イベントのイベント ハンドラーを登録する前に、マップから既存のユーザー インターフェイス要素が削除されます。 このイベントは、ユーザーが `MapControl` で `MapElement` をタップまたはクリックしたときに発生し、レンダラーがアタッチされている要素が変わったときにのみ、サブスクライブが解除されます。
 - `customPins` コレクション内の各ピンは、以下のように、マップ上の正しい地理的な場所に表示されます。

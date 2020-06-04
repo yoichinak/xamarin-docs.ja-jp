@@ -1,20 +1,23 @@
 ---
-title: Xamarin.Forms のテンプレート
+title: Xamarin.Forms テンプレート
 description: このガイドでは、Xamarin.Forms に用意されているテンプレートのサポートを使用する方法について説明します。 このサポートには、カスタム コントロールとカスタム ページの視覚的な構造を定義するコントロール テンプレートと、サポートされているコントロールのデータの表示を定義するデータ テンプレートが含まれます。
-ms.prod: xamarin
-ms.assetid: 4453C209-C068-47D5-A49B-0ECC95C0FB3B
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/13/2020
-ms.openlocfilehash: d5610a37d4700edb9cd2b9d8fb90a7506b66ca68
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 079c9079efdf224db1dee8a60f054439eeee8e8c
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75955693"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135929"
 ---
-# <a name="xamarinforms-templates"></a>Xamarin.Forms のテンプレート
+# <a name="xamarinforms-templates"></a>Xamarin.Forms テンプレート
 
 ## <a name="control-templates"></a>[コントロール テンプレート](control-template.md)
 

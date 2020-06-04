@@ -1,18 +1,22 @@
 ---
-title: '第 26 章の概要: カスタム レイアウト'
-description: 'Xamarin.Forms で Mobile Apps を作成する: 第 26 章の概要: カスタム レイアウト'
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: 2B7F4346-414E-49FF-97FB-B85E92D98A21
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/07/2017
-ms.openlocfilehash: 1eb5153f8ab295696e373f4fdb65a4f8820a05bc
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 26. Custom layouts''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: deb46d1a70e7c707c998be8669b4af3b8e8d7ead
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70770936"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136605"
 ---
 # <a name="summary-of-chapter-26-custom-layouts"></a>第 26 章の概要: カスタム レイアウト
 
@@ -37,7 +41,7 @@ Xamarin.Forms レイアウトを処理する集中管理型システムはあり
 
 ### <a name="sizing-and-positioning"></a>サイズと位置の決定
 
-レイアウトは、そのページでのビジュアル ツリーの一番上から開始され、すべての分岐を通ります。 レイアウトで最も重要なパブリック メソッドは、`VisualElement` によって定義された [`Layout`](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle)) です。 他の要素の親になっている要素はすべて、その子それぞれに対して `Layout` を呼び出して、[`Rectangle`](xref:Xamarin.Forms.Rectangle) 値の形式で子のサイズと位置を相対的に指定します。 これらの `Layout` の呼び出しは、ビジュアル ツリーを通じて伝達されます。
+レイアウトは、そのページでのビジュアル ツリーの一番上から開始され、すべての分岐を通ります。 レイアウトで最も重要なパブリック メソッドは、`VisualElement` によって定義されている [`Layout`](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle)) です。 他の要素の親になっている要素はすべて、その子それぞれに対して `Layout` を呼び出して、[`Rectangle`](xref:Xamarin.Forms.Rectangle) 値の形式で子のサイズと位置を相対的に指定します。 これらの `Layout` の呼び出しは、ビジュアル ツリーを通じて伝達されます。
 
 `Layout` の呼び出しは、画面上に要素を表示するために必要であり、呼び出しが行われると、次の読み取り専用プロパティが設定されます。 それらは、メソッドに渡される `Rectangle` と一致します。
 
@@ -58,7 +62,7 @@ Xamarin.Forms レイアウトを処理する集中管理型システムはあり
 
 - [`SizeChanged`](xref:Xamarin.Forms.VisualElement.SizeChanged)
 
-`OnSizeAllocated` メソッドは、Xamarin.Forms 内で 2 つだけの子を持つことができるクラスである `Page` と `Layout` によってオーバーライドされます。 オーバーライドされたメソッドでは、以下を呼び出します
+`OnSizeAllocated` メソッドは、Xamarin.Forms 内に 2 つだけ存在する、子を持つことができるクラスの `Page` と `Layout` によってオーバーライドされます。 オーバーライドされたメソッドでは、以下を呼び出します
 
 - `Page` の派生に対しては [`UpdateChildrenLayout`](xref:Xamarin.Forms.Page.UpdateChildrenLayout)、`Layout` の派生に対しては [`UpdateChildrenLayout`](xref:Xamarin.Forms.Layout.UpdateChildrenLayout) (以下を呼び出します)
 - `Page` の派生に対しては [`LayoutChildren`](xref:Xamarin.Forms.Page.LayoutChildren(System.Double,System.Double,System.Double,System.Double))、`Layout` の派生に対しては [`LayoutChildren`](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double))
@@ -133,7 +137,7 @@ Xamarin.Forms レイアウトを処理する集中管理型システムはあり
 
 ### <a name="vertical-and-horizontal-positioning-simplified"></a>簡略化された垂直および水平の位置決定
 
-`VerticalStack` によって実行される必要があるジョブの 1 つは、`LayoutChildren` のオーバーライド中に行われる必要があります。 メソッドでは、子の `HorizontalOptions` プロパティを使用して、`VerticalStack` のスロット内での子の配置方法を決定します。 代わりに、静的メソッド [`Layout.LayoutChildIntoBoundingRect`](xref:Xamarin.Forms.Layout.LayoutChildIntoBoundingRegion(Xamarin.Forms.VisualElement,Xamarin.Forms.Rectangle)) を呼び出すこともできます。 このメソッドでは、子に対して `Measure` を呼び出し、その `HorizontalOptions` と `VerticalOptions` プロパティを使用して、指定された四角形の中にその子を配置します。
+`VerticalStack` によって実行される必要があるジョブの 1 つは、`LayoutChildren` のオーバーライド中に行われる必要があります。 メソッドでは、子の `HorizontalOptions` プロパティを使用して、`VerticalStack` のスロット内での子の配置方法を決定します。 代わりに、静的メソッド [`Layout.LayoutChildIntoBoundingRect`](xref:Xamarin.Forms.Layout.LayoutChildIntoBoundingRegion(Xamarin.Forms.VisualElement,Xamarin.Forms.Rectangle)) を呼び出すことができます。 このメソッドでは、子に対して `Measure` を呼び出し、その `HorizontalOptions` と `VerticalOptions` プロパティを使用して、指定された四角形の中にその子を配置します。
 
 ### <a name="invalidation"></a>無効化
 

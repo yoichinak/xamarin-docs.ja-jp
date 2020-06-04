@@ -1,18 +1,21 @@
 ---
 title: Xamarin.Forms のジェスチャ
 description: このガイドでは、Xamarin.Forms のジェスチャ認識エンジンを使って、Xamarin.Forms アプリケーションでユーザーとビューのやり取りを検出する方法について説明します。
-ms.prod: xamarin
-ms.assetid: 0E197A51-2304-4C09-A710-C7FF24A89F15
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/25/2018
-ms.openlocfilehash: 33968fb935e8b69736ac338bfa0479e4f278e64a
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5e1e93f74ab8ef6d63213a8fbdc7ec45a794cf55
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "61184574"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137878"
 ---
 # <a name="xamarinforms-gestures"></a>Xamarin.Forms のジェスチャ
 

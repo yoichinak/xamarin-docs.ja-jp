@@ -1,18 +1,11 @@
 ---
-title: Xamarin.Essentials:音声合成
-description: Xamarin.Essentials の TextToSpeech クラスを使用すると、アプリケーションで組み込みの音声合成エンジンを利用して、デバイスからテキストを読み上げたり、エンジンがサポートしている利用可能な言語を照会したりすることができます。
-ms.assetid: AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: abe591d67ea749de4ae9a2f8dadf4df07712691a
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83149720"
+title: ''Xamarin.Essentials:音声合成'' description:'Xamarin.Essentials の TextToSpeech クラスを使用すると、アプリケーションで組み込みの音声合成エンジンを利用し、デバイスからテキストを読み上げたり、エンジンでサポート可能な使用できる言語を照会したりすることができます。'
+ms.assetid: author: ms.custom: ms.author: ms.date: no-loc:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
+
 # <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials:音声合成
 
 **TextToSpeech** クラスを使用すると、アプリケーションで組み込みの音声合成エンジンを利用して、デバイスからテキストを読み上げたり、エンジンがサポートしている利用可能な言語を照会したりすることができます。
@@ -23,7 +16,7 @@ ms.locfileid: "83149720"
 
 ## <a name="using-text-to-speech"></a>音声合成の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
@@ -121,7 +114,7 @@ public async Task SpeakNow()
 
 ### <a name="speech-locales"></a>音声のロケール
 
-テキストをさまざまな言語およびアクセントで読み上げるために、各プラットフォームではさまざまなロケールがサポートされています。 プラットフォームにはロケールを指定するためのさまざまなコードや方法があります。そのため、Xamarin.Essentials には、クロスプラットフォームの `Locale` クラスや、`GetLocalesAsync` でそれらを照会する方法が用意されています。
+テキストをさまざまな言語およびアクセントで読み上げるために、各プラットフォームではさまざまなロケールがサポートされています。 プラットフォームにはロケールを指定するためのさまざまなコードや方法があります。そのため Xamarin.Essentials には、クロスプラットフォームの `Locale` クラスや、`GetLocalesAsync` を使用してそれらを照会する方法が用意されています。
 
 ```csharp
 public async Task SpeakNow()

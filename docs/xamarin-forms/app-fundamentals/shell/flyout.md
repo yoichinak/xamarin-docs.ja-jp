@@ -1,18 +1,21 @@
 ---
 title: Xamarin.Forms シェルのポップアップ
-description: ポップアップは、シェル アプリケーションのルート メニューであり、アイコンから、または画面の横からスワイプして、アクセスすることが可能です。 ポップアップは、オプションのヘッダー、ポップアップ項目、およびオプションのメニュー項目から構成されています。
-ms.prod: xamarin
-ms.assetid: FEDE51EB-577E-4B3E-9890-B7C1A5E52516
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/22/2020
-ms.openlocfilehash: 5e5c50a9195ceb2716e3ca5306b72654fedc46e8
-ms.sourcegitcommit: 443ecd9146fe2a7bbb9b5ab6d33c835876efcf1f
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b336a594fa7525000e119333b56284368a23cc03
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82852472"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84134954"
 ---
 # <a name="xamarinforms-shell-flyout"></a>Xamarin.Forms シェルのポップアップ
 
@@ -22,7 +25,7 @@ ms.locfileid: "82852472"
 
 ![シェルの注釈付きポップアップのスクリーンショット](flyout-images/flyout-annotated.png "注釈付きフライアウト")
 
-ポップアップの背景色は、必要に応じて、バインド可能なプロパティ `Shell.FlyoutBackgroundColor` を使って [`Color`](xref:Xamarin.Forms.Color) に設定することができます。 このプロパティはカスケード スタイル シート (CSS) から設定することもできます。 詳しくは、「[Xamarin.Forms シェル固有のプロパティ](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties)」をご覧ください。
+ポップアップの背景色は、必要に応じて、バインド可能なプロパティ `Shell.FlyoutBackgroundColor` を使って [`Color`](xref:Xamarin.Forms.Color) に設定することができます。 このプロパティはカスケード スタイル シート (CSS) から設定することもできます。 詳細については、「[Xamarin.Forms シェル固有のプロパティ](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties)」を参照してください。
 
 ## <a name="flyout-icon"></a>ポップアップのアイコン
 
@@ -217,7 +220,7 @@ Shell.Current.FlyoutIsPresented = false;
 この暗黙的な変換では、各 [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトが自動的に `ShellContent` オブジェクトでラップされ、それが `Tab` オブジェクトでラップされ、それが `FlyoutItem` オブジェクトでラップされます。
 
 > [!IMPORTANT]
-> シェル アプリケーションでは、`ShellContent` オブジェクトの子である各 [`ContentPage`](xref:Xamarin.Forms.ContentPage) は、アプリケーションの起動中に作成されます。 この手法を利用してその他の `ShellContent` オブジェクトを追加すると、アプリケーションの起動時に追加のページが作成され、起動エクスペリエンスの低下を引き起こす場合があります。 ただし、シェルでは、ナビゲーションに応答して、必要に応じてページを作成することも可能です。 詳しくは、「[Xamarin.Forms シェルのタブ](tabs.md)」ガイドにある「[効率的なページの読み込み](tabs.md#efficient-page-loading)」をご覧ください。
+> シェル アプリケーションでは、`ShellContent` オブジェクトの子である各 [`ContentPage`](xref:Xamarin.Forms.ContentPage) は、アプリケーションの起動中に作成されます。 この手法を利用してその他の `ShellContent` オブジェクトを追加すると、アプリケーションの起動時に追加のページが作成され、起動エクスペリエンスの低下を引き起こす場合があります。 ただし、シェルでは、ナビゲーションに応答して、必要に応じてページを作成することも可能です。 詳細については、「[Xamarin.Forms シェルのタブ](tabs.md)」ガイドにある「[効率的なページの読み込み](tabs.md#efficient-page-loading)」を参照してください。
 
 ### <a name="flyoutitem-class"></a>FlyoutItem クラス
 

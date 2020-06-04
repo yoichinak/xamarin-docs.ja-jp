@@ -1,18 +1,21 @@
 ---
 title: Xamarin.Forms のデュアル画面のトリガー
 description: この記事では、Xamarin.Forms のデュアル画面のトリガーを使用して、XAML でのユーザー インターフェイスの変更に応答する方法について説明します。
-ms.prod: xamarin
-ms.assetid: 2181715D-3995-4E71-9A21-6B892F0B3B59
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 02/28/2020
-ms.openlocfilehash: 0cce23973c90c89ce90e40651a2646d5f1bdd2c0
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: df10327b2ac12d2b119f1ab558d7f27e8c319507
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "78165533"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84131197"
 ---
 # <a name="xamarinforms-dual-screen-triggers"></a>Xamarin.Forms のデュアル画面のトリガー
 

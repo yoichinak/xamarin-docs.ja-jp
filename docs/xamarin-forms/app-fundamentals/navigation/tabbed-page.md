@@ -1,24 +1,27 @@
 ---
 title: Xamarin.Forms の TabbedPage
-description: Xamarin.Form の TabbedPage は、タブのリストと大きい詳細エリアで構成されており、各タブでは、コンテンツが詳細エリアに読み込まれます。 この記事では、TabbedPage を使用してページのコレクションを移動する方法について説明します。
-ms.prod: xamarin
-ms.assetid: C946057F-C77C-412D-82A0-DAF475A24EF5
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/07/2019
-ms.openlocfilehash: 986045a4be352da0e439de87fdc70e2958b48d36
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: Xamarin.Forms の TabbedPage は、タブのリストと大きい詳細エリアで構成されており、各タブでは、コンテンツが詳細エリアに読み込まれます。 この記事では、TabbedPage を使用してページのコレクションを移動する方法について説明します。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 38389867ba52e63d8310e3b59d7838f58e8cf488
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303805"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137515"
 ---
 # <a name="xamarinforms-tabbedpage"></a>Xamarin.Forms の TabbedPage
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
 
-Xamarin.Form の [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) は、タブのリストと大きい詳細エリアで構成されており、各タブでは、コンテンツが詳細エリアに読み込まれます。 次のスクリーンショットは、iOS と Android での `TabbedPage` を示しています。
+Xamarin.Forms の [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) は、タブのリストと大きい詳細エリアで構成されており、各タブでは、コンテンツが詳細エリアに読み込まれます。 次のスクリーンショットは、iOS と Android での `TabbedPage` を示しています。
 
 [![iOS と Android 上の 3 つのタブを含む TabbedPage のスクリーンショット](tabbed-page-images/tabbedpage-today.png "3 つのタブがある TabbedPage")](tabbed-page-images/tabbedpage-today-large.png#lightbox "3 つのタブがある TabbedPage")
 

@@ -1,25 +1,29 @@
 ---
-title: '第 19 章の概要: コレクション ビュー'
-description: 'Xamarin.Forms を使用したモバイル アプリの作成: 第 19 章の概要: コレクション ビュー'
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: 0AEC3A5C-586E-4D0F-9895-67E99A053A79
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/18/2018
-ms.openlocfilehash: bffbd2dec4a8494723597ba6e0f0af69e57f3718
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 19. Collection views''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0eafdeffb6783a0ed54fdf23e6d10de24e2b4c6f
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73032866"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136696"
 ---
 # <a name="summary-of-chapter-19-collection-views"></a>第 19 章の概要: コレクション ビュー
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19)
 
 > [!NOTE] 
-> このページの注記では、Xamarin.Forms が本に記載されている資料と異なる部分が示されています。
+> このページの注記では、Xamarin.Forms が書籍に記載されている資料と異なる部分が示されています。
 
 Xamarin.Forms では、コレクションを保持し、その要素を表示する 3 つのビューが定義されています。
 
@@ -97,7 +101,7 @@ iOS および Android の表示では、細い線によって行が区切られ�
 - [`SwitchCell`](xref:Xamarin.Forms.SwitchCell) &mdash; `Label` 付きの `Switch` が含まれます
 - [`ViewCell`](xref:Xamarin.Forms.ViewCell) &mdash; 任意の `View`を指定できます (子を含むビューも可)
 
-次に、`DataTemplate` に対する [`SetValue`](xref:Xamarin.Forms.DataTemplate.SetValue(Xamarin.Forms.BindableProperty,System.Object)) および [`SetBinding`](xref:Xamarin.Forms.DataTemplate.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase)) を呼び出して、値を `Cell` プロパティと関連付けるか、`ItemsSource` コレクション内の項目のプロパティを参照する `Cell` プロパティにデータ バインディングを設定します。 この例は、[**TextCellListCode**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/TextCellListCode) サンプルで示されています。
+次に、`DataTemplate` オブジェクトの [`SetValue`](xref:Xamarin.Forms.DataTemplate.SetValue(Xamarin.Forms.BindableProperty,System.Object)) と [`SetBinding`](xref:Xamarin.Forms.DataTemplate.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase)) を呼び出して、値を `Cell` プロパティと関連付けるか、`ItemsSource` コレクション内の項目のプロパティを参照する `Cell` プロパティに対してデータ バインディングを設定します。 この例は、[**TextCellListCode**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter19/TextCellListCode) サンプルで示されています。
 
 各項目は、`ListView` によって表示されるため、テンプレートから小さいビジュアル ツリーが作成され、項目と、このビジュアル ツリー内の要素のプロパティとの間にデータ バインディングが確立されます。 このプロセスを理解するには、`ListView`の [`ItemAppearing`](xref:Xamarin.Forms.ListView.ItemAppearing) イベントおよび [`ItemDisappearing`](xref:Xamarin.Forms.ListView.ItemDisappearing) イベント用のハンドラーをインストールするか、項目のビジュアル ツリーを作成する必要があるたびに呼び出される関数を使用する代替の [`DataTemplate` コンストラクター](xref:Xamarin.Forms.DataTemplate.%23ctor(System.Func{System.Object})) を使用します。
 

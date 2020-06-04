@@ -1,18 +1,21 @@
 ---
 title: Xamarin.Forms のバインド パス
 description: この記事では、Xamarin.Forms のデータ バインディングを使用して、Binding クラスの Path プロパティでサブ プロパティおよびコレクション メンバーにアクセスする方法を説明します。
-ms.prod: xamarin
-ms.assetid: 3CF721A5-E157-468B-AD3A-DA0A45E58E8D
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/05/2018
-ms.openlocfilehash: 79d8df3300b302512a7de4140968dbc4c8e79abc
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0657f39d0584405ea1a6d7611ac789488817770f
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76940341"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139742"
 ---
 # <a name="xamarinforms-binding-path"></a>Xamarin.Forms のバインド パス
 
@@ -166,4 +169,4 @@ Xamarin.Forms は、バインド パスを処理するので、`INotifyPropertyC
 ## <a name="related-links"></a>関連リンク
 
 - [データ バインディングのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
-- [Xamarin.Forms 書籍のデータ バインディングに関する章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [Xamarin.Forms ブックのデータ バインディングに関する章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

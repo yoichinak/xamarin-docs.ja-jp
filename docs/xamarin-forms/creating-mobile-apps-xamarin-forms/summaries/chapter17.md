@@ -1,18 +1,22 @@
 ---
-title: '第 17 章の概要: グリッドのマスター'
-description: 'Xamarin.Forms で Mobile Apps を作成する: 第 17 章の概要: グリッドのマスター'
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: 71EDEF9C-4220-4D2E-A235-43F1EC8746C1
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/07/2017
-ms.openlocfilehash: 37b5e2bbafa816de27390771ae6daa33c74f7651
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 17. Mastering the Grid''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 6dd13c0f592831c6488afac6727bcac734e9136a
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70760627"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136722"
 ---
 # <a name="summary-of-chapter-17-mastering-the-grid"></a>第 17 章の概要: グリッドのマスター
 
@@ -30,7 +34,7 @@ XAML での `Grid` 定義は一般に、[`RowDefinition`](xref:Xamarin.Forms.Row
 
 `RowDefinition` には [`Height`](xref:Xamarin.Forms.RowDefinition.Height) プロパティがあり、`ColumnDefinition` には [`Width`](xref:Xamarin.Forms.ColumnDefinition.Width) プロパティがあります。どちらも、[`GridLength`](xref:Xamarin.Forms.GridLength) 型の構造体です。
 
-XAML では、[`GridLengthTypeConverter`](xref:Xamarin.Forms.GridLengthTypeConverter) によって単純なテキスト文字列が `GridLength` 値に変換されます。 バックグラウンドでは、[`GridLength` コンストラクター](xref:Xamarin.Forms.GridLength.%23ctor(System.Double,Xamarin.Forms.GridUnitType))によって、数値と 3 つのメンバーを持つ列挙体である [`GridUnitType`](xref:Xamarin.Forms.GridUnitType) 型の値に基づいて、`GridLength` 値が作成されます。
+XAML では、[`GridLengthTypeConverter`](xref:Xamarin.Forms.GridLengthTypeConverter) によって単純なテキスト文字列が `GridLength` 値に変換されます。 バックグラウンドでは、[`GridLength` コンストラクター](xref:Xamarin.Forms.GridLength.%23ctor(System.Double,Xamarin.Forms.GridUnitType)) によって、1 つの数値と、3 つのメンバーを持つ列挙型である [`GridUnitType`](xref:Xamarin.Forms.GridUnitType) 型の値に基づいて、`GridLength` 値が作成されます。
 
 - [`Absolute`](xref:Xamarin.Forms.GridUnitType.Absolute) &mdash; 幅または高さは、デバイスに依存しない単位で指定されます (XAML では数値)
 - [`Auto`](xref:Xamarin.Forms.GridUnitType.Auto) &mdash; 高さまたは幅は、セルのコンテンツに基づいて自動調整されます (XAML では "Auto")
@@ -45,10 +49,10 @@ XAML では、[`GridLengthTypeConverter`](xref:Xamarin.Forms.GridLengthTypeConve
 
 コードでは、プログラムによって 8 つの静的メソッドを使用して、これらの値を設定および取得できます。
 
-- [`Grid.SetRow`](xref:Xamarin.Forms.Grid.SetRow(Xamarin.Forms.BindableObject,System.Int32)) および [`Grid.GetRow`](xref:Xamarin.Forms.Grid.GetRow(Xamarin.Forms.BindableObject))
-- [`Grid.SetColumn`](xref:Xamarin.Forms.Grid.SetColumn(Xamarin.Forms.BindableObject,System.Int32)) および [`Grid.GetColumn`](xref:Xamarin.Forms.Grid.GetColumn(Xamarin.Forms.BindableObject))
-- [`Grid.SetRowSpan`](xref:Xamarin.Forms.Grid.SetRowSpan(Xamarin.Forms.BindableObject,System.Int32)) および [`Grid.GetRowSpan`](xref:Xamarin.Forms.Grid.GetRowSpan(Xamarin.Forms.BindableObject))
-- [`Grid.SetColumnSpan`](xref:Xamarin.Forms.Grid.SetColumnSpan(Xamarin.Forms.BindableObject,System.Int32)) および [`Grid.GetColumnSpan`](xref:Xamarin.Forms.Grid.GetColumnSpan(Xamarin.Forms.BindableObject))
+- [`Grid.SetRow`](xref:Xamarin.Forms.Grid.SetRow(Xamarin.Forms.BindableObject,System.Int32)) と [`Grid.GetRow`](xref:Xamarin.Forms.Grid.GetRow(Xamarin.Forms.BindableObject))
+- [`Grid.SetColumn`](xref:Xamarin.Forms.Grid.SetColumn(Xamarin.Forms.BindableObject,System.Int32)) と [`Grid.GetColumn`](xref:Xamarin.Forms.Grid.GetColumn(Xamarin.Forms.BindableObject))
+- [`Grid.SetRowSpan`](xref:Xamarin.Forms.Grid.SetRowSpan(Xamarin.Forms.BindableObject,System.Int32)) と [`Grid.GetRowSpan`](xref:Xamarin.Forms.Grid.GetRowSpan(Xamarin.Forms.BindableObject))
+- [`Grid.SetColumnSpan`](xref:Xamarin.Forms.Grid.SetColumnSpan(Xamarin.Forms.BindableObject,System.Int32)) と [`Grid.GetColumnSpan`](xref:Xamarin.Forms.Grid.GetColumnSpan(Xamarin.Forms.BindableObject))
 
 XAML では、これらの値を設定するために、次の属性を使用します。
 

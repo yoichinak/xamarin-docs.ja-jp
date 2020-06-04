@@ -1,18 +1,21 @@
 ---
 title: Xamarin.Forms の DependencyService の登録と解決
 description: この記事では、Xamarin.Forms の DependencyService クラスを使用してネイティブ プラットフォームの機能を呼び出す方法について説明します。
-ms.prod: xamarin
-ms.assetid: 5d019604-4f6f-4932-9b26-1fce3b4d88f8
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 06/05/2019
-ms.openlocfilehash: 6e666c16c9b1afc3478f524cae2f84d6704319c2
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 50d77e9ba41767aa1f676bf21994431844fc4530
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70199222"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138776"
 ---
 # <a name="xamarinforms-dependencyservice-registration-and-resolution"></a>Xamarin.Forms の DependencyService の登録と解決
 
@@ -95,7 +98,7 @@ DependencyService.Register<DeviceOrientationService>();
 
 プラットフォームの実装は、呼び出される前に解決される必要があります。 これは一般に、[`DependencyService.Get<T>`](xref:Xamarin.Forms.DependencyService.Get*) メソッドを使用して共有コード内で実行されます。 ただし、これは [`DependencyService.Resolve<T>`](xref:Xamarin.Forms.DependencyService.Resolve*) メソッドを使用して実現することもできます。
 
-既定では、パラメーターなしのコンストラクターがあるプラットフォームの実装だけが、[`DependencyService`](xref:Xamarin.Forms.DependencyService) によって解決されます。 ただし、依存関係挿入コンテナーまたはファクトリの方法を使用してプラットフォームの実装を解決する依存関係解決方法を、Xamarin.Forms に挿入することができます。 この方法を使用して、パラメーターがあるコンストラクターを持つプラットフォームの実装を解決できます。 詳しくは、「[Xamarin.Forms での依存関係の解決](~/xamarin-forms/internals/dependency-resolution.md)」をご覧ください。
+既定では、パラメーターなしのコンストラクターがあるプラットフォームの実装だけが、[`DependencyService`](xref:Xamarin.Forms.DependencyService) によって解決されます。 ただし、依存関係挿入コンテナーまたはファクトリの方法を使用してプラットフォームの実装を解決する依存関係解決方法を、Xamarin.Forms に挿入することができます。 この方法を使用して、パラメーターがあるコンストラクターを持つプラットフォームの実装を解決できます。 詳細については、「[Xamarin.Forms での依存関係の解決](~/xamarin-forms/internals/dependency-resolution.md)」を参照してください。
 
 > [!IMPORTANT]
 > [`DependencyService`](xref:Xamarin.Forms.DependencyService) に登録されていないプラットフォームの実装を呼び出すと、`NullReferenceException` がスローされます。

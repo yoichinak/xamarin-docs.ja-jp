@@ -1,24 +1,27 @@
 ---
-title: Xamarin.Forms のビヘイビアーを登録する
+title: Xamarin.Forms ビヘイビアーの作成
 description: Xamarin.Forms のビヘイビアーは、Behavior または Behavior<T> クラスから派生させることで作成されます。 この記事では、Xamarin.Forms のビヘイビアーを作成して使用する方法を示します。
-ms.prod: xamarin
-ms.assetid: 300C16FE-A7E0-445B-9099-8E93ABB6F73D
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/06/2016
-ms.openlocfilehash: 42ad56a7ae34bcef638ed25bea267dcabd21e20c
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 67db30b5caadce75a41755530db2b245562d0304
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77131089"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135825"
 ---
-# <a name="create-xamarinforms-behaviors"></a>Xamarin.Forms のビヘイビアーを登録する
+# <a name="create-xamarinforms-behaviors"></a>Xamarin.Forms ビヘイビアーの作成
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)
 
-"_Xamarin.Forms のビヘイビアーは、Behavior または Behavior&lt;T&gt; クラスから派生させることで作成されます。この記事では、Xamarin.Forms のビヘイビアーを作成して使用する方法を示します。_ "
+"_Xamarin.Forms のビヘイビアーは、Behavior または Behavior&lt;T&gt; クラスから派生させることで作成されます。この記事では、Xamarin.Forms のビヘイビアーを作成して使用する方法を示します。_
 
 ## <a name="overview"></a>概要
 
@@ -84,10 +87,10 @@ public class NumericValidationBehavior : Behavior<Entry>
 }
 ```
 
-`NumericValidationBehavior` は [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) クラスから派生します。`T` は [`Entry`](xref:Xamarin.Forms.Entry) です。 [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) メソッドにより、[`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) イベント用のイベント ハンドラーが登録され、[`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) メソッドにより、メモリ リークを防ぐために `TextChanged` の登録が解除されます。 `OnEntryTextChanged` メソッドにより、ビヘイビアーのコア機能が提供され、ユーザーが `Entry` に入力した値が解析され、その値が `double` でなければ [`TextColor`](xref:Xamarin.Forms.InputView.TextColor) プロパティが赤に設定されます。
+`NumericValidationBehavior` は [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) クラスから派生します。`T` は [`Entry`](xref:Xamarin.Forms.Entry) です。 メモリ リークを防ぐために `TextChanged` の登録を解除する [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) method registers an event handler for the [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) event, with the [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) メソッド。 `OnEntryTextChanged` メソッドにより、ビヘイビアーのコア機能が提供され、ユーザーが `Entry` に入力した値が解析され、その値が `double` でなければ [`TextColor`](xref:Xamarin.Forms.InputView.TextColor) プロパティが赤に設定されます。
 
 > [!NOTE]
-> ビヘイビアーはスタイルを利用して複数のコントロールに適用されできるため、Xamarin.Forms では、ビヘイビアーの `BindingContext` は設定されません。
+> ビヘイビアーはスタイルを利用して共有し、複数のコントロールに適用できるため、Xamarin.Forms では、ビヘイビアーの `BindingContext` は設定されません。
 
 ## <a name="consuming-a-xamarinforms-behavior"></a>Xamarin.Forms ビヘイビアーの使用
 
@@ -187,7 +190,7 @@ public class NumericValidationBehavior : Behavior<Entry>
 
 ### <a name="removing-a-behavior-from-a-control"></a>コントロールからのビヘイビアーの削除
 
-ビヘイビアーからコントロールが削除されると、[`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) メソッドが実行されます。これを使用して、メモリ リークを防ぐためのイベントのサブスクライブ解除などの必要なクリーンアップを実行します。 ただし、コントロールの [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) コレクションが `Remove` または `Clear` メソッドによって変更されない限り、ビヘイビアーがコントロールから暗黙的に削除されることはありません。 次のコード例で、コントロールの `Behaviors` コレクションから特定のビヘイビアーを削除する操作を示します。
+[`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) method is fired when a behavior is removed from a control, and is used to perform any required cleanup such as unsubscribing from an event to prevent a memory leak. However, behaviors are not implicitly removed from controls unless the control's [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) collection is modified by a `Remove` or `Clear` method. The following code example demonstrates removing a specific behavior from a control's `Behaviors` コレクション:
 
 ```csharp
 var toRemove = entry.Behaviors.FirstOrDefault (b => b is NumericValidationBehavior);
@@ -213,4 +216,4 @@ entry.Behaviors.Clear();
 - [Xamarin.Forms のビヘイビアー (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)
 - [スタイルを使用して適用される Xamarin.Forms のビヘイビアー (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehaviorstyle)
 - [Behavior](xref:Xamarin.Forms.Behavior)
-- [Behavior \<T>](xref:Xamarin.Forms.Behavior`1)
+- [Behavior\<T>](xref:Xamarin.Forms.Behavior`1)

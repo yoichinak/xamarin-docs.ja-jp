@@ -1,18 +1,21 @@
 ---
-title: アタッチされたビヘイビアー
-description: アタッチされたビヘイビアーは、1 つ以上のプロパティがアタッチされた静的クラスです。 この記事では、アタッチされたビヘイビアーを作成して使用する方法を示します。
-ms.prod: xamarin
-ms.assetid: ECEE6AEC-44FA-4AF7-BAD0-88C6EE48422E
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/06/2016
-ms.openlocfilehash: 7d16eef4fe5422fb5cf3c039c66d1b0f113727fd
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 08b1c738dc87bb9373436a3fd96486eb15341112
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77131120"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139426"
 ---
 # <a name="attached-behaviors"></a>アタッチされたビヘイビアー
 

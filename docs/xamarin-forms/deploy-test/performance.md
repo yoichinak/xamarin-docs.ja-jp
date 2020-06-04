@@ -1,18 +1,21 @@
 ---
 title: Xamarin.Forms アプリ パフォーマンスの改善
 description: Xamarin.Forms アプリケーションのパフォーマンスを高めるための方法は多数あります。 これらの手法をすべて使用することで、CPU で実行される作業量や、アプリケーションで消費されるメモリ量を大幅に減らすことができます。
-ms.prod: xamarin
-ms.assetid: 0be84c56-6698-448d-be5a-b4205f1caa9f
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/27/2019
-ms.openlocfilehash: 4427d347723284a2f8897612f10857270c9631bf
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 96b5939fd1f8448d45d1398fd56770f9032de083
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303883"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139114"
 ---
 # <a name="improve-xamarinforms-app-performance"></a>Xamarin.Forms アプリ パフォーマンスの改善
 
@@ -35,7 +38,7 @@ XAML は任意で、XAML コンパイラ (XAMLC) を利用し、中間言語 (IL
 - XAML 要素の読み込みとインスタンス化の時間を短縮します。
 - .xaml ファイルを含めないことで、最終アセンブリのファイル サイズを減らします。
 
-XAMLC は、新しい Xamarin. Forms ソリューションでは既定で有効になっています。 ただし、旧版のソリューションであれば、有効にしなければならない場合があります。 詳しくは、「[Compiling XAML](~/xamarin-forms/xaml/xamlc.md)」 (XAML のコンパイル) を参照してください。
+XAMLC は、新しい Xamarin.Forms ソリューションでは既定で有効になっています。 ただし、旧版のソリューションであれば、有効にしなければならない場合があります。 詳しくは、「[Compiling XAML](~/xamarin-forms/xaml/xamlc.md)」 (XAML のコンパイル) を参照してください。
 
 ## <a name="use-compiled-bindings"></a>コンパイル済みのバインドを使用する
 
@@ -49,13 +52,13 @@ XAMLC は、新しい Xamarin. Forms ソリューションでは既定で有効�
 
 高速レンダラーは、結果として生じるネイティブのコントロール階層をフラット化することで、Android 上の Xamarin.Forms コントロールの増加を抑制し、レンダリング コストを削減します。 この操作では作成されるオブジェクトが少ないので、結果として、ビジュアル ツリーの複雑さが軽減され、メモリの使用量も少なくなり、パフォーマンスをさらに向上させることができます。
 
-Xamarin. Forms 4.0 以降では、`FormsAppCompatActivity` を対象とするすべてのアプリケーションで、既定で高速レンダラーが使用されます。 詳細については、「[Fast Renderers (高速レンダラー)](~/xamarin-forms/internals/fast-renderers.md)」をご覧ください。
+Xamarin.Forms 4.0 以降では、`FormsAppCompatActivity` を対象とするすべてのアプリケーションで、既定で高速レンダラーが使用されます。 詳細については、「[Fast Renderers (高速レンダラー)](~/xamarin-forms/internals/fast-renderers.md)」をご覧ください。
 
 ## <a name="enable-startup-tracing-on-android"></a>Android でスタートアップ トレースを有効にする
 
 Android の事前 (AOT) コンパイルでは、より大きな APK の作成を犠牲にすることで、ジャスト イン タイム (JIT) アプリケーションの起動オーバーヘッドとメモリ使用量が最小限に抑えられます。 別の方法としては、スタートアップ トレースの使用があります。この場合、従来の AOT コンパイルとは違い、Android APK のサイズと起動時間との折り合いになります。
 
-アプリケーションの大部分を可能な限りアンマネージド コードにコンパイルする代わりに、スタートアップ トレースでは、空の Xamarin.Forms アプリケーションでアプリケーション スタートアップの最も負荷がかかる部分を表わすマネージド メソッドのセットのみをコンパイルします。 この方法では、従来の AOT コンパイルとは異なり、APK のサイズが縮小されますが、起動が同様に改善されます。
+アプリケーションの大部分を可能な限りアンマネージド コードにコンパイルする代わりに、スタートアップ トレースでは、空の Xamarin.Forms アプリケーションでアプリケーション スタートアップの最も負荷がかかる部分を表すマネージド メソッドのセットのみをコンパイルします。 この方法では、従来の AOT コンパイルとは異なり、APK のサイズが縮小されますが、起動が同様に改善されます。
 
 ## <a name="enable-layout-compression"></a>レイアウト圧縮を有効にする
 
@@ -179,7 +182,7 @@ Android の事前 (AOT) コンパイルでは、より大きな APK の作成を
 ### <a name="ui"></a>UI
 
 - 使用可能な場合は、API の非同期バージョンを呼び出します。 これにより、UI スレッドの非ブロック状態が保たれ、アプリケーションのユーザー エクスペリエンスの向上に役立ちます。
-- 例外がスローされるのを防ぐために、UI スレッドでの非同期操作からのデータを使用して UI 要素を更新します。 ただし、`ListView.ItemsSource` プロパティに対する更新は、UI スレッドに自動的にマーシャリングされます。 コードが UI スレッドで実行されているかどうかを判断する方法については、「[Xamarin. Essentials: MainThread](~/essentials/main-thread.md?content=xamarin/xamarin-forms)」をご覧ください。
+- 例外がスローされるのを防ぐために、UI スレッドでの非同期操作からのデータを使用して UI 要素を更新します。 ただし、`ListView.ItemsSource` プロパティに対する更新は、UI スレッドに自動的にマーシャリングされます。 コードが UI スレッドで実行されているかどうかを判断する方法については、「[Xamarin.Essentials: MainThread](~/essentials/main-thread.md?content=xamarin/xamarin-forms)」をご覧ください。
 
     > [!IMPORTANT]
     > データ バインディングによって更新されるコントロール プロパティは、UI スレッドに自動的にマーシャリングされます。

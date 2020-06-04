@@ -1,20 +1,23 @@
 ---
-title: Xamarin.Forms のデュアル画面のデバイスの機能
+title: デュアル画面デバイスに関する Xamarin.Forms の機能
 description: このガイドでは、Xamarin.Forms の DualScreenInfo クラスを使用して Surface Duo や Surface Neo などのデュアル画面デバイスのアプリ エクスペリエンスを最適化する方法について説明します。
-ms.prod: xamarin
-ms.assetid: dd5eb074-f4cb-4ab4-b47d-76f862ac7cfa
-ms.technology: xamarin-forms
-author: davidortinau
-ms.author: daortin
-ms.date: 02/08/2020
-ms.openlocfilehash: 3393f8f4468b58289443af3d2eea558cca4588d2
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 59575823a9ec29847a60209e846ba244e51ca0c0
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "80628255"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138932"
 ---
-# <a name="xamarinforms-dual-screen-device-capabilities"></a>Xamarin.Forms のデュアル画面のデバイスの機能
+# <a name="xamarinforms-dual-screen-device-capabilities"></a>デュアル画面デバイスに関する Xamarin.Forms の機能
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 

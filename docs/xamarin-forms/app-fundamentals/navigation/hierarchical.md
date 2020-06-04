@@ -1,18 +1,21 @@
 ---
-title: 階層ナビゲーション
-description: この記事では、NavigationPage クラスを使用して後入れ先出し (LIFO) ページのスタックでナビゲーションを実行する方法について説明します。
-ms.prod: xamarin
-ms.assetid: C8A5EEFF-5A3B-4163-838A-147EE3939FAA
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/10/2020
-ms.openlocfilehash: 984f54698ccdee54c0b8670a50cb1f4432327977
-ms.sourcegitcommit: 8d13d2262d02468c99c4e18207d50cd82275d233
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 92774cffdfed7412bdb4d44993dc221993ad56c8
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82517275"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137887"
 ---
 # <a name="hierarchical-navigation"></a>階層ナビゲーション
 
@@ -308,7 +311,7 @@ async void OnLoginButtonClicked (object sender, EventArgs e)
 
 ## <a name="displaying-views-in-the-navigation-bar"></a>ナビゲーション バーにビューを表示する
 
-すべての Xamarin.Forms [`View`](xref:Xamarin.Forms.View) は、[`NavigationPage`](xref:Xamarin.Forms.NavigationPage) のナビゲーション バーに表示できます。 これを実現するには、[`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) 添付プロパティを `View` に設定します。 この添付プロパティは任意の [`Page`](xref:Xamarin.Forms.Page) に設定できます。また、`Page` が `NavigationPage` にプッシュされると、`NavigationPage` ではプロパティの値が反映されます。
+すべての Xamarin.Forms[`View`](xref:Xamarin.Forms.View) は、[`NavigationPage`](xref:Xamarin.Forms.NavigationPage) のナビゲーション バーに表示できます。 これを実現するには、[`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) 添付プロパティを `View` に設定します。 この添付プロパティは任意の [`Page`](xref:Xamarin.Forms.Page) に設定できます。また、`Page` が `NavigationPage` にプッシュされると、`NavigationPage` ではプロパティの値が反映されます。
 
 [タイトル ビュー サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-titleview)から取り上げた次の例は、[`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) 添付プロパティを XAML から設定する方法を示しています。
 

@@ -1,24 +1,27 @@
 ---
-title: 最初の Xamarin.Forms アプリのビルド
+title: 最初の Xamarin.Forms アプリをビルドする
 description: Visual Studio で最初の Xamarin.Forms アプリケーションをビルドする方法を示すビデオ ガイド。
-zone_pivot_groups: platform-dev16
-ms.prod: xamarin
-ms.assetid: 72B6AF82-4D98-47E5-AB54-0A35B3253468
-ms.technology: xamarin-forms
-ms.custom: video
-author: conceptdev
-ms.author: crdun
-ms.date: 05/23/2019
-ms.openlocfilehash: fd2fcf6ebe11df27444f2ecc1d89955debf56cb4
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+zone_pivot_groups: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+ms.custom: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: da56bde956a0ff7730ef6737e2802c3723d6d716
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75502801"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84133483"
 ---
-# <a name="build-your-first-xamarinforms-app"></a>最初の Xamarin.Forms アプリのビルド
+# <a name="build-your-first-xamarinforms-app"></a>最初の Xamarin.Forms アプリをビルドする
 
-_このビデオを視聴し、作業を進めて、Xamarin.Forms による最初のモバイル アプリを作成します。_
+_このビデオを視聴し、作業を進めて、_ による最初のモバイル アプリを作成します。Xamarin.Forms
 
 ::: zone pivot="windows"
 
@@ -212,5 +215,5 @@ _このビデオを視聴し、作業を進めて、Xamarin.Forms による最�
 ## <a name="next-steps"></a>次の手順
 
 - [単一ページのクイックスタート](~/get-started/quickstarts/single-page.md) &ndash; さらに機能的なアプリをビルドする。
-- [Xamarin.Forms のサンプル](~/xamarin-forms/samples/index.md) &ndash; コード例とサンプル アプリをダウンロードして実行する。
+- [Xamarin.Forms サンプル](~/xamarin-forms/samples/index.md) &ndash; コード例とサンプル アプリをダウンロードして実行する。
 - [Mobile Apps の電子ブックの作成](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md) &ndash; PDF で提供され、数百の追加のサンプルを含む Xamarin.Forms 開発について解説する詳細な章。

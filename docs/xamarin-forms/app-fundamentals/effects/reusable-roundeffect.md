@@ -1,20 +1,23 @@
 ---
-title: Xamarin.Forms 再利用可能 RoundEffect
-description: RoundEffect は再利用可能なエフェクトであり、VisualElement から派生したコントロールに適用して、コントロールを円としてレンダリングできます。
-ms.prod: xamarin
-ms.assetid: B5DE7507-B565-4EE5-9897-27E5733FD173
-ms.technology: xamarin-forms
-author: profexorgeek
-ms.author: jusjohns
-ms.date: 10/25/2019
-ms.openlocfilehash: 851ed7a2ad1c416b4d03d583b9d0aeb7f7774eea
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: Xamarin.Forms の再利用可能な RoundEffect
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: fc3776934a4c109b2527132b11c6c6a93b7d9f9e
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73055940"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138854"
 ---
-# <a name="xamarinforms-reusable-roundeffect"></a>Xamarin.Forms 再利用可能 RoundEffect
+# <a name="xamarinforms-reusable-roundeffect"></a>Xamarin.Forms の再利用可能な RoundEffect
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-roundeffect/)
 
@@ -39,7 +42,7 @@ public class RoundEffect : RoutingEffect
 
 ## <a name="implement-the-android-effect"></a>Android 効果を実装する
 
-Android プラットフォーム プロジェクトでは、`PlatformEffect` から派生する `RoundEffect` クラスが定義されます。 このクラスには、Xamarin.Forms で効果クラスの解決を可能にする `assembly` 属性がタグ付けされます。
+Android プラットフォーム プロジェクトでは、`PlatformEffect` から派生する `RoundEffect` クラスが定義されます。 このクラスには、Xamarin.Forms で効果クラスを解決できるようにする `assembly` 属性がタグ付けされます。
 
 ```csharp
 [assembly: ResolutionGroupName("Xamarin")]
@@ -78,7 +81,7 @@ class CornerRadiusOutlineProvider : ViewOutlineProvider
 }
 ```
 
-このクラスは、Xamarin.Forms `Element` インスタンスの `Width` プロパティと `Height` プロパティを使用し、最短寸法の半分である半径が計算されます。
+このクラスでは、Xamarin.Forms `Element` インスタンスの `Width` プロパティと `Height` プロパティを使用し、最短寸法の半分である半径が計算されます。
 
 輪郭を与えるものが定義されると、`RoundEffect` クラスではそれを使用して効果を実装できます。
 
@@ -123,7 +126,7 @@ public class RoundEffect : PlatformEffect
 
 ## <a name="implement-the-ios-effect"></a>iOS 効果を実装する
 
-iOS プラットフォーム プロジェクトでは、`PlatformEffect` から派生する `RoundEffect` クラスが定義されます。 このクラスには、Xamarin.Forms で効果クラスの解決を可能にする `assembly` 属性がタグ付けされます。
+iOS プラットフォーム プロジェクトでは、`PlatformEffect` から派生する `RoundEffect` クラスが定義されます。 このクラスには、Xamarin.Forms で効果クラスを解決できるようにする `assembly` 属性がタグ付けされます。
 
 ```csharp
 [assembly: ResolutionGroupName("Xamarin")]
@@ -183,14 +186,14 @@ public class RoundEffect : PlatformEffect
 }
 ```
 
-`CalculateRadius` メソッドでは、Xamarin.Forms `Element` の最小寸法に基づいて半径が計算されます。 効果がコントロールにアタッチされると `OnAttached` メソッドが呼び出され、レイヤーの `CornerRadius` プロパティが更新されます。 オーバーフローする要素がコントロールの縁取りに留められるよう、`ClipToBounds` プロパティが `true` に設定されます。 効果がコントロールから削除されると `OnDetatched` メソッドが呼び出され、変更が元に戻され、元の角の半径が復元されます。
+`CalculateRadius` メソッドでは、Xamarin.Forms の `Element` の最小寸法に基づいて半径が計算されます。 効果がコントロールにアタッチされると `OnAttached` メソッドが呼び出され、レイヤーの `CornerRadius` プロパティが更新されます。 オーバーフローする要素がコントロールの縁取りに留められるよう、`ClipToBounds` プロパティが `true` に設定されます。 効果がコントロールから削除されると `OnDetatched` メソッドが呼び出され、変更が元に戻され、元の角の半径が復元されます。
 
 > [!NOTE]
 > 要素の型によっては、`Control` プロパティは null になることもならないこともあります。 `Control` プロパティが null でない場合、丸い角をコントロールに直接適用できます。 ただし、null の場合、丸い角は `Container` オブジェクトに適用する必要があります。 `effectTarget` フィールドを利用すると、適切なオブジェクトに効果を適用できます。
 
 ## <a name="consume-the-effect"></a>効果を使用する
 
-プラットフォーム間で効果が実装されると、Xamarin.Forms コントロールでそれを使用できます。 `RoundEffect` の一般的な応用では、`Image` オブジェクトが丸くなります。 次の XAML では、効果が `Image` インスタンスに適用された場合を確認できます。
+プラットフォーム間で効果が実装されると、それは Xamarin.Forms コントロールで使用できます。 `RoundEffect` の一般的な応用では、`Image` オブジェクトが丸くなります。 次の XAML では、効果が `Image` インスタンスに適用された場合を確認できます。
 
 ```xaml
 <Image Source=outdoors"

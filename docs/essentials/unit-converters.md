@@ -1,21 +1,24 @@
 ---
-title: Xamarin.Essentials Unit Converters
-description: Xamarin.Essentials の UnitConverters クラスは単位変換機能をいくつか備えており、Xamarin.Essentials の使用時、開発者を支援します。
-ms.assetid: 35DE2704-E730-4337-9476-66CD53376943
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 01/06/2020
-ms.openlocfilehash: 866842cbed9f97dc957e3631c037fa8d27d20076
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
+title: Xamarin.Essentials の単位コンバーター
+description: Xamarin.Essentials の UnitConverters クラスは単位変換機能をいくつか備えており、Xamarin.Essentials の使用時に開発者を支援します。
+ms.assetid: ''
+author: ''
+ms.custom: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: deff6997ff921e6048ccb2497a0747c770501a04
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83149770"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84137138"
 ---
-# <a name="xamarinessentials-unit-converters"></a>Xamarin.Essentials:Unit Converters
+# <a name="xamarinessentials-unit-converters"></a>Xamarin.Essentials:単位コンバーター
 
-**UnitConverters** クラスは単位変換機能をいくつか備えており、Xamarin.Essentials の使用時、開発者を支援します。
+**UnitConverters** クラスは単位変換機能をいくつか備えており、Xamarin.Essentials の使用時に開発者を支援します。
 
 ## <a name="get-started"></a>作業開始
 
@@ -23,13 +26,13 @@ ms.locfileid: "83149770"
 
 ## <a name="using-unit-converters"></a>Unit Converters の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-単位変換機能はすべて、Xamarin.Essentials の静的 `UnitConverters` クラスの使用時に利用できます。 たとえば、華氏を摂氏に簡単に変換できます。
+単位コンバーターはすべて、Xamarin.Essentials の静的 `UnitConverters` クラスの使用時に利用できます。 たとえば、華氏を摂氏に簡単に変換できます。
 
 ```csharp
 var celsius = UnitConverters.FahrenheitToCelsius(32.0);

@@ -1,20 +1,24 @@
 ---
-title: 第 1 章の概要。 Xamarin.Forms はどのように適合しますか?
-description: 'Xamarin.Forms を使用したモバイル アプリの作成: 第 1 章の概要。 Xamarin.Forms はどのように適合しますか?'
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: F3F864FF-EE70-49D0-90D1-388889037625
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/19/2018
-ms.openlocfilehash: 6dfa473bdfb4c1dd88ca833dbf5011a0bbdec42a
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: 第 1 章の概要。 Xamarin.Forms はどのように適合するか
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 1. How does Xamarin.Forms fit in?''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 48b2fb429d206f6582886c94d4d99839d790dc8d
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73032881"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136930"
 ---
-# <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>第 1 章の概要。 Xamarin.Forms はどのように適合しますか?
+# <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>第 1 章の概要。 Xamarin.Forms はどのように適合するか
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter01)
 
@@ -40,7 +44,7 @@ Xamarin では、現在、C# と .NET を使用するネイティブの Mac、iO
 > [!NOTE]
 > ポータブル クラス ライブラリは、.NET Standard ライブラリに置き換えられています。 本のすべてのサンプル コードは、.NET Standard ライブラリを使用するように変換されています。
 
-## <a name="introducing-xamarinforms"></a>Xamarin. Forms の概要
+## <a name="introducing-xamarinforms"></a>Xamarin.Forms の概要
 
 複数のモバイル プラットフォームをターゲットとする場合、Xamarin.Forms ではさらに多くのコード共有を行うことができます。 Xamarin.Forms 用に作成された単一プログラムでは、これらのプラットフォームをターゲットにすることができます。
 
@@ -51,9 +55,9 @@ Xamarin では、現在、C# と .NET を使用するネイティブの Mac、iO
 > [!NOTE]
 > Xamarin.Forms では Windows 8.1、Windows Phone 8.1、Windows 10 Mobile がサポートされなくなりましたが、Xamarin.Forms アプリケーションは Windows 10 デスクトップで実行されます。 [Mac](~/xamarin-forms/platform/other/mac.md)、[WPF](~/xamarin-forms/platform/other/wpf.md)、[GTK #](~/xamarin-forms/platform/other/gtk.md)、および [Tizen](~/xamarin-forms/platform/other/tizen.md) プラットフォーム用のプレビュー サポートもあります。
 
-Xamarin. Forms プログラムの大部分は、ライブラリまたは SAP に存在します。 各プラットフォームは、この共有コードを呼び出す小さなアプリケーション スタブで構成されています。
+Xamarin.Forms プログラムの大部分は、ライブラリまたは SAP に存在します。 各プラットフォームは、この共有コードを呼び出す小さなアプリケーション スタブで構成されています。
 
-Xamarin. Forms API は各プラットフォーム上のネイティブ コントロールにマップされるため、各プラットフォームでその特性のルック アンド フィールが維持されます。
+Xamarin.Forms API は各プラットフォーム上のネイティブ コントロールにマップされるため、各プラットフォームでその特性のルック アンド フィールが維持されます。
 
 [![プラットフォームの視覚エフェクト共有のトリプル スクリーンショット](images/ch01fg03-small.png "各プラットフォームの Xamarin.Forms コントロール")](images/ch01fg03-large.png#lightbox "各プラットフォームの Xamarin.Forms コントロール")
 
@@ -63,7 +67,7 @@ Xamarin. Forms API は各プラットフォーム上のネイティブ コント
 
 また、このページには、複数の [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) オブジェクトで構成される Xamarin.Forms ツールバーがアタッチされています。 これらは、iOS および Android 画面の上部と、Windows 10 Mobile 画面の下部にアイコンとして表示されます。
 
-また、Xamarin.Forms では XAML がサポートされています。これは、複数のアプリケーション プラットフォーム用に Microsoft で開発された Extensible Application Markup Language です。 上に示されたプログラムのすべての視覚エフェクトは、[**PlatformVisuals**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter01/PlatformVisuals) サンプルに示されているように、XAML で定義されています。
+また、Xamarin.Forms では、複数のアプリケーション プラットフォーム用に Microsoft で開発された XAML (Extensible Application Markup Language) がサポートされています。 上に示されたプログラムのすべての視覚エフェクトは、[**PlatformVisuals**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter01/PlatformVisuals) サンプルに示されているように、XAML で定義されています。
 
 Xamarin.Forms プログラムでは、実行されているプラットフォームを特定し、それに応じて別のコードを実行することができます。 開発者は、より効果的に、さまざまなプラットフォーム用のカスタム コードを作成し、そのコードをプラットフォームに依存しない方法で Xamarin.Forms プログラムから実行することができます。 また、開発者は、プラットフォームごとにレンダラーを記述して、追加のコントロールを作成することができます。
 

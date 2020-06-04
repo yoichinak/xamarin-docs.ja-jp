@@ -1,18 +1,21 @@
 ---
-title: 再利用可能なビヘイビアー
-description: ビヘイビアーは複数のアプリケーション全体で再利用可能です。 これらの記事では、便利なビヘイビアーを作成して一般的に使用される機能を実行する方法について説明します。
-ms.prod: xamarin
-ms.assetid: DC9AA512-3624-4EE6-AB5E-628EBA55D2DF
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 04/06/2016
-ms.openlocfilehash: 039f00997b35c79295f41bafddc1322904da01c2
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a668a6272a7158de3594f6001cc552ff294cf1a3
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "61197763"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135747"
 ---
 # <a name="reusable-behaviors"></a>再利用可能なビヘイビアー
 
@@ -24,4 +27,4 @@ _ビヘイビアーは複数のアプリケーション全体で再利用可能�
 
 ## <a name="reusable-eventtocommandbehavior"></a>[再利用可能な EventToCommandBehavior](event-to-command-behavior.md)
 
-ビヘイビアーを使って、コマンドと対話するために設計されていないコントロールにコマンドを関連付けることができます。 この記事では、Xamarin.Forms のビヘイビアーを作成および使用して、イベントが発生したときにコマンドを呼び出す方法を示します。
+ビヘイビアーを使用すると、コマンドとやりとりするように設計されていないコントロールにコマンドを関連付けることができます。 この記事では、Xamarin.Forms のビヘイビアーを作成および使用して、イベントが発生したときにコマンドを呼び出す方法を示します。

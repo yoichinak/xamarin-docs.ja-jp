@@ -1,18 +1,21 @@
 ---
 title: Xamarin.Forms のデュアル画面
-description: このガイドでは、Xamarin Forms でデュアル画面デバイス用のアプリを作成する方法について説明します。
-ms.prod: xamarin
-ms.assetid: f9906e83-f8ae-48f9-997b-e1540b96ee8e
-ms.technology: xamarin-forms
-author: davidortinau
-ms.author: daortin
-ms.date: 02/08/2020
-ms.openlocfilehash: 344b6293090ffa4281ea6351f7f176a5be37e5bd
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: このガイドでは、デュアル画面デバイス用の Xamarin.Forms アプリを作成する方法について説明します。
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: aeaaeb732adaea45446d6baf833027801abf4d2a
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "78165554"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138906"
 ---
 # <a name="xamarinforms-dual-screen"></a>Xamarin.Forms のデュアル画面
 
@@ -26,7 +29,7 @@ Surface Duo (Android) と Surface Neo (Windows 10X) では、タッチ アプリ
 
 ## <a name="dual-screen-layout"></a>[デュアル画面のレイアウト](twopaneview.md)
 
-同じ名前の UWP コントロールからインスパイアされた Xamarin.Forms の `TwoPaneView` クラスは、デュアル画面デバイス用に最適化されたクロスプラットフォームのレイアウトです。
+同じ名前の UWP コントロールがきっかけとなった Xamarin.Forms の `TwoPaneView` クラスは、デュアル画面デバイス用に最適化されたクロスプラットフォームのレイアウトです。
 
 ## <a name="dual-screen-device-capabilities"></a>[デュアル画面のデバイスの機能](dual-screen-info.md)
 

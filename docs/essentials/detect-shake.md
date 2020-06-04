@@ -1,18 +1,11 @@
 ---
-title: Xamarin.Essentials:Detect Shake
-description: Xamarin.Essentials の Accelerometer クラスを利用すると、デバイスが揺れる動きを検出できます。
-ms.assetid: 07513D32-120F-4F12-8757-A47802A8027B
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 05/28/2019
-ms.custom: video
-ms.openlocfilehash: d2aef2c32b3fe2815f1176779a8c28ae8d421ed1
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "67832590"
+title: ''Xamarin.Essentials:シェイクの検出'' description:'Xamarin.Essentials の Accelerometer クラスを利用すると、デバイスが揺れる動きを検出できます。'
+ms.assetid: author: ms.author: ms.date: ms.custom: no-loc:
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
+
 # <a name="xamarinessentials-detect-shake"></a>Xamarin.Essentials:シェイクの検出
 
 **[Accelerometer](accelerometer.md)** クラスでは、デバイスの加速度を 3 次元空間で示す、デバイスの加速度計センサーを監視できます。 また、ユーザーがデバイスを振るイベントを登録できます。
@@ -23,7 +16,7 @@ ms.locfileid: "67832590"
 
 ## <a name="using-detect-shake"></a>Detect Shake の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;

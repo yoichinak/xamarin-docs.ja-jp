@@ -1,18 +1,10 @@
 ---
-title: Xamarin.Essentials:ダイヤラー
-description: Xamarin.Essentials の PhoneDialer クラスを使用すると、アプリケーションからダイヤラーで電話番号を開くことができます。
-ms.assetid: E7457942-4D7B-4195-A2FF-417919B9537F
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 07/02/2019
-ms.openlocfilehash: a955399b40f26d4a03a4047d56f7bebe3ad5b5c4
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83150047"
+title: ''Xamarin.Essentials:ダイヤラー'' description:'Xamarin.Essentials の PhoneDialer クラスを使用すると、アプリケーションからダイヤラーで' ms.assetid: author: ms.custom: ms.author: ms.date: no-loc: の電話番号を開くことができます。
+- 'Xamarin.Forms'
+- 'Xamarin.Essentials'
+
 ---
+
 # <a name="xamarinessentials-phone-dialer"></a>Xamarin.Essentials:ダイヤラー
 
 **PhoneDialer** クラスを使用すると、アプリケーションからダイヤラーで電話番号を開くことができます。
@@ -23,7 +15,7 @@ ms.locfileid: "83150047"
 
 ## <a name="using-phone-dialer"></a>PhoneDialer の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;

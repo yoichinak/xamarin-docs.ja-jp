@@ -1,18 +1,21 @@
 ---
-title: ListView のカスタマイズ
+title: ''
 description: Xamarin.Forms の ListView は、データのコレクションを縦方向の一覧として表示するビューです。 この記事では、プラットフォーム固有のリスト コントロールとネイティブのセルのレイアウトをカプセル化するカスタム レンダラーを作成し、ネイティブ リスト コントロールのパフォーマンスをより厳密に制御する方法を示します。
-ms.prod: xamarin
-ms.assetid: 2FBCB8C8-4F32-45E7-954F-63AD29D5F1B5
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/29/2017
-ms.openlocfilehash: 384ad20cc1456f3de01ddbe241bf2d8b58de387f
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3403948c2853289610a73bb36073f09c0c86137d
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771930"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135305"
 ---
 # <a name="customizing-a-listview"></a>ListView のカスタマイズ
 
@@ -20,13 +23,13 @@ ms.locfileid: "70771930"
 
 _Xamarin.Forms の ListView は、データのコレクションを縦方向の一覧として表示するビューです。この記事では、プラットフォーム固有のリスト コントロールとネイティブのセルのレイアウトをカプセル化するカスタム レンダラーを作成し、ネイティブ リスト コントロールのパフォーマンスをより厳密に制御する方法を示します。_
 
-すべての Xamarin.Forms ビューに、ネイティブ コントロールのインスタンスを作成する各プラットフォーム用のレンダラーが付属しています。 iOS で Xamarin.Forms アプリケーションによって [`ListView`](xref:Xamarin.Forms.ListView) がレンダリングされると、`ListViewRenderer` クラスがインスタンス化され、それによってネイティブの `UITableView` コントロールもインスタンス化されます。 Android プラットフォーム上では、`ListViewRenderer` クラスによってネイティブの `ListView` コントロールがインスタンス化されます。 ユニバーサル Windows プラットフォーム (UWP) 上では、`ListViewRenderer` クラスによってネイティブの `ListView` コントロールがインスタンス化されます。 Xamarin.Forms コントロールによってマップされるレンダラーとネイティブ コントロール クラスの詳細については、「[Renderer Base Classes and Native Controls](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)」(レンダラーの基本クラスおよびネイティブ コントロール) を参照してください。
+すべての Xamarin.Forms ビューには、ネイティブ コントロールのインスタンスを作成する各プラットフォーム用のレンダラーが付属しています。 Xamarin.Forms アプリケーションによって [`ListView`](xref:Xamarin.Forms.ListView) がレンダリングされると、iOS では `ListViewRenderer` クラスがインスタンス化され、それによってネイティブの `UITableView` コントロールもインスタンス化されます。 Android プラットフォーム上では、`ListViewRenderer` クラスによってネイティブの `ListView` コントロールがインスタンス化されます。 ユニバーサル Windows プラットフォーム (UWP) 上では、`ListViewRenderer` クラスによってネイティブの `ListView` コントロールがインスタンス化されます。 Xamarin.Forms コントロールによってマップされるレンダラーとネイティブ コントロール クラスの詳細については、「[Renderer Base Classes and Native Controls](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)」(レンダラーの基底クラスおよびネイティブ コントロール) を参照してください。
 
 次の図は、[`ListView`](xref:Xamarin.Forms.ListView) コントロールと、それを実装する、対応するネイティブ コントロールの関係を示しています。
 
 ![](listview-images/listview-classes.png "Relationship Between the ListView Control and the Implementing Native Controls")
 
-レンダリング プロセスを活用して各プラットフォーム上で [`ListView`](xref:Xamarin.Forms.ListView) 用のカスタム レンダラーを作成することで、プラットフォーム固有のカスタマイズを実装できます。 これを行うための実行プロセスは次のとおりです。
+レンダリング プロセスを活用して各プラットフォーム上で [`ListView`](xref:Xamarin.Forms.ListView) 用のカスタム レンダラーを作成することで、プラットフォーム固有のカスタマイズを実装できます。 その実行プロセスは次のとおりです。
 
 1. Xamarin.Forms カスタム コントロールを[作成](#Creating_the_Custom_ListView_Control)します。
 1. Xamarin.Forms からカスタム コントロールを[使用](#Consuming_the_Custom_Control)します。
@@ -148,7 +151,7 @@ public class MainPageCS : ContentPage
 
 1. カスタム コントロールをレンダリングする `ListViewRenderer` クラスのサブクラスを作成します。
 1. カスタム コントロールをレンダリングする `OnElementChanged` メソッドをオーバーライドして、ロジックを書き込んでカスタマイズします。 対応する Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) が作成されると、このメソッドが呼び出されます。
-1. `ExportRenderer` 属性をカスタム レンダラー クラスに追加して、Xamarin.Forms カスタム コントロールのレンダリングに使用されるように指定します。 この属性は、Xamarin.Forms にカスタム レンダラーを登録するために使用されます。
+1. `ExportRenderer` 属性をカスタム レンダラー クラスに追加し、それを使用して Xamarin.Forms のカスタム コントロールがレンダリングされることを指定します。 この属性は、Xamarin.Forms にカスタム レンダラーを登録するために使用されます。
 
 > [!NOTE]
 > プラットフォーム プロジェクトごとにカスタム レンダラーを指定するかどうかは任意です。 カスタム レンダラーが登録されていない場合は、セルの基底クラスの既定のレンダラーが使用されます。
@@ -186,7 +189,7 @@ protected override void OnElementChanged (ElementChangedEventArgs<Xamarin.Forms.
 
 各プラットフォーム固有のレンダラー クラス内でオーバーライドされたバージョンの `OnElementPropertyChanged` メソッドは、Xamarin.Forms カスタム コントロール上でバインド可能なプロパティの変更に応答する場所です。 このオーバーライドは何度も呼び出されることがあるため、変更になったプロパティのチェックは常に行われる必要があります。
 
-各カスタム レンダラー クラスは、レンダラーを Xamarin.Forms に登録する `ExportRenderer` 属性で修飾されます。 この属性は、レンダリングされている Xamarin.Forms カスタム コントロールの種類名と、カスタム レンダラーの種類名という 2 つのパラメーターを受け取ります。 属性の `assembly` プレフィックスでは、属性がアセンブリ全体に適用されることを指定します。
+各カスタム レンダラー クラスは、レンダラーを Xamarin.Forms に登録する `ExportRenderer` 属性で修飾されます。 この属性は、レンダリングされている Xamarin.Forms カスタム コントロールの型名と、カスタム レンダラーの型名という 2 つのパラメーターを受け取ります。 属性の `assembly` プレフィックスでは、属性がアセンブリ全体に適用されることを指定します。
 
 次のセクションで、各プラットフォーム固有のカスタム レンダラー クラスの実装について説明します。
 
@@ -472,7 +475,7 @@ protected override void OnElementPropertyChanged (object sender, System.Componen
 
 ### <a name="creating-the-custom-renderer-on-uwp"></a>UWP 上でのカスタム レンダラーの作成
 
-次のコード例は、UWP 用のカスタム レンダラーを示します。
+次のコード例で、UWP 用のカスタム レンダラーを示します。
 
 ```csharp
 [assembly: ExportRenderer(typeof(NativeListView), typeof(NativeUWPListViewRenderer))]

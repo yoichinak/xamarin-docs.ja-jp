@@ -1,18 +1,21 @@
 ---
 title: Xamarin.Forms バインディングの値コンバーター
 description: この記事では、値コンバーター (バインディング コンバーターまたはバインディング値コンバーターとも呼ばれます) を実装することで、Xamarin.Forms データ バインディング内で値をキャストまたは変換する方法について説明します。
-ms.prod: xamarin
-ms.assetid: 02B1BBE6-D804-490D-BDD4-8ACED8B70C92
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 01/05/2018
-ms.openlocfilehash: 05ad12de77e8895a23cd364b90abfbfb567ac573
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e1a4faabc8f0703b497062a8c5d587221692dab7
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771621"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139764"
 ---
 # <a name="xamarinforms-binding-value-converters"></a>Xamarin.Forms バインディングの値コンバーター
 
@@ -467,4 +470,4 @@ binding.ConverterParameter = 255;
 ## <a name="related-links"></a>関連リンク
 
 - [データ バインディングのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
-- [Xamarin.Forms 書籍のデータ バインディングに関する章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [Xamarin.Forms ブックのデータ バインディングに関する章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

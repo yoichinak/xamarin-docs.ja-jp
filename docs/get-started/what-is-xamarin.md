@@ -1,24 +1,27 @@
 ---
-title: Xamarin とは
-description: この記事では、Xamarin と関連ライブラリについて説明します。
-ms.prod: xamarin
-ms.assetid: 33C83E13-F3E5-17B4-6512-207F3D3C5AB6
-ms.custom: video
-author: profexorgeek
-ms.author: jusjohns
-ms.date: 09/16/2019
-ms.openlocfilehash: 34763804e9833224721ea32f9c7e6200dd5faba7
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.custom: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a9a25cff30b9dfbed44e60faeae2f577d07940fc
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75607881"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139218"
 ---
 # <a name="what-is-xamarin"></a>Xamarin とは
 
 [![iOS および Android での Xamarin サンプル アプリケーションのスクリーンショット](what-is-xamarin-images/xamarin-app-cropped.png)](what-is-xamarin-images/xamarin-app.png#lightbox)
 
-Xamarin は、.NET を使用して、iOS、Android、Windows 向けの最新で高性能なアプリケーションを開発するためのオープンソースのプラットフォームです。 Xamarin は、基になるプラットフォーム コードと共有コードの通信を管理する抽象化レイヤーです。 Xamarin は、メモリ割り当てやガベージ コレクションなどの利便性を提供するマネージド環境で実行されます。
+Xamarin は、.NET を使用して、iOS、Android、Windows 向けの最新で高性能なアプリケーションをビルドするためのオープンソースのプラットフォームです。 Xamarin は、基になるプラットフォーム コードと共有コードの通信を管理する抽象化レイヤーです。 Xamarin は、メモリ割り当てやガベージ コレクションなどの利便性を提供するマネージド環境で実行されます。
 
 Xamarin を使用すると、開発者はプラットフォーム間でアプリケーションの 90% (平均) を共有できます。 このパターンにより、開発者はすべてのビジネス ロジックを 1 つの言語で記述 (または既存のアプリケーション コードを再利用) して、各プラットフォームでネイティブのパフォーマンスとルック アンド フィールを実現することができます。
 
@@ -53,7 +56,7 @@ Xamarin には、ネイティブ プラットフォームの機能が組み合�
 1. **最新の言語構造** – Xamarin アプリケーションは、現代的な言語である C# で記述されています。これには、動的言語機能や、ラムダ、LINQ などの関数コンストラクト、並列プログラミング機能、ジェネリックなど、Objective-C と Java を超える大幅な改善が含まれています。
 1. **堅牢な基本クラス ライブラリ (BCL)** – Xamarin アプリケーションでは .NET BCL が使用されます。これはクラスの大規模なコレクションで、強力な XML、データベース、シリアル化、IO、文字列、ネットワークのサポートなどの包括的かつ簡素化された機能が含まれています。 既存の C# コードをコンパイルしてアプリで使用することができます。これにより、BCL を超える機能を追加する何千個ものライブラリにアクセスできるようになります。
 1. **最新の統合開発環境 (IDE)** – Xamarin では最新の IDE である Visual Studio が使用されています。これには、コードのオート コンプリート、高度なプロジェクトとソリューションの管理システム、包括的なプロジェクト テンプレート ライブラリ、統合ソース管理などの機能が含まれます。
-1. **モバイルのクロス プラットフォーム サポート** – Xamarin には、iOS、Android、Windows という 3 つの主要なプラットフォーム向けの高度なクロス プラット フォーム サポートが用意されています。 記述したアプリケーションは最大 90% のコードを共有することができ、Xamarin.Essentials では 3 つのすべてのプラットフォームに共通するリソースにアクセスするための Unified API が提供されています。 共有コードにより、モバイル開発者の開発コストと市場投入までの時間の両方が大幅に削減されます。
+1. **モバイルのクロス プラットフォーム サポート** – Xamarin には、iOS、Android、Windows という 3 つの主要なプラットフォーム向けの高度なクロス プラット フォーム サポートが用意されています。 記述したアプリケーションは最大 90% のコードを共有することができ、Xamarin.Essentials では、3 つのすべてのプラットフォームに共通するリソースにアクセスするための Unified API が提供されます。 共有コードにより、モバイル開発者の開発コストと市場投入までの時間の両方が大幅に削減されます。
 
 ### <a name="xamarinandroid"></a>Xamarin.Android
 
@@ -71,9 +74,9 @@ Xamarin.iOS アプリケーションは、C# からネイティブ ARM アセン
 
 詳細については、[Xamarin.iOS のアーキテクチャ](~/ios/internals/architecture.md)に関するページをご覧ください。
 
-### <a name="xamarinessentials"></a>Xamarin.Essentials
+### Xamarin.Essentials
 
-Xamarin.Essentials は、ネイティブ デバイスの機能にクロスプラットフォーム API を提供するライブラリです。 Xamarin 自体と同様に、Xamarin.Essentials は、ネイティブ機能へのアクセス プロセスを簡略化する抽象化です。 Xamarin.Essentials で提供されている機能の例をいくつか次に示します。
+Xamarin.Essentials は、ネイティブ デバイスの機能にクロスプラットフォーム API を提供するライブラリです。 Xamarin 自体と同様に、Xamarin.Essentials は、ネイティブ機能へのアクセス プロセスを簡略化する抽象化です。 以下に、Xamarin.Essentials で提供される機能の例の一部を示します。
 
 - デバイス情報
 - ファイル システム
@@ -84,9 +87,9 @@ Xamarin.Essentials は、ネイティブ デバイスの機能にクロスプラ
 
 詳細については、「[Xamarin.Essentials](~/essentials/index.md)」を参照してください。
 
-### <a name="xamarinforms"></a>Xamarin.Forms
+### Xamarin.Forms
 
-Xamarin.Forms はオープンソースの UI フレームワークです。 Xamarin.Forms を使用すると、開発者は 1 つの共有コードベースから iOS、Android、Windows のアプリケーションを作成できます。 Xamarin.Forms を使用すると、開発者は C# でコードビハインドを使用して XAML でユーザー インターフェイスを作成できます。 これらのユーザー インターフェイスは、各プラットフォームでパフォーマンスの高いネイティブ コントロールとしてレンダリングされます。 Xamarin.Forms で提供される機能の例としては、次のようなものがあります。
+Xamarin.Forms は、オープンソースの UI フレームワークです。 Xamarin.Forms を使用すると、開発者は 1 つの共有コードベースから iOS、Android、Windows のアプリケーションを構築できます。 Xamarin.Forms を使用すると、開発者は C# でコードビハインドを使用して、ユーザー インターフェイスを XAML で作成できます。 これらのユーザー インターフェイスは、各プラットフォームでパフォーマンスの高いネイティブ コントロールとしてレンダリングされます。 Xamarin.Forms で提供される機能の例には、次のようなものがあります。
 
 - XAML ユーザー インターフェイス言語
 - データ バインド
@@ -94,7 +97,7 @@ Xamarin.Forms はオープンソースの UI フレームワークです。 Xama
 - エフェクト
 - スタイル
 
-詳細については、[Xamarin.Forms](~/xamarin-forms/index.yml) に関するページを参照してください。
+詳細については、「[Xamarin.Forms](~/xamarin-forms/index.yml)」を参照してください。
 
 ## <a name="get-started"></a>作業開始
 

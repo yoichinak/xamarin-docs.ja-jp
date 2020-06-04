@@ -1,19 +1,22 @@
 ---
-title: Xamarin.Essentials Color Converters
+title: Xamarin.Essentials の色のコンバーター
 description: Xamarin.Essentials の ColorConverters クラスには、System.Drawing.Color と併用できるヘルパー メソッドと拡張メソッドがいくつかあります。
-ms.assetid: B10428D6-89E2-4714-A39F-7E6E626391B2
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 01/06/2020
-ms.custom: video
-ms.openlocfilehash: 159add7ee83f3c65d791fc49ee3a85ddaaabae1d
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+ms.custom: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 57b85a909855594c70bfd529d7a794b4bd7bca7e
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83150137"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84130222"
 ---
-# <a name="xamarinessentials-color-converters"></a>Xamarin.Essentials:Color Converters
+# <a name="xamarinessentials-color-converters"></a>Xamarin.Essentials:色のコンバーター
 
 Xamarin.Essentials の **ColorConverters** クラスには、System.Drawing.Color 用のヘルパー メソッドがいくつかあります。
 
@@ -23,13 +26,13 @@ Xamarin.Essentials の **ColorConverters** クラスには、System.Drawing.Colo
 
 ## <a name="using-color-converters"></a>Color Converters の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-`System.Drawing.Color` の使用時、Xamarin.Forms の組み込みコンバーターを使用し、Hsl、Hex、UInt から色を作成できます。
+`System.Drawing.Color` の使用時には、Xamarin.Forms の組み込みコンバーターを使用し、Hsl、Hex、UInt から色を作成できます。
 
 ```csharp
 var blueHex = ColorConverters.FromHex("#3498db");

@@ -1,18 +1,22 @@
 ---
-title: 第 23 章の概要。 トリガーと動作
-description: Xamarin.Forms で Mobile Apps を作成する:第 23 章の概要。 トリガーと動作
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: 19E84B5D-46B4-4B6D-A255-87BEFB011261
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/07/2017
-ms.openlocfilehash: 8a1274a8447f49ce39f9c92703bbaec9e875b9e9
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 23. Triggers and behaviors''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9a0206354254f79756e29f834c85837240736eca
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70760588"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136657"
 ---
 # <a name="summary-of-chapter-23-triggers-and-behaviors"></a>第 23 章の概要。 トリガーと動作
 
@@ -156,7 +160,7 @@ AND と OR の組み合わせはそれほど簡単ではなく、通常、途中
 
 **Xamarin.FormsBook.Toolkit** ライブラリの [`ToggleBase`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ToggleBase.cs) クラスは `ContentView` から派生し、`IsToggled` プロパティを定義し、トグル ロジック用に `ToggleBehavior` を組み込みます。 これにより、[**TraditionalCheckBox**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/TraditionalCheckBox) サンプルで示されるように、XAML のトグル ボタンを簡単に定義できます。
 
-[**SwitchCloneDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/SwitchCloneDemo) には `ToggleBase` から派生した [`SwitchClone`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter23/SwitchCloneDemo/SwitchCloneDemo/SwitchCloneDemo/SwitchClone.cs) クラスが含まれ、[`TranslateAction`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/TranslateAction.cs) クラスを使用して、Xamarin.Forms `Switch` に似たトグル ボタンが構築されます。
+[**SwitchCloneDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/SwitchCloneDemo) には `ToggleBase` から派生した [`SwitchClone`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter23/SwitchCloneDemo/SwitchCloneDemo/SwitchCloneDemo/SwitchClone.cs) クラスが含まれていて、[`TranslateAction`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/TranslateAction.cs) クラスを使用して、Xamarin.Forms `Switch` に似たトグル ボタンが構築されます。
 
 **Xamarin.FormsBook.Toolkit** の [`RotateAction`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/RotateAction.cs) により、[**LeverToggle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter23/LeverToggle) サンプルでアニメーション化されたレバーを作成するために使用されるアニメーションが提供されます。
 

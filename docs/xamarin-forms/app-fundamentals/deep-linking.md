@@ -1,19 +1,22 @@
 ---
-title: アプリケーション インデックス作成とディープ リンクの設定
+title: ''
 description: この記事では、アプリケーション インデックス作成とディープ リンクの設定を使用して、Xamarin.Forms アプリケーションのコンテンツを iOS および Android のデバイス上で検索できるようにする方法について説明します。
-ms.prod: xamarin
-ms.assetid: 410C5D19-AA3C-4E0D-B799-E288C5803226
-ms.technology: xamarin-forms
-ms.custom: xamu-video
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/28/2018
-ms.openlocfilehash: fcd8333a0623058fceb486183ddb995e85eaf18a
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+ms.custom: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d93f9bbcfafc3cb71d6b71159f6d3368f50c08be
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76940321"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84135734"
 ---
 # <a name="application-indexing-and-deep-linking"></a>アプリケーション インデックス作成とディープ リンクの設定
 
@@ -25,7 +28,7 @@ _アプリケーション インデックス作成を使用すると、何度か
 
 **Xamarin.Forms と Azure でのディープ リンク設定のビデオ**
 
-Xamarin.Forms アプリケーション インデックス作成とディープ リンクの設定では、ユーザーがアプリケーション間を移動するとき、アプリケーション インデックス作成用のメタデータを発行する API が提供されます。 インデックスが付けられたコンテンツは、Spotlight 検索、Google 検索、または Web 検索で検索することができます。 ディープ リンクが含まれている検索結果をタップすると、アプリケーションによって処理できるイベントが開始されます。これは、通常、ディープ リンクから参照されているページに移動するために使用されます。
+Xamarin.Forms のアプリケーション インデックス作成とディープ リンクの設定では、ユーザーがアプリケーション間を移動するときにアプリケーション インデックス作成用のメタデータを発行する API が提供されます。 インデックスが付けられたコンテンツは、Spotlight 検索、Google 検索、または Web 検索で検索することができます。 ディープ リンクが含まれている検索結果をタップすると、アプリケーションによって処理できるイベントが開始されます。これは、通常、ディープ リンクから参照されているページに移動するために使用されます。
 
 サンプル アプリケーションは、次のスクリーン ショットに示すように、データがローカルの SQLite データベースに格納される Todo リスト アプリケーションの例です。
 
@@ -36,7 +39,7 @@ Xamarin.Forms アプリケーション インデックス作成とディープ �
 SQLite データベースの使用の詳細については、「[Xamarin.Forms ローカル データベース](~/xamarin-forms/data-cloud/data/databases.md)」を参照してください。
 
 > [!NOTE]
-> Xamarin.Forms アプリケーション インデックス作成およびディープ リンクの設定の機能は、iOS および Android プラットフォーム上でのみ使用することができ、そのためにはそれぞれ iOS 9 以上および API 23 以上が必要です。
+> Xamarin.Forms のアプリケーション インデックス作成およびディープ リンクの設定の機能は、iOS および Android プラットフォーム上でのみ使用することができ、そのためにはそれぞれ iOS 9 以上および API 23 以上が必要です。
 
 ## <a name="setup"></a>セットアップ
 
@@ -62,7 +65,7 @@ Android プラットフォーム上でアプリケーション インデック�
 1. Google の開発者コンソール内で、アプリケーションに対してコンパニオン Web サイトを登録する必要があります。 アプリケーションが Web サイトに関連付けられたら、URL にインデックスを付けて Web サイトとアプリケーションの両方で使用できます。これにより、検索結果に提供されるようになります。 詳細については、Google の Web サイト上の「[Google 検索での App Indexing](https://support.google.com/googleplay/android-developer/answer/6041489)」を参照してください。
 1. ご利用のアプリケーションでは、`MainActivity` クラス上の HTTP URL インテントがサポートされている必要があります。これにより、アプリケーションが応答可能な URL データ スキームの種類がアプリケーション インデックス作成に指示されます。 詳細については、「[Configuring the Intent Filter](~/android/platform/app-linking.md#configure-intent-filter)」(インテント フィルタの構成) を参照してください。
 
-これらの前提条件が満たされたら、Android プラットフォーム上で Xamarin.Forms アプリケーション インデックス作成およびディープ リンクの設定を使用するために次に示すような追加のセットアップが必要です。
+これらの前提条件が満たされたら、Android プラットフォーム上で Xamarin.Forms のアプリケーション インデックス作成およびディープ リンクの設定を使用するために、以下のような追加のセットアップが必要です。
 
 1. [Xamarin.Forms.AppLinks](https://www.nuget.org/packages/Xamarin.Forms.AppLinks/) NuGet パッケージを Android アプリケーション プロジェクトにインストールします。
 1. **MainActivity.cs** ファイル内に、`Xamarin.Forms.Platform.Android.AppLinks` 名前空間を使用するための宣言を追加します。
@@ -83,7 +86,7 @@ AndroidAppLinks.Init(this);
 > [!NOTE]
 > この記事では、多くの場合、アプリケーション リンクとディープ リンクという用語が同じ意味で使用されます。 しかし、Android に関しては、これらの用語は異なる意味を持ちます。 Android の場合、ディープ リンクとは、ユーザーがそのアプリで特定のアクティビティに直接移行できるようにするためのインテント フィルターのことです。 ディープ リンクをクリックすると、あいまいさ排除のためのダイアログが表示されることがあります。これにより、ユーザーはその URL を処理できる複数のアプリのいずれかを選択できます。 Android のアプリ リンクは、Web サイトの URL に基づくディープ リンクです。これは Web サイトに属することが検証済みです。 アプリ リンクをクリックすると、アプリがインストールされている場合はアプリが開き、あいまいさ排除のダイアログが開くことはありません。
 
-詳細については、Xamarin ブログでの「[Deep Link Content with Xamarin.Forms URL Navigation](https://blog.xamarin.com/deep-link-content-with-xamarin-forms-url-navigation/)」 (Xamarin.Forms URL ナビゲーションを使用したディープ リンク コンテンツ) を参照してください。
+詳細については、Xamarin ブログの [Xamarin.Forms URL ナビゲーションを使用したディープ リンク コンテンツ](https://blog.xamarin.com/deep-link-content-with-xamarin-forms-url-navigation/)に関するページを参照してください。
 
 ## <a name="indexing-a-page"></a>ページのインデックス作成
 

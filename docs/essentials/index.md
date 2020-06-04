@@ -1,30 +1,33 @@
 ---
 title: Xamarin.Essentials
-description: このドキュメントは、Xamarin.Essentials について説明するさまざまなガイドにリンクしています。そこでは、モバイル アプリケーション開発用のクロスプラットフォーム API が提供されます。
-ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 02/26/2020
-ms.openlocfilehash: 1d68203e80e0bc28e7060d5873c122db8c2ff960
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: このドキュメントは、Xamarin.Essentials について説明するさまざまなガイドにリンクされています。それらのガイドでは、モバイル アプリケーション開発用のクロスプラットフォーム API が提供されています。
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 27421ecc8b089321cd2331829d87365f3cf37a65
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "80387206"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139465"
 ---
-# <a name="xamarinessentials"></a>Xamarin.Essentials
+# Xamarin.Essentials
 
 Xamarin.Essentials には、モバイル アプリケーション開発用のクロスプラットフォーム API が用意されています。
 
-Android、iOS、UWP では独自のオペレーティング システムとプラットフォーム API が提供されています。開発者は、Xamarin を活用して C# で そのすべてにアクセスできます。 Xamarin.Essentials には、任意の Xamarin.Forms、Android、iOS、または UWP アプリケーションと連携する単一のクロスプラットフォーム API が用意されています。ユーザー インターフェイスの作成方法に関係なく、共有コードからアクセスできます。
+Android、iOS、UWP では独自のオペレーティング システムとプラットフォーム API が提供されています。開発者は、Xamarin を活用して C# で そのすべてにアクセスできます。 Xamarin.Essentials には、任意の Xamarin.Forms、Android、iOS、または UWP アプリケーションと連携する単一のクロスプラットフォーム API が用意されていて、ユーザー インターフェイスがどのように作成されたかを問わず共有コードからアクセスできます。
 
-## <a name="get-started-with-xamarinessentials"></a>[Xamarin.Essentials の概要](get-started.md?context=xamarin/xamarin-forms)
+## <a name="get-started-with-xamarinessentialsget-startedmdcontextxamarinxamarin-forms"></a>[Xamarin.Essentials の概要](get-started.md?context=xamarin/xamarin-forms)
 
-[ファースト ステップ ガイド](get-started.md)に従って、Xamarin.Forms、Android、iOS、または UWP の既存のプロジェクト、または新しいプロジェクトに、**Xamarin.Essentials** の NuGet パッケージをインストールします。
+[ファースト ステップ ガイド](get-started.md)に従って、Xamarin.Forms、Android、iOS、または UWP の既存のプロジェクトまたは新しいプロジェクトに、 **Xamarin.Essentials** の NuGet パッケージをインストールします。
 
 ## <a name="feature-guides"></a>機能ガイド
 
-ガイドに従って、Xamarin.Essentials の各機能をアプリケーションに統合します。
+ガイドに従って、以下の Xamarin.Essentials の機能をアプリケーションに統合します。
 
 * [加速度計](accelerometer.md?context=xamarin/xamarin-forms) – 3 次元空間内のデバイスの加速度データを取得します。
 * [アプリ情報](app-information.md?context=xamarin/xamarin-forms) – アプリケーションに関する情報を見つけます。
@@ -69,8 +72,8 @@ Android、iOS、UWP では独自のオペレーティング システムとプ�
 
 ## <a name="release-notes"></a>[リリース ノート](https://docs.microsoft.com/xamarin/essentials/release-notes/)
 
-Xamarin.Essentials の各リリースの完全なリリースノートを見つけてください。
+Xamarin.Essentials の各リリースの完全なリリースノートを確認してください。
 
 ## <a name="api-documentation"></a>[API ドキュメント](xref:Xamarin.Essentials)
 
-Xamarin.Essentials のすべての機能の API ドキュメントを参照します。
+Xamarin.Essentials のすべての機能について、API のドキュメントを参照します。

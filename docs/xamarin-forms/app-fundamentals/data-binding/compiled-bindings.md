@@ -1,18 +1,21 @@
 ---
 title: Xamarin.Forms のコンパイル済みのバインド
 description: この記事では、コンパイル済みのバインドを使用して、Xamarin.Forms アプリケーションでのデータ バインディングのパフォーマンスを向上させる方法について説明します。
-ms.prod: xamarin
-ms.assetid: ABE6B7F7-875E-4402-A1D2-845CE374402B
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 09/18/2019
-ms.openlocfilehash: 531d9719eb4bf5c23001ebe4260254e13f9989eb
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1f811de95009900016bb8b442265a9a079e0f612
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "72697155"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139754"
 ---
 # <a name="xamarinforms-compiled-bindings"></a>Xamarin.Forms のコンパイル済みのバインド
 
@@ -42,7 +45,7 @@ _コンパイル済みのバインドは、従来のバインドより迅速に�
 
 ## <a name="use-compiled-bindings"></a>コンパイル済みのバインドを使用する
 
-**[Compiled Color Selector]\(コンパイル済みのカラー セレクター\)** ページでは、Xamarin.Forms ビューと viewmodel プロパティの間でのコンパイル済みのバインドの使用について説明します。
+**[Compiled Color Selector] (コンパイル済みのカラー セレクター)** ページでは、Xamarin.Forms ビューと viewmodel プロパティの間でのコンパイル済みのバインドの使用について説明します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

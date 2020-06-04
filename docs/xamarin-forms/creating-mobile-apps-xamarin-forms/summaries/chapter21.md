@@ -1,24 +1,28 @@
 ---
-title: '第 21 章の概要: 変換'
-description: 'Xamarin.Forms で Mobile Apps を作成する: 第 21 章の概要: 変換'
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: 3642F112-C7FA-4A74-9000-F9087BA89AD9
-author: davidbritch
-ms.author: dabritch
-ms.date: 11/07/2017
-ms.openlocfilehash: 40c091d0c5042d172108709f89774e41e9339d4b
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 21. Transforms''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 32393108f84ea3a57079c86b6a9a8e628ceca03a
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70760577"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136670"
 ---
 # <a name="summary-of-chapter-21-transforms"></a>第 21 章の概要: 変換
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21)
 
-Xamarin.Forms ビューは、通常は `Layout` または `Layout<View>` の派生であるその親によって決定された場所とサイズで、画面に表示されます。 "*変換*" は、該当の場所、サイズ、または向きさえも変更できる Xamarin.Forms の機能です。
+Xamarin.Forms ビューは、通常は `Layout` または `Layout<View>` の派生クラスであるその親によって決定された場所とサイズで、画面に表示されます。 "*変換*" は、該当の場所、サイズ、または向きさえも変更できる Xamarin.Forms の機能です。
 
 Xamarin.Forms では、次の 3 種類の基本的な変換をサポートしています。
 
@@ -119,7 +123,7 @@ iOS では、`AnchorX` および `AnchorY` プロパティの既定値以外の�
 
 `AnchorX` プロパティは `RotationY` に影響を与えますが、`RotationX` には影響を与えません。 `AnchorY` プロパティは `RotationX` に影響を与えますが、`RotationY` には影響を与えません。 [**ThreeDeeRotationDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter21/ThreeDeeRotationDemo) サンプルを試して、これらのプロパティの相互作用を確認できます。
 
-Xamarin.Forms によって暗黙的に示される3 次元の座標系は、左手に対応しています。 左手の人差し指で X 座標の正の方向 (右) を指し、中指で Y 座標の負の方向を (下) を指すと、親指は Z 座標の正の方向 (画面外) を指します。
+Xamarin.Forms によって暗黙的に示される 3 次元の座標系は、左手に対応しています。 左手の人差し指で X 座標の正の方向 (右) を指し、中指で Y 座標の負の方向を (下) を指すと、親指は Z 座標の正の方向 (画面外) を指します。
 
 また、3 つの軸のいずれかに対して、左手の親指で値の正の方向を指すと、残りの指の曲がり方によって、正の回転角度に対する回転方向が示されます。
 

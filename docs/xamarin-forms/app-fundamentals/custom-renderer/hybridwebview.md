@@ -1,18 +1,21 @@
 ---
-title: WebView のカスタマイズ
+title: ''
 description: Xamarin.Forms WebView は、アプリに Web コンテンツと HTML コンテンツを表示するビューです。 この記事では、JavaScript から C# コードを呼び出せるように WebView を拡張するカスタム レンダラーを作成する方法について説明します。
-ms.prod: xamarin
-ms.assetid: 58DFFA52-4057-49A8-8682-50A58C7E842C
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/31/2020
-ms.openlocfilehash: c736c083d4a8c424d3e017dae3cc30e35ad4fa3b
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8c83742896af4a22bcff327df82c1b14ff983bb2
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "80419062"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84138971"
 ---
 # <a name="customizing-a-webview"></a>WebView のカスタマイズ
 
@@ -20,7 +23,7 @@ ms.locfileid: "80419062"
 
 _Xamarin.Forms `WebView` は、アプリに Web コンテンツと HTML コンテンツを表示するビューです。この記事では、JavaScript から C# コードを呼び出せるように `WebView` を拡張するカスタム レンダラーを作成する方法について説明します。_
 
-すべての Xamarin.Forms ビューに、ネイティブ コントロールのインスタンスを作成する各プラットフォーム用のレンダラーが付属しています。 iOS 上の Xamarin.Forms アプリケーションによって [`WebView`](xref:Xamarin.Forms.WebView) がレンダリングされると、`WkWebViewRenderer` クラスがインスタンス化され、それによってネイティブの `WkWebView` コントロールもインスタンス化されます。 Android プラットフォーム上では、`WebViewRenderer` クラスによってネイティブの `WebView` コントロールがインスタンス化されます。 ユニバーサル Windows プラットフォーム (UWP) 上では、`WebViewRenderer` クラスによってネイティブの `WebView` コントロールがインスタンス化されます。 Xamarin.Forms コントロールによってマップされるレンダラーとネイティブ コントロール クラスの詳細については、「[Renderer Base Classes and Native Controls](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)」 (レンダラーの基底クラスおよびネイティブ コントロール) を参照してください。
+すべての Xamarin.Forms ビューには、ネイティブ コントロールのインスタンスを作成する各プラットフォーム用のレンダラーが付属しています。 Xamarin.Forms アプリケーションによって [`WebView`](xref:Xamarin.Forms.WebView) がレンダリングされると、iOS では `WkWebViewRenderer` クラスがインスタンス化され、それによってネイティブの `WkWebView` コントロールもインスタンス化されます。 Android プラットフォーム上では、`WebViewRenderer` クラスによってネイティブの `WebView` コントロールがインスタンス化されます。 ユニバーサル Windows プラットフォーム (UWP) 上では、`WebViewRenderer` クラスによってネイティブの `WebView` コントロールがインスタンス化されます。 Xamarin.Forms コントロールによってマップされるレンダラーとネイティブ コントロール クラスの詳細については、「[Renderer Base Classes and Native Controls](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)」(レンダラーの基底クラスおよびネイティブ コントロール) を参照してください。
 
 次の図は、[`View`](xref:Xamarin.Forms.View) と、それを実装する、対応しているネイティブ コントロールの関係を示しています。
 
@@ -148,7 +151,7 @@ public partial class HybridWebViewPage : ContentPage
 1. `ExportRenderer` 属性をカスタム レンダラー クラスまたは *AssemblyInfo.cs* に追加して、Xamarin.Forms カスタム コントロールのレンダリングに使用されるように指定します。 この属性は、Xamarin.Forms にカスタム レンダラーを登録するために使用されます。
 
 > [!NOTE]
-> ほとんどの Xamarin.Forms 要素では、プラットフォーム プロジェクトごとにカスタム レンダラーを指定するかどうかは任意です。 カスタム レンダラーが登録されていない場合は、コントロールの基底クラスの既定のレンダラーが使用されます。 ただし、[View](xref:Xamarin.Forms.View) 要素をレンダリングするときは、各プラットフォーム プロジェクトにカスタム レンダラーが必要です。
+> ほとんどの Xamarin.Forms 要素では、プラットフォーム プロジェクトごとにカスタム レンダラーを指定するかどうかは任意です。 カスタム レンダラーが登録されていない場合は、コントロールの基底クラス用の既定のレンダラーが使用されます。 ただし、[View](xref:Xamarin.Forms.View) 要素をレンダリングするときは、各プラットフォーム プロジェクトにカスタム レンダラーが必要です。
 
 次の図に、サンプル アプリケーション内の各プロジェクトの役割と、それらの関係を示します。
 
@@ -162,7 +165,7 @@ public partial class HybridWebViewPage : ContentPage
 
 各プラットフォームのレンダラー クラス内の、オーバーライドされたバージョンの `OnElementChanged` メソッドは、ネイティブの Web コントロールのカスタマイズを行う場所です。 レンダリングされている Xamarin.Forms コントロールへの参照は、`Element` プロパティを使用して取得することができます。
 
-各カスタム レンダラー クラスは、レンダラーを Xamarin.Forms に登録する `ExportRenderer` 属性で修飾されます。 この属性は、レンダリングされている Xamarin.Forms カスタム コントロールの種類名と、カスタム レンダラーの種類名という 2 つのパラメーターを受け取ります。 属性の `assembly` プレフィックスでは、属性がアセンブリ全体に適用されることを指定します。
+各カスタム レンダラー クラスは、レンダラーを Xamarin.Forms に登録する `ExportRenderer` 属性で修飾されます。 この属性は、レンダリングされている Xamarin.Forms カスタム コントロールの型名と、カスタム レンダラーの型名という 2 つのパラメーターを受け取ります。 属性の `assembly` プレフィックスでは、属性がアセンブリ全体に適用されることを指定します。
 
 以下のセクションでは、各ネイティブ Web コントロールによって読み込まれる Web ページの構造、JavaScript から C# を呼び出すプロセス、各プラットフォームのカスタム レンダラー クラスでこれを実装する方法について説明します。
 

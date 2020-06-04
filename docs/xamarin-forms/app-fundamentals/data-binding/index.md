@@ -1,18 +1,21 @@
 ---
 title: Xamarin.Forms のデータ バインディング
-description: データ バインディングは、2 つのオブジェクトのプロパティをリンクして、片方のプロパティへの変更が自動的にもう片方のプロパティに反映されるようにする手法です。 データ バインディングは、Model-View-ViewModel (MVVM) アプリケーション アーキテクチャにとって不可欠の部分です。
-ms.prod: xamarin
-ms.assetid: 938E85C8-521D-43B9-92CB-D591A06D98A6
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/23/2020
-ms.openlocfilehash: 9e3e602eda0d2fa78dd25905a2b6ccf3ce5a744d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 4b99877342ddbaf9ad5606ec5dc284818fcfeffd
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "80247601"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139699"
 ---
 # <a name="xamarinforms-data-binding"></a>Xamarin.Forms のデータ バインディング
 
@@ -78,5 +81,5 @@ Xamarin.Forms アプリケーションは 1 つ以上のページで構成され
 ## <a name="related-links"></a>関連リンク
 
 - [データ バインディングのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
-- [Xamarin.Forms 書籍のデータ バインディングに関する章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [Xamarin.Forms ブックのデータ バインディングに関する章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
 - [XAML マークアップ拡張](~/xamarin-forms/xaml/markup-extensions/index.md)

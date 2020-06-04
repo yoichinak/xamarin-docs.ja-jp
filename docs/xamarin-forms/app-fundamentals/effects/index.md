@@ -1,22 +1,25 @@
 ---
 title: Xamarin.Forms のエフェクト
-description: エフェクトを使うと、カスタム レンダラーの実装に頼ることなく、各プラットフォーム上のネイティブ コントロールをカスタマイズできます。
-ms.prod: xamarin
-ms.assetid: 8AF168A7-4CD9-4603-B961-15B8B1543784
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 03/01/2017
-ms.openlocfilehash: 2de1d1dd065a01bb457ebf03acdc0c01529abf7b
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+description: ''
+ms.prod: ''
+ms.assetid: ''
+ms.technology: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a6206d2c561df74a01b7d7408e8d542f1e2189d3
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73083831"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84139335"
 ---
 # <a name="xamarinforms-effects"></a>Xamarin.Forms のエフェクト
 
-_Xamarin.Forms のユーザー インターフェイスは、ターゲット プラットフォームのネイティブ コントロールを使用してレンダリングされるため、Xamarin.Forms アプリケーションでは各プラットフォームの適切な外観を維持できます。エフェクトを使うと、カスタム レンダラーの実装に頼ることなく、各プラットフォーム上のネイティブ コントロールをカスタマイズできます。_
+_Xamarin.Forms ユーザー インターフェイスは、ターゲット プラットフォームのネイティブ コントロールを使用してレンダリングされるため、Xamarin.Forms アプリケーションでは各プラットフォームの外観を維持できます。エフェクトを使うと、カスタム レンダラーの実装に頼ることなく、各プラットフォーム上のネイティブ コントロールをカスタマイズできます。_
 
 ## <a name="introduction-to-effects"></a>[エフェクトの概要](introduction.md)
 

@@ -1,25 +1,29 @@
 ---
-title: '第 7 章の概要: XAML とコードの比較'
-description: 'Xamarin.Forms で Mobile Apps を作成する: 第 7 章の概要: XAML とコードの比較'
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: E91F387B-CE90-481C-8D90-CB25519BFD2B
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/19/2018
-ms.openlocfilehash: ce4dde3716176daf826678809339afb84c25d84a
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 7. XAML vs. code''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0b92988e1e838072fca0d8a284455a62db05e757
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "61334739"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136861"
 ---
 # <a name="summary-of-chapter-7-xaml-vs-code"></a>第 7 章の概要: XAML とコードの比較
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07)
 
 > [!NOTE]
-> このページのメモでは、Xamarin.Forms が書籍に記載されている資料と異なる部分が示されています。
+> このページの注記では、Xamarin.Forms が書籍に記載されている資料と異なる部分が示されています。
 
 Xamarin.Forms では、Extensible Application Markup Language (XAML) ("ザムル" と読みます) と呼ばれる XML ベースのマークアップ言語がサポートされています。 C# の代わりに XAML を使用して、Xamarin.Forms アプリケーションのユーザー インターフェイスのレイアウトを定義したり、ユーザー インターフェイス要素と基になるデータの間のバインディングを定義したりできます。
 
@@ -54,7 +58,7 @@ XAML とコードの組み合わせは、[**CodePlusXaml**](https://github.com/x
 
 ## <a name="the-xaml-compiler"></a>XAML コンパイラ
 
-Xamarin.Forms には XAML コンパイラがありますが、その使用は [`XamlCompilationAttribute`](xref:Xamarin.Forms.Xaml.XamlCompilationAttribute) の使用に基づいて省略可能です。 XAML がコンパイルされていない場合、XAML はビルド時に解析され、XAML ファイルは PCL に埋め込まれます。このファイルも実行時に解析されます。 XAML がコンパイルされている場合は、ビルド プロセスによって XAML がバイナリ形式に変換され、ランタイムの処理の効率が向上します。
+Xamarin.Forms には XAML コンパイラが用意されていますが、その利用は [`XamlCompilationAttribute`](xref:Xamarin.Forms.Xaml.XamlCompilationAttribute) の使用に基づいて選択できます。 XAML がコンパイルされていない場合、XAML はビルド時に解析され、XAML ファイルは PCL に埋め込まれます。このファイルも実行時に解析されます。 XAML がコンパイルされている場合は、ビルド プロセスによって XAML がバイナリ形式に変換され、ランタイムの処理の効率が向上します。
 
 ## <a name="platform-specificity-in-the-xaml-file"></a>XAML ファイルでのプラットフォームの特異性
 

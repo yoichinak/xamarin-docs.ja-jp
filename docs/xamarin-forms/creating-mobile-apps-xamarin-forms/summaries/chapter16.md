@@ -1,25 +1,29 @@
 ---
-title: '第 16 章の概要: データ バインディング'
-description: 'Xamarin.Forms でモバイル アプリを作成する: 第 16 章の概要: データ バインディング'
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: ED997DB0-C229-4868-A5FB-928703B377D6
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/18/2018
-ms.openlocfilehash: 2d61413fb1d8c28a3957da53601d0ad682f35518
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 16. Data binding''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ece93730100001e8339a5f50cdb7ac437d96fa62
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771098"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136735"
 ---
 # <a name="summary-of-chapter-16-data-binding"></a>第 16 章の概要: データ バインディング
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16)
 
 > [!NOTE] 
-> このページのメモでは、Xamarin.Forms が書籍に記載されている資料と異なる部分が示されています。
+> このページの注記では、Xamarin.Forms が書籍に記載されている資料と異なる部分が示されています。
 
 プログラマーは、あるオブジェクトのプロパティが変更されたことを検出するイベント ハンドラーを作成し、それを使って別のオブジェクトのプロパティの値を変更することがよくあります。 このプロセスは、"*データ バインディング*" の手法を使用して自動化できます。 データ バインディングは、通常、XAML で定義され、ユーザー インターフェイスの定義の一部になります。
 
@@ -66,9 +70,9 @@ ms.locfileid: "70771098"
 
 ## <a name="source-and-bindingcontext"></a>ソースと BindingContext
 
-[**BindingSourceCode**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/BindingSourceCode) サンプルでは、コードにおける別のアプローチが示されています。 `Binding` オブジェクトは、[`Source`](xref:Xamarin.Forms.Binding.Source) プロパティを `Slider` オブジェクトに設定し、[`Path`](xref:Xamarin.Forms.Binding.Path) プロパティを "Value" に設定することで作成されます。 次に、`Label` オブジェクトで `BindableObject` の [`SetBinding`](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase)) メソッドが呼び出されます。
+[**BindingSourceCode**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/BindingSourceCode) サンプルでは、コードにおける別のアプローチが示されています。 `Binding` オブジェクトは、[`Source`](xref:Xamarin.Forms.Binding.Source) プロパティを `Slider` オブジェクトに設定し、[`Path`](xref:Xamarin.Forms.Binding.Path) プロパティを "Value" に設定することで作成されます。 次に `BindableObject` の [`SetBinding`](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase)) メソッドが、`Label` オブジェクトで呼び出されます。
 
-[`Binding` コンストラクター](xref:Xamarin.Forms.Binding.%23ctor(System.String,Xamarin.Forms.BindingMode,Xamarin.Forms.IValueConverter,System.Object,System.String,System.Object))を使用して `Binding` オブジェクトを定義することもできます。
+[`Binding` コンストラクター](xref:Xamarin.Forms.Binding.%23ctor(System.String,Xamarin.Forms.BindingMode,Xamarin.Forms.IValueConverter,System.Object,System.String,System.Object)) を使用して `Binding` オブジェクトを定義することもできます。
 
 [**BindingSourceXaml**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter16/BindingSourceXaml) サンプルには、XAML での同等の手法が示されています。 `Label` の `Opacity` プロパティは `Binding` マークアップ拡張に設定され、[`Path`](xref:Xamarin.Forms.Binding.Path) は `Value` プロパティに、[`Source`](xref:Xamarin.Forms.Binding.Source) は埋め込みの `x:Reference` マークアップ拡張に設定されます。
 

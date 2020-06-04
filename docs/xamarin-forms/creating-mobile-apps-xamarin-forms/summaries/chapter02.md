@@ -1,27 +1,31 @@
 ---
-title: 第 2 章の概要 アプリの構造
-description: 'Xamarin.Forms を使用したモバイル アプリの作成: 第 2 章の概要 アプリの構造'
-ms.prod: xamarin
-ms.technology: xamarin-forms
-ms.assetid: 8764EB7D-8331-4CF7-9BE1-26D0DEE9E0BB
-author: davidbritch
-ms.author: dabritch
-ms.date: 07/17/2018
-ms.openlocfilehash: f900cb1532ba4415127c95b07e777881e1d74994
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+title: ''
+description: ''
+Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 2. Anatomy of an app''
+ms.prod: ''
+ms.technology: ''
+ms.assetid: ''
+author: ''
+ms.author: ''
+ms.date: ''
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 78da3ed91acea0c056074d712d368de70b251392
+ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76724995"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84136917"
 ---
 # <a name="summary-of-chapter-2-anatomy-of-an-app"></a>第 2 章の概要 アプリの構造
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02)
 
 > [!NOTE]
-> このページの注記では、Xamarin.Forms が本に記載されている資料と異なる部分が示されています。
+> このページの注記では、Xamarin.Forms が書籍に記載されている資料と異なる部分が示されています。
 
-Xamarin.Forms アプリケーションでは、画像の領域を占有するオブジェクトは、[`VisualElement`](xref:Xamarin.Forms.VisualElement) クラスでカプセル化された "*ビジュアル オブジェクト*" と呼ばれます。 ビジュアル オブジェクトは、以下のクラスに対応する 3 つのカテゴリに分割できます。
+Xamarin.Forms アプリケーションでは、画像の領域を占有するオブジェクトは、"*ビジュアル要素*" と呼ばれ、[`VisualElement`](xref:Xamarin.Forms.VisualElement) クラスでカプセル化されています。 ビジュアル オブジェクトは、以下のクラスに対応する 3 つのカテゴリに分割できます。
 
 - [ページ](xref:Xamarin.Forms.Page)
 - [レイアウト](xref:Xamarin.Forms.Layout)
@@ -38,7 +42,7 @@ Xamarin プラットフォームをインストールしたら、新しい Xamar
 > [!NOTE]
 > ポータブル クラス ライブラリは、.NET Standard ライブラリに置き換えられています。 本のすべてのサンプル コードは、.NET Standard ライブラリを使用するように変換されています。
 
-このサンプルでは、Visual Studio で作成された Xamarin. Forms ソリューションを修正せずに示します。 このソリューションは、次の 4 つのプロジェクトで構成されています。
+このサンプルでは、Visual Studio で作成される Xamarin.Forms ソリューションを、修正を加えずに示します。 このソリューションは、次の 4 つのプロジェクトで構成されています。
 
 - [**Hello**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello): 他のプロジェクトで共有されているポータブル クラス ライブラリ (PCL)
 - [**Hello.Droid**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Hello/Hello/Hello.Droid): Android 用のアプリケーション プロジェクト
@@ -54,7 +58,7 @@ Xamarin プラットフォームをインストールしたら、新しい Xamar
 
 ## <a name="inside-the-files"></a>ファイルの内部
 
-**Hello** プログラムで表示されるビジュアルは、[`App`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello/App.cs) クラスのコンストラクターで定義されています。 `App` は Xamarin.Forms クラス [`Application`](xref:Xamarin.Forms.Application) から派生します。
+**Hello** プログラムで表示されるビジュアルは、[`App`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello/App.cs) クラスのコンストラクターで定義されています。 `App` は、Xamarin.Forms のクラス [`Application`](xref:Xamarin.Forms.Application) から派生しています。
 
 > [!NOTE]
 > Xamarin.Forms 用の Visual Studio ソリューション テンプレートでは、XAML ファイルが使用されたページが作成されます。 この本では、XAML については[第 7 章](chapter07.md)まで扱いません。
@@ -75,9 +79,9 @@ Xamarin プラットフォームをインストールしたら、新しい Xamar
 - **Xamarin.Forms.Platform.WinRT.Phone**
 
 > [!NOTE]
-> これらのプロジェクトの **References** セクションのアセンブリ一覧はなくなりました。 代わりに、このプロジェクト ファイルには、Xamarin.Forms NuGet パッケージを参照する **PackageReference** タグが含まれています。 Visual Studio の **References** セクションには、Xamarin.Forms アセンブリではなく、**Xamarin.Forms** パッケージがあります。
+> これらのプロジェクトの **References** セクションのアセンブリ一覧はなくなりました。 代わりに、このプロジェクト ファイルには、Xamarin.Forms NuGet パッケージを参照する **PackageReference** タグが含まれています。 Visual Studio の **References** セクションには、Xamarin.Forms アセンブリではなく、 **Xamarin.Forms** パッケージがあります。
 
-各アプリケーション プロジェクトには、`Xamarin.Forms` 名前空間の静的 `Forms.Init` メソッドに対する呼び出しが含まれています。 これでは、Xamarin.Forms ライブラリを初期化します。 `Forms.Init` は、プラットフォームごとに異なるバージョンが定義されています。 このメソッドに対する呼び出しは、次のクラスにあります。
+各アプリケーション プロジェクトには、`Xamarin.Forms` 名前空間の静的 `Forms.Init` メソッドに対する呼び出しが含まれています。 これによって Xamarin.Forms ライブラリが初期化されます。 `Forms.Init` は、プラットフォームごとに異なるバージョンが定義されています。 このメソッドに対する呼び出しは、次のクラスにあります。
 
 - iOS: [`AppDelegate`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.iOS/AppDelegate.cs)
 - Android: [`MainActivity`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter02/Hello/Hello/Hello.Droid/MainActivity.cs)
@@ -100,7 +104,7 @@ Xamarin.Forms ソリューションは、ポータブル クラス ライブラ�
 
 このライブラリの手法では、プラットフォーム アプリケーション プロジェクトによって参照されるすべての共通コードがライブラリ プロジェクトにバンドルされています。 SAP の手法では、すべてのプラットフォーム アプリケーション プロジェクトに共通コードが実際に存在し、それらで共有されます。
 
-Xamarin.Forms 開発者の多くは、ライブラリの手法を好みます。 この本では、ほとんどのソリューションでライブラリを使用しています。 SAP を使用しているものでは、プロジェクト名に **Sap** の接尾辞が含まれています。
+Xamarin.Forms 開発者の多くは、ライブラリの手法を好んでいます。 この本では、ほとんどのソリューションでライブラリを使用しています。 SAP を使用しているものでは、プロジェクト名に **Sap** の接尾辞が含まれています。
 
 SAP の手法では、共有プロジェクト内のコードで、C# プリプロセッサ ディレクティブ (`#if`、#`elif`、および `#endif`) と次の事前定義された識別子を使用して、さまざまなプラットフォームに対して異なるコードを実行できます。
 
@@ -114,7 +118,7 @@ SAP の手法では、共有プロジェクト内のコードで、C# プリプ�
 
 [**Greetings**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter02/Greetings) ソリューションでは、**Greetings** プロジェクトに新しい C# ファイルを追加する方法を示しています。 このファイルは、`ContentPage` から派生する `GreetingsPage` という名前のクラスを定義しています。 この本のほとんどのプロジェクトには、`Page` の接尾辞が追加されたプロジェクト名を持つ、`ContentPage` の派生物が 1 つが含まれています。
 
-`GreetingsPage` コンストラクターは、テキストを表示する Xamarin.Forms ビューである [`Label`](xref:Xamarin.Forms.Label) ビューをインスタンス化しています。 [`Text`](xref:Xamarin.Forms.Label.Text) プロパティは、`Label` によって表示されるテキストに設定されています。 このプログラムで `Label` は、`ContentPage` の `Content` プロパティに設定されています。 `App` クラスのコンストラクターは、次いで `GreetingsPage` をインスタンス化し、それをその `MainPage` プロパティに設定します。
+`GreetingsPage` コンストラクターでは、テキストを表示する Xamarin.Forms ビューである [`Label`](xref:Xamarin.Forms.Label) ビューがインスタンス化されます。 [`Text`](xref:Xamarin.Forms.Label.Text) プロパティは、`Label` によって表示されるテキストに設定されています。 このプログラムで `Label` は、`ContentPage` の `Content` プロパティに設定されています。 `App` クラスのコンストラクターは、次いで `GreetingsPage` をインスタンス化し、それをその `MainPage` プロパティに設定します。
 
 テキストはページの左上端に表示されます。 iOS では、これがページの状態バーに重なることを意味します。 この問題には複数の解決方法があります。
 
@@ -135,7 +139,7 @@ SAP で C# プリプロセッサ ディレクティブを使用して、iOS の�
 
 ### <a name="solution-3-include-padding-just-for-ios-pcl-or-sap"></a>解決方法 3 iOS のみでパディングを含める (PCL または SAP)
 
-本で使用されているバージョンの Xamarin.Forms では、PCL または SAP のいずれかで iOS に固有の `Padding` プロパティは、[`Device.OnPlatform`](xref:Xamarin.Forms.Device.OnPlatform(System.Action,System.Action,System.Action,System.Action)) または [`Device.OnPlatform<T>`](xref:Xamarin.Forms.Device.OnPlatform*) 静的メソッドを使用して選択できます。 これらのメソッドは現在非推奨です。
+書籍で使用されているバージョンの Xamarin.Forms では、PCL または SAP のいずれかで iOS に固有の `Padding` プロパティは、[`Device.OnPlatform`](xref:Xamarin.Forms.Device.OnPlatform(System.Action,System.Action,System.Action,System.Action)) または [`Device.OnPlatform<T>`](xref:Xamarin.Forms.Device.OnPlatform*) 静的メソッドを使用して選択できます。 これらのメソッドは現在非推奨です。
 
 `Device.OnPlatform` メソッドは、プラットフォーム固有のコードを実行したり、プラットフォーム固有の値を選択したりするために使用します。 内部的には、[`Device.OS`](xref:Xamarin.Forms.Device.OS) 静的読み取り専用プロパティを使用し、次の [`TargetPlatform`](xref:Xamarin.Forms.TargetPlatform) 列挙型のメンバーを返します。
 
@@ -183,7 +187,7 @@ iOS と Android の場合、`Tablet` と `Phone` 間のカットオフは 600 �
 - [`LayoutOptions.EndAndExpand`](xref:Xamarin.Forms.LayoutOptions.EndAndExpand)
 - [`LayoutOptions.FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand)
 
-Xamarin.Forms レイアウトで最も重要なプロパティは、`HorizontalOptions` と `VerticalOptions` であり、「[**第 4 章:スタックをスクロール**](chapter04.md)」で詳細に説明されています。
+Xamarin.Forms レイアウトで最も重要なプロパティは `HorizontalOptions` と `VerticalOptions` であり、「[**第 4 章:スタックをスクロール**](chapter04.md)」で詳細に説明されています。
 
 `Label` の `HorizontalOptions` と `VerticalOptions` のプロパティが両方とも `LayoutOptions.Center` に設定されている結果は次のとおりです。
 
