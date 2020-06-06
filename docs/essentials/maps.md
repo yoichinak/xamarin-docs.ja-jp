@@ -1,18 +1,8 @@
 ---
-title: Xamarin.Essentials の Map
-description: Xamarin.Essentials の Map クラスを使用すると、アプリケーションによってインストールされているマップ アプリケーションを使用して、特定の場所または placemark を開くことができます。
-ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 05/26/2020
-ms.custom: video
-ms.openlocfilehash: 16f4a69e2d9216bb2e03fbcb663403d198b42c98
-ms.sourcegitcommit: 6a6cbb62bcf149f9515ee8868679a8a07ce17956
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83862717"
+title:"Xamarin.Essentials マップ" の説明: "Xamarin.Essentials の Map クラスを使用すると、アプリケーションによってインストールされているマップ アプリケーションを使用して、特定の場所または placemark を開くことができます。"
+ms.assetid:BABF40CC-8BEE-43FD-BE12-6301DF27DD33 author: jamesmontemagno ms.author: jamont ms.date:05/26/2020 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinessentials-map"></a>Xamarin.Essentials:マップ
 
 **Map** クラスを使用すると、アプリケーションによってインストールされているマップ アプリケーションを使用して、特定の場所または placemark を開くことができます。
@@ -23,7 +13,7 @@ ms.locfileid: "83862717"
 
 ## <a name="using-map"></a>Map の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;

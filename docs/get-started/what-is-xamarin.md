@@ -1,22 +1,9 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.custom: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a9a25cff30b9dfbed44e60faeae2f577d07940fc
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139218"
+title: "Xamarin とは"
+の説明: "この記事では、Xamarin プラットフォームと関連ライブラリについて説明します。"
+ms.prod: xamarin ms.assetid:33C83E13-F3E5-17B4-6512-207F3D3C5AB6 ms.custom: video author: profexorgeek ms.author: jusjohns ms.date:05/28/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="what-is-xamarin"></a>Xamarin とは
 
 [![iOS および Android での Xamarin サンプル アプリケーションのスクリーンショット](what-is-xamarin-images/xamarin-app-cropped.png)](what-is-xamarin-images/xamarin-app.png#lightbox)
@@ -43,7 +30,7 @@ Xamarin は、次のような目標を持つ開発者を対象としています
 
 この図は、クロスプラットフォーム Xamarin アプリケーションのアーキテクチャ全体を示しています。 Xamarin を使用すると、プラットフォームごとにネイティブ UI を作成し、プラットフォーム間で共有されるビジネス ロジックを C# で記述できます。 ほとんどの場合、アプリケーション コードの 80% は Xamarin を使用して共有できます。
 
-Xamarin は、.NET ECMA 規格に基づいたオープン ソース版の .NET Framework である **Mono** の上に構築されています。 Mono は .NET Framework 自体と同じくらい前から存在していて、Linux、Unix、FreeBSD、macOS などのほぼすべてのプラットフォーム上で実行できます。 Mono の実行環境では、メモリの割り当て、ガベージ コレクション、基になるプラットフォームとの相互運用性などのタスクが自動的に処理されます。
+Xamarin は .NET 上に構築されています。このため、メモリの割り当て、ガベージ コレクション、基になるプラットフォームとの相互運用性などのタスクが自動的に処理されます。
 
 プラットフォーム固有のアーキテクチャの詳細については、「[Xamarin.Android](#xamarinandroid)」および「[Xamarin.iOS](#xamarinios)」を参照してください。
 
@@ -89,7 +76,7 @@ Xamarin.Essentials は、ネイティブ デバイスの機能にクロスプラ
 
 ### Xamarin.Forms
 
-Xamarin.Forms は、オープンソースの UI フレームワークです。 Xamarin.Forms を使用すると、開発者は 1 つの共有コードベースから iOS、Android、Windows のアプリケーションを構築できます。 Xamarin.Forms を使用すると、開発者は C# でコードビハインドを使用して、ユーザー インターフェイスを XAML で作成できます。 これらのユーザー インターフェイスは、各プラットフォームでパフォーマンスの高いネイティブ コントロールとしてレンダリングされます。 Xamarin.Forms で提供される機能の例には、次のようなものがあります。
+Xamarin.Forms は、オープンソースの UI フレームワークです。 Xamarin.Forms を使用すると、開発者は 1 つの共有コードベースから Xamarin.iOS、Xamarin.Android、Windows のアプリケーションを作成できます。 Xamarin.Forms を使用すると、開発者は C# でコードビハインドを使用して、ユーザー インターフェイスを XAML で作成できます。 これらのユーザー インターフェイスは、各プラットフォームでパフォーマンスの高いネイティブ コントロールとしてレンダリングされます。 Xamarin.Forms で提供される機能の例には、次のようなものがあります。
 
 - XAML ユーザー インターフェイス言語
 - データ バインド

@@ -1,9 +1,6 @@
 ---
-title: description:'この記事では、Xamarin.Forms を使ってビデオ プレーヤー アプリケーションでデバイスのビデオ ライブラリにアクセスする方法について説明します。'
-ms.prod: ms.assetid: ms.technology: author: ms.author: ms.date: no-loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title: "デバイスのビデオ ライブラリへのアクセス" の説明: "この記事では、Xamarin.Forms を使用してビデオ プレーヤー アプリケーションでデバイスのビデオ ライブラリにアクセスする方法について説明します。"
+ms.prod: xamarin ms.assetid:364C1D43-EAAE-45B9-BE24-0DA5AE74C4D9 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:02/12/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
 
 # <a name="accessing-the-devices-video-library"></a>デバイスのビデオ ライブラリへのアクセス
@@ -65,7 +62,7 @@ namespace FormsVideoLibrary.iOS
             // Present UIImagePickerController;
             UIWindow window = UIApplication.SharedApplication.KeyWindow;
             var viewController = window.RootViewController;
-            viewController.PresentModalViewController(imagePicker, true);
+            viewController.PresentViewController(imagePicker, true, null);
 
             // Return Task object
             taskCompletionSource = new TaskCompletionSource<string>();

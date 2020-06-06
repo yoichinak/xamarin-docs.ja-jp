@@ -1,22 +1,8 @@
 ---
-title: ''
-description: すべての Xamarin.Forms コントロールには、ネイティブ コントロールのインスタンスを作成する各プラットフォーム用のレンダラーが付属しています。 この記事では、Xamarin.Forms のページ、レイアウト、ビュー、およびセルのそれぞれを実装するレンダラーとネイティブ コントロールのクラスの一覧を示します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a56f05f8ff4eb8ece43a9f4f38a669cfdc85c4be
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135188"
+title: "レンダラーの基本クラスおよびネイティブ コントロール" の説明: "すべての Xamarin.Forms コントロールには、ネイティブ コントロールのインスタンスを作成する各プラットフォーム用のレンダラーが付属しています。 この記事では、Xamarin.Forms のページ、レイアウト、ビュー、およびセルのそれぞれを実装するレンダラーとネイティブ コントロールのクラスの一覧を示します。"
+ms.prod: xamarin ms.assetid:A8909AE3-ED0E-4D24-BF96-B49E732E3B93 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:04/17/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="renderer-base-classes-and-native-controls"></a>レンダラーの基本クラスおよびネイティブ コントロール
 
 _すべての Xamarin.Forms コントロールには、ネイティブ コントロールのインスタンスを作成する各プラットフォーム用のレンダラーが付属しています。この記事では、Xamarin.Forms のページ、レイアウト、ビュー、およびセルのそれぞれを実装するレンダラーとネイティブ コントロールのクラスの一覧を示します。_
@@ -26,7 +12,10 @@ _すべての Xamarin.Forms コントロールには、ネイティブ コント
 - **iOS** – Xamarin.Forms.Platform.iOS
 - **Android** – Xamarin.Forms.Platform.Android
 - **Android (AppCompat)** – Xamarin.Forms.Platform.Android.AppCompat
+- **Android (FastRenderers)**  - Xamarin.Forms.Platform.Android.FastRenderers
 - **ユニバーサル Windows プラットフォーム (UWP)** – Xamarin.Forms.Platform.UWP
+
+高速レンダラーの詳細については、「[Xamarin.Forms 高速レンダラー](~/xamarin-forms/internals/fast-renderers.md)」を参照してください。
 
 `MapRenderer`クラスは、次の名前空間にあります。
 
@@ -54,18 +43,18 @@ _すべての Xamarin.Forms コントロールには、ネイティブ コント
 
 次の表に、Xamarin.Forms の各[レイアウト](~/xamarin-forms/user-interface/controls/layouts.md)型を実装する、レンダラーおよびネイティブ コントロールのクラスの一覧を示します。
 
-|レイアウト|レンダラー|iOS|Android|UWP|
+|レイアウト|レンダラー|iOS|Android|Android (AppCompat)|UWP|
 |--- |--- |--- |--- |--- |
-|[`ContentPresenter`](xref:Xamarin.Forms.ContentPresenter)|ViewRenderer|UIView|View|FrameworkElement|
-|[`ContentView`](xref:Xamarin.Forms.ContentView)|ViewRenderer|UIView|View|FrameworkElement|
-|[`FlexLayout`](xref:Xamarin.Forms.FlexLayout)|ViewRenderer|UIView|View|FrameworkElement|
-|[`Frame`](xref:Xamarin.Forms.Frame)|FrameRenderer|UIView|ViewGroup|Border|
-|[`ScrollView`](xref:Xamarin.Forms.ScrollView)|ScrollViewRenderer|UIScrollView|ScrollView|ScrollViewer|
-|[`TemplatedView`](xref:Xamarin.Forms.TemplatedView)|ViewRenderer|UIView|View|FrameworkElement|
-|[`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)|ViewRenderer|UIView|View|FrameworkElement|
-|[`Grid`](xref:Xamarin.Forms.Grid)|ViewRenderer|UIView|View|FrameworkElement|
-|[`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout)|ViewRenderer|UIView|View|FrameworkElement|
-|[`StackLayout`](xref:Xamarin.Forms.StackLayout)|ViewRenderer|UIView|View|FrameworkElement|
+|[`ContentPresenter`](xref:Xamarin.Forms.ContentPresenter)|ViewRenderer|UIView|View|View|FrameworkElement|
+|[`ContentView`](xref:Xamarin.Forms.ContentView)|ViewRenderer|UIView|View|View|FrameworkElement|
+|[`FlexLayout`](xref:Xamarin.Forms.FlexLayout)|ViewRenderer|UIView|View|View|FrameworkElement|
+|[`Frame`](xref:Xamarin.Forms.Frame)|FrameRenderer|UIView|ViewGroup|CardView|Border|
+|[`ScrollView`](xref:Xamarin.Forms.ScrollView)|ScrollViewRenderer|UIScrollView|ScrollView|ScrollView|ScrollViewer|
+|[`TemplatedView`](xref:Xamarin.Forms.TemplatedView)|ViewRenderer|UIView|View|View|FrameworkElement|
+|[`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)|ViewRenderer|UIView|View|View|FrameworkElement|
+|[`Grid`](xref:Xamarin.Forms.Grid)|ViewRenderer|UIView|View|View|FrameworkElement|
+|[`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout)|ViewRenderer|UIView|View|View|FrameworkElement|
+|[`StackLayout`](xref:Xamarin.Forms.StackLayout)|ViewRenderer|UIView|View|View|FrameworkElement|
 
 ## <a name="views"></a>Views
 
@@ -117,6 +106,7 @@ _すべての Xamarin.Forms コントロールには、ネイティブ コント
 |[`ImageCell`](xref:Xamarin.Forms.ImageCell)|ImageCellRenderer|UIImage がある UITableViewCell|2 つの TextView と ImageView がある LinearLayout|Image と 2 つの TextBlock がある DataTemplate|
 |[`ViewCell`](xref:Xamarin.Forms.ViewCell)|[ViewCellRenderer](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md)|UITableViewCell|View|ContentPresenter がある DataTemplate|
 
-## <a name="summary"></a>まとめ
+## <a name="related-links"></a>関連リンク
 
-この記事では、Xamarin.Forms のページ、レイアウト、ビュー、およびセルのそれぞれを実装するレンダラーとネイティブ コントロールのクラスの一覧を示しました。 すべての Xamarin.Forms コントロールには、ネイティブ コントロールのインスタンスを作成する各プラットフォーム用のレンダラーが付属しています。
+- [Xamarin.Forms 高速レンダラー](~/xamarin-forms/internals/fast-renderers.md)
+- [Xamarin.Forms シェルのカスタム レンダラー](~/xamarin-forms/app-fundamentals/shell/customrenderers.md)

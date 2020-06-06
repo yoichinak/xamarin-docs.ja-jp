@@ -1,18 +1,8 @@
 ---
-title: Xamarin.Essentials:振動
-description: このドキュメントでは、バイブレーション機能を開始して一定時間後に停止することができる Xamarin.Essentials の Vibration クラスについて説明します。
-ms.assetid: 7E8B24C4-2625-4DAE-A129-383542D34F1E
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: a002cd6ed183ffeafef92cb40d48b2792347714d
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83149842"
+タイトル: "Xamarin.Essentials: 振動" の説明: "このドキュメントでは、バイブレーション機能を開始して一定時間後に停止することができる Xamarin.Essentials の Vibration クラスについて説明します。"
+ms.assetid:7E8B24C4-2625-4DAE-A129-383542D34F1E author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:11/04/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinessentials-vibration"></a>Xamarin.Essentials:振動
 
 **Vibration** クラスを使用すると、バイブレーション機能を開始して一定時間後に停止することができます。
@@ -55,7 +45,7 @@ Vibrate アクセス許可が必要です。Android プロジェクト内で構�
 
 ## <a name="using-vibration"></a>Vibration の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;

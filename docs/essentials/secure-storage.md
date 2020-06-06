@@ -1,18 +1,8 @@
 ---
-title: Xamarin.Essentials:セキュリティで保護されたストレージ
-description: このドキュメントでは Xamarin.Essentials の SecureStorage クラスについて説明します。これは単純なキーと値のペアを安全に格納するのに役立ちます。 ここでは、クラスの使用方法、プラットフォームの実装の詳細、および制限事項について説明します。
-ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 04/02/2019
-ms.custom: video
-ms.openlocfilehash: 41d9efa66318f4c3f5315351d3c1f51b4e503521
-ms.sourcegitcommit: 44c44ad60c5c880a39006493aedd2d7aa834a27e
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/18/2020
-ms.locfileid: "83550901"
+タイトル: "Xamarin.Essentials: ストレージをセキュリティで保護する" の説明: "このドキュメントでは Xamarin.Essentials の SecureStorage クラスについて説明します。これはシンプルなキーと値のペアを安全に格納するのに役立ちます。 ここでは、クラスの使用方法、プラットフォームの実装の詳細、および制限事項について説明します。"
+ms.assetid:78856C0D-76BB-406E-A880-D5A3987B7D64 author: jamesmontemagno ms.author: jamont ms.date:04/02/2019 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials:セキュリティで保護されたストレージ
 
 **SecureStorage** クラスは、単純なキーと値のペアを安全に格納するのに役立ちます。
@@ -26,7 +16,7 @@ ms.locfileid: "83550901"
 # <a name="android"></a>[Android](#tab/android)
 
 > [!TIP]
-> [アプリの自動バックアップ](https://developer.android.com/guide/topics/data/autobackup)は Android 6.0 (API レベル 23) 以降の機能です。ユーザーのアプリ データ (共有の設定、アプリの内部ストレージ内のファイル、その他の特定のファイル) がバックアップされます。 アプリが新しいデバイスに再インストールまたはインストールされると、データが復元されます。 これは、バックアップされ、復元するときに暗号化解除できない共有の設定を利用する `SecureStorage` に影響を与えます。 Xamarin.Essentials では、リセットできるようにキーを削除することで自動的にこのケースを処理しますが、自動バックアップを無効にすることで追加の手順を実行できます。
+> [アプリの自動バックアップ](https://developer.android.com/guide/topics/data/autobackup)は Android 6.0 (API レベル 23) 以降の機能です。ユーザーのアプリ データ (共有の設定、アプリの内部ストレージ内のファイル、その他の特定のファイル) がバックアップされます。 アプリが新しいデバイスに再インストールまたはインストールされると、データが復元されます。 これは、バックアップされ、復元するときに暗号化解除できない共有の設定を利用する `SecureStorage` に影響を与えます。 Xamarin.Essentials では、リセットできるようにキーを削除することで自動的にこのケースを処理しますが、自動バックアップを無効にすることで追加の手順を行うことができます。
 
 ### <a name="enable-or-disable-backup"></a>バックアップを有効または無効にする
 `AndroidManifest.xml` ファイルの `android:allowBackup` 設定を false に設定することで、アプリケーション全体の自動バックアップを無効にすることができます。 この方法が推奨されるのは、データを復元する別の方法を計画する場合のみです。
@@ -63,7 +53,7 @@ ms.locfileid: "83550901"
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-**iOS シミュレーター**上で開発している場合は、**キーチェーン** エンタイトルメントを有効にし、アプリケーションのバンドル ID に対してキーチェーンのアクセス グループを追加します。 
+**iOS シミュレーター**上で開発している場合は、**キーチェーン** エンタイトルメントを有効にし、アプリケーションのバンドル ID に対してキーチェーンのアクセス グループを追加します。
 
 iOS プロジェクト内の **Entitlements.plist** を開き、**キーチェーン** エンタイトルメントを見つけて有効にします。 これで、アプリケーションの ID がグループとして自動的に追加されます。
 
@@ -80,7 +70,7 @@ iOS プロジェクト内の **Entitlements.plist** を開き、**キーチェ�
 
 ## <a name="using-secure-storage"></a>セキュリティで保護されたストレージの使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
@@ -161,7 +151,7 @@ iOS デバイスに値を安全に格納するために、[キーチェーン](x
 
 ## <a name="limitations"></a>制限事項
 
-この API は、少量のテキストを格納することを想定しています。  大量のテキストを格納するためにこれを使用しようとすると、パフォーマンスが低下する可能性があります。 
+この API は、少量のテキストを格納することを想定しています。  大量のテキストを格納するためにこれを使用しようとすると、パフォーマンスが低下する可能性があります。
 
 ## <a name="api"></a>API
 

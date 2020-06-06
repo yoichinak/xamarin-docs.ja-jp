@@ -1,18 +1,8 @@
 ---
-title: Xamarin.Essentials:アクセス許可
-description: このドキュメントでは、Xamarin.Essentials の Permissions クラスについて説明します。これにより、実行時のアクセス許可を確認および要求することができます。
-ms.assetid: 34062D84-3E55-4AF7-A688-8551068B1E57
-author: jamesmontemagno
-ms.author: jamont
-ms.custom: video
-ms.date: 01/06/2020
-ms.openlocfilehash: fbce02300363c3ec68c35c11afb25342f06f4be1
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83150078"
+タイトル: "Xamarin.Essentials: アクセス許可" の説明: "このドキュメントでは、Xamarin.Essentials の Permissions クラスについて説明します。これを使用すれば、実行時のアクセス許可を確認および要求することができます。"
+ms.assetid:34062D84-3E55-4AF7-A688-8551068B1E57 author: jamesmontemagno ms.author: jamont ms.custom: video ms.date:01/06/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinessentials-permissions"></a>Xamarin.Essentials:アクセス許可
 
 **Permissions** クラスでは、実行時のアクセス許可を確認および要求する機能が提供されます。
@@ -25,7 +15,7 @@ ms.locfileid: "83150078"
 
 ## <a name="using-permissions"></a>Permissions の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;

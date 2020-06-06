@@ -1,18 +1,8 @@
 ---
-title: Xamarin.Essentials:アプリのテーマ
-description: このドキュメントでは、Xamarin.Essentials の要求されたアプリ テーマに関する API について説明します。実行中のアプリに対して要求されているテーマ スタイルに関する情報が記載されています。
-ms.assetid: F6F6D496-A8A9-4B9A-AF1A-370D937E5073
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 01/06/2020
-ms.openlocfilehash: 84c246eb60f4ee561bbf2bcfee6eb587ce601a4a
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83150150"
+タイトル: "Xamarin.Essentials: アプリのテーマ" の説明: "このドキュメントでは、Xamarin.Essentials の要求されたアプリ テーマに関する API について説明します。実行中のアプリに対して要求されているテーマ スタイルに関する情報が記載されています。"
+ms.assetid:F6F6D496-A8A9-4B9A-AF1A-370D937E5073 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:01/06/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinessentials-app-theme"></a>Xamarin.Essentials:アプリのテーマ
 
 **RequestedTheme** API は [`AppInfo`](app-information.md) クラスの一部であり、実行中のアプリに対してシステムから要求されているテーマに関する情報が提供されます。
@@ -23,7 +13,7 @@ ms.locfileid: "83150150"
 
 ## <a name="using-requestedtheme"></a>RequestedTheme の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
@@ -58,14 +48,14 @@ Android では、要求するテーマの種類を指定するために、ユー
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-13.0 より前のバージョンの iOS では、常に Unspecified が返されます 
+13.0 より前のバージョンの iOS では、常に Unspecified が返されます
 
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
 `RequestedTheme` の呼び出しは UI スレッドで行う必要があります。そうしないと、例外がスローされます。
 
-UWP アプリケーションでは、**RequestedTheme** で UWP App.xaml の設定が尊重されます。 特定のテーマに設定されている場合、Xamarin. Essentials は常にこの設定を返します。 OS の動的テーマを使用するには、アプリケーションからこのノードを削除します。その後、アプリが実行されると、Windows の設定でユーザーが設定したテーマが返されます ( **[設定] > [パーソナル化] > [色] > [Choose your default app mode]\(既定のアプリ モードを選択する\)** )。
+UWP アプリケーションでは、**RequestedTheme** で UWP App.xaml の設定が尊重されます。 特定のテーマに設定されている場合、Xamarin.Essentials からは常にこの設定が返されます。 OS の動的テーマを使用するには、アプリケーションからこのノードを削除します。その後、アプリが実行されると、Windows の設定でユーザーが設定したテーマが返されます ( **[設定] > [パーソナル化] > [色] > [Choose your default app mode]\(既定のアプリ モードを選択する\)** )。
 
 詳細については、[UWP の要求されたテーマに関するドキュメント](https://docs.microsoft.com/uwp/api/windows.ui.xaml.application.requestedtheme)を参照してください。
 

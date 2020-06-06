@@ -1,26 +1,14 @@
 ---
-title: Xamarin.Forms の概要
-description: この記事では、Xamarin.Forms と関連ライブラリについて紹介します。
-ms.prod: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b65be3cd552cf6a4fb094d59c44fa43de3deddcd
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139192"
+title: "Xamarin.Forms とは"
+の説明: "この記事では、Xamarin.Forms と関連ライブラリについて紹介します。"
+ms.prod: xamarin ms.assetid:C1E24DB9-3099-4F79-BB88-10AABF7D4614 author: profexorgeek ms.author: jusjohns ms.date:05/28/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="what-is-xamarinforms"></a>Xamarin.Forms の概要
 
 [![iOS および Android での Xamarin.Forms サンプル アプリケーションのスクリーンショット](what-is-xamarin-forms-images/xamarin-forms-app-cropped.png)](what-is-xamarin-forms-images/xamarin-forms-app.png#lightbox)
 
-Xamarin.Forms は、オープンソースの UI フレームワークです。 Xamarin.Forms を使用すると、開発者は 1 つの共有コードベースから Android、iOS、Windows のアプリケーションを構築できます。
+Xamarin.Forms は、オープンソースの UI フレームワークです。 Xamarin.Forms を使用すると、開発者は 1 つの共有コードベースから Xamarin.Android、Xamarin.iOS、Windows のアプリケーションを作成できます。
 
 Xamarin.Forms を使用すると、開発者は C# でコードビハインドを使用して、ユーザー インターフェイスを XAML で作成できます。 これらのインターフェイスは、各プラットフォームでパフォーマンスの高いネイティブ コントロールとしてレンダリングされます。
 
@@ -38,15 +26,15 @@ Xamarin.Forms は、次のような目標を持つ開発者を対象としてい
 
 Xamarin.Forms では、複数のプラットフォーム間にわたる UI 要素を作成するための一貫した API が用意されています。 この API は、XAML または C# のいずれかで実装でき、Model-View-ViewModel (MVVM) などのパターンのデータバインドがサポートされています。
 
-Xamarin.Forms ではプラットフォーム レンダラーを利用して、実行時に、クロスプラットフォームの UI 要素が Android、iOS、UWP のネイティブ コントロールに変換されます。 これにより開発者は、プラットフォーム間でのコード共有の恩恵を受けながら、ネイティブなルック アンド フィールとパフォーマンスを得ることができます。
+Xamarin.Forms ではプラットフォーム レンダラーを利用して、実行時に、クロスプラットフォームの UI 要素が Xamarin.Android、Xamarin.iOS、UWP のネイティブ コントロールに変換されます。 これにより開発者は、プラットフォーム間でのコード共有の恩恵を受けながら、ネイティブなルック アンド フィールとパフォーマンスを得ることができます。
 
 Xamarin.Forms アプリケーションは、通常、.NET Standard の共有ライブラリと個々のプラットフォーム プロジェクトで構成されます。 共有ライブラリには、XAML また C# ビュー、およびサービス、モデル、またはその他のコードなどのビジネス ロジックが含まれています。 プラットフォーム プロジェクトには、アプリケーションが必要とするプラットフォーム固有のロジックまたはパッケージが含まれています。
 
-Xamarin.Forms では Xamarin を使用して、複数のプラットフォームにわたってネイティブに .NET アプリケーションが実行されます。 Xamarin の詳細については、「[Xamarin とは](~/get-started/what-is-xamarin.md)」を参照してください。
+Xamarin.Forms では Xamarin プラットフォームを使用して、複数のプラットフォームにわたってネイティブに .NET アプリケーションが実行されます。 Xamarin プラットフォームの詳細については、「[Xamarin とは](~/get-started/what-is-xamarin.md)」を参照してください。
 
-## <a name="additional-tools"></a>その他のツール
+## <a name="additional-functionality"></a>その他の機能
 
-Xamarin.Forms には、さまざまな機能をアプリケーションに追加する NuGet パッケージの大規模なエコシステムがあります。 このセクションでは、一般的に使用されるいくつかの NuGet パッケージについて説明します。
+Xamarin.Forms には、さまざまな機能をアプリケーションに追加するライブラリの大規模なエコシステムがあります。 このセクションでは、この追加機能の一部を説明します。
 
 ### Xamarin.Essentials
 

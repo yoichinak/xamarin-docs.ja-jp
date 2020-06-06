@@ -1,17 +1,8 @@
 ---
-title: Xamarin.Essentials:Web Authenticator
-description: このドキュメントでは、Xamarin.Essentials の WebAuthenticator クラスについて説明します。これを使用すると、アプリへのコールバックをリッスンする、ブラウザー ベースの認証フローを開始できます。
-ms.assetid: 3D95371E-5D59-440E-8D31-F3C04E493DC1
-author: redth
-ms.author: jodick
-ms.date: 03/26/2020
-ms.openlocfilehash: b090ea8491afccb7078de8333a44a4888819a46a
-ms.sourcegitcommit: ddd2cb3a102df339bb269380cb2c0617dbb1acb7
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81688259"
+タイトル: "Xamarin.Essentials: Web Authenticator" の説明: "このドキュメントでは、Xamarin.Essentials の WebAuthenticator クラスについて説明します。これを使用すると、アプリへのコールバックをリッスンする、ブラウザー ベースの認証フローを開始できます。"
+ms.assetid:3D95371E-5D59-440E-8D31-F3C04E493DC1 author: redth ms.author: jodick ms.date:03/26/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinessentials-web-authenticator"></a>Xamarin.Essentials:Web Authenticator
 
 **WebAuthenticator** クラスを使用すると、アプリに登録されている特定の URL へのコールバックをリッスンする、ブラウザー ベースのフローを開始できます。
@@ -106,7 +97,7 @@ UWP の場合は、`Package.appxmanifest` ファイル内でコールバック U
 
 ## <a name="using-webauthenticator"></a>WebAuthenticator の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;

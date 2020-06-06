@@ -1,18 +1,8 @@
 ---
-title: Xamarin.Essentials:位置情報
-description: このドキュメントでは、デバイスの現在の位置座標を取得する API を提供する Xamarin.Essentials の Geolocation クラスについて説明します。
-ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 03/13/2019
-ms.openlocfilehash: 99b439e70038d27ed8bffcf20b908c52a10ede82
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83149743"
+タイトル: "Xamarin.Essentials: 位置情報" の説明: "このドキュメントでは、デバイスの現在の位置座標を取得する API を提供する Xamarin.Essentials の Geolocation クラスについて説明します。"
+ms.assetid:8F66092C-13F0-4FEE-8AA5-901D5F79B357 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:03/13/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials:位置情報
 
 **Geolocation** クラスには、デバイスの現在の位置座標を取得する API が用意されています。
@@ -74,7 +64,7 @@ plist エディターを開き、 **[プライバシー - 位置情報 (使用�
 
 ## <a name="using-geolocation"></a>Geolocation の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
@@ -112,7 +102,7 @@ catch (Exception ex)
 }
 ```
 
-高度は常に使用できるとは限りません。 使用できない場合、`Altitude` プロパティは `null` または 0 になることがあります。 高度を使用できる場合、値は海抜メートル単位です。 
+高度は常に使用できるとは限りません。 使用できない場合、`Altitude` プロパティは `null` または 0 になることがあります。 高度を使用できる場合、値は海抜メートル単位です。
 
 現在のデバイスの[場所](xref:Xamarin.Essentials.Location)の座標を照会するには、`GetLocationAsync` を使用できます。 デバイスの場所を取得するには時間がかかる場合があるので、完全な `GeolocationRequest` と `CancellationToken` を渡すのが最善です。
 

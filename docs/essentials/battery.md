@@ -1,18 +1,8 @@
 ---
-title: Xamarin.Essentials:バッテリ
-description: このドキュメントで説明する Xamarin.Essentials の Battery クラスを使用すると、デバイスのバッテリに関する情報を確認し、変化を監視できます。
-ms.assetid: 47EB26D8-8C62-477B-A13C-6977F74E6E43
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 01/22/2019
-ms.custom: video
-ms.openlocfilehash: cba17707f9129feecc618c9a7c2f144ad40f0168
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70756923"
+タイトル: "Xamarin.Essentials: バッテリ" の説明: "このドキュメントで説明する Xamarin.Essentials の Battery クラスを使用すると、デバイスのバッテリに関する情報を確認し、変化を監視できます。"
+ms.assetid:47EB26D8-8C62-477B-A13C-6977F74E6E43 author: jamesmontemagno ms.author: jamont ms.date:01/22/2019 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinessentials-battery"></a>Xamarin.Essentials:バッテリ
 
 **Battery** クラスでは、デバイスのバッテリ情報を確認し、変更を監視し、デバイスが省電力モードで実行されているかどうかを示す、デバイスの省電力状態に関する情報を提供できます。 デバイスの省電力状態がオンになっている場合、アプリケーションはバックグラウンド処理を避ける必要があります。
@@ -55,7 +45,7 @@ ms.locfileid: "70756923"
 
 ## <a name="using-battery"></a>Battery の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
@@ -170,7 +160,7 @@ public class EnergySaverTest
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-- API をテストするには、デバイスを使用する必要があります。 
+- API をテストするには、デバイスを使用する必要があります。
 - `PowerSource` に対しては、`AC` または `Battery` しか返されません。
 
 # <a name="uwp"></a>[UWP](#tab/uwp)

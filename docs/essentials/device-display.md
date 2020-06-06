@@ -1,18 +1,8 @@
 ---
-title: Xamarin.Essentials:デバイス ディスプレイ情報
-description: このドキュメントでは、アプリケーションが実行されているデバイスの画面のメトリックを提供する Xamarin.Essentials の DeviceDisplay クラスについて説明します。
-ms.assetid: 2821C908-C613-490D-8E8C-1BD3269FCEEA
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 1d72458fa32db58d0c5da278dbb424aa2b1714d1
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83150109"
+タイトル: "Xamarin.Essentials: デバイス ディスプレイ情報" の説明: "このドキュメントでは、アプリケーションが実行されているデバイスの画面のメトリックを提供する Xamarin.Essentials の DeviceDisplay クラスについて説明します。"
+ms.assetid:2821C908-C613-490D-8E8C-1BD3269FCEEA author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:11/04/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinessentials-device-display-information"></a>Xamarin.Essentials:デバイス ディスプレイ情報
 
 **DeviceDisplay** クラスは、アプリケーションが実行されているデバイスの画面のメトリックに関する情報を提供し、アプリケーションの実行中に画面がスリープ状態にならないように要求することができます。
@@ -23,7 +13,7 @@ ms.locfileid: "83150109"
 
 ## <a name="using-devicedisplay"></a>DeviceDisplay の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;

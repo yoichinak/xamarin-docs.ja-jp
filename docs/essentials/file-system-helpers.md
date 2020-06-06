@@ -1,18 +1,8 @@
 ---
-title: Xamarin.Essentials:ファイル システム ヘルパー
-description: Xamarin.Essentials の FileSystem クラスには、アプリケーションのキャッシュ ディレクトリやデータ ディレクトリを検索したり、アプリ パッケージ内のファイルを開いたりする、一連のヘルパーが含まれています。
-ms.assetid: B3EC2DE0-EFC0-410C-AF71-7410AE84CF84
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: e42cb3764e993ecd6063aab6f38b1cdf5e870a58
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83150000"
+タイトル: "Xamarin.Essentials: ファイル システム ヘルパー" の説明: "Xamarin.Essentials の FileSystem クラスには、アプリケーションのキャッシュ ディレクトリやデータ ディレクトリを検索したり、アプリ パッケージ内のファイルを開いたりする、一連のヘルパーが含まれています。"
+ms.assetid:B3EC2DE0-EFC0-410C-AF71-7410AE84CF84 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:11/04/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinessentials-file-system-helpers"></a>Xamarin.Essentials:ファイル システム ヘルパー
 
 **FileSystem** クラスには、アプリケーションのキャッシュ ディレクトリやデータ ディレクトリを検索したり、アプリ パッケージ内のファイルを開いたりする、一連のヘルパーが含まれています。
@@ -23,7 +13,7 @@ ms.locfileid: "83150000"
 
 ## <a name="using-file-system-helpers"></a>FileSystem の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;

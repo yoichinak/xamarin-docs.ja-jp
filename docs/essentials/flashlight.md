@@ -1,18 +1,8 @@
 ---
-title: Xamarin.Essentials:Flashlight
-description: このドキュメントでは、デバイスのカメラのフラッシュを懐中電灯にする機能をオンまたはオフにできる Xamarin.Essentials の Flashlight クラスについて説明します。
-ms.assetid: 06A03553-D212-43A2-9E6E-C2D2D93EB136
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 1a8601860afaf033c9bdb62c187fe228d2e83435
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83149955"
+タイトル: "Xamarin.Essentials: 懐中電灯" の説明: "このドキュメントでは、デバイスのカメラのフラッシュを懐中電灯にする機能をオンまたはオフにできる Xamarin.Essentials の Flashlight クラスについて説明します。"
+ms.assetid:06A03553-D212-43A2-9E6E-C2D2D93EB136 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:11/04/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials:Flashlight
 
 **Flashlight** クラスを使用すると、デバイスのカメラのフラッシュを懐中電灯にする機能をオンまたはオフにできます。
@@ -66,7 +56,7 @@ Flashlight および Camera アクセス許可が必要であり、Android プ�
 
 ## <a name="using-flashlight"></a>Flashlight の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
@@ -109,7 +99,7 @@ Flashlight クラスは、デバイスのオペレーティング システム�
 
 #### <a name="api-level-22-and-lower"></a>API レベル 22 以下
 
-カメラ ユニットの `FlashMode` をオン/オフするために、カメラ サーフェス テクスチャが作成されます。 
+カメラ ユニットの `FlashMode` をオン/オフするために、カメラ サーフェス テクスチャが作成されます。
 
 ### <a name="ios"></a>[iOS](#tab/ios)
 

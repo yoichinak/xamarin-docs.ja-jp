@@ -1,18 +1,8 @@
 ---
-title: Xamarin.Essentials:共有
-description: アプリケーションで Xamarin.Essentials の Share クラスを使用すると、デバイス上の他のアプリケーションとテキストや Web リンクなどのデータを共有できます。
-ms.assetid: B7B01D55-0129-4C87-B515-89F8F4E94665
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 01/06/2020
-ms.custom: video
-ms.openlocfilehash: f964967dce0dbb7e49d52a7f865b0fe8a9957bbe
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77545205"
+タイトル: "Xamarin.Essentials: 共有" の説明: "アプリケーションで Xamarin.Essentials の Share クラスを使用すると、デバイス上の他のアプリケーションとテキストや Web リンクなどのデータを共有できます。"
+ms.assetid:B7B01D55-0129-4C87-B515-89F8F4E94665 author: jamesmontemagno ms.author: jamont ms.date:01/06/2020 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinessentials-share"></a>Xamarin.Essentials:共有
 
 アプリケーションで **Share** クラスを使用すると、デバイス上の他のアプリケーションとテキストや Web リンクなどのデータを共有できます。
@@ -23,7 +13,7 @@ ms.locfileid: "77545205"
 
 ## <a name="using-share"></a>Share の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;

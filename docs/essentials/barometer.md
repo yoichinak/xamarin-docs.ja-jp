@@ -1,17 +1,8 @@
 ---
-title: Xamarin.Essentials:バロメーター
-description: Xamarin.Essentials の Barometer クラスを使用すると、負荷を測定するデバイスのバロメーター センサーを監視できます。
-ms.assetid: DA4F968A-D988-41F5-8745-1BEE693660A1
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 5a496fc06732be1cf104cfbaffa8ff4b68c8f564
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "69976434"
+タイトル: "Xamarin.Essentials: バロメーター" の説明: "Xamarin.Essentials の Barometer クラスを使用すると、負荷を測定するデバイスのバロメーター センサーを監視できます。"
+ms.assetid:DA4F968A-D988-41F5-8745-1BEE693660A1 author: jamesmontemagno ms.author: jamont ms.date:11/04/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinessentials-barometer"></a>Xamarin.Essentials:バロメーター
 
 **Barometer** クラスを使用すると、負荷を測定するデバイスのバロメーター センサーを監視できます。
@@ -22,7 +13,7 @@ ms.locfileid: "69976434"
 
 ## <a name="using-barometer"></a>バロメーターの使用
 
-自分のクラスの Xamarin.Essentials に参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;

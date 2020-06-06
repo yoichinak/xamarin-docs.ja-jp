@@ -1,18 +1,8 @@
 ---
-title: Xamarin.Essentials:接続
-description: Xamarin.Essentials の Connectivity クラスを使用すると、デバイスのネットワーク状態の変更を監視したり、現在のネットワーク アクセスとその現在の接続方法を確認したりできます。
-ms.assetid: E1B1F152-B1D5-4227-965E-C0AEBF528F49
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 01/08/2019
-ms.custom: video
-ms.openlocfilehash: c70510f7b47f93c6119532b6a1c06f6c2e9e56ea
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "67855759"
+タイトル: "Xamarin.Essentials: 接続性" の説明: "Xamarin.Essentials の Connectivity クラスを使用すると、デバイスのネットワーク状態の変更を監視したり、現在のネットワーク アクセスとその現在の接続方法を確認したりできます。"
+ms.assetid:E1B1F152-B1D5-4227-965E-C0AEBF528F49 author: jamesmontemagno ms.author: jamont ms.date:01/08/2019 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials:接続
 
 **Connectivity** クラスを使用すると、デバイスのネットワーク状態の変更を監視したり、現在のネットワーク アクセスとその現在の接続方法を確認したりできます。
@@ -55,7 +45,7 @@ ms.locfileid: "67855759"
 
 ## <a name="using-connectivity"></a>接続の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;

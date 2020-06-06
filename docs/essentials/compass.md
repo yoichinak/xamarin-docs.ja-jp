@@ -1,18 +1,8 @@
 ---
-title: Xamarin.Essentials:コンパス
-description: このドキュメントで説明する Xamarin.Essentials の Compass クラスを使用すると、デバイスの磁北方位を監視することができます。
-ms.assetid: BF85B0C3-C686-43D9-811A-07DCAF8CDD86
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 54ce725a319e0222179945ece558338c8a152653
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83150123"
+タイトル: "Xamarin.Essentials: コンパス" の説明: "このドキュメントで説明する Xamarin.Essentials の Compass クラスを使用すると、デバイスの磁北方位を監視することができます。"
+ms.assetid:BF85B0C3-C686-43D9-811A-07DCAF8CDD86 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:11/04/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinessentials-compass"></a>Xamarin.Essentials:コンパス
 
 **Compass** クラスを使用すると、デバイスの磁北方位を監視することができます。
@@ -23,7 +13,7 @@ ms.locfileid: "83150123"
 
 ## <a name="using-compass"></a>Compass の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;

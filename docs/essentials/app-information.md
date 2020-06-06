@@ -1,18 +1,8 @@
 ---
-title: Xamarin.Essentials:アプリ情報
-description: このドキュメントでは、アプリケーションに関する情報を提供する Xamarin.Essentials の AppInfo クラスについて説明します。 たとえば、アプリの名前やバージョンが公開されます。
-ms.assetid: 15924FCB-19E0-45B2-944E-E94FD7AE12FA
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 01/29/2019
-ms.custom: video
-ms.openlocfilehash: 69d0cb503d329ccfb4c29fb6cc4a589bef97e893
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70756989"
+タイトル: "Xamarin.Essentials: アプリ情報" の説明: "このドキュメントでは、アプリケーションに関する情報を提供する Xamarin.Essentials の AppInfo クラスについて説明します。 たとえば、アプリの名前やバージョンが公開されます。"
+ms.assetid:15924FCB-19E0-45B2-944E-E94FD7AE12FA author: jamesmontemagno ms.author: jamont ms.date:01/29/2019 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinessentials-app-information"></a>Xamarin.Essentials:アプリ情報
 
 **AppInfo** クラスでは、アプリケーションに関する情報が提供されます。
@@ -23,7 +13,7 @@ ms.locfileid: "70756989"
 
 ## <a name="using-appinfo"></a>AppInfo の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;

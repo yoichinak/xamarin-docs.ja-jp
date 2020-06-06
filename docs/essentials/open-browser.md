@@ -1,18 +1,8 @@
 ---
-title: Xamarin.Essentials ブラウザーを開く
-description: Xamarin.Essentials の Browser クラスを使用すると、最適化されたシステム推奨のブラウザーまたは外部のブラウザーを使って、アプリケーションで Web リンクを開くことができます。
-ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
-author: jamesmontemagno
-ms.author: jamont
-ms.date: 04/02/2019
-ms.custom: video
-ms.openlocfilehash: 715b9872642dfa8d5426c2967c62e82643def34d
-ms.sourcegitcommit: 9ca07644710e5919c7bc684c1ce144471611d5df
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82974480"
+title: "Xamarin.Essentials ブラウザーを開く" の説明: Xamarin.Essentials の Browser クラスを使用すると、最適化されたシステム推奨のブラウザーまたは外部のブラウザーを使用して、アプリケーションで Web リンクを開くことができます。
+ms.assetid:BABF40CC-8BEE-43FD-BE12-6301DF27DD33 author: jamesmontemagno ms.author: jamont ms.date:04/02/2019 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinessentials-browser"></a>Xamarin.Essentials:ブラウザー
 
 **Browser** クラスを使用すると、最適化されたシステム推奨のブラウザーまたは外部のブラウザーを使って、アプリケーションで Web リンクを開くことができます。
@@ -23,7 +13,7 @@ ms.locfileid: "82974480"
 
 ## <a name="using-browser"></a>ブラウザーの使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
@@ -46,7 +36,7 @@ public class BrowserTest
 
 ## <a name="customization"></a>カスタマイズ
 
-システム推奨ブラウザーの使用時、iOS と Android ではカスタマイズ オプションをいくつか利用できます。 たとえば、`TitleMode` (Android のみ)、`Toolbar` に推奨される色の選択肢 (iOS と Android)、`Controls` の表示 (iOS のみ) があります。 
+システム推奨ブラウザーの使用時、iOS と Android ではカスタマイズ オプションをいくつか利用できます。 たとえば、`TitleMode` (Android のみ)、`Toolbar` に推奨される色の選択肢 (iOS と Android)、`Controls` の表示 (iOS のみ) があります。
 
 このようなオプションは `OpenAsync` の呼び出し時、`BrowserLaunchOptions` を使用することで指定されます。
 

@@ -1,18 +1,8 @@
 ---
-title: Xamarin.Essentials:デバイス情報
-description: このドキュメントでは、アプリケーションが実行されているデバイスに関する情報を提供する Xamarin.Essentials の DeviceInfo クラスについて説明します。
-ms.assetid: A1AC5373-926A-4FB6-8D7D-4B87EB8EB522
-author: jamesmontemagno
-ms.custom: video
-ms.author: jamont
-ms.date: 11/04/2018
-ms.openlocfilehash: 1790e950dfccddcca84adf97bcff64f905ee59f6
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83150085"
+タイトル: "Xamarin.Essentials: デバイス情報" の説明: "このドキュメントでは、アプリケーションが実行されているデバイスに関する情報を提供する Xamarin.Essentials の DeviceInfo クラスについて説明します。"
+ms.assetid:A1AC5373-926A-4FB6-8D7D-4B87EB8EB522 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:11/04/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinessentials-device-information"></a>Xamarin.Essentials:デバイス情報
 
 **DeviceInfo** クラスでは、アプリケーションが実行されているデバイスに関する情報が提供されます。
@@ -23,7 +13,7 @@ ms.locfileid: "83150085"
 
 ## <a name="using-deviceinfo"></a>DeviceInfo の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
