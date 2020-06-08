@@ -17,7 +17,7 @@ _すべての Xamarin.Forms コントロールには、ネイティブ コント
 
 高速レンダラーの詳細については、「[Xamarin.Forms 高速レンダラー](~/xamarin-forms/internals/fast-renderers.md)」を参照してください。
 
-`MapRenderer`クラスは、次の名前空間にあります。
+`MapRenderer` クラスは、次の名前空間にあります。
 
 - **iOS** – Xamarin.Forms.Maps.iOS
 - **Android** – Xamarin.Forms.Maps.Android

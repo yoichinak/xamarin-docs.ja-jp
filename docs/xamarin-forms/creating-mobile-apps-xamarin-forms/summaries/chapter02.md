@@ -25,7 +25,7 @@ ms.locfileid: "84136917"
 > [!NOTE]
 > このページの注記では、Xamarin.Forms が書籍に記載されている資料と異なる部分が示されています。
 
-Xamarin.Forms アプリケーションでは、画像の領域を占有するオブジェクトは、"*ビジュアル要素*" と呼ばれ、[`VisualElement`](xref:Xamarin.Forms.VisualElement) クラスでカプセル化されています。 ビジュアル オブジェクトは、以下のクラスに対応する 3 つのカテゴリに分割できます。
+Xamarin.Forms アプリケーションでは、画像の領域を占有するオブジェクトは、"*ビジュアル要素*" と呼ばれ、[`VisualElement`](xref:Xamarin.Forms.VisualElement) クラスでカプセル化されています。 ビジュアル要素は、以下のクラスに対応する 3 つのカテゴリに分割できます。
 
 - [ページ](xref:Xamarin.Forms.Page)
 - [レイアウト](xref:Xamarin.Forms.Layout)
