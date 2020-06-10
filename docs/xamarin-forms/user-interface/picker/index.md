@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms効果
-description: ピッカーには、アイテムを Xamarin.Forms 選択できる項目の短い一覧が表示されます。 この記事では、ピッカークラスを使用して、データの一覧からテキスト項目を選択する方法について説明します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 50f605f4ad9839521fd4169531ad46d197f20dbf
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139663"
+title: " Xamarin.Forms ピッカー" description: "ピッカーには項目 Xamarin.Forms の短い一覧が表示され、そこからユーザーは項目を選択できます。 この記事では、ピッカークラスを使用して、データの一覧からテキスト項目を選択する方法について説明します。
+ms. 製品: xamarin ms. assetid: D4815A4B-104B-4294-951B-BD8F2EC33C86: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 02/26/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-picker"></a>Xamarin.Forms効果
 
 _ピッカービューは、データの一覧からテキスト項目を選択するためのコントロールです。_

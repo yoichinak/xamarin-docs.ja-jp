@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsExpander
-description: Xamarin.Formsエキスパンダーコントロールは、任意のコンテンツをホストするための拡張可能なコンテナーを提供します。 コンテンツを表示または非表示にするには、エキスパンダーヘッダーをタップします。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 5e9afa0f6d27003891963af5715d5721e3129306
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84129572"
+title: " Xamarin.Forms エキスパンダー" 説明: " Xamarin.Forms エキスパンダーコントロールは、任意のコンテンツをホストするための拡張可能なコンテナーを提供します。 コンテンツを表示または非表示にするには、エキスパンダーヘッダーをタップします。 "
+ms. 製品: xamarin ms. assetid: 381DCB55-522D-4414-B45B-E8DD70AA9985: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 04/15/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-expander"></a>Xamarin.FormsExpander
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-expanderdemos/)
@@ -376,5 +362,5 @@ void OnLabelTapped(object sender, EventArgs e)
 
 - [エキスパンダーのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-expanderdemos/)
 - [Xamarin.Formsイージング関数](~/xamarin-forms/user-interface/animation/easing.md)
-- [Xamarin.Formsログオフ](~/xamarin-forms/app-fundamentals/triggers.md)
+- [Xamarin.Forms のトリガー](~/xamarin-forms/app-fundamentals/triggers.md)
 - [Xamarin.Formsバインド可能なレイアウト](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)

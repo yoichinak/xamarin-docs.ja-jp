@@ -1,22 +1,8 @@
 ---
-title: ''
-description: IOS、Android、UWP のネイティブビューは、 Xamarin.Forms C# を使用して作成されたページから直接参照できます。 この記事では、 Xamarin.Forms C# を使用して作成されたレイアウトにネイティブビューを追加する方法と、カスタムビューのレイアウトをオーバーライドして、その測定 API の使用状況を修正する方法について説明します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 18cdeccbdff86a6b20aab4b33db259f1f06ee096
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139595"
+title: "c# のネイティブビュー" 説明: "iOS、Android、UWP からのネイティブビューは、 Xamarin.Forms c# を使用して作成されたページから直接参照できます。 この記事では、 Xamarin.Forms C# を使用して作成されたレイアウトにネイティブビューを追加する方法と、カスタムビューのレイアウトをオーバーライドして、その測定 API の使用を修正する方法について説明します。
+ms. 製品: xamarin ms. assetid: 230F937C-F914-4B21-8EA1-1A2A9E644769: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 04/27/2016 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="native-views-in-c"></a>C のネイティブビュー\#
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeembedding)
@@ -38,9 +24,9 @@ Xamarin.Formsを設定できるコントロール `Content` 、またはコレ�
 
 共有プロジェクトでこれらのメソッドを使用するには Xamarin.Forms 、プラットフォーム固有の適切な名前空間をインポートする必要があり Xamarin.Forms ます。
 
-- **iOS** – Xamarin.Forms 。Platform. iOS
-- **Android** – Xamarin.Forms 。Platform. Android
-- **ユニバーサル Windows プラットフォーム (UWP)** – Xamarin.Forms 。プラットフォーム (UWP)
+- **iOS** – Xamarin.Forms.Platform.iOS
+- **Android** – Xamarin.Forms.Platform.Android
+- **ユニバーサル Windows プラットフォーム (UWP)** – Xamarin.Forms.Platform.UWP
 
 ## <a name="adding-platform-specific-views-on-each-platform"></a>プラットフォーム固有のビューを各プラットフォームに追加する
 
@@ -319,7 +305,7 @@ stackLayout.Children.Add(fixedControl, arrangeOverrideDelegate: (renderer, final
 
 ![](code-images/winrt-good-measurement.png "UWP CustomControl with ArrangeOverride Delegate")
 
-## <a name="summary"></a>[概要]
+## <a name="summary"></a>まとめ
 
 この記事では、 Xamarin.Forms C# を使用して作成されたレイアウトにネイティブビューを追加する方法と、カスタムビューのレイアウトをオーバーライドして、その測定 API の使用を修正する方法について説明しました。
 

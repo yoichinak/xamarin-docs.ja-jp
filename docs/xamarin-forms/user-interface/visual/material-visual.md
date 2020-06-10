@@ -1,23 +1,9 @@
 ---
-title: Xamarin.Forms素材ビジュアル
-description: Xamarin.Forms素材ビジュアルを使用して Xamarin.Forms 、iOS と Android でほぼ同一のアプリケーションを作成できます。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: bba7d77d8cf565b1b2db2c1324e171389c5d0280
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127180"
+title: " Xamarin.Forms マテリアルビジュアル" の説明: " Xamarin.Forms マテリアルビジュアルを使用して Xamarin.Forms 、iOS と Android でほぼ同一のアプリケーションを作成することができます。"
+ms. 製品: xamarin ms. assetid: B774F68C-EF9E-49E1-B738-CDC64879ADA2: xamarin-forms author: profexorgeek ms. author: jusjohns ms. date: 11/25/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
-# <a name="xamarinforms-material-visual"></a>Xamarin.Forms素材ビジュアル
+
+# <a name="xamarinforms-material-visual"></a>Xamarin.Forms の素材のビジュアル
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
 
@@ -83,7 +69,7 @@ global::Xamarin.Forms.FormsMaterial.Init(this, savedInstanceState);
 </ContentPage>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 ContentPage contentPage = new ContentPage();

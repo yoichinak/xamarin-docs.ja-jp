@@ -1,9 +1,6 @@
 ---
-title: description: "プラットフォーム-詳細" を使用すると、カスタムレンダラーや特殊効果を実装しなくても、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、従来のカラーモードを無効にする iOS プラットフォーム固有のを使用する方法について説明 Xamarin.Forms します。
-ms. 製品: ms. assetid: ms. テクノロジ: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title: "VisualElement レガシカラーモード (iOS)" 説明: "プラットフォーム-詳細" を使用すると、カスタムレンダラーや特殊効果を実装しなくても、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、従来のカラーモードを無効にする iOS プラットフォーム固有のを使用する方法について説明 Xamarin.Forms します。
+ms. 製品: xamarin ms. assetid: 60FFBA67-6E06-439B-A5EB-8C808285E2CD: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 10/24/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
 
 # <a name="visualelement-legacy-color-mode-on-ios"></a>IOS の VisualElement レガシカラーモード

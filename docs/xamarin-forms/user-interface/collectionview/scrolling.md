@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsCollectionView スクロール
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 04d190971fa5ef16e08091600558f7f016bc8605
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84134538"
+title: " Xamarin.Forms CollectionView scroll" description: "ユーザーがスクロールを開始したときに、スクロールの終了位置を制御して、項目が完全に表示されるようにすることができます。 さらに、CollectionView では、項目をプログラムによってビューにスクロールする2つの ScrollTo メソッドが定義されています。
+ms. 製品: xamarin ms. assetid: 2ED719AF8-33D2-434D-25 分25分の6ミリ秒。テクノロジ: xamarin-forms author: davidbritch: dabritch:------loc: & # 3. 日付: 09/17/2019 なし: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-collectionview-scrolling"></a>Xamarin.FormsCollectionView スクロール
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
@@ -43,7 +29,7 @@ ms.locfileid: "84134538"
 </CollectionView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView();
@@ -189,7 +175,7 @@ collectionView.ScrollTo(monkey, position: ScrollToPosition.End);
 </CollectionView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -254,7 +240,7 @@ CollectionView collectionView = new CollectionView
 </CollectionView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -287,7 +273,7 @@ CollectionView collectionView = new CollectionView
 </CollectionView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -320,7 +306,7 @@ CollectionView collectionView = new CollectionView
 </CollectionView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView

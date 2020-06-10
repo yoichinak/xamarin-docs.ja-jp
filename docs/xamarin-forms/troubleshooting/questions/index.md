@@ -1,22 +1,7 @@
 ---
-title: Xamarin.Formsよく寄せられる質問
-ms.topic: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: edd6cfefe18ff3d5cc97ec58f3bce867f11df7c8
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135877"
+title: " Xamarin.Forms よく寄せられる質問" ms. トピック: トラブルシューティング ms. 製品: xamarin ms. assetid: 89364175-0ba47 A09-B3E2-44 ac67dd971c ms. テクノロジ: xamarin-forms author: 04/25/2017 davidbritch: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-frequently-asked-questions"></a>Xamarin.Formsよく寄せられる質問
 
 ## <a name="can-i-update-the-xamarinforms-default-template-to-a-newer-nuget-packageupdate-forms-templatemd"></a>[Xamarin.Forms既定のテンプレートを新しい NuGet パッケージに更新することはできますか。](update-forms-template.md)

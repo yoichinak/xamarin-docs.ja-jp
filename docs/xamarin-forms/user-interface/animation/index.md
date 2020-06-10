@@ -1,9 +1,6 @@
 ---
-title: ' description: ' での ' Animation は Xamarin.Forms Xamarin.Forms 、単純なアニメーションを作成するための簡単な独自のアニメーションインフラストラクチャを備えています。また、複雑なアニメーションを作成するのに十分な汎用性を備えています。 '
-ms. 製品: ms. assetid: ms. テクノロジ: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title: "説明:" のアニメーションは Xamarin.Forms Xamarin.Forms 、単純なアニメーションを作成するための簡単な独自のアニメーションインフラストラクチャを備えています。また、複雑なアニメーションを作成するのに十分な汎用性を備えています。 "
+ms. 製品: xamarin ms. assetid: AC0B4127-ECA3-44DA-8A24-A2B10A275083: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 07/14/2016 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
 
 # <a name="animation-in-xamarinforms"></a>アニメーションXamarin.Forms

@@ -1,22 +1,8 @@
 ---
-title: ネイティブビューXamarin.Forms
-description: IOS、Android、およびユニバーサル Windows プラットフォーム (UWP) からのネイティブビューは、から直接参照でき、 Xamarin.Forms ビューと対話することができ Xamarin.Forms ます。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b622d19675694f4d4c7816a81f969b93cdfb5828
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139569"
+title: "説明のネイティブビュー Xamarin.Forms " 説明: "iOS、Android、およびユニバーサル Windows プラットフォーム (UWP) からのネイティブビューは、から直接参照でき、 Xamarin.Forms ビューと対話でき Xamarin.Forms ます。"
+ms. 製品: xamarin ms. assetid: 223-41de9dac2bfc239a132 ms. テクノロジ: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 11/24/2016 no loc: [,、& # 91;。 Xamarin.Forms Xamarin.Essentials
 ---
+
 # <a name="native-views-in-xamarinforms"></a>ネイティブビューXamarin.Forms
 
 _IOS、Android、およびユニバーサル Windows プラットフォーム (UWP) からのネイティブビューは、から直接参照でき Xamarin.Forms ます。プロパティとイベントハンドラーはネイティブビューで設定でき、ビューと対話でき Xamarin.Forms ます。_

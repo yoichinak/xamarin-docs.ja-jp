@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: c1939c30cbefdbf8d6546761a8c6ac7199bfff62
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139686"
+title: "分離可能な blend モード" の説明: "変更可能な blend モードを使用して、赤、緑、および青の色を変更します。"
+ms. 製品: xamarin ms テクノロジ: skiasharp: 66D1A537-A247-484E-B5B9-FBCB7838FBE9 author: davidbritch dabritch: ms. date: 08/23/2018 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
 ---
+
 # <a name="the-separable-blend-modes"></a>分離可能 blend モード
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -151,45 +137,20 @@ public partial class LightenAndDarkenPage : ContentPage
 次の表に、すべての分離可能な blend モードの概要とその説明を示します。 2番目の列には、変更されていないソースの色が表示されます。
 
 | Blend モード   | 変更なし | 操作 |
-| ---
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------- |---title: description: ms. 製品: ms. テクノロジ: ms. assetid: author: ms. author: ms. date: no loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------ |---title: description: ms. 製品: ms. テクノロジ: ms. assetid: author: ms. author: ms. date: no loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------ | |`Plus`       |黒 |色の追加による明るく: Sc + Dc | |`Modulate`   |白 |色を乗算して暗くする: Sc ·Dc | |`Screen`     |黒 |補完の製品を補完する: Sc + Dc &ndash; Sc ·Dc | |`Overlay`    |灰色 |`HardLight`| | `Darken` の逆関数    |白 |最小色: 最小値 (Sc、Dc) | |`Lighten`    |黒 |最大色: 最大値 (Sc、Dc) | |`ColorDodge` |黒 |ソースに基づいてターゲットを明るくする | |`ColorBurn`  |白 |ソースに基づいて変換先を暗くする | |`HardLight`  |灰色 |厳格なスポットライトの効果と似ています | |`SoftLight`  |灰色 |ソフトスポットライトスポットの場合と同様の効果 | |`Difference` |黒 |淡い: Abs (Dc &ndash; Sc) `Exclusion` から濃い色を減算します。 |黒 |と似て `Difference` いますが、コントラストが低い | | `Multiply`  |白 |色を乗算して暗くする: Sc ·Dc |
+| ------------ | --------- | --------- |
+| `Plus`       | Black     | 色の追加による明るく: Sc + Dc |
+| `Modulate`   | White     | 色を乗算して暗くする: Sc ·修飾 | 
+| `Screen`     | Black     | 補完の製品を補完する: Sc + Dc &ndash; Sc ·修飾 |
+| `Overlay`    | グレー      | 逆`HardLight` |
+| `Darken`     | White     | 最小色: 最小値 (Sc、Dc) |
+| `Lighten`    | Black     | 最大色: 最大値 (Sc、Dc) |
+| `ColorDodge` | Black     | ソースに基づいてターゲットを明るくする |
+| `ColorBurn`  | White     | ソースに基づいて変換先を暗くする | 
+| `HardLight`  | グレー      | 強いスポットライトの効果と同様 |
+| `SoftLight`  | グレー      | ソフトスポットライトの効果と同様 | 
+| `Difference` | Black     | 淡い: Abs (Dc Sc) から暗い方を減算します。 &ndash; | 
+| `Exclusion`  | Black     | と似て `Difference` いますがコントラストが低い |
+| `Multiply`   | White     | 色を乗算して暗くする: Sc ·修飾 |
 
 より詳細なアルゴリズムについては、W3C[**合成とブレンドレベル 1**](https://www.w3.org/TR/compositing-1/)仕様と Skia [**Skblendmode リファレンスを参照**](https://skia.org/user/api/SkBlendMode_Reference)してください。ただし、これらの2つのソースの表記は同じではありません。 は、通常、 `Plus` Porter-Duff blend モードと見なされ、W3C 仕様には含まれていないことに注意してください `Modulate` 。
 

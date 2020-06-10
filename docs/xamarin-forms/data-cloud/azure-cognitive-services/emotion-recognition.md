@@ -1,22 +1,8 @@
 ---
-title: ''
-description: Face API は、イメージ内の顔式を入力として受け取り、イメージ内の各顔の感情のセットに対して信頼度レベルを含むデータを返します。 この記事では、Face API を使用して感情を認識し、アプリケーションを評価する方法について説明し Xamarin.Forms ます。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: ff384605b35f6406b628da99de500b550da811c9
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136059"
+title: "Face API を使用した感情認識が見られます" 説明: "Face API は画像内の顔式を入力として受け取り、イメージ内の各顔の感情のセットに対して信頼度レベルを含むデータを返します。 この記事では、Face API を使用して感情を認識し、アプリケーションを評価する方法について説明し Xamarin.Forms ます。 "
+ms. 製品: xamarin ms. assetid: 19D36A7C-E8D8-43D1-BE80-48DE6C02879A: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 05/10/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="perceived-emotion-recognition-using-the-face-api"></a>Face API を使用した感情認識
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)

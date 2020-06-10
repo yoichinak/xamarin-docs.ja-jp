@@ -1,22 +1,8 @@
 ---
-title: 実行時の XAML の読み込みXamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d750aa84a48ad4c8015a619d819134cefc63c3d9
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139374"
+title: "実行時の XAML の読み込み Xamarin.Forms " 説明: "xaml は、LoadFromXaml 拡張メソッドを使用して実行時に読み込んで解析できます。"
+ms. 製品: xamarin ms. assetid: 25F73FBF-2DD3-468E-A2D8-0897414F0F4A: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 12/12/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="loading-xaml-at-runtime-in-xamarinforms"></a>実行時の XAML の読み込みXamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-loadruntimexaml)

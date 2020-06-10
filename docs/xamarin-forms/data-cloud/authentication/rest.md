@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d62e533d127294c77c0779c20fd9c78ef2231200
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135721"
+title: "RESTful Web サービスの認証" 説明: "基本認証は、正しい資格情報を持つクライアントのみにリソースへのアクセスを提供します。 この記事では、基本認証を使用して、RESTful web サービスリソースへのアクセスを保護する方法について説明します。 "
+ms. 製品: xamarin ms. assetid: 7B5FFDC4-F2AA-4B12-A30A-1DACC7FECBF1: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 01/22/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="authenticate-a-restful-web-service"></a>RESTful Web サービスを認証する
 
 _HTTP は、複数の認証メカニズムを使用してリソースへのアクセスを制御することをサポートしています。基本認証は、正しい資格情報を持つクライアントのみにリソースへのアクセスを提供します。この記事では、基本認証を使用して、RESTful web サービスリソースへのアクセスを保護する方法について説明します。_
@@ -80,7 +66,7 @@ public class RestService : IRestService
 
 ## <a name="processing-the-authorization-header-server-side"></a>Authorization ヘッダーサーバー側の処理
 
-REST サービスは、各アクションを属性で装飾する必要があり `[BasicAuthentication]` ます。 この属性は、ヘッダーを解析 `Authorization` し、base64 でエンコードされた資格情報が web.config に格納されて*Web.config*いる値と比較することによって有効かどうかを判断するために使用されます。この方法はサンプルサービスに適していますが、公開されている web サービスの拡張が必要です。
+REST サービスは、各アクションを属性で装飾する必要があり `[BasicAuthentication]` ます。 この属性は、ヘッダーを解析 `Authorization` し、base64 でエンコードされた資格情報が*Web.config*に格納されている値と比較することによって有効かどうかを判断するために使用されます。この方法はサンプルサービスに適していますが、公開されている web サービスの拡張が必要です。
 
 IIS によって使用される基本認証モジュールでは、ユーザーは Windows 資格情報に対して認証されます。 そのため、ユーザーは、サーバーのドメインのアカウントを持っている必要があります。 ただし、基本認証モデルはカスタム認証を許可するように構成できます。この場合、ユーザーアカウントは、データベースなどの外部ソースに対して認証されます。 詳細については、ASP.NET web サイトの「 [ASP.NET Web API の基本認証](https://www.asp.net/web-api/overview/security/basic-authentication)」を参照してください。
 

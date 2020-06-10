@@ -1,21 +1,7 @@
 ---
-title: Azure SignalR Service とXamarin.Forms
-description: Azure SignalR Service の概要と Azure FunctionsXamarin.Forms
-ms.prod: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: ffa44beb68dc845a64d8bf2a9f86f6d7e56df8f9
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139439"
+title: "Azure SignalR Service with Xamarin.Forms " description: "Azure SignalR service の使用を開始 Azure Functions し、 Xamarin.Forms " ms. 製品: xamarin ms. assetid: 1B9A69EF-C200-41BF-B098-D978D7F9CD8F author: profexorgeek. author: jusjohns ms. date: 06/07/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="azure-signalr-service-with-xamarinforms"></a>Azure SignalR Service とXamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresignalr/)

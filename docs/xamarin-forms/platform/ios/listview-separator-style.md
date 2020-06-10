@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: c8d660896684283ba9b40cde168adbfe30ca0c51
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135994"
+title: "ListView 区切りスタイル for iOS" 説明: "プラットフォーム-詳細" を使用すると、カスタムレンダラーや特殊効果を実装しなくても、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、ListView のセル間の区切り記号が ListView の完全な幅を使用するかどうかを制御する iOS プラットフォーム固有のを使用する方法について説明します。
+ms. 製品: xamarin ms. assetid: A4CB45CE-9FB7-47ED-8C3D-93E39BF282E4: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 10/24/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="listview-separator-style-on-ios"></a>IOS での ListView 区切り記号のスタイル
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

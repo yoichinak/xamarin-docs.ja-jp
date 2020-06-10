@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a05de34089fdf6ad90740067b88edea0b62f55a7
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84134655"
+title: "単体テストエンタープライズアプリ" の説明: "この章では、eShopOnContainers モバイルアプリでの単体テストの実行方法について説明します。"
+ms. 製品: xamarin ms. assetid: 4af82e52-f99b-4cad-b278-1745f190c240: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 08/07/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="unit-testing-enterprise-apps"></a>エンタープライズアプリの単体テスト
 
 モバイルアプリには、デスクトップと web ベースのアプリケーションが心配する必要がない固有の問題があります。 モバイルユーザーは、使用するデバイス、ネットワーク接続、サービスの可用性、およびその他のさまざまな要因によって異なります。 そのため、モバイルアプリは、品質、信頼性、およびパフォーマンスを向上させるために、実際の環境で使用されるため、テストする必要があります。 単体テスト、統合テスト、ユーザーインターフェイステストなど、アプリで実行する必要があるテストの種類は多数あります。単体テストは、最も一般的なテスト形式です。
@@ -221,7 +207,7 @@ public void CheckValidationFailsWhenOnlyForenameHasDataTest()
 
 この単体テストで `Surname` は、のプロパティにデータが含まれておらず、 `MockViewModel` `Value` `IsValid` `Errors` 各インスタンスの、、およびプロパティ `ValidatableObject<T>` が正しく設定されている場合に、検証が失敗することを確認します。
 
-## <a name="summary"></a>[概要]
+## <a name="summary"></a>まとめ
 
 単体テストでは、アプリの小さな単位 (通常はメソッド) を受け取り、それをコードの残りの部分から分離し、想定どおりに動作することを確認します。 その目的は、機能の各単位が想定どおりに動作することを確認することです。これにより、エラーがアプリ全体に伝達されることがなくなります。
 

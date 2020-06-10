@@ -1,23 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.custom: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 047cf963394325e8f88759ffe9da7dcf2ca3ad12
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127531"
+title: "パート 5. データバインディングから MVVM への "説明:" MVVM パターンでは、3つのソフトウェアレイヤー (つまり、ビューと呼ばれる XAML ユーザーインターフェイス) が分離されています。モデルと呼ばれる基になるデータ。ビューとモデルの間には、ビューモデルと呼ばれる中間層があります。
+ms. 製品: xamarin ms. custom: video ms. assetid: 48B37D44-4FB1-41B2-9A5E-6D383B041F81: xamarin-forms author: davidbritch: dabritch ms. date: 10/25/2017 no loc: [ Xamarin.Forms ,、 Xamarin.Essentials ]
 ---
+
 # <a name="part-5-from-data-bindings-to-mvvm"></a>第 5 部 データ バインディングから MVVM まで
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
@@ -708,7 +693,7 @@ private async void OnListViewItemSelected(object sender, SelectedItemChangedEven
 
 **Xamarin の進化 2016: MVVM と Prism を使用したシンプルな作成 Xamarin.Forms**
 
-## <a name="summary"></a>[概要]
+## <a name="summary"></a>まとめ
 
 XAML は、アプリケーションでユーザーインターフェイスを定義するための強力なツールです Xamarin.Forms 。特に、データバインディングと MVVM を使用する場合に使用します。 結果として、コード内のすべてのバックグラウンドサポートを使用して、ユーザーインターフェイスをクリーンで洗練された形式で表現できます。
 

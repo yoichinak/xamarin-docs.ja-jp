@@ -1,23 +1,7 @@
 ---
-title: ''
-description: ''
-ms.topic: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 237dfd637d5456636afd19ea0175cb388773d273
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135916"
+title: "トラブルシューティング" の説明: "一般的なエラー状態とそれらを解決する方法" ms. トピック: トラブルシューティング ms. 製品: xamarin ms. assetid: 63291951-7375-4CBF-BCC3-2E4AD157A2C8: davidbritch: dabritch ms. date: 04/25/2017 no loc: [ Xamarin.Forms ,]」を参照してください Xamarin.Essentials 。
 ---
+
 # <a name="troubleshooting"></a>トラブルシューティング
 
 _一般的なエラー状態とその解決方法_

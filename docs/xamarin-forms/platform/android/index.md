@@ -1,22 +1,8 @@
 ---
-title: ''
-description: この記事では、Android 固有の機能をアプリケーションに追加する方法について説明し Xamarin.Forms ます。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 3045db1248aa16529d4e43b9a8afc97377cfd9cb
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84128955"
+タイトル: "Android プラットフォームの機能" 説明: "この記事では、Android 固有の機能をアプリケーションに追加する方法について説明 Xamarin.Forms します。"
+ms. 製品: xamarin ms. assetid: E24168F3-0138-4814-86EA-B467F6B8A545: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 12/11/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="android-platform-features"></a>Android プラットフォーム機能
 
 Xamarin.FormsAndroid 用アプリケーションの開発には、Visual Studio が必要です。 [[サポートされているプラットフォーム] ページ](~/get-started/supported-platforms.md)には、前提条件に関する詳細情報が表示されます。

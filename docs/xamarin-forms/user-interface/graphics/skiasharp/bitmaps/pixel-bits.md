@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 9018cbe6e41350b22a0f1f91858017531c75a0ac
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135582"
+title: "SkiaSharp ビットマップピクセルビットへのアクセス" の説明: "SkiaSharp ビットマップのピクセルビットにアクセスして変更するためのさまざまな手法を発見します。"
+ms. 製品: xamarin ms テクノロジ: skiasharp: DBB58522-F816-4A8C-96A5-E0236F16A5C6 author: davidbritch dabritch: ms. date: 07/11/2018 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
 ---
+
 # <a name="accessing-skiasharp-bitmap-pixel-bits"></a>SkiaSharp ビットマップピクセルビットへのアクセス
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -490,30 +476,15 @@ public class GradientBitmapPage : ContentPage
 実行時間をミリ秒単位で統合するテーブルを次に示します。
 
 | API       | データ型 | iOS  | Android | UWP  |
-| ---
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------ |---title: description: ms. 製品: ms. テクノロジ: ms. assetid: author: ms. author: ms. date: no loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------ |----:|---title: description: ms. 製品: ミリ秒: ms. assetid: author: ms. author: ms. date: no loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
-----:| ----:| |SetPixel |          |3.17 |  10.77 |3.49 | |ピクセル |          |0.32 |   1.23 |0.07 | |GetPixels |byte |0.09 |   0.24 |0.10 | |          |uint |0.06 |   0.26 |0.05 | |          |SKColor |0.29 |   0.99 |0.07 | |SetPixels |byte |1.33 |   6.78 |0.11 | |          |uint |0.14 |   0.69 |0.06 | |          |SKColor |0.35 |   1.93 |0.10 |
+| --------- | --------- | ----:| -------:| ----:|
+| SetPixel  |           | 3.17 |   10.77 | 3.49 |
+| ピクセル    |           | 0.32 |    1.23 | 0.07 |
+| GetPixels | byte      | 0.09 |    0.24 | 0.10 |
+|           | uint      | 0.06 |    0.26 | 0.05 |
+|           | SKColor   | 0.29 |    0.99 | 0.07 |
+| SetPixels | byte      | 1.33 |    6.78 | 0.11 |
+|           | uint      | 0.14 |    0.69 | 0.06 |
+|           | SKColor   | 0.35 |    1.93 | 0.10 |
 
 必要に応じて、65536回を呼び出すと `SetPixel` 、ビットマップのピクセルを設定する effeicient 方法が最も少なくなります。 配列に `SKColor` 値を入力してプロパティを設定する `Pixels` 方がはるかに優れています。また、相性をいくつかの手法と比較することも `GetPixels` `SetPixels` できます。 `uint`ピクセル値の使用は、通常、個別のコンポーネントを設定するより高速です `byte` `SKColor` 。値を符号なし整数に変換することで、プロセスにオーバーヘッドを追加できます。
 

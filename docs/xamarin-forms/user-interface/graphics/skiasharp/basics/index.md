@@ -1,22 +1,8 @@
 ---
-title: ''
-description: このガイドでは、アプリケーションの SkiaSharp グラフィックスの概念と座標の基本について説明し Xamarin.Forms ます。
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: fd82f7ffe135c12c9dfc59c3353d7d9f5d73068c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137710"
+title: "SkiaSharp Drawing の基礎" の説明: "このガイドでは、アプリケーションの SkiaSharp グラフィックスの概念と座標の基本について説明し Xamarin.Forms ます。"
+ms. 製品: xamarin ms テクノロジ: skiasharp: 25141E3E-D22E-44B1-A647-7E6FA0C9737B author: davidbritch dabritch: ms. date: 03/10/2017 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
 ---
+
 # <a name="skiasharp-drawing-basics"></a>SkiaSharp 描画の基礎
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

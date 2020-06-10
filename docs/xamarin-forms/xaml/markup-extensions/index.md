@@ -1,22 +1,8 @@
 ---
-title: ''
-description: この記事では、 Xamarin.Forms xaml マークアップ拡張機能を使用して、リテラルテキスト文字列以外のソースから要素属性を設定できるようにすることで、xaml のパワーと柔軟性を拡張する方法について説明します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 568cffc335f28b1a47f3278ad061d851ebef84b6
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130391"
+title: "XAML マークアップ拡張機能" の説明: "この記事では、xaml マークアップ拡張機能を使用して、 Xamarin.Forms リテラルテキスト文字列以外のソースから要素属性を設定できるようにすることで、xaml のパワーと柔軟性を拡張する方法について説明します。"
+ms. 製品: xamarin ms. assetid: EB06C8B7-3FD5-47B7-A09C-A13063BD110F: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 01/05/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xaml-markup-extensions"></a>XAML マークアップ拡張
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
@@ -63,6 +49,6 @@ XAML マークアップ拡張機能は、リテラルテキスト文字列以外
 
 - [マークアップ拡張機能 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 - [本の XAML マークアップ拡張機能の章 Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
-- [リソース ディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
-- [動的なスタイル](~/xamarin-forms/user-interface/styles/dynamic.md)
+- [リソースディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [動的スタイル](~/xamarin-forms/user-interface/styles/dynamic.md)
 - [データ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)

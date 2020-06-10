@@ -1,22 +1,8 @@
 ---
-title: ''
-description: この記事では、アプリケーションで SkiaSharp グラフィックスをアニメーション化する方法について説明 Xamarin.Forms し、サンプルコードを使用してこれを示します。
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 9a59f65655772768860ce29128f14a48641abc26
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84134278"
+title: "SkiaSharp の基本的なアニメーション" の説明: "この記事では、アプリケーションで SkiaSharp グラフィックスをアニメーション化する方法について説明 Xamarin.Forms し、サンプルコードを使用してこれを示します。"
+ms. 製品: xamarin ms テクノロジ: skiasharp: 31C96FD6-07E4-4473-A551-24753A5118C3 author: davidbritch dabritch: ms. date: 03/10/2017 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
 ---
+
 # <a name="basic-animation-in-skiasharp"></a>SkiaSharp の基本的なアニメーション
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

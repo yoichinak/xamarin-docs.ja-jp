@@ -1,9 +1,6 @@
 ---
-title: ' XAML ホットリロード for Xamarin.Forms ' description: ' 実行中のアプリケーションに直ちに xaml ファイルへの変更を再度読み込みます。これにより、すべての xaml の変更後にプロジェクトをビルドする必要がなく Xamarin.Forms なります。 '
-ms. 製品: ms. assetid: ms. テクノロジ: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title: "XAML ホットリロード for Xamarin.Forms " description: "実行中のアプリケーションの xaml ファイルに直ちに変更を再度読み込みます。これにより、すべての xaml の変更後にプロジェクトをビルドする必要がなくなり Xamarin.Forms ます。"
+ms. 製品: xamarin ms. assetid: E220F054-32EE-424C-A7E5-6156BE271519: xamarin-forms author: maddyleger1 ms. author: 悪意のある日: 03/14/2020 の場所: [ Xamarin.Forms ,、 Xamarin.Essentials ]
 ---
 
 # <a name="xaml-hot-reload-for-xamarinforms"></a>XAML ホットリロード ()Xamarin.Forms
@@ -18,54 +15,10 @@ XAML ホットリロードは、生産性を向上させ、時間を節約する
 ## <a name="system-requirements"></a>システム要件
 
 | IDE/フレームワーク | バージョンが必要です |
-|---
-title: ' XAML ホットリロード for Xamarin.Forms ' description: ' 実行中のアプリケーションに直ちに xaml ファイルへの変更を再度読み込みます。これにより、すべての xaml の変更後にプロジェクトをビルドする必要がなく Xamarin.Forms なります。 '
-ms. 製品: ms. assetid: ms. テクノロジ: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
----|---title: ' XAML ホットリロード for Xamarin.Forms ' description: ' 実行中のアプリケーションで xaml ファイルへの変更を直ちに再読み込みするため、xaml の変更が行われるたびにプロジェクトをビルドする必要はありませ Xamarin.Forms ん。 '
-ms. 製品: ms. assetid: ms. テクノロジ: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-title: ' XAML ホットリロード for Xamarin.Forms ' description: ' 実行中のアプリケーションに直ちに xaml ファイルへの変更を再度読み込みます。これにより、すべての xaml の変更後にプロジェクトをビルドする必要がなく Xamarin.Forms なります。 '
-ms. 製品: ms. assetid: ms. テクノロジ: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-title: ' XAML ホットリロード for Xamarin.Forms ' description: ' 実行中のアプリケーションに直ちに xaml ファイルへの変更を再度読み込みます。これにより、すべての xaml の変更後にプロジェクトをビルドする必要がなく Xamarin.Forms なります。 '
-ms. 製品: ms. assetid: ms. テクノロジ: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-title: ' XAML ホットリロード for Xamarin.Forms ' description: ' 実行中のアプリケーションに直ちに xaml ファイルへの変更を再度読み込みます。これにより、すべての xaml の変更後にプロジェクトをビルドする必要がなく Xamarin.Forms なります。 '
-ms. 製品: ms. assetid: ms. テクノロジ: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-title: ' XAML ホットリロード for Xamarin.Forms ' description: ' 実行中のアプリケーションに直ちに xaml ファイルへの変更を再度読み込みます。これにより、すべての xaml の変更後にプロジェクトをビルドする必要がなく Xamarin.Forms なります。 '
-ms. 製品: ms. assetid: ms. テクノロジ: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-title: ' XAML ホットリロード for Xamarin.Forms ' description: ' 実行中のアプリケーションに直ちに xaml ファイルへの変更を再度読み込みます。これにより、すべての xaml の変更後にプロジェクトをビルドする必要がなく Xamarin.Forms なります。 '
-ms. 製品: ms. assetid: ms. テクノロジ: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-title: ' XAML ホットリロード for Xamarin.Forms ' description: ' 実行中のアプリケーションに直ちに xaml ファイルへの変更を再度読み込みます。これにより、すべての xaml の変更後にプロジェクトをビルドする必要がなく Xamarin.Forms なります。 '
-ms. 製品: ms. assetid: ms. テクノロジ: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
----------| |Visual Studio 2019 |16.4 以上の Visual Studio 2019 (Mac の場合) |8.4 以上 Xamarin.Forms | 4.1 以上
+|------|------------------|
+|Visual Studio 2019 | 16.4 以上
+Visual Studio 2019 for Mac | 8.4 以上
+Xamarin.Forms | 4.1 以上
 
 ## <a name="enable-xaml-hot-reload-for-xamarinforms"></a>XAML ホットリロードを有効にするXamarin.Forms
 

@@ -1,23 +1,7 @@
 ---
-title: ''
-description: Xamarin.FormsWPF プラットフォームのプレビューがサポートされるようになりました
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-ms.custom: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: bbb9ea950c9f1daa1b5ee4762527d689f3cdd483
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139530"
+title: "WPF Platform Setup" description: " Xamarin.Forms 現在、wpf プラットフォームのプレビューがサポートされています" ms. 製品: xamarin ms. assetid: 650723F2-4279-4B7B-B0A1-D7F8FF26BF1E: xamu-ビデオ作成者: davidbritch ミリ秒: dabritch ms. 日付: 04/09/2020 no-場所: [ Xamarin.Forms ,、 Xamarin.Essentials ]
 ---
+
 # <a name="wpf-platform-setup"></a>WPF プラットフォームのセットアップ
 
 ![プレビュー](~/media/shared/preview.png)

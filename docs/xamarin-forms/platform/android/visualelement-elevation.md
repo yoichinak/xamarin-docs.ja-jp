@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 48060356014dc7600518b5de555ad3f346c50c35
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84128545"
+title: "VisualElement による Android での昇格" の説明: "プラットフォーム固有の機能を使用すると、特定のプラットフォームでのみ使用でき、カスタムレンダラーや特殊効果を実装することはできません。 この記事では、API 21 以上を対象とするアプリケーションでの VisualElements の昇格を制御する Android プラットフォーム固有のを使用する方法について説明します。
+ms. 製品: xamarin ms assetid: 5BFD6175-2bbd47 1cdx B8F9-521B4750B708 ミリ秒。テクノロジ: xamarin-forms author: davidbritch ms. author: dabritch: 07/10/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="visualelement-elevation-on-android"></a>Android での VisualElement の昇格
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

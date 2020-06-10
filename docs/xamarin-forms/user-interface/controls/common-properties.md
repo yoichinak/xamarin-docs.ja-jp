@@ -1,27 +1,13 @@
 ---
-title: Xamarin.Formsコモンコントロールのプロパティ、メソッド、およびイベント
-description: ''
-ms.prod: ''
-ms.assetId: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: deb894cccd5b6a2a9d908ef8967de91f00e7d297
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136423"
+title: " Xamarin.Forms コモンコントロールのプロパティ、メソッド、およびイベントの説明:" この記事では、派生クラスで一般的に使用される、VisualElement クラスで定義されている共通のプロパティ、メソッド、およびイベントについて説明します。
+ms. 製品: xamarin ms. assetId: 85A0CCF5-C1D8-40BB-927F-A4D944E5534D: xamarin-forms author: profexorgeek ms. author: jusjohns ms. date: 08/21/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-common-control-properties-methods-and-events"></a>Xamarin.Formsコモンコントロールのプロパティ、メソッド、およびイベント
 
 クラスは、 Xamarin.Forms `VisualElement` アプリケーションで使用されるほとんどのコントロールの基本クラスです Xamarin.Forms 。 クラスは、 `VisualElement` 派生クラスで使用される多くの[プロパティ](#properties)、[メソッド](#methods)、および[イベント](#events)を定義します。
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
 インスタンスでは、次のプロパティを使用でき `VisualElement` ます。 完全な一覧については、「 [Visualelement API のプロパティ](xref:Xamarin.Forms.VisualElement#properties)」を参照してください。
 
@@ -213,7 +199,7 @@ public void Unfocus ()
 
 要素には、このメソッドが機能するために既にフォーカスがある必要があります。
 
-## <a name="events"></a>events
+## <a name="events"></a>イベント
 
 クラスでは、次のイベントを使用でき `VisualElement` ます。 完全な一覧については、「 [ Xamarin.Forms Visualelement イベント](xref:Xamarin.Forms.VisualElement#events)」を参照してください。
 

@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8478db85bd9904ee6c5cfeab9b2af390e7d3096d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139504"
+title: "プラットフォーム仕様" 説明: "プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、プラットフォーム固有のを使用および作成する方法について説明します。 "
+ms. 製品: xamarin ms. assetid: 4729DB9C-8800-4E29-9D66-3BE13C5F8C94: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 10/01/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="platform-specifics"></a>プラットフォーム固有設定
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
@@ -155,7 +141,7 @@ namespace MyCompany.Forms.PlatformConfiguration.iOS
 }
 ```
 
-添付プロパティは、クラスがアタッチされて `IsShadowed` `MyCompany.LabelShadowEffect` いるコントロールに対して、その効果を追加したり削除したりするために使用され `Shadow` ます。 この添付プロパティは、そのプロパティの値が変更されるときに実行される `OnIsShadowedPropertyChanged` デリゲートを登録します。 次に、このメソッド `AttachEffect` はメソッドまたはメソッドを呼び出して、 `DetachEffect` 添付プロパティの値に基づいて効果を追加または削除し `IsShadowed` ます。 コントロールのコレクションを変更することによって、コントロールに対して効果が追加または削除され [`Effects`](xref:Xamarin.Forms.Element.Effects) ます。
+添付プロパティは、クラスがアタッチされて `IsShadowed` `MyCompany.LabelShadowEffect` いるコントロールに対して、その効果を追加したり削除したりするために使用され `Shadow` ます。 この添付プロパティにより、プロパティの値が変更されたときに実行される `OnIsShadowedPropertyChanged` デリゲートが登録されます。 次に、このメソッド `AttachEffect` はメソッドまたはメソッドを呼び出して、 `DetachEffect` 添付プロパティの値に基づいて効果を追加または削除し `IsShadowed` ます。 コントロールのコレクションを変更することによって、コントロールに対して効果が追加または削除され [`Effects`](xref:Xamarin.Forms.Element.Effects) ます。
 
 > [!NOTE]
 > 効果は、効果の実装で指定された解決グループ名と一意識別子を連結した値を指定することによって解決されることに注意してください。 詳細については、「[効果の作成](~/xamarin-forms/app-fundamentals/effects/creating.md)」を参照してください。
@@ -286,5 +272,5 @@ shadowLabel.On<iOS>().SetIsShadowed(true);
 - [Android プラットフォーム-詳細](~/xamarin-forms/platform/android/index.md)
 - [Windows プラットフォーム-詳細](~/xamarin-forms/platform/windows/index.md)
 - [特殊効果を使用したコントロールのカスタマイズ](~/xamarin-forms/app-fundamentals/effects/index.md)
-- [添付プロパティ](~/xamarin-forms/xaml/attached-properties.md)
+- [関連付けられたプロパティ](~/xamarin-forms/xaml/attached-properties.md)
 - [PlatformConfiguration API](xref:Xamarin.Forms.PlatformConfiguration)

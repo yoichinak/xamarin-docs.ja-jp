@@ -1,22 +1,7 @@
 ---
-title: ''
-ms.topic: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 9c0403203345ed78fae9f30c623c3e501f24ea0e
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135903"
+title: "Android ビルドエラー– LinkAssemblies タスクが予期せず失敗しました" ms. トピック: トラブルシューティング ms. EB3BE685-CB72-48E3-89D7-C845E76B9FA2: xamarin ms. assetid: davidbritch: dabritch: ミリ秒:: 03/07/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="android-build-error--the-linkassemblies-task-failed-unexpectedly"></a>Android ビルドエラー: LinkAssemblies タスクが予期せず失敗しました
 
 `The "LinkAssemblies" task failed unexpectedly`フォームを使用する Xamarin Android プロジェクトをビルドすると、エラーメッセージが表示される場合があります。 これは、リンカーがアクティブなときに発生します (通常は*リリース*ビルドで、アプリケーションパッケージのサイズを小さくします)。また、Android ターゲットが最新のフレームワークに更新されないために発生します。 (詳細情報: [ Xamarin.Forms サポートされているプラットフォーム](~/get-started/supported-platforms.md#android-platform-support))

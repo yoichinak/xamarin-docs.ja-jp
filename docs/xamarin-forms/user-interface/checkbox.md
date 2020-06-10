@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsCheckBox
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8399dde2e4e2c9fb53b38fca2923eb0e3bfc6ce3
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136475"
+タイトル: " Xamarin.Forms checkbox" 説明: " Xamarin.Forms チェックボックスは、チェックするか空にすることができるボタンの一種です。 チェックボックスがオンになっている場合は、オンになっていると見なされます。 チェックボックスが空の場合は、オフになっていると見なされます。 "
+ms. 製品: xamarin ms. assetid: B8B9268B-BCB8-42B9-B08C-C0F22C137238: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 06/11/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-checkbox"></a>Xamarin.FormsCheckBox
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos/)
@@ -161,10 +147,10 @@ checkBox.CheckedChanged += (sender, e) =>
 
 この例では、をオンにする `IsChecked` [`VisualState`](xref:Xamarin.Forms.VisualState) と、 `CheckBox` `Color` プロパティが緑色に設定されることを指定します。 は `Normal` `VisualState` 、 `CheckBox` が通常の状態のときに、プロパティを赤に設定することを指定し `Color` ます。 したがって、全体の効果として、が空の場合は赤色になり、チェックされる場合は緑色になり `CheckBox` ます。
 
-表示状態の詳細については、「 [ Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)」を参照してください。
+ビジュアルの状態の詳細については、「[Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)」をご覧ください。
 
 ## <a name="related-links"></a>関連リンク
 
 - [チェックボックスのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos/)
-- [Xamarin.Formsログオフ](~/xamarin-forms/app-fundamentals/triggers.md)
-- [Xamarin.Formsビジュアル状態マネージャー](~/xamarin-forms/user-interface/visual-state-manager.md)
+- [Xamarin.Forms のトリガー](~/xamarin-forms/app-fundamentals/triggers.md)
+- [Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)

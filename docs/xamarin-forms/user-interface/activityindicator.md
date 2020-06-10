@@ -1,22 +1,8 @@
 ---
-title: アクティビティインジケーターXamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a83885175a44f2174db343abf4591f8777041d39
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136514"
+title: "アクティビティインジケーターの Xamarin.Forms " 説明: "activityindicator コントロールは、進行状況を示すことなく、アプリケーションが時間のかかるアクティビティに関与していることをユーザーに示します。 この記事では、XAML とコードで ActivityIndicator を使用する方法について説明します。 "
+ms. 製品: xamarin ms assetid: 4CEED02D-5CA3-4C3ACEB7ED3193FC272261 ms. テクノロジ: xamarin-forms author: profexorgeek ms. author: jusjohns ms. date: 07/10/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-activityindicator"></a>Xamarin.FormsActivityIndicator
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-activityindicatordemos/)
 

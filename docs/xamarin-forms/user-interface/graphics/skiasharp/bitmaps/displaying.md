@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b0fecac02c44e3ba721dd4625e7bee264c6869d0
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84134759"
+title: "SkiaSharp ビットマップの表示" 説明: "ピクセルサイズで SkiaSharp ビットマップを表示し、縦横比を維持しながら四角形を塗りつぶすために展開する方法について説明します。"
+ms. 製品: xamarin ms テクノロジ: skiasharp: 8E074F8D-4715-4146-8CC0-FD7A8290EDE9 author: davidbritch dabritch: ms. date: 07/17/2018 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
 ---
+
 # <a name="displaying-skiasharp-bitmaps"></a>表示 (SkiaSharp ビットマップを)
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -314,7 +300,7 @@ public class UniformScalingPage : ContentPage
 
 [![一様スケーリングの横](displaying-images/UniformScaling-Landscape.png "一様スケーリングの横")](displaying-images/UniformScaling-Landscape-Large.png#lightbox)
 
-この要因を使用する利点は、 `scale` 若干異なるアルゴリズムを実装する場合に明らかになります。 ビットマップの縦横比を維持しながら、コピー先の四角形も塗りつぶす場合を考えてみます。 これが可能な唯一の方法は、イメージの一部をトリミングすることですが、上記のコードのに変更するだけで、そのアルゴリズムを実装できます `Math.Min` `Math.Max` 。 結果は次のとおりです。 
+この要因を使用する利点は、 `scale` 若干異なるアルゴリズムを実装する場合に明らかになります。 ビットマップの縦横比を維持しながら、コピー先の四角形も塗りつぶす場合を考えてみます。 これが可能な唯一の方法は、イメージの一部をトリミングすることですが、上記のコードのに変更するだけで、そのアルゴリズムを実装できます `Math.Min` `Math.Max` 。 結果は次のようになります。 
 
 [![一様スケーリングの代替](displaying-images/UniformScaling-Alternative.png "一様スケーリングの代替")](displaying-images/UniformScaling-Alternative-Large.png#lightbox)
 

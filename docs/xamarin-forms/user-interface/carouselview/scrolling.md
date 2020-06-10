@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsCarouselView スクロール
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 462948905f40679e2b931d4aa0039308c64a0a8f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136498"
+title: " Xamarin.Forms CarouselView scroll" description: "ユーザーがスクロールを開始したときに、スクロールの終了位置を制御して、項目が完全に表示されるようにすることができます。 さらに、CarouselView では、項目をプログラムによってビューにスクロールする2つの ScrollTo メソッドが定義されています。
+ms. 製品: xamarin ms. assetid: 92D7B618-07FA-4343-9D0F-212525E92C39: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 01/28/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-carouselview-scrolling"></a>Xamarin.FormsCarouselView スクロール
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
@@ -57,7 +43,7 @@ ms.locfileid: "84136498"
 </CarouselView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView();
@@ -181,7 +167,7 @@ carouselViewView.ScrollTo(monkey, position: ScrollToPosition.End);
 </CarouselView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView
@@ -247,7 +233,7 @@ CarouselView carouselView = new CarouselView
 </CarouselView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView
@@ -283,7 +269,7 @@ CarouselView carouselView = new CarouselView
 </CarouselView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView
@@ -317,7 +303,7 @@ CarouselView carouselView = new CarouselView
 </CarouselView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView

@@ -1,9 +1,6 @@
 ---
-タイトル: ' Xamarin.Forms マップの初期化と構成 ' 説明: ' Xamarin.Forms 。Maps NuGet パッケージは、アプリケーションで maps 機能を使用するために必要です。 さらに、ユーザーの場所にアクセスするには、アプリケーションに対して場所のアクセス許可が付与されている必要があります。
-ms. 製品: ms. assetid: ms. テクノロジ: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title: " Xamarin.Forms マップの初期化と構成" の説明: "the Xamarin.Forms .Maps NuGet パッケージは、アプリケーションで maps 機能を使用するために必要です。 さらに、ユーザーの場所にアクセスするには、アプリケーションに対して場所のアクセス許可が付与されている必要があります。 "
+ms. 製品: xamarin ms. assetid: 59CD1344-8248-406C9144-0c8a67141e: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 02/07/2020 no loc: [ Xamarin.Forms ,、 Xamarin.Essentials ]
 ---
 
 # <a name="xamarinforms-map-initialization-and-configuration"></a>Xamarin.Formsマップの初期化と構成
@@ -87,13 +84,13 @@ Android でマップを表示して操作するための構成プロセスは次
 1. optionalマニフェストでの場所のアクセス許可を指定します。
 1. optionalクラスのランタイムの場所のアクセス許可を要求 `MainActivity` します。
 
-正しく構成されたマニフェストファイルの例については、サンプルアプリケーションの「 [Androidmanifest .xml](https://github.com/xamarin/xamarin-forms-samples/blob/master/WorkingWithMaps/WorkingWithMaps/WorkingWithMaps.Android/Properties/AndroidManifest.xml) 」を参照してください。
+正しく構成されたマニフェストファイルの例については、サンプルアプリケーションの「 [AndroidManifest.xml](https://github.com/xamarin/xamarin-forms-samples/blob/master/WorkingWithMaps/WorkingWithMaps/WorkingWithMaps.Android/Properties/AndroidManifest.xml) 」を参照してください。
 
 #### <a name="get-a-google-maps-api-key"></a>Google Maps API キーを取得する
 
 Android で[Google MAPS api](https://developers.google.com/maps/documentation/android/)を使用するには、API キーを生成する必要があります。 これを行うには、「 [Google MAPS API キーを取得](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)する」の手順に従います。
 
-API キーを取得したら、 `<application>` **Properties/AndroidManifest**ファイルの要素内に追加する必要があります。
+API キーを取得したら、 `<application>` **Properties/AndroidManifest.xml**ファイルの要素内に追加する必要があります。
 
 ```xml
 <application ...>
@@ -110,7 +107,7 @@ APK が Google Maps にアクセスするには、APK に署名するために�
 
 #### <a name="specify-the-google-play-services-version-number"></a>Google Play services のバージョン番号を指定してください
 
-`<application>` **Androidmanifest .xml**の要素内に次の宣言を追加します。
+AndroidManifest.xmlの要素内に次の宣言を追加し `<application>` ます。 ** **
 
 ```xml
 <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
@@ -120,7 +117,7 @@ APK が Google Maps にアクセスするには、APK に署名するために�
 
 #### <a name="specify-the-requirement-for-the-apache-http-legacy-library"></a>Apache HTTP レガシライブラリの要件を指定します
 
-Xamarin.Formsアプリケーションが API 28 以上を対象としている場合は、 `<application>` **Androidmanifest .xml**の要素内に次の宣言を追加する必要があります。
+アプリケーションが Xamarin.Forms API 28 以上を対象としている場合は、AndroidManifest.xmlの要素内に次の宣言を追加する必要があり `<application>` ます。 ** **
 
 ```xml
 <uses-library android:name="org.apache.http.legacy" android:required="false" />    

@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 053697921f1adacc102e9e9bee9dd17f8d44526b
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84128558"
+title: "ViewCell Context Actions on Android" 説明: "プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、ViewCell コンテキストアクションのレガシモードを有効にする、Android プラットフォーム固有のを使用する方法について説明します。
+8BD71B10: xamarin ms. assetid: 5037-44 3F-9975-B941CE393E5A davidbritch: xamarin-forms author: ms. author: dabritch ms. date: 09/24/2019 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
 ---
+
 # <a name="viewcell-context-actions-on-android"></a>Android での ViewCell コンテキスト アクション
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

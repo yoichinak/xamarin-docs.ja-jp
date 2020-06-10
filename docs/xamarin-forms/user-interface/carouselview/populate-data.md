@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Formsデータの CarouselView
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 1081bfafae8e4d7a7a522414e9b45cde48037f1d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136553"
+title: " Xamarin.Forms CarouselView data" description: "CarouselView には、その ItemsSource プロパティを、IEnumerable を実装する任意のコレクションに設定することによってデータが設定されます。"
+ms. 製品: xamarin ms. assetid: 20DB2C57-CE3A-4D91-80DC-73AE361A3CB0: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 04/29/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-carouselview-data"></a>Xamarin.Formsデータの CarouselView
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
@@ -58,7 +44,7 @@ ms.locfileid: "84136553"
 > [!NOTE]
 > `x:Array` 要素には、配列内の項目の型を示す `Type` 属性が必要です。
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView();
@@ -91,7 +77,7 @@ carouselView.ItemsSource = new string[]
 <CarouselView ItemsSource="{Binding Monkeys}" />
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView();
@@ -103,7 +89,7 @@ carouselView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 > [!NOTE]
 > コンパイル済みバインディングは、アプリケーションでのデータバインディングのパフォーマンスを向上させるために有効にすることができ Xamarin.Forms ます。 詳しくは、「[コンパイル済みのバインド](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)」を参照してください。
 
-データバインディングの詳細については、「 [ Xamarin.Forms データバインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)」を参照してください。
+データ バインディングの詳細については、「[Xamarin.Forms のデータ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)」を参照してください。
 
 ## <a name="define-item-appearance"></a>項目の外観を定義する
 
@@ -147,7 +133,7 @@ carouselView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 </CarouselView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView();
@@ -198,7 +184,7 @@ public class Monkey
 
 [![IOS と Android で、各項目がテンプレート化されている CarouselView のスクリーンショット](populate-data-images/datatemplate.png "CarouselView のテンプレート項目")](populate-data-images/datatemplate-large.png#lightbox "CarouselView のテンプレート項目")
 
-データテンプレートの詳細については、「 [ Xamarin.Forms データテンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)」を参照してください。
+データ テンプレートの詳細については、「[Xamarin.Forms のデータ テンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)」を参照してください。
 
 ## <a name="choose-item-appearance-at-runtime"></a>実行時に項目の外観を選択する
 
@@ -227,7 +213,7 @@ public class Monkey
 </ContentPage>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView
@@ -336,7 +322,7 @@ public class MonkeyDataTemplateSelector : DataTemplateSelector
 </CarouselView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView();
@@ -400,7 +386,7 @@ carouselView.ItemTemplate = new DataTemplate(() =>
 </RefreshView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 RefreshView refreshView = new RefreshView();
@@ -454,7 +440,7 @@ refreshView.Content = carouselView;
 </CarouselView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView
@@ -482,6 +468,6 @@ void OnCollectionViewRemainingItemsThresholdReached(object sender, EventArgs e)
 - [CarouselView (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 - [Xamarin.FormsIndicatorView](~/xamarin-forms/user-interface/indicatorview.md)
 - [Xamarin.FormsRefreshView](~/xamarin-forms/user-interface/refreshview.md)
-- [Xamarin.Formsデータバインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)
+- [Xamarin.Forms のデータ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 - [Xamarin.Formsデータテンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
 - [DataTemplateSelector を作成する Xamarin.Forms](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

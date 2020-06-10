@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 52be7641ac3b2983f537e11bccd76f2a5b52574d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130183"
+title: "分離不可能な blend モード" の説明: "分離不可能な blend モードを使用して、色合い、鮮やかさ、または輝度を変更します。"
+ms. 製品: xamarin ms テクノロジ: skiasharp: 97FA2730-87C0-4914-8C9F-C64A02CF9EEF author: davidbritch dabritch: ms. date: 08/23/2018 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
 ---
+
 # <a name="the-non-separable-blend-modes"></a>分離不可能な blend モード
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -46,125 +32,11 @@ HSL 値 (0、100、50) は RGB 値 (FF、00、00) です。これは純粋な赤
 他の blend モードと同様、分離不可能な4つのブレンドモードには、変換先 (多くの場合ビットマップイメージ) とソース (多くの場合、単一の色またはグラデーション) が関係します。 Blend モードでは、変換先とソースから、色合い、鮮やかさ、および明るさの値が結合されます。
 
 | Blend モード   | ソースからのコンポーネント | 変換先からのコンポーネント |
-| ---
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------- |---title: description: ms. 製品: ms. テクノロジ: ms. assetid: author: ms. author: ms. date: no loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------------ |---title: description: ms. 製品: ms. テクノロジ: ms. assetid: author: ms. author: ms. date: no loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--------------- | |`Hue`        |色合い |鮮やかさと輝度 | |`Saturation` |鮮やかさ |色合いと輝度 | |`Color`      |色合いと鮮やかさ |輝度 | |`Luminosity` |明るさ |色合いと鮮やかさ | 
+| ------------ | ---------------------- | --------------------------- |
+| `Hue`        | [色合い]                    | 鮮やかさと明るさ   |
+| `Saturation` | [鮮やかさ]             | 色合いと輝度          |
+| `Color`      | 色合いと鮮やかさ     | 明度                  | 
+| `Luminosity` | 明度             | 色合いと鮮やかさ          | 
 
 詳細については、「W3C[**合成」と「レベル 1**](https://www.w3.org/TR/compositing-1/)のアルゴリズムの合成」を参照してください。
 
@@ -325,11 +197,11 @@ Blend モードでは、 `SKBlendModes.Color` 変換先の輝度が保持され�
 
 ## <a name="a-matte-for-a-separable-mode"></a>分離可能モードのマット
 
-[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルのリソースとして含まれているビットマップの1つを次に示します。 ファイル名は**バナナ**です。
+[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルのリソースとして含まれているビットマップの1つを次に示します。 ファイル名は**Banana.jpg**:
 
 ![バナナサル](non-separable-images/Banana.jpg "バナナサル")
 
-バナナだけを含むマットを作成することができます。 これは、 [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルのリソースでもあります。 ファイル名は、次のようになり**ます。**
+バナナだけを含むマットを作成することができます。 これは、 [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルのリソースでもあります。 ファイル名は**BananaMatte.png**:
 
 ![バナナマット](non-separable-images/BananaMatte.png "バナナマット")
 
@@ -337,7 +209,7 @@ Blend モードでは、 `SKBlendModes.Color` 変換先の輝度が保持され�
 
 **Blue バナナ**ページでは、そのマットを使用して、サルが保持しているバナナの色合いと鮮やかさを変更しますが、イメージ内の他は何も変更しません。 
 
-次の `BlueBananaPage` クラスでは、**バナナ**ビットマップがフィールドとして読み込まれます。 コンストラクターは、オブジェクトとして、このオブジェクトをオブジェクトとして読み込み**ます** `matteBitmap` が、コンストラクター以外のオブジェクトは保持しません。 代わりに、という名前の3番目のビットマップ `blueBananaBitmap` が作成されます。 はに `matteBitmap` 描画され、その後には `blueBananaBitmap` blue に設定され、が `SKPaint` `Color` に設定され `BlendMode` `SKBlendMode.SrcIn` ます。 は `blueBananaBitmap` ほとんど透明なままですが、バナナの完全に青い青い画像があります。
+次の `BlueBananaPage` クラスでは、 **Banana.jpg**ビットマップがフィールドとして読み込まれます。 コンストラクターは、オブジェクトとして**BananaMatte.png**ビットマップを読み込み `matteBitmap` ますが、コンストラクター以外のオブジェクトは保持しません。 代わりに、という名前の3番目のビットマップ `blueBananaBitmap` が作成されます。 はに `matteBitmap` 描画され、その後には `blueBananaBitmap` blue に設定され、が `SKPaint` `Color` に設定され `BlendMode` `SKBlendMode.SrcIn` ます。 は `blueBananaBitmap` ほとんど透明なままですが、バナナの完全に青い青い画像があります。
 
 ```csharp
 public class BlueBananaPage : ContentPage

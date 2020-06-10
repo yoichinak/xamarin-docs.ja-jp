@@ -1,23 +1,9 @@
 ---
-title: Xamarin.FormsCollectionView
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a2c9fd9e6e48192bc2237d6b451b533fcee6e6ed
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136449"
+title: " Xamarin.Forms CollectionView" description: "CollectionView は、さまざまなレイアウト仕様を使用してデータの一覧を表示するための柔軟で高性能なビューです。"
+ms. 製品: xamarin ms. assetid: 2BC9B223-2D5C-4B09-849C-B9D578954557: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 07/24/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
-# <a name="xamarinforms-collectionview"></a>Xamarin.FormsCollectionView
+
+# <a name="xamarinforms-collectionview"></a>Xamarin.Forms CollectionView
 
 ## <a name="introduction"></a>[はじめに](introduction.md)
 

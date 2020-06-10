@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 08be571d3ba69891a56c08efd556a999e51431c8
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139855"
+title: "パート 4. データバインディングの基本 "説明": データバインディングを使用すると、2つのオブジェクトのプロパティをリンクさせて、一方のオブジェクトの変更によってもう一方の変更が行われるようにすることができます。
+ms. 製品: xamarin ms テクノロジ: xamarin-forms ms. assetid: 342288 C3-BB4C-4924-B178-72E112D777BA author: davidbritch ミリ秒: dabritch ms. date: 10/25/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="part-4-data-binding-basics"></a>第 4 部 データ バインディングの基礎
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
@@ -405,7 +391,7 @@ namespace XamlSamples
 
 実行時に項目のプロパティが変更された場合、コレクション内の項目はインターフェイスを実装 `INotifyPropertyChanged` し、イベントを使用してプロパティ値の変更を通知する必要があり `PropertyChanged` ます。 これについては、このシリーズの第5部で説明されてい[ます。データバインドから MVVM へ](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)。
 
-## <a name="summary"></a>[概要]
+## <a name="summary"></a>まとめ
 
 データバインディングは、ページ内の2つのオブジェクト間、またはビジュアルオブジェクトと基になるデータの間でプロパティをリンクするための強力なメカニズムを提供します。 しかし、アプリケーションがデータソースの操作を開始すると、一般的なアプリケーションアーキテクチャパターンが有用なパラダイムとして浮上し始めます。 これについては、[パート5で説明します。データバインドから MVVM へ](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)。
 

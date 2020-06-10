@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 39d203cf0fb7fff026106d98cfb512aad42f83d2
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84128246"
+title: "NavigationPage Bar Separator on iOS" 説明: "プラットフォーム-詳細" を使用すると、特定のプラットフォームでのみ使用できる機能を使用して、カスタムレンダラーや特殊効果を実装することができます。 この記事では、NavigationPage のナビゲーションバーの下部にある区切り線と影を非表示にする iOS プラットフォーム固有のを使用する方法について説明します。
+ms. 製品: xamarin ms. assetid: 5A45748A-6779-4441-82F2-415BD68473B9: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 10/24/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="navigationpage-bar-separator-on-ios"></a>IOS 上の NavigationPage バーの区切り記号
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

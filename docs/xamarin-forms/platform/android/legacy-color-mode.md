@@ -1,9 +1,6 @@
 ---
-title: description: "プラットフォーム-詳細" を使用すると、カスタムレンダラーや特殊効果を実装しなくても、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、従来のカラーモードを無効にする Android プラットフォーム固有のを使用する方法について説明 Xamarin.Forms します。
-ms. 製品: ms. assetid: ms. テクノロジ: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title: "VisualElement Legacy Color Mode for Android" の説明: "プラットフォームの詳細" を使用すると、特定のプラットフォームでのみ使用できる機能を使用して、カスタムレンダラーや特殊効果を実装することはできません。 この記事では、従来のカラーモードを無効にする Android プラットフォーム固有のを使用する方法について説明 Xamarin.Forms します。
+ms. 製品: xamarin ms. assetid: 37D95A2D-74AC-488A-B903-2BDD799EAA5C: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 07/10/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
 
 # <a name="visualelement-legacy-color-mode-on-android"></a>Android での VisualElement レガシカラーモード

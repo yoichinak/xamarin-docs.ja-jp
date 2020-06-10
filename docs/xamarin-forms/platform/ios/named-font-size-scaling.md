@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 9aa29ba4d8e6bda9126ec211af1b4febebd5bab9
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84128272"
+title: "iOS での名前付きフォントサイズのアクセシビリティスケーリング" 説明: "プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装しなくても、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、名前付きフォントサイズのアクセシビリティスケーリングを無効にする iOS プラットフォーム固有のを使用する方法について説明します。
+ms. 製品: xamarin ms. assetid: B443BAF6-E6F6-4A0E-80B5-CAACE6B550EF: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 06/28/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="accessibility-scaling-for-named-font-sizes-on-ios"></a>IOS での名前付きフォントサイズのアクセシビリティスケーリング
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

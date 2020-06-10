@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Formsおよび Azure Cognitive Services
-description: Xamarin.Forms音声認識、スペルチェック、テキスト翻訳、感情認識など、Azure Cognitive Services を使用してアプリケーションにインテリジェンスを追加します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 64f5dce9337444a1e910a11a69426964a09ac05a
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136020"
+title: " Xamarin.Forms および azure Cognitive Services" 説明: " Xamarin.Forms 音声認識、スペルチェック、テキスト翻訳、感情認識など、azure Cognitive Services を使用したアプリケーションへのインテリジェンスの追加」をご覧ください。
+ms. 製品: xamarin ms. assetid: 64386A65-FD31-4a1a7691495e57345a ms. テクノロジ: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 06/27/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-and-azure-cognitive-services"></a>Xamarin.Formsおよび Azure Cognitive Services
 
 ## <a name="introduction"></a>[はじめに](introduction.md)

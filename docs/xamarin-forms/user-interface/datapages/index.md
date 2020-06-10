@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsDataPages
-description: この記事では Xamarin.Forms 、データソースを事前構築されたビューにすばやく簡単にバインドするための API を提供する DataPages について説明します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 7d99870dd975d0996ffcd05d4aef153f3515ec9e
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84134317"
+title: " Xamarin.Forms DataPages" description: "この記事では Xamarin.Forms 、データソースを事前構築されたビューにすばやく簡単にバインドするための API を提供する DataPages を紹介します。
+ms. 製品: xamarin ms. assetid: DF16EAEE-DB78-42CA-9C59-51D9D6CB6B95: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 12/01/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-datapages"></a>Xamarin.FormsDataPages
 
 ![](~/media/shared/preview.png "This API is currently in preview")
@@ -38,7 +24,7 @@ DataPages は、事前に構築されたビューにデータソースをすば�
 
 DataPages は Xamarin.Forms 、を含めることによってアプリケーションに追加され** Xamarin.Forms ます。ページ**NuGet パッケージ。
 
-### <a name="data-sources"></a>データ ソース
+### <a name="data-sources"></a>ソリューション エクスプローラー
 
 プレビューでは、いくつかの事前に構築されたデータソースを使用できます。
 

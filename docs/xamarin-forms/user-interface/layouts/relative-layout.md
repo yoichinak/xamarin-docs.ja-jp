@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsRelativeLayout
-description: この記事では、RelativeLayout クラスを使用して、 Xamarin.Forms 任意の画面サイズに合わせてスケーリングする ui を作成する方法について説明します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: f250b109f759bcf6bb7fa4ac0573743ac12c4bc1
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127193"
+title: " Xamarin.Forms RelativeLayout" description: "この記事では、RelativeLayout クラスを使用して、 Xamarin.Forms 任意の画面サイズに合わせてスケーリングする ui を作成する方法について説明します。"
+ms. 製品: xamarin ms. assetid: 2530BCB8-01B8-4C4F59: davidbritch: dabritch: ms. date: 11/25/2015 no loc: [,] という形式で作成していることをご紹介しています。 Xamarin.Forms Xamarin.Essentials
 ---
+
 # <a name="xamarinforms-relativelayout"></a>Xamarin.FormsRelativeLayout
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
@@ -31,7 +17,7 @@ ms.locfileid: "84127193"
 
 ![](relative-layout-images/flag.png "RelativeLayout Exploration")
 
-## <a name="usage"></a>使用
+## <a name="usage"></a>使用法
 
 ### <a name="understanding-constraints"></a>制約について
 

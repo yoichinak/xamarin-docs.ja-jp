@@ -1,22 +1,8 @@
 ---
-title: での XAML 名前空間Xamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 7f35342134767ccdadfab086bfa14f6b610b325d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130378"
+title: "xaml 名前空間 in Xamarin.Forms " description: "xaml は、名前空間宣言に XMLNS XML 属性を使用します。 この記事では、XAML 名前空間の構文について説明し、型にアクセスするための XAML 名前空間を宣言する方法を示します。
+ms. 製品: xamarin ms. assetid: C03B5553-B199-4A19-9F0F-E5BCE1DB268F: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 08/21/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xaml-namespaces-in-xamarinforms"></a>での XAML 名前空間Xamarin.Forms
 
 _XAML では、名前空間宣言に xmlns XML 属性を使用します。この記事では、XAML 名前空間の構文について説明し、型にアクセスするために XAML 名前空間を宣言する方法を示します。_
@@ -104,7 +90,7 @@ Xaml で型を参照するには、xaml 名前空間をプレフィックスで�
 
 カスタム名前空間スキーマの定義については、「 [XAML カスタム名前空間](custom-namespace-schemas.md)スキーマ」を参照してください。
 
-## <a name="summary"></a>[概要]
+## <a name="summary"></a>まとめ
 
 この記事では、XAML 名前空間構文を紹介し、型にアクセスするために XAML 名前空間を宣言する方法を示しました。 XAML では、 `xmlns` 名前空間宣言に XML 属性を使用します。 xaml では、xaml 名前空間をプレフィックスで宣言することによって型を参照できます。
 
