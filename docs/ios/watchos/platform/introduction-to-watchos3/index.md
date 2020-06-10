@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/07/2017
-ms.openlocfilehash: f849ad9d722e297438b3960f74953ff922be0e56
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: abe9c95c889aed5258ea3a5367e05368ddb7c77f
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725288"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574172"
 ---
 # <a name="introduction-to-watchos-3"></a>watchOS 3 の概要
 
@@ -35,13 +35,13 @@ _この記事では、Xamarin 開発者向けの watchOS 3 で利用できる、
 - WatchOS 3 では、[追加のフレームワークの変更](#Additional-Framework-Changes)が行われています。
 - WatchOS 3 の[非推奨の api](#Deprecated-APIs) 。
 
-<a name="Whats-New-in-watchOS-3" />
+<a name="Whats-New-in-watchOS-3"></a>
 
 ## <a name="whats-new-in-watchos-3"></a>WatchOS 3 の新機能
 
 Apple では、watchOS 3 に新しい Api とサービスがいくつか追加され、既存の機能に対する多くの機能強化が加えられています。
 
-<a name="Apple-Pay-Enhancements" />
+<a name="Apple-Pay-Enhancements"></a>
 
 ## <a name="apple-pay-enhancements"></a>Apple Pay の機能強化
 
@@ -51,7 +51,7 @@ WatchOS 3 では、Pass Kit フレームワークが拡張され、Apple Watch �
 
 詳細については、Apple Pay の[拡張機能](~/ios/watchos/platform/apple-pay.md)に関するガイドを参照してください。
 
-<a name="Background-Tasks" />
+<a name="Background-Tasks"></a>
 
 ## <a name="background-tasks"></a>バックグラウンド タスク
 
@@ -66,7 +66,7 @@ watchOS 3 では、アプリで情報を更新するために使用できるバ�
 
 詳細については、「[バックグラウンドタスク](~/ios/watchos/platform/background-tasks.md)ガイド」を参照してください。
 
-<a name="Complications-Enhancements" />
+<a name="Complications-Enhancements"></a>
 
 ## <a name="complications-enhancements"></a>複雑な機能強化
 
@@ -85,7 +85,7 @@ WatchOS 3 では、ClockKit フレームワークには、 [CLKComplicationTempl
 
 詳細については、 [watchOS 3 ガイドのクイック対話手法に関する](~/ios/watchos/platform/quick-interaction-techniques.md)記事をご覧ください。
 
-<a name="Newly-Available-Frameworks" />
+<a name="Newly-Available-Frameworks"></a>
 
 ## <a name="newly-available-frameworks"></a>新しく利用可能なフレームワーク
 
@@ -98,25 +98,25 @@ watchOS 3 には、次のような、以前は使用できなかった既存の 
 - **コアオーディオ**-オーディオストリーム、複雑なバッファー、時刻値を表すデータ型を管理します。
 - ゲーム**キット**-ソーシャルゲームを作成します。
 
-<a name="Proactive-Suggestions" />
+<a name="Proactive-Suggestions"></a>
 
 ## <a name="proactive-suggestions"></a>プロアクティブな候補
 
-watchOS 3 を使用すると、アプリは特定のコンテキスト内でユーザーに情報を事前に提示できます。 この機能をサポートするために、 [Nsuseractivity](https://developer.apple.com/reference/foundation/nsuseractivity)に `MapItem` プロパティが含まれるようになりました。これにより、アプリは、他のアプリで後で使用するための場所情報を提供できるようになります。
+watchOS 3 を使用すると、アプリは特定のコンテキスト内でユーザーに情報を事前に提示できます。 この機能をサポートするために、 [Nsuseractivity](https://developer.apple.com/reference/foundation/nsuseractivity)には、 `MapItem` アプリが他のアプリで後で使用するための場所情報を提供できるようにするプロパティが含まれるようになりました。
 
 詳細については、「[プロアクティブな提案](~/ios/watchos/platform/proactive-suggestions.md)ガイドの概要」を参照してください。
 
-<a name="Security-and-Privacy-Enhancements" />
+<a name="Security-and-Privacy-Enhancements"></a>
 
 ## <a name="security-and-privacy-enhancements"></a>セキュリティとプライバシーの強化
 
 Apple は、watchOS 3 のセキュリティとプライバシーの両方に対していくつかの機能強化を行っています。これは、開発者がアプリのセキュリティを向上させ、エンドユーザーのプライバシーを確保するのに役立ちます。
 
-そのため、watchOS 3 (またはそれ以降) で実行されるアプリでは、特定の機能またはユーザー情報にアクセスするためのインテントを静的に宣言する必要があります。そのためには、アプリがアクセスする理由をユーザーに説明する1つまたは複数のプライバシー固有のキーを `Info.plist` ファイルに入力します。
+結果として、watchOS 3 (またはそれ以降) で実行されるアプリは、特定の機能またはユーザー情報にアクセスする目的を静的に宣言する必要があります。そのためには、アプリがアクセスする必要がある理由を説明する1つまたは複数のプライバシー固有のキーをファイルに入力し `Info.plist` ます。
 
 WatchOS 3 はこれらの変更を iOS 10 で共有するため、詳細については、iOS 10 の[セキュリティとプライバシーの強化](~/ios/app-fundamentals/security-privacy.md)に関するガイドを参照してください。
 
-<a name="Snapshots-and-Dock" />
+<a name="Snapshots-and-Dock"></a>
 
 ## <a name="snapshots-and-dock"></a>スナップショットとドッキング
 
@@ -126,7 +126,7 @@ WatchOS 3 では、Apple がドッキングを追加し、ユーザーがお気�
 
 詳細については、「[バックグラウンドタスク](~/ios/watchos/platform/background-tasks.md)ガイド」と「Apple の[WKSnapshotRefreshBackgroundTask リファレンス](https://developer.apple.com/reference/watchkit/wksnapshotrefreshbackgroundtask)」を参照してください。
 
-<a name="User-Notifications" />
+<a name="User-Notifications"></a>
 
 ## <a name="user-notifications"></a>ユーザーへの通知
 
@@ -134,23 +134,23 @@ WatchOS 3 で導入されたユーザー通知フレームワークは、ロー�
 
 詳細については、 [watchOS 3 ガイドのクイック対話手法に関する](~/ios/watchos/platform/quick-interaction-techniques.md)記事をご覧ください。
 
-<a name="Watch-Connectivity-Framework-Enhancements" />
+<a name="Watch-Connectivity-Framework-Enhancements"></a>
 
 ## <a name="watch-connectivity-framework-enhancements"></a>接続フレームワークの機能強化の監視
 
-[Wcsession](https://developer.apple.com/reference/watchconnectivity/wcsession)クラスの新しい `HasContentPending` プロパティは、セッションが処理する必要があるデータをバックグラウンドで受信したことを示します。 `RemainingComplicationUserInfoTransfers` プロパティは、iOS アプリが watchOS の複雑さを更新できる残りの時間を返します。
+`HasContentPending` [Wcsession](https://developer.apple.com/reference/watchconnectivity/wcsession)クラスの新しいプロパティは、セッションが処理する必要があるデータをバックグラウンドで受信したことを示します。 プロパティは、 `RemainingComplicationUserInfoTransfers` iOS アプリが watchOS の複雑さを更新できる残りの時間を返します。
 
 詳細については、「[バックグラウンドタスク](~/ios/watchos/platform/background-tasks.md)ガイド」を参照してください。
 
-<a name="WatchKit-Framework-Enhancements" />
+<a name="WatchKit-Framework-Enhancements"></a>
 
 ## <a name="watchkit-framework-enhancements"></a>WatchKit Framework の機能強化
 
 watchOS 3 には、次のような WatchKit フレームワークに対するいくつかの機能強化が含まれています。
 
 - アプリは、新しい[WKCrownSequencer](https://developer.apple.com/reference/watchkit/wkcrownsequencer)クラスを使用して Digital Crown の状態を取得し、ユーザーが[WKCrownDelegate](https://developer.apple.com/reference/watchkit/wkcrowndelegate)クラスを使用してクラウンを回転したときに更新を受け取ることができます。
-- [WKExtension](https://developer.apple.com/reference/watchkit/wkextension)クラスには、アプリがアプリのランタイム状態を追跡するために使用できる `ApplicationState` メソッドと[WKApplicationState](https://developer.apple.com/reference/watchkit/wkapplicationstate)定数が含まれるようになりました。 `WKExtension` では、バックグラウンドタスクをスケジュールするために使用できる2つの新しいメソッドも用意されています。
-- [WKExtensionDelegate](https://developer.apple.com/reference/watchkit/wkextensiondelegate)には、アプリの状態の変化を監視し、バックグラウンドタスクの更新を処理するための新しい `ApplicationWillEnterForeground`、`ApplicationDidEnterBackground`、および `HandleBackgroundTasks` メソッドが含まれるようになりました。
+- [WKExtension](https://developer.apple.com/reference/watchkit/wkextension)クラスには、アプリが `ApplicationState` アプリのランタイム状態を追跡するために使用できるメソッドと[WKApplicationState](https://developer.apple.com/reference/watchkit/wkapplicationstate)定数が含まれるようになりました。 `WKExtension`には、バックグラウンドタスクをスケジュールするために使用できる2つの新しいメソッドも用意されています。
+- [WKExtensionDelegate](https://developer.apple.com/reference/watchkit/wkextensiondelegate)には、 `ApplicationWillEnterForeground` `ApplicationDidEnterBackground` `HandleBackgroundTasks` アプリの状態の変化を監視し、バックグラウンドタスクの更新を処理するための新しいメソッドとメソッドが追加されました。
 - 次の種類のジェスチャ認識を watch アプリに提供するために、新しい[WKGestureRecognizer](https://developer.apple.com/reference/watchkit/wkgesturerecognizer)クラスが追加されました。 [WKLongPressGestureRecognizer](https://developer.apple.com/reference/watchkit/wklongpressgesturerecognizer)、 [WKPanGestureRecognizer](https://developer.apple.com/reference/watchkit/wkpangesturerecognizer)、 [WKSwipeGestureRecognizer](https://developer.apple.com/reference/watchkit/wkswipegesturerecognizer) 、および[WKTapGestureRecognizer](https://developer.apple.com/reference/watchkit/wktapgesturerecognizer)。
 - 新しい[WKinterfaceHMCamera](https://developer.apple.com/reference/watchkit/wkinterfacehmcamera)クラスは、すべてのホームキットに接続されている IP カメラ用のインターフェイスを提供します。
 - 新しい[WKInterfaceInlineMovie](https://developer.apple.com/reference/watchkit/wkinterfaceinlinemovie)クラスを使用すると、アプリは、ユーザーがタップしたときに実行中のムービーに置き換えられるムービー "ポスター" を表示できます。
@@ -160,17 +160,17 @@ watchOS 3 には、次のような WatchKit フレームワークに対するい
 
 詳細については、 [watchOS 3 ガイドのクイック対話手法に関する](~/ios/watchos/platform/quick-interaction-techniques.md)記事をご覧ください。
 
-<a name="Workout-App-Enhancements" />
+<a name="Workout-App-Enhancements"></a>
 
 ## <a name="workout-app-enhancements"></a>トレーニング アプリの拡張機能
 
-WatchOS 3 の新機能であるトレーニング関連のアプリは、Apple Watch のバックグラウンドで実行することができます。 この機能を有効にする (および HealthKit データへのアクセス権を取得する) には、アプリで `Info.plist` ファイルに `workout-processing`という値の `WKBackgroundModes` キーを含める必要があります。
+WatchOS 3 の新機能であるトレーニング関連のアプリは、Apple Watch のバックグラウンドで実行することができます。 この機能を有効にする (および HealthKit データへのアクセス権を取得する) には、アプリ `WKBackgroundModes` で値を持つキーをファイルに含める必要があり `Info.plist` `workout-processing` ます。
 
 また、開発者は、ペアになっている iPhone で iOS アプリのバージョンから watchOS のトレーニングアプリを起動できるようになりました。
 
 詳細については、「[トレーニングアプリの拡張機能](~/ios/watchos/platform/workout-apps.md)」を参照してください。
 
-<a name="Additional-Framework-Changes" />
+<a name="Additional-Framework-Changes"></a>
 
 ## <a name="additional-framework-changes"></a>追加のフレームワークの変更
 
@@ -178,13 +178,13 @@ Apple では、上に示した主要なフレームワークの変更と追加�
 
 詳細については、追加の[フレームワーク変更](~/ios/watchos/platform/introduction-to-watchos3/additional-framework-changes.md)ガイドを参照してください。
 
-<a name="Deprecated-APIs" />
+<a name="Deprecated-APIs"></a>
 
 ## <a name="deprecated-apis"></a>非推奨の API
 
 WatchOS 3 では、次の Api が非推奨とされています。
 
-- UIKit の `UILocalNotification` クラスは非推奨とされており、ユーザー通知フレームワークに置き換える必要があります。
+- `UILocalNotification`UIKit のクラスは非推奨とされており、ユーザー通知フレームワークに置き換える必要があります。
 
 廃止と変更の完全な一覧については、Apple の[watchOS 2.2 To watchOS 3.0 API の相違点](https://developer.apple.com/library/prerelease/content/releasenotes/General/watchOS30APIDiffs/index.html)に関するドキュメントを参照してください。
 

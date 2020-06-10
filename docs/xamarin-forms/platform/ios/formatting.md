@@ -1,34 +1,18 @@
 ---
-title: ''
-description: この記事では、カスタムレンダラーを使用せずに iOS 固有の外観を設定する方法について説明 Xamarin.Forms します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: eb44b7d756fee4fa4f452b79292effb45ab98154
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138516"
+title: "iOS 固有の書式設定の追加" の説明: "この記事では、カスタムレンダラーを使用せずに iOS 固有の外観を設定する方法について説明 Xamarin.Forms します。"
+ms. 製品: xamarin ms. assetid: CE50E207-D092-4D88-8439-1B51F178E7ED: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 01/29/2016 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="adding-ios-specific-formatting"></a>IOS 固有の書式設定の追加
 
 IOS 固有の書式設定を行う1つの方法は、コントロールの[カスタムレンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)を作成し、プラットフォームごとにプラットフォーム固有のスタイルと色を設定することです。
 
 IOS アプリの外観を制御する他のオプションは Xamarin.Forms 次のとおりです。
 
-- 情報の表示オプションの構成[ **Info.plist**](#info-plist)
-- [ `UIAppearance` API](#uiappearance)を使用したコントロールスタイルの設定
+- 情報の表示オプションの構成[ **Info.plist**](#customizing-infoplist)
+- [ `UIAppearance` API](#uiappearance-api)を使用したコントロールスタイルの設定
 
 これらの代替方法については、以下で説明します。
-
-<a name="info-plist"/>
 
 ## <a name="customizing-infoplist"></a>情報 plist のカスタマイズ
 
@@ -62,8 +46,6 @@ nav.BarTextColor = Color.White;
 アプリを実行すると、ナビゲーションバーは緑色になり、テキストは (書式設定により) 白になり Xamarin.Forms ます。また、iOS 固有の構成により、ステータスバー*の*テキストも白になります。
 
 ![](theme-images/status-white-sml.png "iOS Theming")
-
-<a name="uiappearance"/>
 
 ## <a name="uiappearance-api"></a>UIAppearance API
 

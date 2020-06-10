@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsAbsoluteLayout
-description: この記事では、AbsoluteLayout クラスを使用して、 Xamarin.Forms ピクセルに最適な ui を作成する方法について説明します。 このクラスは、独自のサイズと位置または絶対値に比例して子要素を配置し、サイズを変更します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d81a80e1f1190cbdffd578024cf9c6db1e7737e1
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139244"
+title: " Xamarin.Forms AbsoluteLayout" description: "この記事では、AbsoluteLayout クラスを使用して Xamarin.Forms ピクセルに最適な ui を作成する方法について説明します。 このクラスは、独自のサイズと位置または絶対値に比例して子要素を配置し、サイズを調整します。
+ms. 製品: xamarin ms. assetid: 01A5CCE0-AD45-4806-84FD-72C007005B38: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 11/25/2015 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-absolutelayout"></a>Xamarin.FormsAbsoluteLayout
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
@@ -27,14 +13,12 @@ ms.locfileid: "84139244"
 
 この記事では、次の内容を取り上げます。
 
-- **[目的](#Purpose)** &ndash;の一般的な使用方法 `AbsoluteLayout` 。
-- **[使用法](#Usage)** &ndash;を使用し `AbsoluteLayout` て目的のデザインを実現する方法について説明します。
-  - **[プロポーショナルレイアウト](#Proportional_Layouts)** &ndash;での比例値の動作について説明 `AbsoluteLayout` します。
-  - **[値](#Specifying_Values)** &ndash; の指定比例値と絶対値を指定する方法について説明します。
-  - **[比例値](#Proportional_Values)** &ndash;比例値がどのように機能するかを理解します。
-    - **[絶対値](#Absolute_Values)** &ndash;絶対値がどのように機能するかを理解します。
-
-<a name="Purpose" />
+- **[目的](#purpose)** &ndash;の一般的な使用方法 `AbsoluteLayout` 。
+- **[使用法](#usage)** &ndash;を使用し `AbsoluteLayout` て目的のデザインを実現する方法について説明します。
+  - **[プロポーショナルレイアウト](#proportional-layouts)** &ndash;での比例値の動作について説明 `AbsoluteLayout` します。
+  - **[値](#specifying-values)** &ndash; の指定比例値と絶対値を指定する方法について説明します。
+  - **[比例値](#proportional-values)** &ndash;比例値がどのように機能するかを理解します。
+    - **[絶対値](#absolute-values)** &ndash;絶対値がどのように機能するかを理解します。
 
 ## <a name="purpose"></a>目的
 
@@ -42,11 +26,7 @@ ms.locfileid: "84139244"
 
 `AbsoluteLayout`任意の場所の要素をビュー内に配置する必要があり、要素を端に配置するときに特に便利です。
 
-<a name="Usage" />
-
-## <a name="usage"></a>使用
-
-<a name="Proportional_Layouts" />
+## <a name="usage"></a>使用法
 
 ### <a name="proportional-layouts"></a>プロポーショナルレイアウト
 
@@ -63,8 +43,6 @@ ms.locfileid: "84139244"
 ![](absolute-layout-images/anchor-center.png "Anchor at Center")
 ![](absolute-layout-images/anchor-end.png "Anchor at End")
 
-<a name="Specifying_Values" />
-
 ### <a name="specifying-values"></a>値の指定
 
 内のビュー `AbsoluteLayout` は、次の4つの値を使用して配置されます。
@@ -74,7 +52,7 @@ ms.locfileid: "84139244"
 - **幅** &ndash;ビューの幅
 - **高さ** &ndash;ビューの高さ
 
-これらの各値は、[比例](#Proportional_Values)値または[絶対値](#Absolute_Values)として設定できます。
+これらの各値は、[比例](#proportional-values)値または[絶対値](#absolute-values)として設定できます。
 
 値は、境界とフラグの組み合わせとして指定されます。 `LayoutBounds`は、、、 [`Rectangle`](xref:Xamarin.Forms.Rectangle) 、の4つの値で構成されるです `x` 。 `y` `width` `height`
 
@@ -169,8 +147,6 @@ public class AbsoluteLayoutExplorationCode : ContentPage
 }
 ```
 
-<a name="Proportional_Values" />
-
 ### <a name="proportional-values"></a>比例値
 
 比例値は、レイアウトとビューの間のリレーションシップを定義します。 このリレーションシップは、子ビューの位置またはスケール値を、親レイアウトの対応する値の比率として定義します。 これらの値は `double` 、0 ~ 1 の値を持つ s として表現されます。
@@ -193,8 +169,6 @@ var label = new Label {Text = "I'm bottom center on every device."};
 AbsoluteLayout.SetLayoutBounds(label, new Rectangle(.5,1,.5,.1));
 AbsoluteLayout.SetLayoutFlags(label, AbsoluteLayoutFlags.All);
 ```
-
-<a name="Absolute_Values" />
 
 ### <a name="absolute-values"></a>絶対値
 

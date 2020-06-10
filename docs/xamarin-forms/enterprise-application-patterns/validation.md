@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 4a9af91e2d48ba7ef7fdcdb4f8472e0aaafb7854
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138711"
+title: "エンタープライズアプリでの検証" の説明: "この章では、eShopOnContainers モバイルアプリがユーザー入力の検証を実行する方法について説明します。 これには、検証規則の指定、検証のトリガー、検証エラーの表示などが含まれます。
+ms. 製品: xamarin ms. assetid: 56e4f0fc-48d9-4033-91ec-173bb46a5e4d: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 08/07/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="validation-in-enterprise-apps"></a>エンタープライズアプリでの検証
 
 ユーザーからの入力を受け入れるアプリであれば、入力が有効であることを確認する必要があります。 たとえば、特定の範囲の文字のみを含む入力、特定の長さ、または特定の形式に一致する入力を確認することができます。 検証を行わないと、ユーザーはアプリを失敗させるデータを提供できます。 検証では、ビジネスルールを適用し、攻撃者が悪意のあるデータを挿入するのを防ぎます。
@@ -209,9 +195,7 @@ public bool Validate()
 
 [`Entry`](xref:Xamarin.Forms.Entry)コントロールが `UserName.Value` インスタンスのプロパティにバインドされ、 `ValidatableObject<T>` コントロールのコレクションに `Behaviors` インスタンスが `EventToCommandBehavior` 追加されます。 この動作は、の [] イベントの発生に応答してを実行し `ValidateUserNameCommand` `TextChanged` `Entry` ます。これは、のテキストが変更されたときに発生し `Entry` ます。 その後、 `ValidateUserNameCommand` デリゲートは `ValidateUserName` メソッドを実行し、 `Validate` インスタンスでメソッドを実行し `ValidatableObject<T>` ます。 したがって、ユーザーがユーザー名のコントロールに文字を入力するたびに、 `Entry` 入力されたデータの検証が行われます。
 
-動作の詳細については、「[動作の実装](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing_behaviors)」を参照してください。
-
-<a name="displaying_validation_errors" />
+動作の詳細については、「[動作の実装](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing-behaviors)」を参照してください。
 
 ## <a name="displaying-validation-errors"></a>検証エラーの表示
 
@@ -251,7 +235,7 @@ EShopOnContainers モバイルアプリは、無効なデータが含まれて�
 </Style>
 ```
 
-このスタイルは、 `ApplyLineColor` `LineColor` コントロールのアタッチされる動作のプロパティと添付プロパティを設定し `LineColorBehavior` [`Entry`](xref:Xamarin.Forms.Entry) ます。 スタイルについて詳しくは、「[Styles](~/xamarin-forms/user-interface/styles/index.md)」(スタイル) をご覧ください。
+このスタイルは、 `ApplyLineColor` `LineColor` コントロールのアタッチされる動作のプロパティと添付プロパティを設定し `LineColorBehavior` [`Entry`](xref:Xamarin.Forms.Entry) ます。 スタイルについて詳しくは、[スタイル](~/xamarin-forms/user-interface/styles/index.md)に関する記事をご覧ください。
 
 `ApplyLineColor`添付プロパティの値が設定または変更されると、アタッチされた動作によってメソッドが実行され `LineColorBehavior` `OnApplyLineColorChanged` ます。次のコード例を参照してください。
 
@@ -286,7 +270,7 @@ public static class LineColorBehavior
 }
 ```
 
-このメソッドのパラメーターは、動作がアタッチされるコントロールのインスタンス、および添付プロパティの新旧の値を提供し `ApplyLineColor` ます。 `EntryLineColorEffect`添付プロパティがの場合、クラスはコントロールのコレクションに追加され [`Effects`](xref:Xamarin.Forms.Element.Effects) `ApplyLineColor` ます。それ以外の場合は、 `true` コントロールのコレクションから削除され `Effects` ます。 動作の詳細については、「[動作の実装](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing_behaviors)」を参照してください。
+このメソッドのパラメーターは、動作がアタッチされるコントロールのインスタンス、および添付プロパティの新旧の値を提供し `ApplyLineColor` ます。 `EntryLineColorEffect`添付プロパティがの場合、クラスはコントロールのコレクションに追加され [`Effects`](xref:Xamarin.Forms.Element.Effects) `ApplyLineColor` ます。それ以外の場合は、 `true` コントロールのコレクションから削除され `Effects` ます。 動作の詳細については、「[動作の実装](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing-behaviors)」を参照してください。
 
 クラスのサブクラスは、 `EntryLineColorEffect` [`RoutingEffect`](xref:Xamarin.Forms.RoutingEffect) 次のコード例のようになります。
 
@@ -423,7 +407,7 @@ UI では、検証に失敗したデータを持つ各コントロールの下�
 
 各は [`Label`](xref:Xamarin.Forms.Label) `Errors` 、検証対象のビューモデルオブジェクトのプロパティにバインドされます。 `Errors`プロパティはクラスによって提供され、 `ValidatableObject<T>` 型は `List<string>` です。 プロパティには `Errors` 複数の検証エラーを含めることができるため、インスタンスを使用して、 `FirstValidationErrorConverter` 表示するコレクションから最初のエラーを取得します。
 
-## <a name="summary"></a>[概要]
+## <a name="summary"></a>まとめ
 
 EShopOnContainers モバイルアプリは、ビューモデルのプロパティの同期クライアント側検証を実行し、無効なデータが含まれているコントロールを強調表示し、データが無効であることをユーザーに通知するエラーメッセージを表示することによって、検証エラーをユーザーに通知します。
 

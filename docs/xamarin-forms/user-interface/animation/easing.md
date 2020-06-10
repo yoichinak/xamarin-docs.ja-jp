@@ -1,9 +1,6 @@
 ---
-title: ' description: ' の ' イージング関数には Xamarin.Forms Xamarin.Forms イージングクラスが含まれています。このクラスを使用すると、アニメーションの実行速度を制御する転送関数を指定できます。 この記事では、定義済みのイージング関数を使用する方法と、カスタムイージング関数を作成する方法について説明します。
-ms. 製品: ms. assetid: ms. テクノロジ: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title: "説明:" のイージング関数には、 Xamarin.Forms Xamarin.Forms 実行中のアニメーションの速度の向上や低速化を制御する転送関数を指定できるイージングクラスが含まれています。 この記事では、定義済みのイージング関数を使用する方法と、カスタムイージング関数を作成する方法について説明します。
+ms. 製品: xamarin ms. assetid: E6F124C7-A161-4C1F-AF40-52F0935E54DE: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 07/14/2016 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
 
 # <a name="easing-functions-in-xamarinforms"></a>イージング関数Xamarin.Forms
@@ -28,7 +25,7 @@ _Xamarin. フォームにはイージングクラスが含まれています。�
 
 `In`サフィックスと `Out` サフィックスは、イージング関数によって提供される効果が、アニメーションの先頭、末尾、またはその両方で目立つかどうかを示します。
 
-さらに、カスタムイージング関数を作成することもできます。 詳細については、「[カスタムイージング関数](#customeasing)」を参照してください。
+さらに、カスタムイージング関数を作成することもできます。 詳細については、「[カスタムイージング関数](#custom-easing-functions)」を参照してください。
 
 ## <a name="consuming-an-easing-function"></a>イージング関数の使用
 
@@ -45,8 +42,6 @@ await image.TranslateTo(0, -200, 2000, Easing.BounceOut);
 アニメーションのイージング関数を指定することにより、アニメーションベロシティが非線形になり、イージング関数によって提供される効果が生成されます。 アニメーションを作成するときにイージング関数を省略すると、アニメーションは既定の [`Linear`](xref:Xamarin.Forms.Easing.Linear) イージング関数を使用します。これにより、線形速度が生成されます。
 
 クラスでアニメーション拡張メソッドを使用する方法の詳細については [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) 、「[単純なアニメーション](~/xamarin-forms/user-interface/animation/simple.md)」を参照してください。 イージング関数は、クラスでも使用でき [`Animation`](xref:Xamarin.Forms.Animation) ます。 詳細については、「[カスタムアニメーション](~/xamarin-forms/user-interface/animation/custom.md)」を参照してください。
-
-<a name="customeasing" />
 
 ## <a name="custom-easing-functions"></a>カスタムイージング関数
 
@@ -94,7 +89,7 @@ await image.TranslateTo (0, 200, 2000, new Easing (t => 1 - Math.Cos (10 * Math.
 
 カスタムイージング関数は、コンストラクターへのラムダ関数引数として指定され、 [`Easing`](xref:Xamarin.Forms.Easing) メソッドを使用し `Math.Cos` て、メソッドによって抑制される低速のドロップ効果を作成し `Math.Exp` ます。 そのため、 [`Image`](xref:Xamarin.Forms.Image) インスタンスは変換され、最終的な場所にドロップされたように見えます。
 
-## <a name="summary"></a>[概要]
+## <a name="summary"></a>まとめ
 
 この記事では、定義済みのイージング関数を使用する方法と、カスタムイージング関数を作成する方法について説明します。 Xamarin.Formsには、実行中の [`Easing`](xref:Xamarin.Forms.Easing) アニメーションの速度と速度を制御する転送関数を指定できるクラスが含まれています。
 

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Formsセル
-description: Xamarin.Formsセルは、ListViews と TableViews に追加できます。 この記事では、に含まれるセルの一覧を示し Xamarin.Forms ます。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: bd1a2398787fe39c0b4cbd08ccd5c5793775d5cf
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137281"
+title: " Xamarin.Forms cells" description: " Xamarin.Forms セルを listviews および tableviews に追加できます。 この記事では、に含まれるセルの一覧を示し Xamarin.Forms ます。
+ms. 製品: xamarin ms. assetid: 77DA0C89-35D6-4C09-A072-3ADE53FD56CF: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 01/12/2016 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-cells"></a>Xamarin.Formsセル
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
@@ -31,8 +17,6 @@ _Xamarin. フォームセルは、ListViews と TableViews に追加できます
 
 Xamarin.Formsでは、次のセルの種類がサポートされています。
 
-<a name="textCell" />
-
 ### <a name="textcell"></a>TextCell
 
 |     |     |
@@ -44,7 +28,7 @@ Xamarin.Formsでは、次のセルの種類がサポートされています。
 
 |     |     |
 | --- | --- |
-| には [`ImageCell`](xref:Xamarin.Forms.ImageCell) と同じ情報が表示され [`TextCell`](#textCell) ますが、プロパティで設定したビットマップが含まれてい [`Source`](xref:Xamarin.Forms.Image.Source) ます。<br /><br />[API ドキュメント](xref:Xamarin.Forms.ImageCell)  / [ガイド](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#imagecell) | [![ImageCell の例](cells-images/ImageCell.png "ImageCell の例")](cells-images/ImageCell-Large.png#lightbox "ImageCell の例")<br />[このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ImageCellDemoPage.cs)  /  の C# コード[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ImageCellDemoPage.xaml) |
+| には [`ImageCell`](xref:Xamarin.Forms.ImageCell) と同じ情報が表示され [`TextCell`](#textcell) ますが、プロパティで設定したビットマップが含まれてい [`Source`](xref:Xamarin.Forms.Image.Source) ます。<br /><br />[API ドキュメント](xref:Xamarin.Forms.ImageCell)  / [ガイド](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#imagecell) | [![ImageCell の例](cells-images/ImageCell.png "ImageCell の例")](cells-images/ImageCell-Large.png#lightbox "ImageCell の例")<br />[このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ImageCellDemoPage.cs)  /  の C# コード[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ImageCellDemoPage.xaml) |
 |     |     |
 
 ### <a name="switchcell"></a>SwitchCell
@@ -64,5 +48,5 @@ Xamarin.Formsでは、次のセルの種類がサポートされています。
 ## <a name="related-links"></a>関連リンク
 
 - [Xamarin.Formsフォームギャラリーのサンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
-- [Xamarin.FormsSamples](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
+- [Xamarin.Forms サンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
 - [Xamarin.FormsAPI ドキュメント](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

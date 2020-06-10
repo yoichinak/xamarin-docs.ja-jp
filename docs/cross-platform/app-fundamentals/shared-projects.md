@@ -6,12 +6,12 @@ ms.assetid: 191c71fb-44a4-4e6c-af4b-7b1107dce6af
 author: davidortinau
 ms.author: daortin
 ms.date: 07/18/2018
-ms.openlocfilehash: eee76c056d05edccd1e039bc5e4cb8107d1aceb5
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b8be06b9da4561ffc0d628b53f8daf639b5e3179
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016696"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571099"
 ---
 # <a name="shared-projects-code-sharing"></a>共有プロジェクトコード共有
 
@@ -35,7 +35,7 @@ _共有プロジェクトを使用すると、さまざまなアプリケーシ�
 
 Android アプリケーションプロジェクトは他の Android アプリケーションプロジェクトを参照できないことに注意してください。たとえば、android 単体テストプロジェクトは Android アプリケーションプロジェクトを参照できません。 この制限の詳細については、こちらの[フォーラムの説明](https://forums.xamarin.com/discussion/comment/98092/)を参照してください。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 ## <a name="visual-studio-for-mac-walkthrough"></a>Visual Studio for Mac のチュートリアル
 
@@ -43,11 +43,11 @@ Android アプリケーションプロジェクトは他の Android アプリケ
 
 ## <a name="creating-a-shared-project"></a>共有プロジェクトの作成
 
-新しい共有プロジェクトを作成するには、 **[ファイル > 新しいソリューション...]** に移動します (または、既存のソリューションを右クリックし、[**追加] > [新しいプロジェクトの追加**] の順に選択します)。
+新しい共有プロジェクトを作成するには、[**ファイル > 新しいソリューション...** ] に移動します (または、既存のソリューションを右クリックし、[**追加] > [新しいプロジェクトの追加**] の順に選択します)。
 
 [![新しい共有プロジェクト](shared-projects-images/xs-newsolution-sml.png "新しいソリューション")](shared-projects-images/xs-newsolution.png#lightbox)
 
-次の画面で、プロジェクト名を選択し、 **[作成]** をクリックします。
+次の画面で、プロジェクト名を選択し、[**作成**] をクリックします。
 
 新しい共有プロジェクトが表示されます。参照またはコンポーネントノードがありません。これらは共有プロジェクトではサポートされていません。
 
@@ -63,13 +63,13 @@ Android アプリケーションプロジェクトは他の Android アプリケ
 
 ## <a name="shared-project-options"></a>共有プロジェクトのオプション
 
-共有プロジェクトを右クリックし、 **[オプション]** を選択すると、他のプロジェクトの種類よりも設定が多くなります。 共有プロジェクトはコンパイルされないため (独自に)、出力またはコンパイラのオプション、プロジェクト構成、アセンブリの署名、またはカスタムコマンドを設定することはできません。 共有プロジェクトのコードは、これらの値を参照しているすべての値から効率的に継承します。
+共有プロジェクトを右クリックし、[**オプション**] を選択すると、他のプロジェクトの種類よりも設定が多くなります。 共有プロジェクトはコンパイルされないため (独自に)、出力またはコンパイラのオプション、プロジェクト構成、アセンブリの署名、またはカスタムコマンドを設定することはできません。 共有プロジェクトのコードは、これらの値を参照しているすべての値から効率的に継承します。
 
-**[オプション]** 画面を次に示します。プロジェクト**名**と**既定の名前空間**は、一般的に変更される2つの設定のみです。
+[**オプション**] 画面を次に示します。プロジェクト**名**と**既定の名前空間**は、一般的に変更される2つの設定のみです。
 
 ![](shared-projects-images/xs-sharedprojectoptions.png "Shared Project Options")
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ## <a name="visual-studio-walkthrough"></a>Visual Studio チュートリアル
 
@@ -77,15 +77,15 @@ Android アプリケーションプロジェクトは他の Android アプリケ
 
 ### <a name="creating-a-shared-project"></a>共有プロジェクトの作成
 
-新しい共有プロジェクトを作成するには、 **[ファイル]**  >  [**新しい** > **プロジェクト**] の順に移動します。
+新しい共有プロジェクトを作成するには、[**ファイル**] [  >  **新しい**  >  **プロジェクト**] の順に移動します。
 
-Visual Studio 2019 で、**新しいプロジェクトの作成** ページの 検索 ボックスに「 **shared** 」と入力します。 **[共有プロジェクト]** テンプレートを選択し、 **[次へ]** を選択します。 プロジェクトの名前を入力し、 **[作成]** を選択します。
+Visual Studio 2019 で、[**新しいプロジェクトの作成**] ページの [検索] ボックスに「 **shared** 」と入力します。 [**共有プロジェクト**] テンプレートを選択し、[**次へ**] を選択します。 プロジェクトの名前を入力し、[**作成**] を選択します。
 
-Visual Studio 2017 で、 **[共有プロジェクト]** テンプレートを選択し、プロジェクトの名前を選択します。
+Visual Studio 2017 で、[**共有プロジェクト**] テンプレートを選択し、プロジェクトの名前を選択します。
 
 ![Visual Studio 2017 の共有プロジェクトテンプレート](shared-projects-images/vs-newsolution.png)
 
-ソリューションファイルを右クリックし、 **[新しいプロジェクトの追加 >]** を選択して、既存のソリューションに新しい共有プロジェクトを追加することもできます。 新しい共有プロジェクトは、次のようになります (クラスファイルが追加された後)。 参照またはコンポーネントノードがないことに注意してください。これらは共有プロジェクトではサポートされていません。
+ソリューションファイルを右クリックし、[**新しいプロジェクトの追加 >**] を選択して、既存のソリューションに新しい共有プロジェクトを追加することもできます。 新しい共有プロジェクトは、次のようになります (クラスファイルが追加された後)。 参照またはコンポーネントノードがないことに注意してください。これらは共有プロジェクトではサポートされていません。
 
 ![](shared-projects-images/vs-empty.png "Empty Shared Project")
 
@@ -101,25 +101,25 @@ Visual Studio 2017 で、 **[共有プロジェクト]** テンプレートを�
 
 共有プロジェクトを選択すると、[プロパティ] パネルに他のプロジェクトの種類よりも多くの設定が表示されます。 共有プロジェクトはコンパイルされないため (独自に)、出力またはコンパイラのオプション、プロジェクト構成、アセンブリの署名、またはカスタムコマンドを設定することはできません。 共有プロジェクトのコードは、これらの値を参照しているすべての値から効率的に継承します。
 
-**[プロパティ]** パネルは次のようになります。**ルート名前空間**は、変更できる唯一の設定です。
+[**プロパティ**] パネルは次のようになります。**ルート名前空間**は、変更できる唯一の設定です。
 
 ![](shared-projects-images/vs-sharedprojectproperties.png "Shared Project Properties")
 
 -----
 
-<a name="Shared_Project_Example"/>
+<a name="Shared_Project_Example"></a>
 
 ## <a name="shared-project-example"></a>共有プロジェクトの例
 
-[Tasky](https://github.com/xamarin/mobile-samples/tree/master/Tasky)の例では、共有プロジェクトを使用して、IOS、Android、および Windows Phone アプリケーションの両方で使用される共通コードを格納します。 `SQLite.cs` と `TaskRepository.cs` ソースコードファイルの両方 utilise コンパイラディレクティブ ( `#if __ANDROID__`) を使用して、それらを参照する各アプリケーションに対して異なる出力を生成します。
+[Tasky](https://github.com/xamarin/mobile-samples/tree/master/Tasky)の例では、共有プロジェクトを使用して、IOS、Android、および Windows Phone アプリケーションの両方で使用される共通コードを格納します。 `SQLite.cs`と `TaskRepository.cs` ソースコードファイルの両方 utilise コンパイラディレクティブ ( `#if __ANDROID__`) を使用して、それらを参照する各アプリケーションに対して異なる出力を生成します。
 
 完全なソリューションの構造は次のとおりです (Visual Studio for Mac と Visual Studio でそれぞれ)。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 ![](shared-projects-images/xs-examplesolution.png "Visual Studio for Mac solution")
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 ![](shared-projects-images/vs-examplesolution.png "Visual Studio solution")
 

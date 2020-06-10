@@ -1,17 +1,17 @@
 ---
 title: クロスプラットフォームアプリケーションの構築の概要
-description: このドキュメントでは、クロスプラットフォームアプリケーションの構築の概要について説明します。 の値、MVC/ C#MVVM、ネイティブ ui などの設計パターンについて説明します。
+description: このドキュメントでは、クロスプラットフォームアプリケーションの構築の概要について説明します。 ここでは、C# の値、MVC/MVVM、ネイティブ Ui などの設計パターンについて説明します。
 ms.prod: xamarin
 ms.assetid: E442EEFB-FA9C-40E9-9668-5A3F915C8400
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 7d839e0141f14f4ba86897b128bf2a8c0a79548d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: de8c66e6a89f035b8370a2139361d3e942aa9c09
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016910"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571208"
 ---
 # <a name="building-cross-platform-applications-overview"></a>クロスプラットフォームアプリケーションの構築の概要
 
@@ -25,9 +25,9 @@ Xamarin は、プラットフォームごとに固有のネイティブユーザ
 
 Xamarin クロスプラットフォームアプリを作成するための主要なポイントの概要を次に示します。
 
-- でアプリを作成します。 **C#** C# で記述されC#た既存のコードは、Xamarin を使用して IOS および Android に簡単に移植でき、Windows アプリでも使用できます。
+- **C# を使用する**-アプリを c# で記述します。 C# で記述された既存のコードは、Xamarin を使用して iOS および Android に簡単に移植でき、Windows アプリでも使用できます。
 - **MVC または MVVM のデザインパターンを利用**する-モデル/ビュー/コントローラーパターンを使用してアプリケーションのユーザーインターフェイスを開発します。 モデル/ビュー/コントローラーアプローチを使用するか、"モデル" と rest の間に明確な分離があるモデル/ビュー/ビューモデルの方法を使用して、アプリケーションを設計します。 アプリケーションのどの部分が各プラットフォームのネイティブユーザーインターフェイス要素 (iOS、Android、Windows、Mac) を使用するかを決定し、これをガイドラインとして使用して、"Core" と "User Interface" の2つのコンポーネントにアプリケーションを分割します。
-- **ネイティブ**Ui のビルド-OS 固有の各アプリケーションには、さまざまなユーザーインターフェイスレイヤーがC#用意されています (ネイティブの UI デザインツールを使用して、に実装されています)。
+- **ネイティブ**Ui のビルド-OS 固有の各アプリケーションには、さまざまなユーザーインターフェイスレイヤーが用意されています (ネイティブ UI デザインツールを使用して C# で実装されています)。
 
 1. IOS では、UIKit Api を使用してネイティブアプリケーションを作成し、必要に応じて Xamarin の iOS デザイナーを利用して UI を視覚的に作成できます。
 1. Android では、Xamarin の UI デザイナーを利用して、ネイティブなアプリケーションを作成するために Android を使用します。
@@ -47,16 +47,16 @@ Xamarin. Forms プロジェクトはすべてのプラットフォームでサ�
 
 これらのコンポーネントの一部は、 *Tasky*のケーススタディで実装されています。
 
- <a name="Separate_Reusable_Code_into_a_Core_Library" />
+ <a name="Separate_Reusable_Code_into_a_Core_Library"></a>
 
 ## <a name="separate-reusable-code-into-a-core-library"></a>再利用可能なコードをコアライブラリに分離する
 
-アプリケーションアーキテクチャを階層化し、プラットフォームに依存しないコア機能を再利用可能なコアライブラリに移動することで、責任の分離の原則に従うことにより、次の図に示すように、プラットフォーム間でコード共有を最大化できます。図
+アプリケーションアーキテクチャを階層化し、プラットフォームに依存しないコア機能を再利用可能なコアライブラリに移動することによって、役割を分離するという原則に従うことで、次の図に示すように、プラットフォーム間でコードを共有できます。
 
  ![](overview-images/layers2.png "By following the principle of separation of responsibility by layering your application architecture and then moving core functionality that is platform agnostic into a reusable core library, you can maximize code sharing across platforms")
 
- <a name="Case_Studies" />
+ <a name="Case_Studies"></a>
 
-## <a name="case-studies"></a>ケーススタディ
+## <a name="case-studies"></a>ケース スタディ
 
 このドキュメントには、 *Tasky Pro*という1つのケーススタディが付属しています。 各ケーススタディでは、このドキュメントに記載されている概念の実装について、実際の例を通じて説明します。 このコードはオープンソースであり、 [github](https://github.com/xamarin/mobile-samples/)で入手できます。

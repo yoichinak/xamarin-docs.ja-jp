@@ -1,22 +1,8 @@
 ---
-title: ''
-description: この記事で Xamarin.Forms は、携帯電話ではなくタブレットのアプリケーションレイアウトを最適化する方法について説明します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8ce5ba09f89c2bc84b7f6ba722f724ae39c0222e
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137934"
+title: "タブレットアプリとデスクトップアプリのレイアウト" 説明: "この記事では Xamarin.Forms 、スマートフォンではなく、タブレットのアプリケーションレイアウトを最適化する方法について説明します。"
+ms. 製品: xamarin ms. assetid: D62F472B-4345-4983-8403-659A538B591F: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 02/01/2016 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="layout-for-tablet-and-desktop-apps"></a>タブレットアプリとデスクトップアプリのレイアウト
 
 Xamarin.Formsサポートされているプラットフォームで使用可能なすべてのデバイスの種類をサポートします。そのため、スマートフォンだけでなく、以下でもアプリを実行できます。
@@ -27,10 +13,8 @@ Xamarin.Formsサポートされているプラットフォームで使用可能�
 
 このページでは、以下について簡単に説明します。
 
-- サポートされている[デバイスの種類](#Device_Types)
-- タブレットと携帯電話のレイアウトを[最適化](#optimize)する方法。
-
-<a name="Device_Types" />
+- サポートされている[デバイスの種類](#device-types)
+- タブレットと携帯電話のレイアウトを[最適化](#optimize-for-tablet-and-desktop)する方法。
 
 ## <a name="device-types"></a>デバイスの種類
 
@@ -64,9 +48,7 @@ Windows タブレットおよびデスクトップで実行されているアプ
 
 [![](tablet-images/splitscreen-sml.png "Windows Split Screen Example")](tablet-images/splitscreen.png#lightbox "Windows Split Screen Example")
 
-<a name="optimize" />
-
-## <a name="optimizing-for-tablet-and-desktop"></a>タブレットおよびデスクトップ向けの最適化
+## <a name="optimize-for-tablet-and-desktop"></a>タブレットおよびデスクトップ用に最適化する
 
 Xamarin.Formsスマートフォンまたはタブレット/デスクトップデバイスが使用されているかどうかに応じて、ユーザーインターフェイスを調整できます。 これは、タブレットやデスクトップコンピューターなどの大画面デバイスのユーザーエクスペリエンスを最適化できることを意味します。
 
@@ -85,7 +67,7 @@ if (Device.Idiom == TargetIdiom.Phone)
 
 この方法は、個々のページのレイアウトに大幅な変更を加える場合や、大きな画面でまったく異なるページを表示する場合にも拡張できます。
 
-### <a name="leveraging-masterdetailpage"></a>Masterのページを活用する
+### <a name="leverage-masterdetailpage"></a>Masterのページを活用する
 
 は、 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 大規模な画面に最適です。特に、を使用して [`UISplitViewController`](xref:UIKit.UISplitViewController) ネイティブの iOS エクスペリエンスを提供する iPad では最適です。
 

@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 943148a642a1dec7e84f74ae96983c21f30319ab
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139270"
+タイトル: "構成管理" の説明: "この章では、eShopOnContainers モバイルアプリが構成管理を実装してアプリ設定とユーザー設定を提供する方法について説明します。"
+ms: xamarin ms. assetid: 50d6e780e768-4の 9361-3af11e56b87b ms. テクノロジ: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 08/07/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="configuration-management"></a>構成管理
 
 設定を使用すると、アプリの動作を構成するデータをコードから分離できるため、アプリを再構築しなくても動作を変更できます。 設定には、アプリ設定とユーザー設定の2種類があります。
@@ -25,7 +11,7 @@ ms.locfileid: "84139270"
 
 ユーザー設定は、アプリの動作に影響するアプリのカスタマイズ可能な設定であり、頻繁に再調整する必要はありません。 たとえば、アプリでは、ユーザーがデータの取得元を指定したり、画面に表示したりすることができます。
 
-Xamarin.Formsには、設定データを格納するために使用できる永続的なディクショナリが含まれています。 このディクショナリには、プロパティを使用してアクセスできます。このディクショナリに格納されて [`Application.Current.Properties`](xref:Xamarin.Forms.Application.Properties) いるデータは、アプリがスリープ状態になったときに保存され、アプリの再開時または再起動時に復元されます。 また、クラスに [`Application`](xref:Xamarin.Forms.Application) は、 [`SavePropertiesAsync`](xref:Xamarin.Forms.Application.SavePropertiesAsync) 必要に応じてアプリの設定を保存できるようにするメソッドもあります。 このディクショナリの詳細については、「 [Properties dictionary](~/xamarin-forms/app-fundamentals/application-class.md#Properties_Dictionary)」を参照してください。
+Xamarin.Formsには、設定データを格納するために使用できる永続的なディクショナリが含まれています。 このディクショナリには、プロパティを使用してアクセスできます。このディクショナリに格納されて [`Application.Current.Properties`](xref:Xamarin.Forms.Application.Properties) いるデータは、アプリがスリープ状態になったときに保存され、アプリの再開時または再起動時に復元されます。 また、クラスに [`Application`](xref:Xamarin.Forms.Application) は、 [`SavePropertiesAsync`](xref:Xamarin.Forms.Application.SavePropertiesAsync) 必要に応じてアプリの設定を保存できるようにするメソッドもあります。 このディクショナリの詳細については、「 [Properties dictionary](~/xamarin-forms/app-fundamentals/application-class.md#properties-dictionary)」を参照してください。
 
 永続ディクショナリを使用してデータを格納する Xamarin.Forms ことの欠点は、に簡単にデータをバインドできないことです。 そのため、eShopOnContainers モバイルアプリでは、 [NuGet](https://www.nuget.org/packages/Xam.Plugins.Settings/)から入手できる Xam. プラグインライブラリを使用します。 このライブラリは、アプリとユーザー設定の永続化と取得を行うための一貫したタイプセーフなクロスプラットフォームアプローチを提供します。また、各プラットフォームによって提供されるネイティブ設定管理を使用します。 また、データバインディングを使用して、ライブラリによって公開される設定データにアクセスするのも簡単です。
 
@@ -128,7 +114,7 @@ EShopOnContainers モバイルアプリでは、は `SettingsView` 2 つのユ�
 
 **図 7-1**: eShopOnContainers モバイルアプリによって公開されるユーザー設定
 
-データバインディングを使用して、クラスによって公開される設定を取得および設定でき `Settings` ます。 これを実現するには、ビューバインディングのコントロールを使用して、クラスのプロパティにアクセスするモデルプロパティを表示 `Settings` し、設定値が変更された場合にプロパティの変更通知を発生させます。 EShopOnContainers mobile アプリがビューモデルを構築してビューに関連付ける方法については、「[ビューモデルロケーターを使用したビューモデルの自動作成](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically_creating_a_view_model_with_a_view_model_locator)」を参照してください。
+データバインディングを使用して、クラスによって公開される設定を取得および設定でき `Settings` ます。 これを実現するには、ビューバインディングのコントロールを使用して、クラスのプロパティにアクセスするモデルプロパティを表示 `Settings` し、設定値が変更された場合にプロパティの変更通知を発生させます。 EShopOnContainers mobile アプリがビューモデルを構築してビューに関連付ける方法については、「[ビューモデルロケーターを使用したビューモデルの自動作成](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically-creating-a-view-model-with-a-view-model-locator)」を参照してください。
 
 次のコード例は [`Entry`](xref:Xamarin.Forms.Entry) 、コンテナー化さ `SettingsView` れたマイクロサービスのベースエンドポイント URL をユーザーが入力できるようにする、のコントロールを示しています。
 
@@ -178,11 +164,11 @@ public override Task InitializeAsync(object navigationData)
 }
 ```
 
-メソッドは、 `Endpoint` プロパティをクラスのプロパティの値に設定し `UrlBase` `Settings` ます。 プロパティにアクセス `UrlBase` すると、プラットフォーム固有のストレージから設定値が取得されます。 メソッドの呼び出し方法の詳細については `InitializeAsync` 、「[ナビゲーション中のパラメーターの引き渡し](~/xamarin-forms/enterprise-application-patterns/navigation.md#passing_parameters_during_navigation)」を参照してください。
+メソッドは、 `Endpoint` プロパティをクラスのプロパティの値に設定し `UrlBase` `Settings` ます。 プロパティにアクセス `UrlBase` すると、プラットフォーム固有のストレージから設定値が取得されます。 メソッドの呼び出し方法の詳細については `InitializeAsync` 、「[ナビゲーション中のパラメーターの引き渡し](~/xamarin-forms/enterprise-application-patterns/navigation.md#passing-parameters-during-navigation)」を参照してください。
 
 このメカニズムにより、ユーザーが SettingsView に移動するたびに、ユーザー設定がプラットフォーム固有のストレージから取得され、データバインディングによって表示されるようになります。 その後、ユーザーが設定値を変更すると、データバインディングによって、それらの値が直ちにプラットフォーム固有のストレージに永続化されます。
 
-## <a name="summary"></a>[概要]
+## <a name="summary"></a>まとめ
 
 設定を使用すると、アプリの動作を構成するデータをコードから分離できるため、アプリを再構築しなくても動作を変更できます。 アプリ設定はアプリによって作成および管理されるデータです。ユーザー設定は、アプリの動作に影響するアプリのカスタマイズ可能な設定であり、頻繁に再調整する必要はありません。
 

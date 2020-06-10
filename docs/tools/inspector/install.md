@@ -6,12 +6,12 @@ ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
 author: davidortinau
 ms.author: daortin
 ms.date: 06/19/2018
-ms.openlocfilehash: 19c4a15fb2490c7bace4798b0cb8e062b1379a04
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 39e7a6c86a2d4ab4231a29c0e1014de702af01ac
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306303"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573418"
 ---
 # <a name="inspector-installation-and-requirements"></a>インスペクターのインストールと要件
 
@@ -19,7 +19,7 @@ ms.locfileid: "79306303"
 
 # <a name="windows"></a>[Windows](#tab/windows)
 
-1. [Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/)をダウンロードしてインストールし、 **[.net を使用したモバイル開発]** ワークロードを選択します。
+1. [Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/)をダウンロードしてインストールし、[ **.net を使用したモバイル開発**] ワークロードを選択します。
 1. [サインイン](https://docs.microsoft.com/visualstudio/ide/signing-in-to-visual-studio)して、エンタープライズサブスクリプションを有効にします。
 1. 自分のアプリを[調査](~/tools/inspector/inspect.md)してください。
 
@@ -31,9 +31,9 @@ ms.locfileid: "79306303"
 
 -----
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
-### <a name="supported-operating-systems"></a>サポートされるオペレーティング システム
+### <a name="supported-operating-systems"></a>Supported Operating Systems
 
 - **Mac** -OS X 10.11 以上
 - **Windows** -windows 7 以降 (Internet Explorer 11 以降および .net 4.6.1 以上)
@@ -45,18 +45,18 @@ ms.locfileid: "79306303"
 
 企業のお客様は、ライブアプリの検査を利用できます。
 
-<a name="supported-platforms" />
+<a name="supported-platforms"></a>
 
 ### <a name="supported-app-platforms"></a>サポートされているアプリプラットフォーム
 
-|アプリ プラットフォーム|IDE のサポート|説明|
+|アプリ プラットフォーム|IDE のサポート|メモ|
 |--- |--- |--- |
 |Mac|Visual Studio for Mac でのみサポートされています|
-|iOS|Visual Studio 2017 および Visual Studio for Mac でサポートされています| リンカーの動作は **[リンクしない]** に設定する必要があります ( **[iOS ビルド]** プロジェクトオプション の下) |
-|Android|Visual Studio 2017 および Visual Studio for Mac でサポートされています|**Fastdev**が有効になっている Android > = 4.0.3 を対象とする必要があります。<br />Google、Visual Studio、または Xamarin Android エミュレーターを使用する必要があります。 Android 7 エミュレーターでは、現時点では検査できない場合があります。|
+|iOS|Visual Studio 2017 および Visual Studio for Mac でサポートされています| リンカーの動作は [**リンクしない**] に設定する必要があります ([ **iOS ビルド**プロジェクトオプション] の下) |
+|Android|Visual Studio 2017 および Visual Studio for Mac でサポートされています|**Fastdev**が有効になっている Android >= 4.0.3 を対象とする必要があります。<br />Google、Visual Studio、または Xamarin Android エミュレーターを使用する必要があります。 Android 7 エミュレーターでは、現時点では検査できない場合があります。|
 |WPF|Visual Studio 2017 でのみサポートされます|
 
-<a name="reporting-bugs" />
+<a name="reporting-bugs"></a>
 
 ## <a name="reporting-bugs"></a>バグのレポート
 
@@ -75,7 +75,7 @@ Visual Studio For Mac
 - **Visual studio について > Visual Studio については > 情報のコピー > 詳細の表示**
 - バグレポートに貼り付け
 
-Visual Studio
+Visual Studio
 
 - **Visual Studio > コピー情報の > に関するヘルプ**
 - オペレーティングシステムのバージョンと、32ビットまたは64ビットの Windows を実行しているかどうかをお知らせください。
@@ -97,12 +97,12 @@ Visual Studio For Mac
 
 - `~/Library/Logs/VisualStudio/7.0/Ide.log`
 
-Visual Studio
+Visual Studio
 
 - `%LOCALAPPDATA%\Xamarin\Logs\{VS version}\Inspector {date}.log`
-- Visual Studio の **[出力]** ウィンドウの内容が有益な場合もあります。
+- Visual Studio の [**出力**] ウィンドウの内容が有益な場合もあります。
 
-### <a name="project-settings"></a>プロジェクトの設定
+### <a name="project-settings"></a>[プロジェクトの設定]
 
 調べようとしているプロジェクトに **.csproj**をアタッチできる場合は、それが非常に便利です。 これは、個々の設定について質問するよりも簡単です。
 

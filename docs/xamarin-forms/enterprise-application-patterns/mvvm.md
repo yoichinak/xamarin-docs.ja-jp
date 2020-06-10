@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d2e335535b508a6cd5e2f497e2c681152a7e5cda
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130950"
+title: "モデルビュー-ビューモデルのパターン" 説明: "この章では、eShopOnContainers モバイルアプリが MVVM パターンを使用して、アプリのビジネスロジックとプレゼンテーションロジックをユーザーインターフェイスから明確に分離する方法について説明します。"
+ms. 製品: xamarin ms. assetid: dd8c1813-df44-4947-bcee-1a1ff2334b87: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 08/07/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="the-model-view-viewmodel-pattern"></a>モデルビュービューモデルパターン
 
 通常、開発者の経験では、 Xamarin.Forms XAML でユーザーインターフェイスを作成し、ユーザーインターフェイスで動作する分離コードを追加する必要があります。 アプリが変更され、サイズと範囲が拡大するにつれて、複雑なメンテナンスの問題が発生する可能性があります。 これらの問題には、ui コントロールとビジネスロジックとの密結合が含まれます。これにより、UI の変更にかかるコストが増加し、このようなコードを単体テストすることが困難になります。
@@ -42,7 +28,7 @@ MVVM パターンを使用する利点は次のとおりです。
 
 MVVM を効果的に使用するための鍵は、アプリケーションコードを適切なクラスに分類する方法と、クラスがどのように対話するかを理解することです。 以下のセクションでは、MVVM パターンの各クラスの役割について説明します。
 
-### <a name="view"></a>表示
+### <a name="view"></a>View
 
 ビューでは、画面に表示される内容の構造、レイアウト、および外観を定義します。 各ビューは XAML で定義されており、ビジネスロジックを含まない分離された分離コードがあることが理想的です。 ただし、場合によっては、アニメーションなど、XAML で表現しにくい視覚的な動作を実装する UI ロジックが分離コードに含まれていることがあります。
 
@@ -124,8 +110,6 @@ public LoginView()
 ### <a name="creating-a-view-defined-as-a-data-template"></a>データテンプレートとして定義されたビューを作成する
 
 ビューは、データテンプレートとして定義し、ビューモデルの種類に関連付けることができます。 データテンプレートは、リソースとして定義することも、ビューモデルを表示するコントロール内でインラインで定義することもできます。 コントロールの内容はビューモデルインスタンスであり、データテンプレートを使用して視覚的に表現します。 この手法は、最初にビューモデルがインスタンス化され、次にビューの作成が行われる状況の例です。
-
-<a name="automatically_creating_a_view_model_with_a_view_model_locator" />
 
 ### <a name="automatically-creating-a-view-model-with-a-view-model-locator"></a>ビューモデルロケーターを使用したビューモデルの自動作成
 
@@ -279,13 +263,11 @@ public ICommand NavigateCommand => new Command<string>(NavigateAsync);
 
 コマンドパラメーターは、必要に応じてプロパティを使用して定義することもでき [`CommandParameter`](xref:Xamarin.Forms.TapGestureRecognizer.CommandParameter) ます。 予期される引数の型は、およびのターゲットメソッドで指定され `Execute` `CanExecute` ます。 [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer)ユーザーが添付コントロールを操作すると、はターゲットコマンドを自動的に呼び出します。 コマンドパラメーターが指定されている場合は、コマンドのデリゲートに引数として渡され `Execute` ます。
 
-<a name="implementing_behaviors" />
-
 ### <a name="implementing-behaviors"></a>実装 (動作を)
 
 ビヘイビアーを使用すると、機能を UI コントロールに追加できるようになります。 代わりに、その機能はビヘイビアー クラスで実装され、それがコントロール自体の一部であるかのようにコントロールにアタッチされます。 動作を使用すると、通常は分離コードとして記述する必要のあるコードを実装できます。これは、コントロールに簡潔にアタッチし、複数のビューやアプリで再利用するためにパッケージ化できるように、コントロールの API と直接対話するためです。 MVVM のコンテキストでは、動作は、コントロールをコマンドに接続するための便利な方法です。
 
-添付プロパティを介してコントロールにアタッチされる動作は、アタッチされる*動作*と呼ばれます。 その後、この動作によって、関連付けられている要素の公開された API を使用して、ビューのビジュアルツリー内のコントロールまたはその他のコントロールに機能を追加できます。 EShopOnContainers モバイルアプリには、アタッチされる動作であるクラスが含まれてい `LineColorBehavior` ます。 この動作の詳細については、「[検証エラーの表示](~/xamarin-forms/enterprise-application-patterns/validation.md#displaying_validation_errors)」を参照してください。
+添付プロパティを介してコントロールにアタッチされる動作は、アタッチされる*動作*と呼ばれます。 その後、この動作によって、関連付けられている要素の公開された API を使用して、ビューのビジュアルツリー内のコントロールまたはその他のコントロールに機能を追加できます。 EShopOnContainers モバイルアプリには、アタッチされる動作であるクラスが含まれてい `LineColorBehavior` ます。 この動作の詳細については、「[検証エラーの表示](~/xamarin-forms/enterprise-application-patterns/validation.md#displaying-validation-errors)」を参照してください。
 
 Xamarin.Forms動作は、クラスまたはクラスから派生するクラスです [`Behavior`](xref:Xamarin.Forms.Behavior) 。ここで、 [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) `T` は動作を適用するコントロールの型です。 これらのクラスにはメソッドとメソッドが用意されており、これをオーバーライドして、 `OnAttachedTo` `OnDetachingFrom` 動作がコントロールにアタッチされ、コントロールからデタッチされるときに実行されるロジックを提供する必要があります。
 
@@ -361,7 +343,7 @@ public class EventToCommandBehavior : BindableBehavior<View>
 
 動作の詳細については、「[動作](~/xamarin-forms/app-fundamentals/behaviors/index.md)」を参照してください。
 
-## <a name="summary"></a>[概要]
+## <a name="summary"></a>まとめ
 
 モデルビュービューモデル (MVVM) パターンは、アプリケーションのビジネスロジックとプレゼンテーションロジックをユーザーインターフェイス (UI) から明確に分離するのに役立ちます。 アプリケーションロジックと UI を明確に分離することによって、さまざまな開発上の問題に対処し、アプリケーションを簡単にテスト、保守、および進化させることができます。 また、コードの再利用の機会を大幅に向上させることができ、開発者や UI デザイナーはアプリの各部分を開発する際により簡単に共同作業を行うことができます。
 

@@ -1,33 +1,33 @@
 ---
-title: インストールして、Xamarin で watchOS の使用
-description: このドキュメントでは、インストールして、Xamarin で watchOS を使用する方法について説明します。 インストールでは、watchOS プロジェクトについて説明して構造体、iOS デザイナー、Xcode の統合を使用する方法とトラブルシューティングのヒントを提供します。
+title: Xamarin での watchOS のインストールと使用
+description: このドキュメントでは、Xamarin で watchOS をインストールして使用する方法について説明します。 インストール、watchOS プロジェクトの構造、iOS デザイナーの使用方法、Xcode の統合について説明し、トラブルシューティングのヒントを提供します。
 ms.prod: xamarin
 ms.assetid: 69F21F15-198D-4B42-A703-21D35CAB0CCA
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 12/05/2017
-ms.openlocfilehash: f986099011dbccb0eb43c62d253ee497d46ca08e
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 5908d8493821eed54f5adee09eee1341bf458609
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306201"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84564889"
 ---
-# <a name="installing-and-using-watchos-in-xamarin"></a>インストールして、Xamarin で watchOS の使用
+# <a name="installing-and-using-watchos-in-xamarin"></a>Xamarin での watchOS のインストールと使用
 
-watchOS 4 では、macOS Sierra (10.12) Xcode 9 で必要です。
+watchOS 4 では、Xcode 9 の macOS Sierra (10.12) が必要です。
 
-当初、watchOS 1 には、Xcode 7 では、OS X Yosemite (10.10) が必要です。
+watchOS 1 では、Xcode 7 で OS X ヨーク Semite (10.10) が必要でした。
 
 > [!WARNING]
-> [2018 年4月1日以降、watchOS 1 の更新は受け付けられません](https://developer.apple.com/news/?id=11162017a)。 今後の更新プログラムは、watchOS 2 を使用する必要があります SDK またはそれ以降。watchOS で構築 4 SDK はお勧めします。
+> [2018 年4月1日以降、watchOS 1 の更新は受け付けられません](https://developer.apple.com/news/?id=11162017a)。 今後の更新では、watchOS 2 SDK 以降を使用する必要があります。watchOS 4 SDK を使用してビルドすることをお勧めします。
 
 ## <a name="project-structure"></a>プロジェクト構造
 
-Watch アプリは、3 つのプロジェクトで構成されます。
+Watch アプリは、次の3つのプロジェクトで構成されています。
 
-- **Xamarin ios アプリプロジェクト**-これは通常の iphone プロジェクトであり、Xamarin の ios テンプレートのいずれでもかまいません。 Watch アプリとその拡張機能は、このメイン プロジェクト内でまとめられます。
+- **Xamarin ios アプリプロジェクト**-これは通常の iphone プロジェクトであり、Xamarin の ios テンプレートのいずれでもかまいません。 Watch アプリとその拡張機能は、このメインプロジェクト内にバンドルされます。
 
 - **Watch Extension プロジェクト**-watch アプリのコード (コントローラークラスなど) が含まれています。
 
@@ -50,33 +50,33 @@ Watch アプリは、3 つのプロジェクトで構成されます。
 
 ## <a name="creating-a-new-project"></a>新規プロジェクトの作成
 
-新しい「ウォッチ…」を作成できませんではなく、既存の iOS アプリケーションに Watch アプリを追加することができます。 Watch アプリを作成する次の手順に従います。
+新しい "ウォッチソリューション" を作成することはできません...代わりに、既存の iOS アプリケーションに Watch アプリを追加できます。 Watch アプリを作成するには、次の手順に従います。
 
-1. 既存のプロジェクトがない場合は、まず **[ファイル > 新しいソリューション]** を選択し、iOS アプリを作成します ( **1 つのビューアプリ**など)。
+1. 既存のプロジェクトがない場合は、まず [**ファイル > 新しいソリューション**] を選択し、iOS アプリを作成します ( **1 つのビューアプリ**など)。
 
     [![](installation-images/cycle8-2-sml.png "Choose File > New Solution and create an iOS app")](installation-images/cycle8-2.png#lightbox)
 
-2. IOS アプリが作成されたら (または、既存の iOS アプリを使用する予定の場合)、ソリューションを右クリックし、追加、**新しいプロジェクトの追加 >** の順に選択します。**新しいプロジェクト** ウィンドウで、**watchOS > App > WatchKit app** を選択します。
+2. IOS アプリが作成されたら (または、既存の iOS アプリを使用する予定の場合)、ソリューションを右クリックし、[追加]、[**新しいプロジェクトの追加 >**] の順に選択します。[**新しいプロジェクト**] ウィンドウで、[ **watchOS > App > WatchKit app**] を選択します。
 
     [![](installation-images/cycle8-6-sml.png "Select watchOS > App > WatchKit App")](installation-images/cycle8-6.png#lightbox)
 
-3. 次の画面では、iOS アプリ プロジェクトは、watch アプリを含める必要がありますを選択できます。
+3. 次の画面では、ウォッチアプリを含める iOS アプリプロジェクトを選択できます。
 
     [![](installation-images/cycle8-7-sml.png "Choose which iOS app project should include the watch app")](installation-images/cycle8-7.png#lightbox)
 
-4. 最後に、プロジェクトを保存する場所を選択 (およびオプションでソース管理を有効にする)。
+4. 最後に、プロジェクトを保存する場所 (および必要に応じてソース管理を有効にする) を選択します。
 
     [![](installation-images/cycle8-8-sml.png "Choose the location to save the project")](installation-images/cycle8-8.png#lightbox)
 
 5. Visual Studio for Mac により、[プロジェクト参照と**情報 plist**設定](~/ios/watchos/get-started/project-references.md)が自動的に構成されます。
 
-## <a name="creating-the-watch-user-interface"></a>ウォッチのユーザー インターフェイスを作成します。
+## <a name="creating-the-watch-user-interface"></a>Watch ユーザーインターフェイスの作成
 
-<a name="designer" />
+<a name="designer"></a>
 
-### <a name="using-the-xamarin-ios-designer"></a>Xamarin iOS デザイナーを使用してください。
+### <a name="using-the-xamarin-ios-designer"></a>Xamarin iOS Designer の使用
 
-ウォッチ アプリの **インターフェイス** をダブルクリックして、iOS Designer を使用して編集します。 **[ツールボックス]** から、インターフェイスコントローラー と UI コントロール をストーリーボードにドラッグして、 **[プロパティ]** パッドを使用して構成することができます。
+[ウォッチ] アプリの [**インターフェイス**] をダブルクリックして、iOS Designer を使用して編集します。 [**ツールボックス**] から、[インターフェイスコントローラー] と [UI コントロール] をストーリーボードにドラッグして、[**プロパティ**] パッドを使用して構成することができます。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -88,7 +88,7 @@ Watch アプリは、3 つのプロジェクトで構成されます。
 
 -----
 
-新しい各インターフェイスコントローラーを選択し、 **[プロパティ]** パッドで名前を入力することによって、**クラス**を指定する必要C#があります (これにより、必要な分離コードファイルが自動的に作成されます)。
+新しい各インターフェイスコントローラーを選択し、[**プロパティ**] パッドに名前を入力することで、**クラス**を指定する必要があります (これにより、必要な C# 分離コードファイルが自動的に作成されます)。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -102,7 +102,7 @@ Watch アプリは、3 つのプロジェクトで構成されます。
 
 **Ctrl キーを押しながら**、ボタン、テーブル、またはインターフェイスコントローラーから別のインターフェイスコントローラーにドラッグして、セグエを作成します。
 
-### <a name="using-xcode-on-the-mac"></a>Mac で Xcode を使用します。
+### <a name="using-xcode-on-the-mac"></a>Mac での Xcode の使用
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -110,8 +110,8 @@ Xcode を使用してユーザーインターフェイスを作成し続ける�
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-Visual Studio のユーザーは、Xcode を使用して、Mac Build Host を直接使用に切り替えることで、ユーザー インターフェイスを構築することができますも。
-Visual Studio for Mac でソリューションを開き、Xcode ファイルを右クリックして、 **[Open With > Interface Builder]** を選択します。
+また、Visual Studio ユーザーは、Xcode を使用して、Mac ビルドホストを直接使用するように切り替えてユーザーインターフェイスを構築することもできます。
+Visual Studio for Mac でソリューションを開き、Xcode ファイルを右クリックして、[ **Open With > Interface Builder**] を選択します。
 
 -----
 
@@ -119,11 +119,11 @@ Visual Studio for Mac でソリューションを開き、Xcode ファイルを�
 
 Xcode を使用する場合は、通常の[iOS アプリのストーリーボード](~/ios/user-interface/storyboards/index.md)の場合と同じ手順に従う必要があります (たとえば、 **Ctrl キーを押しながら** **.h**ヘッダーファイルにドラッグして、コンセントとアクションを作成するなど)。
 
-ストーリーボードを Interface Builder Xcode に保存すると、作成したアウトレットとアクションが watch 拡張プロジェクトC#の**designer.cs**ファイルに自動的に追加されます。
+ストーリーボードを Interface Builder Xcode に保存すると、作成したアウトレットとアクションが watch 拡張プロジェクトの**designer.cs**ファイルに自動的に追加されます。
 
-### <a name="adding-additional-screens-in-xcode"></a>Xcode で追加の画面を追加します。
+### <a name="adding-additional-screens-in-xcode"></a>Xcode でのその他の画面の追加
 
-Xcode を使用して (既定では、テンプレートに含まれているもの以外の) 画面をストーリーボードに追加する場合は Interface Builder 新しい各インターフェイスコントローラーの **C#コードファイルを手動で追加する必要があり**ます。
+Xcode を使用してストーリーボードに追加の画面 (既定では、テンプレートに含まれているもの以外) を追加する場合は、新しいインターフェイスコントローラーごとに**C# コードファイルを手動で追加する必要があり**Interface Builder。
 
 [新しいインターフェイスコントローラーをストーリーボードに追加する方法](~/ios/watchos/troubleshooting.md#add)については、詳細な手順を参照してください。
 
@@ -131,15 +131,15 @@ Xcode を使用して (既定では、テンプレートに含まれているも
 
 ## <a name="building"></a>ビルド
 
-Watch アプリを含むプロジェクトは、その他の iOS プロジェクトと同様にビルドされます。 ビルド プロセスは、コードのないウォッチ アプリケーション (.app) を格納するウォッチ拡張機能 (.appex) を含む iPhone アプリケーション (.app) になります。
+Watch アプリを含むプロジェクトは、他の iOS プロジェクトと同様にビルドされます。 ビルドプロセスによって、ウォッチ拡張機能 (appex) を含む iPhone アプリケーション (app.config) が作成されます。このアプリケーションには、コードのない watch アプリケーション (app.config) が含まれています。
 
-## <a name="launching"></a>起動します。
+## <a name="launching"></a>起動
 
-Studio (Mac Build Host で起動)、Visual Studio for Mac または Visual を使用して、シミュレーターで watch アプリを起動できます。
+Visual Studio for Mac または Visual Studio (Mac ビルドホストで開始) を使用して、シミュレーターで watch アプリを起動できます。
 
-これには、WatchKit アプリを起動するための 2 つのモードがあります。
+WatchKit アプリを起動するには、次の2つのモードがあります。
 
-- 通常のアプリ モード (既定値) と
+- 通常のアプリモード (既定)、および
 - [通知](~/ios/watchos/platform/notifications.md)(JSON 形式のテスト通知ペイロードを必要とします)。
 
 ### <a name="xcode-8-support"></a>Xcode 8 のサポート
@@ -149,7 +149,7 @@ Watch App プロジェクトを選択してスタートアッププロジェク�
 
 [![](installation-images/xs-xcode8-watchos3-sml.png "Selecting the Simulator type")](installation-images/xs-xcode8-watchos3.png#lightbox)
 
-デバッグを開始すると、iOS シミュレーター*と*Apple Watch シミュレーターの*2 つ*のシミュレーターが起動します。 **コマンド + Shift + H**を使用して、ウォッチ メニューと時計の表面に移動します。また、**ハードウェア** メニューを使用して、 **Force Touch の負荷**を設定します。 トラック パッドやマウスのスクロールには、デジタル クラウンを使用してシミュレートされます。
+デバッグを開始すると、iOS シミュレーター*と*Apple Watch シミュレーターの*2 つ*のシミュレーターが起動します。 **コマンド + Shift + H**を使用して、[ウォッチ] メニューと時計の表面に移動します。また、[**ハードウェア**] メニューを使用して、 **Force Touch の負荷**を設定します。 トラックパッドまたはマウスをスクロールすると、Digital Crown の使用がシミュレートされます。
 
 #### <a name="troubleshooting"></a>トラブルシューティング
 
@@ -162,11 +162,11 @@ error HE0020: Could not find a paired Watch device for the iOS device 'iPhone 6'
 
 既定値が機能しない場合、シミュレーターの構成手順については、 [Apple のフォーラム](https://forums.developer.apple.com/thread/7783)を参照してください。
 
-<a name="xcode6" />
+<a name="xcode6"></a>
 
 ### <a name="xcode-6-and-watchos-1"></a>Xcode 6 と watchOS 1
 
-アプリを実行またはデバッグする前に、*ウォッチ拡張機能プロジェクト*を**スタートアッププロジェクト**にする必要があります。 自体には、watch アプリを「起動」できないし、iOS アプリを選択する場合が起動します。 iOS シミュレーターでは通常どおりです。
+アプリを実行またはデバッグする前に、*ウォッチ拡張機能プロジェクト*を**スタートアッププロジェクト**にする必要があります。 Watch アプリ自体を "起動" することはできません。 iOS アプリを選択すると、iOS シミュレーターでは通常どおり起動します。
 
 既定では、watch アプリは、Visual Studio for Mac の**実行**コマンドまたは**デバッグ**コマンドから、通常の**アプリ**モード (概要、通知モードではありません) で開始されます。
 
@@ -174,35 +174,35 @@ Xcode 6 を使用している場合、iPhone 5、iPhone 5S、iPhone 6、およ�
 
 > [!NOTE]
 > Xcode 6 を使用する場合、[ウォッチ] 画面が iOS シミュレーターに自動的に表示されないことに注意してください。
-> **ハードウェア > 外部ディスプレイ** メニューを使用して、ウォッチ 画面を表示します。
+> [**ハードウェア > 外部ディスプレイ**] メニューを使用して、[ウォッチ] 画面を表示します。
 
-<a name="custommodes" />
+<a name="custommodes"></a>
 
-## <a name="launching-notification-mode"></a>通知モードを起動します。
+## <a name="launching-notification-mode"></a>通知モードの起動
 
 コードで通知を処理する方法については、[[通知] ページ](~/ios/watchos/platform/notifications.md)を参照してください。
 
 Visual Studio for Mac は、通知の通知_スタートアップモード_で watch アプリを起動できます。
 
-Watch app プロジェクトを右クリックし、 **[> カスタム構成で実行]** を選択します。
+Watch app プロジェクトを右クリックし、[ **> カスタム構成で実行**] を選択します。
 
 [![](installation-images/runwith-customparams-sml.png "Running a Custom Configuration")](installation-images/runwith-customparams.png#lightbox)
 
-これにより、 **[カスタムパラメーター]** ウィンドウが開きます。このウィンドウで**通知**を選択し、JSON ペイロードを指定できます。次に、 **[実行]** を押して、シミュレーターで watch アプリを起動します。
+これにより、[**カスタムパラメーター** ] ウィンドウが開きます。このウィンドウで**通知**を選択し、JSON ペイロードを指定できます。次に、[**実行**] を押して、シミュレーターで watch アプリを起動します。
 
 [![](installation-images/runwith-execargs-sml.png "Setting the Notification and Payload")](installation-images/runwith-execargs.png#lightbox)
 
 ## <a name="debugging"></a>デバッグ
 
-デバッグは、Visual Studio for Mac と Visual Studio の両方でサポートされます。
-通知モードでデバッグするときに、通知の JSON ファイルを指定してください。 このスクリーン ショットは、watch アプリで検出されるデバッグ ブレークポイントを示しています。
+デバッグは Visual Studio for Mac と Visual Studio の両方でサポートされています。
+通知モードでデバッグする場合は、通知 JSON ファイルを必ず指定してください。 このスクリーンショットは、ウォッチアプリでヒットしているデバッグブレークポイントを示しています。
 
 ![](installation-images/debug-sml.png "This screenshot shows a debug breakpoint being hit in a watch app")
 
 起動手順に従うと、 **IOS シミュレーター (watch)** で実行される watch アプリが作成されます。
-通知モードでは、**デバッグ > システムログを開く** (**CMD +/** ) を選択し、コードで `Console.WriteLine` を使用できます。
+通知モードでは、[デバッグ] を選択して**システムログ**(**CMD +/**) を開き、コードでを使用でき > `Console.WriteLine` ます。
 
-### <a name="debugging-lifecycle-event-handlers"></a>ライフ サイクル イベント ハンドラーのデバッグ
+### <a name="debugging-lifecycle-event-handlers"></a>デバッグライフサイクルイベントハンドラー
 
 <!--
 To test the functionality in your  and 
@@ -212,7 +212,7 @@ To test the functionality in your  and
   which triggers the `WillActivate` method of the watch app.
 -->
 
-WatchOS テンプレートファイル (`InterfaceController`、`ExtensionDelegate`、`NotificationController`、`ComplicationController`など) には、既に実装されている必要なライフサイクルメソッドが付属しています。 イベントのライフサイクルを理解しやすくするために、`Console.WriteLine` 呼び出しを追加し、**アプリケーションの出力**を読み取ります。
+WatchOS テンプレートファイル (、、、など) には、 `InterfaceController` `ExtensionDelegate` `NotificationController` `ComplicationController` 既に実装されている必要なライフサイクルメソッドが付属しています。 `Console.WriteLine`イベントのライフサイクルを理解しやすくするために、呼び出しを追加し、**アプリケーションの出力**を読み取ります。
 
 ## <a name="related-links"></a>関連リンク
 

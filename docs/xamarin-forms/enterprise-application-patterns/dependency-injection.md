@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 32beda28cb4db961abcbe74c26d38c70c8188a45
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139231"
+title: "依存関係の挿入" の説明: "この章では、eShopOnContainers モバイルアプリが依存関係の挿入を使用して、これらの型に依存するコードから具象型を分離する方法について説明します。"
+ms. 製品: xamarin ms. assetid: a150f2d1-06f8-4aed-ab4e-7a847d69f103: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 11/04/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="dependency-injection"></a>依存関係の挿入
 
 通常、クラスコンストラクターは、オブジェクトをインスタンス化するときに呼び出され、オブジェクトが必要とする値は、コンストラクターに引数として渡されます。 これは依存関係の挿入の例であり、特に*コンストラクターインジェクション*と呼ばれています。 オブジェクトが必要とする依存関係は、コンストラクターに挿入されます。
@@ -24,8 +10,6 @@ ms.locfileid: "84139231"
 依存関係をインターフェイス型として指定することにより、依存関係の挿入によって、これらの型に依存するコードから具象型を分離できます。 一般的には、インターフェイスと抽象型の間の登録とマッピングのリストを保持するコンテナーと、これらの型を実装または拡張する具象型を使用します。
 
 また、*プロパティセッターの挿入*や*メソッド呼び出しの挿入*など、他の種類の依存関係の注入もありますが、あまり一般的ではありません。 したがって、この章では、依存関係挿入コンテナーを使用したコンストラクターの挿入についてのみ説明します。
-
-<a name="introduction_to_dependency_injection" />
 
 ## <a name="introduction-to-dependency-injection"></a>依存関係の挿入の概要
 
@@ -118,9 +102,7 @@ _container.Register<ProfileViewModel>();
 
 既定では、各具象クラスの登録は複数インスタンスとして構成されるため、すべての依存オブジェクトが新しいインスタンスを受け取ることができます。 そのため、が解決されると、 `ProfileViewModel` 新しいインスタンスが作成され、コンテナーは必要な依存関係を挿入します。
 
-<a name="resolution" />
-
-## <a name="resolution"></a>解決策
+## <a name="resolution"></a>解像度
 
 型が登録されると、依存関係として解決または挿入されることがあります。 型が解決され、コンテナーが新しいインスタンスを作成する必要がある場合、そのインスタンスに依存関係が挿入されます。
 
@@ -136,7 +118,7 @@ _container.Register<ProfileViewModel>();
 var requestProvider = _container.Resolve<IRequestProvider>();
 ```
 
-この例では、TinyIoC は、型の具象型と依存関係を解決するように求められ `IRequestProvider` ます。 通常、 `Resolve` メソッドは、特定の型のインスタンスが必要な場合に呼び出されます。 解決されたオブジェクトの有効期間の制御については、「[解決済みオブジェクトの有効期間の管理](#managing_the_lifetime_of_resolved_objects)」を参照してください。
+この例では、TinyIoC は、型の具象型と依存関係を解決するように求められ `IRequestProvider` ます。 通常、 `Resolve` メソッドは、特定の型のインスタンスが必要な場合に呼び出されます。 解決されたオブジェクトの有効期間の制御については、「[解決済みオブジェクトの有効期間の管理](#managing-the-lifetime-of-resolved-objects)」を参照してください。
 
 次のコード例は、eShopOnContainers モバイルアプリがビューモデルの種類とその依存関係をインスタンス化する方法を示しています。
 
@@ -144,12 +126,10 @@ var requestProvider = _container.Resolve<IRequestProvider>();
 var viewModel = _container.Resolve(viewModelType);
 ```
 
-この例では、TinyIoC は、要求されたビューモデルのビューモデルの種類を解決するように求められます。また、コンテナーも依存関係を解決します。 型を解決 `ProfileViewModel` する場合、解決する依存関係は `ISettingsService` オブジェクトと `IOrderService` オブジェクトです。 クラスとクラスを登録するときにインターフェイス登録が使用されたため、TinyIoC はクラスと `SettingsService` `OrderService` クラスのシングルトンインスタンスを返し、 `SettingsService` `OrderService` クラスのコンストラクターに渡し `ProfileViewModel` ます。 EShopOnContainers mobile アプリがビューモデルを構築してビューに関連付ける方法の詳細については、「[ビューモデルロケーターを使用したビューモデルの自動作成](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically_creating_a_view_model_with_a_view_model_locator)」を参照してください。
+この例では、TinyIoC は、要求されたビューモデルのビューモデルの種類を解決するように求められます。また、コンテナーも依存関係を解決します。 型を解決 `ProfileViewModel` する場合、解決する依存関係は `ISettingsService` オブジェクトと `IOrderService` オブジェクトです。 クラスとクラスを登録するときにインターフェイス登録が使用されたため、TinyIoC はクラスと `SettingsService` `OrderService` クラスのシングルトンインスタンスを返し、 `SettingsService` `OrderService` クラスのコンストラクターに渡し `ProfileViewModel` ます。 EShopOnContainers mobile アプリがビューモデルを構築してビューに関連付ける方法の詳細については、「[ビューモデルロケーターを使用したビューモデルの自動作成](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically-creating-a-view-model-with-a-view-model-locator)」を参照してください。
 
 > [!NOTE]
 > コンテナーで型を登録し、解決すると、パフォーマンス コストが発生します。特に、アプリのページ ナビゲーションごとに依存関係が再構築される場合には、各型を作成するために、コンテナーでリフレクションが使用されるからです。 依存関係が多いか深い場合、作成コストが大幅に増加する可能性があります。
-
-<a name="managing_the_lifetime_of_resolved_objects" />
 
 ## <a name="managing-the-lifetime-of-resolved-objects"></a>解決されたオブジェクトの有効期間の管理
 
@@ -166,7 +146,7 @@ _container.Register<LoginViewModel>().AsSingleton();
 > [!NOTE]
 > シングルトンとして登録された型は、コンテナーが破棄されるときに破棄されます。
 
-## <a name="summary"></a>[概要]
+## <a name="summary"></a>まとめ
 
 依存関係の挿入を使用すると、これらの型に依存するコードから具象型を切り離すことができます。 通常は、インターフェイスと抽象型の間の登録とマッピングのリストを保持するコンテナーと、これらの型を実装または拡張する具象型を使用します。
 

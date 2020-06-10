@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/06/2018
-ms.openlocfilehash: c0f40ea6fc7d429867f90d3d3c1b49dacb63acb5
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 4a7a1c5a9fccb14a84e78e5854bcd8507394ce4a
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030866"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574497"
 ---
 # <a name="xamarinios-analysis-rules"></a>Xamarin. iOS 分析ルール
 
@@ -26,52 +26,52 @@ Xamarin. iOS 分析は、プロジェクトの設定を確認する一連の規�
 > [!NOTE]
 > Xamarin。 iOS 分析は、現在選択されている構成でのみ実行されます。 デバッグ構成**と**リリース構成用にツールを実行することを強くお勧めします。
 
-<a name="XIA0001" />
+<a name="XIA0001"></a>
 
-## <a name="xia0001-disabledlinkerrule"></a>XIA0001:DisabledLinkerRule
+## <a name="xia0001-disabledlinkerrule"></a>XIA0001: DisabledLinkerRule
 
 - **問題:** デバッグモードでは、リンカーはデバイスで無効になっています。
-- **ファイル**予想外の事態を避けるために、リンカーを使用してコードを実行する必要があります。
+- **修正:** 予想外の事態を避けるために、リンカーを使用してコードを実行する必要があります。
 設定するには、[プロジェクト] > [iOS ビルド > リンカーの動作] の各ページにアクセスします。
 
-<a name="XIA0002" />
+<a name="XIA0002"></a>
 
-## <a name="xia0002-testcloudagentreleaserule"></a>XIA0002:TestCloudAgentReleaseRule
+## <a name="xia0002-testcloudagentreleaserule"></a>XIA0002: TestCloudAgentReleaseRule
 
 - **問題:** Test Cloud エージェントを初期化するアプリビルドは、プライベート API を使用するため、送信時に Apple によって拒否されます。
-- **ファイル**必要な #if を追加または修正し、コードでを定義します。
+- **修正:** 必要な #if を追加または修正し、コードでを定義します。
 
-<a name="XIA0003" />
+<a name="XIA0003"></a>
 
-## <a name="xia0003-ipadebugbuildsrule"></a>XIA0003:IPADebugBuildsRule
+## <a name="xia0003-ipadebugbuildsrule"></a>XIA0003: IPADebugBuildsRule
 
 - **問題:** 開発者署名キーを使用するデバッグ構成では、IPA を生成しないでください。ディストリビューションで必要なのは、公開ウィザードを使用するようになったためです。
-- **ファイル**デバッグ構成のプロジェクトオプションで IPA ビルドを無効にします。
+- **修正:** デバッグ構成のプロジェクトオプションで IPA ビルドを無効にします。
 
-<a name="XIA0004" />
+<a name="XIA0004"></a>
 
-## <a name="xia0004-missing64bitsupportrule"></a>XIA0004:Missing64BitSupportRule
+## <a name="xia0004-missing64bitsupportrule"></a>XIA0004: Missing64BitSupportRule
 
-- **問題:** "Release |" のサポートされているアーキテクチャデバイス "64 ビット互換性がありません。 ARM64 がありません。 Apple は、AppStore 内の32ビットのみの iOS アプリを受け入れないため、これは問題です。
-- **ファイル**IOS プロジェクトをダブルクリックし、[ビルド > iOS ビルド] に移動して、サポートされているアーキテクチャを変更して ARM64 します。
+- **問題:**"Release |" のサポートされているアーキテクチャデバイス "64 ビット互換性がありません。 ARM64 がありません。 Apple は、AppStore 内の32ビットのみの iOS アプリを受け入れないため、これは問題です。
+- **修正:** IOS プロジェクトをダブルクリックし、[ビルド > iOS ビルド] に移動して、サポートされているアーキテクチャを変更して ARM64 します。
 
-<a name="XIA0005" />
+<a name="XIA0005"></a>
 
-## <a name="xia0005-float32rule"></a>XIA0005:Float32Rule
+## <a name="xia0005-float32rule"></a>XIA0005: Float32Rule
 
 - **問題:** Float32 オプション (--aot-options =-O = float32) を使用しない場合は、hefty のパフォーマンスコストが生じます。特に mobile では、倍精度の数値演算はある程度までが遅くなります。 .NET では、float の場合でも、内部的に倍精度が使用されるため、このオプションを有効にすると、精度と、場合によっては互換性に影響します。
-- **ファイル**IOS プロジェクトをダブルクリックし、[ビルド > iOS ビルド] にアクセスして、[32 ビット浮動小数点演算を64ビット浮動小数点演算で実行する] をオフにします。
+- **修正:** IOS プロジェクトをダブルクリックし、[ビルド > iOS ビルド] にアクセスして、[32 ビット浮動小数点演算を64ビット浮動小数点演算で実行する] をオフにします。
 
-<a name="XIA0006" />
+<a name="XIA0006"></a>
 
-## <a name="xia0006-httpclientavoidmanaged"></a>XIA0006:HttpClientAvoidManaged
+## <a name="xia0006-httpclientavoidmanaged"></a>XIA0006: HttpClientAvoidManaged
 
 - **問題:** パフォーマンスを向上させ、実行可能ファイルのサイズを小さくし、新しい標準を簡単にサポートするために、マネージドではなくネイティブの HttpClient ハンドラーを使用することをお勧めします。
-- **ファイル**IOS プロジェクトをダブルクリックし、[ビルド > iOS のビルド] に移動して、HttpClient の実装を N、ios 7 以降のバージョンをサポートするように、または CFNetwork に変更します。
+- **修正:** IOS プロジェクトをダブルクリックし、[ビルド > iOS のビルド] に移動して、HttpClient の実装を N、ios 7 以降のバージョンをサポートするように、または CFNetwork に変更します。
 
-<a name="XIA0007" />
+<a name="XIA0007"></a>
 
-## <a name="xia0007-usellvmrule"></a>XIA0007:UseLLVMRule
+## <a name="xia0007-usellvmrule"></a>XIA0007: UseLLVMRule
 
 - **問題:** Release | iPhone 構成では、ビルド時間を犠牲にして実行した方が高速なコードを生成する LLVM コンパイラを有効にすることをお勧めします。
-- **ファイル**IOS プロジェクトをダブルクリックし、[Build > iOS Build]、[Release | iPhone] の順に選択して、LLVM 最適化コンパイラオプションを確認します。
+- **修正:** IOS プロジェクトをダブルクリックし、[Build > iOS Build]、[Release | iPhone] の順に選択して、LLVM 最適化コンパイラオプションを確認します。

@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 593d6a8b30d5ed0e143d1c013849d2bef571f6dc
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140297"
+title: "SkiaSharp ビットマップでの作成と描画" 説明: "SkiaSharp ビットマップを作成し、それらに基づいてキャンバスを作成することにより、これらのビットマップに描画する方法について説明します。"
+ms. 製品: xamarin ms テクノロジ: skiasharp: 79BD3266-D457-4E50-BDDF-33450035FA0F author: davidbritch dabritch: ms. date: 07/17/2018 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
 ---
+
 # <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>SkiaSharp ビットマップの作成と描画
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -341,8 +327,6 @@ public class PixelizedImagePage : ContentPage
 
 [![Pixelize イメージ](drawing-images/PixelizeImage.png "Pixelize イメージ")](drawing-images/PixelizeImage-Large.png#lightbox)
 
-<a name="rotating-bitmaps" />
-
 ## <a name="rotating-bitmaps"></a>回転 (ビットマップを)
 
 もう1つの一般的なタスクは、ビットマップの回転です。 これは、iPhone または iPad フォトライブラリからビットマップを取得するときに特に便利です。 写真が撮影されたときにデバイスが特定の向きで保持されていない限り、画像は上下左右に配置される可能性が高くなります。
@@ -388,7 +372,7 @@ using (SKCanvas canvas = new SKCanvas(rotatedBitmap))
 }
 ```
 
-この2つの方法は、「 [**SkiaSharp ビットマップのトリミング**](cropping.md#tile-division)」で説明されている**写真パズル**ページで使用されます。
+この2つの方法は、「 [**SkiaSharp ビットマップのトリミング**](cropping.md#cropping-skiasharp-bitmaps)」で説明されている**写真パズル**ページで使用されます。
 
 ユーザーが90度の増分でビットマップを回転できるようにするプログラムでは、90°で回転するために1つの関数のみを実装する必要があります。 ユーザーは、この1つの関数を繰り返し実行することで、90度の任意のインクリメントでローテーションできます。
 

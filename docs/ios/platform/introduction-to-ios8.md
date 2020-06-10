@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/14/2017
-ms.openlocfilehash: 9353cffd924688058c1495b9258cc7f0e0ce7b82
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 1fae83f60f819da9767e14612a7f778dc49ddf52
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306189"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84564631"
 ---
 # <a name="introduction-to-ios-8"></a>iOS 8 の概要
 
@@ -26,7 +26,7 @@ IOS 7 がユーザーのために使用されていた場合、iOS 8 では、�
 
 IOS 8 では非推奨とされているいくつかの Api もあります。これについては、このドキュメントの最後で説明します。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 Visual Studio for Mac で iOS 8 アプリを作成するには、次のものが必要です。
 
@@ -50,7 +50,7 @@ IPhone からアプライアンスを制御することは、新しいテクノ�
 
 ![](introduction-to-ios8-images/image1.png "This diagram shows the basic hierarchy of the configuration of HomeKit accessories")
 
-ホームキットの使用を開始するには、開発者は、プロビジョニングプロファイルに [ホームキット] サービスが選択されていることを確認する必要があります。 Apple では、Xcode 用のホームキットシミュレーターアドインも開発者に提供しています。 これは、 [Apple Developer Center](https://developer.apple.com/downloads/index.action)の [`Hardware IO Tools for Xcode`] の下にあります。 
+ホームキットの使用を開始するには、開発者は、プロビジョニングプロファイルに [ホームキット] サービスが選択されていることを確認する必要があります。 Apple では、Xcode 用のホームキットシミュレーターアドインも開発者に提供しています。 これは、 [Apple Developer Center](https://developer.apple.com/downloads/index.action)のの下にあり `Hardware IO Tools for Xcode` ます。 
 
 詳細については、「[ホームキット](~/ios/platform/homekit.md)ガイド」を参照してください。
 
@@ -68,7 +68,7 @@ IOS8 を使用すると、開発者は、アプリを使用できるユーザー
 
 アプリ拡張機能を作成するための最初の手順は、正しい拡張ポイントを定義することです。これは、適切な Api の動作と可用性を確保するために重要です。 Visual Studio for Mac でアプリ拡張機能を作成するには、ソリューションに新しいプロジェクトを追加して、既存のアプリケーションに追加します。
 
-**[新しいプロジェクト]** ダイアログで、 **C#** 次のスクリーンショットに示すように、 > **IOS** > **Unified API** > **拡張機能**に移動します。
+[**新しいプロジェクト**] ダイアログで、 **C#**  >  **iOS**  >  **Unified API**  >  次のスクリーンショットに示すように、C# iOS Unified API**拡張機能**に移動します。
 
 ![](introduction-to-ios8-images/image2.png "Creating a new extension")
 
@@ -91,7 +91,7 @@ Xamarin でのアプリ拡張機能の使用の詳細については、[アプ�
 
 まず、新しいキーチェーン Access Control リスト (Acl) を使用して、既存のキーチェーンサービスを支援します。 キーチェーンデータは、ユーザーの指紋の認証が成功したときにロックを解除することができます。
 
-次に、LocalAuthentication は、アプリケーションをローカルで認証する2つの方法を提供します。 開発者は、`CanEvaluatePolicy` を使用して、デバイスがタッチ ID を受け入れることができるかどうかを判断し、`EvaluatePolicy` 認証操作を開始する必要があります。
+次に、LocalAuthentication は、アプリケーションをローカルで認証する2つの方法を提供します。 開発者は、を使用して `CanEvaluatePolicy` 、デバイスがタッチ ID を受け入れることができるかどうかを判断し、次に認証操作を開始する必要があり `EvaluatePolicy` ます。
 
 タッチ ID の詳細と、それを Xamarin. iOS アプリケーションに統合する方法については、 [xamarin の「TOUCH id と FACE id](~/ios/platform/touch-id-face-id.md) 」を参照してください。
 
@@ -112,11 +112,11 @@ Xamarin でのアプリ拡張機能の使用の詳細については、[アプ�
 ## <a name="unified-storyboards"></a>統合ストーリーボード
 iOS 8 には、ユーザーインターフェイスを作成するための、統合されたストーリーボードという新しい簡単な使用機構が含まれています。 1つのストーリーボードを使用してさまざまなハードウェア画面サイズをすべてカバーすることで、高速および応答性の高いビューを、真の "デザイン1、多くの使用" スタイルで作成できます。
 
-IOS8 より前の開発者は、縦モードと横モードを区別するために `UIInterfaceOrientation` を使用し、iOS デバイスを区別するために `UIInterfaceIdiom` していました。 IOS8 では、iPhone と iPad デバイス用に個別のストーリーボードを作成する必要がなくなりました。向きとデバイスは、*サイズクラス*を使用して決定されます。
+IOS8 より前の開発者は、 `UIInterfaceOrientation` 縦モードと横モードを区別し、iOS デバイスを区別するために使用されていました `UIInterfaceIdiom` 。 IOS8 では、iPhone と iPad デバイス用に個別のストーリーボードを作成する必要がなくなりました。向きとデバイスは、*サイズクラス*を使用して決定されます。
 
 すべてのデバイスはサイズクラスによって、垂直軸と水平軸の両方で定義されます。また、iOS 8 のサイズクラスには次の2種類があります。
 
-- **[標準]** -大きなサイズ (iPad など) または大きなサイズの印象を与えるガジェット (UIScrollView など) の場合は、
+- [**標準**]-大きなサイズ (iPad など) または大きなサイズの印象を与えるガジェット (UIScrollView など) の場合は、
 - **Compact** -これは、より小さなデバイス (iPhone など) を対象としています。 このサイズでは、デバイスの向きが考慮されます。
 
 2つの概念が一緒に使用されている場合は、次の図に示すように、異なる向きの両方で使用できるさまざまなサイズを定義する2つの x 2 グリッドが生成されます。
@@ -132,7 +132,7 @@ Photo Kit は、アプリケーションがシステムイメージライブラ�
 
 ## <a name="games"></a>ゲーム
 
-<a name="scenekit" />
+<a name="scenekit"></a>
 
 ### <a name="scene-kit"></a>シーンキット
 
@@ -140,7 +140,7 @@ Photo Kit は、アプリケーションがシステムイメージライブラ�
 
 詳細については、 [SceneKit](~/ios/platform/gaming/scenekit.md)のドキュメントを参照してください。
 
-<a name="spritekit" />
+<a name="spritekit"></a>
 
 ### <a name="sprite-kit"></a>スプライトキット
 
@@ -148,10 +148,10 @@ Apple の 2D game framework であるスプライトキットには、iOS 8 と 
 
 詳細については、 [SpriteKit](~/ios/platform/gaming/spritekit.md)のドキュメントを参照してください。
 
-## <a name="other-changes"></a>その他の変更点
+## <a name="other-changes"></a>その他の変更
 また、上記の iOS 8 の主な変更点に加えて、Apple では、多くの既存のフレームワークをさらに更新しています。 これらの詳細を以下に示します。
 
-- **[コアイメージ](https://developer.apple.com/library/prerelease/ios/documentation/GraphicsImaging/Reference/CoreImagingRef/index.html#//apple_ref/doc/uid/TP40001171)** – Apple は、イメージ処理フレームワークで拡張されています。これは、四角形領域の検出のサポートを強化し、画像内に QR コードを追加することによって行われます。 Mike Bluestein は、 [iOS 8 でのイメージの検出](https://blog.xamarin.com/image-detection-in-ios-8/)に関するブログ投稿でこれを考察しています
+- **[コアイメージ](https://developer.apple.com/library/prerelease/ios/documentation/GraphicsImaging/Reference/CoreImagingRef/index.html#//apple_ref/doc/uid/TP40001171)**– Apple は、イメージ処理フレームワークで拡張されています。これは、四角形領域の検出のサポートを強化し、画像内に QR コードを追加することによって行われます。 Mike Bluestein は、 [iOS 8 でのイメージの検出](https://blog.xamarin.com/image-detection-in-ios-8/)に関するブログ投稿でこれを考察しています
 
 ## <a name="deprecated-apis"></a>非推奨の API
 IOS 8 で加えられたすべての機能強化により、いくつかの Api が非推奨となりました。 これらの一部を以下に示します。
@@ -161,7 +161,7 @@ IOS 8 で加えられたすべての機能強化により、いくつかの Api 
 
 - **[Uisearchdisplaycontroller](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/cl/UISearchDisplayController)** – IOS8 の uisearchcontroller に置き換えられました。
 
-## <a name="summary"></a>要約
+## <a name="summary"></a>まとめ
 この記事では、iOS 8 で Apple によって導入された新機能について説明しました。
 
 ## <a name="related-links"></a>関連リンク

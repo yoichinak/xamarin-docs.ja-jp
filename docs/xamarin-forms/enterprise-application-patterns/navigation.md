@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 9b2ee9fb02a8fd18d69e93424dc76bfd54fafc86
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130898"
+title: "エンタープライズアプリのナビゲーション" の説明: "この章では、eShopOnContainers モバイルアプリがビューモデルからビューモデルの最初のナビゲーションを実行する方法について説明します。"
+ms. 製品: xamarin ms. assetid: 4cad57b5-7fe4-4527-a988-d9b60c9620b4: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 08/07/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="enterprise-app-navigation"></a>エンタープライズアプリのナビゲーション
 
 Xamarin.Formsでは、ページナビゲーションがサポートされています。これは通常、ユーザーが UI を操作したとき、またはロジックに基づく状態が変更された結果としてアプリ自体から発生した場合に発生します。 ただし、次のような問題が満たされる必要があるため、ナビゲーションは、モデルビューモデル (MVVM) パターンを使用するアプリで実装するのが複雑になる可能性があります。
@@ -55,7 +41,7 @@ public interface INavigationService
 
 このインターフェイスは、実装するクラスが次のメソッドを提供する必要があることを指定します。
 
-|メソッド|目的|
+|Method|目的|
 |--- |--- |
 |`InitializeAsync`|アプリが起動されると、2つのページのいずれかへの移動を実行します。|
 |`NavigateToAsync`|指定されたページへの階層ナビゲーションを実行します。|
@@ -82,7 +68,7 @@ builder.RegisterType<NavigationService>().As<INavigationService>().SingleInstanc
 NavigationService = ViewModelLocator.Resolve<INavigationService>();
 ```
 
-これに `NavigationService` より、Autofac 依存関係挿入コンテナーに格納されているオブジェクトへの参照が返されます。このコンテナーは、クラスのメソッドによって作成され `InitNavigation` `App` ます。 詳細については、「[アプリの起動時の移動](#navigating_when_the_app_is_launched)」を参照してください。
+これに `NavigationService` より、Autofac 依存関係挿入コンテナーに格納されているオブジェクトへの参照が返されます。このコンテナーは、クラスのメソッドによって作成され `InitNavigation` `App` ます。 詳細については、「[アプリの起動時の移動](#navigating-when-the-app-is-launched)」を参照してください。
 
 クラスは、 `ViewModelBase` `NavigationService` 型のプロパティにインスタンスを格納し `NavigationService` `INavigationService` ます。 したがって、クラスから派生するすべてのビューモデルクラス `ViewModelBase` は、プロパティを使用して、 `NavigationService` インターフェイスによって指定されたメソッドにアクセスでき `INavigationService` ます。 これにより、 `NavigationService` Autofac 依存関係挿入コンテナーから各ビューモデルクラスにオブジェクトを挿入するオーバーヘッドを回避できます。
 
@@ -129,7 +115,7 @@ public Task NavigateToAsync<TViewModel>(object parameter) where TViewModel�
 }
 ```
 
-各メソッドでは、クラスから派生するすべてのビューモデルクラスを使用し `ViewModelBase` て、メソッドを呼び出すことによって階層ナビゲーションを実行でき `InternalNavigateToAsync` ます。 さらに、2番目のメソッドでは、 `NavigateToAsync` ナビゲーションデータを、移動先のビューモデルに渡される引数として指定できます。この引数は、通常、初期化の実行に使用されます。 詳細については、「[ナビゲーション中のパラメーターの引き渡し](#passing_parameters_during_navigation)」を参照してください。
+各メソッドでは、クラスから派生するすべてのビューモデルクラスを使用し `ViewModelBase` て、メソッドを呼び出すことによって階層ナビゲーションを実行でき `InternalNavigateToAsync` ます。 さらに、2番目のメソッドでは、 `NavigateToAsync` ナビゲーションデータを、移動先のビューモデルに渡される引数として指定できます。この引数は、通常、初期化の実行に使用されます。 詳細については、「[ナビゲーション中のパラメーターの引き渡し](#passing-parameters-during-navigation)」を参照してください。
 
 `InternalNavigateToAsync`メソッドはナビゲーション要求を実行し、次のコード例に示します。
 
@@ -188,16 +174,14 @@ private Page CreatePage(Type viewModelType, object parameter)
 - ビューモデルはに含まれています。Viewmodel child 名前空間。
 - ビュー名は、モデル名の表示に対応し、"モデル" が削除されています。
 
-ビューがインスタンス化されると、ビューは対応するビューモデルに関連付けられます。 この方法の詳細については、「[ビューモデルロケーターを使用したビューモデルの自動作成](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically_creating_a_view_model_with_a_view_model_locator)」を参照してください。
+ビューがインスタンス化されると、ビューは対応するビューモデルに関連付けられます。 この方法の詳細については、「[ビューモデルロケーターを使用したビューモデルの自動作成](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically-creating-a-view-model-with-a-view-model-locator)」を参照してください。
 
 作成されるビューがである場合は、 `LoginView` クラスの新しいインスタンス内にラップさ `CustomNavigationView` れ、プロパティに割り当てられ [`Application.Current.MainPage`](xref:Xamarin.Forms.Application.MainPage) ます。 それ以外の場合、インスタンスが取得され、null でない場合は、 `CustomNavigationView` [`PushAsync`](xref:Xamarin.Forms.NavigationPage) メソッドが呼び出されて、作成されたビューがナビゲーションスタックにプッシュされます。 ただし、取得されたインスタンスがの場合、 `CustomNavigationView` `null` 作成されるビューはクラスの新しいインスタンス内にラップされ、 `CustomNavigationView` プロパティに割り当てられ `Application.Current.MainPage` ます。 このメカニズムにより、ナビゲーション中、ページが空である場合とデータが含まれている場合の両方で、ナビゲーションスタックに正しく追加されます。
 
 > [!TIP]
 > ページのキャッシュを検討してください。 ページキャッシュを使用すると、現在表示されていないビューのメモリ消費が発生します。 ただし、ページキャッシュを使用しない場合は、新しいページに移動するたびに、ページとそのビューモデルの XAML の解析と構築が行われることを意味します。これは、複雑なページのパフォーマンスに影響を与える可能性があります。 多数のコントロールを使用しない適切に設計されたページの場合は、パフォーマンスが十分である必要があります。 ただし、ページキャッシュは、ページの読み込みに時間がかかる場合に役立つ可能性があります。
 
-ビューを作成して移動すると、 `InitializeAsync` ビューに関連付けられたビューモデルのメソッドが実行されます。 詳細については、「[ナビゲーション中のパラメーターの引き渡し](#passing_parameters_during_navigation)」を参照してください。
-
-<a name="navigating_when_the_app_is_launched" />
+ビューを作成して移動すると、 `InitializeAsync` ビューに関連付けられたビューモデルのメソッドが実行されます。 詳細については、「[ナビゲーション中のパラメーターの引き渡し](#passing-parameters-during-navigation)」を参照してください。
 
 ### <a name="navigating-when-the-app-is-launched"></a>アプリが起動されたときの移動
 
@@ -230,9 +214,7 @@ public Task InitializeAsync()
 
 アプリにキャッシュされた `MainView` アクセストークンがあり、認証に使用される場合は、に移動します。 それ以外の場合 `LoginView` は、に移動します。
 
-Autofac の依存関係挿入コンテナーの詳細については、「[依存関係の挿入の概要](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction_to_dependency_injection)」を参照してください。
-
-<a name="passing_parameters_during_navigation" />
+Autofac の依存関係挿入コンテナーの詳細については、「[依存関係の挿入の概要](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#introduction-to-dependency-injection)」を参照してください。
 
 ### <a name="passing-parameters-during-navigation"></a>ナビゲーション中のパラメーターの引き渡し
 
@@ -265,8 +247,6 @@ public override async Task InitializeAsync(object navigationData)
 ```
 
 このメソッドは、 `Order` ナビゲーション操作中にビューモデルに渡されたインスタンスを取得し、それを使用してインスタンスから完全な順序の詳細を取得し `OrderService` ます。
-
-<a name="invoking_navigation_using_behaviors" />
 
 ### <a name="invoking-navigation-using-behaviors"></a>動作を使用したナビゲーションの呼び出し
 
@@ -303,7 +283,7 @@ private async Task NavigateAsync(string url)
 
 ユーザーがナビゲーションを確認したりキャンセルしたりできるように、アプリはナビゲーション操作中にユーザーと対話することが必要になる場合があります。 たとえば、ユーザーがデータ入力ページを完全に完了する前に移動しようとした場合などに、この操作が必要になることがあります。 このような状況では、アプリは、ユーザーがページから移動したり、操作が行われる前にナビゲーション操作をキャンセルしたりすることを許可する通知を提供する必要があります。 これは、ナビゲーションが呼び出されるかどうかを制御する通知からの応答を使用して、ビューモデルクラスで実現できます。
 
-## <a name="summary"></a>[概要]
+## <a name="summary"></a>まとめ
 
 Xamarin.Formsでは、ページナビゲーションがサポートされています。これは通常、ユーザーが UI と対話するか、アプリ自体から、ロジックドリブンの状態が変更された結果として発生します。 ただし、MVVM パターンを使用するアプリでは、ナビゲーションが複雑になることがあります。
 

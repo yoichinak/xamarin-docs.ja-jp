@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 438ed93bafa37496e6a97ea2fe98ca6a515682cf
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 918030120e6b7d0e22abdf5ea3e57f3849b86616
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032567"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572573"
 ---
 # <a name="contacts-and-contactsui-in-xamarinios"></a>ContactsUI の Contacts と連絡先
 
 _この記事では、Xamarin iOS アプリで新しい連絡先と連絡先の UI フレームワークを使用する方法について説明します。これらのフレームワークは、以前のバージョンの iOS で使用されていた既存のアドレス帳およびアドレス帳の UI に代わるものです。_
 
-IOS 9 の導入により、Apple は、iOS 8 以前で使用されていた既存のアドレス帳とアドレス帳の UI フレームワークを置き換える2つの新しいフレームワーク `Contacts` と `ContactsUI`をリリースしました。
+IOS 9 の導入により、Apple は2つの新しいフレームワークをリリースしました。これは、 `Contacts` `ContactsUI` ios 8 以前で使用されていた既存のアドレス帳とアドレス帳の UI フレームワークを置き換えるものです。
 
 2つの新しいフレームワークには、次の機能が含まれています。
 
@@ -30,27 +30,27 @@ IOS 9 の導入により、Apple は、iOS 8 以前で使用されていた既�
 [![](contacts-images/add01.png "An example Contact Sheet on an iOS device")](contacts-images/add01.png#lightbox)
 
 > [!IMPORTANT]
-> IOS 8 (およびそれ以前) で使用されていた既存の `AddressBook` と `AddressBookUI` フレームワークは、iOS 9 では非推奨とされており、既存の Xamarin iOS アプリでできるだけ早く新しい `Contacts` および `ContactsUI` フレームワークに置き換える必要があります。 新しいアプリは、新しいフレームワークに対して作成する必要があります。
+> `AddressBook` `AddressBookUI` Ios 8 (およびそれ以前) で使用されていた既存のおよびフレームワークは、ios 9 では非推奨とされており、 `Contacts` `ContactsUI` 既存の Xamarin iOS アプリでできるだけ早く新しいとフレームワークに置き換える必要があります。 新しいアプリは、新しいフレームワークに対して作成する必要があります。
 
 以下のセクションでは、これらの新しいフレームワークと、それらを Xamarin iOS アプリに実装する方法について説明します。
 
-<a name="contacts" />
+<a name="contacts"></a>
 
 ## <a name="the-contacts-framework"></a>連絡先フレームワーク
 
 連絡先フレームワークでは、ユーザーの連絡先情報に対して Xamarin. iOS アクセスを提供します。 ほとんどのアプリは読み取り専用アクセスのみを必要とするため、このフレームワークは、スレッドセーフで読み取り専用アクセスに対して最適化されています。
 
-<a name="Contact_Objects" />
+<a name="Contact_Objects"></a>
 
 ### <a name="contact-objects"></a>Contact オブジェクト
 
-`CNContact` クラスは、連絡先のプロパティ (名前、住所、電話番号など) に対して、スレッドセーフで読み取り専用のアクセスを提供します。 `NSDictionary` のような機能を `CNContact`、複数の読み取り専用コレクション (住所や電話番号など) が含まれています。
+クラスは、 `CNContact` 連絡先のプロパティ (名前、住所、電話番号など) に対して、スレッドセーフで読み取り専用のアクセスを提供します。 `CNContact`やなどの関数には、 `NSDictionary` 複数の読み取り専用のプロパティのコレクション (住所や電話番号など) が含まれています。
 
 [![](contacts-images/contactobjects.png "Contact Object overview")](contacts-images/contactobjects.png#lightbox)
 
-複数の値 (電子メールアドレスや電話番号など) を持つことができるプロパティについては、`NSLabeledValue` オブジェクトの配列として表現されます。 `NSLabeledValue` は、ラベルと値の読み取り専用セットで構成されるスレッドセーフなタプルであり、ラベルによってユーザーの値 (自宅や勤務先の電子メールなど) が定義されます。 連絡先フレームワークには、アプリで使用できる定義済みのラベル (`CNLabelKey` および `CNLabelPhoneNumberKey` 静的クラスを使用) が用意されています。また、ニーズに合わせてカスタムラベルを定義することもできます。
+複数の値 (電子メールアドレスや電話番号など) を持つことができるプロパティについては、オブジェクトの配列として表現され `NSLabeledValue` ます。 `NSLabeledValue`は、ラベルと値の読み取り専用セットで構成されるスレッドセーフなタプルで、ラベルはユーザーの値を定義します (自宅や勤務先の電子メールなど)。 連絡先フレームワークには、アプリで使用できる定義済みのラベル (および静的クラスを使用) が用意されてい `CNLabelKey` `CNLabelPhoneNumberKey` ます。また、ニーズに合わせてカスタムラベルを定義することもできます。
 
-既存の連絡先の値を調整する必要がある (または新しい連絡先を作成する) Xamarin iOS アプリの場合は、クラスの `NSMutableContact` バージョンとそのサブクラス (`CNMutablePostalAddress`など) を使用します。
+既存の連絡先の値を調整する必要がある (または新しい連絡先を作成する) Xamarin iOS アプリの場合は、 `NSMutableContact` クラスとそのサブクラス (など) のバージョンを使用し `CNMutablePostalAddress` ます。
 
 たとえば、次のコードでは、新しい連絡先を作成し、ユーザーの連絡先のコレクションに追加します。
 
@@ -108,7 +108,7 @@ else
 }
 ```
 
-このコードが iOS 9 デバイスで実行されている場合は、新しい連絡先がユーザーのコレクションに追加されます。 (例:
+このコードが iOS 9 デバイスで実行されている場合は、新しい連絡先がユーザーのコレクションに追加されます。 次に例を示します。
 
 [![](contacts-images/add01.png "A new contact added to the user's collection")](contacts-images/add01.png#lightbox)
 
@@ -121,7 +121,7 @@ Console.WriteLine(CNContactFormatter.GetStringFrom(contact, CNContactFormatterSt
 Console.WriteLine(CNPostalAddressFormatter.GetStringFrom(workAddress, CNPostalAddressFormatterStyle.MailingAddress));
 ```
 
-アプリの UI に表示されるプロパティラベルについては、Contact framework にもこれらの文字列をローカライズするためのメソッドがあります。 ここでも、これは、アプリが実行されている iOS デバイスの現在のロケールに基づいています。 (例:
+アプリの UI に表示されるプロパティラベルについては、Contact framework にもこれらの文字列をローカライズするためのメソッドがあります。 ここでも、これは、アプリが実行されている iOS デバイスの現在のロケールに基づいています。 次に例を示します。
 
 ```csharp
 // Localized properties
@@ -131,9 +131,9 @@ Console.WriteLine(CNLabeledValue<NSString>.LocalizeLabel(CNLabelKey.Home));
 
 ### <a name="fetching-existing-contacts"></a>既存の連絡先を取得しています
 
-`CNContactStore` クラスのインスタンスを使用すると、ユーザーの連絡先データベースから連絡先情報を取得できます。 `CNContactStore` には、データベースから連絡先とグループをフェッチまたは更新するために必要なすべての方法が含まれています。 これらのメソッドは同期的であるため、UI がブロックされるのを防ぐために、バックグラウンドスレッドで実行することをお勧めします。
+クラスのインスタンスを使用 `CNContactStore` すると、ユーザーの連絡先データベースから連絡先情報を取得できます。 には、 `CNContactStore` データベースから連絡先とグループをフェッチまたは更新するために必要なすべての方法が含まれています。 これらのメソッドは同期的であるため、UI がブロックされるのを防ぐために、バックグラウンドスレッドで実行することをお勧めします。
 
-(`CNContact` クラスから構築された) 述語を使用すると、データベースから連絡先をフェッチするときに返される結果をフィルター処理できます。 文字列 `Appleseed`を含む連絡先のみをフェッチするには、次のコードを使用します。
+(クラスから構築された) 述語を使用すると `CNContact` 、データベースから連絡先をフェッチするときに返される結果をフィルター処理できます。 文字列を含む連絡先のみを取得するには `Appleseed` 、次のコードを使用します。
 
 ```csharp
 // Create predicate to locate requested contact
@@ -163,9 +163,9 @@ var contacts = store.GetUnifiedContacts(predicate, fetchKeys, out error);
 
 ### <a name="contact-access-privacy"></a>連絡先アクセスのプライバシー
 
-エンドユーザーは、アプリケーションごとに連絡先情報へのアクセスを許可または拒否できるため、初めて `CNContactStore`の呼び出しを行うときに、アプリへのアクセスを許可するように求めるダイアログが表示されます。
+エンドユーザーは、アプリケーションごとに連絡先情報へのアクセスを許可または拒否できるため、初めてを呼び出すときに、 `CNContactStore` アプリへのアクセスを許可するように求めるダイアログが表示されます。
 
-アクセス許可要求は1回だけ提示されます。アプリが初めて実行されるときに、その後の実行または `CNContactStore` の呼び出しで、その時点でユーザーが選択したアクセス許可が使用されます。
+アクセス許可要求は1回だけ表示され、アプリが初めて実行されるときに、その後の実行またはの呼び出しで、 `CNContactStore` その時点でユーザーが選択したアクセス許可が使用されます。
 
 ユーザーが連絡先データベースへのアクセスを拒否されるように、アプリを設計する必要があります。
 
@@ -173,7 +173,7 @@ var contacts = store.GetUnifiedContacts(predicate, fetchKeys, out error);
 
 _一部の連絡先_とは、使用可能なプロパティの一部だけがの連絡先ストアからフェッチされた連絡先です。 以前にフェッチされていないプロパティにアクセスしようとすると、例外が発生します。
 
-`CNContact` インスタンスの `IsKeyAvailable` メソッドまたは `AreKeysAvailable` メソッドを使用して、特定の連絡先に必要なプロパティがあるかどうかを簡単に確認できます。 (例:
+`IsKeyAvailable`インスタンスのメソッドまたはメソッドを使用して、特定の連絡先のプロパティが必要かどうかを簡単に確認でき `AreKeysAvailable` `CNContact` ます。 次に例を示します。
 
 ```csharp
 // Does the contact contain the requested key?
@@ -187,7 +187,7 @@ if (!contact.IsKeyAvailable(CNContactOption.PostalAddresses)) {
 ```
 
 > [!IMPORTANT]
-> `CNContactStore` クラスの `GetUnifiedContact` および `GetUnifiedContacts` メソッドは、指定されたフェッチキーから要求されたプロパティに限定された部分的な連絡先_のみ_を返します。
+> `GetUnifiedContact` `GetUnifiedContacts` クラスのメソッドとメソッドは、 `CNContactStore` 指定されたフェッチキーから要求されたプロパティに限定された部分的な連絡先_のみ_を返します。
 
 ### <a name="unified-contacts"></a>ユニファイド連絡先
 
@@ -199,7 +199,7 @@ if (!contact.IsKeyAvailable(CNContactOption.PostalAddresses)) {
 
 ### <a name="creating-and-updating-contacts"></a>連絡先の作成と更新
 
-前述の「 [Contact Objects](#Contact_Objects) 」セクションで説明したように、`CNContactStore` と `CNMutableContact` のインスタンスを使用して新しい連絡先を作成し、`CNSaveRequest`を使用してユーザーの連絡先データベースに書き込みます。
+前述の「 [Contact Objects](#Contact_Objects) 」セクションで説明したように、とのインスタンスを使用して、新しい連絡先を作成し、を `CNContactStore` `CNMutableContact` 使用してユーザーの連絡先データベースに書き込み `CNSaveRequest` ます。
 
 ```csharp
 // Create a new Mutable Contact (read/write)
@@ -222,9 +222,9 @@ if (store.ExecuteSaveRequest(saveRequest, out error)) {
 }
 ```
 
-`CNSaveRequest` を使用すると、複数の連絡先とグループの変更を1つの操作にキャッシュし、それらの変更を `CNContactStore`に対してバッチ処理することもできます。
+また、を使用すると、 `CNSaveRequest` 複数の連絡先とグループの変更を1つの操作にキャッシュし、それらの変更をにバッチ処理することもでき `CNContactStore` ます。
 
-フェッチ操作から取得した変更できない連絡先を更新するには、最初に変更可能なコピーを要求してから、連絡先ストアに保存し直す必要があります。 (例:
+フェッチ操作から取得した変更できない連絡先を更新するには、最初に変更可能なコピーを要求してから、連絡先ストアに保存し直す必要があります。 次に例を示します。
 
 ```csharp
 // Get mutable copy of contact
@@ -252,7 +252,7 @@ if (store.ExecuteSaveRequest(saveRequest, out error)) {
 
 ### <a name="contact-change-notifications"></a>連絡先の変更通知
 
-連絡先が変更されるたびに、連絡先ストアは既定の通知センターに `CNContactStoreDidChangeNotification` を投稿します。 キャッシュされているか、現在連絡先を表示している場合は、それらのオブジェクトを連絡先ストア (`CNContactStore`) から更新する必要があります。
+連絡先が変更されるたびに、連絡先ストアによってが `CNContactStoreDidChangeNotification` 既定の通知センターに投稿されます。 キャッシュされているか、現在連絡先を表示している場合は、それらのオブジェクトを連絡先ストア () から更新する必要があり `CNContactStore` ます。
 
 ### <a name="containers-and-groups"></a>コンテナーとグループ
 
@@ -264,7 +264,7 @@ if (store.ExecuteSaveRequest(saveRequest, out error)) {
 
 [![](contacts-images/containers02.png "Overlap within Containers and Groups")](contacts-images/containers02.png#lightbox)
 
-<a name="contactsui" />
+<a name="contactsui"></a>
 
 ## <a name="the-contactsui-framework"></a>ContactsUI フレームワーク
 
@@ -274,11 +274,11 @@ Apple の組み込みコントロールを使用すると、Xamarin. iOS アプ�
 
 ### <a name="the-contact-picker-view-controller"></a>連絡先ピッカービューコントローラー
 
-連絡先の選択ビューコントローラー (`CNContactPickerViewController`) は、ユーザーが連絡先または連絡先のプロパティをユーザーの連絡先データベースから選択できる標準の連絡先選択ビューを管理します。 ユーザーは、(使用状況に基づいて) 1 つ以上の連絡先を選択できます。また、[コンタクトピッカー] ビューコントローラーは、ピッカーを表示する前にアクセス許可を要求しません。
+連絡先の選択ビューコントローラー () は、ユーザーが連絡先または連絡先の `CNContactPickerViewController` プロパティをユーザーの連絡先データベースから選択できるようにする標準の連絡先ピッカービューを管理します。 ユーザーは、(使用状況に基づいて) 1 つ以上の連絡先を選択できます。また、[コンタクトピッカー] ビューコントローラーは、ピッカーを表示する前にアクセス許可を要求しません。
 
-`CNContactPickerViewController` クラスを呼び出す前に、ユーザーが選択できるプロパティと、連絡先のプロパティの表示と選択を制御するための述語を定義します。
+クラスを呼び出す前に、 `CNContactPickerViewController` ユーザーが選択できるプロパティと、連絡先のプロパティの表示と選択を制御するための述語を定義します。
 
-`CNContactPickerDelegate` から継承するクラスのインスタンスを使用して、ユーザーのピッカーとの対話に応答します。 (例:
+を継承するクラスのインスタンスを使用して、 `CNContactPickerDelegate` ユーザーのピッカーとの対話に応答します。 次に例を示します。
 
 ```csharp
 using System;
@@ -343,7 +343,7 @@ PresentViewController(picker,true,null);
 
 ### <a name="the-contact-view-controller"></a>連絡先ビューコントローラー
 
-Contact View Controller (`CNContactViewController`) クラスは、標準の連絡先ビューをエンドユーザーに提示するためのコントローラーを提供します。 連絡先ビューには、新しい、不明または既存の連絡先を表示できます。また、正しい静的コンストラクター (`FromNewContact`、`FromUnknownContact`、`FromContact`) を呼び出すことで、ビューを表示する前に種類を指定する必要があります。 たとえば、次のように入力します。
+Contact View Controller ( `CNContactViewController` ) クラスは、標準の連絡先ビューをエンドユーザーに提示するためのコントローラーを提供します。 Contact ビューには、新しい、不明または既存の連絡先を表示できます。正しい静的コンストラクター (、、) を呼び出すことにより、ビューを表示する前に種類を指定する必要があり `FromNewContact` `FromUnknownContact` `FromContact` ます。 たとえば次のようになります。
 
 ```csharp
 // Create a new contact view

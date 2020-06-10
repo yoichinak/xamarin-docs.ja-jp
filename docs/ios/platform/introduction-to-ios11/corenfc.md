@@ -7,12 +7,12 @@ ms.assetid: 846B59D3-F66A-48F3-A78C-84217697194E
 author: davidortinau
 ms.author: daortin
 ms.date: 09/25/2017
-ms.openlocfilehash: 2e19fd37270d3c96cb175d30dc786a95a01c3fcf
-ms.sourcegitcommit: 2ed3d1c933fce4ce332128f125acb2f23f9e0f1a
+ms.openlocfilehash: 556ea205e9894a2553224da0dc71c00d9bb55a9b
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75753018"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84564741"
 ---
 # <a name="core-nfc-in-xamarinios"></a>Xamarin のコア NFC
 
@@ -31,7 +31,7 @@ IOS デバイスの NFC タグリーダーは、 _Nfc データ交換形式_(NDE
 
 このページでは、CoreNFC の使用に必要な構成について説明し、 ["Nfctagreader" サンプルコード](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-nfctagreader)を使用して API を使用する方法を示します。
 
-## <a name="configuration"></a>の構成
+## <a name="configuration"></a>構成
 
 CoreNFC を有効にするには、プロジェクトで次の3つの項目を構成する必要があります。
 
@@ -63,20 +63,20 @@ CoreNFC を有効にするには、プロジェクトで次の3つの項目を�
 
 新しい**アプリ ID**を作成し、 **NFC タグ読み取り**サービスが実行されていることを確認します。
 
-[![開発者ポータルの新しいアプリ ID ページで、NFC タグの読み取りが選択されました](corenfc-images/app-services-nfc-sml.png)](corenfc-images/app-services-nfc.png#lightbox)
+[![開発者ポータルでの NFC タグの読み取りが選択された新しいアプリ ID ページ](corenfc-images/app-services-nfc-sml.png)](corenfc-images/app-services-nfc.png#lightbox)
 
 その後、このアプリ ID 用の新しいプロビジョニングプロファイルを作成し、それをダウンロードして開発用 Mac にインストールする必要があります。
 
 ## <a name="reading-a-tag"></a>タグの読み取り
 
-プロジェクトが構成されたら、ファイルの先頭に `using CoreNFC;` を追加し、次の3つの手順に従って NFC タグ読み取り機能を実装します。
+プロジェクトが構成されたら、 `using CoreNFC;` ファイルの先頭にを追加し、次の3つの手順に従って NFC タグ読み取り機能を実装します。
 
-### <a name="1-implement-infcndefreadersessiondelegate"></a>1. `INFCNdefReaderSessionDelegate` を実装する
+### <a name="1-implement-infcndefreadersessiondelegate"></a>1. 実装`INFCNdefReaderSessionDelegate`
 
 インターフェイスには、次の2つのメソッドを実装できます。
 
-- `DidDetect` –タグが正常に読み取られたときに呼び出されます。
-- `DidInvalidate` –エラーが発生したとき、または60秒のタイムアウトに達したときに呼び出されます。
+- `DidDetect`–タグが正常に読み取られたときに呼び出されます。
+- `DidInvalidate`–エラーが発生したとき、または60秒のタイムアウトに達したときに呼び出されます。
 
 #### <a name="diddetect"></a>DidDetect
 
@@ -96,7 +96,7 @@ public void DidDetect(NFCNdefReaderSession session, NFCNdefMessage[] messages)
 }
 ```
 
-セッションで複数のタグ読み取りが許可されている場合、このメソッドは複数回 (およびメッセージの配列が渡される可能性があります) に呼び出されることがあります。 これは、`Start` メソッドの3番目のパラメーター ([手順 2](#step2)で説明) を使用して設定します。
+セッションで複数のタグ読み取りが許可されている場合、このメソッドは複数回 (およびメッセージの配列が渡される可能性があります) に呼び出されることがあります。 これは、 `Start` ([手順 2](#step2)で説明した) メソッドの3番目のパラメーターを使用して設定します。
 
 #### <a name="didinvalidate"></a>DidInvalidate
 
@@ -123,9 +123,9 @@ public void DidInvalidate(NFCNdefReaderSession session, NSError error)
 
 セッションが無効になったら、再度スキャンするために新しいセッションオブジェクトを作成する必要があります。
 
-<a name="step2" />
+<a name="step2"></a>
 
-### <a name="2-start-an-nfcndefreadersession"></a>2. `NFCNdefReaderSession` を開始する
+### <a name="2-start-an-nfcndefreadersession"></a>2. 開始する`NFCNdefReaderSession`
 
 スキャンは、ボタンを押すなどのユーザー要求で開始する必要があります。
 次のコードでは、スキャンセッションを作成して開始します。
@@ -135,11 +135,11 @@ Session = new NFCNdefReaderSession(this, null, true);
 Session?.BeginSession();
 ```
 
-`NFCNdefReaderSession` コンストラクターのパラメーターは次のとおりです。
+コンストラクターのパラメーターは次のとおり `NFCNdefReaderSession` です。
 
-- `delegate` – `INFCNdefReaderSessionDelegate`の実装。 このサンプルコードでは、デリゲートはテーブルビューコントローラーに実装されているため、`this` はデリゲートパラメーターとして使用されます。
-- `queue` –コールバックが処理されるキュー。 `null`することができます。その場合は、(サンプルに示されているように) ユーザーインターフェイスコントロールを更新するときに必ず `DispatchQueue.MainQueue` を使用してください。
-- `invalidateAfterFirstRead` – `true`した場合、スキャンは最初に成功した後に停止します。`false` スキャンが続行され、スキャンが取り消されるか、60秒のタイムアウトに達するまで、複数の結果が返されます。
+- `delegate`–の実装 `INFCNdefReaderSessionDelegate` 。 このサンプルコードでは、デリゲートはテーブルビューコントローラーに実装されているため、 `this` デリゲートパラメーターとして使用されます。
+- `queue`–コールバックが処理されるキュー。 この `null` 場合、 `DispatchQueue.MainQueue` (サンプルに示されているように) ユーザーインターフェイスコントロールを更新するときに必ずを使用する必要があります。
+- `invalidateAfterFirstRead`–の場合、スキャンは `true` 最初に成功した後に停止します。スキャンが `false` 続行され、複数の結果が返されるまで、スキャンが取り消されるか、60秒のタイムアウトに達します。
 
 ### <a name="3-cancel-the-scanning-session"></a>3. スキャンセッションをキャンセルする
 
@@ -147,7 +147,7 @@ Session?.BeginSession();
 
 ![スキャン中の [キャンセル] ボタン](corenfc-images/scan-cancel-sml.png)
 
-アプリは、`InvalidateSession` メソッドを呼び出すことによって、プログラムでスキャンをキャンセルできます。
+アプリでは、メソッドを呼び出すことによって、プログラムでスキャンを取り消すことができ `InvalidateSession` ます。
 
 ```csharp
 Session.InvalidateSession();
@@ -155,7 +155,7 @@ Session.InvalidateSession();
 
 どちらの場合も、デリゲートの `DidInvalidate` メソッドが呼び出されます。
 
-## <a name="summary"></a>要約
+## <a name="summary"></a>まとめ
 
 CoreNFC を使用すると、アプリは NFC タグからデータを読み取ることができます。 さまざまなタグ形式 (NDEF types 1 ~ 5) の読み取りをサポートしますが、書き込みや書式設定はサポートしていません。
 

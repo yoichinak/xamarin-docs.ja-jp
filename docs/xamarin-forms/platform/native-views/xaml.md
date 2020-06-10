@@ -1,39 +1,13 @@
 ---
-title: ''
-description: IOS、Android、およびユニバーサル Windows プラットフォームからのネイティブビューは、XAML ファイルから直接参照でき Xamarin.Forms ます。 プロパティとイベントハンドラーはネイティブビューで設定でき、ビューと対話でき Xamarin.Forms ます。 この記事では、XAML ファイルからネイティブビューを使用する方法について説明 Xamarin.Forms します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 67994371d3042100503eb3a7c3bc7d117b1c590c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139582"
+title: "XAML のネイティブビュー" 説明: "iOS、Android、およびユニバーサル Windows プラットフォームからのネイティブビューを xaml ファイルから直接参照でき Xamarin.Forms ます。 プロパティとイベントハンドラーはネイティブビューで設定でき、ビューと対話でき Xamarin.Forms ます。 この記事では、XAML ファイルからネイティブビューを使用する方法について説明 Xamarin.Forms します。 "
+ms. 製品: xamarin ms. assetid: 7A856D31-B300-409E-9AEB-F8A4DB99B37E: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 03/23/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="native-views-in-xaml"></a>XAML のネイティブ ビュー
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)
 
 _IOS、Android、およびユニバーサル Windows プラットフォームからのネイティブビューは、XAML ファイルから直接参照でき Xamarin.Forms ます。プロパティとイベントハンドラーはネイティブビューで設定でき、ビューと対話でき Xamarin.Forms ます。この記事では、XAML ファイルからネイティブビューを使用する方法について説明 Xamarin.Forms します。_
-
-この記事では、次のトピックについて説明します。
-
-- [ネイティブビュー](#consuming)の使用– XAML からネイティブビューを使用するプロセス。
-- [ネイティブバインディングの使用](#native_bindings)–ネイティブビューのプロパティとの間のデータバインディング。
-- ネイティブビュー[に引数を渡す](#passing_arguments)–ネイティブビューコンストラクターに引数を渡し、ネイティブビューファクトリメソッドを呼び出します。
-- [コードからのネイティブビューの参照](#native_view_code)– XAML ファイルで宣言されたネイティブビューインスタンスを分離コードファイルから取得します。
-- [ネイティブビュー](#subclassing)のサブクラス化–ネイティブビューをサブクラス化して、XAML を使いやすい API を定義します。  
-
-<a name="overview" />
-
-## <a name="overview"></a>概要
 
 ネイティブビューを XAML ファイルに埋め込むには、次のようにし Xamarin.Forms ます。
 
@@ -43,11 +17,9 @@ _IOS、Android、およびユニバーサル Windows プラットフォームか
 > [!IMPORTANT]
 > ネイティブビューを使用するすべての XAML ページでは、コンパイルされた XAML を無効にする必要があります。 これは、XAML ページの分離コードクラスを属性で修飾することによって実現でき `[XamlCompilation(XamlCompilationOptions.Skip)]` ます。 XAML のコンパイルの詳細については、「 [」の Xamarin.Forms 「Xaml のコンパイル](~/xamarin-forms/xaml/xamlc.md)」を参照してください。
 
-分離コードファイルからネイティブビューを参照するには、共有アセットプロジェクト (SAP) を使用し、条件付きコンパイルディレクティブを使用してプラットフォーム固有のコードをラップする必要があります。 詳細については、「[コードからのネイティブビューの参照](#native_view_code)」を参照してください。
+分離コードファイルからネイティブビューを参照するには、共有アセットプロジェクト (SAP) を使用し、条件付きコンパイルディレクティブを使用してプラットフォーム固有のコードをラップする必要があります。 詳細については、「[コードからのネイティブビューの参照」を](#refer-to-native-views-from-code)参照してください。
 
-<a name="consuming" />
-
-## <a name="consuming-native-views"></a>ネイティブビューの使用
+## <a name="consume-native-views"></a>ネイティブビューの使用
 
 次のコード例は、各プラットフォームのネイティブビューをに使用する方法を示してい Xamarin.Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage) ます。
 
@@ -77,12 +49,10 @@ _IOS、Android、およびユニバーサル Windows プラットフォームか
 > [!NOTE]
 > スタイルは、オブジェクトによってサポートされるプロパティのみを対象とするため、ネイティブビューでは使用できないことに注意して `BindableProperty` ください。
 
-Android ウィジェットのコンストラクターには、通常、 `Context` 引数として android オブジェクトが必要です。これは、クラスの静的プロパティを通じて使用でき `MainActivity` ます。 そのため、XAML で Android ウィジェットを作成する場合は、 `Context` 通常、 `x:Arguments` `x:Static` マークアップ拡張機能を持つ属性を使用して、オブジェクトをウィジェットのコンストラクターに渡す必要があります。 詳細については、「[ネイティブビューへの引数の引き渡し](#passing_arguments)」を参照してください。
+Android ウィジェットのコンストラクターには、通常、 `Context` 引数として android オブジェクトが必要です。これは、クラスの静的プロパティを通じて使用でき `MainActivity` ます。 そのため、XAML で Android ウィジェットを作成する場合は、 `Context` 通常、 `x:Arguments` `x:Static` マークアップ拡張機能を持つ属性を使用して、オブジェクトをウィジェットのコンストラクターに渡す必要があります。 詳細については、「[ネイティブビューへの引数の引き渡し](#pass-arguments-to-native-views)」を参照してください。
 
 > [!NOTE]
-> `x:Name`.NET Standard ライブラリプロジェクトまたは共有アセットプロジェクト (SAP) でネイティブビューに名前を付けることはできません。 これにより、ネイティブ型の変数が生成され、コンパイルエラーが発生します。 ただし、SAP が使用されている場合は、ネイティブビューをインスタンスにラップ `ContentView` し、分離コードファイルで取得できます。 詳細については、「[コードからのネイティブビューの参照](#native_view_code)」を参照してください。
-
-<a name="native_bindings" />
+> `x:Name`.NET Standard ライブラリプロジェクトまたは共有アセットプロジェクト (SAP) でネイティブビューに名前を付けることはできません。 これにより、ネイティブ型の変数が生成され、コンパイルエラーが発生します。 ただし、SAP が使用されている場合は、ネイティブビューをインスタンスにラップ `ContentView` し、分離コードファイルで取得できます。 詳細については、「[コードからのネイティブビューの参照」を](#refer-to-native-views-from-code)参照してください。
 
 ## <a name="native-bindings"></a>ネイティブバインド
 
@@ -127,9 +97,7 @@ Android ウィジェットのコンストラクターには、通常、 `Context
 
 双方向のバインディングは、ネイティブプロパティがを実装している `INotifyPropertyChanged` 場合、または iOS でのキー値の観察 (KVO) をサポートしている場合、またはが UWP の場合に、自動的にサポートされ `DependencyProperty` ます。 ただし、多くのネイティブビューでは、プロパティの変更通知はサポートされていません。 これらのビューでは、 [`UpdateSourceEventName`](xref:Xamarin.Forms.Binding.UpdateSourceEventName) バインド式の一部としてプロパティ値を指定できます。 このプロパティは、ターゲットプロパティが変更されたときに通知するネイティブビューのイベントの名前に設定する必要があります。 次に、ネイティブスイッチの値が変更されると、ユーザーがスイッチの値を変更した `Binding` ことが通知され、 `NativeSwitchPageViewModel.IsSwitchOn` プロパティの値が更新されます。
 
-<a name="passing_arguments" />
-
-## <a name="passing-arguments-to-native-views"></a>ネイティブビューへの引数の引き渡し
+## <a name="pass-arguments-to-native-views"></a>ネイティブビューに引数を渡す
 
 コンストラクター引数は、 `x:Arguments` マークアップ拡張機能を持つ属性を使用してネイティブビューに渡すことができ `x:Static` ます。 また、ネイティブビューファクトリメソッド (メソッドを `public static` 定義するクラスまたは構造体と同じ型のオブジェクトまたは値を返すメソッド) を呼び出すこともできます。これを行うには、属性を使用してメソッドの名前を指定し、属性を使用して引数を指定し `x:FactoryMethod` `x:Arguments` ます。
 
@@ -200,9 +168,7 @@ Android ウィジェットのコンストラクターには、通常、 `Context
 
 XAML で引数を渡す方法の詳細については、「 [xaml で引数を渡す](~/xamarin-forms/xaml/passing-arguments.md)」を参照してください。
 
-<a name="native_view_code" />
-
-## <a name="referring-to-native-views-from-code"></a>コードからのネイティブビューの参照
+## <a name="refer-to-native-views-from-code"></a>コードからのネイティブビューの参照
 
 ネイティブビューに属性を指定することはできません `x:Name` が、ネイティブビューが [`ContentView`](xref:Xamarin.Forms.ContentView) 属性値を指定するの子である場合は、共有アクセスプロジェクトの分離コードファイルから、XAML ファイルで宣言されたネイティブビューインスタンスを取得でき `x:Name` ます。 次に、分離コードファイル内の条件付きコンパイルディレクティブ内で、次のことを行う必要があります。
 
@@ -287,9 +253,7 @@ IOS と Android のネイティブボタンは、 `OnButtonTap` 各ネイティ�
 
 ![](xaml-images/contentview.png "ContentView Containing a Native Control")
 
-<a name="subclassing" />
-
-## <a name="subclassing-native-views"></a>サブクラス化 (ネイティブビューを)
+## <a name="subclass-native-views"></a>サブクラスのネイティブビュー
 
 多くの iOS および Android のネイティブビューは、コントロールを設定するために、プロパティではなくメソッドを使用するため、XAML でのインスタンス化には適していません。 この問題の解決策は、ラッパーでネイティブビューをサブクラス化することです。これは、プロパティを使用してコントロールを設定し、プラットフォームに依存しないイベントを使用する、より XAML に適した API を定義します。 ラップされたネイティブビューは、共有アセットプロジェクト (SAP) に配置し、条件付きコンパイルディレクティブで囲むか、プラットフォーム固有のプロジェクトに配置し、.NET Standard ライブラリプロジェクトの XAML から参照できます。
 
@@ -485,10 +449,6 @@ class MySpinner : Spinner
 ```
 
 `MySpinner`クラスは、 `ItemsSource` `SelectedObject` プロパティとプロパティ、およびイベントを公開し `ItemSelected` ます。 クラスによって表示される項目 `MySpinner` は、ビューに関連付けられているによって提供され [`Adapter`](xref:Android.Widget.Adapter) `Adapter` ます。また、プロパティが最初に設定されたときに、項目がに設定され `ItemsSource` ます。 クラスで選択された項目が変更されるたび `MySpinner` に、イベントハンドラーによって `OnBindableSpinnerItemSelected` プロパティが更新され `SelectedObject` ます。
-
-## <a name="summary"></a>[概要]
-
-この記事では、XAML ファイルからネイティブビューを使用する方法について説明 Xamarin.Forms します。 プロパティとイベントハンドラーはネイティブビューで設定でき、ビューと対話でき Xamarin.Forms ます。
 
 ## <a name="related-links"></a>関連リンク
 

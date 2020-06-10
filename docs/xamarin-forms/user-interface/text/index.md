@@ -1,22 +1,8 @@
 ---
-title: テキストの入力Xamarin.Forms
-description: Xamarin.Formsには、テキストを操作するための3つの主要なビューがあります。この記事では、アプリケーションにテキストを入力して表示する方法について説明し Xamarin.Forms ます。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 579ff44e9c58d7eea538d5478e99b4c480d44ac0
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136189"
+title: "description in Xamarin.Forms " description: "に Xamarin.Forms は、テキストを操作するための3つの主要なビューがあります。この記事では、アプリケーションにテキストを入力して表示する方法について説明します Xamarin.Forms 。
+ms. 製品: xamarin ms. assetid: 4DBA7689-E5C8-4583-8FB4-02AB208B4416: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 10/26/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="text-in-xamarinforms"></a>テキストの入力Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
@@ -25,15 +11,13 @@ _を使用して Xamarin.Forms テキストを入力または表示します。_
 
 Xamarin.Formsには、テキストを操作するための3つの主なビューがあります。
 
-- **[ラベル](#Label)** &mdash;単一行または複数行のテキストを表示します。 複数の書式設定オプションを含むテキストを同じ行に表示できます。
-- **[エントリ](#Entry)** &mdash;1行のみのテキストを入力する場合。 エントリにはパスワードモードがあります。
-- **[エディター](#Editor)** &mdash;複数の行を受け取る可能性のあるテキストを入力する場合。
+- **[ラベル](#label)** &mdash;単一行または複数行のテキストを表示します。 複数の書式設定オプションを含むテキストを同じ行に表示できます。
+- **[エントリ](#entry)** &mdash;1行のみのテキストを入力する場合。 エントリにはパスワードモードがあります。
+- **[エディター](#editor)** &mdash;複数の行を受け取る可能性のあるテキストを入力する場合。
 
-テキストの外観は、組み込みスタイルまたはカスタム[スタイル](#Styles)を使用して変更できます。また、カスタム[フォント](#Fonts)をサポートするコントロールもあります。
+テキストの外観は、組み込みスタイルまたはカスタム[スタイル](#styles)を使用して変更できます。また、カスタム[フォント](#fonts)をサポートするコントロールもあります。
 
-<a name="Label" />
-
-## <a name="label"></a>[ラベル](label.md)
+## <a name="label"></a>[Label](label.md)
 
 `Label`ビューはテキストの表示に使用されます。 複数行のテキストまたは1行のテキストを表示できます。 `Label`インラインで使用される複数の書式設定オプションを使用してテキストを表示できます。 ラベルビューでは、1行に収まらないときにテキストを折り返すことができます。
 
@@ -43,9 +27,7 @@ Xamarin.Formsには、テキストを操作するための3つの主なビュー
 
 ラベルで使用されるフォントをカスタマイズする方法については、「[フォント](fonts.md)」を参照してください。
 
-<a name="Entry" />
-
-## <a name="entry"></a>[入力](entry.md)
+## <a name="entry"></a>[エントリ](entry.md)
 
 `Entry`は、単一行のテキスト入力を許可するために使用されます。 `Entry`色とフォントに対する制御を提供します。 `Entry`にはパスワードモードがあり、テキストが入力されるまでプレースホルダーテキストを表示できます。
 
@@ -55,9 +37,7 @@ Xamarin.Formsには、テキストを操作するための3つの主なビュー
 
 とは異なり、 `Label` は `Entry` カスタムフォント設定を持つことができません。
 
-<a name="Editor" />
-
-## <a name="editor"></a>[エディター](editor.md)
+## <a name="editor"></a>[[エディター]](editor.md)
 
 `Editor`は、複数行のテキスト入力を許可するために使用されます。 `Editor`色とフォントに対する制御を提供します。
 
@@ -65,13 +45,9 @@ Xamarin.Formsには、テキストを操作するための3つの主なビュー
 
 詳細については、[エディター](editor.md)の記事を参照してください。
 
-<a name="Fonts" />
-
 ## <a name="fonts"></a>[フォント](fonts.md)
 
 多くのコントロールは、各プラットフォームで組み込みフォントを使用するか、アプリに含まれるカスタムフォントを使用して、さまざまなフォント設定をサポートしています。 詳細については、「[フォント](fonts.md)」を参照してください。
-
-<a name="Styles" />
 
 ## <a name="styles"></a>[スタイル](styles.md)
 

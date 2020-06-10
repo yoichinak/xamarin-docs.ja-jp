@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: a622684461bfe2e4a57b910288ee1f9afb54c694
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: f42c4a6dd2f4408d7b0ccf65e60851ebd29b76f6
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725123"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574544"
 ---
 # <a name="deploying-watchos-apps-to-the-app-store"></a>WatchOS アプリを App Store にデプロイする
 
@@ -21,7 +21,7 @@ ms.locfileid: "76725123"
 
 - 次のことを確認します。
   - プロジェクト用に作成された[**配布プロビジョニングプロファイル**](#provisioning)。
-  - **8.2**以前 (8.3 はサポートされていません) に設定されている iOS 親アプリの**展開ターゲット**(`MinimumOSVersion`)。
+  - **Deployment Target** `MinimumOSVersion` **8.2**以前 (8.3 はサポートされていません) に設定されている IOS の親アプリの展開ターゲット ()。
 
 - [**ITunes Connect**](#iTunes_Connect)の場合:
 
@@ -30,20 +30,20 @@ ms.locfileid: "76725123"
 
 - その後[Visual Studio for Mac](#xamarin_studio)で (Visual Studio は現在サポートされていません)。
 
-  - IOS アプリを右クリックし、 **[スタートアッププロジェクトに設定]** を選択します。
+  - IOS アプリを右クリックし、[**スタートアッププロジェクトに設定**] を選択します。
   - **App Store**の構成に変更します。
   - **アーカイブ**機能を使用して、アプリケーションアーカイブを作成します。
 
 - 最後に、 [Xcode 6.2 +](#xcode)に切り替えます。
 
-  - **ウィンドウ > オーガナイザー**にアクセスし、 **[アーカイブ]** を選択します。
+  - **ウィンドウ > オーガナイザー**にアクセスし、[**アーカイブ**] を選択します。
   - 一覧からアプリケーションとアーカイブを選択します。
   - オプション**検証...** アーカイブ。
   - **送信...** 確認と承認のために、アーカイブし、iTunes Connect にアップロードする手順に従います。
 
 以下の項目に関連する特定のヒントを参照してください。 問題が発生した場合は、「[トラブルシューティング](#troubleshooting)」セクションを参照してください。
 
-<a name="provisioning" />
+<a name="provisioning"></a>
 
 ## <a name="distribution-provisioning-profiles"></a>配布プロビジョニングプロファイル
 
@@ -57,13 +57,13 @@ App Store のデプロイ用にビルドするには、ソリューション内�
 
 ![](appstore-images/provisioningprofiles-sml.png "The list of available profiles")
 
-**プロジェクトオプション**でプロビジョニングプロファイルを確認するには、 **[ビルド > iOS バンドル署名]** 画面を選択し、 **[appstore | iPhone]** 構成を選択します。
+**プロジェクトオプション**でプロビジョニングプロファイルを確認するには、[**ビルド > iOS バンドル署名**] 画面を選択し、[ **appstore | iPhone** ] 構成を選択します。
 
-**[プロビジョニングプロファイル]** の一覧には、一致するすべてのプロファイルが表示されます。このドロップダウンリストで作成した一致するプロファイルが表示されます。
+[**プロビジョニングプロファイル**] の一覧には、一致するすべてのプロファイルが表示されます。このドロップダウンリストで作成した一致するプロファイルが表示されます。
 
 ![](appstore-images/options-selectprofile-sml.png "The iOS Bundle Signing dialog")
 
-<a name="iTunes_Connect"/>
+<a name="iTunes_Connect"></a>
 
 ## <a name="itunes-connect"></a>iTunes Connect
 
@@ -82,7 +82,7 @@ ITunes Connect でアプリを構成するときは、忘れずにウォッチ�
 これらは312x390 ピクセルであり、Watch アプリの動作を示しています。
 42 mm watch シミュレーターを使用すると、このサイズでスクリーンショットを撮ることができます。
 
-<a name="xamarin_studio" />
+<a name="xamarin_studio"></a>
 
 ## <a name="visual-studio-for-mac"></a>Visual Studio for Mac
 
@@ -94,15 +94,15 @@ ITunes Connect でアプリを構成するときは、忘れずにウォッチ�
 
    ![](appstore-images/xs-appstore.png "The AppStore build configuration")
 
-3. **[ビルド > アーカイブ]** メニュー項目を選択してアーカイブプロセスを開始します。
+3. [**ビルド > アーカイブ**] メニュー項目を選択してアーカイブプロセスを開始します。
 
    ![](appstore-images/xs-archive.png "The Build menu")
 
-また、 **[> アーカイブの表示]** メニュー項目を選択して、以前に作成されたアーカイブを表示することもできます。
+また、[ **> アーカイブの表示**] メニュー項目を選択して、以前に作成されたアーカイブを表示することもできます。
 
   ![](appstore-images/xs-archives-sml.png "The Archives view")
 
-<a name="xcode" />
+<a name="xcode"></a>
 
 ## <a name="xcode"></a>Xcode
 
@@ -112,21 +112,21 @@ Xcode Visual Studio for Mac で作成されたアーカイブが自動的に表�
 
    ![](appstore-images/xc-organizer.png "The Window menu")
 
-2. **[アーカイブ]** タブに切り替え、Visual Studio for Mac で作成されたアーカイブを選択します。
+2. [**アーカイブ**] タブに切り替え、Visual Studio for Mac で作成されたアーカイブを選択します。
 
    ![](appstore-images/xc-archives.png "The Archives tab")
 
-3. 必要に応じて、アーカイブを**検証**し、 **[送信...]** を選択してアプリを iTunes Connect にアップロードします。
+3. 必要に応じて、アーカイブを**検証**し、[**送信...** ] を選択してアプリを iTunes Connect にアップロードします。
 
 4. (複数のチームに属している場合は) 開発チームを選択し、送信を確認します。
 
    ![](appstore-images/xc-submit1.png "The development team section")
 
-5. アップロードしたバイナリを確認するには、iTunes Connect にもう一度アクセスしてください。 アプリの構成ページにアクセスし、上部のメニューから **[プレリリース]** を選択して、**ビルド**の一覧を表示します。
+5. アップロードしたバイナリを確認するには、iTunes Connect にもう一度アクセスしてください。 アプリの構成ページにアクセスし、上部のメニューから [**プレリリース**] を選択して、**ビルド**の一覧を表示します。
 
    [![](appstore-images/itc-prerelease-sml.png "The apps configuration page in iTunes Connect")](appstore-images/itc-prerelease.png#lightbox)
 
-その後、 **[バージョン]** ページで、承認のためにアプリを送信できます。 詳細については、 [「iOS アプリの配布の概要」](~/ios/deploy-test/app-distribution/index.md)を参照してください。
+その後、[**バージョン**] ページで、承認のためにアプリを送信できます。 詳細については、 [「iOS アプリの配布の概要」](~/ios/deploy-test/app-distribution/index.md)を参照してください。
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 
@@ -175,7 +175,7 @@ is missing icon with name pattern '*44x44@2x.png' (Home Screen 42mm).
 Visual Studio for Mac の最新バージョンがあることと、 **AppIcon appicons.appiconset**にイメージの完全なセットが含まれていることを確認します。 このエラーが引き続き表示される場合は、 **json**のソースを表示して、必要なすべてのイメージのエントリが含まれていることを確認します。 または、最新バージョンの Xamarin を使用していることを確認したら、 **AppIcon appicons.appiconset**を削除して再作成します。
 
 > [!IMPORTANT]
-> Visual Studio for Mac のウォッチアイコンのサポートには既知のバグがあります。これには、 **29x29@3x** イメージ (87x87 ピクセル) に対して、サイズが 88 x 88 ピクセルのイメージが必要です。
+> Visual Studio for Mac のウォッチアイコンのサポートには既知のバグがあります。これには、イメージに対してサイズが 88 x 88 ピクセルのイメージ **29x29@3x** (87x87 ピクセル) が必要です。
 
 Xcode のイメージ資産を編集するか、ファイルを手動で編集すること Visual Studio for Mac で、これを修正することはでき**ません。**
 

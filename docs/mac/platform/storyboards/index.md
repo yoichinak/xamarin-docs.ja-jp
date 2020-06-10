@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: b27a8d65ebaca6009d8310931b9dac3a4d7e12f3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 395ac62cd4db62c02863e352ed5643958348dcff
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73026148"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574391"
 ---
 # <a name="introduction-to-storyboards-in-xamarinmac"></a>Xamarin. Mac でのストーリーボードの概要
 
@@ -24,13 +24,13 @@ _この記事では、Xamarin. Mac アプリでストーリーボードを操作
 
 この記事では、ストーリーボードを使用して Xamarin. Mac アプリのユーザーインターフェイスを定義する方法について説明します。
 
-<a name="What-are-Storyboards" />
+<a name="What-are-Storyboards"></a>
 
 ## <a name="what-are-storyboards"></a>ストーリーボードとは
 
 ストーリーボードを使用すると、個々の要素とユーザーインターフェイスの間のすべてのナビゲーションを使用して、すべての Xamarin アプリの UI を1つの場所に定義できます。 Xamarin. Mac のストーリーボードは、Xamarin. iOS のストーリーボードと非常によく似た方法で動作します。 ただし、インターフェイスの表現方法が異なるため、異なる_セグエ型_のセットが含まれています。
 
-<a name="Working-with-Scenes" />
+<a name="Working-with-Scenes"></a>
 
 ### <a name="working-with-scenes"></a>シーンの操作
 
@@ -44,7 +44,7 @@ _この記事では、Xamarin. Mac アプリでストーリーボードを操作
 
 注意する必要がある最も重要な点は、各セグエは、アプリの UI の特定の要素間にある何らかの形式のデータのフローを表すことです。
 
-<a name="Working-with-View-Controllers" />
+<a name="Working-with-View-Controllers"></a>
 
 ### <a name="working-with-view-controllers"></a>ビューコントローラーの操作
 
@@ -54,13 +54,13 @@ _この記事では、Xamarin. Mac アプリでストーリーボードを操作
 
 このようにして、各ビューコントローラーは、情報の視覚的表現 (ビュー) とその情報を提示および制御するロジックの両方の自己完結型で再利用可能な組み合わせです。
 
-特定のシーン内では、通常、個々の `.xib` ファイルによって処理されるすべての処理を実行できます。 
+特定のシーン内では、通常、個々のファイルによって処理されるすべての処理を実行でき `.xib` ます。 
 
 - サブビューとコントロール (ボタンやテキストボックスなど) を配置します。
 - 要素の位置と自動レイアウトの制約を定義します。
 - UI 要素をコードに公開するためのワイヤアップアクションとコンセント。
 
-<a name="Working-with-Segues" />
+<a name="Working-with-Segues"></a>
 
 ### <a name="working-with-segues"></a>セグエの操作
 
@@ -70,9 +70,9 @@ MacOS では、ほとんどのアプリは、分割ビューやタブなどの U
 
 MacOS の傾向に対しては、モーダルウィンドウ、シートビュー、Popovers などの_プレゼンテーションの_が使用される場合があります。
 
-Presentation セグエを使用する場合は、表示する親ビューコントローラーの `PrepareForSegue` メソッドをオーバーライドして、変数を初期化し、表示されるビューコントローラーにデータを提供することができます。
+Presentation セグエを使用する場合は、表示 `PrepareForSegue` する親ビューコントローラーのメソッドをオーバーライドして、変数を初期化し、表示されているビューコントローラーにデータを提供することができます。
 
-<a name="Design-and-Run-Times" />
+<a name="Design-and-Run-Times"></a>
 
 ### <a name="design-and-run-times"></a>設計と実行時間
 
@@ -86,19 +86,19 @@ Presentation セグエを使用する場合は、表示する親ビューコン�
 
 各要素をこのように定義することによって、実行時に必要な場合にのみ、各要素の遅延読み込みを行うことができます。 MacOS では、プロセス全体が、開発者が作業を行うために最小限のバックアップコードを必要とする複雑で柔軟なユーザーインターフェイスを作成できるように設計されています。また、可能な限りシステムリソースを効率的に使用できます。
 
-<a name="Storyboard-Quick-Start" />
+<a name="Storyboard-Quick-Start"></a>
 
 ## <a name="storyboard-quick-start"></a>ストーリーボードクイックスタート
 
 [ストーリーボードクイックスタート](~/mac/platform/storyboards/quickstart.md)ガイドでは、ストーリーボードを使用してユーザーインターフェイスを作成するための主要な概念を紹介する単純な Xamarin. Mac アプリを作成します。 このサンプルアプリは、_コンテンツ領域_と_インスペクター領域_を含む、Spilt 含まれるビューで構成され、簡単な基本設定ダイアログウィンドウが表示されます。 セグエを使用して、すべてのユーザーインターフェイス要素を連結します。
 
-<a name="Working-with-Storyboards" />
+<a name="Working-with-Storyboards"></a>
 
 ## <a name="working-with-storyboards"></a>ストーリーボードの使用
 
 このセクションでは、Xamarin. Mac アプリでの[ストーリーボードの操作](~/mac/platform/storyboards/indepth.md)の詳細について説明します。 シーンの詳細と、ビューコントローラーとビューで構成される方法について詳しく説明します。 次に、セグエと共にシーンがどのように関連付けられているかを見ていきます。 最後に、カスタムのセグエ型の使用について説明します。 
 
-<a name="Complex-Storyboard-Example" />
+<a name="Complex-Storyboard-Example"></a>
 
 ## <a name="complex-storyboard-example"></a>複雑なストーリーボードの例
 
@@ -106,7 +106,7 @@ Xamarin. Mac アプリでストーリーボードを操作する複雑な例の�
 
 SourceWriter コード全体に詳細なコメントが付いていて、可能な場合は、重要な技術やメソッド、Xamarin.Mac ガイド ドキュメントの関連情報へのリンクが示されます。
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>まとめ
 

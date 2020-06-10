@@ -1,18 +1,18 @@
 ---
 title: Wear デバイスでのデバッグ
-description: この記事では、Wear デバイスで Xamarin の Android Wear アプリケーションをデバッグする方法について説明します。
+description: この記事では、摩耗デバイスで Xamarin の Android の磨耗アプリケーションをデバッグする方法について説明します。
 ms.prod: xamarin
 ms.assetid: 01668E4B-BB83-4C26-B23A-F788173FB823
 ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 965ed4e802c05f8450192c0fec17fe31e464c779
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: e6be5d5d42abf7d99c5bd305d6e303ef770e5a04
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79305967"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84567722"
 ---
 # <a name="debug-on-a-wear-device"></a>Wear デバイスでのデバッグ
 
@@ -20,19 +20,19 @@ _この記事では、摩耗デバイスで Xamarin の Android の磨耗アプ�
 
 ## <a name="overview"></a>概要
 
-Android Wear Smartwatch などの Android Wear デバイスがある場合は、エミュレーターを使用する代わりに、デバイスでアプリを実行できます。 (Android 用の摩耗アプリの展開と実行のプロセスにまだ慣れていない場合は、「 [Hello, 磨耗](~/android/wear/get-started/hello-wear.md)」を参照してください)。
+Android の磨耗 Smartwatch などの Android の磨耗デバイスがある場合は、エミュレーターを使用する代わりに、デバイスでアプリを実行できます。 (Android 用の摩耗アプリの展開と実行のプロセスにまだ慣れていない場合は、「 [Hello, 磨耗](~/android/wear/get-started/hello-wear.md)」を参照してください)。
 
-## <a name="prepare-the-wear-device"></a>Wear デバイスを準備する
+## <a name="prepare-the-wear-device"></a>磨耗デバイスを準備します。
 
-Android Wear デバイスでデバッグを有効にするには、次の手順に従います。
+Android の磨耗デバイスでデバッグを有効にするには、次の手順に従います。
 
-1. Android の磨耗デバイスで **[設定]** メニューを開きます。
+1. Android の磨耗デバイスで [**設定**] メニューを開きます。
 
-2. メニューの一番下までスクロールし、 **[バージョン情報]** をタップします。
+2. メニューの一番下までスクロールし、[**バージョン情報**] をタップします。
 
 3. ビルド番号を7回タップします。
 
-4. **[設定]** メニューの **[開発者オプション]** をタップします。
+4. [**設定**] メニューの [**開発者オプション**] をタップします。
 
 5. **ADB デバッグ**が有効になっていることを確認します。
 
@@ -42,7 +42,7 @@ Android Wear デバイスでデバッグを有効にするには、次の手順�
 
 ## <a name="debugging-over-bluetooth"></a>Bluetooth でのデバッグ
 
-使用しているデバイスに USB ポートがない場合は、コンピューターに接続されている Android フォンにアプリのデバッグ出力をルーティングすることによって、Bluetooth 経由でアプリを Wear デバイスに展開することができます。 
+使用しているデバイスに USB ポートがない場合は、コンピューターに接続されている Android フォンにアプリのデバッグ出力をルーティングすることによって、Bluetooth 経由でアプリを摩耗デバイスに展開することができます。 
 
 ### <a name="prepare-your-phone"></a>電話を準備する
 
@@ -54,13 +54,13 @@ Android Wear デバイスでデバッグを有効にするには、次の手順�
 
 ### <a name="connect-the-device"></a>デバイスを接続する
 
-次の手順に従って、Wear デバイスを電話に接続します。
+次の手順に従って、磨耗デバイスを電話に接続します。
 
-1. Bluetooth 中継局として機能する電話 (上記で構成) で、Android Wear アプリを起動します。 
+1. Bluetooth 中継局として機能する電話 (上記で構成) で、Android の磨耗アプリを起動します。 
 
-2. **[設定]** アイコンをタップします。
+2. [**設定**] アイコンをタップします。
 
-3. **Bluetooth でのデバッグ**を有効にします。 Android Wear アプリの画面に次の状態が表示されます。
+3. **Bluetooth でのデバッグ**を有効にします。 Android の磨耗アプリの画面に次の状態が表示されます。
 
     ```
     Host: disconnected
@@ -77,16 +77,16 @@ Android Wear デバイスでデバッグを有効にするには、次の手順�
     ポート4444が使用できない場合は、アクセスできる他の任意のポートを使用できます。 
 
     > [!NOTE]
-    > Visual Studio または Visual Studio for Mac を再起動する場合は、これらのコマンドをもう一度実行して、Wear デバイスへの接続をセットアップする必要があります。
+    > Visual Studio または Visual Studio for Mac を再起動する場合は、これらのコマンドをもう一度実行して、磨耗デバイスへの接続をセットアップする必要があります。
 
-5. 磨耗デバイスからプロンプトが表示されたら、 **ADB デバッグ**を許可していることを確認します。 Android Wear アプリでは、状態が次のように変化します。
+5. 磨耗デバイスからプロンプトが表示されたら、 **ADB デバッグ**を許可していることを確認します。 Android の磨耗アプリでは、状態が次のように変化します。
 
     ```
     Host: connected
     Target: connected
     ```
 
-6. 上記の手順を完了すると、`adb devices` を実行すると、電話と Android の両方のデバイスの状態が表示されます。
+6. 上記の手順を完了すると、[実行中] に `adb devices` 電話と Android の両方の磨耗デバイスの状態が表示されます。
 
     ```
     List of devices attached
@@ -94,13 +94,13 @@ Android Wear デバイスでデバッグを有効にするには、次の手順�
     019ad61df0a69399  device
     ```
 
-この時点で、アプリを Wear デバイスにデプロイできます。
+この時点で、アプリを磨耗デバイスにデプロイできます。
 
-<a name="screenshots" />
+<a name="screenshots"></a>
 
 ### <a name="taking-screenshots"></a>スクリーンショットの撮影
 
-次のコマンドを入力して、Wear デバイスのスクリーンショットを取得できます。 
+次のコマンドを入力して、磨耗デバイスのスクリーンショットを取得できます。 
 
 ```shell
 adb -s 127.0.0.1:4444 shell screencap -p /sdcard/DCIM/screencap.png
@@ -120,13 +120,13 @@ adb -s 127.0.0.1:4444 shell rm /sdcard/DCIM/screencap.png
 
 ### <a name="uninstalling-an-app"></a>アプリのアンインストール
 
-次のコマンドを入力して、Wear デバイスからアプリをアンインストールできます。
+次のコマンドを入力して、磨耗デバイスからアプリをアンインストールできます。
 
 ```shell
 adb -s 127.0.0.1:4444 uninstall <package name>
 ```
 
-たとえば、`com.xamarin.weartest`パッケージ名を使用してアプリを削除するには、次のコマンドを入力します。
+たとえば、パッケージ名を使用してアプリを削除するには、 `com.xamarin.weartest` 次のコマンドを入力します。
 
 ```shell
 adb -s 127.0.0.1:4444 uninstall com.xamarin.weartest
@@ -134,20 +134,20 @@ adb -s 127.0.0.1:4444 uninstall com.xamarin.weartest
 
 Bluetooth 経由での Android の磨耗デバイスのデバッグの詳細については、「 [bluetooth 経由](https://developer.android.com/training/wearables/apps/bt-debugging.html)でのデバッグ」を参照してください。
 
-## <a name="debugging-a-wear-app-with-a-companion-phone-app"></a>コンパニオン電話アプリでの Wear アプリのデバッグ
+## <a name="debugging-a-wear-app-with-a-companion-phone-app"></a>コンパニオン電話アプリでの磨耗アプリのデバッグ
 
-Android の摩耗アプリは、Google Play で配布するためのコンパニオン Android phone アプリと共にパッケージ化されます (詳細については、「[パッケージングの](~/android/wear/deploy-test/packaging.md)使用」を参照してください)。 ただし、引き続き、Wear アプリとそのコンパニオンアプリを別々に開発しています。 Google Play ストアを通じてアプリをリリースすると、アプリがコンパニオンアプリと共にパッケージ化され、可能であれば自動的にインストールされます。
+Android の摩耗アプリは、Google Play で配布するためのコンパニオン Android phone アプリと共にパッケージ化されます (詳細については、「[パッケージングの](~/android/wear/deploy-test/packaging.md)使用」を参照してください)。 ただし、引き続き、磨耗アプリとそのコンパニオンアプリを別々に開発しています。 Google Play ストアを通じてアプリをリリースすると、アプリがコンパニオンアプリと共にパッケージ化され、可能であれば自動的にインストールされます。
 
-コンパニオンアプリを使用して、Wear アプリをデバッグするには: 
+コンパニオンアプリを使用して、磨耗アプリをデバッグするには: 
 
 1. コンパニオンアプリを構築し、電話にデプロイします。
 
-2. [Wear] プロジェクトを右クリックし、[既定の開始] プロジェクトとして設定します。
+2. [磨耗] プロジェクトを右クリックし、[既定の開始] プロジェクトとして設定します。
 
-3. ウェアラブルデバイスに Wear プロジェクトをデプロイします。
+3. ウェアラブルデバイスに磨耗プロジェクトをデプロイします。
 
-4. デバイスでの Wear アプリの実行とデバッグを行います。
+4. デバイスでの磨耗アプリの実行とデバッグを行います。
 
-## <a name="summary"></a>要約
+## <a name="summary"></a>まとめ
 
-この記事では、Bluetooth を使用して Visual Studio からの Wear デバッグ用に Android Wear デバイスを構成する方法、およびコンパニオン電話アプリを使用して Wear アプリをデバッグする方法について説明しました。 また、Bluetooth を使用して Wear アプリをデバッグするための一般的なデバッグのヒントも提供しました。
+この記事では、Bluetooth を使用して Visual Studio からの磨耗デバッグ用に Android の磨耗デバイスを構成する方法、およびコンパニオン電話アプリを使用して磨耗アプリをデバッグする方法について説明しました。 また、Bluetooth を使用して磨耗アプリをデバッグするための一般的なデバッグのヒントも提供しました。

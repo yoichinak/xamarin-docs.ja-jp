@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 04/28/2017
-ms.openlocfilehash: 2d204aeac18fc08bf6eb2221b6f64ecbbded8121
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 78c048d793fd792576e2482491ebf11460d5b511
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73010004"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571806"
 ---
 # <a name="internationalization-encodings-in-xamarinios"></a>Xamarin の国際化エンコーディングエンコード
 
@@ -35,7 +35,7 @@ ms.locfileid: "73010004"
 - 西ヨーロッパ: ラテン言語、イースター、西ヨーロッパ
 - all
 
- <a name="cjk" />
+ <a name="cjk"></a>
 
 ## <a name="cjk"></a>cjk
 
@@ -46,7 +46,7 @@ ms.locfileid: "73010004"
 - CP950
 - CP54936
 
- <a name="mideast" />
+ <a name="mideast"></a>
 
 ## <a name="mideast"></a>mideast
 
@@ -58,7 +58,7 @@ ms.locfileid: "73010004"
 - CP28599
 - CP38598
 
- <a name="other" />
+ <a name="other"></a>
 
 ## <a name="other"></a>その他
 
@@ -72,7 +72,7 @@ ms.locfileid: "73010004"
 - CP57002
 - CP874
 
- <a name="rare" />
+ <a name="rare"></a>
 
 ## <a name="rare"></a>珍しい
 
@@ -114,9 +114,9 @@ ms.locfileid: "73010004"
 - CP870
 - CP875
 
- <a name="west" />
+ <a name="west"></a>
 
-## <a name="west"></a>南西
+## <a name="west"></a>西
 
 - CP10000
 - CP10079

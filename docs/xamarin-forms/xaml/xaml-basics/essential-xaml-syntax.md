@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 788df5f27066d0d8d1f672d82e94a06ddf5e0916
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139816"
+title: "パート 2. 必須の XAML 構文 "説明:" この記事では、プロパティ要素と添付プロパティの基本的な XAML 構文機能について説明します。
+3802-4635 4022F1DC: xamarin ms. assetid: A553: dabritch: xamarin-forms author: davidbritch ミリ秒: ms. date: 10/25/2017 no loc: [ Xamarin.Forms ,]」を実行して、: を指定します。 Xamarin.Essentials
 ---
+
 # <a name="part-2-essential-xaml-syntax"></a>第 2 部 基本的な XAML 構文
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
@@ -526,9 +512,9 @@ Android と UWP はの既定値に設定され `Padding` ているため、こ�
 ```
 
 > [!NOTE]
-> `OnPlatform`マークアップ拡張機能を XAML で使用して、プラットフォームごとに UI の外観をカスタマイズすることもできます。 クラスおよびクラスと同じ機能を提供し `OnPlatform` `On` ますが、より簡潔な表現を使用します。 詳細については、「 [Onplatform Markup Extension](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform)」を参照してください。
+> `OnPlatform`マークアップ拡張機能を XAML で使用して、プラットフォームごとに UI の外観をカスタマイズすることもできます。 クラスおよびクラスと同じ機能を提供し `OnPlatform` `On` ますが、より簡潔な表現を使用します。 詳細については、「 [Onplatform Markup Extension](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform-markup-extension)」を参照してください。
 
-## <a name="summary"></a>[概要]
+## <a name="summary"></a>まとめ
 
 プロパティ要素と添付プロパティを使用すると、基本的な XAML 構文の多くが確立されています。 ただし、リソースディクショナリなどの間接的な方法で、オブジェクトにプロパティを設定することが必要になる場合があります。 この方法については、第3部で説明し[ます。XAML マークアップ拡張機能](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)。
 

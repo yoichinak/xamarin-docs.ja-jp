@@ -15,8 +15,6 @@ Xamarin.Formsコードは複数のプラットフォームで実行されます�
 
 イメージ ファイルの処理方法については、[イメージの使用](~/xamarin-forms/user-interface/images.md)に関するページを参照してください。
 
-<a name="Loading_and_Saving_Files" />
-
 ## <a name="saving-and-loading-files"></a>ファイルの保存と読み込み
 
 `System.IO` クラスを使用し、各プラットフォームのファイル システムにアクセスできます。 `File` クラスでは、ファイルを作成し、削除し、読み込むことができます。`Directory` クラスでは、ディレクトリの内容を作成し、削除し、列挙できます。 `Stream` サブクラスを使用することもできます。このサブクラスは、ファイル操作をより詳細に制御できます (圧縮やファイル内の位置検索など)。
@@ -48,8 +46,6 @@ string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFold
 このような操作はサンプル アプリでデモとして示されています。これには、テキストを保存し、読み込むページが含まれています。
 
 [![テキストの保存と読み込み](files-images/saveandload-sml.png "アプリでのファイルの保存と読み込み")](files-images/saveandload.png#lightbox "アプリでのファイルの保存と読み込み")
-
-<a name="Loading_Files_Embedded_as_Resources" />
 
 ## <a name="loading-files-embedded-as-resources"></a>リソースとして埋め込まれたファイルを読み込む
 
@@ -97,8 +93,6 @@ listView.ItemsSource = monkeys;
 
  [![.NET standard library に埋め込まれた Xml ファイル (ListView に表示)](files-images/pclxml-sml.png "ListView に表示される .NET standard library の埋め込み XML ファイル")](files-images/pclxml.png#lightbox "ListView に表示される .NET standard library の埋め込み XML ファイル")
 
-<a name="Embedding_in_Shared_Projects" />
-
 ## <a name="embedding-in-shared-projects"></a>共有プロジェクトに埋め込む
 
 共有プロジェクトにも埋め込みリソースとしてファイルを含めることができます。ただし、共有プロジェクトの内容は参照元プロジェクトにコンパイルされるため、埋め込みファイル リソース ID に使用されるプレフィックスは変わることがあります。 つまり、埋め込みファイルごとのリソース ID はプラットフォームによって異なる場合があります。
@@ -125,15 +119,11 @@ Stream stream = assembly.GetManifestResourceStream
     (resourcePrefix + "SharedTextResource.txt");
 ```
 
-<a name="Organizing_Resources" />
-
 ### <a name="organizing-resources"></a>リソースを整理する
 
 上の例では、.NET Standard ライブラリ プロジェクトのルートにファイルが埋め込まれるものと想定されています。その場合、リソース ID の形式は **Namespace.Filename.Extension** で、`WorkingWithFiles.LibTextResource.txt` や `WorkingWithFiles.iOS.SharedTextResource.txt` のようになります。
 
 埋め込みリソースはフォルダーで整理できます。 埋め込みリソースをフォルダーに入れると、フォルダー名がリソース ID の一部になります (ピリオドで区切られます)。そのため、リソース ID の形式は **Namespace.Folder.Filename.Extension** になります。 サンプル アプリで使用するファイルをフォルダー **MyFolder** に入れると、対応するリソース ID が `WorkingWithFiles.MyFolder.LibTextResource.txt` と `WorkingWithFiles.iOS.MyFolder.SharedTextResource.txt` になります。
-
-<a name="Debugging_Embedded_Resources" />
 
 ### <a name="debugging-embedded-resources"></a>埋め込みリソースのデバッグ
 
@@ -156,5 +146,5 @@ foreach (var res in assembly.GetManifestResourceNames()) {
 ## <a name="related-links"></a>関連リンク
 
 - [FilesSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)
-- [Xamarin.FormsSamples](https://github.com/xamarin/xamarin-forms-samples)
+- [Xamarin.Forms サンプル](https://github.com/xamarin/xamarin-forms-samples)
 - [Xamarin.iOS でファイル システムを操作する](~/ios/app-fundamentals/file-system.md)

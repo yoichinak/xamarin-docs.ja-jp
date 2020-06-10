@@ -1,22 +1,8 @@
 ---
-title: ''
-description: 以前 Xamarin.Forms のソリューション (または macOS で作成されたソリューション) にはユニバーサル Windows プラットフォームプロジェクトはありません。この記事では、既存のソリューションに新しい UWP プロジェクトを追加する方法について説明し Xamarin.Forms ます。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 87ad78e97046eef7fd6c2e062fa9f84d92c11b38
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84132211"
+title: "Windows プロジェクトのセットアップ" の説明: "古い Xamarin.Forms ソリューション (または macOS で作成されたソリューション) にはユニバーサル Windows プラットフォームプロジェクトがありません。この記事では、既存のソリューションに新しい UWP プロジェクトを追加する方法について説明し Xamarin.Forms ます。"
+ms. 製品: xamarin ms. assetid: A0774D2E-6994-4D91-84E8-DAB66FC92320: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 04/10/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="setup-windows-projects"></a>Windows プロジェクトのセットアップ
 
 _既存のソリューションへの新しい Windows プロジェクトの追加 Xamarin.Forms_
@@ -109,8 +95,6 @@ LoadApplication(new YOUR_NAMESPACE.App());
 vdc. ローカルリソースを追加します (例 必要な既存のプラットフォームプロジェクトからのイメージファイル)。
 
 ## <a name="troubleshooting"></a>トラブルシューティング
-
-<a name="target-invocation-exception" />
 
 ### <a name="target-invocation-exception-when-using-compile-with-net-native-tool-chain"></a>".NET ネイティブツールチェーンを使用したコンパイル" を使用する場合の "ターゲット呼び出しの例外"
 

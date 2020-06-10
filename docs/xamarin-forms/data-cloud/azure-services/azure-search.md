@@ -1,22 +1,8 @@
 ---
-title: Azure Search とを使用してデータを検索するXamarin.Forms
-description: この記事では、Microsoft Azure 検索ライブラリを使用して Azure Search をアプリケーションに統合する方法について説明し Xamarin.Forms ます。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 69962bbb51a493ba2bcaed5d3c9407c5aafe471c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84133290"
+title: "Azure Search と" 説明 "を含むデータの検索 Xamarin.Forms : この記事では、Microsoft Azure 検索ライブラリを使用して Azure Search をアプリケーションに統合する方法について説明し Xamarin.Forms ます。
+ms. 製品: xamarin ms. assetid: A4AEF233-3672-4174-9DBA-15BEE3030C0B: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 12/05/2016 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="search-data-with-azure-search-and-xamarinforms"></a>Azure Search とを使用してデータを検索するXamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresearch)
@@ -39,7 +25,7 @@ Azure Search するための最も一般的な要求は、クエリを実行す�
 
 検索クエリとフィルタークエリは、個別または組み合わせて使用できます。 フィルタークエリを一緒に使用すると、最初にインデックス全体に適用され、その後、フィルタークエリの結果に対して検索クエリが実行されます。
 
-Azure Search は、検索入力に基づいて候補を取得することもできます。 詳細については、「[提案クエリ](#suggestions)」を参照してください。
+Azure Search は、検索入力に基づいて候補を取得することもできます。 詳細については、「[提案クエリ](#suggestion-queries)」を参照してください。
 
 > [!NOTE]
 > [Azure サブスクリプション](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)をお持ちでない場合は、開始する前に[無料アカウント](https://aka.ms/azfree-docs-mobileapps)を作成してください。
@@ -226,8 +212,6 @@ var searchResults = await indexClient.Documents.SearchAsync<Monkey>(text, parame
 
 検索とフィルター処理の詳細については、「 [.NET SDK を使用した Azure Search インデックスのクエリ](/azure/search/search-query-dotnet/)」を参照してください。
 
-<a name="suggestions" />
-
 ### <a name="suggestion-queries"></a>提案クエリ
 
 Azure Search を使用すると、インスタンスでメソッドを呼び出すことによって、検索クエリに基づいて提案を要求でき `Documents.SuggestAsync` `SearchIndexClient` ます。 これを次のコード例に示します。
@@ -278,7 +262,7 @@ async Task AzureSuggestions(string text)
 
 サンプルアプリケーションで `SuggestAsync` は、ユーザーが検索用語の入力を終了したときにのみメソッドが呼び出されることに注意してください。 ただし、各 keypress でを実行することで、オートコンプリート検索クエリをサポートするために使用することもできます。
 
-## <a name="summary"></a>[概要]
+## <a name="summary"></a>まとめ
 
 この記事では、Microsoft Azure 検索ライブラリを使用して Azure Search をアプリケーションに統合する方法について説明し Xamarin.Forms ます。 Azure Search は、アップロードされたデータのインデックス作成機能とクエリ機能を提供するクラウドサービスです。 これにより、従来、アプリケーションでの検索機能の実装に関連するインフラストラクチャ要件と検索アルゴリズムの複雑さが解消されます。
 

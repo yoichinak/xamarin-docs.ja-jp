@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 6c5e340818b702d79a1157f29c1ecec19bf1db76
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139946"
+title: "トリミング SkiaSharp ビットマップ" description: "SkiaSharp を使用して、対話形式でトリミング四角形を作成するためのユーザーインターフェイスを設計する方法について説明します。"
+ms. 製品: xamarin ms テクノロジ: skiasharp: 0A79AB27-C69F-4376-8FFE-FF46E4783F30 author: davidbritch dabritch: ms. date: 07/17/2018 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
 ---
+
 # <a name="cropping-skiasharp-bitmaps"></a>トリミング (SkiaSharp ビットマップを)
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -79,7 +65,7 @@ class CroppingRectangle
             Rect = rect;
         }
     }
-    
+
     public SKRect Rect { set; get; }
     ···
 }
@@ -108,7 +94,7 @@ class CroppingRectangle
 }
 ```
 
-この配列は、と呼ばれる次のメソッドで使用され `HitTest` ます。 パラメーターは、 `SKPoint` 指タッチまたはマウスクリックに対応するポイントです。 メソッドは、パラメーターによって指定された距離内で、指またはマウスポインターがタッチしたコーナーに対応するインデックス (0、1、2、または 3) を返し `radius` ます。 
+この配列は、と呼ばれる次のメソッドで使用され `HitTest` ます。 パラメーターは、 `SKPoint` 指タッチまたはマウスクリックに対応するポイントです。 メソッドは、パラメーターによって指定された距離内で、指またはマウスポインターがタッチしたコーナーに対応するインデックス (0、1、2、または 3) を返し `radius` ます。
 
 ```csharp
 class CroppingRectangle
@@ -121,7 +107,7 @@ class CroppingRectangle
         for (int index = 0; index < corners.Length; index++)
         {
             SKPoint diff = point - corners[index];
-                
+
             if ((float)Math.Sqrt(diff.X * diff.X + diff.Y * diff.Y) < radius)
             {
                 return index;
@@ -271,7 +257,7 @@ class PhotoCropperCanvasView : SKCanvasView
 
         canvas.Clear(SKColors.Gray);
 
-        // Calculate rectangle for displaying bitmap 
+        // Calculate rectangle for displaying bitmap
         float scale = Math.Min((float)info.Width / bitmap.Width, (float)info.Height / bitmap.Height);
         float x = (info.Width - scale * bitmap.Width) / 2;
         float y = (info.Height - scale * bitmap.Height) / 2;
@@ -330,7 +316,7 @@ class PhotoCropperCanvasView : SKCanvasView
     CroppingRectangle croppingRect;
     SKMatrix inverseBitmapMatrix;
 
-    // Touch tracking 
+    // Touch tracking
     TouchEffect touchEffect = new TouchEffect();
     struct TouchPoint
     {
@@ -384,7 +370,7 @@ class PhotoCropperCanvasView : SKCanvasView
                 if (touchPoints.ContainsKey(args.Id))
                 {
                     TouchPoint touchPoint = touchPoints[args.Id];
-                    croppingRect.MoveCorner(touchPoint.CornerIndex, 
+                    croppingRect.MoveCorner(touchPoint.CornerIndex,
                                             bitmapLocation - touchPoint.Offset);
                     InvalidateSurface();
                 }
@@ -428,10 +414,10 @@ class PhotoCropperCanvasView : SKCanvasView
         get
         {
             SKRect cropRect = croppingRect.Rect;
-            SKBitmap croppedBitmap = new SKBitmap((int)cropRect.Width, 
+            SKBitmap croppedBitmap = new SKBitmap((int)cropRect.Width,
                                                   (int)cropRect.Height);
             SKRect dest = new SKRect(0, 0, cropRect.Width, cropRect.Height);
-            SKRect source = new SKRect(cropRect.Left, cropRect.Top, 
+            SKRect source = new SKRect(cropRect.Left, cropRect.Top,
                                        cropRect.Right, cropRect.Bottom);
 
             using (SKCanvas canvas = new SKCanvas(croppedBitmap))
@@ -533,8 +519,6 @@ photoCropper = new PhotoCropperCanvasView(bitmap, 1.78f);
 
 トリミング四角形が、高解像度テレビの 16 ~ 9 の縦横比の特性に制限されていることがわかります。
 
-<a name="tile-division" />
-
 ## <a name="dividing-a-bitmap-into-tiles"></a>ビットマップをタイルに分割する
 
 Xamarin.Forms有名な14-15 パズルのバージョンは、XamagonXuzzle と[_共に Mobile Apps を作成_](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)する書籍の22章にあります。これは、 [**XamagonXuzzle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle)としてダウンロードできます。 ただし、自分の写真ライブラリのイメージに基づいてパズルを追加すると、より楽しいものになります (多くの場合、難しくなります)。
@@ -548,12 +532,12 @@ Xamarin.Forms有名な14-15 パズルのバージョンは、XamagonXuzzle と[_
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SkiaSharpFormsDemos.Bitmaps.PhotoPuzzlePage1"
              Title="Photo Puzzle">
-    
+
     <Button Text="Pick a photo from your library"
-            VerticalOptions="CenterAndExpand" 
+            VerticalOptions="CenterAndExpand"
             HorizontalOptions="CenterAndExpand"
             Clicked="OnPickButtonClicked"/>
-    
+
 </ContentPage>
 ```
 
@@ -587,7 +571,7 @@ public partial class PhotoPuzzlePage1 : ContentPage
 
 ライブラリから選択した写真は、写真ライブラリに表示されているようには向きませんが、回転または反転される可能性があります。 (これは、特に iOS デバイスの問題です)。そのため、では、 `PhotoPuzzlePage2` イメージを目的の向きに回転させることができます。 XAML ファイルには、 **90&#x00B0; Right** (時計回り)、 **90&#x00B0; Left** (反時計回り)、および**Done**というラベルが付いた3つのボタンが含まれています。
 
-分離コードファイルは、 **[SkiaSharp ビットマップの作成と描画に関する](drawing.md#rotating-bitmaps)** 記事に示されているビットマップ回転ロジックを実装します。 ユーザーは、90画像を時計回りまたは反時計回りに90度回転できます。 
+分離コードファイルは、 **[SkiaSharp ビットマップの作成と描画に関する](drawing.md#rotating-bitmaps)** 記事に示されているビットマップ回転ロジックを実装します。 ユーザーは、90画像を時計回りまたは反時計回りに90度回転できます。
 
 ```csharp
 public partial class PhotoPuzzlePage2 : ContentPage
@@ -763,7 +747,7 @@ imgSources[4 * row + col] = (SKBitmapImageSource)bitmap;
 
 [![写真パズル2](cropping-images/PhotoPuzzle2.png "写真パズル2")](cropping-images/PhotoPuzzle2-Large.png#lightbox)
 
-これで、正しい順序に戻すことができます。 空白の四角形と同じ行または列にあるタイルをタップすると、それらを空白の四角形に移動できます。 
+これで、正しい順序に戻すことができます。 空白の四角形と同じ行または列にあるタイルをタップすると、それらを空白の四角形に移動できます。
 
 ## <a name="related-links"></a>関連リンク
 

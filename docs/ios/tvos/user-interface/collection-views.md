@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: be0208accfdc287f93cf635a22c6409cd03483e9
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: aa03ab7a3663fa5e0704a605116b19147f14a10b
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030499"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572586"
 ---
 # <a name="working-with-tvos-collection-views-in-xamarin"></a>Xamarin での tvOS Collection ビューの使用
 
@@ -22,25 +22,25 @@ ms.locfileid: "73030499"
 
 コレクションビューでは、ユーザーの操作とコレクションの内容を提供するために、デリゲートとデータソースの両方を使用して項目のコレクションを保持します。 コレクションビューはビュー自体に依存しないレイアウトサブシステムに基づいているため、異なるレイアウトを指定すると、コレクションビューのデータの表示を即座に変更できます。
 
-<a name="About-Collection-Views" />
+<a name="About-Collection-Views"></a>
 
 ## <a name="about-collection-views"></a>コレクションビューについて
 
-前述のように、コレクションビュー (`UICollectionView`) は、順序付けられた項目のコレクションを管理し、カスタマイズ可能なレイアウトでそれらの項目を表示します。 コレクションビューは、テーブルビュー (`UITableView`) と同様に機能しますが、1つの列だけでなく、レイアウトを使用して項目を表示することもできます。
+既に説明したように、コレクションビュー () は、 `UICollectionView` 順序付けられた項目のコレクションを管理し、カスタマイズ可能なレイアウトでそれらの項目を表示します。 コレクションビューは、テーブルビュー () と同様に機能し `UITableView` ますが、1つの列だけでなく、レイアウトを使用して項目を表示することもできます。
 
-TvOS でコレクションビューを使用する場合、アプリは、データソース (`UICollectionViewDataSource`) を使用してコレクションに関連付けられたデータを提供する役割を担います。 コレクションビューデータは、必要に応じて、さまざまなグループ (セクション) に整理して表示できます。
+TvOS でコレクションビューを使用する場合、アプリは、データソース () を使用してコレクションに関連付けられたデータを提供する役割を担い `UICollectionViewDataSource` ます。 コレクションビューデータは、必要に応じて、さまざまなグループ (セクション) に整理して表示できます。
 
-コレクションビューは、コレクション (画像やタイトルなど) の特定の情報を表示するセル (`UICollectionViewCell`) を使用して、個々の項目を画面上に表示します。
+コレクションビューでは、オブジェクト () を使用して個々の項目が画面上に表示されます。このセルは、 `UICollectionViewCell` コレクションの特定の情報 (イメージやタイトルなど) を表示します。
 
 必要に応じて、補足ビューをコレクションビューのプレゼンテーションに追加して、セクションとセルのヘッダーとフッターとして機能させることができます。 コレクションビューのレイアウトでは、個々のセルと共にこれらのビューの配置を定義します。
 
-コレクションビューは、デリゲート (`UICollectionViewDelegate`) を使用したユーザーの操作に応答できます。 このデリゲートは、セルが強調表示されているかどうか、またはセルが選択されているかどうかを判断する役割も担います。 場合によっては、デリゲートが個々のセルのサイズを決定します。
+コレクションビューは、デリゲート () を使用したユーザーの操作に応答でき `UICollectionViewDelegate` ます。 このデリゲートは、セルが強調表示されているかどうか、またはセルが選択されているかどうかを判断する役割も担います。 場合によっては、デリゲートが個々のセルのサイズを決定します。
 
-<a name="Collection-View-Layouts" />
+<a name="Collection-View-Layouts"></a>
 
 ## <a name="collection-view-layouts"></a>コレクションビューのレイアウト
 
-コレクションビューの主な機能は、表示されているデータとそのレイアウトを分離することです。 コレクションビューのレイアウト (`UICollectionViewLayout`) は、コレクションビューの画面表示で、を使用して、組織とセルの場所 (およびすべての補助ビュー) を提供します。
+コレクションビューの主な機能は、表示されているデータとそのレイアウトを分離することです。 コレクションビューのレイアウト ( `UICollectionViewLayout` ) は、コレクションビューの画面表示で、を使用して、組織とセルの場所 (およびすべての補助ビュー) を提供します。
 
 個々のセルは、割り当てられたデータソースからコレクションビューによって作成され、指定されたコレクションビューのレイアウトによって並べ替えられて表示されます。
 
@@ -48,7 +48,7 @@ TvOS でコレクションビューを使用する場合、アプリは、デー
 
 コレクションビューレイアウトには、2つの異なるレイアウト間の遷移をアニメーション化するために使用できるいくつかのメソッドが用意されています (既定では、アニメーションは実行されません)。 また、コレクションビューのレイアウトでは、ジェスチャレコグナイザーを使用して、ユーザーの操作をさらにアニメーション化し、レイアウトを変更することができます。
 
-<a name="Creating-Cells-and-Supplementary-Views" />
+<a name="Creating-Cells-and-Supplementary-Views"></a>
 
 ## <a name="creating-cells-and-supplementary-views"></a>セルと補助ビューの作成
 
@@ -59,7 +59,7 @@ TvOS でコレクションビューを使用する場合、アプリは、デー
 - `DequeueReusableCell`-指定された型 (アプリのストーリーボードで指定) のセルを作成または返します。
 - `DequeueReusableSupplementaryView`-指定された種類の補助ビューを作成または返します (アプリのストーリーボードで指定)。
 
-これらのメソッドのいずれかを呼び出す前に、コレクションビューでセルのビューを作成するために使用されるクラス、ストーリーボード、または `.xib` ファイルを登録する必要があります。 (例:
+これらのメソッドのいずれかを呼び出す前に、 `.xib` コレクションビューでセルのビューを作成するために使用されるクラス、ストーリーボード、またはファイルを登録する必要があります。 次に例を示します。
 
 ```csharp
 public CityCollectionView (IntPtr handle) : base (handle)
@@ -70,23 +70,23 @@ public CityCollectionView (IntPtr handle) : base (handle)
 }
 ```
 
-ここで `typeof(CityCollectionViewCell)` はビューをサポートするクラスを提供し、`CityViewDatasource.CardCellId` はセル (またはビュー) がデキューされるときに使用される ID を提供します。
+ここ `typeof(CityCollectionViewCell)` で、はビューをサポートするクラスを提供し、 `CityViewDatasource.CardCellId` セル (またはビュー) がデキューされるときに使用される ID を提供します。
 
 セルをデキューした後、それが表すアイテムのデータを使用して構成し、表示するコレクションビューに戻ります。
 
-<a name="About-Collection-View-Controllers" />
+<a name="About-Collection-View-Controllers"></a>
 
 ## <a name="about-collection-view-controllers"></a>コレクションビューコントローラーについて
 
-コレクションビューコントローラー (`UICollectionViewController`) は、次の動作を提供する特殊なビューコントローラー (`UIViewController`) です。
+コレクションビューコントローラー ( `UICollectionViewController` ) は、次の動作を提供する特殊なビューコントローラー ( `UIViewController` ) です。
 
-- これは、ストーリーボードまたは `.xib` ファイルからコレクションビューを読み込んで、ビューをインスタンス化する役割を担います。 コードで作成された場合は、新しい未構成のコレクションビューが自動的に作成されます。
-- コレクションビューが読み込まれると、コントローラーはデータソースを読み込み、ストーリーボードまたは `.xib` ファイルからデリゲートします。 使用できるものがない場合は、その両方のソースとして設定されます。
+- これは、ストーリーボードまたはファイルからコレクションビューを読み込んで、ビューをインスタンス化する役割を担い `.xib` ます。 コードで作成された場合は、新しい未構成のコレクションビューが自動的に作成されます。
+- コレクションビューが読み込まれると、コントローラーは、そのデータソースを読み込み、ストーリーボードまたはファイルからデリゲートを試行し `.xib` ます。 使用できるものがない場合は、その両方のソースとして設定されます。
 - 最初に表示されたときにコレクションビューが設定される前にデータが読み込まれるようにし、後続の各表示に対して select を再読み込みしてクリアします。
 
-また、コレクションビューコントローラーには、`AwakeFromNib` や `ViewWillDisplay`などのコレクションビューのライフサイクルを管理するために使用できる、オーバーライド可能なメソッドが用意されています。
+また、コレクションビューコントローラーには、やなどのコレクションビューのライフサイクルを管理するために使用できる、オーバーライド可能なメソッドが用意されて `AwakeFromNib` `ViewWillDisplay` います。
 
-<a name="Collection-Views-and-Storyboards" />
+<a name="Collection-Views-and-Storyboards"></a>
 
 ## <a name="collection-views-and-storyboards"></a>コレクションビューとストーリーボード
 
@@ -94,20 +94,20 @@ TvOS アプリでコレクションビューを操作する最も簡単な方法
 
 次の手順を実行してみましょう。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 1. Visual Studio for Mac で新しい**単一ビュー TvOS アプリ**を開始します。
-1. **ソリューションエクスプローラー**で、`Main.storyboard` ファイルをダブルクリックして、iOS Designer で開きます。
+1. **ソリューションエクスプローラー**で、ファイルをダブルクリックして、 `Main.storyboard` iOS Designer で開きます。
 1. イメージビュー、ラベル、ボタンを既存のビューに追加し、次のように構成します。 
 
     [![](collection-views-images/collection02.png "Sample layout")](collection-views-images/collection02.png#lightbox)
-1. **[プロパティエクスプローラー]** の [**ウィジェット] タブ**で、イメージビューとラベルに**名前**を割り当てます。 (例: 
+1. [**プロパティエクスプローラー**] の [**ウィジェット] タブ**で、イメージビューとラベルに**名前**を割り当てます。 次に例を示します。 
 
     [![](collection-views-images/collection03.png "Setting the name")](collection-views-images/collection03.png#lightbox)
 1. 次に、コレクションビューコントローラーをストーリーボードにドラッグします。 
 
     [![](collection-views-images/collection04.png "A Collection View Controller")](collection-views-images/collection04.png#lightbox)
-1. コントロール-ボタンからコレクションビューコントローラーにドラッグし、ポップアップから **[プッシュ]** を選択します。 
+1. コントロール-ボタンからコレクションビューコントローラーにドラッグし、ポップアップから [**プッシュ**] を選択します。 
 
     [![](collection-views-images/collection05.png "Select Push from the popup")](collection-views-images/collection05.png#lightbox)
 1. アプリを実行すると、ユーザーがボタンをクリックするたびにコレクションビューが表示されるようになります。
@@ -115,78 +115,78 @@ TvOS アプリでコレクションビューを操作する最も簡単な方法
 
     [![](collection-views-images/collection06.png "The Properties Explorer")](collection-views-images/collection06.png#lightbox)
 1. これにより、個々のセルのサイズと、コレクションビューの外部境界との間の境界線を制御します。
-1. コレクションビューコントローラーを選択し、そのクラスを [**ウィジェット] タブ**で `CityCollectionViewController` に設定します。 
+1. コレクションビューコントローラーを選択し、[ `CityCollectionViewController` **ウィジェット] タブ**でクラスをに設定します。 
 
     [![](collection-views-images/collection07.png "Set the class to CityCollectionViewController")](collection-views-images/collection07.png#lightbox)
-1. コレクションビューを選択し、[**ウィジェット] タブ**でクラスを `CityCollectionView` に設定します。 
+1. コレクションビューを選択し、[ `CityCollectionView` **ウィジェット] タブ**でクラスをに設定します。 
 
     [![](collection-views-images/collection08.png "Set the class to CityCollectionView")](collection-views-images/collection08.png#lightbox)
-1. [コレクションビュー] セルを選択し、[**ウィジェット] タブ**でクラスを `CityCollectionViewCell` に設定します。 
+1. [コレクションビュー] セルを選択し、[ `CityCollectionViewCell` **ウィジェット] タブ**でクラスをに設定します。 
 
     [![](collection-views-images/collection09.png "Set the class to CityCollectionViewCell")](collection-views-images/collection09.png#lightbox)
-1. [**ウィジェット] タブ**で、**レイアウト**が `Flow` ことを確認し、コレクションビューの**スクロール方向**を `Vertical` ます。 
+1. [**ウィジェット] タブ**で、**レイアウト**がであること、 `Flow` およびコレクションビューの**スクロール方向**がであることを確認し `Vertical` ます。 
 
     [![](collection-views-images/collection10.png "The Widget Tab")](collection-views-images/collection10.png#lightbox)
-1. [コレクションビュー] セルを選択し、[**ウィジェット] タブ**で `CityCell` にその**id**を設定します。 
+1. [ **Identity** `CityCell` **ウィジェット] タブ**で、[コレクションビュー] セルを選択し、その id をに設定します。 
 
     [![](collection-views-images/collection11.png "Set the Identity to CityCell")](collection-views-images/collection11.png#lightbox)
 1. 変更内容を保存します。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. Visual Studio で新しい**単一ビュー TvOS アプリ**を開始します。
-1. **ソリューションエクスプローラー**で、`Main.storyboard` ファイルをダブルクリックして、iOS Designer で開きます。
+1. **ソリューションエクスプローラー**で、ファイルをダブルクリックして、 `Main.storyboard` iOS Designer で開きます。
 1. イメージビュー、ラベル、ボタンを既存のビューに追加し、次のように構成します。 
 
     [![](collection-views-images/collection02vs.png "Configure the layout")](collection-views-images/collection02vs.png#lightbox)
-1. **[プロパティエクスプローラー]** の [**ウィジェット] タブ**で、イメージビューとラベルに**名前**を割り当てます。 (例: 
+1. [**プロパティエクスプローラー**] の [**ウィジェット] タブ**で、イメージビューとラベルに**名前**を割り当てます。 次に例を示します。 
 
     [![](collection-views-images/collection03vs.png "The Properties Explorer")](collection-views-images/collection03vs.png#lightbox)
 1. 次に、コレクションビューコントローラーをストーリーボードにドラッグします。 
 
     [![](collection-views-images/collection04vs.png "A Collection View Controller")](collection-views-images/collection04vs.png#lightbox)
-1. コントロール-ボタンからコレクションビューコントローラーにドラッグし、ポップアップから **[プッシュ]** を選択します。 
+1. コントロール-ボタンからコレクションビューコントローラーにドラッグし、ポップアップから [**プッシュ**] を選択します。 
 
     [![](collection-views-images/collection05vs.png "Select Push from the popup")](collection-views-images/collection05vs.png#lightbox)
 1. アプリを実行すると、ユーザーがボタンをクリックするたびにコレクションビューが表示されるようになります。
 1. コレクションビューを選択し、**プロパティエクスプローラー**の [**レイアウト] タブ**で、**幅**を_361_ 、**高さ**を_256_として入力します。 
 1. これにより、個々のセルのサイズと、コレクションビューの外部境界との間の境界線を制御します。
-1. コレクションビューコントローラーを選択し、そのクラスを [**ウィジェット] タブ**で `CityCollectionViewController` に設定します。 
+1. コレクションビューコントローラーを選択し、[ `CityCollectionViewController` **ウィジェット] タブ**でクラスをに設定します。 
 
     [![](collection-views-images/collection07vs.png "Set the class to CityCollectionViewController")](collection-views-images/collection07vs.png#lightbox)
-1. コレクションビューを選択し、[**ウィジェット] タブ**でクラスを `CityCollectionView` に設定します。 
+1. コレクションビューを選択し、[ `CityCollectionView` **ウィジェット] タブ**でクラスをに設定します。 
 
     [![](collection-views-images/collection08vs.png "Set the class to CityCollectionView")](collection-views-images/collection08vs.png#lightbox)
-1. [コレクションビュー] セルを選択し、[**ウィジェット] タブ**でクラスを `CityCollectionViewCell` に設定します。 
+1. [コレクションビュー] セルを選択し、[ `CityCollectionViewCell` **ウィジェット] タブ**でクラスをに設定します。 
 
     [![](collection-views-images/collection09vs.png "Set the class to CityCollectionViewCell")](collection-views-images/collection09vs.png#lightbox)
-1. [**ウィジェット] タブ**で、**レイアウト**が `Flow` ことを確認し、コレクションビューの**スクロール方向**を `Vertical` ます。 
+1. [**ウィジェット] タブ**で、**レイアウト**がであること、 `Flow` およびコレクションビューの**スクロール方向**がであることを確認し `Vertical` ます。 
 
     [![](collection-views-images/collection10vs.png "Tthe Widget Tab")](collection-views-images/collection10vs.png#lightbox)
-1. [コレクションビュー] セルを選択し、[**ウィジェット] タブ**で `CityCell` にその**id**を設定します。 
+1. [ **Identity** `CityCell` **ウィジェット] タブ**で、[コレクションビュー] セルを選択し、その id をに設定します。 
 
     [![](collection-views-images/collection11vs.png "Set the Identity to CityCell")](collection-views-images/collection11vs.png#lightbox)
 1. 変更内容を保存します。
 
 -----
 
-コレクションビューの**レイアウト**に対して `Custom` を選択した場合は、カスタムレイアウトを指定することもできます。 Apple には、グリッドベースのレイアウトでデータを簡単に表示できる組み込みの `UICollectionViewFlowLayout` と `UICollectionViewDelegateFlowLayout` が用意されています (これらは `flow` レイアウトスタイルによって使用されます)。 
+`Custom`コレクションビューの**レイアウト**を選択した場合は、カスタムレイアウトを指定することもできます。 Apple には組み込みのが用意されて `UICollectionViewFlowLayout` おり、 `UICollectionViewDelegateFlowLayout` グリッドベースのレイアウトでデータを簡単に表示できます (レイアウトスタイルで使用され `flow` ます)。 
 
 ストーリーボードの操作の詳細については、「 [Hello, tvOS クイックスタートガイド](~/ios/tvos/get-started/hello-tvos.md)」を参照してください。
 
-<a name="Providing-Data-for-the-Collection-View" />
+<a name="Providing-Data-for-the-Collection-View"></a>
 
 ## <a name="providing-data-for-the-collection-view"></a>コレクションビューにデータを提供しています
 
 これで、コレクションビュー (およびコレクションビューコントローラー) がストーリーボードに追加されたので、コレクションのデータを指定する必要があります。 
 
-<a name="The-Data-Model" />
+<a name="The-Data-Model"></a>
 
 ### <a name="the-data-model"></a>データモデル
 
 まず、表示するイメージのファイル名、タイトル、および市区町村を選択できるようにするためのフラグを保持するデータのモデルを作成します。
 
-`CityInfo` クラスを作成し、次のようにします。
+クラスを作成 `CityInfo` し、次のようにします。
 
 ```csharp
 using System;
@@ -216,7 +216,7 @@ namespace tvCollection
 
 ### <a name="the-collection-view-cell"></a>コレクションビューセル
 
-次に、各セルにデータを表示する方法を定義する必要があります。 (ストーリーボードファイルから自動的に作成された) `CityCollectionViewCell.cs` ファイルを編集し、次のように表示します。
+次に、各セルにデータを表示する方法を定義する必要があります。 `CityCollectionViewCell.cs`(ストーリーボードファイルから自動的に作成された) ファイルを編集し、次のように表示します。
 
 ```csharp
 using System;
@@ -283,13 +283,13 @@ CityView.AdjustsImageWhenAncestorFocused = true;
 
 ナビゲーションとフォーカスの詳細については、「[ナビゲーションとフォーカス](~/ios/tvos/app-fundamentals/navigation-focus.md)、 [Siri リモートおよび Bluetooth コントローラー](~/ios/tvos/platform/remote-bluetooth.md)の操作」を参照してください。
 
-<a name="The-Collection-View-Data-Provider" />
+<a name="The-Collection-View-Data-Provider"></a>
 
 ### <a name="the-collection-view-data-provider"></a>コレクションビュー Data Provider
 
 データモデルを作成し、セルレイアウトを定義したので、コレクションビューのデータソースを作成しましょう。 データソースは、バッキングデータを提供するだけでなく、セルのキューを解除して個々のセルを画面上に表示することもできます。
 
-`CityViewDatasource` クラスを作成し、次のようにします。
+クラスを作成 `CityViewDatasource` し、次のようにします。
 
 ```csharp
 using System;
@@ -382,7 +382,7 @@ namespace tvCollection
 }
 ```
 
-このクラスを詳しく見てみましょう。 まず、`UICollectionViewDataSource` を継承し、(iOS デザイナーで割り当てた) セル ID へのショートカットを提供します。
+このクラスを詳しく見てみましょう。 まず、から継承 `UICollectionViewDataSource` し、セル ID (IOS デザイナーで割り当てたもの) へのショートカットを提供します。
 
 ```csharp
 public static NSString CardCellId = new NSString ("CityCell");
@@ -406,7 +406,7 @@ public void PopulateCities() {
 }
 ```
 
-次に、`NumberOfSections` メソッドをオーバーライドし、コレクションビューに含まれているセクション (項目のグループ) の数を返します。 この場合は、次の1つだけです。
+次に、メソッドをオーバーライド `NumberOfSections` し、コレクションビューに含まれているセクション (項目のグループ) の数を返します。 この場合は、次の1つだけです。
 
 ```csharp
 public override nint NumberOfSections (UICollectionView collectionView)
@@ -439,19 +439,19 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, N
 }
 ```
 
-`CityCollectionViewCell` 型のコレクションビューのセルを取得した後、指定した項目をそのセルに設定します。
+型のコレクションビューのセルを取得した後 `CityCollectionViewCell` 、指定した項目をそのセルに設定します。
 
-<a name="Responding-to-User-Events" />
+<a name="Responding-to-User-Events"></a>
 
 ## <a name="responding-to-user-events"></a>ユーザーイベントへの応答
 
 ユーザーはコレクションから項目を選択できるようにするため、この相互作用を処理するコレクションビューデリゲートを指定する必要があります。 また、ユーザーが選択した項目を呼び出し元のビューが認識できるようにする方法を提供する必要があります。
 
-<a name="The-App-Delegate" />
+<a name="The-App-Delegate"></a>
 
 ### <a name="the-app-delegate"></a>アプリのデリゲート
 
-現在選択されている項目をコレクションビューから呼び出し元のビューに関連付ける方法が必要です。 ここでは、`AppDelegate`のカスタムプロパティを使用します。 `AppDelegate.cs` ファイルを編集し、次のコードを追加します。
+現在選択されている項目をコレクションビューから呼び出し元のビューに関連付ける方法が必要です。 ここでは、カスタムプロパティを使用し `AppDelegate` ます。 ファイルを編集 `AppDelegate.cs` し、次のコードを追加します。
 
 ```csharp
 public CityInfo SelectedCity { get; set;} = new CityInfo("City02.jpg", "Turning Circle", true);
@@ -459,7 +459,7 @@ public CityInfo SelectedCity { get; set;} = new CityInfo("City02.jpg", "Turning 
 
 これは、プロパティを定義し、最初に表示される既定の都市を設定します。 後で、このプロパティを使用してユーザーの選択を表示し、選択を変更できるようにします。
 
-<a name="The-Collection-View-Delegate" />
+<a name="The-Collection-View-Delegate"></a>
 
 ### <a name="the-collection-view-delegate"></a>コレクションビューデリゲート
 
@@ -517,7 +517,7 @@ namespace tvCollection
 }
 ```
 
-このクラスについて詳しく見ていきましょう。 まず、`UICollectionViewDelegateFlowLayout`から継承します。 `UICollectionViewDelegate` ではなく、このクラスから継承する理由は、組み込みの `UICollectionViewFlowLayout` を使用して、カスタムレイアウトの種類ではなく、項目を表示するためです。
+このクラスについて詳しく見ていきましょう。 まず、から継承 `UICollectionViewDelegateFlowLayout` します。 ではなく、このクラスから継承する理由は、 `UICollectionViewDelegate` 組み込みのを使用して、 `UICollectionViewFlowLayout` カスタムレイアウトの種類ではなく項目を表示するためです。
 
 次に、このコードを使用して個々の項目のサイズを返します。
 
@@ -542,7 +542,7 @@ public override bool CanFocusItem (UICollectionView collectionView, NSIndexPath 
 }
 ```
 
-バッキングデータの特定の部分の `CanSelect` フラグが `true` に設定されているかどうかを確認し、その値を返します。 ナビゲーションとフォーカスの詳細については、「[ナビゲーションとフォーカス](~/ios/tvos/app-fundamentals/navigation-focus.md)、 [Siri リモートおよび Bluetooth コントローラー](~/ios/tvos/platform/remote-bluetooth.md)の操作」を参照してください。
+バッキングデータの特定の部分のフラグがに設定されているかどうかを確認 `CanSelect` `true` し、その値を返します。 ナビゲーションとフォーカスの詳細については、「[ナビゲーションとフォーカス](~/ios/tvos/app-fundamentals/navigation-focus.md)、 [Siri リモートおよび Bluetooth コントローラー](~/ios/tvos/platform/remote-bluetooth.md)の操作」を参照してください。
 
 最後に、次のコードを使用して項目を選択するユーザーに応答します。
 
@@ -557,13 +557,13 @@ public override void ItemSelected (UICollectionView collectionView, NSIndexPath 
 }
 ```
 
-ここでは、`AppDelegate` の [`SelectedCity`] プロパティをユーザーが選択した項目に設定し、コレクションビューコントローラーを閉じて、us という名前のビューに戻ります。 コレクションビューの `ParentController` プロパティはまだ定義されていませんが、次のようにします。
+ここでは、 `SelectedCity` `AppDelegate` ユーザーが選択した項目にのプロパティを設定し、コレクションビューコントローラーを閉じて、us という名前のビューに戻ります。 `ParentController`コレクションビューのプロパティはまだ定義されていませんが、次のようにします。
 
-<a name="Configuring-the-Collection-View" />
+<a name="Configuring-the-Collection-View"></a>
 
 ## <a name="configuring-the-collection-view"></a>コレクションビューの構成
 
-ここで、コレクションビューを編集し、データソースとデリゲートを割り当てる必要があります。 (ストーリーボードから自動的に作成された) `CityCollectionView.cs` ファイルを編集し、次のように表示します。
+ここで、コレクションビューを編集し、データソースとデリゲートを割り当てる必要があります。 `CityCollectionView.cs`(ストーリーボードから自動的に作成された) ファイルを編集し、次のように表示します。
 
 ```csharp
 using System;
@@ -625,7 +625,7 @@ namespace tvCollection
 }
 ```
 
-まず、`AppDelegate`にアクセスするためのショートカットを提供します。 
+まず、にアクセスするためのショートカットが用意されてい `AppDelegate` ます。 
 
 ```csharp
 public static AppDelegate App {
@@ -682,7 +682,7 @@ public override void DidUpdateFocus (UIFocusUpdateContext context, UIFocusAnimat
 
 次に、コレクションビューの最後の構成を行い、ユーザーが選択した後にコレクションビューを閉じることができるように定義したプロパティをコントローラーが設定できるようにする必要があります。
 
-(ストーリーボードから自動的に作成された) `CityCollectionViewController.cs` ファイルを編集し、次のように表示します。
+`CityCollectionViewController.cs`(ストーリーボードから自動的に作成された) ファイルを編集し、次のように表示します。
 
 ```csharp
 // This file has been autogenerated from a class added in the UI designer.
@@ -726,7 +726,7 @@ namespace tvCollection
 
 すべてのパーツをまとめて、コレクションビューを設定し、制御します。次に、すべてをまとめて表示するために、メインビューに対して最後の編集を行う必要があります。
 
-(ストーリーボードから自動的に作成された) `ViewController.cs` ファイルを編集し、次のように表示します。
+`ViewController.cs`(ストーリーボードから自動的に作成された) ファイルを編集し、次のように表示します。
 
 ```csharp
 using System;
@@ -777,7 +777,7 @@ namespace MySingleView
 }
 ```
 
-次のコードでは、最初に `AppDelegate` の [`SelectedCity`] プロパティから選択した項目を表示し、ユーザーがコレクションビューから選択したときに再表示します。
+次のコードは、最初にのプロパティから選択された項目を表示 `SelectedCity` `AppDelegate` し、ユーザーがコレクションビューから選択したときに再表示します。
 
 ```csharp
 public override void ViewWillAppear (bool animated)
@@ -791,7 +791,7 @@ public override void ViewWillAppear (bool animated)
 }
 ```
 
-<a name="Testing-the-app" />
+<a name="Testing-the-app"></a>
 
 ## <a name="testing-the-app"></a>アプリのテスト
 
@@ -803,13 +803,13 @@ public override void ViewWillAppear (bool animated)
 
 [![](collection-views-images/run02.png "The collection view")](collection-views-images/run02.png#lightbox)
 
-`CanSelect` プロパティが `false` に設定されているすべての都市が淡色表示され、ユーザーはフォーカスを設定することはできません。 ユーザーが項目を強調表示する (フォーカスを設定する) と、タイトルが表示され、視差効果を使用して3D で画像をはらみ傾けることができます。
+プロパティがに設定されているすべての都市 `CanSelect` `false` が淡色表示され、ユーザーはフォーカスを設定できなくなります。 ユーザーが項目を強調表示する (フォーカスを設定する) と、タイトルが表示され、視差効果を使用して3D で画像をはらみ傾けることができます。
 
 ユーザーが選択したイメージをクリックすると、コレクションビューが閉じられ、メインビューが新しいイメージと共に再表示されます。
 
 [![](collection-views-images/run03.png "A new image on the home screen")](collection-views-images/run03.png#lightbox)
 
-<a name="Creating-Custom-Layout-and-Reordering-Items" />
+<a name="Creating-Custom-Layout-and-Reordering-Items"></a>
 
 ## <a name="creating-custom-layout-and-reordering-items"></a>カスタムレイアウトの作成と項目の並べ替え
 
@@ -817,7 +817,7 @@ public override void ViewWillAppear (bool animated)
 
 IOS 9 のコレクションビューに最近追加されたのは、コレクション内の項目の並べ替えを簡単に許可することでした。 ここでも、tvOS 9 は iOS 9 のサブセットであるため、同じように実行されます。 詳細については、[コレクションビューの変更](~/ios/user-interface/controls/uicollectionview.md)に関するドキュメントを参照してください。
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>まとめ
 

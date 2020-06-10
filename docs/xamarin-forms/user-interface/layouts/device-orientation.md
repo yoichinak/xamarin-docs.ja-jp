@@ -9,8 +9,6 @@ ms. 製品: xamarin ms. assetid: 11A1D327-2DF3-4F3B-810D-6C95B71D27B2: xamarin-f
 
 アプリケーションを使用する方法と、ユーザーエクスペリエンスを向上させるためにランドスケープの向きを組み込む方法を検討することが重要です。 個々のレイアウトは、複数の向きに対応し、使用可能な領域を最適に使用するように設計できます。 アプリケーションレベルでは、ローテーションを無効または有効にすることができます。
 
-<a name="Controlling_Orientation" />
-
 ## <a name="controlling-orientation"></a>向きの制御
 
 を使用する場合 Xamarin.Forms 、デバイスの向きを制御する方法として、個々のプロジェクトごとに設定を使用することをお勧めします。
@@ -74,8 +72,6 @@ Xamarin Android では、方向を指定するためのオプションがいく�
 
 ユニバーサル Windows プラットフォーム (UWP) では、サポートされる向きは**package.appxmanifest**ファイルで設定されます。 マニフェストを開くと、サポートされている向きを選択できる構成パネルが表示されます。
 
-<a name="Reacting_to_Changes_in_Orientation" />
-
 ## <a name="reacting-to-changes-in-orientation"></a>向きの変化への対応
 
 Xamarin.Formsでは、共有コードの向きの変更をアプリに通知するためのネイティブイベントは提供されません。 ただし、に [Xamarin.Essentials](~/essentials/index.md) は、 `DeviceDisplay` 向きの変更の通知を提供する [] クラスが含まれています。
@@ -120,8 +116,6 @@ protected override void OnSizeAllocated(double width, double height)
 ![](device-orientation-images/calculator-landscape.png "Calculator Application in Landscape")
 
 アプリでは、横長に機能を追加することで、使用可能な領域を活用できます。
-
-<a name="Responsive_Layout" />
 
 ## <a name="responsive-layout"></a>応答性の高いレイアウト
 

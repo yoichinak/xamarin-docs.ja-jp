@@ -7,24 +7,24 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 9a9dbb63b78b00a9bcac9d7833530da02890afc6
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 1d1e40de646362e9b573ad7040ab08ba6d01d6e8
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73017299"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571611"
 ---
 # <a name="xamarinmac-extension-support"></a>Xamarin.Mac 拡張機能のサポート
 
-2\.10 Xamarin では、複数の macOS 拡張ポイントにサポートが追加されました。
+2.10 Xamarin では、複数の macOS 拡張ポイントにサポートが追加されました。
 
 - 周り
 - 共有
-- 今日
+- 現在
 
-<a name="Limitations-and-Known-Issues" />
+<a name="Limitations-and-Known-Issues"></a>
 
-## <a name="limitations-and-known-issues"></a>制限事項と既知の問題
+## <a name="limitations-and-known-issues"></a>制限と既知の問題
 
 次に、Xamarin. Mac で拡張機能を開発するときに発生する可能性がある制限事項と既知の問題について説明します。
 
@@ -32,21 +32,21 @@ ms.locfileid: "73017299"
 - 拡張機能は、ホストアプリケーションに含まれている必要があります。これは、システムに登録して一度実行する場合に使用します。 その後、**システム環境設定**の**拡張**セクションで有効にする必要があります。 
 - 拡張機能のクラッシュによっては、ホストアプリケーションが不安定になり、予期しない動作が発生することがあります。 特に、**通知センター**の**Finder**と**今日**のセクションが "詰まっている" 状態になり、応答しなくなる場合があります。 これは、Xcode の拡張プロジェクトでも経験があり、現在は Xamarin. Mac とは無関係に表示されます。 多くの場合、これはシステムログに表示されることがあります (**コンソール**で、詳細については「ヒント」を参照してください)。繰り返しのエラーメッセージを出力します。 MacOS を再起動すると、この問題が解決します。
 
-<a name="Tips" />
+<a name="Tips"></a>
 
 ## <a name="tips"></a>ヒント
 
 次のヒントは、Xamarin. Mac で拡張機能を使用する場合に役立ちます。
 
-- 現在、Xamarin. Mac では拡張機能のデバッグがサポートされていないため、デバッグエクスペリエンスは主に実行と `printf` のようなステートメントに依存します。 ただし、拡張機能はサンドボックスプロセスで実行されるため、`Console.WriteLine` は他の Xamarin. Mac アプリケーションと同様に動作しません。 [`NSLog` を直接](https://gist.github.com/chamons/e2e409013a449cfbe1f2fbe5547f6554)呼び出すと、デバッグメッセージがシステムログに出力されます。
-- キャッチされていない例外が発生すると、拡張プロセスがクラッシュし、**システムログ**に表示される情報の量がわずかになります。 再スローする前に `NSLog` する `try/catch` (例外) ブロックで、厄介なコードをラップすることが役に立つ場合があります。
-- **システムログ**には、**コンソール**アプリの [**アプリケーション** > **ユーティリティ**] からアクセスできます。
+- 現在、Xamarin. Mac では拡張機能のデバッグがサポートされていないため、デバッグエクスペリエンスは主に実行や like ステートメントに依存します `printf` 。 ただし、拡張機能はサンドボックスプロセスで実行 `Console.WriteLine` されるため、他の Xamarin. Mac アプリケーションと同様に動作しません。 を[ `NSLog` 直接](https://gist.github.com/chamons/e2e409013a449cfbe1f2fbe5547f6554)呼び出すと、デバッグメッセージがシステムログに出力されます。
+- キャッチされていない例外が発生すると、拡張プロセスがクラッシュし、**システムログ**に表示される情報の量がわずかになります。 (例外) ブロックで厄介なコードをラップすることは、 `try/catch` `NSLog` 再スローの前に役に立つ可能性があります。
+- **システムログ**には、**コンソール**アプリの [**アプリケーション**ユーティリティ] からアクセスでき  >  **Utilities**ます。
 
     [![](extensions-images/extension02.png "The system log")](extensions-images/extension02.png#lightbox)
 - 前述のように、拡張機能ホストアプリケーションを実行すると、システムに登録されます。 登録を解除してアプリケーションバンドルを削除しています。 
-- アプリの拡張機能の "存在しない" バージョンが登録されている場合は、次のコマンドを使用して検索します (削除することもできます)。 `plugin kit -mv`
+- アプリの拡張機能の "存在しない" バージョンが登録されている場合は、次のコマンドを使用してそれらを見つけます (削除することもできます)。`plugin kit -mv`
 
-<a name="Walkthrough-and-Sample-App" />
+<a name="Walkthrough-and-Sample-App"></a>
 
 ## <a name="walkthrough-and-sample-app"></a>チュートリアルとサンプルアプリ
 
@@ -54,7 +54,7 @@ ms.locfileid: "73017299"
 
 各拡張機能の種類の小規模で実用的なサンプルを含む Xamarin. Mac プロジェクトの例については、[こちら](https://docs.microsoft.com/samples/xamarin/mac-samples/extensionsamples)を参照してください。
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>まとめ
 

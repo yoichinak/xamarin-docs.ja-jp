@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: c049fb0bd05749db30d99603fb9179e710f815f7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: cbbf8194505e9caa09587471020026d495f9f99b
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028354"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84569703"
 ---
 # <a name="testing-on-apple-watch-devices"></a>Apple Watch デバイスでのテスト
 
@@ -22,11 +22,11 @@ ms.locfileid: "73028354"
 - [開発プロビジョニングプロファイルを作成](#profiles)し、
 - Apple Watch に[配置してテスト](#testing)します。
 
-<a name="devices" />
+<a name="devices"></a>
 
 ## <a name="devices"></a>デバイス
 
-実際の iPhone または iPad で iOS アプリをテストするには、常にデベロッパーセンターにデバイスを登録する必要があります。 デバイスの一覧は次のようになります (新しいデバイスを追加するには、プラス記号 **+** をクリックします)。
+実際の iPhone または iPad で iOS アプリをテストするには、常にデベロッパーセンターにデバイスを登録する必要があります。 デバイスの一覧は次のよう **+** になります (新しいデバイスを追加するには、プラス記号をクリックします)。
 
 ![](device-images/devices-sml.png "The device list looks like this")
 
@@ -44,7 +44,7 @@ ms.locfileid: "73028354"
 
 既存のプロビジョニングプロファイルを編集してダウンロードして再インストールするかどうかを忘れないでください。
 
-<a name="profiles" />
+<a name="profiles"></a>
 
 ## <a name="development-provisioning-profiles"></a>開発プロビジョニングプロファイル
 
@@ -58,13 +58,13 @@ ms.locfileid: "73028354"
 
 ![](device-images/provisioningprofiles.png "The available Development Provisioning Profiles")
 
-**プロジェクトオプション**でプロビジョニングプロファイルを確認するには、 **[ビルド > iOS バンドル署名]** 画面を選択し、 **[Release]** または **[Debug iPhone]** 構成を選択します。
+**プロジェクトオプション**でプロビジョニングプロファイルを確認するには、[**ビルド > iOS バンドル署名**] 画面を選択し、[ **Release** ] または [ **Debug iPhone** ] 構成を選択します。
 
-**[プロビジョニングプロファイル]** の一覧には、一致するすべてのプロファイルが表示されます。このドロップダウンリストで作成した一致するプロファイルが表示されます。
+[**プロビジョニングプロファイル**] の一覧には、一致するすべてのプロファイルが表示されます。このドロップダウンリストで作成した一致するプロファイルが表示されます。
 
 ![](device-images/options-selectprofile.png "The Provisioning Profile list")
 
-<a name="testing" />
+<a name="testing"></a>
 
 ## <a name="testing-on-a-watch-device"></a>監視デバイスでのテスト
 
@@ -76,9 +76,9 @@ ms.locfileid: "73028354"
 
 3. [ターゲット] ボックスの一覧で、接続されている iPhone デバイスが選択されていることを確認します。
 
-4. (ウォッチまたは拡張機能ではなく) iOS アプリプロジェクトを右クリックし、 **[スタートアッププロジェクトに設定]** を選択します。
+4. (ウォッチまたは拡張機能ではなく) iOS アプリプロジェクトを右クリックし、[**スタートアッププロジェクトに設定**] を選択します。
 
-5. **[実行]** ボタンをクリックします (または、 **[実行]** メニューの **[開始]** オプションを選択します)。
+5. [**実行**] ボタンをクリックします (または、[**実行**] メニューの [**開始**] オプションを選択します)。
 
 6. ソリューションがビルドされ、iOS アプリが iPhone にデプロイされます。
   IOS アプリまたは watch 拡張機能のプロビジョニングが正しく設定されていない場合、iPhone への展開は失敗します。
@@ -120,7 +120,7 @@ Invalid executable/Application Verification Failed
 
 - テストに使用されている開発プロビジョニングプロファイルに、監視デバイスが含まれていませんでした。または、監視がプロビジョニングプロファイルに追加された後、再ダウンロードされて再インストールされませんでした。 指示に従って、[プロビジョニングプロファイルを正しく構成](#profiles)します。
 
-- **IOS デバイスログ**に `The system version is lower than the minimum OS version specified for bundle...Have 8.2; need 8.3` が含まれている場合、Watch アプリの**MinimumOSVersion**の**値が正しく**ありません。
+- **IOS デバイスログ**に含まれている場合、 `The system version is lower than the minimum OS version specified for bundle...Have 8.2; need 8.3` ウォッチアプリの**MinimumOSVersion**の値が間違っ**てい**ます。
   これは**8.2**である必要があります。 Xcode 6.3 がインストールされている場合は、挿入するソースを手動で編集して8.2 に設定する必要がある場合があります。
 
 - Watch アプリの**権利**(アプリグループなど) が正しく設定されていません。
@@ -139,7 +139,7 @@ SPErrorGizmoInstallNeverFinishedErrorMessage
 
 ### <a name="waiting-for-debugger-to-connect"></a>"デバッガーが接続するのを待機しています"
 
-**[アプリケーション出力]** ウィンドウにスタックが表示されない場合
+[**アプリケーション出力**] ウィンドウにスタックが表示されない場合
 
 ```csharp
 waiting for debugger to connect

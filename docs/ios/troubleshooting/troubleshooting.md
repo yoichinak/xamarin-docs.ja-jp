@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/22/2018
-ms.openlocfilehash: 716999002cf90b50b90f4924adc11555cc43717f
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 6368c3a4b128c06687b23b965b308ad6a788188b
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306093"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574488"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Xamarin のトラブルシューティングのヒント
 
@@ -45,7 +45,7 @@ Visual Studio for Mac と Visual Studio の Xamarin Designer for iOS の導入�
 
 このメンバーはリンカーによって削除される可能性があるため、実行時にアセンブリに存在しません。  これには、次のようないくつかのソリューションがあります。
 
-- [`[Preserve]`](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.Foundation.PreserveAttribute)属性をメンバーに追加します。  これにより、リンカーによる削除が防止されます。
+- [`[Preserve]`](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.Foundation.PreserveAttribute)メンバーに属性を追加します。  これにより、リンカーによる削除が防止されます。
 - [**Mtouch**](http://www.go-mono.com/docs/index.aspx?link=man:mtouch%281%29)を呼び出すときは、 **-nolink**オプションまたは **-linksdkonly**オプションを使用します。
   - **-nolink は、すべての**リンクを無効にします。
   - **-linksdkonly**では、ユーザーが作成したアセンブリ (つまり、アプリプロジェクト) 内のすべての種類を**保持しながら**、xamarin などの ios 提供のアセンブリのみをリンクします。
@@ -72,7 +72,7 @@ TypeName XXXX {
 }
 ```
 
-上記の定義は、`NAME_OF_YOUR_XIB_FILE.designer.xib.cs` ファイルで Visual Studio for Mac に追加するすべての XIB ファイルについて、Visual Studio for Mac によって自動的に生成されます。
+上記の定義は、ファイルで Visual Studio for Mac に追加するすべての XIB ファイルの Visual Studio for Mac によって自動的に生成され `NAME_OF_YOUR_XIB_FILE.designer.xib.cs` ます。
 
 また、上記のコードを含む型は、 [NSObject](xref:Foundation.NSObject)のサブクラスである必要があります。  含んでいる型が名前空間内にある場合は、名前空間を持たない型名を提供する[[Register]](xref:Foundation.RegisterAttribute)属性も必要になります (Interface Builder は型の名前空間をサポートしていません)。
 
@@ -88,7 +88,7 @@ namespace Samples.GLPaint {
 
 ## <a name="unknown-class-xxxx-in-interface-builder-file"></a>Interface Builder ファイルに不明なクラス XXXX があります
 
-このエラーは、インターフェイスビルダーファイルでクラスを定義した場合に生成されますが、実際のC#コードでの実装は提供しません。
+このエラーは、インターフェイスビルダーファイルでクラスを定義しても、C# コードでそのクラスの実際の実装を提供していない場合に生成されます。
 
 次のようなコードを追加する必要があります。
 
@@ -110,19 +110,19 @@ IntPtr ハンドルを持つコンストラクターは、マネージオブジ�
 public Bar (IntPtr handle) : base (handle) { }
 ```
 
-## <a name="type-foo--does-not-contain-a-definition-for-getnativefield-and-no-extension-method-getnativefield-of-type-foo-could-be-found"></a>型 {Foo} には `GetNativeField` の定義が含まれていません。型 {Foo} の拡張メソッド `GetNativeField` が見つかりませんでした
+## <a name="type-foo--does-not-contain-a-definition-for-getnativefield-and-no-extension-method-getnativefield-of-type-foo-could-be-found"></a>型 {Foo} にの定義が含まれ `GetNativeField` ておらず、 `GetNativeField` 型 {foo} の拡張メソッドが見つかりませんでした
 
 デザイナーで生成されたファイル (*. xib.designer.cs) でこのエラーが発生した場合は、次の2つのいずれかを意味します。
 
  **1) 部分クラスまたは基底クラスがありません**
 
-デザイナーによって生成される部分クラスには、`NSObject`の一部のサブクラスから継承されるユーザーコード (多くの場合 `UIViewController`) の対応する部分クラスが必要です。 エラーが発生している型のクラスがあることを確認します。
+デザイナーによって生成される部分クラスは、のサブクラスから継承されるユーザーコード内の対応する部分クラスを持つ必要があり `NSObject` `UIViewController` ます。 エラーが発生している型のクラスがあることを確認します。
 
  **2) 既定の名前空間が変更されました**
 
 デザイナーファイルは、プロジェクトの既定の名前空間設定を使用して生成されます。 これらの設定を変更した場合、またはプロジェクトの名前を変更した場合、生成された部分クラスは、ユーザーコードに対応する名前空間と同じでなくてもかまいません。
 
-名前空間の設定は、[プロジェクトオプション] ダイアログボックスで確認できます。 既定の名前空間は、 **[General-> のメイン設定**] セクションにあります。 空白の場合は、プロジェクトの名前が既定値として使用されます。 詳細な名前空間の設定については、「**ソースコード-> .net の名前付けポリシー** 」セクションを参照してください。
+名前空間の設定は、[プロジェクトオプション] ダイアログボックスで確認できます。 既定の名前空間は、 **[General->のメイン設定**] セクションにあります。 空白の場合は、プロジェクトの名前が既定値として使用されます。 詳細な名前空間の設定については、「**ソースコード-> .net の名前付けポリシー** 」セクションを参照してください。
 
 ## <a name="warning-for-actions-the-private-method-foo-is-never-used-cs0169"></a>アクションの警告: プライベートメソッド ' Foo ' は使用されません。 CS0169
 
@@ -142,11 +142,11 @@ public Bar (IntPtr handle) : base (handle) { }
 1. Mac OS X Leopard を使用する (10.5)
 1. シミュレーター内でアプリを実行します。
 
-問題は、Mono がリストで iphonesimulator の `libsqlite3.dylib` ファイルではなく、OS X `libsqlite3.dylib`を選択していることです。 アプリ*は*デバイスで動作しますが、シミュレーターでは動作しません。
+問題は、Mono が `libsqlite3.dylib` リストで iphonesimulator のファイルではなく OS X を選択していることです `libsqlite3.dylib` 。 アプリ*は*デバイスで動作しますが、シミュレーターでは動作しません。
 
 ## <a name="deploy-to-device-fails-with-systemexception-amdeviceinstallapplication-returned-3892346901"></a>デバイスへの配置がシステムで失敗します。例外: AMDeviceInstallApplication から3892346901が返されました
 
-このエラーは、証明書/バンドル id のコード署名構成が、デバイスにインストールされているプロビジョニングプロファイルと一致しないことを意味します。  確認する、適切な証明書があるプロジェクトのオプションで選択されているバンドル署名 、iPhone]-> [し、プロジェクトのオプションで指定された正しいバンドル id が iPhone アプリケーション ->
+このエラーは、証明書/バンドル id のコード署名構成が、デバイスにインストールされているプロビジョニングプロファイルと一致しないことを意味します。  [プロジェクトオプション->iPhone バンドル署名] で適切な証明書が選択されていること、および [プロジェクトオプション->iPhone アプリケーション] で指定されている正しいバンドル id があることを確認します。
 
 ## <a name="code-completion-is-not-working-in-visual-studio-for-mac"></a>コード補完が Visual Studio for Mac で機能していません
 
@@ -188,7 +188,7 @@ Stacktrace:
 
 ## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1get_count-"></a>System.executionengineexception: JIT コンパイルメソッド (ラッパーマネージ-マネージ) Foo []: system.string ' 1. get_Count () を試行しています
 
-[] サフィックスは、ユーザーまたはクラスライブラリが、IEnumerable < >、ICollection < > や IList < > などのジェネリックコレクションを通じて配列に対してメソッドを呼び出すことを示します。 回避策として、自分でメソッドを呼び出し、例外をトリガーした呼び出しの前にこのコードが実行されるように、AOT コンパイラに明示的に強制することができます。 この場合は、次のように記述できます。
+[] サフィックスは、ユーザーまたはクラスライブラリが、IEnumerable<>、ICollection<> 、IList<> などのジェネリックコレクションを通じて配列に対してメソッドを呼び出すことを示します。 回避策として、自分でメソッドを呼び出し、例外をトリガーした呼び出しの前にこのコードが実行されるように、AOT コンパイラに明示的に強制することができます。 この場合は、次のように記述できます。
 
 ```csharp
 Foo [] array = null;
@@ -227,7 +227,7 @@ Mono と Xamarin の両方が動作します。 iPhone シミュレーターを�
 
 IPhone シミュレーターを終了し、インストールを再試行してください。
 
-<a name="trampolines" />
+<a name="trampolines"></a>
 
 ## <a name="ran-out-of-trampolines-of-type-0"></a>型0の trampolines が不足しています
 
@@ -287,7 +287,7 @@ Visual Studio for Mac 2.2 には、コンマを含む配布証明書を検出し
 ## <a name="error-mtouch-failed-with-no-output"></a>エラー "mtouch は出力されませんでした"
 
 Xamarin. iOS と Visual Studio for Mac の現在のリリースは、プロジェクト名またはソリューションまたはプロジェクトに格納されているディレクトリにスペースが含まれていると失敗します。
-解決するには、次の操作を行います。
+この問題を解決するには:
 
 - プロジェクトまたは格納されているディレクトリにスペースが含まれていないことを確認してください。
 - プロジェクトの [メイン設定] で、プロジェクト名にスペースが含まれていないことを確認します。
@@ -353,16 +353,16 @@ actionSheet.Clicked += delegate (sender, args){
 
 IPhone SDK 4.0 インストーラーでは、2つの Sdk (iPad 専用アプリを構築するための 3.2 SDK) と、iPhone とユニバーサルアプリの構築に使用される 4.0 SDK がインストールされます。 また、iPad だけをシミュレートする3.2 シミュレーターと、iPhone または iPhone 4 をシミュレートする4.0 シミュレーターもインストールされます。 以前の Sdk とシミュレーターはすべて削除されます。
 
-Visual Studio for Mac iPhone プロジェクトのビルドオプションには、アプリのビルドに使用される SDK バージョンの設定が含まれています。 この設定は **、[プロジェクトオプション-> ビルド-> IPhone ビルド]** にあります。
+Visual Studio for Mac iPhone プロジェクトのビルドオプションには、アプリのビルドに使用される SDK バージョンの設定が含まれています。 この設定は **、[プロジェクトオプション->ビルド->IPhone ビルド]** にあります。
 
 Visual Studio for Mac の新しいプロジェクトは、既定の SDK 設定として最も古いインストールされた SDK を使用します。指定された SDK が存在しない場合、Visual Studio for Mac はアプリをビルドするのに最も近い場所を使用します。 これは、プロジェクトが常に最新の SDK を必要としないようにするためです。 ただし、現在は 3.2 SDK が使用されているため、iPad シミュレーターが使用されています。
 
-4\.0 SDK を使用してこれを修正するには、ドロップダウンボックスを使用して、[**プロジェクトオプション-> ビルド-> IPhone ビルド**>] に移動し、SDK 値を "4.0" に変更します。 この操作は、構成とプラットフォームの組み合わせごとに実行する必要があります。これは、パネルの上部にあるドロップダウンを使用してアクセスします。
+4.0 SDK を使用してこれを修正するには、ドロップダウンボックスを使用して、[**プロジェクトオプション->ビルド->IPhone ビルド**>] に移動し、SDK 値を "4.0" に変更します。 この操作は、構成とプラットフォームの組み合わせごとに実行する必要があります。これは、パネルの上部にあるドロップダウンを使用してアクセスします。
 
 SDK のバージョンは、[OS の最小バージョン] 設定と混同しないようにしてください。
-この値は、SDK バージョンの値と一致する必要はありません。以前の OS に存在する Api のみを使用している限り、またはランタイム OS バージョンチェックを使用して新しい機能の使用をガードしている限り、アプリがインストールされる OS の最小バージョンに影響します。ks. アプリをテストする最も古い OS バージョンに設定する必要があります。
+この値は、SDK バージョンの値と一致する必要はありません。以前の OS に存在する Api のみを使用している限り、またはランタイム OS のバージョンチェックを使用して新しい機能の使用を防止するために、アプリがインストールされる OS の最小バージョンに影響します。 アプリをテストする最も古い OS バージョンに設定する必要があります。
 
-また、プロジェクト **> IPhone シミュレーターターゲット**> メニューを使用して、プロジェクトの実行時またはデバッグ時に既定で使用されるシミュレーターを選択できます。 また、[>**で実行 >** 実行] メニューを使用して、実行する特定のシミュレーターを選択できます。
+また、プロジェクト **>IPhone シミュレーターターゲット**> メニューを使用して、プロジェクトの実行時またはデバッグ時に既定で使用されるシミュレーターを選択できます。 また、[>**で実行 >** 実行] メニューを使用して、実行する特定のシミュレーターを選択できます。
 
 ## <a name="ibtool-returns-error-133"></a>ibtool によってエラー133が返される
 
@@ -400,16 +400,16 @@ Interface Builder を使用する場合は、Apple の web サイトから入手
 
 これは、環境変数が正しく設定されていない場合に xib ファイルを開こうとすると発生します。 これは、Visual Studio for Mac/Xamarin. iOS の通常の使用時には発生しません。また、アプリケーションから Visual Studio for Mac を再起動すると、問題を解決する必要があります。
 
-ソフトウェアを更新しようとして、このエラーメッセージが表示された場合は、電子メール *support@xamarin.com*
+ソフトウェアを更新しようとしたときに、このエラーメッセージが表示された場合は、電子メールを送信してください*support@xamarin.com*
 
 ## <a name="application-runs-on-simulator-but-fails-on-device"></a>アプリケーションはシミュレーターで実行されますが、デバイスでは失敗します
 
 この問題はいくつかの形式でマニフェストを作成できますが、常に一貫性のあるエラーが生成されるとは限りません。 アプリケーションに. xib が含まれている場合は、xib の**ビルドアクション**が**interfacedefinition**に設定されていることを確認します。 これは、. xib の既定のビルドアクションです。
 
-ビルドアクションを確認するには、xib ファイルを右クリックし、 **[ビルドアクション]** を選択します。
+ビルドアクションを確認するには、xib ファイルを右クリックし、[**ビルドアクション**] を選択します。
 
 ## <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>NotSupportedException: エンコード437で使用できるデータがありません
 
-Xamarin. iOS アプリにサードパーティ製のライブラリを含めると、アプリをコンパイルして実行しようとすると、"NotSupportedException: encoding 437 のデータは使用できません" という形式のエラーが表示されることがあります。 たとえば、`Ionic.Zip.ZipFile`などのライブラリでは、操作中にこの例外がスローされる場合があります。
+Xamarin. iOS アプリにサードパーティ製のライブラリを含めると、アプリをコンパイルして実行しようとすると、"NotSupportedException: encoding 437 のデータは使用できません" という形式のエラーが表示されることがあります。 たとえば、などのライブラリでは、 `Ionic.Zip.ZipFile` 操作中にこの例外がスローされる場合があります。
 
-これを解決するには、Xamarin. iOS プロジェクトのオプションを開き、[ **Ios ビルド** > **国際化**] に移動して、[**西**国際化] をオンにします。
+これを解決するには、Xamarin. ios プロジェクトのオプションを開き、[ **iOS**] [国際化] の順に移動して、[  >  **Internationalization** **西**国際化] をオンにします。

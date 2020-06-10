@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 2d56af364d63ff78bafbdd7d8043ae4d75d97959
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: ae08d7d2d8d9de700570311f2294df737240b73f
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306039"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572157"
 ---
 # <a name="updating-a-xamarinios-app-in-the-background"></a>バックグラウンドでの Xamarin iOS アプリの更新
 
@@ -31,21 +31,21 @@ iOS には、バックグラウンド処理機能を備えた2つの場所認識
 1. *リージョンの監視*は、境界を持つリージョンを設定し、ユーザーがリージョンを入力または終了したときにデバイスをスリープ解除するプロセスです。 領域は循環しており、さまざまなサイズにすることができます。 ユーザーがリージョンの境界を越えると、デバイスはイベントを処理するためにウェイクアップします。通常は、通知を起動するか、タスクを開始します。 リージョンの監視には GPS が必要であり、バッテリとデータの使用量が増加します。
 1. *重要な場所の変更サービス*は、携帯電話機を搭載したデバイスで使用できる、よりシンプルで節電可能なオプションです。 重要な場所の変更をリッスンしているアプリケーションは、デバイスがセル塔を切り替えると通知されます。 このサービスは、中断または終了したアプリケーションをスリープ解除するために使用でき、バックグラウンドで新しいコンテンツを確認する機会を提供します。 バックグラウンド[タスク](~/ios/app-fundamentals/backgrounding/ios-backgrounding-techniques/ios-backgrounding-with-tasks.md)とのペアがない限り、バックグラウンドアクティビティは約10秒に制限されます。
 
-アプリケーションでは、これらの場所を認識する Api を使用するために `UIBackgroundMode` 場所を必要としません。 IOS では、ユーザーの場所での変更によってデバイスがウェイクアップされたときに実行できるタスクの種類は追跡されないため、これらの Api は iOS 6 のバックグラウンドでコンテンツを更新するための回避策を提供します。 *場所ベースの api を使用してバックグラウンド更新をトリガーすると、デバイスリソースが描画され、アプリケーションがその場所にアクセスする必要がある理由を理解していないユーザーを混乱させる可能性があることに注意してください*。 Location Api をまだ使用していないアプリケーションでは、バックグラウンド処理のためにリージョンの監視または重要な場所の変更を実装するときに、裁量を使用します。
+アプリケーションでは、 `UIBackgroundMode` これらの場所を認識する api を使用する場所は必要ありません。 IOS では、ユーザーの場所での変更によってデバイスがウェイクアップされたときに実行できるタスクの種類は追跡されないため、これらの Api は iOS 6 のバックグラウンドでコンテンツを更新するための回避策を提供します。 *場所ベースの api を使用してバックグラウンド更新をトリガーすると、デバイスリソースが描画され、アプリケーションがその場所にアクセスする必要がある理由を理解していないユーザーを混乱させる可能性があることに注意してください*。 Location Api をまだ使用していないアプリケーションでは、バックグラウンド処理のためにリージョンの監視または重要な場所の変更を実装するときに、裁量を使用します。
 
 バックグラウンド処理の場所の監視を使用するアプリは、iOS 6 の欠陥を公開します。アプリケーションのニーズがバックグラウンドで必要なカテゴリに合わない場合、バックグラウンド処理オプションは限られています。 2つの新しい Api (*バックグラウンドフェッチ*と*リモート通知*) の導入により、iOS 7 (およびそれ以降) は、より多くのアプリケーションにバックグラウンド処理機会を提供します。 次の2つのセクションでは、これらの新しい Api について説明します。
 
-<a name="background_fetch" />
+<a name="background_fetch"></a>
 
 ## <a name="background-fetch-ios-7-and-greater"></a>バックグラウンドフェッチ (iOS 7 以降)
 
 IOS 6 では、フォアグラウンドに新しいコンテンツを読み込むために必要な時間を短縮し、既に見たコンテンツをユーザーに簡単に提示します。 バックグラウンドフェッチでは、ユーザーがアプリケーションを起動*する前*に、アプリケーションが新しいデータを読み込んで、最新のコンテンツをユーザーに提供できます。
 
-バックグラウンドフェッチを実装するには、[*情報] plist*を編集し、[バックグラウンドモードおよび**バックグラウンドフェッチ** **を有効にする**] チェックボックスをオンにします。
+バックグラウンドフェッチを実装するには、[*情報] plist*を編集し、[バックグラウンドモードおよび**バックグラウンドフェッチ****を有効にする**] チェックボックスをオンにします。
 
  [![](updating-an-application-in-the-background-images/fetch.png "Edit the Info.plist and check the Enable Background Modes and Background Fetch check boxes")](updating-an-application-in-the-background-images/fetch.png#lightbox)
 
-次に、`AppDelegate`で、`FinishedLaunching` メソッドをオーバーライドして最小フェッチ間隔を設定します。 この例では、OS が新しいコンテンツを取得する頻度を決定します。
+次に、で、メソッドをオーバーライドして `AppDelegate` `FinishedLaunching` 最小フェッチ間隔を設定します。 この例では、OS が新しいコンテンツを取得する頻度を決定します。
 
 ```csharp
 public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
@@ -55,7 +55,7 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
 }
 ```
 
-最後に、`AppDelegate`の `PerformFetch` メソッドをオーバーライドし、*完了ハンドラー*を渡すことによって、フェッチを実行します。 完了ハンドラーは、`UIBackgroundFetchResult`を受け取るデリゲートです。
+最後に、のメソッドをオーバーライドし、完了ハンドラーを渡すことによって、フェッチを実行し `PerformFetch` `AppDelegate` ます。 *completion handler* 完了ハンドラーは、次のものを受け取るデリゲートです `UIBackgroundFetchResult` 。
 
 ```csharp
 public override void PerformFetch (UIApplication application, Action<UIBackgroundFetchResult> completionHandler)
@@ -77,21 +77,21 @@ public override void PerformFetch (UIApplication application, Action<UIBackgroun
 バックグラウンドフェッチを使用するアプリケーションは、呼び出しを実行して UI をバックグラウンドから更新できます。 ユーザーがアプリを開くと、UI が最新の状態になり、新しいコンテンツが表示されます。 これにより、アプリケーションのアプリスイッチャースナップショットも更新されるため、ユーザーはアプリケーションに新しいコンテンツがあることを確認できます。
 
 > [!IMPORTANT]
-> `PerformFetch` が呼び出されると、アプリケーションは、新しいコンテンツのダウンロードを開始するまで約30秒かかり、完了ハンドラーブロックを呼び出します。 この処理に時間がかかりすぎると、アプリは終了します。 メディアまたはその他の大きなファイルをダウンロードする場合は、バックグラウンド_転送サービス_でバックグラウンドフェッチを使用することを検討してください。
+> `PerformFetch`が呼び出されると、アプリケーションは、新しいコンテンツのダウンロードを開始するまで約30秒かかり、完了ハンドラーブロックを呼び出します。 この処理に時間がかかりすぎると、アプリは終了します。 メディアまたはその他の大きなファイルをダウンロードする場合は、バックグラウンド_転送サービス_でバックグラウンドフェッチを使用することを検討してください。
 
 ### <a name="backgroundfetchinterval"></a>BackgroundFetchInterval
 
-上記のサンプルコードでは、最小フェッチ間隔を `BackgroundFetchIntervalMinimum`に設定することによって、新しいコンテンツをフェッチする頻度を OS に決定させます。 iOS には、次の3つのフェッチ間隔オプションが用意されています。
+上記のサンプルコードでは、最小フェッチ間隔をに設定して、新しいコンテンツを取得する頻度を OS に決定し `BackgroundFetchIntervalMinimum` ます。 iOS には、次の3つのフェッチ間隔オプションが用意されています。
 
 1. `BackgroundFetchIntervalNever`-新しいコンテンツがフェッチされないようにシステムに指示します。 ユーザーがサインインしていない場合など、特定の状況でのフェッチをオフにするには、このオプションを使用します。 これは、フェッチ間隔の既定値です。 
 1. `BackgroundFetchIntervalMinimum`-システムで、ユーザーパターン、バッテリ寿命、データ使用量、および他のアプリケーションのニーズに基づいてフェッチする頻度を決定します。
 1. `BackgroundFetchIntervalCustom`-アプリケーションのコンテンツが更新される頻度がわかっている場合は、すべてのフェッチの後に "スリープ" 間隔を指定できます。その間、アプリケーションは、新しいコンテンツをフェッチできなくなります。 この間隔が経過すると、コンテンツをいつフェッチするかがシステムによって決定されます。
 
-`BackgroundFetchIntervalMinimum` と `BackgroundFetchIntervalCustom` はどちらも、フェッチをスケジュールするためにシステムに依存しています。 この間隔は動的であるため、デバイスのニーズに合わせて、個々のユーザーの習慣に適合させることができます。 たとえば、あるユーザーがアプリケーションを毎朝チェックし、1時間ごとに別のチェックを行う場合、iOS は、アプリケーションを開くたびに、両方のユーザーについてコンテンツが最新の状態であることを確認します。
+`BackgroundFetchIntervalMinimum`とはどちらも `BackgroundFetchIntervalCustom` システムを利用してフェッチをスケジュールします。 この間隔は動的であるため、デバイスのニーズに合わせて、個々のユーザーの習慣に適合させることができます。 たとえば、あるユーザーがアプリケーションを毎朝チェックし、1時間ごとに別のチェックを行う場合、iOS は、アプリケーションを開くたびに、両方のユーザーについてコンテンツが最新の状態であることを確認します。
 
 バックグラウンドフェッチは、重要でないコンテンツを頻繁に更新するアプリケーションで使用する必要があります。 重要な更新プログラムが適用されているアプリケーションでは、リモート通知を使用する必要があります。 リモート通知は、バックグラウンドフェッチに基づいており、同じ完了ハンドラーを共有します。 次に、リモート通知について説明します。
 
- <a name="remote_notifications" />
+ <a name="remote_notifications"></a>
 
 ## <a name="remote-notifications-ios-7-and-greater"></a>リモート通知 (iOS 7 以降)
 
@@ -99,11 +99,11 @@ public override void PerformFetch (UIApplication application, Action<UIBackgroun
 
 IOS 6 では、受信プッシュ通知は、アプリケーションで問題が発生したことをユーザーに通知するようにシステムに指示します。 通知をクリックすると、中断状態または終了状態からアプリケーションが引き出され、アプリはコンテンツの更新を開始します。 iOS 7 (およびそれ以降) は、ユーザーに通知*する前に*バックグラウンドでコンテンツを更新する機会をアプリケーションに提供することで、通常のプッシュ通知を拡張します。これにより、ユーザーがアプリケーションを開いて新しいコンテンツをすぐに表示できるようになります。
 
-リモート通知を実装するには、[*情報] plist*を編集し、[バックグラウンドモードと**リモート通知** **を有効にする**] チェックボックスをオンにします。
+リモート通知を実装するには、[*情報] plist*を編集し、[バックグラウンドモードと**リモート通知****を有効にする**] チェックボックスをオンにします。
 
  [![](updating-an-application-in-the-background-images/remote.png "Background Mode set to Enable Background Modes and Remote notifications")](updating-an-application-in-the-background-images/remote.png#lightbox)
 
-次に、プッシュ通知自体の `content-available` フラグを1に設定します。 これにより、アプリケーションは、アラートを表示する前に新しいコンテンツを取得することができます。
+次に、 `content-available` プッシュ通知自体のフラグを1に設定します。 これにより、アプリケーションは、アラートを表示する前に新しいコンテンツを取得することができます。
 
 ```csharp
 'aps' {
@@ -112,7 +112,7 @@ IOS 6 では、受信プッシュ通知は、アプリケーションで問題�
 }
 ```
 
-*Appdelegate*で、`DidReceiveRemoteNotification` メソッドをオーバーライドして、利用可能なコンテンツの通知ペイロードを確認し、適切な完了ハンドラーブロックを呼び出します。
+*Appdelegate*で、メソッドをオーバーライドして、 `DidReceiveRemoteNotification` 利用可能なコンテンツの通知ペイロードを確認し、適切な完了ハンドラーブロックを呼び出します。
 
 ```csharp
 public override void DidReceiveRemoteNotification (UIApplication application, NSDictionary userInfo, Action<UIBackgroundFetchResult> completionHandler)

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Formsタイトル
-description: この記事では、Label クラスを使用して、 Xamarin.Forms アプリケーションに単一のテキストと複数行のテキストを表示する方法について説明します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 46ea0afd3df0490837eb00b837158a26c1e4e479
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136165"
+title: " Xamarin.Forms label" description: "この記事では、label クラスを使用して Xamarin.Forms アプリケーションで1行と複数行のテキストを表示する方法について説明します。"
+ms. 製品: xamarin ms. assetid: 02E6C553-5670-49A0-8EE9-5153ED21EA91: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 04/09/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-label"></a>Xamarin.Formsタイトル
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
@@ -41,7 +27,7 @@ _Xamarin 形式でテキストを表示する_
 <Label Text="This is underlined text with strikethrough." TextDecorations="Underline, Strikethrough" />
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 var underlineLabel = new Label { Text = "This is underlined text.", TextDecorations = TextDecorations.Underline };
@@ -54,7 +40,7 @@ var bothLabel = new Label { Text = "This is underlined text with strikethrough."
 ![文字装飾付きのラベル](label-images/label-textdecorations.png)
 
 > [!NOTE]
-> 文字装飾はインスタンスにも適用でき [`Span`](xref:Xamarin.Forms.Span) ます。 クラスの詳細については `Span` 、「[書式設定](#Formatted_Text)されたテキスト」を参照してください。
+> 文字装飾はインスタンスにも適用でき [`Span`](xref:Xamarin.Forms.Span) ます。 クラスの詳細については `Span` 、「[書式設定](#formatted-text)されたテキスト」を参照してください。
 
 ## <a name="character-spacing"></a>文字間隔
 
@@ -65,7 +51,7 @@ var bothLabel = new Label { Text = "This is underlined text with strikethrough."
        CharacterSpacing="10" />
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 Label label = new Label { Text = "Character spaced text", CharacterSpacing = 10 };
@@ -120,7 +106,7 @@ Label label = new Label { Text = "First line\nSecond line" };
 </ContentPage>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 public partial class LabelPage : ContentPage
@@ -146,8 +132,6 @@ public partial class LabelPage : ContentPage
 ## <a name="fonts"></a>フォント
 
 でフォントを指定する方法の詳細につい `Label` ては、「[フォント](~/xamarin-forms/user-interface/text/fonts.md)」を参照してください。
-
-<a name="Truncation_and_Wrapping" />
 
 ## <a name="truncation-and-wrapping"></a>切り捨てと折り返し
 
@@ -177,7 +161,7 @@ public partial class LabelPage : ContentPage
        MaxLines="2" />
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 var label =
@@ -236,8 +220,6 @@ XAML では、シンボルと記号をさらにエスケープすることによ
 > [!IMPORTANT]
 > での HTML の表示 [`Label`](xref:Xamarin.Forms.Label) は、基になるプラットフォームでサポートされている html タグに限定されます。
 
-<a name="Formatted_Text" />
-
 ## <a name="formatted-text"></a>書式付きテキスト
 
 ラベルは、 [`FormattedText`](xref:Xamarin.Forms.Label.FormattedText) 同じビューの複数のフォントと色を持つテキストを表示できるようにするプロパティを公開します。
@@ -290,7 +272,7 @@ XAML では、シンボルと記号をさらにエスケープすることによ
 </ContentPage>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 public class LabelPageCode : ContentPage
@@ -340,7 +322,7 @@ public class LabelPageCode : ContentPage
        LineHeight="1.8" />
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 var label =
@@ -369,7 +351,7 @@ var label =
 </Label>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 var formattedString = new FormattedString();
@@ -409,7 +391,7 @@ var label = new Label
 </Label>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 FormattedString formattedString = new FormattedString();

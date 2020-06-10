@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms Pages
-description: Xamarin.Formsページは、クロスプラットフォームモバイルアプリケーション画面を表します。 この記事では、に含まれるページの一覧を示し Xamarin.Forms ます。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: c576186dcfd598cb4fcfecd6d36edf04f73eee64
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84132822"
+タイトル: " Xamarin.Forms ページ" 説明: " Xamarin.Forms ページは、クロスプラットフォームモバイルアプリケーション画面を表します。 この記事では、に含まれるページの一覧を示し Xamarin.Forms ます。
+ms. 製品: xamarin ms assetid: 9C8C710F-E312-420B-9324-A7A20CEDB7EC: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 01/12/2016 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-pages"></a>Xamarin.Forms Pages
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery/)
@@ -27,17 +13,15 @@ _Xamarin のフォームは、クロスプラットフォームのモバイル�
 
 [![](pages-images/pages-sml.png "Xamarin.Forms Page Types")](pages-images/pages.png#lightbox "Xamarin.Forms Page Types")
 
-## <a name="pages"></a>ページ
+## <a name="pages"></a>Pages
 
 Xamarin.Formsでは、次のページの種類がサポートされています。
-
-<a name="contentPage" />
 
 ### <a name="contentpage"></a>ContentPage
 
 |     |     |
 | --- | --- |
-| [`ContentPage`](xref:Xamarin.Forms.ContentPage)は、最も単純で一般的な種類のページです。 プロパティを [`Content`](xref:Xamarin.Forms.ContentPage.Content) 1 つのオブジェクトに設定します [`View`](views.md) 。これは、ほとんどの場合 [`Layout`](layouts.md) 、、、など [`StackLayout`](layouts.md#stackLayout) [`Grid`](layouts.md#grid) [`ScrollView`](layouts.md#scrollView) です。<br /><br />[API ドキュメント](xref:Xamarin.Forms.ContentPage) | [![ContentPage の例](pages-images/ContentPage.png "ContentPage の例")](pages-images/ContentPage-Large.png#lightbox "ContentPage の例")<br />[このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ContentPageDemoPage.cs)  /  の C# コード[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ContentPageDemoPage.xaml) |
+| [`ContentPage`](xref:Xamarin.Forms.ContentPage)は、最も単純で一般的な種類のページです。 プロパティを [`Content`](xref:Xamarin.Forms.ContentPage.Content) 1 つのオブジェクトに設定します [`View`](views.md) 。これは、ほとんどの場合 [`Layout`](layouts.md) 、、、など [`StackLayout`](layouts.md#stacklayout) [`Grid`](layouts.md#grid) [`ScrollView`](layouts.md#scrollview) です。<br /><br />[API ドキュメント](xref:Xamarin.Forms.ContentPage) | [![ContentPage の例](pages-images/ContentPage.png "ContentPage の例")](pages-images/ContentPage-Large.png#lightbox "ContentPage の例")<br />[このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ContentPageDemoPage.cs)  /  の C# コード[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ContentPageDemoPage.xaml) |
 |     |     |
 
 ### <a name="masterdetailpage"></a>MasterDetailPage
@@ -65,18 +49,18 @@ Xamarin.Formsでは、次のページの種類がサポートされています�
 
 |     |     |
 | --- | --- |
-| [`CarouselPage`](xref:Xamarin.Forms.CarouselPage)抽象クラスから派生 [`MultiPage`](xref:Xamarin.Forms.MultiPage`1) し、指スワイプを通じて子ページ間を移動できるようにします。 プロパティを [`Children`](xref:Xamarin.Forms.MultiPage`1.Children) オブジェクトのコレクションに設定するか、プロパティを [`ContentPage`](#contentPage) [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource) データオブジェクトのコレクションに設定し、プロパティを、 [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate) [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 各オブジェクトを視覚的に表現する方法を説明するに設定します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.CarouselPage)  / [ガイド](~/xamarin-forms/app-fundamentals/navigation/carousel-page.md)  / [サンプル 1](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-carouselpage)および[2](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-carouselpagetemplate) | [![CarouselPage の例](pages-images/CarouselPage.png "CarouselPage の例")](pages-images/CarouselPage-Large.png#lightbox "CarouselPage の例")<br />[このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CarouselPageDemoPage.cs)  /  の C# コード[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CarouselPageDemoPage.xaml) |
+| [`CarouselPage`](xref:Xamarin.Forms.CarouselPage)抽象クラスから派生 [`MultiPage`](xref:Xamarin.Forms.MultiPage`1) し、指スワイプを通じて子ページ間を移動できるようにします。 プロパティを [`Children`](xref:Xamarin.Forms.MultiPage`1.Children) オブジェクトのコレクションに設定するか、プロパティを [`ContentPage`](#contentpage) [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource) データオブジェクトのコレクションに設定し、プロパティを、 [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate) [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 各オブジェクトを視覚的に表現する方法を説明するに設定します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.CarouselPage)  / [ガイド](~/xamarin-forms/app-fundamentals/navigation/carousel-page.md)  / [サンプル 1](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-carouselpage)および[2](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-carouselpagetemplate) | [![CarouselPage の例](pages-images/CarouselPage.png "CarouselPage の例")](pages-images/CarouselPage-Large.png#lightbox "CarouselPage の例")<br />[このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CarouselPageDemoPage.cs)  /  の C# コード[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CarouselPageDemoPage.xaml) |
 |     |     |
 
 ### <a name="templatedpage"></a>TemplatedPage
 
 |     |     |
 | --- | --- |
-| [`TemplatedPage`](xref:Xamarin.Forms.TemplatedPage)コントロールテンプレートを使用して全画面表示のコンテンツを表示します。これはの基本クラスです [`ContentPage`](#contentPage) 。<br /><br />[API ドキュメント](xref:Xamarin.Forms.TemplatedPage)  / [ガイド](~/xamarin-forms/app-fundamentals/templates/control-template.md) | [![TemplatedPage の例](pages-images/TemplatedPage.png "TemplatedPage の例")](pages-images/TemplatedPage.png "TemplatedPage の例") |
+| [`TemplatedPage`](xref:Xamarin.Forms.TemplatedPage)コントロールテンプレートを使用して全画面表示のコンテンツを表示します。これはの基本クラスです [`ContentPage`](#contentpage) 。<br /><br />[API ドキュメント](xref:Xamarin.Forms.TemplatedPage)  / [ガイド](~/xamarin-forms/app-fundamentals/templates/control-template.md) | [![TemplatedPage の例](pages-images/TemplatedPage.png "TemplatedPage の例")](pages-images/TemplatedPage.png "TemplatedPage の例") |
 |     |     |
 
 ## <a name="related-links"></a>関連リンク
 
 - [Xamarin.Formsフォームギャラリーのサンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
-- [Xamarin.FormsSamples](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
+- [Xamarin.Forms サンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
 - [Xamarin.FormsAPI ドキュメント](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

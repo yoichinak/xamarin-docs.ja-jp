@@ -7,23 +7,23 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/30/2017
-ms.openlocfilehash: 0094a496ce99addb08648431d993bd4afddca2f4
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 51b28ec05af91dea21b1291956de30c549b1868e
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032244"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571676"
 ---
 # <a name="introduction-to-arkit-in-xamarinios"></a>Xamarin の ARKit の概要
 
 _IOS 11 の拡張現実_
 
-ARKit は、拡張されたさまざまな現実のアプリケーションやゲームを可能にします。 ここでは、次のトピックについて説明します。
+ARKit は、拡張されたさまざまな現実のアプリケーションやゲームを可能にします。 このセクションは、次のトピックで構成されています。
 
 - [ARKit を使用したはじめに](#gettingstarted)
 - [UrhoSharp で ARKit を使用する](urhosharp.md)
 
-<a name="gettingstarted" />
+<a name="gettingstarted"></a>
 
 ## <a name="getting-started-with-arkit"></a>ARKit を使用したはじめに
 
@@ -31,15 +31,15 @@ ARKit は、拡張されたさまざまな現実のアプリケーションや�
 
 ![カメライメージでの Jet 3D モデルフローティング](images/jet-sml.png)
 
-### <a name="1-add-a-3d-model"></a>1.3D モデルの追加
+### <a name="1-add-a-3d-model"></a>1. 3D モデルを追加する
 
 アセットは、 **SceneKitAsset**ビルドアクションを使用してプロジェクトに追加する必要があります。
 
 ![プロジェクト内の SceneKit アセット](images/scene-assets.png)
 
-### <a name="2-configure-the-view"></a>2.ビューを構成する
+### <a name="2-configure-the-view"></a>2. ビューを構成する
 
-ビューコントローラーの `ViewDidLoad` メソッドで、シーンアセットを読み込み、ビューの `Scene` プロパティを設定します。
+ビューコントローラーのメソッドで `ViewDidLoad` 、シーンアセットを読み込み、ビューのプロパティを設定し `Scene` ます。
 
 ```csharp
 ARSCNView SceneView = (View as ARSCNView);
@@ -51,7 +51,7 @@ var scene = SCNScene.FromFile("art.scnassets/ship");
 SceneView.Scene = scene;
 ```
 
-### <a name="3-optionally-implement-a-session-delegate"></a>3.必要に応じてセッションデリゲートを実装する
+### <a name="3-optionally-implement-a-session-delegate"></a>3. 必要に応じてセッションデリゲートを実装する
 
 単純なケースでは必須ではありませんが、セッションデリゲートを実装すると、ARKit セッション (および実際のアプリケーションではユーザーにフィードバックを提供する) の状態をデバッグするのに役立ちます。 次のコードを使用して、単純なデリゲートを作成します。
 
@@ -66,16 +66,16 @@ public class SessionDelegate : ARSessionDelegate
 }
 ```
 
-`ViewDidLoad` メソッドで、デリゲートをに割り当てます。
+メソッドで、デリゲートをに割り当て `ViewDidLoad` ます。
 
 ```csharp
 // Track changes to the session
 SceneView.Session.Delegate = new SessionDelegate();
 ```
 
-### <a name="4-position-the-3d-model-in-the-world"></a>4.3D モデルを世界中に配置する
+### <a name="4-position-the-3d-model-in-the-world"></a>4. 3D モデルを世界中に配置する
 
-`ViewWillAppear`では、次のコードは ARKit セッションを確立し、デバイスのカメラに対して相対的な空間で3D モデルの位置を設定します。
+では `ViewWillAppear` 、次のコードで ARKit セッションを確立し、デバイスのカメラに対して相対的な空間で3d モデルの位置を設定します。
 
 ```csharp
 // Create a session configuration
@@ -95,9 +95,9 @@ ship.Position = new SCNVector3(2f, -2f, -9f);
 
 アプリケーションが実行または再開されるたびに、3D モデルがカメラの前面に配置されます。 モデルが配置されたら、カメラを移動し、ARKit によってモデルが配置されたままになるようにします。
 
-### <a name="5-pause-the-augmented-reality-session"></a>5.拡張された現実のセッションを一時停止する
+### <a name="5-pause-the-augmented-reality-session"></a>5. 拡張された現実のセッションを一時停止する
 
-`ViewWillDisappear` メソッドで、ビューコントローラーが表示されていないときに ARKit セッションを一時停止することをお勧めします。
+ビューコントローラーが表示されていない場合 (メソッドの場合) は、ARKit セッションを一時停止することをお勧めし `ViewWillDisappear` ます。
 
 ```csharp
 SceneView.Session.Pause();
@@ -105,7 +105,7 @@ SceneView.Session.Pause();
 
 ## <a name="summary"></a>まとめ
 
-上記のコードでは、単純な ARKit アプリケーションが生成されます。 より複雑な例としては、拡張された現実セッションをホストするビューコントローラーが `IARSCNViewDelegate`を実装し、追加のメソッドを実装することが想定されています。
+上記のコードでは、単純な ARKit アプリケーションが生成されます。 さらに複雑な例としては、拡張された現実セッションをホストするビューコントローラーがを実装し、追加のメソッドを実装することが想定 `IARSCNViewDelegate` されています。
 
 ARKit は、surface tracking やユーザー操作など、より高度な機能を備えています。 ARKit の追跡と UrhoSharp の組み合わせの例については、 [urhosharp デモ](urhosharp.md)を参照してください。
 

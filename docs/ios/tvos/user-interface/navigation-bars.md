@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: aa376385b000b83a41fdcdc7a4d3c8bf1553f0a7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 0d5ec4bc10747a287def3fd9a83a703d2ec4b2a2
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030474"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572378"
 ---
 # <a name="working-with-tvos-navigation-bars-in-xamarin"></a>Xamarin での tvOS ナビゲーションバーの使用
 
@@ -20,47 +20,47 @@ ms.locfileid: "73030474"
 
 [![](navigation-bars-images/navbar01.png "Sample Navigation Bar")](navigation-bars-images/navbar01.png#lightbox)
 
-ナビゲーションバーには、(中央に表示される) タイトルに加えて、バーの左右に1つまたは複数のナビゲーションバーボタン (`UIBarButtonItem`) を含めることができます。
+ナビゲーションバーには、(中央に表示される) タイトルに加えて、バーの左右に1つまたは複数のナビゲーションバーボタン () を含めることができ `UIBarButtonItem` ます。
 
 > [!IMPORTANT]
 > ナビゲーションバーは、既定では完全に透明です。 ナビゲーションバーのコンテンツは、その下のコンテンツを読み取れるようにする必要があります。 たとえば、テーブルビューまたはコレクション内のコンテンツがその下でスクロールする場合です。
 
-<a name="Navigation-Bars-and-Storyboards" />
+<a name="Navigation-Bars-and-Storyboards"></a>
 
 ## <a name="navigation-bars-and-storyboards"></a>ナビゲーションバーとストーリーボード
 
 TvOS アプリのナビゲーションバーを操作する最も簡単な方法は、iOS デザイナーを使用してアプリの UI に追加することです。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. **Solution Pad**で `Main.storyboard` ファイルをダブルクリックして編集用に開きます。
+1. **Solution Pad**で、[ファイル] をダブルクリックし、 `Main.storyboard` 編集用に開きます。
 1. **ツールボックス**から**ナビゲーションバー**をドラッグし、画面の上部にあるビューにドロップします。
 
     [![](navigation-bars-images/navbar02.png "A Navigation Bar")](navigation-bars-images/navbar02.png#lightbox)
-1. ナビゲーション**バー**をダブルクリックして、 **[ナビゲーション項目]** を選択します。 **Properties Pad**の **[ウィジェット]** タブで、次のように**タイトル**を設定できます。
+1. ナビゲーション**バー**をダブルクリックして、[**ナビゲーション項目**] を選択します。 **Properties Pad**の [**ウィジェット**] タブで、次のように**タイトル**を設定できます。
 
     [![](navigation-bars-images/navbar03.png "Set the Title")](navigation-bars-images/navbar03.png#lightbox)
 1. 次に、バーの両端に1つまたは複数の**バーボタン項目**を追加できます。
 
     [![](navigation-bars-images/navbar04.png "A Bar Button Item")](navigation-bars-images/navbar04.png#lightbox)
-1. 最後に、**プロパティエクスプローラー**の **[イベント]** タブで、**バーボタンの項目**を操作に接続します。
+1. 最後に、**プロパティエクスプローラー**の [**イベント**] タブで、**バーボタンの項目**を操作に接続します。
 
     [![](navigation-bars-images/navbar05.png "A Bar Button Item Action")](navigation-bars-images/navbar05.png#lightbox)
 1. 変更内容を保存します。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. **ソリューションエクスプローラー**で `Main.storyboard` ファイルをダブルクリックして編集用に開きます。
+1. **ソリューションエクスプローラー**で、[ファイル] をダブルクリックし、 `Main.storyboard` 編集用に開きます。
 1. **ツールボックス**から**ナビゲーションバー**をドラッグし、画面の上部にあるビューにドロップします。
 
     [![](navigation-bars-images/navbar02-vs.png "A Navigation Bar")](navigation-bars-images/navbar02-vs.png#lightbox)
-1. ナビゲーション**バー**をダブルクリックして、 **[ナビゲーション項目]** を選択します。 **プロパティエクスプローラー**の **[ウィジェット]** タブで、次のように**タイトル**を設定できます。
+1. ナビゲーション**バー**をダブルクリックして、[**ナビゲーション項目**] を選択します。 **プロパティエクスプローラー**の [**ウィジェット**] タブで、次のように**タイトル**を設定できます。
 
     [![](navigation-bars-images/navbar03-vs.png "Set the Title")](navigation-bars-images/navbar03-vs.png#lightbox)
 1. 次に、バーの両端に1つまたは複数の**バーボタン項目**を追加できます。
 
     [![](navigation-bars-images/navbar04-vs.png "A Bar Button Items")](navigation-bars-images/navbar04-vs.png#lightbox)
-1. 最後に、**プロパティエクスプローラー**の **[イベント]** タブで、**バーボタンの項目**を操作に接続します。
+1. 最後に、**プロパティエクスプローラー**の [**イベント**] タブで、**バーボタンの項目**を操作に接続します。
 
     [![](navigation-bars-images/navbar05-vs.png "A Bar Button Item Actions")](navigation-bars-images/navbar05-vs.png#lightbox)
 1. 変更内容を保存します。
@@ -68,9 +68,9 @@ TvOS アプリのナビゲーションバーを操作する最も簡単な方法
 -----
 
 > [!IMPORTANT]
-> `TouchUpInside` などのイベントを iOS デザイナーの UI 要素 (UIButton など) に割り当てることはできますが、Apple TV にタッチスクリーンやタッチイベントのサポートがないため、呼び出されません。 TvOS ユーザーインターフェイス要素のイベントハンドラーを作成するときは、常に `Primary Action` イベントを使用する必要があります。
+> などのイベントを、 `TouchUpInside` IOS デザイナーの UI 要素 (UIButton など) に割り当てることはできますが、APPLE TV にタッチスクリーンやタッチイベントのサポートがないために呼び出されることはありません。 `Primary Action`TvOS ユーザーインターフェイス要素のイベントハンドラーを作成するときは、常にイベントを使用する必要があります。
 
-次のコードは、3つの異なる BarButtonItems (`ShowFirstHotel`、`ShowSecondHotel`、および `ShowThirdHotel`のイベントハンドラーの例を示しています。 各項目がクリックされると、`HotelImage` 背景画像が変更されます。 これは、ビューコントローラー (例 `ViewController.cs`) ファイルで編集されています。
+次のコードは、3つの異なる BarButtonItems (、、および) 上のイベントハンドラーの例を示して `ShowFirstHotel` `ShowSecondHotel` `ShowThirdHotel` います。 各項目がクリックされると、背景イメージ `HotelImage` が変更されます。 これは、ビューコントローラー (例) ファイルで編集されてい `ViewController.cs` ます。
 
 ```csharp
 using System;
@@ -121,11 +121,11 @@ namespace MySingleView
 }
 ```
 
-ボタンの `Enabled` プロパティが `true` であり、他のコントロールまたはビューでカバーされていない場合は、Siri リモートを使用してフォーカスを設定された項目にすることができます。
+ボタンの `Enabled` プロパティがで `true` あり、他のコントロールまたはビューでカバーされていない場合は、Siri リモートを使用してフォーカスを設定された項目にすることができます。
 
 ストーリーボードの操作の詳細については、「 [Hello, tvOS クイックスタートガイド](~/ios/tvos/get-started/hello-tvos.md)」を参照してください。
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>まとめ
 

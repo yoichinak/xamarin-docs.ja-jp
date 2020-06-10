@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsSlider
-description: スライダーは、連続した Xamarin.Forms 範囲から倍精度浮動小数点値を選択するためにユーザーが操作できる水平バーです。 この記事では、スライダークラスを使用して連続値の範囲から値を選択する方法について説明します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 1cde999e6781f019b6abceee82caf259e1e5a710
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140154"
+title: " Xamarin.Forms slider" description: " Xamarin.Forms slider は、ユーザーが連続した範囲から倍精度浮動小数点値を選択するために操作できる水平バーです。 この記事では、スライダークラスを使用して連続値の範囲から値を選択する方法について説明します。
+ms. 製品: xamarin ms. assetid: 36B1C645-26E0-4874-B6B6-BDBF77662878: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 02/27/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-slider"></a>Xamarin.FormsSlider
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)
@@ -116,7 +102,7 @@ IOS デバイスと Android デバイスで実行されているプログラム�
 
 [![基本スライダーコード](slider-images/BasicSliderCode.png "基本スライダーコード")](slider-images/BasicSliderCode-Large.png#lightbox)
 
-2番目のは `Label` 、が操作されるまで "(初期化されていません)" というテキストを表示し `Slider` ます。これにより、最初の `ValueChanged` イベントが発生します。 表示される小数点以下の桁数は、プラットフォームごとに異なります。 これらの違いは、のプラットフォーム実装に関連 `Slider` しています。この点については、この記事で後述する「[プラットフォームの実装の相違点](#implementations)」を参照してください。
+2番目のは `Label` 、が操作されるまで "(初期化されていません)" というテキストを表示し `Slider` ます。これにより、最初の `ValueChanged` イベントが発生します。 表示される小数点以下の桁数は、プラットフォームごとに異なります。 これらの違いは、のプラットフォーム実装に関連 `Slider` しています。この点については、この記事で後述する「[プラットフォームの実装の相違点](#platform-implementation-differences)」を参照してください。
 
 ### <a name="creating-a-slider-in-xaml"></a>XAML でのスライダーの作成
 
@@ -210,8 +196,6 @@ double value = slider.Value;
 
 最初ののプロパティはのプロパティ `Rotation` `Label` にバインドされ `Value` `Slider` ます。これは、 `Text` 2 番目のプロパティが `Label` 仕様であるためです `StringFormat` 。 **基本スライダーのバインド**ページは、前の2つのページとは少し異なる方法で機能します。ページが最初に表示されたとき、2番目のページに `Label` 値が表示されます。 これは、データバインディングを使用する利点です。 データバインディングなしでテキストを表示するには、のプロパティを明示的に初期化する `Text` `Label` か、 `ValueChanged` クラスコンストラクターからイベントハンドラーを呼び出すことによってイベントの発生をシミュレートする必要があります。
 
-<a name="precautions" />
-
 ## <a name="precautions"></a>予防
 
 プロパティの値は、 `Minimum` 常にプロパティの値よりも小さくする必要があり `Maximum` ます。 次のコードスニペットでは、によって `Slider` 例外が発生します。
@@ -283,8 +267,6 @@ Slider slider = new Slider
 ```
 
 を `Minimum` 10 に設定すると、 `Value` も10に設定され、 `ValueChanged` イベントが発生します。 これは、ページの残りの部分が構築される前に発生し、ハンドラーは、まだ作成されていないページ上の他の要素を参照しようとする場合があります。 `ValueChanged` `null` ページ上の他の要素の値を確認するコードをハンドラーに追加することができます。 または、 `ValueChanged` `Slider` 値が初期化された後にイベントハンドラーを設定できます。
-
-<a name="implementations" />
 
 ## <a name="platform-implementation-differences"></a>プラットフォームの実装の違い
 
@@ -508,7 +490,7 @@ Viewmodel と `INotifyPropertyChanged` インターフェイスについては�
 
 [![HSL の色スライダー](slider-images/HslColorSliders.png "HSL の色スライダー")](slider-images/HslColorSliders-Large.png#lightbox)
 
-`StringFormat` `Binding` マークアップ拡張機能のコンポーネントは、小数点以下2桁を表示する "F2" の形式に設定されています。 (データバインディングでの文字列の書式設定については、「[文字列の書式設定](~/xamarin-forms/app-fundamentals/data-binding/string-formatting.md)」で説明しています)。ただし、プログラムの UWP バージョンは、0、0.1、0.2、...0.9 および1.0。 これは、 `Slider` 前述の「[プラットフォームの実装の相違点](#implementations)」で説明した UWP の実装の直接的な結果です。
+`StringFormat` `Binding` マークアップ拡張機能のコンポーネントは、小数点以下2桁を表示する "F2" の形式に設定されています。 (データバインディングでの文字列の書式設定については、「[文字列の書式設定](~/xamarin-forms/app-fundamentals/data-binding/string-formatting.md)」で説明しています)。ただし、プログラムの UWP バージョンは、0、0.1、0.2、...0.9 および1.0。 これは、 `Slider` 前述の「[プラットフォームの実装の相違点](#platform-implementation-differences)」で説明した UWP の実装の直接的な結果です。
 
 ## <a name="related-links"></a>関連リンク
 

@@ -1,22 +1,8 @@
 ---
-title: Azure Cosmos DB ドキュメントデータベースを使用してユーザーを認証するXamarin.Forms
-description: この記事では、アクセス制御と Azure Cosmos DB パーティション分割コレクションを組み合わせて、ユーザーがアプリケーション内の自分のドキュメントにアクセスできるようにする方法について説明し Xamarin.Forms ます。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b0322db5ebcc70347bf35157e3dc7c057e58cf18
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136098"
+title: "Azure Cosmos DB ドキュメントデータベースを使用したユーザーの認証 Xamarin.Forms " と "説明:" この記事では、ユーザーがアプリケーション内の自分のドキュメントにのみアクセスできるように、アクセス制御を Azure Cosmos DB パーティション分割されたコレクションと組み合わせる方法について説明し Xamarin.Forms ます。 "
+ms. 製品: xamarin ms. assetid: 11ED4A4C-0F05-40B2-AB06-5A0F2188EF3D: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 06/16/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="authenticate-users-with-an-azure-cosmos-db-document-database-and-xamarinforms"></a>Azure Cosmos DB ドキュメントデータベースを使用してユーザーを認証するXamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdbauth)
@@ -55,16 +41,14 @@ Cosmos DB パーティション分割の詳細については、「 [Azure Cosmo
 
 リソーストークンブローカーをアプリケーションに統合するプロセス Xamarin.Forms は次のとおりです。
 
-1. アクセス制御を使用する Cosmos DB アカウントを作成します。 詳細については、「 [Cosmos DB 構成](#cosmosdb_configuration)」を参照してください。
-1. リソーストークンブローカーをホストするための Azure App Service を作成します。 詳細については、「 [Azure App Service 構成](#app_service_configuration)」を参照してください。
-1. 認証を実行する Facebook アプリを作成します。 詳細については、「 [Facebook アプリの構成](#facebook_configuration)」を参照してください。
-1. Facebook で簡単な認証を実行するように Azure App Service を構成します。 詳細については、「 [Azure App Service 認証の構成](#app_service_authentication_configuration)」を参照してください。
-1. Xamarin.FormsAzure App Service と Cosmos DB と通信するようにサンプルアプリケーションを構成します。 詳細については、「 [ Xamarin.Forms アプリケーションの構成](#forms_application_configuration)」を参照してください。
+1. アクセス制御を使用する Cosmos DB アカウントを作成します。 詳細については、「 [Azure Cosmos DB 構成](#azure-cosmos-db-configuration)」を参照してください。
+1. リソーストークンブローカーをホストするための Azure App Service を作成します。 詳細については、「 [Azure App Service 構成](#azure-app-service-configuration)」を参照してください。
+1. 認証を実行する Facebook アプリを作成します。 詳細については、「 [Facebook アプリの構成](#facebook-app-configuration)」を参照してください。
+1. Facebook で簡単な認証を実行するように Azure App Service を構成します。 詳細については、「 [Azure App Service 認証の構成](#azure-app-service-authentication-configuration)」を参照してください。
+1. Xamarin.FormsAzure App Service と Cosmos DB と通信するようにサンプルアプリケーションを構成します。 詳細については、「 [ Xamarin.Forms アプリケーションの構成](#xamarinforms-application-configuration)」を参照してください。
 
 > [!NOTE]
 > [Azure サブスクリプション](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)をお持ちでない場合は、開始する前に[無料アカウント](https://aka.ms/azfree-docs-mobileapps)を作成してください。
-
-<a name="cosmosdb_configuration" />
 
 ### <a name="azure-cosmos-db-configuration"></a>Azure Cosmos DB 構成
 
@@ -72,8 +56,6 @@ Cosmos DB パーティション分割の詳細については、「 [Azure Cosmo
 
 1. Cosmos DB アカウントを作成します。 詳細については、「 [Create a Azure Cosmos DB account](/azure/cosmos-db/sql-api-dotnetcore-get-started#step-1-create-an-azure-cosmos-db-account)」を参照してください。
 1. Cosmos DB アカウントに、のパーティションキーを指定して、という名前の新しいコレクションを作成し `UserItems` `/userid` ます。
-
-<a name="app_service_configuration" />
 
 ### <a name="azure-app-service-configuration"></a>Azure App Service 構成
 
@@ -93,8 +75,6 @@ Azure App Service でリソーストークンブローカーをホストする�
 
 1. リソーストークンブローカーソリューションを Azure App Service web アプリに発行します。
 
-<a name="facebook_configuration" />
-
 ### <a name="facebook-app-configuration"></a>Facebook アプリの構成
 
 認証を実行する Facebook アプリを作成するプロセスは次のとおりです。
@@ -112,8 +92,6 @@ Azure App Service でリソーストークンブローカーをホストする�
 
 詳細については、「[アプリケーションを Facebook に登録する](/azure/app-service-mobile/app-service-mobile-how-to-configure-facebook-authentication#a-nameregister-aregister-your-application-with-facebook)」を参照してください。
 
-<a name="app_service_authentication_configuration" />
-
 ### <a name="azure-app-service-authentication-configuration"></a>認証構成の Azure App Service
 
 App Service 簡単な認証を構成するためのプロセスは次のとおりです。
@@ -128,8 +106,6 @@ App Service 簡単な認証を構成するためのプロセスは次のとお�
     [![](azure-cosmosdb-auth-images/app-service-authentication-settings.png "App Service Web App Authentication Settings")](azure-cosmosdb-auth-images/app-service-authentication-settings-large.png#lightbox "App Service Web App Authentication Settings")
 
 また、Facebook アプリと通信して認証フローを有効にするように、App Service web アプリを構成する必要があります。 これを実現するには、facebook id プロバイダーを選択し、facebook デベロッパーセンターの Facebook アプリ設定から**アプリ ID**と**アプリシークレット**の値を入力します。 詳細については、「[アプリケーションに Facebook 情報を追加する](/azure/app-service-mobile/app-service-mobile-how-to-configure-facebook-authentication#a-namesecrets-aadd-facebook-information-to-your-application)」を参照してください。
-
-<a name="forms_application_configuration" />
 
 ### <a name="xamarinforms-application-configuration"></a>Xamarin.Formsアプリケーションの構成
 
@@ -237,7 +213,7 @@ while (query.HasMoreResults)
 > [!NOTE]
 > リソーストークンブローカーによって作成されたアクセス許可ドキュメントは、アプリケーションによって作成されたドキュメントと同じドキュメントコレクションに格納されていることに注意して Xamarin.Forms ください。 したがって、ドキュメントクエリには、 `Where` ドキュメントコレクションに対するクエリにフィルター述語を適用する句が含まれています。 この句により、ドキュメントコレクションからアクセス許可ドキュメントが返されないようにします。
 
-ドキュメントコレクションからドキュメントを取得する方法の詳細については、「[ドキュメントコレクションドキュメントの取得](~/xamarin-forms/data-cloud/azure-services/azure-cosmosdb.md#document_query)」を参照してください。
+ドキュメントコレクションからドキュメントを取得する方法の詳細については、「[ドキュメントコレクションドキュメントの取得](~/xamarin-forms/data-cloud/azure-services/azure-cosmosdb.md#retrieving-document-collection-documents)」を参照してください。
 
 ## <a name="inserting-documents"></a>挿入 (ドキュメントを)
 
@@ -250,7 +226,7 @@ await client.CreateDocumentAsync(collectionLink, item);
 
 これにより、ユーザーのパーティション分割されたコレクションにドキュメントが挿入されるようになります。
 
-ドキュメントコレクションへのドキュメントの挿入の詳細については、「ドキュメント[コレクションへのドキュメントの挿入](~/xamarin-forms/data-cloud/azure-services/azure-cosmosdb.md#inserting_document)」を参照してください。
+ドキュメントコレクションへのドキュメントの挿入の詳細については、「ドキュメント[コレクションへのドキュメントの挿入](~/xamarin-forms/data-cloud/azure-services/azure-cosmosdb.md#inserting-a-document-into-a-document-collection)」を参照してください。
 
 ## <a name="deleting-documents"></a>ドキュメントの削除
 
@@ -266,9 +242,9 @@ await client.DeleteDocumentAsync(UriFactory.CreateDocumentUri(Constants.Database
 
 これにより、Cosmos DB は、ドキュメントを削除するパーティション分割されたコレクションを認識します。
 
-ドキュメントコレクションからドキュメントを削除する方法の詳細については、「ドキュメント[コレクションからドキュメントを削除](~/xamarin-forms/data-cloud/azure-services/azure-cosmosdb.md#deleting_document)する」を参照してください。
+ドキュメントコレクションからドキュメントを削除する方法の詳細については、「ドキュメント[コレクションからドキュメントを削除](~/xamarin-forms/data-cloud/azure-services/azure-cosmosdb.md#deleting-a-document-from-a-document-collection)する」を参照してください。
 
-## <a name="summary"></a>[概要]
+## <a name="summary"></a>まとめ
 
 この記事では、アクセス制御をパーティション分割されたコレクションと組み合わせる方法を説明しました。これにより、ユーザーはアプリケーション内の自分のドキュメントデータベースドキュメントにしかアクセスでき Xamarin.Forms ません。 ユーザーの id をパーティションキーとして指定すると、パーティション分割されたコレクションはそのユーザーのドキュメントのみを格納できます。
 

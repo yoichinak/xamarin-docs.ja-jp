@@ -6,12 +6,12 @@ ms.assetid: F7126340-04B2-4A10-B14D-394E23527C1A
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: 5ba451de857444bc5b12b750ae479b62abdb75a3
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: d2c00410581a35e67807f512b5b6fb6d5349ad0f
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306009"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571052"
 ---
 # <a name="3264-bit-platform-considerations"></a>32/64 ビットプラットフォームに関する考慮事項
 
@@ -21,11 +21,11 @@ IOS 11 以降では、32ビットのアプリは起動されなくなり、[ア�
 
 2018年1月以降、 [Mac App Store に送信された新しいアプリは64ビットをサポートする必要があり](https://developer.apple.com/news/?id=06282017a)、既存のアプリは6月の2018で更新する必要があります。
 
-Xamarin の Classic API (`XamMac.dll` と `monotouch.dll`) では、32ビットアプリケーションのみがサポートされていました。 ただし、新しい Xamarin および Xamarin アプリケーションでは、既定で[Unified API](~/cross-platform/macios/unified/index.md) (`Xamarin.iOS` と `Xamarin.Mac`) が使用されるため、必要に応じて32と64ビットの両方を対象にすることができます。
+Xamarin の Classic API ( `XamMac.dll` および `monotouch.dll` ) では、32ビットアプリケーションのみがサポートされていました。 ただし、新しい Xamarin および Xamarin アプリケーションでは、既定で[Unified API](~/cross-platform/macios/unified/index.md) (と) が使用される `Xamarin.iOS` ため、 `Xamarin.Mac` 必要に応じて32と64ビットの両方をターゲットにすることができます。
 
 ## <a name="ios"></a>iOS
 
-<a name="enable-64" />
+<a name="enable-64"></a>
 
 ### <a name="enabling-64-bit-builds-of-xamarinios-apps"></a>Xamarin iOS アプリの64ビットビルドを有効にする
 
@@ -38,32 +38,32 @@ Unified API に変換された Xamarin の iOS モバイルアプリケーショ
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. **Solution Pad**で、アプリのプロジェクトをダブルクリックして、 **[プロジェクトオプション]** ウィンドウを開きます。
-2. **[IOS ビルド]** を選択します。
-3. IPhone シミュレーターの **[サポートされているアーキテクチャ]** ドロップダウンで、 **x86\_64**または**i386 + x86\_64**を選択します。
+1. **Solution Pad**で、アプリのプロジェクトをダブルクリックして、[**プロジェクトオプション**] ウィンドウを開きます。
+2. [ **IOS ビルド**] を選択します。
+3. IPhone シミュレーターの [**サポートされているアーキテクチャ**] ドロップダウンで、[ **x86 \_ 64** ] または [ **i386 + x86 \_ 64**] を選択します。
 
-   [![サポートされているアーキテクチャを x86\_64 または i386 + x86\_64 に設定する](Images/Image01.png "Setting Supported architectures to x86\_64 or i386 + x86\_64")](Images/Image01-large.png#lightbox) 
+   [![サポートされているアーキテクチャを x86 \_ 64 または i386 + x86 64 に設定する \_](Images/Image01.png "Setting Supported architectures to x86\_64 or i386 + x86\_64")](Images/Image01-large.png#lightbox) 
 
 4. 物理デバイスの場合は、使用可能な**ARM64**の組み合わせのいずれかを選択します。
 
    [![サポートされているアーキテクチャを ARM64 の組み合わせのいずれかに設定する](Images/Image02.png "サポートされているアーキテクチャを ARM64 の組み合わせのいずれかに設定する")](Images/Image02-large.png#lightbox)
 
-5. **[OK]** をクリックすると、
+5. **[OK]** をクリックします。
 6. クリーン ビルドを実行します。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. **ソリューションエクスプローラー**で、アプリのプロジェクトを右クリックし、 **[プロパティ]** を選択します。
-2. **[IOS ビルド]** を選択します。
-3. IPhone シミュレーターでは、**サポートされているアーキテクチャ**を**x86\_64**または**i386 + x86\_64**のいずれかに設定します。 
+1. **ソリューションエクスプローラー**で、アプリのプロジェクトを右クリックし、[**プロパティ**] を選択します。
+2. [ **IOS ビルド**] を選択します。
+3. IPhone シミュレーターでは、**サポートされているアーキテクチャ**を**x86 \_ 64**または**i386 + x86 \_ 64**のいずれかに設定します。 
 
-   [![サポートされているアーキテクチャを x86_64 または i386 + x86\_64 に設定する](Images/VS02.png "Setting Supported architectures to x86_64 or i386 + x86\_64")](Images/VS02-large.png#lightbox)
+   [![サポートされているアーキテクチャを x86_64 または i386 + x86 64 に設定する \_](Images/VS02.png "Setting Supported architectures to x86_64 or i386 + x86\_64")](Images/VS02-large.png#lightbox)
 
 4. 物理デバイスの場合は、使用可能な**ARM64**の組み合わせのいずれかを選択します。
     
    [![サポートされているアーキテクチャを ARM64 の組み合わせのいずれかに設定する](Images/VS01.png "サポートされているアーキテクチャを ARM64 の組み合わせのいずれかに設定する")](Images/VS01-large.png#lightbox)
 
-5. 変更を [保存] します。
+5. 変更内容を保存します。
 6. クリーン ビルドを実行します。
 
 -----
@@ -90,7 +90,7 @@ Apple の32ビットから64ビットへの移行中は、iOS アプリを32ビ�
 
 最新の Mac コンピューターのほとんどは、32ビットアプリケーションと64ビットアプリケーションの両方をサポートしています。   MacOS 10.6 (雪 Leopard) は、32ビットシステムで実行する最後のオペレーティングシステムでした。   2010以降にリリースされたほとんどの Mac では、両方のシステムがサポートされます。
 
-IOS とは異なり、macOS の最近のバージョンで導入された新しいフレームワークの多くは、64ビットモード (CloudKit、EventKit、GameController、LocalAuthentication、MediaLibrary、MultipeerConnectivity、NotificationCenter、GLKit、SpriteKit、ソーシャル) でのみサポートされています。と MapKit など)。
+IOS とは異なり、最近のバージョンの macOS で導入された新しいフレームワークの多くは、64ビットモード (CloudKit、EventKit、GameController、LocalAuthentication、MediaLibrary、MultipeerConnectivity、NotificationCenter、GLKit、SpriteKit、ソーシャル、および MapKit など) でのみサポートされています。
 
 Unified API を使用すると、開発者が生成するアプリケーションの種類 (32 ビットまたは64ビット) を選択できます。
 

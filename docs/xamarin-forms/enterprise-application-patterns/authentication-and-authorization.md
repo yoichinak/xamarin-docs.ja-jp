@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8d5bf1d7821187924adc58582a5139f81235e6a0
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139101"
+title: "認証と承認" 説明: "この章では、eShopOnContainers モバイルアプリがコンテナー化されたマイクロサービスに対して認証と承認を実行する方法について説明します。"
+ms. 製品: xamarin ms. assetid: e3f27b4c-f7f5-4839-a48c-30bcb919c59e: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 08/08/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="authentication-and-authorization"></a>認証と承認
 
 認証とは、ユーザーからの名前やパスワードなどの id 資格情報を取得し、それらの資格情報を機関に対して検証するプロセスです。 資格情報が有効な場合、資格情報を送信したエンティティは認証済み id と見なされます。 Id が認証されると、その id が特定のリソースにアクセスできるかどうかが承認プロセスによって判断されます。
@@ -40,7 +26,7 @@ OpenID Connect は、OAuth 2.0 プロトコル上の認証レイヤーです。 
 
 OpenID Connect と OAuth 2.0 の組み合わせによって、認証と API アクセスの2つの基本的なセキュリティ上の懸念が組み合わされています。また、このプロトコルの実装は、サーバー4です。
 
-EShopOnContainers 参照アプリケーションなどのクライアントからマイクロサービスへの直接通信を使用するアプリケーションでは、図9-1 に示すように、セキュリティトークンサービス (STS) として機能する専用の認証マイクロサービスを使用して、ユーザーを認証できます。 クライアントからマイクロサービスへの直接通信の詳細については、「[クライアントとマイクロサービス間の通信](~/xamarin-forms/enterprise-application-patterns/containerized-microservices.md#communication_between_client_and_microservices)」を参照してください。
+EShopOnContainers 参照アプリケーションなどのクライアントからマイクロサービスへの直接通信を使用するアプリケーションでは、図9-1 に示すように、セキュリティトークンサービス (STS) として機能する専用の認証マイクロサービスを使用して、ユーザーを認証できます。 クライアントからマイクロサービスへの直接通信の詳細については、「[クライアントとマイクロサービス間の通信](~/xamarin-forms/enterprise-application-patterns/containerized-microservices.md#communication-between-client-and-microservices)」を参照してください。
 
 ![](authentication-and-authorization-images/authentication.png "Authentication by a dedicated authentication microservice")
 
@@ -195,7 +181,7 @@ public static IEnumerable<Client> GetClients(Dictionary<string,string> clien
 
 - `ClientId`: クライアントの一意の ID。
 - `ClientName`: ログおよび同意画面に使用されるクライアントの表示名。
-- `AllowedGrantTypes`: クライアントが、サーバーと対話する方法を指定します。 詳細について[は、「認証フローの構成](#configuring_the_authentication_flow)」を参照してください。
+- `AllowedGrantTypes`: クライアントが、サーバーと対話する方法を指定します。 詳細について[は、「認証フローの構成](#configuring-the-authentication-flow)」を参照してください。
 - `ClientSecrets`: トークンエンドポイントからトークンを要求するときに使用されるクライアントシークレットの資格情報を指定します。
 - `RedirectUris`: トークンまたは認証コードを返すために使用できる Uri を指定します。
 - `RequireConsent`: 同意画面が必要かどうかを指定します。
@@ -204,8 +190,6 @@ public static IEnumerable<Client> GetClients(Dictionary<string,string> clien
 - `AllowedCorsOrigins`: クライアントの配信元を指定します。これにより、配信元からのクロスオリジン呼び出しが許可されるようになります。
 - `AllowedScopes`: クライアントがアクセスできるリソースを指定します。 既定では、クライアントはリソースにアクセスできません。
 - `AllowOfflineAccess`: クライアントが更新トークンを要求できるかどうかを指定します。
-
-<a name="configuring_the_authentication_flow" />
 
 #### <a name="configuring-the-authentication-flow"></a>認証フローの構成
 
@@ -326,14 +310,14 @@ private async Task NavigateAsync(string url)
 
 トークンエンドポイントは、有効な認証コードと PKCE シークレット検証ツールを受け取ると、アクセストークン、id トークン、および更新トークンで応答します。 (API リソースへのアクセスを許可する) アクセストークンと id トークンは、アプリケーション設定として格納され、ページナビゲーションが実行されます。 したがって、eShopOnContainers モバイルアプリの全体的な影響は次のようになります。ユーザーがユーザーの認証に成功した場合は、ページに移動されます `MainView` 。これは、が選択した [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) `CatalogView` タブとして表示されるです。
 
-ページナビゲーションの詳細については、「[ナビゲーション](~/xamarin-forms/enterprise-application-patterns/navigation.md)」を参照してください。 ナビゲーションによって [`WebView`](xref:Xamarin.Forms.WebView) ビューモデルメソッドが実行される方法については、「[動作を使用したナビゲーションの呼び出し](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking_navigation_using_behaviors)」を参照してください。 アプリケーション設定の詳細については、「[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)」を参照してください。
+ページナビゲーションの詳細については、「[ナビゲーション](~/xamarin-forms/enterprise-application-patterns/navigation.md)」を参照してください。 ナビゲーションによって [`WebView`](xref:Xamarin.Forms.WebView) ビューモデルメソッドが実行される方法については、「[動作を使用したナビゲーションの呼び出し](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking-navigation-using-behaviors)」を参照してください。 アプリケーション設定の詳細については、「[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)」を参照してください。
 
 > [!NOTE]
 > また、eShopOnContainers は、アプリがでモックサービスを使用するように構成されている場合にも、モックサインインを許可し `SettingsView` ます。 このモードでは、アプリは、ユーザーが任意の資格情報を使用してサインインできるようにするために、ユーザーがサービスと通信しません。
 
 #### <a name="signing-out"></a>サインアウト
 
-ユーザーがの [**ログアウト**] ボタンをタップすると、クラスのが `ProfileView` `LogoutCommand` `ProfileViewModel` 実行され、さらにメソッドが実行され `LogoutAsync` ます。 このメソッドは、ページへのページナビゲーションを実行し `LoginView` 、 `LogoutParameter` に設定されたインスタンスを `true` パラメーターとして渡します。 ページナビゲーション中にパラメーターを渡す方法の詳細については、「[ナビゲーション中のパラメーターの引き渡し](~/xamarin-forms/enterprise-application-patterns/navigation.md#passing_parameters_during_navigation)」を参照してください。
+ユーザーがの [**ログアウト**] ボタンをタップすると、クラスのが `ProfileView` `LogoutCommand` `ProfileViewModel` 実行され、さらにメソッドが実行され `LogoutAsync` ます。 このメソッドは、ページへのページナビゲーションを実行し `LoginView` 、 `LogoutParameter` に設定されたインスタンスを `true` パラメーターとして渡します。 ページナビゲーション中にパラメーターを渡す方法の詳細については、「[ナビゲーション中のパラメーターの引き渡し](~/xamarin-forms/enterprise-application-patterns/navigation.md#passing-parameters-during-navigation)」を参照してください。
 
 ビューを作成して移動すると、 `InitializeAsync` ビューに関連付けられたビューモデルのメソッドが実行され、 `Logout` 次の `LoginViewModel` コード例に示すように、クラスのメソッドが実行されます。
 
@@ -385,12 +369,10 @@ private async Task NavigateAsync(string url)
 
 このメソッドは、アプリケーション設定から id トークンとアクセストークンの両方をクリアし、 `IsLogin` プロパティをに設定し `false` ます。これにより、ページ上のが非表示に [`WebView`](xref:Xamarin.Forms.WebView) `LoginView` なります。 最後に、 `LoginUrl` プロパティは、ユーザーが次回サインインを開始するときに備えて、必要なパラメーターを指定して、ユーザーの[認証エンドポイント](https://identityserver4.readthedocs.io/en/latest/endpoints/authorize.html)の URI に設定されます。
 
-ページナビゲーションの詳細については、「[ナビゲーション](~/xamarin-forms/enterprise-application-patterns/navigation.md)」を参照してください。 ナビゲーションによって [`WebView`](xref:Xamarin.Forms.WebView) ビューモデルメソッドが実行される方法については、「[動作を使用したナビゲーションの呼び出し](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking_navigation_using_behaviors)」を参照してください。 アプリケーション設定の詳細については、「[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)」を参照してください。
+ページナビゲーションの詳細については、「[ナビゲーション](~/xamarin-forms/enterprise-application-patterns/navigation.md)」を参照してください。 ナビゲーションによって [`WebView`](xref:Xamarin.Forms.WebView) ビューモデルメソッドが実行される方法については、「[動作を使用したナビゲーションの呼び出し](~/xamarin-forms/enterprise-application-patterns/navigation.md#invoking-navigation-using-behaviors)」を参照してください。 アプリケーション設定の詳細については、「[構成管理](~/xamarin-forms/enterprise-application-patterns/configuration-management.md)」を参照してください。
 
 > [!NOTE]
 > また、eShopOnContainers は、SettingsView でモックサービスを使用するようにアプリが構成されている場合に、モックサインアウトを許可します。 このモードでは、アプリは、サービスと通信しません。その代わり、アプリケーション設定から格納されているトークンをクリアします。
-
-<a name="authorization" />
 
 ## <a name="authorization"></a>承認
 
@@ -409,7 +391,7 @@ public class BasketController : Controller
 承認されていないユーザーが、属性でマークされたコントローラーまたはアクションにアクセスしようとすると、 `Authorize` MVC フレームワークは 401 (未承認) HTTP 状態コードを返します。
 
 > [!NOTE]
-> 属性でパラメーターを指定して、 `Authorize` API を特定のユーザーに制限することができます。 詳細については、「[承認](/aspnet/core/security/authorization/introduction/)」をご覧ください。
+> 属性でパラメーターを指定して、 `Authorize` API を特定のユーザーに制限することができます。 詳細については、「[承認](/aspnet/core/security/authorization/introduction/)」を参照してください。
 
 認証ワークフローには、アクセストークンによって制御承認が提供されるように、サービスを統合することができます。 このアプローチを図9-5 に示します。
 
@@ -475,7 +457,7 @@ httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValu
 
 EShopOnContainers モバイルアプリが web 要求を作成する方法の詳細については、「[リモートデータへのアクセス](~/xamarin-forms/enterprise-application-patterns/accessing-remote-data.md)」を参照してください。
 
-## <a name="summary"></a>[概要]
+## <a name="summary"></a>まとめ
 
 Xamarin.FormsASP.NET MVC web アプリケーションと通信するアプリに認証と承認を統合する方法は多数あります。 EShopOnContainers モバイルアプリは、ユーザー id を使用するコンテナー化された id マイクロサービスで認証と承認を実行します。 ユーザー Id は、ASP.NET Core Id と統合してベアラートークン認証を実行する ASP.NET Core 用のオープンソース OpenID Connect および OAuth 2.0 フレームワークです。
 

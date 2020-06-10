@@ -1,22 +1,8 @@
 ---
-title: レイアウトオプションXamarin.Forms
-description: すべて Xamarin.Forms のビューには、LayoutOptions 型の水平オプションと垂直オプションのプロパティがあります。 この記事では、各 LayoutOptions 値がビューの配置と展開に与える影響について説明します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 17f4e76f9bef71352cabddfba9397e95bcdd24d3
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138033"
+title: "説明のレイアウトオプション" Xamarin.Forms description: "すべて Xamarin.Forms のビューには、LayoutOptions 型の水平オプションと垂直オプションのプロパティがあります。 この記事では、各 LayoutOptions 値がビューの配置と展開に与える影響について説明します。
+ms. 製品: xamarin ms assetid: 7CAB5631-5153-4DEF-8AD7-C6011CE44 307 ms. テクノロジ: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 02/10/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="layout-options-in-xamarinforms"></a>レイアウトオプションXamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutoptions)
@@ -52,8 +38,6 @@ _すべて Xamarin.Forms のビューには、LayoutOptions 型の水平オプ�
 
 > [!NOTE]
 > ビューの [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) プロパティと [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) プロパティの既定値は[`LayoutOptions.Fill`](xref:Xamarin.Forms.LayoutOptions.Fill) です。
-
-<a name="alignment" />
 
 ## <a name="alignment"></a>アラインメント
 
@@ -98,9 +82,7 @@ Content = new StackLayout
 
 [![](layout-options-images/alignment.png "Alignment Layout Options")](layout-options-images/alignment-large.png#lightbox "Alignment Layout Options")
 
-<a name="expansion" />
-
-## <a name="expansion"></a>拡張
+## <a name="expansion"></a>正規の表記
 
 展開では、内でビューが使用可能な領域を占有するかどうかを制御し [`StackLayout`](xref:Xamarin.Forms.StackLayout) ます。 に `StackLayout` 未使用の領域が含まれている場合 (つまり、が `StackLayout` そのすべての子の合計サイズを超える場合)、その [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) プロパティまたは [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) プロパティをサフィックスを使用するフィールドに設定することによって、展開を要求するすべての子ビューによって未使用領域が均等に共有され [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) `AndExpand` ます。 内のすべての領域が使用されている場合、 `StackLayout` 展開オプションの効果はありません。
 
@@ -155,7 +137,7 @@ Content = new StackLayout
 
 各 [`Label`](xref:Xamarin.Forms.Label) は、内で同じ量の領域を占有し [`StackLayout`](xref:Xamarin.Forms.StackLayout) ます。 ただし、[`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) プロパティを [`FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand) に設定する最後の `Label` のみ、サイズが異なります。 さらに、各 `Label` は小さい赤で区切られ [`BoxView`](xref:Xamarin.Forms.BoxView) ます。これにより、 `Label` 占有領域を簡単に表示できます。
 
-## <a name="summary"></a>[概要]
+## <a name="summary"></a>まとめ
 
 この記事では、各 [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) 構造体の値が、親を基準としたビューの配置と展開に与える影響について説明しました。 `Start`、、 `Center` `End` 、およびの `Fill` 各フィールドは、親レイアウト内のビューの配置を定義するために使用されます。また、、、 `StartAndExpand` `CenterAndExpand` `EndAndExpand` 、およびの各フィールドは、配置設定を定義するために使用されます。また、使用 `FillAndExpand` 可能な場合は、内でビューが使用できる領域を占有するかどうかを決定し [`StackLayout`](xref:Xamarin.Forms.StackLayout) ます。
 

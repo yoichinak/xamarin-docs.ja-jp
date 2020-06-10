@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 12fe9645ab832db1db37e36b0342664bbd2fe9f8
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 9a45e87165101a8e8afcfc51d15d085982b6499e
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030413"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84569934"
 ---
 # <a name="working-with-tvos-page-controls-in-xamarin"></a>Xamarin での tvOS Page コントロールの使用
 
@@ -27,15 +27,15 @@ ms.locfileid: "73030413"
 - **完全なコレクションでのみ使用**する-ページコントロールは全画面環境で最適に機能し、1つのコレクションに存在する複数のページを表示します。
 - ページ**の数を制限**します。ページコントロールは、10 (10) 以下のページ、および最大で 20 (20) ページに最適です。 20ページを超える場合は、[コレクションビュー](~/ios/tvos/user-interface/collection-views.md)を使用し、グリッドにページを表示することを検討してください。
 
-<a name="Page-Controls-and-Storyboards" />
+<a name="Page-Controls-and-Storyboards"></a>
 
 ## <a name="page-controls-and-storyboards"></a>ページコントロールとストーリーボード
 
 TvOS アプリでページコントロールを操作する最も簡単な方法は、iOS デザイナーを使用してアプリの UI に追加することです。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. **Solution Pad**で、`Main.storyboard` ファイルをダブルクリックして開き、編集します。
+1. **Solution Pad**で、ファイルをダブルクリックし `Main.storyboard` て開き、編集します。
 1. **ツールボックス**から**ページコントロール**をドラッグし、ビューにドロップします。
 
     [![](page-controls-images/page02.png "A Page Control")](page-controls-images/page02.png#lightbox)
@@ -43,14 +43,14 @@ TvOS アプリでページコントロールを操作する最も簡単な方法
 
     [![](page-controls-images/page03.png "The Widget Tab")](page-controls-images/page03.png#lightbox)
 1. 次に、コントロールまたはジェスチャをビューに追加して、ページのコレクションを前後に移動します。
-1. 最後に、コントロールに**名前**を割り当てて、コードでC#それらに応答できるようにします。 (例:
+1. 最後に、コントロールに**名前**を割り当てて、C# コードでそれらに応答できるようにします。 次に例を示します。
 
     [![](page-controls-images/page04.png "Name the control")](page-controls-images/page04.png#lightbox)
 1. 変更内容を保存します。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. **ソリューションエクスプローラー**で、`Main.storyboard` ファイルをダブルクリックして開き、編集します。
+1. **ソリューションエクスプローラー**で、ファイルをダブルクリックし `Main.storyboard` て開き、編集します。
 1. **ツールボックス**から**ページコントロール**をドラッグし、ビューにドロップします。
 
     [![](page-controls-images/page02-vs.png "A Page Control")](page-controls-images/page02-vs.png#lightbox)
@@ -58,7 +58,7 @@ TvOS アプリでページコントロールを操作する最も簡単な方法
 
     [![](page-controls-images/page03-vs.png "The Widget tab")](page-controls-images/page03-vs.png#lightbox)
 1. 次に、コントロールまたはジェスチャをビューに追加して、ページのコレクションを前後に移動します。
-1. 最後に、コントロールに**名前**を割り当てて、コードでC#それらに応答できるようにします。 (例:
+1. 最後に、コントロールに**名前**を割り当てて、C# コードでそれらに応答できるようにします。 次に例を示します。
 
     [![](page-controls-images/page04-vs.png "Name the control")](page-controls-images/page04-vs.png#lightbox)
 1. 変更内容を保存します。
@@ -66,9 +66,9 @@ TvOS アプリでページコントロールを操作する最も簡単な方法
 -----
 
 > [!IMPORTANT]
-> `TouchUpInside` などのイベントを iOS デザイナーの UI 要素 (UIButton など) に割り当てることはできますが、Apple TV にタッチスクリーンやタッチイベントのサポートがないため、呼び出されません。 TvOS ユーザーインターフェイス要素のイベントハンドラーを作成するときは、常に `Primary Action` イベントを使用する必要があります。
+> などのイベントを、 `TouchUpInside` IOS デザイナーの UI 要素 (UIButton など) に割り当てることはできますが、APPLE TV にタッチスクリーンやタッチイベントのサポートがないために呼び出されることはありません。 `Primary Action`TvOS ユーザーインターフェイス要素のイベントハンドラーを作成するときは、常にイベントを使用する必要があります。
 
-ビューコントローラー (例 `ViewController.cs`) ファイルを編集し、変更されているページを処理するコードを追加します。 (例:
+ビューコントローラー (例 `ViewController.cs` ) ファイルを編集し、変更されているページを処理するコードを追加します。 次に例を示します。
 
 ```csharp
 using System;
@@ -154,11 +154,11 @@ PageView.Pages = 6;
 PageView.CurrentPage = PageNumber;
 ```
 
-`CurrentPage` プロパティはゼロ (0) に基づいているため、最初のページはゼロになり、最後のページはページの最大数を引いたものになります。
+`CurrentPage`プロパティはゼロ (0) に基づいているため、最初のページはゼロになり、最後のページはページの最大数を引いたものになります。
 
 ストーリーボードの操作の詳細については、「 [Hello, tvOS クイックスタートガイド](~/ios/tvos/get-started/hello-tvos.md)」を参照してください。
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>まとめ
 

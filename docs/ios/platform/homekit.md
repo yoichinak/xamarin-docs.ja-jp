@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: e0f6d9ed1028cd825d9fd8e40fe99c4ea250612f
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b9b8d1dbaf7872ab629392e15d906540ae491db4
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032421"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572599"
 ---
 # <a name="homekit-in-xamarinios"></a>Xamarin. iOS のホームキット
 
@@ -30,7 +30,7 @@ Apple では、さまざまなベンダーの複数のホームオートメー�
 
 ホームキットが有効になっているアプリにホーム構成データベースのデバイスを提供するだけでなく、Home Kit は Siri 音声コマンドにアクセスできるようにします。 適切に構成されたホームキットのセットアップでは、ユーザーは "Siri, 生きた部屋のライトをオンにする" などの音声コマンドを発行できます。
 
-<a name="Home-Configuration-Database" />
+<a name="Home-Configuration-Database"></a>
 
 ## <a name="the-home-configuration-database"></a>ホーム構成データベース
 
@@ -38,28 +38,28 @@ Apple では、さまざまなベンダーの複数のホームオートメー�
 
 ホームコレクションは、すべてのユーザーの iOS デバイスで自動的にバックアップされ、同期されるホーム構成データベースに格納されます。 ホームキットには、ホーム構成データベースを操作するための次のクラスが用意されています。
 
-- `HMHome`-1 つの物理的な場所にあるすべてのホームオートメーションデバイスのすべての情報と構成を保持する最上位レベルのコンテナー (例: 1つの家族の住居)。 ユーザーには、自宅や休暇の家など、複数の住居が存在する場合があります。 または、主家やガレージのゲスト家など、同じプロパティに異なる "家" が存在する場合もあります。 どちらの場合も、他のすべてのホームキット情報を入力する前に、少なくとも1つの `HMHome` オブジェクトを設定して保存_する必要があり_ます。
-- `HMRoom`-省略可能ですが、`HMRoom` を使用すると、ユーザーは、キッチン、浴室、ガレージ、リビングルームなど、自宅 (`HMHome`) 内の特定の部屋を定義できます。 ユーザーは、家の特定の場所にあるすべてのホームオートメーションデバイスを `HMRoom` にグループ化して、1つの単位として動作させることができます。 たとえば、ガレージのライトをオフにするように Siri に要求します。
-- `HMAccessory`-これは、ユーザーの居住地 (スマートサーモスタットなど) にインストールされている個々の物理ホームキットが有効になっているオートメーションデバイスを表します。 各 `HMAccessory` は `HMRoom`に割り当てられます。 ユーザーが部屋を構成していない場合は、ホームキットによって特別な既定の部屋にアクセサリが割り当てられます。
-- `HMService`-特定の `HMAccessory`によって提供されるサービスを表します。たとえば、光のオン/オフの状態や色の変化がサポートされている場合などです。 各 `HMAccessory` には、1つの光を含むガレージドア unityvs など、複数のサービスを含めることができます。 また、特定の `HMAccessory` には、ユーザーコントロールの外部にある、ファームウェアの更新などのサービスが含まれている場合があります。
-- `HMZone`-ユーザーが `HMRoom` のオブジェクトのコレクションを階、Downstairs、Basement などの論理ゾーンにグループ化できるようにします。 省略可能ですが、これにより、Siri に対してすべてのライト downstairs をオフにするような操作を行うことができます。
+- `HMHome`-これは、1つの物理的な場所にあるすべてのホームオートメーションデバイスのすべての情報と構成を保持する最上位のコンテナーです (例: 1つの家族の住居)。 ユーザーには、自宅や休暇の家など、複数の住居が存在する場合があります。 または、主家やガレージのゲスト家など、同じプロパティに異なる "家" が存在する場合もあります。 どちらの方法でも、 `HMHome` 他のすべてのホームキット情報を入力する前に、少なくとも1つのオブジェクトを設定して保存_する必要があり_ます。
+- `HMRoom`-オプションとして、は、 `HMRoom` `HMHome` キッチン、浴室、ガレージ、リビングルームなど、自宅 () 内の特定の部屋を定義することをユーザーに許可します。 ユーザーは、家の特定の場所にあるすべてのホームオートメーションデバイスをにグループ化 `HMRoom` し、1つの単位として動作させることができます。 たとえば、ガレージのライトをオフにするように Siri に要求します。
+- `HMAccessory`-これは、ユーザーの居住地 (スマートサーモスタットなど) にインストールされている、個別の物理ホームキットが有効になっているオートメーションデバイスを表します。 各 `HMAccessory` はに割り当てられ `HMRoom` ます。 ユーザーが部屋を構成していない場合は、ホームキットによって特別な既定の部屋にアクセサリが割り当てられます。
+- `HMService`- `HMAccessory` ライトやその色のオン/オフの状態 (色の変更がサポートされている場合) など、指定されたによって提供されるサービスを表します。 各に `HMAccessory` は、照明を含むガレージドア unityvs など、複数のサービスを含めることができます。 また、指定されたには、 `HMAccessory` ユーザーコントロールの外部にある、ファームウェアの更新などのサービスが含まれる場合があります。
+- `HMZone`-オブジェクトのコレクションを、 `HMRoom` 階、Downstairs、Basement などの論理ゾーンにグループ化することをユーザーに許可します。 省略可能ですが、これにより、Siri に対してすべてのライト downstairs をオフにするような操作を行うことができます。
 
-<a name="Provisioning-a-HomeKit-App" />
+<a name="Provisioning-a-HomeKit-App"></a>
 
 ## <a name="provisioning-a-homekit-app"></a>ホームキットアプリをプロビジョニングする
 
 ホームキットによって課せられるセキュリティ要件により、Sekit フレームワークを使用する Xamarin iOS アプリは、Apple Developer ポータルと Xamarin の iOS プロジェクトファイルの両方で適切に構成されている必要があります。
 
-次の手順で行います。
+次の操作を行います。
 
 1. [Apple Developer ポータル](https://developer.apple.com)にログインします。
 2. [**証明書]、[識別子 & プロファイル**] の順にクリックします。
-3. まだ行っていない場合は、 **[識別子]** をクリックし、アプリの id を作成します (例: `com.company.appname`)。それ以外の場合は、既存の id を編集します。
+3. まだ行っていない場合は、[**識別子**] をクリックし、アプリの id を作成します (例:)。それ以外の場合は、既存の id を編集します。 `com.company.appname`
 4. 指定された ID について、**ホームキット**サービスがチェックされていることを確認します。 
 
     [![](homekit-images/provision01.png "Enable the HomeKit service for the given ID")](homekit-images/provision01.png#lightbox)
 5. 変更内容を保存します。
-6. **[プロビジョニングプロファイル]**  >  **[開発]** をクリックし、アプリの新しい開発プロビジョニングプロファイルを作成します。 
+6. [**プロビジョニングプロファイル**の開発] をクリックし、  >  **Development**アプリの新しい開発プロビジョニングプロファイルを作成します。 
 
     [![](homekit-images/provision02.png "Create a new development provisioning profile for the app")](homekit-images/provision02.png#lightbox)
 7. 新しいプロビジョニングプロファイルをダウンロードしてインストールするか、Xcode を使用してプロファイルをダウンロードしてインストールします。
@@ -87,7 +87,7 @@ Apple では、さまざまなベンダーの複数のホームオートメー�
 
 Apple では、Xcode からの個別のダウンロードとして、ホームキットのアクセサリシミュレーターが提供されているので、続行する前にインストールする必要があります。
 
-次の手順で行います。
+次の操作を行います。
 
 1. Web ブラウザーで、 [Apple 開発者向けダウンロード](https://developer.apple.com/download/more/?name=for%20Xcode)にアクセスします。
 2. **Xcode xxx 用の追加ツール**をダウンロードします (xxx は、インストールした Xcode のバージョンです)。 
@@ -104,19 +104,19 @@ Apple では、Xcode からの個別のダウンロードとして、ホーム�
 1. [アプリケーション] フォルダーから、ホームキットアクセサリシミュレーターを起動します。 
 
     [![](homekit-images/simulator02.png "The HomeKit Accessory Simulator")](homekit-images/simulator02.png#lightbox)
-2. [ **+** ] ボタンをクリックし、 **[新しいアクセサリ]** を選択します。 
+2. ボタンをクリックし、[ **+** **新しいアクセサリ...**] を選択します。 
 
     [![](homekit-images/simulator03.png "Add a new accessory")](homekit-images/simulator03.png#lightbox)
-3. 新しいアクセサリに関する情報を入力し、 **[完了]** ボタンをクリックします。 
+3. 新しいアクセサリに関する情報を入力し、[**完了**] ボタンをクリックします。 
 
     [![](homekit-images/simulator04.png "Fill out the information about the new accessory")](homekit-images/simulator04.png#lightbox)
-4. **[サービスの追加]** をクリックします。 をクリックし、ドロップダウンからサービスの種類を選択します。 
+4. [**サービスの追加**] をクリックします。 ] をクリックし、ドロップダウンからサービスの種類を選択します。 
 
     [![](homekit-images/simulator05.png "Select a service type from the dropdown")](homekit-images/simulator05.png#lightbox)
-5. サービスの**名前**を指定し、 **[完了]** ボタンをクリックします。 
+5. サービスの**名前**を指定し、[**完了**] ボタンをクリックします。 
 
     [![](homekit-images/simulator06.png "Enter a Name for the service")](homekit-images/simulator06.png#lightbox)
-6. **[特性の追加]** ボタンをクリックし、必要な設定を構成することにより、サービスのオプションの特性を指定できます。 
+6. [**特性の追加**] ボタンをクリックし、必要な設定を構成することにより、サービスのオプションの特性を指定できます。 
 
     [![](homekit-images/simulator07.png "Configuring the required settings")](homekit-images/simulator07.png#lightbox)
 7. 上記の手順を繰り返して、ホームキットがサポートする各種類の仮想ホームオートメーションデバイスの1つを作成します。
@@ -125,16 +125,16 @@ Virtual ホームキットのアクセサリをいくつか作成して構成し
 
 ## <a name="configuring-the-infoplist-file"></a>情報の plist ファイルの構成
 
-IOS 10 (およびそれ以降) の新機能として、開発者は、アプリの `Info.plist` ファイルに `NSHomeKitUsageDescription` キーを追加し、アプリがユーザーのホームキットデータベースにアクセスする理由を宣言する文字列を指定する必要があります。 この文字列は、アプリを初めて実行するときにユーザーに表示されます。
+IOS 10 (およびそれ以降) の新機能として、開発者は `NSHomeKitUsageDescription` アプリのファイルにキーを追加 `Info.plist` し、アプリがユーザーのホームキットデータベースにアクセスする理由を宣言する文字列を指定する必要があります。 この文字列は、アプリを初めて実行するときにユーザーに表示されます。
 
 [![](homekit-images/info01.png "The HomeKit permission dialog")](homekit-images/info01.png#lightbox)
 
 このキーを設定するには、次の手順を実行します。
 
-1. **ソリューションエクスプローラー**内の `Info.plist` ファイルをダブルクリックして、編集用に開きます。
+1. ソリューションエクスプローラー内のファイルをダブルクリックし `Info.plist` て、編集用に**Solution Explorer**開きます。
 2. 画面の下部で、**ソース**ビューに切り替えます。
 3. リストに新しい**エントリ**を追加します。
-4. ドロップダウンリストから、 **[プライバシー-ホームキットの使用状況の説明]** を選択します。 
+4. ドロップダウンリストから、[**プライバシー-ホームキットの使用状況の説明**] を選択します。 
 
     [![](homekit-images/info02.png "Select Privacy - HomeKit Usage Description")](homekit-images/info02.png#lightbox)
 5. アプリがユーザーのホームキットデータベースにアクセスする理由の説明を入力します。 
@@ -143,13 +143,13 @@ IOS 10 (およびそれ以降) の新機能として、開発者は、アプリ�
 6. 変更内容をファイルに保存します。
 
 > [!IMPORTANT]
-> `Info.plist` ファイルの `NSHomeKitUsageDescription` キーを設定しないと、iOS 10 (またはそれ以上) で実行したときに、エラーが発生することなく (実行時にシステムによって終了される) アプリが_サイレントに失敗_します。
+> `NSHomeKitUsageDescription`ファイルにキーを設定し `Info.plist` ないと、iOS 10 (またはそれ以降) で実行したときに、アプリがサイレント (実行時にシステムによって終了される) エラーなしで_失敗_します。
 
 ## <a name="connecting-to-homekit"></a>ホームキットに接続しています
 
-ホームキットと通信するには、Xamarin iOS アプリで `HMHomeManager` クラスのインスタンスを最初にインスタンス化する必要があります。 ホームマネージャーは、ホームキットへの中心的な入り口であり、使用可能な自宅の一覧を提供し、そのリストを更新して維持し、ユーザーの_プライマリホーム_を返す役割を担います。
+ホームキットと通信するには、Xamarin iOS アプリでクラスのインスタンスを最初にインスタンス化する必要があり `HMHomeManager` ます。 ホームマネージャーは、ホームキットへの中心的な入り口であり、使用可能な自宅の一覧を提供し、そのリストを更新して維持し、ユーザーの_プライマリホーム_を返す役割を担います。
 
-`HMHome` オブジェクトには、インストールされているすべてのホームオートメーションアクセサリと共に、含まれている可能性のあるルーム、グループ、またはゾーンを含む、ホームに関するすべての情報が含まれます。 ホームキットで任意の操作を実行する前に、少なくとも1つの `HMHome` を作成し、プライマリホームとして割り当てる必要があります。
+オブジェクトには、インストールされているすべての `HMHome` ホームオートメーションアクセサリと共に、含まれている可能性のあるルーム、グループ、またはゾーンを含む、ホームに関するすべての情報が含まれます。 ホームキットで何らかの操作を実行する前に、少なくとも1つを `HMHome` 作成し、プライマリホームとして割り当てる必要があります。
 
 アプリは、プライマリホームが存在するかどうかを確認し、存在しない場合は作成して割り当てます。
 
@@ -199,7 +199,7 @@ public override void FinishedLaunching (UIApplication application)
 
 前述のように、ホームキットを使用できるようにする前にプライマリホームを作成して構成する必要があります。また、プライマリホームがまだ存在しない場合は、ユーザーがプライマリホームを作成して割り当てる方法を提供する必要があります。
 
-アプリが初めて起動したとき、またはバックグラウンドから戻ったときは、`HMHomeManager` クラスの `DidUpdateHomes` イベントを監視して、プライマリホームの存在を確認する必要があります。 存在しない場合は、ユーザーが作成するインターフェイスを提供する必要があります。
+アプリが初めて起動したとき、またはバックグラウンドから戻ったとき、 `DidUpdateHomes` `HMHomeManager` プライマリホームの存在を確認するには、クラスのイベントを監視する必要があります。 存在しない場合は、ユーザーが作成するインターフェイスを提供する必要があります。
 
 次のコードをビューコントローラーに追加して、プライマリホームを確認することができます。
 
@@ -223,13 +223,13 @@ ThisApp.HomeManager.DidUpdateHomes += (sender, e) => {
 };
 ```
 
-Home Manager がホームキットに接続すると、`DidUpdateHomes` イベントが発生し、既存のすべての自宅がマネージャーの自宅のコレクションに読み込まれ、プライマリホームが読み込まれます (使用可能な場合)。
+Home Manager がホームキットに接続すると、 `DidUpdateHomes` イベントが発生し、既存のすべての自宅がマネージャーの自宅のコレクションに読み込まれ、プライマリホームが読み込まれます (使用可能な場合)。
 
 ### <a name="adding-a-primary-home"></a>プライマリホームの追加
 
-`HMHomeManager` の [`PrimaryHome`] プロパティが `DidUpdateHomes` イベントの後に `null` 場合は、続行する前に、ユーザーがプライマリホームを作成して割り当てる方法を指定する必要があります。
+のプロパティがイベントの後にある場合は、 `PrimaryHome` `HMHomeManager` 続行する `null` `DidUpdateHomes` 前に、ユーザーがプライマリホームを作成して割り当てる方法を指定する必要があります。
 
-通常、アプリは新しいホームに名前を付け、ホームマネージャーに渡され、プライマリホームとしてセットアップするためのフォームを提示します。 **HomeKitIntro**サンプルアプリの場合、モーダルビューは IOS デザイナーで作成され、アプリのメインインターフェイスからのセグエ `AddHomeSegue` によって呼び出されます。
+通常、アプリは新しいホームに名前を付け、ホームマネージャーに渡され、プライマリホームとしてセットアップするためのフォームを提示します。 **HomeKitIntro**サンプルアプリでは、モーダルビューが IOS デザイナーで作成され、 `AddHomeSegue` アプリのメインインターフェイスからセグエによって呼び出されました。
 
 ユーザーが新しいホームの名前を入力するためのテキストフィールドと、ホームを追加するボタンが用意されています。 ユーザーが [ホームの**追加**] ボタンをタップすると、次のコードはホームマネージャーを呼び出してホームを追加します。
 
@@ -258,33 +258,33 @@ ThisApp.HomeManager.AddHome(HomeName.Text,(home,error) =>{
 });
 ```
 
-`AddHome` メソッドは、新しいホームの作成を試行し、指定されたコールバックルーチンにそれを返します。 `error` プロパティが `null`されていない場合は、エラーが発生し、ユーザーに表示される必要があります。 最も一般的なエラーは、一意でないホーム名が原因であるか、Home Manager がホームキットと通信できないことが原因で発生します。
+メソッドは、 `AddHome` 新しいホームの作成を試行し、指定されたコールバックルーチンに返します。 `error`プロパティがでない場合は `null` 、エラーが発生し、ユーザーに表示されます。 最も一般的なエラーは、一意でないホーム名が原因であるか、Home Manager がホームキットと通信できないことが原因で発生します。
 
-自宅が正常に作成された場合は、`UpdatePrimaryHome` メソッドを呼び出して、新しいホームをプライマリホームとして設定する必要があります。 ここでも、`error` プロパティが `null`ない場合は、エラーが発生し、ユーザーに表示される必要があります。
+自宅が正常に作成された場合は、メソッドを呼び出し `UpdatePrimaryHome` て、新しいホームをプライマリホームとして設定する必要があります。 この場合も、 `error` プロパティがでない場合は `null` エラーが発生し、ユーザーに表示されます。
 
-また、ホームマネージャーの `DidAddHome` と `DidRemoveHome` イベントを監視し、必要に応じてアプリのユーザーインターフェイスを更新する必要があります。
+また、ホームマネージャーの `DidAddHome` イベントとイベントを監視 `DidRemoveHome` し、必要に応じてアプリのユーザーインターフェイスを更新する必要があります。
 
 > [!IMPORTANT]
-> 上記のサンプルコードで使用されている `AlertView.PresentOKAlert` メソッドは、HomeKitIntro アプリケーションのヘルパークラスです。これにより、iOS アラートの操作が簡単になります。
+> `AlertView.PresentOKAlert`上記のサンプルコードで使用されているメソッドは、IOS アラートを簡単に操作できるようにする HomeKitIntro アプリケーションのヘルパークラスです。
 
 ## <a name="finding-new-accessories"></a>新しいアクセサリの検索
 
-ホームマネージャーでプライマリホームが定義または読み込まれると、Xamarin iOS アプリは `HMAccessoryBrowser` を呼び出して、新しいホームオートメーションアクセサリを検索し、自宅に追加することができます。
+ホームマネージャーでプライマリホームが定義または読み込まれると、Xamarin iOS アプリはを呼び出して、 `HMAccessoryBrowser` 新しいホームオートメーションアクセサリを検索し、自宅に追加することができます。
 
-`StartSearchingForNewAccessories` メソッドを呼び出して、完了時に新しいアクセサリと `StopSearchingForNewAccessories` メソッドの検索を開始します。
+メソッドを呼び出して、 `StartSearchingForNewAccessories` 完了時に新しいアクセサリとメソッドの検索を開始 `StopSearchingForNewAccessories` します。
 
 > [!IMPORTANT]
-> `StartSearchingForNewAccessories` は、iOS デバイスのバッテリ寿命とパフォーマンスの両方に悪影響を与えるため、長時間実行されないようにする必要があります。 Apple は、1分後に `StopSearchingForNewAccessories` を呼び出すか、検索アクセサリ UI がユーザーに表示されるかを検索することを提案します。
+> `StartSearchingForNewAccessories`は、iOS デバイスのバッテリ寿命とパフォーマンスの両方に悪影響を与えるため、長時間実行されないようにする必要があります。 Apple は `StopSearchingForNewAccessories` 、1分後にの呼び出しを提案します。または、検索アクセサリ UI がユーザーに表示される場合にのみ検索します。
 
-新しいアクセサリが検出されると `DidFindNewAccessory` イベントが呼び出され、アクセサリブラウザーの `DiscoveredAccessories` の一覧に追加されます。
+この `DidFindNewAccessory` イベントは、新しいアクセサリが検出されると呼び出され、アクセサリブラウザーの一覧に追加され `DiscoveredAccessories` ます。
 
-`DiscoveredAccessories` リストには `HMAccessory` オブジェクトのコレクションが含まれます。このコレクションには、ホームオートメーションデバイスの許可、およびライトやガレージドアコントロールなどの利用可能なサービスを定義します。
+`DiscoveredAccessories`リストには、 `HMAccessory` [ホーム] キットが有効になっているホームオートメーションデバイスと、ライトやガレージドアコントロールなどの利用可能なサービスを定義するオブジェクトのコレクションが含まれます。
 
 新しいアクセサリが見つかると、ユーザーに表示され、それを選択してホームに追加できるようになります。 例:
 
 [![](homekit-images/accessory01.png "Finding a new accessory")](homekit-images/accessory01.png#lightbox)
 
-`AddAccessory` メソッドを呼び出して、選択したアクセサリをホームのコレクションに追加します。 (例:
+メソッドを呼び出して、 `AddAccessory` 選択したアクセサリをホームのコレクションに追加します。 次に例を示します。
 
 ```csharp
 // Add the requested accessory to the home
@@ -297,27 +297,27 @@ ThisApp.HomeManager.PrimaryHome.AddAccessory (_controller.AccessoryBrowser.Disco
 });
 ```
 
-`err` プロパティが `null`されていない場合は、エラーが発生し、ユーザーに表示される必要があります。 それ以外の場合、ユーザーは、追加するデバイスのセットアップコードを入力するように求められます。
+`err`プロパティがでない場合は `null` 、エラーが発生し、ユーザーに表示されます。 それ以外の場合、ユーザーは、追加するデバイスのセットアップコードを入力するように求められます。
 
 [![](homekit-images/accessory02.png "Enter the setup code for the device to add")](homekit-images/accessory02.png#lightbox)
 
-ホームキットアクセサリシミュレーターでは、この数値は **[セットアップコード]** フィールドにあります。
+ホームキットアクセサリシミュレーターでは、この数値は [**セットアップコード**] フィールドにあります。
 
 [![](homekit-images/accessory03.png "The Setup Code field in the HomeKit Accessory Simulator")](homekit-images/accessory03.png#lightbox)
 
 実際のホームキットのアクセサリの場合、セットアップコードは、デバイス自体、製品ボックス、またはアクセサリのユーザーマニュアルのラベルに印刷されます。
 
-アクセサリブラウザーの `DidRemoveNewAccessory` イベントを監視し、ユーザーがホームコレクションに追加した後で、使用可能な一覧からアクセサリを削除するようにユーザーインターフェイスを更新する必要があります。
+アクセサリブラウザーのイベントを監視し、ユーザー `DidRemoveNewAccessory` がホームコレクションに追加した後で、使用可能な一覧からアクセサリを削除するようにユーザーインターフェイスを更新する必要があります。
 
 ## <a name="working-with-accessories"></a>アクセサリの操作
 
 プライマリホームが確立され、アクセサリが追加されたら、ユーザーが操作できるアクセサリの一覧 (および必要に応じてルーム) を提示できます。
 
-`HMRoom` オブジェクトには、特定の部屋とそれに属するアクセサリに関するすべての情報が含まれます。 必要に応じて、1つまたは複数のゾーンにルームを整理することができます。 `HMZone` には、特定のゾーンとそれに属するすべてのルームに関するすべての情報が含まれます。
+オブジェクトには、 `HMRoom` 特定の部屋とそれに属するアクセサリに関するすべての情報が含まれています。 必要に応じて、1つまたは複数のゾーンにルームを整理することができます。 には、 `HMZone` 特定のゾーンとそれに属するすべてのルームに関するすべての情報が含まれます。
 
 この例では、これらを部屋やゾーンに分類するのではなく、シンプルで、自宅のアクセサリを直接操作します。
 
-`HMHome` オブジェクトには、割り当てられたアクセサリの一覧が含まれています。このリストは、ユーザーに対して `Accessories` プロパティに表示できます。 (例:
+オブジェクトには、 `HMHome` プロパティでユーザーに提示できる、割り当てられたアクセサリの一覧が含まれてい `Accessories` ます。 次に例を示します。
 
 [![](homekit-images/accessory04.png "An example accessory")](homekit-images/accessory04.png#lightbox)
 
@@ -325,15 +325,15 @@ ThisApp.HomeManager.PrimaryHome.AddAccessory (_controller.AccessoryBrowser.Disco
 
 ## <a name="working-with-services"></a>サービスの操作
 
-指定されたホームオートメーションデバイスでユーザーが操作を行うときは、通常、提供されているサービスを使用します。 `HMAccessory` クラスの `Services` プロパティには、デバイスが提供するサービスを定義する `HMService` オブジェクトのコレクションが含まれています。
+指定されたホームオートメーションデバイスでユーザーが操作を行うときは、通常、提供されているサービスを使用します。 `Services`クラスのプロパティには、デバイスが提供する `HMAccessory` `HMService` サービスを定義するオブジェクトのコレクションが含まれています。
 
 サービスは、ライト、サーモスタット、ガレージドアの openers、スイッチ、またはロックのようなものです。 一部のデバイス (ガレージドア unityvs など) では、光やドアを開いたり閉じたりする機能など、複数のサービスが提供されます。
 
-各アクセサリには、特定のアクセサリが提供する特定のサービスに加えて、名前、製造元、モデル、シリアル番号などのプロパティを定義する `Information Service` が含まれています。
+各アクセサリには、特定のアクセサリが提供する特定のサービスに加えて、 `Information Service` 名前、製造元、モデル、シリアル番号などのプロパティを定義するが含まれています。
 
 ### <a name="accessory-service-types"></a>アクセサリサービスの種類
 
-`HMServiceType` 列挙型では、次のサービスの種類を使用できます。
+列挙型では、次のサービスの種類を使用でき `HMServiceType` ます。
 
 - **AccessoryInformation** -指定されたホームオートメーションデバイス (アクセサリ) に関する情報を提供します。
 - **AirQualitySensor** -航空品質センサーを定義します。
@@ -365,23 +365,23 @@ ThisApp.HomeManager.PrimaryHome.AddAccessory (_controller.AccessoryBrowser.Disco
 
 ### <a name="displaying-service-information"></a>サービス情報の表示
 
-`HMAccessory` を読み込むと、提供された個々の `HNService` オブジェクトに対してクエリを実行し、その情報をユーザーに表示できます。
+を読み込むと、 `HMAccessory` 提供された個々のオブジェクトに対してクエリを実行 `HNService` し、その情報をユーザーに表示できます。
 
 [![](homekit-images/accessory05.png "Displaying Service Information")](homekit-images/accessory05.png#lightbox)
 
-操作を試みる前に、常に `HMAccessory` の `Reachable` プロパティを確認する必要があります。 ユーザーがデバイスの範囲内にない場合、または取り外されている場合、アクセサリに到達できないことがあります。
+の使用 `Reachable` を試みる前に、常にのプロパティを確認する必要があり `HMAccessory` ます。 ユーザーがデバイスの範囲内にない場合、または取り外されている場合、アクセサリに到達できないことがあります。
 
 サービスを選択すると、そのサービスの1つまたは複数の特性を表示または変更して、特定のホームオートメーションデバイスを監視または制御することができます。
 
-<a name="Working-with-Characteristics" />
+<a name="Working-with-Characteristics"></a>
 
 ## <a name="working-with-characteristics"></a>特性の操作
 
-各 `HMService` オブジェクトには、サービスの状態に関する情報 (ドアを開いたり閉じたりするなど) を提供したり、ユーザーが状態を調整したり (ライトの色の設定など) することができる `HMCharacteristic` オブジェクトのコレクションを含めることができます。
+各オブジェクトには、 `HMService` `HMCharacteristic` サービスの状態に関する情報 (ドアを開いたり閉じたりするなど) を提供したり、ユーザーが状態を調整したり (ライトの色の設定など) できるオブジェクトのコレクションを含めることができます。
 
-`HMCharacteristic` 特性とその状態に関する情報だけでなく、_特性メタデータ_(`HMCharacteristisMetadata`) を介して状態を操作するためのメソッドも提供します。 このメタデータは、ユーザーに情報を表示したり、状態の変更を許可したりするときに役立つプロパティ (最小値と最大値の範囲など) を提供できます。
+`HMCharacteristic`は、特性とその状態に関する情報だけでなく、_特性メタデータ_() を介して状態を操作するためのメソッドも提供し `HMCharacteristisMetadata` ます。 このメタデータは、ユーザーに情報を表示したり、状態の変更を許可したりするときに役立つプロパティ (最小値と最大値の範囲など) を提供できます。
 
-`HMCharacteristicType` 列挙型は、次のように定義または変更できる一連の特性メタデータ値を提供します。
+列挙型には、 `HMCharacteristicType` 次のように定義または変更できる特性メタデータ値のセットが用意されています。
 
 - AdminOnlyAccess
 - AirParticulateDensity
@@ -389,7 +389,7 @@ ThisApp.HomeManager.PrimaryHome.AddAccessory (_controller.AccessoryBrowser.Disco
 - 航空品質
 - AudioFeedback
 - BatteryLevel
-- [明るさ]
+- 明るさ
 - CarbonDioxideDetected
 - CarbonDioxideLevel
 - CarbonDioxidePeakLevel
@@ -410,22 +410,22 @@ ThisApp.HomeManager.PrimaryHome.AddAccessory (_controller.AccessoryBrowser.Disco
 - CurrentTemperature
 - Current垂直チルト
 - FirmwareVersion
-- ハードウェアのバージョン
+- HardwareVersion
 - HeatingCoolingStatus
 - HeatingThreshold
 - HoldPosition
 - [色合い]
-- Identify
+- 識別
 - InputEvent
 - LeakDetected
 - LockManagementAutoSecureTimeout
 - LockManagementControlPoint
 - LockMechanismLastKnownAction
 - ログ
-- 製造元
+- Manufacturer
 - モデル
 - 検出された motion
-- 名
+- 名前
 - ObstructionDetected
 - OccupancyDetected
 - Out・ Inuse
@@ -434,8 +434,8 @@ ThisApp.HomeManager.PrimaryHome.AddAccessory (_controller.AccessoryBrowser.Disco
 - PowerState
 - RotationDirection
 - RotationSpeed
-- [彩度]
-- serialNumber
+- [鮮やかさ]
+- SerialNumber
 - SmokeDetected
 - SoftwareVersion
 - StatusActive
@@ -457,9 +457,9 @@ ThisApp.HomeManager.PrimaryHome.AddAccessory (_controller.AccessoryBrowser.Disco
 
 ### <a name="working-with-a-characteristics-value"></a>特性の値の操作
 
-アプリに特定の特性の最新の状態が確実に含まれるようにするには、`HMCharacteristic` クラスの `ReadValue` メソッドを呼び出します。 `err` プロパティが `null`されていない場合は、エラーが発生し、ユーザーに表示される場合と表示されない場合があります。
+アプリに特定の特性の最新の状態が確実に含まれるようにするには、 `ReadValue` クラスのメソッドを呼び出し `HMCharacteristic` ます。 `err`プロパティがでない場合は `null` 、エラーが発生し、ユーザーに表示される場合と表示されない場合があります。
 
-特性の `Value` プロパティには、指定された特性の現在の状態が `NSObject`として含まれていますC#。そのため、で直接操作することはできません。
+特性のプロパティは、 `Value` 指定された特性の現在の状態をとして格納 `NSObject` します。そのため、C# で直接使用することはできません。
 
 この値を読み取るために、次のヘルパークラスが**HomeKitIntro**サンプルアプリケーションに追加されました。
 
@@ -629,15 +629,15 @@ namespace HomeKitIntro
 }
 ```
 
-`NSObjectConverter` は、アプリケーションが特性の現在の状態を読み取る必要があるときに常に使用されます。 たとえば、次のように入力します。
+は、 `NSObjectConverter` アプリケーションが特性の現在の状態を読み取る必要があるときに常に使用されます。 たとえば次のようになります。
 
 ```csharp
 var value = NSObjectConverter.ToFloat (characteristic.Value);
 ```
 
-上の行は、値を `float` に変換して、Xamarin C#コードで使用できるようにします。
+上の行は、値をに変換 `float` して、Xamarin C# コードで使用できるようにします。
 
-`HMCharacteristic`を変更するには、その `WriteValue` メソッドを呼び出し、`NSObject.FromObject` の呼び出しで新しい値をラップします。 たとえば、次のように入力します。
+を変更するには `HMCharacteristic` 、メソッドを呼び出し、 `WriteValue` 呼び出しで新しい値をラップし `NSObject.FromObject` ます。 たとえば次のようになります。
 
 ```csharp
 Characteristic.WriteValue(NSObject.FromObject(value),(err) =>{
@@ -649,11 +649,11 @@ Characteristic.WriteValue(NSObject.FromObject(value),(err) =>{
 });
 ```
 
-`err` プロパティが `null`されていない場合は、エラーが発生したため、ユーザーに表示される必要があります。
+`err`プロパティがでない場合は `null` 、エラーが発生したため、ユーザーに表示される必要があります。
 
 ### <a name="testing-characteristic-value-changes"></a>特性値の変更のテスト
 
-`HMCharacteristics` とシミュレートされたアクセサリを使用する場合、`Value` プロパティに対する変更は、ホームキットアクセサリシミュレーター内で監視できます。
+およびシミュレートされたアクセサリを使用する場合 `HMCharacteristics` 、プロパティの変更は、 `Value` ホームキットアクセサリシミュレーター内で監視できます。
 
 実際の iOS デバイスハードウェアで実行されている**HomeKitIntro**アプリでは、特性の値に対する変更は、ホームキットアクセサリシミュレーターでほぼ瞬時に表示されます。 たとえば、iOS アプリのライトの状態を変更すると、次のようになります。
 
@@ -686,15 +686,15 @@ Characteristic.WriteValue(NSObject.FromObject(value),(err) =>{
 
 Apple は、iOS 9 用のホームキットに次のような変更と追加を加えました。
 
-- **既存のオブジェクトの保持**-既存のアクセサリが変更された場合、ホームマネージャー (`HMHomeManager`) によって、変更された特定の項目が通知されます。
-- **永続的な識別子**-関連するすべてのホームキットクラスに `UniqueIdentifier` プロパティが含まれるようになりました。これにより、ホームキットが有効になっているアプリ (または同じアプリのインスタンス) 間で特定の項目を一意に識別できます。
+- **既存のオブジェクトの保持**-既存のアクセサリが変更された場合、ホームマネージャー () によって、 `HMHomeManager` 変更された特定の項目が通知されます。
+- **永続的な識別子**-関連するすべてのホームキットクラス `UniqueIdentifier` に、ホームキットが有効になっているアプリ (または同じアプリのインスタンス) をまたいで特定の項目を一意に識別するプロパティが含まれるようになりました。
 - **ユーザー管理**-プライマリユーザーのホームにあるホームキットデバイスへのアクセス権を持つユーザーを管理するための組み込みビューコントローラーが追加されました。
 - **ユーザーの機能**-ホームキットのユーザーは、ホームキットおよびホームキットを有効にしたアクセサリで使用できる機能を制御する一連の特権を持つようになりました。 アプリでは、現在のユーザーにのみ関連する機能を表示する必要があります。 たとえば、他のユーザーを管理できるのは管理者だけです。
 - **定義済みのシーン**-ホームキットの平均的なユーザーに対して発生する4つの一般的なイベントに対して定義済みのシーンが作成されました。取得、終了、戻る、ベッドに移動します。 これらの定義済みシーンをホームから削除することはできません。
 - **バックグラウンドおよび siri** -siri は、iOS 9 でのバックグラウンドのサポートをさらに強化し、ホームキットで定義されているシーンの名前を認識できます。 ユーザーは、その名前を Siri と話すだけでシーンを実行できます。
 - **アクセサリカテゴリ**-定義済みのカテゴリのセットがすべてのアクセサリに追加され、自宅に追加されているアクセサリやアプリ内で動作しているアクセサリの種類を特定するのに役立ちます。 これらの新しいカテゴリは、アクセサリのセットアップ中に利用できます。
 - **Apple Watch サポート**-ホームキットを watchOS で使用できるようになりました。また、Apple Watch は iPhone が Watch に近づいていなくても、ホームキット対応デバイスを制御できるようになります。 WatchOS 用のホームキットでは、自宅の表示、アクセサリの制御、シーンの実行など、次の機能がサポートされています。
-- **新しいイベントトリガーの種類**-ios 8 でサポートされているタイマーの種類のトリガーに加え、ios 9 では、アクセサリの状態 (センサーデータなど) または位置情報に基づくイベントトリガーがサポートされるようになりました。 イベントトリガーは、実行の条件を設定するために `NSPredicates` を使用します。
+- **新しいイベントトリガーの種類**-ios 8 でサポートされているタイマーの種類のトリガーに加え、ios 9 では、アクセサリの状態 (センサーデータなど) または位置情報に基づくイベントトリガーがサポートされるようになりました。 イベントトリガー `NSPredicates` は、実行の条件を設定するために使用します。
 - リモート**アクセス**-リモートアクセスを使用すると、ユーザーはホームキットが有効になっているホームオートメーションアクセサリを、遠隔地にある家から離れた場所で管理できるようになりました。 IOS 8 では、このことは、ユーザーが自宅で第3世代の Apple TV を持っている場合にのみサポートされていました。 IOS 9 では、この制限は解除されており、リモートアクセスは iCloud とホームキットアクセサリプロトコル (HAP) を介してサポートされています。
 - **新しい Bluetooth 低エネルギー (b)** 機能-ホームキットでは、Bluetooth 低エネルギー (b) プロトコルを介して通信できるアクセサリの種類がサポートされるようになりました。 HAP セキュアトンネリングを使用すると、ホームキットアクセサリは Wi-fi 経由で別の Bluetooth アクセサリを公開できます (Bluetooth の範囲外の場合)。 IOS 9 では、付属のアクセサリが通知とメタデータを完全にサポートしています。
 - **新しいアクセサリカテゴリ**-Apple では、iOS 9 で次の新しいアクセサリカテゴリが追加されました。ウィンドウのカバー、原動機のあるドアと Windows、アラームシステム、センサー、およびプログラム可能なスイッチ。

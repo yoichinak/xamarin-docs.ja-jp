@@ -1,23 +1,8 @@
 ---
-title: Xamarin.FormsFlexlayout
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-ms.custom: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 031a846b7546c204d45c7437acd829d6cb49bfbb
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137216"
+title: " Xamarin.Forms flexlayout" の説明: "子ビューのコレクションを積み重ねる場合またはラッピングする場合に FlexLayout を使用します。"
+ms. 製品: xamarin ms. assetid: 6A91EA70-268C-462C-AAAF-F8DA011403F8: xamu-ビデオ作成者: davidbritch ミリ秒: dabritch ms. date: 05/07/2018 no loc: [ Xamarin.Forms ,、] を指定します。 Xamarin.Essentials
 ---
+
 # <a name="the-xamarinforms-flexlayout"></a>Xamarin.FormsFlexlayout
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)
@@ -30,9 +15,7 @@ _子ビューのコレクションを積み重ねる場合やラッピングす�
 
 `FlexLayout`[`Layout<View>`](xref:Xamarin.Forms.Layout`1)は、から派生し、 [`Children`](xref:Xamarin.Forms.Layout`1.Children) 型のプロパティを継承し `IList<View>` ます。
 
-`FlexLayout`6つのパブリックバインド可能プロパティと、子要素のサイズ、向き、および配置に影響を与える、アタッチ可能な5つのバインド可能なプロパティを定義します。 (アタッチ可能なバインド可能なプロパティの詳細については、「**[アタッチさ](~/xamarin-forms/xaml/attached-properties.md)** れたプロパティ」を参照してください)。これらのプロパティの詳細については、バインド可能な**[プロパティ](#bindable-properties)** について詳しく説明し、アタッチ可能なバインド可能な**[プロパティ](#attached-properties)** について詳しく説明します。 ただし、この記事では、これらのプロパティの多くをより簡単に説明するいくつかの**[一般的な使用シナリオ](#common-scenarios)** について `FlexLayout` 説明します。 記事の最後に、 `FlexLayout` [CSS スタイルシート](~/xamarin-forms/user-interface/styles/css/index.md)と組み合わせる方法について説明します。
-
-<a name="common-scenarios" />
+`FlexLayout`6つのパブリックバインド可能プロパティと、子要素のサイズ、向き、および配置に影響を与える、アタッチ可能な5つのバインド可能なプロパティを定義します。 (アタッチ可能なバインド可能なプロパティの詳細については、「**[アタッチさ](~/xamarin-forms/xaml/attached-properties.md)** れたプロパティ」を参照してください)。これらのプロパティの詳細については、バインド可能な**[プロパティ](#the-bindable-properties-in-detail)** について詳しく説明し、アタッチ可能なバインド可能な**[プロパティ](#the-attached-bindable-properties-in-detail)** について詳しく説明します。 ただし、この記事では、これらのプロパティの多くをより簡単に説明するいくつかの**[一般的な使用シナリオ](#common-usage-scenarios)** について `FlexLayout` 説明します。 記事の最後に、 `FlexLayout` [CSS スタイルシート](~/xamarin-forms/user-interface/styles/css/index.md)と組み合わせる方法について説明します。
 
 ## <a name="common-usage-scenarios"></a>一般的な利用シナリオ
 
@@ -91,7 +74,7 @@ IOS、Android、ユニバーサル Windows プラットフォームで実行さ�
 
     を使用していた場合は `StackLayout` 、 `VerticalOptions` 同様の効果を得るために、各項目のプロパティをに割り当てる必要があり `CenterAndExpand` ます。 ただし、このオプションでは、 `CenterAndExpand` 最初の項目の前と最後の項目の後に、各項目の間に2倍の領域が割り当てられます。 の `CenterAndExpand` `VerticalOptions` プロパティをに設定すると、のオプションを模倣でき `JustifyContent` `FlexLayout` `SpaceAround` ます。
 
-これらのプロパティの詳細に `FlexLayout` ついては、後の「バインド可能な**[プロパティ](#bindable-properties)**」で詳しく説明します。
+これらのプロパティの詳細に `FlexLayout` ついては、後の「バインド可能な**[プロパティ](#the-bindable-properties-in-detail)**」で詳しく説明します。
 
 ### <a name="using-flexlayout-for-wrapping-items"></a>項目のラップに FlexLayout を使用する
 
@@ -380,8 +363,6 @@ XAML ファイルの最初のは、 `FlexLayout` 垂直方向のメイン軸を�
 
 3つの各ビュー内では、はの `FlexLayout` 前に空白に `Label` `Button` `Grow` なりますが、設定は1になります。 これは、すべての余分な垂直空間がこの空白に割り当てられることを意味します。これにより `Label` 、が実質的 `Button` に一番下にプッシュされます。
 
-<a name="bindable-properties" />
-
 ## <a name="the-bindable-properties-in-detail"></a>バインド可能なプロパティの詳細
 
 一般的なアプリケーションをいくつか紹介したので `FlexLayout` 、のプロパティを `FlexLayout` より詳細に調べることができます。
@@ -395,15 +376,13 @@ XAML ファイルの最初のは、 `FlexLayout` 垂直方向のメイン軸を�
 
 各ビューには `Label` 、内に割り当てられた領域を示す灰色の背景が表示され `Label` `FlexLayout` ます。 自身の背景 `FlexLayout` は Alice Blue です。 左右の余白を除いて、ページの一番下の領域全体を占めます。
 
-<a name="direction" />
-
 ### <a name="the-direction-property"></a>Direction プロパティ
 
 [`Direction`](xref:Xamarin.Forms.FlexLayout.Direction)プロパティは [`FlexDirection`](xref:Xamarin.Forms.FlexDirection) 、4つのメンバーを持つ列挙体である型です。
 
 - `Column`
 - `ColumnReverse`(XAML の "列反転")
-- `Row`、既定値
+- `Row` (既定値)
 - `RowReverse`(XAML の "行の逆")
 
 XAML では、小文字、大文字、または混合ケースで列挙メンバー名を使用して、このプロパティの値を指定できます。または、CSS インジケーターと同じかっこで囲まれた2つの追加文字列を使用することもできます。 ("列逆" と "行反転" の文字列は、 [`FlexDirectionTypeConverter`](xref:Xamarin.Forms.FlexDirectionTypeConverter) XAML パーサーによって使用されるクラスで定義されています)。
@@ -414,13 +393,11 @@ XAML では、小文字、大文字、または混合ケースで列挙メンバ
 
 オプションの場合、 `Reverse` 項目は右側または下部から開始されることに注意してください。
 
-<a name="wrap" />
-
 ### <a name="the-wrap-property"></a>Wrap プロパティ
 
 [`Wrap`](xref:Xamarin.Forms.FlexLayout.Wrap)プロパティは [`FlexWrap`](xref:Xamarin.Forms.FlexWrap) 、次の3つのメンバーを持つ列挙体である型です。
 
-- `NoWrap`、既定値
+- `NoWrap` (既定値)
 - `Wrap`
 - `Reverse`(XAML の "ラップ反転")
 
@@ -428,9 +405,7 @@ XAML では、小文字、大文字、または混合ケースで列挙メンバ
 
 [![実験ページ: Wrap](flex-layout-images/ExperimentWrap.png "実験ページの折り返し")](flex-layout-images/ExperimentWrap-Large.png#lightbox)
 
-`Wrap`プロパティがに設定されていて、 `NoWrap` メイン軸が (このプログラムのように) 制約されていて、メインの軸がすべての子を収めるのに十分ではない場合は、 `FlexLayout` iOS のスクリーンショットに示すように、項目のサイズを小さくします。 アタッチ可能なバインド可能なプロパティを使用して、項目の shrinkness を制御でき [`Shrink`](#shrink) ます。
-
-<a name="justify-content" />
+`Wrap`プロパティがに設定されていて、 `NoWrap` メイン軸が (このプログラムのように) 制約されていて、メインの軸がすべての子を収めるのに十分ではない場合は、 `FlexLayout` iOS のスクリーンショットに示すように、項目のサイズを小さくします。 アタッチ可能なバインド可能なプロパティを使用して、項目の shrinkness を制御でき [`Shrink`](#the-shrink-property) ます。
 
 ### <a name="the-justifycontent-property"></a>ジャスト Ifycontent プロパティ
 
@@ -449,32 +424,28 @@ XAML では、小文字、大文字、または混合ケースで列挙メンバ
 
 3つのすべてのスクリーンショットで `Wrap` は、プロパティはに設定されて `Wrap` います。 `Start`既定値は、前の Android スクリーンショットに示されています。 IOS のスクリーンショットは、次のオプションを示してい `Center` ます。すべての項目が中央に移動されます。 単語で始まる他の3つのオプションでは、 `Space` 項目によって占有されていない余分な領域が割り当てられます。 `SpaceBetween`項目間にスペースを均等に割り当てます。`SpaceAround`は各項目の周囲に均等なスペースを置き、は `SpaceEvenly` 各項目の前、最初の項目の前、および行の最後の項目の後に同じ間隔を置きます。
 
-<a name="align-items" />
-
 ### <a name="the-alignitems-property"></a>AlignItems プロパティ
 
 [`AlignItems`](xref:Xamarin.Forms.FlexLayout.AlignItems)プロパティは [`FlexAlignItems`](xref:Xamarin.Forms.FlexAlignItems) 、4つのメンバーを持つ列挙体である型です。
 
-- `Stretch`、既定値
+- `Stretch` (既定値)
 - `Center`
 - `Start`(XAML の "フレックス開始")
 - `End`(XAML の "flex-end")
 
-これは2つのプロパティ (もう1つは) の1つであり [`AlignContent`](#align-content) 、交差軸上での子のアライン方法を示します。 各行内では、次の3つのスクリーンショットに示すように、子が拡大されます (前のスクリーンショットに示したように)。または、各項目の開始、中央、または末尾に配置されます。
+これは2つのプロパティ (もう1つは) の1つであり [`AlignContent`](#the-aligncontent-property) 、交差軸上での子のアライン方法を示します。 各行内では、次の3つのスクリーンショットに示すように、子が拡大されます (前のスクリーンショットに示したように)。または、各項目の開始、中央、または末尾に配置されます。
 
 [![実験ページ: 項目の整列](flex-layout-images/ExperimentAlignItems.png "実験ページ-項目の整列")](flex-layout-images/ExperimentAlignItems-Large.png#lightbox)
 
 IOS のスクリーンショットでは、すべての子の上部が揃っています。 Android のスクリーンショットでは、最も高い子に基づいてアイテムが垂直方向に中央揃えで配置されています。 UWP スクリーンショットでは、すべての項目の下部がアラインされています。
 
-個々の項目については、この設定は、 `AlignItems` アタッチ可能なバインド可能なプロパティでオーバーライドでき [`AlignSelf`](#align-self) ます。
-
-<a name="align-content" />
+個々の項目については、この設定は、 `AlignItems` アタッチ可能なバインド可能なプロパティでオーバーライドでき [`AlignSelf`](#the-alignself-property) ます。
 
 ### <a name="the-aligncontent-property"></a>AlignContent プロパティ
 
 [`AlignContent`](xref:Xamarin.Forms.FlexLayout.AlignContent)プロパティは [`FlexAlignContent`](xref:Xamarin.Forms.FlexAlignContent) 、7つのメンバーを持つ列挙体である型です。
 
-- `Stretch`、既定値
+- `Stretch` (既定値)
 - `Center`
 - `Start`(XAML の "フレックス開始")
 - `End`(XAML の "flex-end")
@@ -492,25 +463,21 @@ IOS のスクリーンショットでは、両方の行が一番上にありま�
 
 `AlignContent`行または列が1つしかない場合、は効果がありません。
 
-<a name="attached-properties" />
-
 ## <a name="the-attached-bindable-properties-in-detail"></a>アタッチ可能なバインド可能なプロパティの詳細
 
 `FlexLayout`アタッチ可能な5つのバインド可能なプロパティを定義します。 これらのプロパティは、の子に対して設定され、 `FlexLayout` その特定の子にのみ関係します。
-
-<a name="align-self" />
 
 ### <a name="the-alignself-property"></a>AlignSelf プロパティ
 
 アタッチ可能なバインド可能な [`AlignSelf`](xref:Xamarin.Forms.FlexLayout.AlignSelfProperty) プロパティは [`FlexAlignSelf`](xref:Xamarin.Forms.FlexAlignContent) 、次の5つのメンバーを持つ列挙体である型です。
 
-- `Auto`、既定値
+- `Auto` (既定値)
 - `Stretch`
 - `Center`
 - `Start`(XAML の "フレックス開始")
 - `End`(XAML の "flex-end")
 
-の個々の子については、このプロパティ設定によって、 `FlexLayout` 自体に設定されているプロパティがオーバーライドされ [`AlignItems`](#align-items) `FlexLayout` ます。 の既定の設定は、 `Auto` 設定を使用することを意味し `AlignItems` ます。
+の個々の子については、このプロパティ設定によって、 `FlexLayout` 自体に設定されているプロパティがオーバーライドされ [`AlignItems`](#the-alignitems-property) `FlexLayout` ます。 の既定の設定は、 `Auto` 設定を使用することを意味し `AlignItems` ます。
 
 `Label`という名前の要素 `label` (または例) では、次の `AlignSelf` ようなコードでプロパティを設定できます。
 
@@ -593,8 +560,6 @@ XAML では、デバイスに依存しない単位でサイズの数値を使用
 1つの子に正の値が指定されている場合 `Grow` 、その子は、Android のスクリーンショットに示すように、残りのすべての領域を占有します。 この領域は、2つ以上の子の間に割り当てることもできます。 UWP スクリーンショットでは、 `Grow` 2 番目のプロパティは0.5 に設定されていますが、4番目 `Label` のプロパティは1.5 で、残りの `Grow` `Label` `Label` 領域の2倍が2番目に `Label` なります。
 
 子ビューがその領域をどのように使用するかは、特定の子の種類によって異なります。 では、 `Label` `Label` プロパティとを使用して、の合計領域内にテキストを配置できます `HorizontalTextAlignment` `VerticalTextAlignment` 。
-
-<a name="shrink" />
 
 ### <a name="the-shrink-property"></a>Shrink プロパティ
 

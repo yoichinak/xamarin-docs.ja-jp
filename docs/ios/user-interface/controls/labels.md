@@ -7,20 +7,20 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/11/2017
-ms.openlocfilehash: 04d33d986d76daf29fc7392206c62f77d34dd969
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 0957220ace9facee590a76953de6dd52be438582
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022020"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84570844"
 ---
 # <a name="labels-in-xamarinios"></a>Xamarin. iOS のラベル
 
-`UILabel` コントロールは、単一行および複数行の読み取り専用のテキストを表示するために使用されます。
+コントロールは、 `UILabel` 単一行および複数行の読み取り専用のテキストを表示するために使用されます。
 
 ## <a name="implementing-a-label"></a>ラベルの実装
 
-新しいラベルは、 [`UILabel`](xref:UIKit.UILabel)をインスタンス化することによって作成されます。
+新しいラベルは、をインスタンス化することによって作成され [`UILabel`](xref:UIKit.UILabel) ます。
 
 ```csharp
 UILabel label = new UILabel();
@@ -28,7 +28,7 @@ UILabel label = new UILabel();
 
 ### <a name="labels-and-storyboards"></a>ラベルとストーリーボード
 
-IOS Designer を使用しているときに、UI にラベルを追加することもできます。 **[ツールボックス]** で **[ラベル]** を検索し、ビューにドラッグします。
+IOS Designer を使用しているときに、UI にラベルを追加することもできます。 [**ツールボックス**] で [**ラベル**] を検索し、ビューにドラッグします。
 
 ![ツールボックスのラベル](labels-images/image3.png)
 
@@ -50,7 +50,7 @@ IOS Designer を使用しているときに、UI にラベルを追加するこ�
 
 IOS で改行を使用する方法の詳細については、「[テキストの切り捨てとラップ](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/labels/uilabel-truncate-wrap-text)」レシピを参照してください。
 
-<a name="Formatting_Text_and_Label"/>
+<a name="Formatting_Text_and_Label"></a>
 
 ## <a name="formatting-text-and-label"></a>テキストとラベルの書式設定
 
@@ -74,9 +74,9 @@ label.AttributedText = new NSAttributedString(
             );
 ```
 
-`NSAttributedString` を使用したテキストのスタイル設定の詳細については、「[スタイルテキスト](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/text_field/style_text)」レシピを参照してください。
+を使用したテキストのスタイル設定の詳細について `NSAttributedString` は、「[スタイルテキスト](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/text_field/style_text)レシピ」を参照してください。
 
-既定では、ラベルには `Enabled` が true に設定されていますが、特定のコントロールが無効になっていることをユーザーにヒントとして設定することもできます。
+既定では、ラベルはが `Enabled` true に設定されていますが、特定のコントロールが無効になっていることをユーザーに示すヒントをユーザーに与えることができます。
 
 ```csharp
 label.Enabled = false;

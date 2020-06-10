@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 786afa6967731fb1bd508fa3c835b980639eb282
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 45b7c1081571b52bb8760b4207e3a05a4ffa77ae
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032377"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572313"
 ---
 # <a name="in-app-purchase-basics-and-configuration-in-xamarinios"></a>Xamarin でのアプリ内購入の基本と構成
 
@@ -67,7 +67,7 @@ Apple は、販売を開始する前にすべての製品を承認する必要�
 
 ### <a name="ios-provisioning-portal"></a>iOS プロビジョニング ポータル
 
-新しいアプリケーションは、 **IOS プロビジョニングポータル**の **[アプリ id]** セクションで設定します。 新しいアプリ ID を作成するには、 [Ios プロビジョニングポータルのメンバーセンター](https://developer.apple.com/membercenter/index.action)に移動し、ポータルの [**証明書]、[識別子]、[プロファイル**] セクションに移動して、[ *Ios アプリ*] の **[識別子]** をクリックします。 次に、右上にある [+] をクリックして、新しいアプリ ID を生成します。
+新しいアプリケーションは、 **IOS プロビジョニングポータル**の [**アプリ id** ] セクションで設定します。 新しいアプリ ID を作成するには、 [Ios プロビジョニングポータルのメンバーセンター](https://developer.apple.com/membercenter/index.action)に移動し、ポータルの [**証明書]、[識別子]、[プロファイル**] セクションに移動して、[ *Ios アプリ*] の [**識別子**] をクリックします。 次に、右上にある [+] をクリックして、新しいアプリ ID を生成します。
 
 新しい**アプリ id**を作成するためのフォーム
 
@@ -79,7 +79,7 @@ Apple は、販売を開始する前にすべての製品を承認する必要�
 
 #### <a name="bundle-identifierapp-id-suffix-format"></a>バンドル識別子/アプリ ID サフィックス形式
 
-**バンドル識別子**には任意の文字列を使用できます (アカウント内で一意である必要があります)。ただし、Apple は、任意の文字列を使用するのではなく、逆引き DNS 形式に従うことをお勧めします。 この記事に付属するサンプルアプリケーションでは、バンドル識別子に対して my_store_example を使用しますが、(Apple では推奨されませんが) のような識別子を使用することもできます。
+**バンドル識別子**には任意の文字列を使用できます (アカウント内で一意である必要があります)。ただし、Apple は、任意の文字列を使用するのではなく、逆引き DNS 形式に従うことをお勧めします。 この記事に付属しているサンプルアプリケーションでは、バンドル識別子に対して com. storekit. テストを使用しますが、my_store_example のような識別子 (Apple では推奨されません) を使用することもできます。
 
 > [!IMPORTANT]
 > また、Apple では、1つのアプリ ID を複数のアプリケーションに使用できるように、ワイルドカードのアスタリスクを**バンドル識別子**の末尾に追加することもできます。ただし、_ワイルドカードアプリ Id を apppurchase に使用することはできません_。 たとえば、ワイルドカードバンドル識別子の例としては、「xamarin. *」などがあります。
@@ -100,7 +100,7 @@ Apple は、販売を開始する前にすべての製品を承認する必要�
 
  [![](in-app-purchase-basics-and-configuration-images/image6.png "The application overview page")](in-app-purchase-basics-and-configuration-images/image6.png#lightbox)
 
-**[アプリ内購入]** をクリックして、販売する製品を作成または編集します。 このスクリーンショットは、いくつかの製品が既に追加されているサンプルアプリを示しています。
+[**アプリ内購入**] をクリックして、販売する製品を作成または編集します。 このスクリーンショットは、いくつかの製品が既に追加されているサンプルアプリを示しています。
 
  [![](in-app-purchase-basics-and-configuration-images/image7.png "The sample app with several products already added")](in-app-purchase-basics-and-configuration-images/image7.png#lightbox)
 
@@ -134,7 +134,7 @@ com.xamarin.storekit.testing.greyscale
 
 製品 ID はユーザーに表示されませんが、アプリケーションコードで製品を参照するために使用されます。
 
-### <a name="product-type"></a>製品の種類
+### <a name="product-type"></a>Product Type (製品の種類)
 
 アプリ内購入製品には、次の5種類が用意されています。
 
@@ -146,7 +146,7 @@ com.xamarin.storekit.testing.greyscale
 
  *このドキュメントでは、現在、最初の2つの製品の種類 (利用できると非消費) のみについて説明します。*
 
- <a name="Price_Tiers" />
+ <a name="Price_Tiers"></a>
 
 ### <a name="price-tiers"></a>価格レベル
 
@@ -156,7 +156,7 @@ Apple では、希望する通貨/価格に適したレベルを選択するた�
 
  [![](in-app-purchase-basics-and-configuration-images/image10.png "An excerpt of the price matrix August 2012")](in-app-purchase-basics-and-configuration-images/image10.png#lightbox)
 
-書き込み時点 (2013 年6月) では、87のレベルは0.99 から USD 999.99 になります。 価格マトリックスには、お客様が支払う料金、および Apple から受け取る金額が示されています。これは30% の料金と、収集する必要がある現地の税金です (米国およびカナダ販売者が 99 c p の場合は70c を受け取る例をご覧ください)。roduct ですが、オーストラリアの販売者は、"商品 &amp; サービス税" が販売価格で徴収されているため、63c のみを受け取ります。
+書き込み時点 (2013 年6月) では、87のレベルは0.99 から USD 999.99 になります。 価格マトリックスには、お客様が支払う料金、および Apple から受け取る金額が示されています。これは、30% の料金と、収集する必要がある現地の税金です (米国およびカナダ販売者が 99 c 製品の場合は70c を受け取りますが、オーストラリアの販売元は、 &amp; 販売価格で徴収される商品サービス税に起因する
 
 製品の価格は、将来の日付に適用されるスケジュールされた価格変更を含め、いつでも更新できます。 このスクリーンショットは、将来の価格の変更がどのように追加されるかを示しています。価格は、9月の月について、階層1から階層3に一時的に変更されています。
 
@@ -184,7 +184,7 @@ ITunes Connect では、サポートされている任意の数の言語に対�
 
 アプリケーションとアプリ内購入は一緒にレビューされるので、すべてが一度に承認されるようになります (アプリが承認された製品を使用せずにストアに移動することはありません)。
 
-アプリ内購入機能を使用した最初のバージョンが承認されたら、さらに製品を追加して、いつでもレビュー用に送信することができます。 また、プロンプトに示されているように、 **[バージョンの詳細]** ページを使用して、特定のアプリ内購入製品と共に新しいバージョンを送信することもできます。
+アプリ内購入機能を使用した最初のバージョンが承認されたら、さらに製品を追加して、いつでもレビュー用に送信することができます。 また、プロンプトに示されているように、[**バージョンの詳細**] ページを使用して、特定のアプリ内購入製品と共に新しいバージョンを送信することもできます。
 
 詳細については、 [App Store のレビューに関するガイドライン](https://developer.apple.com/appstore/guidelines.html)を参照してください。
 

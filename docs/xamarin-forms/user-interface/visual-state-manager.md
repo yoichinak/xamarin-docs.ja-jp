@@ -1,24 +1,9 @@
 ---
-title: Xamarin.Formsビジュアル状態マネージャー
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-ms.custom: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 13dd0a3f5d665e2232e7e6e12edac7cf117dd0ca
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127284"
+title: " Xamarin.Forms Visual State manager" description: "Visual State manager を使用して、コードから設定されたビジュアルの状態に基づいて XAML 要素を変更します。"
+ms. 製品: xamarin ms. assetid: 17296F14-640D-484B-A24C-A4E9B7013E4F: xamu-ビデオ作成者: davidbritch ミリ秒: dabritch ms. date: 02/21/2020 no loc: [ Xamarin.Forms ,、] を指定します。 Xamarin.Essentials
 ---
-# <a name="xamarinforms-visual-state-manager"></a>Xamarin.Formsビジュアル状態マネージャー
+
+# <a name="xamarinforms-visual-state-manager"></a>Xamarin.Forms Visual State Manager
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-vsmdemos)
 
@@ -409,41 +394,13 @@ VSM マークアップの残りの部分は、以前と同じです。
 次の表に、で定義されている表示状態の一覧を示し Xamarin.Forms ます。
 
 | クラス | 状態 | 詳細情報 |
-| ----- | ---
-title: ' Xamarin.Forms Visual State Manager ' 説明: ms. 製品: ms. assetid: ms... カスタム: 作成者: ms. 作成者: ミリ秒: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
---- |---title: ' Xamarin.Forms Visual State Manager ' description: ms. 製品: ms. カスタム: 作成者: ms. author: ms. 日付: なし:---場所:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-title: ' Xamarin.Forms Visual State Manager ' 説明: ms. 製品: ms. assetid: ms... カスタム: 作成者: ms. 作成者: ミリ秒: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-title: ' Xamarin.Forms Visual State Manager ' 説明: ms. 製品: ms. assetid: ms... カスタム: 作成者: ms. 作成者: ミリ秒: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-title: ' Xamarin.Forms Visual State Manager ' 説明: ms. 製品: ms. assetid: ms... カスタム: 作成者: ms. 作成者: ミリ秒: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-title: ' Xamarin.Forms Visual State Manager ' 説明: ms. 製品: ms. assetid: ms... カスタム: 作成者: ms. 作成者: ミリ秒: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-title: ' Xamarin.Forms Visual State Manager ' 説明: ms. 製品: ms. assetid: ms... カスタム: 作成者: ms. 作成者: ミリ秒: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--------- | |`Button` | `Pressed` | [ボタン](~/xamarin-forms/user-interface/button.md#button-visual-states)の表示状態 | |`CheckBox` | `IsChecked` | [チェックボックス](~/xamarin-forms/user-interface/checkbox.md#checkbox-visual-states)の表示状態 | |`CarouselView`  |  `DefaultItem` 、 `CurrentItem` 、 `PreviousItem` 、 `NextItem`  |  [CarouselView ビジュアルの状態](~/xamarin-forms/user-interface/carouselview/interaction.md#define-visual-states)| `ImageButton`  |  | `Pressed`  | [ImageButton ビジュアルの状態](~/xamarin-forms/user-interface/imagebutton.md#imagebutton-visual-states)| |`RadioButton` | `IsChecked` | [RadioButton](~/xamarin-forms/user-interface/radiobutton.md#radiobutton-visual-states)の表示状態 | |`VisualElement`  |  `Normal` 、 `Disabled` 、 `Focused` 、 `Selected`  |  [共通の状態](#common-states) |
+| ----- | ------ | ---------------- |
+| `Button` | `Pressed` | [ボタンの表示状態](~/xamarin-forms/user-interface/button.md#button-visual-states) |
+| `CheckBox` | `IsChecked` | [チェックボックスの表示状態](~/xamarin-forms/user-interface/checkbox.md#checkbox-visual-states) |
+| `CarouselView` | `DefaultItem`, `CurrentItem`, `PreviousItem`, `NextItem` | [CarouselView の視覚的状態](~/xamarin-forms/user-interface/carouselview/interaction.md#define-visual-states) |
+| `ImageButton` | `Pressed` | [ImageButton ビジュアルの状態](~/xamarin-forms/user-interface/imagebutton.md#imagebutton-visual-states) |
+| `RadioButton` | `IsChecked` | [RadioButton の表示状態](~/xamarin-forms/user-interface/radiobutton.md#radiobutton-visual-states) |
+| `VisualElement` | `Normal`, `Disabled`, `Focused`, `Selected` | [一般的な状態](#common-states) |
 
 これらの各状態には、という名前の表示状態グループを使用してアクセスでき `CommonStates` ます。
 
@@ -626,7 +583,7 @@ public partial class VsmValidationPage : ContentPage
 
 状態トリガーは、[`VisualState`](xref:Xamarin.Forms.VisualState) の [`StateTriggers`](xref:Xamarin.Forms.VisualState.StateTriggers) コレクションに追加されます。 このコレクションには、1 つの状態トリガーを含めることも、複数の状態トリガーを含めることもできます。 コレクション内のいずれかの状態トリガーがアクティブになっていると、[`VisualState`](xref:Xamarin.Forms.VisualState) が適用されます。
 
-状態トリガーを使用して視覚的な状態を制御する場合、は Xamarin.Forms 次の優先順位規則を使用して、アクティブになるトリガー (および対応する) を決定し [`VisualState`](xref:Xamarin.Forms.VisualState) ます。
+状態トリガーを使用してビジュアルの状態を制御する場合、Xamarin.Forms では、アクティブにするトリガー (および対応する [`VisualState`](xref:Xamarin.Forms.VisualState)) を決定するために、次の優先順位規則が使用されます。
 
 1. [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) から派生したトリガー。
 1. [`MinWindowWidth`](xref:Xamarin.Forms.AdaptiveTrigger.MinWindowWidth) 条件の適用によってアクティブにされた [`AdaptiveTrigger`](xref:Xamarin.Forms.AdaptiveTrigger)。
@@ -635,8 +592,6 @@ public partial class VsmValidationPage : ContentPage
 複数のトリガーが同時にアクティブにされた場合 (たとえば、2 つのカスタム トリガー)、マークアップで最初に宣言されたトリガーが優先されます。
 
 状態トリガーの詳細については、「[状態トリガー](~/xamarin-forms/app-fundamentals/triggers.md#state-triggers)」を参照してください。
-
-<a name="adaptive-layout" />
 
 ## <a name="use-the-visual-state-manager-for-adaptive-layout"></a>アダプティブレイアウトでのビジュアル状態マネージャーの使用
 

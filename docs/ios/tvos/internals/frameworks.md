@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/07/2016
-ms.openlocfilehash: ab89d6e05b42157ededa3bb01cf22d5cdca130ce
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 729c8918230b7fe28b98357b101d935e1ec752ef
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030668"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573535"
 ---
 # <a name="supported-and-unsupported-frameworks-in-tvos"></a>TvOS でサポートされているフレームワークとサポートされていないフレームワーク
 
-<a name="Supported-Frameworks" />
+<a name="Supported-Frameworks"></a>
 
 ## <a name="supported-frameworks"></a>サポートされているフレームワーク
 
@@ -40,7 +40,7 @@ TvOS アプリで使用するために Apple が提供するフレームワー�
 - CoreText
 - CoreVideo
 - Darwin
-- Team
+- Foundation
 - GameController
 - お持ちのキット
 - ゲーム
@@ -50,14 +50,14 @@ TvOS アプリで使用するために Apple が提供するフレームワー�
 - MediaAccessibility
 - MediaPlayer
 - MediaToolbox
-- メタル
+- 金属
 - MetalKit
 - MetalPerformanceShaders
 - MobileCoreServices
 - ModelIO
 - OpenGES
 - SceneKit
-- セキュリティ
+- Security
 - simd
 - SpriteKit
 - StoreKit
@@ -66,7 +66,7 @@ TvOS アプリで使用するために Apple が提供するフレームワー�
 - TVServices (追加)
 - UIKit
 
-<a name="Unsupported-Frameworks" />
+<a name="Unsupported-Frameworks"></a>
 
 ## <a name="unsupported-frameworks"></a>サポートされていないフレームワーク
 
@@ -97,7 +97,7 @@ TvOS アプリで使用するために Apple が提供するフレームワー�
 - NewsstandKit
 - NotificationCenter
 - PassKit
-- 写真
+- Photos
 - PhotosUI
 - PushKit
 - QuickLook

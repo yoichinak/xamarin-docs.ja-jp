@@ -1,29 +1,15 @@
 ---
-title: でのカスタムアニメーションXamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 4fb9c94c39823e4ce6d60be6b9dbef1294321a63
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137229"
+title: "カスタムアニメーションの Xamarin.Forms " 説明: "この記事では、Xamarin. FOrms Animation クラスを使用してアニメーションを作成およびキャンセルする方法、複数のアニメーションを同期する方法、および既存のアニメーションメソッドでアニメーション化されていないプロパティをアニメーション化するカスタムアニメーションを作成する方法を示します。
+ms. 製品: xamarin ms. assetid: 03B2E3FC-E720-4D45-B9A0-711081FC1907: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 02/10/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="custom-animations-in-xamarinforms"></a>でのカスタムアニメーションXamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-custom)
 
 _Animation クラスは、すべてのアニメーションのビルドブロックであり Xamarin.Forms 、ViewExtensions クラスの拡張メソッドは1つ以上のアニメーションオブジェクトを作成します。この記事では、Animation クラスを使用してアニメーションを作成およびキャンセルする方法、複数のアニメーションを同期する方法、および既存のアニメーションメソッドでアニメーション化されていないプロパティをアニメーション化するカスタムアニメーションを作成する方法について説明します。_
 
-オブジェクトを作成するときには、アニメーション化する `Animation` プロパティの開始値と終了値、およびプロパティの値を変更するコールバックを含む、いくつかのパラメーターを指定する必要があります。 オブジェクトは、 `Animation` 実行および同期できる子アニメーションのコレクションを保持することもできます。 詳細については、「[子アニメーション](#child)」を参照してください。
+オブジェクトを作成するときには、アニメーション化する `Animation` プロパティの開始値と終了値、およびプロパティの値を変更するコールバックを含む、いくつかのパラメーターを指定する必要があります。 オブジェクトは、 `Animation` 実行および同期できる子アニメーションのコレクションを保持することもできます。 詳細については、「[子アニメーション](#child-animations)」を参照してください。
 
 クラスを使用して作成されたアニメーションを実行すると、 [`Animation`](xref:Xamarin.Forms.Animation) 子アニメーションを含む場合と含まない場合があります。これを行うには、[ `Commit` ] (xref: Xamarin.Forms . animation. Commit () を呼び出し Xamarin.Forms ます。System.windows.media.animation.ianimatable>、System.string、System.string、、、および Xamarin.Forms 。イージング、system.string {system.string}、system.string {System. Boolean})) メソッドを実行してください。 このメソッドは、アニメーションの期間と、アニメーションを繰り返すかどうかを制御するコールバックを指定します。
 
@@ -61,8 +47,6 @@ animation.Commit (this, "SimpleAnimation", 16, 2000, Easing.Linear, (v, c) => im
 
 > [!NOTE]
 > 各アニメーション `Animation` のオブジェクトを作成し、各アニメーションに対してメソッドを呼び出すことによって、互いに独立して実行される同時実行アニメーションを構築でき `Commit` ます。
-
-<a name="child" />
 
 ### <a name="child-animations"></a>子アニメーション
 

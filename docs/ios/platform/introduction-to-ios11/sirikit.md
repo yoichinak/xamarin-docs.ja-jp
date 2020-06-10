@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/07/2017
-ms.openlocfilehash: ce4514059b2d0713cdf1e0a4a9956ab38aae7604
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 48ea94b62ba01f32699bf595bc004de133371468
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032145"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574570"
 ---
 # <a name="sirikit-updates-in-ios-11"></a>IOS 11 での SiriKit の更新
 
@@ -34,7 +34,7 @@ IOS 11 の SiriKit では、次のような新しいインテントドメイン�
 
 これらの機能の一部を以下に説明します。 その他の詳細については、 [Apple の SiriKit のドキュメント](https://developer.apple.com/documentation/sirikit)を参照してください。
 
-<a name="listsnotes" />
+<a name="listsnotes"></a>
 
 ## <a name="lists-and-notes"></a>リストとメモ
 
@@ -45,7 +45,7 @@ IOS 11 の SiriKit では、次のような新しいインテントドメイン�
 - タイトルと完了ステータスを取得します。
 - 必要に応じて、期限と場所を指定します。
 
-**注**
+**メモ**
 
 - タイトルとコンテンツフィールドがあること。
 
@@ -66,12 +66,12 @@ IOS 11 の SiriKit では、次のような新しいインテントドメイン�
 
 これらの省略可能なメソッドを使用すると、コードで検証を実行したり、既定値を選択したり、ユーザーに追加情報を要求したりすることができます。
 
-たとえば、`IINCreateTaskListIntent` インターフェイスの場合、必要なメソッドは `HandleCreateTaskList`です。 Siri の相互作用をより詳細に制御できる4つの省略可能なメソッドがあります。
+たとえば、インターフェイスの場合、 `IINCreateTaskListIntent` 必要なメソッドはです `HandleCreateTaskList` 。 Siri の相互作用をより詳細に制御できる4つの省略可能なメソッドがあります。
 
-- `ResolveTitle` –タイトルを検証し、必要に応じて既定のタイトルを設定するか、データが不要であることを通知します。
-- `ResolveTaskTitles` –ユーザーによって読み上げられたタスクの一覧を検証します。
-- `ResolveGroupName` –グループ名を検証したり、既定のグループを選択したり、データが不要であることを通知したりします。
-- `ConfirmCreateTaskList` –コードが要求された操作を実行できるかどうかを検証しますが、実行しません (`Handle*` のメソッドのみがデータを変更する必要があります)。
+- `ResolveTitle`–タイトルを検証し、必要に応じて既定のタイトルを設定するか、データが不要であることを通知します。
+- `ResolveTaskTitles`–ユーザーによって読み上げられたタスクの一覧を検証します。
+- `ResolveGroupName`–グループ名を検証したり、既定のグループを選択したり、データが不要であることを通知したりします。
+- `ConfirmCreateTaskList`–コードが要求された操作を実行できることを検証しますが、実行しません (メソッドのみが `Handle*` データを変更する必要があります)。
 
 ### <a name="handle-the-intent"></a>目的を処理する
 
@@ -87,19 +87,19 @@ IOS 11 の SiriKit では、次のような新しいインテントドメイン�
   - `HandleAppendToNote`
   - `HandleSearchForNotebookItems`
 
-各メソッドには、特定のインテント型が渡されます。これには、Siri がユーザーの要求から解析したすべての情報 (および `Resolve*` および `Confirm*` メソッドで更新された可能性があります) が含まれます。
+各メソッドには、特定のインテント型が渡されます。これには、Siri がユーザーの要求から解析したすべての情報 (およびメソッドとメソッドで更新された可能性があります) が含まれ `Resolve*` `Confirm*` ます。
 アプリは、提供されたデータを解析し、何らかのアクションを実行してデータを格納または処理する必要があります。また、Siri によってユーザーに表示される結果を返します。
 
 ### <a name="response-codes"></a>応答コード
 
-必須の `Handle*` および省略可能な `Confirm*` メソッドは、完了ハンドラーに渡すオブジェクトの値を設定することによって、応答コードを示します。 応答は `INCreateTaskListIntentResponseCode` 列挙型から取得されます。
+必須 `Handle*` メソッドと省略可能なメソッドは、 `Confirm*` 完了ハンドラーに渡すオブジェクトの値を設定することによって、応答コードを示します。 応答は列挙から取得され `INCreateTaskListIntentResponseCode` ます。
 
-- `Ready` –確認フェーズで (`Confirm*` メソッドからではなく、`Handle*` メソッドからではなく) を返します。
-- `InProgress` –長時間実行されるタスク (ネットワーク/サーバーの操作など) に使用されます。
-- `Success`-成功した操作の詳細を返します (`Handle*` メソッドからのみ)。
-- `Failure` –エラーが発生したため、操作を完了できませんでした。
-- `RequiringAppLaunch` –インテントによって処理することはできませんが、アプリでは操作が可能です。
-- `Unspecified` – [使用しない]: エラーメッセージがユーザーに表示されます。
+- `Ready`–確認フェーズ中にを返します (メソッドから `Confirm*` ではなく、メソッドから `Handle*` )。
+- `InProgress`–長時間実行されるタスク (ネットワーク/サーバー操作など) に使用されます。
+- `Success`–成功した操作の詳細を使用して応答します (メソッドの場合のみ `Handle*` )。
+- `Failure`–エラーが発生したため、操作を完了できませんでした。
+- `RequiringAppLaunch`–インテントによって処理することはできませんが、アプリでは操作が可能です。
+- `Unspecified`–使用しない: エラーメッセージがユーザーに表示されます。
 
 これらのメソッドと応答の詳細については、Apple の[Sirikit リストとメモのドキュメント](https://developer.apple.com/documentation/sirikit/lists_and_notes)を参照してください。
 
@@ -111,7 +111,7 @@ IOS 11 の SiriKit では、次のような新しいインテントドメイン�
 
 1. 資格のある**plist**でサイド**キット**をご利用ください。
 2. **プライバシー-Siri の使用説明**キーを、ユーザーのメッセージと共に、**情報 plist**に追加します。
-3. アプリケーションで `INPreferences.RequestSiriAuthorization` メソッドを呼び出して、Siri との対話を許可するようにユーザーに要求します。
+3. アプリケーションでメソッドを呼び出して、 `INPreferences.RequestSiriAuthorization` Siri との対話を許可するようにユーザーに要求します。
 4. 開発者ポータルのアプリ ID に SiriKit を追加し、プロビジョニングプロファイルを再作成して新しい権利を追加します。
 
 次に、Siri 要求を処理する新しい拡張機能プロジェクトをアプリに追加します。
@@ -124,7 +124,7 @@ IOS 11 の SiriKit では、次のような新しいインテントドメイン�
 
 #### <a name="configure-the-intenthandler"></a>IntentHandler を構成する
 
-`IntentHandler` クラスは、Siri 要求のエントリポイントです。すべてのインテントは、要求を処理できるオブジェクトを返す `GetHandler` メソッドに渡されます。
+クラスは、 `IntentHandler` Siri 要求のエントリポイントです。すべてのインテントがメソッドに渡され `GetHandler` ます。このメソッドは、要求を処理できるオブジェクトを返します。
 
 次のコードは、単純な実装を示しています。
 
@@ -144,22 +144,22 @@ public partial class IntentHandler : INExtension, IINNotebookDomainHandling
 }
 ```
 
-クラスは `INExtension`から継承する必要があります。また、サンプルはリストとメモインテントを処理するため、`IINNotebookDomainHandling`も実装します。
+クラスはから継承する必要があり `INExtension` ます。また、サンプルはリストとメモインテントを処理するため、も実装 `IINNotebookDomainHandling` します。
 
 > [!NOTE]
 >
-> - .NET では、インターフェイスのプレフィックスとして大文字 `I`を付ける規則があります。これは、iOS SDK からプロトコルをバインドするときに Xamarin に準拠します。
+> - .NET では、インターフェイスのプレフィックスとして大文字を付ける規則があり `I` ます。これは、IOS SDK からプロトコルをバインドするときに Xamarin に準拠します。
 > - Xamarin では、iOS の型名も保持し、Apple は型名の最初の2文字を使用して、型が属しているフレームワークを反映します。
-> - `Intents` framework では、型にプレフィックスとして `IN*` を付けます (例として、 `INExtension`) ですが、これらはインターフェイスでは_ありません_。
-> - また、これらのプロトコル (のインターフェイスにC#なる) は、`IINAddTasksIntentHandling`などの2つの`I`によって終了します。
+> - フレームワークでは `Intents` 、型にプレフィックスが付き `IN*` ます (例として、 `INExtension`) ですが、これらはインターフェイスでは_ありません_。
+> - また、そのプロトコル (C# ではインターフェイスになります) は、のように2つのになり `I` `IINAddTasksIntentHandling` ます。
 
 #### <a name="handling-intents"></a>処理インテント
 
 各インテント (タスクの追加、タスク属性の設定など) は、次に示すような1つの方法で実装されます。 このメソッドは、次の3つの主な機能を実行する必要があります。
 
-1. **インテントの処理**– siri によって解析されたデータは、インテントの種類に固有の `intent` オブジェクトで使用できます。 アプリで、オプションの `Resolve*` メソッドを使用してデータを検証した可能性があります。
+1. **インテントの処理**– siri によって解析されたデータは、 `intent` インテントの種類に固有のオブジェクトで使用できます。 アプリケーションで、オプションのメソッドを使用してデータを検証した可能性があり `Resolve*` ます。
 2. **データストアの検証と更新**–データをファイルシステムに保存します (アプリグループを使用して、メイン iOS アプリがアクセスできるようにします)。または、ネットワーク要求を介してデータを保存します。
-3. **応答を提供**する– `completion` ハンドラーを使用して、siri に応答を送信し、ユーザーに読み取り/表示します。
+3. **応答を提供**する–ハンドラーを使用して、 `completion` siri に応答を送信し、ユーザーに読み取り/表示します。
 
 ```csharp
 public void HandleCreateTaskList(INCreateTaskListIntent intent, Action<INCreateTaskListIntentResponse> completion)
@@ -174,10 +174,10 @@ public void HandleCreateTaskList(INCreateTaskListIntent intent, Action<INCreateT
 }
 ```
 
-`null` が2番目のパラメーターとして応答に渡されることに注意してください。これは user activity パラメーターであり、指定されていない場合は既定値が使用されます。
-カスタムアクティビティの種類を設定できます。ただし、iOS**アプリでサポートされて**いる場合は、`NSUserActivityTypes` キーを使用してください。 次に、アプリを開いたときにこのケースを処理し、特定の操作 (関連するビューコントローラーを開き、Siri 操作からデータを読み込むなど) を実行できます。
+`null`が2番目のパラメーターとして応答に渡されることに注意してください。これは user activity パラメーターであり、指定されていない場合は既定値が使用されます。
+IOS アプリでサポートされている限り、カスタムアクティビティの種類を設定できます。 `NSUserActivityTypes` **Info.plist** 次に、アプリを開いたときにこのケースを処理し、特定の操作 (関連するビューコントローラーを開き、Siri 操作からデータを読み込むなど) を実行できます。
 
-また、この例では `Success` の結果をハードコーディングしていますが、実際のシナリオでは、適切なエラー報告を追加する必要があります。
+また、この例では結果をハードコーディングして `Success` いますが、実際のシナリオでは、適切なエラー報告を追加する必要があります。
 
 ### <a name="test-phrases"></a>テスト語句
 
@@ -198,7 +198,7 @@ public void HandleCreateTaskList(INCreateTaskListIntent intent, Action<INCreateT
 >
 > 実際のデバイスでテストしている場合は、SiriKit サポート用のアプリ ID とプロビジョニングプロファイルを忘れずに構成するようにしてください。
 
-<a name="alternativenames" />
+<a name="alternativenames"></a>
 
 ## <a name="alternative-names"></a>代替名
 
@@ -217,12 +217,12 @@ public void HandleCreateTaskList(INCreateTaskListIntent intent, Action<INCreateT
 
 ### <a name="nsinternalinconsistencyexception"></a>NSInternalInconsistencyException
 
-_目標-C 例外がスローされました。 名前: NSInternalInconsistencyException Reason: クラス < INPreferences: 0x60400082ff00 > をアプリから使用するには、資格のが必要です。Xcode プロジェクトで Siri 機能を有効にしましたか?_
+_目標-C 例外がスローされました。 名前: NSInternalInconsistencyException Reason: クラス <INPreferences: 0x60400082ff00> をアプリから使用するには、資格のが必要です。Xcode プロジェクトで Siri 機能を有効にしましたか?_
 
 - SiriKit は、権利の**plist**に含まれています。
 - **権利**は、 **iOS バンドル署名 > ビルド > プロジェクトオプション**で構成されます。
 
-  [権利が正しく設定されていることを示すプロジェクトオプション![](sirikit-images/set-entitlements-sml.png)](sirikit-images/set-entitlements.png#lightbox)
+  [![権利が正しく設定されたプロジェクトオプション](sirikit-images/set-entitlements-sml.png)](sirikit-images/set-entitlements.png#lightbox)
 
 - (デバイス展開の場合)アプリ ID には、SiriKit が有効になっており、プロビジョニングプロファイルがダウンロードされています。
 

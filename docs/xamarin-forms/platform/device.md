@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Formsデバイスクラス
-description: この記事では Xamarin.Forms 、デバイスクラスを使用して、プラットフォームごとに機能とレイアウトをきめ細かく制御する方法について説明します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 7ee7b2f1bb9d34b0c0e8bdc4ae606d98423c64a9
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138594"
+title: " Xamarin.Forms デバイスクラス" の説明: "この記事では、デバイスクラスの使用方法について説明 Xamarin.Forms します。プラットフォームごとに機能やレイアウトをきめ細かく制御できます。"
+ms. 製品: xamarin ms. assetid: 2F304AEC-8612-4833-81E5-B2F3F469B2DF: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 04/17/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-device-class"></a>Xamarin.Formsデバイスクラス
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithdevice)
@@ -68,7 +54,7 @@ layout.Margin = new Thickness(5, top, 5, 0);
 > [!IMPORTANT]
 > `Platform`クラスに正しくない属性値を指定 `On` しても、エラーは発生しません。 代わりに、プラットフォーム固有の値が適用されずにコードが実行されます。
 
-また、 `OnPlatform` XAML でマークアップ拡張機能を使用して、プラットフォームごとに UI の外観をカスタマイズすることもできます。 詳細については、「 [Onplatform Markup Extension](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform)」を参照してください。
+また、 `OnPlatform` XAML でマークアップ拡張機能を使用して、プラットフォームごとに UI の外観をカスタマイズすることもできます。 詳細については、「 [Onplatform Markup Extension](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform-markup-extension)」を参照してください。
 
 ## <a name="deviceidiom"></a>デバイス. 表現形式
 
@@ -110,7 +96,7 @@ if (Device.Idiom == TargetIdiom.Phone) {
 
 [`OnIdiom`](xref:Xamarin.Forms.OnPlatform`1)クラスは、 `x:TypeArguments` 対象の型に一致する属性を使用してインスタンス化する必要があるジェネリッククラスです。
 
-また、 `OnIdiom` XAML でマークアップ拡張機能を使用して、アプリケーションが実行されているデバイスの表現方法に基づいて UI の外観をカスタマイズすることもできます。 詳細については、「 [Onidiom のマークアップ拡張](~/xamarin-forms/xaml/markup-extensions/consuming.md#onidiom)」を参照してください。
+また、 `OnIdiom` XAML でマークアップ拡張機能を使用して、アプリケーションが実行されているデバイスの表現方法に基づいて UI の外観をカスタマイズすることもできます。 詳細については、「 [Onidiom のマークアップ拡張](~/xamarin-forms/xaml/markup-extensions/consuming.md#onidiom-markup-extension)」を参照してください。
 
 ## <a name="deviceflowdirection"></a>System.windows.flowdirection>
 

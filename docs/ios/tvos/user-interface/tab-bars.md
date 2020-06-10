@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: a4adc692680c0556a3cfb07b1a9f45963a81d199
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 0e6edaccb9e0c163ee46c59ed11769476037aa90
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022121"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573548"
 ---
 # <a name="working-with-tvos-tab-bar-controllers-in-xamarin"></a>Xamarin での tvOS タブバーコントローラーの使用
 
@@ -22,11 +22,11 @@ ms.locfileid: "73022121"
 
 タブバーは既定では半透明であり、常に画面の上部に表示されます。 フォーカスが移動すると、タブバーは画面の上位140ピクセルに対応しますが、フォーカスが下のコンテンツ領域に移ったときにすぐにスライドします。
 
-<a name="Tab-Bars-in-tvOS" />
+<a name="Tab-Bars-in-tvOS"></a>
 
 ## <a name="tab-bars-in-tvos"></a>TvOS のタブバー
 
-`UITabViewController` は同様の方法で動作し、次のような主な違いがありますが、tvOS でも同様の目的で機能します。
+は `UITabViewController` 同様の方法で動作し、tvOS では、iOS と同様の目的で機能します。主な違いは次のとおりです。
 
 - 画面の下部に表示される iOS のタブバーとは異なり、tvOS のタブバーは画面の上部の140ピクセルを占め、既定では半透明になっています。
 - 下のコンテンツ領域のタブバーがフォーカスを移動すると、タブバーが画面の上部からすぐにスライドし、非表示になります。 ユーザーはメニューボタンを1回タップするか、 [Siri リモート](~/ios/tvos/platform/remote-bluetooth.md#The-Siri-Remote)でスワイプして、もう一度タブバーを表示することができます。
@@ -43,29 +43,29 @@ Apple には、タブバーの操作に関する次のような推奨事項が�
 - **カテゴリの数を制限**する-複雑さを軽減し、アプリを管理しやすくするために、カテゴリを使用してタブバーをオーバーロードし、すべてのカテゴリが表示され、混雑していないことを確認します。 簡単で、短いタイトルが最適です。
 - **カテゴリを無効**にしない-すべてのタブ (カテゴリ) が常に表示され、常に有効になっている必要があります。 特定のタブにコンテンツがない場合は、その理由をユーザーに説明します。 たとえば、ユーザーが購入を行っていない場合、[購入] タブは空になります。
 
-<a name="Tab-Bar-Items" />
+<a name="Tab-Bar-Items"></a>
 
 ## <a name="tab-bar-items"></a>タブバー項目
 
-タブバーの各カテゴリ (タブ) は、タブバー項目 (`UITabBarItem`) で表されます。 Apple には、タブバー項目を操作するための次のような推奨事項があります。
+タブバーの各カテゴリ (タブ) は、タブバー項目 () で表され `UITabBarItem` ます。 Apple には、タブバー項目を操作するための次のような推奨事項があります。
 
 - **テキストベースのタブを使用**する-タブバー項目をアイコンとして表示できますが、簡潔なタイトルはアイコンよりも簡単に解釈できるため、Apple ではテキストのみを使用することをお勧めします。
 - **短い、意味のある名詞または動詞を使用**する-タブバー項目は、含まれているコンテンツを明確にリレーし、単純な名詞 (写真、映画、音楽など) または動詞 (検索や再生など) である場合に最適に機能します。
 
-<a name="Tab-Bars-and-Storyboards" />
+<a name="Tab-Bars-and-Storyboards"></a>
 
 ## <a name="tab-bars-and-storyboards"></a>タブバーとストーリーボード
 
 TvOS アプリのタブバーを操作する最も簡単な方法は、iOS デザイナーを使用してアプリの UI に追加することです。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. 新しい Xamarin. tvOS アプリを開始し、[ **tvOS** > **App** > ]**タブ付きアプリ**を選択します。 
+1. 新しい tvOS アプリを開始し、[ **tvOS**  >  **app**]  >  **タブ付きアプリ**を選択します。 
 
     [![](tab-bars-images/tab02.png "Select Tabbed App")](tab-bars-images/tab02.png#lightbox)
 1. すべてのプロンプトに従って、新しい tvOS ソリューションを作成します。
-1. **Solution Pad**で、`Main.storyboard` ファイルをダブルクリックして開き、編集します。
-1. 特定のカテゴリの**アイコン**または**タイトル**を変更するには、 **[ドキュメントアウトライン]** の**ビューコントローラー**の**タブバー項目**を選択します。
+1. **Solution Pad**で、ファイルをダブルクリックし `Main.storyboard` て開き、編集します。
+1. 特定のカテゴリの**アイコン**または**タイトル**を変更するには、[**ドキュメントアウトライン**] の**ビューコントローラー**の**タブバー項目**を選択します。
 
     [![](tab-bars-images/tab03a.png "The Tab Bar Item for the View Controller in the Document Outline")](tab-bars-images/tab03a.png#lightbox)
 1. 次に、**プロパティエクスプローラー**の [**ウィジェット] タブ**で、必要なプロパティを設定します。 
@@ -79,24 +79,24 @@ TvOS アプリのタブバーを操作する最も簡単な方法は、iOS デ�
 
     [![](tab-bars-images/tab05.png "Select Tab")](tab-bars-images/tab05.png#lightbox)
 1. IOS デザイナーで UI 要素を追加することによって、各 Caterogies コンテンツ領域の UI のレイアウトを通常どおりにデザインします。
-1. コード内でC# UI コントロールを操作するために必要なイベントを公開します。
-1. コードでC#公開する UI コントロールの名前を指定します。
+1. C# コードで UI コントロールを操作するために必要なイベントを公開します。
+1. C# コードで公開する UI コントロールの名前を指定します。
 1. 変更内容を保存します。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. 新しい Xamarin. tvOS アプリを開始し、[ **tvOS** > **App** > ]**タブ付きアプリ**を選択します。 
+1. 新しい tvOS アプリを開始し、[ **tvOS**  >  **app**]  >  **タブ付きアプリ**を選択します。 
 
     [![](tab-bars-images/tab02vs.png "Select Tabbed App")](tab-bars-images/tab02vs.png#lightbox)
 1. すべてのプロンプトに従って、新しい tvOS ソリューションを作成します。
-1. **ソリューションエクスプローラー**で、`Main.storyboard` ファイルをダブルクリックして開き、編集します。
-1. 特定のカテゴリの**アイコン**または**タイトル**を変更するには、 **[ドキュメントアウトライン]** の**ビューコントローラー**の**タブバー項目**を選択します。
+1. **ソリューションエクスプローラー**で、ファイルをダブルクリックし `Main.storyboard` て開き、編集します。
+1. 特定のカテゴリの**アイコン**または**タイトル**を変更するには、[**ドキュメントアウトライン**] の**ビューコントローラー**の**タブバー項目**を選択します。
 
     [![](tab-bars-images/tab03avs.png "The View Controller in the Document Outline")](tab-bars-images/tab03avs.png#lightbox)
 1. 次に、**プロパティエクスプローラー**の [**ウィジェット] タブ**で、必要なプロパティを設定します。 
 
     [![](tab-bars-images/tab03vs.png "The Widget Tab")](tab-bars-images/tab03vs.png#lightbox)
-1. 新しいカテゴリ (タブ) を追加するには、 **[ツールボックス]** から**ビューコントローラー**をドラッグし、デザインサーフェイスにドロップします。 
+1. 新しいカテゴリ (タブ) を追加するには、[**ツールボックス**] から**ビューコントローラー**をドラッグし、デザインサーフェイスにドロップします。 
 
     [![](tab-bars-images/tab04vs.png "A View Controller")](tab-bars-images/tab04vs.png#lightbox)
 1. コントロールをクリックし、**タブビューコントローラー**から新しい**ビューコントローラー**にドラッグします。
@@ -104,24 +104,24 @@ TvOS アプリのタブバーを操作する最も簡単な方法は、iOS デ�
 
     [![](tab-bars-images/tab05vs.png "Select Tab")](tab-bars-images/tab05vs.png#lightbox)
 1. IOS Designer で UI 要素を追加することによって、各 Caterogies コンテンツ領域の UI のレイアウトを通常どおりにデザインします。
-1. コード内でC# UI コントロールを操作するために必要なイベントを公開します。
-1. コードでC#公開する UI コントロールの名前を指定します。
+1. C# コードで UI コントロールを操作するために必要なイベントを公開します。
+1. C# コードで公開する UI コントロールの名前を指定します。
 1. 変更内容を保存します。
 
 -----
 
 > [!IMPORTANT]
-> IOS デザイナーで `TouchUpInside` などのイベントを UI 要素 (`UIButton`など) に割り当てることはできますが、Apple TV はタッチスクリーンやサポートタッチイベントを持たないため、呼び出されません。 TvOS ユーザーインターフェイス要素のイベントハンドラーを作成するときは、常に `Primary Action` イベントを使用する必要があります。
+> などのイベントを `TouchUpInside` IOS デザイナーで UI 要素 (など) に割り当てることはでき `UIButton` ますが、Apple TV にタッチスクリーンやタッチイベントのサポートがないために呼び出されることはありません。 `Primary Action`TvOS ユーザーインターフェイス要素のイベントハンドラーを作成するときは、常にイベントを使用する必要があります。
 
 ストーリーボードの操作の詳細については、「 [Hello, tvOS クイックスタートガイド](~/ios/tvos/get-started/hello-tvos.md)」を参照してください。 
 
-<a name="Working-with-Tab-Bars" />
+<a name="Working-with-Tab-Bars"></a>
 
 ## <a name="working-with-tab-bars"></a>タブバーの操作
 
-`UITabBar` の `Items` プロパティを使用して、ゼロ (0) のインデックス付き配列として含まれている `UITabBarItems` のコレクションにアクセスします。 `SelectedItem` プロパティは、現在選択されているタブ (カテゴリ) を `UITabBarItem`として返します。
+のプロパティを使用して `Items` 、に `UITabBar` 格納されているのコレクションに、 `UITabBarItems` ゼロ (0) のインデックス付き配列としてアクセスします。 プロパティは、 `SelectedItem` 現在選択されているタブ (カテゴリ) をとして返し `UITabBarItem` ます。
 
-<a name="Working-with-Tab-Bar-Items" />
+<a name="Working-with-Tab-Bar-Items"></a>
 
 ## <a name="working-with-tab-bar-items"></a>タブバー項目の操作
 
@@ -136,9 +136,9 @@ TabBar.Items [2].BadgeValue = "10";
 
 [![](tab-bars-images/tab06.png "A Tab Bar Item with badge")](tab-bars-images/tab06.png#lightbox)
 
-タイトルと `Image` プロパティを変更してアイコンを変更するには、`UITabBarItem` の `Title` プロパティを使用します。
+のプロパティを使用して、 `Title` `UITabBarItem` タイトルとプロパティを変更し、 `Image` アイコンを変更します。
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>まとめ
 

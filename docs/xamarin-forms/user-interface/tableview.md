@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsTableView
-description: この記事では、TableView クラスを使用して、 Xamarin.Forms アプリケーションでのスクロールメニュー、設定、入力フォームを表示する方法について説明します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8f3fd8d84906844b578e71cb0774932561e0d507
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136228"
+title: " Xamarin.Forms TableView" description: "この記事では、TableView クラスを使用して、 Xamarin.Forms アプリケーションでのスクロールメニュー、設定、入力フォームを表示する方法について説明します。"
+ms. 製品: xamarin ms. assetid: D1619D19-A74F-40DF-8E53-B1B7DFF7A3FB: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 09/25/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-tableview"></a>Xamarin.FormsTableView
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-tableview)
@@ -24,8 +10,6 @@ ms.locfileid: "84136228"
 [`TableView`](xref:Xamarin.Forms.TableView)は、同じテンプレートを共有しない行がある場合に、スクロール可能なデータまたは選択肢の一覧を表示するためのビューです。 [ListView](~/xamarin-forms/user-interface/listview/index.md)とは異なり、には `TableView` の概念がない `ItemsSource` ため、項目を子として手動で追加する必要があります。
 
 ![TableView の例](tableview-images/tableview-all-sml.png)
-
-<a name="Use_Cases" />
 
 ## <a name="use-cases"></a>ユース ケース
 
@@ -36,8 +20,6 @@ ms.locfileid: "84136228"
 - 行と行 (数値、パーセンテージ、画像など) とは異なる方法で表示されるデータを表示します。
 
 [`TableView`](xref:Xamarin.Forms.TableView)上のシナリオで一般的に必要とされる、魅力的なセクションでの行のスクロールとレイアウトを処理します。 コントロールは、 `TableView` 使用可能な場合は各プラットフォームの基になる同等のビューを使用し、プラットフォームごとにネイティブな外観を作成します。
-
-<a name="TableView_Structure" />
 
 ## <a name="structure"></a>構造体
 
@@ -54,7 +36,7 @@ ms.locfileid: "84136228"
 </TableView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 Content = new TableView
@@ -72,8 +54,6 @@ Content = new TableView
 };
 ```
 
-<a name="TableView_Appearance" />
-
 ## <a name="appearance"></a>外観
 
 [`TableView`](xref:Xamarin.Forms.TableView)[`Intent`](xref:Xamarin.Forms.TableView.Intent)プロパティを公開します。このプロパティは、列挙体の任意のメンバーに設定でき [`TableIntent`](xref:Xamarin.Forms.TableIntent) ます。
@@ -87,15 +67,11 @@ Content = new TableView
 
 さらに、プロパティをに設定することによって、それぞれに表示されるテキストの色を [`TableSection`](xref:Xamarin.Forms.TableSection) 変更でき `TextColor` [`Color`](xref:Xamarin.Forms.Color) ます。
 
-<a name="Built-In_Cells" />
-
 ## <a name="built-in-cells"></a>組み込みセル
 
 Xamarin.Formsには、情報を収集して表示するための組み込みセルが付属しています。 [`ListView`](xref:Xamarin.Forms.ListView)とは [`TableView`](xref:Xamarin.Forms.TableView) 同じセルのすべてを使用できますが、 [`SwitchCell`](xref:Xamarin.Forms.SwitchCell) [`EntryCell`](xref:Xamarin.Forms.EntryCell) はシナリオに最も適してい `TableView` ます。
 
 [Textcell](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#textcell)と[ImageCell](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#imagecell)の詳細については、 [ListView のセルの外観](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)に関する説明を参照してください。
-
-<a name="switchcell" />
 
 ### <a name="switchcell"></a>SwitchCell
 
@@ -110,8 +86,6 @@ Xamarin.Formsには、情報を収集して表示するための組み込みセ�
 [`SwitchCell`](xref:Xamarin.Forms.SwitchCell)また、はイベントを公開し `OnChanged` 、セルの状態の変化に応答できるようにします。
 
 ![SwitchCell の例](tableview-images/switch-cell.png)
-
-<a name="entrycell" />
 
 ### <a name="entrycell"></a>EntryCell
 
@@ -129,9 +103,7 @@ Xamarin.Formsには、情報を収集して表示するための組み込みセ�
 
 ![EntryCell の例](tableview-images/entry-cell.png)
 
-<a name="Custom_Cells" />
-
-## <a name="custom-cells"></a>カスタムセル
+## <a name="custom-cells"></a>カスタム セル
 
 組み込みセルが十分でない場合は、カスタムセルを使用して、アプリにとって意味のある方法でデータを表示し、キャプチャすることができます。 たとえば、ユーザーがイメージの不透明度を選択できるようにスライダーを表示することができます。
 
@@ -168,7 +140,7 @@ Xamarin.Formsには、情報を収集して表示するための組み込みセ�
 </ContentPage>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 var table = new TableView();

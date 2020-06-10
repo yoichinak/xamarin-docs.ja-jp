@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 31aa4d1fb8b77b88fc6b6790147409ff8ec13145
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 4dde8941b09ac7b235b94e73e86dc60167fb6bd4
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029839"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574458"
 ---
 # <a name="introduction-to-macos-sierra"></a>macOS Sierra の概要
 
@@ -20,13 +20,13 @@ ms.locfileid: "73029839"
 
 MacOS Sierra の詳細については、Apple の[macOS とアプリ](https://developer.apple.com/macos/)に関するドキュメントを参照してください。
 
-<a name="Whats-New-in-macOS-Sierra" />
+<a name="Whats-New-in-macOS-Sierra"></a>
 
 ## <a name="whats-new-in-macos-sierra"></a>macOS Sierra の新機能
 
 Apple では、macOS Sierra に新しい Api とサービスがいくつか追加され、既存の機能に対する多くの機能強化が加えられました。
 
-<a name="Apple-File-System" />
+<a name="Apple-File-System"></a>
 
 ### <a name="apple-file-system"></a>Apple ファイルシステム
 
@@ -34,7 +34,7 @@ MacOS Sierra では、Apple は新しい Apple ファイルシステムを iOS�
 
 詳細については、Apple の[Apple ファイルシステムガイド](https://developer.apple.com/library/prerelease/content/documentation/FileManagement/Conceptual/APFS_Guide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40016999)を参照してください。
 
-<a name="Apple-Pay-Enhancements" />
+<a name="Apple-Pay-Enhancements"></a>
 
 ### <a name="apple-pay-enhancements"></a>Apple Pay の機能強化
 
@@ -46,17 +46,17 @@ macOS Sierra には、開発者が iOS および macOS の Safari ベースの w
 
 詳細については、「Apple の[APPLEPAY JS Framework](https://developer.apple.com/reference/applepayjs)リファレンス」を参照してください。
 
-<a name="Building-Modern-macOS-Apps" />
+<a name="Building-Modern-macOS-Apps"></a>
 
 ### <a name="building-modern-macos-apps"></a>最新の macOS アプリの構築
 
-Apple の Safari web ブラウザー、ページワードプロセッサ、数値スプレッドシートなどの最新の macOS アプリでは、多くの新しいテクノロジを使用して、浮動パネルや複数のオープンを含む従来の UI 要素とは別に、一元化された状況依存のユーザーインターフェイスを提供しています。ウィンドウ.
+Apple の Safari web ブラウザー、ページワードプロセッサ、数値スプレッドシートなどの最新の macOS アプリでは、多くの新しいテクノロジを使用して、フローティングパネルや複数の開いているウィンドウなどの従来の UI 要素を使用して、統一された状況依存のユーザーインターフェイスを提供します。
 
-[タブ付きの Mac ウィンドウの例を![する](images/content08.png)](images/content08.png#lightbox)
+[![タブ付きの Mac ウィンドウの例](images/content08.png)](images/content08.png#lightbox)
 
 [最新の Macos アプリの構築](~/mac/platform/introduction-to-macos-sierra/modern-cocoa-apps.md)ガイドでは、開発者が Xamarin. Mac で最新の macos アプリを構築するために使用できるいくつかのヒント、機能、および手法について説明しています。
 
-<a name="CloudKit-Data-Sharing" />
+<a name="CloudKit-Data-Sharing"></a>
 
 ### <a name="cloudkit-data-sharing"></a>CloudKit データ共有
 
@@ -69,7 +69,7 @@ CloudKit には、共有レコードの招待を送受信するための完全�
 > [!IMPORTANT]
 > Apple からは、開発者が欧州連合の一般データ保護規則 (GDPR) を適切に処理するための[ツールが提供](https://developer.apple.com/support/allowing-users-to-manage-data/)されています。
 
-<a name="Safari-App-Extensions-Support" />
+<a name="Safari-App-Extensions-Support"></a>
 
 ### <a name="safari-app-extensions-support"></a>Safari アプリ拡張機能のサポート
 
@@ -77,33 +77,33 @@ Safari アプリ拡張機能を使用すると、アプリは macOS Sierra と�
 
 詳細については、「Apple の[Safari アプリ拡張機能のプログラミングガイド](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternetWeb/Conceptual/SafariAppExtension_PG/index.html#//apple_ref/doc/uid/TP40017319)」を参照してください。
 
-<a name="Security-and-Privacy-Enhancements" />
+<a name="Security-and-Privacy-Enhancements"></a>
 
 ### <a name="security-and-privacy-enhancements"></a>セキュリティとプライバシーの強化
 
 Apple では、アプリのセキュリティを向上させ、次のようなエンドユーザーのプライバシーを確保するために、アプリのセキュリティを強化するために、macOS Sierra のセキュリティとプライバシーの両方に対していくつかの機能強化が行われています。
 
-- 新しい `NSAllowsArbitraryLoadsInWebContent` キーをアプリの `Info.plist` ファイルに追加すると、Apple Transport Security (ATS) 保護がアプリの残りの部分で有効になっている間も、web ページを正しく読み込むことができます。
+- 新しい `NSAllowsArbitraryLoadsInWebContent` キーはアプリのファイルに追加することができ、 `Info.plist` Apple Transport SECURITY (ATS) の保護はアプリの残りの部分でも有効になっていますが、web ページを正しく読み込むことができます。
 - Common Data Security Architecture (CDSA) API は非推奨とされており、非対称キーを生成するには SecKey API で置き換える必要があります。
 - すべての SSL/TLS 接続では、RC4 対称暗号が既定で無効になっています。 さらに、セキュリティで保護されたトランスポート API は SSLv3 をサポートしなくなりました。アプリは、できるだけ早く SHA-1 と3DES 暗号化の使用を停止することをお勧めします。
 - IOS 10 と macOS Sierra の新しいクリップボードを使用すると、デバイス間でコピーと貼り付けを行うことができます。そのため、特定のデバイスに対してクリップボードを制限し、特定の時点で自動的に消去されるようにタイムスタンプを設定できるように、API が拡張されています。 また、名前付き pasteboards は保持されなくなったため、共有のペーストボードコンテナーに置き換える必要があります。
-- アプリが保護されたデータにアクセスする場合 (ユーザーの予定表など) は、`Info.plist` ファイル (予定表の場合は`NSCalendarUsageDescription`) の正しい目的文字列値キーを使用して、その目的を宣言_する必要があり_ます。
+- アプリが保護されたデータにアクセスする場合 (ユーザーの予定表_must_など) は、その目的を正しい文字列値のキーで `Info.plist` ファイル ( `NSCalendarUsageDescription` 暦の場合) で宣言する必要があります。
 - Mac App Store 経由で配信されていない開発者向け署名済みアプリでは、CloudKit、iCloud キーチェーン、iCloud ドライブ、リモートプッシュ通知、MapKit、および VPN 権利を利用できるようになりました。
 - ランタイムパスはランタイムの前にわからないため、macOS Sierra は、zip アーカイブまたは署名されていないディスクイメージで、コード署名者アプリと共に外部コードまたはデータの配信をサポートしなくなりました。
 
-さらに、macOS Sierra (またはそれ以降) で実行されるアプリでは、特定の機能またはユーザー情報にアクセスする目的を静的に宣言する必要があります。そのためには、アプリがアクセスする理由をユーザーに説明する1つまたは複数のプライバシー固有のキーを `Info.plist` ファイルに入力します.
+さらに、macOS Sierra (またはそれ以降) で実行されているアプリでは、特定の機能やユーザー情報にアクセスする目的を静的に宣言する必要があります。これには、 `Info.plist` アプリがアクセスする理由をユーザーに説明する1つ以上のプライバシー固有のキーをファイルに入力します。
 
 MacOS Sierra は iOS 10 でこれらの変更を共有するため、詳細については、iOS 10 の[セキュリティとプライバシーの強化](~/ios/app-fundamentals/security-privacy.md)に関するガイドを参照してください。
 
-<a name="Smart-Card-Driver-Extension-Support" />
+<a name="Smart-Card-Driver-Extension-Support"></a>
 
 ### <a name="smart-card-driver-extension-support"></a>スマートカードドライバーの拡張機能のサポート
 
-MacOS Sierra では、アプリは、特定の種類のスマートカードからのコンテンツへの読み取り専用アクセスを可能にする、`NSExtension` ベースのスマートカードドライバーを作成できます。 この情報は、システムキーチェーン内に表示されます (非推奨の Common Data Security Architecture メソッドを置き換えます)。
+MacOS Sierra では、アプリは、 `NSExtension` 特定の種類のスマートカードからのコンテンツへの読み取り専用アクセスを許可する、ベースのスマートカードドライバーを作成できます。 この情報は、システムキーチェーン内に表示されます (非推奨の Common Data Security Architecture メソッドを置き換えます)。
 
 詳細については、「Apple の[Cryptotokenkit フレームワークリファレンス](https://developer.apple.com/reference/cryptotokenkit)」を参照してください。
 
-<a name="Unified-Logging" />
+<a name="Unified-Logging"></a>
 
 ### <a name="unified-logging"></a>統合ログ
 
@@ -117,23 +117,23 @@ macOS Sierra には、接続されているデバイスを含む複数のソー�
 
 詳細については、Apple の[ログ記録のリファレンス](https://developer.apple.com/documentation/os/logging)を参照してください。
 
-<a name="Wide-Color" />
+<a name="Wide-Color"></a>
 
 ### <a name="wide-color"></a>広色域
 
 macOS Sierra は、コアグラフィックス、コアイメージ、メタル、AVFoundation などのフレームワークを含む、システム全体の拡張範囲のピクセル形式と広い範囲の色空間のサポートを拡張します。 グラフィックススタック全体でこの動作を提供することにより、さまざまな色で表示されるデバイスのサポートがさらに緩和さます。
 
-さらに、`AppKit` は新しい extended **sRGB** colorspace で動作するように変更されています。これにより、パフォーマンスが大幅に低下することなく、色の広い色域で色を簡単に混在させることができます。
+また、 `AppKit` は新しい Extended **sRGB** colorspace で動作するように変更されています。これにより、パフォーマンスが大幅に低下することなく、広い色域で色を簡単に混在させることができます。
 
 Apple では、広範囲にわたる色を使用するときに、次のベストプラクティスを提供しています。
 
-- `NSColor` は sRGB 色空間を使用するようになり、`1.0` 範囲の `0.0` に値がクランプされることはなくなりました。 アプリが以前のクランプ動作に依存している場合は、macOS Sierra に対して変更する必要があります。
+- `NSColor`では、sRGB 色空間が使用されるようになり、値が to 範囲にクランプされなくなりました `0.0` `1.0` 。 アプリが以前のクランプ動作に依存している場合は、macOS Sierra に対して変更する必要があります。
 - コアグラフィックスや金属などの低レベルの API を使用してイメージ処理を行う場合、アプリでは16ビット浮動小数点値をサポートする拡張範囲の色空間とピクセル形式を使用する必要があります。 必要に応じて、アプリで色コンポーネントの値を手動で固定する必要があります。
 - コアグラフィックス、コアイメージ、および金属パフォーマンスシェーダーはすべて、2つの色空間間で変換を行うための新しいメソッドを提供します。
 
 詳細については、「 [Wide カラー](~/ios/platform/wide-color.md)ガイドの概要」を参照してください。
 
-<a name="Additional-Framework-Changes" />
+<a name="Additional-Framework-Changes"></a>
 
 ## <a name="additional-framework-changes"></a>追加のフレームワークの変更
 
@@ -141,7 +141,7 @@ Apple では、上に示したフレームワークの主な変更点と追加�
 
 詳細については、追加の[フレームワーク変更](~/mac/platform/introduction-to-macos-sierra/additional-framework-changes.md)ガイドを参照してください。
 
-<a name="Deprecated-APIs" />
+<a name="Deprecated-APIs"></a>
 
 ## <a name="deprecated-apis"></a>非推奨の API
 

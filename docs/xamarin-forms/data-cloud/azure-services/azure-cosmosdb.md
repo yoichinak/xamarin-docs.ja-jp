@@ -1,23 +1,8 @@
 ---
-title: で Azure Cosmos DB ドキュメントデータベースを使用するXamarin.Forms
-description: この記事では、Azure Cosmos DB .NET Standard クライアントライブラリを使用して、Azure Cosmos DB ドキュメントデータベースをアプリケーションに統合する方法について説明し Xamarin.Forms ます。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-ms.custom: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 47b35d394eab339a8e9a1f81880e6de4233f29b6
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127089"
+title: "Azure Cosmos DB ドキュメントデータベースを使用する Xamarin.Forms " 説明: "この記事では、Azure Cosmos DB .NET Standard クライアントライブラリを使用して Azure Cosmos DB ドキュメントデータベースをアプリケーションに統合する方法について説明 Xamarin.Forms します。"
+ms. 製品: xamarin ms. assetid: 7C0605D9-9B7F-4002-9B60-2B5DAA3EA30C: xamu-ビデオ作成者: davidbritch ミリ秒: dabritch ms. date: 06/16/2017 no loc: [ Xamarin.Forms ,、] を指定します。 Xamarin.Essentials
 ---
+
 # <a name="consume-an-azure-cosmos-db-document-database-in-xamarinforms"></a>で Azure Cosmos DB ドキュメントデータベースを使用するXamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdb)
@@ -120,8 +105,6 @@ public async Task CreateDocumentCollection(string databaseName, string collectio
 > [!IMPORTANT]
 > `CreateDocumentCollectionIfNotExistsAsync`メソッドは予約済みのスループットで新しいコレクションを作成することに注意してください。これにより、価格に影響があります。
 
-<a name="document_query" />
-
 ### <a name="retrieving-document-collection-documents"></a>ドキュメントコレクションのドキュメントの取得
 
 ドキュメントコレクションの内容は、ドキュメントクエリを作成および実行することによって取得できます。 次のメソッドを使用して、ドキュメントクエリが作成され `DocumentClient.CreateDocumentQuery` ます。
@@ -160,8 +143,6 @@ var query = client.CreateDocumentQuery<TodoItem>(collectionLink)
 
 このクエリは、プロパティがと等しいコレクションからすべてのドキュメントを取得 `Done` `false` します。
 
-<a name="inserting_document" />
-
 ### <a name="inserting-a-document-into-a-document-collection"></a>ドキュメントコレクションへのドキュメントの挿入
 
 ドキュメントは、ユーザーが定義した JSON コンテンツであり、メソッドを使用してドキュメントコレクションに挿入でき `DocumentClient.CreateDocumentAsync` ます。
@@ -191,8 +172,6 @@ public async Task SaveTodoItemAsync(TodoItem item, bool isNewItem = false)
 ```
 
 メソッドは、 `ReplaceDocumentAsync` `Uri` 置換するコレクション内のドキュメントを表す引数と、 `object` 更新されたドキュメントデータを表す引数を指定します。
-
-<a name="deleting_document" />
 
 ### <a name="deleting-a-document-from-a-document-collection"></a>ドキュメントコレクションからのドキュメントの削除
 
@@ -229,7 +208,7 @@ await client.DeleteDatabaseAsync(UriFactory.CreateDatabaseUri(Constants.Database
 
 メソッドは、 `DeleteDatabaseAsync` `Uri` 削除するデータベースを表す引数を指定します。 このメソッドを呼び出すと、データベースに格納されているドキュメントコレクションとドキュメントコレクションに格納されているドキュメントも削除されます。
 
-## <a name="summary"></a>[概要]
+## <a name="summary"></a>まとめ
 
 この記事では、Azure Cosmos DB .NET Standard クライアントライブラリを使用して、Azure Cosmos DB ドキュメントデータベースをアプリケーションに統合する方法について説明しました Xamarin.Forms 。 Azure Cosmos DB ドキュメントデータベースは、JSON ドキュメントへの低待機時間のアクセスを提供する NoSQL データベースであり、シームレスなスケールとグローバルレプリケーションを必要とするアプリケーション向けに、高速で可用性の高いスケーラブルなデータベースサービスを提供します。
 

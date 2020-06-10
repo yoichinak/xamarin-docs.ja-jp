@@ -6,12 +6,12 @@ ms.assetid: 3247fcee-6acc-470d-ab87-c1c511d67363
 author: davidortinau
 ms.author: daortin
 ms.date: 06/03/2018
-ms.openlocfilehash: cb109055b476fee6d34041940c682187074f4e7d
-ms.sourcegitcommit: 099b06e311a40c00eeea85465ff9b97867a5c5de
+ms.openlocfilehash: b8b3ca4892e849f9bf08ca2910798c4b2d0f9f6f
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2020
-ms.locfileid: "78295444"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573481"
 ---
 # <a name="xamarin-profiler"></a>Xamarin Profiler
 
@@ -34,8 +34,8 @@ Xamarin Profiler はスタンドアロンアプリケーションであり、IDE
 
 プラットフォームのインストールパッケージをダウンロードします。
 
-- [**Os**](https://dl.xamarin.com/profiler/profiler-mac-1.6.13-11.pkg)
-- [**ウィンドウ**](https://dl.xamarin.com/profiler/XamarinProfiler.Windows.Installer.1.6.10-15.msi)
+- [**macOS**](https://dl.xamarin.com/profiler/profiler-mac-1.6.13-11.pkg)
+- [**Windows**](https://dl.xamarin.com/profiler/XamarinProfiler.Windows.Installer.1.6.10-15.msi)
 
 ダウンロードが完了したら、インストーラーを起動して、システムに Xamarin Profiler を追加します。
 
@@ -55,15 +55,15 @@ Xamarin Profiler を使用すると、開発者は Visual Studio for Mac また�
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-現時点では、Xamarin Profiler を使用して、Mac 上の Xamarin アプリケーション (Visual Studio for Mac 経由) をテストできます。 プロファイラーは IDE とは別のプロセスであるため、Visual Studio for Mac から起動するだけでなく、それをスタンドアロンアプリケーションとして使用して、 [mono ログプロファイラー](https://www.mono-project.com/docs/debug+profile/profile/profiler/)から生成された .exe および `.mlpd` ファイルを調べることができます。
+現時点では、Xamarin Profiler を使用して、Mac 上の Xamarin アプリケーション (Visual Studio for Mac 経由) をテストできます。 プロファイラーは IDE とは別のプロセスであるため、Visual Studio for Mac から起動するだけでなく、それをスタンドアロンアプリケーションとして使用して、 `.mlpd` [mono ログプロファイラー](https://www.mono-project.com/docs/debug+profile/profile/profiler/)から生成された .exe とファイルを調べることもできます。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-現時点では、Xamarin Profiler を使用して、Windows 上の Xamarin Android アプリをテストすることができます (Visual Studio および Visual Studio for Mac を使用)。 プロファイラーは IDE とは別のプロセスであるため、Visual Studio から起動するだけでなく、それをスタンドアロンアプリケーションとして使用して、 [mono ログプロファイラー](https://www.mono-project.com/docs/debug+profile/profile/profiler/)から生成された .exe ファイルと `.mlpd` ファイルを調べることができます。
+現時点では、Xamarin Profiler を使用して、Windows 上の Xamarin Android アプリをテストすることができます (Visual Studio および Visual Studio for Mac を使用)。 プロファイラーは IDE とは別のプロセスであるため、Visual Studio から起動するだけでなく、それをスタンドアロンアプリケーションとして使用して、 `.mlpd` [mono ログプロファイラー](https://www.mono-project.com/docs/debug+profile/profile/profiler/)から生成された .exe とファイルを調べることもできます。
 
 -----
 
-<a name="Profiler_Support" />
+<a name="Profiler_Support"></a>
 
 ## <a name="profiler-support"></a>プロファイラーのサポート
 
@@ -100,7 +100,7 @@ Xamarin Profiler のサポートは、次のプラットフォームで使用で
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-  **> IOS デバッグ > プロファイリングを有効にする**
+  **> iOS デバッグ > プロファイリングを有効にする**
 
   ![Visual Studio for Mac の [iOS オプション] ダイアログ](images/ios-options-mac.png)
 
@@ -160,7 +160,7 @@ Xamarin Profiler は、iOS または Android アプリケーションをプロ�
 
 #### <a name="saving-and-loading-profiler-sessions"></a>プロファイラーセッションの保存と読み込み
 
-プロファイリングセッションをいつでも保存するには、プロファイラーのメニューバーから **[ファイル > 名前を付けて保存...]** を選択します。 これにより、ファイルは、プロファイリングデータ用の特殊で高度に圧縮された形式で _.mlpd_形式で保存されます。
+プロファイリングセッションをいつでも保存するには、プロファイラーのメニューバーから [**ファイル > 名前を付けて保存...** ] を選択します。 これにより、ファイルは、プロファイリングデータ用の特殊で高度に圧縮された形式で _.mlpd_形式で保存されます。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -186,18 +186,18 @@ Xamarin Profiler は、次に示す5つのセクションで構成されてい�
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-[Visual Studio for Mac のプロファイラーセクションの ![](images/profiler-mac-sml.png)](images/profiler-mac.png#lightbox) 
+[![Visual Studio for Mac のプロファイラーセクション](images/profiler-mac-sml.png)](images/profiler-mac.png#lightbox) 
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[Visual Studio でのプロファイラーセクションの ![](images/profiler-vs.png)](images/profiler-vs.png#lightbox)
+[![Visual Studio のプロファイラーセクション](images/profiler-vs.png)](images/profiler-vs.png#lightbox)
 
 -----
 
 - **ツールバー** –プロファイラーの上部にあり、プロファイリングの開始/停止、ターゲットプロセスの選択、アプリの実行時間の表示、およびプロファイラーアプリケーションを構成する分割ビューの選択を行うためのオプションが用意されています。
-- **[インストルメントの一覧]** –プロファイルセッション用に読み込まれたすべての音色が一覧表示されます。
+- [**インストルメントの一覧**] –プロファイルセッション用に読み込まれたすべての音色が一覧表示されます。
 - **プロットグラフ**–これらのグラフは、インストルメントリスト内の関連する音色に水平に関連付けられています。 スライダー (タイムプロファイラーの下に表示) を使用して、スケールを変更できます。
-- **[インストルメントの詳細領域]** -現在のインストルメントの選択したビューで表示されるデータが含まれます。 これらのビューについては、以下のセクションで詳しく説明します。
+- [**インストルメントの詳細領域**]-現在のインストルメントの選択したビューで表示されるデータが含まれます。 これらのビューについては、以下のセクションで詳しく説明します。
 - **Inspector View** –セグメント化されたコントロールで選択できるセクションが含まれます。 セクションは、選択したインストルメントに依存します。これには、構成設定、統計、スタックトレース情報、およびルートへのパスが含まれます。
 
 ### <a name="allocations"></a>割り当て
@@ -208,11 +208,11 @@ Xamarin Profiler は、次に示す5つのセクションで構成されてい�
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-[![割り当てのインストルメント](images/allocations1.png)](images/allocations1.png#lightbox) 
+[![割り当てインストルメント](images/allocations1.png)](images/allocations1.png#lightbox) 
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![割り当てのインストルメント](images/allocations1-vs.png)](images/allocations1-vs.png#lightbox)
+[![割り当てインストルメント](images/allocations1-vs.png)](images/allocations1-vs.png#lightbox)
 
 -----
 
@@ -222,27 +222,27 @@ Xamarin Profiler は、次に示す5つのセクションで構成されてい�
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-  [![の割り当て タブ](images/allocations3.png)](images/allocations3.png#lightbox) 
+  [![[割り当て] タブ](images/allocations3.png)](images/allocations3.png#lightbox) 
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-  [![の割り当て タブ](images/allocations2-vs.png)](images/allocations2-vs.png#lightbox)
+  [![[割り当て] タブ](images/allocations2-vs.png)](images/allocations2-vs.png#lightbox)
 
 -----
 
 割り当て用のインスペクタービューには、オブジェクトのフィルター処理とグループ化のオプション、割り当てられたメモリの統計情報、上位の割り当て、スタックトレースとルートへのパスのビューがあります。
 
-- **[コールツリー]** –アプリケーション内のすべてのスレッドのコールツリー全体が表示され、各ノードに割り当てられたメモリに関する情報が含まれます。 一覧で要素が選択されると、すべての兄弟ノードが灰色で表示されます。 ツリーを展開するか、要素をダブルクリックしてドリルダウンすることができます。このデータビューを表示するときに、表示設定インスペクタービューを使用して、表示方法を変更できます。 現在、次の2つのオプションがあります。
+- [**コールツリー** ] –アプリケーション内のすべてのスレッドのコールツリー全体が表示され、各ノードに割り当てられたメモリに関する情報が含まれます。 一覧で要素が選択されると、すべての兄弟ノードが灰色で表示されます。 ツリーを展開するか、要素をダブルクリックしてドリルダウンすることができます。このデータビューを表示するときに、表示設定インスペクタービューを使用して、表示方法を変更できます。 現在、次の2つのオプションがあります。
     1. [反転された**コールツリー** ] –スタックトレースは上から下へと見なされます。 これは、CPU が時間を費やしている最も深い方法を示す、便利な表示オプションです。
     2. **スレッドで分離**-このオプションは、呼び出しツリーをスレッドごとに整理します。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-  [![コールツリー タブ](images/allocations2.png)](images/allocations2.png#lightbox) 
+  [![[コールツリー] タブ](images/allocations2.png)](images/allocations2.png#lightbox) 
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-  [![コールツリー タブ](images/allocations3-vs.png)](images/allocations3-vs.png#lightbox)
+  [![[コールツリー] タブ](images/allocations3-vs.png)](images/allocations3-vs.png#lightbox)
 
 -----
 
@@ -250,11 +250,11 @@ Xamarin Profiler は、次に示す5つのセクションで構成されてい�
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-  [![スナップショット タブ](images/allocations4.png)](images/allocations4.png#lightbox) 
+  [![[スナップショット] タブ](images/allocations4.png)](images/allocations4.png#lightbox) 
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-  [![スナップショット タブ](images/allocations4-vs.png)](images/allocations4-vs.png#lightbox)
+  [![[スナップショット] タブ](images/allocations4-vs.png)](images/allocations4-vs.png#lightbox)
 
 -----
 
@@ -266,41 +266,41 @@ Xamarin Profiler は、次に示す5つのセクションで構成されてい�
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-[![Time Profiler インストルメント](images/time1.png)](images/time1.png#lightbox) 
+[![時間プロファイラーのインストルメント](images/time1.png)](images/time1.png#lightbox) 
 
-[![Time Profiler インストルメント-サンプル一覧](images/time3.png)](images/time3.png#lightbox) 
+[![時間プロファイラーインストルメント-サンプル一覧](images/time3.png)](images/time3.png#lightbox) 
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![Time Profiler インストルメント](images/time1-vs.png)](images/time1-vs.png#lightbox) 
+[![時間プロファイラーのインストルメント](images/time1-vs.png)](images/time1-vs.png#lightbox) 
 
-[![Time Profiler インストルメント-サンプル一覧](images/time3-vs.png)](images/time3-vs.png#lightbox) 
+[![時間プロファイラーインストルメント-サンプル一覧](images/time3-vs.png)](images/time3-vs.png#lightbox) 
 
 -----
 
-- **[コールツリー]** –各メソッドで費やされた時間が表示されます。
+- [**コールツリー** ] –各メソッドで費やされた時間が表示されます。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-  [![Time Profiler インストルメント-コールツリー](images/time2.png)](images/time2.png#lightbox) 
+  [![時間プロファイラーインストルメント-コールツリー](images/time2.png)](images/time2.png#lightbox) 
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-  [![Time Profiler インストルメント-コールツリー](images/time2-vs.png)](images/time2-vs.png#lightbox) 
+  [![時間プロファイラーインストルメント-コールツリー](images/time2-vs.png)](images/time2-vs.png#lightbox) 
 
 -----
 
 ### <a name="cycles"></a>Cycles
 
-およびF#マネージコードをC#使用すると、非常に一般的になることがあります。また、残念ながら、破棄されないオブジェクトへの参照を作成するのは非常に簡単です。 このインストルメントを使用すると、これらのオブジェクトを特定し、アプリケーションで参照されているサイクルを表示できます。
+C# と F # のマネージコードを使用すると、非常に一般的になることがあります。また、残念ながら、破棄されないオブジェクトへの参照を作成するのは非常に簡単です。 このインストルメントを使用すると、これらのオブジェクトを特定し、アプリケーションで参照されているサイクルを表示できます。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-[![サイクルのインストルメント](images/cycles.m751-sml.png)](images/cycles.m751.png#lightbox) 
+[![サイクルの音色](images/cycles.m751-sml.png)](images/cycles.m751.png#lightbox) 
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![サイクルのインストルメント](images/cycles-vs-sml.png)](images/cycles-vs.png#lightbox) 
+[![サイクルの音色](images/cycles-vs-sml.png)](images/cycles-vs.png#lightbox) 
 
 -----
 
@@ -312,15 +312,15 @@ Xamarin Profiler は、次に示す5つのセクションで構成されてい�
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-[プロファイルエラーの ![ダイアログ](images/image001.png)](images/image001.png#lightbox) 
+[![プロファイルエラーダイアログ](images/image001.png)](images/image001.png#lightbox) 
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[プロファイルエラーの ![ダイアログ](images/image1vs.png)](images/image1vs.png#lightbox) 
+[![プロファイルエラーダイアログ](images/image1vs.png)](images/image1vs.png#lightbox) 
 
 -----
 
-**[更新]** を選択して続行します。
+[**更新**] を選択して続行します。
 
 ### <a name="sgen-garbage-collector-and-profiling"></a>SGen ガベージコレクターとプロファイリング
 
@@ -334,7 +334,7 @@ Classic API を使用する Xamarin アプリケーションでは、Boehm GC �
 
 メモリ管理の詳細については、「[メモリとパフォーマンスのベストプラクティス](~/cross-platform/deploy-test/memory-perf-best-practices.md)ガイド」を参照してください。
 
-## <a name="summary"></a>要約
+## <a name="summary"></a>まとめ
 
 このガイドでは、プロファイルとは何か、および開発者にとってどのような利点があるかを見てきました。 次に、Xamarin Profiler を導入し、その動作についていくつかの履歴と情報を提供します。 最後に、Xamarin Profiler の機能をがし、割り当てと時間プロファイラーの音色について説明します。
 

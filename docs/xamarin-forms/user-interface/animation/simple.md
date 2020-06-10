@@ -1,22 +1,8 @@
 ---
-title: 単純なアニメーションXamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a4644094de9c0fcad8f38b7014426a30263dc66f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137450"
+title: "単純なアニメーションの Xamarin.Forms " 説明: "ViewExtensions クラスは、単純なアニメーションを構築するために使用できる拡張メソッドを提供します。 この記事では、ViewExtensions クラスを使用してアニメーションを作成およびキャンセルする方法について説明します。
+ms. 製品: xamarin ms assetid: 4a6fae5a848f47 CE0-BFA1-20a6309b5225 ミリ秒。テクノロジ: xamarin-forms author: davidbritch ms. author: dabritch: 11/05/2019 no-loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="simple-animations-in-xamarinforms"></a>単純なアニメーションXamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-basic)
@@ -43,9 +29,9 @@ _ViewExtensions クラスは、単純なアニメーションを構築するた�
 > [!NOTE]
 > クラスには [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) 、[ `LayoutTo` ] (xref: が用意されて Xamarin.Forms います。ViewExtensions。 LayoutTo ( Xamarin.Forms .VisualElement、 Xamarin.Forms 。四角形、system.string、 Xamarin.Forms 。イージング)) 拡張メソッド。 ただし、このメソッドは、サイズと位置の変更を含むレイアウト状態間の遷移をアニメーション化するためにレイアウトで使用されることを意図しています。 したがって、サブクラスでのみ使用する必要があり [`Layout`](xref:Xamarin.Forms.Layout) ます。
 
-クラスのアニメーション拡張メソッド [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) はすべて非同期であり、オブジェクトを返し `Task<bool>` ます。 `false`アニメーションが完了した場合、およびアニメーションがキャンセルされた場合、戻り値はになり `true` ます。 そのため、アニメーションメソッドは通常、演算子と共に使用する必要があり `await` ます。これにより、アニメーションがいつ完了したかを簡単に判断できるようになります。 さらに、前のメソッドの完了後に実行される後続のアニメーションメソッドを使用してシーケンシャルアニメーションを作成できるようになります。 詳細については、「[複合アニメーション](#compound)」を参照してください。
+クラスのアニメーション拡張メソッド [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) はすべて非同期であり、オブジェクトを返し `Task<bool>` ます。 `false`アニメーションが完了した場合、およびアニメーションがキャンセルされた場合、戻り値はになり `true` ます。 そのため、アニメーションメソッドは通常、演算子と共に使用する必要があり `await` ます。これにより、アニメーションがいつ完了したかを簡単に判断できるようになります。 さらに、前のメソッドの完了後に実行される後続のアニメーションメソッドを使用してシーケンシャルアニメーションを作成できるようになります。 詳細については、「[複合アニメーション](#compound-animations)」を参照してください。
 
-バックグラウンドでアニメーションを完了させる必要がある場合は、 `await` 演算子を省略できます。 このシナリオでは、アニメーションを開始した後、アニメーションの拡張メソッドを使用してアニメーションがバックグラウンドで発生するようになります。 この操作は、複合アニメーションを作成するときにを利用できます。 詳細については、「[複合アニメーション](#composite)」を参照してください。
+バックグラウンドでアニメーションを完了させる必要がある場合は、 `await` 演算子を省略できます。 このシナリオでは、アニメーションを開始した後、アニメーションの拡張メソッドを使用してアニメーションがバックグラウンドで発生するようになります。 この操作は、複合アニメーションを作成するときにを利用できます。 詳細については、「[複合アニメーション](#composite-animations)」を参照してください。
 
 オペレーターの詳細については `await` 、「 [Async Support の概要](~/cross-platform/platform/async.md)」を参照してください。
 
@@ -160,8 +146,6 @@ await image.FadeTo (1, 4000);
 
 ![](simple-images/fadeto.png "Fading Animation")
 
-<a name="compound" />
-
 ## <a name="compound-animations"></a>複合アニメーション
 
 複合アニメーションは、アニメーションの連続した組み合わせであり、 `await` 次のコード例に示すように、演算子を使用して作成できます。
@@ -175,8 +159,6 @@ await image.TranslateTo (0, 0, 1000);       // Move image up
 ```
 
 この例では、は [`Image`](xref:Xamarin.Forms.Image) 6 秒 (6000 ミリ秒) に変換されます。 の変換では `Image` 、 `await` 各アニメーションが連続して実行されることを示す演算子と共に、5つのアニメーションが使用されます。 そのため、前のメソッドが完了した後で、後続のアニメーションメソッドが実行されます。
-
-<a name="composite" />
 
 ## <a name="composite-animations"></a>複合アニメーション
 
@@ -234,7 +216,7 @@ ViewExtensions.CancelAnimations (image);
 
 これにより、インスタンスで現在実行中のすべてのアニメーションが直ちにキャンセルされ [`Image`](xref:Xamarin.Forms.Image) ます。
 
-## <a name="summary"></a>[概要]
+## <a name="summary"></a>まとめ
 
 この記事では、クラスを使用してアニメーションを作成およびキャンセルする方法について説明し [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) ます。 このクラスには、インスタンスを回転、拡大縮小、変換、およびフェードする単純なアニメーションを作成するために使用できる拡張メソッドが用意されて [`VisualElement`](xref:Xamarin.Forms.VisualElement) います。
 

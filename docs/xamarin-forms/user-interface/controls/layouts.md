@@ -19,8 +19,6 @@ _Xamarin. フォームレイアウトは、ユーザーインターフェイス�
 
 これらのクラス [`Layout`](xref:Xamarin.Forms.Layout) は、 [`Padding`](xref:Xamarin.Forms.Layout.Padding) プロパティとプロパティを定義するから派生し [`IsClippedToBounds`](xref:Xamarin.Forms.Layout.IsClippedToBounds) ます。
 
-<a name="contentView" />
-
 ### <a name="contentview"></a>ContentView
 
 |     |     |
@@ -28,29 +26,25 @@ _Xamarin. フォームレイアウトは、ユーザーインターフェイス�
 | [`ContentView`](xref:Xamarin.Forms.ContentView)プロパティで設定された1つの子が含まれ [`Content`](xref:Xamarin.Forms.ContentView.Content) ます。 プロパティは、 `Content` `View` 他の派生を含む任意の派生物に設定でき `Layout` ます。 `ContentView`は、主に構造的要素として使用され、の基本クラスとして機能し [`Frame`](#frame) ます。<br /><br />[API ドキュメント](xref:Xamarin.Forms.ContentView)  / [ガイド](~/xamarin-forms/user-interface/layouts/contentview.md)  / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/) | [![ContentView の例](layouts-images/ContentView.png "ContentView の例")](layouts-images/ContentView-Large.png#lightbox "ContentView の例")<br />[このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ContentViewDemoPage.cs)  /  の C# コード[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ContentViewDemoPage.xaml) |
 |     |     |
 
-<a named="frame" />
-
 ### <a name="frame"></a>フレーム
 
 |     |     |
 | --- | --- |
-| [`Frame`](xref:Xamarin.Forms.Frame)クラスはから派生 [`ContentView`](#contentView) し、その子の周りに境界線またはフレームを表示します。 `Frame`クラスの既定値は [`Padding`](xref:Xamarin.Forms.Layout.Padding) 20 で、、、およびの各プロパティも定義し [`BorderColor`](xref:Xamarin.Forms.Frame.BorderColor) [`CornerRadius`](xref:Xamarin.Forms.Frame.CornerRadius) [`HasShadow`](xref:Xamarin.Forms.Frame.HasShadow) ます。<br /><br />[API ドキュメント](xref:Xamarin.Forms.Frame)  / [ガイド](~/xamarin-forms/user-interface/layouts/frame.md)  / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-frame/) | [![フレームの例](layouts-images/Frame.png "フレームの例")](layouts-images/Frame-Large.png#lightbox "フレームの例")<br />[このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/FrameDemoPage.cs)  /  の C# コード[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/FrameDemoPage.xaml) |
+| [`Frame`](xref:Xamarin.Forms.Frame)クラスはから派生 [`ContentView`](#contentview) し、その子の周りに境界線またはフレームを表示します。 `Frame`クラスの既定値は [`Padding`](xref:Xamarin.Forms.Layout.Padding) 20 で、、、およびの各プロパティも定義し [`BorderColor`](xref:Xamarin.Forms.Frame.BorderColor) [`CornerRadius`](xref:Xamarin.Forms.Frame.CornerRadius) [`HasShadow`](xref:Xamarin.Forms.Frame.HasShadow) ます。<br /><br />[API ドキュメント](xref:Xamarin.Forms.Frame)  / [ガイド](~/xamarin-forms/user-interface/layouts/frame.md)  / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-frame/) | [![フレームの例](layouts-images/Frame.png "フレームの例")](layouts-images/Frame-Large.png#lightbox "フレームの例")<br />[このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/FrameDemoPage.cs)  /  の C# コード[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/FrameDemoPage.xaml) |
 |     |     |
-
-<a name="scrollView" />
 
 ### <a name="scrollview"></a>ScrollView
 
 |     |     |
 | --- | --- |
-| [`ScrollView`](xref:Xamarin.Forms.ScrollView)はその内容をスクロールできます。 プロパティを [`Content`](xref:Xamarin.Forms.ScrollView.Content) ビューまたはレイアウトが大きすぎて画面に収まりません。 (のコンテンツは `ScrollView` 非常によくあり [`StackLayout`](#stackLayout) ます)。[`Orientation`](xref:Xamarin.Forms.ScrollView.Orientation)垂直方向、水平方向、または両方のスクロールを使用するかどうかを示すプロパティを設定します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.ScrollView)  / [ガイド](~/xamarin-forms/user-interface/layouts/scrollview.md)  / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout) | [![ScrollView の例](layouts-images/ScrollView.png "ScrollView の例")](layouts-images/ScrollView-Large.png#lightbox "ScrollView の例")<br />[このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ScrollViewDemoPage.cs)  /  の C# コード[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ScrollViewDemoPage.xaml) |
+| [`ScrollView`](xref:Xamarin.Forms.ScrollView)はその内容をスクロールできます。 プロパティを [`Content`](xref:Xamarin.Forms.ScrollView.Content) ビューまたはレイアウトが大きすぎて画面に収まりません。 (のコンテンツは `ScrollView` 非常によくあり [`StackLayout`](#stacklayout) ます)。[`Orientation`](xref:Xamarin.Forms.ScrollView.Orientation)垂直方向、水平方向、または両方のスクロールを使用するかどうかを示すプロパティを設定します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.ScrollView)  / [ガイド](~/xamarin-forms/user-interface/layouts/scrollview.md)  / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout) | [![ScrollView の例](layouts-images/ScrollView.png "ScrollView の例")](layouts-images/ScrollView-Large.png#lightbox "ScrollView の例")<br />[このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ScrollViewDemoPage.cs)  /  の C# コード[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ScrollViewDemoPage.xaml) |
 |     |     |
 
 ### <a name="templatedview"></a>TemplatedView
 
 |     |     |
 | --- | --- |
-| [`TemplatedView`](xref:Xamarin.Forms.TemplatedView)コントロールテンプレートを使用してコンテンツを表示します。これはの基本クラスです [`ContentView`](#contentView) 。<br /><br />[API ドキュメント](xref:Xamarin.Forms.TemplatedView)  / [ガイド](~/xamarin-forms/app-fundamentals/templates/control-template.md) | [![TemplatedView の例](layouts-images/TemplatedView.png "TemplatedView の例")](layouts-images/TemplatedView.png#lightbox "TemplatedView の例") |
+| [`TemplatedView`](xref:Xamarin.Forms.TemplatedView)コントロールテンプレートを使用してコンテンツを表示します。これはの基本クラスです [`ContentView`](#contentview) 。<br /><br />[API ドキュメント](xref:Xamarin.Forms.TemplatedView)  / [ガイド](~/xamarin-forms/app-fundamentals/templates/control-template.md) | [![TemplatedView の例](layouts-images/TemplatedView.png "TemplatedView の例")](layouts-images/TemplatedView.png#lightbox "TemplatedView の例") |
 |     |     |
 
 ### <a name="contentpresenter"></a>ContentPresenter
@@ -64,16 +58,12 @@ _Xamarin. フォームレイアウトは、ユーザーインターフェイス�
 
 これらのクラスはから派生 [`Layout<View>`](xref:Xamarin.Forms.Layout`1) します。
 
-<a name="stackLayout" />
-
 ### <a name="stacklayout"></a>StackLayout
 
 |     |     |
 | --- | --- |
 | [`StackLayout`](xref:Xamarin.Forms.StackLayout)プロパティに基づいて、スタック内の子要素を水平方向または垂直方向に配置 [`Orientation`](xref:Xamarin.Forms.StackLayout.Orientation) します。 プロパティは、 [`Spacing`](xref:Xamarin.Forms.StackLayout.Spacing) 子間の間隔を制御し、既定値は6です。<br /><br />[API ドキュメント](xref:Xamarin.Forms.StackLayout)  / [ガイド](~/xamarin-forms/user-interface/layouts/stacklayout.md)  / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)| [![StackLayout の例](layouts-images/StackLayout.png "StackLayout の例")](layouts-images/StackLayout-Large.png#lightbox "StackLayout の例")<br />[このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/StackLayoutDemoPage.cs)  /  の C# コード[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/StackLayoutDemoPage.xaml) |
 |     |     |
-
-<a name="grid" />
 
 ### <a name="grid"></a>グリッド
 
@@ -106,5 +96,5 @@ _Xamarin. フォームレイアウトは、ユーザーインターフェイス�
 ## <a name="related-links"></a>関連リンク
 
 - [Xamarin.Formsフォームギャラリーのサンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
-- [Xamarin.FormsSamples](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
+- [Xamarin.Forms サンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
 - [Xamarin.FormsAPI ドキュメント](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

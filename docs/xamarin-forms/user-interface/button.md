@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms;
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: f7309794768c01d4978aa369cd1950d4986938db
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137463"
+title: " Xamarin.Forms button" description: "ボタンは、特定のタスクを実行するようにアプリケーションに指示する tap または click に応答します。"
+ms. 製品: xamarin ms. assetid: 62CAEB63-0800-44F4-9B8C-EE632138C2F5: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 12/04/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-button"></a>Xamarin.Forms;
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)
@@ -414,8 +400,6 @@ public partial class PressAndReleaseButtonPage : ContentPage
 
 このような動作には、ゲーム用のアプリケーションがあります。に指を置くと、 `Button` 画面上のオブジェクトが特定の方向に移動する可能性があります。
 
-<a name="button-appearance" />
-
 ## <a name="button-appearance"></a>ボタンの外観
 
 は、 `Button` その外観に影響を与えるいくつかのプロパティを継承または定義します。
@@ -433,7 +417,7 @@ public partial class PressAndReleaseButtonPage : ContentPage
 > [!NOTE]
 > クラスには `Button` [`Margin`](xref:Xamarin.Forms.View.Margin) [`Padding`](xref:Xamarin.Forms.Button.Padding) 、のレイアウト動作を制御するプロパティとプロパティもあり `Button` ます。 詳細については「[Margin and Padding](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)」 (余白とスペース) を参照してください。
 
-これらの6つのプロパティ (およびを除く) の効果は、 `FontFamily` `FontAttributes` ボタンの**外観**ページで説明されています。 もう1つのプロパティに [`Image`](xref:Xamarin.Forms.Button.ImageSource) ついては、「[**ボタンを使用したビットマップの使用**](#image-button)」セクションで説明します。
+これらの6つのプロパティ (およびを除く) の効果は、 `FontFamily` `FontAttributes` ボタンの**外観**ページで説明されています。 もう1つのプロパティに [`Image`](xref:Xamarin.Forms.Button.ImageSource) ついては、「[**ボタンを使用したビットマップの使用**](#using-bitmaps-with-buttons)」セクションで説明します。
 
 **[ボタンの外観**] ページのすべてのビューとデータバインディングは、XAML ファイルで定義されています。
 
@@ -748,9 +732,7 @@ IOS、Android、UWP で実行されているプログラムを次に示します
 
 [![トグルボタンのデモ](button-images/ToggleButtonDemo.png "トグルボタンのデモ")](button-images/ToggleButtonDemo-Large.png#lightbox)
 
-<a name="image-button" />
-
-## <a name="using-bitmaps-with-buttons"></a>ボタンを使用したビットマップの使用
+## <a name="using-bitmaps-with-buttons"></a>ボタンにビットマップを使用する
 
 クラスは、 `Button` [`ImageSource`](xref:Xamarin.Forms.Button.Image) のビットマップイメージを単独で、 `Button` またはテキストと組み合わせて表示できるプロパティを定義します。 また、テキストとイメージの配置方法を指定することもできます。
 

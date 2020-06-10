@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/13/2016
-ms.openlocfilehash: 356509fb6f588b96a2a1224879675bbad36f8524
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2aee2a8dc37d6a1a73569322a97cdd0aebfbfa1c
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032134"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574211"
 ---
 # <a name="app-store-changes-in-ios-11"></a>IOS 11 でのアプリストアの変更点
 
@@ -24,9 +24,9 @@ IOS アプリストアには完全な再設計がありました。これによ�
 
 - **今日**: このタブには、"エディターの選択" またはおすすめアプリのアプリが含まれています。 ここでアプリを昇格させるには、[[昇格](https://developer.apple.com//contact/app-store/promote/)] ページで情報を入力します。
 - **ゲーム**– iTunes Connect で**Game**カテゴリに設定されているすべてのアプリは、このタブにあります。
-- **[アプリ]** –このタブには、他のすべてのアプリがあります。 ユーザーはおすすめアプリ、カテゴリ、有料/無料で閲覧できます。
+- [**アプリ**] –このタブには、他のすべてのアプリがあります。 ユーザーはおすすめアプリ、カテゴリ、有料/無料で閲覧できます。
 - **更新プログラム**-このアプリには、アプリの更新プログラムが表示されます。 [段階的リリース](#Phased_Release)を使用してアプリをリリースしても、ユーザーは引き続きこのタブにアクセスして、最新バージョンをダウンロードできます。
-- **[検索]** –このタブでは、ユーザーはアプリを検索できます。
+- [**検索**] –このタブでは、ユーザーはアプリを検索できます。
 
 ## <a name="store-icon"></a>ストアアイコン
 
@@ -46,11 +46,11 @@ Apple は、app Store でアプリ内購入をさらに発見可能にしまし�
 
 アプリ内購入の昇格は、発行前に、app store のレビューに従うことになります。
 
-アプリ内購入を昇格できるようにするには、アプリを開き、**アプリ内購入 > 機能**を参照します。 次の図に示すように、 **[App Store の昇格 (オプション)]** セクションにアクセスし、1024 x 1024 イメージを追加して**保存**します。
+アプリ内購入を昇格できるようにするには、アプリを開き、**アプリ内購入 > 機能**を参照します。 次の図に示すように、[ **App Store の昇格 (オプション)** ] セクションにアクセスし、1024 x 1024 イメージを追加して**保存**します。
 
 ![ITune Connect のアプリストアのプロモーションセクション](app-store-changes-images/image4.png)
 
-また、アプリの `SKPaymentTransactionObserver` プロトコルに `ShouldAddStorePayment` メソッドを追加する必要があります。
+また、 `ShouldAddStorePayment` アプリのプロトコルにメソッドを追加する必要があり `SKPaymentTransactionObserver` ます。
 
 アプリ内購入プロモーションの詳細については、Apple の[アプリ内購入の昇格](https://developer.apple.com/app-store/promoting-in-app-purchases/)に関するページを参照してください。
 
@@ -84,13 +84,13 @@ Apple は、app Store でアプリ内購入をさらに発見可能にしまし�
 
 詳細については、Apple の[レビューへの対応](https://developer.apple.com/app-store/responding-to-reviews/)に関するページを参照してください。
 
-<a name="Phased_Release"/>
+<a name="Phased_Release"></a>
 
 ## <a name="phased-release"></a>段階的なリリース
 
 IOS 11 では、アプリを更新するための段階的リリースのオプションが Apple によって実装されています。 段階的リリースを有効にすると、アプリの更新をユーザーに徐々にリリースできるようになり、要求によって運用環境が過負荷にならないようにすることができます。
 
-ITunes Connect では、段階的なリリースが有効になっています。 サイドバーでアプリをクリックし、下部にある **[自動更新の段階的なリリース]** までスクロールして、 **[更新プログラムを7日間以上、段階的リリースを使用してリリース]** する を選択します。
+ITunes Connect では、段階的なリリースが有効になっています。 サイドバーでアプリをクリックし、下部にある [**自動更新の段階的なリリース**] までスクロールして、[**更新プログラムを7日間以上、段階的リリースを使用してリリース**する] を選択します。
 
 ![自動更新の段階的リリースを示すオプション](app-store-changes-images/image6.png)
 

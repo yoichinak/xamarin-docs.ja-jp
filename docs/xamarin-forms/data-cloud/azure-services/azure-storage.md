@@ -1,22 +1,8 @@
 ---
-title: Azure Storage のデータの格納とアクセスXamarin.Forms
-description: Azure Storage は、構造化されていない構造化データを格納するために使用できるスケーラブルなクラウドストレージソリューションです。 この記事では、を使用して Xamarin.Forms Azure Storage にテキストとバイナリデータを格納する方法と、データにアクセスする方法について説明します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 4df14ef4d3eb72b92e4201e57103780801ca2d2f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84131028"
+title: 「Azure Storage からのデータの格納とアクセス Xamarin.Forms 」 description: "Azure Storage は、構造化されていない構造化データを格納するために使用できるスケーラブルなクラウドストレージソリューションです。 この記事では、を使用して Xamarin.Forms Azure Storage にテキストとバイナリデータを格納する方法と、データにアクセスする方法について説明します。
+ms. 製品: xamarin ms. assetid: 5B10D37B65-91014A93F3EB ms. テクノロジ: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 12/28/2018 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
 ---
+
 # <a name="store-and-access-data-in-azure-storage-from-xamarinforms"></a>Azure Storage のデータの格納とアクセスXamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
@@ -71,10 +57,8 @@ Azure Storage アカウントをアプリケーションに統合するプロセ
 
 1. ストレージ アカウントを作成します。 詳細については、「[ストレージアカウントの作成](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/#create-a-storage-account)」を参照してください。
 1. [Azure Storage クライアントライブラリ](https://www.nuget.org/packages/WindowsAzure.Storage/)をアプリケーションに追加し Xamarin.Forms ます。
-1. ストレージ接続文字列を構成します。 詳細については、「 [Azure Storage への接続](#connecting)」を参照してください。
+1. ストレージ接続文字列を構成します。 詳細については、「 [Azure Storage への接続](#connecting-to-azure-storage)」を参照してください。
 1. `using` `Microsoft.WindowsAzure.Storage` `Microsoft.WindowsAzure.Storage.Blob` 名前空間と名前空間のディレクティブを Azure Storage にアクセスするクラスに追加します。
-
-<a name="connecting" />
 
 ## <a name="connecting-to-azure-storage"></a>Azure Storage に接続する
 

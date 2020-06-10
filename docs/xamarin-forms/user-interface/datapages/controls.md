@@ -1,22 +1,8 @@
 ---
-title: ''
-description: この記事では、DataPages NuGet パッケージで使用できるコントロールについて説明 Xamarin.Forms します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 093ef4b9b3ae7bde25da276330894bcf4e399145
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84134447"
+title: "DataPages Controls Reference" description: "この記事では、DataPages NuGet パッケージで使用できるコントロールについて説明 Xamarin.Forms します。"
+ms. 製品: xamarin ms. assetid: 891615D0-E8BD-4ACC-A7F0-4C3725FBCC31: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 12/01/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="datapages-controls-reference"></a>DataPages コントロールのリファレンス
 
 ![](~/media/shared/preview.png "This API is currently in preview")
@@ -36,14 +22,12 @@ DataPages NuGet には、 Xamarin.Forms データソースバインドを利用�
     x:Class="DataPagesDemo.Detail">
 ```
 
-次の例には、 `DynamicResource` プロジェクトの resources ディクショナリに存在しなければならない参照が含まれています。 [カスタムコントロール](#custom)を構築する方法の例もあります。
+次の例には、 `DynamicResource` プロジェクトの resources ディクショナリに存在しなければならない参照が含まれています。 [カスタムコントロール](#custom-control-example)を作成する方法の例もあります。
 
 ## <a name="built-in-controls"></a>組み込みコントロール
 
 * [HeroImage](#heroimage)
 * [ListItem](#listitem)
-
-<a name="heroimage" />
 
 ### <a name="heroimage"></a>HeroImage
 
@@ -66,11 +50,9 @@ DataPages NuGet には、 Xamarin.Forms データソースバインドを利用�
 
 ![](controls-images/heroimage-light-android.png "Android の HeroImage コントロール") ![](controls-images/heroimage-dark-android.png "Android の HeroImage コントロール")
 
-**iOS**
+**Android**
 
 ![](controls-images/heroimage-light-ios.png "IOS の HeroImage コントロール") ![](controls-images/heroimage-dark-ios.png "IOS の HeroImage コントロール")
-
-<a name="listitem" />
 
 ### <a name="listitem"></a>ListItem
 
@@ -78,7 +60,7 @@ DataPages NuGet には、 Xamarin.Forms データソースバインドを利用�
 
 次の5つのプロパティがあります。
 
-* タイトル
+* Title
 * 詳細
 * ImageSource
 * PlaceholdImageSource
@@ -100,7 +82,7 @@ DataPages NuGet には、 Xamarin.Forms データソースバインドを利用�
 
 ![](controls-images/listitem-light-android.png "Android での ListItem コントロール") ![](controls-images/listitem-dark-android.png "Android での ListItem コントロール")
 
-**iOS**
+**Android**
 
 ![](controls-images/listitem-light-ios.png "IOS の ListItem コントロール") ![](controls-images/listitem-dark-ios.png "IOS の ListItem コントロール")
 
@@ -130,23 +112,19 @@ DataPages NuGet には、 Xamarin.Forms データソースバインドを利用�
 
 ![](controls-images/cardview-light-android.png "Android での CardView カスタムコントロール") ![](controls-images/cardview-dark-android.png "Android での CardView カスタムコントロール")
 
-**iOS**
+**Android**
 
 ![](controls-images/cardview-light-ios.png "IOS での CardView カスタムコントロール") ![](controls-images/cardview-dark-ios.png "IOS での CardView カスタムコントロール")
 
-<a name="custom" />
-
 ### <a name="building-the-custom-cardview"></a>カスタム CardView のビルド
 
-1. [DataView サブクラス](#1)
-2. [フォント、レイアウト、および余白を定義する](#2)
-3. [コントロールの子のスタイルを作成する](#3)
-4. [コントロールレイアウトテンプレートを作成する](#4)
-5. [テーマ固有のリソースを追加する](#5)
-6. [CardView クラスの ControlTemplate を設定します。](#6)
-7. [コントロールをページに追加する](#7)
-
-<a name="1" />
+1. [DataView サブクラス](#1-dataview-subclass)
+2. [フォント、レイアウト、および余白を定義する](#2-define-font-layout-and-margins)
+3. [コントロールの子のスタイルを作成する](#3-create-styles-for-the-controls-children)
+4. [コントロールレイアウトテンプレートを作成する](#4-create-the-control-layout-template)
+5. [テーマ固有のリソースを追加する](#5-add-the-theme-specific-resources)
+6. [CardView クラスの ControlTemplate を設定します。](#6-set-the-controltemplate-for-the-cardview-class)
+7. [コントロールをページに追加する](#7-add-the-control-to-a-page)
 
 #### <a name="1-dataview-subclass"></a>1. DataView サブクラス
 
@@ -188,13 +166,11 @@ public class CardView : DataView
 }
 ```
 
-<a name="2" />
-
 #### <a name="2-define-font-layout-and-margins"></a>2. フォント、レイアウト、および余白を定義する
 
 コントロールデザイナーは、カスタムコントロールのユーザーインターフェイスデザインの一部としてこれらの値を確認します。 プラットフォーム固有の仕様が必要な場合は、 `OnPlatform` 要素が使用されます。
 
-が参照する値として `StaticResource` は、[手順 5](#5). で定義されているものがあります。
+が参照する値として `StaticResource` は、[手順 5](#5-add-the-theme-specific-resources). で定義されているものがあります。
 
 ```xml
 <!-- CARDVIEW FONT SIZES -->
@@ -246,8 +222,6 @@ public class CardView : DataView
 </OnPlatform>
 ```
 
-<a name="3" />
-
 #### <a name="3-create-styles-for-the-controls-children"></a>3. コントロールの子のスタイルを作成する
 
 に対して定義されているすべての要素を参照して、カスタムコントロールで使用される子を作成します。
@@ -277,8 +251,6 @@ public class CardView : DataView
     <Setter Property="HeightRequest" Value="165"/>
 </Style>
 ```
-
-<a name="4" />
 
 #### <a name="4-create-the-control-layout-template"></a>4. コントロールレイアウトテンプレートを作成する
 
@@ -321,8 +293,6 @@ public class CardView : DataView
 </ControlTemplate>
 ```
 
-<a name="5" />
-
 #### <a name="5-add-the-theme-specific-resources"></a>5. テーマ固有のリソースを追加する
 
 これはカスタムコントロールであるため、リソースディクショナリを使用しているテーマに一致するリソースを追加します。
@@ -354,11 +324,9 @@ public class CardView : DataView
             <Color x:Key="iOSCardViewDetailTextColor">#B5B4B9</Color>
 ```
 
-<a name="6" />
-
 #### <a name="6-set-the-controltemplate-for-the-cardview-class"></a>6. CardView クラスの ControlTemplate を設定する
 
-最後に、[手順 1](#1) . で作成した C# クラスが、要素を使用して、[手順 4.](#4)で定義したコントロールテンプレートを使用していることを確認します。 `Style` `Setter`
+最後に、[手順 1](#1-dataview-subclass) . で作成した C# クラスが、要素を使用して、[手順 4.](#4-create-the-control-layout-template)で定義したコントロールテンプレートを使用していることを確認します。 `Style` `Setter`
 
 ```xml
 <Style TargetType="local:CardView">
@@ -367,8 +335,6 @@ public class CardView : DataView
   <Setter Property="BackgroundColor" Value="{ StaticResource CardViewBackgroundColor }" />
 </Style>
 ```
-
-<a name="7" />
 
 #### <a name="7-add-the-control-to-a-page"></a>7. コントロールをページに追加する
 

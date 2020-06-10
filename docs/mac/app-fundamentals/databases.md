@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: a22eca56dcec46e11a67633a8403b57580ed0546
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 034169b4e77dace365b36733442afe295b62fb80
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032613"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574004"
 ---
 # <a name="databases-in-xamarinmac"></a>Xamarin. Mac のデータベース
 
@@ -20,7 +20,7 @@ _この記事では、キー値のコードとキー値の監視を使用して�
 
 ## <a name="overview"></a>概要
 
-Xamarin. Mac C#アプリケーションでおよび .net を使用する場合は、Xamarin. iOS アプリケーションまたは xamarin Android アプリケーションがアクセスできるのと同じ SQLite データベースにアクセスできます。
+Xamarin. Mac アプリケーションで C# と .NET を使用する場合は、Xamarin. iOS または Xamarin Android アプリケーションがアクセスできる同じ SQLite データベースにアクセスできます。
 
 この記事では、SQLite データにアクセスする2つの方法について説明します。
 
@@ -29,17 +29,17 @@ Xamarin. Mac C#アプリケーションでおよび .net を使用する場合�
 
 [![実行中のアプリの例](databases-images/intro01.png "実行中のアプリの例")](databases-images/intro01-large.png#lightbox)
 
-この記事では、Xamarin. Mac アプリケーションで SQLite データベースを使用してキー値のコーディングとデータバインディングを操作する方法の基本について説明します。 最初に、 [Hello, Mac](~/mac/get-started/hello-mac.md)の記事を使用して作業することを強くお勧めします。具体的には、 [Xcode と Interface Builder](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)および[アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions)に関するセクションで説明します。これは、で使用する主要な概念と手法に関するものです。この記事をご覧ください。
+この記事では、Xamarin. Mac アプリケーションで SQLite データベースを使用してキー値のコーディングとデータバインディングを操作する方法の基本について説明します。 この記事で使用する主要な概念と手法について説明しているように、最初に[Hello, Mac](~/mac/get-started/hello-mac.md)の記事「 [Xcode と Interface Builder の概要](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)」と「[アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions)」セクションをご覧になることを強くお勧めします。
 
 ここではキーと値のコードおよびデータバインディングを使用するため、最初に[データバインディングとキー値のコーディング](~/mac/app-fundamentals/databinding.md)について説明します。このドキュメントとサンプルアプリケーションで使用される主要な手法と概念について説明します。
 
-[Xamarin. Mac の内部](~/mac/internals/how-it-works.md)ドキュメントの「[クラス/ C#メソッドを目的に公開](~/mac/internals/how-it-works.md)する」セクションを参照してください。 C#クラスを目的のものに接続するために使用される `Register` と `Export` の属性について説明しています。オブジェクトと UI 要素。
+ここでは、 [Xamarin の内部](~/mac/internals/how-it-works.md)ドキュメントの[c# クラス/メソッドを目的の c に公開する方法](~/mac/internals/how-it-works.md)について説明します `Register` `Export` 。 c# クラスを目的の c オブジェクトと UI 要素に接続するために使用される属性と属性についても説明します。
 
 ## <a name="direct-sqlite-access"></a>直接 SQLite アクセス
 
-Xcode の Interface Builder の UI 要素にバインドされる SQLite データの場合、データの書き込みと読み取りの方法を完全に制御できるため、(ORM などの手法を使用するのではなく) 直接 SQLite データベースにアクセスすることを強くお勧めします。 データベースから。
+Xcode の Interface Builder の UI 要素にバインドされる SQLite データの場合は、データベースからのデータの書き込みと読み取りの方法を完全に制御できるため、(ORM などの手法を使用するのではなく) 直接 SQLite データベースにアクセスすることを強くお勧めします。
 
-[データバインディングとキー値のコーディング](~/mac/app-fundamentals/databinding.md)に関するドキュメントでは、Xamarin. Mac アプリケーションでキー値のコーディングとデータバインディングの手法を使用することによって、記述して保持する必要があるコードの量を大幅に減らして、UI 要素を操作します。 SQLite データベースへの直接アクセスと組み合わせることで、そのデータベースに対するデータの読み書きに必要なコードの量を大幅に削減することもできます。
+[データバインディングとキー値のコーディング](~/mac/app-fundamentals/databinding.md)に関するドキュメントでは、Xamarin. Mac アプリケーションでキー値のコーディングとデータバインディングの手法を使用することにより、UI 要素を設定して操作するために記述および保持する必要があるコードの量を大幅に減らすことができます。 SQLite データベースへの直接アクセスと組み合わせることで、そのデータベースに対するデータの読み書きに必要なコードの量を大幅に削減することもできます。
 
 この記事では、データバインディングとキー値のコーディングドキュメントからサンプルアプリを変更して、SQLite データベースをバインドのバッキングソースとして使用するようにします。
 
@@ -47,13 +47,13 @@ Xcode の Interface Builder の UI 要素にバインドされる SQLite デー�
 
 続行する前に、いくつかのへの参照を含めることにより、SQLite データベースサポートをアプリケーションに追加する必要があります。Dll ファイル。
 
-次の手順で行います。
+次の操作を行います。
 
-1. **Solution Pad**で、 **[参照]** フォルダーを右クリックし、 **[参照の編集]** を選択します。
+1. **Solution Pad**で、[**参照**] フォルダーを右クリックし、[**参照の編集**] を選択します。
 2. 次のように、 **Mono** **と system.string**の両方のアセンブリを選択します。 
 
     [![必要な参照を追加しています](databases-images/reference01.png "必要な参照を追加しています")](databases-images/reference01-large.png#lightbox)
-3. **[OK]** ボタンをクリックして変更を保存し、参照を追加します。
+3. [ **OK** ] ボタンをクリックして変更を保存し、参照を追加します。
 
 ### <a name="modifying-the-data-model"></a>データモデルの変更
 
@@ -476,9 +476,9 @@ public bool isManager {
 }
 ```
 
-前にデータが保存されている場合 (たとえば、`_conn` 変数が `null`でない場合)、**名前**、**職業**、または**ismanager**の各プロパティに加えられた変更がデータベースに送信されます。 次に、データベースの people を**作成**、**更新**、**読み込み**、および**削除**するために追加したメソッドを見てみましょう。
+以前にデータが保存されている場合 (変数がではない場合など)、**名前**、**職業**、または**ismanager**の各プロパティに加えられた変更がデータベースに送信され `_conn` `null` ます。 次に、データベースの people を**作成**、**更新**、**読み込み**、および**削除**するために追加したメソッドを見てみましょう。
 
-#### <a name="create-a-new-record"></a>新しいレコードの作成
+#### <a name="create-a-new-record"></a>新しいレコードを作成する
 
 SQLite データベースに新しいレコードを作成するために、次のコードが追加されました。
 
@@ -526,19 +526,19 @@ public void Create(SqliteConnection conn) {
 }
 ```
 
-`SQLiteCommand` を使用して、データベースに新しいレコードを作成しています。 `CreateCommand`を呼び出すことによってメソッドに渡された `SQLiteConnection` (conn) から新しいコマンドを取得します。 次に、実際の値のパラメーターを指定して、実際に新しいレコードを書き込むように SQL 命令を設定します。
+ここでは、を使用して、 `SQLiteCommand` データベースに新しいレコードを作成しています。 を `SQLiteConnection` 呼び出すことによってメソッドに渡された (conn) から新しいコマンドを取得し `CreateCommand` ます。 次に、実際の値のパラメーターを指定して、実際に新しいレコードを書き込むように SQL 命令を設定します。
 
 ```csharp
 command.CommandText = "INSERT INTO [People] (ID, Name, Occupation, isManager, ManagerID) VALUES (@COL1, @COL2, @COL3, @COL4, @COL5)";
 ```
 
-後で、`SQLiteCommand` の `Parameters.AddWithValue` メソッドを使用して、パラメーターの値を設定します。 パラメーターを使用して、SQLite に送信される前に値 (単一引用符など) が正しくエンコードされるようにします。 例:
+後で、のメソッドを使用して、パラメーターの値を設定し `Parameters.AddWithValue` `SQLiteCommand` ます。 パラメーターを使用して、SQLite に送信される前に値 (単一引用符など) が正しくエンコードされるようにします。 例:
 
 ```csharp
 command.Parameters.AddWithValue ("@COL1", ID);
 ```
 
-最後に、人は上司になることができ、その下に従業員のコレクションがあるため、これらのユーザーに対して `Create` メソッドを再帰的に呼び出して、データベースにも保存します。
+最後に、人は上司になることができ、その下に従業員のコレクションがあるため、 `Create` これらのユーザーに対してメソッドを再帰的に呼び出して、データベースにも保存します。
 
 ```csharp
 // Save children to database as well
@@ -552,7 +552,7 @@ for (nuint n = 0; n < People.Count; ++n) {
 }
 ```
 
-#### <a name="updating-a-record"></a>レコードの更新
+#### <a name="updating-a-record"></a>レコードを更新する
 
 SQLite データベースの既存のレコードを更新するために、次のコードが追加されました。
 
@@ -594,13 +594,13 @@ public void Update(SqliteConnection conn) {
 }
 ```
 
-上記**の例と同様**に、渡された `SQLiteConnection` から `SQLiteCommand` を取得して、レコードを更新するように SQL を設定します (パラメーターを指定)。
+上記の**Create**と同様に、 `SQLiteCommand` 渡されたからを取得 `SQLiteConnection` して、レコードを更新するように SQL を設定します (パラメーターを指定)。
 
 ```csharp
 command.CommandText = "UPDATE [People] SET Name = @COL2, Occupation = @COL3, isManager = @COL4, ManagerID = @COL5 WHERE ID = @COL1";
 ```
 
-パラメーターの値を入力し (例: `command.Parameters.AddWithValue ("@COL1", ID);`)、もう一度、すべての子レコードで update を再帰的に呼び出します。
+パラメーターの値を入力し (例: `command.Parameters.AddWithValue ("@COL1", ID);` )、もう一度子レコードの update を再帰的に呼び出します。
 
 ```csharp
 // Save children to database as well
@@ -711,7 +711,7 @@ command.CommandText = "SELECT ID FROM [People] WHERE ManagerID = @COL1";
 command.Parameters.AddWithValue ("@COL1", id);
 ```
 
-最後に、データリーダーを使用してクエリを実行し、レコードフィールド (`PersonModel` クラスのインスタンスにコピーします) を返します。
+最後に、データリーダーを使用してクエリを実行し、レコードフィールド (クラスのインスタンスにコピーします) を返し `PersonModel` ます。
 
 ```csharp
 using (var reader = command.ExecuteReader ()) {
@@ -726,7 +726,7 @@ using (var reader = command.ExecuteReader ()) {
 }
 ```
 
-この人が上司である場合は、すべての従業員も (`Load` メソッドを再帰的に呼び出すことによって) 読み込む必要があります。
+この人がマネージャーの場合は、すべての従業員を (再帰的にメソッドを呼び出すことによって) 読み込む必要もあり `Load` ます。
 
 ```csharp
 // Is this a manager?
@@ -798,7 +798,7 @@ command.CommandText = "DELETE FROM [People] WHERE (ID = @COL1 OR ManagerID = @CO
 command.Parameters.AddWithValue ("@COL1", ID);
 ```
 
-レコードが削除されたら、`PersonModel` クラスの現在のインスタンスをクリアします。
+レコードが削除されたら、クラスの現在のインスタンスをクリアし `PersonModel` ます。
 
 ```csharp
 // Empty class
@@ -904,7 +904,7 @@ foreach (var cmd in commands) {
 conn.Close ();
 ```
 
-最後に、データモデル (`PersonModel`) を使用して、アプリケーションが初めて実行されたとき、またはデータベースが不足している場合に、データベースの既定のレコードセットを作成します。
+最後に、データモデル () を使用して、 `PersonModel` アプリケーションが初めて実行されたとき、またはデータベースが不足している場合に、データベースの既定のレコードセットを作成します。
 
 ```csharp
 // Build list of employees
@@ -969,13 +969,13 @@ _conn.Close ();
 
 ```
 
-ここでは、`PersonModel` クラスのコンストラクターのオーバーロードを使用して、ユーザーをメモリに読み込みます。
+ここでは、クラスのコンストラクターのオーバーロードを使用して、 `PersonModel` ユーザーをメモリに読み込みます。
 
 ```csharp
 var person = new PersonModel (_conn, childID);
 ```
 
-また、データバインドクラスを呼び出して、person を `AddPerson (person)` のコレクションに追加しています。これにより、UI が変更を認識し、表示されるようになります。
+また、ユーザーのコレクションに個人を追加するためにデータバインドクラスを呼び出してい `AddPerson (person)` ます。これにより、UI が変更を認識し、表示されるようになります。
 
 ```csharp
 [Export("addObject:")]
@@ -1010,15 +1010,15 @@ using (var command = _conn.CreateCommand ()) {
 _conn.Close ();
 ```
 
-In SQL ステートメントの実際の違いは、マネージャー `command.CommandText = "SELECT ID FROM [People] WHERE isManager = 1"`のみを読み込みますが、それ以外の場合は上記のセクションと同じように動作します。
+In SQL ステートメントの実際の違いは (マネージャーだけを読み込む `command.CommandText = "SELECT ID FROM [People] WHERE isManager = 1"` )、それ以外の場合は上記のセクションと同じように動作します。
 
-<a name="Databases-and-ComboBoxes" />
+<a name="Databases-and-ComboBoxes"></a>
 
 ### <a name="databases-and-comboboxes"></a>データベースとコンボコンボ
 
 MacOS で使用できるメニューコントロール (コンボボックスなど) は、内部リスト (Interface Builder で事前に定義されているか、コードを使用して設定可能) か、または独自のカスタムの外部データソースを提供することによってドロップダウンリストに入力するように設定できます。 詳細については、「[メニューコントロールデータの提供](~/mac/user-interface/standard-controls.md#Providing-Menu-Control-Data)」を参照してください。
 
-例として、Interface Builder の単純なバインドの例を編集し、コンボボックスを追加して `EmployeeSelector` という名前のアウトレットを使用して公開します。
+例として、上記の単純なバインドの例を Interface Builder で編集し、コンボボックスを追加して、という名前のアウトレットを使用して公開し `EmployeeSelector` ます。
 
 [![コンボボックスのアウトレットを公開する](databases-images/combo01.png "コンボボックスのアウトレットを公開する")](databases-images/combo01-large.png#lightbox)
 
@@ -1030,7 +1030,7 @@ MacOS で使用できるメニューコントロール (コンボボックスな
 
 #### <a name="providing-combobox-data"></a>Combobox データの提供
 
-次に、`ComboBoxDataSource` という名前のプロジェクトに新しいクラスを追加し、次のように表示します。
+次に、という名前の新しいクラスをプロジェクトに追加 `ComboBoxDataSource` し、次のように表示します。
 
 ```csharp
 using System;
@@ -1399,11 +1399,11 @@ namespace MacDatabase
 }
 ```
 
-この例では、任意の SQLite データソースからコンボボックス項目を表示できる新しい `NSComboBoxDataSource` を作成します。 まず、次のプロパティを定義します。
+この例では、 `NSComboBoxDataSource` 任意の SQLite データソースからコンボボックス項目を表示できる新しいを作成します。 まず、次のプロパティを定義します。
 
 - `Conn`-SQLite データベースへの接続を取得または設定します。
-- `TableName`-テーブル名を取得します。値の設定もできます。
-- `IDField`-指定されたテーブルの一意の ID を提供するフィールドを取得または設定します。 既定値は `ID`です。
+- `TableName`-テーブル名を取得または設定します。
+- `IDField`-指定されたテーブルの一意の ID を提供するフィールドを取得します。値の設定も可能です。 既定値は `ID` です。
 - `DisplayField`-ドロップダウンリストに表示されるフィールドを取得または設定します。
 - `RecordCount`-指定されたテーブル内のレコードの数を取得します。
 
@@ -1419,7 +1419,7 @@ public ComboBoxDataSource (SqliteConnection conn, string tableName, string displ
 }
 ```
 
-`GetRecordCount` メソッドは、指定されたテーブル内のレコードの数を返します。
+メソッドは、 `GetRecordCount` 指定されたテーブル内のレコードの数を返します。
 
 ```csharp
 private nint GetRecordCount ()
@@ -1461,9 +1461,9 @@ private nint GetRecordCount ()
 }
 ```
 
-`TableName`、`IDField` または `DisplayField` プロパティの値が変更されるたびに呼び出されます。
+`TableName`、、 `IDField` またはプロパティの値が変更されるたびに呼び出され `DisplayField` ます。
 
-`IDForIndex` メソッドは、指定されたドロップダウンリスト項目のインデックスにあるレコードの一意の ID (`IDField`) を返します。 
+メソッドは、 `IDForIndex` 指定された `IDField` ドロップダウンリスト項目のインデックスにあるレコードの一意の ID () を返します。 
 
 ```csharp
 public string IDForIndex (nint index)
@@ -1504,7 +1504,7 @@ public string IDForIndex (nint index)
 }
 ```
 
-`ValueForIndex` メソッドは、指定されたドロップダウンリストのインデックスにある項目の値 (`DisplayField`) を返します。
+メソッドは、 `ValueForIndex` `DisplayField` 指定されたドロップダウンリストインデックスにある項目の値 () を返します。
 
 ```csharp
 public string ValueForIndex (nint index)
@@ -1545,7 +1545,7 @@ public string ValueForIndex (nint index)
 }
 ```
 
-`IDForValue` メソッドは、指定された値 (`DisplayField`) の一意の ID (`IDField`) を返します。
+メソッドは、 `IDForValue` 指定された `IDField` 値 () の一意の ID () を返し `DisplayField` ます。
 
 ```csharp
 public string IDForValue (string value)
@@ -1589,7 +1589,7 @@ public string IDForValue (string value)
 }
 ```
 
-`ItemCount` は、`TableName`、`IDField`、または `DisplayField` のプロパティが変更されたときに計算されたリスト内の項目の事前計算済み数を返します。
+は `ItemCount` `TableName` 、、、 `IDField` またはの各プロパティが変更されたときに計算された、リスト内の項目の事前計算済み数を返し `DisplayField` ます。
 
 ```csharp
 public override nint ItemCount (NSComboBox comboBox)
@@ -1598,7 +1598,7 @@ public override nint ItemCount (NSComboBox comboBox)
 }
 ```
 
-`ObjectValueForItem` メソッドは、指定されたドロップダウンリスト項目のインデックスの値 (`DisplayField`) を提供します。
+メソッドは、 `ObjectValueForItem` `DisplayField` 指定されたドロップダウンリスト項目のインデックスの値 () を提供します。
 
 ```csharp
 public override NSObject ObjectValueForItem (NSComboBox comboBox, nint index)
@@ -1639,9 +1639,9 @@ public override NSObject ObjectValueForItem (NSComboBox comboBox, nint index)
 }
 ```
 
-SQLite コマンドで `LIMIT` および `OFFSET` ステートメントを使用して、必要なレコードを1つに制限することに注意してください。
+`LIMIT`SQLite コマンドでおよびステートメントを使用して、 `OFFSET` 必要なレコードが1つに制限されていることに注意してください。
 
-`IndexOfItem` メソッドは、指定された値 (`DisplayField`) のドロップダウン項目インデックスを返します。
+メソッドは、 `IndexOfItem` 指定された値 () のドロップダウン項目インデックスを返し `DisplayField` ます。
 
 ```csharp
 public override nint IndexOfItem (NSComboBox comboBox, string value)
@@ -1691,9 +1691,9 @@ public override nint IndexOfItem (NSComboBox comboBox, string value)
 }
 ```
 
-値が見つからない場合、`NSRange.NotFound` 値が返され、すべての項目がドロップダウンリストから選択解除されます。
+値が見つからない場合は、 `NSRange.NotFound` 値が返され、すべての項目がドロップダウンリストから選択解除されます。
 
-`CompletedString` メソッドは、部分的に型指定されたエントリの最初の一致する値 (`DisplayField`) を返します。
+メソッドは、 `CompletedString` 部分的に型指定されたエントリの最初の一致する値 () を返し `DisplayField` ます。
 
 ```csharp
 public override string CompletedString (NSComboBox comboBox, string uncompletedString)
@@ -1743,7 +1743,7 @@ public override string CompletedString (NSComboBox comboBox, string uncompletedS
 
 #### <a name="displaying-data-and-responding-to-events"></a>データの表示とイベントへの応答
 
-すべての要素をまとめて表示するには、`SubviewSimpleBindingController` を編集し、次のようにします。
+すべての要素をまとめて表示するには、を編集し、次のようにし `SubviewSimpleBindingController` ます。
 
 ```csharp
 using System;
@@ -1858,9 +1858,9 @@ namespace MacDatabase
 }
 ```
 
-`DataSource` プロパティは、コンボボックスにアタッチされた `ComboBoxDataSource` (上で作成された) へのショートカットを提供します。
+プロパティは、 `DataSource` `ComboBoxDataSource` コンボボックスにアタッチされている (上で作成された) へのショートカットを提供します。
 
-`LoadSelectedPerson` メソッドは、指定された一意の ID を持つユーザーをデータベースから読み込みます。
+メソッドは、 `LoadSelectedPerson` 指定された一意の ID について、データベースから person を読み込みます。
 
 ```csharp
 private void LoadSelectedPerson (string id)
@@ -1874,13 +1874,13 @@ private void LoadSelectedPerson (string id)
 }
 ```
 
-`AwakeFromNib` メソッドのオーバーライドでは、まず、カスタムコンボボックスのデータソースのインスタンスをアタッチします。
+メソッドの `AwakeFromNib` オーバーライドでは、まず、カスタムコンボボックスのデータソースのインスタンスをアタッチします。
 
 ```csharp
 EmployeeSelector.DataSource = new ComboBoxDataSource (Conn, "People", "Name");
 ```
 
-次に、表示されたデータの関連する一意の ID (`IDField`) を検索して、コンボボックスのテキスト値を編集するユーザーに応答します。
+次に、表示されるデータの関連付けられた一意の ID () を検索して、コンボボックスのテキスト値を編集するユーザーに応答し `IDField` ます。
 
 ```csharp
 EmployeeSelector.Changed += (sender, e) => {
@@ -1922,15 +1922,15 @@ SQLite.NET は、アプリケーションに含める NuGet パッケージと�
 
 パッケージを追加するには、次の手順を実行します。
 
-1. **Solution Pad**で、 **[パッケージ]** フォルダーを右クリックし、 **[パッケージの追加]** を選択します。
-2. **検索ボックス**に「`SQLite.net`」と入力し、 **sqlite-net**エントリを選択します。
+1. **Solution Pad**で、[**パッケージ**] フォルダーを右クリックし、[**パッケージの追加**] を選択します。
+2. `SQLite.net`**検索ボックス**に「」と入力し、 **sqlite-net**エントリを選択します。
 
     [![SQLite NuGet パッケージを追加しています](databases-images/nuget01.png "SQLite NuGet パッケージを追加しています")](databases-images/nuget01-large.png#lightbox)
-3. **[パッケージの追加]** ボタンをクリックして完了します。
+3. [**パッケージの追加**] ボタンをクリックして完了します。
 
 ### <a name="creating-the-data-model"></a>データモデルの作成
 
-ここでは、新しいクラスをプロジェクトに追加し、`OccupationModel` でを呼び出します。 次に、 **OccupationModel.cs**ファイルを編集して次のように表示します。
+ここでは、プロジェクトに新しいクラスを追加し、でを呼び出し `OccupationModel` ます。 次に、 **OccupationModel.cs**ファイルを編集して次のように表示します。
 
 ```csharp
 using System;
@@ -1966,7 +1966,7 @@ namespace MacDatabase
 }
 ```
 
-まず、SQLite.NET (`using Sqlite`) を含め、いくつかのプロパティを公開します。各プロパティは、このレコードが保存されるときにデータベースに書き込まれます。 主キーとして作成した最初のプロパティを次のように自動インクリメントするように設定します。
+まず、SQLite.NET ( `using Sqlite` ) を含め、次にいくつかのプロパティを公開します。各プロパティは、このレコードが保存されるときにデータベースに書き込まれます。 主キーとして作成した最初のプロパティを次のように自動インクリメントするように設定します。
 
 ```csharp
 [PrimaryKey, AutoIncrement]
@@ -2063,7 +2063,7 @@ conn.Insert (Occupation);
 
 ### <a name="adding-a-table-view"></a>テーブルビューの追加
 
-使用例として、Xcode の Interface builder の UI にテーブルビューを追加します。 このテーブルビューをアウトレット (`OccupationTable`) で公開して、コードを使用C#してアクセスできるようにします。
+使用例として、Xcode の Interface builder の UI にテーブルビューを追加します。 このテーブルビューをアウトレット () で公開し `OccupationTable` て、C# コードを使用してアクセスできるようにします。
 
 [![テーブルビューのアウトレットの公開](databases-images/table01.png "テーブルビューのアウトレットの公開")](databases-images/table01-large.png#lightbox)
 
@@ -2071,7 +2071,7 @@ conn.Insert (Occupation);
 
 ### <a name="creating-the-table-data-source"></a>テーブルデータソースの作成
 
-ここでは、テーブルにデータを提供するカスタムデータソースを作成します。 まず、`TableORMDatasource` という名前の新しいクラスを追加し、次のようにします。
+ここでは、テーブルにデータを提供するカスタムデータソースを作成します。 最初に、という名前の新しいクラスを追加 `TableORMDatasource` し、次のようにします。
 
 ```csharp
 using System;
@@ -2125,11 +2125,11 @@ namespace MacDatabase
 }
 ```
 
-このクラスのインスタンスを後で作成する場合は、open SQLite.NET database 接続を渡します。 `LoadOccupations` メソッドは、データベースに対してクエリを行い、検出されたレコードをメモリにコピーします (`OccupationModel` データモデルを使用)。
+このクラスのインスタンスを後で作成する場合は、open SQLite.NET database 接続を渡します。 メソッドは、 `LoadOccupations` データベースに対してクエリを行い、検出されたレコードをメモリにコピーし `OccupationModel` ます (データモデルを使用)。
 
 ### <a name="creating-the-table-delegate"></a>テーブルデリゲートの作成
 
-最後に必要なクラスは、SQLite.NET データベースから読み込まれた情報を表示するカスタムテーブルデリゲートです。 新しい `TableORMDelegate` をプロジェクトに追加し、次のように表示します。
+最後に必要なクラスは、SQLite.NET データベースから読み込まれた情報を表示するカスタムテーブルデリゲートです。 プロジェクトに新しいを追加 `TableORMDelegate` し、次のように表示します。
 
 ```csharp
 using System;
@@ -2193,11 +2193,11 @@ namespace MacDatabase
 }
 ```
 
-ここでは、データソースの `Occupations` コレクション (SQLite.NET データベースから読み込まれたもの) を使用して、`GetViewForItem` メソッドのオーバーライドによってテーブルの列に入力します。
+ここでは、データソースの `Occupations` コレクション (SQLite.NET データベースから読み込まれたもの) を使用して、メソッドのオーバーライドによってテーブルの列にデータを入力し `GetViewForItem` ます。
 
 ### <a name="populating-the-table"></a>テーブルへの読み込み
 
-すべての部分を使用して、xib ファイルからのデータの量が大きくなったときに、次のように `AwakeFromNib` メソッドをオーバーライドしてテーブルを作成します。
+次のように、メソッドをオーバーライドして、xib ファイルから大きくなったときにテーブルにデータを挿入してみましょう。 `AwakeFromNib`
 
 ```csharp
 public override void AwakeFromNib ()
@@ -2220,7 +2220,7 @@ public override void AwakeFromNib ()
 
 ## <a name="summary"></a>まとめ
 
-この記事では、Xamarin. Mac アプリケーションで SQLite データベースを使用してデータバインディングとキー値のコードを操作する方法について詳しく説明しました。 まず、キー値のコード ( C# kvc) とキー値の観測 (kvc) を使用して、目的の C にクラスを公開する方法を見てきました。 次に、KVO に準拠したクラスを使用し、データを Xcode の Interface Builder の UI 要素にバインドする方法について説明しました。 また、SQLite.NET ORM を介して SQLite データを操作し、そのデータをテーブルビューに表示する方法についても説明します。
+この記事では、Xamarin. Mac アプリケーションで SQLite データベースを使用してデータバインディングとキー値のコードを操作する方法について詳しく説明しました。 まず、キー値のコード (KVC) とキー値の観測 (KVC) を使用して、C# クラスを目的の C に公開する方法を見てきました。 次に、KVO に準拠したクラスを使用し、データを Xcode の Interface Builder の UI 要素にバインドする方法について説明しました。 また、SQLite.NET ORM を介して SQLite データを操作し、そのデータをテーブルビューに表示する方法についても説明します。
 
 ## <a name="related-links"></a>関連リンク
 

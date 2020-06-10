@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 8d9facdd35a9048a93c17f1194d5e672edd9d798
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 1d64a212dae055d6a7a5ff1005b25dc48a10d52e
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030563"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84566202"
 ---
 # <a name="tvos-user-interface-styles-in-xamarin"></a>Xamarin の tvOS ユーザーインターフェイススタイル
 
@@ -20,13 +20,13 @@ _この記事では、Apple が tvOS 10 に追加した軽量の UI テーマと
 
 tvOS 10 では、ユーザーの設定に基づいて、すべての組み込み UIKit コントロールが自動的に対応するように、ダークおよびライトの両方のユーザーインターフェイステーマをサポートするようになりました。 また、開発者は、ユーザーが選択したテーマに基づいて UI 要素を手動で調整し、特定のテーマをオーバーライドできます。
 
-<a name="About-the-New-User-Interface-Styles" />
+<a name="About-the-New-User-Interface-Styles"></a>
 
 ## <a name="about-the-new-user-interface-styles"></a>新しいユーザーインターフェイスのスタイルについて
 
 前述のように、tvOS 10 では、ユーザーの設定に基づいて、すべての組み込み UIKit コントロールが自動的にに適応する、ダークおよびライトの両方のユーザーインターフェイステーマがサポートされるようになりました。
 
-このテーマを切り替えるには、 **[設定]**  >  **[全般**] >  **[外観]** に移動し、 **[明るい]** と **[濃色]** を切り替えます。
+このテーマを切り替えるには、[**設定**] [全般] [全般] に移動し、[明るい] と [ダーク] を切り替え  >  **General**  >  **Appearance**ます**Light** **Dark**。
 
 [![](user-interface-styles-images/theme01.png "The Settings app")](user-interface-styles-images/theme01.png#lightbox)
 
@@ -38,57 +38,57 @@ tvOS 10 では、ユーザーの設定に基づいて、すべての組み込み
 
 明るい UI テーマは既定のテーマであり、既存の tvOS アプリでは、ユーザーの好みに関係なく明るいテーマが使用されます。ただし、tvOS 10 がダークテーマを利用するように変更されている場合は除きます。 TvOS 10 アプリには、現在のテーマをオーバーライドし、UI の一部またはすべてに対して常に淡色またはダークテーマを使用する機能もあります。
 
-<a name="Adopting-the-Light-and-Dark-Themes" />
+<a name="Adopting-the-Light-and-Dark-Themes"></a>
 
 ## <a name="adopting-the-light-and-dark-themes"></a>明るいテーマとダークテーマの採用
 
-この機能をサポートするために、Apple は `UITraitCollection` クラスに新しい API を追加しました。また、tvOS アプリでは、(`Info.plist` ファイルの設定を使用して) ダークな外観をサポートするためにオプトインする必要があります。
+この機能をサポートするために、Apple はクラスに新しい API を追加 `UITraitCollection` し、tvOS アプリは、(ファイルの設定を使用して) ダークな外観をサポートするためにオプトインする必要があり `Info.plist` ます。
 
 明るいテーマとダークテーマのサポートをオプトインするには、次の手順を実行します。
 
 1. **ソリューション エクスプローラー**で `Info.plist` ファイルをダブルクリックして、編集用に開きます。
 2. (エディターの下部から)**ソース**ビューを選択します。
-3. 新しいキーを追加し、`UIUserInterfaceStyle`を呼び出します。
+3. 新しいキーを追加し、次のように呼び出し `UIUserInterfaceStyle` ます。
 
     [![](user-interface-styles-images/theme03.png "The UIUserInterfaceStyle key")](user-interface-styles-images/theme03.png#lightbox)
-4. 型を `String` に設定したままにして、`Automatic`の値を入力します。
+4. 型をに設定したままに `String` し、次のように値を入力し `Automatic` ます。
 
     [![](user-interface-styles-images/theme04.png "Enter Automatic")](user-interface-styles-images/theme04.png#lightbox)
 5. 変更内容をファイルに保存します。
 
-`UIUserInterfaceStyle` キーには、次の3つの値を指定できます。
+このキーには、次の3つの値を指定でき `UIUserInterfaceStyle` ます。
 
 - **Light** -tvOS アプリの UI が常にライトテーマを使用するように強制します。
 - **ダーク**-tvOS アプリの UI が常にダークテーマを使用するように強制します。
 - **自動**-[設定] のユーザーの設定に基づいて、ライトとダークのテーマを切り替えます。 これは推奨される設定です。
 
-<a name="UIKit-Theme-Support" />
+<a name="UIKit-Theme-Support"></a>
 
 ### <a name="uikit-theme-support"></a>UIKit テーマのサポート
 
-TvOS アプリが標準の組み込みの `UIView` ベースのコントロールを使用している場合は、開発者の関与なしで UI テーマに自動的に応答します。
+TvOS アプリが標準の組み込みベースのコントロールを使用している場合は `UIView` 、開発者の関与なしで UI テーマに自動的に応答します。
 
-さらに、`UILabel` と `UITextView` では、選択した UI テーマに基づいて色が自動的に変更されます。
+さらに、 `UILabel` と `UITextView` は、選択した UI テーマに基づいて自動的に色を変更します。
 
 - ライトテーマでは、テキストは黒になります。
 - ダークテーマでは、テキストは白になります。
 
 開発者がテキストの色を (ストーリーボードまたはコードで) 手動で変更した場合は、UI テーマに基づいて色の変更を処理する必要があります。
 
-<a name="New-Blur-Effects" />
+<a name="New-Blur-Effects"></a>
 
 ### <a name="new-blur-effects"></a>新しいぼかし効果
 
 TvOS 10 アプリで明るいテーマとダークテーマをサポートするために、Apple は2つの新しいぼかし効果を追加しました。 これらの新しい効果は、次のようにユーザーが選択した UI テーマに基づいてぼかしを自動的に調整します。
 
-- `UIBlurEffectStyleRegular`-明るいテーマでは明るいぼかし、ダークテーマではダークぼかしを使用します。
+- `UIBlurEffectStyleRegular`-明るいテーマでは薄いぼかし、ダークテーマではダークぼかしを使用します。
 - `UIBlurEffectStyleProminent`-明るいテーマでは薄いぼかし、ダークテーマでは濃いぼかしを使用します。
 
-<a name="Working-with-Trait-Collections" />
+<a name="Working-with-Trait-Collections"></a>
 
 ## <a name="working-with-trait-collections"></a>特徴コレクションの操作
 
-`UITraitCollection` クラスの新しい `UserInterfaceStyle` プロパティを使用して、現在選択されている UI テーマを取得できます。これは、次のいずれかの値の `UIUserInterfaceStyle` 列挙型になります。
+クラスの新しいプロパティを使用して、 `UserInterfaceStyle` `UITraitCollection` 現在選択されている UI テーマを取得し、 `UIUserInterfaceStyle` 次のいずれかの値の列挙体にすることができます。
 
 - **Light** -明るい UI テーマが選択されています。
 - **ダーク**-暗い UI テーマが選択されています。
@@ -96,13 +96,13 @@ TvOS 10 アプリで明るいテーマとダークテーマをサポートする
 
 さらに、特徴コレクションには tvOS 10 の次の特徴があります。
 
-- 表示プロキシは、特定の `UITraitCollection` の `UserInterfaceStyle` に基づいてカスタマイズして、テーマに基づいて画像や項目の色などを変更できます。
-- TvOS アプリは、`UIView` または `UIViewController` クラスの `TraitCollectionDidChange` メソッドをオーバーライドすることによって、特徴コレクションの変更を処理できます。
+- 表示プロキシは、指定されたのに基づいてカスタマイズし `UserInterfaceStyle` `UITraitCollection` て、テーマに基づいて画像や項目の色などを変更できます。
+- TvOS アプリで `TraitCollectionDidChange` は、クラスまたはクラスのメソッドをオーバーライドすることによって、特徴のコレクションの変更を処理でき `UIView` `UIViewController` ます。
 
 > [!IMPORTANT]
-> TvOS 10 の tvOS 早期プレビューでは、まだ `UITraitCollection` の `UIUserInterfaceStyle` は完全にはサポートされていません。 完全なサポートは、今後のリリースで追加される予定です。
+> TvOS 10 の tvOS 早期プレビューでは、まだを完全にサポートしていません `UIUserInterfaceStyle` `UITraitCollection` 。 完全なサポートは、今後のリリースで追加される予定です。
 
-<a name="Customizing-Appearance-Based-on-Theme" />
+<a name="Customizing-Appearance-Based-on-Theme"></a>
 
 ### <a name="customizing-appearance-based-on-theme"></a>テーマに基づいて外観をカスタマイズする
 
@@ -120,15 +120,15 @@ button.ForTraitCollection(dark).SetTitleColor (UIColor.White, UIControlState.Nor
 ```
 
 > [!IMPORTANT]
-> 残念ながら、tvOS 10 の tvOS Preview では `UITraitCollection`の `UIUserInterfaceStyle` は完全にはサポートされていないため、この種類のカスタマイズはまだ使用できません。 完全なサポートは、今後のリリースで追加される予定です。
+> 残念ながら、tvOS 10 の tvOS Preview ではが完全にサポートされていない `UIUserInterfaceStyle` `UITraitCollection` ため、この種類のカスタマイズはまだ使用できません。 完全なサポートは、今後のリリースで追加される予定です。
 
-<a name="Responding-to-Theme-Changes-Directly" />
+<a name="Responding-to-Theme-Changes-Directly"></a>
 
 ### <a name="responding-to-theme-changes-directly"></a>テーマの変更に直接応答する
 
-開発者は、選択された UI テーマに基づいて UI 要素の外観をきめ細かく制御する必要があり、`UIView` または `UIViewController` クラスの `TraitCollectionDidChange` メソッドをオーバーライドできます。
+開発者は、選択された UI テーマに基づいて UI 要素の外観をきめ細かく制御する必要があり `TraitCollectionDidChange` `UIView` ます。また、クラスまたはクラスのメソッドをオーバーライドでき `UIViewController` ます。
 
-(例:
+次に例を示します。
 
 ```csharp
 public override void TraitCollectionDidChange (UITraitCollection previousTraitCollection)
@@ -140,13 +140,13 @@ public override void TraitCollectionDidChange (UITraitCollection previousTraitCo
 }
 ```
 
-<a name="Responding-to-Theme-Changes-Directly" />
+<a name="Responding-to-Theme-Changes-Directly"></a>
 
 ### <a name="overriding-a-trait-collection"></a>特徴コレクションのオーバーライド
 
 TvOS アプリの設計に基づいて、開発者が特定のユーザーインターフェイス要素の特徴コレクションをオーバーライドし、常に特定の UI テーマを使用する必要がある場合があります。
 
-これは、`UIViewController` クラスの `SetOverrideTraitCollection` メソッドを使用して行うことができます。 (例:
+これは、クラスのメソッドを使用して行うことができ `SetOverrideTraitCollection` `UIViewController` ます。 次に例を示します。
 
 ```csharp
 // Create new trait and configure it
@@ -159,7 +159,7 @@ SetOverrideTraitCollection (trait, this);
 
 詳細については、「統合された[ストーリーボード](~/ios/user-interface/storyboards/unified-storyboards.md)のドキュメントの概要」の[特徴](~/ios/user-interface/storyboards/unified-storyboards.md)と[オーバーライド](~/ios/user-interface/storyboards/unified-storyboards.md)に関するセクションを参照してください。
 
-<a name="Trait-Collections-and-Storyboards" />
+<a name="Trait-Collections-and-Storyboards"></a>
 
 ### <a name="trait-collections-and-storyboards"></a>特徴コレクションとストーリーボード
 
@@ -167,10 +167,10 @@ TvOS 10 では、特徴コレクションに応答するようにアプリのス
 
 特徴コレクションのサポートを有効にするには、次の手順を実行します。
 
-1. **ソリューションエクスプローラー**でストーリーボードファイルを右クリックし、[ **Open With** > **Xcode Interface Builder**] を選択します。
+1. **ソリューションエクスプローラー**でストーリーボードファイルを右クリックし、[ **Open With**  >  **Xcode Interface Builder**] を選択します。
 
     [![](user-interface-styles-images/theme05.png "Open With Xcode Interface Builder")](user-interface-styles-images/theme05.png#lightbox)
-2. 特徴コレクションのサポートを有効にするには、**ファイルインスペクター**に切り替えて、 **Interface Builder ドキュメント**のセクションにある **[特徴のバリエーションを使用する]** プロパティをオンにします。
+2. 特徴コレクションのサポートを有効にするには、**ファイルインスペクター**に切り替えて、 **Interface Builder ドキュメント**のセクションにある [**特徴のバリエーションを使用する**] プロパティをオンにします。
 
     [![](user-interface-styles-images/theme06.png "Enable Trait Collection support")](user-interface-styles-images/theme06.png#lightbox)
 3. 特性のバリエーションを使用するように変更を確認します。
@@ -182,11 +182,11 @@ Interface Builder で tvOS Storyboard を編集するときに、Apple は次の
 
 - 開発者は、**属性インスペクター**の UI テーマに基づいて、さまざまな種類のユーザーインターフェイス要素を指定できます。
 
-  - いくつかのプロパティには、その横に **+** があります。これをクリックすると、UI テーマ固有のバージョンを追加できます。
+  - いくつかのプロパティの **+** 横に、UI テーマ固有のバージョンを追加するためにクリックすることができるようになりました。
 
     [![](user-interface-styles-images/theme08.png "Add a UI theme specific version")](user-interface-styles-images/theme08.png#lightbox)
 
-  - 開発者は、新しいプロパティを指定したり、 **[x]** ボタンをクリックして削除したりできます。
+  - 開発者は、新しいプロパティを指定したり、[ **x** ] ボタンをクリックして削除したりできます。
 
     [![](user-interface-styles-images/theme09.png "Specify a new property or click the x button to remove it")](user-interface-styles-images/theme09.png#lightbox)
 - 開発者は、Interface Builder 内の明るいテーマまたはダークテーマで UI デザインをプレビューできます。
@@ -201,7 +201,7 @@ Interface Builder で tvOS Storyboard を編集するときに、Apple は次の
 
 さらに、tvOS シミュレーターには、開発者が tvOS アプリをデバッグするときに、明るいテーマと暗いテーマをすばやく切り替えることができるショートカットキーが追加されました。 ライトとダークを切り替えるには、**コマンドライン**のキーボードシーケンスを使用します。
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>まとめ
 

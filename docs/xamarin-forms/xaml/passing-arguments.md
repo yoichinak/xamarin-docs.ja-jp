@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: f314f3145b3573184cb8cdf7370394c975c66859
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127076"
+title: "XAML で引数を渡す" 説明: "この記事では、既定以外のコンストラクターに引数を渡すために使用できる XAML 属性の使用方法、ファクトリメソッドを呼び出す方法、ジェネリック引数の型を指定する方法について説明します。
+ms. 製品: xamarin ms. assetid: 8F3B267F-499E-4D79-9193-FCA99F199519: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 10/25/2016 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="passing-arguments-in-xaml"></a>XAML での引数の受け渡し
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-passingconstructorarguments)
@@ -27,12 +13,10 @@ _この記事では、既定以外のコンストラクターに引数を渡す�
 
 多くの場合、引数を必要とするコンストラクターを使用するか、静的作成メソッドを呼び出すことによって、オブジェクトをインスタンス化する必要があります。 これは、XAML で属性と属性を使用して実現でき `x:Arguments` `x:FactoryMethod` ます。
 
-- 属性は、 `x:Arguments` 既定以外のコンストラクターまたはファクトリメソッドオブジェクトの宣言にコンストラクター引数を指定するために使用されます。 詳細については、「[コンストラクター引数の引き渡し](#constructor_arguments)」を参照してください。
-- `x:FactoryMethod`属性は、オブジェクトの初期化に使用できるファクトリメソッドを指定するために使用されます。 詳細については、「[ファクトリメソッドの呼び出し](#factory_methods)」を参照してください。
+- 属性は、 `x:Arguments` 既定以外のコンストラクターまたはファクトリメソッドオブジェクトの宣言にコンストラクター引数を指定するために使用されます。 詳細については、「[コンストラクター引数の引き渡し](#passing-constructor-arguments)」を参照してください。
+- `x:FactoryMethod`属性は、オブジェクトの初期化に使用できるファクトリメソッドを指定するために使用されます。 詳細については、「[ファクトリメソッドの呼び出し](#calling-factory-methods)」を参照してください。
 
-また、属性を使用して、ジェネリック型 `x:TypeArguments` のコンストラクターに対するジェネリック型引数を指定することもできます。 詳細については、「[ジェネリック型引数の指定](#generic_type_arguments)」を参照してください。
-
-<a name="constructor_arguments" />
+また、属性を使用して、ジェネリック型 `x:TypeArguments` のコンストラクターに対するジェネリック型引数を指定することもできます。 詳細については、「[ジェネリック型引数の指定](#specifying-a-generic-type-argument)」を参照してください。
 
 ## <a name="passing-constructor-arguments"></a>コンストラクター引数の引き渡し
 
@@ -96,8 +80,6 @@ _この記事では、既定以外のコンストラクターに引数を渡す�
 
 ![BoxView。 x:Arguments で指定した色](passing-arguments-images/passing-arguments.png)
 
-<a name="factory_methods" />
-
 ## <a name="calling-factory-methods"></a>ファクトリメソッドの呼び出し
 
 ファクトリメソッドは、属性を使用してメソッドの名前を指定し、属性を使用してその引数を指定することで、XAML で呼び出すことができ `x:FactoryMethod` `x:Arguments` ます。 ファクトリメソッドは、メソッドを `public static` 定義するクラスまたは構造体と同じ型のオブジェクトまたは値を返すメソッドです。
@@ -145,8 +127,6 @@ _この記事では、既定以外のコンストラクターに引数を渡す�
 次のスクリーンショットは、 [`Color`](xref:Xamarin.Forms.Color) 指定された引数値を使用して各ファクトリメソッドを呼び出した結果を示しています。
 
 ![BoxView。 x:FactoryMethod および x:Arguments で指定した色](passing-arguments-images/factory-methods.png)
-
-<a name="generic_type_arguments" />
 
 ## <a name="specifying-a-generic-type-argument"></a>ジェネリック型引数の指定
 
