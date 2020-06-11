@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: e02ef600af761915d05c912b586e409dd6f46b85
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137086"
+title: "iOS での SearchBar スタイル" 説明: "プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、SearchBar に背景があるかどうかを制御する iOS プラットフォーム固有のを使用する方法について説明します。
+ms. 製品: xamarin ms. assetid: 3D512DD6-078E-4BC6-926E-62BA6F4DE640: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 03/05/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="searchbar-style-on-ios"></a>IOS の SearchBar スタイル
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

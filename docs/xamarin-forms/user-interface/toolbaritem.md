@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsToolbarItem
-description: ''
-ms.prod: ''
-ms.assetId: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 46aba32ebbae1646b9af00877bba530b619210cd
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138217"
+title: " Xamarin.Forms ToolbarItem" description: "ToolbarItem クラスは、アプリケーションのナビゲーションバーで使用される特殊なボタンです。"
+ms. 製品: xamarin ms. assetId: CC737D54-0280-46BD-A2BC-A0FB67DDD6A1: xamarin-forms author: profexorgeek ms. author: jusjohns ms. date: 07/29/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-toolbaritem"></a>Xamarin.FormsToolbarItem
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)

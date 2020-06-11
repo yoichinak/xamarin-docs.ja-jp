@@ -1,22 +1,8 @@
 ---
-title: XAML フィールド修飾子Xamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: db00f522b71a8993ef0f7f6cf5070813ce07396a
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138126"
+title: "XAML フィールド修飾子 in Xamarin.Forms " description: "x:FieldModifier namespace 属性は、名前付き xaml 要素に対して生成されるフィールドのアクセスレベルを指定します。"
+ms. 製品: xamarin ms. assetid: 12357CE0-3c1147 B62-947 F-72DB6DFC23A2 ms. テクノロジ: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 08/02/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xaml-field-modifiers-in-xamarinforms"></a>XAML フィールド修飾子Xamarin.Forms
 
 `x:FieldModifier`名前空間属性は、名前付き XAML 要素に対して生成されるフィールドのアクセスレベルを指定します。 属性の有効な値は次のとおりです。

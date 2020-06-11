@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Formsステッパ
-description: Xamarin.Formsステッパを使用すると、ユーザーは値の範囲から数値を選択できます。 これは、マイナス記号とプラス記号の付いた2つのボタンで構成されています。 2つのボタンを操作すると、選択した値が徐々に変化します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 4f071530fb17de44d8ede786ca1b42f5e11f4f7c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130547"
+title: " Xamarin.Forms ステッパ" description: " Xamarin.Forms ステッパを使用すると、ユーザーは値の範囲から数値を選択できます。 これは、マイナス記号とプラス記号の付いた2つのボタンで構成されています。 2つのボタンを操作すると、選択した値が徐々に変化します。
+ms. 製品: xamarin ms. assetid: 62571B3E-D84B-4F52-9FC7-C105D6733B16: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 10/17/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-stepper"></a>Xamarin.Formsステッパ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)

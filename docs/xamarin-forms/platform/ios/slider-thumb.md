@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 93b4dba3e8543bd2cc2a4f2187f617aae5daff77
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137073"
+title: "スライダー Thumb Tap on iOS" 説明: "プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、スライダーバーをタップして Slider. Value プロパティを設定できるようにする iOS プラットフォーム固有のを使用する方法について説明します。
+ms. 製品: xamarin ms. assetid: D0915D37-9A59-4728-BB6A-FE094A661275: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 10/24/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="slider-thumb-tap-on-ios"></a>IOS でのスライダーの Thumb タップ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ListView はデータを表示するための強力なビューですが、いくつかの制限があります。 この記事では、アプリケーションで ListView を使用して優れたパフォーマンスを確保する方法について説明し Xamarin.Forms ます。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: e2b8e057d9687cd0a472451fc73cc578f9358277
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139889"
+title: "ListView Performance" の説明: "ListView はデータを表示するための強力なビューですが、いくつかの制限があります。 この記事では、アプリケーションで ListView を使用して優れたパフォーマンスを確保する方法について説明 Xamarin.Forms します。 "
+ms. 製品: xamarin ms. assetid: 1B085639-652C-4862-86EB-5D55D32B9395: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 12/11/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="listview-performance"></a>ListView のパフォーマンス
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative)

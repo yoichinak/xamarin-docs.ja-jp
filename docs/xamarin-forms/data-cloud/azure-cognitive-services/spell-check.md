@@ -1,22 +1,8 @@
 ---
-title: ''
-description: Bing Spell Check は、テキストに対して文脈によるスペルチェックを実行し、スペルミスの語句にインラインでの候補を提供します。 この記事では、Bing Spell Check REST API を使用して、アプリケーションのスペルミスを修正する方法について説明し Xamarin.Forms ます。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 1703f0049408381a86da73fb28696ef8708cc790
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139296"
+title: "Bing Spell Check API を使用したスペルチェック" 説明: "Bing Spell Check では、テキストのコンテキストスペルチェックが実行され、スペルミスの単語に対してインラインでの候補が提供されます。 この記事では、Bing Spell Check REST API を使用して、アプリケーションのスペルミスを修正する方法について説明 Xamarin.Forms します。
+ms. 製品: xamarin ms. assetid: B40EB103-FDC0-45C6-9940-FB4ACDC2F4F9: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 02/08/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="spell-checking-using-the-bing-spell-check-api"></a>Bing Spell Check API を使用したスペルチェック
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
@@ -164,7 +150,7 @@ foreach (var flaggedToken in spellCheckResult.FlaggedTokens)
 > [!NOTE]
 > 上記の例では、 `Replace` わかりやすくするためにを使用していますが、大量のテキストを使用すると、間違ったトークンが置き換えられる可能性があります。 API では、 `offset` 更新を実行するソーステキスト内の正しい場所を識別するために、運用アプリで使用される値が提供されます。
 
-## <a name="summary"></a>[概要]
+## <a name="summary"></a>まとめ
 
 この記事では、Bing Spell Check REST API を使用して、アプリケーションのスペルミスを修正する方法について説明しました Xamarin.Forms 。 Bing Spell Check は、テキストに対して文脈によるスペルチェックを実行し、スペルミスの語句にインラインでの候補を提供します。
 

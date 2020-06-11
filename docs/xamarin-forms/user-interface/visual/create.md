@@ -1,22 +1,8 @@
 ---
-title: ビジュアルレンダラーを作成する Xamarin.Forms
-description: Xamarin.Formsビューをサブクラス化せずに、VisualElement オブジェクトに選択的に適用するビジュアルを作成し Xamarin.Forms ます。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 23edbb007e912d13858686d1c5ec574c9e3349c7
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127142"
+title: " Xamarin.Forms ビジュアルレンダラーの作成" の説明: " Xamarin.Forms ビューをサブクラス化せずに、visualelement オブジェクトに選択的に適用するビジュアルを作成 Xamarin.Forms します。"
+ms. 製品: xamarin ms. assetid: 80BF9C72-AC284-aaf9dddb60cbdd1cd59 ms. テクノロジ: xamarin-forms author: davidbritch: dabritch:: 03/12/2019 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
 ---
+
 # <a name="create-a-xamarinforms-visual-renderer"></a>ビジュアルレンダラーを作成する Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
@@ -140,7 +126,7 @@ IOS プラットフォームプロジェクトのこの例では、は、 `Expor
 > [!NOTE]
 > XAML では、型コンバーターによって、プロパティ値に "Visual" サフィックスを含める必要がなく [`Visual`](xref:Xamarin.Forms.VisualElement.Visual) なります。 ただし、完全な型名を指定することもできます。
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 Button button = new Button { Text = "CUSTOM BUTTON", ... };
@@ -176,5 +162,5 @@ button.Visual = new CustomVisual();
 ## <a name="related-links"></a>関連リンク
 
 - [素材ビジュアル (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
-- [Xamarin.Forms素材ビジュアル](material-visual.md)
+- [Xamarin.Forms の素材のビジュアル](material-visual.md)
 - [カスタム レンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)

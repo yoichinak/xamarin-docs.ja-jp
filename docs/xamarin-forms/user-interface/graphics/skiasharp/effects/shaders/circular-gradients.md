@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 418d29010a8cce81d2bb8c365608c54b61739622
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135643"
+title: "SkiaSharp の円形のグラデーション" の説明: "円に基づくさまざまな種類のグラデーションについて説明します。"
+ms. 製品: xamarin ms テクノロジ: skiasharp: 400AE23A-6A0B-4FA8-BD6B-DE4146B04732 author: davidbritch dabritch: ms. date: 08/23/2018 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
 ---
+
 # <a name="the-skiasharp-circular-gradients"></a>SkiaSharp の円形のグラデーション
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

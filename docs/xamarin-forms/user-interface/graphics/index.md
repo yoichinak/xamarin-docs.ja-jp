@@ -1,22 +1,8 @@
 ---
-title: のグラフィックスXamarin.Forms
-description: このガイドでは、 Xamarin.Forms CocosSharp、SkiaShap、および UrhoSharp を使用して、グラフィックスとゲームエンジンのビジュアルをアプリケーションに組み込む方法について説明します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 227bb3f0971bb8e3ceef7015f8fffb9994ccc36b
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84129325"
+title: "グラフィックスの Xamarin.Forms " 説明: "このガイドでは、 Xamarin.Forms CocosSharp、SkiaShap、および UrhoSharp を使用して、グラフィックスとゲームエンジンのビジュアルをアプリケーションに組み込む方法について説明します。"
+ms. 製品: xamarin ms. assetid: 167ec01a-fb9e-431e-a44d-a10eaf62bf39: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 02/01/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="graphics-in-xamarinforms"></a>のグラフィックスXamarin.Forms
 
 _グラフィックスとゲームエンジンのビジュアルをアプリケーションに組み込む方法 Xamarin.Forms 。_

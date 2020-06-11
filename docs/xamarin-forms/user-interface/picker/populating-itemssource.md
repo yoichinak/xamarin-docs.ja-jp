@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8c4fc732082a77a2e471465af448a487862b513c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136293"
+title: "ピッカーの ItemsSource プロパティの設定" 説明: "ピッカービューは、データの一覧からテキスト項目を選択するためのコントロールです。 この記事では、ItemsSource プロパティを設定してピッカーにデータを設定する方法と、ユーザーが項目の選択に応答する方法について説明します。
+ms. 製品: xamarin ms. assetid: 8ECF390C-9DB2-4441-B9A3-101AE7E5AEC5: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 02/26/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="setting-a-pickers-itemssource-property"></a>ピッカーの ItemsSource プロパティの設定
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-monkeyapppicker)

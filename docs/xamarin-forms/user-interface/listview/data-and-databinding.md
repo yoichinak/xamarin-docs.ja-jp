@@ -1,22 +1,8 @@
 ---
-title: ''
-description: この記事では、listview にデータを設定する方法 Xamarin.Forms と、listview でデータバインディングを使用する方法について説明します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 38a895c9064fc012aec35b37eac78bb16ff009a9
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84131509"
+title: "ListView データソース" の説明: "この記事では、listview にデータを設定する方法 Xamarin.Forms と、listview でデータバインディングを使用する方法について説明します。"
+ms. 製品: xamarin ms. assetid: B5571660-1E82-4379-95C3-0725288CF5D9: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 03/23/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="listview-data-sources"></a>ListView データソース
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-switchentrytwobinding)
@@ -45,7 +31,7 @@ ms.locfileid: "84131509"
 </ListView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 var listView = new ListView();

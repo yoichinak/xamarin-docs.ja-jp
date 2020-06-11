@@ -1,22 +1,8 @@
 ---
-title: 暗黙的なスタイルXamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 3fb6ea40ced93103ec9cc92fa707f68c674d7826
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139010"
+title: "暗黙的なスタイルの Xamarin.Forms " 説明: "暗黙的なスタイルとは、各コントロールがスタイルを参照することなく、同じ TargetType のすべてのコントロールで使用される暗黙的なスタイルです。"
+ms. 製品: xamarin ms. assetid: 02A75F3B-4389-49D4-A2F4-AFD473A4A161: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 01/30/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="implicit-styles-in-xamarinforms"></a>暗黙的なスタイルXamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
@@ -138,7 +124,7 @@ public class ImplicitStylesPageCS : ContentPage
 
 このスタイルをページレベルで配置する [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) と、ページ上のすべてのインスタンスに適用され、 [`Button`](xref:Xamarin.Forms.Button) から派生したコントロールにも適用され `Button` ます。 ただし、プロパティが未設定のままである場合、 [`ApplyToDerivedTypes`](xref:Xamarin.Forms.Style.ApplyToDerivedTypes) スタイルはインスタンスにのみ適用され `Button` ます。
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 var buttonStyle = new Style(typeof(Button))
@@ -163,5 +149,5 @@ Resources = new ResourceDictionary { buttonStyle };
 - [基本スタイル (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 - [スタイルの使用 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
-- [スタイル](xref:Xamarin.Forms.Style)
+- [Style](xref:Xamarin.Forms.Style)
 - [Setter](xref:Xamarin.Forms.Setter)

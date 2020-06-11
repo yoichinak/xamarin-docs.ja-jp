@@ -1,27 +1,13 @@
 ---
-title: Xamarin.FormsCollectionView の概要
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d6a09ead9c3def2f58ad2755de4574f6d6e331e8
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136436"
+title: " Xamarin.Forms CollectionView の概要" 説明: "CollectionView は、さまざまなレイアウト仕様を使用してデータの一覧を表示するための柔軟でパフォーマンスの高いビューです。"
+ms. 製品: xamarin ms. assetid: 5c08f687、b9e647 CE48726-f28davidbritch 6d0b6a7 ms. テクノロジ: xamarin-forms author:: dabritch:: 12/11/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-collectionview-introduction"></a>Xamarin.FormsCollectionView の概要
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)は、さまざまなレイアウト仕様を使用してデータの一覧を表示するためのビューです。 これは、より柔軟でパフォーマンスの高い代替手段を提供することを目的として [`ListView`](xref:Xamarin.Forms.ListView) います。 たとえば、次のスクリーンショットは、 `CollectionView` 2 つの列の垂直グリッドを使用し、複数の選択を可能にするを示しています。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) は、さまざまなレイアウト仕様を使用してデータを一覧表示するためのビューです。 これは、より柔軟でパフォーマンスの高い代替手段を提供することを目的として [`ListView`](xref:Xamarin.Forms.ListView) います。 たとえば、次のスクリーンショットは、 `CollectionView` 2 つの列の垂直グリッドを使用し、複数の選択を可能にするを示しています。
 
 [![IOS と Android の CollectionView 垂直グリッドレイアウトのスクリーンショット](introduction-images/verticalgrid-multipleselection.png "複数選択の CollectionView 垂直グリッドレイアウト")](introduction-images/verticalgrid-multipleselection-large.png#lightbox "複数選択の CollectionView 垂直グリッドレイアウト")
 
@@ -48,7 +34,7 @@ ms.locfileid: "84136436"
 
 | 概念 | ListView API | CollectionView |
 |---|---|---|
-| データ | `ItemsSource` | には、 [`CollectionView`](xref:Xamarin.Forms.CollectionView) プロパティを設定することによってデータが設定され `ItemsSource` ます。 詳細については、「データを使用した[CollectionView の設定](populate-data.md#populate-a-collectionview-with-data)」を参照してください。 |
+| Data | `ItemsSource` | には、 [`CollectionView`](xref:Xamarin.Forms.CollectionView) プロパティを設定することによってデータが設定され `ItemsSource` ます。 詳細については、「データを使用した[CollectionView の設定](populate-data.md#populate-a-collectionview-with-data)」を参照してください。 |
 | 項目の外観 | `ItemTemplate` | の各項目の外観は、プロパティをに設定すること [`CollectionView`](xref:Xamarin.Forms.CollectionView) によって定義でき `ItemTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ます。 詳細については、「[アイテムの外観を定義](populate-data.md#define-item-appearance)する」を参照してください。 |
 | セル | `TextCell`, `ImageCell`, `ViewCell` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)セルの概念がないため、公開インジケーターの概念はありません。 代わりに、データテンプレートを使用して、リスト内の各データ項目の外観を定義します。 |
 | 行区切り記号 | `SeparatorColor`, `SeparatorVisibility` | [`CollectionView`](xref:Xamarin.Forms.CollectionView)には、組み込みの区切り記号は含まれません。 これらは、必要に応じて項目テンプレートに指定できます。 |

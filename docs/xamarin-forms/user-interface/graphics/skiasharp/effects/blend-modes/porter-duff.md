@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a1e6290c0f85b54c3fd8958bc43667714bdece20
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84131054"
+title: "Porter" blend モード "description:" Porter-Duff blend mode を使用して、ソースとターゲットのイメージに基づいてシーンを作成します。 "
+ms. 製品: xamarin ms テクノロジ: skiasharp: 57F172F8-BA03-43EC-A215-ED6B78696BB5 author: davidbritch dabritch: ms. date: 08/23/2018 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
 ---
+
 # <a name="porter-duff-blend-modes"></a>Porter blend モード
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -71,60 +57,22 @@ Skia はと呼ばれる14のモードを追加し `Modulate` ますが、これ�
 
 SkiaSharp で定義されている14の Porter Ff モードを次に示します。 次の表は、上の図の3つの空白以外の各領域の色を示しています。
 
-| モード       | 宛先 | 合う | source |
-| ---
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------|:---title: description: ms. 製品: ms. テクノロジ: ms. assetid: author: ms. author: ms. date: no loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
-------:|:---title: description: ms. 製品: ms. テクノロジ: ms. assetid: author: ms. author: ms. date: no loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
-------:|:---title: description: ms. 製品: ms. テクノロジ: ms. assetid: author: ms. author: ms. date: no loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
----:| |`Clear`    |            |             |       | |`Src`      |            |Source |X | |`Dst`      |X |Destination |       | |`SrcOver`  |X |Source |X | |`DstOver`  |X |Destination |X | |`SrcIn`    |            |Source |       | |`DstIn`    |            |Destination |       | |`SrcOut`   |            |             |X | |`DstOut`   |X |             |       | |`SrcATop`  |X |Source |       | |`DstATop`  |            |Destination |X | |`Xor`      |X |             |X | |`Plus`     |X |Sum |X | |`Modulate` |            |Product |       | 
+| モード       | 到着地 | 合う | source |
+| ---------- |:-----------:|:------------:|:------:|
+| `Clear`    |             |              |        |
+| `Src`      |             | source       | X      |
+| `Dst`      | X           | 到着地  |        |
+| `SrcOver`  | X           | source       | X      |
+| `DstOver`  | X           | 到着地  | X      |
+| `SrcIn`    |             | source       |        |
+| `DstIn`    |             | 宛先  |        |
+| `SrcOut`   |             |              | X      |
+| `DstOut`   | X           |              |        |
+| `SrcATop`  | X           | source       |        |
+| `DstATop`  |             | 宛先  | X      |
+| `Xor`      | X           |              | X      |
+| `Plus`     | X           | SUM          | X      |
+| `Modulate` |             | 製品      |        | 
 
 これらの blend モードは対称です。 転送元と転送先を交換し、すべてのモードを引き続き使用できます。
 
@@ -298,7 +246,7 @@ public class PorterDuffGridPage : ContentPage
 }
 ```
 
-結果は次のとおりです。
+結果は次のようになります。
 
 [![Porter-Duff グリッド](porter-duff-images/PorterDuffGrid.png "Porter-Duff グリッド")](porter-duff-images/PorterDuffGrid-Large.png#lightbox)
 
@@ -320,11 +268,11 @@ canvas.Clear(SKColors.White);
 
 ## <a name="using-mattes-with-porter-duff"></a>Porter-Duff でのマットの使用
 
-**レンガの合成**のページには、従来の複合タスクの例が示されています。画像は、削除する必要がある背景を持つビットマップを含め、いくつかの部分から構成する必要があります。 次の例は、問題のある背景を持つ、 **Seatedmonkey .jpg**ビットマップです。
+**レンガの合成**のページには、従来の複合タスクの例が示されています。画像は、削除する必要がある背景を持つビットマップを含め、いくつかの部分から構成する必要があります。 次に、 **SeatedMonkey.jpg**のビットマップと、問題のある背景を示します。
 
 ![取り付けられるサル](porter-duff-images/SeatedMonkey.jpg "取り付けられるサル")
 
-合成の準備として、対応する_マット_が作成されています。これは、イメージを表示したり透明にしたりするための黒の別のビットマップです。 このファイルの名前は、 [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルの**メディア**フォルダー内のリソースの中にあり**ます。**
+合成の準備として、対応する_マット_が作成されています。これは、イメージを表示したり透明にしたりするための黒の別のビットマップです。 このファイルには**SeatedMonkeyMatte.png**という名前が付けられ、 [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルの**メディア**フォルダーのリソースの中にあります。
 
 ![固定したサルのマット](porter-duff-images/SeatedMonkeyMatte.png "固定したサルのマット")
 
@@ -406,7 +354,7 @@ public partial class BrickWallCompositingPage : ContentPage
 
 [![ブリックの合成手順0](porter-duff-images/BrickWallCompositing0.png "ブリックの合成手順0")](porter-duff-images/BrickWallCompositing0-Large.png#lightbox)
 
-を1回押すと、が `Button` `step` 1 にインクリメントし、ハンドラーによって `PaintSurface` **seatedmonkey .jpg**が表示されるようになります。
+を1回押すと、が `Button` `step` 1 にインクリメントし、 `PaintSurface` ハンドラーに**SeatedMonkey.jpg**が表示されるようになります。
 
 ```csharp
 public partial class BrickWallCompositingPage : ContentPage
@@ -432,7 +380,7 @@ public partial class BrickWallCompositingPage : ContentPage
 
 [![ブリックの合成手順1](porter-duff-images/BrickWallCompositing1.png "ブリックの合成手順1")](porter-duff-images/BrickWallCompositing1-Large.png#lightbox)
 
-をもう一度押し、を `Button` `step` 2 に増やします。 これは、 **Seatedmonkeymatte**ファイルを表示するための重要な手順です。
+をもう一度押し、を `Button` `step` 2 に増やします。 これは、 **SeatedMonkeyMatte.png**ファイルを表示するための重要な手順です。
 
 ```csharp
 public partial class BrickWallCompositingPage : ContentPage
@@ -551,31 +499,21 @@ RGB 色は、アルファ値で事前乗算されます。 たとえば、 **Sc*
 結果は、アルファチャネルを含む角かっこと、コンマで区切られた RGB 色で示されます。 **[アルファ,、色]** です。 色の場合は、赤、緑、および青のコンポーネントに対して個別に計算が実行されます。
 
 | モード       | 操作 |
-| ---
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------ |---title: description: ms. 製品: ms. テクノロジ: ms. assetid: author: ms. author: ms. date: no loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
--
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
------ | |`Clear`    |[0, 0] | |`Src`      |[Sa、Sc] | |`Dst`      |[Da、Dc] | |`SrcOver`  |[Sa + Da ·(1 – Sa)、Sc + Dc(1 – Sa) | |`DstOver`  |[Da + Sa(1 – Da)、Dc + Sc(1 – Da) | |`SrcIn`    |SaDa、ScDa] | |`DstIn`    |オーディオSa、Dc、Sa] | |`SrcOut`   |Sa(1 – Da)、Sc(1 – Da)]| |`DstOut`   |オーディオ(1 – Sa)、Dc(1 – Sa)]| |`SrcATop`  |[Da、Sc、Da + Dc ·(1 – Sa)]| |`DstATop`  |[Sa、Dc]Sa + Sc ·(1 – Da)]| |`Xor`      |[Sa + Da – 2]SaDa、Sc(1 – Da) + Dc ·(1 – Sa)]| |`Plus`     |[Sa + Da、Sc + Dc] | |`Modulate` |SaDa、ScDc] | 
+| ---------- | --------- |
+| `Clear`    | [0, 0]    |
+| `Src`      | [Sa、Sc]  |
+| `Dst`      | [Da、Dc]  |
+| `SrcOver`  | [Sa + Da ·(1 – Sa)、Sc + Dc(1 – Sa) | 
+| `DstOver`  | [Da + Sa(1 – Da)、Dc + Sc(1 ~ Da) |
+| `SrcIn`    | SaDa、Scオーディオ |
+| `DstIn`    | オーディオSa、Dc、Sa |
+| `SrcOut`   | Sa(1 – Da)、Sc(1 – Da)] |
+| `DstOut`   | オーディオ(1 – Sa)、Dc(1 – Sa)] |
+| `SrcATop`  | [Da、Sc、Da + Dc ·(1 – Sa)] |
+| `DstATop`  | [Sa、Dc]Sa + Sc ·(1 – Da)] |
+| `Xor`      | [Sa + Da – 2]SaDa、Sc(1 – Da) + Dc ·(1 – Sa)] |
+| `Plus`     | [Sa + Da、Sc + Dc] |
+| `Modulate` | SaDa、Sc修飾 | 
 
 これらの操作は、 **Da**と**Sa**が0または1の場合に分析しやすくなります。 たとえば、既定のモードでは、 `SrcOver` **Sa**が0の場合、 **Sc**も0になり、結果は **[Da, Dc]**、送信先のアルファと色になります。 **Sa**が1の場合、結果は **[sa, sc]**、ソースのアルファと色、または **[1, sc]** になります。
 

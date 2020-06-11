@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Formsバインド可能なプロパティ
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 33b3763075b64ea8af615465825313a527d20db2
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138178"
+title: " Xamarin.Forms バインド可能なプロパティ" の説明: "この記事では、バインド可能なプロパティの概要と、それらを作成して使用する方法を示します。"
+ms. 製品: xamarin ms. assetid: 1EE869D8-6FE1-45CA-A0AD-26EC7D032AD7: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 01/16/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-bindable-properties"></a>Xamarin.Formsバインド可能なプロパティ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)

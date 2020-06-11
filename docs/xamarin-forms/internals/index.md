@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms詳細な概念 & 内部構造
-description: 高度な概念との内部構造について説明し Xamarin.Forms ます。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 410aadcb885ed66283eb306cb9aa4c5e764fa8ec
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139036"
+タイトル: " Xamarin.Forms 高度な概念 & 内部" 説明: "高度な概念と内部の詳細について説明 Xamarin.Forms します。"
+ms. 製品: xamarin ms. assetid: 2273a31c-4022-42ba-befe-0d23ce2ff3b5: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 03/20/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-advanced-concepts--internals"></a>Xamarin.Forms詳細な概念 & 内部構造
 
 _高度な概念との内部構造について説明し Xamarin.Forms ます。_
@@ -37,6 +23,6 @@ Xamarin.Forms試験的なフラグを使用すると、エンジニアリング�
 
 高速レンダラーについて説明します。これにより、結果とし Xamarin.Forms て得られるネイティブコントロール階層をフラット化することで、Android でのコントロールのインフレとレンダリングのコストを削減できます。
 
-## <a name="source-link"></a>[ソース リンク](sourcelink.md)
+## <a name="source-link"></a>[ソースリンク](sourcelink.md)
 
 アプリケーションをソースコードにデバッグする方法について説明 Xamarin.Forms します。

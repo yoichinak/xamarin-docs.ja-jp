@@ -1,22 +1,8 @@
 ---
-title: ''
-description: この記事では、アプリケーションから ASMX SOAP サービスを使用する方法について説明し Xamarin.Forms ます。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 1f7a0d04d1e7b6abc9931c05c0e46ef49f8ba09c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138464"
+title: "ASP.NET Web サービス (ASMX) の使用" の説明: "この記事では、アプリケーションから ASMX SOAP サービスを使用する方法を示します Xamarin.Forms 。"
+ms. 製品: xamarin ms. assetid: D5533964-5528-4D35-9C2B-FAFB632472AC: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 04/02/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="consume-an-aspnet-web-service-asmx"></a>ASP.NET Web サービス (ASMX) を使用する
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
@@ -44,7 +30,7 @@ SOAP は、HTTP、SMTP、TCP、UDP など、多くのトランスポートプロ
 
 ASMX サービスは、次の操作を提供します。
 
-|Operation|説明|パラメーター|
+|操作|説明|パラメーター|
 |--- |--- |--- |
 |GetTodoItems|To Do アイテムのリストの取得|
 |CreateTodoItem|新しい to do 項目を作成する|XML シリアル化 TodoItem|

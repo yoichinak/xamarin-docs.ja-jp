@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 4eea7d500876793357113453493fa2fe2ede6cc4
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140017"
+title: "弧を描画する3つの方法" 説明: "この記事では、SkiaSharp を使用して、3つの異なる方法で円弧を定義する方法について説明し、サンプルコードを使用してこれを示します。
+ms. 製品: xamarin ms テクノロジ: skiasharp: F1DA55E4-0182-4388-863C-5C340213BF3C author: davidbritch dabritch: ms. date: 05/10/2017 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
 ---
+
 # <a name="three-ways-to-draw-an-arc"></a>円弧を描画する 3 つの方法
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -315,7 +301,7 @@ public class InteractivePage : ContentPage
 }
 ```
 
-`TangentArcPage` クラスは `InteractivePage` から派生したものです。 [**TangentArcPage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml.cs)ファイル内のコンストラクターは、配列のインスタンス化と初期化 `touchPoints` 、および `baseCanvasView` `InteractivePage` `SKCanvasView` [**TangentArcPage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml)ファイルでインスタンス化されたオブジェクトへの (in) の設定を行います。
+`TangentArcPage` クラスは、`InteractivePage` から派生したものです。 [**TangentArcPage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml.cs)ファイル内のコンストラクターは、配列のインスタンス化と初期化 `touchPoints` 、および `baseCanvasView` `InteractivePage` `SKCanvasView` [**TangentArcPage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TangentArcPage.xaml)ファイルでインスタンス化されたオブジェクトへの (in) の設定を行います。
 
 ```csharp
 public partial class TangentArcPage : InteractivePage

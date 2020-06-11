@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms試験的なフラグ
-description: Xamarin.Forms試験的なフラグを使用すると、エンジニアリングチームは新しい機能をより迅速に出荷できますが、安定したリリースに移行する前に機能 Api を変更することもできます。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b548323330ccdce6fb01e83c7e8ab7c2d5307125
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139062"
+title: " Xamarin.Forms 実験的なフラグ" 説明: " Xamarin.Forms 実験的なフラグを使用すると、エンジニアリングチームは、安定したリリースに移行する前に機能 api を変更することができますが、ユーザーに新しい機能をより迅速に配布できます。"
+ms. 製品: xamarin ms. assetid: AF4BDD27-89F6-48AE-A8CD-D7E4DDA2CCA2: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 04/14/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-experimental-flags"></a>Xamarin.Forms試験的なフラグ
 
 新しい Xamarin.Forms 機能が実装されると、実験用フラグの背後に配置されることがあります。 これにより、エンジニアリングチームは新しい機能をより迅速に提供できるようになりますが、安定したリリースに移行する前に機能 Api を変更することもできます。 その後、機能が安定したリリースに移行すると、実験的なフラグが削除されます。

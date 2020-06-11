@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: f5738f376e2a814ef1af455178c2e68135184402
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140167"
+title: "タッチ操作" の説明: "この記事では、マトリックス変換を使用してタッチドラッグ、ピンチ、および回転を実装する方法について説明し、サンプルコードを使用してこれを示します。"
+ms. 製品: xamarin ms テクノロジ: skiasharp: A0B8DD2D-7392-4EC5-BFB0-6209407AD650 author: davidbritch dabritch: ms. date: 09/14/2018 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
 ---
+
 # <a name="touch-manipulations"></a>タッチ操作
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

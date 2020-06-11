@@ -1,22 +1,8 @@
 ---
-title: ''
-description: この記事では、変換変換を使用してアプリケーションで SkiaSharp グラフィックスをシフトする方法につい Xamarin.Forms て説明し、サンプルコードを使用してこれを示します。
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 0eb3b4a6b37d59363984c9248cc39de91a6819e0
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138256"
+title: "変換変換" の説明: "この記事では、変換変換を使用してアプリケーションで SkiaSharp グラフィックスをシフトする方法につい Xamarin.Forms て説明し、サンプルコードを使用してこれを示します。"
+ms. 製品: xamarin ms テクノロジ: skiasharp: BD28ADA1-49F9-44E2-A548-46024A29882F author: davidbritch dabritch: ms. date: 03/10/2017 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
 ---
+
 # <a name="the-translate-transform"></a>平行移動変換
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -215,7 +201,7 @@ public class HendecagramArrayPage : ContentPage
 
 ```
 
-結果は次のとおりです。
+結果は次のようになります。
 
 [![](translate-images/hendecagramarray-small.png "Triple screenshot of the Hendecagram Array page")](translate-images/hendecagramarray-large.png#lightbox "Triple screenshot of the Hendecagram Array page")
 

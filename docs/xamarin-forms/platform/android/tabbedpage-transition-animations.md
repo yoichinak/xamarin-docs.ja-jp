@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d3ae03ec6cbc3469422e6a2d57f186254e87f40c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140019"
+title: "Android での TabbedPage Page Transition アニメーション" の説明: "プラットフォーム固有では、特定のプラットフォームでのみ使用できる機能を使用できます。カスタムレンダラーや特殊効果を実装する必要はありません。 この記事では、TabbedPage 内のページ間を移動するときに、切り替え効果のアニメーションを無効にする Android プラットフォーム固有のを使用する方法について説明します。
+ms 4137 2DB4EA6D: xamarin ms. assetid: BAB2: B20A457B1CA3: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 07/10/2018 no loc: [ Xamarin.Forms ,]」を実行してください。 Xamarin.Essentials
 ---
+
 # <a name="tabbedpage-page-transition-animations-on-android"></a>Android での TabbedPage ページ切り替えアニメーション
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

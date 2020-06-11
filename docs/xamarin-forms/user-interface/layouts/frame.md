@@ -1,21 +1,6 @@
 ---
-title: Xamarin.Formsフレーム
-description: Xamarin.FormsFrame クラスは、色、影、およびその他のオプションを使用して構成できる境界線を持つビューまたはレイアウトをラップするために使用されるレイアウトです。
-ms.prod: ''
-ms.assetId: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 42192111befbefda7e0f62b7691a8392c2828818
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137190"
+title: " Xamarin.Forms frame" description: " Xamarin.Forms frame クラスは、色、影、およびその他のオプションを使用して構成できる境界線を持つビューまたはレイアウトをラップするために使用されるレイアウトです。"
+ms. 製品: xamarin ms. assetId: 4E074714-0928-41C8-A468-B60E23236A8C: xamarin-forms author: profexorgeek ms. author: jusjohns ms. date: 08/06/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
 # <a name="xamarinforms-frame"></a>Xamarin.Formsフレーム
 
@@ -189,7 +174,7 @@ Frame circleImageFrame = new Frame
 };
 ```
 
-各プラットフォームプロジェクトには、**アウトドア .jpg**イメージを追加する必要があります。また、プラットフォームによってどのように実現されるかが異なります。 詳細については、「 [」の Xamarin.Forms 「画像](~/xamarin-forms/user-interface/images.md)」を参照してください。
+**outdoors.jpg**イメージは、各プラットフォームプロジェクトに追加する必要があります。また、プラットフォームによってどのように実現されるかが異なります。 詳細については、「 [」の Xamarin.Forms 「画像](~/xamarin-forms/user-interface/images.md)」を参照してください。
 
 > [!NOTE]
 > 角を丸くすると、プラットフォームによって動作が若干異なります。 `Image`オブジェクトのは、 `Margin` イメージの幅と親フレームの幅の差の半分である必要があります。また、オブジェクト内でイメージを均等に中央揃えにするには、負の値にする必要があり `Frame` ます。 ただし、要求された幅と高さは保証されないため、 `Margin` 、、 `HeightRequest` およびの各プロパティは、イメージの `WidthRequest` サイズやその他のレイアウトの選択肢に基づいて変更する必要があります。

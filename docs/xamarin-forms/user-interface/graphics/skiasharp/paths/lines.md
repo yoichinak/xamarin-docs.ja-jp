@@ -1,22 +1,8 @@
 ---
-title: ''
-description: この記事では、SkiaSharp を使用して、アプリケーションでさまざまなストロークキャップを持つ線を描画する方法について説明 Xamarin.Forms し、サンプルコードを使用してこれを示します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 87b97ad913e08c42d16bbf055f168c07b9bd60e8
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137208"
+title: "線とストロークのキャップ" 説明: "この記事では、SkiaSharp を使用して、アプリケーションで異なるストロークキャップを持つ線を描画する方法について説明 Xamarin.Forms し、サンプルコードを使用してこれを示します。"
+ms. 製品: xamarin ms. assetid: 1F854DDD-5D1B-4DE4-BD2D-584439429FDB: xamarin-skiasharp author: davidbritch ms. author: dabritch ms. date: 03/10/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="lines-and-stroke-caps"></a>線とストローク キャップ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

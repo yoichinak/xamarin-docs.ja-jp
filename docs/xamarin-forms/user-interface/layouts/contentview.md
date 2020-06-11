@@ -1,23 +1,9 @@
 ---
-title: Xamarin.FormsContentView
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 46d2abf895ffe31bd1dc1c22caf36440c54b331c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130118"
+title: " Xamarin.Forms contentview" description: "この記事では、contentview クラスを使用して、例 CardView のようなカスタムコントロールを作成する方法について説明します。"
+ms. 製品: xamarin ms. assetid: 638402E7-CA44-456B-863B-791F6B6B561D: xamarin-forms author: profexorgeek ms. author: jusjohns ms. date: 08/14/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
-# <a name="xamarinforms-contentview"></a>Xamarin.FormsContentView
+
+# <a name="xamarinforms-contentview"></a>Xamarin.Forms ContentView
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/)
 
@@ -121,7 +107,7 @@ public string CardTitle
 
 要素は、 `ContentView` `x:Name` プロパティをこのに設定します。**これ**を使用して、インスタンスにバインドされたオブジェクトにアクセスでき `CardView` ます。 プロパティのバインドセットの要素は、バインドされたオブジェクトで定義されている値に設定されます。
 
-データバインディングの詳細については、「 [ Xamarin.Forms データバインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)」を参照してください。
+データ バインディングの詳細については、「[Xamarin.Forms のデータ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)」を参照してください。
 
 > [!NOTE]
 > プロパティは、 `FallbackValue` バインディングがの場合に既定値を提供し `null` ます。 これにより、Visual Studio の[XAML プレビューアー](~/xamarin-forms/xaml/xaml-previewer/index.md)でコントロールを表示することもでき `CardView` ます。
@@ -207,11 +193,11 @@ CardView card = new CardView
 
 [![CardView ControlTemplate スクリーンショット](contentview-images/cardview-controltemplates-cropped.png)](contentview-images/cardview-controltemplates.png#lightbox)
 
-コントロールテンプレートの詳細については、「 [ Xamarin.Forms コントロールテンプレート](~/xamarin-forms/app-fundamentals/templates/control-template.md)」を参照してください。
+コントロール テンプレートの詳細については、「[Xamarin.Forms のコントロール テンプレート](~/xamarin-forms/app-fundamentals/templates/control-template.md)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 
 * [ContentView サンプルアプリケーション](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/)
-* [Xamarin.Formsデータバインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)
+* [Xamarin.Forms のデータ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 * [バインド](~/xamarin-forms/xaml/bindable-properties.md)可能なプロパティ。
-* [Xamarin.Formsコントロールテンプレート](~/xamarin-forms/app-fundamentals/templates/control-template.md)
+* [Xamarin.Forms のコントロール テンプレート](~/xamarin-forms/app-fundamentals/templates/control-template.md)

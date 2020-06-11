@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Formsおよび Azure サービス
-description: この記事では、Azure Notification Hubs を使用して、クロスプラットフォームのプッシュ通知をアプリケーションに送信する方法について説明し Xamarin.Forms ます。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a63b6329b9e8f4bcdc18a973b538e1e2e44bca67
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130976"
+title: " Xamarin.Forms および Azure サービス" 説明: "この記事では、azure Notification Hubs を使用して、アプリケーションにクロスプラットフォームのプッシュ通知を送信する方法について説明 Xamarin.Forms します。"
+ms. 製品: xamarin ms. assetid: 07C60A42-A9E1-4DD0-8874-BD9487DC3EA2: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 06/28/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-and-azure-services"></a>Xamarin.Formsおよび Azure サービス
 
 ## <a name="consume-an-azure-cosmos-db-document-database-in-xamarinformsazure-cosmosdbmd"></a>[で Azure Cosmos DB ドキュメントデータベースを使用するXamarin.Forms](azure-cosmosdb.md)

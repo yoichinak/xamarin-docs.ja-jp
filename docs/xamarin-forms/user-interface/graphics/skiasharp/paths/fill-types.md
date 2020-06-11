@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: c8c54f3d3815e418d2f71960dc7733711cb40ae2
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139049"
+title: "パスの塗りつぶしの種類" 説明: "この記事では、SkiaSharp パスの塗りつぶしの種類で可能なさまざまな効果について説明し、サンプルコードを使用してこれを示します。"
+ms. 製品: xamarin ms. assetid: 57103A7A-49A2-46AE-894C-7C2664682644: xamarin-skiasharp author: davidbritch ms. author: dabritch ms. date: 03/10/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="the-path-fill-types"></a>パスの塗りつぶしの種類
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -29,7 +15,7 @@ _SkiaSharp path fill 型で可能なさまざまな効果を発見する_
 
 これについては、簡単に制御できます。 入力アルゴリズムは、 [`SKFillType`](xref:SkiaSharp.SKPath.FillType) `SKPath` 列挙体のメンバーに設定したのプロパティによって管理され [`SKPathFillType`](xref:SkiaSharp.SKPathFillType) ます。
 
-- `Winding`、既定値
+- `Winding` (既定値)
 - `EvenOdd`
 - `InverseWinding`
 - `InverseEvenOdd`

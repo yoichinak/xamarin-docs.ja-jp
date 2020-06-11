@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 91a639b2d3c2f6a8437a09a70808dc6d793ba76b
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84131756"
+title: "非アフィン変換" の説明: "この記事では、変換行列の3番目の列を使用してパースペクティブとテーパ効果を作成する方法について説明し、サンプルコードを使用してこれを示します。"
+ms. 製品: xamarin ms テクノロジ: skiasharp: 785F4D13-7430-492E-B24E-3B45C560E9F1 author: davidbritch dabritch: ms. date: 04/14/2017 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
 ---
+
 # <a name="non-affine-transforms"></a>非アフィン変換
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -254,7 +240,7 @@ z ' = Persp0 · x + Persp1 · y + 1
 - tapers 方法を示す別の列挙体
 - tapering の範囲。
 
-コードは次のようになります。
+コードは次のとおりです。
 
 ```csharp
 enum TaperSide { Left, Top, Right, Bottom }

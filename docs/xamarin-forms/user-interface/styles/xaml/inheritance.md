@@ -1,22 +1,8 @@
 ---
-title: スタイルの継承Xamarin.Forms
-description: スタイルを他のスタイルから継承して、重複を減らし、再利用できるようにすることができます。 この記事では、アプリケーションでスタイルの継承を実行する方法について説明 Xamarin.Forms します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 80cc419ae098f4a0cbbd782785c0ec5ba03fa703
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138958"
+title: "スタイルの継承でのスタイルの継承 Xamarin.Forms " 説明: "スタイルを他のスタイルから継承して、重複を減らし、再利用できるようにすることができます。 この記事では、アプリケーションでスタイルの継承を実行する方法について説明 Xamarin.Forms します。 "
+ms. 製品: xamarin ms. assetid: 67A3A39C-8CC0-446D-8162-FFA73582D3B8: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 02/17/2016 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="style-inheritance-in-xamarinforms"></a>スタイルの継承Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
@@ -164,5 +150,5 @@ public class StyleInheritancePageCS : ContentPage
 - [基本スタイル (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 - [スタイルの使用 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
-- [スタイル](xref:Xamarin.Forms.Style)
+- [Style](xref:Xamarin.Forms.Style)
 - [Setter](xref:Xamarin.Forms.Setter)

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsCarouselView の概要
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 2e67acd0188e1147481005502ad9ccdaada645d9
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140271"
+title: " Xamarin.Forms CarouselView の概要" 説明: "CarouselView は、スクロール可能なレイアウトでデータを表示するためのビューです。ユーザーは、スワイプして項目のコレクション内を移動できます。"
+2a96e4bd: xamarin ms. assetid: c29b-4658-bb4c-ab00872b0f8f: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 10/08/2019 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
 ---
+
 # <a name="xamarinforms-carouselview-introduction"></a>Xamarin.FormsCarouselView の概要
 
 ![](~/media/shared/preview.png "This API is currently pre-release")

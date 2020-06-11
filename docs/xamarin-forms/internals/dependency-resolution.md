@@ -1,12 +1,9 @@
 ---
-title: ' 依存関係の解決 Xamarin.Forms 方法 ' description: ' この記事では、依存関係の解決方法をに挿入する方法について説明します。この記事で Xamarin.Forms は、アプリケーションの依存関係の挿入コンテナーが、カスタムレンダラー、効果、および dependencyservice 実装の作成と有効期間を制御できるようにする方法について説明します。
-ms. 製品: ms. assetid: ms. テクノロジ: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title: "依存関係の解決 Xamarin.Forms 方法" 説明: "この記事では、依存関係の解決方法をに挿入する方法について説明します。この記事で Xamarin.Forms は、アプリケーションの依存関係の挿入コンテナーが、カスタムレンダラー、効果、および dependencyservice 実装の作成と有効期間を制御できるようにする方法について説明します。
+ms. 製品: xamarin ms. assetid: 491b87-14cb4adc87: davidbritch: xamarin-forms author: ms. author: dabritch ms. date: 07/27/2018 no loc: [ Xamarin.Forms ,]」を実行してください。日付: Xamarin.Essentials
 ---
 
-# <a name="dependency-resolution-in-xamarinforms"></a>依存関係の解決Xamarin.Forms
+# <a name="dependency-resolution-in-xamarinforms"></a>Xamarin.Forms での依存関係の解決
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)
 

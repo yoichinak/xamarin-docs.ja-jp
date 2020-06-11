@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 4f20a0586aee998c10372c60c96577321e697aad
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137268"
+title: "XAML プレビューアーでカスタムコントロールを表示する" 説明: "この記事では、XAML プレビューアーでカスタムコントロールを表示する方法について説明します。"
+ms. 製品: xamarin ms. assetid: 4D195372-CB8F8-48F4-b63d7845e44-261f7 ms. テクノロジ: xamarin-forms author: maddyleger1 ms. author 03/27/2019:-------[ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="render-custom-controls-in-the-xaml-previewer"></a>XAML プレビューアーでカスタムコントロールを表示する
 
 _カスタムコントロールは、XAML プレビューアーで期待どおりに動作しないことがあります。カスタムコントロールをプレビューする際の制限事項については、この記事のガイダンスを参考にしてください。_

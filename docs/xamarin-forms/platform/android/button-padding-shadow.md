@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 5554341493b52d20c946a4bcfe2d1230e4a02759
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135565"
+title: 「Android でのボタンの余白とシャドウ」の説明: 「プラットフォームの詳細」では、カスタムレンダラーや特殊効果を実装しなくても、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、android のボタンの既定の埋め込み値とシャドウ値を使用する Android プラットフォーム固有のを使用する方法について説明します。
+BD2B60D1: xamarin ms. assetid: DE6E-4691-A777-8EC5F560A4E9: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 07/10/2018 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
 ---
+
 # <a name="button-padding-and-shadows-on-android"></a>Android でのボタンの余白と影
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

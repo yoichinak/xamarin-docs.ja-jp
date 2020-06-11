@@ -103,7 +103,7 @@ browser.Source = htmlSource;
 
 ### <a name="local-html-content"></a>ローカル HTML コンテンツ
 
-WebView では、アプリ内に埋め込まれている HTML、CSS、JavaScript のコンテンツを表示できます。 例:
+WebView では、アプリ内に埋め込まれている HTML、CSS、JavaScript のコンテンツを表示できます。 次に例を示します。
 
 ```html
 <html>
@@ -249,7 +249,7 @@ namespace WorkingWithWebview.UWP
 }
 ```
 
-## <a name="navigation"></a>ナビゲーション
+## <a name="navigation"></a>［ナビゲーション］
 
 WebView では、使用できるようにするいくつかのメソッドとプロパティによるナビゲーションがサポートされています。
 
@@ -315,7 +315,7 @@ public partial class InAppBrowserXaml : ContentPage
 }
 ```
 
-これだけです。
+これで完了です。
 
 ![WebView ナビゲーションボタン](webview-images/in-app-browser.png)
 
@@ -337,11 +337,11 @@ WebView は、状態の変化に対応するために次のイベントを発生
 [`WebNavigatedEventArgs`](xref:Xamarin.Forms.WebNavigatedEventArgs)イベントに付随するオブジェクトに [`Navigated`](xref:Xamarin.Forms.WebView.Navigated) は、次の4つのプロパティがあります。
 
 - `NavigationEvent`–発生したナビゲーションイベント。
-- `Result`–列挙メンバーを使用したナビゲーションの結果について説明し [`WebNavigationResult`](xref:Xamarin.Forms.WebNavigationResult) ます。 有効な値は、`Cancel`、`Failure`、`Success`、`Timeout` です。
+- `Result`–列挙メンバーを使用したナビゲーションの結果について説明し [`WebNavigationResult`](xref:Xamarin.Forms.WebNavigationResult) ます。 有効な値は `Cancel`、`Failure`、`Success`、および `Timeout` です。
 - `Source`–ナビゲーションを実行した要素。
 - `Url`: ナビゲーション先。
 
-読み込みに長い時間がかかる web ページを使用することが予想される場合は、イベントとイベントを使用して [`Navigating`](xref:Xamarin.Forms.WebView.Navigating) [`Navigated`](xref:Xamarin.Forms.WebView.Navigated) 状態インジケーターを実装することを検討してください。 例:
+読み込みに長い時間がかかる web ページを使用することが予想される場合は、イベントとイベントを使用して [`Navigating`](xref:Xamarin.Forms.WebView.Navigating) [`Navigated`](xref:Xamarin.Forms.WebView.Navigated) 状態インジケーターを実装することを検討してください。 次に例を示します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

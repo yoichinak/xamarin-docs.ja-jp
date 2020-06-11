@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 40af5aeaa51025dae70113faa6f7ff83edf43c73
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138026"
+title: "レイアウトの圧縮" の説明: "レイアウトの圧縮により、ページレンダリングのパフォーマンスを向上させるために、指定したレイアウトがビジュアルツリーから削除されます。 この記事では、レイアウト圧縮を有効にする方法と、それによってもたらされる利点について説明します。 "
+ms. 製品: xamarin ms. assetid: da9e1b26-9d31-4762-94c3-4039f306b7f2: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 12/13/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="layout-compression"></a>レイアウト圧縮
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutcompression)
@@ -117,7 +103,7 @@ Android では、次のように、入れ子になったビュー階層で14個�
 
 サンプルアプリケーションには、実際のアプリケーションから抽出されたページが含まれています。 レイアウトの圧縮と高速レンダラーを使用しない場合、ページは Android で130ビューの入れ子になったビュー階層を生成します。 適切なレイアウトクラスで高速レンダラーとレイアウト圧縮を有効にすると、入れ子になったビュー階層が70ビューに減少し、46% が減少します。
 
-## <a name="summary"></a>[概要]
+## <a name="summary"></a>まとめ
 
 レイアウトの圧縮では、ページレンダリングのパフォーマンスを向上させるために、指定したレイアウトがビジュアルツリーから削除されます。 この操作によって得られるパフォーマンスのメリットは、ページの複雑さ、使用しているオペレーティング システムのバージョン、このアプリケーションが実行されているデバイスによって異なります。 ただし、パフォーマンスが最も大きく向上するのは、古いデバイスの場合です。
 

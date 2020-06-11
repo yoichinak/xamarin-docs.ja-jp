@@ -1,22 +1,8 @@
 ---
-title: ''
-description: この記事では、SkiaSharp を使用してアプリケーションに線とグラフィックスパスを描画する方法について説明し、サンプルコードを使用してその方法を Xamarin.Forms 示します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 97c7305e59a023e65535186bbbe39a9c2b7d4c26
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138997"
+title: "SkiaSharp Lines and Paths" description: "この記事では、SkiaSharp を使用してアプリケーションで線とグラフィックスパスを描画する方法について説明 Xamarin.Forms し、サンプルコードを使用してこれを示します。"
+ms. 製品: xamarin ms. assetid: 316A15FE-383D-4D06-8641-BAC7EE7474CA: xamarin-skiasharp author: davidbritch ms. author: dabritch ms. date: 03/10/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="skiasharp-lines-and-paths"></a>SkiaSharp の線とパス
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

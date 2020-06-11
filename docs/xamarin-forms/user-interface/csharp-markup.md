@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsC# マークアップ
-description: C# マークアップは、c# で宣言型のユーザーインターフェイスを構築するプロセスを簡略化するための、fluent ヘルパーメソッドとクラスのオプトインセットです Xamarin.Forms 。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 939727d3dd8d419cdc020d33d3e7241dcedb8158
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137749"
+title: "C# Xamarin.Forms マークアップ" 説明: "C# マークアップは、c# で宣言型のユーザーインターフェイスを構築するプロセスを簡略化するための、fluent ヘルパーメソッドとクラスのオプトインセットです Xamarin.Forms 。"
+ms. 製品: xamarin ms. assetid: D41B9DCD-5C34-4C2F-B177-FC082AB2E9E0: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 05/15/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-c-markup"></a>Xamarin.FormsC# マークアップ
 
 ![](~/media/shared/preview.png "This API is currently pre-release")

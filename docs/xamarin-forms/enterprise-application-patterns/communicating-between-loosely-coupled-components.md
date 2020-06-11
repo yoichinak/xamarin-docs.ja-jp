@@ -1,22 +1,7 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: c35cd6e30e7843cda0431581025aa7440a21cc29
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140050"
+title: "疎結合されたコンポーネント間の通信" 説明: "この章では、eShopOnContainers モバイルアプリが発行/サブスクライブパターンを実装する方法について説明します。これにより、オブジェクトと型参照によるリンクが不便なコンポーネント間でメッセージベースの通信を行うことができます。製品: xamarin ms. assetid: 1133-8a91-48 d2-2 ~ 15 kb: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 08/07/2017 no loc: [,] という形式の日付を指定します。 Xamarin.Forms Xamarin.Essentials
 ---
+
 # <a name="communicating-between-loosely-coupled-components"></a>疎結合コンポーネント間の通信
 
 発行/サブスクライブ パターンは、パブリッシャーがサブスクライバーと呼ばれる受信者を知らずに、メッセージを送信するメッセージング パターンです。 同様に、サブスクライバーは、パブリッシャーを知らずに特定のメッセージをリッスンします。
@@ -25,17 +10,17 @@ ms.locfileid: "84140050"
 
 ## <a name="introduction-to-messagingcenter"></a>MessagingCenter の概要
 
-クラスは、 Xamarin.Forms [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) パブリッシュ/サブスクライブパターンを実装します。これにより、オブジェクトと型の参照によるリンクが不便なコンポーネント間でメッセージベースの通信を行うことができます。 このメカニズムにより、パブリッシャーとサブスクライバーは相互に参照がなくても通信できるようになり、コンポーネント間の依存関係を軽減しながら、コンポーネントを個別に開発およびテストすることができます。
+Xamarin.Forms の [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) クラスでは、発行/サブスクライブ パターンが実装され、オブジェクトと型の参照によってリンクしにくいコンポーネント間で、メッセージ ベースの通信を行うことができます。 このメカニズムにより、パブリッシャーとサブスクライバーは相互に参照がなくても通信できるようになり、コンポーネント間の依存関係を軽減しながら、コンポーネントを個別に開発およびテストすることができます。
 
-クラスは、 [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) マルチキャストパブリッシュ/サブスクライブ機能を提供します。 つまり、1つのメッセージをパブリッシュする複数のパブリッシャーが存在し、同じメッセージをリッスンしている複数のサブスクライバーが存在する可能性があります。 図4-1 は、この関係を示しています。
+[`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) クラスでは、マルチキャストの発行/サブスクライブ機能を提供します。 つまり、1つのメッセージをパブリッシュする複数のパブリッシャーが存在し、同じメッセージをリッスンしている複数のサブスクライバーが存在する可能性があります。 図4-1 は、この関係を示しています。
 
 ![](communicating-between-loosely-coupled-components-images/messagingcenter.png "Multicast publish-subscribe functionality")
 
 **図 4-1:** マルチキャスト発行/サブスクライブ機能
 
-パブリッシャーはメソッドを使用してメッセージを送信しますが、 [`MessagingCenter.Send`](xref:Xamarin.Forms.MessagingCenter.Send*) サブスクライバーはメソッドを使用してメッセージをリッスンし [`MessagingCenter.Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*) ます。 さらに、サブスクライバーは、必要に応じてメソッドを使用して、メッセージサブスクリプションのサブスクリプションを解除することもでき [`MessagingCenter.Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) ます。
+パブリッシャーは [`MessagingCenter.Send`](xref:Xamarin.Forms.MessagingCenter.Send*) メソッドを使用してメッセージを送信しますが、サブスクライバーは [`MessagingCenter.Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*) メソッドを使用してメッセージをリッスンします。 さらに、サブスクライバーは、必要に応じて [`MessagingCenter.Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) メソッドを使用して、メッセージ サブスクリプションを解除することもできます。
 
-内部的には、 [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) クラスは弱い参照を使用します。 つまり、オブジェクトはアクティブに保持されず、ガベージ コレクションの実行が可能になります。 そのため、クラスでメッセージを受信する必要がなくなった場合にのみ、メッセージのサブスクリプションを解除する必要があります。
+内部的には、[`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) クラスでは弱参照が使用されます。 つまり、オブジェクトはアクティブに保持されず、ガベージ コレクションの実行が可能になります。 そのため、クラスでメッセージを受信する必要がなくなった場合にのみ、メッセージのサブスクリプションを解除する必要があります。
 
 EShopOnContainers モバイルアプリでは、クラスを使用して [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 疎結合コンポーネント間の通信を行います。 アプリでは、次の3つのメッセージを定義します。
 
@@ -75,7 +60,7 @@ public class MessengerKeys
 
 ## <a name="publishing-a-message"></a>メッセージの公開
 
-パブリッシャーは、オーバーロードの1つを使用してメッセージをサブスクライバーに通知 [`MessagingCenter.Send`](xref:Xamarin.Forms.MessagingCenter.Send*) します。 次のコード例は、メッセージを公開する方法を示してい `AddProduct` ます。
+パブリッシャーは、[`MessagingCenter.Send`](xref:Xamarin.Forms.MessagingCenter.Send*) オーバーロードの 1 つを使用してメッセージをサブスクライバーに通知します。 次のコード例は、メッセージを公開する方法を示してい `AddProduct` ます。
 
 ```csharp
 MessagingCenter.Send(this, MessengerKeys.AddProduct, catalogItem);
@@ -94,7 +79,7 @@ MessagingCenter.Send(this, MessengerKeys.AddProduct, catalogItem);
 
 ## <a name="subscribing-to-a-message"></a>メッセージのサブスクライブ
 
-サブスクライバーは、オーバーロードのいずれかを使用してメッセージを受信するように登録でき [`MessagingCenter.Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*) ます。 次のコード例は、eShopOnContainers モバイルアプリがメッセージをサブスクライブし、処理する方法を示してい `AddProduct` ます。
+サブスクライバーは、[`MessagingCenter.Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*) オーバーロードのいずれかを使用して、メッセージを受信するように登録できます。 次のコード例は、eShopOnContainers モバイルアプリがメッセージをサブスクライブし、処理する方法を示してい `AddProduct` ます。
 
 ```csharp
 MessagingCenter.Subscribe<CatalogViewModel, CatalogItem>(  
@@ -111,7 +96,7 @@ MessagingCenter.Subscribe<CatalogViewModel, CatalogItem>(
 > [!TIP]
 > 変更できないペイロードデータを使用することを検討してください。 複数のスレッドが受信したデータに同時にアクセスする可能性があるため、コールバックデリゲート内からペイロードデータを変更しないようにしてください。 このシナリオでは、同時実行エラーを回避するためにペイロードデータが不変である必要があります。
 
-サブスクライバーは、パブリッシュされたメッセージのすべてのインスタンスを処理する必要はありません。これは、メソッドで指定されたジェネリック型引数によって制御でき [`Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*) ます。 この例では、サブスクライバーは、 `AddProduct` `CatalogViewModel` ペイロードデータがインスタンスであるクラスから送信されたメッセージのみを受信し `CatalogItem` ます。
+サブスクライバーは、パブリッシュされたメッセージのすべてのインスタンスを処理する必要はなく、これは [`Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*) メソッドで指定されたジェネリック型引数によって制御できます。 この例では、サブスクライバーは、 `AddProduct` `CatalogViewModel` ペイロードデータがインスタンスであるクラスから送信されたメッセージのみを受信し `CatalogItem` ます。
 
 ## <a name="unsubscribing-from-a-message"></a>メッセージのサブスクライブを解除する
 
@@ -123,9 +108,9 @@ MessagingCenter.Unsubscribe<CatalogViewModel, CatalogItem>(this, MessengerKeys
 
 この例では、 [`Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) メソッドの構文は、メッセージを受信するためにサブスクライブするときに指定された型引数を反映して `AddProduct` います。
 
-## <a name="summary"></a>[概要]
+## <a name="summary"></a>まとめ
 
-クラスは、 Xamarin.Forms [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) パブリッシュ/サブスクライブパターンを実装します。これにより、オブジェクトと型の参照によるリンクが不便なコンポーネント間でメッセージベースの通信を行うことができます。 このメカニズムにより、パブリッシャーとサブスクライバーは相互に参照がなくても通信できるようになり、コンポーネント間の依存関係を軽減しながら、コンポーネントを個別に開発およびテストすることができます。
+Xamarin.Forms の [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) クラスでは、発行/サブスクライブ パターンが実装され、オブジェクトと型の参照によってリンクしにくいコンポーネント間で、メッセージ ベースの通信を行うことができます。 このメカニズムにより、パブリッシャーとサブスクライバーは相互に参照がなくても通信できるようになり、コンポーネント間の依存関係を軽減しながら、コンポーネントを個別に開発およびテストすることができます。
 
 ## <a name="related-links"></a>関連リンク
 

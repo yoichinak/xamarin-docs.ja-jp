@@ -1,22 +1,8 @@
 ---
-title: ''
-description: アプリケーションの構築に使用されるすべてのユーザーインターフェイス要素の説明 Xamarin.Forms 。 この記事では、アプリケーションのユーザーインターフェイスを構成するコントロールグループの一覧を示し Xamarin.Forms ます。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: e843f0e42f4f66a6ce4e60c2f5d8a233d19f1df6
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136397"
+title: "コントロールリファレンス" description: "アプリケーションの構築に使用されるすべてのユーザーインターフェイス要素の説明。 Xamarin.Forms この記事では、アプリケーションのユーザーインターフェイスを構成するコントロールグループの一覧を示し Xamarin.Forms ます。
+ms. 製品: xamarin ms. assetid: F2A02DEE-7137-42F4-9C0A-4E1CF75EA08F: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 08/08/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="controls-reference"></a>コントロールのリファレンス
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery/)
@@ -25,7 +11,7 @@ ms.locfileid: "84136397"
 
 アプリケーションのユーザーインターフェイスを作成するために使用される4つの主要なコントロールグループは次のとおりです Xamarin.Forms 。
 
-- [**ページ**](pages.md)
+- [**Pages**](pages.md)
 - [**レイアウト**](layouts.md)
 - [**ビュー**](views.md)
 - [**セル**](cells.md)

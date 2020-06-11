@@ -1,22 +1,8 @@
 ---
-title: ''
-description: この記事では、アプリケーションで SkiaSharp グラフィックスを表示するための変換につい Xamarin.Forms て説明し、サンプルコードを使用してこれを示します。
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: e20ea5d1d3f813b04a927601fbe1180ff39ed176
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140193"
+title: "SkiaSharp トランスフォーム" description: "この記事では、アプリケーションで SkiaSharp グラフィックスを表示するための変換につい Xamarin.Forms て説明し、サンプルコードを使用してこれを示します。"
+ms. 製品: xamarin ms テクノロジ: skiasharp: E9BE322E-ECB3-4395-AFE4-4474A0F25551 author: davidbritch dabritch: ms. date: 03/10/2017 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
 ---
+
 # <a name="skiasharp-transforms"></a>SkiaSharp の変換
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -40,9 +26,9 @@ SkiaSharp は、標準の 3-3 変換行列に基づいて、非アフィン変�
 
 Xamarin.Formsでは、SkiaSharp の変換に似た変換もサポートされています。 クラスは、 Xamarin.Forms [`VisualElement`](xref:Xamarin.Forms.VisualElement) 次の変換プロパティを定義します。
 
-- [`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX)そして[`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY)
+- [`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX) および [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY)
 - [`Scale`](xref:Xamarin.Forms.VisualElement.Scale)
-- [`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation)、 [`RotationX`](xref:Xamarin.Forms.VisualElement.RotationX) 、および[`RotationY`](xref:Xamarin.Forms.VisualElement.RotationY)
+- [`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation)、[`RotationX`](xref:Xamarin.Forms.VisualElement.RotationX)、および [`RotationY`](xref:Xamarin.Forms.VisualElement.RotationY)
 
 `RotationX`プロパティと `RotationY` プロパティは、準3d 効果を作成するパースペクティブ変換です。
 

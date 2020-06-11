@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 6ceac2d866e67af5cf3496fcf8c072ae83ecfe38
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140245"
+title: "パスの基本の SkiaSharp" 説明: "この記事では、接続された直線と曲線を組み合わせるための SkiaSharp SKPath オブジェクトについて説明し、サンプルコードを使用してこれを示します。
+ms. 製品: xamarin ms. assetid: A7EDA6C2-3921-4021-89F3-211551E430F1: xamarin-skiasharp author: davidbritch ms. author: dabritch ms. date: 03/10/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="path-basics-in-skiasharp"></a>SkiaSharp のパスの基礎
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsMenuItem
-description: ''
-ms.prod: ''
-ms.assetId: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: de8c6bff2c9dc72821692708f5852cd874c31ede
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139205"
+title: " Xamarin.Forms menuitem" description: "menuitem クラスは、ListView 項目のコンテキストメニューやシェルアプリケーションのポップアップメニューなどのメニューのメニュー項目を作成するために使用されます。
+ms. 製品: xamarin ms. assetId: 62655C21-605347 66dprofexorgeek f5 ms. テクノロジ: xamarin-forms author: ms. author: jusjohns ms. date: 08/01/2019 no loc: [,、していません。 Xamarin.Forms Xamarin.Essentials
 ---
+
 # <a name="xamarinforms-menuitem"></a>Xamarin.FormsMenuItem
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-menuitemdemos/)

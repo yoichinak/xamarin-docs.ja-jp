@@ -6,12 +6,12 @@ ms.assetid: 72627B90-586A-02B6-E231-F7CE015A1B97
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 4012b648bd451907bdb91221aba13df5ed3d34e3
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 06a3197cfcd3b49538cfa5fa97e40a9f50c7a244
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571026"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84655105"
 ---
 # <a name="introduction-to-web-services"></a>Web サービスの概要
 
@@ -190,7 +190,7 @@ RESTful web サービスは通常、JSON メッセージを使用して、クラ
 
 <a name="Using_System.JSON"></a>
 
-### <a name="systemjson"></a>System.string
+### <a name="systemjson"></a>System.JS
 
 Xamarin プラットフォームには、すぐに使用できる JSON のサポートが付属しています。 を使用する `JsonObject` と、次のコード例に示すように結果を取得できます。
 
@@ -301,7 +301,7 @@ file:///Users/myUserName/projects/MyProjectName/service.wsdl
 
 #### <a name="manually-adding-a-proxy-to-a-project"></a>手動によるプロジェクトへのプロキシの追加
 
-互換性のあるツールを使用して生成された既存のプロキシがある場合は、プロジェクトの一部としてこの出力を含めることができます。 Visual Studio for Mac で、[**ファイルの追加...** ] を使用します。 プロキシを追加するメニューオプション。 さらに、[**参照の追加...** ] を使用して明示的に参照*する必要があります*。 ] ダイアログで、ユーザー アカウントを追加します。
+互換性のあるツールを使用して生成された既存のプロキシがある場合は、プロジェクトの一部としてこの出力を含めることができます。 Visual Studio for Mac で、[**ファイルの追加...** ] を使用します。 プロキシを追加するメニューオプション。 さらに、[**参照の追加**] を使用して明示的に参照する*System.Web.Services.dll*が必要です。 ] ダイアログで、ユーザー アカウントを追加します。
 
 ### <a name="consuming-the-proxy"></a>プロキシを使用する
 
@@ -352,7 +352,7 @@ ASP.NET ウェブサービス (ASMX) と WCF には違いがありますが、WC
 
 WCF サービスを使用するために*プロキシ*を生成する必要があります。これにより、アプリケーションはサービスに接続できるようになります。 プロキシは、メソッドと関連付けられたサービス構成を定義するサービスメタデータを使用することによって構築されます。 このメタデータは、web サービスによって生成される Web サービス記述言語 (WSDL) ドキュメントの形式で公開されます。 プロキシを作成するには、Visual Studio 2017 の Microsoft WCF Web Service Reference Provider を使用して、Web サービスのサービス参照を .NET Standard ライブラリに追加します。
 
-Visual Studio 2017 の Microsoft WCF Web Service Reference Provider を使用してプロキシを作成する代わりに、ServiceModel メタデータユーティリティツール (svcutil.exe) を使用することもできます。 詳細については、「 [ServiceModel メタデータユーティリティツール (svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)」を参照してください。
+Visual Studio 2017 の Microsoft WCF Web Service Reference Provider を使用してプロキシを作成する代わりに、ServiceModel Metadata Utility Tool (svcutil.exe) を使用することもできます。 詳細については、「 [ServiceModel メタデータユーティリティツール (Svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)」を参照してください。
 
 <a name="Calling_a_WCF_Service_with_Client_Credential_Security"></a>
 
@@ -437,8 +437,6 @@ basicHttpBinding.Security.Transport.ClientCredentialType = HttpClientCredentialT
 client.ClientCredentials.UserName.UserName = @"foo";
 client.ClientCredentials.UserName.Password = @"mrsnuggles";
 ```
-
-上記の例では、"trampolines の型が不足しています" というメッセージが表示された場合は、ビルドに引数を追加することで、型0の trampolines の数を増やすことができ `–aot “trampolines={number of trampolines}”` ます。 詳細については、[トラブルシューティングのヒント](~/ios/troubleshooting/troubleshooting.md#trampolines)に関するページをご覧ください。
 
 HTTP 基本認証の詳細については、REST web サービスのコンテキストで、「 [RESTful Web サービスの認証](~/xamarin-forms/data-cloud/authentication/rest.md)」を参照してください。
 

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsCarouselView EmptyView
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a9f952da75e68e9ad39e0a15f57fbd0379233d7e
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137398"
+title: " Xamarin.Forms CarouselView EmptyView" description: "CarouselView では、表示可能なデータがない場合にユーザーにフィードバックを提供する空のビューを指定できます。 空のビューには、文字列、ビュー、または複数のビューを指定できます。
+ms. 製品: xamarin ms. assetid: C6DEE1A9-4889 63FC BC77-F401D5D7DF32: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 10/03/2019 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
 ---
+
 # <a name="xamarinforms-carouselview-emptyview"></a>Xamarin.FormsCarouselView EmptyView
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
@@ -35,7 +21,7 @@ ms.locfileid: "84137398"
 > [!NOTE]
 > プロパティは、 [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) 必要に応じて、対話型コンテンツを含むビューに設定できます。
 
-データテンプレートの詳細については、「 [ Xamarin.Forms データテンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)」を参照してください。
+データ テンプレートの詳細については、「[Xamarin.Forms のデータ テンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)」を参照してください。
 
 ## <a name="display-a-string-when-data-is-unavailable"></a>データが使用できないときに文字列を表示する
 
@@ -46,7 +32,7 @@ ms.locfileid: "84137398"
               EmptyView="No items to display." />
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView
@@ -90,7 +76,7 @@ carouselView.SetBinding(ItemsView.ItemsSourceProperty, "EmptyMonkeys");
 </StackLayout>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 SearchBar searchBar = new SearchBar { ... };
@@ -141,7 +127,7 @@ carouselView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 </StackLayout>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 SearchBar searchBar = new SearchBar { ... };
@@ -283,7 +269,7 @@ void ToggleEmptyView(bool isToggled)
 </ContentPage>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 SearchBar searchBar = new SearchBar { ... };
@@ -323,5 +309,5 @@ public class SearchTermDataTemplateSelector : DataTemplateSelector
 
 - [CarouselView (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 - [Xamarin.Formsデータテンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
-- [Xamarin.Formsリソースディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [Xamarin.Forms のリソース ディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [DataTemplateSelector を作成する Xamarin.Forms](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

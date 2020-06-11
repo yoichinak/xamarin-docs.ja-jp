@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms大きい
-description: このガイドでは ListView を紹介します。これを使用すると、 Xamarin.Forms 対話形式でデータを表示できます。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a1ff8dd5c8a8a4051cea8ce4b288c42bdbaa8d31
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139907"
+title: " Xamarin.Forms listview" 説明: "このガイドでは listview が導入されており、これを使用すると、 Xamarin.Forms 対話形式でデータを表示できます。"
+ms. 製品: xamarin ms. assetid: FEFDF7E0-720F-4BD1-863F-4477226AA695: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 09/04/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-listview"></a>Xamarin.Forms大きい
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistview)
@@ -24,7 +10,7 @@ ms.locfileid: "84139907"
 [`ListView`](xref:Xamarin.Forms.ListView)は、データのリストを表示するためのビューです。特に、スクロールが必要な長いリストです。
 
 > [!IMPORTANT]
-> [`CollectionView`](xref:Xamarin.Forms.CollectionView)は、さまざまなレイアウト仕様を使用してデータの一覧を表示するためのビューです。 これは、より柔軟でパフォーマンスの高い代替手段を提供することを目的として [`ListView`](xref:Xamarin.Forms.ListView) います。 詳細については、「 [ Xamarin.Forms CollectionView](~/xamarin-forms/user-interface/collectionview/index.md)」を参照してください。
+> [`CollectionView`](xref:Xamarin.Forms.CollectionView) は、さまざまなレイアウト仕様を使用してデータを一覧表示するためのビューです。 これは、より柔軟でパフォーマンスの高い代替手段を提供することを目的として [`ListView`](xref:Xamarin.Forms.ListView) います。 詳細は、「[Xamarin.Forms CollectionView](~/xamarin-forms/user-interface/collectionview/index.md)」を参照してください。
 
 ## <a name="use-cases"></a>ユース ケース
 
@@ -38,7 +24,7 @@ ms.locfileid: "84139907"
 
 インスタンスにデータをバインドする方法の詳細につい `ListView` ては、「 [ListView データソース](~/xamarin-forms/user-interface/listview/data-and-databinding.md)」を参照してください。
 
-## <a name="components"></a>Components
+## <a name="components"></a>コンポーネント
 
 `ListView`コントロールには、各プラットフォームのネイティブ機能を実行するために使用できる多数のコンポーネントがあります。 これらのコンポーネントは、次のセクションで定義されています。
 

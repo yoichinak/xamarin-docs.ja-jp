@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsCollectionView の選択
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 39f118d7073fc551923f891681c8c6cf6a4c5ddd
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137385"
+title: " Xamarin.Forms CollectionView selection" description: "既定では、CollectionView selection は無効になっています。 ただし、1つまたは複数の選択を有効にすることができます。 "
+ms. 製品: xamarin ms. assetid: 423D91C7-1E5847 5-9E80-58F11CDFD953 ms. テクノロジ: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 05/06/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-collectionview-selection"></a>Xamarin.FormsCollectionView の選択
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
@@ -29,7 +15,7 @@ ms.locfileid: "84137385"
 - [`SelectionChangedCommand`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommand)型の `ICommand` 。選択した項目が変更されたときに実行されます。
 - [`SelectionChangedCommandParameter`](xref:Xamarin.Forms.SelectableItemsView.SelectionChangedCommandParameter)型の `object` 。これは、に渡されるパラメーターです `SelectionChangedCommand` 。
 
-これらのプロパティはすべて、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトによって支持されています。つまり、プロパティがデータ バインディングの対象になる場合があります。
+これらのプロパティはすべて、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトを基盤としています。つまり、プロパティはデータ バインディングの対象にすることができます。
 
 既定で [`CollectionView`](xref:Xamarin.Forms.CollectionView) は、選択は無効になっています。 ただし、この動作は、 [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode) プロパティ値を列挙体のメンバーの1つに設定することによって変更でき [`SelectionMode`](xref:Xamarin.Forms.SelectionMode) ます。
 
@@ -58,7 +44,7 @@ ms.locfileid: "84137385"
 </CollectionView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -101,7 +87,7 @@ void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e
 </CollectionView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -142,7 +128,7 @@ void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e
 </CollectionView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -206,7 +192,7 @@ public class MonkeysViewModel : INotifyPropertyChanged
 </CollectionView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -310,7 +296,7 @@ namespace CollectionViewDemos.ViewModels
 
 [![IOS と Android でのカスタム単一選択の色を使用した CollectionView 縦の一覧のスクリーンショット](selection-images/single-selection-color.png "カスタムの単一選択の色を持つ CollectionView 縦の一覧")](selection-images/single-selection-color-large.png#lightbox "カスタムの単一選択の色を持つ CollectionView 縦の一覧")
 
-表示状態の詳細については、「 [ Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)」を参照してください。
+ビジュアルの状態の詳細については、「[Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)」をご覧ください。
 
 ## <a name="disable-selection"></a>選択の無効化
 
@@ -321,7 +307,7 @@ namespace CollectionViewDemos.ViewModels
                 SelectionMode="None" />
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -339,4 +325,4 @@ CollectionView collectionView = new CollectionView
 ## <a name="related-links"></a>関連リンク
 
 - [CollectionView (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
-- [Xamarin.Formsビジュアル状態マネージャー](~/xamarin-forms/user-interface/visual-state-manager.md)
+- [Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)

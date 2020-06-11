@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 01f4fcf1953658af44d2a8996913860a3b605abf
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138659"
+title: "SkiaSharp ビットマップをファイルに保存する" 説明: "ユーザーの写真ライブラリにビットマップを保存するために、SkiaSharp でサポートされているさまざまなファイル形式を調べます。"
+ms. 製品: xamarin ms テクノロジ: skiasharp: 2D696CB6-B31B-42BC-8D3B-11D63B1E7D9C author: davidbritch dabritch: ms. date: 07/10/2018 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
 ---
+
 # <a name="saving-skiasharp-bitmaps-to-files"></a>SkiaSharp ビットマップをファイルに保存しています
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -176,7 +162,7 @@ public class PhotoLibrary : IPhotoLibrary
 
 の呼び出しは `MediaScannerConnection.ScanFile` 厳密には必須ではありませんが、フォトライブラリをすぐに確認することでプログラムをテストする場合は、ライブラリギャラリービューを更新することで、非常に役立ちます。
 
-**Androidmanifest .xml**ファイルには、次のアクセス許可タグが必要です。
+**AndroidManifest.xml**ファイルには、次のアクセス許可タグが必要です。
 
 ```xml
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -456,17 +442,15 @@ public partial class SaveFileFormatsPage : ContentPage
 
 [**ファイル形式の保存**] ページに保存されるビットマップは、600ピクセルの四角形です。 1ピクセルあたり4バイトで、メモリ内の合計は144万バイトです。 次の表は、ファイル形式と品質のさまざまな組み合わせのファイルサイズを示しています。
 
-|フォーマット|[品質]|Size|
-|---
-タイトル: 説明: ms。製品: ms。テクノロジ: ms. assetid: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
----|---title: description: ms. 製品: ミリ秒: ms. assetid: author: ms. author: ms. date: no loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
----:|---:| |PNG |N/A |492K | |JPEG |0 |2.95 k | |     |50 |22.1 k | |     |100 |206K | |WebP |0 |2.71 k | |     |50 |11.9 k | |     |100 |101K |
+|フォーマット|[品質]|サイズ|
+|------|------:|---:|
+| PNG | 該当なし | 492K |
+| JPEG | 0 | 2.95 k |
+|      | 50 | 22.1 k |
+|      | 100 | 206K |
+| WebP | 0 | 2.71 k |
+|      | 50 | 11.9 k |
+|      | 100 | 101K |
 
 さまざまな品質設定を試して、結果を調べることができます。
 

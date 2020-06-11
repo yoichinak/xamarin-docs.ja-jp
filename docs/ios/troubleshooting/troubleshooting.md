@@ -7,13 +7,13 @@ ms.assetid: B50FE9BD-9E01-AE88-B178-10061E3986DA
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
-ms.date: 05/22/2018
-ms.openlocfilehash: 6368c3a4b128c06687b23b965b308ad6a788188b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.date: 06/10/2020
+ms.openlocfilehash: 1b3eb61bf08eb006890b8b879c560163bd131844
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574488"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84655084"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Xamarin のトラブルシューティングのヒント
 
@@ -48,7 +48,7 @@ Visual Studio for Mac と Visual Studio の Xamarin Designer for iOS の導入�
 - [`[Preserve]`](http://www.go-mono.com/docs/index.aspx?link=T:MonoTouch.Foundation.PreserveAttribute)メンバーに属性を追加します。  これにより、リンカーによる削除が防止されます。
 - [**Mtouch**](http://www.go-mono.com/docs/index.aspx?link=man:mtouch%281%29)を呼び出すときは、 **-nolink**オプションまたは **-linksdkonly**オプションを使用します。
   - **-nolink は、すべての**リンクを無効にします。
-  - **-linksdkonly**では、ユーザーが作成したアセンブリ (つまり、アプリプロジェクト) 内のすべての種類を**保持しながら**、xamarin などの ios 提供のアセンブリのみをリンクします。
+  - **-linksdkonly**は、 **xamarin.ios.dll**などの Xamarin によって提供されるアセンブリのみをリンクし、ユーザーが作成したアセンブリ (つまり、アプリプロジェクト) のすべての型を保持します。
 
 アセンブリがリンクされ、結果の実行可能ファイルが小さくなることに注意してください。そのため、リンクを無効にすると、実行可能ファイルの方が望ましいよりも大きくなる可能性があります。
 
@@ -166,7 +166,7 @@ public Bar (IntPtr handle) : base (handle) { }
 
 ## <a name="visual-studio-for-mac-complains-about-mono-24-required"></a>Mono 2.4 が必要である Visual Studio for Mac 文句
 
-最新の更新プログラムによって Visual Studio for Mac を更新した場合に、もう一度開始しようとすると、Mono 2.4 が存在しないという問題が発生します。 [mono 2.4 のインストールをアップグレード](http://www.go-mono.com/mono-downloads/download.html)するだけで済みます。  
+最新の更新プログラムによって Visual Studio for Mac を更新した場合に、もう一度開始しようとすると、Mono 2.4 が存在しないという問題が発生します。 [mono 2.4 のインストールをアップグレード](http://www.go-mono.com/mono-downloads/download.html)するだけで済みます。
 
 Mono 2.4.2.3/6 では、Visual Studio for Mac の実行が保証されていない重要な問題を修正し、起動時に Visual Studio for Mac ハングしたり、コード補完データベースが生成されないようにしたりすることができます。
 
@@ -186,7 +186,7 @@ Stacktrace:
 
 これは、thumb コードを使用してコンパイルされたスタティックライブラリをプロジェクトにリンクすることを意味します。 IPhone SDK リリース 3.1 (またはこのドキュメントの執筆時点以降) では、非 Thumb コード (Xamarin) を Thumb コード (スタティックライブラリ) にリンクするときに、Apple によってリンカーにバグが導入されました。この問題を軽減するには、スタティックライブラリの非 Thumb バージョンとリンクする必要があります。
 
-## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1get_count-"></a>System.executionengineexception: JIT コンパイルメソッド (ラッパーマネージ-マネージ) Foo []: system.string ' 1. get_Count () を試行しています
+## <a name="systemexecutionengineexception-attempting-to-jit-compile-method-wrapper-managed-to-managed-foosystemcollectionsgenericicollection1get_count-"></a>System.ExecutionEngineException: JIT コンパイルメソッド (ラッパーマネージ-マネージ) Foo []: system.string ' 1. get_Count () を試行しています
 
 [] サフィックスは、ユーザーまたはクラスライブラリが、IEnumerable<>、ICollection<> 、IList<> などのジェネリックコレクションを通じて配列に対してメソッドを呼び出すことを示します。 回避策として、自分でメソッドを呼び出し、例外をトリガーした呼び出しの前にこのコードが実行されるように、AOT コンパイラに明示的に強制することができます。 この場合は、次のように記述できます。
 
@@ -217,7 +217,7 @@ XS logs、 **~/Library/Logs/XamarinStudio-{VERSION}/Ide-{TIMESTAMP}.log**、 **a
 
 デバッグをサポートするために、デバッグビルドには追加のコードが含まれています。 リリースモードでビルドされたプロジェクトは、サイズの一部です。
 
-Xamarin. iOS 1.3 の場合、デバッグビルドには、Mono のすべてのコンポーネント (フレームワークのすべてのクラスのすべてのメソッド) に対するデバッグサポートが含まれていました。  
+Xamarin. iOS 1.3 の場合、デバッグビルドには、Mono のすべてのコンポーネント (フレームワークのすべてのクラスのすべてのメソッド) に対するデバッグサポートが含まれていました。
 
 Xamarin の iOS 1.4 では、より詳細なデバッグ方法が導入されます。既定では、コードとライブラリのデバッグインストルメンテーションだけを提供し、すべての[Mono アセンブリ](~/cross-platform/internals/available-assemblies.md)に対してこれを実行しないようにします (これは可能ですが、これらのアセンブリをデバッグするにはオプトインする必要があります)。
 
@@ -226,33 +226,6 @@ Xamarin の iOS 1.4 では、より詳細なデバッグ方法が導入されま
 Mono と Xamarin の両方が動作します。 iPhone シミュレーターを実行している場合は、ハングします。 この問題は Mono または Xamarin に限定されていません。これは、iPhone シミュレーターがインストール時に実行されている場合に、MacOS の雪 Leopard にソフトウェアをインストールしようとするすべてのソフトウェアで一貫した問題になります。
 
 IPhone シミュレーターを終了し、インストールを再試行してください。
-
-<a name="trampolines"></a>
-
-## <a name="ran-out-of-trampolines-of-type-0"></a>型0の trampolines が不足しています
-
-デバイスの実行中にこのメッセージが表示された場合は、プロジェクトオプションの "iPhone Build" セクションを変更して、さらに種類 0 trampolines (種類に固有) を作成できます。  デバイスビルドターゲットに追加の引数を追加する必要がある場合は、次のようにします。
-
- `-aot "ntrampolines=2048"`
-
-既定の trampolines 数は1024です。 アプリケーションに十分な余裕が得られるまで、この数を増やしてみてください。
-
-## <a name="ran-out-of-trampolines-of-type-1"></a>種類1の trampolines が不足しています
-
-再帰ジェネリックを頻繁に使用する場合は、デバイスでこのメッセージが表示されることがあります。  プロジェクトオプションの "iPhone Build" セクションを変更することで、型 1 trampolines (RGCTX) をさらに作成できます。  デバイスビルドターゲットに追加の引数を追加する必要がある場合は、次のようにします。
-
- `-aot "nrgctx-trampolines=2048"`
-
-既定の trampolines 数は1024です。 ジェネリックの使用に十分な数になるまで、この数を増やしてみてください。
-
-## <a name="ran-out-of-trampolines-of-type-2"></a>型2の trampolines が不足しています
-
-多用インターフェイスを使用すると、デバイスでこのメッセージが表示される場合があります。
-プロジェクトオプションの "iPhone Build" セクションを変更して、さらに型 2 trampolines (型 IMT サンク) を作成できます。  デバイスビルドターゲットに追加の引数を追加する必要がある場合は、次のようにします。
-
- `-aot "nimt-trampolines=512"`
-
-IMT サンク trampolines の既定の数は128です。 インターフェイスの使用に十分な数になるまで、この数を増やしてみてください。
 
 ## <a name="debugger-is-unable-to-connect-with-the-device"></a>デバッガーがデバイスと接続できません
 
@@ -384,7 +357,7 @@ Interface Builder を使用する場合は、Apple の web サイトから入手
   at (wrapper runtime-invoke) <Module>.runtime_invoke_void_object (object,intptr,intptr,intptr)
 ```
 
-...その場合、シミュレーターアプリケーションディレクトリに古いアセンブリが1つ (またはそれ以上) 存在する可能性があります。 このようなアセンブリは、Apple iOS シミュレーターによってファイルが追加および更新されるが、削除されないために存在する可能性があります。 この問題が発生した場合、最も簡単な解決策は、"リセットとコンテンツと設定..." を選択することです。シミュレーターメニューから。   
+...その場合、シミュレーターアプリケーションディレクトリに古いアセンブリが1つ (またはそれ以上) 存在する可能性があります。 このようなアセンブリは、Apple iOS シミュレーターによってファイルが追加および更新されるが、削除されないために存在する可能性があります。 この問題が発生した場合、最も簡単な解決策は、"リセットとコンテンツと設定..." を選択することです。シミュレーターメニューから。
 
 > [!WARNING]
 > これにより、シミュレーターからすべてのファイル、アプリケーション、およびデータが削除されます。   次にアプリケーションを実行したときに、Visual Studio for Mac によってアプリケーションがシミュレーターに配置され、クラッシュを引き起こす古い古いアセンブリは存在しません。
@@ -413,3 +386,18 @@ Interface Builder を使用する場合は、Apple の web サイトから入手
 Xamarin. iOS アプリにサードパーティ製のライブラリを含めると、アプリをコンパイルして実行しようとすると、"NotSupportedException: encoding 437 のデータは使用できません" という形式のエラーが表示されることがあります。 たとえば、などのライブラリでは、 `Ionic.Zip.ZipFile` 操作中にこの例外がスローされる場合があります。
 
 これを解決するには、Xamarin. ios プロジェクトのオプションを開き、[ **iOS**] [国際化] の順に移動して、[  >  **Internationalization** **西**国際化] をオンにします。
+
+## <a name="could-not-launch-xamarinlauncher-could-not-find-the-executable-mlaunchexe"></a>Xamarin を起動できませんでした。ランチャーは実行可能ファイル ' mlaunch.exe ' を見つけることができませんでした
+
+場合によっては、ウイルス対策ソフトウェアによって、Xamarin. iOS SDK がマルウェアとして誤って検出され、必要なファイルが削除され、SDK が破損することがあります。 これにより、"Xamarin を起動できませんでした。ランチャーは実行可能ファイル ' mlaunch.exe ' を見つけることができませんでした" などのエラーが発生します。
+
+影響を受けた場合は、ウイルス対策スキャナーから mlaunch.exe を除外して、再発生を防止します。 詳細については、「 [Symantex Endpoint Protection マネージャーで Symantec 用にアプリケーション例外を作成する方法](https://knowledge.broadcom.com/external/article/180778/how-to-create-an-application-exception-i.html)」を参照してください。 [Norton の自動保護、Sonar、およびダウンロードインテリジェンススキャンからファイルとフォルダーを除外](https://support.norton.com/sp/en/uk/home/current/solutions/v3672136)する方法について説明します。 さらに、 [Symantec](https://symsubmit.symantec.com)または[Norton](https://submit.norton.com/?type=FP)に偽陽性を報告することを検討してください。
+
+mlaunch.exe の除外を追加すると、不足しているファイルを復元するために再インストールが必要になります。 これを行う最も簡単な方法は、アップデーターでチャネルを切り替えることです。
+
+- **Visual Studio**メニュー >**更新プログラムを確認**します。
+- ドロップダウンで別の更新チャネルを選択し、[**チャネルの切り替え**] ボタンを押します。
+- 更新プログラムがダウンロードされるまで待ちます。
+- 元のチャネルに戻り、更新プログラムをインストールします。
+
+これらの手順で問題が解決しない場合は、次の GitHub の問題にコメントを追加してください: [8736](https://github.com/xamarin/xamarin-macios/issues/8736)。

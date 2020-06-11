@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Formsピンのマップ
-description: この記事では、マップにピンを作成する方法について説明 Xamarin.Forms します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 5e22888291a430863b8e45ee21d359a5acec750f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138438"
+タイトル: " Xamarin.Forms マップのピン" の説明: "この記事では、マップにピンを作成する方法について説明 Xamarin.Forms します。"
+ms. 製品: xamarin ms. assetid: F8FC081B-A811-4FBB-B8F8-30D6FD36BD40: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 10/23/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-map-pins"></a>Xamarin.Formsピンのマップ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
@@ -82,7 +68,7 @@ ms.locfileid: "84138438"
 
 この XAML は、 [`Map`](xref:Xamarin.Forms.Maps.Map) オブジェクトによって指定された領域を表示するオブジェクトを作成し [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) ます。 オブジェクトは、 `MapSpan` オブジェクトによって表される緯度と経度の中央に [`Position`](xref:Xamarin.Forms.Maps.Position) あり、0.01 緯度と経度の角度を超えています。 [`Pin`](xref:Xamarin.Forms.Maps.Pin)オブジェクトがコレクションに追加され、 [`Map.Pins`](xref:Xamarin.Forms.Maps.Pin) `Map` プロパティによって指定された位置のに描画され [`Position`](xref:Xamarin.Forms.Maps.Pin.Position) ます。 構造体の詳細については [`Position`](xref:Xamarin.Forms.Maps.Position) 、「[マップの位置と距離](position-distance.md)」を参照してください。 既定のコンストラクターを持たないオブジェクトに XAML の引数を渡す方法については、「 [xaml で引数を渡す](~/xamarin-forms/xaml/passing-arguments.md)」を参照してください。
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 using Xamarin.Forms.Maps;

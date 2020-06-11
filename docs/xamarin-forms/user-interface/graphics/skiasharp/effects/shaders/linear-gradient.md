@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 43aa429046c1b0f72a1cbe6a5b921da9b8907a49
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84132224"
+title: "SkiaSharp 線状グラデーション" の説明: "2 色の緩やかなブレンドで構成されるグラデーションで線または塗りつぶし領域を描画する方法を発見します。"
+ms. 製品: xamarin ms テクノロジ: skiasharp: 20A2A8C4-FEB7-478D-BF57-C92E26117B6A author: davidbritch dabritch: ms. date: 08/23/2018 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
 ---
+
 # <a name="the-skiasharp-linear-gradient"></a>SkiaSharp 線状グラデーション
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -103,7 +89,7 @@ public class CornerToCornerGradientPage : ContentPage
 
 `float`4 番目の引数として指定された値の配列には、色の配列との1対1の対応があります。 値は、その色が出現するグラデーション線に沿った相対的な位置を示します。 ここで、0は、が `Red` グラデーション線の開始時に発生することを意味し、1は `Blue` 行の最後に発生することを意味します。 数値は昇順にする必要があり、0 ~ 1 の範囲で指定する必要があります。 範囲内にない場合は、その範囲内になるように調整されます。
 
-配列内の2つの値は、0と1以外の値に設定できます。 これを試してみます。
+配列内の2つの値は、0と1以外の値に設定できます。 次のコードを実行してみてください。
 
 ```csharp
 new float[] { 0.25f, 0.75f }
@@ -341,7 +327,7 @@ public partial class InteractiveLinearGradientPage : InteractivePage
 
 [![グラデーションのテキスト](linear-gradient-images/GradientText.png "グラデーションのテキスト")](linear-gradient-images/GradientText-Large.png#lightbox)
 
-グラデーションの唯一の違いは、開始点と終了点です。 テキストの表示に使用されるグラデーションは、テキストの外接する四角形の角にある2つの点に基づいています。 背景の場合、2つの点はキャンバス全体に基づいています。 コードは次のようになります。
+グラデーションの唯一の違いは、開始点と終了点です。 テキストの表示に使用されるグラデーションは、テキストの外接する四角形の角にある2つの点に基づいています。 背景の場合、2つの点はキャンバス全体に基づいています。 コードは次のとおりです。
 
 ```csharp
 public class GradientTextPage : ContentPage
@@ -620,7 +606,7 @@ public class RainbowGradientPage : ContentPage
 }
 ```
 
-メソッド内の2つのグラデーションポイント `CreateLinearGradient` は、このパスを定義する2つの点に基づいています。両方の点が左上隅の近くにあります。 1つ目はキャンバスの上端にあり、2つ目はキャンバスの左端にあります。 結果は次のとおりです。
+メソッド内の2つのグラデーションポイント `CreateLinearGradient` は、このパスを定義する2つの点に基づいています。両方の点が左上隅の近くにあります。 1つ目はキャンバスの上端にあり、2つ目はキャンバスの左端にあります。 結果は次のようになります。
 
 [![レインボーグラデーションの不具合](linear-gradient-images/RainbowGradientFaulty.png "レインボーグラデーションの不具合")](linear-gradient-images/RainbowGradientFaulty-Large.png#lightbox)
 

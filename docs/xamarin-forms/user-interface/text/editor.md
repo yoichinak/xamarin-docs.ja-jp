@@ -1,23 +1,9 @@
 ---
-title: Xamarin.Forms者
-description: この記事では、エディターコントロールを使用して、 Xamarin.Forms アプリケーションで複数行テキスト入力を許可する方法について説明します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 02749c9f8f55427bb1742e78464bbc003f1f7358
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136176"
+title: " Xamarin.Forms editor" description: "この記事では、エディターコントロールを使用して、 Xamarin.Forms アプリケーションで複数行テキスト入力を受け入れる方法について説明します。"
+ms. 製品: xamarin ms. assetid: 7074DB3A-30D2-4A6B-9A89-B029EEF20B07: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 09/26/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
-# <a name="xamarinforms-editor"></a>Xamarin.Forms者
+
+# <a name="xamarinforms-editor"></a>Xamarin.Forms エディター
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
@@ -101,7 +87,7 @@ var editor = new Editor { ... MaxLength = 10 };
         CharacterSpacing="10" />
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 Editor editor = new editor { CharacterSpacing = 10 };
@@ -138,14 +124,14 @@ var editor = new Editor { Text = "Enter text here", AutoSize = EditorAutoSizeOpt
 
 ユーザーがを操作するときに表示されるキーボードは、プロパティを使用して、 [`Editor`](xref:Xamarin.Forms.Editor) [`Keyboard`](xref:Xamarin.Forms.InputView.Keyboard) クラスの次のいずれかのプロパティにプログラムで設定でき [`Keyboard`](xref:Xamarin.Forms.Keyboard) ます。
 
-- [`Chat`](xref:Xamarin.Forms.Keyboard.Chat)–絵文字が役に立つ場所と場所に使用されます。
-- [`Default`](xref:Xamarin.Forms.Keyboard.Default)–既定のキーボード。
-- [`Email`](xref:Xamarin.Forms.Keyboard.Email)-電子メールアドレスを入力するときに使用します。
-- [`Numeric`](xref:Xamarin.Forms.Keyboard.Numeric)–数値を入力するときに使用します。
-- [`Plain`](xref:Xamarin.Forms.Keyboard.Plain)–指定されていないテキストを入力するときに使用され [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) ます。
-- [`Telephone`](xref:Xamarin.Forms.Keyboard.Telephone)–電話番号を入力するときに使用します。
-- [`Text`](xref:Xamarin.Forms.Keyboard.Text)–テキストを入力するときに使用します。
-- [`Url`](xref:Xamarin.Forms.Keyboard.Url)– web アドレス & ファイルパスを入力するために使用されます。
+- [`Chat`](xref:Xamarin.Forms.Keyboard.Chat) - 絵文字が使えるテキスト メッセージや場所に使います。
+- [`Default`](xref:Xamarin.Forms.Keyboard.Default) - 既定のキーボード。
+- [`Email`](xref:Xamarin.Forms.Keyboard.Email) - 電子メール アドレスを入力するときに使用します。
+- [`Numeric`](xref:Xamarin.Forms.Keyboard.Numeric) - 数値を入力するときに使用します。
+- [`Plain`](xref:Xamarin.Forms.Keyboard.Plain) - [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) を指定しないで、テキストを入力するときに使用します。
+- [`Telephone`](xref:Xamarin.Forms.Keyboard.Telephone) - 電話番号を入力するときに使用します。
+- [`Text`](xref:Xamarin.Forms.Keyboard.Text) - テキストを入力するときに使用します。
+- [`Url`](xref:Xamarin.Forms.Keyboard.Url) - ファイル パスおよび Web アドレスを入力するために使用します。
 
 XAML では次のようにしてこれを実現できます。
 
@@ -153,7 +139,7 @@ XAML では次のようにしてこれを実現できます。
 <Editor Keyboard="Chat" />
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 var editor = new Editor { Keyboard = Keyboard.Chat };
@@ -161,18 +147,18 @@ var editor = new Editor { Keyboard = Keyboard.Chat };
 
 各キーボードの例については、「[レシピ](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/choose-keyboard-for-entry)リポジトリ」を参照してください。
 
-[`Keyboard`](xref:Xamarin.Forms.Keyboard)クラスには、 [`Create`](xref:Xamarin.Forms.Keyboard.Create*) 大文字と小文字の区別、スペルチェック、および提案の動作を指定することによってキーボードをカスタマイズするために使用できるファクトリメソッドもあります。 [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags)列挙値は、メソッドの引数として指定され、カスタマイズされたが `Keyboard` 返されます。 `KeyboardFlags` 列挙体には次の値が含まれます。
+[`Keyboard`](xref:Xamarin.Forms.Keyboard) クラスには、大文字の設定、スペルチェック、および単語補完候補の動作を指定することで、キーボードをカスタマイズするために使用できる [`Create`](xref:Xamarin.Forms.Keyboard.Create*) ファクトリ メソッドもあります。 [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) 列挙値がメソッドへの引数として指定され、カスタマイズされた `Keyboard` が返されます。 `KeyboardFlags` 列挙体には次の値が含まれます。
 
-- [`None`](xref:Xamarin.Forms.KeyboardFlags.None)–キーボードに追加された機能はありません。
-- [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence)–入力された各文の最初の単語の最初の文字が自動的に大文字になることを示します。
-- [`Spellcheck`](xref:Xamarin.Forms.KeyboardFlags.Spellcheck)–入力したテキストに対してスペルチェックが実行されることを示します。
-- [`Suggestions`](xref:Xamarin.Forms.KeyboardFlags.Suggestions)–入力したテキストに単語の入力候補が表示されることを示します。
-- [`CapitalizeWord`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeWord)–各単語の最初の文字が自動的に大文字になることを示します。
-- [`CapitalizeCharacter`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeCharacter)–すべての文字が自動的に大文字になることを示します。
-- [`CapitalizeNone`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeNone)–自動大文字小文字が自動的には実行されないことを示します。
-- [`All`](xref:Xamarin.Forms.KeyboardFlags.All)–入力したテキストに対してスペルチェック、単語入力候補、および文の大文字小文字の区別を行うことを示します。
+- [`None`](xref:Xamarin.Forms.KeyboardFlags.None) - キーボードに機能は追加されません。
+- [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence) - 入力された各文の最初の単語の最初の文字が自動的に大文字になることを示します。
+- [`Spellcheck`](xref:Xamarin.Forms.KeyboardFlags.Spellcheck) - 入力したテキストに対してスペル チェックが実行されることを示します。
+- [`Suggestions`](xref:Xamarin.Forms.KeyboardFlags.Suggestions) - 入力したテキストに対して単語補完が提供されることを示します。
+- [`CapitalizeWord`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeWord) - 各単語の最初の文字が自動的に大文字になることを示します。
+- [`CapitalizeCharacter`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeCharacter) - すべての文字が自動的に大文字になることを示します。
+- [`CapitalizeNone`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeNone) - 大文字の自動設定を行わないことを示します。
+- [`All`](xref:Xamarin.Forms.KeyboardFlags.All) - 入力したテキストに対して、スペルチェック、単語補完、および文への大文字の設定が行われることを示します。
 
-次の XAML コード例は、 [`Keyboard`](xref:Xamarin.Forms.Keyboard) 単語入力候補を提供し、入力されたすべての文字を大文字にするように既定値をカスタマイズする方法を示しています。
+次の XAML コード例は、既定の [`Keyboard`](xref:Xamarin.Forms.Keyboard) をカスタマイズして、単語補完を提供し、入力したすべての文字を大文字に設定する方法を示しています。
 
 ```xaml
 <Editor>
@@ -186,7 +172,7 @@ var editor = new Editor { Keyboard = Keyboard.Chat };
 </Editor>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 var editor = new Editor();

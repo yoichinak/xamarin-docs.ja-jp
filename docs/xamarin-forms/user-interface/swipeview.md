@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsSwipeView
-description: Xamarin.FormsSwipeView は、コンテンツの項目をラップするコンテナーコントロールであり、スワイプジェスチャによって表示されるコンテキストメニュー項目を提供します。
-ms.prod: ''
-ms.assetId: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 9c9d0621cdd5bb85690771d8bdfd0060b6a352cb
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136254"
+title: " Xamarin.Forms SwipeView" description: " Xamarin.Forms SwipeView は、コンテンツの項目を囲むコンテナーコントロールであり、スワイプジェスチャによって表示されるコンテキストメニュー項目を提供します。
+ms. 製品: xamarin ms assetId: 602456B5-701B-4948-B454: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 03/26/2020 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
 ---
+
 # <a name="xamarinforms-swipeview"></a>Xamarin.FormsSwipeView
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
@@ -87,7 +73,7 @@ Forms.SetFlags("SwipeView_Experimental");
 </SwipeView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 // SwipeItems

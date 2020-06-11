@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 5c3909271580d0568d7c603de0d434ff5b3f3bc4
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138672"
+title: "セグメント化された SkiaSharp ビットマップの表示" 説明: "SkiaSharp ビットマップを表示して、一部の領域が拡大していて、一部の領域が拡大していないことを示します。"
+ms. 製品: xamarin ms テクノロジ: skiasharp: 79AE2033-C41C-4447-95A6-76D22E913D19 author: davidbritch dabritch: ms. date: 07/17/2018 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
 ---
+
 # <a name="segmented-display-of-skiasharp-bitmaps"></a>SkiaSharp ビットマップのセグメント化表示
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

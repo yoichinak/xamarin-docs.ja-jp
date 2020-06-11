@@ -1,25 +1,11 @@
 ---
-title: アプリのスタイル設定 Xamarin.Forms
-description: このガイドでは、XAML スタイルを使用してアプリケーションのスタイルを作成する方法と、カスケードスタイルシートを使用する方法について説明し Xamarin.Forms ます。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8775793c2d9ae1ba6e1eba38fe48647b43056bf8
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140115"
+title: "スタイル設定 Xamarin.Forms アプリ" の説明: "このガイドでは、XAML スタイルを使用してアプリケーションのスタイルを設定する方法、およびカスケードスタイルシートを使用する方法について説明 Xamarin.Forms します。"
+EABF5072: xamarin ms. assetid: B89B-4356-B7B3-1C6B40358926: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 04/28/2018 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
 ---
+
 # <a name="styling-xamarinforms-apps"></a>アプリのスタイル設定 Xamarin.Forms
 
-## <a name="styling-xamarinforms-apps-using-xaml-stylesxamlindexmd"></a>[Xamarin.FormsXAML スタイルを使用したアプリのスタイル設定](xaml/index.md)
+## <a name="styling-xamarinforms-apps-using-xaml-stylesxamlindexmd"></a>[XAML スタイルを使用して Xamarin.Forms アプリのスタイルを設定する](xaml/index.md)
 
 アプリのスタイル Xamarin.Forms 設定は、従来、クラスを使用して、 [`Style`](xref:Xamarin.Forms.Style) プロパティ値のコレクションを1つのオブジェクトにグループ化し、その後、複数のビジュアル要素インスタンスに適用できるようにします。 これにより、繰り返し表示されるマークアップを減らし、アプリの外観を簡単に変更できるようになります。
 

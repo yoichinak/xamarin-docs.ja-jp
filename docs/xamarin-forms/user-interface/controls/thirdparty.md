@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Formsサードパーティ製のコントロール
-description: Xamarin.FormsTelerik、SyncFusion、DevExpress、Infragistics、ComponentOne、Steema などの企業から、開発用の追加の制御を利用できます。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: e0881296664ec20eeefe02c9db57a2fd76cd999b
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84132419"
+title: " Xamarin.Forms サードパーティ製のコントロール" の説明: "開発用の追加のコントロール Xamarin.Forms は、Telerik、Syncfusion、Devexpress、Infragistics、Componentone、Steema などの企業から入手できます。"
+ms. 製品: xamarin ms. assetid: C33A4848-3FC8-4A20-8275-387039F541AD: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 08/08/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-third-party-controls"></a>Xamarin.Formsサードパーティ製のコントロール
 
 に用意されているコントロールに加えて Xamarin.Forms 、サードパーティのコントロールは、次の会社から入手できます。

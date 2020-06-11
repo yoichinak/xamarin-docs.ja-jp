@@ -25,7 +25,7 @@ NuGet パッケージマネージャーを使用して、 **sqlite-pcl**を検�
 
 類似した名前を持つ NuGet パッケージが多数あります。 正しいパッケージには、次の属性があります。
 
-- **作成者:** Frank A. Kpraeclarum ()
+- **作成者:** Frank A. Krueger (praeclarum)
 - **ID:** sqlite-net-pcl
 - **NuGet リンク:** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
@@ -222,7 +222,7 @@ public static TodoItemDatabase Database
 }
 ```
 
-このプロパティを使用 Xamarin.Forms すると、コンポーネントは、 `Database` ユーザーの操作に応じてインスタンスのデータの取得と操作のメソッドを呼び出すことができます。 例:
+このプロパティを使用 Xamarin.Forms すると、コンポーネントは、 `Database` ユーザーの操作に応じてインスタンスのデータの取得と操作のメソッドを呼び出すことができます。 次に例を示します。
 
 ```csharp
 var saveButton = new Button { Text = "Save" };

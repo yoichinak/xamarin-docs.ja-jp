@@ -1,22 +1,8 @@
 ---
-title: ''
-description: この記事では、SkiaSharp を使用して、アプリケーションで3次ベジエ曲線および円錐ベジエ曲線をレンダリングする方法について説明 Xamarin.Forms し、サンプルコードを使用してこれを示します。
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 1ad548846500ccbacc2a3d117919bfb4df1a1d79
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138685"
+title: "3 種類のベジエ曲線" の説明: "この記事では、SkiaSharp を使用して、アプリケーションで3次ベジエ曲線および円錐ベジエ曲線を描画する方法について説明 Xamarin.Forms し、サンプルコードを使用してこれを示します。"
+ms. 製品: xamarin ms テクノロジ: skiasharp: 8FE0F6DC-16BC-435F-9626-DD1790C0145A author: davidbritch ms. author: dabritch ms. date: 05/25/2017 no loc: [, & # 3. Xamarin.Forms Xamarin.Essentials
 ---
+
 # <a name="three-types-of-bzier-curves"></a>3 つの種類のベジエ曲線
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -444,7 +430,7 @@ public void ConicTo (Single x1, Single y1, Single x2, Single y2, Single weight)
 
 最後のパラメーターに注意して `weight` ください。
 
-[**円錐曲線**] ページでは、これらの曲線を試すことができます。 `ConicCurvePage` クラスは `InteractivePage` から派生したものです。 [**Coniccurvepage. .xaml**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml)ファイルは、をインスタンス化して、 `Slider` -2 ~ 2 の重み値を選択します。 [**ConicCurvePage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml.cs)分離コードファイルは3つの `TouchPoint` オブジェクトを作成し `PaintSurface` ます。このハンドラーは、結果の曲線を制御ポイントに接し線でレンダリングします。
+[**円錐曲線**] ページでは、これらの曲線を試すことができます。 `ConicCurvePage` クラスは、`InteractivePage` から派生したものです。 [**Coniccurvepage. .xaml**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml)ファイルは、をインスタンス化して、 `Slider` -2 ~ 2 の重み値を選択します。 [**ConicCurvePage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml.cs)分離コードファイルは3つの `TouchPoint` オブジェクトを作成し `PaintSurface` ます。このハンドラーは、結果の曲線を制御ポイントに接し線でレンダリングします。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

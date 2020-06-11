@@ -1,22 +1,8 @@
 ---
-title: ''
-description: この記事では、アプリケーションから WCF Simple Object Access Protocol (SOAP) サービスを使用する方法について説明し Xamarin.Forms ます。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: cf95427807e0179a608b428bc7e02499c9616fe7
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139153"
+title: "Windows Communication Foundation (WCF) Web サービスの使用" の説明: "この記事では、アプリケーションから WCF Simple Object Access Protocol (SOAP) サービスを使用する方法について説明 Xamarin.Forms します。"
+ms. 製品: xamarin ms. assetid: 5696FF04-EF21-4B7A-8C8B-26DE28B5C0AD: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 03/28/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="consume-a-windows-communication-foundation-wcf-web-service"></a>Windows Communication Foundation (WCF) Web サービスを使用する
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todowcf)
@@ -52,7 +38,7 @@ ASP.NET ウェブサービス (ASMX) と WCF には違いがありますが、WC
 
 WCF サービスは、次の操作を提供します。
 
-|Operation|説明|パラメーター|
+|操作|説明|パラメーター|
 |--- |--- |--- |
 |GetTodoItems|To Do アイテムのリストの取得|
 |CreateTodoItem|新しい to do 項目を作成する|XML シリアル化 TodoItem|
@@ -61,7 +47,7 @@ WCF サービスは、次の操作を提供します。
 
 アプリケーションで使用されるデータモデルの詳細については、「[データのモデリング](~/xamarin-forms/data-cloud/web-services/introduction.md)」を参照してください。
 
-WCF サービスを使用するために*プロキシ*を生成する必要があります。これにより、アプリケーションはサービスに接続できるようになります。 プロキシは、メソッドと関連付けられたサービス構成を定義するサービスメタデータを使用することによって構築されます。 このメタデータは、web サービスによって生成される Web サービス記述言語 (WSDL) ドキュメントの形式で公開されます。 プロキシを作成するには、Visual Studio 2017 の Microsoft WCF Web Service Reference Provider を使用して、Web サービスのサービス参照を .NET Standard ライブラリに追加します。 Visual Studio 2017 の Microsoft WCF Web Service Reference Provider を使用してプロキシを作成する代わりに、ServiceModel メタデータユーティリティツール (svcutil.exe) を使用することもできます。 詳細については、「 [ServiceModel メタデータユーティリティツール (svcutil.exe)](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe/)」を参照してください。
+WCF サービスを使用するために*プロキシ*を生成する必要があります。これにより、アプリケーションはサービスに接続できるようになります。 プロキシは、メソッドと関連付けられたサービス構成を定義するサービスメタデータを使用することによって構築されます。 このメタデータは、web サービスによって生成される Web サービス記述言語 (WSDL) ドキュメントの形式で公開されます。 プロキシを作成するには、Visual Studio 2017 の Microsoft WCF Web Service Reference Provider を使用して、Web サービスのサービス参照を .NET Standard ライブラリに追加します。 Visual Studio 2017 の Microsoft WCF Web Service Reference Provider を使用してプロキシを作成する代わりに、ServiceModel Metadata Utility Tool (svcutil.exe) を使用することもできます。 詳細については、「 [ServiceModel メタデータユーティリティツール (Svcutil.exe)](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe/)」を参照してください。
 
 生成されたプロキシクラスは、非同期プログラミングモデル (APM) デザインパターンを使用する web サービスを使用するためのメソッドを提供します。 このパターンでは、非同期操作は、非同期操作を開始および終了する*Beginoperationname*と*EndOperationName*という2つのメソッドとして実装されます。
 
@@ -240,7 +226,7 @@ Visual Studio 2017 または Visual Studio 2019 では、追加の構成なし�
     netsh advfirewall firewall add rule name="TodoWCFService" dir=in protocol=tcp localport=49393 profile=private remoteip=localsubnet action=allow
     ```
 
-1. **リモート接続を受け入れるように IIS Express を構成**します。 IIS Express を構成するには、 **[solution directory] \. vs\config\applicationhost.config**で IIS Express の構成ファイルを編集します。という `site` 名前の要素を検索 `TodoWCFService` します。 次の XML のようになります。
+1. **リモート接続を受け入れるように IIS Express を構成**します。 IIS Express を構成するには、 **[ソリューションディレクトリ] \.vs\config\applicationhost.config**で IIS Express の構成ファイルを編集します。という `site` 名前の要素を検索 `TodoWCFService` します。 次の XML のようになります。
 
     ```xml
     <site name="TodoWCFService" id="2">

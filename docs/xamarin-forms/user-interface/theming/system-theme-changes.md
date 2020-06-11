@@ -1,22 +1,8 @@
 ---
-title: アプリケーションのシステムテーマの変更に応答する Xamarin.Forms
-description: Xamarin.Formsアプリケーションは、OnAppTheme の種類と DynamicResource マークアップ拡張機能を使用して、オペレーティングシステムのテーマの変更に応答できます。
-ms.assetid: ''
-ms.prod: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 2bb83f4ad5c30adccfc961938df64dda9cef1f6b
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140063"
+title: "アプリケーションのシステムテーマ変更に応答する Xamarin.Forms " 説明: " Xamarin.Forms アプリケーションは、onapptheme の種類と dynamicresource マークアップ拡張機能を使用して、オペレーティングシステムのテーマの変更に応答できます。"
+ms. assetid: D10506DD-BAA0-437F-A4AD-882D16E7B60D: xamarin ms テクノロジ: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 04/22/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="respond-to-system-theme-changes-in-xamarinforms-applications"></a>アプリケーションのシステムテーマの変更に応答する Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)
@@ -193,6 +179,6 @@ Application.Current.RequestedThemeChanged += (s, a) =>
 
 - [SystemThemes (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)
 - [OnAppTheme のマークアップ拡張機能](~/xamarin-forms/xaml/markup-extensions/consuming.md#onapptheme-markup-extension)
-- [リソース ディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [リソースディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [動的スタイルXamarin.Forms](~/xamarin-forms/user-interface/styles/xaml/dynamic.md)
-- [Xamarin.FormsXAML スタイルを使用したアプリのスタイル設定](~/xamarin-forms/user-interface/styles/xaml/index.md)
+- [XAML スタイルを使用して Xamarin.Forms アプリのスタイルを設定する](~/xamarin-forms/user-interface/styles/xaml/index.md)

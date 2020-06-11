@@ -1,22 +1,8 @@
 ---
-title: 色Xamarin.Forms
-description: Xamarin.Forms柔軟なクロスプラットフォームカラークラスを提供します。 この記事では、Color クラスによって提供される機能とその使用方法について説明します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a02fe7451702367d85d322b756df4a547a009454
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137346"
+title: "Colors in Xamarin.Forms " description: " Xamarin.Forms 柔軟なクロスプラットフォームカラークラスを提供します。 この記事では、Color クラスによって提供される機能とその使用方法について説明します。
+ms. 製品: xamarin ms. assetid: 22288ABF-57BE-47A9-ACC3-AC604D787C46: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 04/02/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="colors-in-xamarinforms"></a>色Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithcolors)

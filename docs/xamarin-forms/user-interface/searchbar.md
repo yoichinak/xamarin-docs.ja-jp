@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsSearchBar
-description: Xamarin.FormsSearchbar は、検索を開始するために使用されるユーザー入力コントロールです。 SearchBar コントロールは、プレースホルダーテキスト、クエリ入力、実行、およびキャンセルをサポートしています。 この記事では、XAML とコードで SearchBar を使用する方法について説明します。
-ms.prod: ''
-ms.assetId: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d8ceb139b1b9cd77aa922f98c80884d5c3e1a474
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84127544"
+title: " Xamarin.Forms searchbar" description: " Xamarin.Forms searchbar は、検索を開始するために使用されるユーザー入力コントロールです。 SearchBar コントロールは、プレースホルダーテキスト、クエリ入力、実行、およびキャンセルをサポートしています。 この記事では、XAML とコードで SearchBar を使用する方法について説明します。 "
+ms. 製品: xamarin ms. assetId: F5EFEA72-CB23-4DD6-9545-D9BB755AF3CB: xamarin-forms author: profexorgeek ms. author: jusjohns ms. date: 11/04/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-searchbar"></a>Xamarin.FormsSearchBar
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/)

@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b9c89d4d426884d678e77687ffa226cced97be58
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136384"
+title: "SkiaSharp color filters" description: "色フィルターを使用して、変換またはテーブルで色を変換します。"
+ms. 製品: xamarin ms テクノロジ: skiasharp: 774E7B55-AEC8-4F12-B657-1C0CEE01AD63 author: davidbritch dabritch: ms. date: 08/28/2018 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
 ---
+
 # <a name="skiasharp-color-filters"></a>SkiaSharp カラーフィルター
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

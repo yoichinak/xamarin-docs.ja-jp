@@ -1,22 +1,8 @@
 ---
-title: ''
-description: この記事では、既存の Android アプリを変換して Xamarin.Forms 、AppCompat とマテリアル設計を使用する方法について説明します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 24206f6d6764c73f13a4b06fb44fa746f9d353af
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135708"
+title: "AppCompat とマテリアル設計の追加" の説明: "この記事では Xamarin.Forms 、既存の Android アプリを変換して appcompat とマテリアル設計を使用する方法について説明します。"
+ms. 製品: xamarin ms assetid: 045FBCDF-4D45-48BB-9911-BD3938C87D58: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 06/27/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="adding-appcompat-and-material-design"></a>AppCompat とマテリアルデザインの追加
 
 _次の手順に従って既存の Xamarin.Forms Android アプリを変換して、AppCompat とマテリアル設計を使用します。_
@@ -43,7 +29,7 @@ Android プロジェクトのターゲットフレームワークが Android 6.0
 
 Android プロジェクトに次の3つのファイルを作成し、以下の内容を貼り付けます。 Google には、[スタイルガイド](https://www.google.com/design/spec/style/color.html#color-color-palette)と[カラーパレットジェネレーター](https://www.materialpalette.com/)が用意されています。このジェネレーターを使用すると、指定した配色に対して代替配色を選択できます。
 
-**Resources/values/colors**
+**リソース/値/colors.xml**
 
 ```xml
 <resources>
@@ -54,7 +40,7 @@ Android プロジェクトに次の3つのファイルを作成し、以下の�
 </resources>
 ```
 
-**Resources/values/style .xml**
+**リソース/値/style.xml**
 
 ```xml
 <resources>
@@ -72,7 +58,7 @@ Android プロジェクトに次の3つのファイルを作成し、以下の�
 
 Android ロリポップ以降で実行するときに特定のプロパティを適用するには、 **v21**フォルダーに追加のスタイルを含める必要があります。
 
-**Resources/values-v21/style .xml**
+**リソース/値-v21/style.xml**
 
 ```xml
 <resources>
@@ -84,11 +70,11 @@ Android ロリポップ以降で実行するときに特定のプロパティを
 </resources>
 ```
 
-### <a name="4-update-androidmanifestxml"></a>4. Update AndroidManifest .xml
+### <a name="4-update-androidmanifestxml"></a>4. AndroidManifest.xml を更新する
 
 この新しいテーマ情報が使用されていることを確認するには、を追加して**Androidmanifest**ファイルのテーマを設定し `android:theme="@style/MyTheme"` ます (XML の残りの部分はそのままにします)。
 
-**Properties/AndroidManifest .xml**
+**プロパティ/AndroidManifest.xml**
 
 ```xml
 ...

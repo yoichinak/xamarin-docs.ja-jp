@@ -72,7 +72,7 @@ ms. 製品: xamarin ms. assetid: 7B542872-B3D1-49B3-B15E-0E98F53C1F6E: xamarin-f
 
 [![ルート ScrollView レイアウトのスクリーンショット](scrollview-images/root-layout.png "ルート ScrollView のレイアウト")](scrollview-images/root-layout-large.png#lightbox "ルート ScrollView のレイアウト")
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 public class ColorListPageCode : ContentPage
@@ -150,7 +150,7 @@ public class ColorListPageCode : ContentPage
 
 [![子 ScrollView レイアウトのスクリーンショット](scrollview-images/child-layout.png "子 ScrollView のレイアウト")](scrollview-images/child-layout-large.png#lightbox "子 ScrollView のレイアウト")
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 public class BlackCatPageCS : ContentPage
@@ -216,7 +216,7 @@ public class BlackCatPageCS : ContentPage
 </ScrollView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 ScrollView scrollView = new ScrollView();

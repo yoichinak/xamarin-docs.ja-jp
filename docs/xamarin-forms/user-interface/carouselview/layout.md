@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsCarouselView レイアウト
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 44df710df0272afe3c6f6911381af1a88c8cf923
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140284"
+title: " Xamarin.Forms CarouselView Layout" description: "既定では、CarouselView はその項目を水平方向に表示します。 ただし、垂直方向も可能です。 "
+ms. 製品: xamarin ms. assetid: fede0382-c972-4023-a4ea-fe5cadec91a6: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 01/28/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-carouselview-layout"></a>Xamarin.FormsCarouselView レイアウト
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
@@ -101,7 +87,7 @@ ms.locfileid: "84140284"
 </CarouselView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView
@@ -160,7 +146,7 @@ CarouselView carouselView = new CarouselView
 </CarouselView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView
@@ -185,7 +171,7 @@ CarouselView carouselView = new CarouselView
 </CarouselView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView
@@ -218,7 +204,7 @@ CarouselView carouselView = new CarouselView
 > [!NOTE]
 > プロパティには、 `LinearItemsLayout.ItemSpacing` プロパティの値が常に0以上であることを保証する検証コールバックセットがあります。
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView

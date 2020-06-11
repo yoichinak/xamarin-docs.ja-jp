@@ -1,23 +1,8 @@
 ---
-title: ソースリンクXamarin.Forms
-description: この記事では、ソースリンクを使用してにデバッグする方法について説明 Xamarin.Forms します。
-zone_pivot_groups: ''
-ms.prod: ''
-ms.assetId: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 57db314538c42ef9d58691ba16ab68371ff092b7
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138314"
+title: "ソースリンクと Xamarin.Forms " 説明: "この記事では、ソースリンクを使用してにデバッグする方法について説明 Xamarin.Forms します。"
+zone_pivot_groups: "platform" ms. 製品: xamarin ms. assetId: 1E13FCD9-5607-46E8-80E4-87A58B389BEB: xamarin-forms author: profexorgeek: jusjohns ms. date: 09/26/2019 no loc: [ Xamarin.Forms ,、 Xamarin.Essentials ]
 ---
+
 # <a name="source-link-with-xamarinforms"></a>ソースリンクXamarin.Forms
 
 Xamarin.FormsNuGet パッケージには、ソースリンクマッピングが含まれます。 ソースリンクは、NuGet パッケージに含まれるコンパイル済みライブラリをソースコードリポジトリにマップします。 Visual Studio では、デバッグ中にソースコードファイルをダウンロードし、開発者がコードをステップ実行して、ソースからビルドしなくてもパッケージのデバッグを有効にすることができます。

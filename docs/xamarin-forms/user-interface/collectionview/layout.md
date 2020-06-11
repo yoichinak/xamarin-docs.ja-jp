@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsCollectionView レイアウト
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 425eb7abc14fb941dbfc28219907d98558cbfabb
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137437"
+title: " Xamarin.Forms CollectionView Layout" description: "既定では、CollectionView によって項目が縦の一覧に表示されます。 ただし、縦と横の一覧とグリッドを指定することもできます。
+ms. 製品: xamarin ms. assetid: 5FE78207-1BD6-4706-91EF-B13932321FC9: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 08/22/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-collectionview-layout"></a>Xamarin.FormsCollectionView レイアウト
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
@@ -117,7 +103,7 @@ ms.locfileid: "84137437"
 </CollectionView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -181,7 +167,7 @@ CollectionView collectionView = new CollectionView
 </CollectionView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -237,7 +223,7 @@ CollectionView collectionView = new CollectionView
 </CollectionView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -293,7 +279,7 @@ CollectionView collectionView = new CollectionView
 </CollectionView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -334,7 +320,7 @@ CollectionView collectionView = new CollectionView
 </CollectionView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -375,7 +361,7 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 </CollectionView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -434,7 +420,7 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 </CollectionView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -476,7 +462,7 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 > [!NOTE]
 > プロパティには、 `LinearItemsLayout.ItemSpacing` プロパティの値が常に0以上であることを保証する検証コールバックセットがあります。
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -510,7 +496,7 @@ CollectionView collectionView = new CollectionView
 > [!NOTE]
 > プロパティ `GridItemsLayout.VerticalItemSpacing` と `GridItemsLayout.HorizontalItemSpacing` プロパティには検証コールバックが設定されています。これにより、プロパティの値が常に0以上になるようにします。
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -547,7 +533,7 @@ CollectionView collectionView = new CollectionView
 </CollectionView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView

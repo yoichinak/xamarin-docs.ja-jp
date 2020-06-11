@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Formsと Web サービス
-description: このガイドでは、さまざまな web サービスと通信して、アプリケーションに対して作成、読み取り、更新、および削除 (CRUD) 機能を提供する方法について説明し Xamarin.Forms ます。 ここでは、ASMX サービス、WCF サービス、REST サービスとの通信について説明します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 5b2613b94d2c347d9bc6a94086f869b07ab8a55b
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84131886"
+title: " Xamarin.Forms Web サービス" 説明: "このガイドでは、アプリケーションに対して作成、読み取り、更新、および削除 (CRUD) 機能を提供するために、さまざまな web サービスと通信する方法について説明します。 Xamarin.Forms ここでは、ASMX サービス、WCF サービス、REST サービスとの通信について説明します。
+ms. 製品: xamarin ms. assetid: 8B360BDA-E4E3-4A3F-9004-0E35362F49F8: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 06/27/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-and-web-services"></a>Xamarin.Formsと Web サービス
 
 ## <a name="introduction"></a>[はじめに](introduction.md)

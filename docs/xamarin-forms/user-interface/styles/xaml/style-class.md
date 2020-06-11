@@ -1,23 +1,9 @@
 ---
-title: Xamarin.Formsスタイルクラス
-description: Xamarin.Formsスタイルクラスを使用すると、スタイルの継承を使用せずに、コントロールに複数のスタイルを適用できます。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 2afb06c2d97e6f15c2041b9c2e9cad092b13d90d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138763"
+title: " Xamarin.Forms スタイルクラス" 説明: "スタイルクラスを使用すると、スタイルの Xamarin.Forms 継承を使用せずに、コントロールに複数のスタイルを適用できます。"
+ms. 製品: xamarin ms. assetid: 4762401E-2B48-48F1-B6E4-61F7AF8AA46F: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 01/30/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
-# <a name="xamarinforms-style-classes"></a>Xamarin.Formsスタイルクラス
+
+# <a name="xamarinforms-style-classes"></a>Xamarin.Forms のスタイル クラス
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
@@ -81,7 +67,7 @@ _Xamarin. Forms スタイルクラスを使用すると、スタイルの継承�
 
 スタイルクラスには、のがあります。これは、 `Rotated` [`TargetType`](xref:Xamarin.Forms.Style.TargetType) [`VisualElement`](xref:Xamarin.Forms.VisualElement) インスタンスにのみ適用できることを意味し `VisualElement` ます。 ただし、その [`ApplyToDerivedTypes`](xref:Xamarin.Forms.Style.ApplyToDerivedTypes) プロパティはに設定されます。これにより、など `true` 、から派生したコントロールに適用できるようになり `VisualElement` [`BoxView`](xref:Xamarin.Forms.BoxView) ます。 派生型にスタイルを適用する方法の詳細については、「[スタイルを派生型に適用する](implicit.md#apply-a-style-to-derived-types)」を参照してください。
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 var separatorBoxViewStyle = new Style(typeof(BoxView))
@@ -211,7 +197,7 @@ Resources = new ResourceDictionary
 > [!IMPORTANT]
 > プロパティが型であるため、複数のスタイルクラスをコントロールに適用でき [`StyleClass`](xref:Xamarin.Forms.NavigableElement.StyleClass) `IList<string>` ます。 この場合、スタイルクラスは昇順のリストの順序で適用されます。 したがって、複数のスタイルクラスが同一のプロパティを設定すると、リストの最上位の位置にあるスタイルクラスのプロパティが優先されます。
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 ...

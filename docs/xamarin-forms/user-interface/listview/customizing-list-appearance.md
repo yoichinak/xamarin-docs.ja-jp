@@ -1,22 +1,8 @@
 ---
-title: ''
-description: この記事では Xamarin.Forms 、ヘッダー、フッター、グループ、および可変の高さセルを使用して、アプリケーションで ListViews をカスタマイズする方法について説明します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: c7fdecdb0ce209c88dbe9e6f4e6e6588ec4fd3fd
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139920"
+title: "ListView の外観" の説明: "この記事では Xamarin.Forms 、ヘッダー、フッター、グループ、および可変の高さのセルを使用して、アプリケーションで ListViews をカスタマイズする方法について説明します。"
+ms. 製品: xamarin ms. assetid: DC8009B0-4371-4D60-885A-5362FC7EE3E5: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 12/13/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="listview-appearance"></a>ListView の外観
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
@@ -276,7 +262,7 @@ XAML:
 
 既定では、ListView 内のすべての行の高さは同じになります。 ListView には、その動作を変更するために使用できる2つのプロパティがあります。
 
-- `HasUnevenRows`&ndash; `true`/`false`値をに設定すると、行の高さが変化 `true` します。 既定値は、`false` です。
+- `HasUnevenRows`&ndash; `true`/`false`値をに設定すると、行の高さが変化 `true` します。 既定値は `false` です。
 - `RowHeight`&ndash;がの場合に各行の高さを設定し `HasUnevenRows` `false` ます。
 
 すべての行の高さを設定するには、のプロパティを設定し `RowHeight` `ListView` ます。

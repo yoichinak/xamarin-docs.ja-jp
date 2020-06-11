@@ -1,23 +1,9 @@
 ---
-title: Xamarin.FormsXAML スタイルを使用したアプリのスタイル設定
-description: このガイドでは、XAML スタイルを使用してアプリケーションの外観をカスタマイズする方法について説明 Xamarin.Forms します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 72effe15d3456b5a48cbf5d09e889600134ac686
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138802"
+title: 「 Xamarin.Forms Xaml スタイルを使用したアプリのスタイルを設定する」 description: "このガイドでは、xaml スタイルを使用してアプリケーションの外観をカスタマイズする方法について説明 Xamarin.Forms します。"
+ms. 製品: xamarin ms. assetid: 344 A34AA-B19A-4765-875D9A6B5EA8: xamarin-forms author: davidbritch BC8A: dabritch ms. date: 01/30/2019 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
 ---
-# <a name="styling-xamarinforms-apps-using-xaml-styles"></a>Xamarin.FormsXAML スタイルを使用したアプリのスタイル設定
+
+# <a name="styling-xamarinforms-apps-using-xaml-styles"></a>XAML スタイルを使用して Xamarin.Forms アプリのスタイルを設定する
 
 ## <a name="introduction"></a>[はじめに](introduction.md)
 
@@ -39,7 +25,7 @@ Xamarin.Forms多くの場合、アプリケーションには同じ外観を持�
 
 スタイルを他のスタイルから継承して、重複を減らし、再利用できるようにすることができます。
 
-## <a name="dynamic-styles"></a>[動的なスタイル](dynamic.md)
+## <a name="dynamic-styles"></a>[動的スタイル](dynamic.md)
 
 スタイルは、プロパティの変更に応答せず、アプリケーションの継続中は変更されません。 ただし、アプリケーションは動的リソースを使用して、実行時に動的にスタイルの変更に応答できます。
 
@@ -47,6 +33,6 @@ Xamarin.Forms多くの場合、アプリケーションには同じ外観を持�
 
 Xamarin.Formsには、クラスに、*デバイス*スタイルと呼ばれる6つの*動的*スタイルが含まれてい [`Devices.Styles`](xref:Xamarin.Forms.Device.Styles) ます。 6つのスタイルはすべてインスタンスにのみ適用でき [`Label`](xref:Xamarin.Forms.Label) ます。
 
-## <a name="style-classes"></a>[スタイル クラス](style-class.md)
+## <a name="style-classes"></a>[スタイルクラス](style-class.md)
 
 Xamarin.Formsスタイルクラスを使用すると、スタイルの継承を使用せずに、コントロールに複数のスタイルを適用できます。

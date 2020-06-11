@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Formsマップ コントロール
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 32564b48b6d5e7acc619a966af30a086fb56d5e6
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84129403"
+title: " Xamarin.Forms マップコントロール" 説明: "マップコントロールは、マップを表示して注釈を付けるためのクロスプラットフォームビューです。 プラットフォームごとにネイティブマップコントロールを使用して、ユーザーに高速で使い慣れた maps エクスペリエンスを提供します。」
+ms. 製品: xamarin ms. assetid: 22C99029-0B16-43A6-BF58-26B48C4AED38: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 10/29/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-map-control"></a>Xamarin.Formsマップ コントロール
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
@@ -59,7 +45,7 @@ ms.locfileid: "84129403"
 > [!NOTE]
 > を `xmlns` 参照するには、追加の名前空間定義が必要です Xamarin.Forms 。コントロールをマップします。 前の例では、 `Xamarin.Forms.Maps` キーワードによって名前空間が参照されてい `maps` ます。
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 using Xamarin.Forms;
@@ -98,7 +84,7 @@ namespace WorkingWithMaps
 <maps:Map MapType="Satellite" />
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 Map map = new Map
@@ -142,7 +128,7 @@ Map map = new Map
 </maps:Map>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 Position position = new Position(36.9628066, -122.0194722);
@@ -219,7 +205,7 @@ if (map.VisibleRegion != null)
 <maps:Map HasScrollEnabled="false" />
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 Map map = new Map
@@ -236,7 +222,7 @@ Map map = new Map
 <maps:Map HasZoomEnabled="false" />
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 Map map = new Map
@@ -253,7 +239,7 @@ Map map = new Map
 <maps:Map IsShowingUser="true" />
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 Map map = new Map
@@ -273,7 +259,7 @@ Map map = new Map
 <maps:Map MoveToLastRegionOnLayoutChange="false" />
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 Map map = new Map
@@ -301,7 +287,7 @@ void OnMapClicked(object sender, MapClickedEventArgs e)
 <maps:Map MapClicked="OnMapClicked" />
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 Map map = new Map();

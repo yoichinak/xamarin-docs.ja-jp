@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: eedbca080fce9f3001a7b1e2358845fd63c6121b
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136345"
+title: "SkiaSharp image filters" description: "イメージフィルターを使用してぼかしとドロップシャドウを作成する方法について説明します。"
+ms. 製品: xamarin ms テクノロジ: skiasharp: 173E7B22-AEC8-4F12-B657-1C0CEE01AD63 author: davidbritch dabritch: ms. date: 08/27/2018 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
 ---
+
 # <a name="skiasharp-image-filters"></a>SkiaSharp イメージフィルター
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

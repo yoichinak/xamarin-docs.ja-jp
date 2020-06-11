@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 763f44c26d653aa32429b2aa764989e18e8b8078
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139972"
+title: "SkiaSharp ビットマップのアニメーション化" の説明: "一連のビットマップを順番に表示し、アニメーション GIF ファイルをレンダリングすることによってビットマップアニメーションを実行する方法について説明します。"
+ms skiasharp: xamarin ms テクノロジ: xamarin-ms. assetid: 97142ADCE2FD418C8-8A09-9C561AEE5BFD author: davidbritch ミリ秒: dabritch ms. 日付: 07/12/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="animating-skiasharp-bitmaps"></a>アニメーション化 (SkiaSharp ビットマップを)
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -472,7 +458,7 @@ public partial class MainPage : ContentPage
 
 グラフィックスインターチェンジ形式 (GIF) 仕様には、1つの GIF ファイルに連続して表示できるシーンの複数の連続フレームを含めることができる機能が含まれています (多くの場合ループで)。 これらのファイルは、_アニメーション gif_と呼ばれます。 Web ブラウザーでは、アニメーション gif を再生できます。また、SkiaSharp を使用すると、アプリケーションはアニメーション GIF ファイルからフレームを抽出し、順番に表示することができます。
 
-[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルには、DemonDeLuxe によって作成された**Newtons_cradle_animation_book_2**という名前のアニメーション Gif リソースと、Wikipedia の[ニュートンのクレードル](https://en.wikipedia.org/wiki/Newton%27s_cradle)ページからダウンロードされたものが含まれています。 **アニメーション gif**ページには、その情報を提供し、をインスタンス化する XAML ファイルが含まれてい `SKCanvasView` ます。
+[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルには、DemonDeLuxe によって作成された**Newtons_cradle_animation_book_2.gif**という名前のアニメーション gif リソースが含まれており、Wikipedia の[ニュートンのクレードル](https://en.wikipedia.org/wiki/Newton%27s_cradle)ページからダウンロードされます。 **アニメーション gif**ページには、その情報を提供し、をインスタンス化する XAML ファイルが含まれてい `SKCanvasView` ます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

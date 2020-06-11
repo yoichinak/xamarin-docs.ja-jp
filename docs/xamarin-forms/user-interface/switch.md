@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms切り替わり
-description: Xamarin.Formsスイッチは、ユーザーが状態のオンとオフを切り替えるために操作できるボタンの種類です。 この記事では、Switch クラスを使用して、切り替え UI 要素を表示する方法について説明します。
-ms.prod: ''
-ms.assetId: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a5c2583b7632acdfa7d8439dc96b3964fa3cfcab
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136241"
+title: " Xamarin.Forms switch" 説明: " Xamarin.Forms スイッチはボタンの一種であり、ユーザーが操作して状態のオンとオフを切り替えることができます。 この記事では、Switch クラスを使用して、切り替え UI 要素を表示する方法について説明します。
+ms. 製品: xamarin ms. assetId: B2F9CC65-481B-4323-8E77-C6BE29C90DE9: xamarin-forms author: profexorgeek ms. author: jusjohns ms. date: 07/18/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-switch"></a>Xamarin.Forms切り替わり
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
@@ -130,4 +116,4 @@ switchControl.Toggled += (sender, e) =>
 ## <a name="related-links"></a>関連リンク
 
 * [デモの切り替え](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
-* [Xamarin.Formsログオフ](~/xamarin-forms/app-fundamentals/triggers.md)
+* [Xamarin.Forms のトリガー](~/xamarin-forms/app-fundamentals/triggers.md)

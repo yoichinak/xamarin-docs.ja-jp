@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Formsデータの CollectionView
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: e381184271d4a7bfa9872d2502d2281b1f3864bf
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84134564"
+title: " Xamarin.Forms CollectionView data" description: "CollectionView には、その ItemsSource プロパティを、IEnumerable を実装する任意のコレクションに設定することによってデータが設定されます。"
+ms. 製品: xamarin ms. assetid: E1783E34-1C0F-401A-80D5-B2BE5508F5F8: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 04/29/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-collectionview-data"></a>Xamarin.Formsデータの CollectionView
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
@@ -56,7 +42,7 @@ ms.locfileid: "84134564"
 > [!NOTE]
 > `x:Array` 要素には、配列内の項目の型を示す `Type` 属性が必要です。
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView();
@@ -92,7 +78,7 @@ collectionView.ItemsSource = new string[]
 <CollectionView ItemsSource="{Binding Monkeys}" />
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView();
@@ -104,7 +90,7 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 > [!NOTE]
 > コンパイル済みバインディングは、アプリケーションでのデータバインディングのパフォーマンスを向上させるために有効にすることができ Xamarin.Forms ます。 詳しくは、「[コンパイル済みのバインド](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)」を参照してください。
 
-データバインディングの詳細については、「 [ Xamarin.Forms データバインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)」を参照してください。
+データ バインディングの詳細については、「[Xamarin.Forms のデータ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)」を参照してください。
 
 ## <a name="define-item-appearance"></a>項目の外観を定義する
 
@@ -143,7 +129,7 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 </CollectionView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView();
@@ -192,7 +178,7 @@ public class Monkey
 
 [![IOS と Android で、各項目がテンプレート化されている CollectionView のスクリーンショット](populate-data-images/datatemplate.png "CollectionView のテンプレート項目")](populate-data-images/datatemplate-large.png#lightbox "CollectionView のテンプレート項目")
 
-データテンプレートの詳細については、「 [ Xamarin.Forms データテンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)」を参照してください。
+データ テンプレートの詳細については、「[Xamarin.Forms のデータ テンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)」を参照してください。
 
 ## <a name="choose-item-appearance-at-runtime"></a>実行時に項目の外観を選択する
 
@@ -220,7 +206,7 @@ public class Monkey
 </ContentPage>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -288,7 +274,7 @@ public class MonkeyDataTemplateSelector : DataTemplateSelector
 </CollectionView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView();
@@ -346,7 +332,7 @@ collectionView.ItemTemplate = new DataTemplate(() =>
 </RefreshView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 RefreshView refreshView = new RefreshView();
@@ -399,7 +385,7 @@ refreshView.Content = collectionView;
 </CollectionView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -427,6 +413,6 @@ void OnCollectionViewRemainingItemsThresholdReached(object sender, EventArgs e)
 - [CollectionView (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 - [Xamarin.FormsRefreshView](~/xamarin-forms/user-interface/refreshview.md)
 - [Xamarin.FormsSwipeView](~/xamarin-forms/user-interface/swipeview.md)
-- [Xamarin.Formsデータバインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)
+- [Xamarin.Forms のデータ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 - [Xamarin.Formsデータテンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
 - [DataTemplateSelector を作成する Xamarin.Forms](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

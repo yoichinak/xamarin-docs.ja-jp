@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms多角形、ポリライン、および円のマップ
-description: この記事では、マップインスタンスで多角形、ポリライン、および円を作成する方法について説明 Xamarin.Forms します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: ca813f9f0f75aeaf4a2502faa7cb96d1fbead471
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138412"
+title: " Xamarin.Forms マップの多角形、ポリライン、および円" の説明: "この記事では、マップインスタンスで多角形、ポリライン、および円を作成する方法について説明 Xamarin.Forms します。"
+ms. 製品: xamarin ms. assetid: CDAF0B02-1AA8-4AD6-94A7-ABFC18006A2D: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 03/10/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-map-polygons-and-polylines"></a>Xamarin.Forms多角形とポリラインのマップ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
@@ -73,7 +59,7 @@ ms.locfileid: "84138412"
 </ContentPage>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 using Xamarin.Forms.Maps;
@@ -205,7 +191,7 @@ map.MapElements.Add(polyline);
 </ContentPage>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 using Xamarin.Forms.Maps;

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsCarouselView の相互作用
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 57c501c0f789ce448d8381cbbccb46666cf06305
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137411"
+title: " Xamarin.Forms CarouselView の相互作用" の説明: "CurrentItem と Position のプロパティを使用して、CarouselView に現在表示されている項目にアクセスできます。"
+ms. 製品: xamarin ms. assetid: 854D97E5-D119-4BE2-AE7C-BD428792C992: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 02/11/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-carouselview-interaction"></a>Xamarin.FormsCarouselView の相互作用
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
@@ -33,7 +19,7 @@ ms.locfileid: "84137411"
 - `PositionChangedCommandParameter`: `object` 型、`PositionChangedCommand`に渡されるパラメーターです。
 - `VisibleViews`型の `ObservableCollection<View>` 。現在表示されている項目のオブジェクトを格納する読み取り専用のプロパティ。
 
-これらのプロパティはすべて、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトによって支持されています。つまり、プロパティがデータ バインディングの対象になる場合があります。
+これらのプロパティはすべて、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトを基盤としています。つまり、プロパティはデータ バインディングの対象にすることができます。
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)`CurrentItemChanged` `CurrentItem` ユーザーのスクロールによって、またはアプリケーションによってプロパティが設定されたときに、プロパティが変更されたときに発生するイベントを定義します。 `CurrentItemChangedEventArgs`イベントに付随するオブジェクトに `CurrentItemChanged` は、次の2種類のプロパティがあり `object` ます。
 
@@ -52,7 +38,7 @@ ms.locfileid: "84137411"
 > [!IMPORTANT]
 > プロパティが変更さ `Position` れると、プロパティが変更され `CurrentItem` ます。 これにより、が実行され、イベントが発生し `PositionChangedCommand` `PositionChanged` ます。
 
-### <a name="event"></a>イベント
+### <a name="event"></a>Event
 
 次の XAML の例は、 [`CarouselView`](xref:Xamarin.Forms.CarouselView) イベントハンドラーを使用して、変更中の現在の項目に応答するを示しています。
 
@@ -63,7 +49,7 @@ ms.locfileid: "84137411"
 </CarouselView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView();
@@ -97,7 +83,7 @@ void OnCurrentItemChanged(object sender, CurrentItemChangedEventArgs e)
 </CarouselView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView();
@@ -125,7 +111,7 @@ public ICommand ItemChangedCommand => new Command<Monkey>((item) =>
 > [!NOTE]
 > プロパティを `Position` 0 に設定すると、基になるコレクションの最初の項目が表示されます。
 
-### <a name="event"></a>イベント
+### <a name="event"></a>Event
 
 次の XAML の例は、 [`CarouselView`](xref:Xamarin.Forms.CarouselView) イベントハンドラーを使用してプロパティの変更に応答するを示してい `Position` ます。
 
@@ -136,7 +122,7 @@ public ICommand ItemChangedCommand => new Command<Monkey>((item) =>
 </CarouselView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView();
@@ -170,7 +156,7 @@ void OnPositionChanged(object sender, PositionChangedEventArgs e)
 </CarouselView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView();
@@ -202,7 +188,7 @@ public ICommand PositionChangedCommand => new Command<int>((position) =>
 </CarouselView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView();
@@ -247,7 +233,7 @@ public class MonkeysViewModel : INotifyPropertyChanged
 </CarouselView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CarouselView carouselView = new CarouselView();
@@ -346,7 +332,7 @@ public class MonkeysViewModel : INotifyPropertyChanged
 
 [![IOS と Android での表示状態を使用した CarouselView のスクリーンショット](interaction-images/visual-states.png "CarouselView の視覚的状態")](interaction-images/visual-states-large.png#lightbox "CarouselView の視覚的状態")
 
-表示状態の詳細については、「 [ Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)」を参照してください。
+ビジュアルの状態の詳細については、「[Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)」をご覧ください。
 
 ## <a name="clear-the-current-item"></a>現在の項目をクリアします
 
@@ -363,4 +349,4 @@ public class MonkeysViewModel : INotifyPropertyChanged
 ## <a name="related-links"></a>関連リンク
 
 - [CarouselView (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
-- [Xamarin.Formsビジュアル状態マネージャー](~/xamarin-forms/user-interface/visual-state-manager.md)
+- [Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)

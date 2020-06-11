@@ -1,22 +1,8 @@
 ---
-title: ''
-description: この記事では、SkiaSharp グラフィックスを使用してテキストをアプリケーションに統合するためにレンダリングされるテキスト文字列のサイズを決定する方法について説明 Xamarin.Forms し、サンプルコードを使用してこれを示します。
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: ee97ee2aae11e4e54a0d25e80ffd7bce301fa2f3
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137684"
+title: "テキストとグラフィックスの統合" 説明: "この記事では、テキストを SkiaSharp グラフィックスと統合するために、レンダリングされたテキスト文字列のサイズを確認する方法について説明 Xamarin.Forms し、サンプルコードを使用して説明します。"
+ms. 製品: xamarin ms テクノロジ: skiasharp: A0B5AC82-7736-4AD8-AA16-FE43E18D203C author: davidbritch dabritch: ms. date: 03/10/2017 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
 ---
+
 # <a name="integrating-text-and-graphics"></a>テキストとグラフィックスの統合
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

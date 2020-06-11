@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms既定のテンプレートを新しい NuGet パッケージに更新することはできますか。
-ms.topic: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: bdead80671a1ae6539de6614441df7e86863a5a6
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137476"
+タイトル: " Xamarin.Forms 既定のテンプレートを新しい NuGet パッケージに更新できますか?"
+ms. topic: トラブルシューティング (ms): xamarin ms. assetid: 4B4F-9248-A5CBE58FDD7F: davidbritch: dabritch:: 04/25/2017 no loc: [,]」を参照してください。このような場合は、"" となります Xamarin.Forms 。 Xamarin.Essentials
 ---
+
 # <a name="can-i-update-the-xamarinforms-default-template-to-a-newer-nuget-package"></a>Xamarin.Forms既定のテンプレートを新しい NuGet パッケージに更新することはできますか。
 
 このガイドでは、 Xamarin.Forms 例として .NET Standard ライブラリテンプレートを使用しますが、共有プロジェクトテンプレートでも同じ一般的な方法を使用でき Xamarin.Forms ます。 このガイドは、1.5.1.6471 から2.1.0.6529 に更新する例を基に記述されてい Xamarin.Forms ますが、同じ手順で他のバージョンを既定値として設定することもできます。

@@ -1,23 +1,9 @@
 ---
-title: 電子ブックを使用したエンタープライズアプリケーションパターン Xamarin.Forms
-description: この電子ブックでは、柔軟で保守性の高い、テスト可能なエンタープライズアプリケーションを開発するためのアーキテクチャガイダンスを提供し Xamarin.Forms ます。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: cc0f98d94c76ff63e7a002dfb92b51eae153d7b4
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139400"
+title: 「電子ブックを使用したエンタープライズアプリケーションパターン Xamarin.Forms 」 description: "この eBook は、柔軟で保守性の高い、テスト可能なエンタープライズアプリケーションを開発するためのアーキテクチャガイダンスを提供 Xamarin.Forms します。"
+6175-4223 28cfed6c: xamarin ms. assetid: a8cc: 798d40bf0832: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 08/07/2017 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
 ---
-# <a name="enterprise-application-patterns-using-xamarinforms-ebook"></a>電子ブックを使用したエンタープライズアプリケーションパターン Xamarin.Forms
+
+# <a name="enterprise-application-patterns-using-xamarinforms-ebook"></a>Xamarin.Forms 電子ブックを使用するエンタープライズ アプリケーション パターン
 
 _適応性、保守性、およびテスト可能なエンタープライズアプリケーションを開発するためのアーキテクチャガイダンス Xamarin.Forms_
 
@@ -45,9 +31,9 @@ _適応性、保守性、およびテスト可能なエンタープライズア�
 
 ## <a name="communicating-between-loosely-coupled-components"></a>[疎結合コンポーネント間の通信](communicating-between-loosely-coupled-components.md)
 
-クラスは、 Xamarin.Forms [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) パブリッシュ/サブスクライブパターンを実装します。これにより、オブジェクトと型の参照によるリンクが不便なコンポーネント間でメッセージベースの通信を行うことができます。 このメカニズムにより、パブリッシャーとサブスクライバーは相互に参照がなくても通信できるようになり、コンポーネント間の依存関係を軽減しながら、コンポーネントを個別に開発およびテストすることができます。
+Xamarin.Forms の [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) クラスでは、発行/サブスクライブ パターンが実装され、オブジェクトと型の参照によってリンクしにくいコンポーネント間で、メッセージ ベースの通信を行うことができます。 このメカニズムにより、パブリッシャーとサブスクライバーは相互に参照がなくても通信できるようになり、コンポーネント間の依存関係を軽減しながら、コンポーネントを個別に開発およびテストすることができます。
 
-## <a name="navigation"></a>[［ナビゲーション］](navigation.md)
+## <a name="navigation"></a>[ナビゲーション](navigation.md)
 
 Xamarin.Formsでは、ページナビゲーションがサポートされています。これは通常、ユーザーが UI と対話するか、アプリ自体から、ロジックドリブンの状態が変更された結果として発生します。 ただし、MVVM パターンを使用するアプリでは、ナビゲーションが複雑になることがあります。
 

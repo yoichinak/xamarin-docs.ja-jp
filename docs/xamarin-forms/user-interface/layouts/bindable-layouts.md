@@ -1,22 +1,8 @@
 ---
-title: バインド可能なレイアウトXamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 9d0497c0c0593b54f69bac84307976c4050e9c95
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138243"
+title: 「バインド Xamarin.Forms 可能なレイアウト」の説明: 「バインド可能なレイアウト」では、項目のコレクションにバインドすることによって、レイアウトクラスでコンテンツを生成できます。また、各項目の外観を system.windows.datatemplate> で設定することもできます。
+ms. 製品: xamarin ms. assetid: 824C3319-20A0-42D0-8632-CDECD98349C3: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 03/09/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="bindable-layouts-in-xamarinforms"></a>バインド可能なレイアウトXamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)
@@ -55,7 +41,7 @@ ms.locfileid: "84138243"
 <Grid BindableLayout.ItemsSource="{Binding Items}" />
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 IEnumerable<string> items = ...;
@@ -85,7 +71,7 @@ BindableLayout.SetItemsSource(grid, items);
 </StackLayout>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 DataTemplate circleImageTemplate = ...;
@@ -98,7 +84,7 @@ BindableLayout.SetItemTemplate(stackLayout, circleImageTemplate);
 
 ![System.windows.datatemplate> を使用したバインド可能なレイアウト](bindable-layouts-images/top-followers.png "データテンプレートを使用したバインド可能なレイアウト")
 
-データテンプレートの詳細については、「 [ Xamarin.Forms データテンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)」を参照してください。
+データ テンプレートの詳細については、「[Xamarin.Forms のデータ テンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)」を参照してください。
 
 ## <a name="choose-item-appearance-at-runtime"></a>実行時に項目の外観を選択する
 
@@ -110,7 +96,7 @@ BindableLayout.SetItemTemplate(stackLayout, circleImageTemplate);
             ... />
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 DataTemplateSelector dataTemplateSelector = new TechItemTemplateSelector { ... };

@@ -1,22 +1,8 @@
 ---
-title: ''
-description: この記事では、アプリケーションでのキャンバスおよびペイントオブジェクトを含む SkiaSharp drawing の基本について説明 Xamarin.Forms し、サンプルコードを使用してこれを示します。
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: fb873102bfb8568b8298a39ea2429fb6c27af175
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137723"
+title: "SkiaSharp での単純な円の描画" の説明: "この記事では、アプリケーションでのキャンバスやペイントオブジェクトを含む SkiaSharp Drawing の基本について説明 Xamarin.Forms し、サンプルコードを使用してこれを示します。
+ms. 製品: xamarin ms テクノロジ: skiasharp: E3A4E373-F65D-45C8-8E77-577A804AC3F8 author: davidbritch dabritch: ms. date: 03/10/2017 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
 ---
+
 # <a name="drawing-a-simple-circle-in-skiasharp"></a>SkiaSharp での単純な円の描画
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -63,8 +49,8 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 [`SKPaintSurfaceEventArgs`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs)イベントに付随するオブジェクトには、次の2つのプロパティがあります。
 
-- [`Info`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Info)種類[`SKImageInfo`](xref:SkiaSharp.SKImageInfo)
-- [`Surface`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Surface)種類[`SKSurface`](xref:SkiaSharp.SKSurface)
+- [`SKImageInfo`](xref:SkiaSharp.SKImageInfo) 型の [`Info`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Info)
+- [`SKSurface`](xref:SkiaSharp.SKSurface) 型の [`Surface`](xref:SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs.Surface)
 
 構造体には、 `SKImageInfo` 描画サーフェイスに関する情報が含まれます。最も重要なのは、ピクセル単位の幅と高さです。 オブジェクトは、 `SKSurface` 描画サーフェイス自体を表します。 このプログラムでは、描画サーフェイスはビデオディスプレイですが、他のプログラムでは、 `SKSurface` オブジェクトは SkiaSharp を使用して描画するビットマップを表すこともできます。
 

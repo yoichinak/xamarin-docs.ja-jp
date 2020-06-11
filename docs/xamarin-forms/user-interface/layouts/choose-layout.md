@@ -1,22 +1,8 @@
 ---
-title: レイアウトの選択 Xamarin.Forms
-description: Xamarin.Formsレイアウトクラスを使用すると、アプリケーションに UI コントロールを配置してグループ化できます。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 16a48423d05ce1cede75c0020bf18f4f398f5adc
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138503"
+title: "レイアウトの選択 Xamarin.Forms " の説明: " Xamarin.Forms レイアウトクラスを使用すると、アプリケーションで UI コントロールを配置したりグループ化したりできます。"
+ms. 製品: xamarin ms. assetid: 05A39752-A174-447E-A30D-3CC9EF98CB96: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 08/21/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="choose-a-xamarinforms-layout"></a>レイアウトの選択 Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
@@ -203,7 +189,7 @@ Xamarin.Formsレイアウトクラスを使用すると、アプリケーショ�
 は、 [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) 子にサイズを設定できる場合や、要素のサイズが他の子の位置に影響を与えない場合にのみ使用される特殊な目的のレイアウトと見なされる必要があります。 このレイアウトの標準的な用途は、他のコントロールでページをカバーするオーバーレイを作成することです。これにより、ユーザーがページ上の通常のコントロールと対話できないように保護することができます。
 
 > [!IMPORTANT]
-> `HorizontalOptions`プロパティと `VerticalOptions` プロパティは、の子には影響しません `AbsoluteLayout` 。
+> `HorizontalOptions` プロパティと `VerticalOptions` プロパティは、`AbsoluteLayout` の子には影響しません。
 
 内で [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) は、 [`AbsoluteLayout.LayoutBounds`](xref:Xamarin.Forms.AbsoluteLayout.LayoutBoundsProperty) 添付プロパティを使用して、要素の水平位置、垂直位置、幅、および高さを指定します。 さらに、 [`AbsoluteLayout.LayoutFlags`](xref:Xamarin.Forms.AbsoluteLayout.LayoutFlagsProperty) 添付プロパティは、レイアウトの範囲をどのように解釈するかを指定します。
 

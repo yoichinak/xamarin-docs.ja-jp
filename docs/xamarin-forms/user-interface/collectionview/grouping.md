@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsCollectionView グループ化
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 51661d6573d78386f4ca8bfea0063b752295c2d8
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136462"
+title: " Xamarin.Forms CollectionView Grouping" description: "CollectionView は、isgrouped プロパティを true に設定して、正しくグループ化されたデータを表示できます。"
+ms. 製品: xamarin ms assetid: 7E459245-fdbd47 9D6-b7facecef976eb bb ms。テクノロジ: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 09/17/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-collectionview-grouping"></a>Xamarin.FormsCollectionView グループ化
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
@@ -35,7 +21,7 @@ ms.locfileid: "84136462"
 
 [![CollectionView のグループ化されたデータのスクリーンショット (iOS と Android)](grouping-images/grouped-data.png "グループ化されたデータを含む CollectionView")](grouping-images/grouped-data-large.png#lightbox "グループ化されたデータを含む CollectionView")
 
-データテンプレートの詳細については、「 [ Xamarin.Forms データテンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)」を参照してください。
+データ テンプレートの詳細については、「[Xamarin.Forms のデータ テンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)」を参照してください。
 
 ## <a name="group-data"></a>データのグループ化
 
@@ -170,7 +156,7 @@ Animals.Add(new AnimalGroup("Monkeys", new List<Animal>
 </CollectionView>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView

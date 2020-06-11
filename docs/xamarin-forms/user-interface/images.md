@@ -73,7 +73,7 @@ image.Source = Device.RuntimePlatform == Device.Android
 ```
 
 > [!IMPORTANT]
-> すべてのプラットフォームで同じイメージファイル名を使用するには、すべてのプラットフォームで名前が有効である必要があります。 Android の drawables には名前付けの制限があります。これは、小文字、数字、アンダースコア、ピリオドのみを使用できます。また、クロスプラットフォームの互換性のためには、他のすべてのプラットフォームでも従う必要があります。 例のファイル名ウォーターフロントは規則に従い**ます**が、無効なファイル名の例としては、"ウォーターフロント"、"water-front"、"wåterfront" などがあります。
+> すべてのプラットフォームで同じイメージファイル名を使用するには、すべてのプラットフォームで名前が有効である必要があります。 Android の drawables には名前付けの制限があります。これは、小文字、数字、アンダースコア、ピリオドのみを使用できます。また、クロスプラットフォームの互換性のためには、他のすべてのプラットフォームでも従う必要があります。 例のファイル名**waterfront.png**は規則に従いますが、無効なファイル名の例としては、"水 front.png"、"WaterFront.png"、"water-front.png"、"wåterfront.png" などがあります。
 
 ### <a name="native-resolutions-retina-and-high-dpi"></a>ネイティブの解像度 (retina と高 DPI)
 
@@ -87,7 +87,7 @@ Android の代替解像度のイメージは、次のスクリーンショット
 
 [![Android の複数解像度の画像の場所](images-images/xs-highdpisolution-sml.png)](images-images/xs-highdpisolution.png#lightbox)
 
-UWP イメージファイル名は、 [ `.scale-xxx` ファイル拡張子の前にサフィックスを付けることができ](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast)ます。ここで、 `xxx` は、アセットに適用されるスケーリングの比率 (例: **scale-200**) です。 イメージは、コードまたは XAML で、スケール修飾子を使用せずに参照できます (例: **myimage .png**)。 プラットフォームは、ディスプレイの現在の DPI に基づいて、最も近い適切な資産スケールを選択します。
+UWP イメージファイル名は、 [ `.scale-xxx` ファイル拡張子の前にサフィックスを付けることができ](https://docs.microsoft.com/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast)ます。ここで、 `xxx` は資産に適用されるスケーリングの比率 ( **myimage.scale-200.png**など) です。 イメージは、スケール修飾子を使用せずにコードまたは XAML で参照できます。たとえば、 **myimage.png**だけです。 プラットフォームは、ディスプレイの現在の DPI に基づいて、最も近い適切な資産スケールを選択します。
 
 ### <a name="additional-controls-that-display-images"></a>画像を表示する追加のコントロール
 
@@ -116,7 +116,7 @@ UWP イメージファイル名は、 [ `.scale-xxx` ファイル拡張子の前
 
 **ビルドアクション**は、ファイルの [**プロパティ**] ウィンドウで表示および変更できます。
 
-この例では、リソース ID は**WorkingWithImages**です。
+この例では、リソース ID は**WorkingWithImages.beach.jpg**です。
 IDE では、このプロジェクトの既定の**名前空間**とファイル名を連結することによって、この既定の名前空間を生成しました。各値の間にピリオド (.) を使用します。
 <!-- https://msdn.microsoft.com/library/ms950960.aspx -->
 
@@ -125,15 +125,15 @@ IDE では、このプロジェクトの既定の**名前空間**とファイル
 ![](images-images/xs-buildaction.png "Set Build Action: EmbeddedResource")
 
 **ビルドアクション**は、ファイルの**プロパティ**パッドで表示および変更することもできます。
-このパッドには、コードでリソースを参照するために使用される**リソース ID**が表示されます。 次のスクリーンショットでは、**リソース ID**は**WorkingWithImages**です。
+このパッドには、コードでリソースを参照するために使用される**リソース ID**が表示されます。 次のスクリーンショットでは、**リソース ID**は**WorkingWithImages.beach.jpg**しています。
 IDE では、このプロジェクトの既定の**名前空間**とファイル名を連結することによって、この既定の名前空間を生成しました。各値の間にピリオド (.) を使用します。
-この ID は**プロパティ**パッドで編集できますが、これらの例では、値**WorkingWithImages**が使用されます。
+この ID は**プロパティ**パッドで編集できますが、これらの例では**WorkingWithImages.beach.jpg**値が使用されます。
 
 [![埋め込みリソースプロパティパッド](images-images/xs-embeddedproperties-sml.png)](images-images/xs-embeddedproperties.png#lightbox)
 
 -----
 
-埋め込み画像をプロジェクト内のフォルダーに配置する場合、フォルダー名もリソース ID のピリオド (.) で区切られます。 **ビーチ .jpg**イメージを**myimages**という名前のフォルダーに移動すると、 **WorkingWithImages**のリソース ID が生成されます。
+埋め込み画像をプロジェクト内のフォルダーに配置する場合、フォルダー名もリソース ID のピリオド (.) で区切られます。 **beach.jpg**イメージを**myimages**という名前のフォルダーに移動すると、リソース ID がになり**WorkingWithImages.MyImages.beach.jpg**
 
 埋め込み画像を読み込むコードは、次に示すように、**リソース ID**をメソッドに渡し [`ImageSource.FromResource`](xref:Xamarin.Forms.ImageSource.FromResource*) ます。
 

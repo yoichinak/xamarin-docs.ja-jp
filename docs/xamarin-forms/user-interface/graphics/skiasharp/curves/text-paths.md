@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b0cbb7d26a2aea02a3255fc75947c20a3d803b86
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84131899"
+title: "パスとテキスト内のテキスト" description: "この記事では、SkiaSharp のパスとテキストの共通部分について説明し、サンプルコードを使用してこれを示します。"
+ms. 製品: xamarin ms. assetid: C14C07F6-4A84-4A8C-BDB4-CD61FBF0F79B: xamarin-skiasharp author: davidbritch ms. author: dabritch ms. date: 08/01/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="paths-and-text-in-skiasharp"></a>SkiaSharp のパスとテキスト
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -1,22 +1,8 @@
 ---
-title: ''
-description: この記事では、さまざまなソースから SkiaSharp のビットマップを読み込んでアプリケーションに表示する方法について説明 Xamarin.Forms し、サンプルコードを使用してこれを示します。
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 1e4c170f818dc62640b1cd72ec3b70f48d227d93
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137737"
+title: "SkiaSharp のビットマップの基礎" 説明: "この記事では、さまざまなソースから SkiaSharp にビットマップを読み込み、それらをアプリケーションに表示する方法について説明 Xamarin.Forms し、サンプルコードを使用してこれを示します。"
+ms. 製品: xamarin ms テクノロジ: skiasharp: 32C95DFF-9065-42D7-966C-D3DBD16906B3 author: davidbritch dabritch: ms. date: 07/17/2018 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
 ---
+
 # <a name="bitmap-basics-in-skiasharp"></a>SkiaSharp でのビットマップの基礎
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -104,9 +90,9 @@ Android オペレーティングシステムは、 `Stream` `GetStreamAsync` メ
 
 ## <a name="loading-a-bitmap-resource"></a>ビットマップリソースを読み込んでいます
 
-コードに関して、ビットマップを読み込む最も簡単な方法は、ビットマップリソースをアプリケーションに直接含めることです。 SkiaSharpFormsDemos プログラムには、" **SkiaSharpFormsDemos** " という名前の複数のビットマップファイルを含む**Media**という名前のフォルダーが含まれてい**ます**。 プログラムリソースとして格納されているビットマップの場合、[**プロパティ**] ダイアログボックスを使用して、**埋め込みリソース**の**ビルドアクション**をファイルに指定する必要があります。
+コードに関して、ビットマップを読み込む最も簡単な方法は、ビットマップリソースをアプリケーションに直接含めることです。 **SkiaSharpFormsDemos**プログラムには、 **monkey.png**という名前のビットマップファイルを含む、**メディア**という名前のフォルダーが含まれています。 プログラムリソースとして格納されているビットマップの場合、[**プロパティ**] ダイアログボックスを使用して、**埋め込みリソース**の**ビルドアクション**をファイルに指定する必要があります。
 
-各埋め込みリソースには、プロジェクト名、フォルダー、およびファイル名で構成される*リソース ID*が含まれています。これらはすべて、ピリオド ( **SkiaSharpFormsDemos**) で結ばれています。 このリソースにアクセスするには、そのリソース ID をクラスのメソッドの引数として指定し [`GetManifestResourceStream`](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String)) [`Assembly`](xref:System.Reflection.Assembly) ます。
+各埋め込みリソースには、プロジェクト名、フォルダー、およびファイル名で構成される*リソース ID*が含まれています。これらはすべて、ピリオド: **SkiaSharpFormsDemos.Media.monkey.png**で結ばれています。 このリソースにアクセスするには、そのリソース ID をクラスのメソッドの引数として指定し [`GetManifestResourceStream`](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String)) [`Assembly`](xref:System.Reflection.Assembly) ます。
 
 ```csharp
 string resourceID = "SkiaSharpFormsDemos.Media.monkey.png";

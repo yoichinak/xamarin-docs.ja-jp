@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsCollectionView EmptyView
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d35e39e55d66452e47c7a3e3faf86a7a7d6adaca
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136493"
+title: " Xamarin.Forms CollectionView EmptyView" description: "CollectionView では、表示可能なデータがない場合にユーザーにフィードバックを提供する空のビューを指定できます。 空のビューには、文字列、ビュー、または複数のビューを指定できます。
+ms. 製品: xamarin ms assetid: 6CEBCFE6-557747 F68-9709-431062609153 ms. テクノロジ: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 05/06/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-collectionview-emptyview"></a>Xamarin.FormsCollectionView EmptyView
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
@@ -33,7 +19,7 @@ ms.locfileid: "84136493"
 > [!NOTE]
 > プロパティは、 [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView) 必要に応じて、対話型コンテンツを含むビューに設定できます。
 
-データテンプレートの詳細については、「 [ Xamarin.Forms データテンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)」を参照してください。
+データ テンプレートの詳細については、「[Xamarin.Forms のデータ テンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)」を参照してください。
 
 ## <a name="display-a-string-when-data-is-unavailable"></a>データが使用できないときに文字列を表示する
 
@@ -44,7 +30,7 @@ ms.locfileid: "84136493"
                 EmptyView="No items to display" />
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 CollectionView collectionView = new CollectionView
@@ -93,7 +79,7 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "EmptyMonkeys");
 </StackLayout>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 SearchBar searchBar = new SearchBar { ... };
@@ -148,7 +134,7 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 </StackLayout>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 SearchBar searchBar = new SearchBar { ... };
@@ -290,7 +276,7 @@ void ToggleEmptyView(bool isToggled)
 </ContentPage>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 SearchBar searchBar = new SearchBar { ... };
@@ -332,5 +318,5 @@ public class SearchTermDataTemplateSelector : DataTemplateSelector
 
 - [CollectionView (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 - [Xamarin.Formsデータテンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
-- [Xamarin.Formsリソースディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [Xamarin.Forms のリソース ディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [DataTemplateSelector を作成する Xamarin.Forms](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

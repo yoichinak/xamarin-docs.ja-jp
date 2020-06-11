@@ -52,7 +52,7 @@ Windows デスクトップで実行される GTK # アプリを追加するに�
 
     ![共有プロジェクトの参照](gtk-images/win/reference-shared-project.png "共有プロジェクトの参照")
 
-8. [**参照マネージャー** ] ダイアログで、[**参照**] ボタンをクリックし、 **C:\Program files (x86) \GtkSharp\2.12\lib**フォルダーを参照して、 **atk-sharp**、 **gdk-sharp**、 **glade-sharp** **、glib-sharp、gtk-dotnet** **、gtk-sharp****の各ファイルを**選択します。
+8. [**参照マネージャー** ] ダイアログで、[**参照**] ボタンをクリックし、 **C:\Program files (x86) \GtkSharp\2.12\lib**フォルダーを参照して、 **atk-sharp.dll**、 **gdk-sharp.dll**、 **glade-sharp.dll**、 **glib-sharp.dll**、 **gtk-dotnet.dll**、 **gtk-sharp.dll**ファイルを選択します。
 
     ![GTK # ライブラリを参照する](gtk-images/win/reference-gtk-libraries.png "GTK # ライブラリを参照する")
 
@@ -211,6 +211,6 @@ vbox.PackEnd(settingsView, true, true, 0);
 
 ネイティブフォームの詳細については、「[ネイティブフォーム](~/xamarin-forms/platform/native-forms.md)」を参照してください。
 
-## <a name="issues"></a>Issues
+## <a name="issues"></a>発行
 
 これはプレビューなので、運用環境の準備ができているわけではありません。 現在の実装状態については、「 [status](https://github.com/jsuarezruiz/forms-gtk-progress/blob/master/Status.md)」を参照してください。現在の既知の問題については、「 [Pending & 既知の問題](https://github.com/jsuarezruiz/forms-gtk-progress/blob/master/Issues-Pending.md)」を参照してください。

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms表示モード
-description: Xamarin.Formsビューは、クロスプラットフォームモバイルユーザーインターフェイスの構成要素です。 この記事では、に含まれているビューの一覧を示し Xamarin.Forms ます。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8c15626e405645d28a785c32d276860f9751ea25
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84132380"
+title: " Xamarin.Forms views" description: " Xamarin.Forms views は、クロスプラットフォームモバイルユーザーインターフェイスの構成要素です。 この記事では、に含まれているビューの一覧を示し Xamarin.Forms ます。
+ms. 製品: xamarin ms. assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 04/16/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-views"></a>Xamarin.Forms表示モード
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery/)
@@ -41,7 +27,7 @@ _Xamarin 形式のビューは、クロスプラットフォームモバイル�
 | `Expander`コンテンツをホストするための拡張可能なコンテナーを提供し、ヘッダーとコンテンツで構成されます。 プロパティをヘッダーとして表示されるに設定し、プロパティを、 `Header` [`View`](xref:Xamarin.Forms.View) タップに `Content` [`View`](xref:Xamarin.Forms.View) よってヘッダーが展開されるときに表示されるに設定します。<br /><br />[ガイド](~/xamarin-forms/user-interface/expander.md)  / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-expanderdemos) | [![エキスパンダーの例](views-images/Expander.png "エキスパンダーの例")](views-images/Expander-Large.png#lightbox "エキスパンダーの例")<br /> [このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ExpanderDemoPage.cs)  /  の C# コード[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ExpanderDemoPage.xaml) |
 |     |     |
 
-### <a name="label"></a>ラベル
+### <a name="label"></a>Label
 
 |     |     |
 | --- | --- |
@@ -136,7 +122,7 @@ _Xamarin 形式のビューは、クロスプラットフォームモバイル�
 | `CheckBox`ユーザーは、チェックボックスをオンまたはオフにできるボタンの種類を使用してブール値を選択できます。 プロパティはの `IsChecked` 状態です `CheckBox` 。イベントは、状態が変化し `CheckedChanged` たときに発生します。<br /><br />API ドキュメント/[ガイド](~/xamarin-forms/user-interface/checkbox.md)の  /  [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos) | [![CheckBox の例](views-images/CheckBox.png "CheckBox の例")](views-images/CheckBox-Large.png#lightbox "CheckBox の例")<br />[このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CheckBoxPage.cs)  /  の C# コード[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CheckBoxPage.xaml) |
 |     |     |
 
-### <a name="slider"></a>スライダー
+### <a name="slider"></a>Slider
 
 |     |     |
 | --- | --- |
@@ -252,5 +238,5 @@ _Xamarin 形式のビューは、クロスプラットフォームモバイル�
 ## <a name="related-links"></a>関連リンク
 
 - [Xamarin.Formsフォームギャラリーのサンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
-- [Xamarin.FormsSamples](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
+- [Xamarin.Forms サンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
 - [Xamarin.FormsAPI ドキュメント](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)

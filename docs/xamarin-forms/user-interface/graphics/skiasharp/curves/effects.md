@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: f3a5a581ffb4ca2acf1d4209b8b7a744f0daa5eb
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84128052"
+title: "SkiaSharp のパスの効果" の説明: "この記事では、パスを描画および塗りつぶすために使用できるさまざまな SkiaSharp パスの効果について説明し、サンプルコードを使用してこれを示します。"
+ms. 製品: xamarin ms テクノロジ: skiasharp: 95167D1F-9167D1F-90e596d422f3 author: davidbritch: dabritch:: 07/29/2017 no-loc: [,] という形式で指定していないことを示します。 Xamarin.Forms Xamarin.Essentials
 ---
+
 # <a name="path-effects-in-skiasharp"></a>SkiaSharp のパス効果
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

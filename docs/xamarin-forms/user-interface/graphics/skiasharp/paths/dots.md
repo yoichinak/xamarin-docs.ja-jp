@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8698bacd7257df431b12166c749f5826e8d6fd3c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138451"
+title: "ドット and ダッシュ in SkiaSharp" description: "この記事では、SkiaSharp で点線と破線の描画の複雑さをどのように習得するかを説明し、サンプルコードを使用してこれを示します。
+ms. 製品: xamarin ms. assetid: 8E9BCC13-830C-458C-9FC8-ECB4EAE66078: xamarin-skiasharp author: davidbritch ms. author: dabritch ms. date: 03/10/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="dots-and-dashes-in-skiasharp"></a>SkiaSharp のドットとダッシュ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

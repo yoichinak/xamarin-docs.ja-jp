@@ -1,9 +1,6 @@
 ---
-title: description: "プラットフォーム-詳細" を使用すると、カスタムレンダラーや特殊効果を実装しなくても、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、従来のカラーモードを無効にする Windows プラットフォーム固有のを使用する方法について説明 Xamarin.Forms します。
-ms. 製品: ms. assetid: ms. テクノロジ: 作成者: ms. 作成者: ms. 日付: なし:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title: "VisualElement Legacy Color Mode on Windows" description: "Platform-custom を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、従来のカラーモードを無効にする Windows プラットフォーム固有のを使用する方法について説明 Xamarin.Forms します。
+ms. 製品: xamarin ms. assetid: B8759309-07C7-4DCA-A18A-C1A198A7951B: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 10/24/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
 
 # <a name="visualelement-legacy-color-mode-on-windows"></a>Windows の VisualElement レガシカラーモード

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms行列
-description: Xamarin.Formsグリッドは、その子をセルの行と列に編成するレイアウトです。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: c4e63d6c1701d9eb247ecb7c52188e5dbc045934
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138074"
+title: " Xamarin.Forms grid" description: " Xamarin.Forms grid は、その子をセルの行と列に編成するレイアウトです。"
+ms. 製品: xamarin ms. assetid: 762b1802d18547 davidbritch: xamarin-forms author: ms. author: dabritch ms. date: 05/15/2020 no loc: [ Xamarin.Forms ,] を指定します。日付としての形式は含まれません Xamarin.Essentials 。
 ---
+
 # <a name="xamarinforms-grid"></a>Xamarin.Forms行列
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-griddemos)
@@ -169,7 +155,7 @@ ms.locfileid: "84138074"
 
 また、内の子ビューでは、 [`Grid`](xref:Xamarin.Forms.Grid) セルを共有できます。 子が XAML に表示される順序は、子がに配置される順序です `Grid` 。 前の例では、オブジェクトは [`Label`](xref:Xamarin.Forms.Label) オブジェクトの上にレンダリングされるため、表示されるだけです [`BoxView`](xref:Xamarin.Forms.BoxView) 。 オブジェクトがオブジェクトの `Label` 上にレンダリングされた場合、オブジェクトは表示されません `BoxView` 。
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 public class BasicGridPageCS : ContentPage
@@ -312,7 +298,7 @@ grid.Children.Add(bottomRight, 1, 2, 1, 2); // second column, second row
 > [!TIP]
 > [`RowSpacing`](xref:Xamarin.Forms.Grid.RowSpacing)プロパティと [`ColumnSpacing`](xref:Xamarin.Forms.Grid.ColumnSpacing) プロパティを負の値に設定すると、セルの内容を重ねることができます。
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 public GridSpacingPageCS()
@@ -429,7 +415,7 @@ public GridSpacingPageCS()
 
 [![グリッド内のセルの配置のスクリーンショット](grid-images/alignment.png "グリッド内のセルの配置")](grid-images/alignment-large.png#lightbox "グリッド内のセルの配置")
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 public class GridAlignmentPageCS : ContentPage
@@ -640,7 +626,7 @@ public class GridAlignmentPageCS : ContentPage
 > [!IMPORTANT]
 > [`Grid`](xref:Xamarin.Forms.Grid)オブジェクトやその他のレイアウトの入れ子を深くするほど、入れ子になったレイアウトの方がパフォーマンスに影響します。 詳細については、「[適切なレイアウトを選択する](~/xamarin-forms/deploy-test/performance.md#choose-the-correct-layout)」を参照してください。
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 public class ColorSlidersGridPageCS : ContentPage

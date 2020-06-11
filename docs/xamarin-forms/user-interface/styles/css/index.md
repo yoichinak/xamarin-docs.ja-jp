@@ -1,22 +1,6 @@
 ---
-title: Xamarin.Formsカスケードスタイルシートを使用したアプリのスタイル設定 (CSS)
-description: Xamarin.Formsカスケードスタイルシート (CSS) を使用したビジュアル要素のスタイル設定をサポートします。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-ms.custom: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 3e333fcdca12a6bd2f71a1ecbeeb1fd3d5f5be13
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84140141"
+title: " Xamarin.Forms カスケードスタイルシート (css) を使用したアプリのスタイル設定" description: "は Xamarin.Forms 、カスケードスタイルシート (css) を使用したビジュアル要素のスタイル設定をサポートします。"
+ms. 製品: xamarin ms. assetid: C89D57A6-DAB9-4C42-963F-26D67627DDC2: xamu-ビデオ作成者: davidbritch ミリ秒: dabritch ms. date: 04/17/2020 no loc: [ Xamarin.Forms ,、] を指定します。 Xamarin.Essentials
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>Xamarin.Formsカスケードスタイルシートを使用したアプリのスタイル設定 (CSS)
 
@@ -77,7 +61,7 @@ stacklayout>image {
 では、 Xamarin.Forms CSS スタイルシートはコンパイル時ではなく実行時に解析および評価され、使用時にスタイルシートが再解析されます。
 
 > [!NOTE]
-> 現時点では、XAML スタイルで可能なすべてのスタイル設定を CSS で実行することはできません。 ただし、XAML スタイルを使用して、で現在サポートされていないプロパティの CSS を補うことができ Xamarin.Forms ます。 XAML スタイルの詳細については、「 [ Xamarin.Forms xaml スタイルを使用したアプリのスタイル](~/xamarin-forms/user-interface/styles/xaml/index.md)設定」を参照してください。
+> 現時点では、XAML スタイルで可能なすべてのスタイル設定を CSS で実行することはできません。 ただし、XAML スタイルを使用して、で現在サポートされていないプロパティの CSS を補うことができ Xamarin.Forms ます。 XAML スタイルの詳細については、「[XAML スタイルを使用した Xamarin.Forms アプリのスタイル設定](~/xamarin-forms/user-interface/styles/xaml/index.md)」を参照してください。
 
 [Monkeyappcss](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)サンプルでは、単純なアプリのスタイルを CSS で使用する方法を示しています。次のスクリーンショットを参照してください。
 
@@ -365,49 +349,49 @@ stacklayout>image {
 |`align-items`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| `flex-end` \| `initial` |`align-items: flex-start;`|
 |`align-self`|`VisualElement`| `auto` \| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| `flex-end` \| `initial`|`align-self: flex-end;`|
 |`background-color`|`VisualElement`|_色_ \|`initial` |`background-color: springgreen;`|
-|`background-image`|`Page`|_string_ \| `initial` |`background-image: bg.png;`|
+|`background-image`|`Page`|_文字列_ \|`initial` |`background-image: bg.png;`|
 |`border-color`|`Button`, `Frame`, `ImageButton`|_色_ \|`initial`|`border-color: #9acd32;`|
-|`border-radius`|`BoxView`, `Button`, `Frame`, `ImageButton`|_double_ \|`initial` |`border-radius: 10;`|
-|`border-width`|`Button`, `ImageButton`|_double_ \|`initial` |`border-width: .5;`|
+|`border-radius`|`BoxView`, `Button`, `Frame`, `ImageButton`|_double_ \| `initial` |`border-radius: 10;`|
+|`border-width`|`Button`, `ImageButton`|_double_ \| `initial` |`border-width: .5;`|
 |`color`|`ActivityIndicator`, `BoxView`, `Button`, `CheckBox`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `ProgressBar`, `SearchBar`, `Switch`, `TimePicker`|_色_ \|`initial` |`color: rgba(255, 0, 0, 0.3);`|
-|`column-gap`|`Grid`|_double_ \|`initial`|`column-gap: 9;`|
+|`column-gap`|`Grid`|_double_ \| `initial`|`column-gap: 9;`|
 |`direction`|`VisualElement`|`ltr` \| `rtl` \| `inherit` \| `initial` |`direction: rtl;`|
 |`flex-direction`|`FlexLayout`| `column` \| `columnreverse` \| `row` \| `rowreverse` \| `row-reverse` \| `column-reverse` \| `initial`|`flex-direction: column-reverse;`|
 |`flex-basis`|`VisualElement`|_float_ \|`auto` \| `initial`. さらに、0 ~ 100% の範囲のパーセンテージを符号と共に指定でき `%` ます。|`flex-basis: 25%;`|
 |`flex-grow`|`VisualElement`|_float_ \|`initial`|`flex-grow: 1.5;`|
 |`flex-shrink`|`VisualElement`|_float_ \|`initial`|`flex-shrink: 1;`|
 |`flex-wrap`|`VisualElement`| `nowrap` \| `wrap` \| `reverse` \| `wrap-reverse` \| `initial`|`flex-wrap: wrap-reverse;`|
-|`font-family`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_string_ \| `initial` |`font-family: Consolas;`|
+|`font-family`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_文字列_ \|`initial` |`font-family: Consolas;`|
 |`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_double_ \|_namedsize_ \|  `initial` |`font-size: 12;`|
 |`font-style`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|`bold` \| `italic` \| `initial` |`font-style: bold;`|
-|`height`|`VisualElement`|_double_ \|`initial` |`min-height: 250;`|
+|`height`|`VisualElement`|_double_ \| `initial` |`min-height: 250;`|
 |`justify-content`|`FlexLayout`| `start` \| `center` \| `end` \| `spacebetween` \| `spacearound` \| `spaceevenly` \| `flex-start` \| `flex-end` \| `space-between` \| `space-around` \| `initial`|`justify-content: flex-end;`|
-|`letter-spacing`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `SearchHandler`, `Span`, `TimePicker`|_double_ \|`initial`|`letter-spacing: 2.5;`|
-|`line-height`|`Label`, `Span`|_double_ \|`initial` |`line-height: 1.8;`|
+|`letter-spacing`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `SearchHandler`, `Span`, `TimePicker`|_double_ \| `initial`|`letter-spacing: 2.5;`|
+|`line-height`|`Label`, `Span`|_double_ \| `initial` |`line-height: 1.8;`|
 |`margin`|`View`|_太さ_ \|`initial` |`margin: 6 12;`|
 |`margin-left`|`View`|_太さ_ \|`initial` |`margin-left: 3;`|
 |`margin-top`|`View`|_太さ_ \|`initial` |`margin-top: 2;`|
 |`margin-right`|`View`|_太さ_ \|`initial` |`margin-right: 1;`|
 |`margin-bottom`|`View`|_太さ_ \|`initial` |`margin-bottom: 6;`|
 |`max-lines`|`Label`|_INT_ \| `initial`|`max-lines: 2;`|
-|`min-height`|`VisualElement`|_double_ \|`initial` |`min-height: 50;`|
-|`min-width`|`VisualElement`|_double_ \|`initial` |`min-width: 112;`|
-|`opacity`|`VisualElement`|_double_ \|`initial` |`opacity: .3;`|
+|`min-height`|`VisualElement`|_double_ \| `initial` |`min-height: 50;`|
+|`min-width`|`VisualElement`|_double_ \| `initial` |`min-width: 112;`|
+|`opacity`|`VisualElement`|_double_ \| `initial` |`opacity: .3;`|
 |`order`|`VisualElement`|_INT_ \| `initial`|`order: -1;`|
 |`padding`|`Button`, `ImageButton`, `Layout`, `Page`|_太さ_ \|`initial` |`padding: 6 12 12;`|
-|`padding-left`|`Button`, `ImageButton`, `Layout`, `Page`|_double_ \|`initial`|`padding-left: 3;`|
-|`padding-top`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \|`initial` |`padding-top: 4;`|
-|`padding-right`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \|`initial` |`padding-right: 2;`|
-|`padding-bottom`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \|`initial` |`padding-bottom: 6;`|
+|`padding-left`|`Button`, `ImageButton`, `Layout`, `Page`|_double_ \| `initial`|`padding-left: 3;`|
+|`padding-top`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \| `initial` |`padding-top: 4;`|
+|`padding-right`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \| `initial` |`padding-right: 2;`|
+|`padding-bottom`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \| `initial` |`padding-bottom: 6;`|
 |`position`|`FlexLayout`| `relative` \| `absolute` \| `initial`|`position: absolute;`|
-|`row-gap`|`Grid`| _double_ \|`initial`|`row-gap: 12;`|
+|`row-gap`|`Grid`| _double_ \| `initial`|`row-gap: 12;`|
 |`text-align`| `Entry`, `EntryCell`, `Label`, `SearchBar`|`left` \| `top` \| `right` \| `bottom` \| `start` \| `center` \| `middle` \| `end` \| `initial`. `left``right`右から左に記述された環境では回避する必要があります。| `text-align: right;`|
 |`text-decoration`|`Label`, `Span`|`none` \| `underline` \| `strikethrough` \| `line-through` \| `initial`|`text-decoration: underline, line-through;`|
 |`transform`|`VisualElement`| `none`, `rotate`, `rotateX`, `rotateY`, `scale`, `scaleX`, `scaleY`, `translate`, `translateX`, `translateY`, `initial` |`transform: rotate(180), scaleX(2.5);`|
 |`transform-origin`|`VisualElement`| _double_、 _double_ \|`initial` |`transform-origin: 7.5, 12.5;`|
 |`vertical-align`|`Label`|`left` \| `top` \| `right` \| `bottom` \| `start` \| `center` \| `middle` \| `end` \| `initial`|`vertical-align: bottom;`|
 |`visibility`|`VisualElement`|`true` \| `visible` \| `false` \| `hidden` \| `collapse` \| `initial`|`visibility: hidden;`|
-|`width`|`VisualElement`|_double_ \|`initial`|`min-width: 320;`|
+|`width`|`VisualElement`|_double_ \| `initial`|`min-width: 320;`|
 
 > [!NOTE]
 > `initial`は、すべてのプロパティの有効な値です。 別のスタイルから設定された値 (既定値にリセット) をクリアします。
@@ -437,11 +421,11 @@ stacklayout>image {
 |`-xf-orientation`|`ScrollView`, `StackLayout`| `horizontal` \| `vertical` \| `both` \| `initial`. `both`は、でのみサポートされてい `ScrollView` ます。 |`-xf-orientation: horizontal;`|
 |`-xf-placeholder`|`Entry`, `Editor`, `SearchBar`|_引用符で囲まれたテキスト_ \|`initial` |`-xf-placeholder: Enter name;`|
 |`-xf-placeholder-color`|`Entry`, `Editor`, `SearchBar`|_色_ \|`initial` |`-xf-placeholder-color: green;`|
-|`-xf-spacing`|`StackLayout`|_double_ \|`initial` |`-xf-spacing: 8;`|
+|`-xf-spacing`|`StackLayout`|_double_ \| `initial` |`-xf-spacing: 8;`|
 |`-xf-thumb-color`|`Slider`, `Switch`|_色_ \|`initial` |`-xf-thumb-color: limegreen;`|
 |`-xf-vertical-scroll-bar-visibility`|`ScrollView`| `default` \| `always` \| `never` \| `initial` |`-xf-vertical-scroll-bar-visibility: always;`|
 |`-xf-vertical-text-alignment`|`Label`| `start` \| `center` \| `end` \| `initial`|`-xf-vertical-text-alignment: end;`|
-|`-xf-visual`|`VisualElement`|_string_ \| `initial` |`-xf-visual: material;`|
+|`-xf-visual`|`VisualElement`|_文字列_ \|`initial` |`-xf-visual: material;`|
 
 ### <a name="xamarinforms-shell-specific-properties"></a>Xamarin.Formsシェル固有のプロパティ
 
@@ -505,5 +489,5 @@ stacklayout>image {
 ## <a name="related-links"></a>関連リンク
 
 - [MonkeyAppCSS (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
-- [リソース ディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
-- [Xamarin.FormsXAML スタイルを使用したアプリのスタイル設定](~/xamarin-forms/user-interface/styles/xaml/index.md)
+- [リソースディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [XAML スタイルを使用して Xamarin.Forms アプリのスタイルを設定する](~/xamarin-forms/user-interface/styles/xaml/index.md)

@@ -1,22 +1,8 @@
 ---
-title: アプリケーションのテーマを Xamarin.Forms 適用する
-description: テーマをアプリケーションに実装するには Xamarin.Forms 、各テーマの ResourceDictionary を作成し、DynamicResource マークアップ拡張機能を使用してリソースを読み込む必要があります。
-ms.prod: ''
-ms.assetId: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 3341ada6c5605917eeec79aac96e38cb99b40fc4
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138204"
+title: "アプリケーションのテーマ Xamarin.Forms " の説明: "テーマをアプリケーションに実装するには Xamarin.Forms 、各テーマの ResourceDictionary を作成し、dynamicresource マークアップ拡張機能を使用してリソースを読み込みます。"
+ms. 製品: xamarin ms. assetId: B7B17F66-4E37-4B50-9A57-351B62BE4FED: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 08/07/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="theme-a-xamarinforms-application"></a>アプリケーションのテーマを Xamarin.Forms 適用する
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-theming/)
@@ -227,6 +213,6 @@ void OnPickerSelectionChanged(object sender, EventArgs e)
 
 - [テーマ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-theming/)
 - [システム テーマの変更に対応する](system-theme-changes.md)
-- [リソース ディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [リソースディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [動的スタイルXamarin.Forms](~/xamarin-forms/user-interface/styles/xaml/dynamic.md)
-- [Xamarin.FormsXAML スタイルを使用したアプリのスタイル設定](~/xamarin-forms/user-interface/styles/xaml/index.md)
+- [XAML スタイルを使用して Xamarin.Forms アプリのスタイルを設定する](~/xamarin-forms/user-interface/styles/xaml/index.md)

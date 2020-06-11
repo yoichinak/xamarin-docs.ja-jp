@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 6a28dd20eb8978334365ac217df1241e5288fd28
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137425"
+title: "SkiaSharp bitmap Tile" description: "横方向と縦方向のビットマップを使用して領域を並べて表示します。"
+ms skiasharp: xamarin ms テクノロジ: xamarin-ms. assetid: 9ed14e0747 DC8-4B03-8A33-772838BF51EA author: davidbritch ms. author: dabritch ms. date: 08/23/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="skiasharp-bitmap-tiling"></a>SkiaSharp ビットマップのタイル
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -250,7 +236,7 @@ public class AlgorithmicBrickWallPage : ContentPage
 }
 ```
 
-結果は次のとおりです。
+結果は次のようになります。
 
 [![アルゴリズムブリックの壁面](bitmap-tiling-images/AlgorithmicBrickWall.png "アルゴリズムブリックの壁面")](bitmap-tiling-images/AlgorithmicBrickWall-Large.png#lightbox)
 

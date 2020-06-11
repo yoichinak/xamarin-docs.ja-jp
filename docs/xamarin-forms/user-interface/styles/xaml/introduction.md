@@ -1,22 +1,8 @@
 ---
-title: スタイルの概要 Xamarin.Forms
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 5766af7da3a0cf550a2ccb3a926dad25fd7962eb
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138823"
+title: "スタイルの概要 Xamarin.Forms " 説明: "スタイルを使用すると、ビジュアル要素の外観をカスタマイズできます。 スタイルは特定の型に対して定義され、その型で使用可能なプロパティの値を含んでいます。 "
+ms. 製品: xamarin ms. assetid: 3FF899C0-6CFB-4C1D-837D-9E9E10181967: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 04/27/2016 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="introduction-to-xamarinforms-styles"></a>スタイルの概要 Xamarin.Forms
 
 _スタイルを使用すると、ビジュアル要素の外観をカスタマイズできます。スタイルは特定の型に対して定義され、その型で使用可能なプロパティの値を含んでいます。_
@@ -93,27 +79,27 @@ public class NoStylesPageCS : ContentPage
 
 ## <a name="create-a-style"></a>スタイルの作成
 
-クラスは、 [`Style`](xref:Xamarin.Forms.Style) プロパティ値のコレクションを1つのオブジェクトにグループ化して、複数のビジュアル要素インスタンスに適用できるようにします。 これにより、繰り返し表示されるマークアップを減らし、アプリケーションの外観を簡単に変更できるようになります。
+[`Style`](xref:Xamarin.Forms.Style) クラスは、プロパティ値のコレクションを 1 つのオブジェクトにグループ化して、複数のビジュアル要素インスタンスに適用できるようにします。 これにより、繰り返し表示されるマークアップを減らし、アプリケーションの外観を簡単に変更できるようになります。
 
 スタイルは主に XAML ベースのアプリケーション向けに設計されていますが、C# でも作成できます。
 
 - [`Style`](xref:Xamarin.Forms.Style)XAML で作成されたインスタンスは、通常、 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) [`Resources`](xref:Xamarin.Forms.VisualElement.Resources) コントロール、ページ、またはアプリケーションのコレクションに割り当てられたで定義され [`Resources`](xref:Xamarin.Forms.Application.Resources) ます。
 - [`Style`](xref:Xamarin.Forms.Style)C# で作成されたインスタンスは、通常、ページのクラス、またはグローバルにアクセスできるクラスで定義されます。
 
-使用可能な影響を定義する場所の選択 [`Style`](xref:Xamarin.Forms.Style) :
+[`Style`](xref:Xamarin.Forms.Style) を定義する場所の選択は、使用できる場所に影響があります。
 
 - [`Style`](xref:Xamarin.Forms.Style)コントロールレベルで定義されたインスタンスは、コントロールとその子にのみ適用できます。
 - [`Style`](xref:Xamarin.Forms.Style)ページレベルで定義されたインスタンスは、ページとその子にのみ適用できます。
-- [`Style`](xref:Xamarin.Forms.Style)アプリケーションレベルで定義されたインスタンスは、アプリケーション全体で適用できます。
+- アプリケーション レベルで定義された [`Style`](xref:Xamarin.Forms.Style) インスタンスは、アプリケーション全体に適用できます。
 
-各 [`Style`](xref:Xamarin.Forms.Style) インスタンスには、1つ以上のオブジェクトのコレクションが含まれて [`Setter`](xref:Xamarin.Forms.Setter) おり、それぞれに `Setter` [`Property`](xref:Xamarin.Forms.Setter.Property) とが [`Value`](xref:Xamarin.Forms.Setter.Value) あります。 `Property` は、スタイルが適用される要素のバインド可能なプロパティの名前で、`Value` はプロパティに適用される値です。
+各 [`Style`](xref:Xamarin.Forms.Style) インスタンスには、1 つ以上の [`Setter`](xref:Xamarin.Forms.Setter) オブジェクトのコレクションが含まれています。各 `Setter` には、[`Property`](xref:Xamarin.Forms.Setter.Property)と[`Value`](xref:Xamarin.Forms.Setter.Value)があります。 `Property` は、スタイルが適用される要素のバインド可能なプロパティの名前で、`Value` はプロパティに適用される値です。
 
 各 [`Style`](xref:Xamarin.Forms.Style) インスタンスは、*明示的*または*暗黙的*に指定できます。
 
 - *明示的*な [`Style`](xref:Xamarin.Forms.Style) インスタンスは、との値を指定 [`TargetType`](xref:Xamarin.Forms.Style.TargetType) し、 `x:Key` ターゲット要素のプロパティを参照に設定することによって定義され [`Style`](xref:Xamarin.Forms.NavigableElement.Style) `x:Key` ます。 *明示的*スタイルの詳細については、「[明示的なスタイル](~/xamarin-forms/user-interface/styles/explicit.md)」を参照してください。
 - *暗黙* [`Style`](xref:Xamarin.Forms.Style) のインスタンスは、のみを指定することによって定義され [`TargetType`](xref:Xamarin.Forms.Style.TargetType) ます。 その `Style` 後、インスタンスは、その型のすべての要素に自動的に適用されます。 のサブクラスに `TargetType` は、が自動的に適用されないことに注意して `Style` ください。 *暗黙的*なスタイルの詳細については、「[暗黙的なスタイル](~/xamarin-forms/user-interface/styles/implicit.md)」を参照してください。
 
-を作成する場合 [`Style`](xref:Xamarin.Forms.Style) 、 [`TargetType`](xref:Xamarin.Forms.Style.TargetType) プロパティは常に必須です。 次のコード例は、XAML で作成された*明示的*なスタイル (に注意してください) を示してい `x:Key` ます。
+[`Style`](xref:Xamarin.Forms.Style) を作成する場合は、[`TargetType`](xref:Xamarin.Forms.Style.TargetType) プロパティが常に必要です。 次のコード例は、XAML で作成された*明示的*なスタイル (に注意してください) を示してい `x:Key` ます。
 
 ```xaml
 <Style x:Key="labelStyle" TargetType="Label">
@@ -141,5 +127,5 @@ public class NoStylesPageCS : ContentPage
 ## <a name="related-links"></a>関連リンク
 
 - [XAML マークアップ拡張](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [スタイル](xref:Xamarin.Forms.Style)
+- [Style](xref:Xamarin.Forms.Style)
 - [Setter](xref:Xamarin.Forms.Setter)

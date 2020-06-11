@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsImageButton
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 7d81c0ce4dc2a46a840a34cc9084c8f2388a0169
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137645"
+title: " Xamarin.Forms imagebutton" 説明: "Imagebutton はイメージを表示し、特定のタスクを実行するようにアプリケーションに指示する tap または click に応答します。"
+ms. 製品: xamarin ms. assetid: B5906AB6-3F79-4FCB-8C78-1F0AF18AB39E: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 12/04/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-imagebutton"></a>Xamarin.FormsImageButton
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)

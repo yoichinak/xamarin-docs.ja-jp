@@ -3,7 +3,7 @@ title: " Xamarin.Forms Fast レンダラー" の説明: "この記事では、 X
 ms. 製品: xamarin ms. assetid: 095287 f2-d891-4f3c-be02-fb7d195a481a ms. テクノロジ: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 05/28/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
 
-# <a name="xamarinforms-fast-renderers"></a>Xamarin.Forms高速レンダラー
+# <a name="xamarinforms-fast-renderers"></a>Xamarin.Forms 高速レンダラー
 
 従来、Android での元のコントロールレンダラーのほとんどは、次の2つのビューで構成されています。
 

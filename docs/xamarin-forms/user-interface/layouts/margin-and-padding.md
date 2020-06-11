@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 6ae4116be99f076a7afd5ed9c2823bc12f445e18
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137991"
+title: "Margin and Padding" description: "Margin プロパティと Padding プロパティは、要素がユーザーインターフェイスに表示されるときのレイアウト動作を制御します。 この記事では、2つのプロパティの違いとその設定方法について説明します。
+ms. 製品: xamarin ms. assetid: BEB096BB-51DF-410F-B0F1-D235287B0F4A: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 04/27/2016 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="margin-and-padding"></a>余白とスペース
 
 _余白と余白のプロパティは、要素がユーザーインターフェイスに表示されるときのレイアウト動作を制御します。この記事では、2つのプロパティの違いとその設定方法について説明します。_
@@ -68,7 +54,7 @@ var stackLayout = new StackLayout {
 > [!NOTE]
 > `Thickness`値には負の値を指定できます。通常は、コンテンツをクリップまたは過剰に描画します。
 
-## <a name="summary"></a>[概要]
+## <a name="summary"></a>まとめ
 
 この記事では、 [`Margin`](xref:Xamarin.Forms.View.Margin) プロパティとプロパティの違い [`Padding`](xref:Xamarin.Forms.Layout.Padding) と、プロパティの設定方法について説明します。 プロパティは、ユーザーインターフェイスで要素がレンダリングされるときのレイアウト動作を制御します。
 

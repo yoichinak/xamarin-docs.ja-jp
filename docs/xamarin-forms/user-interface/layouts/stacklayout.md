@@ -1,22 +1,8 @@
 ---
-title: Xamarin.FormsStackLayout
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: f624674cc6d4ba1bdc34a42fb52fb63ff8a7135a
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137970"
+title: " Xamarin.Forms stacklayout" description: "StackLayout は、1次元スタック内の子ビューを水平方向または垂直方向に整理します。"
+ms. 製品: xamarin ms. assetid: 6A91EA70-268C-462C-AAAF-F8DA011403F8: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 05/11/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
+
 # <a name="xamarinforms-stacklayout"></a>Xamarin.FormsStackLayout
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stacklayoutdemos)
@@ -63,7 +49,7 @@ ms.locfileid: "84137970"
 
 [![垂直方向の StackLayout のスクリーンショット](stacklayout-images/vertical.png "垂直方向の StackLayout")](stacklayout-images/vertical-large.png#lightbox "垂直方向の StackLayout")
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 public class VerticalStackLayoutPageCS : ContentPage
@@ -119,7 +105,7 @@ public class VerticalStackLayoutPageCS : ContentPage
 
 [![水平方向の StackLayout のスクリーンショット](stacklayout-images/horizontal.png "水平方向の StackLayout")](stacklayout-images/horizontal-large.png#lightbox "水平方向の StackLayout")
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 public HorizontalStackLayoutPageCS()
@@ -173,7 +159,7 @@ public HorizontalStackLayoutPageCS()
 > [!TIP]
 > [`Spacing`](xref:Xamarin.Forms.StackLayout.Spacing)子ビューが重なり合うように、プロパティを負の値に設定できます。
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 public class StackLayoutSpacingPageCS : ContentPage
@@ -250,7 +236,7 @@ public class StackLayoutSpacingPageCS : ContentPage
 - [`End`](xref:Xamarin.Forms.LayoutOptions.End)。をの [`Label`](xref:Xamarin.Forms.Label) 右側に配置し [`StackLayout`](xref:Xamarin.Forms.StackLayout) ます。
 - [`Fill`](xref:Xamarin.Forms.LayoutOptions.Fill)。これにより、[`Label`](xref:Xamarin.Forms.Label) によって [`StackLayout`](xref:Xamarin.Forms.StackLayout) の幅が埋まるようになります。
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 public class AlignmentPageCS : ContentPage
@@ -273,7 +259,7 @@ public class AlignmentPageCS : ContentPage
 }
 ```
 
-### <a name="expansion"></a>拡張
+### <a name="expansion"></a>正規の表記
 
 次の XAML の例では、の各に拡張設定を設定し [`Label`](xref:Xamarin.Forms.Label) [`StackLayout`](xref:Xamarin.Forms.StackLayout) ます。
 
@@ -318,7 +304,7 @@ public class AlignmentPageCS : ContentPage
 > [!TIP]
 > を使用する場合 [`StackLayout`](xref:Xamarin.Forms.StackLayout) は、子ビューが1つだけに設定されていることを確認して [`LayoutOptions.Expands`](xref:Xamarin.Forms.LayoutOptions.Expands) ください。 このプロパティにより、指定された子は、`StackLayout` がそれに与えられる最大の領域を占有します。このような計算を複数回実行することは無駄です。
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 public ExpansionPageCS()
@@ -403,7 +389,7 @@ public ExpansionPageCS()
 > [!IMPORTANT]
 > [`StackLayout`](xref:Xamarin.Forms.StackLayout)オブジェクトやその他のレイアウトの入れ子を深くするほど、入れ子になったレイアウトの方がパフォーマンスに影響します。 詳細については、「[適切なレイアウトを選択する](~/xamarin-forms/deploy-test/performance.md#choose-the-correct-layout)」を参照してください。
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 public class CombinedStackLayoutPageCS : ContentPage
