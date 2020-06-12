@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: jondouglas
 ms.author: jodou
 ms.date: 02/13/2020
-ms.openlocfilehash: faab613d88a7f59d1095021d2b21faf9223ae33b
-ms.sourcegitcommit: 3fb407841dbe46b8b23573f08591228b7c0e2726
+ms.openlocfilehash: a776dbb2ecfaf0942d79c2b403c13f98cdc7c2e2
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81488911"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571975"
 ---
 # <a name="hardware-acceleration-for-emulator-performance-hyper-v--haxm"></a>エミュレーターのパフォーマンスのためのハードウェア高速化 (Hyper-V と HAXM)
 
@@ -53,7 +53,7 @@ Windows で最適なエクスペリエンスを実現するには、WHPX を使�
 
 Android エミュレーターの起動とデバッグについては、「[Android Emulator でのデバッグ](~/android/deploy-test/debugging/debug-on-emulator.md)」を参照してください。
 
-<a name="hyper-v-win" />
+<a name="hyper-v-win"></a>
 
 ## <a name="accelerating-with-hyper-v"></a>Hyper-V による高速化
 
@@ -138,7 +138,7 @@ systeminfo
 
 HAXM をサポートするコンピューターで、HAXM がインストールされていない場合は、次のセクションの手順に従って HAXM をインストールします。
 
-<a name="install-haxm-win" />
+<a name="install-haxm-win"></a>
 
 ### <a name="installing-haxm"></a>HAXM のインストール
 
@@ -181,7 +181,7 @@ Android エミュレーターを高速化するには、ハイパーバイザー
 
 Android エミュレーターの起動とデバッグについては、「[Android Emulator でのデバッグ](~/android/deploy-test/debugging/debug-on-emulator.md)」を参照してください。
 
-<a name="hypervisor" />
+<a name="hypervisor"></a>
 
 ## <a name="accelerating-with-the-hypervisor-framework"></a>Hypervisor フレームワークによる高速化
 
@@ -195,7 +195,7 @@ Hypervisor フレームワークで Android エミュレーターを使用する
 
 Hypervisor フレームワークがお使いの Mac でサポートされていない場合は、Android エミュレーターの高速化に HAXM を使用できます (次に説明します)。
 
-<a name="haxm-mac" />
+<a name="haxm-mac"></a>
 
 ## <a name="accelerating-with-haxm"></a>HAXM による高速化
 
@@ -229,7 +229,7 @@ Hypervisor フレームワークがお使いの Mac でサポートされてい�
 
 HAXM がインストールされていない場合は、次のセクションの手順を使用して、HAXM をインストールします。
 
-<a name="install-haxm-mac" />
+<a name="install-haxm-mac"></a>
 
 ### <a name="installing-haxm"></a>HAXM のインストール
 

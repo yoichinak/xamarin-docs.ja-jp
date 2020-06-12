@@ -6,12 +6,12 @@ ms.assetid: 9EE288C5-8952-C5A9-E542-0BD847300EC6
 author: davidortinau
 ms.author: daortin
 ms.date: 11/25/2015
-ms.openlocfilehash: be2f7f555b76d472f7a66d95e661bb2f5884c58f
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: ca83f6ced2e9c2f5380d3bf760e00d613cb0acb0
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76725342"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84570974"
 ---
 # <a name="overview-of-objective-c-bindings"></a>Objective-C バインドの概要
 
@@ -21,7 +21,7 @@ Xamarin で使用する Objective-C ライブラリをバインドするには�
 
 1. .NET でどのようにネイティブ API が公開されるか、また、それがどのように基底の Objective-C にマップされるかを記述するために、C# "API 定義" を記述します。 これは、`interface` のような標準 C# 構成体と、さまざまなバインド**属性**を使用して行われます (この[簡単な例](~/cross-platform/macios/binding/objective-c-libraries.md#Binding_an_API)を参照してください)。
 
-2. C# で "API 定義" を記述したら、それをコンパイルして "バインド" アセンブリを生成します。 これは、[**コマンド ライン**](#commandline)で、または Visual Studio for Mac または Visual Studio の[**バインド プロジェクト**](#bindingproject)を使用して実行できます。
+2. C# で "API 定義" を記述したら、それをコンパイルして "バインド" アセンブリを生成します。 これは、[**コマンド ライン**](#command-line-bindings)で、または Visual Studio for Mac または Visual Studio の[**バインド プロジェクト**](#bindingproject)を使用して実行できます。
 
 3. その後、その "バインド" アセンブリが Xamarin アプリケーション プロジェクトに追加されます。これにより、定義した API を使用してネイティブ機能にアクセスできます。
    バインド プロジェクトは、アプリケーション プロジェクトから完全に分離されています。
@@ -30,8 +30,6 @@ Xamarin で使用する Objective-C ライブラリをバインドするには�
    > 手順 1 は、[**Objective Sharpie**](#objectivesharpie) を使用して自動化できます。 これは、Objective-C API を調べ、提案の C# "API 定義" を生成します。 Objective Sharpie によって作成されたファイルをカスタマイズし、それをバインド プロジェクト(またはコマンド ライン)で使用して、バインド アセンブリを作成できます。 Objective Sharpie は、それ自体でバインドを作成するのではなく、より大きなプロセスのオプションの一部にすぎません。
 
 また、バインドを記述するのに役立つ[そのしくみ](#howitworks)の技術的な詳細を参照することもできます。
-
-<a name="Command_Line_Bindings" /><a name="commandline" />
 
 ## <a name="command-line-bindings"></a>コマンド ライン バインド
 
@@ -51,7 +49,7 @@ bash$ bmac-native -e cocos2d.cs -s:enums.cs -x:extensions.cs
 
 上記のコマンドによって、現在のディレクトリに `cocos2d.dll` ファイルが生成されます。これには、お使いのプロジェクトで使用できる完全にバインドされたライブラリが含まれます。 これは、バインド プロジェクト([下記](#bindingproject)参照) を使用する場合に Visual Studio for Mac がバインドの作成に使用するツールです。
 
-<a name="bindingproject" />
+<a name="bindingproject"></a>
 
 ## <a name="binding-project"></a>バインド プロジェクト
 
@@ -59,7 +57,7 @@ bash$ bmac-native -e cocos2d.cs -s:enums.cs -x:extensions.cs
 
 この[使用開始ガイド](~/cross-platform/macios/binding/objective-c-libraries.md#Getting_Started)に従って、バインド プロジェクトを作成および使用してバインドを生成する方法を確認してください。
 
-<a name="objectivesharpie" />
+<a name="objectivesharpie"></a>
 
 ## <a name="objective-sharpie"></a>Objective Sharpie
 
@@ -67,7 +65,7 @@ Objective Sharpie は、もう 1 つの別のコマンド ライン ツールで
 
 ネイティブ ライブラリ、ネイティブ フレームワーク、CocoaPods を解析して、バインドに組み込むことができる API 定義にする方法については、[Objective Sharpie に関するドキュメント](~/cross-platform/macios/binding/objective-sharpie/index.md)を参照してください。
 
-<a name="howitworks" />
+<a name="howitworks"></a>
 
 ## <a name="how-binding-works"></a>バインドのしくみ
 

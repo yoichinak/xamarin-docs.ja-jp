@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 620a7edd4467a5a2bae60bbd82d0e1460c9f0040
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 63365ebc12089ced7de621b3a510996fa66119ce
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73021416"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571962"
 ---
 # <a name="xamarinandroid-performance"></a>Xamarin.Android のパフォーマンス
 
@@ -38,7 +38,7 @@ Xamarin.Android でビルドされたアプリケーションのパフォーマ�
 > [!NOTE]
 > この記事を読む前に、まず、「[Cross-Platform Performance](~/cross-platform/deploy-test/memory-perf-best-practices.md)」(クロスプラットフォーム パフォーマンス) をお読みください。Xamarin プラットフォームを使用してビルドされたアプリケーションのメモリ使用量とパフォーマンスを改善するための、プラットフォーム固有ではない手法について説明されています。
 
-<a name="optimizelayout" />
+<a name="optimizelayout"></a>
 
 ## <a name="optimize-layout-hierarchies"></a>レイアウト階層を最適化する
 
@@ -119,7 +119,7 @@ Xamarin.Android でビルドされたアプリケーションのパフォーマ�
 
 前の 3 レベルの階層は 2 レベルの階層に減り、1 つの [`RelativeLayout`](xref:Android.Widget.RelativeLayout) で 2 つの [`LinearLayout`](xref:Android.Widget.LinearLayout) インスタンスが置き換えられています。 各 [`ListView`](xref:Android.Widget.ListView) 行のレイアウトを拡大すると、パフォーマンスが大幅に向上します。
 
-<a name="optimizelistviews" />
+<a name="optimizelistviews"></a>
 
 ## <a name="optimize-list-views"></a>リスト ビューを最適化する
 
@@ -132,7 +132,7 @@ Xamarin.Android でビルドされたアプリケーションのパフォーマ�
 
 これらの手法をすべて使用することで、[`ListView`](xref:Android.Widget.ListView) インスタンスのスクロールをスムーズに保つことができます。
 
-<a name="reuserowviews" />
+<a name="reuserowviews"></a>
 
 ### <a name="reuse-row-views"></a>行ビューを再利用する
 
@@ -157,7 +157,7 @@ public override View GetView(int position, View convertView, ViewGroup parent)
 
 詳細については、「[Populating a ListView with Data](~/android/user-interface/layouts/list-view/populating.md)」 (ListView へのデータの設定) の「[Row View Re-Use](~/android/user-interface/layouts/list-view/populating.md#row-view-re-use)」 (行ビューの再利用) を参照してください。
 
-<a name="removeeventhandlers" />
+<a name="removeeventhandlers"></a>
 
 ## <a name="remove-event-handlers-in-activities"></a>アクティビティのイベント ハンドラーを削除する
 
@@ -186,7 +186,7 @@ App.Current.Service1.Updated += service1UpdateHandler;
 App.Current.Service1.Updated -= service1UpdateHandler;
 ```
 
-<a name="limitservices" />
+<a name="limitservices"></a>
 
 ## <a name="limit-the-lifespan-of-services"></a>サービスの有効期間を制限する
 
@@ -194,7 +194,7 @@ App.Current.Service1.Updated -= service1UpdateHandler;
 
 サービスの有効期限は、`IntentService` を使用して制限することができます。これにより、開始元のインテントの処理後にサービス自体が終了します。
 
-<a name="releaseresources" />
+<a name="releaseresources"></a>
 
 ## <a name="release-resources-when-notified"></a>通知時にリソースを解放する
 
@@ -212,7 +212,7 @@ App.Current.Service1.Updated -= service1UpdateHandler;
 
 受信したレベルに基づいてリソースを解放することで、通知に応答する必要があります。
 
-<a name="releaseresourcesuihidden" />
+<a name="releaseresourcesuihidden"></a>
 
 ## <a name="release-resources-when-the-user-interface-is-hidden"></a>ユーザー インターフェイスが非表示の場合はリソースを解放する
 
@@ -220,7 +220,7 @@ App.Current.Service1.Updated -= service1UpdateHandler;
 
 ユーザーが UI を終了するときに通知を受信するには、`Activity` クラスで [`OnTrimMemory`](xref:Android.App.Activity.OnTrimMemory*) コールバックを実装し、UI が非表示になっていることを示す [`TrimMemoryUiHidden`](xref:Android.Content.ComponentCallbacks2.TrimMemoryUiHidden) レベルをリッスンします。 この通知を受信するのは、アプリケーションの UI コンポーネントが*すべて* ユーザーに対して非表示になった場合のみです。 この通知の受信時に UI リソースを解放すると、ユーザーがアプリの別のアクティビティから戻った場合に、UI リソースを引き続き使用して、アクティビティをすばやく再開できます。
 
-<a name="optimizeimages" />
+<a name="optimizeimages"></a>
 
 ## <a name="optimize-image-resources"></a>イメージ リソースを最適化する
 
@@ -228,7 +228,7 @@ App.Current.Service1.Updated -= service1UpdateHandler;
 
 詳細については、「[Cross-Platform Performance](~/cross-platform/deploy-test/memory-perf-best-practices.md)」(クロスプラットフォーム パフォーマンス) ガイドの「[Optimize Image Resources](~/cross-platform/deploy-test/memory-perf-best-practices.md#optimizeimages)」(イメージ リソースの最適化) を参照してください。
 
-<a name="disposeimages" />
+<a name="disposeimages"></a>
 
 ## <a name="dispose-of-unused-image-resources"></a>未使用のイメージ リソースの破棄
 
@@ -245,7 +245,7 @@ using (Bitmap smallPic = BitmapFactory.DecodeByteArray(smallImageByte, 0, smallI
 
 破棄可能なリソースの解放の詳細については、「[IDisposable のリソースを解放する](~/cross-platform/deploy-test/memory-perf-best-practices.md#idisposable)」を参照してください。  
 
-<a name="avoidfloats" />
+<a name="avoidfloats"></a>
 
 ## <a name="avoid-floating-point-arithmetic"></a>浮動小数点演算の使用を避ける
 
@@ -254,7 +254,7 @@ Android デバイスでは、浮動小数点演算が、整数演算の場合よ
 > [!NOTE]
 > 整数演算の場合でも、CPU によってはハードウェアで除算できないこともあります。 したがって、多くの場合、整数除算と剰余演算はソフトウェアで実行されます。
 
-<a name="dismissdialogs" />
+<a name="dismissdialogs"></a>
 
 ## <a name="dismiss-dialogs"></a>ダイアログを閉じる
 

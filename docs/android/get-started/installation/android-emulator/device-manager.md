@@ -9,12 +9,12 @@ author: davidortinau
 ms.author: daortin
 ms.custom: video
 ms.date: 01/22/2019
-ms.openlocfilehash: 64e637648b03dff81468f2d7ad072c7acc50868b
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: fd1361f00bf10089f7a9dead5a5adaa1e7c29727
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73021157"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571585"
 ---
 # <a name="managing-virtual-devices-with-the-android-device-manager"></a>Android Device Manager による仮想デバイスの管理
 
@@ -357,7 +357,7 @@ Android Device Manager を初めて起動すると、現在構成されている
 
 -----
 
-<a name="troubleshooting" />
+<a name="troubleshooting"></a>
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 63a5ed357a903700ea89d858bcde9798ddf97942
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 65a89afb3f301fd88ac4819bb8c3658a2be5e29d
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76724621"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573197"
 ---
 # <a name="the-itunesmetadataplist-file-in-xamarinios-apps"></a>Xamarin.iOS アプリの iTunesMetadata.plist ファイル
 
@@ -22,7 +22,7 @@ iTunes App Store での販売または無料リリースのために iOS アプ�
 
 不足している情報をアドホック配布に提供するには、省略可能な `iTunesMetadata.plist` ファイルを作成して、アプリケーションの IPA ファイルに含めることができます。 この plist ファイルは特殊な形式の XML ファイルであり (詳しくは Apple の「[Property List Programming Guide](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/PropertyLists/Introduction/Introduction.html)」(プロパティ リスト プログラミング ガイド) をご覧ください)、特定の iOS アプリケーションに関する情報を定義するキー/値ペアが含まれます。
 
-<a name="iTunesMetadata_contents" />
+<a name="iTunesMetadata_contents"></a>
 
 ## <a name="the-itunesmetadataplist-contents"></a>iTunesMetadata.plist の内容
 
@@ -280,7 +280,7 @@ iOS アプリケーションの場合、現在定義されているジャンル�
 <integer>16843008</integer>
 ```
 
-<a name="iTunesMetadata_creating" />
+<a name="iTunesMetadata_creating"></a>
 
 ## <a name="creating-an-itunesmetadataplist-file"></a>iTunesMetadata.plist ファイルの作成
 

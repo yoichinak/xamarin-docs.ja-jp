@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 40f99fb4e7e44e0a3dc499dc603e66620b890eaa
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 311e0a84cfc71421c0992ffcecde975429eb7d3a
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75886568"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572170"
 ---
 # <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Xamarin.iOS ビルド ホストの接続のトラブルシューティング
 
@@ -82,7 +82,7 @@ _このガイドでは、新しい接続マネージャーの使用中に発生�
     ssh amyb@10.1.8.95
     ```
 
-    <a name="stepnine" />
+    <a name="stepnine"></a>
 
 9. **手順 8 で成功した**場合、接続状態で `ls` のような単純なコマンドを試します。
 
@@ -112,7 +112,7 @@ _このガイドでは、新しい接続マネージャーの使用中に発生�
 
 12. 手順 8 に失敗し、**手順 10 に失敗した**場合、問題はおそらく、Mac の SSH サーバー プロセスが実行されていないか、現在のユーザーにログインを許可するように構成されていないことにあります。 この場合、もっと複雑な問題を調査する前に、手順 2 のリモート ログイン設定をもう一度確認してください。
 
-<a name="knownissues" />
+<a name="knownissues"></a>
 
 ### <a name="known-issues-and-limitations"></a>既知の問題と制限事項
 
@@ -135,7 +135,7 @@ _このガイドでは、新しい接続マネージャーの使用中に発生�
 
 - **バグ [#52264](https://bugzilla.xamarin.com/show_bug.cgi?id=52264)** – この問題は、 **[システム環境設定] の [ユーザーとグループ]** で Mac ユーザーの **[詳細オプション]** コンテキスト メニューの **[ログイン シェル]** が **/bin/bash** 以外の値に設定されている場合に Xamarin 4.1 で発生することがあります。 (Xamarin 4.2 以降では、このシナリオは、このバグではなく "接続できませんでした" というエラー メッセージにつながります。)**対応策**: **ログイン シェル**を元の既定の **/bin/bash** に戻します。
 
-<a name="tryagain" />
+<a name="tryagain"></a>
 
 #### <a name="couldnt-connect-to-macbuildhostlocal-please-try-again"></a>"MacBuildHost.local に接続できませんでした。 もう一度お試しください。"
 
@@ -179,7 +179,7 @@ _このガイドでは、新しい接続マネージャーの使用中に発生�
 
     8. **[システム環境設定]&gt;[共有]&gt;[リモート ログイン]** の順にアクセスして**リモート ログイン**を無効にし、再度有効にして、SSH サーバーを再起動します。
 
-<a name="clearing" />
+<a name="clearing"></a>
 
 #### <a name="clearing-the-broker-idb-build-and-designer-agents-on-the-mac"></a>Mac でブローカー、IDB、ビルド、デザイナー エージェントを消去する
 
@@ -260,7 +260,7 @@ Mac で OS X 10.11 (El Capitan) 以降を実行している限り、このメッ
 
     [![](troubleshooting-images/troubleshooting-image14.png "Click the Layout Mode drop-down menu and select Thread")](troubleshooting-images/troubleshooting-image14.png#lightbox)
 
-<a name="verboselogs" />
+<a name="verboselogs"></a>
 
 #### <a name="verbose-log-files"></a>詳細ログ ファイル
 
@@ -340,7 +340,7 @@ Mac で Xcode を起動し、Apple 開発者アカウントでログインして
 
 Visual Studio MEF コンポーネント キャッシュが消去され、キャッシュ破損の問題が解消されます。
 
-<a name="errors" />
+<a name="errors"></a>
 
 ### <a name="errors-due-to-existing-build-host-processes-on-the-mac"></a>Mac 上の既存のビルド ホスト プロセスに起因するエラー
 

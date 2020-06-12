@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 48aba9ead925d3404146795eb9a3e0588d7b600d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 141d268e7a5670f9ba8002ae9edda828538a01a4
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76724697"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571793"
 ---
 # <a name="debugging-xamarinios-apps"></a>Xamarin.iOS アプリのデバッグ
 
@@ -174,7 +174,7 @@ Visual Studio では次のように表示されます。
 
 デバッガーの設定中にエラーが発生した場合、プロジェクト オプションの追加 mtouch 引数に "-v -v -v" を追加すれば、詳しく診断できます。 デバイスのコンソールに詳しいエラー情報が出力されます。
 
- <a name="WiFi_Debugging" />
+ <a name="WiFi_Debugging"></a>
 
 ## <a name="wireless-debugging"></a>ワイヤレス デバッグ
 
@@ -182,7 +182,7 @@ Xamarin.iOS の初期設定では、USB で接続されているデバイスの�
 
 ワイヤレス展開およびデバッグについて詳しくは、「[ワイヤレス展開](~/ios/deploy-test/wireless-deployment.md)」ガイドをご覧ください。
 
-<a name="Technical_Details" />
+<a name="Technical_Details"></a>
 
 ## <a name="technical-details"></a>技術詳細
 
@@ -192,7 +192,7 @@ Xamarin.iOS は新しい Mono Soft Debugger を使用します。 オペレー�
 
 このソフト デバッガーは、デバイスで実行時、連携するデバッグ スキームを必要とします。 つまり、デバッグのためにコードがインストルメント化され、すべてのシーケンス ポイントで余計なコードが含まれるため、デバッグ時のバイナリ ビルドが大きくなります。
 
-<a name="Accessing_the_Console" />
+<a name="Accessing_the_Console"></a>
 
 ## <a name="accessing-the-console"></a>コンソールにアクセスする
 
@@ -204,7 +204,7 @@ Visual Studio をご利用の場合、出力ウィンドウにもログがあり
 
 -----
 
-<a name="Debugging_Mono's_Class_Libraries" />
+<a name="Debugging_Mono's_Class_Libraries"></a>
 
 ## <a name="debugging-monos-class-libraries"></a>Mono のクラス ライブラリのデバッグ
 

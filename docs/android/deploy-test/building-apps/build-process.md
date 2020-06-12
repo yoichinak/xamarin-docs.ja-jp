@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/06/2020
-ms.openlocfilehash: bce2b6f29129894ed446100c87b5e92d3572ed2f
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 202041614d6a5b632aba6e92a77869effc21bb4f
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "78946272"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84568322"
 ---
 # <a name="build-process"></a>ビルド プロセス
 
@@ -35,7 +35,7 @@ Xamarin.Android ビルド システムが生成できる Android アプリケー
 
 共有ランタイムは、`$(AndroidUseSharedRuntime)` プロパティを `False` に設定することで、デバッグ ビルドで無効にすることができます。
 
-<a name="Fast_Deployment" />
+<a name="Fast_Deployment"></a>
 
 ### <a name="fast-deployment"></a>高速展開
 
@@ -53,7 +53,7 @@ Xamarin.Android ビルド プロセスは、Visual Studio for Mac と Visual Stu
 上級ユーザーが IDE の GUI でサポートされていないことを行えるように、ビルド プロセスは、プロジェクト ファイルを直接編集することでカスタマイズできるようになっています。
 このページでは、Xamarin.Android 固有の機能とカスタマイズのみを文書化しています &ndash; 通常の MSBuild 項目、プロパティおよびターゲットを使用して、さらに多くのことができます。
 
-<a name="Build_Targets" />
+<a name="Build_Targets"></a>
 
 ## <a name="build-targets"></a>ビルド ターゲット
 
@@ -726,7 +726,7 @@ MSBuild プロパティは、ターゲットの動作を制御します。 こ�
 
   既定値は `Resources` です。 Java プロジェクトの構造には、これを `res` に変更します。
 
-<a name="Signing_Properties" />
+<a name="Signing_Properties"></a>
 
 ### <a name="signing-properties"></a>署名プロパティ
 
@@ -845,7 +845,7 @@ Enter key password for keystore.alias
 </PropertyGroup>
 ```
 
-<a name="Build_Actions" />
+<a name="Build_Actions"></a>
 
 ## <a name="build-actions"></a>ビルド アクション
 
@@ -865,7 +865,7 @@ Enter key password for keystore.alias
 <AndroidBoundLayout Include="Resources\layout\Main.axml" />
 ```
 
-<a name="AndroidEnvironment" />
+<a name="AndroidEnvironment"></a>
 
 ### <a name="androidenvironment"></a>AndroidEnvironment
 
@@ -968,7 +968,7 @@ Xamarin.Android 5.1 以降では、`@(Content)` ビルド アクションを使�
 
 *LinkDescription* ビルド アクションを持つファイルは、[リンカーの動作を制御](~/cross-platform/deploy-test/linker.md)するために使用されます。
 
-<a name="ProguardConfiguration" />
+<a name="ProguardConfiguration"></a>
 
 ### <a name="proguardconfiguration"></a>ProguardConfiguration
 

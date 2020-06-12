@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/22/2018
-ms.openlocfilehash: 0caea0c31275a7459286c143cc92ca90731dd93b
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 20e75914699a60496860d906c74046f9057dd78f
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303577"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84568283"
 ---
 # <a name="windows-installation"></a>Windows のインストール
 
@@ -72,8 +72,8 @@ Xamarin Android SDK Manager の使用の詳細については、「[Android SDK 
 コンピューターで Android デバイスをエミュレーションするとき、次のコンポーネントが使われます。
 
 - **Google Android Emulator**&ndash; これは [QEMU](https://www.qemu.org/) を基盤とするエミュレーターであり、開発者のワークステーションで動作する仮想化デバイスを作ります。
-- **エミュレーター イメージ**&ndash; _エミュレーター イメージ_ は、仮想化するハードウェアやオペレーティング システムのテンプレートまたは仕様です。 たとえば、Google Play サービスがインストールされた Android 7.0 を実行する Nexus 5X のハードウェア要件をエミュレーションしたイメージを用意できます。 あるいは、Android 6.0 を実行する 10 インチ タブレットをエミュレーションできます。
-- **Android 仮想デバイス (AVD)** &ndash; _Android 仮想デバイス_ は、エミュレーションされた Android デバイスであり、エミュレーター イメージから作成されます。 Android アプリを実行し、テストすると、Xamarin.Android によって Android Emulator と特定の AVD が起動し、APK がインストールされ、それからアプリが実行されます。
+- **エミュレーター イメージ**&ndash;_エミュレーター イメージ_は、仮想化するハードウェアやオペレーティング システムのテンプレートまたは仕様です。 たとえば、Google Play サービスがインストールされた Android 7.0 を実行する Nexus 5X のハードウェア要件をエミュレーションしたイメージを用意できます。 あるいは、Android 6.0 を実行する 10 インチ タブレットをエミュレーションできます。
+- **Android 仮想デバイス (AVD)** &ndash;_Android 仮想デバイス_は、エミュレーションされた Android デバイスであり、エミュレーター イメージから作成されます。 Android アプリを実行し、テストすると、Xamarin.Android によって Android Emulator と特定の AVD が起動し、APK がインストールされ、それからアプリが実行されます。
 
 x86 基盤のコンピューターで開発するとき、x86 アーキテクチャに合わせて最適化された特別なエミュレーター イメージと次の 2 つの仮想化テクノロジのいずれかを利用することでパフォーマンスが大幅に改善されます。
 
@@ -85,7 +85,7 @@ Android Emulator、Hyper-V、HAXM の詳細については、「[エミュレー
 > [!NOTE]
 > Windows 10 の 2018 年 4 月更新より前のバージョンでは、HAXM は Hyper-V と互換性がありません。 この場合、[Hyper-V を無効にする](~/android/get-started/installation/android-emulator/troubleshooting.md#disable-hyperv)か、x86 最適化のない、遅いエミュレーター イメージを使用する必要があります。
 
-<a name="device" />
+<a name="device"></a>
 
 ### <a name="android-device"></a>Android デバイス
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/06/2018
-ms.openlocfilehash: 6250dfa24361601c2b9929d80fec3cc7a18cab2d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: bff3b2a7c1e273c7a03ae341dd663ebc722791eb
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73028570"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571741"
 ---
 # <a name="working-with-capabilities-in-xamarinios"></a>Xamarin.iOS の機能の使用
 
@@ -113,7 +113,7 @@ Apple は、機能を拡張し、iOS アプリで実行可能な操作の範囲�
 
 -----
 
-<a name="devcenter" />
+<a name="devcenter"></a>
 
 ## <a name="using-the-developer-center"></a>Developer Center の使用
 
@@ -146,7 +146,7 @@ Developer Center の使用には 2 ステップのプロセスがあります。
 
 9. **[登録]** をクリックしてから **[完了]** をクリックします。 新しく作成されたアプリ ID は、iOS のアプリ ID リストに表示されます。
 
-<a name="provisioningprofile" />
+<a name="provisioningprofile"></a>
 
 ### <a name="creating-a-provisioning-profile"></a>プロビジョニング プロファイルの作成
 
@@ -188,7 +188,7 @@ Developer Center の使用には 2 ステップのプロセスがあります。
 > [!IMPORTANT]
 > Entitlement.plist ファイルの権利キーと、Info.plist ファイルの秘密キーの設定が必要な場合もあります。 これらの権利の詳細については、「[Working with Entitlements](~/ios/deploy-test/provisioning/entitlements.md)」 (権利の使用) を参照してください。
 
-<a name="nextsteps" />
+<a name="nextsteps"></a>
 
 ## <a name="next-steps"></a>次の手順
 
@@ -197,7 +197,7 @@ Developer Center の使用には 2 ステップのプロセスがあります。
 - アプリでフレームワークの名前空間を使用します。
 - アプリに必要な権利を追加します。 必要な権利とその追加方法については、[権利の概要](~/ios/deploy-test/provisioning/entitlements.md)に関するガイドで詳しく説明しています。
 
-<a name="troubleshooting" />
+<a name="troubleshooting"></a>
 
 ## <a name="troubleshooting-capabilities"></a>トラブルシューティング機能
 
@@ -210,7 +210,7 @@ Developer Center の使用には 2 ステップのプロセスがあります。
 - 適切な秘密キーが info.plist に設定されていることを確認します。
 - アプリの **[iOS バンドル署名]** で、 **[カスタムの権利]** が **Entitlements.plist** に設定されていることを確認します。 これは、デバッグと iOS シミュレーターのビルドに対する既定の設定では_ありません_。
 
-<a name="summary" />
+<a name="summary"></a>
 
 ## <a name="summary"></a>まとめ
 

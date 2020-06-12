@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/05/2018
-ms.openlocfilehash: 51ebb8932f4b1ef8f10ba699e59ce53c98a38a50
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 85516800b2fcc410a9eba3abd0c12fd040cee3da
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73021482"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571949"
 ---
 # <a name="gdb"></a>GDB
 
@@ -30,7 +30,7 @@ Xamarin.Android 4.10 では、`_Gdb` MSBuild ターゲットを使用するこ�
 
 問題が発生した場合は、「[トラブルシューティング](#Troubleshooting)」セクションを参照してください。
 
-<a name="Debug_Builds_with_Fast_Deployment" />
+<a name="Debug_Builds_with_Fast_Deployment"></a>
 
 ### <a name="debug-builds-with-fast-deployment"></a>高速展開を使用するデバッグ ビルド
 
@@ -73,7 +73,7 @@ GNU gdb (GDB) 7.3.1-gg2
 (gdb) c
 ```
 
-<a name="Debug_Builds_without_Fast_Deployment" />
+<a name="Debug_Builds_without_Fast_Deployment"></a>
 
 ## <a name="debug-builds-without-fast-deployment"></a>高速展開を使用しないデバッグ ビルド
 
@@ -132,7 +132,7 @@ GNU gdb (GDB) 7.3.1-gg2
 (gdb) c
 ```
 
-<a name="Release_Builds" />
+<a name="Release_Builds"></a>
 
 ## <a name="release-builds"></a>リリース ビルド
 
@@ -154,7 +154,7 @@ GNU gdb (GDB) 7.3.1-gg2
 
 問題: `_Gdb` 既に実行されているアプリ インスタンスが MSBuild ターゲットによってすべて強制終了されます。 Android v4.0 より前のバージョンのターゲットではこのようなことはありません。
 
-<a name="Troubleshooting" />
+<a name="Troubleshooting"></a>
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 

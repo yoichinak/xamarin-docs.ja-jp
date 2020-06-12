@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/05/2018
-ms.openlocfilehash: 280fe11f935db0a364f3342b22bb9544cdda1e6d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 0ade609997e391e24d4a6da250172efa81a5d490
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73020247"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571338"
 ---
 # <a name="firebase-job-dispatcher"></a>Firebase ジョブ ディスパッチャー
 
@@ -173,7 +173,7 @@ int scheduleResult = dispatcher.Schedule(myJob);
 
 これらの各トピックについては、以下のセクションで詳しく説明します。
 
-<a name="Passing_Parameters_to_a_Job" />
+<a name="Passing_Parameters_to_a_Job"></a>
 
 #### <a name="passing-parameters-to-a-job"></a>ジョブにパラメーターを渡す
 
@@ -201,7 +201,7 @@ public override bool OnStartJob(IJobParameters jobParameters)
 } 
 ```
 
-<a name="Setting_Constraints" />
+<a name="Setting_Constraints"></a>
 
 #### <a name="setting-constraints"></a>制約の設定
 
@@ -220,7 +220,7 @@ Job myJob = dispatcher.NewJobBuilder()
                       .Build();
 ```
 
-<a name="Setting_Job_Triggers" />
+<a name="Setting_Job_Triggers"></a>
 
 `JobTrigger` では、ジョブをいつ開始する必要があるかについて、オペレーティング システムにガイダンスが提供されます。 `JobTrigger` の "_実行時間枠_" では、`Job` を実行する必要があるスケジュール設定された時刻が定義されています。 実行時間枠には、"_開始枠_" の値と "_終了枠_" の値があります。 開始枠は、ジョブを実行する前にデバイスが待機する秒数です。終了枠の値は、`Job` を実行する前に待機する最大秒数です。 
 
@@ -236,7 +236,7 @@ Job myJob = dispatcher.NewJobBuilder()
 
 ジョブの既定の `JobTrigger` は、`Trigger.Now` の値によって表されます。この値は、スケジュールが設定された後、ジョブをできるだけ早く実行することを指定します。
 
-<a name="Setting_a_RetryStrategy" />
+<a name="Setting_a_RetryStrategy"></a>
 
 #### <a name="setting-a-retrystrategy"></a>RetryStrategy の設定
 

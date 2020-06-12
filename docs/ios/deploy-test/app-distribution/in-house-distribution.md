@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 9b9db3e6ae081a02d2b2297e70c216015dceade6
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 854fecd7945c1090b475b3571678388b8e1cf127
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73026546"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573236"
 ---
 # <a name="in-house-distribution-for-xamarinios-apps"></a>Xamarin.iOS アプリ用の社内配布
 
@@ -31,13 +31,13 @@ Xamarin.iOS アプリの開発が完了したら、ソフトウェア開発ラ�
 
 すべてのアプリは、Apple によって署名されている必要があります。
 
-<a name="testing" />
+<a name="testing"></a>
 
 ## <a name="testing-your-application"></a>アプリケーションのテスト
 
 アプリケーションのテストは、アドホック配布を使用して行われます。 テストの詳細については、[アドホック配布](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)ガイドの手順に従います。 最大 100 台のデバイスまでしかテストできないことに注意してください。
 
-<a name="setup" />
+<a name="setup"></a>
 
 ## <a name="getting-set-up-for-distribution"></a>配布の設定
 
@@ -47,7 +47,7 @@ Apple Developer Enterprise Program 証明書は、3 年間有効で、プロビ�
 
 有効期限が切れた証明書は更新できないことに留意してください。代わりに、期限切れの証明書を新しい証明書に置き換える必要があります。[次で](#certificate)詳しく説明します。
 
-<a name="certificate" />
+<a name="certificate"></a>
 
 ## <a name="creating-a-distribution-certificate"></a>配布証明書の作成
 
@@ -84,11 +84,11 @@ Apple Developer Enterprise Program 証明書は、3 年間有効で、プロビ�
 
    [![](in-house-distribution-images/selectcert.png "Select iOS App Store")](in-house-distribution-images/selectcert.png#lightbox)
 
-<a name="profile" />
+<a name="profile"></a>
 
 ## <a name="creating-a-distribution-provisioning-profile"></a>配布プロビジョニング プロファイルの作成
 
-<a name="appid" />
+<a name="appid"></a>
 
 ### <a name="creating-an-app-id"></a>アプリ ID の作成
 
@@ -134,7 +134,7 @@ Visual Studio で新しい配布プロファイルを使用可能にするには
 
 -----
 
-<a name="inhouse" />
+<a name="inhouse"></a>
 
 ## <a name="distributing-your-app-in-house"></a>アプリの社内配布
 

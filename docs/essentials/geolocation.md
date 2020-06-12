@@ -179,7 +179,7 @@ catch (Exception ex)
 | iOS | ~0 |
 | UWP | 10 以下 |
 
-<a name="calculate-distance" />
+<a name="calculate-distance"></a>
 
 ## <a name="detecting-mock-locations"></a>擬似ロケーションの検出
 一部のデバイスは、プロバイダーからの擬似ロケーションを返します。擬似ロケーションを提供するアプリケーションによって擬似ロケーションを返すこともあります。 [`Location`](xref:Xamarin.Essentials.Location) で `IsFromMockProvider` を使用することでこれを検出できます。

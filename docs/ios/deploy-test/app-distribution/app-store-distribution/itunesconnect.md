@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: aefd649fe1859306e5499addc1c08f4e42b2b424
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 172fd6a8c7ac1cfc0cfdaa428809a173b4999301
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73026680"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84570090"
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>iTunes Connect でのアプリの構成
 
@@ -51,7 +51,7 @@ iTunes Connect の **[Agreements, Tax, and Banking]\(契約、税金と銀行の
 
 繰り返しますが、iOS アプリケーションをレビューとリリースのために iTunes Connect を提出する前に、この情報を正しく設定し、最新のものにする_必要があります_。 詳細については、Apple の[契約、税金、銀行の管理](https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnect_Guide/Chapters/ManagingContractsandBanking.html#//apple_ref/doc/uid/TP40011225-CH21-SW1)に関するドキュメントを参照してください。
 
-<a name="creating" />
+<a name="creating"></a>
 
 ## <a name="creating-an-itunes-connect-record"></a>iTunes Connect レコードの作成
 
@@ -80,7 +80,7 @@ iOS アプリケーションを iTunes Connect に追加するには、**チー�
 
 [![](itunesconnect-images/add04.png "The new application will be created in iTunes Connect")](itunesconnect-images/add04.png#lightbox)
 
-<a name="managing" />
+<a name="managing"></a>
 
 ## <a name="managing-app-videos-and-screenshots"></a>アプリのビデオとスクリーンショットの管理
 
@@ -119,7 +119,7 @@ Apple では、アプリケーションがサポートするすべての画面�
 > [!NOTE]
 > メモ:スクリーンショットまたはアプリのプレビュー ビデオがアプリケーションの現在の機能と一致しない場合、Apple によって提出が拒否されます。
 
-<a name="metadata" />
+<a name="metadata"></a>
 
 ## <a name="managing-name-description-whats-new-keywords-and-urls"></a>名前、説明、新機能、キーワード、URL の管理
 
@@ -191,7 +191,7 @@ Apple では、ユーザーのアプリケーションに関する問題や質�
 > [!IMPORTANT]
 > メモ:名前、説明、新機能、キーワード、または URL がアプリケーションの現在の機能と一致しない場合、Apple によって提出が拒否されます。
 
-<a name="general" />
+<a name="general"></a>
 
 ## <a name="maintaining-general-app-information"></a>一般的なアプリの情報の維持
 
@@ -259,7 +259,7 @@ Apple では、アプリケーションの著作権情報を提供すること�
 > [!NOTE]
 > メモ: カテゴリまたは評価がアプリケーションの現在の機能と一致しない場合は、Apple によって提出が拒否されます。
 
-<a name="game-center" />
+<a name="game-center"></a>
 
 ## <a name="maintaining-game-center-information"></a>Game Center 情報の保持
 
@@ -336,7 +336,7 @@ Apple の Game Center をサポートする iOS ゲーム アプリケーショ�
 7. 必要に応じて、アプリケーションを**カスタム B2B アプリケーション**として定義します。
 8. **[Save]\(保存\)** ボタンをクリックして変更内容を保存します。
 
-<a name="iap" />
+<a name="iap"></a>
 
 ## <a name="maintaining-in-app-purchase-information"></a>アプリ内購入情報の保持
 

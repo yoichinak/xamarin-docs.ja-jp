@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2018
-ms.openlocfilehash: 5f0b72772a386aa71d4ceec25b88546930b06f4f
-ms.sourcegitcommit: 51006a4eed7bf99b563df6fc1cea9074d0218448
+ms.openlocfilehash: 2676565a62b4b9d4414e9a69737b287bcc992c0b
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82166340"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572014"
 ---
 # <a name="preparing-an-application-for-release"></a>リリースに向けてアプリケーションを準備する
 
@@ -35,7 +35,7 @@ ms.locfileid: "82166340"
 
 各手順について以下で詳しく説明します。
 
-<a name="Specify_the_Application_Icon" />
+<a name="Specify_the_Application_Icon"></a>
 
 ## <a name="specify-the-application-icon"></a>アプリケーション アイコンを指定する
 
@@ -65,7 +65,7 @@ Visual Studio for Mac では、アプリケーション アイコンは、次の
 
 通常、`using Android.App` は **AssemblyInfo.cs** の先頭で宣言されています (`Application` 属性の名前空間は `Android.App`)。ただし、`using` ステートメントがまだ存在しない場合は、追加する必要があります。
 
-<a name="Versioning" />
+<a name="Versioning"></a>
 
 ## <a name="version-the-application"></a>アプリケーションのバージョン
 
@@ -89,7 +89,7 @@ Visual Studio では、次のスクリーンショットで示すように、こ
 
 -----
 
-<a name="shrink_apk" />
+<a name="shrink_apk"></a>
 
 ## <a name="shrink-the-apk"></a>APK を圧縮する
 
@@ -158,11 +158,11 @@ ProGuard は既定では無効です。 **[ProGuard を有効にする]** オプ
 
 ProGuard ツールの使用方法については、「[ProGuard](~/android/deploy-test/release-prep/proguard.md)」を参照してください。
 
-<a name="protect_app" />
+<a name="protect_app"></a>
 
 ## <a name="protect-the-application"></a>アプリケーションを保護する
 
-<a name="Disable_Debugging" />
+<a name="Disable_Debugging"></a>
 
 ### <a name="disable-debugging"></a>デバッグを無効にする
 
@@ -183,7 +183,7 @@ Android マニフェストには、アプリケーションをデバッグする
 
 デバッグ ビルドでは、デバッグしやすいように、自動的にアクセス許可が設定されることに注意してください (**Internet**、**ReadExternalStorage** など)。 ただし、リリース ビルドでは、明示的に設定したアクセス許可のみを使用します。 リリース ビルドへの切り替えによって、使用しているアプリがデバッグ ビルドで使用可能であったアクセス許可を失う場合は、[アクセス許可](~/android/app-fundamentals/permissions.md)で示されているように、**必要なアクセス許可**リストのアクセス許可を明示的に有効にしていることを確認します。 
 
-<a name="dotfuscator" id="dotfuscator" />
+<a name="dotfuscator" id="dotfuscator"></a>
 
 ### <a name="application-protection-with-dotfuscator"></a>Dotfuscator によるアプリケーションの保護
 
@@ -208,7 +208,7 @@ Dotfuscator CE を構成するには、「[Using Dotfuscator Community Edition w
 
 -----
 
-<a name="bundle" />
+<a name="bundle"></a>
 
 ### <a name="bundle-assemblies-into-native-code"></a>アセンブリをネイティブ コードにバンドルする
 
@@ -218,7 +218,7 @@ Dotfuscator CE を構成するには、「[Using Dotfuscator Community Edition w
 
 **[Bundle into Native Code]\(ネイティブ コードへのバンドル\)** オプションは、アプリケーションがネイティブ コードにコンパイルされることを意味するわけ*ではありません*。 [**AOT コンパイル**](#aot)を使用して、アセンブリをネイティブ コードにコンパイルすることはできません。
 
-<a name="aot" />
+<a name="aot"></a>
 
 ### <a name="aot-compilation"></a>AOT コンパイル
 
@@ -233,7 +233,7 @@ _LLVM 最適化コンパイラ_では、より小さく高速なコンパイル�
 > [!NOTE]
 > **LLVM 最適化コンパイラ** オプションには、エンタープライズ ライセンスが必要です。  
 
-<a name="Set_Packaging_Properties" />
+<a name="Set_Packaging_Properties"></a>
 
 ## <a name="set-packaging-properties"></a>パッケージング プロパティを設定する
 
@@ -279,7 +279,7 @@ Android App Bundle のサポートを有効にするには、Android プロジ�
 
 Android App Bundle の詳細については、「[Android App Bundle について](https://developer.android.com/guide/app-bundle/)」を参照してください。
 
-<a name="Compile" />
+<a name="Compile"></a>
 
 ## <a name="compile"></a>Compile
 
@@ -295,7 +295,7 @@ Android App Bundle の詳細については、「[Android App Bundle につい�
 
 -----
 
-<a name="archive" />
+<a name="archive"></a>
 
 ## <a name="archive-for-publishing"></a>発行のためのアーカイブ
 
