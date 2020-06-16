@@ -97,7 +97,7 @@ public class EventToCommandBehavior : BehaviorBase<View>
 }
 ```
 
-[`OnAttachedTo`] (xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) method performs setup by calling the `RegisterEvent` method, passing in the value of the `EventName` property as a parameter. The [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) メソッドでは、`DeregisterEvent` メソッドを呼び出し、`EventName` プロパティの値をパラメーターとして渡すことで、クリーンアップが実行されます。
+[`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) メソッドでは、`RegisterEvent` メソッドを呼び出してセットアップが実行され、`EventName` プロパティの値がパラメーターとして渡されます。 [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) メソッドでは、`DeregisterEvent` メソッドを呼び出してクリーンアップが実行され、`EventName` プロパティの値がパラメーターとして渡されます。	
 
 ### <a name="implementing-the-behavior-functionality"></a>ビヘイビアー機能の実装
 

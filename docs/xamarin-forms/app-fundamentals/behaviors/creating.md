@@ -190,7 +190,7 @@ public class NumericValidationBehavior : Behavior<Entry>
 
 ### <a name="removing-a-behavior-from-a-control"></a>コントロールからのビヘイビアーの削除
 
-[`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) method is fired when a behavior is removed from a control, and is used to perform any required cleanup such as unsubscribing from an event to prevent a memory leak. However, behaviors are not implicitly removed from controls unless the control's [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) collection is modified by a `Remove` or `Clear` method. The following code example demonstrates removing a specific behavior from a control's `Behaviors` コレクション:
+ビヘイビアーからコントロールが削除されると、[`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) メソッドが実行されます。これを使用して、メモリ リークを防ぐためのイベントのサブスクライブ解除などの必要なクリーンアップを実行します。 ただし、コントロールの [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) コレクションが `Remove` または `Clear` メソッドによって変更されない限り、ビヘイビアーがコントロールから暗黙的に削除されることはありません。 次のコード例で、コントロールの `Behaviors` コレクションから特定のビヘイビアーを削除する操作を示します。	
 
 ```csharp
 var toRemove = entry.Behaviors.FirstOrDefault (b => b is NumericValidationBehavior);

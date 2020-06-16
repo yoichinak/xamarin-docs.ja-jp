@@ -91,7 +91,7 @@ public class EffectBehavior : Behavior<View>
 }
 ```
 
-[`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) method performs setup by calling the `AddEffect` method, passing in the attached control as a parameter. The [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) メソッドでは、`RemoveEffect` メソッドを呼び出し、アタッチされているコントロールをパラメーターとして渡すことで、クリーンアップが実行されます。
+[`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) メソッドでは、`AddEffect` メソッドを呼び出してセットアップが実行され、アタッチされているコントロールがパラメーターとして渡されます。 [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) メソッドでは、`RemoveEffect` メソッドを呼び出してクリーンアップが実行され、アタッチされているコントロールがパラメーターとして渡されます。	
 
 ### <a name="implementing-the-behavior-functionality"></a>ビヘイビアー機能の実装
 
