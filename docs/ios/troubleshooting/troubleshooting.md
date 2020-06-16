@@ -8,24 +8,24 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/10/2020
-ms.openlocfilehash: 1b3eb61bf08eb006890b8b879c560163bd131844
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: c3b0749fae9a035c234961880a4a7059ccba2349
+ms.sourcegitcommit: 8f558dba59bfb95da0ee9154c94d7121b6a59037
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84655084"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84767346"
 ---
 # <a name="troubleshooting-tips-for-xamarinios"></a>Xamarin のトラブルシューティングのヒント
 
 ## <a name="xamarinios-cannot-resolve-systemvaluetuple"></a>Xamarin. iOS では、ValueTuple を解決できません。
 
-このエラーは、Visual Studio との互換性がないことが原因で発生します。
+このエラーは、Visual Studioとの互換性がないことが原因で発生します。
 
 - **Visual Studio 2017 Update 1** (バージョン15.1 以前) は、 **System. valuetuple NuGet 4.3.0** (またはそれ以前) とのみ互換性があります。
 
 - **Visual Studio 2017 Update 2** (バージョン15.2 以降) は、4.3.1 またはそれ以降のバージョンとのみ互換性があり**ます**。
 
-Visual Studio 2017 のインストールに対応する適切な system.servicemodel タプル NuGet を選択してください。
+インストールしたVisual Studio 2017に対応する適切なSystem.ValueTuple NuGetを選択してください。
 
 ## <a name="receiving-error-retrieving-update-information-error-message"></a>' 更新情報の取得エラー ' エラーメッセージを受信しています
 
@@ -392,6 +392,9 @@ Xamarin. iOS アプリにサードパーティ製のライブラリを含める�
 場合によっては、ウイルス対策ソフトウェアによって、Xamarin. iOS SDK がマルウェアとして誤って検出され、必要なファイルが削除され、SDK が破損することがあります。 これにより、"Xamarin を起動できませんでした。ランチャーは実行可能ファイル ' mlaunch.exe ' を見つけることができませんでした" などのエラーが発生します。
 
 影響を受けた場合は、ウイルス対策スキャナーから mlaunch.exe を除外して、再発生を防止します。 詳細については、「 [Symantex Endpoint Protection マネージャーで Symantec 用にアプリケーション例外を作成する方法](https://knowledge.broadcom.com/external/article/180778/how-to-create-an-application-exception-i.html)」を参照してください。 [Norton の自動保護、Sonar、およびダウンロードインテリジェンススキャンからファイルとフォルダーを除外](https://support.norton.com/sp/en/uk/home/current/solutions/v3672136)する方法について説明します。 さらに、 [Symantec](https://symsubmit.symantec.com)または[Norton](https://submit.norton.com/?type=FP)に偽陽性を報告することを検討してください。
+
+> [!IMPORTANT]
+> Norton ユーザーの場合、コミュニティメンバーは、「 [Windows](https://community.norton.com/en/comment/5179683#comment-5179683)、 [Mac](https://github.com/xamarin/xamarin-macios/issues/8736#issuecomment-642874505)」で説明されているように、アイドル状態のスキャンを無効にする必要があることを報告しています。
 
 mlaunch.exe の除外を追加すると、不足しているファイルを復元するために再インストールが必要になります。 これを行う最も簡単な方法は、アップデーターでチャネルを切り替えることです。
 
