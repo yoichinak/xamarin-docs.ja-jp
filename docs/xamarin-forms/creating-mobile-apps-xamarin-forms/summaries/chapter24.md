@@ -1,23 +1,7 @@
 ---
-title: ''
-description: ''
-Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 24. Page navigation''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 09622adc269027b589a7345a7d4411c3dcecbf0c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136644"
+title:"第 24 章の概要: ページ ナビゲーション" description:"Xamarin.Forms でモバイル アプリを作成する: 第 24 章の概要: ページ ナビゲーション" ms.prod: xamarin ms.technology: xamarin-forms ms.assetid:DDCDB49C-6008-4F72-B095-463EE21D7C23 author: davidbritch ms.author: dabritch ms.date:11/07/2017 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="summary-of-chapter-24-page-navigation"></a>第 24 章の概要: ページのナビゲーション
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24)

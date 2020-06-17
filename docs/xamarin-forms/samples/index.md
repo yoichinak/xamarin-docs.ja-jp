@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms のサンプル
-description: Xamarin.Forms における概念の理解と作業の開始に役立つ Xamarin.Forms のサンプル アプリとコード デモです。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 896b5880b92cecc7bd9eb360306d902ff0f876c5
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135942"
+title: "Xamarin.Forms のサンプル" description: "Xamarin.Forms における概念の理解と作業の開始に役立つ Xamarin.Forms のサンプル アプリとコード デモです。"
+ms.prod: xamarin ms.assetid:AB986E8E-E831-4E0A-9F1D-6C3D88F35E9C ms.technology: xamarin-forms author: profexorgeek ms.author: jusjohns ms.date:12/27/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinforms-samples"></a>Xamarin.Forms のサンプル
 
 Xamarin.Forms における概念の理解と作業の開始に役立つ Xamarin.Forms のサンプル アプリとコード デモです。

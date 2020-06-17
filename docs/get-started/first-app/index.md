@@ -1,23 +1,6 @@
 ---
-title: 最初の Xamarin.Forms アプリをビルドする
-description: Visual Studio で最初の Xamarin.Forms アプリケーションをビルドする方法を示すビデオ ガイド。
-zone_pivot_groups: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-ms.custom: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: da56bde956a0ff7730ef6737e2802c3723d6d716
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84133483"
+title: "初めての Xamarin.Forms アプリの作成" の説明: "Visual Studio で最初の Xamarin.Forms アプリケーションをビルドする方法を示すビデオ ガイド。"
+zone_pivot_groups: platform-dev16 ms.prod: xamarin ms.assetid: 72B6AF82-4D98-47E5-AB54-0A35B3253468 ms.technology: xamarin-forms ms.custom: video author: conceptdev ms.author: crdun ms.date:05/23/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
 # <a name="build-your-first-xamarinforms-app"></a>最初の Xamarin.Forms アプリをビルドする
 

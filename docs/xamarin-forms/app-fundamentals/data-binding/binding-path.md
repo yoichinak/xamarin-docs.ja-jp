@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms のバインド パス
-description: この記事では、Xamarin.Forms のデータ バインディングを使用して、Binding クラスの Path プロパティでサブ プロパティおよびコレクション メンバーにアクセスする方法を説明します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 0657f39d0584405ea1a6d7611ac789488817770f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139742"
+title: "Xamarin.Formsのバインド パス" の説明:"この記事では、Xamarin.Forms のデータ バインディングを使用して、Binding クラスの Path プロパティでサブプロパティおよびコレクション メンバーにアクセスする方法を説明します。"
+ms.prod: xamarin ms.assetid:3CF721A5-E157-468B-AD3A-DA0A45E58E8D ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:01/05/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinforms-binding-path"></a>Xamarin.Forms のバインド パス
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
@@ -127,7 +113,7 @@ ms.locfileid: "84139742"
 </Label>
 ```
 
-XAML でコンストラクター引数を指定する方法の詳細については、「[コンストラクター引数の受け渡し](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments)」を参照してください。
+XAML でコンストラクター引数を指定する方法の詳細については、「[コンストラクター引数の受け渡し](~/xamarin-forms/xaml/passing-arguments.md#passing-constructor-arguments)」を参照してください。
 
 最後に、最後の例は 2 番目の例とよく似ています。ただし、この例では、`StackLayout` の子の 1 つを参照します。
 

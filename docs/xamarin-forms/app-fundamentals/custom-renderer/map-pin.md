@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 30fcc8304d32d8ebdef38df8550bcd8c26514701
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135331"
+title:"マップ ピンのカスタマイズ" の説明:"この記事では、各プラットフォーム上でカスタマイズされたピンとピン データのカスタマイズされたビューを含むネイティブ マップを表示する、マップ コントロール用のカスタム レンダラーを作成する方法を示します。"
+ms.prod: xamarin ms.assetid:C5481D86-80E9-4E3D-9FB6-57B0F93711A6 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:11/06/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="customizing-a-map-pin"></a>マップ ピンのカスタマイズ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-pin)
@@ -31,16 +17,14 @@ _この記事では、各プラットフォーム上でカスタマイズされ�
 
 レンダリング プロセスを使用して各プラットフォーム上の [`Map`](xref:Xamarin.Forms.Maps.Map) にカスタム レンダラーを作成することで、プラットフォーム固有のカスタマイズを実装することができます。 その実行プロセスは次のとおりです。
 
-1. Xamarin.Forms のカスタム マップを[作成](#Creating_the_Custom_Map)します。
-1. Xamarin.Forms からカスタム マップを[使用](#Consuming_the_Custom_Map)します。
-1. 各プラットフォーム上でマップのカスタム レンダラーを[作成](#Creating_the_Custom_Renderer_on_each_Platform)します。
+1. Xamarin.Forms のカスタム マップを[作成](#creating-the-custom-map)します。
+1. Xamarin.Forms からカスタム マップを[使用](#consuming-the-custom-map)します。
+1. 各プラットフォーム上でマップのカスタム レンダラーを[作成](#creating-the-custom-renderer-on-each-platform)します。
 
 各プラットフォームでカスタマイズされたピンとピン データのカスタマイズされたビューを含むネイティブ マップを表示する `CustomMap` レンダラーを実装するために、ここでは項目ごとに順番に説明します。
 
 > [!NOTE]
 > 使用する前に [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) を初期化して構成する必要があります。 詳細については、「[`Maps Control`](~/xamarin-forms/user-interface/map/index.md)」を参照してください。
-
-<a name="Creating_the_Custom_Map" />
 
 ## <a name="creating-the-custom-map"></a>カスタム マップの作成
 
@@ -64,8 +48,6 @@ public class CustomPin : Pin
 ```
 
 このクラスでは、[`Pin`](xref:Xamarin.Forms.Maps.Pin) クラスのプロパティを継承し、`Name` プロパティと `Url` プロパティが追加するものとして、`CustomPin` が定義されます。
-
-<a name="Consuming_the_Custom_Map" />
 
 ## <a name="consuming-the-custom-map"></a>カスタム マップの使用
 
@@ -125,8 +107,6 @@ public MapPage()
 この初期化ではカスタム ピンが追加され、[`Position`](xref:Xamarin.Forms.Maps.Position) と [`Distance`](xref:Xamarin.Forms.Maps.Distance) から [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) を作成することでマップの位置とズーム レベルを変更する、[`MoveToRegion`](xref:Xamarin.Forms.Maps.Map.MoveToRegion*) メソッドを使用してマップのビューが位置付けられます。
 
 これで、カスタム レンダラーを各アプリケーション プロジェクトに追加して、ネイティブ マップ コントロールをカスタマイズできるようになります。
-
-<a name="Creating_the_Custom_Renderer_on_each_Platform" />
 
 ## <a name="creating-the-custom-renderer-on-each-platform"></a>各プラットフォーム上でのカスタム レンダラーの作成
 
@@ -231,10 +211,8 @@ namespace CustomRenderer.iOS
 
 `OnElementChanged` メソッドでは、カスタム レンダラーが新しい Xamarin.Forms 要素にアタッチされる場合、次の [`MKMapView`](xref:MapKit.MKMapView) インスタンスの構成が実行されます。
 
-- [`GetViewForAnnotation`](xref:MapKit.MKMapView.GetViewForAnnotation*) プロパティは `GetViewForAnnotation` メソッドに設定されます。 このメソッドは、[注釈の場所がマップで表示されるようになった](#Displaying_the_Annotation)ときに呼び出され、表示する前に注釈をカスタマイズするために使用されます。
-- `CalloutAccessoryControlTapped`、`DidSelectAnnotationView`、および `DidDeselectAnnotationView` イベントのイベント ハンドラーが登録されます。 これらのイベントは、ユーザーが[吹き出しの右側のアクセサリをタップ](#Tapping_on_the_Right_Callout_Accessory_View)したとき、およびユーザーが注釈を[選択](#Selecting_the_Annotation)および[選択解除](#Deselecting_the_Annotation)したときに、それぞれ発生します。 レンダラーがアタッチされているイベントが変わった場合にのみ、イベントのサブスクライブが解除されます。
-
-<a name="Displaying_the_Annotation" />
+- [`GetViewForAnnotation`](xref:MapKit.MKMapView.GetViewForAnnotation*) プロパティは `GetViewForAnnotation` メソッドに設定されます。 このメソッドは、[注釈の場所がマップで表示されるようになった](#displaying-the-annotation)ときに呼び出され、表示する前に注釈をカスタマイズするために使用されます。
+- `CalloutAccessoryControlTapped`、`DidSelectAnnotationView`、および `DidDeselectAnnotationView` イベントのイベント ハンドラーが登録されます。 これらのイベントは、ユーザーが[吹き出しの右側のアクセサリをタップ](#tapping-on-the-right-callout-accessory-view)したとき、およびユーザーが注釈を[選択](#selecting-the-annotation)および[選択解除](#deselecting-the-annotation)したときに、それぞれ発生します。 レンダラーがアタッチされているイベントが変わった場合にのみ、イベントのサブスクライブが解除されます。
 
 #### <a name="displaying-the-annotation"></a>注釈の表示
 
@@ -285,12 +263,10 @@ protected override MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKA
     - `CustomMKAnnotationView.CalloutOffset` プロパティは `CGPoint` に設定されます。これにより、吹き出しが注釈の上の中央に表示されることが指定されます。
     - `CustomMKAnnotationView.LeftCalloutAccessoryView` プロパティは、注釈のタイトルとアドレスの左側に表示されるサルのイメージに設定されます。
     - `CustomMKAnnotationView.RightCalloutAccessoryView` プロパティは、注釈のタイトルとアドレスの右側に表示される*情報* ボタンに設定されます。
-    - `CustomMKAnnotationView.Name` プロパティは、`GetCustomPin` メソッドによって返される `CustomPin.Name` プロパティに設定されます。 これにより、注釈を識別でき、必要に応じて、その[吹き出しをさらにカスタマイズできる](#Selecting_the_Annotation)ようになります。
-    - `CustomMKAnnotationView.Url` プロパティは、`GetCustomPin` メソッドによって返される `CustomPin.Url` プロパティに設定されます。 ユーザーが[右側の吹き出しのアクセサリ ビューに表示されるボタンをタップ](#Tapping_on_the_Right_Callout_Accessory_View)したときに、URL にナビゲートされます。
+    - `CustomMKAnnotationView.Name` プロパティは、`GetCustomPin` メソッドによって返される `CustomPin.Name` プロパティに設定されます。 これにより、注釈を識別でき、必要に応じて、その[吹き出しをさらにカスタマイズできる](#selecting-the-annotation)ようになります。
+    - `CustomMKAnnotationView.Url` プロパティは、`GetCustomPin` メソッドによって返される `CustomPin.Url` プロパティに設定されます。 ユーザーが[右側の吹き出しのアクセサリ ビューに表示されるボタンをタップ](#tapping-on-the-right-callout-accessory-view)したときに、URL にナビゲートされます。
 1. [`MKAnnotationView.CanShowCallout`](xref:MapKit.MKAnnotationView.CanShowCallout*) プロパティは `true` に設定され、注釈がタップされたときに吹き出しが表示されるようになります。
 1. マップに表示される注釈が返されます。
-
-<a name="Selecting_the_Annotation" />
 
 #### <a name="selecting-the-annotation"></a>注釈の選択
 
@@ -316,8 +292,6 @@ void OnDidSelectAnnotationView(object sender, MKAnnotationViewEventArgs e)
 
 選択された注釈の `Name` プロパティが `Xamarin` に設定されている場合、このメソッドでは、Xamarin ロゴのイメージを含む既存の吹き出しに `UIView` インスタンスを追加することで、その吹き出し (左側と右側のアクセサリ ビューを含む) を拡張します。 これにより、異なる注釈に対して異なる吹き出しを表示できるシナリオが可能になります。 `UIView` インスタンスは、既存の吹き出しの上の中央に表示されます。
 
-<a name="Tapping_on_the_Right_Callout_Accessory_View" />
-
 #### <a name="tapping-on-the-right-callout-accessory-view"></a>右側の吹き出しのアクセサリ ビューのタップ
 
 ユーザーが右側の吹き出しのアクセサリ ビューにある*情報* ボタンをタップすると、`CalloutAccessoryControlTapped` イベントが発生し、次に、`OnCalloutAccessoryControlTapped` メソッドが実行されます。
@@ -334,8 +308,6 @@ void OnCalloutAccessoryControlTapped(object sender, MKMapViewAccessoryTappedEven
 ```
 
 このメソッドでは、Web ブラウザーを開き、`CustomMKAnnotationView.Url` プロパティに格納されているアドレスに移動します。 .NET 標準ライブラリ プロジェクトでの `CustomPin` コレクションの作成時に、アドレスが定義されていることに注意してください。
-
-<a name="Deselecting_the_Annotation" />
 
 #### <a name="deselecting-the-annotation"></a>注釈の選択解除
 
@@ -407,9 +379,9 @@ namespace CustomRenderer.Droid
 }
 ```
 
-カスタム レンダラーが新しい `OnElementChanged` 要素にアタッチされる場合は、Xamarin.Forms メソッドによって、コントロールからカスタム ピンの一覧が取得されます。 `GoogleMap` インスタンスが使用できるようになったら、`OnMapReady` オーバーライドが呼び出されます。 このメソッドでは `InfoWindowClick` イベントのイベント ハンドラーが登録され、イベントは[情報ウィンドウがクリックされた](#Clicking_on_the_Info_Window)ときに発生し、レンダラーがアタッチされている要素が変わったときにのみ、サブスクライブが解除されます。 また、`OnMapReady` オーバーライドでは `SetInfoWindowAdapter` メソッドを呼び出し、`CustomMapRenderer` クラス インスタンスで、情報ウィンドウをカスタマイズするためのメソッドが提供されるように指定します。
+カスタム レンダラーが新しい `OnElementChanged` 要素にアタッチされる場合は、Xamarin.Forms メソッドによって、コントロールからカスタム ピンの一覧が取得されます。 `GoogleMap` インスタンスが使用できるようになったら、`OnMapReady` オーバーライドが呼び出されます。 このメソッドでは `InfoWindowClick` イベントのイベント ハンドラーが登録され、イベントは[情報ウィンドウがクリックされた](#clicking-on-the-info-window)ときに発生し、レンダラーがアタッチされている要素が変わったときにのみ、サブスクライブが解除されます。 また、`OnMapReady` オーバーライドでは `SetInfoWindowAdapter` メソッドを呼び出し、`CustomMapRenderer` クラス インスタンスで、情報ウィンドウをカスタマイズするためのメソッドが提供されるように指定します。
 
-`CustomMapRenderer` クラスでは、[情報ウィンドウをカスタマイズする](#Customizing_the_Info_Window)ための `GoogleMap.IInfoWindowAdapter` インターフェイスが実装されます。 このインターフェイスで、次のメソッドを実装する必要があることを指定します。
+`CustomMapRenderer` クラスでは、[情報ウィンドウをカスタマイズする](#customizing-the-info-window)ための `GoogleMap.IInfoWindowAdapter` インターフェイスが実装されます。 このインターフェイスで、次のメソッドを実装する必要があることを指定します。
 
 - `public Android.Views.View GetInfoWindow(Marker marker)` – このメソッドは、マーカーのカスタム情報ウィンドウを返すために呼び出されます。 `null` が返された場合、既定のウィンドウのレンダリングが使用されます。 `View` が返された場合、その `View` が情報ウィンドウのフレーム内に配置されます。
 - `public Android.Views.View GetInfoContents(Marker marker)` – このメソッドは、情報ウィンドウのコンテンツを含む `View` を返すために呼び出され、`GetInfoWindow` メソッドで `null` が返された場合にのみ呼び出されます。 `null` が返された場合、情報ウィンドウのコンテンツの既定のレンダリングが使用されます。
@@ -436,8 +408,6 @@ protected override MarkerOptions CreateMarker(Pin pin)
 
 > [!NOTE]
 > 必要に応じて、マップ レンダラーで `GetMarkerForPin` メソッドを呼び出し、`Pin` から `Marker` を取得することができます。
-
-<a name="Customizing_the_Info_Window" />
 
 #### <a name="customizing-the-info-window"></a>情報ウィンドウのカスタマイズ
 
@@ -494,8 +464,6 @@ public Android.Views.View GetInfoContents(Marker marker)
 
 > [!NOTE]
 > 情報ウィンドウはライブ `View` ではありません。 代わりに、Android で `View` が静的なビットマップに変換され、イメージとして表示されます。 これは、情報ウィンドウではクリック イベントに応答できますが、タッチ イベントやジェスチャには応答できず、また、情報ウィンドウ内の個々のコントロールではそれ自体のクリック イベントに応答できないことを意味します。
-
-<a name="Clicking_on_the_Info_Window" />
 
 #### <a name="clicking-on-the-info-window"></a>情報ウィンドウのクリック
 

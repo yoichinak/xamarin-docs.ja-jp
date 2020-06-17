@@ -1,9 +1,6 @@
 ---
-title:'Xamarin.Forms シェル アプリケーションを作成する' description:'Xamarin.Forms シェル アプリケーションを作成するプロセスは、Shell クラスがサブクラス化された XAML ファイルを作成し、アプリケーションの App クラスの MainPage プロパティをサブクラス化した Shell オブジェクトに設定した後、サブクラス化した Shell クラス内にアプリケーションのビジュアル階層を記述することです。
-ms.prod: ms.assetid: ms.technology: author: ms.author: ms.date: no-loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title:"Xamarin.Forms シェル アプリケーションを作成する" description: "Xamarin.Forms シェル アプリケーションを作成するプロセスは、Shell クラスがサブクラス化された XAML ファイルを作成し、アプリケーションの App クラスの MainPage プロパティをサブクラス化した Shell オブジェクトに設定した後、サブクラス化した Shell クラス内にアプリケーションのビジュアル階層を記述することです。"
+ms.prod: xamarin ms.assetid:2A51D78F-6CD5-4BC4-A62E-11CEFA799987 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:05/24/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
 
 # <a name="create-a-xamarinforms-shell-application"></a>Xamarin.Forms シェル アプリケーションを作成する

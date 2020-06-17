@@ -1,8 +1,5 @@
 ---
-title: ''Xamarin.Essentials:ダイヤラー'' description:'Xamarin.Essentials の PhoneDialer クラスを使用すると、アプリケーションからダイヤラーで' ms.assetid: author: ms.custom: ms.author: ms.date: no-loc: の電話番号を開くことができます。
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+タイトル: "Xamarin.Essentials:ダイヤラー'' description:"Xamarin.Essentials の PhoneDialer クラスを使用すると、アプリケーションからダイヤラーで電話番号を開くことができます" ms.assetid:E7457942-4D7B-4195-A2FF-417919B9537F author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:07/02/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
 
 # <a name="xamarinessentials-phone-dialer"></a>Xamarin.Essentials:ダイヤラー

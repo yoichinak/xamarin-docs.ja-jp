@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms シェル
-description: このガイドでは、ほとんどのアプリケーションが必要とする基本的な機能を提供することで Xamarin.Forms アプリケーションの複雑さを軽減する Xamarin.Forms シェルの使用方法について説明します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 0acf00d85c2bfb823ec1cfba099179bb6743117c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138750"
+title: "Xamarin.Forms シェル" の説明:"このガイドでは、ほとんどのアプリケーションが必要とする基本的な機能を提供することで Xamarin.Forms アプリケーションの複雑さを軽減する Xamarin.Formsシェルの使用方法について説明します。"
+ms.prod: xamarin ms.assetid:85B322AA-808F-41B6-953A-5877264AE643 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:05/28/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinforms-shell"></a>Xamarin.Forms シェル
 
 ## <a name="introduction"></a>[はじめに](introduction.md)

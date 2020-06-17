@@ -1,9 +1,6 @@
 ---
-title: ''Xamarin.Essentials:バージョンの追跡' description:'Xamarin.Essentials の VersionTracking クラスを使用すると、アプリケーションのバージョンとビルド番号を確認できるだけでなく、これまでで最初のアプリケーションの起動であるか、現在のバージョンの起動であるかなどの追加情報を確認し、前のビルドの情報などを取得することができます。'
-ms.assetid: author: ms.author: ms.date: ms.custom: no-loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+タイトル: "Xamarin.Essentials:バージョンの追跡" の説明: "Xamarin.Essentials の VersionTracking クラスを使用すると、アプリケーションのバージョンとビルド番号を確認できるだけでなく、これまでで最初のアプリケーションの起動であるか、現在のバージョンの起動であるかなどの追加情報を確認し、前のビルドの情報などを取得することができます。"
+ms.assetid:670C7E8A-E882-4AC0-97D2-A53D90ADD6A3 author: jamesmontemagno ms.author: jamont ms.date:05/28/2019 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
 
 # <a name="xamarinessentials-version-tracking"></a>Xamarin.Essentials:バージョンの追跡

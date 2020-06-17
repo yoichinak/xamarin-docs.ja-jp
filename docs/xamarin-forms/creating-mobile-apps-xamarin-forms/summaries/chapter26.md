@@ -1,23 +1,7 @@
 ---
-title: ''
-description: ''
-Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 26. Custom layouts''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: deb46d1a70e7c707c998be8669b4af3b8e8d7ead
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136605"
+title:"第 26 章の概要: カスタム レイアウト" description:"Xamarin.Forms でモバイル アプリを作成する: 第 26 章の概要: カスタム レイアウト" ms.prod: xamarin ms.technology: xamarin-forms ms.assetid:2B7F4346-414E-49FF-97FB-B85E92D98A21 author: davidbritch ms.author: dabritch ms.date:11/07/2017 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="summary-of-chapter-26-custom-layouts"></a>第 26 章の概要: カスタム レイアウト
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter26)

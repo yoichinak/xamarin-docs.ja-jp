@@ -1,9 +1,6 @@
 ---
-title: ''Xamarin.Essentials:クリップボード'' description:'このドキュメントでは、Xamarin.Essentials の Clipboard クラスについて説明します。このクラスを使用すると、複数のアプリケーションにわたり、システム クリップボードにテキストをコピーして貼り付けることができます。'
-ms.assetid: author: ms.author: ms.date: ms.custom: no-loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+タイトル: "Xamarin.Essentials: クリップボード'' の説明: "このドキュメントでは、Xamarin.Essentials の Clipboard クラスについて説明します。これを使用すると、アプリケーションにわたり、システム クリップボードにテキストをコピーして貼り付けることができます。"
+ms.assetid: C52AE99A-0FB3-425D-9106-3DA5777FEFA0 author: jamesmontemagno ms.author: jamont ms.date: 01/06/2020 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
 
 # <a name="xamarinessentials-clipboard"></a>Xamarin.Essentials:クリップボードのトピック

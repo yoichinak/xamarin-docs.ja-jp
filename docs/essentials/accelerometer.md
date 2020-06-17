@@ -1,9 +1,6 @@
 ---
-title: ''Xamarin.Essentials:加速度計'' description:'Xamarin.Essentials の Accelerometer クラスでは、デバイスの加速度を 3 次元空間で示す、デバイスの加速度計センサーを監視できます。'
-ms.assetid: author: ms.author: ms.date: ms.custom: no-loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+タイトル: "Xamarin.Essentials: Accelerometer" の説明:"Xamarin.Essentials の Accelerometer クラスでは、デバイスの加速度を 3 次元空間で示す、デバイスの加速度計センサーを監視できます。"
+ms.assetid:97883573-F0D9-4854-AC7C-A654814401C5 author: jamesmontemagno ms.author: jamont ms.date:04/02/2019 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
 
 # <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials:加速度計

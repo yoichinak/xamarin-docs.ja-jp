@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms のデータ テンプレート
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: e0961fad18ccd961a5b84b2a5535bca70781dd8d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136124"
+title: "Xamarin.Forms のデータ テンプレート" description:"DataTemplate は、サポートされているコントロール上のデータの外観を指定するために使われ、通常は表示されるデータにバインドします。"
+ms.prod: xamarin ms.assetid:838F4BDB-B719-457F-8633-27E9B267A2A0 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:09/11/2017 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinforms-data-templates"></a>Xamarin.Forms のデータ テンプレート
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)

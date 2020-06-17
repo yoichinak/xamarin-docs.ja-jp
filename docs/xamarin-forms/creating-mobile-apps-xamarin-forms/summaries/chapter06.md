@@ -1,23 +1,7 @@
 ---
-title: ''
-description: ''
-Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 6. Button clicks''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: f9bafbf4af2a89acd02d436604e882be87cbde8c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136839"
+title:"第 6 章の概要: ボタンのクリック" の説明: "Xamarin.Forms でモバイル アプリを作成する: 第 6 章の概要: ボタンのクリック" ms.prod: xamarin ms.technology: xamarin-forms ms.assetid:D4F9C429-A6CF-40FA-AC68-3F149307A5F9 author: davidbritch ms.author: dabritch ms.date:07/18/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="summary-of-chapter-6-button-clicks"></a>第 6 章の概要: ボタンのクリック
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter06)

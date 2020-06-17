@@ -1,22 +1,8 @@
 ---
-title: ''
-description: Xamarin.Forms の Entry コントロールによって、1 行のテキストを編集対象にできます。 この記事では、Entry コントロール用のカスタム レンダラーを作成する方法を示します。これにより、開発者は既定のネイティブ レンダリングを、各自のプラットフォームに固有のカスタマイズでオーバーライドできるようになります。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 61bd66fd25b7aea3e5be346f79e63d410164b002
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138984"
+title:"Entry のカスタマイズ" の説明:"Xamarin.Forms の Entry コントロールによって、1 行のテキストを編集対象にできます。 この記事では、Entry コントロール用のカスタム レンダラーを作成する方法を示します。これにより、開発者は既定のネイティブ レンダリングを、各自のプラットフォームに固有のカスタマイズでオーバーライドできるようになります。"
+ms.prod: xamarin ms.assetid:7B5DD10D-0411-424F-88D8-8A474DF16D8D ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:11/26/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="customizing-an-entry"></a>Entry のカスタマイズ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-entry)
@@ -31,16 +17,14 @@ _Xamarin.Forms の Entry コントロールによって、1 行のテキスト�
 
 レンダリング プロセスを活用して各プラットフォーム上の [`Entry`](xref:Xamarin.Forms.Entry) コントロールにカスタム レンダラーを作成することで、プラットフォーム固有のカスタマイズを実装することができます。 その実行プロセスは次のとおりです。
 
-1. Xamarin.Forms カスタム コントロールを[作成](#Creating_the_Custom_Entry_Control)します。
-1. Xamarin.Forms からカスタム コントロールを[使用](#Consuming_the_Custom_Control)します。
-1. 各プラットフォーム上でコントロールのカスタム レンダラーを[作成](#Creating_the_Custom_Renderer_on_each_Platform)します。
+1. Xamarin.Forms カスタム コントロールを[作成](#creating-the-custom-entry-control)します。
+1. Xamarin.Forms からカスタム コントロールを[使用](#consuming-the-custom-control)します。
+1. 各プラットフォーム上でコントロールのカスタム レンダラーを[作成](#creating-the-custom-renderer-on-each-platform)します。
 
 プラットフォームごとに背景色が異なる [`Entry`](xref:Xamarin.Forms.Entry) コントロールを実装するため、項目ごとに順番に説明します。
 
 > [!IMPORTANT]
 > この記事では、単純なカスタム レンダラーを作成する方法について説明します。 ただし、プラットフォームごとに背景色が異なる `Entry` を実装するためにカスタム レンダラーを作成する必要はありません。 これは、[`Device`](xref:Xamarin.Forms.Device) クラス、またはプラットフォーム固有の値を提供する `OnPlatform` マークアップ拡張を使用すると、より簡単に実行できます。 詳細については、「[Providing Platform-Specific Values](~/xamarin-forms/platform/device.md#provide-platform-specific-values)」(プラットフォーム固有の値の提供) と「[OnPlatform マークアップ拡張機能](~/xamarin-forms/xaml/markup-extensions/consuming.md#onplatform-markup-extension)」を参照してください。
-
-<a name="Creating_the_Custom_Entry_Control" />
 
 ## <a name="creating-the-custom-entry-control"></a>カスタムの Enrty コントロールの作成
 
@@ -53,8 +37,6 @@ public class MyEntry : Entry
 ```
 
 `MyEntry` コントロールは .NET Standard ライブラリ プロジェクトに作成されます。これは、単純に [`Entry`](xref:Xamarin.Forms.Entry) コントロールです。 コントロールのカスタマイズはカスタム レンダラーで実行されるため、`MyEntry` コントロールに追加の実装は必要ありません。
-
-<a name="Consuming_the_Custom_Control" />
 
 ## <a name="consuming-the-custom-control"></a>カスタム コントロールの使用
 
@@ -98,8 +80,6 @@ public class MainPage : ContentPage
 このコードは、ページ上で垂直および水平の両方向に対して中央に配置される [`Label`](xref:Xamarin.Forms.Label) と `MyEntry` コントロールを表示する新しい [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトをインスタンス化します。
 
 これで、カスタム レンダラーを各アプリケーション プロジェクトに追加して、各プラットフォーム上でコントロールの外観をカスタマイズできるようになります。
-
-<a name="Creating_the_Custom_Renderer_on_each_Platform" />
 
 ## <a name="creating-the-custom-renderer-on-each-platform"></a>各プラットフォーム上でのカスタム レンダラーの作成
 

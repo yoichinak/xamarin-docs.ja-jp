@@ -1,22 +1,8 @@
 ---
-title: ''
-description: この記事では、Xamarin.Forms を使用して、各プラットフォームでビデオ プレーヤーのカスタム レンダラーを実装する方法について説明します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d026ecc3288da155aefb0f68ee0c70721106c0da
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84133745"
+title:"プラットフォーム ビデオ プレーヤーの作成" description:"この記事では、Xamarin.Forms を使用して、各プラットフォームでビデオ プレーヤーのカスタム レンダラーを実装する方法について説明します。"
+ms.prod: xamarin ms.assetid:EEE2FB9B-EB73-4A3F-A859-7A1D4808E149 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:02/12/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="creating-the-platform-video-players"></a>プラットフォーム ビデオ プレーヤーの作成
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

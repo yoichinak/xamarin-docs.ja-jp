@@ -1,9 +1,6 @@
 ---
-title: ''Xamarin.Essentials:SMS'' description:'Xamarin.Essentials の Sms クラスを使用すると、受信者に送信する指定されたメッセージと共に、既定の SMS アプリケーションをアプリケーションで開くことができます。'
-ms.assetid: author: ms.custom: ms.author: ms.date: no-loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+タイトル: "Xamarin.Essentials:SMS'' の説明: "Xamarin.Essentials の Sms クラスを使用すると、受信者に送信する指定されたメッセージと共に、既定の SMS アプリケーションをアプリケーションで開くことができます。"
+ms.assetid:81A757F2-6F2A-458F-B9BE-770ADEBFAB58 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:11/04/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
 
 # <a name="xamarinessentials-sms"></a>Xamarin.Essentials:SMS

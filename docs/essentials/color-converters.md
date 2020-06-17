@@ -1,21 +1,8 @@
 ---
-title: Xamarin.Essentials の色のコンバーター
-description: Xamarin.Essentials の ColorConverters クラスには、System.Drawing.Color と併用できるヘルパー メソッドと拡張メソッドがいくつかあります。
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-ms.custom: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 57b85a909855594c70bfd529d7a794b4bd7bca7e
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84130222"
+title: "Xamarin.Essentials 色のコンバーター" の説明: "Xamarin.Essentials の ColorConverters クラスには、System.Drawing.Color と連携するヘルパー メソッドと拡張メソッドがいくつか用意されています。"
+ms.assetid: B10428D6-89E2-4714-A39F-7E6E626391B2 author: jamesmontemagno ms.author: jamont ms.date: 01/06/2020 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinessentials-color-converters"></a>Xamarin.Essentials:色のコンバーター
 
 Xamarin.Essentials の **ColorConverters** クラスには、System.Drawing.Color 用のヘルパー メソッドがいくつかあります。

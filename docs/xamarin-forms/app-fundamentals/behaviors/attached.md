@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 08b1c738dc87bb9373436a3fd96486eb15341112
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139426"
+title:"アタッチされたビヘイビアー" の説明:"アタッチされたビヘイビアーは、1 つ以上のアタッチされたプロパティを持つ静的クラスです。 この記事では、アタッチされたビヘイビアーを作成して使用する方法について説明します。"
+ms.prod: xamarin ms.assetid:ECEE6AEC-44FA-4AF7-BAD0-88C6EE48422E ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:04/06/2016 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="attached-behaviors"></a>アタッチされたビヘイビアー
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-attachednumericvalidationbehavior)

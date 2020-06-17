@@ -1,22 +1,8 @@
 ---
-title: ''
-description: この記事では、Xamarin.Forms を使用してビデオ ソースをビデオ プレーヤーにバインドする方法について説明します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: c02764d6160bb8ce2481a3cf67e357933d25934f
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84133732"
+title:"プレーヤーへのビデオ ソースのバインド" description:"この記事では、Xamarin.Forms を使用してビデオ ソースをビデオ プレーヤーにバインドする方法について説明します。"
+ms.prod: xamarin ms.assetid:504E0C7E-051A-4AF2-B654-BAB4D0957928 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:02/12/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="binding-video-sources-to-the-player"></a>プレーヤーへのビデオ ソースのバインド
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

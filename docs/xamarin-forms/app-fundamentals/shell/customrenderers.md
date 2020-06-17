@@ -1,9 +1,6 @@
 ---
-title:'Xamarin.Formsシェルのカスタム レンダラー' description:'Xamarin.Formsシェル アプリケーションでは、さまざまなシェル クラスが公開しているプロパティとメソッドを利用して、高度なカスタマイズが可能です。 ただし、プラットフォーム固有のより詳細なカスタマイズが必要な場合は、シェルのカスタム レンダラーを作成することも可能です。'
-ms.prod: ms.assetid: ms.technology: author: ms.author: ms.date: no-loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+title: "Xamarin.Forms シェルのカスタム レンダラー" description: "Xamarin.Formsシェル アプリケーションでは、さまざまなシェル クラスが公開しているプロパティとメソッドを利用して、高度なカスタマイズが可能です。 ただし、プラットフォーム固有のより詳細なカスタマイズが必要な場合は、シェルのカスタム レンダラーを作成することも可能です。"
+ms.prod: xamarin ms.assetid:3B1A6AE8-1D1E-4C34-B9AB-48F4444FEF32 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:05/06/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
 
 # <a name="xamarinforms-shell-custom-renderers"></a>Xamarin.Forms シェルのカスタム レンダラー

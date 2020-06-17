@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 92774cffdfed7412bdb4d44993dc221993ad56c8
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137887"
+title:"階層ナビゲーション" の説明:"この記事では、NavigationPage クラスを使用して後入れ先出し (LIFO) ページのスタックでナビゲーションを実行する方法について説明します。"
+ms.prod: xamarin ms.assetid:C8A5EEFF-5A3B-4163-838A-147EE3939FAA ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:03/10/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="hierarchical-navigation"></a>階層ナビゲーション
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-hierarchical)
@@ -32,8 +18,6 @@ _NavigationPage クラスは、ユーザーが前後を希望どおりにペー�
 ![](hierarchical-images/popping.png "Popping a Page from the Navigation Stack")
 
 ナビゲーション メソッドは、任意の [`Page`](xref:Xamarin.Forms.Page) 派生型の [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) プロパティによって公開されます。 これらのメソッドには、ページをナビゲーション スタックにプッシュし、ナビゲーション スタックからページをポップし、スタック操作を実行する機能があります。
-
-<a name="Performing_Navigation" />
 
 ## <a name="performing-navigation"></a>ナビゲーションを実行する
 
@@ -154,8 +138,6 @@ async void OnRootPageButtonClicked (object sender, EventArgs e)
 
 `boolean` パラメーターを `false` に設定すると、ページ遷移アニメーションが無効になります。また、パラメーターを `true` に設定すると、基となるプラットフォームでサポートされている場合はページ遷移アニメーションが有効になります。 ただし、プッシュとポップのメソッドでこのパラメーターが指定されていない場合は、既定でアニメーションが有効になります。
 
-<a name="Passing_Data_when_Navigating" />
-
 ## <a name="passing-data-when-navigating"></a>ナビゲーション時にデータを渡す
 
 場合によっては、ナビゲーション中に、あるページから別のページにデータを渡す必要があります。 これを実現する 2 つの手法では、ページ コンストラクターを介してデータを渡し、新しいページの [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) をデータに設定しています。 これから、それぞれについて順番に説明します。
@@ -274,8 +256,6 @@ public class SecondPageCS : ContentPage
 ![](hierarchical-images/passing-data-bindingcontext.png "Data Passed Through a BindingContext")
 
 データ バインディングの詳細については、「[Data Binding Basics](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)」 (データ バインディングの基礎) を参照してください。
-
-<a name="Manipulating_the_Navigation_Stack" />
 
 ## <a name="manipulating-the-navigation-stack"></a>ナビゲーション スタックの操作
 

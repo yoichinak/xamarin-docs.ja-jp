@@ -1,22 +1,8 @@
 ---
-title: ''
-description: Xamarin.Forms の ListView は、データのコレクションを縦方向の一覧として表示するビューです。 この記事では、プラットフォーム固有のリスト コントロールとネイティブのセルのレイアウトをカプセル化するカスタム レンダラーを作成し、ネイティブ リスト コントロールのパフォーマンスをより厳密に制御する方法を示します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 3403948c2853289610a73bb36073f09c0c86137d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135305"
+title:"ListView のカスタマイズ" の説明:"Xamarin.Forms の ListView は、データのコレクションを縦方向の一覧として表示するビューです。 この記事では、プラットフォーム固有のリスト コントロールとネイティブのセルのレイアウトをカプセル化するカスタム レンダラーを作成し、ネイティブ リスト コントロールのパフォーマンスをより厳密に制御する方法を示します。"
+ms.prod: xamarin ms.assetid:2FBCB8C8-4F32-45E7-954F-63AD29D5F1B5 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:11/29/2017 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="customizing-a-listview"></a>ListView のカスタマイズ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-listview)
@@ -31,13 +17,11 @@ _Xamarin.Forms の ListView は、データのコレクションを縦方向の�
 
 レンダリング プロセスを活用して各プラットフォーム上で [`ListView`](xref:Xamarin.Forms.ListView) 用のカスタム レンダラーを作成することで、プラットフォーム固有のカスタマイズを実装できます。 その実行プロセスは次のとおりです。
 
-1. Xamarin.Forms カスタム コントロールを[作成](#Creating_the_Custom_ListView_Control)します。
-1. Xamarin.Forms からカスタム コントロールを[使用](#Consuming_the_Custom_Control)します。
-1. 各プラットフォーム上でコントロールのカスタム レンダラーを[作成](#Creating_the_Custom_Renderer_on_each_Platform)します。
+1. Xamarin.Forms カスタム コントロールを[作成](#creating-the-custom-listview-control)します。
+1. Xamarin.Forms からカスタム コントロールを[使用](#consuming-the-custom-control)します。
+1. 各プラットフォーム上でコントロールのカスタム レンダラーを[作成](#creating-the-custom-renderer-on-each-platform)します。
 
 プラットフォーム固有のリスト コントロールとネイティブのセルのレイアウトを利用する `NativeListView` レンダラーを実装するために、各項目について順番に確認しましょう。 このシナリオは、再利用可能なリストとセルのコードを含む既存のネイティブ アプリを移行する場合に便利です。 さらに、データの視覚化など、パフォーマンスに影響を与える可能性があるリスト コントロール機能の詳細なカスタマイズが可能になります。
-
-<a name="Creating_the_Custom_ListView_Control" />
 
 ## <a name="creating-the-custom-listview-control"></a>カスタム ListView コントロールの作成
 
@@ -66,8 +50,6 @@ public class NativeListView : ListView
 ```
 
 `NativeListView` は、.NET 標準ライブラリ プロジェクトで作成され、カスタム コントロールの API を定義します。 このコントロールは、`ListView` にデータにデータを設定するために使用される`Items` プロパティを公開しており、表示目的のために、このプロパティをデータ バインディングすることが可能です。 また、このコントロールでは、プラットフォーム固有のネイティブ リスト コントロールで項目が選択されるたびに起動される `ItemSelected` イベントも公開しています。 データ バインディングの詳細については、「[Data Binding Basics](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)」 (データ バインディングの基礎) を参照してください。
-
-<a name="Consuming_the_Custom_Control" />
 
 ## <a name="consuming-the-custom-control"></a>カスタム コントロールの使用
 
@@ -142,8 +124,6 @@ public class MainPageCS : ContentPage
 > `NativeListView` カスタム コントロールは、スクロール機能を含むプラットフォーム固有のリスト コントロールを使ってレンダリングされるため、カスタム コントロールは [`ScrollView`](xref:Xamarin.Forms.ScrollView) などのスクロール可能なレイアウト コントロール内でホストしてはいけません。
 
 プラットフォーム固有のリスト コントロールとネイティブのセルのレイアウトを作成するために、カスタム レンダラーは、各アプリケーション プロジェクトに追加できるようになりました。
-
-<a name="Creating_the_Custom_Renderer_on_each_Platform" />
 
 ## <a name="creating-the-custom-renderer-on-each-platform"></a>各プラットフォーム上でのカスタム レンダラーの作成
 

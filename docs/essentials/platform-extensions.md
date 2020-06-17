@@ -1,20 +1,8 @@
 ---
-title: Xamarin.Essentials プラットフォームの拡張機能
-description: Xamarin.Essentials からは、プラットフォームの種類を使用する必要があるとき、Rect、Size、Point など、プラットフォーム拡張メソッドがいくつか提供されます。
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 3266d3870dc0d1ddef747168b2ac6b4d397a7c33
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135357"
+title: "Xamarin.Essentialsプラットフォーム拡張" description: "Xamarin.Essentials では、プラットフォームの種類を使用する必要があるときに、Rect、Size、Point など、プラットフォーム拡張メソッドがいくつか提供されます。"
+ms.assetid:AB4D198A-4FD7-479E-8627-01F887A6D056 author: jamesmontemagno ms.author: jamont ms.date:03/13/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinessentials-platform-extensions"></a>Xamarin.Essentials:プラットフォーム拡張
 
 Xamarin.Essentials からは、プラットフォームの種類を使用する必要があるとき、Rect、Size、Point など、プラットフォーム拡張メソッドがいくつか提供されます。 つまり、iOS、Android、UWP 固有の種類に対して、これらの種類の `System` バージョン間で変換できます。

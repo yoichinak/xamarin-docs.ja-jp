@@ -1,9 +1,6 @@
 ---
-title: ''Xamarin.Essentials:トラブルシューティング'' description:'このドキュメントでは、Xamarin.Essentials ライブラリを使用した開発時に発生する問題のトラブルシューティング方法について説明します。'
-ms.assetid: author: ms.author: ms.date: no-loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+タイトル: "Xamarin.Essentials:トラブルシューティング'' の説明: "このドキュメントでは、Xamarin.Essentials ライブラリを使用した開発時に発生する問題のトラブルシューティング方法について説明します。"
+ms.assetid:2E474FAF-F841-4E3C-B815-F7ABD8EE3361 author: jamesmontemagno ms.author: jamont ms.date:01/06/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
 
 # <a name="xamarinessentials-troubleshooting"></a>Xamarin.Essentials:トラブルシューティング

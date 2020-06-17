@@ -1,23 +1,7 @@
 ---
-title: ''
-description: ''
-Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 8. Code and XAML in harmony''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 90db8b4f11095a2a56c82c3f563844efbcf7e2b1
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136826"
+title:"第 8 章の概要: コードと XAML の調和" の説明: "Xamarin.Forms でモバイル アプリを作成する: 第 8 章の概要: コードと XAML の調和" ms.prod: xamarin ms.technology: xamarin-forms ms.assetid:5970DEEB-1FC9-4F78-B4F6-D403E16D22ED author: davidbritch ms.author: dabritch ms.date:07/19/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="summary-of-chapter-8-code-and-xaml-in-harmony"></a>第 8 章の概要: コードと XAML の調和
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter08)

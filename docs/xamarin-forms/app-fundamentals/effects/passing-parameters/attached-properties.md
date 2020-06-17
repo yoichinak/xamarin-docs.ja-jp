@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: cf03d0c32d80d7a1821e323acdc84a351413efec
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138880"
+title:"エフェクトのパラメーターを添付プロパティとして渡す" の説明:"添付プロパティは、実行時のプロパティの変更に応答するエフェクトのパラメーターの定義に使用できます。 この記事では、添付プロパティを使用してエフェクトにパラメーターを渡す方法と、実行時にパラメーターを変更する方法を示します。"
+ms.prod: xamarin ms.assetid:DFCDCB9F-17DD-4117-BD53-B4FB206BB387 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:08/05/2016 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="passing-effect-parameters-as-attached-properties"></a>エフェクトのパラメーターを添付プロパティとして渡す
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffectruntimechange)

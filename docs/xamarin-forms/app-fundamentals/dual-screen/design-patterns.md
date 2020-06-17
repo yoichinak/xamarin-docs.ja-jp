@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms のデュアル画面の設計パターン
-description: このガイドでは、デュアル画面デバイス用に最適化されたさまざまな設計パターンを Xamarin.Forms がどのようにサポートしているかについて説明します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 277fb67eeea465239d9340e755240288286d2359
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138789"
+title: "Xamarin.Forms のデュアル画面の設計パターン" の説明:"このガイドでは、デュアル画面デバイス用に最適化されたさまざまな設計パターンを Xamarin.Forms がどのようにサポートしているかについて説明します。"
+ms.prod: xamarin ms.assetid:3176d792-6dba-4e00-b463-497c58678ee9 ms.technology: xamarin-forms author: davidortinau ms.author: daortin ms.date:02/08/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinforms-dual-screen-design-patterns"></a>Xamarin.Forms のデュアル画面の設計パターン
 
 ![](~/media/shared/preview.png "This API is currently pre-release")

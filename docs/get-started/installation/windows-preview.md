@@ -1,21 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 5ccd5a610ad41c0160a6778a63a367376bd200b3
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84134018"
+title:"Windows に Xamarin (プレビュー) をインストールする" description:"このドキュメントでは、プレビュー リリース チャネルを使用して、Visual Studio 2019 にプレビュー バージョンの Xamarin をインストールする方法について説明します。"
+ms.prod: xamarin ms.assetid:9F730444-06E8-4B3F-8A19-CA95CD484FFA author: conceptdev ms.author: crdun ms.date:03/20/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="installing-xamarin-preview-on-windows"></a>Windows に Xamarin (プレビュー) をインストールする
 
 Visual Studio 2019 および Visual Studio 2017 では、アルファ、ベータ、安定チャネルのサポート方法が、以前のバージョンと異なります。 オプションが次の 2 つだけになっています。

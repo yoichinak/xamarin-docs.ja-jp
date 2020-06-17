@@ -1,20 +1,8 @@
 ---
-title: Xamarin.Essentials
-description: このドキュメントは、Xamarin.Essentials について説明するさまざまなガイドにリンクされています。それらのガイドでは、モバイル アプリケーション開発用のクロスプラットフォーム API が提供されています。
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 27421ecc8b089321cd2331829d87365f3cf37a65
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139465"
+タイトル: "Xamarin.Essentials" の説明:"このドキュメントは、Xamarin.Essentials について説明するさまざまなガイドにリンクされています。それらのガイドでは、モバイル アプリケーションの開発に役立つクロスプラットフォーム API が提供されています。"
+ms.assetid:4EDC9897-5FD1-44CA-A26D-2E5AB472C99A author: jamesmontemagno ms.author: jamont ms.date:02/26/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # Xamarin.Essentials
 
 Xamarin.Essentials には、モバイル アプリケーション開発用のクロスプラットフォーム API が用意されています。

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms DataTemplate の作成
-description: データ テンプレートは、ResourceDictionary 内でインラインで作成したり、またはカスタム型や適切な Xamarin.Forms のセルの種類から作成したりできます。 この記事では、各手法について説明します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 3e91d6f091870fe9203e67eda1454b8062383deb
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139933"
+title:"Xamarin.Forms DataTemplate の作成" の説明:"データ テンプレートは、ResourceDictionary 内でインラインで作成したり、またはカスタム型や適切な Xamarin.Forms のセルの種類から作成したりできます。 この記事では、各手法について説明します。"
+ms.prod: xamarin ms.assetid:CFF4AB5E-9069-461C-84D8-F9F6C38510AB ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:09/11/2017 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="creating-a-xamarinforms-datatemplate"></a>Xamarin.Forms DataTemplate の作成
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
@@ -25,15 +11,13 @@ _データ テンプレートは、ResourceDictionary 内でインラインで�
 
 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) の一般的な使用シナリオは、[`ListView`](xref:Xamarin.Forms.ListView) でオブジェクトのコレクションのデータを表示することです。 [`ListView`](xref:Xamarin.Forms.ListView) の各セルのデータの外観は、[`ListView.ItemTemplate`](xref:Xamarin.Forms.ItemsView`1) プロパティを [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) に設定することで管理できます。 これを実現するために利用できる手法がいくつかあります。
 
-- [インライン DataTemplate を作成する](#inline)。
-- [Type を使用して DataTemplate を作成する](#type)。
-- [リソースとして DataTemplate を作成する](#resource)。
+- [インライン DataTemplate を作成する](#creating-an-inline-datatemplate)。
+- [Type を使用して DataTemplate を作成する](#creating-a-datatemplate-with-a-type)。
+- [リソースとして DataTemplate を作成する](#creating-a-datatemplate-as-a-resource)。
 
 使用する手法に関係なく、次のスクリーンショットに示すように、結果として [`ListView`](xref:Xamarin.Forms.ListView) の各セルの外観は [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) で定義されます。
 
 ![](creating-images/data-template-appearance.png "ListView with a DataTemplate")
-
-<a name="inline" />
 
 ## <a name="creating-an-inline-datatemplate"></a>インライン DataTemplate を作成する
 
@@ -114,8 +98,6 @@ public class WithDataTemplatePageCS : ContentPage
 ```
 
 C# の場合、インライン [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) は、`Func` 引数を指定するコンストラクター オーバーロードを使用して作成されます。
-
-<a name="type" />
 
 ## <a name="creating-a-datatemplate-with-a-type"></a>Type を使用して DataTemplate を作成する
 
@@ -220,8 +202,6 @@ public class PersonCellCS : ViewCell
 
 > [!NOTE]
 > Xamarin.Forms には、[`ListView`](xref:Xamarin.Forms.ListView) セルに単純なデータを表示するために使用できるセルの種類も含まれています。 詳細については、[セルの外観](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)に関するページを参照してください。
-
-<a name="resource" />
 
 ## <a name="creating-a-datatemplate-as-a-resource"></a>リソースとして DataTemplate を作成する
 

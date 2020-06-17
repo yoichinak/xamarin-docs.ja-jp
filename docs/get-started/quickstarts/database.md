@@ -1,24 +1,8 @@
 ---
-title: ''
-description: ''
-zone_pivot_groups: ''
-ms.topic: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 2864c7edabde18faec06c2c42042168d3e6c9671
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139803"
+title:"ローカルの SQLite.NET データベースにデータを格納する" の説明: "この記事では、ローカルの SQLite.NET データベースにデータを格納する方法について説明します。"
+zone_pivot_groups: platform ms.topic: quickstart ms.prod: xamarin ms.assetid:5BF901BD-FDE8-4B74-B4AB-418E81745A3B ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:04/01/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="store-data-in-a-local-sqlitenet-database"></a>ローカルの SQLite.NET データベースにデータを格納する
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)

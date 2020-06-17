@@ -1,26 +1,13 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 3e194e92e6e9b9067e40928bf9766e987bfe472c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136371"
+title:"Xamarin のアンインストール" の説明:"このドキュメントでは、Windows で Visual Studio から Xamarin をアンインストールする方法について説明します。"
+ms.prod: xamarin ms.assetid: b83a85ec-842a-444c-8f82-c2464eda099b author: conceptdev ms.author: crdun ms.date:01/22/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="uninstall-xamarin-from-visual-studio"></a>Visual Studio から Xamarin をアンインストールする
 
 このガイドでは、Windows の Visual Studio から Xamarin を削除する方法について説明します。
 
-<a name="uninstallvs2017" />
+<a name="uninstallvs2017"></a>
 
 ## <a name="visual-studio-2019-and-visual-studio-2017"></a>Visual Studio 2017 と Visual Studio 2019
 

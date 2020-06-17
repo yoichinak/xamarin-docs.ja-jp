@@ -1,24 +1,8 @@
 ---
-title: クロスプラットフォーム Xamarin.Forms アプリケーションのスタイルを設定する
-description: この記事では、XAML スタイルで、クロスプラットフォーム Xamarin.Forms アプリケーションのスタイルを設定する方法を説明します。
-zone_pivot_groups: ''
-ms.topic: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 2d458bafc5bb1c8dcffc7858fd15734187f7612b
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84134070"
+title:"クロスプラットフォーム Xamarin.Forms アプリケーションのスタイルを設定する" description:"この記事では、XAML スタイルで、クロスプラットフォーム Xamarin.Forms アプリケーションのスタイルを設定する方法を説明します。"
+zone_pivot_groups: platform ms.topic: quickstart ms.prod: xamarin ms.assetid:CCCF8E57-D021-4542-8709-5808570FC26A ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:02/07/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="style-a-cross-platform-xamarinforms-application"></a>クロスプラットフォーム Xamarin.Forms アプリケーションのスタイルを設定する
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-styled/)

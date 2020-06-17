@@ -1,20 +1,8 @@
 ---
-title: Xamarin.Essentials のプラットフォームと機能のサポート
-description: Xamarin.Essentials には、任意の iOS、Android、または UWP アプリケーションと連携する単一のクロスプラットフォーム API が用意されていて、ユーザー インターフェイスがどのように作成されたかを問わず共有コードからアクセスできます。
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b052e03f3ca57229988a29b7d3f38f5fa7bb6f97
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137177"
+title: "Xamarin.Essentials のプラットフォームと機能のサポート" description: Xamarin.Essentials には、任意の iOS、Android、または UWP アプリケーションと連携する単一のクロスプラットフォーム API が用意されています。ユーザー インターフェイスの作成方法に関係なく、共有コードからアクセスできます。"
+ms.assetid:63FA28A5-6F52-4CB7-AF39-8DF7B436B5A4 author: jamesmontemagno ms.author: jamont ms.date:08/20/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="platform-support"></a>プラットフォームのサポート
 
 Xamarin.Essentials では、次のプラットフォームとオペレーティング システムがサポートされています。

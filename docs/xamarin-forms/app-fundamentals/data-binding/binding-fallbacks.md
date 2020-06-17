@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms でのバインドのフォールバック
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: f3aadef1960618731c3749507233933b8bf7630e
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84133478"
+title: "Xamarin.Forms のバインドのフォールバック" の説明: "この記事では、バインドが失敗した場合に使用されるフォールバック値を定義することでバインドをより堅牢にする方法について説明します。"
+ms.prod: xamarin ms.assetid: 637ACD9D-3E5D-4014-86DE-A77D1FEF238A ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 08/16/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinforms-binding-fallbacks"></a>Xamarin.Forms でのバインドのフォールバック
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)

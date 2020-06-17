@@ -1,9 +1,6 @@
 ---
-title: ''Xamarin.Essentials:音声合成'' description:'Xamarin.Essentials の TextToSpeech クラスを使用すると、アプリケーションで組み込みの音声合成エンジンを利用し、デバイスからテキストを読み上げたり、エンジンでサポート可能な使用できる言語を照会したりすることができます。'
-ms.assetid: author: ms.custom: ms.author: ms.date: no-loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+タイトル: "Xamarin.Essentials:音声合成'' の説明: "Xamarin.Essentials の TextToSpeech クラスを使用すると、アプリケーションで組み込みの音声合成エンジンを利用し、デバイスからテキストを読み上げたり、エンジンでサポート可能な使用できる言語を照会したりすることができます。"
+ms.assetid:AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:11/04/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
 
 # <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials:音声合成

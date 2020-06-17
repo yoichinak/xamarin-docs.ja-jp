@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms の DependencyService の登録と解決
-description: この記事では、Xamarin.Forms の DependencyService クラスを使用してネイティブ プラットフォームの機能を呼び出す方法について説明します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 50d77e9ba41767aa1f676bf21994431844fc4530
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138776"
+title: "Xamarin.Forms の DependencyService の登録と解決" の説明:"この記事では、Xamarin.Forms の DependencyService クラスを使用してネイティブ プラットフォームの機能を呼び出す方法について説明します。"
+ms.prod: xamarin ms.assetid:5d019604-4f6f-4932-9b26-1fce3b4d88f8 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:06/05/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinforms-dependencyservice-registration-and-resolution"></a>Xamarin.Forms の DependencyService の登録と解決
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)

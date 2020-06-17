@@ -1,9 +1,6 @@
 ---
-title: ''Xamarin.Essentials:シェイクの検出'' description:'Xamarin.Essentials の Accelerometer クラスを利用すると、デバイスが揺れる動きを検出できます。'
-ms.assetid: author: ms.author: ms.date: ms.custom: no-loc:
-- 'Xamarin.Forms'
-- 'Xamarin.Essentials'
-
+タイトル: "Xamarin.Essentials:シェイクの検出'' description:''Xamarin.Essentials の Accelerometer クラスを利用すると、デバイスが揺れる動きを検出できます。''
+ms.assetid:07513D32-120F-4F12-8757-A47802A8027B author: jamesmontemagno ms.author: jamont ms.date:05/28/2019 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
 
 # <a name="xamarinessentials-detect-shake"></a>Xamarin.Essentials:シェイクの検出

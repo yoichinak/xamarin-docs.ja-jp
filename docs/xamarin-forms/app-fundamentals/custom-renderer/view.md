@@ -1,21 +1,6 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: e565a2bcddf292d37bc3dd07a8edbbabec709d8a
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84133563"
+title:"ページの実装" の説明:"この記事では、デバイスのカメラからビデオ ストリームのプレビューを表示するために使う、Xamarin.Forms のカスタム コントロール用のカスタム レンダラーを作成する方法について説明します。"
+ms.prod: xamarin ms.assetid:915E25E7-4A6B-4F34-B7B4-07D5F4B240F2 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:05/10/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
 # <a name="implementing-a-view"></a>ページの実装
 
@@ -31,13 +16,11 @@ _Xamarin.Forms のカスタム ユーザー インターフェイス コント�
 
 レンダリング プロセスを使用して各プラットフォーム上の [`View`](xref:Xamarin.Forms.View) にカスタム レンダラーを作成することで、プラットフォーム固有のカスタマイズを実装することができます。 その実行プロセスは次のとおりです。
 
-1. Xamarin.Forms カスタム コントロールを[作成](#Creating_the_Custom_Control)します。
-1. Xamarin.Forms からカスタム コントロールを[使用](#Consuming_the_Custom_Control)します。
-1. 各プラットフォーム上でコントロールのカスタム レンダラーを[作成](#Creating_the_Custom_Renderer_on_each_Platform)します。
+1. Xamarin.Forms カスタム コントロールを[作成](#creating-the-custom-control)します。
+1. Xamarin.Forms からカスタム コントロールを[使用](#consuming-the-custom-control)します。
+1. 各プラットフォーム上でコントロールのカスタム レンダラーを[作成](#creating-the-custom-renderer-on-each-platform)します。
 
 デバイスのカメラからのプレビュー ビデオ ストリームを表示する `CameraPreview` レンダラーを実装する各項目について順番に説明します。 ビデオ ストリームをタップすると、停止/開始されます。
-
-<a name="Creating_the_Custom_Control" />
 
 ## <a name="creating-the-custom-control"></a>カスタム コントロールの作成
 
@@ -60,8 +43,6 @@ public class CameraPreview : View
 ```
 
 `CameraPreview` カスタム コントロールは、.NET 標準ライブラリ プロジェクトで作成され、このコントロールの API を定義します。 カスタム コントロールは、デバイスの前面または背面のカメラからビデオ ストリームを表示するかどうかを制御するために使用される `Camera` プロパティを公開しています。 コントロールの作成時に `Camera` プロパティの値が指定されていない場合は、既定で背面のカメラが指定されます。
-
-<a name="Consuming_the_Custom_Control" />
 
 ## <a name="consuming-the-custom-control"></a>カスタム コントロールの使用
 
@@ -108,8 +89,6 @@ public class MainPageCS : ContentPage
 `CameraPreview` カスタム コントロールのインスタンスは、デバイスのカメラからプレビュー ビデオ ストリームを表示するために使用されます。 必要に応じて `Camera` プロパティの値を指定する以外に、コントロールのカスタマイズはカスタム レンダラーで実行されます。
 
 これで、カスタム レンダラーを各アプリケーション プロジェクトに追加して、プラットフォーム固有のカメラ プレビュー コントロールを作成できるようになりました。
-
-<a name="Creating_the_Custom_Renderer_on_each_Platform" />
 
 ## <a name="creating-the-custom-renderer-on-each-platform"></a>各プラットフォーム上でのカスタム レンダラーの作成
 

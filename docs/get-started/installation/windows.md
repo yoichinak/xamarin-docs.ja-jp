@@ -1,24 +1,10 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 39cf115ad80dd8cdd3ddb298ce87c065663d6cb2
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84132679"
+title:"Visual Studio 2019 での Xamarin のインストール" の説明:"このドキュメントでは、Visual Studio 2019 で Xamarin をインストールする方法を説明します。 要件、インストール プロセス、インストールの確認について説明します。"
+ms.prod: xamarin ms.assetid:E20D4463-368E-4B60-A059-F50DB8C5552D author: conceptdev ms.author: crdun ms.date:08/28/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
 # <a name="installing-xamarin-in-visual-studio-2019"></a>Visual Studio 2019 での Xamarin のインストール
 
-<a name="requirements" />
+<a name="requirements"></a>
 
 開始する前に[システム要件](~/cross-platform/get-started/requirements.md)を確認します。
 

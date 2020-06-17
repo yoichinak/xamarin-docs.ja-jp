@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms のバインディング モード
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: c14215071a1d9d3ec804c307fa6edbbe4ddcf8e9
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139777"
+title: "Xamarin.Forms のバインド モード" の説明:"この記事では、BindingMode 列挙型のメンバーで指定するバインディング モードを使用してソースとターゲットとの間の情報のフローを制御する方法について説明します。 すべてのバインド可能なプロパティには、既定のバインド モードがあります。これは、そのプロパティがデータ バインディングのターゲットであるときに有効なモードを示します。"
+ms.prod: xamarin ms.assetid:D087C389-2E9E-47B9-A341-5B14AC732C45 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:05/01/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinforms-binding-mode"></a>Xamarin.Forms のバインディング モード
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms のクイックスタート
-description: Visual Studio および Visual Studio for Mac での Xamarin.Forms アプリケーションの開発に関するクイック スタート。
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 03d20114fb84bf17be40d9166e32c3d631786069
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84132510"
+タイトル: "Xamarin.Forms クイックスタート" の説明: "Visual Studio および Visual Studio for Mac での Xamarin.Forms アプリケーションの開発に関するクイック スタート。"
+ms.prod: xamarin ms.technology: xamarin-forms ms.assetid: 3318B8F8-3B24-489E-8E7B-28FA948796F8 author: davidbritch ms.author: dabritch ms.date: 01/06/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinforms-quickstarts"></a>Xamarin.Forms のクイックスタート
 
 _Xamarin.Forms を使用してモバイル アプリケーションを作成する方法について説明します。_

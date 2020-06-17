@@ -1,22 +1,8 @@
 ---
-title: ''
-description: この記事では、Xamarin.Forms を使ってビデオ プレーヤー アプリケーションにカスタムのトランスポート コントロールを実装する方法について説明します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: c72f68f327b6c0df6959d37ed4bf390e3bd7f31d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135006"
+title:"カスタムのビデオ トランスポート コントロール" description:"この記事では、Xamarin.Forms を使用して、ビデオ プレーヤー アプリケーションにカスタムのトランスポート コントロールを実装する方法について説明します。"
+ms.prod: xamarin ms.assetid:CE9E955D-A9AC-4019-A5D7-6390D80DECA1 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:02/12/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="custom-video-transport-controls"></a>カスタムのビデオ トランスポート コントロール
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

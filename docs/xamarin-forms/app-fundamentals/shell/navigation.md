@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms シェルのナビゲーション
-description: Xamarin.Forms シェル アプリケーションでは、設定されたナビゲーション階層に従わなくても、アプリケーション内の任意のページへの移動を許可する URI ベースのナビゲーション操作を利用できます。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: e67d49f300a8a98ec5685c33abf98f5b2ded08ed
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84132393"
+title: "Xamarin.Formsシェルのナビゲーション" の説明: "Xamarin.Forms シェル アプリケーションでは、設定されたナビゲーション階層に従わなくても、アプリケーション内の任意のページへの移動を許可する URI ベースのナビゲーション操作を利用できます。"
+ms.prod: xamarin ms.assetid: 57079D89-D1CB-48BD-9FEE-539CEC29EABB ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 04/02/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinforms-shell-navigation"></a>Xamarin.Forms シェルのナビゲーション
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)

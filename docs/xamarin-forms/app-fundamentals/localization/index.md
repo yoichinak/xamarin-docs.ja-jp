@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms のローカリゼーション
-description: 組み込みの .NET ローカライズ フレームワークを使用して、Xamarin.Forms を利用したクロスプラットフォームの多言語アプリケーションを構築できます。 テキストと画像をローカライズすることができ、アプリケーションのフロー方向を右から左にすることができます。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: dddb80e8fb683547d2bf6ba0b74e870fe240695c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137567"
+title: "Xamarin.Forms のローカライズ" description: "組み込みの .NET ローカライズ フレームワークを使用して、Xamarin.Forms を利用したクロスプラットフォームの多言語アプリケーションを構築できます。 テキストと画像をローカライズすることができ、アプリケーションのフロー方向を右から左にすることができます。"
+ms.prod: xamarin ms.assetid:97BF843B-BDAA-4CEA-8189-6DB54B291D7F ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:11/07/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinforms-localization"></a>Xamarin.Forms のローカリゼーション
 
 _組み込みの .NET ローカライズ フレームワークを使用して、Xamarin.Forms を利用したクロスプラットフォームの多言語アプリケーションを構築できます。_

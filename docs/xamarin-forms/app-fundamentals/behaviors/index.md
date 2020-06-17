@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms のビヘイビアー
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 83952982bd163725fb931c860cac3e267726315c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135812"
+title: "Xamarin.Formsビヘイビアー" description:"ビヘイビアーを使うと、ユーザー インターフェイス コントロールをサブクラス化することなく、それらに機能を追加できます。 ビヘイビアーはコードとして記述され、XAML のコントロールまたはコードに追加されます。"
+ms.prod: xamarin ms.assetid:42E32AD7-8E3B-48B3-B402-E75B758DA913 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:04/06/2016 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinforms-behaviors"></a>Xamarin.Forms のビヘイビアー
 
 _ビヘイビアーを使うと、ユーザー インターフェイス コントロールをサブクラス化することなくそれらに機能を追加できます。ビヘイビアーはコードとして記述され、XAML のコントロールまたはコードに追加されます。_

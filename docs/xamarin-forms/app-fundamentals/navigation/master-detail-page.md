@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms のマスター詳細ページ
-description: Xamarin.Forms の MasterDetailPage は、2 つの関連する情報ページ、つまり項目を表示するマスター ページと、マスター ページ上の項目に関する詳細を表示する詳細ページを管理するページです。 この記事では、MasterDetailPage を使用する方法と、情報ページ間を移動する方法について説明します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 89b1dedcb6219a32332641550018405abd4b6870
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137814"
+title: "Xamarin.Formsのマスター詳細ページ" の説明:"Xamarin.Forms の MasterDetailPage は、2 つの関連する情報ページ、つまり項目を表示するマスター ページと、マスター ページ上の項目に関する詳細を表示する詳細ページを管理するページです。 この記事では、MasterDetailPage を使用する方法と、情報ページ間を移動する方法について説明します。"
+ms.prod: xamarin ms.assetid:119945E3-58B8-4630-A3D2-8B561529D53B ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:12/01/2017 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinforms-master-detail-page"></a>Xamarin.Forms のマスター詳細ページ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-masterdetailpage)
@@ -51,11 +37,11 @@ _Xamarin.Forms の MasterDetailPage は、2 つの関連する情報ページ、
 
 - iOS では、マスター ページが左から "*スライド*" してくると、詳細ページは右にスライドしますが、詳細ページの左の部分はまだ表示されています。
 - Android では、詳細ページとマスター ページは相互に "*オーバーレイ*" されます。
-- UWP では、マスター ページが左からスライドして詳細ページの一部を覆います。ただし、[`MasterBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) プロパティが `Popover` に設定されている場合です。 詳細については、「[詳細ページの表示動作を制御する](#Controlling_the_Detail_Page_Display_Behavior)」をご覧ください。
+- UWP では、マスター ページが左からスライドして詳細ページの一部を覆います。ただし、[`MasterBehavior`](xref:Xamarin.Forms.MasterDetailPage.MasterBehavior) プロパティが `Popover` に設定されている場合です。 詳細については、「[詳細ページの表示動作を制御する](#controlling-the-detail-page-display-behavior)」をご覧ください。
 
 横モードでの動作も同様ですが、iOS と Android のマスター ページは縦モードのマスター ページと同じ幅なので、表示される詳細ページの部分が多くなります。
 
-ナビゲーション動作の制御について詳しくは、「[詳細ページの表示動作を制御する](#Controlling_the_Detail_Page_Display_Behavior)」をご覧ください。
+ナビゲーション動作の制御について詳しくは、「[詳細ページの表示動作を制御する](#controlling-the-detail-page-display-behavior)」をご覧ください。
 
 ## <a name="creating-a-masterdetailpage"></a>MasterDetailPage を作成する
 
@@ -249,8 +235,6 @@ public partial class MainPage : MasterDetailPage
 次のスクリーンショットでは、`ContactPage` の詳細ページを示します。これは、マスター ページで選択された後に表示されます。
 
 ![](master-detail-page-images/detailpage.png "Detail Page Example")
-
-<a name="Controlling_the_Detail_Page_Display_Behavior" />
 
 ### <a name="controlling-the-detail-page-display-behavior"></a>詳細ページの表示動作を制御する
 

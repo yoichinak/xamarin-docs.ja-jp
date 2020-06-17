@@ -1,23 +1,9 @@
 ---
-title: 第 1 章の概要。 Xamarin.Forms はどのように適合するか
-description: ''
-Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 1. How does Xamarin.Forms fit in?''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 48b2fb429d206f6582886c94d4d99839d790dc8d
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136930"
+title:"第 1 章の概要: Xamarin.Forms はどのように適合するか"
+の説明: "Xamarin.Forms でモバイル アプリを作成する: 第 1 章の概要。 Xamarin.Forms はどのように適合するか"
+ms.prod: xamarin ms.technology: xamarin-forms ms.assetid:F3F864FF-EE70-49D0-90D1-388889037625 author: davidbritch ms.author: dabritch ms.date:07/19/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="summary-of-chapter-1-how-does-xamarinforms-fit-in"></a>第 1 章の概要。 Xamarin.Forms はどのように適合するか
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter01)

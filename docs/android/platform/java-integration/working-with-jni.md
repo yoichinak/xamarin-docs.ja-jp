@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: 0fa717a775ff2f1ace9e248a8afde8d373e8a1f8
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 00c9c2e9f39943960d35c30602935ed109639cf4
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76724345"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84567733"
 ---
 # <a name="working-with-jni-and-xamarinandroid"></a>JNI と Xamarin.Android を使用する
 
@@ -277,7 +277,7 @@ Java のメソッドは、C# のメソッドおよび C# のプロパティと�
 
 メソッドのバインドは、単なるメソッドの呼び出しでは済まない可能性があります。 メソッドのバインドには、メソッドをオーバーライドすること (抽象メソッドまたは final 以外のメソッドの場合) または実装すること (インターフェイス メソッドの場合) の許可も含まれます。 「[継承のサポート、インターフェイス](#_Supporting_Inheritance,_Interfaces_1)」セクションでは、仮想メソッドとインターフェイス メソッドをサポートする複雑さについて説明します。
 
-<a name="_Static_Methods_1" />
+<a name="_Static_Methods_1"></a>
 
 #### <a name="static-methods"></a>静的メソッド
 
@@ -395,7 +395,7 @@ public Integer (int value)
 
 [JNIEnv.CreateInstance](xref:Android.Runtime.JNIEnv.CreateInstance*) メソッドは、`JNIEnv.FindClass` から返された値に対して `JNIEnv.FindClass`、`JNIEnv.GetMethodID`、`JNIEnv.NewObject`、`JNIEnv.DeleteGlobalReference` を実行するためのヘルパーです。 詳細については、次のセクションを参照してください。
 
-<a name="_Supporting_Inheritance,_Interfaces_1" />
+<a name="_Supporting_Inheritance,_Interfaces_1"></a>
 
 ### <a name="supporting-inheritance-interfaces"></a>継承のサポート、インターフェイス
 
@@ -1049,7 +1049,7 @@ IntPtr lrefString = JNIEnv.CallObjectMethod(instance, methodID);
 Java.Lang.String value = Java.Lang.Object.GetObject<Java.Lang.String>( lrefString, JniHandleOwnership.TransferLocalRef);
 ```
 
-<a name="_Looking_up_Java_Types" />
+<a name="_Looking_up_Java_Types"></a>
 
 ## <a name="looking-up-java-types"></a>Java の型の検索
 
@@ -1057,7 +1057,7 @@ JNI でフィールドまたはメソッドを検索するには、フィール�
 
 メモ:オブジェクト インスタンスを返す他のすべての `JNIEnv` メソッドとは異なり、`FindClass` ではローカル参照ではなくグローバル参照が返されます。
 
-<a name="_Instance_Fields" />
+<a name="_Instance_Fields"></a>
 
 ## <a name="instance-fields"></a>インスタンスのフィールド
 
@@ -1123,7 +1123,7 @@ JNIEnv.SetField(IntPtr instance, IntPtr fieldID, Type value);
 
 - [JNIEnv.SetField](xref:Android.Runtime.JNIEnv.SetField*) &ndash; `double` インスタンス フィールドの値を書き込みます。
 
-<a name="_Static_Fields" />
+<a name="_Static_Fields"></a>
 
 ## <a name="static-fields"></a>静的フィールド
 
@@ -1187,7 +1187,7 @@ JNIEnv.SetStaticField(IntPtr class, IntPtr fieldID, Type value);
 
 - [JNIEnv.SetStaticField](xref:Android.Runtime.JNIEnv.SetStaticField*) &ndash; `double` 静的フィールドの値を書き込みます。
 
-<a name="_Instance_Methods" />
+<a name="_Instance_Methods"></a>
 
 ## <a name="instance-methods"></a>インスタンス メソッド
 
@@ -1253,7 +1253,7 @@ JNIEnv.SetStaticField(IntPtr class, IntPtr fieldID, Type value);
 
 - [JNIEnv.CallNonvirtualDoubleMethod](xref:Android.Runtime.JNIEnv.CallNonvirtualDoubleMethod*) &ndash; `double` 値を返すメソッドを非仮想的に呼び出します。
 
-<a name="_Static_Methods" />
+<a name="_Static_Methods"></a>
 
 ## <a name="static-methods"></a>静的メソッド
 
@@ -1287,7 +1287,7 @@ JNIEnv.SetStaticField(IntPtr class, IntPtr fieldID, Type value);
 
 - [JNIEnv.CallStaticDoubleMethod](xref:Android.Runtime.JNIEnv.CallStaticDoubleMethod*) &ndash; `double` 値を返す静的メソッドを呼び出します。
 
-<a name="JNI_Type_Signatures" />
+<a name="JNI_Type_Signatures"></a>
 
 ## <a name="jni-type-signatures"></a>JNI 型シグネチャ
 
@@ -1307,7 +1307,7 @@ JNI 型シグネチャは次のようになります。
 
 通常、JNI シグネチャを決定するには、`javap` コマンドを使用することを "*強く*" お勧めします。 たとえば、[java.lang.Thread.State.valueOf(String)](https://developer.android.com/reference/java/lang/Thread.State.html#valueOf(java.lang.String)) メソッドの JNI 型シグネチャは "(Ljava/lang/String;)Ljava/lang/Thread$State;" ですが、[java.lang.Thread.State.values](https://developer.android.com/reference/java/lang/Thread.State.html#values) メソッドの JNI 型シグネチャは "()[Ljava/lang/Thread$State;" です。 末尾のセミコロンに注意してください。それらは JNI 型シグネチャの "*一部です*"。
 
-<a name="_JNI_Type_References" />
+<a name="_JNI_Type_References"></a>
 
 ## <a name="jni-type-references"></a>JNI 型参照
 
@@ -1333,7 +1333,7 @@ JNI 型参照は、Java 型参照とは異なります。 JNI では、`java.lan
 - `"Z"` は `bool`。
 - `"V"` は `void` メソッドの戻り値の型。
 
-<a name="_Simplified_Type_References_1" />
+<a name="_Simplified_Type_References_1"></a>
 
 ### <a name="simplified-type-references"></a>略式型参照
 

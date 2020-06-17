@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: a891ec70f6f83984ed463fe914442758bdf57a2e
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139309"
+title:"エフェクトの概要" の説明:"エフェクトを使用すると、各プラットフォーム上のネイティブ コントロールをカスタマイズできます。これらは、通常、小規模なスタイルの変更に使用されます。 この記事では、エフェクト、およびエフェクトとカスタム レンダラーの境界について概要を説明します。また PlatformEffect クラスについても説明します。"
+ms.prod: xamarin ms.assetid:30CB8615-8F39-4762-BDB7-333D2B57D112 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:03/08/2016 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="introduction-to-effects"></a>エフェクトの概要
 
 _効果を使用すると、各プラットフォーム上のネイティブ コントロールをカスタマイズできます。通常は、小規模なスタイル変更のために使用します。この記事では、効果の概要、および効果とカスタム レンダラーの境界の概要について説明するほか、PlatformEffect クラスについて説明します。_

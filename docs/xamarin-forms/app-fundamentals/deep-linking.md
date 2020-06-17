@@ -1,23 +1,8 @@
 ---
-title: ''
-description: この記事では、アプリケーション インデックス作成とディープ リンクの設定を使用して、Xamarin.Forms アプリケーションのコンテンツを iOS および Android のデバイス上で検索できるようにする方法について説明します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-ms.custom: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: d93f9bbcfafc3cb71d6b71159f6d3368f50c08be
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84135734"
+title:"アプリケーション インデックス作成とディープ リンクの設定" の説明:"この記事では、アプリケーション インデックス作成とディープ リンクの設定を使用して、Xamarin.Forms アプリケーションのコンテンツを iOS および Android のデバイス上で検索できるようにする方法について説明します。"
+ms.prod: xamarin ms.assetid:410C5D19-AA3C-4E0D-B799-E288C5803226 ms.technology: xamarin-forms ms.custom: xamu-video author: davidbritch ms.author: dabritch ms.date:11/28/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="application-indexing-and-deep-linking"></a>アプリケーション インデックス作成とディープ リンクの設定
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/deeplinking)
@@ -155,8 +140,6 @@ Application.Current.AppLinks.DeregisterLink (appLink);
 
 > [!NOTE]
 > Android 上では、インデックス付けされたコンテンツを検索結果から削除することはできません。
-
-<a name="responding" />
 
 ## <a name="responding-to-a-deep-link"></a>ディープ リンクへの応答
 

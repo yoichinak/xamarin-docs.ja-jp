@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms のカスタム レンダラー
-description: カスタム レンダラーにより、開発者は各プラットフォーム上のネイティブ コントロールのレンダリングをオーバーライドして、Xamarin.Forms コントロールの外観とビヘイビアーをカスタマイズできるようになります。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: be281f9b7987a8d23ba6ac93f0771e432f277d45
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84138919"
+title: "Xamarin.Forms のカスタム レンダラー" の説明:"カスタム レンダラーにより、開発者は各プラットフォーム上のネイティブ コントロールのレンダリングをオーバーライドして、Xamarin.Forms コントロールの外観とビヘイビアーをカスタマイズできるようになります。"
+ms.prod: xamarin ms.assetid:BF1CF23A-3BC9-4226-92E6-DAEEB91422F1 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:12/03/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinforms-custom-renderers"></a>Xamarin.Forms のカスタム レンダラー
 
 _Xamarin.Forms ユーザー インターフェイスは、ターゲット プラットフォームのネイティブ コントロールを使用してレンダリングされるため、Xamarin.Forms アプリケーションでは各プラットフォームの外観を維持できます。カスタム レンダラーにより、開発者はこのプロセスをオーバーライドして、各プラットフォーム上で Xamarin.Forms コントロールの外観とビヘイビアーをカスタマイズできるようになります。_

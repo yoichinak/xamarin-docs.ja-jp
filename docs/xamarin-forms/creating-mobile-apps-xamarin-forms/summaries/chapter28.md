@@ -1,23 +1,7 @@
 ---
-title: ''
-description: ''
-Creating Mobile Apps with Xamarin.Forms: Summary of Chapter 28. Location and maps''
-ms.prod: ''
-ms.technology: ''
-ms.assetid: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 301dc65c7909603e117717a993959e3c73fa2d32
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84133407"
+title: "第 28 章の概要: 場所とマップ" の説明: "Xamarin.Forms でモバイル アプリを作成する: 第 28 章の概要: 場所とマップ" ms.prod: xamarin ms.technology: xamarin-forms ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4 author: davidbritch ms.author: dabritch ms.date: 07/19/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="summary-of-chapter-28-location-and-maps"></a>第 28 章の概要: 位置情報と地図
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter28)

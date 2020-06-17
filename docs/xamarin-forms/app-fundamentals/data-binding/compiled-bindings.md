@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms のコンパイル済みのバインド
-description: この記事では、コンパイル済みのバインドを使用して、Xamarin.Forms アプリケーションでのデータ バインディングのパフォーマンスを向上させる方法について説明します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 1f811de95009900016bb8b442265a9a079e0f612
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139754"
+title: "Xamarin.Formsコンパイル済みのバインド" の説明:"この記事では、コンパイル済みのバインドを使用して、Xamarin.Forms アプリケーションでのデータ バインディングのパフォーマンスを向上させる方法について説明します。"
+ms.prod: xamarin ms.assetid:ABE6B7F7-875E-4402-A1D2-845CE374402B ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:09/18/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinforms-compiled-bindings"></a>Xamarin.Forms のコンパイル済みのバインド
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
@@ -73,7 +59,7 @@ _コンパイル済みのバインドは、従来のバインドより迅速に�
 </ContentPage>
 ```
 
-ルートの [`StackLayout`](xref:Xamarin.Forms.StackLayout) では、`HslColorViewModel` をインスタンス化し、[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) プロパティのためのプロパティ要素タグ内の `Color` プロパティを初期化します。 また、このルートの `StackLayout` では `x:DataType` 属性を viewmodel 型として定義し、ルートの `StackLayout` ビュー階層内のバインド式がすべてコンパイルされることを示します。 これは、ビルド エラーとなる、存在しない viewmodel プロパティにバインドするためにバインド式のいずれかを変更することで、確認できます。 この例では、`x:DataType` 属性を文字列リテラルに設定しますが、`x:Type` マークアップ拡張機能を使用して型に設定することもできます。 `x:Type` マークアップ拡張機能の詳細については、「[x:Type マークアップ拡張機能](~/xamarin-forms/xaml/markup-extensions/consuming.md#type)」を参照してください。
+ルートの [`StackLayout`](xref:Xamarin.Forms.StackLayout) では、`HslColorViewModel` をインスタンス化し、[`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) プロパティのためのプロパティ要素タグ内の `Color` プロパティを初期化します。 また、このルートの `StackLayout` では `x:DataType` 属性を viewmodel 型として定義し、ルートの `StackLayout` ビュー階層内のバインド式がすべてコンパイルされることを示します。 これは、ビルド エラーとなる、存在しない viewmodel プロパティにバインドするためにバインド式のいずれかを変更することで、確認できます。 この例では、`x:DataType` 属性を文字列リテラルに設定しますが、`x:Type` マークアップ拡張機能を使用して型に設定することもできます。 `x:Type` マークアップ拡張機能の詳細については、「[x:Type マークアップ拡張機能](~/xamarin-forms/xaml/markup-extensions/consuming.md#xtype-markup-extension)」を参照してください。
 
 > [!IMPORTANT]
 > `x:DataType` 属性は、ビュー階層の任意の時点で再定義できます。
@@ -127,7 +113,7 @@ _コンパイル済みのバインドは、従来のバインドより迅速に�
 
 [`ListView.ItemsSource`](xref:Xamarin.Forms.ListView) プロパティは、静的な `NamedColor.All` プロパティに設定されます。 `NamedColor` クラスでは .NET リフレクションを使用して、[`Color`](xref:Xamarin.Forms.Color) 構造体のすべての静的なパブリック フィールドを列挙し、静的な `All` プロパティからアクセス可能なコレクションにその名前と共に格納します。 そのため、`ListView` には `NamedColor` インスタンスがすべて取り込まれます。 `ListView` の各項目については、その項目のバインド コンテキストが `NamedColor` オブジェクトに設定されます。 [`ViewCell`](xref:Xamarin.Forms.ViewCell) 内の [`BoxView`](xref:Xamarin.Forms.BoxView) および [`Label`](xref:Xamarin.Forms.Label) 要素は、`NamedColor` プロパティにバインドされます。
 
-[`DataTemplate`](xref:Xamarin.Forms.DataTemplate) では、`NamedColor` 型になるように `x:DataType` 属性が定義され、`DataTemplate` ビュー階層内のバインド式がすべてコンパイルされることが示されることに注意してください。 これは、ビルド エラーとなる、存在しない `NamedColor` プロパティにバインドするためにバインド式のいずれかを変更することで、確認できます。  この例では、`x:DataType` 属性を文字列リテラルに設定しますが、`x:Type` マークアップ拡張機能を使用して型に設定することもできます。 `x:Type` マークアップ拡張機能の詳細については、「[x:Type マークアップ拡張機能](~/xamarin-forms/xaml/markup-extensions/consuming.md#type)」を参照してください。
+[`DataTemplate`](xref:Xamarin.Forms.DataTemplate) では、`NamedColor` 型になるように `x:DataType` 属性が定義され、`DataTemplate` ビュー階層内のバインド式がすべてコンパイルされることが示されることに注意してください。 これは、ビルド エラーとなる、存在しない `NamedColor` プロパティにバインドするためにバインド式のいずれかを変更することで、確認できます。  この例では、`x:DataType` 属性を文字列リテラルに設定しますが、`x:Type` マークアップ拡張機能を使用して型に設定することもできます。 `x:Type` マークアップ拡張機能の詳細については、「[x:Type マークアップ拡張機能](~/xamarin-forms/xaml/markup-extensions/consuming.md#xtype-markup-extension)」を参照してください。
 
 アプリケーションの最初の実行時に、[`ListView`](xref:Xamarin.Forms.ListView) には `NamedColor` インスタンスが取り込まれます。 `ListView` 内の項目が選択されると、[`BoxView.Color`](xref:Xamarin.Forms.BoxView.Color) プロパティは、`ListView` 内の選択された項目の色に設定されます。
 
@@ -163,7 +149,7 @@ _コンパイル済みのバインドは、従来のバインドより迅速に�
 
 ルートの [`StackLayout`](xref:Xamarin.Forms.StackLayout) では、`HslColorViewModel` 型になるように `x:DataType` 属性が設定され、ルートの `StackLayout` ビュー階層内のバインド式がすべてコンパイルされることが示されます。 しかし、内部の `StackLayout` では、`x:DataType` 属性が `x:Null` マークアップ式を使用して `null` に再定義されます。 したがって、内部の `StackLayout` 内のバインド式では、従来のバインドが使用されます。 ルートの `StackLayout` ビュー階層内の [`BoxView`](xref:Xamarin.Forms.BoxView) のみで、従来のバインドが使用されます。
 
-`x:Null` マークアップ式の詳細については、「[x:Null のマークアップ拡張](~/xamarin-forms/xaml/markup-extensions/consuming.md#null)」を参照してください。
+`x:Null` マークアップ式の詳細については、「[x:Null のマークアップ拡張](~/xamarin-forms/xaml/markup-extensions/consuming.md#xnull-markup-extension)」を参照してください。
 
 ## <a name="performance"></a>パフォーマンス
 

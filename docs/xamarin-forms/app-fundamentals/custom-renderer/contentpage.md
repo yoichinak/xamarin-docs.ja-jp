@@ -1,22 +1,8 @@
 ---
-title: ''
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 50e28291d72550264e3806c0911f59a57c6d8bf0
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136332"
+title:"ContentPage のカスタマイズ" の説明:"ContentPage は、単一ビューを表示し、画面の大部分を占めるビジュアル要素です。 この記事では、ContentPage ページ用のカスタム レンダラーを作成する方法を示します。これにより、開発者は既定のネイティブ レンダリングを、各自のプラットフォームに固有のカスタマイズでオーバーライドできるようになります。"
+ms.prod: xamarin ms.assetid:A4E61D93-73D9-4668-8D1C-DB6FC2491822 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:11/29/2017 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="customizing-a-contentpage"></a>ContentPage のカスタマイズ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-contentpage)
@@ -31,13 +17,11 @@ _ContentPage は、単一ビューを表示し、画面の大部分を占める�
 
 レンダリング プロセスを活用して各プラットフォーム上で [`ContentPage`](xref:Xamarin.Forms.ContentPage) 用のカスタム レンダラーを作成することで、プラットフォーム固有のカスタマイズを実装できます。 その実行プロセスは次のとおりです。
 
-1. Xamarin.Forms ページを[作成](#Creating_the_Xamarin.Forms_Page)します。
-1. Xamarin.Forms からページを[使用](#Consuming_the_Xamarin.Forms_Page)します。
-1. 各プラットフォーム上でページのカスタム レンダラーを[作成](#Creating_the_Page_Renderer_on_each_Platform)します。
+1. Xamarin.Forms ページを[作成](#creating-the-xamarinforms-page)します。
+1. Xamarin.Forms からページを[使用](#consuming-the-xamarinforms-page)します。
+1. 各プラットフォーム上でページのカスタム レンダラーを[作成](#creating-the-page-renderer-on-each-platform)します。
 
 ライブ カメラのフィードと写真をキャプチャする機能を提供する `CameraPage` を実装する各項目について順番に説明します。
-
-<a name="Creating_the_Xamarin.Forms_Page" />
 
 ## <a name="creating-the-xamarinforms-page"></a>Xamarin.Forms ページを作成する
 
@@ -78,8 +62,6 @@ public class CameraPageCS : ContentPage
 
 `CameraPage` のインスタンスは、各プラットフォームでライブ カメラ フィードを表示するために使用されます。 コントロールのカスタマイズはカスタム レンダラーで実行されるため、`CameraPage` クラスに追加の実装は必要ありません。
 
-<a name="Consuming_the_Xamarin.Forms_Page" />
-
 ## <a name="consuming-the-xamarinforms-page"></a>Xamarin.Forms ページを使用する
 
 Xamarin.Forms アプリケーションには、必ず空の `CameraPage` が表示されます。 これは、次のコード例に示すように、`MainPage` インスタンスのボタンがタップされてから `OnTakePhotoButtonClicked` メソッドが実行されたときに起こります。
@@ -92,8 +74,6 @@ async void OnTakePhotoButtonClicked (object sender, EventArgs e)
 ```
 
 このコードでは単に `CameraPage` にナビゲートされます。このカスタム レンダラーによって、各プラットフォームのページの外観がカスタマイズされます。
-
-<a name="Creating_the_Page_Renderer_on_each_Platform" />
 
 ## <a name="creating-the-page-renderer-on-each-platform"></a>各プラットフォーム上でページ レンダラーを作成する
 

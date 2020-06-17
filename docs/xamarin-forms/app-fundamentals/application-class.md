@@ -1,29 +1,14 @@
 ---
-title: Xamarin.Forms の App クラス
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-ms.custom: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 2f4b568809f949d813de86ae88cbe621cfa3161c
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84129689"
+title: "Xamarin.Formsの App クラス" の説明:"この記事では、既定の App クラスの機能について説明します。このクラスには、アプリの最初のページに設定するプロパティと、ライフサイクルの状態の変化に伴う単純な値を格納するための永続ディクショナリが含まれます。"
+ms.prod: xamarin ms.assetid:421F8294-1944-46A4-8459-D2BD5AAABC9D ms.technology: xamarin-forms ms.custom: video author: davidbritch ms.author: dabritch ms.date:02/19/2016 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinforms-app-class"></a>Xamarin.Forms の App クラス
 
 `Application` 基底クラスでは、プロジェクトの既定の `App` サブクラスで公開される次の機能が提供されています。
 
 * アプリの最初のページが設定される `MainPage` プロパティ。
-* ライフサイクルの状態変化をまたいでシンプルな値を格納するための永続的な [`Properties` ディクショナリ](#Properties_Dictionary)。
+* ライフサイクルの状態変化をまたいでシンプルな値を格納するための永続的な [`Properties` ディクショナリ](#properties-dictionary)。
 * 現在のアプリケーション オブジェクトへの参照が含まれている静的な `Current` プロパティ。
 
 また、`OnStart`、`OnSleep`、`OnResume` などの[ライフサイクル メソッド](~/xamarin-forms/app-fundamentals/app-lifecycle.md)と、モーダル ナビゲーション イベントも公開されています。
@@ -76,8 +61,6 @@ public class App : Xamarin.Forms.Application
     }
 }
 ```
-
-<a name="Properties_Dictionary" />
 
 ## <a name="properties-dictionary"></a>Properties ディクショナリ
 

@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms のローカル通知
-description: この記事では、Xamarin.Forms でローカル通知を送受信する方法について説明します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 40e040f216ddda40931273f4e7f5614964862fe8
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84137595"
+title: "Xamarin.Forms のローカル通知" description: "この記事では、Xamarin.Forms でローカル通知を送受信する方法について説明します。"
+ms.prod: xamarin ms.assetid:60460F57-63C6-4916-BBB5-A870F1DF53D7 ms.technology: xamarin-forms author: profexorgeek ms.author: jusjohns ms.date:10/10/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="local-notifications-in-xamarinforms"></a>Xamarin.Forms でのローカル通知
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/local-notifications)

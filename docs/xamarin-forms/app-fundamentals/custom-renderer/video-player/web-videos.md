@@ -1,22 +1,8 @@
 ---
-title: ''
-description: この記事では、Xamarin.Forms を使ってビデオ プレーヤー アプリケーションで Web ビデオを再生する方法について説明します。
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b4269b768d6dd9a0eadbbe557f701f8a43b74c99
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84133680"
+title: "Web ビデオの再生" の説明: "この記事では、Xamarin.Forms を使用してビデオ プレーヤー アプリケーションで Web ビデオを再生する方法について説明します。"
+ms.prod: xamarin ms.assetid:75781A10-865D-4BA8-8D6B-E3DA012922BC ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 02/12/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="playing-a-web-video"></a>Web ビデオの再生
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

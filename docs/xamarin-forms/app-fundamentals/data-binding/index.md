@@ -1,22 +1,8 @@
 ---
-title: Xamarin.Forms のデータ バインディング
-description: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 4b99877342ddbaf9ad5606ec5dc284818fcfeffd
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84139699"
+title: "Xamarin.Forms のデータ バインディング" の説明:"データ バインディングは、2 つのオブジェクトのプロパティをリンクして、片方のプロパティでの変更がもう片方のプロパティに自動的に反映されるようにする手法です。 データ バインディングは、Model-View-ViewModel (MVVM) アプリケーション アーキテクチャにとって不可欠な要素です。"
+ms.prod: xamarin ms.assetid:938E85C8-521D-43B9-92CB-D591A06D98A6 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:03/23/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="xamarinforms-data-binding"></a>Xamarin.Forms のデータ バインディング
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)

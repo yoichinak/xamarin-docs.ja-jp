@@ -1,24 +1,8 @@
 ---
-title: 単一ページの Xamarin.Forms アプリケーションを作成する
-description: この記事では、単一ページのクロスプラットフォーム Xamarin.Forms アプリケーションを作成する方法について説明します。このアプリにより、メモを入力し、デバイス ストレージに保持できるようになります。
-zone_pivot_groups: ''
-ms.topic: ''
-ms.prod: ''
-ms.assetid: ''
-ms.technology: ''
-author: ''
-ms.author: ''
-ms.date: ''
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: b9a3017fc8188d3669b64d95c968b2d0a5325358
-ms.sourcegitcommit: 57bc714633364aeb34aba9803e88802bebf321ba
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84136072"
+title:"単一ページの Xamarin.Forms アプリケーションを作成する" description:"この記事では、単一ページのクロスプラットフォーム Xamarin.Forms アプリケーションを作成する方法について説明します。このアプリにより、メモを入力し、デバイス ストレージに保持できるようになります。"
+zone_pivot_groups: platform-dev16 ms.topic: quickstart ms.prod: xamarin ms.assetid:E8CF05B1-54B9-428B-8518-D068837BD61E ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:04/01/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 ---
+
 # <a name="create-a-single-page-xamarinforms-application"></a>単一ページの Xamarin.Forms アプリケーションを作成する
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)
@@ -45,11 +29,11 @@ ms.locfileid: "84136072"
 
 ## <a name="get-started-with-visual-studio-2019"></a>Visual Studio 2019 の使用を開始する
 
-1. Visual Studio 2019 を起動し、スタート ウィンドウで **[新しいプロジェクトを作成]** をクリックして新しいプロジェクトを作成します。
+1. Visual Studio 2019 を起動し、スタート ウィンドウで **[新しいプロジェクトを作成する]** をクリックして新しいプロジェクトを作成します。
 
     ![](single-page-images/vs/new-solution-2019.png "New Project")
 
-2. **[新しいプロジェクトを作成]** ウィンドウの **[すべてのプロジェクトの種類]** ドロップ ダウンで **[モバイル]** を選択し、 **[モバイル アプリ (Xamarin.Forms]** テンプレートを選択して、 **[次へ]** ボタンをクリックします。
+2. **[新しいプロジェクトを作成する]** ウィンドウの **[プロジェクト タイプ]** ドロップ ダウンで **[モバイル]** を選択し、 **[モバイル アプリ (Xamarin.Forms]** テンプレートを選択して、 **[次へ]** ボタンをクリックします。
 
     ![](single-page-images/vs/new-project-2019.png "Cross-Platform Project Templates")
 
@@ -60,7 +44,7 @@ ms.locfileid: "84136072"
     > [!IMPORTANT]
     > このクイックスタートの C# スニペットと XAML スニペットでは、**Notes** という名前のソリューションが必要です。 別の名前を使用すると、コードをこのクイック スタートからソリューションにコピーするときに、ビルド エラーが発生します。
 
-4. **[New Cross Platform App]\(新しいクロス プラットフォーム アプリ\)** ダイアログで、 **[空白]** をクリックし、 **[OK]** ボタンをクリックします。
+4. **[新しいクロス プラットフォーム アプリ]** ダイアログで、 **[空のアプリケーション]** をクリックし、 **[OK]** ボタンをクリックします。
 
     ![](single-page-images/vs/new-app-2019.png "New Cross-Platform App")
 
