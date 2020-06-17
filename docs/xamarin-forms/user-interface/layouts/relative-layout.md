@@ -17,7 +17,7 @@ ms. 製品: xamarin ms. assetid: 2530BCB8-01B8-4C4F59: davidbritch: dabritch: ms
 
 ![](relative-layout-images/flag.png "RelativeLayout Exploration")
 
-## <a name="usage"></a>使用法
+## <a name="usage"></a>使用
 
 ### <a name="understanding-constraints"></a>制約について
 
@@ -29,7 +29,7 @@ ms. 製品: xamarin ms. assetid: 2530BCB8-01B8-4C4F59: davidbritch: dabritch: ms
 - **定数** &ndash;値のオフセットとして使用する値。
 - **ElementName** &ndash;制約の基準となるビューの名前。
 
-XAML では、制約は s として表され `ConstraintExpression` ます。 次の例を確認してください。
+XAML では、制約は s として表され `ConstraintExpression` ます。 次に例を示します。
 
 ```xaml
 <BoxView Color="Green" WidthRequest="50" HeightRequest="50"

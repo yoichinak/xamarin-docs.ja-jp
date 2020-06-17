@@ -61,7 +61,7 @@ string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFold
 
 -----
 
-`GetManifestResourceStream` は、その**リソース ID** を使用して埋め込みファイルにアクセスするために使用されます。 既定では、リソース ID は、そのファイルが埋め込まれているプロジェクトの既定の名前空間で始まるファイル名です。この場合、アセンブリは**WorkingWithFiles** 、ファイル名は**libtextresource .txt**になります。そのため、リソース id はになり `WorkingWithFiles.LibTextResource.txt` ます。
+`GetManifestResourceStream` は、その**リソース ID** を使用して埋め込みファイルにアクセスするために使用されます。 既定では、リソース ID は、そのファイルが埋め込まれているプロジェクトの既定の名前空間が付いたファイル名です。この場合、アセンブリは**WorkingWithFiles**であり、ファイル名は**LibTextResource.txt**ため、リソース id は `WorkingWithFiles.LibTextResource.txt` です。
 
 ```csharp
 var assembly = IntrospectionExtensions.GetTypeInfo(typeof(LoadResourceText)).Assembly;
