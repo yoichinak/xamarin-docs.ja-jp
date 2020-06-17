@@ -17,7 +17,7 @@ ms. 製品: xamarin ms. assetid: 2BC9B223-2D5C-4B09-849C-B9D578954557: xamarin-f
 
 既定では、の [`CollectionView`](xref:Xamarin.Forms.CollectionView) 項目が縦の一覧に表示されます。 ただし、縦と横のリストおよびグリッドを指定することもできます。
 
-## <a name="selection"></a>[選択](selection.md)
+## <a name="selection"></a>[選択ツール](selection.md)
 
 既定で [`CollectionView`](xref:Xamarin.Forms.CollectionView) は、選択は無効になっています。 ただし、1つまたは複数の選択を有効にすることができます。
 

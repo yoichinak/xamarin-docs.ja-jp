@@ -57,13 +57,13 @@ Skia はと呼ばれる14のモードを追加し `Modulate` ますが、これ�
 
 SkiaSharp で定義されている14の Porter Ff モードを次に示します。 次の表は、上の図の3つの空白以外の各領域の色を示しています。
 
-| モード       | 到着地 | 合う | source |
+| モード       | 宛先 | 合う | source |
 | ---------- |:-----------:|:------------:|:------:|
 | `Clear`    |             |              |        |
 | `Src`      |             | source       | X      |
-| `Dst`      | X           | 到着地  |        |
+| `Dst`      | X           | 宛先  |        |
 | `SrcOver`  | X           | source       | X      |
-| `DstOver`  | X           | 到着地  | X      |
+| `DstOver`  | X           | 宛先  | X      |
 | `SrcIn`    |             | source       |        |
 | `DstIn`    |             | 宛先  |        |
 | `SrcOut`   |             |              | X      |

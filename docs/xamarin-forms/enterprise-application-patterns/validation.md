@@ -235,7 +235,7 @@ EShopOnContainers モバイルアプリは、無効なデータが含まれて�
 </Style>
 ```
 
-このスタイルは、 `ApplyLineColor` `LineColor` コントロールのアタッチされる動作のプロパティと添付プロパティを設定し `LineColorBehavior` [`Entry`](xref:Xamarin.Forms.Entry) ます。 スタイルについて詳しくは、[スタイル](~/xamarin-forms/user-interface/styles/index.md)に関する記事をご覧ください。
+このスタイルは、 `ApplyLineColor` `LineColor` コントロールのアタッチされる動作のプロパティと添付プロパティを設定し `LineColorBehavior` [`Entry`](xref:Xamarin.Forms.Entry) ます。 スタイルについて詳しくは、「[Styles](~/xamarin-forms/user-interface/styles/index.md)」(スタイル) をご覧ください。
 
 `ApplyLineColor`添付プロパティの値が設定または変更されると、アタッチされた動作によってメソッドが実行され `LineColorBehavior` `OnApplyLineColorChanged` ます。次のコード例を参照してください。
 

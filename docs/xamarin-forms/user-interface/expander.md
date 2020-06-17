@@ -23,7 +23,7 @@ ms. 製品: xamarin ms. assetid: 381DCB55-522D-4414-B45B-E8DD70AA9985: xamarin-f
 - `CollapseAnimationEasing`型の [`Easing`](xref:Xamarin.Forms.Easing) 。これは、コンテンツの折りたたみ時に適用されるイージング関数を表し `Expander` ます。
 - `CollapseAnimationLength`が折りたたまれている `uint` ときのアニメーションの継続時間を定義する型の `Expander` 。 このプロパティの既定値は250ミリ秒です。
 - `Command`型の `ICommand` 。これは、 `Expander` ヘッダーがタップされたときに実行されます。
-- `CommandParameter`: `object` 型、`Command`に渡されるパラメーターです。
+- `CommandParameter`: `object` 型、`Command` に渡されるパラメーター。
 - `Content`[`View`](xref:Xamarin.Forms.View)が展開されたときに表示されるコンテンツを定義する、型の `Expander` 。
 - `ContentTemplate`型の [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 。これは、のコンテンツを動的に拡張するために使用されるテンプレートです `Expander` 。
 - `ExpandAnimationEasing`[`Easing`](xref:Xamarin.Forms.Easing)拡張中にコンテンツに適用されるイージング関数を表す、型の。 `Expander`

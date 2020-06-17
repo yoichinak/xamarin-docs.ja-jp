@@ -118,7 +118,7 @@ ms. 製品: xamarin ms. assetid: EEC549E0-F182-4F9C-B2BA-B31D19569AA5: xamu-ビ�
 var rect = new CoreGraphics.CGRect(200, 1000, 1024, 768);  // x, y, width, height
 ```
 
-## <a name="known-issues"></a>既知の問題
+## <a name="known-issues"></a>の既知の問題
 
 これはプレビューなので、運用環境の準備ができているわけではありません。 MacOS をプロジェクトに追加するときに発生する可能性があるいくつかの事項を次に示します。
 

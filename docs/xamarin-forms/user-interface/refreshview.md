@@ -12,7 +12,7 @@ ms. 製品: xamarin ms. assetId: 58DBD23B-ADB9-40DA-B331-4DDB6E698990: xamarin-f
 `RefreshView` は次の特性を定義します。
 
 - `Command``ICommand`更新がトリガーされたときに実行される、型の。
-- `CommandParameter`: `object` 型、`Command`に渡されるパラメーターです。
+- `CommandParameter`: `object` 型、`Command` に渡されるパラメーター。
 - `IsRefreshing`の `bool` 現在の状態を示す型の `RefreshView` 。
 - `RefreshColor`型の `Color` 。更新中に表示される進行状況の円の色。
 

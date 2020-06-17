@@ -217,11 +217,11 @@ new Label { Text = "Tap Me" }
 
 ジェスチャ認識エンジンはであるため `BindableObject` 、 `Bind` `BindCommand` 初期化時におよび拡張メソッドを使用できます。 拡張メソッドを使用してカスタムジェスチャ認識エンジンの種類を初期化することもでき `Gesture<TGestureElement, TGestureRecognizer>` ます。
 
-## <a name="layout"></a>Layout
+## <a name="layout"></a>レイアウト
 
 C# マークアップには、レイアウト内のビューの配置をサポートする一連のレイアウト拡張メソッドと、ビューのコンテンツが含まれています。
 
-| Type | 拡張メソッド |
+| 種類 | 拡張メソッド |
 |---|---|
 | `FlexLayout` | `AlignSelf`, `Basis`, `Grow`, `Menu`, `Order`, `Shrink` |
 | `Grid` | `Row`, `Column`, `RowSpan`, `ColumnSpan` |
@@ -239,7 +239,7 @@ C# マークアップには、レイアウト内のビューの配置をサポ�
 
 左から右方向と右から左方向のフロー方向をサポートするように設計された C# マークアップでは、上記の名前空間のいずれかではなく、次の表に示す拡張メソッドを使用することをお勧めします。
 
-| Type | 拡張メソッド |
+| 種類 | 拡張メソッド |
 |---|---|
 | `Label` | `TextStart`, `TextEnd` |
 | `LayoutOptions` | `Start`, `End` <br/> `StartExpand`, `EndExpand` |
@@ -357,7 +357,7 @@ new Grid
 - `Span`
 - `TimePicker`
 
-## <a name="effects"></a>効果
+## <a name="effects"></a>エフェクト
 
 拡張メソッドを使用して、コントロールに効果を適用でき `Effect` ます。
 

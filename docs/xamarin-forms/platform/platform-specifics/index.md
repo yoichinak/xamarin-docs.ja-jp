@@ -141,7 +141,7 @@ namespace MyCompany.Forms.PlatformConfiguration.iOS
 }
 ```
 
-添付プロパティは、クラスがアタッチされて `IsShadowed` `MyCompany.LabelShadowEffect` いるコントロールに対して、その効果を追加したり削除したりするために使用され `Shadow` ます。 この添付プロパティにより、プロパティの値が変更されたときに実行される `OnIsShadowedPropertyChanged` デリゲートが登録されます。 次に、このメソッド `AttachEffect` はメソッドまたはメソッドを呼び出して、 `DetachEffect` 添付プロパティの値に基づいて効果を追加または削除し `IsShadowed` ます。 コントロールのコレクションを変更することによって、コントロールに対して効果が追加または削除され [`Effects`](xref:Xamarin.Forms.Element.Effects) ます。
+添付プロパティは、クラスがアタッチされて `IsShadowed` `MyCompany.LabelShadowEffect` いるコントロールに対して、その効果を追加したり削除したりするために使用され `Shadow` ます。 この添付プロパティにより、プロパティの値が変更されるときに実行される `OnIsShadowedPropertyChanged` メソッドが登録されます。 次に、このメソッド `AttachEffect` はメソッドまたはメソッドを呼び出して、 `DetachEffect` 添付プロパティの値に基づいて効果を追加または削除し `IsShadowed` ます。 コントロールのコレクションを変更することによって、コントロールに対して効果が追加または削除され [`Effects`](xref:Xamarin.Forms.Element.Effects) ます。
 
 > [!NOTE]
 > 効果は、効果の実装で指定された解決グループ名と一意識別子を連結した値を指定することによって解決されることに注意してください。 詳細については、「[効果の作成](~/xamarin-forms/app-fundamentals/effects/creating.md)」を参照してください。

@@ -11,7 +11,7 @@ ms. 製品: xamarin ms. assetid: F2A02DEE-7137-42F4-9C0A-4E1CF75EA08F: xamarin-f
 
 アプリケーションのユーザーインターフェイスを作成するために使用される4つの主要なコントロールグループは次のとおりです Xamarin.Forms 。
 
-- [**Pages**](pages.md)
+- [**ページ**](pages.md)
 - [**レイアウト**](layouts.md)
 - [**ビュー**](views.md)
 - [**セル**](cells.md)

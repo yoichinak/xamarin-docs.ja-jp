@@ -27,7 +27,7 @@ _Xamarin 形式のビューは、クロスプラットフォームモバイル�
 | `Expander`コンテンツをホストするための拡張可能なコンテナーを提供し、ヘッダーとコンテンツで構成されます。 プロパティをヘッダーとして表示されるに設定し、プロパティを、 `Header` [`View`](xref:Xamarin.Forms.View) タップに `Content` [`View`](xref:Xamarin.Forms.View) よってヘッダーが展開されるときに表示されるに設定します。<br /><br />[ガイド](~/xamarin-forms/user-interface/expander.md)  / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-expanderdemos) | [![エキスパンダーの例](views-images/Expander.png "エキスパンダーの例")](views-images/Expander-Large.png#lightbox "エキスパンダーの例")<br /> [このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ExpanderDemoPage.cs)  /  の C# コード[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ExpanderDemoPage.xaml) |
 |     |     |
 
-### <a name="label"></a>Label
+### <a name="label"></a>ラベル
 
 |     |     |
 | --- | --- |

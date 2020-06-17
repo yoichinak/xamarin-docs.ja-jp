@@ -3,7 +3,7 @@ title: " Xamarin.Forms button" description: "ボタンは、特定のタスク�
 ms. 製品: xamarin ms. assetid: 62CAEB63-0800-44F4-9B8C-EE632138C2F5: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 12/04/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
 
-# <a name="xamarinforms-button"></a>Xamarin.Forms;
+# <a name="xamarinforms-button"></a>Xamarin.Forms ボタン
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)
 
@@ -747,7 +747,7 @@ IOS、Android、UWP で実行されているプログラムを次に示します
 
 IOS プロジェクトの**Resources**フォルダーには、次の3つのイメージのサイズが含まれています。
 
-- **/Resources/MonkeyFace.png**として格納された48ピクセルの四角形ビットマップ
+- **/Resources/MonkeyFace.png**として格納された48ピクセルの四角形のビットマップ
 - として格納された96ピクセルの四角形のビットマップ**/Resource/MonkeyFace@2x.png**
 - として格納された144ピクセルの四角形のビットマップ**/Resource/MonkeyFace@3x.png**
 
@@ -755,18 +755,18 @@ IOS プロジェクトの**Resources**フォルダーには、次の3つのイ�
 
 Android プロジェクトの場合、すべてのビットマップに同じ名前が付いていますが、 **Resources**フォルダーの別のサブフォルダーに格納されています。
 
-- **/Resources/drawable-hdpi/MonkeyFace.png**として格納された72ピクセルの四角形ビットマップ
-- **/Resources/drawable-xhdpi/MonkeyFace.png**として格納された96ピクセルの四角形ビットマップ
-- **/Resources/drawable-xxhdpi/MonkeyFace.png**として格納された144ピクセルの四角形ビットマップ
-- **/Resources/drawable-xxxhdpi/MonkeyFace.png**として格納された192ピクセルの四角形ビットマップ
+- **/Resourcesable/MonkeyFace.png**として格納された72ピクセルの四角形ビットマップ
+- **/Resourcesablexhdpi/MonkeyFace.png**として格納された96ピクセルの四角形ビットマップ
+- **/MonkeyFace.png**として格納された144ピクセルの四角形のビットマップ。
+- / **Resourcesablez Hdpi/MonkeyFace.png**として格納された192ピクセルの四角形ビットマップ
 
 これらには、 **Androidresource**の**ビルドアクション**が指定されました。
 
 UWP プロジェクトでは、プロジェクト内の任意の場所にビットマップを保存できますが、通常はカスタムフォルダーまたは**アセット**の既存のフォルダーに格納されます。 UWP プロジェクトには、次のビットマップが含まれています。
 
-- **/Assets/MonkeyFace.scale-100.png**として格納された48ピクセルの四角形ビットマップ
-- **/Assets/MonkeyFace.scale-200.png**として格納された96ピクセルの四角形ビットマップ
-- **/Assets/MonkeyFace.scale-400.png**として格納された192ピクセルの四角形ビットマップ
+- **/Assets/MonkeyFace.scale-100.png**として格納された48ピクセルの四角形のビットマップ
+- **/Assets/MonkeyFace.scale-200.png**として格納された96ピクセルの四角形のビットマップ
+- **/Assets/MonkeyFace.scale-400.png**として格納された192ピクセルの四角形のビットマップ
 
 すべての**コンテンツ**の**ビルドアクション**が指定されました。
 

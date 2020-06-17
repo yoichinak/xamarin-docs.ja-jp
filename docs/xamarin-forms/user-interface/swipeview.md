@@ -281,7 +281,7 @@ SwipeView swipeView = new SwipeView
 カスタムスワイプ項目は、型を使用して定義でき `SwipeItemView` ます。 `SwipeItemView`クラスはクラスから派生 [`ContentView`](xref:Xamarin.Forms.ContentView) し、次のプロパティを追加します。
 
 - `Command`型の `ICommand` 。スワイプ項目がタップされると実行されます。
-- `CommandParameter`: `object` 型、`Command`に渡されるパラメーターです。
+- `CommandParameter`: `object` 型、`Command` に渡されるパラメーター。
 
 これらのプロパティは、オブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。これは、データバインディングのターゲットとスタイルを設定できることを意味します。
 

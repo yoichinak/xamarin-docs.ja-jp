@@ -41,7 +41,7 @@ public interface INavigationService
 
 このインターフェイスは、実装するクラスが次のメソッドを提供する必要があることを指定します。
 
-|Method|目的|
+|メソッド|目的|
 |--- |--- |
 |`InitializeAsync`|アプリが起動されると、2つのページのいずれかへの移動を実行します。|
 |`NavigateToAsync`|指定されたページへの階層ナビゲーションを実行します。|

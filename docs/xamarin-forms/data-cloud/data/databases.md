@@ -278,5 +278,5 @@ SQLite データベースのコピーが必要になる場合があります。
 - [SQLite のドキュメント](https://www.sqlite.org/docs.html)
 - [Android での SQLite の使用](~/android/data-cloud/data-access/using-sqlite-orm.md)
 - [IOS での SQLite の使用](~/ios/data-cloud/data/using-sqlite-orm.md)
-- [タスクベースの非同期パターン (TAP)](https://docs.microsoft.com/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)
+- [タスク ベースの非同期パターン (TAP)](https://docs.microsoft.com/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)
 - [Lazy &lt; T &gt; クラス](xref:System.Lazy`1)

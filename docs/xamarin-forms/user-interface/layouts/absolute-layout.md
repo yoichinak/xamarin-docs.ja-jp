@@ -26,7 +26,7 @@ ms. 製品: xamarin ms. assetid: 01A5CCE0-AD45-4806-84FD-72C007005B38: xamarin-f
 
 `AbsoluteLayout`任意の場所の要素をビュー内に配置する必要があり、要素を端に配置するときに特に便利です。
 
-## <a name="usage"></a>使用法
+## <a name="usage"></a>使用
 
 ### <a name="proportional-layouts"></a>プロポーショナルレイアウト
 
@@ -69,7 +69,7 @@ ms. 製品: xamarin ms. assetid: 01A5CCE0-AD45-4806-84FD-72C007005B38: xamarin-f
 - **Positionproportional** &ndash;では、 `X` との `Y` 値は比例して解釈されますが、サイズの値は絶対値として解釈されます。
 - **Sizeproportional** &ndash;位置の `Width` `Height` 値が絶対値の場合、との値は比例して解釈されます。
 
-XAML では、境界とフラグは、プロパティを使用して、レイアウト内のビューの定義の一部として設定され `AbsoluteLayout.LayoutBounds` ます。 境界は、値、、、、およびのコンマ区切りのリストとして、この順序で設定され `X` `Y` `Width` `Height` ます。 また、プロパティを使用して、レイアウト内のビューの宣言でフラグを指定することもでき `AbsoluteLayout.LayoutFlags` ます。 フラグは、コンマ区切りのリストを使用して XAML で組み合わせることができます。 次の例を確認してください。
+XAML では、境界とフラグは、プロパティを使用して、レイアウト内のビューの定義の一部として設定され `AbsoluteLayout.LayoutBounds` ます。 境界は、値、、、、およびのコンマ区切りのリストとして、この順序で設定され `X` `Y` `Width` `Height` ます。 また、プロパティを使用して、レイアウト内のビューの宣言でフラグを指定することもでき `AbsoluteLayout.LayoutFlags` ます。 フラグは、コンマ区切りのリストを使用して XAML で組み合わせることができます。 次に例を示します。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>

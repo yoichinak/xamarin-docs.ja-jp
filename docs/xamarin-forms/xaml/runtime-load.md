@@ -9,7 +9,7 @@ ms. 製品: xamarin ms. assetid: 25F73FBF-2DD3-468E-A2D8-0897414F0F4A: xamarin-f
 
 名前空間には、 [`Xamarin.Forms.Xaml`](xref:Xamarin.Forms.Xaml) [`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*) 実行時に XAML を読み込んで解析するために使用できる2つの拡張メソッドが含まれています。
 
-## <a name="background"></a>バックグラウンド
+## <a name="background"></a>背景
 
 Xamarin.FormsXAML クラスが構築されると、 [`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*) メソッドは間接的に呼び出されます。 このエラーは、XAML クラスの分離コードファイルがコンストラクターからメソッドを呼び出すことが原因で発生し `InitializeComponent` ます。
 

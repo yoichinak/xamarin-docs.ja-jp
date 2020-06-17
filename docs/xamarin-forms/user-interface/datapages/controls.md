@@ -50,7 +50,7 @@ DataPages NuGet には、 Xamarin.Forms データソースバインドを利用�
 
 ![](controls-images/heroimage-light-android.png "Android の HeroImage コントロール") ![](controls-images/heroimage-dark-android.png "Android の HeroImage コントロール")
 
-**Android**
+**iOS**
 
 ![](controls-images/heroimage-light-ios.png "IOS の HeroImage コントロール") ![](controls-images/heroimage-dark-ios.png "IOS の HeroImage コントロール")
 
@@ -82,7 +82,7 @@ DataPages NuGet には、 Xamarin.Forms データソースバインドを利用�
 
 ![](controls-images/listitem-light-android.png "Android での ListItem コントロール") ![](controls-images/listitem-dark-android.png "Android での ListItem コントロール")
 
-**Android**
+**iOS**
 
 ![](controls-images/listitem-light-ios.png "IOS の ListItem コントロール") ![](controls-images/listitem-dark-ios.png "IOS の ListItem コントロール")
 
@@ -112,7 +112,7 @@ DataPages NuGet には、 Xamarin.Forms データソースバインドを利用�
 
 ![](controls-images/cardview-light-android.png "Android での CardView カスタムコントロール") ![](controls-images/cardview-dark-android.png "Android での CardView カスタムコントロール")
 
-**Android**
+**iOS**
 
 ![](controls-images/cardview-light-ios.png "IOS での CardView カスタムコントロール") ![](controls-images/cardview-dark-ios.png "IOS での CardView カスタムコントロール")
 

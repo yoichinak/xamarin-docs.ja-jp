@@ -11,7 +11,7 @@ ms. 製品: xamarin ms. assetid: E44F5D0F-DB8E-46C7-8789-114F1652A6C5: xamarin-f
 
 ![アプリブラウザーで](webview-images/in-app-browser.png)
 
-## <a name="content"></a>コンテンツ
+## <a name="content"></a>Content
 
 `WebView`では、次の種類のコンテンツをサポートしています。
 
@@ -249,7 +249,7 @@ namespace WorkingWithWebview.UWP
 }
 ```
 
-## <a name="navigation"></a>［ナビゲーション］
+## <a name="navigation"></a>ナビゲーション
 
 WebView では、使用できるようにするいくつかのメソッドとプロパティによるナビゲーションがサポートされています。
 
@@ -416,7 +416,7 @@ webView.Reload();
 - **Android** &ndash;`INTERNET`ネットワークのコンテンツを表示する場合にのみ必要です。 ローカルコンテンツには特別なアクセス許可は必要ありません。
 - **iOS** &ndash;特別なアクセス許可は必要ありません。
 
-## <a name="layout"></a>Layout
+## <a name="layout"></a>レイアウト
 
 他のほとんどのビューとは異なり Xamarin.Forms 、で `WebView` `HeightRequest` は、 `WidthRequest` Stacklayout または RelativeLayout に含まれるときにとが指定されている必要があります。 これらのプロパティを指定しなかった場合、は `WebView` 表示されません。
 

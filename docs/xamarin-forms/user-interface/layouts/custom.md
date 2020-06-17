@@ -15,7 +15,7 @@ _Xamarin は5つのレイアウトクラス (StackLayout、AbsoluteLayout、Rela
 
 Xamarin.Formsカスタムレイアウトを作成するには、レイアウトと無効化のサイクルを十分に理解している必要があります。 ここでは、これらのサイクルについて説明します。
 
-## <a name="layout"></a>Layout
+## <a name="layout"></a>レイアウト
 
 レイアウトは、ビジュアルツリーの一番上からページを使用して開始され、ビジュアルツリーのすべての分岐を通じて、ページ上のすべてのビジュアル要素をカバーします。 他の要素の親である要素は、それ自体を基準にして子のサイズ設定と配置を行います。
 
@@ -399,8 +399,8 @@ async Task<ImageList> GetImageListAsync()
 ## <a name="related-links"></a>関連リンク
 
 - [WrapLayout (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
-- [カスタム レイアウト](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter26.md)
+- [カスタムレイアウト](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter26.md)
 - [でのカスタムレイアウトの作成 Xamarin.Forms (ビデオ)](https://www.youtube.com/watch?v=sxjOqNZFhKU)
-- [Layout\<T>](xref:Xamarin.Forms.Layout`1)
+- [レイアウト\<T>](xref:Xamarin.Forms.Layout`1)
 - [レイアウト](xref:Xamarin.Forms.Layout)
 - [VisualElement](xref:Xamarin.Forms.VisualElement)

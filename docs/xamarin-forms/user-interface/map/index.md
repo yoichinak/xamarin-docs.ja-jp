@@ -3,7 +3,7 @@ title: " Xamarin.Forms map" description: "マップコントロールにマッ�
 ms. 製品: xamarin ms. assetid: B669B5EE-D24C-4C69-93E1-2CA5CC9108B5: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 10/29/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
 ---
 
-# <a name="xamarinforms-map"></a>Xamarin.Forms付け
+# <a name="xamarinforms-map"></a>Xamarin.Forms のマップ
 
 ## <a name="initialization-and-configuration"></a>[初期化と構成](setup.md)
 

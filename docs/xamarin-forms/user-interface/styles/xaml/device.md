@@ -100,7 +100,7 @@ public class DeviceStylesPageCS : ContentPage
 
 [`Style`](xref:Xamarin.Forms.NavigableElement.Style)各インスタンスのプロパティ [`Label`](xref:Xamarin.Forms.Label) は、クラスからの適切なプロパティに設定され [`Devices.Styles`](xref:Xamarin.Forms.Device.Styles) ます。
 
-## <a name="accessibility"></a>ユーザー補助
+## <a name="accessibility"></a>アクセシビリティ
 
 *デバイス*のスタイルはユーザー補助の設定を優先します。そのため、各プラットフォームでアクセシビリティの設定が変更されると、フォントサイズが変更されます。 そのため、ユーザー補助テキストをサポートするには、アプリケーション内でテキストスタイルのベースとして*デバイス*のスタイルが使用されていることを確認してください。
 

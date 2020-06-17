@@ -171,7 +171,7 @@ SetBinding (TitleProperty, new DataSourceBinding ("title"));
 
 プレビューリリースでは、実行時にテーマを読み込むことができない可能性があります。 このエラーを修正するには、以下に示すコードを関連するプロジェクトに追加します。
 
-**Android**
+**iOS**
 
 **AppDelegate.cs**で、の後に次の行を追加します。`LoadApplication`
 

@@ -632,5 +632,5 @@ public partial class TypeDemoPage : ContentPage
 - [リソースディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [動的スタイル](~/xamarin-forms/user-interface/styles/dynamic.md)
 - [データ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)
-- [Xamarin.Forms のシェル](~/xamarin-forms/app-fundamentals/shell/index.md)
+- [Xamarin.Forms シェル](~/xamarin-forms/app-fundamentals/shell/index.md)
 - [アプリケーションのシステムテーマの変更に応答する Xamarin.Forms](~/xamarin-forms/user-interface/theming/system-theme-changes.md)

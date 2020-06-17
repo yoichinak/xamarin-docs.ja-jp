@@ -366,7 +366,7 @@ refreshView.Content = collectionView;
 
 - `RemainingItemsThreshold`型の、 `int` イベントが発生するリストにまだ表示されていない項目のしきい値 `RemainingItemsThresholdReached` 。
 - `RemainingItemsThresholdReachedCommand`に `ICommand` 到達したときに実行される、型の `RemainingItemsThreshold` 。
-- `RemainingItemsThresholdReachedCommandParameter`: `object` 型、`RemainingItemsThresholdReachedCommand`に渡されるパラメーターです。
+- `RemainingItemsThresholdReachedCommandParameter`: `object` 型、`RemainingItemsThresholdReachedCommand` に渡されるパラメーター。
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)また、は `RemainingItemsThresholdReached` 、 `CollectionView` 項目が表示されていない大きさまでスクロールしたときに発生するイベントも定義し `RemainingItemsThreshold` ます。 このイベントを処理して、さらに多くの項目を読み込むことができます。 さらに、 `RemainingItemsThresholdReached` イベントが発生すると、 `RemainingItemsThresholdReachedCommand` が実行され、増分データの読み込みがビューモデルで行われるようになります。
 

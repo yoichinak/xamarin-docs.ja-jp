@@ -188,7 +188,7 @@ Color = new SKColor(0, 0, 0, 0)
 
 新しいビットマップを作成して描画する必要はありません。 また、既存のビットマップを使用して描画することもできます。
 
-**サル Moustache**ページでは、そのコンストラクターを使用して**monkeyface .png**イメージを読み込みます。 次に、その `SKCanvas` ビットマップに基づいてオブジェクトを作成し、オブジェクトとオブジェクトを使用し `SKPaint` `SKPath` て moustache を描画します。
+**サル Moustache**ページは、そのコンストラクターを使用して**MonkeyFace.png**イメージを読み込みます。 次に、その `SKCanvas` ビットマップに基づいてオブジェクトを作成し、オブジェクトとオブジェクトを使用し `SKPaint` `SKPath` て moustache を描画します。
 
 ```csharp
 public partial class MonkeyMoustachePage : ContentPage

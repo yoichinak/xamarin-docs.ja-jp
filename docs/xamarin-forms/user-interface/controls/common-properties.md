@@ -7,7 +7,7 @@ ms. 製品: xamarin ms. assetId: 85A0CCF5-C1D8-40BB-927F-A4D944E5534D: xamarin-f
 
 クラスは、 Xamarin.Forms `VisualElement` アプリケーションで使用されるほとんどのコントロールの基本クラスです Xamarin.Forms 。 クラスは、 `VisualElement` 派生クラスで使用される多くの[プロパティ](#properties)、[メソッド](#methods)、および[イベント](#events)を定義します。
 
-## <a name="properties"></a>Properties
+## <a name="properties"></a>プロパティ
 
 インスタンスでは、次のプロパティを使用でき `VisualElement` ます。 完全な一覧については、「 [Visualelement API のプロパティ](xref:Xamarin.Forms.VisualElement#properties)」を参照してください。
 

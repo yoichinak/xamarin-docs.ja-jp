@@ -11,12 +11,12 @@ ms. 製品: xamarin ms. assetid: 854D97E5-D119-4BE2-AE7C-BD428792C992: xamarin-f
 
 - `CurrentItem`型の、 `object` 現在表示されている項目。 このプロパティの既定のバインディングモードは `TwoWay` で、 `null` 表示するデータがない場合は値が設定されます。
 - `CurrentItemChangedCommand``ICommand`現在の項目が変更されたときに実行される、型の。
-- `CurrentItemChangedCommandParameter`: `object` 型、`CurrentItemChangedCommand`に渡されるパラメーターです。
+- `CurrentItemChangedCommandParameter`: `object` 型、`CurrentItemChangedCommand` に渡されるパラメーター。
 - `IsBounceEnabled`が `bool` `CarouselView` コンテンツ境界でバウンスするかどうかを指定する型の。 既定値は `true` です。
 - `IsSwipeEnabled`の型の `bool` 。スワイプジェスチャによって表示項目が変更されるかどうかを決定します。 既定値は `true` です。
 - `Position`型の、 `int` 基になるコレクション内の現在の項目のインデックス。 このプロパティの既定のバインディングモードは `TwoWay` であり、表示するデータがない場合は0の値が設定されます。
 - `PositionChangedCommand``ICommand`位置が変更されたときに実行される、型の。
-- `PositionChangedCommandParameter`: `object` 型、`PositionChangedCommand`に渡されるパラメーターです。
+- `PositionChangedCommandParameter`: `object` 型、`PositionChangedCommand` に渡されるパラメーター。
 - `VisibleViews`型の `ObservableCollection<View>` 。現在表示されている項目のオブジェクトを格納する読み取り専用のプロパティ。
 
 これらのプロパティはすべて、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトを基盤としています。つまり、プロパティはデータ バインディングの対象にすることができます。
