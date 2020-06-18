@@ -1,8 +1,23 @@
 ---
-title: "Xamarin.Formsの App クラス" の説明:"この記事では、既定の App クラスの機能について説明します。このクラスには、アプリの最初のページに設定するプロパティと、ライフサイクルの状態の変化に伴う単純な値を格納するための永続ディクショナリが含まれます。"
-ms.prod: xamarin ms.assetid:421F8294-1944-46A4-8459-D2BD5AAABC9D ms.technology: xamarin-forms ms.custom: video author: davidbritch ms.author: dabritch ms.date:02/19/2016 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: 'title: "Xamarin.Formsの App クラス" の説明:"この記事では、既定の App クラスの機能について説明します。このクラスには、アプリの最初のページに設定するプロパティと、ライフサイクルの状態の変化に伴う単純な値を格納するための永続ディクショナリが含まれます。"'
+description: 'ms.prod: xamarin ms.assetid:421F8294-1944-46A4-8459-D2BD5AAABC9D ms.technology: xamarin-forms ms.custom: video author: davidbritch ms.author: dabritch ms.date:02/19/2016 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.prod: xamarin
+ms.assetid: 421F8294-1944-46A4-8459-D2BD5AAABC9D
+ms.technology: xamarin-forms
+ms.custom: video
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/19/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1e761830fb08662a82a8bf98b4544aafaa6eccf7
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573353"
 ---
-
 # <a name="xamarinforms-app-class"></a>Xamarin.Forms の App クラス
 
 `Application` 基底クラスでは、プロジェクトの既定の `App` サブクラスで公開される次の機能が提供されています。

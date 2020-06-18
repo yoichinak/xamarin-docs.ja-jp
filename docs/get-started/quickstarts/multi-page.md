@@ -1,8 +1,24 @@
 ---
-title: "複数ページの Xamarin.Forms アプリケーションでナビゲーションを実行する" の説明: "この記事では、単一のメモを格納できるシングルページ アプリケーションを、複数のメモを格納できる複数ページのアプリケーションに変更する方法について説明します。"
-zone_pivot_groups: platform ms.topic: quickstart ms.prod: xamarin ms.assetid: 9DC3B3D6-6CBC-4705-BE80-3D86A9E65F92 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 04/01/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: 'title: "複数ページの Xamarin.Forms アプリケーションでナビゲーションを実行する" の説明: "この記事では、単一のメモを格納できるシングルページ アプリケーションを、複数のメモを格納できる複数ページのアプリケーションに変更する方法について説明します。"'
+description: 'zone_pivot_groups: platform ms.topic: quickstart ms.prod: xamarin ms.assetid: 9DC3B3D6-6CBC-4705-BE80-3D86A9E65F92 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 04/01/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+zone_pivot_groups: platform
+ms.topic: quickstart
+ms.prod: xamarin
+ms.assetid: 9DC3B3D6-6CBC-4705-BE80-3D86A9E65F92
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/01/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b3616d0cf4804dfb37d4fe65034796c672dec828
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84127882"
 ---
-
 # <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>複数ページの Xamarin.Forms アプリケーションでナビゲーションを実行する
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)

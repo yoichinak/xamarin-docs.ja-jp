@@ -1,8 +1,22 @@
 ---
-title:"The Xamarin.Forms コマンド インターフェイス" の説明:"この記事では、Xamarin.Forms のデータ バインディングで Command プロパティを実装する方法について説明します。 コマンド実行インターフェイスを使用すると、MVVM アーキテクチャにより適した方法でコマンドを実装することができます。"
-ms.prod: xamarin ms.assetid:69922284-F398-45C3-B4CC-B8E29BB4C533 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:01/05/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: title:"The Xamarin.Forms コマンド インターフェイス" の説明:"この記事では、Xamarin.Forms のデータ バインディングで Command プロパティを実装する方法について説明します。
+description: 'コマンド実行インターフェイスを使用すると、MVVM アーキテクチャにより適した方法でコマンドを実装することができます。" ms.prod: xamarin ms.assetid:69922284-F398-45C3-B4CC-B8E29BB4C533 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:01/05/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.prod: xamarin
+ms.assetid: 69922284-F398-45C3-B4CC-B8E29BB4C533
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/05/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 253255f08cec6f08e03df94798c8572f7cf10f30
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84139725"
 ---
-
 # <a name="the-xamarinforms-command-interface"></a>Xamarin.Forms コマンド インターフェイス
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)

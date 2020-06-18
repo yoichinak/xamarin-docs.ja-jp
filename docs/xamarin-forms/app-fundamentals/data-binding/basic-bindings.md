@@ -1,8 +1,23 @@
 ---
-title: "Xamarin.Formsの基本的なバインディング" の説明: "この記事では、通常は少なくとも一方がユーザー インターフェイス オブジェクトである 2 つのオブジェクト間でプロパティのペアをリンクする、Xamarin.Forms データ バインディングの使用方法について説明します。 これら 2 つのオブジェクトは、ターゲットおよびソースと呼ばれます。"
-ms.prod: xamarin ms.assetid: 96553DF7-12EA-4FB2-AE85-3D1D59382B40 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:  01/22/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials] ms.custom: video
+title: 'title: "Xamarin.Formsの基本的なバインディング" の説明: "この記事では、通常は少なくとも一方がユーザー インターフェイス オブジェクトである 2 つのオブジェクト間でプロパティのペアをリンクする、Xamarin.Forms データ バインディングの使用方法について説明します。'
+description: 'これら 2 つのオブジェクトは、ターゲットおよびソースと呼ばれます。" ms.prod: xamarin ms.assetid: 96553DF7-12EA-4FB2-AE85-3D1D59382B40 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:  01/22/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials] ms.custom: video'
+ms.prod: xamarin
+ms.assetid: 96553DF7-12EA-4FB2-AE85-3D1D59382B40
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/22/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.custom: video
+ms.openlocfilehash: c0c6bc6e1005997548952aedc09cd83a451e7caa
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84133538"
 ---
-
 # <a name="xamarinforms-basic-bindings"></a>Xamarin.Forms の基本的なバインディング
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)

@@ -1,8 +1,22 @@
 ---
-title:"共通言語ランタイム プロパティとしてエフェクトのパラメーターを渡す" の説明:"共通言語ランタイム (CLR) プロパティは、実行時のプロパティの変更に応答しないエフェクトのパラメーターの定義に使用できます。 この記事では、CLR プロパティを使用してエフェクトにパラメーターを渡す方法について説明します。"
-ms.prod: xamarin ms.assetid:4B50466C-5DBD-45DD-B1E6-BE9524C92F27 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:08/05/2016 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: title:"共通言語ランタイム プロパティとしてエフェクトのパラメーターを渡す" の説明:"共通言語ランタイム (CLR) プロパティは、実行時のプロパティの変更に応答しないエフェクトのパラメーターの定義に使用できます。
+description: 'この記事では、CLR プロパティを使用してエフェクトにパラメーターを渡す方法について説明します。" ms.prod: xamarin ms.assetid:4B50466C-5DBD-45DD-B1E6-BE9524C92F27 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:08/05/2016 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.prod: xamarin
+ms.assetid: 4B50466C-5DBD-45DD-B1E6-BE9524C92F27
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/05/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 37d870509e034f4c23afba60fa055965ed9df4de
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84138867"
 ---
-
 # <a name="passing-effect-parameters-as-common-language-runtime-properties"></a>共通言語ランタイム プロパティとしてエフェクトのパラメーターを渡す
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)

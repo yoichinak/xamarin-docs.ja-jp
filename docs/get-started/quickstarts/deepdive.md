@@ -1,8 +1,25 @@
 ---
-title: "Xamarin.Forms クイック スタート Deep Dive" の説明: "この記事では、Xamarin.Forms を使用したアプリケーション開発の基礎について説明します。 取り上げたテーマには、Xamarin.Forms アプリケーションの構造、アーキテクチャとアプリケーションの基礎、ユーザー インターフェイスが含まれていました。"
-zone_pivot_groups: platform ms.topic: quickstart ms.prod: xamarin ms.custom: video ms.assetid: 7B2340A1-6883-41D8-860C-0BB6C4E0C316 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 11/27/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: 'title: "Xamarin.Forms クイック スタート Deep Dive" の説明: "この記事では、Xamarin.Forms を使用したアプリケーション開発の基礎について説明します。'
+description: '取り上げたテーマには、Xamarin.Forms アプリケーションの構造、アーキテクチャとアプリケーションの基礎、ユーザー インターフェイスが含まれていました。" zone_pivot_groups: platform ms.topic: quickstart ms.prod: xamarin ms.custom: video ms.assetid: 7B2340A1-6883-41D8-860C-0BB6C4E0C316 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 11/27/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+zone_pivot_groups: platform
+ms.topic: quickstart
+ms.prod: xamarin
+ms.custom: video
+ms.assetid: 7B2340A1-6883-41D8-860C-0BB6C4E0C316
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/27/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1bfb76f71a2ac9d8bc9ae84152501909000b9623
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84132523"
 ---
-
 # <a name="xamarinforms-quickstart-deep-dive"></a>Xamarin.Forms クイック スタート Deep Dive
 
 [Xamarin.Forms クイック スタート](~/get-started/index.yml)では、Notes アプリケーションをビルドしました。 この記事では、Xamarin.Forms アプリケーションのしくみの基礎を理解するために、構築された内容を確認します。

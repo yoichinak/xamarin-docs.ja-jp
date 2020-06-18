@@ -1,8 +1,22 @@
 ---
-title:"Xamarin.Forms アプリ パフォーマンスの改善" の説明:"Xamarin.Forms アプリケーションのパフォーマンスを向上させる方法は数多くあります。 これらの手法をすべて使用することで、CPU で実行される作業量や、アプリケーションで消費されるメモリ量を大幅に減らすことができます。"
-ms.prod: xamarin ms.assetid:0be84c56-6698-448d-be5a-b4205f1caa9f ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:11/27/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: title:"Xamarin.Forms アプリ パフォーマンスの改善" の説明:"Xamarin.Forms アプリケーションのパフォーマンスを向上させる方法は数多くあります。
+description: 'これらの手法をすべて使用することで、CPU で実行される作業量や、アプリケーションで消費されるメモリ量を大幅に減らすことができます。" ms.prod: xamarin ms.assetid:0be84c56-6698-448d-be5a-b4205f1caa9f ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:11/27/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.prod: xamarin
+ms.assetid: 0be84c56-6698-448d-be5a-b4205f1caa9f
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/27/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 96b5939fd1f8448d45d1398fd56770f9032de083
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84139114"
 ---
-
 # <a name="improve-xamarinforms-app-performance"></a>Xamarin.Forms アプリ パフォーマンスの改善
 
 > [!VIDEO https://youtube.com/embed/RZvdql3Ev0E]

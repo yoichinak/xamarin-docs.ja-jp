@@ -1,8 +1,23 @@
 ---
-title:"Xamarin.Forms での文字列とイメージのローカライズ" description: "Xamarin.Forms アプリは .NET リソース ファイルを使用してローカライズできます。"
-zone_pivot_groups: "platform" ms.prod: xamarin ms.assetid:852B4ED3-2D2D-48A5-A759-A6591F6A1509 ms.technology: xamarin-forms author: profexorgeek ms.author: jusjohns ms.date:11/01/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: 'title:"Xamarin.Forms での文字列とイメージのローカライズ" description: "Xamarin.Forms アプリは .NET リソース ファイルを使用してローカライズできます。"'
+description: 'zone_pivot_groups: "platform" ms.prod: xamarin ms.assetid:852B4ED3-2D2D-48A5-A759-A6591F6A1509 ms.technology: xamarin-forms author: profexorgeek ms.author: jusjohns ms.date:11/01/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+zone_pivot_groups: platform
+ms.prod: xamarin
+ms.assetid: 852B4ED3-2D2D-48A5-A759-A6591F6A1509
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 11/01/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: af15dc5a23404a11be6207bef7b4fc3e4bf9fad7
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84137606"
 ---
-
 # <a name="xamarinforms-string-and-image-localization"></a>Xamarin.Forms の文字列とイメージのローカライズ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingresxlocalization)

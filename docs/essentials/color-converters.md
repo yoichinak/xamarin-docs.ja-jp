@@ -1,8 +1,21 @@
 ---
-title: "Xamarin.Essentials 色のコンバーター" の説明: "Xamarin.Essentials の ColorConverters クラスには、System.Drawing.Color と連携するヘルパー メソッドと拡張メソッドがいくつか用意されています。"
-ms.assetid: B10428D6-89E2-4714-A39F-7E6E626391B2 author: jamesmontemagno ms.author: jamont ms.date: 01/06/2020 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials の色のコンバーター
+description: Xamarin.Essentials の ColorConverters クラスには、System.Drawing.Color と併用できるヘルパー メソッドと拡張メソッドがいくつかあります。
+ms.assetid: B10428D6-89E2-4714-A39F-7E6E626391B2
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 01/06/2020
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ff6a5bed600f45dcd48867596a7fc8aa45decb82
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802445"
 ---
-
 # <a name="xamarinessentials-color-converters"></a>Xamarin.Essentials:色のコンバーター
 
 Xamarin.Essentials の **ColorConverters** クラスには、System.Drawing.Color 用のヘルパー メソッドがいくつかあります。
@@ -70,9 +83,9 @@ var system = platform.ToSystemColor();
 
 ## <a name="api"></a>API
 
-- [Color Converters のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Types/ColorConverters.shared.cs)
+- [Color Converters のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Types/ColorConverters.shared.cs)
 - [Color Converters の API ドキュメント](xref:Xamarin.Essentials.ColorConverters)
-- [Color Extensions のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Types/ColorConverters.shared.cs)
+- [Color Extensions のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Types/ColorConverters.shared.cs)
 - [Color Extensions の API ドキュメント](xref:Xamarin.Essentials.ColorExtensions)
 
 ## <a name="related-video"></a>関連ビデオ

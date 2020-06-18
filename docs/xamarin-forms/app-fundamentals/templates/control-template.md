@@ -1,8 +1,22 @@
 ---
-タイトル: "Xamarin.Forms コントロール テンプレート" の説明: "Xamarin.Forms コントロール テンプレートには、ContentView 派生カスタム コントロールと ContentPage 派生ページのビジュアル構造が定義されています。"
-ms.prod: xamarin ms.assetid: 8B8E2360-6531-44A3-A7C8-9A8808DE9B86 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 01/13/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: 'タイトル: "Xamarin.Forms コントロール テンプレート" の説明: "Xamarin.Forms コントロール テンプレートには、ContentView 派生カスタム コントロールと ContentPage 派生ページのビジュアル構造が定義されています。"'
+description: 'ms.prod: xamarin ms.assetid: 8B8E2360-6531-44A3-A7C8-9A8808DE9B86 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 01/13/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.prod: xamarin
+ms.assetid: 8B8E2360-6531-44A3-A7C8-9A8808DE9B86
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/13/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 44eebed2a49fbdda5504f9a09873f93466d0326c
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84132549"
 ---
-
 # <a name="xamarinforms-control-templates"></a>Xamarin.Forms のコントロール テンプレート
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-controltemplatedemos)

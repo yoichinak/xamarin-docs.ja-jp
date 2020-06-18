@@ -1,8 +1,22 @@
 ---
-title: "Xamarin.Forms のデュアル画面" の説明:"このガイドでは、デュアル画面デバイス用の Xamarin.Formsアプリを作成する方法について説明します。"
-ms.prod: xamarin ms.assetid: f9906e83-f8ae-48f9-997b-e1540b96ee8e ms.technology: xamarin-forms author: davidortinau ms.author: daortin ms.date:02/08/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: 'title: "Xamarin.Forms のデュアル画面" の説明:"このガイドでは、デュアル画面デバイス用の Xamarin.Formsアプリを作成する方法について説明します。"'
+description: 'ms.prod: xamarin ms.assetid: f9906e83-f8ae-48f9-997b-e1540b96ee8e ms.technology: xamarin-forms author: davidortinau ms.author: daortin ms.date:02/08/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+ms.prod: xamarin
+ms.assetid: f9906e83-f8ae-48f9-997b-e1540b96ee8e
+ms.technology: xamarin-forms
+author: davidortinau
+ms.author: daortin
+ms.date: 02/08/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: aeaaeb732adaea45446d6baf833027801abf4d2a
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84138906"
 ---
-
 # <a name="xamarinforms-dual-screen"></a>Xamarin.Forms のデュアル画面
 
 ![](~/media/shared/preview.png "This API is currently pre-release")

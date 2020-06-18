@@ -1,8 +1,22 @@
 ---
-title: "Xamarin.Formsシェルのポップアップ" description:"ポップアップは、シェル アプリケーションのルート メニューであり、アイコンから、または画面の横からスワイプして、アクセスすることが可能です。 ポップアップは、オプションのヘッダー、ポップアップ項目、およびオプションのメニュー項目から構成されています。"
-ms.prod: xamarin ms.assetid:FEDE51EB-577E-4B3E-9890-B7C1A5E52516 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:04/22/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Forms シェルのポップアップ
+description: ポップアップは、シェル アプリケーションのルート メニューであり、アイコンから、または画面の横からスワイプして、アクセスすることが可能です。 ポップアップは、オプションのヘッダー、ポップアップ項目、およびオプションのメニュー項目から構成されています。
+ms.prod: xamarin
+ms.assetid: FEDE51EB-577E-4B3E-9890-B7C1A5E52516
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/10/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1a1d47b2b37fa532b3e2a64ada5f367e612f557d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946261"
 ---
-
 # <a name="xamarinforms-shell-flyout"></a>Xamarin.Forms シェルのポップアップ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
