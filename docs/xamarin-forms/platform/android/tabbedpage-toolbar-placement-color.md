@@ -1,8 +1,22 @@
 ---
-title: "Android 上のツールバーの配置と色の TabbedPage" 説明: "プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装しなくても、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、TabbedPage のツールバーの配置と色を設定する Android プラットフォーム固有のを使用する方法について説明します。
-ms. 製品: xamarin ms. assetid: A5C68D6A-9A5F-42EE-845D-1E5B0CB1544E: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 07/10/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: TabbedPage Android 上のツールバーの配置と色
+description: プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、TabbedPage のツールバーの配置と色を設定する Android プラットフォーム固有のを使用する方法について説明します。
+ms.prod: xamarin
+ms.assetid: A5C68D6A-9A5F-42EE-845D-1E5B0CB1544E
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/10/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f5a2be4bd61056a42593fc45e1abdd3679795bc0
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139985"
 ---
-
 # <a name="tabbedpage-toolbar-placement-and-color-on-android"></a>TabbedPage Android 上のツールバーの配置と色
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

@@ -1,8 +1,22 @@
 ---
-title: "説明のグローバルスタイル" Xamarin.Forms : "スタイルをアプリケーションのリソースディクショナリに追加することでグローバルに使用できます。 これは、ページまたはコントロール間でスタイルが重複しないようにするために役立ちます。
-ms. 製品: xamarin ms. assetid: BDC65F82-65E0-4C8E-BB91-8E340EB2D15A: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 02/17/2016 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: グローバルスタイルXamarin.Forms
+description: スタイルは、アプリケーションのリソースディクショナリに追加することで、グローバルに使用できます。 これは、ページまたはコントロール間でスタイルが重複しないようにするために役立ちます。
+ms.prod: xamarin
+ms.assetid: BDC65F82-65E0-4C8E-BB91-8E340EB2D15A
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/17/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2a222c3ee2234904cce94b52a14654728a1aa6d1
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84140128"
 ---
-
 # <a name="global-styles-in-xamarinforms"></a>グローバルスタイルXamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)

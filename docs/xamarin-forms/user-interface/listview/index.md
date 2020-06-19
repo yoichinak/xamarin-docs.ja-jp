@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms listview" 説明: "このガイドでは listview が導入されており、これを使用すると、 Xamarin.Forms 対話形式でデータを表示できます。"
-ms. 製品: xamarin ms. assetid: FEFDF7E0-720F-4BD1-863F-4477226AA695: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 09/04/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Forms大きい
+description: このガイドでは ListView を紹介します。これを使用すると、 Xamarin.Forms 対話形式でデータを表示できます。
+ms.prod: xamarin
+ms.assetid: FEFDF7E0-720F-4BD1-863F-4477226AA695
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/04/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a1ff8dd5c8a8a4051cea8ce4b288c42bdbaa8d31
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139907"
 ---
-
 # <a name="xamarinforms-listview"></a>Xamarin.Forms大きい
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistview)
@@ -24,7 +38,7 @@ ms. 製品: xamarin ms. assetid: FEFDF7E0-720F-4BD1-863F-4477226AA695: xamarin-f
 
 インスタンスにデータをバインドする方法の詳細につい `ListView` ては、「 [ListView データソース](~/xamarin-forms/user-interface/listview/data-and-databinding.md)」を参照してください。
 
-## <a name="components"></a>コンポーネント
+## <a name="components"></a>Components
 
 `ListView`コントロールには、各プラットフォームのネイティブ機能を実行するために使用できる多数のコンポーネントがあります。 これらのコンポーネントは、次のセクションで定義されています。
 

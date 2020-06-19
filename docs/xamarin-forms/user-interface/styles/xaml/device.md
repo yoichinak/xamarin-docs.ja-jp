@@ -1,8 +1,22 @@
 ---
-title: "description:" のデバイススタイルには、デバイス Xamarin.Forms Xamarin.Forms スタイルと呼ばれる6つの動的スタイルが、デバイススタイルクラスに含まれています。 この記事では、アプリケーションでデバイスのスタイルを使用する方法について説明 Xamarin.Forms します。 "
-ms. 製品: xamarin ms. assetid: 7FF19ED1-0822-4238-71 35-ad970317a2f8 ms. テクノロジ: xamarin-forms author: davidbritch: dabritch ms. date: 02/17/2016 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: のデバイスのスタイルXamarin.Forms
+description: Xamarin.Formsには、デバイススタイルと呼ばれる6つの動的スタイルが、デバイススタイルクラスに含まれています。 この記事では、アプリケーションでデバイスのスタイルを使用する方法について説明し Xamarin.Forms ます。
+ms.prod: xamarin
+ms.assetid: 7FF19ED1-0822-4238-9435-AD970317A2F8
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/17/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b835847fea39e1c2f968e7b81fb9d22f68ea461c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84140102"
 ---
-
 # <a name="device-styles-in-xamarinforms"></a>のデバイスのスタイルXamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)

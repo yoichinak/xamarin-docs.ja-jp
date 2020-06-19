@@ -1,8 +1,22 @@
 ---
-title: "XAML マークアップ拡張機能の使用" の説明: "この記事では、xaml Xamarin.Forms マークアップ拡張機能を使用して、さまざまなソースから要素属性を設定できるようにすることで、xaml のパワーと柔軟性を向上させる方法について説明します。"
-ms. 製品: xamarin ms. assetid: CE686893-609C-4EC3-9225-6C68D2A9F79C: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 04/21/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: XAML マークアップ拡張の使用
+description: この記事では、 Xamarin.Forms xaml マークアップ拡張機能を使用して、さまざまなソースから要素属性を設定できるようにすることで、xaml のパワーと柔軟性を向上させる方法について説明します。
+ms.prod: xamarin
+ms.assetid: CE686893-609C-4EC3-9225-6C68D2A9F79C
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/17/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e1429c3f39e37dc552d7f6ca8767058e5aec853b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84903111"
 ---
-
 # <a name="consuming-xaml-markup-extensions"></a>XAML マークアップ拡張の使用
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
@@ -18,7 +32,7 @@ XAML マークアップ拡張機能は、さまざまなソースから要素属
 - [`OnIdiom`](#onidiom-markup-extension)–アプリケーションが実行されているデバイスの表現に基づいて UI の外観をカスタマイズします。
 - [`DataTemplate`](#datatemplate-markup-extension)–型をに変換 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) します。
 - [`FontImage`](#fontimage-markup-extension)–を表示できる任意のビューにフォントアイコンを表示 `ImageSource` します。
-- [`OnAppTheme`](#onapptheme-markup-extension)–現在のシステムテーマに基づいてリソースを使用します。
+- [`AppThemeBinding`](#appthemebinding-markup-extension)–現在のシステムテーマに基づいてリソースを使用します。
 
 追加の XAML マークアップ拡張機能は、従来は他の XAML 実装によってサポートされており、でもサポートされてい Xamarin.Forms ます。 これらの詳細については、他の記事で詳しく説明します。
 
@@ -566,60 +580,55 @@ public partial class TypeDemoPage : ContentPage
 
 オブジェクトのフォントアイコンデータを指定してフォントアイコンを表示する方法の詳細について `FontImageSource` は、「[フォント](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons)アイコンの表示」を参照してください。
 
-## <a name="onapptheme-markup-extension"></a>OnAppTheme のマークアップ拡張機能
+## <a name="appthemebinding-markup-extension"></a>AppThemeBinding のマークアップ拡張機能
 
-`OnAppTheme`マークアップ拡張機能を使用すると、現在のシステムテーマに基づいて、イメージや色など、消費するリソースを指定できます。 クラスと同じ機能を提供し `OnAppTheme<T>` ますが、より簡潔な表現を使用します。
+`AppThemeBinding`マークアップ拡張機能を使用すると、現在のシステムテーマに基づいて、イメージや色など、消費するリソースを指定できます。
 
 > [!IMPORTANT]
-> `OnAppTheme`マークアップ拡張機能には、オペレーティングシステムの最小要件があります。 詳細については、「 [ Xamarin.Forms アプリケーションでのシステムテーマの変更への応答](~/xamarin-forms/user-interface/theming/system-theme-changes.md)」を参照してください。
+> `AppThemeBinding`マークアップ拡張機能には、オペレーティングシステムの最小要件があります。 詳細については、「 [ Xamarin.Forms アプリケーションでのシステムテーマの変更への応答](~/xamarin-forms/user-interface/theming/system-theme-changes.md)」を参照してください。
 
-`OnAppTheme` マークアップ拡張機能は、次のプロパティを定義する `OnAppThemeExtension` クラスによってサポートされています。
+`AppThemeBinding` マークアップ拡張機能は、次のプロパティを定義する `AppThemeBindingExtension` クラスによってサポートされています。
 
 - `Default`型の `object` 。既定で使用されるリソースに設定します。
 - `Light`型の。これは、 `object` デバイスが明るいテーマを使用するときに使用されるリソースに設定します。
 - `Dark`型の。これは、 `object` デバイスがダークテーマを使用するときに使用されるリソースに設定します。
 - `Value``object`マークアップ拡張機能によって現在使用されているリソースを返す型の。
-- `Converter`型の `IValueConverter` 。実装に設定でき `IValueConverter` ます。
-- `ConverterParameter`型の `object` 。実装に渡す値に設定でき `IValueConverter` ます。
 
 > [!NOTE]
-> XAML パーサーでは、`OnAppThemeExtension` クラスを `OnAppTheme` に短縮できます。
+> XAML パーサーでは、`AppThemeBindingExtension` クラスを `AppBindingTheme` に短縮できます。
 
-プロパティは、 `Default` の content プロパティです `OnAppThemeExtension` 。 そのため、中かっこで囲まれた XAML マークアップ式では、 `Default=` 最初の引数であることを示す式の一部を削除できます。
+プロパティは、 `Default` の content プロパティです `AppThemeBindingExtension` 。 そのため、中かっこで囲まれた XAML マークアップ式では、 `Default=` 最初の引数であることを示す式の一部を削除できます。
 
-**Onapptheme デモ**ページは、マークアップ拡張機能の使用方法を示してい `OnAppTheme` ます。
+**AppThemeBinding Demo**ページは、マークアップ拡張機能の使用方法を示してい `AppThemeBinding` ます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MarkupExtensions.OnAppThemeDemoPage"
-             Title="OnAppTheme Demo">
+             x:Class="MarkupExtensions.AppThemeBindingDemoPage"
+             Title="AppThemeBinding Demo">
     <ContentPage.Resources>
 
         <Style x:Key="labelStyle"
                TargetType="Label">
             <Setter Property="TextColor"
-                    Value="{OnAppTheme Black, Light=Blue, Dark=Teal}" />
+                    Value="{AppThemeBinding Black, Light=Blue, Dark=Teal}" />
         </Style>
 
     </ContentPage.Resources>
     <StackLayout Margin="20">
         <Label Text="This text is green in light mode, and red in dark mode."
-               TextColor="{OnAppTheme Light=Green, Dark=Red}" />
+               TextColor="{AppThemeBinding Light=Green, Dark=Red}" />
         <Label Text="This text is black by default, blue in light mode, and teal in dark mode."
-               Style="{DynamicResource labelStyle}" />
+               Style="{StaticResource labelStyle}" />
     </StackLayout>
 </ContentPage>
 ```
 
 この例では、デバイスが明るいテーマを使用している場合、最初のテキストの色 [`Label`](xref:Xamarin.Forms.Label) が緑色に設定されています。また、デバイスがダークテーマを使用している場合は赤に設定されます。 2番目の `Label` [`TextColor`](xref:Xamarin.Forms.Label.TextColor) プロパティは、を通じて設定さ [`Style`](xref:Xamarin.Forms.Style) れます。 これに `Style` より、のテキストの色が `Label` 既定で黒に、デバイスが明るいテーマを使用している場合は青に、デバイスがダークテーマを使用している場合は青緑に設定されます。
 
-> [!NOTE]
-> [`Style`](xref:Xamarin.Forms.Style) `OnAppTheme` マークアップ拡張機能を使用するは、マークアップ拡張機能を持つコントロールに適用する必要があり `DynamicResource` ます。これにより、システムテーマの変更時にアプリの UI が更新されます。
-
 実行中のプログラムを次に示します。
 
-![OnAppTheme デモ](consuming-images/onappthemedemo.png "OnAppTheme デモ")
+![AppThemeBinding のデモ](consuming-images/appthemebindingdemo.png "AppThemeBinding のデモ")
 
 ## <a name="define-markup-extensions"></a>マークアップ拡張機能の定義
 

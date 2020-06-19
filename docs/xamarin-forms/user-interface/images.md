@@ -1,8 +1,22 @@
 ---
-title: "イメージ内のイメージ Xamarin.Forms " 説明: "イメージは、を使用してプラットフォーム間で共有でき Xamarin.Forms 、プラットフォームごとに個別に読み込むことができます。または、表示用にダウンロードすることもできます。"
-ms. 製品: xamarin ms. assetid: C025AB53-05CC-49BA-9815-75D6DF9E40B7: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 12/04/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: 画像Xamarin.Forms
+description: イメージは、を使用してプラットフォーム間で共有でき Xamarin.Forms 、プラットフォームごとに個別に読み込むことも、表示用にダウンロードすることもできます。
+ms.prod: xamarin
+ms.assetid: C025AB53-05CC-49BA-9815-75D6DF9E40B7
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/19/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7117bb809c43ab5edb67e8367840b17cd1d97ef9
+ms.sourcegitcommit: c000c0ed15b7b2ef2a8f46a39171e11b6d9f8a5d
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84980091"
 ---
-
 # <a name="images-in-xamarinforms"></a>画像Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithimages)
@@ -15,7 +29,7 @@ _イメージは、を使用してプラットフォーム間で共有でき Xam
 
 ## <a name="display-images"></a>画像の表示
 
-Xamarin.Forms[`Image`](xref:Xamarin.Forms.Image)ビューを使用して、ページ上にイメージを表示します。 次の2つの重要なプロパティがあります。
+Xamarin.Forms[`Image`](xref:Xamarin.Forms.Image)ビューを使用して、ページ上にイメージを表示します。 これにはいくつかの重要なプロパティがあります。
 
 - [`Source`](xref:Xamarin.Forms.Image.Source)- [`ImageSource`](xref:Xamarin.Forms.ImageSource) ファイル、Uri、またはリソースのいずれかのインスタンス。表示するイメージを設定します。
 - [`Aspect`](xref:Xamarin.Forms.Image.Aspect)-イメージが表示されている境界内でイメージのサイズを変更する方法 (伸縮するか、またはレターレターにするか)。
@@ -30,7 +44,7 @@ Xamarin.Forms[`Image`](xref:Xamarin.Forms.Image)ビューを使用して、ペ�
 プロパティは、 [`Aspect`](xref:Xamarin.Forms.Image.Aspect) 表示領域に合わせてイメージをスケーリングする方法を決定します。
 
 - [`Fill`](xref:Xamarin.Forms.Aspect.Fill)-画像を完全に拡大し、表示領域を正確に塗りつぶします。 これにより、イメージがゆがんでしまう可能性があります。
-- [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill)-画像をクリップして、縦横比を維持しながら表示領域を塗りつぶすようにします (ひずみはありません)。
+- [`AspectFill`](xref:Xamarin.Forms.Aspect.AspectFill)-画像をクリップして、縦横比を維持しながら、表示領域がいっぱいになるようにします (ひずみはありません)。
 - [`AspectFit`](xref:Xamarin.Forms.Aspect.AspectFit)-イメージ全体が表示領域に収まるように (必要に応じて) イメージを Letterboxes します。これにより、画像の幅が広いか高さに応じて、上下または横に空白が追加されます。
 
 イメージは、[ローカルファイル](#local-images)、[埋め込みリソース](#embedded-images)、[ダウンロード](#download-images)、またはストリームから読み込むことができます。 また、 [`Image`](xref:Xamarin.Forms.Image) オブジェクトのフォントアイコンデータを指定することで、ビューによってフォントアイコンを表示することもでき `FontImageSource` ます。 詳細については、「[フォント](~/xamarin-forms/user-interface/text/fonts.md)ガイド」の「[フォントアイコンの表示](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons)」を参照してください。
@@ -231,14 +245,13 @@ var imageSource = ImageSource.FromResource("filename.png",
 次の XAML に示すように、イメージを自動的にダウンロードして表示することができます。
 
 ```xaml
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
        x:Class="WorkingWithImages.DownloadImagesXaml">
   <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
     <Label Text="Image UriSource Xaml" />
-    <Image Source="https://xamarin.com/content/images/pages/forms/example-app.png" />
-    <Label Text="example-app.png gets downloaded from xamarin.com" />
+    <Image Source="https://aka.ms/campus.jpg" />
+    <Label Text="campus.jpg gets downloaded from microsoft.com" />
   </StackLayout>
 </ContentPage>
 ```
@@ -248,7 +261,7 @@ var imageSource = ImageSource.FromResource("filename.png",
 ```csharp
 var webImage = new Image {
      Source = ImageSource.FromUri(
-        new Uri("https://xamarin.com/content/images/pages/forms/example-app.png")
+        new Uri("https://aka.ms/campus.jpg")
      ) };
 ```
 
@@ -257,7 +270,7 @@ var webImage = new Image {
 URI 文字列にも暗黙的な変換が行われるため、次の例も機能します。
 
 ```csharp
-webImage.Source = "https://xamarin.com/content/images/pages/forms/example-app.png";
+webImage.Source = "https://aka.ms/campus.jpg";
 ```
 
 次のスクリーンショットは、各プラットフォームでリモートイメージを表示した結果を示しています。
@@ -274,7 +287,7 @@ webImage.Source = "https://xamarin.com/content/images/pages/forms/example-app.pn
 キャッシュは既定で有効になり、24時間ローカルにイメージを保存します。 特定のイメージのキャッシュを無効にするには、次のようにイメージソースをインスタンス化します。
 
 ```csharp
-image.Source = new UriImageSource { CachingEnabled = false, Uri = new Uri("http://server.com/image") };
+image.Source = new UriImageSource { CachingEnabled = false, Uri = new Uri("https://server.com/image") };
 ```
 
 特定のキャッシュ期間 (たとえば、5日) を設定するには、次のようにイメージソースをインスタンス化します。
@@ -282,7 +295,7 @@ image.Source = new UriImageSource { CachingEnabled = false, Uri = new Uri("http:
 ```csharp
 webImage.Source = new UriImageSource
 {
-    Uri = new Uri("https://xamarin.com/content/images/pages/forms/example-app.png"),
+    Uri = new Uri("https://aka.ms/campus.jpg"),
     CachingEnabled = true,
     CacheValidity = new TimeSpan(5,0,0,0)
 };

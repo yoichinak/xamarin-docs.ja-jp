@@ -1,8 +1,22 @@
 ---
-title: "ListView の外観" の説明: "この記事では Xamarin.Forms 、ヘッダー、フッター、グループ、および可変の高さのセルを使用して、アプリケーションで ListViews をカスタマイズする方法について説明します。"
-ms. 製品: xamarin ms. assetid: DC8009B0-4371-4D60-885A-5362FC7EE3E5: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 12/13/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: ListView の外観
+description: この記事では Xamarin.Forms 、ヘッダー、フッター、グループ、および可変の高さセルを使用して、アプリケーションで ListViews をカスタマイズする方法について説明します。
+ms.prod: xamarin
+ms.assetid: DC8009B0-4371-4D60-885A-5362FC7EE3E5
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/13/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c7fdecdb0ce209c88dbe9e6f4e6e6588ec4fd3fd
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139920"
 ---
-
 # <a name="listview-appearance"></a>ListView の外観
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)

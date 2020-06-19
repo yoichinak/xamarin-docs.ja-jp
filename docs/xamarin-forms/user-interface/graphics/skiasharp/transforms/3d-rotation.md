@@ -1,8 +1,22 @@
 ---
-title: "SkiaSharp での3D 回転" の説明: "この記事では、非アフィン変換を使用して3D 空間で2D オブジェクトを回転させる方法について説明し、サンプルコードを使用してこれを示します。"
-ms. 製品: xamarin ms テクノロジ: skiasharp: B5894EA0-C415-41F9-93A4-BBF6EC72AFB9 author: davidbritch dabritch: ms. date: 04/14/2017 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
+title: SkiaSharp の3D 回転
+description: この記事では、非アフィン変換を使用して3D 空間で2D オブジェクトを回転させる方法について説明し、サンプルコードを使用してこれを示します。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: B5894EA0-C415-41F9-93A4-BBF6EC72AFB9
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/14/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3706139a2c15d01af67203c2bd09b281de80ed52
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84140206"
 ---
-
 # <a name="3d-rotations-in-skiasharp"></a>SkiaSharp の3D 回転
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

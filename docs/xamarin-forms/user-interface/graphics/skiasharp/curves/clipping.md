@@ -1,8 +1,22 @@
 ---
-title: "パスと領域でのクリッピング" の説明: "この記事では、SkiaSharp パスを使用して、特定の領域にグラフィックスをクリップしたり、領域を作成したりする方法について説明し、サンプルコードを使用してこれを示します。"
-ms. 製品: xamarin ms テクノロジ: skiasharp: 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F author: davidbritch dabritch: ms. date: 06/16/2017 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
+title: パスおよび領域でのクリッピング
+description: この記事では、SkiaSharp パスを使用して、特定の領域にグラフィックスをクリップしたり、領域を作成したりする方法について説明し、サンプルコードを使用してその例を示します。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 8022FBF9-2208-43DB-94D8-0A4E9A5DA07F
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/16/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a4bb6c30ada13691146d00d2094df8f13ca453b9
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84140258"
 ---
-
 # <a name="clipping-with-paths-and-regions"></a>パスおよび領域でのクリッピング
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

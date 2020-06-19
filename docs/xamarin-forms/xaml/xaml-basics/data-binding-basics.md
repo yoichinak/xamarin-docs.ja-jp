@@ -1,8 +1,22 @@
 ---
-title: "パート 4. データバインディングの基本 "説明": データバインディングを使用すると、2つのオブジェクトのプロパティをリンクさせて、一方のオブジェクトの変更によってもう一方の変更が行われるようにすることができます。
-ms. 製品: xamarin ms テクノロジ: xamarin-forms ms. assetid: 342288 C3-BB4C-4924-B178-72E112D777BA author: davidbritch ミリ秒: dabritch ms. date: 10/25/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: 第 4 部 データ バインディングの基礎
+description: データバインディングを使用すると、2つのオブジェクトのプロパティをリンクさせて、一方のオブジェクトの変更によってもう一方の変更が行われるようにすることができます。
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/25/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 08be571d3ba69891a56c08efd556a999e51431c8
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139855"
 ---
-
 # <a name="part-4-data-binding-basics"></a>第 4 部 データ バインディングの基礎
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)

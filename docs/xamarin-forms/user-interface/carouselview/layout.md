@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms CarouselView Layout" description: "既定では、CarouselView はその項目を水平方向に表示します。 ただし、垂直方向も可能です。 "
-ms. 製品: xamarin ms. assetid: fede0382-c972-4023-a4ea-fe5cadec91a6: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 01/28/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsCarouselView レイアウト
+description: 既定では、CarouselView はその項目を水平方向に表示します。 ただし、垂直方向も可能です。
+ms.prod: xamarin
+ms.assetid: fede0382-c972-4023-a4ea-fe5cadec91a6
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/28/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 44df710df0272afe3c6f6911381af1a88c8cf923
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84140284"
 ---
-
 # <a name="xamarinforms-carouselview-layout"></a>Xamarin.FormsCarouselView レイアウト
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
