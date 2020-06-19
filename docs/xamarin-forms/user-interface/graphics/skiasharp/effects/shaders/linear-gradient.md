@@ -1,8 +1,22 @@
 ---
-title: "SkiaSharp 線状グラデーション" の説明: "2 色の緩やかなブレンドで構成されるグラデーションで線または塗りつぶし領域を描画する方法を発見します。"
-ms. 製品: xamarin ms テクノロジ: skiasharp: 20A2A8C4-FEB7-478D-BF57-C92E26117B6A author: davidbritch dabritch: ms. date: 08/23/2018 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
+title: SkiaSharp 線状グラデーション
+description: 2色の段階的なブレンドで構成されるグラデーションで線または塗りつぶし領域を描画する方法について説明します。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 20A2A8C4-FEB7-478D-BF57-C92E26117B6A
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/23/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 43aa429046c1b0f72a1cbe6a5b921da9b8907a49
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84132224"
 ---
-
 # <a name="the-skiasharp-linear-gradient"></a>SkiaSharp 線状グラデーション
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

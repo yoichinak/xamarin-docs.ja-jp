@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms マップの初期化と構成" の説明: "the Xamarin.Forms .Maps NuGet パッケージは、アプリケーションで maps 機能を使用するために必要です。 さらに、ユーザーの場所にアクセスするには、アプリケーションに対して場所のアクセス許可が付与されている必要があります。 "
-ms. 製品: xamarin ms. assetid: 59CD1344-8248-406C9144-0c8a67141e: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 02/07/2020 no loc: [ Xamarin.Forms ,、 Xamarin.Essentials ]
+title: Xamarin.Formsマップの初期化と構成
+description: Xamarin.Forms。Maps NuGet パッケージは、アプリケーションで maps 機能を使用するために必要です。 さらに、ユーザーの場所にアクセスするには、アプリケーションに対する場所のアクセス許可が必要です。
+ms.prod: xamarin
+ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/07/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 52e2ac5f8075c57f533fcba064223f355e07ba48
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139842"
 ---
-
 # <a name="xamarinforms-map-initialization-and-configuration"></a>Xamarin.Formsマップの初期化と構成
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)

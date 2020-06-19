@@ -1,8 +1,22 @@
 ---
-title: "SkiaSharp effects" description: "グラデーション、ビットマップタイル、blend モード、ぼかしなどの効果を使用してグラフィックスの通常の表示を変更する方法について説明します。"
-ms. 製品: xamarin ms テクノロジ: skiasharp: B3E06572-8E2A-49FA-90D1-444C394CD516 author: davidbritch dabritch: ms. date: 08/22/2018 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
+title: SkiaSharp の効果
+description: グラデーション、ビットマップタイル、ブレンドモード、ぼかしなどの効果を使用して、グラフィックスの通常の表示を変更する方法について説明します。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: B3E06572-8E2A-49FA-90D1-444C394CD516
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/22/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d9fa710f5dfc61c2892b8fc409a39b37cf449018
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136306"
 ---
-
 # <a name="skiasharp-effects"></a>SkiaSharp の効果
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

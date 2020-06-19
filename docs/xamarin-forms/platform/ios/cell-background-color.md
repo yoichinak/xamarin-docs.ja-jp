@@ -1,8 +1,22 @@
 ---
-title: "iOS のセルの背景色" 説明: "プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、ios のセルの既定の背景色を設定する iOS プラットフォーム固有のを使用する方法について説明します。
-ms. 製品: xamarin ms. assetid: 2A3FDACF-5AE2-40DE-8488-6FE41733712F: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 10/24/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: IOS のセルの背景色
+description: プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、ios のセルの既定の背景色を設定する iOS プラットフォーム固有のを使用する方法について説明します。
+ms.prod: xamarin
+ms.assetid: 2A3FDACF-5AE2-40DE-8488-6FE41733712F
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/24/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 90282262926fef663183be247e37d64dd1be9124
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138568"
 ---
-
 # <a name="cell-background-color-on-ios"></a>IOS のセルの背景色
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

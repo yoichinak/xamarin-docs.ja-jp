@@ -1,9 +1,23 @@
 ---
-title: " Xamarin.Forms map" description: "マップコントロールにマップが表示され、が必要 Xamarin.Forms です。マップ NuGet パッケージ。 "
-ms. 製品: xamarin ms. assetid: B669B5EE-D24C-4C69-93E1-2CA5CC9108B5: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 10/29/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Forms付け
+description: マップコントロールにマップが表示され、が必要 Xamarin.Forms です。NuGet パッケージをマップします。
+ms.prod: xamarin
+ms.assetid: B669B5EE-D24C-4C69-93E1-2CA5CC9108B5
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/29/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2461ffa8168207e6a57fae005f752be48772a34a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139829"
 ---
-
-# <a name="xamarinforms-map"></a>Xamarin.Forms のマップ
+# <a name="xamarinforms-map"></a>Xamarin.Forms付け
 
 ## <a name="initialization-and-configuration"></a>[初期化と構成](setup.md)
 

@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms Local Databases" description: " Xamarin.Forms は、SQLite データベースエンジンを使用したデータベース駆動型アプリケーションをサポートします。これにより、共有コードでオブジェクトを読み込んで保存できるようになります。 この記事で Xamarin.Forms は、SQLite.Net を使用して、アプリケーションがローカルの SQLite データベースに対してデータの読み取りと書き込みを行う方法について説明します。
-ms. 製品: xamarin ms. assetid: F687B24B-7DF0-4F8E-A21A-A9BB507480EB: xamarin-forms author: profexorgeek ms. author: jusjohns ms. date: 12/05/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Formsローカルデータベース
+description: Xamarin.Formsは、SQLite データベースエンジンを使用したデータベース駆動型アプリケーションをサポートします。これにより、共有コードでオブジェクトを読み込んで保存できるようになります。 この記事で Xamarin.Forms は、SQLite.Net を使用して、アプリケーションがローカルの SQLite データベースに対してデータの読み取りと書き込みを行う方法について説明します。
+ms.prod: xamarin
+ms.assetid: F687B24B-7DF0-4F8E-A21A-A9BB507480EB
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 12/05/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f7cef5fd39d82cf0a4b55337835c0fe1d57b8bf9
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84197589"
 ---
-
 # <a name="xamarinforms-local-databases"></a>Xamarin.Formsローカルデータベース
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)

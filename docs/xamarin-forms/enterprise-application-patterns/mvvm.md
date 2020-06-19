@@ -1,8 +1,22 @@
 ---
-title: "モデルビュー-ビューモデルのパターン" 説明: "この章では、eShopOnContainers モバイルアプリが MVVM パターンを使用して、アプリのビジネスロジックとプレゼンテーションロジックをユーザーインターフェイスから明確に分離する方法について説明します。"
-ms. 製品: xamarin ms. assetid: dd8c1813-df44-4947-bcee-1a1ff2334b87: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 08/07/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: モデルビュービューモデルパターン
+description: この章では、eShopOnContainers モバイルアプリが MVVM パターンを使用して、ユーザーインターフェイスからアプリのビジネスロジックとプレゼンテーションロジックを明確に分離する方法について説明します。
+ms.prod: xamarin
+ms.assetid: dd8c1813-df44-4947-bcee-1a1ff2334b87
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c07fc9f42c4175b4e4569ab95a951b24c130c4f3
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572053"
 ---
-
 # <a name="the-model-view-viewmodel-pattern"></a>モデルビュービューモデルパターン
 
 通常、開発者の経験では、 Xamarin.Forms XAML でユーザーインターフェイスを作成し、ユーザーインターフェイスで動作する分離コードを追加する必要があります。 アプリが変更され、サイズと範囲が拡大するにつれて、複雑なメンテナンスの問題が発生する可能性があります。 これらの問題には、ui コントロールとビジネスロジックとの密結合が含まれます。これにより、UI の変更にかかるコストが増加し、このようなコードを単体テストすることが困難になります。

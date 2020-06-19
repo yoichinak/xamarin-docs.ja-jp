@@ -1,8 +1,22 @@
 ---
-title: 「バインド Xamarin.Forms 可能なレイアウト」の説明: 「バインド可能なレイアウト」では、項目のコレクションにバインドすることによって、レイアウトクラスでコンテンツを生成できます。また、各項目の外観を system.windows.datatemplate> で設定することもできます。
-ms. 製品: xamarin ms. assetid: 824C3319-20A0-42D0-8632-CDECD98349C3: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 03/09/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: バインド可能なレイアウトXamarin.Forms
+description: バインド可能なレイアウトでは、レイアウトクラスが項目のコレクションにバインドすることによってコンテンツを生成できます。また、各項目の外観を System.windows.datatemplate> で設定することもできます。
+ms.prod: xamarin
+ms.assetid: 824C3319-20A0-42D0-8632-CDECD98349C3
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/09/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9d0497c0c0593b54f69bac84307976c4050e9c95
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138243"
 ---
-
 # <a name="bindable-layouts-in-xamarinforms"></a>バインド可能なレイアウトXamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablelayouts)

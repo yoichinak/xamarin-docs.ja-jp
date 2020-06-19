@@ -1,8 +1,22 @@
 ---
-title: "はじめに with DataPages" description: "この記事では、DataPages を使用して単純なデータドリブンページの構築を開始する方法について説明 Xamarin.Forms します。"
-ms BAA1: xamarin ms assetid: 6416E5FA-6384-4298-A89381E47210: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 12/01/2017 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
+title: DataPages でのはじめに
+description: この記事では、DataPages を使用して単純なデータドリブンページの構築を開始する方法について説明 Xamarin.Forms します。
+ms.prod: xamarin
+ms.assetid: 6416E5FA-6384-4298-BAA1-A89381E47210
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/01/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: bb08d359048d53639a700cc5ff526f26d6b077b6
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84571468"
 ---
-
 # <a name="getting-started-with-datapages"></a>DataPages でのはじめに
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-samples/tree/master/Pages/DataPagesDemo)

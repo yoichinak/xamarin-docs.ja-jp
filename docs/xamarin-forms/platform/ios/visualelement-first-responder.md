@@ -1,8 +1,22 @@
 ---
-title: "VisualElement first レスポンダー on iOS" description: "Platform-custom を使用すると、特定のプラットフォームでのみ使用できる機能を使用して、カスタムレンダラーや特殊効果を実装することができます。 この記事では、VisualElement オブジェクトを使用して、イベントをタッチするための最初のレスポンダーにする、iOS プラットフォーム固有のを使用する方法について説明します。
-ms. 製品: xamarin ms. assetid: 3A77BA02-B87 a47 4ECECAC51-9d3130ef314c ms. テクノロジ: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 01/15/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: IOS 上の VisualElement の最初のレスポンダー
+description: プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、VisualElement オブジェクトを使用してイベントをタッチする最初のレスポンダーにする、iOS プラットフォーム固有のを使用する方法について説明します。
+ms.prod: xamarin
+ms.assetid: 3A77BA02-B87A-44EC-AC51-9D3130EF314C
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/15/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d8bd539c2bb0e8963afae3392b6f8e99d79af9af
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136970"
 ---
-
 # <a name="visualelement-first-responder-on-ios"></a>IOS 上の VisualElement の最初のレスポンダー
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

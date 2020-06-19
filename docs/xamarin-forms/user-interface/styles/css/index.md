@@ -1,6 +1,22 @@
 ---
-title: " Xamarin.Forms カスケードスタイルシート (css) を使用したアプリのスタイル設定" description: "は Xamarin.Forms 、カスケードスタイルシート (css) を使用したビジュアル要素のスタイル設定をサポートします。"
-ms. 製品: xamarin ms. assetid: C89D57A6-DAB9-4C42-963F-26D67627DDC2: xamu-ビデオ作成者: davidbritch ミリ秒: dabritch ms. date: 04/17/2020 no loc: [ Xamarin.Forms ,、] を指定します。 Xamarin.Essentials
+title: Xamarin.Formsカスケードスタイルシートを使用したアプリのスタイル設定 (CSS)
+description: Xamarin.Formsカスケードスタイルシート (CSS) を使用したビジュアル要素のスタイル設定をサポートします。
+ms.prod: xamarin
+ms.assetid: C89D57A6-DAB9-4C42-963F-26D67627DDC2
+ms.technology: xamarin-forms
+ms.custom: xamu-video
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/20/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9375c4078c75d8e4788cb31a3d6a6a3a10100f49
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946228"
 ---
 # <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>Xamarin.Formsカスケードスタイルシートを使用したアプリのスタイル設定 (CSS)
 
@@ -145,6 +161,12 @@ public partial class MyPage : ContentPage
 CSS はセレクターを使用して、対象とする要素を決定します。 セレクターが一致するスタイルは、定義の順序で連続して適用されます。 特定の項目に定義されているスタイルは、常に最後に適用されます。 サポートされているセレクターの詳細については、「 [Selector Reference](#selector-reference)」を参照してください。
 
 CSS では、プロパティを使用して、選択した要素のスタイルを適用します。 各プロパティには使用可能な値のセットがあり、一部のプロパティは要素の型に影響を与えますが、他のプロパティは要素のグループに適用されます。 サポートされるプロパティの詳細については、「[プロパティリファレンス](#property-reference)」を参照してください。
+
+子スタイルシートで同じプロパティを設定した場合、親スタイルシートは常にオーバーライドされます。 そのため、同じプロパティを設定するスタイルを適用するときは、次の優先順位の規則に従います。
+
+- アプリケーションリソースで定義されているスタイルは、同じプロパティを設定すると、ページリソースで定義されたスタイルによって上書きされます。
+- ページリソースで定義されているスタイルは、同じプロパティを設定すると、コントロールリソースで定義されたスタイルによって上書きされます。
+- アプリケーションリソースで定義されているスタイルは、同じプロパティを設定すると、コントロールリソースで定義されたスタイルによって上書きされます。
 
 > [!IMPORTANT]
 > CSS 変数はサポートされていません。

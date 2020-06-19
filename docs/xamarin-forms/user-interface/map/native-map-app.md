@@ -1,8 +1,22 @@
 ---
-title: "ネイティブマップアプリを起動する Xamarin.Forms " 説明: "ランチャークラスによって、各プラットフォームのネイティブマップアプリをアプリケーションから起動でき Xamarin.Forms Xamarin.Essentials ます。"
-ms. 製品: xamarin ms. assetid: 5CF7CD67-3F20-4D80-B99E-D35A5FD1019A: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 10/30/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: からネイティブマップアプリを起動します。Xamarin.Forms
+description: 各プラットフォーム上のネイティブマップアプリは、 Xamarin.Forms ランチャークラスによってアプリケーションから起動でき Xamarin.Essentials ます。
+ms.prod: xamarin
+ms.assetid: 5CF7CD67-3F20-4D80-B99E-D35A5FD1019A
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/30/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c135d5dd02bba5102f5a93132f079526c84865d5
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84129339"
 ---
-
 # <a name="launch-the-native-map-app-from-xamarinforms"></a>からネイティブマップアプリを起動します。Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)

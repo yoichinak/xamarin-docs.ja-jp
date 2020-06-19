@@ -1,8 +1,22 @@
 ---
-title: "SkiaSharp ビットマップでの作成と描画" 説明: "SkiaSharp ビットマップを作成し、それらに基づいてキャンバスを作成することにより、これらのビットマップに描画する方法について説明します。"
-ms. 製品: xamarin ms テクノロジ: skiasharp: 79BD3266-D457-4E50-BDDF-33450035FA0F author: davidbritch dabritch: ms. date: 07/17/2018 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
+title: SkiaSharp ビットマップの作成と描画
+description: SkiaSharp ビットマップを作成し、それらに基づいてキャンバスを作成することにより、ビットマップに描画する方法について説明します。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 79BD3266-D457-4E50-BDDF-33450035FA0F
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/17/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c045e297beca675c0582efc2f75b1d6b2bcedcf8
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573294"
 ---
-
 # <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>SkiaSharp ビットマップの作成と描画
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

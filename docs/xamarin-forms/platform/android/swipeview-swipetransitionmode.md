@@ -1,8 +1,22 @@
 ---
-title: "Android での SwipeView スワイプ切り替えモード" の説明: "プラットフォームの詳細" を使用すると、カスタムレンダラーや特殊効果を実装しなくても、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、SwipeView を開くときに使用される遷移を制御する Android プラットフォーム固有のを使用する方法について説明します。
-ms. 製品: xamarin ms. assetid: 6B1F8213-9D62-4C40-9F04-881F1371B5AA: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 12/11/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Android での SwipeView スワイプ切り替えモード
+description: プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、SwipeView を開くときに使用される遷移を制御する Android プラットフォーム固有のを使用する方法について説明します。
+ms.prod: xamarin
+ms.assetid: 6B1F8213-9D62-4C40-9F04-881F1371B5AA
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/11/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c420fe65b020067169230dd06dbcd5ce65c036ab
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84128623"
 ---
-
 # <a name="swipeview-swipe-transition-mode-on-android"></a>Android での SwipeView スワイプ切り替えモード
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms views" description: " Xamarin.Forms views は、クロスプラットフォームモバイルユーザーインターフェイスの構成要素です。 この記事では、に含まれているビューの一覧を示し Xamarin.Forms ます。
-ms. 製品: xamarin ms. assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 04/16/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Forms表示モード
+description: Xamarin.Formsビューは、クロスプラットフォームモバイルユーザーインターフェイスの構成要素です。 この記事では、に含まれているビューの一覧を示し Xamarin.Forms ます。
+ms.prod: xamarin
+ms.assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/16/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8c15626e405645d28a785c32d276860f9751ea25
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84132380"
 ---
-
 # <a name="xamarinforms-views"></a>Xamarin.Forms表示モード
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery/)

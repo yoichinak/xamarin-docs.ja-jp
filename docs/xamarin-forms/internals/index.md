@@ -1,8 +1,22 @@
 ---
-タイトル: " Xamarin.Forms 高度な概念 & 内部" 説明: "高度な概念と内部の詳細について説明 Xamarin.Forms します。"
-ms. 製品: xamarin ms. assetid: 2273a31c-4022-42ba-befe-0d23ce2ff3b5: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 03/20/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Forms詳細な概念 & 内部構造
+description: 高度な概念との内部構造について説明し Xamarin.Forms ます。
+ms.prod: xamarin
+ms.assetid: 2273a31c-4022-42ba-befe-0d23ce2ff3b5
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/20/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 410aadcb885ed66283eb306cb9aa4c5e764fa8ec
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139036"
 ---
-
 # <a name="xamarinforms-advanced-concepts--internals"></a>Xamarin.Forms詳細な概念 & 内部構造
 
 _高度な概念との内部構造について説明し Xamarin.Forms ます。_

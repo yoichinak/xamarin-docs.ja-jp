@@ -1,8 +1,22 @@
 ---
-title: "SkiaSharp blend modes" description: "blend モードを使用して、グラフィカルオブジェクトが互いに積み上げられている場合の動作を定義します。"
-ms. 製品: xamarin ms テクノロジ: skiasharp: CE1B222E-A2D0-4016-A532-EC1E59EE3D6B author: davidbritch dabritch: ms. date: 08/23/2018 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
+title: SkiaSharp blend モード
+description: Blend モードを使用すると、グラフィカルオブジェクトが互いに積み上げられている場合の動作を定義できます。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: CE1B222E-A2D0-4016-A532-EC1E59EE3D6B
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/23/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b5b03779b9f0847621456b25582fb8ea04f8386d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84131704"
 ---
-
 # <a name="skiasharp-blend-modes"></a>SkiaSharp blend モード
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

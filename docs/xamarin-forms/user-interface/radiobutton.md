@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms radiobutton" description: " Xamarin.Forms radiobutton は、ユーザーがセットから1つのオプションを選択できるようにするためのボタンの一種です。 各オプションは1つのラジオボタンで表され、1つのグループ内で1つのラジオボタンだけを選択できます。
-ms. 製品: xamarin ms. assetid: E2AA40E0-69A5-41DF-BFC4-C151CA657451: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 03/13/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsRadioButton
+description: Xamarin.FormsRadioButton は、ユーザーがセットから1つのオプションを選択できるようにするためのボタンの一種です。 各オプションは1つのラジオボタンで表され、1つのグループ内で選択できるラジオボタンは1つだけです。
+ms.prod: xamarin
+ms.assetid: E2AA40E0-69A5-41DF-BFC4-C151CA657451
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/13/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f7cbd11f98127cb73514112dae785102ff9c51c0
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127624"
 ---
-
 # <a name="xamarinforms-radiobutton"></a>Xamarin.FormsRadioButton
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-radiobuttondemos/)

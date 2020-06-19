@@ -1,8 +1,22 @@
 ---
-title: "レイアウトの圧縮" の説明: "レイアウトの圧縮により、ページレンダリングのパフォーマンスを向上させるために、指定したレイアウトがビジュアルツリーから削除されます。 この記事では、レイアウト圧縮を有効にする方法と、それによってもたらされる利点について説明します。 "
-ms. 製品: xamarin ms. assetid: da9e1b26-9d31-4762-94c3-4039f306b7f2: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 12/13/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: レイアウト圧縮
+description: レイアウトの圧縮では、ページレンダリングのパフォーマンスを向上させるために、指定したレイアウトがビジュアルツリーから削除されます。 この記事では、レイアウト圧縮を有効にする方法と、それによってもたらされる利点について説明します。
+ms.prod: xamarin
+ms.assetid: da9e1b26-9d31-4762-94c3-4039f306b7f2
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/13/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 40af5aeaa51025dae70113faa6f7ff83edf43c73
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138026"
 ---
-
 # <a name="layout-compression"></a>レイアウト圧縮
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutcompression)

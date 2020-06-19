@@ -1,6 +1,21 @@
 ---
-title: "Azure Functions での" Xamarin.Forms 説明: "Azure Functions を使用した作業の開始 Xamarin.Forms "
-ms 2F311A60: xamarin ms. assetid: A6FC-4051-B938-AEF32086642F author: conceptdev ms. author: crdun ms. custom: video ms. date: 04/02/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Azure FunctionsXamarin.Forms
+description: を使用した Azure Functions の概要」をご覧 Xamarin.Forms ください。
+ms.prod: xamarin
+ms.assetid: 2F311A60-A6FC-4051-B938-AEF32086642F
+author: conceptdev
+ms.author: crdun
+ms.custom: video
+ms.date: 04/02/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 420cead8a43f35815110eb7ce3b183f10bb3ccd4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84197573"
 ---
 # <a name="get-started-with-azure-functions"></a>Azure Functions の概要
 

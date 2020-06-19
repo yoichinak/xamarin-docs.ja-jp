@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms CollectionView Layout" description: "既定では、CollectionView によって項目が縦の一覧に表示されます。 ただし、縦と横の一覧とグリッドを指定することもできます。
-ms. 製品: xamarin ms. assetid: 5FE78207-1BD6-4706-91EF-B13932321FC9: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 08/22/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsCollectionView レイアウト
+description: 既定では、CollectionView は項目を縦に並べて表示します。 ただし、縦と横のリストおよびグリッドを指定することもできます。
+ms.prod: xamarin
+ms.assetid: 5FE78207-1BD6-4706-91EF-B13932321FC9
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/22/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 425eb7abc14fb941dbfc28219907d98558cbfabb
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137437"
 ---
-
 # <a name="xamarinforms-collectionview-layout"></a>Xamarin.FormsCollectionView レイアウト
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)

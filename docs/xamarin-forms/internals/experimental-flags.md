@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms 実験的なフラグ" 説明: " Xamarin.Forms 実験的なフラグを使用すると、エンジニアリングチームは、安定したリリースに移行する前に機能 api を変更することができますが、ユーザーに新しい機能をより迅速に配布できます。"
-ms. 製品: xamarin ms. assetid: AF4BDD27-89F6-48AE-A8CD-D7E4DDA2CCA2: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 04/14/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Forms試験的なフラグ
+description: Xamarin.Forms試験的なフラグを使用すると、エンジニアリングチームは新しい機能をより迅速に出荷できますが、安定したリリースに移行する前に機能 Api を変更することもできます。
+ms.prod: xamarin
+ms.assetid: AF4BDD27-89F6-48AE-A8CD-D7E4DDA2CCA2
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/15/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 17fcc996b4dc8013a23a598ece8e240caba3f775
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946118"
 ---
-
 # <a name="xamarinforms-experimental-flags"></a>Xamarin.Forms試験的なフラグ
 
 新しい Xamarin.Forms 機能が実装されると、実験用フラグの背後に配置されることがあります。 これにより、エンジニアリングチームは新しい機能をより迅速に提供できるようになりますが、安定したリリースに移行する前に機能 Api を変更することもできます。 その後、機能が安定したリリースに移行すると、実験的なフラグが削除されます。
@@ -12,10 +26,10 @@ Xamarin.Formsには、次の実験的なフラグが含まれています。
 - `AppTheme_Experimental`
 - `CarouselView_Experimental`
 - `Expander_Experimental`
-- `IndicatorView_Experimental`
 - `Markup_Experimental`
 - `MediaElement_Experimental`
 - `RadioButton_Experimental`
+- `Shapes_Experimental`
 - `Shell_UWP_Experimental`
 - `StateTriggers_Experimental`
 - `SwipeView_Experimental`
@@ -44,7 +58,7 @@ Xamarin.Forms.Forms.SetFlags("CarouselView_Experimental");
 メソッドは、 `Xamarin.Forms.Forms.SetFlags` `string` 配列引数を受け取ります。これにより、1つのメソッド呼び出しで複数の実験的なフラグを有効にすることができます。
 
 ```csharp
-Xamarin.Forms.Forms.SetFlags(new string[] { "CarouselView_Experimental", "IndicatorView_Experimental", "SwipeView_Experimental" });
+Xamarin.Forms.Forms.SetFlags(new string[] { "CarouselView_Experimental", "MediaElement_Experimental", "SwipeView_Experimental" });
 ```
 
 > [!WARNING]

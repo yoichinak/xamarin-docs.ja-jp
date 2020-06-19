@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms CarouselView EmptyView" description: "CarouselView では、表示可能なデータがない場合にユーザーにフィードバックを提供する空のビューを指定できます。 空のビューには、文字列、ビュー、または複数のビューを指定できます。
-ms. 製品: xamarin ms. assetid: C6DEE1A9-4889 63FC BC77-F401D5D7DF32: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 10/03/2019 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
+title: Xamarin.FormsCarouselView EmptyView
+description: CarouselView では、表示可能なデータがない場合にユーザーにフィードバックを提供する空のビューを指定できます。 空のビューには、文字列、ビュー、または複数のビューを指定できます。
+ms.prod: xamarin
+ms.assetid: C6DEE1A9-63FC-4889-BC77-F401D5D7DF32
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/03/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a9f952da75e68e9ad39e0a15f57fbd0379233d7e
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137398"
 ---
-
 # <a name="xamarinforms-carouselview-emptyview"></a>Xamarin.FormsCarouselView EmptyView
 
 ![](~/media/shared/preview.png "This API is currently pre-release")

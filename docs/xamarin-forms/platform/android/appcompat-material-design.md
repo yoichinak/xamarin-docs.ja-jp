@@ -1,8 +1,22 @@
 ---
-title: "AppCompat とマテリアル設計の追加" の説明: "この記事では Xamarin.Forms 、既存の Android アプリを変換して appcompat とマテリアル設計を使用する方法について説明します。"
-ms. 製品: xamarin ms assetid: 045FBCDF-4D45-48BB-9911-BD3938C87D58: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 06/27/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: AppCompat とマテリアルデザインの追加
+description: この記事では、既存の Android アプリを変換して Xamarin.Forms 、AppCompat とマテリアル設計を使用する方法について説明します。
+ms.prod: xamarin
+ms.assetid: 045FBCDF-4D45-48BB-9911-BD3938C87D58
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/27/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 24206f6d6764c73f13a4b06fb44fa746f9d353af
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135708"
 ---
-
 # <a name="adding-appcompat-and-material-design"></a>AppCompat とマテリアルデザインの追加
 
 _次の手順に従って既存の Xamarin.Forms Android アプリを変換して、AppCompat とマテリアル設計を使用します。_

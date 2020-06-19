@@ -1,8 +1,22 @@
 ---
-タイトル: "構成管理" の説明: "この章では、eShopOnContainers モバイルアプリが構成管理を実装してアプリ設定とユーザー設定を提供する方法について説明します。"
-ms: xamarin ms. assetid: 50d6e780e768-4の 9361-3af11e56b87b ms. テクノロジ: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 08/07/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: 構成管理
+description: この章では、eShopOnContainers モバイルアプリが構成管理を実装してアプリ設定とユーザー設定を提供する方法について説明します。
+ms.prod: xamarin
+ms.assetid: 50d6e780-e768-47f8-9361-3af11e56b87b
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f6f61503f619c08ed3e4eae2adf6ddb2c474f99f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84571481"
 ---
-
 # <a name="configuration-management"></a>構成管理
 
 設定を使用すると、アプリの動作を構成するデータをコードから分離できるため、アプリを再構築しなくても動作を変更できます。 設定には、アプリ設定とユーザー設定の2種類があります。

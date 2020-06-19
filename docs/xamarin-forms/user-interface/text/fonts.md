@@ -1,8 +1,22 @@
 ---
-title: "フォント内" の Xamarin.Forms 説明: "この記事では、アプリケーションにテキストを表示するコントロールのフォント情報を指定する方法について説明し Xamarin.Forms ます。"
-ms. 製品: xamarin ms. assetid: 49DD2249-C575-41AE-AE06-08F890FD6031: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 04/01/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: フォントXamarin.Forms
+description: この記事では、アプリケーションにテキストを表示するコントロールのフォント情報を指定する方法について説明し Xamarin.Forms ます。
+ms.prod: xamarin
+ms.assetid: 49DD2249-C575-41AE-AE06-08F890FD6031
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/01/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a657915edb41573f9637128b4c88233d58a5909a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572209"
 ---
-
 # <a name="fonts-in-xamarinforms"></a>フォントXamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfonts)

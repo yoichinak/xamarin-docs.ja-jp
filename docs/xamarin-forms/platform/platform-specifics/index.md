@@ -1,8 +1,22 @@
 ---
-title: "プラットフォーム仕様" 説明: "プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、プラットフォーム固有のを使用および作成する方法について説明します。 "
-ms. 製品: xamarin ms. assetid: 4729DB9C-8800-4E29-9D66-3BE13C5F8C94: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 10/01/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: プラットフォーム固有設定
+description: プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、プラットフォーム固有のを使用して作成する方法について説明します。
+ms.prod: xamarin
+ms.assetid: 4729DB9C-8800-4E29-9D66-3BE13C5F8C94
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/01/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8478db85bd9904ee6c5cfeab9b2af390e7d3096d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139504"
 ---
-
 # <a name="platform-specifics"></a>プラットフォーム固有設定
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

@@ -1,8 +1,22 @@
 ---
-タイトル: "Windows プラットフォーム機能" の説明: "この記事では、で使用できる Windows プラットフォームのサポートについて説明 Xamarin.Forms します。"
-ms. 製品: xamarin ms. assetid: F6EA9E49-FB3E-442F-AF13-B7AD0C80D11F: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 01/16/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Windows プラットフォームの機能
+description: この記事では、で使用できる Windows プラットフォームのサポートについて説明 Xamarin.Forms します。
+ms.prod: xamarin
+ms.assetid: F6EA9E49-FB3E-442F-AF13-B7AD0C80D11F
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/16/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 52246ce5d54ba97e91777f598f25c187901f89c4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137775"
 ---
-
 # <a name="windows-platform-features"></a>Windows プラットフォームの機能
 
 Xamarin.FormsWindows プラットフォーム用のアプリケーションを開発するには、Visual Studio が必要です。 [[サポートされているプラットフォーム] ページ](~/get-started/supported-platforms.md)には、前提条件に関する詳細情報が表示されます。
@@ -43,7 +57,7 @@ Xamarin.FormsVisual Studio で使用できるテンプレートには、ユニ�
 > [!NOTE]
 > Xamarin.Forms1.x と2.x のサポート_Windows Phone 8 Silverlight_、 _Windows Phone 8.1_、 _Windows 8.1_アプリケーション開発。 ただし、これらのプロジェクトの種類は非推奨とされます。
 
-## <a name="getting-started"></a>作業の開始
+## <a name="getting-started"></a>はじめに
 
 Visual Studio で [**ファイル] > [新しい > プロジェクト**] の順に選択し、[**クロスプラットフォーム > 空のアプリ ( Xamarin.Forms )** ] テンプレートの1つを選択して開始します。
 

@@ -1,6 +1,21 @@
 ---
-title: " Xamarin.Forms ツールボックスを使用して xaml を編集する" 説明: "xaml ツールボックスには、すべての組み込みレイアウトとコントロールが含まれており、これを開いている xaml ファイルに直接ドラッグできます。"
-ms. 製品: xamarin ms assetid: 513d1247 8-8ad047 611-866031D277CD369E1 ms. テクノロジ: xamarin-forms author: conceptdev ms. author: crdun ms. date: 08/29/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Formsツールボックスを使用して XAML を編集する
+description: XAML ツールボックスには、開いている XAML ファイルに直接ドラッグできる、組み込みのレイアウトとコントロールがすべて含まれています。
+ms.prod: xamarin
+ms.assetid: 513D1247-8AD0-4611-8660-1D277CD369E1
+ms.technology: xamarin-forms
+author: conceptdev
+ms.author: crdun
+ms.date: 08/29/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 76d6a6f39692445f208f250ca7f6141a1e1ad450
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198008"
 ---
 # <a name="xamarinforms-xaml-toolbox"></a>Xamarin.FormsXAML ツールボックス
 

@@ -1,8 +1,22 @@
 ---
-title: "RefreshView Pull Direction on Windows" 説明: "プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、RefreshView のプル方向を変更できるようにする、Windows プラットフォーム固有のを使用する方法について説明します。
-ms. 製品: xamarin ms. assetid: 407A862B-281E-4384-9696-C0655830B84D: xamarin-forms author: davidbritch: dabritch ミリ秒。 date: 09/20/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Windows での RefreshView のプル方向
+description: プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、RefreshView のプル方向を変更できるようにする、Windows プラットフォーム固有のを使用する方法について説明します。
+ms.prod: xamarin
+ms.assetid: 407A862B-281E-4384-9696-C0655830B84D
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/20/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 46a1b4d00b9eea276b9a3b3d5bffbdac3d31e0ef
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136579"
 ---
-
 # <a name="refreshview-pull-direction-on-windows"></a>Windows での RefreshView のプル方向
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms CarouselView scroll" description: "ユーザーがスクロールを開始したときに、スクロールの終了位置を制御して、項目が完全に表示されるようにすることができます。 さらに、CarouselView では、項目をプログラムによってビューにスクロールする2つの ScrollTo メソッドが定義されています。
-ms. 製品: xamarin ms. assetid: 92D7B618-07FA-4343-9D0F-212525E92C39: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 01/28/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsCarouselView スクロール
+description: ユーザーがスクロールを開始しようとしたときに、項目が完全に表示されるように、スクロールの終了位置を制御できます。 さらに、CarouselView は2つの ScrollTo メソッドを定義して、プログラムによって項目をビューにスクロールします。
+ms.prod: xamarin
+ms.assetid: 92D7B618-07FA-4343-9D0F-212525E92C39
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/28/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 462948905f40679e2b931d4aa0039308c64a0a8f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136498"
 ---
-
 # <a name="xamarinforms-carouselview-scrolling"></a>Xamarin.FormsCarouselView スクロール
 
 ![](~/media/shared/preview.png "This API is currently pre-release")

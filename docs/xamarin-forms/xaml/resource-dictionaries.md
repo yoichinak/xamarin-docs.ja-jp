@@ -1,8 +1,23 @@
 ---
-title: " Xamarin.Forms リソースディクショナリ" 説明: " Xamarin.Forms XAML リソースは、アプリケーション全体で共有および再利用できるオブジェクト Xamarin.Forms です。"
-ms. 製品: xamarin ms. assetid: DF103686-4A92-40FA-9CF1-A9376293B13C: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 04/01/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ] ms. custom: video
+title: Xamarin.Formsリソースディクショナリ
+description: Xamarin.FormsXAML リソースは、アプリケーション全体で共有および再利用できるオブジェクトです Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: DF103686-4A92-40FA-9CF1-A9376293B13C
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/01/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.custom: video
+ms.openlocfilehash: a1c7cfd4a0f3549b11ac51dc13b40da552f6b758
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139413"
 ---
-
 # <a name="xamarinforms-resource-dictionaries"></a>Xamarin.Formsリソースディクショナリ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-resourcedictionaries)

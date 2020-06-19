@@ -1,8 +1,23 @@
 ---
-title: "パート 5. データバインディングから MVVM への "説明:" MVVM パターンでは、3つのソフトウェアレイヤー (つまり、ビューと呼ばれる XAML ユーザーインターフェイス) が分離されています。モデルと呼ばれる基になるデータ。ビューとモデルの間には、ビューモデルと呼ばれる中間層があります。
-ms. 製品: xamarin ms. custom: video ms. assetid: 48B37D44-4FB1-41B2-9A5E-6D383B041F81: xamarin-forms author: davidbritch: dabritch ms. date: 10/25/2017 no loc: [ Xamarin.Forms ,、 Xamarin.Essentials ]
+title: 第 5 部 データ バインディングから MVVM まで
+description: MVVM パターンでは、ビューと呼ばれる3つのソフトウェアレイヤー (XAML ユーザーインターフェイス) の分離が適用されます。モデルと呼ばれる基になるデータ。ビューとモデルの間の中間点として、ビューモデルと呼ばれるものがあります。
+ms.prod: xamarin
+ms.custom: video
+ms.assetid: 48B37D44-4FB1-41B2-9A5E-6D383B041F81
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/25/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 047cf963394325e8f88759ffe9da7dcf2ca3ad12
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127531"
 ---
-
 # <a name="part-5-from-data-bindings-to-mvvm"></a>第 5 部 データ バインディングから MVVM まで
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)

@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms AbsoluteLayout" description: "この記事では、AbsoluteLayout クラスを使用して Xamarin.Forms ピクセルに最適な ui を作成する方法について説明します。 このクラスは、独自のサイズと位置または絶対値に比例して子要素を配置し、サイズを調整します。
-ms. 製品: xamarin ms. assetid: 01A5CCE0-AD45-4806-84FD-72C007005B38: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 11/25/2015 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsAbsoluteLayout
+description: この記事では、AbsoluteLayout クラスを使用して、 Xamarin.Forms ピクセルに最適な ui を作成する方法について説明します。 このクラスは、独自のサイズと位置または絶対値に比例して子要素を配置し、サイズを変更します。
+ms.prod: xamarin
+ms.assetid: 01A5CCE0-AD45-4806-84FD-72C007005B38
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/25/2015
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 110b01d6482fbe3e23a772c90194b6bf40d54877
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84570532"
 ---
-
 # <a name="xamarinforms-absolutelayout"></a>Xamarin.FormsAbsoluteLayout
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
@@ -26,7 +40,7 @@ ms. 製品: xamarin ms. assetid: 01A5CCE0-AD45-4806-84FD-72C007005B38: xamarin-f
 
 `AbsoluteLayout`任意の場所の要素をビュー内に配置する必要があり、要素を端に配置するときに特に便利です。
 
-## <a name="usage"></a>使用
+## <a name="usage"></a>使用方法
 
 ### <a name="proportional-layouts"></a>プロポーショナルレイアウト
 

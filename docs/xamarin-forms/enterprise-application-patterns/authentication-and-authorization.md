@@ -1,8 +1,22 @@
 ---
-title: "認証と承認" 説明: "この章では、eShopOnContainers モバイルアプリがコンテナー化されたマイクロサービスに対して認証と承認を実行する方法について説明します。"
-ms. 製品: xamarin ms. assetid: e3f27b4c-f7f5-4839-a48c-30bcb919c59e: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 08/08/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: 認証と承認
+description: この章では、eShopOnContainers モバイルアプリがコンテナー化されたマイクロサービスに対して認証と承認を実行する方法について説明します。
+ms.prod: xamarin
+ms.assetid: e3f27b4c-f7f5-4839-a48c-30bcb919c59e
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/08/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8b712b2a5d7eeb2ee5e71047b9e6c460eb10d72a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573834"
 ---
-
 # <a name="authentication-and-authorization"></a>認証と承認
 
 認証とは、ユーザーからの名前やパスワードなどの id 資格情報を取得し、それらの資格情報を機関に対して検証するプロセスです。 資格情報が有効な場合、資格情報を送信したエンティティは認証済み id と見なされます。 Id が認証されると、その id が特定のリソースにアクセスできるかどうかが承認プロセスによって判断されます。

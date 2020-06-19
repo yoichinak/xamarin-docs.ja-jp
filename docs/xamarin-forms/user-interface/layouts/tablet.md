@@ -1,8 +1,22 @@
 ---
-title: "タブレットアプリとデスクトップアプリのレイアウト" 説明: "この記事では Xamarin.Forms 、スマートフォンではなく、タブレットのアプリケーションレイアウトを最適化する方法について説明します。"
-ms. 製品: xamarin ms. assetid: D62F472B-4345-4983-8403-659A538B591F: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 02/01/2016 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: タブレットアプリとデスクトップアプリのレイアウト
+description: この記事で Xamarin.Forms は、携帯電話ではなくタブレットのアプリケーションレイアウトを最適化する方法について説明します。
+ms.prod: xamarin
+ms.assetid: D62F472B-4345-4983-8403-659A538B591F
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/01/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0ecbc850960465296dc4047277bdafe78ac800a4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573249"
 ---
-
 # <a name="layout-for-tablet-and-desktop-apps"></a>タブレットアプリとデスクトップアプリのレイアウト
 
 Xamarin.Formsサポートされているプラットフォームで使用可能なすべてのデバイスの種類をサポートします。そのため、スマートフォンだけでなく、以下でもアプリを実行できます。

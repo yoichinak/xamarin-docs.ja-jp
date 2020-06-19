@@ -1,8 +1,22 @@
 ---
-title: "ListView セルの外観のカスタマイズ" の説明: "この記事では Xamarin.Forms 、listview コントロールの利便性を活かしながら、アプリケーションにデータを表示するためのオプションについて説明します。"
-ms. 製品: xamarin ms. assetid: FD45CB91-1A8F-46FB-B432-6BC20492E456: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 09/12/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: ListView セルの外観のカスタマイズ
+description: この記事では Xamarin.Forms 、ListView コントロールの利便性を活かしながら、アプリケーションにデータを表示するためのオプションについて説明します。
+ms.prod: xamarin
+ms.assetid: FD45CB91-1A8F-46FB-B432-6BC20492E456
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/12/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: cdede547e3ef7cf9f7b6d89751c7476a2ce66d3d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84129013"
 ---
-
 # <a name="customizing-listview-cell-appearance"></a>ListView セルの外観のカスタマイズ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-customcells)

@@ -1,8 +1,22 @@
 ---
-title: "SkiaSharp のマトリックス変換" の説明: "この記事では、多用途変換行列を使用した SkiaSharp 変換について詳しく説明し、サンプルコードを使用してこれを示します。"
-ms. 製品: xamarin skiasharp: 9EDED6A0-F0BF-4471-A9EF-E0D6C5954AE4 author: davidbritch ms. author: dabritch ms. date: 04/12/2017 no loc: [ Xamarin.Forms ,]」を実行します。 Xamarin.Essentials
+title: SkiaSharp のマトリックス変換
+description: この記事では、汎用性の高い変換マトリックスを使用した SkiaSharp 変換について詳しく説明し、サンプルコードを使用してこれをダイブします。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 9EDED6A0-F0BF-4471-A9EF-E0D6C5954AE4
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/12/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e8d11add988828fa4e26d3f6728dd0b4319b3630
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84133303"
 ---
-
 # <a name="matrix-transforms-in-skiasharp"></a>SkiaSharp のマトリックス変換
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

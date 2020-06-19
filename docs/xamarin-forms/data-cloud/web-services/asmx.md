@@ -1,8 +1,22 @@
 ---
-title: "ASP.NET Web サービス (ASMX) の使用" の説明: "この記事では、アプリケーションから ASMX SOAP サービスを使用する方法を示します Xamarin.Forms 。"
-ms. 製品: xamarin ms. assetid: D5533964-5528-4D35-9C2B-FAFB632472AC: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 04/02/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: ASP.NET Web サービス (ASMX) を使用する
+description: この記事では、アプリケーションから ASMX SOAP サービスを使用する方法について説明し Xamarin.Forms ます。
+ms.prod: xamarin
+ms.assetid: D5533964-5528-4D35-9C2B-FAFB632472AC
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/02/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1f7a0d04d1e7b6abc9931c05c0e46ef49f8ba09c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138464"
 ---
-
 # <a name="consume-an-aspnet-web-service-asmx"></a>ASP.NET Web サービス (ASMX) を使用する
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)

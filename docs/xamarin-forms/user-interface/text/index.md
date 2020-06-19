@@ -1,8 +1,22 @@
 ---
-title: "description in Xamarin.Forms " description: "に Xamarin.Forms は、テキストを操作するための3つの主要なビューがあります。この記事では、アプリケーションにテキストを入力して表示する方法について説明します Xamarin.Forms 。
-ms. 製品: xamarin ms. assetid: 4DBA7689-E5C8-4583-8FB4-02AB208B4416: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 10/26/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: テキストの入力Xamarin.Forms
+description: Xamarin.Formsには、テキストを操作するための3つの主要なビューがあります。この記事では、アプリケーションにテキストを入力して表示する方法について説明し Xamarin.Forms ます。
+ms.prod: xamarin
+ms.assetid: 4DBA7689-E5C8-4583-8FB4-02AB208B4416
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/26/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b44a0b3e3542638874ee366a86967d73c0d53652
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573795"
 ---
-
 # <a name="text-in-xamarinforms"></a>テキストの入力Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)

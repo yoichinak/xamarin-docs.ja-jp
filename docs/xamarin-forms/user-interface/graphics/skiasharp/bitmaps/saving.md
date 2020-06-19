@@ -1,8 +1,22 @@
 ---
-title: "SkiaSharp ビットマップをファイルに保存する" 説明: "ユーザーの写真ライブラリにビットマップを保存するために、SkiaSharp でサポートされているさまざまなファイル形式を調べます。"
-ms. 製品: xamarin ms テクノロジ: skiasharp: 2D696CB6-B31B-42BC-8D3B-11D63B1E7D9C author: davidbritch dabritch: ms. date: 07/10/2018 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
+title: SkiaSharp ビットマップをファイルに保存しています
+description: ユーザーの写真ライブラリにビットマップを保存するために SkiaSharp でサポートされているさまざまなファイル形式について説明します。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 2D696CB6-B31B-42BC-8D3B-11D63B1E7D9C
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/10/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 01f4fcf1953658af44d2a8996913860a3b605abf
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138659"
 ---
-
 # <a name="saving-skiasharp-bitmaps-to-files"></a>SkiaSharp ビットマップをファイルに保存しています
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
@@ -442,7 +456,7 @@ public partial class SaveFileFormatsPage : ContentPage
 
 [**ファイル形式の保存**] ページに保存されるビットマップは、600ピクセルの四角形です。 1ピクセルあたり4バイトで、メモリ内の合計は144万バイトです。 次の表は、ファイル形式と品質のさまざまな組み合わせのファイルサイズを示しています。
 
-|形式|[品質]|サイズ|
+|フォーマット|[品質]|サイズ|
 |------|------:|---:|
 | PNG | 該当なし | 492K |
 | JPEG | 0 | 2.95 k |

@@ -1,8 +1,22 @@
 ---
-タイトル: " Xamarin.Forms マップのピン" の説明: "この記事では、マップにピンを作成する方法について説明 Xamarin.Forms します。"
-ms. 製品: xamarin ms. assetid: F8FC081B-A811-4FBB-B8F8-30D6FD36BD40: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 10/23/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Formsピンのマップ
+description: この記事では、マップにピンを作成する方法について説明 Xamarin.Forms します。
+ms.prod: xamarin
+ms.assetid: F8FC081B-A811-4FBB-B8F8-30D6FD36BD40
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/23/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5e22888291a430863b8e45ee21d359a5acec750f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138438"
 ---
-
 # <a name="xamarinforms-map-pins"></a>Xamarin.Formsピンのマップ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)

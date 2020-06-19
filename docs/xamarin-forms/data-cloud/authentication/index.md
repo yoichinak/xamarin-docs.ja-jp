@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms Web サービス認証" の説明: "このガイドでは、認証サービスをアプリケーションに統合して、 Xamarin.Forms ユーザーが自分のデータにアクセスするだけでバックエンドを共有できるようにする方法について説明します。"
-ms. 製品: xamarin ms. assetid: E6FCFAE1-4F83-4F93-9190-EC5290360C54: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 06/27/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsWeb サービス認証
+description: このガイドでは、認証サービスをアプリケーションに統合して、 Xamarin.Forms ユーザーが自分のデータにアクセスするだけでバックエンドを共有できるようにする方法について説明します。
+ms.prod: xamarin
+ms.assetid: E6FCFAE1-4F83-4F93-9190-EC5290360C54
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/27/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 59130739617f38ce32e0d241f8e068cf077997ac
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136085"
 ---
-
 # <a name="xamarinforms-web-service-authentication"></a>Xamarin.FormsWeb サービス認証
 
 ## <a name="authenticate-a-restful-web-service"></a>[RESTful Web サービスを認証する](rest.md)

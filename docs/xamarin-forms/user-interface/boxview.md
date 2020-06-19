@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms boxview" description: "この記事では、アプリケーションでの装飾、グラフィックス、および対話に色付きの四角形を使用する方法について説明 Xamarin.Forms します。"
-ms. 製品: xamarin ms. assetid: 4CBF703D-84A0-4CDF-A433-5926B587782A: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 07/26/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsBoxView
+description: この記事では、アプリケーションでの装飾、グラフィックス、および対話に色付きの四角形を使用する方法について説明し Xamarin.Forms ます。
+ms.prod: xamarin
+ms.assetid: 4CBF703D-84A0-4CDF-A433-5926B587782A
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/26/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 06f1813bafb34a9c32603490e66f8caa6c6a6a22
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573821"
 ---
-
 # <a name="xamarinforms-boxview"></a>Xamarin.FormsBoxView
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)

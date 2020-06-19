@@ -1,8 +1,23 @@
 ---
-title: " Xamarin.Forms XAML の基礎" の説明: "このガイドでは、モバイルデバイス用のクロスプラットフォーム XAML の使用を開始する方法について説明します。 XAML を使用すると、開発者は Xamarin.Forms コードではなくマークアップを使用して、アプリケーションでユーザーインターフェイスを定義できます。 "
-ms. 製品: xamarin ms. custom: video ms. assetid: 67CC2CD6-D10A-4B14-9696-1D3A410EFFBF: xamarin-forms author: davidbritch: dabritch ms. date: 10/25/2017 no loc: [ Xamarin.Forms ,、 Xamarin.Essentials ]
+title: Xamarin.FormsXAML の基礎
+description: このガイドでは、モバイルデバイス用のクロスプラットフォーム XAML の使用を開始する方法について説明します。 XAML を使用すると、開発者は Xamarin.Forms コードではなくマークアップを使用して、アプリケーションのユーザーインターフェイスを定義できます。
+ms.prod: xamarin
+ms.custom: video
+ms.assetid: 67CC2CD6-D10A-4B14-9696-1D3A410EFFBF
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/25/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8f5f69038f7d5cfe7ad46f013acb1519c4e9569f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138620"
 ---
-
 # <a name="xamarinforms-xaml-basics"></a>Xamarin.FormsXAML の基礎
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
@@ -37,7 +52,7 @@ XAML は基本的に XML ですが、XAML にはいくつかの固有の構文�
 
 これらの機能は XML 拡張機能では*ありません*。 XAML は完全に有効な XML です。 ただし、これらの XAML 構文機能では、一意の方法で XML を使用します。 これらの詳細については、以下の記事で詳しく説明します。これについては、MVVM を実装するための XAML の使用の概要について説明します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 この記事では、に関する知識があることを前提としてい Xamarin.Forms ます。 また、この記事では、xml 名前空間宣言の使用方法、*要素*、*タグ*、*属性*などの xml について理解していることも前提としています。
 

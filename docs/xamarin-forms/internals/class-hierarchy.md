@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms コントロールクラス階層" の説明: "開発者は、アプリケーションのユーザーインターフェイスを作成するために使用される型の階層について理解している必要があり Xamarin.Forms ます。"
-ms. 製品: xamarin ms. assetid: C89E6B98-464D-4BBE-BF11-13A5FCBBF420: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 01/07/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Formsコントロールクラスの階層構造
+description: 開発者は、アプリケーションのユーザーインターフェイスを作成するために使用される型の階層について理解している必要があり Xamarin.Forms ます。
+ms.prod: xamarin
+ms.assetid: C89E6B98-464D-4BBE-BF11-13A5FCBBF420
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/07/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0087e2bb81c7c9204a782519a9eeb9891adc297a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138641"
 ---
-
 # <a name="xamarinforms-controls-class-hierarchy"></a>Xamarin.Formsコントロールクラスの階層構造
 
 Xamarin.Formsは、複数の名前空間に対して数百の型で構成されています。 開発者は、 Xamarin.Forms 名前空間に存在するアプリケーションのユーザーインターフェイスを作成するために使用される型の階層を最もよく理解している必要があり `Xamarin.Forms` ます。

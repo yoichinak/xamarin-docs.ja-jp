@@ -1,8 +1,23 @@
 ---
-title: "XAML コントロール" の説明: "で定義されているすべてのビューを Xamarin.Forms xaml ファイルから参照できます。"
-ms. トピック: 記事 639BD392-1496-41BB-BB09-7652273AC9D8: xamarin ms. assetid:: xamarin-forms author: davidbritch: dabritch ミリ秒: ms. date: 04/17/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: XAML コントロール
+description: 「」で定義されているすべてのビューは、 Xamarin.Forms XAML ファイルから参照できます。
+ms.topic: article
+ms.prod: xamarin
+ms.assetid: 639BD392-1496-41BB-BB09-7652273AC9D8
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/17/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 445ef85f661d945bda25203f35dea787e64dc9b0
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138425"
 ---
-
 # <a name="xaml-controls"></a>XAML コントロール
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)

@@ -1,8 +1,22 @@
 ---
-title: "ファイルの処理" の説明: "ファイルの処理は、 Xamarin.Forms Xamarin.Forms .NET Standard ライブラリのコードを使用するか、埋め込みリソースを使用することによって実現できます。"
-ms. 製品: xamarin ms. assetid: 9987C3F6-5F04-403B-BBB4-ECB024EA6CC8: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 06/21/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: ファイルの処理Xamarin.Forms
+description: を使用したファイル処理は Xamarin.Forms 、.NET Standard ライブラリのコードを使用するか、埋め込みリソースを使用して実現できます。
+ms.prod: xamarin
+ms.assetid: 9987C3F6-5F04-403B-BBB4-ECB024EA6CC8
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/21/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f62e5522b5b9a10a3806a70fe949561d77ce0d4e
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84574354"
 ---
-
 # <a name="file-handling-in-xamarinforms"></a>ファイルの処理Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)

@@ -1,8 +1,22 @@
 ---
-title: "レイアウトの選択 Xamarin.Forms " の説明: " Xamarin.Forms レイアウトクラスを使用すると、アプリケーションで UI コントロールを配置したりグループ化したりできます。"
-ms. 製品: xamarin ms. assetid: 05A39752-A174-447E-A30D-3CC9EF98CB96: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 08/21/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: レイアウトの選択 Xamarin.Forms
+description: Xamarin.Formsレイアウトクラスを使用すると、アプリケーションに UI コントロールを配置してグループ化できます。
+ms.prod: xamarin
+ms.assetid: 05A39752-A174-447E-A30D-3CC9EF98CB96
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/21/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 16a48423d05ce1cede75c0020bf18f4f398f5adc
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138503"
 ---
-
 # <a name="choose-a-xamarinforms-layout"></a>レイアウトの選択 Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)

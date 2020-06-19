@@ -1,8 +1,22 @@
 ---
-title: "XAML コンパイルの Xamarin.Forms " 説明: "この記事では、xaml Xamarin.Forms コンパイラ (XAMLC) を使用して、必要に応じて、xaml を中間言語 (IL) に直接コンパイルする方法について説明します。
-ms. 製品: xamarin ms. assetid: 9A2D10A6-5DFC-485F-A75A-2F7B98314025: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 08/22/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: XAML のコンパイルXamarin.Forms
+description: この記事では、xaml コンパイラ (XAMLC) を使用して、必要に応じて、XAML を中間言語 (IL) に直接コンパイルする方法について説明し Xamarin.Forms ます。
+ms.prod: xamarin
+ms.assetid: 9A2D10A6-5DFC-485F-A75A-2F7B98314025
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/22/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: eebbb3040175118320639bcb4482ec77b5c16ac7
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137294"
 ---
-
 # <a name="xaml-compilation-in-xamarinforms"></a>XAML のコンパイルXamarin.Forms
 
 _XAML は任意で、XAML コンパイラ (XAMLC) を利用し、中間言語 (IL) に直接コンパイルできます。_

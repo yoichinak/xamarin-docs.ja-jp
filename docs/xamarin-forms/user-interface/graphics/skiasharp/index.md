@@ -1,8 +1,21 @@
 ---
-title: "SkiaSharp Graphics in Xamarin.Forms " description: "SkiaSharp は、Google 製品で幅広く使用されているオープンソース Skia グラフィックスエンジンを搭載した .net および C# 用の2d グラフィックスシステムです。 このガイドでは、アプリケーションで SkiaSharp を2D グラフィックスに使用する方法について説明 Xamarin.Forms します。 "
-ms. 製品: xamarin ms. assetid: 2C348BEA-81DF-4794-8857-EB1DFF5E11DB author: davidbritch ミリ秒: dabritch ms. date: 09/11/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: SkiaSharp のグラフィックXamarin.Forms
+description: SkiaSharp は、Google 製品で幅広く使用されているオープンソース Skia グラフィックスエンジンを搭載した .NET および C# 用の2D グラフィックスシステムです。 このガイドでは、アプリケーションで SkiaSharp を2D グラフィックスに使用する方法について説明し Xamarin.Forms ます。
+ms.prod: xamarin
+ms.assetid: 2C348BEA-81DF-4794-8857-EB1DFF5E11DB
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/11/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 855bd0d357950b019487b3ea05e379915f54b9d4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127635"
 ---
-
 # <a name="skiasharp-graphics-in-xamarinforms"></a>SkiaSharp のグラフィックXamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

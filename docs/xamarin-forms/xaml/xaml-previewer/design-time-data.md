@@ -1,8 +1,22 @@
 ---
-title: "XAML プレビューアーでデザイン時データを使用する" 説明: "この記事では、デザイン時データを使用して、アプリを実行せずに XAML プレビューアーにデータを多用したレイアウトを表示する方法について説明します。"
-ms. 製品: xamarin ms. assetid: 0F608019-5951-4BE6-80E0-9EEE1733D642: xamarin-forms author: maddyleger1 ms. author: 悪意のある日: 03/27/2019 の場所: [ Xamarin.Forms ,、 Xamarin.Essentials ]
+title: XAML プレビューアーでデザイン時データを使用する
+description: この記事では、デザイン時データを使用して、アプリを実行せずに XAML プレビューアーにデータを多用するレイアウトを表示する方法について説明します。
+ms.prod: xamarin
+ms.assetid: 0F608019-5951-4BE6-80E0-9EEE1733D642
+ms.technology: xamarin-forms
+author: maddyleger1
+ms.author: maleger
+ms.date: 03/27/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 182256fd572a370a7b322898b1e24ade12e971fd
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127368"
 ---
-
 # <a name="use-design-time-data-with-the-xaml-previewer"></a>XAML プレビューアーでデザイン時データを使用する
 
 _一部のレイアウトでは、データなしで視覚化するのが困難です。これらのヒントを使用すると、データの多いページを XAML プレビューアーで最大限にプレビューすることができます。_
@@ -124,7 +138,7 @@ xmlns:models="clr-namespace:Monkeys.Models"
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 
-### <a name="requirements"></a>必要条件
+### <a name="requirements"></a>要件
 
 デザイン時データには、3.6 の最小バージョンが必要です Xamarin.Forms 。
 

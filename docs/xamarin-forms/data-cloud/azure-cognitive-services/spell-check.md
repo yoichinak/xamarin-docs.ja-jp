@@ -1,8 +1,22 @@
 ---
-title: "Bing Spell Check API を使用したスペルチェック" 説明: "Bing Spell Check では、テキストのコンテキストスペルチェックが実行され、スペルミスの単語に対してインラインでの候補が提供されます。 この記事では、Bing Spell Check REST API を使用して、アプリケーションのスペルミスを修正する方法について説明 Xamarin.Forms します。
-ms. 製品: xamarin ms. assetid: B40EB103-FDC0-45C6-9940-FB4ACDC2F4F9: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 02/08/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Bing Spell Check API を使用したスペルチェック
+description: Bing Spell Check は、テキストに対して文脈によるスペルチェックを実行し、スペルミスの語句にインラインでの候補を提供します。 この記事では、Bing Spell Check REST API を使用して、アプリケーションのスペルミスを修正する方法について説明し Xamarin.Forms ます。
+ms.prod: xamarin
+ms.assetid: B40EB103-FDC0-45C6-9940-FB4ACDC2F4F9
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/08/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1703f0049408381a86da73fb28696ef8708cc790
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139296"
 ---
-
 # <a name="spell-checking-using-the-bing-spell-check-api"></a>Bing Spell Check API を使用したスペルチェック
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)

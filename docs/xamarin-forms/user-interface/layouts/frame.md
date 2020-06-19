@@ -1,6 +1,21 @@
 ---
-title: " Xamarin.Forms frame" description: " Xamarin.Forms frame クラスは、色、影、およびその他のオプションを使用して構成できる境界線を持つビューまたはレイアウトをラップするために使用されるレイアウトです。"
-ms. 製品: xamarin ms. assetId: 4E074714-0928-41C8-A468-B60E23236A8C: xamarin-forms author: profexorgeek ms. author: jusjohns ms. date: 08/06/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Formsフレーム
+description: Xamarin.FormsFrame クラスは、色、影、およびその他のオプションを使用して構成できる境界線を持つビューまたはレイアウトをラップするために使用されるレイアウトです。
+ms.prod: xamarin
+ms.assetId: 4E074714-0928-41C8-A468-B60E23236A8C
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 08/06/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 42192111befbefda7e0f62b7691a8392c2828818
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137190"
 ---
 # <a name="xamarinforms-frame"></a>Xamarin.Formsフレーム
 

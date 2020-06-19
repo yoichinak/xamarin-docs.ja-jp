@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms レイアウト" の説明: " Xamarin.Forms レイアウトは、ビジュアル構造にユーザーインターフェイスコントロールを作成するために使用されます。 この記事では、に含まれるレイアウトの一覧を示し Xamarin.Forms ます。
-ms. 製品: xamarin ms. assetid: F4180997-BA21-453A-9958-D1E2940DF050 davidbritch: xamarin-forms author:: dabritch ms. date: 05/21/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Formsレイアウト
+description: Xamarin.Formsレイアウトは、ビジュアル構造にユーザーインターフェイスコントロールを作成するために使用されます。 この記事では、に含まれているレイアウトの一覧を示し Xamarin.Forms ます。
+ms.prod: xamarin
+ms.assetid: F4180997-BA21-453A-9958-D1E2940DF050
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/21/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 751a004e0051fcbfd0592654b0e73f26874b15d3
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84567087"
 ---
-
 # <a name="xamarinforms-layouts"></a>Xamarin.Formsレイアウト
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)

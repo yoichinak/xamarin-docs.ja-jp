@@ -1,8 +1,22 @@
 ---
-title: "3 種類のベジエ曲線" の説明: "この記事では、SkiaSharp を使用して、アプリケーションで3次ベジエ曲線および円錐ベジエ曲線を描画する方法について説明 Xamarin.Forms し、サンプルコードを使用してこれを示します。"
-ms. 製品: xamarin ms テクノロジ: skiasharp: 8FE0F6DC-16BC-435F-9626-DD1790C0145A author: davidbritch ms. author: dabritch ms. date: 05/25/2017 no loc: [, & # 3. Xamarin.Forms Xamarin.Essentials
+title: 3 つの種類のベジエ曲線
+description: この記事では、SkiaSharp を使用して、アプリケーションで3次ベジエ曲線および円錐ベジエ曲線をレンダリングする方法について説明 Xamarin.Forms し、サンプルコードを使用してこれを示します。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/25/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1ad548846500ccbacc2a3d117919bfb4df1a1d79
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138685"
 ---
-
 # <a name="three-types-of-bzier-curves"></a>3 つの種類のベジエ曲線
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

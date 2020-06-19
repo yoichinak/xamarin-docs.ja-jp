@@ -1,8 +1,22 @@
 ---
-title: "XAML のネイティブビュー" 説明: "iOS、Android、およびユニバーサル Windows プラットフォームからのネイティブビューを xaml ファイルから直接参照でき Xamarin.Forms ます。 プロパティとイベントハンドラーはネイティブビューで設定でき、ビューと対話でき Xamarin.Forms ます。 この記事では、XAML ファイルからネイティブビューを使用する方法について説明 Xamarin.Forms します。 "
-ms. 製品: xamarin ms. assetid: 7A856D31-B300-409E-9AEB-F8A4DB99B37E: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 03/23/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: XAML のネイティブ ビュー
+description: IOS、Android、およびユニバーサル Windows プラットフォームからのネイティブビューは、XAML ファイルから直接参照でき Xamarin.Forms ます。 プロパティとイベントハンドラーはネイティブビューで設定でき、ビューと対話でき Xamarin.Forms ます。 この記事では、XAML ファイルからネイティブビューを使用する方法について説明 Xamarin.Forms します。
+ms.prod: xamarin
+ms.assetid: 7A856D31-B300-409E-9AEB-F8A4DB99B37E
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/23/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0d6aa84a886d450d1dc42ec31edf16380b795404
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84564642"
 ---
-
 # <a name="native-views-in-xaml"></a>XAML のネイティブ ビュー
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)

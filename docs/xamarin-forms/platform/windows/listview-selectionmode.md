@@ -1,8 +1,22 @@
 ---
-title: "ListView の Windows 上での SelectionMode" の説明: "プラットフォームの詳細" を使用すると、カスタムレンダラーや特殊効果を実装しなくても、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、ListView の項目がタップジェスチャに応答できるかどうかを制御する、Windows プラットフォーム固有のを使用する方法について説明します。
-ms. 製品: xamarin ms. assetid: 57EF3A7F-1407-4B31-AE21-D149293D4228: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 10/24/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Windows 上の ListView の SelectionMode
+description: プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、ListView の項目がタップジェスチャに応答できるかどうかを制御する、Windows プラットフォーム固有のを使用する方法について説明します。
+ms.prod: xamarin
+ms.assetid: 57EF3A7F-1407-4B31-AE21-D149293D4228
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/24/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 6c73f46d2845be7bb54e24cd02ec22f3c2cd386d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137249"
 ---
-
 # <a name="listview-selectionmode-on-windows"></a>Windows 上の ListView の SelectionMode
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

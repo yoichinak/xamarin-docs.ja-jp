@@ -1,8 +1,22 @@
 ---
-title: "SkiaSharp でのフィンガーペイント" の説明: "この記事では、指を使用してアプリケーションの SkiaSharp canvas で描画する方法について説明 Xamarin.Forms し、サンプルコードを使用してこれを示します。"
-ms. 製品: xamarin ms テクノロジ: skiasharp: 56929D74-8F2C-44C6-90E6-3FBABCDC0A4B author: davidbritch dabritch: ms. date: 04/05/2017 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
+title: SkiaSharp での指描画
+description: この記事では、指を使用してアプリケーションの SkiaSharp キャンバス上に描画する方法について説明し、サンプルコードを使用してその方法を Xamarin.Forms 示します。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 56929D74-8F2C-44C6-90E6-3FBABCDC0A4B
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/05/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 61ae651a2402204f69f642235d74d8d641b47988
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139023"
 ---
-
 # <a name="finger-painting-in-skiasharp"></a>SkiaSharp での指描画
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

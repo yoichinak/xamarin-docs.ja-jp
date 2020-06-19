@@ -1,8 +1,22 @@
 ---
-title: "Tizen .NET" description: "Tizen .NET では、Tizen オペレーティングシステム用のアプリケーションを開発できます。これは、テレビ、ウェアラブル、モバイルデバイス、その他の IoT デバイスを含む Samsung デバイスで実行されます。"
-ms. 製品: xamarin ms. assetid: 5a22a354a4dd480d01-6D0C38592E55 ミリ秒。テクノロジ: xamarin-forms author: davidbritch: dabritch:: 09/26/2018 no loc: [,、します。 Xamarin.Forms Xamarin.Essentials
+title: Tizen .NET
+description: Tizen .NET を使用すると、Tizen オペレーティングシステム用のアプリケーションを開発できます。これは、テレビ、ウェアラブル、モバイルデバイス、その他の IoT デバイスを含む Samsung デバイスで実行されます。
+ms.prod: xamarin
+ms.assetid: 5A22A354-A4DD-480D-A1BB-6D0C38592E55
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/26/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 873e243be3b90023ac8f58c2a29df89806b22658
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139517"
 ---
-
 # <a name="tizen-net"></a>Tizen .NET
 
 _Tizen .NET を使用すると、Tv、ウェアラブル、モバイルデバイス、その他の IoT デバイスなど、Samsung デバイスで実行する Tizen アプリケーションを開発できます。_

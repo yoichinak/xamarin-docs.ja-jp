@@ -1,8 +1,22 @@
 ---
-title: "SVG Path Data in SkiaSharp" description: "この記事では、スケーラブルなベクターグラフィックス形式でテキスト文字列を使用して SkiaSharp パスを定義する方法について説明し、サンプルコードを使用してこれを示します。"
-skiasharp: xamarin ms テクノロジ: xamarin-ms. assetid: 1D53067B89D-7EC496901AE2 author: davidbritch ms. author: dabritch ms. date: 05/24/2017 no loc: [,、していません。 Xamarin.Forms Xamarin.Essentials ]
+title: SkiaSharp の SVG パスデータ
+description: この記事では、スケーラブルなベクターグラフィックス形式でテキスト文字列を使用して SkiaSharp パスを定義する方法について説明し、サンプルコードを使用してこれを示します。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 1D53067B-3502-4D74-B89D-7EC496901AE2
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/24/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 680c924280f8f3a6080b2fcc1968ecaf308f33a0
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138061"
 ---
-
 # <a name="svg-path-data-in-skiasharp"></a>SkiaSharp の SVG パスデータ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

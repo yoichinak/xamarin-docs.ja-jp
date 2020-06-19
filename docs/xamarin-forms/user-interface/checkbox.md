@@ -1,8 +1,22 @@
 ---
-タイトル: " Xamarin.Forms checkbox" 説明: " Xamarin.Forms チェックボックスは、チェックするか空にすることができるボタンの一種です。 チェックボックスがオンになっている場合は、オンになっていると見なされます。 チェックボックスが空の場合は、オフになっていると見なされます。 "
-ms. 製品: xamarin ms. assetid: B8B9268B-BCB8-42B9-B08C-C0F22C137238: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 06/11/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsCheckBox
+description: Xamarin.Formsチェックボックスは、チェックまたは空にすることができるボタンの種類です。 チェックボックスがオンになっている場合は、オンになっていると見なされます。 チェックボックスが空の場合は、オフになっていると見なされます。
+ms.prod: xamarin
+ms.assetid: B8B9268B-BCB8-42B9-B08C-C0F22C137238
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/11/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8399dde2e4e2c9fb53b38fca2923eb0e3bfc6ce3
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136475"
 ---
-
 # <a name="xamarinforms-checkbox"></a>Xamarin.FormsCheckBox
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos/)

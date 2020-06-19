@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms マップの位置と距離" の説明: "the Xamarin.Forms .Maps 名前空間には、マップとそのピンを配置するときに通常使用される位置構造体と、マップを配置するときに必要に応じて使用できる距離構造体が含まれます。
-ms. 製品: xamarin ms. assetid: 2F4EA3D2-1351-40AD-A71D-CF7F1F18F1E8: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 03/10/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Formsマップの位置と距離
+description: Xamarin.Forms。Maps 名前空間には、マップとそのピンを配置するときに通常使用される位置構造体と、マップを配置するときに必要に応じて使用できる距離構造体が含まれます。
+ms.prod: xamarin
+ms.assetid: 2F4EA3D2-1351-40AD-A71D-CF7F1F18F1E8
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/10/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2b1613789029d59e46a6d0431bfa9da1a53082e8
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138399"
 ---
-
 # <a name="xamarinforms-map-position-and-distance"></a>Xamarin.Formsマップの位置と距離
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)

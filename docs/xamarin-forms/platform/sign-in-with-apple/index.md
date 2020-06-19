@@ -1,8 +1,22 @@
 ---
-title: "Apple でのサインイン" の説明: "Apple でサインインする Xamarin.Forms と、ユーザーの id 保護が提供され、のクロスプラットフォームモバイルシナリオ用に実装でき Xamarin.Forms ます。"
-ms. 製品: xamarin ms. assetid: 414465F8-0CC8-4078-B3D1-F36983069658: xamarin-forms author: davidortinau ms. author: da/tin ms. date: 09/10/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: で Apple によるサインインXamarin.Forms
+description: Apple でサインインすると、ユーザーの id 保護が提供され、のクロスプラットフォームモバイルシナリオ用に実装でき Xamarin.Forms ます。
+ms.prod: xamarin
+ms.assetid: 414465F8-0CC8-4078-B3D1-F36983069658
+ms.technology: xamarin-forms
+author: davidortinau
+ms.author: daortin
+ms.date: 09/10/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 84c7fdef5d12dfe6fca6294b3125e90761349002
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139452"
 ---
-
 # <a name="sign-in-with-apple-in-xamarinforms"></a>で Apple によるサインインXamarin.Forms
 
 Apple でサインインすると、ユーザーの id 保護を提供する新しいサービスが導入されます。 IOS 13 Apple では、サードパーティの認証プロバイダーを使用するすべてのアプリで、Apple でのサインインも提供する必要があります。 Xamarin. iOS でこの機能を使用する手順については、[こちらを参照](~/ios/platform/ios13/sign-in.md)してください。

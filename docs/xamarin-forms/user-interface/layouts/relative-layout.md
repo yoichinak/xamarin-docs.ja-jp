@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms RelativeLayout" description: "この記事では、RelativeLayout クラスを使用して、 Xamarin.Forms 任意の画面サイズに合わせてスケーリングする ui を作成する方法について説明します。"
-ms. 製品: xamarin ms. assetid: 2530BCB8-01B8-4C4F59: davidbritch: dabritch: ms. date: 11/25/2015 no loc: [,] という形式で作成していることをご紹介しています。 Xamarin.Forms Xamarin.Essentials
+title: Xamarin.FormsRelativeLayout
+description: この記事では、RelativeLayout クラスを使用して、 Xamarin.Forms 任意の画面サイズに合わせてスケーリングする ui を作成する方法について説明します。
+ms.prod: xamarin
+ms.assetid: 2530BCB8-01B8-4C4F-BF14-CA53659F1B5A
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/25/2015
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f250b109f759bcf6bb7fa4ac0573743ac12c4bc1
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127193"
 ---
-
 # <a name="xamarinforms-relativelayout"></a>Xamarin.FormsRelativeLayout
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
@@ -17,7 +31,7 @@ ms. 製品: xamarin ms. assetid: 2530BCB8-01B8-4C4F59: davidbritch: dabritch: ms
 
 ![](relative-layout-images/flag.png "RelativeLayout Exploration")
 
-## <a name="usage"></a>使用
+## <a name="usage"></a>使用方法
 
 ### <a name="understanding-constraints"></a>制約について
 

@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms スタイルクラス" 説明: "スタイルクラスを使用すると、スタイルの Xamarin.Forms 継承を使用せずに、コントロールに複数のスタイルを適用できます。"
-ms. 製品: xamarin ms. assetid: 4762401E-2B48-48F1-B6E4-61F7AF8AA46F: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 01/30/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Forms のスタイル クラス
+description: Xamarin.Formsスタイルクラスを使用すると、スタイルの継承を使用せずに、コントロールに複数のスタイルを適用できます。
+ms.prod: xamarin
+ms.assetid: 4762401E-2B48-48F1-B6E4-61F7AF8AA46F
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/30/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2afb06c2d97e6f15c2041b9c2e9cad092b13d90d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138763"
 ---
-
 # <a name="xamarinforms-style-classes"></a>Xamarin.Forms のスタイル クラス
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)

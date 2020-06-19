@@ -1,8 +1,22 @@
 ---
-title: 「電子ブックを使用したエンタープライズアプリケーションパターン Xamarin.Forms 」 description: "この eBook は、柔軟で保守性の高い、テスト可能なエンタープライズアプリケーションを開発するためのアーキテクチャガイダンスを提供 Xamarin.Forms します。"
-6175-4223 28cfed6c: xamarin ms. assetid: a8cc: 798d40bf0832: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 08/07/2017 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
+title: Xamarin.Forms 電子ブックを使用するエンタープライズ アプリケーション パターン
+description: この電子ブックでは、柔軟で保守性の高い、テスト可能なエンタープライズアプリケーションを開発するためのアーキテクチャガイダンスを提供し Xamarin.Forms ます。
+ms.prod: xamarin
+ms.assetid: 28cfed6c-6175-4223-a8cc-798d40bf0832
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: cc0f98d94c76ff63e7a002dfb92b51eae153d7b4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139400"
 ---
-
 # <a name="enterprise-application-patterns-using-xamarinforms-ebook"></a>Xamarin.Forms 電子ブックを使用するエンタープライズ アプリケーション パターン
 
 _適応性、保守性、およびテスト可能なエンタープライズアプリケーションを開発するためのアーキテクチャガイダンス Xamarin.Forms_

@@ -1,8 +1,22 @@
 ---
-title: "変換変換" の説明: "この記事では、変換変換を使用してアプリケーションで SkiaSharp グラフィックスをシフトする方法につい Xamarin.Forms て説明し、サンプルコードを使用してこれを示します。"
-ms. 製品: xamarin ms テクノロジ: skiasharp: BD28ADA1-49F9-44E2-A548-46024A29882F author: davidbritch dabritch: ms. date: 03/10/2017 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
+title: 平行移動変換
+description: この記事では、変換変換を使用してアプリケーションで SkiaSharp グラフィックスをシフトする方法につい Xamarin.Forms て説明し、サンプルコードを使用してこれを示します。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: BD28ADA1-49F9-44E2-A548-46024A29882F
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/10/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0eb3b4a6b37d59363984c9248cc39de91a6819e0
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138256"
 ---
-
 # <a name="the-translate-transform"></a>平行移動変換
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

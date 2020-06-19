@@ -1,8 +1,22 @@
 ---
-title: "VisualElement Drop Shadows on iOS" の説明: "プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装しなくても、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、VisualElement でドロップシャドウを有効にする iOS プラットフォーム固有のを使用する方法について説明します。
-ms. 製品: xamarin ms. assetid: 2147FD66-058E-4BE5-840A-369842B26EC4: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 10/24/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: IOS の VisualElement ドロップシャドウ
+description: プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、VisualElement でドロップシャドウを有効にする iOS プラットフォーム固有のを使用する方法について説明します。
+ms.prod: xamarin
+ms.assetid: 2147FD66-058E-4BE5-840A-369842B26EC4
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/24/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7410386e10f605fdeed452fe37755c1e48e6b9b9
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136995"
 ---
-
 # <a name="visualelement-drop-shadows-on-ios"></a>IOS の VisualElement ドロップシャドウ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

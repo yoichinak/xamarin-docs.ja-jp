@@ -1,8 +1,22 @@
 ---
-title: "選択項目の iOS での選択" の説明: "プラットフォームの詳細" を使用すると、カスタムレンダラーや特殊効果を実装しなくても、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、ピッカーで項目の選択が行われるタイミングを制御する iOS プラットフォーム固有のを使用する方法について説明します。
-ms. 製品: xamarin ms. assetid: 26B0604A-BD30-49FD-83A6-F0EDFBB0524B: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 10/24/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: IOS でのピッカー項目の選択
+description: プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、ピッカーで項目の選択が行われるタイミングを制御する iOS プラットフォーム固有のを使用する方法について説明します。
+ms.prod: xamarin
+ms.assetid: 26B0604A-BD30-49FD-83A6-F0EDFBB0524B
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/24/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 75ef118b642a8c6a66205c6f7e3bc03089c6593c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127895"
 ---
-
 # <a name="picker-item-selection-on-ios"></a>IOS でのピッカー項目の選択
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

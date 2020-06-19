@@ -1,8 +1,22 @@
 ---
-title: "コントロールリファレンス" description: "アプリケーションの構築に使用されるすべてのユーザーインターフェイス要素の説明。 Xamarin.Forms この記事では、アプリケーションのユーザーインターフェイスを構成するコントロールグループの一覧を示し Xamarin.Forms ます。
-ms. 製品: xamarin ms. assetid: F2A02DEE-7137-42F4-9C0A-4E1CF75EA08F: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 08/08/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: コントロールのリファレンス
+description: アプリケーションの構築に使用されるすべてのユーザーインターフェイス要素の説明 Xamarin.Forms 。 この記事では、アプリケーションのユーザーインターフェイスを構成するコントロールグループの一覧を示し Xamarin.Forms ます。
+ms.prod: xamarin
+ms.assetid: F2A02DEE-7137-42F4-9C0A-4E1CF75EA08F
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/08/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e843f0e42f4f66a6ce4e60c2f5d8a233d19f1df6
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136397"
 ---
-
 # <a name="controls-reference"></a>コントロールのリファレンス
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery/)

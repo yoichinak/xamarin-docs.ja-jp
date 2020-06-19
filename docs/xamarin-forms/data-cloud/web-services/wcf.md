@@ -1,8 +1,22 @@
 ---
-title: "Windows Communication Foundation (WCF) Web サービスの使用" の説明: "この記事では、アプリケーションから WCF Simple Object Access Protocol (SOAP) サービスを使用する方法について説明 Xamarin.Forms します。"
-ms. 製品: xamarin ms. assetid: 5696FF04-EF21-4B7A-8C8B-26DE28B5C0AD: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 03/28/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Windows Communication Foundation (WCF) Web サービスを使用する
+description: この記事では、アプリケーションから WCF Simple Object Access Protocol (SOAP) サービスを使用する方法について説明し Xamarin.Forms ます。
+ms.prod: xamarin
+ms.assetid: 5696FF04-EF21-4B7A-8C8B-26DE28B5C0AD
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/28/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: cf95427807e0179a608b428bc7e02499c9616fe7
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139153"
 ---
-
 # <a name="consume-a-windows-communication-foundation-wcf-web-service"></a>Windows Communication Foundation (WCF) Web サービスを使用する
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todowcf)

@@ -1,8 +1,22 @@
 ---
-title: "c# のネイティブビュー" 説明: "iOS、Android、UWP からのネイティブビューは、 Xamarin.Forms c# を使用して作成されたページから直接参照できます。 この記事では、 Xamarin.Forms C# を使用して作成されたレイアウトにネイティブビューを追加する方法と、カスタムビューのレイアウトをオーバーライドして、その測定 API の使用を修正する方法について説明します。
-ms. 製品: xamarin ms. assetid: 230F937C-F914-4B21-8EA1-1A2A9E644769: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 04/27/2016 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: C# のネイティブ ビュー
+description: IOS、Android、UWP のネイティブビューは、 Xamarin.Forms C# を使用して作成されたページから直接参照できます。 この記事では、 Xamarin.Forms C# を使用して作成されたレイアウトにネイティブビューを追加する方法と、カスタムビューのレイアウトをオーバーライドして、その測定 API の使用状況を修正する方法について説明します。
+ms.prod: xamarin
+ms.assetid: 230F937C-F914-4B21-8EA1-1A2A9E644769
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/27/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 18cdeccbdff86a6b20aab4b33db259f1f06ee096
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139595"
 ---
-
 # <a name="native-views-in-c"></a>C のネイティブビュー\#
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeembedding)

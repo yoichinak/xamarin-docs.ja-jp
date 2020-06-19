@@ -1,8 +1,22 @@
 ---
-title: "Margin and Padding" description: "Margin プロパティと Padding プロパティは、要素がユーザーインターフェイスに表示されるときのレイアウト動作を制御します。 この記事では、2つのプロパティの違いとその設定方法について説明します。
-ms. 製品: xamarin ms. assetid: BEB096BB-51DF-410F-B0F1-D235287B0F4A: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 04/27/2016 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: 余白とスペース
+description: 余白と余白のプロパティは、要素がユーザーインターフェイスに表示されるときのレイアウト動作を制御します。 この記事では、2つのプロパティの違いとその設定方法について説明します。
+ms.prod: xamarin
+ms.assetid: BEB096BB-51DF-410F-B0F1-D235287B0F4A
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/27/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 6ae4116be99f076a7afd5ed9c2823bc12f445e18
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137991"
 ---
-
 # <a name="margin-and-padding"></a>余白とスペース
 
 _余白と余白のプロパティは、要素がユーザーインターフェイスに表示されるときのレイアウト動作を制御します。この記事では、2つのプロパティの違いとその設定方法について説明します。_

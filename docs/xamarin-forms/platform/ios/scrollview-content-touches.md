@@ -1,8 +1,22 @@
 ---
-title: "iOS での ScrollView コンテンツのタッチ" の説明: "プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、ScrollView がタッチジェスチャを処理するか、そのコンテンツに渡すかを制御する iOS プラットフォーム固有のを使用する方法について説明します。 "
-ms. 製品: xamarin ms. assetid: 99F823DB379-40F0-A343-a9783c341120 ms. テクノロジ: xamarin-forms author: davidbritch ms. author: dabritch:: 10/24/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: IOS での ScrollView コンテンツへの触れる
+description: プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、ScrollView がタッチジェスチャを処理するか、そのコンテンツに渡すかを制御する iOS プラットフォーム固有のを使用する方法について説明します。
+ms.prod: xamarin
+ms.assetid: 99F823DB-B379-40F0-A343-A9783C341120
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/24/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9b8f743b2c3d7f4b38feb4cfc5015b1113620562
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137099"
 ---
-
 # <a name="scrollview-content-touches-on-ios"></a>IOS での ScrollView コンテンツへの触れる
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

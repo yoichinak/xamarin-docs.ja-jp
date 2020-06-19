@@ -1,8 +1,22 @@
 ---
-title: Windows 上の "Master詳細ページナビゲーションバー" 説明: "プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、Master詳細ページのナビゲーションバーを折りたたむ Windows プラットフォーム固有のを使用する方法について説明します。
-ms. 製品: xamarin ms. assetid: 0E7436C9-FA3E-40CD-801C-3F7ED95C412D: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 10/24/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Windows 上の Masterのページナビゲーションバー
+description: プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、Master詳細ページのナビゲーションバーを折りたたむ、Windows プラットフォーム固有のを使用する方法について説明します。
+ms.prod: xamarin
+ms.assetid: 0E7436C9-FA3E-40CD-801C-3F7ED95C412D
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/24/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d3ae71685c7aaebdceacb5f8b7cd5f3dd308407c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137250"
 ---
-
 # <a name="masterdetailpage-navigation-bar-on-windows"></a>Windows 上の Masterのページナビゲーションバー
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

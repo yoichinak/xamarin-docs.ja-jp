@@ -1,8 +1,22 @@
 ---
-title: "分離可能な blend モード" の説明: "変更可能な blend モードを使用して、赤、緑、および青の色を変更します。"
-ms. 製品: xamarin ms テクノロジ: skiasharp: 66D1A537-A247-484E-B5B9-FBCB7838FBE9 author: davidbritch dabritch: ms. date: 08/23/2018 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
+title: 分離可能 blend モード
+description: 分離可能な blend モードを使用して、赤、緑、および青の色を変更します。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 66D1A537-A247-484E-B5B9-FBCB7838FBE9
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/23/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c1939c30cbefdbf8d6546761a8c6ac7199bfff62
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139686"
 ---
-
 # <a name="the-separable-blend-modes"></a>分離可能 blend モード
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

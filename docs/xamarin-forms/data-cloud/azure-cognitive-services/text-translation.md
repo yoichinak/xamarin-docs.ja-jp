@@ -1,8 +1,22 @@
 ---
-title: "Translator API を使用したテキスト変換" 説明: "Microsoft Translator API を使用して、音声とテキストを REST API で変換することができます。 この記事では、Microsoft Translator Text API を使用して、アプリケーションでテキストをある言語から別の言語に変換する方法について説明し Xamarin.Forms ます。 "
-ms. 製品: xamarin ms. assetid: 823: davidbritch: dabritch ms. date: 02/08/2017 のように指定しない場合は、xamarin-forms author: ms. author:: のように指定していないことを示します。 Xamarin.Forms Xamarin.Essentials
+title: Translator API を使用したテキスト翻訳
+description: Microsoft Translator API を使用すると、REST API を通じて音声とテキストを変換できます。 この記事では、Microsoft Translator Text API を使用して、アプリケーションでテキストをある言語から別の言語に変換する方法について説明し Xamarin.Forms ます。
+ms.prod: xamarin
+ms.assetid: 68330242-92C5-46F1-B1E3-2395D8823B0C
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/08/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f0f43f8f2113b6bd0a800ed3e0bd96b641575b1c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139283"
 ---
-
 # <a name="text-translation-using-the-translator-api"></a>Translator API を使用したテキスト翻訳
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)

@@ -1,8 +1,22 @@
 ---
-title: "iOS での DatePicker item selection" の説明: "プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装しなくても、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、DatePicker で項目の選択が行われるタイミングを制御する iOS プラットフォーム固有のを使用する方法について説明します。
-ms. 製品: xamarin ms. assetid: 847E69D1-6AE0-4E82-B9C8-919E009C2014: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 01/15/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: IOS での DatePicker 項目の選択
+description: プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、DatePicker で項目の選択が行われるタイミングを制御する iOS プラットフォーム固有のを使用する方法について説明します。
+ms.prod: xamarin
+ms.assetid: 847E69D1-6AE0-4E82-B9C8-919E009C2014
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/15/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c65cac4c777150185524b291adc6e9d1e79958d3
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138555"
 ---
-
 # <a name="datepicker-item-selection-on-ios"></a>IOS での DatePicker 項目の選択
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

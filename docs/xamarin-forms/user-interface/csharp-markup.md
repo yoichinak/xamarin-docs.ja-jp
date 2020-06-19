@@ -1,8 +1,22 @@
 ---
-title: "C# Xamarin.Forms マークアップ" 説明: "C# マークアップは、c# で宣言型のユーザーインターフェイスを構築するプロセスを簡略化するための、fluent ヘルパーメソッドとクラスのオプトインセットです Xamarin.Forms 。"
-ms. 製品: xamarin ms. assetid: D41B9DCD-5C34-4C2F-B177-FC082AB2E9E0: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 05/15/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsC# マークアップ
+description: C# マークアップは、c# で宣言型のユーザーインターフェイスを構築するプロセスを簡略化するための、fluent ヘルパーメソッドとクラスのオプトインセットです Xamarin.Forms 。
+ms.prod: xamarin
+ms.assetid: D41B9DCD-5C34-4C2F-B177-FC082AB2E9E0
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/15/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 939727d3dd8d419cdc020d33d3e7241dcedb8158
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137749"
 ---
-
 # <a name="xamarinforms-c-markup"></a>Xamarin.FormsC# マークアップ
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
@@ -217,11 +231,11 @@ new Label { Text = "Tap Me" }
 
 ジェスチャ認識エンジンはであるため `BindableObject` 、 `Bind` `BindCommand` 初期化時におよび拡張メソッドを使用できます。 拡張メソッドを使用してカスタムジェスチャ認識エンジンの種類を初期化することもでき `Gesture<TGestureElement, TGestureRecognizer>` ます。
 
-## <a name="layout"></a>レイアウト
+## <a name="layout"></a>Layout
 
 C# マークアップには、レイアウト内のビューの配置をサポートする一連のレイアウト拡張メソッドと、ビューのコンテンツが含まれています。
 
-| 種類 | 拡張メソッド |
+| 型 | 拡張メソッド |
 |---|---|
 | `FlexLayout` | `AlignSelf`, `Basis`, `Grow`, `Menu`, `Order`, `Shrink` |
 | `Grid` | `Row`, `Column`, `RowSpan`, `ColumnSpan` |
@@ -239,7 +253,7 @@ C# マークアップには、レイアウト内のビューの配置をサポ�
 
 左から右方向と右から左方向のフロー方向をサポートするように設計された C# マークアップでは、上記の名前空間のいずれかではなく、次の表に示す拡張メソッドを使用することをお勧めします。
 
-| 種類 | 拡張メソッド |
+| 型 | 拡張メソッド |
 |---|---|
 | `Label` | `TextStart`, `TextEnd` |
 | `LayoutOptions` | `Start`, `End` <br/> `StartExpand`, `EndExpand` |

@@ -1,8 +1,22 @@
 ---
-title: "ピクセルおよびデバイスに依存しないユニット" 説明: "この記事では、SkiaSharp 座標と座標の違いについて説明 Xamarin.Forms し、サンプルコードを使用してこれを示します。
-ms. 製品: xamarin ms テクノロジ: skiasharp: 26C25BB8-FBE8-4B77-16890 author: davidbritch ms. author: dabritch ms. date: 02/09/2017 no loc: [,] を指定します。日付 Xamarin.Forms を入力してください。 Xamarin.Essentials
+title: ピクセル、およびデバイスに依存しない単位
+description: この記事では、SkiaSharp 座標と座標の違いに Xamarin.Forms ついて説明し、サンプルコードを使用してこれを示します。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 26C25BB8-FBE8-4B77-B01D-16A163A16890
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/09/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 6d01018f4393ac5562220fa1f9524bc0d9872c67
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137671"
 ---
-
 # <a name="pixels-and-device-independent-units"></a>ピクセル、およびデバイスに依存しない単位
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -1,8 +1,22 @@
 ---
-タイトル: " Xamarin.Forms その他のプラットフォーム" 説明: "このガイドでは、でサポートされるその他のプラットフォームについて説明 Xamarin.Forms します。"
-ms. 製品: xamarin ms. assetid: C713B905-0C98-4442-B5CB-91C384A384DA: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 10/04/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Formsその他のプラットフォーム
+description: このガイドでは、でサポートされるその他のプラットフォームについて説明 Xamarin.Forms します。
+ms.prod: xamarin
+ms.assetid: C713B905-0C98-4442-B5CB-91C384A384DA
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/04/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a0ab248d3e23854e8027f515fbcf0fa6ca9521fd
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139543"
 ---
-
 # <a name="xamarinforms-other-platforms"></a>Xamarin.Formsその他のプラットフォーム
 
 Xamarin.Formsは、iOS、Android、Windows 以外の追加のプラットフォームをサポートしています。

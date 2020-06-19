@@ -1,8 +1,22 @@
 ---
-title: "単純なアニメーションの Xamarin.Forms " 説明: "ViewExtensions クラスは、単純なアニメーションを構築するために使用できる拡張メソッドを提供します。 この記事では、ViewExtensions クラスを使用してアニメーションを作成およびキャンセルする方法について説明します。
-ms. 製品: xamarin ms assetid: 4a6fae5a848f47 CE0-BFA1-20a6309b5225 ミリ秒。テクノロジ: xamarin-forms author: davidbritch ms. author: dabritch: 11/05/2019 no-loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: 単純なアニメーションXamarin.Forms
+description: ViewExtensions クラスは、単純なアニメーションを構築するために使用できる拡張メソッドを提供します。 この記事では、ViewExtensions クラスを使用してアニメーションを作成およびキャンセルする方法について説明します。
+ms.prod: xamarin
+ms.assetid: 4A6FAE5A-848F-4CE0-BFA1-22A6309B5225
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/05/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 89f0182bfebc4d018eb083904595f0fbb211e3ba
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573379"
 ---
-
 # <a name="simple-animations-in-xamarinforms"></a>単純なアニメーションXamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-basic)

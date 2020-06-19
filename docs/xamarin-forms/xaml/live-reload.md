@@ -1,8 +1,23 @@
 ---
-title: "Xamarin Live Reload (Preview)" の説明: "XAML の変更を反映し、別のコンパイルとデプロイを必要としない" ことを示します。
-ms. 製品: xamarin ms. assetid: 4917273d-5cfb53a2170d ms. テクノロジ: xamarin-forms author: pierceboggan ms. author: piboggan robots.txt: noindex ms. date: 10/26/2018 no loc: [ Xamarin.Forms ,、] をクリックしてください。 Xamarin.Essentials
+title: Xamarin Live Reload (プレビュー)
+description: 別のコンパイルとデプロイを必要とせずに、XAML に対する変更をライブで反映します。
+ms.prod: xamarin
+ms.assetid: 4917273d-32f9-401a-a52c-5cfb53a2170d
+ms.technology: xamarin-forms
+author: pierceboggan
+ms.author: piboggan
+robots: noindex
+ms.date: 10/26/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b67594e2675c774512f3bf64f2e91ef10dbff444
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84134213"
 ---
-
 # <a name="xamarin-live-reload-preview"></a>Xamarin Live Reload (プレビュー)
 
 > [!NOTE]
@@ -13,7 +28,7 @@ ms. 製品: xamarin ms. assetid: 4917273d-5cfb53a2170d ms. テクノロジ: xama
 
 Xamarin Live Reload を使用する**と、XAML を変更してライブに反映することができ、別のコンパイルとデプロイは必要**ありません。 XAML に加えられたすべての変更は保存時に再デプロイされ、デプロイターゲットに反映されます。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 * .NET ワークロード**を使用したモバイル開発**のある[Visual Studio 2017 バージョン15.7 以降](https://visualstudio.microsoft.com/vs/)。
 * [ Xamarin.Forms 3.0.0 以上](https://www.nuget.org/packages/Xamarin.Forms/)。

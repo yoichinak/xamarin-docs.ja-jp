@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms editor" description: "この記事では、エディターコントロールを使用して、 Xamarin.Forms アプリケーションで複数行テキスト入力を受け入れる方法について説明します。"
-ms. 製品: xamarin ms. assetid: 7074DB3A-30D2-4A6B-9A89-B029EEF20B07: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 09/26/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Forms エディター
+description: この記事では、エディターコントロールを使用して、 Xamarin.Forms アプリケーションで複数行テキスト入力を許可する方法について説明します。
+ms.prod: xamarin
+ms.assetid: 7074DB3A-30D2-4A6B-9A89-B029EEF20B07
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/26/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 02749c9f8f55427bb1742e78464bbc003f1f7358
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136176"
 ---
-
 # <a name="xamarinforms-editor"></a>Xamarin.Forms エディター
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)

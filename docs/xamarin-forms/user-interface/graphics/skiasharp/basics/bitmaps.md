@@ -1,8 +1,22 @@
 ---
-title: "SkiaSharp のビットマップの基礎" 説明: "この記事では、さまざまなソースから SkiaSharp にビットマップを読み込み、それらをアプリケーションに表示する方法について説明 Xamarin.Forms し、サンプルコードを使用してこれを示します。"
-ms. 製品: xamarin ms テクノロジ: skiasharp: 32C95DFF-9065-42D7-966C-D3DBD16906B3 author: davidbritch dabritch: ms. date: 07/17/2018 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
+title: SkiaSharp でのビットマップの基礎
+description: この記事では、さまざまなソースから SkiaSharp のビットマップを読み込んでアプリケーションに表示する方法について説明 Xamarin.Forms し、サンプルコードを使用してこれを示します。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 32C95DFF-9065-42D7-966C-D3DBD16906B3
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/17/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1e4c170f818dc62640b1cd72ec3b70f48d227d93
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137737"
 ---
-
 # <a name="bitmap-basics-in-skiasharp"></a>SkiaSharp でのビットマップの基礎
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

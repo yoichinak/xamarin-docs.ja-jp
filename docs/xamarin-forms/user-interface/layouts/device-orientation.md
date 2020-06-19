@@ -1,8 +1,22 @@
 ---
-タイトル: "デバイスの向き" の説明: "この記事では Xamarin.Forms 、縦と横の向きで見栄えの良いアプリケーションをレイアウトする方法について説明します。"
-ms. 製品: xamarin ms. assetid: 11A1D327-2DF3-4F3B-810D-6C95B71D27B2: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 04/24/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: デバイスの向き
+description: この記事では Xamarin.Forms 、縦と横の向きで見栄えの良いアプリケーションをレイアウトする方法について説明します。
+ms.prod: xamarin
+ms.assetid: 11A1D327-2DF3-4F3B-810D-6C95B71D27B2
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/24/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0b1a47d4dcc92fca4d280708a2cbbe9374c17da8
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573298"
 ---
-
 # <a name="device-orientation"></a>デバイスの向き
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-responsivelayout)

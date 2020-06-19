@@ -1,8 +1,22 @@
 ---
-title: "明示的なスタイルの Xamarin.Forms " 説明: "明示的なスタイルとは、スタイルプロパティを設定することによってコントロールに選択的に適用されるスタイルです。 この記事では、アプリケーションでの明示的なスタイルの使用方法について説明 Xamarin.Forms します。 "
-ms. 製品: xamarin ms. assetid: C0DF9F8F-B431-4374-A574-325BC3C41A3B: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 02/17/2016 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: での明示的なスタイルXamarin.Forms
+description: 明示的なスタイルとは、スタイルプロパティを設定することによってコントロールに選択的に適用されるスタイルです。 この記事では、アプリケーションで明示的なスタイルを使用する方法について説明 Xamarin.Forms します。
+ms.prod: xamarin
+ms.assetid: C0DF9F8F-B431-4374-A574-325BC3C41A3B
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/17/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 62b84a5028c17c28a69a887a832028c2064fa78d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136267"
 ---
-
 # <a name="explicit-styles-in-xamarinforms"></a>での明示的なスタイルXamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)

@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms switch" 説明: " Xamarin.Forms スイッチはボタンの一種であり、ユーザーが操作して状態のオンとオフを切り替えることができます。 この記事では、Switch クラスを使用して、切り替え UI 要素を表示する方法について説明します。
-ms. 製品: xamarin ms. assetId: B2F9CC65-481B-4323-8E77-C6BE29C90DE9: xamarin-forms author: profexorgeek ms. author: jusjohns ms. date: 07/18/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Forms切り替わり
+description: Xamarin.Formsスイッチは、ユーザーが状態のオンとオフを切り替えるために操作できるボタンの種類です。 この記事では、Switch クラスを使用して、切り替え UI 要素を表示する方法について説明します。
+ms.prod: xamarin
+ms.assetId: B2F9CC65-481B-4323-8E77-C6BE29C90DE9
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 05/19/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 12831eec6ba97eee7cde7479729c5c22dce78e90
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946431"
 ---
-
 # <a name="xamarinforms-switch"></a>Xamarin.Forms切り替わり
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
@@ -15,9 +29,9 @@ Xamarin.Forms [`Switch`](xref:Xamarin.Forms.Switch) コントロールは水平�
 
 コントロールは、 `Switch` 次のプロパティを定義します。
 
-* [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled)が `boolean` オンかどうかを示す値です `Switch` 。 **on**
-* [`OnColor`](xref:Xamarin.Forms.Switch.OnColor)は、が `Color` `Switch` 切り替えられるか、状態で表示さ**れるかに**影響するです。
-* `ThumbColor`は、 `Color` スイッチのつまみのです。
+- [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled)が `boolean` オンかどうかを示す値です `Switch` 。 **on**
+- [`OnColor`](xref:Xamarin.Forms.Switch.OnColor)は、が `Color` `Switch` 切り替えられるか、状態で表示さ**れるかに**影響するです。
+- `ThumbColor`は、 `Color` スイッチのつまみのです。
 
 これらのプロパティはオブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。つまり、を `Switch` スタイル設定し、データバインディングのターゲットにすることができます。
 
@@ -109,11 +123,46 @@ switchControl.Toggled += (sender, e) =>
 
 トリガーの詳細については、「 [ Xamarin.Forms トリガー](~/xamarin-forms/app-fundamentals/triggers.md)」を参照してください。
 
+## <a name="switch-visual-states"></a>ビジュアル状態の切り替え
+
+[`Switch`](xref:Xamarin.Forms.Switch)`On`プロパティが `Off` 変更されたときにビジュアルの変更を開始するために使用できるおよびの状態があり [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled) ます。
+
+次の XAML の例は、との状態の表示状態を定義する方法を示してい `On` `Off` ます。
+
+```xaml
+<Switch IsToggled="True">
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="CommonStates">
+            <VisualState x:Name="On">
+                <VisualState.Setters>
+                    <Setter Property="ThumbColor"
+                            Value="MediumSpringGreen" />
+                </VisualState.Setters>
+            </VisualState>
+            <VisualState x:Name="Off">
+                <VisualState.Setters>
+                    <Setter Property="ThumbColor"
+                            Value="Red" />
+                </VisualState.Setters>
+            </VisualState>
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+</Switch>
+```
+
+この例では、 `On` [`VisualState`](xref:Xamarin.Forms.VisualState) プロパティがの場合、 [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled) `true` プロパティは `ThumbColor` 中 spring green に設定されることを指定しています。 `Off` `VisualState` `IsToggled` プロパティがの場合 `false` 、プロパティは赤に設定されることを指定し `ThumbColor` ます。 したがって、全体の効果として、が off の位置にある場合は `Switch` thumb が赤色になり、が on の位置にある場合はその thumb がミディアムスプリンググリーンになり `Switch` ます。
+
+![IOS と Android](switch-images/on-visualstate.png "VisualState の切り替え") 
+ での Visualstate の切り替えのスクリーンショット![IOS と Android でのスイッチオフ VisualState のスクリーンショット](switch-images/off-visualstate.png "VisualState の切り替え")
+
+ビジュアルの状態の詳細については、「[Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)」をご覧ください。
+
 ## <a name="disable-a-switch"></a>スイッチを無効にする
 
 アプリケーションは、切り替え対象が有効な操作ではない状態になる場合があり `Switch` ます。 このような場合は、 `Switch` プロパティをに設定することで、を無効にすることができ `IsEnabled` `false` ます。 これにより、ユーザーがを操作できなくなり `Switch` ます。
 
 ## <a name="related-links"></a>関連リンク
 
-* [デモの切り替え](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
-* [Xamarin.Forms のトリガー](~/xamarin-forms/app-fundamentals/triggers.md)
+- [デモの切り替え](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
+- [Xamarin.Forms のトリガー](~/xamarin-forms/app-fundamentals/triggers.md)
+- [Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)

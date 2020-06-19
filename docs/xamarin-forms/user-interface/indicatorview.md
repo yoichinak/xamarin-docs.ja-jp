@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms IndicatorView" description: "IndicatorView は、CarouselView 内の項目数と現在位置を表すインジケーターを表示するコントロールです。"
-ms. 製品: xamarin ms. assetId: BBCC223B-4B02-46B7-80BB-EE0E86A67CE2: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 02/27/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsIndicatorView
+description: IndicatorView は、CarouselView 内の項目数と現在位置を表すインジケーターを表示するコントロールです。
+ms.prod: xamarin
+ms.assetId: BBCC223B-4B02-46B7-80BB-EE0E86A67CE2
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/27/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e4c7d528cc61bb71fc495c830780ea4245ff3d87
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946378"
 ---
-
 # <a name="xamarinforms-indicatorview"></a>Xamarin.FormsIndicatorView
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
@@ -12,12 +26,6 @@ ms. 製品: xamarin ms. assetId: BBCC223B-4B02-46B7-80BB-EE0E86A67CE2: xamarin-f
 は、 `IndicatorView` 内の項目数と現在位置を表すインジケーターを表示するコントロールです `CarouselView` 。
 
 [![IOS と Android での CarouselView と IndicatorView のスクリーンショット](indicatorview-images/circles.png "IndicatorView の円")](indicatorview-images/circles-large.png#lightbox "IndicatorView の円")
-
-`IndicatorView`は、iOS および Android プラットフォームでは4.4、ユニバーサル Windows プラットフォームでは4.5 で利用でき Xamarin.Forms ます。 ただし、現在は実験的であり、を呼び出す前に、次のコード行を `AppDelegate` iOS のクラスまたは Android のクラスに追加することによってのみ使用でき `MainActivity` `Forms.Init` ます。
-
-```csharp
-Forms.SetFlags("IndicatorView_Experimental");
-```
 
 `IndicatorView` は次の特性を定義します。
 

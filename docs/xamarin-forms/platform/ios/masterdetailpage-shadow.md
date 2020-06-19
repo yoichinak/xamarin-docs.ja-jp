@@ -1,8 +1,22 @@
 ---
-title: 「iOS の Masterのページシャドウ」の説明: "プラットフォームの詳細" を使用すると、カスタムレンダラーや特殊効果を実装しなくても、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、マスターページが明らかになったときに、Masterdetail ページの詳細ページに影が適用されているかどうかを制御する iOS プラットフォーム固有のを使用する方法について説明します。
-ms. 製品: xamarin ms. assetid: FB907EA2-C00A-43A5-84B1-A43584C867A5: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 03/05/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: IOS 上の Masterのページシャドウ
+description: プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、マスターページが明らかになったときに、Masterdetail ページの詳細ページに影が適用されているかどうかを制御する iOS プラットフォーム固有のを使用する方法について説明します。
+ms.prod: xamarin
+ms.assetid: FB907EA2-C00A-43A5-84B1-A43584C867A5
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/05/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: aaf94536d41da47aec10fc655f9d053b753da5a2
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135968"
 ---
-
 # <a name="masterdetailpage-shadow-on-ios"></a>IOS 上の Masterのページシャドウ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

@@ -1,8 +1,22 @@
 ---
-title: 「xaml 名前空間で推奨されるプレフィックス Xamarin.Forms 」「説明:」では、XmlnsPrefixAttribute クラスを使用して、xaml 名前空間に関連付ける推奨プレフィックスを xaml の使用のためにコントロールの作成者が指定することができます。
-ms. 製品: xamarin ms. assetid: 7B315BEC-7A35-48F4-A9C7-EF40255E95FF: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 02/28/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: XAML 名前空間で推奨されるプレフィックスXamarin.Forms
+description: XmlnsPrefixAttribute クラスは、xaml の使用について、XAML 名前空間に関連付ける推奨プレフィックスを指定するために、コントロールの作成者が使用できます。
+ms.prod: xamarin
+ms.assetid: 7B315BEC-7A35-48F4-A9C7-EF40255E95FF
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/28/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 71ae523f40f3f7529c12f853778404e224fbae30
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138139"
 ---
-
 # <a name="xaml-namespace-recommended-prefixes-in-xamarinforms"></a>XAML 名前空間で推奨されるプレフィックスXamarin.Forms
 
 クラスは、xaml の `XmlnsPrefixAttribute` 使用のために xaml 名前空間に関連付ける推奨プレフィックスを指定するために、コントロールの作成者が使用できます。 このプレフィックスは、XAML へのオブジェクトツリーのシリアル化をサポートする場合や、XAML 編集機能を持つデザイン環境と対話する場合に役立ちます。 次に例を示します。

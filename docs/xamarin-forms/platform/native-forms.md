@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms Xamarin ネイティブプロジェクト内" の説明: "この記事では、xamarin のネイティブプロジェクトに直接追加された ContentPage の派生ページを使用する方法と、それらの間を移動する方法について説明します。"
-ms. 製品: xamarin ms. assetid: f343fc21-dfb1-4364-a332-9da6705d36bc: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 08/19/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsXamarin ネイティブプロジェクトで
+description: この記事では、Xamarin のネイティブプロジェクトに直接追加された ContentPage の派生ページを使用する方法と、それらの間を移動する方法について説明します。
+ms.prod: xamarin
+ms.assetid: f343fc21-dfb1-4364-a332-9da6705d36bc
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/19/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9fb741a03d1c8dd2a8754120d0b46567d8889a0b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84132276"
 ---
-
 # <a name="xamarinforms-in-xamarin-native-projects"></a>Xamarin.FormsXamarin ネイティブプロジェクトで
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/native2forms)

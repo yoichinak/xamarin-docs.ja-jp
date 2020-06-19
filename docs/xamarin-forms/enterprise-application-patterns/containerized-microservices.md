@@ -1,8 +1,22 @@
 ---
-title: "コンテナー化されたマイクロサービス" 説明: "この章では、マイクロサービスとコンテナーを使用して、アジャイルでスケーラブルで信頼性の高い最新のクラウドアプリケーションを構築する方法について説明します。"
-ms. 製品: xamarin ms assetid: 5872ad92-04e047 f1a-9691-79 d5602f5683 ms. テクノロジ: xamarin-forms author: davidbritch: dabritch ms. date: 08/07/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: コンテナー化 Microservices
+description: この章では、マイクロサービスとコンテナーを使用して、アジャイル、スケーラブル、信頼性の高い最新のクラウドアプリケーションを構築する方法について説明します。
+ms.prod: xamarin
+ms.assetid: 5872ad92-04e0-4f1a-9691-79d5602f5683
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3ebd3940cbd61342977bde60addc773460a08854
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84569570"
 ---
-
 # <a name="containerized-microservices"></a>コンテナー化 Microservices
 
 クライアントサーバーアプリケーションを開発することにより、各層で特定のテクノロジを使用する階層型アプリケーションを構築することに重点を置いてきました。 このようなアプリケーションは、多くの場合*モノリシック*アプリケーションと呼ばれ、ピーク時の負荷のために事前にスケーリングされたハードウェアにパッケージ化されます。 この開発アプローチの主な欠点は、各層内のコンポーネント間の密結合であり、個々のコンポーネントを簡単にスケーリングできないこと、およびテストコストがかかることです。 単純な更新では、階層の残りの部分に予期しない影響が生じる可能性があるため、アプリケーションコンポーネントに変更を適用するには、階層全体を再構成して再デプロイする必要があります。

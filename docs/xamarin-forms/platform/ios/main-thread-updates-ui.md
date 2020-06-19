@@ -1,8 +1,22 @@
 ---
-title: "iOS でのメインスレッド制御の更新" の説明: "プラットフォーム固有では、特定のプラットフォームでのみ使用可能な機能を使用できます。カスタムレンダラーや特殊効果を実装する必要はありません。 この記事では、コントロールのレイアウトとレンダリングの更新をメインスレッドで実行できるようにする iOS プラットフォーム固有のを使用する方法について説明します。 "
-ms. 製品: xamarin ms. assetid: 945E711D-9BD2-4BF9-9FB3-CBE0D5B25A49: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 10/24/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: IOS でのメインスレッド制御の更新
+description: プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、メインスレッドでコントロールのレイアウトとレンダリングの更新を実行できるようにする iOS プラットフォーム固有のを使用する方法について説明します。
+ms.prod: xamarin
+ms.assetid: 945E711D-9BD2-4BF9-9FB3-CBE0D5B25A49
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/24/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 005e8216b887b694b33916179ca276cf8091e006
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135981"
 ---
-
 # <a name="main-thread-control-updates-on-ios"></a>IOS でのメインスレッド制御の更新
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

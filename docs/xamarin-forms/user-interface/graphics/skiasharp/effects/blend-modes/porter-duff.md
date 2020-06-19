@@ -1,8 +1,22 @@
 ---
-title: "Porter" blend モード "description:" Porter-Duff blend mode を使用して、ソースとターゲットのイメージに基づいてシーンを作成します。 "
-ms. 製品: xamarin ms テクノロジ: skiasharp: 57F172F8-BA03-43EC-A215-ED6B78696BB5 author: davidbritch dabritch: ms. date: 08/23/2018 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
+title: Porter blend モード
+description: Porter-Duff blend モードを使用して、コピー元とコピー先のイメージに基づいてシーンを作成します。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 57F172F8-BA03-43EC-A215-ED6B78696BB5
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/23/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a1e6290c0f85b54c3fd8958bc43667714bdece20
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84131054"
 ---
-
 # <a name="porter-duff-blend-modes"></a>Porter blend モード
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

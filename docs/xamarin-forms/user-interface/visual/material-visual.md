@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms マテリアルビジュアル" の説明: " Xamarin.Forms マテリアルビジュアルを使用して Xamarin.Forms 、iOS と Android でほぼ同一のアプリケーションを作成することができます。"
-ms. 製品: xamarin ms. assetid: B774F68C-EF9E-49E1-B738-CDC64879ADA2: xamarin-forms author: profexorgeek ms. author: jusjohns ms. date: 11/25/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Forms の素材のビジュアル
+description: Xamarin.Forms素材ビジュアルを使用して Xamarin.Forms 、iOS と Android でほぼ同一のアプリケーションを作成できます。
+ms.prod: xamarin
+ms.assetid: B774F68C-EF9E-49E1-B738-CDC64879ADA2
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 11/25/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: bba7d77d8cf565b1b2db2c1324e171389c5d0280
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127180"
 ---
-
 # <a name="xamarinforms-material-visual"></a>Xamarin.Forms の素材のビジュアル
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)

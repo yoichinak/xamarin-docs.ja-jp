@@ -1,8 +1,22 @@
 ---
-title: "Speech Service API を使用した音声認識" 説明: "この記事では、Azure Speech Service API を使用して音声をアプリケーション内のテキストに表示する方法について説明 Xamarin.Forms します。"
-ms. 製品: xamarin ms. assetid: B435FF6B-8785-48D9-B2D9-1893F5A87EA1: xamarin-forms author: profexorgeek ms. author: jusjohns ms. date: 01/14/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Speech サービス API を使用した音声認識
+description: この記事では、Azure Speech Service API を使用して、音声をアプリケーションのテキストに表示する方法について説明し Xamarin.Forms ます。
+ms.prod: xamarin
+ms.assetid: B435FF6B-8785-48D9-B2D9-1893F5A87EA1
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 01/14/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 171ecc02fda304135e5f535c3e798067595d7047
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139322"
 ---
-
 # <a name="speech-recognition-using-azure-speech-service"></a>Azure Speech Service を使用した音声認識
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-cognitivespeechservice)

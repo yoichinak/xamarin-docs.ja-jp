@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms grid" description: " Xamarin.Forms grid は、その子をセルの行と列に編成するレイアウトです。"
-ms. 製品: xamarin ms. assetid: 762b1802d18547 davidbritch: xamarin-forms author: ms. author: dabritch ms. date: 05/15/2020 no loc: [ Xamarin.Forms ,] を指定します。日付としての形式は含まれません Xamarin.Essentials 。
+title: Xamarin.Forms行列
+description: Xamarin.Formsグリッドは、その子をセルの行と列に編成するレイアウトです。
+ms.prod: xamarin
+ms.assetid: 762B1802-D185-494C-B643-74EED55882FE
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/15/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9d2e697a07e033fd7c3c8d3efffa1d67f6c097c3
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946339"
 ---
-
 # <a name="xamarinforms-grid"></a>Xamarin.Forms行列
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-griddemos)
@@ -274,6 +288,21 @@ grid.Children.Add(bottomRight, 1, 2, 1, 2); // second column, second row
 
 > [!NOTE]
 > さらに、子ビューをに追加するには、 [`Grid`](xref:Xamarin.Forms.Grid) メソッドとメソッドを使用します。これにより、 [`AddHorizontal`](xref:Xamarin.Forms.Grid.IGridList`1.AddHorizontal*) [`AddVertical`](xref:Xamarin.Forms.Grid.IGridList`1.AddVertical*) 1 つの行または単一の列に子が追加され `Grid` ます。 これらの呼び出しが行われたときに、が `Grid` 行または列で展開され、適切なセルに子が自動的に配置されます。
+
+### <a name="simplify-row-and-column-definitions"></a>行と列の定義を簡略化する
+
+XAML では、 [`Grid`](xref:Xamarin.Forms.Grid) [`RowDefinition`](xref:Xamarin.Forms.RowDefinition) [`ColumnDefinition`](xref:Xamarin.Forms.ColumnDefinition) 行および列ごとにオブジェクトおよびオブジェクトを定義しなくても済む簡略化された構文を使用して、の行と列の特性を指定できます。 代わりに、 [`RowDefinitions`](xref:Xamarin.Forms.Grid.RowDefinitions) プロパティと [`ColumnDefinitions`](xref:Xamarin.Forms.Grid.ColumnDefinitions) プロパティは、コンマ区切り値を含む文字列に設定でき [`GridUnitType`](xref:Xamarin.Forms.GridUnitType) ます。これは、 Xamarin.Forms create `RowDefinition` オブジェクトおよび objects に組み込まれている型コンバーターからのもの `ColumnDefinition` です。
+
+```xaml
+<Grid RowDefinitions="1*, Auto, 25, 14, 20"
+      ColumnDefinitions="*, 2*, Auto, 300">
+    ...
+</Grid>
+```
+
+この例では、に5つの [`Grid`](xref:Xamarin.Forms.Grid) 行と4つの列があります。 3番目の行と5番目の行は絶対高さに設定され、2番目の行はそのコンテンツに自動サイズ調整されます。 その後、残りの高さが最初の行に割り当てられます。
+
+この列は絶対幅に設定され、3番目の列がそのコンテンツに自動サイズ調整されます。 残りの幅は、星の前の数値に基づいて、最初の列と2番目の列の間に比例して割り当てられます。 この例では、2番目の列の幅が最初の列の2倍になっています (はと同じであるため `*` `1*` )。
 
 ## <a name="space-between-rows-and-columns"></a>行と列の間のスペース
 

@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms refreshview" description: " Xamarin.Forms refreshview は、スクロール可能なコンテンツに対してプルを更新する機能を提供するコンテナーコントロールです。"
-ms. 製品: xamarin ms. assetId: 58DBD23B-ADB9-40DA-B331-4DDB6E698990: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 09/19/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsRefreshView
+description: Xamarin.FormsRefreshview は、スクロール可能なコンテンツに対してプルを更新する機能を提供するコンテナーコントロールです。
+ms.prod: xamarin
+ms.assetId: 58DBD23B-ADB9-40DA-B331-4DDB6E698990
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/19/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d84e6bb6ed41f2fbc213cd15051d071521f588cd
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127596"
 ---
-
 # <a name="xamarinforms-refreshview"></a>Xamarin.FormsRefreshView
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshviewdemo/)

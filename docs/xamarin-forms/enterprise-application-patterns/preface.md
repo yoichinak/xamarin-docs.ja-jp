@@ -1,8 +1,22 @@
 ---
-title: "先頭からエンタープライズアプリへの開発" の説明: "この章では、を使用したエンタープライズアプリケーションパターンの概要について説明し Xamarin.Forms ます。
-ms. 製品: xamarin ms. assetid: fbf32a44-1d33-4e16-a904-dc7ee5991e7c: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 08/07/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: はじめにエンタープライズアプリ開発
+description: この章では、を使用したエンタープライズアプリケーションパターンの概要について説明し Xamarin.Forms ます。
+ms.prod: xamarin
+ms.assetid: fbf32a44-1d33-4e16-a904-dc7ee5991e7c
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 6ea63fc483025fc6f9b0c7f379b6dfdc6ca30de8
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198086"
 ---
-
 # <a name="preface-to-enterprise-app-development"></a>はじめにエンタープライズアプリ開発
 
 この電子ブックでは、を使用してクロスプラットフォームのエンタープライズアプリを構築するためのガイダンスを提供 Xamarin.Forms します。 Xamarin.Formsは、iOS、Android、ユニバーサル Windows プラットフォーム (UWP) などのプラットフォーム間で共有できるネイティブユーザーインターフェイスレイアウトを開発者が簡単に作成できるようにする、クロスプラットフォーム UI ツールキットです。 これにより、企業間 (B2E)、企業間 (B2B)、および B2C (B2C) アプリ向けの包括的なソリューションが提供され、すべてのターゲットプラットフォームでコードを共有し、総保有コスト (TCO) を削減することができます。

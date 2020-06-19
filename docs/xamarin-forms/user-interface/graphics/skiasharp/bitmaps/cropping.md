@@ -1,8 +1,22 @@
 ---
-title: "トリミング SkiaSharp ビットマップ" description: "SkiaSharp を使用して、対話形式でトリミング四角形を作成するためのユーザーインターフェイスを設計する方法について説明します。"
-ms. 製品: xamarin ms テクノロジ: skiasharp: 0A79AB27-C69F-4376-8FFE-FF46E4783F30 author: davidbritch dabritch: ms. date: 07/17/2018 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
+title: トリミング (SkiaSharp ビットマップを)
+description: SkiaSharp を使用して、トリミング四角形を対話形式で表示するためのユーザーインターフェイスをデザインする方法について説明します。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 0A79AB27-C69F-4376-8FFE-FF46E4783F30
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/17/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d613c4f73c0a377a599b0137ce2f2b557c04ad6a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572339"
 ---
-
 # <a name="cropping-skiasharp-bitmaps"></a>トリミング (SkiaSharp ビットマップを)
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

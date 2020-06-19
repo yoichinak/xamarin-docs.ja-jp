@@ -1,9 +1,23 @@
 ---
-title: " Xamarin.Forms button" description: "ボタンは、特定のタスクを実行するようにアプリケーションに指示する tap または click に応答します。"
-ms. 製品: xamarin ms. assetid: 62CAEB63-0800-44F4-9B8C-EE632138C2F5: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 12/04/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Forms;
+description: このボタンは、特定のタスクを実行するようにアプリケーションに指示する tap または click に応答します。
+ms.prod: xamarin
+ms.assetid: 62CAEB63-0800-44F4-9B8C-EE632138C2F5
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/04/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 595367d94bcc4ac384763e915a0a19db7517341d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573392"
 ---
-
-# <a name="xamarinforms-button"></a>Xamarin.Forms ボタン
+# <a name="xamarinforms-button"></a>Xamarin.Forms;
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)
 

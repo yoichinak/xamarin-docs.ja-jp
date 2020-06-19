@@ -1,8 +1,22 @@
 ---
-title: 「Azure Storage からのデータの格納とアクセス Xamarin.Forms 」 description: "Azure Storage は、構造化されていない構造化データを格納するために使用できるスケーラブルなクラウドストレージソリューションです。 この記事では、を使用して Xamarin.Forms Azure Storage にテキストとバイナリデータを格納する方法と、データにアクセスする方法について説明します。
-ms. 製品: xamarin ms. assetid: 5B10D37B65-91014A93F3EB ms. テクノロジ: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 12/28/2018 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
+title: Azure Storage のデータの格納とアクセスXamarin.Forms
+description: Azure Storage は、構造化されていない構造化データを格納するために使用できるスケーラブルなクラウドストレージソリューションです。 この記事では、を使用して Xamarin.Forms Azure Storage にテキストとバイナリデータを格納する方法と、データにアクセスする方法について説明します。
+ms.prod: xamarin
+ms.assetid: 5B10D37B-839B-4CD0-9C65-91014A93F3EB
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/28/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a69edd3bf014809cc479dcb7cba0e430dcefbe5b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84564681"
 ---
-
 # <a name="store-and-access-data-in-azure-storage-from-xamarinforms"></a>Azure Storage のデータの格納とアクセスXamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)

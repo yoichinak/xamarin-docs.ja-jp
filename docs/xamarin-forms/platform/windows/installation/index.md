@@ -1,8 +1,22 @@
 ---
-title: "Windows プロジェクトのセットアップ" の説明: "古い Xamarin.Forms ソリューション (または macOS で作成されたソリューション) にはユニバーサル Windows プラットフォームプロジェクトがありません。この記事では、既存のソリューションに新しい UWP プロジェクトを追加する方法について説明し Xamarin.Forms ます。"
-ms. 製品: xamarin ms. assetid: A0774D2E-6994-4D91-84E8-DAB66FC92320: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 04/10/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Windows プロジェクトのセットアップ
+description: 以前 Xamarin.Forms のソリューション (または macOS で作成されたソリューション) にはユニバーサル Windows プラットフォームプロジェクトはありません。この記事では、既存のソリューションに新しい UWP プロジェクトを追加する方法について説明し Xamarin.Forms ます。
+ms.prod: xamarin
+ms.assetid: A0774D2E-6994-4D91-84E8-DAB66FC92320
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/10/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 13b46fd06b0116332241b0d523aea707d56b39ec
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573366"
 ---
-
 # <a name="setup-windows-projects"></a>Windows プロジェクトのセットアップ
 
 _既存のソリューションへの新しい Windows プロジェクトの追加 Xamarin.Forms_

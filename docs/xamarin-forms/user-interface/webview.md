@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms webview" description: "この記事では、webview クラスを使用して、 Xamarin.Forms ローカルまたはネットワークの web コンテンツとドキュメントをユーザーに表示する方法について説明します。"
-ms. 製品: xamarin ms. assetid: E44F5D0F-DB8E-46C7-8789-114F1652A6C5: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 05/06/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsWebView
+description: この記事では、WebView クラスを使用して、 Xamarin.Forms ローカルまたはネットワークの web コンテンツとドキュメントをユーザーに表示する方法について説明します。
+ms.prod: xamarin
+ms.assetid: E44F5D0F-DB8E-46C7-8789-114F1652A6C5
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/06/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9b07e044e55f99a7a183e55c566bf59dbd082655
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198168"
 ---
-
 # <a name="xamarinforms-webview"></a>Xamarin.FormsWebView
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithwebview)
@@ -416,7 +430,7 @@ webView.Reload();
 - **Android** &ndash;`INTERNET`ネットワークのコンテンツを表示する場合にのみ必要です。 ローカルコンテンツには特別なアクセス許可は必要ありません。
 - **iOS** &ndash;特別なアクセス許可は必要ありません。
 
-## <a name="layout"></a>レイアウト
+## <a name="layout"></a>Layout
 
 他のほとんどのビューとは異なり Xamarin.Forms 、で `WebView` `HeightRequest` は、 `WidthRequest` Stacklayout または RelativeLayout に含まれるときにとが指定されている必要があります。 これらのプロパティを指定しなかった場合、は `WebView` 表示されません。
 

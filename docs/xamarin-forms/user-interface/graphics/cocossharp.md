@@ -1,7 +1,22 @@
 ---
-title: "Using CocosSharp in Xamarin.Forms " description: "CocosSharp は、高度な視覚化のためにアプリケーションに対して正確な形状、画像、およびテキストのレンダリングを追加するために使用できます。製品: xamarin ms. assetid: E0F404D5-5C6B-4288-92EC-78996C674E4E ms. テクノロジ: xamarin-forms author: 05/03/2016 davidbritch: [ Xamarin.Forms , Xamarin.Essentials ]
+title: での CocosSharp の使用Xamarin.Forms
+description: CocosSharp を使用して、高度な視覚化のためにアプリケーションに正確な形状、画像、テキストレンダリングを追加することができます。
+ms.prod: xamarin
+ms.assetid: E0F404D5-5C6B-4288-92EC-78996C674E4E
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/03/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a3183997eb229fd3548a1afeccf82670cf651a71
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84565305"
 ---
-
 # <a name="using-cocossharp-in-xamarinforms"></a>での CocosSharp の使用Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-samples/tree/master/CocosSharpForms)

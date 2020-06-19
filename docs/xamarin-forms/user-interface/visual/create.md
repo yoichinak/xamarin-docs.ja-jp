@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms ビジュアルレンダラーの作成" の説明: " Xamarin.Forms ビューをサブクラス化せずに、visualelement オブジェクトに選択的に適用するビジュアルを作成 Xamarin.Forms します。"
-ms. 製品: xamarin ms. assetid: 80BF9C72-AC284-aaf9dddb60cbdd1cd59 ms. テクノロジ: xamarin-forms author: davidbritch: dabritch:: 03/12/2019 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
+title: ビジュアルレンダラーを作成する Xamarin.Forms
+description: Xamarin.Formsビューをサブクラス化せずに、VisualElement オブジェクトに選択的に適用するビジュアルを作成し Xamarin.Forms ます。
+ms.prod: xamarin
+ms.assetid: 80BF9C72-AC28-4AAF-9DDD-B60CBDD1CD59
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/12/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 23edbb007e912d13858686d1c5ec574c9e3349c7
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127142"
 ---
-
 # <a name="create-a-xamarinforms-visual-renderer"></a>ビジュアルレンダラーを作成する Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)

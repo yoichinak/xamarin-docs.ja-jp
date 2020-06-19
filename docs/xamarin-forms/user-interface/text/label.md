@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms label" description: "この記事では、label クラスを使用して Xamarin.Forms アプリケーションで1行と複数行のテキストを表示する方法について説明します。"
-ms. 製品: xamarin ms. assetid: 02E6C553-5670-49A0-8EE9-5153ED21EA91: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 04/09/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Formsタイトル
+description: この記事では、Label クラスを使用して、 Xamarin.Forms アプリケーションに単一のテキストと複数行のテキストを表示する方法について説明します。
+ms.prod: xamarin
+ms.assetid: 02E6C553-5670-49A0-8EE9-5153ED21EA91
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/09/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8bf6517e3624ad80c2fd4d209e5a77472460be76
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84570519"
 ---
-
 # <a name="xamarinforms-label"></a>Xamarin.Formsタイトル
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)

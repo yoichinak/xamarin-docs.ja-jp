@@ -1,8 +1,22 @@
 ---
-title: "カスタムレイアウトを作成 Xamarin.Forms する" 説明: "この記事では、カスタムレイアウトクラスを記述する方法について説明します。また、ページ全体で子を水平方向に配置し、後続の子の表示を追加行にラップする、向きを区別する WrapLayout クラスを示します。"
-ms. 製品: xamarin ms. assetid: B0CFDB59-14E5-49E9-965A-3DCCEDAC2E31: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 03/29/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: でカスタムレイアウトを作成するXamarin.Forms
+description: この記事では、カスタムレイアウトクラスを記述する方法について説明し、向きを区別する WrapLayout クラスを示します。このクラスは、ページの横に子を並べて配置し、後続の子の表示を追加の行にラップします。
+ms.prod: xamarin
+ms.assetid: B0CFDB59-14E5-49E9-965A-3DCCEDAC2E31
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/29/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2c1a958bd4cb56096f554acf26756019eeb0693c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572235"
 ---
-
 # <a name="create-a-custom-layout-in-xamarinforms"></a>でカスタムレイアウトを作成するXamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
@@ -15,7 +29,7 @@ _Xamarin は5つのレイアウトクラス (StackLayout、AbsoluteLayout、Rela
 
 Xamarin.Formsカスタムレイアウトを作成するには、レイアウトと無効化のサイクルを十分に理解している必要があります。 ここでは、これらのサイクルについて説明します。
 
-## <a name="layout"></a>レイアウト
+## <a name="layout"></a>Layout
 
 レイアウトは、ビジュアルツリーの一番上からページを使用して開始され、ビジュアルツリーのすべての分岐を通じて、ページ上のすべてのビジュアル要素をカバーします。 他の要素の親である要素は、それ自体を基準にして子のサイズ設定と配置を行います。
 
@@ -401,6 +415,6 @@ async Task<ImageList> GetImageListAsync()
 - [WrapLayout (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
 - [カスタムレイアウト](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter26.md)
 - [でのカスタムレイアウトの作成 Xamarin.Forms (ビデオ)](https://www.youtube.com/watch?v=sxjOqNZFhKU)
-- [レイアウト\<T>](xref:Xamarin.Forms.Layout`1)
+- [Layout\<T>](xref:Xamarin.Forms.Layout`1)
 - [レイアウト](xref:Xamarin.Forms.Layout)
 - [VisualElement](xref:Xamarin.Forms.VisualElement)

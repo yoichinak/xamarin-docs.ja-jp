@@ -1,8 +1,22 @@
 ---
-title: "Android での ListView Fast スクロール" の説明: "プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装しなくても、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、ListView のデータをすばやくスクロールできるようにする、Android プラットフォーム固有のを使用する方法について説明します。
-ms. 製品: xamarin ms. assetid: 37D95A2D-74AC-488A-B903-2BDD799EAA5C: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 07/10/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Android での ListView の高速スクロール
+description: プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、ListView のデータをすばやくスクロールできるようにする、Android プラットフォーム固有のを使用する方法について説明します。
+ms.prod: xamarin
+ms.assetid: 37D95A2D-74AC-488A-B903-2BDD799EAA5C
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/10/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 30e6a39b1a7649fbb9e09dfeeb85ee889da68fc1
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84128805"
 ---
-
 # <a name="listview-fast-scrolling-on-android"></a>Android での ListView の高速スクロール
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

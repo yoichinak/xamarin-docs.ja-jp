@@ -1,8 +1,22 @@
 ---
-title: "ピッカーの項目コレクションにデータを追加しています" 説明: "ピッカービューは、データの一覧からテキスト項目を選択するためのコントロールです。 この記事では、項目コレクションにデータを追加することによって、ピッカーにデータを設定する方法と、ユーザーが項目の選択に応答する方法について説明します。
-ms. 製品: xamarin ms assetid: 3C840F64-A4303D7AF46F9DBE ミリ秒。テクノロジ: xamarin-forms author: davidbritch: dabritch ms. date: 02/26/2019 no loc: [ Xamarin.Forms ,、] をクリックしてください。 Xamarin.Essentials
+title: ピッカーの項目コレクションへのデータの追加
+description: ピッカービューは、データの一覧からテキスト項目を選択するためのコントロールです。 この記事では、項目コレクションに項目を追加することによって、ピッカーにデータを設定する方法と、ユーザーが項目の選択に応答する方法について説明します。
+ms.prod: xamarin
+ms.assetid: 3C840F64-A430-457D-A4B2-3D7AF46F9DBE
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/26/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8872c6748ba778a2622d82803d580c781bd282cd
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139634"
 ---
-
 # <a name="adding-data-to-a-pickers-items-collection"></a>ピッカーの項目コレクションへのデータの追加
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-pickerdemo)

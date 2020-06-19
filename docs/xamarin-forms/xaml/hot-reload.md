@@ -1,8 +1,22 @@
 ---
-title: "XAML ホットリロード for Xamarin.Forms " description: "実行中のアプリケーションの xaml ファイルに直ちに変更を再度読み込みます。これにより、すべての xaml の変更後にプロジェクトをビルドする必要がなくなり Xamarin.Forms ます。"
-ms. 製品: xamarin ms. assetid: E220F054-32EE-424C-A7E5-6156BE271519: xamarin-forms author: maddyleger1 ms. author: 悪意のある日: 03/14/2020 の場所: [ Xamarin.Forms ,、 Xamarin.Essentials ]
+title: XAML ホットリロード ()Xamarin.Forms
+description: 実行中のアプリケーションに直ちに XAML ファイルへの変更を再度読み込みます。これにより、XAML を変更するたびにプロジェクトをビルドする必要がなくなり Xamarin.Forms ます。
+ms.prod: xamarin
+ms.assetid: E220F054-32EE-424C-A7E5-6156BE271519
+ms.technology: xamarin-forms
+author: maddyleger1
+ms.author: maleger
+ms.date: 03/14/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0655739c95ba58b8d93aae6d3987d54bd0582c7b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127453"
 ---
-
 # <a name="xaml-hot-reload-for-xamarinforms"></a>XAML ホットリロード ()Xamarin.Forms
 
 XAML ホットリロードは、生産性を向上させ、時間を節約するために、既存のワークフローにプラグインします。 Xaml のホットリロードを使用しない場合は、XAML の変更を確認するたびに、アプリをビルドして配置する必要があります。 ホットリロードでは、XAML ファイルを保存すると、実行中のアプリに変更が反映されます。 また、ナビゲーションの状態とデータが保持されるため、アプリ内の場所を失うことなく、UI をすばやく繰り返すことができます。 そのため、XAML のホットリロードでは、UI の変更を検証するためのアプリの再構築とデプロイにかかる時間が短縮されます。

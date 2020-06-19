@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms CollectionView data" description: "CollectionView には、その ItemsSource プロパティを、IEnumerable を実装する任意のコレクションに設定することによってデータが設定されます。"
-ms. 製品: xamarin ms. assetid: E1783E34-1C0F-401A-80D5-B2BE5508F5F8: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 04/29/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Formsデータの CollectionView
+description: CollectionView には、ItemsSource プロパティを、IEnumerable を実装する任意のコレクションに設定することによってデータが設定されます。
+ms.prod: xamarin
+ms.assetid: E1783E34-1C0F-401A-80D5-B2BE5508F5F8
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/29/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e381184271d4a7bfa9872d2502d2281b1f3864bf
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84134564"
 ---
-
 # <a name="xamarinforms-collectionview-data"></a>Xamarin.Formsデータの CollectionView
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)

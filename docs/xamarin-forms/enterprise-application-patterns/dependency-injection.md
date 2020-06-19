@@ -1,8 +1,22 @@
 ---
-title: "依存関係の挿入" の説明: "この章では、eShopOnContainers モバイルアプリが依存関係の挿入を使用して、これらの型に依存するコードから具象型を分離する方法について説明します。"
-ms. 製品: xamarin ms. assetid: a150f2d1-06f8-4aed-ab4e-7a847d69f103: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 11/04/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: 依存関係の挿入
+description: この章では、eShopOnContainers モバイルアプリが依存関係の挿入を使用して、これらの型に依存するコードから具象型を分離する方法について説明します。
+ms.prod: xamarin
+ms.assetid: a150f2d1-06f8-4aed-ab4e-7a847d69f103
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/04/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 99cac3c597cf1d7351d3214ce59fd0a0a0a46400
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572352"
 ---
-
 # <a name="dependency-injection"></a>依存関係の挿入
 
 通常、クラスコンストラクターは、オブジェクトをインスタンス化するときに呼び出され、オブジェクトが必要とする値は、コンストラクターに引数として渡されます。 これは依存関係の挿入の例であり、特に*コンストラクターインジェクション*と呼ばれています。 オブジェクトが必要とする依存関係は、コンストラクターに挿入されます。

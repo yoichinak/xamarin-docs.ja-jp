@@ -1,8 +1,22 @@
 ---
-title: "xaml でのジェネリック Xamarin.Forms " の説明: " Xamarin.Forms xaml は、ジェネリック型の制約を型引数として指定することによって、ジェネリック CLR 型の使用をサポートします。"
-ms. 製品: xamarin ms. assetid: 97B73048-4F90-41AD-AB48-8EB804C4998B: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 04/28/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: XAML のジェネリック Xamarin.Forms
+description: Xamarin.FormsXAML は、ジェネリック型の制約を型引数として指定することによって、ジェネリック CLR 型を使用するためのサポートを提供します。
+ms.prod: xamarin
+ms.assetid: 97B73048-4F90-41AD-AB48-8EB804C4998B
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/28/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5a033e5feeefc41b97be29491a70632e767aa1b4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84565201"
 ---
-
 # <a name="generics-in-xamarinforms-xaml"></a>XAML のジェネリック Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-generics/)

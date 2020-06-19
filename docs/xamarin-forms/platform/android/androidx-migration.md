@@ -1,8 +1,22 @@
 ---
-title: "AndroidX Migration in Xamarin.Forms " description: "この記事では、androidx が存在する理由と、アプリで androidx に移行する方法について説明し Xamarin.Forms ます。
-ms. 製品: xamarin ms. assetid: 98884003-E65A-4EB4-84 2D-66CFE27344 A4 ms. テクノロジ: xamarin-forms author: profexorgeek: jusjohns ms. date: 01/22/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: AndroidX の移行Xamarin.Forms
+description: この記事では、AndroidX が存在する理由と、アプリで AndroidX に移行する方法について説明し Xamarin.Forms ます。
+ms.prod: xamarin
+ms.assetid: 98884003-E65A-4EB4-842D-66CFE27344A4
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 01/22/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c2df309a8a12a05a4b492bb66977aa2411142850
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138269"
 ---
-
 # <a name="androidx-migration-in-xamarinforms"></a>AndroidX の移行Xamarin.Forms
 
 AndroidX は、Android サポートライブラリを置き換えます。 この記事では、AndroidX が存在する理由、影響を受ける方法、 Xamarin.Forms および androidx ライブラリを使用するようにアプリケーションを移行する方法について説明します。

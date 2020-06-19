@@ -1,8 +1,22 @@
 ---
-title: "SkiaSharp の曲線とパス" の説明: "この記事では、SkiaSharp を使用して、アプリケーションで曲線を描画し、パス機能を使用する方法について説明 Xamarin.Forms し、サンプルコードを使用してこれを示します。"
-ms. 製品: xamarin ms テクノロジ: skiasharp: 781937AA-AA1C-469C-AA92-D42D08B58635 author: davidbritch dabritch: ms. date: 05/24/2017 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
+title: SkiaSharp の曲線とパス
+description: この記事では、SkiaSharp を使用して、アプリケーションで曲線を描画し、パス機能を使用する方法について説明し、サンプルコードを使用してその方法を Xamarin.Forms 示します。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 781937AA-AA1C-469C-AA92-D42D08B58635
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/24/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7d5a4fc818cef77671b6cabddc56de8234cb858d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127804"
 ---
-
 # <a name="skiasharp-curves-and-paths"></a>SkiaSharp の曲線とパス
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

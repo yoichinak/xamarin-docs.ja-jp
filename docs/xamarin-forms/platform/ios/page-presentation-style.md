@@ -1,8 +1,22 @@
 ---
-title: "iOS のモーダルページプレゼンテーションスタイル" 説明: "プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、モーダルページのプレゼンテーションスタイルを設定する iOS プラットフォーム固有のを使用する方法について説明します。
-ms. 製品: xamarin ms. assetid: C791F7CF-330A-44BA-987A-4CFCCBB9278B: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 04/02/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: IOS のモーダルページプレゼンテーションスタイル
+description: プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、モーダルページのプレゼンテーションスタイルを設定する iOS プラットフォーム固有のを使用する方法について説明します。
+ms.prod: xamarin
+ms.assetid: C791F7CF-330A-44BA-987A-4CFCCBB9278B
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/02/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2abc255964df35fbdfeb4191911c57df9be99fd9
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84128012"
 ---
-
 # <a name="modal-page-presentation-style-on-ios"></a>IOS のモーダルページプレゼンテーションスタイル
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

@@ -1,8 +1,22 @@
 ---
-title: "パート 3. XAML マークアップ拡張機能の説明: "XAML マークアップ拡張機能は、プロパティを他のソースから間接的に参照されるオブジェクトまたは値に設定できるようにする XAML の重要な機能を構成します。"
-ms. 製品: xamarin ms テクノロジ: xamarin-forms ms. assetid: F4A37564-B18B-42FF-B841-9A1949895AB6 author: davidbritch ms. author: dabritch ms. date: 03/27/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: 第 3 部 XAML マークアップ拡張
+description: XAML マークアップ拡張機能は、他のソースから間接的に参照されるオブジェクトまたは値にプロパティを設定できるようにする、XAML の重要な機能を構成します。
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: F4A37564-B18B-42FF-B841-9A1949895AB6
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/27/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3fcea963b253ea34601a36434007f18d925975eb
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84131340"
 ---
-
 # <a name="part-3-xaml-markup-extensions"></a>第 3 部 XAML マークアップ拡張
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)

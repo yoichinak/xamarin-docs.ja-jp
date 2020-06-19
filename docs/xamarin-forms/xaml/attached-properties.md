@@ -1,8 +1,22 @@
 ---
-title: "添付プロパティ" の説明: "この記事では、添付プロパティの概要を示し、それらを作成して使用する方法を示します。"
-ms. 製品: xamarin ms. assetid: 6E9DCDC3-A0E4-46A6-BAA9-4FEB6DF8A5A8: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 06/02/2016 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: 添付プロパティ
+description: この記事では、添付プロパティの概要を説明し、それらを作成して使用する方法を示します。
+ms.prod: xamarin
+ms.assetid: 6E9DCDC3-A0E4-46A6-BAA9-4FEB6DF8A5A8
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/02/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1f26a4415a75b2b02fd7d6893e366ef81156f077
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138191"
 ---
-
 # <a name="attached-properties"></a>添付プロパティ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)

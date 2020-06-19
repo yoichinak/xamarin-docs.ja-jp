@@ -1,8 +1,22 @@
 ---
-title: "SkiaSharp 透明性" 説明: "透明度を使用して、複数のオブジェクトを1つのシーンで結合します。"
-ms. 製品: xamarin ms テクノロジ: skiasharp: B62F9487-C30E-4C63-BAB1-4C091FF50378 author: davidbritch dabritch: ms. date: 08/23/2018 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
+title: SkiaSharp の透明度
+description: 透明度を使用して、複数のオブジェクトを1つのシーンに結合します。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: B62F9487-C30E-4C63-BAB1-4C091FF50378
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/23/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 735aae1b9d94865bd34450861bd6c57b08c420c2
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84134720"
 ---
-
 # <a name="skiasharp-transparency"></a>SkiaSharp の透明度
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

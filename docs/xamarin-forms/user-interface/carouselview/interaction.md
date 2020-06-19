@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms CarouselView の相互作用" の説明: "CurrentItem と Position のプロパティを使用して、CarouselView に現在表示されている項目にアクセスできます。"
-ms. 製品: xamarin ms. assetid: 854D97E5-D119-4BE2-AE7C-BD428792C992: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 02/11/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsCarouselView の相互作用
+description: CarouselView に現在表示されているアイテムには、CurrentItem プロパティと Position プロパティを使用してアクセスできます。
+ms.prod: xamarin
+ms.assetid: 854D97E5-D119-4BE2-AE7C-BD428792C992
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/11/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 57c501c0f789ce448d8381cbbccb46666cf06305
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137411"
 ---
-
 # <a name="xamarinforms-carouselview-interaction"></a>Xamarin.FormsCarouselView の相互作用
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
@@ -38,7 +52,7 @@ ms. 製品: xamarin ms. assetid: 854D97E5-D119-4BE2-AE7C-BD428792C992: xamarin-f
 > [!IMPORTANT]
 > プロパティが変更さ `Position` れると、プロパティが変更され `CurrentItem` ます。 これにより、が実行され、イベントが発生し `PositionChangedCommand` `PositionChanged` ます。
 
-### <a name="event"></a>Event
+### <a name="event"></a>イベント
 
 次の XAML の例は、 [`CarouselView`](xref:Xamarin.Forms.CarouselView) イベントハンドラーを使用して、変更中の現在の項目に応答するを示しています。
 
@@ -111,7 +125,7 @@ public ICommand ItemChangedCommand => new Command<Monkey>((item) =>
 > [!NOTE]
 > プロパティを `Position` 0 に設定すると、基になるコレクションの最初の項目が表示されます。
 
-### <a name="event"></a>Event
+### <a name="event"></a>イベント
 
 次の XAML の例は、 [`CarouselView`](xref:Xamarin.Forms.CarouselView) イベントハンドラーを使用してプロパティの変更に応答するを示してい `Position` ます。
 

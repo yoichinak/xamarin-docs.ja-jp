@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms および Azure Cognitive Services の概要" 説明: "この記事では、Microsoft 認知サービス api の一部を呼び出す方法を示すサンプルアプリケーションの概要を示します。"
-ms. 製品: xamarin ms. assetid: 74121ADB-1322-4C1E-A103-F37257BC7CB0: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 02/08/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Formsおよび Azure Cognitive Services の概要
+description: この記事では、Microsoft 認知サービス Api の一部を呼び出す方法を示すサンプルアプリケーションの概要について説明します。
+ms.prod: xamarin
+ms.assetid: 74121ADB-1322-4C1E-A103-F37257BC7CB0
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/08/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7c2a63c40d1006c7d83c9dde871e17d4b194bdca
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84129715"
 ---
-
 # <a name="xamarinforms-and-azure-cognitive-services-introduction"></a>Xamarin.Formsおよび Azure Cognitive Services の概要
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
@@ -46,7 +60,7 @@ _Microsoft Cognitive Services は、顔認識、音声認識、言語の理解�
 
 サンプルアプリケーションの共有コードプロジェクトは、次の5つの主要なフォルダーで構成されています。
 
-|Folder|目的|
+|フォルダー|目的|
 |--- |--- |
 |モデル|アプリケーションのデータモデルクラスが含まれています。 これには、 `TodoItem` アプリケーションによって使用される1つのデータ項目をモデル化するクラスが含まれます。 このフォルダーには、さまざまな Microsoft 認知サービス Api から返された JSON 応答のモデル化に使用されるクラスも含まれています。|
 |リポジトリ|`ITodoItemRepository` `TodoItemRepository` データベース操作を実行するために使用されるインターフェイスとクラスが含まれています。|

@@ -1,8 +1,22 @@
 ---
-title: "パート 2. 必須の XAML 構文 "説明:" この記事では、プロパティ要素と添付プロパティの基本的な XAML 構文機能について説明します。
-3802-4635 4022F1DC: xamarin ms. assetid: A553: dabritch: xamarin-forms author: davidbritch ミリ秒: ms. date: 10/25/2017 no loc: [ Xamarin.Forms ,]」を実行して、: を指定します。 Xamarin.Essentials
+title: 第 2 部 基本的な XAML 構文
+description: この記事では、プロパティ要素と添付プロパティの基本的な XAML 構文機能について説明します。
+ms.prod: xamarin
+ms.assetid: 4022F1DC-3802-4635-A553-688ABD3F0D5A
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/25/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c400bb342568a0399e2a582496f85ead273b6994
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572183"
 ---
-
 # <a name="part-2-essential-xaml-syntax"></a>第 2 部 基本的な XAML 構文
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)

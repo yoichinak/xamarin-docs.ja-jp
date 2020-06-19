@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms slider" description: " Xamarin.Forms slider は、ユーザーが連続した範囲から倍精度浮動小数点値を選択するために操作できる水平バーです。 この記事では、スライダークラスを使用して連続値の範囲から値を選択する方法について説明します。
-ms. 製品: xamarin ms. assetid: 36B1C645-26E0-4874-B6B6-BDBF77662878: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 02/27/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsSlider
+description: スライダーは、連続した Xamarin.Forms 範囲から倍精度浮動小数点値を選択するためにユーザーが操作できる水平バーです。 この記事では、スライダークラスを使用して連続値の範囲から値を選択する方法について説明します。
+ms.prod: xamarin
+ms.assetid: 36B1C645-26E0-4874-B6B6-BDBF77662878
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/27/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9fc61dcac588f49fc1df7ee96792cf55bdfa46c5
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572040"
 ---
-
 # <a name="xamarinforms-slider"></a>Xamarin.FormsSlider
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)

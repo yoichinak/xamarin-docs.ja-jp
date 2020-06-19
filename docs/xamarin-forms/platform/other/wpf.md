@@ -1,12 +1,28 @@
 ---
-title: "WPF Platform Setup" description: " Xamarin.Forms 現在、wpf プラットフォームのプレビューがサポートされています" ms. 製品: xamarin ms. assetid: 650723F2-4279-4B7B-B0A1-D7F8FF26BF1E: xamu-ビデオ作成者: davidbritch ミリ秒: dabritch ms. 日付: 04/09/2020 no-場所: [ Xamarin.Forms ,、 Xamarin.Essentials ]
+title: WPF プラットフォームのセットアップ
+description: Xamarin.Formsでは、WPF プラットフォームのプレビューがサポートされています。
+ms.prod: xamarin
+ms.assetid: 650723F2-4279-4B7B-B0A1-D7F8FF26BF1E
+ms.technology: xamarin-forms
+ms.custom: xamu-video
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/20/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 774ae964643b9b78f424d96b3dd382f244205dcf
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946326"
 ---
-
 # <a name="wpf-platform-setup"></a>WPF プラットフォームのセットアップ
 
 ![プレビュー](~/media/shared/preview.png)
 
-Xamarin.Formsでは、Windows Presentation Foundation (WPF) のプレビューがサポートされるようになりました。 この記事では、WPF プロジェクトをソリューションに追加する方法について説明 Xamarin.Forms します。
+Xamarin.Formsでは、Windows Presentation Foundation (WPF) のプレビューがサポートされており、.NET Core 3 で .NET Framework しています。 この記事では、.NET Framework を対象とする WPF プロジェクトをソリューションに追加する方法について説明し Xamarin.Forms ます。
 
 > [!IMPORTANT]
 > Xamarin.FormsWPF のサポートは、コミュニティによって提供されます。 詳細については、「 [ Xamarin.Forms プラットフォームのサポート](https://github.com/xamarin/Xamarin.Forms/wiki/Platform-Support)」を参照してください。
@@ -24,6 +40,9 @@ Windows 7、8、および10のデスクトップで実行される WPF アプリ
     ![新しい WPF プロジェクトを追加する](wpf-images/add-project.png "新しい WPF プロジェクトを追加する")
 
     [**次へ**] ボタンをクリックします。
+
+    > [!NOTE]
+    > Xamarin.Forms4.7 には、.NET Core 3 で実行される WPF アプリのサポートが含まれています。
 
 3. [**新しいプロジェクトの構成**] ウィンドウで、 **wpf**拡張機能を含むプロジェクトの名前を入力します。たとえば、「 **boxviewclock. WPF**」と入力します。 [**参照**] ボタンをクリックし、[ **boxviewclock** ] フォルダーを選択し、 **[フォルダーの選択]** をクリックして、ソリューション内の他のプロジェクトと同じディレクトリに WPF プロジェクトを配置します。
 

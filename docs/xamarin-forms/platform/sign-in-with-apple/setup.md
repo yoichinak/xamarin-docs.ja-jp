@@ -1,8 +1,22 @@
 ---
-title: "セットアップ手順-Apple でのサインイン Xamarin.Forms " の説明: "apple セットアップでのサインインは、モバイルアプリケーションが対象とするさまざまなプラットフォームによって異なります。"
-ms. 製品: xamarin ms. assetid: 8f712802氏 395b47 69b5davidortinau c927ad1a8391 ミリ秒。テクノロジ: xamarin-forms author: ms. 09/10/2019 author:: [ Xamarin.Forms ,] のように指定します。 Xamarin.Essentials
+title: セットアップ手順-Apple でにサインインします。Xamarin.Forms
+description: Apple セットアップでのサインインは、モバイルアプリケーションが対象とするさまざまなプラットフォームによって異なります。
+ms.prod: xamarin
+ms.assetid: 8F712802-395B-469B-B5BE-C927AD1A8391
+ms.technology: xamarin-forms
+author: davidortinau
+ms.author: daortin
+ms.date: 09/10/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 95fc2547dd2f17f7aa2b2e8ca4c70915c6542318
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198040"
 ---
-
 # <a name="setup-sign-in-with-apple-for-xamarinforms"></a>Apple でのサインインのセットアップXamarin.Forms
 
 このガイドでは、Apple で高度なサインインを行うためにクロスプラットフォームアプリケーションをセットアップするために必要な一連の手順について説明します。 Apple のセットアップは Apple Developer Portal で簡単に実行できますが、Android と Apple の間にセキュリティで保護された関係を作成するには追加の手順が必要です。 
@@ -91,19 +105,11 @@ ms. 製品: xamarin ms. assetid: 8f712802氏 395b47 69b5davidortinau c927ad1a839
 キーファイルがダウンロードされ `.p8` ます。  このファイルをメモ帳で開くことも、VSCode を使用してテキストの内容を表示することもできます。  次のようになります。
 
 ```
----
-title: "Setup Steps - Sign In with Apple for Xamarin.Forms"
-description: Sign In with Apple setup differs depending on the different platforms your mobile application targets.
-ms.prod: xamarin
-ms.assetid: 8F712802-395B-469B-B5BE-C927AD1A8391
-ms.technology: xamarin-forms
-author: davidortinau
-ms.author: daortin
-ms.date: 09/10/2019
-no-loc:
-- "Xamarin.Forms"
-- "Xamarin.Essentials"
-
+-----BEGIN PRIVATE KEY-----
+MIGTAgEAMBMGBasGSM49AgGFCCqGSM49AwEHBHkwdwIBAQQg3MX8n6VnQ2WzgEy0
+Skoz9uOvatLMKTUIPyPCAejzzUCgCgYIKoZIzj0DAQehRANCAARZ0DoM6QPqpJxP
+JKSlWz0AohFhYre10EXPkjrih4jTm+b0AeG2BGuoIWd18i8FimGDgK6IzHHPsEqj
+DHF5Svq0
 -----END PRIVATE KEY-----
 ```
 

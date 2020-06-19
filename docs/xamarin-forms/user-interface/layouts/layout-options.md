@@ -1,8 +1,22 @@
 ---
-title: "説明のレイアウトオプション" Xamarin.Forms description: "すべて Xamarin.Forms のビューには、LayoutOptions 型の水平オプションと垂直オプションのプロパティがあります。 この記事では、各 LayoutOptions 値がビューの配置と展開に与える影響について説明します。
-ms. 製品: xamarin ms assetid: 7CAB5631-5153-4DEF-8AD7-C6011CE44 307 ms. テクノロジ: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 02/10/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: レイアウトオプションXamarin.Forms
+description: すべて Xamarin.Forms のビューには、LayoutOptions 型の水平オプションと垂直オプションのプロパティがあります。 この記事では、各 LayoutOptions 値がビューの配置と展開に与える影響について説明します。
+ms.prod: xamarin
+ms.assetid: 7CAB5631-5153-4DEF-8AD7-C6011CE44307
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/10/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 6fa03cf5c18e21ce5ca9e7ea907f50c8de6f3e6c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573262"
 ---
-
 # <a name="layout-options-in-xamarinforms"></a>レイアウトオプションXamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutoptions)

@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms コモンコントロールのプロパティ、メソッド、およびイベントの説明:" この記事では、派生クラスで一般的に使用される、VisualElement クラスで定義されている共通のプロパティ、メソッド、およびイベントについて説明します。
-ms. 製品: xamarin ms. assetId: 85A0CCF5-C1D8-40BB-927F-A4D944E5534D: xamarin-forms author: profexorgeek ms. author: jusjohns ms. date: 08/21/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Formsコモンコントロールのプロパティ、メソッド、およびイベント
+description: この記事では、派生クラスで一般的に使用される、VisualElement クラスで定義されている共通のプロパティ、メソッド、およびイベントについて説明します。
+ms.prod: xamarin
+ms.assetId: 85A0CCF5-C1D8-40BB-927F-A4D944E5534D
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 08/21/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: deb894cccd5b6a2a9d908ef8967de91f00e7d297
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136423"
 ---
-
 # <a name="xamarinforms-common-control-properties-methods-and-events"></a>Xamarin.Formsコモンコントロールのプロパティ、メソッド、およびイベント
 
 クラスは、 Xamarin.Forms `VisualElement` アプリケーションで使用されるほとんどのコントロールの基本クラスです Xamarin.Forms 。 クラスは、 `VisualElement` 派生クラスで使用される多くの[プロパティ](#properties)、[メソッド](#methods)、および[イベント](#events)を定義します。

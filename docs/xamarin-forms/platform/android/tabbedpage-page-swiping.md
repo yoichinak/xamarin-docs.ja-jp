@@ -1,8 +1,22 @@
 ---
-title: "TabbedPage Page スワイプ on Android" の説明: "プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、TabbedPage 内のページ間のスワイプジェスチャを使用してスワイプできる Android プラットフォーム固有のを使用する方法について説明します。
-ms. 製品: xamarin ms. assetid: D1C09CCB-7246-41A4-8BD2-FA6FABCF1C72: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 07/10/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Android での TabbedPage ページのスワイプ
+description: プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、TabbedPage 内のページ間のスワイプジェスチャを使用してスワイプできる、Android プラットフォーム固有のを使用する方法について説明します。
+ms.prod: xamarin
+ms.assetid: D1C09CCB-7246-41A4-8BD2-FA6FABCF1C72
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/10/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 61c0137788303363769fdec80a16542e2d8bea5e
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84128610"
 ---
-
 # <a name="tabbedpage-page-swiping-on-android"></a>Android での TabbedPage ページのスワイプ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms CarouselView data" description: "CarouselView には、その ItemsSource プロパティを、IEnumerable を実装する任意のコレクションに設定することによってデータが設定されます。"
-ms. 製品: xamarin ms. assetid: 20DB2C57-CE3A-4D91-80DC-73AE361A3CB0: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 04/29/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Formsデータの CarouselView
+description: CarouselView には、ItemsSource プロパティを、IEnumerable を実装する任意のコレクションに設定することによってデータが設定されます。
+ms.prod: xamarin
+ms.assetid: 20DB2C57-CE3A-4D91-80DC-73AE361A3CB0
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/29/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1081bfafae8e4d7a7a522414e9b45cde48037f1d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136553"
 ---
-
 # <a name="xamarinforms-carouselview-data"></a>Xamarin.Formsデータの CarouselView
 
 ![](~/media/shared/preview.png "This API is currently pre-release")

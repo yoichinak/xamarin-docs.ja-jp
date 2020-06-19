@@ -1,8 +1,22 @@
 ---
-タイトル: " Xamarin.Forms ページ" 説明: " Xamarin.Forms ページは、クロスプラットフォームモバイルアプリケーション画面を表します。 この記事では、に含まれるページの一覧を示し Xamarin.Forms ます。
-ms. 製品: xamarin ms assetid: 9C8C710F-E312-420B-9324-A7A20CEDB7EC: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 01/12/2016 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Forms Pages
+description: Xamarin.Formsページは、クロスプラットフォームモバイルアプリケーション画面を表します。 この記事では、に含まれるページの一覧を示し Xamarin.Forms ます。
+ms.prod: xamarin
+ms.assetid: 9C8C710F-E312-420B-9324-A7A20CEDB7EC
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/12/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b72564ebbb057c8154140c9845961d4c42e93db3
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573314"
 ---
-
 # <a name="xamarinforms-pages"></a>Xamarin.Forms Pages
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery/)

@@ -1,8 +1,23 @@
 ---
-title: "XAML プレビューアー for Xamarin.Forms " description: "この記事では、Xaml プレビューアーを使用して、入力時に表示されるレイアウトを確認する方法について説明します Xamarin.Forms 。 XAML プレビューアーは、Visual Studio 2019 および Visual Studio 2019 for Mac で利用できます。 "
-zone_pivot_groups: プラットフォーム 84769ff1-72fd-4c44-8251-dd6d5bf8c7b2: xamarin ms. assetid:: maddyleger1: xamarin-forms author: ms. author: マルウェア: 03/16/2020 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
+title: の XAML プレビューアーXamarin.Forms
+description: この記事では、XAML プレビューアーを使用して、入力時に表示されるレイアウトを確認する方法について説明し Xamarin.Forms ます。 XAML プレビューアーは、Visual Studio 2019 および Visual Studio 2019 for Mac で使用できます。
+zone_pivot_groups: platform
+ms.prod: xamarin
+ms.assetid: 84769ff1-72fd-4c44-8251-dd6d5bf8c7b2
+ms.technology: xamarin-forms
+author: maddyleger1
+ms.author: maleger
+ms.date: 03/16/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 6916d5fde688c5b1162f12db0d36bc3ca27156d8
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137320"
 ---
-
 # <a name="xaml-previewer-for-xamarinforms"></a>の XAML プレビューアーXamarin.Forms
 
 _入力時に表示される Xamarin.Forms レイアウトを確認する_
@@ -11,7 +26,7 @@ _入力時に表示される Xamarin.Forms レイアウトを確認する_
 
 XAML プレビューアーは、 Xamarin.Forms iOS と Android で xaml ページがどのように表示されるかを示しています。 XAML に変更を加えると、コードと共にすぐにプレビューが表示されます。 XAML プレビューアーは、Visual Studio および Visual Studio for Mac で使用できます。
 
-## <a name="getting-started"></a>作業の開始
+## <a name="getting-started"></a>はじめに
 
 ::: zone pivot="windows"
 

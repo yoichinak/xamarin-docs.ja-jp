@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms CollectionView scroll" description: "ユーザーがスクロールを開始したときに、スクロールの終了位置を制御して、項目が完全に表示されるようにすることができます。 さらに、CollectionView では、項目をプログラムによってビューにスクロールする2つの ScrollTo メソッドが定義されています。
-ms. 製品: xamarin ms. assetid: 2ED719AF8-33D2-434D-25 分25分の6ミリ秒。テクノロジ: xamarin-forms author: davidbritch: dabritch:------loc: & # 3. 日付: 09/17/2019 なし: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsCollectionView スクロール
+description: ユーザーがスクロールを開始しようとしたときに、項目が完全に表示されるように、スクロールの終了位置を制御できます。 さらに、CollectionView は2つの ScrollTo メソッドを定義して、プログラムによって項目をビューにスクロールします。
+ms.prod: xamarin
+ms.assetid: 2ED719AF-33D2-434D-949A-B70B479C9BA5
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/17/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 04d190971fa5ef16e08091600558f7f016bc8605
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84134538"
 ---
-
 # <a name="xamarinforms-collectionview-scrolling"></a>Xamarin.FormsCollectionView スクロール
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)

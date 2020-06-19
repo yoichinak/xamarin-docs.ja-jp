@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms マップコントロール" 説明: "マップコントロールは、マップを表示して注釈を付けるためのクロスプラットフォームビューです。 プラットフォームごとにネイティブマップコントロールを使用して、ユーザーに高速で使い慣れた maps エクスペリエンスを提供します。」
-ms. 製品: xamarin ms. assetid: 22C99029-0B16-43A6-BF58-26B48C4AED38: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 10/29/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Formsマップ コントロール
+description: マップコントロールは、マップを表示して注釈を付けるためのクロスプラットフォームビューです。 プラットフォームごとにネイティブマップコントロールを使用して、ユーザーに高速で使い慣れた maps エクスペリエンスを提供します。
+ms.prod: xamarin
+ms.assetid: 22C99029-0B16-43A6-BF58-26B48C4AED38
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/20/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1aee81b6988e1f3a7099c2722b6f336f071ad8c0
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946365"
 ---
-
 # <a name="xamarinforms-map-control"></a>Xamarin.Formsマップ コントロール
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
@@ -23,6 +37,7 @@ ms. 製品: xamarin ms. assetid: 22C99029-0B16-43A6-BF58-26B48C4AED38: xamarin-f
 - [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType)型のは、 [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType) マップの表示スタイルを示します。
 - `MoveToLastRegionOnLayoutChange`型の `bool` 。レイアウトの変更が発生したときに、表示されているマップ領域を現在の領域から前の領域に移動するかどうかを制御します。
 - [`Pins`](xref:Xamarin.Forms.Maps.Map.Pins)型のは、 `IList<Pin>` マップ上のピンのリストを表します。
+- `TrafficEnabled`型のは、 `bool` トラフィックデータをマップに重ねて表示するかどうかを示します。
 - [`VisibleRegion`](xref:Xamarin.Forms.Maps.Map.VisibleRegion)型のは、 [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) 現在表示されているマップの領域を返します。
 
 これらのプロパティは `MapElements` 、、、およびの各プロパティを除き、 `Pins` `VisibleRegion` オブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。これは、データバインディングのターゲットになる可能性があることを意味します。
@@ -196,6 +211,23 @@ if (map.VisibleRegion != null)
 
 > [!NOTE]
 > マップのカスタムレンダラーを作成して、追加のマップ動作のカスタマイズを行うことができます。 詳細については、「 [ Xamarin.Forms マップのカスタマイズ](~/xamarin-forms/app-fundamentals/custom-renderer/map-pin.md)」を参照してください。
+
+### <a name="show-traffic-data"></a>トラフィック データを表示する
+
+クラスは、 [`Map`](xref:Xamarin.Forms.Maps.Map) `TrafficEnabled` 型のプロパティを定義 `bool` します。 既定では、このプロパティはです。これは `false` 、トラフィックデータがマップに重ねられないことを示します。 このプロパティがに設定されている場合 `true` 、トラフィックデータはマップに重ねられます。 次の例は、このプロパティを設定する方法を示しています。
+
+```xaml
+<maps:Map TrafficEnabled="true" />
+```
+
+これに相当する C# コードを次に示します。
+
+```csharp
+Map map = new Map
+{
+    TrafficEnabled = true
+};
+```
 
 ### <a name="disable-scroll"></a>スクロールを無効にする
 

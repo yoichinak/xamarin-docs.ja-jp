@@ -1,8 +1,22 @@
 ---
-title: "エンタープライズアプリ開発の概要" 説明: "この章では、エンタープライズアプリ開発の概要について説明し、eShopOnContainers mobile アプリを紹介します。"
-ms cbce0659: xamarin ms. assetid: fa03-447a-86ec-140438143230 ms. テクノロジ: xamarin-forms author: davidbritch ミリ秒: dabritch ms. date: 08/07/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: エンタープライズアプリ開発の概要
+description: この章では、エンタープライズアプリ開発の概要を説明し、eShopOnContainers モバイルアプリについて紹介します。
+ms.prod: xamarin
+ms.assetid: cbce0659-fa03-447a-86ec-140438143230
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e78e7c3056d4f1e22114819f54c1df261aec70e1
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198113"
 ---
-
 # <a name="introduction-to-enterprise-app-development"></a>エンタープライズアプリ開発の概要
 
 プラットフォームに関係なく、エンタープライズアプリの開発者はいくつかの課題に直面します。
@@ -133,7 +147,7 @@ EShopOnContainers PCL プロジェクトには、次のフォルダーが含ま�
 |コンバーター|カスタムロジックをバインディングに適用する値コンバーターを格納します。|
 |エフェクト|特定の `EntryLineColorEffect` コントロールの境界線の色を変更するために使用されるクラスが含まれてい `Entry` ます。|
 |例外|カスタムを格納し `ServiceAuthenticationException` ます。|
-|拡張機能|クラスおよびクラスの拡張メソッドが含まれてい `VisualElement` `IEnumerable` ます。|
+|Extensions|クラスおよびクラスの拡張メソッドが含まれてい `VisualElement` `IEnumerable` ます。|
 |ヘルパー|アプリのヘルパークラスが含まれています。|
 |モデル|アプリのモデルクラスが含まれています。|
 |プロパティ|`AssemblyInfo.cs`.Net アセンブリメタデータファイルを含みます。|

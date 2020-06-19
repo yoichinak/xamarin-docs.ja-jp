@@ -1,8 +1,22 @@
 ---
-title: "RESTful Web サービスの認証" 説明: "基本認証は、正しい資格情報を持つクライアントのみにリソースへのアクセスを提供します。 この記事では、基本認証を使用して、RESTful web サービスリソースへのアクセスを保護する方法について説明します。 "
-ms. 製品: xamarin ms. assetid: 7B5FFDC4-F2AA-4B12-A30A-1DACC7FECBF1: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 01/22/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: RESTful Web サービスを認証する
+description: 基本認証は、正しい資格情報を持つクライアントのみにリソースへのアクセスを提供します。 この記事では、基本認証を使用して、RESTful web サービスリソースへのアクセスを保護する方法について説明します。
+ms.prod: xamarin
+ms.assetid: 7B5FFDC4-F2AA-4B12-A30A-1DACC7FECBF1
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/22/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d62e533d127294c77c0779c20fd9c78ef2231200
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135721"
 ---
-
 # <a name="authenticate-a-restful-web-service"></a>RESTful Web サービスを認証する
 
 _HTTP は、複数の認証メカニズムを使用してリソースへのアクセスを制御することをサポートしています。基本認証は、正しい資格情報を持つクライアントのみにリソースへのアクセスを提供します。この記事では、基本認証を使用して、RESTful web サービスリソースへのアクセスを保護する方法について説明します。_

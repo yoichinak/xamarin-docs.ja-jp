@@ -1,8 +1,22 @@
 ---
-title: 「iOS の安全な領域レイアウトガイド」説明: "プラットフォーム固有の機能を使用すると、特定のプラットフォームでのみ使用でき、カスタムレンダラーや特殊効果を実装することはできません。 この記事では、ios プラットフォーム固有のを使用する方法について説明します。これにより、iOS 11 以上を使用するすべてのデバイスに対して、ページコンテンツが画面の領域に確実に配置されます。
-ms. 製品: xamarin ms. assetid: 2B6789C1-39B4-4C16-ADE1-3ED3378EAC63: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 10/24/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: IOS の安全な領域レイアウトガイド
+description: プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、ios プラットフォーム固有のを使用する方法について説明します。これにより、iOS 11 以上を使用するすべてのデバイスで安全なページコンテンツが画面の領域に配置されるようになります。
+ms.prod: xamarin
+ms.assetid: 2B6789C1-39B4-4C16-ADE1-3ED3378EAC63
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/24/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5ca30481fbc0e5631ff75000c688dd805793e670
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84128064"
 ---
-
 # <a name="safe-area-layout-guide-on-ios"></a>IOS の安全な領域レイアウトガイド
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

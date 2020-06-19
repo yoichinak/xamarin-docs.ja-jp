@@ -1,8 +1,22 @@
 ---
-タイトル: " Xamarin.Forms progressbar" 説明: " Xamarin.Forms progressbar は、フロートプロパティに基づいて塗りつぶされる水平バーとして進行状況を視覚的に表すコントロールです。"
-ms. 製品: xamarin ms. assetId: C2F85FED-797C-466B-A0FD-E73CFB79B267: xamarin-forms author: profexorgeek ms. author: jusjohns ms. date: 07/09/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Formsプログレス
+description: Xamarin.FormsProgressBar は、フロートプロパティに基づいて塗りつぶされる水平バーとして進行状況を視覚的に表すコントロールです。
+ms.prod: xamarin
+ms.assetId: C2F85FED-797C-466B-A0FD-E73CFB79B267
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 07/09/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b4ac6231c0483c0c44755c2ac9539f237dd64251
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136280"
 ---
-
 # <a name="xamarinforms-progressbar"></a>Xamarin.Formsプログレス
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-progressbardemos/)
 

@@ -1,8 +1,23 @@
 ---
-title: "Mac Platform Setup" description: "この記事では、Mac プロジェクトをプロジェクトに追加する方法について説明します。これに Xamarin.Forms より、macOS Sierra と MacOS El Capitan で実行できるアプリが生成されます。"
-ms. 製品: xamarin ms. assetid: EEC549E0-F182-4F9C-B2BA-B31D19569AA5: xamu-ビデオ作成者: davidbritch ミリ秒: dabritch ms. date: 05/03/2017 no loc: [ Xamarin.Forms ,、] を指定します。 Xamarin.Essentials
+title: Mac プラットフォームのセットアップ
+description: この記事では、Mac プロジェクトをプロジェクトに追加する方法について説明し Xamarin.Forms ます。これにより、macOS Sierra と MacOS El Capitan で実行できるアプリが生成されます。
+ms.prod: xamarin
+ms.assetid: EEC549E0-F182-4F9C-B2BA-B31D19569AA5
+ms.technology: xamarin-forms
+ms.custom: xamu-video
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/03/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 11897d2d3b8b7ba0a62956f1dbe4d8b873352e7a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139556"
 ---
-
 # <a name="mac-platform-setup"></a>Mac プラットフォームのセットアップ
 
 ![プレビュー](~/media/shared/preview.png)

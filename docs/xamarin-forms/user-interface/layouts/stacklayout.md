@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms stacklayout" description: "StackLayout は、1次元スタック内の子ビューを水平方向または垂直方向に整理します。"
-ms. 製品: xamarin ms. assetid: 6A91EA70-268C-462C-AAAF-F8DA011403F8: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 05/11/2020 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsStackLayout
+description: StackLayout は、1次元のスタック内の子ビューを水平方向または垂直方向に整理します。
+ms.prod: xamarin
+ms.assetid: 6A91EA70-268C-462C-AAAF-F8DA011403F8
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/11/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f624674cc6d4ba1bdc34a42fb52fb63ff8a7135a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137970"
 ---
-
 # <a name="xamarinforms-stacklayout"></a>Xamarin.FormsStackLayout
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stacklayoutdemos)

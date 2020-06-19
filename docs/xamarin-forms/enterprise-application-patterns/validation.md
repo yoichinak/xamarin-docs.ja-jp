@@ -1,8 +1,22 @@
 ---
-title: "エンタープライズアプリでの検証" の説明: "この章では、eShopOnContainers モバイルアプリがユーザー入力の検証を実行する方法について説明します。 これには、検証規則の指定、検証のトリガー、検証エラーの表示などが含まれます。
-ms. 製品: xamarin ms. assetid: 56e4f0fc-48d9-4033-91ec-173bb46a5e4d: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 08/07/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: エンタープライズアプリでの検証
+description: この章では、eShopOnContainers モバイルアプリがユーザー入力の検証を実行する方法について説明します。 これには、検証規則の指定、検証のトリガー、検証エラーの表示が含まれます。
+ms.prod: xamarin
+ms.assetid: 56e4f0fc-48d9-4033-91ec-173bb46a5e4d
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a4b82552956ab0e75d0a76a14ce7c919c744e09a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84565331"
 ---
-
 # <a name="validation-in-enterprise-apps"></a>エンタープライズアプリでの検証
 
 ユーザーからの入力を受け入れるアプリであれば、入力が有効であることを確認する必要があります。 たとえば、特定の範囲の文字のみを含む入力、特定の長さ、または特定の形式に一致する入力を確認することができます。 検証を行わないと、ユーザーはアプリを失敗させるデータを提供できます。 検証では、ビジネスルールを適用し、攻撃者が悪意のあるデータを挿入するのを防ぎます。

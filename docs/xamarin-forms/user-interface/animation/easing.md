@@ -1,8 +1,22 @@
 ---
-title: "説明:" のイージング関数には、 Xamarin.Forms Xamarin.Forms 実行中のアニメーションの速度の向上や低速化を制御する転送関数を指定できるイージングクラスが含まれています。 この記事では、定義済みのイージング関数を使用する方法と、カスタムイージング関数を作成する方法について説明します。
-ms. 製品: xamarin ms. assetid: E6F124C7-A161-4C1F-AF40-52F0935E54DE: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 07/14/2016 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: イージング関数Xamarin.Forms
+description: Xamarin.Formsにはイージングクラスが含まれています。このクラスを使用すると、アニメーションの実行速度を制御する転送関数を指定できます。 この記事では、定義済みのイージング関数を使用する方法と、カスタムイージング関数を作成する方法について説明します。
+ms.prod: xamarin
+ms.assetid: E6F124C7-A161-4C1F-AF40-52F0935E54DE
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/14/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 574b6f82aea3c71d43799c6ca86997d895eed4c5
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573808"
 ---
-
 # <a name="easing-functions-in-xamarinforms"></a>イージング関数Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-easing)

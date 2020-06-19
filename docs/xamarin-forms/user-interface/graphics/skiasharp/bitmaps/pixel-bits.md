@@ -1,8 +1,22 @@
 ---
-title: "SkiaSharp ビットマップピクセルビットへのアクセス" の説明: "SkiaSharp ビットマップのピクセルビットにアクセスして変更するためのさまざまな手法を発見します。"
-ms. 製品: xamarin ms テクノロジ: skiasharp: DBB58522-F816-4A8C-96A5-E0236F16A5C6 author: davidbritch dabritch: ms. date: 07/11/2018 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
+title: SkiaSharp ビットマップピクセルビットへのアクセス
+description: SkiaSharp ビットマップのピクセルビットにアクセスして変更するためのさまざまな手法について説明します。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: DBB58522-F816-4A8C-96A5-E0236F16A5C6
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/11/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9018cbe6e41350b22a0f1f91858017531c75a0ac
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135582"
 ---
-
 # <a name="accessing-skiasharp-bitmap-pixel-bits"></a>SkiaSharp ビットマップピクセルビットへのアクセス
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

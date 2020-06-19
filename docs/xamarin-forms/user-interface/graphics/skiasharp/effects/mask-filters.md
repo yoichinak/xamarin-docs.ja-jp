@@ -1,8 +1,22 @@
 ---
-title: "SkiaSharp mask filters" description: "マスクフィルターを使用してぼかしやその他のアルファ効果を作成する方法について説明します。"
-ms skiasharp: xamarin ms テクノロジ: xamarin-ms. assetid: 940422A1-8BC0-40398-8AD78-6c61320f858 author: davidbritch ms. author: dabritch ms. date: 08/27/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: SkiaSharp mask フィルター
+description: マスクフィルターを使用して、ぼかしやその他のアルファ効果を作成する方法について説明します。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 940422A1-8BC0-4039-8AD7-26C61320F858
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/27/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 10192e93d2e20f9aa58ca95dd81c07f560193905
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136410"
 ---
-
 # <a name="skiasharp-mask-filters"></a>SkiaSharp mask フィルター
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

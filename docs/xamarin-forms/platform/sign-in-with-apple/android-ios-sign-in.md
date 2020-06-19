@@ -1,8 +1,22 @@
 ---
-タイトル: "Apple でのサインインの使用 Xamarin.Forms " の説明: "モバイルアプリケーションで apple でサインインを実装する方法について説明 Xamarin.Forms します。"
-ms. 製品: xamarin ms. assetid: 2e47 E939E66-247466D25E4D ms. テクノロジ: xamarin-forms author: davidortinau ms. author: da/tin ms. date: 09/10/2019 no loc: [ Xamarin.Forms ,] を指定します。 Xamarin.Essentials
+title: での Apple でのサインインの使用Xamarin.Forms
+description: モバイルアプリケーションで Apple でサインインを実装する方法について説明 Xamarin.Forms します。
+ms.prod: xamarin
+ms.assetid: 2E47E7F2-93D4-4CA3-9E66-247466D25E4D
+ms.technology: xamarin-forms
+author: davidortinau
+ms.author: daortin
+ms.date: 09/10/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: fb37f8fb2d01154bf2e749e685c4e96c12d6bc5e
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139491"
 ---
-
 # <a name="use-sign-in-with-apple-in-xamarinforms"></a>での Apple でのサインインの使用Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/signinwithapple/)

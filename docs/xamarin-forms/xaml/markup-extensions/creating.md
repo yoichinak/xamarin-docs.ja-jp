@@ -1,8 +1,22 @@
 ---
-title: "XAML マークアップ拡張機能の作成" の説明: "この記事では、独自のカスタム Xamarin.Forms XAML マークアップ拡張機能を定義する方法について説明します。 XAML マークアップ拡張機能は、IMarkupExtension インターフェイスまたは IMarkupExtension インターフェイスを実装するクラスです <T> 。 "
-ms. 製品: xamarin ms. assetid: 797C1EF9-1C8E-4208-8610-9B79CCF17D46: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 01/05/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: XAML マークアップ拡張の作成
+description: この記事では、独自のカスタム XAML マークアップ拡張機能を定義する方法について説明 Xamarin.Forms します。 XAML マークアップ拡張機能は、IMarkupExtension インターフェイスまたは IMarkupExtension インターフェイスを実装するクラスです <T> 。
+ms.prod: xamarin
+ms.assetid: 797C1EF9-1C8E-4208-8610-9B79CCF17D46
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/05/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 878ebcaa5249261afac2776a9e7cf47c0c047135
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84130534"
 ---
-
 # <a name="creating-xaml-markup-extensions"></a>XAML マークアップ拡張の作成
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)

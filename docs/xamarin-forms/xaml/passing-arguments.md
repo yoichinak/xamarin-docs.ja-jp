@@ -1,8 +1,22 @@
 ---
-title: "XAML で引数を渡す" 説明: "この記事では、既定以外のコンストラクターに引数を渡すために使用できる XAML 属性の使用方法、ファクトリメソッドを呼び出す方法、ジェネリック引数の型を指定する方法について説明します。
-ms. 製品: xamarin ms. assetid: 8F3B267F-499E-4D79-9193-FCA99F199519: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 10/25/2016 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: XAML での引数の受け渡し
+description: この記事では、既定以外のコンストラクターに引数を渡すために使用できる XAML 属性の使用方法、ファクトリメソッドを呼び出す方法、およびジェネリック引数の型を指定する方法について説明します。
+ms.prod: xamarin
+ms.assetid: 8F3B267F-499E-4D79-9193-FCA99F199519
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/25/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 84d8901b7f8dee8ffd6c3ba22d30c76b456555f0
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84571507"
 ---
-
 # <a name="passing-arguments-in-xaml"></a>XAML での引数の受け渡し
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-passingconstructorarguments)

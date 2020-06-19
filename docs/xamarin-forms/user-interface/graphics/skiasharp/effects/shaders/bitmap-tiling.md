@@ -1,8 +1,22 @@
 ---
-title: "SkiaSharp bitmap Tile" description: "横方向と縦方向のビットマップを使用して領域を並べて表示します。"
-ms skiasharp: xamarin ms テクノロジ: xamarin-ms. assetid: 9ed14e0747 DC8-4B03-8A33-772838BF51EA author: davidbritch ms. author: dabritch ms. date: 08/23/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: SkiaSharp ビットマップのタイル
+description: ビットマップを使用して水平方向および垂直方向に連続して領域を並べます。
+ms.prod: xamarin
+ms.technology: xamarin-skiasharp
+ms.assetid: 9ED14E07-4DC8-4B03-8A33-772838BF51EA
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/23/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 6a28dd20eb8978334365ac217df1241e5288fd28
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137425"
 ---
-
 # <a name="skiasharp-bitmap-tiling"></a>SkiaSharp ビットマップのタイル
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

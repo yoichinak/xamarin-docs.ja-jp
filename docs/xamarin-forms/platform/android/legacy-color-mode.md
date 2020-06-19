@@ -1,8 +1,22 @@
 ---
-title: "VisualElement Legacy Color Mode for Android" の説明: "プラットフォームの詳細" を使用すると、特定のプラットフォームでのみ使用できる機能を使用して、カスタムレンダラーや特殊効果を実装することはできません。 この記事では、従来のカラーモードを無効にする Android プラットフォーム固有のを使用する方法について説明 Xamarin.Forms します。
-ms. 製品: xamarin ms. assetid: 37D95A2D-74AC-488A-B903-2BDD799EAA5C: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 07/10/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Android での VisualElement レガシカラーモード
+description: プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、従来の色モードを無効にする Android プラットフォーム固有のを使用する方法について説明し Xamarin.Forms ます。
+ms.prod: xamarin
+ms.assetid: 37D95A2D-74AC-488A-B903-2BDD799EAA5C
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/10/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9fe0d751b1aa1cb609100e43c0f0015fd804327a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84128857"
 ---
-
 # <a name="visualelement-legacy-color-mode-on-android"></a>Android での VisualElement レガシカラーモード
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

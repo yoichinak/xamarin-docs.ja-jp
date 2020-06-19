@@ -1,8 +1,22 @@
 ---
-title: "Azure Cosmos DB ドキュメントデータベースを使用したユーザーの認証 Xamarin.Forms " と "説明:" この記事では、ユーザーがアプリケーション内の自分のドキュメントにのみアクセスできるように、アクセス制御を Azure Cosmos DB パーティション分割されたコレクションと組み合わせる方法について説明し Xamarin.Forms ます。 "
-ms. 製品: xamarin ms. assetid: 11ED4A4C-0F05-40B2-AB06-5A0F2188EF3D: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 06/16/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Azure Cosmos DB ドキュメントデータベースを使用してユーザーを認証するXamarin.Forms
+description: この記事では、アクセス制御と Azure Cosmos DB パーティション分割コレクションを組み合わせて、ユーザーがアプリケーション内の自分のドキュメントにアクセスできるようにする方法について説明し Xamarin.Forms ます。
+ms.prod: xamarin
+ms.assetid: 11ED4A4C-0F05-40B2-AB06-5A0F2188EF3D
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/16/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7e1fb6342db4c97ea6946db366d356267c8c1b90
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84570558"
 ---
-
 # <a name="authenticate-users-with-an-azure-cosmos-db-document-database-and-xamarinforms"></a>Azure Cosmos DB ドキュメントデータベースを使用してユーザーを認証するXamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdbauth)

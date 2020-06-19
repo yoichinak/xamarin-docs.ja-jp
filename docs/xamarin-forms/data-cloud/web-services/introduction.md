@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms Web サービスの概要" 説明: "このガイドでは、 Xamarin.Forms さまざまな web サービスとの通信方法を示すサンプルアプリケーションのチュートリアルを提供します。 各 web サービスは個別のサンプルアプリケーションを使用しますが、機能的に類似した共通クラスを共有します。 "
-ms. 製品: xamarin ms. assetid: A3FEB262-0D79-42E6-8F8B-A565618C490B: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 02/28/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsWeb サービスの概要
+description: このガイドでは、 Xamarin.Forms さまざまな web サービスと通信する方法を示すサンプルアプリケーションのチュートリアルを提供します。 各 web サービスは個別のサンプルアプリケーションを使用しますが、機能的に類似した共通クラスを共有します。
+ms.prod: xamarin
+ms.assetid: A3FEB262-0D79-42E6-8F8B-A565618C490B
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/28/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d714b4c9d598d8cca26ae992abf3f15df703d11b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139179"
 ---
-
 # <a name="xamarinforms-web-services-introduction"></a>Xamarin.FormsWeb サービスの概要
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
@@ -29,7 +43,7 @@ _このトピックでは、 Xamarin.Forms さまざまな web サービスと�
 
 各サンプルアプリケーションの共有コードプロジェクトは、次の3つの主要なフォルダーで構成されています。
 
-|Folder|目的|
+|フォルダー|目的|
 |--- |--- |
 |Data|データ項目を管理し、web サービスと通信するために使用されるクラスとインターフェイスが含まれています。 これには、少なくともクラスが含まれ `TodoItemManager` ます。これは、 `App` web サービス操作を呼び出すためにクラスのプロパティを介して公開されます。|
 |モデル|アプリケーションのデータモデルクラスが含まれています。 少なくとも、 `TodoItem` アプリケーションによって使用される1つのデータ項目をモデル化するクラスが含まれています。 このフォルダーには、ユーザーデータのモデル化に使用する追加のクラスを含めることもできます。|

@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms entry" description: "この記事では、entry クラスを使用して Xamarin.Forms アプリケーションで単一行テキストまたはパスワード入力を受け入れる方法について説明します。"
-ms. 製品: xamarin ms. assetid: 9923C541-3C10-4D14-BAB5-C4D6C514FB1E: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 09/25/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Formsキー
+description: この記事では、Entry クラスを使用して、 Xamarin.Forms アプリケーションで単一行のテキストまたはパスワード入力を受け入れる方法について説明します。
+ms.prod: xamarin
+ms.assetid: 9923C541-3C10-4D14-BAB5-C4D6C514FB1E
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/25/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5c17d6a106474c4c5b183bd41923533ffc95789b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136202"
 ---
-
 # <a name="xamarinforms-entry"></a>Xamarin.Formsキー
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)

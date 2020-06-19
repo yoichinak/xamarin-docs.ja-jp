@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms TableView" description: "この記事では、TableView クラスを使用して、 Xamarin.Forms アプリケーションでのスクロールメニュー、設定、入力フォームを表示する方法について説明します。"
-ms. 製品: xamarin ms. assetid: D1619D19-A74F-40DF-8E53-B1B7DFF7A3FB: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 09/25/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.FormsTableView
+description: この記事では、TableView クラスを使用して、 Xamarin.Forms アプリケーションでのスクロールメニュー、設定、入力フォームを表示する方法について説明します。
+ms.prod: xamarin
+ms.assetid: D1619D19-A74F-40DF-8E53-B1B7DFF7A3FB
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/25/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: bf09856efddbd1887ee93b34014ef0f573058f4d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84565292"
 ---
-
 # <a name="xamarinforms-tableview"></a>Xamarin.FormsTableView
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-tableview)

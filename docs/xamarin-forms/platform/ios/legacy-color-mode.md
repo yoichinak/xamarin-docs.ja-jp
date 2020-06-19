@@ -1,8 +1,22 @@
 ---
-title: "VisualElement レガシカラーモード (iOS)" 説明: "プラットフォーム-詳細" を使用すると、カスタムレンダラーや特殊効果を実装しなくても、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、従来のカラーモードを無効にする iOS プラットフォーム固有のを使用する方法について説明 Xamarin.Forms します。
-ms. 製品: xamarin ms. assetid: 60FFBA67-6E06-439B-A5EB-8C808285E2CD: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 10/24/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: IOS の VisualElement レガシカラーモード
+description: プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、レガシカラーモードを無効にする iOS プラットフォーム固有のを使用する方法について説明し Xamarin.Forms ます。
+ms.prod: xamarin
+ms.assetid: 60FFBA67-6E06-439B-A5EB-8C808285E2CD
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/24/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8bcd17658156694bfb0638d0ddc1a1ca3fe295c2
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136046"
 ---
-
 # <a name="visualelement-legacy-color-mode-on-ios"></a>IOS の VisualElement レガシカラーモード
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)

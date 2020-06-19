@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms テキストスタイル" の説明: "この記事では、アプリケーションでテキストをスタイル設定する方法について説明します。 Xamarin.Forms スタイルは一度定義することも、多くのビューで使用することもできますが、1つの型のビューでのみ使用できます。
-ms. 製品: xamarin ms. assetid: 57C0CFD6-A568-46B8-ADA1-BF25681893CF: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 05/22/2017 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Formsテキストスタイル
+description: この記事では、アプリケーションでテキストをスタイル設定する方法について説明し Xamarin.Forms ます。 スタイルは一度定義することも、多くのビューで使用することもできますが、1つの型のビューでのみ使用できます。
+ms.prod: xamarin
+ms.assetid: 57C0CFD6-A568-46B8-ADA1-BF25681893CF
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/22/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7d82348231c4b4905f2f70b80f73c45f2f0bf66b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572001"
 ---
-
 # <a name="xamarinforms-text-styles"></a>Xamarin.Formsテキストスタイル
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)

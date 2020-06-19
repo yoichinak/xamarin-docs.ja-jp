@@ -1,8 +1,22 @@
 ---
-title: " Xamarin.Forms ローカルデータストレージ" の説明: "共有コードからファイル処理を実行する方法 Xamarin.Forms 、および SQLite.Net を使用してローカルの SQLite データベースに対してデータを読み書きする方法を説明します。"
-ms. 製品: xamarin ms. assetid: A324C247-7DA8-4B14-A813-25F85525E32B: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 06/27/2019 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: Xamarin.Formsローカルデータストレージ
+description: 共有コードからファイル処理を実行する方法 Xamarin.Forms 、および SQLite.Net を使用してローカルの SQLite データベースに対するデータの読み取りと書き込みを行う方法について説明します。
+ms.prod: xamarin
+ms.assetid: A324C247-7DA8-4B14-A813-25F85525E32B
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/27/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 997a659dd01e410f791af28d1b657055296081c8
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127115"
 ---
-
 # <a name="xamarinforms-local-data-storage"></a>Xamarin.Formsローカルデータストレージ
 
 ## <a name="files"></a>[[ファイル]](files.md)

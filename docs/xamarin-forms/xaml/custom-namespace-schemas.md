@@ -1,8 +1,22 @@
 ---
-title: "XAML カスタム名前空間スキーマ内の" Xamarin.Forms 説明: "xaml カスタム名前空間スキーマは、XmlnsDefinitionAttribute クラスを使用して定義できます。これは、カスタム URL と1つ以上の CLR 名前空間の間のマッピングを指定します。 その後、カスタム名前空間スキーマを XAML 名前空間宣言で使用できます。 "
-ms. 製品: xamarin ms. assetid: FDF201A1-8C35-4569-A728-F9B0A0C5B31A: xamarin-forms author: davidbritch ms. author: dabritch ms. date: 12/21/2018 no loc: [ Xamarin.Forms , Xamarin.Essentials ]
+title: の XAML カスタム名前空間スキーマXamarin.Forms
+description: XAML カスタム名前空間スキーマは、XmlnsDefinitionAttribute クラスを使用して定義できます。これは、カスタム URL と1つ以上の CLR 名前空間の間のマッピングを指定します。 その後、カスタム名前空間スキーマを XAML 名前空間宣言で使用できます。
+ms.prod: xamarin
+ms.assetid: FDF201A1-8C35-4569-A728-F9B0A0C5B31A
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/21/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 41a95b1a82ab8aa1f6938e5a2bcdebcef368e72d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138165"
 ---
-
 # <a name="xaml-custom-namespace-schemas-in-xamarinforms"></a>の XAML カスタム名前空間スキーマXamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-customnamespaceschemas)
