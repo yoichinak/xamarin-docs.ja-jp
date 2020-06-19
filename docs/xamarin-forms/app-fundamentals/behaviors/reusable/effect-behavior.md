@@ -1,8 +1,22 @@
 ---
-title:"再利用可能な EffectBehavior" description:"ビヘイビアーは、コントロールにエフェクトを追加するために役立つ方法です。エフェクトを処理する定型コードを分離コード ファイルから削除します。 この記事では、Xamarin.Forms のビヘイビアーを作成および使用して、コントロールにエフェクトを追加する方法を示します。"
-ms.prod: xamarin ms.assetid:A909B24D-960A-4023-AFF6-4B9256C55ADD ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:04/06/2016 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: 再利用可能な EffectBehavior
+description: ビヘイビアーは、コントロールにエフェクトを追加するために役立つ方法です。エフェクトを処理する定型コードを分離コード ファイルから削除します。 この記事では、Xamarin.Forms のビヘイビアーを作成および使用して、コントロールにエフェクトを追加する方法を示します。
+ms.prod: xamarin
+ms.assetid: A909B24D-960A-4023-AFF6-4B9256C55ADD
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/06/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0a105548f869eb448a990a1cc12e6feff4197d48
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135786"
 ---
-
 # <a name="reusable-effectbehavior"></a>再利用可能な EffectBehavior
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-effectbehavior)

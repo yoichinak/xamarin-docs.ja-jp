@@ -1,8 +1,22 @@
 ---
-title:"キーボード アクセシビリティ" の説明: "既定のタブ シーケンスを使用するのではなく、TabIndex プロパティと IsTabStop プロパティの組み合わせでタブ シーケンスを指定することにより、UI のアクセシビリティを調整しなければならない場合があります。"
-ms.prod: xamarin ms.assetid: 8be8f498-558a-4894-a01f-91a0d3ef927e ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 05/09/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: キーボード アクセシビリティ
+description: 既定のタブ シーケンスを使用するのではなく、TabIndex プロパティと IsTabStop プロパティの組み合わせでタブ シーケンスを指定することにより、UI のアクセシビリティを調整しなければならない場合があります。
+ms.prod: xamarin
+ms.assetid: 8be8f498-558a-4894-a01f-91a0d3ef927e
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/09/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e1590d0a4f9716541f18bc4f50a2c480c5e4478a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84129780"
 ---
-
 # <a name="keyboard-accessibility-in-xamarinforms"></a>Xamarin.Forms でのキーボード アクセシビリティ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)

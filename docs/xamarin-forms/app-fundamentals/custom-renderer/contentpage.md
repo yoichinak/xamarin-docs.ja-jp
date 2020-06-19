@@ -1,8 +1,22 @@
 ---
-title:"ContentPage のカスタマイズ" の説明:"ContentPage は、単一ビューを表示し、画面の大部分を占めるビジュアル要素です。 この記事では、ContentPage ページ用のカスタム レンダラーを作成する方法を示します。これにより、開発者は既定のネイティブ レンダリングを、各自のプラットフォームに固有のカスタマイズでオーバーライドできるようになります。"
-ms.prod: xamarin ms.assetid:A4E61D93-73D9-4668-8D1C-DB6FC2491822 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:11/29/2017 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: ContentPage のカスタマイズ
+description: ContentPage は、単一ビューを表示し、画面の大部分を占めるビジュアル要素です。 この記事では、ContentPage ページ用のカスタム レンダラーを作成する方法を示します。これにより、開発者は既定のネイティブ レンダリングを、各自のプラットフォームに固有のカスタマイズでオーバーライドできるようになります。
+ms.prod: xamarin
+ms.assetid: A4E61D93-73D9-4668-8D1C-DB6FC2491822
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/29/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ca9a541c3d152d1b84ed682881c395f2199b9eaf
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84574380"
 ---
-
 # <a name="customizing-a-contentpage"></a>ContentPage のカスタマイズ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-contentpage)

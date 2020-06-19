@@ -1,8 +1,22 @@
 ---
-title:"ビヘイビアーの概要" description:"ビヘイビアーを使うと、ユーザー インターフェイス コントロールをサブクラス化することなく、それらに機能を追加できます。 代わりに、その機能はビヘイビアー クラスで実装され、それがコントロール自体の一部であるかのようにコントロールにアタッチされます。 この記事では、ビヘイビアーの概要を説明します。"
-ms.prod: xamarin ms.assetid:0DF1EF8C-A212-4142-A3C6-DF760A82A757 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:04/06/2016 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: ビヘイビアーの概要
+description: ビヘイビアーを使うと、ユーザー インターフェイス コントロールをサブクラス化することなくそれらに機能を追加できます。 代わりに、その機能はビヘイビアー クラスで実装され、それがコントロール自体の一部であるかのようにコントロールにアタッチされます。 この記事では、ビヘイビアーの概要を説明します。
+ms.prod: xamarin
+ms.assetid: 0DF1EF8C-A212-4142-A3C6-DF760A82A757
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/06/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d5bee3baa08387a1ed67384ba4089d63aad08d2c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135773"
 ---
-
 # <a name="introduction-to-behaviors"></a>ビヘイビアーの概要
 
 _ビヘイビアーを使うと、ユーザー インターフェイス コントロールをサブクラス化することなくそれらに機能を追加できます。代わりに、その機能はビヘイビアー クラスで実装され、それがコントロール自体の一部であるかのようにコントロールにアタッチされます。この記事では、ビヘイビアーの概要を説明します。_

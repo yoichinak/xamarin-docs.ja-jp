@@ -1,8 +1,22 @@
 ---
-title: "Xamarin.Formsアプリのライフサイクル" の説明:"この記事では、ライフサイクル メソッド、ページ通知イベント、モーダル ナビゲーション イベントなど、アプリケーションのライフサイクルに応答する方法について説明します。"
-ms.prod: xamarin ms.assetid:69B416CF-B243-4790-AB29-F030B32465BE ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:05/31/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Forms アプリのライフサイクル
+description: この記事では、ライフサイクル メソッド、ページ通知イベント、モーダル ナビゲーション イベントなど、アプリケーションのライフサイクルに応答する方法について説明します。
+ms.prod: xamarin
+ms.assetid: 69B416CF-B243-4790-AB29-F030B32465BE
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/31/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2a67d0c3adb54332bf30879a5b6f1d086581f0ec
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573340"
 ---
-
 # <a name="xamarinforms-app-lifecycle"></a>Xamarin.Forms アプリのライフサイクル
 
 [`Application`](xref:Xamarin.Forms.Application) の基底クラスでは、次の機能が提供されています。

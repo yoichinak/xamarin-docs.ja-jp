@@ -1,8 +1,21 @@
 ---
-title: "Xamarin ファイアウォールの構成手順" の説明: "このドキュメントでは、企業環境で Xamarin が機能するように、ご利用のファイアウォールで許可する必要があるホストのリストを示します。"
-ms.prod: xamarin ms.assetid: 658f699b-8cca-48f7-ae54-fa956384b6d6 author: conceptdev ms.author: crdun ms.date: 07/17/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin ファイアウォールの構成手順
+description: このドキュメントでは、企業環境で Xamarin が機能するように、ご利用のファイアウォールで許可する必要があるホストのリストを示します。
+ms.prod: xamarin
+ms.assetid: 658f699b-8cca-48f7-ae54-fa956384b6d6
+author: conceptdev
+ms.author: crdun
+ms.date: 07/17/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 71b2754d19d00b7bf4860acd96bfb7ad8dec4ce5
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84132992"
 ---
-
 # <a name="xamarin-firewall-configuration-instructions"></a>Xamarin ファイアウォールの構成手順
 
 "_会社で Xamarin のプラットフォームが機能するように、ご利用のファイアウォールで許可する必要があるホストのリスト。_ "

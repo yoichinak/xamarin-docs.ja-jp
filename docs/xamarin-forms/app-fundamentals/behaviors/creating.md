@@ -1,8 +1,22 @@
 ---
-title:"Xamarin.Forms ビヘイビアーの作成" description: "Xamarin.Forms のビヘイビアーは、Behavior または Behavior <T> クラスから派生させることで作成されます。 この記事では、Xamarin.Forms のビヘイビアーを作成して使用する方法を示します。"
-ms.prod: xamarin ms.assetid:300C16FE-A7E0-445B-9099-8E93ABB6F73D ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:04/06/2016 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Forms ビヘイビアーの作成
+description: Xamarin.Forms のビヘイビアーは、Behavior または Behavior<T> クラスから派生させることで作成されます。 この記事では、Xamarin.Forms のビヘイビアーを作成して使用する方法を示します。
+ms.prod: xamarin
+ms.assetid: 300C16FE-A7E0-445B-9099-8E93ABB6F73D
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 04/06/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 67db30b5caadce75a41755530db2b245562d0304
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135825"
 ---
-
 # <a name="create-xamarinforms-behaviors"></a>Xamarin.Forms ビヘイビアーの作成
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)

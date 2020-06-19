@@ -1,8 +1,22 @@
 ---
-title:"エフェクトからのイベントの呼び出し" の説明: "エフェクトではイベントを定義して呼び出すことができ、基礎ネイティブ ビューの変化が信号で送られます。 この記事では、低レベルのマルチタッチ フィンガー トラッキングを実装する方法とタッチ操作を信号で送るイベントを生成する方法を紹介します。"
-ms.prod: xamarin ms.assetid:6A724681-55EB-45B8-9EED-7E412AB19DD2 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:12/14/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: エフェクトからのイベントの呼び出し
+description: エフェクトではイベントを定義して呼び出すことができ、基礎ネイティブ ビューの変化を信号で送ります。 この記事では、低レベルのマルチタッチ フィンガー トラッキングを実装する方法とタッチ操作を信号で送るイベントを生成する方法を紹介します。
+ms.prod: xamarin
+ms.assetid: 6A724681-55EB-45B8-9EED-7E412AB19DD2
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/14/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 892bffa4027a1a61d6c22cc26d1556fb007432d8
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136982"
 ---
-
 # <a name="invoking-events-from-effects"></a>エフェクトからのイベントの呼び出し
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/)

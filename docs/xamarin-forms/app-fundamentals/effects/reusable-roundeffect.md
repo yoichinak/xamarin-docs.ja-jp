@@ -1,8 +1,22 @@
 ---
-title: "Xamarin.Forms の再利用可能な RoundEffect" の説明:"RoundEffect は再利用可能なエフェクトであり、VisualElement から派生したコントロールに適用して、コントロールを円としてレンダリングできます。"
-ms.prod: xamarin ms.assetid:B5DE7507-B565-4EE5-9897-27E5733FD173 ms.technology: xamarin-forms author: profexorgeek ms.author: jusjohns ms.date:10/25/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Forms の再利用可能な RoundEffect
+description: RoundEffect は再利用可能なエフェクトであり、VisualElement から派生したコントロールに適用して、コントロールを円としてレンダリングできます。
+ms.prod: xamarin
+ms.assetid: B5DE7507-B565-4EE5-9897-27E5733FD173
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 10/25/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: fc3776934a4c109b2527132b11c6c6a93b7d9f9e
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138854"
 ---
-
 # <a name="xamarinforms-reusable-roundeffect"></a>Xamarin.Forms の再利用可能な RoundEffect
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-roundeffect/)

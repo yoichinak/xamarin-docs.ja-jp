@@ -1,8 +1,22 @@
 ---
-title:"Xamarin のホット再起動" の説明:"このドキュメントでは、Xamarin のホット再起動を設定して使用し、iOS アプリをデバッグする方法について説明します。"
-ms.prod: xamarin ms.assetid:6BC62A88-9368-41BB-8494-760F2A4805DB ms.technology: xamarin-forms author: maddyleger1 ms.author: maleger ms.date:03/16/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin のホット再起動
+description: このドキュメントでは、Xamarin のホット再起動を設定して使用し、iOS アプリをデバッグする方法について説明します。
+ms.prod: xamarin
+ms.assetid: 6BC62A88-9368-41BB-8494-760F2A4805DB
+ms.technology: xamarin-forms
+author: maddyleger1
+ms.author: maleger
+ms.date: 03/16/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 45b7d0d20c43aa22ebde3a17552f10ceea77a48b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139140"
 ---
-
 # <a name="xamarin-hot-restart-preview"></a>Xamarin のホット再起動 (プレビュー)
 
 ![プレビュー機能](~/media/shared/preview.png)

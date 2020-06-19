@@ -1,8 +1,22 @@
 ---
-title:"エフェクトの作成" の説明:"エフェクトにより、コントロールのカスタマイズが簡略化されます。 この記事では、入力コントロールがフォーカスを取得したときにコントロールの背景色を変更するエフェクトの作成方法について説明します。"
-ms.prod: xamarin ms.assetid:9E2C8DB0-36A2-4F13-8E3C-A66D7021DB13 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:10/24/2016 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: エフェクトの作成
+description: エフェクトにより、コントロールのカスタマイズが簡略化されます。 この記事では、入力コントロールがフォーカスを取得したときにコントロールの背景色を変更するエフェクトの作成方法を示します。
+ms.prod: xamarin
+ms.assetid: 9E2C8DB0-36A2-4F13-8E3C-A66D7021DB13
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/24/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0ed11ccacec73dd3c5c220c41bffd090af6c5b27
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139387"
 ---
-
 # <a name="creating-an-effect"></a>エフェクトの作成
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-focuseffect)

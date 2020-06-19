@@ -1,8 +1,23 @@
 ---
-title:"アプリケーション インデックス作成とディープ リンクの設定" の説明:"この記事では、アプリケーション インデックス作成とディープ リンクの設定を使用して、Xamarin.Forms アプリケーションのコンテンツを iOS および Android のデバイス上で検索できるようにする方法について説明します。"
-ms.prod: xamarin ms.assetid:410C5D19-AA3C-4E0D-B799-E288C5803226 ms.technology: xamarin-forms ms.custom: xamu-video author: davidbritch ms.author: dabritch ms.date:11/28/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: アプリケーション インデックス作成とディープ リンクの設定
+description: この記事では、アプリケーション インデックス作成とディープ リンクの設定を使用して、Xamarin.Forms アプリケーションのコンテンツを iOS および Android のデバイス上で検索できるようにする方法について説明します。
+ms.prod: xamarin
+ms.assetid: 410C5D19-AA3C-4E0D-B799-E288C5803226
+ms.technology: xamarin-forms
+ms.custom: xamu-video
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/28/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c7f5979b93ff35b14ec7c13418a4565604f46bd7
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84570636"
 ---
-
 # <a name="application-indexing-and-deep-linking"></a>アプリケーション インデックス作成とディープ リンクの設定
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/deeplinking)

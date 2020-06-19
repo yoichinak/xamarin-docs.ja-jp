@@ -1,8 +1,22 @@
 ---
-title: "Xamarin.Forms シェルの概要" の説明:"Xamarin.Formsシェルには、一般的なナビゲーション ユーザー エクスペリエンス、URI ベースのナビゲーション体系、統合された検索ハンドラーなど、ほとんどのアプリケーションが必要とする基本的な機能が用意されています。"
-ms.prod: xamarin ms.assetid:4604DCB5-83DA-458A-8B02-6508A740BE0E ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:09/20/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Forms シェルの概要
+description: Xamarin.Forms シェルには、一般的なナビゲーション ユーザー エクスペリエンス、URI ベースのナビゲーション体系、統合された検索ハンドラーなど、ほとんどのアプリケーションが必要とする基本機能が用意されています。
+ms.prod: xamarin
+ms.assetid: 4604DCB5-83DA-458A-8B02-6508A740BE0E
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/20/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 29a99161ff2ef2d71b6c803db994522bfe80ed03
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138737"
 ---
-
 # <a name="xamarinforms-shell-introduction"></a>Xamarin.Forms シェルの概要
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)

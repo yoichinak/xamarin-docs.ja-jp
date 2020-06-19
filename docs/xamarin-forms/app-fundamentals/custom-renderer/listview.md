@@ -1,8 +1,22 @@
 ---
-title:"ListView のカスタマイズ" の説明:"Xamarin.Forms の ListView は、データのコレクションを縦方向の一覧として表示するビューです。 この記事では、プラットフォーム固有のリスト コントロールとネイティブのセルのレイアウトをカプセル化するカスタム レンダラーを作成し、ネイティブ リスト コントロールのパフォーマンスをより厳密に制御する方法を示します。"
-ms.prod: xamarin ms.assetid:2FBCB8C8-4F32-45E7-954F-63AD29D5F1B5 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:11/29/2017 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: ListView のカスタマイズ
+description: Xamarin.Forms の ListView は、データのコレクションを縦方向の一覧として表示するビューです。 この記事では、プラットフォーム固有のリスト コントロールとネイティブのセルのレイアウトをカプセル化するカスタム レンダラーを作成し、ネイティブ リスト コントロールのパフォーマンスをより厳密に制御する方法を示します。
+ms.prod: xamarin
+ms.assetid: 2FBCB8C8-4F32-45E7-954F-63AD29D5F1B5
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/29/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: dc28cdaf78c72c219706a30c30af7f90ae7c4eec
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84569622"
 ---
-
 # <a name="customizing-a-listview"></a>ListView のカスタマイズ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-listview)

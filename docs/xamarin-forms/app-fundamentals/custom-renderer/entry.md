@@ -1,8 +1,22 @@
 ---
-title:"Entry のカスタマイズ" の説明:"Xamarin.Forms の Entry コントロールによって、1 行のテキストを編集対象にできます。 この記事では、Entry コントロール用のカスタム レンダラーを作成する方法を示します。これにより、開発者は既定のネイティブ レンダリングを、各自のプラットフォームに固有のカスタマイズでオーバーライドできるようになります。"
-ms.prod: xamarin ms.assetid:7B5DD10D-0411-424F-88D8-8A474DF16D8D ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:11/26/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Entry のカスタマイズ
+description: Xamarin.Forms の Entry コントロールによって、1 行のテキストを編集対象にできます。 この記事では、Entry コントロール用のカスタム レンダラーを作成する方法を示します。これにより、開発者は既定のネイティブ レンダリングを、各自のプラットフォームに固有のカスタマイズでオーバーライドできるようになります。
+ms.prod: xamarin
+ms.assetid: 7B5DD10D-0411-424F-88D8-8A474DF16D8D
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/26/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d28a9079d27310dde0e5ea5bf80c83895bbcf1d4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84571572"
 ---
-
 # <a name="customizing-an-entry"></a>Entry のカスタマイズ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-entry)

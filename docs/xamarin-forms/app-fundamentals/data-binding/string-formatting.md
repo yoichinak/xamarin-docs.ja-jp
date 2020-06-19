@@ -1,8 +1,22 @@
 ---
-title: "Xamarin.Forms の文字列の書式設定" description:"この記事では、Xamarin.Forms のデータ バインディングを使用し、オブジェクトを文字列として書式設定して表示する方法について説明します。 これは、Binding の StringFormat に標準の .NET 書式設定文字列とプレースホルダーを設定することで実現されます。"
-ms.prod: xamarin ms.assetid:978C85B7-CB58-4483-A131-21B381A865E0 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:01/05/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Forms の文字列の書式設定
+description: この記事では、Xamarin.Forms のデータ バインディングを使用し、オブジェクトを文字列として書式設定して表示する方法について説明します。 これは、Binding の StringFormat に標準の .NET 書式設定文字列とプレースホルダーを設定することで実現されます。
+ms.prod: xamarin
+ms.assetid: 978C85B7-CB58-4483-A131-21B381A865E0
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/05/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d08a89d5394a227e3cee76603e4e97d2cf9495e0
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135760"
 ---
-
 # <a name="xamarinforms-string-formatting"></a>Xamarin.Forms の文字列の書式設定
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)

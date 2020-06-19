@@ -1,8 +1,22 @@
 ---
-title:"アプリケーション リソース ビデオの読み込み" description:"この記事では、Xamarin.Forms を使って、ビデオ プレーヤー アプリケーションでアプリケーション リソースとして格納されたビデオを読み込む方法について説明します。"
-ms.prod: xamarin ms.assetid:F75BD540-9354-4C17-A119-57F3DEC66D54 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:02/12/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: アプリケーション リソース ビデオの読み込み
+description: この記事では、Xamarin.Forms を使って、ビデオ プレーヤー アプリケーションでアプリケーション リソースとして格納されたビデオを読み込む方法について説明します。
+ms.prod: xamarin
+ms.assetid: F75BD540-9354-4C17-A119-57F3DEC66D54
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/12/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 472c6c2a7c5a084520aee6b8ae160d9329c3f593
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84133764"
 ---
-
 # <a name="loading-application-resource-videos"></a>アプリケーション リソース ビデオの読み込み
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

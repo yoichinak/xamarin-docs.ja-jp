@@ -1,8 +1,22 @@
 ---
-title:"タップ ジェスチャ認識エンジンの追加" の説明:"この記事では、Xamarin.Forms アプリケーションでタップ検出にタップ ジェスチャを使用する方法について説明します。 タップ検出は TapGestureRecognizer クラスで実装されています。"
-ms.prod: xamarin ms.assetid:1D150BAF-4157-49BC-90A0-153323B8EBCF ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:01/21/2016 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: タップ ジェスチャ認識エンジンの追加
+description: この記事では、Xamarin.Forms アプリケーションでタップ検出にタップ ジェスチャを使用する方法について説明します。 タップ検出は TapGestureRecognizer クラスで実装されています。
+ms.prod: xamarin
+ms.assetid: 1D150BAF-4157-49BC-90A0-153323B8EBCF
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/21/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1f5b476ac83f801b4ccded3e18bb601c06e0d0ef
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84570610"
 ---
-
 # <a name="adding-a-tap-gesture-recognizer"></a>タップ ジェスチャ認識エンジンの追加
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-tapgesture)

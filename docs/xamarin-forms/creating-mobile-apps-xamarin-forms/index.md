@@ -1,8 +1,22 @@
 ---
-title: "書籍『Xamarin.Forms を使用したモバイル アプリの作成』" の説明: "書籍『Xamarin.Forms を使用したモバイル アプリの作成』(Charles Petzold 著) の電子バージョンを使用して Xamarin.Forms アプリケーション開発について説明します。"
-ms.prod: xamarin ms.assetid:CDE99818-689B-4376-9DC4-C4102AC0F931 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:07/19/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: 書籍『Creating Mobile Apps with Xamarin.Forms』
+description: 書籍『Creating Mobile Apps with Xamarin.Forms』(Charles Petzold 著) の電子バージョンを使用して Xamarin.Forms アプリケーション開発について説明します。
+ms.prod: xamarin
+ms.assetid: CDE99818-689B-4376-9DC4-C4102AC0F931
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/19/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e38c319db0d0adf23a2ec0d328ccc3822e33f66d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198278"
 ---
-
 # <a name="creating-mobile-apps-with-xamarinforms-book"></a>書籍『Creating Mobile Apps with Xamarin.Forms』
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples)

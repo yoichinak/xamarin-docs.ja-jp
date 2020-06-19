@@ -1,9 +1,21 @@
 ---
-title: "Xamarin.Forms とは"
-の説明: "この記事では、Xamarin.Forms と関連ライブラリについて紹介します。"
-ms.prod: xamarin ms.assetid:C1E24DB9-3099-4F79-BB88-10AABF7D4614 author: profexorgeek ms.author: jusjohns ms.date:05/28/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Forms の概要
+description: この記事では、Xamarin.Forms と関連ライブラリについて紹介します。
+ms.prod: xamarin
+ms.assetid: C1E24DB9-3099-4F79-BB88-10AABF7D4614
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 05/28/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: eb76da9be7fcb227c465c0a046b967b2f70b1cfb
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198304"
 ---
-
 # <a name="what-is-xamarinforms"></a>Xamarin.Forms の概要
 
 [![iOS および Android での Xamarin.Forms サンプル アプリケーションのスクリーンショット](what-is-xamarin-forms-images/xamarin-forms-app-cropped.png)](what-is-xamarin-forms-images/xamarin-forms-app.png#lightbox)

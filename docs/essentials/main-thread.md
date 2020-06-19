@@ -1,8 +1,21 @@
 ---
-タイトル: "Xamarin.Essentials: MainThread" の説明:"MainThread クラスを使用すると、アプリケーションで、コードをメインの実行スレッドで実行させることができます。"
-ms.assetid:CD6D51E7-D933-4FE7-A7F7-392EF27812E1 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:08/20/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials:MainThread
+description: MainThread クラスを使用すると、アプリケーションでコードをメインの実行スレッドで実行させることができます。
+ms.assetid: CD6D51E7-D933-4FE7-A7F7-392EF27812E1
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 08/20/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 82c54a72d0e0bc991644295f05136f89fd280d7f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802266"
 ---
-
 # <a name="xamarinessentials-mainthread"></a>Xamarin.Essentials:MainThread
 
 **MainThread** クラスを使用すると、アプリケーションでコードを実行のメイン スレッドで実行させたり、コードの特定のブロックがメイン スレッドで現在実行中であるかどうかを調べたりすることができます。
@@ -100,7 +113,7 @@ _しかし、このチェックは必要ではありません。_ プラット�
 
 ## <a name="api"></a>API
 
-- [MainThread のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/MainThread)
+- [MainThread のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/MainThread)
 - [MainThread API ドキュメント](xref:Xamarin.Essentials.MainThread)
 
 ## <a name="related-video"></a>関連ビデオ

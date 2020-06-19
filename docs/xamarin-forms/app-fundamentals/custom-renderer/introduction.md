@@ -1,8 +1,22 @@
 ---
-title:"カスタム レンダラーの概要" description:"この記事では、カスタム レンダラーの概要を示し、カスタム レンダラーを作成するプロセスについて説明します。"
-ms.prod: xamarin ms.assetid:264314BE-1C5C-4727-A14E-F6F98151CDBD ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:01/19/2016 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: カスタム レンダラーの概要
+description: この記事では、カスタム レンダラーの概要を示し、カスタム レンダラーを作成するプロセスについて説明します。
+ms.prod: xamarin
+ms.assetid: 264314BE-1C5C-4727-A14E-F6F98151CDBD
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/19/2016
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e2bed4d5e8f89efa2997fb085278c4b549870245
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135322"
 ---
-
 # <a name="introduction-to-custom-renderers"></a>カスタム レンダラーの概要
 
 _カスタム レンダラーにより、Xamarin.Forms コントロールの外観とビヘイビアーをカスタマイズするための強力な方法が提供されます。それらは、スタイルに関する小さな変更や、洗練されたプラットフォーム固有のレイアウトおよびビヘイビアーのカスタマイズのために使用できます。この記事では、カスタム レンダラーの概要を示し、カスタム レンダラーを作成するプロセスについて説明します。_

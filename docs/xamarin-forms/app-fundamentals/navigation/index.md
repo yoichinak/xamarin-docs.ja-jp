@@ -1,8 +1,22 @@
 ---
-title: "Xamarin.Forms のナビゲーション" description: "このガイドでは、Xamarin.Forms アプリでナビゲーションを実行する方法について説明します。" Xamarin.Forms には、使用するページの種類に応じたさまざまなページ ナビゲーションのエクスペリエンスが用意されています。"
-ms.prod: xamarin ms.assetid:BC5D0C6C-D5A9-4B12-A492-ED1F570CEC87 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:12/01/2017 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Forms のナビゲーション
+description: このガイドでは、Xamarin.Forms アプリでナビゲーションを実行する方法について説明します。 Xamarin.Forms には、使用するページの種類に応じたさまざまなページ ナビゲーションのエクスペリエンスが用意されています。
+ms.prod: xamarin
+ms.assetid: BC5D0C6C-D5A9-4B12-A492-ED1F570CEC87
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/01/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8c907cd8a4a1d14b936dee309610bffc67ef363f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137840"
 ---
-
 # <a name="xamarinforms-navigation"></a>Xamarin.Forms のナビゲーション
 
 _Xamarin.Forms には、使用するページの種類に応じたさまざまなページ ナビゲーションのエクスペリエンスが用意されています。_

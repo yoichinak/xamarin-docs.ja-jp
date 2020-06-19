@@ -1,8 +1,22 @@
 ---
-title:"Xamarin.Forms データ テンプレートの概要" description: "Xamarin.Forms のデータ テンプレートを使うと、サポートされているコントロール上のデータの表現方法を定義することができます。 この記事では、データ テンプレートの概要について説明し、これが必要である理由について調べます。"
-ms.prod: xamarin ms.assetid:4ED4ACF4-BE4A-44ED-8EAF-C03947B8663B ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:09/11/2017 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Forms データ テンプレートの概要
+description: Xamarin.Forms のデータ テンプレートを使うと、サポートされているコントロール上のデータの表現方法を定義することができます。 この記事では、データ テンプレートの概要について説明し、これが必要である理由について調べます。
+ms.prod: xamarin
+ms.assetid: 4ED4ACF4-BE4A-44ED-8EAF-C03947B8663B
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/11/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f71e0a67b823d92a17158a076707f606f6a4c73f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136111"
 ---
-
 # <a name="introduction-to-xamarinforms-data-templates"></a>Xamarin.Forms データ テンプレートの概要
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
