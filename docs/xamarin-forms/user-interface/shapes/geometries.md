@@ -10,12 +10,12 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: bac0846700d6bcc7b23681dcb6ebf8ddafa155bc
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: c816da59dce291e6fbd354e2c6079fe24044e978
+ms.sourcegitcommit: 34fa3086c55b1e01838419c930f839c20662c362
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/18/2020
-ms.locfileid: "84947340"
+ms.locfileid: "84990780"
 ---
 # <a name="xamarinforms-shapes-geometries"></a>Xamarin.Forms図形: ジオメトリ
 
@@ -23,15 +23,15 @@ ms.locfileid: "84947340"
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
-`Geometry`クラスとそれから派生するクラスを使用すると、2d 図形のジオメトリを記述できます。 `Geometry`オブジェクトは、四角形、円、または2つ以上の geometry オブジェクトから作成された複合など、単純な場合があります。 クラスを使用すると、より複雑なジオメトリを作成でき `PathGeometry` ます。これにより、円弧と曲線を記述できます。
+`Geometry`クラスとそれから派生するクラスを使用すると、2d 図形のジオメトリを記述できます。 `Geometry` オブジェクトは、四角形や円などの単純なものにすることも、2 つ以上のジオメトリ オブジェクトから作成された複合的なものにすることもできます。 クラスを使用すると、より複雑なジオメトリを作成でき `PathGeometry` ます。これにより、円弧と曲線を記述できます。
 
 `Geometry`クラスと `Shape` クラスは、どちらも2d 図形を記述しますが、重要な違いがあると思われます。 クラスはクラスから派生し、クラスはクラスから派生し `Geometry` `BindableObject` `Shape` `View` ます。 そのため、 `Shape` オブジェクトは、自身をレンダリングしてレイアウトシステムに参加させることができますが、 `Geometry` オブジェクトは使用できません。 オブジェクト `Shape` はオブジェクトよりも簡単に使用 `Geometry` `Geometry` できますが、オブジェクトの方が汎用性があります。 オブジェクトを使用して2D グラフィックスをレンダリングしている間に、 `Shape` オブジェクトを使用して `Geometry` 2d グラフィックスのジオメトリック領域を定義し、領域をクリッピング用に定義できます。
 
-すべてのジオメトリの基本クラスは抽象クラス `Geometry` です。 このクラスから派生するクラスは、単純なジオメトリ、パスジオメトリ、および複合ジオメトリの3つのカテゴリにグループ化できます。
+すべてのジオメトリの基底クラスは、抽象クラスの `Geometry` です。 このクラスから派生するクラスは、単純なジオメトリ、パスジオメトリ、および複合ジオメトリの3つのカテゴリにグループ化できます。
 
 ## <a name="simple-geometries"></a>単純なジオメトリ
 
-単純な geometry クラスは `EllipseGeometry` 、、、 `LineGeometry` および `RectangleGeometry` です。 これらは、円、線、四角形などの基本的なジオメトリック形状を作成するために使用されます。 これらの同じ図形と複雑な図形は、を使用して、 `PathGeometry` または geometry オブジェクトを組み合わせることによって作成できますが、これらのクラスは、これらの基本的なジオメトリック形状を生成するためのより単純な手段を提供します。
+単純な geometry クラスは `EllipseGeometry` 、、、 `LineGeometry` および `RectangleGeometry` です。 これらは、円、線、四角形などの基本的なジオメトリック形状を作成するために使用されます。 `PathGeometry` を使用するか、ジオメトリ オブジェクトを結合する方法でも、これらと同じ図形や、さらに複雑な図形を作成できますが、これらのクラスを使用すると、このような基本的な幾何学図形をより簡単に生成できます。
 
 ### <a name="ellipsegeometry"></a>System.windows.media.ellipsegeometry>
 
@@ -134,7 +134,7 @@ ms.locfileid: "84947340"
 - `PolyQuadraticBezierSegment`。一連の2次ベジエ曲線を作成します。
 - `QuadraticBezierSegment`。2次ベジエ曲線を作成します。
 
-内のセグメント `PathFigure` は、1つの幾何学図形に結合され、各セグメントの終点が次のセグメントの始点になります。 `StartPoint`のプロパティは、 `PathFigure` 最初のセグメントが描画される地点を指定します。 後続の各セグメントは、前のセグメントの終点から開始します。 たとえば、からへの垂直線を定義するには、 `10,50` `10,150` プロパティを `StartPoint` に設定し、プロパティ設定を使用して `10,50` を作成し `LineSegment` `Point` `10,150` ます。
+`PathFigure` 内のセグメントは 1 つの幾何学図形に結合されて、各セグメントの終点が次のセグメントの始点になります。 `PathFigure` の `StartPoint` プロパティでは、最初のセグメントが描画される開始点を指定します。 後続の各セグメントは、前のセグメントの終点から始まります。 たとえば、からへの垂直線を定義するには、 `10,50` `10,150` プロパティを `StartPoint` に設定し、プロパティ設定を使用して `10,50` を作成し `LineSegment` `Point` `10,150` ます。
 
 ```xaml
 <Path Stroke="Black"
@@ -161,7 +161,7 @@ ms.locfileid: "84947340"
 
 ## <a name="composite-geometries"></a>複合ジオメトリ
 
-複合 geometry オブジェクトは、を使用して作成でき `GeometryGroup` ます。 クラスは、 `GeometryGroup` 1 つまたは複数のオブジェクトから複合ジオメトリを作成し `Geometry` ます。 には、任意の数の `Geometry` オブジェクトを追加でき `GeometryGroup` ます。
+複合 geometry オブジェクトは、を使用して作成でき `GeometryGroup` ます。 クラスは、 `GeometryGroup` 1 つまたは複数のオブジェクトから複合ジオメトリを作成し `Geometry` ます。 任意の数の `Geometry` オブジェクトを `GeometryGroup` に追加できます。
 
 次の例は、のジオメトリを結合する方法を示してい `GeometryGroup` ます。
 
@@ -201,5 +201,5 @@ ms.locfileid: "84947340"
 
 ## <a name="related-links"></a>関連リンク
 
-- [図形のデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapedemos/)
+- [図形のデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Forms図形](index.md)

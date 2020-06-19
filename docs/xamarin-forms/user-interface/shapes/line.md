@@ -10,12 +10,12 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c2255db884fbe51e253aaf0f01909e732df94850
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 8419a9880bb22980fd0f5465a813cd000838976c
+ms.sourcegitcommit: 34fa3086c55b1e01838419c930f839c20662c362
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/18/2020
-ms.locfileid: "84947332"
+ms.locfileid: "84990808"
 ---
 # <a name="xamarinforms-shapes-line"></a>Xamarin.Forms図形: 線
 
@@ -54,5 +54,5 @@ ms.locfileid: "84947332"
 
 ## <a name="related-links"></a>関連リンク
 
-- [図形のデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapedemos/)
+- [図形のデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Forms図形](index.md)

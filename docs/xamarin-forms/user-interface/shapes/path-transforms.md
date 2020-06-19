@@ -10,12 +10,12 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ab759428c1bc5de8840808443ba40c501fb43b51
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5814bb73f843031d672df0573775abb002fd3644
+ms.sourcegitcommit: 34fa3086c55b1e01838419c930f839c20662c362
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/18/2020
-ms.locfileid: "84947313"
+ms.locfileid: "84990801"
 ---
 # <a name="xamarinforms-shapes-path-transforms"></a>Xamarin.Forms図形: パスの変換
 
@@ -23,7 +23,7 @@ ms.locfileid: "84947313"
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
-は、ある `Transform` `Path` 座標空間から別の座標空間にオブジェクトを変換する方法を定義します。 このマッピングは、3つ `Matrix` の列の値を持つ3つの行のコレクションである変換によって記述され `double` ます。
+は、ある `Transform` `Path` 座標空間から別の座標空間にオブジェクトを変換する方法を定義します。 このマッピングは、3 列の `double` 値を持つ 3 つの行のコレクションである、`Matrix` 変換によって記述されます。
 
 3 x 3 行列は、2D x-y 平面の変換に使用されます。 アフィン変換行列を乗算して、回転や傾斜などの任意の数の線形変換を形成し、その後に平行移動を行うことができます。 次の表は、マトリックスの構造を示してい Xamarin.Forms ます。
 
@@ -148,7 +148,7 @@ Xamarin.Formsには、より複雑な変換を作成するための次のクラ�
 
 これらのプロパティは、オブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。これは、データバインディングのターゲットとスタイルを設定できることを意味します。
 
-傾斜変換の効果を予測するには、が `AngleX` 元の座標系を基準として x 軸の値を傾斜させることを検討してください。 したがって、が `AngleX` 30 の場合、y 軸は原点を介して30°回転し、原点から30°回転して値を傾斜させます。 同様に、 `AngleY` 30 のは、オブジェクトの y 値を `Path` 原点から30°傾斜させます。
+傾斜変換の効果を予測する際は、`AngleX` によって元の座標系に対して x 軸の値が傾斜することを考慮します。 したがって、が `AngleX` 30 の場合、y 軸は原点を介して30°回転し、原点から30°回転して値を傾斜させます。 同様に、 `AngleY` 30 のは、オブジェクトの y 値を `Path` 原点から30°傾斜させます。
 
 オブジェクトを適切に傾斜させるには、 `Path` `CenterX` `CenterY` オブジェクトの中心点にプロパティとプロパティを設定します。
 
@@ -352,5 +352,5 @@ Xamarin.Formsには、オブジェクトへの複数の変換の適用をサポ�
 
 ## <a name="related-links"></a>関連リンク
 
-- [図形のデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapedemos/)
+- [図形のデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Forms図形](index.md)

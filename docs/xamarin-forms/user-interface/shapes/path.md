@@ -10,12 +10,12 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e558c510fa71f4d8f33b70b7dcb7e9a9334c6a84
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 48d68d2597986a941a6ac3a8df0d99f09f421e62
+ms.sourcegitcommit: 34fa3086c55b1e01838419c930f839c20662c362
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/18/2020
-ms.locfileid: "84947330"
+ms.locfileid: "84990877"
 ---
 # <a name="xamarinforms-shapes-path"></a>Xamarin.Forms図形: パス
 
@@ -54,9 +54,9 @@ ms.locfileid: "84947330"
 
 曲線と図形は `Geometry` 、オブジェクトのプロパティを設定するために使用されるオブジェクトを使用して記述できます `Path` `Data` 。
 
-さまざまな `Geometry` オブジェクトを選択できます。 、、およびの各クラスでは、 `EllipseGeometry` `LineGeometry` `RectangleGeometry` 比較的単純なシェイプが記述されています。 より複雑な図形を作成したり、曲線を作成したりするには、を使用 `PathGeometry` します。
+さまざまな `Geometry` オブジェクトから選択できます。 `EllipseGeometry`、`LineGeometry`、`RectangleGeometry` の各クラスは、比較的単純な図形を記述します。 より複雑な図形を作成したり、曲線を作成したりするには、`PathGeometry` を使用します。
 
-`PathGeometry`オブジェクトは1つ以上のオブジェクトで構成され `PathFigure` ます。 各 `PathFigure` オブジェクトは、異なる形状を表します。 各 `PathFigure` オブジェクトは `PathSegment` 、それぞれが図形の接続部分を表す1つ以上のオブジェクトで構成されています。 セグメントの種類には、 `LineSegment` 、 `BezierSegment` 、およびがあり `ArcSegment` ます。
+`PathGeometry`オブジェクトは1つ以上のオブジェクトで構成され `PathFigure` ます。 各 `PathFigure` オブジェクトは、異なる形状を表します。 各 `PathFigure` オブジェクトは `PathSegment` 、それぞれが図形の接続部分を表す1つ以上のオブジェクトで構成されています。 セグメントの種類には `LineSegment`、`BezierSegment`、 `ArcSegment` があります。
 
 次の例では、を使用して `Path` 三角形を描画しています。
 
@@ -91,7 +91,7 @@ ms.locfileid: "84947330"
 
 ## <a name="related-links"></a>関連リンク
 
-- [図形のデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapedemos/)
+- [図形のデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Forms図形](index.md)
 - [Xamarin.Formsシェイプジオメトリ](geometries.md)
 - [Xamarin.Formsパスの変換](path-transforms.md)
