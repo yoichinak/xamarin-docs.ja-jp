@@ -6,16 +6,16 @@ ms.assetId: 85A0CCF5-C1D8-40BB-927F-A4D944E5534D
 ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
-ms.date: 08/21/2019
+ms.date: 06/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: deb894cccd5b6a2a9d908ef8967de91f00e7d297
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: f3ab70dc20dda78e3acf400cf51d0ee9df84ff93
+ms.sourcegitcommit: 16847681df17ed59b3b3528761c02e8fb48ffc4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136423"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85104321"
 ---
 # <a name="xamarinforms-common-control-properties-methods-and-events"></a>Xamarin.Formsコモンコントロールのプロパティ、メソッド、およびイベント
 
@@ -23,7 +23,7 @@ ms.locfileid: "84136423"
 
 ## <a name="properties"></a>プロパティ
 
-インスタンスでは、次のプロパティを使用でき `VisualElement` ます。 完全な一覧については、「 [Visualelement API のプロパティ](xref:Xamarin.Forms.VisualElement#properties)」を参照してください。
+オブジェクトでは、次のプロパティを使用でき [`VisualElement`](xref:Xamarin.Forms.VisualElement) ます。
 
 ### [`AnchorX`](xref:Xamarin.Forms.VisualElement.AnchorX)
 
@@ -44,6 +44,10 @@ ms.locfileid: "84136423"
 ### [`Bounds`](xref:Xamarin.Forms.VisualElement.Bounds)
 
 プロパティは、 `Bounds` `Rectangle` コントロールによって占有される領域を表す読み取り専用のオブジェクトです。 `Bounds`プロパティ値は、レイアウトサイクル中に割り当てられます。 には、 `Rectangle` `struct` 四角形の交点と含有をテストするための便利なプロパティとメソッドが含まれています。 詳細については、「 [ Xamarin.Forms Rectangle API](xref:Xamarin.Forms.Rectangle)」を参照してください。
+
+### `Clip`
+
+プロパティは、 `Clip` `Geometry` 要素の内容のアウトラインを定義するオブジェクトです。 クリップを定義するには、などのオブジェクトを使用し `Geometry` て、 `EllipseGeometry` 要素のプロパティを設定し `Clip` ます。 ジオメトリの領域内にある領域だけが表示されます。 詳細については、「[クリップジオメトリ](~/xamarin-forms/user-interface/shapes/geometries.md#clip-geometries)」を参照してください。
 
 ### [`Effects`](xref:Xamarin.Forms.Element.Effects)
 
@@ -268,4 +272,4 @@ Android、iOS、UWP の各プラットフォームには、デバイスによっ
 
 ## <a name="related-links"></a>関連リンク
 
-* [VisualElement API ドキュメント](xref:Xamarin.Forms.VisualElement)
+- [VisualElement API](xref:Xamarin.Forms.VisualElement)

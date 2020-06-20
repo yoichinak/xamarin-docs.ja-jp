@@ -10,18 +10,18 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a5c7dc7af657dbb988ca51eb82cf60ca8b033cbd
-ms.sourcegitcommit: 34fa3086c55b1e01838419c930f839c20662c362
+ms.openlocfilehash: b6c884caa7bfb301f949f353f3c6c3445704aa89
+ms.sourcegitcommit: d86b7a18cf8b1ef28cd0fe1d311f1c58a65101a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990835"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85101357"
 ---
 # <a name="xamarinforms-shapes-polyline"></a>Xamarin.Forms図形: ポリライン
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
 
 `Polyline`クラスはクラスから派生し、接続された `Shape` 一連の直線を描画するために使用できます。 クラスから継承されるプロパティの詳細につい `Polyline` `Shape` ては、「 [ Xamarin.Forms 図形](index.md)」を参照してください。
 
@@ -45,5 +45,5 @@ ms.locfileid: "84990835"
 
 ## <a name="related-links"></a>関連リンク
 
-- [図形のデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [図形のデモ (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
 - [Xamarin.Forms図形](index.md)

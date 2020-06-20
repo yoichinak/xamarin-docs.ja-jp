@@ -10,12 +10,12 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6f8cb91a3699ce7e18e7f4d2e891fafa1ff552c2
-ms.sourcegitcommit: 34fa3086c55b1e01838419c930f839c20662c362
+ms.openlocfilehash: 9c7c552abe724dca6b06265b73346a399d35c3cb
+ms.sourcegitcommit: d86b7a18cf8b1ef28cd0fe1d311f1c58a65101a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990761"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85101395"
 ---
 # <a name="xamarinforms-shapes"></a>Xamarin.Forms図形
 
@@ -45,4 +45,4 @@ Xamarin.Formsクラスから派生するオブジェクトの数を定義 `Shape
 
 ## <a name="related-links"></a>関連リンク
 
-- [図形のデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [図形のデモ (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)

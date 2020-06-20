@@ -10,18 +10,18 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a0d528948ae8a57fc7c702d8a4ce3d3ec2eda15a
-ms.sourcegitcommit: 34fa3086c55b1e01838419c930f839c20662c362
+ms.openlocfilehash: da9649a4abb2cb65930d98576eda81739b711886
+ms.sourcegitcommit: d86b7a18cf8b1ef28cd0fe1d311f1c58a65101a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990829"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85101368"
 ---
 # <a name="xamarinforms-shapes-rectangle"></a>Xamarin.Forms図形: 四角形
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
 
 `Rectangle`クラスはクラスから派生 `Shape` し、四角形の描画に使用できます。 クラスから継承されるプロパティの詳細につい `Rectangle` `Shape` ては、「 [ Xamarin.Forms 図形](index.md)」を参照してください。
 
@@ -51,5 +51,5 @@ ms.locfileid: "84990829"
 
 ## <a name="related-links"></a>関連リンク
 
-- [図形のデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [図形のデモ (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
 - [Xamarin.Forms図形](index.md)

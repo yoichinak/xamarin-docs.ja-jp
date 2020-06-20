@@ -1,6 +1,6 @@
 ---
-title: 'Xamarin.Forms図形: ジオメトリ'
-description: Xamarin.Formsgeometry クラスを使用すると、2D 図形のジオメトリを記述できます。
+title: 'Xamarin.Forms図形: パスジオメトリ'
+description: Xamarin.Formsパスジオメトリクラスを使用すると、2D 図形のジオメトリを記述できます。
 ms.prod: xamarin
 ms.assetid: 07DE3D66-1820-4642-BDDF-84146D40C99D
 ms.technology: xamarin-forms
@@ -10,14 +10,14 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 05fcd1ada62bffa4829ad422ee5eda36d9d75ae3
-ms.sourcegitcommit: 16847681df17ed59b3b3528761c02e8fb48ffc4f
+ms.openlocfilehash: 5718b0594581928e6f00e11a15163d176615378f
+ms.sourcegitcommit: d86b7a18cf8b1ef28cd0fe1d311f1c58a65101a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/19/2020
-ms.locfileid: "85104265"
+ms.locfileid: "85101882"
 ---
-# <a name="xamarinforms-shapes-geometries"></a>Xamarin.Forms図形: ジオメトリ
+# <a name="xamarinforms-shapes-path-geometries"></a>Xamarin.Forms図形: パスジオメトリ
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
@@ -189,29 +189,6 @@ ms.locfileid: "85104265"
 ```
 
 この例では、 `EllipseGeometry` x 半径が同じで、中心座標が異なる4つのオブジェクトが結合されています。 これにより、内側に塗りつぶしルールがオレンジ色で塗りつぶされた4つの重なり合う円が作成され `EvenOdd` ます。
-
-## <a name="clip-geometries"></a>クリップジオメトリ
-
-[`VisualElement`](xref:Xamarin.Forms.VisualElement)クラスには、 `Clip` `Geometry` 要素の内容のアウトラインを定義する型のプロパティがあります。 `Clip`プロパティがオブジェクトに設定されている場合は、 `Geometry` の領域内にある領域だけが `Geometry` 表示されます。
-
-次の例は、 `Geometry` のクリップ領域としてオブジェクトを使用する方法を示してい [`Image`](xref:Xamarin.Forms.Image) ます。
-
-```xaml
-<Image Source="monkeyface.png">
-    <Image.Clip>
-        <EllipseGeometry RadiusX="100"
-                         RadiusY="100"
-                         Center="180,180" />
-    </Image.Clip>
-</Image>
-```
-
-この例では、 `EllipseGeometry` との値が100で、 `RadiusX` `RadiusY` `Center` 値 (180180) がのプロパティに設定されてい `Clip` [`Image`](xref:Xamarin.Forms.Image) ます。 楕円の領域内にあるイメージの部分のみが表示されます。
-
-![System.windows.media.ellipsegeometry> を使用してイメージをクリップする](geometries-images/clip-ellipsegeometry.png "System.windows.media.ellipsegeometry> を使用してイメージをクリップする")
-
-> [!NOTE]
-> オブジェクトのクリップには、単純なジオメトリ、パスジオメトリ、および複合ジオメトリを使用でき [`VisualElement`](xref:Xamarin.Forms.VisualElement) ます。
 
 ## <a name="other-features"></a>その他の機能
 

@@ -10,18 +10,18 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5814bb73f843031d672df0573775abb002fd3644
-ms.sourcegitcommit: 34fa3086c55b1e01838419c930f839c20662c362
+ms.openlocfilehash: c0abf7b30192ac9183c28e89d7917ea8d08dfc4f
+ms.sourcegitcommit: d86b7a18cf8b1ef28cd0fe1d311f1c58a65101a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990801"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85101327"
 ---
 # <a name="xamarinforms-shapes-path-transforms"></a>Xamarin.Forms図形: パスの変換
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
 
 は、ある `Transform` `Path` 座標空間から別の座標空間にオブジェクトを変換する方法を定義します。 このマッピングは、3 列の `double` 値を持つ 3 つの行のコレクションである、`Matrix` 変換によって記述されます。
 
@@ -352,5 +352,5 @@ Xamarin.Formsには、オブジェクトへの複数の変換の適用をサポ�
 
 ## <a name="related-links"></a>関連リンク
 
-- [図形のデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [図形のデモ (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
 - [Xamarin.Forms図形](index.md)

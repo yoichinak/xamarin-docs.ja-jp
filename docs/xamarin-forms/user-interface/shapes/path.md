@@ -10,18 +10,18 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 48d68d2597986a941a6ac3a8df0d99f09f421e62
-ms.sourcegitcommit: 34fa3086c55b1e01838419c930f839c20662c362
+ms.openlocfilehash: cb2e3ea68f181f0a6e6392c012db221ef35d65bd
+ms.sourcegitcommit: 16847681df17ed59b3b3528761c02e8fb48ffc4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990877"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85104304"
 ---
 # <a name="xamarinforms-shapes-path"></a>Xamarin.Forms図形: パス
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
 
 `Path`クラスはクラスから派生 `Shape` し、曲線や複雑な図形を描画するために使用できます。 これらの曲線と図形は、多くの場合、オブジェクトを使用して記述され `Geometry` ます。 クラスから継承されるプロパティの詳細につい `Path` `Shape` ては、「 [ Xamarin.Forms 図形](index.md)」を参照してください。
 
@@ -36,7 +36,7 @@ ms.locfileid: "84990877"
 
 ## <a name="create-a-path"></a>パスを作成する
 
-次の XAML の例は、特別な省略構文を使用して多角形を描画する方法を示しています。
+次の XAML の例は、パスマークアップ構文と呼ばれる特殊な省略構文を使用して多角形を描画する方法を示しています。
 
 ```xaml
 <Path Data="M 10,50 L 200,70"
@@ -48,7 +48,12 @@ ms.locfileid: "84990877"
       WidthRequest="100" />
 ```
 
-`Data`文字列は、"moveto" コマンドで始まります。このコマンドは `M` 、パスの始点を確立するによって指定されています。 パスデータパラメーターでは、大文字と小文字が区別されます。 大文字は、 `M` 始点の絶対位置を示します。 小文字は `m` 相対座標を示します。 `L`は line コマンドです。このコマンドは、始点から指定された終点までの直線を作成します。
+`Data`文字列は、"moveto" コマンドで始まります。このコマンドは `M` 、パスの始点を確立するによって指定されています。 `L`は line コマンドです。このコマンドは、始点から指定された終点までの直線を作成します。
+
+> [!NOTE]
+> パスマークアップ構文は、XAML でのみ使用できます。
+
+パスマークアップ構文の詳細については、「 [ Xamarin.Forms パスマークアップ構文](path-markup-syntax.md)」を参照してください。
 
 ## <a name="path-geometry"></a>パスジオメトリ
 
@@ -91,7 +96,8 @@ ms.locfileid: "84990877"
 
 ## <a name="related-links"></a>関連リンク
 
-- [図形のデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [図形のデモ (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
 - [Xamarin.Forms図形](index.md)
-- [Xamarin.Formsシェイプジオメトリ](geometries.md)
+- [Xamarin.Formsジオメトリ](geometries.md)
+- [Xamarin.Formsパスマークアップ構文](path-markup-syntax.md)
 - [Xamarin.Formsパスの変換](path-transforms.md)
