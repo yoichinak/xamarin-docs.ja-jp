@@ -139,13 +139,13 @@
               href: user-interface/android-designer/resource-qualifiers.md
             - name: 代替レイアウト ビュー
               href: user-interface/android-designer/alternative-layout-views.md
-            - name: 素材のデザイン機能
+            - name: マテリアル デザイン機能
               href: user-interface/android-designer/material-design-features.md
             - name: Android レイアウト診断
               href: user-interface/android-designer/diagnostics.md
             - name: Android Designer 診断アナライザー
               href: user-interface/android-designer/diagnostic-analyzers.md
-        - name: 素材のテーマ
+        - name: マテリアル テーマ
           href: user-interface/material-theme.md
         - name: ユーザー プロファイル
           href: user-interface/user-profile.md
