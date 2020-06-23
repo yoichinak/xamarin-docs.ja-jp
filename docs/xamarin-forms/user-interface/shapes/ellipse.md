@@ -10,18 +10,18 @@ ms.date: 06/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 053805c14f195ef0dd3ae8f0cfcac2ee7425271d
-ms.sourcegitcommit: dc49ba58510eeb52048a866e5d3daf5f1f68fbd2
+ms.openlocfilehash: 725f892a667b4e89d55266abcf69e5394b09b6a5
+ms.sourcegitcommit: ef3d4a70e70927c4f231b763842c5355f1571d15
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85130910"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85243827"
 ---
 # <a name="xamarinforms-shapes-ellipse"></a>Xamarin.Forms図形: 楕円
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 `Ellipse`クラスはクラスから派生 `Shape` し、楕円と円を描画するために使用できます。 クラスから継承されるプロパティの詳細につい `Ellipse` `Shape` ては、「 [ Xamarin.Forms 図形](index.md)」を参照してください。
 
@@ -29,7 +29,7 @@ ms.locfileid: "85130910"
 
 ## <a name="create-an-ellipse"></a>楕円を作成する
 
-楕円を描画するには、 `Ellipse` オブジェクトを作成し、その `WidthRequest` プロパティとプロパティを設定し `HeightRequest` ます。 プロパティを使用して `Fill` 、 [`Color`](xref:Xamarin.Forms.Color) 楕円の内部を描画するために使用するを指定します。 `Stroke` プロパティを使用して、楕円の輪郭の描画に使用される `Color` を指定します。 `StrokeThickness` プロパティは、楕円の輪郭の太さを指定します。
+楕円を描画するには、 `Ellipse` オブジェクトを作成し、その `WidthRequest` プロパティとプロパティを設定し `HeightRequest` ます。 楕円の内部を描画するには、そのプロパティをに設定 `Fill` [`Color`](xref:Xamarin.Forms.Color) します。 楕円に輪郭を付けるには、その `Stroke` プロパティをに設定し [`Color`](xref:Xamarin.Forms.Color) ます。 `StrokeThickness` プロパティは、楕円の輪郭の太さを指定します。
 
 円を描画するには、 `WidthRequest` `HeightRequest` オブジェクトのプロパティとプロパティを同じにし `Ellipse` ます。
 
@@ -60,7 +60,9 @@ ms.locfileid: "85130910"
 
 ![付い](ellipse-images/circle.png "Circle")
 
+破線の楕円を描画する方法の詳細については、「[破線の図形を描画](index.md#draw-dashed-shapes)する」を参照してください。
+
 ## <a name="related-links"></a>関連リンク
 
-- [図形のデモ (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/ShapesDemos/)
+- [図形のデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Forms図形](index.md)
