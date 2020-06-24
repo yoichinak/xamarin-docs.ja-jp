@@ -1,13 +1,27 @@
 ---
-title: "Xamarin.Forms のバインドのフォールバック" の説明: "この記事では、バインドが失敗した場合に使用されるフォールバック値を定義することでバインドをより堅牢にする方法について説明します。"
-ms.prod: xamarin ms.assetid: 637ACD9D-3E5D-4014-86DE-A77D1FEF238A ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 08/16/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Forms でのバインドのフォールバック
+description: この記事では、バインドが失敗した場合に使用されるフォールバック値を定義することでバインドをより堅牢にする方法について説明します。
+ms.prod: xamarin
+ms.assetid: 637ACD9D-3E5D-4014-86DE-A77D1FEF238A
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 08/16/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2c5ce10aa0a1137ad4e4832d5dc931c902b82810
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946209"
 ---
-
 # <a name="xamarinforms-binding-fallbacks"></a>Xamarin.Forms でのバインドのフォールバック
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
-バインディング ソースを解決できないため、またはバインドは成功しても `null` 値が返されるために、データ バインディングが失敗する場合があります。 これらのシナリオについては、値コンバーターまたは他の追加コードで対処できますが、バインド プロセスが失敗した場合に使用されるフォールバック値を定義することでデータ バインディングをより堅牢にすることができます。 このためには、バインド式で [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) プロパティと [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) プロパティを定義します。 これらのプロパティは、[`BindingBase`](xref:Xamarin.Forms.BindingBase) クラス内にあるため、バインド、コンパイル済みのバインド、`Binding` マークアップ拡張で使用することができます。
+バインディング ソースを解決できないため、またはバインドは成功しても `null` 値が返されるために、データ バインディングが失敗する場合があります。 これらのシナリオについては、値コンバーターまたは他の追加コードで対処できますが、バインド プロセスが失敗した場合に使用されるフォールバック値を定義することでデータ バインディングをより堅牢にすることができます。 このためには、バインド式で [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) プロパティと [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) プロパティを定義します。 これらのプロパティは、[`BindingBase`](xref:Xamarin.Forms.BindingBase) クラス内にあるため、バインド、複数バインド、コンパイル済みのバインド、`Binding` マークアップ拡張で使用することができます。
 
 > [!NOTE]
 > バインド式での [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) プロパティと [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) プロパティの使用は任意です。
