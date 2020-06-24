@@ -1,8 +1,21 @@
 ---
-タイトル: "Xamarin.Essentials: ジオコーディング" の説明: "Xamarin.Essentials の Geocoding クラスでは、placemark を位置座標にジオコーディングするための API と、逆に座標を placemark にジオコーディングする API が両方とも提供されています。"
-ms.assetid:3ADC440C-B000-4708-A2CC-296F5160AF90 author: jamesmontemagno ms.author: jamont ms.date:05/28/2019 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials:ジオコーディング
+description: Xamarin.Essentials の Geocoding クラスでは、placemark を位置座標にジオコーディングする API と、逆に座標を placemark にジオコーディングする API の両方が提供されます。
+ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 05/28/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 66383e441435b5f4bdb48224c9ab602f28072b3d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802334"
 ---
-
 # <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials:ジオコーディング
 
 **Geocoding** クラスでは、placemark を位置座標にジオコーディングするための API と、逆に座標を placemark にジオコーディングする API が提供されています。
@@ -113,7 +126,7 @@ catch (Exception ex)
 
 ## <a name="api"></a>API
 
-- [Geocoding のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Geocoding)
+- [Geocoding のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Geocoding)
 - [Geocoding API のドキュメント](xref:Xamarin.Essentials.Geocoding)
 
 ## <a name="related-video"></a>関連ビデオ

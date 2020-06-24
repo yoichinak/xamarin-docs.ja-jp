@@ -1,8 +1,21 @@
 ---
-タイトル: "Xamarin.Essentials:バージョンの追跡" の説明: "Xamarin.Essentials の VersionTracking クラスを使用すると、アプリケーションのバージョンとビルド番号を確認できるだけでなく、これまでで最初のアプリケーションの起動であるか、現在のバージョンの起動であるかなどの追加情報を確認し、前のビルドの情報などを取得することができます。"
-ms.assetid:670C7E8A-E882-4AC0-97D2-A53D90ADD6A3 author: jamesmontemagno ms.author: jamont ms.date:05/28/2019 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials:バージョンの追跡
+description: Xamarin.Essentials の VersionTracking クラスを使用すると、アプリケーションのバージョンとビルド番号を確認できるだけでなく、これまでで最初のアプリケーションの起動であるか、現在のバージョンの起動であるかなどの追加情報を確認し、前のビルドの情報などを取得することができます。
+ms.assetid: 670C7E8A-E882-4AC0-97D2-A53D90ADD6A3
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 05/28/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 20819d76c23ca43f60073bcc2cd762abda280374
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802031"
 ---
-
 # <a name="xamarinessentials-version-tracking"></a>Xamarin.Essentials:バージョンの追跡
 
 **VersionTracking** クラスを使用すると、アプリケーションのバージョンとビルド番号を確認できるだけでなく、今まで一度も起動されたことのないアプリケーションの初めての起動か、現在のバージョンの起動か、前回のビルドの情報などの追加情報を見ることができます。
@@ -69,7 +82,7 @@ var buildHistory = VersionTracking.BuildHistory;
 
 ## <a name="api"></a>API
 
-- [VersionTracking のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/VersionTracking)
+- [VersionTracking のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/VersionTracking)
 - [VersionTracking API のドキュメント](xref:Xamarin.Essentials.VersionTracking)
 
 ## <a name="related-video"></a>関連ビデオ

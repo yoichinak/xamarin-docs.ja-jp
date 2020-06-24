@@ -1,8 +1,22 @@
 ---
-title: "画像ライブラリから写真を選択する" の説明: "この記事では、Xamarin.Forms の DependencyService クラスを使用して、電話の画像ライブラリから写真を選択する方法について説明します。"
-ms.prod: xamarin ms.assetid:4F51B0E7-6A63-403C-B488-500CCBCE75DD ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:03/06/2017 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: 画像ライブラリから写真を選択する
+description: この記事では、Xamarin.Forms の DependencyService クラスを使用して、電話の画像ライブラリから写真を選択する方法について説明します。
+ms.prod: xamarin
+ms.assetid: 4F51B0E7-6A63-403C-B488-500CCBCE75DD
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 03/06/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9f999d56fbf178be160e91756643c127d574b090
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84197552"
 ---
-
 # <a name="picking-a-photo-from-the-picture-library"></a>画像ライブラリから写真を選択する
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)

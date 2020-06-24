@@ -1,8 +1,21 @@
 ---
-タイトル: "Xamarin.Essentials:音声合成'' の説明: "Xamarin.Essentials の TextToSpeech クラスを使用すると、アプリケーションで組み込みの音声合成エンジンを利用し、デバイスからテキストを読み上げたり、エンジンでサポート可能な使用できる言語を照会したりすることができます。"
-ms.assetid:AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:11/04/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials:音声合成
+description: Xamarin.Essentials の TextToSpeech クラスを使用すると、アプリケーションで組み込みの音声合成エンジンを利用し、デバイスからテキストを読み上げたり、エンジンでサポートされる使用可能な言語を照会したりすることができます。
+ms.assetid: AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 11/04/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 452a54637c270f80c2e1add4d6cadedbb4b27077
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84801830"
 ---
-
 # <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials:音声合成
 
 **TextToSpeech** クラスを使用すると、アプリケーションで組み込みの音声合成エンジンを利用して、デバイスからテキストを読み上げたり、エンジンがサポートしている利用可能な言語を照会したりすることができます。
@@ -139,7 +152,7 @@ public async Task SpeakNow()
 
 ## <a name="api"></a>API
 
-- [TextToSpeech のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/TextToSpeech)
+- [TextToSpeech のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/TextToSpeech)
 - [TextToSpeech API ドキュメント](xref:Xamarin.Essentials.TextToSpeech)
 
 ## <a name="related-video"></a>関連ビデオ

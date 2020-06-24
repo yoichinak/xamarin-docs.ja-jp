@@ -1,8 +1,22 @@
 ---
-タイトル: "Xamarin.Forms のデュアル画面デバイスの機能" の説明:"このガイドでは、Xamarin.Formsの DualScreenInfo クラスを使用して Surface Duo や Surface Neo などのデュアル画面デバイスのアプリ エクスペリエンスを最適化する方法について説明します。"
-ms.prod: xamarin ms.assetid: dd5eb074-f4cb-4ab4-b47d-76f862ac7cfa ms.technology: xamarin-forms author: davidortinau ms.author: daortin ms.date:02/08/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: デュアル画面デバイスに関する Xamarin.Forms の機能
+description: このガイドでは、Xamarin.Forms の DualScreenInfo クラスを使用して Surface Duo や Surface Neo などのデュアル画面デバイスのアプリ エクスペリエンスを最適化する方法について説明します。
+ms.prod: xamarin
+ms.assetid: dd5eb074-f4cb-4ab4-b47d-76f862ac7cfa
+ms.technology: xamarin-forms
+author: davidortinau
+ms.author: daortin
+ms.date: 05/19/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 12f3ac86d2418c6516d000371753fc8ae65d557c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946352"
 ---
-
 # <a name="xamarinforms-dual-screen-device-capabilities"></a>デュアル画面デバイスに関する Xamarin.Forms の機能
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
@@ -18,15 +32,15 @@ ms.prod: xamarin ms.assetid: dd5eb074-f4cb-4ab4-b47d-76f862ac7cfa ms.technology:
 - `IsLandscape` はデバイスが横向きであるかどうかを示します。 アプリケーションが複数にまたがっている場合、ネイティブの向きの API では向きが正しく報告されないため、これは便利です。
 - `SpanMode` はレイアウトが縦長、横長、または単一のペイン モードのどれかを示します。
 
-また、プロパティが変更されたときには `PropertyChanged` のイベントが発生します。
+また、`PropertyChanged` イベントはプロパティが変更されたときに発生し、`HingeAngleChanged` イベントはヒンジ角度が変更されたときに発生します。
 
-## <a name="poll-hinge-angle-on-android"></a>Android でのヒンジ角度をポーリングする
+## <a name="poll-hinge-angle-on-android-and-uwp"></a>Android および UWP でのヒンジ角度のポーリング
 
-次のプロパティは、Android プラットフォーム プロジェクトから `DualScreenInfo` にアクセスする場合に使用できます。
+次のメソッドは、Android および UWP プラットフォーム プロジェクトから `DualScreenInfo` にアクセスする場合に使用できます。
 
 - `GetHingeAngleAsync` はデバイスのヒンジの現在の角度を取得します。 シミュレーターを使用する場合は、圧力センサーを変更することで HingeAngle を設定できます。
 
-次のプロパティは、Android カスタム レンダラーから使用できます。
+このメソッドは、Android および UWP のカスタム レンダラーから呼び出すことができます。 次のコードは、Android のカスタム レンダラーの例を示しています。
 
 ```csharp
 public class HingeAngleLabelRenderer : Xamarin.Forms.Platform.Android.FastRenderers.LabelRenderer

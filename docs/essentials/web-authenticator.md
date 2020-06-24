@@ -1,8 +1,20 @@
 ---
-タイトル: "Xamarin.Essentials: Web Authenticator" の説明: "このドキュメントでは、Xamarin.Essentials の WebAuthenticator クラスについて説明します。これを使用すると、アプリへのコールバックをリッスンする、ブラウザー ベースの認証フローを開始できます。"
-ms.assetid:3D95371E-5D59-440E-8D31-F3C04E493DC1 author: redth ms.author: jodick ms.date:03/26/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials:Web Authenticator
+description: このドキュメントでは、Xamarin.Essentials の WebAuthenticator クラスについて説明します。これを使用すると、アプリへのコールバックをリッスンする、ブラウザー ベースの認証フローを開始できます。
+ms.assetid: 3D95371E-5D59-440E-8D31-F3C04E493DC1
+author: redth
+ms.author: jodick
+ms.date: 03/26/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 578e750afd718c684d70217355629a0286d2b028
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84801882"
 ---
-
 # <a name="xamarinessentials-web-authenticator"></a>Xamarin.Essentials:Web Authenticator
 
 **WebAuthenticator** クラスを使用すると、アプリに登録されている特定の URL へのコールバックをリッスンする、ブラウザー ベースのフローを開始できます。
@@ -220,6 +232,6 @@ Essentials のリポジトリで[完全なコントローラーのサンプル](
 -----
 ## <a name="api"></a>API
 
-- [WebAuthenticator のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/WebAuthenticator)
+- [WebAuthenticator のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/WebAuthenticator)
 - [WebAuthenticator API のドキュメント](xref:Xamarin.Essentials.WebAuthenticator)
 - [ASP.NET Core サーバー サンプル](https://github.com/xamarin/Essentials/blob/develop/Samples/Sample.Server.WebAuthenticator/)

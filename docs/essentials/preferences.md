@@ -1,8 +1,21 @@
 ---
-タイトル: "Xamarin.Essentials: ユーザー設定" の説明: このドキュメントでは、アプリケーションのユーザー設定をキーまたは値のストアに保存する、Xamarin.Essentials の Preferences クラスについて説明します。 このクラスの使用方法と、格納できるデータの種類についても説明します。"
-ms.assetid:AA81BCBD-79BA-448F-942B-BA4415CA50FF author: jamesmontemagno ms.author: jamont ms.date:01/15/2019 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials:Preferences
+description: このドキュメントでは、アプリケーションのユーザー設定をキーと値のストアに保存する、Xamarin.Essentials の Preferences クラスについて説明します。 クラスの使用方法と、格納できるデータの種類について説明します。
+ms.assetid: AA81BCBD-79BA-448F-942B-BA4415CA50FF
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 01/15/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: acc0c48776c7a91e9e5a060928564bc6e0c1d775
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84801817"
 ---
-
 # <a name="xamarinessentials-preferences"></a>Xamarin.Essentials:Preferences
 
 **Preferences** クラスを使用すると、アプリケーションのユーザー設定をキー/値ストアに保存できます。
@@ -104,7 +117,7 @@ iOS デバイスに値を格納するには、[NSUserDefaults](https://docs.micr
 
 ## <a name="api"></a>API
 
-- [Preferences のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Preferences)
+- [Preferences のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Preferences)
 - [Preferences API のドキュメント](xref:Xamarin.Essentials.Preferences)
 
 ## <a name="related-video"></a>関連ビデオ

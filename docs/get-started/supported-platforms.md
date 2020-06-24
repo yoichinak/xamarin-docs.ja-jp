@@ -1,8 +1,22 @@
 ---
-タイトル: "Xamarin.Forms サポートされているプラットフォーム" の説明: "Xamarin.Forms のプラットフォームと開発システムの要件。"
-ms.prod: xamarin ms.assetid: eecaf6a5-567c-49b2-ac83-2a195596c5bf ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:01/22/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Forms サポートされているプラットフォーム
+description: Xamarin.Forms のプラットフォームと開発システムの要件。
+ms.prod: xamarin
+ms.assetid: eecaf6a5-567c-49b2-ac83-2a195596c5bf
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 01/22/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f93af19587cf962ac0c852599157261a087dadbc
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84197544"
 ---
-
 # <a name="xamarinforms-supported-platforms"></a>Xamarin.Forms サポートされているプラットフォーム
 
 Xamarin.Forms アプリケーションは次のオペレーティング システム用として記述できます。

@@ -1,8 +1,21 @@
 ---
-タイトル: "Xamarin.Essentials: デバイス情報" の説明: "このドキュメントでは、アプリケーションが実行されているデバイスに関する情報を提供する Xamarin.Essentials の DeviceInfo クラスについて説明します。"
-ms.assetid:A1AC5373-926A-4FB6-8D7D-4B87EB8EB522 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:11/04/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials:デバイス情報
+description: このドキュメントでは、アプリケーションが実行されているデバイスに関する情報を提供する、Xamarin.Essentials の DeviceInfo クラスについて説明します。
+ms.assetid: A1AC5373-926A-4FB6-8D7D-4B87EB8EB522
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 11/04/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 70619097baa2c5f10321835b087f693c4fbac0c4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802383"
 ---
-
 # <a name="xamarinessentials-device-information"></a>Xamarin.Essentials:デバイス情報
 
 **DeviceInfo** クラスでは、アプリケーションが実行されているデバイスに関する情報が提供されます。
@@ -78,7 +91,7 @@ iOS では、特定の iOS デバイスのモデルを取得するための API 
 
 ## <a name="api"></a>API
 
-- [DeviceInfo のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/DeviceInfo)
+- [DeviceInfo のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/DeviceInfo)
 - [DeviceInfo API のドキュメント](xref:Xamarin.Essentials.DeviceInfo)
 
 ## <a name="related-video"></a>関連ビデオ

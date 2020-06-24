@@ -1,7 +1,22 @@
 ---
-title:"第 24 章の概要: ページ ナビゲーション" description:"Xamarin.Forms でモバイル アプリを作成する: 第 24 章の概要: ページ ナビゲーション" ms.prod: xamarin ms.technology: xamarin-forms ms.assetid:DDCDB49C-6008-4F72-B095-463EE21D7C23 author: davidbritch ms.author: dabritch ms.date:11/07/2017 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: '第 24 章の概要: ページのナビゲーション'
+description: 'Xamarin.Forms でモバイル アプリを作成する: 第 24 章の概要: ページのナビゲーション'
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: DDCDB49C-6008-4F72-B095-463EE21D7C23
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 09622adc269027b589a7345a7d4411c3dcecbf0c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136644"
 ---
-
 # <a name="summary-of-chapter-24-page-navigation"></a>第 24 章の概要: ページのナビゲーション
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter24)

@@ -1,8 +1,21 @@
 ---
-タイトル: "Xamarin.Essentials: デバイス ディスプレイ情報" の説明: "このドキュメントでは、アプリケーションが実行されているデバイスの画面のメトリックを提供する Xamarin.Essentials の DeviceDisplay クラスについて説明します。"
-ms.assetid:2821C908-C613-490D-8E8C-1BD3269FCEEA author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:11/04/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials:デバイス ディスプレイ情報
+description: このドキュメントでは、アプリケーションが実行されているデバイスの画面のメトリックを提供する、Xamarin.Essentials の DeviceDisplay クラスについて説明します。
+ms.assetid: 2821C908-C613-490D-8E8C-1BD3269FCEEA
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 11/04/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 867e6bd1828d4158f70226dbaad678f9d6037bb0
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802405"
 ---
-
 # <a name="xamarinessentials-device-display-information"></a>Xamarin.Essentials:デバイス ディスプレイ情報
 
 **DeviceDisplay** クラスは、アプリケーションが実行されているデバイスの画面のメトリックに関する情報を提供し、アプリケーションの実行中に画面がスリープ状態にならないように要求することができます。
@@ -92,7 +105,7 @@ public class KeepScreenOnTest
 
 ## <a name="api"></a>API
 
-- [DeviceDisplay のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/DeviceDisplay)
+- [DeviceDisplay のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/DeviceDisplay)
 - [DeviceDisplay API のドキュメント](xref:Xamarin.Essentials.DeviceDisplay)
 
 ## <a name="related-video"></a>関連ビデオ

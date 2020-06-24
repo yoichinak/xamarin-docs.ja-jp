@@ -1,8 +1,20 @@
 ---
-タイトル: "Xamarin.Essentials: 磁力計" の説明: "Xamarin.Essentials の Magnetometer クラスを使用すると、地球の磁場を基準にしてデバイスの向きを示すデバイスの磁力計センサーを監視できます。"
-ms.assetid: 64DD0D41-03E2-40DD-9EC8-101CA0ED852B author: jamesmontemagno ms.author: jamont ms.date: 11/04/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials:磁力計
+description: Xamarin.Essentials の Magnetometer クラスを使用すると、地球の磁場を基準にしてデバイスの向きを示すデバイスの磁力計センサーを監視できます。
+ms.assetid: 64DD0D41-03E2-40DD-9EC8-101CA0ED852B
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 11/04/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b01bc1fd9c65186952635c5f472b1ac6beb0c9bd
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802289"
 ---
-
 # <a name="xamarinessentials-magnetometer"></a>Xamarin.Essentials:磁力計
 
 **Magnetometer** クラスを使用すると、地球の磁場を基準にしてデバイスの向きを示すデバイスの磁力計センサーを監視できます。
@@ -68,5 +80,5 @@ public class MagnetometerTest
 
 ## <a name="api"></a>API
 
-- [Magnetometer のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Magnetometer)
+- [Magnetometer のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Magnetometer)
 - [Magnetometer API のドキュメント](xref:Xamarin.Essentials.Magnetometer)

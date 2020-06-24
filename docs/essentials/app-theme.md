@@ -1,8 +1,21 @@
 ---
-タイトル: "Xamarin.Essentials: アプリのテーマ" の説明: "このドキュメントでは、Xamarin.Essentials の要求されたアプリ テーマに関する API について説明します。実行中のアプリに対して要求されているテーマ スタイルに関する情報が記載されています。"
-ms.assetid:F6F6D496-A8A9-4B9A-AF1A-370D937E5073 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:01/06/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials:アプリのテーマ
+description: このドキュメントでは、Xamarin.Essentials の要求されたアプリ テーマに関する API について説明します。実行中のアプリに対して要求されているテーマ スタイルに関する情報が記載されています。
+ms.assetid: F6F6D496-A8A9-4B9A-AF1A-370D937E5073
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 01/06/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: eca052c82ae3333feb0437b8a4e24bc6b97b836d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802500"
 ---
-
 # <a name="xamarinessentials-app-theme"></a>Xamarin.Essentials:アプリのテーマ
 
 **RequestedTheme** API は [`AppInfo`](app-information.md) クラスの一部であり、実行中のアプリに対してシステムから要求されているテーマに関する情報が提供されます。
@@ -63,7 +76,7 @@ UWP アプリケーションでは、**RequestedTheme** で UWP App.xaml の設�
 
 ## <a name="api"></a>API
 
-- [AppInfo のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/AppInfo)
+- [AppInfo のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/AppInfo)
 - [AppInfo API のドキュメント](xref:Xamarin.Essentials.AppInfo)
 
 ## <a name="related-video"></a>関連ビデオ

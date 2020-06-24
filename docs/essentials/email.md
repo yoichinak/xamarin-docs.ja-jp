@@ -1,8 +1,21 @@
 ---
-タイトル: "Xamarin.Essentials: 電子メール" の説明"アプリケーションで Xamarin.Essentials の Email クラスを使用すると、件名、本文、受信者 (TO、CC、BCC) などの情報を指定して既定のメール アプリケーションを開くことができます。"
-ms.assetid:5FBB6FF0-0E7B-4C29-8F06-91642AF12629 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:08/20/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials:電子メール
+description: アプリケーションで Xamarin.Essentials の Email クラスを使用すると、件名、本文、受信者 (TO、CC、BCC) などの情報を指定して既定のメール アプリケーションを開くことができます。
+ms.assetid: 5FBB6FF0-0E7B-4C29-8F06-91642AF12629
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 08/20/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: eba2b6decc74c63e6b2790287842e6cc9b237bd2
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802373"
 ---
-
 # <a name="xamarinessentials-email"></a>Xamarin.Essentials:電子メール
 
 アプリケーションで **Email** クラスを使用すると、件名、本文、受信者 (TO、CC、BCC) などの情報を指定して既定のメール アプリケーションを開くことができます。
@@ -95,7 +108,7 @@ Android の一部のメール クライアントは `Html` を検出する手段
 
 ## <a name="api"></a>API
 
-- [Email のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Email)
+- [Email のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Email)
 - [Email API のドキュメント](xref:Xamarin.Essentials.Email)
 
 ## <a name="related-video"></a>関連ビデオ

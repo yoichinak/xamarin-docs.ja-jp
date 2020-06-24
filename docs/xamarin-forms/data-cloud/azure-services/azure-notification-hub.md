@@ -1,8 +1,23 @@
 ---
-title:"Azure Notification Hubs と Xamarin.Forms を使用してプッシュ通知を送受信する" の説明:"この記事では、Azure Notification Hubs を使用して、Xamarin.Forms アプリケーションにクロスプラットフォームのプッシュ通知を送信する方法について説明します。"
-ms.prod: xamarin ms.assetid:07D13195-3A0D-4C95-ACF0-143A9084973C ms.technology: xamarin-forms author: profexorgeek ms.author: jusjohns ms.date:11/27/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials, Firebase]
+title: Azure Notification Hubs と Xamarin.Forms を使用してプッシュ通知を送受信する
+description: この記事では、Azure Notification Hubs を使用して、Xamarin.Forms アプリケーションにクロスプラットフォームのプッシュ通知を送信する方法について説明します。
+ms.prod: xamarin
+ms.assetid: 07D13195-3A0D-4C95-ACF0-143A9084973C
+ms.technology: xamarin-forms
+author: profexorgeek
+ms.author: jusjohns
+ms.date: 11/27/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+- Firebase
+ms.openlocfilehash: 5f7b83c1fc907de790b382aabde0c5a957e5a8bb
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84565422"
 ---
-
 # <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-xamarinforms"></a>Azure Notification Hubs と Xamarin.Forms を使用してプッシュ通知を送受信する
 
 [![サンプルをダウンロードする](~/media/shared/download.png)サンプルをダウンロードする](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurenotificationhub/)

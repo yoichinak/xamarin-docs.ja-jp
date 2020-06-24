@@ -1,8 +1,21 @@
 ---
-タイトル: "Xamarin.Essentials: 懐中電灯" の説明: "このドキュメントでは、デバイスのカメラのフラッシュを懐中電灯にする機能をオンまたはオフにできる Xamarin.Essentials の Flashlight クラスについて説明します。"
-ms.assetid:06A03553-D212-43A2-9E6E-C2D2D93EB136 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:11/04/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials:Flashlight
+description: このドキュメントでは、Xamarin.Essentials の Flashlight クラスについて説明します。これを使うと、デバイスのカメラのフラッシュをオンまたはオフにして、懐中電灯にすることができます。
+ms.assetid: 06A03553-D212-43A2-9E6E-C2D2D93EB136
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 11/04/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7a8a90674b395c90f698a4a0854dc0dc3fc5fe15
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802350"
 ---
-
 # <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials:Flashlight
 
 **Flashlight** クラスを使用すると、デバイスのカメラのフラッシュを懐中電灯にする機能をオンまたはオフにできます。
@@ -113,7 +126,7 @@ Flashlight クラスは、デバイスのオペレーティング システム�
 
 ## <a name="api"></a>API
 
-- [Flashlight のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Flashlight)
+- [Flashlight のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Flashlight)
 - [Flashlight API のドキュメント](xref:Xamarin.Essentials.Flashlight)
 
 ## <a name="related-video"></a>関連ビデオ

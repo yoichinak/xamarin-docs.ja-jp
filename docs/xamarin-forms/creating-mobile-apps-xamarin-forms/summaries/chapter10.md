@@ -1,7 +1,22 @@
 ---
-title:"第 10 章の概要: XAML マークアップ拡張" の説明: "Xamarin.Forms でモバイル アプリを作成する: 第 10 章の概要: XAML マークアップ拡張" ms.prod: xamarin ms.technology: xamarin-forms ms.assetid:575EAE55-BD4D-470F-A583-3D065FA102E2 author: davidbritch ms.author: dabritch ms.date:07/19/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: '第 10 章の概要: XAML マークアップ拡張'
+description: 'Xamarin.Forms でモバイル アプリを作成する: 第 10 章の概要: XAML マークアップ拡張'
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: 575EAE55-BD4D-470F-A583-3D065FA102E2
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/19/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8f23034df684e778677e4f2e480e1c41807536fb
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136813"
 ---
-
 # <a name="summary-of-chapter-10-xaml-markup-extensions"></a>第 10 章の概要: XAML マークアップ拡張
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10)

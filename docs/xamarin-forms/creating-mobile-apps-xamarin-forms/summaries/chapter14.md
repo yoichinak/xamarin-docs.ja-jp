@@ -1,7 +1,22 @@
 ---
-title:"第 14 章の概要: 絶対レイアウト" description:"Xamarin.Forms でモバイル アプリを作成する: 第 14 章の概要: 絶対レイアウト" ms.prod: xamarin ms.technology: xamarin-forms ms.assetid:88882A48-3226-42D1-96ED-241250B64A84 author: davidbritch ms.author: dabritch ms.date:07/19/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: '第 14 章の概要: 絶対レイアウト'
+description: 'Xamarin.Forms でモバイル アプリを作成する: 第 14 章の概要: 絶対レイアウト'
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: 88882A48-3226-42D1-96ED-241250B64A84
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/19/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 72ee9c4a481388e69aeeb52dbd5b8eeaabb164f6
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136761"
 ---
-
 # <a name="summary-of-chapter-14-absolute-layout"></a>第 14 章の概要: 絶対レイアウト
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14)

@@ -1,8 +1,21 @@
 ---
-タイトル: "Xamarin.Essentials:シェイクの検出'' description:''Xamarin.Essentials の Accelerometer クラスを利用すると、デバイスが揺れる動きを検出できます。''
-ms.assetid:07513D32-120F-4F12-8757-A47802A8027B author: jamesmontemagno ms.author: jamont ms.date:05/28/2019 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials:シェイクの検出
+description: Xamarin.Essentials の Accelerometer クラスを利用すると、デバイスが揺れる動きを検出できます。
+ms.assetid: 07513D32-120F-4F12-8757-A47802A8027B
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 05/28/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 4fd4c7d0e3ffe04ebbb936cff0992272a9085649
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802427"
 ---
-
 # <a name="xamarinessentials-detect-shake"></a>Xamarin.Essentials:シェイクの検出
 
 **[Accelerometer](accelerometer.md)** クラスでは、デバイスの加速度を 3 次元空間で示す、デバイスの加速度計センサーを監視できます。 また、ユーザーがデバイスを振るイベントを登録できます。
@@ -68,7 +81,7 @@ Detect Shake API では、加速度計で読み取られた値が未加工のま
 
 ## <a name="api"></a>API
 
-- [加速度計のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Accelerometer)
+- [加速度計のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Accelerometer)
 - [加速度計の API ドキュメント](xref:Xamarin.Essentials.Accelerometer)
 
 ## <a name="related-video"></a>関連ビデオ

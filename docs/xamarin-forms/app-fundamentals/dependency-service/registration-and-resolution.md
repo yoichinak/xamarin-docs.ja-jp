@@ -1,8 +1,22 @@
 ---
-title: "Xamarin.Forms の DependencyService の登録と解決" の説明:"この記事では、Xamarin.Forms の DependencyService クラスを使用してネイティブ プラットフォームの機能を呼び出す方法について説明します。"
-ms.prod: xamarin ms.assetid:5d019604-4f6f-4932-9b26-1fce3b4d88f8 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:06/05/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Forms の DependencyService の登録と解決
+description: この記事では、Xamarin.Forms の DependencyService クラスを使用してネイティブ プラットフォームの機能を呼び出す方法について説明します。
+ms.prod: xamarin
+ms.assetid: 5d019604-4f6f-4932-9b26-1fce3b4d88f8
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 06/05/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 050b53be5e4ae67e2adbc1436bbd56ff824f5f7b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946391"
 ---
-
 # <a name="xamarinforms-dependencyservice-registration-and-resolution"></a>Xamarin.Forms の DependencyService の登録と解決
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
@@ -13,7 +27,7 @@ Xamarin.Forms の [`DependencyService`](xref:Xamarin.Forms.DependencyService) �
 
 プラットフォームの実装を [`DependencyService`](xref:Xamarin.Forms.DependencyService) に登録して、実行時に Xamarin.Forms でそれらを検索できるようにする必要があります。
 
-登録は、[`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute)、または [`Register`](xref:Xamarin.Forms.DependencyService.Register*) メソッドを使用して実行できます。
+登録は、[`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute)、または [`Register`](xref:Xamarin.Forms.DependencyService.Register*) と `RegisterSingleton` メソッドを使用して実行できます。
 
 > [!IMPORTANT]
 > .NET ネイティブ コンパイルを使用する UWP プロジェクトのリリース ビルドでは、[`Register`](xref:Xamarin.Forms.DependencyService.Register*) メソッドを使用してプラットフォームの実装を登録する必要があります。
@@ -49,7 +63,7 @@ namespace DependencyServiceDemos.iOS
 
 ### <a name="registration-by-method"></a>メソッドによる登録
 
-[`DependencyService.Register`](xref:Xamarin.Forms.DependencyService.Register*) メソッドを使用して、プラットフォームの実装を [`DependencyService`](xref:Xamarin.Forms.DependencyService) に登録できます。
+[`DependencyService.Register`](xref:Xamarin.Forms.DependencyService.Register*) メソッド、および `RegisterSingleton` メソッドを使用して、プラットフォームの実装を [`DependencyService`](xref:Xamarin.Forms.DependencyService) に登録できます。
 
 次の例は、[`Register`](xref:Xamarin.Forms.DependencyService.Register*) メソッドを使用した `IDeviceOrientationService` インターフェイスの iOS 実装の登録を示しています。
 
@@ -75,10 +89,19 @@ DependencyService.Register<DeviceOrientationService>();
 
 この例では、[`Register`](xref:Xamarin.Forms.DependencyService.Register*) メソッドによって `DeviceOrientationService` を [`DependencyService`](xref:Xamarin.Forms.DependencyService) に登録しています。 その結果として、実装されるインターフェイスに対して具象型が登録されます。
 
-同様に、[`Register`](xref:Xamarin.Forms.DependencyService.Register*) メソッドを使用して他のプラットフォーム上の `IDeviceOrientationService` インターフェイスの実装を登録できます。
+または、`RegisterSingleton` メソッドを使用して、既存のオブジェクト インスタンスをシングルトンとして登録することもできます。
+
+```csharp
+var service = new DeviceOrientationService();
+DependencyService.RegisterSingleton<IDeviceOrientationService>(service);
+```
+
+この例では、`RegisterSingleton` メソッドによって、`DeviceOrientationService` オブジェクト インスタンスが `IDeviceOrientationService` インターフェイスに対してシングルトンとして登録されます。
+
+同様に、[`Register`](xref:Xamarin.Forms.DependencyService.Register*) メソッド、または `RegisterSingleton` メソッドを使用して、他のプラットフォーム上の `IDeviceOrientationService` インターフェイスの実装を登録できます。
 
 > [!IMPORTANT]
-> [`Register`](xref:Xamarin.Forms.DependencyService.Register*) メソッドによる登録は、プラットフォームの実装によって提供される機能が共有コードから呼び出される前に、プラットフォーム プロジェクト内で実行される必要があります。
+> [`Register`](xref:Xamarin.Forms.DependencyService.Register*) および `RegisterSingleton` メソッドによる登録は、プラットフォームの実装によって提供される機能が共有コードから呼び出される前に、プラットフォーム プロジェクト内で実行される必要があります。
 
 ## <a name="resolve-the-platform-implementations"></a>プラットフォームの実装の解決
 
@@ -91,7 +114,12 @@ DependencyService.Register<DeviceOrientationService>();
 
 ### <a name="resolve-using-the-getlttgt-method"></a>Get&lt;T&gt; メソッドを使用した解決
 
-[`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*) メソッドでは、実行時にインターフェイス `T` のプラットフォームの実装が取得され、そのインスタンスがシングルトンとして作成されます。 このインスタンスは、アプリケーションの有効期間にわたって存続し、同じプラットフォームの実装を解決するための後続の呼び出しでは同じインスタンスが取得されます。
+[`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*) メソッドでは、実行時にインターフェイス `T` のプラットフォームの実装が取得され、次のいずれかが実行されます。
+
+- そのインスタンスがシングルトンとして作成されます。
+- 既存のインスタンスがシングルトンとして返されます。これは `RegisterSingleton` メソッドによって `DependencyService` に登録されたものです。
+
+どちらの場合も、インスタンスはアプリケーションの有効期間にわたって存続し、同じプラットフォームの実装を解決する後続の呼び出しでは同じインスタンスが取得されます。
 
 次のコードは、[`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*) メソッドを呼び出して `IDeviceOrientationService` インターフェイスを解決してから、その `GetOrientation` メソッドを呼び出す例を示しています。
 
@@ -107,7 +135,7 @@ DeviceOrientation orientation = DependencyService.Get<IDeviceOrientationService>
 ```
 
 > [!NOTE]
-> [`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*) メソッドでは、既定でインターフェイス `T` のプラットフォームの実装のインスタンスがシングルトンとして作成されます。 ただし、この動作は変更可能です。 詳細については、「[解決済みのオブジェクトの有効期間の管理](#manage-the-lifetime-of-resolved-objects)」をご覧ください。
+> [`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*) メソッドでは、既定で、インターフェイス `T` のプラットフォーム実装のインスタンスがシングルトンとして返されます。 ただし、この動作は変更可能です。 詳細については、「[解決済みのオブジェクトの有効期間の管理](#manage-the-lifetime-of-resolved-objects)」をご覧ください。
 
 ### <a name="resolve-using-the-resolvelttgt-method"></a>Resolve&lt;T&gt; メソッドを使用した解決
 
@@ -127,7 +155,7 @@ DeviceOrientation orientation = DependencyService.Resolve<IDeviceOrientationServ
 ```
 
 > [!NOTE]
-> [`Resolve<T>`](xref:Xamarin.Forms.DependencyService.Resolve*) メソッドで [`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*) メソッドの呼び出しにフォールバックする場合、既定でインターフェイス `T` のプラットフォームの実装のインスタンスがシングルトンとして作成されます。 ただし、この動作は変更可能です。 詳細については、「[解決済みのオブジェクトの有効期間の管理](#manage-the-lifetime-of-resolved-objects)」をご覧ください。
+> [`Resolve<T>`](xref:Xamarin.Forms.DependencyService.Resolve*) メソッドで [`Get<T>`](xref:Xamarin.Forms.DependencyService.Get*) メソッドの呼び出しにフォールバックする場合、既定では、インターフェイス `T` のプラットフォームの実装のインスタンスがシングルトンとして返されます。 ただし、この動作は変更可能です。 詳細については、「[解決済みのオブジェクトの有効期間の管理](#manage-the-lifetime-of-resolved-objects)」をご覧ください。
 
 ## <a name="manage-the-lifetime-of-resolved-objects"></a>解決済みのオブジェクトの有効期間の管理
 

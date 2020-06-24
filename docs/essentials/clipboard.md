@@ -1,8 +1,21 @@
 ---
-タイトル: "Xamarin.Essentials: クリップボード'' の説明: "このドキュメントでは、Xamarin.Essentials の Clipboard クラスについて説明します。これを使用すると、アプリケーションにわたり、システム クリップボードにテキストをコピーして貼り付けることができます。"
-ms.assetid: C52AE99A-0FB3-425D-9106-3DA5777FEFA0 author: jamesmontemagno ms.author: jamont ms.date: 01/06/2020 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials:クリップボードのトピック
+description: このドキュメントでは、Xamarin.Essentials の Clipboard クラスについて説明します。これを使用すると、複数のアプリケーション間で、システム クリップボードにテキストをコピーして貼り付けることができます。
+ms.assetid: C52AE99A-0FB3-425D-9106-3DA5777FEFA0
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 01/06/2020
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d0a984f0f3bf27447e250c12e38fd9adcfb0029f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802449"
 ---
-
 # <a name="xamarinessentials-clipboard"></a>Xamarin.Essentials:クリップボードのトピック
 
 **Clipboard** クラスを使用すると、テキストをシステム クリップボードにコピーして別のアプリケーションに貼り付けることができます。
@@ -60,7 +73,7 @@ public class ClipboardTest
 
 ## <a name="api"></a>API
 
-- [Clipboard のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Clipboard)
+- [Clipboard のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Clipboard)
 - [Clipboard API のドキュメント](xref:Xamarin.Essentials.Clipboard)
 
 ## <a name="related-video"></a>関連ビデオ

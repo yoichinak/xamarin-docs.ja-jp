@@ -1,8 +1,21 @@
 ---
-タイトル: "Xamarin.Essentials: 接続性" の説明: "Xamarin.Essentials の Connectivity クラスを使用すると、デバイスのネットワーク状態の変更を監視したり、現在のネットワーク アクセスとその現在の接続方法を確認したりできます。"
-ms.assetid:E1B1F152-B1D5-4227-965E-C0AEBF528F49 author: jamesmontemagno ms.author: jamont ms.date:01/08/2019 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials:接続
+description: Xamarin.Essentials の Connectivity クラスを使用すると、デバイスのネットワーク状態の変更を監視したり、現在のネットワーク アクセスとその現在の接続方法を確認したりできます。
+ms.assetid: E1B1F152-B1D5-4227-965E-C0AEBF528F49
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 01/08/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 056992b06e012845755aa02b2076a1bb80c6f176
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802419"
 ---
-
 # <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials:接続
 
 **Connectivity** クラスを使用すると、デバイスのネットワーク状態の変更を監視したり、現在のネットワーク アクセスとその現在の接続方法を確認したりできます。
@@ -105,7 +118,7 @@ public class ConnectivityTest
 
 ## <a name="api"></a>API
 
-* [Connectivity のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Connectivity)
+* [Connectivity のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Connectivity)
 * [Connectivity API ドキュメント](xref:Xamarin.Essentials.Connectivity)
 
 ## <a name="related-video"></a>関連ビデオ

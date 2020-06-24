@@ -1,8 +1,22 @@
 ---
-title: "デバイスのビデオ ライブラリへのアクセス" の説明: "この記事では、Xamarin.Forms を使用してビデオ プレーヤー アプリケーションでデバイスのビデオ ライブラリにアクセスする方法について説明します。"
-ms.prod: xamarin ms.assetid:364C1D43-EAAE-45B9-BE24-0DA5AE74C4D9 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:02/12/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: デバイスのビデオ ライブラリへのアクセス
+description: この記事では、Xamarin.Forms を使用して、ビデオ プレーヤー アプリケーションでデバイスのビデオ ライブラリにアクセスする方法について説明します。
+ms.prod: xamarin
+ms.assetid: 364C1D43-EAAE-45B9-BE24-0DA5AE74C4D9
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 02/12/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 00f1434a55fb815710bff26ac090a90bce5f41ee
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84197532"
 ---
-
 # <a name="accessing-the-devices-video-library"></a>デバイスのビデオ ライブラリへのアクセス
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

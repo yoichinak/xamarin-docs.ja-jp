@@ -1,7 +1,22 @@
 ---
-title:"第 5 章の概要: サイズの処理" の説明: "Xamarin.Forms でモバイル アプリを作成する: 第 5 章の概要: サイズの処理" ms.prod: xamarin ms.technology: xamarin-forms ms.assetid:486800E9-C09F-4B95-9AC2-C0F8FE563BCF author: davidbritch ms.author: dabritch ms.date:07/19/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: '第 5 章の概要: サイズの処理'
+description: 'Xamarin.Forms でモバイル アプリを作成する: 第 5 章の概要: サイズの処理'
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: 486800E9-C09F-4B95-9AC2-C0F8FE563BCF
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/19/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 37403cfe9f37972c20fb074db5e30cc54b60fea9
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136878"
 ---
-
 # <a name="summary-of-chapter-5-dealing-with-sizes"></a>第 5 章の概要: サイズの処理
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05)

@@ -1,8 +1,21 @@
 ---
-title: "Xamarin.Essentials ランチャー" の説明: Xamarin.Essentials の Launcher クラスを使用すると、アプリケーションがシステムで URI を開くことができるようになります。
-ms.assetid:BABF40CC-8BEE-43FD-BE12-6301DF27DD33 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:08/20/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials ランチャー
+description: Xamarin.Essentials の Launcher クラスを使用すると、アプリケーションがシステムで URI を開くことができるようになります。
+ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 08/20/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: dcb236c47cf2eec77b3b90da798b0cf0d58f3c1d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802315"
 ---
-
 # <a name="xamarinessentials-launcher"></a>Xamarin.Essentials:ランチャー
 
 **Launcher** クラスを使用すると、アプリケーションがシステムで URI を開くことができるようになります。 これは多くの場合、他のアプリケーションのカスタム URI スキームへのディープ リンクを設定するときに使用されます。 ブラウザーで Web サイトを開く場合は、 **[Browser](open-browser.md)** API を参照する必要があります。
@@ -108,7 +121,7 @@ iOS の実装について詳しくは、[こちら](xref:UIKit.UIApplication.Can
 
 ## <a name="api"></a>API
 
-- [Launcher のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Launcher)
+- [Launcher のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Launcher)
 - [Launcher API ドキュメント](xref:Xamarin.Essentials.Launcher)
 
 ## <a name="related-video"></a>関連ビデオ

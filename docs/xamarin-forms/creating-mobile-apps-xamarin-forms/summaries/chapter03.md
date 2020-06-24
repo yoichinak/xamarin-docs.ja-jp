@@ -1,7 +1,22 @@
 ---
-title:"第 3 章の概要: テキストの詳細" の説明: "Xamarin.Forms でモバイル アプリを作成する: 第 3 章の概要。 テキストの詳細" ms.prod: xamarin ms.technology: xamarin-forms ms.assetid:2E5581A6-4D3E-4BD5-9FDB-ACBA0F0FC734 author: davidbritch ms.author: dabritch ms.date:07/18/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: 第 3 章の概要。 テキストの詳細
+description: 'Xamarin.Forms でモバイル アプリを作成する: 第 3 章の概要。 テキストの詳細'
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: 2E5581A6-4D3E-4BD5-9FDB-ACBA0F0FC734
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/18/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5423a9f716f384eca107003bdeca69615f8b459f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136904"
 ---
-
 # <a name="summary-of-chapter-3-deeper-into-text"></a>第 3 章の概要。 テキストの詳細
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter03)

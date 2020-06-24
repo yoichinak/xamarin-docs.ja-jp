@@ -1,8 +1,22 @@
 ---
-title: "Xamarin.Forms シェルでの検索" description: "Xamarin.Formsシェル アプリケーションでは、各ページの上部に追加できる検索ボックスによって提供される、統合された検索機能を利用できます。"
-ms.prod: xamarin ms.assetid:F8F9471D-6771-4D23-96C0-2B79473A06D4 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:12/18/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Forms シェルでの検索
+description: Xamarin.Forms シェル アプリケーションでは、各ページの上部に追加できる検索ボックスによって提供される、統合された検索機能を利用できます。
+ms.prod: xamarin
+ms.assetid: F8F9471D-6771-4D23-96C0-2B79473A06D4
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 12/18/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: cc5e0c4cb8b474a1b7e23b476b0c5125eb2ba298
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138087"
 ---
-
 # <a name="xamarinforms-shell-search"></a>Xamarin.Forms シェルでの検索
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)

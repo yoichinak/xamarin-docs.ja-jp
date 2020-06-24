@@ -1,7 +1,22 @@
 ---
-title:"第 7 章の概要: XAML とコード" の説明: "Xamarin.Forms でモバイル アプリを作成する: 第 7 章の概要: XAML とコード" ms.prod: xamarin ms.technology: xamarin-forms ms.assetid:E91F387B-CE90-481C-8D90-CB25519BFD2B author: davidbritch ms.author: dabritch ms.date:07/19/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: '第 7 章の概要: XAML とコードの比較'
+description: 'Xamarin.Forms でモバイル アプリを作成する: 第 7 章の概要: XAML とコードの比較'
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: E91F387B-CE90-481C-8D90-CB25519BFD2B
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/19/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0b92988e1e838072fca0d8a284455a62db05e757
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136861"
 ---
-
 # <a name="summary-of-chapter-7-xaml-vs-code"></a>第 7 章の概要: XAML とコードの比較
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter07)

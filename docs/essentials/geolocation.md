@@ -1,8 +1,21 @@
 ---
-タイトル: "Xamarin.Essentials: 位置情報" の説明: "このドキュメントでは、デバイスの現在の位置座標を取得する API を提供する Xamarin.Essentials の Geolocation クラスについて説明します。"
-ms.assetid:8F66092C-13F0-4FEE-8AA5-901D5F79B357 author: jamesmontemagno ms.custom: video ms.author: jamont ms.date:03/13/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials:位置情報
+description: このドキュメントでは、デバイスの現在の位置座標を取得する API を提供する Xamarin.Essentials の Geolocation クラスについて説明します。
+ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
+author: jamesmontemagno
+ms.custom: video
+ms.author: jamont
+ms.date: 03/13/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f54c31afef691d316cbc3108792ab3158359c47c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802326"
 ---
-
 # <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials:位置情報
 
 **Geolocation** クラスには、デバイスの現在の位置座標を取得する API が用意されています。
@@ -231,7 +244,7 @@ UWP では、高度はメートル単位で返されます。 詳細について
 
 ## <a name="api"></a>API
 
-- [Geolocation のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Geolocation)
+- [Geolocation のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Geolocation)
 - [Geolocation API のドキュメント](xref:Xamarin.Essentials.Geolocation)
 
 ## <a name="related-video"></a>関連ビデオ

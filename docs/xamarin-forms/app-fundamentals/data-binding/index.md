@@ -1,8 +1,22 @@
 ---
-title: "Xamarin.Forms のデータ バインディング" の説明:"データ バインディングは、2 つのオブジェクトのプロパティをリンクして、片方のプロパティでの変更がもう片方のプロパティに自動的に反映されるようにする手法です。 データ バインディングは、Model-View-ViewModel (MVVM) アプリケーション アーキテクチャにとって不可欠な要素です。"
-ms.prod: xamarin ms.assetid:938E85C8-521D-43B9-92CB-D591A06D98A6 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:03/23/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Forms のデータ バインディング
+description: データ バインディングは、2 つのオブジェクトのプロパティをリンクして、片方のプロパティへの変更が自動的にもう片方のプロパティに反映されるようにする手法です。 データ バインディングは、Model-View-ViewModel (MVVM) アプリケーション アーキテクチャにとって不可欠の部分です。
+ms.prod: xamarin
+ms.assetid: 938E85C8-521D-43B9-92CB-D591A06D98A6
+ms.technology: xamarin-forms
+author: davidbritch
+ms.author: dabritch
+ms.date: 05/21/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9abbe60865cbf5fb9082b5f4882c27fe095b36ac
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946456"
 ---
-
 # <a name="xamarinforms-data-binding"></a>Xamarin.Forms のデータ バインディング
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
@@ -55,6 +69,10 @@ Xamarin.Forms アプリケーションは 1 つ以上のページで構成され
 ## <a name="binding-fallbacks"></a>[フォールバックのバインディング](binding-fallbacks.md)
 
 バインディングのプロセスが失敗した場合に使うフォールバック値を定義することにより、より堅牢なデータ バインディングを実現します。
+
+## <a name="multi-bindings"></a>[複数バインド](multibinding.md)
+
+[`Binding`](xref:Xamarin.Forms.Binding) オブジェクトのコレクションを、単一のバインディング ターゲットのプロパティにアタッチします。
 
 ## <a name="the-command-interface"></a>[コマンド インターフェイス](commanding.md)
 

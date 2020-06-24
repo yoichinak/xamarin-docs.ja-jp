@@ -1,7 +1,22 @@
 ---
-title:"第 15 章の概要: 対話型インターフェイス" description:"Xamarin.Forms でモバイル アプリを作成する: 第 15 章の概要: 対話型インターフェイス" ms.prod: xamarin ms.technology: xamarin-forms ms.assetid:F54E86F4-1CDA-474E-9B09-242060C2C13D author: davidbritch ms.author: dabritch ms.date:11/07/2017 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: '第 15 章の概要: 対話型インターフェイス'
+description: 'Xamarin.Forms でモバイル アプリを作成する: 第 15 章の概要: 対話型インターフェイス'
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: F54E86F4-1CDA-474E-9B09-242060C2C13D
+author: davidbritch
+ms.author: dabritch
+ms.date: 11/07/2017
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9bb930c2d0e4b6281b1aa48589ea5245eedc1a60
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136748"
 ---
-
 # <a name="summary-of-chapter-15-the-interactive-interface"></a>第 15 章の概要: 対話型インターフェイス
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter15)

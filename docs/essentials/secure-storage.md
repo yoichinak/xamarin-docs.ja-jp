@@ -1,8 +1,21 @@
 ---
-タイトル: "Xamarin.Essentials: ストレージをセキュリティで保護する" の説明: "このドキュメントでは Xamarin.Essentials の SecureStorage クラスについて説明します。これはシンプルなキーと値のペアを安全に格納するのに役立ちます。 ここでは、クラスの使用方法、プラットフォームの実装の詳細、および制限事項について説明します。"
-ms.assetid:78856C0D-76BB-406E-A880-D5A3987B7D64 author: jamesmontemagno ms.author: jamont ms.date:04/02/2019 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials:セキュリティで保護されたストレージ
+description: このドキュメントでは Xamarin.Essentials の SecureStorage クラスについて説明します。これはシンプルなキーと値のペアを安全に格納するのに役立ちます。 ここでは、クラスの使用方法、プラットフォームの実装の詳細、および制限事項について説明します。
+ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 04/02/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 061bc1cfe785ad080092ba21340f7d38bc499ed9
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84801947"
 ---
-
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials:セキュリティで保護されたストレージ
 
 **SecureStorage** クラスは、単純なキーと値のペアを安全に格納するのに役立ちます。
@@ -155,7 +168,7 @@ iOS デバイスに値を安全に格納するために、[キーチェーン](x
 
 ## <a name="api"></a>API
 
-- [SecureStorage のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/SecureStorage)
+- [SecureStorage のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/SecureStorage)
 - [SecureStorage API ドキュメント](xref:Xamarin.Essentials.SecureStorage)
 
 ## <a name="related-video"></a>関連ビデオ

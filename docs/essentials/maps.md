@@ -1,8 +1,21 @@
 ---
-title:"Xamarin.Essentials マップ" の説明: "Xamarin.Essentials の Map クラスを使用すると、アプリケーションによってインストールされているマップ アプリケーションを使用して、特定の場所または placemark を開くことができます。"
-ms.assetid:BABF40CC-8BEE-43FD-BE12-6301DF27DD33 author: jamesmontemagno ms.author: jamont ms.date:05/26/2020 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials マップ
+description: アプリケーションで Xamarin.Essentials の Map クラスを使用すると、インストールされているマップ アプリケーションを使用して、特定の場所または placemark を開くことができます。
+ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 05/26/2020
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b566b6705d1cd8e229b6a2636fffd2ebc2ed5cde
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802257"
 ---
-
 # <a name="xamarinessentials-map"></a>Xamarin.Essentials:マップ
 
 **Map** クラスを使用すると、アプリケーションによってインストールされているマップ アプリケーションを使用して、特定の場所または placemark を開くことができます。
@@ -146,7 +159,7 @@ Android では、URI スキーム `geo:` を使用してデバイス上のマッ
 
 ## <a name="api"></a>API
 
-- [Map のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Map)
+- [Map のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Map)
 - [Map API のドキュメント](xref:Xamarin.Essentials.Map)
 
 ## <a name="related-video"></a>関連ビデオ

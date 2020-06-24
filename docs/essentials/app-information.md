@@ -1,8 +1,21 @@
 ---
-タイトル: "Xamarin.Essentials: アプリ情報" の説明: "このドキュメントでは、アプリケーションに関する情報を提供する Xamarin.Essentials の AppInfo クラスについて説明します。 たとえば、アプリの名前やバージョンが公開されます。"
-ms.assetid:15924FCB-19E0-45B2-944E-E94FD7AE12FA author: jamesmontemagno ms.author: jamont ms.date:01/29/2019 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials:アプリ情報
+description: このドキュメントでは、アプリケーションに関する情報を提供する Xamarin.Essentials の AppInfo クラスについて説明します。 たとえば、アプリの名前やバージョンが公開されます。
+ms.assetid: 15924FCB-19E0-45B2-944E-E94FD7AE12FA
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 01/29/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1a8673e7c405660355e3a849e6ef1709fd2980a4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802520"
 ---
-
 # <a name="xamarinessentials-app-information"></a>Xamarin.Essentials:アプリ情報
 
 **AppInfo** クラスでは、アプリケーションに関する情報が提供されます。
@@ -81,7 +94,7 @@ AppInfo.ShowSettingsUI();
 
 ## <a name="api"></a>API
 
-- [AppInfo のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/AppInfo)
+- [AppInfo のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/AppInfo)
 - [AppInfo API のドキュメント](xref:Xamarin.Essentials.AppInfo)
 
 ## <a name="related-video"></a>関連ビデオ

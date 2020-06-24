@@ -1,8 +1,21 @@
 ---
-title: "Xamarin.Essentials ブラウザーを開く" の説明: Xamarin.Essentials の Browser クラスを使用すると、最適化されたシステム推奨のブラウザーまたは外部のブラウザーを使用して、アプリケーションで Web リンクを開くことができます。
-ms.assetid:BABF40CC-8BEE-43FD-BE12-6301DF27DD33 author: jamesmontemagno ms.author: jamont ms.date:04/02/2019 ms.custom: video no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: Xamarin.Essentials ブラウザーを開く
+description: Xamarin.Essentials の Browser クラスを使用すると、アプリケーションから、最適化されたシステム推奨のブラウザーまたは外部のブラウザーで Web リンクを開くことができます。
+ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
+author: jamesmontemagno
+ms.author: jamont
+ms.date: 04/02/2019
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 997c6b66b5dba43eb440130f3f58d31a5a274815
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802250"
 ---
-
 # <a name="xamarinessentials-browser"></a>Xamarin.Essentials:ブラウザー
 
 **Browser** クラスを使用すると、最適化されたシステム推奨のブラウザーまたは外部のブラウザーを使って、アプリケーションで Web リンクを開くことができます。
@@ -84,7 +97,7 @@ await Browser.OpenAsync(uri, new BrowserLaunchOptions
 
 ## <a name="api"></a>API
 
-- [Browser のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Browser)
+- [Browser のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Browser)
 - [Browser API ドキュメント](xref:Xamarin.Essentials.Browser)
 
 ## <a name="related-video"></a>関連ビデオ
