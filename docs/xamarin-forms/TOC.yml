@@ -543,6 +543,8 @@
                   href: user-interface/shapes/index.md
                 - name: Ellipse
                   href: user-interface/shapes/ellipse.md
+                - name: ルールの入力
+                  href: user-interface/shapes/fillrules.md
                 - name: ジオメトリ
                   href: user-interface/shapes/geometries.md
                 - name: 行

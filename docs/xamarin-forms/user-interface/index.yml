@@ -13,12 +13,12 @@ metadata:
   no-loc:
   - Xamarin.Forms
   - Xamarin.Essentials
-  ms.openlocfilehash: e07215723a6c54e9d5ce3eb22103cb5eba7929d2
-  ms.sourcegitcommit: 16847681df17ed59b3b3528761c02e8fb48ffc4f
+  ms.openlocfilehash: a0acc942c84f085c2cff4a70b5863ae4f4644bc6
+  ms.sourcegitcommit: 8f6cc5208f675c8cfb645bd9ffb0fc1f8ea71411
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 06/19/2020
-  ms.locfileid: "85104272"
+  ms.lasthandoff: 06/24/2020
+  ms.locfileid: "85326114"
 landingContent:
 - title: コントロールのリファレンス
   linkLists:
@@ -160,16 +160,14 @@ landingContent:
       url: shapes/index.md
     - text: Ellipse
       url: shapes/ellipse.md
+    - text: ルールの入力
+      url: shapes/fillrules.md
     - text: ジオメトリ
       url: shapes/geometries.md
     - text: 行
       url: shapes/line.md
     - text: パス
       url: shapes/path.md
-    - text: パス マークアップ構文
-      url: shapes/path-markup-syntax.md
-    - text: パスの変換
-      url: shapes/path-transforms.md
     - text: 多角形
       url: shapes/polygon.md
     - text: ポリライン
