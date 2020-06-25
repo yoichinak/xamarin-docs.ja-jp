@@ -10,12 +10,12 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e6f8ad3afdcdb9137869dc57078ac94895f4183c
-ms.sourcegitcommit: ef3d4a70e70927c4f231b763842c5355f1571d15
+ms.openlocfilehash: 9c90b0ae4ae3d241dcd6d6d749f220dcfb683693
+ms.sourcegitcommit: 8f6cc5208f675c8cfb645bd9ffb0fc1f8ea71411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85243817"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85326143"
 ---
 # <a name="xamarinforms-shapes-polygon"></a>Xamarin.Forms図形: 多角形
 
@@ -34,10 +34,7 @@ ms.locfileid: "85243817"
 
 `PointsCollection`型は `ObservableCollection` オブジェクトのです [`Point`](xref:Xamarin.Forms.Point) 。 `Point`構造体は `X` 、 `Y` `double` 2d 空間の x 座標と y 座標のペアを表す、型のプロパティとプロパティを定義します。 したがって、 `Points` プロパティは、多角形の頂点を表す x 座標と y 座標のペアのリストに設定する必要があります。これは、1つのコンマや1つ以上の空白で区切られます。 たとえば、"40, 10 70, 80" と "40 10, 70 80" はどちらも有効です。
 
-`FillRule` 列挙体を使って、次のメンバーを定義できます。
-
-- `EvenOdd`点が多角形の塗りつぶし領域内にあるかどうかを判断するルールを表します。 このメソッドは、点から任意の方向に無限に伸びる射線を描画し、その射線が交差する図形内のセグメントの数をカウントします。 この数値が奇数の場合、ポイントは内側にあります。 この数値が偶数の場合、ポイントは外側にあります。
-- `Nonzero`点が多角形の塗りつぶし領域内にあるかどうかを判断するルールを表します。 このメソッドは、点から任意の方向に無限に伸びる射線を描画し、図形のセグメントが射線と交差する場所を調べます。 カウントは0から始まり、セグメントが光線を左から右に交差するたびに増加し、セグメントが右から左に射線と交差するたびにデクリメントされます。 跨りをカウントした後、結果がゼロの場合、ポイントは多角形の外側にあります。 それ以外の場合は、内にあります。
+列挙体の詳細については `FillRule` 、「 [ Xamarin.Forms Shapes: Fill rules](fillrules.md)」を参照してください。
 
 ## <a name="create-a-polygon"></a>多角形を作成する
 
@@ -104,3 +101,4 @@ ms.locfileid: "85243817"
 
 - [図形のデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Forms図形](index.md)
+- [Xamarin.Forms図形: 塗りつぶしルール](fillrules.md)

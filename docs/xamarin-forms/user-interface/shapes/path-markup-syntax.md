@@ -10,12 +10,12 @@ ms.date: 06/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 943636ac82163c3c575577bb4c56f6433cf73339
-ms.sourcegitcommit: 7fc658bbdcb8130cd9d611e55e79a1830fc5d5a2
+ms.openlocfilehash: d2eb0ac68bf754e45ffcd2a1c77e4347bb3bcf4c
+ms.sourcegitcommit: 8f6cc5208f675c8cfb645bd9ffb0fc1f8ea71411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85132893"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85326206"
 ---
 # <a name="xamarinforms-shapes-path-markup-syntax"></a>Xamarin.Forms図形: パスマークアップ構文
 
@@ -35,7 +35,7 @@ Xamarin.Formsパスマークアップ構文を使用すると、XAML でパス�
 
 この構文では、次のようになります。
 
-- *Fillrule*は、 `Xamarin.Forms.Shapes.FillRule` ジオメトリでまたはを使用する必要があるかどうかを指定する省略可能なです `EvenOdd` `Nonzero` `FillRule` 。 `F0`塗りつぶしルールを指定し `EvenOdd` `F1` ます。は、 `Nonzero` 塗りつぶしルールを指定します。
+- *Fillrule*は、 `Xamarin.Forms.Shapes.FillRule` ジオメトリでまたはを使用する必要があるかどうかを指定する省略可能なです `EvenOdd` `Nonzero` `FillRule` 。 `F0`塗りつぶしルールを指定し `EvenOdd` `F1` ます。は、 `Nonzero` 塗りつぶしルールを指定します。 塗りつぶしルールの詳細については、「 [ Xamarin.Forms 図形: 塗りつぶしルール](fillrules.md)」を参照してください。
 -  *figureDescription*は、移動コマンド、描画コマンド、および省略可能な close コマンドで構成される図形を表します。 Move コマンドは、図形の始点を指定します。 描画コマンドは、図の内容を記述し、省略可能な [閉じる] コマンドを実行して図を閉じます。
 
 上記の例では、パスのマークアップ構文で、move コマンド () を使用して開始点を指定し、 `M` line コマンド () を使用して一連の直線を指定 `L` し、close コマンド () を使用してパスを閉じ `Z` ます。
@@ -172,3 +172,4 @@ Close コマンドの構文は、 `Z` または `z` です。
 
 - [図形のデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Formsジオメトリ](geometries.md)
+- [Xamarin.Forms図形: 塗りつぶしルール](fillrules.md)

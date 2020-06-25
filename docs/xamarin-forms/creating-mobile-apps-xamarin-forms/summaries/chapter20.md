@@ -1,7 +1,22 @@
 ---
-title:"第 20 章の概要: 非同期およびファイル I/O" description:"Xamarin.Forms でモバイル アプリを作成する: 第 20 章の概要: 非同期およびファイル I/O" ms.prod: xamarin ms.technology: xamarin-forms ms.assetid:D595862D-64FD-4C0D-B0AD-C1F440564247 author: davidbritch ms.author: dabritch ms.date:07/18/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]
+title: '第 20 章の概要: 非同期およびファイル I/O'
+description: 'Xamarin.Forms でモバイル アプリを作成する: 第 20 章の概要: 非同期およびファイル I/O'
+ms.prod: xamarin
+ms.technology: xamarin-forms
+ms.assetid: D595862D-64FD-4C0D-B0AD-C1F440564247
+author: davidbritch
+ms.author: dabritch
+ms.date: 07/18/2018
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ad71dc5f5389f1676698a761a138b3f76ffa9fa0
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136683"
 ---
-
 # <a name="summary-of-chapter-20-async-and-file-io"></a>第 20 章の概要: 非同期およびファイル I/O
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter20)
@@ -71,7 +86,7 @@ Xamarin.iOS と Xamarin.Android のライブラリには、これらの 2 つの
 つまり、[`DependencyService`](xref:Xamarin.Forms.DependencyService) を使用して (最初に「[**第 9 章: プラットフォーム固有の API 呼び出し**](chapter09.md)」で説明されています)、ファイル I/O を実装する必要があります。
 
 > [!NOTE]
-> ポータブル クラス ライブラリは .NET Standard 2.0 ライブラリに置き換えられています。.NET Standard 2.0 では、すべての Xamarin.Forms プラットフォーム向けに [`System.IO`](xref:System.IO) 型がサポートされています。 ほとんどのファイル I/O タスクでは、`DependencyService` を使用する必要がなくなりました。 ファイル I/O に対するより新しいアプローチについては、「[Xamarin.Forms でのファイル処理](~/xamarin-forms/data-cloud/data/files.md)」をご覧ください。
+> ポータブル クラス ライブラリは .NET Standard 2.0 ライブラリに置き換えられています。 .NET Standard 2.0 では、すべての Xamarin.Forms プラットフォーム向けに [`System.IO`](xref:System.IO) 型がサポートされています。 ほとんどのファイル I/O タスクでは、`DependencyService` を使用する必要がなくなりました。 ファイル I/O に対するより新しいアプローチについては、「[Xamarin.Forms でのファイル処理](~/xamarin-forms/data-cloud/data/files.md)」をご覧ください。
 
 ### <a name="a-first-shot-at-cross-platform-file-io"></a>最初のクロスプラットフォーム ファイル I/O
 

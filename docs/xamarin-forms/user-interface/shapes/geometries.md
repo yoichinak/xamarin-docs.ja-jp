@@ -10,12 +10,12 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c3b869d10d454453172065b30eb7ce32da81c8ce
-ms.sourcegitcommit: 7fc658bbdcb8130cd9d611e55e79a1830fc5d5a2
+ms.openlocfilehash: 412b0255dafcbd752c7b350ddc25ecd13f8f98d8
+ms.sourcegitcommit: 8f6cc5208f675c8cfb645bd9ffb0fc1f8ea71411
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85133036"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85326178"
 ---
 # <a name="xamarinforms-shapes-geometries"></a>Xamarin.Forms図形: ジオメトリ
 
@@ -37,7 +37,7 @@ ms.locfileid: "85133036"
 
 楕円のジオメトリは、ジオメトリまたは楕円または円を表し、中心点、x 半径、および y 半径によって定義されます。
 
-`EllipseGeometry`クラスは、次のプロパティを定義します。
+`EllipseGeometry` クラスでは、次のプロパティが定義されます。
 
 - `Center``Point`geometry の中心点を表す型の。
 - `RadiusX``double`geometry の x 半径の値を表す型の。 このプロパティの既定値は0.0 です。
@@ -65,7 +65,7 @@ ms.locfileid: "85133036"
 
 線のジオメトリは線のジオメトリを表し、直線の始点と終点を指定することによって定義されます。
 
-`LimeGeometry`クラスは、次のプロパティを定義します。
+`LimeGeometry` クラスでは、次のプロパティが定義されます。
 
 - `StartPoint``Point`行の開始点を表す型の。
 - `EndPoint``Point`線の終点を表す、型の。
@@ -90,7 +90,7 @@ ms.locfileid: "85133036"
 
 四角形のジオメトリは四角形を表し、 `Rect` その相対位置と高さおよび幅を指定する構造体で定義されます。
 
-`RectangleGeometry`クラスは、次のプロパティを定義します。
+`RectangleGeometry` クラスでは、次のプロパティが定義されます。
 
 - `Rect``FormsRect`四角形の大きさを表す型の。
 
@@ -114,7 +114,7 @@ ms.locfileid: "85133036"
 
 パスジオメトリは、円弧、曲線、楕円、線、および四角形で構成できる複雑な図形を表します。
 
-`PathGeometry`クラスは、次のプロパティを定義します。
+`PathGeometry` クラスでは、次のプロパティが定義されます。
 
 - `Figures`型の `PathFigureCollection` `PathFigure` 。パスの内容を記述するオブジェクトのコレクションを表します。
 - `FillRule`型の。 `FillRule` これは、ジオメトリに含まれる交差する領域を結合する方法を決定します。 このプロパティの既定値は `FillRule.EvenOdd` です。
@@ -123,6 +123,8 @@ ms.locfileid: "85133036"
 > `Figures`プロパティは `ContentProperty` クラスのである `PathGeometry` ため、XAML から明示的に設定する必要はありません。
 
 これらのプロパティは、オブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。これは、データバインディングのターゲットとスタイルを設定できることを意味します。
+
+列挙体の詳細については `FillRule` 、「 [ Xamarin.Forms Shapes: Fill rules](fillrules.md)」を参照してください。
 
 は、 `PathGeometry` オブジェクトのコレクションで構成され `PathFigure` ます。各オブジェクトは、 `PathFigure` ジオメトリ内の図形を記述します。 それぞれ `PathFigure` が1つ以上のオブジェクトで構成され `PathSegment` ており、それぞれが図形のセグメントを表します。 セグメントには、次のようなさまざまな種類があります。
 
@@ -226,3 +228,4 @@ ms.locfileid: "85133036"
 
 - [図形のデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Forms図形](index.md)
+- [Xamarin.Forms図形: 塗りつぶしルール](fillrules.md)
