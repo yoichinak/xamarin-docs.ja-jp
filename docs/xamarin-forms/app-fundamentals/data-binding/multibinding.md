@@ -6,13 +6,13 @@ ms.assetid: E73AE622-664C-4A90-B5B2-BD47D0E7A1A7
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/16/2020
-ms.openlocfilehash: 2fc5db2ddb456c9c5c6160b7fc7ce501488722de
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.date: 06/18/2020
+ms.openlocfilehash: dfe6da8a76b447bf0c2a6c0a3bea9823e498d5e4
+ms.sourcegitcommit: 8a18471b3d96f3f726b66f9bc50a829f1c122f29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84947134"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84988193"
 ---
 # <a name="xamarinforms-multi-bindings"></a>Xamarin.Forms の複数バインド
 
@@ -53,15 +53,16 @@ public class AllTrueMultiConverter : IMultiValueConverter
     {
         if (values == null || !targetType.IsAssignableFrom(typeof(bool)))
         {
-            // Return UnsetValue to use the binding FallbackValue
-            return BindableProperty.UnsetValue;
+            return false;
+            // Alternatively, return BindableProperty.UnsetValue to use the binding FallbackValue
         }
 
         foreach (var value in values)
         {
             if (!(value is bool b))
             {
-                return BindableProperty.UnsetValue;
+                return false;
+                // Alternatively, return BindableProperty.UnsetValue to use the binding FallbackValue
             }
             else if (!b)
             {
@@ -106,7 +107,7 @@ public class AllTrueMultiConverter : IMultiValueConverter
 - `null`: コンバーターで変換を実行できないこと、およびバインドで `TargetNullValue` が使用されることを示す場合。
 
 > [!IMPORTANT]
-> 複数値コンバーターの `Convert` メソッドでは、`BindableProperty.UnsetValue` を返すことによって、予想される問題を処理する必要があります。 この値を受け取る `MultiBinding` オブジェクトでは、[`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) を定義する必要があります。
+> `Convert` メソッドから `BindableProperty.UnsetValue` を受け取る `MultiBinding` では、[`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) プロパティを定義する必要があります。 同様に、`Convert` メソッドから `null` を受け取る `MultiBinding` では、[`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) プロパティを定義する必要があります。
 
 `ConvertBack` メソッドでは、バインディング ターゲットがソース バインドの値に変換されます。 このメソッドは、4 つの引数を受け取ります。
 
@@ -120,9 +121,6 @@ public class AllTrueMultiConverter : IMultiValueConverter
 - `BindableProperty.UnsetValue` (位置 `i`): コンバーターでインデックス `i` のソース バインドの値を提供することができず、値が設定されないことを示す場合。
 - `Binding.DoNothing` (位置 `i`): インデックス `i` のソース バインドに値が設定されないことを示す場合。
 - `null`: コンバーターで変換を実行できないこと、または、この方向の変換がサポートされていないことを示す場合。
-
-> [!IMPORTANT]
-> 複数値コンバーターの `ConvertBack` メソッドでは、`null` を返すことによって、予想される問題を処理する必要があります。
 
 ## <a name="consume-a-imultivalueconverter"></a>IMultiValueConverter を使用する
 
@@ -142,8 +140,7 @@ public class AllTrueMultiConverter : IMultiValueConverter
 
     <CheckBox>
         <CheckBox.IsChecked>
-            <MultiBinding Converter="{StaticResource AllTrueConverter}"
-                          FallbackValue="false">
+            <MultiBinding Converter="{StaticResource AllTrueConverter}">
                 <Binding Path="Employee.IsOver16" />
                 <Binding Path="Employee.HasPassedTest" />
                 <Binding Path="Employee.IsSuspended"
@@ -154,7 +151,7 @@ public class AllTrueMultiConverter : IMultiValueConverter
 </ContentPage>    
 ```
 
-この例では、`MultiBinding` オブジェクトによって `AllTrueMultiConverter` インスタンスを使用して [`CheckBox.IsChecked`](xref:Xamarin.Forms.CheckBox.IsChecked) プロパティが `true` に設定されます (3 つの [`Binding`](xref:Xamarin.Forms.Binding) オブジェクトが `true` に評価される場合)。 それ以外の場合は、`CheckBox.IsChecked` プロパティは `false` に設定されます。 `AllTrueMultiConverter` では `BindableProperty.UnsetValue` を返すことができるため、[`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) が定義されます。
+この例では、`MultiBinding` オブジェクトによって `AllTrueMultiConverter` インスタンスを使用して [`CheckBox.IsChecked`](xref:Xamarin.Forms.CheckBox.IsChecked) プロパティが `true` に設定されます (3 つの [`Binding`](xref:Xamarin.Forms.Binding) オブジェクトが `true` に評価される場合)。 それ以外の場合は、`CheckBox.IsChecked` プロパティは `false` に設定されます。
 
 既定では、[`CheckBox.IsChecked`](xref:Xamarin.Forms.CheckBox.IsChecked) プロパティでは [`TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay) バインドが使用されます。 したがって、`AllTrueMultiConverter` インスタンスの `ConvertBack` メソッドは、ユーザーが [`CheckBox`](xref:Xamarin.Forms.CheckBox) をオフにしたときに実行されます。これにより、ソース バインドの値が `CheckBox.IsChecked` プロパティの値に設定されます。
 
@@ -187,7 +184,7 @@ Xamarin.Forms での文字列の書式設定の詳細については、「[Xamar
 
 バインドのプロセスが失敗した場合に使うフォールバック値を定義することにより、データ バインディングをより堅牢にすることができます。 これを実現するには、必要に応じて、`MultiBinding` オブジェクトの [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) プロパティと [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) プロパティを定義します。
 
-`MultiBinding` では、`IMultiValueConverter` インスタンスによって `BindableProperty.UnsetValue` が返された場合 (コンバーターで値が生成されなかったことを示します) に、その [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) が使用されます。 `MultiBinding` では、`IMultiValueConverter` インスタンスによって `null` が返された場合 (コンバーターで変換を実行できないことを示します) に、その [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) が使用されます。
+`MultiBinding` では、`IMultiValueConverter` インスタンスの `Convert` メソッドによって `BindableProperty.UnsetValue` が返された場合 (コンバーターで値が生成されなかったことを示します) に、その [`FallbackValue`](xref:Xamarin.Forms.BindingBase.FallbackValue) が使用されます。 `MultiBinding` では、`IMultiValueConverter` インスタンスの `Convert` メソッドによって `null` が返された場合 (コンバーターで変換を実行できないことを示します) に、その [`TargetNullValue`](xref:Xamarin.Forms.BindingBase.TargetNullValue) が使用されます。
 
 バインドのフォールバックの詳細については、「[Xamarin.Forms のバインドのフォールバック](binding-fallbacks.md)」をご覧ください。
 
@@ -210,10 +207,8 @@ Xamarin.Forms での文字列の書式設定の詳細については、「[Xamar
 
     <CheckBox>
         <CheckBox.IsChecked>
-            <MultiBinding Converter="{StaticResource AnyTrueConverter}"
-                          FallbackValue="false">
-                <MultiBinding Converter="{StaticResource AllTrueConverter}"
-                              FallbackValue="false">
+            <MultiBinding Converter="{StaticResource AnyTrueConverter}">
+                <MultiBinding Converter="{StaticResource AllTrueConverter}">
                     <Binding Path="Employee.IsOver16" />
                     <Binding Path="Employee.HasPassedTest" />
                     <Binding Path="Employee.IsSuspended" Converter="{StaticResource InverterConverter}" />                        
@@ -242,8 +237,7 @@ Xamarin.Forms での文字列の書式設定の詳細については、「[Xamar
                       IsExpanded="{Binding IsExpanded, Source={RelativeSource TemplatedParent}}"
                       BackgroundColor="{Binding CardColor}">
                 <Expander.IsVisible>
-                    <MultiBinding Converter="{StaticResource AllTrueConverter}"
-                                  FallbackValue="false">
+                    <MultiBinding Converter="{StaticResource AllTrueConverter}">
                         <Binding Path="IsExpanded" />
                         <Binding Path="IsEnabled" />
                     </MultiBinding>
