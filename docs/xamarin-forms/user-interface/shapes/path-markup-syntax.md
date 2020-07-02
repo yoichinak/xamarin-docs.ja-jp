@@ -10,24 +10,23 @@ ms.date: 06/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d2eb0ac68bf754e45ffcd2a1c77e4347bb3bcf4c
-ms.sourcegitcommit: 8f6cc5208f675c8cfb645bd9ffb0fc1f8ea71411
+ms.openlocfilehash: 68b7f4a245a60df1723f5a6442f30dc2b1a15932
+ms.sourcegitcommit: 91b4d2f93687fadec5c3f80aadc8f7298d911624
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85326206"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85794981"
 ---
 # <a name="xamarinforms-shapes-path-markup-syntax"></a>Xamarin.Forms図形: パスマークアップ構文
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 Xamarin.Formsパスマークアップ構文を使用すると、XAML でパスジオメトリをコンパクトに指定できます。 構文は、プロパティに文字列値として指定され `Path.Data` ます。
 
 ```xaml
 <Path Stroke="Black"
-      StrokeThickness="1"
       Data="M13.908992,16.207977 L32.000049,16.207977 32.000049,31.999985 13.908992,30.109983Z" />
 ```
 
@@ -35,8 +34,8 @@ Xamarin.Formsパスマークアップ構文を使用すると、XAML でパス�
 
 この構文では、次のようになります。
 
-- *Fillrule*は、 `Xamarin.Forms.Shapes.FillRule` ジオメトリでまたはを使用する必要があるかどうかを指定する省略可能なです `EvenOdd` `Nonzero` `FillRule` 。 `F0`塗りつぶしルールを指定し `EvenOdd` `F1` ます。は、 `Nonzero` 塗りつぶしルールを指定します。 塗りつぶしルールの詳細については、「 [ Xamarin.Forms 図形: 塗りつぶしルール](fillrules.md)」を参照してください。
--  *figureDescription*は、移動コマンド、描画コマンド、および省略可能な close コマンドで構成される図形を表します。 Move コマンドは、図形の始点を指定します。 描画コマンドは、図の内容を記述し、省略可能な [閉じる] コマンドを実行して図を閉じます。
+- *Fillrule*は、 `Xamarin.Forms.Shapes.FillRule` ジオメトリでまたはを使用する必要があるかどうかを指定する省略可能なです `EvenOdd` `Nonzero` `FillRule` 。 `F0`は、塗りつぶしルールを指定するために使用され `EvenOdd` `F1` ます。を使用して、 `Nonzero` 塗りつぶしルールを指定します。 塗りつぶしルールの詳細については、「 [ Xamarin.Forms 図形: 塗りつぶしルール](fillrules.md)」を参照してください。
+- *figureDescription*は、移動コマンド、描画コマンド、および省略可能な close コマンドで構成される図形を表します。 Move コマンドは、図形の始点を指定します。 描画コマンドは、図の内容を記述し、省略可能な [閉じる] コマンドを実行して図を閉じます。
 
 上記の例では、パスのマークアップ構文で、move コマンド () を使用して開始点を指定し、 `M` line コマンド () を使用して一連の直線を指定 `L` し、close コマンド () を使用してパスを閉じ `Z` ます。
 
@@ -66,7 +65,7 @@ Move コマンドは、新しい図形の始点を指定します。 このコ�
 - Smooth 2 次ベジエ曲線 ( `T` または `t` )。
 - 楕円の円弧 ( `A` または `a` )。
 
-各描画コマンドは、大文字または小文字で指定します。 同じ種類のコマンドを複数回続けて入力するときは、重複するコマンドの入力を省略できます。 たとえば、 `L 100,200 300,400` はと同じです `L 100, 200 L 300,400` 。
+各 draw コマンドには、大文字と小文字を区別しない文字が指定されています。 同じ種類のコマンドを複数回続けて入力するときは、重複するコマンドの入力を省略できます。 たとえば、 `L 100,200 300,400` はと同じです `L 100,200 L 300,400` 。
 
 ### <a name="line-command"></a>直線コマンド
 
@@ -150,7 +149,7 @@ Smooth 2 次ベジエ曲線コマンドは、コントロールポイントを�
 - `sweepDirectionFlag`円弧が正の方向に描画される場合は、1に設定されます。それ以外の場合は0に設定されます。
 - `endPoint`[`Point`](xref:Xamarin.Forms.Point)円弧が描画されるです。
 
-`A150,150 0 1,0 150,-150`は、有効な楕円弧コマンドの例です。
+`A 150,150 0 1,0 150,-150`は、有効な楕円弧コマンドの例です。
 
 ## <a name="close-command"></a>終了コマンド
 
@@ -171,5 +170,5 @@ Close コマンドの構文は、 `Z` または `z` です。
 ## <a name="related-links"></a>関連リンク
 
 - [図形のデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
-- [Xamarin.Formsジオメトリ](geometries.md)
+- [Xamarin.Forms図形: ジオメトリ](geometries.md)
 - [Xamarin.Forms図形: 塗りつぶしルール](fillrules.md)

@@ -10,18 +10,18 @@ ms.date: 06/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f3ab70dc20dda78e3acf400cf51d0ee9df84ff93
-ms.sourcegitcommit: 16847681df17ed59b3b3528761c02e8fb48ffc4f
+ms.openlocfilehash: 9afad335de60e605ef6551b0878455674a40750f
+ms.sourcegitcommit: 91b4d2f93687fadec5c3f80aadc8f7298d911624
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85104321"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85795024"
 ---
 # <a name="xamarinforms-common-control-properties-methods-and-events"></a>Xamarin.Formsコモンコントロールのプロパティ、メソッド、およびイベント
 
 クラスは、 Xamarin.Forms `VisualElement` アプリケーションで使用されるほとんどのコントロールの基本クラスです Xamarin.Forms 。 クラスは、 `VisualElement` 派生クラスで使用される多くの[プロパティ](#properties)、[メソッド](#methods)、および[イベント](#events)を定義します。
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
 オブジェクトでは、次のプロパティを使用でき [`VisualElement`](xref:Xamarin.Forms.VisualElement) ます。
 
@@ -47,7 +47,7 @@ ms.locfileid: "85104321"
 
 ### `Clip`
 
-プロパティは、 `Clip` `Geometry` 要素の内容のアウトラインを定義するオブジェクトです。 クリップを定義するには、などのオブジェクトを使用し `Geometry` て、 `EllipseGeometry` 要素のプロパティを設定し `Clip` ます。 ジオメトリの領域内にある領域だけが表示されます。 詳細については、「[クリップジオメトリ](~/xamarin-forms/user-interface/shapes/geometries.md#clip-geometries)」を参照してください。
+プロパティは、 `Clip` `Geometry` 要素の内容のアウトラインを定義するオブジェクトです。 クリップを定義するには、などのオブジェクトを使用し `Geometry` て、 `EllipseGeometry` 要素のプロパティを設定し `Clip` ます。 ジオメトリの領域内にある領域だけが表示されます。 詳細については、「 [Geometry を使用したクリップ](~/xamarin-forms/user-interface/shapes/geometries.md#clip-with-a-geometry)」を参照してください。
 
 ### [`Effects`](xref:Xamarin.Forms.Element.Effects)
 

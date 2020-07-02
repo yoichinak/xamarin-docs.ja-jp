@@ -9,16 +9,16 @@ ms.date: 09/11/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 855bd0d357950b019487b3ea05e379915f54b9d4
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: da00aafb9f659d8af119e00476a9a243a2f91023
+ms.sourcegitcommit: 91b4d2f93687fadec5c3f80aadc8f7298d911624
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127635"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85795070"
 ---
 # <a name="skiasharp-graphics-in-xamarinforms"></a>SkiaSharp のグラフィックXamarin.Forms
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _アプリケーションで2D グラフィックスに SkiaSharp を使用する Xamarin.Forms_
 
@@ -34,7 +34,7 @@ SkiaSharp は、Google 製品で幅広く使用されているオープンソー
 
 の SkiaSharp Xamarin.Forms は、NuGet パッケージとしてパッケージ化されています。 Xamarin.FormsVisual Studio または Visual Studio for Mac でソリューションを作成したら、NuGet パッケージマネージャーを使用して**SkiaSharp**パッケージを検索し、ソリューションに追加できます。 SkiaSharp を追加した後に各プロジェクトの [**参照**] セクションを確認すると、ソリューション内の各プロジェクトにさまざまな**SkiaSharp**ライブラリが追加されていることがわかります。
 
-アプリケーションが iOS を対象としている場合は、 Xamarin.Forms [プロジェクトのプロパティ] ページを使用して、最小配置ターゲットを ios 8.0 に変更します。
+アプリケーションが Xamarin.Forms ios を対象としている場合は、その**情報の plist**ファイルを編集して、最小配置ターゲットを ios 8.0 に変更します。
 
 SkiaSharp を使用する任意の C# ページで、名前空間のディレクティブを含める必要があります。これには、 `using` [`SkiaSharp`](xref:SkiaSharp) グラフィックスプログラミングで使用するすべての SkiaSharp クラス、構造体、および列挙体が含まれます。 また、 `using` [`SkiaSharp.Views.Forms`](xref:SkiaSharp.Views.Forms) に固有のクラスの名前空間のディレクティブも必要になり Xamarin.Forms ます。 これは、非常に小さな名前空間であり、最も重要なクラス [`SKCanvasView`](xref:SkiaSharp.Views.Forms.SKCanvasView) です。 このクラスは、クラスから派生 Xamarin.Forms `View` し、SkiaSharp グラフィックス出力をホストします。
 
