@@ -10,12 +10,12 @@ ms.date: 06/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 68b7f4a245a60df1723f5a6442f30dc2b1a15932
-ms.sourcegitcommit: 91b4d2f93687fadec5c3f80aadc8f7298d911624
+ms.openlocfilehash: 124c739f68ce8a3fcbc359a07513a2bcb178578f
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85794981"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853122"
 ---
 # <a name="xamarinforms-shapes-path-markup-syntax"></a>Xamarin.Forms図形: パスマークアップ構文
 
@@ -59,11 +59,11 @@ Move コマンドは、新しい図形の始点を指定します。 このコ�
 - Line ( `L` または `l` )。
 - 水平線 ( `H` または `h` )。
 - 垂直線 ( `V` または `v` )。
+- 楕円の円弧 ( `A` または `a` )。
 - 3次ベジエ曲線 ( `C` または `c` )。
 - 2次ベジエ曲線 ( `Q` または `q` )。
 - 平滑3次ベジエ曲線 ( `S` または `s` )。
 - Smooth 2 次ベジエ曲線 ( `T` または `t` )。
-- 楕円の円弧 ( `A` または `a` )。
 
 各 draw コマンドには、大文字と小文字を区別しない文字が指定されています。 同じ種類のコマンドを複数回続けて入力するときは、重複するコマンドの入力を省略できます。 たとえば、 `L 100,200 300,400` はと同じです `L 100,200 L 300,400` 。
 
@@ -74,6 +74,8 @@ Line コマンドは、現在の点と指定された終点の間に直線を作
 この構文では、*エンド*ポイントは、 [`Point`](xref:Xamarin.Forms.Point) 直線の終点を表すです。
 
 たとえば、`L 20,30` や `L 20 30` は有効な直線コマンドです。
+
+直線をオブジェクトとして作成する方法の詳細につい `PathGeometry` ては、「 [Linesegment を作成する](geometries.md#create-a-linesegment)」を参照してください。
 
 ### <a name="horizontal-line-command"></a>水平線コマンド
 
@@ -91,6 +93,22 @@ Line コマンドは、現在の点と指定された終点の間に直線を作
 
 `V 90` は、有効な垂直線コマンドの例です。
 
+### <a name="elliptical-arc-command"></a>楕円円弧コマンド
+
+楕円の弧コマンドは、現在の点と指定された終点の間に楕円の円弧を作成します。 このコマンドの構文は、 `A` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endpoint*または `a` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endpoint*です。
+
+この構文では、次のようになります。
+
+- `size`は、 [`Size`](xref:Xamarin.Forms.Size) 円弧の x 半径と y 半径を表すです。
+- `rotationAngle``double`楕円の回転を表すです (度単位)。
+- `isLargeArcFlag`弧の角度が180°以上でなければならない場合は、1に設定します。それ以外の場合は0に設定します。
+- `sweepDirectionFlag`円弧が正の方向に描画される場合は、1に設定されます。それ以外の場合は0に設定されます。
+- `endPoint`[`Point`](xref:Xamarin.Forms.Point)円弧が描画されるです。
+
+`A 150,150 0 1,0 150,-150`は、有効な楕円弧コマンドの例です。
+
+楕円の円弧をオブジェクトとして作成する方法については `PathGeometry` 、「 [Arcsegment を作成](geometries.md#create-an-arcsegment)する」を参照してください。
+
 ### <a name="cubic-bezier-curve-command"></a>3次ベジエ曲線コマンド
 
 3次ベジエ曲線コマンドは、指定された2つの制御点を使用して、現在の点と指定された終点の間に3次ベジエ曲線を作成します。 このコマンドの構文は、 `C` *controlPoint1* *controlPoint2* *endpoint*または `c` *controlPoint1* *controlPoint2* *endpoint*です。
@@ -103,6 +121,8 @@ Line コマンドは、現在の点と指定された終点の間に直線を作
 
 `C 100,200 200,400 300,200`は、有効な3次ベジエ曲線コマンドの例です。
 
+3次ベジエ曲線をオブジェクトとして作成する方法の詳細につい `PathGeometry` ては、「 [Create a system.windows.media.beziersegment>](geometries.md#create-a-beziersegment)」を参照してください。
+
 ### <a name="quadratic-bezier-curve-command"></a>2次ベジエ曲線コマンド
 
 2次ベジエ曲線コマンドは、指定された制御点を使用して、現在の点と指定された終点の間に2次ベジエ曲線を作成します。 このコマンドの構文は、 `Q` *controlpoint* *エンド*ポイントまたは `q` *controlpoint* *エンド*ポイントです。
@@ -113,6 +133,8 @@ Line コマンドは、現在の点と指定された終点の間に直線を作
 - *エンドポイント*は、 [`Point`](xref:Xamarin.Forms.Point) 曲線が描画される点を表すです。
 
 `Q 100,200 300,200` は、有効な 2 次ベジエ曲線コマンドの例です。
+
+2次ベジエ曲線をオブジェクトとして作成する方法の詳細につい `PathGeometry` ては、「 [Create a system.windows.media.quadraticbeziersegment>](geometries.md#create-a-quadraticbeziersegment)」を参照してください。
 
 ### <a name="smooth-cubic-bezier-curve-command"></a>Smooth 三次ベジエ曲線コマンド
 
@@ -136,20 +158,6 @@ Smooth 2 次ベジエ曲線コマンドは、コントロールポイントを�
 制御点は、現在の点に対する前のコマンドの制御点のリフレクションと見なされます。 前のコマンドが存在しない場合、または前のコマンドが2次ベジエ曲線または smooth 2 次ベジエ曲線コマンドでなかった場合、制御点は現在の点と一致していると見なされます。
 
 `T 100,30`は、有効な smooth 2 次ベジエ曲線コマンドの例です。
-
-### <a name="elliptical-arc-command"></a>楕円円弧コマンド
-
-楕円の弧コマンドは、現在の点と指定された終点の間に楕円の円弧を作成します。 このコマンドの構文は、 `A` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endpoint*または `a` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endpoint*です。
-
-この構文では、次のようになります。
-
-- `size`は、 [`Size`](xref:Xamarin.Forms.Size) 円弧の x 半径と y 半径を表すです。
-- `rotationAngle``double`楕円の回転を表すです (度単位)。
-- `isLargeArcFlag`弧の角度が180°以上でなければならない場合は、1に設定します。それ以外の場合は0に設定します。
-- `sweepDirectionFlag`円弧が正の方向に描画される場合は、1に設定されます。それ以外の場合は0に設定されます。
-- `endPoint`[`Point`](xref:Xamarin.Forms.Point)円弧が描画されるです。
-
-`A 150,150 0 1,0 150,-150`は、有効な楕円弧コマンドの例です。
 
 ## <a name="close-command"></a>終了コマンド
 

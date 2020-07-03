@@ -10,12 +10,12 @@ ms.date: 06/15/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 17fcc996b4dc8013a23a598ece8e240caba3f775
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: bd35722c76cce245701b7a548514d402cd978d38
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84946118"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853071"
 ---
 # <a name="xamarinforms-experimental-flags"></a>Xamarin.Forms試験的なフラグ
 
@@ -31,7 +31,6 @@ Xamarin.Formsには、次の実験的なフラグが含まれています。
 - `RadioButton_Experimental`
 - `Shapes_Experimental`
 - `Shell_UWP_Experimental`
-- `StateTriggers_Experimental`
 - `SwipeView_Experimental`
 
 実験的なフラグの背後にある機能を使用するには、アプリケーションでフラグ (フラグ) を有効にする必要があります。 試験的なフラグを有効にするには、次の2つの方法があります。

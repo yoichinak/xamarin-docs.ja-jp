@@ -6,16 +6,16 @@ ms.assetid: 07DE3D66-1820-4642-BDDF-84146D40C99D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/16/2020
+ms.date: 07/02/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 554a9dd0ca8be54c35d1891b60149bbbb66c3e7c
-ms.sourcegitcommit: 91b4d2f93687fadec5c3f80aadc8f7298d911624
+ms.openlocfilehash: 41de95c452212dce77d6365265e4813170c9b9b9
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85795002"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853042"
 ---
 # <a name="xamarinforms-shapes-path-transforms"></a>Xamarin.Forms図形: パスの変換
 
@@ -23,22 +23,9 @@ ms.locfileid: "85795002"
 
 [![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
-は、ある `Transform` `Path` 座標空間から別の座標空間にオブジェクトを変換する方法を定義します。 このマッピングは、3 列の `double` 値を持つ 3 つの行のコレクションである、`Matrix` 変換によって記述されます。
+は、ある `Transform` `Path` 座標空間から別の座標空間にオブジェクトを変換する方法を定義します。 変換がオブジェクトに適用されると `Path` 、オブジェクトが UI でどのようにレンダリングされるかが変更されます。
 
-3 x 3 行列は、2D x-y 平面の変換に使用されます。 アフィン変換行列を乗算して、回転や傾斜などの任意の数の線形変換を形成し、その後に平行移動を行うことができます。 次の表は、マトリックスの構造を示してい Xamarin.Forms ます。
-
-| | | |
-|---------|---------|-----|
-| M11     | M12     | 0.0 |
-| M21     | M22     | 0.0 |
-| OffsetX | OffsetY | 1.0 |
-
-マトリックスの値を操作することにより、オブジェクトを回転、拡大縮小、傾斜、および平行移動でき `Path` ます。 たとえば、値を100に変更した場合、 `OffsetX` `Path` x 軸に沿ってオブジェクト100のデバイスに依存しない単位を移動することができます。 値を3に変更した場合は、 `M22` `Path` オブジェクトを現在の高さの3倍に拡張するために使用できます。 両方の値を変更する場合は、 `Path` x 軸に沿ってオブジェクト100のデバイスに依存しない単位を移動し、その高さを3倍にします。
-
-> [!NOTE]
-> アフィン変換行列の最終的な列は (0, 0, 1) と等しくなるため、最初の2つの列のメンバーのみを指定する必要があります。 最後の行のメンバー ( `OffsetX` と) は、 `OffsetY` 変換値を表します。
-
-`Matrix`個々の点を変換するために構造体を直接使用することもできますが、では、 Xamarin.Forms マトリックスを直接操作しなくてもオブジェクトを変換できる次のクラスが用意されて `Path` います。
+変換は、回転、拡大縮小、傾斜、および平行移動という4つの一般的な分類に分類できます。 Xamarin.Formsは、次の各変換分類のクラスを定義します。
 
 - `RotateTransform``Path`。指定したでを回転させ `Angle` ます。
 - `ScaleTransform``Path`。指定された量だけオブジェクトをスケーリングし `ScaleX` `ScaleY` ます。
@@ -47,11 +34,11 @@ ms.locfileid: "85795002"
 
 Xamarin.Formsには、より複雑な変換を作成するための次のクラスも用意されています。
 
-- `TransformGroup`。他のオブジェクトで構成される複合を表し `Transform` `Transform` ます。
-- `CompositeTransform`。他のオブジェクトで構成される複合を表し `Transform` `Transform` ます。
-- `MatrixTransform`。他のクラスによって提供されないカスタム変換を作成し `Transform` ます。
+- `TransformGroup`。複数の変換オブジェクトで構成される複合変換を表します。
+- `CompositeTransform`。オブジェクトに複数の変換操作を適用 `Path` します。
+- `MatrixTransform`。他の変換クラスによって提供されないカスタム変換を作成します。
 
-これらのクラスはすべて `Transform` 、型のプロパティを定義するクラスから派生 `Value` `Matrix` します。 このプロパティは、現在の変換をオブジェクトとして表し `Matrix` ます。
+これらのクラスはすべて `Transform` 、型のプロパティを定義するクラスから派生 `Value` `Matrix` します。 このプロパティは、現在の変換をオブジェクトとして表し `Matrix` ます。 構造体の詳細については `Matrix` 、「 [Transform matrix](#transform-matrix)」を参照してください。
 
 に変換を適用するには `Path` 、変換クラスを作成し、プロパティの値として設定し `Path.RenderTransform` ます。
 
@@ -125,13 +112,13 @@ Xamarin.Formsには、より複雑な変換を作成するための次のクラ�
     <Path.RenderTransform>
         <ScaleTransform CenterX="0"
                         CenterY="0"
-                        ScaleX="2"
-                        ScaleY="2" />
+                        ScaleX="1.5"
+                        ScaleY="1.5" />
     </Path.RenderTransform>
 </Path>
 ```
 
-この例では、 `Path` オブジェクトはサイズの2倍にスケーリングされています。
+この例では、 `Path` オブジェクトはサイズの1.5 倍にスケーリングされます。
 
 ## <a name="skew-transform"></a>傾斜変換
 
@@ -148,7 +135,8 @@ Xamarin.Formsには、より複雑な変換を作成するための次のクラ�
 
 傾斜変換の効果を予測する際は、`AngleX` によって元の座標系に対して x 軸の値が傾斜することを考慮します。 したがって、が `AngleX` 30 の場合、y 軸は原点を介して30°回転し、原点から30°回転して値を傾斜させます。 同様に、 `AngleY` 30 のは、オブジェクトの y 値を `Path` 原点から30°傾斜させます。
 
-オブジェクトを適切に傾斜させるには、 `Path` `CenterX` `CenterY` オブジェクトの中心点にプロパティとプロパティを設定します。
+> [!NOTE]
+> オブジェクトを適切に傾斜させるには、 `Path` `CenterX` `CenterY` オブジェクトの中心点にプロパティとプロパティを設定します。
 
 次の例は、オブジェクトを傾斜させる方法を示してい `Path` ます。
 
@@ -201,7 +189,7 @@ Xamarin.Formsには、より複雑な変換を作成するための次のクラ�
 
 この例では、 `Path` オブジェクトは、デバイスに依存しないユニット50を右に移動し、50デバイスに依存しないユニットを停止します。
 
-## <a name="apply-multiple-transforms"></a>複数の変換を適用する
+## <a name="multiple-transforms"></a>複数の変換
 
 Xamarin.Formsには、オブジェクトへの複数の変換の適用をサポートする2つのクラスがあり `Path` ます。 これらは `TransformGroup` 、、および `CompositeTransform` です。 は `TransformGroup` 任意の順序で変換を実行し、は `CompositeTransform` 特定の順序で変換を実行します。
 
@@ -209,11 +197,7 @@ Xamarin.Formsには、オブジェクトへの複数の変換の適用をサポ�
 
 変換グループは、複数のオブジェクトで構成される複合変換を表し `Transform` ます。
 
-クラス `TransformGroup` から派生したクラスは、 `Transform` 次のプロパティを定義します。
-
-- `Children``TransformCollection`オブジェクトのコレクションを表す型の `Transform` 。
-
-これらのプロパティは、オブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。これは、データバインディングのターゲットとスタイルを設定できることを意味します。
+クラス `TransformGroup` から派生したクラスは、 `Transform` `Children` オブジェクトのコレクションを表す型のプロパティを定義し `TransformCollection` `Transform` ます。 このプロパティは、オブジェクトによって支えられています。これは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) データバインディングのターゲットとスタイルを設定できることを意味します。
 
 クラスを使用する複合変換では、変換の順序が重要になり `TransformGroup` ます。 たとえば、最初に回転した後、スケーリングしてから平行移動した場合、最初に変換してから回転してからスケールする場合とは異なる結果が得られます。 理由の1つは、回転やスケーリングなどの変換が、座標系の原点に対して実行されることです。 原点から中央に配置されているオブジェクトをスケーリングすると、元の位置から離れた位置にあるオブジェクトを拡張するための異なる結果が生成されます。 同様に、原点から中央に配置されているオブジェクトを回転すると、原点から離れた位置にあるオブジェクトを回転した場合とは異なる結果が生成されます。
 
@@ -228,14 +212,15 @@ Xamarin.Formsには、オブジェクトへの複数の変換の適用をサポ�
       Data="M13.908992,16.207977L32.000049,16.207977 32.000049,31.999985 13.908992,30.109983z">
     <Path.RenderTransform>
         <TransformGroup>
-            <ScaleTransform ScaleY="2" />
+            <ScaleTransform ScaleX="1.5"
+                            ScaleY="1.5" />
             <RotateTransform Angle="45" />
         </TransformGroup>
     </Path.RenderTransform>
 </Path>
 ```
 
-この例では、 `Path` オブジェクトのサイズが2倍に、45度回転しています。
+この例では、 `Path` オブジェクトはサイズの1.5 倍にスケーリングされ、その後、45度回転しています。
 
 ## <a name="composite-transforms"></a>複合変換
 
@@ -277,8 +262,8 @@ Xamarin.Formsには、オブジェクトへの複数の変換の適用をサポ�
       WidthRequest="100"
       Data="M13.908992,16.207977L32.000049,16.207977 32.000049,31.999985 13.908992,30.109983z">
     <Path.RenderTransform>
-        <CompositeTransform ScaleX="2"
-                            ScaleY="2"
+        <CompositeTransform ScaleX="1.5"
+                            ScaleY="1.5"
                             Rotation="45"
                             TranslateX="50"
                             TranslateY="50" />
@@ -286,19 +271,47 @@ Xamarin.Formsには、オブジェクトへの複数の変換の適用をサポ�
 </Path>
 ```
 
-この例では、 `Path` オブジェクトがサイズの2倍になり、45度回転し、デバイスに依存しない50によって変換されます。
+この例では、 `Path` オブジェクトはサイズの1.5 倍にスケーリングされた後、45度回転し、デバイスに依存しない50単位で変換されます。
+
+## <a name="transform-matrix"></a>変換行列
+
+変換は、2D 空間で変換を実行する 3 x 3 アフィン変換行列の観点から記述できます。 この3番目の行列は、構造体によって表され `Matrix` ます。これは、3つの行と3つの値の列からなるコレクションです `double` 。
+
+`Matrix`構造体は、次のプロパティを定義します。
+
+- `Determinant``double`行列の行列式を取得する型の。
+- `HasInverse`型の `bool` 。行列が反転できるかどうかを示します。
+- `Identity`型の。 `Matrix` id 行列を取得します。
+- `HasIdentity`型の。 `bool` これは、マトリックスが id 行列であるかどうかを示します。
+- `M11``double`行列の最初の行と最初の列の値を表す、型の。
+- `M12``double`行列の第1行、第2列の値を表す型の。
+- `M21``double`行列の第2行、第1列の値を表す型の。
+- `M22``double`行列の2番目の行と2番目の列の値を表す型の。
+- `OffsetX``double`行列の第3行、第1列の値を表す型の。
+- `OffsetY``double`行列の第3行、第2列の値を表す型の。
+
+`OffsetX`プロパティと `OffsetY` プロパティは、それぞれ x 軸と y 軸に沿って座標空間を平行移動する量を指定するため、という名前になります。
+
+さらに、 `Matrix` 構造体は、、、、など、マトリックスの値を操作するために使用できる一連のメソッドを公開し `Append` `Invert` `Multiply` `Prepend` ます。
+
+次の表は、マトリックスの構造を示してい Xamarin.Forms ます。
+
+| | | |
+|---------|---------|-----|
+| M11     | M12     | 0.0 |
+| M21     | M22     | 0.0 |
+| OffsetX | OffsetY | 1.0 |
+
+> [!NOTE]
+> アフィン変換行列の最終的な列は (0, 0, 1) と等しくなるため、最初の2つの列のメンバーのみを指定する必要があります。
+
+マトリックスの値を操作することにより、オブジェクトを回転、拡大縮小、傾斜、および平行移動でき `Path` ます。 たとえば、値を100に変更した場合、 `OffsetX` `Path` x 軸に沿ってオブジェクト100のデバイスに依存しない単位を移動することができます。 値を3に変更した場合は、 `M22` `Path` オブジェクトを現在の高さの3倍に拡張するために使用できます。 両方の値を変更する場合は、 `Path` x 軸に沿ってオブジェクト100のデバイスに依存しない単位を移動し、その高さを3倍にします。 さらに、アフィン変換行列を乗算して、回転や傾斜などの任意の数の線形変換を形成し、その後に平行移動を行うことができます。
 
 ## <a name="custom-transforms"></a>カスタム変換
 
-マトリックス変換は、アフィン行列を使用して、2D 平面内のオブジェクトまたは座標系を操作します。 3 x 3 行列が変換に使用されます。 アフィン行列変換を乗算して、平行移動や傾斜などの線形変換を形成することができます。
+クラス `MatrixTransform` から派生したクラスは、 `Transform` `Matrix` 型のプロパティを定義します。このプロパティは `Matrix` 、変換を定義する行列を表します。 このプロパティは、オブジェクトによって支えられています。これは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) データバインディングのターゲットとスタイルを設定できることを意味します。
 
-クラス `MatrixTransform` から派生したクラスは、 `Transform` 次のプロパティを定義します。
-
-- `Matrix``Matrix`変換を定義する行列を表す、型の。
-
-このプロパティは、オブジェクトによって支えられています。これは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) データバインディングのターゲットとスタイルを設定できることを意味します。
-
-`MatrixTransform`クラスは `RotateTransform` 、、、 `ScaleTransform` 、またはの各クラスによって提供されないカスタム変換を作成するために使用され `SkewTransform` `TranslateTransform` ます。
+、、、またはオブジェクトで記述できる変換は `TranslateTransform` `ScaleTransform` `RotateTransform` `SkewTransform` 、によって同じように記述でき `MatrixTransform` ます。 ただし、、 `TranslateTransform` 、 `ScaleTransform` `RotateTransform` 、およびの `SkewTransform` 各クラスは、でベクターコンポーネントを設定するよりも概念が簡単です `Matrix` 。 このため、 `MatrixTransform` クラスは、通常、、、 `RotateTransform` 、またはの各クラスによって提供されないカスタム変換を作成するために使用され `ScaleTransform` `SkewTransform` `TranslateTransform` ます。
 
 次の例は `Path` 、を使用してオブジェクトを変換する方法を示してい `MatrixTransform` ます。
 
@@ -306,8 +319,6 @@ Xamarin.Formsには、オブジェクトへの複数の変換の適用をサポ�
 <Path Stroke="Black"
       Aspect="Uniform"
       HorizontalOptions="Center"
-      HeightRequest="100"
-      WidthRequest="100"
       Data="M13.908992,16.207977L32.000049,16.207977 32.000049,31.999985 13.908992,30.109983z">
     <Path.RenderTransform>
         <MatrixTransform>
@@ -315,8 +326,8 @@ Xamarin.Formsには、オブジェクトへの複数の変換の適用をサポ�
                 <!-- M11 stretches, M12 skews -->
                 <Matrix OffsetX="10"
                         OffsetY="100"
-                        M11="3"
-                        M12="2" />
+                        M11="1.5"
+                        M12="1" />
             </MatrixTransform.Matrix>
         </MatrixTransform>
     </Path.RenderTransform>
@@ -331,16 +342,24 @@ Xamarin.Formsには、オブジェクトへの複数の変換の適用をサポ�
 <Path Stroke="Black"
       Aspect="Uniform"
       HorizontalOptions="Center"
-      HeightRequest="100"
-      WidthRequest="100"
       Data="M13.908992,16.207977L32.000049,16.207977 32.000049,31.999985 13.908992,30.109983z">
     <Path.RenderTransform>
-        <MatrixTransform Matrix="3,2,0,1,10,100" />
+        <MatrixTransform Matrix="1.5,1,0,1,10,100" />
     </Path.RenderTransform>
 </Path>
 ```
 
-この例では、 `Matrix` プロパティは、、、、、の6つのメンバーから成るコンマ区切りの文字列として指定されます `M11` `M12` `M21` `M22` `OffsetX` `OffsetY` 。
+この例では、 `Matrix` プロパティは、、、、、の6つのメンバーから成るコンマ区切りの文字列として指定されます `M11` `M12` `M21` `M22` `OffsetX` `OffsetY` 。 この例ではメンバーはコンマで区切られていますが、1つまたは複数の空白で区切ることもできます。
+
+また、前の例は、プロパティの値と同じ6つのメンバーを指定することでさらに簡略化できます `RenderTransform` 。
+
+```xaml
+<Path Stroke="Black"
+      Aspect="Uniform"
+      HorizontalOptions="Center"
+      RenderTransform="1.5 1 0 1 10 100"
+      Data="M13.908992,16.207977L32.000049,16.207977 32.000049,31.999985 13.908992,30.109983z" />
+```
 
 ## <a name="related-links"></a>関連リンク
 

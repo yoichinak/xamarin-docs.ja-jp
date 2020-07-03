@@ -7,14 +7,17 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2017
-ms.openlocfilehash: 328633bc58f17216c071a2b2cd779704da2bbf74
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: c36159984f314ecbf90f98df6472eee2149eee92
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569414"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853165"
 ---
 # <a name="walkthrough-binding-an-ios-objective-c-library"></a>チュートリアル: iOS の目的 C ライブラリのバインド
+
+> [!IMPORTANT]
+> 現在、Xamarin プラットフォームでのカスタムバインディングの使用を調査しています。 今後の開発作業については、[**この調査**](https://www.surveymonkey.com/r/KKBHNLT)にご連絡ください。
 
 _この記事では、既存の目的 C ライブラリである InfColorPicker の作成に関する実践的なチュートリアルを提供します。ここでは、静的な目的 C ライブラリのコンパイル、バインド、および Xamarin. iOS アプリケーションでのバインディングの使用などのトピックについて説明します。_
 
@@ -670,7 +673,7 @@ private void HandleTouchUpInsideWithStrongDelegate (object sender, EventArgs e)
 
 [![](walkthrough-images/run01.png "Running the Application")](walkthrough-images/run01.png#lightbox)
 
-おめでとうございます。 この時点で、Xamarin iOS アプリケーションで使用するために、目的の C ライブラリを作成してバインドしました。 次に、弱いデリゲートの使用について説明します。
+おめでとうございます! この時点で、Xamarin iOS アプリケーションで使用するために、目的の C ライブラリを作成してバインドしました。 次に、弱いデリゲートの使用について説明します。
 
 ### <a name="implementing-a-weak-delegate"></a>弱いデリゲートの実装
 
@@ -713,7 +716,7 @@ public void ColorPickerControllerDidFinish (InfColorPickerController controller)
 
 アプリケーションを実行します。 これは、以前とまったく同じように動作しますが、厳密なデリゲートではなく弱いデリゲートを使用しています。 この時点で、このチュートリアルは正常に完了しています。 これで、Xamarin の iOS バインドプロジェクトを作成および使用する方法を理解できるようになりました。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 この記事では、Xamarin の iOS バインドプロジェクトを作成して使用するプロセスについて説明します。 まず、既存の目的 C ライブラリをスタティックライブラリにコンパイルする方法について説明しました。 次に、Xamarin の iOS バインドプロジェクトを作成する方法と、目標マジックペンを使用して目的の C ライブラリの API 定義を生成する方法について説明します。 ここでは、生成された API 定義を更新および調整して、パブリックの使用に適したものにする方法について説明しました。 Xamarin のバインドプロジェクトが終了した後、Xamarin. iOS アプリケーションでそのバインドを使用するようになりました。強力なデリゲートと弱いデリゲートの使用に重点を置いています。
 
