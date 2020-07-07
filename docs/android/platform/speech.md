@@ -9,7 +9,6 @@ ms.author: daortin
 ms.date: 04/02/2018
 ms.openlocfilehash: e8c7d1a4fb3537644ed3b7737158a5e50abcdae5
 ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
-ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/13/2020
 ms.locfileid: "73019764"
@@ -127,7 +126,7 @@ protected override void OnActivityResult(int requestCode, Result resultVal, Inte
 
 テキスト読み上げは、音声テキスト変換の逆ではなく、2 つの主要なコンポーネントに依存しています。デバイスにインストールされているテキスト読み上げエンジンと、インストールされている言語です。
 
-ほとんどの場合、Android デバイスには、少なくとも 1 つの言語の Google TTS サービスが既定でインストールされています。 これは、デバイスが最初に設定されるときに確立され、その時点のデバイスの場所に基づいて決定されます (たとえば、ドイツで設定された電話にはドイツ語がインストールされ、アメリカの場合は米国英語がインストールされます)。
+ほとんどの場合、Android デバイスには、少なくとも 1 つの言語の Google TTS サービスが既定でインストールされています。 これは、デバイスが最初に設定されるときに確立され、その時点のデバイスの場所に基づいて決定されます (たとえば、ドイツで設定された電話にはドイツ語がインストールされ、アメリカ合衆国の場合は米国英語がインストールされます)。
 
 ### <a name="step-1---instantiating-texttospeech"></a>手順 1 - TextToSpeech のインスタンス化
 
