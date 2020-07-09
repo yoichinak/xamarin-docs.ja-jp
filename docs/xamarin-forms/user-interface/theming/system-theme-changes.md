@@ -10,16 +10,16 @@ ms.date: 06/17/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 28bcbed3a03a2abbec42a619062579419a3063a4
-ms.sourcegitcommit: 8a18471b3d96f3f726b66f9bc50a829f1c122f29
+ms.openlocfilehash: b451fe004ca21c8770658f31c9c38253e073c259
+ms.sourcegitcommit: 82eabb0eaa4a674897aa6d5e64efb91fd580c330
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84988200"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86100184"
 ---
 # <a name="respond-to-system-theme-changes-in-xamarinforms-applications"></a>アプリケーションのシステムテーマの変更に応答する Xamarin.Forms
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)
 
 通常、デバイスには明るいテーマとダークテーマが含まれており、それぞれがオペレーティングシステムレベルで設定できるさまざまな外観設定を参照しています。 アプリケーションはこれらのシステムテーマを尊重し、システムテーマが変更されたときに直ちに応答する必要があります。
 
@@ -46,7 +46,7 @@ Xamarin.Formsシステムテーマの変更に応答するには、次の要件�
 
 ライトおよびダークテーマのリソースは、 `AppThemeBinding` マークアップ拡張機能と、および拡張メソッドを使用して使用でき `SetAppThemeColor` `SetOnAppTheme<T>` ます。 これらの方法では、現在のシステムテーマの値に基づいてリソースが自動的に適用されます。 また、これらのリソースを使用するオブジェクトは、アプリの実行中にシステムテーマが変更されると、自動的に更新されます。
 
-### <a name="appthemebinding-markup-extension"></a>AppThemeBinding のマークアップ拡張機能
+### <a name="appthemebinding-markup-extension"></a>AppThemeBinding マークアップ拡張
 
 `AppThemeBinding`マークアップ拡張機能を使用すると、現在のシステムテーマに基づいて、イメージや色などのリソースを使用できます。
 
@@ -159,9 +159,12 @@ Application.Current.RequestedThemeChanged += (s, a) =>
 
 `AppThemeChangedEventArgs`イベントに付随するオブジェクトに `RequestedThemeChanged` は、型のという名前のプロパティが1つあり `RequestedTheme` `OSAppTheme` ます。 このプロパティは、要求されたシステムテーマを検出するために調べることができます。
 
+> [!IMPORTANT]
+> Android でのテーマの変更に応答するには、 `ConfigChanges.UiMode` クラスの属性にフラグを含める必要があり `Activity` `MainActivity` ます。
+
 ## <a name="related-links"></a>関連リンク
 
 - [SystemThemes (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)
-- [AppThemeBinding のマークアップ拡張機能](~/xamarin-forms/xaml/markup-extensions/consuming.md#appthemebinding-markup-extension)
-- [リソースディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [AppThemeBinding マークアップ拡張](~/xamarin-forms/xaml/markup-extensions/consuming.md#appthemebinding-markup-extension)
+- [リソース ディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [XAML スタイルを使用して Xamarin.Forms アプリのスタイルを設定する](~/xamarin-forms/user-interface/styles/xaml/index.md)
