@@ -7,14 +7,17 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/20/2017
-ms.openlocfilehash: 060c4759d39bc3b8c424ce46dc615644540fe9c2
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: bcfc5778ed4e5486d188f4eefbd32811792b44e5
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73027666"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85852978"
 ---
 # <a name="naming-parameters-with-javadoc"></a>Javadoc でパラメーターに名前を付ける
+
+> [!IMPORTANT]
+> 現在、Xamarin プラットフォームでのカスタム バインディングの使用を調査しています。 今後の開発作業の発展のために、この[**アンケート**](https://www.surveymonkey.com/r/KKBHNLT)にご回答ください。
 
 _この記事では、Java プロジェクトから生成された Javadoc を使用して Java バインド プロジェクト内のパラメーター名を回復する方法について説明します。_
 

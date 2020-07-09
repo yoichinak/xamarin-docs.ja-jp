@@ -7,14 +7,17 @@ ms.technology: xamarin-android
 author: alexeystrakh
 ms.author: alstrakh
 ms.date: 02/11/2020
-ms.openlocfilehash: ec7d154b0d7fcb055bd398089e142fe8b1d9f60e
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: d2251a0219ca25ecd37e42361e49ac966bac131d
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77497966"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85852995"
 ---
 # <a name="bind-android-kotlin-libraries"></a>Android Kotlin ライブラリをバインドする
+
+> [!IMPORTANT]
+> 現在、Xamarin プラットフォームでのカスタム バインディングの使用を調査しています。 今後の開発作業の発展のために、この[**アンケート**](https://www.surveymonkey.com/r/KKBHNLT)にご回答ください。
 
 Android プラットフォームは、そのネイティブ言語とツールと共に常に進化しており、最新のオファリングを使用して開発されたサード パーティ製のライブラリが多数あります。 コードとコンポーネントを再利用して最大限に活用することは、クロスプラットフォーム開発の主な目標の 1 つです。 Kotlin でビルドされたコンポーネントを再利用する機能は、開発者の間で人気が高まり続けているため、Xamarin 開発者にとってますます重要になっています。 お客様は、通常の [Java](https://docs.microsoft.com/xamarin/android/platform/binding-java-library/) ライブラリをバインドするプロセスについて、既に理解されているかもしれません。 [Kotlin ライブラリをバインドする](walkthrough.md)プロセスについて説明する追加のドキュメントを利用できるようになったため、Xamarin アプリケーションでも同じ方法で使用できます。 このドキュメントの目的は、Xamarin 用の Kotlin バインドを作成するための上位レベルのアプローチについて説明することです。
 
