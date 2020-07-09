@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/18/2020
-ms.openlocfilehash: dfe6da8a76b447bf0c2a6c0a3bea9823e498d5e4
-ms.sourcegitcommit: 8a18471b3d96f3f726b66f9bc50a829f1c122f29
+ms.openlocfilehash: 0aafe01fcbde6cf1aacf3e2dd47444d4b77021e2
+ms.sourcegitcommit: 79ba3deb031c8a60d0841bb3dbeaaf65daf2b224
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84988193"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85846379"
 ---
 # <a name="xamarinforms-multi-bindings"></a>Xamarin.Forms の複数バインド
 
@@ -44,7 +44,7 @@ ms.locfileid: "84988193"
 
 ## <a name="define-a-imultivalueconverter"></a>IMultiValueConverter を定義する
 
-`IMultiValueConverter` インターフェイスを使用すると、カスタム ロジックを `MultiBinding` に適用できます。 コンバーターを `MultiBinding` に関連付けるには、`IValueConverter` インターフェイスを実装するクラスを作成し、`Convert` メソッドと `ConvertBack` メソッドを実装します。
+`IMultiValueConverter` インターフェイスを使用すると、カスタム ロジックを `MultiBinding` に適用できます。 コンバーターを `MultiBinding` に関連付けるには、`IMultiValueConverter` インターフェイスを実装するクラスを作成し、`Convert` メソッドと `ConvertBack` メソッドを実装します。
 
 ```csharp
 public class AllTrueMultiConverter : IMultiValueConverter

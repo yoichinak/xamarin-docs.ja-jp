@@ -8,12 +8,12 @@ ms.date: 03/26/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 578e750afd718c684d70217355629a0286d2b028
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 6b094ddd7334da777d39d403eb06d72558c96ed2
+ms.sourcegitcommit: 82eabb0eaa4a674897aa6d5e64efb91fd580c330
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84801882"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86100200"
 ---
 # <a name="xamarinessentials-web-authenticator"></a>Xamarin.Essentials:Web Authenticator
 
@@ -192,7 +192,7 @@ var accessToken = r?.AccessToken;
 
 1. ASP.NET Core Web アプリで、必要な[外部ソーシャル認証プロバイダー](https://docs.microsoft.com/aspnet/core/security/authentication/social/?view=aspnetcore-3.1&tabs=visual-studio)をセットアップします。
 2. `.AddAuthentication()` の呼び出しで、既定の認証スキームを `CookieAuthenticationDefaults.AuthenticationScheme` に設定します。
-3. Startup.cs の `.AddAuthentication()` の呼び出しで `.AddCookies()` を使用します。
+3. Startup.cs の `.AddAuthentication()` の呼び出しで `.AddCookie()` を使用します。
 4. すべてのプロバイダーは `.SaveTokens = true;` を指定して構成する必要があります。
 
 > [!TIP]

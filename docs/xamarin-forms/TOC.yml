@@ -405,6 +405,32 @@
                   href: user-interface/map/native-map-app.md
             - name: MediaElement
               href: user-interface/mediaelement.md
+            - name: 図形
+              items:
+                - name: 概要
+                  href: user-interface/shapes/index.md
+                - name: Ellipse
+                  href: user-interface/shapes/ellipse.md
+                - name: ルールの入力
+                  href: user-interface/shapes/fillrules.md
+                - name: ジオメトリ
+                  href: user-interface/shapes/geometries.md
+                - name: 行
+                  href: user-interface/shapes/line.md
+                - name: パス
+                  items:
+                    - name: パス
+                      href: user-interface/shapes/path.md
+                    - name: パス マークアップ構文
+                      href: user-interface/shapes/path-markup-syntax.md
+                    - name: パスの変換
+                      href: user-interface/shapes/path-transforms.md
+                - name: 多角形
+                  href: user-interface/shapes/polygon.md
+                - name: ポリライン
+                  href: user-interface/shapes/polyline.md
+                - name: Rectangle
+                  href: user-interface/shapes/rectangle.md
             - name: WebView
               href: user-interface/webview.md
         - name: コマンドの開始
@@ -537,32 +563,6 @@
               href: user-interface/text/fonts.md
             - name: SkiaSharp を使用したグラフィックス
               href: user-interface/graphics/skiasharp/index.md
-            - name: 図形
-              items:
-                - name: 概要
-                  href: user-interface/shapes/index.md
-                - name: Ellipse
-                  href: user-interface/shapes/ellipse.md
-                - name: ルールの入力
-                  href: user-interface/shapes/fillrules.md
-                - name: ジオメトリ
-                  href: user-interface/shapes/geometries.md
-                - name: 行
-                  href: user-interface/shapes/line.md
-                - name: パス
-                  items:
-                    - name: パス
-                      href: user-interface/shapes/path.md
-                    - name: パス マークアップ構文
-                      href: user-interface/shapes/path-markup-syntax.md
-                    - name: パスの変換
-                      href: user-interface/shapes/path-transforms.md
-                - name: 多角形
-                  href: user-interface/shapes/polygon.md
-                - name: ポリライン
-                  href: user-interface/shapes/polyline.md
-                - name: Rectangle
-                  href: user-interface/shapes/rectangle.md
             - name: スプラッシュ スクリーン
               href: user-interface/splashscreen.md
             - name: スタイル
