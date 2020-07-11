@@ -10,16 +10,16 @@ ms.date: 01/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 33b3763075b64ea8af615465825313a527d20db2
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 7d83728edc161a89b381330884e86f09b7788e3d
+ms.sourcegitcommit: 898ba8e5140ae32a7df7e07c056aff65f6fe4260
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138178"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86226782"
 ---
 # <a name="xamarinforms-bindable-properties"></a>Xamarin.Formsバインド可能なプロパティ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
 
 バインド可能なプロパティは、プロパティをフィールドでバッキングするのではなく、型を使用してプロパティをバッキングすることによって、CLR プロパティの機能を拡張 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) します。 バインド可能なプロパティの目的は、データバインディング、スタイル、テンプレート、および親子関係を通じて設定される値をサポートするプロパティシステムを提供することです。 また、バインド可能なプロパティは、既定値、プロパティ値の検証、およびプロパティの変更を監視するコールバックを提供できます。
 
@@ -55,6 +55,9 @@ ms.locfileid: "84138178"
 - 所有しているオブジェクトの型。
 - プロパティの既定値。 これにより、プロパティが設定解除されるときに常に特定の既定値が返されるようになります。また、プロパティの型の既定値とは異なる場合があります。 既定値は、[ `ClearValue` ] (xref: Xamarin.Forms .BindableObject。 ClearValue ( Xamarin.Forms .BindableProperty)) メソッドが、バインド可能なプロパティで呼び出されます。
 
+> [!IMPORTANT]
+> バインド可能なプロパティの名前付け規則は、バインド可能なプロパティの識別子が、メソッドに指定されたプロパティ名と一致する必要があり `Create` 、"property" が付加されていることです。 
+
 次のコードは、バインド可能なプロパティの例を示しています。この例では、4つの必須パラメーターの識別子と値が使用されています。
 
 ```csharp
@@ -62,7 +65,7 @@ public static readonly BindableProperty EventNameProperty =
   BindableProperty.Create ("EventName", typeof(string), typeof(EventToCommandBehavior), null);
 ```
 
-これにより [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 、型のという名前のインスタンスが作成さ `EventName` `string` れます。 プロパティはクラスによって所有され、 `EventToCommandBehavior` 既定値は `null` です。 バインド可能なプロパティの名前付け規則は、バインド可能なプロパティの識別子が、メソッドに指定されたプロパティ名と一致する必要があり `Create` 、"property" が付加されていることです。 したがって、上記の例では、バインド可能なプロパティ識別子は `EventNameProperty` です。
+これにより [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 、型のという名前のインスタンスが作成さ `EventNameProperty` `string` れます。 プロパティはクラスによって所有され、 `EventToCommandBehavior` 既定値は `null` です。
 
 必要に応じて、インスタンスを作成するときに、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 次のパラメーターを指定できます。
 

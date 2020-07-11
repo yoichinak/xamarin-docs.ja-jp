@@ -1,6 +1,6 @@
 ---
-title: Xamarin.FormsRefreshView
-description: Xamarin.FormsRefreshview は、スクロール可能なコンテンツに対してプルを更新する機能を提供するコンテナーコントロールです。
+title: Xamarin.Forms RefreshView
+description: は、スクロール可能な Xamarin.Forms RefreshView コンテンツに対してプルを更新する機能を提供するコンテナーコントロールです。
 ms.prod: xamarin
 ms.assetId: 58DBD23B-ADB9-40DA-B331-4DDB6E698990
 ms.technology: xamarin-forms
@@ -10,16 +10,18 @@ ms.date: 09/19/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d84e6bb6ed41f2fbc213cd15051d071521f588cd
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+- RefreshView
+- Universal Windows Platform
+ms.openlocfilehash: 83802683aee722468acf9bcc827ba66f45c05e6b
+ms.sourcegitcommit: cd0c0999b53e825b60471bfbfd4144cfcd783587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127596"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86225482"
 ---
-# <a name="xamarinforms-refreshview"></a>Xamarin.FormsRefreshView
+# <a name="xamarinforms-refreshview"></a>Xamarin.Forms RefreshView
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshviewdemo/)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshviewdemo/)
 
 は、スクロール可能な `RefreshView` コンテンツに対してプルを更新する機能を提供するコンテナーコントロールです。 したがって、の子は `RefreshView` 、、、など、スクロール可能なコントロールである必要があり [`ScrollView`](xref:Xamarin.Forms.ScrollView) [`CollectionView`](xref:Xamarin.Forms.CollectionView) [`ListView`](xref:Xamarin.Forms.ListView) ます。
 
@@ -33,9 +35,9 @@ ms.locfileid: "84127596"
 これらのプロパティは、オブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。これは、データバインディングのターゲットとスタイルを設定できることを意味します。
 
 > [!NOTE]
-> ユニバーサル Windows プラットフォームでは、プラットフォーム固有のを使用してのプル方向を `RefreshView` 設定できます。 詳細については、「 [Refreshview Pull Direction](~/xamarin-forms/platform/windows/refreshview-pulldirection.md)」を参照してください。
+> では、 Universal Windows Platform のプル方向を `RefreshView` プラットフォーム固有ので設定できます。 詳細については、「 [ RefreshView プル方向](~/xamarin-forms/platform/windows/refreshview-pulldirection.md)」を参照してください。
 
-## <a name="create-a-refreshview"></a>RefreshView を作成する
+## <a name="create-a-refreshview"></a>認証要求の処理に使用する RefreshView
 
 次の例は、XAML でをインスタンス化する方法を示してい `RefreshView` ます。
 
@@ -77,12 +79,12 @@ refreshView.Content = scrollView;
 
 ユーザーが更新を開始すると、 `ICommand` プロパティによって定義されたが実行され `Command` ます。これにより、表示されている項目が更新されます。 更新が行われている間に、更新の視覚化が表示されます。これは、アニメーションの進行状況の円で構成されます。
 
-[![IOS と Android での RefreshView によるデータの更新のスクリーンショット](refreshview-images/default-progress-circle.png "RefreshView によるデータの更新")](refreshview-images/default-progress-circle-large.png#lightbox "RefreshView によるデータの更新")
+[![RefreshViewIOS と Android でのデータ更新のスクリーンショット](refreshview-images/default-progress-circle.png "[!ファンド.NO LOC (RefreshView)] データを更新しています")](refreshview-images/default-progress-circle-large.png#lightbox "[!ファンド.NO LOC (RefreshView)] データを更新しています")
 
 > [!NOTE]
 > 手動で `IsRefreshing` プロパティをに設定する `true` と、更新の視覚化がトリガーされ、プロパティによって定義されたが実行され `ICommand` `Command` ます。
 
-## <a name="refreshview-appearance"></a>RefreshView の外観
+## <a name="refreshview-appearance"></a>RefreshView内容
 
 は、クラスから継承されるプロパティに加えて `RefreshView` [`VisualElement`](xref:Xamarin.Forms.VisualElement) 、 `RefreshView` プロパティも定義し `RefreshColor` ます。 このプロパティを設定して、更新中に表示される進行状況の円の色を定義できます。
 
@@ -93,14 +95,14 @@ refreshView.Content = scrollView;
 
 次のスクリーンショットは、プロパティが設定されたを示してい `RefreshView` `RefreshColor` ます。
 
-[![IOS と Android で、青緑の進行状況を示す RefreshView のスクリーンショット](refreshview-images/teal-progress-circle.png "青緑の進行状況を示す RefreshView")](refreshview-images/teal-progress-circle-large.png#lightbox "青緑の進行状況を示す RefreshView")
+[![RefreshViewIOS と Android で青緑の進捗状況を示すのスクリーンショット](refreshview-images/teal-progress-circle.png "[!ファンド.なし (RefreshView)]: 青緑の進行状況を示す円")](refreshview-images/teal-progress-circle-large.png#lightbox "[!ファンド.なし (RefreshView)]: 青緑の進行状況を示す円")
 
 さらに、プロパティは、 `BackgroundColor` [`Color`](xref:Xamarin.Forms.Color) 進行状況の円の背景色を表すに設定できます。
 
 > [!NOTE]
 > IOS では、 `BackgroundColor` プロパティは、進行状況の円を含むの背景色を設定し `UIView` ます。
 
-## <a name="disable-a-refreshview"></a>RefreshView を無効にする
+## <a name="disable-a-refreshview"></a>を無効にするRefreshView
 
 アプリケーションは、pull to refresh が有効な操作ではない状態になる場合があります。 このような場合は、 `RefreshView` プロパティをに設定することで、を無効にすることができ `IsEnabled` `false` ます。 これにより、ユーザーがプルをトリガーして更新できなくなります。
 
@@ -108,6 +110,6 @@ refreshView.Content = scrollView;
 
 ## <a name="related-links"></a>関連リンク
 
-- [RefreshView (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshviewdemo/)
+- [RefreshViewサンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshviewdemo/)
 - [バインド可能なレイアウトXamarin.Forms](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)
-- [RefreshView のプル方向のプラットフォーム固有](~/xamarin-forms/platform/windows/refreshview-pulldirection.md)
+- [RefreshViewプル方向プラットフォーム固有](~/xamarin-forms/platform/windows/refreshview-pulldirection.md)

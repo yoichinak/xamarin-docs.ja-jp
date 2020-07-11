@@ -10,16 +10,16 @@ ms.date: 05/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7117bb809c43ab5edb67e8367840b17cd1d97ef9
-ms.sourcegitcommit: c000c0ed15b7b2ef2a8f46a39171e11b6d9f8a5d
+ms.openlocfilehash: 7ae6e5e764dc066940971dd9b5a8fdc36c7a1970
+ms.sourcegitcommit: cd0c0999b53e825b60471bfbfd4144cfcd783587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84980091"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86225495"
 ---
 # <a name="images-in-xamarinforms"></a>画像Xamarin.Forms
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithimages)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithimages)
 
 _イメージは、を使用してプラットフォーム間で共有でき Xamarin.Forms 、プラットフォームごとに個別に読み込むことも、表示用にダウンロードすることもできます。_
 
@@ -152,11 +152,10 @@ IDE では、このプロジェクトの既定の**名前空間**とファイル
 埋め込み画像を読み込むコードは、次に示すように、**リソース ID**をメソッドに渡し [`ImageSource.FromResource`](xref:Xamarin.Forms.ImageSource.FromResource*) ます。
 
 ```csharp
-var embeddedImage = new Image {
-      Source = ImageSource.FromResource(
-        "WorkingWithImages.beach.jpg",
-        typeof(EmbeddedImages).GetTypeInfo().Assembly
-      ) };
+Image embeddedImage = new Image
+{
+    Source = ImageSource.FromResource("WorkingWithImages.beach.jpg", typeof(MyClass).GetTypeInfo().Assembly)
+};
 ```
 
 > [!NOTE]
@@ -222,7 +221,7 @@ public class ImageResourceExtension : IMarkupExtension
 using System.Reflection;
 // ...
 // NOTE: use for debugging, not in released app code!
-var assembly = typeof(EmbeddedImages).GetTypeInfo().Assembly;
+var assembly = typeof(MyClass).GetTypeInfo().Assembly;
 foreach (var res in assembly.GetManifestResourceNames())
 {
     System.Diagnostics.Debug.WriteLine("found resource: " + res);

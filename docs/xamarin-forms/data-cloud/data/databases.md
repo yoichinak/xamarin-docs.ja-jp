@@ -10,16 +10,16 @@ ms.date: 12/05/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f7cef5fd39d82cf0a4b55337835c0fe1d57b8bf9
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 2268f9034a4b09adce697f5fb7b6652baa4feed6
+ms.sourcegitcommit: 898ba8e5140ae32a7df7e07c056aff65f6fe4260
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84197589"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86226821"
 ---
 # <a name="xamarinforms-local-databases"></a>Xamarin.Formsローカルデータベース
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
 
 SQLite データベースエンジンを使用 Xamarin.Forms すると、アプリケーションは共有コードでデータオブジェクトを読み込んで保存することができます。 このサンプルアプリケーションでは、SQLite データベーステーブルを使用して todo 項目を格納します。 この記事では、共有コードで SQLite.Net を使用して、ローカルデータベースの情報を格納および取得する方法について説明します。
 
@@ -39,8 +39,10 @@ NuGet パッケージマネージャーを使用して、 **sqlite-pcl**を検�
 
 類似した名前を持つ NuGet パッケージが多数あります。 正しいパッケージには、次の属性があります。
 
-- **作成者:** Frank A. Krueger (praeclarum)
 - **ID:** sqlite-net-pcl
+- **作成者:** SQLite-net
+- **所有者:** praeclarum
+- **プロジェクト URL:**https://github.com/praeclarum/sqlite-net
 - **NuGet リンク:** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 > [!NOTE]
@@ -236,7 +238,7 @@ public static TodoItemDatabase Database
 }
 ```
 
-このプロパティを使用 Xamarin.Forms すると、コンポーネントは、 `Database` ユーザーの操作に応じてインスタンスのデータの取得と操作のメソッドを呼び出すことができます。 次に例を示します。
+このプロパティを使用 Xamarin.Forms すると、コンポーネントは、 `Database` ユーザーの操作に応じてインスタンスのデータの取得と操作のメソッドを呼び出すことができます。 以下に例を示します。
 
 ```csharp
 var saveButton = new Button { Text = "Save" };
@@ -292,5 +294,5 @@ SQLite データベースのコピーが必要になる場合があります。
 - [SQLite のドキュメント](https://www.sqlite.org/docs.html)
 - [Android での SQLite の使用](~/android/data-cloud/data-access/using-sqlite-orm.md)
 - [IOS での SQLite の使用](~/ios/data-cloud/data/using-sqlite-orm.md)
-- [タスク ベースの非同期パターン (TAP)](https://docs.microsoft.com/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)
+- [タスクベースの非同期パターン (TAP)](https://docs.microsoft.com/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)
 - [Lazy &lt; T &gt; クラス](xref:System.Lazy`1)

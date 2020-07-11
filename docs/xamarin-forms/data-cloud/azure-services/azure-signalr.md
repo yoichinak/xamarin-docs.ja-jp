@@ -9,16 +9,16 @@ ms.date: 06/07/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ffa44beb68dc845a64d8bf2a9f86f6d7e56df8f9
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4ef1f9aadd93c971adb66ede442796c2b72c2c9a
+ms.sourcegitcommit: 898ba8e5140ae32a7df7e07c056aff65f6fe4260
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139439"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86226834"
 ---
 # <a name="azure-signalr-service-with-xamarinforms"></a>Azure SignalR Service とXamarin.Forms
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresignalr/)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresignalr/)
 
 ASP.NET Core SignalR は、リアルタイム通信をアプリケーションに追加するプロセスを簡略化するアプリケーションモデルです。 Azure SignalR サービスを使用すると、スケーラブルな SignalR アプリケーションを迅速に開発およびデプロイできます。 Azure Functions は、イベントドリブンでスケーラブルなアプリケーションを形成するために組み合わせることができる、有効期間が短く、サーバーレスのコードメソッドです。
 
@@ -310,7 +310,7 @@ SignalR chat アプリケーションは、次のような iOS、Android、UWP �
 
 ## <a name="related-links"></a>関連リンク
 
-* [Xamarin と SignalR を使用したリアルタイムモバイルアプリの構築](https://mybuild.techcommunity.microsoft.com/sessions/77333/)
+* [Xamarin と SignalR を使用したリアルタイムモバイルアプリの構築](https://www.youtube.com/watch?v=AlqZ1LpUXeg)
 * [SignalR 入門](/aspnet/signalr/overview/getting-started/introduction-to-signalr)
 * [Azure Functions の概要](/azure/azure-functions/functions-overview)
 * [Azure Functions のドキュメント](/azure/azure-functions/)

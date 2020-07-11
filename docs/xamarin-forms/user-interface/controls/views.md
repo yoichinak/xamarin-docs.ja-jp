@@ -6,22 +6,22 @@ ms.assetid: AC070686-A423-4A98-8BB6-0B9F94C062CC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/16/2020
+ms.date: 07/09/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8c15626e405645d28a785c32d276860f9751ea25
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: bd503ce9fd04d80fc0f791131f67f6f1a86ae84a
+ms.sourcegitcommit: cd0c0999b53e825b60471bfbfd4144cfcd783587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84132380"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86225691"
 ---
 # <a name="xamarinforms-views"></a>Xamarin.Forms表示モード
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery/)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery/)
 
-_Xamarin 形式のビューは、クロスプラットフォームモバイルユーザーインターフェイスの構成要素です。_
+_Xamarin.Formsビューは、クロスプラットフォームモバイルユーザーインターフェイスの構成要素です。_
 
 ビューは、ラベル、ボタン、スライダーなどのユーザーインターフェイスオブジェクトであり、他のグラフィカルプログラミング環境では、*コントロール*や*ウィジェット*と呼ばれることがよくあります。 でサポートされるすべてのビューは、 Xamarin.Forms クラスから派生し [`View`](xref:Xamarin.Forms.View) ます。 複数のカテゴリに分けることができます。
 
@@ -34,21 +34,35 @@ _Xamarin 形式のビューは、クロスプラットフォームモバイル�
 | [`BoxView`](xref:Xamarin.Forms.BoxView)プロパティで色分けされた四角形を表示 [`Color`](xref:Xamarin.Forms.BoxView.Color) します。 `BoxView`の既定サイズ要求は40x40 です。 その他のサイズについては、 [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) プロパティとプロパティを割り当て [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) ます。<br /><br />[API ドキュメント](xref:Xamarin.Forms.BoxView)  / [ガイド](~/xamarin-forms/user-interface/boxview.md)  / [サンプル 1](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)、 [2](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-textdecoration)、 [3](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-listviewcolors/)、 [4](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-gameoflife)、 [5](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-dotmatrixclock)、および[6](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-boxviewclock) | [![BoxView の例](views-images/BoxView.png "BoxView の例")](views-images/BoxView-Large.png#lightbox "BoxView の例")<br />[このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/BoxViewDemoPage.cs)  /  の C# コード[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/BoxViewDemoPage.xaml) |
 |     |     |
 
+### <a name="ellipse"></a>Ellipse
+
+|     |    |
+| --- | ---|
+| [`Ellipse`](xref:Xamarin.Forms.Shapes.Ellipse)x のサイズの楕円または円を表示 [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) します。 楕円の内部を描画するには、そのプロパティをに設定 [`Fill`](xref:Xamarin.Forms.Shapes.Shape.Fill) [`Color`](xref:Xamarin.Forms.Color) します。 楕円に輪郭を付けるには、その [`Stroke`](xref:Xamarin.Forms.Shapes.Shape.Stroke) プロパティをに設定し `Color` ます。<br /><br />[API ドキュメント](xref:Xamarin.Forms.Shapes.Ellipse)  / [ガイド](~/xamarin-forms/user-interface/shapes/ellipse.md)  / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos) | [![楕円の例](views-images/Ellipse.png "楕円の例")](views-images/Ellipse-Large.png#lightbox "楕円の例")<br />[このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/EllipseDemoPage.cs)  /  の C# コード[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/EllipseDemoPage.xaml) |
+|     |     |
+
 ### <a name="expander"></a>Expander
 
 |     |     |
 | --- | --- |
-| `Expander`コンテンツをホストするための拡張可能なコンテナーを提供し、ヘッダーとコンテンツで構成されます。 プロパティをヘッダーとして表示されるに設定し、プロパティを、 `Header` [`View`](xref:Xamarin.Forms.View) タップに `Content` [`View`](xref:Xamarin.Forms.View) よってヘッダーが展開されるときに表示されるに設定します。<br /><br />[ガイド](~/xamarin-forms/user-interface/expander.md)  / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-expanderdemos) | [![エキスパンダーの例](views-images/Expander.png "エキスパンダーの例")](views-images/Expander-Large.png#lightbox "エキスパンダーの例")<br /> [このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ExpanderDemoPage.cs)  /  の C# コード[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ExpanderDemoPage.xaml) |
+| [`Expander`](xref:Xamarin.Forms.Expander)コンテンツをホストするための拡張可能なコンテナーを提供し、ヘッダーとコンテンツで構成されます。 プロパティをヘッダーとして表示されるに設定し、プロパティを、 `Header` [`View`](xref:Xamarin.Forms.View) タップに `Content` [`View`](xref:Xamarin.Forms.View) よってヘッダーが展開されるときに表示されるに設定します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.Expander)  / [ガイド](~/xamarin-forms/user-interface/expander.md)  / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-expanderdemos) | [![エキスパンダーの例](views-images/Expander.png "エキスパンダーの例")](views-images/Expander-Large.png#lightbox "エキスパンダーの例")<br /> [このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ExpanderDemoPage.cs)  /  の C# コード[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ExpanderDemoPage.xaml) |
 |     |     |
 
-### <a name="label"></a>ラベル
+### <a name="label"></a>Label
 
 |     |     |
 | --- | --- |
 | [`Label`](xref:Xamarin.Forms.Label)単一行のテキスト文字列またはテキストの複数行のブロックを、定数または変数の書式設定を使用して表示します。 プロパティを [`Text`](xref:Xamarin.Forms.Label.Text) 定数形式の文字列に設定するか、プロパティを [`FormattedText`](xref:Xamarin.Forms.Label.FormattedText) 変数の書式設定のオブジェクトに設定し [`FormattedString`](xref:Xamarin.Forms.FormattedString) ます。<br /><br />[API ドキュメント](xref:Xamarin.Forms.Label)  / [ガイド](~/xamarin-forms/user-interface/text/label.md)  / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text) | [![ラベルの例](views-images/Label.png "ラベルの例")](views-images/Label-Large.png#lightbox "ラベルの例")<br /> [このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/LabelDemoPage.cs)  /  の C# コード[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/LabelDemoPage.xaml) |
 |     |     |
 
-### <a name="image"></a>Image
+### <a name="line"></a>折れ線
+
+|     |     |
+| --- | --- |
+| [`Line`](xref:Xamarin.Forms.Shapes.Line)開始点から終点までの線を表示します。 始点はプロパティとプロパティによって表されますが、 [`X1`](xref:Xamarin.Forms.Shapes.Line.X1) [`Y1`](xref:Xamarin.Forms.Shapes.Line.Y1) エンドポイントはプロパティとプロパティによって表され [`X2`](xref:Xamarin.Forms.Shapes.Line.X2) [`Y2`](xref:Xamarin.Forms.Shapes.Line.Y2) ます。 線の色を設定するには、そのプロパティをに設定 [`Stroke`](xref:Xamarin.Forms.Shapes.Shape.Stroke) [`Color`](xref:Xamarin.Forms.Color) します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.Shapes.Line)  / [ガイド](~/xamarin-forms/user-interface/shapes/line.md)  / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos) | [![行の例](views-images/Line.png "行の例")](views-images/Line-Large.png#lightbox "行の例")<br />[このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/LineDemoPage.cs)  /  の C# コード[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/LineDemoPage.xaml) |
+|     |     |
+
+### <a name="image"></a>画像
 
 |     |     |
 | --- | --- |
@@ -76,6 +90,34 @@ _Xamarin 形式のビューは、クロスプラットフォームモバイル�
 | [`OpenGLView`](xref:Xamarin.Forms.OpenGLView)iOS および Android プロジェクトの OpenGL グラフィックスを表示します。 ユニバーサル Windows プラットフォームはサポートされていません。 IOS および Android プロジェクトには、 **OpenTK-1.0**アセンブリまたは**OpenTK** version 1.0.0.0 アセンブリへの参照が必要です。 `OpenGLView`共有プロジェクトでの使用が簡単です。.NET Standard ライブラリで使用されている場合は、(サンプルコードに示すように) 依存関係サービスも必要になります。<br /><br />これはに組み込まれている唯一のグラフィックス機能です Xamarin.Forms が Xamarin.Forms 、アプリケーションは [`SkiaSharp`](~/xamarin-forms/user-interface/graphics/skiasharp/index.md) 、、またはを使用してグラフィックスをレンダリングすることもでき [`UrhoSharp`](~/xamarin-forms/user-interface/graphics/urhosharp.md) ます。<br /><br />[API ドキュメント](xref:Xamarin.Forms.OpenGLView)<br /><br /> | [![OpenGLView の例](views-images/OpenGLView.png "OpenGLView の例")](views-images/OpenGLView-Large.png#lightbox "OpenGLView の例")<br />[このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/OpenGLViewDemoPage.cs)  /  の C# コード[分離コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml.cs)付き[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/OpenGLViewDemoPage.xaml) |
 |     |     |
 
+### <a name="path"></a>パス
+
+|     |     |
+| --- | --- |
+| [`Path`](xref:Xamarin.Forms.Shapes.Path)曲線と複雑な図形を表示します。 プロパティは、 [`Data`](xref:Xamarin.Forms.Shapes.Path.Data) 描画される図形を指定します。 図形の色を設定するには、そのプロパティをに設定 [`Stroke`](xref:Xamarin.Forms.Shapes.Shape.Stroke) [`Color`](xref:Xamarin.Forms.Color) します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.Shapes.Path)  / [ガイド](~/xamarin-forms/user-interface/shapes/path.md)  / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos) | [![パスの例](views-images/Path.png "パスの例")](views-images/Path-Large.png#lightbox "パスの例")<br />[このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/PathDemoPage.cs)  /  の C# コード[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/PathDemoPage.xaml) |
+|     |     |
+
+### <a name="polygon"></a>多角形
+
+|     |     |
+| --- | --- |
+| [`Polygon`](xref:Xamarin.Forms.Shapes.Polygon)多角形を表示します。 [`Points`](xref:Xamarin.Forms.Shapes.Polygon.Points)プロパティは多角形の頂点を指定し、 [`FillRule`](xref:Xamarin.Forms.Shapes.Polygon.FillRule) プロパティは多角形の内部塗りつぶしを決定する方法を指定します。 多角形の内部を描画するには、そのプロパティをに設定 [`Fill`](xref:Xamarin.Forms.Shapes.Shape.Fill) [`Color`](xref:Xamarin.Forms.Color) します。 多角形に輪郭を付けるには、その [`Stroke`](xref:Xamarin.Forms.Shapes.Shape.Stroke) プロパティをに設定 `Color` します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.Shapes.Polygon)  / [ガイド](~/xamarin-forms/user-interface/shapes/polygon.md)  / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos) | [![Polygon の例](views-images/Polygon.png "Polygon の例")](views-images/Polygon-Large.png#lightbox "Polygon の例")<br />[このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/PolygonDemoPage.cs)  /  の C# コード[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/PolygonDemoPage.xaml) |
+|     |     |
+
+### <a name="polyline"></a>ポリライン
+
+|     |     |
+| --- | --- |
+| [`Polyline`](xref:Xamarin.Forms.Shapes.Polyline)接続された一連の直線を表示します。 プロパティは、 [`Points`](xref:Xamarin.Forms.Shapes.Polygon.Points) ポリラインの頂点を指定し [`FillRule`](xref:Xamarin.Forms.Shapes.Polygon.FillRule) ます。プロパティは、ポリラインの内部塗りつぶしを決定する方法を指定します。 ポリラインの内部を描画するには、そのプロパティをに設定 [`Fill`](xref:Xamarin.Forms.Shapes.Shape.Fill) [`Color`](xref:Xamarin.Forms.Color) します。 ポリラインに輪郭を付けるには、その [`Stroke`](xref:Xamarin.Forms.Shapes.Shape.Stroke) プロパティをに設定 `Color` します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.Shapes.Polyline)  / [ガイド](~/xamarin-forms/user-interface/shapes/polyline.md)  / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos) | [![ポリラインの例](views-images/Polyline.png "ポリラインの例")](views-images/Polyline-Large.png#lightbox "ポリラインの例")<br />[このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/PolylineDemoPage.cs)  /  の C# コード[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/PolylineDemoPage.xaml) |
+|     |     |
+
+### <a name="rectangle"></a>Rectangle
+
+|     |     |
+| --- | --- |
+| [`Rectangle`](xref:Xamarin.Forms.Shapes.Rectangle)四角形または正方形を表示します。 四角形の内部を描画するには、そのプロパティをに設定 [`Fill`](xref:Xamarin.Forms.Shapes.Shape.Fill) [`Color`](xref:Xamarin.Forms.Color) します。 四角形に輪郭を付けるには、その [`Stroke`](xref:Xamarin.Forms.Shapes.Shape.Stroke) プロパティをに設定し `Color` ます。<br /><br />[API ドキュメント](xref:Xamarin.Forms.Shapes.Rectangle)  / [ガイド](~/xamarin-forms/user-interface/shapes/rectangle.md)  / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos) | [![四角形の例](views-images/Rectangle.png "四角形の例")](views-images/Rectangle-Large.png#lightbox "四角形の例")<br />[このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/RectangleDemoPage.cs)  /  の C# コード[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/RectangleDemoPage.xaml) |
+|     |     |
+
 ### <a name="webview"></a>WebView
 
 |     |     |
@@ -96,21 +138,21 @@ _Xamarin 形式のビューは、クロスプラットフォームモバイル�
 
 |     |     |
 | --- | --- |
-| `ImageButton`は、イメージを表示し、 `Clicked` 押されたときにイベントを発生させる四角形のオブジェクトです。<br /><br /> [ガイド](~/xamarin-forms/user-interface/imagebutton.md)  / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery) | [![ImageButton の例](views-images/ImageButton.png "ImageButton の例")](views-images/ImageButton-Large.png#lightbox "ImageButton の例")<br /> [このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ImageButtonDemoPage.cs)  /  の C# コード[分離コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ImageButtonDemoPage.xaml.cs)付き[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ImageButtonDemoPage.xaml) |
+| [`ImageButton`](xref:Xamarin.Forms.ImageButton)は、イメージを表示し、 `Clicked` 押されたときにイベントを発生させる四角形のオブジェクトです。<br /><br />[API ドキュメント](xref:Xamarin.Forms.ImageButton)  / [ガイド](~/xamarin-forms/user-interface/imagebutton.md)  / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery) | [![ImageButton の例](views-images/ImageButton.png "ImageButton の例")](views-images/ImageButton-Large.png#lightbox "ImageButton の例")<br /> [このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/ImageButtonDemoPage.cs)  /  の C# コード[分離コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ImageButtonDemoPage.xaml.cs)付き[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/ImageButtonDemoPage.xaml) |
 |     |     |
 
 ### <a name="radiobutton"></a>RadioButton
 
 |     |     |
 | --- | --- |
-| `RadioButton`セットから1つのオプションを選択できるようにし `CheckedChanged` ます。選択が発生したときにイベントを発生させます。<br /><br />[ガイド](~/xamarin-forms/user-interface/radiobutton.md)  / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-radiobuttondemos/) | [![RadioButton の例](views-images/RadioButton.png "RadioButton の例")](views-images/RadioButton-Large.png#lightbox "RadioButton の例")<br /> [このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/RadioButtonDemoPage.cs)  /  の C# コード[分離コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/RadioButtonDemoPage.xaml.cs)付き[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/RadioButtonDemoPage.xaml) |
+| [`RadioButton`](xref:Xamarin.Forms.RadioButton)セットから1つのオプションを選択できるようにし `CheckedChanged` ます。選択が発生したときにイベントを発生させます。<br /><br />[API ドキュメント](xref:Xamarin.Forms.RadioButton)  / [ガイド](~/xamarin-forms/user-interface/radiobutton.md)  / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-radiobuttondemos/) | [![RadioButton の例](views-images/RadioButton.png "RadioButton の例")](views-images/RadioButton-Large.png#lightbox "RadioButton の例")<br /> [このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/RadioButtonDemoPage.cs)  /  の C# コード[分離コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/RadioButtonDemoPage.xaml.cs)付き[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/RadioButtonDemoPage.xaml) |
 |     |     |
 
 ### <a name="refreshview"></a>RefreshView
 
 |     |     |
 | --- | --- |
-| `RefreshView`は、スクロール可能なコンテンツのプルから更新機能を提供するコンテナーコントロールです。 `ICommand`更新がトリガーされたときに、プロパティによって定義されたが `Command` 実行され、 `IsRefreshing` プロパティはコントロールの現在の状態を示します。<br /><br /> [ガイド](~/xamarin-forms/user-interface/refreshview.md)  / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery) | [![RefreshView の例](views-images/RefreshView.png "RefreshView の例")](views-images/RefreshView-Large.png#lightbox "RefreshView の例")<br /> [このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/RefreshViewDemoPage.cs)  /  の C# コード[分離コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/RefreshViewDemoPage.xaml.cs)付き[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/RefreshViewDemoPage.xaml) |
+| [`RefreshView`](xref:Xamarin.Forms.RefreshView)は、スクロール可能なコンテンツのプルから更新機能を提供するコンテナーコントロールです。 `ICommand`更新がトリガーされたときに、プロパティによって定義されたが `Command` 実行され、 `IsRefreshing` プロパティはコントロールの現在の状態を示します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.RefreshView)  / [ガイド](~/xamarin-forms/user-interface/refreshview.md)  / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery) | [![RefreshView の例](views-images/RefreshView.png "RefreshView の例")](views-images/RefreshView-Large.png#lightbox "RefreshView の例")<br /> [このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/RefreshViewDemoPage.cs)  /  の C# コード[分離コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/RefreshViewDemoPage.xaml.cs)付き[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/RefreshViewDemoPage.xaml) |
 |     |     |
 
 ### <a name="searchbar"></a>SearchBar
@@ -124,7 +166,7 @@ _Xamarin 形式のビューは、クロスプラットフォームモバイル�
 
 |     |     |
 | --- | --- |
-| `SwipeView`は、コンテンツの項目をラップするコンテナーコントロールであり、スワイプジェスチャによって表示されるコンテキストメニュー項目を提供します。 各メニュー項目は、項目が `SwipeItem` タップされたときにを実行するプロパティを持つによって表され `Command` `ICommand` ます。<br /><br /> [ガイド](~/xamarin-forms/user-interface/swipeview.md)  / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery) | [![SwipeView の例](views-images/SwipeView.png "SwipeView の例")](views-images/SwipeView-Large.png#lightbox "SwipeView の例")<br /> [このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwipeViewDemoPage.cs)  /  の C# コード[分離コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwipeViewDemoPage.xaml.cs)付き[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwipeViewDemoPage.xaml) |
+| [`SwipeView`](xref:Xamarin.Forms.SwipeView)は、コンテンツの項目をラップするコンテナーコントロールであり、スワイプジェスチャによって表示されるコンテキストメニュー項目を提供します。 各メニュー項目は、項目が `SwipeItem` タップされたときにを実行するプロパティを持つによって表され `Command` `ICommand` ます。<br /><br />[API ドキュメント](xref:Xamarin.Forms.SwipeView)  / [ガイド](~/xamarin-forms/user-interface/swipeview.md)  / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery) | [![SwipeView の例](views-images/SwipeView.png "SwipeView の例")](views-images/SwipeView-Large.png#lightbox "SwipeView の例")<br /> [このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/SwipeViewDemoPage.cs)  /  の C# コード[分離コード](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwipeViewDemoPage.xaml.cs)付き[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/SwipeViewDemoPage.xaml) |
 |     |     |
 
 ## <a name="views-for-setting-values"></a>値を設定するためのビュー
@@ -133,7 +175,7 @@ _Xamarin 形式のビューは、クロスプラットフォームモバイル�
 
 |     |     |
 | --- | --- |
-| `CheckBox`ユーザーは、チェックボックスをオンまたはオフにできるボタンの種類を使用してブール値を選択できます。 プロパティはの `IsChecked` 状態です `CheckBox` 。イベントは、状態が変化し `CheckedChanged` たときに発生します。<br /><br />API ドキュメント/[ガイド](~/xamarin-forms/user-interface/checkbox.md)の  /  [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos) | [![CheckBox の例](views-images/CheckBox.png "CheckBox の例")](views-images/CheckBox-Large.png#lightbox "CheckBox の例")<br />[このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CheckBoxPage.cs)  /  の C# コード[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CheckBoxPage.xaml) |
+| [`CheckBox`](xref:Xamarin.Forms.CheckBox)ユーザーは、チェックボックスをオンまたはオフにできるボタンの種類を使用してブール値を選択できます。 プロパティはの `IsChecked` 状態です `CheckBox` 。イベントは、状態が変化し `CheckedChanged` たときに発生します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.CheckBox)  / [ガイド](~/xamarin-forms/user-interface/checkbox.md)  / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos) | [![CheckBox の例](views-images/CheckBox.png "CheckBox の例")](views-images/CheckBox-Large.png#lightbox "CheckBox の例")<br />[このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/CheckBoxPage.cs)  /  の C# コード[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/CheckBoxPage.xaml) |
 |     |     |
 
 ### <a name="slider"></a>Slider
@@ -225,7 +267,7 @@ _Xamarin 形式のビューは、クロスプラットフォームモバイル�
 
 |     |     |
 | --- | --- |
-| `IndicatorView`内の項目の数を表すインジケーターを表示 `CarouselView` します。 プロパティを `CarouselView.IndicatorView` オブジェクトに設定して、の `IndicatorView` インジケーターを表示 `CarouselView` します。 <br /><br />[ガイド](~/xamarin-forms/user-interface/indicatorview.md)  / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-indicatorviewdemos/) | [![IndicatorView の例](views-images/IndicatorView.png "IndicatorView の例")](views-images/IndicatorView-Large.png#lightbox "IndicatorView の例")<br />[このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/IndicatorViewDemoPage.cs)  /  の C# コード[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/IndicatorViewDemoPage.xaml) |
+| [`IndicatorView`](xref:Xamarin.Forms.IndicatorView)内の項目の数を表すインジケーターを表示 `CarouselView` します。 プロパティを `CarouselView.IndicatorView` オブジェクトに設定して、の `IndicatorView` インジケーターを表示 `CarouselView` します。<br /><br />[API ドキュメント](xref:Xamarin.Forms.IndicatorView)  / [ガイド](~/xamarin-forms/user-interface/indicatorview.md)  / [サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-indicatorviewdemos/) | [![IndicatorView の例](views-images/IndicatorView.png "IndicatorView の例")](views-images/IndicatorView-Large.png#lightbox "IndicatorView の例")<br />[このページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/CodeExamples/IndicatorViewDemoPage.cs)  /  の C# コード[XAML ページ](https://github.com/xamarin/xamarin-forms-samples/blob/master/FormsGallery/FormsGallery/FormsGallery/XamlExamples/IndicatorViewDemoPage.xaml) |
 |     |     |
 
 ### <a name="listview"></a>ListView

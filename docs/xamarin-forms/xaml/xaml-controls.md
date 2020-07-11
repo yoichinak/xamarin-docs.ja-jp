@@ -7,20 +7,20 @@ ms.assetid: 639BD392-1496-41BB-BB09-7652273AC9D8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/17/2020
+ms.date: 07/09/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 445ef85f661d945bda25203f35dea787e64dc9b0
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: fd871b883d843fae039f6bdabac5812e90c451ca
+ms.sourcegitcommit: cd0c0999b53e825b60471bfbfd4144cfcd783587
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138425"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86225553"
 ---
 # <a name="xaml-controls"></a>XAML コントロール
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
 
 ビューは、ラベル、ボタン、スライダーなどのユーザーインターフェイスオブジェクトであり、他のグラフィカルプログラミング環境では、*コントロール*や*ウィジェット*と呼ばれることがよくあります。 でサポートされるすべてのビューは、 Xamarin.Forms クラスから派生し [`View`](xref:Xamarin.Forms.View) ます。
 
@@ -30,12 +30,18 @@ ms.locfileid: "84138425"
 
 |     |     |
 | --- | --- |
-| <h3>BoxView</h3>特定の色の四角形を表示します。<p align="center">![BoxView のスクリーンショット](xaml-controls-images/BoxView.png "BoxView")</p>[API](xref:Xamarin.Forms.BoxView)  / [ガイド](~/xamarin-forms/user-interface/boxview.md) | <pre valign="center">&lt;BoxView Color="Accent"<br />         WidthRequest="150"<br />         HeightRequest="150"<br />         HorizontalOptions="Center"&gt;</pre></p> |
-| <h3>Expander</h3>コンテンツをホストするための拡張可能なコンテナーを提供します。<p align="center">![展開コントロールのスクリーンショット](xaml-controls-images/Expander.png "Expander")</p>[ルビ](~/xamarin-forms/user-interface/expander.md) | <pre>&lt;Expander&gt;<br />    &lt;Expander.Header&gt;<br />        &lt;Label Text=&quot;Baboon&quot; /&gt;<br />    &lt;/Expander.Header&gt;<br />    &lt;Image Source=&quot;Baboon.png&quot;<br />           Aspect=&quot;AspectFill&quot; /&gt;<br />&lt;/Expander&gt;</pre></p> |
-| <h3>Image</h3>ビットマップを表示します。<p align="center">![イメージのスクリーンショット](xaml-controls-images/Image.png "Image")</p>[API](xref:Xamarin.Forms.Image)  / [ガイド](~/xamarin-forms/user-interface/images.md) | <pre>&lt;Image Source="https://aka.ms/campus.jpg"<br />       Aspect="AspectFit"<br />       HorizontalOptions="Center" /&gt;</pre></p> |
-| <h3>ラベル</h3>1行以上のテキストを表示します。<p align="center">![ラベルのスクリーンショット](xaml-controls-images/Label.png "ラベル")</p>[API](xref:Xamarin.Forms.Label)  / [ガイド](~/xamarin-forms/user-interface/text/label.md) | <p valign="center"><pre>&lt;Label Text="Hello, Xamarin.Forms!"<br />       FontSize="Large"<br />       FontAttributes="Italic"<br />       HorizontalTextAlignment="Center" /&gt;</pre></p> |
+| <h3>BoxView</h3>特定の色の四角形を表示します。<p align="center">![BoxView のスクリーンショット](xaml-controls-images/BoxView.png "BoxView")</p>[API](xref:Xamarin.Forms.BoxView)  / [ガイド](~/xamarin-forms/user-interface/boxview.md) | <p valign="center"><pre>&lt;BoxView Color="Accent"<br />         WidthRequest="150"<br />         HeightRequest="150"<br />         HorizontalOptions="Center"&gt;</pre></p> |
+| <h3>Ellipse</h3>楕円または円を表示します。<p align="center">![楕円のスクリーンショット](xaml-controls-images/Ellipse.png "Ellipse")</p>[API](xref:Xamarin.Forms.Shapes.Ellipse)  / [ガイド](~/xamarin-forms/user-interface/shapes/ellipse.md) | <p valign="center"><pre>&lt;Ellipse Fill="Red"<br />         WidthRequest="150"<br />         HeightRequest="50"<br />         HorizontalOptions="Center" /&gt;</pre></p> |
+| <h3>Expander</h3>コンテンツをホストするための拡張可能なコンテナーを提供します。<p align="center">![展開コントロールのスクリーンショット](xaml-controls-images/Expander.png "Expander")</p>[ルビ](~/xamarin-forms/user-interface/expander.md) | <pre>&lt;Expander&gt;<br />    &lt;Expander.Header&gt;<br />        &lt;Label Text="Baboon" /&gt;<br />    &lt;/Expander.Header&gt;<br />    &lt;Image Source="Baboon.png"<br />           Aspect="AspectFill" /&gt;<br />&lt;/Expander&gt;</pre></p> |
+| <h3>画像</h3>ビットマップを表示します。<p align="center">![イメージのスクリーンショット](xaml-controls-images/Image.png "Image")</p>[API](xref:Xamarin.Forms.Image)  / [ガイド](~/xamarin-forms/user-interface/images.md) | <pre>&lt;Image Source="https://aka.ms/campus.jpg"<br />       Aspect="AspectFit"<br />       HorizontalOptions="Center" /&gt;</pre></p> |
+| <h3>Label</h3>1行以上のテキストを表示します。<p align="center">![ラベルのスクリーンショット](xaml-controls-images/Label.png "ラベル")</p>[API](xref:Xamarin.Forms.Label)  / [ガイド](~/xamarin-forms/user-interface/text/label.md) | <p valign="center"><pre>&lt;Label Text="Hello, Xamarin.Forms!"<br />       FontSize="Large"<br />       FontAttributes="Italic"<br />       HorizontalTextAlignment="Center" /&gt;</pre></p> |
+| <h3>折れ線</h3>線を表示します。<p align="center">![線のスクリーンショット](xaml-controls-images/Line.png "折れ線")</p>[API](xref:Xamarin.Forms.Shapes.Line)  / [ガイド](~/xamarin-forms/user-interface/shapes/line.md) | <p valign="center"><pre>&lt;Line X1="40"<br />      Y1="0"<br />      X2="0"<br />      Y2="120"<br />      Stroke="Red"<br />      HorizontalOptions="Center" /&gt;</pre></p> |
 | <h3>マップ</h3>マップを表示します。<p align="center">![マップのスクリーンショット](xaml-controls-images/Map.png "マップ")</p>[API](xref:Xamarin.Forms.Maps.Map)  / [ガイド](~/xamarin-forms/user-interface/map/index.md) | <p valign="center"><pre>&lt;maps:Map ItemsSource="{Binding Locations}" /&gt;</pre></p> |
 | <h3>MediaElement</h3>ビデオまたはオーディオを再生します。<p align="center">![MediaElement のスクリーンショット](xaml-controls-images/MediaElement.png "MediaELement")</p>[API](xref:Xamarin.Forms.MediaElement)  / [ガイド](~/xamarin-forms/user-interface/mediaelement.md) | <p valign="center"><pre>&lt;MediaElement Source="https://sec.ch9.ms/ch9/XamarinShow_mid.mp4"<br />              AutoPlay="True"<br />              ShowsPlaybackControls="True" /&gt;</pre></p> |
+| <h3>パス</h3>曲線と複雑な図形を表示します。<p align="center">![パスのスクリーンショット](xaml-controls-images/Path.png "パス")</p>[API](xref:Xamarin.Forms.Shapes.Path)  / [ガイド](~/xamarin-forms/user-interface/shapes/path.md) | <p valign="center"><pre>&lt;Path Stroke="Black"<br />      Aspect="Uniform"<br />      HorizontalOptions="Center"<br />      HeightRequest="100"<br />      WidthRequest="100"<br />      Data="M13.9,16.2<br />            L32,16.2 32,31.9 13.9,30.1Z<br />            M0,16.2<br />            L11.9,16.2 11.9,29.9 0,28.6Z<br />            M11.9,2<br />            L11.9,14.2 0,14.2 0,3.3Z<br />            M32,0<br />            L32,14.2 13.9,14.2 13.9,1.8Z" /&gt;</pre></p> |
+| <h3>多角形</h3>多角形を表示します。<p align="center">![多角形のスクリーンショット](xaml-controls-images/Polygon.png "多角形")</p>[API](xref:Xamarin.Forms.Shapes.Polygon)  / [ガイド](~/xamarin-forms/user-interface/shapes/polygon.md) | <p valign="center"><pre>&lt;Polygon Points="0 48, 0 144, 96 150, 100 0, 192 0, 192 96,<br/>                 50 96, 48 192, 150 200 144 48"<br />         Fill="Blue"<br />         Stroke="Red"<br />         StrokeThickness="3"<br />         HorizontalOptions="Center" /&gt;</pre></p> |
+| <h3>ポリライン</h3>接続された一連の直線を表示します。<p align="center">![ポリラインのスクリーンショット](xaml-controls-images/Polyline.png "ポリライン")</p>[API](xref:Xamarin.Forms.Shapes.Polyline)  / [ガイド](~/xamarin-forms/user-interface/shapes/Polyline.md) | <p valign="center"><pre>&lt;Polyline Points="0,0 10,30, 15,0 18,60 23,30 35,30 40,0<br />                  43,60 48,30 100,30"<br />          Stroke="Red"<br />          HorizontalOptions="Center" /&gt;</pre></p> |
+| <h3>Rectangle</h3>四角形または正方形を表示します。<p align="center">![四角形のスクリーンショット](xaml-controls-images/Rectangle.png "Rectangle")</p>[API](xref:Xamarin.Forms.Shapes.Rectangle)  / [ガイド](~/xamarin-forms/user-interface/shapes/rectangle.md) | <p valign="center"><pre>&lt;Rectangle Fill="Red"<br />           WidthRequest="150"<br />           HeightRequest="50"<br />           HorizontalOptions="Center" /&gt;</pre></p> |  
 | <h3>WebView</h3>Web ページまたは HTML コンテンツを表示します。<p align="center">![WebView のスクリーンショット](xaml-controls-images/WebView.png "WebView")</p>[API](xref:Xamarin.Forms.WebView)  / [ガイド](~/xamarin-forms/user-interface/webview.md) | <p valign="center"><pre>&lt;WebView Source="https://docs.microsoft.com/xamarin/"<br/>         VerticalOptions="FillAndExpand" /&gt;</pre></p> |
 |     |     |
 
@@ -45,9 +51,9 @@ ms.locfileid: "84138425"
 | --- | --- |
 | <h3>Button</h3>四角形のオブジェクトにテキストを表示します。<p align="center">![ボタンのスクリーンショット](xaml-controls-images/Button.png "Button")</p>[API](xref:Xamarin.Forms.Button)  / [ガイド](~/xamarin-forms/user-interface/button.md) | <p valign="center"><pre>&lt;Button Text="Click Me!"<br />        Font="Large"<br />        BorderWidth="1"<br />        HorizontalOptions="Center"<br />        VerticalOptions="CenterAndExpand"<br />        Clicked="OnButtonClicked" /&gt;</pre></p> |
 | <h3>ImageButton</h3>四角形のオブジェクトに画像を表示します。<p align="center">![ImageButton のスクリーンショット](xaml-controls-images/ImageButton.png "ImageButton")</p>[API](xref:Xamarin.Forms.ImageButton)  / [ガイド](~/xamarin-forms/user-interface/imagebutton.md) | <p valign="center"><pre>&lt;ImageButton Source="XamarinLogo.png"<br />             HorizontalOptions="Center"<br />             VerticalOptions="CenterAndExpand"<br />             Clicked="OnImageButtonClicked" /&gt;</pre></p> |
-| <h3>RadioButton</h3>セットから1つのオプションを選択できるようにします。<p align="center">![RadioButton のスクリーンショット](xaml-controls-images/RadioButton.png "RadioButton")</p>[ルビ](~/xamarin-forms/user-interface/radiobutton.md) | <p valign="center"><pre>&lt;RadioButton Text=&quot;Pineapple&quot;<br/>             CheckedChanged=&quot;OnRadioButtonCheckedChanged&quot; /&gt;</pre></p> |
+| <h3>RadioButton</h3>セットから1つのオプションを選択できるようにします。<p align="center">![RadioButton のスクリーンショット](xaml-controls-images/RadioButton.png "RadioButton")</p>[ルビ](~/xamarin-forms/user-interface/radiobutton.md) | <p valign="center"><pre>&lt;RadioButton Text="Pineapple"<br/>             CheckedChanged="OnRadioButtonCheckedChanged" /&gt;</pre></p> |
 | <h3>RefreshView</h3>スクロール可能なコンテンツのプルから更新機能を提供します。<p align="center">![RefreshView のスクリーンショット](xaml-controls-images/RefreshView.png "RefreshView")</p>[ルビ](~/xamarin-forms/user-interface/refreshview.md) | <p valign="center"><pre>&lt;RefreshView IsRefreshing="{Binding IsRefreshing}"<br />             Command="{Binding RefreshCommand}" &gt;<br />    &lt;!-- Scrollable control goes here --&gt;<br />&lt;/RefreshView&gt;</pre></p> |
-| <h3>SearchBar</h3> 検索を実行するために使用するユーザー入力を受け入れます。<p align="center">![SearchBar のスクリーンショット](xaml-controls-images/SearchBar.png "SearchBar")</p>[ルビ](~/xamarin-forms/user-interface/searchbar.md) | <p valign="center"><pre>&lt;SearchBar Placeholder=&quot;Enter search term&quot;<br />           SearchButtonPressed="OnSearchBarButtonPressed" /&gt;</pre></p> |
+| <h3>SearchBar</h3> 検索を実行するために使用するユーザー入力を受け入れます。<p align="center">![SearchBar のスクリーンショット](xaml-controls-images/SearchBar.png "SearchBar")</p>[ルビ](~/xamarin-forms/user-interface/searchbar.md) | <p valign="center"><pre>&lt;SearchBar Placeholder="Enter search term"<br />           SearchButtonPressed="OnSearchBarButtonPressed" /&gt;</pre></p> |
 | <h3>SwipeView</h3> スワイプジェスチャによって表示されるコンテキストメニュー項目を提供します。<p align="center">![SwipeView のスクリーンショット](xaml-controls-images/SwipeView.png "SwipeView")</p>[ルビ](~/xamarin-forms/user-interface/swipeview.md) | <p valign="center"><pre>&lt;SwipeView&gt;<br />    &lt;SwipeView.LeftItems&gt;<br />        &lt;SwipeItems&gt;<br />            &lt;SwipeItem Text="Delete"<br />                       IconImageSource="delete.png"<br />                       BackgroundColor="LightPink"<br />                       Invoked="OnDeleteInvoked" /&gt;<br />        &lt;/SwipeItems&gt;<br />    &lt;/SwipeView.LeftItems&gt;<br />    &lt;!-- Content --&gt;<br />&lt;/SwipeView&gt;</pre></p> |
 |     |     |
 
@@ -68,7 +74,7 @@ ms.locfileid: "84138425"
 |     |     |
 | --- | --- |
 | <h3>入力</h3>1行のテキストを入力して編集できるようにします。<p align="center">![エントリのスクリーンショット](xaml-controls-images/Entry.png "入力")</p>[API](xref:Xamarin.Forms.Entry)  / [ガイド](~/xamarin-forms/user-interface/text/entry.md) | <p valign="center"><pre>&lt;Entry Keyboard="Email"<br />       Placeholder="Enter email address"<br />       VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
-| <h3>エディター</h3>複数行のテキストを入力および編集できます。<p align="center">![エディターのスクリーンショット](xaml-controls-images/Editor.png "ラベル")</p>[API](xref:Xamarin.Forms.Editor)  / [ガイド](~/xamarin-forms/user-interface/text/editor.md) | <p valign="center"><pre>&lt;Editor VerticalOptions="FillAndExpand" /&gt;</pre></p> |
+| <h3>エディター</h3>複数行のテキストを入力および編集できます。<p align="center">![エディターのスクリーンショット](xaml-controls-images/Editor.png "Label")</p>[API](xref:Xamarin.Forms.Editor)  / [ガイド](~/xamarin-forms/user-interface/text/editor.md) | <p valign="center"><pre>&lt;Editor VerticalOptions="FillAndExpand" /&gt;</pre></p> |
 |     |     |
 
 ## <a name="views-to-indicate-activity"></a>アクティビティを示すためのビュー

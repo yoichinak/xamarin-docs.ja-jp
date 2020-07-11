@@ -1,5 +1,5 @@
 ---
-title: 添付プロパティ
+title: アタッチされるプロパティ
 description: この記事では、添付プロパティの概要を説明し、それらを作成して使用する方法を示します。
 ms.prod: xamarin
 ms.assetid: 6E9DCDC3-A0E4-46A6-BAA9-4FEB6DF8A5A8
@@ -10,16 +10,16 @@ ms.date: 06/02/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1f26a4415a75b2b02fd7d6893e366ef81156f077
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 1277b3cd875c1b4e05e45202a8e30ef2ff93972a
+ms.sourcegitcommit: 898ba8e5140ae32a7df7e07c056aff65f6fe4260
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138191"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86226795"
 ---
-# <a name="attached-properties"></a>添付プロパティ
+# <a name="attached-properties"></a>アタッチされるプロパティ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
 
 
 添付プロパティを使用すると、オブジェクトは、独自のクラスで定義されていないプロパティの値を割り当てることができます。 たとえば、子要素は添付プロパティを使用して、ユーザーインターフェイスにどのように表示されるかを親要素に知らせることができます。 コントロールでは、 [`Grid`](xref:Xamarin.Forms.Grid) `Grid.Row` プロパティと添付プロパティを設定することによって、子の行と列を指定でき `Grid.Column` ます。 `Grid.Row`と `Grid.Column` は、 `Grid` それ自体ではなく、の子である要素に設定されるため、添付プロパティです `Grid` 。
@@ -44,6 +44,9 @@ ms.locfileid: "84138191"
 
 添付プロパティを作成するには、 `public static readonly` 型のプロパティを宣言し [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ます。 バインド可能なプロパティは、[ `BindableProperty.CreateAttached` ] (xref: のいずれかの戻り値に設定する必要があります Xamarin.Forms 。BindableProperty. CreateAttached られた (System.string, System.string, System.string, Xamarin.Forms system.object,)BindingMode、 Xamarin.Forms 。BindableProperty. ValidateValueDelegate、 Xamarin.Forms 。BindableProperty。 BindingPropertyChangedDelegate、 Xamarin.Forms 。BindableProperty。 Bindingpropertydelegate、 Xamarin.Forms 。BindableProperty. CoerceValueDelegate、 Xamarin.Forms 。BindableProperty. CreateDefaultValueDelegate)) メソッドオーバーロード。 宣言は、所有しているクラスの本体内で、メンバー定義の外部にある必要があります。
 
+> [!IMPORTANT]
+> 添付プロパティの名前付け規則は、添付プロパティの識別子が、メソッドに指定されたプロパティ名と一致する必要があり `CreateAttached` 、"property" が追加されていることです。
+
 添付プロパティの例を次のコードに示します。
 
 ```csharp
@@ -51,7 +54,7 @@ public static readonly BindableProperty HasShadowProperty =
   BindableProperty.CreateAttached ("HasShadow", typeof(bool), typeof(ShadowEffect), false);
 ```
 
-これにより、型のという名前の添付プロパティが作成され `HasShadow` `bool` ます。 プロパティはクラスによって所有され、 `ShadowEffect` 既定値は `false` です。 添付プロパティの名前付け規則は、添付プロパティの識別子が、メソッドに指定されたプロパティ名と一致する必要があり `CreateAttached` 、"property" が追加されていることです。 したがって、上記の例では、添付プロパティの識別子は `HasShadowProperty` です。
+これにより、型のという名前の添付プロパティが作成され `HasShadowProperty` `bool` ます。 プロパティはクラスによって所有され、 `ShadowEffect` 既定値は `false` です。
 
 作成時に指定できるパラメーターなど、バインド可能なプロパティの作成の詳細については、「[バインド可能なプロパティの作成](~/xamarin-forms/xaml/bindable-properties.md#consume-a-bindable-property)」を参照してください。
 
