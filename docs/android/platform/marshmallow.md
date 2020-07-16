@@ -208,7 +208,7 @@ Xamarin.Android アプリでこの機能を使用するには、[Android Support
 
 ### <a name="material-design-support-library"></a>マテリアル デザイン サポート ライブラリ
 
-Android Lollipop では、Android のエクスペリエンスを更新する新しいデザイン言語として "[マテリアル デザイン](https://www.google.com/design/spec/material-design/introduction.html)" を導入しました (Xamarin.Android アプリでのマテリアル デザインの使用については、「[素材のテーマ](~/android/user-interface/material-theme.md)」を参照してください)。 Google は、Android Marshmallow で "*Android デザイン サポート ライブラリ*" を導入し、アプリ開発者がマテリアル デザインの外観を採用しやすくなりました。 このライブラリには、次のコンポーネントが含まれています。
+Android Lollipop では、Android のエクスペリエンスを更新する新しいデザイン言語として "[マテリアル デザイン](https://www.google.com/design/spec/material-design/introduction.html)" を導入しました (Xamarin.Android アプリでのマテリアル デザインの使用については、「[マテリアル テーマ](~/android/user-interface/material-theme.md)」を参照してください)。 Google は、Android Marshmallow で "*Android デザイン サポート ライブラリ*" を導入し、アプリ開発者がマテリアル デザインの外観を採用しやすくなりました。 このライブラリには、次のコンポーネントが含まれています。
 
 - **CoordinatorLayout** &ndash; 新しい `CoordinatorLayout` ウィジェットは `FrameLayout` に似ていますが、より強力です。 `CoordinatorLayout` を子ビューのコンテナーまたは最上位のレイアウトとして使用できます。また、他のビューとの相対位置にビューを固定するために使用できる `layout_anchor` 属性が用意されています。
 
