@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 07/02/2018
-ms.openlocfilehash: c6a606bf326d1e59398ab77c51b1de5ed3e497e0
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 66d2f66f0118e84778b25fc0e872099439510ce2
+ms.sourcegitcommit: 898ba8e5140ae32a7df7e07c056aff65f6fe4260
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571533"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86226847"
 ---
 # <a name="signing-the-android-application-package"></a>Android アプリケーション パッケージに署名する
 
@@ -20,7 +20,7 @@ ms.locfileid: "84571533"
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[公開のためのアーカイブ](~/android/deploy-test/release-prep/index.md#archive)では、 **[配布チャネル]** ダイアログに 2 種類の配布方法が表示されていました。 **[アドホック]** を選択します。
+[公開のためのアーカイブ](~/android/deploy-test/release-prep/index.md#archive)では、 **[配布チャネル]** ダイアログに 2 種類の配布方法が表示されます。 **[アドホック]** を選択します。
 
 [![[配布チャネル] ダイアログ](images/vs/01-distribution-channel-sml.png)](images/vs/01-distribution-channel.png#lightbox)
 
@@ -46,7 +46,7 @@ ms.locfileid: "84571533"
 
 [![アドホック署名 ID](images/vs/02-ad-hoc-signing-identity-vs-sml.png)](images/vs/02-ad-hoc-signing-identity-vs.png#lightbox)
 
-**[Create Android Key Store]\(Android キー ストアの作成\)**  ダイアログが表示されます。このダイアログを使用して、Android アプリケーションの署名に使用できる新しい署名証明書を作成します。 このダイアログ ボックスに必要な情報 (赤で表示) を入力します。
+**[Create Android Key Store]\(Android キー ストアの作成\)** ダイアログが表示されます。このダイアログを使用して、Android アプリケーションの署名に使用できる新しい署名証明書を作成します。 このダイアログ ボックスに必要な情報 (赤で表示) を入力します。
 
 [![[Create Android Key Store]\(Android キー ストアの作成\) ダイアログ](images/vs/03-create-android-key-store-vs-sml.png)](images/vs/03-create-android-key-store-vs.png#lightbox)
 
@@ -62,8 +62,10 @@ ms.locfileid: "84571533"
 
 **C:\\Users\\*ユーザー名*\\AppData\\Local\\Xamarin\\Mono for Android\\Keystore\\chimp\\chimp.keystore**
 
-> [!NOTE]
-> 結果として得られるキーストア ファイルとパスワードは、必ず安全な場所にバックアップを作成しておきます &ndash; これはソリューションには含まれません。 (たとえば、別のコンピューターに移動したり Windows を再インストールしたことが原因で) キーストア ファイルを紛失した場合、以前のバージョンと同じ証明書を使用してアプリに署名できなくなります。
+> [!IMPORTANT]
+> AppData フォルダーは既定では非表示になっており、アクセスするには再表示する必要がある場合があります。
+>
+> また、結果として得られるキーストア ファイルとパスワードは、必ず安全な場所にバックアップを作成しておきます &ndash; これはソリューションには含まれません。 (たとえば、別のコンピューターに移動したり Windows を再インストールしたことが原因で) キーストア ファイルを紛失した場合、以前のバージョンと同じ証明書を使用してアプリに署名できなくなります。
 
 キーストアの詳細については、「[キーストアの MD5 または SHA1 署名の検索](~/android/deploy-test/signing/keystore-signature.md)」を参照してください。
 
