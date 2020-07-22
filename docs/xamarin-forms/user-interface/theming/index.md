@@ -1,25 +1,28 @@
 ---
-title: Xamarin. Forms アプリケーションのテーマ
-description: Xamarin アプリケーションは、テーマごとに ResourceDictionary を作成し、DynamicResource マークアップ拡張機能を使用してリソースを読み込むことによって、テーマをサポートします。
+title: アプリケーションのテーマを Xamarin.Forms 適用する
+description: Xamarin.Formsアプリケーションでは、テーマごとに ResourceDictionary を作成し、DynamicResource マークアップ拡張機能を使用してリソースを読み込むことによって、テーマをサポートしています。
 ms.prod: xamarin
 ms.assetId: BF92AEDD-EF23-4D08-A972-B089066E75F9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/18/2020
-ms.openlocfilehash: 67e1ac20d5c213bb2fdf3c7fb4fed87f64aa1ff1
-ms.sourcegitcommit: 524fc148bad17272bda83c50775771daa45bfd7e
+ms.date: 04/22/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 80660ae7d3af0fe5948a5ae4ffdb35d2f9c2a40f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77486272"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136137"
 ---
-# <a name="theming-a-xamarinforms-application"></a>Xamarin. Forms アプリケーションのテーマ
+# <a name="theming-a-xamarinforms-application"></a>アプリケーションのテーマを Xamarin.Forms 適用する
 
 ## <a name="theme-an-application"></a>[アプリケーションのテーマを適用する](theming.md)
 
-テーマは、各テーマの[`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)を作成し、`DynamicResource` マークアップ拡張機能を使用してリソースを読み込むことによって、Xamarin. フォームアプリケーションで実装できます。
+Xamarin.Formsテーマは、 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 各テーマに対してを作成し、 `DynamicResource` マークアップ拡張機能を使用してリソースを読み込むことによって、アプリケーションに実装できます。
 
-## <a name="detect-dark-mode"></a>[ダークモードの検出](dark-mode.md)
+## <a name="respond-to-system-theme-changes"></a>[システム テーマの変更に対応する](system-theme-changes.md)
 
-ダークモードは、 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)オブジェクト、動的リソース、およびプラットフォームナレッジの組み合わせを使用して、すべての Xamarin. フォームアプリケーションでサポートできます。
+通常、デバイスには明るいテーマとダークテーマが含まれており、それぞれがオペレーティングシステムレベルで設定できるさまざまな外観設定を参照しています。 アプリケーションはこれらのシステムテーマを尊重し、システムテーマが変更されたときに直ちに応答する必要があります。

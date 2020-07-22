@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/13/2018
-ms.openlocfilehash: b9c6694ea49607b839a3658e5cc8bac5fb529c85
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: eed18890c185ccd35d728176348c9fac481407e1
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75728058"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571403"
 ---
 # <a name="xamarin-for-java-developers"></a>Java 開発者向け Xamarin
 
@@ -86,7 +86,7 @@ Java と C# はどちらも、マネージド実行環境で実行される中�
 >
 > このページに記載されている一部の機能 (C# の `var` キーワードなど) は、新しいバージョンの Java ([Java 10 の `var`](https://developer.oracle.com/java/jdk-10-local-variable-type-inference.html) など) で使用できますが、Android 開発者が使用することはやはりできません。
 
-<a name="fundamentals" />
+<a name="fundamentals"></a>
 
 ## <a name="going-from-java-to-c-development"></a>Java から C# の開発へ
 
@@ -155,7 +155,7 @@ TextView label = FindViewById<TextView> (Resource.Id.Label);
 ジェネリックについて詳しくは、「[ジェネリック (C# プログラミング ガイド)](https://docs.microsoft.com/dotnet/csharp/programming-guide/generics/index)」トピックをご覧ください。
 Xamarin.Android でのジェネリック C# クラスのサポートにはいくつかの制限があることに注意してください。詳しくは、「[Limitations](~/android/internals/limitations.md)」(制限事項) をご覧ください。
 
-<a name="oopfeatures" />
+<a name="oopfeatures"></a>
 
 ## <a name="object-oriented-programming-features"></a>オブジェクト指向プログラミングの機能
 
@@ -293,7 +293,7 @@ Java と同様に、C# は `abstract` のクラスとメソッドをサポート
 
 C# によるポリモーフィズムのサポートについて詳しくは、「[ポリモーフィズム (C# プログラミング ガイド)](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/polymorphism)」トピックをご覧ください。
 
-<a name="lambdas" />
+<a name="lambdas"></a>
 
 ## <a name="lambda-expressions"></a>ラムダ式
 
@@ -323,7 +323,7 @@ button.Click += (sender, args) => {
 
 C# とラムダ式について詳しくは、「[ラムダ式 (C# プログラミング ガイド)](https://docs.microsoft.com/dotnet/csharp/programming-guide/statements-expressions-operators/lambda-expressions)」トピックをご覧ください。
 
-<a name="events" />
+<a name="events"></a>
 
 ## <a name="event-handling"></a>イベント処理
 
@@ -371,7 +371,7 @@ startActivityButton.Click += (sender, e) => {
 
 Xamarin.Android のコードでは、通常、イベント ハンドラーの宣言にラムダ式を使います。 この簡略化されたイベント ハンドラーの宣言方法は最初はわかりにくいかもしれませんが、コードを読み書きする時間が大幅に短縮されます。 このパターン (Xamarin.Android のコードでは頻繁に出現します) の認識に慣れてくれば、アプリケーションのビジネス ロジックについて考える時間が増え、構文に関することにかかる時間は減ります。
 
-<a name="async" />
+<a name="async"></a>
 
 ## <a name="asynchronous-programming"></a>非同期プログラミング
 
@@ -406,7 +406,7 @@ async void downloadAsync(object sender, System.EventArgs e)
 C# での `async`/`await` の概要については、「[Asynchronous Programming with Async and Await](https://docs.microsoft.com/dotnet/csharp/async)」(Async および Await を使用した非同期プログラミング (C# および Visual Basic)) のトピックをご覧ください。
 Xamarin による非同期プログラミング機能のサポートについて詳しくは、「[非同期サポートの概要](~/cross-platform/platform/async.md)」をご覧ください。
 
-<a name="keywords" />
+<a name="keywords"></a>
 
 ## <a name="keyword-differences"></a>キーワードの違い
 
@@ -454,7 +454,7 @@ Java で使われている言語キーワードの多くは、C# でも使われ
 |[value](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/value)|クライアント コードがプロパティに代入する値を参照します。|
 |[virtual](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/virtual)|派生クラスでのメソッドのオーバーライドを許可します。|
 
-<a name="interop" />
+<a name="interop"></a>
 
 ## <a name="interoperating-with-existing-java-code"></a>既存の Java コードとの相互運用
 

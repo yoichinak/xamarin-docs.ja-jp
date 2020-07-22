@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 16ae440ec2fe3b5898c8f92d993279ef5e7e9794
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: ae3c60699f7e31c66893723ac73248ced9a2d72a
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75607920"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84567971"
 ---
 # <a name="ad-hoc-distribution-for-xamarinios-apps"></a>Xamarin.iOS アプリ用のアドホック配布
 
@@ -30,7 +30,7 @@ Xamarin.iOS アプリケーションは、*アドホック*配布を使用して
 
 このガイドでは、アドホック配布のためのプロビジョニングに関する情報と、Xamarin.iOS アプリを配布する方法に関する情報が提供されます。
 
-<a name="setup" />
+<a name="setup"></a>
 
 ## <a name="setting-up-for-distribution"></a>配布の設定
 
@@ -41,7 +41,7 @@ Xamarin.iOS アプリケーションは、*アドホック*配布を使用して
 > [!NOTE]
 > 配布証明書とプロビジョニング プロファイルを作成できるのは、チーム エージェントと管理者のみです。
 
-<a name="createcertificate" />
+<a name="createcertificate"></a>
 
 ## <a name="create-a-distribution-certificate"></a>配布証明書の作成
 
@@ -70,11 +70,11 @@ Xamarin.iOS アプリケーションは、*アドホック*配布を使用して
 
 2. 次に、**プラス (+)** ボタンをクリックして **[iOS App Store]** を選択します。[![iOS App Store の選択](ad-hoc-distribution-images/selectcert.png)](ad-hoc-distribution-images/selectcert.png#lightbox)
 
-<a name="createprofile" />
+<a name="createprofile"></a>
 
 ## <a name="create-a-distribution-provisioning-profile"></a>配布プロビジョニング プロファイルの作成
 
-<a name="createappid" />
+<a name="createappid"></a>
 
 ### <a name="create-an-app-id"></a>アプリ ID の作成
 作成する他のプロビジョニング プロファイルと同じように、ユーザーのデバイスに配布されるアプリを識別するため、アプリ ID が必要になります。 ID をまだ作成していない場合は、次の手順に従って作成します。
@@ -119,7 +119,7 @@ Visual Studio で新しい配布プロファイルを使用可能にするには
 
 -----
 
-<a name="selectprofile" />
+<a name="selectprofile"></a>
 
 ## <a name="selecting-a-distribution-profile-in-a-xamarinios-project"></a>Xamarin.iOS プロジェクトでの配布プロファイルの選択
 
@@ -158,7 +158,7 @@ Xamarin.iOS アプリケーションの最終ビルドを行う準備ができ�
 
 -----
 
-<a name="adhoc" />
+<a name="adhoc"></a>
 
 ## <a name="ad-hoc-distribution"></a>アドホック配布
 
@@ -166,7 +166,7 @@ Xamarin.iOS アプリケーションの最終ビルドを行う準備ができ�
 
 アドホック配布では、開発者は、iTunes Connect がオプションでない場合に、さまざまなデバイスでアプリのベータ テストを行うことができます。 アドホックは社内配布の場合と同じように機能し、IPA を作成する必要があります。無線で、または iTunes を介して手動で配布することができます。
 
-<a name="IPA_Creation" />
+<a name="IPA_Creation"></a>
 
 ### <a name="ipa-support-for-ad-hoc-deployment"></a>アドホック展開のための IPA のサポート
 

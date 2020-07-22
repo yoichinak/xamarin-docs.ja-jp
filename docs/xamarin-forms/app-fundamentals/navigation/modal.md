@@ -1,18 +1,21 @@
 ---
-title: Xamarin.Forms モーダル ページ
-description: Xamarin.Forms はモーダル ページをサポートしています。 モーダル ページは、そのタスクが完了するかキャンセルされるまで、他の操作ができない自己完結型のタスクを完了させるようユーザーに促します。 この記事では、モーダル ページに移動する方法について説明します。
+title: 'title: "Xamarin.Formsモーダル ページ" の説明: "Xamarin.Forms は、モーダル ページをサポートしています。'
+description: 'モーダル ページは、そのタスクが完了するかキャンセルされるまで、他の操作ができない自己完結型のタスクを完了させるようユーザーに促します。 この記事では、モーダル ページに移動する方法について説明します。" ms.prod: xamarin ms.assetid:486CB7FD-2B9A-4DE3-94BD-C8D904E5D3C6 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:12/01/2017 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
 ms.prod: xamarin
 ms.assetid: 486CB7FD-2B9A-4DE3-94BD-C8D904E5D3C6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 7a4c67f067b73873c3d1de4499abda2703217ddf
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: aecab26efaed9815ec6916877b5f42297821582c
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70760825"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84569609"
 ---
 # <a name="xamarinforms-modal-pages"></a>Xamarin.Forms モーダル ページ
 
@@ -22,8 +25,8 @@ _Xamarin.Forms はモーダル ページをサポートしています。モー�
 
 この記事では、次のトピックについて説明します。
 
-- [ナビゲーションを実行する](#Performing_Navigation): モーダル スタックにページをプッシュし、モーダル スタックからページをポップし、戻るボタンを無効にし、ページ遷移をアニメーション化します。
-- [ナビゲーション時にデータを渡す](#Passing_Data_when_Navigating): ページ コンストラクターと `BindingContext` を介してデータを渡します。
+- [ナビゲーションを実行する](#performing-navigation): モーダル スタックにページをプッシュし、モーダル スタックからページをポップし、戻るボタンを無効にし、ページ遷移をアニメーション化します。
+- [ナビゲーション時にデータを渡す](#passing-data-when-navigating): ページ コンストラクターと `BindingContext` を介してデータを渡します。
 
 ## <a name="overview"></a>概要
 
@@ -35,18 +38,14 @@ _Xamarin.Forms はモーダル ページをサポートしています。モー�
 
 ![](modal-images/popping.png "Popping a Page from the Modal Stack")
 
-<a name="Performing_Navigation" />
-
 ## <a name="performing-navigation"></a>ナビゲーションを実行する
 
-モーダル ナビゲーション メソッドは、任意の [`Page`](xref:Xamarin.Forms.Page) 派生型の [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) プロパティによって公開されます。 これらのメソッドは、モーダル スタックに[モーダル ページをプッシュし](#Pushing_Pages_to_the_Modal_Stack)、モーダル スタックから[モーダル ページをポップする](#Popping_Pages_from_the_Modal_Stack)機能を提供します。
+モーダル ナビゲーション メソッドは、任意の [`Page`](xref:Xamarin.Forms.Page) 派生型の [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) プロパティによって公開されます。 これらのメソッドは、モーダル スタックに[モーダル ページをプッシュし](#pushing-pages-to-the-modal-stack)、モーダル スタックから[モーダル ページをポップする](#popping-pages-from-the-modal-stack)機能を提供します。
 
 [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) プロパティでは、モーダル スタック内のモーダル ページを取得する [`ModalStack`](xref:Xamarin.Forms.INavigation.ModalStack) プロパティも公開されています。 ただし、モーダル スタックの操作を実行したり、モーダル ナビゲーションで、ルート ページにポップしたりする概念はありません。 これは、これらの操作が基になるプラットフォームで一般にサポートされていないためです。
 
 > [!NOTE]
 > [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) インスタンスは、モーダル ページ ナビゲーションの実行には不要です。
-
-<a name="Pushing_Pages_to_the_Modal_Stack" />
 
 ### <a name="pushing-pages-to-the-modal-stack"></a>モーダル スタックにページをプッシュする
 
@@ -77,8 +76,6 @@ async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
 
 > [!NOTE]
 > [`OnDisappearing`](xref:Xamarin.Forms.Page.OnDisappearing) および [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) のオーバーライドの呼び出しは、ページ ナビゲーションを示す保証として扱うことはできません。 たとえば、iOS では、アプリケーションの終了時にアクティブ ページで `OnDisappearing` のオーバーライドが呼び出されます。
-
-<a name="Popping_Pages_from_the_Modal_Stack" />
 
 ### <a name="popping-pages-from-the-modal-stack"></a>モーダル スタックからページをポップする
 
@@ -124,8 +121,6 @@ async void OnDismissButtonClicked (object sender, EventArgs args)
 ```
 
 `boolean` パラメーターを `false` に設定すると、ページ遷移アニメーションが無効になります。また、パラメーターを `true` に設定すると、基となるプラットフォームでサポートされている場合はページ遷移アニメーションが有効になります。 ただし、プッシュとポップのメソッドでこのパラメーターが指定されていない場合は、既定でアニメーションが有効になります。
-
-<a name="Passing_Data_when_Navigating" />
 
 ## <a name="passing-data-when-navigating"></a>ナビゲーション時にデータを渡す
 

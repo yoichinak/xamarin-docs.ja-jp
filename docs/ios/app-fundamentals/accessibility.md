@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/18/2016
-ms.openlocfilehash: 31cae6d6770b4c8fc4ff722e67f4ddce8ffdd7c6
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2259566fc6342a40a8c0a94bacd1c146b6509d52
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73011296"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574159"
 ---
 # <a name="accessibility-on-ios"></a>IOS でのユーザー補助
 
@@ -21,11 +21,11 @@ ms.locfileid: "73011296"
 
 ## <a name="describing-ui-elements"></a>UI 要素の記述
 
-iOS には、VoiceOver スクリーンリーダーがコントロールをより使いやすくするために使用できる説明文を追加するために、開発者が `AccessibilityLabel` と `AccessibilityHint` のプロパティが用意されています。 コントロールには、アクセス可能なモードで追加のコンテキストを提供する1つ以上の特徴をタグ付けすることもできます。
+iOS には、 `AccessibilityLabel` 開発者向けのプロパティとプロパティが用意されており、 `AccessibilityHint` VoiceOver スクリーンリーダーがコントロールをより使いやすくするために使用できる説明的なテキストを追加します。 コントロールには、アクセス可能なモードで追加のコンテキストを提供する1つ以上の特徴をタグ付けすることもできます。
 
-一部のコントロールは、アクセスする必要がない場合があります (たとえば、テキスト入力のラベルや、純粋に装飾されているイメージの場合など)。このような場合、ユーザー補助を無効にするために `IsAccessibilityElement` が用意されています。
+一部のコントロールは、アクセスする必要がない場合があります (たとえば、テキスト入力のラベルや、純粋に装飾されている画像など) `IsAccessibilityElement` 。このような場合、は、ユーザー補助を無効にするために用意されています。
 
-**UI デザイナー**
+**UI Designer**
 
 **Properties Pad**には、IOS UI デザイナーでコントロールを選択したときにこれらの設定を編集できるようにするアクセシビリティのセクションが含まれています。
 
@@ -44,17 +44,17 @@ displayOnlyText.AccessibilityTraits = UIAccessibilityTrait.Header | UIAccessibil
 
 ### <a name="what-is-accessibilityidentifier"></a>AccessibilityIdentifier とは
 
-`AccessibilityIdentifier` は、UIAutomation API を使用してユーザーインターフェイス要素を参照するために使用できる一意のキーを設定するために使用されます。
+`AccessibilityIdentifier`は、UIAutomation API を使用してユーザーインターフェイス要素を参照するために使用できる一意のキーを設定するために使用されます。
 
-`AccessibilityIdentifier` の値は、ユーザーに話されることも表示されることもありません。
+の値 `AccessibilityIdentifier` が話されていないか、ユーザーに表示されていません。
 
-<a name="postnotification" />
+<a name="postnotification"></a>
 
 ## <a name="postnotification"></a>事後通知
 
-`UIAccessibility.PostNotification` メソッドを使用すると、ユーザーが直接やり取りすることなくユーザーにイベントを発生させることができます (たとえば、特定のコントロールと対話する場合など)。
+メソッドを使用する `UIAccessibility.PostNotification` と、直接の対話の外部でユーザーにイベントを発生させることができます (たとえば、特定のコントロールと対話する場合など)。
 
-### <a name="announcement"></a>アナウンス
+### <a name="announcement"></a>告知
 
 通知は、何らかの状態が変更されたことをユーザーに通知するために、コードから送信できます (バックグラウンド操作の完了など)。 これには、ユーザーインターフェイスでの視覚的な表示が伴います。
 
@@ -66,7 +66,7 @@ UIAccessibility.PostNotification (
 
 ### <a name="layoutchanged"></a>LayoutChanged
 
-`LayoutChanged` アナウンスは、画面レイアウトの場合に使用されます。
+アナウンスは、 `LayoutChanged` 画面レイアウトの場合に使用されます。
 
 ```csharp
 UIAccessibility.PostNotification (
@@ -80,7 +80,7 @@ UIAccessibility.PostNotification (
 
 **Mainstoryboard.storyboard ファイル**
 
-ユーザーインターフェイスがストーリーボードにレイアウトされている場合は、他のプロパティと同じ方法でアクセシビリティプロパティの翻訳を提供できます。 次の例では、`UITextField` に `Pqa-aa-ury` の**ローカライズ ID**と、スペイン語で設定されているアクセシビリティプロパティが2つあります。
+ユーザーインターフェイスがストーリーボードにレイアウトされている場合は、他のプロパティと同じ方法でアクセシビリティプロパティの翻訳を提供できます。 次の例では、に `UITextField` **ローカライズ ID**と、 `Pqa-aa-ury` スペイン語で設定されているアクセシビリティプロパティが2つあります。
 
 ```csharp
 /* Accessibility */
@@ -100,7 +100,7 @@ UIAccessibility.PostNotification (
 "Provide more information" = "escriba más información";
 ```
 
-これらの変換は、`LocalizedString` C#メソッドを使用してで使用できます。
+これらの変換は、メソッドを使用して C# で使用でき `LocalizedString` ます。
 
 ```csharp
 notesText.AccessibilityLabel = NSBundle.MainBundle.LocalizedString ("Notes", "");
@@ -109,15 +109,15 @@ notesText.AccessibilityHint = NSBundle.MainBundle.LocalizedString ("Provide more
 
 コンテンツのローカライズの詳細については、 [iOS のローカリゼーションガイド](~/ios/app-fundamentals/localization/index.md)を参照してください。
 
-<a name="testing" />
+<a name="testing"></a>
 
 ## <a name="testing-accessibility"></a>アクセシビリティのテスト
 
-VoiceOver**は、** **全般 > アクセシビリティ > VoiceOver**:
+VoiceOver**は、** **[全般] > [アクセシビリティ > VoiceOver**:
 
 ![](accessibility-images/settings-sml.png "Setting the speaking rate")
 
-また、 **[ユーザー補助]** 画面では、ズーム、テキストサイズ、色 & コントラストオプション、音声設定、およびその他の構成オプションの設定も提供されています。
+また、[**ユーザー補助**] 画面では、ズーム、テキストサイズ、色 & コントラストオプション、音声設定、およびその他の構成オプションの設定も提供されています。
 
 IOS デバイスでアクセシビリティをテストするには、次の[VoiceOver の手順](https://developer.apple.com/library/ios/technotes/TestingAccessibilityOfiOSApps/TestAccessibilityonYourDevicewithVoiceOver/TestAccessibilityonYourDevicewithVoiceOver.html)に従います。
 

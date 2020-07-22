@@ -1,18 +1,21 @@
 ---
 title: Xamarin.Forms シェルでの検索
-description: Xamarin.Forms シェル アプリケーションでは、各ページの上部に追加できる検索ボックスとして提供される、統合された検索機能を利用できます。
+description: Xamarin.Forms シェル アプリケーションでは、各ページの上部に追加できる検索ボックスによって提供される、統合された検索機能を利用できます。
 ms.prod: xamarin
 ms.assetid: F8F9471D-6771-4D23-96C0-2B79473A06D4
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/18/2019
-ms.openlocfilehash: 9bd4fe5f1a35e2a6f36540cbee13838841b36d92
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: cc5e0c4cb8b474a1b7e23b476b0c5125eb2ba298
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75490065"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138087"
 ---
 # <a name="xamarinforms-shell-search"></a>Xamarin.Forms シェルでの検索
 
@@ -63,7 +66,7 @@ public class MonkeySearchHandler : SearchHandler
 
 `OnQueryChanged` オーバーライドには、2 つの引数があります。前回の検索クエリを格納する `oldValue` と、現在の検索クエリを格納する `newValue` です。 検索候補領域は、現在の検索クエリと一致する項目を含む `IEnumerable` コレクションを `SearchHandler.ItemsSource` プロパティに設定することで、更新できます。
 
-検索結果がユーザーによって選択されると、`OnItemSelected` オーバーライドが実行されて、`SelectedItem` プロパティが設定されます。 この例では、メソッドによって、選択した `Animal` に関するデータを表示した別のページへナビゲートされます。 ナビゲーションについて詳しくは、「[Xamarin.Forms シェルのナビゲーション](navigation.md)」をご覧ください。
+検索結果がユーザーによって選択されると、`OnItemSelected` オーバーライドが実行されて、`SelectedItem` プロパティが設定されます。 この例では、メソッドによって、選択した `Animal` に関するデータを表示した別のページへナビゲートされます。 ナビゲーションの詳細については、「[Xamarin.Forms シェルのナビゲーション](navigation.md)」を参照してください。
 
 > [!NOTE]
 > 追加の `SearchHandler` プロパティは、検索ボックスの外観を制御するために設定できます。
@@ -174,7 +177,7 @@ Shell.SetSearchHandler(this, new MonkeySearchHandler
 
 [![iOS および Android 上の Shell SearchHandler でのテンプレート化された検索結果のスクリーンショット](search-images/search-results-template.png "Shell SearchHandler のテンプレート化された検索結果")](search-images/search-results-template-large.png#lightbox "Shell SearchHandler のテンプレート化された検索結果")
 
-データ テンプレートについて詳しくは「[Xamarin.Forms Data Templates](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)」(Xamarin.Forms のデータ テンプレート) をご覧ください。
+データ テンプレートの詳細については、「[Xamarin.Forms のデータ テンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)」を参照してください。
 
 ## <a name="search-box-visibility"></a>検索ボックスの表示
 

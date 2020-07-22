@@ -5,12 +5,15 @@ ms.assetid: 3D95371E-5D59-440E-8D31-F3C04E493DC1
 author: redth
 ms.author: jodick
 ms.date: 03/26/2020
-ms.openlocfilehash: b090ea8491afccb7078de8333a44a4888819a46a
-ms.sourcegitcommit: ddd2cb3a102df339bb269380cb2c0617dbb1acb7
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e86ebcd55f3a36da1ad5c7c13bb50e7fc9094010
+ms.sourcegitcommit: 898ba8e5140ae32a7df7e07c056aff65f6fe4260
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81688259"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86226808"
 ---
 # <a name="xamarinessentials-web-authenticator"></a>Xamarin.Essentials:Web Authenticator
 
@@ -50,8 +53,8 @@ Android では、コールバック URI を処理するためにインテント 
 const string CALLBACK_SCHEME = "myapp";
 
 [Activity(NoHistory = true, LaunchMode = LaunchMode.SingleTop)]
-[IntentFilter(new[] { Intent.ActionView },
-    Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable },
+[IntentFilter(new[] { Android.Content.Intent.ActionView },
+    Categories = new[] { Android.Content.Intent.CategoryDefault, Android.Content.Intent.CategoryBrowsable },
     DataScheme = CALLBACK_SCHEME)]
 public class WebAuthenticationCallbackActivity : Xamarin.Essentials.WebAuthenticatorCallbackActivity
 {
@@ -106,7 +109,7 @@ UWP の場合は、`Package.appxmanifest` ファイル内でコールバック U
 
 ## <a name="using-webauthenticator"></a>WebAuthenticator の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
@@ -128,7 +131,7 @@ var accessToken = authResult?.AccessToken;
 
 ![一般的な Web 認証フロー](images/web-authenticator.png)
 
-任意の時点でユーザーがフローをキャンセルした場合、`null` の結果が返されます。
+任意の時点でユーザーがフローをキャンセルした場合、`TaskCanceledException` がスローされます。
 
 ## <a name="platform-differences"></a>プラットフォームによる違い
 
@@ -189,7 +192,7 @@ var accessToken = r?.AccessToken;
 
 1. ASP.NET Core Web アプリで、必要な[外部ソーシャル認証プロバイダー](https://docs.microsoft.com/aspnet/core/security/authentication/social/?view=aspnetcore-3.1&tabs=visual-studio)をセットアップします。
 2. `.AddAuthentication()` の呼び出しで、既定の認証スキームを `CookieAuthenticationDefaults.AuthenticationScheme` に設定します。
-3. Startup.cs の `.AddAuthentication()` の呼び出しで `.AddCookies()` を使用します。
+3. Startup.cs の `.AddAuthentication()` の呼び出しで `.AddCookie()` を使用します。
 4. すべてのプロバイダーは `.SaveTokens = true;` を指定して構成する必要があります。
 
 > [!TIP]
@@ -229,6 +232,6 @@ Essentials のリポジトリで[完全なコントローラーのサンプル](
 -----
 ## <a name="api"></a>API
 
-- [WebAuthenticator のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/WebAuthenticator)
+- [WebAuthenticator のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/WebAuthenticator)
 - [WebAuthenticator API のドキュメント](xref:Xamarin.Essentials.WebAuthenticator)
 - [ASP.NET Core サーバー サンプル](https://github.com/xamarin/Essentials/blob/develop/Samples/Sample.Server.WebAuthenticator/)

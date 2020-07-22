@@ -1,20 +1,23 @@
 ---
-title: Xamarin.Forms でサポートされているプラットフォーム
-description: Xamarin.Forms のプラットフォームと開発システムの要件
+title: Xamarin.Forms サポートされているプラットフォーム
+description: Xamarin.Forms のプラットフォームと開発システムの要件。
 ms.prod: xamarin
 ms.assetid: eecaf6a5-567c-49b2-ac83-2a195596c5bf
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/22/2020
-ms.openlocfilehash: 5751983bf4a818e8ee91af98b0c05658efaca8b2
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f93af19587cf962ac0c852599157261a087dadbc
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303619"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84197544"
 ---
-# <a name="xamarinforms-supported-platforms"></a>Xamarin.Forms でサポートされているプラットフォーム
+# <a name="xamarinforms-supported-platforms"></a>Xamarin.Forms サポートされているプラットフォーム
 
 Xamarin.Forms アプリケーションは次のオペレーティング システム用として記述できます。
 
@@ -31,14 +34,14 @@ iOS および Android 用の Xamarin.Forms アプリは Visual Studio for Mac �
 
 ## <a name="additional-platform-support"></a>その他のプラットフォームのサポート
 
-Xamarin.Forms は、iOS、Android、および Windows 以外に次のプラットフォームもサポートしています。
+Xamarin.Forms では、iOS、Android、および Windows 以外に次のプラットフォームもサポートされています。
 
 - Samsung Tizen
-- macOS
+- macOS 10.13 以降
 - GTK#
 - WPF
 
-これらのプラットフォームの状態は、[Xamarin.Forms GitHub プラットフォームのサポート Wiki](https://github.com/xamarin/Xamarin.Forms/wiki/Platform-Support) で確認できます。
+これらのプラットフォームの状態は、[Xamarin.Forms GitHub プラットフォームのサポート Wiki で確認できます](https://github.com/xamarin/Xamarin.Forms/wiki/Platform-Support)。
 
 ## <a name="android-platform-support"></a>Android プラットフォームのサポート
 

@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/27/2018
-ms.openlocfilehash: d73c72fa70a22bacf122f5c3957b789914dfd765
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: ff68666d9f0385b159b9ac9908ff997f53715308
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303553"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571936"
 ---
 # <a name="android-emulator-troubleshooting"></a>Android Emulator のトラブルシューティング
 
@@ -52,7 +52,7 @@ _この記事では、Android Emulator の構成および実行中に発生す�
 
 「**MMIO アクセス エラーが発生しました**」というメッセージが表示されたら、エミュレーターを再起動します。
 
-<a name="gps-win" />
+<a name="gps-win"></a>
 
 ## <a name="missing-google-play-services"></a>Google Play 開発者サービスが見つからない
 
@@ -68,7 +68,7 @@ _この記事では、Android Emulator の構成および実行中に発生す�
 > [!NOTE]
 > Google Play ストアのイメージは、Pixel、Pixel 2、Nexus 5、Nexus 5 X などの一部の基本デバイスの種類でのみ使用できます。
 
-<a name="perf-win" />
+<a name="perf-win"></a>
 
 ## <a name="performance-issues"></a>パフォーマンスの問題
 
@@ -94,7 +94,7 @@ _この記事では、Android Emulator の構成および実行中に発生す�
 
 [![仮想デバイスに x86 ベースのイメージを選択している](troubleshooting-images/win/02-x86-virtual-device-w158-sml.png)](troubleshooting-images/win/02-x86-virtual-device-w158.png#lightbox)
 
-<a name="accel-issues-win" />
+<a name="accel-issues-win"></a>
 
 ## <a name="hardware-acceleration-issues"></a>ハードウェア アクセラレーションの問題
 
@@ -224,7 +224,7 @@ SERVICE_NAME: intelhaxm
 
 `STATE` が `RUNNING` に設定されていない場合は、「[How to Use the Intel Hardware Accelerated Execution Manager](https://software.intel.com/android/articles/how-to-use-the-intel-hardware-accelerated-execution-manager-intel-haxm-android-emulator)」(Intel Hardware Accelerated Execution Manager の使用方法) を参照して問題を解決してください。
 
-<a name="virt-conflicts" />
+<a name="virt-conflicts"></a>
 
 #### <a name="haxm-virtualization-conflicts"></a>HAXM 仮想化の競合
 
@@ -244,7 +244,7 @@ Windows PC 上で HAXM を使用する場合、BIOS 内で仮想化テクノロ�
 
 このエラーを修正するには、コンピューターを再起動して BIOS に入り、VT-x と SLAT (第 2 レベルのアドレス変換) の両方を有効にしてから、コンピューターを再起動して再度 Windows に入ります。
 
-<a name="disable-hyperv" />
+<a name="disable-hyperv"></a>
 
 #### <a name="disabling-hyper-v"></a>Hyper-V を無効にする
 
@@ -268,7 +268,7 @@ Intel HAXM および Microsoft HYPER-V の両方を同時にアクティブ化�
 
 Device Guard と Credential Guard が有効になっていると、上記の手順で HYPER-V を無効にできない場合があります。 HYPER-V を無効にできない場合 (または無効になっているように見えるが、HAXM のインストールがまだ失敗する場合) は、次のセクションの手順に従って、Device Guard と Credential Guard を無効にします。
 
-<a name="disable-devguard" />
+<a name="disable-devguard"></a>
 
 #### <a name="disabling-device-guard"></a>Device Guard の無効化
 
@@ -388,7 +388,7 @@ Component Intel x86 Emulator Accelerator (HAXM installer) r6.2.1 [Extra: (Intel 
 
 「**MMIO アクセス エラーが発生しました**」が表示されたら、エミュレーターを再起動します。
 
-<a name="gps-mac" />
+<a name="gps-mac"></a>
 
 ## <a name="missing-google-play-services"></a>Google Play 開発者サービスが見つからない
 
@@ -404,7 +404,7 @@ Component Intel x86 Emulator Accelerator (HAXM installer) r6.2.1 [Extra: (Intel 
 > [!NOTE]
 > Google Play ストアのイメージは、Pixel、Pixel 2、Nexus 5、Nexus 5 X などの一部の基本デバイスの種類でのみ使用できます。
 
-<a name="perf-mac" />
+<a name="perf-mac"></a>
 
 ## <a name="performance-issues"></a>パフォーマンスの問題
 
@@ -426,13 +426,13 @@ Component Intel x86 Emulator Accelerator (HAXM installer) r6.2.1 [Extra: (Intel 
 
 [![仮想デバイスに x86 ベースのイメージを選択している](troubleshooting-images/mac/02-x86-virtual-device-m75-sml.png)](troubleshooting-images/mac/02-x86-virtual-device-m75.png#lightbox)
 
-<a name="accel-issues-mac" />
+<a name="accel-issues-mac"></a>
 
 ## <a name="hardware-acceleration-issues"></a>ハードウェア アクセラレーションの問題
 
 エミュレーターのハードウェア アクセラレーションに Hypervisor Framework または HAXM を使用しているかどうかに関わらず、インストールの問題または macOS の古いバージョンが原因の問題が発生する場合があります。 以降のセクションが、この問題を解決するのに役立ちます。
 
-<a name="hypervisor-issues" />
+<a name="hypervisor-issues"></a>
 
 ### <a name="hypervisor-framework-issues"></a>Hypervisor Framework の問題
 

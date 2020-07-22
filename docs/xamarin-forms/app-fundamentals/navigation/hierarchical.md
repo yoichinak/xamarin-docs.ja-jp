@@ -1,18 +1,21 @@
 ---
-title: 階層ナビゲーション
-description: この記事では、NavigationPage クラスを使用して後入れ先出し (LIFO) ページのスタックでナビゲーションを実行する方法について説明します。
+title: title:"階層ナビゲーション" の説明:"この記事では、NavigationPage クラスを使用して後入れ先出し (LIFO) ページのスタックでナビゲーションを実行する方法について説明します。"
+description: 'ms.prod: xamarin ms.assetid:C8A5EEFF-5A3B-4163-838A-147EE3939FAA ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:03/10/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
 ms.prod: xamarin
 ms.assetid: C8A5EEFF-5A3B-4163-838A-147EE3939FAA
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/14/2018
-ms.openlocfilehash: 11ad1fb18d1263eb77ef037350a3633510934c42
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.date: 03/10/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ec35b03e7e96f0730813918bdd96e1408cfabde7
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303823"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571494"
 ---
 # <a name="hierarchical-navigation"></a>階層ナビゲーション
 
@@ -30,8 +33,6 @@ _NavigationPage クラスは、ユーザーが前後を希望どおりにペー�
 
 ナビゲーション メソッドは、任意の [`Page`](xref:Xamarin.Forms.Page) 派生型の [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) プロパティによって公開されます。 これらのメソッドには、ページをナビゲーション スタックにプッシュし、ナビゲーション スタックからページをポップし、スタック操作を実行する機能があります。
 
-<a name="Performing_Navigation" />
-
 ## <a name="performing-navigation"></a>ナビゲーションを実行する
 
 階層ナビゲーションでは、[`NavigationPage`](xref:Xamarin.Forms.NavigationPage) クラスは [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトのスタック間をナビゲートするために使用されます。 次のスクリーンショットは、各プラットフォームでの `NavigationPage` のメイン コンポーネントを示します。
@@ -44,7 +45,7 @@ _NavigationPage クラスは、ユーザーが前後を希望どおりにペー�
 - Android では、ナビゲーション バーがページの上部にあり、タイトル、アイコンと、前のページに戻る *[戻る]* ボタンが表示されています。 Android プラットフォーム固有プロジェクトでは、アイコンは `MainActivity` クラスを修飾する `[Activity]` 属性で定義されています。
 - ユニバーサル Windows プラットフォームでは、ナビゲーション バーはページの上部にあり、タイトルが表示されています。
 
-いずれのプラットフォームでも、[`Page.Title`](xref:Xamarin.Forms.Page.Title) プロパティの値がページ タイトルとして表示されます。
+いずれのプラットフォームでも、[`Page.Title`](xref:Xamarin.Forms.Page.Title) プロパティの値がページ タイトルとして表示されます。 さらに、`IconColor` プロパティを、ナビゲーション バーのアイコンに適用される [`Color`](xref:Xamarin.Forms.Color) に設定できます。
 
 > [!NOTE]
 > `NavigationPage` を `ContentPage` インスタンスのみで作成することをお勧めします。
@@ -150,8 +151,6 @@ async void OnRootPageButtonClicked (object sender, EventArgs e)
 ```
 
 `boolean` パラメーターを `false` に設定すると、ページ遷移アニメーションが無効になります。また、パラメーターを `true` に設定すると、基となるプラットフォームでサポートされている場合はページ遷移アニメーションが有効になります。 ただし、プッシュとポップのメソッドでこのパラメーターが指定されていない場合は、既定でアニメーションが有効になります。
-
-<a name="Passing_Data_when_Navigating" />
 
 ## <a name="passing-data-when-navigating"></a>ナビゲーション時にデータを渡す
 
@@ -272,8 +271,6 @@ public class SecondPageCS : ContentPage
 
 データ バインディングの詳細については、「[Data Binding Basics](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)」 (データ バインディングの基礎) を参照してください。
 
-<a name="Manipulating_the_Navigation_Stack" />
-
 ## <a name="manipulating-the-navigation-stack"></a>ナビゲーション スタックの操作
 
 [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) プロパティは、ナビゲーション スタックのページを取得する [`NavigationStack`](xref:Xamarin.Forms.INavigation.NavigationStack) プロパティを公開します。 Xamarin.Forms はナビゲーション スタックへのアクセスを維持していますが、`Navigation` プロパティには、ページを挿入または削除することでスタックを操作するための [`InsertPageBefore`](xref:Xamarin.Forms.INavigation.InsertPageBefore*) および [`RemovePage`](xref:Xamarin.Forms.INavigation.RemovePage*) メソッドが用意されています。
@@ -308,7 +305,7 @@ async void OnLoginButtonClicked (object sender, EventArgs e)
 
 ## <a name="displaying-views-in-the-navigation-bar"></a>ナビゲーション バーにビューを表示する
 
-すべての Xamarin.Forms [`View`](xref:Xamarin.Forms.View) は、[`NavigationPage`](xref:Xamarin.Forms.NavigationPage) のナビゲーション バーに表示できます。 これを実現するには、[`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) 添付プロパティを `View` に設定します。 この添付プロパティは任意の [`Page`](xref:Xamarin.Forms.Page) に設定できます。また、`Page` が `NavigationPage` にプッシュされると、`NavigationPage` ではプロパティの値が反映されます。
+すべての Xamarin.Forms[`View`](xref:Xamarin.Forms.View) は、[`NavigationPage`](xref:Xamarin.Forms.NavigationPage) のナビゲーション バーに表示できます。 これを実現するには、[`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) 添付プロパティを `View` に設定します。 この添付プロパティは任意の [`Page`](xref:Xamarin.Forms.Page) に設定できます。また、`Page` が `NavigationPage` にプッシュされると、`NavigationPage` ではプロパティの値が反映されます。
 
 [タイトル ビュー サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-titleview)から取り上げた次の例は、[`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) 添付プロパティを XAML から設定する方法を示しています。
 

@@ -1,71 +1,74 @@
 ---
-title: Xamarin.Forms の XAML 名前空間
-description: XAML では、名前空間宣言 xmlns XML 属性を使用します。 この記事では、XAML 名前空間の構文を紹介し、型にアクセスする XAML 名前空間を宣言する方法を示します。
+title: での XAML 名前空間Xamarin.Forms
+description: XAML では、名前空間宣言に xmlns XML 属性を使用します。 この記事では、XAML 名前空間の構文について説明し、型にアクセスするために XAML 名前空間を宣言する方法を示します。
 ms.prod: xamarin
 ms.assetid: C03B5553-B199-4A19-9F0F-E5BCE1DB268F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/21/2018
-ms.openlocfilehash: d307c128826775e6d4f7129c79e17522e7e05d6a
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7f35342134767ccdadfab086bfa14f6b610b325d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61176522"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84130378"
 ---
-# <a name="xaml-namespaces-in-xamarinforms"></a>Xamarin.Forms の XAML 名前空間
+# <a name="xaml-namespaces-in-xamarinforms"></a>での XAML 名前空間Xamarin.Forms
 
-_XAML では、名前空間宣言 xmlns XML 属性を使用します。この記事では、XAML 名前空間の構文を紹介し、型にアクセスする XAML 名前空間を宣言する方法を示します。_
+_XAML では、名前空間宣言に xmlns XML 属性を使用します。この記事では、XAML 名前空間の構文について説明し、型にアクセスするために XAML 名前空間を宣言する方法を示します。_
 
 ## <a name="overview"></a>概要
 
-常に、XAML ファイルのルート要素内にある 2 つの XAML 名前空間宣言があります。 最初は、次の XAML コード例に示すように、既定の名前空間を定義します。
+Xaml ファイルのルート要素内に常に存在する2つの XAML 名前空間宣言があります。 最初のは、次の XAML コード例に示すように、既定の名前空間を定義します。
 
-```csharp
+```xaml
 xmlns="http://xamarin.com/schemas/2014/forms"
 ```
 
-既定の名前空間のプレフィックスのない XAML ファイル内で定義されている要素を参照している Xamarin.Forms のクラスなどを指定します[ `ContentPage`](xref:Xamarin.Forms.ContentPage)します。
+既定の名前空間は、XAML ファイル内で定義されたプレフィックスなしの要素が、などのクラスを参照することを指定し Xamarin.Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage) ます。
 
-2 番目の名前空間宣言を使用して、`x`プレフィックス、次の XAML コード例に示すようにします。
+2番目の名前空間宣言では、 `x` 次の XAML コード例に示すように、プレフィックスを使用します。
 
-```csharp
+```xaml
 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 ```
 
-XAML では、プレフィックスを使用して、名前空間内の型を参照するときに使用されているプレフィックスで、既定以外の名前空間を宣言します。 `x`名前空間の宣言では、プレフィックスを持つ XAML 内で要素が定義されていることを指定します`x`要素とは、XAML (具体的には、2009 XAML 仕様) に固有の属性に使用します。
+XAML では、プレフィックスを使用して既定以外の名前空間を宣言し、名前空間内の型を参照するときにプレフィックスを使用します。 名前空間宣言は、xaml で定義された要素 `x` `x` と属性 (具体的には 2009 xaml 仕様) で、のプレフィックスを持つ xaml 内で定義された要素を使用することを指定します。
 
-次の表にアウトライン、 `x` Xamarin.Forms でサポートされている名前空間の属性。
+次の表は、 `x` でサポートされる名前空間属性の概要を示してい Xamarin.Forms ます。
 
 |構成体|説明|
 |--- |--- |
-|`x:Arguments`|コンス トラクター引数、既定ではないコンス トラクターまたはファクトリ メソッドのオブジェクトの宣言を指定します。|
-|`x:Class`|XAML で定義されているクラスの名前空間とクラス名を指定します。 クラス名は、分離コード ファイルのクラス名と一致する必要があります。 このコンス トラクターが XAML ファイルのルート要素でのみ表示できることに注意してください。|
-|`x:DataType`|XAML の要素とその子にバインドするオブジェクトの種類を指定します。|
-|`x:FactoryMethod`|オブジェクトを初期化するために使用できるファクトリ メソッドを指定します。|
-|`x:FieldModifier`|生成されたフィールドの名前付き XAML 要素のアクセス レベルを指定します。|
-|`x:Key`|内の各リソースにある一意のユーザー定義のキーを指定します、`ResourceDictionary`します。 キーの値を使用して、XAML リソースを取得し、通常は引数として使用、`StaticResource`マークアップ拡張機能。|
-|`x:Name`|XAML 要素のランタイム オブジェクトの名前を指定します。 設定`x:Name`コード内の変数の宣言に似ています。|
-|`x:TypeArguments`|ジェネリック型のコンス トラクターにジェネリック型引数を指定します。|
+|`x:Arguments`|既定以外のコンストラクターまたはファクトリメソッドオブジェクトの宣言のコンストラクター引数を指定します。|
+|`x:Class`|XAML で定義されているクラスの名前空間とクラス名を指定します。 クラス名は、分離コードファイルのクラス名と一致している必要があります。 このコンストラクトは、XAML ファイルのルート要素にのみ表示されることに注意してください。|
+|`x:DataType`|XAML 要素とその子のバインド先となるオブジェクトの型を指定します。|
+|`x:FactoryMethod`|オブジェクトの初期化に使用できるファクトリメソッドを指定します。|
+|`x:FieldModifier`|名前付き XAML 要素に対して生成されるフィールドのアクセスレベルを指定します。|
+|`x:Key`|内の各リソースに対して一意のユーザー定義キーを指定し `ResourceDictionary` ます。 キーの値は XAML リソースを取得するために使用され、通常はマークアップ拡張機能の引数として使用され `StaticResource` ます。|
+|`x:Name`|XAML 要素のランタイムオブジェクト名を指定します。 の設定 `x:Name` は、コードでの変数の宣言に似ています。|
+|`x:TypeArguments`|ジェネリック型のコンストラクターへのジェネリック型引数を指定します。|
 
-詳細については、`x:DataType`属性は、「[コンパイル バインド](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)します。 詳細については、`x:FieldModifier`属性は、「[フィールド修飾子](~/xamarin-forms/xaml/field-modifiers.md)します。 詳細については、 `x:Arguments`、 `x:FactoryMethod`、および`x:TypeArguments`属性を参照してください[XAML で引数を渡す](~/xamarin-forms/xaml/passing-arguments.md)します。
+属性の詳細については `x:DataType` 、「[コンパイル済みバインディング](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)」を参照してください。 属性の詳細については `x:FieldModifier` 、「[フィールド修飾子](~/xamarin-forms/xaml/field-modifiers.md)」を参照してください。 属性と属性の詳細につい `x:Arguments` `x:FactoryMethod` ては、「 [XAML で引数を渡す](~/xamarin-forms/xaml/passing-arguments.md)」を参照してください。 属性の詳細については `x:TypeArguments` 、「」を参照[して Xamarin.Forms ](generics.md)ください。
 
 > [!NOTE]
-> 上記の名前空間属性の他 Xamarin.Forms も含まれていますマークアップ拡張機能で使用できる`x`名前空間プレフィックス。 詳細については、次を参照してください。 [XAML マークアップ拡張機能の使用](~/xamarin-forms/xaml/markup-extensions/consuming.md)します。
+> 上に示した名前空間属性に加えて、には、 Xamarin.Forms 名前空間プレフィックスを通じて使用できるマークアップ拡張機能も含まれてい `x` ます。 詳細については、「 [XAML マークアップ拡張機能](~/xamarin-forms/xaml/markup-extensions/consuming.md)の使用」を参照してください。
 
-XAML では、名前空間の宣言は、子要素を親要素から継承します。 そのため、XAML ファイルのルート要素で名前空間を定義するときにそのファイル内のすべての要素は、名前空間宣言を継承します。
+XAML では、名前空間宣言は親要素から子要素に継承されます。 そのため、XAML ファイルのルート要素で名前空間を定義すると、そのファイル内のすべての要素が名前空間宣言を継承します。
 
-## <a name="declaring-namespaces-for-types"></a>型の名前空間を宣言します。
+## <a name="declaring-namespaces-for-types"></a>型の名前空間の宣言
 
-種類は、共通言語ランタイム (CLR) 名前空間の名前と必要に応じて、アセンブリ名を指定する名前空間宣言で、プレフィックスを持つ XAML 名前空間を宣言することで、XAML で参照できます。 これは、名前空間宣言内で次のキーワードの値を定義することで実現されます。
+Xaml で型を参照するには、xaml 名前空間をプレフィックスで宣言し、共通言語ランタイム (CLR) 名前空間の名前を指定する名前空間宣言と、必要に応じてアセンブリ名を指定します。 これを実現するには、名前空間の宣言内に次のキーワードの値を定義します。
 
-- **clr 名前空間:** または**を使用して:** – CLR 名前空間は、XAML 要素として公開する型を含むアセンブリ内で宣言します。 このキーワードが必要です。
-- **アセンブリ =** -参照されている CLR 名前空間を含むアセンブリ。 この値は、ファイル拡張子を除いた、アセンブリの名前です。 アセンブリを参照する XAML ファイルを含むプロジェクト ファイル内の参照として、アセンブリへのパスを確立する必要があります。 場合、このキーワードを省略できます、 **clr 名前空間**値が型を参照するアプリケーション コードと同じアセンブリ内にします。
+- **clr-namespace:** または**USING:** – XAML 要素として公開する型を含むアセンブリ内で宣言された clr 名前空間。 このキーワードは必須です。
+- **assembly =** –参照されている CLR 名前空間を含むアセンブリ。 この値は、ファイル拡張子のないアセンブリの名前です。 アセンブリへのパスは、アセンブリを参照する XAML ファイルを含むプロジェクトファイル内の参照として確立される必要があります。 **Clr 名前空間**の値が、型を参照しているアプリケーションコードと同じアセンブリ内にある場合は、このキーワードを省略できます。
 
-区切る文字に注意してください、`clr-namespace`または`using`値からトークンがありますが、コロン文字の分離、`assembly`等号 (=) は、その値からトークン。 2 つのトークンの間で使用する文字は、セミコロンです。
+`clr-namespace`またはトークンを値から区切る文字はコロンであるのに `using` 対し、トークンを値から区切る文字は等号であることに注意して `assembly` ください。 2つのトークンの間で使用する文字はセミコロンです。
 
-次のコード例では、XAML 名前空間の宣言を示します。
+次のコード例は、XAML 名前空間の宣言を示しています。
 
 ```xaml
 <ContentPage ... xmlns:local="clr-namespace:HelloWorld" ...>
@@ -73,7 +76,7 @@ XAML では、名前空間の宣言は、子要素を親要素から継承しま
 </ContentPage>
 ```
 
-また、これとしてを記述できます。
+または、次のように記述できます。
 
 ```xaml
 <ContentPage ... xmlns:local="using:HelloWorld" ...>
@@ -81,7 +84,7 @@ XAML では、名前空間の宣言は、子要素を親要素から継承しま
 </ContentPage>
 ```
 
-`local`プレフィックスは、名前空間内の型がアプリケーションに対してローカルを示すために使用される規則です。 または、型が別のアセンブリである場合は、アセンブリ名が定義することも名前空間の宣言での XAML コードの例を次に示す。
+`local`プレフィックスは、名前空間内の型がアプリケーションに対してローカルであることを示すために使用される規則です。 また、型が別のアセンブリにある場合は、次の XAML コード例に示すように、名前空間の宣言でアセンブリ名を定義する必要もあります。
 
 ```xaml
 <ContentPage ... xmlns:behaviors="clr-namespace:Behaviors;assembly=BehaviorsLibrary" ...>
@@ -89,7 +92,7 @@ XAML では、名前空間の宣言は、子要素を親要素から継承しま
 </ContentPage>
 ```
 
-次の XAML コード例に示すとしてインポートされた名前空間からの型のインスタンスを宣言するときに、名前空間プレフィックスを指定しています。
+次の XAML コード例に示すように、インポートされた名前空間から型のインスタンスを宣言するときに、名前空間プレフィックスが指定されます。
 
 ```xaml
 <ListView ...>
@@ -99,12 +102,13 @@ XAML では、名前空間の宣言は、子要素を親要素から継承しま
 </ListView>
 ```
 
-カスタムの名前空間のスキーマを定義する方法の詳細については、次を参照してください。 [XAML カスタム Namespace スキーマ](custom-namespace-schemas.md)します。
+カスタム名前空間スキーマの定義については、「 [XAML カスタム名前空間](custom-namespace-schemas.md)スキーマ」を参照してください。
 
 ## <a name="summary"></a>まとめ
 
-この記事では、XAML 名前空間の構文を導入し、型にアクセスする XAML 名前空間を宣言する方法を示しました。 XAML を使用して、`xmlns`名前空間の宣言と型の XML 属性は、プレフィックスを持つ XAML 名前空間を宣言することにより XAML で参照できます。
+この記事では、XAML 名前空間構文を紹介し、型にアクセスするために XAML 名前空間を宣言する方法を示しました。 XAML では、 `xmlns` 名前空間宣言に XML 属性を使用します。 xaml では、xaml 名前空間をプレフィックスで宣言することによって型を参照できます。
 
 ## <a name="related-links"></a>関連リンク
 
-- [XAML で引数の受け渡し](~/xamarin-forms/xaml/passing-arguments.md)
+- [XAML での引数の受け渡し](~/xamarin-forms/xaml/passing-arguments.md)
+- [での XAML のジェネリックXamarin.Forms](generics.md)

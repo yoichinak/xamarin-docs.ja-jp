@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: ee7ab7c5d0503cffd2c12a493f314f191d912e92
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 584b398deafd233fdbe6b24189a2047ae712fdcf
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73002843"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573522"
 ---
 # <a name="working-with-the-ui-thread-in-xamarinios"></a>Xamarin で UI スレッドを操作する
 
@@ -24,7 +24,7 @@ ms.locfileid: "73002843"
 
 コントロールをビューで作成したり、タッチなどのユーザーによって開始されるイベントを処理したりする場合、コードは既に UI スレッドのコンテキストで実行されています。
 
-コードがバックグラウンドスレッドで実行されている場合、タスクまたはコールバックでは、メイン UI スレッドで実行されていない可能性があります。 この場合は、次のように `InvokeOnMainThread` または `BeginInvokeOnMainThread` の呼び出しでコードをラップする必要があります。
+コードがバックグラウンドスレッドで実行されている場合、タスクまたはコールバックでは、メイン UI スレッドで実行されていない可能性があります。 この場合は、次のように、またはの呼び出しでコードをラップする必要があり `InvokeOnMainThread` `BeginInvokeOnMainThread` ます。
 
 ```csharp
 InvokeOnMainThread ( () => {
@@ -32,17 +32,17 @@ InvokeOnMainThread ( () => {
 });
 ```
 
-`InvokeOnMainThread` メソッドは `NSObject` で定義されているため、ビューやビューコントローラーなど、任意の UIKit オブジェクトで定義されたメソッド内から呼び出すことができます。
+メソッドは、 `InvokeOnMainThread` 任意の `NSObject` uikit オブジェクト (ビューコントローラーやビューコントローラーなど) で定義されたメソッド内から呼び出すことができるように、で定義されています。
 
 Xamarin の iOS アプリケーションのデバッグ中に、コードが間違ったスレッドから UI コントロールにアクセスしようとした場合に、エラーがスローされます。 これは、InvokeOnMainThread メソッドを使用して、これらの問題を追跡して修正するのに役立ちます。 これは、デバッグ中にのみ発生し、リリースビルドではエラーをスローしません。 次のようなエラーメッセージが表示されます。
 
  ![](ui-thread-images/image10.png "UI Thread Execution")
 
- <a name="Background_Thread_Example" />
+ <a name="Background_Thread_Example"></a>
 
 ## <a name="background-thread-example"></a>バックグラウンドスレッドの例
 
-次に示すのは、単純なスレッドを使用してバックグラウンドスレッドからユーザーインターフェイスコントロール (`UILabel`) にアクセスしようとする例です。
+次に、 `UILabel` 単純なスレッドを使用してバックグラウンドスレッドからユーザーインターフェイスコントロール (a) にアクセスしようとする例を示します。
 
 ```csharp
 new System.Threading.Thread(new System.Threading.ThreadStart(() => {
@@ -50,7 +50,7 @@ new System.Threading.Thread(new System.Threading.ThreadStart(() => {
 })).Start();
 ```
 
-このコードは、デバッグ中に `UIKitThreadAccessException` をスローします。 この問題を解決する (およびユーザーインターフェイスコントロールにメイン UI スレッドからのみアクセスできるようにする) には、次のように `InvokeOnMainThread` 式内で UI コントロールを参照するすべてのコードをラップします。
+デバッグ中に、そのコードによってがスローされ `UIKitThreadAccessException` ます。 この問題を解決する (およびユーザーインターフェイスコントロールにメイン UI スレッドからのみアクセスできるようにする) には、次のように、式の中で UI コントロールを参照するすべてのコードをラップし `InvokeOnMainThread` ます。
 
 ```csharp
 new System.Threading.Thread(new System.Threading.ThreadStart(() => {
@@ -60,15 +60,15 @@ new System.Threading.Thread(new System.Threading.ThreadStart(() => {
 })).Start();
 ```
 
-このドキュメントの残りの例では、これを使用する必要はありませんが、アプリがネットワーク要求を行うときに覚えておく必要がある重要な概念であり、通知センターや、別のユーザーで実行される完了ハンドラーを必要とするその他の方法を使用します。レッド.
+このドキュメントの残りの例では、これを使用する必要はありませんが、アプリがネットワーク要求を行うときに覚えておく必要がある重要な概念であり、通知センターや、別のスレッドで実行される完了ハンドラーを必要とするその他のメソッドを使用します。
 
- <a name="Async_Await_Example" />
+ <a name="Async_Await_Example"></a>
 
 ## <a name="asyncawait-example"></a>Async/Await の例
 
-5つのC# async/await キーワードを使用する場合`InvokeOnMainThread`は必要ありません。待機中のタスクが完了すると、呼び出し元のスレッドでメソッドが続行されるためです。
+C# 5 async/await キーワードを使用する `InvokeOnMainThread` 必要はありません。待機中のタスクが完了すると、呼び出し元のスレッドでメソッドが続行されるためです。
 
-このコード例では、(単にデモンストレーション目的で) 遅延メソッドの呼び出しを待機していますが、UI スレッドで呼び出される非同期メソッド (TouchUpInside ハンドラー) を示しています。 外側のメソッドが UI スレッドで呼び出されるため、`UILabel` のテキストの設定や `UIAlertView` の表示などの UI 操作は、バックグラウンドスレッドで非同期操作が完了した後に安全に呼び出すことができます。
+このコード例では、(単にデモンストレーション目的で) 遅延メソッドの呼び出しを待機していますが、UI スレッドで呼び出される非同期メソッド (TouchUpInside ハンドラー) を示しています。 外側のメソッドは UI スレッドで呼び出されるため、のテキストの設定やを表示するなどの UI 操作は、 `UILabel` `UIAlertView` バックグラウンドスレッドで非同期操作が完了した後に安全に呼び出すことができます。
 
 ```csharp
 async partial void button2_TouchUpInside (UIButton sender)
@@ -89,7 +89,7 @@ async partial void button2_TouchUpInside (UIButton sender)
 }
 ```
 
-非同期メソッドが (メイン UI スレッドではなく) バックグラウンドスレッドから呼び出された場合でも、`InvokeOnMainThread` が必要になります。
+非同期メソッドが (メイン UI スレッドではなく) バックグラウンドスレッドから呼び出された場合 `InvokeOnMainThread` でも、が必要になります。
 
 ## <a name="related-links"></a>関連リンク
 

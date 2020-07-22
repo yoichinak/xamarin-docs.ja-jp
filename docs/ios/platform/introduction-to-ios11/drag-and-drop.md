@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/05/2017
-ms.openlocfilehash: 928936815c89dd74d0ad3775f59ea210702c8857
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 2a59040efde59210152ca20b44df2a097904c9f9
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306165"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573756"
 ---
 # <a name="drag-and-drop-in-xamarinios"></a>Xamarin. iOS にドラッグアンドドロップ
 
@@ -35,20 +35,20 @@ iOS 11 には、iPad 上のアプリケーション間でデータをコピー�
 
 ## <a name="drag-and-drop-with-text-controls"></a>テキストコントロールを含むドラッグアンドドロップ
 
-`UITextView` と `UITextField` では、選択したテキストのドラッグとテキストコンテンツのドロップを自動的にサポートします。
+`UITextView`と `UITextField` は、選択したテキストのドラッグ、およびのテキストコンテンツのドロップを自動的にサポートします。
 
-<a name="uitableview" />
+<a name="uitableview"></a>
 
 ## <a name="drag-and-drop-with-uitableview"></a>UITableView を使用したドラッグアンドドロップ
 
-`UITableView` には、テーブル行とのドラッグアンドドロップ操作の処理が組み込まれています。既定の動作を有効にするには、いくつかのメソッドのみが必要です。
+`UITableView`には、テーブル行とのドラッグアンドドロップ操作の処理が組み込まれています。既定の動作を有効にするには、いくつかのメソッドを使用する必要があります。
 
 次の2つのインターフェイスが関係します。
 
-- `IUITableViewDragDelegate` –テーブルビューでドラッグが開始されたときに情報をパッケージ化します。
-- `IUITableViewDropDelegate` –ドロップが試行されて完了したときに情報を処理します。
+- `IUITableViewDragDelegate`–テーブルビューでドラッグが開始されたときに情報をパッケージ化します。
+- `IUITableViewDropDelegate`–ドロップが試行されて完了したときに情報を処理します。
 
-[DragAndDropTableView サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddroptableview)では、これら2つのインターフェイスは両方とも、デリゲートとデータソースと共に `UITableViewController` クラスに実装されています。 これらは `ViewDidLoad` メソッドで割り当てられています。
+[DragAndDropTableView サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddroptableview)では、この2つのインターフェイスは両方とも、デリゲートとデータソースと共にクラスに実装されてい `UITableViewController` ます。 これらは、メソッドで割り当てられてい `ViewDidLoad` ます。
 
 ```csharp
 this.TableView.DragDelegate = this;
@@ -59,9 +59,9 @@ this.TableView.DropDelegate = this;
 
 ### <a name="table-view-drag-delegate"></a>テーブルビューのドラッグデリゲート
 
-テーブルビューからの行のドラッグをサポートするために_必要な_メソッドは `GetItemsForBeginningDragSession`だけです。 ユーザーが行のドラッグを開始すると、このメソッドが呼び出されます。
+テーブルビューからの行のドラッグをサポートするために_必要な_メソッドは、だけです `GetItemsForBeginningDragSession` 。 ユーザーが行のドラッグを開始すると、このメソッドが呼び出されます。
 
-実装の例を次に示します。 このメソッドは、ドラッグされた行に関連付けられたデータを取得し、それをエンコードして、アプリケーションが操作の "削除" 部分を処理する方法 (たとえば、データ型 `PlainText`を処理できるかどうかなど) を決定する `NSItemProvider` を構成します。
+実装の例を次に示します。 このメソッドは、ドラッグされた行に関連付けられたデータを取得し、それをエンコードして、 `NSItemProvider` アプリケーションが操作の "削除" 部分を処理する方法 (たとえば、データ型を処理できるかどうかなど) を決定するを構成し `PlainText` ます。
 
 ```csharp
 public UIDragItem[] GetItemsForBeginningDragSession (UITableView tableView,
@@ -85,19 +85,19 @@ public UIDragItem[] GetItemsForBeginningDragSession (UITableView tableView,
 }
 ```
 
-ドラッグの動作をカスタマイズするために実装できるオプションメソッドは多数あります。たとえば、ターゲットアプリ (書式設定されたテキスト、プレーンテキスト、ベクターなど) でを利用できる複数のデータ表現を指定できます。描画のビットマップバージョン。 また、同じアプリ内でドラッグアンドドロップするときに使用するカスタムデータ表現を指定することもできます。
+ドラッグの動作をカスタマイズするために実装できるオプションメソッドは多数あります。たとえば、対象のアプリ (書式設定されたテキストやプレーンテキストなど、描画のベクターおよびビットマップバージョン) で利用できる複数のデータ表現を用意することができます。 また、同じアプリ内でドラッグアンドドロップするときに使用するカスタムデータ表現を指定することもできます。
 
 ### <a name="table-view-drop-delegate"></a>テーブルビューのドロップデリゲート
 
 Drop デリゲートのメソッドは、ドラッグ操作がテーブルビューを介して実行されたとき、またはその上に完了したときに呼び出されます。 必須のメソッドは、データの削除が許可されているかどうか、および削除が完了した場合に実行されるアクションを決定します。
 
-- `CanHandleDropSession` –ドラッグが進行中で、アプリケーションで削除される可能性がありますが、このメソッドは、ドラッグされているデータを削除できるかどうかを判断します。
-- `DropSessionDidUpdate` –ドラッグの進行中は、このメソッドを呼び出して、目的のアクションを決定します。 ドラッグしているテーブルビューからの情報、ドラッグセッション、および使用可能なインデックスパスを使用して、ユーザーに提供される動作と視覚的フィードバックを特定できます。
-- `PerformDrop` –ユーザーが (指を離すことによって) ドロップを完了すると、このメソッドはドラッグされているデータを抽出し、テーブルビューを変更して、新しい行 (または行) にデータを追加します。
+- `CanHandleDropSession`–ドラッグが進行中で、アプリケーションで削除される可能性がありますが、このメソッドは、ドラッグされているデータを削除できるかどうかを判断します。
+- `DropSessionDidUpdate`–ドラッグの進行中は、このメソッドを呼び出して、目的のアクションを決定します。 ドラッグしているテーブルビューからの情報、ドラッグセッション、および使用可能なインデックスパスを使用して、ユーザーに提供される動作と視覚的フィードバックを特定できます。
+- `PerformDrop`–ユーザーが (指を離すことによって) ドロップを完了すると、このメソッドはドラッグされているデータを抽出し、テーブルビューを変更して、新しい行 (または行) にデータを追加します。
 
 #### <a name="canhandledropsession"></a>CanHandleDropSession
 
-`CanHandleDropSession` テーブルビューでドラッグされているデータを受け入れることができるかどうかを示します。 このコードスニペットでは、`CanLoadObjects` を使用して、このテーブルビューが文字列データを受け入れることを確認します。
+`CanHandleDropSession`ドラッグされているデータをテーブルビューが受け入れることができるかどうかを示します。 このコードスニペットでは、を `CanLoadObjects` 使用して、このテーブルビューが文字列データを受け入れることを確認します。
 
 ```csharp
 public bool CanHandleDropSession(UITableView tableView, IUIDropSession session)
@@ -108,9 +108,9 @@ public bool CanHandleDropSession(UITableView tableView, IUIDropSession session)
 
 #### <a name="dropsessiondidupdate"></a>DropSessionDidUpdate
 
-`DropSessionDidUpdate` メソッドは、ドラッグ操作の実行中に繰り返し呼び出され、ユーザーに視覚的な手掛かりを提供します。
+`DropSessionDidUpdate`ドラッグ操作の実行中にメソッドが繰り返し呼び出され、ユーザーに視覚的な手掛かりを提供します。
 
-次のコードでは、`HasActiveDrag` を使用して、操作が現在のテーブルビューで開始されたかどうかを判断します。 その場合は、1つの行だけを移動できます。
+次のコードでは、を使用して、 `HasActiveDrag` 操作が現在のテーブルビューで開始されたかどうかを判断します。 その場合は、1つの行だけを移動できます。
 ドラッグが別のソースからのものである場合、コピー操作が示されます。
 
 ```csharp
@@ -131,13 +131,13 @@ public UITableViewDropProposal DropSessionDidUpdate(UITableView tableView, IUIDr
 }
 ```
 
-Drop 操作には、`Cancel`、`Move`、`Copy`のいずれかを指定できます。
+Drop 操作には、、、またはのいずれかを指定でき `Cancel` `Move` `Copy` ます。
 
 ドロップの目的は、新しい行を挿入したり、既存の行にデータを追加/追加したりすることです。
 
 #### <a name="performdrop"></a>パフォーマンスの低下
 
-`PerformDrop` メソッドは、ユーザーが操作を完了したときに呼び出され、テーブルビューとデータソースを変更して、削除されたデータを反映します。
+メソッドは、 `PerformDrop` ユーザーが操作を完了したときに呼び出され、テーブルビューとデータソースを変更して、削除されたデータを反映します。
 
 ```csharp
 public void PerformDrop(UITableView tableView, IUITableViewDropCoordinator coordinator)

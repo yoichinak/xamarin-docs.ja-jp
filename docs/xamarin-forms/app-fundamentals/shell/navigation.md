@@ -1,18 +1,21 @@
 ---
-title: Xamarin.Forms シェルのナビゲーション
-description: Xamarin.Forms シェル アプリケーションでは、設定されたナビゲーション階層に従わなくても、アプリケーション内の任意のページへの移動を許可する URI ベースのナビゲーション操作を利用できます。
+title: 'title: "Xamarin.Formsシェルのナビゲーション" の説明: "Xamarin.Forms シェル アプリケーションでは、設定されたナビゲーション階層に従わなくても、アプリケーション内の任意のページへの移動を許可する URI ベースのナビゲーション操作を利用できます。"'
+description: 'ms.prod: xamarin ms.assetid: 57079D89-D1CB-48BD-9FEE-539CEC29EABB ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 04/02/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
 ms.prod: xamarin
 ms.assetid: 57079D89-D1CB-48BD-9FEE-539CEC29EABB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/06/2019
-ms.openlocfilehash: 70f8f630558730f6074373eb3a814209921235de
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.date: 04/02/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e67d49f300a8a98ec5685c33abf98f5b2ded08ed
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "71674564"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84132393"
 ---
 # <a name="xamarinforms-shell-navigation"></a>Xamarin.Forms シェルのナビゲーション
 
@@ -32,7 +35,7 @@ Xamarin.Forms シェルには、設定されたナビゲーション階層に従
 ナビゲーションは、`Shell` クラスから、`GoToAsync` メソッドを呼び出すことで実行されます。 ナビゲーションが実行されるときに `Navigating` イベントが発生し、ナビゲーションが完了するときに `Navigated` イベントが発生します。
 
 > [!NOTE]
-> Xamarin.Forms シェル アプリケーション内では、[Navigation](xref:Xamarin.Forms.NavigableElement.Navigation) プロパティを使って、引き続きナビゲーションを実行できます。 詳しくは、「[階層ナビゲーション](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md)」をご覧ください。
+> Xamarin.Forms シェル アプリケーション内では、[Navigation](xref:Xamarin.Forms.NavigableElement.Navigation) プロパティを使って引き続きナビゲーションを実行できます。 詳しくは、「[階層ナビゲーション](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md)」をご覧ください。
 
 ## <a name="routes"></a>ルート
 
@@ -173,6 +176,36 @@ bears
 ```
 
 `monkeys` ルートに登録したページが表示されているときに、`details` ルートに移動すると、`monkeys/details` ルートに登録したページが表示されます。 同様に、`bears` ルートに登録したページが表示されているときに、`details` ルートに移動すると、`bears/details` ルートに登録したページが表示されます。 この例でのルートの登録方法については、「[ページのルートを登録する](#register-page-routes)」をご覧ください。
+
+### <a name="backwards-navigation"></a>後方ナビゲーション
+
+".." を `GotoAsync` メソッドへの引数として指定することで、後方ナビゲーションを実行できます。
+
+```csharp
+await Shell.Current.GoToAsync("..");
+```
+
+".." を使用した後方ナビゲーションは、次のようにルートと組み合わせることもできます。
+
+```csharp
+await Shell.Current.GoToAsync("../route");
+```
+
+この例では、まず後方に移動してから、指定したルートに移動しています。
+
+> [!IMPORTANT]
+> 後方ナビゲーション後に指定したルートに移動するには、指定したルートに移動するように、後方ナビゲーションによってルート階層の現在の場所に移動する必要があります。
+
+同様に、後方に複数回移動してから、指定したルートに移動することもできます。
+
+```csharp
+await Shell.Current.GoToAsync("../../route");
+```
+
+この例では、後方に 2 回移動してから、指定したルートに移動しています。
+
+> [!NOTE]
+> ".." で移動してデータを渡すこともできます。 詳細については、「[データを渡す](#pass-data)」を参照してください。
 
 ### <a name="invalid-routes"></a>無効なルート
 

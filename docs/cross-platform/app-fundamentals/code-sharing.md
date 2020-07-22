@@ -6,12 +6,12 @@ ms.assetid: B73675D2-09A3-14C1-E41E-20352B819B53
 author: davidortinau
 ms.author: daortin
 ms.date: 08/06/2018
-ms.openlocfilehash: 78b849434a087cf7951fe36345688251885ea00b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5edfd8216892eb28a2b1ad14d3ccee1668b21a43
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016898"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571221"
 ---
 # <a name="sharing-code-overview"></a>コードの共有の概要
 
@@ -19,9 +19,9 @@ _このドキュメントでは、クロスプラットフォームプロジェ�
 
 クロスプラットフォームアプリケーション間でコードを共有するには、次の3つの方法があります。
 
-- [ **.NET Standard ライブラリ**](#Net_Standard)– .NET Standard プロジェクトは、複数のプラットフォーム間で共有されるコードを実装できます。また、多数の .net api にアクセスできます (バージョンによって異なります)。 .NET Standard 1.0-1.6 は、徐々に大きくなる Api のセットを実装しますが、.NET Standard 2.0 は .NET BCL (Xamarin アプリで利用可能な .NET Api を含む) の最適な範囲を提供します。
-- [**共有プロジェクト**](#Shared_Projects)–共有アセットプロジェクトタイプを使用してソースコードを整理し、必要に応じて `#if` コンパイラディレクティブを使用してプラットフォーム固有の要件を管理します。
-- [**ポータブルクラスライブラリ**](#Portable_Class_Libraries)(非推奨) –ポータブルクラスライブラリ (pcl) は、共通の API サーフェイスを使用して複数のプラットフォームを対象とし、インターフェイスを使用してプラットフォーム固有の機能を提供できます。 PCLs は、Visual Studio の最新バージョンでは非推奨とされており、代わりに .NET Standard を使用 &ndash; ます。
+- [**.NET Standard ライブラリ**](#Net_Standard)– .NET Standard プロジェクトは、複数のプラットフォーム間で共有されるコードを実装できます。また、多数の .net api にアクセスできます (バージョンによって異なります)。 .NET Standard 1.0-1.6 は、徐々に大きくなる Api のセットを実装しますが、.NET Standard 2.0 は .NET BCL (Xamarin アプリで利用可能な .NET Api を含む) の最適な範囲を提供します。
+- [**共有プロジェクト**](#Shared_Projects)–共有アセットプロジェクトタイプを使用してソースコードを整理し、 `#if` 必要に応じてコンパイラディレクティブを使用してプラットフォーム固有の要件を管理します。
+- [**ポータブルクラスライブラリ**](#Portable_Class_Libraries)(非推奨) –ポータブルクラスライブラリ (pcl) は、共通の API サーフェイスを使用して複数のプラットフォームを対象とし、インターフェイスを使用してプラットフォーム固有の機能を提供できます。 PCLs は、Visual Studio の最新バージョンでは非推奨とされ &ndash; ます。代わりに .NET Standard を使用します。
 
 コード共有戦略の目的は、この図に示すアーキテクチャをサポートすることです。ここでは、単一のコードベースを複数のプラットフォームで使用できます。
 
@@ -29,7 +29,7 @@ _このドキュメントでは、クロスプラットフォームプロジェ�
 
 この記事では、アプリケーションに適したプロジェクトの種類を選択するために使用できる方法を比較します。
 
-<a name="Net_Standard" />
+<a name="Net_Standard"></a>
 
 ## <a name="net-standard-libraries"></a>.NET Standard ライブラリ
 
@@ -37,7 +37,7 @@ _このドキュメントでは、クロスプラットフォームプロジェ�
 
 ![.NET Standard ダイアグラム](code-sharing-images/netstandard.png ".NET Standard ダイアグラム")
 
-### <a name="benefits"></a>利点
+### <a name="benefits"></a>メリット
 
 - を使用すると、複数のプロジェクト間でコードを共有できます。
 - リファクタリング操作は、常に、影響を受けるすべての参照を更新します。
@@ -45,19 +45,19 @@ _このドキュメントでは、クロスプラットフォームプロジェ�
 
 ### <a name="disadvantages"></a>短所
 
-- `#if __IOS__`のようなコンパイラディレクティブは使用できません。
+- のようなコンパイラディレクティブは使用できません `#if __IOS__` 。
 
 ### <a name="remarks"></a>Remarks
 
 .NET Standard は[PCL に似](https://docs.microsoft.com/dotnet/standard/net-standard#comparison-to-portable-class-libraries)ていますが、プラットフォームのサポートと BCL のクラスの数がより単純なモデルになっています。
 
-<a name="Shared_Projects" />
+<a name="Shared_Projects"></a>
 
 ## <a name="shared-projects"></a>共有プロジェクト
 
 [共有プロジェクト](~/cross-platform/app-fundamentals/shared-projects.md)には、コードファイルと、それらを参照するプロジェクトに含まれるアセットが含まれています。 プロジェクトの共有は、コンパイルされた出力を独自に生成しません。
 
-このスクリーンショットは、次の3つのアプリケーションプロジェクト (Android、iOS、および Windows 用) を含むソリューションファイルを示しC#ています。共有プロジェクトには、共通のソースコードファイルが含まれています。
+このスクリーンショットは、次の3つのアプリケーションプロジェクト (Android、iOS、および Windows 用) を含むソリューションファイルを示しています。共通の C# ソースコードファイルを含む**共有**プロジェクトがあります。
 
 ![共有プロジェクトソリューション](code-sharing-images/sharedsolution.png "共有プロジェクトソリューション")
 
@@ -76,26 +76,26 @@ IOS、Android、および Windows をサポートするクロスプラットフ�
 - **Appios** – Xamarin ios アプリケーションプロジェクト。
 - **Appwindows** – windows アプリケーションプロジェクト。
 
-この方法では、3つのアプリケーションプロジェクトが同じソースコード ( C#共有内のファイル) を共有しています。 共有コードの編集は、3つのプロジェクトすべてで共有されます。
+この方法では、3つのアプリケーションプロジェクトが同じソースコード (共有内の C# ファイル) を共有しています。 共有コードの編集は、3つのプロジェクトすべてで共有されます。
 
-### <a name="benefits"></a>利点
+### <a name="benefits"></a>メリット
 
 - を使用すると、複数のプロジェクト間でコードを共有できます。
-- 共有コードは、コンパイラディレクティブを使用してプラットフォームに基づいて分岐できます ( 「[クロスプラットフォームアプリケーションの構築](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)」ドキュメントで説明されているように、`#if __ANDROID__` の使用。
-- アプリケーションプロジェクトには、共有コードが利用できるプラットフォーム固有の参照 (Windows Phone の Tasky サンプルでの `Community.CsharpSqlite.WP7` の使用など) を含めることができます。
+- 共有コードは、コンパイラディレクティブを使用してプラットフォームに基づいて分岐できます ( `#if __ANDROID__`「[クロスプラットフォームアプリケーションの構築](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)」ドキュメントで説明されているように、を使用します。
+- アプリケーションプロジェクトには、共有コードが利用できるプラットフォーム固有の参照を含めることができ `Community.CsharpSqlite.WP7` ます (たとえば、Windows Phone の Tasky サンプルでを使用するなど)。
 
 ### <a name="disadvantages"></a>短所
 
 - ' Inactive ' コンパイラディレクティブ内のコードに影響を与えるリファクタリングは、これらのディレクティブ内のコードを更新しません。
 - 他のほとんどのプロジェクトの種類とは異なり、共有プロジェクトには ' output ' アセンブリがありません。 コンパイル時に、ファイルは参照元のプロジェクトの一部として処理され、そのアセンブリにコンパイルされます。 コードをアセンブリとして共有する場合は、.NET Standard またはポータブルクラスライブラリを使用することをお勧めします。
 
-<a name="Shared_Remarks" />
+<a name="Shared_Remarks"></a>
 
 ### <a name="remarks"></a>Remarks
 
 アプリケーション開発者向けの優れたソリューションで、アプリ内での共有のみを目的としたコードを作成できます (他の開発者に配布することはできません)。
 
-<a name="Portable_Class_Libraries" />
+<a name="Portable_Class_Libraries"></a>
 
 ## <a name="portable-class-libraries"></a>ポータブル クラス ライブラリ
 
@@ -106,7 +106,7 @@ IOS、Android、および Windows をサポートするクロスプラットフ�
 
 ![ポータブルクラスライブラリの図](code-sharing-images/portableclasslibrary.png "ポータブルクラスライブラリの図")
 
-### <a name="benefits"></a>利点
+### <a name="benefits"></a>メリット
 
 - を使用すると、複数のプロジェクト間でコードを共有できます。
 - リファクタリング操作は、常に、影響を受けるすべての参照を更新します。
@@ -132,7 +132,7 @@ PCL プロジェクトは Visual Studio で引き続きサポートされます�
 ## <a name="related-links"></a>関連リンク
 
 - [クロスプラットフォームアプリケーションのビルド (メインドキュメント)](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)
-- [ポータブル クラス ライブラリ](~/cross-platform/app-fundamentals/pcl.md)
+- [ポータブルクラスライブラリ](~/cross-platform/app-fundamentals/pcl.md)
 - [共有プロジェクト](~/cross-platform/app-fundamentals/shared-projects.md)
 - [.NET Standard](~/cross-platform/app-fundamentals/net-standard.md)
 - [ケース スタディ: Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)

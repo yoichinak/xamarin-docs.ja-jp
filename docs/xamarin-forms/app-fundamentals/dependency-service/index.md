@@ -7,12 +7,15 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/05/2019
-ms.openlocfilehash: ea259d1ee9dc4a94322c38b3e96bee654197bb87
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 126e2d2373bad923fe1d66fe355ad811c15fbe4f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "67650454"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138373"
 ---
 # <a name="xamarinforms-dependencyservice"></a>Xamarin.Forms の DependencyService
 

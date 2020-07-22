@@ -7,18 +7,21 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/19/2016
-ms.openlocfilehash: ad2868a82f662f45066a6111a1dd3bd2aacad671
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e2bed4d5e8f89efa2997fb085278c4b549870245
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771879"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135322"
 ---
 # <a name="introduction-to-custom-renderers"></a>カスタム レンダラーの概要
 
 _カスタム レンダラーにより、Xamarin.Forms コントロールの外観とビヘイビアーをカスタマイズするための強力な方法が提供されます。それらは、スタイルに関する小さな変更や、洗練されたプラットフォーム固有のレイアウトおよびビヘイビアーのカスタマイズのために使用できます。この記事では、カスタム レンダラーの概要を示し、カスタム レンダラーを作成するプロセスについて説明します。_
 
-Xamarin.Forms の [Pages、Layouts、Controls](~/xamarin-forms/user-interface/controls/index.md) には、クロスプラットフォームのモバイル ユーザー インターフェイスを記述するための共通 API が用意されています。 各ページ、レイアウトおよびコントロールは、`Renderer` クラスを使用してプラットフォームごとに異なる方法でレンダリングされます。次に (Xamarin.Forms の処理形式に対応する) ネイティブ コントロールが作成され、画面に配置され、共有コードに指定された動作が追加されます。
+Xamarin.Forms の [Pages、Layouts、Controls](~/xamarin-forms/user-interface/controls/index.md) には、クロスプラットフォームのモバイル ユーザー インターフェイスを記述するための共通 API が用意されています。 各ページ、レイアウトおよびコントロールは、`Renderer` クラスを使用してプラットフォームごとに異なる方法でレンダリングされます。次に (Xamarin.Forms の処理形式に対応する) ネイティブ コントロールが作成され、画面に配置され、共有コードに指定されたビヘイビアーが追加されます。
 
 開発者は独自の `Renderer` クラスを実装して、コントロールの外観や動作をカスタマイズできます。 特定の種類のカスタム レンダラーを 1 つのアプリケーション プロジェクトに追加して、ある場所のコントロールをカスタマイズし、さらに他のプラットフォーム上の既定の動作を許可することができます。また、異なるカスタム レンダラーを各アプリケーション プロジェクトに追加して、iOS、Android、ユニバーサル Windows プラットフォーム (UWP) 上で異なる外観を作成することができます。 ただし、カスタム レンダラー クラスを実装してシンプルなコントロールのカスタマイズを実行すると、多くの場合、応答はヘビーウェイトになります。 エフェクトによってこのプロセスは簡略化されます。通常、エフェクトはわずかなスタイルの変更に使用されます。 詳細については、「[Effects](~/xamarin-forms/app-fundamentals/effects/index.md)」 (エフェクト) を参照してください。
 

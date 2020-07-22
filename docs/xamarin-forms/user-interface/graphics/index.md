@@ -1,31 +1,34 @@
 ---
-title: Xamarin.Forms でグラフィック
-description: このガイドでは、CocosSharp、SkiaShap、UrhoSharp を使用して、グラフィックスとゲーム エンジンのビジュアルを Xamarin.Forms アプリケーションに組み込む方法をについて説明します。
+title: のグラフィックスXamarin.Forms
+description: このガイドでは、 Xamarin.Forms CocosSharp、SkiaShap、および UrhoSharp を使用して、グラフィックスとゲームエンジンのビジュアルをアプリケーションに組み込む方法について説明します。
 ms.prod: xamarin
 ms.assetid: 167ec01a-fb9e-431e-a44d-a10eaf62bf39
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/01/2018
-ms.openlocfilehash: 38b06c26208613baed45f40a8f0933f10496c467
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 227bb3f0971bb8e3ceef7015f8fffb9994ccc36b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61399232"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84129325"
 ---
-# <a name="graphics-in-xamarinforms"></a>Xamarin.Forms でグラフィック
+# <a name="graphics-in-xamarinforms"></a>のグラフィックスXamarin.Forms
 
-_グラフィックスとゲーム エンジンのビジュアルを Xamarin.Forms アプリケーションに組み込む方法。_
+_グラフィックスとゲームエンジンのビジュアルをアプリケーションに組み込む方法 Xamarin.Forms 。_
 
-## <a name="using-cocossharp-in-xamarinformscocossharpmd"></a>[Xamarin.Forms で CocosSharp を使用する](cocossharp.md)
+## <a name="using-cocossharp-in-xamarinformscocossharpmd"></a>[での CocosSharp の使用Xamarin.Forms](cocossharp.md)
 
-Xamarin.Forms アプリケーションに正確な図形、イメージ、およびテキストのレンダリングを含める CocosSharp を追加する方法。
+CocosSharp を追加して、アプリケーションでの正確な形状、画像、およびテキストレンダリングを含むようにする方法について説明し Xamarin.Forms ます。
 
-## <a name="using-skiasharp-in-xamarinformsskiasharpindexmd"></a>[Xamarin.Forms で SkiaSharp を使用する](skiasharp/index.md)
+## <a name="using-skiasharp-in-xamarinformsskiasharpindexmd"></a>[での SkiaSharp の使用Xamarin.Forms](skiasharp/index.md)
 
-SkiaSharp を Xamarin.Forms アプリケーションに追加し、2 次元ベクター グラフィックス、イメージ、およびテキストを描画するために使用する方法。
+SkiaSharp をアプリケーションに追加 Xamarin.Forms し、それを使用して2d ベクターグラフィックス、画像、テキストを描画する方法について説明します。
 
-## <a name="using-urhosharp-in-xamarinformsurhosharpmd"></a>[Xamarin.Forms で UrhoSharp を使用する](urhosharp.md)
+## <a name="using-urhosharp-in-xamarinformsurhosharpmd"></a>[で UrhoSharp を使用するXamarin.Forms](urhosharp.md)
 
-Xamarin.Forms アプリケーションで 3D の視覚エフェクトを含める UrhoSharp を追加する方法。
+アプリケーションに3D 視覚エフェクトを含めるために UrhoSharp を追加する方法 Xamarin.Forms 。

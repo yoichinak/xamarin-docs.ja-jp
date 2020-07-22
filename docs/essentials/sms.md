@@ -1,16 +1,20 @@
 ---
 title: Xamarin.Essentials:SMS
-description: Xamarin.Essentials の SMS クラスを使用すると、受信者に送信する特定のメッセージと共に、既定の SMS アプリケーションをアプリケーションで開くことができます。
+description: Xamarin.Essentials の Sms クラスを使用すると、アプリケーションから既定の SMS アプリケーションを開き、受信者に送信するメッセージを指定することができます。
 ms.assetid: 81A757F2-6F2A-458F-B9BE-770ADEBFAB58
 author: jamesmontemagno
+ms.custom: video
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: a7b52bac0e9e2061cf9ff277db044ab232b1e9e5
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c3518befc9f26895514bf582a763c1323f336277
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "61347912"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84801843"
 ---
 # <a name="xamarinessentials-sms"></a>Xamarin.Essentials:SMS
 
@@ -22,7 +26,7 @@ ms.locfileid: "61347912"
 
 ## <a name="using-sms"></a>SMS の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
@@ -78,5 +82,11 @@ public class SmsTest
 
 ## <a name="api"></a>API
 
-- [SMS のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Sms)
+- [SMS のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Sms)
 - [SMS API ドキュメント](xref:Xamarin.Essentials.Sms)
+
+## <a name="related-video"></a>関連ビデオ
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/SMS-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

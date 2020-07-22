@@ -7,12 +7,15 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/25/2018
-ms.openlocfilehash: 33968fb935e8b69736ac338bfa0479e4f278e64a
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5e1e93f74ab8ef6d63213a8fbdc7ec45a794cf55
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "61184574"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137878"
 ---
 # <a name="xamarinforms-gestures"></a>Xamarin.Forms のジェスチャ
 

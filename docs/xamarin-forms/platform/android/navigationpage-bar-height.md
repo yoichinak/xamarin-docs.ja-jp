@@ -1,24 +1,27 @@
 ---
 title: Android での NavigationPage バーの高さ
-description: プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。 この記事では、NavigationPage のナビゲーションバーの高さを設定する Android プラットフォーム固有のを使用する方法について説明します。
+description: プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、NavigationPage のナビゲーションバーの高さを設定する Android プラットフォーム固有のを使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: C8A73B64-FE70-408A-A72E-8AF147F0C52C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 501ea85a12a6e9b8b4198e0391e7ec8a16605069
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2dcabe3c0067734250834c2927fd4cbb83906943
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68649997"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84128792"
 ---
 # <a name="navigationpage-bar-height-on-android"></a>Android での NavigationPage バーの高さ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-この Android プラットフォーム固有のは、 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)のナビゲーションバーの高さを設定します。 XAML で設定して使用される、 [ `NavigationPage.BarHeight` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.NavigationPage.BarHeightProperty)整数値にバインド可能なプロパティ。
+この Android プラットフォーム固有のは、のナビゲーションバーの高さを設定 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) します。 これは、 [`NavigationPage.BarHeight`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.NavigationPage.BarHeightProperty) バインド可能なプロパティを整数値に設定することによって XAML で使用されます。
 
 ```xaml
 <NavigationPage ...
@@ -28,7 +31,7 @@ ms.locfileid: "68649997"
 </NavigationPage>
 ```
 
-代わりに、fluent API を使用して C# から使用できます。
+または、fluent API を使用して C# から使用することもできます。
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -44,15 +47,15 @@ public class AndroidNavigationPageCS : Xamarin.Forms.NavigationPage
 }
 ```
 
-`NavigationPage.On<Android>`メソッドは、このプラットフォームに固有を Android アプリケーションの互換性でのみ実行されるを指定します。 [ `NavigationPage.SetBarHeight` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.NavigationPage.SetBarHeight(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.NavigationPage},System.Int32))メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)名前空間がのナビゲーション バーの高さを設定するため、 [ `NavigationPage`](xref:Xamarin.Forms.NavigationPage)します。 さらに、 [ `NavigationPage.GetBarHeight` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.NavigationPage.GetBarHeight(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.NavigationPage}))メソッドを使用して、ナビゲーション バーの高さが返される、`NavigationPage`します。
+メソッドは、 `NavigationPage.On<Android>` このプラットフォーム固有のがアプリ互換性 Android でのみ実行されることを指定します。 [ `NavigationPage.SetBarHeight` ] (Xref: Xamarin.FormsPlatformConfiguration. AndroidSpecific の...。 SetBarHeight ( Xamarin.Forms .IPlatformElementConfiguration { Xamarin.Forms .PlatformConfiguration. Android、 Xamarin.Forms 。NavigationPage}, system.string) メソッドを [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat) 名前空間で使用して、のナビゲーションバーの高さを設定し [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) ます。 また、[ `NavigationPage.GetBarHeight` ] (xref: Xamarin.FormsPlatformConfiguration. AndroidSpecific の...//Height ( Xamarin.Forms .IPlatformElementConfiguration { Xamarin.Forms .PlatformConfiguration. Android、 Xamarin.Forms 。NavigationPage})) メソッドを使用して、のナビゲーションバーの高さを返すことができ `NavigationPage` ます。
 
-その結果、ナビゲーション バーの高さを[ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)設定できます。
+結果として、のナビゲーションバーの高さを [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 設定できます。
 
-![](navigationpage-bar-height-images/navigationpage-barheight.png "NavigationPage のナビゲーション バーの高さ")
+![](navigationpage-bar-height-images/navigationpage-barheight.png "NavigationPage navigation bar height")
 
 ## <a name="related-links"></a>関連リンク
 
-- [プラットフォーム仕様 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
-- [プラットフォーム仕様の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
+- [PlatformSpecifics (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [プラットフォーム固有設定の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [AndroidSpecific の API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
 - [AndroidSpecific の AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

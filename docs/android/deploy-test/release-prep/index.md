@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2018
-ms.openlocfilehash: c9c6816115d89212ea720f027d51af6c990cfe8d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 2676565a62b4b9d4414e9a69737b287bcc992c0b
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "80261311"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572014"
 ---
 # <a name="preparing-an-application-for-release"></a>リリースに向けてアプリケーションを準備する
 
@@ -35,7 +35,7 @@ ms.locfileid: "80261311"
 
 各手順について以下で詳しく説明します。
 
-<a name="Specify_the_Application_Icon" />
+<a name="Specify_the_Application_Icon"></a>
 
 ## <a name="specify-the-application-icon"></a>アプリケーション アイコンを指定する
 
@@ -65,7 +65,7 @@ Visual Studio for Mac では、アプリケーション アイコンは、次の
 
 通常、`using Android.App` は **AssemblyInfo.cs** の先頭で宣言されています (`Application` 属性の名前空間は `Android.App`)。ただし、`using` ステートメントがまだ存在しない場合は、追加する必要があります。
 
-<a name="Versioning" />
+<a name="Versioning"></a>
 
 ## <a name="version-the-application"></a>アプリケーションのバージョン
 
@@ -89,7 +89,7 @@ Visual Studio では、次のスクリーンショットで示すように、こ
 
 -----
 
-<a name="shrink_apk" />
+<a name="shrink_apk"></a>
 
 ## <a name="shrink-the-apk"></a>APK を圧縮する
 
@@ -158,11 +158,11 @@ ProGuard は既定では無効です。 **[ProGuard を有効にする]** オプ
 
 ProGuard ツールの使用方法については、「[ProGuard](~/android/deploy-test/release-prep/proguard.md)」を参照してください。
 
-<a name="protect_app" />
+<a name="protect_app"></a>
 
 ## <a name="protect-the-application"></a>アプリケーションを保護する
 
-<a name="Disable_Debugging" />
+<a name="Disable_Debugging"></a>
 
 ### <a name="disable-debugging"></a>デバッグを無効にする
 
@@ -183,7 +183,7 @@ Android マニフェストには、アプリケーションをデバッグする
 
 デバッグ ビルドでは、デバッグしやすいように、自動的にアクセス許可が設定されることに注意してください (**Internet**、**ReadExternalStorage** など)。 ただし、リリース ビルドでは、明示的に設定したアクセス許可のみを使用します。 リリース ビルドへの切り替えによって、使用しているアプリがデバッグ ビルドで使用可能であったアクセス許可を失う場合は、[アクセス許可](~/android/app-fundamentals/permissions.md)で示されているように、**必要なアクセス許可**リストのアクセス許可を明示的に有効にしていることを確認します。 
 
-<a name="dotfuscator" id="dotfuscator" />
+<a name="dotfuscator" id="dotfuscator"></a>
 
 ### <a name="application-protection-with-dotfuscator"></a>Dotfuscator によるアプリケーションの保護
 
@@ -208,17 +208,17 @@ Dotfuscator CE を構成するには、「[Using Dotfuscator Community Edition w
 
 -----
 
-<a name="bundle" />
+<a name="bundle"></a>
 
 ### <a name="bundle-assemblies-into-native-code"></a>アセンブリをネイティブ コードにバンドルする
 
-このオプションが有効になっていると、アセンブリがネイティブの共有ライブラリにまとめられます。 このオプションによってコードの安全性が保持されます。コードがネイティブ バイナリに埋め込まれることでマネージド アセンブリが保護されます。
+このオプションが有効になっていると、アセンブリがネイティブの共有ライブラリにまとめられます。 これにより、アセンブリを圧縮し、より小さな `.apk` ファイルを許可することができます。 アセンブリの圧縮により、"*最小限の*" 形式の難読化も可能になります。このような難読化には、依存しないようにする必要があります。
 
 このオプションは Enterprise ライセンスを必要とし、 **[Fast Deployment の使用]** が無効になっている場合にのみ使用できます。 **[ネイティブ コードへのアセンブリのバンドル]** は既定では無効です。
 
-**[Bundle into Native Code]\(ネイティブ コードへのバンドル\)** オプションは、アプリケーションがネイティブ コードにコンパイルされることを意味するわけ*ではありません*。 [ **[AOT コンパイル]** ](#aot) を使用してネイティブ コードにアセンブリをコンパイルすることはできません (現在は実験的な機能にすぎず、運用環境向けではありません)。
+**[Bundle into Native Code]\(ネイティブ コードへのバンドル\)** オプションは、アプリケーションがネイティブ コードにコンパイルされることを意味するわけ*ではありません*。 [**AOT コンパイル**](#aot)を使用して、アセンブリをネイティブ コードにコンパイルすることはできません。
 
-<a name="aot" />
+<a name="aot"></a>
 
 ### <a name="aot-compilation"></a>AOT コンパイル
 
@@ -228,12 +228,12 @@ Dotfuscator CE を構成するには、「[Using Dotfuscator Community Edition w
 
 #### <a name="llvm-optimizing-compiler"></a>LLVM 最適化コンパイラ
 
-_LLVM 最適化コンパイラ_ では、より小さく高速なコンパイル済みコードを作成し、AOT コンパイルによるアセンブリをネイティブ コードに変換しますが、その分ビルド時間がかかります。 LLVM コンパイラは既定では無効です。 LLVM コンパイラを使用するには、最初に ([[パッケージング プロパティ]](#Set_Packaging_Properties) ページで) **[AOT コンパイル]** オプションを有効にする必要があります。
+_LLVM 最適化コンパイラ_では、より小さく高速なコンパイル済みコードを作成し、AOT コンパイルによるアセンブリをネイティブ コードに変換しますが、その分ビルド時間がかかります。 LLVM コンパイラは既定では無効です。 LLVM コンパイラを使用するには、最初に ([[パッケージング プロパティ]](#Set_Packaging_Properties) ページで) **[AOT コンパイル]** オプションを有効にする必要があります。
 
 > [!NOTE]
 > **LLVM 最適化コンパイラ** オプションには、エンタープライズ ライセンスが必要です。  
 
-<a name="Set_Packaging_Properties" />
+<a name="Set_Packaging_Properties"></a>
 
 ## <a name="set-packaging-properties"></a>パッケージング プロパティを設定する
 
@@ -263,7 +263,7 @@ _LLVM 最適化コンパイラ_ では、より小さく高速なコンパイル
 
 ### <a name="multi-dex"></a>Multi-Dex
 
-**[Multi-Dex を有効にする]** オプションが有効になっていると、Android SDK ツールを使用して **.dex** ファイル形式の 65K のメソッド制限が回避されます。 65K のメソッド制限は、アプリが _参照する_ Java メソッドの数に基づいています (アプリが依存しているすべてのライブラリのメソッドも含む)。_ソース コードに記述されている_ メソッドの数には基づいていません。 アプリケーションで定義しているメソッドの数が 2、3 個で、使用するメソッドが多い (またはライブラリが大きい) 場合、65K の制限を超過する可能性があります。
+**[Multi-Dex を有効にする]** オプションが有効になっていると、Android SDK ツールを使用して **.dex** ファイル形式の 65K のメソッド制限が回避されます。 65K のメソッド制限は、アプリが_参照する_ Java メソッドの数に基づいています (アプリが依存しているすべてのライブラリのメソッドも含む)。_ソース コードに記述されている_メソッドの数には基づいていません。 アプリケーションで定義しているメソッドの数が 2、3 個で、使用するメソッドが多い (またはライブラリが大きい) 場合、65K の制限を超過する可能性があります。
 
 参照されるすべてのライブラリのすべてのメソッドをアプリが使用していない場合があるため、ProGuard (上記参照) などのツールを使用して、未使用のメソッドをコードから削除することができます。 **[Multi-Dex を有効にする]** は本当に必要な場合にのみ有効にすることをお勧めします。たとえば、ProGuard を使用してもアプリが 65K を超える Java メソッドを参照する場合などです。
 
@@ -279,7 +279,7 @@ Android App Bundle のサポートを有効にするには、Android プロジ�
 
 Android App Bundle の詳細については、「[Android App Bundle について](https://developer.android.com/guide/app-bundle/)」を参照してください。
 
-<a name="Compile" />
+<a name="Compile"></a>
 
 ## <a name="compile"></a>Compile
 
@@ -295,7 +295,7 @@ Android App Bundle の詳細については、「[Android App Bundle につい�
 
 -----
 
-<a name="archive" />
+<a name="archive"></a>
 
 ## <a name="archive-for-publishing"></a>発行のためのアーカイブ
 
@@ -353,7 +353,7 @@ Android App Bundle の詳細については、「[Android App Bundle につい�
 
 次の配布チャネルのいずれかを選択できます。
 
-- **アドホック** &ndash; Android デバイスにサイドロードできるように、署名済み APK をディスクに保存します。 引き続き[アプリ パッケージの署名](~/android/deploy-test/signing/index.md)に関するセクションに進み、Android の署名 ID を作成する方法、Android アプリケーション用の新しい署名証明書を作成する方法、アプリの _アドホック_ バージョンをディスクに発行する方法を学習してください。 これは、テスト用の APK を作成するための効果的な方法です。
+- **アドホック** &ndash; Android デバイスにサイドロードできるように、署名済み APK をディスクに保存します。 引き続き[アプリ パッケージの署名](~/android/deploy-test/signing/index.md)に関するセクションに進み、Android の署名 ID を作成する方法、Android アプリケーション用の新しい署名証明書を作成する方法、アプリの_アドホック_ バージョンをディスクに発行する方法を学習してください。 これは、テスト用の APK を作成するための効果的な方法です。
 
 - **Google Play** &ndash; 署名済み APK を Google Play に発行します。 引き続き「[Google Play に公開する](~/android/deploy-test/publishing/publishing-to-google-play/index.md)」に進み、APK を署名して Google Play ストアに発行する方法について学習してください。
 

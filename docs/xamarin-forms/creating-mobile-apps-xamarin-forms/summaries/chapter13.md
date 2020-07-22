@@ -7,21 +7,24 @@ ms.assetid: 5D153857-B6B7-4A14-8FB9-067DE198C2C7
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/18/2018
-ms.openlocfilehash: e4746ed94a008d382ce15bb9cd7c52365d9ba574
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 43caf088ad6cb816f049e7862a287c17839c2170
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76725529"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136774"
 ---
 # <a name="summary-of-chapter-13-bitmaps"></a>第 13 章の概要: ビットマップ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13)
 
 > [!NOTE]
-> このページのメモでは、Xamarin.Forms が書籍に記載されている資料と異なる部分が示されています。
+> このページの注記では、Xamarin.Forms が書籍に記載されている資料と異なる部分が示されています。
 
-Xamarin.Forms の [`Image`](xref:Xamarin.Forms.Image) 要素にはビットマップが表示されます。 すべての Xamarin.Forms プラットフォームは、JPEG、PNG、GIF、および BMP ファイル形式をサポートしています。
+Xamarin.Forms [`Image`](xref:Xamarin.Forms.Image) 要素により、ビットマップが表示されます。 すべての Xamarin.Forms プラットフォームは、JPEG、PNG、GIF、および BMP ファイル形式をサポートしています。
 
 Xamarin.Forms のビットマップは、次の 4 つの場所から取得されます。
 
@@ -107,7 +110,7 @@ Xamarin.Forms のビットマップは、次の 4 つの場所から取得され
 
 ### <a name="generating-bitmaps-at-run-time"></a>実行時のビットマップの生成
 
-すべての Xamarin.Forms プラットフォームは、非圧縮の BMP ファイル形式をサポートしています。これは、コードで簡単に構築し、`MemoryStream` に格納することができます。 **Xamrin.FormsBook.Toolkit** ライブラリの [`BmpMaker`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BmpMaker.cs) クラスに実装されているように、この手法により、実行時にビットマップをアルゴリズム的に作成できます。
+すべての Xamarin.Forms プラットフォームは、非圧縮の BMP ファイル形式をサポートしています。これは、コードで簡単に構築し、`MemoryStream` に格納できます。 **Xamrin.FormsBook.Toolkit** ライブラリの [`BmpMaker`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/BmpMaker.cs) クラスに実装されているように、この手法により、実行時にビットマップをアルゴリズム的に作成できます。
 
 "Do It Yourself" [**DiyGradientBitmap**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/DiyGradientBitmap) サンプルは、`BmpMaker` を使用してグラデーション画像でビットマップを作成する方法を示しています。
 
@@ -163,7 +166,7 @@ Android の場合、ビットマップは **Resources** フォルダーのさま
 - 480 ピクセル四方の drawable-xxhdpi/MyImage.jpg
 - 640 ピクセル四方の drawable-xxxhdpi/MyImage.jpg
 
-ビットマップは常に 160 のデバイスに依存しない単位でレンダリングされます (標準の Xamarin.Forms ソリューション テンプレートには、hdpi、xhdpi、xxhdpi フォルダーのみが含まれます)。
+ビットマップは常に 160 のデバイスに依存しない単位でレンダリングされます (標準の Xamarin.Forms ソリューション テンプレートには、hdpi、xhdpi、xxhdpi の各フォルダーのみが含まれます)。
 
 UWP プロジェクトでは、デバイスに依存しない単位ごとのピクセル単位のスケール ファクター (%) で構成されるビットマップ名前付け規則をサポートしています。たとえば、次のとおりです。
 
@@ -181,7 +184,7 @@ UWP プロジェクトでは、デバイスに依存しない単位ごとのピ�
 
 ### <a name="toolbars-and-their-icons"></a>ツールバーとそのアイコン
 
-プラットフォーム固有のビットマップの主な用途の 1 つは、Xamarin.Forms ツールバーです。これを構築するには、[`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) オブジェクトを `Page` で定義された [`ToolbarItems`](xref:Xamarin.Forms.Page.ToolbarItems) コレクションに追加します。 `ToobarItem` は [`MenuItem`](xref:Xamarin.Forms.MenuItem) から派生し、そこからいくつかのプロパティを継承します。
+プラットフォーム固有のビットマップの主な用途の 1 つは、Xamarin.Forms ツールバーです。これを構築するには、[`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) オブジェクトを、`Page` で定義された [`ToolbarItems`](xref:Xamarin.Forms.Page.ToolbarItems) コレクションに追加します。 `ToobarItem` は [`MenuItem`](xref:Xamarin.Forms.MenuItem) から派生し、そこからいくつかのプロパティを継承します。
 
 最も重要な `ToolbarItem` プロパティは、次のとおりです。
 
@@ -193,7 +196,7 @@ UWP プロジェクトでは、デバイスに依存しない単位ごとのピ�
 
 `ToolbarItem` を使うと、タップしたときに `Button` のように [`Clicked`](xref:Xamarin.Forms.MenuItem.Clicked) イベントが発生します。 `ToolbarItem` では、MVVM に関連してよく使用される [`Command`](xref:Xamarin.Forms.MenuItem.Command) および [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter) プロパティもサポートされます (「[第 18 章 MVVM](chapter18.md)」を参照してください)。
 
-iOS と Android のいずれでも、ツールバーを表示するページは [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) であるか、`NavigationPage` によってナビゲートされるページである必要があります。 [**ToolbarDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ToolbarDemo) プログラムによって、`ContentPage` 引数を使用して、`App` クラスの `MainPage` プロパティが [`NavigationPage` コンストラクター](xref:Xamarin.Forms.NavigationPage.%23ctor(Xamarin.Forms.Page))に設定されます。これは、ツール バーの構築とイベント ハンドラーを示すものです。
+iOS と Android のいずれでも、ツールバーを表示するページは [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) であるか、`NavigationPage` によってナビゲートされるページである必要があります。 [**ToolbarDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter13/ToolbarDemo) プログラムでは、`ContentPage` 引数を使用して、`App` クラスの `MainPage` プロパティが [`NavigationPage` コンストラクター](xref:Xamarin.Forms.NavigationPage.%23ctor(Xamarin.Forms.Page)) に設定されます。これが、ツール バーの構築とイベント ハンドラーを示しています。
 
 ### <a name="button-images"></a>ボタンの画像
 

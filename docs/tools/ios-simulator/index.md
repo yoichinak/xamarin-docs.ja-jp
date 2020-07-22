@@ -6,12 +6,12 @@ ms.assetid: 63c50190-7e54-4140-a30d-1a0e577c47d7
 author: davidortinau
 ms.author: daortin
 ms.date: 04/26/2019
-ms.openlocfilehash: d5898f9c6ee30eb1f12bf6480b93a609e762e6ea
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 84c5a72f887f38c5efcee09cfc19986093db226e
+ms.sourcegitcommit: d86b7a18cf8b1ef28cd0fe1d311f1c58a65101a8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75886594"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85101350"
 ---
 # <a name="remoted-ios-simulator-for-windows"></a>Remoted iOS Simulator for Windows
 
@@ -23,7 +23,7 @@ Remoted iOS Simulator for Windows を使用すると、Visual Studio 2019 およ
 
 Remoted iOS Simulator for Windows は、 Visual Studio 2019 および Visual Studio 2017 に Xamarin の一部として自動的にインストールされます。 これを使用するには、次の手順に従います。
 
-1. [Visual 2019 を Mac ビルド ホストとペアリングします](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
+1. [Visual Studio 2019 を Mac ビルド ホストとペアリングします](~/ios/get-started/installation/windows/connecting-to-mac/index.md)。
 2. Visual Studio で、iOS または tvOS プロジェクトのデバッグを開始します。 Remoted iOS Simulator for Windows が Windows マシンに表示されます。
 
 ステップ バイ ステップのガイドについては、[こちらの動画](deploy.md)をご覧ください。

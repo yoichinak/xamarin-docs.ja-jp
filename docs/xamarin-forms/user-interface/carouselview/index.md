@@ -1,5 +1,5 @@
 ---
-title: CarouselView
+title: Xamarin.FormsCarouselView
 description: CarouselView は、スクロール可能なレイアウトでデータを表示するためのビューであり、ユーザーはスワイプして項目のコレクション内を移動できます。
 ms.prod: xamarin
 ms.assetid: 5b673347-cdba-4532-820f-fb5f070c86bc
@@ -7,37 +7,40 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/08/2019
-ms.openlocfilehash: 816c1b6e4ab497d0ada0f80fa3ad4800912587c3
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 891f1ff8ad8f254ff3a2805d08d0f7e115bb0fff
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72696988"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137372"
 ---
-# <a name="xamarinforms-carouselview"></a>CarouselView
+# <a name="xamarinforms-carouselview"></a>Xamarin.FormsCarouselView
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-## <a name="introductionintroductionmd"></a>[はじめに](introduction.md)
+## <a name="introduction"></a>[はじめに](introduction.md)
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)は、スクロール可能なレイアウトでデータを表示するためのビューであり、ユーザーはスワイプして項目のコレクション内を移動できます。
+[`CarouselView`](xref:Xamarin.Forms.CarouselView)は、スクロール可能なレイアウトでデータを表示するためのビューです。ユーザーは、スワイプして項目のコレクション内を移動できます。
 
-## <a name="datapopulate-datamd"></a>[データ](populate-data.md)
+## <a name="data"></a>[データ](populate-data.md)
 
-[@No__t_1](xref:Xamarin.Forms.CarouselView)には、 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)プロパティを `IEnumerable` を実装する任意のコレクションに設定することによってデータが設定されます。 各項目の外観を定義するには、[ [`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate) ] プロパティを[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)に設定します。
+には、 [`CarouselView`](xref:Xamarin.Forms.CarouselView) [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) プロパティをを実装する任意のコレクションに設定することにより、データが設定され `IEnumerable` ます。 各項目の外観は、プロパティをに設定することによって定義でき [`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate) [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ます。
 
-## <a name="layoutlayoutmd"></a>[レイアウト](layout.md)
+## <a name="layout"></a>[レイアウト](layout.md)
 
-既定では、 [`CarouselView`](xref:Xamarin.Forms.CarouselView)の項目が横方向の一覧に表示されます。 ただし、垂直方向を含む CollectionView と同じレイアウトにもアクセスできます。
+既定では、の [`CarouselView`](xref:Xamarin.Forms.CarouselView) 項目が横方向の一覧に表示されます。 ただし、垂直方向を含む CollectionView と同じレイアウトにもアクセスできます。
 
-## <a name="interactioninteractionmd"></a>[介入](interaction.md)
+## <a name="interaction"></a>[相互作用](interaction.md)
 
-[@No__t_1](xref:Xamarin.Forms.CarouselView)に現在表示されているアイテムには、`CurrentItem` プロパティと `Position` プロパティを使用してアクセスできます。
+で現在表示されている項目には [`CarouselView`](xref:Xamarin.Forms.CarouselView) 、プロパティおよびプロパティを使用してアクセスでき `CurrentItem` `Position` ます。
 
-## <a name="empty-viewsemptyviewmd"></a>[空のビュー](emptyview.md)
+## <a name="empty-views"></a>[空のビュー](emptyview.md)
 
-[@No__t_1](xref:Xamarin.Forms.CarouselView)では、表示可能なデータがない場合にユーザーにフィードバックを提供する空のビューを指定できます。 空のビューには、文字列、ビュー、または複数のビューを指定できます。
+で [`CarouselView`](xref:Xamarin.Forms.CarouselView) は、表示可能なデータがない場合にユーザーにフィードバックを提供する空のビューを指定できます。 空のビューには、文字列、ビュー、または複数のビューを指定できます。
 
-## <a name="scrollingscrollingmd"></a>[スクロール](scrolling.md)
+## <a name="scrolling"></a>[スクロール](scrolling.md)
 
-ユーザーがスクロールを開始しようとしたときに、項目が完全に表示されるように、スクロールの終了位置を制御できます。 また、 [`CarouselView`](xref:Xamarin.Forms.CarouselView)では、項目をプログラムによってビューにスクロールする2つの[`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*)メソッドが定義されています。 オーバーロードの1つは、指定されたインデックス位置にある項目をビューにスクロールし、もう一方は指定された項目をビューにスクロールします。
+ユーザーがスクロールを開始しようとしたときに、項目が完全に表示されるように、スクロールの終了位置を制御できます。 さらに、では、 [`CarouselView`](xref:Xamarin.Forms.CarouselView) [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) 項目をプログラムによってビューにスクロールする2つのメソッドが定義されています。 オーバーロードの1つは、指定されたインデックス位置にある項目をビューにスクロールし、もう一方は指定された項目をビューにスクロールします。

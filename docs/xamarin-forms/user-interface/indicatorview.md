@@ -1,5 +1,5 @@
 ---
-title: IndicatorView
+title: Xamarin.FormsIndicatorView
 description: IndicatorView は、CarouselView 内の項目数と現在位置を表すインジケーターを表示するコントロールです。
 ms.prod: xamarin
 ms.assetId: BBCC223B-4B02-46B7-80BB-EE0E86A67CE2
@@ -7,48 +7,43 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/27/2020
-ms.openlocfilehash: e76cf6e766a95994fa2862deb9eb73928f4769a2
-ms.sourcegitcommit: 5d22f37dfc358678df52a4d17c57261056a72cb7
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0e6d223fd10e7b792f2d145a7cdd417865a095bb
+ms.sourcegitcommit: d86b7a18cf8b1ef28cd0fe1d311f1c58a65101a8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77674532"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85101441"
 ---
-# <a name="xamarinforms-indicatorview"></a>IndicatorView
-
-![](~/media/shared/preview.png "This API is currently pre-release")
+# <a name="xamarinforms-indicatorview"></a>Xamarin.FormsIndicatorView
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-indicatorviewdemos/)
 
-`IndicatorView` は、`CarouselView`内の項目数と現在位置を表すインジケーターを表示するコントロールです。
+は、 `IndicatorView` 内の項目数と現在位置を表すインジケーターを表示するコントロールです `CarouselView` 。
 
 [![IOS と Android での CarouselView と IndicatorView のスクリーンショット](indicatorview-images/circles.png "IndicatorView の円")](indicatorview-images/circles-large.png#lightbox "IndicatorView の円")
 
-`IndicatorView` は、iOS および Android プラットフォームの Xamarin. Forms 4.4、ユニバーサル Windows プラットフォームの4.5 で使用できます。 ただし、現在は実験的で、`Forms.Init`を呼び出す前に、次のコード行を iOS の `AppDelegate` クラス、または Android の `MainActivity` クラスに追加することによってのみ使用できます。
+`IndicatorView` は次の特性を定義します。
 
-```csharp
-Forms.SetFlags("IndicatorView_Experimental");
-```
+- `Count`インジケーターの数を示す型の `int` 。
+- `HideSingle`型のは、 `bool` 1 つだけ存在する場合にインジケーターを非表示にするかどうかを示します。 既定値は `true` です。
+- `IndicatorColor``Color`インジケーターの色 (型)。
+- `IndicatorSize``double`インジケーターのサイズ (型)。 既定値は6.0 です。
+- `IndicatorLayout`型のは、の `Layout<View>` レンダリングに使用されるレイアウトクラスを定義し `IndicatorView` ます。 このプロパティはによって設定され Xamarin.Forms 、通常、開発者が設定する必要はありません。
+- `IndicatorTemplate`型の `DataTemplate` 。各インジケーターの外観を定義するテンプレート。
+- `IndicatorsShape`型の、 `IndicatorShape` 各インジケーターの形状。
+- `ItemsSource`型の `IEnumerable` 。インジケーターが表示されるコレクション。 プロパティが設定されると、このプロパティは自動的に設定され `CarouselView.IndicatorView` ます。
+- `MaximumVisible`型の、 `int` 表示されるインジケーターの最大数。 既定値は `int.MaxValue` です。
+- `Position`型の、 `int` 現在選択されているインジケーターインデックス。 このプロパティは、 `TwoWay` バインディングを使用します。 プロパティが設定されると、このプロパティは自動的に設定され `CarouselView.IndicatorView` ます。
+- `SelectedIndicatorColor`型の `Color` 。の現在の項目を表すインジケーターの色 `CarouselView` 。
 
-`IndicatorView` は、次のプロパティを定義します。
-
-- インジケーターの数 `int`型の `Count`。
-- 型 `bool`の `HideSingle`は、1つだけ存在する場合にインジケーターを非表示にするかどうかを示します。 既定値は `true` です。
-- インジケーターの色を `Color`型の `IndicatorColor`。
-- インジケーターのサイズ `double`型の `IndicatorSize`。 既定値は6.0 です。
-- `Layout<View>`型の `IndicatorLayout`は、`IndicatorView`を表示するために使用するレイアウトクラスを定義します。 このプロパティは、Xamarin. Forms によって設定されます。通常、開発者が設定する必要はありません。
-- 各インジケーターの外観を定義するテンプレート `DataTemplate`型の `IndicatorTemplate`。
-- 各インジケーターの形状 `IndicatorShape`型の `IndicatorsShape`。
-- `IEnumerable`型の `ItemsSource`、インジケーターが表示されるコレクションです。 このプロパティは、`CarouselView.IndicatorView` プロパティが設定されている場合に自動的に設定されます。
-- `int`型の `MaximumVisible`、表示されるインジケーターの最大数。 既定値は `int.MaxValue` です。
-- 現在選択されているインジケーターインデックスの型 `int`の `Position`。 このプロパティは、`TwoWay` バインドを使用します。 このプロパティは、`CarouselView.IndicatorView` プロパティが設定されている場合に自動的に設定されます。
-- `CarouselView`内の現在の項目を表すインジケーターの色 `Color`型の `SelectedIndicatorColor`。
-
-これらのプロパティは[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)のオブジェクトによって支えられています。これは、データバインディングのターゲットとスタイルを設定できることを意味します。
+これらのプロパティは、オブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。これは、データバインディングのターゲットとスタイルを設定できることを意味します。
 
 ## <a name="create-an-indicatorview"></a>IndicatorView を作成する
 
-次の例は、XAML で `IndicatorView` をインスタンス化する方法を示しています。
+次の例は、XAML でをインスタンス化する方法を示してい `IndicatorView` ます。
 
 ```xaml
 <StackLayout>
@@ -65,19 +60,19 @@ Forms.SetFlags("IndicatorView_Experimental");
 </StackLayout>
 ```
 
-この例では、`IndicatorView` が `CarouselView`の下にレンダリングされ、`CarouselView`内の各項目のインジケーターが表示されます。 `IndicatorView` には、`CarouselView.IndicatorView` プロパティを `IndicatorView` オブジェクトに設定することによってデータが設定されます。 各インジケーターは薄い灰色の円であり、`CarouselView` の現在の項目を表すインジケーターは濃い灰色です。
+この例では、の下にが `IndicatorView` レンダリングされ、 `CarouselView` 内の各項目のインジケーターが表示され `CarouselView` ます。 には、 `IndicatorView` プロパティをオブジェクトに設定することによって、データが設定され `CarouselView.IndicatorView` `IndicatorView` ます。 各インジケーターは薄い灰色の円であり、の現在の項目を表すインジケーターは `CarouselView` 濃い灰色です。
 
 > [!IMPORTANT]
-> `CarouselView.IndicatorView` プロパティを設定すると、`IndicatorView.Position` プロパティのバインドが `CarouselView.Position` プロパティになり、`IndicatorView.ItemsSource` プロパティが `CarouselView.ItemsSource` プロパティにバインドされます。
+> プロパティを設定すると、プロパティがプロパティにバインドされ、プロパティがプロパティ `CarouselView.IndicatorView` `IndicatorView.Position` にバインドされ `CarouselView.Position` `IndicatorView.ItemsSource` `CarouselView.ItemsSource` ます。
 
 ## <a name="change-indicator-shape"></a>インジケーター形状の変更
 
-`IndicatorView` クラスには、インジケーターの形状を決定する `IndicatorsShape` プロパティがあります。 このプロパティは、`IndicatorShape` 列挙型のメンバーのいずれかに設定できます。
+`IndicatorView`クラスには `IndicatorsShape` 、インジケーターの形状を決定するプロパティがあります。 このプロパティは、列挙体のメンバーの1つに設定でき `IndicatorShape` ます。
 
-- `Circle` は、インジケーター図形を円形にすることを指定します。 これは、`IndicatorView.IndicatorsShape` プロパティの既定値です。
-- `Square` は、インジケーター図形が正方形であることを示します。
+- `Circle`インジケーター図形を円形にすることを指定します。 これは、`IndicatorView.IndicatorsShape` プロパティの既定値です。
+- `Square`インジケーターの形状が正方形であることを示します。
 
-次の例は、正方形のインジケーターを使用するように構成された `IndicatorView` を示しています。
+次の例は、 `IndicatorView` 正方形のインジケーターを使用するように構成されたを示しています。
 
 ```xaml
 <IndicatorView x:Name="indicatorView"
@@ -88,9 +83,9 @@ Forms.SetFlags("IndicatorView_Experimental");
 
 ## <a name="change-indicator-size"></a>インジケーターサイズの変更
 
-`IndicatorView` クラスには `double`型の `IndicatorSize` プロパティがあり、デバイスに依存しない単位でのインジケーターのサイズを決定します。 このプロパティの既定値は6.0 です。
+`IndicatorView`クラスには `IndicatorSize` `double` 、デバイスに依存しない単位でインジケーターのサイズを決定する型のプロパティがあります。 このプロパティの既定値は6.0 です。
 
-次の例は、より大きなインジケーターを表示するように構成された `IndicatorView` を示しています。
+次の例は、 `IndicatorView` より大きなインジケーターを表示するように構成されたを示しています。
 
 ```xaml
 <IndicatorView x:Name="indicatorView"
@@ -99,9 +94,9 @@ Forms.SetFlags("IndicatorView_Experimental");
 
 ## <a name="limit-the-number-of-indicators-displayed"></a>表示されるインジケーターの数を制限する
 
-`IndicatorView` クラスには `int`型の `MaximumVisible` プロパティがあり、表示されるインジケーターの最大数を決定します。
+`IndicatorView`クラスには `MaximumVisible` 、表示される `int` インジケーターの最大数を決定する型のプロパティがあります。
 
-次の例は、最大6つのインジケーターを表示するように構成された `IndicatorView` を示しています。
+次の例は、 `IndicatorView` 最大6つのインジケーターを表示するように構成されたを示しています。
 
 ```xaml
 <IndicatorView x:Name="indicatorView"
@@ -110,7 +105,7 @@ Forms.SetFlags("IndicatorView_Experimental");
 
 ## <a name="define-indicator-appearance"></a>インジケーターの外観を定義する
 
-各インジケーターの外観は、`IndicatorView.IndicatorTemplate` プロパティを[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)に設定することによって定義できます。
+各インジケーターの外観は、プロパティをに設定することによって定義でき `IndicatorView.IndicatorTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ます。
 
 ```xaml
 <StackLayout>
@@ -133,13 +128,13 @@ Forms.SetFlags("IndicatorView_Experimental");
 </StackLayout>
 ```
 
-[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)で指定された要素は、各インジケーターの外観を定義します。 この例では、各インジケーターは、`FontImage` マークアップ拡張機能を使用してフォントアイコンを表示する[`Image`](xref:Xamarin.Forms.Image)です。
+「」で指定された要素は、 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 各インジケーターの外観を定義します。 この例では、各インジケーターは、 [`Image`](xref:Xamarin.Forms.Image) `FontImage` マークアップ拡張機能を使用してフォントアイコンを表示するです。
 
 次のスクリーンショットは、フォントアイコンを使用して表示されるインジケーターを示しています。
 
 [![IOS と Android のテンプレート化された IndicatorView のスクリーンショット](indicatorview-images/templated.png "テンプレート化 IndicatorView")](indicatorview-images/templated-large.png#lightbox "テンプレート化 IndicatorView")
 
-`FontImage` マークアップ拡張機能の詳細については、「 [FontImage markup extension](~/xamarin-forms/xaml/markup-extensions/consuming.md#fontimage-markup-extension)」を参照してください。
+マークアップ拡張機能の詳細については `FontImage` 、「 [FontImage markup extension](~/xamarin-forms/xaml/markup-extensions/consuming.md#fontimage-markup-extension)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 

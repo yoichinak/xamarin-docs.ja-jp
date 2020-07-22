@@ -1,34 +1,37 @@
 ---
-title: Xamarin. フォームレイアウトを選択する
-description: Xamarin. Forms layout クラスを使用すると、アプリケーションで UI コントロールを配置してグループ化できます。
+title: レイアウトの選択 Xamarin.Forms
+description: Xamarin.Formsレイアウトクラスを使用すると、アプリケーションに UI コントロールを配置してグループ化できます。
 ms.prod: xamarin
 ms.assetid: 05A39752-A174-447E-A30D-3CC9EF98CB96
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/21/2018
-ms.openlocfilehash: d029e679400b9523df8e03d509230849fa0c96c4
-ms.sourcegitcommit: 9ae537efc106f56aeec562773004c6f708704ae9
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 16a48423d05ce1cede75c0020bf18f4f398f5adc
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78252874"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138503"
 ---
-# <a name="choose-a-xamarinforms-layout"></a>Xamarin. フォームレイアウトを選択する
+# <a name="choose-a-xamarinforms-layout"></a>レイアウトの選択 Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
-Xamarin. Forms layout クラスを使用すると、アプリケーションで UI コントロールを配置してグループ化できます。 レイアウトクラスを選択するには、レイアウトが子要素を配置する方法と、レイアウトがその子要素をどのようにサイズ調整するかについての知識が必要です。 また、レイアウトを入れ子にして目的のレイアウトを作成することが必要になる場合もあります。
+Xamarin.Formsレイアウトクラスを使用すると、アプリケーションに UI コントロールを配置してグループ化できます。 レイアウトクラスを選択するには、レイアウトが子要素を配置する方法と、レイアウトがその子要素をどのようにサイズ調整するかについての知識が必要です。 また、レイアウトを入れ子にして目的のレイアウトを作成することが必要になる場合もあります。
 
-次の図は、メインの Xamarin. フォームレイアウトクラスで実現できる典型的なレイアウトを示しています。
+次の図は、メインレイアウトクラスを使用して実現できる一般的なレイアウトを示してい Xamarin.Forms ます。
 
-[![Xamarin. Forms のメインレイアウトクラス](images/layouts.png "Xamarin. フォームレイアウトクラス")](images/layouts-large.png#lightbox "Xamarin. フォームレイアウトクラス")
+[![のメインレイアウトクラスXamarin.Forms](images/layouts.png "[!ファンド.NO LOC (Xamarin)] レイアウトクラス")](images/layouts-large.png#lightbox "[!ファンド.NO LOC (Xamarin)] レイアウトクラス")
 
 ## <a name="stacklayout"></a>StackLayout
 
-[`StackLayout`](xref:Xamarin.Forms.StackLayout)は、1次元のスタック内の要素を水平方向または垂直方向に整理します。 [`Orientation`](xref:Xamarin.Forms.StackLayout.Orientation)プロパティは要素の方向を指定し、既定の方向は[`Vertical`](xref:Xamarin.Forms.StackOrientation)ます。 `StackLayout` は、通常、ページ上の UI のサブセクションを配置するために使用されます。
+は、 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 1 次元のスタック内の要素を水平方向または垂直方向に編成します。 [`Orientation`](xref:Xamarin.Forms.StackLayout.Orientation)プロパティは要素の方向を指定し、既定の向きは [`Vertical`](xref:Xamarin.Forms.StackOrientation) です。 `StackLayout`は、通常、ページ上の UI のサブセクションを配置するために使用されます。
 
-次の XAML は、3つの[`Label`](xref:Xamarin.Forms.Label)オブジェクトを含む垂直[`StackLayout`](xref:Xamarin.Forms.StackLayout)を作成する方法を示しています。
+次の XAML は、3つのオブジェクトを含む垂直方向の作成方法を示してい [`StackLayout`](xref:Xamarin.Forms.StackLayout) [`Label`](xref:Xamarin.Forms.Label) ます。
 
 ```xaml
 <StackLayout Margin="20,35,20,25">
@@ -38,9 +41,9 @@ Xamarin. Forms layout クラスを使用すると、アプリケーションで 
 </StackLayout>
 ```
 
-[`StackLayout`](xref:Xamarin.Forms.StackLayout)では、要素のサイズが明示的に設定されていない場合は、使用可能な幅を埋めるように拡張されるか、 [`Orientation`](xref:Xamarin.Forms.StackLayout.Orientation)プロパティが[`Horizontal`](xref:Xamarin.Forms.StackOrientation)に設定されている場合は高さになります。
+では、 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 要素のサイズが明示的に設定されていない場合は、使用可能な幅を埋めるように拡張されるか、 [`Orientation`](xref:Xamarin.Forms.StackLayout.Orientation) プロパティがに設定されている場合は height が拡張され [`Horizontal`](xref:Xamarin.Forms.StackOrientation) ます。
 
-[`StackLayout`](xref:Xamarin.Forms.StackLayout)は、多くの場合、他の子レイアウトを含む親レイアウトとして使用されます。 ただし、`StackLayout` オブジェクトの組み合わせを使用して[`Grid`](xref:Xamarin.Forms.Grid)レイアウトを再現するために `StackLayout` を使用しないでください。 次のコードは、この不適切な方法の例を示しています。
+は、 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 多くの場合、他の子レイアウトを含む親レイアウトとして使用されます。 ただし、を使用して、 `StackLayout` [`Grid`](xref:Xamarin.Forms.Grid) オブジェクトの組み合わせを使用してレイアウトを再現することはできません `StackLayout` 。 次のコードは、この不適切な方法の例を示しています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -68,23 +71,23 @@ Xamarin. Forms layout クラスを使用すると、アプリケーションで 
 </ContentPage>
 ```
 
-不要なレイアウト計算が行われるため、不経済です。 代わりに、 [`Grid`](xref:Xamarin.Forms.Grid)を使用すると、目的のレイアウトをより適切に実現できます。
+不要なレイアウト計算が行われるため、不経済です。 代わりに、を使用すると、目的のレイアウトをより適切に実現でき [`Grid`](xref:Xamarin.Forms.Grid) ます。
 
 > [!TIP]
-> [`StackLayout`](xref:Xamarin.Forms.StackLayout)を使用する場合は、子要素が1つだけ[`LayoutOptions.Expands`](xref:Xamarin.Forms.LayoutOptions.Expands)に設定されていることを確認してください。 このプロパティにより、指定された子は、`StackLayout` がそれに与えられる最大の領域を占有します。このような計算を複数回実行することは無駄です。
+> を使用する場合 [`StackLayout`](xref:Xamarin.Forms.StackLayout) は、子要素が1つだけに設定されていることを確認して [`LayoutOptions.Expands`](xref:Xamarin.Forms.LayoutOptions.Expands) ください。 このプロパティにより、指定された子は、`StackLayout` がそれに与えられる最大の領域を占有します。このような計算を複数回実行することは無駄です。
 
-詳細については、「 [Xamarin の StackLayout](stack-layout.md)」を参照してください。
+詳細については、「 [ Xamarin.Forms stacklayout](stacklayout.md)」を参照してください。
 
-## <a name="grid"></a>Grid
+## <a name="grid"></a>グリッド
 
-[`Grid`](xref:Xamarin.Forms.Grid)は、行と列に要素を表示するために使用されます。これは、比例または絶対的なサイズを持つことができます。 グリッドの行と列は、 [`RowDefinitions`](xref:Xamarin.Forms.Grid.RowDefinitions)プロパティと[`ColumnDefinitions`](xref:Xamarin.Forms.Grid.ColumnDefinitions)プロパティを使用して指定します。
+は、 [`Grid`](xref:Xamarin.Forms.Grid) 行と列に要素を表示するために使用されます。これは、比例または絶対的なサイズを持つことができます。 グリッドの行と列は、プロパティとプロパティで指定し [`RowDefinitions`](xref:Xamarin.Forms.Grid.RowDefinitions) [`ColumnDefinitions`](xref:Xamarin.Forms.Grid.ColumnDefinitions) ます。
 
-特定の[`Grid`](xref:Xamarin.Forms.Grid)セルに要素を配置するには、 [`Grid.Column`](xref:Xamarin.Forms.Grid.ColumnProperty)と[`Grid.Row`](xref:Xamarin.Forms.Grid.RowProperty)添付プロパティを使用します。 複数の行および列にまたがる要素を作成するには、 [`Grid.RowSpan`](xref:Xamarin.Forms.Grid.RowSpanProperty)と[`Grid.ColumnSpan`](xref:Xamarin.Forms.Grid.ColumnSpanProperty)添付プロパティを使用します。
+特定のセルに要素を配置するに [`Grid`](xref:Xamarin.Forms.Grid) は、 [`Grid.Column`](xref:Xamarin.Forms.Grid.ColumnProperty) および添付プロパティを使用し [`Grid.Row`](xref:Xamarin.Forms.Grid.RowProperty) ます。 複数の行および列にまたがる要素を作成するには、 [`Grid.RowSpan`](xref:Xamarin.Forms.Grid.RowSpanProperty) および添付プロパティを使用し [`Grid.ColumnSpan`](xref:Xamarin.Forms.Grid.ColumnSpanProperty) ます。
 
 > [!NOTE]
-> [`Grid`](xref:Xamarin.Forms.Grid)のレイアウトはテーブルと混同しないようにしてください。表形式のデータを表示するためのものではありません。 HTML テーブルとは異なり、`Grid` はコンテンツをレイアウトすることを目的としています。 表形式データを表示する場合は、 [ListView](~/xamarin-forms/user-interface/listview/index.md)、 [CollectionView](~/xamarin-forms/user-interface/collectionview/index.md)、または[TableView](~/xamarin-forms/user-interface/tableview.md)を使用することを検討してください。
+> [`Grid`](xref:Xamarin.Forms.Grid)レイアウトはテーブルと混同しないようにしてください。表形式のデータを表示するためのものではありません。 HTML テーブルとは異なり、は、コンテンツをレイアウトすることを目的とし `Grid` ています。 表形式データを表示する場合は、 [ListView](~/xamarin-forms/user-interface/listview/index.md)、 [CollectionView](~/xamarin-forms/user-interface/collectionview/index.md)、または[TableView](~/xamarin-forms/user-interface/tableview.md)を使用することを検討してください。
 
-次の XAML は、2つの行と2つの列を持つ[`Grid`](xref:Xamarin.Forms.Grid)を作成する方法を示しています。
+次の XAML は、 [`Grid`](xref:Xamarin.Forms.Grid) 2 つの行と2つの列を持つを作成する方法を示しています。
 
 ```xaml
 <Grid>
@@ -111,20 +114,20 @@ Xamarin. Forms layout クラスを使用すると、アプリケーションで 
 この例では、サイズ変更は次のように機能します。
 
 - 各行には、50のデバイスに依存しない単位の高さが明示的に付いています。
-- 最初の列の幅は[`Auto`](xref:Xamarin.Forms.GridLength.Auto)に設定されます。したがって、その子に必要な幅になります。 この例では、最初の[`Label`](xref:Xamarin.Forms.Label)の幅に合わせて、デバイスに依存しない単位で200ます。
+- 最初の列の幅はに設定され [`Auto`](xref:Xamarin.Forms.GridLength.Auto) ます。したがって、その子に必要な幅になります。 この場合、1つ目の幅に合わせて、デバイスに依存しない単位は200です [`Label`](xref:Xamarin.Forms.Label) 。
 
-列や行のサイズをコンテンツに合わせて調整できる自動サイズ設定を使用して、列または行の中にスペースを分散させることができます。 これを実現するには、 [`RowDefinition`](xref:Xamarin.Forms.RowDefinition)の高さ、または[`ColumnDefinition`](xref:Xamarin.Forms.ColumnDefinition)の幅を[`Auto`](xref:Xamarin.Forms.GridLength.Auto)に設定します。 比例サイズ設定を使用して、グリッドの行と列の間に使用可能な領域を重み付け比率別に配分することもできます。 これを実現するには、`RowDefinition`の高さ、または `ColumnDefinition`の幅を、`*` 演算子を使用する値に設定します。
+列や行のサイズをコンテンツに合わせて調整できる自動サイズ設定を使用して、列または行の中にスペースを分散させることができます。 これを実現するには、の高さ、 [`RowDefinition`](xref:Xamarin.Forms.RowDefinition) またはの幅を [`ColumnDefinition`](xref:Xamarin.Forms.ColumnDefinition) に設定し [`Auto`](xref:Xamarin.Forms.GridLength.Auto) ます。 比例サイズ設定を使用して、グリッドの行と列の間に使用可能な領域を重み付け比率別に配分することもできます。 これを実現するには、の高さ、 `RowDefinition` またはの幅を、演算子を `ColumnDefinition` 使用する値に設定し `*` ます。
 
 > [!CAUTION]
-> できるだけ少ない行数と列が[`Auto`](xref:Xamarin.Forms.GridLength.Auto)サイズに設定されていることを確認してください。 自動サイズ調整された行または列はそれぞれ、レイアウト エンジンに追加のレイアウト計算を実行させることになります。 その代わりに可能であれば、固定サイズの行と列を使用してください。 または、 [`GridUnitType.Star`](xref:Xamarin.Forms.GridUnitType.Star)列挙値を使用して、行と列を設定して、比例した量の領域を占有します。
+> できるだけ少ない数の行と列が size に設定されるようにしてください [`Auto`](xref:Xamarin.Forms.GridLength.Auto) 。 自動サイズ調整された行または列はそれぞれ、レイアウト エンジンに追加のレイアウト計算を実行させることになります。 その代わりに可能であれば、固定サイズの行と列を使用してください。 または、行と列に対して、列挙値を使用して比例した領域を占めるように設定し [`GridUnitType.Star`](xref:Xamarin.Forms.GridUnitType.Star) ます。
 
-詳細については、「 [Xamarin. Forms Grid](grid.md)」を参照してください。
+詳細については、「 [ Xamarin.Forms Grid](grid.md)」を参照してください。
 
 ## <a name="flexlayout"></a>FlexLayout
 
-[`FlexLayout`](xref:Xamarin.Forms.FlexLayout)は、水平方向または垂直方向にスタックに子要素を表示するという点で[`StackLayout`](xref:Xamarin.Forms.StackLayout)に似ています。 ただし、`FlexLayout` は、1つの行または列に収まらない場合に子をラップすることもできます。また、子要素のサイズ、向き、および配置をより細かく制御できます。
+は [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) 、 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 子要素を水平方向または垂直方向にスタックに表示するという点でに似ています。 ただし、は、 `FlexLayout` 1 つの行または列に収まらない場合に、子をラップすることもできます。また、子要素のサイズ、向き、および配置をより細かく制御できます。
 
-次の XAML は、1つの列にビューを表示する[`FlexLayout`](xref:Xamarin.Forms.FlexLayout)を作成する方法を示しています。
+次の XAML は、 [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) 1 つの列にビューを表示するを作成する方法を示しています。
 
 ```xaml
 <FlexLayout Direction="Column"
@@ -138,22 +141,22 @@ Xamarin. Forms layout クラスを使用すると、アプリケーションで 
 
 この例では、レイアウトは次のように機能します。
 
-- [`Direction`](xref:Xamarin.Forms.FlexLayout.Direction)プロパティは `Column`に設定されます。これにより、`FlexLayout` の子が項目の1つの列に配置されます。
-- [`AlignItems`](xref:Xamarin.Forms.FlexLayout.AlignItems)プロパティは `Center`に設定されます。これにより、各項目が水平方向に中央揃えになります。
-- [`JustifyContent`](xref:Xamarin.Forms.FlexLayout.JustifyContent)プロパティは `SpaceEvenly`に設定されています。これにより、すべてのアイテムと最初のアイテムの上、および最後のアイテムの下にあるすべての領域が均等に割り当てられます。
+- [`Direction`](xref:Xamarin.Forms.FlexLayout.Direction)プロパティはに設定され `Column` ます。これにより、の子が `FlexLayout` 項目の1つの列に配置されます。
+- [`AlignItems`](xref:Xamarin.Forms.FlexLayout.AlignItems)プロパティはに設定されます `Center` 。これにより、各項目が水平方向に中央揃えになります。
+- [`JustifyContent`](xref:Xamarin.Forms.FlexLayout.JustifyContent)プロパティがに設定されてい `SpaceEvenly` ます。これにより、すべての項目と最初の項目の上、および最後の項目の下のすべての領域が均等に割り当てられます。
 
-詳細については、「 [Xamarin. Forms FlexLayout](flex-layout.md)」を参照してください。
+詳細については、「 [ Xamarin.Forms flexlayout](flex-layout.md)」を参照してください。
 
 ## <a name="relativelayout"></a>RelativeLayout
 
-[`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout)は、レイアウトまたは兄弟要素のプロパティを基準として要素の位置やサイズを変更するために使用されます。 既定では、要素はレイアウトの左上隅に配置されます。 `RelativeLayout` を使用すると、デバイスのサイズに比例してスケーリングする Ui を作成できます。
+は、 [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) レイアウト要素または兄弟要素のプロパティを基準として要素の位置やサイズを変更するために使用されます。 既定では、要素はレイアウトの左上隅に配置されます。 を使用すると、 `RelativeLayout` デバイスのサイズに比例してスケーリングする ui を作成できます。
 
-[`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout)内では、位置とサイズは制約として指定されます。 制約には[`Factor`](xref:Xamarin.Forms.ConstraintExpression.Factor)プロパティと[`Constant`](xref:Xamarin.Forms.ConstraintExpression.Constant)プロパティがあります。これを使用すると、他のオブジェクトのプロパティの倍数 (または小数) と定数を加算して、位置とサイズを定義できます。 また、定数には負の値を指定できます。
+内では [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) 、位置とサイズは制約として指定されます。 制約 [`Factor`](xref:Xamarin.Forms.ConstraintExpression.Factor) には [`Constant`](xref:Xamarin.Forms.ConstraintExpression.Constant) プロパティとプロパティがあります。これを使用すると、他のオブジェクトのプロパティの倍数 (または小数) と定数を加算して、位置とサイズを定義できます。 また、定数には負の値を指定できます。
 
 > [!NOTE]
-> [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout)は、要素を独自の境界の外側に配置することをサポートしています。
+> は、 [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) 要素を独自の境界の外側に配置することをサポートしています。
 
-次の XAML は、 [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout)内の要素を配置する方法を示しています。
+次の XAML は、内の要素を整列する方法を示してい [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) ます。
 
 ```xaml
 <RelativeLayout>
@@ -183,28 +186,28 @@ Xamarin. Forms layout クラスを使用すると、アプリケーションで 
 
 この例では、レイアウトは次のように機能します。
 
-- Blue [`BoxView`](xref:Xamarin.Forms.BoxView)には、デバイスに依存しない単位である50x50 の明示的なサイズが指定されています。 レイアウトの左上隅 (既定の位置) に配置されます。
-- 赤の[`BoxView`](xref:Xamarin.Forms.BoxView)には、デバイスに依存しない単位として、サイズが明示的に指定されています。 レイアウトの右上隅に配置されます。
-- 灰色の[`BoxView`](xref:Xamarin.Forms.BoxView)には、デバイスに依存しない単位の明示的な幅が指定されています。高さは、その親の高さの75% に設定されています。
-- 緑の[`BoxView`](xref:Xamarin.Forms.BoxView)には、明示的なサイズが指定されていません。 その位置は、`pole`という名前の `BoxView` に対して相対的に設定されます。
+- Blue に [`BoxView`](xref:Xamarin.Forms.BoxView) は、デバイスに依存しない単位である50x50 の明示的サイズが指定されています。 レイアウトの左上隅 (既定の位置) に配置されます。
+- 赤に [`BoxView`](xref:Xamarin.Forms.BoxView) は、デバイスに依存しない単位である50x50 の明示的なサイズが指定されています。 レイアウトの右上隅に配置されます。
+- 灰色に [`BoxView`](xref:Xamarin.Forms.BoxView) は、デバイスに依存しない単位の明示的な幅が指定されています。高さは、その親の高さの75% に設定されています。
+- 緑には、 [`BoxView`](xref:Xamarin.Forms.BoxView) 明示的なサイズが指定されていません。 その位置は、という名前のに相対的に設定され `BoxView` `pole` ます。
 
 > [!WARNING]
-> 可能な限り、`RelativeLayout` の使用は避けてください。 CPU で相当な量の作業を実行しなければならなくなります。
+> 可能であれば、`RelativeLayout` は使用しないでください。 CPU で相当な量の作業を実行しなければならなくなります。
 
-詳細については、「 [RelativeLayout](relative-layout.md)」を参照してください。
+詳細については、「 [ Xamarin.Forms RelativeLayout](relative-layout.md)」を参照してください。
 
 ## <a name="absolutelayout"></a>AbsoluteLayout
 
-[`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)は、明示的な値、またはレイアウトのサイズを基準とした値を使用して要素の位置とサイズを指定するために使用されます。 位置は、`AbsoluteLayout`の左上隅を基準として、子の左上隅によって指定されます。
+は、 [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) 明示的な値、またはレイアウトのサイズを基準とした値を使用して、要素の位置とサイズを指定するために使用されます。 位置は、の左上隅を基準として、子の左上隅によって指定され `AbsoluteLayout` ます。
 
-[`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)は、子にサイズを設定できる場合や、要素のサイズが他の子の位置に影響を与えない場合にのみ使用される特殊な目的のレイアウトと見なす必要があります。 このレイアウトの標準的な用途は、他のコントロールでページをカバーするオーバーレイを作成することです。これにより、ユーザーがページ上の通常のコントロールと対話できないように保護することができます。
+は、 [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) 子にサイズを設定できる場合や、要素のサイズが他の子の位置に影響を与えない場合にのみ使用される特殊な目的のレイアウトと見なされる必要があります。 このレイアウトの標準的な用途は、他のコントロールでページをカバーするオーバーレイを作成することです。これにより、ユーザーがページ上の通常のコントロールと対話できないように保護することができます。
 
 > [!IMPORTANT]
-> `HorizontalOptions` プロパティと `VerticalOptions` プロパティは、`AbsoluteLayout`の子には影響しません。
+> `HorizontalOptions` プロパティと `VerticalOptions` プロパティは、`AbsoluteLayout` の子には影響しません。
 
-[`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)内では、要素の水平位置、垂直方向の位置、幅、および高さを指定するために、 [`AbsoluteLayout.LayoutBounds`](xref:Xamarin.Forms.AbsoluteLayout.LayoutBoundsProperty)の添付プロパティが使用されます。 また、 [`AbsoluteLayout.LayoutFlags`](xref:Xamarin.Forms.AbsoluteLayout.LayoutFlagsProperty)添付プロパティは、レイアウトの範囲をどのように解釈するかを指定します。
+内で [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) は、 [`AbsoluteLayout.LayoutBounds`](xref:Xamarin.Forms.AbsoluteLayout.LayoutBoundsProperty) 添付プロパティを使用して、要素の水平位置、垂直位置、幅、および高さを指定します。 さらに、 [`AbsoluteLayout.LayoutFlags`](xref:Xamarin.Forms.AbsoluteLayout.LayoutFlagsProperty) 添付プロパティは、レイアウトの範囲をどのように解釈するかを指定します。
 
-次の XAML は、 [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)内の要素を配置する方法を示しています。
+次の XAML は、の要素を配置する方法を示してい [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) ます。
 
 ```xaml
 <AbsoluteLayout Margin="40">
@@ -224,20 +227,20 @@ Xamarin. Forms layout クラスを使用すると、アプリケーションで 
 
 この例では、レイアウトは次のように機能します。
 
-- 各[`BoxView`](xref:Xamarin.Forms.BoxView)には 100 x 100 の明示的サイズが与えられ、同じ位置に水平方向に中央揃えで表示されます。
-- 赤の[`BoxView`](xref:Xamarin.Forms.BoxView)は30°回転し、緑の `BoxView` は60°回転します。
-- 各[`BoxView`](xref:Xamarin.Forms.BoxView)では、 [`AbsoluteLayout.LayoutFlags`](xref:Xamarin.Forms.AbsoluteLayout.LayoutFlagsProperty)添付プロパティが `PositionProportional`に設定されます。これは、幅と高さを考慮した後の残りの領域に相対的な位置を示します。
+- 各 [`BoxView`](xref:Xamarin.Forms.BoxView) には 100 x 100 の明示的なサイズが与えられ、同じ位置に水平方向に中央揃えで表示されます。
+- 赤は [`BoxView`](xref:Xamarin.Forms.BoxView) 30 °回転し、緑は `BoxView` 60 °回転します。
+- 各で [`BoxView`](xref:Xamarin.Forms.BoxView) は、 [`AbsoluteLayout.LayoutFlags`](xref:Xamarin.Forms.AbsoluteLayout.LayoutFlagsProperty) 添付プロパティがに設定されます。これは、 `PositionProportional` 幅と高さを考慮した後の残りの領域に、位置が比例していることを示します。
 
 > [!CAUTION]
-> レイアウトエンジンによって追加のレイアウト計算が実行されるため、可能な限り[`AbsoluteLayout.AutoSize`](xref:Xamarin.Forms.AbsoluteLayout.AutoSize)プロパティを使用しないでください。
+> [`AbsoluteLayout.AutoSize`](xref:Xamarin.Forms.AbsoluteLayout.AutoSize)レイアウトエンジンでは追加のレイアウト計算が実行されるため、可能な限りプロパティを使用しないでください。
 
-詳細については、「 [AbsoluteLayout](absolute-layout.md)」を参照してください。
+詳細については、「 [ Xamarin.Forms AbsoluteLayout](absolute-layout.md)」を参照してください。
 
 ## <a name="input-transparency"></a>入力の透明度
 
-各ビジュアル要素には、要素が入力を受け取るかどうかを定義するために使用される[`InputTransparent`](xref:Xamarin.Forms.VisualElement.InputTransparent)のプロパティがあります。 既定値は `false`であり、要素が入力を受け取ることを保証します。
+各ビジュアル要素には、 [`InputTransparent`](xref:Xamarin.Forms.VisualElement.InputTransparent) 要素が入力を受け取るかどうかを定義するために使用されるプロパティがあります。 既定値は `false` で、要素が入力を受け取ることを保証します。
 
-このプロパティがレイアウトクラスに設定されている場合、その値は子要素に転送されます。 したがって、 [`InputTransparent`](xref:Xamarin.Forms.VisualElement.InputTransparent)プロパティをレイアウトクラスの `true` に設定すると、レイアウト内のすべての要素が入力を受け取らなくなります。
+このプロパティがレイアウトクラスに設定されている場合、その値は子要素に転送されます。 したがって、 [`InputTransparent`](xref:Xamarin.Forms.VisualElement.InputTransparent) レイアウトクラスでプロパティをに設定する `true` と、レイアウト内のすべての要素が入力を受け取らなくなります。
 
 ## <a name="layout-performance"></a>レイアウトのパフォーマンス
 
@@ -248,11 +251,11 @@ Xamarin. Forms layout クラスを使用すると、アプリケーションで 
 ## <a name="related-links"></a>関連リンク
 
 - [レイアウト (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
-- [Xamarin. フォームレイアウト (ビデオ)](https://youtu.be/4HlLjTZQzjM)
-- [Xamarin. フォーム StackLayout](stack-layout.md)
-- [Xamarin. フォームグリッド](grid.md)
-- [Xamarin. フォーム FlexLayout](flex-layout.md)
-- [AbsoluteLayout](absolute-layout.md)
-- [RelativeLayout](relative-layout.md)
+- [Xamarin.Formsレイアウト (ビデオ)](https://youtu.be/4HlLjTZQzjM)
+- [Xamarin.FormsStackLayout](stacklayout.md)
+- [Xamarin.Forms行列](grid.md)
+- [Xamarin.FormsFlexLayout](flex-layout.md)
+- [Xamarin.FormsAbsoluteLayout](absolute-layout.md)
+- [Xamarin.FormsRelativeLayout](relative-layout.md)
 - [レイアウトのパフォーマンスを最適化する](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)
 - [レイアウトの圧縮](layout-compression.md)

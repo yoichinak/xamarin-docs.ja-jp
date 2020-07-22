@@ -1,18 +1,21 @@
 ---
 title: '第 11 章の概要: バインド可能なインフラストラクチャ'
-description: 'Xamarin.Forms で Mobile Apps を作成する: 第 11 章の概要: バインド可能なインフラストラクチャ'
+description: 'Xamarin.Forms でモバイル アプリを作成する: 第 11 章の概要: バインド可能なインフラストラクチャ'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 34671C48-0ED4-4B76-A33D-D6505390DC5B
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: f9e3326c0f55469cfa84a019a674679d82dfc007
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: edc3dfd97457fe93a04edd82574f6ed419f5fdc1
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "61334365"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136800"
 ---
 # <a name="summary-of-chapter-11-the-bindable-infrastructure"></a>第 11 章の概要: バインド可能なインフラストラクチャ
 
@@ -22,7 +25,7 @@ ms.locfileid: "61334365"
 
 Xamarin.Forms では、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) クラスによってカプセル化され、[`BindableObject`](xref:Xamarin.Forms.BindableObject) クラスによってサポートされる、"*バインド可能プロパティ*" と呼ばれる拡張プロパティ定義が定義されています。 これらのクラスは関連してはいますが、非常に異なります。`BindableProperty` は、プロパティ自体を定義するために使用されます。`BindableObject` は、バインド可能プロパティを定義するクラスの基底クラスであるという点で `object` に似ています。
 
-## <a name="the-xamarinforms-class-hierarchy"></a>Xamarin.Forms クラスの階層
+## <a name="the-xamarinforms-class-hierarchy"></a>Xamarin.Forms のクラス階層
 
 [**ClassHierarchy**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/ClassHierarchy) サンプルでは、リフレクションを使用して Xamarin.Forms のクラス階層が表示され、この階層において `BindableObject` によって果たされる重要な役割が示されています。 `BindableObject` は、`Object` から派生し、それを親クラスとする [`Element`](xref:Xamarin.Forms.Element) から、[`VisualElement`](xref:Xamarin.Forms.VisualElement) が派生します。 さらにこれを親として [`Page`](xref:Xamarin.Forms.Page) と [`View`](xref:Xamarin.Forms.View) が派生し、それは [`Layout`](xref:Xamarin.Forms.Layout) に対する親クラスです。
 
@@ -32,7 +35,7 @@ Xamarin.Forms では、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)
 
 `BindableObject` から派生したクラスでは、多くの CLR プロパティがバインド可能プロパティ "によってサポートされている" と言われます。 たとえば、`Label` クラスの [`Text`](xref:Xamarin.Forms.Label.Text) プロパティは CLR プロパティですが、`Label` クラスでは、`BindableProperty` 型の [`TextProperty`](xref:Xamarin.Forms.Label.TextProperty) という名前のパブリックな静的読み取り専用フィールドも定義されています。
 
-アプリケーションでは、普通に `Label` の `Text` プロパティを設定または取得できます。または、`Label.TextProperty` 引数を使用して、`BindableObject` によって定義された [`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) メソッドを呼び出すことにより、`Text` を設定することもできます。 同様に、アプリケーションでは、やはり `Label.TextProperty` 引数を使用して、[`GetValue`](xref:Xamarin.Forms.BindableObject.GetValue(Xamarin.Forms.BindableProperty)) メソッドを呼び出すことにより、`Text` プロパティの値を取得できます。 これについては、[**PropertySettings**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/PropertySettings) サンプルを参照してください。
+アプリケーションでは、普通に `Label` の `Text` プロパティを設定または取得できます。または、`Label.TextProperty` 引数を指定し、`BindableObject` によって定義されている [`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty,System.Object)) メソッドを呼び出すことで `Text` を設定できます。 同様に、アプリケーションでは、この場合も `Label.TextProperty` 引数を指定して [`GetValue`](xref:Xamarin.Forms.BindableObject.GetValue(Xamarin.Forms.BindableProperty)) メソッドを呼び出すことにより、`Text` プロパティの値を取得できます。 これについては、[**PropertySettings**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/PropertySettings) サンプルを参照してください。
 
 実際には、`Text` CLR プロパティは、`BindableObject` と `Label.TextProperty` 静的プロパティの組み合わせによって定義された `SetValue` メソッドと `GetValue` メソッドを使用して、完全に実装されます。
 
@@ -54,11 +57,11 @@ Xamarin.Forms では、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)
 
 `Span` は `BindableObject` から派生していないため、`Text` などのプロパティはどれも、バインド可能プロパティによってサポートされていません。 このため、`Span` の `Text` プロパティで `DynamicResource` を設定すると、前の章の [**DynamicVsStatic**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter10/DynamicVsStatic) サンプルで例外が発生します。 [**DynamicVsStaticCode**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/DynamicVsStaticCode) サンプルでは、`Element` によって定義された [`SetDynamicResource`](xref:Xamarin.Forms.Element.SetDynamicResource(Xamarin.Forms.BindableProperty,System.String)) メソッドを使用して、コードで動的リソースを設定する方法が示されています。 最初の引数は `BindableProperty` 型のオブジェクトです。
 
-同様に、`BindableObject` で定義された [`SetBinding`](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase)) メソッドの最初の引数は、`BindableProperty` 型です。
+同様に、`BindableObject` によって定義された [`SetBinding`](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase)) メソッドには、`BindableProperty` 型の最初の引数があります。
 
 ## <a name="defining-bindable-properties"></a>バインド可能プロパティの定義
 
-静的メソッド [`BindableProperty.Create`](xref:Xamarin.Forms.BindableProperty.Create(System.String,System.Type,System.Type,System.Object,Xamarin.Forms.BindingMode,Xamarin.Forms.BindableProperty.ValidateValueDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangedDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangingDelegate,Xamarin.Forms.BindableProperty.CoerceValueDelegate,Xamarin.Forms.BindableProperty.CreateDefaultValueDelegate)) を使用して `BindableProperty` 型の静的読み取り専用フィールドを作成し、独自のバインド可能プロパティを定義できます。
+静的な [`BindableProperty.Create`](xref:Xamarin.Forms.BindableProperty.Create(System.String,System.Type,System.Type,System.Object,Xamarin.Forms.BindingMode,Xamarin.Forms.BindableProperty.ValidateValueDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangedDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangingDelegate,Xamarin.Forms.BindableProperty.CoerceValueDelegate,Xamarin.Forms.BindableProperty.CreateDefaultValueDelegate)) メソッドを使用して独自のバインド可能プロパティを定義し、`BindableProperty` 型の静的な読み取り専用フィールドを作成できます。
 
 これについては、[**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit) ライブラリの [`AltLabel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AltLabel.cs) クラスで示されています。 そのクラスは `Label` から派生し、フォント サイズをポイント単位で指定できます。 [**PointSizedText**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/PointSizedText) サンプルを参照してください。
 
@@ -87,7 +90,7 @@ Xamarin.Forms では、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)
 
 バインド可能プロパティは読み取り専用にできます。 読み取り専用のバインド可能プロパティを作成するには、静的メソッド [`BindableProperty.CreateReadOnly`](xref:Xamarin.Forms.BindableProperty.CreateReadOnly(System.String,System.Type,System.Type,System.Object,Xamarin.Forms.BindingMode,Xamarin.Forms.BindableProperty.ValidateValueDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangedDelegate,Xamarin.Forms.BindableProperty.BindingPropertyChangingDelegate,Xamarin.Forms.BindableProperty.CoerceValueDelegate,Xamarin.Forms.BindableProperty.CreateDefaultValueDelegate)) を呼び出して、[`BindablePropertyKey`](xref:Xamarin.Forms.BindablePropertyKey) 型のプライベートな静的読み取り専用フィールドを定義する必要があります。
 
-次に、`BindablePropertyKey` オブジェクトで [`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindablePropertyKey,System.Object)) のオーバーロードを呼び出すために、CLR プロパティの `set` アクセサーを `private` として定義します。 これにより、プロパティがクラスの外部で設定されるのを防ぐことができます。
+次に、CLR プロパティの `set` アクセサーを `private` として定義し、`BindablePropertyKey` オブジェクトを指定して [`SetValue`](xref:Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindablePropertyKey,System.Object)) のオーバーロードを呼び出します。 これにより、プロパティがクラスの外部で設定されるのを防ぐことができます。
 
 これについては、[**BaskervillesCount**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter11/BaskervillesCount) サンプルで使用されている [`CountedLabel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/CountedLabel.cs) クラスで示されています。
 

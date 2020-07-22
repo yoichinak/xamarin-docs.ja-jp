@@ -1,16 +1,20 @@
 ---
 title: Xamarin.Essentials:デバイス情報
-description: このドキュメントでは、アプリケーションが実行されているデバイスに関する情報を提供する Xamarin.Essentials の DeviceInfo クラスについて説明します。
+description: このドキュメントでは、アプリケーションが実行されているデバイスに関する情報を提供する、Xamarin.Essentials の DeviceInfo クラスについて説明します。
 ms.assetid: A1AC5373-926A-4FB6-8D7D-4B87EB8EB522
 author: jamesmontemagno
+ms.custom: video
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 1cab4ea8ea3f98def4830e101783db1554efa69c
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 70619097baa2c5f10321835b087f693c4fbac0c4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "78295418"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802383"
 ---
 # <a name="xamarinessentials-device-information"></a>Xamarin.Essentials:デバイス情報
 
@@ -22,7 +26,7 @@ ms.locfileid: "78295418"
 
 ## <a name="using-deviceinfo"></a>DeviceInfo の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
@@ -87,5 +91,11 @@ iOS では、特定の iOS デバイスのモデルを取得するための API 
 
 ## <a name="api"></a>API
 
-- [DeviceInfo のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/DeviceInfo)
+- [DeviceInfo のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/DeviceInfo)
 - [DeviceInfo API のドキュメント](xref:Xamarin.Essentials.DeviceInfo)
+
+## <a name="related-video"></a>関連ビデオ
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Device-Information-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

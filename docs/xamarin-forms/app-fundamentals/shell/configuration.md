@@ -1,24 +1,27 @@
 ---
-title: Xamarin.Forms シェルのページの構成
-description: Shell クラスでは、Xamarin.Forms シェル アプリケーションのページの外観の構成に使える添付プロパティを定義できます。 これには、ページの色の設定、ナビゲーション バーの無効化、タブ バーの無効化、およびナビゲーション バーでのビューの表示が含まれます。
+title: 'title: "Xamarin.Forms のシェル ページの構成" description: "Shell クラスでは、Xamarin.Forms シェル アプリケーションのページの外観の構成に使用できる添付プロパティを定義します。'
+description: 'これには、ページの色の設定、ナビゲーション バーの無効化、タブ バーの無効化、およびナビゲーション バーでのビューの表示が含まれます。" ms.prod: xamarin ms.assetid:3FC2FBD1-C30B-4408-97B2-B04E3A2E4F03 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:01/29/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
 ms.prod: xamarin
 ms.assetid: 3FC2FBD1-C30B-4408-97B2-B04E3A2E4F03
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/29/2020
-ms.openlocfilehash: 411c87c25701521bf27fbb863b02a90f8e523574
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 102070fc478b42e9fbc0c7d0006197c81a49c9b8
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303787"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84137502"
 ---
-# <a name="xamarinforms-shell-page-configuration"></a>Xamarin.Forms シェルのページの構成
+# <a name="xamarinforms-shell-page-configuration"></a>Xamarin.Forms シェルのページ構成
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
-`Shell` クラスでは、Xamarin.Forms シェル アプリケーションのページの外観の構成に使える添付プロパティを定義できます。 これには、ページの色の設定、ページのプレゼンテーション モードの設定、ナビゲーション バーの無効化、タブ バーの無効化、およびナビゲーション バーでのビューの表示が含まれます。
+`Shell` クラスでは、Xamarin.Forms シェル アプリケーションのページの外観の構成に使用できる添付プロパティを定義します。 これには、ページの色の設定、ページのプレゼンテーション モードの設定、ナビゲーション バーの無効化、タブ バーの無効化、およびナビゲーション バーでのビューの表示が含まれます。
 
 ## <a name="set-page-colors"></a>ページの色を設定する
 
@@ -30,7 +33,7 @@ ms.locfileid: "79303787"
 - `TitleColor`:、`Color` 型、現在のページのタイトルに使用される色を定義します。
 - `UnselectedColor`: `Color` 型、シェル クロームにおいて、選択されていないテキストとアイコンに使用する色を定義します。
 
-これらのプロパティはすべて、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトを基盤としています。つまり、プロパティをデータ バインディングの対象にして、XAML スタイルを使ってスタイル設定することができます。 さらに、このプロパティはカスケード スタイル シート (CSS) を使用して設定できます。 詳しくは、「[Xamarin.Forms シェル固有のプロパティ](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties)」をご覧ください。
+これらのプロパティはすべて、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトを基盤としています。つまり、プロパティをデータ バインディングの対象にして、XAML スタイルを使ってスタイル設定することができます。 さらに、このプロパティはカスケード スタイル シート (CSS) を使用して設定できます。 詳細については、「[Xamarin.Forms シェル固有のプロパティ](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties)」を参照してください。
 
 > [!NOTE]
 > タブの色を定義できるようにするプロパティもあります。 詳細については、「[タブの外観](tabs.md#tab-appearance)」をご覧ください。
@@ -84,7 +87,7 @@ ms.locfileid: "79303787"
 </Style>
 ```
 
-XAML スタイルの詳細については、「[XAML スタイルを使用した Xamarin.Forms アプリのスタイル設定](~/xamarin-forms/user-interface/styles/xaml/index.md)」をご覧ください。
+XAML スタイルの詳細については、「[XAML スタイルを使用した Xamarin.Forms アプリのスタイル設定](~/xamarin-forms/user-interface/styles/xaml/index.md)」を参照してください。
 
 ## <a name="set-page-presentation-mode"></a>ページのプレゼンテーション モードを設定する
 
@@ -161,7 +164,7 @@ XAML スタイルの詳細については、「[XAML スタイルを使用した
 
 ## <a name="display-views-in-the-navigation-bar"></a>ナビゲーション バーにビューを表示する
 
-`Shell` クラスでは、`View` 型の添付プロパティ `TitleView` を定義できます。これにより、ナビゲーション バーに任意の Xamarin.Forms [`View`](xref:Xamarin.Forms.View) を表示させることができます。
+`Shell` クラスでは、`View` 型の添付プロパティ `TitleView` を定義します。これにより、ナビゲーション バーに任意の Xamarin.Forms [`View`](xref:Xamarin.Forms.View) を表示させることができます。
 
 このプロパティはサブクラス化された `Shell` オブジェクト上で設定できますが、ナビゲーション バーにビューを表示させたい任意のページ上でも設定できます。 たとえば、次の XAML では、[`ContentPage`](xref:Xamarin.Forms.ContentPage) のナビゲーション バーで [`Image`](xref:Xamarin.Forms.Image) を表示させる方法を示しています。
 
@@ -194,5 +197,5 @@ XAML スタイルの詳細については、「[XAML スタイルを使用した
 ## <a name="related-links"></a>関連リンク
 
 - [Xaminals (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
-- [XAML スタイルを使用した Xamarin.Forms アプリのスタイル設定](~/xamarin-forms/user-interface/styles/xaml/index.md)
+- [XAML スタイルを使用して Xamarin.Forms アプリのスタイルを設定する](~/xamarin-forms/user-interface/styles/xaml/index.md)
 - [Xamarin.Forms CSS シェル固有のプロパティ](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties)

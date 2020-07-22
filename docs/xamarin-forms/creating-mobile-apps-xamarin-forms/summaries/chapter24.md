@@ -1,18 +1,21 @@
 ---
 title: '第 24 章の概要: ページのナビゲーション'
-description: 'Xamarin.Forms でモバイル アプリを作成する:第 24 章の概要: ページのナビゲーション'
+description: 'Xamarin.Forms でモバイル アプリを作成する: 第 24 章の概要: ページのナビゲーション'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: DDCDB49C-6008-4F72-B095-463EE21D7C23
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: fd8e4fc77917fcba9bc61e59ced714ac1cd6fbe9
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 09622adc269027b589a7345a7d4411c3dcecbf0c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77130839"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136644"
 ---
 # <a name="summary-of-chapter-24-page-navigation"></a>第 24 章の概要: ページのナビゲーション
 
@@ -64,10 +67,10 @@ ms.locfileid: "77130839"
 
 `NavigationPage` には、それらが設定されている特定のページに影響する、以下の 4 つの接続されている連結可能なプロパティもあります。
 
-- [`SetHasBackButton`](xref:Xamarin.Forms.NavigationPage.SetHasBackButton(Xamarin.Forms.Page,System.Boolean)) および [`GetHasBackButton`](xref:Xamarin.Forms.NavigationPage.GetHasBackButton(Xamarin.Forms.Page))
-- [`SetHasNavigationBar`](xref:Xamarin.Forms.NavigationPage.SetHasNavigationBar(Xamarin.Forms.BindableObject,System.Boolean)) および [`GetHasNavigationBar`](xref:Xamarin.Forms.NavigationPage.GetHasNavigationBar(Xamarin.Forms.BindableObject))
-- [`SetBackButtonTitle`](xref:Xamarin.Forms.NavigationPage.SetBackButtonTitle(Xamarin.Forms.BindableObject,System.String)) および [`GetBackButtonTitle`](xref:Xamarin.Forms.NavigationPage.GetBackButtonTitle(Xamarin.Forms.BindableObject)) は iOS のみで動作
-- [`SetTitleIcon`](xref:Xamarin.Forms.NavigationPage.SetTitleIcon(Xamarin.Forms.BindableObject,Xamarin.Forms.FileImageSource)) および [`GetTitleIcon`](xref:Xamarin.Forms.NavigationPage.GetTitleIcon(Xamarin.Forms.BindableObject)) は iOS と Android のみで動作
+- [`SetHasBackButton`](xref:Xamarin.Forms.NavigationPage.SetHasBackButton(Xamarin.Forms.Page,System.Boolean)) と [`GetHasBackButton`](xref:Xamarin.Forms.NavigationPage.GetHasBackButton(Xamarin.Forms.Page))
+- [`SetHasNavigationBar`](xref:Xamarin.Forms.NavigationPage.SetHasNavigationBar(Xamarin.Forms.BindableObject,System.Boolean)) と [`GetHasNavigationBar`](xref:Xamarin.Forms.NavigationPage.GetHasNavigationBar(Xamarin.Forms.BindableObject))
+- [`SetBackButtonTitle`](xref:Xamarin.Forms.NavigationPage.SetBackButtonTitle(Xamarin.Forms.BindableObject,System.String)) と [`GetBackButtonTitle`](xref:Xamarin.Forms.NavigationPage.GetBackButtonTitle(Xamarin.Forms.BindableObject)) は iOS でのみ機能します
+- [`SetTitleIcon`](xref:Xamarin.Forms.NavigationPage.SetTitleIcon(Xamarin.Forms.BindableObject,Xamarin.Forms.FileImageSource)) と [`GetTitleIcon`](xref:Xamarin.Forms.NavigationPage.GetTitleIcon(Xamarin.Forms.BindableObject)) は iOS と Android でのみ機能します
 
 ### <a name="exploring-the-mechanics"></a>機構を調べる
 
@@ -135,7 +138,7 @@ ms.locfileid: "77130839"
 
 ### <a name="messagingcenter"></a>MessagingCenter
 
-Xamarin.Forms [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) クラスでは、別の方法で 2 つのページ間で相互通信することが可能です。 メッセージはテキスト文字列で識別され、任意のオブジェクトと共に使用されます。
+Xamarin.Forms [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) クラスには、2 つのページ間で相互に通信するための別の方法が用意されています。 メッセージはテキスト文字列で識別され、任意のオブジェクトと共に使用されます。
 
 特定の型からメッセージを受け取るプログラムでは、[`MessagingCenter.Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*) を使用してそれにサブスクライブし、コールバック関数を指定する必要があります。 サブスクライブを解除するには、後で [`MessagingCenter.Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) を呼び出します。 コールバック関数は、[`Send`](xref:Xamarin.Forms.MessagingCenter.Send*) メソッドを介して送信された指定済みの名前を使用する、指定された型から送信されたすべてのメッセージを受信します。
 

@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 156af7a5336ac091c0202e38a3a59a32846e281a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 86c7c726465257d71b6b407686153650dddbcbca
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73003343"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574471"
 ---
 # <a name="providing-haptic-feedback-in-xamarinios"></a>Xamarin での Haptic フィードバックの提供
 
-<a name="Overview" />
+<a name="Overview"></a>
 
 ## <a name="overview"></a>概要
 
@@ -29,19 +29,19 @@ IPhone 7 と iPhone 7 に加えて、Apple には、ユーザーに物理的に�
 - [UINotificationFeedbackGenerator](#UINotificationFeedbackGenerator)
 - [Uiselectionフィード Backgenerator](#UISelectionFeedbackGenerator)
 
-<a name="About-Haptic-Feedback" />
+<a name="About-Haptic-Feedback"></a>
 
 ## <a name="about-haptic-feedback"></a>Haptic のフィードバックについて
 
-いくつかの組み込み UI 要素には、ピッカー、スイッチ、スライダーなどの haptic フィードバックが既に用意されています。 iOS 10 では、`UIFeedbackGenerator` クラスの具象サブクラスを使用して、プログラムによって haptics をトリガーする機能が追加されました。
+いくつかの組み込み UI 要素には、ピッカー、スイッチ、スライダーなどの haptic フィードバックが既に用意されています。 iOS 10 では、クラスの具象サブクラスを使用して、プログラムによって haptics をトリガーする機能が追加されました `UIFeedbackGenerator` 。
 
-開発者は、次のいずれかの `UIFeedbackGenerator` サブクラスを使用して、プログラムで haptic のフィードバックをトリガーできます。
+開発者は、次のいずれかのサブクラスを使用して、 `UIFeedbackGenerator` プログラムで haptic フィードバックをトリガーできます。
 
 - `UIImpactFeedbackGenerator`-このフィードバックジェネレーターを使用して、ビューが配置されたとき、または2つの画面上のオブジェクトが競合する場合に "thud" を表示するなどのアクションまたはタスクを補完します。
-- `UINotificationFeedbackGenerator`-このフィードバックジェネレーターを使用して、アクションの完了、失敗、またはその他の種類の警告などの通知を行います。
-- `UISelectionFeedbackGenerator`-このフィードバックジェネレーターを使用して、リストから項目を選択するなどのアクティブな変更を行います。
+- `UINotificationFeedbackGenerator`-アクションの完了、失敗、またはその他の種類の警告などの通知には、このフィードバックジェネレーターを使用します。
+- `UISelectionFeedbackGenerator`-リストから項目を選択するなど、アクティブに変更する選択には、このフィードバックジェネレーターを使用します。
 
-<a name="UIImpactFeedbackGenerator" />
+<a name="UIImpactFeedbackGenerator"></a>
 
 ### <a name="uiimpactfeedbackgenerator"></a>UIImpactFeedbackGenerator
 
@@ -61,17 +61,17 @@ impact.Prepare ();
 impact.ImpactOccurred ();
 ```
 
-開発者が `UIImpactFeedbackGenerator` クラスの新しいインスタンスを作成すると、次のようにフィードバックの強度を指定する `UIImpactFeedbackStyle` が提供されます。
+開発者がクラスの新しいインスタンスを作成すると `UIImpactFeedbackGenerator` 、次のように、フィードバックの強度を指定するが提供され `UIImpactFeedbackStyle` ます。
 
 - `Heavy`
 - `Medium`
 - `Light`
 
-`UIImpactFeedbackGenerator` の `Prepare` メソッドを呼び出して、待機時間を最小限に抑えるために haptic のフィードバックが発生しようとしていることをシステムに通知します。
+`Prepare`のメソッドは、 `UIImpactFeedbackGenerator` 待機時間を最小限に抑えるために haptic フィードバックが発生しようとしていることをシステムに通知するために呼び出されます。
 
-`ImpactOccurred` メソッドは、haptic フィードバックをトリガーします。
+その後、メソッドによって `ImpactOccurred` haptic フィードバックがトリガーされます。
 
-<a name="UINotificationFeedbackGenerator" />
+<a name="UINotificationFeedbackGenerator"></a>
 
 ### <a name="uinotificationfeedbackgenerator"></a>UINotificationFeedbackGenerator
 
@@ -91,15 +91,15 @@ notification.Prepare ();
 notification.NotificationOccurred (UINotificationFeedbackType.Error);
 ```
 
-`UINotificationFeedbackGenerator` クラスの新しいインスタンスが作成され、待機時間を最小限に抑えるために haptic フィードバックが発生しようとしていることをシステムに通知するために、その `Prepare` メソッドが呼び出されます。
+クラスの新しいインスタンス `UINotificationFeedbackGenerator` が作成され、その `Prepare` メソッドが呼び出されて、待機時間を最小限に抑えるために haptic フィードバックが発生しようとしていることをシステムに通知します。
 
-特定の `UINotificationFeedbackType` のを使用して haptic フィードバックをトリガーするために `NotificationOccurred` が呼び出されます。
+を `NotificationOccurred` 呼び出すと、指定されたで haptic フィードバックがトリガーされ `UINotificationFeedbackType` ます。
 
 - `Success`
 - `Warning`
 - `Error`
 
-<a name="UISelectionFeedbackGenerator" />
+<a name="UISelectionFeedbackGenerator"></a>
 
 ### <a name="uiselectionfeedbackgenerator"></a>Uiselectionフィード Backgenerator
 
@@ -119,9 +119,9 @@ selection.Prepare ();
 selection.SelectionChanged ();
 ```
 
-`UISelectionFeedbackGenerator` クラスの新しいインスタンスが作成され、待機時間を最小限に抑えるために haptic フィードバックが発生しようとしていることをシステムに通知するために、その `Prepare` メソッドが呼び出されます。
+クラスの新しいインスタンス `UISelectionFeedbackGenerator` が作成され、その `Prepare` メソッドが呼び出されて、待機時間を最小限に抑えるために haptic フィードバックが発生しようとしていることをシステムに通知します。
 
-`SelectionChanged` メソッドは、haptic フィードバックをトリガーします。
+その後、メソッドによって `SelectionChanged` haptic フィードバックがトリガーされます。
 
 ## <a name="summary"></a>まとめ
 

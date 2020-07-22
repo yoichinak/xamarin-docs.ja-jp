@@ -6,12 +6,15 @@ ms.assetid: 9F730444-06E8-4B3F-8A19-CA95CD484FFA
 author: conceptdev
 ms.author: crdun
 ms.date: 03/20/2018
-ms.openlocfilehash: 805edf0aba0e45a631bb9e3f7536da3f18dc789d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5ccd5a610ad41c0160a6778a63a367376bd200b3
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70277657"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84134018"
 ---
 # <a name="installing-xamarin-preview-on-windows"></a>Windows に Xamarin (プレビュー) をインストールする
 

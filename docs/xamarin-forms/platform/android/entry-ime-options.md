@@ -1,24 +1,27 @@
 ---
 title: Android の入力方法エディターオプション
-description: プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。 この記事では、エントリのソフトキーボードの Input Method Editor オプションを設定する Android プラットフォーム固有のを使用する方法について説明します。
+description: プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、エントリのソフトキーボードの Input Method Editor オプションを設定する Android プラットフォーム固有のを使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 7909C738-04B2-4476-9A3B-A6D79BC3B9B2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: 3711e85bd30deb06f351f4539c5ffc7e4236efb6
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: bb77e9fafe39bf76a7d4290dba0bc658cd15094f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68653604"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84140037"
 ---
 # <a name="entry-input-method-editor-options-on-android"></a>Android の入力方法エディターオプション
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-この Android プラットフォーム固有のは、 [`Entry`](xref:Xamarin.Forms.Entry)のソフトキーボードの Input Method Editor (IME) オプションを設定します。 これは、ソフト キーボード、およびとの対話の下隅にあるユーザーのアクション ボタンの設定が含まれています、`Entry`します。 これは、 XAML で[`Entry.ImeOptions`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Entry.ImeOptionsProperty)添付プロパティを[`ImeFlags`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags)列挙型の値に設定して使用します。
+この Android プラットフォーム固有のは、のソフトキーボードの Input Method Editor (IME) オプションを設定し [`Entry`](xref:Xamarin.Forms.Entry) ます。 これには、ソフトキーボードの下隅にあるユーザー操作ボタンの設定と、との対話が含まれ `Entry` ます。 これは、 [`Entry.ImeOptions`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Entry.ImeOptionsProperty) 添付プロパティを列挙体の値に設定することによって XAML で使用され [`ImeFlags`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags) ます。
 
 ```xaml
 <ContentPage ...
@@ -30,7 +33,7 @@ ms.locfileid: "68653604"
 </ContentPage>
 ```
 
-代わりに、fluent API を使用して C# から使用できます。
+または、fluent API を使用して C# から使用することもできます。
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -40,29 +43,29 @@ using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
 entry.On<Android>().SetImeOptions(ImeFlags.Send);
 ```
 
-`Entry.On<Android>`メソッドはこのプラットフォーム仕様が Android 上でのみ動作することを指定します。 [ `Entry.SetImeOptions` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Entry.SetImeOptions(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.Android,Xamarin.Forms.Entry},Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags))メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.AndroidSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)のソフト キーボードの入力メソッドのアクションのオプションを設定するため、名前空間、 [ `Entry` ](xref:Xamarin.Forms.Entry)、[ `ImeFlags` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags)次の値を提供する列挙体。
+メソッドは、 `Entry.On<Android>` このプラットフォーム固有のが Android でのみ実行されることを指定します。 [ `Entry.SetImeOptions` ] (Xref: Xamarin.FormsPlatformConfiguration. AndroidSpecific の. Entry. SetImeOptions ( Xamarin.Forms .IPlatformElementConfiguration { Xamarin.Forms .PlatformConfiguration. Android、 Xamarin.Forms 。Entry Xamarin.Forms }、PlatformConfiguration. AndroidSpecific) メソッドを名前空間で使用して、の [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) ソフトキーボードの [入力方式] アクションオプションを設定し [`Entry`](xref:Xamarin.Forms.Entry) [`ImeFlags`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags) ます。列挙体には次の値を指定します。
 
-- [`Default`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Default) – 特定のアクションのキーは必要ありませんし、可能な基になるコントロールが、独自の場合に生成されることを示します。 これになりますか`Next`または`Done`します。
-- [`None`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.None) – アクション キーがない使用できることを示します。
-- [`Go`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Go) – アクション キーは、"go"操作を実行は、入力テキストのターゲットにしてユーザーを導くことを示します。
-- [`Search`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Search) – [検索] 操作を実行するアクション キー、入力したテキストの検索の結果にユーザーを導くことを示します。
-- [`Send`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Send) – アクション キーがターゲットにテキストを提供する「送信」操作を実行することを示します。
-- [`Next`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Next) – アクション キーがテキストを受け入れる次のフィールドにユーザーを作成、[次へ] の操作を実行することを示します。
-- [`Done`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Done) – アクション キーがソフト キーボードを閉じる、"done"操作を実行することを示します。
-- [`Previous`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Previous) – アクション キーがテキストを受け取る前のフィールドに、ユーザーがかかっています「前」の操作を実行することを示します。
-- [`ImeMaskAction`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.ImeMaskAction) – アクションのオプションを選択するマスク。
-- [`NoPersonalizedLearning`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.NoPersonalizedLearning) – こと、スペル チェックによっては、ユーザーから学ぶでも、ユーザーが以前入力した内容に基づいて修正の提案を示します。
-- [`NoFullscreen`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.NoFullscreen) – UI が全画面表示にならないことを示します。
-- [`NoExtractUi`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.NoExtractUi) – 抽出されたテキストの UI が表示されませんを示します。
-- [`NoAccessoryAction`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.NoAccessoryAction) – カスタム アクションの UI が表示しないことを示します。
+- [`Default`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Default)–特定のアクションキーが必要ないこと、および基になるコントロールが可能な場合はそれ自体を生成することを示します。 これは、またはのいずれかになり `Next` `Done` ます。
+- [`None`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.None)–アクションキーが使用できないことを示します。
+- [`Go`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Go)–アクションキーが "移動" 操作を実行し、ユーザーが入力したテキストのターゲットを取得することを示します。
+- [`Search`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Search)–アクションキーが "検索" 操作を実行し、ユーザーが入力したテキストを検索した結果を取得することを示します。
+- [`Send`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Send)–アクションキーが "send" 操作を実行し、テキストをターゲットに配信することを示します。
+- [`Next`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Next)–アクションキーが "next" 操作を実行し、ユーザーがテキストを受け入れる次のフィールドに到達することを示します。
+- [`Done`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Done)–アクションキーがソフトキーボードを終了する "done" 操作を実行することを示します。
+- [`Previous`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.Previous)–アクションキーが "前の" 操作を実行し、テキストを受け取る前のフィールドにユーザーを取得することを示します。
+- [`ImeMaskAction`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.ImeMaskAction)–アクションオプションを選択するマスク。
+- [`NoPersonalizedLearning`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.NoPersonalizedLearning)–スペルチェックをユーザーから学習することも、ユーザーが以前に入力した内容に基づいて修正候補を表示しないことを示します。
+- [`NoFullscreen`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.NoFullscreen)– UI が全画面表示されないように指定します。
+- [`NoExtractUi`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.NoExtractUi)–抽出されたテキストに対して UI が表示されないことを示します。
+- [`NoAccessoryAction`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags.NoAccessoryAction)–カスタムアクションの UI が表示されないことを示します。
 
-結果は、指定されたを[ `ImeFlags` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags)のソフト キーボードを適用する値、 [ `Entry` ](xref:Xamarin.Forms.Entry)、入力方式エディターのオプションを設定します。
+結果として、指定された [`ImeFlags`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.ImeFlags) 値がのソフトキーボードに適用され [`Entry`](xref:Xamarin.Forms.Entry) 、Input Method Editor オプションが設定されます。
 
-[![エントリは、エディターのプラットフォームに固有のメソッドを入力](entry-ime-options-images/entry-imeoptions.png "エントリ エディターのプラットフォームに固有のメソッドの入力")](entry-ime-options-images/entry-imeoptions-large.png#lightbox "エントリ エディターのプラットフォームに固有のメソッドの入力")
+[![入力 Input Method Editor プラットフォーム固有](entry-ime-options-images/entry-imeoptions.png "入力 Input Method Editor プラットフォーム固有")](entry-ime-options-images/entry-imeoptions-large.png#lightbox "入力 Input Method Editor プラットフォーム固有")
 
 ## <a name="related-links"></a>関連リンク
 
-- [プラットフォーム仕様 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
-- [プラットフォーム仕様の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
+- [PlatformSpecifics (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [プラットフォーム固有設定の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [AndroidSpecific の API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
 - [AndroidSpecific の AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

@@ -1,22 +1,25 @@
 ---
 title: タブレットアプリとデスクトップアプリのレイアウト
-description: この記事では、スマートフォンではなく、タブレット用に Xamarin のフォームアプリケーションレイアウトを最適化する方法について説明します。
+description: この記事で Xamarin.Forms は、携帯電話ではなくタブレットのアプリケーションレイアウトを最適化する方法について説明します。
 ms.prod: xamarin
 ms.assetid: D62F472B-4345-4983-8403-659A538B591F
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/01/2016
-ms.openlocfilehash: f91d0127d0f2ffe37e3e0ff016dee551a679ad84
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0ecbc850960465296dc4047277bdafe78ac800a4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72273115"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573249"
 ---
 # <a name="layout-for-tablet-and-desktop-apps"></a>タブレットアプリとデスクトップアプリのレイアウト
 
-Xamarin. Forms はサポートされているプラットフォームで使用できるすべてのデバイスの種類をサポートしています。そのため、スマートフォンだけでなく、以下でもアプリを実行できます。
+Xamarin.Formsサポートされているプラットフォームで使用可能なすべてのデバイスの種類をサポートします。そのため、スマートフォンだけでなく、以下でもアプリを実行できます。
 
 - Ipad
 - Android タブレット、
@@ -24,18 +27,16 @@ Xamarin. Forms はサポートされているプラットフォームで使用�
 
 このページでは、以下について簡単に説明します。
 
-- サポートされている[デバイスの種類](#Device_Types)
-- タブレットと携帯電話のレイアウトを[最適化](#optimize)する方法。
-
-<a name="Device_Types" />
+- サポートされている[デバイスの種類](#device-types)
+- タブレットと携帯電話のレイアウトを[最適化](#optimize-for-tablet-and-desktop)する方法。
 
 ## <a name="device-types"></a>デバイスの種類
 
-Xamarin. Forms でサポートされているすべてのプラットフォームで、より大きな画面デバイスを使用できます。
+でサポートされているすべてのプラットフォームで、より大きな画面デバイスを使用でき Xamarin.Forms ます。
 
 ### <a name="ipads-ios"></a>Ipad (iOS)
 
-Xamarin テンプレートには、 **[デバイスの >]** 設定を **[Universal]** (iPhone と iPad の両方がサポートされている) に設定することによって自動的に iPad サポートが含まれます。
+この Xamarin.Forms テンプレートには、[**デバイスの >** ] 設定を [ **Universal** ] (iPhone と iPad の両方がサポートされていることを意味します) に設定することによって、iPad のサポートが自動的に含まれます。
 
 快適な起動エクスペリエンスを提供し、すべてのデバイスで全画面解像度が使用されるようにするには、(ストーリーボードを使用して) [iPad 固有の起動画面](~/ios/app-fundamentals/images-icons/launch-screens.md)が用意されていることを確認してください。 これにより、iPad ミニ、iPad、iPad Pro デバイスでアプリが正しく表示されるようになります。
 
@@ -48,10 +49,10 @@ IOS 9 より前では、すべてのアプリがデバイスで全画面表示�
 
 ### <a name="android-tablets"></a>Android タブレット
 
-Android エコシステムでは、小型の携帯電話から大型のタブレットまで、さまざまな画面サイズがサポートされています。 Xamarin はすべての画面サイズをサポートできますが、他のプラットフォームと同様に、大規模なデバイス向けにユーザーインターフェイスを調整することもできます。
+Android エコシステムでは、小型の携帯電話から大型のタブレットまで、さまざまな画面サイズがサポートされています。 Xamarin.Formsではすべての画面サイズをサポートできますが、他のプラットフォームと同様に、大規模なデバイス向けにユーザーインターフェイスを調整することもできます。
 
 さまざまな画面解像度をサポートする場合は、さまざまなサイズのネイティブイメージリソースを提供して、ユーザーエクスペリエンスを最適化することができます。
-Android[リソース](~/android/app-fundamentals/resources-in-android/index.md)のドキュメント (特に、[さまざまな画面サイズのリソースを作成](~/android/app-fundamentals/resources-in-android/resources-for-varying-screens.md)する) を確認し、最適化されたイメージリソースを含めるように android アプリプロジェクトのフォルダーとファイル名を構成する方法の詳細については、「」を参照してください。アプリ。
+Android アプリプロジェクトのフォルダーとファイル名を構成してアプリに最適化されたイメージリソースを含める方法の詳細については、 [android のリソース](~/android/app-fundamentals/resources-in-android/index.md)に関するドキュメント (特に、[さまざまな画面サイズのリソースの作成](~/android/app-fundamentals/resources-in-android/resources-for-varying-screens.md)) を参照してください。
 
 ### <a name="windows-tablets-and-desktops"></a>Windows タブレットおよびデスクトップ
 
@@ -61,15 +62,13 @@ Windows タブレットおよびデスクトップで実行されているアプ
 
 [![](tablet-images/splitscreen-sml.png "Windows Split Screen Example")](tablet-images/splitscreen.png#lightbox "Windows Split Screen Example")
 
-<a name="optimize" />
+## <a name="optimize-for-tablet-and-desktop"></a>タブレットおよびデスクトップ用に最適化する
 
-## <a name="optimizing-for-tablet-and-desktop"></a>タブレットおよびデスクトップ向けの最適化
-
-スマートフォンまたはタブレット/デスクトップデバイスが使用されているかどうかに応じて、Xamarin. フォームユーザーインターフェイスを調整できます。 これは、タブレットやデスクトップコンピューターなどの大画面デバイスのユーザーエクスペリエンスを最適化できることを意味します。
+Xamarin.Formsスマートフォンまたはタブレット/デスクトップデバイスが使用されているかどうかに応じて、ユーザーインターフェイスを調整できます。 これは、タブレットやデスクトップコンピューターなどの大画面デバイスのユーザーエクスペリエンスを最適化できることを意味します。
 
 ### <a name="deviceidiom"></a>デバイス. 表現形式
 
-[@No__t_1](~/xamarin-forms/platform/device.md)クラスを使用して、アプリまたはユーザーインターフェイスの動作を変更できます。 @No__t_0 列挙型を使用して、
+クラスを使用して、 [`Device`](~/xamarin-forms/platform/device.md) アプリまたはユーザーインターフェイスの動作を変更できます。 列挙体を使用して、 `Device.Idiom`
 
 ```csharp
 if (Device.Idiom == TargetIdiom.Phone)
@@ -82,11 +81,11 @@ if (Device.Idiom == TargetIdiom.Phone)
 
 この方法は、個々のページのレイアウトに大幅な変更を加える場合や、大きな画面でまったく異なるページを表示する場合にも拡張できます。
 
-### <a name="leveraging-masterdetailpage"></a>Masterのページを活用する
+### <a name="leverage-masterdetailpage"></a>Masterのページを活用する
 
-[@No__t_1](xref:Xamarin.Forms.MasterDetailPage)は、特に、 [`UISplitViewController`](xref:UIKit.UISplitViewController)を使用してネイティブの iOS エクスペリエンスを提供する iPad では、大規模な画面に最適です。
+は、 [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) 大規模な画面に最適です。特に、を使用して [`UISplitViewController`](xref:UIKit.UISplitViewController) ネイティブの iOS エクスペリエンスを提供する iPad では最適です。
 
-[この Xamarin のブログ記事](https://devblogs.microsoft.com/xamarin/bringing-xamarin-forms-apps-to-tablets/)をご覧になり、1つのレイアウトを使用する電話と、より大きい画面で別のレイアウト (`MasterDetailPage`) を使用できるようにユーザーインターフェイスを調整する方法を確認してください。
+[この Xamarin のブログ記事](https://devblogs.microsoft.com/xamarin/bringing-xamarin-forms-apps-to-tablets/)をご覧になり、1つのレイアウトを使用するスマートフォンで別のレイアウトを使用できるようにユーザーインターフェイスを調整する方法をご確認ください `MasterDetailPage` 。
 
 ## <a name="related-links"></a>関連リンク
 

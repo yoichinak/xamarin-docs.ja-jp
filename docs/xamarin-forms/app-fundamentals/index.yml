@@ -10,12 +10,15 @@ metadata:
   author: davidbritch
   ms.author: dabritch
   ms.date: 12/30/2019
-  ms.openlocfilehash: f02b2744dab2700bc1ac680b134e42000d5d21ff
-  ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+  no-loc:
+  - Xamarin.Forms
+  - Xamarin.Essentials
+  ms.openlocfilehash: 81c87d1179e6673cf75f33a579ec21ed8dd258e1
+  ms.sourcegitcommit: 60f475a3d6ca880aff34f1177f76eff0b0f96233
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 04/09/2020
-  ms.locfileid: "77480478"
+  ms.lasthandoff: 07/21/2020
+  ms.locfileid: "86869823"
 landingContent:
 - title: コア概念
   linkLists:

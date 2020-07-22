@@ -7,12 +7,15 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: 6669dbaff3cfb5b929261352b8db046b35ec5b4f
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9f999d56fbf178be160e91756643c127d574b090
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76020696"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84197552"
 ---
 # <a name="picking-a-photo-from-the-picture-library"></a>画像ライブラリから写真を選択する
 
@@ -69,7 +72,7 @@ namespace DependencyServiceDemos.iOS
             // Present UIImagePickerController;
             UIWindow window = UIApplication.SharedApplication.KeyWindow;
             var viewController = window.RootViewController;
-            viewController.PresentModalViewController(imagePicker, true);
+            viewController.PresentViewController(imagePicker, true, null);
 
             // Return Task object
             taskCompletionSource = new TaskCompletionSource<Stream>();
@@ -81,7 +84,7 @@ namespace DependencyServiceDemos.iOS
 
 ```
 
-`GetImageStreamAsync` メソッドでは、`UIImagePickerController` が作成されて、フォト ライブラリから画像を選択するように初期化されます。 2 つのイベント ハンドラーが必要です。1 つはユーザーが写真を選択するときのためのもので、もう 1 つはユーザーがフォト ライブラリの表示を取り消すときのためのものです。 その後、`PresentModalViewController` で、ユーザーに対してフォト ライブラリが表示されます。
+`GetImageStreamAsync` メソッドでは、`UIImagePickerController` が作成されて、フォト ライブラリから画像を選択するように初期化されます。 2 つのイベント ハンドラーが必要です。1 つはユーザーが写真を選択するときのためのもので、もう 1 つはユーザーがフォト ライブラリの表示を取り消すときのためのものです。 その後、`PresentViewController` メソッドにより、ユーザーに対してフォト ライブラリが表示されます。
 
 この時点で、`GetImageStreamAsync` メソッドから呼び出し元のコードに `Task<Stream>` オブジェクトを返す必要があります。 このタスクは、ユーザーがフォト ライブラリとの対話を終了し、イベント ハンドラーの 1 つが呼び出されたときにのみ、実行できます。 このような状況に対しては、[`TaskCompletionSource`](https://msdn.microsoft.com/library/dd449174(v=vs.110).aspx) クラスが不可欠です。 このクラスでは、`GetImageStreamAsync` メソッドから戻すための適切なジェネリック型の `Task` オブジェクトが提供されており、後でタスクが完了したときに通知を受け取ることができます。
 
@@ -160,7 +163,7 @@ public class MainActivity : FormsAppCompatActivity
 
     protected override void OnCreate(Bundle savedInstanceState)
     {
-        // ... 
+        // ...
         Instance = this;
     }
     // ...

@@ -7,12 +7,15 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
-ms.openlocfilehash: 64367ded8dcd173f7c9e57cfc234aa66712aefd4
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ca9a541c3d152d1b84ed682881c395f2199b9eaf
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70772025"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84574380"
 ---
 # <a name="customizing-a-contentpage"></a>ContentPage のカスタマイズ
 
@@ -20,21 +23,19 @@ ms.locfileid: "70772025"
 
 _ContentPage は、単一ビューを表示し、画面の大部分を占めるビジュアル要素です。この記事では、ContentPage ページ用のカスタム レンダラーを作成する方法を示します。これにより、開発者は既定のネイティブ レンダリングを、各自のプラットフォームに固有のカスタマイズでオーバーライドできるようになります。_
 
-すべての Xamarin.Forms コントロールには、ネイティブ コントロールのインスタンスを作成する各プラットフォーム用のレンダラーが付属しています。 Xamarin.Forms アプリケーションによって [`ContentPage`](xref:Xamarin.Forms.ContentPage) がレンダリングされると、iOS では `PageRenderer` クラスがインスタンス化され、それによってネイティブの `UIViewController` コントロールもインスタンス化されます。 Android プラットフォーム上では、`PageRenderer` クラスによって `ViewGroup` コントロールがインスタンス化されます。 ユニバーサル Windows プラットフォーム (UWP) 上では、`PageRenderer` クラスによって `FrameworkElement` コントロールがインスタンス化されます。 Xamarin.Forms コントロールがマップするレンダラーとネイティブ コントロール クラスの詳細については、「[レンダラーの基本クラスおよびネイティブ コントロール](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)」を参照してください。
+すべての Xamarin.Forms コントロールには、ネイティブ コントロールのインスタンスを作成する各プラットフォーム用のレンダラーが付属しています。 Xamarin.Forms アプリケーションによって [`ContentPage`](xref:Xamarin.Forms.ContentPage) がレンダリングされると、iOS では `PageRenderer` クラスがインスタンス化され、それによってネイティブの `UIViewController` コントロールもインスタンス化されます。 Android プラットフォーム上では、`PageRenderer` クラスによって `ViewGroup` コントロールがインスタンス化されます。 ユニバーサル Windows プラットフォーム (UWP) 上では、`PageRenderer` クラスによって `FrameworkElement` コントロールがインスタンス化されます。 Xamarin.Forms コントロールによってマップされるレンダラーとネイティブ コントロール クラスの詳細については、「[Renderer Base Classes and Native Controls](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)」(レンダラーの基底クラスおよびネイティブ コントロール) を参照してください。
 
 次の図は、[`ContentPage`](xref:Xamarin.Forms.ContentPage) と、それを実装する、対応しているネイティブ コントロールの関係を示しています。
 
 ![](contentpage-images/contentpage-classes.png "Relationship Between ContentPage Class and Implementing Native Controls")
 
-レンダリング プロセスを活用して各プラットフォーム上で [`ContentPage`](xref:Xamarin.Forms.ContentPage) 用のカスタム レンダラーを作成することで、プラットフォーム固有のカスタマイズを実装できます。 これを行うプロセスは次のとおりです。
+レンダリング プロセスを活用して各プラットフォーム上で [`ContentPage`](xref:Xamarin.Forms.ContentPage) 用のカスタム レンダラーを作成することで、プラットフォーム固有のカスタマイズを実装できます。 その実行プロセスは次のとおりです。
 
-1. Xamarin.Forms ページを[作成](#Creating_the_Xamarin.Forms_Page)します。
-1. Xamarin.Forms からページを[使用](#Consuming_the_Xamarin.Forms_Page)します。
-1. 各プラットフォーム上でページのカスタム レンダラーを[作成](#Creating_the_Page_Renderer_on_each_Platform)します。
+1. Xamarin.Forms ページを[作成](#creating-the-xamarinforms-page)します。
+1. Xamarin.Forms からページを[使用](#consuming-the-xamarinforms-page)します。
+1. 各プラットフォーム上でページのカスタム レンダラーを[作成](#creating-the-page-renderer-on-each-platform)します。
 
 ライブ カメラのフィードと写真をキャプチャする機能を提供する `CameraPage` を実装する各項目について順番に説明します。
-
-<a name="Creating_the_Xamarin.Forms_Page" />
 
 ## <a name="creating-the-xamarinforms-page"></a>Xamarin.Forms ページを作成する
 
@@ -75,8 +76,6 @@ public class CameraPageCS : ContentPage
 
 `CameraPage` のインスタンスは、各プラットフォームでライブ カメラ フィードを表示するために使用されます。 コントロールのカスタマイズはカスタム レンダラーで実行されるため、`CameraPage` クラスに追加の実装は必要ありません。
 
-<a name="Consuming_the_Xamarin.Forms_Page" />
-
 ## <a name="consuming-the-xamarinforms-page"></a>Xamarin.Forms ページを使用する
 
 Xamarin.Forms アプリケーションには、必ず空の `CameraPage` が表示されます。 これは、次のコード例に示すように、`MainPage` インスタンスのボタンがタップされてから `OnTakePhotoButtonClicked` メソッドが実行されたときに起こります。
@@ -90,15 +89,13 @@ async void OnTakePhotoButtonClicked (object sender, EventArgs e)
 
 このコードでは単に `CameraPage` にナビゲートされます。このカスタム レンダラーによって、各プラットフォームのページの外観がカスタマイズされます。
 
-<a name="Creating_the_Page_Renderer_on_each_Platform" />
-
 ## <a name="creating-the-page-renderer-on-each-platform"></a>各プラットフォーム上でページ レンダラーを作成する
 
 カスタム レンダラー クラスを作成するプロセスは次のとおりです。
 
 1. `PageRenderer` クラスのサブクラスを作成します。
 1. ネイティブ ページをレンダリングする `OnElementChanged` メソッドをオーバーライドして、ロジックを書き込み、ページをカスタマイズします。 対応する Xamarin.Forms コントロールが作成されると、`OnElementChanged` メソッドが呼び出されます。
-1. `ExportRenderer` 属性をページ レンダラー クラスに追加して、Xamarin.Forms ページのレンダリングに使用されるように指定します。 この属性は、Xamarin.Forms にカスタム レンダラーを登録するために使用します。
+1. `ExportRenderer` 属性をページ レンダラー クラスに追加して、Xamarin.Forms ページのレンダリングに使用されるように指定します。 この属性は、Xamarin.Forms にカスタム レンダラーを登録するために使用されます。
 
 > [!NOTE]
 > プラットフォーム プロジェクトごとにページ レンダラーを指定するかどうかは任意です。 ページ レンダラーが登録されていない場合は、ページの既定のレンダラーが使用されます。
@@ -111,11 +108,11 @@ async void OnTakePhotoButtonClicked (object sender, EventArgs e)
 
 ![](contentpage-images/screenshots.png "CameraPage on each Platform")
 
-`PageRenderer` クラスは `OnElementChanged` メソッドを公開します。このメソッドは、該当するネイティブ コントロールをレンダリングするために、Xamarin.Forms ページの作成時に呼び出されます。 このメソッドは、`OldElement` および `NewElement` プロパティを含む `ElementChangedEventArgs` パラメーターを取得します。 これらのプロパティは、レンダラーがアタッチされて*いた* Xamarin.Forms 要素と、レンダラーが現在アタッチされて*いる* Xamarin.Forms 要素をそれぞれ表しています。 サンプル アプリケーションでは、`OldElement` プロパティが `null` になり、`NewElement` プロパティに `CameraPage` インスタンスへの参照が含まれます。
+`PageRenderer` クラスは `OnElementChanged` メソッドを公開します。このメソッドは、該当するネイティブ コントロールをレンダリングするために、Xamarin.Forms ページの作成時に呼び出されます。 このメソッドでは、`OldElement` および `NewElement` プロパティを含む `ElementChangedEventArgs` パラメーターを受け取ります。 これらのプロパティは、レンダラーがアタッチされて*いた* Xamarin.Forms 要素と、レンダラーが現在アタッチされて*いる* Xamarin.Forms 要素をそれぞれ表しています。 サンプル アプリケーションでは、`OldElement` プロパティが `null` になり、`NewElement` プロパティに `CameraPage` インスタンスへの参照が含まれます。
 
 `CameraPageRenderer` クラスの `OnElementChanged` メソッドのオーバーライドされたバージョンで、ネイティブ ページのカスタマイズが実行されます。 レンダリングされている Xamarin.Forms ページ インスタンスへの参照は、`Element` プロパティを使用して取得することができます。
 
-各カスタム レンダラー クラスは、レンダラーを Xamarin.Forms に登録する `ExportRenderer` 属性で修飾されます。 この属性は、レンダリングされる Xamarin.Forms ページの種類名とカスタム レンダラーの種類名という 2 つのパラメーターを受け取ります。 属性の `assembly` プレフィックスでは、属性がアセンブリ全体に適用されることを指定します。
+各カスタム レンダラー クラスは、レンダラーを Xamarin.Forms に登録する `ExportRenderer` 属性で修飾されます。 この属性では、レンダリングされる Xamarin.Forms ページの型名とカスタム レンダラーの型名という 2 つのパラメーターが使用されます。 属性の `assembly` プレフィックスでは、属性がアセンブリ全体に適用されることを指定します。
 
 次のセクションでは、各プラットフォーム用の `CameraPageRenderer` カスタム レンダラーの実装について説明します。
 

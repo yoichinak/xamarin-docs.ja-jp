@@ -1,24 +1,27 @@
 ---
 title: IOS の TabbedPage 半透明タブバー
-description: プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。 この記事では、TabbedPage のタブバーの透明度モードを設定する iOS プラットフォーム固有のを使用する方法について説明します。
+description: プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、TabbedPage のタブバーの透明度モードを設定する iOS プラットフォーム固有のを使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 9581AE81-9557-47AD-8B07-25A1AC5F055B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/16/2020
-ms.openlocfilehash: 55fda0be2e260c5aa4a34ab2dcc1ac3cac33b92a
-ms.sourcegitcommit: 6c60914b380ff679bbffd7790edd4d5e18005d0a
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 8127191aab80d81fc2e532e3d5e14931b834eeae
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80070285"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137034"
 ---
 # <a name="tabbedpage-translucent-tab-bar-on-ios"></a>IOS の TabbedPage 半透明タブバー
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-この iOS プラットフォーム固有のは、 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)のタブバーの透明度モードを設定するために使用されます。 `TabbedPage.TranslucencyMode` バインド可能なプロパティを `TranslucencyMode` 列挙値に設定することにより、XAML で使用されます。
+この iOS プラットフォーム固有のは、のタブバーの透明度モードを設定するために使用され [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) ます。 これは、 `TabbedPage.TranslucencyMode` バインド可能なプロパティを列挙値に設定することによって XAML で使用され `TranslucencyMode` ます。
 
 ```xaml
 <TabbedPage ...
@@ -28,7 +31,7 @@ ms.locfileid: "80070285"
 </TabbedPage>
 ```
 
-代わりに、fluent API を使用して c# から使用できます。
+または、fluent API を使用して C# から使用することもできます。
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -38,15 +41,15 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 On<iOS>().SetTranslucencyMode(TranslucencyMode.Opaque);
 ```
 
-`TabbedPage.On<iOS>` メソッドは、このプラットフォーム固有のが iOS 上でのみ実行されることを指定します。 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)名前空間の `TabbedPage.SetTranslucencyMode` メソッドを使用して、次の `TranslucencyMode` 列挙値のいずれかを指定することによって、 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)のタブバーの透明度モードを設定します。
+メソッドは、 `TabbedPage.On<iOS>` このプラットフォーム固有のが iOS 上でのみ実行されることを指定します。 `TabbedPage.SetTranslucencyMode`名前空間のメソッドは、 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 次の列挙値のいずれかを指定することによって、のタブバーの透明度モードを設定するために使用され `TranslucencyMode` ます。
 
-- `Default`、タブバーを既定の透明度モードに設定します。 これは、`TabbedPage.TranslucencyMode` プロパティの既定値です。
+- `Default`。タブバーを既定の透明度モードに設定します。 これは、`TabbedPage.TranslucencyMode` プロパティの既定値です。
 - `Translucent`。タブバーが半透明になるように設定します。
 - `Opaque`。タブバーが不透明になるように設定します。
 
-また、`GetTranslucencyMode` メソッドを使用して、 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)に適用されている `TranslucencyMode` 列挙体の現在の値を取得することもできます。
+また、メソッドを `GetTranslucencyMode` 使用して `TranslucencyMode` 、に適用されている列挙体の現在の値を取得することもでき [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) ます。
 
-結果として、 [`TabbedPage`](xref:Xamarin.Forms.TabbedPage)のタブバーの透明度モードを設定できます。
+結果として、のタブバーの透明度モードは次のように [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 設定できます。
 
 ![IOS の半透明および不透明なタブバーのスクリーンショット](tabbedpage-translucent-tabbar-images/translucencymodes.png "透明および不透明なタブバー")
 

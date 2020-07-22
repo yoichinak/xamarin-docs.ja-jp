@@ -346,7 +346,11 @@
         - name: EventKit
           href: platform/eventkit.md
         - name: iOS の拡張機能
-          href: platform/extensions.md
+          items:
+            - name: Xamarin.iOS での iOS 拡張機能
+              href: platform/extensions.md
+            - name: iOS 拡張機能での Xamarin.Forms
+              href: platform/extensions-with-xamarinforms.md
         - name: 埋め込みフレームワーク
           href: platform/embedded-frameworks.md
         - name: ファイル圧縮

@@ -1,50 +1,53 @@
 ---
-title: ツールボックスを使用して Xamarin.Forms XAML を編集します。
-description: XAML ツールボックスには、すべての組み込みのレイアウトと、開いている XAML ファイルに直接ドラッグできるコントロールが含まれています。
+title: Xamarin.Formsツールボックスを使用して XAML を編集する
+description: XAML ツールボックスには、開いている XAML ファイルに直接ドラッグできる、組み込みのレイアウトとコントロールがすべて含まれています。
 ms.prod: xamarin
 ms.assetid: 513D1247-8AD0-4611-8660-1D277CD369E1
 ms.technology: xamarin-forms
 author: conceptdev
 ms.author: crdun
 ms.date: 08/29/2018
-ms.openlocfilehash: 4e5f306d45cccaa34df2a3472e9d36f8b0badcd7
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 76d6a6f39692445f208f250ca7f6141a1e1ad450
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61173863"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198008"
 ---
-# <a name="xamarinforms-xaml-toolbox"></a>Xamarin.Forms XAML ツールボックス
+# <a name="xamarinforms-xaml-toolbox"></a>Xamarin.FormsXAML ツールボックス
 
-Visual Studio 2017 バージョン 15.8 と Visual Studio for Mac 7.6 Xamarin.Forms XAML ファイルの編集中に使用可能なツールボックスがあるようになりました。 ツールボックスには、すべての組み込みの Xamarin.Forms コントロールと、XAML エディターにドラッグできるレイアウトが含まれています。
+Visual Studio 2017 バージョン15.8 と Visual Studio for Mac 7.6 では、XAML ファイルの編集中にツールボックスを使用できるようになりました Xamarin.Forms 。 ツールボックスには、XAML エディターにドラッグできるすべての組み込みコントロールとレイアウトが含まれてい Xamarin.Forms ます。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-Visual Studio 2017 では、編集用の Xamarin.Forms XAML ファイルを開きます。 キーを押してツールボックスを表示できる**Ctrl + W、X**には、キーボードを選択するか、**ビュー > ツールボックス**メニュー項目。
+Visual Studio 2017 で、 Xamarin.Forms 編集する XAML ファイルを開きます。 ツールボックスを表示するには、キーボードの Ctrl キーを押し**ながら W**キーを押すか、[**ツールボックス**] メニュー項目 > [表示] をクリックします。
 
-![ビューのツールボックスのメニュー](toolbox-images/win-view-menu.png)
+![表示-ツールボックスメニュー](toolbox-images/win-view-menu.png)
 
-ツールボックスを非表示し、アイコンは、右上またはコンテキスト メニューを使用して、Visual Studio 2017 の他のペインのようにドッキングされていることができます。 Xamarin.Forms XAML ツールボックスには、各セクションを右クリックして変更できるカスタム ビューのオプションがあります。 切り替え、**リスト ビュー**リストとコンパクトなビューを切り替えるオプション。
+ツールボックスは、右上またはショートカットメニューのアイコンを使用して、Visual Studio 2017 の他のペインと同様に非表示にしたりドッキングしたりすることができます。 Xamarin.FormsXAML ツールボックスには、各セクションを右クリックして変更できるカスタムビューオプションがあります。 リストビューとコンパクトビューを切り替えるには、[**リストビュー** ] オプションを切り替えます。
 
-[![ツールボックス リスト ビュー](toolbox-images/win-full-display-sml.png)](toolbox-images/win-full-display.png#lightbox) ![ツールボックス ディスプレイを最適化します。](toolbox-images/win-compact-display.png)
+[ ![ ツールボックスリストビュー](toolbox-images/win-full-display-sml.png)](toolbox-images/win-full-display.png#lightbox) ![ツールボックスのコンパクト表示](toolbox-images/win-compact-display.png)
 
-Xamarin.Forms XAML ファイルを開いて編集できる、ツールボックスから、ファイルに任意のコントロールまたはレイアウトをドラッグし、ユーザー インターフェイスをカスタマイズする Intellisense を利用します。
+Xamarin.FormsXAML ファイルを編集用に開くときに、ツールボックスから任意のコントロールまたはレイアウトをファイルにドラッグし、Intellisense を利用してユーザーインターフェイスをカスタマイズします。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-Visual studio for Mac では、選択、**ビュー > パッド > ツールボックス**ツールボックスを表示するメニュー項目。
+Visual Studio for Mac で、[**表示 > パッド > ツールボックス**] メニュー項目をクリックしてツールボックスを表示します。
 
-![パッドの-ツールボックスのメニューを表示します。](toolbox-images/mac-view-menu.png)
+![表示-パッド-ツールボックスメニュー](toolbox-images/mac-view-menu.png)
 
-ツールボックスを非表示にし、パッドの右上にアイコンを使用して、Mac に Visual Studio での他のパッドのようにピン留めできます。 Xamarin.Forms XAML ツールボックスには、検索ボックスの横にあるボタンを持つ変更可能なカスタム ビューのオプションがあります。
+ツールボックスは、パッドの右上にあるアイコンを使用して、Visual Studio for Mac の他のパッドと同様に非表示にしたり固定したりすることができます。 Xamarin.FormsXAML ツールボックスには、検索ボックスの横にあるボタンを使用して変更できるカスタムビューオプションがあります。
 
-- カテゴリを表示します。
-- コンパクトな表示を使用して、
+- カテゴリの表示
+- コンパクトな表示を使用する
 
-完全なオプションは、以下に示します。
+次に、完全およびコンパクトなオプションを示します。
 
-[![ツールボックスの完全な表示](toolbox-images/mac-full-display-sml.png)](toolbox-images/mac-full-display.png#lightbox)![ツールボックス ディスプレイを最適化します。](toolbox-images/mac-compact-display.png)
+[ ![ ツールボックスのフル表示](toolbox-images/mac-full-display-sml.png)](toolbox-images/mac-full-display.png#lightbox) ![ツールボックスのコンパクト表示](toolbox-images/mac-compact-display.png)
 
-Xamarin.Forms XAML ファイルを開いて編集できる、ツールボックスから、ファイルに任意のコントロールまたはレイアウトをドラッグし、ユーザー インターフェイスをカスタマイズする Intellisense を利用します。
+Xamarin.FormsXAML ファイルを編集用に開くときに、ツールボックスから任意のコントロールまたはレイアウトをファイルにドラッグし、Intellisense を利用してユーザーインターフェイスをカスタマイズします。
 
 -----

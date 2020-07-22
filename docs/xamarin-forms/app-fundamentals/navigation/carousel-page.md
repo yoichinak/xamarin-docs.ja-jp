@@ -1,18 +1,21 @@
 ---
-title: Xamarin.Forms のカルーセル ページ
-description: Xamarin.Forms の CarouselPage は、ギャラリーのように、ユーザーが端から端までスワイプしてコンテンツの各ページをナビゲートできるページです。 この記事では、CarouselPage を使用してページのコレクション内を移動する方法を示します。
+title: 'title: "Xamarin.Formsカルーセル ページ" の説明:"Xamarin.Forms の CarouselPage は、ギャラリーのように、ユーザーが端から端までスワイプしてコンテンツの各ページをナビゲートできるページです。'
+description: 'この記事では、CarouselPage を使用してページのコレクション内を移動する方法を示します。" ms.prod: xamarin ms.assetid:2D14FC9D-DF5F-427E-9006-2AAE61ECF8DC ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:12/01/2017 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
 ms.prod: xamarin
 ms.assetid: 2D14FC9D-DF5F-427E-9006-2AAE61ECF8DC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 5cfaeb8589514972dfcccd11009a02c00f95bfac
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 896f652d69bca0f186e53185926ee5c46d87fa7c
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "72696443"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84570675"
 ---
 # <a name="xamarinforms-carousel-page"></a>Xamarin.Forms のカルーセル ページ
 
@@ -48,15 +51,13 @@ _Xamarin.Forms の CarouselPage は、ギャラリーのように、ユーザー
 
 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) を作成するには、次の 2 つの方法を使用することができます。
 
-- 子 [`ContentPage`](xref:Xamarin.Forms.ContentPage) インスタンスのコレクションを `CarouselPage` に[設定](#Populating_a_CarouselPage_with_a_Page_Collection)します。
-- コレクションを [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource) プロパティに[割り当て](#Populating_a_CarouselPage_with_a_Template)、[`DataTemplate`](xref:Xamarin.Forms.DataTemplate) を [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate) プロパティに割り当てて、コレクション内のオブジェクトに対する [`ContentPage`](xref:Xamarin.Forms.ContentPage) インスタンスを取得します。
+- 子 [`ContentPage`](xref:Xamarin.Forms.ContentPage) インスタンスのコレクションを `CarouselPage` に[設定](#populate-a-carouselpage-with-a-page-collection)します。
+- コレクションを [`ItemsSource`](xref:Xamarin.Forms.MultiPage`1.ItemsSource) プロパティに[割り当て](#populate-a-carouselpage-with-a-template)、[`DataTemplate`](xref:Xamarin.Forms.DataTemplate) を [`ItemTemplate`](xref:Xamarin.Forms.MultiPage`1.ItemTemplate) プロパティに割り当てて、コレクション内のオブジェクトに対する [`ContentPage`](xref:Xamarin.Forms.ContentPage) インスタンスを取得します。
 
 どちらの方法でも、`CarouselPage` では各ページが順番に表示され、スワイプ操作によって次のページの表示に移動します。
 
 > [!NOTE]
 > [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) に設定できるのは、[`ContentPage`](xref:Xamarin.Forms.ContentPage) インスタンスまたは `ContentPage` 派生クラスだけです。
-
-<a name="Populating_a_CarouselPage_with_a_Page_Collection" />
 
 ### <a name="populate-a-carouselpage-with-a-page-collection"></a>CarouselPage にページ コレクションを設定する
 
@@ -145,8 +146,6 @@ public class MainPageCS : CarouselPage
 ```
 
 各 [`ContentPage`](xref:Xamarin.Forms.ContentPage) では、特定の色に対する [`Label`](xref:Xamarin.Forms.Label) と、その色の [`BoxView`](xref:Xamarin.Forms.BoxView) が単に表示されます。
-
-<a name="Populating_a_CarouselPage_with_a_Template" />
 
 ### <a name="populate-a-carouselpage-with-a-template"></a>CarouselPage にテンプレートを設定する
 

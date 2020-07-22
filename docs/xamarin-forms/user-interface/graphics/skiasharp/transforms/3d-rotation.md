@@ -1,38 +1,41 @@
 ---
-title: SkiaSharp の 3D 回転
-description: この記事では、非アフィン変換を使用して 3D 空間を 2D オブジェクトを回転する方法を説明し、サンプル コードを示します。
+title: SkiaSharp の3D 回転
+description: この記事では、非アフィン変換を使用して3D 空間で2D オブジェクトを回転させる方法について説明し、サンプルコードを使用してこれを示します。
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: B5894EA0-C415-41F9-93A4-BBF6EC72AFB9
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/14/2017
-ms.openlocfilehash: 60f09b2e60708df6b1e6b68be7ce0792bc8cd9b0
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3706139a2c15d01af67203c2bd09b281de80ed52
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759184"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84140206"
 ---
-# <a name="3d-rotations-in-skiasharp"></a>SkiaSharp の 3D 回転
+# <a name="3d-rotations-in-skiasharp"></a>SkiaSharp の3D 回転
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_非アフィン変換を使用して、3 D 空間で 2D オブジェクトを回転させます。_
+_非アフィン変換を使用して、3D 空間内の2D オブジェクトを回転します。_
 
-非アフィン変換の 1 つの一般的なアプリケーションが 3D 空間で 2D オブジェクトの回転をシミュレートします。
+非アフィン変換の一般的なアプリケーションの1つは、3D 空間における2D オブジェクトの回転をシミュレートすることです。
 
-![](3d-rotation-images/3drotationsexample.png "3 次元空間で回転したテキスト文字列")
+![](3d-rotation-images/3drotationsexample.png "A text string rotated in 3D space")
 
-このジョブは、3 次元の回転を使用し、派生し、非アフィン`SKMatrix`これらの 3D 回転を実行する変換。
+このジョブでは、3次元の回転を操作した後、これらの3D 回転を実行する非アフィン変換を派生させ `SKMatrix` ます。
 
-これを開発するが難しい`SKMatrix`変換の 2 つのディメンション内でのみ動作します。 この 3-3 で行列は 3D グラフィックスで使用される 4-4 で行列から派生したときに、ジョブははるかに簡単になります。 SkiaSharp が含まれています、 [ `SKMatrix44` ](xref:SkiaSharp.SKMatrix44) 、この目的は 3D グラフィックスでいくつかのバック グラウンドのクラスは 3D 回転と 4-4 での変換行列を理解するために必要です。
+この変換は、 `SKMatrix` 2 つのディメンション内でのみ動作するように開発するのは困難です。 この3×3行列が3D グラフィックスで使用される4×4行列から派生している場合、ジョブははるかに簡単になります。 SkiaSharp には [`SKMatrix44`](xref:SkiaSharp.SKMatrix44) この目的のクラスが含まれていますが、3d 回転と4×4変換行列を理解するために3d グラフィックスの背景がいくつか必要です。
 
-Z 軸の目盛りが画面に直角に交わっての 3 次元座標系に概念的には z までという 3 つ目の軸が追加されます。 3 次元空間で座標の点が 3 つの数値で示されます。 (x, y, z)。 X の値を増やすと、この記事で使用される座標系は 3D の右側にし、Y の値が、2 つのディメンションと同じように移動します。 画面から出て正の Z 値が増加します。 原点は、左上隅の 2D グラフィックと同様です。 画面は、この平面に直角に交わって Z 軸を XY 平面として考えることができます。
+3次元の座標系は、Z という3番目の軸を追加します。概念的には、Z 軸は画面に直角に位置しています。 3D 空間の座標点は、3つの数値 (x、y、z) で示されます。 この記事で使用されている3D 座標系では、X の値を大きくすると、2つの次元のように Y の値が大きくなります。 正の Z 値を大きくすると画面が表示されなくなります。 原点は、2D グラフィックスと同様、左上隅にあります。 この画面は、Z 軸がこの平面と直角にある XY 平面と考えることができます。
 
-これは、左手座標系と呼ばれます。 X 座標 (右側) に正の方向で、左側の人差し指をポイントして、中指を Y を増加させる方向を調整 (ダウン) 場合、に、Z 座標を増加させる方向にし、つまみポイント-からを拡張します。画面。
+これは、左側の座標系と呼ばれます。 左側の人差し指でが正の X 座標 (右側) の方向に向かっていて、中心の指が Y 座標を上げる方向 (下) である場合は、Z 座標を大きくする方向 (下) で thumb をポイントします。画面から拡張します。
 
-3D グラフィックは、変換は、4-4 でのマトリックスに基づいています。 4-4 が恒等行列を次に示します。
+3D グラフィックスでは、変換は4×4の行列に基づいています。 4×4の id 行列は次のようになります。
 
 <pre>
 |  1  0  0  0  |
@@ -41,7 +44,7 @@ Z 軸の目盛りが画面に直角に交わっての 3 次元座標系に概念
 |  0  0  0  1  |
 </pre>
 
-4-4 でマトリックスの操作、その行と列番号を持つセルを識別するために便利です。
+4×4のマトリックスを使用する場合、行と列の番号を含むセルを識別すると便利です。
 
 <pre>
 |  M11  M12  M13  M14  |
@@ -50,9 +53,9 @@ Z 軸の目盛りが画面に直角に交わっての 3 次元座標系に概念
 |  M41  M42  M43  M44  |
 </pre>
 
-ただし、SkiaSharp`Matrix44`クラスは少し異なります。 個々 のセルの値を取得または設定する唯一の方法`SKMatrix44`を使用して、 [ `Item` ](xref:SkiaSharp.SKMatrix44.Item(System.Int32,System.Int32))インデクサーです。 行と列のインデックスは 0 から始まるではなく 1 から始まるし、行と列がスワップされます。 上の図では、セル M14 にインデクサーを使用してアクセス`[3, 0]`で、`SKMatrix44`オブジェクト。
+ただし、SkiaSharp `Matrix44` クラスは少し異なります。 で個別のセル値を設定または取得する唯一の方法は、 `SKMatrix44` インデクサーを使用することです [`Item`](xref:SkiaSharp.SKMatrix44.Item(System.Int32,System.Int32)) 。 行と列のインデックスは、1から始まるのではなく、ゼロから始まり、行と列はスワップされます。 上の図のセル M14 は、オブジェクトのインデクサーを使用してアクセスされ `[3, 0]` `SKMatrix44` ます。
 
-3D グラフィックス システムで 3D の点 (x, y, z) は、4-4 での変換行列を掛けることの 1 ~ 4 をマトリックスに変換されます。
+3D グラフィックスシステムでは、3D ポイント (x、y、z) が4×4の変換行列によって乗算されるように、1×4の行列に変換されます。
 
 <pre>
                  |  M11  M12  M13  M14  |
@@ -61,7 +64,7 @@ Z 軸の目盛りが画面に直角に交わっての 3 次元座標系に概念
                  |  M41  M42  M43  M44  |
 </pre>
 
-2D に類似の 3 つのディメンションがその実行を変換、3 D 変換 4 次元で行われると見なされます。 4 番目の次元は、W キーと呼ばれます、3 D 空間は W 座標が 1 の 4d 空間内に存在すると見なされます。 変換式は次のとおりです。
+3次元で行われる2D 変換に似ていますが、3D 変換は4つの次元で行われると見なされます。 4番目の次元は W と呼ばれ、3D 空間は、W 座標が1と等しい4D 空間内に存在すると見なされます。 変換式は次のとおりです。
 
 `x' = M11·x + M21·y + M31·z + M41`
 
@@ -71,9 +74,9 @@ Z 軸の目盛りが画面に直角に交わっての 3 次元座標系に概念
 
 `w' = M14·x + M24·y + M34·z + M44`
 
-変換式からも明らかをセル`M11`、 `M22`、 `M33` X、Y、および Z の方向にスケーリングが要因と`M41`、`M42`と`M43`X、Y、および Z の翻訳要素方向。
+変換式では、セルが `M11` `M22` `M33` x、y、および z 方向のスケールファクターであることがわかります。また、、、 `M41` `M42` および `M43` は、x、y、および z 方向の変換要因です。
 
-これらの座標を 3D に W が 1、x と等しい領域に変換する '、y'、z' 座標はすべて割った w'。
+これらの座標を、W が1に等しい3D 空間に戻すには、x '、y '、および z ' 座標がすべて w ' で除算されます。
 
 `x" = x' / w'`
 
@@ -83,9 +86,9 @@ Z 軸の目盛りが画面に直角に交わっての 3 次元座標系に概念
 
 `w" = w' / w' = 1`
 
-その除算 w' 3D 空間でパースペクティブを提供します。 場合 w' が 1 と等しい、パースペクティブは行われません。
+W による除算では、3D 空間のパースペクティブが提供されます。 W ' が1の場合、パースペクティブは発生しません。
 
-3D 空間での回転は非常に複雑にすることができますが、最も簡単な回転は X、Y、および Z 軸を中心。 角度 α X 軸の周りの回転角度は、このマトリックスを示します。
+3D 空間での回転は非常に複雑になることがありますが、最も単純な回転は、X 軸、Y 軸、Z 軸を中心にしています。 X 軸を中心とした角度の回転は次のようにαます。
 
 <pre>
 |  1     0       0     0  |
@@ -94,7 +97,7 @@ Z 軸の目盛りが画面に直角に交わっての 3 次元座標系に概念
 |  0     0       0     1  |
 </pre>
 
-X の値は、この変換の対象と同じになります。 変更なし Y の値を Y 軸の周りの回転になります。
+X の値は、この変換を対象とする場合は変わりません。 Y 軸を中心に回転すると、Y の値は変更されません。
 
 <pre>
 |  cos(α)  0  –sin(α)  0  |
@@ -103,7 +106,7 @@ X の値は、この変換の対象と同じになります。 変更なし Y �
 |    0     0     0     1  |
 </pre>
 
-Z 軸の周りの回転は 2D グラフィックスと同じです。
+Z 軸を中心とする回転は、2D グラフィックスの場合と同じです。
 
 <pre>
 |  cos(α)  sin(α)  0  0  |
@@ -112,24 +115,24 @@ Z 軸の周りの回転は 2D グラフィックスと同じです。
 |    0       0     0  1  |
 </pre>
 
-回転の方向がの座標システムの処理によって暗黙的に指定します。 左手のシステムでは、これはつまみの左側にある特定の軸の値の増加方向をポイントする場合、X 軸を中心とする回転の右側に Z 軸の周りの回転の回転を Y 軸を中心とするダウン-の曲線では、yoその他の指では、正の角度の回転の方向を示します。
+回転の方向は、座標系のきき手によって暗黙的に示されます。 これは左手座標系です。そのため、特定の軸の回転を左右するように左側のつまみをポイントし、Y 軸を中心に回転する場合は下向き、Z 軸を中心に回転する場合は、正の角度の回転の方向を示すことになります。
 
-`SKMatrix44` 静的に一般化が[ `CreateRotation` ](xref:SkiaSharp.SKMatrix44.CreateRotation(System.Single,System.Single,System.Single,System.Single))と[ `CreateRotationDegrees` ](xref:SkiaSharp.SKMatrix44.CreateRotationDegrees(System.Single,System.Single,System.Single,System.Single))となる、回転が行われる軸を指定するためのメソッド。
+`SKMatrix44`には、 [`CreateRotation`](xref:SkiaSharp.SKMatrix44.CreateRotation(System.Single,System.Single,System.Single,System.Single)) [`CreateRotationDegrees`](xref:SkiaSharp.SKMatrix44.CreateRotationDegrees(System.Single,System.Single,System.Single,System.Single)) 回転の中心となる軸を指定できる一般化された静的メソッドとメソッドがあります。
 
 ```csharp
 public static SKMatrix44 CreateRotationDegrees (Single x, Single y, Single z, Single degrees)
 ```
 
-X 軸の周りの回転の最初の 3 つの引数を 1, 0, 0 に設定します。 Y 軸の周りの回転、0、1、0 に設定し、Z 軸の周りの回転、0, 0, 1 に設定します。
+X 軸を中心に回転する場合は、最初の3つの引数を1、0、0に設定します。 Y 軸を中心に回転する場合は、それらを0、1、0に設定し、Z 軸を中心とした回転を行うには、0、0、1に設定します。
 
-第 4 列 4、4 は、パースペクティブによってです。 `SKMatrix44`パースペクティブの変換を作成するためのメソッドがありませんが、次のコードを使用して自分で 1 つを作成することができます。
+4×4の4列目はパースペクティブを対象としています。 には、 `SKMatrix44` パースペクティブ変換を作成するためのメソッドはありませんが、次のコードを使用して独自に作成することができます。
 
 ```csharp
 SKMatrix44 perspectiveMatrix = SKMatrix44.CreateIdentity();
 perspectiveMatrix[3, 2] = -1 / depth;
 ```
 
-引数名の理由`depth`すぐ明らかになります。 そのコードは、マトリックスを作成します。
+引数名の理由は、 `depth` すぐに明らかになります。 このコードによってマトリックスが作成されます。
 
 <pre>
 |  1  0  0      0     |
@@ -138,21 +141,21 @@ perspectiveMatrix[3, 2] = -1 / depth;
 |  0  0  0      1     |
 </pre>
 
-W の次の計算で発生する変換式は、'。
+変換式では、次のように w ' が計算されます。
 
 `w' = –z / depth + 1`
 
-これは、Z の値が 0 未満 (概念的にはバック XY 平面) ときに、X および Y 座標を削減し、Z の正の値の座標 X と Y 座標を増やすには機能します。Z 座標と等しい`depth`、w、' 0 の場合は、座標が無限になります。 3 次元のグラフィックス システムは、カメラのメタファに基づいて作成されます、`depth`値は、ここでは、カメラの距離を表す、座標系の原点から。 かどうか、グラフィカル オブジェクトは調整されている Z`depth`ユニット、配信元からの カメラのレンズは概念的に触れることと無制限に大きくなり、します。
+これにより、Z の値が0未満の場合 (概念的には XY 平面の背後)、x 座標と Y 座標が Z の正の値になるようになります。Z 座標がと等しい場合 `depth` 、w ' は0になり、座標は無限になります。 3次元グラフィックスシステムは、カメラの比喩を中心に構築されてい `depth` ます。この値は、座標系の原点からのカメラの距離を表します。 原点からの単位である Z 座標がグラフィックオブジェクトにある場合、そのオブジェクトは、 `depth` 概念的にカメラのレンズに接し、無限に大きくなります。
 
-注意をおそらく使用するこの`perspectiveMatrix`回転行列と組み合わせて値。 回転されているグラフィック オブジェクトに X または Y 座標のより大きい場合`depth`、3 D 空間では、このオブジェクトの回転により大きい Z 座標が関与することは`depth`します。 これを回避する必要があります。 作成するときに`perspectiveMatrix`を設定する`depth`回転方法に関係なく、グラフィックス オブジェクト内のすべての座標に十分な大きさの値にします。 これにより、ゼロによる除算はありません。
+この値は、回転行列と組み合わせて使用することをお勧めし `perspectiveMatrix` ます。 回転されているグラフィックスオブジェクトの X 座標と Y 座標の値がを超えている場合、 `depth` 3d 空間でのこのオブジェクトの回転には、より大きい Z 座標が関係している可能性があり `depth` ます。 これは避ける必要があります。 を作成するときに、 `perspectiveMatrix` `depth` グラフィックスオブジェクトのすべての座標に対して、回転方法に関係なく、すべての座標に対して十分に大きい値を設定します。 これにより、ゼロによる除算が行われることはありません。
 
-パースペクティブの 3D 回転を組み合わせることでは、まとめて 4-4 で行列を乗算することが必要です。 このため、`SKMatrix44`連結メソッドを定義します。 場合`A`と`B`は`SKMatrix44`オブジェクトの場合、次のコードは、等号を × b: に設定し、
+3D 回転と奥行を組み合わせるには、4×4の行列を乗算する必要があります。 このために、は `SKMatrix44` 連結メソッドを定義します。 `A`と `B` がオブジェクトの場合 `SKMatrix44` 、次のコードでは、を× B と同じに設定します。
 
 ```csharp
 A.PostConcat(B);
 ```
 
-4-4 での変換行列を使用すると、2 D グラフィックス システムでは、2 D のオブジェクトに適用されます。 これらのオブジェクトは、フラット 0 の Z 座標と見なされます。 変換の乗算は前に示した変換よりも簡単です。
+4×4の変換行列が2D グラフィックスシステムで使用されている場合は、2D オブジェクトに適用されます。 これらのオブジェクトはフラットであり、Z 座標が0であると見なされます。 変換乗算は、前に示した変換よりも少し単純です。
 
 <pre>
                  |  M11  M12  M13  M14  |
@@ -161,27 +164,27 @@ A.PostConcat(B);
                  |  M41  M42  M43  M44  |
 </pre>
 
-0 値の変換式を行列の 3 番目の行内のどのセルを含まないで z 結果をします。
+Z の値が0の場合、マトリックスの3番目の行のセルを含まない変換式が生成されます。
 
-x' = M11・x + M21・y + M41
+x ' = M11 · x + M21 · y + M41
 
-y' = M12・x + M22・y + M42
+y ' = M12 · x + M22 · y + M42
 
-z' = M13・x + M23・y + M43
+z ' = M13 · x + M23 · y + M43
 
-w' = M14・x + M24・y + M44
+w ' = M14 · x + M24 · y + M44
 
-さらに、z、' 座標は関係ありませんもします。 2D グラフィックス システムで 3D オブジェクトが表示される場合は、2 次元のオブジェクトに、Z 座標の値を無視することで折りたたまれています。 変換式は、実際にはこれらの 2 つです。
+さらに、z 座標もここでは意味がありません。 3D オブジェクトが2D グラフィックスシステムに表示される場合、Z 座標の値を無視することで、3D オブジェクトが2次元のオブジェクトに折りたたまれます。 変換式は、実際には次の2つにすぎません。
 
 `x" = x' / w'`
 
 `y" = y' / w'`
 
-つまり、3 番目の行*と*4-4 でマトリックスの 3 番目の列は無視できます。
+これは、4×4行列の3番目の行*と*3 番目の列を無視できることを意味します。
 
-かどうかですが、なぜ必要さえ 4-4 でマトリックスを最初にですか。
+ただし、そのような場合は、最初に4×4のマトリックスが必要なのはなぜですか。
 
-第 3 行、第 3 列 4、4 は 2 次元の変換、3 番目の行と列の関連する*は*時にする前に役割を果たすさまざまな`SKMatrix44`値が乗算されます。 たとえば、透視変換を Y 軸の周りの回転を乗算するとします。
+4×4の3番目の行と3番目の列は2次元の変換には関係あり*ませ*んが、3番目の行と列は、さまざまな値が乗算される前にロールを果たし `SKMatrix44` ます。 たとえば、Y 軸を中心とした回転を透視線変換で乗算するとします。
 
 <pre>
 |  cos(α)  0  –sin(α)  0  |   |  1  0  0      0     |   |  cos(α)  0  –sin(α)   sin(α)/depth  |
@@ -190,7 +193,7 @@ w' = M14・x + M24・y + M44
 |    0     0     0     1  |   |  0  0  0      1     |   |    0     0     0           1        |
 </pre>
 
-製品にセル`M14`観点の値が含まれています。 2D オブジェクトにその行列を適用する場合は、3 番目の行と列が 3-3 でのマトリックスに変換する除外されます。
+製品では、セルに `M14` perspective 値が含まれるようになりました。 このマトリックスを2D オブジェクトに適用する場合、3番目の行列に変換するために3番目の行と列が削除されます。
 
 <pre>
 |  cos(α)  0  sin(α)/depth  |
@@ -198,7 +201,7 @@ w' = M14・x + M24・y + M44
 |    0     0       1        |
 </pre>
 
-これで 2D ポイントの変換を使用できます。
+次に、2D ポイントを変換するために使用できるようになりました。
 
 <pre>
                 |  cos(α)  0  sin(α)/depth  |
@@ -214,17 +217,17 @@ w' = M14・x + M24・y + M44
 
 `z' = (sin(α)/depth)·x + 1`
 
-これですべてを z' で除算 。
+ここで、すべてを z ' で除算します。
 
 `x" = cos(α)·x / ((sin(α)/depth)·x + 1)`
 
 `y" = y / ((sin(α)/depth)·x + 1)`
 
-X の値が負の値の中にバック グラウンドに遠ざかります 2D オブジェクトが Y 軸を中心、正の値は正の角度で回転したときに、前景色を取得する X 値。 X の値は、遠い Y 軸の座標として (これは、コサイン値によって制御されます)、Y 軸に近づけるが小さいまたはビューアーから移動すると拡大になったり、ビューアーに近いようです。
+Y 軸を中心に正の角度を付けて2D オブジェクトを回転させると、正の x 値は recede の背景になり、負の X 値は前景になります。 X 値は、y 軸から遠い方の座標が (余弦値によって制御される) Y 軸の近くに移動したように見えます。これは、ビューアーからさらに上に移動したり、ビューアーに近づけたりすると、y 軸の座標が小さくなるか大きくなります。
 
-使用する場合`SKMatrix44`、さまざまな乗算することによって、すべての 3D 回転とパースペクティブの操作を実行する`SKMatrix44`値。 4、4 から 3-3、2 次元行列を抽出することができますし、マトリックスを使用して、 [ `Matrix` ](xref:SkiaSharp.SKMatrix44.Matrix)のプロパティ、`SKMatrix44`クラス。 このプロパティは、使い慣れたを返します`SKMatrix`値。
+を使用する場合は `SKMatrix44` 、さまざまな値を乗算することによって、すべての3d 回転操作とパースペクティブ演算を実行し `SKMatrix44` ます。 次に、クラスのプロパティを使用して、4×4行列から2次元の3×3行列を抽出でき [`Matrix`](xref:SkiaSharp.SKMatrix44.Matrix) `SKMatrix44` ます。 このプロパティは、なじみのある値を返し `SKMatrix` ます。
 
-**回転 3D**ページの 3D 回転を試すことができます。 [ **Rotation3DPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml)ファイルには、X、Y、および Z 軸の周りの回転を設定して、深さの値を設定する 4 つのスライダーがインスタンス化します。
+**回転 3d**ページでは、3d 回転を試すことができます。 [**Rotation3DPage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml)ファイルは、X 軸、Y 軸、Z 軸の周りの回転を設定し、深さの値を設定する4つのスライダーをインスタンス化します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -303,9 +306,9 @@ X の値が負の値の中にバック グラウンドに遠ざかります 2D �
 </ContentPage>
 ```
 
-注意、`depthSlider`を使用して初期化、 `Minimum` 250 の値。 これは、ため、ここで回転されている 2D オブジェクトに、X および Y 座標原点の周囲の 250 ピクセルの半径によって定義される円に制限にはが含まれています。 3 次元空間では、このオブジェクトの回転は、座標の値が 250 よりも小さいか常に得られます。
+`depthSlider`が250の値で初期化されていることに注意して `Minimum` ください。 これは、ここで回転される2D オブジェクトの X 座標と Y 座標が、原点を中心として250ピクセル半径で定義された円に制限されていることを意味します。 3D 空間でこのオブジェクトを回転すると、常に250より小さい座標値になります。
 
-[ **Rotation3DPage.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml.cs)ビットマップが 300 ピクセルの正方形で分離コード ファイルが読み込まれます。
+[**Rotation3DPage.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml.cs)分離コードファイルは300ピクセルのビットマップで読み込まれます。
 
 ```csharp
 public partial class Rotation3DPage : ContentPage
@@ -336,9 +339,9 @@ public partial class Rotation3DPage : ContentPage
 }
 ```
 
-3D 変換がこのビットマップの中央に配置する場合、X および Y 座標 –150 ~ 150、範囲 250 ピクセル半径内にあるため、すべてのもの、コーナーは、中心から 212 ピクセル。
+3D 変換がこのビットマップの中央に配置されている場合、X 座標と Y 座標の範囲は– 150 ~ 150 です。一方、角は中央から212ピクセルであるため、すべてが250ピクセル半径内にあります。
 
-`PaintSurface`ハンドラーを作成します`SKMatrix44`オブジェクトは、スライダーに基づいており、乗算を使用して`PostConcat`します。 `SKMatrix`最後から抽出された値`SKMatrix44`オブジェクトの周囲で翻訳画面の中央に回転の中心の変換。
+`PaintSurface`ハンドラーは、 `SKMatrix44` スライダーに基づいてオブジェクトを作成し、を使用してそれらを乗算し `PostConcat` ます。 `SKMatrix`最後のオブジェクトから抽出 `SKMatrix44` された値は、画面の中央に回転を中心とする平行移動変換によって囲まれています。
 
 ```csharp
 public partial class Rotation3DPage : ContentPage
@@ -407,11 +410,11 @@ public partial class Rotation3DPage : ContentPage
 }
 ```
 
-4 番目のスライダーをテストするときに、別の設定は、ビューアーから離れた場所にさらにオブジェクトを移動しないが、パースペクティブの効果の程度を代わりに alter のことを確認します。
+4番目のスライダーを使用して実験すると、異なる深度設定によってオブジェクトがビューアーからさらに移動されるのではなく、パースペクティブ効果の範囲が変更されることがわかります。
 
-[![](3d-rotation-images/rotation3d-small.png "回転の 3D ページのスクリーン ショットをトリプル")](3d-rotation-images/rotation3d-large.png#lightbox "回転 3D ページの 3 倍になるスクリーン ショット")
+[![](3d-rotation-images/rotation3d-small.png "Triple screenshot of the Rotation 3D page")](3d-rotation-images/rotation3d-large.png#lightbox "Triple screenshot of the Rotation 3D page")
 
-**アニメーション回転 3D**では`SKMatrix44`3 D 空間内のテキスト文字列をアニメーション化します。 `textPaint`オブジェクト コンストラクターで、テキストの範囲の決定に使用されるためにフィールドを設定します。
+**アニメーションの回転 3d**では、を使用して、 `SKMatrix44` 3d 空間のテキスト文字列をアニメーション化することもできます。 `textPaint`フィールドとして設定されたオブジェクトは、テキストの境界を決定するためにコンストラクターで使用されます。
 
 ```csharp
 public class AnimatedRotation3DPage : ContentPage
@@ -443,7 +446,7 @@ public class AnimatedRotation3DPage : ContentPage
 }
 ```
 
-`OnAppearing`オーバーライドは、次の 3 つの Xamarin.Forms を定義します。`Animation`アニメーション化するオブジェクト、 `xRotationDegrees`、 `yRotationDegrees`、および`zRotationDegrees`異なるレートでフィールド。 通知に事前通知するこれらのアニメーションの期間が設定されているため、全体的な組み合わせは、すべて 385 の秒数または 10 分以上にのみ繰り返されます (5 秒、7 秒、および 11 秒) の数値します。
+`OnAppearing`オーバーライドは Xamarin.Forms `Animation` `xRotationDegrees` 、、 `yRotationDegrees` 、およびの `zRotationDegrees` 各フィールドを異なるレートでアニメーション化するために、3つのオブジェクトを定義します。 これらのアニメーションの期間は、素数 (5 秒、7秒、および11秒) に設定されているため、全体的な組み合わせは385秒ごと、または10分以上繰り返されます。
 
 ```csharp
 public class AnimatedRotation3DPage : ContentPage
@@ -477,7 +480,7 @@ public class AnimatedRotation3DPage : ContentPage
 }
 ```
 
-前のプログラムでは、ように、`PaintCanvas`ハンドラーを作成します`SKMatrix44`の回転と見ると、値し、を乗算しています。
+前のプログラムと同様に、 `PaintCanvas` ハンドラーは `SKMatrix44` 回転とパースペクティブの値を作成し、それらを乗算します。
 
 ```csharp
 public class AnimatedRotation3DPage : ContentPage
@@ -531,11 +534,11 @@ public class AnimatedRotation3DPage : ContentPage
 }
 ```
 
-この 3D 回転は、いくつかの 2D 変換を回転の中心を画面の中央に移動し、画面と同じ幅にあるテキスト文字列のサイズを調整するで囲まれます。
+この3D 回転は、回転の中心を画面の中央に移動し、テキスト文字列のサイズを拡大して画面と同じ幅にするために、いくつかの2D 変換で囲まれています。
 
-[![](3d-rotation-images/animatedrotation3d-small.png "アニメーションの回転の 3D ページのスクリーン ショットをトリプル")](3d-rotation-images/animatedrotation3d-large.png#lightbox "アニメーション回転 3D ページの 3 倍になるスクリーン ショット")
+[![](3d-rotation-images/animatedrotation3d-small.png "Triple screenshot of the Animated Rotation 3D page")](3d-rotation-images/animatedrotation3d-large.png#lightbox "Triple screenshot of the Animated Rotation 3D page")
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

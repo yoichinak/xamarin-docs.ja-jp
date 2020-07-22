@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/07/2016
-ms.openlocfilehash: 34f332eb712f479f9f9565a3894212e3cdd5aaf6
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 99565d7e61e8e8c1d28b67a6a6d25979c79fa387
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030546"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84566163"
 ---
 # <a name="introduction-to-tvos-9"></a>tvOS 9 の概要
 
@@ -20,13 +20,13 @@ _この記事では、tvOS 9 for Xamarin. tvOS 開発者向けの新しい Api �
 
 Apple は、新しい tvOS オペレーティングシステム (iOS 9 に基づく) を実行して、再設計されたタッチ対応のリモート機能を使用して、Apple TV ハードウェアの第4世代をリリースしました。
 
-TvOS は、初めて Apple TV platform を開発者にオープンします。これにより、iTunes アプリを使用して iOS 用アプリを作成してリリースするのと同様のプロセスで、Apple TV の組み込みアプリストアを使用して、豊富なイマーシブアプリを作成し、それらをリリースすることができます。ソース.
+TvOS は、初めて Apple TV platform を開発者にオープンさせます。これにより、iTunes App Store を使用して iOS 用アプリを作成したり、リリースしたりするのと同様のプロセスで、Apple TV の組み込みのアプリストアを通じて、豊富なイマーシブアプリを作成し、それらをリリースすることができます。
 
 Xamarin の開発に慣れている場合は、tvOS が非常に単純なものに移行することをお勧めします。 Api と機能のほとんどは同じですが、多くの一般的な Api は使用できません (WebKit など)。 さらに、Siri リモコンでを使用すると、タッチスクリーンベースの iOS デバイスには存在しない設計上の課題が生じます。
 
 このガイドでは、tvOS 9 for Xamarin. tvOS 開発者向けの新しい Api と変更された Api と機能をすべて紹介します。 TvOS の詳細については、apple の[開発に関する新しい APPLE TV のドキュメントを](https://developer.apple.com/tvos/)参照してください。
 
-<a name="Supported-and-Unsupported-Capabilities" />
+<a name="Supported-and-Unsupported-Capabilities"></a>
 
 ## <a name="supported-and-unsupported-capabilities"></a>サポートされる機能とサポートされない機能
 
@@ -34,7 +34,7 @@ Apple TV で実行される tvOS アプリには、次のサポートされて�
 
 - アプリ グループ
 - バックグラウンド モード
-- データの保護
+- データ保護
 - Game Center
 - ゲームコントローラー
 - iCloud
@@ -57,7 +57,7 @@ Apple TV で実行される tvOS アプリには、次のサポートされて�
 
 詳細については、[サポートされ](~/ios/tvos/internals/assemblies.md)ているアセンブリと[サポートされているフレームワーク](~/ios/tvos/internals/frameworks.md)に関するドキュメントを参照してください。
 
-<a name="Apple-TV-Hardware" />
+<a name="Apple-TV-Hardware"></a>
 
 ## <a name="apple-tv-hardware"></a>Apple TV ハードウェア
 
@@ -80,13 +80,13 @@ Apple TV で実行される tvOS アプリには、次のサポートされて�
 Siri リモートは、現在、次の国でご利用いただけます。
 
 - オーストラリア
-- カナダ
+- Canada
 - フランス
 - ドイツ
 - 日本
 - スペイン
-- 英国
-- 米国
+- イギリス
+- アメリカ合衆国
 
 他のすべての国は、Siri ボタンを検索ボタンに置き換える Apple TV リモコンを受け取ります。このボタンをクリックすると、既定の検索画面に検索用のテキスト入力が表示されます。
 
@@ -94,7 +94,7 @@ Siri リモートは、現在、次の国でご利用いただけます。
 
 詳細については、 [Siri リモートおよび Bluetooth コントローラー](~/ios/tvos/platform/remote-bluetooth.md)のドキュメントを参照してください。
 
-<a name="Apple-TV-Provisioning" />
+<a name="Apple-TV-Provisioning"></a>
 
 ## <a name="apple-tv-provisioning"></a>Apple TV のプロビジョニング
 
@@ -104,13 +104,13 @@ ICloud KVS や CloudKit データストアなどの tvOS 機能にアクセス�
 
 プロビジョニングプロファイルは、Xamarin iOS アプリを使用する場合と同じ方法で作成およびインストールされます。 そのため、詳細については、iOS[デバイスのプロビジョニング](~/ios/get-started/installation/device-provisioning/index.md)に関するドキュメントを参照してください。
 
-<a name="Apple-TV-Apps" />
+<a name="Apple-TV-Apps"></a>
 
 ## <a name="apple-tv-apps"></a>Apple TV アプリ
 
 新しい Apple TV ハードウェアと tvOS 9 は、従来のアプリとクライアント/サーバーアプリの2種類のアプリをサポートしています。
 
-<a name="Traditional-Apps" />
+<a name="Traditional-Apps"></a>
 
 ### <a name="traditional-apps"></a>従来のアプリ
 
@@ -120,15 +120,15 @@ Apple TV アプリの最大サイズは 200 MB で、オンデマンドリソー
 
 TvOS を使用して tvOS アプリを開発するために必要なツールと概念について理解を深めるには、「 [Hello, tvOS クイックスタートガイド](~/ios/tvos/get-started/hello-tvos.md)」を参照してください。
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ### <a name="client-server-apps"></a>クライアント/サーバーアプリ
 
 Apple TV では、インストールされている従来のアプリに加えて、web テクノロジ (HTTPS、XML、JavaScript) を使用した web ベースのクライアントサーバーメディアストリーミングアプリの作成が簡単になります。 Apple の TVML マークアップ言語を使用してユーザーインターフェイスをデザインし、JavaScript を使用して TVMLKit を使用してアプリの動作を定義します。
 
-詳細については、apple の apple [Tv Markup Language リファレンス](https://developer.apple.com/library/prerelease/tvos/documentation/LanguagesUtilities/Conceptual/ATV_Template_Guide/index.html#//apple_ref/doc/uid/TP40015064)、 [TVJS framework](https://developer.apple.com/library/prerelease/tvos/documentation/TVMLJS/Reference/TVJSFrameworkReference/index.html#//apple_ref/doc/uid/TP40016076)リファレンス、 [TVMLKIT framework リファレンス](https://developer.apple.com/library/prerelease/tvos/documentation/TVMLKit/Reference/TVMLKit_Collection/index.html#//apple_ref/doc/uid/TP40016429)、 [apple Tv の HTTP ライブストリーミングと HLS オーサリングの仕様](https://developer.apple.com/services-account/download?path=/Documentation/HLS_Authoring_Specification_for_Apple_TV/HLS_Authoring_Specification_for_Apple_TV.pdf)[に関する説明](https://developer.apple.com/library/prerelease/tvos/referencelibrary/GettingStarted/AboutHTTPLiveStreaming/about/about.html#//apple_ref/doc/uid/TP40013978)を参照してください。書.
+詳細については、apple の apple [Tv Markup Language リファレンス](https://developer.apple.com/library/prerelease/tvos/documentation/LanguagesUtilities/Conceptual/ATV_Template_Guide/index.html#//apple_ref/doc/uid/TP40015064)、 [TVJS framework](https://developer.apple.com/library/prerelease/tvos/documentation/TVMLJS/Reference/TVJSFrameworkReference/index.html#//apple_ref/doc/uid/TP40016076)リファレンス、 [TVMLKIT framework リファレンス](https://developer.apple.com/library/prerelease/tvos/documentation/TVMLKit/Reference/TVMLKit_Collection/index.html#//apple_ref/doc/uid/TP40016429)、 [Apple tv ドキュメントの HTTP ライブストリーミングと HLS オーサリングの仕様](https://developer.apple.com/services-account/download?path=/Documentation/HLS_Authoring_Specification_for_Apple_TV/HLS_Authoring_Specification_for_Apple_TV.pdf)[に関する](https://developer.apple.com/library/prerelease/tvos/referencelibrary/GettingStarted/AboutHTTPLiveStreaming/about/about.html#//apple_ref/doc/uid/TP40013978)ドキュメントを参照してください。
 
-<a name="User-Interface-Challenges" />
+<a name="User-Interface-Challenges"></a>
 
 ## <a name="user-interface-challenges"></a>ユーザーインターフェイスの課題
 
@@ -136,7 +136,7 @@ IOS や OS X とは異なり、Apple TV には、ユーザーがアプリやそ�
 
 さらに、ユーザーエクスペリエンス全体は、シングルユーザーエクスペリエンスとなる傾向がある iOS または Mac アプリとは大きく異なります。 Apple TV では、ユーザーエクスペリエンスが本質的により社会的になる傾向があります。これは、複数のユーザーが1つのアプリと相互作用するソファに座っている可能性があります。 Apple TV アプリのエクスペリエンス (新しいアプリまたは既存のアプリの移植) を設計するには、これらの変更を考慮する必要があります。 
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ### <a name="working-with-focus-and-parallax-images"></a>フォーカスと視差イメージの操作
 
@@ -148,7 +148,7 @@ IOS や OS X とは異なり、Apple TV には、ユーザーがアプリやそ�
 
 詳細については、「[ナビゲーションの操作](~/ios/tvos/app-fundamentals/navigation-focus.md)」および「[アイコンとイメージの操作](~/ios/tvos/app-fundamentals/icons-images.md)」のドキュメントを参照してください。
 
-<a name="The-Home-Screen" />
+<a name="The-Home-Screen"></a>
 
 ### <a name="the-home-screen"></a>ホーム画面
 
@@ -162,7 +162,7 @@ Apple TV ホーム画面には、インストールされているすべての�
 
 詳細については、[アイコンとイメージの操作に](~/ios/tvos/app-fundamentals/icons-images.md)関するドキュメントを参照してください。
 
-<a name="The-Top-Shelf" />
+<a name="The-Top-Shelf"></a>
 
 ### <a name="the-top-shelf"></a>上部の棚
 
@@ -170,7 +170,7 @@ Apple TV ホーム画面には、インストールされているすべての�
 
 [![](tvos9-images/topshelf01.png "The Top Shelf")](tvos9-images/topshelf01.png#lightbox)
 
-一番上の棚の画像は、1つの静的な `.png` または `.lsr` ファイルとして提供するか、または実行時にフォーカス可能な項目の1行として動的に作成することができます。
+一番上の棚のイメージは、1つの静的またはファイルとして提供することも、 `.png` `.lsr` 実行時にフォーカス可能な項目の1行として動的に作成することもできます。
 
 静的なトップシェルフイメージを表示する代わりに、動的な行またはフォーカス可能な項目、またはスクロール用の動的な一連のバナーを含めることができます。 どちらの動的スタイルでも、アプリによって提供されるコンテンツを強調表示したり、最も使用されている機能にジャンプしたりすることができます。
 

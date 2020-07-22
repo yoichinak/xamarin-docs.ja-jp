@@ -7,12 +7,15 @@ ms.assetid: 5970DEEB-1FC9-4F78-B4F6-D403E16D22ED
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 75f153499edb6d979f9a0269a1439eaf8ca53878
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 90db8b4f11095a2a56c82c3f563844efbcf7e2b1
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "61334245"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136826"
 ---
 # <a name="summary-of-chapter-8-code-and-xaml-in-harmony"></a>第 8 章の概要: コードと XAML の調和
 

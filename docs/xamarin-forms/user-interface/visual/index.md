@@ -1,25 +1,28 @@
 ---
-title: Xamarin.Forms のビジュアル
-description: Xamarin.Forms のビジュアルでは、Xamarin.Forms のビューのサブクラス化することがなく選択的に、VisualElement オブジェクトに適用するレンダラーを使用できます。
+title: Xamarin.Forms見た目
+description: Xamarin.Formsビジュアルを使用すると、ビューをサブクラス化しなくても、VisualElement オブジェクトに対してレンダラーを選択的に適用でき Xamarin.Forms ます。
 ms.prod: xamarin
 ms.assetid: 69228A9C-39C4-46AE-A803-C38EED6FB965
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/05/2019
-ms.openlocfilehash: d440c6e95788fc876d6b0aa094f5bc2fce84bfb0
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5c0afcaa75029288d527fac2a2b21bcd614fd4dc
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61023451"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84127128"
 ---
-# <a name="xamarinforms-visual"></a>Xamarin.Forms のビジュアル
+# <a name="xamarinforms-visual"></a>Xamarin.Forms見た目
 
-## <a name="xamarinforms-material-visualmaterial-visualmd"></a>[Xamarin.Forms マテリアル Visual](material-visual.md)
+## <a name="xamarinforms-material-visualmaterial-visualmd"></a>[Xamarin.Forms の素材のビジュアル](material-visual.md)
 
-IOS と Android でまったく同じ、またはほぼ同じですが、外観の Xamarin.Forms アプリケーションを作成する Xamarin.Forms マテリアル Visual を使用できます。
+Xamarin.Forms素材ビジュアルを使用すると、 Xamarin.Forms iOS と Android で同一またはほぼ同一のアプリケーションを作成できます。
 
-## <a name="create-a-xamarinforms-visual-renderercreatemd"></a>[Xamarin.Forms Visual レンダラーを作成します。](create.md)
+## <a name="create-a-xamarinforms-visual-renderercreatemd"></a>[ビジュアルレンダラーを作成する Xamarin.Forms](create.md)
 
-Xamarin.Forms Visual により、選択的に適用するレンダラー [ `VisualElement` ](xref:Xamarin.Forms.VisualElement)サブクラス Xamarin.Forms のビューをしなくてものオブジェクト。
+Xamarin.Formsビジュアルを使用すると、ビューをサブクラス化しなくても、オブジェクトに対してレンダラーを選択的に適用でき [`VisualElement`](xref:Xamarin.Forms.VisualElement) Xamarin.Forms ます。

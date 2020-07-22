@@ -6,13 +6,16 @@ ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/21/2020
-ms.openlocfilehash: bf9c06dae0df7da1cc69a85d8436376494039959
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.date: 04/17/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a287ff28ab62fcfcc00c88858cf3595ba2fa5118
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303835"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853143"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms のトリガー
 
@@ -316,11 +319,7 @@ public class FadeTriggerAction : TriggerAction<VisualElement>
 
 ## <a name="state-triggers"></a>状態トリガー
 
-状態トリガーは Xamarin.Forms 4.5 で導入されました。これは、[`VisualState`](xref:Xamarin.Forms.VisualState) が適用される条件を定義するための特殊なトリガーのグループです。 ただし、これらは現在試験段階であり、*App.xaml.cs* ファイルに次のコード行を追加することによってのみ使用できます。
-
-```csharp
-Device.SetFlags(new string[]{ "StateTriggers_Experimental" });
-```
+状態トリガーは [`VisualState`](xref:Xamarin.Forms.VisualState) が適用される条件を定義するための特殊なトリガーのグループです。 
 
 状態トリガーは、[`VisualState`](xref:Xamarin.Forms.VisualState) の [`StateTriggers`](xref:Xamarin.Forms.VisualState.StateTriggers) コレクションに追加されます。 このコレクションには、1 つの状態トリガーを含めることも、複数の状態トリガーを含めることもできます。 コレクション内のいずれかの状態トリガーがアクティブになっていると、[`VisualState`](xref:Xamarin.Forms.VisualState) が適用されます。
 
@@ -341,7 +340,7 @@ Device.SetFlags(new string[]{ "StateTriggers_Experimental" });
 
 [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) クラスから派生する [`StateTrigger`](xref:Xamarin.Forms.StateTrigger) クラスには、バインド可能な [`IsActive`](xref:Xamarin.Forms.StateTrigger.IsActive) プロパティがあります。 `StateTrigger` では、`IsActive` プロパティの値が変更されたときに [`VisualState`](xref:Xamarin.Forms.VisualState) の変更がトリガーされます。
 
-すべての状態トリガーの基底クラスである [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) クラスには、[`IsActive`](xref:Xamarin.Forms.StateTriggerBase.IsActive) プロパティと [`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged) イベントがあります。 このイベントは、[`VisualState`](xref:Xamarin.Forms.VisualState) が変更されるたびに発生します。
+すべての状態トリガーの基底クラスである [`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) クラスには、[`IsActive`](xref:Xamarin.Forms.StateTriggerBase.IsActive) プロパティと [`IsActiveChanged`](xref:Xamarin.Forms.StateTriggerBase.IsActiveChanged) イベントがあります。 このイベントは、[`VisualState`](xref:Xamarin.Forms.VisualState) が変更されるたびに発生します。 さらに、`StateTriggerBase` クラスには、オーバーライド可能な `OnAttached` メソッドと `OnDetached` メソッドがあります。
 
 > [!IMPORTANT]
 > バインド可能な [`StateTrigger.IsActive`](xref:Xamarin.Forms.StateTrigger.IsActive) プロパティによって、継承された [`StateTriggerBase.IsActive`](xref:Xamarin.Forms.StateTriggerBase.IsActive) プロパティが隠されます。
@@ -405,7 +404,7 @@ Unchecked state active: True
 ```
 
 > [!NOTE]
-> カスタムの状態トリガーは、[`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) クラスから派生して作成できます。
+> カスタム状態のトリガーを作成するには、[`StateTriggerBase`](xref:Xamarin.Forms.StateTriggerBase) クラスから派生させ、`OnAttached` メソッドと `OnDetached` メソッドをオーバーライドして、必要な登録とクリーンアップを実行します。
 
 ### <a name="adaptive-trigger"></a>アダプティブ トリガー
 

@@ -7,18 +7,21 @@ ms.assetid: 47C2B9AB-E688-4412-8AF5-9F633B3DA695
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 935be5bd6696600644463eb4ec26410b546f42a0
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2a8a089c210a3fe2f48dbe32bf8cda6179af2a78
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70770995"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136631"
 ---
 # <a name="summary-of-chapter-22-animation"></a>第 22 章アニメーションの概要 アニメーション
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22)
 
-Xamarin.Forms のタイマーまたは `Task.Delay` を使って独自のアニメーションを作成できることを確認しましたが、通常は、Xamarin.Forms によって提供されるアニメーション機能を使う方が簡単です。 次の 3 つのクラスでこれらのアニメーションを実装できます。
+Xamarin.Forms のタイマーまたは `Task.Delay` を使って独自のアニメーションを作成できることを説明しましたが、通常は、Xamarin.Forms によって提供されるアニメーション機能を使う方が簡単です。 次の 3 つのクラスでこれらのアニメーションを実装できます。
 
 - [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions): 高度なアプローチ
 - [`Animation`](xref:Xamarin.Forms.Animation): 汎用性は高いが難易度も高いアプローチ
@@ -32,7 +35,7 @@ Xamarin.Forms のタイマーまたは `Task.Delay` を使って独自のアニ�
 
 基本的なアニメーションの関数は、[`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) クラスにある拡張メソッドです。 これらのメソッドは、`VisualElement` から派生するすべてのオブジェクトに適用されます。 最もシンプルなアニメーションは、「[`Chapter 21. Transforms`](chapter21.md)」で説明されている変換プロパティをターゲットとしています。
 
-[**AnimationTryout**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/AnimationTryout) では、`Button` の `Clicked` イベント ハンドラーが、[`RotateTo`](xref:Xamarin.Forms.ViewExtensions.RotateTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing)) 拡張メソッドを呼び出して円内のボタンを回転させる方法の例を示しています。
+[**AnimationTryout**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/AnimationTryout) では、どのようにすれば、`Button` の `Clicked` イベント ハンドラーで [`RotateTo`](xref:Xamarin.Forms.ViewExtensions.RotateTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing)) 拡張メソッドを呼び出して、円内のボタンを回転させることができるかを示しています。
 
 `RotateTo` メソッドは、`Button` の `Rotation` プロパティを 4 分の 1 秒 (既定) の間に 0 から 360 に変更します。 ただし、`Button` が再度タップされた場合は、`Rotation` プロパティが既に360 度になっているため何も行いません。
 
@@ -46,7 +49,7 @@ Xamarin.Forms のタイマーまたは `Task.Delay` を使って独自のアニ�
 
 ### <a name="awaiting-animations"></a>待機アニメーション
 
-`ViewExtensions` 内のアニメーション メソッドはすべて `Task<bool>` オブジェクトを返します。 これは、`ContinueWith` または `await` を使って一連の連続するアニメーションを定義できることを意味します。 `bool` 完了の戻り値は、アニメーションが中断せずに完了した場合は `false`、[`CancelAnimation`](xref:Xamarin.Forms.ViewExtensions.CancelAnimations(Xamarin.Forms.VisualElement)) メソッドによってキャンセルされた場合は `true` になります。このメソッドは、同じ要素に設定されている `ViewExtensions` 内の他のメソッドによって開始されたすべてのアニメーションをキャンセルします。
+`ViewExtensions` 内のアニメーション メソッドはすべて `Task<bool>` オブジェクトを返します。 これは、`ContinueWith` または `await` を使って一連の連続するアニメーションを定義できることを意味します。 `bool` 完了の戻り値は、アニメーションが中断せずに完了した場合は `false`、[`CancelAnimation`](xref:Xamarin.Forms.ViewExtensions.CancelAnimations(Xamarin.Forms.VisualElement)) メソッドによってキャンセルされた場合は `true` になります。このメソッドは、同じ要素に対して設定されている `ViewExtensions` 内の他のメソッドによって開始されたすべてのアニメーションをキャンセルします。
 
 ### <a name="composite-animations"></a>複合アニメーション
 
@@ -122,7 +125,7 @@ Xamarin.Forms のタイマーまたは `Task.Delay` を使って独自のアニ�
 
 ### <a name="animating-the-bounds-property"></a>バインドされたプロパティのアニメーション化
 
-最後に説明する `ViewExtensions` の拡張メソッドは、[`Layout`](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle)) メソッドを呼び出すことで読み取り専用の [`Bounds`](xref:Xamarin.Forms.VisualElement.Bounds) プロパティを効果的にアニメーション化する、[`LayoutTo`](xref:Xamarin.Forms.ViewExtensions.LayoutTo(Xamarin.Forms.VisualElement,Xamarin.Forms.Rectangle,System.UInt32,Xamarin.Forms.Easing)) です。 このメソッドは通常、`Layout` 派生によって呼び出されます。これについては、「[**第 26 章カスタム レイアウト**](chapter26.md)」で説明します。
+まだ説明しない唯一の `ViewExtensions` の拡張メソッドは、[`Layout`](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle)) メソッドを呼び出すことで読み取り専用の [`Bounds`](xref:Xamarin.Forms.VisualElement.Bounds) プロパティを効果的にアニメーション化する [`LayoutTo`](xref:Xamarin.Forms.ViewExtensions.LayoutTo(Xamarin.Forms.VisualElement,Xamarin.Forms.Rectangle,System.UInt32,Xamarin.Forms.Easing)) です。 このメソッドは通常、`Layout` 派生によって呼び出されます。これについては、「[**第 26 章カスタム レイアウト**](chapter26.md)」で説明します。
 
 `LayoutTo` メソッドは、特別な目的にのみ使用してください。 [**BouncingBox**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/BouncingBox) プログラムではこれを使い、ページの端で跳ね返る `BoxView` を圧縮および拡張します。
 
@@ -140,15 +143,15 @@ Xamarin.Forms アニメーション システムには、少しわかりにく�
 
 ### <a name="viewextensions-class"></a>ViewExtensions クラス
 
-[`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) については、既に説明しました。 これは、`Task<bool>` と [`CancelAnimations`](xref:Xamarin.Forms.ViewExtensions.CancelAnimations(Xamarin.Forms.VisualElement)) を返す 9 つのメソッドを定義します。 9 つのメソッドのうち 7 つは、変換プロパティをターゲットとしています。 残りの 2 つは、[`Opacity`](xref:Xamarin.Forms.VisualElement.Opacity) プロパティをターゲットとする [`FadeTo`](xref:Xamarin.Forms.ViewExtensions.FadeTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing)) と、[`Layout`](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle)) メソッドを呼び出す [`LayoutTo`](xref:Xamarin.Forms.ViewExtensions.LayoutTo(Xamarin.Forms.VisualElement,Xamarin.Forms.Rectangle,System.UInt32,Xamarin.Forms.Easing)) です。
+[`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) については、既に説明しました。 これは、`Task<bool>` と [`CancelAnimations`](xref:Xamarin.Forms.ViewExtensions.CancelAnimations(Xamarin.Forms.VisualElement)) を返す 9 つのメソッドを定義しています。 9 つのメソッドのうち 7 つは、変換プロパティをターゲットとしています。 その他の 2 つは、[`Opacity`](xref:Xamarin.Forms.VisualElement.Opacity) プロパティをターゲットとする [`FadeTo`](xref:Xamarin.Forms.ViewExtensions.FadeTo(Xamarin.Forms.VisualElement,System.Double,System.UInt32,Xamarin.Forms.Easing)) と、[`Layout`](xref:Xamarin.Forms.VisualElement.Layout(Xamarin.Forms.Rectangle)) メソッドを呼び出す [`LayoutTo`](xref:Xamarin.Forms.ViewExtensions.LayoutTo(Xamarin.Forms.VisualElement,Xamarin.Forms.Rectangle,System.UInt32,Xamarin.Forms.Easing)) です。
 
 ### <a name="animation-class"></a>Animation クラス
 
-[`Animation`](xref:Xamarin.Forms.AnimationExtensions) クラスの[コンストラクター](xref:Xamarin.Forms.Animation.%23ctor(System.Action{System.Double},System.Double,System.Double,Xamarin.Forms.Easing,System.Action))には、コールバックと完了したメソッドを定義する 5 つの引数と、アニメーションのパラメーターを指定します。
+[`Animation`](xref:Xamarin.Forms.AnimationExtensions) クラスには、コールバックおよび完了したメソッドを定義する 5 つの引数と、アニメーションのパラメーターがある [コンストラクター](xref:Xamarin.Forms.Animation.%23ctor(System.Action{System.Double},System.Double,System.Double,Xamarin.Forms.Easing,System.Action)) があります。
 
-子アニメーションを追加するには、[`Add`](xref:Xamarin.Forms.Animation.Add(System.Double,System.Double,Xamarin.Forms.Animation))、[`Insert`](xref:Xamarin.Forms.Animation.Insert(System.Double,System.Double,Xamarin.Forms.Animation))、[`WithConcurrent`](xref:Xamarin.Forms.Animation.WithConcurrent(Xamarin.Forms.Animation,System.Double,System.Double))、および [`WithConcurrent`](xref:Xamarin.Forms.Animation.WithConcurrent(System.Action{System.Double},System.Double,System.Double,Xamarin.Forms.Easing,System.Double,System.Double)) のオーバーロードを使います。
+子アニメーションは、[`Add`](xref:Xamarin.Forms.Animation.Add(System.Double,System.Double,Xamarin.Forms.Animation)), [`Insert`](xref:Xamarin.Forms.Animation.Insert(System.Double,System.Double,Xamarin.Forms.Animation))、[`WithConcurrent`](xref:Xamarin.Forms.Animation.WithConcurrent(Xamarin.Forms.Animation,System.Double,System.Double)) に加え、[`WithConcurrent`](xref:Xamarin.Forms.Animation.WithConcurrent(System.Action{System.Double},System.Double,System.Double,Xamarin.Forms.Easing,System.Double,System.Double)) のオーバーロードを使って追加できます。
 
-アニメーション オブジェクトは、[`Commit`](xref:Xamarin.Forms.Animation.Commit(Xamarin.Forms.IAnimatable,System.String,System.UInt32,System.UInt32,Xamarin.Forms.Easing,System.Action{System.Double,System.Boolean},System.Func{System.Boolean})) メソッドの呼び出しで開始されます。
+アニメーション オブジェクトは、その後、[`Commit`](xref:Xamarin.Forms.Animation.Commit(Xamarin.Forms.IAnimatable,System.String,System.UInt32,System.UInt32,Xamarin.Forms.Easing,System.Action{System.Double,System.Boolean},System.Func{System.Boolean})) メソッドの呼び出しで開始されます。
 
 ### <a name="animationextensions-class"></a>AnimationExtensions クラス
 
@@ -160,7 +163,7 @@ Xamarin.Forms アニメーション システムには、少しわかりにく�
 
 ### <a name="child-animations"></a>子アニメーション
 
-[**ConcurrentAnimations**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/ConcurrentAnimations) サンプルでは、子アニメーションの例も示しており、(よく似た) [`Add`](xref:Xamarin.Forms.Animation.Add(System.Double,System.Double,Xamarin.Forms.Animation)) および [`Insert`](xref:Xamarin.Forms.Animation.Insert(System.Double,System.Double,Xamarin.Forms.Animation)) メソッドを利用しています。
+[**ConcurrentAnimations**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/ConcurrentAnimations) サンプルでは、子アニメーションの例も示されていて、(よく似た) [`Add`](xref:Xamarin.Forms.Animation.Add(System.Double,System.Double,Xamarin.Forms.Animation)) メソッドと [`Insert`](xref:Xamarin.Forms.Animation.Insert(System.Double,System.Double,Xamarin.Forms.Animation)) メソッドが利用されています。
 
 ### <a name="beyond-the-high-level-animation-methods"></a>さらに高度なアニメーション メソッド
 

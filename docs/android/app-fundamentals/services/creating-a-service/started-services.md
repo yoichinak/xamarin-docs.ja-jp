@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: f5b5f8cf224c18852a0a0e7e4f591b49905ba026
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 74226aff2ae135144172a06be5e7869c5cd8e408
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73024773"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84568452"
 ---
 # <a name="started-services-with-xamarinandroid"></a>Xamarin Android でサービスを開始しました
 
@@ -21,12 +21,12 @@ ms.locfileid: "73024773"
 
 バインドされたサービスとは異なり、"純粋な" サービスとそのクライアントの間に通信チャネルはありません。 これは、開始されたサービスが、バインドされたサービスとは異なるライフサイクルメソッドを実装することを意味します。 次の一覧は、開始されたサービスの共通ライフサイクルメソッドを示しています。
 
-- `OnCreate` &ndash;、サービスが最初に開始されたときに1回呼び出されます。 ここで、初期化コードを実装する必要があります。
-- `OnBind` &ndash; このメソッドはすべてのサービスクラスで実装する必要がありますが、開始されたサービスには通常、クライアントがバインドされていません。 このため、開始されたサービスは `null` を返します。 これに対して、ハイブリッドサービス (バインドされたサービスと開始されたサービスの組み合わせ) は、クライアントの `Binder` を実装して返す必要があります。
-- `OnStartCommand` は、`StartService` への呼び出しまたはシステムによる再起動に応じて、サービスを開始する要求ごとに呼び出さ &ndash; ます。 これは、サービスが実行時間の長いタスクを開始できる場所です。 このメソッドは、メモリ不足によるシャットダウン後に、システムがサービスの再起動を処理する必要があるかどうかを示す `StartCommandResult` 値を返します。 この呼び出しはメインスレッドで行われます。 この方法については、以下で詳しく説明します。
-- このメソッドは、サービスが破棄されているときに呼び出さ &ndash; `OnDestroy` ます。 これは、最終的に必要なクリーンアップを実行するために使用されます。
+- `OnCreate`&ndash;サービスが最初に開始されたときに1回呼び出されます。 ここで、初期化コードを実装する必要があります。
+- `OnBind`&ndash;このメソッドは、すべてのサービスクラスで実装する必要があります。ただし、開始されたサービスには、通常、クライアントがバインドされていません。 このため、開始されたサービスはを返し `null` ます。 これに対して、ハイブリッドサービス (バインドされたサービスと開始されたサービスの組み合わせ) は、クライアントのを実装して返す必要があり `Binder` ます。
+- `OnStartCommand`の &ndash; 呼び出し `StartService` またはシステムによる再起動に応じて、サービスを開始する要求ごとに呼び出されます。 これは、サービスが実行時間の長いタスクを開始できる場所です。 このメソッドは、 `StartCommandResult` メモリ不足によるシャットダウン後に、システムがサービスの再起動を処理する必要があるかどうかを示す値を返します。 この呼び出しはメインスレッドで行われます。 この方法については、以下で詳しく説明します。
+- `OnDestroy`&ndash;このメソッドは、サービスが破棄されているときに呼び出されます。 これは、最終的に必要なクリーンアップを実行するために使用されます。
 
-開始したサービスの重要な方法は、`OnStartCommand` メソッドです。 サービスが何らかの処理を行う要求を受け取るたびに呼び出されます。 `OnStartCommand`の例を次のコードスニペットに示します。 
+開始したサービスの重要なメソッドは、 `OnStartCommand` メソッドです。 サービスが何らかの処理を行う要求を受け取るたびに呼び出されます。 次のコードスニペットは、の例です `OnStartCommand` 。 
 
 ```csharp
 public override StartCommandResult OnStartCommand (Android.Content.Intent intent, StartCommandFlags flags, int startId)
@@ -38,38 +38,38 @@ public override StartCommandResult OnStartCommand (Android.Content.Intent intent
 }
 ```
 
-最初のパラメーターは、実行する作業に関するメタデータを含む `Intent` オブジェクトです。 2番目のパラメーターには、メソッドの呼び出しに関する情報を提供する `StartCommandFlags` 値が含まれています。 このパラメーターには、次の2つの値のいずれかを指定できます。
+最初のパラメーターは、 `Intent` 実行する作業に関するメタデータを含むオブジェクトです。 2番目のパラメーターには、 `StartCommandFlags` メソッド呼び出しに関する情報を提供する値が含まれています。 このパラメーターには、次の2つの値のいずれかを指定できます。
 
-- &ndash; `StartCommandFlag.Redelivery` は、`Intent` が前の `Intent` の再配信であることを意味します。 この値は、サービスが `StartCommandResult.RedeliverIntent` を返したときに、正常にシャットダウンされる前に停止された場合に提供されます。
-- `StartCommandFlag.Retry` &dash; 前の `OnStartCommand` の呼び出しが失敗したときに、Android が前回失敗した試行と同じ目的でサービスを再開しようとしたときに、この値を受け取ります。
+- `StartCommandFlag.Redelivery`&ndash;これ `Intent` は、が以前のの再配信であることを意味し `Intent` ます。 この値は、サービスが返されたときに、 `StartCommandResult.RedeliverIntent` 正常にシャットダウンされる前に停止された場合に提供されます。
+-`StartCommandFlag.Retry`&dash;この値は、前回の `OnStartCommand` 呼び出しが失敗し、Android が前回失敗した試行と同じ目的でサービスを再開しようとしたときに受信されます。
 
 最後に、3番目のパラメーターは、要求を識別するアプリケーションに固有の整数値です。 複数の呼び出し元が同じサービスオブジェクトを呼び出す可能性があります。 この値は、サービスを停止する要求を、サービスを開始するための特定の要求に関連付けるために使用されます。 詳細については、「[サービスを停止](#Stopping_the_Service)する」セクションを参照してください。 
 
-リソース制約のためにサービスが強制終了された場合の対処方法については、サービスによって `StartCommandResult` 値が Android に提示されます。 `StartCommandResult`には、次の3つの値を指定できます。
+この値 `StartCommandResult` は、リソースの制約によってサービスが強制終了された場合の対処方法について、サービスから Android への提案として返されます。 には、次の3つの値を指定でき `StartCommandResult` ます。
 
-- **[Startcommandresult. NotSticky](xref:Android.App.StartCommandResult.NotSticky)** &ndash; この値は、強制終了されたサービスを再起動する必要がないことを Android に通知します。 この例として、アプリでギャラリーのサムネイルを生成するサービスについて考えてみます。 サービスを強制終了した場合は、サムネイルをすぐに再作成することは重要ではなく、次にアプリを実行するときにサムネイルを再作成 &ndash; ます。
-- **[Startcommandresult. スティッキービット](xref:Android.App.StartCommandResult.Sticky)** &ndash; これは、サービスを再起動するように Android に指示しますが、サービスを開始した最後のインテントを配信しません。 処理する保留中のインテントが存在しない場合は、目的のパラメーターに対して `null` が提供されます。 この例としては、音楽プレーヤーアプリがあります。サービスは、音楽を再生する準備ができましたが、最後の曲を再生します。
-- **[RedeliverIntent](xref:Android.App.StartCommandResult.RedeliverIntent)** &ndash; この値は、サービスを再起動し、最後の `Intent` を再配信するように Android に指示します。 この例として、アプリのデータファイルをダウンロードするサービスがあります。 サービスを強制終了した場合でも、データファイルをダウンロードする必要があります。 `StartCommandResult.RedeliverIntent`を返すことによって、Android がサービスを再起動するときに、サービスに対して (ダウンロードするファイルの URL を保持する) 目的も提供されます。 これにより、ダウンロードは再起動または再開できます (コードの正確な実装によって異なります)。
+- **[Startcommandresult. NotSticky](xref:Android.App.StartCommandResult.NotSticky)** &ndash; この値は、強制終了されたサービスを再起動する必要がないことを Android に指示します。 この例として、アプリでギャラリーのサムネイルを生成するサービスについて考えてみます。 サービスを強制終了した場合は、サムネイルをすぐに再作成することは重要ではなく、 &ndash; 次回アプリを実行するときにサムネイルを再作成できます。
+- **[Startcommandresult. スティッキービット](xref:Android.App.StartCommandResult.Sticky)** は、 &ndash; サービスを再起動するように Android に指示しますが、サービスを開始した最後のインテントは提供しません。 処理する保留中のインテントがない場合は、 `null` インテントパラメーターにが指定されます。 この例としては、音楽プレーヤーアプリがあります。サービスは、音楽を再生する準備ができましたが、最後の曲を再生します。
+- **[Startcommandresult. RedeliverIntent](xref:Android.App.StartCommandResult.RedeliverIntent)** &ndash; この値は、サービスを再起動し、最後のを再配信するように Android に指示し `Intent` ます。 この例として、アプリのデータファイルをダウンロードするサービスがあります。 サービスを強制終了した場合でも、データファイルをダウンロードする必要があります。 を返すことによって `StartCommandResult.RedeliverIntent` 、Android がサービスを再起動すると、サービスに対して (ダウンロードするファイルの URL を保持する) インテントも提供されます。 これにより、ダウンロードは再起動または再開できます (コードの正確な実装によって異なります)。
 
-`StartCommandResult` &ndash; `StartCommandResult.ContinuationMask`には4番目の値があります。 この値は `OnStartCommand` によって返され、Android が強制終了したサービスを続行する方法を説明します。 通常、この値はサービスを開始するために使用されません。
+には4番目の値があり `StartCommandResult` &ndash; `StartCommandResult.ContinuationMask` ます。 この値はによって返され `OnStartCommand` 、Android が強制終了したサービスを続行する方法を説明します。 通常、この値はサービスを開始するために使用されません。
 
 開始したサービスのキーライフサイクルイベントを次の図に示します。 
 
 ![ライフサイクルメソッドが呼び出される順序を示す図](started-services-images/started-service-01.png "ライフサイクルメソッドが呼び出される順序を示す図。")
 
-<a name="Stopping_the_Service" />
+<a name="Stopping_the_Service"></a>
 
 ## <a name="stopping-the-service"></a>サービスを停止しています
 
 開始したサービスは無期限に実行され続けます。Android では、十分なシステムリソースがある限り、サービスは実行されたままになります。 クライアントがサービスを停止する必要があるか、処理が完了したときにサービスが停止することがあります。 サービスを停止するには、次の2つの方法があります。 
 
-- クライアント (アクティビティなど **[) &ndash; は](xref:Android.Content.Context.StopService*)** 、`StopService` メソッドを呼び出すことによってサービスの停止を要求できます。
+- **[Android... Context. StopService ()](xref:Android.Content.Context.StopService*)** &ndash;クライアント (アクティビティなど) は、メソッドを呼び出すことによって、サービスの停止を要求でき `StopService` ます。
 
     ```csharp
     StopService(new Intent(this, typeof(DemoService));
     ```
 
-- **[サービスは](xref:Android.App.Service.StopSelf*)** 、`StopSelf` を呼び出すことによってシャットダウンされる場合があり &ndash;。
+- **[Android. Service. StopSelf ()](xref:Android.App.Service.StopSelf*)** &ndash;サービスは、次のものを呼び出すことによってシャットダウンされることがあり `StopSelf` ます。
 
     ```csharp
     StopSelf();
@@ -77,7 +77,7 @@ public override StartCommandResult OnStartCommand (Android.Content.Intent intent
 
 ### <a name="using-startid-to-stop-a-service"></a>StartId を使用したサービスの停止
 
-複数の呼び出し元は、サービスの開始を要求できます。 未処理の開始要求がある場合、サービスは、`OnStartCommand` に渡された `startId` を使用して、サービスが途中で停止されるのを防ぐことができます。 `startId` は `StartService`の最新の呼び出しに対応し、が呼び出されるたびにインクリメントされます。 したがって、後続の `StartService` 要求によって `OnStartCommand` の呼び出しがまだ行われていない場合、サービスは `StopSelfResult` を呼び出し、受信した `startId` の最新の値 (単に `StopSelf` を呼び出すのではなく) を渡すことができます。 `StartService` の呼び出しによって `OnStartCommand`への対応する呼び出しがまだ行われていない場合、`StopSelf` の呼び出しで使用されている `startId` は最新の `StartService` 呼び出しに対応していないため、システムはサービスを停止しません。
+複数の呼び出し元は、サービスの開始を要求できます。 未処理の開始要求がある場合、サービスは、に渡されたを使用して、サービスが途中で停止されるのを防ぐことができ `startId` `OnStartCommand` ます。 は、の `startId` 最新の呼び出しに対応し、が呼び出されるたびに `StartService` インクリメントされます。 したがって、への後続の要求によっての `StartService` 呼び出しがまだ行われていない場合、 `OnStartCommand` サービスはを呼び出すことができ `StopSelfResult` ます。これは、を `startId` 呼び出すだけではなく、受信した最新の値を渡し `StopSelf` ます。 の呼び出しに `StartService` よってへの対応する呼び出しがまだ行われていない場合、 `OnStartCommand` `startId` 呼び出しで使用されるは最新の `StopSelf` 呼び出しに対応していないため、システムはサービスを停止しません `StartService` 。
 
 ## <a name="related-links"></a>関連リンク
 

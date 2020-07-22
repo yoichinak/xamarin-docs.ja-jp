@@ -7,12 +7,15 @@ ms.assetid: 6A774510-7709-4F60-8EF5-29D478176F8F
 author: davidbritch
 ms.author: dabritch
 ms.date: 11/07/2017
-ms.openlocfilehash: 32c16409f30d6b6d502b7cc074eafb182898594a
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1f180173a42654c54c5686e423ba20d9586271ea
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771076"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136709"
 ---
 # <a name="summary-of-chapter-18-mvvm"></a>第 18 章の概要。 MVVM
 
@@ -36,7 +39,7 @@ Model は ViewModel について何も知らず、ViewModel は View につい�
 
 ## <a name="viewmodels-and-data-binding"></a>ViewModel とデータ バインディング
 
-データ バインディングを使用するために、ViewModel では、ViewModel のプロパティが変更されたときに View に通知できる必要があります。 ViewModel では、`System.ComponentModel` 名前空間の [`INotifyPropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged) インターフェイスを実装することによってこれを行います。 これは、Xamarin.Forms ではなく .NET に含まれています。 (通常、ViewModel はプラットフォームに依存しないようにします。)
+データ バインディングを使用するために、ViewModel では、ViewModel のプロパティが変更されたときに View に通知できる必要があります。 ViewModel では、`System.ComponentModel` 名前空間の [`INotifyPropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged) インターフェイスを実装することによってこれを行います。 これは、Xamarin.Forms ではなく .NET の一部です。 (通常、ViewModel はプラットフォームに依存しないようにします。)
 
 `INotifyPropertyChanged` インターフェイスでは、変更されたプロパティを示す [`PropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged) という名前の単一のイベントが宣言されます。
 
@@ -77,7 +80,7 @@ MVVM ではデータ バインディングが使用され、データ バイン�
 
 ViewModel では、内部的に、`ICommand` 型の各プロパティが、`ICommand` インターフェイスを実装するクラスのインスタンスに設定されます。 データ バインディングを通じて、`Button` では最初に `CanExecute` メソッドが呼び出され、そのメソッドが `false` を返す場合はそれ自体が無効になります。 また、`CanExecuteChanged` イベントのハンドラーも設定され、そのイベントが発生するたびに `CanExecute` が呼び出されます。 `Button` が有効になっている場合は、`Button` がクリックされるたびに `Execute` メソッドが呼び出されます。
 
-Xamarin.Forms よりも前から存在する ViewModel がある場合があり、それらでは既にコマンド インターフェイスがサポートされていることがあります。 Xamarin.Forms とだけ使用することを想定された新しい ViewModel のために、Xamarin.Forms には、`ICommand` インターフェイスを実装する [`Command`](xref:Xamarin.Forms.Command) クラスと [`Command<T>`](xref:Xamarin.Forms.Command`1) クラスが用意されています。 ジェネリック型は、`Execute` および `CanExecute` メソッドに対する引数の型です。
+Xamarin.Forms よりも前から存在する ViewModel を利用している場合があり、それらで既に、コマンド インターフェイスがサポートされていることがあります。 Xamarin.Forms とだけ使用することを想定された新しい ViewModel のために、Xamarin.Forms には、`ICommand` インターフェイスを実装する [`Command`](xref:Xamarin.Forms.Command) クラスと [`Command<T>`](xref:Xamarin.Forms.Command`1) クラスが用意されています。 ジェネリック型は、`Execute` および `CanExecute` メソッドに対する引数の型です。
 
 ### <a name="simple-method-executions"></a>シンプルなメソッドの実行
 
@@ -97,4 +100,4 @@ Xamarin.Forms よりも前から存在する ViewModel がある場合があり�
 
 - [第 18 章の全文 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch18-Apr2016.pdf)
 - [第 18 章のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18)
-- [Xamarin.Forms を使用したエンタープライズ アプリケーション パターン (電子ブック)](~/xamarin-forms/enterprise-application-patterns/index.md)
+- [Xamarin.Forms 電子ブックを使用するエンタープライズ アプリケーション パターン](~/xamarin-forms/enterprise-application-patterns/index.md)

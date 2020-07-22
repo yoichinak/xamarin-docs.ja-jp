@@ -6,18 +6,18 @@ ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: d0b195b90bb57b6d0717c0fb06d0202857851fe7
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: d21394b3c33b3f415cbe45ae13c84cabab1ec30b
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73016524"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571039"
 ---
 # <a name="cross-platform-performance"></a>クロスプラットフォームのパフォーマンス
 
 アプリケーションのパフォーマンス低下は、さまざまな挙動で現れます。 たとえば、アプリケーションが応答しなかったり、スクロールが遅くなったり、バッテリーの寿命が縮まったりすることがあります。 ただし、パフォーマンスを最適化するには、単に効率的なコードを実装するだけでは不十分です。 アプリケーション パフォーマンスに関わるユーザー エクスペリエンスも考慮する必要があります。 たとえば、操作の実行によって、ユーザーが他の操作を実行できない状況にならないようにすることで、ユーザー エクスペリエンスを改善できます。
 
-<a name="profiler" />
+<a name="profiler"></a>
 
 ## <a name="use-the-profiler"></a>プロファイラーを使用する
 
@@ -31,7 +31,7 @@ Xamarin Profiler では、アプリケーションでのパラメーターに関
 - 1 つのデバイスでパフォーマンスを測定する際に、必ずしも他のデバイスのパフォーマンス特性が示されるわけではないため、さまざまなデバイスでプロファイリングを実行するのが理想的です。 ただし、少なくとも、性能が最も低いと思われるデバイスでプロファイリングを行う必要があります。
 - 他のすべてのアプリケーションを終了し、他のアプリケーションではなく、プロファイリングを行うアプリケーションのあらゆる影響を測定するようにしてください。
 
-<a name="idisposable" />
+<a name="idisposable"></a>
 
 ## <a name="release-idisposable-resources"></a>IDisposable のリソースを解放する
 
@@ -89,7 +89,7 @@ public void ReadText (string filename)
 
 詳細については、[IDisposable インターフェイス](xref:System.IDisposable)に関するページを参照してください。
 
-<a name="events" />
+<a name="events"></a>
 
 ## <a name="unsubscribe-from-events"></a>イベントのサブスクリプションを解除する
 
@@ -160,14 +160,14 @@ public class Subscriber : IDisposable
 
 `handler` フィールドは匿名メソッドへの参照を保持し、イベントのサブスクリプションとサブスクリプション解除に使用されます。
 
-<a name="weakreferences" />
+<a name="weakreferences"></a>
 
 ## <a name="use-weak-references-to-prevent-immortal-objects"></a>弱参照を使用して不変オブジェクトを回避する
 
 > [!NOTE]
 > iOS 開発者は、アプリでメモリを効率的に使用できるように、[iOS での循環参照の回避](~/ios/deploy-test/performance.md#avoid-strong-circular-references)に関するドキュメントを確認する必要があります。
 
-<a name="lazy" />
+<a name="lazy"></a>
 
 ## <a name="delay-the-cost-of-creating-objects"></a>オブジェクトの作成コストの発生を遅らせる
 
@@ -209,7 +209,7 @@ double Compute(double x)
 
 遅延初期化の詳細については、「[遅延初期化](https://msdn.microsoft.com/library/dd997286(v=vs.110).aspx)」を参照してください。
 
-<a name="async" />
+<a name="async"></a>
 
 ## <a name="implement-asynchronous-operations"></a>非同期操作を実装する
 
@@ -248,7 +248,7 @@ public class FaceDetection
 
 詳細については、「[非同期サポートの概要](~/cross-platform/platform/async.md)」を参照してください。
 
-<a name="sgen" />
+<a name="sgen"></a>
 
 ## <a name="use-the-sgen-garbage-collector"></a>SGen ガベージ コレクターを使用する
 
@@ -265,6 +265,8 @@ SGen では、オブジェクトにスペースを割り当てる際に、次の
 
 SGen の利点の 1 つは、マイナー ガベージ コレクションの実行にかかる時間が、最後のマイナー ガベージ コレクション以降に作成された新しいライブ オブジェクトの数に比例することです。 したがって、これらのマイナー ガベージ コレクションの実行にかかる時間がメジャー ガベージ コレクションより短くなるため、アプリケーションのパフォーマンス上のガベージ コレクションの影響が軽減されます。 メジャー ガベージ コレクションは引き続き発生しますが、頻度は低くなります。
 
+SGen ガベージ コレクターは、Xamarin.iOS 9.2.1 以上の既定であるため、自動的に使用されます。 新しいバージョンの Visual Studio からは、ガベージ コレクターを変更する機能が削除されていることに注意してください。 詳細については、[新しい参照カウント システム](~/ios/internals/newrefcount.md)に関する記事を参照してください。
+
 ### <a name="reducing-pressure-on-the-garbage-collector"></a>ガベージ コレクターの負荷の軽減
 
 SGen がガベージ コレクションを開始すると、メモリの再利用中は、アプリケーションのスレッドが停止します。 メモリが再利用されている間、アプリケーションはしばらく一時停止するか、UI の途切れが生じる可能性があります。 この一時停止がどう認識されるかは、次の 2 つの要因によって決まります。
@@ -280,7 +282,7 @@ SGen がガベージ コレクションを開始すると、メモリの再利�
 - ストリーム、ネットワーク接続、大量のメモリ、およびファイルなどのリソースを必要でなくなった時点で明示的に解放します。 詳細については、「[IDisposable のリソースを解放する](#idisposable)」を参照してください。
 - オブジェクトを収集できるように、不要になった時点でイベント ハンドラーの登録を解除します。 詳細については、「[イベントのサブスクリプションを解除する](#events)」を参照してください。
 
-<a name="linker" />
+<a name="linker"></a>
 
 ## <a name="reduce-the-size-of-the-application"></a>アプリケーションのサイズを縮小する
 
@@ -333,7 +335,7 @@ SGen がガベージ コレクションを開始すると、メモリの再利�
 Android アプリは、ABI ("アーキテクチャ") ごとに別の APK に分割することもできます。
 詳細については、次のブログ記事を参照してください: [ご利用の Android アプリのサイズを小さくしておく方法](https://montemagno.com/how-to-keep-your-android-app-size-down/)。
 
-<a name="optimizeimages" />
+<a name="optimizeimages"></a>
 
 ## <a name="optimize-image-resources"></a>イメージ リソースを最適化する
 
@@ -341,7 +343,7 @@ Android アプリは、ABI ("アーキテクチャ") ごとに別の APK に分�
 
 画像の解像度に関係なく、画像リソースを表示すると、アプリのメモリの占有領域が大幅に増える場合があります。 そのため、必要な場合にのみ作成し、アプリケーションで不要になったらすぐに解放する必要があります。
 
-<a name="activationperiod" />
+<a name="activationperiod"></a>
 
 ## <a name="reduce-the-application-activation-period"></a>アプリケーションのアクティブ化期間を短くする
 
@@ -351,7 +353,7 @@ Android アプリは、ABI ("アーキテクチャ") ごとに別の APK に分�
 
 アクティブ化期間中に、アプリケーションはアクティブ化ロジックを実行します。これには、多くの場合、リソースの読み込みと処理が含まれます。 リモートで取得されるのではなく、アプリ内に必要なリソースがパッケージ化されるようにすることで、アクティブ化期間を減らすことができます。 たとえば、ある状況では、アクティブ化期間中にローカルに格納されたプレースホルダー データを読み込むことが適切な場合があります。 その後、初期 UI が表示された時点で、ユーザーはアプリと対話でき、プレースホルダー データをリモート ソースから段階的に置き換えることができます。 さらに、アプリのアクティブ化ロジックでは、ユーザーにアプリケーションの使用を開始させるために必要な作業のみを実行する必要があります。 アセンブリは初回使用時に読み込まれるため、これは追加のアセンブリの読み込みを遅らせる場合に役立ちます。
 
-<a name="webservicecommunication" />
+<a name="webservicecommunication"></a>
 
 ## <a name="reduce-web-service-communication"></a>Web サービス通信を減らす
 

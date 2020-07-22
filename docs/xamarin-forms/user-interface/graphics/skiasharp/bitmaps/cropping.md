@@ -1,40 +1,43 @@
 ---
-title: SkiaSharp のビットマップをトリミングします。
-description: SkiaSharp を使用して対話的に desribing をトリミングする四角形のユーザー インターフェイスを設計する方法について説明します。
+title: トリミング (SkiaSharp ビットマップを)
+description: SkiaSharp を使用して、トリミング四角形を対話形式で表示するためのユーザーインターフェイスをデザインする方法について説明します。
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 0A79AB27-C69F-4376-8FFE-FF46E4783F30
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: e9ba34dfcbdf041cb9bce7f277da3987acf9fec8
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d613c4f73c0a377a599b0137ce2f2b557c04ad6a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228235"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572339"
 ---
-# <a name="cropping-skiasharp-bitmaps"></a>SkiaSharp のビットマップをトリミングします。
+# <a name="cropping-skiasharp-bitmaps"></a>トリミング (SkiaSharp ビットマップを)
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-[**の作成と描画 SkiaSharp ビットマップ**](drawing.md)方法を説明する記事、`SKBitmap`にオブジェクトを渡すことができます、`SKCanvas`コンス トラクター。 ビットマップにレンダリングされるそのキャンバス原因グラフィックスで呼び出される任意の描画メソッド。 描画メソッドが含まれます`DrawBitmap`、つまり、この手法でを転送する 1 つのビットマップの一部またはすべて別のビットマップにおそらく適用された変換を許可します。
+オブジェクトをコンストラクターに渡す方法については、「 [**SkiaSharp ビットマップの作成と描画**](drawing.md)」を参照して `SKBitmap` `SKCanvas` ください。 そのキャンバスで呼び出された描画メソッドを使用すると、グラフィックスがビットマップにレンダリングされます。 これらの描画メソッドにはが含ま `DrawBitmap` れています。つまり、この手法では、あるビットマップの一部またはすべてを別のビットマップに転送できます (変換が適用されている場合など)。
 
-その方法を使用するには呼び出すことで、ビットマップをトリミングするため、 [ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKRect,SkiaSharp.SKPaint))元とコピー先の四角形を持つメソッド。
+この手法は、 [`DrawBitmap`](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKRect,SkiaSharp.SKPaint)) 変換元と変換先の四角形を使用してメソッドを呼び出すことにより、ビットマップをトリミングするために使用できます。
 
 ```csharp
 canvas.DrawBitmap(bitmap, sourceRect, destRect);
 ```
 
-ただし、多くの場合、トリミングを実装するアプリケーションは、対話形式で、トリミングする四角形を選択するユーザー インターフェイスを提供します。
+ただし、トリミングを実装するアプリケーションは、ユーザーがトリミング四角形を対話的に選択するためのインターフェイスを備えていることがよくあります。
 
-![サンプルのトリミング](cropping-images/CroppingSample.png "サンプルのトリミング")
+![トリミングのサンプル](cropping-images/CroppingSample.png "トリミングのサンプル")
 
-この記事では、そのインターフェイスについて説明します。
+この記事では、そのインターフェイスに焦点を当てています。
 
-## <a name="encapsulating-the-cropping-rectangle"></a>四角形をトリミングをカプセル化します。
+## <a name="encapsulating-the-cropping-rectangle"></a>トリミング四角形をカプセル化する
 
-という名前のクラスでトリミング ロジックの一部を分離することをお勧め`CroppingRectangle`します。 これは一般にトリミングされるビットマップのサイズ、最大の四角形と縦横比は省略可能なコンス トラクターのパラメーターが含まれます。 コンス トラクターが最初に初期トリミング四角形をパブリックで、これを定義、`Rect`型のプロパティ`SKRect`します。 この初期トリミングする四角形は、幅の 80% とビットマップの四角形の高さが、縦横比が指定されている場合、調整。
+トリミングロジックの一部をという名前のクラスで分離すると便利です `CroppingRectangle` 。 コンストラクターのパラメーターには、最大の四角形が含まれます。これは、通常、トリミングするビットマップのサイズと、オプションの縦横比です。 コンストラクターは、最初に最初のトリミング四角形を定義します。これは、型のプロパティで公開され `Rect` `SKRect` ます。 この最初のトリミング四角形は、ビットマップ四角形の幅と高さの80% ですが、縦横比が指定されている場合は調整されます。
 
 ```csharp
 class CroppingRectangle
@@ -76,13 +79,13 @@ class CroppingRectangle
             Rect = rect;
         }
     }
-    
+
     public SKRect Rect { set; get; }
     ···
 }
 ```
 
-1 つの有用な情報を`CroppingRectangle`もの配列は、使用できるように`SKPoint`左、右、右、下および左の順序でトリミングする四角形の 4 つの角に対応する値。
+使用可能な情報の1つは、右 `CroppingRectangle` `SKPoint` 左、右上、下から左、および左下にあるトリミング四角形の4つの角に対応する値の配列です。
 
 ```csharp
 class CroppingRectangle
@@ -105,7 +108,7 @@ class CroppingRectangle
 }
 ```
 
-この配列が呼び出される次のメソッドで使用される`HitTest`します。 `SKPoint`パラメーターは指タッチに対応するポイント、またはマウスをクリックします。 メソッドのインデックス (0、1、2、または 3) を返しますで指定された範囲内で指やマウスのポインターの操作された、コーナーに対応する、`radius`パラメーター。 
+この配列は、と呼ばれる次のメソッドで使用され `HitTest` ます。 パラメーターは、 `SKPoint` 指タッチまたはマウスクリックに対応するポイントです。 メソッドは、パラメーターによって指定された距離内で、指またはマウスポインターがタッチしたコーナーに対応するインデックス (0、1、2、または 3) を返し `radius` ます。
 
 ```csharp
 class CroppingRectangle
@@ -118,7 +121,7 @@ class CroppingRectangle
         for (int index = 0; index < corners.Length; index++)
         {
             SKPoint diff = point - corners[index];
-                
+
             if ((float)Math.Sqrt(diff.X * diff.X + diff.Y * diff.Y) < radius)
             {
                 return index;
@@ -131,9 +134,9 @@ class CroppingRectangle
 }
 ```
 
-場合は、タッチまたはマウス ポイント内でした`radius`上隅にあるすべてのユニットは、メソッドを返します&ndash;1。
+タッチまたはマウスポイントがコーナーの単位内にない場合 `radius` 、メソッドは1を返し &ndash; ます。
 
-最後のメソッドで`CroppingRectangle`と呼びます`MoveCorner`、タッチまたはマウスの移動に応答と呼ばれます。 2 つのパラメーターは、移動される上隅およびその隅の新しい場所のインデックスを示します。 メソッドの最初の半分を調整します。 四角形をトリミング、隅にあるのが常にの境界内に新しい場所に基づく`maxRect`、これは、ビットマップのサイズです。 このロジックも考慮に入れた、 `MINIMUM` nothing に四角形をトリミングを折りたたみを回避するためにフィールド。
+の最後のメソッド `CroppingRectangle` が呼び出され `MoveCorner` ます。これは、タッチまたはマウスの動きに応じて呼び出されます。 2つのパラメーターは、移動されるコーナーのインデックスと、そのコーナーの新しい場所を示します。 メソッドの前半では、角の新しい位置に基づいてトリミング四角形を調整しますが、常にビットマップのサイズであるの境界内に配置し `maxRect` ます。 また、このロジックでは、 `MINIMUM` トリミング四角形が何も折りたたまれないように、フィールドを考慮します。
 
 ```csharp
 class CroppingRectangle
@@ -203,15 +206,15 @@ class CroppingRectangle
 }
 ```
 
-メソッドの 2 つ目の半分は、省略可能な縦横比を調整します。
+メソッドの後半では、オプションの縦横比を調整します。
 
-ピクセル単位でこのクラスのすべてのものであることに留意してください。
+このクラスのすべての要素はピクセル単位であることに注意してください。
 
-## <a name="a-canvas-view-just-for-cropping"></a>だけをトリミングするためキャンバスの表示
+## <a name="a-canvas-view-just-for-cropping"></a>トリミングのためだけのキャンバスビュー
 
-`CroppingRectangle`説明したクラスによって使用されます、`PhotoCropperCanvasView`から派生したクラス`SKCanvasView`します。 このクラスは、トリミングする四角形を変更するため、タッチまたはマウス イベントを処理するほか、ビットマップとトリミングの四角形を表示する責任を負います。
+`CroppingRectangle`先ほど見たクラスは、から派生したクラスによって使用され `PhotoCropperCanvasView` `SKCanvasView` ます。 このクラスは、ビットマップとトリミング四角形を表示するだけでなく、トリミング四角形を変更するためのタッチイベントまたはマウスイベントを処理します。
 
-`PhotoCropperCanvasView`コンス トラクターには、ビットマップが必要です。 縦横比は省略可能です。 コンス トラクターが型のオブジェクトをインスタンス化`CroppingRectangle`このビットマップの縦横比に基づくし、フィールドとして保存します。
+コンストラクターには `PhotoCropperCanvasView` ビットマップが必要です。 縦横比は省略可能です。 コンストラクターは、 `CroppingRectangle` このビットマップと縦横比に基づいて型のオブジェクトをインスタンス化し、フィールドとして保存します。
 
 ```csharp
 class PhotoCropperCanvasView : SKCanvasView
@@ -232,7 +235,7 @@ class PhotoCropperCanvasView : SKCanvasView
 }
 ```
 
-このクラスはから派生するので`SKCanvasView`のハンドラーをインストールする必要はありません、`PaintSurface`イベント。 代わりにオーバーライドできますその`OnPaintSurface`メソッド。 メソッドは、ビットマップを表示し、いくつかを使用して`SKPaint`オブジェクトの現在のトリミングの四角形を描画するためにフィールドとして保存します。
+このクラスはから派生しているため、 `SKCanvasView` イベントのハンドラーをインストールする必要はありません `PaintSurface` 。 代わりに、メソッドをオーバーライドでき `OnPaintSurface` ます。 メソッドはビットマップを表示し、 `SKPaint` 現在のトリミング四角形を描画するためにフィールドとして保存されたいくつかのオブジェクトを使用します。
 
 ```csharp
 class PhotoCropperCanvasView : SKCanvasView
@@ -268,7 +271,7 @@ class PhotoCropperCanvasView : SKCanvasView
 
         canvas.Clear(SKColors.Gray);
 
-        // Calculate rectangle for displaying bitmap 
+        // Calculate rectangle for displaying bitmap
         float scale = Math.Min((float)info.Width / bitmap.Width, (float)info.Height / bitmap.Height);
         float x = (info.Width - scale * bitmap.Width) / 2;
         float y = (info.Height - scale * bitmap.Height) / 2;
@@ -312,11 +315,11 @@ class PhotoCropperCanvasView : SKCanvasView
 }
 ```
 
-内のコード、`CroppingRectangle`クラスがに基づいて、ビットマップのピクセル サイズの四角形をトリミングします。 ただしでのビットマップの表示、`PhotoCropperCanvasView`クラスが表示領域のサイズに基づいて調整します。 `bitmapScaleMatrix`で計算される、`OnPaintSurface`が表示されているサイズとビットマップの位置にビットマップのピクセルからマップをオーバーライドします。 このマトリックスは、ビットマップを基準に表示できるように、トリミングする四角形を変換には使用されます。
+クラスのコードは、 `CroppingRectangle` ビットマップのピクセルサイズのトリミング四角形を基にしています。 ただし、クラスによるビットマップの表示 `PhotoCropperCanvasView` は、表示領域のサイズに基づいて拡大縮小されます。 `bitmapScaleMatrix`オーバーライドで計算されたは、 `OnPaintSurface` ビットマップピクセルからビットマップのサイズと位置にマップされます。 この行列は、ビットマップに対して相対的に表示できるようにトリミング四角形を変換するために使用されます。
 
-最後の行、`OnPaintSurface`上書きの逆関数を受け取り、`bitmapScaleMatrix`として保存し、`inverseBitmapMatrix`フィールド。 これは、タッチ処理のために使用されます。
+オーバーライドの最後の行は `OnPaintSurface` 、の逆を受け取り、 `bitmapScaleMatrix` フィールドとして保存し `inverseBitmapMatrix` ます。 これはタッチ処理に使用されます。
 
-A`TouchEffect`フィールドとしてオブジェクトがインスタンス化され、コンス トラクターにハンドラーをアタッチする、`TouchAction`イベントが、`TouchEffect`に追加する必要があります、`Effects`のコレクション、_親_の`SKCanvasView`派生の行われるように、`OnParentSet`をオーバーライドします。
+`TouchEffect`オブジェクトはフィールドとしてインスタンス化され、コンストラクターはイベントにハンドラーをアタッチし `TouchAction` ますが、を `TouchEffect` 派生の親のコレクションに追加する必要があり `Effects` _parent_ `SKCanvasView` ます。これにより、オーバーライドでが行われ `OnParentSet` ます。
 
 ```csharp
 class PhotoCropperCanvasView : SKCanvasView
@@ -327,7 +330,7 @@ class PhotoCropperCanvasView : SKCanvasView
     CroppingRectangle croppingRect;
     SKMatrix inverseBitmapMatrix;
 
-    // Touch tracking 
+    // Touch tracking
     TouchEffect touchEffect = new TouchEffect();
     struct TouchPoint
     {
@@ -381,7 +384,7 @@ class PhotoCropperCanvasView : SKCanvasView
                 if (touchPoints.ContainsKey(args.Id))
                 {
                     TouchPoint touchPoint = touchPoints[args.Id];
-                    croppingRect.MoveCorner(touchPoint.CornerIndex, 
+                    croppingRect.MoveCorner(touchPoint.CornerIndex,
                                             bitmapLocation - touchPoint.Offset);
                     InvalidateSurface();
                 }
@@ -405,13 +408,13 @@ class PhotoCropperCanvasView : SKCanvasView
 }
 ```
 
-タッチ イベントで処理、`TouchAction`ハンドラーがデバイスに依存しない単位。 これらを使用してピクセルに変換する必要が最初、 `ConvertToPixel` 、クラスの下部にあるメソッドに変換し、`CroppingRectangle`ユニットを使用して`inverseBitmapMatrix`します。
+ハンドラーによって処理されるタッチイベント `TouchAction` は、デバイスに依存しない単位になります。 これらの最初の部分は、クラスの下部にあるメソッドを使用してピクセルに変換し、を `ConvertToPixel` 使用して単位に変換する必要があり `CroppingRectangle` `inverseBitmapMatrix` ます。
 
-`Pressed` 、イベント、`TouchAction`ハンドラーの呼び出し、`HitTest`メソッドの`CroppingRectangle`します。 インデックスを返しますこれ以外の場合&ndash;1、トリミングする四角形の四隅のいずれかの操作されます。 インデックスとの隅にある実際のタッチ点のオフセットが格納されていること、`TouchPoint`オブジェクトし、を追加、`touchPoints`ディクショナリ。
+イベントの場合 `Pressed` 、 `TouchAction` ハンドラーは `HitTest` のメソッドを呼び出し `CroppingRectangle` ます。 これによって1以外のインデックスが返された場合、 &ndash; トリミング四角形の角の1つが操作されています。 そのインデックスとコーナーからの実際のタッチポイントのオフセットは、オブジェクトに格納され、 `TouchPoint` ディクショナリに追加され `touchPoints` ます。
 
-`Moved` 、イベント、`MoveCorner`メソッドの`CroppingRectangle`縦横比を調整可能で、下に移動すると呼びます。
+イベントについて `Moved` `MoveCorner` は、のメソッドを呼び出して、 `CroppingRectangle` 縦横比を調整できるようにコーナーを移動します。
 
-いつでもでもプログラムを使用して、`PhotoCropperCanvasView`にアクセスできる、`CroppedBitmap`プロパティ。 このプロパティを使用して、`Rect`のプロパティ、`CroppingRectangle`トリミング、サイズの新しいビットマップを作成します。 バージョンの`DrawBitmap`送信先と送信元の四角形し抽出元のビットマップのサブセット。
+を使用するプログラムは、いつでも `PhotoCropperCanvasView` プロパティにアクセスでき `CroppedBitmap` ます。 このプロパティは、のプロパティを使用して、トリミングされ `Rect` `CroppingRectangle` たサイズの新しいビットマップを作成します。 `DrawBitmap`コピー先とコピー元の四角形を含むのバージョンは、元のビットマップのサブセットを抽出します。
 
 ```csharp
 class PhotoCropperCanvasView : SKCanvasView
@@ -425,10 +428,10 @@ class PhotoCropperCanvasView : SKCanvasView
         get
         {
             SKRect cropRect = croppingRect.Rect;
-            SKBitmap croppedBitmap = new SKBitmap((int)cropRect.Width, 
+            SKBitmap croppedBitmap = new SKBitmap((int)cropRect.Width,
                                                   (int)cropRect.Height);
             SKRect dest = new SKRect(0, 0, cropRect.Width, cropRect.Height);
-            SKRect source = new SKRect(cropRect.Left, cropRect.Top, 
+            SKRect source = new SKRect(cropRect.Left, cropRect.Top,
                                        cropRect.Right, cropRect.Bottom);
 
             using (SKCanvas canvas = new SKCanvas(croppedBitmap))
@@ -443,9 +446,9 @@ class PhotoCropperCanvasView : SKCanvasView
 }
 ```
 
-## <a name="hosting-the-photo-cropper-canvas-view"></a>写真の cropper キャンバスのビューをホストしています。
+## <a name="hosting-the-photo-cropper-canvas-view"></a>Photo cropper canvas ビューのホスト
 
-トリミングのロジックを処理するこれら 2 つのクラスで、**写真のトリミング**ページで、 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーションがごくわずかな作業を行います。 XAML ファイルのインスタンスを作成、`Grid`ホストに、`PhotoCropperCanvasView`と**完了**ボタン。
+トリミングロジックを処理する2つのクラスでは、 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーションの**写真トリミング**ページの処理がほとんどありません。 XAML ファイルは、 `Grid` `PhotoCropperCanvasView` と [**完了**] ボタンをホストするために、をインスタンス化します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -472,9 +475,9 @@ class PhotoCropperCanvasView : SKCanvasView
 </ContentPage>
 ```
 
-`PhotoCropperCanvasView`型のパラメーターを必要とするために、XAML ファイルでインスタンス化できない`SKBitmap`します。
+は、 `PhotoCropperCanvasView` 型のパラメーターを必要とするため、XAML ファイルでインスタンス化できません `SKBitmap` 。
 
-代わりに、`PhotoCropperCanvasView`リソース ビットマップのいずれかを使用して、分離コード ファイルのコンス トラクターでインスタンス化されます。
+代わりに、 `PhotoCropperCanvasView` リソースビットマップの1つを使用して、分離コードファイルのコンストラクターでがインスタンス化されます。
 
 ```csharp
 public partial class PhotoCroppingPage : ContentPage
@@ -514,47 +517,45 @@ public partial class PhotoCroppingPage : ContentPage
 }
 ```
 
-ユーザーは、四角形をトリミングを操作できます。
+ユーザーは、トリミング四角形を操作できます。
 
-[![写真の Cropper 1](cropping-images/PhotoCropping1.png "Cropper 1 の写真")](cropping-images/PhotoCropping1-Large.png#lightbox)
+[![Photo Cropper 1](cropping-images/PhotoCropping1.png "Photo Cropper 1")](cropping-images/PhotoCropping1-Large.png#lightbox)
 
-優れたトリミング四角形が定義されている場合にクリックして、**完了**ボタンをクリックします。 `Clicked`ハンドラーからトリミング後のビットマップを取得します、`CroppedBitmap`プロパティの`PhotoCropperCanvasView`、しを新しいページのすべてのコンテンツを置き換えます`SKCanvasView`このトリミング後のビットマップを表示するオブジェクト。
+適切なトリミング四角形が定義されている場合は、[**完了**] ボタンをクリックします。 ハンドラーは、 `Clicked` のプロパティからトリミングされたビットマップを取得 `CroppedBitmap` し、 `PhotoCropperCanvasView` `SKCanvasView` このトリミングされたビットマップを表示する新しいオブジェクトでページのすべての内容を置き換えます。
 
-[![写真の Cropper 2](cropping-images/PhotoCropping2.png "Cropper 2 の写真")](cropping-images/PhotoCropping2-Large.png#lightbox)
+[![Photo Cropper 2](cropping-images/PhotoCropping2.png "Photo Cropper 2")](cropping-images/PhotoCropping2-Large.png#lightbox)
 
-2 番目の引数を設定してみてください`PhotoCropperCanvasView`1.78f (たとえば) にします。
+の2番目の引数 `PhotoCropperCanvasView` を 1.78 f (例:) に設定します。
 
 ```csharp
 photoCropper = new PhotoCropperCanvasView(bitmap, 1.78f);
 ```
 
-高精細テレビの特性 16 ~ 9 の縦横比に制限されている、トリミングの四角形が表示されます。
+トリミング四角形が、高解像度テレビの 16 ~ 9 の縦横比の特性に制限されていることがわかります。
 
-<a name="tile-division" />
+## <a name="dividing-a-bitmap-into-tiles"></a>ビットマップをタイルに分割する
 
-## <a name="dividing-a-bitmap-into-tiles"></a>ビットマップをタイルに分割します。
+Xamarin.Forms有名な14-15 パズルのバージョンは、XamagonXuzzle と[_共に Mobile Apps を作成_](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)する書籍の22章にあります。これは、 [**XamagonXuzzle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle)としてダウンロードできます。 ただし、自分の写真ライブラリのイメージに基づいてパズルを追加すると、より楽しいものになります (多くの場合、難しくなります)。
 
-著名人の Xamarin.Forms バージョン 14 ~ 15 のパズルは、書籍の第 22 章で登場した[_を Xamarin.Forms での Mobile Apps の作成_](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)としてダウンロードできます[ **XamagonXuzzle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle)します。 ただし、パズルになりより楽しく (多くの場合、さらに難しく) フォト ライブラリからイメージに基づいて場合。
+このバージョンの14-15 パズルは**[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーションに含まれており、**写真パズル**というタイトルの一連のページで構成されています。
 
-14 ~ 15 のパズルのこのバージョンの一部は、 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーションで構成される、一連のページ「**パズルの写真**。
-
-**PhotoPuzzlePage1.xaml**ファイルから成る、 `Button`:
+**PhotoPuzzlePage1**ファイルは、次の要素で構成されます `Button` 。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SkiaSharpFormsDemos.Bitmaps.PhotoPuzzlePage1"
              Title="Photo Puzzle">
-    
+
     <Button Text="Pick a photo from your library"
-            VerticalOptions="CenterAndExpand" 
+            VerticalOptions="CenterAndExpand"
             HorizontalOptions="CenterAndExpand"
             Clicked="OnPickButtonClicked"/>
-    
+
 </ContentPage>
 ```
 
-実装する分離コード ファイル、`Clicked`ハンドラーを使用する、`IPhotoLibrary`ユーザーがフォト ライブラリから写真を選択できるようにする依存関係サービス。
+分離コードファイルは、 `Clicked` `IPhotoLibrary` ユーザーがフォトライブラリから写真を選択できるようにするために、依存サービスを使用するハンドラーを実装します。
 
 ```csharp
 public partial class PhotoPuzzlePage1 : ContentPage
@@ -580,11 +581,11 @@ public partial class PhotoPuzzlePage1 : ContentPage
 }
 ```
 
-メソッドに移動し、 `PhotoPuzzlePage2`、選択したビットマップ コンス トラクターに渡します。
+次に、メソッドはに移動し `PhotoPuzzlePage2` 、選択されたビットマップをコンストラクターでに渡します。
 
-フォト ライブラリで登場した回転または上下をライブラリから選択した写真は指向しないことができます。 (これは、iOS デバイスに特に問題です)。そのため、`PhotoPuzzlePage2`必要な向きにイメージを回転することができます。 XAML ファイルには、ラベルの付いた 3 つのボタンが含まれています。 **90&#x00B0;右**(つまりまで、時計回り) **90&#x00B0;左**(反時計回りに回転)、および**完了**します。
+ライブラリから選択した写真は、写真ライブラリに表示されているようには向きませんが、回転または反転される可能性があります。 (これは、特に iOS デバイスの問題です)。そのため、では、 `PhotoPuzzlePage2` イメージを目的の向きに回転させることができます。 XAML ファイルには、 **90&#x00B0; Right** (時計回り)、 **90&#x00B0; Left** (反時計回り)、および**Done**というラベルが付いた3つのボタンが含まれています。
 
-分離コード ファイル、情報の記事に示すようにビットマップ回転ロジックを実装する **[SkiaSharp ビットマップの描画の作成と](drawing.md#rotating-bitmaps)** します。 ユーザーは、何回でも時計回りまたは反時計回りに 90 度のイメージを回転できます。 
+分離コードファイルは、 **[SkiaSharp ビットマップの作成と描画に関する](drawing.md#rotating-bitmaps)** 記事に示されているビットマップ回転ロジックを実装します。 ユーザーは、90画像を時計回りまたは反時計回りに90度回転できます。
 
 ```csharp
 public partial class PhotoPuzzlePage2 : ContentPage
@@ -647,11 +648,11 @@ public partial class PhotoPuzzlePage2 : ContentPage
 }
 ```
 
-ユーザーがクリックすると、**完了** ボタン、`Clicked`ハンドラーに移動する`PhotoPuzzlePage3`、最終的な回転したビットマップをページのコンス トラクターに渡します。
+ユーザーが [**完了**] ボタンをクリックすると、 `Clicked` ハンドラーはに移動し `PhotoPuzzlePage3` 、ページのコンストラクターで最後に回転したビットマップを渡します。
 
-`PhotoPuzzlePage3` 写真のトリミングを使用できます。 プログラムでは、正方形のビットマップを 4 個のグリッドのタイルに分割する必要があります。
+`PhotoPuzzlePage3`写真のトリミングを許可します。 このプログラムのタイルの4×4のグリッドに分割するには、正方形のビットマップが必要です。
 
-**PhotoPuzzlePage3.xaml**ファイルが含まれています、 `Label`、`Grid`ホストに、 `PhotoCropperCanvasView`、もう 1 つと**完了**ボタン。
+**PhotoPuzzlePage3**ファイルには、、を `Label` `Grid` ホストする、 `PhotoCropperCanvasView` およびもう1つの**Done**ボタンが含まれています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -685,7 +686,7 @@ public partial class PhotoPuzzlePage2 : ContentPage
 </ContentPage>
 ```
 
-分離コード ファイルをインスタンス化、`PhotoCropperCanvasView`ビットマップをそのコンス トラクターに渡されます。 1 は、2 番目の引数として渡される通知`PhotoCropperCanvasView`します。 1 の場合は、この縦横比は、正方形にする四角形をトリミングを強制します。
+分離コードファイルは、コンストラクターに渡されたビットマップを使用してをインスタンス化し `PhotoCropperCanvasView` ます。 2番目の引数としてに1が渡されることに注意して `PhotoCropperCanvasView` ください。 この縦横比1は、トリミング四角形を強制的に正方形にするためのものです。
 
 ```csharp
 public partial class PhotoPuzzlePage3 : ContentPage
@@ -736,33 +737,33 @@ public partial class PhotoPuzzlePage3 : ContentPage
 }
 ```
 
-**完了** ボタンのハンドラーが (これら 2 つの値は同じはず) トリミングされたビットマップの高さと幅を取得し、し、それぞれが 1/4 15 の独立したビットマップに分割し、幅と、元の高さ。 (可能な 16 のビットマップの最後のタスクは作成されません)。`DrawBitmap`元とコピー先の四角形を持つメソッドより大きなビットマップのサブセットに基づいて作成されるビットマップを使用します。
+**Done**ボタンハンドラーは、トリミングされたビットマップの幅と高さ (これらの2つの値は同じである必要があります) を取得し、それを15個の個別のビットマップに分割します。それぞれの幅と高さは1/4 です。 (16 ビットマップの最後のビットマップは作成されません)。`DrawBitmap`コピー元とコピー先の四角形を持つメソッドを使用すると、大きなビットマップのサブセットに基づいてビットマップを作成できます。
 
-## <a name="converting-to-xamarinforms-bitmaps"></a>Xamarin.Forms のビットマップに変換します。
+## <a name="converting-to-xamarinforms-bitmaps"></a>変換 ( Xamarin.Forms ビットマップに)
 
-`OnDoneButtonClicked`型のメソッド、15 のビットマップを作成した配列が[ `ImageSource` ](xref:Xamarin.Forms.ImageSource):
+メソッドで `OnDoneButtonClicked` は、15ビットマップ用に作成された配列の型は次のようになり [`ImageSource`](xref:Xamarin.Forms.ImageSource) ます。
 
 ```csharp
 ImageSource[] imgSources = new ImageSource[15];
 ```
 
-`ImageSource` ビットマップをカプセル化する Xamarin.Forms の基本型です。 さいわい、SkiaSharp SkiaSharp ビットマップから Xamarin.Forms ビットマップへの変換をできます。 **SkiaSharp.Views.Forms**アセンブリを定義、 [ `SKBitmapImageSource` ](xref:SkiaSharp.Views.Forms.SKBitmapImageSource)クラスから派生した`ImageSource`、SkiaSharp に基づいて作成できますが、`SKBitmap`オブジェクト。 `SKBitmapImageSource` 間の変換を定義`SKBitmapImageSource`と`SKBitmap`、それで方法`SKBitmap`オブジェクトは、Xamarin.Forms のビットマップとして配列に格納されます。
+`ImageSource`Xamarin.Formsビットマップをカプセル化する基本型です。 幸い、SkiaSharp では SkiaSharp ビットマップからビットマップに変換でき Xamarin.Forms ます。 **SkiaSharp**アセンブリは、 [`SKBitmapImageSource`](xref:SkiaSharp.Views.Forms.SKBitmapImageSource) から派生するクラスを定義しますが、 `ImageSource` SkiaSharp オブジェクトに基づいて作成することもでき `SKBitmap` ます。 `SKBitmapImageSource`また、との間の変換も定義 `SKBitmapImageSource` `SKBitmap` し `SKBitmap` ます。これは、オブジェクトがビットマップとして配列に格納される方法です Xamarin.Forms 。
 
 ```csharp
 imgSources[4 * row + col] = (SKBitmapImageSource)bitmap;
 ```
 
-このビットマップの配列が、コンス トラクターとして渡される`PhotoPuzzlePage4`します。 そのページは、Xamarin.Forms では完全され、すべて SkiaSharp を使用しません。 非常に似ています[ **XamagonXuzzle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle)、ので、ここで説明しませんが、15 の正方形のタイルに分割された、選択した写真が表示されます。
+このビットマップの配列は、コンストラクターとしてに渡され `PhotoPuzzlePage4` ます。 このページは完全であり Xamarin.Forms 、SkiaSharp は使用しません。 これは[**XamagonXuzzle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle)とよく似ているため、ここでは説明しませんが、選択した写真は15マスのタイルに分割されています。
 
-[![写真のパズル 1](cropping-images/PhotoPuzzle1.png "パズル 1 の写真")](cropping-images/PhotoPuzzle1-Large.png#lightbox)
+[![写真パズル1](cropping-images/PhotoPuzzle1.png "写真パズル1")](cropping-images/PhotoPuzzle1-Large.png#lightbox)
 
-キーを押して、 **Randomize**  ボタンをすべてのタイルをどのように。
+[**ランダム**化] ボタンを押すと、すべてのタイルが合成されます。
 
-[![写真のパズル 2](cropping-images/PhotoPuzzle2.png "パズル 2 の写真")](cropping-images/PhotoPuzzle2-Large.png#lightbox)
+[![写真パズル2](cropping-images/PhotoPuzzle2.png "写真パズル2")](cropping-images/PhotoPuzzle2-Large.png#lightbox)
 
-ここで正しい順序で再度に配置できます。 空の四角形に移動することで同じ行または列を空の四角形として、タイルをタップすることができます。 
+これで、正しい順序に戻すことができます。 空白の四角形と同じ行または列にあるタイルをタップすると、それらを空白の四角形に移動できます。
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

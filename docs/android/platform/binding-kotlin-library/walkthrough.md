@@ -7,14 +7,17 @@ ms.technology: xamarin-android
 author: alexeystrakh
 ms.author: alstrakh
 ms.date: 02/11/2020
-ms.openlocfilehash: cbd7c796cd13aa45dc107bddf06ca44d6adbdf9d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: af926b518c55bd0d6c73180e512dd669e93778f7
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77519677"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853061"
 ---
 # <a name="walkthrough-bind-an-android-kotlin-library"></a>チュートリアル: Android Kotlin ライブラリをバインドする
+
+> [!IMPORTANT]
+> 現在、Xamarin プラットフォームでのカスタム バインディングの使用を調査しています。 今後の開発作業の発展のために、この[**アンケート**](https://www.surveymonkey.com/r/KKBHNLT)にご回答ください。
 
 Xamarin を使用すると、モバイル開発者は、Visual Studio および C# を使用してクロスプラットフォームのネイティブ モバイル アプリを作成できます。 Android プラットフォーム SDK コンポーネントはすぐに使用できますが、多くの場合、そのプラットフォーム用に記述されたサードパーティ製の SDK を使用することもでき、Xamarin ではバインドによってこれを行うことができます。 サードパーティ製の Android フレームワークを Xamarin.Android アプリケーションに組み込むには、アプリケーションで使用する前に、そのフレームワーク用の Xamarin.Android バインドを作成する必要があります。
 
@@ -173,7 +176,7 @@ AAR ファイルは Android アーカイブであり、Android でこの SDK を
 
     BubblePicker サンプルでは、符号なしの型を使用するメンバーが存在しないため、追加の変更は必要ありません。
 
-- 既定では、ジェネリック パラメーターを持つ Kotlin メンバーは Java.`Lang.Object` 型のパラメーターに変換されます。 たとえば、Kotlin メソッドにはジェネリック パラメーター \<T > があります。
+- 既定では、ジェネリック パラメーターを持つ Kotlin メンバーは Java.`Lang.Object` 型のパラメーターに変換されます。 たとえば、Kotlin メソッドにはジェネリック パラメーター \<T> があります。
 
     ```Kotlin
     public open fun <T>fooGenericMethod(value: T) : String {

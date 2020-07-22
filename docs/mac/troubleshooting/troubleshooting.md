@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 8714297c4948dbb65c521d6a32bac3e437b40733
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: 683915d238f6c8aee10957285ad4438316e1e037
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725441"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84567132"
 ---
 # <a name="xamarinmac-troubleshooting-tips"></a>Xamarin. Mac のトラブルシューティングのヒント
 
@@ -47,20 +47,20 @@ ms.locfileid: "76725441"
 これらのプログラムのデバッグは困難になる可能性があります。必要な情報を見つけるのは難しい場合があるためです。 次のようないくつかの方法があります。
 
 - **情報 plist**に記載されている macos のバージョンが、コンピューターに現在インストールされている macos のバージョンと同じであることを確認します。
-- スタックトレースの場合は**Visual Studio for Mac アプリケーション**の ** ->  -> 出力**を確認し、出力を記述する場合は cocoa から赤で出力します。
+- スタックトレースの場合は Visual Studio for Mac アプリケーションの出力を**確認し**、  ->  **Pads**  ->  **Application Output**出力を記述する場合は cocoa から赤で出力します。
 - コマンドラインからアプリケーションを実行し、次のコマンドを使用して (**ターミナル**アプリ内の) 出力を確認します。
 
-  `MyApp.app/Contents/MacOS/MyApp` (`MyApp` はアプリケーションの名前です)
+  `MyApp.app/Contents/MacOS/MyApp`( `MyApp` はアプリケーションの名前です)
 - コマンドラインでコマンドに "MONO_LOG_LEVEL" を追加すると、出力を増やすことができます。次に例を示します。
 
   `MONO_LOG_LEVEL=debug MyApp.app/Contents/MacOS/MyApp`
-- ネイティブデバッガー (`lldb`) をプロセスにアタッチして、それ以上の情報が提供されているかどうかを確認できます (これには有料ライセンスが必要です)。 たとえば、次の手順を行います。
+- ネイティブデバッガー () をプロセスにアタッチして、 `lldb` それ以上の情報が提供されているかどうかを確認できます (これには有料ライセンスが必要です)。 たとえば、次の手順を行います。
 
-  1. ターミナルで `lldb MyApp.app/Contents/MacOS/MyApp` を入力します。
-  2. ターミナルで `run` を入力します。
-  3. ターミナルで `c` を入力します。
+  1. ターミナルに「」と入力し `lldb MyApp.app/Contents/MacOS/MyApp` ます。
+  2. ターミナルに「」と入力し `run` ます。
+  3. ターミナルに「」と入力し `c` ます。
   4. デバッグが完了したら終了します。
-- 最後の手段として、`Main` メソッド (または必要に応じてその他の場所) で `NSApplication.Init` を呼び出す前に、既知の場所のファイルにテキストを記述して、問題が発生している起動手順を追跡することができます。
+- 最後の手段として、 `NSApplication.Init` `Main` メソッド (または必要に応じてその他の場所) でを呼び出す前に、既知の場所のファイルにテキストを記述して、問題が発生している起動手順を追跡できます。
 
 ## <a name="known-issues"></a>既知の問題
 
@@ -72,13 +72,13 @@ ms.locfileid: "76725441"
 
 [![権利の編集](troubleshooting-images/debug01.png "権利の編集")](troubleshooting-images/debug01-large.png#lightbox)
 
-**[発信ネットワーク接続 (クライアント) を許可する]** アクセス許可は、デバッガーに必要なアクセス許可です。これを有効にすると、デバッグが正常に実行できるようになります。 デバッグを行わずにデバッグすることはできないため、`msbuild` の `CompileEntitlements` ターゲットを更新して、デバッグビルド用にサンドボックスされているすべてのアプリの権利にそのアクセス許可を自動的に追加します。 リリースビルドでは、権利ファイルで指定されている権利を変更せずに使用する必要があります。
+[**発信ネットワーク接続 (クライアント) を許可する**] アクセス許可は、デバッガーに必要なアクセス許可です。これを有効にすると、デバッグが正常に実行できるようになります。 デバッグを行わずにデバッグすることはできないため、のターゲットを更新して、 `CompileEntitlements` `msbuild` デバッグビルド用にサンドボックスされているすべてのアプリの権利にそのアクセス許可を自動的に追加するようにしました。 リリースビルドでは、権利ファイルで指定されている権利を変更せずに使用する必要があります。
 
 ### <a name="systemnotsupportedexception-no-data-is-available-for-encoding-437"></a>NotSupportedException: エンコード437で使用できるデータがありません
 
-Xamarin. Mac アプリにサードパーティ製のライブラリを含めると、アプリをコンパイルして実行しようとすると、"NotSupportedException: encoding 437 のデータは使用できません" という形式のエラーが表示されることがあります。 たとえば、`Ionic.Zip.ZipFile`などのライブラリでは、操作中にこの例外がスローされる場合があります。
+Xamarin. Mac アプリにサードパーティ製のライブラリを含めると、アプリをコンパイルして実行しようとすると、"NotSupportedException: encoding 437 のデータは使用できません" という形式のエラーが表示されることがあります。 たとえば、などのライブラリでは、 `Ionic.Zip.ZipFile` 操作中にこの例外がスローされる場合があります。
 
-これを解決するには、Xamarin プロジェクトのオプションを開き、[ **Mac Build** > **国際化**] に移動して、[**西**国際化] をオンにします。
+これを解決するには、Xamarin プロジェクトのオプションを開き、[ **Mac ビルド**] [国際化] の順に進み、[  >  **Internationalization** **西**国際化] をオンにします。
 
 [![ビルド オプションの編集](troubleshooting-images/issue01.png "ビルド オプションの編集")](troubleshooting-images/issue01-large.png#lightbox)
 
@@ -102,11 +102,11 @@ Xamarin. Mac アプリにサードパーティ製のライブラリを含める�
 
 [![権利の編集](troubleshooting-images/entitlements02.png "権利の編集")](troubleshooting-images/entitlements02-large.png#lightbox)
 
-既存の Xamarin. Mac プロジェクトの場合は、 **Solution Pad**でプロジェクトを右クリックし、[ > **新しいファイル**の**追加**] を選択して、**権利の plist**ファイルを手動で作成する必要があります。次に、[ **Xamarin. Mac** > **空のプロパティリスト**] を選択します。
+既存の Xamarin. Mac プロジェクトの場合は、 **Solution Pad**でプロジェクトを右クリックし、[ **Entitlements.plist** **Add**  >  **新しいファイル**の追加] をクリックして、権利の plist ファイルを手動で作成する必要があります。次に、 **[**  >  **空のプロパティリスト**] を選択します。
 
 ![新しいプロパティリストの追加](troubleshooting-images/entitlements03.png "新しいプロパティリストの追加")
 
-名前として「`Entitlements`」と入力し、 **[新規]** ボタンをクリックします。 プロジェクトに既に権利ファイルが含まれている場合は、新しいファイルを作成するのではなく、プロジェクトに追加するように求められます。
+名前として「」と入力し `Entitlements` 、[**新規**] ボタンをクリックします。 プロジェクトに既に権利ファイルが含まれている場合は、新しいファイルを作成するのではなく、プロジェクトに追加するように求められます。
 
 [![ファイルの上書きの確認](troubleshooting-images/entitlements04.png "ファイルの上書きの確認")](troubleshooting-images/entitlements04-large.png#lightbox)
 
@@ -114,7 +114,7 @@ Xamarin. Mac アプリにサードパーティ製のライブラリを含める�
 
 Xamarin 製品を使用する開発者コミュニティはすばらしいものであり、多くの場合、経験と専門知識を共有するための[xamarin. Mac フォーラム](https://forums.xamarin.com/categories/xamarin-mac)にアクセスします。 さらに、Xamarin エンジニアは、フォーラムに定期的にアクセスしてヘルプを提供します。
 
-<a name="filing-a-bug"/>
+<a name="filing-a-bug"></a>
 
 ## <a name="filing-a-bug"></a>バグを提出する
 

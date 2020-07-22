@@ -7,12 +7,15 @@ ms.technology: xamarin-forms
 author: maddyleger1
 ms.author: maleger
 ms.date: 03/27/2019
-ms.openlocfilehash: 57c0fd540ef42c18462b4f989b21bac5ed05dc04
-ms.sourcegitcommit: 6b833f44d5fd8dc7ab7f8546e8b7d383e5a989db
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 4f20a0586aee998c10372c60c96577321e697aad
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71105994"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137268"
 ---
 # <a name="render-custom-controls-in-the-xaml-previewer"></a>XAML プレビューアーでカスタムコントロールを表示する
 
@@ -20,11 +23,11 @@ _カスタムコントロールは、XAML プレビューアーで期待どお�
 
 ## <a name="basic-preview-mode"></a>基本プレビューモード
 
-プロジェクトをビルドしていない場合でも、XAML プレビューアーによってページが表示されます。 ビルドするまで、分離コードに依存するコントロールには、その基本となる Xamarin. Forms 型が表示されます。 プロジェクトがビルドされると、XAML プレビューアーは、デザイン時の表示が有効になっているカスタムコントロールを表示しようとします。 レンダリングが失敗した場合は、基本の Xamarin. Forms 型が表示されます。
+プロジェクトをビルドしていない場合でも、XAML プレビューアーによってページが表示されます。 ビルドするまで、分離コードに依存しているコントロールには、その基本型が表示され Xamarin.Forms ます。 プロジェクトがビルドされると、XAML プレビューアーは、デザイン時の表示が有効になっているカスタムコントロールを表示しようとします。 レンダリングが失敗した場合は、基本型が表示され Xamarin.Forms ます。
 
 ## <a name="enable-design-time-rendering-for-custom-controls"></a>カスタムコントロールのデザイン時の表示を有効にする
 
-独自のカスタムコントロールを作成したり、サードパーティのライブラリのコントロールを使用したりすると、プレビューアーによって正しく表示されない場合があります。 カスタムコントロールは、コントロールを作成したかライブラリからインポートしたかにかかわらず、プレビューに表示されるデザイン時のレンダリングをオプトインする必要があります。 作成したコントロールで、をコントロール[`[DesignTimeVisible(true)]`](xref:System.ComponentModel.DesignTimeVisibleAttribute)のクラスに追加して、プレビューアーに表示します。
+独自のカスタムコントロールを作成したり、サードパーティのライブラリのコントロールを使用したりすると、プレビューアーによって正しく表示されない場合があります。 カスタムコントロールは、コントロールを作成したかライブラリからインポートしたかにかかわらず、プレビューに表示されるデザイン時のレンダリングをオプトインする必要があります。 作成したコントロールで、を [`[DesignTimeVisible(true)]`](xref:System.ComponentModel.DesignTimeVisibleAttribute) コントロールのクラスに追加して、プレビューアーに表示します。
 
 ```csharp
 namespace MyProject
@@ -46,11 +49,11 @@ namespace MyProject
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 
-### <a name="check-your-xamarinforms-version"></a>Xamarin. Forms バージョンを確認する
-少なくとも Xamarin. Forms 3.6 がインストールされていることを確認します。 NuGet で Xamarin. Forms バージョンを更新できます。
+### <a name="check-your-xamarinforms-version"></a>バージョンを確認する Xamarin.Forms
+少なくとも3.6 がインストールされていることを確認し Xamarin.Forms ます。 Xamarin.FormsNuGet でバージョンを更新できます。
 
-### <a name="even-with-designtimevisibletrue-my-custom-control-isnt-rendering-properly"></a>で`[DesignTimeVisible(true)]`も、カスタムコントロールは正しくレンダリングされません。
-分離コードやバックエンドデータに大きく依存するカスタムコントロールは、常に XAML プレビューアーで動作するわけではありません。 次の操作を実行できます。
+### <a name="even-with-designtimevisibletrue-my-custom-control-isnt-rendering-properly"></a>でも `[DesignTimeVisible(true)]` 、カスタムコントロールは正しくレンダリングされません。
+分離コードやバックエンドデータに大きく依存するカスタムコントロールは、常に XAML プレビューアーで動作するわけではありません。 次を行うことができます。
 
 * [デザインモードが有効になっ](index.md#detect-design-mode)ている場合に初期化されないようにコントロールを移動する
 * バックエンドからの偽のデータを表示するように[デザイン時データ](design-time-data.md)を設定する

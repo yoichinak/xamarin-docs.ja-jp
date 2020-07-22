@@ -6,12 +6,12 @@ ms.assetid: 0060E9D1-C003-4E4C-ADE8-B406978FE891
 author: davidortinau
 ms.author: daortin
 ms.date: 10/27/2017
-ms.openlocfilehash: 915f7df80e3ae29ab3c598ea95fabbc054e916dd
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5b4b4bdf85ec79a46a4e4c06504eb8b9b85af329
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73019210"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84566958"
 ---
 # <a name="xamarin-profiler-troubleshooting"></a>Xamarin Profiler のトラブルシューティング
 
@@ -25,21 +25,21 @@ Xamarin チームは、次のような情報を提供すると、問題を追跡
 
 ### <a name="getting-log-outputs"></a>ログ出力の取得
 
-Mac 上のログは `~/Library/Logs/Xamarin.Profiler/Profiler.<date>.log`に保存されます。
+Mac では、ログはに保存され `~/Library/Logs/Xamarin.Profiler/Profiler.<date>.log` ます。
 
-Windows では、これらは `%appdata%Local//Xamarin/Log/Xamarin.Profiler/Profiler.<date>.log` に保存されます。問題を送信するたびに、最新のログを含めてください。
+Windows では、問題を `%appdata%Local//Xamarin/Log/Xamarin.Profiler/Profiler.<date>.log` 送信するたびに最新のログが保存されます。
 
 ここでは、ログ記録を追加しています。この出力は、時間の経過と共に増加し、より有用になります。
 
-<a name="gen_mlpd" />
+<a name="gen_mlpd"></a>
 
 ### <a name="generating-mlpd-files"></a>Mlpd ファイルを生成しています
 
 **Mlpd**ファイルは、mono ランタイムプロファイラーの圧縮された出力です。 Xamarin Profiler GUI は、 **mlpd**からデータを読み取り、ユーザーに対して表示します。 **mlpd**ファイルは、プロファイラーがデータに関する問題を診断するのに役立つ、Xamarin 用のデバッグツールとして便利です。
 
-現在のセッションの**mlpd**は、Mac の `/tmp` ディレクトリに自動的に保存され、タイムスタンプで識別できます。 ログ記録を有効にすると、最初の出力が**mlpd**ファイルへのパスになります。 Mlpd ファイルは通常、~/var/folders... のディレクトリに保存され**ます。**
+現在のセッションの**mlpd**は、Mac のディレクトリに自動的に保存され `/tmp` 、タイムスタンプで識別できます。 ログ記録を有効にすると、最初の出力が**mlpd**ファイルへのパスになります。 Mlpd ファイルは通常、~/var/folders... のディレクトリに保存され**ます。**
 
-現在のセッションの**mlpd**を保存するには、**ファイル > 名前を付けて保存...** プロファイラーのメニューから次のようにします。
+現在のセッションの**mlpd**を保存するには、[**ファイル > 名前を付けて保存...** プロファイラーのメニューから次のようにします。
 
 **Visual Studio for Mac**:
 
@@ -79,7 +79,7 @@ Visual Studio でプロファイラーを使用するときにこのエラーボ
 
 #### <a name="to-watch-a-specific-thread"></a>特定のスレッドを監視するには
 
-特に見たいスレッドがある場合は、作成の開始時にスレッドに名前を付けることで、`0x0`ではなく `ThreadName` を取得するのが理想的です。 たとえば、スレッド名を `UI`として設定するには、次のコードを使用します。
+特に観察したいスレッドがある場合は、作成の先頭にあるスレッドに名前を付けることで、ではなくを取得するのが理想的です `ThreadName` `0x0` 。 たとえば、スレッド名をとして設定するには `UI` 、次のコードを使用します。
 
 ```csharp
 RunOnUiThread (() => {

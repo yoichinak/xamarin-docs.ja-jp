@@ -7,12 +7,15 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: 95f25dbce55e2b960f604b6e304ffb6e8ed775e0
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1f5b476ac83f801b4ccded3e18bb601c06e0d0ef
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771337"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84570610"
 ---
 # <a name="adding-a-tap-gesture-recognizer"></a>タップ ジェスチャ認識エンジンの追加
 
@@ -37,8 +40,6 @@ tapGestureRecognizer.NumberOfTapsRequired = 2; // double-tap
 ```
 
 [`NumberOfTapsRequired`](xref:Xamarin.Forms.TapGestureRecognizer.NumberOfTapsRequired) を 1 を超える値に設定すると、設定された期間内にタップが発生した場合にのみ、イベント ハンドラーが実行されます (この期間は構成できません)。 2 回目 (またはそれ以降の) タップがその期間内に発生しない場合は、実質的に無視され、'タップのカウント' が再開されます。
-
-<a name="Using_Xaml" />
 
 ## <a name="using-xaml"></a>Xaml を使用する
 

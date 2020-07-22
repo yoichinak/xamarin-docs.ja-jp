@@ -7,14 +7,17 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/11/2018
-ms.openlocfilehash: 103720c8cb47b1ac4cfe5cfadeb6b18828318ad3
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 514157873412b3af31e43ba211aa636c9b53c112
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73618543"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853119"
 ---
 # <a name="binding-an-aar"></a>.AAR のバインド
+
+> [!IMPORTANT]
+> 現在、Xamarin プラットフォームでのカスタム バインディングの使用を調査しています。 今後の開発作業の発展のために、この[**アンケート**](https://www.surveymonkey.com/r/KKBHNLT)にご回答ください。
 
 _このチュートリアルでは、Android .AAR ファイルから Xamarin.Android Java バインド ライブラリを作成する詳しい手順について説明します。_
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/22/2017
-ms.openlocfilehash: 37695ef93a1005febf12369e7d1defccf6130832
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 41272e25570d9346751d7130ee8b52c6056f7f35
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79305799"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84565227"
 ---
 # <a name="application-icons-in-xamarinios"></a>Xamarin. iOS のアプリケーションアイコン
 
@@ -22,7 +22,7 @@ ms.locfileid: "79305799"
 - [資産カタログ](#managing)を使用したアイコンの管理-資産カタログを使用したアプリケーションアイコンの管理。
 - [Itunes アートワーク](#itunes)-アプリケーションを提供するために必要な Itunes アートワークを提供します。
 
-<a name="icon-types" />
+<a name="icon-types"></a>
 
 ## <a name="application-spotlight-and-settings-icons"></a>[アプリケーション]、[スポットライト]、および [設定] アイコン
 
@@ -47,7 +47,7 @@ Xamarin iOS アプリで UI コントロールやドキュメントアイコン�
     ||3x|
     |---|---|
     |アプリケーション アイコン|180x180|
-    |スポットライト|120 x 120|
+    |Spotlight|120 x 120|
     |設定|87x87|
 
 - **iPhone: iOS 7 & 8**
@@ -55,7 +55,7 @@ Xamarin iOS アプリで UI コントロールやドキュメントアイコン�
     ||1x|2x|
     |---|---|---|
     |アプリケーション アイコン|いずれか<sup>1</sup>|120 x 120|
-    |スポットライト|40 x 40<sup>2</sup>|80x80|
+    |Spotlight|40 x 40<sup>2</sup>|80 x 80|
     |設定|-|-|
 
 - **iPhone: iOS 5 & 6**
@@ -63,7 +63,7 @@ Xamarin iOS アプリで UI コントロールやドキュメントアイコン�
     ||1x|2x|
     |---|---|---|
     |アプリケーション アイコン|57 x 57|114x114|
-    |スポットライト|29 x 29|58 x 58|
+    |Spotlight|29 x 29|58 x 58|
     |設定|29x29<sup>3、4</sup>|58 x 58<sup>3、4</sup>|
 
 ### <a name="ipad-icon-sizes"></a>iPad アイコンのサイズ
@@ -73,15 +73,15 @@ Xamarin iOS アプリで UI コントロールやドキュメントアイコン�
     ||2x (iPad Pro)|
     |---|---|
     |アプリケーション アイコン|167x167<sup>6</sup>|
-    |スポットライト|120x120<sup>6</sup>|
+    |Spotlight|120x120<sup>6</sup>|
     |設定|58 x 58<sup>5</sup>|
 
 - **iPad: iOS 7 & 8**
 
     ||1x|2x|
     |---|---|---|
-    |アプリケーション アイコン|76 x 76|152x152|
-    |スポットライト|40 x 40|80x80|
+    |アプリケーション アイコン|76 x 76|は152x152|
+    |Spotlight|40 x 40|80 x 80|
     |設定|-|-|
 
 - **iPad: iOS 5 & 6**
@@ -89,7 +89,7 @@ Xamarin iOS アプリで UI コントロールやドキュメントアイコン�
     ||1x|2x|
     |---|---|---|
     |アプリケーション アイコン|72 x 72|144x144|
-    |スポットライト|50 x 50|100x100|
+    |Spotlight|50 x 50|100x100|
     |設定|29x29<sup>3、5</sup>|58 x 58<sup>3、5</sup>|
 
  1. Visual Studio for Mac と Xcode の両方で、iOS 7 の1x イメージの設定はサポートされなくなりました。
@@ -101,47 +101,47 @@ Xamarin iOS アプリで UI コントロールやドキュメントアイコン�
 
  アイコンの詳細については、Apple の[アイコンとイメージのサイズ](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html#//apple_ref/doc/uid/TP40006556-CH27-SW1)に関するドキュメントを参照してください。
 
-<a name="managing" />
+<a name="managing"></a>
 
 ## <a name="managing-icons-with-asset-catalogs"></a>資産カタログを使用したアイコンの管理
 
-アイコンの場合は、アプリのプロジェクトの `Assets.xcassets` ファイルに特殊な `AppIcon` イメージセットを追加できます。 すべての解像度をサポートするために必要なイメージのすべてのバージョンは、 _xcasset_に含まれ、グループ化されています。 Visual Studio for Mac の特別なエディターを使用すると、開発者はこれらのイメージをグラフィカルに追加して設定できます。
+アイコンの場合は、 `AppIcon` アプリのプロジェクト内のファイルに特殊なイメージセットを追加でき `Assets.xcassets` ます。 すべての解像度をサポートするために必要なイメージのすべてのバージョンは、 _xcasset_に含まれ、グループ化されています。 Visual Studio for Mac の特別なエディターを使用すると、開発者はこれらのイメージをグラフィカルに追加して設定できます。
 
 アセットカタログを使用するには、次の手順を実行します。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. **ソリューションエクスプローラー**内の `Info.plist` ファイルをダブルクリックして、編集用に開きます。
-2. **[IPhone のアイコン]** セクションまで下にスクロールします。
-3. **[資産カタログに移行する]** ボタンをクリックします。
+1. ソリューションエクスプローラー内のファイルをダブルクリックし `Info.plist` て、編集用に**Solution Explorer**開きます。
+2. [ **IPhone のアイコン**] セクションまで下にスクロールします。
+3. [**資産カタログに移行する**] ボタンをクリックします。
 
     ![](app-icons-images/migrate01.png "Ensure AppIcon is selected")
 
-4. **ソリューションエクスプローラー**から、`Assets.xcassets` ファイルをダブルクリックして開き、編集します。 
+4. **ソリューションエクスプローラー**で、ファイルをダブルクリックし `Assets.xcassets` て開き、編集します。 
 
     ![](app-icons-images/asset01.png "The Assets.xcassets file in the Solution Explorer")
 
-5. アセットの一覧から `AppIcon` を選択して、`Icon Editor`を表示します。
+5. `AppIcon`アセットの一覧から選択すると、次のものが表示され `Icon Editor` ます。
 
     ![](app-icons-images/asset02.png "The AppIcon editor")
 
 6. [指定されたアイコン] をクリックして、必要な種類/サイズのイメージファイルを選択するか、フォルダーからイメージをドラッグして目的のサイズにドロップします。
-7. **[開く]** ボタンをクリックして、プロジェクトに画像を含め、xcasset に設定します。
+7. [**開く**] ボタンをクリックして、プロジェクトに画像を含め、xcasset に設定します。
 8. 必要なすべてのイメージについて、この手順を繰り返します。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. \* * [情報] をダブルクリックします。  \* ***ソリューションエクスプローラー**内のファイル:
+1. * * [情報] をダブルクリックします。  * ***ソリューションエクスプローラー**内のファイル:
 
     ![](app-icons-images/icon01w.png "Select Info.plist")
 
-2. **[ビジュアルアセット]** タブをクリックし、 **[アプリアイコン]** の **[アセットカタログを使用]** ボタンをクリックします。 
+2. [**ビジュアルアセット**] タブをクリックし、[**アプリアイコン**] の [**アセットカタログを使用**] ボタンをクリックします。 
 
     ![](app-icons-images/icon02w.png "Select the Visual Assets tab")
 
     ボタンがなく、ドロップダウンリストが表示されている場合は、アセットカタログが既にこのプロジェクトに追加されています。
 
-3. **ソリューションエクスプローラー**から、 **[資産カタログ]** フォルダーを展開します。 
+3. **ソリューションエクスプローラー**から、[**資産カタログ**] フォルダーを展開します。 
 
     ![](app-icons-images/image009.png "Expand the Asset Catalog folder")
 
@@ -151,14 +151,14 @@ Xamarin iOS アプリで UI コントロールやドキュメントアイコン�
 
 5. 開発者は、**プロパティエクスプローラー**で、必要なさまざまな種類やサイズのアイコンを選択できます。
 6. [指定されたアイコンの種類] をクリックし、必要な種類/サイズのイメージファイルを選択します。
-7. **[開く]** ボタンをクリックして、プロジェクトに画像を含め、xcasset に設定します。
+7. [**開く**] ボタンをクリックして、プロジェクトに画像を含め、xcasset に設定します。
 8. 必要なすべてのイメージについて、この手順を繰り返します。
 
 -----
 
 これは、アプリのアプリケーション、スポットライト、および設定のアイコンを提供するために使用されるイメージアセットを含めて管理するための推奨される方法です。
 
-<a name="itunes" />
+<a name="itunes"></a>
 
 ## <a name="itunes-artwork"></a>iTunes アートワーク
 
@@ -168,21 +168,21 @@ iTunes アートワークは次の手順で指定します。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. **ソリューションエクスプローラー**内の `Info.plist` ファイルをダブルクリックして、編集用に開きます。
+1. ソリューションエクスプローラー内のファイルをダブルクリックし `Info.plist` て、編集用に**Solution Explorer**開きます。
 2. エディターの**ITunes アートワーク**セクションまでスクロールします。 
 
     ![](app-icons-images/itunes01.png "Scroll to the iTunes Artwork section of the editor")
-3. イメージが見つからない場合は、エディターでサムネイルをクリックし、ファイルを開く ダイアログボックスで目的の iTunes アートワークのイメージファイルを選択して、 **OK** ボタンをクリックします。
+3. イメージが見つからない場合は、エディターでサムネイルをクリックし、[ファイルを開く] ダイアログボックスで目的の iTunes アートワークのイメージファイルを選択して、[ **OK** ] ボタンをクリックします。
 4. アプリに必要なすべてのイメージが指定されるまで、この手順を繰り返します。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. **ソリューションエクスプローラー**内の `Info.plist` ファイルをダブルクリックして、編集用に開きます。
+1. ソリューションエクスプローラー内のファイルをダブルクリックし `Info.plist` て、編集用に**Solution Explorer**開きます。
 
-2. **[ビジュアルアセット]** タブをクリックし、 **iTunes アートワーク**を展開します。 
+2. [**ビジュアルアセット**] タブをクリックし、 **iTunes アートワーク**を展開します。 
 
     ![](app-icons-images/itunes01w.png "Editing iTunes Artwork in Visual Studio")
-3. イメージが見つからない場合は、エディターでサムネイルをクリックし、ファイルを開く ダイアログボックスで目的の iTunes アートワークのイメージファイルを選択して、**開く** ボタンをクリックします。
+3. イメージが見つからない場合は、エディターでサムネイルをクリックし、[ファイルを開く] ダイアログボックスで目的の iTunes アートワークのイメージファイルを選択して、[**開く**] ボタンをクリックします。
 4. アプリに必要なすべてのイメージが指定されるまで、この手順を繰り返します。
 
 -----

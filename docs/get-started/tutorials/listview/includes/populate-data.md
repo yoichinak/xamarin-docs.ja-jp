@@ -30,7 +30,7 @@ ms.locfileid: "82109676"
 
     このコードは、サルを表すイメージの名前、場所、および URL を格納する `Monkey` オブジェクトを定義します。 また、クラスは `ToString` メソッドをオーバーライドして `Name` プロパティを返します。
 
-1. **ソリューション エクスプローラー**の **ListViewTutorial** プロジェクトで **[MainPage.xaml]** を展開し、 **[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、**MainPage.xaml.cs** のテンプレート コードをすべて削除し、次のコードに置き換えます。
+1. **ソリューション エクスプローラー**の **ListViewTutorial** プロジェクトで **[MainPage.xaml]** を展開し、 **[MainPage.xaml.cs]** をダブルクリックして開きます。 次に、 **[MainPage.xaml.cs]** のテンプレート コードをすべて削除し、次のコードに置き換えます。
 
     ```csharp
     using System.Collections.Generic;
@@ -172,7 +172,7 @@ ms.locfileid: "82109676"
     }
     ```
 
-     このコードは、`IList<Monkey>` 型の `Monkeys` プロパティを定義し、それをクラス コンストラクターの空白のリストに初期化します。 その後、`Monkey` オブジェクトが `Monkeys` コレクションに追加され、ページの [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) が `MainPage` オブジェクトに設定されます。 `BindingContext` プロパティの詳細については、「[Xamarin.Forms Data Binding](~/xamarin-forms/app-fundamentals/data-binding/basic-bindings.md#bindings-with-a-binding-context)」ガイドの「[Bindings with a Binding Context](~/xamarin-forms/app-fundamentals/data-binding/index.md)」(バインディング コンテキストでのバインディング) をご覧ください。
+    このコードは、`IList<Monkey>` 型の `Monkeys` プロパティを定義し、それをクラス コンストラクターの空白のリストに初期化します。 その後、`Monkey` オブジェクトが `Monkeys` コレクションに追加され、ページの [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) が `MainPage` オブジェクトに設定されます。 `BindingContext` プロパティの詳細については、「[Xamarin.Forms Data Binding](~/xamarin-forms/app-fundamentals/data-binding/index.md)」ガイドの「[Bindings with a Binding Context](~/xamarin-forms/app-fundamentals/data-binding/basic-bindings.md#bindings-with-a-binding-context)」(バインディング コンテキストでのバインディング) をご覧ください。
 
     > [!IMPORTANT]
     > [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) プロパティはビジュアル ツリーを介して継承されます。 したがって、それが [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトに設定されているため、`ContentPage` の子オブジェクトは [`ListView`](xref:Xamarin.Forms.ListView) を含むその値を継承します。
@@ -353,7 +353,7 @@ ms.locfileid: "82109676"
     }
     ```
 
-    このコードは、`IList<Monkey>` 型の `Monkeys` プロパティを定義し、それをクラス コンストラクターの空白のリストに初期化します。 その後、`Monkey` オブジェクトが `Monkeys` コレクションに追加され、ページの [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) が `MainPage` オブジェクトに設定されます。 `BindingContext` プロパティの詳細については、「[Xamarin.Forms Data Binding](~/xamarin-forms/app-fundamentals/data-binding/basic-bindings.md#bindings-with-a-binding-context)」ガイドの「[Bindings with a Binding Context](~/xamarin-forms/app-fundamentals/data-binding/index.md)」(バインディング コンテキストでのバインディング) をご覧ください。
+    このコードは、`IList<Monkey>` 型の `Monkeys` プロパティを定義し、それをクラス コンストラクターの空白のリストに初期化します。 その後、`Monkey` オブジェクトが `Monkeys` コレクションに追加され、ページの [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) が `MainPage` オブジェクトに設定されます。 `BindingContext` プロパティの詳細については、「[Xamarin.Forms Data Binding](~/xamarin-forms/app-fundamentals/data-binding/index.md)」ガイドの「[Bindings with a Binding Context](~/xamarin-forms/app-fundamentals/data-binding/basic-bindings.md#bindings-with-a-binding-context)」(バインディング コンテキストでのバインディング) をご覧ください。
 
     > [!IMPORTANT]
     > [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) プロパティはビジュアル ツリーを介して継承されます。 したがって、それが [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトに設定されているため、`ContentPage` の子オブジェクトは [`ListView`](xref:Xamarin.Forms.ListView) を含むその値を継承します。
@@ -364,10 +364,10 @@ ms.locfileid: "82109676"
     <ListView ItemsSource="{Binding Monkeys}" />
     ```
 
-    このコードデータは、[`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) プロパティを `Monkeys` コレクションにバインドします。 実行時に、[`ListView`](xref:Xamarin.Forms.ListView) は `Monkeys` コレクションの [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) を調べ、それにこのコレクションからのデータが取り込まれます。 データ バインディングの詳細については、「[Xamarin.Forms Data Binding](~/xamarin-forms/app-fundamentals/data-binding/index.md)」(Xamarin.Forms データ バインディング) をご覧ください。
+    このコードデータは、[`ItemsSource`](xref:Xamarin.Forms.ItemsView`1.ItemsSource) プロパティを `Monkeys` コレクションにバインドします。 実行時に、[`ListView`](xref:Xamarin.Forms.ListView) は `Monkeys` コレクションの [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) を調べ、それにこのコレクションからのデータが取り込まれます。 データ バインディングの詳細については、「[Xamarin.Forms Data Binding](~/xamarin-forms/app-fundamentals/data-binding/index.md)」 (Xamarin.Forms のデータ バインディング) を参照してください。
 
 1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。
 
     [![iOS および Android でコレクションのデータが取り込まれた ListView のスクリーンショット](../images/populate-data.png "コレクションのデータを表示する ListView")](../images/populate-data-large.png#lightbox "コレクションのデータを表示する ListView")
 
-    [`ListView`](xref:Xamarin.Forms.ListView) は、`Monkeys` コレクション内の各 `Monkey` の `Name` プロパティを表示しています。 これは、`ListView` が既定では、 コレクションのオブジェクトを表示するときに (`ToString` プロパティ値を返すために `Monkey` クラスでオーバーライドされている) `Name` メソッドを呼び出すためです。
+    [`ListView`](xref:Xamarin.Forms.ListView) は、`Monkeys` コレクション内の各 `Monkey` の `Name` プロパティを表示しています。 これは、`ListView` が既定では、 コレクションのオブジェクトを表示するときに (`Name` プロパティ値を返すために `Monkey` クラスでオーバーライドされている) `ToString` メソッドを呼び出すためです。

@@ -1,24 +1,27 @@
 ---
 title: IOS 上の NavigationPage バーの区切り記号
-description: プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。 この記事では、NavigationPage のナビゲーションバーの下部にある区切り線と影を非表示にする iOS プラットフォーム固有のを使用する方法について説明します。
+description: プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、NavigationPage のナビゲーションバーの下部にある区切り線と影を非表示にする iOS プラットフォーム固有のを使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 5A45748A-6779-4441-82F2-415BD68473B9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: e33b25a9eb97009ca0a260662d492560114fd692
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 39d203cf0fb7fff026106d98cfb512aad42f83d2
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68655465"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84128246"
 ---
 # <a name="navigationpage-bar-separator-on-ios"></a>IOS 上の NavigationPage バーの区切り記号
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-この iOS プラットフォーム固有のは、 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage)のナビゲーションバーの下部にある区切り線と影を非表示にします。 XAML で設定して使用される、 [ `NavigationPage.HideNavigationBarSeparator` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.HideNavigationBarSeparatorProperty)バインド可能なプロパティを`false`:
+この iOS プラットフォーム固有のは、のナビゲーションバーの下部にある区切り線と影を非表示にし [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) ます。 これは、バインド可能なプロパティをに設定することによって XAML で使用され [`NavigationPage.HideNavigationBarSeparator`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.HideNavigationBarSeparatorProperty) `false` ます。
 
 ```xaml
 <NavigationPage ...
@@ -28,7 +31,7 @@ ms.locfileid: "68655465"
 </NavigationPage>
 ```
 
-代わりに、fluent API を使用して C# から使用できます。
+または、fluent API を使用して C# から使用することもできます。
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -43,14 +46,14 @@ public class iOSTitleViewNavigationPageCS : Xamarin.Forms.NavigationPage
 }
 ```
 
-`NavigationPage.On<iOS>`メソッドは、このプラットフォーム仕様が iOS上 でのみ動作することを指定します。 [ `NavigationPage.SetHideNavigationBarSeparator` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.SetHideNavigationBarSeparator(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage},System.Boolean))メソッドで、 [ `Xamarin.Forms.PlatformConfiguration.iOSSpecific` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)名前空間を使用して、ナビゲーション バーの区切り記号を非表示にするかどうか。 さらに、 [ `NavigationPage.HideNavigationBarSeparator` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.HideNavigationBarSeparator(Xamarin.Forms.IPlatformElementConfiguration{Xamarin.Forms.PlatformConfiguration.iOS,Xamarin.Forms.NavigationPage}))メソッドを使用して、ナビゲーション バーの区切り記号を非表示にするかどうかを返します。
+メソッドは、 `NavigationPage.On<iOS>` このプラットフォーム固有のが iOS 上でのみ実行されることを指定します。 [ `NavigationPage.SetHideNavigationBarSeparator` ] (Xref: Xamarin.FormsPlatformConfiguration. Xamarin.Forms SetHideNavigationBarSeparator () を指定します。IPlatformElementConfiguration { Xamarin.Forms .PlatformConfiguration。 iOS、 Xamarin.Forms 。NavigationPage}, Boolean) メソッドを [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 名前空間で使用して、ナビゲーションバーの区切り記号を非表示にするかどうかを制御します。 また、[ `NavigationPage.HideNavigationBarSeparator` ] (xref: Xamarin.FormsPlatformConfiguration. Xamarin.Forms HideNavigationBarSeparator () を指定します。IPlatformElementConfiguration { Xamarin.Forms .PlatformConfiguration。 iOS、 Xamarin.Forms 。NavigationPage})) メソッドを使用して、ナビゲーションバーの区切り記号が非表示になっているかどうかを返すことができます。
 
-その結果、上のナビゲーション バーの区切り記号、 [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage)非表示にすることができます。
+結果として、のナビゲーションバーの区切り記号を [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) 非表示にすることができます。
 
-![](navigation-bar-separator-images/navigationpage-hideseparatorbar.png "NavigationPage のナビゲーション バーを非表示")
+![](navigation-bar-separator-images/navigationpage-hideseparatorbar.png "NavigationPage navigation bar hidden")
 
 ## <a name="related-links"></a>関連リンク
 
-- [プラットフォーム仕様 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
-- [プラットフォーム仕様の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
+- [PlatformSpecifics (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [プラットフォーム固有設定の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific の API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

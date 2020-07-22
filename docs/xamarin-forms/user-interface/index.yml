@@ -9,13 +9,16 @@ metadata:
   ms.assetid: 391B4A77-7CAC-42D2-9E77-BD8E170E9BE6
   author: davidbritch
   ms.author: dabritch
-  ms.date: 12/30/2019
-  ms.openlocfilehash: bbe7fd52581cd77ed7e7d910dd16264641c15abf
-  ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+  ms.date: 07/08/2020
+  no-loc:
+  - Xamarin.Forms
+  - Xamarin.Essentials
+  ms.openlocfilehash: 25f8139ac16b6bb51a59833544b1ab9a95547362
+  ms.sourcegitcommit: f8d10195687f91f907aa1b26400f2ecc84804002
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 04/09/2020
-  ms.locfileid: "77480595"
+  ms.lasthandoff: 07/08/2020
+  ms.locfileid: "86123294"
 landingContent:
 - title: コントロールのリファレンス
   linkLists:
@@ -23,13 +26,13 @@ landingContent:
     links:
     - text: 概要
       url: controls/index.md
-    - text: ページ
+    - text: Pages
       url: controls/pages.md
     - text: レイアウト
       url: controls/layouts.md
-    - text: ビュー
+    - text: Views
       url: controls/views.md
-    - text: '[セル]'
+    - text: セル
       url: controls/cells.md
     - text: 共通のプロパティ、メソッド、およびイベント
       url: controls/common-properties.md
@@ -41,24 +44,30 @@ landingContent:
     links:
     - text: BoxView
       url: boxview.md
+    - text: Expander
+      url: expander.md
     - text: Image
       url: images.md
-    - text: Label
+    - text: ラベル
       url: text/label.md
     - text: マップ
       url: map/index.md
     - text: MediaElement
       url: mediaelement.md
+    - text: 図形
+      url: shapes/index.md
     - text: WebView
       url: webview.md
 - title: コマンドを開始するビュー
   linkLists:
   - linkListType: concept
     links:
-    - text: ボタン
+    - text: Button
       url: button.md
     - text: ImageButton
       url: imagebutton.md
+    - text: RadioButton
+      url: radiobutton.md
     - text: RefreshView
       url: refreshview.md
     - text: SearchBar
@@ -73,7 +82,7 @@ landingContent:
       url: checkbox.md
     - text: DatePicker
       url: datepicker.md
-    - text: スライダー
+    - text: Slider
       url: slider.md
     - text: ステッパ
       url: stepper.md
@@ -87,7 +96,7 @@ landingContent:
     links:
     - text: エディター
       url: text/editor.md
-    - text: エントリ
+    - text: 入力
       url: text/entry.md
 - title: アクティビティを示すためのビュー
   linkLists:
@@ -164,9 +173,9 @@ landingContent:
     - text: RelativeLayout
       url: layouts/relative-layout.md
     - text: ScrollView
-      url: layouts/scroll-view.md
+      url: layouts/scrollview.md
     - text: StackLayout
-      url: layouts/stack-layout.md
+      url: layouts/stacklayout.md
 - title: レイアウトの概念
   linkLists:
   - linkListType: concept

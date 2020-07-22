@@ -1,34 +1,37 @@
 ---
 title: 非アフィン変換
-description: この記事では、パースペクティブとテーパ効果、変換行列の 3 番目の列を作成する方法について説明し、サンプル コードを示します。
+description: この記事では、変換行列の3番目の列を使用してパースペクティブとテーパ効果を作成する方法について説明し、サンプルコードを使用してこれを示します。
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 785F4D13-7430-492E-B24E-3B45C560E9F1
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/14/2017
-ms.openlocfilehash: eb7057d40e6ff0c48c6dc1b5dc38af2eb92de2e0
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 91a639b2d3c2f6a8437a09a70808dc6d793ba76b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70772779"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84131756"
 ---
 # <a name="non-affine-transforms"></a>非アフィン変換
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-_変換行列の 3 番目の列でのテーパ効果とパースペクティブを作成します。_
+_変換行列の3番目の列を使用して、パースペクティブとテーパ効果を作成する_
 
-平行移動、拡大縮小、回転、および傾斜はすべてな分類*アフィン*を変換します。 アフィン変換では、本の平行線が保持されます。 2 つの行が、変換する前に並列の場合は、引き続き並列、変換した後。 四角形は、常に parallelograms に変換されます。
+平行移動、拡大縮小、回転、および傾斜は、すべて*アフィン*変換として分類されます。 アフィン変換は、平行線を保持します。 変換の前に2つの行が並列である場合、変換後も並列のままになります。 四角形は常に parallelograms に変換されます。
 
-ただし、SkiaSharp が非アフィン変換で、四角形を凸の四角形に変換する機能がありますの対応もです。
+ただし、SkiaSharp は、四角形を任意の凸形に変換する機能を持つ非アフィン変換にも対応しています。
 
-![](non-affine-images/nonaffinetransformexample.png "凸の四角形に変換されたビットマップ")
+![](non-affine-images/nonaffinetransformexample.png "A bitmap transformed into a convex quadrilateral")
 
-凸の四角形は、常に 180 度や互いに交差しない辺よりも少ない内部角度の 4 辺の図です。
+凸形の四角形は、内側の角度が常に180度未満であり、互いに交差していない辺を持つ4つの辺の図です。
 
-非アフィンに変換の変換行列の 3 番目の行が 0、0、および 1 以外の値に設定されている場合の結果をします。 完全な`SKMatrix`乗算は。
+変換行列の3番目の行が0、0、および1以外の値に設定されている場合、非アフィン変換の結果になります。 完全な `SKMatrix` 乗算は次のとおりです。
 
 <pre>
               │ ScaleX  SkewY   Persp0 │
@@ -36,41 +39,41 @@ _変換行列の 3 番目の列でのテーパ効果とパースペクティブ�
               │ TransX  TransY  Persp2 │
 </pre>
 
-結果の変換式は次のとおりです。
+変換の結果の数式は次のとおりです。
 
-x' = ScaleX·x + SkewX·y + x 方向
+x ' = ScaleX · x + SkewX · y + TransX
 
-y' SkewY·x + ScaleY·y 直線移動を =
+y ' = SkewY · x + ScaleY · y + TransY
 
-z' Persp0·x + Persp1·y Persp2 を =
+z ' = Persp0 · x + Persp1 · y + Persp2
 
-3-3 でマトリックスを使用して、2 次元変換のための基本的なルールは、維持に努めます平面上に Z が 1 です。 しない限り、`Persp0`と`Persp1`は 0、および`Persp2`1 と等しい、変換には、その面を Z 座標は移動しました。
+2次元変換に 3 x 3 の行列を使用する基本的な規則は、Z が1と等しい平面上にすべて残っているということです。 `Persp0`とが0の場合、 `Persp1` およびが `Persp2` 1 の場合を除き、変換は Z 座標をその平面から移動しました。
 
-2 次元変換には、これを復元するには座標する必要がありますに再び移動その平面。 別の手順が必要です。 X'、y'、z '値必要がありますで除算 z' とします。
+これを2次元変換に復元するには、座標をその平面に戻す必要があります。 もう1つの手順が必要です。 X '、y '、および z ' の値は、z ' で割る必要があります。
 
-'x = x'/z'
+x "= x '/z '
 
-'y = y'/z'
+y "= y '/z '
 
-z"z ='/z' = 1
+z "= z '/z ' = 1
 
-これらと呼ばれます。*同次座標*Möbius ストリップちなんで年 8 月 Ferdinand Möbius、かなりよく知られている、トポロジの奇妙な点のによって開発されたとします。
+これらは同種の*座標*として知られており、Möbius 8 月の mathematician によって開発され、Möbius ストリップのトポロジ遭遇に関してはるかによく知られています。
 
-場合 z' は 0、無限の座標での除算の結果です。 実際には、有限数で無限の値を表現できるため、同次座標を開発するための Möbius の動機の 1 つでした。
+Z ' が0の場合、除算は無限の座標になります。 現実には、同種の座標を開発するための Möbius's 動機の1つは、有限の数値で無限値を表す機能でした。
 
-グラフィックスを表示するときに、しないようにする無限の値に変換する座標を使用して何かを表示します。 これらの座標は表示されません。 これらの座標ポインターの近くにあるものは非常に大きな、視覚的にわかりやすいではない可能性があります。
+ただし、グラフィックスを表示する場合は、無限値に変換する座標を使用して何もレンダリングしないようにする必要があります。 これらの座標はレンダリングされません。 これらの座標の近くにあるすべてのものは非常に大きくなり、見た目が統一されていない可能性があります。
 
-この数式でたくない z の値 ' 0 になります。
+この式では、z の値がゼロになることはありません。
 
-z' Persp0·x + Persp1·y Persp2 を =
+z ' = Persp0 · x + Persp1 · y + Persp2
 
-その結果、これらの値には、いくつか実際的な制限があります。 
+そのため、これらの値には実用的な制限があります。 
 
-`Persp2`かに、セルに 0 または 0 を指定できます。 場合`Persp2`が 0、z' ポイント (0, 0) のゼロおよびするが、通常、望ましくない点が 2 次元グラフィックスで非常に一般的なためです。 場合`Persp2`場合、汎用性の損失はありませんが、0 と等しくない`Persp2`1 に固定されます。 たとえば、あると判断した場合`Persp2`することだけです、マトリックス内のすべてのセルで除算 5、これにより、5、する必要があります`Persp2`を 1 に等しくなり、結果は同じになります。
+`Persp2`セルは0または0以外の値にすることができます。 `Persp2`が0の場合、ポイント (0, 0) に対して z ' が0になります。これは通常、2次元のグラフィックスでは非常に一般的であるため、推奨されません。 `Persp2`が0以外の場合、 `Persp2` が1で固定されている場合、一般性は失われません。 たとえば、5にする必要があると判断した場合は、 `Persp2` 単にマトリックス内のすべてのセルを5で割ることができ `Persp2` ます。これは1と等しく、結果は同じになります。
 
-これらの理由から、`Persp2`恒等行列の値が同じである、1 に固定されて多くの場合。
+これらの理由から、は多くの場合、 `Persp2` id 行列の同じ値である1で修正されます。
 
-一般に、`Persp0`と`Persp1`は少数です。 たとえば、恒等行列が、セットを開始する`Persp0`0.01 に。
+通常、 `Persp0` と `Persp1` は小さい数値です。 たとえば、id 行列で始まるが0.01 に設定されているとし `Persp0` ます。
 
 <pre>
 | 1  0   0.01 |
@@ -80,27 +83,27 @@ z' Persp0·x + Persp1·y Persp2 を =
 
 変換式は次のとおりです。
 
-x` = x / (0.01·x + 1)
+x ' = x/(0.01 x + 1)
 
-y' y =/(0.01·x + 1)
+y ' = y/(0.01 x + 1)
 
-この変換を使用して、原点に配置されている 100 ピクセルの四角形のボックスを表示するようになりました。 4 つの角を変換する方法を次に示します。
+ここで、この変換を使用して、原点に位置する100ピクセルの四角形を描画します。 4つの角の変換方法を次に示します。
 
 (0, 0) → (0, 0)
 
 (0, 100) → (0, 100)
 
-(100, 0) → (50, 0)
+(100、0) → (50、0)
 
-(100, 100) → (50, 50)
+(100、100) → (50、50)
 
-X が 100 で、次に、z の場合 ' 分母は、2 x および y 座標が半分に効果的にします。 ボックスの右側には、左側にあるよりも短いのようになります。
+X が100の場合、z の分母は2であるため、x 座標と y 座標は実質的に半分になります。 ボックスの右側が左側よりも短くなっています。
 
-![](non-affine-images/nonaffinetransform.png "非アフィン変換の対象 ボックス")
+![](non-affine-images/nonaffinetransform.png "A box subjected to a non-affine transform")
 
-`Persp`ビューアーから、右側にあると、ボックスが傾いているようになりましたことを提案する、短縮するために、これらのセルの名前の部分が「パースペクティブ」を指します。
+`Persp`これらのセル名の一部は "パースペクティブ" を意味します。これは、縮み率によって、箱がビューアーからさらに右側に傾いていることがわかるからです。
 
-**テスト パースペクティブ** ページでは、実験の値を使用できます。`Persp0`と`Pers1`そのしくみを理解します。 これらのマトリックスのセルの妥当な値が小さいためを`Slider`ユニバーサル Windows プラットフォームで正しく処理できませんに。 UWP の問題を 2 つの対応するために`Slider`内の要素、 [ **TestPerspective.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml) 1 – 1 の範囲を初期化する必要があります。
+[**テストパースペクティブ**] ページを使用すると、およびの値を試して、その動作を確認でき `Persp0` `Pers1` ます。 これらのマトリックスセルの適切な値は小さいため、ユニバーサル Windows プラットフォーム内のでは `Slider` 適切に処理できません。 UWP の問題に対応するには、 `Slider` [**testperspective**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml)の2つの要素を-1 ~ 1 の範囲に初期化する必要があります。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -154,7 +157,7 @@ X が 100 で、次に、z の場合 ' 分母は、2 x および y 座標が半�
 </ContentPage>
 ```
 
-スライダーのイベント ハンドラー、 [ `TestPerspectivePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml.cs) –0.01 と 0.01 の範囲がように分離コード ファイルが 100 を値を分割します。 さらに、コンス トラクターは、ビットマップに読み込みます。
+分離コードファイルのスライダーのイベントハンドラーは、 [`TestPerspectivePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TestPerspectivePage.xaml.cs) 値を100で除算して、値が–0.01 から0.01 の範囲になるようにします。 さらに、コンストラクターはビットマップに読み込まれます。
 
 ```csharp
 public partial class TestPerspectivePage : ContentPage
@@ -191,7 +194,7 @@ public partial class TestPerspectivePage : ContentPage
 }
 ```
 
-`PaintSurface`ハンドラーの計算、`SKMatrix`という名前の値`perspectiveMatrix`100 で除算これら 2 つのスライダーの値に基づきます。 これと組み合わせると、2 つの変換、ビットマップの中央に、この変換の中心を配置する変換。
+`PaintSurface`このハンドラーは、 `SKMatrix` `perspectiveMatrix` これら2つのスライダーの値を100で割った値に基づいて、という名前の値を計算します。 これは、この変換の中心をビットマップの中央に配置する2つの平行移動変換と組み合わされています。
 
 ```csharp
 public partial class TestPerspectivePage : ContentPage
@@ -228,30 +231,30 @@ public partial class TestPerspectivePage : ContentPage
 }
 ```
 
-一部のサンプル イメージを次に示します。
+いくつかのサンプルイメージを次に示します。
 
-[![](non-affine-images/testperspective-small.png "テスト パースペクティブのページのスクリーン ショットをトリプル")](non-affine-images/testperspective-large.png#lightbox "テスト パースペクティブのページの 3 倍になるスクリーン ショット")
+[![](non-affine-images/testperspective-small.png "Triple screenshot of the Test Perspective page")](non-affine-images/testperspective-large.png#lightbox "Triple screenshot of the Test Perspective page")
 
-スライダーで実験するとき、–0.0066 以下 0.0066 以外の値が発生するイメージを分割し、統一性がないことになることがあります。 変換されているビットマップは、300 ピクセルの正方形です。 150 –150 からビットマップの座標の範囲であるため、中央を基準と変換されます。 Z の値 ' は。
+スライダーを試してみると、0.0066 以上の範囲の値が0.0066 を超えていることがわかります。これにより、イメージが突然フラクチャされ統一性になります。 変換されるビットマップは300ピクセルの四角形です。 この値は、中心を基準として変換されます。したがって、ビットマップの座標は-150 ~ 150 の範囲になります。 Z の値が次のようになっていることを思い出してください。
 
-z' = Persp0·x + Persp1·y + 1
+z ' = Persp0 · x + Persp1 · y + 1
 
-場合`Persp0`または`Persp1`0.0066 より大きいか –0.0066、下が常にいくつかの座標、z で結果のビットマップの ' 0 の値。 0 による除算の原因となると、レンダリング、厄介になります。 0 による除算が発生する座標で何かを表示しないようにする非アフィン変換を使用する場合。
+`Persp0`または `Persp1` が0.0066 以上–0.0066 より大きい場合は、常に z ' 値が0になるビットマップの座標があります。 0による除算が発生し、レンダリングが混乱になります。 非アフィン変換を使用する場合は、0による除算を発生させる座標を使用して何もレンダリングしないようにします。
 
-一般を設定しません`Persp0`と`Persp1`分離します。 多くの場合、特定の種類の非アフィン変換を実現するために、マトリックス内の他のセルを設定する必要がもあります。
+通常、 `Persp0` とを分離して設定することはありません `Persp1` 。 また、場合によっては、特定の種類の非アフィン変換を実現するために、マトリックス内の他のセルも設定する必要があります。
 
-このような 1 つの非アフィン変換は、*テーパ変換*します。 この種の非アフィン変換では、全体的な四角形の大きさは保持されますが、一方の側が分散します。
+このような非アフィン変換の1つは、*テーパ変換*です。 この種類の非アフィン変換は、四角形の全体の次元を保持しますが、1辺を tapers ます。
 
-![](non-affine-images/tapertransform.png "テーパ変換の対象 ボックス")
+![](non-affine-images/tapertransform.png "A box subjected to a taper transform")
 
-[ `TaperTransform` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TaperTransform.cs)クラスは、これらのパラメーターに基づいて非アフィン変換の汎用化された計算を実行します。
+クラスは、 [`TaperTransform`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TaperTransform.cs) これらのパラメーターに基づいて、非アフィン変換の一般化された計算を実行します。
 
-- 変換されているイメージの四角形のサイズ
-- 分散、四角形の側を示す列挙体
-- 分散がその方法を示すもう 1 つの列挙体と
-- 描の範囲。
+- 変換されるイメージの四角形のサイズ。
+- tapers する四角形の辺を示す列挙体。
+- tapers 方法を示す別の列挙体
+- tapering の範囲。
 
-次のコードに示します。
+コードは次のとおりです。
 
 ```csharp
 enum TaperSide { Left, Top, Right, Bottom }
@@ -353,7 +356,7 @@ static class TaperTransform
 }
 ```
 
-このクラスが使用されて、**テーパ変換**ページ。 XAML ファイルでは、2 つのインスタンス化します`Picker`列挙の値を選択する要素と`Slider`テーパ分数を選択するためです。 [ `PaintSurface` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TaperTransformPage.xaml.cs#L55)ハンドラー結合の 2 つのテーパ変換の変換、変換、ビットマップの左上隅に対して相対的に変換します。
+このクラスは、[**テーパ変換**] ページで使用されます。 XAML ファイルは、 `Picker` 列挙値を選択する2つの要素と、テーパの割合を選択するためのをインスタンス化し `Slider` ます。 この [`PaintSurface`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TaperTransformPage.xaml.cs#L55) ハンドラーは、テーパ変換と2つの平行移動変換を組み合わせて、ビットマップの左上隅を基準として変換を行います。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -392,17 +395,17 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-次にいくつかの例を示します。
+次に例をいくつか示します。
 
-[![](non-affine-images/tapertransform-small.png "テーパ変換ページのスクリーン ショットをトリプル")](non-affine-images/tapertransform-large.png#lightbox "テーパ変換ページの 3 倍になるスクリーン ショット")
+[![](non-affine-images/tapertransform-small.png "Triple screenshot of the Taper Transform page")](non-affine-images/tapertransform-large.png#lightbox "Triple screenshot of the Taper Transform page")
 
-別の種類の汎用化された非アフィン変換は、3 D の回転は、次の記事で示されていますが、 [ **3D 回転**](3d-rotation.md)します。
+次の記事「 [**3d**](3d-rotation.md)の回転」で説明されているように、一般的な非アフィン変換の別の型は3d ローテーションです。
 
-非アフィン変換では、任意の凸四角形に四角形を変換できます。 これを示します、**非アフィン行列を表示する**ページ。 よく似ていますが、**アフィン行列を表示する**ページから、 [**行列変換**](matrix.md)点が異なりますがある、4 つ目の記事`TouchPoint`オブジェクトを 4 つ目の操作ビットマップの隅。
+非アフィン変換は、四角形を任意の凸形に変換できます。 これは、[**非アフィン行列の表示**] ページで示されています。 これは、ビットマップの4番目の隅を操作する4番目のオブジェクトがある点を除いて、[**マトリックス変換**](matrix.md)の記事の [**アフィン行列の表示**] ページとよく似てい `TouchPoint` ます。
 
-[![](non-affine-images/shownonaffinematrix-small.png "非アフィン行列を表示するページのスクリーン ショットをトリプル")](non-affine-images/shownonaffinematrix-large.png#lightbox "非アフィン行列を表示するページの 3 倍になるスクリーン ショット")
+[![](non-affine-images/shownonaffinematrix-small.png "Triple screenshot of the Show Non-Affine Matrix page")](non-affine-images/shownonaffinematrix-large.png#lightbox "Triple screenshot of the Show Non-Affine Matrix page")
 
-プログラムが正常にからこのメソッドを使用して変換を計算のビットマップ四隅のいずれかの内部角度する 180 度より大きいか、2 つの辺を互いに交差しようとするはありません、限り、 [ `ShowNonAffineMatrixPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowNonAffineMatrixPage.xaml.cs)クラス。
+ビットマップのいずれかのコーナーの内部角度を180度より大きくしようとしたり、2つの辺を相互に交差させようとしたりしない限り、プログラムはクラスからこのメソッドを使用して変換を正常に計算し [`ShowNonAffineMatrixPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowNonAffineMatrixPage.xaml.cs) ます。
 
 ```csharp
 static SKMatrix ComputeMatrix(SKSize size, SKPoint ptUL, SKPoint ptUR, SKPoint ptLL, SKPoint ptLR)
@@ -451,25 +454,25 @@ static SKMatrix ComputeMatrix(SKSize size, SKPoint ptUL, SKPoint ptUR, SKPoint p
 }
 ```
 
-容易にするための計算では、このメソッドは、ここでこれらの変換がビットマップの 4 つの角を変更する方法を示す矢印の付いたされるは 3 つの個別の変換の製品として合計変換を取得します。
+計算を簡単にするために、このメソッドは3つの個別の変換の積として合計変換を取得します。これは、これらの変換によってビットマップの4つの角がどのように変更されるかを示す矢印が付いています。
 
-(0, 0) (0, 0) の作成] → [(0, 0) の作成] → [→ (0, y0) x (左)
+(0, 0) → (0, 0) → (0, 0) → (x0, y0) (左上)
 
-(0、H) → (0, 1) (0, 1) の作成] → [→ (x1, y1) (左)
+(0, H) → (0, 1) → (0, 1) → (x1, y1) (左下)
 
-(W、0) (1, 0) の作成] → [(1, 0) の作成] → [→ (x2, y2) (右)
+(W, 0) → (1, 0) → (1, 0) → (x2, y2) (右上)
 
-(W、H) (1, 1) の作成] → [→ (a、b) → (3、y3) x (右下)
+(W, H) → (1, 1) → (a, b) → (x3, y3) (右下)
 
-右側にある最後の座標は、4 つの 4 つのタッチ ポイントに関連付けられている点です。 これらは、最終的なビットマップの四隅の座標です。
+右側の最後の座標は、4つのタッチポイントに関連付けられている4つの点です。 これらは、ビットマップのコーナーの最終的な座標です。
 
-幅と高さ、幅とビットマップの高さを表します。 最初の変換`S`単に 1 ピクセルの正方形にビットマップをスケールします。 2 番目の変換が非アフィン変換`N`、3 番目はアフィン変換`A`します。 先ほどアフィンようでは、アフィン変換が 3 つの点に基づくは[ `ComputeMatrix` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs#L68)メソッドと 4 番目の行が関与しないと、(a、b) ポイント。
+W と H は、ビットマップの幅と高さを表します。 最初の変換では、 `S` 単にビットマップを1ピクセルの正方形にスケーリングします。 2番目の変換は非アフィン変換で、 `N` 3 番目の変換はアフィン変換 `A` です。 このアフィン変換は3つの点に基づいているため、以前のアフィンメソッドと同じように、 [`ComputeMatrix`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs#L68) (a, b) ポイントを含む4番目の行は含まれません。
 
-`a`と`b`3 番目の変換がアフィン変換できるように、値が計算されます。 コードでは、アフィン変換の逆元を取得し、を使用して、右下隅にマップします。 (A、b) のポイントです。
+`a`との `b` 値は、3番目の変換がアフィンになるように計算されます。 このコードは、アフィン変換の逆のを取得し、それを使用して右下隅をマップします。 これはポイント (a, b) です。
 
-非アフィン変換の別の使用は、3 次元グラフィックスを模倣するためです。 次の記事で[ **3D 回転**](3d-rotation.md) 3D 空間で 2 次元グラフィックを回転させる方法を参照してください。
+非アフィン変換のもう1つの用途は、3次元グラフィックスを模倣することです。 次の記事「 [**3D 回転**](3d-rotation.md)」では、3d 空間で2次元のグラフィックを回転させる方法を説明しています。
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

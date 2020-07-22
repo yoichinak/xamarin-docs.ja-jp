@@ -1,32 +1,35 @@
 ---
-title: Xamarin.Forms でスタイル継承
-description: スタイルは、重複を削減し、再利用を有効にするには、その他のスタイルを継承できます。 この記事では、Xamarin.Forms アプリケーションでスタイルの継承を実行する方法について説明します。
+title: スタイルの継承Xamarin.Forms
+description: スタイルを他のスタイルから継承して、重複を減らし、再利用できるようにすることができます。 この記事では、アプリケーションでスタイルの継承を実行する方法について説明 Xamarin.Forms します。
 ms.prod: xamarin
 ms.assetid: 67A3A39C-8CC0-446D-8162-FFA73582D3B8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: 24f6eac93dd3095df70bbb326388cd9ed47f395c
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 80cc419ae098f4a0cbbd782785c0ec5ba03fa703
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657057"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138958"
 ---
-# <a name="style-inheritance-in-xamarinforms"></a>Xamarin.Forms でスタイル継承
+# <a name="style-inheritance-in-xamarinforms"></a>スタイルの継承Xamarin.Forms
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
-_スタイルは、重複を削減し、再利用を有効にするには、その他のスタイルを継承できます。_
+_スタイルを他のスタイルから継承して、重複を減らし、再利用できるようにすることができます。_
 
 ## <a name="style-inheritance-in-xaml"></a>XAML でのスタイルの継承
 
-スタイルの継承を設定して実行、 [ `Style.BasedOn` ](xref:Xamarin.Forms.Style.BasedOn)プロパティを既存[ `Style`](xref:Xamarin.Forms.Style)します。 XAML に設定してこれは、`BasedOn`プロパティを`StaticResource`以前に作成した参照するマークアップ拡張機能`Style`します。 C# での設定でこれは、`BasedOn`プロパティを`Style`インスタンス。
+スタイルの継承は、プロパティを既存のに設定することによって行われ [`Style.BasedOn`](xref:Xamarin.Forms.Style.BasedOn) [`Style`](xref:Xamarin.Forms.Style) ます。 XAML では、 `BasedOn` `StaticResource` 以前に作成したを参照するマークアップ拡張機能にプロパティを設定することによって、これを実現し `Style` ます。 C# では、プロパティをインスタンスに設定することによってこれを実現し `BasedOn` `Style` ます。
 
-基本のスタイルを継承するスタイルを含めることができます[ `Setter` ](xref:Xamarin.Forms.Setter) 、新しいプロパティのインスタンスか、それらを使用して基本のスタイルのスタイルをオーバーライドします。 さらに、基本のスタイルを継承するスタイルでは、同じ型、または基本のスタイルの対象となる型から派生した型をターゲットする必要があります。 たとえば、基本のスタイルのターゲット[ `View` ](xref:Xamarin.Forms.View)インスタンス、基本のスタイルに基づくスタイルを対象にできます`View`インスタンスまたはから派生する型、`View`クラスなど、 [ `Label`](xref:Xamarin.Forms.Label)と[ `Button` ](xref:Xamarin.Forms.Button)インスタンス。
+基本スタイルを継承するスタイルには [`Setter`](xref:Xamarin.Forms.Setter) 、新しいプロパティのインスタンスを含めることも、基本スタイルのスタイルをオーバーライドするために使用することもできます。 また、基本スタイルから継承するスタイルは、同じ型、または基本スタイルの対象となる型から派生した型を対象とする必要があります。 たとえば、基本スタイルがインスタンスを対象とする場合、 [`View`](xref:Xamarin.Forms.View) 基本スタイルに基づくスタイルは、インスタンス `View` またはクラスから派生した型 (やなど) をターゲットにすることができ `View` [`Label`](xref:Xamarin.Forms.Label) [`Button`](xref:Xamarin.Forms.Button) ます。
 
-次のコード例*明示的な*XAML ページで継承をスタイル設定します。
+次のコードは、XAML ページでの*明示的*なスタイルの継承を示しています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.StyleInheritancePage" Title="Inheritance" IconImageSource="xaml.png">
@@ -62,7 +65,7 @@ _スタイルは、重複を削減し、再利用を有効にするには、そ�
 </ContentPage>
 ```
 
-`baseStyle`ターゲット[ `View` ](xref:Xamarin.Forms.View)インスタンス、および設定、 [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions)と[ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions)プロパティ。 `baseStyle`がコントロール上で直接設定されていません。 代わりに、`labelStyle`と`buttonStyle`バインド可能な追加のプロパティ値の設定をそれを継承します。 `labelStyle`と`buttonStyle`に適用される、 [ `Label` ](xref:Xamarin.Forms.Label)インスタンスと[ `Button` ](xref:Xamarin.Forms.Button)を設定して、インスタンス、 [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)プロパティ。 次のスクリーン ショットに示すように外観が発生します。
+ターゲットのインスタンスは、および `baseStyle` [`View`](xref:Xamarin.Forms.View) プロパティを設定し [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) ます。 は、 `baseStyle` コントロールに直接設定されません。 代わりに、 `labelStyle` とを `buttonStyle` 継承し、追加のバインド可能なプロパティ値を設定します。 次に、 `labelStyle` `buttonStyle` プロパティを設定する [`Label`](xref:Xamarin.Forms.Label) ことにより、とがインスタンスとインスタンスに適用され [`Button`](xref:Xamarin.Forms.Button) [`Style`](xref:Xamarin.Forms.NavigableElement.Style) ます。 この結果、次のスクリーンショットに示すような外観が表示されます。
 
 [![](inheritance-images/style-inheritance.png)](inheritance-images/style-inheritance-large.png#lightbox)
 
@@ -71,13 +74,13 @@ _スタイルは、重複を削減し、再利用を有効にするには、そ�
 
 ### <a name="respecting-the-inheritance-chain"></a>継承チェーンを尊重する
 
-スタイルは、同じレベル以上のスタイルからのみ継承できますで階層を表示します。 これによって、次のことが起こります。
+スタイルは、ビュー階層内の同じレベル、またはそれ以上のスタイルからしか継承できません。 これによって、次のことが起こります。
 
-- アプリケーション レベルのリソースは、その他のアプリケーション レベルのリソースからのみ継承できます。
-- ページ レベルのリソースは、アプリケーション レベルのリソース、およびその他のページ レベル リソースから継承できます。
-- コントロールのレベルのリソースは、アプリケーション レベルのリソース、ページ レベル リソース、およびその他のコントロール レベルのリソースから継承できます。
+- アプリケーションレベルのリソースは、他のアプリケーションレベルのリソースからのみ継承できます。
+- ページレベルリソースは、アプリケーションレベルのリソース、およびその他のページレベルリソースから継承できます。
+- コントロールレベルリソースは、アプリケーションレベルのリソース、ページレベルのリソース、およびその他のコントロールレベルのリソースから継承できます。
 
-この継承チェーンは次のコード例について説明します。
+この継承チェーンを次のコード例に示します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.StyleInheritancePage" Title="Inheritance" IconImageSource="xaml.png">
@@ -106,11 +109,11 @@ _スタイルは、重複を削減し、再利用を有効にするには、そ�
 </ContentPage>
 ```
 
-この例で`labelStyle`と`buttonStyle`レベルのリソースをコントロールには中に`baseStyle`はページ レベル リソースです。 ただし、`labelStyle`と`buttonStyle`継承`baseStyle`のことはできません`baseStyle`から継承する`labelStyle`または`buttonStyle`はそれぞれの場所で階層を表示している。
+この例では、 `labelStyle` と `buttonStyle` は制御レベルリソースであり、 `baseStyle` はページレベルリソースです。 ただし、 `labelStyle` および `buttonStyle` はから継承 `baseStyle` されますが、 `baseStyle` `labelStyle` `buttonStyle` ビュー階層内のそれぞれの場所によってまたはから継承することはできません。
 
-## <a name="style-inheritance-in-c35"></a>C でのスタイル継承&#35;
+## <a name="style-inheritance-in-c35"></a>C&#35; でのスタイル継承
 
-同等の C# ページで、 [ `Style` ](xref:Xamarin.Forms.Style)インスタンスに直接割り当てられた、 [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style) 、必要なコントロールのプロパティが次のコード例に示すように。
+[`Style`](xref:Xamarin.Forms.Style) [`Style`](xref:Xamarin.Forms.NavigableElement.Style) 次のコード例では、インスタンスが必要なコントロールのプロパティに直接割り当てられている同等の C# ページを示します。
 
 ```csharp
 public class StyleInheritancePageCS : ContentPage
@@ -153,13 +156,13 @@ public class StyleInheritancePageCS : ContentPage
 }
 ```
 
-`baseStyle`ターゲット[ `View` ](xref:Xamarin.Forms.View)インスタンス、および設定、 [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions)と[ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions)プロパティ。 `baseStyle`がコントロール上で直接設定されていません。 代わりに、`labelStyle`と`buttonStyle`バインド可能な追加のプロパティ値の設定をそれを継承します。 `labelStyle`と`buttonStyle`に適用される、 [ `Label` ](xref:Xamarin.Forms.Label)インスタンスと[ `Button` ](xref:Xamarin.Forms.Button)を設定して、インスタンス、 [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)プロパティ。
+ターゲットのインスタンスは、および `baseStyle` [`View`](xref:Xamarin.Forms.View) プロパティを設定し [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) ます。 は、 `baseStyle` コントロールに直接設定されません。 代わりに、 `labelStyle` とを `buttonStyle` 継承し、追加のバインド可能なプロパティ値を設定します。 次に、 `labelStyle` `buttonStyle` プロパティを設定する [`Label`](xref:Xamarin.Forms.Label) ことにより、とがインスタンスとインスタンスに適用され [`Button`](xref:Xamarin.Forms.Button) [`Style`](xref:Xamarin.Forms.NavigableElement.Style) ます。
 
 ## <a name="related-links"></a>関連リンク
 
 - [XAML マークアップ拡張](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [基本的なスタイル (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
-- [スタイル (サンプル) を使用します。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
+- [基本スタイル (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+- [スタイルの使用 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
-- [スタイル](xref:Xamarin.Forms.Style)
-- [Set アクセス操作子](xref:Xamarin.Forms.Setter)
+- [Style](xref:Xamarin.Forms.Style)
+- [Setter](xref:Xamarin.Forms.Setter)

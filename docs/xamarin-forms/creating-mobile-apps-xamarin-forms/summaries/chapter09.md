@@ -1,25 +1,28 @@
 ---
 title: '第 9 章の概要: プラットフォーム固有の API 呼び出し'
-description: 'Xamarin.Forms で Mobile Apps を作成する: 第 9 章の概要: プラットフォーム固有の API 呼び出し'
+description: 'Xamarin.Forms でモバイル アプリを作成する: 第 9 章の概要: プラットフォーム固有の API 呼び出し'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 4FFA1BD4-B3ED-461C-9B00-06ABF70D471D
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 3aec84ec6598a45bb989d4bbc1705fd797382755
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e8feb636057f1e11c7df90236dee44697203d51c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "61334560"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136858"
 ---
 # <a name="summary-of-chapter-9-platform-specific-api-calls"></a>第 9 章の概要: プラットフォーム固有の API 呼び出し
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter09)
 
 > [!NOTE] 
-> このページのメモでは、Xamarin.Forms が書籍に記載されている資料と異なる部分が示されています。
+> このページの注記では、Xamarin.Forms が本に記載されている資料と異なる部分が示されています。
 
 プラットフォームによって異なるコードを実行することが必要になる場合があります。 この章では、その手法について説明します。
 

@@ -7,14 +7,17 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/09/2019
-ms.openlocfilehash: b8c6ed9e803b8dec05b2279ed93f956ed11a1c07
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e1590d0a4f9716541f18bc4f50a2c480c5e4478a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "71997107"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84129780"
 ---
-# <a name="keyboard-accessibility-in-xamarinforms"></a>Xamarin.Forms でのキーボードアクセシビリティ
+# <a name="keyboard-accessibility-in-xamarinforms"></a>Xamarin.Forms でのキーボード アクセシビリティ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)
 

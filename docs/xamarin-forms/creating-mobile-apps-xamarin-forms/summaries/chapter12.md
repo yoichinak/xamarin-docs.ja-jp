@@ -1,18 +1,21 @@
 ---
 title: '第 12 章の概要: スタイル'
-description: 'Xamarin.Forms で Mobile Apps を作成する: 第 12 章の概要: スタイル'
+description: 'Xamarin.Forms でモバイル アプリを作成する: 第 12 章の概要: スタイル'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 3EAE6BDC-8EFB-464B-A87B-1C35B8387BB3
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 408f171a3c7c690b700f7be21a3dcaff503467d9
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 22f7272751c30bed350fe7aada8d5dacf0acc809
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "65926912"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136787"
 ---
 # <a name="summary-of-chapter-12-styles"></a>第 12 章の概要: スタイル
 

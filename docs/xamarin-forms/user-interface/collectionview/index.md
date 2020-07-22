@@ -1,5 +1,5 @@
 ---
-title: CollectionView
+title: Xamarin.Forms CollectionView
 description: CollectionView は、さまざまなレイアウト仕様を使用してデータの一覧を表示するための、柔軟でパフォーマンスの高いビューです。
 ms.prod: xamarin
 ms.assetid: 2BC9B223-2D5C-4B09-849C-B9D578954557
@@ -7,39 +7,42 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/24/2019
-ms.openlocfilehash: 8050d952556ce0b55a7ce72bc5f25de903fee6e5
-ms.sourcegitcommit: 21d8be9571a2fa89fb7d8ff0787ff4f957de0985
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a2c9fd9e6e48192bc2237d6b451b533fcee6e6ed
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "72696997"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136449"
 ---
-# <a name="xamarinforms-collectionview"></a>CollectionView
+# <a name="xamarinforms-collectionview"></a>Xamarin.Forms CollectionView
 
-## <a name="introductionintroductionmd"></a>[はじめに](introduction.md)
+## <a name="introduction"></a>[はじめに](introduction.md)
 
-[@No__t_1](xref:Xamarin.Forms.CollectionView)は、さまざまなレイアウト仕様を使用してデータの一覧を表示するための、柔軟でパフォーマンスの高いビューです。
+は、 [`CollectionView`](xref:Xamarin.Forms.CollectionView) さまざまなレイアウト仕様を使用してデータの一覧を表示するための、柔軟でパフォーマンスの高いビューです。
 
-## <a name="datapopulate-datamd"></a>[データ](populate-data.md)
+## <a name="data"></a>[データ](populate-data.md)
 
-[@No__t_1](xref:Xamarin.Forms.CollectionView)には、 [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource)プロパティを `IEnumerable` を実装する任意のコレクションに設定することによってデータが設定されます。 リスト内の各項目の外観を定義するには、[ [`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate) ] プロパティを[`DataTemplate`](xref:Xamarin.Forms.DataTemplate)に設定します。
+には、 [`CollectionView`](xref:Xamarin.Forms.CollectionView) [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) プロパティをを実装する任意のコレクションに設定することにより、データが設定され `IEnumerable` ます。 リスト内の各項目の外観は、プロパティをに設定することによって定義でき [`ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate) [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ます。
 
-## <a name="layoutlayoutmd"></a>[レイアウト](layout.md)
+## <a name="layout"></a>[レイアウト](layout.md)
 
-既定では、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)の項目は縦の一覧に表示されます。 ただし、縦と横のリストおよびグリッドを指定することもできます。
+既定では、の [`CollectionView`](xref:Xamarin.Forms.CollectionView) 項目が縦の一覧に表示されます。 ただし、縦と横のリストおよびグリッドを指定することもできます。
 
-## <a name="selectionselectionmd"></a>[選択内容](selection.md)
+## <a name="selection"></a>[選択ツール](selection.md)
 
-既定では[`CollectionView`](xref:Xamarin.Forms.CollectionView)選択は無効になっています。 ただし、1つまたは複数の選択を有効にすることができます。
+既定で [`CollectionView`](xref:Xamarin.Forms.CollectionView) は、選択は無効になっています。 ただし、1つまたは複数の選択を有効にすることができます。
 
-## <a name="empty-viewsemptyviewmd"></a>[空のビュー](emptyview.md)
+## <a name="empty-views"></a>[空のビュー](emptyview.md)
 
-[@No__t_1](xref:Xamarin.Forms.CollectionView)では、表示可能なデータがない場合にユーザーにフィードバックを提供する空のビューを指定できます。 空のビューには、文字列、ビュー、または複数のビューを指定できます。
+で [`CollectionView`](xref:Xamarin.Forms.CollectionView) は、表示可能なデータがない場合にユーザーにフィードバックを提供する空のビューを指定できます。 空のビューには、文字列、ビュー、または複数のビューを指定できます。
 
-## <a name="scrollingscrollingmd"></a>[スクロール](scrolling.md)
+## <a name="scrolling"></a>[スクロール](scrolling.md)
 
-ユーザーがスクロールを開始しようとしたときに、項目が完全に表示されるように、スクロールの終了位置を制御できます。 また、 [`CollectionView`](xref:Xamarin.Forms.CollectionView)では、項目をプログラムによってビューにスクロールする2つの[`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*)メソッドが定義されています。 オーバーロードの1つは、指定されたインデックス位置にある項目をビューにスクロールし、もう一方は指定された項目をビューにスクロールします。
+ユーザーがスクロールを開始しようとしたときに、項目が完全に表示されるように、スクロールの終了位置を制御できます。 さらに、では、 [`CollectionView`](xref:Xamarin.Forms.CollectionView) [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) 項目をプログラムによってビューにスクロールする2つのメソッドが定義されています。 オーバーロードの1つは、指定されたインデックス位置にある項目をビューにスクロールし、もう一方は指定された項目をビューにスクロールします。
 
-## <a name="groupinggroupingmd"></a>[グループ化](grouping.md)
+## <a name="grouping"></a>[分類](grouping.md)
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView) `IsGrouped` プロパティを `true` に設定することによって、正しくグループ化されたデータを表示できます。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)では、プロパティをに設定することによって、正しくグループ化されたデータを表示でき `IsGrouped` `true` ます。

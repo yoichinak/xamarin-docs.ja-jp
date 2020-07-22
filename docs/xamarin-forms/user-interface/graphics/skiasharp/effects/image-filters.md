@@ -1,34 +1,37 @@
 ---
-title: SkiaSharp の画像のフィルター
-description: イメージ フィルター作成ぼかしやドロップ シャドウを使用する方法について説明します。
+title: SkiaSharp イメージフィルター
+description: 画像フィルターを使用して、ぼかしとドロップシャドウを作成する方法について説明します。
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 173E7B22-AEC8-4F12-B657-1C0CEE01AD63
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/27/2018
-ms.openlocfilehash: f93f0462d476daaaa551833391b1be1865795476
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: eedbca080fce9f3001a7b1e2358845fd63c6121b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770533"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136345"
 ---
-# <a name="skiasharp-image-filters"></a>SkiaSharp の画像のフィルター
+# <a name="skiasharp-image-filters"></a>SkiaSharp イメージフィルター
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-イメージ フィルターは、イメージを構成するピクセルの色のすべてのビットで動作する効果です。 記事の説明に従って、アルファ チャネルに対してのみ作用マスク フィルターより汎用性の高い[ **SkiaSharp マスク フィルター**](mask-filters.md)します。 イメージ フィルターを使用する設定、 [ `ImageFilter` ](xref:SkiaSharp.SKPaint.ImageFilter)プロパティの`SKPaint`型のオブジェクトに[ `SKImageFilter` ](xref:SkiaSharp.SKImageFilter)クラスの静的メソッドのいずれかを呼び出すことで作成したことです。
+イメージフィルターは、イメージを構成するすべてのカラービットのピクセルに作用する効果です。 これはマスクフィルターよりも汎用性があり、 [**SkiaSharp mask フィルター**](mask-filters.md)に関する記事で説明されているように、アルファチャネル上でのみ動作します。 イメージフィルターを使用するには、 [`ImageFilter`](xref:SkiaSharp.SKPaint.ImageFilter) クラスの `SKPaint` [`SKImageFilter`](xref:SkiaSharp.SKImageFilter) 静的メソッドの1つを呼び出すことによって、のプロパティを、作成した型のオブジェクトに設定します。
 
-フィルターのマスクを理解する最善の方法では、これらの静的メソッドを使って試してみるです。 ぼかしビットマップ全体をマスク フィルターを使用することができます。
+マスクフィルターを理解する最善の方法は、これらの静的メソッドを試してみることです。 マスクフィルターを使用して、ビットマップ全体をぼかすことができます。
 
-![例のぼかし](image-filters-images/ImageFilterExample.png "ぼかしの例")
+![ぼかしの例](image-filters-images/ImageFilterExample.png "ぼかしの例")
 
-この記事では、ドロップ シャドウ、および作成エンボスの効果は彫刻にイメージ フィルターを使用しても示します。
+この記事では、イメージフィルターを使用してドロップシャドウを作成する方法と、エンボスと engraving の効果についても示します。
 
-## <a name="blurring-vector-graphics-and-bitmaps"></a>ベクター グラフィックスとビットマップにぼかし効果
+## <a name="blurring-vector-graphics-and-bitmaps"></a>ぼかしベクターグラフィックスとビットマップ
 
-[`SKImageFilter.CreateBlur`](xref:SkiaSharp.SKImageFilter.CreateBlur*)静的メソッドによって作成されたぼかし効果は、 [`SKMaskFilter`](xref:SkiaSharp.SKMaskFilter)クラスのぼかしメソッドよりも大きな利点があります。イメージフィルターでは、ビットマップ全体をぼかすことができます。 メソッドでは、次の構文があります。
+静的メソッドによって作成されたぼかし効果は、 [`SKImageFilter.CreateBlur`](xref:SkiaSharp.SKImageFilter.CreateBlur*) クラスのぼかしメソッドよりも大きな利点があり [`SKMaskFilter`](xref:SkiaSharp.SKMaskFilter) ます。イメージフィルターでは、ビットマップ全体をぼかすことができます。 メソッドの構文は次のとおりです。
 
 ```csharp
 public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
@@ -36,9 +39,9 @@ public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
                                                   SKImageFilter.CropRect cropRect = null);
 ```
 
-メソッドには 2 つのシグマ値&mdash;水平方向と垂直方向の 2 つ目のぼかしエクステントの最初。 省略可能な 3 番目の引数として別のイメージ フィルターを指定することでイメージ フィルターを連鎖させることができます。 トリミングの四角形を指定することもできます。
+メソッドには、ぼかしの範囲の最初の方向が1つ、垂直方向が2番目のシグマ値が2つあり &mdash; ます。 別のイメージフィルターを省略可能な3番目の引数として指定することで、イメージフィルターを連鎖させることができます。 トリミング四角形を指定することもできます。
 
-**イメージをぼかす実験**ページで、 [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) 2 つ`Slider`できるビューを試してさまざまなレベルのぼかし。
+[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)の**Image ぼかす実験**ページには、 `Slider` さまざまなぼかしレベルの設定を試すことができる2つのビューが含まれています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -75,7 +78,7 @@ public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
 </ContentPage>
 ```
 
-分離コード ファイルで使用する 2 つ`Slider`を呼び出す値`SKImageFilter.CreateBlur`の`SKPaint`テキストとビットマップの両方を表示するために使用するオブジェクト。
+分離コードファイルは、2つの値を使用して `Slider` `SKImageFilter.CreateBlur` 、 `SKPaint` テキストとビットマップの両方を表示するために使用されるオブジェクトを呼び出します。
 
 ```csharp
 public partial class ImageBlurExperimentPage : ContentPage
@@ -135,15 +138,15 @@ public partial class ImageBlurExperimentPage : ContentPage
 }
 ```
 
-次の 3 つのスクリーン ショットのさまざまな設定を表示する、`sigmaX`と`sigmaY`設定。
+次の3つのスクリーンショットは、設定と設定のさまざまな設定を示してい `sigmaX` `sigmaY` ます。
 
-[![イメージのぼかし実験](image-filters-images/ImageBlurExperiment.png "ぼかし実験の画像")](image-filters-images/ImageBlurExperiment-Large.png#lightbox)
+[![イメージのぼかし実験](image-filters-images/ImageBlurExperiment.png "イメージのぼかし実験")](image-filters-images/ImageBlurExperiment-Large.png#lightbox)
 
-ぼかしを異なる画面サイズと解像度の間で一貫性のあるさせるには、次のように設定します。`sigmaX`と`sigmaY`ぼかしが適用されるイメージのレンダリングされたピクセル サイズに比例した値にします。
+さまざまな表示サイズと解像度の間でぼかしを統一するには、 `sigmaX` と `sigmaY` を、ぼかしが適用されるイメージの描画ピクセルサイズに比例する値に設定します。
 
 ## <a name="drop-shadow"></a>ドロップ シャドウ
 
-[ `SKImageFilter.CreateDropShadow` ](xref:SkiaSharp.SKImageFilter.CreateDropShadow*)静的メソッドを作成、`SKImageFilter`ドロップ シャドウのオブジェクト。
+[`SKImageFilter.CreateDropShadow`](xref:SkiaSharp.SKImageFilter.CreateDropShadow*)静的メソッドは、 `SKImageFilter` ドロップシャドウのオブジェクトを作成します。
 
 ```csharp
 public static SKImageFilter CreateDropShadow (float dx, float dy,
@@ -154,17 +157,17 @@ public static SKImageFilter CreateDropShadow (float dx, float dy,
                                               SKImageFilter.CropRect cropRect = null);
 ```
 
-このオブジェクトを設定、`ImageFilter`のプロパティ、`SKPaint`は、その背後にあるドロップ シャドウがあるオブジェクト、およびそのオブジェクトを使用して描画したものです。
+このオブジェクトを `ImageFilter` オブジェクトのプロパティに設定する `SKPaint` と、そのオブジェクトを使用して描画したすべてのものには、背後に影が付きます。
 
-`dx`と`dy`パラメーターは、グラフィカル オブジェクトからのピクセル単位でシャドウの水平および垂直オフセットを示します。 2D グラフィックスの形式では、これら両方の引数が正の値以下とグラフィカル オブジェクトの右側に影を配置するがあることを意味します。 左上から光源を前提としています。
+`dx`パラメーターと `dy` パラメーターは、グラフィカルオブジェクトの影の水平方向と垂直方向のオフセットをピクセル単位で示します。 2D グラフィックスの規則は、左上から光源を使用することを前提としています。これは、これらの両方の引数が、グラフィックオブジェクトの下および右側に影を配置するために正である必要があることを意味します。
 
-`sigmaX`と`sigmaY`パラメーターは要素がドロップ シャドウのぼかし効果が。
+`sigmaX`およびパラメーターは、 `sigmaY` ドロップシャドウのぼかし要因です。
 
-`color`パラメーターがドロップ シャドウの色。 これは、`SKColor`値は、透明度を含めることができます。 色の値の 1 つの方法としては`SKColors.Black.WithAlpha(0x80)`を任意の背景の色を暗くします。
+パラメーターは、 `color` ドロップシャドウの色です。 この `SKColor` 値には、透明度を含めることができます。 1つの可能性として、色の `SKColors.Black.WithAlpha(0x80)` 背景を暗くする色の値があります。
 
-最後の 2 つのパラメーターは省略可能です。
+最後の2つのパラメーターは省略可能です。
 
-**ドロップ シャドウの実験**の値を試すことができますをプログラム`dx`、 `dy`、 `sigmaX`、および`sigmaY`影付きのテキスト文字列を表示します。 XAML ファイルには、4 つがインスタンス化します`Slider`これらの値を設定するビュー。
+**ドロップシャドウ実験**プログラムを使用すると、、、、およびの値を試して `dx` 、 `dy` `sigmaX` `sigmaY` テキスト文字列とドロップシャドウを表示できます。 XAML ファイルは、 `Slider` これらの値を設定するために4つのビューをインスタンス化します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -224,7 +227,7 @@ public static SKImageFilter CreateDropShadow (float dx, float dy,
 </ContentPage>
 ```
 
-分離コード ファイルでは、これらの値を使用して、青色のテキスト文字列で赤のドロップ シャドウの作成します。
+分離コードファイルでは、これらの値を使用して、青いテキスト文字列に赤色のドロップシャドウを作成します。
 
 ```csharp
 public partial class DropShadowExperimentPage : ContentPage
@@ -283,13 +286,13 @@ public partial class DropShadowExperimentPage : ContentPage
 
 実行中のプログラムを次に示します。
 
-[![ドロップ シャドウ実験](image-filters-images/DropShadowExperiment.png "ドロップ シャドウの実験")](image-filters-images/DropShadowExperiment-Large.png#lightbox)
+[![シャドウ実験のドロップ](image-filters-images/DropShadowExperiment.png "シャドウ実験のドロップ")](image-filters-images/DropShadowExperiment-Large.png#lightbox)
 
-右端のユニバーサル Windows プラットフォームのスクリーン ショットに負のオフセット値の上部およびテキストの左側に表示するシャドウが発生します。 これは、コンピューター_グラフィックスの規則が右下で光源を示しています。 ないよう、何らかの方法で問題がおそらくため影が非常に画像がぼやけるも行われます、ほとんどのドロップ シャドウよりもより装飾ようです。
+右端にあるユニバーサル Windows プラットフォームスクリーンショットの負のオフセット値により、影がテキストの上と左に表示されます。 これにより右下に光源が提示されますが、これはコンピューターグラフィックスの規則ではありません。 しかし、影も非常にぼやけており、ほとんどのドロップシャドウよりも装飾が多くなるため、何らかの問題が発生することはありません。
 
-## <a name="lighting-effects"></a>光源の効果
+## <a name="lighting-effects"></a>照明効果
 
-`SKImageFilter`クラスと同様の名前およびここの複雑さを昇順でパラメーターを持つ 6 つのメソッドを定義します。
+クラスは、 `SKImageFilter` 類似した名前とパラメーターを持つ6つのメソッドを定義します。これについては、複雑さが増します。
 
 - [`CreateDistantLitDiffuse`](xref:SkiaSharp.SKImageFilter.CreateDistantLitDiffuse*)
 - [`CreateDistantLitSpecular`](xref:SkiaSharp.SKImageFilter.CreateDistantLitSpecular*)
@@ -298,13 +301,13 @@ public partial class DropShadowExperimentPage : ContentPage
 - [`CreateSpotLitDiffuse`](xref:SkiaSharp.SKImageFilter.CreateSpotLitDiffuse*)
 - [`CreateSpotLitSpecular`](xref:SkiaSharp.SKImageFilter.CreateSpotLitSpecular*)
 
-これらのメソッドは、3 次元サーフェスにさまざまな種類の光の効果を模倣するイメージのフィルターを作成します。 結果のイメージのフィルターでは、または 3D 空間を管理者特権またはくぼんだを表示するこれらのオブジェクトが発生することができます、鏡面ハイライトが存在している場合、2 次元のオブジェクトが点灯します。
+これらのメソッドは、3次元サーフェイス上のさまざまな種類のライトの効果を模倣するイメージフィルターを作成します。 結果の画像フィルターは、2次元オブジェクトが3D 空間に存在しているかのように、これらのオブジェクトが昇格または埋め込みになるか、反射の強調表示を使用して表示されることがあります。
 
-`Distant`ライト メソッドでは、光が遠距離から取得されると仮定します。 わかりやすいオブジェクトは、するために、ライトが地球の小さい領域での Sun と同様に、3 D 空間で一貫性のある 1 つの方向と見なされます。 `Point`ライト メソッドは、すべての方向に光を放射 3 D 空間で電球を模倣します。 `Spot`ライトの位置と方向を懐中電灯と同様の両方。
+`Distant`ライトメソッドは、光が遠く離れていることを前提としています。 オブジェクトを照明するために、光は地球の小さな部分の太陽と同じように、3D 空間で1つの一貫した方向を指していると見なされます。 ライト `Point` メソッドは、すべての方向に光を発する3d 空間に配置された電球を模倣します。 `Spot`光の位置と方向は、懐中電灯のようになります。
 
-場所と 3 次元空間で指示の両方の値を指定、 [ `SKPoint3` ](xref:SkiaSharp.SKPoint3)のような構造体は、`SKPoint`がという名前の 3 つのプロパティを持つ`X`、`Y`と`Z`します。
+3D 空間内の位置と方向は、どちらも構造の値と共に指定されます [`SKPoint3`](xref:SkiaSharp.SKPoint3) 。これはと似ていますが、、、 `SKPoint` およびという3つのプロパティが `X` `Y` `Z` あります。
 
-これらのメソッドのパラメーターの複雑さと数ことに実験を困難です。 を開始するため、**離れた光実験**ページへのパラメーターを試すことができます、`CreateDistantLightDiffuse`メソッド。
+これらのメソッドのパラメーターの数と複雑さにより、実験が困難になります。 作業を開始するために、**遠くの薄い実験**ページでメソッドのパラメーターを試してみることができ `CreateDistantLightDiffuse` ます。
 
 ```csharp
 public static SKImageFilter CreateDistantLitDiffuse (SKPoint3 direction,
@@ -315,9 +318,9 @@ public static SKImageFilter CreateDistantLitDiffuse (SKPoint3 direction,
                                                      SKImageFilter.CropRect cropRect = null);
 ```
 
-ページには、最後の 2 つの省略可能なパラメーターを使用しません。
+このページでは、最後の2つの省略可能なパラメーターは使用されません。
 
-次の 3 つ`Slider`、XAML でビュー ファイルを選択するように、`Z`の座標、`SKPoint3`値、`surfaceScale`パラメーター、および`kd`「拡散光定数」として、API のドキュメントで定義されているパラメーター。
+`Slider`XAML ファイル内の3つのビューを使用すると、 `Z` `SKPoint3` `surfaceScale` `kd` API ドキュメントで "拡散光定数" として定義されている値、パラメーター、およびパラメーターの座標を選択できます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -368,7 +371,7 @@ public static SKImageFilter CreateDistantLitDiffuse (SKPoint3 direction,
 </ContentPage>
 ```
 
-分離コード ファイルでは、これら 3 つの値を取得し、それらを使用してテキスト文字列を表示するイメージ フィルターを作成します。
+分離コードファイルは、これら3つの値を取得し、それらを使用して、テキスト文字列を表示するイメージフィルターを作成します。
 
 ```csharp
 public partial class DistantLightExperimentPage : ContentPage
@@ -426,21 +429,21 @@ public partial class DistantLightExperimentPage : ContentPage
 }
 ```
 
-最初の引数`SKImageFilter.CreateDistantLitDiffuse`光の方向です。 正の X と Y 座標は、光が、右、下に鋭くであることを示します。 正の Z 座標が画面に位置します。 XAML ファイルでは負の Z 値を選択できますが、これは何が起こるかを確認できるようにするためだけです。概念的には、Z 座標が負の値になると、画面から光が出ます。 何かの他、小さい負の値では、照明効果の動作が停止します。
+の最初の引数 `SKImageFilter.CreateDistantLitDiffuse` はライトの方向です。 正の X 座標と Y 座標は、ライトが右と下を指していることを示します。 正の Z 座標は画面をポイントします。 XAML ファイルでは負の Z 値を選択することができますが、これは実際には何が起こるかを確認できるようにするためだけです。概念的には、負の Z 座標によって、画面から光が出ます。 それ以外の負の値については、光源効果は動作を停止します。
 
-`surfaceScale`引数の 1 に範囲は – 1。 (高いまたは低い値にはそれ以上影響をあるありません)。これらは、キャンバスの画面から (この例では、テキスト文字列) では、グラフィカル オブジェクトの移動距離を示す Z 軸方向の相対値です。 キャンバスの画面上のテキスト文字列を生成する負の値とそれをキャンバスにオブジェクトに正の値を使用します。
+引数は、 `surfaceScale` -1 ~ 1 の範囲で指定できます。 (値が大きいか小さい場合は、それ以上の効果はありません)。これらは、キャンバス画面からのグラフィカルオブジェクト (この場合はテキスト文字列) の移動を示す、Z 軸の相対値です。 負の値を使用して、キャンバスの表面の上にテキスト文字列を上げ、正の値を使用してキャンバスに挿入します。
 
-`lightConstant`値は正でなければなりません。 (プログラムにより、負の値が動作を停止する効果が発生することを確認できるようにします。)値が大きいほど濃いほど光が発生します。
+値は正の値である `lightConstant` 必要があります。 (プログラムによって負の値が許可されるため、効果が動作しなくなる可能性があります)。値が大きいほど、より強い光が発生します。
 
-これらの要因のバランスを取る、浮き出し効果を取得する必要されるときに有効`surfaceScale`(と同様に、iOS と Android のスクリーン ショット) が負の値を浮き彫りとされるときに有効`surfaceScale`が正の値として、右にある UWP スクリーン ショット。
+これらの要素 `surfaceScale` は、が負の場合 (iOS や Android のスクリーンショットと同様) にエンボス効果を得るためにバランスをとることができ `surfaceScale` ます。また、が正の場合は、右側の UWP スクリーンショットのように、浮き彫り効果が得られます。
 
-[![離れた場所にある明るい実験](image-filters-images/DistantLightExperiment.png "離れたライト実験")](image-filters-images/DistantLightExperiment-Large.png#lightbox)
+[![遠くの軽実験](image-filters-images/DistantLightExperiment.png "遠くの軽実験")](image-filters-images/DistantLightExperiment-Large.png#lightbox)
 
-Android のスクリーン ショットでは、0 で、し、右下にのみ、光が指していることを意味の Z 値があります。 バック グラウンドが点灯はありませんし、画面のテキスト文字列のない点灯しているか。 光は、テキストの端を非常に微妙な効果にのみ影響します。
+Android のスクリーンショットの Z 値は0です。これは、ライトが下向きと右を指していることを意味します。 背景は照明されず、テキスト文字列の表面は点灯しません。 ライトは、非常に微妙な効果を実現するためにテキストの端にのみ影響します。
 
-次の「[変換変換](../transforms/translate.md)」では、エンボスと浮き彫りのテキストに対する別のアプローチについて説明しました。テキスト文字列が2回表示されます。それぞれの色が少しずつずれています。
+エンボスおよび浮き彫りのテキストに対する別の方法として、「[変換変換](../transforms/translate.md)」の記事で説明されているように、テキスト文字列は異なる色で2回表示されます。
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

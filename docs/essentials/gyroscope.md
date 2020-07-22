@@ -5,12 +5,15 @@ ms.assetid: DA4F968A-D988-41F5-8745-1BEE693660A1
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 1e19585e238d66568364be7ccdbdb52d22b04066
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5a085ac5bd18e660339443ea33fe552dd86259cb
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "61259484"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802300"
 ---
 # <a name="xamarinessentials-gyroscope"></a>Xamarin.Essentials:ジャイロスコープ
 
@@ -22,7 +25,7 @@ ms.locfileid: "61259484"
 
 ## <a name="using-gyroscope"></a>Gyroscope の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
@@ -75,5 +78,5 @@ public class GyroscopeTest
 
 ## <a name="api"></a>API
 
-- [Gyroscope のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Gyroscope)
+- [Gyroscope のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Gyroscope)
 - [Gyroscope API のドキュメント](xref:Xamarin.Essentials.Gyroscope)

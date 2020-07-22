@@ -1,17 +1,20 @@
 ---
-title: Xamarin.Essentials の Map
-description: Xamarin.Essentials の Map クラスを使用すると、アプリケーションによってインストールされているマップ アプリケーションを使用して、特定の場所または placemark を開くことができます。
+title: Xamarin.Essentials マップ
+description: アプリケーションで Xamarin.Essentials の Map クラスを使用すると、インストールされているマップ アプリケーションを使用して、特定の場所または placemark を開くことができます。
 ms.assetid: BABF40CC-8BEE-43FD-BE12-6301DF27DD33
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 04/02/2019
+ms.date: 05/26/2020
 ms.custom: video
-ms.openlocfilehash: c0875534d88ea5b66b3072c35b9d38894fe98934
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b566b6705d1cd8e229b6a2636fffd2ebc2ed5cde
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "61354586"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802257"
 ---
 # <a name="xamarinessentials-map"></a>Xamarin.Essentials:マップ
 
@@ -23,7 +26,7 @@ ms.locfileid: "61354586"
 
 ## <a name="using-map"></a>Map の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
@@ -39,7 +42,14 @@ public class MapTest
         var location = new Location(47.645160, -122.1306032);
         var options =  new MapLaunchOptions { Name = "Microsoft Building 25" };
 
-        await Map.OpenAsync(location, options);
+        try
+        {
+            await Map.OpenAsync(location, options);
+        }
+        catch (Exception ex)
+        {
+            // No map application available to open
+        }
     }
 }
 ```
@@ -65,7 +75,14 @@ public class MapTest
             };
         var options =  new MapLaunchOptions { Name = "Microsoft Building 25" };
 
-        await Map.OpenAsync(placemark, options);
+        try
+        {
+            await Map.OpenAsync(placemark, options);
+        }
+        catch (Exception ex)
+        {
+            // No map application available to open or placemark can not be located
+        }
     }
 }
 ```
@@ -79,7 +96,14 @@ public class MapTest
 {
     public async Task OpenPlacemarkOnMap(Placemark placemark)
     {
-        await placemark.OpenMapAsync();
+        try
+        {
+            await placemark.OpenMapAsync();
+        }
+        catch (Exception ex)
+        {
+            // No map application available to open
+        }
     }
 }
 ```
@@ -135,7 +159,7 @@ Android では、URI スキーム `geo:` を使用してデバイス上のマッ
 
 ## <a name="api"></a>API
 
-- [Map のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Map)
+- [Map のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Map)
 - [Map API のドキュメント](xref:Xamarin.Essentials.Map)
 
 ## <a name="related-video"></a>関連ビデオ

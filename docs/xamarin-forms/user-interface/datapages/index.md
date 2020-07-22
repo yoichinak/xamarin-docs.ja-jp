@@ -1,29 +1,32 @@
 ---
-title: DataPages
-description: この記事では、データソースを事前構築されたビューにすばやく簡単にバインドするための API を提供する DataPages について説明します。
+title: Xamarin.FormsDataPages
+description: この記事では Xamarin.Forms 、データソースを事前構築されたビューにすばやく簡単にバインドするための API を提供する DataPages について説明します。
 ms.prod: xamarin
 ms.assetid: DF16EAEE-DB78-42CA-9C59-51D9D6CB6B95
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 4569240d7419254bad41957d30b4ad652c7a3f4e
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7d99870dd975d0996ffcd05d4aef153f3515ec9e
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "75727941"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84134317"
 ---
-# <a name="xamarinforms-datapages"></a>DataPages
+# <a name="xamarinforms-datapages"></a>Xamarin.FormsDataPages
 
 ![](~/media/shared/preview.png "This API is currently in preview")
 
 > [!IMPORTANT]
-> DataPages を表示するには、Xamarin. Forms Theme リファレンスが必要です。 これには、プロジェクトに[xamarin. theme. Base](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/) nuget パッケージをインストールし、その後に、 [xamarin. theme](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/)パッケージまたは[xamarin](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/) . theme. theme パッケージのいずれかをインストールする必要があります。
+> DataPages Xamarin.Forms を表示するには、テーマ参照が必要です。 これには、のインストールが含ま[ Xamarin.Forms れます。Theme。](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/)プロジェクトの基本となる NuGet パッケージの後に、[のいずれかが続きます。 Xamarin.FormsTheme](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/)または[ Xamarin.Forms 。Theme. ダーク](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/)NuGet パッケージ。
 
-Xamarin DataPages は2016進化に発表され、お客様がフィードバックをお寄せいただくためのプレビューとしてご利用いただけるようになりました。
+Xamarin.FormsDataPages は2016進化に発表され、お客様がフィードバックをお寄せいただくためのプレビューとしてご利用いただけます。
 
-DataPages の迅速かつ簡単に構築済みのビューにデータ ソースにバインドする API を提供します。 リスト項目と詳細ページは、データを自動的に表示し、テーマを使用してカスタマイズできます。
+DataPages は、事前に構築されたビューにデータソースをすばやく簡単にバインドするための API を提供します。 リスト項目と詳細ページは、データを自動的に表示し、テーマを使用してカスタマイズできます。
 
 基調講演のデモのしくみを確認するには、[ファーストステップガイド](get-started.md)を参照してください。
 
@@ -33,7 +36,7 @@ DataPages の迅速かつ簡単に構築済みのビューにデータ ソース
 
 データソースと関連付けられたデータページを使用すると、開発者はサポートされているデータソースをすばやく簡単に使用し、テーマでカスタマイズできる組み込みの UI スキャフォールディングを使用してレンダリングできます。
 
-DataPages NuGet パッケージをインクルードすることに**より、xamarin** . forms アプリケーションに追加されます。
+DataPages は Xamarin.Forms 、を含めることによってアプリケーションに追加され** Xamarin.Forms ます。ページ**NuGet パッケージ。
 
 ### <a name="data-sources"></a>ソリューション エクスプローラー
 
@@ -43,7 +46,7 @@ DataPages NuGet パッケージをインクルードすることに**より、xa
 * **Azuredatasource** (個別の NuGet)
 * **AzureEasyTableDataSource** (個別の NuGet)
 
-`JsonDataSource`の使用例については、[ファーストステップガイド](get-started.md)を参照してください。
+の使用例については、[ファーストステップガイド](get-started.md)を参照してください `JsonDataSource` 。
 
 ### <a name="pages--controls"></a>ページ & コントロール
 
@@ -61,13 +64,13 @@ DataPages NuGet パッケージをインクルードすることに**より、xa
 
 ### <a name="under-the-hood"></a>しくみ
 
-Xamarin データソースは、`IDataSource` インターフェイスに準拠しています。
+Xamarin.Formsデータソースはインターフェイスに準拠して `IDataSource` います。
 
-Xamarin. Forms インフラストラクチャは、次のプロパティを使用してデータソースと対話します。
+インフラストラクチャは、 Xamarin.Forms 次のプロパティを使用してデータソースと対話します。
 
-* `Data` –表示できるデータ項目の読み取り専用の一覧。
-* `IsLoading` –データが読み込まれ、表示に使用できるかどうかを示すブール値。
-* `[key]` –要素を取得するためのインデクサー。
+* `Data`–表示できるデータ項目の読み取り専用の一覧。
+* `IsLoading`–データが読み込まれ、表示に使用できるかどうかを示すブール値。
+* `[key]`–要素を取得するためのインデクサー。
 
-データ項目のプロパティを表示 (または表示) するために使用できる `MaskKey` と `UnmaskKey` には、2つのメソッドがあります。 表示されないようにします)。
+`MaskKey` `UnmaskKey` データ項目のプロパティを非表示 (または表示) するには、との2つのメソッドを使用できます。 表示されないようにします)。
 キーは、データ項目オブジェクトの名前付きプロパティに対応します。

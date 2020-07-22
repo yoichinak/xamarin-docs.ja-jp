@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: a6588dee675aee3e2580b70dfdea2920c6235775
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: cd04450d1429092453e6d8b65278d87b5d52e45e
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030611"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571624"
 ---
 # <a name="troubleshooting-tvos-10-apps-built-with-xamarin"></a>Xamarin でビルドされた tvOS 10 アプリのトラブルシューティング
 
@@ -26,63 +26,63 @@ ms.locfileid: "73030611"
 - [NSUserActivity](#NSUserActivity)
 - [UIKit](#UIKit)
 
-<a name="App-Store" />
+<a name="App-Store"></a>
 
-## <a name="app-store"></a>App Store
+## <a name="app-store"></a>アプリ ストア
 
 既知の問題:
 
 - サンドボックス環境でアプリ内購入をテストする場合、[認証] ダイアログボックスが2回表示されることがあります。
 - サンドボックス環境でホストされたコンテンツを使用してアプリ内購入をテストする場合、コンテンツのダウンロードが完了するまで、アプリがフォアグラウンドに移動するたびにパスワードダイアログが表示されます。
 
-<a name="Binary-Compatibility" />
+<a name="Binary-Compatibility"></a>
 
 ## <a name="binary-compatibility"></a>バイナリの互換性
 
 既知の問題:
 
-- `NSObject.ValueForKey` を呼び出すと、`null` キーによって例外が発生します。
-- `UIFont.WithName` を呼び出すときに名前でフォントを参照すると、クラッシュが発生します。
-- `NSURLSession` と `NSURLConnection` はどちらも `http://` Url の TLS ハンドシェイク中に RC4 暗号スイートを使用しなくなりました。
-- `ViewWillLayoutSubviews` または `LayoutSubviews` のいずれかのメソッドでスーパービューのジオメトリを変更すると、アプリがハングすることがあります。
+- を呼び出すと、キーによって例外が発生 `NSObject.ValueForKey` `null` します。
+- を呼び出すときに名前でフォントを参照すると `UIFont.WithName` 、クラッシュが発生します。
+- `NSURLSession`とはどちらも、 `NSURLConnection` URL の TLS ハンドシェイク中に RC4 暗号スイートを使用しなくなりました `http://` 。
+- またはのいずれかのメソッドでスーパービューのジオメトリを変更すると、アプリがハングすることが `ViewWillLayoutSubviews` `LayoutSubviews` あります。
 - すべての SSL/TLS 接続では、RC4 対称暗号が既定で無効になっています。 さらに、セキュリティで保護されたトランスポート API は SSLv3 をサポートしなくなりました。アプリは、できるだけ早く SHA-1 と3DES 暗号化の使用を停止することをお勧めします。
 
-<a name="CFNetwork-HTTP-Protocol" />
+<a name="CFNetwork-HTTP-Protocol"></a>
 
 ## <a name="cfnetwork-http-protocol"></a>CFNetwork HTTP プロトコル
 
-`NSMutableURLRequest` クラスの `HTTPBodyStream` プロパティは、`NSURLConnection` によって、また `NSURLSession` によってこの要件が厳密に適用されるようになったため、開かれていないストリームに設定する必要があります。
+`HTTPBodyStream`クラスのプロパティは、 `NSMutableURLRequest` から開かれていないストリームに設定する必要があり `NSURLConnection` ます。これにより、この要件が厳密に適用されるようになり `NSURLSession` ます。
 
-<a name="CloudKit" />
+<a name="CloudKit"></a>
 
 ## <a name="cloudkit"></a>CloudKit
 
-実行時間の長い操作では、 _"ファイルを保存するためのアクセス許可がありません"_ が返されます。 エラー.
+実行時間の長い操作では、 _"ファイルを保存するためのアクセス許可がありません"_ が返されます。 " というエラーが発生する場合があります。
 
-<a name="CoreImage" />
+<a name="CoreImage"></a>
 
 ## <a name="core-image"></a>コアイメージ
 
-`CIImageProcessor` API では、任意の入力イメージ数がサポートされるようになりました。 tvOS 10 beta 1 に含まれていた `CIImageProcessor` API は削除されます。
+API では、 `CIImageProcessor` 任意の入力イメージの数がサポートされるようになりました。 `CIImageProcessor`TvOS 10 beta 1 に含まれていた API は削除されます。
 
-<a name="NSUserActivity" />
+<a name="NSUserActivity"></a>
 
 ## <a name="nsuseractivity"></a>NSUserActivity
 
-ハンドオフ操作後、`NSUserActivity` オブジェクトの `UserInfo` プロパティが空になる場合があります。 現在の回避策として `BecomeCurrent` NSUserActivity ' オブジェクトを明示的に呼び出します。
+ハンドオフ操作の後、 `UserInfo` オブジェクトのプロパティが空になる `NSUserActivity` 場合があります。 現在の `BecomeCurrent` 回避策として nsuseractivity ' オブジェクトを明示的に呼び出します。
 
-<a name="UIKit" />
+<a name="UIKit"></a>
 
 ## <a name="uikit"></a>UIKit
 
 既知の問題:
 
-- `UINavigationBar`、`UITabBar` または `UIToolBar` の背景の外観を変更すると、レイアウトパスによって新しい外観が解決される場合があります。 `LayoutSubviews`、`UpdateConstraints`、`WillLayoutSubviews` または `DidUpdateSubviews` イベント内でこれらの外観を変更しようとすると、レイアウトループが無限になる可能性があります。
-- TvOS 10 では、`UIView` オブジェクトの `RemoveGestureRecognizer` メソッドを呼び出すと、実行中のジェスチャ認識エンジンが明示的に取り消されます。
+- の背景の外観が変更 `UINavigationBar` さ `UITabBar` れたか、または `UIToolBar` レイアウトパスによって新しい外観が解決される可能性があります。 、、またはイベントの内部でこれらの外観を変更しようとすると、 `LayoutSubviews` `UpdateConstraints` `WillLayoutSubviews` `DidUpdateSubviews` レイアウトループが無限になる可能性があります。
+- TvOS 10 では、オブジェクトのメソッドを呼び出すと、進行中の `RemoveGestureRecognizer` `UIView` ジェスチャ認識エンジンが明示的に取り消されます。
 - 表示されたビューコントローラーは、ステータスバーの外観に影響を与えるようになりました。
-- tvOS 10 では、`UIViewController` をサブクラス化し、`AwakeFromNib` メソッドをオーバーライドするときに、開発者が `base.AwakeFromNib` を呼び出す必要があります。
-- `base.LayoutSubviews` を呼び出す前に `LayoutSubviews` をオーバーライドしてレイアウトを変更するカスタム `UIView` サブクラスを持つアプリは、tvOS 10 で無限のレイアウトループをトリガーすることがあります。
-- 方向固有または flippable の画像アセットは、`UIButton` オブジェクトに割り当てられたときには反転されません。
+- tvOS 10 では、メソッドをサブ `base.AwakeFromNib` クラス化およびオーバーライドするときに、を呼び出す必要があり `UIViewController` `AwakeFromNib` ます。
+- を `UIView` 呼び出す前にレイアウトをオーバーライドしてダーティにするカスタムサブクラスを持つアプリ `LayoutSubviews` は、 `base.LayoutSubviews` tvOS 10 で無限のレイアウトループをトリガーすることがあります。
+- 方向固有または flippable の画像アセットは、オブジェクトに割り当てられたときには反転されません `UIButton` 。
 
 ## <a name="related-links"></a>関連リンク
 

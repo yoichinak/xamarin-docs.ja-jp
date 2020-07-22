@@ -1,116 +1,119 @@
 ---
-title: Xamarin.フォームメディア要素
-description: この記事では、Xamarin.Forms アプリケーションでビデオとオーディオを再生する MediaElement を使用する方法について説明します。
+title: Xamarin.FormsMediaElement
+description: この記事では、MediaElement を使用してアプリケーションでビデオとオーディオを再生する方法について説明し Xamarin.Forms ます。
 ms.prod: xamarin
 ms.assetid: e65f1e56-a80d-46c7-9ff4-7ae6650a3165
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/18/2020
-ms.openlocfilehash: 6f6c51c428de569ceb09ed6a26cfc36881c86dc5
-ms.sourcegitcommit: b93754b220fca3d6e3d131341e3cfbe233d10f84
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1dfa51177bba3ebf1e3e29208cc926c77567a048
+ms.sourcegitcommit: c000c0ed15b7b2ef2a8f46a39171e11b6d9f8a5d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80628337"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84980104"
 ---
-# <a name="xamarinforms-mediaelement"></a>Xamarin.フォームメディア要素
+# <a name="xamarinforms-mediaelement"></a>Xamarin.FormsMediaElement
 
 ![](~/media/shared/preview.png "This API is currently pre-release")
 
-[![サンプルの](~/media/shared/download.png)ダウンロード サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-mediaelementdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-mediaelementdemos/)
 
-[`MediaElement`](xref:Xamarin.Forms.MediaElement)はビデオとオーディオを再生するためのビューです。 基盤となるプラットフォームでサポートされているメディアは、次のソースから再生できます。
+[`MediaElement`](xref:Xamarin.Forms.MediaElement)は、ビデオやオーディオを再生するためのビューです。 基になるプラットフォームでサポートされているメディアは、次のソースから再生できます。
 
-- URI (HTTP または HTTPS) を使用した Web。
-- URI スキームを使用して、プラットフォーム アプリケーション`ms-appx:///`に埋め込まれたリソース。
-- URI スキームを使用して、アプリのローカルおよび一時データ フォルダー`ms-appdata:///`から取得されるファイル。
+- URI (HTTP または HTTPS) を使用した web。
+- URI スキームを使用して、プラットフォームアプリケーションに埋め込まれたリソース `ms-appx:///` 。
+- URI スキームを使用して、アプリのローカルフォルダーと一時データフォルダーから取得されたファイル `ms-appdata:///` 。
 - デバイスのライブラリ。
 
-[`MediaElement`](xref:Xamarin.Forms.MediaElement)は、トランスポート コントロールと呼ばれるプラットフォーム再生コントロールを使用できます。 ただし、既定では無効になっており、独自のトランスポート コントロールに置き換えることができます。 次のスクリーンショットは、`MediaElement`プラットフォームトランスポートコントロールでビデオを再生する様子を示しています。
+[`MediaElement`](xref:Xamarin.Forms.MediaElement)は、トランスポートコントロールと呼ばれるプラットフォーム再生コントロールを使用できます。 ただし、これらは既定で無効になっており、独自のトランスポートコントロールに置き換えることができます。 次のスクリーンショットは、 `MediaElement` プラットフォームのトランスポートコントロールでビデオを再生する方法を示しています。
 
-[![iOSとアンドロイドでビデオを再生するメディア要素のスクリーンショット](mediaelement-images/playback-controls.png "ビデオを再生するメディア要素")](mediaelement-images/playback-controls-large.png#lightbox "ビデオを再生するメディア要素")
+[![IOS と Android でビデオを再生している MediaElement のスクリーンショット](mediaelement-images/playback-controls.png "ビデオを再生する MediaElement")](mediaelement-images/playback-controls-large.png#lightbox "ビデオを再生する MediaElement")
 
-[`MediaElement`](xref:Xamarin.Forms.MediaElement)は Xamarin.Forms 4.5 で入手できます。 ただし、現在は試験的なコードであり *、App.xaml.cs*ファイルに次のコード行を追加することによってのみ使用できます。
+[`MediaElement`](xref:Xamarin.Forms.MediaElement)は4.5 で使用でき Xamarin.Forms ます。 ただし、現在は実験的であり、 *App.xaml.cs*ファイルに次のコード行を追加することによってのみ使用できます。
 
 ```csharp
 Device.SetFlags(new string[]{ "MediaElement_Experimental" });
 ```
 
 > [!NOTE]
-> [`MediaElement`](xref:Xamarin.Forms.MediaElement)iOS、アンドロイド、ユニバーサル Windows プラットフォーム (UWP)、macOS、Windows プレゼンテーションファウンデーション、および Tizen で利用できます。
+> [`MediaElement`](xref:Xamarin.Forms.MediaElement)は、iOS、Android、ユニバーサル Windows プラットフォーム (UWP)、macOS、Windows Presentation Foundation、Tizen で使用できます。
 
-[`MediaElement`](xref:Xamarin.Forms.MediaElement)では、次のプロパティを定義します。
+[`MediaElement`](xref:Xamarin.Forms.MediaElement)では、次のプロパティが定義されています。
 
-- [`Aspect`](xref:Xamarin.Forms.MediaElement.Aspect)の種類[`Aspect`](xref:Xamarin.Forms.Aspect)は、表示領域に合わせてメディアを拡大縮小する方法を決定します。 このプロパティの既定値は `AspectFit` です。
-- [`AutoPlay`](xref:Xamarin.Forms.MediaElement.AutoPlay)の種類`bool`は、プロパティが設定されたときにメディアの再生を自動的[`Source`](xref:Xamarin.Forms.MediaElement.Source)に開始するかどうかを示します。 このプロパティの既定値は `true` です。
-- [`BufferingProgress`](xref:Xamarin.Forms.MediaElement.BufferingProgress)の種類`double`は、現在のバッファリングの進行状況を示します。 このプロパティの既定値は 0.0 です。
-- [`CanSeek`](xref:Xamarin.Forms.MediaElement.CanSeek)の種類`bool`は、[`Position`](xref:Xamarin.Forms.MediaElement.Position)プロパティの値を設定することによってメディアを再配置できるかどうかを示します。 これは、読み取り専用プロパティです。
-- [`CurrentState`](xref:Xamarin.Forms.MediaElement.CurrentState)の種類[`MediaElementState`](xref:Xamarin.Forms.MediaElementState)は、コントロールの現在の状態を示します。 これは読み取り専用プロパティで、既定値は`MediaElementState.Closed`です。
-- [`Duration`](xref:Xamarin.Forms.MediaElement.Duration)の種類`TimeSpan?`は、現在開いているメディアの継続時間を示します。 これは読み取り専用プロパティで、既定値は`null`です。
-- [`IsLooping`](xref:Xamarin.Forms.MediaElement.IsLooping)の種類`bool`は、現在ロードされているメディア ソースが、最後に到達した後に再生を開始から再開するかどうかを示します。 このプロパティの既定値は `false` です。
-- [`KeepScreenOn`](xref:Xamarin.Forms.MediaElement.KeepScreenOn)の種類`bool`は、メディアの再生中にデバイス画面をオンにするかどうかを決定します。 このプロパティの既定値は `false` です。
-- [`Position`](xref:Xamarin.Forms.MediaElement.Position)の種類`TimeSpan`は、メディアの再生時間を通じて現在の進行状況を表します。 このプロパティの既定値は `TimeSpan.Zero` です。
-- [`ShowsPlaybackControls`](xref:Xamarin.Forms.MediaElement.ShowsPlaybackControls)の種類`bool`は、プラットフォームの再生コントロールを表示するかどうかを決定します。 このプロパティの既定値は `false` です。
-- [`Source`](xref:Xamarin.Forms.MediaElement.Source)の種類[`MediaSource`](xref:Xamarin.Forms.MediaSource)は、コントロールに読み込まれたメディアのソースを示します。
-- [`VideoHeight`](xref:Xamarin.Forms.MediaElement.VideoHeight)の種類`int`は、コントロールの高さを示します。 これは、読み取り専用プロパティです。
-- [`VideoWidth`](xref:Xamarin.Forms.MediaElement.VideoWidth)の種類`int`は、コントロールの幅を示します。 これは、読み取り専用プロパティです。
-- [`Volume`](xref:Xamarin.Forms.MediaElement.Volume)の種類`double`は、メディアのボリュームを決定します。 このプロパティはバインディング`TwoWay`を使用し、既定値は 1 です。
+- [`Aspect`](xref:Xamarin.Forms.MediaElement.Aspect)型のは、 [`Aspect`](xref:Xamarin.Forms.Aspect) 表示領域に合わせてメディアがどのように拡大縮小されるかを決定します。 このプロパティの既定値は `AspectFit` です。
+- [`AutoPlay`](xref:Xamarin.Forms.MediaElement.AutoPlay)型のは、 `bool` [`Source`](xref:Xamarin.Forms.MediaElement.Source) プロパティが設定されたときにメディアの再生を自動的に開始するかどうかを示します。 このプロパティの既定値は `true` です。
+- [`BufferingProgress`](xref:Xamarin.Forms.MediaElement.BufferingProgress)型のは、 `double` 現在のバッファリングの進行状況を示します。 このプロパティの既定値は0.0 です。
+- [`CanSeek`](xref:Xamarin.Forms.MediaElement.CanSeek)型のは、 `bool` プロパティの値を設定することによってメディアを再配置できるかどうかを示し [`Position`](xref:Xamarin.Forms.MediaElement.Position) ます。 これは、読み取り専用プロパティです。
+- [`CurrentState`](xref:Xamarin.Forms.MediaElement.CurrentState)型のは、 [`MediaElementState`](xref:Xamarin.Forms.MediaElementState) コントロールの現在の状態を示します。 これは読み取り専用プロパティで、既定値は `MediaElementState.Closed` です。
+- [`Duration`](xref:Xamarin.Forms.MediaElement.Duration)型のは、 `TimeSpan?` 現在開いているメディアの期間を示します。 これは、既定値がである読み取り専用プロパティです `null` 。
+- [`IsLooping`](xref:Xamarin.Forms.MediaElement.IsLooping)型の。は、現在読み込まれている `bool` メディアソースが最後に到達した後に、最初から再生を再開するかどうかを示します。 このプロパティの既定値は `false` です。
+- [`KeepScreenOn`](xref:Xamarin.Forms.MediaElement.KeepScreenOn)型のは、 `bool` メディアの再生中にデバイスの画面を維持するかどうかを決定します。 このプロパティの既定値は `false` です。
+- [`Position`](xref:Xamarin.Forms.MediaElement.Position)型のは、 `TimeSpan` メディアの再生時間における現在の進行状況を示します。 このプロパティの既定値は `TimeSpan.Zero` です。
+- [`ShowsPlaybackControls`](xref:Xamarin.Forms.MediaElement.ShowsPlaybackControls)型のは、 `bool` プラットフォームの再生コントロールを表示するかどうかを決定します。 このプロパティの既定値は `false` です。
+- [`Source`](xref:Xamarin.Forms.MediaElement.Source)型のは、 [`MediaSource`](xref:Xamarin.Forms.MediaSource) コントロールに読み込まれるメディアのソースを示します。
+- [`VideoHeight`](xref:Xamarin.Forms.MediaElement.VideoHeight)型のは、 `int` コントロールの高さを示します。 これは、読み取り専用プロパティです。
+- [`VideoWidth`](xref:Xamarin.Forms.MediaElement.VideoWidth)型のは、 `int` コントロールの幅を示します。 これは、読み取り専用プロパティです。
+- [`Volume`](xref:Xamarin.Forms.MediaElement.Volume)型のは、 `double` メディアのボリュームを決定します。これは、0と1の間の線形スケールで表されます。 このプロパティはバインディングを使用 `TwoWay` し、既定値は1です。
 
-これらのプロパティは、`CanSeek`プロパティを除き、オブジェクトによって[`BindableProperty`](xref:Xamarin.Forms.BindableProperty)バックアップされるため、データ バインディングのターゲットとなり、スタイルが設定されます。
+これらのプロパティは、プロパティを除き、 `CanSeek` オブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。これは、データバインディングのターゲットとスタイルを設定できることを意味します。
 
-この[`MediaElement`](xref:Xamarin.Forms.MediaElement)クラスは、次の 4 つのイベントも定義します。
+クラスは、 [`MediaElement`](xref:Xamarin.Forms.MediaElement) 次の4つのイベントも定義します。
 
-- [`MediaOpened`](xref:Xamarin.Forms.MediaElement.MediaOpened)は、メディア ストリームが検証されて開かれたときに発生します。
-- [`MediaEnded`](xref:Xamarin.Forms.MediaElement.MediaEnded)は、メディアの`MediaElement`再生が終了すると起動されます。
-- [`MediaFailed`](xref:Xamarin.Forms.MediaElement.MediaFailed)は、メディア ソースに関連付けられたエラーが発生したときに発生します。
-- [`SeekCompleted`](xref:Xamarin.Forms.MediaElement.SeekCompleted)は、要求されたシーク操作のシーク ポイントが再生の準備ができたときに発生します。
+- [`MediaOpened`](xref:Xamarin.Forms.MediaElement.MediaOpened)メディアストリームが検証され、開いたときに発生します。
+- [`MediaEnded`](xref:Xamarin.Forms.MediaElement.MediaEnded)が、メディアの再生を終了すると発生 `MediaElement` します。
+- [`MediaFailed`](xref:Xamarin.Forms.MediaElement.MediaFailed)メディアソースに関連付けられたエラーが発生したときに発生します。
+- [`SeekCompleted`](xref:Xamarin.Forms.MediaElement.SeekCompleted)は、要求されたシーク操作のシークポイントが再生できる状態になったときに発生します。
 
-また、 [`MediaElement`](xref:Xamarin.Forms.MediaElement) 、[`Play`](xref:Xamarin.Forms.MediaElement.Play)[`Pause`](xref:Xamarin.Forms.MediaElement.Pause)および メソッド[`Stop`](xref:Xamarin.Forms.MediaElement.Stop)も含みます。
+さらに、には、、、 [`MediaElement`](xref:Xamarin.Forms.MediaElement) およびメソッドが含まれてい [`Play`](xref:Xamarin.Forms.MediaElement.Play) [`Pause`](xref:Xamarin.Forms.MediaElement.Pause) [`Stop`](xref:Xamarin.Forms.MediaElement.Stop) ます。
 
-Android でサポートされるメディア形式については、「developer.android.comで[サポートされるメディア形式](https://developer.android.com/guide/topics/media/media-formats)」を参照してください。 ユニバーサル Windows プラットフォーム (UWP) でサポートされるメディア形式については、「[サポートされているコーデック](/windows/uwp/audio-video-camera/supported-codecs)」を参照してください。
+Android でサポートされているメディア形式の詳細については、「developer.android.com で[サポートされているメディア形式](https://developer.android.com/guide/topics/media/media-formats)」を参照してください。 ユニバーサル Windows プラットフォーム (UWP) でサポートされているメディア形式の詳細については、「[サポートされているコーデック](/windows/uwp/audio-video-camera/supported-codecs)」を参照してください。
 
-## <a name="play-remote-media"></a>リモート メディアを再生する
+## <a name="play-remote-media"></a>リモートメディアを再生する
 
-は[`MediaElement`](xref:Xamarin.Forms.MediaElement)、HTTP および HTTPS URI スキームを使用してリモート メディア ファイルを再生できます。 これは、プロパティを[`Source`](xref:Xamarin.Forms.MediaElement.Source)メディア ファイルの URI に設定することで実現されます。
+は、 [`MediaElement`](xref:Xamarin.Forms.MediaElement) HTTP および HTTPS URI スキームを使用してリモートメディアファイルを再生できます。 これを行うには、 [`Source`](xref:Xamarin.Forms.MediaElement.Source) プロパティをメディアファイルの URI に設定します。
 
 ```xaml
 <MediaElement Source="https://sec.ch9.ms/ch9/5d93/a1eab4bf-3288-4faf-81c4-294402a85d93/XamarinShow_mid.mp4"
               ShowsPlaybackControls="True" />
 ```
 
-デフォルトでは、プロパティによって定義されたメディアは、[`Source`](xref:Xamarin.Forms.MediaElement.Source)メディアが開かれた直後に再生されます。 メディアの自動再生を抑制するには、[`AutoPlay`](xref:Xamarin.Forms.MediaElement.AutoPlay)プロパティを`false`に設定します。
+既定では、プロパティによって定義されるメディアは、 [`Source`](xref:Xamarin.Forms.MediaElement.Source) メディアが開かれた直後に再生されます。 自動メディア再生を抑制するには、プロパティをに設定し [`AutoPlay`](xref:Xamarin.Forms.MediaElement.AutoPlay) `false` ます。
 
-メディア再生コントロールは既定で無効になっており、プロパティを[`ShowsPlaybackControls`](xref:Xamarin.Forms.MediaElement.ShowsPlaybackControls)に設定`true`して有効にします。 [`MediaElement`](xref:Xamarin.Forms.MediaElement)その後、プラットフォームの再生コントロールを使用します。
+既定では、メディア再生コントロールは無効になっており、プロパティをに設定することによって有効になってい [`ShowsPlaybackControls`](xref:Xamarin.Forms.MediaElement.ShowsPlaybackControls) `true` ます。 [`MediaElement`](xref:Xamarin.Forms.MediaElement)は、プラットフォームの再生コントロールを使用します。
 
-## <a name="play-local-media"></a>地元メディアを再生する
+## <a name="play-local-media"></a>ローカルメディアを再生する
 
-ローカル メディアは、次のソースから再生できます。
+ローカルメディアは、次のソースから再生できます。
 
-- URI スキームを使用して、プラットフォーム アプリケーション`ms-appx:///`に埋め込まれたリソース。
-- URI スキームを使用して、アプリのローカルおよび一時データ フォルダー`ms-appdata:///`から取得されるファイル。
+- URI スキームを使用して、プラットフォームアプリケーションに埋め込まれたリソース `ms-appx:///` 。
+- URI スキームを使用して、アプリのローカルフォルダーと一時データフォルダーから取得されたファイル `ms-appdata:///` 。
 - デバイスのライブラリ。
 
-これらの URI スキームの詳細については[、「URI スキーム](/windows/uwp/app-resources/uri-schemes)」を参照してください。
+これらの URI スキームの詳細については、「 [uri スキーム](/windows/uwp/app-resources/uri-schemes)」を参照してください。
 
-### <a name="play-media-embedded-in-the-app-package"></a>アプリ パッケージに埋め込まれたメディアを再生する
+### <a name="play-media-embedded-in-the-app-package"></a>アプリパッケージに埋め込まれたメディアを再生する
 
-URI[`MediaElement`](xref:Xamarin.Forms.MediaElement)スキームを使用して、アプリ パッケージに埋め込まれている`ms-appx:///`メディア ファイルを再生できます。 メディア ファイルは、プラットフォーム プロジェクトに配置することで、アプリ パッケージに埋め込まれます。
+は、 [`MediaElement`](xref:Xamarin.Forms.MediaElement) URI スキームを使用して、アプリパッケージに埋め込まれているメディアファイルを再生でき `ms-appx:///` ます。 メディアファイルは、プラットフォームプロジェクトに配置することによって、アプリパッケージに埋め込まれます。
 
-プラットフォームプロジェクトにメディアファイルを保存する方法は、プラットフォームごとに異なります。
+プラットフォームプロジェクトにメディアファイルを格納することは、プラットフォームによって異なります。
 
-- iOS では、メディア ファイルは**Resources**フォルダ、またはリソース**フォルダの**サブフォルダに保存する必要があります。 メディア ファイルには、`Build Action`の`BundleResource`が必要です。
-- Android では、メディア ファイルは**raw**という名前の**リソース**のサブフォルダに格納する必要があります。 **raw** フォルダーにサブフォルダーを含めることはできません。 メディア ファイルには、`Build Action`の`AndroidResource`が必要です。
-- UWP では、メディア ファイルはプロジェクト内の任意のフォルダーに格納できます。 メディア ファイルには、`BuildAction`の`Content`が必要です。
+- IOS では、メディアファイルは**resources フォルダーに**保存するか、 **resources**フォルダーのサブフォルダーに格納する必要があります。 メディアファイルには、のが含まれている必要があり `Build Action` `BundleResource` ます。
+- Android では、メディアファイルは**raw**という名前の**リソース**のサブフォルダーに格納されている必要があります。 **raw** フォルダーにサブフォルダーを含めることはできません。 メディアファイルには、のが含まれている必要があり `Build Action` `AndroidResource` ます。
+- UWP では、メディアファイルはプロジェクト内の任意のフォルダーに格納できます。 メディアファイルには、のが含まれている必要があり `BuildAction` `Content` ます。
 
-これらの基準を満たすメディア ファイルは、URI スキーム`ms-appx:///`を使用して再生できます。
+これらの条件を満たすメディアファイルは、URI スキームを使用して再生でき `ms-appx:///` ます。
 
 ```xaml
 <MediaElement Source="ms-appx:///XamarinForms101UsingEmbeddedImages.mp4"
               ShowsPlaybackControls="True" />
 ```
 
-データ バインディングを使用する場合、値コンバーターを使用してこの URI スキームを適用できます。
+データバインディングを使用する場合は、値コンバーターを使用して、この URI スキームを適用できます。
 
 ```csharp
 public class VideoSourceConverter : IValueConverter
@@ -132,27 +135,27 @@ public class VideoSourceConverter : IValueConverter
 }
 ```
 
-その後、の`VideoSourceConverter`インスタンスを使用して、埋め`ms-appx:///`込みメディア ファイルに URI スキームを適用できます。
+次に、のインスタンスを使用して、 `VideoSourceConverter` `ms-appx:///` 埋め込みメディアファイルに URI スキームを適用できます。
 
 ```xaml
 <MediaElement Source="{Binding MediaSource, Converter={StaticResource VideoSourceConverter}}"
               ShowsPlaybackControls="True" />
 ```
 
-ms-appx URI スキームの詳細については[、「ms-appx および ms-appx-web](/windows/uwp/app-resources/uri-schemes#ms-appx-and-ms-appx-web)」を参照してください。
+Ms appx URI スキームの詳細については、「 [ms appx と ms appx-web](/windows/uwp/app-resources/uri-schemes#ms-appx-and-ms-appx-web)」を参照してください。
 
 ### <a name="play-media-from-the-apps-local-and-temporary-folders"></a>アプリのローカルフォルダーと一時フォルダーからメディアを再生する
 
-URI[`MediaElement`](xref:Xamarin.Forms.MediaElement)スキームを使用して、アプリのローカルまたは一時データ フォルダーにコピーされたメディア ファイル`ms-appdata:///`を再生できます。
+は、 [`MediaElement`](xref:Xamarin.Forms.MediaElement) URI スキームを使用して、アプリのローカルまたは一時データフォルダーにコピーされたメディアファイルを再生でき `ms-appdata:///` ます。
 
-次の例は、[`Source`](xref:Xamarin.Forms.MediaElement.Source)アプリのローカル データ フォルダーに格納されているメディア ファイルに設定されたプロパティを示しています。
+次の例は、 [`Source`](xref:Xamarin.Forms.MediaElement.Source) アプリケーションのローカルデータフォルダーに格納されているメディアファイルに設定されたプロパティを示しています。
 
 ```xaml
 <MediaElement Source="ms-appdata:///local/XamarinVideo.mp4"
               ShowsPlaybackControls="True" />
 ```
 
-次の例は、[`Source`](xref:Xamarin.Forms.MediaElement.Source)アプリの一時データ フォルダーに格納されているメディア ファイルに対するプロパティを示しています。
+次の例では、 [`Source`](xref:Xamarin.Forms.MediaElement.Source) アプリの一時データフォルダーに格納されているメディアファイルのプロパティを示します。
 
 ```xaml
 <MediaElement Source="ms-appdata:///temp/XamarinVideo.mp4"
@@ -160,9 +163,9 @@ URI[`MediaElement`](xref:Xamarin.Forms.MediaElement)スキームを使用して�
 ```
 
 > [!IMPORTANT]
-> アプリのローカル または一時データ フォルダーに保存されているメディア ファイルを再生するだけでなく、UWP では、アプリのローミング フォルダーにあるメディア ファイルを再生することもできます。 これは、メディア ファイルの先頭に`ms-appdata:///roaming/`.
+> UWP は、アプリのローカルまたは一時データフォルダーに格納されているメディアファイルを再生するだけでなく、アプリのローミングフォルダーにあるメディアファイルを再生することもできます。 これは、メディアファイルをにプレフィックスとして付けることで実現でき `ms-appdata:///roaming/` ます。
 
-データ バインディングを使用する場合、値コンバーターを使用してこの URI スキームを適用できます。
+データバインディングを使用する場合は、値コンバーターを使用して、この URI スキームを適用できます。
 
 ```csharp
 public class VideoSourceConverter : IValueConverter
@@ -181,18 +184,18 @@ public class VideoSourceConverter : IValueConverter
 }
 ```
 
-その後`VideoSourceConverter`、のインスタンスを使用して、アプリの`ms-appdata:///`ローカルまたは一時データ フォルダー内のメディア ファイルに URI スキームを適用できます。
+次に、のインスタンスを使用して、 `VideoSourceConverter` `ms-appdata:///` アプリのローカルまたは一時データフォルダー内のメディアファイルに URI スキームを適用できます。
 
 ```xaml
 <MediaElement Source="{Binding MediaSource, Converter={StaticResource VideoSourceConverter}}"
               ShowsPlaybackControls="True" />
 ```
 
-ms-appdata URI スキームの詳細については、「 [ms-appdata](/windows/uwp/app-resources/uri-schemes#ms-appdata)」を参照してください。
+Ms appdata URI スキームの詳細については、「 [ms appdata](/windows/uwp/app-resources/uri-schemes#ms-appdata)」を参照してください。
 
-#### <a name="copying-a-media-file-to-the-apps-local-or-temporary-data-folder"></a>メディア ファイルをアプリのローカル または一時データ フォルダーにコピーする
+#### <a name="copying-a-media-file-to-the-apps-local-or-temporary-data-folder"></a>アプリのローカルまたは一時データフォルダーへのメディアファイルのコピー
 
-アプリのローカルまたは一時データ フォルダーに保存されているメディア ファイルを再生するには、アプリによってメディア ファイルをコピーする必要があります。 これは、たとえば、アプリ パッケージからメディア ファイルをコピーすることによって実現できます。
+アプリのローカルまたは一時データフォルダーに格納されているメディアファイルを再生するには、アプリによってメディアファイルがコピーされている必要があります。 これは、たとえば、アプリパッケージからメディアファイルをコピーすることによって実現できます。
 
 ```csharp
 // This method copies the video from the app package to the app data
@@ -219,17 +222,17 @@ public static async Task CopyVideoIfNotExists(string filename)
 ```
 
 > [!NOTE]
-> 上記のコード例では、Xamarin.Essentials`FileSystem`に含まれているクラスを使用しています。 詳細については、「 [Xamarin.Essentials: ファイル システム ヘルパー](~/essentials/file-system-helpers.md?context=xamarin%2Fxamarin-forms&tabs=android)」を参照してください。
+> 上記のコード例では、 `FileSystem` に含まれているクラスを使用して Xamarin.Essentials います。 詳細については、「 [ Xamarin.Essentials ファイルシステムヘルパー](~/essentials/file-system-helpers.md?context=xamarin%2Fxamarin-forms&tabs=android)」を参照してください。
 
-### <a name="play-media-from-the-device-library"></a>デバイス ライブラリからメディアを再生する
+### <a name="play-media-from-the-device-library"></a>デバイスライブラリからメディアを再生する
 
-最近のモバイル デバイスやデスクトップ コンピュータの多くは、デバイスのカメラとマイクを使用してビデオやオーディオを録画できます。 作成されたメディアは、デバイス上のファイルとして保存されます。 これらのファイルは、ライブラリから取得し、 によって[`MediaElement`](xref:Xamarin.Forms.MediaElement)再生できます。
+最新のモバイルデバイスやデスクトップコンピューターのほとんどは、デバイスのカメラとマイクを使用してビデオやオーディオを録画する機能を備えています。 作成されたメディアは、デバイスにファイルとして保存されます。 これらのファイルはライブラリから取得でき、によって再生さ [`MediaElement`](xref:Xamarin.Forms.MediaElement) れます。
 
-各プラットフォームには、ユーザーがデバイスのライブラリからメディアを選択できる機能が含まれています。 Xamarin.Forms では、プラットフォーム プロジェクトは、この機能を呼び出すことができます、[`DependencyService`](xref:Xamarin.Forms.DependencyService)クラスによって呼び出すことができます。
+各プラットフォームには、ユーザーがデバイスのライブラリからメディアを選択できる機能が含まれています。 では Xamarin.Forms 、プラットフォームプロジェクトはこの機能を呼び出すことができ、クラスによって呼び出すことができ [`DependencyService`](xref:Xamarin.Forms.DependencyService) ます。
 
-サンプル アプリケーションで使用されるビデオ 選択依存関係サービスは、ピッカーが`Stream`オブジェクトではなくファイル名を返す点を除いて、[画像ライブラリから写真を選ぶ](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)で定義されている依存関係とよく似ています。 共有コード プロジェクトでは、 という`IVideoPicker`名前の単一のメソッドを`GetVideoFileAsync`定義する インターフェイスを定義します。 各プラットフォームは、このインターフェイスをクラスに`VideoPicker`実装します。
+サンプルアプリケーションで使用されているビデオの選択の依存関係サービスは、オブジェクトではなくファイル名を返すことを除けば、[画像ライブラリからの写真の選択](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)によく似てい `Stream` ます。 共有コードプロジェクトでは、という名前の `IVideoPicker` 1 つのメソッドを定義するという名前のインターフェイスを定義し `GetVideoFileAsync` ます。 次に、各プラットフォームは、このインターフェイスをクラスに実装し `VideoPicker` ます。
 
-次のコード例は、デバイス ライブラリからメディア ファイルを取得する方法を示しています。
+次のコード例は、デバイスライブラリからメディアファイルを取得する方法を示しています。
 
 ```csharp
 string filename = await DependencyService.Get<IVideoPicker>().GetVideoFileAsync();
@@ -242,21 +245,21 @@ if (!string.IsNullOrWhiteSpace(filename))
 }
 ```
 
-ビデオ ピッキング依存関係サービスは、メソッドを`DependencyService.Get`呼び出してプラットフォーム プロジェクトのインターフェイス`IVideoPicker`の実装を取得することによって呼び出されます。 その`GetVideoFileAsync`後、メソッドがそのインスタンスで呼び出され、返されたファイル名を使用[`FileMediaSource`](xref:Xamarin.Forms.FileMediaSource)してオブジェクトを作成し、[`Source`](xref:Xamarin.Forms.MediaElement.Source)のプロパティに[`MediaElement`](xref:Xamarin.Forms.MediaElement)設定します。
+ビデオの選択依存サービスは、 `DependencyService.Get` プラットフォームプロジェクトでインターフェイスの実装を取得するためにメソッドを呼び出すことによって呼び出され `IVideoPicker` ます。 その `GetVideoFileAsync` 後、そのインスタンスでメソッドが呼び出され、返されたファイル名を使用してオブジェクトが作成され、 [`FileMediaSource`](xref:Xamarin.Forms.FileMediaSource) のプロパティに設定され [`Source`](xref:Xamarin.Forms.MediaElement.Source) [`MediaElement`](xref:Xamarin.Forms.MediaElement) ます。
 
-## <a name="change-video-aspect-ratio"></a>ビデオ縦横比を変更する
+## <a name="change-video-aspect-ratio"></a>ビデオの縦横比の変更
 
-この[`Aspect`](xref:Xamarin.Forms.MediaElement.Aspect)プロパティは、ビデオメディアを表示領域に合わせて拡大縮小する方法を決定します。 既定では、このプロパティは`AspectFit`列挙型のメンバーに設定されますが、列挙型のメンバーに[`Aspect`](xref:Xamarin.Forms.Aspect)設定できます。
+プロパティは、 [`Aspect`](xref:Xamarin.Forms.MediaElement.Aspect) 表示領域に合わせてビデオメディアがどのように拡大縮小されるかを決定します。 既定では、このプロパティは列挙体のメンバーに設定されて `AspectFit` いますが、列挙体のメンバーのいずれかに設定でき [`Aspect`](xref:Xamarin.Forms.Aspect) ます。
 
-- `AspectFit`は、縦横比を維持したまま、必要に応じてビデオが表示領域に収まるようにレターボックス化されることを示します。
-- `AspectFill`は、縦横比を維持したまま、ビデオが表示領域全体に表示されるようにクリップされることを示します。
-- `Fill`は、ビデオが表示領域全体に拡大されることを示します。
+- `AspectFit`縦横比を維持したまま、必要に応じて、表示領域に合わせるためにビデオが letterboxed されることを示します。
+- `AspectFill`縦横比を維持したまま、表示領域を塗りつぶすためにビデオがクリップされることを示します。
+- `Fill`ビデオを拡大して表示領域を塗りつぶすことを示します。
 
-## <a name="poll-for-position-data"></a>職位データのポーリング
+## <a name="poll-for-position-data"></a>位置データのポーリング
 
-バインド可能プロパティの[`Position`](xref:Xamarin.Forms.MediaElement.Position)プロパティ変更通知は、再生の開始と終了、一時停止などの重要な瞬間にのみ発生します。 したがって、`Position`プロパティへのデータ バインディングでは、正確な位置データが得られるわけではありません。 代わりに、タイマーを設定してプロパティをポーリングする必要があります。
+バインド可能なプロパティのプロパティ変更通知は、 [`Position`](xref:Xamarin.Forms.MediaElement.Position) 再生の開始と終了、および一時停止の発生など、キーの瞬間にのみ発生します。 したがって、プロパティへのデータバインディングで `Position` は、正確な位置データは生成されません。 代わりに、タイマーを設定し、プロパティをポーリングする必要があります。
 
-これを行うには、メディアの`OnAppearing`再生時に位置データを必要とするページの上書きが適しています。
+これを行うには、 `OnAppearing` メディアの再生時に位置データを必要とするページの上書きを使用することをお勧めします。
 
 ```csharp
 bool polling = true;
@@ -282,50 +285,50 @@ protected override void OnDisappearing()
 }
 ```
 
-この例では、オーバーライド`OnAppearing`は、1 秒ごとに`positionLabel`値を`Position`使用して更新するタイマーを開始します。 タイマー コールバックは、コールバックが返されるまで毎秒呼び出`false`されます。 ページ ナビゲーションが発生すると`OnDisappearing`、オーバーライドが実行され、タイマー コールバックが呼び出されなくなります。
+この例では、 `OnAppearing` オーバーライドにより、 `positionLabel` 1 秒ごとに値を更新するタイマーが開始され `Position` ます。 タイマーコールバックは、コールバックが戻るまで、1秒ごとに呼び出され `false` ます。 ページナビゲーションが発生すると、 `OnDisappearing` オーバーライドが実行され、呼び出されるタイマーコールバックが停止します。
 
-## <a name="understand-mediasource-types"></a>メディアソースの種類について
+## <a name="understand-mediasource-types"></a>MediaSource の種類について
 
-A[`MediaElement`](xref:Xamarin.Forms.MediaElement)は、リモート メディア[`Source`](xref:Xamarin.Forms.MediaElement.Source)ファイルまたはローカル メディア ファイルにプロパティを設定することで、メディアを再生できます。 プロパティ`Source`は 型[`MediaSource`](xref:Xamarin.Forms.MediaSource)で、このクラスは 2 つの静的メソッドを定義します。
+は、 [`MediaElement`](xref:Xamarin.Forms.MediaElement) [`Source`](xref:Xamarin.Forms.MediaElement.Source) プロパティをリモートまたはローカルのメディアファイルに設定することにより、メディアを再生できます。 `Source`プロパティは型 [`MediaSource`](xref:Xamarin.Forms.MediaSource) で、このクラスは2つの静的メソッドを定義します。
 
-- [`FromFile`](xref:Xamarin.Forms.MediaSource.FromFile*)は、引数[`MediaSource`](xref:Xamarin.Forms.MediaSource)からインスタンスを`string`返します。
-- [`FromUri`](xref:Xamarin.Forms.MediaSource.FromUri*)は、引数[`MediaSource`](xref:Xamarin.Forms.MediaSource)からインスタンスを`Uri`返します。
+- [`FromFile`](xref:Xamarin.Forms.MediaSource.FromFile*)は、 [`MediaSource`](xref:Xamarin.Forms.MediaSource) 引数からインスタンスを返し `string` ます。
+- [`FromUri`](xref:Xamarin.Forms.MediaSource.FromUri*)は、 [`MediaSource`](xref:Xamarin.Forms.MediaSource) 引数からインスタンスを返し `Uri` ます。
 
-また[`MediaSource`](xref:Xamarin.Forms.MediaSource)、このクラスには、`MediaSource`インスタンス`string`と`Uri`引数を返す暗黙の演算子もあります。
-
-> [!NOTE]
-> プロパティが[`Source`](xref:Xamarin.Forms.MediaElement.Source)XAML で設定されると、型コンバーターが呼び出され、 [`MediaSource`](xref:Xamarin.Forms.MediaSource) `string`または`Uri`からインスタンスを返す。
-
-この[`MediaSource`](xref:Xamarin.Forms.MediaSource)クラスには、2 つの派生クラスもあります。
-
-- [`UriMediaSource`](xref:Xamarin.Forms.UriMediaSource)を使用して、URI からリモート メディア ファイルを指定します。 このクラスには、[`Uri`](xref:Xamarin.Forms.UriMediaSource.Uri)に設定できるプロパティがあります`Uri`。
-- [`FileMediaSource`](xref:Xamarin.Forms.FileMediaSource)のローカル メディア ファイルを指定するために使用されます`string`。 このクラスには、[`File`](xref:Xamarin.Forms.FileMediaSource.File)に設定できるプロパティがあります`string`。 さらに、`string`このクラスには、 オブジェクトに変換する暗黙の`FileMediaSource`演算子と、オブジェクト`FileMediaSource`を`string`.
+また、クラスに [`MediaSource`](xref:Xamarin.Forms.MediaSource) は、 `MediaSource` 引数と引数からインスタンスを返す暗黙の演算子もあり `string` `Uri` ます。
 
 > [!NOTE]
-> XAML[`FileMediaSource`](xref:Xamarin.Forms.FileMediaSource)でオブジェクトが作成されると、型コンバーターが呼び出され、インスタンス[`FileMediaSource`](xref:Xamarin.Forms.FileMediaSource)が返されます`string`。
+> [`Source`](xref:Xamarin.Forms.MediaElement.Source)プロパティが XAML で設定されている場合、型コンバーターが呼び出され、 [`MediaSource`](xref:Xamarin.Forms.MediaSource) またはからインスタンスが返され `string` `Uri` ます。
 
-## <a name="determine-mediaelement-status"></a>メディア要素のステータスを決定する
+[`MediaSource`](xref:Xamarin.Forms.MediaSource)クラスには、次の2つの派生クラスもあります。
 
-この[`MediaElement`](xref:Xamarin.Forms.MediaElement)クラスは、 という名前[`CurrentState`](xref:Xamarin.Forms.MediaElement.CurrentState)の読み取り専用の[`MediaElementState`](xref:Xamarin.Forms.MediaElementState)バインド可能なプロパティを定義します。 このプロパティは、メディアの再生中または一時停止中かどうか、メディアを再生する準備ができていないかどうかなど、コントロールの現在の状態を示します。
+- [`UriMediaSource`](xref:Xamarin.Forms.UriMediaSource)。 URI からリモートメディアファイルを指定するために使用されます。 このクラスには [`Uri`](xref:Xamarin.Forms.UriMediaSource.Uri) 、に設定できるプロパティがあり `Uri` ます。
+- [`FileMediaSource`](xref:Xamarin.Forms.FileMediaSource)。からローカルメディアファイルを指定するために使用され `string` ます。 このクラスには [`File`](xref:Xamarin.Forms.FileMediaSource.File) 、に設定できるプロパティがあり `string` ます。 さらに、このクラスには、をオブジェクトに、オブジェクトをに変換するための暗黙的な演算子があり `string` `FileMediaSource` `FileMediaSource` `string` ます。
 
-列挙[`MediaElementState`](xref:Xamarin.Forms.MediaElementState)体は、次のメンバーを定義します。
+> [!NOTE]
+> [`FileMediaSource`](xref:Xamarin.Forms.FileMediaSource)オブジェクトが XAML で作成されると、型コンバーターが呼び出され、からインスタンスが返され [`FileMediaSource`](xref:Xamarin.Forms.FileMediaSource) `string` ます。
 
-- `Closed`は、メディア`MediaElement`が含まれていることを示します。
-- `Opening`は`MediaElement`、指定されたソースを検証し、読み込み中であることを示します。
-- `Buffering`は、再生`MediaElement`用にメディアをロードしていることを示します。 この[`Position`](xref:Xamarin.Forms.MediaElement.Position)状態では、そのプロパティは進みません。 ビデオを`MediaElement`再生していた場合は、最後に表示されたフレームが表示され続けます。
-- `Playing`はメディア`MediaElement`ソースを再生中であることを示します。
-- `Paused`は、その`MediaElement`プロパティを[`Position`](xref:Xamarin.Forms.MediaElement.Position)進めないことを示します。 ビデオを`MediaElement`再生している場合は、現在のフレームが表示され続けます。
-- `Stopped`は、メディア`MediaElement`が含まれているが、再生または一時停止していないことを示します。 その[`Position`](xref:Xamarin.Forms.MediaElement.Position)プロパティは 0 で、進みません。 ロードされたメディアがビデオの場合、`MediaElement`最初のフレームが表示されます。
+## <a name="determine-mediaelement-status"></a>MediaElement ステータスの決定
 
-トランスポート コントロールを使用する場合、通常[`CurrentState`](xref:Xamarin.Forms.MediaElement.CurrentState)はプロパティを調べる必要はありません。 [`MediaElement`](xref:Xamarin.Forms.MediaElement) ただし、このプロパティは、独自のトランスポート コントロールを実装するときに重要になります。
+[`MediaElement`](xref:Xamarin.Forms.MediaElement)クラスは、型の、という名前の読み取り専用のバインド可能なプロパティを定義 [`CurrentState`](xref:Xamarin.Forms.MediaElement.CurrentState) [`MediaElementState`](xref:Xamarin.Forms.MediaElementState) します。 このプロパティは、メディアを再生するか一時停止するか、メディアを再生する準備がまだ整っていないかなど、コントロールの現在の状態を示します。
 
-## <a name="implement-custom-transport-controls"></a>カスタム トランスポート コントロールを実装する
+[`MediaElementState`](xref:Xamarin.Forms.MediaElementState)列挙体は、次のメンバーを定義します。
 
-メディア プレーヤーのトランスポート コントロールには、**再生**、**一時停止**、**および停止**機能を実行するボタンがあります。 これらのボタンは一般的に、テキストではなく使い慣れたアイコンで識別されます。また、**再生**と**一時停止**機能は一般的に、1 つのボタンに結合されています。
+- `Closed`にメディアが `MediaElement` 含まれていないことを示します。
+- `Opening`が検証中で、指定されたソースを読み込もうとしていることを示し `MediaElement` ます。
+- `Buffering`が再生用にメディアを読み込んでいることを示し `MediaElement` ます。 [`Position`](xref:Xamarin.Forms.MediaElement.Position)この状態では、プロパティの処理は進められません。 がビデオを再生していた場合は、 `MediaElement` 最後に表示されたフレームが引き続き表示されます。
+- `Playing`がメディアソースを再生していることを示し `MediaElement` ます。
+- `Paused`がプロパティを進めることがないことを示し `MediaElement` [`Position`](xref:Xamarin.Forms.MediaElement.Position) ます。 が `MediaElement` ビデオを再生していた場合は、現在のフレームが引き続き表示されます。
+- `Stopped`に `MediaElement` メディアが含まれているが、再生または一時停止されていないことを示します。 この [`Position`](xref:Xamarin.Forms.MediaElement.Position) プロパティは0であり、事前にはありません。 読み込まれたメディアがビデオの場合、によって `MediaElement` 最初のフレームが表示されます。
 
-既定では、[`MediaElement`](xref:Xamarin.Forms.MediaElement)再生コントロールは無効になっています。 これにより、プログラムによって、または`MediaElement`独自のトランスポート コントロールを提供することによって制御できます。 これをサポート`MediaElement`するために、 、[`Play`](xref:Xamarin.Forms.MediaElement.Play)[`Pause`](xref:Xamarin.Forms.MediaElement.Pause)および メソッド[`Stop`](xref:Xamarin.Forms.MediaElement.Stop)が含まれます。
+一般に、 [`CurrentState`](xref:Xamarin.Forms.MediaElement.CurrentState) トランスポートコントロールを使用する場合は、プロパティを調べる必要はありません [`MediaElement`](xref:Xamarin.Forms.MediaElement) 。 ただし、独自のトランスポートコントロールを実装する場合は、このプロパティが重要になります。
 
-次の XAML の例は、カスタム[`MediaElement`](xref:Xamarin.Forms.MediaElement)トランスポート コントロールを含むページを示しています。
+## <a name="implement-custom-transport-controls"></a>カスタムトランスポートコントロールを実装する
+
+Media player のトランスポートコントロールには、**再生**、**一時停止**、および**停止**の機能を実行するボタンが含まれています。 これらのボタンは一般的に、テキストではなく使い慣れたアイコンで識別されます。また、**再生**と**一時停止**機能は一般的に、1 つのボタンに結合されています。
+
+既定では、 [`MediaElement`](xref:Xamarin.Forms.MediaElement) 再生コントロールは無効になっています。 これにより、をプログラムで制御したり、独自のトランスポートコントロールを指定したりすることができ `MediaElement` ます。 このサポートでは、、、 `MediaElement` およびメソッドが含まれ [`Play`](xref:Xamarin.Forms.MediaElement.Play) [`Pause`](xref:Xamarin.Forms.MediaElement.Pause) [`Stop`](xref:Xamarin.Forms.MediaElement.Stop) ます。
+
+次の XAML の例は、およびカスタムトランスポートコントロールを含むページを示してい [`MediaElement`](xref:Xamarin.Forms.MediaElement) ます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -374,9 +377,9 @@ A[`MediaElement`](xref:Xamarin.Forms.MediaElement)は、リモート メディ�
 </ContentPage>
 ```
 
-この例では、カスタム トランスポート コントロールがオブジェクト[`Button`](xref:Xamarin.Forms.Button)として定義されています。 `Button`ただし、2 つのオブジェクトのみが存在し、最初`Button`のオブジェクトは**再生**と**一時停止**を表`Button`し、2 つ目は**Stop**を表します。 [`DataTrigger`](xref:Xamarin.Forms.DataTrigger)オブジェクトは、ボタンを有効または無効にしたり、最初のボタンを **[再生**] と [**一時停止**] の間で切り替えたりするために使用されます。 データ トリガの詳細については、「 [Xamarin.Forms トリガー](~/xamarin-forms/app-fundamentals/triggers.md)」を参照してください。
+この例では、カスタムトランスポートコントロールはオブジェクトとして定義されてい [`Button`](xref:Xamarin.Forms.Button) ます。 ただし、オブジェクトは2つだけです `Button` 。最初のオブジェクトは `Button` **Play**と**Pause**、2番目は `Button` **停止**を表します。 [`DataTrigger`](xref:Xamarin.Forms.DataTrigger)オブジェクトは、ボタンを有効または無効にしたり、**再生**と**一時停止**の間で最初のボタンを切り替えたりするために使用されます。 データトリガーの詳細については、「 [ Xamarin.Forms トリガー](~/xamarin-forms/app-fundamentals/triggers.md)」を参照してください。
 
-分離コード ファイルには、イベントのハンドラーがあります[`Clicked`](xref:Xamarin.Forms.Button.Clicked)。
+分離コードファイルには、イベントのハンドラーがあり [`Clicked`](xref:Xamarin.Forms.Button.Clicked) ます。
 
 ```csharp
 void OnPlayPauseButtonClicked(object sender, EventArgs args)
@@ -398,26 +401,26 @@ void OnStopButtonClicked(object sender, EventArgs args)
 }
 ```
 
-**再生**ボタンを押すと、有効になってしまいます。
+再生ボタンが有効になったら、**再生ボタンを**押して再生を開始できます。
 
-[![iOS と Android で、カスタム トランスポート コントロールを持つ MediaElement のスクリーンショット](mediaelement-images/custom-transport-playback.png "ビデオを再生するメディア要素")](mediaelement-images/custom-transport-playback-large.png#lightbox "ビデオを再生するメディア要素")
+[![IOS と Android でのカスタムトランスポートコントロールを使用した MediaElement のスクリーンショット](mediaelement-images/custom-transport-playback.png "ビデオを再生する MediaElement")](mediaelement-images/custom-transport-playback-large.png#lightbox "ビデオを再生する MediaElement")
 
-**[一時停止**]ボタンを押すと、再生が一時停止します。
+[**一時停止**] ボタンを押すと、再生が一時停止します。
 
-[![iOSとアンドロイドで、再生が一時停止したMediaElementのスクリーンショット](mediaelement-images/custom-transport-paused.png "一時停止したビデオを含むメディア要素")](mediaelement-images/custom-transport-paused-large.png#lightbox "一時停止したビデオを含むメディア要素")
+[![再生が一時停止されている MediaElement のスクリーンショット (iOS と Android)](mediaelement-images/custom-transport-paused.png "一時停止中のビデオを含む MediaElement")](mediaelement-images/custom-transport-paused-large.png#lightbox "一時停止中のビデオを含む MediaElement")
 
-**停止**ボタンを押すと再生が停止し、メディアファイルの位置が先頭に戻ります。
+[**停止**] ボタンを押すと、再生が停止し、メディアファイルの開始位置が返されます。
 
-## <a name="implement-a-custom-position-bar"></a>カスタム位置バーを実装する
+## <a name="implement-a-custom-position-bar"></a>カスタムの位置バーを実装する
 
-各プラットフォームで実装されているトランスポート コントロールには、位置バーが含まれます。 このバーはスライダーに似ており、メディアの現在の位置をその合計期間内に表示します。 さらに、位置バーを操作して、ビデオ内の新しい位置に前後に移動することもできます。
+各プラットフォームで実装されているトランスポート コントロールには、位置バーが含まれます。 このバーは、スライダーに似ており、その合計期間内のメディアの現在の場所を示しています。 さらに、位置バーを操作して、ビデオ内の新しい位置に前方または後方に移動できます。
 
-カスタム位置バーを実装するには、メディアの継続時間と現在の再生位置を知る必要があります。 このデータは[`Duration`](xref:Xamarin.Forms.MediaElement.Duration)、 および[`Position`](xref:Xamarin.Forms.MediaElement.Position)プロパティで使用できます。
+カスタムの位置バーを実装するには、メディアの期間と現在の再生位置を把握しておく必要があります。 このデータは、 [`Duration`](xref:Xamarin.Forms.MediaElement.Duration) プロパティとプロパティで使用でき [`Position`](xref:Xamarin.Forms.MediaElement.Position) ます。
 
 > [!IMPORTANT]
-> 正確[`Position`](xref:Xamarin.Forms.MediaElement.Position)な位置データを取得するには、 をポーリングする必要があります。 詳細については、「ポジション[データのポーリング](#poll-for-position-data)」を参照してください。
+> [`Position`](xref:Xamarin.Forms.MediaElement.Position)正確な位置データを取得するには、をポーリングする必要があります。 詳細については、「[位置データのポーリング](#poll-for-position-data)」を参照してください。
 
-カスタム位置バーは、次の[`Slider`](xref:Xamarin.Forms.Slider)例に示すように を使用して実装できます。
+次の例に示すように、を使用してカスタムの位置バーを実装でき [`Slider`](xref:Xamarin.Forms.Slider) ます。
 
 ```csharp
 public class PositionSlider : Slider
@@ -480,14 +483,14 @@ public class PositionSlider : Slider
 }
 ```
 
-この`PositionSlider`クラスは、独自`Duration`の`Position`バインド可能なプロパティと、`TimeToEnd`バインド可能なプロパティを定義します。 3 つのプロパティはすべて、`TimeSpan`の種類です。 プロパティのプロパティ変更ハンドラーは、`Duration`のプロパティ`Maximum`[`Slider`](xref:Xamarin.Forms.Slider)を値のプロパティに`TotalSeconds`設定します`TimeSpan`。 プロパティ`TimeToEnd`は`Duration`、 プロパティ`Position`の変更に基づいて計算され、メディアの再生時間から開始され、再生が進むにつれてゼロに減少します。
+クラスは、 `PositionSlider` 独自の `Duration` バインド可能 `Position` なプロパティと、バインド可能なプロパティを定義し `TimeToEnd` ます。 3つのプロパティはすべて型 `TimeSpan` です。 プロパティのプロパティ変更ハンドラーは `Duration` `Maximum` 、のプロパティ [`Slider`](xref:Xamarin.Forms.Slider) を `TotalSeconds` 値のプロパティに設定し `TimeSpan` ます。 プロパティは、 `TimeToEnd` プロパティとプロパティの変更に基づいて計算され、 `Duration` `Position` メディアの期間から開始し、再生が進むと0に減少します。
 
-メディアを新しい位置に[`Slider`](xref:Xamarin.Forms.Slider)進める`Slider`か、または反転する必要があることを示すために、 が移動されたときに、基になるから更新されます。 `PositionSlider` これは、コンストラクターの`PropertyChanged`ハンドラーで検出されます`PositionSlider`。 このハンドラーでは `Value` プロパティの変更が確認され、`Position` プロパティと異なる場合は、`Position` プロパティが `Value` プロパティから設定されます。 を使用する方法の[`Slider`](xref:Xamarin.Forms.Slider)詳細については[、Xamarin.Forms スライダー](~/xamarin-forms/user-interface/slider.md)
+が移動されると、は `PositionSlider` 基になるから更新され [`Slider`](xref:Xamarin.Forms.Slider) ます。これは、メディアを高度にするか、 `Slider` 新しい位置に戻す必要があることを示します。 これは、コンストラクターのハンドラーで検出され `PropertyChanged` `PositionSlider` ます。 このハンドラーでは `Value` プロパティの変更が確認され、`Position` プロパティと異なる場合は、`Position` プロパティが `Value` プロパティから設定されます。 の使用方法の詳細については [`Slider`](xref:Xamarin.Forms.Slider) 、「」を参照[ Xamarin.Forms ](~/xamarin-forms/user-interface/slider.md)してください。
 
 > [!NOTE]
-> Androidでは、[`Slider`](xref:Xamarin.Forms.Slider)設定に関係なく、1000の個別の`Minimum``Maximum`ステップしかありません。 メディアの長さが 1000 秒を超える場合、2 つの異なる`Position`値`Value`が`Slider`同じ . このため、上記のコードでは、新しいポジションと既存のポジションが全期間の100分の1を超えているかどうかをチェックしています。
+> Android では、 [`Slider`](xref:Xamarin.Forms.Slider) との設定に関係なく、には1000の個別の手順しかありませ `Minimum` `Maximum` ん。 メディアの長さが1000秒を超える場合、2つ `Position` の異なる値がの同じ値に対応し `Value` `Slider` ます。 このため、上記のコードでは、新しい位置と既存の位置が全体の期間の 1 ~ 100 を超えていることを確認しています。
 
-次の例は、`PositionSlider`ページで使用されている例を示しています。
+次の例は、 `PositionSlider` ページで使用されているを示しています。
 
 ```xaml
 <controls:PositionSlider x:Name="positionSlider"
@@ -504,17 +507,17 @@ public class PositionSlider : Slider
 </controls:PositionSlider>
 ```
 
-この例では、`Duration`のプロパティは`PositionSlider`、 のプロパティに[`Duration`](xref:Xamarin.Forms.MediaElement.Duration)データ バインドされます[`MediaElement`](xref:Xamarin.Forms.MediaElement)。 プロパティが[`Value`](xref:Xamarin.Forms.Slider.Value)[`Slider`](xref:Xamarin.Forms.Slider)変更されると、イベントが`ValueChanged`発生し、`OnPositionSliderValueChanged`ハンドラーが実行されます。 このハンドラーは、[`MediaElement.Position`](xref:Xamarin.Forms.MediaElement.Position)プロパティをプロパティの値に`PositionSlider.Position`設定します。 したがって、メディア再生`Slider`位置の結果をドラッグすると、次のようになります。
+この例では、の `Duration` プロパティは `PositionSlider` 、のプロパティにデータバインドされてい [`Duration`](xref:Xamarin.Forms.MediaElement.Duration) [`MediaElement`](xref:Xamarin.Forms.MediaElement) ます。 [`Value`](xref:Xamarin.Forms.Slider.Value)のプロパティが変更されると、 [`Slider`](xref:Xamarin.Forms.Slider) イベントが発生し、 `ValueChanged` `OnPositionSliderValueChanged` ハンドラーが実行されます。 このハンドラーは、プロパティを [`MediaElement.Position`](xref:Xamarin.Forms.MediaElement.Position) プロパティの値に設定し `PositionSlider.Position` ます。 そのため、をドラッグすると、 `Slider` 次のように変更されます。
 
-[![iOS と Android で、カスタムの位置バーを持つ MediaElement のスクリーンショット](mediaelement-images/custom-position-bar.png "カスタム位置バーを持つメディア要素")](mediaelement-images/custom-position-bar-large.png#lightbox "カスタム位置バーを持つメディア要素")
+[![カスタム位置バーがある MediaElement のスクリーンショット (iOS と Android)](mediaelement-images/custom-position-bar.png "カスタム位置バーを持つ MediaElement")](mediaelement-images/custom-position-bar-large.png#lightbox "カスタム位置バーを持つ MediaElement")
 
-また、メディアが[`DataTrigger`](xref:Xamarin.Forms.DataTrigger)バッファリングされているときにオブジェクトを`PositionSlider`使用して を無効にします。 データ トリガの詳細については、「 [Xamarin.Forms トリガー](~/xamarin-forms/app-fundamentals/triggers.md)」を参照してください。
+また、オブジェクトを [`DataTrigger`](xref:Xamarin.Forms.DataTrigger) 使用して、 `PositionSlider` メディアがバッファリングされるときにを無効にします。 データトリガーの詳細については、「 [ Xamarin.Forms トリガー](~/xamarin-forms/app-fundamentals/triggers.md)」を参照してください。
 
-## <a name="implement-a-custom-volume-control"></a>カスタム ボリューム コントロールを実装する
+## <a name="implement-a-custom-volume-control"></a>カスタムボリュームコントロールを実装する
 
-各プラットフォームによって実装されるメディア再生コントロールには、ボリュームバーが含まれます。 このバーはスライダーに似ており、メディアのボリュームを示します。 また、ボリュームバーを操作して、ボリュームを増減することもできます。
+各プラットフォームによって実装されるメディア再生コントロールには、ボリュームバーがあります。 このバーは、スライダーに似ており、メディアのボリュームを示しています。 さらに、ボリュームバーを操作してボリュームを増減することもできます。
 
-カスタム ボリューム バーは、次の[`Slider`](xref:Xamarin.Forms.Slider)例に示すように を使用して実装できます。
+カスタムのボリュームバーは、 [`Slider`](xref:Xamarin.Forms.Slider) 次の例に示すように、を使用して実装できます。
 
 ```xaml
 <StackLayout>
@@ -528,18 +531,18 @@ public class PositionSlider : Slider
 </StackLayout>
 ```
 
-この例では、データ[`Slider`](xref:Xamarin.Forms.Slider)はその`Value`プロパティを のプロパティに[`Volume`](xref:Xamarin.Forms.MediaElement.Volume)バインドします[`MediaElement`](xref:Xamarin.Forms.MediaElement)。 プロパティが`TwoWay`バインディングを使用`Volume`するため、これは可能です。 したがって、プロパティを`Value`変更すると、プロパティが`Volume`変更されます。
+この例では、 [`Slider`](xref:Xamarin.Forms.Slider) データは `Value` プロパティをのプロパティにバインドし [`Volume`](xref:Xamarin.Forms.MediaElement.Volume) [`MediaElement`](xref:Xamarin.Forms.MediaElement) ます。 これが可能なのは、 `Volume` プロパティがバインディングを使用するためです `TwoWay` 。 したがって、プロパティを変更すると、 `Value` プロパティが変更され `Volume` ます。
 
 > [!NOTE]
-> プロパティ[`Volume`](xref:Xamarin.Forms.MediaElement.Volume)には、値が 0.0 以上、1.0 以下であることを保証する、vlidation コールバックがあります。
+> プロパティには、 [`Volume`](xref:Xamarin.Forms.MediaElement.Volume) その値が0.0 以上で1.0 以下であることを保証する、vlidation コールバックが含まれています。
 
-を使用する方法の[`Slider`](xref:Xamarin.Forms.Slider)詳細については[、Xamarin.Forms スライダー](~/xamarin-forms/user-interface/slider.md)
+の使用方法の詳細については [`Slider`](xref:Xamarin.Forms.Slider) 、「」を参照[ Xamarin.Forms ](~/xamarin-forms/user-interface/slider.md)してください。
 
 ## <a name="related-links"></a>関連リンク
 
-- [デモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-mediaelementdemos/)
+- [MediaElementDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-mediaelementdemos/)
 - [URI スキーム](/windows/uwp/app-resources/uri-schemes)
 - [Xamarin.Forms のトリガー](~/xamarin-forms/app-fundamentals/triggers.md)
-- [Xamarin.フォームスライダー](~/xamarin-forms/user-interface/slider.md)
-- [アンドロイド:サポートされているメディア形式](https://developer.android.com/guide/topics/media/media-formats)
+- [Xamarin.FormsSlider](~/xamarin-forms/user-interface/slider.md)
+- [Android: サポートされているメディア形式](https://developer.android.com/guide/topics/media/media-formats)
 - [UWP: サポートされているコーデック](/windows/uwp/audio-video-camera/supported-codecs)

@@ -1,18 +1,22 @@
 ---
-title: Xamarin.Essentials Color Converters
+title: Xamarin.Essentials の色のコンバーター
 description: Xamarin.Essentials の ColorConverters クラスには、System.Drawing.Color と併用できるヘルパー メソッドと拡張メソッドがいくつかあります。
 ms.assetid: B10428D6-89E2-4714-A39F-7E6E626391B2
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/06/2020
-ms.openlocfilehash: 5d64967dfaa6ce7ef746a97f739cac67f5102fc2
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.custom: video
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ff6a5bed600f45dcd48867596a7fc8aa45decb82
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77545164"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802445"
 ---
-# <a name="xamarinessentials-color-converters"></a>Xamarin.Essentials:Color Converters
+# <a name="xamarinessentials-color-converters"></a>Xamarin.Essentials:色のコンバーター
 
 Xamarin.Essentials の **ColorConverters** クラスには、System.Drawing.Color 用のヘルパー メソッドがいくつかあります。
 
@@ -22,13 +26,13 @@ Xamarin.Essentials の **ColorConverters** クラスには、System.Drawing.Colo
 
 ## <a name="using-color-converters"></a>Color Converters の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
 ```
 
-`System.Drawing.Color` の使用時、Xamarin.Forms の組み込みコンバーターを使用し、Hsl、Hex、UInt から色を作成できます。
+`System.Drawing.Color` の使用時には、Xamarin.Forms の組み込みコンバーターを使用し、Hsl、Hex、UInt から色を作成できます。
 
 ```csharp
 var blueHex = ColorConverters.FromHex("#3498db");
@@ -79,7 +83,13 @@ var system = platform.ToSystemColor();
 
 ## <a name="api"></a>API
 
-- [Color Converters のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Types/ColorConverters.shared.cs)
+- [Color Converters のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Types/ColorConverters.shared.cs)
 - [Color Converters の API ドキュメント](xref:Xamarin.Essentials.ColorConverters)
-- [Color Extensions のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Types/ColorConverters.shared.cs)
+- [Color Extensions のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Types/ColorConverters.shared.cs)
 - [Color Extensions の API ドキュメント](xref:Xamarin.Essentials.ColorExtensions)
+
+## <a name="related-video"></a>関連ビデオ
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Color-Converters-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

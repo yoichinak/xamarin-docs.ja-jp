@@ -7,26 +7,26 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 9f2c8fb235603c5dac37fc0c25be2f070d7df98e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 321ea87bfa4f460c4eaab31ef2ede6f3eb1b927f
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022157"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573574"
 ---
 # <a name="working-with-tvos-stacked-views-in-xamarin"></a>Xamarin での tvOS 積み上げビューの使用
 
-スタックビューコントロール (`UIStackView`) は、自動レイアウトクラスとサイズクラスの機能を活用して、サブビューのスタックを水平方向または垂直方向に管理します。これにより、Apple TV デバイスのコンテンツの変更と画面のサイズに動的に応答します。
+スタックビューコントロール () は、 `UIStackView` 自動レイアウトクラスとサイズクラスの機能を活用して、サブビューのスタックを水平方向または垂直方向に管理します。これにより、APPLE TV デバイスのコンテンツの変更と画面のサイズに動的に応答します。
 
 スタックビューにアタッチされているすべてのサブビューのレイアウトは、軸、分布、配置、スペースなどの開発者が定義したプロパティに基づいて、it 部門によって管理されます。
 
 [![](stacked-views-images/stacked01.png "Subview layout diagram")](stacked-views-images/stacked01.png#lightbox)
 
-TvOS アプリで `UIStackView` を使用する場合、開発者は、iOS デザイナーのストーリーボード内でサブビューを定義するか、またはコードでC#サブビューを追加および削除することができます。
+TvOS アプリでを使用する場合、 `UIStackView` 開発者は、IOS デザイナーのストーリーボード内でサブビューを定義するか、C# コードでサブビューを追加および削除することができます。
 
 ## <a name="about-stacked-view-controls"></a>積み上げビューコントロールの概要
 
-`UIStackView` は、非レンダリングコンテナービューとして設計されているため、`UIView`の他のサブクラスと同様にキャンバスに描画されることはありません。 `BackgroundColor` や `DrawRect` のオーバーライドなどのプロパティを設定しても、視覚効果はありません。
+は `UIStackView` 非レンダリングコンテナービューとして設計されているため、の他のサブクラスと同様にキャンバスに描画されることはありません `UIView` 。 やのオーバーライドなどのプロパティを設定しても `BackgroundColor` 、 `DrawRect` 視覚効果はありません。
 
 スタックビューでサブビューのコレクションをどのように配置するかを制御するプロパティがいくつかあります。
 
@@ -34,40 +34,40 @@ TvOS アプリで `UIStackView` を使用する場合、開発者は、iOS デ�
 - **Alignment** –スタックビュー内でサブビューをどのように配置するかを制御します。
 - **Distribution** –スタックビュー内でサブビューのサイズを設定する方法を制御します。
 - **スペーシング**–スタックビュー内の各サブビュー間の最小限の空白を制御します。
-- **ベースライン相対**– `true`場合、各サブビューの上下の間隔は、そのベースラインから派生します。
-- **[相対レイアウト]** -標準レイアウトの余白を基準にサブビューを配置します。
+- **ベースライン相対**–の場合 `true` 、各サブビューの上下の間隔は、そのベースラインから派生します。
+- [**相対レイアウト**]-標準レイアウトの余白を基準にサブビューを配置します。
 
 通常は、少数のサブビューを配置するためにスタックビューを使用します。 1つ以上のスタックビューを相互に入れ子にすることで、より複雑なユーザーインターフェイスを作成できます。
 
 サブビューに制約を追加することで、Ui の外観をさらに細かく調整できます (たとえば、高さや幅を制御します)。 ただし、スタックビュー自体によって導入された制約に競合する制約を含めないように注意する必要があります。
 
-<a name="Auto-Layout-and-Size-Classes" />
+<a name="Auto-Layout-and-Size-Classes"></a>
 
 ## <a name="auto-layout-and-size-classes"></a>自動レイアウトとサイズのクラス
 
 サブビューがスタックビューに追加されると、そのレイアウトは、[自動レイアウト] と [サイズ] クラスを使用して、配置されたビューの位置とサイズを示す、そのスタックビューによって完全に制御されます。
 
-スタックビューでは、コレクション内の最初と最後のサブビューが、垂直スタックビューの**上端**と**下端**、および水平スタックビューの**左端**と**右端**に_固定_されます。 [`LayoutMarginsRelativeArrangement`] プロパティを [`true`] に設定すると、ビューでは、そのサブビューがエッジではなく関連する余白にピン留めされます。
+スタックビューでは、コレクション内の最初と最後のサブビューが、垂直スタックビューの**上端**と**下端**、および水平スタックビューの**左端**と**右端**に_固定_されます。 プロパティをに設定した場合、 `LayoutMarginsRelativeArrangement` `true` ビューでは、境界線がエッジではなく関連する余白にピン留めされます。
 
-スタックビューは、定義された `Axis` (`FillEqually Distribution`を除く) に沿ってサブビューのサイズを計算するときに、サブビューの `IntrinsicContentSize` プロパティを使用します。 `FillEqually Distribution` では、すべてのサブビューのサイズが同じになるようにサイズを変更します。これにより、`Axis`に沿ってスタックビューが塗りつぶされます。
+スタックビューは、 `IntrinsicContentSize` 定義されたに沿ってサブビューのサイズを計算するときにサブビューのプロパティを使用し `Axis` ます (を除く `FillEqually Distribution` )。 では、すべてのサブビューの `FillEqually Distribution` サイズが同じになるようにサイズが変更されるため、に沿ってスタックビューが塗りつぶされ `Axis` ます。
 
-`Fill Alignment`を除き、スタックビューでは、サブビューの `IntrinsicContentSize` プロパティを使用して、指定された `Axis`に対して垂直にビューのサイズを計算します。 `Fill Alignment`では、すべてのサブビューのサイズが変更され、特定の `Axis`に垂直方向にスタックビューが表示されます。
+を除き、 `Fill Alignment` スタックビューはサブビューのプロパティを使用して `IntrinsicContentSize` 、指定されたに対するビューのサイズを垂直に計算し `Axis` ます。 では、すべてのサブビューのサイズが変更され、指定されたに対して `Fill Alignment` スタックビューが垂直になり `Axis` ます。
 
-<a name="Positioning-and-Sizing-the-Stack-View" />
+<a name="Positioning-and-Sizing-the-Stack-View"></a>
 
 ## <a name="positioning-and-sizing-the-stack-view"></a>スタックビューの配置とサイズ変更
 
-スタックビューには、サブビューのレイアウト全体の制御があります (`Axis` や `Distribution`などのプロパティに基づいています) が、[自動レイアウト] と [サイズ] クラスを使用して、その親ビュー内でスタックビュー (`UIStackView`) を配置する必要があります。
+スタックビューには、サブビューのレイアウト全体の制御があります (やなどのプロパティに基づいてい `Axis` `Distribution` ます) が、 `UIStackView` Auto Layout クラスと Size クラスを使用して、その親ビュー内でスタックビュー () を配置する必要があります。
 
 一般に、これは、展開とコントラクトを行うためにスタックビューの少なくとも2つの端を固定して、その位置を定義することを意味します。 追加の制約がなければ、次のように、すべてのサブビューに合わせてスタックビューのサイズが自動的に変更されます。
 
-- `Axis` のサイズは、すべてのサブビューのサイズに加え、各サブビュー間に定義されているすべての領域の合計になります。
-- `LayoutMarginsRelativeArrangement` プロパティが `true`の場合、スタックビューのサイズには余白用の領域も含まれます。
-- `Axis` に垂直なサイズは、コレクション内の最大のサブビューに設定されます。
+- のサイズは、 `Axis` すべてのサブビューのサイズに加え、各サブビュー間に定義されているすべての領域の合計になります。
+- プロパティがの場合は `LayoutMarginsRelativeArrangement` `true` 、スタックビューのサイズに余白用の領域も含まれます。
+- に垂直のサイズが、 `Axis` コレクション内の最大のサブビューに設定されます。
 
-また、スタックビューの**高さ**と**幅**に対して制約を指定することもできます。 この場合、`Distribution` と `Alignment` のプロパティによって決定されるように、スタックビューで指定された領域を埋めるようにサブビューがレイアウト (サイズ設定) されます。
+また、スタックビューの**高さ**と**幅**に対して制約を指定することもできます。 この場合、サブビューは、およびプロパティによって決定されるスタックビューで指定された領域を埋めるようにレイアウト (サイズ設定) され `Distribution` `Alignment` ます。
 
-`BaselineRelativeArrangement` プロパティが `true`の場合、**上**、**下**、または **中央*- **Y**位置を使用するのではなく、最初または最後のサブビューのベースラインに基づいてサブビューがレイアウトされます。 これらは、次のようにスタックビューのコンテンツで計算されます。
+プロパティがの場合、サブビューは、 `BaselineRelativeArrangement` `true` **上**、**下**、または **中央*の Y 位置を使用するのではなく、最初または最後のサブビューのベースラインに基づいてレイアウトされ -  **Y**ます。 これらは、次のようにスタックビューのコンテンツで計算されます。
 
 - 垂直スタックビューでは、最初のベースラインの最初のサブビューと最後のサブビューが返されます。 これらのサブビューがそれ自体のスタックビューである場合は、その最初または最後のベースラインが使用されます。
 - 水平スタックビューでは、最初と最後のベースラインの両方に対して最も高いサブビューが使用されます。 最も高いビューがスタックビューでもある場合は、ベースラインとして最も基本的なサブビューが使用されます。
@@ -75,26 +75,26 @@ TvOS アプリで `UIStackView` を使用する場合、開発者は、iOS デ�
 > [!IMPORTANT]
 > ベースラインの配置は、拡張または圧縮されたサブビューのサイズに対しては機能しません。これは、ベースラインが間違った位置に計算されるためです。 ベースラインの配置では、サブビューの**高さ**が組み込みコンテンツビューの**高さ**と一致していることを確認します。
 
-<a name="Common-Stack-View-Uses" />
+<a name="Common-Stack-View-Uses"></a>
 
 ## <a name="common-stack-view-uses"></a>一般的なスタックビューの使用
 
 スタックビューコントロールでは、いくつかのレイアウトの種類に対応しています。 Apple によると、一般的な使用方法がいくつかあります。
 
-- **軸に沿ってサイズを定義**します。スタックビューの `Axis` と隣接する端のどちらかに沿って両方の端を固定すると、そのサブビューで定義されている領域に合わせて、軸に沿ってスタックビューが拡大されます。
+- **軸に沿ってサイズを定義**します。スタックビューの端と隣接する端のどちらかを固定して位置を設定することにより、そのサブビュー `Axis` で定義されている領域に合わせて、スタックビューが軸に沿って拡大されます。
 - サブ**ビューの位置を定義**します。これは、親ビューのスタックビューの隣接する端にピン留めすることによって、両方のディメンションで、サブビューが含まれていることに合わせてスタックビューを拡大します。
 - スタック**のサイズと位置を定義**する–スタックビューの4つのすべての辺を親ビューに固定することで、スタックビューで定義されている領域に基づいてサブビューが配置されます。
-- **軸の垂直方向のサイズを定義**します。これにより、スタックビューの `Axis` に垂直方向にピン留めし、軸に沿って位置を設定することにより、そのサブビューで定義されている空間に合わせて、スタックビューが軸に対して垂直方向に拡大されます。
+- **軸の垂直方向のサイズを定義**します。スタックビューに垂直方向にピン留めすることにより、軸に沿って位置を設定することによって、スタックビューは、サブビュー `Axis` で定義されている領域に合わせて、軸に対して垂直方向に拡大されます。
 
-<a name="Stack-Views-and-Storyboards" />
+<a name="Stack-Views-and-Storyboards"></a>
 
 ## <a name="stack-views-and-storyboards"></a>スタックビューとストーリーボード
 
 TvOS アプリでスタックビューを操作する最も簡単な方法は、iOS デザイナーを使用してアプリの UI に追加することです。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. **Solution Pad**で、`Main.storyboard` ファイルをダブルクリックして開き、編集します。
+1. **Solution Pad**で、ファイルをダブルクリック `Main.storyboard` して開き、編集します。
 1. スタックビューに追加する個々の要素のレイアウトをデザインします。
 
     [![](stacked-views-images/layout01.png "Element layout example")](stacked-views-images/layout01.png#lightbox)
@@ -102,10 +102,10 @@ TvOS アプリでスタックビューを操作する最も簡単な方法は、
 1. 必要な数のコピー (この場合は4つ) を作成します。
 
     [![](stacked-views-images/layout02.png "The required number of copies")](stacked-views-images/layout02.png#lightbox)
-1. **[ツールボックス]** から**スタックビュー**をドラッグし、ビューにドロップします。
+1. [**ツールボックス**] から**スタックビュー**をドラッグし、ビューにドロップします。
 
     [![](stacked-views-images/layout03.png "A Stack View")](stacked-views-images/layout03.png#lightbox)
-1. [スタック] ビューを選択し、 **Properties Pad**の [**ウィジェット] タブ**で、 **[配置]** の **[塗りつぶし]** を選択し、 **[分布]** に**均等**に入力して、 **[間隔]** に「`25`」と入力します。
+1. [スタック] ビューを選択し、 **Properties Pad**の [**ウィジェット] タブ**で、[**配置**] の [**塗りつぶし**] を選択し、**配布**に**均等**に入力して、[間隔] に「」と入力し `25` ます。 **Spacing**
 
     [![](stacked-views-images/layout04.png "The Widget Tab")](stacked-views-images/layout04.png#lightbox)
 1. 必要に応じて、画面上にスタックビューを配置し、制約を追加して必要な場所に保持します。
@@ -113,12 +113,12 @@ TvOS アプリでスタックビューを操作する最も簡単な方法は、
 
     [![](stacked-views-images/layout05.png "The individual elements in the Stack View")](stacked-views-images/layout05.png#lightbox)
 1. レイアウトが調整され、上で設定した属性に基づいて、要素がスタックビューに配置されます。
-1. コードC#内で UI コントロールを操作するには、**プロパティエクスプローラー**の [**ウィジェット] タブ**で**名前**を割り当てます。
+1. C# コードで UI コントロールを操作するには、**プロパティエクスプローラー**の [**ウィジェット] タブ**で**名前**を割り当てます。
 1. 変更内容を保存します。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. **ソリューションエクスプローラー**で、`Main.storyboard` ファイルをダブルクリックして開き、編集します。
+1. **ソリューションエクスプローラー**で、ファイルをダブルクリック `Main.storyboard` して開き、編集します。
 1. スタックビューに追加する個々の要素のレイアウトをデザインします。
 
     [![](stacked-views-images/layout01.png "Example element layout")](stacked-views-images/layout01.png#lightbox)
@@ -126,10 +126,10 @@ TvOS アプリでスタックビューを操作する最も簡単な方法は、
 1. 必要な数のコピー (この場合は4つ) を作成します。
 
     [![](stacked-views-images/layout02.png "The required number of copies")](stacked-views-images/layout02.png#lightbox)
-1. **[ツールボックス]** から**スタックビュー**をドラッグし、ビューにドロップします。
+1. [**ツールボックス**] から**スタックビュー**をドラッグし、ビューにドロップします。
 
     [![](stacked-views-images/layout03-vs.png "A Stack View")](stacked-views-images/layout03-vs.png#lightbox)
-1. スタックビューを選択し、**プロパティエクスプローラー**の [**ウィジェット] タブ**で、 **[配置]** の **[塗りつぶし]** を選択し、**配布**に**均等**に入力して、 **[間隔]** に「`25`」と入力します。
+1. スタックビューを選択し、**プロパティエクスプローラー**の [**ウィジェット] タブ**で、[**配置**] の [**塗りつぶし**] を選択し、**分布**に**均等**に入力して、スペースとして「」と入力し `25` ます。 **Spacing**
 
     [![](stacked-views-images/layout04-vs.png "The Widget Tab")](stacked-views-images/layout04-vs.png#lightbox)
 1. 必要に応じて、画面上にスタックビューを配置し、制約を追加して必要な場所に保持します。
@@ -137,17 +137,17 @@ TvOS アプリでスタックビューを操作する最も簡単な方法は、
 
     [![](stacked-views-images/layout05-vs.png "The individual elements in the Stack View")](stacked-views-images/layout05-vs.png#lightbox)
 1. レイアウトが調整され、上で設定した属性に基づいて、要素がスタックビューに配置されます。
-1. コードC#内で UI コントロールを操作するには、**プロパティエクスプローラー**の [**ウィジェット] タブ**で**名前**を割り当てます。
+1. C# コードで UI コントロールを操作するには、**プロパティエクスプローラー**の [**ウィジェット] タブ**で**名前**を割り当てます。
 1. 変更内容を保存します。
 
 -----
 
 > [!IMPORTANT]
-> イベントハンドラーの作成時に iOS デザイナーの UI 要素 (`UIButton`など) に `TouchUpInside` などのアクションを割り当てることはできますが、Apple TV はタッチスクリーンやサポートタッチイベントを持っていないため、呼び出されません。 TvOS ユーザーインターフェイス要素のアクションを作成する場合は、常に既定の `Action Type` を使用する必要があります。
+> イベントハンドラーの作成時に、などのアクションを `TouchUpInside` IOS デザイナーの UI 要素 (など) に割り当てることはでき `UIButton` ますが、Apple TV にタッチスクリーンやタッチイベントのサポートがないために呼び出されることはありません。 `Action Type`TvOS ユーザーインターフェイス要素のアクションを作成するときは、常に既定値を使用する必要があります。
 
 ストーリーボードの操作の詳細については、「 [Hello, tvOS クイックスタートガイド](~/ios/tvos/get-started/hello-tvos.md)」を参照してください。
 
-この例では、セグメントコントロールのアウトレットとアクション、および各 "プレーヤーカード" のアウトレットを公開しています。 コードでは、現在のセグメントに基づいてプレーヤーを非表示にして表示します。 (例:
+この例では、セグメントコントロールのアウトレットとアクション、および各 "プレーヤーカード" のアウトレットを公開しています。 コードでは、現在のセグメントに基づいてプレーヤーを非表示にして表示します。 次に例を示します。
 
 ```csharp
 partial void PlayerCountChanged (Foundation.NSObject sender) {
@@ -190,11 +190,11 @@ partial void PlayerCountChanged (Foundation.NSObject sender) {
 
 [![](stacked-views-images/layout07.png "If the number of players is decreased, the unused views are hidden and the Stack View adjust the layout to fit")](stacked-views-images/layout07.png#lightbox)
 
-<a name="Populate-a-Stack-View-from-Code" />
+<a name="Populate-a-Stack-View-from-Code"></a>
 
 ### <a name="populate-a-stack-view-from-code"></a>コードからスタックビューを設定する
 
-IOS デザイナーでスタックビューの内容とレイアウトを完全に定義するだけでなく、コードからC#動的に作成および削除することもできます。
+IOS デザイナーでスタックビューの内容とレイアウトを完全に定義するだけでなく、C# コードから動的に作成および削除することもできます。
 
 次の例では、スタックビューを使用してレビューの "星" を処理しています (1 ~ 5)。
 
@@ -248,9 +248,9 @@ partial void DecreaseRating (Foundation.NSObject sender) {
 }
 ```
 
-このコードのいくつかの部分を詳しく見てみましょう。 まず、`if` ステートメントを使用して、5つ以上の "星" または0未満であることを確認します。
+このコードのいくつかの部分を詳しく見てみましょう。 まず、ステートメントを使用し `if` て、5つ以上の "星" または0未満の値があることを確認します。
 
-新しい "star" を追加するには、イメージを読み込み、その**コンテンツモード**を **[縦横合わせる]** に設定します。
+新しい "star" を追加するには、イメージを読み込み、その**コンテンツモード**を [**縦横合わせる**] に設定します。
 
 ```csharp
 var icon = new UIImageView (new UIImage("icon.png"));
@@ -265,7 +265,7 @@ icon.ContentMode = UIViewContentMode.ScaleAspectFit;
 RatingView.AddArrangedSubview(icon);
 ```
 
-`UIImageView` は、`SubView`ではなく、`UIStackView`の `ArrangedSubviews` プロパティに追加されていることがわかります。 スタックビューでレイアウトを制御するビューは、`ArrangedSubviews` プロパティに追加する必要があります。
+は、にではなく、のプロパティに追加されていることがわかり `UIImageView` `UIStackView` `ArrangedSubviews` `SubView` ます。 スタックビューでレイアウトを制御するビューをプロパティに追加する必要があり `ArrangedSubviews` ます。
 
 スタックビューからサブビューを削除するには、まず、削除するサブビューを取得します。
 
@@ -273,7 +273,7 @@ RatingView.AddArrangedSubview(icon);
 var icon = RatingView.ArrangedSubviews[RatingView.ArrangedSubviews.Length-1];
 ```
 
-次に、`ArrangedSubviews` コレクションとスーパービューの両方から削除する必要があります。
+次に、コレクションとスーパービューの両方から削除する必要があり `ArrangedSubviews` ます。
 
 ```csharp
 // Remove from stack and screen
@@ -281,13 +281,13 @@ RatingView.RemoveArrangedSubview(icon);
 icon.RemoveFromSuperview();
 ```
 
-`ArrangedSubviews` コレクションだけからサブビューを削除すると、スタックビューのコントロールから除外されますが、画面からは削除されません。
+コレクションだけからサブビューを削除すると、 `ArrangedSubviews` スタックビューのコントロールから除外されますが、画面からは削除されません。
 
-<a name="Dynamically-Changing-Content" />
+<a name="Dynamically-Changing-Content"></a>
 
 ## <a name="dynamically-changing-content"></a>コンテンツの動的な変更
 
-サブビューが追加、削除、または非表示になるたびに、スタックビューによってサブビューのレイアウトが自動的に調整されます。 また、スタックビューの任意のプロパティ (`Axis`など) が調整された場合にも、レイアウトが調整されます。
+サブビューが追加、削除、または非表示になるたびに、スタックビューによってサブビューのレイアウトが自動的に調整されます。 また、スタックビューの任意のプロパティ (など) が調整された場合にも、レイアウトが調整され `Axis` ます。
 
 レイアウトの変更は、アニメーションブロック内に配置することによってアニメーション化できます。次に例を示します。
 
@@ -301,7 +301,7 @@ UIView.Animate(0.25, ()=>{
 
 スタックビューのプロパティの多くは、ストーリーボード内のサイズクラスを使用して指定できます。 これらのプロパティは、サイズまたは向きの変化に対する応答として自動的にアニメーション化されます。
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>まとめ
 

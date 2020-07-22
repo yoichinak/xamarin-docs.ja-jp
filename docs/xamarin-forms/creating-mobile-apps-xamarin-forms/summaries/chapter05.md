@@ -7,19 +7,22 @@ ms.assetid: 486800E9-C09F-4B95-9AC2-C0F8FE563BCF
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: c082bdb10732e42b37511cf050e50f46990a5b5b
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 37403cfe9f37972c20fb074db5e30cc54b60fea9
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771138"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136878"
 ---
 # <a name="summary-of-chapter-5-dealing-with-sizes"></a>第 5 章の概要: サイズの処理
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05)
 
 > [!NOTE]
-> このページのメモでは、Xamarin.Forms が書籍に記載されている資料と異なる部分が示されています。
+> このページの注記では、Xamarin.Forms が書籍に記載されている資料と異なる部分が示されています。
 
 これまでに、Xamarin.Forms のいくつかのサイズについて説明しました。
 
@@ -44,9 +47,9 @@ Android も同様です。 プログラマーは、"*密度に依存しないピ
 Windows のスマートフォンおよびモバイル デバイスに関しても、1 インチあたり 160 のデバイスに依存しない単位に近くなる倍率が確立されています。
 
 > [!NOTE]
-> Xamarin.Forms では、Windows ベースのスマートフォンまたはモバイル デバイスはサポートされなくなりました。
+> Xamarin.Forms では、Windows ベースのスマートフォンやモバイル デバイスはサポートされなくなりました。
 
-まとめると、スマートフォンとタブレットを対象とする Xamarin.Forms のプログラマーは、すべての測定単位が次の基準をベースにしていると想定することができます。
+まとめると、スマートフォンとタブレットを対象とする Xamarin.Forms のプログラマーは、すべての測定単位が次の基準に基づいていると想定できます。
 
 - 1 インチあたり 160 単位、または
 - 1 センチメートルあたり 64 単位
@@ -84,7 +87,7 @@ Windows のスマートフォンおよびモバイル デバイスに関して�
 
 ## <a name="empirically-fitting-text"></a>経験的なテキストの調整
 
-テキストを四角形に合わせるもう 1 つの方法は、表示されたテキスト サイズを経験的に計算し、それを上下に調整することです。 書籍のプログラムでは、ビジュアル要素で [`GetSizeRequest`](xref:Xamarin.Forms.VisualElement.GetSizeRequest(System.Double,System.Double)) を呼び出して、その要素の目的のサイズを取得しています。 このメソッドは非推奨になっているため、プログラムでは代わりに [`Measure`](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags)) を呼び出す必要があります。
+テキストを四角形に合わせるもう 1 つの方法は、表示されたテキスト サイズを経験的に計算し、それを上下に調整することです。 書籍のプログラムでは、ビジュアル要素で [`GetSizeRequest`](xref:Xamarin.Forms.VisualElement.GetSizeRequest(System.Double,System.Double)) を呼び出して、その要素の目的のサイズを取得しています。 このメソッドは非推奨になっていて、プログラムでは代わりに、[`Measure`](xref:Xamarin.Forms.VisualElement.Measure(System.Double,System.Double,Xamarin.Forms.MeasureFlags)) を呼び出す必要があります。
 
 `Label` の場合、最初の引数は (折り返しを可能にするために) コンテナーの幅にする必要がありますが、2 番目の引数は、高さを非制限にするために `Double.PositiveInfinity` に設定する必要があります。 [**EmpiricalFontSize**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05/EmpiricalFontSize) サンプルでは、この手法が示されています。
 

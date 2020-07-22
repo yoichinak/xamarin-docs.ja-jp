@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: d8c9d6fe36b457a000e96d1ad8990debad8ac915
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b311f3121ea6a58975d41b9690e31a44daa0951e
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030749"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573704"
 ---
 # <a name="tvos-app-distribution-overview"></a>tvOS アプリの配布の概要
 
@@ -20,17 +20,17 @@ _このドキュメントでは、tvOS アプリで使用できる分布手法�
 
 TvOS アプリの開発が完了したら、ソフトウェア開発ライフサイクルの次の手順は、次の図の強調表示されたセクションに示すように、ユーザーにアプリを配布することです。
 
-[ソフトウェア開発ライフサイクルの概要![](images/publishingdiagram.png)](images/publishingdiagram.png#lightbox)
+[![ソフトウェア開発ライフサイクルの概要](images/publishingdiagram.png)](images/publishingdiagram.png#lightbox)
 
 Apple では、tvOS でサポートされている tvOS アプリを配布するための次の方法を提供しています。
 
 1. [**App Store**](#Apple-TV-App-Store-Distribution)
-2. [**社内 (エンタープライズ)** ](#In-House-Distribution) 
+2. [**社内 (エンタープライズ)**](#In-House-Distribution) 
 3. [**アドホック**](#Ad_Hoc_Distribution) 
 
 これらいずれのシナリオでも、適切な*プロビジョニング プロファイル*を使用してアプリケーションをプロビジョニングする必要があります。 プロビジョニング プロファイルは、コード署名情報だけでなく、アプリケーションの ID と使用する配布メカニズムも含むファイルです。 App Store 以外の配布には、アプリを展開できるデバイスに関する情報も含まれています。
 
-<a name="Apple-TV-App-Store-Distribution" />
+<a name="Apple-TV-App-Store-Distribution"></a>
 
 ## <a name="apple-tv-app-store-distribution"></a>Apple TV App Store の配布
 
@@ -59,7 +59,7 @@ TvOS アプリを Apple TV App Store に送信する際に問題が発生した�
 
 詳細については、「 [APPLE TV App Store への発行](~/ios/tvos/deploy-test/app-distribution/app-store-publishing.md)」ガイドを参照してください。
 
-<a name="In-House-Distribution" />
+<a name="In-House-Distribution"></a>
 
 ## <a name="in-house-distribution"></a>社内配布
 
@@ -67,7 +67,7 @@ TvOS アプリを Apple TV App Store に送信する際に問題が発生した�
 
 社内でアプリケーションをセットアップして配布する方法の詳細については、[社内配布ガイド](~/ios/deploy-test/app-distribution/in-house-distribution.md)を参照してください。 このドキュメントは iOS に固有のものですが、tvOS アプリでも同じ手法が使用されます。
 
-<a name="Ad_Hoc_Distribution"/>
+<a name="Ad_Hoc_Distribution"></a>
 
 ## <a name="ad-hoc-distribution"></a>アドホック配布
 
@@ -75,7 +75,7 @@ TvOS アプリは、 **Apple Developer program**と**Apple developer Enterprise 
 
 社内でアプリをセットアップして配布する方法の詳細については、「[アドホック配布ガイド」](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)を参照してください。 ここでも、このドキュメントは iOS に固有のものですが、tvOS アプリでも同じ手法が使用されます。
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>まとめ
 

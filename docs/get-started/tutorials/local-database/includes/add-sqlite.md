@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 8ad5ca60a074cbdc6ff91134cc9c1276ed653b91
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: eda3fa134d318ca787432cf5c5a2115b93c3614e
+ms.sourcegitcommit: 898ba8e5140ae32a7df7e07c056aff65f6fe4260
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "67277323"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86277829"
 ---
 # <a name="visual-studio"></a>[Visual Studio](#tab/vswin)
 
@@ -27,9 +27,11 @@ ms.locfileid: "67277323"
 
     > [!NOTE]
     > 類似した名前を持つ NuGet パッケージが多数あります。 正しいパッケージには、次の属性があります。
-    > - **作成者:** Frank A. Krueger
     > - **ID:** sqlite-net-pcl
-    > - **NuGet リンク:** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)  
+    > - **作成者:** SQLite-net
+    > - **所有者:** praeclarum
+    > - **プロジェクト URL:** https://github.com/praeclarum/sqlite-net
+    > - **NuGet リンク:** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
     >
     > パッケージ名に関係なく、この NuGet パッケージは .NET Standard プロジェクトで使用できます。
 

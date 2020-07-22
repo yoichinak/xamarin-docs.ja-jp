@@ -6,12 +6,15 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/22/2019
 ms.custom: video
-ms.openlocfilehash: cba17707f9129feecc618c9a7c2f144ad40f0168
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 3138db09c2a3d343f36aa48f561930df47f48ae6
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70756923"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802485"
 ---
 # <a name="xamarinessentials-battery"></a>Xamarin.Essentials:バッテリ
 
@@ -55,7 +58,7 @@ ms.locfileid: "70756923"
 
 ## <a name="using-battery"></a>Battery の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
@@ -170,7 +173,7 @@ public class EnergySaverTest
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-- API をテストするには、デバイスを使用する必要があります。 
+- API をテストするには、デバイスを使用する必要があります。
 - `PowerSource` に対しては、`AC` または `Battery` しか返されません。
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
@@ -181,7 +184,7 @@ public class EnergySaverTest
 
 ## <a name="api"></a>API
 
-- [Battery のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Battery)
+- [Battery のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Battery)
 - [Battery API のドキュメント](xref:Xamarin.Essentials.Battery)
 
 ## <a name="related-video"></a>関連ビデオ

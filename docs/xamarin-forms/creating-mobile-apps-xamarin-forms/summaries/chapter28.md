@@ -7,21 +7,24 @@ ms.assetid: F6E20077-687C-45C4-A375-31D4F49BBFA4
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: 5dcd84536cc6d80deb753fc6fe57f9090f6b2dad
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 301dc65c7909603e117717a993959e3c73fa2d32
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "72697072"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84133407"
 ---
 # <a name="summary-of-chapter-28-location-and-maps"></a>第 28 章の概要: 位置情報と地図
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter28)
 
 > [!NOTE]
-> このページのメモでは、Xamarin.Forms が書籍に記載されている資料と異なる部分が示されています。
+> このページの注記では、Xamarin.Forms が書籍に記載されている資料と異なる部分が示されています。
 
-Xamarin.Forms では、`View` から派生した [`Map`](xref:Xamarin.Forms.Maps.Map) 要素がサポートされています。 地図の使用に関する特別なプラットフォーム要件のため、これらは別のアセンブリ (**Xamarin.Forms.Maps**) に実装され、別の名前空間 (`Xamarin.Forms.Maps`) が使用されています。
+Xamarin.Forms では、`View` から派生した [`Map`](xref:Xamarin.Forms.Maps.Map) 要素がサポートされています。 地図の使用に関する特別なプラットフォーム要件のため、これらは別のアセンブリ ( **Xamarin.Forms.Maps**) に実装され、別の名前空間 (`Xamarin.Forms.Maps`) が使用されています。
 
 ## <a name="the-geographic-coordinate-system"></a>地理座標系
 
@@ -51,7 +54,7 @@ Xamarin.Forms では、`View` から派生した [`Map`](xref:Xamarin.Forms.Maps
 
 ## <a name="getting-the-users-location"></a>ユーザーの位置情報を取得する
 
-Xamarin.Forms の `Map` クラスには、ユーザーの地理的な位置情報を取得する機能は含まれていません。しかし、これは地図を操作するときによく必要になるので、依存関係サービスによって処理される必要があります。
+Xamarin.Forms の `Map` クラスには、ユーザーの地理的な位置情報を取得する機能は含まれていません。しかし、これは地図を操作するときによく必要になるので、依存関係サービスで処理する必要があります。
 
 > [!NOTE]
 > Xamarin.Forms アプリケーションでは、代わりに、Xamarin.Essentials に含まれる [`Geolocation`](~/essentials/geolocation.md) クラスを使用できます。
@@ -94,7 +97,7 @@ iOS の場合、**info.plist** ファイルには、ユーザーにそのユー�
 
 ユニバーサル Windows プラットフォーム アプリケーションの場合は、Package.appxmanifest ファイルで `location` デバイス機能がマークされている必要があります。
 
-## <a name="working-with-xamarinformsmaps"></a>Xamarin.Forms.Maps の操作
+## <a name="working-with-xamarinformsmaps"></a>Xamarin.Forms.Maps の使用
 
 `Map` クラスの使用には、いくつかの要件が関係しています。
 
@@ -179,14 +182,14 @@ Google Map サービスを使用するには、承認キーが必要です。 �
 
 `Map` の [`MoveToRegion`](xref:Xamarin.Forms.Maps.Map.MoveToRegion(Xamarin.Forms.Maps.MapSpan)) メソッドを呼び出して、地図上の位置情報とズーム レベルをプログラムで設定することができます。 この引数は `MapSpan` 型です。 `MapSpan` オブジェクトは、次のいずれかを使用して作成できます。
 
-- [`MapSpan` コンストラクター](xref:Xamarin.Forms.Maps.MapSpan.%23ctor(Xamarin.Forms.Maps.Position,System.Double,System.Double)) (`Position`、緯度と経度のスパンを指定)
-- [`MapSpan.FromCenterAndRadius`](xref:Xamarin.Forms.Maps.MapSpan.FromCenterAndRadius(Xamarin.Forms.Maps.Position,Xamarin.Forms.Maps.Distance)) (`Position` と半径を指定)
+- `Position` と、緯度および経度のスパンを指定した [`MapSpan` コンストラクター](xref:Xamarin.Forms.Maps.MapSpan.%23ctor(Xamarin.Forms.Maps.Position,System.Double,System.Double))
+- `Position` と半径を指定した [`MapSpan.FromCenterAndRadius`](xref:Xamarin.Forms.Maps.MapSpan.FromCenterAndRadius(Xamarin.Forms.Maps.Position,Xamarin.Forms.Maps.Distance))
 
 メソッド [`ClampLatitude`](xref:Xamarin.Forms.Maps.MapSpan.ClampLatitude(System.Double,System.Double)) または [`WithZoom`](xref:Xamarin.Forms.Maps.MapSpan.WithZoom(System.Double)) を使用して、既存のものから新しい `MapSpan` を作成することもできます。
 
 [WyomingPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/WyomingPage.xaml) ファイルと [WyomingPage.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/WyomingPage.xaml.cs) 分離コード ファイルでは、`MoveToRegion` メソッドを使用してワイオミング州を表示する方法が示されています。
 
-または、`MapSpan` オブジェクトを指定する [`Map` コンストラクター](xref:Xamarin.Forms.Maps.Map.%23ctor(Xamarin.Forms.Maps.MapSpan))を使用して、地図の位置情報を初期化することもできます。 [XamarinHQPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/XamarinHQPage.xaml) ファイルでは、これを完全に XAML で実行して、サンフランシスコにある Xamarin 本社を表示する方法が示されています。
+または、`MapSpan` オブジェクトを指定して [`Map` コンストラクター](xref:Xamarin.Forms.Maps.Map.%23ctor(Xamarin.Forms.Maps.MapSpan)) を使用し、地図の位置情報を初期化することができます。 [XamarinHQPage.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/XamarinHQPage.xaml) ファイルでは、これを完全に XAML で実行して、サンフランシスコにある Xamarin 本社を表示する方法が示されています。
 
 ### <a name="dynamic-zooming"></a>動的ズーム
 
@@ -231,7 +234,7 @@ Google Map サービスを使用するには、承認キーが必要です。 �
 
 ## <a name="geocoding-and-back-again"></a>ジオコーディングと逆ジオコーディング
 
-[**Xamarin.Forms.Maps**](xref:Xamarin.Forms.Maps) アセンブリには、[`Geocoder`](xref:Xamarin.Forms.Maps.Geocoder) クラスも含まれています。これには、テキストの住所を可能な 0 個以上の地理的位置に変換する [`GetPositionsForAddressAsync`](xref:Xamarin.Forms.Maps.Geocoder.GetPositionsForAddressAsync(System.String)) メソッドと、逆方向に変換する別の [`GetAddressesForPositionAsync`](xref:Xamarin.Forms.Maps.Geocoder.GetAddressesForPositionAsync(Xamarin.Forms.Maps.Position)) メソッドが含まれています。
+[ **Xamarin.Forms.Maps**](xref:Xamarin.Forms.Maps) アセンブリには、[`Geocoder`](xref:Xamarin.Forms.Maps.Geocoder) クラスも含まれています。これには、テキストの住所を、考えられる 0 個以上の地理的位置に変換する [`GetPositionsForAddressAsync`](xref:Xamarin.Forms.Maps.Geocoder.GetPositionsForAddressAsync(System.String)) メソッドと、逆方向に変換する別の [`GetAddressesForPositionAsync`](xref:Xamarin.Forms.Maps.Geocoder.GetAddressesForPositionAsync(Xamarin.Forms.Maps.Position)) メソッドが含まれています。
 
 [GeocoderRoundTrip.xaml](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/GeocoderRoundTripPage.xaml) ファイルと [GeocoderRoundTrip.xaml.cs](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Chapter28/MapDemos/MapDemos/MapDemos/GeocoderRoundTripPage.xaml.cs) 分離コード ファイルでは、この機能が示されています。
 
@@ -239,4 +242,4 @@ Google Map サービスを使用するには、承認キーが必要です。 �
 
 - [第 28 章の全文 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch28-Aug2016.pdf)
 - [第 28 章のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter28)
-- [Xamarin.Forms Map](~/xamarin-forms/user-interface/map/index.md)
+- [Xamarin.Forms のマップ](~/xamarin-forms/user-interface/map/index.md)

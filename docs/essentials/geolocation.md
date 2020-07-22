@@ -3,14 +3,18 @@ title: Xamarin.Essentials:位置情報
 description: このドキュメントでは、デバイスの現在の位置座標を取得する API を提供する Xamarin.Essentials の Geolocation クラスについて説明します。
 ms.assetid: 8F66092C-13F0-4FEE-8AA5-901D5F79B357
 author: jamesmontemagno
+ms.custom: video
 ms.author: jamont
 ms.date: 03/13/2019
-ms.openlocfilehash: 840aadcafea88ef08f53e16f535439be0862fee9
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f54c31afef691d316cbc3108792ab3158359c47c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "80070355"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802326"
 ---
 # <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials:位置情報
 
@@ -50,6 +54,8 @@ Coarse および Fine Location アクセス許可が必要であり、Android �
 
 または、Android プロジェクトを右クリックし、プロジェクトのプロパティを開きます。 **[Android マニフェスト]** の下で **[必要なアクセス許可:]** 領域を探し、 **[ACCESS_COARSE_LOCATION]** および **[ACCESS_FINE_LOCATION]** アクセス許可をオンにします。 これにより、**AndroidManifest.xml** ファイルが自動的に更新されます。
 
+[!include[](~/essentials/includes/android-permissions.md)]
+
 # <a name="ios"></a>[iOS](#tab/ios)
 
 デバイスの位置情報にアクセスするには、アプリの **Info.plist** に `NSLocationWhenInUseUsageDescription` キーが含まれる必要があります。
@@ -71,7 +77,7 @@ plist エディターを開き、 **[プライバシー - 位置情報 (使用�
 
 ## <a name="using-geolocation"></a>Geolocation の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
@@ -109,7 +115,7 @@ catch (Exception ex)
 }
 ```
 
-高度は常に使用できるとは限りません。 使用できない場合、`Altitude` プロパティは `null` または 0 になることがあります。 高度を使用できる場合、値は海抜メートル単位です。 
+高度は常に使用できるとは限りません。 使用できない場合、`Altitude` プロパティは `null` または 0 になることがあります。 高度を使用できる場合、値は海抜メートル単位です。
 
 現在のデバイスの[場所](xref:Xamarin.Essentials.Location)の座標を照会するには、`GetLocationAsync` を使用できます。 デバイスの場所を取得するには時間がかかる場合があるので、完全な `GeolocationRequest` と `CancellationToken` を渡すのが最善です。
 
@@ -186,7 +192,7 @@ catch (Exception ex)
 | iOS | ~0 |
 | UWP | 10 以下 |
 
-<a name="calculate-distance" />
+<a name="calculate-distance"></a>
 
 ## <a name="detecting-mock-locations"></a>擬似ロケーションの検出
 一部のデバイスは、プロバイダーからの擬似ロケーションを返します。擬似ロケーションを提供するアプリケーションによって擬似ロケーションを返すこともあります。 [`Location`](xref:Xamarin.Essentials.Location) で `IsFromMockProvider` を使用することでこれを検出できます。
@@ -238,5 +244,11 @@ UWP では、高度はメートル単位で返されます。 詳細について
 
 ## <a name="api"></a>API
 
-- [Geolocation のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Geolocation)
+- [Geolocation のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Geolocation)
 - [Geolocation API のドキュメント](xref:Xamarin.Essentials.Geolocation)
+
+## <a name="related-video"></a>関連ビデオ
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Geolocation-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

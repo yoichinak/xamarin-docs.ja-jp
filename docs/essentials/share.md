@@ -1,17 +1,20 @@
 ---
 title: Xamarin.Essentials:共有
-description: アプリケーションで Xamarin.Essentials の Share クラスを使用すると、デバイス上の他のアプリケーションとテキストや Web リンクなどのデータを共有できます。
+description: アプリケーションで Xamarin.Essentials の Share クラスを使用すると、テキストや Web リンクなどのデータを、デバイス上の他のアプリケーションと共有できます。
 ms.assetid: B7B01D55-0129-4C87-B515-89F8F4E94665
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/06/2020
 ms.custom: video
-ms.openlocfilehash: f964967dce0dbb7e49d52a7f865b0fe8a9957bbe
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: ef4c9961e7e1fac20084247f4c85e87b79bcc427
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77545205"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84801934"
 ---
 # <a name="xamarinessentials-share"></a>Xamarin.Essentials:共有
 
@@ -23,7 +26,7 @@ ms.locfileid: "77545205"
 
 ## <a name="using-share"></a>Share の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
@@ -112,7 +115,7 @@ await Share.RequestAsync(new ShareFileRequest
 
 ## <a name="api"></a>API
 
-- [Share のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Share)
+- [Share のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Share)
 - [Share API のドキュメント](xref:Xamarin.Essentials.Share)
 
 ## <a name="related-video"></a>関連ビデオ

@@ -61,7 +61,7 @@ landingContent:
     links:
     - text: Android デザイナー
       url: ~/android/user-interface/android-designer/index.md
-    - text: 素材のテーマ
+    - text: マテリアル テーマ
       url: ~/android/user-interface/material-theme.md
     - text: ユーザー プロファイル
       url: ~/android/user-interface/user-profile.md

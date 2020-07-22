@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 43061272f3d3486926f38af792ee3b9df0c53670
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 7a3fd9e22bcf037ec669c77ac919035b0d04b942
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73027242"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84567932"
 ---
 # <a name="kitkat-features"></a>KitKat の機能
 
@@ -38,7 +38,7 @@ KitKat を使用して Xamarin.Android アプリケーションを開発する�
 
 [![Android SDK マネージャーで Android 4.4 を選択](kitkat-images/api19.png)](kitkat-images/api19.png#lightbox)
 
-<a name="Migrating_Your_App_to_KitKat" />
+<a name="Migrating_Your_App_to_KitKat"></a>
 
 ## <a name="migrating-your-app-to-kitkat"></a>KitKat へのアプリの移行
 
@@ -97,7 +97,7 @@ KitKat では、ユーザーが選択した 1 つの既定のアプリケーシ�
 
 KitKat では [WebView](xref:Android.Webkit.WebView) が一新されました。 最大の変更点は、コンテンツを `WebView` に読み込む際のセキュリティが強化されたことです。 以前の API バージョンをターゲットとするほとんどのアプリケーションは想定どおりに動作するはずですが、`WebView` クラスを使用するアプリケーションのテストを強くお勧めします。 影響を受ける WebView API の詳細については、Android の「[Android 4.4 での WebView への移行](https://developer.android.com/guide/webapps/migrating.html)」ドキュメントを参照してください。
 
-<a name="user_experience" />
+<a name="user_experience"></a>
 
 ## <a name="user-experience"></a>ユーザー体験
 
@@ -310,7 +310,7 @@ KitKat では、オプションの半透明のステータス バーとナビゲ
 
 [![半透明のステータス バーとナビゲーション バーがあるアプリのスクリーンショットの例](kitkat-images/theme.png)](kitkat-images/theme.png#lightbox)
 
-<a name="user_content" />
+<a name="user_content"></a>
 
 ## <a name="user-content"></a>ユーザー コンテンツ
 
@@ -505,7 +505,7 @@ void PrintPage ()
 
 [![[PDF として保存] メニューが表示された PrintHtmlActivity のスクリーンショット](kitkat-images/print2.png)](kitkat-images/print2.png#lightbox)
 
-<a name="hardware" />
+<a name="hardware"></a>
 
 ## <a name="hardware"></a>ハードウェア
 
@@ -639,7 +639,7 @@ protected override void OnPause()
 > [!NOTE]
 > KitKat には歩数の検出とカウント用の API が付属していますが、すべての携帯電話にセンサーが搭載されているわけではありません。 センサーを使用できるかどうかを確認するには、`PackageManager.HasSystemFeature(PackageManager.FeatureSensorStepCounter);` を実行しするか、`GetDefaultSensor` の戻り値が `null` でないことを確認します。
 
-<a name="developer_tools" />
+<a name="developer_tools"></a>
 
 ## <a name="developer-tools"></a>開発者用ツール
 

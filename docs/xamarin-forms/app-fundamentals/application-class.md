@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms の App クラス
-description: この記事では、既定の App クラスの機能について説明します。このクラスには、アプリの最初のページを設定されるプロパティと、ライフサイクルの状態変化をまたいで格納されるシンプルな値のための永続ディクショナリが含まれます。
+title: 'title: "Xamarin.Formsの App クラス" の説明:"この記事では、既定の App クラスの機能について説明します。このクラスには、アプリの最初のページに設定するプロパティと、ライフサイクルの状態の変化に伴う単純な値を格納するための永続ディクショナリが含まれます。"'
+description: 'ms.prod: xamarin ms.assetid:421F8294-1944-46A4-8459-D2BD5AAABC9D ms.technology: xamarin-forms ms.custom: video author: davidbritch ms.author: dabritch ms.date:02/19/2016 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
 ms.prod: xamarin
 ms.assetid: 421F8294-1944-46A4-8459-D2BD5AAABC9D
 ms.technology: xamarin-forms
@@ -8,19 +8,22 @@ ms.custom: video
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/19/2016
-ms.openlocfilehash: aaf2086fd8128d68baa401ab646b31bcbc279545
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1e761830fb08662a82a8bf98b4544aafaa6eccf7
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303769"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573353"
 ---
 # <a name="xamarinforms-app-class"></a>Xamarin.Forms の App クラス
 
 `Application` 基底クラスでは、プロジェクトの既定の `App` サブクラスで公開される次の機能が提供されています。
 
 * アプリの最初のページが設定される `MainPage` プロパティ。
-* ライフサイクルの状態変化をまたいでシンプルな値を格納するための永続的な [`Properties` ディクショナリ](#Properties_Dictionary)。
+* ライフサイクルの状態変化をまたいでシンプルな値を格納するための永続的な [`Properties` ディクショナリ](#properties-dictionary)。
 * 現在のアプリケーション オブジェクトへの参照が含まれている静的な `Current` プロパティ。
 
 また、`OnStart`、`OnSleep`、`OnResume` などの[ライフサイクル メソッド](~/xamarin-forms/app-fundamentals/app-lifecycle.md)と、モーダル ナビゲーション イベントも公開されています。
@@ -74,8 +77,6 @@ public class App : Xamarin.Forms.Application
 }
 ```
 
-<a name="Properties_Dictionary" />
-
 ## <a name="properties-dictionary"></a>Properties ディクショナリ
 
 `Application` サブクラスには静的な `Properties` ディクショナリがあり、データの格納に使用できます。具体的には、`OnStart`、`OnSleep`、および `OnResume` メソッドで使用するためのデータです。 これには、`Application.Current.Properties` を使用して Xamarin.Forms コード内のどこからでもアクセスできます。
@@ -112,7 +113,7 @@ if (Application.Current.Properties.ContainsKey("id"))
 
 Xamarin.Forms 1.4 では、`Application` クラスに追加メソッド `SavePropertiesAsync()` が導入されました。このメソッドを呼び出すと、`Properties` ディクショナリを事前に保存できます。 これにより、クラッシュまたは OS による強制終了のためにプロパティがシリアル化されないリスクなしに、重要な更新後にプロパティを保存できます。
 
-`Properties` ディクショナリの使用に関する参考資料については、「**Creating Mobile Apps with Xamarin.Forms**」(Xamarin.Forms でモバイル アプリを作成する) の第 [6](https://developer.xamarin.com/r/xamarin-forms/book/chapter06.pdf)、[15](https://developer.xamarin.com/r/xamarin-forms/book/chapter15.pdf)、[20](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf) 章、および関連する[サンプル](https://github.com/xamarin/xamarin-forms-book-preview-2)をご覧ください。
+`Properties` ディクショナリの使用に関する参考資料については、『**Creating Mobile Apps with Xamarin.Forms** 』(Xamarin.Forms でモバイル アプリを作成する) の第 [6](https://developer.xamarin.com/r/xamarin-forms/book/chapter06.pdf)、[15](https://developer.xamarin.com/r/xamarin-forms/book/chapter15.pdf)、[20](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf) 章、および関連する[サンプル](https://github.com/xamarin/xamarin-forms-book-preview-2)をご覧ください。
 
 ## <a name="the-application-class"></a>Application クラス
 

@@ -1,29 +1,32 @@
 ---
 title: '第 4 章の概要: スタックのスクロール'
-description: 'Xamarin.Forms を使用したモバイル アプリの作成: 第 4 章の概要: スタックのスクロール'
+description: 'Xamarin.Forms でモバイル アプリを作成する: 第 4 章の概要: スタックのスクロール'
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 7A39FD4F-15AD-4F94-960E-9FEEB63FFD44
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: bda9d5cb323524981bed9c3bb55998513dd69aab
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 6b86bfe1e343cd50f4a133726d16364b3efb8bee
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73032873"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84198274"
 ---
 # <a name="summary-of-chapter-4-scrolling-the-stack"></a>第 4 章の概要: スタックのスクロール
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04)
 
-この章では、主に、"*レイアウト*" の概念を紹介します。これは、ページ上の複数のビューの視覚的な表示を整理するために Xamarin.Forms で使用されるクラスと手法に対する全体的な用語です。
+この章では、主に、"*レイアウト*" の概念を紹介します。これは、Xamarin.Forms でページ上の複数のビューの視覚的な表示を整理するために使用されるクラスと手法を表す包括的な用語です。
 
 レイアウトに含まれる複数のクラスは、[`Layout`](xref:Xamarin.Forms.Layout) と [`Layout<T>`](xref:Xamarin.Forms.Layout`1) から派生します。 この章では、[`StackLayout`](xref:Xamarin.Forms.StackLayout) に焦点を当てます。
 
 > [!NOTE]
-> Xamarin.Forms 3.0 で導入された [`FlexLayout`](~/xamarin-forms/user-interface/layouts/flex-layout.md) は、`StackLayout` と似た方法で使用できますが、いっそう高い柔軟性を備えています。
+> Xamarin.Forms 3.0 で導入された [`FlexLayout`](~/xamarin-forms/user-interface/layouts/flex-layout.md) は、`StackLayout` と似た方法で使用できますが、より高い柔軟性を備えています。
 
 この章では、[`ScrollView`](xref:Xamarin.Forms.ScrollView)、[`Frame`](xref:Xamarin.Forms.Frame)、[`BoxView`](xref:Xamarin.Forms.BoxView) の各クラスについても紹介します。
 
@@ -116,6 +119,6 @@ ms.locfileid: "73032873"
 - [第 4 章の全文 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch04-Apr2016.pdf)
 - [第 4 章のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04)
 - [第 4 章の F# のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter04/FS)
-- [StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md)
-- [ScrollView](~/xamarin-forms/user-interface/layouts/scroll-view.md)
+- [StackLayout](~/xamarin-forms/user-interface/layouts/stacklayout.md)
+- [ScrollView](~/xamarin-forms/user-interface/layouts/scrollview.md)
 - [BoxView](~/xamarin-forms/user-interface/boxview.md)

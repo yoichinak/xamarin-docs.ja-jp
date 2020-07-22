@@ -7,13 +7,13 @@ ms.technology: xamarin-ios
 ms.custom: xamu-video
 author: davidortinau
 ms.author: daortin
-ms.date: 03/22/2017
-ms.openlocfilehash: 0cf44a05f8b40a07dcc099d5789171f4a234a0c2
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.date: 05/12/2020
+ms.openlocfilehash: 6f2f1a908a43d81b2aabf5cb2db2f7a230356fa4
+ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032569"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83149926"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>Xamarin の iOS 拡張機能
 
@@ -21,37 +21,37 @@ ms.locfileid: "73032569"
 
 **IOS ビデオでの拡張機能の作成**
 
-IOS 8 で導入された拡張機能は、 **Notification Center**内などの標準コンテキスト内で ios によって提供される特殊な `UIViewControllers` であり、ユーザーが特殊な入力やその他のコンテキストを実行するために要求するカスタムキーボードの種類として、拡張機能が特殊効果フィルターを提供できる写真を編集する。
+IOS 8 で導入された拡張機能は、 `UIViewControllers` ios によって、**通知センター**内などの標準コンテキスト内で、特殊な入力を実行するためにユーザーによって要求されたカスタムキーボードの種類、または拡張機能が特殊効果フィルターを提供できる画像の編集などの他のコンテキストに特化したものです。
 
 すべての拡張機能は、コンテナーアプリと共にインストールされ (両方の要素が64ビット統合 Api を使用して作成されます)、ホストアプリの特定の拡張ポイントからアクティブ化されます。 また、これらは既存のシステム関数の補完として使用されるため、高いパフォーマンス、リーン、堅牢性を備えている必要があります。 
 
 ## <a name="extension-points"></a>拡張ポイント
 
-|[種類]|説明|拡張ポイント|ホストアプリ|
+|Type|Description|拡張ポイント|ホストアプリ|
 |--- |--- |--- |--- |
-|操作|特定のメディアの種類の特殊なエディターまたはビューアー|`com.apple.ui-services`|どれでも可|
+|アクション|特定のメディアの種類の特殊なエディターまたはビューアー|`com.apple.ui-services`|Any|
 |ドキュメントプロバイダー|アプリがリモートドキュメントストアを使用できるようにします|`com.apple.fileprovider-ui`|[UIDocumentPickerViewController](xref:UIKit.UIDocumentPickerViewController)を使用するアプリ|
-|キーボード|代替キーボード|`com.apple.keyboard-service`|どれでも可|
+|キーボード|代替キーボード|`com.apple.keyboard-service`|Any|
 |写真の編集|写真の操作と編集|`com.apple.photo-editing`|Photos アプリエディター|
-|共有|ソーシャルネットワークやメッセージングサービスなどを使用してデータを共有します。|`com.apple.share-services`|どれでも可|
-|今日|今日の画面または通知センターに表示される "ウィジェット"|`com.apple.widget-extensions`|今日と通知センター|
+|共有|ソーシャルネットワークやメッセージングサービスなどを使用してデータを共有します。|`com.apple.share-services`|Any|
+|本日|今日の画面または通知センターに表示される "ウィジェット"|`com.apple.widget-extensions`|今日と通知センター|
 
-IOS 10 で[追加の拡張ポイント](~/ios/platform/introduction-to-ios10/index.md#app-extensions)が追加されました。
+[Ios 10](~/ios/platform/introduction-to-ios10/index.md#app-extensions)と[ios 12](~/ios/platform/introduction-to-ios12/index.md#notification-improvements)で追加の拡張ポイントが追加されました。 サポートされているすべての種類の完全な表については、「 [IOS アプリ拡張機能のプログラミングガイド](https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214-CH20-SW2)」を参照してください。
 
 ## <a name="limitations"></a>制限事項
 
-拡張機能にはいくつかの制限がありますが、その中にはすべての種類に共通するものがあります (たとえば、拡張機能の種類によってカメラやマイクにアクセスできない場合)。他の種類の拡張機能には、使用法に関する制限があります (カスタムキーボードなど)。は、パスワードなどのセキュリティで保護されたデータ入力フィールドには使用できません。 
+拡張機能にはいくつかの制限がありますが、その中にはすべての種類に対して汎用的なものもあります (たとえば、拡張機能の種類によってカメラやマイクにアクセスできない場合)。また、他の種類の拡張機能には、使用法に関する特定の制限があります 
 
 一般的な制限事項は次のとおりです。
 
-- [Health Kit](~/ios/platform/healthkit.md) および [Event Kit UI](~/ios/platform/eventkit.md)フレームワークは使用できません
+- [正常性キット](~/ios/platform/healthkit.md)および[イベントキットの UI](~/ios/platform/eventkit.md)フレームワークは使用できません
 - 拡張機能は[拡張バックグラウンドモード](~/ios/app-fundamentals/backgrounding/ios-backgrounding-techniques/registering-applications-to-run-in-background.md)を使用できません
 - 拡張機能はデバイスのカメラやマイクにアクセスできません (ただし、既存のメディアファイルにアクセスする可能性があります)。
-- 拡張機能は Air Drop データを受信できません (ただし、Air Drop でデータを送信することはできます)
+- 拡張機能はエアドロップデータを受信できません (無線でデータを送信することもできます)
 - [Uiactionsheet](xref:UIKit.UIActionSheet)と[uiactionsheet](xref:UIKit.UIAlertView)は使用できません。拡張機能は[Uialertcontroller](xref:UIKit.UIAlertController)を使用する必要があります
-- [Uiapplication のいくつ](xref:UIKit.UIApplication)かのメンバーが使用できません: [uiapplication](xref:UIKit.UIApplication.SharedApplication) [、uiapplication、、](xref:UIKit.UIApplication.OpenUrl(Foundation.NSUrl))Uiapplication。 [beginignoringinteractionevents](xref:UIKit.UIApplication.BeginIgnoringInteractionEvents)と[UIApplication](xref:UIKit.UIApplication.EndIgnoringInteractionEvents)
+- [Uiapplication のいくつ](xref:UIKit.UIApplication)かのメンバーは使用できません: [uiapplication](xref:UIKit.UIApplication.SharedApplication)、uiapplication. [OpenUrl](xref:UIKit.UIApplication.OpenUrl(Foundation.NSUrl))、 [Uiapplication、beginignoringinteractionevents](xref:UIKit.UIApplication.BeginIgnoringInteractionEvents) 、および[uiapplication。](xref:UIKit.UIApplication.EndIgnoringInteractionEvents)
 - iOS では、現在の拡張機能に 16 MB のメモリ使用量制限が適用されます。
-- 既定では、キーボード拡張機能はネットワークにアクセスできません。 これはデバイスのデバッグに影響します (この制限はシミュレーターには適用されません)。そのため、Xamarin. iOS ではデバッグのためにネットワークアクセスが必要になります。 プロジェクトの情報を `Yes` に `Requests Open Access` 設定することによって、ネットワークへのアクセスを要求することができます。 キーボード拡張機能の制限の詳細については、Apple の[カスタムキーボードガイド](https://developer.apple.com/library/content/documentation/General/Conceptual/ExtensibilityPG/CustomKeyboard.html)を参照してください。
+- 既定では、キーボード拡張機能はネットワークにアクセスできません。 これはデバイスのデバッグに影響します (この制限はシミュレーターには適用されません)。そのため、Xamarin. iOS ではデバッグのためにネットワークアクセスが必要になります。 プロジェクトの情報をに設定することにより、ネットワークアクセスを要求することができます `Requests Open Access` 。 `Yes` キーボード拡張機能の制限の詳細については、Apple の[カスタムキーボードガイド](https://developer.apple.com/library/content/documentation/General/Conceptual/ExtensibilityPG/CustomKeyboard.html)を参照してください。
 
 個々の制限事項については、「Apple の[アプリ拡張機能のプログラミングガイド](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/)」を参照してください。
 
@@ -63,11 +63,21 @@ IOS 10 で[追加の拡張ポイント](~/ios/platform/introduction-to-ios10/ind
 
 通常、コンテナーアプリでは拡張機能について説明し、ユーザーに対して有効にするプロセスを説明します。
 
+## <a name="debug-and-release-versions-of-extensions"></a>拡張機能のデバッグバージョンとリリースバージョン
+
+実行中のアプリ拡張機能のメモリ制限は、フォアグラウンドアプリに適用されるメモリ制限よりも大幅に低くなります。 IOS を実行しているシミュレーターには、拡張機能に適用される制限が少ないため、拡張機能は問題なく実行できます。 ただし、デバイスで同じ拡張機能を実行すると、拡張機能がクラッシュしたり、システムによって積極的に終了されたりするなど、予期しない結果が生じる可能性があります。 そのため、デバイスを出荷する前に、その拡張機能をビルドしてテストしてください。 
+
+コンテナープロジェクトとすべての参照される拡張機能には、次の設定が適用されていることを確認する必要があります。
+
+1. **リリース**構成でアプリケーションパッケージをビルドします。
+1. **IOS ビルド**プロジェクトの設定で、[**リンカー動作**] オプションを [**フレームワーク sdk のみをリンク**する] または [**すべてリンク**] に設定します。
+1. **IOS デバッグ**プロジェクトの設定で、[**デバッグを有効に**し、**プロファイルを有効**にする] オプションをオフにします。
+
 ## <a name="extension-lifecycle"></a>拡張機能のライフサイクル
 
 拡張機能は、UI の複数の画面を表示する1つの[Uiviewcontroller](xref:UIKit.UIViewController)またはより複雑な拡張機能として簡単に使用できます。 ユーザーが_拡張ポイント_(イメージを共有するときなど) を検出すると、その拡張ポイントに登録されている拡張機能から選択できるようになります。 
 
-アプリの拡張機能のいずれかを選択すると、その `UIViewController` がインスタンス化され、通常のビューコントローラーのライフサイクルが開始されます。 ただし、中断されているが、通常はユーザーが操作を終了したときに終了しない通常のアプリとは異なり、拡張機能が読み込まれ、実行された後、繰り返し終了します。
+アプリの拡張機能のいずれかを選択 `UIViewController` すると、がインスタンス化され、通常のビューコントローラーのライフサイクルが開始されます。 ただし、中断されているが、通常はユーザーが操作を終了したときに終了しない通常のアプリとは異なり、拡張機能が読み込まれ、実行された後、繰り返し終了します。
 
 拡張機能は、 [NSExtensionContext](xref:Foundation.NSExtensionContext)オブジェクトを介してホストアプリと通信できます。 一部の拡張機能には、結果を使用して非同期コールバックを受信する操作が含まれています。 これらのコールバックはバックグラウンドスレッドで実行され、拡張機能はこれを考慮に入れる必要があります。たとえば、ユーザーインターフェイスを更新する場合は、 [NSObject](xref:Foundation.NSObject.InvokeOnMainThread*)を使用します。 詳細については、後述の「[ホストアプリとの通信](#communicating-with-the-host-app)」を参照してください。
 
@@ -89,13 +99,13 @@ IOS 10 で[追加の拡張ポイント](~/ios/platform/introduction-to-ios10/ind
 
 さらに、拡張機能のプロジェクトには次の要件があります。
 
-- コンテナーアプリのバンドル識別子で始まるバンドル識別子が必要です。 たとえば、コンテナーアプリのに `com.myCompany.ContainerApp` のバンドル識別子が含まれている場合、拡張機能の識別子が `com.myCompany.ContainerApp.MyExtension` 可能性があります。 
+- コンテナーアプリのバンドル識別子で始まるバンドル識別子が必要です。 たとえば、コンテナーアプリののバンドル識別子がの場合、 `com.myCompany.ContainerApp` 拡張機能の識別子は次のようになり `com.myCompany.ContainerApp.MyExtension` ます。 
 
   ![](extensions-images/bundleidentifiers.png) 
-- `Info.plist` ファイル内の適切な値 (**今日**の Notification Center ウィジェットの `com.apple.widget-extension` など) を使用して、キー `NSExtensionPointIdentifier`を定義する必要があります。
-- また、適切な値を使用して、`Info.plist` ファイル内の `NSExtensionMainStoryboard` キーまたは `NSExtensionPrincipalClass` キーの*どちらか*を定義する必要があります。
-  - `NSExtensionMainStoryboard` キーを使用して、拡張機能のメイン UI を表示するストーリーボードの名前を指定します (マイナス `.storyboard`)。 たとえば、`Main.storyboard` ファイルの `Main` です。
-  - `NSExtensionPrincipalClass` キーを使用して、拡張機能の開始時に初期化されるクラスを指定します。 値は、`UIViewController` の**レジスタ**値と一致している必要があります。 
+- このファイルには、 `NSExtensionPointIdentifier` 適切な値 ( `com.apple.widget-extension` **今日**の Notification Center ウィジェットなど) を指定して、キーを定義する必要があり `Info.plist` ます。
+- また、 *either* `NSExtensionMainStoryboard` `NSExtensionPrincipalClass` `Info.plist` 適切な値を使用して、ファイル内のキーまたはキーのいずれかを定義する必要があります。
+  - キーを使用して、 `NSExtensionMainStoryboard` 拡張機能のメイン UI を表示するストーリーボードの名前を指定します (マイナス `.storyboard` )。 たとえば、 `Main` ファイルの場合は `Main.storyboard` です。
+  - キーを使用して、 `NSExtensionPrincipalClass` 拡張機能の開始時に初期化されるクラスを指定します。 値は、の**レジスタ**値と一致している必要があり `UIViewController` ます。 
 
   ![](extensions-images/registerandprincipalclass.png)
 
@@ -114,22 +124,22 @@ IOS 10 で[追加の拡張ポイント](~/ios/platform/introduction-to-ios10/ind
 
 必要なソリューションを作成するには、次の手順を実行します。
 
-1. まず、新しい iOS、**シングルビューアプリ**プロジェクトを作成し、 **[次へ]** ボタンをクリックします。 
+1. まず、新しい iOS、**シングルビューアプリ**プロジェクトを作成し、[**次へ**] ボタンをクリックします。 
 
     [![](extensions-images/today01.png "First, create a new iOS, Single View App project and click the Next button")](extensions-images/today01.png#lightbox)
-2. プロジェクト `TodayContainer` を呼び出し、 **[次へ]** ボタンをクリックします。 
+2. プロジェクトを呼び出し、 `TodayContainer` [**次へ**] ボタンをクリックします。 
 
     [![](extensions-images/today02.png "Call the project TodayContainer and click the Next button")](extensions-images/today02.png#lightbox)
-3. **プロジェクト名**と**SolutionName**を確認し、 **[作成]** ボタンをクリックしてソリューションを作成します。 
+3. **プロジェクト名**と**SolutionName**を確認し、[**作成**] ボタンをクリックしてソリューションを作成します。 
 
     [![](extensions-images/today03.png "Verify the Project Name and SolutionName and click the Create button to create the solution")](extensions-images/today03.png#lightbox)
 4. 次に、**ソリューションエクスプローラー**でソリューションを右クリックし、**今日の拡張**機能テンプレートから新しい**iOS 拡張機能**プロジェクトを追加します。 
 
     [![](extensions-images/today04.png "Next, in the Solution Explorer, right-click on the Solution and add a new iOS Extension project from the Today Extension template")](extensions-images/today04.png#lightbox)
-5. プロジェクト `DaysRemaining` を呼び出し、 **[次へ]** ボタンをクリックします。 
+5. プロジェクトを呼び出し、 `DaysRemaining` [**次へ**] ボタンをクリックします。 
 
     [![](extensions-images/today05.png "Call the project DaysRemaining and click the Next button")](extensions-images/today05.png#lightbox)
-6. プロジェクトを確認し、 **[作成]** ボタンをクリックして作成します。 
+6. プロジェクトを確認し、[**作成**] ボタンをクリックして作成します。 
 
     [![](extensions-images/today06.png "Review the project and click the Create button to create it")](extensions-images/today06.png#lightbox)
 
@@ -145,10 +155,10 @@ IOS 10 で[追加の拡張ポイント](~/ios/platform/introduction-to-ios10/ind
 
 ストーリーボードを使用して UI を作成するには、次の手順を実行します。
 
-1. **ソリューションエクスプローラー**で、拡張機能プロジェクトの `Main.storyboard` ファイルをダブルクリックして、編集用に開きます。 
+1. **ソリューションエクスプローラー**で、拡張機能プロジェクトのファイルをダブルクリックし `Main.storyboard` て、編集用に開きます。 
 
     [![](extensions-images/today08.png "Double-click the Extension projects Main.storyboard file to open it for editing")](extensions-images/today08.png#lightbox)
-2. テンプレートによって UI に自動的に追加されたラベルを選択し、 **[プロパティエクスプローラー]** の **[ウィジェット]** タブに `TodayMessage`**名前**を付けます。 
+2. テンプレートによって UI に自動的に追加されたラベルを選択し**Name** 、[ `TodayMessage` **プロパティエクスプローラー**] の [**ウィジェット**] タブで名前を指定します。 
 
     [![](extensions-images/today09.png "Select the Label that was automatically added to the UI by template and give it the Name TodayMessage in the Widget tab of the Properties Explorer")](extensions-images/today09.png#lightbox)
 3. 変更内容をストーリーボードに保存します。
@@ -157,21 +167,21 @@ IOS 10 で[追加の拡張ポイント](~/ios/platform/introduction-to-ios10/ind
 
 コードで UI をビルドするには、次の手順を実行します。 
 
-1. **ソリューションエクスプローラー**で、 **DaysRemaining**プロジェクトを選択し、新しいクラスを追加して、`CodeBasedViewController` を呼び出します。 
+1. **ソリューションエクスプローラー**で、 **DaysRemaining**プロジェクトを選択し、新しいクラスを追加して、次のように呼び出し `CodeBasedViewController` ます。 
 
     [![](extensions-images/code01.png "Aelect the DaysRemaining project, add a new class and call it CodeBasedViewController")](extensions-images/code01.png#lightbox)
-2. ここでも、**ソリューションエクスプローラー**で、拡張機能の `Info.plist` ファイルをダブルクリックして編集用に開きます。 
+2. ここでも、**ソリューションエクスプローラー**で、拡張機能のファイルをダブルクリックし `Info.plist` て開き、編集します。 
 
     [![](extensions-images/code02.png "Double-click Extensions Info.plist file to open it for editing")](extensions-images/code02.png#lightbox)
-3. (画面の下部から)**ソースビュー**を選択し、[`NSExtension`] ノードを開きます。 
+3. (画面の下部から)**ソースビュー**を選択し、ノードを開き `NSExtension` ます。 
 
     [![](extensions-images/code03.png "Select the Source View from the bottom of the screen and open the NSExtension node")](extensions-images/code03.png#lightbox)
-4. `NSExtensionMainStoryboard` キーを削除し、`CodeBasedViewController`値を持つ `NSExtensionPrincipalClass` を追加します。 
+4. キーを削除 `NSExtensionMainStoryboard` し、値を指定してを追加し `NSExtensionPrincipalClass` `CodeBasedViewController` ます。 
 
     [![](extensions-images/code04.png "Remove the NSExtensionMainStoryboard key and add a NSExtensionPrincipalClass with the value CodeBasedViewController")](extensions-images/code04.png#lightbox)
-5. 変更内容を保存します。
+5. 変更を保存します。
 
-次に、`CodeBasedViewController.cs` ファイルを編集し、次のように表示します。
+次に、ファイルを編集 `CodeBasedViewController.cs` し、次のように表示します。
 
 ```csharp
 using System;
@@ -207,11 +217,11 @@ namespace DaysRemaining
 }
 ```
 
-`[Register("CodeBasedViewController")]` が、上記の `NSExtensionPrincipalClass` に指定した値と一致することに注意してください。
+は、上で指定した値と一致することに注意して `[Register("CodeBasedViewController")]` `NSExtensionPrincipalClass` ください。
 
 ### <a name="coding-the-extension"></a>拡張機能のコーディング
 
-ユーザーインターフェイスを作成した状態で、(上のユーザーインターフェイスの作成に使用した方法に基づいた) `TodayViewController.cs` または `CodeBasedViewController.cs` ファイルを開き、 **ViewDidLoad**メソッドを変更し、次のように表示します。
+ユーザーインターフェイスを作成した状態で、 `TodayViewController.cs` または `CodeBasedViewController.cs` (上のユーザーインターフェイスの作成に使用した方法に基づいて) ファイルを開き、 **ViewDidLoad**メソッドを変更し、次のようにします。
 
 ```csharp
 public override void ViewDidLoad ()
@@ -232,13 +242,13 @@ public override void ViewDidLoad ()
 }
 ```
 
-コードベースのユーザーインターフェイスメソッドを使用している場合は、`// Insert code to power extension here...` コメントを上記の新しいコードに置き換えます。 基本実装を呼び出した後 (およびコードベースバージョンのラベルを挿入した後)、このコードは単純な計算を実行して、その年の通算日と残りの日数を取得します。 次に、UI デザインで作成したラベル (`TodayMessage`) にメッセージが表示されます。
+コードベースのユーザーインターフェイスメソッドを使用している場合は、 `// Insert code to power extension here...` 上記の新しいコードでコメントを置き換えます。 基本実装を呼び出した後 (およびコードベースバージョンのラベルを挿入した後)、このコードは単純な計算を実行して、その年の通算日と残りの日数を取得します。 次に、UI デザインで作成したラベル () にメッセージが表示され `TodayMessage` ます。
 
-このプロセスは、アプリの通常の作成プロセスに似ていることに注意してください。 拡張機能の `UIViewController` には、アプリのビューコントローラーと同じライフサイクルがあります。ただし、拡張機能にはバックグラウンドモードがないため、ユーザーが使用を終了したときに中断されることはありません。 代わりに、拡張機能が繰り返し初期化され、必要に応じて割り当てが解除されます。
+このプロセスは、アプリの通常の作成プロセスに似ていることに注意してください。 拡張機能に `UIViewController` は、アプリ内のビューコントローラーと同じライフサイクルがあります。ただし、拡張機能にはバックグラウンドモードがないため、ユーザーが使用を終了したときに中断されることはありません。 代わりに、拡張機能が繰り返し初期化され、必要に応じて割り当てが解除されます。
 
 ### <a name="creating-the-container-app-user-interface"></a>コンテナーアプリのユーザーインターフェイスを作成する
 
-このチュートリアルでは、コンテナーアプリは、拡張機能を出荷およびインストールするためのメソッドとしてのみ使用され、独自の機能は提供されません。 TodayContainer の `Main.storyboard` ファイルを編集して、拡張機能の関数とそのインストール方法を定義するテキストを追加します。
+このチュートリアルでは、コンテナーアプリは、拡張機能を出荷およびインストールするためのメソッドとしてのみ使用され、独自の機能は提供されません。 TodayContainer のファイルを編集して、 `Main.storyboard` 拡張機能の関数とそのインストール方法を定義するテキストを追加します。
 
 [![](extensions-images/today10.png "Edit the TodayContainers Main.storyboard file and add some text defining the Extensions function and how to install it")](extensions-images/today10.png#lightbox)
 
@@ -250,11 +260,11 @@ IOS シミュレーターで拡張機能をテストするには、 **TodayConta
 
 [![](extensions-images/run01.png "The containers main view will be displayed")](extensions-images/run01.png#lightbox)
 
-次に、シミュレーターの **[ホーム]** ボタンをクリックし、画面の上部から下方向にスワイプして**通知センター**を開き、 **[今日]** タブを選択して **[編集]** ボタンをクリックします。
+次に、シミュレーターの [**ホーム**] ボタンをクリックし、画面の上部から下方向にスワイプして**通知センター**を開き、[**今日**] タブを選択して [**編集**] ボタンをクリックします。
 
 [![](extensions-images/run02.png "Hit the Home button in the Simulator, swipe down from the top of the screen to open the Notification Center, select the Today tab and click the Edit button")](extensions-images/run02.png#lightbox)
 
-**DaysRemaining**拡張機能を**Today**ビューに追加し、 **[Done]** \ (完了 \) ボタンをクリックします。
+**DaysRemaining**拡張機能を**Today**ビューに追加し、[ **Done** ] \ (完了 \) ボタンをクリックします。
 
 [![](extensions-images/run03.png "Add the DaysRemaining Extension to the Today view and click the Done button")](extensions-images/run03.png#lightbox)
 
@@ -264,9 +274,9 @@ IOS シミュレーターで拡張機能をテストするには、 **TodayConta
 
 ## <a name="communicating-with-the-host-app"></a>ホストアプリとの通信
 
-上で作成した今日の拡張機能の例は、ホストアプリ (**今日**画面) とは通信しません。 存在する場合は、`TodayViewController` クラスまたは `CodeBasedViewController` クラスの[Extensioncontext](xref:Foundation.NSExtensionContext)プロパティを使用します。 
+上で作成した今日の拡張機能の例は、ホストアプリ (**今日**画面) とは通信しません。 存在する場合は、クラスまたはクラスの[Extensioncontext](xref:Foundation.NSExtensionContext)プロパティを使用し `TodayViewController` `CodeBasedViewController` ます。 
 
-ホストアプリからデータを受信する拡張機能の場合、データは、拡張機能の `UIViewController` の[Extensioncontext](xref:Foundation.NSExtensionContext)の[InputItems](xref:Foundation.NSExtensionContext.InputItems)プロパティに格納されている[NSExtensionItem](xref:Foundation.NSExtensionItem)オブジェクトの配列の形式になります。
+ホストアプリからデータを受信する拡張機能の場合、データは、拡張機能の[Extensioncontext](xref:Foundation.NSExtensionContext)の[InputItems](xref:Foundation.NSExtensionContext.InputItems)プロパティに格納されている[NSExtensionItem](xref:Foundation.NSExtensionItem)オブジェクトの配列の形式になり `UIViewController` ます。
 
 写真編集拡張機能などの他の拡張機能は、ユーザーが使用状況を完了またはキャンセルすることを区別できます。 これは、 [Extensioncontext](xref:Foundation.NSExtensionContext)プロパティの[CompleteRequest](xref:Foundation.NSExtensionContext.CompleteRequest*)および[cancelrequest](xref:Foundation.NSExtensionContext.CancelRequest*)メソッドを介してホストアプリに返されます。
 
@@ -286,7 +296,7 @@ IOS シミュレーターで拡張機能をテストするには、 **TodayConta
 
 拡張機能を使用する場合は、Uniform Type Identifier (UTI) を使用して、アプリ、他のアプリ、サービスの間で交換されるデータを作成および操作します。
 
-`MobileCoreServices.UTType` の静的クラスは、Apple の `kUTType...` 定義に関連する次のヘルパープロパティを定義します。
+`MobileCoreServices.UTType`静的クラスは、Apple の定義に関連する次のヘルパープロパティを定義し `kUTType...` ます。
 
 - `kUTTypeAlembic` - `Alembic`
 - `kUTTypeAliasFile` - `AliasFile`
@@ -464,3 +474,4 @@ results.ObjectForKey("NSExtensionJavaScriptPreprocessingResultsKey");
 
 - [ContainerApp (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/intro-to-extensions)
 - [Xamarin で拡張機能を作成する (ビデオ)](https://university.xamarin.com/lightninglectures/creating-extensions-in-ios)
+- [IOS アプリ拡張機能の効率とパフォーマンスを最適化する](https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/ExtensionCreation.html#//apple_ref/doc/uid/TP40014214-CH5-SW7)

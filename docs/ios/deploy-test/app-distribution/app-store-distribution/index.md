@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/23/2017
-ms.openlocfilehash: 73c4e992fae1a2d525670604d98f277fe4fde794
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: ee8ff58566732c6a86a339d3080c7243be4b4a4e
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303601"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572196"
 ---
 # <a name="app-store-distribution"></a>App Store 配布
 
@@ -30,7 +30,7 @@ Xamarin.iOS アプリの開発が完了したら、ソフトウェア開発ラ�
 > [!IMPORTANT]
 > iTunes Connect を使う場合、またそのためアプリを App Store に発行する場合は、お客様は個人または組織の Apple Developer Program に参加する**必要があります**。 Apple Developer **Enterprise** Program のメンバーの場合、このページの手順に従うことはできません。
 
-<a name="provisioning" />
+<a name="provisioning"></a>
 
 ## <a name="provisioning-an-app-for-app-store-distribution"></a>App Store で配布するためのアプリのプロビジョニング
 
@@ -44,7 +44,7 @@ Xamarin.iOS アプリケーションをリリースするためにどのよう�
 > [!NOTE]
 > 配布証明書とプロビジョニング プロファイルを作成できるのは、チーム エージェントと管理者のみです。
 
-<a name="creatingcertificate" />
+<a name="creatingcertificate"></a>
 
 ## <a name="creating-a-distribution-certificate"></a>配布証明書の作成
 
@@ -73,11 +73,11 @@ Xamarin.iOS アプリケーションをリリースするためにどのよう�
 
 3. チーム権限に応じて、次のように署名 ID が生成されます。チーム エージェントまたは管理者が承認するまで待機する必要がある場合もあります: [![](images/generated.png "署名 ID が生成され、ダイアログが表示されます")](images/generated.png#lightbox)
 
-<a name="creatingprofile" />
+<a name="creatingprofile"></a>
 
 ## <a name="creating-a-distribution-profile"></a>配布プロファイルの作成
 
-<a name="creatingappid" />
+<a name="creatingappid"></a>
 
 ### <a name="creating-an-app-id"></a>アプリ ID の作成
 
@@ -131,7 +131,7 @@ Xamarin.iOS アプリケーションをリリースするためにどのよう�
 
 -----
 
-<a name="selectprofile" />
+<a name="selectprofile"></a>
 
 ## <a name="selecting-a-distribution-profile-in-a-xamarinios-project"></a>Xamarin.iOS プロジェクトでの配布プロファイルの選択
 
@@ -171,7 +171,7 @@ iTunes App Store の販売向けの Xamarin.iOS アプリケーションの最�
 
 -----
 
-<a name="itunesconnect" />
+<a name="itunesconnect"></a>
 
 ## <a name="configuring-your-application-in-itunes-connect"></a>iTunes Connect でのアプリケーションの構成
 
@@ -181,7 +181,7 @@ Xamarin.iOS アプリケーションをレビューのために Apple に提出�
 
 詳細については、「[Configuring an App in iTunes Connect](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)」 (iTunes Connect でのアプリの構成) ドキュメントを参照してください。
 
-<a name="submitting" />
+<a name="submitting"></a>
 
 ## <a name="submitting-an-app-to-itunes-connect"></a>ITunes Connect へのアプリの提出
 
@@ -189,7 +189,7 @@ Xamarin.iOS アプリケーションをレビューのために Apple に提出�
 
 App Store へのアプリケーションの発行の詳細については、「[App Store に発行する](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)」を参照してください。
 
-<a name="windows" />
+<a name="windows"></a>
 
 ## <a name="automatically-copy-app-bundles-back-to-windows"></a>.app バンドルを自動的に Windows にコピーする
 

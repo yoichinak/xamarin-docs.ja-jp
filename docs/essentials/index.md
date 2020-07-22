@@ -1,31 +1,35 @@
 ---
 title: Xamarin.Essentials
-description: このドキュメントは、Xamarin.Essentials について説明するさまざまなガイドにリンクしています。そこでは、モバイル アプリケーション開発用のクロスプラットフォーム API が提供されます。
+description: 'タイトル: "Xamarin.Essentials" の説明:"このドキュメントは、Xamarin.Essentials について説明するさまざまなガイドにリンクされています。それらのガイドでは、モバイル アプリケーションの開発に役立つクロスプラットフォーム API が提供されています。"'
 ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 02/26/2020
-ms.openlocfilehash: 1d68203e80e0bc28e7060d5873c122db8c2ff960
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 27421ecc8b089321cd2331829d87365f3cf37a65
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "80387206"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84139465"
 ---
-# <a name="xamarinessentials"></a>Xamarin.Essentials
+# Xamarin.Essentials
 
-Xamarin.Essentials には、モバイル アプリケーション開発用のクロスプラットフォーム API が用意されています。
+ms.assetid:4EDC9897-5FD1-44CA-A26D-2E5AB472C99A author: jamesmontemagno ms.author: jamont ms.date:02/26/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]
 
-Android、iOS、UWP では独自のオペレーティング システムとプラットフォーム API が提供されています。開発者は、Xamarin を活用して C# で そのすべてにアクセスできます。 Xamarin.Essentials には、任意の Xamarin.Forms、Android、iOS、または UWP アプリケーションと連携する単一のクロスプラットフォーム API が用意されています。ユーザー インターフェイスの作成方法に関係なく、共有コードからアクセスできます。
+Xamarin.Essentials には、モバイル アプリケーション開発用のクロスプラットフォーム API が用意されています。 Android、iOS、UWP では独自のオペレーティング システムとプラットフォーム API が提供されています。開発者は、Xamarin を活用して C# で そのすべてにアクセスできます。
 
-## <a name="get-started-with-xamarinessentials"></a>[Xamarin.Essentials の概要](get-started.md?context=xamarin/xamarin-forms)
+## <a name="get-started-with-xamarinessentialsget-startedmdcontextxamarinxamarin-forms"></a>Xamarin.Essentials には、任意の Xamarin.Forms、Android、iOS、または UWP アプリケーションと連携する単一のクロスプラットフォーム API が用意されていて、ユーザー インターフェイスがどのように作成されたかを問わず共有コードからアクセスできます。
 
-[ファースト ステップ ガイド](get-started.md)に従って、Xamarin.Forms、Android、iOS、または UWP の既存のプロジェクト、または新しいプロジェクトに、**Xamarin.Essentials** の NuGet パッケージをインストールします。
+[Xamarin.Essentials の概要](get-started.md?context=xamarin/xamarin-forms)
 
-## <a name="feature-guides"></a>機能ガイド
+## <a name="feature-guides"></a>[ファースト ステップ ガイド](get-started.md)に従って、Xamarin.Forms、Android、iOS、または UWP の既存のプロジェクトまたは新しいプロジェクトに、 **Xamarin.Essentials** の NuGet パッケージをインストールします。
 
-ガイドに従って、Xamarin.Essentials の各機能をアプリケーションに統合します。
+機能ガイド
 
+* ガイドに従って、以下の Xamarin.Essentials の機能をアプリケーションに統合します。
 * [加速度計](accelerometer.md?context=xamarin/xamarin-forms) – 3 次元空間内のデバイスの加速度データを取得します。
 * [アプリ情報](app-information.md?context=xamarin/xamarin-forms) – アプリケーションに関する情報を見つけます。
 * [アプリのテーマ](app-theme.md?context=xamarin/xamarin-forms) –アプリケーションに対して要求されている現在のテーマを検出します。
@@ -61,16 +65,15 @@ Android、iOS、UWP では独自のオペレーティング システムとプ�
 * [単位変換機能](unit-converters.md?context=xamarin/xamarin-forms) – 単位を変換するためのヘルパー メソッド。
 * [バージョンの追跡](version-tracking.md?context=xamarin/xamarin-forms) – アプリケーションのバージョンとビルド番号を追跡します。
 * [バイブレーション](vibrate.md?context=xamarin/xamarin-forms) – デバイスをバイブレーションさせます。
-* [Web Authenticator](web-authenticator.md?context=xamarin/xamarin-forms) - Web 認証フローを開始し、コールバックをリッスンします。
 
-## <a name="troubleshooting"></a>[トラブルシューティング](troubleshooting.md?context=xamarin/xamarin-forms)
+## <a name="troubleshooting"></a>[Web Authenticator](web-authenticator.md?context=xamarin/xamarin-forms) - Web 認証フローを開始し、コールバックをリッスンします。
 
-問題が発生する場合は、ヘルプを検索してください。
+[トラブルシューティング](troubleshooting.md?context=xamarin/xamarin-forms)
 
-## <a name="release-notes"></a>[リリース ノート](https://docs.microsoft.com/xamarin/essentials/release-notes/)
+## <a name="release-notes"></a>問題が発生する場合は、ヘルプを検索してください。
 
-Xamarin.Essentials の各リリースの完全なリリースノートを見つけてください。
+[リリース ノート](https://docs.microsoft.com/xamarin/essentials/release-notes/)
 
-## <a name="api-documentation"></a>[API ドキュメント](xref:Xamarin.Essentials)
+## <a name="api-documentation"></a>Xamarin.Essentials の各リリースの完全なリリースノートを確認してください。
 
-Xamarin.Essentials のすべての機能の API ドキュメントを参照します。
+[API ドキュメント](xref:Xamarin.Essentials)

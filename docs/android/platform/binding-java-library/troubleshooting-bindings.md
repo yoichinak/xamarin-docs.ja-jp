@@ -7,14 +7,17 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 0c273797d7512f062260e49e0f71fdd1132f037b
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 3ec01d9322d4b6706fccd0959ae5944f71e82664
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76723804"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853028"
 ---
 # <a name="troubleshooting-bindings"></a>バインドのトラブルシューティング
+
+> [!IMPORTANT]
+> 現在、Xamarin プラットフォームでのカスタム バインディングの使用を調査しています。 今後の開発作業の発展のために、この[**アンケート**](https://www.surveymonkey.com/r/KKBHNLT)にご回答ください。
 
 _この記事では、バインドの生成時に発生する可能性のあるいくつかの一般的なエラー、考えられる原因、推奨される解決方法について簡単に説明します。_
 

@@ -1,18 +1,21 @@
 ---
-title: Xamarin.Forms のバインド パス
-description: この記事では、Xamarin.Forms のデータ バインディングを使用して、Binding クラスの Path プロパティでサブ プロパティおよびコレクション メンバーにアクセスする方法を説明します。
+title: 'title: "Xamarin.Formsのバインド パス" の説明:"この記事では、Xamarin.Forms のデータ バインディングを使用して、Binding クラスの Path プロパティでサブプロパティおよびコレクション メンバーにアクセスする方法を説明します。"'
+description: 'ms.prod: xamarin ms.assetid:3CF721A5-E157-468B-AD3A-DA0A45E58E8D ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:01/05/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
 ms.prod: xamarin
 ms.assetid: 3CF721A5-E157-468B-AD3A-DA0A45E58E8D
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 79d8df3300b302512a7de4140968dbc4c8e79abc
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a0ac8a568c3e8c46fa7e53112461aa0bff5684ae
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76940341"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84570792"
 ---
 # <a name="xamarinforms-binding-path"></a>Xamarin.Forms のバインド パス
 
@@ -124,7 +127,7 @@ ms.locfileid: "76940341"
 </Label>
 ```
 
-XAML でコンストラクター引数を指定する方法の詳細については、「[コンストラクター引数の受け渡し](~/xamarin-forms/xaml/passing-arguments.md#constructor_arguments)」を参照してください。
+XAML でコンストラクター引数を指定する方法の詳細については、「[コンストラクター引数の受け渡し](~/xamarin-forms/xaml/passing-arguments.md#passing-constructor-arguments)」を参照してください。
 
 最後に、最後の例は 2 番目の例とよく似ています。ただし、この例では、`StackLayout` の子の 1 つを参照します。
 
@@ -166,4 +169,4 @@ Xamarin.Forms は、バインド パスを処理するので、`INotifyPropertyC
 ## <a name="related-links"></a>関連リンク
 
 - [データ バインディングのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
-- [Xamarin.Forms 書籍のデータ バインディングに関する章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [Xamarin.Forms ブックのデータ バインディングに関する章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

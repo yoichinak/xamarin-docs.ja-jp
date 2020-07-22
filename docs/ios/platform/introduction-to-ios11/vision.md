@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/31/2017
-ms.openlocfilehash: b58e7b1fffed3253d9765401d52f16b751db134d
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 89a21eec369691e5c6e1ec8ce2430d679b6b309d
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306105"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84572144"
 ---
 # <a name="vision-framework-in-xamarinios"></a>Xamarin のビジョンフレームワーク
 
@@ -31,7 +31,7 @@ ms.locfileid: "79306105"
 
 四角形の検出と顔検出については、以下で詳しく説明します。
 
-<a name="rectangles" />
+<a name="rectangles"></a>
 
 ## <a name="rectangle-detection"></a>四角形の検出
 
@@ -39,9 +39,9 @@ ms.locfileid: "79306105"
 
 ### <a name="1-initialize-the-vision-request"></a>1. ビジョン要求を初期化します
 
-`ViewDidLoad`では、各要求の最後に呼び出される `HandleRectangles` メソッドを参照する `VNDetectRectanglesRequest` を作成します。
+で、 `ViewDidLoad` `VNDetectRectanglesRequest` `HandleRectangles` 各要求の最後に呼び出されるメソッドを参照するを作成します。
 
-`MaximumObservations` プロパティも設定する必要があります。それ以外の場合は、既定で1になり、1つの結果のみが返されます。
+`MaximumObservations`プロパティも設定する必要があります。それ以外の場合は、既定で1になり、1つの結果のみが返されます。
 
 ```csharp
 RectangleRequest = new VNDetectRectanglesRequest(HandleRectangles);
@@ -60,11 +60,11 @@ DispatchQueue.DefaultGlobalQueue.DispatchAsync(()=>{
 });
 ```
 
-このハンドラーは、手順 1. で作成したビジョンフレームワーク `VNDetectRectanglesRequest` に `ciImage` を渡します。
+このハンドラーは、 `ciImage` 手順 1. で作成したビジョンフレームワークにを渡し `VNDetectRectanglesRequest` ます。
 
 ### <a name="3-handle-the-results-of-vision-processing"></a>3. ビジョン処理の結果を処理する
 
-四角形の検出が完了すると、フレームワークによって `HandleRectangles` メソッドが実行されます。次にその概要を示します。
+四角形の検出が完了すると、フレームワークによってメソッドが実行 `HandleRectangles` されます。次にその概要を示します。
 
 ```csharp
 private void HandleRectangles(VNRequest request, NSError error){
@@ -88,7 +88,7 @@ private void HandleRectangles(VNRequest request, NSError error){
 
 ### <a name="4-display-the-results"></a>4. 結果を表示する
 
-**VisionRectangles**サンプルの `OverlayRectangles` メソッドには、次の3つの関数があります。
+`OverlayRectangles` **VisionRectangles**サンプルのメソッドには、次の3つの関数があります。
 
 - ソースイメージのレンダリング
 - 四角形を描画して、それぞれが検出された場所を示します。
@@ -102,7 +102,7 @@ private void HandleRectangles(VNRequest request, NSError error){
 
 四角形の検出は、多くの場合、操作チェーンの最初の手順にすぎません。[たとえば、この CoreMLVision の例](~/ios/platform/introduction-to-ios11/coreml.md#coremlvision)では、四角形を coreml モデルに渡して、手書きの数字を解析します。
 
-<a name="faces" />
+<a name="faces"></a>
 
 ## <a name="face-detection"></a>顔検出
 
@@ -110,7 +110,7 @@ private void HandleRectangles(VNRequest request, NSError error){
 
 ### <a name="1-initialize-the-vision-request"></a>1. ビジョン要求を初期化します
 
-`ViewDidLoad`では、各要求の最後に呼び出される `HandleRectangles` メソッドを参照する `VNDetectFaceRectanglesRequest` を作成します。
+で、 `ViewDidLoad` `VNDetectFaceRectanglesRequest` `HandleRectangles` 各要求の終了時に呼び出されるメソッドを参照するを作成します。
 
 ```csharp
 FaceRectangleRequest = new VNDetectFaceRectanglesRequest(HandleRectangles);
@@ -128,11 +128,11 @@ DispatchQueue.DefaultGlobalQueue.DispatchAsync(()=>{
 });
 ```
 
-このハンドラーは、手順 1. で作成したビジョンフレームワーク `VNDetectFaceRectanglesRequest` に `ciImage` を渡します。
+このハンドラーは、 `ciImage` 手順 1. で作成したビジョンフレームワークにを渡し `VNDetectFaceRectanglesRequest` ます。
 
 ### <a name="3-handle-the-results-of-vision-processing"></a>3. ビジョン処理の結果を処理する
 
-顔検出が完了すると、`HandleRectangles` ハンドラーは、エラー処理を実行し、検出された面の境界を表示し、`OverlayRectangles` を呼び出して、外接する四角形を元の画像に描画します。
+顔検出が完了すると、ハンドラーは、 `HandleRectangles` エラー処理を実行するメソッドを実行し、検出された面の境界を表示し、を呼び出して、 `OverlayRectangles` 外接する四角形を元の画像に描画します。
 
 ```csharp
 private void HandleRectangles(VNRequest request, NSError error){
@@ -161,7 +161,7 @@ private void HandleRectangles(VNRequest request, NSError error){
 
 ### <a name="4-display-the-results"></a>4. 結果を表示する
 
-**VisionFaces**サンプルの `OverlayRectangles` メソッドには、次の3つの関数があります。
+`OverlayRectangles` **VisionFaces**サンプルのメソッドには、次の3つの関数があります。
 
 - ソースイメージのレンダリング
 - 検出された各顔に四角形を描画します。
@@ -173,7 +173,7 @@ private void HandleRectangles(VNRequest request, NSError error){
 
 ### <a name="5-further-processing"></a>5. さらに処理
 
-ビジョンフレームワークには、顔の特徴 (目や口など) を検出するための追加機能が含まれています。 `VNDetectFaceLandmarksRequest` 型を使用します。これにより、上記の手順 3. で `VNFaceObservation` 結果が返されますが、追加の `VNFaceLandmark` データが返されます。
+ビジョンフレームワークには、顔の特徴 (目や口など) を検出するための追加機能が含まれています。 この `VNDetectFaceLandmarksRequest` 型を使用します。これは、 `VNFaceObservation` 上記の手順3のように結果を返しますが、追加のデータが含まれ `VNFaceLandmark` ます。
 
 ## <a name="related-links"></a>関連リンク
 

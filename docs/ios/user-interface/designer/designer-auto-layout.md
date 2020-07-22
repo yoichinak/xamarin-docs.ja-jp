@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 35a8d3aeb00ac73f944712cb31f913f98bd3b6e8
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 5aa3baa6aba76483866911d905687be6c3a5ae4e
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79306057"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84569830"
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>Xamarin Designer for iOS を使用した自動レイアウト
 
@@ -20,7 +20,7 @@ ms.locfileid: "79306057"
 
 このガイドでは、Xamarin iOS Designer で制約とその操作を行う方法について説明します。 このガイドでは、制約の使用方法については説明しません。 プログラムによる自動レイアウトの使用の詳細については、 [Apple のドキュメント](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/AutolayoutPG/ProgrammaticallyCreatingConstraints.html)を参照してください。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 Xamarin Designer for iOS は、Visual Studio 2017 以降の Windows で Visual Studio for Mac で使用できます。
 
@@ -30,7 +30,7 @@ Xamarin Designer for iOS は、Visual Studio 2017 以降の Windows で Visual S
 
 制約とは、画面上の2つの要素間のリレーションシップを数学的に表現したものです。 UI 要素の位置を数学的関係として表すと、UI 要素の場所のハードコーディングに関連するいくつかの問題が解決されます。 たとえば、画面の下部にあるボタン20px を縦モードで配置する場合、ボタンの位置は横モードで画面から外れます。 これを回避するには、ボタンの下端をビューの下部から20px に設定する制約を設定します。 ボタンの端の位置は、ボタンとして計算さ*れます。 bottom = 20px*の場合は、ビューの一番下から縦モードと横モードの両方でボタン20px が配置されます。 数学的な関係に基づいて配置を計算する機能は、UI デザインで制約を使用すると便利です。
 
-制約を設定するときに、制約を適用するオブジェクトを引数として受け取り、制約が適用されるプロパティ (*属性*) を受け取る `NSLayoutConstraint` オブジェクトを作成します。 IOS デザイナーでは、属性に要素の*左*、*右*、*上*、*下*などのエッジが含まれます。 *高さ*や*幅*などのサイズ属性や、中心点の位置、 *system.windows.media.rotatetransform.centerx* 、およびセンター *y*も含まれます。 たとえば、2つのボタンの左側の境界の位置に制約を追加すると、デザイナーはその部分の下に次のコードを生成します。
+制約を設定するときに、制約 `NSLayoutConstraint` を適用するオブジェクトの引数として使用するオブジェクトと、制約が動作するプロパティ (*属性*) を作成します。 IOS デザイナーでは、属性に要素の*左*、*右*、*上*、*下*などのエッジが含まれます。 *高さ*や*幅*などのサイズ属性や、中心点の位置、 *system.windows.media.rotatetransform.centerx* 、およびセンター *y*も含まれます。 たとえば、2つのボタンの左側の境界の位置に制約を追加すると、デザイナーはその部分の下に次のコードを生成します。
 
 ```csharp
 View.AddConstraint (NSLayoutConstraint.Create (Button1, NSLayoutAttribute.Left, NSLayoutRelation.Equal, Button2, NSLayoutAttribute.Left, 1, 10));
@@ -43,7 +43,7 @@ View.AddConstraint (NSLayoutConstraint.Create (Button1, NSLayoutAttribute.Left, 
 既定の iOS デザイナー構成では、制約モードが有効になっています。 ただし、手動で有効または無効にする必要がある場合は、次の2つの手順で行うことができます。
 
 1. デザイン画面の空の領域をクリックします。 これにより、すべての要素が選択解除され、ストーリーボードドキュメントのプロパティが表示されます。
-1. プロパティパネルで、 **[オートレイアウトを使用する]** チェックボックスをオンまたはオフにします。
+1. プロパティパネルで、[**オートレイアウトを使用する**] チェックボックスをオンまたはオフにします。
 
     ![](designer-auto-layout-images/image01.png "The Use Autolayout checkbox in the property panel")
 
@@ -67,9 +67,9 @@ View.AddConstraint (NSLayoutConstraint.Create (Button1, NSLayoutAttribute.Left, 
 
 [制約エディター] ポップアップを使用すると、選択ビューに対して一度に複数の制約を追加および更新できます。 2つのビューの左端にビューを配置するなど、複数の間隔、縦横比、および配置の制約を作成できます。
 
-選択したビューの制約を編集するには、省略記号をクリックして、segue: ![の制約 segue を表示し](designer-auto-layout-images/constraints-popup.png)
+選択したビューの制約を編集するには、省略記号をクリックして segue: ![ constraints 編集 segue を表示します。](designer-auto-layout-images/constraints-popup.png)
 
-制約を開くと、segue は、ビューに対する事前設定された制約を表示します。 右上隅にあるコンボボックスからすべての**辺**を選択し、 **[すべてクリア]** を選択して削除します。
+制約を開くと、segue は、ビューに対する事前設定された制約を表示します。 右上隅にあるコンボボックスからすべての**辺**を選択し、[**すべてクリア**] を選択して削除します。
 
 **W**は幅を設定し、 **H**は高さの制約を設定します。 **縦横比**を確認すると、ビューの高さと幅がさまざまな画面サイズで制御されます。ビューの幅は、その比率の分子として、および高さを分母として使用されます。
 
@@ -170,7 +170,7 @@ Frame misplacement は、underconstrained items と同じカラーコードを�
 
 これにより、コントロールによって定義された位置と一致するように、要素フレームが自動的に調整されます。
 
-<a name="modifying-in-code" />
+<a name="modifying-in-code"></a>
 
 ## <a name="modifying-constraints-in-code"></a>コード内の制約の変更
 
@@ -182,10 +182,10 @@ Frame misplacement は、underconstrained items と同じカラーコードを�
 2. **ドキュメントアウトラインエクスプローラー**で、目的の制約を見つけて選択します。
 
     [![](designer-auto-layout-images/modify01.png "The Document Outline Explorer")](designer-auto-layout-images/modify01.png#lightbox)
-3. 次に、**プロパティエクスプローラー**の **[ウィジェット]** タブで、制約に**名前**を割り当てます。
+3. 次に、**プロパティエクスプローラー**の [**ウィジェット**] タブで、制約に**名前**を割り当てます。
 
     [![](designer-auto-layout-images/modify02.png "The Widget Tab")](designer-auto-layout-images/modify02.png#lightbox)
-4. 変更を [保存] します。
+4. 変更内容を保存します。
 
 上記の変更を適用したら、コードで制約にアクセスし、そのプロパティを変更できます。 たとえば、次のコードを使用して、添付ビューの高さをゼロに設定できます。
 
@@ -201,16 +201,16 @@ IOS デザイナーでは、次のような制約が設定されています。
 
 自動レイアウトエンジンは、制約の変更に応じて添付ビューをすぐに更新するのではなく、近い将来の_遅延レイアウトパス_をスケジュールします。 この遅延パスでは、特定のビューの制約が更新されただけでなく、階層内のすべてのビューに対する制約が再計算され、新しいレイアウトに合わせて更新されます。
 
-任意の時点で、親ビューの `SetNeedsLayout` または `SetNeedsUpdateConstraints` メソッドを呼び出すことによって、独自の遅延レイアウトパスをスケジュールすることができます。
+任意の時点で、 `SetNeedsLayout` 親ビューのメソッドまたはメソッドを呼び出すことによって、独自の遅延レイアウトパスをスケジュールすることができ `SetNeedsUpdateConstraints` ます。
 
 遅延レイアウトパスは、ビュー階層を介して2つの一意のパスで構成されます。
 
-- このパスの**更新パス**では、自動レイアウトエンジンがビュー階層を走査し、すべてのビューコントローラーで `UpdateViewConstraints` メソッドを呼び出し、すべてのビューの `UpdateConstraints` メソッドを呼び出します。
-- **レイアウトが成功する**と、自動レイアウトエンジンはビュー階層を走査しますが、今度はすべてのビューコントローラーで `ViewWillLayoutSubviews` メソッドを呼び出し、すべてのビューで `LayoutSubviews` メソッドを呼び出します。 `LayoutSubviews` メソッドは、自動レイアウトエンジンによって計算された四角形を使用して、各サブビューの `Frame` プロパティを更新します。
+- このパスの**更新パス**では、自動レイアウトエンジンがビュー階層を走査し、すべてのビューコントローラーでメソッドを呼び出し、 `UpdateViewConstraints` すべての `UpdateConstraints` ビューに対してメソッドを呼び出します。
+- **レイアウトが再度渡され**ます。自動レイアウトエンジンはビュー階層を走査しますが、今回はすべてのビューコントローラーでメソッドを呼び出し、 `ViewWillLayoutSubviews` すべての `LayoutSubviews` ビューに対してメソッドを呼び出します。 メソッドは、 `LayoutSubviews` `Frame` 自動レイアウトエンジンによって計算された四角形を使用して、各サブビューのプロパティを更新します。
 
 ### <a name="animating-constraint-changes"></a>制約変更のアニメーション化
 
-制約プロパティを変更するだけでなく、コアアニメーションを使用して、ビューの制約に対する変更をアニメーション化することもできます。 例 :
+制約プロパティを変更するだけでなく、コアアニメーションを使用して、ビューの制約に対する変更をアニメーション化することもできます。 次に例を示します。
 
 ```csharp
 UIView.BeginAnimations("OpenInfo");
@@ -222,9 +222,9 @@ View.LayoutIfNeeded();
 UIView.CommitAnimations();
 ```
 
-ここで重要なのは、アニメーションブロック内の親ビューの `LayoutIfNeeded` メソッドを呼び出すことです。 これにより、アニメーションの位置またはサイズの変更の各フレームを描画するようビューに指示します。 この行を使用しない場合、ビューはアニメーション化せずに最終バージョンにスナップするだけです。
+ここで重要なのは、 `LayoutIfNeeded` アニメーションブロック内の親ビューのメソッドを呼び出すことです。 これにより、アニメーションの位置またはサイズの変更の各フレームを描画するようビューに指示します。 この行を使用しない場合、ビューはアニメーション化せずに最終バージョンにスナップするだけです。
 
-## <a name="summary"></a>要約
+## <a name="summary"></a>まとめ
 
 このガイドでは、iOS の自動 (アダプティブ) レイアウトと、デザインサーフェイス上の要素間のリレーションシップの数学的表現としての制約の概念を紹介しました。 ここでは、iOS デザイナーで自動レイアウトを有効にする方法、**制約ツールバー**を使用する方法、デザインサーフェイスで個別に制約を編集する方法について説明します。 次に、3つの一般的な制約の問題をトラブルシューティングする方法について説明しました。 最後に、コードで制約を変更する方法を示しました。
 

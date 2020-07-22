@@ -1,51 +1,54 @@
 ---
-title: 作成して、SkiaSharp ビットマップの描画
-description: SkiaSharp のビットマップを作成し、それらに基づくキャンバスを作成してこれらのビットマップ上で描画する方法について説明します。
+title: SkiaSharp ビットマップの作成と描画
+description: SkiaSharp ビットマップを作成し、それらに基づいてキャンバスを作成することにより、ビットマップに描画する方法について説明します。
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 79BD3266-D457-4E50-BDDF-33450035FA0F
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: 1e2b50a260ed5f5bbbbfc3c4ba55a33075262f25
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c045e297beca675c0582efc2f75b1d6b2bcedcf8
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228105"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573294"
 ---
-# <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>作成して、SkiaSharp ビットマップの描画
+# <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>SkiaSharp ビットマップの作成と描画
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-どのアプリケーション ビットマップをロードできます、Web、アプリケーション リソース、およびユーザーのフォト ライブラリから見てきました。 アプリケーション内で新しいビットマップを作成することもできます。 最も簡単な方法では、1 つのコンス トラクターの[ `SKBitmap` ](xref:SkiaSharp.SKBitmap.%23ctor(System.Int32,System.Int32,System.Boolean)):
+アプリケーションで、Web からのビットマップ、アプリケーションリソース、およびユーザーの写真ライブラリを読み込む方法を説明しました。 また、アプリケーション内に新しいビットマップを作成することもできます。 最も簡単な方法は、のコンストラクターの1つです [`SKBitmap`](xref:SkiaSharp.SKBitmap.%23ctor(System.Int32,System.Int32,System.Boolean)) 。
 
 ```csharp
 SKBitmap bitmap = new SKBitmap(width, height);
 ```
 
-`width`と`height`パラメーターが整数であり、ビットマップのピクセル寸法を指定します。 このコンス トラクターは、1 ピクセルあたり 4 バイトの完全なカラー ビットマップを作成します。 赤、緑、青、およびアルファ (透明度) のコンポーネントの 1 バイトごと。
+`width`パラメーターと `height` パラメーターは整数で、ビットマップのピクセルディメンションを指定します。 このコンストラクターは、ピクセルあたり4バイトのフルカラービットマップを作成します。各要素には、赤、緑、青、およびアルファ (不透明度) の各コンポーネントの1バイトが含まれます。
 
-新しいビットマップを作成した後は、ビットマップの画面上の何かを取得する必要があります。 2 つの方法のいずれかで一般に行います。
+新しいビットマップを作成したら、ビットマップの表面で何かを取得する必要があります。 通常は、次の2つの方法のいずれかで行います。
 
-- 標準を使用してビットマップ上で描画`Canvas`メソッドを描画します。
-- ピクセル ビットに直接アクセスします。
+- 標準の描画メソッドを使用してビットマップに描画し `Canvas` ます。
+- ピクセルビットに直接アクセスします。
 
-この記事では、最初の方法を示しています。
+この記事では、最初の方法について説明します。
 
-![サンプルの描画](drawing-images/DrawingSample.png "サンプルの描画")
+![描画のサンプル](drawing-images/DrawingSample.png "描画のサンプル")
 
-2 番目の方法が、記事で説明した[ **SkiaSharp ビットマップのピクセルへのアクセス**](pixel-bits.md)します。
+2番目の方法については、記事「 [**SkiaSharp Bitmap Pixels にアクセス**](pixel-bits.md)する」をご覧ください。
 
-## <a name="drawing-on-the-bitmap"></a>ビットマップの描画
+## <a name="drawing-on-the-bitmap"></a>ビットマップでの描画
 
-ビットマップの表面に描画すると、ビデオ ディスプレイ上に描画と同じです。 取得するビデオ ディスプレイ上で描画する、`SKCanvas`オブジェクトから、`PaintSurface`イベント引数。 作成するビットマップの描画、するために、`SKCanvas`オブジェクトを使用して、 [ `SKCanvas` ](xref:SkiaSharp.SKCanvas.%23ctor(SkiaSharp.SKBitmap))コンス トラクター。
+ビットマップの表面の描画は、ビデオディスプレイの描画と同じです。 ビデオディスプレイに描画するには、 `SKCanvas` イベント引数からオブジェクトを取得し `PaintSurface` ます。 ビットマップに描画するには、 `SKCanvas` コンストラクターを使用してオブジェクトを作成し [`SKCanvas`](xref:SkiaSharp.SKCanvas.%23ctor(SkiaSharp.SKBitmap)) ます。
 
 ```csharp
 SKCanvas canvas = new SKCanvas(bitmap);
 ```
 
-ビットマップの描画が完了したらを破棄することができます、`SKCanvas`オブジェクト。 このため、`SKCanvas`コンス トラクターの呼び出し一般に、`using`ステートメント。
+ビットマップでの描画が完了したら、オブジェクトを破棄でき `SKCanvas` ます。 このため、コンストラクターは `SKCanvas` 通常、ステートメントで呼び出され `using` ます。
 
 ```csharp
 using (SKCanvas canvas = new SKCanvas(bitmap))
@@ -54,13 +57,13 @@ using (SKCanvas canvas = new SKCanvas(bitmap))
 }
 ```
 
-ビットマップは、表示されます。 後では、プログラムを新規に作成できます`SKCanvas`に依存するオブジェクトが同じ、ビットマップ、さらに描画します。
+ビットマップが表示されます。 後で、プログラムは `SKCanvas` 同じビットマップに基づいて新しいオブジェクトを作成し、それをさらに描画できます。
 
-**こんにちはビットマップ**ページで、 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーションが書き込むテキスト「こんにちは, ビットマップ!」 ビットマップと複数回のビットマップを表示します。
+**[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーションの**hello ビットマップ**ページには、"hello, Bitmap!" というテキストが書き込まれます。 ビットマップでは、そのビットマップが複数回表示されます。
 
-コンス トラクター、`HelloBitmapPage`作成では、まず、`SKPaint`テキストを表示するオブジェクト。 テキスト文字列の大きさを決定し、その寸法のビットマップを作成します。 これは、後、作成、`SKCanvas`オブジェクトを呼び出し、そのビットマップに基づいて`Clear`、号餧ェヒェマル`DrawText`。 常を呼び出すことをお勧め`Clear`新しいビットマップで新しく作成されたビットマップにランダムなデータが含まれる場合がありますので。
+のコンストラクターは、 `HelloBitmapPage` `SKPaint` テキストを表示するためのオブジェクトを作成することによって開始されます。 ここでは、テキスト文字列の大きさを決定し、それらの寸法を使用してビットマップを作成します。 次に、その `SKCanvas` ビットマップに基づいてオブジェクトを作成し、 `Clear` を呼び出して、を呼び出し `DrawText` ます。 `Clear`新しく作成されたビットマップにはランダムなデータが含まれている可能性があるため、必ず新しいビットマップを使用してを呼び出すことをお勧めします。
 
-コンス トラクターの最後に作成、`SKCanvasView`ビットマップを表示するオブジェクト。
+コンストラクターは、 `SKCanvasView` ビットマップを表示するオブジェクトを作成します。
 
 ```csharp
 public partial class HelloBitmapPage : ContentPage
@@ -111,95 +114,95 @@ public partial class HelloBitmapPage : ContentPage
 }
 ```
 
-`PaintSurface`ハンドラーが複数回の表示の行と列のビットマップをレンダリングします。 注意、`Clear`メソッドで、`PaintSurface`ハンドラーの引数には、`SKColors.Aqua`画面の背景の色します。
+ハンドラーは、 `PaintSurface` 表示の行と列に複数回ビットマップをレンダリングします。 `Clear`ハンドラーのメソッドに `PaintSurface` はの引数があり `SKColors.Aqua` 、表示サーフェイスの背景色が決まります。
 
-[![こんにちは, ビットマップ!](drawing-images/HelloBitmap.png "こんにちは, ビットマップ。")](drawing-images/HelloBitmap-Large.png#lightbox)
+[![Hello, Bitmap!](drawing-images/HelloBitmap.png "Hello, Bitmap!")](drawing-images/HelloBitmap-Large.png#lightbox)
 
-水色の背景の外観は、ビットマップが透明のテキストを除くことがわかります。
+水色の背景の外観は、テキストを除き、ビットマップが透明であることを示しています。
 
-## <a name="clearing-and-transparency"></a>消去と透明度
+## <a name="clearing-and-transparency"></a>クリアと透明度
 
-表示、**こんにちはビットマップ**ページは、ビットマップを作成するプログラムが透明こと黒色の文字を除くを示します。 理由を画面の色を水色を示しています。
+[ **Hello bitmap** ] ページの表示では、作成されたプログラムが黒のテキスト以外に透明であることがわかります。 そのため、ディスプレイ画面の水色の色はから表示されます。
 
-`Clear` の`SKCanvas`メソッドのドキュメントでは、ステートメントについて説明しています。"キャンバスの現在のクリップ内のすべてのピクセルを置き換えます。" "置換" という単語を使用すると、これらのメソッドの重要な特性が明らかになります。のすべての描画メソッド`SKCanvas`は、既存の表示サーフェイスに何かを追加します。 `Clear`メソッド_置換_は既に存在します。
+のメソッドのドキュメントでは、 `Clear` `SKCanvas` "キャンバス ' 現在のクリップ内のすべてのピクセルを置き換える" というステートメントを使用してそれらを記述しています。 "置換" という単語を使用すると、これらのメソッドの重要な特性が明らかになります。つまり、 `SKCanvas` 既存の表示サーフェイスに何かを追加するすべての描画メソッドです。 メソッドは、 `Clear` 既に存在するものを_置き換え_ます。
 
-`Clear` 2 つのバージョンに存在します。
+`Clear`2つの異なるバージョンに存在します。
 
-- [ `Clear` ](xref:SkiaSharp.SKCanvas.Clear(SkiaSharp.SKColor))メソッドを`SKColor`パラメーターは、その色のピクセルを使用して、表示画面のピクセルを置き換えます。
+- [`Clear`](xref:SkiaSharp.SKCanvas.Clear(SkiaSharp.SKColor))パラメーターを持つメソッドは、 `SKColor` 画面表面のピクセルをその色のピクセルで置き換えます。
 
-- [ `Clear` ](xref:SkiaSharp.SKCanvas.Clear)パラメーターなしのメソッドは、ピクセルを置き換える、 [ `SKColors.Empty` ](xref:SkiaSharp.SKColors.Empty)は 0 に設定されます (赤、緑、青、およびアルファ) コンポーネントのすべての色の色。 この色は、「透明な黒」と呼ばれることがあります。
+- [`Clear`](xref:SkiaSharp.SKCanvas.Clear)パラメーターを指定せずにメソッドを使用すると、ピクセルが色に置き換えられます。この色 [`SKColors.Empty`](xref:SkiaSharp.SKColors.Empty) は、すべてのコンポーネント (赤、緑、青、およびアルファ) が0に設定されています。 この色は、"透明な黒" と呼ばれることもあります。
 
-呼び出す`Clear`新しいビットマップを引数なしで完全に透過的にするビットマップ全体を初期化します。 非透過または部分的に非透過的なビットマップの描画後何も通常なります。
+`Clear`新しいビットマップで引数を指定せずにを呼び出すと、完全に透明になるようにビットマップ全体が初期化されます。 その後ビットマップに描画されたものは、通常、不透明または部分的に不透明になります。
 
-次のようなものを試してみてください。 **[Hello Bitmap]** ページで、に`Clear`適用された`bitmapCanvas`メソッドを次のものに置き換えます。
+次のようにします。 [ **Hello Bitmap** ] ページで、 `Clear` に適用されたメソッドを次のように置き換えます `bitmapCanvas` 。
 
 ```csharp
 bitmapCanvas.Clear(new SKColor(255, 0, 0, 128));
 ```
 
-順序、`SKColor`コンス トラクターのパラメーターは、赤、緑、青、およびアルファ、各値は 0 から 255 までの場所。 アルファ値 255 は不透明アルファ値は 0 が透明であることに留意してください。
+コンストラクターのパラメーターの順序 `SKColor` は、赤、緑、青、およびアルファです。各値の範囲は 0 ~ 255 です。 アルファ値0は透明であるのに対し、アルファ値255は不透明であることに注意してください。
 
-(255、0, 0, 128) 値を 50% の不透明度の赤いピクセルのビットマップのピクセルをクリアします。 これは、ビットマップの背景が半透明であることを意味します。 ビットマップの半透明の赤の背景は灰色の背景を作成する画面の水色の背景と組み合わせます。
+値 (255、0、0、128) は、ビットマップのピクセルを、50% の不透明度で赤ピクセルにクリアします。 これは、ビットマップの背景が半透明であることを意味します。 ビットマップの半透明の赤の背景には、画面の明るい背景色が表示されます。
 
-次の割り当てを配置することで、テキストの色を透明な黒色に設定してください、`SKPaint`初期化子。
+初期化子に次の割り当てを指定して、テキストの色を透明な黒に設定してみ `SKPaint` ます。
 
 ```csharp
 Color = new SKColor(0, 0, 0, 0)
 ```
 
-この透過的なテキストが、画面の水色の背景が表示されるビットマップの完全に透明な領域を作成と思うかもしれません。 そんなことはありません。 ビットマップに既にあるものの上にテキストを描画します。 透過的なテキストにはまったくで表示されません。
+この透明なテキストはビットマップの完全に透明な領域を作成し、ディスプレイ画面の水色の背景が表示されると考えられます。 しかし、それはそれほどではありません。 テキストは、ビットマップに既に存在するものの上に描画されます。 透明なテキストは表示されません。
 
-いいえ`Draw`メソッドこれまで、ビットマップは透明にします。 のみ`Clear`ことができます。
+どの `Draw` 方法を使用しても、ビットマップをより透明にすることはできません。 この `Clear` 操作を実行できるのは、だけです。
 
 ## <a name="bitmap-color-types"></a>ビットマップの色の種類
 
-最も単純な`SKBitmap`コンス トラクターでは、ビットマップの高さとピクセル幅の整数を指定できます。 その他の`SKBitmap`コンス トラクターは複雑になります。 これらのコンス トラクターの 2 つの列挙型の引数が必要: [ `SKColorType` ](xref:SkiaSharp.SKColorType)と[ `SKAlphaType`](xref:SkiaSharp.SKAlphaType)します。 他のコンス トラクターを使用して、 [ `SKImageInfo` ](xref:SkiaSharp.SKImageInfo)構造体は、この情報を統合します。
+最も単純 `SKBitmap` なコンストラクターでは、ビットマップのピクセル幅と高さを整数で指定できます。 その他の `SKBitmap` コンストラクターはより複雑です。 これらのコンストラクターには、との2つの列挙型の引数が必要です [`SKColorType`](xref:SkiaSharp.SKColorType) [`SKAlphaType`](xref:SkiaSharp.SKAlphaType) 。 その他のコンストラクターは、 [`SKImageInfo`](xref:SkiaSharp.SKImageInfo) この構造体を使用して、この情報を統合します。
 
-`SKColorType`列挙体には 9 のメンバー。 各メンバーには、特定のビットマップのピクセルを格納する方法について説明します。
-
-- `Unknown`
-- `Alpha8` &mdash; 各ピクセルは 8 ビット、完全に透明から完全に不透明にアルファ値を表す
-- `Rgb565` &mdash; 各ピクセルが 16 ビット、5 ビットの赤と青と緑の 6
-- `Argb4444` &mdash; 各ピクセルはアルファ、赤、緑、および青の 4 つの 16 ビットです。
-- `Rgba8888` &mdash; 各ピクセルが 32 ビット、赤、緑、青、およびアルファの 8 各
-- `Bgra8888` &mdash; 各ピクセルが 32 ビット、青、緑、赤、およびアルファの 8 各
-- `Index8` &mdash; 各ピクセルは 8 ビットでありへのインデックスを表す、 [`SKColorTable`](xref:SkiaSharp.SKColorTable)
-- `Gray8` &mdash; 各ピクセルは白、黒から灰色の網かけを表す 8 ビットです。
-- `RgbaF16` &mdash; 各ピクセルは赤、緑、青、および 16 ビットの浮動小数点形式でアルファとの 64 ビットです。
-
-各ピクセルが 32 ピクセル (4 バイト) を 2 つの形式とも呼ばれます_フルカラー_形式。 ビデオが自身を表示するときに時間から他の形式の日付の多くは完全な色の対応でした。 制限付きの色のビットマップは、これらの表示に適してし、占有するメモリの領域を節約するビットマップを許可します。
-
-最近は、プログラマほぼ常にフルカラー ビットマップを使用して、およびその他の形式を使用する必要はありません。 例外は、`RgbaF16`形式で、色の解像度でもフルカラー形式よりも大きいを許可します。 ただし、この形式は医用画像などの特殊な目的で使用され、標準の完全なカラー ディスプレイを使用すると、あまり意味します。
-
-自体には、制限するこの一連の記事、`SKBitmap`色の既定ではない場合に使用される形式`SKColorType`メンバーを指定します。 この既定の形式は、基になるプラットフォームに基づきます。 Xamarin.Forms でサポートされるプラットフォーム、既定の色の種類は次のとおりです。
-
-- `Rgba8888` iOS および Android 用
-- `Bgra8888` UWP の
-
-唯一の違いは、メモリ内の 4 バイトの順序とピクセル ビットを直接アクセスするときにのみ問題になるこれです。 これはありませんが重要になります、情報の記事が表示されるまで[ **SkiaSharp ビットマップのピクセルへのアクセス**](pixel-bits.md)します。
-
-`SKAlphaType`列挙体には 4 つのメンバー。
+`SKColorType`列挙体には、9個のメンバーがあります。 これらの各メンバーは、ビットマップピクセルを格納する特定の方法を記述します。
 
 - `Unknown`
-- `Opaque` &mdash; ビットマップに透過性がありません。
-- `Premul` &mdash; アルファ値によって左側から乗算は色のコンポーネント
-- `Unpremul` &mdash; アルファ コンポーネントでの色要素が事前乗算されていません。
+- `Alpha8`&mdash;各ピクセルは8ビットで、完全に透明から完全に不透明なアルファ値を表します。
+- `Rgb565`&mdash;各ピクセルは16ビット、赤と青は5ビット、緑の場合は6です。
+- `Argb4444`&mdash;各ピクセルは16ビット、それぞれアルファ、赤、緑、および青になります。
+- `Rgba8888`&mdash;各ピクセルは32ビット、赤、緑、青、およびアルファ用です。
+- `Bgra8888`&mdash;各ピクセルは32ビット、それぞれ青、緑、赤、およびアルファになります。
+- `Index8`&mdash;各ピクセルは8ビットであり、のインデックスを表します。[`SKColorTable`](xref:SkiaSharp.SKColorTable)
+- `Gray8`&mdash;各ピクセルは、黒色から白までの灰色の網掛けを表す8ビットです。
+- `RgbaF16`&mdash;各ピクセルは64ビットで、赤、緑、青、アルファは16ビットの浮動小数点の形式になります
 
-4 バイトの赤いビットマップ ピクセルで、バイトの順序の赤、緑、青、アルファに示すように、50% の透明度を次に示します。
+各ピクセルが32ピクセル (4 バイト) である2つの形式は、多くの場合、_フルカラー_形式と呼ばれます。 その他の書式設定の多くは、ビデオが自分で表示されたときから、完全な色には対応していませんでした。 色が制限されているビットマップは、これらの表示に対しては十分であり、使用可能なビットマップではメモリ内の領域が少なくなります。
+
+これらの日には、ほとんどの場合、プログラマはフルカラービットマップを使用し、他の形式は使用しません。 この例外は `RgbaF16` 形式です。これにより、フルカラー形式であっても、より多くの色解像度が可能になります。 ただし、この形式は、医療イメージングなどの特別な目的で使用され、標準のフルカラー表示ではあまり意味がありません。
+
+この一連の記事では、 `SKBitmap` メンバーが指定されていない場合に、既定で使用される色の形式に制限され `SKColorType` ます。 この既定の形式は、基になるプラットフォームに基づいています。 でサポートされているプラットフォームでは、 Xamarin.Forms 既定の色の種類は次のとおりです。
+
+- `Rgba8888`iOS と Android の場合
+- `Bgra8888`UWP の場合
+
+唯一の違いは、メモリ内の4バイトの順序です。これは、ピクセルビットに直接アクセスした場合にのみ問題になります。 これは、 [**SkiaSharp ビットマップピクセルにアクセス**](pixel-bits.md)する記事に到達するまで重要になりません。
+
+`SKAlphaType`列挙体には、次の4つのメンバーがあります。
+
+- `Unknown`
+- `Opaque`&mdash;ビットマップに透明度がありません
+- `Premul`&mdash;カラーコンポーネントは、アルファコンポーネントによって事前に乗算されます。
+- `Unpremul`&mdash;カラーコンポーネントは、アルファコンポーネントによって事前乗算されていません
+
+次に、50% の透明度を持つ4バイトの赤のビットマップピクセルを示します。バイトは、赤、緑、青、アルファの順に表示されます。
 
 0xFF 0x00 0x00 0x80
 
-表示画面で半透明ピクセルを含むビットマップがレンダリングされると、ピクセルのアルファ値が各ビットマップのピクセルの色要素を乗算する必要があり。、画面の対応するピクセルの色要素を乗算する必要があります。で 255 のアルファ値を減算します。 2 つのピクセルに結合できます。 ビットマップ場合に表示できる高速ビットマップのピクセルの色要素の前 mulitplied 済みアルファ値。 その同じ赤いピクセル前乗算された形式で次のように格納されます。
+半透明ピクセルを含むビットマップを表示サーフェイスにレンダリングする場合は、各ビットマップピクセルのカラーコンポーネントにそのピクセルのアルファ値を乗算する必要があります。また、ディスプレイサーフェイスの対応するピクセルのカラーコンポーネントには、255を引いた値を、アルファ値から乗算する必要があります。 2つのピクセルを組み合わせることができます。 ビットマップピクセルのカラーコンポーネントが既にアルファ値によって事前に mulitplied されている場合は、ビットマップを速くレンダリングできます。 同じ赤色のピクセルは、次のように、前乗算された形式で格納されます。
 
 0x80 0x00 0x00 0x80
 
-このパフォーマンス向上のため`SkiaSharp`で既定のビットマップが作成された、`Premul`形式。 アクセスして、ピクセル ビットを操作する場合にのみ、これを把握する必要がもう一度。
+このパフォーマンスの向上は `SkiaSharp` 、既定ではビットマップが形式で作成されるためです `Premul` 。 ここでも、ピクセルビットにアクセスして操作する場合にのみ、これを知る必要があります。
 
-## <a name="drawing-on-existing-bitmaps"></a>既存のビットマップの描画
+## <a name="drawing-on-existing-bitmaps"></a>描画 (既存のビットマップを)
 
-描画するために新しいビットマップを作成する必要はありません。 既存のビットマップを描画することもできます。
+新しいビットマップを作成して描画する必要はありません。 また、既存のビットマップを使用して描画することもできます。
 
-**Monkey あります**ページでは、そのコンス トラクターを使用して、読み込み、 **MonkeyFace.png**イメージ。 これは、後、作成、`SKCanvas`オブジェクトがそのビットマップに基づいて、使用して`SKPaint`と`SKPath`ありますを描画するオブジェクト。
+**サル Moustache**ページは、そのコンストラクターを使用して**MonkeyFace.png**イメージを読み込みます。 次に、その `SKCanvas` ビットマップに基づいてオブジェクトを作成し、オブジェクトとオブジェクトを使用し `SKPaint` `SKPath` て moustache を描画します。
 
 ```csharp
 public partial class MonkeyMoustachePage : ContentPage
@@ -254,27 +257,27 @@ public partial class MonkeyMoustachePage : ContentPage
 }
 ```
 
-コンス トラクターの最後に作成、`SKCanvasView`が`PaintSurface`ハンドラーは単に結果を表示します。
+コンストラクターは、 `SKCanvasView` `PaintSurface` 最終的に結果を表示するだけのハンドラーを持つを作成します。
 
-[![モンキーあります](drawing-images/MonkeyMoustache.png "モンキーあります")](drawing-images/MonkeyMoustache-Large.png#lightbox)
+[![サル Moustache](drawing-images/MonkeyMoustache.png "サル Moustache")](drawing-images/MonkeyMoustache-Large.png#lightbox)
 
-## <a name="copying-and-modifying-bitmaps"></a>コピーしてビットマップを変更します。
+## <a name="copying-and-modifying-bitmaps"></a>ビットマップのコピーと変更
 
-メソッド`SKCanvas`描画するために使用できるビットマップを含める`DrawBitmap`します。 これは、描画できるビットマップが 1 つ、別の通常、何らかの方法で変更することを意味します。
+`SKCanvas`ビットマップで描画するために使用できるのメソッドには、があり `DrawBitmap` ます。 つまり、1つのビットマップを別のビットマップで描画できます。通常は、何らかの方法で変更します。
 
-ビットマップを変更する最も汎用的な方法は、実際のピクセル ビットへのアクセスを使用、サブジェクトが、記事で取り上げる **[にアクセスする SkiaSharp ビットマップ ピクセル](pixel-bits.md)** します。 ビットマップのピクセル ビットへのアクセスを必要としないを変更するその他の多くの手法があります。
+ビットマップを変更する最も汎用性の高い方法は、「 **[SkiaSharp ビットマップピクセルにアクセス](pixel-bits.md)** する」の記事で説明されている実際のピクセルビットにアクセスすることです。 ただし、ピクセルビットへのアクセスを必要としないビットマップを変更する方法は他にも多数あります。
 
-次に含まれているビットマップ、 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーションは 360 ピクセル、高さが 480 ピクセル。
+**[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーションに含まれる次のビットマップは、幅が360ピクセル、高さが480ピクセルです。
 
-![登山愛好者](drawing-images/MountainClimbers.jpg "登山愛好者")
+![マウンテン Climbers](drawing-images/MountainClimbers.jpg "マウンテン Climbers")
 
-たとえば、アクセス許可は、この写真を公開する左側の monkey から受信していません。 1 つのソリューションと呼ばれる手法を使用して、monkey の顔が見えにくく_pixelization_します。 面のピクセルは、機能することはできませんので、色のブロックに置き換えられます。 色のブロックは、通常、これらのブロックに対応するピクセルの色の平均を計算して、元のイメージから派生します。 ただし、自分でこの平均を実行する必要はありません。 小さいピクセル寸法にビットマップをコピーするときに自動的に発生します。
+この写真を公開するために、左側にあるサルからアクセス許可を受け取っていないとします。 1つの解決策として、 _pixelization_という手法を使用して、サルの顔を隠すことができます。 面のピクセルは色のブロックで置き換えられるため、機能を使用できません。 通常、色のブロックは、これらのブロックに対応するピクセルの色を平均して元のイメージから派生します。 しかし、この平均化を自分で実行する必要はありません。 これは、ビットマップを小さいピクセルディメンションにコピーするときに自動的に発生します。
 
-左 monkey の面では、約 72 ピクセルの正方形の領域 (112、238) 時点で、左上隅を占有します。 8-8 でピクセルの正方形は、それぞれの色付きのブロックの 9-9 で配列を 72 ピクセルの四角形の領域で置換しましょう。
+左側のサルの顔は、約72ピクセルの四角形領域で、ポイント (112、238) の左上隅になります。 72ピクセルの四角形領域を、カラーブロックの 9 x 9 の配列 (それぞれ8×8ピクセルの正方形) に置き換えてみましょう。
 
-**Pixelize イメージ**ページでそのビットマップが表示されと呼ばれる小さな 9 ピクセルの正方形ビットマップをまず作成`faceBitmap`です。 これは、変換先、monkey の面だけをコピーするためです。 先の四角形は単なる 9 ピクセルの正方形が元の四角形は 72 ピクセルの四角形。 ソース ピクセルの各 8-8 によってブロックは、色を平均して 1 つだけのピクセルに統合されます。
+**Pixelize Image**ページがそのビットマップに読み込まれ、最初にという小さな9ピクセルの正方形のビットマップが作成され `faceBitmap` ます。 これは、サルの顔だけをコピーするための場所です。 コピー先の四角形は9ピクセルの正方形ですが、基になる四角形は72ピクセルの四角形です。 ソースピクセルの8×8ブロックはそれぞれ、色を平均して1ピクセルに統合されます。
 
-次の手順と呼ばれる同じサイズの新しいビットマップに、元のビットマップをコピーするは`pixelizedBitmap`します。 小さな`faceBitmap`72 ピクセルの正方形の変換先の四角形とそこにコピーし、ように各ピクセルの`faceBitmap`8 倍のサイズに拡張されます。
+次の手順では、元のビットマップをと同じサイズの新しいビットマップにコピーし `pixelizedBitmap` ます。 次に、 `faceBitmap` の各ピクセルの `faceBitmap` サイズが8倍になるように、72ピクセルの四角形のコピー先の四角形を使用して、小さい方をコピーします。
 
 ```csharp
 public class PixelizedImagePage : ContentPage
@@ -334,17 +337,15 @@ public class PixelizedImagePage : ContentPage
 }
 ```
 
-コンス トラクターの最後に作成、`SKCanvasView`結果を表示します。
+コンストラクターは、を作成して `SKCanvasView` 結果を表示します。
 
-[![イメージを pixelize](drawing-images/PixelizeImage.png "Pixelize イメージ")](drawing-images/PixelizeImage-Large.png#lightbox)
+[![Pixelize イメージ](drawing-images/PixelizeImage.png "Pixelize イメージ")](drawing-images/PixelizeImage-Large.png#lightbox)
 
-<a name="rotating-bitmaps" />
+## <a name="rotating-bitmaps"></a>回転 (ビットマップを)
 
-## <a name="rotating-bitmaps"></a>ビットマップの回転
+もう1つの一般的なタスクは、ビットマップの回転です。 これは、iPhone または iPad フォトライブラリからビットマップを取得するときに特に便利です。 写真が撮影されたときにデバイスが特定の向きで保持されていない限り、画像は上下左右に配置される可能性が高くなります。
 
-もう 1 つの一般的なタスクには、ビットマップは回転させます。 これは、iPhone または iPad のフォト ライブラリからビットマップを取得するときに特に便利です。 デバイスが保持されている特定の方向で、写真の撮影としない限り、画像は、上下または横にある可能性があります。
-
-ビットマップの上下を有効にするには、1 番目と同じサイズのもう 1 つのビットマップを作成し、最初の 2 番目のコピー中に 180 度回転する変換を設定する必要があります。 このセクションの例のすべての`bitmap`は、`SKBitmap`オブジェクトを回転する必要があります。
+ビットマップを上下に反転させるには、最初のビットマップと同じサイズで別のビットマップを作成し、最初のを2番目のにコピーするときに、変換を180度ずつ回転するように設定する必要があります。 このセクションのすべての例で、 `bitmap` は、 `SKBitmap` 回転する必要のあるオブジェクトです。
 
 ```csharp
 SKBitmap rotatedBitmap = new SKBitmap(bitmap.Width, bitmap.Height);
@@ -357,7 +358,7 @@ using (SKCanvas canvas = new SKCanvas(rotatedBitmap))
 }
 ```
 
-90 度回転の場合は、高さと幅をスワップして、元のサイズと異なるはビットマップを作成する必要があります。 たとえば、元のビットマップが 1200 ピクセル、高さ 800 ピクセルの場合は、回転したビットマップは 800 ピクセル、幅が 1200 ピクセルは。 平行移動と回転を設定して、ビットマップがその左上隅を中心に回転し、ビューに移動し、ようにします。 (することに注意、`Translate`と`RotateDegrees`メソッドが適用されている方法のために逆の順序で呼び出されます)。時計回りに 90 度回転させるコードを次に示します。
+90度回転する場合は、高さと幅をスワップすることによって、元のサイズとは異なるサイズのビットマップを作成する必要があります。 たとえば、元のビットマップの幅が1200ピクセル、高さが800ピクセルの場合、回転したビットマップの幅は 800 1200 ピクセル、幅はピクセルになります。 ビットマップが左上隅を中心に回転してから表示されるように、平行移動と回転を設定します。 ( `Translate` `RotateDegrees` メソッドとメソッドは、適用される順序とは逆の順序で呼び出されることに注意してください)。次に、90°を時計回りに回転させるコードを示します。
 
 ```csharp
 SKBitmap rotatedBitmap = new SKBitmap(bitmap.Height, bitmap.Width);
@@ -371,7 +372,7 @@ using (SKCanvas canvas = new SKCanvas(rotatedBitmap))
 }
 ```
 
-同様の関数を反時計回りに 90 度回転を次に示します。
+ここでは、90°の反時計回りの回転に似た関数を示しています。
 
 ```csharp
 SKBitmap rotatedBitmap = new SKBitmap(bitmap.Height, bitmap.Width);
@@ -385,11 +386,11 @@ using (SKCanvas canvas = new SKCanvas(rotatedBitmap))
 }
 ```
 
-これら 2 つのメソッドで使用される、**パズルの写真**、情報の記事で説明したページ[ **SkiaSharp ビットマップをトリミング**](cropping.md#tile-division)します。
+この2つの方法は、「 [**SkiaSharp ビットマップのトリミング**](cropping.md#cropping-skiasharp-bitmaps)」で説明されている**写真パズル**ページで使用されます。
 
-ビットマップが 90 度ずつ回転できるプログラムは、90 度回転させる 1 つの関数を実装のみ必要があります。 ユーザーは、この 1 つの関数の実行を繰り返すして 90 度のすべての増分で回転できます。
+ユーザーが90度の増分でビットマップを回転できるようにするプログラムでは、90°で回転するために1つの関数のみを実装する必要があります。 ユーザーは、この1つの関数を繰り返し実行することで、90度の任意のインクリメントでローテーションできます。
 
-プログラムでは、任意の量によってビットマップを回転することもできます。 1 つの簡単な方法は、一般化されたを 180 に置き換えて、180 度回転する関数を変更する、`angle`変数。
+また、プログラムはビットマップを任意の大きさで回転させることもできます。 単純な方法の1つは、180を一般化された変数に置き換えることによって、180度回転する関数を変更する方法です `angle` 。
 
 ```csharp
 SKBitmap rotatedBitmap = new SKBitmap(bitmap.Width, bitmap.Height);
@@ -402,9 +403,9 @@ using (SKCanvas canvas = new SKCanvas(rotatedBitmap))
 }
 ```
 
-ただし、一般的なケースでは、このロジックは回転したビットマップの角に丸みをトリミングします。 三角関数を使用して、これらの角を含める回転したビットマップのサイズを計算することをお勧めします。
+ただし、一般的なケースでは、このロジックは回転したビットマップのコーナーをトリミングします。 より良い方法は、三角を使用して回転したビットマップのサイズを計算し、その角を含めることです。
 
-この三角法が示した、**ビットマップ ローテータ**ページ。 XAML ファイルのインスタンスを作成、`SKCanvasView`と`Slider`する範囲は 0 ~ 360 度、`Label`現在の値を表示します。
+この三角三角は、**ビットマップの回転**ページに表示されます。 XAML ファイルは、とをインスタンス化します。これは、 `SKCanvasView` 現在の値を `Slider` 示すを使用して、0 ~ 360 度の範囲で指定でき `Label` ます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -431,7 +432,7 @@ using (SKCanvas canvas = new SKCanvas(rotatedBitmap))
 </ContentPage>
 ```
 
-分離コード ファイルは、ビットマップ リソースを読み込むし、という名前の静的な読み取り専用フィールドとして保存します`originalBitmap`します。 表示されるビットマップ、`PaintSurface`ハンドラーが`rotatedBitmap`に最初に設定されています`originalBitmap`:
+分離コードファイルは、ビットマップリソースを読み込み、という名前の静的な読み取り専用フィールドとして保存し `originalBitmap` ます。 ハンドラーに表示されるビットマップ `PaintSurface` は `rotatedBitmap` で、初期設定は次のように設定されてい `originalBitmap` ます。
 
 ```csharp
 public partial class BitmapRotatorPage : ContentPage
@@ -484,19 +485,19 @@ public partial class BitmapRotatorPage : ContentPage
 }
 ```
 
-`ValueChanged`のハンドラー、`Slider`を新規作成操作を実行します`rotatedBitmap`回転角度に基づいて。 新しい幅と高さは、サインの absolute values と元の幅と高さの余弦に基づいています。 回転のビットマップに、元のビットマップを描画するために使用される変換は、配信元に、元のビットマップ センターに移動によって指定された数の角度の回転し、その center ビットマップを回転の中心に変換します。 (、`Translate`と`RotateDegrees`を適用する方法よりも、その逆の順序でメソッドが呼び出されます)。
+`ValueChanged`のハンドラーは、 `Slider` 回転角度に基づいて新しいを作成する操作を実行し `rotatedBitmap` ます。 新しい幅と高さは、サインの絶対値と、元の幅と高さをコサインした値に基づいています。 回転したビットマップの元のビットマップを描画するために使用される変換では、元のビットマップの中心を原点に移動した後、指定した度数だけ回転してから、その中心を回転したビットマップの中央に変換します。 ( `Translate` メソッドと `RotateDegrees` メソッドは、適用方法とは逆の順序で呼び出されます)。
 
-使用に注意してください、`Clear`メソッドの背景を`rotatedBitmap`ライト pink」と入力します。 サイズを示すためにのみこれは`rotatedBitmap`表示にします。
+メソッドを使用して `Clear` 薄いピンクの背景を設定することに注意して `rotatedBitmap` ください。 これは、ディスプレイののサイズを示すためだけに表示され `rotatedBitmap` ます。
 
-[![ビットマップの回転](drawing-images/BitmapRotator.png "ビットマップ ローテータ")](drawing-images/BitmapRotator-Large.png#lightbox)
+[![ビットマップの回転](drawing-images/BitmapRotator.png "ビットマップの回転")](drawing-images/BitmapRotator-Large.png#lightbox)
 
-回転したビットマップが十分な大きさが、元のビットマップ全体を含めるです。
+回転したビットマップは、元のビットマップ全体を格納するのに十分な大きさですが、それ以上のサイズではありません。
 
-## <a name="flipping-bitmaps"></a>ビットマップを反転
+## <a name="flipping-bitmaps"></a>ビットマップの反転
 
-ビットマップに一般的に実行される別の操作が呼び出された_反転_します。 概念的には、ビットマップが 3 次元垂直軸またはビットマップの中心を通るの水平軸の周りで回転します。 垂直方向の反転ミラー イメージを作成します。
+通常、ビットマップに対して実行されるもう1つの操作は、_反転_と呼ばれます。 概念的には、ビットマップは、垂直軸または水平軸を中心に、ビットマップの中心を通る3次元で回転します。 垂直方向の反転では、ミラーイメージが作成されます。
 
-**ビットマップ フリッパー**ページで、 **[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーションはこれらのプロセスを示しています。 XAML ファイルが含まれています、`SKCanvasView`と垂直方向および水平方向に反転の 2 つのボタン。
+**[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーションの**ビットマップフリッパー**ページは、これらのプロセスを示しています。 XAML ファイルには、 `SKCanvasView` 垂直方向および水平方向に反転するためのボタンと2つのボタンが含まれています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -532,7 +533,7 @@ public partial class BitmapRotatorPage : ContentPage
 </ContentPage>
 ```
 
-分離コード ファイルでこれら 2 つの操作を実装する、`Clicked`ボタンのハンドラー。
+分離コードファイルは、これらの2つの操作 `Clicked` をボタンのハンドラーに実装します。
 
 ```csharp
 public partial class BitmapFlipperPage : ContentPage
@@ -588,15 +589,15 @@ public partial class BitmapFlipperPage : ContentPage
 }
 ```
 
-水平方向のスケーリング ファクターでスケーリングの変換によって、垂直方向に反転が実現されます&ndash;1。 スケーリングの中心は、ビットマップの垂直方向の中央です。 水平方向に反転の垂直方向のスケーリング ファクターでスケーリングの変換は、 &ndash;1。
+垂直方向の反転は、水平方向のスケールファクターが1であるスケーリング変換によって実現され &ndash; ます。 スケーリングセンターは、ビットマップの垂直方向の中心です。 水平方向の反転は、垂直方向のスケールファクターが1に設定されたスケーリング変換です &ndash; 。
 
-Monkey のシャツで反転レタリングからわかる、反転の回転と同じではありません。 右側の UWP スクリーン ショットに示すようは 180 度回転と同じでは両方の水平および垂直方向に反転します。
+サルのシャツの反転された文字からわかるように、反転は回転と同じではありません。 しかし、右側の UWP スクリーンショットに示すように、水平方向と垂直方向の反転は、180度の回転と同じです。
 
-[![ビットマップのフリッパー](drawing-images/BitmapFlipper.png "フリッパーのビットマップ")](drawing-images/BitmapFlipper-Large.png#lightbox)
+[![ビットマップフリッパー](drawing-images/BitmapFlipper.png "ビットマップフリッパー")](drawing-images/BitmapFlipper-Large.png#lightbox)
 
-同様の手法を使用して処理できる別の一般的なタスクには、四角形のサブセットにビットマップをトリミングは。 次の記事「 [ **SkiaSharp ビットマップをトリミング**](cropping.md)します。
+同様の手法を使用して処理できるもう1つの一般的なタスクは、ビットマップを四角形のサブセットにトリミングすることです。 これについては、次の記事「 [**SkiaSharp ビットマップのトリミング**](cropping.md)」で説明されています。
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

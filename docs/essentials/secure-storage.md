@@ -1,17 +1,20 @@
 ---
 title: Xamarin.Essentials:セキュリティで保護されたストレージ
-description: このドキュメントでは Xamarin.Essentials の SecureStorage クラスについて説明します。これは単純なキーと値のペアを安全に格納するのに役立ちます。 ここでは、クラスの使用方法、プラットフォームの実装の詳細、および制限事項について説明します。
+description: このドキュメントでは Xamarin.Essentials の SecureStorage クラスについて説明します。これはシンプルなキーと値のペアを安全に格納するのに役立ちます。 ここでは、クラスの使用方法、プラットフォームの実装の詳細、および制限事項について説明します。
 ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
-ms.openlocfilehash: f8e5a31b855158e1f801354c66f3d3d255eca559
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 061bc1cfe785ad080092ba21340f7d38bc499ed9
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75488492"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84801947"
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials:セキュリティで保護されたストレージ
 
@@ -26,7 +29,7 @@ ms.locfileid: "75488492"
 # <a name="android"></a>[Android](#tab/android)
 
 > [!TIP]
-> [アプリの自動バックアップ](https://developer.android.com/guide/topics/data/autobackup)は Android 6.0 (API レベル 23) 以降の機能です。ユーザーのアプリ データ (共有の設定、アプリの内部ストレージ内のファイル、その他の特定のファイル) がバックアップされます。 アプリが新しいデバイスに再インストールまたはインストールされると、データが復元されます。 これは、バックアップされ、復元するときに暗号化解除できない共有の設定を利用する `SecureStorage` に影響を与えます。 Xamarin.Essentials では、リセットできるようにキーを削除することで自動的にこのケースを処理しますが、自動バックアップを無効にすることで追加の手順を実行できます。
+> [アプリの自動バックアップ](https://developer.android.com/guide/topics/data/autobackup)は Android 6.0 (API レベル 23) 以降の機能です。ユーザーのアプリ データ (共有の設定、アプリの内部ストレージ内のファイル、その他の特定のファイル) がバックアップされます。 アプリが新しいデバイスに再インストールまたはインストールされると、データが復元されます。 これは、バックアップされ、復元するときに暗号化解除できない共有の設定を利用する `SecureStorage` に影響を与えます。 Xamarin.Essentials では、リセットできるようにキーを削除することで自動的にこのケースを処理しますが、自動バックアップを無効にすることで追加の手順を行うことができます。
 
 ### <a name="enable-or-disable-backup"></a>バックアップを有効または無効にする
 `AndroidManifest.xml` ファイルの `android:allowBackup` 設定を false に設定することで、アプリケーション全体の自動バックアップを無効にすることができます。 この方法が推奨されるのは、データを復元する別の方法を計画する場合のみです。
@@ -63,7 +66,7 @@ ms.locfileid: "75488492"
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-**iOS シミュレーター**上で開発している場合は、**キーチェーン** エンタイトルメントを有効にし、アプリケーションのバンドル ID に対してキーチェーンのアクセス グループを追加します。 
+**iOS シミュレーター**上で開発している場合は、**キーチェーン** エンタイトルメントを有効にし、アプリケーションのバンドル ID に対してキーチェーンのアクセス グループを追加します。
 
 iOS プロジェクト内の **Entitlements.plist** を開き、**キーチェーン** エンタイトルメントを見つけて有効にします。 これで、アプリケーションの ID がグループとして自動的に追加されます。
 
@@ -80,7 +83,7 @@ iOS プロジェクト内の **Entitlements.plist** を開き、**キーチェ�
 
 ## <a name="using-secure-storage"></a>セキュリティで保護されたストレージの使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
@@ -133,11 +136,11 @@ SecureStorage.RemoveAll();
 
 [Android キーストア](https://developer.android.com/training/articles/keystore.html)は、[共有の設定](https://developer.android.com/training/data-storage/shared-preferences.html)に **[アプリのパッケージ ID].xamarinessentials** というファイル名で保存する前に、値を暗号化するための暗号キーを格納するために使用されます。  共有の設定ファイルで使用されるキー (暗号化キーではなく_値_の_キー_) は、`SecureStorage` API に渡されるキーの _MD5 ハッシュ_です。
 
-## <a name="api-level-23-and-higher"></a>API レベル 23 以上
+**API レベル 23 以上**
 
 新しい API レベルでは、Android キーストアから **AES** キーを取得し、**AES/GCM/NoPadding** 暗号と共に使用して、共有の設定ファイルに格納する前に値を暗号化します。
 
-## <a name="api-level-22-and-lower"></a>API レベル 22 以下
+**API レベル 22 以下**
 
 古い API レベルでは、Android キーストアは **RSA** キーの格納のみをサポートしています。これは **RSA/ECB/PKCS1Padding** 暗号と共に使用され、**AES** キー (実行時にランダムで生成されます) を暗号化し、キー _SecureStorageKey_ の下で共有の設定ファイルに格納されます (まだ作成されていない場合)。
 
@@ -161,11 +164,11 @@ iOS デバイスに値を安全に格納するために、[キーチェーン](x
 
 ## <a name="limitations"></a>制限事項
 
-この API は、少量のテキストを格納することを想定しています。  大量のテキストを格納するためにこれを使用しようとすると、パフォーマンスが低下する可能性があります。 
+この API は、少量のテキストを格納することを想定しています。  大量のテキストを格納するためにこれを使用しようとすると、パフォーマンスが低下する可能性があります。
 
 ## <a name="api"></a>API
 
-- [SecureStorage のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/SecureStorage)
+- [SecureStorage のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/SecureStorage)
 - [SecureStorage API ドキュメント](xref:Xamarin.Essentials.SecureStorage)
 
 ## <a name="related-video"></a>関連ビデオ

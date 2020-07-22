@@ -1,40 +1,43 @@
 ---
 title: ListView の外観
-description: この記事では、ヘッダー、フッター、グループ、および高さが可変のセルを使用して、Xamarin.Forms アプリケーションの Listview をカスタマイズする方法について説明します。
+description: この記事では Xamarin.Forms 、ヘッダー、フッター、グループ、および可変の高さセルを使用して、アプリケーションで ListViews をカスタマイズする方法について説明します。
 ms.prod: xamarin
 ms.assetid: DC8009B0-4371-4D60-885A-5362FC7EE3E5
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/13/2018
-ms.openlocfilehash: 90b0e0f3802ce766decb802c9406d72b5966360e
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c7fdecdb0ce209c88dbe9e6f4e6e6588ec4fd3fd
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79305649"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139920"
 ---
 # <a name="listview-appearance"></a>ListView の外観
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
 
-Xamarin [`ListView`](xref:Xamarin.Forms.ListView)を使用すると、リストの各行の[`ViewCell`](xref:Xamarin.Forms.ViewCell)インスタンスに加えて、一覧の表示をカスタマイズできます。
+を使用すると、リスト Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) の各行のインスタンスに加えて、一覧の表示をカスタマイズでき [`ViewCell`](xref:Xamarin.Forms.ViewCell) ます。
 
 ## <a name="grouping"></a>グループ化
 
-連続したスクロールリストに表示されている場合、データの大規模なセットが扱いにくくなることがあります。 グループ化を有効にするには、コンテンツをより適切に整理して移動するデータを簡単にするプラットフォーム固有のコントロールをアクティブ化するこのような場合、ユーザー エクスペリエンスが向上します。
+連続したスクロールリストに表示されている場合、データの大規模なセットが扱いにくくなることがあります。 グループ化を有効にすると、コンテンツを整理したり、データの移動を容易にするプラットフォーム固有のコントロールをアクティブ化したりすることで、ユーザーエクスペリエンスを向上させることができます。
 
-`ListView`に対してグループ化がアクティブになると、グループごとにヘッダー行が追加されます。
+に対してグループ化がアクティブになると `ListView` 、各グループにヘッダー行が追加されます。
 
-グループ化を有効にします。
+グループ化を有効にするには:
 
-- (グループの一覧、各グループの要素の一覧) のリストの一覧を作成します。
-- `ListView`の `ItemsSource` をその一覧に設定します。
+- リストの一覧を作成します (グループのリスト、各グループは要素の一覧です)。
+- のを `ListView` `ItemsSource` そのリストに設定します。
 - `IsGroupingEnabled` を true に設定します。
-- グループのタイトルとして使用されているグループのプロパティにバインドするには、 [`GroupDisplayBinding`](xref:Xamarin.Forms.ListView.GroupDisplayBinding)を設定します。
-- Optionalグループの短い名前として使用されているグループのプロパティにバインドするには、 [`GroupShortNameBinding`](xref:Xamarin.Forms.ListView.GroupShortNameBinding)を設定します。 ジャンプ リスト (iOS の右側にある列) の短い名前が使用されます。
+- [`GroupDisplayBinding`](xref:Xamarin.Forms.ListView.GroupDisplayBinding)グループのタイトルとして使用されているグループのプロパティにバインドするように設定します。
+- Optional[`GroupShortNameBinding`](xref:Xamarin.Forms.ListView.GroupShortNameBinding)グループの短い名前として使用されているグループのプロパティにバインドするように設定します。 短い名前は、ジャンプリスト (iOS の右側の列) に使用されます。
 
-グループのクラスを作成して開始します。
+まず、グループのクラスを作成します。
 
 ```csharp
 public class PageTypeGroup : List<PageModel>
@@ -52,9 +55,9 @@ public class PageTypeGroup : List<PageModel>
     }
 ```
 
-上記のコードでは、`All` は、ListView にバインドソースとして指定されるリストです。 `Title` と `ShortName` は、グループの見出しに使用されるプロパティです。
+上記のコードで `All` は、は、ListView にバインドソースとして指定されるリストです。 `Title`および `ShortName` は、グループの見出しに使用されるプロパティです。
 
-この段階では、`All` は空のリストです。 プログラムの開始時、リストに表示されます、静的コンス トラクターを追加します。
+この段階で `All` は、は空のリストです。 プログラムの開始時にリストが設定されるように、静的コンストラクターを追加します。
 
 ```csharp
 static PageTypeGroup()
@@ -77,9 +80,9 @@ static PageTypeGroup()
 }
 ```
 
-上記のコードでは、`Groups`の要素で `Add` を呼び出すこともできます。これは `PageTypeGroup`型のインスタンスです。 `PageTypeGroup` は `List<PageModel>`から継承されるため、このメソッドを使用できます。
+上のコードでは `Add` 、型のインスタンスであるの要素に対してを呼び出すこともでき `Groups` `PageTypeGroup` ます。 はを継承するため、このメソッドを使用でき `PageTypeGroup` `List<PageModel>` ます。
 
-グループ化された一覧を表示するための XAML を次に示します。
+グループ化されたリストを表示するための XAML は次のとおりです。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -104,10 +107,10 @@ static PageTypeGroup()
 
 この XAML は、次の操作を実行します。
 
-- `GroupShortNameBinding` を、group クラスで定義されている `ShortName` プロパティに設定します。
-- `GroupDisplayBinding` を、group クラスで定義されている `Title` プロパティに設定します。
-- `IsGroupingEnabled` を true に設定します
-- `ListView`の `ItemsSource` をグループ化されたリストに変更しました
+- `GroupShortNameBinding` `ShortName` Group クラスで定義されているプロパティに設定します。
+- `GroupDisplayBinding` `Title` Group クラスで定義されているプロパティに設定します。
+- `IsGroupingEnabled`True に設定
+- をグループ化された `ListView` リストに変更しました。 `ItemsSource`
 
 次のスクリーンショットは、結果として得られる UI を示しています。
 
@@ -115,11 +118,11 @@ static PageTypeGroup()
 
 ### <a name="customizing-grouping"></a>カスタマイズ (グループ化を)
 
-一覧にグループ化が有効になっている場合、グループ ヘッダーはカスタマイズもできます。
+一覧でグループ化が有効になっている場合は、グループヘッダーをカスタマイズすることもできます。
 
-`ListView` には、行の表示方法を定義するための `ItemTemplate` があるのと同様に、`ListView` には `GroupHeaderTemplate`があります。
+には、 `ListView` `ItemTemplate` 行の表示方法を定義するためのが用意されているのと同様に、 `ListView` があり `GroupHeaderTemplate` ます。
 
-XAML でグループ ヘッダーをカスタマイズする例を次に示します。
+XAML でグループヘッダーをカスタマイズする例を次に示します。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -156,9 +159,9 @@ XAML でグループ ヘッダーをカスタマイズする例を次に示し�
 
 ## <a name="headers-and-footers"></a>ヘッダーとフッター
 
-リストの要素にスクロールするヘッダーとフッターを提示する ListView のことができます。 ヘッダーとフッターは、テキスト文字列またはより複雑なレイアウトを指定できます。 この動作は、[セクショングループ](#grouping)とは別のものです。
+ListView は、リストの要素でスクロールするヘッダーとフッターを表示することができます。 ヘッダーとフッターには、テキストの文字列またはより複雑なレイアウトを指定できます。 この動作は、[セクショングループ](#grouping)とは別のものです。
 
-`Header` または `Footer` を `string` 値に設定することも、より複雑なレイアウトに設定することもできます。 また、`HeaderTemplate` プロパティと `FooterTemplate` プロパティもあります。これにより、データバインディングをサポートするヘッダーとフッターに対してより複雑なレイアウトを作成できます。
+またはを値に設定することも、 `Header` `Footer` `string` より複雑なレイアウトに設定することもできます。 また `HeaderTemplate` 、 `FooterTemplate` データバインディングをサポートするヘッダーとフッターに対してより複雑なレイアウトを作成するためのプロパティもあります。
 
 基本ヘッダー/フッターを作成するには、表示するテキストにヘッダーまたはフッターのプロパティを設定するだけです。 コード内で以下のように指定します。
 
@@ -170,7 +173,7 @@ ListView HeaderList = new ListView()
 };
 ```
 
-で XAML:
+XAML の場合:
 
 ```xaml
 <ListView x:Name="HeaderList" 
@@ -182,7 +185,7 @@ ListView HeaderList = new ListView()
 
 ![](customizing-list-appearance-images/header-default.png "ListView with Header and Footer")
 
-カスタマイズされたヘッダーとフッターを作成するには、ヘッダーとフッターのビューを定義します。
+カスタマイズしたヘッダーとフッターを作成するには、次のようにヘッダーとフッターのビューを定義します。
 
 ```xaml
 <ListView.Header>
@@ -205,20 +208,20 @@ ListView HeaderList = new ListView()
 
 ## <a name="scrollbar-visibility"></a>スクロールバーの表示
 
-[`ListView`](xref:Xamarin.Forms.ListView)クラスには、水平方向または垂直方向のスクロールバーが表示されるタイミングを表す[`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollBarVisibility)の値を取得または設定する `HorizontalScrollBarVisibility` プロパティと `VerticalScrollBarVisibility` プロパティがあります。 どちらのプロパティも、次の値に設定できます。
+[`ListView`](xref:Xamarin.Forms.ListView)クラスには `HorizontalScrollBarVisibility` プロパティとプロパティがあり、 `VerticalScrollBarVisibility` [`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollBarVisibility) 水平または垂直のスクロールバーが表示されるタイミングを表す値を取得または設定します。 どちらのプロパティも、次の値に設定できます。
 
-- [`Default`](xref:Xamarin.Forms.ScrollBarVisibility)は、プラットフォームの既定のスクロールバーの動作を示します。は、`HorizontalScrollBarVisibility` プロパティと `VerticalScrollBarVisibility` プロパティの既定値です。
-- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility)は、ビューにコンテンツが収まる場合でも、スクロールバーが表示されることを示します。
-- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility)は、ビューにコンテンツが収まらない場合でも、スクロールバーが表示されないことを示します。
+- [`Default`](xref:Xamarin.Forms.ScrollBarVisibility)プラットフォームの既定のスクロールバーの動作を示し `HorizontalScrollBarVisibility` ます。は、プロパティとプロパティの既定値です `VerticalScrollBarVisibility` 。
+- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility)ビューにコンテンツが収まる場合でも、スクロールバーが表示されることを示します。
+- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility)コンテンツがビューに収まらない場合でも、スクロールバーが表示されないことを示します。
 
 ## <a name="row-separators"></a>行区切り記号
 
-既定では、iOS と Android では、`ListView` の要素間に区切り線が表示されます。 IOS と Android の区切り線を非表示にする場合は、ListView の [`SeparatorVisibility`] プロパティを設定します。 `SeparatorVisibility` のオプションは次のとおりです。
+`ListView`既定では、iOS と Android では、要素間に区切り線が表示されます。 IOS と Android の区切り線を非表示にする場合は、 `SeparatorVisibility` ListView でプロパティを設定します。 のオプション `SeparatorVisibility` は次のとおりです。
 
 - **既定**-IOS と Android の区切り線を表示します。
 - **None** -すべてのプラットフォームの区切り記号を非表示にします。
 
-既定の可視性:
+既定の表示:
 
 C#:
 
@@ -234,7 +237,7 @@ XAML:
 
 ![](customizing-list-appearance-images/separator-default.png "ListView with Default Row Separators")
 
-なし:
+なし: 
 
 C#:
 
@@ -250,7 +253,7 @@ XAML:
 
 ![](customizing-list-appearance-images/separator-none.png "ListView without Row Separators")
 
-また、`SeparatorColor` プロパティを使用して、区切り線の色を設定することもできます。
+プロパティを使用して、区切り線の色を設定することもでき `SeparatorColor` ます。
 
 C#:
 
@@ -267,16 +270,16 @@ XAML:
 ![](customizing-list-appearance-images/separator-custom.png "ListView with Green Row Separators")
 
 > [!NOTE]
-> `ListView` の読み込み後に Android でこれらのプロパティのいずれかを設定すると、パフォーマンスが大幅に低下します。
+> の読み込み後に Android でこれらのプロパティのいずれかを設定すると、 `ListView` パフォーマンスが大幅に低下します。
 
 ## <a name="row-height"></a>行の高さ
 
-既定では、同じ高さがある、ListView のすべての行。 ListView では、その動作を変更するために使用できる 2 つのプロパティがあります。
+既定では、ListView 内のすべての行の高さは同じになります。 ListView には、その動作を変更するために使用できる2つのプロパティがあります。
 
-- `false` に設定されている場合、&ndash; `true`/`true`値を `HasUnevenRows` すると、行の高さが変化します。 既定値は `false` です。
-- `HasUnevenRows` を `false`するときに各行の高さを `RowHeight` &ndash; 設定します。
+- `HasUnevenRows`&ndash; `true`/`false`値をに設定すると、行の高さが変化 `true` します。 既定値は `false` です。
+- `RowHeight`&ndash;がの場合に各行の高さを設定し `HasUnevenRows` `false` ます。
 
-すべての行の高さを設定するには、`ListView`の [`RowHeight`] プロパティを設定します。
+すべての行の高さを設定するには、のプロパティを設定し `RowHeight` `ListView` ます。
 
 ### <a name="custom-fixed-row-height"></a>カスタム固定行の高さ
 
@@ -296,7 +299,7 @@ XAML:
 
 ### <a name="uneven-rows"></a>不均等の行
 
-個々の行の高さを変えたい場合は、`HasUnevenRows` プロパティを `true`に設定します。 `HasUnevenRows` を `true`に設定した後、行の高さを手動で設定する必要はありません。これは、高さが Xamarin. Forms によって自動的に計算されるためです。
+個々の行の高さを変えたい場合は、 `HasUnevenRows` プロパティをに設定でき `true` ます。 高さはに `HasUnevenRows` `true` よって自動的に計算されるため、をに設定すると、行の高さを手動で設定する必要はありません Xamarin.Forms 。
 
 C#:
 
@@ -314,7 +317,7 @@ XAML:
 
 ### <a name="resize-rows-at-runtime"></a>実行時に行のサイズを変更する
 
-`HasUnevenRows` プロパティが `true`に設定されていれば、実行時に個々の `ListView` の行のサイズを変更できます。 [`Cell.ForceUpdateSize`](xref:Xamarin.Forms.Cell.ForceUpdateSize)メソッドは、次のコード例に示すように、現在表示されていない場合でもセルのサイズを更新します。
+`ListView`プロパティがに設定されていれば、実行時に個々の行のサイズをプログラムで変更でき `HasUnevenRows` `true` ます。 メソッドは、 [`Cell.ForceUpdateSize`](xref:Xamarin.Forms.Cell.ForceUpdateSize) 次のコード例に示すように、現在表示されていない場合でもセルのサイズを更新します。
 
 ```csharp
 void OnImageTapped (object sender, EventArgs args)
@@ -329,7 +332,7 @@ void OnImageTapped (object sender, EventArgs args)
 }
 ```
 
-`OnImageTapped` イベントハンドラーは、タップされるセル内の[`Image`](xref:Xamarin.Forms.Image)に応答して実行され、セルに表示される `Image` のサイズを大きくすることで、簡単に表示できるようにします。
+`OnImageTapped`イベントハンドラーは、タップされるセル内のに対する応答として実行され、 [`Image`](xref:Xamarin.Forms.Image) セルに表示されるのサイズを大きくして、簡単に `Image` 表示できるようにします。
 
 ![](customizing-list-appearance-images/dynamic-row-resizing.png "ListView with Runtime Row Resizing")
 

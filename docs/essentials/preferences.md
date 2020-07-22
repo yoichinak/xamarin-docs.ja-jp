@@ -1,17 +1,20 @@
 ---
 title: Xamarin.Essentials:Preferences
-description: このドキュメントで説明する Xamarin.Essentials の Preferences クラスでは、アプリケーションのユーザー設定がキー/値ストアに保存されます。 クラスの使用方法と、格納できるデータの種類について説明します。
+description: このドキュメントでは、アプリケーションのユーザー設定をキーと値のストアに保存する、Xamarin.Essentials の Preferences クラスについて説明します。 クラスの使用方法と、格納できるデータの種類について説明します。
 ms.assetid: AA81BCBD-79BA-448F-942B-BA4415CA50FF
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/15/2019
 ms.custom: video
-ms.openlocfilehash: e812ab5b85db396ee3cb473f4a659ac188c9212f
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: acc0c48776c7a91e9e5a060928564bc6e0c1d775
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79497041"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84801817"
 ---
 # <a name="xamarinessentials-preferences"></a>Xamarin.Essentials:Preferences
 
@@ -23,7 +26,7 @@ ms.locfileid: "79497041"
 
 ## <a name="using-preferences"></a>Preferences の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
@@ -98,7 +101,7 @@ iOS デバイスに値を格納するには、[NSUserDefaults](https://docs.micr
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-デバイスに値を格納するには [ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) が使用されます。 `sharedName` が指定されていない場合は、`LocalSettings` が使用されます。指定されている場合は、その名前を使用して `LocalSettings` 内に新しいコンテナーが作成されます。 
+デバイスに値を格納するには [ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) が使用されます。 `sharedName` が指定されていない場合は、`LocalSettings` が使用されます。指定されている場合は、その名前を使用して `LocalSettings` 内に新しいコンテナーが作成されます。
 
 さらに、`LocalSettings` には、各設定の名前は最大で 255 文字という制限があります。 各設定のサイズは最大 8K バイトで、各コンポジット設定のサイズは最大 64K バイトです。
 
@@ -114,7 +117,7 @@ iOS デバイスに値を格納するには、[NSUserDefaults](https://docs.micr
 
 ## <a name="api"></a>API
 
-- [Preferences のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Preferences)
+- [Preferences のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Preferences)
 - [Preferences API のドキュメント](xref:Xamarin.Essentials.Preferences)
 
 ## <a name="related-video"></a>関連ビデオ

@@ -1,29 +1,32 @@
 ---
 title: DataPages コントロールのリファレンス
-description: この記事では、Xamarin DataPages NuGet パッケージで使用できるコントロールについて説明します。
+description: この記事では、DataPages NuGet パッケージで使用できるコントロールについて説明 Xamarin.Forms します。
 ms.prod: xamarin
 ms.assetid: 891615D0-E8BD-4ACC-A7F0-4C3725FBCC31
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 359a9f27e9a9e7bc04d5a1ab938391fe5c2cd2ee
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 86b526fff305b195221aca3fb6a86ad0823cb145
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728032"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84569401"
 ---
 # <a name="datapages-controls-reference"></a>DataPages コントロールのリファレンス
 
 ![](~/media/shared/preview.png "This API is currently in preview")
 
 > [!IMPORTANT]
-> DataPages を表示するには、Xamarin. Forms Theme リファレンスが必要です。 これには、プロジェクトに[xamarin. theme. Base](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/) nuget パッケージをインストールし、その後に、 [xamarin. theme](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/)パッケージまたは[xamarin](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/) . theme. theme パッケージのいずれかをインストールする必要があります。
+> DataPages Xamarin.Forms を表示するには、テーマ参照が必要です。 これには、のインストールが含ま[ Xamarin.Forms れます。Theme。](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/)プロジェクトの基本となる NuGet パッケージの後に、[のいずれかが続きます。 Xamarin.FormsTheme](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/)または[ Xamarin.Forms 。Theme. ダーク](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/)NuGet パッケージ。
 
-DataPages NuGet には、データソースバインドを利用できる多数のコントロールが含まれています。
+DataPages NuGet には、 Xamarin.Forms データソースバインドを利用できる多数のコントロールが含まれています。
 
-これらのコントロールを XAML で使用するには、名前空間が含まれていることを確認します。たとえば、次の `xmlns:pages` 宣言を参照してください。
+これらのコントロールを XAML で使用するには、名前空間が含まれていることを確認します。たとえば、次の宣言を参照してください `xmlns:pages` 。
 
 ```xaml
 <ContentPage
@@ -33,23 +36,21 @@ DataPages NuGet には、データソースバインドを利用できる多数�
     x:Class="DataPagesDemo.Detail">
 ```
 
-次の例には、プロジェクトの resources ディクショナリに存在しなければならない `DynamicResource` の参照が含まれています。 [カスタムコントロール](#custom)を構築する方法の例もあります。
+次の例には、 `DynamicResource` プロジェクトの resources ディクショナリに存在しなければならない参照が含まれています。 [カスタムコントロール](#custom-control-example)を作成する方法の例もあります。
 
 ## <a name="built-in-controls"></a>組み込みコントロール
 
 * [HeroImage](#heroimage)
 * [ListItem](#listitem)
 
-<a name="heroimage" />
-
 ### <a name="heroimage"></a>HeroImage
 
-`HeroImage` コントロールには、次の4つのプロパティがあります。
+この `HeroImage` コントロールには、次の4つのプロパティがあります。
 
 * テキスト
 * 詳細
 * ImageSource
-* アスペクト
+* 特徴
 
 ```xaml
 <pages:HeroImage
@@ -59,27 +60,25 @@ DataPages NuGet には、データソースバインドを利用できる多数�
 />
 ```
 
-**Outlook Web Access (OWA)**
+**Android**
 
 ![](controls-images/heroimage-light-android.png "Android の HeroImage コントロール") ![](controls-images/heroimage-dark-android.png "Android の HeroImage コントロール")
 
-**Android**
+**iOS**
 
 ![](controls-images/heroimage-light-ios.png "IOS の HeroImage コントロール") ![](controls-images/heroimage-dark-ios.png "IOS の HeroImage コントロール")
 
-<a name="listitem" />
-
 ### <a name="listitem"></a>ListItem
 
-`ListItem` コントロールのレイアウトは、ネイティブの iOS および Android の一覧またはテーブルの行に似ていますが、通常のビューとして使用することもできます。 下のコード例では、`StackLayout`内にホストされていますが、データバインドされたリストコントロールでも使用できます。
+`ListItem`コントロールのレイアウトは、ネイティブの iOS および Android の一覧またはテーブルの行に似ていますが、通常のビューとしても使用できます。 下のコード例では、がの内部でホストされてい `StackLayout` ますが、データバインドされたリストコントロールで使用することもできます。
 
 次の5つのプロパティがあります。
 
-* [タイトル]
+* Title
 * 詳細
 * ImageSource
 * PlaceholdImageSource
-* アスペクト
+* 特徴
 
 ```xaml
 <StackLayout Spacing="0">
@@ -91,19 +90,19 @@ DataPages NuGet には、データソースバインドを利用できる多数�
     />
 ```
 
-これらのスクリーンショットは、次のように、明るいテーマとダークテーマの両方を使用した iOS および Android プラットフォームの `ListItem` を示しています。
+これらのスクリーンショットは、次のよう `ListItem` に、明るいテーマとダークテーマの両方を使用した iOS および Android プラットフォームのを示しています。
 
-**Outlook Web Access (OWA)**
+**Android**
 
 ![](controls-images/listitem-light-android.png "Android での ListItem コントロール") ![](controls-images/listitem-dark-android.png "Android での ListItem コントロール")
 
-**Android**
+**iOS**
 
 ![](controls-images/listitem-light-ios.png "IOS の ListItem コントロール") ![](controls-images/listitem-dark-ios.png "IOS の ListItem コントロール")
 
 ## <a name="custom-control-example"></a>カスタムコントロールの例
 
-このカスタム `CardView` コントロールの目的は、ネイティブの Android CardView に似ていることです。
+このカスタムコントロールの目的は、 `CardView` ネイティブの Android CardView に似ていることです。
 
 次の3つのプロパティが含まれます。
 
@@ -111,7 +110,7 @@ DataPages NuGet には、データソースバインドを利用できる多数�
 * 詳細
 * ImageSource
 
-目標は、次のコードのように見えるカスタムコントロールです (現在のアセンブリを参照するカスタム `xmlns:local` が必要であることに注意してください)。
+目標は、次のコードのように見えるカスタムコントロールです (現在のアセンブリを参照するカスタムが必要であることに注意して `xmlns:local` ください)。
 
 ```xaml
 <local:CardView
@@ -123,31 +122,27 @@ DataPages NuGet には、データソースバインドを利用できる多数�
 
 組み込みのライトとダークテーマに対応する色を使用して、次のスクリーンショットのようになります。
 
-**Outlook Web Access (OWA)**
+**Android**
 
 ![](controls-images/cardview-light-android.png "Android での CardView カスタムコントロール") ![](controls-images/cardview-dark-android.png "Android での CardView カスタムコントロール")
 
-**Android**
+**iOS**
 
 ![](controls-images/cardview-light-ios.png "IOS での CardView カスタムコントロール") ![](controls-images/cardview-dark-ios.png "IOS での CardView カスタムコントロール")
 
-<a name="custom" />
-
 ### <a name="building-the-custom-cardview"></a>カスタム CardView のビルド
 
-1. [DataView サブクラス](#1)
-2. [フォント、レイアウト、および余白を定義する](#2)
-3. [コントロールの子のスタイルを作成する](#3)
-4. [コントロールレイアウトテンプレートを作成する](#4)
-5. [テーマ固有のリソースを追加する](#5)
-6. [CardView クラスの ControlTemplate を設定します。](#6)
-7. [コントロールをページに追加する](#7)
-
-<a name="1" />
+1. [DataView サブクラス](#1-dataview-subclass)
+2. [フォント、レイアウト、および余白を定義する](#2-define-font-layout-and-margins)
+3. [コントロールの子のスタイルを作成する](#3-create-styles-for-the-controls-children)
+4. [コントロールレイアウトテンプレートを作成する](#4-create-the-control-layout-template)
+5. [テーマ固有のリソースを追加する](#5-add-the-theme-specific-resources)
+6. [CardView クラスの ControlTemplate を設定します。](#6-set-the-controltemplate-for-the-cardview-class)
+7. [コントロールをページに追加する](#7-add-the-control-to-a-page)
 
 #### <a name="1-dataview-subclass"></a>1. DataView サブクラス
 
-`DataView` C#のサブクラスは、コントロールのバインド可能なプロパティを定義します。
+の C# サブクラスは、 `DataView` コントロールのバインド可能なプロパティを定義します。
 
 ```csharp
 public class CardView : DataView
@@ -185,13 +180,11 @@ public class CardView : DataView
 }
 ```
 
-<a name="2" />
-
 #### <a name="2-define-font-layout-and-margins"></a>2. フォント、レイアウト、および余白を定義する
 
-コントロールデザイナーは、カスタムコントロールのユーザーインターフェイスデザインの一部としてこれらの値を確認します。 プラットフォーム固有の仕様が必要な場合は、`OnPlatform` 要素が使用されます。
+コントロールデザイナーは、カスタムコントロールのユーザーインターフェイスデザインの一部としてこれらの値を確認します。 プラットフォーム固有の仕様が必要な場合は、 `OnPlatform` 要素が使用されます。
 
-`StaticResource`s を参照している値もあります。これらは、[手順 5](#5). で定義します。
+が参照する値として `StaticResource` は、[手順 5](#5-add-the-theme-specific-resources). で定義されているものがあります。
 
 ```xml
 <!-- CARDVIEW FONT SIZES -->
@@ -243,8 +236,6 @@ public class CardView : DataView
 </OnPlatform>
 ```
 
-<a name="3" />
-
 #### <a name="3-create-styles-for-the-controls-children"></a>3. コントロールの子のスタイルを作成する
 
 に対して定義されているすべての要素を参照して、カスタムコントロールで使用される子を作成します。
@@ -274,8 +265,6 @@ public class CardView : DataView
     <Setter Property="HeightRequest" Value="165"/>
 </Style>
 ```
-
-<a name="4" />
 
 #### <a name="4-create-the-control-layout-template"></a>4. コントロールレイアウトテンプレートを作成する
 
@@ -318,8 +307,6 @@ public class CardView : DataView
 </ControlTemplate>
 ```
 
-<a name="5" />
-
 #### <a name="5-add-the-theme-specific-resources"></a>5. テーマ固有のリソースを追加する
 
 これはカスタムコントロールであるため、リソースディクショナリを使用しているテーマに一致するリソースを追加します。
@@ -351,11 +338,9 @@ public class CardView : DataView
             <Color x:Key="iOSCardViewDetailTextColor">#B5B4B9</Color>
 ```
 
-<a name="6" />
-
 #### <a name="6-set-the-controltemplate-for-the-cardview-class"></a>6. CardView クラスの ControlTemplate を設定する
 
-最後に、 C# [手順 1](#1) . で作成したクラスで、`Style` `Setter` 要素を使用して、[手順 4.](#4)で定義したコントロールテンプレートを使用していることを確認します。
+最後に、[手順 1](#1-dataview-subclass) . で作成した C# クラスが、要素を使用して、[手順 4.](#4-create-the-control-layout-template)で定義したコントロールテンプレートを使用していることを確認します。 `Style` `Setter`
 
 ```xml
 <Style TargetType="local:CardView">
@@ -365,11 +350,9 @@ public class CardView : DataView
 </Style>
 ```
 
-<a name="7" />
-
 #### <a name="7-add-the-control-to-a-page"></a>7. コントロールをページに追加する
 
-`CardView` コントロールをページに追加できるようになりました。 次の例は、`StackLayout`でホストされていることを示しています。
+`CardView`これで、コントロールをページに追加できるようになりました。 次の例は、でホストされていることを示してい `StackLayout` ます。
 
 ```xaml
 <StackLayout Spacing="0">

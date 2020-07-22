@@ -1,18 +1,21 @@
 ---
-title: Xamarin.Forms DataTemplateSelector の作成
-description: この記事では、DataTemplateSelector を作成および使用する方法について説明します。これを使用して、データバインド プロパティの値に基づいて、実行時に DataTemplate を選択することができます。
+title: title:"Xamarin.Forms DataTemplateSelector の作成" description:"この記事では、DataTemplateSelector を作成および使用する方法について説明します。これを使用して、データバインド プロパティの値に基づいて、実行時に DataTemplate を選択することができます。"
+description: 'ms.prod: xamarin ms.assetid:A4629E8F-2BAF-45CE-A76E-DF225FE8D26C ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:03/08/2016 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
 ms.prod: xamarin
 ms.assetid: A4629E8F-2BAF-45CE-A76E-DF225FE8D26C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/08/2016
-ms.openlocfilehash: e9a17bff9bd0a23d59faf7602544b25c7ec05a86
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 74650eb2c52f1da9d0c539b711784896267ed183
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771256"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84135955"
 ---
 # <a name="creating-a-xamarinforms-datatemplateselector"></a>Xamarin.Forms DataTemplateSelector の作成
 

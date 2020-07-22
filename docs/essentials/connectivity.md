@@ -6,12 +6,15 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/08/2019
 ms.custom: video
-ms.openlocfilehash: c70510f7b47f93c6119532b6a1c06f6c2e9e56ea
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 056992b06e012845755aa02b2076a1bb80c6f176
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "67855759"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802419"
 ---
 # <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials:接続
 
@@ -55,7 +58,7 @@ ms.locfileid: "67855759"
 
 ## <a name="using-connectivity"></a>接続の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
@@ -115,7 +118,7 @@ public class ConnectivityTest
 
 ## <a name="api"></a>API
 
-* [Connectivity のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Connectivity)
+* [Connectivity のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Connectivity)
 * [Connectivity API ドキュメント](xref:Xamarin.Essentials.Connectivity)
 
 ## <a name="related-video"></a>関連ビデオ

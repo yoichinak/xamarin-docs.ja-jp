@@ -7,18 +7,21 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/09/2019
-ms.openlocfilehash: 2142882add91d613263d11fa4c1e6d7ad142c7c7
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9264bdf4ab5644b1cdfa0c37f1c7cacd3ae4ed0a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "68656001"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84128337"
 ---
 # <a name="webview-zoom-on-android"></a>Android での WebView のズーム
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-この Android プラットフォーム固有の機能により、 [`WebView`](xref:Xamarin.Forms.WebView)のピンチとズームのコントロールが有効になります。 XAML では、`WebView.EnableZoomControls` と `WebView.DisplayZoomControls` バインド可能なプロパティを `boolean` 値に設定することによって使用されます。
+この Android プラットフォーム固有の機能により、のピンチとズームのコントロールが有効になり [`WebView`](xref:Xamarin.Forms.WebView) ます。 次のように、バインド可能なプロパティを値に設定することにより、XAML で使用され `WebView.EnableZoomControls` `WebView.DisplayZoomControls` `boolean` ます。
 
 ```xaml
 <ContentPage ...
@@ -29,9 +32,9 @@ ms.locfileid: "68656001"
 </ContentPage>
 ```
 
-@No__t_0 のバインド可能なプロパティは、 [`WebView`](xref:Xamarin.Forms.WebView)でピンチ操作が有効になっているかどうかを制御し、`WebView.DisplayZoomControls` バインド可能プロパティは、ズームコントロールを `WebView` に重ねて表示するかどうかを制御します。
+`WebView.EnableZoomControls`バインド可能なプロパティは、でピンチからズームを有効にするかどうかを制御し、バインド可能な [`WebView`](xref:Xamarin.Forms.WebView) `WebView.DisplayZoomControls` プロパティは、ズームコントロールをに重ねて表示するかどうかを制御し `WebView` ます。
 
-または、fluent API C#を使用して、プラットフォーム固有のを使用することもできます。
+また、fluent API を使用して C# からプラットフォーム固有のものを使用することもできます。
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -43,14 +46,14 @@ webView.On<Android>()
     .DisplayZoomControls(true);
 ```
 
-@No__t_0 メソッドは、このプラットフォーム固有のが Android でのみ実行されることを指定します。 [@No__t_2](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)名前空間の `WebView.EnableZoomControls` メソッドを使用して、 [`WebView`](xref:Xamarin.Forms.WebView)でピンチによるズームを有効にするかどうかを制御します。 同じ名前空間内の `WebView.DisplayZoomControls` メソッドは、ズームコントロールを `WebView` に重ねて表示するかどうかを制御するために使用されます。 さらに、`WebView.ZoomControlsEnabled` および `WebView.ZoomControlsDisplayed` メソッドを使用して、[ズーム] コントロールと [ズーム] コントロールがそれぞれ有効になっているかどうかを返すことができます。
+メソッドは、 `WebView.On<Android>` このプラットフォーム固有のが Android でのみ実行されることを指定します。 `WebView.EnableZoomControls`名前空間のメソッドを [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) 使用して、でピンチ操作によるズームを有効にするかどうかを制御し [`WebView`](xref:Xamarin.Forms.WebView) ます。 `WebView.DisplayZoomControls`同じ名前空間のメソッドを使用して、ズームコントロールをに重ねて表示するかどうかを制御し `WebView` ます。 また、メソッドとメソッドを使用して、ピンチとズームの両方の `WebView.ZoomControlsEnabled` `WebView.ZoomControlsDisplayed` コントロールが有効になっているかどうかを返すことができます。
 
-結果として、 [`WebView`](xref:Xamarin.Forms.WebView)に対してピンチ化を有効にすることができ、ズームコントロールを `WebView` に重ね合わせることができます。
+結果として、ではピンチからズームを有効にすることができ、 [`WebView`](xref:Xamarin.Forms.WebView) ズームコントロールはにオーバーレイできます `WebView` 。
 
 [![Android でのズームされる WebView のスクリーンショット](webview-zoom-controls-images/webview-zoom.png "拡大した WebView")](webview-zoom-controls-images/webview-zoom-large.png#lightbox "拡大した WebView")
 
 > [!IMPORTANT]
-> ズームコントロールは、それぞれのバインド可能なプロパティまたはメソッドを使用して、 [`WebView`](xref:Xamarin.Forms.WebView)にオーバーレイするように有効にし、表示する必要があります。
+> ズームコントロールは、それぞれのバインド可能なプロパティまたはメソッドを使用して、に重ねられるように有効にし、表示する必要があり [`WebView`](xref:Xamarin.Forms.WebView) ます。
 
 ## <a name="related-links"></a>関連リンク
 

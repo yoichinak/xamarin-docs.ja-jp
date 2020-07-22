@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 531e04c3dbc9bd695087204ceae88d2f0f5df012
-ms.sourcegitcommit: d0e6436edbf7c52d760027d5e0ccaba2531d9fef
+ms.openlocfilehash: de4b6e8b95eed33e7fb38baf51a0da73cef313c0
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75488947"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574133"
 ---
 # <a name="introduction-to-ios-9"></a>iOS 9 の概要
 
@@ -42,7 +42,7 @@ IOS 9 と OS X 10.11 (El Capitan) 用に構築されたアプリでは、ATS が
 
 ATS の詳細については、「[アプリトランスポートセキュリティ](~/ios/app-fundamentals/ats.md)ガイド」を参照してください。
 
-<a name="multitasking" />
+<a name="multitasking"></a>
 
 ## <a name="multitasking-for-ipad"></a>iPad のマルチタスキング
 
@@ -109,7 +109,7 @@ IOS 9 では、Apple のセットアップが簡単になり、サポートさ�
 
 ## <a name="handoff-framework-changes"></a>ハンドオフフレームワークの変更
 
-ハンドオフ (継続性とも呼ばれます) は、ユーザーがいずれかのデバイス (iOS または Mac) でアクティビティを開始し、デバイスの別のアクティビティ (ユーザーの iClou によって識別) を続行する方法として、Apple によって iOS 8 および OS X ヨーク Semite (10.10) に導入されました。d アカウント)。
+ハンドオフ (継続性とも呼ばれます) は、ユーザーがいずれかのデバイス (iOS または Mac) でアクティビティを開始し、そのデバイスの別のアクティビティ (ユーザーの iCloud アカウントによって識別されます) を続行する手段として、iOS 8 および OS X では、Apple によって導入されました (10.10)。
 
 ハンドオフは、新しい高度な検索機能もサポートするために、iOS 9 で拡張されました。 詳細については、[検索の拡張機能](~/ios/platform/search/index.md)に関するドキュメントを参照してください。 ハンドオフの使用の詳細については、「[ハンドオフ](~/ios/platform/handoff.md)ドキュメントの概要」を参照してください。
 
@@ -126,7 +126,7 @@ IOS 9 では、使用ポリシーを定義する新しい_拡張ポイント_を
   - **フィルター Data Provider/フィルターコントロールプロバイダー拡張機能**-これらの拡張ポイントを使用して、デバイス上で動的なネットワークコンテンツフィルターを実装します。
   - **パケットトンネルプロバイダーの拡張機能**—この拡張ポイントを使用して、カスタム VPN トンネリングプロトコルクライアント側を実装します。
 - **新しい Safari 拡張ポイント**:
-  - **[コンテンツブロック拡張]** —この拡張ポイントを使用して、ユーザーが web を閲覧しているときに表示されないブロックされたコンテンツの一覧を定義します。
+  - [**コンテンツブロック拡張**] —この拡張ポイントを使用して、ユーザーが web を閲覧しているときに表示されないブロックされたコンテンツの一覧を定義します。
   - **共有リンク拡張機能**—この拡張ポイントを使用して、Safari の共有リンクでアプリのコンテンツを表示できるようにします。
 
 詳細については、[拡張機能の概要](~/ios/platform/extensions.md)と Apple の[アプリ拡張機能のプログラミングガイド](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)に関するドキュメントを参照してください。
@@ -137,15 +137,15 @@ IOS 9 では、次のように、Secure エンクレーブおよびその他の�
 
 - フィンガープリントデータベースが変更されたときにキーチェーン項目を無効にする新しい Touch ID 制約。
 - タッチ ID またはパスコードのみを含む Access Control リストエントリを作成できる新しい制約。
-- `SecItem` 呼び出しとは別に認証を呼び出せるようにする新しい認証コンテキスト。
+- 呼び出しとは別に認証を呼び出せるようにする新しい認証コンテキスト `SecItem` 。
 - アプリによって提供されるキーチェーン項目の暗号化に対して、Access Control リストエントロピ (アプリケーションパスワードオプションを使用)。
-- (`kSecAttrTokenIDSecureEnclave` 属性を使用して) secure エンクレーブ内でのキーの生成と使用のサポート。
+- (属性を使用して) secure エンクレーブ内でのキーの生成と使用のサポート `kSecAttrTokenIDSecureEnclave` 。
 
 詳細については、「 [Xamarin. iOS のタッチ id と顔 id](~/ios/platform/touch-id-face-id.md)」を参照してください。
 
 ## <a name="right-to-left-language-support"></a>右から左へ記述する言語サポート
 
-IOS 9 では、右から左へ記述する言語を完全にサポートすることにより、以前よりも簡単にフリップされたユーザーインターフェイスを提供してきました。 次に例を示します。
+IOS 9 では、右から左へ記述する言語を完全にサポートすることにより、以前よりも簡単にフリップされたユーザーインターフェイスを提供してきました。 これには、次の内容が含まれます。
 
 - 標準の[Uikit](xref:UIKit)コントロールは、iOS デバイスのロケールと言語の設定に基づいて、右から左に自動的に反転されます。
 - [Uiview](xref:UIKit.UIView)クラスには、右から左に反転したときに特定のビューを表示する方法を定義できる属性が用意されています。
@@ -177,8 +177,8 @@ Apple は、上記で説明した主な変更に加えて、次のような iOS 
 Apple では、iOS 9 の次の Api と関数が非推奨とされています。
 
 - アドレス帳 & アドレス帳**ui** -これらの api は、Contact および contact ui フレームワークに置き換えられました。 詳細については、[連絡先と連絡先の UI](~/ios/platform/contacts.md)に関するドキュメントを参照してください。
-- **CBCentralManager** -`CBCentralManager` クラスの `RetrievePeripherals` および `RetrieveConnectedPeripherals` メソッドは、iOS 9 では削除されています。 これらのメソッドを呼び出すと、アクセサリをペアリングするとき、またはアプリを起動するときに、アプリがクラッシュします。
-- **FetchAllChanges** -`CKFetchRecordChangesOperation` クラスの `FetchAllChanges` は減価償却されており、iOS 9 では削除されます。
+- **CBCentralManager** - `RetrievePeripherals` `RetrieveConnectedPeripherals` iOS 9 では、クラスのメソッドとメソッド `CBCentralManager` が削除されています。 これらのメソッドを呼び出すと、アクセサリをペアリングするとき、またはアプリを起動するときに、アプリがクラッシュします。
+- **FetchAllChanges** - `FetchAllChanges` クラスのは、減価償却され `CKFetchRecordChangesOperation` ており、iOS 9 では削除されます。
 - **Media Player** -Media Player framework は、iOS 9 では非推奨となりました。 代わりに、AVKit または AV Foundation Api を使用してください。
 
 特定の API 廃止の完全な一覧については、Apple の[iOS 9.0 api の相違](https://developer.apple.com/library/prerelease/ios/releasenotes/General/iOS90APIDiffs/index.html#//apple_ref/doc/uid/TP40016222)点に関するドキュメントを参照してください。
@@ -193,7 +193,7 @@ Apple では、iOS 9 の次の Api と関数が非推奨とされています。
 - [MusicMotion](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-musicmotion)
 - [PhotoProgress](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-photoprogress)
 - [SegueCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-seguecatalog)
-- [StackView](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StackView)
+- [System.windows.forms.toolstrip.stackview](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StackView)
 - [StickyCorners](https://github.com/xamarin/monotouch-samples/tree/master/ios9/StickyCorners)
 
 また、これらのサンプルの iOS 部分も確認してください (コンパニオン Mac OS X バージョン)。

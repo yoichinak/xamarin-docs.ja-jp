@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: e12bac1f65981776a7bd650cbc840cc0cdf72892
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: 429b15b8e0f2b66b8a0edcdf386ef7778cf4a9ca
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725159"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574120"
 ---
 # <a name="ios-9-compatibility"></a>iOS 9 の互換性
 
@@ -44,9 +44,9 @@ Visual Studio が最新の安定したバージョンに更新されているこ
 前述の2つの問題に対処するために使用しているコンポーネントまたは Nuget の新しいバージョンを待つ必要はあり**ません**。
 これらの問題は、Xamarin. iOS の最新の安定したリリースを使用してアプリを再構築するだけで修正されます。
 
-同様に、コンポーネントベンダーと NuGet の作成者は、前述の2つの問題を修正するためだけに新しいビルドを送信する必要は**ありません**。 ただし、コンポーネントまたは NuGet で `UICollectionView` を使用している場合、または**Xib**ファイルからビューを読み込む場合は、以下で説明する iOS 9 の互換性の問題に対処するために更新が必要に*なることがあり*ます。
+同様に、コンポーネントベンダーと NuGet の作成者は、前述の2つの問題を修正するためだけに新しいビルドを送信する必要は**ありません**。 ただし、コンポーネントまたは NuGet で `UICollectionView` **Xib**ファイルのビューを使用したり読み込みたりする場合は、以下で説明する iOS 9 の互換性の問題に対処するために更新が必要に*なることがあり*ます。
 
-<a name="compat" />
+<a name="compat"></a>
 
 ## <a name="improving-compatibility-in-your-code"></a>コードの互換性の向上
 
@@ -54,9 +54,9 @@ IOS 9 では、以前のバージョンの iOS での動作に*使用さ*れる�
 
 ### <a name="uicollectionviewcellcontentview-is-null-in-constructors"></a>コンストラクターの UICollectionViewCell が null です
 
-**理由:** IOS 9 では、`initWithFrame:` のコンストラクターが必要になりました。これは、 [UICollectionView ドキュメントの状態](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/#//apple_ref/occ/instm/UICollectionView/dequeueReusableCellWithReuseIdentifier:forIndexPath)として、ios 9 の動作が変更されたためです。 指定された識別子に対してクラスを登録し、新しいセルを作成する必要がある場合、そのセルは `initWithFrame:` メソッドを呼び出すことによって初期化されるようになりました。
+**理由:** IOS 9 では、 `initWithFrame:` [UICollectionView ドキュメントの状態](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UICollectionView_class/#//apple_ref/occ/instm/UICollectionView/dequeueReusableCellWithReuseIdentifier:forIndexPath)として、ios 9 の動作が変更されたため、コンストラクターが必要になりました。 指定された識別子に対してクラスを登録し、新しいセルを作成する必要がある場合は、そのメソッドを呼び出すことによってセルが初期化されるようになりました `initWithFrame:` 。
 
-**修正:** 次のように `initWithFrame:` コンストラクターを追加します。
+**修正:** 次のようにコンストラクターを追加し `initWithFrame:` ます。
 
 ```csharp
 [Export ("initWithFrame:")]
@@ -70,9 +70,9 @@ public YourCellClassName (CGRect frame) : base (frame)
 
 ### <a name="uiview-fails-to-init-with-coder-when-loading-a-view-from-a-xibnib"></a>Xib/Nib からビューを読み込むときに、UIView がプログラマによる初期化に失敗する
 
-**理由:** `initWithCoder:` コンストラクターは、Interface Builder Xib ファイルからビューを読み込むときに呼び出されるコンストラクターです。 このコンストラクターがエクスポートされていない場合、アンマネージコードはマネージバージョンのマネージドバージョンを呼び出すことができません。 以前 ( iOS 8 では、`IntPtr` コンストラクターがビューを初期化するために呼び出されました。
+**理由:** コンストラクターは、 `initWithCoder:` Interface Builder Xib ファイルからビューを読み込むときに呼び出されるコンストラクターです。 このコンストラクターがエクスポートされていない場合、アンマネージコードはマネージバージョンのマネージドバージョンを呼び出すことができません。 以前 ( iOS 8 では、 `IntPtr` コンストラクターはビューを初期化するために呼び出されました。
 
-**修正:** 次のように `initWithCoder:` コンストラクターを作成してエクスポートします。
+**修正:** 次のようにコンストラクターを作成してエクスポートし `initWithCoder:` ます。
 
 ```csharp
 [Export ("initWithCoder:")]

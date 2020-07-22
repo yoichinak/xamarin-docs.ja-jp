@@ -3,14 +3,18 @@ title: Xamarin.Essentials:ファイル システム ヘルパー
 description: Xamarin.Essentials の FileSystem クラスには、アプリケーションのキャッシュ ディレクトリやデータ ディレクトリを検索したり、アプリ パッケージ内のファイルを開いたりする、一連のヘルパーが含まれています。
 ms.assetid: B3EC2DE0-EFC0-410C-AF71-7410AE84CF84
 author: jamesmontemagno
+ms.custom: video
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 5b155e4976a67bda36e66d2ca3565c9237fde3c6
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5fafc24d9c4bd35d4ef0010ae4530341316c878a
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "68738865"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802358"
 ---
 # <a name="xamarinessentials-file-system-helpers"></a>Xamarin.Essentials:ファイル システム ヘルパー
 
@@ -22,7 +26,7 @@ ms.locfileid: "68738865"
 
 ## <a name="using-file-system-helpers"></a>FileSystem の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
@@ -79,5 +83,11 @@ UWP プロジェクトのルートにファイルを追加し、`OpenAppPackageF
 
 ## <a name="api"></a>API
 
-- [FileSystem のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/FileSystem)
+- [FileSystem のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/FileSystem)
 - [FileSystem API のドキュメント](xref:Xamarin.Essentials.FileSystem)
+
+## <a name="related-video"></a>関連ビデオ
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/File-System-Helpers-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

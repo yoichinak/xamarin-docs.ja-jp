@@ -7,22 +7,25 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/28/2019
-ms.openlocfilehash: 20ac6ad748e7056f7f8037a73a95de66b9eae3b6
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 0acf00d85c2bfb823ec1cfba099179bb6743117c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "69888914"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138750"
 ---
 # <a name="xamarinforms-shell"></a>Xamarin.Forms シェル
 
 ## <a name="introduction"></a>[はじめに](introduction.md)
 
-Xamarin.Forms シェルでは、ほとんどのモバイル アプリケーションが必要としている基本機能を提供することで、モバイル アプリケーション開発の複雑さを軽減します。 これには、一般的なナビゲーション ユーザー エクスペリエンス、URI ベースのナビゲーション体系、および統合された検索ハンドラーが含まれます。
+Xamarin.Forms シェルでは、ほとんどのモバイル アプリケーションが必要としている基本機能を提供することで、モバイル アプリケーション開発の複雑さが軽減されます。 これには、一般的なナビゲーション ユーザー エクスペリエンス、URI ベースのナビゲーション体系、および統合された検索ハンドラーが含まれます。
 
-## <a name="create-a-xamarinforms-shell-application"></a>[Xamarin.Forms シェル アプリケーションを作成する](create.md)
+## <a name="create-a-xamarinforms-shell-applicationcreatemd"></a>[Xamarin.Forms シェル アプリケーションを作成する](create.md)
 
-Xamarin.Forms シェル アプリケーションを作成するプロセスは、`Shell` クラスをサブクラス化した XAML ファイルを作成し、アプリケーションの `App` クラスの `MainPage` プロパティにサブクラス化した `Shell` オブジェクトを設定した後に、サブクラス化した `Shell` クラスにアプリケーションのビジュアル階層を記述することです。
+Xamarin.Forms シェル アプリケーションを作成するプロセスは、`Shell` クラスをサブクラス化する XAML ファイルを作成し、アプリケーションの `App` クラスの `MainPage` プロパティを、サブクラス化した `Shell` オブジェクトに設定した後に、サブクラス化した `Shell` クラス内にアプリケーションのビジュアル階層を記述することです。
 
 ## <a name="flyout"></a>[ポップアップ](flyout.md)
 
@@ -34,7 +37,7 @@ Xamarin.Forms シェル アプリケーションを作成するプロセスは�
 
 ## <a name="page-configuration"></a>[ページの構成](configuration.md)
 
-`Shell` クラスは、Xamarin.Forms シェル アプリケーションでページの外観を構成するために使用できる添付プロパティを定義します。 これには、ページの色の設定、ナビゲーション バーの無効化、タブ バーの無効化、およびナビゲーション バーでのビューの表示が含まれます。
+`Shell` クラスでは、Xamarin.Forms シェル アプリケーションのページの外観の構成に使用できる添付プロパティを定義します。 これには、ページの色の設定、ナビゲーション バーの無効化、タブ バーの無効化、およびナビゲーション バーでのビューの表示が含まれます。
 
 ## <a name="navigation"></a>[ナビゲーション](navigation.md)
 
@@ -46,7 +49,7 @@ Xamarin.Forms シェル アプリケーションを作成するプロセスは�
 
 ## <a name="lifecycle"></a>[ライフサイクル](lifecycle.md)
 
-シェル アプリケーションでは Xamarin.Forms のライフサイクルが尊重され、ページが画面に表示されるときに `Appearing` イベントが発生し、ページが画面から消えるときに `Disappearing` イベントが発生します。
+シェル アプリケーションでは Xamarin.Forms のライフサイクルが尊重され、ページが画面に表示されようとしているときに `Appearing` イベントが発生し、ページが画面から消えようとしているときに `Disappearing` イベントが発生します。
 
 ## <a name="custom-renderers"></a>[カスタム レンダラー](customrenderers.md)
 

@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/22/2018
-ms.openlocfilehash: 2bc8f82db29ed3c07c67293a83e6874f0cc6acb2
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 36538435066bc94a81f6449774718afe9a5ce7d7
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75556523"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571988"
 ---
 # <a name="debug-on-the-android-emulator"></a>Android Emulator でのデバッグ
 
 _このガイドでは、アプリをデバッグしてテストするために Android Emulator で仮想デバイスを起動する方法について説明します。_
 
-Android Emulator ( **.NET によるモバイル開発**のワークロードの一部としてインストールされている) は各種の Android デバイスをシミュレートするために、さまざまな構成で実行することができます。 これらの構成がそれぞれ、_仮想デバイス_ として作成されます。 このガイドでは、Visual Studio からエミュレーターを起動する方法、および仮想デバイスでアプリを実行する方法を説明します。 Android Emulator の構成と、新しい仮想デバイスの作成については、「[Android Emulator のセットアップ](~/android/get-started/installation/android-emulator/index.md)」を参照してください。
+Android Emulator ( **.NET によるモバイル開発**のワークロードの一部としてインストールされている) は各種の Android デバイスをシミュレートするために、さまざまな構成で実行することができます。 これらの構成がそれぞれ、_仮想デバイス_として作成されます。 このガイドでは、Visual Studio からエミュレーターを起動する方法、および仮想デバイスでアプリを実行する方法を説明します。 Android Emulator の構成と、新しい仮想デバイスの作成については、「[Android Emulator のセットアップ](~/android/get-started/installation/android-emulator/index.md)」を参照してください。
 
 ## <a name="using-a-pre-configured-virtual-device"></a>構成済み仮想デバイスの使用
 
@@ -63,7 +63,7 @@ Visual Studio for Mac には、デバイスのドロップダウン メニュー
 
 仮想デバイスを編集する (または新規に作成する) には、[Android Device Manager](~/android/get-started/installation/android-emulator/device-manager.md) を使用する必要があります。
 
-<a name="launching" />
+<a name="launching"></a>
 
 ## <a name="launching-the-emulator"></a>エミュレーターの起動
 
@@ -85,11 +85,11 @@ VisuaI Studio の上部近くにドロップダウン メニューがありま�
 
 エミュレーターは実行したままでかまいません。アプリが起動するたびにシャットダウンして再起動を待つ必要はありません。 Xamarin.Android アプリがエミュレーターで初めて実行されるときに、ターゲットとなる API レベルの Xamarin.Android 共有ランタイムがインストールされてからアプリケーションがインストールされます。 ランタイムのインストールには少し時間がかかる場合があります。完了するまでしばらくお待ちください。 ランタイムのインストールが行われるのは、Xamarin.Android アプリが初めてエミュレーターに展開される場合のみです。以降の展開では、エミュレーターにアプリがコピーされるだけなので、初回より時間はかかりません。
 
-<a name="quick-boot" />
+<a name="quick-boot"></a>
 
 ## <a name="quick-boot"></a>クイック ブート
 
-新しいバージョンの Android Emulator には、ほんの数秒でエミュレーターを起動する _クイック ブート_ と呼ばれる機能が含まれています。 エミュレーターを閉じるときに、仮想デバイスの状態のスナップショットが取得されるため、再起動時にその状態をすばやく復元できます。
+新しいバージョンの Android Emulator には、ほんの数秒でエミュレーターを起動する_クイック ブート_と呼ばれる機能が含まれています。 エミュレーターを閉じるときに、仮想デバイスの状態のスナップショットが取得されるため、再起動時にその状態をすばやく復元できます。
 この機能にアクセスするには、次が必要になります。
 
 - Android Emulator バージョン 27.0.2 またはそれ以降

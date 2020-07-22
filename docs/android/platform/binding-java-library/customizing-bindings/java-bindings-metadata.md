@@ -7,14 +7,17 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: 25a5d79084f7caa78eec4011c047bd19a63ef748
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 5439e213c0016ea01935d617f5f6b5a3edf3eee8
+ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75487790"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853013"
 ---
 # <a name="java-bindings-metadata"></a>Java バインド メタデータ
+
+> [!IMPORTANT]
+> 現在、Xamarin プラットフォームでのカスタム バインディングの使用を調査しています。 今後の開発作業の発展のために、この[**アンケート**](https://www.surveymonkey.com/r/KKBHNLT)にご回答ください。
 
 _Xamarin.Android の C# コードでは、バインドを使用して Java ライブラリを呼び出します。これは、Java ネイティブ インターフェイス (JNI) で指定されている下位レベルの詳細を抽象化するメカニズムです。Xamarin.Android には、これらのバインドを生成するツールが用意されています。このツールを使用すると、メタデータを使用してバインドを作成する方法を開発者が制御できます。これにより、名前空間の変更やメンバーの名前変更などの手順が可能になります。このドキュメントでは、メタデータの動作、メタデータでサポートされる属性の概要、およびこのメタデータを変更してバインドの問題を解決する方法について説明します。_
 
@@ -158,7 +161,7 @@ public class NewName : Java.Lang.Object { ... }
     name="managedName">NewName</attr>
 ```
 
-<a name="Renaming_EventArg_Wrapper_Classes" />
+<a name="Renaming_EventArg_Wrapper_Classes"></a>
 
 #### <a name="renaming-eventarg-wrapper-classes"></a>`EventArg` ラッパー クラスの名前を変更する
 

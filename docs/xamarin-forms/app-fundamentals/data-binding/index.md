@@ -6,13 +6,16 @@ ms.assetid: 938E85C8-521D-43B9-92CB-D591A06D98A6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/23/2020
-ms.openlocfilehash: 9e3e602eda0d2fa78dd25905a2b6ccf3ce5a744d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.date: 05/21/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9abbe60865cbf5fb9082b5f4882c27fe095b36ac
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "80247601"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946456"
 ---
 # <a name="xamarinforms-data-binding"></a>Xamarin.Forms のデータ バインディング
 
@@ -67,6 +70,10 @@ Xamarin.Forms アプリケーションは 1 つ以上のページで構成され
 
 バインディングのプロセスが失敗した場合に使うフォールバック値を定義することにより、より堅牢なデータ バインディングを実現します。
 
+## <a name="multi-bindings"></a>[複数バインド](multibinding.md)
+
+[`Binding`](xref:Xamarin.Forms.Binding) オブジェクトのコレクションを、単一のバインディング ターゲットのプロパティにアタッチします。
+
 ## <a name="the-command-interface"></a>[コマンド インターフェイス](commanding.md)
 
 データ バインディングを使って `Command` プロパティを実装します。
@@ -78,5 +85,5 @@ Xamarin.Forms アプリケーションは 1 つ以上のページで構成され
 ## <a name="related-links"></a>関連リンク
 
 - [データ バインディングのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
-- [Xamarin.Forms 書籍のデータ バインディングに関する章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [Xamarin.Forms ブックのデータ バインディングに関する章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
 - [XAML マークアップ拡張](~/xamarin-forms/xaml/markup-extensions/index.md)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: 284705973f9c0ec606572170f7e927ed4745ddd1
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 263c48c5006ba0060756e1050497c38dfb7c8eae
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73030231"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84567776"
 ---
 # <a name="linking-xamarinios-apps"></a>Xamarin.iOS アプリをリンクする
 
@@ -22,7 +22,7 @@ ms.locfileid: "73030231"
 
 リンカーは静的なツールであり、リフレクション経由で呼び出される、あるいは動的にインスタンス化されるインクルードの種類およびメソッドの場合、設定できません。 この制約を回避するために、いくつかのオプションが存在します。
 
-<a name="Linker_Behavior" />
+<a name="Linker_Behavior"></a>
 
 ## <a name="linker-behavior"></a>リンカーの動作
 
@@ -56,7 +56,7 @@ ms.locfileid: "73030231"
 
 これは、コマンドライン ツールの mtouch を使用するときの *-nolink* オプションに相当します。
 
-<a name="Link_SDK_assemblies_only" />
+<a name="Link_SDK_assemblies_only"></a>
 
 ### <a name="link-sdk-assemblies-only"></a>SDK アセンブリのみをリンクする
 
@@ -66,7 +66,7 @@ ms.locfileid: "73030231"
 
 これは、コマンドライン ツールの mtouch を使用するときの *-linksdk* オプションに相当します。
 
-<a name="Link_all_assemblies" />
+<a name="Link_all_assemblies"></a>
 
 ### <a name="link-all-assemblies"></a>すべてのアセンブリをリンクする
 
@@ -74,13 +74,13 @@ ms.locfileid: "73030231"
 
 これは、コマンドライン ツールの **mtouch** を使用するときの *-linkall* オプションに相当します。
 
-<a name="Controlling_the_Linker" />
+<a name="Controlling_the_Linker"></a>
 
 ## <a name="controlling-the-linker"></a>リンカーを制御する
 
 リンカーを使用すると、動的に、あるいは間接的に呼び出したことがあるコードが削除されることもあります。 そのような状況に対処するために、アクションを細かく制御するための機能やオプションがいくつかリンカーに用意されています。
 
-<a name="Preserving_Code" />
+<a name="Preserving_Code"></a>
 
 ### <a name="preserving-code"></a>コードの維持
 
@@ -108,7 +108,7 @@ public sealed class PreserveAttribute : System.Attribute {
 
 どの名前空間にこれが定義されるかは問題ではありません。リンカーは型の名前でこの属性を探します。
 
- <a name="Skipping_Assemblies" />
+ <a name="Skipping_Assemblies"></a>
 
 ### <a name="skipping-assemblies"></a>アセンブリをスキップする
 
@@ -130,7 +130,7 @@ public sealed class PreserveAttribute : System.Attribute {
 
 このオプションを使用するユーザー インターフェイスはありませんが、Visual Studio for Mac の [プロジェクト オプション] ダイアログまたは Visual Studio プロジェクトの [プロパティ] ウィンドウの**追加 mtouch 引数**テキスト フィールドに表示できます。 (例: *--linkskip=mscorlib* は mscorlib.dll をリンクしませんが、ソリューションの他のアセンブリをリンクします)。
 
-<a name="Disabling_Link_Away" />
+<a name="Disabling_Link_Away"></a>
 
 ### <a name="disabling-link-away"></a>"リンク削除" を無効にする
 

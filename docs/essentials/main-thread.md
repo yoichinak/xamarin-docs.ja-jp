@@ -3,14 +3,18 @@ title: Xamarin.Essentials:MainThread
 description: MainThread クラスを使用すると、アプリケーションでコードをメインの実行スレッドで実行させることができます。
 ms.assetid: CD6D51E7-D933-4FE7-A7F7-392EF27812E1
 author: jamesmontemagno
+ms.custom: video
 ms.author: jamont
 ms.date: 08/20/2019
-ms.openlocfilehash: 9109e7bff4cfe60479e711240d290d77b60a9af6
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 82c54a72d0e0bc991644295f05136f89fd280d7f
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70060122"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802266"
 ---
 # <a name="xamarinessentials-mainthread"></a>Xamarin.Essentials:MainThread
 
@@ -18,9 +22,9 @@ ms.locfileid: "70060122"
 
 ## <a name="background"></a>背景
 
-ほとんどのオペレーティング システム — iOS、Android、ユニバーサル Windows プラットフォームなど — では、ユーザー インターフェイスに関連するコードのためにシングル スレッド モデルが使用されます。 このモデルは、ユーザー インターフェイスのイベント (キーストローク、タッチ入力など) をシリアル化するために必要です。 多くの場合、このスレッドは _メイン スレッド_、_ユーザー インターフェイス スレッド_、または _UI スレッド_ と呼ばれます。 このモデルの欠点は、ユーザー インターフェイス要素にアクセスするすべてのコードを、アプリケーションのメイン スレッドで実行させなければならないという点です。 
+ほとんどのオペレーティング システム — iOS、Android、ユニバーサル Windows プラットフォームなど — では、ユーザー インターフェイスに関連するコードのためにシングル スレッド モデルが使用されます。 このモデルは、ユーザー インターフェイスのイベント (キーストローク、タッチ入力など) をシリアル化するために必要です。 多くの場合、このスレッドは_メイン スレッド_、_ユーザー インターフェイス スレッド_、または _UI スレッド_と呼ばれます。 このモデルの欠点は、ユーザー インターフェイス要素にアクセスするすべてのコードを、アプリケーションのメイン スレッドで実行させなければならないという点です。
 
-アプリケーションでは、イベント ハンドラーを実行のセカンダリ スレッドで呼び出すイベントを使用することが必要な場合があります。 (Xamarin.Essentials のクラス [`Accelerometer`](accelerometer.md)、[`Compass`](compass.md)、[`Gyroscope`](gyroscope.md)、[`Magnetometer`](magnetometer.md)、[`OrientationSensor`](orientation-sensor.md) はすべて、高速で使用すると、セカンダリ スレッドに関する情報を返す可能性があります。)イベント ハンドラーがユーザー インターフェイス要素にアクセスする必要がある場合は、そのコードをメイン スレッドで実行させる必要があります。 **MainThread** クラスを使用すると、アプリケーションでこのコードをメイン スレッドで実行させることができます。
+アプリケーションでは、イベント ハンドラーを実行のセカンダリ スレッドで呼び出すイベントを使用することが必要な場合があります。 (Xamarin.Essentials のクラス [`Accelerometer`](accelerometer.md)、[`Compass`](compass.md)、[`Gyroscope`](gyroscope.md)、[`Magnetometer`](magnetometer.md)、[`OrientationSensor`](orientation-sensor.md) はすべて、より速い速度で使用すると、セカンダリ スレッドに関する情報を返す可能性があります。)イベント ハンドラーがユーザー インターフェイス要素にアクセスする必要がある場合は、そのコードをメイン スレッドで実行させる必要があります。 **MainThread** クラスを使用すると、アプリケーションでこのコードをメイン スレッドで実行させることができます。
 
 ## <a name="get-started"></a>作業開始
 
@@ -28,7 +32,7 @@ ms.locfileid: "70060122"
 
 ## <a name="running-code-on-the-main-thread"></a>メイン スレッドでのコードの実行
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
@@ -59,8 +63,9 @@ MainThread.BeginInvokeOnMainThread(MyMainThreadCode);
 ```
 
 > [!NOTE]
-> Xamarin.Forms には [`Device.BeginInvokeOnMainThread(Action)`](https://docs.microsoft.com/dotnet/api/xamarin.forms.device.begininvokeonmainthread) と呼ばれるメソッドがあります。
-> これは `MainThread.BeginInvokeOnMainThread(Action)` と同じ処理を行います。 Xamarin.Forms アプリではどちらのメソッドも使用できますが、呼び出し元のコードが他にも Xamarin.Forms に依存する必要があるかどうかを検討してください。 ない場合は、`MainThread.BeginInvokeOnMainThread(Action)` が適切な選択であると考えられます。
+> Xamarin.Forms には、[`Device.BeginInvokeOnMainThread(Action)`](https://docs.microsoft.com/dotnet/api/xamarin.forms.device.begininvokeonmainthread) と呼ばれるメソッドがあります。
+> これは `MainThread.BeginInvokeOnMainThread(Action)` と同じ処理を行います。
+> Xamarin.Forms アプリではどちらのメソッドも使用できますが、呼び出し元のコードが他にも Xamarin.Forms に依存する必要があるかどうかを検討してください。 ない場合は、`MainThread.BeginInvokeOnMainThread(Action)` が適切な選択であると考えられます。
 
 ## <a name="determining-if-code-is-running-on-the-main-thread"></a>コードがメイン スレッドで実行されているかどうかの判断
 
@@ -108,5 +113,11 @@ _しかし、このチェックは必要ではありません。_ プラット�
 
 ## <a name="api"></a>API
 
-- [MainThread のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/MainThread)
+- [MainThread のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/MainThread)
 - [MainThread API ドキュメント](xref:Xamarin.Essentials.MainThread)
+
+## <a name="related-video"></a>関連ビデオ
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Main-Thread-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

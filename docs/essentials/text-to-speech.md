@@ -1,16 +1,20 @@
 ---
 title: Xamarin.Essentials:音声合成
-description: Xamarin.Essentials の TextToSpeech クラスを使用すると、アプリケーションで組み込みの音声合成エンジンを利用して、デバイスからテキストを読み上げたり、エンジンがサポートしている利用可能な言語を照会したりすることができます。
+description: Xamarin.Essentials の TextToSpeech クラスを使用すると、アプリケーションで組み込みの音声合成エンジンを利用し、デバイスからテキストを読み上げたり、エンジンでサポートされる使用可能な言語を照会したりすることができます。
 ms.assetid: AEEF03AE-A047-4DF0-B0E8-CC8D9A7B8351
 author: jamesmontemagno
+ms.custom: video
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 6d89f70a8b7f6229297f86deb3cb83cf940fa7df
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 452a54637c270f80c2e1add4d6cadedbb4b27077
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "66469478"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84801830"
 ---
 # <a name="xamarinessentials-text-to-speech"></a>Xamarin.Essentials:音声合成
 
@@ -22,7 +26,7 @@ ms.locfileid: "66469478"
 
 ## <a name="using-text-to-speech"></a>音声合成の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
@@ -120,7 +124,7 @@ public async Task SpeakNow()
 
 ### <a name="speech-locales"></a>音声のロケール
 
-テキストをさまざまな言語およびアクセントで読み上げるために、各プラットフォームではさまざまなロケールがサポートされています。 プラットフォームにはロケールを指定するためのさまざまなコードや方法があります。そのため、Xamarin.Essentials には、クロスプラットフォームの `Locale` クラスや、`GetLocalesAsync` でそれらを照会する方法が用意されています。
+テキストをさまざまな言語およびアクセントで読み上げるために、各プラットフォームではさまざまなロケールがサポートされています。 プラットフォームにはロケールを指定するためのさまざまなコードや方法があります。そのため Xamarin.Essentials には、クロスプラットフォームの `Locale` クラスや、`GetLocalesAsync` を使用してそれらを照会する方法が用意されています。
 
 ```csharp
 public async Task SpeakNow()
@@ -148,5 +152,11 @@ public async Task SpeakNow()
 
 ## <a name="api"></a>API
 
-- [TextToSpeech のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/TextToSpeech)
+- [TextToSpeech のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/TextToSpeech)
 - [TextToSpeech API ドキュメント](xref:Xamarin.Essentials.TextToSpeech)
+
+## <a name="related-video"></a>関連ビデオ
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Text-to-Speech-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

@@ -1,50 +1,53 @@
 ---
-title: SkiaSharp のビットマップのセグメント化された表示
-description: SkiaSharp のビットマップを表示するは、いくつかの領域が拡大されており、一部の領域でないようにします。
+title: SkiaSharp ビットマップのセグメント化表示
+description: SkiaSharp ビットマップを表示して、一部の領域が拡大され、一部の領域が機能しないようにします。
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 79AE2033-C41C-4447-95A6-76D22E913D19
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: ca6c8fafe4352bac83e5ae60b43627d4c7fdc10f
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5c3909271580d0568d7c603de0d434ff5b3f3bc4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68648669"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84138672"
 ---
-# <a name="segmented-display-of-skiasharp-bitmaps"></a>SkiaSharp のビットマップのセグメント化された表示
+# <a name="segmented-display-of-skiasharp-bitmaps"></a>SkiaSharp ビットマップのセグメント化表示
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-SkiaSharp、`SKCanvas`オブジェクトという名前のメソッドを定義する`DrawBitmapNinePatch`という 2 つのメソッドと`DrawBitmapLattice`非常に類似しています。 両方は、これらのメソッドは、先の四角形のサイズにビットマップをレンダリングがビットマップを一様に拡大するには、代わりにそのピクセル寸法で、ビットマップの部分を表示に四角形に収まるように、ビットマップの他の部分を拡張します。
+SkiaSharp オブジェクトは、 `SKCanvas` という名前のメソッド `DrawBitmapNinePatch` と、 `DrawBitmapLattice` 非常によく似た2つのメソッドを定義します。 これらのメソッドはどちらもビットマップを変換先の四角形のサイズに描画しますが、ビットマップを均一に拡張するのではなく、ビットマップの一部をピクセルディメンションに表示し、ビットマップの他の部分を拡大して四角形に収まるようにします。
 
-![サンプルをセグメント化された](segmented-images/SegmentedSample.png "サンプルをセグメント化")
+![分割したサンプル](segmented-images/SegmentedSample.png "セグメント化サンプル")
 
-これらのメソッドは通常、ビットマップをレンダリングするには、ボタンなどのユーザー インターフェイス オブジェクトの一部を形成するために使用します。 一般に、ボタンのコンテンツに基づいてボタンのサイズがするボタンを設計するときがボタンのコンテンツに関係なく同じ幅にするボタンの境界線をする可能性があります。 最適なアプリケーションは`DrawBitmapNinePatch`します。
+これらのメソッドは、通常、ボタンなどのユーザーインターフェイスオブジェクトの一部を形成するビットマップをレンダリングするために使用されます。 ボタンをデザインするときは、通常、ボタンのコンテンツに基づいてボタンのサイズを設定しますが、ボタンのコンテンツに関係なく、ボタンの境界線の幅を同じにすることをお勧めします。 これは、の理想的なアプリケーション `DrawBitmapNinePatch` です。
 
-`DrawBitmapNinePatch` 特殊なケースは、`DrawBitmapLattice`しますが、2 つの方法について理解すると簡単です。
+`DrawBitmapNinePatch`はの特殊なケースですが、を `DrawBitmapLattice` 使用して理解するには、次の2つの方法が簡単です。
 
-## <a name="the-nine-patch-display"></a>9-更新プログラムの表示 
+## <a name="the-nine-patch-display"></a>9パッチ表示 
 
-概念的には、 [ `DrawBitmapNinePatch` ](xref:SkiaSharp.SKCanvas.DrawBitmapNinePatch(SkiaSharp.SKBitmap,SkiaSharp.SKRectI,SkiaSharp.SKRect,SkiaSharp.SKPaint))ビットマップを 9 個の正方形に分割します。
+概念的には、 [`DrawBitmapNinePatch`](xref:SkiaSharp.SKCanvas.DrawBitmapNinePatch(SkiaSharp.SKBitmap,SkiaSharp.SKRectI,SkiaSharp.SKRect,SkiaSharp.SKPaint)) ビットマップを9つの四角形に分割します。
 
-![9 つの修正プログラム](segmented-images/NinePatch.png "9 つの修正プログラム")
+![9パッチ](segmented-images/NinePatch.png "9パッチ")
 
-4 つの角にある四角形のピクセル サイズが表示されます。 矢印の示すビットマップの端に他の領域は水平方向または垂直方向にように引き伸ばさ先の四角形の領域。 中央に四角形は、水平および垂直に拡大されます。 
+4つのコーナーの四角形がピクセルサイズで表示されます。 矢印が示すように、ビットマップの端にあるその他の領域は、水平方向または垂直方向に配置され、コピー先の四角形の領域に拡大されます。 中央の四角形は、水平方向と垂直方向に拡大されます。 
 
-先の四角形のピクセル寸法にも 4 つの角を表示するには十分な領域がない場合に、使用可能なサイズと何もスケール ダウンしますが、4 つの角が表示されます。
+ピクセルディメンションに4つのコーナーも表示するために、コピー先の四角形に十分な領域がない場合は、使用可能なサイズに縮小され、4つのコーナーが表示されます。
 
-これら 9 つの四角形にビットマップを除算するには、中央に四角形を指定する必要はのみです。 構文は、`DrawBitmapNinePatch`メソッド。
+ビットマップをこの9つの四角形に分割するには、中央に四角形を指定するだけで済みます。 メソッドの構文は次の `DrawBitmapNinePatch` とおりです。
 
 ```csharp
 canvas.DrawBitmapNinePatch(bitmap, centerRectangle, destRectangle, paint);
 ```
 
-ビットマップに対する相対パス center 四角形です。 `SKRectI`値 (整数のバージョンの`SKRect`) およびすべての座標とサイズのピクセル単位で。 先の四角形では、画面に対して相対的です。 `paint` 引数は省略可能です。
+中央の四角形は、ビットマップを基準としています。 これは `SKRectI` 値 (の整数バージョン `SKRect` ) であり、すべての座標とサイズはピクセル単位で表されます。 コピー先の四角形は、表示サーフェイスに対して相対的です。 `paint` 引数は省略可能です。
 
-**9 個の更新プログラムの表示**ページで、 [ **SkiaSharpFormsDemos** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルは、型のパブリック静的プロパティを作成する静的コンス トラクターを使用する最初`SKBitmap`:
+[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルの**9 つの更新プログラムの表示**ページでは、まず静的コンストラクターを使用して、型のパブリック静的プロパティを作成し `SKBitmap` ます。
 
 ```csharp
 public partial class NinePatchDisplayPage : ContentPage
@@ -72,11 +75,11 @@ public partial class NinePatchDisplayPage : ContentPage
 }
 ```
 
-この記事の他の 2 つのページでは、その同じビットマップを使用します。 ビットマップは 500 ピクセルの正方形、および、すべてが同じ 100 ピクセルの正方形の領域を占有している各サイズの 25 の円の配列で構成します。
+この記事の他の2つのページでは、同じビットマップが使用されます。 ビットマップは500ピクセルの四角形で、25個の円の配列で構成されます。すべて同じサイズで、それぞれが100ピクセルの四角形領域を占有します。
 
-![グリッドを circle](segmented-images/CircleGrid.png "Circle グリッド")
+![円グリッド](segmented-images/CircleGrid.png "円グリッド")
 
-プログラムのインスタンスのコンス トラクターを作成、`SKCanvasView`で、`PaintSurface`を使用するハンドラー`DrawBitmapNinePatch`ビットマップを拡大する画面を全体表示を表示します。
+プログラムのインスタンスコンストラクターは、 `SKCanvasView` `PaintSurface` `DrawBitmapNinePatch` 表示サーフェイス全体に拡張されたビットマップを表示するためにを使用するハンドラーを持つを作成します。
 
 ```csharp
 public class NinePatchDisplayPage : ContentPage
@@ -105,45 +108,45 @@ public class NinePatchDisplayPage : ContentPage
 }
 ```
 
-`centerRect`四角形には 16 の円の中央の配列が含まれます。 角の円は、ピクセル数で表示され、他のすべてが適宜拡大されます。
+四角形には `centerRect` 、16個の円の中央配列が含まれます。 角の円はピクセルディメンションで表示され、それ以外の場合はそれに合わせて拡大されます。
 
-[![9-更新プログラムの表示](segmented-images/NinePatchDisplay.png "9-更新プログラムの表示")](segmented-images/NinePatchDisplay-Large.png#lightbox)
+[![9-パッチ表示](segmented-images/NinePatchDisplay.png "9-パッチ表示")](segmented-images/NinePatchDisplay-Large.png#lightbox)
 
-UWP ページでは、幅 500 ピクセルにし、そのため一連の同じサイズの円として上部と下部にある行を表示します。 それ以外の場合、コーナーではありません。 すべての円はフォームの省略記号を拡大します。
+UWP ページは500ピクセル幅であるため、上と下の行は同じサイズの一連の円として表示されます。 それ以外の場合は、角にないすべての円が、楕円を形成するように拡大されます。
 
-楕円と円の組み合わせで構成されるオブジェクトの奇妙な表示は、円の行と列と重なるように center 四角形を定義してください。
+円と省略記号の組み合わせで構成されるオブジェクトが奇妙に表示されるようにするには、円の行と列が重なるように中心の四角形を定義します。
 
 ```csharp
 SKRectI centerRect = new SKRectI(150, 150, 350, 350);
 ```
 
-## <a name="the-lattice-display"></a>格子の表示
+## <a name="the-lattice-display"></a>Lattice の表示
 
-2 つ`DrawBitmapLattice`メソッドはのような`DrawBitmapNinePatch`、水平または垂直分割の任意の数が一般化されたが、します。 これらの分割は、ピクセルに対応する整数の配列によって定義されます。 
+2つの `DrawBitmapLattice` メソッドはに似てい `DrawBitmapNinePatch` ますが、水平または垂直の任意の数の区分に対して一般化されています。 これらの区分は、ピクセルに対応する整数の配列によって定義されます。 
 
-[ `DrawBitmapLattice` ](xref:SkiaSharp.SKCanvas.DrawBitmapLattice(SkiaSharp.SKBitmap,System.Int32[],System.Int32[],SkiaSharp.SKRect,SkiaSharp.SKPaint))整数の配列はこれらのパラメーターを持つメソッドは動作しません。 [ `DrawBitmapLattice` ](xref:SkiaSharp.SKCanvas.DrawBitmapLattice(SkiaSharp.SKBitmap,SkiaSharp.SKLattice,SkiaSharp.SKRect,SkiaSharp.SKPaint))型のパラメーターを持つメソッド`SKLattice`作業は、以下に示す例で使用したものです。
+[`DrawBitmapLattice`](xref:SkiaSharp.SKCanvas.DrawBitmapLattice(SkiaSharp.SKBitmap,System.Int32[],System.Int32[],SkiaSharp.SKRect,SkiaSharp.SKPaint))これらの整数配列のパラメーターを持つメソッドは動作していないようです。 [`DrawBitmapLattice`](xref:SkiaSharp.SKCanvas.DrawBitmapLattice(SkiaSharp.SKBitmap,SkiaSharp.SKLattice,SkiaSharp.SKRect,SkiaSharp.SKPaint))型のパラメーターを持つメソッドは `SKLattice` 動作し、次に示すサンプルで使用されるメソッドです。
 
-[ `SKLattice` ](xref:SkiaSharp.SKLattice)構造が 4 つのプロパティを定義します。
+[`SKLattice`](xref:SkiaSharp.SKLattice)構造体は、次の4つのプロパティを定義します。
 
 - [`XDivs`](xref:SkiaSharp.SKLattice.XDivs)、整数の配列
 - [`YDivs`](xref:SkiaSharp.SKLattice.YDivs)、整数の配列
-- [`Flags`](xref:SkiaSharp.SKLattice.Flags)、配列の`SKLatticeFlags`、列挙型
-- [`Bounds`](xref:SkiaSharp.SKLattice.Bounds) 型の`Nullable<SKRectI>`ビットマップ内の省略可能なソース四角形を指定するには
+- [`Flags`](xref:SkiaSharp.SKLattice.Flags)、列挙型の配列、 `SKLatticeFlags`
+- [`Bounds`](xref:SkiaSharp.SKLattice.Bounds)`Nullable<SKRectI>`ビットマップ内の任意のソース四角形を指定する型の。
 
-`XDivs`配列は、垂直方向のストリップにビットマップの幅を分割します。 最初のストリップを拡張する左側にあるピクセル 0 から`XDivs[0]`します。 このストリップは、ピクセル幅で表示されます。 2 番目のストリップをから拡張`XDivs[0]`に`XDivs[1]`が拡大するとします。 3 番目のストリップをから拡張`XDivs[1]`に`XDivs[2]`とは、ピクセル幅で表示されます。 ビットマップの右端に、配列の最後の要素から最後のストリップを拡張します。 配列の要素数が偶数の場合は、ピクセル幅で表示されます。 それ以外の場合、拡大されます。 垂直方向のストリップの合計数は 1 つの配列の要素の数よりも詳細です。
+配列は、 `XDivs` ビットマップの幅を垂直方向のストリップに分割します。 最初のストリップは、左のピクセル0からまでを範囲と `XDivs[0]` しています。 このストリップは、ピクセル幅で表示されます。 2つ目のストリップはからに拡張され、拡張 `XDivs[0]` `XDivs[1]` されます。 3番目のストリップはからに拡張され、 `XDivs[1]` `XDivs[2]` ピクセル幅でレンダリングされます。 最後のストリップは、配列の最後の要素からビットマップの右端までを範囲としています。 配列に偶数個の要素がある場合は、ピクセル幅で表示されます。 それ以外の場合は拡張されます。 垂直方向のストリップの合計数が、配列内の要素の数を超えています。
 
-`YDivs`配列に似ています。 水平方向のストリップに、配列の高さを分割します。
+`YDivs`配列も似ています。 配列の高さを水平ストリップに分割します。
 
-同時に、`XDivs`と`YDivs`配列は、ビットマップを四角形に分割します。 四角形の数が、水平方向のストリップの数と垂直方向のストリップの数の積になります。
+`XDivs`と配列は、 `YDivs` ビットマップを四角形に分割します。 四角形の数は、水平方向のストリップの数と垂直方向のストリップの数の積と等しくなります。
 
-Skia のドキュメントに従って、`Flags`配列に含まれる 1 つの要素ごとの四角形の最初の四角形、一番上の行、2 番目の行となどです。 `Flags`配列の型は[ `SKLatticeFlags` ](xref:SkiaSharp.SKLatticeFlags)、次のメンバーを持つ列挙体。
+Skia のドキュメントによれば、配列には `Flags` 四角形ごとに1つの要素が含まれており、最初に四角形の先頭行、次に2番目の行になります。 `Flags`配列は [`SKLatticeFlags`](xref:SkiaSharp.SKLatticeFlags) 、次のメンバーを持つ列挙体である型です。
 
-- `Default` 値は 0
-- `Transparent` 値 1 を持つ
+- `Default`値0
+- `Transparent`値1を持つ
 
-ただし、これらのフラグは足りない動作、メッセージが表示され、それを無視することをお勧めします。 設定はありませんが、`Flags`プロパティを`null`します。 配列に設定`SKLatticeFlags`四角形の合計数を網羅するのに十分な大きさの値。
+ただし、これらのフラグは意図したとおりに動作しないと思われるため、無視することをお勧めします。 ただし、 `Flags` プロパティをに設定しないで `null` ください。 `SKLatticeFlags`四角形の合計数を囲むのに十分な大きさの値の配列に設定します。
 
-**格子 9 パッチ**ページ使用`DrawBitmapLattice`を模倣する`DrawBitmapNinePatch`します。 作成した同じビットマップを使用して`NinePatchDisplayPage`:
+**Lattice 9 パッチ**ページはを使用して `DrawBitmapLattice` を模倣し `DrawBitmapNinePatch` ます。 次のように作成された同じビットマップを使用し `NinePatchDisplayPage` ます。
 
 ```csharp
 public class LatticeNinePatchPage : ContentPage
@@ -175,13 +178,13 @@ public class LatticeNinePatchPage : ContentPage
 }
 ```
 
-両方の`XDivs`と`YDivs`プロパティ水平および垂直には、3 つのストリップにビットマップを除算した 2 つの整数の配列に設定されます: ピクセル 0 からピクセル (レンダリング ピクセル サイズ) 100 から 400 ピクセルにピクセル 100 (拡大) と(ピクセル サイズ) を 500 ピクセルに 400 ピクセルにします。 同時に、`XDivs`と`YDivs`9 の四角形の合計サイズの定義の`Flags`配列。 配列を作成するための十分なは、配列を作成するだけ`SKLatticeFlags.Default`値。
+`XDivs`プロパティとプロパティは、どちらも `YDivs` 2 つの整数の配列に設定され、ビットマップは水平方向と垂直方向の3つのストリップに分割されます。つまり、ピクセル0からピクセル 100 (ピクセルサイズでレンダリング)、ピクセル100からピクセル 400 (拡大)、および400ピクセル 500 (ピクセルサイズ) になります。 とを組み合わせ `XDivs` て、 `YDivs` 配列のサイズである合計9個の四角形を定義し `Flags` ます。 配列を作成するだけで、値の配列を作成 `SKLatticeFlags.Default` できます。
 
 表示は、前のプログラムと同じです。
 
-[![格子 9 パッチ](segmented-images/LatticeNinePatch.png "格子 9-更新プログラム")](segmented-images/LatticeNinePatch-Large.png#lightbox)
+[![Lattice 9-Patch](segmented-images/LatticeNinePatch.png "Lattice 9-Patch")](segmented-images/LatticeNinePatch-Large.png#lightbox)
 
-**格子表示**ページは、ビットマップを 16 の正方形に分割します。
+**Lattice 表示**ページでは、ビットマップが16の四角形に分割されます。
 
 ```csharp
 public class LatticeDisplayPage : ContentPage
@@ -217,15 +220,15 @@ public class LatticeDisplayPage : ContentPage
 }
 ```
 
-`XDivs`と`YDivs`配列が多少異なるため、かなり前の例として、対称できない表示。
+`XDivs`配列と `YDivs` 配列は多少異なります。これは、前の例と同じように、表示があまり対称ではないことを示しています。
 
-[![格子表示](segmented-images/LatticeDisplay.png "格子の表示")](segmented-images/LatticeDisplay-Large.png#lightbox)
+[![Lattice の表示](segmented-images/LatticeDisplay.png "Lattice の表示")](segmented-images/LatticeDisplay-Large.png#lightbox)
 
-IOS と Android のイメージ左上では、小さな円だけは、そのピクセル サイズで表示されます。 他のすべてが拡大されます。
+左側の iOS および Android イメージでは、小さい円だけがピクセルサイズでレンダリングされます。 他のすべてのものは拡張されます。
 
-**格子表示**ページ一般化の作成、`Flags`を実験することができます、配列`XDivs`と`YDivs`より簡単にします。 具体的には、紹介するは、最初の要素を設定するときの動作を参照してください、`XDivs`または`YDivs`0 の配列。 
+**Lattice Display**ページでは、配列の作成が一般化され、より簡単に試してみることができ `Flags` `XDivs` `YDivs` ます。 特に、 `XDivs` 配列または配列の最初の要素を0に設定した場合の動作を確認し `YDivs` ます。 
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp の Api](https://docs.microsoft.com/dotnet/api/skiasharp)
+- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

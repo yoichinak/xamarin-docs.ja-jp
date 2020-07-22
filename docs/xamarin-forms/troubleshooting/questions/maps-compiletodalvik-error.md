@@ -1,5 +1,5 @@
 ---
-title: COMPILETODALVIK Android プロジェクトが予期しないトップレベルエラーで失敗するのはなぜですか。
+title: なぜですか Xamarin.Forms 。マップ Android プロジェクトが COMPILETODALVIK の予期しないトップレベルエラーで失敗する
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: C0251EB1-F509-47AD-98D6-846AF46425E5
@@ -7,16 +7,19 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/25/2017
-ms.openlocfilehash: 2872cc7b54e26d07b388f08d650048e8d3861930
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e29535e71cb77b05da41c043c6fd932ae4f5ce95
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70759964"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135851"
 ---
-# <a name="why-does-my-xamarinformsmaps-android-project-fail-with-compiletodalvik-unexpected-top-level-error"></a>COMPILETODALVIK Android プロジェクトが予期しないトップレベルエラーで失敗するのはなぜですか。
+# <a name="why-does-my-xamarinformsmaps-android-project-fail-with-compiletodalvik-unexpected-top-level-error"></a>なぜですか Xamarin.Forms 。マップ Android プロジェクトが COMPILETODALVIK の予期しないトップレベルエラーで失敗する
 
-このエラーは、Visual Studio for Mac のエラーパッドまたは Visual Studio のビルド出力ウィンドウに表示されることがあります。Android プロジェクトでは、Xamarin を使用します。
+このエラーは、Visual Studio for Mac のエラーパッドまたは Visual Studio のビルド出力ウィンドウに表示されることがあります。Android プロジェクトでは、を使用 Xamarin.Forms します。マップ.
 
 これは、Xamarin Android プロジェクトの Java ヒープサイズを増やすことによって最も一般的に解決されます。 ヒープサイズを増やすには、次の手順に従います。
 

@@ -6,13 +6,16 @@ ms.assetid: FEDE51EB-577E-4B3E-9890-B7C1A5E52516
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 11/05/2019
-ms.openlocfilehash: 4049b3bdfdd6077dcfa151df9553722e63def0ba
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.date: 06/10/2020
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1a1d47b2b37fa532b3e2a64ada5f367e612f557d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303871"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84946261"
 ---
 # <a name="xamarinforms-shell-flyout"></a>Xamarin.Forms シェルのポップアップ
 
@@ -22,7 +25,7 @@ ms.locfileid: "79303871"
 
 ![シェルの注釈付きポップアップのスクリーンショット](flyout-images/flyout-annotated.png "注釈付きフライアウト")
 
-ポップアップの背景色は、必要に応じて、バインド可能なプロパティ `Shell.FlyoutBackgroundColor` を使って [`Color`](xref:Xamarin.Forms.Color) に設定することができます。 このプロパティはカスケード スタイル シート (CSS) から設定することもできます。 詳しくは、「[Xamarin.Forms シェル固有のプロパティ](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties)」をご覧ください。
+ポップアップの背景色は、必要に応じて、バインド可能なプロパティ `Shell.FlyoutBackgroundColor` を使って [`Color`](xref:Xamarin.Forms.Color) に設定することができます。 このプロパティはカスケード スタイル シート (CSS) から設定することもできます。 詳細については、「[Xamarin.Forms シェル固有のプロパティ](~/xamarin-forms/user-interface/styles/css/index.md#xamarinforms-shell-specific-properties)」を参照してください。
 
 ## <a name="flyout-icon"></a>ポップアップのアイコン
 
@@ -217,7 +220,7 @@ Shell.Current.FlyoutIsPresented = false;
 この暗黙的な変換では、各 [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトが自動的に `ShellContent` オブジェクトでラップされ、それが `Tab` オブジェクトでラップされ、それが `FlyoutItem` オブジェクトでラップされます。
 
 > [!IMPORTANT]
-> シェル アプリケーションでは、`ShellContent` オブジェクトの子である各 [`ContentPage`](xref:Xamarin.Forms.ContentPage) は、アプリケーションの起動中に作成されます。 この手法を利用してその他の `ShellContent` オブジェクトを追加すると、アプリケーションの起動時に追加のページが作成され、起動エクスペリエンスの低下を引き起こす場合があります。 ただし、シェルでは、ナビゲーションに応答して、必要に応じてページを作成することも可能です。 詳しくは、「[Xamarin.Forms シェルのタブ](tabs.md)」ガイドにある「[効率的なページの読み込み](tabs.md#efficient-page-loading)」をご覧ください。
+> シェル アプリケーションでは、`ShellContent` オブジェクトの子である各 [`ContentPage`](xref:Xamarin.Forms.ContentPage) は、アプリケーションの起動中に作成されます。 この手法を利用してその他の `ShellContent` オブジェクトを追加すると、アプリケーションの起動時に追加のページが作成され、起動エクスペリエンスの低下を引き起こす場合があります。 ただし、シェルでは、ナビゲーションに応答して、必要に応じてページを作成することも可能です。 詳細については、「[Xamarin.Forms シェルのタブ](tabs.md)」ガイドにある「[効率的なページの読み込み](tabs.md#efficient-page-loading)」を参照してください。
 
 ### <a name="flyoutitem-class"></a>FlyoutItem クラス
 
@@ -350,64 +353,84 @@ Shell.Current.FlyoutIsPresented = false;
 
 [![iOS と Android でのテンプレート化された FlyoutItem オブジェクトのスクリーンショット](flyout-images/flyoutitem-templated.png "シェル テンプレート化された FlyoutItem オブジェクト")](flyout-images/flyoutitem-templated-large.png#lightbox "シェル テンプレート化された FlyoutItem オブジェクト")
 
-
 `Shell.ItemTemplate` は添付プロパティであるため、さまざまなテンプレートを特定の `FlyoutItem` オブジェクトに添付できます。
 
 > [!NOTE]
 > シェルには、`ItemTemplate` の [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) に対する `Title` と `FlyoutIcon` プロパティが用意されています。
 
+また、シェルには、`FlyoutItem` オブジェクトに自動的に適用される 3 つのスタイル クラスが含まれています。 詳細については、「[FlyoutItem と MenuItem のスタイル クラス](#flyoutitem-and-menuitem-style-classes)」を参照してください。
 
-### <a name="default-template-for-flyoutitems-and-menuitems"></a>FlyoutItem と MenuItem の既定のテンプレート
-シェルでは、既定の実装に対して次のテンプレートが内部的に使用されます。 既存のレイアウトを微調整するだけの場合、これは最適な出発点です。 また、ポップアップ項目の Visual State Manager 機能も示しています。 これと同じテンプレートを、MenuItem にも使用できます
+### <a name="default-template-for-flyoutitems"></a>FlyoutItem の既定のテンプレート
+
+各 `FlyoutItem` に使用される既定の [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) を次に示します。
 
 ```xaml
-<DataTemplate x:Key="FlyoutTemplates">
-    <Grid HeightRequest="{x:OnPlatform Android=50}">
+<DataTemplate x:Key="FlyoutTemplate">
+    <Grid x:Name="FlyoutItemLayout"
+          HeightRequest="{x:OnPlatform Android=50}"
+          ColumnSpacing="{x:OnPlatform UWP=0}"
+          RowSpacing="{x:OnPlatform UWP=0}">
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroupList>
                 <VisualStateGroup x:Name="CommonStates">
-                    <VisualState x:Name="Normal">
-                    </VisualState>
+                    <VisualState x:Name="Normal" />
                     <VisualState x:Name="Selected">
                         <VisualState.Setters>
-                            <Setter Property="BackgroundColor" Value="#F2F2F2" />
+                            <Setter Property="BackgroundColor"
+                                    Value="{x:OnPlatform Android=#F2F2F2, iOS=#F2F2F2}" />
                         </VisualState.Setters>
                     </VisualState>
                 </VisualStateGroup>
             </VisualStateGroupList>
         </VisualStateManager.VisualStateGroups>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="{x:OnPlatform Android=54, iOS=50}"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="{x:OnPlatform Android=54, iOS=50, UWP=Auto}" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <Image Source="{Binding FlyoutIcon}"
-            VerticalOptions="Center"
-            HorizontalOptions="Center"
-            HeightRequest="{x:OnPlatform Android=24, iOS=22}"
-            WidthRequest="{x:OnPlatform Android=24, iOS=22}">
+        <Image x:Name="FlyoutItemImage"
+               Source="{Binding FlyoutIcon}"
+               VerticalOptions="Center"
+               HorizontalOptions="{x:OnPlatform Default=Center, UWP=Start}"
+               HeightRequest="{x:OnPlatform Android=24, iOS=22, UWP=16}"
+               WidthRequest="{x:OnPlatform Android=24, iOS=22, UWP=16}">
+            <Image.Margin>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <OnPlatform.Platforms>
+                        <On Platform="UWP"
+                            Value="12,0,12,0" />
+                    </OnPlatform.Platforms>
+                </OnPlatform>
+            </Image.Margin>
         </Image>
-        <Label VerticalOptions="Center"
-                Text="{Binding Title}"
-                FontSize="{x:OnPlatform Android=14, iOS=Small}"
-                FontAttributes="Bold" Grid.Column="1">
+        <Label x:Name="FlyoutItemLabel"
+               Grid.Column="1"
+               Text="{Binding Title}"
+               FontSize="{x:OnPlatform Android=14, iOS=Small}"
+               HorizontalOptions="{x:OnPlatform UWP=Start}"
+               HorizontalTextAlignment="{x:OnPlatform UWP=Start}"
+               FontAttributes="{x:OnPlatform iOS=Bold}"
+               VerticalTextAlignment="Center">
             <Label.TextColor>
                 <OnPlatform x:TypeArguments="Color">
                     <OnPlatform.Platforms>
-                        <On Platform="Android" Value="#D2000000" />
+                        <On Platform="Android"
+                            Value="#D2000000" />
                     </OnPlatform.Platforms>
                 </OnPlatform>
             </Label.TextColor>
             <Label.Margin>
                 <OnPlatform x:TypeArguments="Thickness">
                     <OnPlatform.Platforms>
-                        <On Platform="Android" Value="20, 0, 0, 0" />
+                        <On Platform="Android"
+                            Value="20, 0, 0, 0" />
                     </OnPlatform.Platforms>
                 </OnPlatform>
             </Label.Margin>
             <Label.FontFamily>
                 <OnPlatform x:TypeArguments="x:String">
                     <OnPlatform.Platforms>
-                        <On Platform="Android" Value="sans-serif-medium" />
+                        <On Platform="Android"
+                            Value="sans-serif-medium" />
                     </OnPlatform.Platforms>
                 </OnPlatform>
             </Label.FontFamily>
@@ -415,6 +438,13 @@ Shell.Current.FlyoutIsPresented = false;
     </Grid>
 </DataTemplate>
 ```
+
+このテンプレートは、既存のポップアップのレイアウトを変更するための基礎として使用できます。また、ポップアップ項目に対して実装されているビジュアルの状態も表示されます。
+
+さらに、[`Grid`](xref:Xamarin.Forms.Grid)、[`Image`](xref:Xamarin.Forms.Image)、および [`Label`](xref:Xamarin.Forms.Label) 要素にはすべて `x:Name` 値があるため、Visual State Manager の対象にすることができます。 詳細については、「[複数の要素の状態を設定する](~/xamarin-forms/user-interface/visual-state-manager.md#set-state-on-multiple-elements)」を参照してください。
+
+> [!NOTE]
+> これと同じテンプレートを、`MenuItem` オブジェクトにも使用できます。
 
 ## <a name="flyoutitem-tab-order"></a>FlyoutItem のタブ オーダー
 
@@ -453,7 +483,13 @@ Shell.Current.FlyoutIsPresented = false;
 
 このコードでは、`aboutItem` という名前の `ShellContent` オブジェクトを `CurrentItem` プロパティとして設定し、それが表示されるようにしています。 この例では暗黙的な変換が使われ、`ShellContent` オブジェクトが `Tab` オブジェクトでラップされ、それが `FlyoutItem` オブジェクトでラップされています。
 
-これに相当する C# コードを次に示します。
+`aboutItem` という名前の `ShellContent` オブジェクトを指定した場合、同等の C# コードは次のようになります。
+
+```csharp
+CurrentItem = aboutItem;
+```
+
+この例では、`CurrentItem` プロパティはサブクラス化された `Shell` クラスに設定されています。 また、`Shell.Current` 静的プロパティを使用して、任意のクラスで `CurrentItem` プロパティを設定することもできます。
 
 ```csharp
 Shell.Current.CurrentItem = aboutItem;
@@ -569,12 +605,50 @@ Shell.Current.CurrentItem = aboutItem;
 </Shell>
 ```
 
+この例では、シェルレベルの `MenuItemTemplate` を最初の `MenuItem` オブジェクトに添付し、インライン `MenuItemTemplate` を 2 番目の `MenuItem` に添付しています。
 
 > [!NOTE]
-> [ポップアップ項目](#default-template-for-flyoutitems-and-menuitems)に使用されるのと同じテンプレートを、メニュー項目にも使用できます。
+> `FlyoutItem` オブジェクトの既定のテンプレートを `MenuItem` オブジェクトにも使用できます。 詳細については、「[FlyoutItems の既定のテンプレート](#default-template-for-flyoutitems)」を参照してください。
 
-この例では、シェルレベルの `MenuItemTemplate` を最初の `MenuItem` オブジェクトに添付し、インライン `MenuItemTemplate` を 2 番目の `MenuItem` に添付しています。
+## <a name="flyoutitem-and-menuitem-style-classes"></a>FlyoutItem と MenuItem のスタイル クラス
+
+シェルには、`FlyoutItem` と `MenuItem` のオブジェクトに自動的に適用される 3 つのスタイル クラスが含まれています。 スタイル クラスの名前は次のとおりです。
+
+- `FlyoutItemLabelStyle`
+- `FlyoutItemImageStyle`
+- `FlyoutItemLayoutStyle`
+
+次の XAML は、これらのスタイル クラスのスタイルの定義例を示しています。
+
+```xaml
+<Style TargetType="Label"
+       Class="FlyoutItemLabelStyle">
+    <Setter Property="TextColor"
+            Value="Black" />
+    <Setter Property="HeightRequest"
+            Value="100" />
+</Style>
+
+<Style TargetType="Image"
+       Class="FlyoutItemImageStyle">
+    <Setter Property="Aspect"
+            Value="Fill" />
+</Style>
+
+<Style TargetType="Layout"
+       Class="FlyoutItemLayoutStyle"
+       ApplyToDerivedTypes="True">
+    <Setter Property="BackgroundColor"
+            Value="Teal" />
+</Style>
+```
+
+これらのスタイルは、[`StyleClass`](xref:Xamarin.Forms.NavigableElement.StyleClass) プロパティをスタイル クラス名に設定することなく、`FlyoutItem` オブジェクトと `MenuItem` オブジェクトに自動的に適用されます。
+
+さらに、カスタム スタイル クラスを定義して、`FlyoutItem` オブジェクトと `MenuItem` オブジェクトに適用することもできます。 スタイル クラスの詳細については、「[Xamarin.Forms のスタイル クラス](~/xamarin-forms/user-interface/styles/xaml/style-class.md)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 
 - [Xaminals (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+- [Xamarin.Forms のスタイル クラス](~/xamarin-forms/user-interface/styles/xaml/style-class.md)
+- [Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)

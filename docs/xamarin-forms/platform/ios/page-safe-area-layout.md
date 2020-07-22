@@ -1,24 +1,27 @@
 ---
 title: IOS の安全な領域レイアウトガイド
-description: プラットフォーム仕様はカスタム レンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ利用できる機能の使用を可能にします。 この記事では、ios プラットフォーム固有のを使用する方法について説明します。これにより、iOS 11 以上を使用するすべてのデバイスで安全なページコンテンツが画面の領域に配置されるようになります。
+description: プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。 この記事では、ios プラットフォーム固有のを使用する方法について説明します。これにより、iOS 11 以上を使用するすべてのデバイスで安全なページコンテンツが画面の領域に配置されるようになります。
 ms.prod: xamarin
 ms.assetid: 2B6789C1-39B4-4C16-ADE1-3ED3378EAC63
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/24/2018
-ms.openlocfilehash: c6a2ec5a4d1466b7118e6cc7b03cc5518b27e2fb
-ms.sourcegitcommit: 3ea9ee034af9790d2b0dc0893435e997bd06e587
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5ca30481fbc0e5631ff75000c688dd805793e670
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68644540"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84128064"
 ---
 # <a name="safe-area-layout-guide-on-ios"></a>IOS の安全な領域レイアウトガイド
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-この iOS プラットフォーム固有のは、iOS 11 以上を使用するすべてのデバイスで安全なページコンテンツが画面の領域に配置されるようにするために使用されます。 特に、iPhone X でデバイスの角の丸まり、ホームインジケータ、またはセンサーハウジングによってコンテンツが切り抜かれないように。これは XAML で `Page.UseSafeArea` 添付プロパティを `boolean` 値に設定して使用します。
+この iOS プラットフォーム固有のは、iOS 11 以上を使用するすべてのデバイスで安全なページコンテンツが画面の領域に配置されるようにするために使用されます。 具体的には、デバイスの角の丸み、ホームインジケーター、または iPhone X のセンサーハウジングによってコンテンツがクリップされないようにすることができます。添付プロパティを値に設定することにより、XAML で使用 `Page.UseSafeArea` され `boolean` ます。
 
 ```xaml
 <ContentPage ...
@@ -31,7 +34,7 @@ ms.locfileid: "68644540"
 </ContentPage>
 ```
 
-代わりに、fluent API を使用して C# から使用できます。
+または、fluent API を使用して C# から使用することもできます。
 
 ```csharp
 using Xamarin.Forms.PlatformConfiguration;
@@ -41,16 +44,16 @@ using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 On<iOS>().SetUseSafeArea(true);
 ```
 
-`Page.On<iOS>`メソッドは、このプラットフォーム仕様が iOS上 でのみ動作することを指定します。 `Page.SetUseSafeArea` メソッドは、 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 名前空間に存在し、セーフ エリア レイアウト ガイドを有効にするかどうかを制御します。
+メソッドは、 `Page.On<iOS>` このプラットフォーム固有のが iOS 上でのみ実行されることを指定します。 `Page.SetUseSafeArea`名前空間のメソッドは、 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) セーフ領域レイアウトガイドを有効にするかどうかを制御します。
 
-その結果、ページコンテンツをすべての iPhone において、画面の安全な領域に配置することができます。
+結果として、ページコンテンツは、すべての iphone で安全な画面の領域に配置できるようになります。
 
-[![](page-safe-area-images/safe-area-layout.png "セーフ エリア レイアウト ガイド")](page-safe-area-images/safe-area-layout-large.png#lightbox "セーフ エリア レイアウト ガイド")
+[![](page-safe-area-images/safe-area-layout.png "Safe Area Layout Guide")](page-safe-area-images/safe-area-layout-large.png#lightbox "Safe Area Layout Guide")
 
 > [!NOTE]
-> Apple によって定義されたセーフ エリアは、Xamarin.Forms では[`Page.Padding`](xref:Xamarin.Forms.Page.Padding)プロパティを設定するために使用され、このプロパティの設定済みのすべての値は上書きされます。
+> Apple によって定義された安全な領域は、プロパティを設定するためにで使用され、 Xamarin.Forms [`Page.Padding`](xref:Xamarin.Forms.Page.Padding) このプロパティに設定されている以前の値をすべてオーバーライドします。
 
-セーフ エリアは[`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)名前空間の `Page.SafeAreaInsets` メソッドを使って、その [`Thickness`](xref:Xamarin.Forms.Thickness)の値を変更することでカスタマイズが可能です。 取得した値を必要に応じて変更し、ページのコンストラクタまたは[`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing)のオーバーライドで、 `Padding` プロパティに再割り当てすることができます。
+セーフ領域をカスタマイズするには、 [`Thickness`](xref:Xamarin.Forms.Thickness) `Page.SafeAreaInsets` 名前空間からメソッドを使用して値を取得し [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) ます。 次に、必要に応じて変更し、 `Padding` ページコンストラクターまたはオーバーライドのプロパティに再割り当てでき [`OnAppearing`](xref:Xamarin.Forms.Page.OnAppearing) ます。
 
 ```csharp
 protected override void OnAppearing()
@@ -65,6 +68,6 @@ protected override void OnAppearing()
 
 ## <a name="related-links"></a>関連リンク
 
-- [プラットフォーム仕様 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
-- [プラットフォーム仕様の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
+- [PlatformSpecifics (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [プラットフォーム固有設定の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific の API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

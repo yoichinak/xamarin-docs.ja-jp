@@ -7,22 +7,23 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/31/2018
-ms.openlocfilehash: 41e8d073982bf7963b3a77a939bf28e52e86feaa
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 2a67d0c3adb54332bf30879a5b6f1d086581f0ec
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "67675174"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573340"
 ---
 # <a name="xamarinforms-app-lifecycle"></a>Xamarin.Forms アプリのライフサイクル
 
 [`Application`](xref:Xamarin.Forms.Application) の基底クラスでは、次の機能が提供されています。
 
-- [ライフサイクル メソッド](#Lifecycle_Methods) `OnStart`、`OnSleep`、`OnResume`。
-- [ページ ナビゲーション イベント](#page) [`PageAppearing`](xref:Xamarin.Forms.Application.PageAppearing)、[`PageDisappearing`](xref:Xamarin.Forms.Application.PageDisappearing)。
-- [モーダル ナビゲーション イベント](#modal) `ModalPushing`、`ModalPushed`、`ModalPopping`、`ModalPopped`。
-
-<a name="Lifecycle_Methods" />
+- [ライフサイクル メソッド](#lifecycle-methods) `OnStart`、`OnSleep`、`OnResume`。
+- [ページ ナビゲーション イベント](#page-navigation-events) [`PageAppearing`](xref:Xamarin.Forms.Application.PageAppearing)、[`PageDisappearing`](xref:Xamarin.Forms.Application.PageDisappearing)。
+- [モーダル ナビゲーション イベント](#modal-navigation-events) `ModalPushing`、`ModalPushed`、`ModalPopping`、`ModalPopped`。
 
 ## <a name="lifecycle-methods"></a>ライフサイクル メソッド
 
@@ -55,9 +56,7 @@ protected override void OnResume()
 > [!IMPORTANT]
 > Android では、`OnStart` メソッドは順番に呼び出されるだけでなく、メイン アクティビティの `[Activity()]` 属性に `ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation` がない場合のアプリケーションの初回起動時にも呼び出されます。
 
-<a name="page" />
-
-## <a name="page-notification-events"></a>ページ通知イベント
+## <a name="page-navigation-events"></a>ページ ナビゲーション イベント
 
 [`Application`](xref:Xamarin.Forms.Application) クラスには、ページの表示と消去の通知を提供する 2 つのイベントがあります。
 
@@ -68,8 +67,6 @@ protected override void OnResume()
 
 > [!NOTE]
 > [`PageAppearing`](xref:Xamarin.Forms.Application.PageAppearing) イベントと [`PageDisappearing`](xref:Xamarin.Forms.Application.PageDisappearing) イベントは、それぞれ [`Page.Appearing`](xref:Xamarin.Forms.Page.Appearing) イベントと [`Page.Disappearing`](xref:Xamarin.Forms.Page.Disappearing) イベントの直後に、[`Page`](xref:Xamarin.Forms.Page) 基底クラスから生成されます。
-
-<a name="modal" />
 
 ## <a name="modal-navigation-events"></a>モーダル ナビゲーション イベント
 

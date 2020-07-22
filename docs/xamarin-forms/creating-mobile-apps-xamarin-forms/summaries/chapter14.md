@@ -7,12 +7,15 @@ ms.assetid: 88882A48-3226-42D1-96ED-241250B64A84
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2018
-ms.openlocfilehash: c489bf244396cf180ed8e1272308048a14b67300
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 72ee9c4a481388e69aeeb52dbd5b8eeaabb164f6
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70771128"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136761"
 ---
 # <a name="summary-of-chapter-14-absolute-layout"></a>第 14 章の概要: 絶対レイアウト
 
@@ -28,7 +31,7 @@ ms.locfileid: "70771128"
 
 標準の [`Add`](xref:System.Collections.Generic.ICollection`1.Add*) メソッドを使用して `AbsoluteLayout` の `Children` コレクションに子を追加することもできますが、`AbsoluteLayout` には、[`Rectangle`](xref:Xamarin.Forms.Rectangle) を指定できる拡張 [`Add`](xref:Xamarin.Forms.AbsoluteLayout.IAbsoluteList`1.Add*) メソッドも用意されています。 もう 1 つの [`Add`](xref:Xamarin.Forms.AbsoluteLayout.IAbsoluteList`1.Add*) メソッドには、[`Point`](xref:Xamarin.Forms.Point) のみが必要です。この場合、子は制約されず、それ自体でサイズ設定できます。
 
-4 つの値が必要な[コンストラクター](xref:Xamarin.Forms.Rectangle.%23ctor(System.Double,System.Double,System.Double,System.Double))を使用して、`Rectangle` 値を作成できます。最初の 2 つは親を基準にした子の左上隅の位置を示し、次の 2 つは子のサイズを示します。 または、`Point` と [`Size`](xref:Xamarin.Forms.Size) 値を必要とする[コンストラクター](xref:Xamarin.Forms.Rectangle.%23ctor(Xamarin.Forms.Point,Xamarin.Forms.Size))を使用することもできます。
+4 つの値が必要な[コンストラクター](xref:Xamarin.Forms.Rectangle.%23ctor(System.Double,System.Double,System.Double,System.Double))を使用して、`Rectangle` 値を作成できます。最初の 2 つは親を基準にした子の左上隅の位置を示し、次の 2 つは子のサイズを示します。 または、`Point` と [`Size`](xref:Xamarin.Forms.Size) 値を必要とする [コンストラクター](xref:Xamarin.Forms.Rectangle.%23ctor(Xamarin.Forms.Point,Xamarin.Forms.Size)) を使用できます。
 
 これらの `Add` メソッドは、[**AbsoluteDemo**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/AbsoluteDemo) で示されています。そこでは、`BoxView` 要素が `Rectangle` 値を使って配置され、`Label` 要素が `Point` 値のみを使って配置されています。
 
@@ -40,11 +43,11 @@ ms.locfileid: "70771128"
 
 [**ChessboardDynamic**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14/ChessboardDynamic) サンプルでは、すべての子で `AbsoluteLayout.SetLayoutBounds` を呼び出してそれらを可能な限り拡大する `SizeChanged` ハンドラーを使って、`ContentView` に `AbsoluteLayout` を設定しています。  
 
-`AbsoluteLayout` で定義されているアタッチされたバインド可能なプロパティは、[`AbsoluteLayout.LayoutBoundsProperty`](xref:Xamarin.Forms.AbsoluteLayout.LayoutBoundsProperty) という名前の `BindableProperty` 型の静的な読み取り専用フィールドです。 静的な `AbsoluteLayout.SetLayoutBounds` メソッドは、`AbsoluteLayout.LayoutBoundsProperty` を持つ子に対して `SetValue` を呼び出すことによって実装されています。 この子には、アタッチされたバインド可能なプロパティとその値が格納されたディクショナリが含まれています。 レイアウト中、`AbsoluteLayout` では [`AbsoluteLayout.GetLayoutBounds`](xref:Xamarin.Forms.AbsoluteLayout.GetLayoutBounds(Xamarin.Forms.BindableObject)) を呼び出すことによってその値を取得できます。これは `GetValue` 呼び出しを使って実装されています。
+`AbsoluteLayout` で定義されているアタッチされたバインド可能なプロパティは、[`AbsoluteLayout.LayoutBoundsProperty`](xref:Xamarin.Forms.AbsoluteLayout.LayoutBoundsProperty) という名前の `BindableProperty` 型の静的な読み取り専用フィールドです。 静的な `AbsoluteLayout.SetLayoutBounds` メソッドは、`AbsoluteLayout.LayoutBoundsProperty` を持つ子に対して `SetValue` を呼び出すことによって実装されています。 この子には、アタッチされたバインド可能なプロパティとその値が格納されたディクショナリが含まれています。 レイアウト中は、`GetValue` 呼び出しを使用して実装されている [`AbsoluteLayout.GetLayoutBounds`](xref:Xamarin.Forms.AbsoluteLayout.GetLayoutBounds(Xamarin.Forms.BindableObject)) を呼び出すことによって、`AbsoluteLayout` がその値を取得できます。
 
 ## <a name="proportional-sizing-and-positioning"></a>比例のサイズ変更と配置
 
-`AbsoluteLayout` では、比例のサイズ変更と配置の機能も実装されています。 このクラスでは、2 番目のアタッチされたバインド可能なプロパティ [`LayoutFlagsProperty`](xref:Xamarin.Forms.AbsoluteLayout.LayoutFlagsProperty) と、関連する静的メソッド [`AbsoluteLayout.SetLayoutFlags`](xref:Xamarin.Forms.AbsoluteLayout.SetLayoutFlags(Xamarin.Forms.BindableObject,Xamarin.Forms.AbsoluteLayoutFlags)) および [`AbsoluteLayout.GetLayoutFlags`](xref:Xamarin.Forms.AbsoluteLayout.GetLayoutFlags(Xamarin.Forms.BindableObject)) が定義されています。
+`AbsoluteLayout` では、比例のサイズ変更と配置の機能も実装されています。 このクラスでは、関連する静的メソッド [`AbsoluteLayout.SetLayoutFlags`](xref:Xamarin.Forms.AbsoluteLayout.SetLayoutFlags(Xamarin.Forms.BindableObject,Xamarin.Forms.AbsoluteLayoutFlags)) および [`AbsoluteLayout.GetLayoutFlags`](xref:Xamarin.Forms.AbsoluteLayout.GetLayoutFlags(Xamarin.Forms.BindableObject)) を使用して、アタッチできる 2 つ目のバインド可能プロパティ [`LayoutFlagsProperty`](xref:Xamarin.Forms.AbsoluteLayout.LayoutFlagsProperty) を定義しています。
 
 `AbsoluteLayout.SetLayoutFlags` の引数と `AbsoluteLayout.GetLayoutFlags` の戻り値は、[`AbsoluteLayoutFlags`](xref:Xamarin.Forms.AbsoluteLayoutFlags) 型の値です。これは次のメンバーを持つ列挙型です。
 

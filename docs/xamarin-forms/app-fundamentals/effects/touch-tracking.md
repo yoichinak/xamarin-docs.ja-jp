@@ -7,12 +7,15 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/14/2018
-ms.openlocfilehash: cf5a97bca7c827101db951a440863839539c7e48
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 892bffa4027a1a61d6c22cc26d1556fb007432d8
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76725261"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136982"
 ---
 # <a name="invoking-events-from-effects"></a>エフェクトからのイベントの呼び出し
 
@@ -115,7 +118,7 @@ public class TouchActionEventArgs : EventArgs
 
 アプリケーションでは、`Id` プロパティを利用して一本一本の指を追跡できます。 `IsInContact` プロパティに注目してください。 このプロパティは常に `Pressed` イベントに対して `true`、`Released` イベントに対して `false` となります。 iOS と Android でも、`Moved` イベントに対して常に `true` となります。 ユニバーサル Windows プラットフォームでは、プログラムがデスクトップで実行されているとき、ボタンを押さずにマウス ポインターが動いたとき、`IsInContact` プロパティは `Moved` イベントに対して `false` にであることがあります。
 
-ソリューションの .NET Standard ライブラリ プロジェクトにファイルを含め、任意の Xamarin.Forms 要素の `Effects` コレクションにインスタンスを追加することで自分のアプリケーションで `TouchEffect` クラスを使用できます。 タッチ イベントを取得するには、`TouchAction` イベントにハンドラーをアタッチします。
+ソリューションの .NET Standard ライブラリ プロジェクトにファイルを含め、任意の Xamarin.Forms 要素の `Effects` コレクションにインスタンスを追加することで、自分のアプリケーションで `TouchEffect` クラスを使用できます。 タッチ イベントを取得するには、`TouchAction` イベントにハンドラーをアタッチします。
 
 自分のアプリケーションで `TouchEffect` を使用するには、**TouchTrackingEffectDemos** ソリューションに含まれるプラットフォーム実装も必要になります。
 
@@ -512,7 +515,7 @@ class DraggableBoxView : BoxView
 
 ### <a name="integrating-with-skiasharp"></a>SkiaSharp との統合
 
-次の 2 つのデモンストレーションにはグラフィックスが必要です。そのため、SkiaSharp が使用されます。 以下の例を見る前に [Xamarin.Forms で SkiaSharp を使用する](~/xamarin-forms/user-interface/graphics/skiasharp/index.md)方法に関するページを読むことをお勧めします。 ここで必要なものはすべて、最初の 2 つの記事 (「SkiaSharp Drawing Basics」 (SkiaSharp 描画の基礎) と「SkiaSharp Lines and Paths」 (SkiaSharp の線とパス)) に記載されています。
+次の 2 つのデモンストレーションにはグラフィックスが必要です。そのため、SkiaSharp が使用されます。 以下の例を見る前に [Xamarin.Forms で SkiaSharp を使用する方法](~/xamarin-forms/user-interface/graphics/skiasharp/index.md)に関するページを読むことをお勧めします。 ここで必要なものはすべて、最初の 2 つの記事 (「SkiaSharp Drawing Basics」 (SkiaSharp 描画の基礎) と「SkiaSharp Lines and Paths」 (SkiaSharp の線とパス)) に記載されています。
 
 **[Ellipse Drawing]\(楕円の描画\)** ページでは、画面を指でなぞることで楕円を描くことができます。 指の動かし方に基づき、左上から右下に、あるいは任意の他の隅からその反対側の隅に楕円を描くことができます。 楕円は無作為で選択された色と不透明度で描画されます。
 

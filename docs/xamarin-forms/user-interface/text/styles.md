@@ -1,33 +1,34 @@
 ---
-title: Xamarin.Forms のテキストのスタイル
-description: この記事で説明します Xamarin.Forms アプリケーションでテキストのスタイル設定する方法。 スタイルを 1 回定義されているし、多くのビューで使用されることができますが、スタイルは、1 つの型のビューでのみ使用できます。
+title: Xamarin.Formsテキストスタイル
+description: この記事では、アプリケーションでテキストをスタイル設定する方法について説明し Xamarin.Forms ます。 スタイルは一度定義することも、多くのビューで使用することもできますが、1つの型のビューでのみ使用できます。
 ms.prod: xamarin
 ms.assetid: 57C0CFD6-A568-46B8-ADA1-BF25681893CF
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/22/2017
-ms.openlocfilehash: 66d7ae722281d9034cb4cdf1501662a7de396c2d
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7d82348231c4b4905f2f70b80f73c45f2f0bf66b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70770251"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84572001"
 ---
-# <a name="xamarinforms-text-styles"></a>Xamarin.Forms のテキストのスタイル
+# <a name="xamarinforms-text-styles"></a>Xamarin.Formsテキストスタイル
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
-_Xamarin.Forms でテキストのスタイル設定_
+_Xamarin 形式でのテキストのスタイル設定_
 
-ラベル、エントリ、およびエディターの外観を調整するスタイルを使用できます。 スタイルを 1 回定義されているし、多くのビューで使用されることができますが、スタイルは、1 つの型のビューでのみ使用できます。
-スタイルを指定することができます、`Key`選択的に特定のコントロールを使用して適用し、`Style`プロパティ。
+スタイルを使用して、ラベル、エントリ、およびエディターの外観を調整できます。 スタイルは一度定義することも、多くのビューで使用することもできますが、1つの型のビューでのみ使用できます。
+スタイルを指定し、 `Key` 特定のコントロールのプロパティを使用して選択的に適用でき `Style` ます。
 
-<a name="Built-In_Styles" />
+## <a name="built-in-styles"></a>組み込みスタイル
 
-## <a name="built-in-styles"></a>組み込みのスタイル
-
-Xamarin.Forms では、いくつか含まれています[組み込み](xref:Xamarin.Forms.Device.Styles)一般的なシナリオのスタイル。
+Xamarin.Formsには、一般的なシナリオのための組み込みスタイルがいくつか[組み込ま](xref:Xamarin.Forms.Device.Styles)れています。
 
 - `BodyStyle`
 - `CaptionStyle`
@@ -36,13 +37,13 @@ Xamarin.Forms では、いくつか含まれています[組み込み](xref:Xama
 - `SubtitleStyle`
 - `TitleStyle`
 
-いずれかの組み込みのスタイルを適用するには、使用、`DynamicResource`スタイルを指定するマークアップ拡張機能。
+組み込みのスタイルのいずれかを適用するには、 `DynamicResource` マークアップ拡張機能を使用してスタイルを指定します。
 
 ```xaml
 <Label Text="I'm a Title" Style="{DynamicResource TitleStyle}"/>
 ```
 
-C# での組み込みスタイルが選択されている`Device.Styles`:
+C# では、組み込みのスタイルは次のものから選択され `Device.Styles` ます。
 
 ```csharp
 label.Style = Device.Styles.TitleStyle;
@@ -50,13 +51,11 @@ label.Style = Device.Styles.TitleStyle;
 
 ![デバイススタイルの例](styles-images/builtinstyles.png)
 
-<a name="Custom_Styles" />
+## <a name="custom-styles"></a>カスタムスタイル
 
-## <a name="custom-styles"></a>カスタム スタイル
+スタイルは setter と setter で構成され、プロパティとプロパティが設定される値で構成されます。
 
-Set アクセス操作子で構成されているスタイル プロパティ set アクセス操作子で構成され、プロパティの値に設定されます。
-
-C# でサイズ 30 の赤いテキスト ラベルのカスタム スタイルをよう定義は。
+C# では、サイズが30の赤いテキストを持つラベルのカスタムスタイルは、次のように定義されます。
 
 ```csharp
 var LabelStyle = new Style (typeof(Label)) {
@@ -69,7 +68,7 @@ var LabelStyle = new Style (typeof(Label)) {
 var label = new Label { Text = "Check out my style.", Style = LabelStyle };
 ```
 
-で XAML:
+XAML の場合:
 
 ```xaml
 <ContentPage.Resources>
@@ -88,54 +87,52 @@ var label = new Label { Text = "Check out my style.", Style = LabelStyle };
 </ContentPage.Content>
 ```
 
-リソース (すべてのスタイルを含む) は内で定義されていることに注意してください。 `ContentPage.Resources`、これは、なじみの兄弟`ContentPage.Content`要素。
+リソース (すべてのスタイルを含む) が内で定義されていることに注意して `ContentPage.Resources` ください。これは、より一般的な要素の兄弟です `ContentPage.Content` 。
 
 ![カスタムスタイルの例](styles-images/customstyle.png)
 
-<a name="Applying_Styles" />
-
 ## <a name="applying-styles"></a>スタイルの適用
 
-スタイルが作成されたら、任意のビューのマッチングに適用できる、`TargetType`します。
+作成されたスタイルは、そのスタイルに一致する任意のビューに適用でき `TargetType` ます。
 
-XAML でカスタム スタイルが適用されますをビューに指定することによって、`Style`プロパティを`StaticResource`目的のスタイルを参照するマークアップ拡張機能。
+XAML では、 `Style` `StaticResource` 目的のスタイルを参照するマークアップ拡張機能を使用してプロパティを指定することで、カスタムスタイルがビューに適用されます。
 
 ```xaml
 <Label Text="Check out my style." Style="{StaticResource LabelStyle}" />
 ```
 
-C# の場合は、スタイル、ビューに直接適用またはに追加し、取得できるからページの`ResourceDictionary`します。 直接追加します。
+C# では、スタイルをビューに直接適用するか、またはページのに追加して取得することができ `ResourceDictionary` ます。 直接追加するには:
 
 ```csharp
 var label = new Label { Text = "Check out my style.", Style = LabelStyle };
 ```
 
-追加してから、ページの取得`ResourceDictionary`:
+ページのを追加および取得するには、次のようにし `ResourceDictionary` ます。
 
 ```csharp
 this.Resources.Add ("LabelStyle", LabelStyle);
 label.Style = (Style)Resources["LabelStyle"];
 ```
 
-ユーザー補助の設定に応答する必要があるために、組み込みスタイルが異なる方法で適用されます。 XAML での組み込みのスタイルを適用する、`DynamicResource`マークアップ拡張機能を使用します。
+組み込みスタイルは、ユーザー補助の設定に応答する必要があるため、異なる方法で適用されます。 XAML で組み込みスタイルを適用するには、 `DynamicResource` マークアップ拡張機能を使用します。
 
 ```xaml
 <Label Text="I'm a Title" Style="{DynamicResource TitleStyle}"/>
 ```
 
-C# での組み込みスタイルが選択されている`Device.Styles`:
+C# では、組み込みのスタイルは次のものから選択され `Device.Styles` ます。
 
 ```csharp
 label.Style = Device.Styles.TitleStyle;
 ```
 
-## <a name="accessibility"></a>ユーザー補助
+## <a name="accessibility"></a>アクセシビリティ
 
-ユーザー補助の設定を尊重しやすく組み込みのスタイルが存在します。 組み込みのスタイルを使用する場合、フォント サイズは、ユーザーがそれに応じて、ユーザー補助の設定を設定する場合を自動的に増やします。
+組み込みスタイルは、ユーザー補助の設定を容易にするために用意されています。 組み込みのスタイルのいずれかを使用する場合、ユーザーがそれに応じてユーザー補助の設定を設定すると、フォントサイズが自動的に増加します。
 
-ビューのユーザー補助の設定を有効になっており、無効になっている組み込みのスタイルのスタイル設定の同じページの次の例を検討してください。
+ユーザー補助の設定が有効になっていて無効になっている組み込みスタイルを使用してスタイル設定されたビューの同じページの例を次に示します。
 
-無効になっています。
+無効:
 
 ![ユーザー補助機能が無効になっているデバイスのスタイル](styles-images/pre-access.png)
 
@@ -143,11 +140,11 @@ label.Style = Device.Styles.TitleStyle;
 
 ![ユーザー補助機能が有効になっているデバイスのスタイル](styles-images/post-access.png)
 
-ユーザー補助のために、基準として、アプリ内の任意のテキスト関連スタイルに組み込みのスタイルを使用して、スタイルが一貫して使用していることを確認します。 参照してください[スタイル](~/xamarin-forms/user-interface/styles/index.md)詳細については、拡張して、一般にスタイルを使用します。
+アクセシビリティを確保するには、組み込みスタイルがアプリ内でテキスト関連のスタイルの基礎として使用されていること、およびスタイルを一貫して使用していることを確認してください。 一般的なスタイルの拡張と操作の詳細については、「[スタイル](~/xamarin-forms/user-interface/styles/index.md)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 
-- [第 12 章、Xamarin.Forms でモバイル アプリの作成](https://developer.xamarin.com/r/xamarin-forms/book/chapter12.pdf)
+- [Xamarin.Forms第12章を使用した Mobile Apps の作成](https://developer.xamarin.com/r/xamarin-forms/book/chapter12.pdf)
 - [スタイル](~/xamarin-forms/user-interface/styles/index.md)
-- [テキスト (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
-- [スタイル](xref:Xamarin.Forms.Style)
+- [Text (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+- [Style](xref:Xamarin.Forms.Style)

@@ -1,16 +1,20 @@
 ---
 title: Xamarin.Essentials:Flashlight
-description: このドキュメントでは、デバイスのカメラのフラッシュを懐中電灯にする機能をオンまたはオフにできる Xamarin.Essentials の Flashlight クラスについて説明します。
+description: このドキュメントでは、Xamarin.Essentials の Flashlight クラスについて説明します。これを使うと、デバイスのカメラのフラッシュをオンまたはオフにして、懐中電灯にすることができます。
 ms.assetid: 06A03553-D212-43A2-9E6E-C2D2D93EB136
 author: jamesmontemagno
+ms.custom: video
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: b94ba73b334ac68b256ca840956f987a4ef670ce
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 7a8a90674b395c90f698a4a0854dc0dc3fc5fe15
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "61075580"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802350"
 ---
 # <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials:Flashlight
 
@@ -51,6 +55,8 @@ Flashlight および Camera アクセス許可が必要であり、Android プ�
 [assembly: UsesFeature("android.hardware.camera.autofocus", Required = false)]
 ```
 
+[!include[](~/essentials/includes/android-permissions.md)]
+
 # <a name="ios"></a>[iOS](#tab/ios)
 
 追加の設定は必要ありません。
@@ -63,7 +69,7 @@ Flashlight および Camera アクセス許可が必要であり、Android プ�
 
 ## <a name="using-flashlight"></a>Flashlight の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
@@ -106,7 +112,7 @@ Flashlight クラスは、デバイスのオペレーティング システム�
 
 #### <a name="api-level-22-and-lower"></a>API レベル 22 以下
 
-カメラ ユニットの `FlashMode` をオン/オフするために、カメラ サーフェス テクスチャが作成されます。 
+カメラ ユニットの `FlashMode` をオン/オフするために、カメラ サーフェス テクスチャが作成されます。
 
 ### <a name="ios"></a>[iOS](#tab/ios)
 
@@ -120,5 +126,11 @@ Flashlight クラスは、デバイスのオペレーティング システム�
 
 ## <a name="api"></a>API
 
-- [Flashlight のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Flashlight)
+- [Flashlight のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Flashlight)
 - [Flashlight API のドキュメント](xref:Xamarin.Essentials.Flashlight)
+
+## <a name="related-video"></a>関連ビデオ
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Flashlight-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

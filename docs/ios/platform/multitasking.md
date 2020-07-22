@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: aeb3d01a3d0f7edbe92c9959073d859fc63486a6
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: e166f513a75faaa082e8557dc6f610f014547a25
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031655"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574144"
 ---
 # <a name="multitasking-for-ipad-in-xamarinios"></a>Xamarin の iPad のマルチタスキング
 
@@ -41,7 +41,7 @@ iOS 9 では、特定の iPad ハードウェアで同時に2つのアプリを�
 
 **IPad 用のマルチタスキングビデオ**
 
-<a name="Multitasking-QuickStart" />
+<a name="Multitasking-QuickStart"></a>
 
 ## <a name="multitasking-quickstart"></a>マルチタスキングのクイックスタート
 
@@ -52,13 +52,13 @@ iOS 9 では、特定の iPad ハードウェアで同時に2つのアプリを�
 - ストーリーボードとサイズのクラスの UI を使用します。
 - 4つすべての iOS デバイスの向き (縦、反転、縦、横 & 横) をサポートします。
 
-<a name="Multitasking" />
+<a name="Multitasking"></a>
 
 ## <a name="about-multitasking-for-ipad"></a>IPad のマルチタスキングについて
 
 iOS 9 では、iPad での新しいマルチタスク機能を提供しています。これには、_スライドオーバー_、_分割ビュー_ (ipad Air 2、iPad ミニ4、ipad Pro のみ) と_画像の画像が含ま_れています。 これらの機能については、次のセクションで詳しく説明します。
 
-<a name="Slide-Over" />
+<a name="Slide-Over"></a>
 
 ### <a name="slide-over"></a>スライドオーバー
 
@@ -73,7 +73,7 @@ iOS 9 では、iPad での新しいマルチタスク機能を提供していま
 
 スライドショーは、iPad Pro、iPad Air、iPad Air 2、iPad ミニ2、iPad ミニ3、iPad ミニ4でのみ利用できます。 スライドオーバー用のアプリの準備の詳細については、「iPad のドキュメントでの、Apple[によるマルチタスキングの機能強化の導入](https://developer.apple.com/library/prerelease/ios/documentation/WindowsViews/Conceptual/AdoptingMultitaskingOniPad/index.html#//apple_ref/doc/uid/TP40015145)」を参照してください。
 
-<a name="Split-View" />
+<a name="Split-View"></a>
 
 ### <a name="split-view"></a>分割ビュー
 
@@ -88,7 +88,7 @@ iOS 9 では、iPad での新しいマルチタスク機能を提供していま
 
 分割ビュー用にアプリを準備する方法の詳細については、iPad ドキュメントの「Apple[によるマルチタスキングの機能強化の導入](https://developer.apple.com/library/prerelease/ios/documentation/WindowsViews/Conceptual/AdoptingMultitaskingOniPad/index.html#//apple_ref/doc/uid/TP40015145)」を参照してください。
 
-<a name="Picture-in-Picture" />
+<a name="Picture-in-Picture"></a>
 
 ### <a name="picture-in-picture"></a>画像の画像
 
@@ -102,17 +102,17 @@ iOS 9 では、iPad での新しいマルチタスク機能を提供していま
 
 画像の画像は、iPad Pro、iPad Air、iPad Air 2、iPad ミニ2、iPad ミニ3、iPad ミニ4でのみ使用できます。 詳細については、Picture [Inpicture サンプルアプリ](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)と Apple の[画像クイックスタートの](https://developer.apple.com/library/prerelease/ios/documentation/WindowsViews/Conceptual/AdoptingMultitaskingOniPad/QuickStartForPictureInPicture.html#//apple_ref/doc/uid/TP40015145-CH14)ドキュメントを参照してください。
 
-<a name="Supporting-Multitasking-in-your-App" />
+<a name="Supporting-Multitasking-in-your-App"></a>
 
 ## <a name="supporting-multitasking-in-your-app"></a>アプリでのマルチタスキングのサポート
 
 既存の Xamarin iOS アプリについては、アプリが Apple の設計ガイドと iOS 8 のベストプラクティスに従っている限り、マルチタスクのサポートは透過的なタスクです。 つまり、アプリでは、ユーザーインターフェイスのレイアウトに対して、オートレイアウトとサイズのクラスのストーリーボードを使用する必要があります (詳細については、「統合された[ストーリーボードの概要」を](~/ios/user-interface/storyboards/unified-storyboards.md)参照してください)。
 
-これらのアプリでは、マルチタスキングをサポートし、その中で適切に動作するように変更する必要はほとんどありません。 アプリの UI が、コード内のC# ui 要素の直接配置やサイズ変更などの他のメソッドを使用して作成された場合、または特定のデバイスの画面サイズまたは向きに依存している場合は、iOS 9 マルチタスクを正しくサポートするために大幅な変更が必要になります。
+これらのアプリでは、マルチタスキングをサポートし、その中で適切に動作するように変更する必要はほとんどありません。 アプリの UI が、C# コードで UI 要素の直接配置やサイズ変更などの他のメソッドを使用して作成された場合、または特定のデバイスの画面サイズまたは向きに依存している場合は、iOS 9 マルチタスクを正しくサポートするために大幅な変更が必要になります。
 
 新しい Xamarin. iOS アプリで iOS 9 のマルチタスキングをサポートするには、アプリのすべてのユーザーインターフェイスのレイアウトに対して、オートレイアウトとサイズのクラスでストーリーボードを再び使用し、次のセクションの手順を実装します。
 
-<a name="Screen-Size-Considerations" />
+<a name="Screen-Size-Considerations"></a>
 
 ### <a name="screen-size-and-orientation-considerations"></a>画面のサイズと向きに関する考慮事項
 
@@ -124,11 +124,11 @@ IPad では、全画面アプリには、標準の水平方向と垂直方向の
 
 スライドオーバーおよび分割ビューをサポートする Ipad では、最終的に次の組み合わせを使用できます。
 
-| **[方向]** | **プライマリアプリ** | **セカンダリアプリ** |
+| **細かく** | **プライマリアプリ** | **セカンダリアプリ** |
 |--- |--- |--- |
-| **縦** |画面の75%<br />水平方向に圧縮<br />標準縦|画面の25%<br />水平方向に圧縮<br />標準縦|
-| **取り巻く** |画面の75%<br />標準の水平方向<br />標準縦|画面の25%<br />水平方向に圧縮<br />標準縦|
-| **取り巻く** |画面の50%<br />水平方向に圧縮<br />標準縦|画面の50%<br />水平方向に圧縮<br />標準縦|
+| **[縦]** |画面の75%<br />水平方向に圧縮<br />標準縦|画面の25%<br />水平方向に圧縮<br />標準縦|
+| **[横]** |画面の75%<br />標準の水平方向<br />標準縦|画面の25%<br />水平方向に圧縮<br />標準縦|
+| **[横]** |画面の50%<br />水平方向に圧縮<br />標準縦|画面の50%<br />水平方向に圧縮<br />標準縦|
 
 例の[MuliTask](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-multitask)アプリでは、iPad on the ランドスケープモードで全画面表示を実行すると、リストと詳細ビューの両方が同時に表示されます。
 
@@ -138,13 +138,13 @@ IPad では、全画面アプリには、標準の水平方向と垂直方向の
 
 [![](multitasking-images/sizeclasses04.png "Only the list presented when the device is horizontal")](multitasking-images/sizeclasses04.png#lightbox)
 
-このような状況でアプリが正しく動作するようにするには、特徴コレクションをサイズクラスと共に採用し、`IUIContentContainer` および `IUITraitEnvironment` インターフェイスに準拠させる必要があります。 詳細については、「Apple の[Uitraitcollection クラスリファレンス](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/doc/uid/TP40014202)」と「[統合ストーリーボード](~/ios/user-interface/storyboards/unified-storyboards.md)ガイドの概要」を参照してください。
+このような状況でアプリが正しく動作するようにするには、特徴コレクションをサイズクラスと共に採用し、インターフェイスとインターフェイスに準拠させる必要があり `IUIContentContainer` `IUITraitEnvironment` ます。 詳細については、「Apple の[Uitraitcollection クラスリファレンス](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/doc/uid/TP40014202)」と「[統合ストーリーボード](~/ios/user-interface/storyboards/unified-storyboards.md)ガイドの概要」を参照してください。
 
 さらに、アプリの表示領域を定義するためにデバイスの画面境界に依存しなくなりました。代わりに、アプリのウィンドウ境界を使用する必要があります。 ウィンドウの境界はユーザーの制御下にあるため、プログラムを使用して調整したり、ユーザーがこれらの境界を変更できないようにしたりすることはできません。
 
-最後に、アプリは、一連の .png イメージファイルを使用するのではなく、ストーリーボードファイルを使用して起動画面を表示する必要があります。また、4つのインターフェイスの向きをすべてサポートし**ます。** パネル上または分割表示モードでのスライドでの実行。
+最後に、アプリは、一連の .png イメージファイルを使用するのではなく、ストーリーボードファイルを使用して起動画面を表示する必要があります **。** また、4つのインターフェイスの向き (縦、反転、縦、横、横) をすべてサポートして、パネル上または分割ビューモードで実行することを検討します。
 
-<a name="Custom-Hardware-Keyboard-Shortcuts" />
+<a name="Custom-Hardware-Keyboard-Shortcuts"></a>
 
 ### <a name="custom-hardware-keyboard-shortcuts"></a>カスタムハードウェアのキーボードショートカット
 
@@ -188,9 +188,9 @@ public void NewEntry() {
 #endregion
 ```
 
-まず、ビューコントローラーまたはビューコントローラーがキーボード入力を受け取ることができるように、`CanBecomeFirstResponder` プロパティをオーバーライドして `true` を返します。 
+まず、プロパティをオーバーライド `CanBecomeFirstResponder` し、 `true` ビューまたはビューコントローラーがキーボード入力を受け取ることができるように戻ります。 
 
-次に、`KeyCommands` プロパティをオーバーライドし、**コマンド N**キーストローク用の新しい `UIKeyCommand` を作成します。 キーストロークがアクティブになったら、`NewEntry` メソッド (`Export` コマンドを使用して iOS 9 に公開する) を呼び出して、要求されたアクションを実行します。
+次に、プロパティをオーバーライド `KeyCommands` し、 `UIKeyCommand` **コマンド N**キーストローク用に新しいを作成します。 キーストロークがアクティブになったら、 `NewEntry` (コマンドを使用して iOS 9 に公開する) メソッドを呼び出して、 `Export` 要求されたアクションを実行します。
 
 ハードウェアキーボードが接続されている iPad でこのアプリを実行し、ユーザーが**コマンド**を入力すると、新しいエントリが一覧に追加されます。 ユーザーが**コマンド**キーを押したままになっている場合は、ショートカットの一覧が表示されます。
 
@@ -198,7 +198,7 @@ public void NewEntry() {
 
 実装の例については、サンプルのマルチ[タスキングアプリ](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-multitask)を参照してください。
 
-<a name="Resource-Management-Considerations" />
+<a name="Resource-Management-Considerations"></a>
 
 ### <a name="resource-management-considerations"></a>リソース管理に関する考慮事項
 
@@ -220,7 +220,7 @@ IOS 8 の設計ガイドとベストプラクティスを既に使用してい�
 
 リソース管理の詳細については、「 [IOS アプリ用の Apple のエネルギー効率ガイド](https://developer.apple.com/library/prerelease/ios/documentation/Performance/Conceptual/EnergyGuide-iOS/index.html#//apple_ref/doc/uid/TP40015243)」を参照してください。
 
-<a name="Opting-Out-of-Multitasking" />
+<a name="Opting-Out-of-Multitasking"></a>
 
 ## <a name="opting-out-of-multitasking"></a>マルチタスキングの無効化
 
@@ -233,7 +233,7 @@ Xamarin iOS アプリが、スライドアウトパネルまたは分割ビュ�
 > [!IMPORTANT]
 > マルチタスクを無効にしても、アプリがスライドアウトまたは分割ビューで実行されるのを防ぐことはできませんが、別のアプリがスライドアウトしたり、画像の画像がアプリと共に表示されたりするのを防ぐことはできません。
 
-<a name="Disabling-PIP-Video-Playback" />
+<a name="Disabling-PIP-Video-Playback"></a>
 
 ### <a name="disabling-pip-video-playback"></a>PIP ビデオ再生の無効化
 
@@ -241,11 +241,11 @@ Xamarin iOS アプリが、スライドアウトパネルまたは分割ビュ�
 
 PIP ビデオの再生を無効にするには、アプリで次の操作を行います。
 
-- `AVPlayerViewController` を使用してビデオを表示する場合は、`AllowsPictureInPicturePlayback` プロパティを `false`に設定します。
-- `AVPlayerLayer` を使用してビデオを表示する場合は、`AVPictureInPictureController`をインスタンス化しないでください。
-- `WKWebView` を使用してビデオを表示する場合は、`AllowsPictureInPictureMediaPlayback` プロパティを `false`に設定します。
+- を使用してビデオを表示する場合は、 `AVPlayerViewController` `AllowsPictureInPicturePlayback` プロパティをに設定し `false` ます。
+- を使用してビデオを表示している場合は、を `AVPlayerLayer` インスタンス化しないで `AVPictureInPictureController` ください。
+- を使用してビデオを表示する場合は、 `WKWebView` `AllowsPictureInPictureMediaPlayback` プロパティをに設定し `false` ます。
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>まとめ
 
@@ -259,4 +259,4 @@ PIP ビデオの再生を無効にするには、アプリで次の操作を行�
 - [iOS 9 (開発者向け)](https://developer.apple.com/ios/pre-release/)
 - [iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
 - [IPad でのマルチタスキング機能強化の採用](https://developer.apple.com/library/prerelease/ios/documentation/WindowsViews/Conceptual/AdoptingMultitaskingOniPad/index.html#//apple_ref/doc/uid/TP40015145)
-- [ブログの投稿](https://blog.xamarin.com/using-auto-layouts-for-ios-9-splitview/)
+- [ブログ投稿](https://blog.xamarin.com/using-auto-layouts-for-ios-9-splitview/)

@@ -1,41 +1,44 @@
 ---
-title: Xamarin.Forms との Azure サービス
-description: この記事では、Azure Notification Hubs を使用して、Xamarin.Forms アプリケーションにクロスプラット フォーム プッシュ通知を送信する方法について説明します。
+title: Xamarin.Formsおよび Azure サービス
+description: この記事では、Azure Notification Hubs を使用して、クロスプラットフォームのプッシュ通知をアプリケーションに送信する方法について説明し Xamarin.Forms ます。
 ms.prod: xamarin
 ms.assetid: 07C60A42-A9E1-4DD0-8874-BD9487DC3EA2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/28/2019
-ms.openlocfilehash: 69e04eac5902692581045d070e38e9d016f179eb
-ms.sourcegitcommit: c1d85b2c62ad84c22bdee37874ad30128581bca6
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a63b6329b9e8f4bcdc18a973b538e1e2e44bca67
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2019
-ms.locfileid: "67659179"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84130976"
 ---
-# <a name="xamarinforms-and-azure-services"></a>Xamarin.Forms との Azure サービス
+# <a name="xamarinforms-and-azure-services"></a>Xamarin.Formsおよび Azure サービス
 
-## <a name="consume-an-azure-cosmos-db-document-database-in-xamarinformsazure-cosmosdbmd"></a>[Xamarin.Forms での Azure Cosmos DB ドキュメント データベースを使用します。](azure-cosmosdb.md)
+## <a name="consume-an-azure-cosmos-db-document-database-in-xamarinformsazure-cosmosdbmd"></a>[で Azure Cosmos DB ドキュメントデータベースを使用するXamarin.Forms](azure-cosmosdb.md)
 
-Azure Cosmos DB ドキュメント データベースは、JSON ドキュメント、シームレスなスケーリングとグローバル レプリケーションを必要とするアプリケーションの高速、高可用性でスケーラブルなデータベース サービスを提供するための低待機時間のアクセスを提供する NoSQL データベースです。 この記事では、Azure Cosmos DB .NET Standard クライアント ライブラリを使用して、Xamarin.Forms アプリケーションに Azure Cosmos DB ドキュメント データベースを統合する方法について説明します。
+Azure Cosmos DB ドキュメントデータベースは、JSON ドキュメントへの低待機時間のアクセスを提供する NoSQL データベースであり、シームレスなスケールとグローバルレプリケーションを必要とするアプリケーション向けに、高速で可用性の高いスケーラブルなデータベースサービスを提供します。 この記事では、Azure Cosmos DB .NET Standard クライアントライブラリを使用して、Azure Cosmos DB ドキュメントデータベースをアプリケーションに統合する方法について説明し Xamarin.Forms ます。
 
-## <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-xamarinformsazure-notification-hubmd"></a>[Azure Notification Hubs と Xamarin.Forms 使用したプッシュ通知を送受信します。](azure-notification-hub.md)
+## <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-xamarinformsazure-notification-hubmd"></a>[Azure Notification Hubs とでプッシュ通知を送受信するXamarin.Forms](azure-notification-hub.md)
 
-Azure Notification Hubs では、バックエンド アプリケーションが 1 つのハブと通信できるように、プラットフォーム間で通知を一元化することができます。 複数のプラットフォーム プロバイダーへのプッシュ通知を配布する azure Notification Hubs を処理します。 この記事では、Xamarin.Forms アプリケーションに Azure Notification Hubs を統合する方法について説明します。
+Azure Notification Hubs を使用すると、バックエンドアプリケーションが1つのハブと通信できるように、プラットフォーム間で通知を一元化することができます。 Azure Notification Hubs は、複数のプラットフォームプロバイダーにプッシュ通知を配信します。 この記事では、Azure Notification Hubs をアプリケーションに統合する方法について説明し Xamarin.Forms ます。
 
-## <a name="store-and-access-data-in-azure-storage-from-xamarinformsazure-storagemd"></a>[ストアとのデータ Xamarin.Forms からの Azure Storage にアクセス](azure-storage.md)
+## <a name="store-and-access-data-in-azure-storage-from-xamarinformsazure-storagemd"></a>[Azure Storage のデータの格納とアクセスXamarin.Forms](azure-storage.md)
 
-Azure Storage とは、非構造化、および構造化データの格納に使用できるスケーラブルなクラウド ストレージ ソリューションです。 この記事では、Xamarin.Forms を使用して Azure Storage にテキストおよびバイナリ データを格納する方法と、データにアクセスする方法を示します。
+Azure Storage は、構造化されていない構造化データを格納するために使用できるスケーラブルなクラウドストレージソリューションです。 この記事では、を使用して Xamarin.Forms Azure Storage にテキストとバイナリデータを格納する方法と、データにアクセスする方法について説明します。
 
-## <a name="search-data-with-azure-search-and-xamarinformsazure-searchmd"></a>[Azure Search および Xamarin.Forms とデータの検索](azure-search.md)
+## <a name="search-data-with-azure-search-and-xamarinformsazure-searchmd"></a>[Azure Search とを使用してデータを検索するXamarin.Forms](azure-search.md)
 
-Azure Search とは、インデックス作成とクエリのデータがアップロードするための機能を提供するクラウド サービスです。 これには、インフラストラクチャの要件と、アプリケーションに検索機能を実装するのに関連付けられた検索アルゴリズムの複雑さが削除されます。 この記事では、Microsoft の Azure Search ライブラリを使用して、Xamarin.Forms アプリケーションに Azure Search を統合する方法を示します。
+Azure Search は、アップロードされたデータのインデックス作成機能とクエリ機能を提供するクラウドサービスです。 これにより、従来、アプリケーションでの検索機能の実装に関連するインフラストラクチャ要件と検索アルゴリズムの複雑さが解消されます。 この記事では、Microsoft Azure 検索ライブラリを使用して Azure Search をアプリケーションに統合する方法について説明し Xamarin.Forms ます。
 
-## <a name="azure-functions-with-xamarinformsazure-functionsmd"></a>[Xamarin.Forms を使用する azure 関数](azure-functions.md)
+## <a name="azure-functions-with-xamarinformsazure-functionsmd"></a>[Azure FunctionsXamarin.Forms](azure-functions.md)
 
-この記事では、初めての Azure 関数と対話する Xamarin.Forms で構築する方法を示します。
+この記事では、と対話する最初の Azure 関数を構築する方法について説明 Xamarin.Forms します。
 
-## <a name="azure-signalr-service-with-xamarinformsazure-signalrmd"></a>[Azure SignalR Service を Xamarin.Forms と共に使用する](azure-signalr.md)
+## <a name="azure-signalr-service-with-xamarinformsazure-signalrmd"></a>[Azure SignalR Service とXamarin.Forms](azure-signalr.md)
 
-ASP.NET Core SignalR は、リアルタイム通信をアプリケーションに追加するプロセスを簡素化するアプリケーション モデルです。 Azure SignalR サービスは、SignalR のスケーラブルなアプリケーションの迅速な開発および展開できます。 この記事とサンプルは、接続されているクライアントにリアルタイム メッセージを配信するには、Azure SignalR サービスと Xamarin.Forms を使用して Azure Functions を結合する方法を示します。
+ASP.NET Core SignalR は、リアルタイム通信をアプリケーションに追加するプロセスを簡略化するアプリケーションモデルです。 Azure SignalR サービスを使用すると、スケーラブルな SignalR アプリケーションを迅速に開発およびデプロイできます。 この記事とサンプルでは、Azure SignalR Service と Azure Functions を組み合わせて Xamarin.Forms 、接続されたクライアントにリアルタイムメッセージを配信する方法を示します。

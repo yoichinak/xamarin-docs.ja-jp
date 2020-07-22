@@ -6,12 +6,15 @@ author: jamesmontemagno
 ms.author: jamont
 ms.date: 01/29/2019
 ms.custom: video
-ms.openlocfilehash: 69d0cb503d329ccfb4c29fb6cc4a589bef97e893
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1a8673e7c405660355e3a849e6ef1709fd2980a4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70756989"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802520"
 ---
 # <a name="xamarinessentials-app-information"></a>Xamarin.Essentials:アプリ情報
 
@@ -23,7 +26,7 @@ ms.locfileid: "70756989"
 
 ## <a name="using-appinfo"></a>AppInfo の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
@@ -91,7 +94,7 @@ AppInfo.ShowSettingsUI();
 
 ## <a name="api"></a>API
 
-- [AppInfo のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/AppInfo)
+- [AppInfo のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/AppInfo)
 - [AppInfo API のドキュメント](xref:Xamarin.Essentials.AppInfo)
 
 ## <a name="related-video"></a>関連ビデオ

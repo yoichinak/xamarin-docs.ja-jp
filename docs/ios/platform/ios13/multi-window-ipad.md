@@ -7,20 +7,20 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/20/2019
-ms.openlocfilehash: b3f96f342679d8be6d2f8fbc0ad5962ca675d2a5
-ms.sourcegitcommit: 09bc69d7119a04684c9e804c5cb113b8b1bb7dfc
+ms.openlocfilehash: ce7df59d41efdd2d151fd2ea73cf26b40ee7fa10
+ms.sourcegitcommit: 834466c9d9cf35e9659e467ce0123e5f5ade6138
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71213805"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85129910"
 ---
-# <a name="multiple-windows-for-ipad"></a>IPad 用の複数の windows
+# <a name="multiple-windows-for-ipad"></a>iPad での複数のウィンドウ
 
 iOS 13 では、iPad で同じアプリのサイドバイサイドウィンドウがサポートされるようになりました。 これにより、新しいエクスペリエンスと、ウィンドウ間のドラッグアンドドロップ操作が可能になります。 このドキュメントでは、この機能をサポートするようにアプリケーションをセットアップする方法について説明し、これらの新機能について説明します。 
 
 ## <a name="project-configuration"></a>プロジェクトの構成
 
-複数のウィンドウに対してプロジェクトを構成する`info.plist`には`NSUserActivityTypes` 、を修正して、アプリがこの種類のアクティビティを処理`UIApplicationSupportsMultipleScenes`することを宣言`UISceneConfigurations`し`UIApplicationSceneManifest` 、複数のウィンドウで有効にして、ストーリーボードを持つシーン。
+複数のウィンドウに対してプロジェクトを構成するには、を修正して、 `info.plist` `NSUserActivityTypes` アプリがこの種類のアクティビティを処理することを宣言し、 `UIApplicationSceneManifest` 複数のウィンドウに対してを有効にし、 `UIApplicationSupportsMultipleScenes` シーンを `UISceneConfigurations` ストーリーボードに関連付けます。
 
 ```xml
 <key>NSUserActivityTypes</key>
@@ -58,9 +58,9 @@ IPad でアプリを開いて実行すると、iOS が既定として処理す�
 
 複数のウィンドウモードに入る他の対話操作は、アプリケーション内から使用できます。
 
-**アプリからドラッグ**-アプリ内でドラッグ操作を使用して、前`NSUserActivity`の例でアプリアイコンをドラッグするのと同じように新しいを開始します。
+**アプリからドラッグ**-アプリ内でドラッグ操作を使用して、 `NSUserActivity` 前の例でアプリアイコンをドラッグするのと同じように新しいを開始します。
 
-[ドラッグアンドドロップ操作][0]を使用する場合は、を作成`NSUserActivity`し、渡されるデータを新しいウィンドウに関連付けて、iOS に開くように依頼します。
+[ドラッグアンドドロップ操作][0]を使用する場合は、を作成 `NSUserActivity` し、渡されるデータを新しいウィンドウに関連付けて、iOS に開くように依頼します。
 
 ```csharp
 public UIDragItem [] GetItemsForBeginningDragSession (UICollectionView collectionView, IUIDragSession session, NSIndexPath indexPath)
@@ -79,14 +79,14 @@ public UIDragItem [] GetItemsForBeginningDragSession (UICollectionView collectio
 }
 ```
 
-上記`selectedPhoto`のコードでは、モデルオブジェクトに、呼び出さ`OpenDetailUserActivity()`れたを`NSUserActivity`返すメソッドがあります。 ドラッグジェスチャが完了`UIDragItem`すると、ではを使用してが`userActivity`表示`NSItemProvider`されます。
+上記のコードでは、 `selectedPhoto` モデルオブジェクトに、呼び出されたを返すメソッドがあり `NSUserActivity` `OpenDetailUserActivity()` ます。 ドラッグジェスチャが完了すると、ではを使用してが表示され `UIDragItem` `userActivity` `NSItemProvider` ます。
 
 **明示的な操作**-ボタンまたはリンクのユーザージェスチャでは、新しいウィンドウを開くことができます。
 
-からを呼び出す`UISceneSession` `RequestSceneSessionActivation`ことによって、新しいを開始できます。 `UIApplication` 既存のシーンが既に存在する場合は、それを使用する必要があります。 既定では、新しいシーンが作成されます。
+からを `UIApplication` 呼び出すことによって、新しいを開始でき `UISceneSession` `RequestSceneSessionActivation` ます。 既存のシーンが既に存在する場合は、それを使用する必要があります。 既定では、新しいシーンが作成されます。
 
 ```csharp
-pubic void ItemSelected(UICollectionView collectionView, NSIndexPath indexPath)
+public void ItemSelected(UICollectionView collectionView, NSIndexPath indexPath)
 {
     var userActivity = selectedPhoto.OpenDetailUserActivity ();
 
@@ -99,7 +99,7 @@ pubic void ItemSelected(UICollectionView collectionView, NSIndexPath indexPath)
 }
 ```
 
-この例では、 `userActivity`は、明示的なユーザーアクション`RequestSceneSessionActivation` (この場合は`UICollectionView`の`ItemSelected`ハンドラー) に基づいてアプリケーションの新しいウィンドウを開くために、メソッドに渡される唯一の値です。
+この例では、は、 `userActivity` `RequestSceneSessionActivation` 明示的なユーザーアクション (この場合 `ItemSelected` はのハンドラー) に基づいてアプリケーションの新しいウィンドウを開くために、メソッドに渡される唯一の値です `UICollectionView` 。
 
 ## <a name="related-links"></a>関連リンク
 

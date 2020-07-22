@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 11/25/2015
-ms.openlocfilehash: 4f5f6adf99306754fa7b2aa49855fe228e740d7e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 736d70aebcf861b5557d5f076a42ff0a3dcfc043
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016946"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84569955"
 ---
 # <a name="systemdata-in-xamarinios"></a>Xamarin. iOS のシステムデータ
 
-Xamarin. iOS 8.10 では、`Mono.Data.Sqlite.dll` ADO.NET プロバイダーを含む、 [system.string のサポート](xref:System.Data)が追加されます。 サポートには、次の[アセンブリ](~/cross-platform/internals/available-assemblies.md)の追加が含まれます。
+ADO.NET プロバイダー[を含む、system.string のサポート](xref:System.Data)が追加さ8.10 れます。 `Mono.Data.Sqlite.dll` サポートには、次の[アセンブリ](~/cross-platform/internals/available-assemblies.md)の追加が含まれます。
 
 - `System.Data.dll`
 - `System.Data.Service.Client.dll`
@@ -24,15 +24,15 @@ Xamarin. iOS 8.10 では、`Mono.Data.Sqlite.dll` ADO.NET プロバイダーを�
 - `Mono.Data.Tds.dll`
 - `Mono.Data.Sqlite.dll`
 
-<a name="Example" />
+<a name="Example"></a>
 
 ## <a name="example"></a>例
 
-次のプログラムでは、`Documents/mydb.db3`にデータベースを作成します。データベースが以前に存在していない場合は、サンプルデータが設定されます。 次に、データベースに対してクエリを行い、出力を `stderr`に書き込みます。
+次のプログラムでは、にデータベースを作成し `Documents/mydb.db3` ます。データベースが以前に存在していない場合は、サンプルデータが設定されます。 次に、データベースに対してクエリが作成され、出力がに書き込まれ `stderr` ます。
 
 ### <a name="add-references"></a>参照の追加
 
-最初に、 **[参照]** ノードを右クリックし、 **[参照の編集]** を選択します。次に、[`System.Data`] を選択して `Mono.Data.Sqlite`ます。
+最初に、[**参照**] ノードを右クリックし、[**参照の編集**] を選択します。次に、[and] を選択します。 `System.Data` `Mono.Data.Sqlite`
 
 [![](system.data-images/edit-references-sml.png "Adding new references")](system.data-images/edit-references.png#lightbox)
 
@@ -129,13 +129,13 @@ using (var addCmd = conn.CreateCommand ()) {
 }
 ```
 
-<a name="Missing_Functionality" />
+<a name="Missing_Functionality"></a>
 
 ## <a name="missing-functionality"></a>不足している機能
 
 **システムデータ**と**Mono. Sqlite**の両方に、いくつかの機能がありません。
 
-<a name="System.Data" />
+<a name="System.Data"></a>
 
 ### <a name="systemdata"></a>System.Data
 
@@ -144,15 +144,15 @@ System.string にない機能は次のもので構成さ**れ**ます。
 - [システム CodeDom](xref:System.CodeDom)が必要なもの ( [TypedDataSetGenerator](xref:System.Data.TypedDataSetGenerator) )
 - XML 構成ファイルのサポート (例: [DbProviderConfigurationHandler](xref:System.Data.Common.DbProviderConfigurationHandler) ) のようになります。
 - [DbProviderFactories](xref:System.Data.Common.DbProviderFactories) (XML 構成ファイルのサポートに依存)
-- [System.string. OleDb](xref:System.Data.OleDb)
-- [System.string. Odbc](xref:System.Data.Odbc)
-- `System.EnterpriseServices.dll` 依存関係が `System.Data.dll` から*削除*されたため、 [EnlistDistributedTransaction (ITransaction)](xref:System.Data.SqlClient.SqlConnection.EnlistDistributedTransaction*)メソッドが削除されました。
+- [System.Data.OleDb](xref:System.Data.OleDb)
+- [System.Data.Odbc](xref:System.Data.Odbc)
+- `System.EnterpriseServices.dll`依存関係がから*削除*されたため `System.Data.dll` 、 [EnlistDistributedTransaction (ITransaction)](xref:System.Data.SqlClient.SqlConnection.EnlistDistributedTransaction*)メソッドが削除されました。
 
-<a name="Mono.Data.Sqlite" />
+<a name="Mono.Data.Sqlite"></a>
 
 ### <a name="monodatasqlite"></a>Mono. Data. Sqlite
 
-一方、 **Mono**は、ソースコードの変更を必要としませんが、代わりに `Mono.Data.Sqlite.dll` sqlite 3.5 をバインドするため、いくつかの*実行時*の問題が発生する可能性があります。 一方、iOS 8 には SQLite 3.8.5 が付属しています。 ここでは、2つのバージョンの間で変更されたものがあるとします。
+一方、 **Mono**は、ソースコードの変更はありませんが、代わりに Sqlite 3.5 をバインドしているため、多くの*実行時*の問題が発生する可能性があります。 `Mono.Data.Sqlite.dll` 一方、iOS 8 には SQLite 3.8.5 が付属しています。 ここでは、2つのバージョンの間で変更されたものがあるとします。
 
 以前のバージョンの iOS には、次のバージョンの SQLite が付属しています。
 
@@ -161,9 +161,9 @@ System.string にない機能は次のもので構成さ**れ**ます。
 - **iOS 5** -バージョン3.7.7。
 - **iOS 4** -バージョン3.6.22。
 
-最も一般的な問題は、データベーススキーマのクエリに関連し `Mono.Data.Sqlite.SqliteConnection.GetSchema` ているように見えます。たとえば、特定のテーブルに存在する列を実行時に決定する場合 ( [DbConnection](xref:System.Data.Common.DbConnection.GetSchema)と `Mono.Data.Sqlite.SqliteDataReader.GetSchemaTable` をオーバーライドする (オーバーライド[する) などです。DbDataReader。 GetSchemaTable](xref:System.Data.Common.DbDataReader.GetSchemaTable)。 つまり、 [DataTable](xref:System.Data.DataTable)を使用しているものはほとんど動作しないように思えます。
+最も一般的な問題は、データベーススキーマのクエリに関連しているように見えます。たとえば、特定のテーブルに存在する列が実行時に決定されます `Mono.Data.Sqlite.SqliteConnection.GetSchema` ( [DbConnection](xref:System.Data.Common.DbConnection.GetSchema)とのオーバーライド `Mono.Data.Sqlite.SqliteDataReader.GetSchemaTable` ( [dbdatareader の](xref:System.Data.Common.DbDataReader.GetSchemaTable)オーバーライド) などです。 つまり、 [DataTable](xref:System.Data.DataTable)を使用しているものはほとんど動作しないように思えます。
 
-<a name="Data_Binding" />
+<a name="Data_Binding"></a>
 
 ## <a name="data-binding"></a>データ バインディング
 

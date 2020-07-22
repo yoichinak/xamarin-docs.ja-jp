@@ -1,17 +1,20 @@
 ---
 title: Xamarin.Essentials:加速度計
-description: Xamarin.Essentials の加速度計クラスでは、デバイスの加速を 3 つの次元空間で示す、デバイスの加速度計センサーを監視できます。
+description: Xamarin.Essentials の Accelerometer クラスでは、デバイスの加速度を 3 次元空間で示す、デバイスの加速度計センサーを監視できます。
 ms.assetid: 97883573-F0D9-4854-AC7C-A654814401C5
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 04/02/2019
 ms.custom: video
-ms.openlocfilehash: dd99d09f227809bf8834eea9749c4d5379abebdb
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: f3d7b313039e66294a0095fd34a2caa6689cef2e
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70765047"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802532"
 ---
 # <a name="xamarinessentials-accelerometer"></a>Xamarin.Essentials:加速度計
 
@@ -23,7 +26,7 @@ ms.locfileid: "70765047"
 
 ## <a name="using-accelerometer"></a>加速度計の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
@@ -90,7 +93,7 @@ X 軸は水平方向で右に、Y 軸は垂直方向で上に、Z 軸は画面�
 
 ## <a name="api"></a>API
 
-- [加速度計のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Accelerometer)
+- [加速度計のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Accelerometer)
 - [加速度計の API ドキュメント](xref:Xamarin.Essentials.Accelerometer)
 
 ## <a name="related-video"></a>関連ビデオ

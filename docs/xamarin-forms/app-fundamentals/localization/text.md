@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms での文字列とイメージのローカライズ
-description: Xamarin.Forms アプリは、.NET リソース ファイルを使用してローカライズできます。
+title: 'title:"Xamarin.Forms での文字列とイメージのローカライズ" description: "Xamarin.Forms アプリは .NET リソース ファイルを使用してローカライズできます。"'
+description: 'zone_pivot_groups: "platform" ms.prod: xamarin ms.assetid:852B4ED3-2D2D-48A5-A759-A6591F6A1509 ms.technology: xamarin-forms author: profexorgeek ms.author: jusjohns ms.date:11/01/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
 zone_pivot_groups: platform
 ms.prod: xamarin
 ms.assetid: 852B4ED3-2D2D-48A5-A759-A6591F6A1509
@@ -8,14 +8,17 @@ ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 11/01/2019
-ms.openlocfilehash: bf99873d88a69a715cdf7969ad94afd66372b5e3
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: af15dc5a23404a11be6207bef7b4fc3e4bf9fad7
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "74135341"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84137606"
 ---
-# <a name="xamarinforms-string-and-image-localization"></a>Xamarin.Forms での文字列とイメージのローカライズ
+# <a name="xamarinforms-string-and-image-localization"></a>Xamarin.Forms の文字列とイメージのローカライズ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingresxlocalization)
 
@@ -29,7 +32,7 @@ ms.locfileid: "74135341"
 
 1. 翻訳されたテキストを含む [Resx ファイルを作成する](#create-resx-files)。
 1. 共有プロジェクトで[既定のカルチャを指定する](#specify-the-default-culture)。
-1. [Xamarin.Forms でテキストをローカライズする](#localize-text-in-xamarinforms)。
+1. [Xamarin.Forms のテキストをローカライズします](#localize-text-in-xamarinforms)。
 1. 各プラットフォームのカルチャ設定に基づいて[イメージをローカライズする](#localize-images)。
 1. 各プラットフォームで[アプリケーション名をローカライズする](#localize-the-application-name)。
 1. 各プラットフォームで[ローカライズをテストする](#test-localization)。
@@ -146,9 +149,9 @@ using System.Resources;
 
 リソース ファイルの詳細については、「[Create resource files for .NET apps](https://docs.microsoft.com/dotnet/framework/resources/creating-resource-files-for-desktop-apps)」(.NET アプリでのリソース ファイルの作成) を参照してください。
 
-## <a name="localize-text-in-xamarinforms"></a>Xamarin.Forms でテキストをローカライズする
+## <a name="localize-text-in-xamarinforms"></a>Xamarin.Forms のテキストをローカライズする
 
-テキストは、生成された `AppResources` クラスを使用して Xamarin.Forms でローカライズされます。 このクラスには、既定のリソース ファイル名に基づいた名前が付けられます。 サンプル プロジェクトのリソース ファイルは **AppResources.cs** という名前であるため、Visual Studio では、`AppResources` という名前の一致するクラスが生成されます。 静的プロパティは、リソース ファイル内の行ごとに `AppResources` クラスで生成されます。 サンプル アプリケーションの `AppResources` クラスでは、次の静的プロパティが生成されます。
+Xamarin.Forms では、テキストは、生成される `AppResources` クラスを使用してローカライズされます。 このクラスには、既定のリソース ファイル名に基づいた名前が付けられます。 サンプル プロジェクトのリソース ファイルは **AppResources.cs** という名前であるため、Visual Studio では、`AppResources` という名前の一致するクラスが生成されます。 静的プロパティは、リソース ファイル内の行ごとに `AppResources` クラスで生成されます。 サンプル アプリケーションの `AppResources` クラスでは、次の静的プロパティが生成されます。
 
 - AddButton
 - NotesLabel

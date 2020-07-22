@@ -1,19 +1,22 @@
 ---
-title: Xamarin.Forms の基本的なバインディング
-description: この記事では、通常は少なくとも一方がユーザー インターフェイス オブジェクトである 2 つのオブジェクト間でプロパティのペアをリンクする、Xamarin.Forms データ バインディングの使用方法について説明します。 これら 2 つのオブジェクトは、ターゲットおよびソースと呼ばれます。
+title: 'title: "Xamarin.Formsの基本的なバインディング" の説明: "この記事では、通常は少なくとも一方がユーザー インターフェイス オブジェクトである 2 つのオブジェクト間でプロパティのペアをリンクする、Xamarin.Forms データ バインディングの使用方法について説明します。'
+description: 'これら 2 つのオブジェクトは、ターゲットおよびソースと呼ばれます。" ms.prod: xamarin ms.assetid: 96553DF7-12EA-4FB2-AE85-3D1D59382B40 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:  01/22/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials] ms.custom: video'
 ms.prod: xamarin
 ms.assetid: 96553DF7-12EA-4FB2-AE85-3D1D59382B40
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/22/2019
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
 ms.custom: video
-ms.openlocfilehash: 2227e2bd47a5b4960d28be67bac7947a4fb57a93
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: c0c6bc6e1005997548952aedc09cd83a451e7caa
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303781"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84133538"
 ---
 # <a name="xamarinforms-basic-bindings"></a>Xamarin.Forms の基本的なバインディング
 
@@ -175,7 +178,7 @@ BindingContext="slider"
 </ContentPage>
 ```
 
-分離コード ファイルでは、`BindableObject` によって定義された [`SetBinding`](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase)) メソッドを使用してバインディングを設定します。 引数は、[`Binding`](xref:Xamarin.Forms.Binding) クラスの[コンストラクター](xref:Xamarin.Forms.Binding.%23ctor(System.String,Xamarin.Forms.BindingMode,Xamarin.Forms.IValueConverter,System.Object,System.String,System.Object))です。
+分離コード ファイルでは、`BindableObject` によって定義された [`SetBinding`](xref:Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty,Xamarin.Forms.BindingBase)) メソッドを使用してバインディングを設定します。 引数は、[`Binding`](xref:Xamarin.Forms.Binding) クラスの [constructor](xref:Xamarin.Forms.Binding.%23ctor(System.String,Xamarin.Forms.BindingMode,Xamarin.Forms.IValueConverter,System.Object,System.String,System.Object)) です。
 
 ```csharp
 public partial class AlternativeCodeBindingPage : ContentPage
@@ -332,7 +335,7 @@ XAML マークアップ拡張は、通常は中かっこで区切りますが、
 ## <a name="related-links"></a>関連リンク
 
 - [データ バインディングのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
-- [Xamarin.Forms 書籍のデータ バインディングに関する章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [Xamarin.Forms ブックのデータ バインディングに関する章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
 
 ## <a name="related-video"></a>関連ビデオ
 

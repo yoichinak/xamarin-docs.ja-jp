@@ -1,26 +1,29 @@
 ---
 title: ViewCell のカスタマイズ
-description: Xamarin.Forms の ViewCell は、ListView または TableView に追加できるセルであり、開発者が定義したビューを含みます。 この記事では、Xamarin.Forms の ListView コントロールの内部でホストされる ViewCell 用のカスタム レンダラーを作成する方法を示します。
+description: Xamarin.Forms の ViewCell は、ListView または TableView に追加できるセルであり、開発者が定義したビューが含まれます。 この記事では、Xamarin.Forms の ListView コントロールの内部でホストされる ViewCell 用のカスタム レンダラーを作成する方法を示します。
 ms.prod: xamarin
 ms.assetid: 61F378C9-6DEF-436B-ACC3-2324B25D404E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/07/2016
-ms.openlocfilehash: 5cd0a1ec43f0e56ec1ec72ebd614a7e0a5fa2225
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c908da816352e8b3790ded0bef932e1485170abd
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70998054"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84573873"
 ---
 # <a name="customizing-a-viewcell"></a>ViewCell のカスタマイズ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-viewcell)
 
-"_Xamarin.Forms の ViewCell は、ListView または TableView に追加できるセルであり、開発者が定義したビューを含みます。この記事では、Xamarin.Forms の ListView コントロールの内部でホストされる ViewCell 用のカスタム レンダラーを作成する方法を示します。これにより、ListView のスクロール中に Xamarin.Forms のレイアウトの計算が繰り返し呼び出されることが回避されます。_ "
+_Xamarin.Forms の ViewCell は、ListView または TableView に追加できるセルであり、開発者が定義したビューを含みます。この記事では、Xamarin.Forms の ListView コントロールの内部でホストされる ViewCell 用のカスタム レンダラーを作成する方法を示します。これにより、ListView のスクロール中に Xamarin.Forms のレイアウトの計算が繰り返し呼び出されることが回避されます。_
 
-Xamarin.Forms のすべてのセルには、ネイティブ コントロールのインスタンスを作成する各プラットフォーム用のレンダラーが付属しています。 iOS で Xamarin.Forms アプリケーションによって [`ViewCell`](xref:Xamarin.Forms.ViewCell) がレンダリングされると、iOS では `ViewCellRenderer` クラスがインスタンス化され、それによってネイティブの `UITableViewCell` コントロールもインスタンス化されます。 Android プラットフォーム上では、`ViewCellRenderer` クラスによってネイティブの `View` コントロールがインスタンス化されます。 ユニバーサル Windows プラットフォーム (UWP) 上では、`ViewCellRenderer` クラスによってネイティブの `DataTemplate` がインスタンス化されます。 Xamarin.Forms コントロールによってマップされるレンダラーとネイティブ コントロール クラスの詳細については、「[Renderer Base Classes and Native Controls](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)」(レンダラーの基底クラスとネイティブ コントロール) を参照してください。
+Xamarin.Forms のすべてのセルには、ネイティブ コントロールのインスタンスを作成する各プラットフォーム用のレンダラーが付属しています。 Xamarin.Forms アプリケーションによって [`ViewCell`](xref:Xamarin.Forms.ViewCell) がレンダリングされると、iOS では `ViewCellRenderer` クラスがインスタンス化され、それによってネイティブの `UITableViewCell` コントロールもインスタンス化されます。 Android プラットフォーム上では、`ViewCellRenderer` クラスによってネイティブの `View` コントロールがインスタンス化されます。 ユニバーサル Windows プラットフォーム (UWP) 上では、`ViewCellRenderer` クラスによってネイティブの `DataTemplate` がインスタンス化されます。 Xamarin.Forms コントロールによってマップされるレンダラーとネイティブ コントロール クラスの詳細については、「[Renderer Base Classes and Native Controls](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)」(レンダラーの基底クラスおよびネイティブ コントロール) を参照してください。を参照してください。
 
 次の図は、[`ViewCell`](xref:Xamarin.Forms.ViewCell) と、それを実装する、対応しているネイティブ コントロールの関係を示しています。
 
@@ -28,13 +31,11 @@ Xamarin.Forms のすべてのセルには、ネイティブ コントロール�
 
 レンダリング プロセスを活用して各プラットフォーム上で [`ViewCell`](xref:Xamarin.Forms.ViewCell) 用のカスタム レンダラーを作成することで、プラットフォーム固有のカスタマイズを実装できます。 その実行プロセスは次のとおりです。
 
-1. Xamarin.Forms のカスタム セルを[作成](#Creating_the_Custom_Cell)します。
-1. Xamarin.Forms からカスタム セルを[使用](#Consuming_the_Custom_Cell)します。
-1. 各プラットフォーム上でセル用のカスタム レンダラーを[作成](#Creating_the_Custom_Renderer_on_each_Platform)します。
+1. Xamarin.Forms のカスタム セルを[作成](#creating-the-custom-cell)します。
+1. Xamarin.Forms からカスタム セルを[使用](#consuming-the-custom-cell)します。
+1. 各プラットフォーム上でセル用のカスタム レンダラーを[作成](#creating-the-custom-renderer-on-each-platform)します。
 
 各項目を順に確認して、Xamarin.Forms の [`ListView`](xref:Xamarin.Forms.ListView) コントロールの内部でホストされる、各セル用のプラットフォーム固有のレイアウトを利用する `NativeCell` レンダラーを実装します。 これにより、`ListView` のスクロール中に Xamarin.Forms のレイアウトの計算が繰り返し呼び出されることが回避されます。
-
-<a name="Creating_the_Custom_Cell" />
 
 ## <a name="creating-the-custom-cell"></a>カスタム セルの作成
 
@@ -70,8 +71,6 @@ public class NativeCell : ViewCell
 ```
 
 `NativeCell` クラスが .NET Standard ライブラリ プロジェクト内に作成され、カスタム セル用の API が定義されます。 カスタム セルによって、データ バインディングを利用して表示できる `Name`、`Category`、および `ImageFilename` の各プロパティが公開されます。 データ バインディングの詳細については、「[Data Binding Basics](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)」 (データ バインディングの基礎) を参照してください。
-
-<a name="Consuming_the_Custom_Cell" />
 
 ## <a name="consuming-the-custom-cell"></a>カスタム セルの使用
 
@@ -152,8 +151,6 @@ Xamarin.Forms の [`ListView`](xref:Xamarin.Forms.ListView) コントロール�
 
 これで、カスタム レンダラーを各アプリケーション プロジェクトに追加して、各セルのプラットフォーム固有のレイアウトをカスタマイズできます。
 
-<a name="Creating_the_Custom_Renderer_on_each_Platform" />
-
 ## <a name="creating-the-custom-renderer-on-each-platform"></a>各プラットフォームでのカスタム レンダラーの作成
 
 カスタム レンダラー クラスを作成するプロセスは次のとおりです。
@@ -175,7 +172,7 @@ Xamarin.Forms の [`ListView`](xref:Xamarin.Forms.ListView) コントロール�
 
 `ViewCellRenderer` クラスによって、カスタム セルを表示するためのプラットフォーム固有のメソッドが公開されます。 これは、iOS プラットフォームでは `GetCell` メソッド、Android プラットフォームでは `GetCellCore` メソッド、および UWP では `GetTemplate` メソッドになります。
 
-レンダラーを Xamarin.Forms に登録する `ExportRenderer` 属性によって各カスタム レンダラー クラスが修飾されます。 この属性では、レンダリングされる Xamarin.Forms セルの型名とカスタム レンダラーの型名という 2 つのパラメーターが使用されます。 属性の `assembly` プレフィックスにより、属性がアセンブリ全体に適用されることが指定されます。
+各カスタム レンダラー クラスは、レンダラーを Xamarin.Forms に登録する `ExportRenderer` 属性で修飾されます。 この属性では、レンダリングされる Xamarin.Forms セルの型名とカスタム レンダラーの型名という 2 つのパラメーターが使用されます。 属性の `assembly` プレフィックスでは、属性がアセンブリ全体に適用されることを指定します。
 
 次のセクションで、各プラットフォーム固有のカスタム レンダラー クラスの実装について説明します。
 

@@ -1,18 +1,21 @@
 ---
-title: Xamarin.Forms の MessagingCenter
-description: Xamarin.Forms の MessagingCenter クラスでは、発行/サブスクライブ パターンが実装され、オブジェクトと型の参照によってリンクしにくいコンポーネント間で、メッセージ ベースの通信を行うことができます。
+title: 'title: "Xamarin.Forms の MessagingCenter" description: "Xamarin.Forms の MessagingCenter クラスでは、発行/サブスクライブ パターンが実装され、オブジェクトと型の参照によってリンクしにくいコンポーネント間で、メッセージ ベースの通信を行うことができます。"'
+description: 'ms.prod: xamarin ms.assetid:EDFE7B19-C5FD-40D5-816C-FAE56532E885 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:10/08/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
 ms.prod: xamarin
 ms.assetid: EDFE7B19-C5FD-40D5-816C-FAE56532E885
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/08/2019
-ms.openlocfilehash: 0e5fd88678becd7becfcb1c43e14b1e33aad72de
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d1407c3c948afe764854cbd99f5c29332f7041aa
+ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75489883"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84137541"
 ---
 # <a name="xamarinforms-messagingcenter"></a>Xamarin.Forms の MessagingCenter
 

@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: FD8FE199-898B-4841-8041-CC9CA1A00917
 author: davidbritch
 ms.author: dabritch
-ms.date: 10/16/2019
-ms.openlocfilehash: 29261f2ef6366c0dac8ac82e63584366a5cca0b0
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.date: 04/29/2020
+ms.openlocfilehash: 29875b3f6c747d5dc2f45eb876a269d2bc7e85c6
+ms.sourcegitcommit: 443ecd9146fe2a7bbb9b5ab6d33c835876efcf1f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "74135272"
+ms.lasthandoff: 05/06/2020
+ms.locfileid: "82852464"
 ---
 # <a name="connect-to-local-web-services-from-ios-simulators-and-android-emulators"></a>iOS シミュレーターと Android エミュレーターからローカル Web サービスに接続する
 
@@ -60,9 +60,7 @@ iOS および Android 上で実行する Xamarin アプリケーションでは�
 
 ### <a name="ios"></a>iOS
 
-iOS 上で実行される Xamarin アプリケーションでは、マネージド ネットワーク スタック、またはネイティブの `CFNetwork` または `NSUrlSession` ネットワーク スタックを使用できます。 既定では、新しい iOS プラットフォームのプロジェクトでは `NSUrlSession` ネットワーク スタックが使われ、TLS 1.2 がサポートされ、またパフォーマンスの向上と実行可能ファイルのサイズの縮小のためにネイティブ API が使われます。
-
-ただし、開発者のテストのために、ローカルで実行しているセキュリティで保護された Web サービスにアプリケーションで接続する必要がある場合は、マネージド ネットワーク スタックを使う方が簡単です。 したがって、デバッグ シミュレーターのビルド プロファイルはマネージド ネットワーク スタックを使うように設定し、リリースのビルド プロファイルは `NSUrlSession` ネットワーク スタックを使うように設定することをお勧めします。 各ネットワーク スタックは、プログラムから、またはプロジェクト オプションのセレクターを使って設定できます。 詳細については、「[HttpClient and SSL/TLS implementation selector for iOS/macOS (iOS/macOS 用の HttpClient と SSL/TLS の実装セレクター)](~/cross-platform/macios/http-stack.md)」をご覧ください。
+iOS 上で実行される Xamarin アプリケーションでは、マネージド ネットワーク スタック、またはネイティブの `CFNetwork` または `NSUrlSession` ネットワーク スタックを使用できます。 既定では、新しい iOS プラットフォームのプロジェクトでは `NSUrlSession` ネットワーク スタックが使われ、TLS 1.2 がサポートされ、またパフォーマンスの向上と実行可能ファイルのサイズの縮小のためにネイティブ API が使われます。 詳細については、「[HttpClient and SSL/TLS implementation selector for iOS/macOS (iOS/macOS 用の HttpClient と SSL/TLS の実装セレクター)](~/cross-platform/macios/http-stack.md)」をご覧ください。
 
 ### <a name="android"></a>Android
 
@@ -97,38 +95,14 @@ public static string TodoItemsUrl = $"{BaseAddress}/api/todoitems/";
 
 ## <a name="bypass-the-certificate-security-check"></a>証明書のセキュリティ チェックをバイパスする
 
-iOS シミュレーターまたは Android エミュレーターで実行されているアプリケーションからローカルのセキュリティで保護された Web サービスを呼び出そうとすると、各プラットフォーム上でマネージド ネットワーク スタックを使っている場合でも、`HttpRequestException` がスローされます。 これは、ローカルの HTTPS 開発証明書が自己署名であり、自己署名された証明書は iOS または Android で信頼されないためです。
-
-したがって、アプリケーションでローカルのセキュリティで保護された Web サービスを使用するときに、SSL エラーを無視する必要があります。 これを実現するためのメカニズムは、現在、iOS と Android で異なっています。
-
-### <a name="ios"></a>iOS
-
-マネージド ネットワーク スタックを使っている場合、`ServicePointManager.ServerCertificateValidationCallback` プロパティを、ローカルの HTTPS 開発証明書に向けた証明書のセキュリティ チェックの結果を無視するコールバックに設定することで、ローカルのセキュリティで保護された Web サービスに対して iOS 上で SSL エラーを無視できます。
+iOS シミュレーターまたは Android エミュレーターで実行されているアプリケーションからローカルのセキュリティで保護された Web サービスを呼び出そうとすると、各プラットフォーム上でマネージド ネットワーク スタックを使っている場合でも、`HttpRequestException` がスローされます。 これは、ローカルの HTTPS 開発証明書が自己署名であり、自己署名された証明書は iOS または Android で信頼されないためです。 したがって、アプリケーションでローカルのセキュリティで保護された Web サービスを使用するときに、SSL エラーを無視する必要があります。 iOS と Android でマネージドとネイティブ両方のネットワーク スタックを使っている場合、`HttpClientHandler` オブジェクトの `ServerCertificateCustomValidationCallback` プロパティを、ローカルの HTTPS 開発証明書に向けた証明書のセキュリティ チェックの結果を無視するコールバックに設定することで、これを実現できます。
 
 ```csharp
-#if DEBUG
-    System.Net.ServicePointManager.ServerCertificateValidationCallback += (sender, certificate, chain, sslPolicyErrors) =>
-    {
-        if (certificate.Issuer.Equals("CN=localhost"))
-            return true;
-        return sslPolicyErrors == System.Net.Security.SslPolicyErrors.None;
-    };
-#endif
-```
-
-このコード例では、検証が行われた証明書が `localhost` 証明書ではない場合に、サーバー証明書の検証結果が返されます。 この証明書に対して、検証結果が無視され、証明書が有効であることを示す `true` が返されます。 このコードは、`LoadApplication(new App())` メソッドの呼び出しの前に、iOS 上の `AppDelegate.FinishedLaunching` メソッドに追加する必要があります。
-
-> [!NOTE]
-> iOS 上のネイティブ ネットワーク スタックは、`ServerCertificateValidationCallback` にフックされません。
-
-### <a name="android"></a>Android
-
-マネージドおよびネイティブ両方の `AndroidClientHandler` ネットワーク スタックを使っている場合、`HttpClientHandler` オブジェクトの `ServerCertificateCustomValidationCallback` プロパティを、ローカルの HTTPS 開発証明書に向けた証明書のセキュリティ チェックの結果を無視するコールバックに設定することで、ローカルのセキュリティで保護された Web サービスに対して Android 上で SSL エラーを無視できます。
-
-```csharp
+// This method must be in a class in a platform project, even if
+// the HttpClient object is constructed in a shared project.
 public HttpClientHandler GetInsecureHandler()
 {
-    var handler = new HttpClientHandler();
+    HttpClientHandler handler = new HttpClientHandler();
     handler.ServerCertificateCustomValidationCallback = (message, cert, chain, errors) =>
     {
         if (cert.Issuer.Equals("CN=localhost"))
@@ -139,7 +113,16 @@ public HttpClientHandler GetInsecureHandler()
 }
 ```
 
-このコード例では、検証が行われた証明書が `localhost` 証明書ではない場合に、サーバー証明書の検証結果が返されます。 この証明書に対して、検証結果が無視され、証明書が有効であることを示す `true` が返されます。 生成される `HttpClientHandler` オブジェクトを、`HttpClient` コンストラクターに対する引数として渡す必要があります。
+このコード例では、検証が行われた証明書が `localhost` 証明書ではない場合に、サーバー証明書の検証結果が返されます。 この証明書に対して、検証結果が無視され、証明書が有効であることを示す `true` が返されます。 生成される `HttpClientHandler` オブジェクトを、デバッグ ビルド用に `HttpClient` コンストラクターに対する引数として渡す必要があります。
+
+```csharp
+#if DEBUG
+    HttpClientHandler insecureHandler = GetInsecureHandler();
+    HttpClient client = new HttpClient(insecureHandler);
+#else
+    HttpClient client = new HttpClient();
+#endif
+```
 
 ## <a name="related-links"></a>関連リンク
 

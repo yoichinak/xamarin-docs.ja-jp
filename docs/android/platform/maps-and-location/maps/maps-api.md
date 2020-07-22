@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 09/07/2018
-ms.openlocfilehash: adcfb1457742d343f87a602885566107cf327e2d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 2779019fff1354b18d285775daf224ffc1402fd4
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73027148"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571364"
 ---
 # <a name="using-the-google-maps-api-in-your-application"></a>アプリケーションでの Google Maps API の使用
 
@@ -36,11 +36,11 @@ Maps API を使用する前に、次のようないくつかのステップを�
 - [必要なアクセス許可を指定する](#declare-permissions)
 - [必要に応じて、Google API を使用してエミュレーターを作成する](#create-emulator-with-google-api)
 
-### <a name="obtain-a-google-maps-api-key"></a><a name="obtain-maps-key" />Google Maps API キーを取得する
+### <a name="obtain-a-google-maps-api-key"></a><a name="obtain-maps-key"></a>Google Maps API キーを取得する
 
 最初のステップでは、Google Maps API キーを取得します (従来の Google Maps v1 API から API キーを再利用することはできないことに注意してください)。 Xamarin.Android で API キーを取得して使用する方法の詳細については、「[Google マップ API キーを取得する](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)」を参照してください。
 
-### <a name="install-the-google-play-services-sdk"></a><a name="install-gps-sdk" /> Google Play 開発者サービス SDK をインストールする
+### <a name="install-the-google-play-services-sdk"></a><a name="install-gps-sdk"></a> Google Play 開発者サービス SDK をインストールする
 
 Google Play 開発者サービスは Google のテクノロジであり、Android アプリケーションで Google+、アプリ内課金、Maps などのさまざまな Google 機能を利用できます。 これらの機能には、[Google Play 開発者サービス APK](https://play.google.com/store/apps/details?id=com.google.android.gms&hl=en) に含まれバックグラウンド サービスとして、Android デバイスでアクセスできます。
 
@@ -56,7 +56,7 @@ Xamarin.Android アプリケーションで Maps API を使用できるように
 > [!NOTE]
 > Google Play 開発者サービス APK はライセンス製品であり、デバイスによっては存在しない場合があります。 インストールされていないデバイスでは、Google Maps は機能しません。
 
-### <a name="install-the-xamaringoogleplayservicesmaps-package-from-nuget"></a><a name="install-gpsmaps-nuget" /> NuGet から Xamarin.GooglePlayServices.Maps パッケージをインストールする
+### <a name="install-the-xamaringoogleplayservicesmaps-package-from-nuget"></a><a name="install-gpsmaps-nuget"></a> NuGet から Xamarin.GooglePlayServices.Maps パッケージをインストールする
 
 [Xamarin.GooglePlayServices.Maps パッケージ](https://www.nuget.org/packages/Xamarin.GooglePlayServices.Maps)には、Google Play 開発者サービス Maps API 用の Xamarin.Android バインドが含まれています。
 Google Play 開発者サービス Maps パッケージを追加するには、ソリューション エクスプローラーでプロジェクトの **[参照]** フォルダーを右クリックし、 **[NuGet パッケージの管理]** をクリックします。
@@ -73,7 +73,7 @@ Google Play 開発者サービス Maps パッケージを追加するには、�
 - **Xamarin.GooglePlayServices.Basement**
 - **Xamarin.GooglePlayServices.Tasks**
 
-### <a name="specify-the-required-permissions"></a><a name="declare-permissions" /> 必要なアクセス許可を指定する
+### <a name="specify-the-required-permissions"></a><a name="declare-permissions"></a> 必要なアクセス許可を指定する
 
 アプリでは、Google Maps API を使用するためのハードウェアとアクセス許可の要件を明らかにする必要があります。  一部のアクセス許可は、Google Play 開発者サービス SDK によって自動的に付与されるため、開発者が明示的に **AndroidManfest.XML** に追加する必要はありません。
 
@@ -142,7 +142,7 @@ Google Maps Android API 用の **AndroidManifest.XML** では、次のアクセ�
 
 アプリでは、アクセス許可の **AndroidManifest.XML** を要求するだけでなく、`ACCESS_COARSE_LOCATION` および `ACCESS_FINE_LOCATION` アクセス許可に対する実行時アクセス許可チェックも実行する必要があります。 実行時アクセス許可チェックの実行の詳細については、「[Xamarin.Android のアクセス許可](~/android/app-fundamentals/permissions.md)」ガイドを参照してください。
 
-### <a name="create-an-emulator-with-google-apis"></a><a name="create-emulator-with-google-api" />Google API を使用してエミュレーターを作成する
+### <a name="create-an-emulator-with-google-apis"></a><a name="create-emulator-with-google-api"></a>Google API を使用してエミュレーターを作成する
 
 物理 Android デバイスに Google Play 開発者サービスがインストールされていない場合は、開発用のエミュレーター イメージを作成することができます。 詳細については、[デバイス マネージャー](~/android/get-started/installation/android-emulator/device-manager.md)に関する記事を参照してください。
 
@@ -250,7 +250,7 @@ public void OnMapReady(GoogleMap map)
 }
 ```
 
-### <a name="googlemap-properties"></a><a name="googlemap_object" />GoogleMap のプロパティ
+### <a name="googlemap-properties"></a><a name="googlemap_object"></a>GoogleMap のプロパティ
 
 `GoogleMap` では、マップの機能と外観を制御できるいくつかのプロパティが定義されています。 `GoogleMap` の初期状態を構成する方法の 1 つは、`MapFragment` の作成時に [GoogleMapOptions](https://developers.google.com/android/reference/com/google/android/gms/maps/GoogleMapOptions) オブジェクトを渡すことです。 次のコード スニペットは、`MapFragment` を作成するときに `GoogleMapOptions` オブジェクトを使用する例の 1 つです。
 

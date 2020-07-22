@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: af90c286d2bb960a9f78547dd15c3d98a69529ae
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: bdcefd6a1b0192dc337afd5b5a5535a20eeaef9e
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75487829"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84571390"
 ---
 # <a name="app-linking-in-android"></a>Android のアプリリンク
 
@@ -49,7 +49,7 @@ Android 6.0 でアプリリンクを設定するには、2 つの主な手順が
 1. **Web サイトの URI の 1 つ以上のインテント フィルターを追加する** &ndash; インテント フィルターは、モバイル ブラウザーでの URL のクリックを処理する方法を Android に指示します。
 2. **"*デジタル アセット リンク JSON*" ファイルを Web サイトで公開する** &ndash; これは、Web サイトにアップロードされ、モバイル アプリと Web サイトのドメインの関係を検証するために Android で使用されるファイルです。 これがないと、Android は URI の既定のハンドルとしてアプリをインストールできません。その場合、ユーザーが手動で行う必要があります。
 
-<a name="configure-intent-filter" />
+<a name="configure-intent-filter"></a>
 
 ### <a name="configuring-the-intent-filter"></a>インテント フィルターの構成
 

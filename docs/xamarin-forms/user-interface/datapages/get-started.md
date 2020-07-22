@@ -1,43 +1,46 @@
 ---
-title: DataPages の概要
-description: この記事では、Xamarin.Forms DataPages を使用して単純なデータ ドリブンのページの構築を開始する方法について説明します。
+title: DataPages でのはじめに
+description: この記事では、DataPages を使用して単純なデータドリブンページの構築を開始する方法について説明 Xamarin.Forms します。
 ms.prod: xamarin
 ms.assetid: 6416E5FA-6384-4298-BAA1-A89381E47210
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/01/2017
-ms.openlocfilehash: 1f7917784ea66c31979b87f43639a7d03756692c
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: bb08d359048d53639a700cc5ff526f26d6b077b6
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725596"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84571468"
 ---
-# <a name="getting-started-with-datapages"></a>DataPages の概要
+# <a name="getting-started-with-datapages"></a>DataPages でのはじめに
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-samples/tree/master/Pages/DataPagesDemo)
 
 ![](~/media/shared/preview.png "This API is currently in preview")
 
 > [!IMPORTANT]
-> DataPages を表示するには、Xamarin. Forms Theme リファレンスが必要です。 これには、プロジェクトに[xamarin. theme. Base](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/) nuget パッケージをインストールし、その後に、 [xamarin. theme](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/)パッケージまたは[xamarin](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/) . theme. theme パッケージのいずれかをインストールする必要があります。
+> DataPages Xamarin.Forms を表示するには、テーマ参照が必要です。 これには、のインストールが含ま[ Xamarin.Forms れます。Theme。](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/)プロジェクトの基本となる NuGet パッケージの後に、[のいずれかが続きます。 Xamarin.FormsTheme](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/)または[ Xamarin.Forms 。Theme. ダーク](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/)NuGet パッケージ。
 
-DataPages Preview を使用して単純なデータ ドリブンのページの構築を開始、次の手順に従います。 このデモを使用して、プレビューでハードコーディングされたスタイル (「イベント」) をビルドするは、コード内の特定の JSON 形式でのみ機能します。
+DataPages Preview を使用して単純なデータドリブンページの構築を開始するには、次の手順に従います。 このデモでは、コード内の特定の JSON 形式でのみ機能する、プレビュービルドでハードコーディングされたスタイル ("イベント") を使用します。
 
 [![](get-started-images/demo-sml.png "DataPages Sample Application")](get-started-images/demo.png#lightbox "DataPages Sample Application")
 
 ## <a name="1-add-nuget-packages"></a>1. NuGet パッケージを追加する
 
-次の NuGet パッケージを Xamarin. Forms .NET Standard ライブラリおよびアプリケーションプロジェクトに追加します。
+これらの NuGet パッケージを Xamarin.Forms .NET Standard ライブラリおよびアプリケーションプロジェクトに追加します。
 
-- Xamarin.Forms.Pages
-- Xamarin.Forms.Theme.Base
-- テーマ実装 NuGet (例 (Xamarin. Theme)
+- Xamarin.Forms.トピック
+- Xamarin.Forms.Theme. Base
+- テーマ実装 NuGet (例 Xamarin.Forms.Theme)
 
 ## <a name="2-add-theme-reference"></a>2. テーマ参照を追加する
 
-**App.xaml**ファイルで、テーマのカスタム `xmlns:mytheme` を追加し、テーマがアプリケーションのリソースディクショナリにマージされていることを確認します。
+**App.xaml**ファイルで、テーマのカスタムを追加 `xmlns:mytheme` し、テーマがアプリケーションのリソースディクショナリにマージされていることを確認します。
 
 ```xaml
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
@@ -51,13 +54,13 @@ DataPages Preview を使用して単純なデータ ドリブンのページの�
 ```
 
 > [!IMPORTANT]
-> また、iOS `AppDelegate` と Android `MainActivity`に定型コードを追加して、[テーマアセンブリ (下記) を読み込む](#loadtheme)手順にも従う必要があります。 これは、将来のプレビュー リリースで改善されます。
+> また、iOS および Android に定型コードを追加して、[テーマアセンブリ (下記) を読み込む](#troubleshooting)手順にも従う必要があり `AppDelegate` `MainActivity` ます。 これは、今後のプレビューリリースで改善される予定です。
 
 ## <a name="3-add-a-xaml-page"></a>3. XAML ページを追加する
 
-新しい XAML ページを Xamarin. Forms アプリケーションに追加し、*基本クラス*を `ContentPage` から `Xamarin.Forms.Pages.ListDataPage`に変更します。 これは、c# と、XAML の両方で行う必要があります。
+新しい XAML ページをアプリケーションに追加 Xamarin.Forms し、*基本クラス*をからに変更 `ContentPage` し `Xamarin.Forms.Pages.ListDataPage` ます。 これは、C# と XAML の両方で実行する必要があります。
 
-**C#拡張子**
+**C# ファイル**
 
 ```csharp
 public partial class SessionDataPage : Xamarin.Forms.Pages.ListDataPage // was ContentPage
@@ -71,7 +74,7 @@ public partial class SessionDataPage : Xamarin.Forms.Pages.ListDataPage // was C
 
 **XAML ファイル**
 
-ルート要素をに変更するだけでなく、`xmlns:p` のカスタム名前空間も追加する必要が `<p:ListDataPage>` ます。
+ルート要素を `<p:ListDataPage>` のカスタム名前空間に変更することに加えて、 `xmlns:p` も追加する必要があります。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -87,7 +90,7 @@ public partial class SessionDataPage : Xamarin.Forms.Pages.ListDataPage // was C
 
 **Application サブクラス**
 
-`MainPage` が新しい `SessionDataPage`を含む `NavigationPage` に設定されるように `App` クラスコンストラクターを変更します。 ナビゲーションページを使用する*必要があり*ます。
+クラスコンストラクターを変更して `App` 、 `MainPage` が新しいを含むに設定されるようにし `NavigationPage` `SessionDataPage` ます。 ナビゲーションページを使用する*必要があり*ます。
 
 ```csharp
 MainPage = new NavigationPage (new SessionDataPage ());
@@ -95,10 +98,10 @@ MainPage = new NavigationPage (new SessionDataPage ());
 
 ## <a name="3-add-the-datasource"></a>3. DataSource を追加する
 
-`Content` 要素を削除し、`p:ListDataPage.DataSource` に置き換えて、ページにデータを設定します。 リモート Json 次の例では、データ ファイルを URL から読み込まれています。
+要素を削除 `Content` し、をに置き換えて、 `p:ListDataPage.DataSource` ページにデータを設定します。 次の例では、リモート Json データファイルが URL から読み込まれています。
 
 > [!NOTE]
-> プレビューでは、データソースの表示ヒントを提供するために、`StyleClass` 属性*が必要です*。 `StyleClass="Events"` は、プレビューで事前に定義されているレイアウトを参照し、使用されている JSON データソースと一致するように*ハードコーディング*されたスタイルを含みます。
+> プレビューで*requires*は、 `StyleClass` データソースの表示ヒントを提供するために属性が必要です。 は、 `StyleClass="Events"` プレビューで事前に定義されているレイアウトを参照し、使用されている JSON データソースと一致するように*ハードコーディング*されたスタイルを含みます。
 
 ```xaml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -135,17 +138,17 @@ MainPage = new NavigationPage (new SessionDataPage ());
 
 ## <a name="4-run"></a>4. を実行します。
 
-作業のデータ ページで、上記の手順が得られます。
+上記の手順を実行すると、作業データページが生成されます。
 
 [![](get-started-images/demo-sml.png "DataPages Sample Application")](get-started-images/demo.png#lightbox "DataPages Sample Application")
 
-これは、事前に構築されたスタイルの **"イベント"** がライトテーマ NuGet パッケージに存在し、データソースに一致するスタイルが定義されているために機能します (例: "title"、"image"、「プレゼンター」)。
+これは、事前に構築されたスタイルの **"イベント"** がライトテーマ NuGet パッケージに存在し、データソースに一致するスタイルが定義されているために機能します (例: "title"、"image"、"プレゼンター")。
 
-"Events" `StyleClass` は、Xamarin. `ListDataPage` で定義されたカスタム `CardView` コントロールを使用して、コントロールを表示するように構築されています。 `CardView` コントロールには、`ImageSource`、`Text`、および `Detail`の3つのプロパティがあります。 テーマ、データソースの 3 つのフィールド (JSON ファイル) からこれらのプロパティを表示するためにバインドするハードコーディングされています。
+"Events" は、で定義されている `StyleClass` カスタムコントロールを使用してコントロールを表示するように構築されてい `ListDataPage` `CardView` Xamarin.Forms ます。トピック. `CardView`コントロールには `ImageSource` 、、、およびの3つのプロパティがあり `Text` `Detail` ます。 このテーマは、データソースの3つのフィールド (JSON ファイルから) をこれらのプロパティにバインドして表示するようにハードコーディングされています。
 
 ## <a name="5-customize"></a>5. カスタマイズ
 
-テンプレートを指定してデータ ソースのバインドを使用して、継承されたスタイルをオーバーライドできます。 次の XAML は、新しい `ListItemControl` および `{p:DataSourceBinding}` の NuGet に含まれている構文を使用して、各行のカスタムテンプレートを宣言**します。**
+継承されたスタイルは、テンプレートを指定し、データソースバインドを使用することによってオーバーライドできます。 次の XAML は、に含まれている新しいと構文を使用して、各行のカスタムテンプレートを宣言し `ListItemControl` `{p:DataSourceBinding}` ** Xamarin.Forms ます。ページ**NuGet:
 
 ```xaml
 <p:ListDataPage.DefaultItemTemplate>
@@ -164,11 +167,11 @@ MainPage = new NavigationPage (new SessionDataPage ());
 </p:ListDataPage.DefaultItemTemplate>
 ```
 
-`DataTemplate` を提供することにより、このコードは `StyleClass` をオーバーライドし、代わりに `ListItemControl`の既定のレイアウトを使用します。
+このコードを指定することにより `DataTemplate` 、をオーバーライド `StyleClass` し、代わりにの既定のレイアウトを使用し `ListItemControl` ます。
 
 [![](get-started-images/custom-sml.png "DataPages Sample Application")](get-started-images/custom.png#lightbox "DataPages Sample Application")
 
-XAML を好むC#開発者は、データソースのバインドも作成できます (`using Xamarin.Forms.Pages;` ステートメントを必ず含めるようにしてください)。
+C# を XAML にする開発者は、データソースのバインドも作成できます (ステートメントを含めることを忘れないでください `using Xamarin.Forms.Pages;` )。
 
 ```csharp
 SetBinding (TitleProperty, new DataSourceBinding ("title"));
@@ -178,15 +181,13 @@ SetBinding (TitleProperty, new DataSourceBinding ("title"));
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 
-<a name="loadtheme" />
+## <a name="could-not-load-file-or-assembly-xamarinformsthemelight-or-one-of-its-dependencies"></a>ファイルまたはアセンブリ ' を読み込むことができませんでした Xamarin.Forms 。Theme (またはその依存関係の1つ)
 
-## <a name="could-not-load-file-or-assembly-xamarinformsthemelight-or-one-of-its-dependencies"></a>ファイルまたはアセンブリ 'Xamarin.Forms.Theme.Light' またはその依存関係の 1 つを読み込めませんでした。
-
-プレビュー リリースでは、テーマの実行時に読み込むことがない場合があります。 このエラーを修正するのには、関連するプロジェクトに、以下に示すコードを追加します。
+プレビューリリースでは、実行時にテーマを読み込むことができない可能性があります。 このエラーを修正するには、以下に示すコードを関連するプロジェクトに追加します。
 
 **iOS**
 
-**AppDelegate.cs**で、`LoadApplication` の後に次の行を追加します。
+**AppDelegate.cs**で、の後に次の行を追加します。`LoadApplication`
 
 ```csharp
 var x = typeof(Xamarin.Forms.Themes.DarkThemeResources);
@@ -196,7 +197,7 @@ x = typeof(Xamarin.Forms.Themes.iOS.UnderlineEffect);
 
 **Android**
 
-**MainActivity.cs**で、`LoadApplication` の後に次の行を追加します。
+**MainActivity.cs**で、の後に次の行を追加します。`LoadApplication`
 
 ```csharp
 var x = typeof(Xamarin.Forms.Themes.DarkThemeResources);

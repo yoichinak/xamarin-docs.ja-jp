@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/07/2016
-ms.openlocfilehash: de9a46587a5d1de6f12dd54122b27e53694cdeb8
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a97885518c0646d2d8315b5da5eb12c71d693cf6
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031386"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574081"
 ---
 # <a name="deprecated-notification-technologies-in-xamarinios"></a>Xamarin の非推奨の通知テクノロジ
 
@@ -23,21 +23,21 @@ ms.locfileid: "73031386"
 
 ## <a name="sections"></a>セクション
 
-<a name="Local Notifications In iOS" />
+<a name="Local Notifications In iOS"></a>
 
-## <a name="local-notifications-in-ioslocal-notifications-in-iosmd"></a>[IOS でのローカル通知](local-notifications-in-ios.md)
+## <a name="local-notifications-in-ios"></a>[IOS でのローカル通知](local-notifications-in-ios.md)
 
 このセクションでは、Xamarin. iOS でローカル通知を実装する方法について説明します。 ここでは、iOS の通知のさまざまな UI 要素について説明し、通知の作成と表示に関連する API について説明します。
 
-<a name="Local Notifications Walkthrough" />
+<a name="Local Notifications Walkthrough"></a>
 
-## <a name="walkthrough---using-local-notifications-in-xamarinioslocal-notifications-in-ios-walkthroughmd"></a>[チュートリアル - Xamarin.iOS でのローカル通知の使用](local-notifications-in-ios-walkthrough.md)
+## <a name="walkthrough---using-local-notifications-in-xamarinios"></a>[チュートリアル-Xamarin でのローカル通知の使用](local-notifications-in-ios-walkthrough.md)
 
 このセクションでは、Xamarin iOS アプリケーションでローカル通知を使用する方法について説明します。 ここでは、アプリで受信したときにアラートをポップアップ表示する通知を作成して公開する方法の基本について説明します。
 
-<a name="Remote Notifications In iOS" />
+<a name="Remote Notifications In iOS"></a>
 
-## <a name="remote-notifications-in-iosremote-notifications-in-iosmd"></a>[IOS でのリモート通知](remote-notifications-in-ios.md)
+## <a name="remote-notifications-in-ios"></a>[IOS でのリモート通知](remote-notifications-in-ios.md)
 
 このセクションでは、iOS でのプッシュ通知について説明します。 IOS アプリケーションに通知を発行するときに、Apple Push notification Gateway サービス (APNS) とそれが果たす役割について説明します。 ここでは、プッシュ通知を有効にするために必要なセキュリティ証明書の作成方法と、について説明します。 最後に、このセクションでは、クライアントモバイルデバイスを追跡するためにアプリケーションサーバーで実行する必要があるいくつかのハウスキーピングタスクについて説明します。
 

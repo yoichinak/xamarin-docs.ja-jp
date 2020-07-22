@@ -8,12 +8,15 @@ author: conceptdev
 ms.author: crdun
 ms.custom: video
 ms.date: 05/23/2019
-ms.openlocfilehash: cf54d4a6d8cdedc4ddde0beedeaadd361356990a
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 928a8f9ca1792fa79f3c5995959e6407c23649f4
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "66252316"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84133056"
 ---
 # <a name="installing-xamarin"></a>Xamarin のインストール
 

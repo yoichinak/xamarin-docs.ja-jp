@@ -5,12 +5,15 @@ ms.assetid: DA4F968A-D988-41F5-8745-1BEE693660A1
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 5a496fc06732be1cf104cfbaffa8ff4b68c8f564
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 9a2742a5d515c864611361e85ea0678e9c5611ba
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "69976434"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802487"
 ---
 # <a name="xamarinessentials-barometer"></a>Xamarin.Essentials:バロメーター
 
@@ -22,7 +25,7 @@ ms.locfileid: "69976434"
 
 ## <a name="using-barometer"></a>バロメーターの使用
 
-自分のクラスの Xamarin.Essentials に参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
@@ -93,5 +96,5 @@ public class BarometerTest
 
 ## <a name="api"></a>API
 
-- [Barometer のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Barometer)
+- [Barometer のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Barometer)
 - [Barometer API ドキュメント](xref:Xamarin.Essentials.Barometer)

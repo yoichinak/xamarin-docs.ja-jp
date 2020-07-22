@@ -7,22 +7,22 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 7d24286b5d428a571afc7498afafa1171c075110
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 9ab18e643038d4a61b3b201295d4298f2b5e1adc
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032702"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84574185"
 ---
 # <a name="watchos-image-controls-in-xamarin"></a>Xamarin の watchOS Image コントロール
 
-watchOS には、イメージと単純なアニメーションを表示するための[`WKInterfaceImage`](xref:WatchKit.WKInterfaceImage)コントロールが用意されています。 一部のコントロールには、背景イメージ (ボタン、グループ、インターフェイスコントローラーなど) を含めることもできます。
+watchOS には、 [`WKInterfaceImage`](xref:WatchKit.WKInterfaceImage) イメージと単純なアニメーションを表示するためのコントロールが用意されています。 一部のコントロールには、背景イメージ (ボタン、グループ、インターフェイスコントローラーなど) を含めることもできます。
 
 ![](image-images/image-walkway.png "画像を表示する Apple Watch") ![](image-images/image-animation.png "単純なアニメーションを使用した Apple Watch")
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
 
 アセットカタログ画像を使用して、ウォッチキットアプリに画像を追加します。
-すべてのウォッチデバイスに Retina が表示されるため、必要なバージョンは **@2x** のみです。
+**@2x**すべてのウォッチデバイスに Retina が表示されるため、バージョンのみが必要です。
 
 ![](image-images/asset-universal-sml.png "Only 2x versions are required, since all watch devices have Retina displays")
 
@@ -34,13 +34,13 @@ watchOS には、イメージと単純なアニメーションを表示するた
 
 ## <a name="images-on-the-watch"></a>ウォッチの画像
 
-画像を表示する最も効率的な方法は、*それらを watch アプリプロジェクトに含め*、`SetImage(string imageName)` メソッドを使用して表示することです。
+画像を表示する最も効率的な方法は、*それらを watch アプリプロジェクトに含め*、メソッドを使用して表示することです `SetImage(string imageName)` 。
 
 たとえば、 [WatchKitCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog/)サンプルには、watch アプリプロジェクトのアセットカタログにいくつかのイメージが追加されています。
 
 ![](image-images/asset-whale-sml.png "The WatchKitCatalog sample has a number of images added to an asset catalog in the watch app project")
 
-これらの値は、文字列名パラメーターを指定して `SetImage` を使用して、監視に効率的に読み込むことができます。
+これらは、文字列 name パラメーターを使用して、監視に効率的に読み込んで表示でき `SetImage` ます。
 
 ```csharp
 myImageControl.SetImage("Whale");
@@ -49,13 +49,13 @@ myOtherImageControl.SetImage("Worry");
 
 ### <a name="background-images"></a>背景画像
 
-`Button`、`Group`、および `InterfaceController` クラスの `SetBackgroundImage (string imageName)` に対しても同じロジックが適用されます。 最適なパフォーマンスを得るには、画像を watch アプリ自体に格納します。
+、、およびクラスのに対しても同じロジックが適用され `SetBackgroundImage (string imageName)` `Button` `Group` `InterfaceController` ます。 最適なパフォーマンスを得るには、画像を watch アプリ自体に格納します。
 
 ## <a name="images-in-the-watch-extension"></a>Watch 拡張機能の画像
 
 Watch アプリ自体に格納されているイメージを読み込むだけでなく、拡張機能バンドルのイメージを watch アプリに送信して表示することもできます (または、リモートの場所からイメージをダウンロードして表示することもできます)。
 
-Watch 拡張機能からイメージを読み込むには `UIImage` インスタンスを作成し、`UIImage` オブジェクトを使用して `SetImage` を呼び出します。
+Watch 拡張機能からイメージを読み込むには、 `UIImage` インスタンスを作成し、オブジェクトを使用してを呼び出し `SetImage` `UIImage` ます。
 
 たとえば、 [WatchKitCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)サンプルには、watch 拡張機能プロジェクトの**Bumblebee**という名前のイメージがあります。
 
@@ -80,20 +80,20 @@ using (var image = UIImage.FromBundle ("Bumblebee")) {
 
 ![](image-images/asset-bus-animation-sml.png "The WatchKitCatalog sample has a series of numbered images in the watch app project with the Bus prefix")
 
-これらのイメージをアニメーションとして表示するには、まず、`SetImage` を使用してプレフィックス名を使用してイメージを読み込み、次に `StartAnimating` を呼び出します。
+これらのイメージをアニメーションとして表示するには、まずプレフィックス名を使用してイメージを読み込み、次のように `SetImage` 呼び出し `StartAnimating` ます。
 
 ```csharp
 animatedImage.SetImage ("Bus");
 animatedImage.StartAnimating ();
 ```
 
-イメージコントロールの `StopAnimating` を呼び出して、アニメーションのループを停止します。
+`StopAnimating`アニメーションのループを停止するには、イメージコントロールでを呼び出します。
 
 ```csharp
 animatedImage.StopAnimating ();
 ```
 
-<a name="cache" />
+<a name="cache"></a>
 
 ## <a name="appendix-caching-images-watchos-1"></a>付録: イメージのキャッシュ (watchOS 1)
 
@@ -102,7 +102,7 @@ animatedImage.StopAnimating ();
 
 アプリケーションが拡張機能に格納されているイメージを繰り返し使用している場合 (またはダウンロードされている場合)、ウォッチのストレージにイメージをキャッシュして、後続の表示のパフォーマンスを向上させることができます。
 
-`WKInterfaceDevice`s `AddCachedImage` メソッドを使用してイメージをウォッチに転送し、image name パラメーターと共に `SetImage` を文字列として使用して表示します。
+S メソッドを使用して `WKInterfaceDevice` `AddCachedImage` イメージをウォッチに転送し、 `SetImage` image name パラメーターと共にを文字列として使用して表示します。
 
 ```csharp
 var device = WKInterfaceDevice.CurrentDevice;
@@ -116,11 +116,11 @@ using (var image = UIImage.FromBundle ("Bumblebee")) {
 }
 ```
 
-`WKInterfaceDevice.CurrentDevice.WeakCachedImages`を使用して、コード内のイメージキャッシュの内容を照会できます。
+を使用して、コード内のイメージキャッシュの内容を照会でき `WKInterfaceDevice.CurrentDevice.WeakCachedImages` ます。
 
 ### <a name="managing-the-cache"></a>キャッシュの管理
 
-キャッシュのサイズは約 20 MB です。 アプリの再起動間に保持されます。また、`WKInterfaceDevice.CurrentDevice` オブジェクトで `RemoveCachedImage` または `RemoveAllCachedImages` メソッドを使用してファイルをクリアする必要があります。
+キャッシュのサイズは約 20 MB です。 アプリの再起動間に保持され `RemoveCachedImage` ます。また、オブジェクトに対してメソッドまたはメソッドを使用してファイルをクリアする必要があり `RemoveAllCachedImages` `WKInterfaceDevice.CurrentDevice` ます。
 
 ## <a name="related-links"></a>関連リンク
 

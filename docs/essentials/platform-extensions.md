@@ -1,20 +1,23 @@
 ---
-title: Xamarin.Essentials プラットフォーム拡張
+title: Xamarin.Essentials プラットフォームの拡張機能
 description: Xamarin.Essentials からは、プラットフォームの種類を使用する必要があるとき、Rect、Size、Point など、プラットフォーム拡張メソッドがいくつか提供されます。
 ms.assetid: AB4D198A-4FD7-479E-8627-01F887A6D056
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 03/13/2019
-ms.openlocfilehash: 4e43159fb9cae6646be54d8efc24c334bc071477
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 56cb9619a4132f6568cee8fbf590965934024639
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77545150"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84801924"
 ---
 # <a name="xamarinessentials-platform-extensions"></a>Xamarin.Essentials:プラットフォーム拡張
 
-Xamarin.Essentials からは、プラットフォームの種類を使用する必要があるとき、Rect、Size、Point など、プラットフォーム拡張メソッドがいくつか提供されます。 つまり、iOS、Android、UWP 固有の種類に対して、これらの種類の `System` バージョン間で変換できます。 
+Xamarin.Essentials からは、プラットフォームの種類を使用する必要があるとき、Rect、Size、Point など、プラットフォーム拡張メソッドがいくつか提供されます。 つまり、iOS、Android、UWP 固有の種類に対して、これらの種類の `System` バージョン間で変換できます。
 
 ## <a name="get-started"></a>作業開始
 
@@ -22,7 +25,7 @@ Xamarin.Essentials からは、プラットフォームの種類を使用する�
 
 ## <a name="using-platform-extensions"></a>プラットフォーム拡張の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
@@ -144,7 +147,7 @@ var system2 = platform.ToSystemRectangle();
 
 ## <a name="api"></a>API
 
-- [変換機能のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Types/PlatformExtensions)
+- [変換機能のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Types/PlatformExtensions)
 - [Point Converters の API ドキュメント](xref:Xamarin.Essentials.PointExtensions)
 - [Rectangle Converters の API ドキュメント](xref:Xamarin.Essentials.RectangleExtensions)
 - [Size Converters の API ドキュメント](xref:Xamarin.Essentials.SizeExtensions)

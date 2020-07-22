@@ -1,38 +1,41 @@
 ---
-title: Xamarin. その他のプラットフォーム
-description: このガイドでは、Xamarin によってサポートされるその他のプラットフォームについて説明します。
+title: Xamarin.Formsその他のプラットフォーム
+description: このガイドでは、でサポートされるその他のプラットフォームについて説明 Xamarin.Forms します。
 ms.prod: xamarin
 ms.assetid: C713B905-0C98-4442-B5CB-91C384A384DA
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/04/2019
-ms.openlocfilehash: 7c3c995607a85fd8e6325bbaed65c0d590e46205
-ms.sourcegitcommit: 4cf434b126eb7df6b2fd9bb1d71613bf2b6aac0e
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: a0ab248d3e23854e8027f515fbcf0fa6ca9521fd
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "71997125"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84139543"
 ---
-# <a name="xamarinforms-other-platforms"></a>Xamarin. その他のプラットフォーム
+# <a name="xamarinforms-other-platforms"></a>Xamarin.Formsその他のプラットフォーム
 
-Xamarin は、iOS、Android、Windows 以外の追加のプラットフォームをサポートしています。
+Xamarin.Formsは、iOS、Android、Windows 以外の追加のプラットフォームをサポートしています。
 
 > [!IMPORTANT]
-> サポートされている Xamarin. Forms プラットフォームの詳細については、「 [xamarin. Forms Platform Support](https://github.com/xamarin/Xamarin.Forms/wiki/Platform-Support)」を参照してください。
+> サポートされているプラットフォームの詳細につい Xamarin.Forms ては、「 [ Xamarin.Forms プラットフォームのサポート](https://github.com/xamarin/Xamarin.Forms/wiki/Platform-Support)」を参照してください。
 
-## <a name="gtkgtkmd"></a>[GTK](gtk.md)
+## <a name="gtk"></a>[GTK](gtk.md)
 
-Xamarin. フォームで、GTK # アプリのプレビューがサポートされるようになりました。
+Xamarin.Formsでは、GTK # アプリのプレビューがサポートされるようになりました。
 
-## <a name="macmacmd"></a>[Mac](mac.md)
+## <a name="mac"></a>[Mac](mac.md)
 
-MacOS アプリのプレビューがサポートされるようになりました。
+Xamarin.Formsでは、macOS アプリのプレビューがサポートされるようになりました。
 
-## <a name="tizentizenmd"></a>[Tizen](tizen.md)
+## <a name="tizen"></a>[Tizen](tizen.md)
 
-Tizen .NET を使用すると、Xamarin. Forms と Tizen .NET Framework で .NET アプリケーションをビルドできます。
+Tizen .NET を使用する Xamarin.Forms と、と Tizen .NET Framework で .net アプリケーションをビルドできます。
 
-## <a name="wpfwpfmd"></a>[WPF](wpf.md)
+## <a name="wpf"></a>[WPF](wpf.md)
 
-Xamarin. Forms で Windows Presentation Foundation (WPF) アプリのプレビューがサポートされるようになりました。
+Xamarin.Formsでは、Windows Presentation Foundation (WPF) アプリのプレビューがサポートされるようになりました。

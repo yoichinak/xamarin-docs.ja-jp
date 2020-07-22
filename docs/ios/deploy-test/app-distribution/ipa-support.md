@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 58fbe6d688ffb506db4316ee29d79a364f849a97
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: b9254afdcb6286edcffc67a1a69af8b049f08b6b
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73030420"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84573223"
 ---
 # <a name="ipa-support-in-xamarinios"></a>Xamarin.iOS の IPA サポート
 
@@ -25,7 +25,7 @@ _この記事では、IPA ファイルの作成方法を紹介します。IPA �
 
 いずれの場合でも、IPA パッケージを作成し、適切な配布プロビジョニング プロファイルでデジタル署名する必要があります。 この記事では、Mac または Windows PC の iTunes で、IPA パッケージをビルドし、iOS デバイスにそのパッケージをインストールするための手順について説明します。
 
-<a name="iTunesMetadata" />
+<a name="iTunesMetadata"></a>
 
 ## <a name="the-itunesmetadataplist-file"></a>iTunesMetadata.plist ファイル
 
@@ -35,7 +35,7 @@ iTunes App Store での販売または無料リリースのために iOS アプ�
 
 カスタム **iTunesMetadata.plist** を作成し、配布情報を追加することもできます。 このファイルのコンテンツに関する詳細やファイルの作成方法については、「[iTunesMetadata.plist の内容](~/ios/deploy-test/app-distribution/itunesmetadata.md#iTunesMetadata_contents)」と「[iTunesMetadata.plist ファイルの作成](~/ios/deploy-test/app-distribution/itunesmetadata.md#iTunesMetadata_creating)」を参照してください。
 
-<a name="iTunesArtwork" />
+<a name="iTunesArtwork"></a>
 
 ## <a name="itunes-artwork"></a>iTunes アートワーク
 
@@ -50,7 +50,7 @@ iTunes アートワークは次の手順で指定します。
 
 詳細については、「[iTunes アートワーク](~/ios/app-fundamentals/images-icons/app-icons.md)」を参照してください。
 
-<a name="createipa" />
+<a name="createipa"></a>
 
 ## <a name="creating-an-ipa"></a>IPA を作成する
 
@@ -165,7 +165,7 @@ CI 環境などでは、コマンド ラインから IPA をビルドしなけ�
 
 -----
 
-<a name="Customizing-the-IPA-Location" />
+<a name="Customizing-the-IPA-Location"></a>
 
 ## <a name="customizing-the-ipa-location"></a>IPA の場所のカスタマイズ
 
@@ -221,7 +221,7 @@ Mac の場合は次のようになります。
 msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/Builds" /t:Build SingleViewIphone1.sln
 ```
 
-<a name="installipa" />
+<a name="installipa"></a>
 
 ## <a name="installing-an-ipa-using-itunes"></a>iTunes で IPA をインストールする
 
@@ -241,7 +241,7 @@ msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/
 
 ユーザーは iTunes とデバイスを同期し、新しい iOS アプリケーションをインストールできます。
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>まとめ
 

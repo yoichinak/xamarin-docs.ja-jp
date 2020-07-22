@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: f744f4ed5619e4e7f4a9d85897c4451bf7e5b9bc
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 314c94fc9208a63e2f9305511df262327df921a5
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73022349"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84565071"
 ---
 # <a name="nsstring-in-xamarinios-and-xamarinmac"></a>Xamarin.iOS と Xamarin.Mac での NSString
 
@@ -38,7 +38,7 @@ class UILabel {
 
 `NSString` を使う代わりに C の文字列 ("*char*") を使っているサードパーティの Objective-C API がいくつかあります。 そのような場合でも、C# の文字列データ型を使用できますが、この文字列を `NSString` としてマーシャリングするのではなく、C 文字列としてマーシャリングする必要があることを、[[PlainString]](~/cross-platform/macios/binding/objective-c-libraries.md) 属性を使用して、バインド ジェネレーターに通知する必要があります。
 
- <a name="Exceptions_to_the_Rule" />
+ <a name="Exceptions_to_the_Rule"></a>
 
 ## <a name="exceptions-to-the-rule"></a>ルールの例外
 

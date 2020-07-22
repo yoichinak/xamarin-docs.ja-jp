@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: db2e692993b7d452b81024ba1d50788e82b7ab86
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 5c73f046f349598c9f0b0e8d7c7d6438c150c05c
+ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022193"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84566345"
 ---
 # <a name="working-with-tvos-table-views-in-xamarin"></a>Xamarin での tvOS テーブルビューの使用
 
@@ -24,11 +24,11 @@ TvOS では、テーブルビューがスクロール行の単一の列として
 
 [![](table-views-images/intro01.png "Sample table view")](table-views-images/intro01.png#lightbox)
 
-<a name="About-Table-Views" />
+<a name="About-Table-Views"></a>
 
 ## <a name="about-table-views"></a>テーブルビューについて
 
-`UITableView` には、スクロール可能な行の単一の列が、必要に応じてグループまたはセクションに分類できる情報の階層リストとして表示されます。 
+では、スクロール可能な `UITableView` 行の単一の列が、必要に応じてグループやセクションに分類できる情報の階層リストとして表示されます。 
 
 [![](table-views-images/table01.png "A selected item")](table-views-images/table01.png#lightbox)
 
@@ -38,11 +38,11 @@ Apple には、テーブルを操作するための次のような推奨事項�
 - **テーブルの内容をすばやく表示する**-データの大きなリストを表示するには、コンテンツを遅延読み込みし、テーブルがユーザーに表示されたらすぐに情報の表示を開始します。 テーブルの読み込みに時間がかかる場合、ユーザーはアプリの関心を失うか、ロックされていると考えられます。
 - **長いコンテンツの読み込みをユーザーに通知**する-長いテーブルの読み込み時間が回避できない場合は、アプリがロックされていないことを示す[進行状況バーまたはアクティビティインジケーター](~/ios/tvos/user-interface/progress-indicators.md)を提示します。
 
-<a name="Table-Cell-Types" />
+<a name="Table-Cell-Types"></a>
 
 ## <a name="table-view-cell-types"></a>テーブルビューのセルの種類
 
-`UITableViewCell` は、テーブルビューのデータの個々の行を表すために使用されます。 Apple では、いくつかの既定のテーブルセルの種類が定義されています。
+は、 `UITableViewCell` テーブルビュー内の個々のデータ行を表すために使用されます。 Apple では、いくつかの既定のテーブルセルの種類が定義されています。
 
 - **Default** -この型は、右側のセルと左揃えのタイトルの左側にオプションのイメージを表示します。 
 - **サブタイトル**-この型では、最初の行に左揃えのタイトルが表示され、次の行に左揃えのサブタイトルが表示されます。
@@ -58,9 +58,9 @@ Apple には、テーブルビューのセルを操作するための次のよ�
 - **テキスト領域を避け**ます。テキストの各行を短くして、最終的には切り捨てられないようにします。 切り捨てられた単語や語句は、ユーザーが部屋を越えて解析するのは困難です。
 - フォーカスさ**れている行の状態を考慮してください**。行が大きくなり、角が丸くなると、セルの外観をすべての状態でテストする必要があります。 画像またはテキストが、フォーカスされた状態でクリップされるか、正しく表示されない可能性があります。
 - **編集可能なテーブルを控えめに使用する**-テーブル行の移動または削除では、iOS よりも時間がかかります tvOS。 この機能によって tvOS アプリが追加されるかどうかについては、慎重に判断する必要があります。
-- **適切な場所にカスタムのセルの種類を作成**します。組み込みテーブルビューのセルの種類は多くの状況に適していますが、より高度なコントロールを提供し、ユーザーズ.
+- **適切な場所にカスタムのセルの種類を作成**する-組み込みテーブルビューのセルの種類は多くの状況に適していますが、より高度な制御を提供し、ユーザーに情報を表示するために、標準以外の情報に対してカスタムのセル型を作成することを検討してください。
 
-<a name="Working-With-Table-Views" />
+<a name="Working-With-Table-Views"></a>
 
 ## <a name="working-with-table-views"></a>テーブルビューの操作
 
@@ -68,18 +68,18 @@ TvOS アプリでテーブルビューを操作する最も簡単な方法は、
 
 開始するには、次の操作を行います。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. Visual Studio for Mac で、新しい tvOS app プロジェクトを開始し、[ **tvOS** > **アプリ** > **シングルビューアプリ**] を選択して、 **[次へ]** ボタンをクリックします。 
+1. Visual Studio for Mac で、新しい tvOS app プロジェクトを開始し、[ **tvOS**  >  **app**  >  **Single View app** ] を選択し、[**次へ**] ボタンをクリックします。 
 
     [![](table-views-images/table02.png "Select Single View App")](table-views-images/table02.png#lightbox)
-1. アプリの**名前**を入力し、 **[次へ]** をクリックします。 
+1. アプリの**名前**を入力し、[**次へ**] をクリックします。 
 
     [![](table-views-images/table03.png "Enter a Name for the app")](table-views-images/table03.png#lightbox)
-1. **プロジェクト名**と**ソリューション名**を調整するか、既定値をそのまま使用し、 **[作成]** ボタンをクリックして新しいソリューションを作成します。 
+1. **プロジェクト名**と**ソリューション名**を調整するか、既定値をそのまま使用し、[**作成**] ボタンをクリックして新しいソリューションを作成します。 
 
     [![](table-views-images/table04.png "The Project Name and Solution Name")](table-views-images/table04.png#lightbox)
-1. **Solution Pad**で、`Main.storyboard` ファイルをダブルクリックして、iOS Designer で開きます。 
+1. **Solution Pad**で、ファイルをダブルクリックし `Main.storyboard` て、iOS Designer で開きます。 
 
     [![](table-views-images/table05.png "The Main.storyboard file")](table-views-images/table05.png#lightbox)
 1. **既定のビューコントローラー**を選択して削除します。 
@@ -89,7 +89,7 @@ TvOS アプリでテーブルビューを操作する最も簡単な方法は、
 1. 既定では、**ナビゲーションビューコントローラー** 、左側に**テーブルビュー**コントローラー、右側に**ビューコントローラー**がある[分割ビュー](~/ios/tvos/user-interface/split-views.md)が表示されます。 これは、tvOS のテーブルビューで使用される Apple の推奨される使用方法です。 
 
     [![](table-views-images/table08.png "Add a Split View")](table-views-images/table08.png#lightbox)
-1. テーブルビューのすべての部分を選択し、 **[プロパティエクスプローラー]** の **[ウィジェット]** タブでカスタム**クラス名**を割り当てる必要があります。これによりC# 、後でコード内でアクセスできるようになります。 たとえば、**テーブルビューコントローラー**は次のようになります。 
+1. テーブルビューのすべての部分を選択し、[**プロパティエクスプローラー** ] の [**ウィジェット**] タブでカスタム**クラス名**を割り当てる必要があります。これにより、後で C# コードでアクセスできるようになります。 たとえば、**テーブルビューコントローラー**は次のようになります。 
 
     [![](table-views-images/table09.png "Assign a class name")](table-views-images/table09.png#lightbox)
 1. **テーブルビューコントローラー**、**テーブルビュー** 、および**プロトタイプセル**のカスタムクラスを作成していることを確認します。 次のように、作成時にカスタムクラスをプロジェクトツリーに追加 Visual Studio for Mac ます。 
@@ -98,27 +98,27 @@ TvOS アプリでテーブルビューを操作する最も簡単な方法は、
 1. 次に、デザインサーフェイスでテーブルビューを選択し、必要に応じてプロパティを調整します。 **プロトタイプセル**の数や**スタイル**(Plain またはグループ化) など。 
 
     [![](table-views-images/table11.png "The widget tab")](table-views-images/table11.png#lightbox)
-1. [**プロトタイプ] セル**ごとに、そのセルを選択し、 **[プロパティエクスプローラー]** の **[ウィジェット]** タブで一意の**識別子**を割り当てます。 この手順は、後でテーブルを設定するときにこの識別子が必要になるため、_非常に重要_です。 たとえば `AttrCell`次のようになります。 
+1. [**プロトタイプ] セル**ごとに、そのセルを選択し、[**プロパティエクスプローラー**] の [**ウィジェット**] タブで一意の**識別子**を割り当てます。 この手順は、後でテーブルを設定するときにこの識別子が必要になるため、_非常に重要_です。 例: `AttrCell` 
 
     [![](table-views-images/table12.png "The Widget Tab")](table-views-images/table12.png#lightbox)
-1. また、 **[スタイル]** ドロップダウンを使用してセルを[既定のテーブルビュー](#table-view-cell-types)の1つとして表示するか、 **[カスタム]** に設定して、デザインサーフェイスを使用して、他の UI ウィジェットを**ツールボックス**からドラッグしてセルをレイアウトすることもできます。 
+1. また、[**スタイル**] ドロップダウンを使用してセルを[既定のテーブルビュー](#table-view-cell-types)の1つとして表示するか、[**カスタム**] に設定して、デザインサーフェイスを使用して、他の UI ウィジェットを**ツールボックス**からドラッグしてセルをレイアウトすることもできます。 
 
     [![](table-views-images/table13.png "The cell layout")](table-views-images/table13.png#lightbox)
-1. **プロパティエクスプローラー**の **[ウィジェット]** タブで、プロトタイプセルのデザインの各 UI 要素に一意の**名前**を割り当てます。これにC#より、後でコードでアクセスできるようになります。 
+1. [**プロパティエクスプローラー** ] の [**ウィジェット**] タブで、プロトタイプセルのデザインの各 UI 要素に一意の**名前**を割り当てます。これにより、後で C# コードでアクセスできるようになります。 
 
     [![](table-views-images/table14.png "Assign a name")](table-views-images/table14.png#lightbox)
 1. テーブルビューのすべてのプロトタイプセルに対して上記の手順を繰り返します。
-1. 次に、UI デザインの残りの部分にカスタムクラスを割り当てます。詳細ビューをレイアウトし、詳細ビューの各 UI 要素に一意の**名前**を割り当てて、 C#でもアクセスできるようにします。 たとえば、次のように入力します。 
+1. 次に、UI デザインの残りの部分にカスタムクラスを割り当てます。詳細ビューをレイアウトし、詳細ビューの各 UI 要素に一意の**名前**を割り当てて、C# でもアクセスできるようにします。 たとえば次のようになります。 
 
     [![](table-views-images/table15.png "The UI layout")](table-views-images/table15.png#lightbox)
 1. ストーリーボードへの変更を保存します。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. Visual Studio で、新しい tvOS app プロジェクトを開始し、[ **tvOS** > **シングルビューアプリ**] を選択して、アプリの名前を入力します。 **[Ok]** をクリックして、新しいソリューションを作成します。 
+1. Visual Studio で、新しい tvOS app プロジェクトを開始し、[ **tvOS**  >  **Single View app] \ (シングルビューアプリ**の作成 \) を選択して、アプリの名前を入力します。 [ **Ok** ] をクリックして、新しいソリューションを作成します。 
 
     [![](table-views-images/table02-vs.png "Select Single View App")](table-views-images/table02-vs.png#lightbox)
-1. **ソリューションエクスプローラー**で、`Main.storyboard` ファイルをダブルクリックして、iOS Designer で開きます。 
+1. **ソリューションエクスプローラー**で、ファイルをダブルクリックし `Main.storyboard` て、iOS Designer で開きます。 
 
     [![](table-views-images/table05-vs.png "The Main.storyboard file")](table-views-images/table05-vs.png#lightbox)
 1. **既定のビューコントローラー**を選択して削除します。 
@@ -130,7 +130,7 @@ TvOS アプリでテーブルビューを操作する最も簡単な方法は、
 1. 既定では、**ナビゲーションビューコントローラー** 、左側に**テーブルビュー**コントローラー、右側に**ビューコントローラー**がある[分割ビュー](~/ios/tvos/user-interface/split-views.md)が表示されます。 これは、tvOS のテーブルビューで使用される Apple の推奨される使用方法です。 
 
     [![](table-views-images/table08-vs.png "Layout the UI")](table-views-images/table08-vs.png#lightbox)
-1. テーブルビューのすべての部分を選択し、 **[プロパティエクスプローラー]** の **[ウィジェット]** タブでカスタム**クラス名**を割り当てる必要があります。これによりC# 、後でコード内でアクセスできるようになります。 たとえば、**テーブルビューコントローラー**は次のようになります。 
+1. テーブルビューのすべての部分を選択し、[**プロパティエクスプローラー** ] の [**ウィジェット**] タブでカスタム**クラス名**を割り当てる必要があります。これにより、後で C# コードでアクセスできるようになります。 たとえば、**テーブルビューコントローラー**は次のようになります。 
 
     [![](table-views-images/table09-vs.png "The Widget Tab")](table-views-images/table09-vs.png#lightbox)
 1. **テーブルビューコントローラー**、**テーブルビュー** 、および**プロトタイプセル**のカスタムクラスを作成していることを確認します。 次のように、作成時にカスタムクラスをプロジェクトツリーに追加 Visual Studio for Mac ます。 
@@ -139,46 +139,46 @@ TvOS アプリでテーブルビューを操作する最も簡単な方法は、
 1. 次に、デザインサーフェイスでテーブルビューを選択し、必要に応じてプロパティを調整します。 **プロトタイプセル**の数や**スタイル**(Plain またはグループ化) など。 
 
     [![](table-views-images/table11-vs.png "The Widget Tab")](table-views-images/table11-vs.png#lightbox)
-1. [**プロトタイプ] セル**ごとに、そのセルを選択し、 **[プロパティエクスプローラー]** の **[ウィジェット]** タブで一意の**識別子**を割り当てます。 この手順は、後でテーブルを設定するときにこの識別子が必要になるため、_非常に重要_です。 たとえば `AttrCell`次のようになります。 
+1. [**プロトタイプ] セル**ごとに、そのセルを選択し、[**プロパティエクスプローラー**] の [**ウィジェット**] タブで一意の**識別子**を割り当てます。 この手順は、後でテーブルを設定するときにこの識別子が必要になるため、_非常に重要_です。 例: `AttrCell` 
 
     [![](table-views-images/table12-vs.png "Assign an Identifier")](table-views-images/table12-vs.png#lightbox)
-1. また、 **[スタイル]** ドロップダウンを使用してセルを[既定のテーブルビュー](#table-view-cell-types)の1つとして表示するか、 **[カスタム]** に設定して、デザインサーフェイスを使用して、他の UI ウィジェットを**ツールボックス**からドラッグしてセルをレイアウトすることもできます。 
+1. また、[**スタイル**] ドロップダウンを使用してセルを[既定のテーブルビュー](#table-view-cell-types)の1つとして表示するか、[**カスタム**] に設定して、デザインサーフェイスを使用して、他の UI ウィジェットを**ツールボックス**からドラッグしてセルをレイアウトすることもできます。 
 
     [![](table-views-images/table13-vs.png "The Style dropdown")](table-views-images/table13-vs.png#lightbox)
-1. **プロパティエクスプローラー**の **[ウィジェット]** タブで、プロトタイプセルのデザインの各 UI 要素に一意の**名前**を割り当てます。これにC#より、後でコードでアクセスできるようになります。 
+1. [**プロパティエクスプローラー** ] の [**ウィジェット**] タブで、プロトタイプセルのデザインの各 UI 要素に一意の**名前**を割り当てます。これにより、後で C# コードでアクセスできるようになります。 
 
     [![](table-views-images/table14-vs.png "The Widget Tab")](table-views-images/table14-vs.png#lightbox)
 1. テーブルビューのすべてのプロトタイプセルに対して上記の手順を繰り返します。
-1. 次に、UI デザインの残りの部分にカスタムクラスを割り当てます。詳細ビューをレイアウトし、詳細ビューの各 UI 要素に一意の**名前**を割り当てて、 C#でもアクセスできるようにします。 たとえば、次のように入力します。 
+1. 次に、UI デザインの残りの部分にカスタムクラスを割り当てます。詳細ビューをレイアウトし、詳細ビューの各 UI 要素に一意の**名前**を割り当てて、C# でもアクセスできるようにします。 たとえば次のようになります。 
 
     [![](table-views-images/table15.png "The UI Layout")](table-views-images/table15.png#lightbox)
 1. ストーリーボードへの変更を保存します。
 
 -----
 
-<a name="Designing-a-Data-Model" />
+<a name="Designing-a-Data-Model"></a>
 
 ## <a name="designing-a-data-model"></a>データモデルのデザイン
 
-テーブルビューに表示される情報を使いやすくし、詳細情報を簡単に表示できるようにするには (ユーザーがテーブルビューの行を選択または強調表示したときに)、表示される情報のデータモデルとして機能するカスタムクラスまたはクラスを作成します.
+テーブルビューに表示される情報を簡単に使用できるようにするには (ユーザーがテーブルビューの行を選択または強調表示したときに)、詳細情報を簡単に表示できるようにするには、表示される情報のデータモデルとして機能するカスタムクラスまたはクラスを作成します。
 
 旅行予約アプリの例を見てください。これには、ユーザーが選択できる**アトラクション**の一意のリストを含む**都市**の一覧が含まれています。 ユーザーは、引力を*お気に入り*としてマークすることができます。*引力を選択*し、特定の都市に*フライトを予約*します。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-**引力**のデータモデルを作成するには、 **Solution Pad**でプロジェクト名を右クリックし、[ > **新しいファイル**の**追加**] を選択します。**名前**として「`AttractionInformation`」と入力し、 **[新規]** ボタンをクリックします。 
+**引力**のデータモデルを作成するには、 **Solution Pad**でプロジェクト名を右クリックし、[ **Add**  >  **新しいファイル**の追加] を選択します。`AttractionInformation`**名前**として「」と入力し、[**新規**] ボタンをクリックします。 
 
 [![](table-views-images/data01.png "Enter AttractionInformation for the Name")](table-views-images/data01.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-**引力**のデータモデルを作成するには、**ソリューションエクスプローラー**でプロジェクト名を右クリックし、[ > **新しい項目**の**追加**] を選択します。 **[クラス]** を選択し、**名前**として「`AttractionInformation`」と入力して、 **[追加]** ボタンをクリックします。 
+**引力**のデータモデルを作成するには、**ソリューションエクスプローラー**でプロジェクト名を右クリックし、[ **Add**  >  **新しい項目**の追加] を選択します。[**クラス**] を選択し、名前として「」と入力 `AttractionInformation` して、[**追加**] ボタンをクリックします。 **Name** 
 
 [![](table-views-images/data01-vs.png "Select Class and enter AttractionInformation for the Name")](table-views-images/data01-vs.png#lightbox)
 
 -----
 
-`AttractionInformation.cs` ファイルを編集し、次のように表示します。
+ファイルを編集 `AttractionInformation.cs` し、次のように表示します。
 
 ```csharp
 using System;
@@ -212,21 +212,21 @@ namespace tvTable
 
 このクラスは、指定された**引力**に関する情報を格納するためのプロパティを提供します。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-次に、 **Solution Pad**でプロジェクト名を右クリックし、[ > **新しいファイル**の**追加**] を選択します。**名前**として「`CityInformation`」と入力し、 **[新規]** ボタンをクリックします。 
+次に、 **Solution Pad**でプロジェクト名を右クリックし、[ **Add**  >  **新しいファイル**の追加] を選択します。`CityInformation`**名前**として「」と入力し、[**新規**] ボタンをクリックします。 
 
 [![](table-views-images/data02.png "Enter CityInformation for the Name")](table-views-images/data02.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-次に、**ソリューションエクスプローラー**でプロジェクト名を右クリックし、[ > **新しい項目**の**追加**] を選択します。**名前**として「`CityInformation`」と入力し、 **[追加]** ボタンをクリックします。 
+次に、**ソリューションエクスプローラー**でプロジェクト名を右クリックし、[ **Add**  >  **新しい項目**の追加] を選択します。名前として「」と入力し、 `CityInformation` [**追加**] ボタンをクリックします。 **Name** 
 
 [![](table-views-images/data02-vs.png "Enter CityInformation for the Name")](table-views-images/data02-vs.png#lightbox)
 
 -----
 
-`CityInformation.cs` ファイルを編集し、次のように表示します。
+ファイルを編集 `CityInformation.cs` し、次のように表示します。
 
 ```csharp
 using System;
@@ -278,15 +278,15 @@ namespace tvTable
 }
 ```
 
-このクラスは、宛先の**市**に関するすべての情報を保持し、その都市の**アトラクション**のコレクションであり、2つのヘルパーメソッド (`AddAttraction`) を提供して、都市へのアトラクションの追加を容易にします。
+このクラスは、宛先の**都市**に関するすべての情報を保持し、その都市の**アトラクション**のコレクションであり、2つのヘルパーメソッド () を提供して、 `AddAttraction` 都市へのアトラクションの追加を容易にします。
 
-<a name="The-Table-Data-Source" />
+<a name="The-Table-Data-Source"></a>
 
 ## <a name="the-table-view-data-source"></a>テーブルビューのデータソース
 
-各テーブルビューでは、テーブルにデータを提供し、テーブルビューに必要な行を生成するために、データソース (`UITableViewDataSource`) が必要です。
+各テーブルビューでは、テーブル `UITableViewDataSource` のデータを提供し、テーブルビューで必要とされる必要な行を生成するために、データソース () が必要です。
 
-上記の例では、**ソリューションエクスプローラー**でプロジェクト名を右クリックし、[ > 新しいファイルの**追加** **...** ] を選択して `AttractionTableDatasource` を呼び出し、 **[新規]** ボタンをクリックして作成します。 次に、`AttractionTableDatasource.cs` ファイルを編集し、次のように表示します。
+上記の例では、**ソリューションエクスプローラー**でプロジェクト名を右クリックし、[新しいファイルの**追加**...] を選択して呼び出し、  >  **New File...** `AttractionTableDatasource` [**新規**作成] ボタンをクリックします。 次に、ファイルを編集 `AttractionTableDatasource.cs` し、次のように表示します。
 
 ```csharp
 using System;
@@ -403,7 +403,7 @@ public AttractionTableDatasource (AttractionTableViewController controller)
 }
 ```
 
-たとえば、`PopulateCities` 方法では、単にメモリ内にデータモデルオブジェクトを作成しますが、実際のアプリのデータベースや web サービスから簡単に読み取ることができます。
+たとえば、 `PopulateCities` メソッドは単にメモリ内にデータモデルオブジェクトを作成しますが、実際のアプリのデータベースや web サービスから簡単に読み取ることができます。
 
 ```csharp
 public void PopulateCities ()
@@ -418,7 +418,7 @@ public void PopulateCities ()
 }
 ```
 
-`NumberOfSections` メソッドは、テーブル内のセクションの数を返します。
+メソッドは、 `NumberOfSections` テーブル内のセクションの数を返します。
 
 ```csharp
 public override nint NumberOfSections (UITableView tableView)
@@ -430,7 +430,7 @@ public override nint NumberOfSections (UITableView tableView)
 
 **形式**がスタイルのテーブルビューでは、常に1を返します。
 
-`RowsInSection` メソッドは、現在のセクションの行数を返します。
+メソッドは、 `RowsInSection` 現在のセクション内の行の数を返します。
 
 ```csharp
 public override nint RowsInSection (UITableView tableView, nint section)
@@ -442,7 +442,7 @@ public override nint RowsInSection (UITableView tableView, nint section)
 
 この場合も、表**形式**のビューの場合は、データソース内の項目の合計数を返します。
 
-`TitleForHeader` メソッドは、指定されたセクションのタイトルを返します。
+メソッドは、 `TitleForHeader` 指定されたセクションのタイトルを返します。
 
 ```csharp
 public override string TitleForHeader (UITableView tableView, nint section)
@@ -452,9 +452,9 @@ public override string TitleForHeader (UITableView tableView, nint section)
 }
 ```
 
-**単純**なテーブルビューの種類の場合は、タイトルを空白のままにします (`""`)。
+**単純**なテーブルビューの種類の場合は、タイトルを空白のままに `""` します ()。
 
-最後に、テーブルビューによって要求された場合、`GetCell` メソッドを使用してプロトタイプセルを作成および設定します。 
+最後に、テーブルビューによって要求された場合は、メソッドを使用してプロトタイプセルを作成して設定し `GetCell` ます。 
 
 ```csharp
 public override UITableViewCell GetCell (UITableView tableView, Foundation.NSIndexPath indexPath)
@@ -470,15 +470,15 @@ public override UITableViewCell GetCell (UITableView tableView, Foundation.NSInd
 }
 ```
 
-`UITableViewDatasource`の操作の詳細については、Apple の[Uitableviewdatasource](https://developer.apple.com/library/prerelease/tvos/documentation/UIKit/Reference/UITableViewDataSource_Protocol/index.html#//apple_ref/doc/uid/TP40006941)のドキュメントを参照してください。
+の使用方法の詳細については `UITableViewDatasource` 、Apple の[Uitableviewdatasource](https://developer.apple.com/library/prerelease/tvos/documentation/UIKit/Reference/UITableViewDataSource_Protocol/index.html#//apple_ref/doc/uid/TP40006941)のドキュメントを参照してください。
 
-<a name="The-Table-View-Delegate" />
+<a name="The-Table-View-Delegate"></a>
 
 ## <a name="the-table-view-delegate"></a>テーブルビューデリゲート
 
-各テーブルビューでは、ユーザーの操作やテーブルのその他のシステムイベントに応答するために、デリゲート (`UITableViewDelegate`) が必要です。
+各テーブルビュー `UITableViewDelegate` では、ユーザーの操作やテーブルのその他のシステムイベントに応答するために、デリゲート () が必要です。
 
-上記の例では、**ソリューションエクスプローラー**でプロジェクト名を右クリックし、[ > 新しいファイルの**追加** **...** ] を選択して `AttractionTableDelegate` を呼び出し、 **[新規]** ボタンをクリックして作成します。 次に、`AttractionTableDelegate.cs` ファイルを編集し、次のように表示します。
+上記の例では、**ソリューションエクスプローラー**でプロジェクト名を右クリックし、[新しいファイルの**追加**...] を選択して呼び出し、  >  **New File...** `AttractionTableDelegate` [**新規**作成] ボタンをクリックします。 次に、ファイルを編集 `AttractionTableDelegate.cs` し、次のように表示します。
 
 ```csharp
 using System;
@@ -582,17 +582,17 @@ internal void RaiseAttractionHighlighted (AttractionInformation attraction)
 }
 ```
 
-`CanFocusRow` メソッドは、テーブルビューでフォーカスを取得しようとしている行ごとに呼び出されます。 行がフォーカスを得ることができる場合は `true` を返します。それ以外の場合は `false`を返します。 この例では、フォーカスを受け取るたびに各行で発生するカスタム `AttractionHighlighted` イベントを作成しました。
+`CanFocusRow`テーブルビューでフォーカスを取得しようとしている行ごとに、メソッドが呼び出されます。 `true`行がフォーカスを得ることができる場合はを返し、それ以外の場合はを返し `false` ます。 この例では、 `AttractionHighlighted` フォーカスを受け取るたびに各行で発生するカスタムイベントを作成しました。
 
-`UITableViewDelegate`の使用方法の詳細については、Apple の[Uitableviewdelegate](https://developer.apple.com/library/prerelease/tvos/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/doc/uid/TP40006942)に関するドキュメントを参照してください。
+の使用方法の詳細については `UITableViewDelegate` 、Apple の[Uitableviewdelegate](https://developer.apple.com/library/prerelease/tvos/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/doc/uid/TP40006942)に関するドキュメントを参照してください。
 
-<a name="The-Table-View-Cell" />
+<a name="The-Table-View-Cell"></a>
 
 ## <a name="the-table-view-cell"></a>テーブルビューセル
 
-インターフェイスデザイナーでテーブルビューに追加した各プロトタイプセルについても、テーブルビューセル (`UITableViewCell`) のカスタムインスタンスを作成して、新しいセル (行) を作成時に設定できるようにしました。
+インターフェイスデザイナーでテーブルビューに追加した各プロトタイプセルについても、テーブルビューのセル () のカスタムインスタンスを作成し `UITableViewCell` て、新しいセル (行) を作成時に設定できるようにしました。
 
-この例のアプリでは、`AttractionTableCell.cs` ファイルをダブルクリックして編集用に開き、次のように表示します。
+このサンプルアプリでは、ファイルをダブルクリックし `AttractionTableCell.cs` て編集用に開き、次のように表示します。
 
 ```csharp
 using System;
@@ -640,7 +640,7 @@ namespace tvTable
 }
 ```
 
-このクラスは、指定された行に表示される引力 Data Model オブジェクト (前述の`AttractionInformation`) のストレージを提供します。
+このクラスは、指定された行に表示される引力 Data Model オブジェクト (前述のとおり) のストレージを提供し `AttractionInformation` ます。
 
 ```csharp
 private AttractionInformation _attraction = null;
@@ -655,7 +655,7 @@ public AttractionInformation Attraction {
 }
 ```
 
-`UpdateUI` メソッドは、必要に応じて UI ウィジェット (インターフェイスデザイナーでセルのプロトタイプに追加されたもの) を設定します。
+メソッドは、 `UpdateUI` 必要に応じて UI ウィジェット (インターフェイスデザイナーでセルのプロトタイプに追加されたもの) を設定します。
 
 ```csharp
 private void UpdateUI ()
@@ -671,15 +671,15 @@ private void UpdateUI ()
 }
 ```
 
-`UITableViewCell`の操作の詳細については、Apple の[Uitableviewcell](https://developer.apple.com/library/prerelease/tvos/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/doc/uid/TP40006938)のドキュメントを参照してください。
+の使用方法の詳細については `UITableViewCell` 、Apple の[Uitableviewcell](https://developer.apple.com/library/prerelease/tvos/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/doc/uid/TP40006938)のドキュメントを参照してください。
 
-<a name="The-Table-View-Controller" />
+<a name="The-Table-View-Controller"></a>
 
 ## <a name="the-table-view-controller"></a>テーブルビューコントローラー
 
-テーブルビューコントローラー (`UITableViewController`) は、インターフェイスデザイナーを使用してストーリーボードに追加されたテーブルビューを管理します。
+テーブルビューコントローラー () は、 `UITableViewController` インターフェイスデザイナーを使用してストーリーボードに追加されたテーブルビューを管理します。
 
-この例のアプリでは、`AttractionTableViewController.cs` ファイルをダブルクリックして編集用に開き、次のように表示します。
+このサンプルアプリでは、ファイルをダブルクリックし `AttractionTableViewController.cs` て編集用に開き、次のように表示します。
 
 ```csharp
 using System;
@@ -721,27 +721,27 @@ namespace tvTable
 }
 ```
 
-このクラスについて詳しく見ていきましょう。 まず、テーブルビューの `DataSource` と `TableDelegate`に簡単にアクセスできるようにするショートカットを作成しました。 これらを後で使用して、分割ビューの左側にあるテーブルビューと右側の詳細ビューの間の通信を行います。
+このクラスについて詳しく見ていきましょう。 まず、テーブルビューのおよびに簡単にアクセスできるようにショートカットを作成しました `DataSource` `TableDelegate` 。 これらを後で使用して、分割ビューの左側にあるテーブルビューと右側の詳細ビューの間の通信を行います。
 
-最後に、テーブルビューがメモリに読み込まれたら、`AttractionTableDatasource` のインスタンスを作成し `AttractionTableDelegate` (上記の両方で作成した) をテーブルビューにアタッチします。
+最後に、テーブルビューがメモリに読み込まれるときに、とのインスタンスを作成 `AttractionTableDatasource` `AttractionTableDelegate` し (どちらも上記で作成したもの)、テーブルビューにアタッチします。
 
-`UITableViewController`の使用方法の詳細については、Apple の[Uitableviewcontroller](https://developer.apple.com/library/prerelease/tvos/documentation/UIKit/Reference/UITableViewController_Class/index.html#//apple_ref/doc/uid/TP40007523)のドキュメントを参照してください。
+の使用方法の詳細については `UITableViewController` 、Apple の[Uitableviewcontroller](https://developer.apple.com/library/prerelease/tvos/documentation/UIKit/Reference/UITableViewController_Class/index.html#//apple_ref/doc/uid/TP40007523)のドキュメントを参照してください。
 
-<a name="Pulling-it-All-Together" />
+<a name="Pulling-it-All-Together"></a>
 
 ## <a name="pulling-it-all-together"></a>すべてをまとめてプルする
 
-このドキュメントの冒頭で説明したように、通常、テーブルビューは[分割ビュー](~/ios/tvos/user-interface/split-views.md)の1つの側にナビゲーションとして表示され、選択した項目の詳細が反対側に表示されます。 (例: 
+このドキュメントの冒頭で説明したように、通常、テーブルビューは[分割ビュー](~/ios/tvos/user-interface/split-views.md)の1つの側にナビゲーションとして表示され、選択した項目の詳細が反対側に表示されます。 次に例を示します。 
 
 [![](table-views-images/intro01.png "Sample app run")](table-views-images/intro01.png#lightbox)
 
 これは tvOS の標準パターンなので、最後の手順を見て、すべてをまとめて、分割ビューの左右左右に相互作用させます。
 
-<a name="The-Detail-View" />
+<a name="The-Detail-View"></a>
 
 ### <a name="the-detail-view"></a>詳細ビュー
 
-上に示した旅行アプリの例では、詳細ビューとして分割ビューの右側に表示される標準ビューコントローラーに対して、カスタムクラス (`AttractionViewController`) が定義されています。
+上に示した旅行アプリの例では、 `AttractionViewController` 詳細ビューとして分割ビューの右側に表示される標準ビューコントローラーに対してカスタムクラス () が定義されています。
 
 ```csharp
 using System;
@@ -844,17 +844,17 @@ namespace tvTable
 }
 ```
 
-ここでは、プロパティとして表示される**引力**(`AttractionInformation`) を指定し、インターフェイスデザイナーのビューに追加された UI ウィジェットを設定する `UpdateUI` メソッドを作成しました。
+ここでは、 **Attraction** `AttractionInformation` プロパティとして表示される引力 () を指定し、 `UpdateUI` インターフェイスデザイナーのビューに追加された UI ウィジェットを設定するメソッドを作成しました。
 
-また、テーブルビュー (`AcctractionTableView`) に変更を反映するために使用する分割ビューコントローラー (`SplitView`) に戻るショートカットも定義しました。
+また、 `SplitView` テーブルビュー () に変更を反映するために使用する分割ビューコントローラー () に戻るショートカットも定義されてい `AcctractionTableView` ます。
 
-最後に、カスタムアクション (イベント) が、インターフェイスデザイナーで作成された3つの `UIButton` インスタンスに追加されました。これにより、ユーザーは引力を_お気に入り_としてマークし、引力_を表示し_て、特定の都市に_フライトを予約_できます。
+最後に、カスタムアクション (イベント) が、インターフェイスデザイナーで作成された3つのインスタンスに追加されました。これに `UIButton` より、 _Directions_ユーザーは引力を_お気に入り_としてマークし、引力に移動して、特定の都市に_フライトを Book_ことができます。
 
-<a name="The-Navigation-View-Controller" />
+<a name="The-Navigation-View-Controller"></a>
 
 ### <a name="the-navigation-view-controller"></a>ナビゲーションビューコントローラー
 
-テーブルビューコントローラーは分割ビューの左側にあるナビゲーションビューコントローラーに入れ子になっているため、ナビゲーションビューコントローラーにはインターフェイスデザイナーでカスタムクラス (`MasterNavigationController`) が割り当てられ、次のように定義されています。
+テーブルビューコントローラーは分割ビューの左側にあるナビゲーションビューコントローラーに入れ子になっているため、ナビゲーションビューコントローラーにはインターフェイスデザイナーでカスタムクラス () が割り当てられ、次のように定義されてい `MasterNavigationController` ます。
 
 ```csharp
 using System;
@@ -883,14 +883,14 @@ namespace tvTable
 
 ここでも、このクラスは、分割ビューコントローラーの2つの側での通信を容易にするいくつかのショートカットを定義しています。
 
-- `SplitView`-ナビゲーションビューコントローラーが属している分割ビューコントローラー (`MainSpiltViewController`) へのリンクです。
-- `TableController`-ナビゲーションビューコントローラーの最上位ビューとして表示されるテーブルビューコントローラー (`AttractionTableViewController`) を取得します。
+- `SplitView`- `MainSpiltViewController` ナビゲーションビューコントローラーが属している分割ビューコントローラー () へのリンクです。
+- `TableController`- `AttractionTableViewController` ナビゲーションビューコントローラーの最上位ビューとして表示されるテーブルビューコントローラー () を取得します。
 
-<a name="The-Split-View-Controller" />
+<a name="The-Split-View-Controller"></a>
 
 ### <a name="the-split-view-controller"></a>分割ビューコントローラー
 
-分割ビューコントローラーはアプリケーションのベースであるため、インターフェイスデザイナーでカスタムクラス (`MasterSplitViewController`) を作成し、次のように定義しました。
+分割ビューコントローラーはアプリケーションのベースであるため、インターフェイスデザイナーでカスタムクラス () を作成 `MasterSplitViewController` し、次のように定義しました。
 
 ```csharp
 using System;
@@ -937,9 +937,9 @@ namespace tvTable
 }
 ```
 
-まず、分割ビューの**詳細**側 (`AttractionViewController`) と**マスター**側 (`MasterNavigationController`) へのショートカットを作成します。 この場合も、2つの側の間での通信が容易になります。
+まず、分割ビュー ( **Details** `AttractionViewController` ) と**マスター**側 () の詳細な側面へのショートカットを作成し `MasterNavigationController` ます。 この場合も、2つの側の間での通信が容易になります。
 
-次に、分割ビューをメモリに読み込むときに、分割ビューコントローラーを分割ビューの両側に接続し、ユーザーに応答します。これに**より、テーブル**ビューの引力を強調表示します (`AttractionHighlighted`)。分割ビュー。
+次に、分割ビューがメモリに読み込まれるときに、分割ビューの両側に分割ビューコントローラーをアタッチし、テーブルビュー () の引力を強調表示しているユーザーに応答し `AttractionHighlighted` ます。これにより、分割ビューの**詳細**側に新しい引力が表示されます。
 
 分割ビュー内のテーブルビューの完全な実装については、 [tvTables](https://docs.microsoft.com/samples/xamarin/ios-samples/tvos-tvtable)サンプルアプリを参照してください。
 
@@ -947,7 +947,7 @@ namespace tvTable
 
 TvOS は iOS に基づいているため、テーブルビューとテーブルビューコントローラーは同様の方法で設計および動作します。 Xamarin アプリでテーブルビューを操作する方法の詳細については、[テーブルとセルの操作](~/ios/user-interface/controls/tables/index.md)に関するドキュメントを参照してください。
 
-<a name="Summary" />
+<a name="Summary"></a>
 
 ## <a name="summary"></a>まとめ
 

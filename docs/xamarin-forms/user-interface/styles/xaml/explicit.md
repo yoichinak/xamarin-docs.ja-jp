@@ -1,30 +1,33 @@
 ---
-title: Xamarin.Forms での明示的なスタイル
-description: 明示的なスタイルでは、コントロールにスタイル プロパティを設定して選択的に適用される 1 つです。 この記事では、Xamarin.Forms アプリケーションで明示的なスタイルを使用する方法について説明します。
+title: での明示的なスタイルXamarin.Forms
+description: 明示的なスタイルとは、スタイルプロパティを設定することによってコントロールに選択的に適用されるスタイルです。 この記事では、アプリケーションで明示的なスタイルを使用する方法について説明 Xamarin.Forms します。
 ms.prod: xamarin
 ms.assetid: C0DF9F8F-B431-4374-A574-325BC3C41A3B
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 02/17/2016
-ms.openlocfilehash: b7888ea29dd02733059346bca21fec0a4c510c2e
-ms.sourcegitcommit: c9651cad80c2865bc628349d30e82721c01ddb4a
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 62b84a5028c17c28a69a887a832028c2064fa78d
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/03/2019
-ms.locfileid: "70228003"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84136267"
 ---
-# <a name="explicit-styles-in-xamarinforms"></a>Xamarin.Forms での明示的なスタイル
+# <a name="explicit-styles-in-xamarinforms"></a>での明示的なスタイルXamarin.Forms
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
-_明示的なスタイルでは、コントロールにスタイル プロパティを設定して選択的に適用される 1 つです。_
+_明示的なスタイルとは、スタイルプロパティを設定することによってコントロールに選択的に適用されるスタイルです。_
 
 ## <a name="create-an-explicit-style-in-xaml"></a>XAML での明示的なスタイルの作成
 
-宣言する、 [ `Style` ](xref:Xamarin.Forms.Style)ページ レベル、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)ページと、1 つ以上を追加する必要があります`Style`に宣言を含めることができます、`ResourceDictionary`します。 A`Style`される*明示的な*宣言の提供することにより、 `x:Key` 、属性のわかりやすいキーを与える、 `ResourceDictionary`。 *明示的な*を設定して固有のビジュアル要素にスタイルが適用しする必要があります、 [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)プロパティ。
+ページレベルでを宣言するには、 [`Style`](xref:Xamarin.Forms.Style) を [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) ページに追加し、1つ以上の宣言をに含める必要があり `Style` `ResourceDictionary` ます。 は、の `Style` 宣言に属性を指定することによって*明示的*に作成されます。これにより `x:Key` 、に説明的なキーが与えられ `ResourceDictionary` ます。 その後、プロパティを設定することによって、*明示的*なスタイルを特定のビジュアル要素に適用する必要があり [`Style`](xref:Xamarin.Forms.NavigableElement.Style) ます。
 
-次のコード例に示す*明示的な*スタイルがページの XAML で宣言された`ResourceDictionary`をページの適用と[ `Label` ](xref:Xamarin.Forms.Label)インスタンス。
+次のコード例は、ページのインスタンスに適用される XAML で宣言された*明示的*なスタイル `ResourceDictionary` を示してい [`Label`](xref:Xamarin.Forms.Label) ます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.ExplicitStylesPage" Title="Explicit" IconImageSource="xaml.png">
@@ -64,15 +67,15 @@ _明示的なスタイルでは、コントロールにスタイル プロパテ
 </ContentPage>
 ```
 
-[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)定義 3*明示的な*をページの適用されるスタイル[ `Label` ](xref:Xamarin.Forms.Label)インスタンス。 各`Style`も、フォント サイズと水平方向および垂直方向のレイアウト オプションを設定中には、異なる色でテキストを表示するために使用します。 各`Style`別に適用される`Label`を設定してその[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)プロパティを使用して、`StaticResource`マークアップ拡張機能。 次のスクリーン ショットに示すように外観が発生します。
+は、 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) ページのインスタンスに適用される3つの*明示的*なスタイルを定義し [`Label`](xref:Xamarin.Forms.Label) ます。 各 `Style` は、テキストを別の色で表示するために使用されます。また、フォントサイズ、水平および垂直方向のレイアウトオプションも設定します。 各 `Style` は、 `Label` [`Style`](xref:Xamarin.Forms.NavigableElement.Style) マークアップ拡張機能を使用してプロパティを設定することによって、別のに適用され `StaticResource` ます。 この結果、次のスクリーンショットに示すような外観が表示されます。
 
 [![明示的スタイルの例](explicit-images/explicit-styles.png)](explicit-images/explicit-styles-large.png#lightbox)
 
-さらに、最終的な[ `Label` ](xref:Xamarin.Forms.Label)が、 [ `Style` ](xref:Xamarin.Forms.Style)それに適用されますもオーバーライド、 [ `TextColor` ](xref:Xamarin.Forms.Label.TextColor)プロパティをさまざまな`Color`値。
+さらに、最終的なにはが [`Label`](xref:Xamarin.Forms.Label) [`Style`](xref:Xamarin.Forms.Style) 適用されますが、プロパティが別の値にオーバーライドされることもあり [`TextColor`](xref:Xamarin.Forms.Label.TextColor) `Color` ます。
 
 ### <a name="create-an-explicit-style-at-the-control-level"></a>コントロールレベルでの明示的なスタイルの作成
 
-作成するだけでなく*明示的な*ページ レベルでスタイルを作成することも制御レベルでは、次のコード例に示すようにします。
+次のコード例に示すように、*明示的*なスタイルをページレベルで作成するだけでなく、コントロールレベルで作成することもできます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.ExplicitStylesPage" Title="Explicit" IconImageSource="xaml.png">
@@ -93,13 +96,13 @@ _明示的なスタイルでは、コントロールにスタイル プロパテ
 </ContentPage>
 ```
 
-この例で、*明示的な* [ `Style` ](xref:Xamarin.Forms.Style)に割り当てられているインスタンス、 [ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources)のコレクション、 [ `StackLayout` ](xref:Xamarin.Forms.StackLayout)コントロール。 スタイルは、コントロールとその子に適用できます。
+この例では、*明示的* [`Style`](xref:Xamarin.Forms.Style) なインスタンスがコントロールのコレクションに割り当てられてい [`Resources`](xref:Xamarin.Forms.VisualElement.Resources) [`StackLayout`](xref:Xamarin.Forms.StackLayout) ます。 スタイルは、コントロールとその子に適用できます。
 
-アプリケーションのスタイルを作成する方法について[ `ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)を参照してください[グローバル スタイル](~/xamarin-forms/user-interface/styles/application.md)します。
+アプリケーションのでスタイルを作成する方法の詳細につい [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) ては、「[グローバルスタイル](~/xamarin-forms/user-interface/styles/application.md)」を参照してください。
 
-## <a name="create-an-explicit-style-in-c35"></a>C での明示的なスタイルの作成&#35;
+## <a name="create-an-explicit-style-in-c35"></a>C&#35; での明示的なスタイルの作成
 
-[`Style`](xref:Xamarin.Forms.Style) ページのインスタンスを追加することができます[ `Resources` ](xref:Xamarin.Forms.VisualElement.Resources)新しいを作成して C# でのコレクション[ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)、追加してから、`Style`インスタンスを`ResourceDictionary`ように、次のコード例:
+[`Style`](xref:Xamarin.Forms.Style)C# のページコレクションにインスタンスを追加するには、 [`Resources`](xref:Xamarin.Forms.VisualElement.Resources) [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 次の `Style` `ResourceDictionary` コード例に示すように、新しいを作成し、インスタンスをに追加します。
 
 ```csharp
 public class ExplicitStylesPageCS : ContentPage
@@ -147,9 +150,9 @@ public class ExplicitStylesPageCS : ContentPage
 }
 ```
 
-3 つのコンストラクターが定義*明示的な*をページの適用されるスタイル[ `Label` ](xref:Xamarin.Forms.Label)インスタンス。 各*明示的な* [ `Style` ](xref:Xamarin.Forms.Style)に追加されます、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)を使用して、 [ `Add` ](xref:Xamarin.Forms.ResourceDictionary.Add(System.String,System.Object))メソッドを指定する、`key`を参照する文字列、`Style`インスタンス。 各`Style`別に適用される`Label`を設定して、 [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)プロパティ。
+コンストラクターは、ページのインスタンスに適用される3つの*明示的*なスタイルを定義し [`Label`](xref:Xamarin.Forms.Label) ます。 各*明示的* [`Style`](xref:Xamarin.Forms.Style) なは、 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) メソッドを使用して、 [`Add`](xref:Xamarin.Forms.ResourceDictionary.Add(System.String,System.Object)) `key` インスタンスを参照する文字列を指定してに追加され `Style` ます。 それぞれの `Style` プロパティを設定する `Label` ことによって、それぞれが異なるに適用され [`Style`](xref:Xamarin.Forms.NavigableElement.Style) ます。
 
-ただし、使用する利点はありません、 [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)ここです。 代わりに、 [ `Style` ](xref:Xamarin.Forms.Style)インスタンスに直接割り当てることができる、 [ `Style` ](xref:Xamarin.Forms.NavigableElement.Style) 、必要なビジュアル要素のプロパティと`ResourceDictionary`次に示すように、削除することができますコード例:
+ただし、ここではを使用する利点はありません [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 。 代わりに、 [`Style`](xref:Xamarin.Forms.Style) [`Style`](xref:Xamarin.Forms.NavigableElement.Style) 次のコード例に示すように、インスタンスを必要なビジュアル要素のプロパティに直接割り当てることができ、を `ResourceDictionary` 削除できます。
 
 ```csharp
 public class ExplicitStylesPageCS : ContentPage
@@ -179,13 +182,13 @@ public class ExplicitStylesPageCS : ContentPage
 }
 ```
 
-3 つのコンストラクターが定義*明示的な*をページの適用されるスタイル[ `Label` ](xref:Xamarin.Forms.Label)インスタンス。 各`Style`も、フォント サイズと水平方向および垂直方向のレイアウト オプションを設定中には、異なる色でテキストを表示するために使用します。 各`Style`別に適用される`Label`を設定してその[ `Style` ](xref:Xamarin.Forms.NavigableElement.Style)プロパティ。 さらに、最終的な`Label`が、`Style`それに適用されますもオーバーライド、`TextColor`プロパティを異なる`Color`値。
+コンストラクターは、ページのインスタンスに適用される3つの*明示的*なスタイルを定義し [`Label`](xref:Xamarin.Forms.Label) ます。 各 `Style` は、テキストを別の色で表示するために使用されます。また、フォントサイズ、水平および垂直方向のレイアウトオプションも設定します。 各 `Style` は、 `Label` そのプロパティを設定することによって、別のに適用され [`Style`](xref:Xamarin.Forms.NavigableElement.Style) ます。 さらに、最終的なにはが `Label` `Style` 適用されますが、プロパティが別の値にオーバーライドされることもあり `TextColor` `Color` ます。
 
 ## <a name="related-links"></a>関連リンク
 
 - [XAML マークアップ拡張](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [基本的なスタイル (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
-- [スタイル (サンプル) を使用します。](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
+- [基本スタイル (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+- [スタイルの使用 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
-- [スタイル](xref:Xamarin.Forms.Style)
-- [Set アクセス操作子](xref:Xamarin.Forms.Setter)
+- [Style](xref:Xamarin.Forms.Style)
+- [Setter](xref:Xamarin.Forms.Setter)

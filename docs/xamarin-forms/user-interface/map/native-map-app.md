@@ -1,29 +1,32 @@
 ---
-title: Xamarin.Forms からネイティブマップアプリを起動する
-description: 各プラットフォームのネイティブマップアプリは、Xamarin.Essentials ランチャークラスによって Xamarin.Forms アプリケーションから起動できます。
+title: からネイティブマップアプリを起動します。Xamarin.Forms
+description: 各プラットフォーム上のネイティブマップアプリは、 Xamarin.Forms ランチャークラスによってアプリケーションから起動でき Xamarin.Essentials ます。
 ms.prod: xamarin
 ms.assetid: 5CF7CD67-3F20-4D80-B99E-D35A5FD1019A
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/30/2019
-ms.openlocfilehash: 54776d28bb75b152a6402e4d531d1baa4f724cba
-ms.sourcegitcommit: 3ea19e3a51515b30349d03c70a5b3acd7eca7fe7
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: c135d5dd02bba5102f5a93132f079526c84865d5
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73426325"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84129339"
 ---
-# <a name="launch-the-native-map-app-from-xamarinforms"></a>Xamarin.Forms からネイティブマップアプリを起動する
+# <a name="launch-the-native-map-app-from-xamarinforms"></a>からネイティブマップアプリを起動します。Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
-各プラットフォームのネイティブマップアプリは、xamarin.Essentials `Launcher` クラスを使用して Xamarin アプリケーションから起動できます。 このクラスを使用すると、アプリケーションは、カスタム URI スキームを使用して別のアプリを開くことができます。 ランチャー機能は、`OpenAsync` メソッドを使用して呼び出すことができます。これを行うには、開くカスタム URL スキームを表す `string` または `Uri` 引数を渡します。 Xamarin の詳細については、「 [Xamarin.Essentials](~/essentials/index.md?context=xamarin/xamarin-forms)」を参照してください。
+各プラットフォームのネイティブマップアプリは、 Xamarin.Forms クラスによってアプリケーションから起動でき Xamarin.Essentials `Launcher` ます。 このクラスを使用すると、アプリケーションは、カスタム URI スキームを使用して別のアプリを開くことができます。 ランチャー機能は、メソッドを使用して呼び出すことができ `OpenAsync` ます。これを行うに `string` は、 `Uri` 開くカスタム URL スキームを表すまたは引数を渡します。 の詳細について Xamarin.Essentials は、「」を参照してください [Xamarin.Essentials](~/essentials/index.md?context=xamarin/xamarin-forms) 。
 
 > [!NOTE]
-> Xamarin `Launcher` クラスを使用する代わりに、`Map` クラスを使用することもできます。 詳細については、「 [Xamarin.Essentials: Map](~/essentials/maps.md?context=xamarin/xamarin-forms)」を参照してください。
+> クラスを使用する代わりに、クラスを使用すること Xamarin.Essentials `Launcher` も `Map` できます。 詳細については、「 [ Xamarin.Essentials Map](~/essentials/maps.md?context=xamarin/xamarin-forms)」を参照してください。
 
-各プラットフォームの maps アプリでは、一意のカスタム URI スキームが使用されます。 IOS での maps URI スキームの詳細については、developer.apple.com で「[Map Links](https://developer.apple.com/library/archive/featuredarticles/iPhoneURLScheme_Reference/MapLinks/MapLinks.html)」を参照してください。 Android の maps URI スキームの詳細については、developers.android.com で「[Maps 開発者ガイド](https://developer.android.com/guide/components/intents-common.html#Maps)」および「[Android 用の Google maps インテント](https://developers.google.com/maps/documentation/urls/android-intents)」を参照してください。 ユニバーサル Windows プラットフォーム (UWP) のマップ URI スキームの詳細については、「 [Windows maps アプリを起動する](/windows/uwp/launch-resume/launch-maps-app)」を参照してください。
+各プラットフォームの maps アプリでは、一意のカスタム URI スキームが使用されます。 IOS での maps URI スキームの詳細については、「 [Map Links](https://developer.apple.com/library/archive/featuredarticles/iPhoneURLScheme_Reference/MapLinks/MapLinks.html) on developer.apple.com」を参照してください。 Android の maps URI スキームの詳細については、「 [Maps 開発者ガイド](https://developer.android.com/guide/components/intents-common.html#Maps)」および「developers.android.com で[の Android 用の Google maps インテント](https://developers.google.com/maps/documentation/urls/android-intents)」を参照してください。 ユニバーサル Windows プラットフォーム (UWP) のマップ URI スキームの詳細については、「 [Windows maps アプリを起動する](/windows/uwp/launch-resume/launch-maps-app)」を参照してください。
 
 ## <a name="launch-the-map-app-at-a-specific-location"></a>特定の場所でマップアプリを起動する
 
@@ -82,4 +85,4 @@ else if (Device.RuntimePlatform == Device.UWP)
 - [マップリンク](https://developer.apple.com/library/archive/featuredarticles/iPhoneURLScheme_Reference/MapLinks/MapLinks.html)
 - [Maps 開発者ガイド](https://developer.android.com/guide/components/intents-common.html#Maps)
 - [Android 向けの Google Maps インテント](https://developers.google.com/maps/documentation/)
-- [Windows Maps アプリを起動する](/windows/uwp/launch-resume/launch-maps-app)
+- [Windows マップ アプリの起動](/windows/uwp/launch-resume/launch-maps-app)

@@ -5,12 +5,15 @@ ms.assetid: 64DD0D41-03E2-40DD-9EC8-101CA0ED852B
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 7682afd26bc09e467c5badbea25c9d478c7bb842
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: b01bc1fd9c65186952635c5f472b1ac6beb0c9bd
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70226805"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802289"
 ---
 # <a name="xamarinessentials-magnetometer"></a>Xamarin.Essentials:磁力計
 
@@ -22,7 +25,7 @@ ms.locfileid: "70226805"
 
 ## <a name="using-magnetometer"></a>Magnetometer の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
@@ -77,5 +80,5 @@ public class MagnetometerTest
 
 ## <a name="api"></a>API
 
-- [Magnetometer のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Magnetometer)
+- [Magnetometer のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Magnetometer)
 - [Magnetometer API のドキュメント](xref:Xamarin.Essentials.Magnetometer)

@@ -1,16 +1,20 @@
 ---
 title: Xamarin.Essentials:ダイヤラー
-description: Xamarin.Essentials の PhoneDialer クラスを使用すると、アプリケーションからダイヤラーで電話番号を開くことができます。
+description: Xamarin.Essentials の PhoneDialer クラスを使用すると、アプリケーションからダイヤラーで電話番号を開くことができます
 ms.assetid: E7457942-4D7B-4195-A2FF-417919B9537F
 author: jamesmontemagno
+ms.custom: video
 ms.author: jamont
 ms.date: 07/02/2019
-ms.openlocfilehash: 0b00307759d95b8e2efe27bd9a17d2c6efd3d5c0
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: d642005e9aed663570c251e955c6a3af4704ed5c
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "67538683"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84802211"
 ---
 # <a name="xamarinessentials-phone-dialer"></a>Xamarin.Essentials:ダイヤラー
 
@@ -22,7 +26,7 @@ ms.locfileid: "67538683"
 
 ## <a name="using-phone-dialer"></a>PhoneDialer の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
@@ -57,5 +61,11 @@ public class PhoneDialerTest
 
 ## <a name="api"></a>API
 
-- [PhoneDialer のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/PhoneDialer)
+- [PhoneDialer のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/PhoneDialer)
 - [PhoneDialer API のドキュメント](xref:Xamarin.Essentials.PhoneDialer)
+
+## <a name="related-video"></a>関連ビデオ
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Phone-Dialer-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

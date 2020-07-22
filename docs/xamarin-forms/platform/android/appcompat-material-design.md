@@ -1,37 +1,41 @@
 ---
 title: AppCompat とマテリアルデザインの追加
-description: この記事では、既存の Xamarin Android アプリを変換して、AppCompat とマテリアル設計を使用する方法について説明します。
+description: この記事では、既存の Android アプリを変換して Xamarin.Forms 、AppCompat とマテリアル設計を使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 045FBCDF-4D45-48BB-9911-BD3938C87D58
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/27/2017
-ms.openlocfilehash: 36c5733c347e3493b5ed423c52766c7e33fbdb3d
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 24206f6d6764c73f13a4b06fb44fa746f9d353af
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728331"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84135708"
 ---
 # <a name="adding-appcompat-and-material-design"></a>AppCompat とマテリアルデザインの追加
 
-_次の手順に従って、既存の Xamarin. Forms Android アプリを変換して、AppCompat とマテリアル設計を使用する_
+_次の手順に従って既存の Xamarin.Forms Android アプリを変換して、AppCompat とマテリアル設計を使用します。_
 
 <!-- source https://gist.github.com/jassmith/a3b2a543f99126782936
 https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ -->
 
-## <a name="overview"></a>の概要
+## <a name="overview"></a>概要
 
-次の手順では、既存の Xamarin. Forms Android アプリケーションを更新して AppCompat ライブラリを使用し、Android バージョンの Xamarin. Forms アプリで素材の設計を有効にする方法について説明します。
+次の手順では、既存の android アプリケーションを更新して Xamarin.Forms AppCompat ライブラリを使用し、android バージョンのアプリで素材の設計を有効にする方法について説明し Xamarin.Forms ます。
 
-### <a name="1-update-xamarinforms"></a>1. Xamarin. フォームを更新する
+### <a name="1-update-xamarinforms"></a>1. 更新Xamarin.Forms
 
-ソリューションが Xamarin. Forms 2.0 以降を使用していることを確認します。 必要に応じて、Xamarin. Forms NuGet パッケージを2.0 に更新します。
+ソリューションが2.0 以降を使用していることを確認し Xamarin.Forms ます。 を更新します。Xamarin.Forms
+  必要に応じて、NuGet パッケージを2.0 にします。
 
 ### <a name="2-check-android-version"></a>2. Android のバージョンを確認する
 
-Android プロジェクトのターゲットフレームワークが Android 6.0 (Marshmallow) であることを確認します。 **Android プロジェクト > オプション > ビルド > 全般設定**をオンにして、corrent フレームワークが選択されていることを確認します。
+Android プロジェクトのターゲットフレームワークが Android 6.0 (Marshmallow) であることを確認します。 **Android プロジェクト > オプション > ビルド > 全般設定]** をオンにして、corrent フレームワークが選択されていることを確認します。
 
  ![](appcompat-images/target-android-6-sml.png "Android General Build Configuration")
 
@@ -39,7 +43,7 @@ Android プロジェクトのターゲットフレームワークが Android 6.0
 
 Android プロジェクトに次の3つのファイルを作成し、以下の内容を貼り付けます。 Google には、[スタイルガイド](https://www.google.com/design/spec/style/color.html#color-color-palette)と[カラーパレットジェネレーター](https://www.materialpalette.com/)が用意されています。このジェネレーターを使用すると、指定した配色に対して代替配色を選択できます。
 
-**Resources/values/colors.xml**
+**リソース/値/colors.xml**
 
 ```xml
 <resources>
@@ -50,7 +54,7 @@ Android プロジェクトに次の3つのファイルを作成し、以下の�
 </resources>
 ```
 
-**Resources/values/style.xml**
+**リソース/値/style.xml**
 
 ```xml
 <resources>
@@ -68,7 +72,7 @@ Android プロジェクトに次の3つのファイルを作成し、以下の�
 
 Android ロリポップ以降で実行するときに特定のプロパティを適用するには、 **v21**フォルダーに追加のスタイルを含める必要があります。
 
-**Resources/values-v21/style.xml**
+**リソース/値-v21/style.xml**
 
 ```xml
 <resources>
@@ -80,11 +84,11 @@ Android ロリポップ以降で実行するときに特定のプロパティを
 </resources>
 ```
 
-### <a name="4-update-androidmanifestxml"></a>4. Update AndroidManifest .xml
+### <a name="4-update-androidmanifestxml"></a>4. AndroidManifest.xml を更新する
 
-この新しいテーマ情報が使用されるようにするには、`android:theme="@style/MyTheme"` を追加して**Androidmanifest**ファイルのテーマを設定します (XML の残りの部分はそのままにします)。
+この新しいテーマ情報が使用されていることを確認するには、を追加して**Androidmanifest**ファイルのテーマを設定し `android:theme="@style/MyTheme"` ます (XML の残りの部分はそのままにします)。
 
-**Properties/AndroidManifest.xml**
+**プロパティ/AndroidManifest.xml**
 
 ```xml
 ...
@@ -97,7 +101,7 @@ Android ロリポップ以降で実行するときに特定のプロパティを
 
 **Resources/layout**ディレクトリに**tabbar. Axml**ファイルと**Toolbar. axml**ファイルを作成し、以下の内容を貼り付けます。
 
-**Resources/layout/Tabbar.axml**
+**Resources/layout/Tabbar. axml**
 
 ```xml
 <android.support.design.widget.TabLayout
@@ -113,7 +117,7 @@ Android ロリポップ以降で実行するときに特定のプロパティを
     app:tabMode="fixed" />
 ```
 
-タブのいくつかのプロパティが設定されています。これには、`fill` に対するタブの重心、`fixed`のモードが含まれます。
+タブのいくつかのプロパティが設定されています。これには、タブの [重力] `fill` と [モード] を含め `fixed` ます。
 多数のタブがある場合、詳細については、Android [TabLayout のドキュメント](https://developer.android.com/reference/android/support/design/widget/TabLayout.html)を参照してください。
 
 **Resources/layout/Toolbar. axml**
@@ -135,9 +139,9 @@ Android ロリポップ以降で実行するときに特定のプロパティを
 これらのファイルでは、アプリケーションによって異なる可能性があるツールバーの特定のテーマを作成しています。
 詳細については、 [Hello ツールバー](https://blog.xamarin.com/android-tips-hello-toolbar-goodbye-action-bar/)のブログ記事を参照してください。
 
-### <a name="6-update-the-mainactivity"></a>6. `MainActivity` を更新する
+### <a name="6-update-the-mainactivity"></a>6.`MainActivity`
 
-既存の Xamarin. Forms アプリでは、 **MainActivity.cs**クラスは `FormsApplicationActivity`から継承します。 新しい機能を有効にするには、これを `FormsAppCompatActivity` に置き換える必要があります。
+既存の Xamarin.Forms アプリでは、 **MainActivity.cs**クラスはを継承 `FormsApplicationActivity` します。 `FormsAppCompatActivity`新しい機能を有効にするには、これをに置き換える必要があります。
 
 **MainActivity.cs**
 
@@ -145,7 +149,7 @@ Android ロリポップ以降で実行するときに特定のプロパティを
 public class MainActivity : FormsAppCompatActivity  // was FormsApplicationActivity
 ```
 
-最後に、次に示すように、`OnCreate` メソッドの手順 5. の新しいレイアウトを "接続" します。
+最後に、次に示すように、メソッドの手順 5. の新しいレイアウトを "接続" し `OnCreate` ます。
 
 ```csharp
 protected override void OnCreate(Bundle bundle)

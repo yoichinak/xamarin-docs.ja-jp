@@ -1,6 +1,6 @@
 ---
 title: 右から左へのローカライズ
-description: 右から左へのローカライズでは、右から左へのフロー方向のサポートが Xamarin.Forms アプリケーションに追加されます。
+description: 右から左へのローカライズでは、Xamarin.Forms アプリケーションに、右から左へのフロー方向のサポートが追加されます。
 ms.prod: xamarin
 ms.assetid: 90E0CB16-C42A-4CC8-A70E-0C2CFB64A429
 ms.technology: xamarin-forms
@@ -8,18 +8,21 @@ ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
 ms.date: 05/07/2018
-ms.openlocfilehash: a6eb3167fd0880984a74245c4653642ea3979354
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 212674472706a36c66436a3955ab7b988f8e246b
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "72678837"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137554"
 ---
 # <a name="right-to-left-localization"></a>右から左へのローカライズ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todolocalizedrtl)
 
-_右から左へのローカライズでは、右から左へのフロー方向のサポートが Xamarin.Forms アプリケーションに追加されます。_
+_右から左へのローカライズでは、Xamarin.Forms アプリケーションに、右から左へのフロー方向のサポートが追加されます。_
 
 > [!NOTE]
 > 右から左へのローカライズには、iOS 9 以上、および Android の API 17 以上を使用する必要があります。
@@ -120,7 +123,7 @@ using System.Resources;
 
 ## <a name="limitations"></a>制限事項
 
-現在、Xamarin.Forms の右から左へのローカライズには、いくつかの制限があります。
+Xamarin.Forms での右から左へのローカライズには、現在いくつかの制限があります。
 
 - [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) のボタンの場所、ツール バー項目の場所、および切り替えアニメーションは、[`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) プロパティではなく、デバイスのロケールによって制御されます。
 - [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) のスワイプ方向は反転されません。
@@ -190,7 +193,7 @@ Window.DecorView.LayoutDirection = LayoutDirection.Rtl;
 
 > [!VIDEO https://youtube.com/embed/f2lQ5yw3iiU]
 
-**Xamarin.Forms 3.0 での右から左方向のサポートのビデオ**
+**Xamarin.Forms 3.0 での右から左方向へのサポートに関するビデオ**
 
 ## <a name="related-links"></a>関連リンク
 

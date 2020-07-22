@@ -3,14 +3,18 @@ title: Xamarin.Essentials:振動
 description: このドキュメントでは、バイブレーション機能を開始して一定時間後に停止することができる Xamarin.Essentials の Vibration クラスについて説明します。
 ms.assetid: 7E8B24C4-2625-4DAE-A129-383542D34F1E
 author: jamesmontemagno
+ms.custom: video
 ms.author: jamont
 ms.date: 11/04/2018
-ms.openlocfilehash: 2e4cf713f9ad7478c0d8e288fd3beff4b5015ef5
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: e2ed2dfdca6b6811089d4dbb5d6e90e794c79591
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "70120116"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84801804"
 ---
 # <a name="xamarinessentials-vibration"></a>Xamarin.Essentials:振動
 
@@ -54,7 +58,7 @@ Vibrate アクセス許可が必要です。Android プロジェクト内で構�
 
 ## <a name="using-vibration"></a>Vibration の使用
 
-自分のクラスに Xamarin.Essentials への参照を追加します。
+クラスの Xamarin.Essentials への参照を追加します。
 
 ```csharp
 using Xamarin.Essentials;
@@ -119,5 +123,11 @@ catch (Exception ex)
 
 ## <a name="api"></a>API
 
-- [Vibration のソース コード](https://github.com/xamarin/Essentials/tree/master/Xamarin.Essentials/Vibration)
+- [Vibration のソース コード](https://github.com/xamarin/Essentials/tree/main/Xamarin.Essentials/Vibration)
 - [Vibration API のドキュメント](xref:Xamarin.Essentials.Vibration)
+
+## <a name="related-video"></a>関連ビデオ
+
+> [!Video https://channel9.msdn.com/Shows/XamarinShow/Vibration-XamarinEssentials-API-of-the-Week/player]
+
+[!include[](~/essentials/includes/xamarin-show-essentials.md)]

@@ -1,49 +1,52 @@
 ---
-title: Xamarin.Forms DatePicker
-description: DatePicker は、ユーザーが日付を選択できる Xamarin.Forms のビューです。 この記事では、Xamarin.Forms アプリケーションでの DatePicker を使用する方法について説明します。
+title: Xamarin.FormsDatePicker
+description: DatePicker は、ユーザーが日付を選択できるようにする Xamarin.Forms ビューです。 この記事では、アプリケーションで DatePicker を使用する方法について説明し Xamarin.Forms ます。
 ms.prod: xamarin
 ms.assetid: 68E8EF8A-42E7-4939-8ABE-64D060E609D9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/04/2018
-ms.openlocfilehash: 9bc6d47e4f935e84ae675eefeabac023920a344a
-ms.sourcegitcommit: 191f1f3b13a14e2afadcb95126c5f653722f126f
+no-loc:
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 5c1de52e2a173e7d9a366d8fd7cbd63998b3a6d1
+ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/30/2019
-ms.locfileid: "75545610"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84137359"
 ---
-# <a name="xamarinforms-datepicker"></a>Xamarin.Forms DatePicker
+# <a name="xamarinforms-datepicker"></a>Xamarin.FormsDatePicker
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-datepicker)
 
-_ユーザーが日付を選択できる Xamarin.Forms のビュー。_
+_Xamarin.Formsユーザーが日付を選択できるようにするビュー。_
 
-Xamarin.Forms [ `DatePicker` ](xref:Xamarin.Forms.DatePicker)プラットフォームの日付の選択コントロールを呼び出すし、ユーザーは日付を選択できます。 `DatePicker` 8 つのプロパティを定義します。
+は、 Xamarin.Forms [`DatePicker`](xref:Xamarin.Forms.DatePicker) プラットフォームの日付の選択コントロールを呼び出し、ユーザーが日付を選択できるようにします。 `DatePicker`次の8つのプロパティを定義します。
 
-- [`MinimumDate`](xref:Xamarin.Forms.DatePicker.MinimumDate) 型の[ `DateTime` ](xref:System.DateTime)、既定では 1900 年の最初の日。
-- [`MaximumDate`](xref:Xamarin.Forms.DatePicker.MaximumDate) 型の`DateTime`2100 年の最終日にどの既定値。
-- [`Date`](xref:Xamarin.Forms.DatePicker.Date) 型の`DateTime`、既定値を選択した日付[ `DateTime.Today`](xref:System.DateTime.Today)します。
-- [`Format`](xref:Xamarin.Forms.DatePicker.Format) 型の`string`、[標準](/dotnet/standard/base-types/standard-date-and-time-format-strings/)または[カスタム](/dotnet/standard/base-types/custom-date-and-time-format-strings/)書式設定文字列で、既定値は"D"に、.NET、時間の長い日付パターン。
-- [`TextColor`](xref:Xamarin.Forms.DatePicker.TextColor) 型の[ `Color` ](xref:Xamarin.Forms.Color)、既定値は、選択した日付を表示するために使用する色[ `Color.Default`](xref:Xamarin.Forms.Color.Default)します。
-- [`FontAttributes`](xref:Xamarin.Forms.DatePicker.FontAttributes) 型の[ `FontAttributes` ](xref:Xamarin.Forms.FontAttributes)、既定では[ `FontAtributes.None`](xref:Xamarin.Forms.FontAttributes.None)します。
-- [`FontFamily`](xref:Xamarin.Forms.DatePicker.FontFamily) 型の`string`、既定では`null`します。
-- [`FontSize`](xref:Xamarin.Forms.DatePicker.FontSize) 型の`double`、既定では-1.0。
+- [`MinimumDate`](xref:Xamarin.Forms.DatePicker.MinimumDate)型の [`DateTime`](xref:System.DateTime) 。既定では、1900年の最初の日になります。
+- [`MaximumDate`](xref:Xamarin.Forms.DatePicker.MaximumDate)型の `DateTime` 。既定では、2100年の最終日になります。
+- [`Date`](xref:Xamarin.Forms.DatePicker.Date)型 `DateTime` (選択された日付)。既定値は [`DateTime.Today`](xref:System.DateTime.Today) です。
+- [`Format`](xref:Xamarin.Forms.DatePicker.Format)`string`[標準](/dotnet/standard/base-types/standard-date-and-time-format-strings/)または[カスタム](/dotnet/standard/base-types/custom-date-and-time-format-strings/)の .net 書式指定文字列。既定値は "D" で、長い形式の日付パターンです。
+- [`TextColor`](xref:Xamarin.Forms.DatePicker.TextColor)型の [`Color`](xref:Xamarin.Forms.Color) 場合は、選択した日付を表示するために使用する色。既定値は [`Color.Default`](xref:Xamarin.Forms.Color.Default) です。
+- [`FontAttributes`](xref:Xamarin.Forms.DatePicker.FontAttributes)型の [`FontAttributes`](xref:Xamarin.Forms.FontAttributes) 。既定値は [`FontAtributes.None`](xref:Xamarin.Forms.FontAttributes.None) です。
+- [`FontFamily`](xref:Xamarin.Forms.DatePicker.FontFamily)型の `string` 。既定値は `null` です。
+- [`FontSize`](xref:Xamarin.Forms.DatePicker.FontSize)型の `double` 。既定値は-1.0 です。
 - `CharacterSpacing`: `double` 型、`DatePicker` テキストの文字間の間隔。
 
-`DatePicker`発生、 [ `DateSelected` ](xref:Xamarin.Forms.DatePicker.DateSelected)イベント、ユーザーが日付を選択します。
+は、 `DatePicker` [`DateSelected`](xref:Xamarin.Forms.DatePicker.DateSelected) ユーザーが日付を選択したときにイベントを発生させます。
 
 > [!WARNING]
-> 設定するときに`MinimumDate`と`MaximumDate`、ことを確認します`MinimumDate`が常に等しいまたはそれよりも小さい`MaximumDate`します。 それ以外の場合、`DatePicker`で例外が発生します。
+> とを設定する場合 `MinimumDate` `MaximumDate` は、 `MinimumDate` が常に以下であることを確認し `MaximumDate` ます。 それ以外の場合、 `DatePicker` は例外を発生させます。
 
-内部的には、`DatePicker`により`Date`間`MinimumDate`と`MaximumDate`までの値。 場合`MinimumDate`または`MaximumDate`設定されているように`Date`、それらの間でない`DatePicker`の値を調節`Date`します。
+内部的には、 `DatePicker` はとの間にあることを保証し `Date` `MinimumDate` `MaximumDate` ます。 またはが設定されていない場合は `MinimumDate` `MaximumDate` 、によって `Date` `DatePicker` の値が調整され `Date` ます。
 
-8 つすべてのプロパティが支え[ `BindableProperty` ](xref:Xamarin.Forms.BindableProperty)オブジェクト、つまりスタイルして、プロパティがデータ バインドの対象になることができます。 `Date`プロパティの既定のバインド モードは、 [ `BindingMode.TwoWay` ](xref:Xamarin.Forms.BindingMode.TwoWay)、つまり、使用するアプリケーションでのデータ バインディングのターゲットにできる、[モデル-ビュー-ビューモデル (MVVM)](~/xamarin-forms/enterprise-application-patterns/mvvm.md)アーキテクチャです。
+8つのプロパティはすべてオブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。これはスタイルを設定でき、プロパティはデータバインディングのターゲットにすることができることを意味します。 `Date`プロパティには、の既定のバインディングモードがあります。これは、 [`BindingMode.TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay) [モデルビュービューモデル (MVVM)](~/xamarin-forms/enterprise-application-patterns/mvvm.md)アーキテクチャを使用するアプリケーションで、データバインディングのターゲットにできることを意味します。
 
 ## <a name="initializing-the-datetime-properties"></a>DateTime プロパティの初期化
 
-コードでは、初期化することができます、 `MinimumDate`、 `MaximumDate`、および`Date`プロパティを型の値に`DateTime`:
+コードでは `MinimumDate` 、、、およびの各プロパティを、 `MaximumDate` `Date` 型の値に初期化でき `DateTime` ます。
 
 ```csharp
 DatePicker datePicker = new DatePicker
@@ -54,7 +57,7 @@ DatePicker datePicker = new DatePicker
 };
 ```
 
-ときに、 `DateTime` XAML パーサーを使用して、XAML で値が指定された、`DateTime.Parse`メソッドを`CultureInfo.InvariantCulture`を文字列に変換する引数を`DateTime`値。 正確な形式で日付を指定する必要があります。 2 桁の月、2 桁の日、スラッシュで区切られた 4 桁の年。
+`DateTime`Xaml で値を指定すると、xaml パーサーはメソッドを引数と共に使用して、 `DateTime.Parse` 文字列を `CultureInfo.InvariantCulture` 値に変換し `DateTime` ます。 日付は、2桁の月、2桁の日、および4桁の年をスラッシュで区切って正確な形式で指定する必要があります。
 
 ```xaml
 <DatePicker MinimumDate="01/01/2018"
@@ -62,7 +65,7 @@ DatePicker datePicker = new DatePicker
             Date="06/21/2018" />
 ```
 
-`DatePicker` の `BindingContext` プロパティが、`MinDate`、`MaxDate`、`SelectedDate` という名前の型 `DateTime` のプロパティを含むビューモデルのインスタンスに設定されている場合 (たとえば)、次のように `DatePicker` をインスタンス化できます。
+`BindingContext`のプロパティ `DatePicker` が、、、およびという名前の型のプロパティを含むビューモデルのインスタンスに設定されている場合 (たとえば)、次のようにを `DateTime` `MinDate` `MaxDate` `SelectedDate` インスタンス化でき `DatePicker` ます。
 
 ```xaml
 <DatePicker MinimumDate="{Binding MinDate}"
@@ -70,15 +73,15 @@ DatePicker datePicker = new DatePicker
             Date="{Binding SelectedDate}" />
 ```
 
-この例では、3つのプロパティはすべて、ビューモデルの対応するプロパティに初期化されます。 `Date` プロパティには `TwoWay`のバインドモードがあるため、ユーザーが選択した新しい日付は、自動的にビューモデルに反映されます。
+この例では、3つのプロパティはすべて、ビューモデルの対応するプロパティに初期化されます。 プロパティには `Date` バインドモードがあるため `TwoWay` 、ユーザーが選択した新しい日付は、自動的にビューモデルに反映されます。
 
-場合、`DatePicker`でバインドが含まれていないその`Date`プロパティ、アプリケーションはハンドラーをアタッチする必要があります、`DateSelected`するイベント通知、ユーザーが新しい日付を選択するとします。
+に `DatePicker` プロパティのバインディングが含まれていない場合 `Date` 、アプリケーションは、 `DateSelected` ユーザーが新しい日付を選択したときに通知されるように、イベントにハンドラーをアタッチする必要があります。
 
-フォントのプロパティの設定については、次を参照してください。[フォント](~/xamarin-forms/user-interface/text/fonts.md)します。
+フォントプロパティの設定の詳細については、「[フォント](~/xamarin-forms/user-interface/text/fonts.md)」を参照してください。
 
 ## <a name="datepicker-and-layout"></a>DatePicker とレイアウト
 
-制約のない水平レイアウト オプションを使用することは`Center`、 `Start`、または`End`で`DatePicker`:
+次のように、、、などの制約のない水平レイアウトオプションを使用することができ `Center` `Start` `End` `DatePicker` ます。
 
 ```xaml
 <DatePicker ···
@@ -86,14 +89,14 @@ DatePicker datePicker = new DatePicker
             ··· />
 ```
 
-ただし、これは推奨されません。 設定に応じて、`Format`プロパティは、選択した日付が別の表示幅を必要があります。 たとえば、"D"書式指定文字列と`DateTime`長い形式の場合は、および「水曜日 2018 年 9 月 12日、日」の日付を表示するには、「Friday、4、2018 年 5 月」より大きい値の表示幅が必要です。 この違いがあります、プラットフォームによって、`DateTime`ビュー レイアウトでは、またはが切り捨てられる表示幅を変更します。
+ただし、これは推奨されません。 プロパティの設定によっては `Format` 、選択した日付に異なる表示幅が必要になる場合があります。 たとえば、"D" 書式指定文字列では、が `DateTime` 長い形式で日付を表示し、"水曜日、2018年9月12日" の場合、"金曜, may 4, 2018" よりも高い表示幅が必要になります。 プラットフォームによっては、この違いにより、 `DateTime` ビューがレイアウトの幅を変更したり、表示が切り捨てられたりする可能性があります。
 
 > [!TIP]
-> 既定値を使用することをお勧め`HorizontalOptions`の設定`Fill`で`DatePicker`との幅を使用しないように`Auto`設定時に`DatePicker`で、`Grid`セル。
+> `HorizontalOptions` `Fill` `DatePicker` `Auto` セルにを配置するときは、の `DatePicker` 既定の設定であるを使用し、を使用しないことをお勧めし `Grid` ます。
 
-## <a name="datepicker-in-an-application"></a>アプリケーションで DatePicker
+## <a name="datepicker-in-an-application"></a>アプリケーションでの DatePicker
 
-[ **DaysBetweenDates** ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-datepicker)サンプルでは、2 つ含まれています`DatePicker`そのページのビュー。 これら 2 つの日付の選択に使用でき、プログラムは、それらの日付間の日数を計算します。 プログラムの設定を変更しない、`MinimumDate`と`MaximumDate`プロパティ、2 つの日付は 1900 ~ 2100 でなければなりません。
+[**DaysBetweenDates**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-datepicker)サンプルには、ページに2つのビューが含まれてい `DatePicker` ます。 これらは2つの日付を選択するために使用でき、プログラムはそれらの日付の間の日数を計算します。 プログラムでは、プロパティとプロパティの設定は変更されない `MinimumDate` `MaximumDate` ため、2つの日付は 1900 ~ 2100 の範囲である必要があります。
 
 XAML ファイルを次に示します。
 
@@ -147,9 +150,9 @@ XAML ファイルを次に示します。
 </ContentPage>
 ```
 
-各`DatePicker`が割り当てられている、`Format`長い日付形式の"D"のプロパティ。 また、`endDatePicker`オブジェクトを対象とするバインディングにはその`MinimumDate`プロパティ。 バインディング ソースが、選択されている`Date`のプロパティ、`startDatePicker`オブジェクト。 これによりを終了日は常に後で、開始日と等しいまたはそれよりも。 2 つだけでなく`DatePicker`、オブジェクト、 `Switch` 「合計にどちらの日を含める」というラベルの付いたします。
+各に `DatePicker` は、 `Format` 長い日付形式の "D" プロパティが割り当てられています。 オブジェクトには、 `endDatePicker` そのプロパティをターゲットとするバインディングがあることにも注意 `MinimumDate` してください。 バインディングソースは、オブジェクトの選択された `Date` プロパティです `startDatePicker` 。 これにより、終了日は常に開始日以降になります。 2つのオブジェクトに加えて、に `DatePicker` `Switch` "両方の日の合計を含める" というラベルが付いています。
 
-2 つ`DatePicker`ビューにアタッチされたハンドラーがある、`DateSelected`イベント、および`Switch`にハンドラーをアタッチがその`Toggled`イベント。 これらのイベント ハンドラーは、分離コード ファイルには、2 つの日付までの日数の新しい計算をトリガーします。
+2つのビューには、 `DatePicker` イベントに関連付けられたハンドラーがあり、 `DateSelected` には `Switch` イベントにアタッチされたハンドラーがあり `Toggled` ます。 これらのイベントハンドラーは分離コードファイル内にあり、次の2つの日付の間の日数の新しい計算をトリガーします。
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -180,18 +183,18 @@ public partial class MainPage : ContentPage
 }
 ```
 
-このサンプルは、最初の実行時、両方`DatePicker`ビューは、今日の日付に初期化されます。 次のスクリーンショットは、iOS と Android で実行されているプログラムを示しています。
+サンプルを最初に実行すると、両方 `DatePicker` のビューが今日の日付に初期化されます。 次のスクリーンショットは、iOS と Android で実行されているプログラムを示しています。
 
 [![日付の開始日の間の日数](datepicker-images/DaysBetweenDatesStart.png "日付の開始日の間の日数")](datepicker-images/DaysBetweenDatesStart-Large.png#lightbox "日付の開始日の間の日数")
 
-いずれかをタップすると、`DatePicker`が表示されますが、プラットフォームの日付の選択を呼び出します。 各プラットフォームは非常にさまざまな方法でこの日付の選択を実装していますが、これらはそのプラットフォームのユーザーにとって馴染み深いアプローチです。
+いずれかの表示をタップすると `DatePicker` 、プラットフォームの日付の選択が呼び出されます。 このようなプラットフォームでは、この日付の選択はまったく異なる方法で実装されていますが、各アプローチは、そのプラットフォームのユーザーにはなじみがあります。
 
 [![日付間の日数選択](datepicker-images/DaysBetweenDatesSelect.png "日付間の日数選択")](datepicker-images/DaysBetweenDatesSelect-Large.png#lightbox "日付間の日数選択")
 
 > [!TIP]
-> Android では、`DatePicker`ダイアログをオーバーライドすることでカスタマイズできる、`CreateDatePickerDialog`カスタム レンダラーのメソッド。 これにより、たとえば、ダイアログ ボックスに追加するその他のボタン。
+> Android では、 `DatePicker` カスタムレンダラーでメソッドをオーバーライドすることによって、ダイアログをカスタマイズでき `CreateDatePickerDialog` ます。 これにより、たとえば、追加のボタンをダイアログに追加することができます。
 
-2 つの日付を選択した後、アプリケーションは、それらの日付間の日数を表示します。
+2つの日付を選択すると、アプリケーションでは、次の日付の間の日数が表示されます。
 
 [![日付の間の日数の結果](datepicker-images/DaysBetweenDatesResult.png "日付の間の日数の結果")](datepicker-images/DaysBetweenDatesResult-Large.png#lightbox "日付の間の日数の結果")
 
