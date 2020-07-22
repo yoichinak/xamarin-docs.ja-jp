@@ -61,7 +61,7 @@ Xamarin.Forms には、ユーザーにアラートを表示する、または簡
 
 1. Visual Studio ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択したリモート iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。 次に、最初の [`Button`](xref:Xamarin.Forms.Button) をタップします。
 
-    [![iOS および Android でのアラートのスクリーンショット](../images/alert.png "アラート:")](../images/alert-large.png#lightbox "アラート:")
+    [![iOS および Android でのアラートのスクリーンショット](../images/alert.png "アラート")](../images/alert-large.png#lightbox "アラート")
 
     アラートを閉じた後、2 番目の [`Button`](xref:Xamarin.Forms.Button) をタップします。
 
@@ -124,7 +124,7 @@ Xamarin.Forms には、ユーザーにアラートを表示する、または簡
 
 1. Visual Studio for Mac ツール バーで、 **[開始]** ボタン ([再生] ボタンに似た三角形のボタン) を押し、選択した iOS シミュレーターまたは Android エミュレーター内でアプリケーションを起動します。 次に、最初の [`Button`](xref:Xamarin.Forms.Button) をタップします。
 
-    [![iOS および Android でのアラートのスクリーンショット](../images/alert.png "アラート:")](../images/alert-large.png#lightbox "アラート:")
+    [![iOS および Android でのアラートのスクリーンショット](../images/alert.png "アラート")](../images/alert-large.png#lightbox "アラート")
 
     アラートを閉じた後、2 番目の [`Button`](xref:Xamarin.Forms.Button) をタップします。
 
