@@ -1,6 +1,6 @@
 ---
-title: title:"共通言語ランタイム プロパティとしてエフェクトのパラメーターを渡す" の説明:"共通言語ランタイム (CLR) プロパティは、実行時のプロパティの変更に応答しないエフェクトのパラメーターの定義に使用できます。
-description: 'この記事では、CLR プロパティを使用してエフェクトにパラメーターを渡す方法について説明します。" ms.prod: xamarin ms.assetid:4B50466C-5DBD-45DD-B1E6-BE9524C92F27 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:08/05/2016 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: 共通言語ランタイム プロパティとしてエフェクトのパラメーターを渡す
+description: 共通言語ランタイム (CLR) プロパティは、実行時のプロパティの変更に応答しないエフェクトのパラメーターの定義に使用できます。 この記事では、CLR プロパティを使用してエフェクトにパラメーターを渡す方法について説明します。
 ms.prod: xamarin
 ms.assetid: 4B50466C-5DBD-45DD-B1E6-BE9524C92F27
 ms.technology: xamarin-forms
@@ -10,12 +10,12 @@ ms.date: 08/05/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 37d870509e034f4c23afba60fa055965ed9df4de
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: 24468e88d39283d2b8282fe0cb9b59f33fcef2f0
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84138867"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936696"
 ---
 # <a name="passing-effect-parameters-as-common-language-runtime-properties"></a>共通言語ランタイム プロパティとしてエフェクトのパラメーターを渡す
 
@@ -33,11 +33,11 @@ _共通言語ランタイム (CLR) プロパティは、実行時のプロパテ
 
 このサンプル アプリケーションは、[`Label`](xref:Xamarin.Forms.Label) コントロールによって表示されるテキストに影を追加する `ShadowEffect` を示しています。 次の図に、サンプル アプリケーション内の各プロジェクトの役割と、それらの関係を示します。
 
-![](clr-properties-images/shadow-effect.png "Shadow Effect Project Responsibilities")
+![影エフェクト プロジェクトの責任](clr-properties-images/shadow-effect.png)
 
 `HomePage` 上の [`Label`](xref:Xamarin.Forms.Label) コントロールは、各プラットフォーム固有のプロジェクト内の `LabelShadowEffect` によってカスタマイズされます。 パラメーターは `ShadowEffect` クラス内のプロパティを介して各 `LabelShadowEffect` に渡されます。 各プラットフォームの `PlatformEffect` クラスから、各 `LabelShadowEffect` クラスが派生します。 これにより、次のスクリーンショットに示すように、`Label` コントロールによって表示されるテキストに影が追加されます。
 
-![](clr-properties-images/screenshots.png "Shadow Effect on each Platform")
+![各プラットフォーム上の影エフェクト](clr-properties-images/screenshots.png)
 
 ## <a name="creating-effect-parameters"></a>エフェクトのパラメーターの作成
 

@@ -10,12 +10,12 @@ ms.date: 03/31/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8c83742896af4a22bcff327df82c1b14ff983bb2
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e0653e46d2c349e05df8716e5114de8f631cab1a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138971"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939543"
 ---
 # <a name="customizing-a-webview"></a>WebView のカスタマイズ
 
@@ -27,7 +27,7 @@ _Xamarin.Forms `WebView` は、アプリに Web コンテンツと HTML コン�
 
 次の図は、[`View`](xref:Xamarin.Forms.View) と、それを実装する、対応しているネイティブ コントロールの関係を示しています。
 
-![](hybridwebview-images/webview-classes.png "Relationship Between the WebView Class and its Implementing Native Classes")
+![WebView クラスとそれを実装するネイティブ クラス間のリレーションシップ](hybridwebview-images/webview-classes.png)
 
 レンダリング プロセスを使用して各プラットフォーム上の [`WebView`](xref:Xamarin.Forms.WebView) にカスタム レンダラーを作成することで、プラットフォームのカスタマイズを実装することができます。 その実行プロセスは次のとおりです。
 
@@ -155,11 +155,11 @@ public partial class HybridWebViewPage : ContentPage
 
 次の図に、サンプル アプリケーション内の各プロジェクトの役割と、それらの関係を示します。
 
-![](hybridwebview-images/solution-structure.png "HybridWebView Custom Renderer Project Responsibilities")
+![HybridWebView カスタム レンダラーのプロジェクトの役割](hybridwebview-images/solution-structure.png)
 
 `HybridWebView` カスタム コントロールはプラットフォームのレンダラー クラスによってレンダリングされます。このクラスは iOS では `WkWebViewRenderer` クラスから、Android と UWP では `WebViewRenderer` クラスから派生します。 この結果、次のスクリーンショットに示すように、ネイティブの Web コントロールを使用してそれぞれの `HybridWebView` カスタム コントロールがレンダリングされます。
 
-![](hybridwebview-images/screenshots.png "HybridWebView on each Platform")
+![各プラットフォーム上の HybridWebView](hybridwebview-images/screenshots.png)
 
 `WkWebViewRenderer` クラスと `WebViewRenderer` クラスは `OnElementChanged` メソッドを公開します。このメソッドは、該当するネイティブ Web コントロールをレンダリングするために、Xamarin.Forms カスタム コントロールの作成時に呼び出されます。 このメソッドでは、`OldElement` および `NewElement` プロパティを含む `VisualElementChangedEventArgs` パラメーターを受け取ります。 これらのプロパティは、レンダラーがアタッチされて*いた* Xamarin.Forms 要素と、レンダラーが現在アタッチされて*いる* Xamarin.Forms 要素をそれぞれ表しています。 サンプル アプリケーションでは、`OldElement` プロパティが `null` になり、`NewElement` プロパティに `HybridWebView` インスタンスへの参照が含まれます。
 

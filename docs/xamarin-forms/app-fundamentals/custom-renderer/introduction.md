@@ -10,12 +10,12 @@ ms.date: 01/19/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e2bed4d5e8f89efa2997fb085278c4b549870245
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0eb768f5d6cabbb41b07a5aad33269fc0f493237
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135322"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939530"
 ---
 # <a name="introduction-to-custom-renderers"></a>カスタム レンダラーの概要
 
@@ -59,7 +59,7 @@ public class MyEntry : Entry
 
 次のスクリーンショットに示すように、`MyEntry` カスタム コントロールは、各プラットフォームにグレーの背景でレンダリングされます。
 
-![](introduction-images/screenshots.png "MyEntry Custom Control on each Platform")
+![プラットフォームごとの MyEntry カスタム コントロール](introduction-images/screenshots.png)
 
 各プラットフォームのコントロールの背景色を変更するには、コントロールをサブクラス化する必要があります。 ただし、プラットフォーム固有の拡張機能やカスタマイズを利用できないため、この手法は実行できるものに限られています。 必要な場合は、カスタム レンダラーを実装する必要があります。
 

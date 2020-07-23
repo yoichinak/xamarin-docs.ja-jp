@@ -1,6 +1,6 @@
 ---
-title: title:"Xamarin.Forms DataTemplate の作成" の説明:"データ テンプレートは、ResourceDictionary 内でインラインで作成したり、またはカスタム型や適切な Xamarin.Forms のセルの種類から作成したりできます。
-description: 'この記事では、各手法について説明します。" ms.prod: xamarin ms.assetid:CFF4AB5E-9069-461C-84D8-F9F6C38510AB ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:09/11/2017 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms DataTemplate の作成
+description: データ テンプレートは、ResourceDictionary 内でインラインで作成したり、またはカスタム型や適切な Xamarin.Forms のセルの種類から作成したりできます。 この記事では、各手法について説明します。
 ms.prod: xamarin
 ms.assetid: CFF4AB5E-9069-461C-84D8-F9F6C38510AB
 ms.technology: xamarin-forms
@@ -10,12 +10,12 @@ ms.date: 09/11/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3054180a9deb1357357c90db7b7fbdd8058b6773
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 9ed7e485adbc13862ff6fb6af9b02c43cc6a1f10
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84565500"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935643"
 ---
 # <a name="creating-a-xamarinforms-datatemplate"></a>Xamarin.Forms DataTemplate の作成
 
@@ -31,7 +31,7 @@ _データ テンプレートは、ResourceDictionary 内でインラインで�
 
 使用する手法に関係なく、次のスクリーンショットに示すように、結果として [`ListView`](xref:Xamarin.Forms.ListView) の各セルの外観は [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) で定義されます。
 
-![](creating-images/data-template-appearance.png "ListView with a DataTemplate")
+![DataTemplate を使用する ListView](creating-images/data-template-appearance.png)
 
 ## <a name="creating-an-inline-datatemplate"></a>インライン DataTemplate を作成する
 

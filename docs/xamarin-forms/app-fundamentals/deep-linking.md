@@ -11,12 +11,12 @@ ms.date: 11/28/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c7f5979b93ff35b14ec7c13418a4565604f46bd7
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d2bd0bf696e652e95e0feb88cca7cf685b14433b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84570636"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936501"
 ---
 # <a name="application-indexing-and-deep-linking"></a>アプリケーション インデックス作成とディープ リンクの設定
 
@@ -32,7 +32,7 @@ Xamarin.Forms のアプリケーション インデックス作成とディー�
 
 サンプル アプリケーションは、次のスクリーン ショットに示すように、データがローカルの SQLite データベースに格納される Todo リスト アプリケーションの例です。
 
-![](deep-linking-images/screenshots.png "TodoList Application")
+![TodoList アプリケーション](deep-linking-images/screenshots.png)
 
 ユーザーによって作成された各 `TodoItem` インスタンスにインデックスが付けられます。 これにより、プラットフォーム固有の検索を使用して、アプリケーションからインデックス付きのデータを特定できるようになります。 アプリケーションに関する検索結果の項目をユーザーがタップすると、そのアプリケーションが起動し、`TodoItemPage` に移動し、ディープ リンクから参照された `TodoItem` が表示されます。
 
@@ -141,7 +141,7 @@ Application.Current.AppLinks.RegisterLink (appLink);
 
 インデックス作成のために [`AppLinkEntry`](xref:Xamarin.Forms.AppLinkEntry) インスタンスが登録されると、それを検索結果に表示できるようになります。 次のスクリーン ショットは、iOS プラットフォームでの検索結果に表示されているインデックス付きコンテンツの例です。
 
-![](deep-linking-images/ios-search.png "Indexed Content in Search Results on iOS")
+![iOS での検索結果内のインデックス付きコンテンツ](deep-linking-images/ios-search.png)
 
 ## <a name="de-registering-indexed-content"></a>インデックス付きコンテンツの登録を解除する
 

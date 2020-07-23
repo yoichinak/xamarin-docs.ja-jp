@@ -1,6 +1,6 @@
 ---
-title: title:"階層ナビゲーション" の説明:"この記事では、NavigationPage クラスを使用して後入れ先出し (LIFO) ページのスタックでナビゲーションを実行する方法について説明します。"
-description: 'ms.prod: xamarin ms.assetid:C8A5EEFF-5A3B-4163-838A-147EE3939FAA ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:03/10/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: 階層ナビゲーション
+description: この記事では、NavigationPage クラスを使用して後入れ先出し (LIFO) ページのスタックでナビゲーションを実行する方法について説明します。
 ms.prod: xamarin
 ms.assetid: C8A5EEFF-5A3B-4163-838A-147EE3939FAA
 ms.technology: xamarin-forms
@@ -10,12 +10,12 @@ ms.date: 03/10/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ec35b03e7e96f0730813918bdd96e1408cfabde7
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 0d6a18ec55b49da2b668ccc183646d5e4dde5849
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571494"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937229"
 ---
 # <a name="hierarchical-navigation"></a>階層ナビゲーション
 
@@ -25,11 +25,11 @@ _NavigationPage クラスは、ユーザーが前後を希望どおりにペー�
 
 1 つのページから別のページに移動するには、次の図に示すように、アプリケーションは新しいページを、そこでアクティブなページとなるナビゲーション スタックにプッシュします。
 
-![](hierarchical-images/pushing.png "Pushing a Page to the Navigation Stack")
+![ナビゲーション スタックにページをプッシュする](hierarchical-images/pushing.png)
 
 次の図に示すように、前のページに戻るには、アプリケーションは現在のページをナビゲーション スタックからポップします。そして新しい最上位のページがアクティブ ページになります。
 
-![](hierarchical-images/popping.png "Popping a Page from the Navigation Stack")
+![ナビゲーション スタックからページをポップする](hierarchical-images/popping.png)
 
 ナビゲーション メソッドは、任意の [`Page`](xref:Xamarin.Forms.Page) 派生型の [`Navigation`](xref:Xamarin.Forms.NavigableElement.Navigation) プロパティによって公開されます。 これらのメソッドには、ページをナビゲーション スタックにプッシュし、ナビゲーション スタックからページをポップし、スタック操作を実行する機能があります。
 
@@ -37,7 +37,7 @@ _NavigationPage クラスは、ユーザーが前後を希望どおりにペー�
 
 階層ナビゲーションでは、[`NavigationPage`](xref:Xamarin.Forms.NavigationPage) クラスは [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトのスタック間をナビゲートするために使用されます。 次のスクリーンショットは、各プラットフォームでの `NavigationPage` のメイン コンポーネントを示します。
 
-![](hierarchical-images/navigationpage-components.png "NavigationPage Components")
+![NavigationPage コンポーネント](hierarchical-images/navigationpage-components.png)
 
 [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) のレイアウトは、プラットフォームによって異なります。
 
@@ -63,7 +63,7 @@ public App ()
 
 これにより、`Page1Xaml` [`ContentPage`](xref:Xamarin.Forms.ContentPage) インスタンスがナビゲーション スタックにプッシュされるようになります。そこがアクティブ ページであり、アプリケーションのルート ページとなります。 これを次のスクリーンショットに示します。
 
-![](hierarchical-images/mainpage.png "Root Page of Navigation Stack")
+![ナビゲーション スタックのルート ページ](hierarchical-images/mainpage.png)
 
 > [!NOTE]
 > [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) インスタンスの [`RootPage`](xref:Xamarin.Forms.NavigationPage.RootPage) プロパティを使用すると、ナビゲーション スタック内の最初のページにアクセスできます。
@@ -81,7 +81,7 @@ async void OnNextPageButtonClicked (object sender, EventArgs e)
 
 これにより、`Page2Xaml` インスタンスがナビゲーション スタックにプッシュされるようになり、そこがアクティブ ページとなります。 これを次のスクリーンショットに示します。
 
-![](hierarchical-images/secondpage.png "Page Pushed onto Navigation Stack")
+![ナビゲーション スタックにプッシュされるページ](hierarchical-images/secondpage.png)
 
 [`PushAsync`](xref:Xamarin.Forms.NavigationPage.PushAsync*) メソッドが呼び出されると、次のイベントが発生します。
 
@@ -181,7 +181,7 @@ public MainPage (string date)
 
 次のスクリーンショットに示すように、[`Label.Text`](xref:Xamarin.Forms.Label.Text) プロパティを設定することでデータがページに表示されます。
 
-![](hierarchical-images/passing-data-constructor.png "Data Passed Through a Page Constructor")
+![ページ コンストラクターを介して渡されるデータ](hierarchical-images/passing-data-constructor.png)
 
 ### <a name="passing-data-through-a-bindingcontext"></a>BindingContext を介してデータを渡す
 
@@ -267,7 +267,7 @@ public class SecondPageCS : ContentPage
 
 次のスクリーンショットに示すように、一連の [`Label`](xref:Xamarin.Forms.Label) コントロールによってデータがページに表示されます。
 
-![](hierarchical-images/passing-data-bindingcontext.png "Data Passed Through a BindingContext")
+![BindingContext を介して渡されるデータ](hierarchical-images/passing-data-bindingcontext.png)
 
 データ バインディングの詳細については、「[Data Binding Basics](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)」 (データ バインディングの基礎) を参照してください。
 
@@ -277,11 +277,11 @@ public class SecondPageCS : ContentPage
 
 次の図に示すように、[`InsertPageBefore`](xref:Xamarin.Forms.INavigation.InsertPageBefore*) メソッドによって、ナビゲーション スタック内の指定されたページが既存の指定されたページの前に挿入されます。
 
-![](hierarchical-images/insert-page-before.png "Inserting a Page in the Navigation Stack")
+![ナビゲーション スタックにページを挿入する](hierarchical-images/insert-page-before.png)
 
 次の図に示すように、[`RemovePage`](xref:Xamarin.Forms.INavigation.RemovePage*) メソッドによって、指定されたページがナビゲーション スタックから削除されます。
 
-![](hierarchical-images/remove-page.png "Removing a Page from the Navigation Stack")
+![ナビゲーション スタックからページを削除する](hierarchical-images/remove-page.png)
 
 これらのメソッドを使用すると、ログインに成功した後に、ログイン ページを新しいページに置き換えるなど、カスタムのナビゲーション エクスペリエンスを実現できます。 次のコード例はこのシナリオを示しています。
 

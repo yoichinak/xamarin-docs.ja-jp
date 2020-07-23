@@ -1,6 +1,6 @@
 ---
-title: 'title: "Xamarin.Formsカルーセル ページ" の説明:"Xamarin.Forms の CarouselPage は、ギャラリーのように、ユーザーが端から端までスワイプしてコンテンツの各ページをナビゲートできるページです。'
-description: 'この記事では、CarouselPage を使用してページのコレクション内を移動する方法を示します。" ms.prod: xamarin ms.assetid:2D14FC9D-DF5F-427E-9006-2AAE61ECF8DC ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:12/01/2017 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms のカルーセル ページ
+description: Xamarin.Forms の CarouselPage は、ギャラリーのように、ユーザーが端から端までスワイプしてコンテンツの各ページをナビゲートできるページです。 この記事では、CarouselPage を使用してページのコレクション内を移動する方法を示します。
 ms.prod: xamarin
 ms.assetid: 2D14FC9D-DF5F-427E-9006-2AAE61ECF8DC
 ms.technology: xamarin-forms
@@ -10,12 +10,12 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 896f652d69bca0f186e53185926ee5c46d87fa7c
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: c234af1a5d47446149c92a71e9ce592dc0366b8f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84570675"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937463"
 ---
 # <a name="xamarinforms-carousel-page"></a>Xamarin.Forms のカルーセル ページ
 
@@ -28,15 +28,15 @@ _Xamarin.Forms の CarouselPage は、ギャラリーのように、ユーザー
 
 次のスクリーンショットは、各プラットフォームの [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) を示します。
 
-![](carousel-page-images/thirdpage.png "CarouselPage Third Item")
+![CarouselPage の 3 番目の項目](carousel-page-images/thirdpage.png)
 
 [`CarouselPage`](xref:Xamarin.Forms.CarouselPage) のレイアウトは、どのプラットフォームでも同じです。 右から左にスワイプするとコレクション内のページを前方に移動でき、左から右にスワイプするとコレクション内のページを後方に移動できます。 次のスクリーンショットは、[`CarouselPage`](xref:Xamarin.Forms.CarouselPage) インスタンスの最初のページです。
 
-![](carousel-page-images/firstpage.png "CarouselPage First Item")
+![CarouselPage の 1 番目の項目](carousel-page-images/firstpage.png)
 
 次のスクリーンショットのように、右から左にスワイプすると 2 番目のページに移動します。
 
-![](carousel-page-images/secondpage.png "CarouselPage Second Item")
+![CarouselPage の 2 番目の項目](carousel-page-images/secondpage.png)
 
 もう一度右から左にスワイプすると 3 番目のページに移動し、左から右にスワイプすると前のページに戻ります。
 

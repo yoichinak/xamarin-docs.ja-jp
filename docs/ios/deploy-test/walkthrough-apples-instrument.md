@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 41254fb6aac176cd796fba851478b31f774553d2
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 6fa1357adc9cf2f545fbcdf3a30fef70280593bb
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73023454"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938022"
 ---
 # <a name="walkthrough---using-apples-instruments-tool"></a>チュートリアル - Apple の Instruments ツールの使用
 
@@ -27,11 +27,11 @@ _この記事では、Apple の Instruments ツールを使用して、Xamarin �
 2. **[実行] > [デバイスにアップロード]** メニュー項目を選択し、デバイスにアプリケーションをアップロードします。
 3. **[Allocations]\(割り当て\)** テンプレート (白のボックスがあるオレンジ色のアイコン) を選択します。
 
-    ![](walkthrough-apples-instrument-images/00-allocations-tempate.png "Choose the Allocations template")
+    ![[Allocations]\(割り当て\) テンプレートを選択する](walkthrough-apples-instrument-images/00-allocations-tempate.png)
 
 4. ウィンドウの上部にある **[Choose a profiling template for:]\(プロファイリング テンプレートの選択\)** リストで **[Memory Demo]** アプリケーションを選択します。 最初に iOS デバイスをクリックして、インストールされたアプリケーションが表示されたメニューを展開します。
 
-    ![](walkthrough-apples-instrument-images/01-mem-demo.png "Select the Memory Demo application")
+    ![MemoryDemo アプリケーションを選択する](walkthrough-apples-instrument-images/01-mem-demo.png)
 
 5. (ウィンドウの右下にある) **[選択]** ボタンを押し、**Instruments** を起動します。 このテンプレートは、上部ウィンドウに 2 つの項目を表示します。[Allocations]\(割り当て\) と [VM Tracker]\(VM トラッカー\) です。
 
@@ -39,7 +39,7 @@ _この記事では、Apple の Instruments ツールを使用して、Xamarin �
 
 7. 上部ウィンドウ (アプリが実行中で、[Dirty]\(ダーティ\) と [Resident Size]\(常駐サイズ\) の 2 つのセクションが含まれます) で **[VM Tracker]\(VM トラッカー\)** 行を選択します。 **[Inspector]\(検査\)** ウィンドウで、 **[Show Display Settings]\(表示設定の表示\)** オプション (歯車アイコン) を選択し、スクリーンショットの右下に表示されている **[Automatic Snapshotting]\(スナップショットの自動作成\)** チェックボックスをオンにします。
 
-    ![](walkthrough-apples-instrument-images/02-auto-snapshot.png "Choose the Show Display Settings option the gear icon then tick the Automatic Snapshotting checkbox")
+    ![[Show Display Settings]\(表示設定の表示\) オプション (歯車アイコン) を選択し、[Automatic Snapshotting]\(スナップショットの自動作成\) チェックボックスをオンにする](walkthrough-apples-instrument-images/02-auto-snapshot.png)
 
 8. 上部ウィンドウ (アプリが実行中で、 *[All Heap and Anonymous VM]\(すべてのヒープと匿名 VM\)* と表示されます) で **[Allocations]\(割り当て\)** 行を選択します。
 9. **[Inspector]\(検査\)** ウィンドウで、 **[Show Display Settings]\(表示設定の表示\)** オプション (歯車アイコン) を選択し、 **[Mark Generation]\(マークの生成\)** ボタンを押してベースラインを確立します。 ウィンドウの上部のタイムラインに小さな赤いフラグが表示されます。
@@ -50,15 +50,15 @@ _この記事では、Apple の Instruments ツールを使用して、Xamarin �
 
 14. **&lt;non-object>** ノードが過剰なメモリの増加を示していることに注目してください。 詳細を表示するにはこのノードの横にある矢印をクリックします。スタック トレース内を右クリックして、ウィンドウに **[Source Location]\(ソースの場所\)** を追加します。
 
-    ![](walkthrough-apples-instrument-images/03-mem-growth.png "Add Source Location to the pane")
+    ![ソースの場所をウィンドウに追加する](walkthrough-apples-instrument-images/03-mem-growth.png)
 
 15. **[Size]\(サイズ\)** で並べ替えて、 **[Extended Detail]\(拡張詳細\)** ビューを表示します。
 
-    ![](walkthrough-apples-instrument-images/04-extended-detail.png "Sort by Size and display the  Extended Detail view")
+    ![[Size]\(サイズ\) で並べ替えて、[Extended Detail]\(拡張詳細\) ビューを表示する](walkthrough-apples-instrument-images/04-extended-detail.png)
 
 16. 呼び出し履歴で目的のエントリをクリックして、関連するコードを表示します。
 
-    ![](walkthrough-apples-instrument-images/05-related-code.png "Viewing the related code")
+    ![関連するコードを表示する](walkthrough-apples-instrument-images/05-related-code.png)
 
 この場合、新しいイメージが作成されて各セルのコレクションに保存され、既存のコレクション ビューは再利用されません。
 
@@ -83,7 +83,7 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, N
 
 これで、アプリケーションを実行したときのメモリ使用量が大幅に減少します。生成間の **[Growth]\(増加\)** は、コードを修正する前の MiB (メガバイト単位) ではなく、Kib (キロバイト単位) で測定されるようになりました。
 
-![](walkthrough-apples-instrument-images/06-reduced-memory.png "Showing the app memory usage")
+![アプリのメモリ使用量を表示する](walkthrough-apples-instrument-images/06-reduced-memory.png)
 
 改善されたコードは、Visual Studio for Mac の **after** ソリューションの [MemoryDemo サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/profiling-memorydemo)で入手できます。
 

@@ -10,12 +10,12 @@ ms.date: 11/29/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ca9a541c3d152d1b84ed682881c395f2199b9eaf
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: adbceca38fca2cbe65c739f0d7fe26f18bdf5450
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84574380"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939855"
 ---
 # <a name="customizing-a-contentpage"></a>ContentPage のカスタマイズ
 
@@ -27,7 +27,7 @@ _ContentPage は、単一ビューを表示し、画面の大部分を占める�
 
 次の図は、[`ContentPage`](xref:Xamarin.Forms.ContentPage) と、それを実装する、対応しているネイティブ コントロールの関係を示しています。
 
-![](contentpage-images/contentpage-classes.png "Relationship Between ContentPage Class and Implementing Native Controls")
+![ContentPage クラスと実装するネイティブ コントロール間の関係](contentpage-images/contentpage-classes.png)
 
 レンダリング プロセスを活用して各プラットフォーム上で [`ContentPage`](xref:Xamarin.Forms.ContentPage) 用のカスタム レンダラーを作成することで、プラットフォーム固有のカスタマイズを実装できます。 その実行プロセスは次のとおりです。
 
@@ -102,11 +102,11 @@ async void OnTakePhotoButtonClicked (object sender, EventArgs e)
 
 次の図に、サンプル アプリケーション内の各プロジェクトの役割とそれらの関係を示します。
 
-![](contentpage-images/solution-structure.png "CameraPage Custom Renderer Project Responsibilities")
+![CameraPage カスタム レンダラーのプロジェクトの役割](contentpage-images/solution-structure.png)
 
 `CameraPage` インスタンスはプラットフォーム固有の `CameraPageRenderer` クラスによってレンダリングされます。このクラスはすべてそのプラットフォームの `PageRenderer` クラスから派生しています。 この結果、次のスクリーンショットに示すように、各 `CameraPage` インスタンスがライブ カメラ フィードでレンダリングされます。
 
-![](contentpage-images/screenshots.png "CameraPage on each Platform")
+![各プラットフォーム上の CameraPage](contentpage-images/screenshots.png)
 
 `PageRenderer` クラスは `OnElementChanged` メソッドを公開します。このメソッドは、該当するネイティブ コントロールをレンダリングするために、Xamarin.Forms ページの作成時に呼び出されます。 このメソッドでは、`OldElement` および `NewElement` プロパティを含む `ElementChangedEventArgs` パラメーターを受け取ります。 これらのプロパティは、レンダラーがアタッチされて*いた* Xamarin.Forms 要素と、レンダラーが現在アタッチされて*いる* Xamarin.Forms 要素をそれぞれ表しています。 サンプル アプリケーションでは、`OldElement` プロパティが `null` になり、`NewElement` プロパティに `CameraPage` インスタンスへの参照が含まれます。
 

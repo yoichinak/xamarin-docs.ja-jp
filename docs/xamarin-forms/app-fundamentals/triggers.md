@@ -10,12 +10,12 @@ ms.date: 04/17/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a287ff28ab62fcfcc00c88858cf3595ba2fa5118
-ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
+ms.openlocfilehash: 2a71f48fb9911267188e7aa4b4124cd9b7488d31
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85853143"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936475"
 ---
 # <a name="xamarinforms-triggers"></a>Xamarin.Forms のトリガー
 
@@ -257,7 +257,7 @@ XAML を以下に示します。 最初のマルチ トリガーの例と次の�
 次のスクリーンショットは、上記の 2 つのマルチ トリガーの例の違いを示したものです。 画面の上部では、 **[Save]** ボタンを有効にするには、1 つの `Entry` へのテキスト入力だけで十分です。
 画面の下部では、両方のフィールドにデータを入力するまで、 **[Login]** ボタンはアクティブになりません。
 
-![](triggers-images/multi-requireall.png "MultiTrigger Examples")
+![マルチ トリガーの例](triggers-images/multi-requireall.png)
 
 ## <a name="enteractions-and-exitactions"></a>EnterActions と ExitActions
 

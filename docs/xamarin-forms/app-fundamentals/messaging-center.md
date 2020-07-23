@@ -1,6 +1,6 @@
 ---
-title: 'title: "Xamarin.Forms の MessagingCenter" description: "Xamarin.Forms の MessagingCenter クラスでは、発行/サブスクライブ パターンが実装され、オブジェクトと型の参照によってリンクしにくいコンポーネント間で、メッセージ ベースの通信を行うことができます。"'
-description: 'ms.prod: xamarin ms.assetid:EDFE7B19-C5FD-40D5-816C-FAE56532E885 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:10/08/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms の MessagingCenter
+description: Xamarin.Forms の MessagingCenter クラスでは、発行/サブスクライブ パターンが実装され、オブジェクトと型の参照によってリンクしにくいコンポーネント間で、メッセージ ベースの通信を行うことができます。
 ms.prod: xamarin
 ms.assetid: EDFE7B19-C5FD-40D5-816C-FAE56532E885
 ms.technology: xamarin-forms
@@ -10,12 +10,12 @@ ms.date: 10/08/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d1407c3c948afe764854cbd99f5c29332f7041aa
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: c817936c77764b95842226b9a9a31c26667d6d0f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84137541"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937450"
 ---
 # <a name="xamarinforms-messagingcenter"></a>Xamarin.Forms の MessagingCenter
 
@@ -29,7 +29,7 @@ Xamarin.Forms の [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) クラ
 
 [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) クラスでは、マルチキャストの発行/サブスクライブ機能を提供します。 つまり、1 つのメッセージをパブリッシュする複数のパブリッシャーが存在し、同じメッセージをリッスンしている複数のサブスクライバーが存在する可能性があるということです。
 
-![](messaging-center-images/messaging-center.png "Multicast publish-subscribe functionality")
+![マルチキャストの発行/サブスクライブ機能](messaging-center-images/messaging-center.png)
 
 パブリッシャーは [`MessagingCenter.Send`](xref:Xamarin.Forms.MessagingCenter.Send*) メソッドを使用してメッセージを送信しますが、サブスクライバーは [`MessagingCenter.Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*) メソッドを使用してメッセージをリッスンします。 さらに、サブスクライバーは、必要に応じて [`MessagingCenter.Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) メソッドを使用して、メッセージ サブスクリプションを解除することもできます。
 
