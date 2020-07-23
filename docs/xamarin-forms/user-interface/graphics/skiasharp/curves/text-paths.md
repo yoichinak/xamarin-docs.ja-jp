@@ -10,16 +10,16 @@ ms.date: 08/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b0cbb7d26a2aea02a3255fc75947c20a3d803b86
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e0964ad7d2bf517a6a4c7cf7965c346629716166
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84131899"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936020"
 ---
 # <a name="paths-and-text-in-skiasharp"></a>SkiaSharp のパスとテキスト
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _パスとテキストの共通部分を調べる_
 
@@ -29,7 +29,7 @@ _パスとテキストの共通部分を調べる_
 
 パス効果を使用して文字アウトラインを描くだけでなく、文字文字列から派生したパスに基づいたパス効果を作成することもできます。また、次の2つの効果を組み合わせることもできます。
 
-![](text-paths-images/pathsandtextsample.png "Text Path Effect")
+![テキストパスの効果](text-paths-images/pathsandtextsample.png)
 
 [**パスの効果**](effects.md)に関する前の記事では、 [`GetFillPath`](xref:SkiaSharp.SKPaint.GetFillPath(SkiaSharp.SKPath,SkiaSharp.SKPath,SkiaSharp.SKRect,System.Single)) のメソッドが `SKPaint` ストロークパスの輪郭を取得する方法について説明しました。 このメソッドは、文字アウトラインから派生したパスでも使用できます。
 
@@ -49,7 +49,7 @@ public SKPath GetTextPath (String text, Single x, Single y)
 
 これらのタスクの1つはクリッピングです。 **クリッピングテキスト**ページは、"CODE" という単語の文字アウトラインに基づいてクリッピングパスを作成します。 このパスは、ページのサイズに拡張され、**クリッピングテキスト**のソースコードのイメージを含むビットマップをクリップします。
 
-[![](text-paths-images/clippingtext-small.png "Triple screenshot of the Clipping Text page")](text-paths-images/clippingtext-large.png#lightbox "Triple screenshot of the Clipping Text page")
+[![クリッピングテキストページのトリプルスクリーンショット](text-paths-images/clippingtext-small.png)](text-paths-images/clippingtext-large.png#lightbox "クリッピングテキストページのトリプルスクリーンショット")
 
 [`ClippingTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ClippingTextPage.cs)クラスコンストラクターは、埋め込みリソースとして格納されているビットマップをソリューションの**メディア**フォルダーに読み込みます。
 
@@ -129,7 +129,7 @@ public class ClippingTextPage : ContentPage
 
 [**テキストパスの効果**] ページでは、1つのアンパサンド文字をパスに変換して、1d パス効果を作成します。 このパス効果を持つ描画オブジェクトは、同じ文字のより大きなバージョンのアウトラインを描画するために使用されます。
 
-[![](text-paths-images/textpatheffect-small.png "Triple screenshot of the Text Path Effect page")](text-paths-images/textpatheffect-large.png#lightbox "Triple screenshot of the Text Path Effect page")
+[![[テキストパスの効果] ページのトリプルスクリーンショット](text-paths-images/textpatheffect-small.png)](text-paths-images/textpatheffect-large.png#lightbox "[テキストパスの効果] ページのトリプルスクリーンショット")
 
 クラスの作業の多くは、 [`TextPathEffectPath`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/TextPathEffectPage.cs) フィールドとコンストラクターで発生します。 フィールドとして定義されている2つのオブジェクトは、 `SKPaint` 2 つの異なる目的で使用されます。1つ目の (名前付き) を使用して、が `textPathPaint` 50 のアンパサンドを、 `TextSize` 1d パス効果のパスに変換します。 2番目の ( `textPaint` ) は、そのパスの効果を持つアンパサンドの大きなバージョンを表示するために使用されます。 このため、 `Style` この2番目の描画オブジェクトのはに設定され `Stroke` ますが、 `StrokeWidth` プロパティは設定されません。これは、1d パス効果を使用する場合に、このプロパティが必要ないためです。
 
@@ -274,7 +274,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ハンドラーは、 `PaintSurface` という名前の新しいパスを作成し `outlinePath` ます。 これは、の呼び出しの宛先パスになり `GetFillPath` ます。 `StrokeWidth`25 のプロパティを使うと、は、 `outlinePath` テキスト文字を描画する25ピクセル幅のパスのアウトラインを記述します。 このパスは赤で表示され、ストロークの幅は5になります。
 
-[![](text-paths-images/characteroutlineoutlines-small.png "Triple screenshot of the Character Outline Outlines page")](text-paths-images/characteroutlineoutlines-large.png#lightbox "Triple screenshot of the Character Outline Outlines page")
+[![文字アウトラインの概要ページのトリプルスクリーンショット](text-paths-images/characteroutlineoutlines-small.png)](text-paths-images/characteroutlineoutlines-large.png#lightbox "文字アウトラインの概要ページのトリプルスクリーンショット")
 
 詳しく見てみましょう。パスの輪郭が鋭い角になっている場所が重なっていることがわかります。 これらは、このプロセスの通常の成果物です。
 
@@ -327,7 +327,7 @@ public class CircularTextPage : ContentPage
 
 次に、のプロパティを調整して、 `TextSize` `textPaint` テキストの幅が円の円周と一致するようにします。
 
-[![](text-paths-images/circulartext-small.png "Triple screenshot of the Circular Text page")](text-paths-images/circulartext-large.png#lightbox "Triple screenshot of the Circular Text page")
+[![円形テキストページのトリプルスクリーンショット](text-paths-images/circulartext-small.png)](text-paths-images/circulartext-large.png#lightbox "円形テキストページのトリプルスクリーンショット")
 
 テキスト自体も少し円形になるように選択されています。単語 "circle" は、文の件名と事前位置フレーズのオブジェクトの両方です。
 

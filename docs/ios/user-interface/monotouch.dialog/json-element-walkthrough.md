@@ -7,38 +7,38 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: davidortinau
 ms.author: daortin
-ms.openlocfilehash: ad2386d912dba28041c02c4fb4a8046d341a85ed
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 8ad1bf746c129cfb5cfbc8b3e04b871224df486d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73002266"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936579"
 ---
 # <a name="using-json-to-create-a-user-interface-in-xamarinios"></a>JSON を使用した Xamarin でのユーザーインターフェイスの作成
 
 _Monotouch.dialog (MT.D) では、JSON データを使用した動的な UI 生成がサポートされています。このチュートリアルでは、JSONElement を使用して、アプリケーションに含まれているか、リモート Url から読み込まれた JSON からユーザーインターフェイスを作成する方法について説明します。_
 
-MT.D では、JSON で宣言されたユーザーインターフェイスの作成をサポートしています。 要素が JSON (MT) を使用して宣言されている場合。関連する要素が自動的に作成されます。 JSON は、ローカルファイル、解析された `JsonObject` インスタンス、またはリモート Url から読み込むことができます。
+MT.D では、JSON で宣言されたユーザーインターフェイスの作成をサポートしています。 要素が JSON (MT) を使用して宣言されている場合。関連する要素が自動的に作成されます。 JSON は、ローカルファイル、解析さ `JsonObject` れたインスタンス、またはリモート Url から読み込むことができます。
 
 MT.D は、JSON を使用するときに Elements API で使用できるすべての機能をサポートしています。 たとえば、次のスクリーンショットのアプリケーションは、JSON を使用して完全に宣言されています。
 
-[![](json-element-walkthrough-images/01-load-from-file.png "たとえば、このスクリーンショットのアプリケーションは、JSON を使用して完全に宣言されています。")](json-element-walkthrough-images/01-load-from-file.png#lightbox)[![](json-element-walkthrough-images/01-load-from-file.png "たとえば、このスクリーンショットのアプリケーションは、JSON を使用して完全に宣言されています。")](json-element-walkthrough-images/01-load-from-file.png#lightbox)
+[ ![ たとえば、このスクリーンショットのアプリケーションは json を使用して完全に宣言さ](json-element-walkthrough-images/01-load-from-file.png)](json-element-walkthrough-images/01-load-from-file.png#lightbox)れています。 [ ![ たとえば、このスクリーンショットのアプリケーションは json を使用して完全に宣言されてい](json-element-walkthrough-images/01-load-from-file.png)](json-element-walkthrough-images/01-load-from-file.png#lightbox)ます。
 
 ここでは、JSON を使用してタスクの詳細画面を追加する方法を示す[ELEMENTS API チュートリアル](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)のチュートリアルの例について説明します。
 
 ## <a name="setting-up-mtd"></a>MT を設定しています。A
 
-MT.D は、Xamarin. iOS と共に配布されます。 これを使用するには、Visual Studio 2017 または Visual Studio for Mac で Xamarin. iOS プロジェクトの **[参照]** ノードを右クリックし、 **monotouch.dialog**アセンブリへの参照を追加します。 次に、必要に応じて、ソースコードに `using MonoTouch.Dialog` ステートメントを追加します。
+MT.D は、Xamarin. iOS と共に配布されます。 これを使用するには、Visual Studio 2017 または Visual Studio for Mac で Xamarin. iOS プロジェクトの [**参照**] ノードを右クリックし、 **monotouch.dialog**アセンブリへの参照を追加します。 次に、 `using MonoTouch.Dialog` 必要に応じて、ソースコードにステートメントを追加します。
 
 ## <a name="json-walkthrough"></a>JSON チュートリアル
 
 このチュートリアルの例では、タスクを作成できます。 最初の画面でタスクを選択すると、次のような詳細画面が表示されます。
 
- [![](json-element-walkthrough-images/03-task-list.png "When a task is selected on the first screen, a detail screen is presented as shown")](json-element-walkthrough-images/03-task-list.png#lightbox)
+ [![最初の画面でタスクを選択すると、詳細画面が表示されます。](json-element-walkthrough-images/03-task-list.png)](json-element-walkthrough-images/03-task-list.png#lightbox)
 
 ## <a name="creating-the-json"></a>JSON の作成
 
-この例では、`task.json`という名前のプロジェクトのファイルから JSON を読み込みます。 MT.D は、JSON が Elements API を反映する構文に準拠していることを想定しています。 コードから Elements API を使用する場合と同様に、JSON を使用する場合は、セクションを宣言し、これらのセクション内で要素を追加します。 JSON でセクションと要素を宣言するには、文字列 "sections" と "elements" をそれぞれキーとして使用します。 要素ごとに、`type` キーを使用して、関連付けられている要素の型が設定されます。 その他のすべての elements プロパティは、キーとしてプロパティ名を使用して設定されます。
+この例では、という名前のプロジェクトのファイルから JSON を読み込み `task.json` ます。 MT.D は、JSON が Elements API を反映する構文に準拠していることを想定しています。 コードから Elements API を使用する場合と同様に、JSON を使用する場合は、セクションを宣言し、これらのセクション内で要素を追加します。 JSON でセクションと要素を宣言するには、文字列 "sections" と "elements" をそれぞれキーとして使用します。 要素ごとに、キーを使用して、関連付けられている要素の型が設定され `type` ます。 その他のすべての elements プロパティは、キーとしてプロパティ名を使用して設定されます。
 
 たとえば、次の JSON では、タスクの詳細のセクションと要素について説明しています。
 
@@ -69,7 +69,7 @@ MT.D は、Xamarin. iOS と共に配布されます。 これを使用するに�
 
 ## <a name="loading-the-json-in-code"></a>コードでの JSON の読み込み
 
-JSON を定義したら、それを MT に読み込む必要があります。D `JsonElement` クラスを使用します。 上記で作成した JSON を含むファイルが、sample. json という名前のプロジェクトに追加されており、コンテンツのビルドアクションが指定されている場合、`JsonElement` の読み込みは、次のコード行を呼び出すことによって簡単に行うことができます。
+JSON を定義したら、それを MT に読み込む必要があります。D クラスを使用する `JsonElement` 。 前の手順で作成した JSON のファイルがプロジェクトに追加され、そのファイルの名前が sample.jsであり、コンテンツのビルドアクションが指定されている場合、を読み込むの `JsonElement` は、次のコード行を呼び出した場合と同じです。
 
 ```csharp
 var taskElement = JsonElement.FromFile ("task.json");
@@ -121,7 +121,7 @@ _addButton.Clicked += (sender, e) => {
 
 ## <a name="loading-json-from-a-url"></a>Url から JSON を読み込んでいます
 
-MT.また、`JsonElement`のコンストラクターに Url を渡すだけで、外部 Url からの JSON の動的な読み込みもサポートされます。 MT.D は、画面間を移動するときに、オンデマンドで JSON で宣言された階層を拡張します。 たとえば、次のような JSON ファイルをローカル web サーバーのルートに配置するとします。
+MT.また、のコンストラクターに Url を渡すだけで、外部 Url からの JSON の動的な読み込みもサポートさ `JsonElement` れます。 MT.D は、画面間を移動するときに、オンデマンドで JSON で宣言された階層を拡張します。 たとえば、次のような JSON ファイルをローカル web サーバーのルートに配置するとします。
 
 ```json
 {
@@ -147,7 +147,7 @@ MT.また、`JsonElement`のコンストラクターに Url を渡すだけで�
 }
 ```
 
-このコードは、次のコードのように `JsonElement` を使用して読み込むことができます。
+これは、次のコードのようにを使用して読み込むことができ `JsonElement` ます。
 
 ```csharp
 _rootElement = new RootElement ("Json Example") {
@@ -159,7 +159,7 @@ _rootElement = new RootElement ("Json Example") {
 
 実行時には、ファイルが MT によって取得および解析されます。次のスクリーンショットに示すように、ユーザーが2番目のビューに移動したとき。
 
- [![](json-element-walkthrough-images/04-json-web-example.png "The file will be retrieved and parsed by MT.D when the user navigates to the second view")](json-element-walkthrough-images/04-json-web-example.png#lightbox)
+ [![ファイルは MT によって取得および解析されます。ユーザーが2番目のビューに移動したとき](json-element-walkthrough-images/04-json-web-example.png)](json-element-walkthrough-images/04-json-web-example.png#lightbox)
 
 ## <a name="summary"></a>まとめ
 

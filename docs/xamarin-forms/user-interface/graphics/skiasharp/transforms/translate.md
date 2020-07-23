@@ -10,16 +10,16 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0eb3b4a6b37d59363984c9248cc39de91a6819e0
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: ed20da1005447334a99ea40c177c8f88d59d71ce
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138256"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938475"
 ---
 # <a name="the-translate-transform"></a>平行移動変換
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _変換変換を使用して SkiaSharp グラフィックスをシフトする方法について説明します。_
 
@@ -27,7 +27,7 @@ SkiaSharp の変換の最も単純な種類は *、変換変換または**変換
 
 翻訳は、アニメーションや単純なテキスト効果にも役立ちます。
 
-![](translate-images/translateexample.png "Text shadow, engraving, and embossing with translation")
+![変換によるテキストの影、engraving、およびエンボス](translate-images/translateexample.png)
 
 [`Translate`](xref:SkiaSharp.SKCanvas.Translate(System.Single,System.Single))のメソッドに `SKCanvas` は2つのパラメーターがあり、その後、描画されたグラフィックスオブジェクトが水平方向および垂直方向にシフトされます。
 
@@ -74,7 +74,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 連続した四角形は、ページの下にトリクルます。
 
-[![](translate-images/accumulatedtranslate-small.png "Triple screenshot of the Accumulated Translate page")](translate-images/accumulatedtranslate-large.png#lightbox "Triple screenshot of the Accumulated Translate page")
+[![累積翻訳ページのトリプルスクリーンショット](translate-images/accumulatedtranslate-small.png)](translate-images/accumulatedtranslate-large.png#lightbox "累積翻訳ページのトリプルスクリーンショット")
 
 累積された変換係数が `dx` およびで `dy` 、描画関数で指定するポイントが (,) である場合、 `x` `y` グラフィックオブジェクトはポイント (、) にレンダリングされます。この場合、 `x'` 次のように `y'` なります。
 
@@ -131,7 +131,7 @@ using (SKPaint textPaint = new SKPaint())
 
 3つの各例で `Translate` は、変数および変数で指定された場所からオフセットするテキストを表示するために、が呼び出され `x` `y` ます。 次に、テキストは、変換効果のない別の色で再び表示されます。
 
-[![](translate-images/translatetexteffects-small.png "Triple screenshot of the Translate Text Effects page")](translate-images/translatetexteffects-large.png#lightbox "Triple screenshot of the Translate Text Effects page")
+[![[テキストの翻訳] ページのトリプルスクリーンショット](translate-images/translatetexteffects-small.png)](translate-images/translatetexteffects-large.png#lightbox "[テキストの翻訳] ページのトリプルスクリーンショット")
 
 次の3つの例は、呼び出しを否定する別の方法を示してい `Translate` ます。
 
@@ -215,9 +215,9 @@ public class HendecagramArrayPage : ContentPage
 
 ```
 
-結果は次のようになります。
+結果は次のとおりです。
 
-[![](translate-images/hendecagramarray-small.png "Triple screenshot of the Hendecagram Array page")](translate-images/hendecagramarray-large.png#lightbox "Triple screenshot of the Hendecagram Array page")
+[![Hendecagram 配列ページのトリプルスクリーンショット](translate-images/hendecagramarray-small.png)](translate-images/hendecagramarray-large.png#lightbox "Hendecagram 配列ページのトリプルスクリーンショット")
 
 多くの場合、アニメーションには変換が含まれます。 **Hendecagram アニメーション**ページでは、円の周りにある11個の星が移動します。 クラスは、 [`HendecagramAnimationPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramAnimationPage.cs) `OnAppearing` `OnDisappearing` タイマーを開始および停止するためのメソッドとメソッドのいくつかのフィールドとオーバーライドで始まり Xamarin.Forms ます。
 
@@ -302,7 +302,7 @@ public class HendecagramAnimationPage : ContentPage
 
 `PaintSurface`ハンドラーはメソッドを `Translate` 2 回呼び出し、まずキャンバスの中央に平行移動し、次に (0, 0) を中心とする円の円周に変換します。 円の半径は可能な限り大きくなるように設定されていますが、ページの境界内で星を維持しています。
 
-[![](translate-images/hendecagramanimation-small.png "Triple screenshot of the Hendecagram Animation page")](translate-images/hendecagramanimation-large.png#lightbox "Triple screenshot of the Hendecagram Animation page")
+[![Hendecagram アニメーションページのトリプルスクリーンショット](translate-images/hendecagramanimation-small.png)](translate-images/hendecagramanimation-large.png#lightbox "Hendecagram アニメーションページのトリプルスクリーンショット")
 
 星の向きは、ページの中央を中心として同じ向きになります。 まったく回転しません。 これは、回転変換のジョブです。
 

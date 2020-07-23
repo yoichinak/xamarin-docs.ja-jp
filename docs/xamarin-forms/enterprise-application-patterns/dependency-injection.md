@@ -10,12 +10,12 @@ ms.date: 11/04/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 99cac3c597cf1d7351d3214ce59fd0a0a0a46400
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 8aea3ad36f6c35e9faf2771fc6b54c378c304afb
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84572352"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933602"
 ---
 # <a name="dependency-injection"></a>依存関係の挿入
 
@@ -62,7 +62,7 @@ EShopOnContainers モバイルアプリでは、TinyIoC を使用してアプリ
 
 TinyIoC では、 `TinyIoCContainer` 型は依存関係挿入コンテナーを提供します。 図3-1 は、このコンテナーを使用する場合の依存関係を示しています。これにより、オブジェクトがインスタンス化され、 `IOrderService` クラスに挿入され `ProfileViewModel` ます。
 
-![](dependency-injection-images/dependencyinjection.png "Dependencies example when using dependency injection")
+![依存関係の挿入を使用する場合の依存関係の例](dependency-injection-images/dependencyinjection.png)
 
 **図 3-1:** 依存関係の挿入を使用する場合の依存関係
 
@@ -116,7 +116,7 @@ _container.Register<ProfileViewModel>();
 
 既定では、各具象クラスの登録は複数インスタンスとして構成されるため、すべての依存オブジェクトが新しいインスタンスを受け取ることができます。 そのため、が解決されると、 `ProfileViewModel` 新しいインスタンスが作成され、コンテナーは必要な依存関係を挿入します。
 
-## <a name="resolution"></a>解決策
+## <a name="resolution"></a>解決方法
 
 型が登録されると、依存関係として解決または挿入されることがあります。 型が解決され、コンテナーが新しいインスタンスを作成する必要がある場合、そのインスタンスに依存関係が挿入されます。
 

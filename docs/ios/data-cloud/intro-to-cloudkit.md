@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/11/2016
-ms.openlocfilehash: 29ccb919f68a45212bff3b66b4bc3fbdebd24faf
-ms.sourcegitcommit: bad1ab3f78d7f94d48511666626b54f8ba155689
+ms.openlocfilehash: 3ff868ed10d59a7c1026a222f314a1166a8de45e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/04/2020
-ms.locfileid: "75663461"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930196"
 ---
 # <a name="cloudkit-in-xamarinios"></a>Xamarin. iOS の CloudKit
 
@@ -23,7 +23,7 @@ CloudKit フレームワークを使用すると、iCloud にアクセスする�
 > [!IMPORTANT]
 > Apple からは、開発者が欧州連合の一般データ保護規則 (GDPR) を適切に処理するための[ツールが提供](https://developer.apple.com/support/allowing-users-to-manage-data/)されています。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 この記事に記載されている手順を完了するには、次のものが必要です。
 
@@ -35,7 +35,7 @@ CloudKit フレームワークを使用すると、iCloud にアクセスする�
 
 CloudKit は、開発者が iCloud サーバーにアクセスできるようにするための手段です。 ICloud ドライブと iCloud フォトライブラリの両方の基盤を提供します。 CloudKit は、macOS デバイスと iOS デバイスの両方でサポートされています。
 
-[macOS と iOS の両方のデバイスで CloudKit がどのようにサポートされるかを ![します。](intro-to-cloudkit-images/image1.png)](intro-to-cloudkit-images/image1.png#lightbox)
+[![MacOS と iOS の両方のデバイスで CloudKit がサポートされるしくみ](intro-to-cloudkit-images/image1.png)](intro-to-cloudkit-images/image1.png#lightbox)
 
 CloudKit は iCloud アカウントインフラストラクチャを使用します。 デバイスで iCloud アカウントにログインしているユーザーがいる場合、CloudKit はその ID を使用してユーザーを識別します。 使用可能なアカウントがない場合は、制限付きの読み取り専用アクセスが提供されます。
 
@@ -52,7 +52,7 @@ CloudKit では、構造化データと一括データの両方がサポート�
 
 Xamarin アプリケーションで CloudKit フレームワークを利用するには、「[機能の使用](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)」および「[権利の](~/ios/deploy-test/provisioning/entitlements.md)使用」ガイドの説明に従って、アプリケーションが正しくプロビジョニングされている必要があります。
 
-CloudKit にアクセスするには、**有効**にする必要があります iCloud ファイル、**キー値のストレージ**、および**cloudkit**のアクセス許可。
+CloudKit にアクセスするには、**有効**にする必要があります iCloud ファイル、**キー値のストレージ**、および**cloudkit**のアクセス許可。 **Entitlements.plist**
 
 ### <a name="sample-app"></a>サンプル アプリ
 
@@ -60,12 +60,12 @@ CloudKit にアクセスするには、**有効**にする必要があります 
 
 1. Visual Studio for Mac または Visual Studio でプロジェクトを開きます。
 2. **ソリューションエクスプローラー**で、**情報 plist**ファイルを開き、**バンドル識別子**が、プロビジョニングセットアップの一部として作成された**アプリ ID**で定義されているものと一致していることを確認します。
-3. **情報 plist**ファイルの一番下までスクロールし、 **[有効なバックグラウンドモード]** 、 **[場所の更新]** 、および **[リモート通知]** を選択します。
-4. ソリューションで iOS プロジェクトを右クリックし、 **[オプション]** を選択します。
-5. 選択**iOS バンドル署名**を選択、**開発者 Identity**と**プロビジョニング プロファイル**上記で作成しました。
+3. **情報 plist**ファイルの一番下までスクロールし、[**有効なバックグラウンドモード**]、[**場所の更新**]、および [**リモート通知**] を選択します。
+4. ソリューションで iOS プロジェクトを右クリックし、[**オプション**] を選択します。
+5. [ **IOS バンドル署名**] を選択し、上で作成した**開発者 Id**と**プロビジョニングプロファイル**を選択します。
 6. **資格**情報の plist に、 **iCloud**、**キー値のストレージ**、および**cloudkit**の有効化が含まれていることを確認します。
-7. アプリケーションの**ユビキタスコンテナー**が存在することを確認します。 例 : `iCloud.com.your-company.CloudKitAtlas`
-8. 変更内容をファイルに保存します。
+7. アプリケーションの**ユビキタスコンテナー**が存在することを確認します。 例: `iCloud.com.your-company.CloudKitAtlas`
+8. 変更をファイルに保存します。
 
 これらの設定が適用されたので、サンプルアプリは、CloudKit フレームワーク Api に加えて、バックグラウンド、場所、および通知サービスにもアクセスできるようになりました。
 
@@ -81,7 +81,7 @@ Xamarin iOS アプリケーションで CloudKit を実装する前に、この�
 6. **Reference** –特定のデータベース内の関連するレコード間の親子リレーションシップを提供します。
 7. Asset **–大**規模な非構造化データのファイルを iCloud にアップロードし、特定のレコードに関連付けることができます。
 
-### <a name="containers"></a>コンテナー
+### <a name="containers"></a>Containers
 
 IOS デバイスで実行されている特定のアプリケーションは、そのデバイス上の他のアプリケーションやサービスと同時に実行されます。 クライアントデバイスでは、何らかの方法でアプリケーションが孤立またはサンドボックス化されます。 場合によっては、これがリテラルサンドボックスであり、それ以外の場合は、アプリケーションが専用のメモリ領域で実行されることもあります。
 
@@ -93,17 +93,17 @@ IOS デバイスで実行されている特定のアプリケーションは、�
 
 CloudKit は上記と同じ利点を提供するように設計されており、クラウドベースの情報を操作するために適用されます。
 
- [![](intro-to-cloudkit-images/image31.png "CloudKit apps communicate using containers")](intro-to-cloudkit-images/image31.png#lightbox)
+ [![CloudKit アプリがコンテナーを使用して通信する](intro-to-cloudkit-images/image31.png)](intro-to-cloudkit-images/image31.png#lightbox)
 
 デバイス上で実行されているアプリケーションと同じように、アプリケーションは iCloud との通信を行います。 これらのさまざまな通信サイロは、コンテナーと呼ばれます。
 
-コンテナーは、CloudKit フレームワークで `CKContainer` クラスを介して公開されます。 既定では、1つのアプリケーションが1つのコンテナーと通信し、このコンテナーはそのアプリケーションのデータを分離します。 これは、複数のアプリケーションが同じ iCloud アカウントに情報を格納できることを意味しますが、この情報は混在しません。
+コンテナーは、クラスを使用して CloudKit フレームワークで公開され `CKContainer` ます。 既定では、1つのアプリケーションが1つのコンテナーと通信し、このコンテナーはそのアプリケーションのデータを分離します。 これは、複数のアプリケーションが同じ iCloud アカウントに情報を格納できることを意味しますが、この情報は混在しません。
 
 ICloud データのコンテナー化により、CloudKit はユーザー情報をカプセル化することもできます。 この方法では、ユーザーのプライバシーとセキュリティを保護しながら、iCloud アカウントと、に格納されているユーザー情報へのアクセスが制限されます。
 
 コンテナーは、WWDR ポータルを使用して、アプリケーションの開発者によって完全に管理されます。 コンテナーの名前空間は、すべての Apple 開発者にとってグローバルであるため、コンテナーは、特定の開発者のアプリケーションだけでなく、すべての Apple 開発者およびアプリケーションに対して一意である必要があります。
 
-Apple では、アプリケーションコンテナーの名前空間を作成するときに、逆引き DNS 表記を使用することを提案しています。 例 : `iCloud.com.company-name.application-name`
+Apple では、アプリケーションコンテナーの名前空間を作成するときに、逆引き DNS 表記を使用することを提案しています。 例: `iCloud.com.company-name.application-name`
 
 コンテナーは、既定では、特定のアプリケーションに対して1対1でバインドされますが、アプリケーション間で共有できます。 そのため、複数のアプリケーションで1つのコンテナーを調整できます。 1つのアプリケーションが複数のコンテナーと通信することもできます。
 
@@ -111,17 +111,17 @@ Apple では、アプリケーションコンテナーの名前空間を作成�
 
 CloudKit の主な機能の1つは、アプリケーションのデータモデルと、iCloud サーバーまでのレプリケーションを実行することです。 一部の情報は、それを作成したユーザーを対象としています。その他の情報は、ユーザーが一般に使用するために作成できるパブリックデータ (レストランのレビューなど)、または開発者がアプリケーションに発行した情報である可能性があります。 どちらの場合も、対象ユーザーは単なる1人のユーザーではなく、ユーザーのコミュニティです。
 
- [![](intro-to-cloudkit-images/image32.png "CloudKit Container Diagram")](intro-to-cloudkit-images/image32.png#lightbox)
+ [![CloudKit コンテナーの図](intro-to-cloudkit-images/image32.png)](intro-to-cloudkit-images/image32.png#lightbox)
 
 コンテナー内では、まずパブリックデータベースがあります。 ここで、すべてのパブリック情報が存在し、共同 mingles ます。 また、アプリケーションのユーザーごとに個別のプライベートデータベースがいくつかあります。
 
 IOS デバイスで実行されている場合、アプリケーションは、現在ログオンしている iCloud ユーザーの情報にのみアクセスできます。 そのため、コンテナーのアプリケーションのビューは次のようになります。
 
- [![](intro-to-cloudkit-images/image33.png "The applications view of the container")](intro-to-cloudkit-images/image33.png#lightbox)
+ [![コンテナーのアプリケーションビュー](intro-to-cloudkit-images/image33.png)](intro-to-cloudkit-images/image33.png#lightbox)
 
 パブリックデータベースと、現在ログオンしている iCloud ユーザーに関連付けられているプライベートデータベースのみが表示されます。
 
-データベースは、CloudKit フレームワークで `CKDatabase` クラスを介して公開されます。 すべてのアプリケーションは、パブリックデータベースとプライベートデータベースの2つのデータベースにアクセスできます。
+データベースは、クラスを使用して CloudKit フレームワークで公開され `CKDatabase` ます。 すべてのアプリケーションは、パブリックデータベースとプライベートデータベースの2つのデータベースにアクセスできます。
 
 コンテナーは、CloudKit への最初のエントリポイントです。 次のコードを使用して、アプリケーションの既定のコンテナーからパブリックおよびプライベートデータベースにアクセスできます。
 
@@ -143,26 +143,26 @@ PrivateDatabase = CKContainer.DefaultContainer.PrivateCloudDatabase;
 
 ||パブリック データ|プライベートデータベース|
 |---|--- |--- |
-|**データ型**|共有データ|現在のユーザーのデータ|
+|**[データ型]**|共有データ|現在のユーザーのデータ|
 |**[クォータ]**|開発者のクォータについて考慮されます。|ユーザーのクォータについて考慮されます。|
-|**既定のアクセス許可**|世界での読み取り可能|ユーザーが読み取り可能|
-|**アクセス許可の編集**|レコードクラスレベルを使用した iCloud ダッシュボードロール|N/A|
+|**既定の権限**|世界での読み取り可能|ユーザーが読み取り可能|
+|**アクセス許可の編集**|レコードクラスレベルを使用した iCloud ダッシュボードロール|該当なし|
 
 ### <a name="records"></a>レコード
 
 コンテナーはデータベースを保持し、データベース内にはレコードです。 レコードは、CloudKit との間で構造化データを移動するためのメカニズムです。
 
- [![](intro-to-cloudkit-images/image34.png "Containers hold databases, and inside databases are records")](intro-to-cloudkit-images/image34.png#lightbox)
+ [![コンテナーはデータベースを保持し、データベース内にはレコードです。](intro-to-cloudkit-images/image34.png)](intro-to-cloudkit-images/image34.png#lightbox)
 
-レコードは、キーと値のペアをラップする `CKRecord` クラスを使用して、CloudKit フレームワークで公開されます。 アプリケーション内のオブジェクトのインスタンスは、CloudKit の `CKRecord` に相当します。 また、各 `CKRecord` は、オブジェクトのクラスに相当するレコード型を所有しています。
+レコードは、 `CKRecord` キーと値のペアをラップするクラスを使用して CloudKit フレームワークで公開されます。 アプリケーション内のオブジェクトのインスタンスは、 `CKRecord` CloudKit のと同じです。 また、それぞれの `CKRecord` レコード型は、オブジェクトのクラスに相当します。
 
 レコードにはジャストインタイムスキーマがあるため、処理のために渡される前に、データが CloudKit に記述されます。 その時点から、CloudKit は情報を解釈し、レコードの格納と取得の物流を処理します。
 
-`CKRecord` クラスは、さまざまなメタデータもサポートします。 たとえば、レコードには、作成された日時とそれを作成したユーザーに関する情報が含まれます。 レコードには、最後に変更された日時とそれを変更したユーザーに関する情報も含まれます。
+クラスでは、 `CKRecord` さまざまなメタデータもサポートされています。 たとえば、レコードには、作成された日時とそれを作成したユーザーに関する情報が含まれます。 レコードには、最後に変更された日時とそれを変更したユーザーに関する情報も含まれます。
 
 レコードには、変更タグの概念が含まれています。 これは、特定のレコードの以前のバージョンのリビジョンです。 Change タグは、クライアントとサーバーの特定のレコードのバージョンが同じであるかどうかを確認するための軽量な方法として使用されます。
 
-前述のように、キーと値のペアをラップする `CKRecords`、次の種類のデータをレコードに格納できます。
+前述のように、 `CKRecords` キーと値のペアをラップすると、次の種類のデータをレコードに格納できます。
 
 1. `NSString`
 1. `NSNumber`
@@ -192,11 +192,11 @@ await CloudManager.SaveAsync (newRecord);
 
 レコードは、特定のデータベース内には存在しません。レコードのグループは、レコードゾーン内にまとめられます。 レコードゾーンは、従来のリレーショナルデータベースのテーブルと考えることができます。
 
- [![](intro-to-cloudkit-images/image35.png "Groups of records exist together inside a Record Zone")](intro-to-cloudkit-images/image35.png#lightbox)
+ [![レコードのグループは1つのレコードゾーン内に存在します。](intro-to-cloudkit-images/image35.png)](intro-to-cloudkit-images/image35.png#lightbox)
 
 特定のレコードゾーン内に複数のレコードを指定し、特定のデータベース内に複数のレコードゾーンを配置することができます。 各データベースには、既定のレコードゾーンが含まれます。
 
- [![](intro-to-cloudkit-images/image36.png "Every database contains a Default Record Zone and Custom Zone")](intro-to-cloudkit-images/image36.png#lightbox)
+ [![各データベースには、既定のレコードゾーンとカスタムゾーンが含まれます。](intro-to-cloudkit-images/image36.png)](intro-to-cloudkit-images/image36.png#lightbox)
 
 ここで、レコードは既定で格納されます。 さらに、カスタムレコードゾーンを作成することもできます。 レコードゾーンは、アトミックコミットと Change Tracking が実行される基本粒度を表します。
 
@@ -212,21 +212,21 @@ await CloudManager.SaveAsync (newRecord);
 
 開発者は、新しいレコード識別子を作成するときに、各レコードが属するレコードゾーンを指定できます。 何も指定されていない場合は、既定のレコードゾーンが使用されます。
 
-レコード識別子は、CloudKit フレームワークで `CKRecordID` クラスを介して公開されます。 次のコードを使用して、新しいレコード識別子を作成できます。
+レコード識別子は、クラスを使用して CloudKit フレームワークで公開され `CKRecordID` ます。 次のコードを使用して、新しいレコード識別子を作成できます。
 
 ```csharp
 var recordID =  new CKRecordID("My Record");
 ```
 
-### <a name="references"></a>参照
+### <a name="references"></a>リファレンス
 
 参照は、特定のデータベース内の関連するレコード間のリレーションシップを提供します。
 
- [![](intro-to-cloudkit-images/image37.png "References provide relationships between related Records within a given Database")](intro-to-cloudkit-images/image37.png#lightbox)
+ [![参照は、特定のデータベース内の関連するレコード間のリレーションシップを提供します。](intro-to-cloudkit-images/image37.png)](intro-to-cloudkit-images/image37.png#lightbox)
 
 上の例では、親子が親レコードの子レコードであるように、親が子を所有しています。 リレーションシップは、子レコードから親レコードに移動し、*後方参照*と呼ばれます。
 
-参照は、CloudKit フレームワークで `CKReference` クラスを介して公開されます。 これは、iCloud サーバーがレコード間の関係を理解できるようにするための手段です。
+参照は、クラスを使用して CloudKit フレームワークで公開され `CKReference` ます。 これは、iCloud サーバーがレコード間の関係を理解できるようにするための手段です。
 
 参照は、連鎖削除の背後にあるメカニズムを提供します。 親レコードがデータベースから削除されると、リレーションシップに指定されている子レコードも、データベースから自動的に削除されます。
 
@@ -247,17 +247,17 @@ var reference = new CKReference(newRecord, new CKReferenceAction());
 
 資産を使用すると、大規模な非構造化データのファイルを iCloud にアップロードし、特定のレコードに関連付けることができます。
 
- [![](intro-to-cloudkit-images/image38.png "Assets allow for a file of large, unstructured data to be uploaded to iCloud and associated with a given Record")](intro-to-cloudkit-images/image38.png#lightbox)
+ [![資産を使用すると、大規模な非構造化データのファイルを iCloud にアップロードし、特定のレコードに関連付けることができます。](intro-to-cloudkit-images/image38.png)](intro-to-cloudkit-images/image38.png#lightbox)
 
-クライアントでは、iCloud サーバーにアップロードされるファイルを記述する `CKRecord` が作成されます。 ファイルを格納する `CKAsset` が作成され、それを記述するレコードにリンクされます。
+クライアントでは、 `CKRecord` iCloud サーバーにアップロードされるファイルを記述するが作成されます。 は、 `CKAsset` ファイルを格納するために作成され、それを記述するレコードにリンクされます。
 
 ファイルがサーバーにアップロードされると、レコードがデータベースに配置され、そのファイルが特別な一括ストレージデータベースにコピーされます。 レコードポインターとアップロードされたファイルの間にリンクが作成されます。
 
-アセットは、CloudKit フレームワークで `CKAsset` クラスを介して公開され、大規模な非構造化データを格納するために使用されます。 開発者は、大量の非構造化データをメモリ内に保持する必要がないため、ディスク上のファイルを使用して資産が実装されます。
+アセットは、クラスを介して CloudKit フレームワークで公開され、 `CKAsset` 大規模な非構造化データを格納するために使用されます。 開発者は、大量の非構造化データをメモリ内に保持する必要がないため、ディスク上のファイルを使用して資産が実装されます。
 
 資産はレコードによって所有されます。これにより、レコードをポインターとして使用して iCloud から資産を取得できます。 このようにすることで、資産を所有するレコードが削除されたときに、サーバーがアセットをガベージコレクトできます。
 
-`CKAssets` は大規模なデータファイルを処理するため、Apple は CloudKit を使用してアセットを効率的にアップロードしてダウンロードします。
+`CKAssets`は大規模なデータファイルを処理するため、Apple は CloudKit を使用してアセットを効率的にアップロードしてダウンロードします。
 
 次のコードを使用すると、資産を作成してレコードに関連付けることができます。
 
@@ -284,7 +284,7 @@ Apple では、CloudKit を操作するための2つの異なる API セット�
 
 ### <a name="common-setup-code"></a>一般的なセットアップコード
 
-CloudKit の便宜的な API を始める前に、標準セットアップコードが必要です。 まず、アプリケーションの `AppDelegate.cs` ファイルを変更し、次のようにします。
+CloudKit の便宜的な API を始める前に、標準セットアップコードが必要です。 まず、アプリケーションのファイルを変更し、次のようにし `AppDelegate.cs` ます。
 
 ```csharp
 using System;
@@ -346,7 +346,7 @@ public AppDelegate ThisApp {
 }
 ```
 
-これにより、`AppDelegate` にアクセスするショートカットが追加され、上で作成したパブリックデータベースとプライベートデータベースのショートカットにアクセスできるようになります。
+これにより、にアクセスするためのショートカットが追加され、 `AppDelegate` 上で作成したパブリックデータベースとプライベートデータベースのショートカットにアクセスできるようになります。
 
 このコードを使用して、Xamarin iOS 8 アプリケーションでの CloudKit の便利な API の実装について見ていきましょう。
 
@@ -373,7 +373,7 @@ ThisApp.PublicDatabase.SaveRecord(newRecord, (record, err) => {
 
 上記のコードについては、次の3つの点に注意してください。
 
-1. 開発者は、`PublicDatabase`の `SaveRecord` メソッドを呼び出すことによって、データの送信方法、書き込み先のゾーンなどを指定する必要がありません。便宜上 API は、これらの詳細をすべて処理します。
+1. 開発者は、のメソッドを呼び出すことによって、 `SaveRecord` `PublicDatabase` データの送信方法、書き込み先のゾーンなどを指定する必要がありません。便宜上 API は、これらの詳細をすべて処理します。
 1. 呼び出しは非同期であり、呼び出しが完了すると、成功または失敗のいずれかでコールバックルーチンが提供されます。 呼び出しが失敗した場合は、エラーメッセージが表示されます。
 1. CloudKit はローカルストレージ/永続化を提供しません。転送メディアのみです。 そのため、レコードを保存する要求が行われると、その要求は iCloud サーバーに直ちに送信されます。
 
@@ -423,7 +423,7 @@ ThisApp.PublicDatabase.FetchRecord(recordID, (record, err) => {
 });
 ```
 
-呼び出しが成功した場合、`PublicDatabase` の `FetchRecord` メソッドは `CKRecord` を返します。 その後、アプリケーションはレコードを変更し、`SaveRecord` を再度呼び出して、変更をデータベースに書き戻します。
+`FetchRecord`のメソッドは、 `PublicDatabase` `CKRecord` 呼び出しが成功した場合にを返します。 その後、アプリケーションはレコードを変更し、を再度呼び出して、 `SaveRecord` 変更をデータベースに書き戻します。
 
 このセクションでは、CloudKit の便利な API を使用するときにアプリケーションが使用する一般的なサイクルについて説明しました。 アプリケーションは iCloud にレコードを保存し、icloud からそれらのレコードを取得し、レコードを変更して、それらの変更を iCloud に保存します。
 
@@ -442,13 +442,13 @@ ThisApp.PublicDatabase.FetchRecord(recordID, (record, err) => {
 
 ### <a name="queries"></a>クエリ
 
-前述のように、クエリを使用すると、開発者はクラウド内に存在する大規模なデータセットの小さなサブセットを選択できます。 クエリは、CloudKit フレームワークで `CKQuery` クラスを介して公開されます。
+前述のように、クエリを使用すると、開発者はクラウド内に存在する大規模なデータセットの小さなサブセットを選択できます。 クエリは、クラスを使用して CloudKit フレームワークで公開され `CKQuery` ます。
 
-クエリでは、レコードの種類 (`RecordType`)、述語 (`NSPredicate`)、および必要に応じて並べ替え記述子 (`NSSortDescriptors`) という3つの異なる項目が結合されます。 CloudKit では、ほとんどの `NSPredicate`がサポートされています。
+クエリでは、レコード型 ( `RecordType` )、述語 ( `NSPredicate` )、および必要に応じて並べ替え記述子 () という3つの異なる項目が結合さ `NSSortDescriptors` れます。 CloudKit は、の大部分をサポート `NSPredicate` しています。
 
 #### <a name="supported-predicates"></a>サポートされている述語
 
-CloudKit では、クエリを操作するときに次の種類の `NSPredicates` がサポートされています。
+CloudKit では、 `NSPredicates` クエリを操作するときに次の種類のをサポートしています。
 
 1. 名前が変数に格納されている値と等しいレコードを照合します。
 
@@ -475,13 +475,13 @@ CloudKit では、クエリを操作するときに次の種類の `NSPredicates
     var predicate = NSPredicate.FromFormat(string.Format("distanceToLocation:fromLocation(Location,{0}) < 100", location));
     ```
 
-5. CloudKit はトークン化された検索をサポートしています。 この呼び出しにより、2つのトークンが作成されます。1つは `after` 用で、もう1つは `session`用です。 次の2つのトークンを含むレコードが返されます。
+5. CloudKit はトークン化された検索をサポートしています。 この呼び出しによって2つのトークンが作成されます。1つは用、もう1つは `after` 用 `session` です。 次の2つのトークンを含むレコードが返されます。
 
     ```csharp
     NSPredicate.FromFormat(string.Format("ALL tokenize({0}, 'Cdl') IN allTokens", "after session"))
     ```
 
-6. CloudKit は、`AND` 演算子を使用して結合された複合述語をサポートしています。
+6. CloudKit は、演算子を使用して結合された複合述語をサポートしてい `AND` ます。
 
     ```csharp
     NSPredicate.FromFormat(string.Format("start > {0} AND name = '{1}'", (NSDate)date, recordName))
@@ -489,7 +489,7 @@ CloudKit では、クエリを操作するときに次の種類の `NSPredicates
 
 #### <a name="creating-queries"></a>クエリの作成
 
-次のコードを使用して、Xamarin iOS 8 アプリケーションで `CKQuery` を作成できます。
+次のコードを使用して、 `CKQuery` Xamarin iOS 8 アプリケーションでを作成できます。
 
 ```csharp
 var recordName = "MyRec";
@@ -521,7 +521,7 @@ ThisApp.PublicDatabase.PerformQuery(query, CKRecordZone.DefaultRecordZone().Zone
 });
 ```
 
-上記のコードは、上記で作成したクエリを受け取り、パブリックデータベースに対して実行します。 レコードゾーンが指定されていないため、すべてのゾーンが検索されます。 エラーが発生しなかった場合は、クエリのパラメーターに一致する `CKRecords` の配列が返されます。
+上記のコードは、上記で作成したクエリを受け取り、パブリックデータベースに対して実行します。 レコードゾーンが指定されていないため、すべてのゾーンが検索されます。 エラーが発生しなかった場合は、 `CKRecords` クエリのパラメーターに一致するの配列が返されます。
 
 クエリについて考える方法は、それらがポーリングであり、大規模なデータセットを使用してスライスする場合に最適です。 ただし、クエリは、次の理由により、大部分の静的データセットには適していません。
 
@@ -535,16 +535,16 @@ ThisApp.PublicDatabase.PerformQuery(query, CKRecordZone.DefaultRecordZone().Zone
 
 最後に、サーバー側のクエリを実行するときに、データベースにアタッチされているすべてのデバイスにプッシュ通知を送信する必要があります。
 
-サブスクリプションは、CloudKit フレームワークで `CKSubscription` クラスを介して公開されます。 レコードの種類 (`RecordType`)、述語 (`NSPredicate`)、Apple Push Notification (`Push`) を結合します。
+サブスクリプションは、クラスを使用して CloudKit フレームワークで公開され `CKSubscription` ます。 レコードの種類 ( `RecordType` )、述語 ( `NSPredicate` )、および Apple のプッシュ通知 () を結合し `Push` ます。
 
 > [!NOTE]
 > CloudKit のプッシュは、プッシュが発生する原因など、CloudKit 固有の情報を含むペイロードが含まれているため、若干強化されています。
 
 #### <a name="how-subscriptions-work"></a>サブスクリプションのしくみ
 
-コードでC#サブスクリプションを実装する前に、サブスクリプションの動作の概要を簡単に説明します。
+C# コードでサブスクリプションを実装する前に、サブスクリプションの動作の概要を簡単に説明します。
 
- [![](intro-to-cloudkit-images/image39.png "An overview of how subscriptions work")](intro-to-cloudkit-images/image39.png#lightbox)
+ [![サブスクリプションのしくみの概要](intro-to-cloudkit-images/image39.png)](intro-to-cloudkit-images/image39.png#lightbox)
 
 上のグラフは、次のような一般的なサブスクリプションプロセスを示しています。
 
@@ -598,7 +598,7 @@ ThisApp.PublicDatabase.SaveSubscription(subscription, (s, err) => {
 
 開発者が以前に Apple Push notification (APS) を使用していた場合は、CloudKit によって生成された通知を処理するプロセスを理解しておく必要があります。
 
-`AppDelegate.cs`で、次のように `ReceivedRemoteNotification` クラスをオーバーライドします。
+で、次のように `AppDelegate.cs` クラスをオーバーライドし `ReceivedRemoteNotification` ます。
 
 ```csharp
 public override void ReceivedRemoteNotification (UIApplication application, NSDictionary userInfo)
@@ -637,19 +637,19 @@ CloudKit は、開発者に次のユーザー情報を提供します。
 - **Id** –ユーザーを一意に識別する方法。
 - **メタデータ**–ユーザーに関する情報を保存および取得する権限です。
 - **プライバシー** -すべての情報は、プライバシーを意識した、またはによって処理されます。 ユーザーが同意していない限り、何も公開されません。
-- **[検出]** –ユーザーは、同じアプリケーションを使用している友人を見つけることができます。
+- [**検出**] –ユーザーは、同じアプリケーションを使用している友人を見つけることができます。
 
 次に、これらのトピックについて詳しく説明します。
 
-#### <a name="identity"></a>ID と
+#### <a name="identity"></a>ID
 
 前述のように、CloudKit は、アプリケーションが特定のユーザーを一意に識別する方法を提供します。
 
- [![](intro-to-cloudkit-images/image40.png "Uniquely identifing a given user")](intro-to-cloudkit-images/image40.png#lightbox)
+ [![特定のユーザーを一意に使う](intro-to-cloudkit-images/image40.png)](intro-to-cloudkit-images/image40.png#lightbox)
 
 ユーザーのデバイスで実行されているクライアントアプリケーションと、CloudKit コンテナー内の特定のユーザープライベートデータベースがあります。 クライアントアプリケーションは、これらの特定のユーザーのいずれかにリンクされます。 これは、デバイスのローカルに iCloud にログインしているユーザーに基づいています。
 
-これは iCloud から送信されるため、ユーザー情報の豊富なバッキングストアがあります。 また、iCloud は実際にはコンテナーをホストしているため、ユーザーを関連付けることができます。 上の図では、iCloud アカウント `user@icloud.com` が現在のクライアントにリンクされています。
+これは iCloud から送信されるため、ユーザー情報の豊富なバッキングストアがあります。 また、iCloud は実際にはコンテナーをホストしているため、ユーザーを関連付けることができます。 上の図で、iCloud アカウント `user@icloud.com` が現在のクライアントにリンクされているユーザー。
 
 コンテナーごとに、ランダムに生成された一意のユーザー ID が作成され、ユーザーの iCloud アカウント (電子メールアドレス) に関連付けられます。 このユーザー ID は、アプリケーションに返されます。これは、開発者が適合する任意の方法で使用できます。
 
@@ -676,15 +676,15 @@ CKContainer.DefaultContainer.FetchUserRecordId ((recordID, err) => {
 
 上記のコードは、現在ログインしているユーザーの ID を提供するように CloudKit コンテナーに要求しています。 この情報は iCloud サーバーから送信されるため、呼び出しは非同期であり、エラー処理が必要です。
 
-#### <a name="metadata"></a>メタデータ
+#### <a name="metadata"></a>Metadata
 
 CloudKit の各ユーザーには、それらを説明する特定のメタデータがあります。 このメタデータは、CloudKit レコードとして表されます。
 
- [![](intro-to-cloudkit-images/image41.png "Each user in CloudKit has specific Metadata that describes them")](intro-to-cloudkit-images/image41.png#lightbox)
+ [![CloudKit の各ユーザーには、それらを説明する特定のメタデータがあります。](intro-to-cloudkit-images/image41.png)](intro-to-cloudkit-images/image41.png#lightbox)
 
 プライベートデータベース内でコンテナーの特定のユーザーを検索するには、そのユーザーを定義する1つのレコードがあります。 パブリックデータベース内には、コンテナーのユーザーごとに1つずつ、多くのユーザーレコードがあります。 このうちの1つは、現在ログオンしているユーザーのレコード ID と一致するレコード ID を持つことになります。
 
-パブリックデータベースのユーザーレコードは、世界中で読むことができます。 ほとんどの場合、通常のレコードとして扱われ、`CKRecordTypeUserRecord`の種類があります。 これらのレコードはシステムによって予約されており、クエリでは使用できません。
+パブリックデータベースのユーザーレコードは、世界中で読むことができます。 ほとんどの場合、通常のレコードとして扱われ、型があり `CKRecordTypeUserRecord` ます。 これらのレコードはシステムによって予約されており、クエリでは使用できません。
 
 ユーザーレコードにアクセスするには、次のコードを使用します。
 
@@ -712,11 +712,11 @@ CloudKit は、現在ログオンしているユーザーのプライバシー�
 
 このような場合、アプリケーションは、ユーザーがこの情報を開示するように要求できます。 ユーザーに対して、アカウント情報を公開するかどうかを確認するダイアログボックスが表示されます。
 
-#### <a name="discovery"></a>の探索
+#### <a name="discovery"></a>探索
 
 ユーザーがユーザーアカウント情報へのアクセスが制限されていることをユーザーがオプトインしていると仮定すると、アプリケーションの他のユーザーが検出できるようになります。
 
- [![](intro-to-cloudkit-images/image42.png "A user can be discoverable to other users of the application")](intro-to-cloudkit-images/image42.png#lightbox)
+ [![ユーザーは、アプリケーションの他のユーザーに検出できます。](intro-to-cloudkit-images/image42.png)](intro-to-cloudkit-images/image42.png#lightbox)
 
 クライアントアプリケーションはコンテナーと通信し、コンテナーは iCloud と通信してユーザー情報にアクセスします。 ユーザーは電子メールアドレスを指定できます。探索を使用して、ユーザーに関する情報を取得できます。 必要に応じて、ユーザー ID を使用して、ユーザーに関する情報を探索することもできます。
 
@@ -790,48 +790,48 @@ CloudKit は、アプリケーションのレコードの種類とデータに�
 
 CloudKit を使用するアプリケーションを出荷する前に、**運用環境の Cloudkit 環境**を対象とするように構成する必要があります。そうしないと、アプリケーションは Apple によって拒否されます。
 
-次を実行します。
+次の操作を行います。
 
-1. Visual Studio for Ma で、 **Release** > **iOS デバイス**用にアプリケーションをコンパイルします。
+1. Visual Studio for Ma で、**リリース**  >  **iOS デバイス**用にアプリケーションをコンパイルします。
 
-    [![](intro-to-cloudkit-images/shipping01.png "Compile the application for Release")](intro-to-cloudkit-images/shipping01.png#lightbox)
+    [![リリース用にアプリケーションをコンパイルする](intro-to-cloudkit-images/shipping01.png)](intro-to-cloudkit-images/shipping01.png#lightbox)
 
-2. **[ビルド]** メニューの **[アーカイブ]** を選択します。
+2. [**ビルド**] メニューの [**アーカイブ**] を選択します。
 
-    [![](intro-to-cloudkit-images/shipping02.png "Select Archive")](intro-to-cloudkit-images/shipping02.png#lightbox)
+    [![アーカイブの選択](intro-to-cloudkit-images/shipping02.png)](intro-to-cloudkit-images/shipping02.png#lightbox)
 
 3. **アーカイブ**が作成され、Visual Studio for Mac に表示されます。
 
-    [![](intro-to-cloudkit-images/shipping03.png "The Archive will be created and displayed")](intro-to-cloudkit-images/shipping03.png#lightbox)
+    [![アーカイブが作成されて表示されます](intro-to-cloudkit-images/shipping03.png)](intro-to-cloudkit-images/shipping03.png#lightbox)
 
 4. **Xcode** を起動します。
-5. **[ウィンドウ]** メニューの **[オーガナイザー]** を選択します。
+5. [**ウィンドウ**] メニューの [**オーガナイザー**] を選択します。
 
-    [![](intro-to-cloudkit-images/shipping04.png "Select Organizer")](intro-to-cloudkit-images/shipping04.png#lightbox)
+    [![オーガナイザーの選択](intro-to-cloudkit-images/shipping04.png)](intro-to-cloudkit-images/shipping04.png#lightbox)
 
-6. アプリケーションのアーカイブを選択し、 **[エクスポート]** ボタンをクリックします。
+6. アプリケーションのアーカイブを選択し、[**エクスポート**] ボタンをクリックします。
 
     [![](intro-to-cloudkit-images/shipping05.png "The application's archive")](intro-to-cloudkit-images/shipping05.png#lightbox)
 
-7. エクスポートするメソッドを選択し、 **[次へ]** ボタンをクリックします。
+7. エクスポートするメソッドを選択し、[**次へ**] ボタンをクリックします。
 
-    [![](intro-to-cloudkit-images/shipping06.png "Select a method for export")](intro-to-cloudkit-images/shipping06.png#lightbox)
+    [![エクスポートする方法の選択](intro-to-cloudkit-images/shipping06.png)](intro-to-cloudkit-images/shipping06.png#lightbox)
 
-8. ドロップダウンリストから**開発チーム**を選択し、 **[選択]** ボタンをクリックします。
+8. ドロップダウンリストから**開発チーム**を選択し、[**選択**] ボタンをクリックします。
 
-    [![](intro-to-cloudkit-images/shipping07.png "Select the Development Team from the dropdown list")](intro-to-cloudkit-images/shipping07.png#lightbox)
+    [![ドロップダウンリストから開発チームを選択します](intro-to-cloudkit-images/shipping07.png)](intro-to-cloudkit-images/shipping07.png#lightbox)
 
-9. ドロップダウンリストから **[Production]** を選択し、 **[次へ]** ボタンをクリックします。
+9. ドロップダウンリストから [ **Production** ] を選択し、[**次へ**] ボタンをクリックします。
 
-    [![](intro-to-cloudkit-images/shipping08.png "Select Production from the dropdown list")](intro-to-cloudkit-images/shipping08.png#lightbox)
+    [![ドロップダウンリストから [運用] を選択します。](intro-to-cloudkit-images/shipping08.png)](intro-to-cloudkit-images/shipping08.png#lightbox)
 
-10. 設定を確認し、 **[エクスポート]** ボタンをクリックします。
+10. 設定を確認し、[**エクスポート**] ボタンをクリックします。
 
-    [![](intro-to-cloudkit-images/shipping09.png "Review the setting")](intro-to-cloudkit-images/shipping09.png#lightbox)
+    [![設定を確認する](intro-to-cloudkit-images/shipping09.png)](intro-to-cloudkit-images/shipping09.png#lightbox)
 
-11. 生成されたアプリケーション `.ipa` ファイルを生成する場所を選択します。
+11. 結果として得られるアプリケーションファイルを生成する場所を選択し `.ipa` ます。
 
-ITunes Connect に直接アプリケーションを送信するために似ていますクリックするだけに、**送信しています。** オーガナイザー ウィンドウで、アーカイブを選択した後に... エクスポートではなくボタンをクリックします。
+このプロセスは、iTunes Connect にアプリケーションを直接送信する場合と似ています。 [エクスポート. **..] ボタンを**クリックするだけです。[オーガナイザー] ウィンドウでアーカイブを選択した後。
 
 ## <a name="when-to-use-cloudkit"></a>CloudKit を使用する場合
 

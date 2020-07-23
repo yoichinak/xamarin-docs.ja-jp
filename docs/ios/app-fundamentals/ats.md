@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/13/2017
-ms.openlocfilehash: a7534ec706633a856e5e095369e29f5fdef5f6a7
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 74647a3c9128496373917e714755f5aaa7f73187
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574224"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931691"
 ---
 # <a name="app-transport-security-in-xamarinios"></a>Xamarin. iOS のアプリトランスポートセキュリティ
 
@@ -87,7 +87,7 @@ TLS レベルは、使用している web サービスによって制御され�
 
 IOS アプリで使用される HTTPClient 実装を設定するには、**ソリューションエクスプローラー**で**プロジェクト**をダブルクリックして、**プロジェクトオプション**を開きます。 [ **IOS ビルド**] に移動し、[ **httpclient 実装**] ドロップダウンで目的のクライアントの種類を選択します。
 
-![](ats-images/client01.png "Setting the iOS Build Options")
+![IOS のビルドオプションの設定](ats-images/client01.png)
 
 #### <a name="managed-handler"></a>マネージハンドラー
 
@@ -212,7 +212,7 @@ Xamarin iOS アプリがセキュリティで保護されていないドメイ�
 
 Visual Studio for Mac 内で、ソリューションエクスプローラー内のファイルをダブルクリックし、 `Info.plist` **ソース**ビューに切り替えて、上記のキーを追加します。 **Solution Explorer**
 
-[![](ats-images/ats01.png "The Source view of the Info.plist file")](ats-images/ats01.png#lightbox)
+[![情報 plist ファイルのソースビュー](ats-images/ats01.png)](ats-images/ats01.png#lightbox)
 
 アプリでセキュリティで保護されていないサイトの web コンテンツを読み込んで表示する必要がある場合は、アプリの**情報 plist**ファイルに次の内容を追加して、web ページが正しく読み込まれるようにします。ただし、Apple Transport SECURITY (ATS) 保護はアプリの残りの部分でも有効になっています。
 
@@ -236,7 +236,7 @@ Visual Studio for Mac 内で、ソリューションエクスプローラー内�
 
 Visual Studio for Mac 内で、ソリューションエクスプローラー内のファイルをダブルクリックし、 `Info.plist` **ソース**ビューに切り替えて、上記のキーを追加します。 **Solution Explorer**
 
-[![](ats-images/ats02.png "The Source view of the Info.plist file")](ats-images/ats02.png#lightbox)
+[![情報 plist ファイルのソースビュー](ats-images/ats02.png)](ats-images/ats02.png#lightbox)
 
 > [!IMPORTANT]
 > アプリケーションがセキュリティで保護されていない web サイトへの接続を必要とする場合は、を使用して完全にオフにするのではなく、**常に**を使用してドメインを例外として入力してください `NSExceptionDomains` `NSAllowsArbitraryLoads` 。 `NSAllowsArbitraryLoads`非常に緊急な状況でのみ使用してください。
@@ -245,7 +245,7 @@ Visual Studio for Mac 内で、ソリューションエクスプローラー内�
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 この記事では、アプリトランスポートセキュリティ (ATS) を導入し、インターネットとのセキュリティで保護された通信を実施する方法について説明しました。 まず、iOS 9 で実行されている Xamarin の iOS アプリに対して、ATS に必要な変更について説明します。 次に、ATS の機能とオプションの制御について説明します。 最後に、Xamarin. iOS アプリの使用を停止します。
 

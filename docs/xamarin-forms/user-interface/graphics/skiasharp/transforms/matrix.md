@@ -10,16 +10,16 @@ ms.date: 04/12/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e8d11add988828fa4e26d3f6728dd0b4319b3630
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 020319761ba1274495b7595a0d18435f98a5f990
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84133303"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937177"
 ---
 # <a name="matrix-transforms-in-skiasharp"></a>SkiaSharp のマトリックス変換
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _汎用性のある変換マトリックスを使用した SkiaSharp 変換について詳しく知る_
 
@@ -27,7 +27,7 @@ _汎用性のある変換マトリックスを使用した SkiaSharp 変換に�
 
 既に説明したように、変換マトリックスについて理解していなくても、SkiaSharp で変換を使用できますが、変換行列は理論的な観点から重要であり、変換を使用してパスを変更したり複雑なタッチ入力を処理したりするときは、この記事で説明されているようにしてください。
 
-![](matrix-images/matrixtransformexample.png "A bitmap subjected to an affine transform")
+![アフィン変換を受けたビットマップ](matrix-images/matrixtransformexample.png)
 
 に適用されている現在の変換行列 `SKCanvas` は、読み取り専用プロパティにアクセスすることによっていつでも使用でき [`TotalMatrix`](xref:SkiaSharp.SKCanvas.TotalMatrix) ます。 メソッドを使用して新しい変換行列を設定でき [`SetMatrix`](xref:SkiaSharp.SKCanvas.SetMatrix(SkiaSharp.SKMatrix)) ます。を呼び出すことによって、変換行列を既定値に戻すことができ [`ResetMatrix`](xref:SkiaSharp.SKCanvas.ResetMatrix) ます。
 
@@ -407,7 +407,7 @@ public class PathTransformPage : ContentPage
 
 キャンバスの左上隅に表示されます。
 
-[![](matrix-images/pathtransform-small.png "Triple screenshot of the Path Transform page")](matrix-images/pathtransform-large.png#lightbox "Triple screenshot of the Path Transform page")
+[![[パスの変換] ページのトリプルスクリーンショット](matrix-images/pathtransform-small.png)](matrix-images/pathtransform-large.png#lightbox "[パスの変換] ページのトリプルスクリーンショット")
 
 このプログラムのコンストラクターは、次の呼び出しを使用して、マトリックスをパスに適用します。
 
@@ -444,7 +444,7 @@ SKRect transformedRect = matrix.MapRect(rect);
 
 アフィン変換の感覚を得る方法の1つとして、画面の周りでビットマップの3つのコーナーを対話形式で移動し、変換結果を確認する方法があります。 これは、[**アフィン行列の表示**] ページの背後にある概念です。 このページでは、他のデモンストレーションでも使用されている2つのクラスが必要です。
 
-クラスには、 [`TouchPoint`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchPoint.cs) 画面の周囲にドラッグできる半透明な円が表示されます。 `TouchPoint`またはの親である要素にがアタッチされている必要があり `SKCanvasView` `SKCanvasView` [`TouchEffect`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchEffect.cs) ます。 `Capture` プロパティを `true`に設定します。 `TouchAction`イベントハンドラーでは、プログラムは `ProcessTouchEvent` `TouchPoint` 各インスタンスに対してメソッドを呼び出す必要があり `TouchPoint` ます。 `true`タッチイベントによってタッチポイントが移動された場合、メソッドはを返します。 また、ハンドラーは、 `PaintSurface` `Paint` 各インスタンスでメソッドを呼び出し `TouchPoint` て、オブジェクトに渡す必要があり `SKCanvas` ます。
+クラスには、 [`TouchPoint`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchPoint.cs) 画面の周囲にドラッグできる半透明な円が表示されます。 `TouchPoint`またはの親である要素にがアタッチされている必要があり `SKCanvasView` `SKCanvasView` [`TouchEffect`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchEffect.cs) ます。 `Capture` プロパティを `true` に設定します。 `TouchAction`イベントハンドラーでは、プログラムは `ProcessTouchEvent` `TouchPoint` 各インスタンスに対してメソッドを呼び出す必要があり `TouchPoint` ます。 `true`タッチイベントによってタッチポイントが移動された場合、メソッドはを返します。 また、ハンドラーは、 `PaintSurface` `Paint` 各インスタンスでメソッドを呼び出し `TouchPoint` て、オブジェクトに渡す必要があり `SKCanvas` ます。
 
 `TouchPoint`SkiaSharp ビジュアルを別のクラスにカプセル化する一般的な方法を示します。 クラスでは、ビジュアルの特性を指定するためのプロパティを定義できます。また、という名前のメソッドが `Paint` 引数を使用し `SKCanvas` てレンダリングできます。
 
@@ -593,7 +593,7 @@ public partial class ShowAffineMatrixPage : ContentPage
 
 次の iOS 画面は、ページが最初に読み込まれたときのビットマップを示しています。また、操作の後に、他の2つの画面が表示されます。
 
-[![](matrix-images/showaffinematrix-small.png "Triple screenshot of the Show Affine Matrix page")](matrix-images/showaffinematrix-large.png#lightbox "Triple screenshot of the Show Affine Matrix page")
+[![[アフィン行列の表示] ページのトリプルスクリーンショット](matrix-images/showaffinematrix-small.png)](matrix-images/showaffinematrix-large.png#lightbox "[アフィン行列の表示] ページのトリプルスクリーンショット")
 
 タッチポイントはビットマップの角をドラッグするように見えますが、これは錯覚です。 タッチポイントから計算された行列は、角がタッチポイントと重なるようにビットマップを変換します。
 

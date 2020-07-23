@@ -11,16 +11,16 @@ ms.date: 10/25/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 047cf963394325e8f88759ffe9da7dcf2ca3ad12
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 805bdef812b33d3f4329346a437e1202a16fe3ae
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127531"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937320"
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>第 5 部 データ バインディングから MVVM まで
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _モデルビュービューモデル (MVVM) アーキテクチャパターンは、XAML を念頭に置いて考案されました。このパターンでは、3つのソフトウェアレイヤー (つまり、ビューと呼ばれる XAML ユーザーインターフェイス) の分離が適用されます。モデルと呼ばれる基になるデータ。ビューとモデルの間の中間点として、ビューモデルと呼ばれるものがあります。ビューとビューモデルは、多くの場合、XAML ファイルで定義されているデータバインディングを使用して接続されます。ビューの BindingContext は、通常、ビューモデルのインスタンスです。_
 
@@ -65,7 +65,7 @@ xmlns:sys="clr-namespace:System;assembly=netstandard"
 
 問題は、ページが最初に作成されたときに日付と時刻が1回設定され、変更されないことです。
 
-[![](data-bindings-to-mvvm-images/oneshotdatetime.png "View Displaying Date and Time")](data-bindings-to-mvvm-images/oneshotdatetime-large.png#lightbox "View Displaying Date and Time")
+[![表示する日付と時刻](data-bindings-to-mvvm-images/oneshotdatetime.png)](data-bindings-to-mvvm-images/oneshotdatetime-large.png#lightbox "表示する日付と時刻")
 
 XAML ファイルには、常に現在の時刻を示すクロックが表示されますが、いくつかのコードが必要です。MVVM の観点から考えると、モデルとビューモデルはコードで完全に記述されたクラスです。 ビューは、多くの場合、データバインディングによってビューモデルで定義されたプロパティを参照する XAML ファイルです。
 
@@ -148,7 +148,7 @@ Viewmodel は通常、 `INotifyPropertyChanged` インターフェイスを実�
 
 プロパティは、 `Binding` のプロパティのマークアップ拡張機能によって `Text` 書式設定され `Label` `DateTime` ます。 次のような画面が表示されます。
 
-[![](data-bindings-to-mvvm-images/clock.png "View Displaying Date and Time via ViewModel")](data-bindings-to-mvvm-images/clock-large.png#lightbox "View Displaying Date and Time via ViewModel")
+[![ビューモデルを使用して日付と時刻を表示する](data-bindings-to-mvvm-images/clock.png)](data-bindings-to-mvvm-images/clock-large.png#lightbox "ビューモデルを使用して日付と時刻を表示する")
 
 また、 `DateTime` プロパティをピリオドで区切ることで、ビューモデルのプロパティの個々のプロパティにアクセスすることもできます。
 
@@ -298,7 +298,7 @@ namespace XamlSamples
 
 それぞれのバインディング `Label` が既定値です `OneWay` 。 値を表示する必要があるだけです。 ただし、各のバインド `Slider` は `TwoWay` です。 これにより、 `Slider` をビューモデルから初期化できます。 `Color` `Aqua` ビューモデルがインスタンス化されるときに、プロパティがに設定されていることに注意してください。 ただし、の変更では、 `Slider` ビューモデルのプロパティに新しい値を設定する必要もあります。これにより、新しい色が計算されます。
 
-[![](data-bindings-to-mvvm-images/hslcolorscroll.png "MVVM using Two-Way Data Bindings")](data-bindings-to-mvvm-images/hslcolorscroll-large.png#lightbox "MVVM using Two-Way Data Bindings")
+[![双方向のデータバインディングを使用した MVVM](data-bindings-to-mvvm-images/hslcolorscroll.png)](data-bindings-to-mvvm-images/hslcolorscroll-large.png#lightbox "双方向のデータバインディングを使用した MVVM")
 
 ## <a name="commanding-with-viewmodels"></a>Viewmodel でのコマンドの使用
 
@@ -559,7 +559,7 @@ namespace XamlSamples
 
 `Command`このマークアップに表示される最初ののプロパティは、にバインドされています。残りのは、 `Button` `DeleteCharCommand` `AddCharCommand` `CommandParameter` 面に表示される文字と同じを持つにバインドされ `Button` ます。 次のプログラムが動作しています。
 
-[![](data-bindings-to-mvvm-images/keypad.png "Calculator using MVVM and Commands")](data-bindings-to-mvvm-images/keypad-large.png#lightbox "Calculator using MVVM and Commands")
+[![MVVM とコマンドを使用した電卓](data-bindings-to-mvvm-images/keypad.png)](data-bindings-to-mvvm-images/keypad-large.png#lightbox "MVVM とコマンドを使用した電卓")
 
 ### <a name="invoking-asynchronous-methods"></a>非同期メソッドの呼び出し
 
@@ -684,7 +684,7 @@ public class PageDataViewModel
 
 ページはスクロール可能な一覧に表示されます。
 
-[![](data-bindings-to-mvvm-images/mainpage.png "Scrollable list of pages")](data-bindings-to-mvvm-images/mainpage-large.png#lightbox "Scrollable list of pages")
+[![スクロール可能なページの一覧](data-bindings-to-mvvm-images/mainpage.png)](data-bindings-to-mvvm-images/mainpage-large.png#lightbox "スクロール可能なページの一覧")
 
 ユーザーが項目を選択すると、分離コードファイル内のハンドラーがトリガーされます。 ハンドラーは、の `SelectedItem` プロパティ `ListBox` をに戻し `null` てから、選択したページをインスタンス化して移動します。
 
@@ -708,7 +708,7 @@ private async void OnListViewItemSelected(object sender, SelectedItemChangedEven
 
 **Xamarin の進化 2016: MVVM と Prism を使用したシンプルな作成 Xamarin.Forms**
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 XAML は、アプリケーションでユーザーインターフェイスを定義するための強力なツールです Xamarin.Forms 。特に、データバインディングと MVVM を使用する場合に使用します。 結果として、コード内のすべてのバックグラウンドサポートを使用して、ユーザーインターフェイスをクリーンで洗練された形式で表現できます。
 

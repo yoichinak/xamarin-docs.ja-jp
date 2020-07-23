@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/03/2017
-ms.openlocfilehash: 139b58fd1953924d5a848fc79c3a1706afb760b0
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: e3ef2a667996f3fc38008521c2804cc644cfb328
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84565646"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86928606"
 ---
 # <a name="watchos-complications-in-xamarin"></a>Xamarin の watchOS の複雑さ
 
@@ -24,7 +24,7 @@ _watchOS を使用すると、開発者はウォッチ顔に関するカスタ�
 
 まず、 [Apple のドキュメント](https://developer.apple.com/library/watchos/documentation/General/Conceptual/WatchKitProgrammingGuide/ManagingComplications.html)を読んで、アプリが複雑に適しているかどうかを判断します。 `CLKComplicationFamily`表示には、次の5種類から選択できます。
 
-[![](complications-images/all-complications-sml.png "The 5 CLKComplicationFamily types available: Circular Small, Modular Small, Modular Large, Utilitarian Small, Utilitarian Large")](complications-images/all-complications.png#lightbox)
+[![使用可能な5種類の CLKComplicationFamily: 半円 s、モジュール式小、モジュール式 l、Utilitarian s、Utilitarian Large](complications-images/all-complications-sml.png)](complications-images/all-complications.png#lightbox)
 
 アプリでは、表示されるデータに応じて、1つまたは5つのスタイルのみを実装できます。
 また、時間の移動をサポートし、ユーザーが Digital Crown をオンにしたときの過去または将来の時刻の値を指定することもできます。
@@ -41,7 +41,7 @@ _watchOS を使用すると、開発者はウォッチ顔に関するカスタ�
 
 [**新しいプロジェクトの追加**] ウィザードには、複雑なコントローラークラスを自動的に作成し、**情報**ファイルを構成するためのチェックボックスがあります。
 
-![](complications-images/file-new-project-sml.png "The Include Complication checkbox")
+![[複雑なものを含める] チェックボックス](complications-images/file-new-project-sml.png)
 
 ### <a name="existing-projects"></a>既存のプロジェクト
 
@@ -83,7 +83,7 @@ public class ComplicationController : CLKComplicationDataSource
 
 Watch 拡張機能の**情報 plist**ファイルでは、の名前と、サポートする必要のある複雑なファミリを指定する必要があり `CLKComplicationDataSource` ます。
 
-[![](complications-images/complications-config-sml.png "The complication family types")](complications-images/complications-config.png#lightbox)
+[![複雑なファミリの種類](complications-images/complications-config-sml.png)](complications-images/complications-config.png#lightbox)
 
 **データソースクラス**のエントリの一覧には、複雑な `CLKComplicationDataSource` ロジックを含むサブクラスをサブクラス化するクラス名が表示されます。
 

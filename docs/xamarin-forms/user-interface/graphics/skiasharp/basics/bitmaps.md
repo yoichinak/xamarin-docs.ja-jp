@@ -10,22 +10,22 @@ ms.date: 07/17/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1e4c170f818dc62640b1cd72ec3b70f48d227d93
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 440a078857a940f57f5700a18f91fc8b25bdfae8
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137737"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937203"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>SkiaSharp でのビットマップの基礎
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _さまざまなソースからビットマップを読み込んで表示します。_
 
 SkiaSharp でのビットマップのサポートは非常に広範囲です。 この記事では、 &mdash; ビットマップの読み込み方法とその表示方法について説明します。
 
-![](bitmaps-images/basicbitmaps-small.png "The display of two bitmaps")
+![2つのビットマップの表示](bitmaps-images/basicbitmaps-small.png)
 
 ビットマップの詳細な探索については、「 [SkiaSharp ビットマップ](../bitmaps/index.md)」セクションを参照してください。
 
@@ -208,7 +208,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ビットマップは、四角形の大きさに拡大されます。そのため、次のスクリーンショットでは、サルが水平方向に拡大されています。
 
-[![](bitmaps-images/basicbitmaps-small.png "A triple screenshot of the Basic Bitmaps page")](bitmaps-images/basicbitmaps-large.png#lightbox "A triple screenshot of the Basic Bitmaps page")
+[![基本的なビットマップページのトリプルスクリーンショット](bitmaps-images/basicbitmaps-small.png)](bitmaps-images/basicbitmaps-large.png#lightbox "基本的なビットマップページのトリプルスクリーンショット")
 
 3番目のイメージは、 &mdash; プログラムを実行して独自の画像ライブラリから写真を読み込む場合にのみ表示されますが、 &mdash; 四角形内にも表示されますが、四角形の縦横比を維持するために四角形の位置とサイズが調整されます。 この計算は、ビットマップと移動先の四角形のサイズに基づいてスケールファクターを計算し、その領域で四角形を中央揃えにする必要があるため、さらに複雑になります。
 

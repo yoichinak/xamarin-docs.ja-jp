@@ -10,18 +10,18 @@ ms.date: 03/29/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2c1a958bd4cb56096f554acf26756019eeb0693c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: b3063a644a48a8796b03b1a6acedbbcbfc7acbf7
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84572235"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934265"
 ---
 # <a name="create-a-custom-layout-in-xamarinforms"></a>でカスタムレイアウトを作成するXamarin.Forms
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
 
-_Xamarin は5つのレイアウトクラス (StackLayout、AbsoluteLayout、RelativeLayout、Grid、および FlexLayout) を定義し、それぞれが異なる方法で子を整列します。ただし、で提供されていないレイアウトを使用してページコンテンツを整理する必要がある場合もあり Xamarin.Forms ます。この記事では、カスタムレイアウトクラスを記述する方法について説明し、向きを区別する WrapLayout クラスを示します。このクラスは、ページの横に子を並べて配置し、後続の子の表示を追加の行にラップします。_
+_Xamarin.Forms5つのレイアウトクラス (StackLayout、AbsoluteLayout、RelativeLayout、Grid、および FlexLayout) を定義し、それぞれが異なる方法で子を整列します。ただし、で提供されていないレイアウトを使用してページコンテンツを整理する必要がある場合もあり Xamarin.Forms ます。この記事では、カスタムレイアウトクラスを記述する方法について説明し、向きを区別する WrapLayout クラスを示します。このクラスは、ページの横に子を並べて配置し、後続の子の表示を追加の行にラップします。_
 
 では Xamarin.Forms 、すべてのレイアウトクラスが [`Layout<T>`](xref:Xamarin.Forms.Layout`1) クラスから派生し、ジェネリック型 [`View`](xref:Xamarin.Forms.View) とその派生型を制約します。 さらに、クラスは、 `Layout<T>` [`Layout`](xref:Xamarin.Forms.Layout) 子要素の配置とサイズ変更のための機構を提供するクラスから派生します。
 
@@ -40,7 +40,7 @@ Xamarin.Formsカスタムレイアウトを作成するには、レイアウト�
 
 このサイクルにより、ページ上のすべてのビジュアル要素がメソッドとメソッドの呼び出しを受け取るようになり `Measure` `Layout` ます。 このプロセスを次の図に示します。
 
-![](custom-images/layout-cycle.png "Xamarin.Forms Layout Cycle")
+![Xamarin.Formsレイアウトサイクル](custom-images/layout-cycle.png)
 
 > [!NOTE]
 > レイアウトに影響を与える変更があった場合、ビジュアルツリーのサブセットにもレイアウトサイクルが発生する可能性があることに注意してください。 これには、のなどのコレクションに対して追加または削除される項目、 [`StackLayout`](xref:Xamarin.Forms.StackLayout) [`IsVisible`](xref:Xamarin.Forms.VisualElement.IsVisible) 要素のプロパティの変更、要素のサイズの変更などが含まれます。
@@ -60,7 +60,7 @@ Xamarin.Formsまたはプロパティを持つすべてのクラス `Content` �
 
 クラスは、 [`Layout`](xref:Xamarin.Forms.Layout) [`MeasureInvalidated`](xref:Xamarin.Forms.VisualElement.MeasureInvalidated) プロパティまたはコレクションに追加されたすべての子のイベントのハンドラーを設定 `Content` し、 `Children` 子が削除されたときにハンドラーをデタッチします。 そのため、子を持つビジュアルツリー内のすべての要素は、その子の1つがサイズ変更されるたびに警告されます。 次の図は、ビジュアルツリー内の要素のサイズを変更することによって、ツリーがどのように変更されるかを示しています。
 
-![](custom-images/invalidation.png "Invalidation in the Visual Tree")
+![ビジュアルツリー内の無効化](custom-images/invalidation.png)
 
 ただし、クラスは、 `Layout` ページのレイアウトに対する子のサイズの変更の影響を制限しようとします。 レイアウトのサイズが制限されている場合、子のサイズを変更しても、ビジュアルツリー内の親のレイアウトよりも大きくなることはありません。 ただし、通常、レイアウトのサイズを変更すると、レイアウトによって子がどのように配置されるかに影響します。 したがって、レイアウトのサイズを変更すると、レイアウトのレイアウトサイクルが開始され、レイアウトはメソッドとメソッドの呼び出しを受け取り [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) [`LayoutChildren`](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) ます。
 
@@ -400,20 +400,20 @@ async Task<ImageList> GetImageListAsync()
 
 が含まれているページが表示されると、 `WrapLayout` サンプルアプリケーションは、写真のリストを含むリモート JSON ファイルに非同期にアクセスし、 [`Image`](xref:Xamarin.Forms.Image) 各写真の要素を作成してに追加し `WrapLayout` ます。 この結果、次のスクリーンショットに示すような外観が表示されます。
 
-![](custom-images/portait-screenshots.png "Sample Application Portrait Screenshots")
+![サンプルアプリケーションの縦のスクリーンショット](custom-images/portait-screenshots.png)
 
 次のスクリーンショットは、 `WrapLayout` 横方向に回転した後のを示しています。
 
-![](custom-images/landscape-ios.png "Sample iOS Application Landscape Screenshot")
-![](custom-images/landscape-android.png "Sample Android Application Landscape Screenshot")
-![](custom-images/landscape-uwp.png "Sample UWP Application Landscape Screenshot")
+![サンプル iOS アプリケーションランドスケープスクリーンショット ](custom-images/landscape-ios.png)
+ ![ サンプル Android アプリケーションランドスケープスクリーンショット ](custom-images/landscape-android.png)
+ ![ サンプル UWP アプリケーションランドスケープスクリーンショット](custom-images/landscape-uwp.png)
 
 各行の列数は、写真のサイズ、画面の幅、デバイスに依存しない単位ごとのピクセル数によって異なります。 [`Image`](xref:Xamarin.Forms.Image)要素は写真を非同期に読み込みます。そのため、 `WrapLayout` [`LayoutChildren`](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) 読み込まれ `Image` た写真に基づいて各要素が新しいサイズを受け取るため、クラスはメソッドを頻繁に呼び出します。
 
 ## <a name="related-links"></a>関連リンク
 
 - [WrapLayout (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
-- [カスタムレイアウト](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter26.md)
+- [カスタム レイアウト](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter26.md)
 - [でのカスタムレイアウトの作成 Xamarin.Forms (ビデオ)](https://www.youtube.com/watch?v=sxjOqNZFhKU)
 - [Layout\<T>](xref:Xamarin.Forms.Layout`1)
 - [レイアウト](xref:Xamarin.Forms.Layout)

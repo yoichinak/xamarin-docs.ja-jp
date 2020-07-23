@@ -10,20 +10,20 @@ ms.date: 06/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 92fcb86f9acac159cc79cae8e71b180fe229b7a6
-ms.sourcegitcommit: 91b4d2f93687fadec5c3f80aadc8f7298d911624
+ms.openlocfilehash: 86bbad476f206c13e6437f867c8e85e6bea5063a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85794996"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937294"
 ---
 # <a name="xamarinforms-shapes-fill-rules"></a>Xamarin.Forms図形: 塗りつぶしルール
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![プレリリース API](~/media/shared/preview.png "この API は現在プレリリースです")
 
 [![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
-いくつか Xamarin.Forms の図形クラス `FillRule` には、型のプロパティがあり `FillRule` ます。 これ `Polygon` には、、、およびが含ま `Polyline` `GeometryGroup` れます。
+いくつか Xamarin.Forms の図形クラス `FillRule` には、型のプロパティがあり `FillRule` ます。 これらには、 `Polygon` 、 `Polyline` 、および `GeometryGroup` が含まれます。
 
 `FillRule`列挙体は、 `EvenOdd` メンバーとメンバーを定義し `Nonzero` ます。 各メンバーは、あるポイントが図形の塗りつぶし領域内にあるかどうかを判断するための別のルールを表します。
 

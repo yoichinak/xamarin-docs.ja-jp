@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 0831ec2fae62d4e2230761a157a39f99f13b416a
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 631b1019313ddde6b53ffe63600be8f3fc58673a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571663"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931470"
 ---
 # <a name="dialogs-in-xamarinmac"></a>Xamarin. Mac のダイアログ
 
@@ -22,7 +22,7 @@ Xamarin. Mac アプリケーションで C# と .NET を使用する場合、 *X
 
 ウィンドウは、モードレス状態 (複数のドキュメントを一度に開くことができるテキストエディターなど) またはモーダル (アプリケーションを続行する前に閉じる必要があるエクスポートダイアログなど) で使用できます。
 
-[![](dialog-images/dialog03.png "An open dialog box")](dialog-images/dialog03.png#lightbox)
+[![[開く] ダイアログボックス](dialog-images/dialog03.png)](dialog-images/dialog03.png#lightbox)
 
 この記事では、Xamarin. Mac アプリケーションでのダイアログとモーダルウィンドウの操作の基本について説明します。 この記事で使用する主要な概念と手法について説明しているように、最初に[Hello, Mac](~/mac/get-started/hello-mac.md)の記事「 [Xcode と Interface Builder の概要](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)」と「[アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions)」セクションをご覧になることを強くお勧めします。
 
@@ -44,25 +44,25 @@ Apple によれば、ダイアログを表示するには次の3つの方法が�
 
 任意の標準を `NSWindow` モーダルとして表示することで、カスタマイズされたダイアログとして使用できます。
 
-[![](dialog-images/modal01.png "An example modal window")](dialog-images/modal01.png#lightbox)
+[![モーダルウィンドウの例](dialog-images/modal01.png)](dialog-images/modal01.png#lightbox)
 
 ### <a name="document-modal-dialog-sheets"></a>ドキュメントモーダルダイアログシート
 
 _シート_は、特定のドキュメントウィンドウに関連付けられたモーダルダイアログで、ユーザーがダイアログを閉じるまでウィンドウと対話できないようにします。 ウィンドウが表示されているウィンドウにシートが添付されており、一度に1つのウィンドウで開くことができるシートは1つだけです。
 
-[![](dialog-images/sheet08.png "An example modal sheet")](dialog-images/sheet08.png#lightbox)
+[![モーダルシートの例](dialog-images/sheet08.png)](dialog-images/sheet08.png#lightbox)
 
 ### <a name="preferences-windows"></a>[基本設定] ウィンドウ
 
 [基本設定] ウィンドウは、ユーザーが頻繁に変更するアプリケーションの設定を含むモードレスダイアログです。 [基本設定] ウィンドウには、ユーザーがさまざまな設定グループを切り替えることができるツールバーが含まれていることがよくあります。
 
-[![](dialog-images/dialog02.png "An example preference window")](dialog-images/dialog02.png#lightbox)
+[![基本設定ウィンドウの例](dialog-images/dialog02.png)](dialog-images/dialog02.png#lightbox)
 
 ### <a name="open-dialog"></a>ダイアログを開く
 
 [開く] ダイアログボックスでは、アプリケーション内の項目を検索して開くための一貫した方法がユーザーに提供されます。
 
-[![](dialog-images/dialog03.png "A open dialog box")](dialog-images/dialog03.png#lightbox)
+[![[開く] ダイアログボックス](dialog-images/dialog03.png)](dialog-images/dialog03.png#lightbox)
 
 ### <a name="print-and-page-setup-dialogs"></a>印刷とページ設定のダイアログ
 
@@ -70,37 +70,37 @@ macOS には、標準の印刷とページ設定のダイアログボックス�
 
 [印刷] ダイアログボックスは、フリーフローティングダイアログボックスの両方として表示できます。
 
-[![](dialog-images/print01.png "A print dialog box")](dialog-images/print01.png#lightbox)
+[![[印刷] ダイアログボックス](dialog-images/print01.png)](dialog-images/print01.png#lightbox)
 
 または、このファイルをシートとして表示することもできます。
 
-[![](dialog-images/print02.png "A print sheet")](dialog-images/print02.png#lightbox)
+[![印刷シート](dialog-images/print02.png)](dialog-images/print02.png#lightbox)
 
 [ページ設定] ダイアログは、無料のフローティングダイアログボックスの両方として表示できます。
 
-[![](dialog-images/print03.png "A page setup dialog")](dialog-images/print03.png#lightbox)
+[![ページ設定ダイアログ](dialog-images/print03.png)](dialog-images/print03.png#lightbox)
 
 または、このファイルをシートとして表示することもできます。
 
-[![](dialog-images/print04.png "A page setup sheet")](dialog-images/print04.png#lightbox)
+[![ページ設定シート](dialog-images/print04.png)](dialog-images/print04.png#lightbox)
 
 ### <a name="save-dialogs"></a>ダイアログの保存
 
 [保存] ダイアログを使用すると、アプリケーションにアイテムを保存するための一貫した方法をユーザーが選択できます。 [保存] ダイアログには、**最小**(折りたたまれているとも呼ばれます) という2つの状態があります。
 
-[![](dialog-images/save01.png "A save dialog")](dialog-images/save01.png#lightbox)
+[![保存ダイアログ](dialog-images/save01.png)](dialog-images/save01.png#lightbox)
 
 **展開**された状態は次のようになります。
 
-[![](dialog-images/save02.png "An expanded save dialog")](dialog-images/save02.png#lightbox)
+[![拡張保存ダイアログ](dialog-images/save02.png)](dialog-images/save02.png#lightbox)
 
 [**最小**保存] ダイアログボックスは、次のようにシートとして表示することもできます。
 
-[![](dialog-images/save03.png "A minimal save sheet")](dialog-images/save03.png#lightbox)
+[![最小保存シート](dialog-images/save03.png)](dialog-images/save03.png#lightbox)
 
 **展開**された [保存] ダイアログボックスは次のようになります。
 
-[![](dialog-images/save04.png "An expanded save sheet")](dialog-images/save04.png#lightbox)
+[![展開された保存シート](dialog-images/save04.png)](dialog-images/save04.png#lightbox)
 
 詳細については、「Apple の[OS X ヒューマンインターフェイスガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)」の「[ダイアログ](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/WindowDialogs.html#//apple_ref/doc/uid/20000957-CH43-SW1)」セクションを参照してください。
 
@@ -115,20 +115,20 @@ macOS には、標準の印刷とページ設定のダイアログボックス�
 1. **ソリューションエクスプローラー**で、 `Main.storyboard` Xcode の Interface Builder で編集するファイルを開きます。
 2. 新しい**ビューコントローラー**をデザインサーフェイスにドラッグします。
 
-    [![](dialog-images/new01.png "Selecting a View Controller from the Library")](dialog-images/new01.png#lightbox)
+    [![ライブラリからビューコントローラーを選択する](dialog-images/new01.png)](dialog-images/new01.png#lightbox)
 3. **Id インスペクター**で、 `CustomDialogController` **クラス名**として「」と入力します。 
 
-    [![](dialog-images/new02.png "Setting the class name")](dialog-images/new02.png#lightbox)
+    [![クラス名の設定](dialog-images/new02.png)](dialog-images/new02.png#lightbox)
 4. Visual Studio for Mac に戻り、Xcode との同期を許可して、ファイルを作成し `CustomDialogController.h` ます。
 5. Xcode に戻り、インターフェイスを設計します。 
 
-    [![](dialog-images/new03.png "Designing the UI in Xcode")](dialog-images/new03.png#lightbox)
+    [![Xcode で UI を設計する](dialog-images/new03.png)](dialog-images/new03.png#lightbox)
 6. ダイアログボックスを開く UI 要素からコントロールをドラッグして、アプリのメインウィンドウから新しいビューコントローラーに**モーダルセグエ**を作成します。 **識別子**を割り当て `ModalSegue` ます。 
 
-    [![](dialog-images/new06.png "A modal segue")](dialog-images/new06.png#lightbox)
+    [![モーダルセグエ](dialog-images/new06.png)](dialog-images/new06.png#lightbox)
 7. すべての**アクション**と**アウトレット**を接続します。 
 
-    [![](dialog-images/new04.png "Configuring an Action")](dialog-images/new04.png#lightbox)
+    [![アクションの構成](dialog-images/new04.png)](dialog-images/new04.png#lightbox)
 8. 変更を保存し Visual Studio for Mac に戻り、Xcode と同期します。
 
 ファイルの `CustomDialogController.cs` 外観を次のようにします。
@@ -248,7 +248,7 @@ public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
 
 アプリケーションを実行し、カスタムダイアログを表示することができます。
 
-[![](dialog-images/new05.png "An example dialog")](dialog-images/new05.png#lightbox)
+[![ダイアログの例](dialog-images/new05.png)](dialog-images/new05.png#lightbox)
 
 Xamarin. Mac アプリケーションで windows を使用する方法の詳細については、 [windows](~/mac/user-interface/window.md)のドキュメントを参照してください。
 
@@ -263,19 +263,19 @@ Xamarin. Mac でカスタムシートを作成するには、次の手順を実�
 1. **ソリューションエクスプローラー**で、 `Main.storyboard` Xcode の Interface Builder で編集するファイルを開きます。
 2. 新しい**ビューコントローラー**をデザインサーフェイスにドラッグします。
 
-    [![](dialog-images/new01.png "Selecting a View Controller from the Library")](dialog-images/new01.png#lightbox)
+    [![ライブラリからビューコントローラーを選択する](dialog-images/new01.png)](dialog-images/new01.png#lightbox)
 3. ユーザーインターフェイスを設計します。
 
-    [![](dialog-images/sheet01.png "The UI design")](dialog-images/sheet01.png#lightbox)
+    [![UI デザイン](dialog-images/sheet01.png)](dialog-images/sheet01.png#lightbox)
 4. メインウィンドウから新しいビューコントローラーに**シートセグエ**を作成します。 
 
-    [![](dialog-images/sheet02.png "Selecting the Sheet segue type")](dialog-images/sheet02.png#lightbox)
+    [![シートのセグエの種類の選択](dialog-images/sheet02.png)](dialog-images/sheet02.png#lightbox)
 5. **Id インスペクター**で、ビューコントローラーの**クラス**にという名前を指定し `SheetViewController` ます。 
 
-    [![](dialog-images/sheet03.png "Setting the class name")](dialog-images/sheet03.png#lightbox)
+    [![クラス名の設定](dialog-images/sheet03.png)](dialog-images/sheet03.png#lightbox)
 6. 必要な**アウトレット**と**アクション**を定義します。 
 
-    [![](dialog-images/sheet04.png "Defining the required Outlets and Actions")](dialog-images/sheet04.png#lightbox)
+    [![必要なコンセントとアクションを定義する](dialog-images/sheet04.png)](dialog-images/sheet04.png#lightbox)
 7. 変更を保存し、Visual Studio for Mac に戻って同期します。
 
 次に、ファイルを編集 `SheetViewController.cs` し、次のように表示します。
@@ -406,7 +406,7 @@ public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
 
 アプリケーションを実行してシートを開くと、ウィンドウに接続されます。
 
-[![](dialog-images/sheet08.png "An example sheet")](dialog-images/sheet08.png#lightbox)
+[![例のシート](dialog-images/sheet08.png)](dialog-images/sheet08.png#lightbox)
 
 <a name="Creating_a_Preferences_Dialog"></a>
 
@@ -480,36 +480,36 @@ namespace MacWindows
 1. **ソリューションエクスプローラー**で、 `Main.storyboard` Xcode の Interface Builder で編集するファイルを開きます。
 2. 新しい**ウィンドウコントローラー**をデザインサーフェイスにドラッグします。
 
-    [![](dialog-images/pref01.png "Select a Window Controller from the Library")](dialog-images/pref01.png#lightbox)
+    [![ライブラリからウィンドウコントローラーを選択します](dialog-images/pref01.png)](dialog-images/pref01.png#lightbox)
 3. ウィンドウを**メニューバー**デザイナーの近くに配置します。
 
-    [![](dialog-images/pref02.png "Adding the new Window")](dialog-images/pref02.png#lightbox)
+    [![新しいウィンドウの追加](dialog-images/pref02.png)](dialog-images/pref02.png#lightbox)
 4. 基本設定ビューにタブが表示されるように、アタッチされたビューコントローラーのコピーを作成します。
 
-    [![](dialog-images/pref03.png "Adding the required View Controllers")](dialog-images/pref03.png#lightbox)
+    [![必要なビューコントローラーの追加](dialog-images/pref03.png)](dialog-images/pref03.png#lightbox)
 5. 新しい**ツールバーコントローラー**を**ライブラリ**からドラッグします。
 
-    [![](dialog-images/pref04.png "Select a Toolbar Controller from the Library")](dialog-images/pref04.png#lightbox)
+    [![ライブラリからツールバーコントローラーを選択します](dialog-images/pref04.png)](dialog-images/pref04.png#lightbox)
 6. 次のように、デザインサーフェイスのウィンドウにドロップします。
 
-    [![](dialog-images/pref05.png "Adding a new Toolbar Controller")](dialog-images/pref05.png#lightbox)
+    [![新しいツールバーコントローラーの追加](dialog-images/pref05.png)](dialog-images/pref05.png#lightbox)
 7. ツールバーのデザインをレイアウトします。
 
-    [![](dialog-images/pref06.png "Layout the toolbar")](dialog-images/pref06.png#lightbox)
+    [![ツールバーのレイアウト](dialog-images/pref06.png)](dialog-images/pref06.png#lightbox)
 8. コントロールをクリックし、**ツールバー**の各ボタンから、前に作成したビューにドラッグします。 **カスタム**セグエの種類を選択してください:
 
-    [![](dialog-images/pref07.png "Setting the segue type")](dialog-images/pref07.png#lightbox)
+    [![セグエ型の設定](dialog-images/pref07.png)](dialog-images/pref07.png#lightbox)
 9. 新しいセグエを選択し、**クラス**を次のように設定し `ReplaceViewSegue` ます。
 
-    [![](dialog-images/pref08.png "Setting the segue class")](dialog-images/pref08.png#lightbox)
+    [![セグエクラスの設定](dialog-images/pref08.png)](dialog-images/pref08.png#lightbox)
 10. デザインサーフェイスのメニュー**バーデザイナー**で、[アプリケーション] メニューの [**基本設定...**] を選択し、コントロールをクリックして [基本設定] ウィンドウまでドラッグし、 **Show**セグエを作成します。
 
-    [![](dialog-images/pref09.png "Setting the segue type")](dialog-images/pref09.png#lightbox)
+    [![セグエ型の設定](dialog-images/pref09.png)](dialog-images/pref09.png#lightbox)
 11. 変更を保存し、Visual Studio for Mac に戻って同期します。
 
 コードを実行し、[**アプリケーション] メニュー**の [**基本設定...** ] を選択すると、ウィンドウが表示されます。
 
-[![](dialog-images/pref10.png "An example preferences window")](dialog-images/pref10.png#lightbox)
+[![[基本設定] ウィンドウの例](dialog-images/pref10.png)](dialog-images/pref10.png#lightbox)
 
 Windows とツールバーの使用方法の詳細については、 [windows](~/mac/user-interface/window.md)と[ツールバー](~/mac/user-interface/toolbar.md)のドキュメントを参照してください。
 
@@ -718,7 +718,7 @@ namespace SourceWriter
 
 次に、[基本設定] ウィンドウと上で作成したビューの UI 要素に優先クラスを接続します。 Interface Builder で、基本設定ビューコントローラーを選択し、 **Id インスペクター**に切り替えて、コントローラーのカスタムクラスを作成します。 
 
-[![](dialog-images/prefs12.png "The Identity Inspector")](dialog-images/prefs12.png#lightbox)
+[![Id インスペクター](dialog-images/prefs12.png)](dialog-images/prefs12.png#lightbox)
 
 Visual Studio for Mac に戻り、変更を同期し、新しく作成したクラスを編集用に開きます。 クラスは次のようになります。
 
@@ -757,7 +757,7 @@ namespace SourceWriter
 
 次に、ストーリーボードファイルをダブルクリックして Interface Builder で再び開きます (上記の変更を確認してください)。 好みのインターフェイスを構築するために必要な UI コントロールをビューにドラッグします。 各コントロールに対して、**バインドインスペクター**に切り替え、 **apppreference**クラスの個々のプロパティにバインドします。
 
-[![](dialog-images/prefs13.png "The Binding Inspector")](dialog-images/prefs13.png#lightbox)
+[![バインディングインスペクター](dialog-images/prefs13.png)](dialog-images/prefs13.png#lightbox)
 
 必要なすべてのパネル (ビューコントローラー) と基本設定プロパティについて、上記の手順を繰り返します。
 
@@ -902,7 +902,7 @@ namespace SourceWriter
 
 これらのすべての変更が適用され、ユーザーがアプリの設定を編集し、ユーザー設定ウィンドウを閉じると、すべての開いているウィンドウに変更が適用されます。
 
-[![](dialog-images/prefs14.png "An example preferences window")](dialog-images/prefs14.png#lightbox)
+[![[基本設定] ウィンドウの例](dialog-images/prefs14.png)](dialog-images/prefs14.png#lightbox)
 
 <a name="The_Open_Dialog"></a>
 
@@ -953,7 +953,7 @@ if (dlg.RunModal () == 1) {
 
 プログラムを実行し、[**ファイル**] メニューから [**開く**] 項目を選択すると、次のように表示されます。 
 
-[![](dialog-images/dialog03.png "An open dialog box")](dialog-images/dialog03.png#lightbox)
+[![[開く] ダイアログボックス](dialog-images/dialog03.png)](dialog-images/dialog03.png#lightbox)
 
 <a name="The_Print_and_Page_Setup_Dialogs"></a>
 
@@ -990,11 +990,11 @@ void ShowDocument (NSObject sender) {
 
 プロパティをに設定し `ShowPrintAsSheet` `false` 、アプリケーションを実行して [印刷] ダイアログを表示すると、次のように表示されます。
 
-[![](dialog-images/print01.png "A print dialog box")](dialog-images/print01.png#lightbox)
+[![[印刷] ダイアログボックス](dialog-images/print01.png)](dialog-images/print01.png#lightbox)
 
 `ShowPrintAsSheet`プロパティをに設定すると、アプリケーションが実行されて [ `true` 印刷] ダイアログボックスが表示され、次のように表示されます。
 
-[![](dialog-images/print02.png "A print sheet")](dialog-images/print02.png#lightbox)
+[![印刷シート](dialog-images/print02.png)](dialog-images/print02.png#lightbox)
 
 次のコードは、[ページレイアウト] ダイアログを表示します。
 
@@ -1021,11 +1021,11 @@ void ShowLayout (NSObject sender) {
 
 プロパティをに設定し `ShowPrintAsSheet` `false` 、アプリケーションを実行して [印刷レイアウト] ダイアログを表示すると、次のように表示されます。
 
-[![](dialog-images/print03.png "A page setup dialog")](dialog-images/print03.png#lightbox)
+[![ページ設定ダイアログ](dialog-images/print03.png)](dialog-images/print03.png#lightbox)
 
 `ShowPrintAsSheet`プロパティをに設定し `true` てアプリケーションを実行し、[印刷レイアウト] ダイアログを表示すると、次のように表示されます。
 
-[![](dialog-images/print04.png "A page setup sheet")](dialog-images/print04.png#lightbox)
+[![ページ設定シート](dialog-images/print04.png)](dialog-images/print04.png#lightbox)
 
 [印刷] および [ページ設定] ダイアログの操作の詳細については、Apple の[NSPrintPanel](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSPrintPanel_Class/index.html#//apple_ref/doc/uid/TP40004092)と[NSPageLayout](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSPageLayout_Class/index.html#//apple_ref/doc/uid/TP40004080)のドキュメントを参照してください。
 
@@ -1075,25 +1075,25 @@ void ShowSaveAs (NSObject sender)
 
 プロパティをに設定した場合は、 `ShowSaveAsSheet` `false` アプリケーションを実行し、[**ファイル**] メニューから [**名前を付けて保存...** ] を選択すると、次の内容が表示されます。
 
-[![](dialog-images/save01.png "A save dialog box")](dialog-images/save01.png#lightbox)
+[![[保存] ダイアログボックス](dialog-images/save01.png)](dialog-images/save01.png#lightbox)
 
 ユーザーは、ダイアログを展開できます。
 
-[![](dialog-images/save02.png "An expanded save dialog box")](dialog-images/save02.png#lightbox)
+[![展開された [保存] ダイアログボックス](dialog-images/save02.png)](dialog-images/save02.png#lightbox)
 
 プロパティをに設定した場合は、 `ShowSaveAsSheet` `true` アプリケーションを実行し、[**ファイル**] メニューから [**名前を付けて保存...** ] を選択すると、次の内容が表示されます。
 
-[![](dialog-images/save03.png "A save sheet")](dialog-images/save03.png#lightbox)
+[![保存シート](dialog-images/save03.png)](dialog-images/save03.png#lightbox)
 
 ユーザーは、ダイアログを展開できます。
 
-[![](dialog-images/save04.png "An expanded save sheet")](dialog-images/save04.png#lightbox)
+[![展開された保存シート](dialog-images/save04.png)](dialog-images/save04.png#lightbox)
 
 [保存] ダイアログの操作の詳細については、Apple の[Nssavepanel](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSSavePanel_Class/index.html#//apple_ref/doc/uid/TP40004098)のドキュメントを参照してください。
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 この記事では、Xamarin. Mac アプリケーションでのモーダルウィンドウ、シート、および標準システムダイアログボックスの使用方法について詳しく説明しました。 モーダルウィンドウ、シート、およびダイアログのさまざまな型と用途、Xcode の Interface Builder でモーダルウィンドウとシートを作成して管理する方法、および C# コードでモーダルウィンドウ、シート、およびダイアログを操作する方法について説明しました。
 
@@ -1103,7 +1103,7 @@ void ShowSaveAs (NSObject sender)
 - [Hello Mac](~/mac/get-started/hello-mac.md)
 - [メニュー](~/mac/user-interface/menu.md)
 - [Windows](~/mac/user-interface/window.md)
-- [[ツール バー]](~/mac/user-interface/toolbar.md)
+- [ツールバー](~/mac/user-interface/toolbar.md)
 - [OS X ヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
 - [Windows の概要](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/WinPanel/Introduction.html#//apple_ref/doc/uid/10000031-SW1)
 - [シートの概要](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Sheets/Sheets.html#//apple_ref/doc/uid/10000002i)

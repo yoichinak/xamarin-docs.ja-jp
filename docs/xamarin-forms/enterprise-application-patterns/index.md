@@ -10,18 +10,18 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cc0f98d94c76ff63e7a002dfb92b51eae153d7b4
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 1d993afa7163beb0b24e496b0c876d903f2396e7
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139400"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934291"
 ---
 # <a name="enterprise-application-patterns-using-xamarinforms-ebook"></a>Xamarin.Forms 電子ブックを使用するエンタープライズ アプリケーション パターン
 
 _適応性、保守性、およびテスト可能なエンタープライズアプリケーションを開発するためのアーキテクチャガイダンス Xamarin.Forms_
 
-![](images/cover-sml.png "Enterprise Application Patterns using Xamarin.Forms eBook")
+![Xamarin.Forms 電子ブックを使用するエンタープライズ アプリケーション パターン](images/cover-sml.png)
 
 この電子ブックでは、疎結合を維持しながら、モデルビュービューモデル (MVVM) パターン、依存関係の注入、ナビゲーション、検証、および構成管理を実装する方法についてのガイダンスを提供します。 また、認証と承認を実行する方法についても説明します。また、コンテナー化されたマイクロサービスからのデータへのアクセス、および単体テストについても説明します。
 

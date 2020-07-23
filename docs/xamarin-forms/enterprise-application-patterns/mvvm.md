@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c07fc9f42c4175b4e4569ab95a951b24c130c4f3
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: cc0528e7696130a772e93be67526ea9d6b10373f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84572053"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936527"
 ---
 # <a name="the-model-view-viewmodel-pattern"></a>モデルビュービューモデルパターン
 
@@ -27,7 +27,7 @@ ms.locfileid: "84572053"
 
 MVVM パターンには、モデル、ビュー、ビューモデルという3つの主要なコンポーネントがあります。 それぞれが個別の目的を果たします。 図2-1 は、3つのコンポーネント間の関係を示しています。
 
-![](mvvm-images/mvvm.png "The MVVM pattern")
+![MVVM パターン](mvvm-images/mvvm.png)
 
 **図 2-1**: MVVM パターン
 
@@ -357,7 +357,7 @@ public class EventToCommandBehavior : BindableBehavior<View>
 
 動作の詳細については、「[動作](~/xamarin-forms/app-fundamentals/behaviors/index.md)」を参照してください。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 モデルビュービューモデル (MVVM) パターンは、アプリケーションのビジネスロジックとプレゼンテーションロジックをユーザーインターフェイス (UI) から明確に分離するのに役立ちます。 アプリケーションロジックと UI を明確に分離することによって、さまざまな開発上の問題に対処し、アプリケーションを簡単にテスト、保守、および進化させることができます。 また、コードの再利用の機会を大幅に向上させることができ、開発者や UI デザイナーはアプリの各部分を開発する際により簡単に共同作業を行うことができます。
 

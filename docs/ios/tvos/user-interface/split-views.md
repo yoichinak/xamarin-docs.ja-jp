@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 98cedb1cf02f9688581946fa21a2cb40379f606f
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 56b9f82fcc15afc8c75012b204588b4da65a32c4
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84566176"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939738"
 ---
 # <a name="working-with-tvos-split-view-controllers-in-xamarin"></a>Xamarin での tvOS Split ビューコントローラーの使用
 
 分割ビューコントローラーは、マスタービューコントローラーと詳細ビューコントローラーを同時に画面上に並べて表示し、管理します。 分割ビューコントローラーを使用すると、マスタービュー (左側の小さなセクション) と詳細ビュー (右側の大きなセクション) に、フォーカスがある永続的なコンテンツが表示されます。
 
-[![](split-views-images/intro01.png "Sample Split View")](split-views-images/intro01.png#lightbox)
+[![分割ビューのサンプル](split-views-images/intro01.png)](split-views-images/intro01.png#lightbox)
 
 <a name="About-Split-View-Controllers"></a>
 
@@ -28,7 +28,7 @@ ms.locfileid: "84566176"
 
 また、マスタービューコントローラーは、必要に応じて非表示にしたり表示したりすることができます。 
 
-[![](split-views-images/intro02.png "The Master View Controller hidden")](split-views-images/intro02.png#lightbox)
+[![マスタービューコントローラーの非表示](split-views-images/intro02.png)](split-views-images/intro02.png#lightbox)
 
 分割ビューコントローラーは、フィルター可能なコンテンツの一覧を表示するために使用されることがよくあります。これには、マスタービューのカテゴリと詳細ビューのフィルター処理された結果が含まれます。 これは通常、左側にテーブルビューとして表示され、右側には[コレクションビュー](~/ios/tvos/user-interface/collection-views.md)として表示されます。
 
@@ -51,18 +51,18 @@ TvOS アプリで分割ビューコントローラーを操作する最も簡単
 1. **Solution Pad**で、ファイルをダブルクリックし `Main.storyboard` て開き、編集します。
 1. **分割ビューコントローラー**を**ツールボックス**からドラッグし、ビューにドロップします。 
 
-    [![](split-views-images/activity01.png "A Split View Controller")](split-views-images/activity01.png#lightbox)
+    [![分割ビューコントローラー](split-views-images/activity01.png)](split-views-images/activity01.png#lightbox)
 1. 既定では、iOS Designer は、マスタービューにナビゲーションコントローラーとビューコントローラーをインストールします。 これがアプリの要件に合わない場合は、単純に削除します。
 1. 既定のマスタービューを削除する場合は、新しいビューコントローラーをデザイン画面にドラッグします。 
 
-    [![](split-views-images/activity02.png "A View Controller")](split-views-images/activity02.png#lightbox)
+    [![ビューコントローラー](split-views-images/activity02.png)](split-views-images/activity02.png#lightbox)
 1. コントロールをクリックし、分割ビューコントローラーから新しいマスタービューコントローラーにドラッグします。 
 1. **ポップアップメニュー**から [ **Master** ] を選択します。 
 
-    [![](split-views-images/activity03.png "Select Master from the Popup Menu")](split-views-images/activity03.png#lightbox)
+    [![ポップアップメニューから [Master] を選択します。](split-views-images/activity03.png)](split-views-images/activity03.png#lightbox)
 1. マスタービューと詳細ビューの内容をデザインします。 
 
-    [![](split-views-images/activity04.png "Example layout")](split-views-images/activity04.png#lightbox)
+    [![レイアウトの例](split-views-images/activity04.png)](split-views-images/activity04.png#lightbox)
 1. C# コードで UI コントロールを操作するには、 **Properties Pad**の [**ウィジェット] タブ**で**名前**を割り当てます。
 1. 変更内容を保存し、Visual Studio for Mac に戻ります。
 
@@ -71,20 +71,20 @@ TvOS アプリで分割ビューコントローラーを操作する最も簡単
 1. **ソリューションエクスプローラー**で、ファイルをダブルクリックし `Main.storyboard` て開き、編集します。
 1. **分割ビューコントローラー**を**ツールボックス**からドラッグし、ビューにドロップします。 
 
-    [![](split-views-images/activity01-vs.png "A Split View Controller")](split-views-images/activity01-vs.png#lightbox)
+    [![分割ビューコントローラー](split-views-images/activity01-vs.png)](split-views-images/activity01-vs.png#lightbox)
 1. 既定では、iOS Designer は、マスタービューにナビゲーションコントローラーとビューコントローラーを追加します。 これがアプリの要件に合わない場合は、単純に削除します。
 1. 既定のマスタービューを削除する場合は、新しいビューコントローラーをデザイン画面にドラッグします。 
 
-    [![](split-views-images/activity02-vs.png "A View Controller")](split-views-images/activity02-vs.png#lightbox)
+    [![ビューコントローラー](split-views-images/activity02-vs.png)](split-views-images/activity02-vs.png#lightbox)
 1. コントロールをクリックし、分割ビューコントローラーから新しいマスタービューコントローラーにドラッグします。 
 1. **ポップアップメニュー**から [ **Master** ] を選択します。 
 
-    [![](split-views-images/activity03-vs.png "Select Master from the Popup Menu")](split-views-images/activity03-vs.png#lightbox)
+    [![ポップアップメニューから [Master] を選択します。](split-views-images/activity03-vs.png)](split-views-images/activity03-vs.png#lightbox)
 1. マスタービューと詳細ビューの内容をデザインします。 
 
-    [![](split-views-images/activity04.png "Content layout")](split-views-images/activity04.png#lightbox)
+    [![コンテンツのレイアウト](split-views-images/activity04.png)](split-views-images/activity04.png#lightbox)
 1. C# コードで UI コントロールを操作するには、**プロパティエクスプローラー**の [**ウィジェット] タブ**で**名前**を割り当てます。
-1. 変更内容を保存します。
+1. 変更を保存します。
 
 -----
 

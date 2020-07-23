@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/07/2016
-ms.openlocfilehash: 99565d7e61e8e8c1d28b67a6a6d25979c79fa387
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 2a883c85eede7f7600e5716dded71f3c90f49026
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84566163"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939751"
 ---
 # <a name="introduction-to-tvos-9"></a>tvOS 9 の概要
 
@@ -34,7 +34,7 @@ Apple TV で実行される tvOS アプリには、次のサポートされて�
 
 - アプリ グループ
 - バックグラウンド モード
-- データ保護
+- データの保護
 - Game Center
 - ゲームコントローラー
 - iCloud
@@ -49,7 +49,7 @@ Apple TV で実行される tvOS アプリには、次のサポートされて�
 - HealthKit
 - HomeKit
 - Inter-App オーディオ
-- マップ
+- Maps
 - 個人の VPN
 - プッシュ通知
 - ウォレット
@@ -90,7 +90,7 @@ Siri リモートは、現在、次の国でご利用いただけます。
 
 他のすべての国は、Siri ボタンを検索ボタンに置き換える Apple TV リモコンを受け取ります。このボタンをクリックすると、既定の検索画面に検索用のテキスト入力が表示されます。
 
-[![](tvos9-images/remote02.png "Siri Remote")](tvos9-images/remote02.png#lightbox)
+[![Siri リモート](tvos9-images/remote02.png)](tvos9-images/remote02.png#lightbox)
 
 詳細については、 [Siri リモートおよび Bluetooth コントローラー](~/ios/tvos/platform/remote-bluetooth.md)のドキュメントを参照してください。
 
@@ -154,7 +154,7 @@ IOS や OS X とは異なり、Apple TV には、ユーザーがアプリやそ�
 
 Apple TV ホーム画面には、インストールされているすべてのアプリが表示され、ユーザー設定にアクセスする方法が用意されています。
 
-[![](tvos9-images/home01.png "The Home Screen")](tvos9-images/home01.png#lightbox)
+[![ホーム画面](tvos9-images/home01.png)](tvos9-images/home01.png#lightbox)
 
 ユーザーは、フォーカスを使用してアプリを選択して起動することにより、Siri リモートでタッチジェスチャを使用してアプリアイコンのグリッドに移動します。 アプリアイコンは、潜在的なユーザーに対して優れた印象を与え、アプリの目的を一目で把握するための最初の機会です。
 
@@ -168,7 +168,7 @@ Apple TV ホーム画面には、インストールされているすべての�
 
 ユーザーが Apple TV ホーム画面の一番上の行に tvOS アプリを配置した場合は、ユーザーがアプリを選択すると、大きな上部の棚の画像が表示されます。 このイメージは、アプリの機能を強調表示したり、コンテンツへの直接リンクを提供したりする必要があります。
 
-[![](tvos9-images/topshelf01.png "The Top Shelf")](tvos9-images/topshelf01.png#lightbox)
+[![上部の棚](tvos9-images/topshelf01.png)](tvos9-images/topshelf01.png#lightbox)
 
 一番上の棚のイメージは、1つの静的またはファイルとして提供することも、 `.png` `.lsr` 実行時にフォーカス可能な項目の1行として動的に作成することもできます。
 

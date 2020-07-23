@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 61b7926f28253acbcc45bc204c466d76a00c72b0
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: bef29bfc526a5f378368390c1ec25b1bbf1d8a5a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73010830"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932965"
 ---
 # <a name="registering-xamarinios-apps-to-run-in-the-background"></a>バックグラウンドで実行する Xamarin iOS アプリを登録しています
 
@@ -32,17 +32,17 @@ ms.locfileid: "73010830"
 - **Fetch (iOS 7 以降)** -バックグラウンドフェッチ権限用に登録されたアプリケーションでは、プロバイダーが定期的に新しいコンテンツを確認し、アプリケーションに戻ったときに更新されたコンテンツをユーザーに提示できます。
 - **リモート通知 (iOS 7 以降)** -アプリケーションは、プロバイダーからの通知を受信するように登録できます。また、通知を使用して、ユーザーがアプリケーションを開く前に更新プログラムを開始します。 通知はプッシュ通知の形式で提供されます。または、アプリケーションをサイレントモードでスリープ解除することを選択できます。
 
-アプリケーションを登録するには、アプリケーションの*情報*で **[必要なバックグラウンドモード]** プロパティを設定します。 アプリケーションは、必要な数だけカテゴリに登録できます。
+アプリケーションを登録するには、アプリケーションの*情報*で [**必要なバックグラウンドモード**] プロパティを設定します。 アプリケーションは、必要な数だけカテゴリに登録できます。
 
- [![](registering-applications-to-run-in-background-images/bgmodes.png "Setting the background modes")](registering-applications-to-run-in-background-images/bgmodes.png#lightbox)
+ [![バックグラウンドモードの設定](registering-applications-to-run-in-background-images/bgmodes.png)](registering-applications-to-run-in-background-images/bgmodes.png#lightbox)
 
 バックグラウンドの場所の更新用にアプリケーションを登録する手順については、「[バックグラウンドの場所」チュートリアル](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/location-walkthrough.md)を参照してください。
 
 ## <a name="application-does-not-run-in-background-property"></a>アプリケーションはバックグラウンドプロパティでは実行されません
 
-*情報 plist*で設定できるもう1つのプロパティは、*アプリケーションがバックグラウンドで実行されない*か、`UIApplicationExitsOnSuspend` プロパティです。
+*情報 plist*で設定できるもう1つのプロパティは、*アプリケーションがバックグラウンドで実行されない*場合、またはプロパティである場合です。 `UIApplicationExitsOnSuspend`
 
- [![](registering-applications-to-run-in-background-images/plist.png "Disabling Background Running")](registering-applications-to-run-in-background-images/plist.png#lightbox)
+ [![バックグラウンド実行の無効化](registering-applications-to-run-in-background-images/plist.png)](registering-applications-to-run-in-background-images/plist.png#lightbox)
 
 これは、iOS 7 以降では、バックグラウンドアプリの更新設定をオフに設定した場合とまったく同じ効果があります。ただし、この設定は、開発者側でのみ変更でき、iOS 4 以上で使用できます。 バックグラウンドの入力直後にアプリケーションは中断され、処理を実行することはできません。
 

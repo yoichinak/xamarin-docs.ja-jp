@@ -6,12 +6,12 @@ ms.assetid: E53185FB-CEF5-4AB5-94F9-CC9B57C52300
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: a06bc0cb91ff3d3894bb7be5bbb275aca35da07d
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: e2f874446b48726afc2218e5cdcac9b8736e1681
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84570961"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930443"
 ---
 # <a name="native-references-in-ios-mac-and-bindings-projects"></a>IOS、Mac、およびバインドプロジェクトでのネイティブ参照
 
@@ -73,13 +73,13 @@ Xamarin または Xamarin. Mac アプリで埋め込みフレームワークを�
 1. 新しいを作成するか、既存の Xamarin、iOS、Xamarin、またはバインドプロジェクトを開きます。
 2. **ソリューションエクスプローラー**で、プロジェクト名を右クリックし、[**追加**] [  >  **ネイティブ参照**の追加] の順に選択します。 
 
-    [![](native-references-images/ref01.png "In the Solution Explorer, right-click on the project name and select Add Native Reference")](native-references-images/ref01.png#lightbox)
+    [![ソリューションエクスプローラーで、プロジェクト名を右クリックし、[ネイティブ参照の追加] を選択します。](native-references-images/ref01.png)](native-references-images/ref01.png#lightbox)
 3. [**開く**] ダイアログボックスで、埋め込むネイティブフレームワークの名前を選択し、[**開く**] ボタンをクリックします。 
 
-    [![](native-references-images/ref02.png "Select the name of the Native Framework to embed and click the Open button")](native-references-images/ref02.png#lightbox)
+    [![埋め込むネイティブフレームワークの名前を選択し、[開く] ボタンをクリックします。](native-references-images/ref02.png)](native-references-images/ref02.png#lightbox)
 4. フレームワークがプロジェクトのツリーに追加されます。 
 
-    [![](native-references-images/ref03.png "The framework will be added to the projects tree")](native-references-images/ref03.png#lightbox)
+    [![フレームワークがプロジェクトツリーに追加されます](native-references-images/ref03.png)](native-references-images/ref03.png#lightbox)
 
 プロジェクトをコンパイルすると、ネイティブフレームワークはアプリのバンドルに埋め込まれます。
 

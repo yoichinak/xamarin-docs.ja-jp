@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: 56ee74e7a276edc960d2251bd33ccb90c1fa3cb4
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 451e69be771a1a3214a772f0f9afc48893a6fa8d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "80070374"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929585"
 ---
 # <a name="c-primer-for-objective-c-developers"></a>Objective-C 開発者向けの C# 入門書
 
@@ -58,7 +58,7 @@ public static class UITextViewExtensions
 
 その後、`UITextView` のインスタンスがコードに作成されると、メソッドは次に示すようにオートコンプリートの一覧で使用可能になります。
 
- ![](primer-images/01-extensionmethodintellisense.png "The method available in the autocomplete")
+ ![オートコンプリートで使用できるメソッド](primer-images/01-extensionmethodintellisense.png)
 
 拡張メソッドが呼び出されるときに、インスタンスはこの例の `textView` のような引数に渡されます。
 

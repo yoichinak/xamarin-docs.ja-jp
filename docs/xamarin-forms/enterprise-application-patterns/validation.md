@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a4b82552956ab0e75d0a76a14ce7c919c744e09a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: cf7e3a260308a81dc40c4fe81be66e5436ed7c63
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84565331"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935799"
 ---
 # <a name="validation-in-enterprise-apps"></a>エンタープライズアプリでの検証
 
@@ -23,7 +23,7 @@ ms.locfileid: "84565331"
 
 モデルビュービューモデル (MVVM) パターンのコンテキストでは、データ検証を実行し、ユーザーが検証エラーを修正できるようにビューの検証エラーを通知するために、ビューモデルまたはモデルが必要になることがよくあります。 EShopOnContainers モバイルアプリは、ビューモデルのプロパティの同期クライアント側検証を実行し、無効なデータが含まれているコントロールを強調表示し、データが無効である理由をユーザーに通知するエラーメッセージを表示することによって、検証エラーをユーザーに通知します。 図6-1 は、eShopOnContainers モバイルアプリで検証を実行するために必要なクラスを示しています。
 
-[![](validation-images/validation.png "Validation classes in the eShopOnContainers mobile app")](validation-images/validation-large.png#lightbox "Validation classes in the eShopOnContainers mobile app")
+[![EShopOnContainers モバイルアプリの検証クラス](validation-images/validation.png)](validation-images/validation-large.png#lightbox "EShopOnContainers モバイルアプリの検証クラス")
 
 **図 6-1**: eShopOnContainers モバイルアプリの検証クラス
 
@@ -215,7 +215,7 @@ public bool Validate()
 
 EShopOnContainers モバイルアプリは、無効なデータが含まれているコントロールを赤い線で強調表示し、無効なデータを含むコントロールの下にデータが無効であることをユーザーに通知するエラーメッセージを表示することによって、検証エラーをユーザーに通知します。 無効なデータが修正されると、行が黒に変わり、エラーメッセージが削除されます。 図6-2 に、検証エラーが存在する場合の eShopOnContainers mobile アプリの LoginView を示します。
 
-![](validation-images/validation-login.png "Displaying validation errors during login")
+![ログイン時の検証エラーの表示](validation-images/validation-login.png)
 
 **図 6-2:** ログイン時の検証エラーの表示
 
@@ -249,7 +249,7 @@ EShopOnContainers モバイルアプリは、無効なデータが含まれて�
 </Style>
 ```
 
-このスタイルは、 `ApplyLineColor` `LineColor` コントロールのアタッチされる動作のプロパティと添付プロパティを設定し `LineColorBehavior` [`Entry`](xref:Xamarin.Forms.Entry) ます。 スタイルについて詳しくは、「[Styles](~/xamarin-forms/user-interface/styles/index.md)」(スタイル) をご覧ください。
+このスタイルは、 `ApplyLineColor` `LineColor` コントロールのアタッチされる動作のプロパティと添付プロパティを設定し `LineColorBehavior` [`Entry`](xref:Xamarin.Forms.Entry) ます。 スタイルについて詳しくは、[スタイル](~/xamarin-forms/user-interface/styles/index.md)に関する記事をご覧ください。
 
 `ApplyLineColor`添付プロパティの値が設定または変更されると、アタッチされた動作によってメソッドが実行され `LineColorBehavior` `OnApplyLineColorChanged` ます。次のコード例を参照してください。
 
@@ -379,7 +379,7 @@ namespace eShopOnContainers.iOS.Effects
 
 コントロールに有効なデータが入力されると、 [`Entry`](xref:Xamarin.Forms.Entry) コントロールの下部に黒い線が適用され、検証エラーがないことが示されます。 図6-3 は、この例を示しています。
 
-![](validation-images/validation-blackline.png "Black line indicating no validation error")
+![検証エラーがないことを示す黒い線](validation-images/validation-blackline.png)
 
 **図 6-3**: 検証エラーがないことを示す黒い線
 
@@ -402,7 +402,7 @@ namespace eShopOnContainers.iOS.Effects
 
 これにより、 [`DataTrigger`](xref:Xamarin.Forms.DataTrigger) プロパティが監視され、値がになると、が実行されます。これにより、 `UserName.IsValid` `false` [`Setter`](xref:Xamarin.Forms.Setter) `LineColor` 添付動作の添付プロパティが赤に変更され `LineColorBehavior` ます。 図6-4 は、この例を示しています。
 
-![](validation-images/validation-redline.png "Red line indicating validation error")
+![検証エラーを示す赤い線](validation-images/validation-redline.png)
 
 **図 6-4**: 検証エラーを示す赤い線
 
@@ -421,7 +421,7 @@ UI では、検証に失敗したデータを持つ各コントロールの下�
 
 各は [`Label`](xref:Xamarin.Forms.Label) `Errors` 、検証対象のビューモデルオブジェクトのプロパティにバインドされます。 `Errors`プロパティはクラスによって提供され、 `ValidatableObject<T>` 型は `List<string>` です。 プロパティには `Errors` 複数の検証エラーを含めることができるため、インスタンスを使用して、 `FirstValidationErrorConverter` 表示するコレクションから最初のエラーを取得します。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 EShopOnContainers モバイルアプリは、ビューモデルのプロパティの同期クライアント側検証を実行し、無効なデータが含まれているコントロールを強調表示し、データが無効であることをユーザーに通知するエラーメッセージを表示することによって、検証エラーをユーザーに通知します。
 

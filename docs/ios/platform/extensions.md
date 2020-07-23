@@ -1,5 +1,5 @@
 ---
-title: Xamarin の iOS 拡張機能
+title: Xamarin.iOS での iOS 拡張機能
 description: このドキュメントでは、通知センター内などの標準コンテキストで iOS によって提供されるウィジェットである拡張機能について説明します。 拡張機能を作成し、親アプリから通信する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 3DEB3D43-3E4A-4099-8331-93C1E7A77095
@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidortinau
 ms.author: daortin
 ms.date: 05/12/2020
-ms.openlocfilehash: 6f2f1a908a43d81b2aabf5cb2db2f7a230356fa4
-ms.sourcegitcommit: 83cf2a4d99546751c6394510a463a2b2a8bf75b8
+ms.openlocfilehash: d5a51b70237c4e8a6f6a5e48ae684031697a0897
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83149926"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939842"
 ---
 # <a name="ios-extensions-in-xamarinios"></a>Xamarin の iOS 拡張機能
 
@@ -27,14 +27,14 @@ IOS 8 で導入された拡張機能は、 `UIViewControllers` ios によって�
 
 ## <a name="extension-points"></a>拡張ポイント
 
-|Type|Description|拡張ポイント|ホストアプリ|
+|Type|説明|拡張ポイント|ホストアプリ|
 |--- |--- |--- |--- |
 |アクション|特定のメディアの種類の特殊なエディターまたはビューアー|`com.apple.ui-services`|Any|
 |ドキュメントプロバイダー|アプリがリモートドキュメントストアを使用できるようにします|`com.apple.fileprovider-ui`|[UIDocumentPickerViewController](xref:UIKit.UIDocumentPickerViewController)を使用するアプリ|
-|キーボード|代替キーボード|`com.apple.keyboard-service`|Any|
+|[キーボード]|代替キーボード|`com.apple.keyboard-service`|Any|
 |写真の編集|写真の操作と編集|`com.apple.photo-editing`|Photos アプリエディター|
 |共有|ソーシャルネットワークやメッセージングサービスなどを使用してデータを共有します。|`com.apple.share-services`|Any|
-|本日|今日の画面または通知センターに表示される "ウィジェット"|`com.apple.widget-extensions`|今日と通知センター|
+|今日|今日の画面または通知センターに表示される "ウィジェット"|`com.apple.widget-extensions`|今日と通知センター|
 
 [Ios 10](~/ios/platform/introduction-to-ios10/index.md#app-extensions)と[ios 12](~/ios/platform/introduction-to-ios12/index.md#notification-improvements)で追加の拡張ポイントが追加されました。 サポートされているすべての種類の完全な表については、「 [IOS アプリ拡張機能のプログラミングガイド](https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214-CH20-SW2)」を参照してください。
 
@@ -118,7 +118,7 @@ IOS 8 で導入された拡張機能は、 `UIViewControllers` ios によって�
 
 次のチュートリアルでは、**今日**の日付と残り日数を計算するサンプルのウィジェットを作成します。
 
-[![](extensions-images/carpediemscreenshot-sm.png "An example Today widget that calculates the day and number of days remaining in the year")](extensions-images/carpediemscreenshot.png#lightbox)
+[![今日の日と残り日数を計算する今日のウィジェットの例](extensions-images/carpediemscreenshot-sm.png)](extensions-images/carpediemscreenshot.png#lightbox)
 
 ### <a name="creating-the-solution"></a>ソリューションの作成
 
@@ -126,26 +126,26 @@ IOS 8 で導入された拡張機能は、 `UIViewControllers` ios によって�
 
 1. まず、新しい iOS、**シングルビューアプリ**プロジェクトを作成し、[**次へ**] ボタンをクリックします。 
 
-    [![](extensions-images/today01.png "First, create a new iOS, Single View App project and click the Next button")](extensions-images/today01.png#lightbox)
+    [![まず、新しい iOS、シングルビューアプリプロジェクトを作成し、[次へ] ボタンをクリックします。](extensions-images/today01.png)](extensions-images/today01.png#lightbox)
 2. プロジェクトを呼び出し、 `TodayContainer` [**次へ**] ボタンをクリックします。 
 
-    [![](extensions-images/today02.png "Call the project TodayContainer and click the Next button")](extensions-images/today02.png#lightbox)
+    [![プロジェクト TodayContainer を呼び出し、[次へ] ボタンをクリックします。](extensions-images/today02.png)](extensions-images/today02.png#lightbox)
 3. **プロジェクト名**と**SolutionName**を確認し、[**作成**] ボタンをクリックしてソリューションを作成します。 
 
-    [![](extensions-images/today03.png "Verify the Project Name and SolutionName and click the Create button to create the solution")](extensions-images/today03.png#lightbox)
+    [![プロジェクト名と SolutionName を確認し、[作成] ボタンをクリックしてソリューションを作成します。](extensions-images/today03.png)](extensions-images/today03.png#lightbox)
 4. 次に、**ソリューションエクスプローラー**でソリューションを右クリックし、**今日の拡張**機能テンプレートから新しい**iOS 拡張機能**プロジェクトを追加します。 
 
-    [![](extensions-images/today04.png "Next, in the Solution Explorer, right-click on the Solution and add a new iOS Extension project from the Today Extension template")](extensions-images/today04.png#lightbox)
+    [![次に、ソリューションエクスプローラーの [ソリューション] を右クリックし、[今日の拡張機能] テンプレートから新しい iOS 拡張機能プロジェクトを追加します。](extensions-images/today04.png)](extensions-images/today04.png#lightbox)
 5. プロジェクトを呼び出し、 `DaysRemaining` [**次へ**] ボタンをクリックします。 
 
-    [![](extensions-images/today05.png "Call the project DaysRemaining and click the Next button")](extensions-images/today05.png#lightbox)
+    [![プロジェクト DaysRemaining を呼び出し、[次へ] ボタンをクリックします。](extensions-images/today05.png)](extensions-images/today05.png#lightbox)
 6. プロジェクトを確認し、[**作成**] ボタンをクリックして作成します。 
 
-    [![](extensions-images/today06.png "Review the project and click the Create button to create it")](extensions-images/today06.png#lightbox)
+    [![プロジェクトを確認し、[作成] ボタンをクリックして作成します。](extensions-images/today06.png)](extensions-images/today06.png#lightbox)
 
 次に示すように、結果として得られるソリューションには2つのプロジェクトが必要になります。
 
-[![](extensions-images/today07.png "The resulting Solution should now have two projects, as shown here")](extensions-images/today07.png#lightbox)
+[![次に示すように、結果として得られるソリューションには2つのプロジェクトが必要になります。](extensions-images/today07.png)](extensions-images/today07.png#lightbox)
 
 ### <a name="creating-the-extension-user-interface"></a>拡張機能のユーザーインターフェイスの作成
 
@@ -157,10 +157,10 @@ IOS 8 で導入された拡張機能は、 `UIViewControllers` ios によって�
 
 1. **ソリューションエクスプローラー**で、拡張機能プロジェクトのファイルをダブルクリックし `Main.storyboard` て、編集用に開きます。 
 
-    [![](extensions-images/today08.png "Double-click the Extension projects Main.storyboard file to open it for editing")](extensions-images/today08.png#lightbox)
+    [![拡張機能プロジェクトのメインのストーリーボードファイルをダブルクリックして、編集用に開きます。](extensions-images/today08.png)](extensions-images/today08.png#lightbox)
 2. テンプレートによって UI に自動的に追加されたラベルを選択し**Name** 、[ `TodayMessage` **プロパティエクスプローラー**] の [**ウィジェット**] タブで名前を指定します。 
 
-    [![](extensions-images/today09.png "Select the Label that was automatically added to the UI by template and give it the Name TodayMessage in the Widget tab of the Properties Explorer")](extensions-images/today09.png#lightbox)
+    [![テンプレートによって UI に自動的に追加されたラベルを選択し、プロパティエクスプローラーの [ウィジェット] タブに TodayMessage という名前を付けます。](extensions-images/today09.png)](extensions-images/today09.png#lightbox)
 3. 変更内容をストーリーボードに保存します。
 
 #### <a name="using-code"></a>コードの使用
@@ -169,16 +169,16 @@ IOS 8 で導入された拡張機能は、 `UIViewControllers` ios によって�
 
 1. **ソリューションエクスプローラー**で、 **DaysRemaining**プロジェクトを選択し、新しいクラスを追加して、次のように呼び出し `CodeBasedViewController` ます。 
 
-    [![](extensions-images/code01.png "Aelect the DaysRemaining project, add a new class and call it CodeBasedViewController")](extensions-images/code01.png#lightbox)
+    [![DaysRemaining プロジェクトを選択し、新しいクラスを追加して、Codeベース Viewcontroller を呼び出します。](extensions-images/code01.png)](extensions-images/code01.png#lightbox)
 2. ここでも、**ソリューションエクスプローラー**で、拡張機能のファイルをダブルクリックし `Info.plist` て開き、編集します。 
 
-    [![](extensions-images/code02.png "Double-click Extensions Info.plist file to open it for editing")](extensions-images/code02.png#lightbox)
+    [![拡張機能の情報 plist ファイルをダブルクリックして編集用に開きます。](extensions-images/code02.png)](extensions-images/code02.png#lightbox)
 3. (画面の下部から)**ソースビュー**を選択し、ノードを開き `NSExtension` ます。 
 
-    [![](extensions-images/code03.png "Select the Source View from the bottom of the screen and open the NSExtension node")](extensions-images/code03.png#lightbox)
+    [![画面の下部にあるソースビューを選択し、NSExtension ノードを開きます。](extensions-images/code03.png)](extensions-images/code03.png#lightbox)
 4. キーを削除 `NSExtensionMainStoryboard` し、値を指定してを追加し `NSExtensionPrincipalClass` `CodeBasedViewController` ます。 
 
-    [![](extensions-images/code04.png "Remove the NSExtensionMainStoryboard key and add a NSExtensionPrincipalClass with the value CodeBasedViewController")](extensions-images/code04.png#lightbox)
+    [![NSExtensionMainStoryboard キーを削除し、値 CodeNSExtensionPrincipalClass Viewcontroller を使用してを追加します。](extensions-images/code04.png)](extensions-images/code04.png#lightbox)
 5. 変更を保存します。
 
 次に、ファイルを編集 `CodeBasedViewController.cs` し、次のように表示します。
@@ -250,7 +250,7 @@ public override void ViewDidLoad ()
 
 このチュートリアルでは、コンテナーアプリは、拡張機能を出荷およびインストールするためのメソッドとしてのみ使用され、独自の機能は提供されません。 TodayContainer のファイルを編集して、 `Main.storyboard` 拡張機能の関数とそのインストール方法を定義するテキストを追加します。
 
-[![](extensions-images/today10.png "Edit the TodayContainers Main.storyboard file and add some text defining the Extensions function and how to install it")](extensions-images/today10.png#lightbox)
+[![TodayContainers のメインストーリーボードファイルを編集し、Extensions 関数とそのインストール方法を定義するテキストを追加します。](extensions-images/today10.png)](extensions-images/today10.png#lightbox)
 
 変更内容をストーリーボードに保存します。
 
@@ -258,19 +258,19 @@ public override void ViewDidLoad ()
 
 IOS シミュレーターで拡張機能をテストするには、 **TodayContainer**アプリを実行します。 コンテナーのメインビューが表示されます。
 
-[![](extensions-images/run01.png "The containers main view will be displayed")](extensions-images/run01.png#lightbox)
+[![コンテナーのメインビューが表示されます](extensions-images/run01.png)](extensions-images/run01.png#lightbox)
 
 次に、シミュレーターの [**ホーム**] ボタンをクリックし、画面の上部から下方向にスワイプして**通知センター**を開き、[**今日**] タブを選択して [**編集**] ボタンをクリックします。
 
-[![](extensions-images/run02.png "Hit the Home button in the Simulator, swipe down from the top of the screen to open the Notification Center, select the Today tab and click the Edit button")](extensions-images/run02.png#lightbox)
+[![シミュレーターの [ホーム] ボタンをクリックし、画面の上部から下方向にスワイプして通知センターを開き、[今日] タブを選択して [編集] ボタンをクリックします。](extensions-images/run02.png)](extensions-images/run02.png#lightbox)
 
 **DaysRemaining**拡張機能を**Today**ビューに追加し、[ **Done** ] \ (完了 \) ボタンをクリックします。
 
-[![](extensions-images/run03.png "Add the DaysRemaining Extension to the Today view and click the Done button")](extensions-images/run03.png#lightbox)
+[![DaysRemaining 拡張機能を Today ビューに追加し、[完了] ボタンをクリックします。](extensions-images/run03.png)](extensions-images/run03.png#lightbox)
 
 新しいウィジェットが**今日**のビューに追加され、結果が表示されます。
 
-[![](extensions-images/run04.png "The new widget will be added to the Today view and the results will be displayed")](extensions-images/run04.png#lightbox)
+[![新しいウィジェットが今日のビューに追加され、結果が表示されます。](extensions-images/run04.png)](extensions-images/run04.png#lightbox)
 
 ## <a name="communicating-with-the-host-app"></a>ホストアプリとの通信
 
@@ -466,7 +466,7 @@ results.ObjectForKey("NSExtensionJavaScriptPreprocessingResultsKey");
 
 これらの厳しい要件を考慮すると、パフォーマンスとメモリの消費に対して十分にテストされ、最適化された拡張機能のみを展開する必要があります。 
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 このドキュメントでは、拡張機能について説明し、拡張ポイントの種類と、iOS によって拡張機能に課せられる既知の制限事項について説明します。 ここでは、拡張機能と拡張機能のライフサイクルの作成、配布、インストール、実行について説明しました。 このチュートリアルでは、ストーリーボードまたはコードを使用してウィジェットの UI を作成する2つの方法を示す、簡単な**Today**ウィジェットの作成について説明しました。 このチュートリアルでは、iOS シミュレーターで拡張機能をテストする方法を示しました。 最後に、ホストアプリとの通信、および拡張機能を開発するときに行う必要があるいくつかの予防措置と考慮事項について簡単に説明しました。 
 

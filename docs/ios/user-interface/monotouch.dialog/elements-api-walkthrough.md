@@ -7,24 +7,24 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: davidortinau
 ms.author: daortin
-ms.openlocfilehash: 2258b2e8451f896aff59c89478833976ef7086e3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 3e1e7a9c5fb01f73cddb4cab3a95aa421bd8c3fb
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73002364"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933368"
 ---
 # <a name="creating-a-xamarinios-application-using-the-elements-api"></a>Elements API を使用して Xamarin iOS アプリケーションを作成する
 
 _この記事は、「Monotouch.dialog の概要」の記事に記載されている情報に基づいています。ここでは、Monotouch.dialog (MT) の使用方法を示すチュートリアルを示します。D) Elements API を使用して、MT を使用したアプリケーションの構築をすぐに始めることができます。A._
 
-このチュートリアルでは、MT を使用します。D Elements API は、タスク一覧を表示するアプリケーションのマスター/詳細スタイルを作成します。 ユーザーがナビゲーションバーの [ **+** ] ボタンを選択すると、そのタスクのテーブルに新しい行が追加されます。 行を選択すると、次に示すように、タスクの説明と期限を更新できる詳細画面に移動します。
+このチュートリアルでは、MT を使用します。D Elements API は、タスク一覧を表示するアプリケーションのマスター/詳細スタイルを作成します。 ユーザーがナビゲーションバーでボタンを選択すると、 **+** タスクのテーブルに新しい行が追加されます。 行を選択すると、次に示すように、タスクの説明と期限を更新できる詳細画面に移動します。
 
-[![](elements-api-walkthrough-images/01-task-list-app.png "Selecting the row will navigate to the detail screen that allows us to update the task description and the due date")](elements-api-walkthrough-images/01-task-list-app.png#lightbox)
+[![行を選択すると、詳細画面に移動し、タスクの説明と期日を更新することができます。](elements-api-walkthrough-images/01-task-list-app.png)](elements-api-walkthrough-images/01-task-list-app.png#lightbox)
 
 ## <a name="setting-up-mtd"></a>MT を設定しています。A
 
-MT.D は、Xamarin. iOS と共に配布されます。 これを使用するには、Visual Studio 2017 または Visual Studio for Mac で Xamarin. iOS プロジェクトの **[参照]** ノードを右クリックし、 **monotouch.dialog**アセンブリへの参照を追加します。 次に、必要に応じて、ソースコードに `using MonoTouch.Dialog` ステートメントを追加します。
+MT.D は、Xamarin. iOS と共に配布されます。 これを使用するには、Visual Studio 2017 または Visual Studio for Mac で Xamarin. iOS プロジェクトの [**参照**] ノードを右クリックし、 **monotouch.dialog**アセンブリへの参照を追加します。 次に、 `using MonoTouch.Dialog` 必要に応じて、ソースコードにステートメントを追加します。
 
 ## <a name="elements-api-walkthrough"></a>Elements API のチュートリアル
 
@@ -32,19 +32,19 @@ Monotouch.dialog の[概要ダイアログ](~/ios/user-interface/monotouch.dialo
 
 ## <a name="setting-up-the-multi-screen-application"></a>マルチスクリーンアプリケーションの設定
 
-画面作成プロセスを開始するために、Monotouch.dialog によって `DialogViewController`が作成され、`RootElement`が追加されます。
+画面作成プロセスを開始するために、Monotouch.dialog はを作成し、 `DialogViewController` を追加します `RootElement` 。
 
 Monotouch.dialog を使用してマルチスクリーンアプリケーションを作成するには、次のことを行う必要があります。
 
-1. `UINavigationController.` の作成
-1. `DialogViewController.` の作成
-1. `DialogViewController` を `UINavigationController.` のルートとして追加します。 
-1. `DialogViewController.` に `RootElement` を追加する
-1. `Sections` と `Elements` を `RootElement.` に追加する 
+1. 認証要求の処理に使用する `UINavigationController.`
+1. 認証要求の処理に使用する `DialogViewController.`
+1. を、の `DialogViewController` ルートとして追加します。`UINavigationController.` 
+1. をに追加し `RootElement` ます。`DialogViewController.`
+1. `Sections`と `Elements` をに追加します。`RootElement.` 
 
 ### <a name="using-a-uinavigationcontroller"></a>UINavigationController を使用する
 
-ナビゲーションスタイルのアプリケーションを作成するには、`UINavigationController`を作成し、`AppDelegate`の `FinishedLaunching` メソッドの `RootViewController` として追加する必要があります。 `UINavigationController` が Monotouch.dialog で動作するようにするには、次に示すように `UINavigationController` に `DialogViewController` を追加します。
+ナビゲーションスタイルのアプリケーションを作成するには、を作成して、の `UINavigationController` メソッドのとして追加する必要があり `RootViewController` `FinishedLaunching` `AppDelegate` ます。 Monotouch.dialog を操作するには、次のようにを `UINavigationController` に追加します。 `DialogViewController` `UINavigationController`
 
 ```csharp
 public override bool FinishedLaunching (UIApplication app, NSDictionary options)
@@ -64,27 +64,27 @@ public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 }
 ```
 
-上記のコードでは、`RootElement` のインスタンスを作成し、`DialogViewController`に渡します。 `DialogViewController` には、常に、その階層の最上位に `RootElement` があります。 この例では、`RootElement` は、ナビゲーションコントローラーのナビゲーションバーでタイトルとして機能する "To Do List" という文字列を使用して作成されます。 この時点で、アプリケーションを実行すると、次のような画面が表示されます。
+上のコードでは、のインスタンスを作成し、そのインスタンスをに `RootElement` 渡し `DialogViewController` ます。 は、 `DialogViewController` 常に `RootElement` 階層の最上位にあります。 この例では、は、 `RootElement` ナビゲーションコントローラーのナビゲーションバーでタイトルとして機能する "To Do List" という文字列を使用して作成されます。 この時点で、アプリケーションを実行すると、次のような画面が表示されます。
 
- [![](elements-api-walkthrough-images/02-to-do-list-screen-.png "Running the application will present the screen shown here")](elements-api-walkthrough-images/02-to-do-list-screen-.png#lightbox)
+ [![アプリケーションを実行すると、ここに表示される画面が表示されます。](elements-api-walkthrough-images/02-to-do-list-screen-.png)](elements-api-walkthrough-images/02-to-do-list-screen-.png#lightbox)
 
-`Sections` と `Elements` の Monotouch.dialog の階層構造を使用して、画面をさらに追加する方法を見てみましょう。
+との Monotouch.dialog の階層構造を使用して `Sections` 、画面をさらに追加する方法を見てみましょう。 `Elements`
 
 ### <a name="creating-the-dialog-screens"></a>ダイアログ画面の作成
 
-`DialogViewController` は、Monotouch.dialog が画面を追加するために使用する `UITableViewController` サブクラスです。 Monotouch.dialog は、上に示したように、`DialogViewController`に `RootElement` を追加することによって画面を作成します。 `RootElement` には、テーブルのセクションを表す `Section` インスタンスを含めることができます。
-これらのセクションは、要素、他のセクション、またはその他の `RootElements`で構成されています。 `RootElements`を入れ子にすることにより、Monotouch.dialog は次に示すように、ナビゲーションスタイルのアプリケーションを自動的に作成します。
+は、 `DialogViewController` `UITableViewController` monotouch.dialog が画面を追加するために使用するサブクラスです。 Monotouch.dialog は、 `RootElement` 上に示したように、をに追加することによって画面を作成します。 `DialogViewController` は、 `RootElement` `Section` テーブルのセクションを表すインスタンスを持つことができます。
+これらのセクションは、要素、他のセクション、またはその他のセクションで構成されてい `RootElements` ます。 `RootElements`Monotouch.dialog を入れ子にすると、次に示すように、ナビゲーションスタイルのアプリケーションが自動的に作成されます。
 
 ### <a name="using-dialogviewcontroller"></a>診断ビューコントローラーの使用
 
-`UITableViewController` サブクラスである `DialogViewController`には、`UITableView` がビューとして含まれています。 この例では、[ **+** ] ボタンがタップされるたびに、テーブルに項目を追加します。 `DialogViewController` が `UINavigationController`に追加されたため、次に示すように、`NavigationItem`の `RightBarButton` プロパティを使用して **+** ボタンを追加できます。
+サブクラスであるは、 `DialogViewController` `UITableViewController` `UITableView` ビューとしてを持ちます。 この例では、ボタンがタップされるたびに、テーブルに項目を追加し **+** ます。 は `DialogViewController` に追加されたため `UINavigationController` 、 `NavigationItem` 次に示すように、のプロパティを使用し `RightBarButton` **+** てボタンを追加できます。
 
 ```csharp
 _addButton = new UIBarButtonItem (UIBarButtonSystemItem.Add);
 _rootVC.NavigationItem.RightBarButtonItem = _addButton;
 ```
 
-前に `RootElement` を作成したときに、ユーザーが **+** ボタンをタップしたときに要素を追加できるように、1つの `Section` インスタンスに渡しました。 次のコードを使用して、ボタンのイベントハンドラーでこれを実現できます。
+以前にを作成したときに、ユーザーがボタンをタップしたときに `RootElement` 要素を追加できるように、1つのインスタンスに渡しました `Section` **+** 。 次のコードを使用して、ボタンのイベントハンドラーでこれを実現できます。
 
 ```csharp
 _addButton.Clicked += (sender, e) => {                
@@ -104,7 +104,7 @@ _addButton.Clicked += (sender, e) => {
 };
 ```
 
-このコードは、ボタンがタップされるたびに新しい `Task` オブジェクトを作成します。 `Task` クラスの単純な実装を次に示します。
+このコードでは `Task` 、ボタンがタップされるたびに新しいオブジェクトが作成されます。 クラスの単純な実装を次に示し `Task` ます。
 
 ```csharp
 public class Task
@@ -121,25 +121,25 @@ public class Task
 }
 ```
 
-タスクの `Name` プロパティは、新しいタスクごとにインクリメントされる `n` という名前のカウンター変数と共に `RootElement`のキャプションを作成するために使用されます。 Monotouch.dialog は、各 `taskElement` が追加されたときに `TableView` に追加される行に要素を変換します。
+タスクの `Name` プロパティは、のキャプションと、 `RootElement` `n` 新しいタスクごとにインクリメントされるという名前のカウンター変数を作成するために使用されます。 Monotouch.dialog を追加すると、要素がに追加された行に変換されます。 `TableView` `taskElement`
 
 ## <a name="presenting-and-managing-dialog-screens"></a>ダイアログ画面の表示と管理
 
-Monotouch.dialog を使用して `RootElement`、タスクの詳細ごとに新しい画面が自動的に作成され、行が選択されたときに移動するようにしました。
+`RootElement`Monotouch.dialog がタスクの詳細ごとに新しい画面を自動的に作成し、行を選択したときに移動するようにを使用しました。
 
-タスクの詳細画面自体は、次の2つのセクションで構成されています。これらの各セクションには、1つの要素が含まれています。 最初の要素は、タスクの `Description` プロパティの編集可能な行を提供するために、`EntryElement` から作成されます。 要素を選択すると、次のようにテキスト編集用のキーボードが表示されます。
+タスクの詳細画面自体は、次の2つのセクションで構成されています。これらの各セクションには、1つの要素が含まれています。 最初の要素は、 `EntryElement` タスクのプロパティの編集可能な行を提供するために、から作成され `Description` ます。 要素を選択すると、次のようにテキスト編集用のキーボードが表示されます。
 
- [![](elements-api-walkthrough-images/03-create-task.png "When the element is selected, a keyboard for text editing is presented as shown")](elements-api-walkthrough-images/03-create-task.png#lightbox)
+ [![要素を選択すると、テキスト編集用のキーボードが表示されます。](elements-api-walkthrough-images/03-create-task.png)](elements-api-walkthrough-images/03-create-task.png#lightbox)
 
-2番目のセクションには、タスクの `DueDate` プロパティを管理するための `DateElement` が含まれています。 日付を選択すると、次のように日付の選択が自動的に読み込まれます。
+2番目のセクションには、タスクのプロパティを管理するためのが含まれてい `DateElement` `DueDate` ます。 日付を選択すると、次のように日付の選択が自動的に読み込まれます。
 
- [![](elements-api-walkthrough-images/04-date-picker.png "Selecting the date automatically loads a date picker as")](elements-api-walkthrough-images/04-date-picker.png#lightbox)
+ [![日付を選択すると、日付の選択が自動的に読み込まれます。](elements-api-walkthrough-images/04-date-picker.png)](elements-api-walkthrough-images/04-date-picker.png#lightbox)
 
-`EntryElement` と `DateElement` の両方のケース (または Monotouch.dialog の任意のデータ入力要素) では、値に対する変更はすべて自動的に保持されます。 これを確認するには、日付を編集してから、ルート画面とさまざまなタスクの詳細を前後に移動します。詳細画面の値は保持されます。
+との両方 `EntryElement` の `DateElement` ケース (または monotouch.dialog の任意のデータ入力要素) では、値に対する変更は自動的に保持されます。 これを確認するには、日付を編集してから、ルート画面とさまざまなタスクの詳細を前後に移動します。詳細画面の値は保持されます。
 
 ## <a name="summary"></a>まとめ
 
-この記事では、Monotouch.dialog Elements API の使用方法を示すチュートリアルについて説明しました。 MT でマルチスクリーンアプリケーションを作成するための基本的な手順について説明しています。`DialogViewController` の使用方法、および要素とセクションを追加して画面を作成する方法を含む D。 また、MT の使用方法についても説明しました。D `UINavigationController`と組み合わせて使用します。
+この記事では、Monotouch.dialog Elements API の使用方法を示すチュートリアルについて説明しました。 MT でマルチスクリーンアプリケーションを作成するための基本的な手順について説明しています。D。を使用する方法、 `DialogViewController` および要素とセクションを追加して画面を作成する方法を含みます。 また、MT の使用方法についても説明しました。D との組み合わせ `UINavigationController` 。
 
 ## <a name="related-links"></a>関連リンク
 

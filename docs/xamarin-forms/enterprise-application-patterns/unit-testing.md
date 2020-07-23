@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a05de34089fdf6ad90740067b88edea0b62f55a7
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4f30b8be762e23f84a90595a56912587cc3aa838
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84134655"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934252"
 ---
 # <a name="unit-testing-enterprise-apps"></a>エンタープライズアプリの単体テスト
 
@@ -55,7 +55,7 @@ public class OrderDetailViewModel : ViewModelBase
 
 クラスは、 `OrderDetailViewModel` `IOrderService` オブジェクトをインスタンス化するときに、コンテナーが解決する型に依存してい `OrderDetailViewModel` ます。 ただし、 `OrderService` クラスの単体テストを行うためのオブジェクトを作成するのではなく、 `OrderDetailViewModel` `OrderService` オブジェクトをテストの目的のモックに置き換えます。 図10-1 は、この関係を示しています。
 
-![](unit-testing-images/unittesting.png "Classes that implement the IOrderService interface")
+![IOrderService インターフェイスを実装するクラス](unit-testing-images/unittesting.png)
 
 **図 10-1:** IOrderService インターフェイスを実装するクラス
 
@@ -221,7 +221,7 @@ public void CheckValidationFailsWhenOnlyForenameHasDataTest()
 
 この単体テストで `Surname` は、のプロパティにデータが含まれておらず、 `MockViewModel` `Value` `IsValid` `Errors` 各インスタンスの、、およびプロパティ `ValidatableObject<T>` が正しく設定されている場合に、検証が失敗することを確認します。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 単体テストでは、アプリの小さな単位 (通常はメソッド) を受け取り、それをコードの残りの部分から分離し、想定どおりに動作することを確認します。 その目的は、機能の各単位が想定どおりに動作することを確認することです。これにより、エラーがアプリ全体に伝達されることがなくなります。
 

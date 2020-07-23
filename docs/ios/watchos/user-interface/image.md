@@ -7,30 +7,30 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 9ab18e643038d4a61b3b201295d4298f2b5e1adc
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 3fd119828a953c002c7d66f248bf26b413018ae4
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574185"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939699"
 ---
 # <a name="watchos-image-controls-in-xamarin"></a>Xamarin の watchOS Image コントロール
 
 watchOS には、 [`WKInterfaceImage`](xref:WatchKit.WKInterfaceImage) イメージと単純なアニメーションを表示するためのコントロールが用意されています。 一部のコントロールには、背景イメージ (ボタン、グループ、インターフェイスコントローラーなど) を含めることもできます。
 
-![](image-images/image-walkway.png "画像を表示する Apple Watch") ![](image-images/image-animation.png "単純なアニメーションを使用した Apple Watch")
+![](image-images/image-walkway.png) ![ 単純なアニメーションで画像 Apple Watch を表示する Apple Watch](image-images/image-animation.png)
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
 
 アセットカタログ画像を使用して、ウォッチキットアプリに画像を追加します。
 **@2x**すべてのウォッチデバイスに Retina が表示されるため、バージョンのみが必要です。
 
-![](image-images/asset-universal-sml.png "Only 2x versions are required, since all watch devices have Retina displays")
+![すべてのウォッチデバイスに Retina が表示されるため、必要なバージョンは2倍です。](image-images/asset-universal-sml.png)
 
 画像自体が、ウォッチ画面の正しいサイズであることを確認することをお勧めします。 サイズの正しくないイメージ (特に大きなもの) を使用*せず*に、拡大縮小して、ウォッチに表示します。
 
 アセットカタログイメージで Watch Kit のサイズ (38mm と 42 mm) を使用して、表示サイズごとに異なるイメージを指定できます。
 
-![](image-images/asset-watch-sml.png "You can use the Watch Kit sizes 38mm and 42mm in an asset catalog image to specify different images for each display size")
+![アセットカタログイメージで Watch Kit のサイズ38mm と 42 mm を使用して、表示サイズごとに異なるイメージを指定できます。](image-images/asset-watch-sml.png)
 
 ## <a name="images-on-the-watch"></a>ウォッチの画像
 
@@ -38,7 +38,7 @@ watchOS には、 [`WKInterfaceImage`](xref:WatchKit.WKInterfaceImage) イメー
 
 たとえば、 [WatchKitCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog/)サンプルには、watch アプリプロジェクトのアセットカタログにいくつかのイメージが追加されています。
 
-![](image-images/asset-whale-sml.png "The WatchKitCatalog sample has a number of images added to an asset catalog in the watch app project")
+![WatchKitCatalog サンプルには、watch アプリプロジェクトのアセットカタログに多数のイメージが追加されています。](image-images/asset-whale-sml.png)
 
 これらは、文字列 name パラメーターを使用して、監視に効率的に読み込んで表示でき `SetImage` ます。
 
@@ -59,7 +59,7 @@ Watch 拡張機能からイメージを読み込むには、 `UIImage` インス
 
 たとえば、 [WatchKitCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)サンプルには、watch 拡張機能プロジェクトの**Bumblebee**という名前のイメージがあります。
 
-![](image-images/asset-bumblebee-sml.png "The WatchKitCatalog sample has an image named Bumblebee in the watch extension project")
+![WatchKitCatalog サンプルには、watch 拡張機能プロジェクトの Bumblebee という名前のイメージがあります。](image-images/asset-bumblebee-sml.png)
 
 次のコードでは、が発生します。
 
@@ -78,7 +78,7 @@ using (var image = UIImage.FromBundle ("Bumblebee")) {
 
 [WatchKitCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)サンプルには、 **Bus**プレフィックスを持つ watch アプリプロジェクトに一連の番号付き画像が含まれています。
 
-![](image-images/asset-bus-animation-sml.png "The WatchKitCatalog sample has a series of numbered images in the watch app project with the Bus prefix")
+![WatchKitCatalog サンプルには、Bus プレフィックスを使用した watch アプリプロジェクト内の一連の番号付き画像が含まれています。](image-images/asset-bus-animation-sml.png)
 
 これらのイメージをアニメーションとして表示するには、まずプレフィックス名を使用してイメージを読み込み、次のように `SetImage` 呼び出し `StartAnimating` ます。
 

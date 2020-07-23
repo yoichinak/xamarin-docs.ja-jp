@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/22/2018
-ms.openlocfilehash: 72e0a2adc79796b3df7b6fb4eca62448f1a1a7a4
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 0b0bfc650ffa271a7616d7c6e6a436fafa2664c8
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79510732"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932601"
 ---
 # <a name="set-up-device-for-development"></a>開発用のデバイスの設定
 
@@ -77,7 +77,7 @@ Android 9.0 以上では、以下のステップに従ってデバッグを有�
 
 以前にデバッグに使用していない場合は、デバイス上のコンピューターを信頼するように求めるメッセージが表示されます。 デバイスを接続するたびにこのメッセージが表示されないように、 **[Always allow from this computer]\(このコンピューターを常に許可する\)** をオンにすることもできます。
 
-![](set-up-device-for-development-images/trust-computer-for-usb-debugging.png "Google USB")
+![Google USB](set-up-device-for-development-images/trust-computer-for-usb-debugging.png)
 
 ## <a name="alternate-connection-via-wifi"></a>Wifi 経由の代替接続
 
@@ -149,7 +149,7 @@ Google Nexus デバイス (Galaxy Nexus を除く) では、Google USB ドライ
 
 Android SDK マネージャーを起動し、以下のスクリーン ショットに示されているように、**Extras** フォルダーを展開して、**Google USB ドライバー** パッケージをインストールします。
 
-![](set-up-device-for-development-images/google-usb-driver.png "Google USB driver selected")
+![[Google USB ドライバー] が選択されている](set-up-device-for-development-images/google-usb-driver.png)
 
 **[Google USB ドライバー]** ボックスをオンにして、 **[Apply Changes]\(変更の適用\)** ボタンをクリックします。
 次の場所にドライバー ファイルがダウンロードされます。

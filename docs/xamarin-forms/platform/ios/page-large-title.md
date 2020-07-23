@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0db20620870340386ccd0cedf7f98cb2975527ba
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 88761472c4beae3f40f2ca6852eea4db8276c4c9
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128046"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930682"
 ---
 # <a name="large-page-titles-on-ios"></a>IOS 上の大きなページタイトル
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Ios 11 以上を使用するデバイスでは、この iOS プラットフォーム固有のを使用して、のナビゲーションバーにページタイトルを大きなタイトルとして表示し [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) ます。 大きなタイトルが左揃えになり、大きなフォントが使用され、ユーザーがコンテンツのスクロールを開始したときに標準のタイトルに移行して、画面の実際の使用量が効率的に使用されるようにします。 ただし、横方向では、タイトルはナビゲーションバーの中央に戻り、コンテンツレイアウトを最適化します。 添付プロパティを値に設定することにより、XAML で使用 `NavigationPage.PrefersLargeTitles` され `boolean` ます。
 
@@ -100,7 +100,7 @@ switch (On<iOS>().LargeTitleDisplay())
 
 結果として、指定された `LargeTitleDisplayMode` がに適用され [`Page`](xref:Xamarin.Forms.Page) 、大きなタイトルの動作を制御します。
 
-![](page-large-title-images/large-title.png "Blur Effect Platform-Specific")
+![ぼかし効果プラットフォーム固有](page-large-title-images/large-title.png)
 
 ## <a name="related-links"></a>関連リンク
 

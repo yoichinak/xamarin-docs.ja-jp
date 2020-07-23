@@ -10,16 +10,16 @@ ms.date: 03/23/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0d6aa84a886d450d1dc42ec31edf16380b795404
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 2c271c3537c6e96497763c67c5b8128148191f16
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84564642"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937359"
 ---
 # <a name="native-views-in-xaml"></a>XAML のネイティブ ビュー
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)
 
 _IOS、Android、およびユニバーサル Windows プラットフォームからのネイティブビューは、XAML ファイルから直接参照でき Xamarin.Forms ます。プロパティとイベントハンドラーはネイティブビューで設定でき、ビューと対話でき Xamarin.Forms ます。この記事では、XAML ファイルからネイティブビューを使用する方法について説明 Xamarin.Forms します。_
 
@@ -106,8 +106,8 @@ Android ウィジェットのコンストラクターには、通常、 `Context
 
 このページには、各プラットフォームのネイティブスイッチも含まれています。 各ネイティブスイッチは、バインディングを使用して [`TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay) プロパティの値を更新し `NativeSwitchPageViewModel.IsSwitchOn` ます。 このため、スイッチがオフの場合、は無効になり、 `Entry` スイッチがオンの場合は `Entry` が有効になります。 次のスクリーンショットは、各プラットフォームでのこの機能を示しています。
 
-![](xaml-images/native-switch-disabled.png "Native Switch Disabled")
-![](xaml-images/native-switch-enabled.png "Native Switch Enabled")
+![ネイティブスイッチが無効になっ ](xaml-images/native-switch-disabled.png)
+ ![ ているネイティブスイッチの有効化](xaml-images/native-switch-enabled.png)
 
 双方向のバインディングは、ネイティブプロパティがを実装している `INotifyPropertyChanged` 場合、または iOS でのキー値の観察 (KVO) をサポートしている場合、またはが UWP の場合に、自動的にサポートされ `DependencyProperty` ます。 ただし、多くのネイティブビューでは、プロパティの変更通知はサポートされていません。 これらのビューでは、 [`UpdateSourceEventName`](xref:Xamarin.Forms.Binding.UpdateSourceEventName) バインド式の一部としてプロパティ値を指定できます。 このプロパティは、ターゲットプロパティが変更されたときに通知するネイティブビューのイベントの名前に設定する必要があります。 次に、ネイティブスイッチの値が変更されると、ユーザーがスイッチの値を変更した `Binding` ことが通知され、 `NativeSwitchPageViewModel.IsSwitchOn` プロパティの値が更新されます。
 
@@ -178,7 +178,7 @@ Android ウィジェットのコンストラクターには、通常、 `Context
 
 次のスクリーンショットは、ファクトリメソッドとコンストラクターの引数を指定してさまざまなネイティブビューにフォントを設定した結果を示しています。
 
-![](xaml-images/passing-arguments.png "Setting Fonts on Native Views")
+![ネイティブビューでのフォントの設定](xaml-images/passing-arguments.png)
 
 XAML で引数を渡す方法の詳細については、「 [xaml で引数を渡す](~/xamarin-forms/xaml/passing-arguments.md)」を参照してください。
 
@@ -265,7 +265,7 @@ public partial class NativeViewInsideContentViewPage : ContentPage
 
 IOS と Android のネイティブボタンは、 `OnButtonTap` 各ネイティブボタンが `EventHandler` タッチイベントに応答してデリゲートを使用するため、同じイベントハンドラーを共有します。 ただし、ユニバーサル Windows プラットフォーム (UWP) は別のを使用し、 `RoutedEventHandler` `OnButtonTap` この例ではイベントハンドラーを使用します。 したがって、ネイティブボタンをクリックすると、 `OnButtonTap` イベントハンドラーが実行され、名前付きに含まれるネイティブコントロールがスケールおよび回転され [`ContentView`](xref:Xamarin.Forms.ContentView) `contentViewTextParent` ます。 次のスクリーンショットは、各プラットフォームで発生するようすを示しています。
 
-![](xaml-images/contentview.png "ContentView Containing a Native Control")
+![ネイティブコントロールを含む ContentView](xaml-images/contentview.png)
 
 ## <a name="subclass-native-views"></a>サブクラスのネイティブビュー
 
@@ -306,7 +306,7 @@ IOS と Android のネイティブボタンは、 `OnButtonTap` 各ネイティ�
 
 このページには、各プラットフォームのネイティブピッカービューも含まれています。 各ネイティブビューには、そのプロパティをコレクションにバインドすることによって、果物のコレクションが表示され `ItemSource` `SubclassedNativeControlsPageViewModel.Fruits` ます。 これにより、次のスクリーンショットに示すように、ユーザーは果物を選択できます。
 
-![](xaml-images/sub-classed.png "Subclassed Native Views")
+![サブクラス化ネイティブビュー](xaml-images/sub-classed.png)
 
 IOS と Android では、ネイティブピッカーはメソッドを使用してコントロールを設定します。 そのため、これらのピッカーは、XAML をわかりやすくするためにプロパティを公開するためにサブクラス化する必要があります。 ユニバーサル Windows プラットフォーム (UWP) では、は `ComboBox` 既に XAML フレンドリであるため、サブクラス化は必要ありません。
 

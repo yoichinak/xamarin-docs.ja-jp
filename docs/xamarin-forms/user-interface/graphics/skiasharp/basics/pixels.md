@@ -10,22 +10,22 @@ ms.date: 02/09/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6d01018f4393ac5562220fa1f9524bc0d9872c67
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0c1ae9e05b6671d45d8df485a89cfc0dea86632d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137671"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937307"
 ---
 # <a name="pixels-and-device-independent-units"></a>ピクセル、およびデバイスに依存しない単位
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _SkiaSharp の座標と座標の違いを調べる Xamarin.Forms_
 
 この記事では、SkiaSharp とで使用される座標系の違いについて説明し Xamarin.Forms ます。 2つの座標系の間で変換を行うための情報を取得し、特定の領域を埋めるグラフィックを描画できます。
 
-![](pixels-images/screenfillexample.png "An oval that fills the screen")
+![画面を塗りつぶす楕円](pixels-images/screenfillexample.png)
 
 しばらくの間にプログラミングしている場合は Xamarin.Forms 、座標とサイズの感覚がある可能性があり Xamarin.Forms ます。 前の2つの記事で描画した円は、少し小さいように見えます。
 
@@ -104,7 +104,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 実行中のプログラムを次に示します。
 
-[![](pixels-images/surfacesize-small.png "Triple screenshot of the Surface Size  page")](pixels-images/surfacesize-large.png#lightbox "Triple screenshot of the Surface Size  page")
+[![[画面サイズ] ページのトリプルスクリーンショット](pixels-images/surfacesize-small.png)](pixels-images/surfacesize-large.png#lightbox "[画面サイズ] ページのトリプルスクリーンショット")
 
 ご覧のように、の `CanvasSize` プロパティ `SKCanvasView` と `Size` 値のプロパティは、 `SKImageInfo` ピクセルディメンションをレポートするときに一貫しています。 `Height`のプロパティと `Width` プロパティ `SKCanvasView` はプロパティであり、 Xamarin.Forms プラットフォームで定義されているデバイスに依存しない単位でビューのサイズを報告します。
 
@@ -147,7 +147,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 次のように実行されています。
 
-[![](pixels-images/ellipsefill-small.png "Triple screenshot of the Surface Size  page")](pixels-images/ellipsefill-large.png#lightbox "Triple screenshot of the Surface Size  page")
+[![[画面サイズ] ページのトリプルスクリーンショット](pixels-images/ellipsefill-small.png)](pixels-images/ellipsefill-large.png#lightbox "[画面サイズ] ページのトリプルスクリーンショット")
 
 もう1つのメソッドには、 [`DrawOval`](xref:SkiaSharp.SKCanvas.DrawOval(SkiaSharp.SKRect,SkiaSharp.SKPaint)) 引数があります [`SKRect`](xref:SkiaSharp.SKRect) 。これは、左上隅と右下隅の X 座標と Y 座標の観点で定義された四角形です。 楕円はその四角形を塗りつぶします。これは、次のように楕円の**塗りつぶし**ページで使用できることを示しています。
 

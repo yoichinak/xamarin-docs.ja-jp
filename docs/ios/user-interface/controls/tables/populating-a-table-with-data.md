@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 9acdde897a3a700d0138cb67db6735a8cce07120
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 48aeaf8e3036c9b4e1ed548208b7daa822a00913
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84570831"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933420"
 ---
 # <a name="populating-a-table-with-data-in-xamarinios"></a>Xamarin のデータを使用してテーブルにデータを読み込む
 
@@ -89,7 +89,7 @@ public override void ViewDidLoad ()
 
 結果のテーブルは次のようになります。
 
- [![](populating-a-table-with-data-images/image3.png "Sample table running")](populating-a-table-with-data-images/image3.png#lightbox)
+ [![実行中のサンプルテーブル](populating-a-table-with-data-images/image3.png)](populating-a-table-with-data-images/image3.png#lightbox)
 
 ほとんどのテーブルでは、ユーザーは行を操作して選択し、他のアクション (楽曲の再生、連絡先の呼び出し、別の画面の表示など) を実行できます。 これを実現するには、いくつかの作業を行う必要があります。 まず、次をメソッドに追加して、ユーザーが行をクリックしたときにメッセージを表示する AlertController を作成し `RowSelected` ます。
 
@@ -141,7 +141,7 @@ public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 
 これで、ユーザーは行に触れることができ、アラートが表示されます。
 
- [![](populating-a-table-with-data-images/image4.png "The row selected alert")](populating-a-table-with-data-images/image4.png#lightbox)
+ [![選択された行の警告](populating-a-table-with-data-images/image4.png)](populating-a-table-with-data-images/image4.png#lightbox)
 
 ## <a name="cell-reuse"></a>セルの再利用
 
@@ -220,7 +220,7 @@ public class MyCell : UITableViewCell
 
 インデックスは、ユーザーが長いリストをスクロールするのに役立ちます。通常はアルファベット順に並べられていますが、必要な条件によってインデックスを作成することもできます。 **Basictableindex**サンプルは、インデックスを示すために、ファイルからより長い項目のリストを読み込みます。 インデックス内の各項目は、テーブルの ' section ' に対応しています。
 
- [![](populating-a-table-with-data-images/image5.png "The Index display")](populating-a-table-with-data-images/image5.png#lightbox)
+ [![インデックス表示](populating-a-table-with-data-images/image5.png)](populating-a-table-with-data-images/image5.png#lightbox)
 
 ' Sections ' をサポートするには、テーブルの背後にあるデータをグループ化する必要があるため、BasicTableIndex サンプルでは、 `Dictionary<>` 各項目の最初の文字をディクショナリキーとして使用して、文字列の配列からを作成します。
 
@@ -268,7 +268,7 @@ public override string[] SectionIndexTitles (UITableView tableView)
 ヘッダーとフッターを使用して、テーブル内の行を視覚的にグループ化することができます。 必要なデータ構造は、インデックスの追加と非常によく似ています。 a は実際にはうまく `Dictionary<>` 機能します。 この例では、アルファベットを使用してセルをグループ化するのではなく、植物 type を使用して野菜をグループ化します。
 出力は次のようになります。
 
- [![](populating-a-table-with-data-images/image6.png "Sample Headers and Footers")](populating-a-table-with-data-images/image6.png#lightbox)
+ [![サンプルヘッダーとフッター](populating-a-table-with-data-images/image6.png)](populating-a-table-with-data-images/image6.png#lightbox)
 
 ヘッダーとフッターを表示するには、 `UITableViewSource` サブクラスに次の追加のメソッドが必要です。
 

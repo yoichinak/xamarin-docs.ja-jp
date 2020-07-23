@@ -1,38 +1,38 @@
 ---
-title: MonoGame GamePad リファレンス
-description: このドキュメントでは、ゲームパッド、MonoGame の入力デバイスにアクセスするためのクロスプラット フォーム対応クラスについて説明します。 ゲームパッドから入力を読み取る方法について説明し、コード例を示します。
+title: モノゲームのゲームパッドリファレンス
+description: このドキュメントでは、モノゲームの入力デバイスにアクセスするためのクロスプラットフォームクラスであるゲームパッドについて説明します。 ここでは、ゲームパッドから入力を読み取り、コード例を示します。
 ms.prod: xamarin
 ms.assetid: 1F71F3E8-2397-4C6A-8163-6731ECFB7E03
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 235166b78dfbd4998086a2925a54137f1922f5d1
-ms.sourcegitcommit: 4b402d1c508fa84e4fc3171a6e43b811323948fc
+ms.openlocfilehash: 11b1cfda435e97b09f9d1eded22f11f912d1783d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61385703"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934031"
 ---
-# <a name="monogame-gamepad-reference"></a>MonoGame GamePad リファレンス
+# <a name="monogame-gamepad-reference"></a>モノゲームのゲームパッドリファレンス
 
-_GamePad は、MonoGame の入力デバイスにアクセスするための標準的なクロス プラットフォームのクラスです。_
+_ゲームパッドは、モノゲームの入力デバイスにアクセスするための標準的なクロスプラットフォームクラスです。_
 
-`GamePad` MonoGame の複数のプラットフォームでの入力デバイスから入力を読み取るために使用できます。 このガイドでは、ゲームパッド クラスを操作する方法を示します。 レイアウトと、ボタンの数で各入力デバイスが異なる場合は、以降このガイドには、さまざまなデバイスのマッピングを示すダイアグラムが含まれています。
+`GamePad`を使用すると、複数のモノゲームプラットフォームの入力デバイスから入力を読み取ることができます。 このガイドでは、ゲームパッドクラスを使用する方法について説明します。 各入力デバイスはレイアウトと表示されるボタンの数が異なるため、このガイドにはさまざまなデバイスマッピングを示す図が含まれています。
 
-## <a name="gamepad-as-a-replacement-for-xbox360gamepad"></a>Xbox360GamePad の代わりに、ゲーム パッド
+## <a name="gamepad-as-a-replacement-for-xbox360gamepad"></a>Xbox360GamePad の代わりとしてのゲームパッド
 
-提供される元の XNA API、 `Xbox360GamePad` PC、Xbox 360 のゲーム コント ローラーから入力を読み取るのためのクラス。 これを MonoGame は置き換えられて、`GamePad`クラスのほとんどの MonoGame プラットフォーム (iOS、Xbox One) などで Xbox 360 コント ローラーを使用できないためです。 名前の変更の使用量に関係なく、`GamePad`クラスと似ています、`Xbox360GamePad`クラス。
+元の XNA API は、 `Xbox360GamePad` Xbox 360 または PC のゲームコントローラーから入力を読み取るためのクラスを提供していました。 モノゲームはこれをクラスに置き換えました。これは、 `GamePad` ほとんどのモノゲームプラットフォーム (iOS や Xbox One など) では xbox 360 コントローラーを使用できないためです。 名前の変更にかかわらず、クラスの使用方法 `GamePad` はクラスに似てい `Xbox360GamePad` ます。
 
-## <a name="reading-input-from-gamepad"></a>GamePad から入力を読み取る
+## <a name="reading-input-from-gamepad"></a>ゲームパッドからの入力の読み取り
 
-`GamePad`クラスは、任意の MonoGame プラットフォームでの入力を読み取る、標準化された方法を提供します。 2 つの方法の情報を提供します。
+クラスは、 `GamePad` 任意のモノゲームプラットフォームで入力を読み取るための標準化された方法を提供します。 次の2つの方法で情報を提供します。
 
-- `GetState` – コント ローラーのボタン、アナログ スティックおよびパッドの現在の状態を返します。
-- `GetCapabilities` – ボタンまたは振動をサポートしているコント ローラーに特定できるかどうかなど、ハードウェアの機能に関する情報を返します。
+- `GetState`–コントローラーのボタン、アナログスティック、および d パッドの現在の状態を返します。
+- `GetCapabilities`–コントローラーに特定のボタンがあるかどうか、振動をサポートするかどうかなど、ハードウェアの機能に関する情報を返します。
 
-### <a name="example-moving-a-character"></a>例:文字の移動
+### <a name="example-moving-a-character"></a>例: 文字の移動
 
-次のコードは、左スティックを使用して設定して、文字を移動する方法を示しています。 その`XVelocity`と`YVelocity`プロパティ。 このコードで`characterInstance`を持つオブジェクトのインスタンスである`XVelocity`と`YVelocity`プロパティ。
+次のコードは、とのプロパティを設定して、左のサムスティックを使用して文字を移動する方法を示して `XVelocity` `YVelocity` います。 このコード `characterInstance` は、がプロパティとプロパティを持つオブジェクトのインスタンスであることを前提としてい `XVelocity` `YVelocity` ます。
 
 ```csharp
 // In Update, or some code called every frame:
@@ -42,11 +42,11 @@ characterInstance.XVelocity = gamePadState.ThumbSticks.Left.X * characterInstanc
 characterInstance.YVelocity = gamePadState.ThumbSticks.Left.Y * characterInstance.MaxSpeed;
 ```
 
-### <a name="example-detecting-pushes"></a>例:プッシュの検出
+### <a name="example-detecting-pushes"></a>例: プッシュの検出
 
-`GamePadState` 特定のボタンが押されたかどうかなど、コント ローラーの現在の状態に関する情報を提供します。 ジャンプ、文字などの特定のアクションでは、チェック ボタンがプッシュされた場合の要求 (最後のフレームをでしたがこのフレーム ダウン)、またはリリース (最後のフレームのダウンがこのフレーム ダウンできませんでした)。
+`GamePadState`特定のボタンが押されているかどうかなど、コントローラーの現在の状態に関する情報を提供します。 文字のジャンプなどの特定のアクションでは、ボタンが押されたかどうかを確認する必要があります (つまり、最後のフレームではなく、このフレームの下にある) か、または解放されています (このフレームの下ではなく、最後のフレームを除く)。
 
-この種のロジックでは、前のフレームを格納するローカル変数を実行する`GamePadState`と現在のフレームの`GamePadState`作成する必要があります。 次の例は、保存し、前のフレームを使用する方法を示しています。`GamePadState`ジャンプを実装します。
+この種類のロジックを実行するには、前のフレームと現在のフレームのを格納するローカル変数を `GamePadState` `GamePadState` 作成する必要があります。 次の例は、前のフレームのを格納して使用し、ジャンプを実装する方法を示してい `GamePadState` ます。
 
 ```csharp
 // At class scope:
@@ -70,9 +70,9 @@ currentGamePadState.Buttons.A == ButtonState.Pressed
 }
 ```
 
-### <a name="example-checking-for-buttons"></a>例:ボタンのチェック
+### <a name="example-checking-for-buttons"></a>例: ボタンのチェック
 
-`GetCapabilities` かどうか、コント ローラーには、特定のボタンやアナログ スティックなどの特定のハードウェアを確認するために使用します。 次のコードでは、両方のボタンの存在を必要とするゲーム内のコント ローラー B と Y のボタンを確認する方法を示します。
+`GetCapabilities`特定のボタンやアナログスティックなど、コントローラーに特定のハードウェアがあるかどうかを確認するために使用できます。 次のコードは、両方のボタンが存在する必要があるゲームで、コントローラー上の B ボタンと Y ボタンを確認する方法を示しています。
 
 ```csharp
 var capabilities = GamePad.GetCapabilities(PlayerIndex.One);
@@ -86,49 +86,49 @@ if(!hasBButton || !hasXButton)
 
 ## <a name="ios"></a>iOS
 
-iOS アプリでは、ワイヤレスのゲーム コント ローラーの入力をサポートします。
+iOS アプリは、ワイヤレスゲームコントローラーの入力をサポートしています。
 
 > [!IMPORTANT]
-> MonoGame 3.5 用の NuGet パッケージでは、ワイヤレスのゲーム コント ローラーのサポートは含まれません。 IOS でゲームパッド クラスを使用するには、MonoGame 3.5 ソースからを構築または MonoGame 3.6 NuGet バイナリを使用する必要があります。
+> モノゲーム3.5 の NuGet パッケージには、ワイヤレスゲームコントローラーのサポートは含まれていません。 IOS でゲームパッドクラスを使用するには、ソースからのモノのゲーム3.5 をビルドするか、またはモノ Game 3.6 NuGet バイナリを使用する必要があります。
 
-### <a name="ios-game-controller"></a>iOS ゲーム コント ローラー
+### <a name="ios-game-controller"></a>iOS ゲームコントローラー
 
-`GamePad`クラスは、ワイヤレス コント ローラーから読み取られたプロパティを返します。 内のプロパティ、`GamePad`に十分対応の標準的な iOS コント ローラー ハードウェアを提供、次の図に示すようにします。
+クラスは、 `GamePad` ワイヤレスコントローラーから読み取られたプロパティを返します。 のプロパティは、 `GamePad` 次の図に示すように、標準の iOS コントローラーハードウェアに適しています。
 
-![](input-images/image1.png "プロパティ、ゲームパッドを提供に十分対応、標準的な ios コント ローラーのハードウェア、この図に示すように")
+![ゲームパッドのプロパティは、次の図に示すように、標準の iOS コントローラーハードウェアに適しています。](input-images/image1.png)
 
 ## <a name="apple-tv"></a>Apple TV
 
-Apple TV のゲームでは、入力の Siri のリモートまたはワイヤレスのゲーム コント ローラーを使用できます。
+Apple TV ゲームでは、Siri リモコンまたはワイヤレスゲームコントローラーを入力に使用できます。
 
-### <a name="siri-remote"></a>Siri のリモート
+### <a name="siri-remote"></a>Siri リモート
 
-*Siri のリモート*ネイティブの入力デバイスを Apple TV にです。 Siri のリモートからの値はイベントを介して読み取ることができます (ように、 [Siri のリモートと Bluetooth コント ローラーのガイド](~/ios/tvos/platform/remote-bluetooth.md))、`GamePad`クラスは、Siri のリモートから値を返すことができます。
+*Siri リモート*は Apple TV のネイティブ入力デバイスです。 Siri リモートからの値は、( [Siri リモコンおよび Bluetooth コントローラーガイド](~/ios/tvos/platform/remote-bluetooth.md)に示されているように) イベントを使用して読み取ることができますが、 `GamePad` クラスは siri リモートから値を返すことができます。
 
-注意`GamePad`のみ再生 ボタンから入力を読み取りし、画面をタッチすることができます。
+は `GamePad` 、再生ボタンとタッチサーフェスからの入力のみを読み取ることができることに注意してください。
 
-![](input-images/image2.png "ゲームパッドの再生 ボタンから入力を読み取り、画面をタッチすることができますのみに注目してください。")
+![ゲームパッドは、再生ボタンとタッチ画面からの入力のみを読み取ることができることに注意してください。](input-images/image2.png)
 
-Surface の移動を読んで、タッチから、`DPad`プロパティの値が報告を使用して移動、`ButtonState`クラス。 つまり、値として使用可能なだけは`ButtonState.Pressed`または`ButtonState.Released`数値やジェスチャではなく、します。
+タッチサーフェスの移動はプロパティによって読み取られるため `DPad` 、移動値はクラスを使用して報告され `ButtonState` ます。 つまり、数値は、 `ButtonState.Pressed` 数値やジェスチャではなく、またはとしてのみ使用でき `ButtonState.Released` ます。
 
-### <a name="apple-tv-game-controller"></a>Apple TV のゲーム コント ローラー
+### <a name="apple-tv-game-controller"></a>Apple TV ゲームコントローラー
 
-Apple TV のゲーム コント ローラーの動作は iOS アプリのゲーム コント ローラーに同じです。 詳細については、次を参照してください。、 [iOS ゲーム コント ローラー](#ios-game-controller)セクション。 
+Apple TV のゲームコントローラーは、iOS アプリのゲームコントローラーと同じように動作します。 詳細については、「 [IOS Game Controller](#ios-game-controller) 」セクションを参照してください。 
 
 ## <a name="xbox-one"></a>Xbox One
 
-Xbox One のコンソールには、Xbox One のゲーム コント ローラーからの入力がサポートしています。
+Xbox One コンソールは、Xbox One ゲームコントローラーからの入力の読み取りをサポートしています。
 
-### <a name="xbox-one-game-controller"></a>Xbox One のゲーム コント ローラー
+### <a name="xbox-one-game-controller"></a>Xbox One ゲームコントローラー
 
-Xbox One のゲーム コント ローラーは、Xbox One の最も一般的な入力デバイスです。 `GamePad`クラスは、ゲーム コント ローラー ハードウェアからの入力値を提供します。
+Xbox One ゲームコントローラーは、Xbox One の最も一般的な入力デバイスです。 クラスは、 `GamePad` ゲームコントローラーハードウェアからの入力値を提供します。
 
-![](input-images/image3.png "GamePad クラスは、ゲーム コント ローラー ハードウェアから入力値を提供します。")
+![ゲームパッドクラスは、ゲームコントローラーハードウェアからの入力値を提供します。](input-images/image3.png)
 
 ## <a name="summary"></a>まとめ
 
-このガイドの MonoGame の概要を提供する`GamePad`クラス、入力を読み取るロジック、および一般的な図を実装する方法`GamePad`実装します。
+このガイドでは、モノゲームのクラスの概要 `GamePad` 、入力読み取りロジックの実装方法、および一般的な実装の図について説明しました `GamePad` 。
 
 ## <a name="related-links"></a>関連リンク
 
-- [MonoGame GamePad](http://www.monogame.net/documentation/?page=T_Microsoft_Xna_Framework_Input_GamePad)
+- [モノゲームのゲームパッド](http://www.monogame.net/documentation/?page=T_Microsoft_Xna_Framework_Input_GamePad)

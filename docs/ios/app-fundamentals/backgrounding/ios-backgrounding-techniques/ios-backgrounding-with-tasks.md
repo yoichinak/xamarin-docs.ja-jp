@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 63d59d9f11932343c6ca57e0b3735077eabb6a9a
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: a8259cf47f8af6e356c9a860c61ad0eea0c8927a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571819"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932978"
 ---
 # <a name="ios-backgrounding-with-tasks"></a>タスクを使用した iOS バックグラウンド処理
 
@@ -113,11 +113,11 @@ Task.Factory.StartNew( () => {
 
 IOS より前の7では、バックグラウンドで実行されているタスクが完了するまでに600秒かかりました。 この制限の理由の1つは、バックグラウンドで実行されているタスクが、タスクの実行中にデバイスのスリープ状態を維持することです。
 
- [![](ios-backgrounding-with-tasks-images/ios6.png "Graph of the task keeping the app awake pre-iOS 7")](ios-backgrounding-with-tasks-images/ios6.png#lightbox)
+ [![アプリを起動するタスクのグラフ (iOS 7 より前)](ios-backgrounding-with-tasks-images/ios6.png)](ios-backgrounding-with-tasks-images/ios6.png#lightbox)
 
 iOS 7 のバックグラウンド処理は、より長いバッテリ寿命に合わせて最適化されています。 IOS 7 では、バックグラウンド処理が便宜になります。デバイスを起動したままにするのではなく、デバイスがスリープ状態になったときにタスクが実行され、デバイスがスリープ状態になったときに、電話、通知、着信電子メール、およびその他の一般的な中断を処理します。 次の図は、タスクがどのように分割されるかについての洞察を示しています。
 
- [![](ios-backgrounding-with-tasks-images/ios7.png "Graph of the task being broken into chunks post-iOS 7")](ios-backgrounding-with-tasks-images/ios7.png#lightbox)
+ [![チャンク後に分割されているタスクのグラフ-iOS 7](ios-backgrounding-with-tasks-images/ios7.png)](ios-backgrounding-with-tasks-images/ios7.png#lightbox)
 
 タスクの実行時間が長くなることはないため、ネットワーク転送を実行するタスクは、iOS 7 では異なる方法で処理される必要があります。 開発者は、API を使用してネットワーク転送を処理することをお勧めし `NSURlSession` ます。 次のセクションでは、バックグラウンド転送の概要について説明します。
 

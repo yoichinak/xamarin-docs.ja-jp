@@ -6,12 +6,12 @@ ms.assetid: E442EEFB-FA9C-40E9-9668-5A3F915C8400
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: de8c66e6a89f035b8370a2139361d3e942aa9c09
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 6924379f49a80733714a488851533f506e83b245
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571208"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930833"
 ---
 # <a name="building-cross-platform-applications-overview"></a>クロスプラットフォームアプリケーションの構築の概要
 
@@ -53,7 +53,7 @@ Xamarin. Forms プロジェクトはすべてのプラットフォームでサ�
 
 アプリケーションアーキテクチャを階層化し、プラットフォームに依存しないコア機能を再利用可能なコアライブラリに移動することによって、役割を分離するという原則に従うことで、次の図に示すように、プラットフォーム間でコードを共有できます。
 
- ![](overview-images/layers2.png "By following the principle of separation of responsibility by layering your application architecture and then moving core functionality that is platform agnostic into a reusable core library, you can maximize code sharing across platforms")
+ ![アプリケーションアーキテクチャを階層化し、プラットフォームに依存しないコア機能を再利用可能なコアライブラリに移動することで、責任の分離の原則に従うことで、プラットフォーム間でのコード共有を最大化できます。](overview-images/layers2.png)
 
  <a name="Case_Studies"></a>
 

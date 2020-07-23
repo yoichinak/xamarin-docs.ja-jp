@@ -6,28 +6,28 @@ ms.assetid: 8A14A457-F72E-4B08-B4B6-801F7619F893
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: eeac7b0b70b2f11304a374de7522f28d4bcad6c6
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2e1a96b96ea8738e162a9c49a5f7c6927bd2b0d3
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016664"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931756"
 ---
 # <a name="step-2-configure-service-access-for-mobile-application"></a>手順 2. モバイルアプリケーションのサービスアクセスを構成する
 
-Web アプリケーション、web サービスなどのリソースを Azure Active Directory によって保護する必要がある場合は、必ず登録する必要があります。 すべてのセキュリティで保護されたアプリケーションまたはサービスが **[アプリケーション]** タブに表示されます。ここでは、モバイルアプリケーションからアクセスする必要があるアプリケーションを選択し、アクセス権を付与することができます。
+Web アプリケーション、web サービスなどのリソースを Azure Active Directory によって保護する必要がある場合は、必ず登録する必要があります。 すべてのセキュリティで保護されたアプリケーションまたはサービスが [**アプリケーション**] タブに表示されます。ここでは、モバイルアプリケーションからアクセスする必要があるアプリケーションを選択し、アクセス権を付与することができます。
 
-1. **[構成]** タブで、 **[他のアプリケーションに対するアクセス許可]** セクションを探します。
+1. [**構成**] タブで、[**他のアプリケーションに対するアクセス許可**] セクションを探します。
 
-   ![](configure-images/2.1-configure.png "On the Configure tab, locate permissions to other applications section")
+   ![[構成] タブで、[他のアプリケーションに対するアクセス許可] セクションを探します。](configure-images/2.1-configure.png)
 
-2. **[アプリケーションの追加]** ボタンをクリックします。 次の画面のポップアップに、Azure Active Directory によって保護されているすべてのアプリケーションの一覧が表示されます。 モバイルアプリケーションからアクセスする必要があるアプリケーションを選択します。
+2. [**アプリケーションの追加**] ボタンをクリックします。 次の画面のポップアップに、Azure Active Directory によって保護されているすべてのアプリケーションの一覧が表示されます。 モバイルアプリケーションからアクセスする必要があるアプリケーションを選択します。
 
-   ![](configure-images/2.2-add-application.png "Select the applications that needs to be accessed from the mobile application")
+   ![モバイルアプリケーションからアクセスする必要があるアプリケーションを選択します](configure-images/2.2-add-application.png)
 
-3. アプリケーションを選択した後、もう一度、 **[他のアプリケーションに対するアクセス許可]** セクションで新しく追加したアプリケーションを選択し、適切な権限を付与します。
+3. アプリケーションを選択した後、もう一度、[**他のアプリケーションに対するアクセス許可**] セクションで新しく追加したアプリケーションを選択し、適切な権限を付与します。
 
-   ![](configure-images/2.3-permissions.png "After selecting the application, once again select the newly-added application in permissions to other   applications section and give appropriate rights")
+   ![アプリケーションを選択した後、もう一度、[他のアプリケーションに対するアクセス許可] セクションで新しく追加したアプリケーションを選択し、適切な権限を付与します。](configure-images/2.3-permissions.png)
 
 4. 最後に、構成を**保存**します。 これらのサービスは、モバイルアプリケーションで使用できるようになりました。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/14/2017
-ms.openlocfilehash: 1fae83f60f819da9767e14612a7f778dc49ddf52
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 6f2a188617b00a008dafa20012c0997bc399045d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84564631"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930963"
 ---
 # <a name="introduction-to-ios-8"></a>iOS 8 の概要
 
@@ -48,7 +48,7 @@ IPhone からアプライアンスを制御することは、新しいテクノ�
 
 次の図は、ホームキットのアクセサリの構成の基本階層を示しています。
 
-![](introduction-to-ios8-images/image1.png "This diagram shows the basic hierarchy of the configuration of HomeKit accessories")
+![この図は、ホームキットのアクセサリの構成の基本階層を示しています。](introduction-to-ios8-images/image1.png)
 
 ホームキットの使用を開始するには、開発者は、プロビジョニングプロファイルに [ホームキット] サービスが選択されていることを確認する必要があります。 Apple では、Xcode 用のホームキットシミュレーターアドインも開発者に提供しています。 これは、 [Apple Developer Center](https://developer.apple.com/downloads/index.action)のの下にあり `Hardware IO Tools for Xcode` ます。 
 
@@ -70,7 +70,7 @@ IOS8 を使用すると、開発者は、アプリを使用できるユーザー
 
 [**新しいプロジェクト**] ダイアログで、 **C#**  >  **iOS**  >  **Unified API**  >  次のスクリーンショットに示すように、C# iOS Unified API**拡張機能**に移動します。
 
-![](introduction-to-ios8-images/image2.png "Creating a new extension")
+![新しい拡張機能の作成](introduction-to-ios8-images/image2.png)
 
 [新しいプロジェクト] ダイアログには、アプリ拡張機能を作成するための7つの新しいプロジェクトテンプレートが用意されています。次に説明します。 拡張機能の多くは、iOS の他の新しい Api (ドキュメントピッカーなど) に関連しています。
 
@@ -101,7 +101,7 @@ Xamarin でのアプリ拡張機能の使用の詳細については、[アプ�
 
 ドキュメントピッカーの詳細を確認し、それを Xamarin iOS アプリケーションに統合する方法については、[ドキュメントピッカーガイドの概要](~/ios/platform/document-picker.md)に関するページを参照してください。
 
-### <a name="handoff"></a>Handoff
+### <a name="handoff"></a>ハンドオフ
 
 より大規模な継続性機能の一部であるハンドオフは、OS X と iOS の統合についてさらに一歩進んでいます。 これには、クロスプラットフォームのエアドロップ、iPhone 呼び出しを行う機能、iPad と Mac での SMS、iPhone からのテザリングの機能強化が含まれます。
 
@@ -121,7 +121,7 @@ IOS8 より前の開発者は、 `UIInterfaceOrientation` 縦モードと横モ�
 
 2つの概念が一緒に使用されている場合は、次の図に示すように、異なる向きの両方で使用できるさまざまなサイズを定義する2つの x 2 グリッドが生成されます。
 
-![](introduction-to-ios8-images/image3.png "A diagram representing the 2 x 2 grid that defines the different possible sizes that can be used in both the differing orientations")
+![異なる向きの両方で使用できるさまざまなサイズを定義する 2 x 2 グリッドを表す図](introduction-to-ios8-images/image3.png)
 
 サイズクラスの詳細については、「[統合ストーリーボードの概要](~/ios/user-interface/storyboards/unified-storyboards.md)」を参照してください。
 
@@ -161,7 +161,7 @@ IOS 8 で加えられたすべての機能強化により、いくつかの Api 
 
 - **[Uisearchdisplaycontroller](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UISearchDisplayController_Class/index.html#//apple_ref/occ/cl/UISearchDisplayController)** – IOS8 の uisearchcontroller に置き換えられました。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 この記事では、iOS 8 で Apple によって導入された新機能について説明しました。
 
 ## <a name="related-links"></a>関連リンク

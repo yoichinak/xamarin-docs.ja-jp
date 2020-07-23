@@ -7,70 +7,70 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2017
-ms.openlocfilehash: 007d835b71c16a51cf5f6aca3c9fe1edd5be0034
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: f6dbbd85a11c492227f0e19ca1a561595660bf20
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572391"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937580"
 ---
 # <a name="storyboards-in-xamarinmac-quick-start"></a>Xamarin. Mac のストーリーボード–クイックスタート
 
 ストーリーボードを使用して Xamarin. Mac アプリのユーザーインターフェイスを定義する方法の概要については、新しい Xamarin. Mac プロジェクトを開始してみましょう。 [ **Mac**  >  **アプリ**  >  **cocoa アプリ**] を選択し、[**次へ**] ボタンをクリックします。
 
-[![](quickstart-images/qs01.png "Adding a new Cocoa App")](quickstart-images/qs01.png#lightbox)
+[![新しい Cocoa アプリを追加する](quickstart-images/qs01.png)](quickstart-images/qs01.png#lightbox)
 
 の**アプリ名**を使用 `MacStoryboard` し、[**次へ**] ボタンをクリックします。
 
-[![](quickstart-images/qs02.png "Setting the App Name")](quickstart-images/qs02.png#lightbox)
+[![アプリ名の設定](quickstart-images/qs02.png)](quickstart-images/qs02.png#lightbox)
 
 既定の**プロジェクト名**と**ソリューション名**を使用し、[**作成**] ボタンをクリックします。
 
-[![](quickstart-images/qs03.png "The project and solution names")](quickstart-images/qs03.png#lightbox)
+[![プロジェクトとソリューションの名前](quickstart-images/qs03.png)](quickstart-images/qs03.png#lightbox)
 
 **ソリューションエクスプローラー**で、ファイルをダブルクリックし `Main.storyboard` て、Xcode の Interface Builder で編集するために開きます。
 
-[![](quickstart-images/qs04.png "Editing the storyboard in Xcode")](quickstart-images/qs04.png#lightbox)
+[![Xcode でストーリーボードを編集する](quickstart-images/qs04.png)](quickstart-images/qs04.png#lightbox)
 
 上の図に示すように、既定のストーリーボードでは、アプリのメニューバーとそのメインウィンドウの両方に、ビューコントローラーとビューが定義されています。 このサンプルアプリでは、ワンサイドにメイン_コンテンツビュー_を持つ UI と、2番目の_インスペクタービュー_を作成します。
 
 これを行うには、ストーリーボードに付属している既定のビューコントローラーとビューを削除する必要があります。そのためには Interface Builder で選択し、 **del**キーを押します。
 
-[![](quickstart-images/qs05.png "Removing the default view controller")](quickstart-images/qs05.png#lightbox)
+[![既定のビューコントローラーの削除](quickstart-images/qs05.png)](quickstart-images/qs05.png#lightbox)
 
 次に、 `split` **フィルター**領域に「」と入力し、垂直分割ビューコントローラーを選択して、_デザインサーフェイス_にドラッグします。
 
-[![](quickstart-images/qs06.png "Searching for the split view controller")](quickstart-images/qs06.png#lightbox)
+[![分割ビューコントローラーを検索しています](quickstart-images/qs06.png)](quickstart-images/qs06.png#lightbox)
 
 コントローラーには、自動的に2つの子ビューコントローラー (および関連するビュー) が含まれており、分割ビューの左右左右に接続されています。 分割ビューを親ウィンドウと関連付けるには、 **Control**キーを押し、ウィンドウコントローラー (ウィンドウコントローラーのフレームの青い円) をクリックして、分割ビューコントローラーに線をドラッグします。 ポップアップから [**ウィンドウコンテンツ**] を選択します。
 
-[![](quickstart-images/qs07.png "Setting the windows content view")](quickstart-images/qs07.png#lightbox)
+[![Windows コンテンツビューの設定](quickstart-images/qs07.png)](quickstart-images/qs07.png#lightbox)
 
 これにより、セグエを使用して2つのインターフェイス要素が関連付けられます。
 
-[![](quickstart-images/qs08.png "The Segue between the window and the content")](quickstart-images/qs08.png#lightbox)
+[![ウィンドウとコンテンツの間のセグエ](quickstart-images/qs08.png)](quickstart-images/qs08.png#lightbox)
 
 分割ビューの左側にテキストビューを配置し、ウィンドウまたは分割ビューのサイズが変更されたときに、使用可能な領域を自動的に埋めるようにします。 分割ビューにアタッチされている一番上のビューコントローラーにテキストビューをドラッグし、**ピン**自動レイアウトの制約 (デザインサーフェイスの下部にある右側の2番目のアイコン) をクリックします。
 
-[![](quickstart-images/qs09.png "Configuring the constraints")](quickstart-images/qs09.png#lightbox)
+[![制約の構成](quickstart-images/qs09.png)](quickstart-images/qs09.png#lightbox)
 
 ここでは、制約 Segue の上部にある境界ボックスの周りにある4つすべての**I ビーム**アイコンをクリックし、下部にある [ **4 個の制約の追加**] ボタンをクリックして、必要な制約を追加します。
 
 Visual Studio for Mac に戻り、プロジェクトを実行した場合は、分割ビューの左側にウィンドウまたは分割のサイズが収まるようにテキストビューのサイズが自動的に変更されることに注意してください。
 
-[![](quickstart-images/qs10.png "An example of the app running")](quickstart-images/qs10.png#lightbox)
+[![実行中のアプリの例](quickstart-images/qs10.png)](quickstart-images/qs10.png#lightbox)
 
 ここでは、分割ビューの右側をインスペクター領域として使用するため、サイズを小さくして、折りたたむことを許可します。 Xcode に戻り、右側のビューを編集します。これを行うには、デザインサーフェイスでそのビューを選択し、[**サイズインスペクター**] をクリックします。 ここから、**幅**を入力し `250` ます。
 
-[![](quickstart-images/qs11.png "Setting the width")](quickstart-images/qs11.png#lightbox)
+[![幅の設定](quickstart-images/qs11.png)](quickstart-images/qs11.png#lightbox)
 
 次に、右側を表す分割項目を選択し、より高い**優先度**を設定し、[**ユーザーが折りたたむ**] チェックボックスをクリックします。
 
-[![](quickstart-images/qs12.png "Editing the holding priority")](quickstart-images/qs12.png#lightbox)
+[![保持する優先度の編集](quickstart-images/qs12.png)](quickstart-images/qs12.png#lightbox)
 
 Visual Studio for Mac に戻ってプロジェクトを実行した場合は、右側のサイズが小さくなり、ウィンドウのサイズが変更されていることに注意してください。
 
-[![](quickstart-images/qs13.png "An example of the app running")](quickstart-images/qs13.png#lightbox)
+[![実行中のアプリの例](quickstart-images/qs13.png)](quickstart-images/qs13.png#lightbox)
 
 <a name="Defining-a-Presentation-Segue"></a>
 
@@ -80,19 +80,19 @@ Visual Studio for Mac に戻ってプロジェクトを実行した場合は、�
 
 ここでは、ボタンをインスペクターに追加し、ビューコントローラーをデザインサーフェイスに追加します。 ビューコントローラーのサイズを Segue するサイズに変更し、4つのボタンを追加します。 次に、インスペクタービューのボタンでキークリックを**制御**し、segue を表すビューコントローラーにドラッグします。
 
-[![](quickstart-images/qs14.png "Dragging to create a new segue")](quickstart-images/qs14.png#lightbox)
+[![ドラッグして新しいセグエを作成する](quickstart-images/qs14.png)](quickstart-images/qs14.png#lightbox)
 
 ポップアップメニューから、[ **segue**] を選択します。 
 
-[![](quickstart-images/qs15.png "Selecting the segue type")](quickstart-images/qs15.png#lightbox)
+[![セグエの種類の選択](quickstart-images/qs15.png)](quickstart-images/qs15.png#lightbox)
 
 最後に、デザインサーフェイスでセグエを選択し、**優先するエッジ**を**Left**に設定します。 次に、**アンカービュー**から、segue をアタッチするボタンに線をドラッグします。
 
-[![](quickstart-images/qs16.png "Dragging to create a new segue")](quickstart-images/qs16.png#lightbox)
+[![ドラッグして新しいセグエを作成する](quickstart-images/qs16.png)](quickstart-images/qs16.png#lightbox)
 
 Visual Studio for Mac に戻ると、アプリを実行し、インスペクターの [**なし**] ボタンをクリックすると、segue が表示されます。
 
-[![](quickstart-images/qs17.png "An example of the segue running")](quickstart-images/qs17.png#lightbox)
+[![実行中のセグエの例](quickstart-images/qs17.png)](quickstart-images/qs17.png#lightbox)
 
 <a name="Creating-App-Preferences"></a>
 
@@ -102,37 +102,37 @@ Visual Studio for Mac に戻ると、アプリを実行し、インスペクタ�
 
 標準の基本設定ダイアログウィンドウを定義するには、まず、タブビューコントローラーをデザインサーフェイスにドラッグします。
 
-[![](quickstart-images/qs18.png "Editing the storyboard in Xcode")](quickstart-images/qs18.png#lightbox)
+[![Xcode でストーリーボードを編集する](quickstart-images/qs18.png)](quickstart-images/qs18.png#lightbox)
 
 この場合も、2つの子ビューコントローラーが接続された状態になります。 たとえば、ラベルを中央に配置する各ビューに追加します。
 
-[![](quickstart-images/qs19.png "Setting the constraints")](quickstart-images/qs19.png#lightbox)
+[![制約の設定](quickstart-images/qs19.png)](quickstart-images/qs19.png#lightbox)
 
 次に、ユーザーが [ユーザー**設定**] メニュー項目を選択したときに [基本設定] ウィンドウを表示します。 メニューバーから [基本設定] メニュー項目を選択し、 **ctrl**キーをクリックして、タブビューコントローラーに線をドラッグします。
 
-[![](quickstart-images/qs20.png "Dragging to create a segue")](quickstart-images/qs20.png#lightbox)
+[![ドラッグしてセグエを作成する](quickstart-images/qs20.png)](quickstart-images/qs20.png#lightbox)
 
 ポップアップ**からモーダルを選択し**て、このウィンドウをモーダルダイアログとして表示します。
 
-[![](quickstart-images/qs21.png "Selecting the segue type")](quickstart-images/qs21.png#lightbox)
+[![セグエの種類の選択](quickstart-images/qs21.png)](quickstart-images/qs21.png#lightbox)
 
 変更を保存して Visual Studio for Mac に戻り、アプリを実行して [**基本設定.** ..] メニュー項目を選択すると、[新しいユーザー設定] ダイアログボックスが表示されます。
 
-[![](quickstart-images/qs22.png "An example of the segue running")](quickstart-images/qs22.png#lightbox)
+[![実行中のセグエの例](quickstart-images/qs22.png)](quickstart-images/qs22.png#lightbox)
 
 これは、標準の macOS アプリの基本設定ダイアログウィンドウのようには見えません。 この問題を解決するには、ソリューションエクスプローラーの Xamarin アプリのフォルダーに2つのイメージファイルを追加 `Resources` し、Xcode の Interface Builder に戻します。 **Solution Explorer**
 
 タブビューコントローラーを選択し、その**スタイル**を**ツールバー**に切り替えます。 
 
-[![](quickstart-images/qs23.png "Setting the tab bar style")](quickstart-images/qs23.png#lightbox)
+[![タブバーのスタイルの設定](quickstart-images/qs23.png)](quickstart-images/qs23.png#lightbox)
 
 各タブを選択し、**ラベル**を付けて、画像のいずれかを選択して表示します。
 
-[![](quickstart-images/qs24.png "Configuring each tab in Xcode")](quickstart-images/qs24.png#lightbox)
+[![Xcode の各タブの構成](quickstart-images/qs24.png)](quickstart-images/qs24.png#lightbox)
 
 変更を保存し、Visual Studio for Mac に戻り、アプリを実行して [**基本設定.** ..] メニュー項目を選択すると、標準の macOS アプリのようにダイアログが表示されるようになります。
 
-[![](quickstart-images/qs25.png "An example of the running preferences window")](quickstart-images/qs25.png#lightbox)
+[![[実行中の設定] ウィンドウの例](quickstart-images/qs25.png)](quickstart-images/qs25.png#lightbox)
 
 詳細については、「イメージ、[メニュー](~/mac/user-interface/menu.md)、[ウィンドウ](~/mac/user-interface/window.md)、および[ダイアログ](~/mac/user-interface/dialog.md)[の操作](~/mac/app-fundamentals/image.md)」のドキュメントを参照してください。
 

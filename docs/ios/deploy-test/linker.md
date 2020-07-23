@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: 263c48c5006ba0060756e1050497c38dfb7c8eae
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 7769e3d02acc9f1522c6028f88f37c1f522866af
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84567776"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936761"
 ---
 # <a name="linking-xamarinios-apps"></a>Xamarin.iOS アプリをリンクする
 
@@ -30,7 +30,7 @@ ms.locfileid: "84567776"
 
 リンク プロセスは、 **[プロジェクト オプション]** のリンカーの動作ドロップダウンからカスタマイズできます。 これにアクセスするには、iOS プロジェクトをダブルクリックし、 **[iOS ビルド]、[リンカーのオプション]** の順に選択します。下の画像をご覧ください。
 
-[![](linker-images/image1.png "Linker Options")](linker-images/image1.png#lightbox)
+[![リンカー オプション](linker-images/image1.png)](linker-images/image1.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -40,10 +40,10 @@ ms.locfileid: "84567776"
 
 1. **ソリューション エクスプローラー**で**プロジェクト名**を右クリックし、 **[プロパティ]** を選択します。
 
-    ![](linker-images/linking01w.png "Right-click on the Project Name in the Solution Explorer and select Properties")
+    ![ソリューション エクスプローラーでプロジェクト名を右クリックし、[プロパティ] を選択します](linker-images/linking01w.png)
 2. **[プロジェクトのプロパティ]** で **[iOS ビルド]** を選択します。
 
-    ![](linker-images/linking02w.png "Select IOS Build")
+    ![[iOS ビルド] を選択します](linker-images/linking02w.png)
 3. 下の指示に従って操作し、リンク オプションを変更します。
 
 -----

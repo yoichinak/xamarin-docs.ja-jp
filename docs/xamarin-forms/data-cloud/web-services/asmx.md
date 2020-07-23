@@ -10,16 +10,16 @@ ms.date: 04/02/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1f7a0d04d1e7b6abc9931c05c0e46ef49f8ba09c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: aa600974cdf25f8f85d9152edc4a377334cc8c78
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138464"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936553"
 ---
 # <a name="consume-an-aspnet-web-service-asmx"></a>ASP.NET Web サービス (ASMX) を使用する
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
 
 _ASMX は、Simple Object Access Protocol (SOAP) を使用してメッセージを送信する web サービスを構築する機能を提供します。SOAP は、web サービスを構築してアクセスするための、プラットフォームに依存しない、言語に依存しないプロトコルです。ASMX サービスのコンシューマーは、サービスの実装に使用されるプラットフォーム、オブジェクトモデル、プログラミング言語について何も知る必要はありません。SOAP メッセージを送受信する方法を理解する必要があるだけです。この記事では、アプリケーションから ASMX SOAP サービスを使用する方法について説明し Xamarin.Forms ます。_
 
@@ -34,7 +34,7 @@ SOAP は、HTTP、SMTP、TCP、UDP など、多くのトランスポートプロ
 
 このサンプルには、物理デバイスまたはエミュレートされたデバイスで実行されるモバイルアプリケーションと、データを取得、追加、編集、および削除するためのメソッドを提供する ASMX サービスが含まれています。 モバイルアプリケーションを実行すると、次のスクリーンショットに示すように、ローカルでホストされている ASMX サービスに接続します。
 
-![](asmx-images/portal.png "Sample Application")
+![サンプル アプリケーション](asmx-images/portal.png)
 
 > [!NOTE]
 > IOS 9 以降では、アプリトランスポートセキュリティ (ATS) によって、インターネットリソース (アプリのバックエンドサーバーなど) とアプリの間にセキュリティで保護された接続が適用されるため、機密情報が誤って開示されるのを防ぐことができます。 IOS 9 用に構築されたアプリでは、ATS が既定で有効になっているため、すべての接続は、ATS のセキュリティ要件の対象となります。 接続がこれらの要件を満たしていない場合、例外が発生して失敗します。
@@ -118,7 +118,7 @@ static TodoItem FromASMXServiceTodoItem (ASMXService.TodoItem item)
 
 このメソッドは、プロキシによって生成された型からデータを取得 `TodoItem` し、新しく作成されたインスタンスに設定し `TodoItem` ます。
 
-### <a name="retrieve-data"></a>データの取得
+### <a name="retrieve-data"></a>データを取得する
 
 インターフェイスは、 `ISoapService` `RefreshDataAsync` メソッドが項目コレクションと共にを返すことを想定して `Task` います。 ただし、この `TodoService.GetTodoItemsAsync` メソッドは void を返します。 インターフェイスパターンを満たすには、を呼び出し、 `GetTodoItemsAsync` `GetTodoItemsCompleted` イベントが起動するまで待機して、コレクションにデータを設定する必要があります。 これにより、有効なコレクションを UI に返すことができます。
 

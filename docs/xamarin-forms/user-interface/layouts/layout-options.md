@@ -10,16 +10,16 @@ ms.date: 02/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6fa03cf5c18e21ce5ca9e7ea907f50c8de6f3e6c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 1a3b9db435de49c438f458d1c4d85d3f81bbf749
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573262"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930690"
 ---
 # <a name="layout-options-in-xamarinforms"></a>レイアウトオプションXamarin.Forms
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutoptions)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutoptions)
 
 _すべて Xamarin.Forms のビューには、LayoutOptions 型の水平オプションと垂直オプションのプロパティがあります。この記事では、各 LayoutOptions 値がビューの配置と展開に与える影響について説明します。_
 
@@ -94,7 +94,7 @@ Content = new StackLayout
 
 コードを実行すると、次のスクリーンショットに示されているレイアウトが表示されます。
 
-[![](layout-options-images/alignment.png "Alignment Layout Options")](layout-options-images/alignment-large.png#lightbox "Alignment Layout Options")
+[![配置レイアウトのオプション](layout-options-images/alignment.png)](layout-options-images/alignment-large.png#lightbox "配置レイアウトのオプション")
 
 ## <a name="expansion"></a>正規の表記
 
@@ -147,11 +147,11 @@ Content = new StackLayout
 
 コードを実行すると、次のスクリーンショットに示されているレイアウトが表示されます。
 
-[![](layout-options-images/expansion.png "Expansion Layout Options")](layout-options-images/expansion-large.png#lightbox "Expansion Layout Options")
+[![展開レイアウトオプション](layout-options-images/expansion.png)](layout-options-images/expansion-large.png#lightbox "展開レイアウトオプション")
 
 各 [`Label`](xref:Xamarin.Forms.Label) は、内で同じ量の領域を占有し [`StackLayout`](xref:Xamarin.Forms.StackLayout) ます。 ただし、[`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) プロパティを [`FillAndExpand`](xref:Xamarin.Forms.LayoutOptions.FillAndExpand) に設定する最後の `Label` のみ、サイズが異なります。 さらに、各 `Label` は小さい赤で区切られ [`BoxView`](xref:Xamarin.Forms.BoxView) ます。これにより、 `Label` 占有領域を簡単に表示できます。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 この記事では、各 [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) 構造体の値が、親を基準としたビューの配置と展開に与える影響について説明しました。 `Start`、、 `Center` `End` 、およびの `Fill` 各フィールドは、親レイアウト内のビューの配置を定義するために使用されます。また、、、 `StartAndExpand` `CenterAndExpand` `EndAndExpand` 、およびの各フィールドは、配置設定を定義するために使用されます。また、使用 `FillAndExpand` 可能な場合は、内でビューが使用できる領域を占有するかどうかを決定し [`StackLayout`](xref:Xamarin.Forms.StackLayout) ます。
 

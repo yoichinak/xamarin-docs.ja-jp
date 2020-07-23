@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 0d5ec4bc10747a287def3fd9a83a703d2ec4b2a2
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 0f3c91e175e5ccdefeaf3d6c9c83e9eb3e012e14
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572378"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935396"
 ---
 # <a name="working-with-tvos-navigation-bars-in-xamarin"></a>Xamarin での tvOS ナビゲーションバーの使用
 
 ナビゲーションバーをビューの上部に追加して、タイトルとオプションのナビゲーションバーボタンを表示できます。 通常、ユーザーがメインページから移動したときに使用されます。これには、テーブルビュー、コレクション、メニューなど、選択した項目の詳細を示すサブビューが表示されます。
 
-[![](navigation-bars-images/navbar01.png "Sample Navigation Bar")](navigation-bars-images/navbar01.png#lightbox)
+[![サンプルナビゲーションバー](navigation-bars-images/navbar01.png)](navigation-bars-images/navbar01.png#lightbox)
 
 ナビゲーションバーには、(中央に表示される) タイトルに加えて、バーの左右に1つまたは複数のナビゲーションバーボタン () を含めることができ `UIBarButtonItem` ます。
 
@@ -36,34 +36,34 @@ TvOS アプリのナビゲーションバーを操作する最も簡単な方法
 1. **Solution Pad**で、[ファイル] をダブルクリックし、 `Main.storyboard` 編集用に開きます。
 1. **ツールボックス**から**ナビゲーションバー**をドラッグし、画面の上部にあるビューにドロップします。
 
-    [![](navigation-bars-images/navbar02.png "A Navigation Bar")](navigation-bars-images/navbar02.png#lightbox)
+    [![ナビゲーションバー](navigation-bars-images/navbar02.png)](navigation-bars-images/navbar02.png#lightbox)
 1. ナビゲーション**バー**をダブルクリックして、[**ナビゲーション項目**] を選択します。 **Properties Pad**の [**ウィジェット**] タブで、次のように**タイトル**を設定できます。
 
-    [![](navigation-bars-images/navbar03.png "Set the Title")](navigation-bars-images/navbar03.png#lightbox)
+    [![タイトルの設定](navigation-bars-images/navbar03.png)](navigation-bars-images/navbar03.png#lightbox)
 1. 次に、バーの両端に1つまたは複数の**バーボタン項目**を追加できます。
 
-    [![](navigation-bars-images/navbar04.png "A Bar Button Item")](navigation-bars-images/navbar04.png#lightbox)
+    [![バーボタンの項目](navigation-bars-images/navbar04.png)](navigation-bars-images/navbar04.png#lightbox)
 1. 最後に、**プロパティエクスプローラー**の [**イベント**] タブで、**バーボタンの項目**を操作に接続します。
 
-    [![](navigation-bars-images/navbar05.png "A Bar Button Item Action")](navigation-bars-images/navbar05.png#lightbox)
-1. 変更内容を保存します。
+    [![バーボタンの項目のアクション](navigation-bars-images/navbar05.png)](navigation-bars-images/navbar05.png#lightbox)
+1. 変更を保存します。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. **ソリューションエクスプローラー**で、[ファイル] をダブルクリックし、 `Main.storyboard` 編集用に開きます。
 1. **ツールボックス**から**ナビゲーションバー**をドラッグし、画面の上部にあるビューにドロップします。
 
-    [![](navigation-bars-images/navbar02-vs.png "A Navigation Bar")](navigation-bars-images/navbar02-vs.png#lightbox)
+    [![ナビゲーションバー](navigation-bars-images/navbar02-vs.png)](navigation-bars-images/navbar02-vs.png#lightbox)
 1. ナビゲーション**バー**をダブルクリックして、[**ナビゲーション項目**] を選択します。 **プロパティエクスプローラー**の [**ウィジェット**] タブで、次のように**タイトル**を設定できます。
 
-    [![](navigation-bars-images/navbar03-vs.png "Set the Title")](navigation-bars-images/navbar03-vs.png#lightbox)
+    [![タイトルの設定](navigation-bars-images/navbar03-vs.png)](navigation-bars-images/navbar03-vs.png#lightbox)
 1. 次に、バーの両端に1つまたは複数の**バーボタン項目**を追加できます。
 
-    [![](navigation-bars-images/navbar04-vs.png "A Bar Button Items")](navigation-bars-images/navbar04-vs.png#lightbox)
+    [![バーボタン項目](navigation-bars-images/navbar04-vs.png)](navigation-bars-images/navbar04-vs.png#lightbox)
 1. 最後に、**プロパティエクスプローラー**の [**イベント**] タブで、**バーボタンの項目**を操作に接続します。
 
-    [![](navigation-bars-images/navbar05-vs.png "A Bar Button Item Actions")](navigation-bars-images/navbar05-vs.png#lightbox)
-1. 変更内容を保存します。
+    [![バーボタン項目のアクション](navigation-bars-images/navbar05-vs.png)](navigation-bars-images/navbar05-vs.png#lightbox)
+1. 変更を保存します。
 
 -----
 

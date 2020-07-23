@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: cdb8505bd8c25b6e591dd86daf6a4d1e174012f6
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 177701b8b50edea965e97da225265912f1f0c198
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569037"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932328"
 ---
 # <a name="maps-in-xamarinios"></a>Xamarin. iOS のマップ
 
@@ -30,7 +30,7 @@ View = map;
 
 `MKMapView`は、 `UIView` マップを表示するサブクラスです。 上記のコードを使用してマップを追加するだけで、対話型のマップが生成されます。
 
-![](images/00-map.png "A sample map")
+![サンプルマップ](images/00-map.png)
 
 ## <a name="map-style"></a>マップスタイル
 
@@ -44,7 +44,7 @@ map.MapType = MKMapType.Hybrid;
 
 次のスクリーンショットは、使用可能なさまざまなマップスタイルを示しています。
 
-![](images/01-mapstyles.png "This screenshot show the different map styles that are available")
+![このスクリーンショットは、使用可能なさまざまなマップスタイルを示しています。](images/01-mapstyles.png)
 
 ## <a name="panning-and-zooming"></a>パンとズーム
 
@@ -85,13 +85,13 @@ locationManager.RequestWhenInUseAuthorization();
 map.ShowsUserLocation = true;
 ```
 
- ![](images/02-location-alert.png "The allow location access alert")
+ ![場所へのアクセスを許可するアラート](images/02-location-alert.png)
 
-## <a name="annotations"></a>注釈
+## <a name="annotations"></a>コメント
 
  `MKMapView`では、マップ上の画像 (注釈) の表示もサポートされています。 これには、カスタムイメージ、またはさまざまな色のシステム定義の pin を使用できます。 たとえば、次のスクリーンショットは、ピンとカスタムイメージの両方を含むマップを示しています。
 
- ![](images/03-annotations.png "This screenshot shows a map with a both a pin and a custom image")
+ ![このスクリーンショットは、ピンとカスタムイメージの両方を含むマップを示しています。](images/03-annotations.png)
 
 ### <a name="adding-an-annotation"></a>注釈の追加
 
@@ -149,7 +149,7 @@ MKAnnotationView pinView = (MKPinAnnotationView)mapView.DequeueReusableAnnotatio
 
 前述のように、注釈は必要に応じてコールアウトを表示できます。 コールアウトを表示するに `CanShowCallout` は、で true に設定されているだけ `MKAnnotationView` です。 次のように、注釈がタップされると、注釈のタイトルが表示されます。
 
- ![](images/04-callout.png "The annotations title being displayed")
+ ![表示されている注釈のタイトル](images/04-callout.png)
 
 ### <a name="customizing-the-callout"></a>コールアウトのカスタマイズ
 
@@ -162,7 +162,7 @@ pinView.LeftCalloutAccessoryView = new UIImageView(UIImage.FromFile ("monkey.png
 
 このコードを実行すると、次のように吹き出しが表示されます。
 
- ![](images/05-callout-accessories.png "An example callout")
+ ![コールアウトの例](images/05-callout-accessories.png)
 
 ユーザーが適切なアクセサリをタップする処理を行うには、でメソッドを実装するだけです `CalloutAccessoryControlTapped` `MKMapViewDelegate` 。
 
@@ -215,7 +215,7 @@ public override MKOverlayView GetViewForOverlay (MKMapView mapView, NSObject ove
 
 次のように、マップ上に円が表示されます。
 
- ![](images/06-circle-overlay.png "A circle displayed on the map")
+ ![マップに表示される円](images/06-circle-overlay.png)
 
 ## <a name="local-search"></a>ローカル検索
 
@@ -273,7 +273,7 @@ NavigationItem.TitleView = searchController.SearchBar;
 
 この結果、次に示すように、マップ上に検索バーが表示されます。
 
- ![](images/07-searchbar.png "A search bar displayed over the map")
+ ![マップ上に表示される検索バー](images/07-searchbar.png)
 
 ### <a name="displaying-the-search-results"></a>検索結果の表示
 
@@ -393,7 +393,7 @@ public class SearchResultsUpdator : UISearchResultsUpdating
 
 上の実装では、次のように、結果から項目が選択されたときにマップに注釈を追加します。
 
- ![](images/08-search-results.png "An annotation added to the map when an item is selected from the results")
+ ![結果から項目が選択されたときにマップに追加された注釈](images/08-search-results.png)
 
 > [!IMPORTANT]
 > `UISearchController`は、iOS 8 で実装されました。 これより前のデバイスをサポートする場合は、を使用する必要があり `UISearchDisplayController` ます。

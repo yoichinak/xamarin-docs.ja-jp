@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 9a45e87165101a8e8afcfc51d15d085982b6499e
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: d4a1cab23b8d295d899c47edc5ffe77f6d20a467
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569934"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939764"
 ---
 # <a name="working-with-tvos-page-controls-in-xamarin"></a>Xamarin での tvOS Page コントロールの使用
 
 場合によっては、tvOS アプリに一連のページまたはイメージを表示する必要があります。 ページコントロールは、ユーザーが最大ページ数を超えているページを明確に示すように設計されています。 ページコントロールには、暗い楕円形の背景に対して一連のドットが表示されます。 現在のページには塗りつぶされたドットが表示され、他のすべてのページは中空点として表示されます。 ページコントロールは、背景領域に収まりきらない場合に、最も外側のドットをクリップします。
 
-[![](page-controls-images/page01.png "Sample Page control")](page-controls-images/page01.png#lightbox)
+[![サンプルページコントロール](page-controls-images/page01.png)](page-controls-images/page01.png#lightbox)
 
 ユーザーのみにフィードバックを提供するように設計された非対話型の要素のページコントロール。 現在のページ番号 (ジェスチャやボタンなど) を変更するには、他のコントロールを追加する必要があります。
 
@@ -38,30 +38,30 @@ TvOS アプリでページコントロールを操作する最も簡単な方法
 1. **Solution Pad**で、ファイルをダブルクリックし `Main.storyboard` て開き、編集します。
 1. **ツールボックス**から**ページコントロール**をドラッグし、ビューにドロップします。
 
-    [![](page-controls-images/page02.png "A Page Control")](page-controls-images/page02.png#lightbox)
+    [![ページコントロール](page-controls-images/page02.png)](page-controls-images/page02.png#lightbox)
 1. **Properties Pad**の [**ウィジェット] タブ**では、ページコントロールの**現在のページ**や**ページの**数など、いくつかのプロパティを調整できます。
 
-    [![](page-controls-images/page03.png "The Widget Tab")](page-controls-images/page03.png#lightbox)
+    [![[ウィジェット] タブ](page-controls-images/page03.png)](page-controls-images/page03.png#lightbox)
 1. 次に、コントロールまたはジェスチャをビューに追加して、ページのコレクションを前後に移動します。
 1. 最後に、コントロールに**名前**を割り当てて、C# コードでそれらに応答できるようにします。 次に例を示します。
 
-    [![](page-controls-images/page04.png "Name the control")](page-controls-images/page04.png#lightbox)
-1. 変更内容を保存します。
+    [![コントロールに名前を指定する](page-controls-images/page04.png)](page-controls-images/page04.png#lightbox)
+1. 変更を保存します。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. **ソリューションエクスプローラー**で、ファイルをダブルクリックし `Main.storyboard` て開き、編集します。
 1. **ツールボックス**から**ページコントロール**をドラッグし、ビューにドロップします。
 
-    [![](page-controls-images/page02-vs.png "A Page Control")](page-controls-images/page02-vs.png#lightbox)
+    [![ページコントロール](page-controls-images/page02-vs.png)](page-controls-images/page02-vs.png#lightbox)
 1. **プロパティエクスプローラー**の [**ウィジェット] タブ**では、**現在のページ**やページ**の**数など、ページコントロールのいくつかのプロパティを調整できます。
 
-    [![](page-controls-images/page03-vs.png "The Widget tab")](page-controls-images/page03-vs.png#lightbox)
+    [![[ウィジェット] タブ](page-controls-images/page03-vs.png)](page-controls-images/page03-vs.png#lightbox)
 1. 次に、コントロールまたはジェスチャをビューに追加して、ページのコレクションを前後に移動します。
 1. 最後に、コントロールに**名前**を割り当てて、C# コードでそれらに応答できるようにします。 次に例を示します。
 
-    [![](page-controls-images/page04-vs.png "Name the control")](page-controls-images/page04-vs.png#lightbox)
-1. 変更内容を保存します。
+    [![コントロールに名前を指定する](page-controls-images/page04-vs.png)](page-controls-images/page04-vs.png#lightbox)
+1. 変更を保存します。
 
 -----
 

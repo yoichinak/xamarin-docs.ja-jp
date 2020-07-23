@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4d934fd2155a6a088dd543658555bf104b38f302
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 501210f669c7d62eddaf7ebe3b4ebf19614589a7
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138542"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936345"
 ---
 # <a name="entry-cursor-color-on-ios"></a>IOS のエントリカーソルの色
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 この iOS プラットフォーム固有のは、のカーソルの色 [`Entry`](xref:Xamarin.Forms.Entry) を、指定された色に設定します。 これは、バインド可能なプロパティをに設定することによって XAML で使用され [`Entry.CursorColor`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.CursorColorProperty) [`Color`](xref:Xamarin.Forms.Color) ます。
 
@@ -47,7 +47,7 @@ entry.On<iOS>().SetCursorColor(Color.LimeGreen);
 
 結果として、のカーソルの色を [`Entry`](xref:Xamarin.Forms.Entry) 特定のに設定でき [`Color`](xref:Xamarin.Forms.Color) ます。
 
-![](entry-cursor-color-images/entry-cursorcolor.png "Entry Cursor Color")
+![エントリのカーソルの色](entry-cursor-color-images/entry-cursorcolor.png)
 
 ## <a name="related-links"></a>関連リンク
 

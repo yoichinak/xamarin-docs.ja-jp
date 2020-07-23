@@ -10,26 +10,26 @@ ms.date: 11/25/2015
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f250b109f759bcf6bb7fa4ac0573743ac12c4bc1
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e9c6bc604368f36646260d6a3766cc5417a1ff52
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127193"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937788"
 ---
 # <a name="xamarinforms-relativelayout"></a>Xamarin.FormsRelativeLayout
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
 `RelativeLayout`は、レイアウトビューまたは兄弟ビューのプロパティを基準としてビューの位置やサイズを変更するために使用します。 とは異なり `AbsoluteLayout` 、に `RelativeLayout` は移動アンカーの概念はなく、レイアウトの下端または右端を基準として要素を配置するための機能はありません。 `RelativeLayout`は、独自の境界の外側に要素を配置することをサポートしています。
 
-[![](relative-layout-images/layouts-sml.png "Xamarin.Forms Layouts")](relative-layout-images/layouts.png#lightbox "Xamarin.Forms Layouts")
+[![Xamarin.Formsレイアウト](relative-layout-images/layouts-sml.png)](relative-layout-images/layouts.png#lightbox "[!ファンド.非 LOC (Xamarin)] レイアウト")
 
 ## <a name="purpose"></a>目的
 
 `RelativeLayout`を使用すると、レイアウト全体または他のビューに対して、画面上にビューを配置できます。
 
-![](relative-layout-images/flag.png "RelativeLayout Exploration")
+![RelativeLayout の探索](relative-layout-images/flag.png)
 
 ## <a name="usage"></a>使用方法
 
@@ -133,7 +133,7 @@ layout.Children.Add (blueBox, Constraint.RelativeToView (redBox, (Parent, siblin
 
 これにより、次の出力が生成され、赤色のボックスの位置を_基準_として青色のボックスの位置が決定されます。
 
-![](relative-layout-images/red-blue-box.png "RelativeLayout with Red and Blue BoxViews")
+![赤と青の BoxViews の RelativeLayout](relative-layout-images/red-blue-box.png)
 
 ### <a name="sizing"></a>サイズ変更
 
@@ -226,7 +226,7 @@ Title="RelativeLayout">
 
 上記のコードでは、次のレイアウトが生成されます。
 
-![](relative-layout-images/relative.png "Complex RelativeLayout")
+![Complex RelativeLayout](relative-layout-images/relative.png)
 
 が入れ子になっていることに注意してください。入れ子になったレイアウトは、 `RelativeLayouts` 同じレイアウト内のすべての要素を表示するよりも簡単な場合があるためです。 また、いくつかの要素があることにも注目して `RelativeToView` ください。これにより、ビューガイドの配置間のリレーションシップを作成するときに、より簡単で直感的なレイアウトが可能になります。
 

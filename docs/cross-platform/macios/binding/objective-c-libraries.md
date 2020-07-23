@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: davidortinau
 ms.author: daortin
 ms.date: 03/06/2018
-ms.openlocfilehash: 67e66d5d8f1023c0e7561791ff29ed2952ac040b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 6508f7ec48d10196b47e0b51fc30e54e3c3668a6
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571013"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930560"
 ---
 # <a name="binding-objective-c-libraries"></a>バインディングの目的 C ライブラリ
 
@@ -39,14 +39,14 @@ C ライブラリを静的にリンクする方法の詳細については、「
 バインディングを作成する最も簡単な方法は、Xamarin の iOS バインドプロジェクトを作成することです。
 これを行うには、[プロジェクトの種類]、[ **iOS > ライブラリ > バインドライブラリ**] の順に選択し Visual Studio for Mac します。
 
-[![](objective-c-libraries-images/00-sml.png "Do this from Visual Studio for Mac by selecting the project type, iOS Library Bindings Library")](objective-c-libraries-images/00.png#lightbox)
+[![これを行うには、[プロジェクトの種類]、[iOS ライブラリバインドライブラリ] の順に選択し Visual Studio for Mac します。](objective-c-libraries-images/00-sml.png)](objective-c-libraries-images/00.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 バインディングを作成する最も簡単な方法は、Xamarin の iOS バインドプロジェクトを作成することです。
 これを行うには、Windows の Visual Studio で、プロジェクトの種類、 **visual C# > iOS > Binding Library (ios)** の順に選択します。
 
-[![](objective-c-libraries-images/00vs-sml.png "iOS Bindings Library iOS")](objective-c-libraries-images/00vs.png#lightbox)
+[![iOS バインドライブラリ iOS](objective-c-libraries-images/00vs-sml.png)](objective-c-libraries-images/00vs.png#lightbox)
 
 > [!IMPORTANT]
 > 注: **Xamarin. Mac**のバインドプロジェクトは、Visual Studio for Mac でのみサポートされています。
@@ -104,7 +104,7 @@ API ファイルの形式と使用できる属性の詳細については、後�
 
 このグラフは、次のファイル間の関係を示しています。
 
- [![](objective-c-libraries-images/screen-shot-2012-02-08-at-3.33.07-pm.png "This chart shows the relationship between the files")](objective-c-libraries-images/screen-shot-2012-02-08-at-3.33.07-pm.png#lightbox)
+ [![このグラフは、ファイル間の関係を示します。](objective-c-libraries-images/screen-shot-2012-02-08-at-3.33.07-pm.png)](objective-c-libraries-images/screen-shot-2012-02-08-at-3.33.07-pm.png#lightbox)
 
 API 定義ファイルには、(インターフェイスが含むことのできるすべてのメンバーを含む) 名前空間とインターフェイスの定義のみが含まれます。クラス、列挙体、デリゲート、または構造体を含めることはできません。 API 定義ファイルは、API の生成に使用されるコントラクトにすぎません。
 
@@ -135,7 +135,7 @@ public partial class Camera {
 このバインディングを完了するには、ネイティブライブラリをプロジェクトに追加する必要があります。  これを行うには、ソリューションエクスプローラーでネイティブライブラリを Finder からプロジェクトにドラッグアンドドロップするか、プロジェクトを右クリックして [**追加**] [ファイルの追加] の順に選択し、ネイティブライブラリを  >  **Add Files**選択します。
 ネイティブライブラリは、"lib" という語で始まり、拡張子 ". a" で終わります。 これを行うと、Visual Studio for Mac によって2つのファイルが追加されます。このファイルには、ネイティブライブラリに含まれる内容に関する情報を含む、自動的に設定された C# ファイルが追加されます。
 
- [![](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png "Native libraries by convention start with the word lib and end with the extension .a")](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png#lightbox)
+ [![ネイティブライブラリは慣例により、"lib" から始まり、拡張子で終わります。](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png)](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png#lightbox)
 
 ファイルの内容に `libMagicChord.linkwith.cs` は、このライブラリの使用方法に関する情報が含まれており、このバイナリを結果の DLL ファイルにパッケージ化するように IDE に指示します。
 
@@ -1197,7 +1197,7 @@ void SomeString (ref NSObject byref);
 
 上の例では、値に "Retain" セマンティクスがあるとしてフラグが付けられています。 使用できるセマンティクスは次のとおりです。
 
-- 割り当て
+- 代入
 - コピー
 - 保持
 

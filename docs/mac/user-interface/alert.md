@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 044792f37fbba13699a5ab31d815b4f2c5dafe17
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 00e5b2a2238763822172a1b7d7a7c3090634ed17
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84565487"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938087"
 ---
 # <a name="alerts-in-xamarinmac"></a>Xamarin. Mac のアラート
 
@@ -22,7 +22,7 @@ Xamarin. Mac アプリケーションで C# と .NET を使用する場合、 *X
 
 アラートは、重大な問題 (エラーなど) が発生したとき、または警告 (ファイルの削除の準備など) が発生したときに表示される特別な種類のダイアログです。 アラートはダイアログであるため、閉じる前にユーザーの応答も必要です。
 
-[![](alert-images/alert06.png "An example alert")](alert-images/alert06.png#lightbox)
+[![アラートの例](alert-images/alert06.png)](alert-images/alert06.png#lightbox)
 
 この記事では、Xamarin. Mac アプリケーションでのアラートの操作の基本について説明します。 
 
@@ -60,7 +60,7 @@ alert.RunModal ();
 
 上記のコードでは、警告アイコン、タイトル、警告メッセージ、および1つの **[OK** ] ボタンに重ねて表示された [アプリケーション] アイコンを含むアラートが表示されます。
 
-[![](alert-images/alert01.png "An alert with a OK button")](alert-images/alert01.png#lightbox)
+[![[OK] ボタンのあるアラート](alert-images/alert01.png)](alert-images/alert01.png#lightbox)
 
 Apple には、アラートをカスタマイズするために使用できるいくつかのプロパティが用意されています。
 
@@ -93,7 +93,7 @@ alert.RunModal ();
 
 このコードを実行すると、次のように表示されます。
 
-[![](alert-images/alert02.png "A simple alert")](alert-images/alert02.png#lightbox)
+[![単純なアラート](alert-images/alert02.png)](alert-images/alert02.png#lightbox)
 
 次のコードでは、シートと同じ警告が表示されます。
 
@@ -108,7 +108,7 @@ alert.BeginSheet (this);
 
 このコードが実行されると、次のように表示されます。
 
-[![](alert-images/alert03.png "An alert displayed as a sheet")](alert-images/alert03.png#lightbox)
+[![シートとして表示される警告](alert-images/alert03.png)](alert-images/alert03.png#lightbox)
 
 <a name="Working_with_Alert_Buttons"></a>
 
@@ -136,7 +136,7 @@ var result = alert.RunModal ();
 
 コードを実行すると、次のように表示されます。
 
-[![](alert-images/alert04.png "An alert with three button options")](alert-images/alert04.png#lightbox)
+[![3つのボタンオプションを持つアラート](alert-images/alert04.png)](alert-images/alert04.png#lightbox)
 
 次に、同じ警告をシートとして使用するコードを示します。
 
@@ -156,7 +156,7 @@ alert.BeginSheetForResponse (this, (result) => {
 
 このコードが実行されると、次のように表示されます。
 
-[![](alert-images/alert05.png "A three button alert displayed as a sheet")](alert-images/alert05.png#lightbox)
+[![シートとして表示される3つのボタンの警告](alert-images/alert05.png)](alert-images/alert05.png#lightbox)
 
 > [!IMPORTANT]
 > 警告には、3つ以上のボタンを追加しないでください。
@@ -185,7 +185,7 @@ Console.WriteLine ("Alert Result: {0}, Suppress: {1}", result, alert.Suppression
 
 コードを実行すると、次のように表示されます。
 
-[![](alert-images/alert06.png "An alert with a suppress button")](alert-images/alert06.png#lightbox)
+[![抑制ボタンを持つアラート](alert-images/alert06.png)](alert-images/alert06.png#lightbox)
 
 次に、同じ警告をシートとして使用するコードを示します。
 
@@ -206,7 +206,7 @@ alert.BeginSheetForResponse (this, (result) => {
 
 このコードが実行されると、次のように表示されます。
 
-[![](alert-images/alert07.png "An alert with a suppress button display as a sheet")](alert-images/alert07.png#lightbox)
+[![[非表示] ボタンがシートとして表示されているアラート](alert-images/alert07.png)](alert-images/alert07.png#lightbox)
 
 <a name="Adding_a_Custom_SubView"></a>
 
@@ -236,7 +236,7 @@ Console.WriteLine ("Alert Result: {0}, Suppress: {1}", result, alert.Suppression
 
 コードを実行すると、次のように表示されます。
 
-[![](alert-images/alert08.png "If we run the code, the following will be displayed")](alert-images/alert08.png#lightbox)
+[![コードを実行すると、次のように表示されます。](alert-images/alert08.png)](alert-images/alert08.png#lightbox)
 
 シートと同じ警告を次に示します。
 
@@ -261,7 +261,7 @@ alert.BeginSheetForResponse (this, (result) => {
 
 このコードを実行すると、次のように表示されます。
 
-[![](alert-images/alert09.png "An alert with a custom view")](alert-images/alert09.png#lightbox)
+[![カスタムビューを含むアラート](alert-images/alert09.png)](alert-images/alert09.png#lightbox)
 
 <a name="Summary"></a>
 

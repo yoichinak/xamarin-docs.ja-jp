@@ -10,12 +10,12 @@ ms.date: 11/29/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: dc28cdaf78c72c219706a30c30af7f90ae7c4eec
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 8892a49f2d7d93f8310293bc70d5e1acdfabe3f5
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84569622"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937086"
 ---
 # <a name="customizing-a-listview"></a>ListView のカスタマイズ
 
@@ -27,7 +27,7 @@ _Xamarin.Forms の ListView は、データのコレクションを縦方向の�
 
 次の図は、[`ListView`](xref:Xamarin.Forms.ListView) コントロールと、それを実装する、対応するネイティブ コントロールの関係を示しています。
 
-![](listview-images/listview-classes.png "Relationship Between the ListView Control and the Implementing Native Controls")
+![ListView コントロールと実装するネイティブ コントロールの関係](listview-images/listview-classes.png)
 
 レンダリング プロセスを活用して各プラットフォーム上で [`ListView`](xref:Xamarin.Forms.ListView) 用のカスタム レンダラーを作成することで、プラットフォーム固有のカスタマイズを実装できます。 その実行プロセスは次のとおりです。
 
@@ -152,11 +152,11 @@ public class MainPageCS : ContentPage
 
 次の図に、サンプル アプリケーション内の各プロジェクトの役割と、それらの関係を示します。
 
-![](listview-images/solution-structure.png "NativeListView Custom Renderer Project Responsibilities")
+![NativeListView カスタム レンダラーのプロジェクトの役割](listview-images/solution-structure.png)
 
 `NativeListView` カスタム コントロールはプラットフォーム固有のレンダラー クラスによってレンダリングされます。このクラスはすべて各プラットフォームの `ListViewRenderer` クラスから派生しています。 この結果、次のスクリーンショットに示すように、プラットフォーム固有のリスト コントロールとネイティブ のセルのレイアウトを使用してそれぞれの `NativeListView` カスタム コントロールがレンダリングされます。
 
-![](listview-images/screenshots.png "NativeListView on each Platform")
+![各プラットフォーム上の NativeListView](listview-images/screenshots.png)
 
 `ListViewRenderer` クラスは `OnElementChanged` メソッドを公開します。このメソッドは、該当するネイティブ コントロールをレンダリングするために、Xamarin.Forms カスタム コントロールの作成時に呼び出されます。 このメソッドでは、`OldElement` および `NewElement` プロパティを含む `ElementChangedEventArgs` パラメーターを受け取ります。 これらのプロパティは、レンダラーがアタッチされて*いた* Xamarin.Forms 要素と、レンダラーが現在アタッチされて*いる* Xamarin.Forms 要素をそれぞれ表しています。 サンプル アプリケーションでは、`OldElement` プロパティが `null` になり、`NewElement` プロパティに `NativeListView` インスタンスへの参照が含まれます。
 

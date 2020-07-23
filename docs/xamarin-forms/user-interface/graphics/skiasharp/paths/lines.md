@@ -10,22 +10,22 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 87b97ad913e08c42d16bbf055f168c07b9bd60e8
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 644e6ab4acffa7acf2d86733d68fed8db07a752a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137208"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932367"
 ---
 # <a name="lines-and-stroke-caps"></a>線とストローク キャップ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _SkiaSharp を使用して異なるストロークキャップの線を描画する方法について説明します。_
 
 SkiaSharp では、単一行のレンダリングは、接続された一連の直線を描画することとは大きく異なります。 ただし、1つの線を描画する場合でも、多くの場合、線に特定のストロークの幅を付ける必要があります。 これらの行の幅が広くなるにつれて、線の端の外観も重要になります。 線の端の外観は、*ストロークキャップ*と呼ばれます。
 
-![](lines-images/strokecapsexample.png "The three stroke caps options")
+![3つのストロークキャップオプション](lines-images/strokecapsexample.png)
 
 単一行を描画するために、は、 `SKCanvas` [`DrawLine`](xref:SkiaSharp.SKCanvas.DrawLine(System.Single,System.Single,System.Single,System.Single,SkiaSharp.SKPaint)) オブジェクトを使用して、直線の開始座標と終了座標を示す引数を持つ単純なメソッドを定義し `SKPaint` ます。
 
@@ -97,7 +97,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ハンドラーは、列挙体のメンバーごとに2つの `SKStrokeCap` 線を描画します。1つは50ピクセルのストロークの太さで、もう1つはストロークの太さが2ピクセルの上に位置します。 この2番目の行は、線の太さとストロークキャップに依存しない、線の始点と終点を示すことを目的としています。
 
-[![](lines-images/strokecaps-small.png "Triple screenshot of the Stroke Caps page")](lines-images/strokecaps-large.png#lightbox "Triple screenshot of the Stroke Caps page")
+[![[ストロークキャップ] ページのトリプルスクリーンショット](lines-images/strokecaps-small.png)](lines-images/strokecaps-large.png#lightbox "[ストロークキャップ] ページのトリプルスクリーンショット")
 
 ご覧のように、とストロークキャップは、行の `Square` `Round` 先頭と末尾にあるストロークの幅の半分を使用して、線の長さを効果的に拡張します。 この拡張機能は、レンダリングされたグラフィックスオブジェクトの大きさを判断する必要がある場合に重要になります。
 
@@ -231,7 +231,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 スクリーンショットには、次のようなさまざまな選択項目が表示され `Picker` ます。
 
-[![](lines-images/multiplelines-small.png "Triple screenshot of the Multiple Lines page")](lines-images/multiplelines-large.png#lightbox "Triple screenshot of the Multiple Lines page")
+[![[複数行] ページのトリプルスクリーンショット](lines-images/multiplelines-small.png)](lines-images/multiplelines-large.png#lightbox "[複数行] ページのトリプルスクリーンショット")
 
 左側の iPhone は、 `SKPointMode.Points` `DrawPoints` 行キャップがまたはの場合に、列挙体のメンバーが配列内の各点を四角形としてレンダリングする方法を示して `SKPoint` `Butt` `Square` います。 線のキャップがの場合は、円がレンダリングされ `Round` ます。
 

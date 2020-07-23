@@ -6,12 +6,12 @@ ms.assetid: C6618E9D-07FA-4C84-D014-10DAC989E48D
 author: davidortinau
 ms.author: daortin
 ms.date: 03/06/2018
-ms.openlocfilehash: da6bf97bfc5769647c63b55c289293e63f50e5cb
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 8549e993bf46ffd3b24ad8ec495791eb25b25023
+ms.sourcegitcommit: bd49f28105218f04e978e58143bba8cdec9fd4a9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571000"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925985"
 ---
 # <a name="binding-types-reference-guide"></a>バインディングの種類のリファレンスガイド
 
@@ -30,7 +30,7 @@ interface MyType : [Protocol1, Protocol2] {
 }
 ```
 
-[`[BaseType]`](#BaseTypeAttribute)生成されたオブジェクトの基本型を宣言する属性を持つ、コントラクト定義内のすべてのインターフェイス。 上記の宣言では、 `MyType` という名前の目的の C 型にバインドするクラス C# 型が生成され `MyType` ます。
+属性を持つコントラクト定義内のすべてのインターフェイスは、 [`[BaseType]`](#BaseTypeAttribute) 生成されたオブジェクトの基本型を宣言します。 上記の宣言では、 `MyType` という名前の目的の C 型にバインドするクラス C# 型が生成され `MyType` ます。
 
 インターフェイスの継承構文を使用して、(上のサンプルでは) typename の後に型を指定した場合 `Protocol1` `Protocol2` 、それらのインターフェイスの内容は、のコントラクトの一部としてインライン化され `MyType` ます。
 Xamarin の iOS では、型がプロトコルを採用する方法として、プロトコルで宣言されたすべてのメソッドとプロパティを型自体にインライン展開します。
@@ -356,7 +356,7 @@ public partial class CBAdvertisement  {
 これは、ランタイムが、実際に上書きされたメソッドのみを目的の C に登録する点が異なります。
 それ以外の場合、メソッドは登録されません。
 
-これは一般に、でフラグが設定されたクラスをサブクラス化する場合 `ModelAttribute` 、基本メソッドを呼び出さないことを意味します。   このメソッドを呼び出すと、例外がスローされます。オーバーライドするメソッドについては、サブクラスに対して動作全体を実装することになります。
+これは一般に、でフラグが設定されたクラスをサブクラス化する場合 `ModelAttribute` 、基本メソッドを呼び出さないことを意味します。   このメソッドを呼び出すと、次の例外がスローされます: Foundation. You_Should_Not_Call_base_In_This_Method。 オーバーライドするすべてのメソッドに対して、サブクラスに動作全体を実装することになります。
 
 <a name="AbstractAttribute"></a>
 

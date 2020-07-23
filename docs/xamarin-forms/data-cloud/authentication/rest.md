@@ -10,12 +10,12 @@ ms.date: 01/22/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d62e533d127294c77c0779c20fd9c78ef2231200
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 2a46d099520103ba6f1552d5bda3f619c07b743d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135721"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86928524"
 ---
 # <a name="authenticate-a-restful-web-service"></a>RESTful Web サービスを認証する
 
@@ -31,11 +31,11 @@ _HTTP は、複数の認証メカニズムを使用してリソースへのア�
 
 - Web サービスは、保護されたリソースの要求を受信すると、HTTP 状態コード 401 (アクセスが拒否されました) の要求を拒否し、次の図に示すように、WWW 認証応答ヘッダーを設定します。
 
-![](rest-images/basic-authentication-fail.png "Basic Authentication Failing")
+![基本認証の失敗](rest-images/basic-authentication-fail.png)
 
 - Web サービスが保護されたリソースの要求を受信し、ヘッダーが正しく設定されている場合、 `Authorization` web サービスは HTTP 状態コード200で応答します。これは、要求が成功したことと、要求された情報が応答内にあることを示します。 このシナリオを次の図に示します。
 
-![](rest-images/basic-authentication-success.png "Basic Authentication Succeeding")
+![基本認証の成功](rest-images/basic-authentication-success.png)
 
 > [!NOTE]
 > 基本認証は、HTTPS 接続経由でのみ使用する必要があります。 Http 接続で使用する場合、 `Authorization` http トラフィックが攻撃者によってキャプチャされると、ヘッダーを簡単にデコードできます。

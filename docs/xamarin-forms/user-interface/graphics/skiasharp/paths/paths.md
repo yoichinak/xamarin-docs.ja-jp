@@ -10,22 +10,22 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6ceac2d866e67af5cf3496fcf8c072ae83ecfe38
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a7a4e8c4467438d1f732508a15bee7045310109b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140245"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931223"
 ---
 # <a name="path-basics-in-skiasharp"></a>SkiaSharp のパスの基礎
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _接続された直線と曲線を組み合わせるための SkiaSharp SKPath オブジェクトの探索_
 
 グラフィックスパスの最も重要な特徴の1つは、複数の行が接続されるタイミングと、接続されないようにする必要があるタイミングを定義する機能です。 次の2つの三角形の先頭に示すように、違いは大きくなる可能性があります。
 
-![](paths-images/connectedlinesexample.png "Two triangles showing the difference between connected and disconnected lines")
+![接続されている行と未接続の線の違いを示す2つの三角形](paths-images/connectedlinesexample.png)
 
 グラフィックスパスは、オブジェクトによってカプセル化され [`SKPath`](xref:SkiaSharp.SKPath) ます。 パスは、1つまたは複数の*輪郭*のコレクションです。 各輪郭は、*接続さ*れた直線と曲線のコレクションです。 輪郭は相互に接続されていませんが、視覚的に重なり合う可能性があります。 場合によっては、1つの輪郭を重ねることができます。
 
@@ -104,7 +104,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 最初の輪郭は、 [`MoveTo`](xref:SkiaSharp.SKPath.MoveTo(System.Single,System.Single)) 値ではなく X 座標と Y 座標を使用するの呼び出しで構成され、の `SKPoint` 3 つの呼び出しによって [`LineTo`](xref:SkiaSharp.SKPath.LineTo(System.Single,System.Single)) 三角形の3つの辺が描画されます。 2番目の輪郭はの呼び出しは2つだけ `LineTo` ですが、の呼び出しで輪郭を終了します。これにより、 [`Close`](xref:SkiaSharp.SKPath.Close) 輪郭が閉じられます。 この違いは重要です。
 
-[![](paths-images/twotrianglecontours-small.png "Triple screenshot of the Two Triangle Contours page")](paths-images/twotrianglecontours-large.png#lightbox "Triple screenshot of the Two Triangle Contours page")
+[![2つの三角形の輪郭ページのトリプルスクリーンショット](paths-images/twotrianglecontours-small.png)](paths-images/twotrianglecontours-large.png#lightbox "2つの三角形の輪郭ページのトリプルスクリーンショット")
 
 ご覧のように、最初の輪郭は、3つの接続された直線であることが明らかですが、末尾には接続されていません。 2行は上部に重なっています。 2番目の輪郭は明らかに閉じられており、1つより小さい呼び出しを使用して実行されました `LineTo` 。これは、メソッドが輪郭を閉じるための `Close` 最終行を自動的に追加するためです。
 
@@ -194,7 +194,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 実行中のプログラムを次に示します。
 
-[![](paths-images/strokejoins-small.png "Triple screenshot of the Stroke Joins page")](paths-images/strokejoins-large.png#lightbox "Triple screenshot of the Stroke Joins page")
+[![ストローク結合ページのトリプルスクリーンショット](paths-images/strokejoins-small.png)](paths-images/strokejoins-large.png#lightbox "ストローク結合ページのトリプルスクリーンショット")
 
 マイター結合は、直線が接続する鋭いポイントで構成されます。 2本の線が少しずつ結合している場合、マイター結合が非常に長くなる可能性があります。 マイタ結合が極端に長くならないようにするため、マイター結合の長さは、のプロパティの値によって制限され [`StrokeMiter`](xref:SkiaSharp.SKPaint.StrokeMiter) `SKPaint` ます。 この長さを超えるマイタ結合は、ベベル結合になるように傾斜します。
 

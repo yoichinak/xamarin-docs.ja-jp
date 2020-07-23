@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: aed11ff8794f79ff7e16fbb8401a95a5697d2d4b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 9280917f451d58ae864398088bec7faaf15ad96a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572066"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937346"
 ---
 # <a name="source-lists-in-xamarinmac"></a>Xamarin. Mac のソースリスト
 
@@ -22,7 +22,7 @@ Xamarin. Mac アプリケーションで C# と .NET を使用する場合、 *X
 
 ソースリストは、Finder または iTunes のサイドバーのような、アクションのソースを表示するために使用される特殊な種類のアウトラインビューです。
 
-[![](source-list-images/source05.png "An example source list")](source-list-images/source05.png#lightbox)
+[![ソースリストの例](source-list-images/source05.png)](source-list-images/source05.png#lightbox)
 
 この記事では、Xamarin. Mac アプリケーションでのソースリストの使用に関する基本について説明します。 この記事で使用する主要な概念と手法について説明しているように、最初に[Hello, Mac](~/mac/get-started/hello-mac.md)の記事「 [Xcode と Interface Builder の概要](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)」と「[アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions)」セクションをご覧になることを強くお勧めします。
 
@@ -50,7 +50,7 @@ Xamarin. Mac アプリケーションで C# と .NET を使用する場合、 *X
 
 まず、 `SourceListItem` ソースリストのデータを保持する新しいクラスを作成してみましょう。 **ソリューションエクスプローラー**で、プロジェクトを右クリックし、[新しいファイルの**追加**  >  **...** ] を選択します。[**汎用**空のクラス] を選択し、名前として「」  >  **Empty Class**と入力して `SourceListItem` 、[**新規**] ボタンをクリックします。 **Name**
 
-[![](source-list-images/source01.png "Adding an empty class")](source-list-images/source01.png#lightbox)
+[![空のクラスの追加](source-list-images/source01.png)](source-list-images/source01.png#lightbox)
 
 ファイルの `SourceListItem.cs` 外観を次のようにします。 
 
@@ -532,19 +532,19 @@ namespace MacOutlines
 
 次に、Interface Builder でソースリストを設計しましょう。 ファイルをダブルクリックし `Main.storyboard` て編集するには Interface Builder で開き、[**ライブラリインスペクター**] から分割ビューをドラッグして、ビューコントローラーに追加し、[**制約エディター**] のビューでサイズを変更するように設定します。
 
-[![](source-list-images/source00.png "Editing constraints")](source-list-images/source00.png#lightbox)
+[![制約の編集](source-list-images/source00.png)](source-list-images/source00.png#lightbox)
 
 次に、**ライブラリインスペクター**からソースリストをドラッグし、分割ビューの左側に追加して、**制約エディター**のビューでサイズを変更するように設定します。
 
-[![](source-list-images/source02.png "Editing constraints")](source-list-images/source02.png#lightbox)
+[![制約の編集](source-list-images/source02.png)](source-list-images/source02.png#lightbox)
 
 次に、 **Id ビュー**に切り替え、ソースリストを選択し、**クラス**をに変更し `SourceListView` ます。
 
-[![](source-list-images/source03.png "Setting the class name")](source-list-images/source03.png#lightbox)
+[![クラス名の設定](source-list-images/source03.png)](source-list-images/source03.png#lightbox)
 
 最後に、ファイルにというソースリストの**アウトレット**を作成し `SourceList` `ViewController.h` ます。
 
-[![](source-list-images/source04.png "Configuring an Outlet")](source-list-images/source04.png#lightbox)
+[![アウトレットの構成](source-list-images/source04.png)](source-list-images/source04.png#lightbox)
 
 変更を保存し Visual Studio for Mac に戻り、Xcode と同期します。
 
@@ -614,7 +614,7 @@ public override void DidFinishLaunching (NSNotification notification)
 
 アプリケーションを実行すると、次のように表示されます。
 
-[![](source-list-images/source05.png "An example app run")](source-list-images/source05.png#lightbox)
+[![アプリの実行例](source-list-images/source05.png)](source-list-images/source05.png#lightbox)
 
 <a name="Summary"></a>
 

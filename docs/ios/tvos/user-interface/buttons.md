@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/07/2017
-ms.openlocfilehash: 63aa344ec94730ebe448aba090e2d91af9da64b5
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 0de41379800d3f8fcb26e2bc58497010b8e3bf95
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574042"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931379"
 ---
 # <a name="working-with-tvos-buttons-in-xamarin"></a>Xamarin での tvOS ボタンの使用
 
 クラスのインスタンスを使用して、 `UIButton` tvOS ウィンドウにフォーカスがある、選択可能なボタンを作成します。 ユーザーがボタンを選択すると、ターゲットオブジェクトにアクションメッセージが送信され、tvOS アプリがユーザーの入力に応答できるようになります。
 
-[![](buttons-images/buttons01.png "Example buttons")](buttons-images/buttons01.png#lightbox)
+[![ボタンの例](buttons-images/buttons01.png)](buttons-images/buttons01.png#lightbox)
 
 Siri リモートを使用してフォーカスを操作する方法の詳細については、「[ナビゲーションとフォーカス](~/ios/tvos/app-fundamentals/navigation-focus.md)、 [Siri リモートおよび Bluetooth コントローラー](~/ios/tvos/platform/remote-bluetooth.md)の操作」のドキュメントを参照してください。
 
@@ -28,7 +28,7 @@ Siri リモートを使用してフォーカスを操作する方法の詳細に
 
 TvOS では、ボタンはアプリ固有のアクションに使用され、タイトル、アイコン、またはその両方が含まれる場合があります。 ユーザーが[Siri リモート](~/ios/tvos/platform/remote-bluetooth.md#The-Siri-Remote)を使用してアプリのユーザーインターフェイスを移動すると、指定したボタンにフォーカスが移り、テキストと背景色が変更されます。 影は、ボタンにも適用されます。これにより、ユーザーインターフェイスの他の部分を超えて3D 効果が上がります。
 
-[![](buttons-images/buttons01.png "Example buttons")](buttons-images/buttons01.png#lightbox)
+[![ボタンの例](buttons-images/buttons01.png)](buttons-images/buttons01.png#lightbox)
 
 Apple では、ボタンの操作に関して次のような推奨事項があります。
 
@@ -66,19 +66,19 @@ TvOS アプリのボタンを操作する最も簡単な方法は、Xamarin Desi
 1. **ソリューションエクスプローラー**で、ファイルをダブルクリックし `Main.storyboard` て開き、編集します。
 1. **ライブラリ**から**ボタン**をドラッグし、ビューにドロップします。 
 
-    [![](buttons-images/storyboard01.png "A button")](buttons-images/storyboard01.png#lightbox)
+    [![A ボタン](buttons-images/storyboard01.png)](buttons-images/storyboard01.png#lightbox)
 1. **プロパティエクスプローラー**では、ボタンの**タイトル**や**テキストの色**など、いくつかのプロパティを調整できます。 
 
-    [![](buttons-images/storyboard02.png "Button properties")](buttons-images/storyboard02.png#lightbox)
+    [![ボタンのプロパティ](buttons-images/storyboard02.png)](buttons-images/storyboard02.png#lightbox)
 1. 次に、[**イベント] タブ**に切り替えて、**ボタン**から**イベント**を接続し、次のように呼び出し `ButtonPressed` ます。 
 
-    [![](buttons-images/storyboard03.png "The Events Tab")](buttons-images/storyboard03.png#lightbox)
+    [![[イベント] タブ](buttons-images/storyboard03.png)](buttons-images/storyboard03.png#lightbox)
 1. `ViewController.cs`**上**方向キーと**下**方向キーを使用して、新しいアクションをコードに配置できるビューに自動的に切り替えられます。 
 
-    [![](buttons-images/storyboard04.png "Placing a new Action in code")](buttons-images/storyboard04.png#lightbox)
+    [![コードに新しいアクションを配置する](buttons-images/storyboard04.png)](buttons-images/storyboard04.png#lightbox)
 1. **Enter**キーを押して場所を選択します。 
 
-    [![](buttons-images/storyboard05.png "The code editor")](buttons-images/storyboard05.png#lightbox)
+    [![コードエディター](buttons-images/storyboard05.png)](buttons-images/storyboard05.png#lightbox)
 1. すべてのファイルに変更を保存します。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
@@ -86,13 +86,13 @@ TvOS アプリのボタンを操作する最も簡単な方法は、Xamarin Desi
 1. **ソリューションエクスプローラー**で、ファイルをダブルクリックし `Main.storyboard` て開き、編集します。
 1. **ライブラリ**から**ボタン**をドラッグし、ビューにドロップします。 
 
-    [![](buttons-images/storyboard01vs.png "A button")](buttons-images/storyboard01vs.png#lightbox)
+    [![A ボタン](buttons-images/storyboard01vs.png)](buttons-images/storyboard01vs.png#lightbox)
 1. **プロパティエクスプローラー**では、ボタンの**タイトル**や**テキストの色**など、いくつかのプロパティを調整できます。 
 
-    [![](buttons-images/storyboard02vs.png "The Properties Explorer")](buttons-images/storyboard02vs.png#lightbox)
+    [![プロパティエクスプローラー](buttons-images/storyboard02vs.png)](buttons-images/storyboard02vs.png#lightbox)
 1. 次に、[**イベント] タブ**に切り替えて、**ボタン**から**イベント**を接続し、次のように呼び出し `ButtonPressed` ます。 
 
-    [![](buttons-images/storyboard03vs.png "The Events Tab")](buttons-images/storyboard03vs.png#lightbox)
+    [![[イベント] タブ](buttons-images/storyboard03vs.png)](buttons-images/storyboard03vs.png#lightbox)
 1. すべてのファイルに変更を保存します。
 
 ビューコントローラー (例 `ViewController.cs` ) ファイルを編集し、選択されているボタンを処理する次のコードを追加します。
@@ -248,7 +248,7 @@ button.SetImage(UIImage.FromFile("my image.png"), UIControlState.Normal);
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 この記事では、tvOS アプリ内のボタンの設計と操作について説明しました。 ここでは、iOS デザイナーでボタンを操作する方法と、C# コードでボタンを作成する方法を示しました。 最後に、ボタンのタイトルを変更し、そのスタイルと外観を変更する方法を示しました。
 

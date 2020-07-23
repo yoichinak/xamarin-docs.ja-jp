@@ -10,16 +10,16 @@ ms.date: 12/05/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 33675fbb644c5967726fee29b3e235247aec633a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 29e73f4051eda9117663992af9e710483e4b772b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84565358"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934096"
 ---
 # <a name="search-data-with-azure-search-and-xamarinforms"></a>Azure Search とを使用してデータを検索するXamarin.Forms
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresearch)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresearch)
 
 _Azure Search は、アップロードされたデータのインデックス作成機能とクエリ機能を提供するクラウドサービスです。これにより、従来、アプリケーションでの検索機能の実装に関連するインフラストラクチャ要件と検索アルゴリズムの複雑さが解消されます。この記事では、Microsoft Azure 検索ライブラリを使用して Azure Search をアプリケーションに統合する方法について説明し Xamarin.Forms ます。_
 
@@ -222,7 +222,7 @@ var searchResults = await indexClient.Documents.SearchAsync<Monkey>(text, parame
 
 メソッドは、 `SearchAsync` `DocumentSearchResult` クエリ結果を含むオブジェクトを返します。 このオブジェクトが列挙され、各 `Document` オブジェクトがオブジェクトとして作成され `Monkey` 、 `Monkeys` 表示のためにに追加され `ObservableCollection` ます。 次のスクリーンショットは Azure Search から返された検索クエリの結果を示しています。
 
-![](azure-search-images/search.png "Search Results")
+![検索結果](azure-search-images/search.png)
 
 検索とフィルター処理の詳細については、「 [.NET SDK を使用した Azure Search インデックスのクエリ](/azure/search/search-query-dotnet/)」を参照してください。
 
@@ -272,7 +272,7 @@ async Task AzureSuggestions(string text)
 
 メソッドは、 `SuggestAsync` `DocumentSuggestResult` クエリ結果を含むオブジェクトを返します。 このオブジェクトが列挙され、各 `Document` オブジェクトがオブジェクトとして作成され `Monkey` 、 `Monkeys` 表示のためにに追加され `ObservableCollection` ます。 次のスクリーンショットは Azure Search から返された提案の結果を示しています。
 
-![](azure-search-images/suggest.png "Suggestion Results")
+![提案の結果](azure-search-images/suggest.png)
 
 サンプルアプリケーションで `SuggestAsync` は、ユーザーが検索用語の入力を終了したときにのみメソッドが呼び出されることに注意してください。 ただし、各 keypress でを実行することで、オートコンプリート検索クエリをサポートするために使用することもできます。
 

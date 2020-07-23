@@ -10,12 +10,12 @@ ms.date: 04/27/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6ae4116be99f076a7afd5ed9c2823bc12f445e18
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: b8ba915f3bc701b6a100d206dc791f9572fa594b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137991"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936618"
 ---
 # <a name="margin-and-padding"></a>余白とスペース
 
@@ -30,7 +30,7 @@ _余白と余白のプロパティは、要素がユーザーインターフェ�
 
 次の図は、2つの概念を示しています。
 
-[![](margin-and-padding-images/margins-and-padding-sml.png "Margins and Padding Concepts")](margin-and-padding-images/margins-and-padding.png#lightbox "Margins and Padding Concepts")
+[![余白とパディングの概念](margin-and-padding-images/margins-and-padding-sml.png)](margin-and-padding-images/margins-and-padding.png#lightbox "余白とパディングの概念")
 
 [`Margin`](xref:Xamarin.Forms.View.Margin)値は加法です。 したがって、2つの隣接する要素が20ピクセルの余白を指定すると、要素間の距離は40ピクセルになります。 さらに、余白と余白は両方とも適用されるときに追加されます。これは、要素とコンテンツとの間の距離が余白と埋め込みであることを示します。
 
@@ -74,6 +74,6 @@ var stackLayout = new StackLayout {
 
 ## <a name="related-links"></a>関連リンク
 
-- [Margin](xref:Xamarin.Forms.View.Margin)
-- [余白](xref:Xamarin.Forms.Layout.Padding)
+- [余白](xref:Xamarin.Forms.View.Margin)
+- [パディング](xref:Xamarin.Forms.Layout.Padding)
 - [太さ](xref:Xamarin.Forms.Thickness)

@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c35cd6e30e7843cda0431581025aa7440a21cc29
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0a43ce2d27c8152137101d616302f6e56a57bd39
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140050"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931977"
 ---
 # <a name="communicating-between-loosely-coupled-components"></a>疎結合コンポーネント間の通信
 
@@ -29,7 +29,7 @@ Xamarin.Forms の [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) クラ
 
 [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) クラスでは、マルチキャストの発行/サブスクライブ機能を提供します。 つまり、1つのメッセージをパブリッシュする複数のパブリッシャーが存在し、同じメッセージをリッスンしている複数のサブスクライバーが存在する可能性があります。 図4-1 は、この関係を示しています。
 
-![](communicating-between-loosely-coupled-components-images/messagingcenter.png "Multicast publish-subscribe functionality")
+![マルチキャストの発行/サブスクライブ機能](communicating-between-loosely-coupled-components-images/messagingcenter.png)
 
 **図 4-1:** マルチキャスト発行/サブスクライブ機能
 

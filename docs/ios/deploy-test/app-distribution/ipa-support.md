@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: b9254afdcb6286edcffc67a1a69af8b049f08b6b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 9bb76fd43b5761f15537d37262f6950d7da2b43a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573223"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933147"
 ---
 # <a name="ipa-support-in-xamarinios"></a>Xamarin.iOS の IPA サポート
 
@@ -60,7 +60,7 @@ IPA 作成は新しい公開ワークフローに組み込まれました。 IPA
 
 プラットフォームに依存しないソリューションのための IPA を作成する前に、iOS プロジェクトがスタートアップ プロジェクトとして選択されていることを確認してください。
 
-![](ipa-support-images/setasstartup.png "Selected the iOS project as the startup project")
+![スタートアップ プロジェクトとして選択されている iOS プロジェクト](ipa-support-images/setasstartup.png)
 
 ### <a name="build-your-archive"></a>アーカイブをビルドする
 
@@ -68,15 +68,15 @@ IPA をビルドするには、アプリケーションのリリース ビルド
 
 1. Visual Studio for Mac で**リリースとデバイス**の構成を選択します。
 
-    ![](ipa-support-images/buildxs01new.png "Select the Release | Device configuration")
+    ![リリースの選択 | デバイスの構成](ipa-support-images/buildxs01new.png)
 
 1. **[ビルド]** メニューから **[発行のためのアーカイブ]** を選択します。
 
-    ![](ipa-support-images/buildxs02new.png "Select Archive for Publishing")
+    ![[発行のためのアーカイブ] を選択します](ipa-support-images/buildxs02new.png)
 
 1. アーカイブが作成されると、 **[アーカイブ]** ビューが表示されます。
 
-    ![](ipa-support-images/buildxs03new.png "The Archives view will be displayed")
+    ![[アーカイブ] ビューが表示されます](ipa-support-images/buildxs03new.png)
 
 ### <a name="sign-and-distribute-your-app"></a>アプリに署名して配布する
 
@@ -90,23 +90,23 @@ App Store 以外のビルドで、**iTunesMetadata.plist** ファイルと iTune
 
 1. 下の画像のように、 **[署名と配布...]** ボタンを選択します。
 
-    ![](ipa-support-images/buildxs04new.png "Select Sign and Distribute...")
+    ![[署名と配布] を選択します](ipa-support-images/buildxs04new.png)
 
 1. これにより、発行ウィザードが開きます。 配布チャネルとして **[アドホック]** か **[エンタープライズ]** (社内) を選択し、パッケージを作成します。
 
-    ![](ipa-support-images/distribute01.png "Select the Ad-Hoc or Enterprise In-House distribution")
+    ![[アドホック] か [エンタープライズ] (社内) を選択します](ipa-support-images/distribute01.png)
 
 1. [プロビジョニング プロファイル] 画面で、署名 ID と対応するプロビジョニング プロファイルを選択するか、別の ID で再署名します。
 
-    ![](ipa-support-images/distribute02.png "Select the signing identity and corresponding provisioning profile")
+    ![署名 ID と対応するプロビジョニング プロファイルを選択します](ipa-support-images/distribute02.png)
 
 1. パッケージの詳細を確認し、 **[発行]** をクリックします。
 
-    ![](ipa-support-images/distribute03.png "Verify the package details")
+    ![パッケージの詳細を確認します](ipa-support-images/distribute03.png)
 
 1. 最後に、コンピューターに IPA を保存します。
 
-    ![](ipa-support-images/distribute04.png "Save the IPA to the computer")
+    ![コンピューターに IPA を保存します](ipa-support-images/distribute04.png)
 
 ### <a name="building-via-the-command-line-on-mac"></a>コマンドラインからビルドする (Mac)
 
@@ -114,7 +114,7 @@ CI 環境などでは、コマンド ラインから IPA をビルドしなけ�
 
 1. [プロジェクト オプション] の [iOS IPA オプション] で、 **[Include iTunesArtwork images]\(iTunesArtwork 画像を含める\)** と **[アドホック/エンタープライズ パッケージ (IPA) をビルドする]** が選択されていることを確認します。
 
-    ![](ipa-support-images/imagexs04.png "Include iTunesArtwork images and Build ad-hoc/enterprise package IPA is checked")
+    ![[Include iTunesArtwork images]\(iTunesArtwork 画像を含める\) と [アドホック/エンタープライズ パッケージ (IPA) をビルドする] が選択されています](ipa-support-images/imagexs04.png)
 
     代わりに、テキスト エディターで **.csproj** ファイルを編集し、この 2 つに相当するプロパティを `PropertyGroup` に手動で追加できます。この構成がアプリのビルドに利用されます。
 
@@ -125,7 +125,7 @@ CI 環境などでは、コマンド ラインから IPA をビルドしなけ�
 
 1. 任意の **iTunesMetadata.plist** ファイルを含める場合、 **[...]** ボタンをクリックして一覧から選択し、 **[OK]** ボタンをクリックします。
 
-     ![](ipa-support-images/imagexs03.png "Select iTunesMetadata.plist from the list")
+     ![一覧から iTunesMetadata.plist を選択します](ipa-support-images/imagexs03.png)
 
 1. **msbuild** を直接呼び出し、コマンドラインで次のプロパティを渡します。
 
@@ -139,29 +139,29 @@ CI 環境などでは、コマンド ラインから IPA をビルドしなけ�
 
 1. **ソリューション エクスプローラー**で、Xamarin.iOS プロジェクト名を右クリックし、 **[プロパティ]** を選択して編集用に開きます。
 
-    ![](ipa-support-images/imagevs01.png "Select Properties")
+    ![[プロパティ] を選択する](ipa-support-images/imagevs01.png)
 
 2. **[iOS IPA オプション]** を選択し、 **[構成]** ドロップダウン リストから **[アドホック]** を選択します。
 
-    ![](ipa-support-images/imagevs02.png "Select Ad-Hoc from the Configuration dropdown list")
+    ![[構成] ドロップダウン リストから [アドホック] を選択します](ipa-support-images/imagevs02.png)
 
     > [!NOTE]
     > 新しい Xamarin.iOS プロジェクトでは、アドホック構成を選択できない場合があります。 選択できない場合、 **[リリース]** 構成を選択します。
 
 3. 任意の **iTunesMetadata.plist** ファイルを含める場合、 **[...]** ボタンをクリックして一覧から選択し、 **[開く]** ボタンをクリックします。
 
-    ![](ipa-support-images/imagevs03.png "Select iTunesMetadata.plist from the list")
+    ![一覧から iTunesMetadata.plist を選択します](ipa-support-images/imagevs03.png)
 
 4. 必要に応じて、IPA に **[パッケージ名]** を指定できます。指定しない場合、Xamarin.iOS プロジェクトと同じ名前が付けられます。
 5. プロジェクト プロパティに変更を保存します。
 6. **[ビルド構成]** に **[アドホック]** があれば、それを選択します。 ない場合、 **[リリース]** を選択します。
 
-    ![](ipa-support-images/imagevs05.png "Select Ad Hoc from the Build Configuration dropdown")
+    ![[ビルド構成] ドロップダウン リストから [アドホック] を選択します](ipa-support-images/imagevs05.png)
 
 7. プロジェクトをビルドし、IPA パッケージを作成します。
 8. IPA は **[Bin] の [iOS デバイス] にある [アドホック] (または[リリース])** フォルダーでビルドされます。
 
-    ![](ipa-support-images/imagevs06.png "The IPA in the file explorer")
+    ![エクスプローラーの IPA](ipa-support-images/imagevs06.png)
 
 -----
 
@@ -231,11 +231,11 @@ msbuild /p:Configuration="Release" /p:Platform="iPhone" /p:IpaPackageDir="$HOME/
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
- ![](ipa-support-images/installxs01.png "The new iOS application in the My Apps section")
+ ![新しい iOS アプリケーションが [マイ アプリ] セクションに表示されます](ipa-support-images/installxs01.png)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
- ![](ipa-support-images/installvs01.png "The new iOS application in the My Apps section")
+ ![新しい iOS アプリケーションが [マイ アプリ] セクションに表示されます](ipa-support-images/installvs01.png)
 
 -----
 

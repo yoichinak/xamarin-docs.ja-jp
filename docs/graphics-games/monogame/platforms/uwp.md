@@ -6,12 +6,12 @@ ms.assetid: C6B99E44-00C1-4139-A1B7-FCFBE8749AB1
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: aa43513154499a39c27f5ad35fce9584ce7827f8
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 59bfad17e4c3a4720360f007ddf3e85835f972fd
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70763527"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931080"
 ---
 # <a name="creating-a-monogame-uwp-project"></a>モノゲーム UWP プロジェクトの作成
 
@@ -25,7 +25,7 @@ _モノゲームを使用すると、ユニバーサル Windows プラットフ�
 
 モノゲーム UWP アプリの開発には、次のものが必要です。
 
-- Windows 10 オペレーティングシステム
+- Windows 10 オペレーティング システム
 - 任意のバージョンの Visual Studio 2017
 - Windows 10 開発者ツール
 - デバイスを開発者モードに設定する
@@ -39,23 +39,23 @@ Xbox One のゲームは、リテール版の Xbox One ハードウェアで開�
 
 必要なすべてのリソースがインストールされ、Windows 10 コンピューターで開発者モードが有効になったら、Visual Studio を使用して新しいモノゲームプロジェクトを作成できます。そのためには、次の手順を実行します。
 
-1. **ファイル** > の**新規作成** > **プロジェクトの**選択...
-1. **インストールされている** > **テンプレート** > の [  > **Visual C#** **モノゲーム**] カテゴリを選択します。
+1. **ファイル**の  >  **新規作成**  >  **プロジェクトの**選択...
+1. **インストールされている**  >  **テンプレート**  >  **Visual C#**  >  **モノゲーム**カテゴリを選択します。
 
-    ![](uwp-images/image1.png "モノゲームカテゴリ")
+    ![モノゲームカテゴリ](uwp-images/image1.png)
 
-1. **[モノゲーム Windows 10 ユニバーサルプロジェクト]** オプションを選択します。
+1. [**モノゲーム Windows 10 ユニバーサルプロジェクト**] オプションを選択します。
 
-    ![](uwp-images/image2.png "[モノゲーム Windows 10 ユニバーサルプロジェクト] オプションを選択します。")
+    ![[モノゲーム Windows 10 ユニバーサルプロジェクト] オプションを選択します。](uwp-images/image2.png)
 
 1. 新しいプロジェクトの名前を入力し、[ **OK]** をクリックします。
 [OK] をクリックした後に Visual Studio でエラーが表示された場合は、Windows 10 ツールがインストールされていることと、デバイスが開発者モードであることを確認します。
 
 Visual Studio でテンプレートの作成が完了したら、次のように実行して、空のプロジェクトが実行されていることを確認できます。
 
-![](uwp-images/image3.png "Visual Studio でテンプレートの作成が完了したら、それを実行して、空のプロジェクトが実行されていることを確認します。")
+![Visual Studio でテンプレートの作成が完了したら、それを実行して、空のプロジェクトが実行されていることを確認します。](uwp-images/image3.png)
 
-角の数値は、診断情報を提供します。 この情報を削除するには、 `App.xaml.cs` `OnLaunched`メソッドで`DEBUG`ブロック内のコードを削除します。
+角の数値は、診断情報を提供します。 この情報を削除するには、 `App.xaml.cs` メソッドでブロック内のコードを削除し `DEBUG` `OnLaunched` ます。
 
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs e)
@@ -73,23 +73,23 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 
 UWP プロジェクトは、同じプロジェクトから任意の Windows 10 デバイスに配置できます。 Windows 10 開発用コンピューターと Xbox One を設定した後、ターゲットをリモートコンピューターに切り替え、Xbox One の IP アドレスを入力することにより、UWP アプリをデプロイできます。
 
-![](uwp-images/remote.png "UWP アプリをデプロイするには、ターゲットをリモートコンピューターに切り替え、Xbox の IP アドレスを入力します。")
+![UWP アプリをデプロイするには、ターゲットをリモートコンピューターに切り替え、Xbox の IP アドレスを入力します。](uwp-images/remote.png)
 
 Xbox One では、白い境界線は Tv の安全でない領域を表します。 詳細については、「 [safe area」セクション](#safe-area-on-xbox-one)を参照してください。
 
-![](uwp-images/safearea.png "Xbox One では、白い境界線は Tv の安全でない領域を表します。")
+![Xbox One では、白い境界線は Tv の安全でない領域を表します。](uwp-images/safearea.png)
 
 ### <a name="safe-area-on-xbox-one"></a>Xbox One の安全領域
 
 コンソール用のゲームを開発するには、安全な領域を考慮する必要があります。これは、すべての重要なビジュアル (UI や HUD など) を含む、画面の中央にある領域です。 安全な領域の外側にある領域は、すべてのテレビに表示されるとは限りません。そのため、この領域に配置されているビジュアルは一部またはすべてのディスプレイで完全に非表示になる場合があります。
 
-Xbox One のモノゲームテンプレートでは、安全な領域が考慮され、白の境界線としてレンダリングされます。 この領域は、Visual Studio の [ウォッチ] ウィンドウ`Window.ClientBounds`の次の図に示すように、実行時にゲームのプロパティにも反映されます。 1920 x 1080 の表示解像度に関係なく、クライアントの境界の高さが1016であることに注意してください。
+Xbox One のモノゲームテンプレートでは、安全な領域が考慮され、白の境界線としてレンダリングされます。 この領域は `Window.ClientBounds` 、Visual Studio の [ウォッチ] ウィンドウの次の図に示すように、実行時にゲームのプロパティにも反映されます。 1920 x 1080 の表示解像度に関係なく、クライアントの境界の高さが1016であることに注意してください。
 
-![](uwp-images/clientbounds.png "1920 x 1080 の表示解像度に関係なく、クライアントの境界の高さが1016であることに注意してください。")
+![1920 x 1080 の表示解像度に関係なく、クライアントの境界の高さが1016であることに注意してください。](uwp-images/clientbounds.png)
 
 ## <a name="referencing-content-in-uwp-projects"></a>参照 (UWP プロジェクトのコンテンツを)
 
-モノゲームプロジェクトのコンテンツは、ファイルから直接参照することも、[モノゲームコンテンツパイプライン](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/content-pipeline/introduction.md)を使用して参照することもできます。 小規模なゲームプロジェクトでは、ファイルからの読み込みを簡単に行うことができます。 大規模なプロジェクトでは、コンテンツパイプラインを使用してコンテンツを最適化し、サイズと読み込み時間を短縮できるというメリットがあります。 Xbox 360 の XNA とは異なり、 `System.IO.File`クラスは xbox One UWP アプリで使用できます。
+モノゲームプロジェクトのコンテンツは、ファイルから直接参照することも、[モノゲームコンテンツパイプライン](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/content-pipeline/introduction.md)を使用して参照することもできます。 小規模なゲームプロジェクトでは、ファイルからの読み込みを簡単に行うことができます。 大規模なプロジェクトでは、コンテンツパイプラインを使用してコンテンツを最適化し、サイズと読み込み時間を短縮できるというメリットがあります。 Xbox 360 の XNA とは異なり、 `System.IO.File` クラスは Xbox ONE UWP アプリで使用できます。
 
 コンテンツパイプラインを使用したコンテンツの読み込みの詳細については、「[コンテンツパイプラインガイド](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/content-pipeline/introduction.md)」を参照してください。
 
@@ -97,12 +97,12 @@ Xbox One のモノゲームテンプレートでは、安全な領域が考慮�
 
 IOS や Android とは異なり、UWP プロジェクトは実行可能ファイルを基準としたファイルを参照できます。 単純なゲームでは、コンテンツパイプラインプロジェクトを変更してビルドしなくても、コンテンツを読み込むことができます。
 
-ファイルからを`Texture2D`読み込むには:
+ファイルからを読み込むには `Texture2D` :
 
 1. UWP プロジェクトのコンテンツフォルダーに .png ファイルを追加します。 コンテンツフォルダーにコンテンツを追加することは、XNA およびモノゲームの慣例です。
 1. 新しく追加された PNG を右クリックし、[プロパティ] を選択します。
-1. **新しい場合は**コピーする**出力ディレクトリ**にコピーする。
-1. を`Texture2D`読み込むには、ゲームの Initialize メソッドに次のコードを追加します。
+1. [**新しい場合は**コピーする**出力ディレクトリ**にコピーする。
+1. を読み込むには、ゲームの Initialize メソッドに次のコードを追加し `Texture2D` ます。
 
     ```csharp
     Texture2D texture;
@@ -112,8 +112,8 @@ IOS や Android とは異なり、UWP プロジェクトは実行可能ファイ
     }
     ```
 
-の`Texture2D`使用方法の詳細については、「[入門ゲームガイド](~/graphics-games/monogame/introduction/index.md)」を参照してください。
+の使用方法の詳細については、 `Texture2D` 「[入門ゲームガイド](~/graphics-games/monogame/introduction/index.md)」を参照してください。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 このガイドでは、ファイルの読み込み時に新しい UWP プロジェクトを作成する方法と UWP 固有の考慮事項について説明します。 UWP ゲーム全体の作成に関心がある開発者は、「[モノの概要」ゲームガイド](~/graphics-games/monogame/introduction/index.md)のモノゲームの詳細を参照できます。

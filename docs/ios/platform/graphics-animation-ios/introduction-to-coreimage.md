@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 5525373d9bf904f67bdf02d7ec8df72e7bbd3f55
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 9e0363f941784ecc488861c0d2f089a30c275a10
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032369"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937398"
 ---
 # <a name="core-image-in-xamarinios"></a>Xamarin のコアイメージ
 
@@ -28,7 +28,7 @@ _コアイメージは、iOS 5 で導入された新しいフレームワーク�
 
 これらの例では、Xamarin の iOS アプリケーションにコアイメージ機能を組み込む方法について説明します。
 
-## <a name="requirements"></a>［要件］
+## <a name="requirements"></a>必要条件
 
 Xcode の最新バージョンを使用する必要があります。
 
@@ -46,7 +46,7 @@ var ciImage = CIImage.FromCGImage(image.CGImage);
 CIFeature[] features = detector.FeaturesInImage(ciImage);
 ```
 
-特徴配列には `CIFaceFeature` オブジェクト (顔が検出された場合) が設定されます。 各面には `CIFaceFeature` があります。 `CIFaceFeature` には、次のプロパティがあります。
+特徴配列には、 `CIFaceFeature` オブジェクト (任意の顔が検出された場合) が設定されます。 `CIFaceFeature`各面にはがあります。 `CIFaceFeature` には、次のプロパティがあります。
 
 - HasMouthPosition –この顔で口が検出されたかどうかを指定します。
 - HasLeftEyePosition –この顔に対して左目が検出されたかどうかを指定します。
@@ -55,7 +55,7 @@ CIFeature[] features = detector.FeaturesInImage(ciImage);
 - LeftEyePosition –この顔の左側の視点の座標です。
 - RightEyePosition –この顔の右目の座標です。
 
-これらのすべてのプロパティの座標の原点は、左上にあります。これは、左上を原点として使用する UIKit とは異なります。 座標を使用する場合は `CIFaceFeature` 必ず ' 反転 ' してください。 CoreImage\CoreImageViewController.cs のこの非常に基本的なカスタムイメージビューでは、イメージに ' face indicator ' 三角形を描画する方法を示しています (`FlipForBottomOrigin` メソッドに注意してください)。
+これらのすべてのプロパティの座標の原点は、左上にあります。これは、左上を原点として使用する UIKit とは異なります。 座標を使用する場合 `CIFaceFeature` は、必ず ' 反転 ' してください。 CoreImage\CoreImageViewController.cs のこの非常に基本的なカスタムイメージビューでは、イメージに ' face indicator ' 三角形を描画する方法を示しています (メソッドに注意して `FlipForBottomOrigin` ください)。
 
 ```csharp
 public class FaceDetectImageView : UIView
@@ -120,7 +120,7 @@ faceView.SetNeedsDisplay();
 
 画像にフィルターを適用するには、イメージの読み込み、フィルターの作成、フィルターの適用、結果の保存 (または表示) という4つの手順を実行します。
 
-まず、`CIImage` オブジェクトにイメージを読み込みます。
+まず、イメージをオブジェクトに読み込み `CIImage` ます。
 
 ```csharp
 var uiimage = UIImage.FromFile ("photo.JPG");
@@ -135,7 +135,7 @@ sepia.Image = ciimage;
 sepia.Intensity = 0.8f;
 ```
 
-3番目の方法として、`OutputImage` プロパティにアクセスし、`CreateCGImage` メソッドを呼び出して最終結果を表示します。
+3番目に、プロパティにアクセス `OutputImage` し、メソッドを呼び出して最終的な結果を表示し `CreateCGImage` ます。
 
 ```csharp
 CIImage output = sepia.OutputImage;
@@ -150,9 +150,9 @@ var ui = UIImage.FromImage (cgimage);
 imgview.Image = ui;
 ```
 
-これらのスクリーンショットは、CoreImage. .zip サンプルコードに示されている `CISepia` および `CIHueAdjust` フィルターの結果を示しています。
+これらのスクリーンショットは、 `CISepia` `CIHueAdjust` CoreImage.zip サンプルコードに示されているフィルターとフィルターの結果を示しています。
 
-`CIColorControls` フィルターの例については、「[イメージレシピのコントラクトと明るさの調整](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image)」を参照してください。
+フィルターの例については、「[イメージレシピのコントラクトと明るさの調整](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image)」を参照してください `CIColorControls` 。
 
 ```csharp
 var uiimage = UIImage.FromFile("photo.JPG");
@@ -212,7 +212,7 @@ foreach (var filter in filters){
 
 リストのカテゴリの出力はシミュレーターでは次のようになります。リストをスクロールして、すべてのフィルターとそのパラメーターを表示できます。
 
- [![](introduction-to-coreimage-images/coreimage05.png "The List Categories output looks like this on the simulator")](introduction-to-coreimage-images/coreimage05.png#lightbox)
+ [![リストのカテゴリの出力は、シミュレーターでは次のようになります。](introduction-to-coreimage-images/coreimage05.png)](introduction-to-coreimage-images/coreimage05.png#lightbox)
 
 一覧表示されている各フィルターは、Xamarin. iOS のクラスとして公開されています。そのため、アセンブリブラウザーで Xamarin. iOS. CoreImage API を探索したり、Visual Studio for Mac または Visual Studio でオートコンプリートを使用したりすることもできます。 
 

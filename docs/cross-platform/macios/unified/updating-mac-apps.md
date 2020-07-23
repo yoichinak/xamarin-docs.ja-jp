@@ -6,12 +6,12 @@ ms.assetid: 26673CC5-C1E5-4BAC-BEF4-9A386B296FD5
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: 4590e5d987acbb5bd97b41477e6aafa7c17d7778
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 956d3285459d8ed93f2db84fa0bd2bb2880d3d7a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73015319"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936514"
 ---
 # <a name="updating-existing-mac-apps"></a>既存の Mac アプリを更新しています
 
@@ -29,13 +29,13 @@ Xamarin には、Visual Studio for Mac と Visual Studio の両方のツール�
 
 ## <a name="automated-updating"></a>自動更新
 
-警告が修正されたら、Visual Studio for Mac または Visual Studio で既存の Mac プロジェクトを選択し、 **[プロジェクト]** メニューから **[Xamarin. Mac Unified API に移行]** を選択します。 (例:
+警告が修正されたら、Visual Studio for Mac または Visual Studio で既存の Mac プロジェクトを選択し、[**プロジェクト**] メニューから [ **Xamarin. Mac Unified API に移行**] を選択します。 次に例を示します。
 
-![](updating-mac-apps-images/beta-tool1.png "Choose Migrate to Xamarin.Mac Unified API from the Project menu")
+![[プロジェクト] メニューから [Xamarin. Mac Unified API に移行する] を選択します。](updating-mac-apps-images/beta-tool1.png)
 
 自動移行を実行する前に、この警告に同意する必要があります (当然、この adventure 着手の前にバックアップとソース管理があることを確認する必要があります)。
 
-![](updating-mac-apps-images/migrate01.png "Agree to this warning before the automated migration will run")
+![自動移行を実行する前に、この警告に同意します](updating-mac-apps-images/migrate01.png)
 
 Xamarin. Mac アプリケーションで Unified API を使用するときに選択できるターゲットフレームワークの種類として、次の2つがサポートされています。
 
@@ -52,15 +52,15 @@ Xamarin. Mac アプリケーションで Unified API を使用するときに選
 
 ### <a name="1-update-project-type--build-target"></a>1. ビルドターゲット & プロジェクトの種類を更新します
 
-**.Csproj**ファイルのプロジェクトフレーバーを `42C0BBD9-55CE-4FC1-8D90-A7348ABAFB23` から `A3F8F2AB-B479-4A4A-A458-A89E7DC349F1`に変更します。 テキストエディターで **.csproj**ファイルを編集し、次に示すように `<ProjectTypeGuids>` 要素の最初の項目を置き換えます。
+**.Csproj**ファイルのプロジェクトフレーバーをからに変更 `42C0BBD9-55CE-4FC1-8D90-A7348ABAFB23` し `A3F8F2AB-B479-4A4A-A458-A89E7DC349F1` ます。 テキストエディターで **.csproj**ファイルを編集し、 `<ProjectTypeGuids>` 次に示すように、要素の最初の項目を置き換えます。
 
-![](updating-mac-apps-images/csproj.png "Edit the csproj file in a text editor, replacing the first item in the ProjectTypeGuids element as shown")
+![テキストエディターで .csproj ファイルを編集し、表示されているように ProjectTypeGuids 要素の最初の項目を置き換えます。](updating-mac-apps-images/csproj.png)
 
-次に示すように、`Xamarin.Mac.targets` を含む**Import**要素を `Xamarin.Mac.CSharp.targets` に変更します。
+**Import** `Xamarin.Mac.targets` 次に示すように、を含む Import 要素をに変更 `Xamarin.Mac.CSharp.targets` します。
 
-![](updating-mac-apps-images/csproj2.png "Change the Import element that contains Xamarin.Mac.targets to Xamarin.Mac.CSharp.targets as shown")
+![図に示すように、Xamarin. Mac. ターゲットを含む Import 要素を変更します。](updating-mac-apps-images/csproj2.png)
 
-`<AssemblyName>` 要素の後に次のコード行を追加します。
+要素の後に次のコード行を追加し `<AssemblyName>` ます。
 
 ```xml
 <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
@@ -70,35 +70,35 @@ Xamarin. Mac アプリケーションで Unified API を使用するときに選
 
 例:
 
-![\<AssemblyName > 要素の後に、次のコード行を追加します。](updating-mac-apps-images/csproj3.png)
+![AssemblyName> 要素の後に、次のコード行を追加します。 \<](updating-mac-apps-images/csproj3.png)
 
 ### <a name="2-update-project-references"></a>2. プロジェクト参照を更新する
 
-Mac アプリケーションプロジェクトの **[参照設定]** ノードを展開します。 最初に、このスクリーンショットのような * **XamMac**の参照が表示されます (プロジェクトの種類を変更しただけなので)。
+Mac アプリケーションプロジェクトの [**参照設定**] ノードを展開します。 最初に、このスクリーンショットのような * **XamMac**の参照が表示されます (プロジェクトの種類を変更しただけなので)。
 
-![](updating-mac-apps-images/references.png "It will initially show a broken- XamMac reference similar to this screenshot")
+![最初に、このスクリーンショットのような XamMac の参照が表示されます。](updating-mac-apps-images/references.png)
 
-**XamMac**エントリの横にある**歯車アイコン**をクリックし、 **[削除]** を選択して、壊れている参照を削除します。
+**XamMac**エントリの横にある**歯車アイコン**をクリックし、[**削除**] を選択して、壊れている参照を削除します。
 
-次に、**ソリューションエクスプローラー**の **[参照]** フォルダーを右クリックし、 **[参照の編集]** を選択します。 参照の一覧の一番下までスクロールし、 **Xamarin. Mac**以外のチェックボックスをオンにします。
+次に、**ソリューションエクスプローラー**の [**参照**] フォルダーを右クリックし、[**参照の編集**] を選択します。 参照の一覧の一番下までスクロールし、 **Xamarin. Mac**以外のチェックボックスをオンにします。
 
-![](updating-mac-apps-images/references2.png "Scroll to the bottom of the list of references and place a check besides Xamarin.Mac")
+![参照の一覧の一番下までスクロールし、Xamarin. Mac 以外のチェックボックスをオンにします。](updating-mac-apps-images/references2.png)
 
 **[OK]** をクリックして、プロジェクト参照の変更を保存します。
 
 ### <a name="3-remove-monomac-from-namespaces"></a>3. 名前空間からのモノ Mac の削除
 
-`using` ステートメント内の名前**空間、また**は classname が完全に修飾されている場所 (たとえば、 `MonoMac.AppKit` が `AppKit`) になります。
+ステートメント内の名前空間**から、** `using` または classname が完全に修飾されている場所 (たとえば、 `MonoMac.AppKit`がだけになり `AppKit` ます)。
 
 ### <a name="4-remap-types"></a>4. リマップ型
 
-以前に使用されていたいくつかの型を置き換える[ネイティブ型](~/cross-platform/macios/nativetypes.md)が導入されました。たとえば、`System.Drawing.RectangleF` のインスタンス (など) `CoreGraphics.CGRect` に置き換えられます。 型の完全な一覧については、「[ネイティブ型](~/cross-platform/macios/nativetypes.md)」ページを参照してください。
+以前に使用されていたいくつかの型 (たとえば、のインスタンス) を置き換える[ネイティブ型](~/cross-platform/macios/nativetypes.md)が導入されました `System.Drawing.RectangleF` `CoreGraphics.CGRect` 。 型の完全な一覧については、「[ネイティブ型](~/cross-platform/macios/nativetypes.md)」ページを参照してください。
 
 ### <a name="5-fix-method-overrides"></a>5. メソッドのオーバーライドを修正する
 
-一部の `AppKit` メソッドでは、新しい[ネイティブ型](~/cross-platform/macios/nativetypes.md)(`nint`など) を使用するようにシグネチャが変更されています。 カスタムサブクラスでこれらのメソッドをオーバーライドすると、署名が一致しなくなり、エラーが発生します。 ネイティブ型を使用して新しいシグネチャに一致するようにサブクラスを変更することで、これらのメソッドのオーバーライドを修正します。 
+一部 `AppKit` のメソッドでは、新しい[ネイティブ型](~/cross-platform/macios/nativetypes.md)(など) を使用するようにシグネチャが変更されてい `nint` ます。 カスタムサブクラスでこれらのメソッドをオーバーライドすると、署名が一致しなくなり、エラーが発生します。 ネイティブ型を使用して新しいシグネチャに一致するようにサブクラスを変更することで、これらのメソッドのオーバーライドを修正します。 
 
-## <a name="considerations"></a>注意事項
+## <a name="considerations"></a>考慮事項
 
 アプリが1つ以上のコンポーネントまたは NuGet パッケージに依存している場合は、既存の Xamarin. Mac プロジェクトを Classic API から新しい Unified API に変換する際には、次の点に注意する必要があります。 
 
@@ -113,7 +113,7 @@ Unified API サポートを利用するために NuGet に変更が加えられ�
 この時間が経過するまでは、コンポーネントと同じように、プロジェクトに含まれているすべての NuGet パッケージを、統合された Api をサポートするバージョンに切り替え、後でクリーンビルドを実行する必要があります。
 
 > [!IMPORTANT]
-> _同じ Xamarin に "エラー3によって ' 0.0.000 ' と ' xamarin. .dll ' の両方を含めることはできません" という形式のエラーが発生した場合は、' ' が明示的に参照されているのに対し、' モノの mac .dll ' は ' xxx, Version =, Culture = ニュートラル,PublicKeyToken = null ' "_ アプリケーションを統合 api に変換した後、通常は、Unified API に更新されていないコンポーネントまたは NuGet パッケージがプロジェクトに存在していることが原因です。 既存のコンポーネントまたは NuGet を削除し、統合された Api をサポートし、クリーンビルドを実行するバージョンに更新する必要があります。
+> "エラー 3" という形式のエラーが発生した場合は _、同じ Xamarin に "monomac.dll" と "Xamarin.Mac.dll" の両方を含めることはできません。 Mac プロジェクト-' Xamarin.Mac.dll ' は明示的に参照されていますが、' monomac.dll ' は ' xxx, Version = 0.0.000, Culture = 中立的, PublicKeyToken = null ' によって参照さ_れています。アプリケーションを統合 api に変換した後は、通常、Unified API に更新されていないコンポーネントまたは NuGet パッケージがプロジェクトにあることが原因 既存のコンポーネントまたは NuGet を削除し、統合された Api をサポートし、クリーンビルドを実行するバージョンに更新する必要があります。
 
 ## <a name="enabling-64-bit-builds-of-xamarinmac-apps"></a>Xamarin. Mac アプリの64ビットビルドを有効にする
 

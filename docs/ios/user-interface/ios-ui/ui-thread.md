@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 584b398deafd233fdbe6b24189a2047ae712fdcf
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 01f95641a0cf65341479c51b2f6314a0ef3ea2de
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573522"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939075"
 ---
 # <a name="working-with-the-ui-thread-in-xamarinios"></a>Xamarin で UI スレッドを操作する
 
@@ -36,7 +36,7 @@ InvokeOnMainThread ( () => {
 
 Xamarin の iOS アプリケーションのデバッグ中に、コードが間違ったスレッドから UI コントロールにアクセスしようとした場合に、エラーがスローされます。 これは、InvokeOnMainThread メソッドを使用して、これらの問題を追跡して修正するのに役立ちます。 これは、デバッグ中にのみ発生し、リリースビルドではエラーをスローしません。 次のようなエラーメッセージが表示されます。
 
- ![](ui-thread-images/image10.png "UI Thread Execution")
+ ![UI スレッドの実行](ui-thread-images/image10.png)
 
  <a name="Background_Thread_Example"></a>
 

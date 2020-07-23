@@ -1,6 +1,6 @@
 ---
-title: title:"エフェクトのパラメーターを添付プロパティとして渡す" の説明:"添付プロパティは、実行時のプロパティの変更に応答するエフェクトのパラメーターの定義に使用できます。
-description: 'この記事では、添付プロパティを使用してエフェクトにパラメーターを渡す方法と、実行時にパラメーターを変更する方法を示します。" ms.prod: xamarin ms.assetid:DFCDCB9F-17DD-4117-BD53-B4FB206BB387 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:08/05/2016 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: エフェクトのパラメーターを添付プロパティとして渡す
+description: 添付プロパティは、実行時のプロパティの変更に応答するエフェクトのパラメーターの定義に使用できます。 この記事では、添付プロパティを使用してエフェクトにパラメーターを渡す方法と、実行時にパラメーターを変更する方法を示します。
 ms.prod: xamarin
 ms.assetid: DFCDCB9F-17DD-4117-BD53-B4FB206BB387
 ms.technology: xamarin-forms
@@ -10,12 +10,12 @@ ms.date: 08/05/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cf03d0c32d80d7a1821e323acdc84a351413efec
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: 71238775e9cc9d3e32ab9c9287e5b52c759ca9eb
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84138880"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939933"
 ---
 # <a name="passing-effect-parameters-as-attached-properties"></a>エフェクトのパラメーターを添付プロパティとして渡す
 
@@ -38,11 +38,11 @@ _添付プロパティは、実行時のプロパティの変更に応答する�
 
 サンプル アプリケーションは、[`Label`](xref:Xamarin.Forms.Label) コントロールによって表示されるテキストに影を追加する `ShadowEffect` を示します。 さらに、実行時に影の色を変更できます。 次の図に、サンプル アプリケーション内の各プロジェクトの役割と、それらの関係を示します。
 
-![](attached-properties-images/shadow-effect.png "Shadow Effect Project Responsibilities")
+![影エフェクト プロジェクトの責任](attached-properties-images/shadow-effect.png)
 
 `HomePage` 上の [`Label`](xref:Xamarin.Forms.Label) コントロールは、各プラットフォーム固有のプロジェクト内の `LabelShadowEffect` によってカスタマイズされます。 パラメーターは `ShadowEffect` クラス内の添付プロパティを通じて各 `LabelShadowEffect` に渡されます。 各プラットフォームの `PlatformEffect` クラスから、各 `LabelShadowEffect` クラスが派生します。 これにより、次のスクリーンショットに示すように、`Label` コントロールによって表示されるテキストに影が追加されます。
 
-![](attached-properties-images/screenshots.png "Shadow Effect on each Platform")
+![各プラットフォーム上の影エフェクト](attached-properties-images/screenshots.png)
 
 ## <a name="creating-effect-parameters"></a>エフェクトのパラメーターの作成
 

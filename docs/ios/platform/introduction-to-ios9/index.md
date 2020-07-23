@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: de4b6e8b95eed33e7fb38baf51a0da73cef313c0
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: bfa2a74bf9cd30fb7b9888ecd7339a80fe472c9e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574133"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939088"
 ---
 # <a name="introduction-to-ios-9"></a>iOS 9 の概要
 
 _この記事では、iOS 9 for Xamarin の開発者が利用できる、新しい Api と変更された Api と機能について説明します。_
 
-![](images/ios9-sml.png "The iOS 9 logo")
+![IOS 9 ロゴ](images/ios9-sml.png)
 
 Apple では、iOS 9 に新しい Api とサービスがいくつか追加されており、既存の機能に多くの機能強化が加えられています。
 

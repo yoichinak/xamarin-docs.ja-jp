@@ -10,12 +10,12 @@ ms.date: 11/26/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d28a9079d27310dde0e5ea5bf80c83895bbcf1d4
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d5a5dc7de2835038079a1bdf8af5be44a173f86e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84571572"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939829"
 ---
 # <a name="customizing-an-entry"></a>Entry のカスタマイズ
 
@@ -27,7 +27,7 @@ _Xamarin.Forms の Entry コントロールによって、1 行のテキスト�
 
 次の図は、[`Entry`](xref:Xamarin.Forms.Entry) コントロールと、それを実装する、対応するネイティブ コントロールの関係を示しています。
 
-![](entry-images/entry-classes.png "Relationship Between Entry Control and Implementing Native Controls")
+![Entry コントロールと実装するネイティブ コントロールの関係](entry-images/entry-classes.png)
 
 レンダリング プロセスを活用して各プラットフォーム上の [`Entry`](xref:Xamarin.Forms.Entry) コントロールにカスタム レンダラーを作成することで、プラットフォーム固有のカスタマイズを実装することができます。 その実行プロセスは次のとおりです。
 
@@ -108,11 +108,11 @@ public class MainPage : ContentPage
 
 次の図に、サンプル アプリケーション内の各プロジェクトの役割と、それらの関係を示します。
 
-![](entry-images/solution-structure.png "MyEntry Custom Renderer Project Responsibilities")
+![MyEntry カスタム レンダラーのプロジェクトの役割](entry-images/solution-structure.png)
 
 `MyEntry` コントロールはプラットフォーム固有の `MyEntryRenderer` クラスによってレンダリングされます。このクラスはすべて各プラットフォームの `EntryRenderer` クラスから派生しています。 この結果、次のスクリーンショットに示すように、プラットフォーム固有の背景色を使用してそれぞれの `MyEntry` コントロールがレンダリングされます。
 
-![](entry-images/screenshots.png "MyEntry Control on each Platform")
+![プラットフォームごとの MyEntry コントロール](entry-images/screenshots.png)
 
 `EntryRenderer` クラスは `OnElementChanged` メソッドを公開します。このメソッドは、該当するネイティブ コントロールをレンダリングするために、Xamarin.Forms コントロールの作成時に呼び出されます。 このメソッドでは、`OldElement` および `NewElement` プロパティを含む `ElementChangedEventArgs` パラメーターを受け取ります。 これらのプロパティは、レンダラーがアタッチされて*いた* Xamarin.Forms 要素と、レンダラーが現在アタッチされて*いる* Xamarin.Forms 要素をそれぞれ表しています。 サンプル アプリケーションでは、`OldElement` プロパティが `null` になり、`NewElement` プロパティに `MyEntry` コントロールへの参照が含まれます。
 

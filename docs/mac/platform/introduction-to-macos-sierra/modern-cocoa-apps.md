@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 13d1709f77b312dbdf357c8ce1871727b2073fef
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: f8c449045de292590aa833324d443579332be999
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574432"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935812"
 ---
 # <a name="building-modern-macos-apps"></a>最新の macOS アプリの構築
 
@@ -24,7 +24,7 @@ _この記事では、開発者が Xamarin. Mac で最新の macOS アプリを�
 
 最新の外観には、次に示すアプリ例のような最新のウィンドウとツールバーの外観が含まれます。
 
-[![](modern-cocoa-apps-images/content08.png "An example of a modern Mac app UI")](modern-cocoa-apps-images/content08.png#lightbox)
+[![最新の Mac アプリ UI の例](modern-cocoa-apps-images/content08.png)](modern-cocoa-apps-images/content08.png#lightbox)
 
 <a name="Enabling-Full-Sized-Content-Views"></a>
 
@@ -145,11 +145,11 @@ topConstraint.Active = true;
 
 通常の macOS ウィンドウには、ウィンドウの上端に沿って実行される標準のタイトルバーが含まれています。 ウィンドウにツールバーも含まれている場合は、次のタイトルバー領域の下に表示されます。
 
-[![](modern-cocoa-apps-images/content02.png "A standard Mac Toolbar")](modern-cocoa-apps-images/content02.png#lightbox)
+[![標準の Mac ツールバー](modern-cocoa-apps-images/content02.png)](modern-cocoa-apps-images/content02.png#lightbox)
 
 簡素化されたツールバーを使用すると、タイトル領域が消え、ツールバーがウィンドウの [閉じる]、[最小化]、[最大化] の各ボタンを使用して、タイトルバーの位置に移動します。
 
-[![](modern-cocoa-apps-images/content03.png "A streamlined Mac Toolbar")](modern-cocoa-apps-images/content03.png#lightbox)
+[![簡略化した Mac ツールバー](modern-cocoa-apps-images/content03.png)](modern-cocoa-apps-images/content03.png#lightbox)
 
 合理化されたツールバーを有効にするには `ViewWillAppear` 、のメソッドをオーバーライド `NSViewController` し、次のようにします。
 
@@ -171,7 +171,7 @@ public override void ViewWillAppear ()
 
 アプリの設計によっては、開発者は、タイトルバー領域を、タイトル/ツールバー領域のすぐ下に表示されるアクセサリビューコントローラーで補完し、現在参加しているアクティビティに基づいてユーザーにコンテキストに依存するコントロールを提供することもできます。
 
-[![](modern-cocoa-apps-images/content04.png "An example Accessory View Controller")](modern-cocoa-apps-images/content04.png#lightbox)
+[![アクセサリビューコントローラーの例](modern-cocoa-apps-images/content04.png)](modern-cocoa-apps-images/content04.png#lightbox)
 
 アクセサリビューコントローラーは、開発者の関与なしで、システムによって自動的にぼやけてサイズが変更されます。
 
@@ -180,13 +180,13 @@ public override void ViewWillAppear ()
 1. **ソリューション エクスプローラー**で `Main.storyboard` ファイルをダブルクリックして、編集用に開きます。
 2. **カスタムビューコントローラー**をウィンドウの階層にドラッグします。 
 
-    [![](modern-cocoa-apps-images/content05.png "Adding a new Custom View Controller")](modern-cocoa-apps-images/content05.png#lightbox)
+    [![新しいカスタムビューコントローラーの追加](modern-cocoa-apps-images/content05.png)](modern-cocoa-apps-images/content05.png#lightbox)
 3. アクセサリビューの UI のレイアウト: 
 
-    [![](modern-cocoa-apps-images/content06.png "Designing the new view")](modern-cocoa-apps-images/content06.png#lightbox)
+    [![新しいビューのデザイン](modern-cocoa-apps-images/content06.png)](modern-cocoa-apps-images/content06.png#lightbox)
 4. アクセサリビューを、その UI の**アウトレット**とその他の**アクション**または**アウトレット**として公開します。 
 
-    [![](modern-cocoa-apps-images/content07.png "Adding the required OUtlet")](modern-cocoa-apps-images/content07.png#lightbox)
+    [![必要なアウトレットの追加](modern-cocoa-apps-images/content07.png)](modern-cocoa-apps-images/content07.png#lightbox)
 5. 変更を保存します。
 6. Visual Studio for Mac に戻り、変更を同期します。
 
@@ -248,7 +248,7 @@ MacOS は完全にローカライズされているため、 `Left` `Right` `NSL
 
 さらに、macOS システムは、アクセサリビューコントローラーをアプリのウィンドウに追加する場合があります。 たとえば、いくつかのアプリのウィンドウが1つの仮想ウィンドウにマージされるタブ付きウィンドウを作成するには、次のようにします。
 
-[![](modern-cocoa-apps-images/content08.png "An example of a tabbed Mac Window")](modern-cocoa-apps-images/content08.png#lightbox)
+[![タブ付きの Mac ウィンドウの例](modern-cocoa-apps-images/content08.png)](modern-cocoa-apps-images/content08.png#lightbox)
 
 通常、開発者は Xamarin. Mac アプリで [タブ付きウィンドウを使用する] の操作を制限する必要があります。システムは次のように自動的に処理します。
 
@@ -430,7 +430,7 @@ public override void GetNewWindowForTab (NSObject sender)
 
 レイヤーのバッキングを有効にするには、 `WantsLayer` `NSView` `true` [**ビュー効果インスペクター** ] の [Xcode の Interface Builder 内またはその内部で、次のように**コアアニメーションレイヤー**をチェックします。
 
-[![](modern-cocoa-apps-images/content09.png "The View Effects Inspector")](modern-cocoa-apps-images/content09.png#lightbox)
+[![ビュー効果インスペクター](modern-cocoa-apps-images/content09.png)](modern-cocoa-apps-images/content09.png#lightbox)
 
 <a name="Redrawing-Views-with-Layers"></a>
 
@@ -792,7 +792,7 @@ Apple では、次のことを提案しています。
 
 Apple では、Xcode の Interface Builder にいくつかの機能が用意されており、ローカリゼーションをサポートするアプリの UI を設計または編集するときに開発者が使用できます。 **属性インスペクター**の [**テキストの方向**] セクションでは、開発者は、選択したテキストベースのビューで方向を使用および更新する方法に関するヒントを提供できます (など `NSTextField` )。
 
-[![](modern-cocoa-apps-images/content10.png "The Text Direction options")](modern-cocoa-apps-images/content10.png#lightbox)
+[![[テキストの方向] オプション](modern-cocoa-apps-images/content10.png)](modern-cocoa-apps-images/content10.png#lightbox)
 
 **テキストの方向**には、次の3つの値を指定できます。
 
@@ -851,7 +851,7 @@ var button2 = NSButton.CreateButton (myTitle, myImage, () => {
 
 最新の macOS アプリでは、イメージの作成、編集、プレゼンテーションアプリに適した新しい濃いインターフェイスの外観を採用できます。
 
-[![](modern-cocoa-apps-images/content11.png "An example of a dark Mac Window UI")](modern-cocoa-apps-images/content11.png#lightbox)
+[![Mac ウィンドウのダーク UI の例](modern-cocoa-apps-images/content11.png)](modern-cocoa-apps-images/content11.png#lightbox)
 
 これを行うには、ウィンドウが表示される前に1行のコードを追加します。 次に例を示します。
 
@@ -948,7 +948,7 @@ Apple には、次のように、開発者が最も多くの Mac プラットフ
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 この記事では、開発者が Xamarin. Mac で最新の macOS アプリを構築するために使用できるいくつかのヒント、機能、および手法について説明しました。
 

@@ -10,16 +10,16 @@ ms.date: 12/13/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 40af5aeaa51025dae70113faa6f7ff83edf43c73
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5fa9c7592ecd2cb314ce12d7e303677447a5e104
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138026"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931171"
 ---
 # <a name="layout-compression"></a>レイアウト圧縮
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutcompression)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutcompression)
 
 _レイアウトの圧縮では、ページレンダリングのパフォーマンスを向上させるために、指定したレイアウトがビジュアルツリーから削除されます。この記事では、レイアウト圧縮を有効にする方法と、それによってもたらされる利点について説明します。_
 
@@ -36,7 +36,7 @@ Xamarin.Forms2つの一連の再帰メソッド呼び出しを使用してレイ
 
 たとえば、Facebook にログインするためのサンプルアプリケーションの次のボタンを考えてみます。
 
-![](layout-compression-images/facebook-button.png "Facebook Button")
+![Facebook ボタン](layout-compression-images/facebook-button.png)
 
 このボタンは、次の XAML ビュー階層でカスタムコントロールとして指定されます。
 
@@ -60,7 +60,7 @@ Xamarin.Forms2つの一連の再帰メソッド呼び出しを使用してレイ
 
 結果として生成される入れ子になったビュー階層は、 [Xamarin Inspector](~/tools/inspector/index.md)で調べることができます。 Android では、入れ子になったビュー階層に17個のビューが含まれています。
 
-![](layout-compression-images/no-compression.png "View Hierarchy for Facebook Button")
+![Facebook ボタンの階層を表示する](layout-compression-images/no-compression.png)
 
 レイアウト圧縮は、 Xamarin.Forms iOS プラットフォームと Android プラットフォームのアプリケーションで使用でき、指定されたレイアウトをビジュアルツリーから削除することによってビューの入れ子をフラット化することを目的としています。これにより、ページレンダリングのパフォーマンスが向上します。 提供されるパフォーマンスの利点は、ページの複雑さ、使用されているオペレーティングシステムのバージョン、およびアプリケーションが実行されているデバイスによって異なります。 ただし、パフォーマンスが最も大きく向上するのは、古いデバイスの場合です。
 
@@ -101,7 +101,7 @@ Facebook ボタンの場合、次の3つのレイアウトクラスでレイア�
 
 Android では、次のように、入れ子になったビュー階層で14個のビューが生成されます。
 
-![](layout-compression-images/layout-compression.png "View Hierarchy for Facebook Button with Layout Compression")
+![レイアウト圧縮を使用した Facebook ボタンの階層の表示](layout-compression-images/layout-compression.png)
 
 17ビューの入れ子になった元のビュー階層と比較して、これは17% のビュー数の減少を表します。 この削減はあまり意味がないかもしれませんが、ページ全体に対するビューの縮小がより重要になる場合があります。
 
@@ -111,13 +111,13 @@ Android では、次のように、入れ子になったビュー階層で14個�
 
 サンプルアプリケーションの [Facebook] ボタンの場合、レイアウト圧縮と高速レンダラーを組み合わせることで、入れ子になったビュー階層で8つのビューが生成されます。
 
-![](layout-compression-images/layout-compression-with-fast-renderers.png "View Hierarchy for Facebook Button with Layout Compression and Fast Renderers")
+![レイアウトの圧縮と高速レンダラーを使用した Facebook ボタンの階層の表示](layout-compression-images/layout-compression-with-fast-renderers.png)
 
 17ビューの入れ子になった元のビュー階層と比較して、これは52% の減少を表します。
 
 サンプルアプリケーションには、実際のアプリケーションから抽出されたページが含まれています。 レイアウトの圧縮と高速レンダラーを使用しない場合、ページは Android で130ビューの入れ子になったビュー階層を生成します。 適切なレイアウトクラスで高速レンダラーとレイアウト圧縮を有効にすると、入れ子になったビュー階層が70ビューに減少し、46% が減少します。
 
-## <a name="summary"></a>まとめ
+## <a name="summary"></a>要約
 
 レイアウトの圧縮では、ページレンダリングのパフォーマンスを向上させるために、指定したレイアウトがビジュアルツリーから削除されます。 この操作によって得られるパフォーマンスのメリットは、ページの複雑さ、使用しているオペレーティング システムのバージョン、このアプリケーションが実行されているデバイスによって異なります。 ただし、パフォーマンスが最も大きく向上するのは、古いデバイスの場合です。
 

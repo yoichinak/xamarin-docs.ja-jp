@@ -8,18 +8,18 @@ ms.custom: xamu-video
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: e166f513a75faaa082e8557dc6f610f014547a25
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: b86f3a159a144f02ea13663bfddb41ed0100f740
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574144"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931405"
 ---
 # <a name="multitasking-for-ipad-in-xamarinios"></a>Xamarin の iPad のマルチタスキング
 
 _iOS 9 では、スライドオーバービューまたは分割ビューを使用して、同時に実行される2つのアプリをサポートしています。動画を再生するビデオもサポートしています。_
 
-![](multitasking-images/about02-sml.png "分割画面の例") ![](multitasking-images/about03-sml.png "画像内の例")
+![分割画面の例](multitasking-images/about02-sml.png) ![画像内の例](multitasking-images/about03-sml.png)
 
 iOS 9 では、特定の iPad ハードウェアで同時に2つのアプリを実行するためのマルチタスキングサポートが追加されています。 IPad のマルチタスキングは、次の機能によってサポートされています。
 
@@ -64,7 +64,7 @@ iOS 9 では、iPad での新しいマルチタスク機能を提供していま
 
 スライドオーバー機能を使用すると、ユーザーは2つ目のアプリを選択し、それを小さいスライド式パネルに表示して、すばやく対話することができます。 パネル上のスライドは一時的なものであり、ユーザーが再びメインアプリの操作に戻ると閉じられます。
 
-[![](multitasking-images/about01.png "The Slide Over panel")](multitasking-images/about01.png#lightbox)
+[![パネル上のスライド](multitasking-images/about01.png)](multitasking-images/about01.png#lightbox)
 
 重要なのは、ユーザーが2つのアプリをサイドバイサイドで実行することと、開発者がこのプロセスを制御できないことを決定することです。 結果として、Xamarin の iOS アプリがパネル上のスライドで正しく動作するようにするために、次のことを行う必要があります。
 
@@ -79,7 +79,7 @@ iOS 9 では、iPad での新しいマルチタスク機能を提供していま
 
 サポートされている iPad ハードウェア (iPad Air 2、iPad ミニ4、iPad Pro のみ) では、ユーザーは2つ目のアプリを選択して、現在実行中のアプリと並べて分割画面モードで実行できます。 ユーザーは、画面上の区切り線をドラッグすることによって、各アプリが占めるメイン画面の割合を制御できます。
 
-[![](multitasking-images/about02.png "The Split View")](multitasking-images/about02.png#lightbox)
+[![分割ビュー](multitasking-images/about02.png)](multitasking-images/about02.png#lightbox)
 
 スライドオーバーと同様に、ユーザーは2つのアプリを同時に実行することを決定します。開発者はこのプロセスを制御できません。 その結果、分割ビューでは、次のような要件が Xamarin. iOS アプリに配置されます。
 
@@ -94,7 +94,7 @@ iOS 9 では、iPad での新しいマルチタスク機能を提供していま
 
 ピクチャの新しい画像機能 ( _PIP_とも呼ばれます) を使用すると、ユーザーは、実行中の他のアプリの上に画面上の任意の場所に配置できる小さなフローティングウィンドウでビデオを視聴できます。
 
-[![](multitasking-images/about03.png "An example Picture in Picture floating window")](multitasking-images/about03.png#lightbox)
+[![Picture フローティングウィンドウの画像の例](multitasking-images/about03.png)](multitasking-images/about03.png#lightbox)
 
 スライドオーバービューおよび分割ビューの場合と同様に、ユーザーは画像内のビデオを画像モードで視聴する操作を完全に制御できます。 アプリの主要な機能がビデオを視聴する場合は、PIP モードで正しく動作するように変更を加える必要があります。 それ以外の場合、PIP をサポートするために変更は必要ありません。
 
@@ -118,7 +118,7 @@ iOS 9 では、iPad での新しいマルチタスク機能を提供していま
 
 IOS 9 より前では、特定のデバイスの画面サイズと向きに合わせてアプリを設計できました。 アプリは、スライドアウトパネルまたは分割ビューモードで実行できるようになったため、デバイスの物理的な向きや画面のサイズに関係なく、iPad 上のコンパクトまたは標準の水平方向のサイズクラスで実行されていることがわかります。
 
-[![](multitasking-images/sizeclasses01.png "Screen Size and Orientation Considerations")](multitasking-images/sizeclasses01.png#lightbox)
+[![画面のサイズと向きに関する考慮事項](multitasking-images/sizeclasses01.png)](multitasking-images/sizeclasses01.png#lightbox)
 
 IPad では、全画面アプリには、標準の水平方向と垂直方向のサイズのクラスがあります。 IPhone 6 Plus および iPhone 6s Plus では、すべての iPhones が、双方向にコンパクトなサイズクラスを備えています。 IPhone 6 Plus および iPhone 6s Plus と横モードには、通常の水平方向のサイズクラスとコンパクトな垂直方向のサイズクラス (iPad ミニなど) があります。
 
@@ -126,17 +126,17 @@ IPad では、全画面アプリには、標準の水平方向と垂直方向の
 
 | **細かく** | **プライマリアプリ** | **セカンダリアプリ** |
 |--- |--- |--- |
-| **[縦]** |画面の75%<br />水平方向に圧縮<br />標準縦|画面の25%<br />水平方向に圧縮<br />標準縦|
-| **[横]** |画面の75%<br />標準の水平方向<br />標準縦|画面の25%<br />水平方向に圧縮<br />標準縦|
-| **[横]** |画面の50%<br />水平方向に圧縮<br />標準縦|画面の50%<br />水平方向に圧縮<br />標準縦|
+| **縦** |画面の75%<br />水平方向に圧縮<br />標準縦|画面の25%<br />水平方向に圧縮<br />標準縦|
+| **横** |画面の75%<br />標準の水平方向<br />標準縦|画面の25%<br />水平方向に圧縮<br />標準縦|
+| **横** |画面の50%<br />水平方向に圧縮<br />標準縦|画面の50%<br />水平方向に圧縮<br />標準縦|
 
 例の[MuliTask](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-multitask)アプリでは、iPad on the ランドスケープモードで全画面表示を実行すると、リストと詳細ビューの両方が同時に表示されます。
 
-[![](multitasking-images/sizeclasses03.png "The list and the detail view presented at the same time")](multitasking-images/sizeclasses03.png#lightbox)
+[![一覧と詳細ビューが同時に表示されます。](multitasking-images/sizeclasses03.png)](multitasking-images/sizeclasses03.png#lightbox)
 
 パネル上のスライドで同じアプリが実行されている場合は、水平方向のサイズの小さいクラスとしてレイアウトされ、一覧のみが表示されます。
 
-[![](multitasking-images/sizeclasses04.png "Only the list presented when the device is horizontal")](multitasking-images/sizeclasses04.png#lightbox)
+[![デバイスが横にあるときに表示されるリストのみ](multitasking-images/sizeclasses04.png)](multitasking-images/sizeclasses04.png#lightbox)
 
 このような状況でアプリが正しく動作するようにするには、特徴コレクションをサイズクラスと共に採用し、インターフェイスとインターフェイスに準拠させる必要があり `IUIContentContainer` `IUITraitEnvironment` ます。 詳細については、「Apple の[Uitraitcollection クラスリファレンス](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/doc/uid/TP40014202)」と「[統合ストーリーボード](~/ios/user-interface/storyboards/unified-storyboards.md)ガイドの概要」を参照してください。
 
@@ -154,11 +154,11 @@ IOS 9 では、アプリで独自のカスタムキーボードショートカ�
 
 次の**コマンド**を実行すると、Mac OS のように、ユーザーがキーボードからアプリをすばやく切り替えることができるアプリスイッチャーが表示されます。
 
-[![](multitasking-images/keyboard01.png "The app switcher")](multitasking-images/keyboard01.png#lightbox)
+[![アプリスイッチャー](multitasking-images/keyboard01.png)](multitasking-images/keyboard01.png#lightbox)
 
 IOS 9 アプリにキーボードショートカットが含まれている場合、ユーザーは**コマンド**、**オプション**、または**制御**キーを押して、ポップアップに表示できます。
 
-[![](multitasking-images/keyboard02.png "The keyboard shortcuts popup")](multitasking-images/keyboard02.png#lightbox)
+[![キーボードショートカットのポップアップ](multitasking-images/keyboard02.png)](multitasking-images/keyboard02.png#lightbox)
 
 #### <a name="defining-custom-keyboard-shortcuts"></a>カスタムショートカットキーの定義
 
@@ -194,7 +194,7 @@ public void NewEntry() {
 
 ハードウェアキーボードが接続されている iPad でこのアプリを実行し、ユーザーが**コマンド**を入力すると、新しいエントリが一覧に追加されます。 ユーザーが**コマンド**キーを押したままになっている場合は、ショートカットの一覧が表示されます。
 
-[![](multitasking-images/keyboard03.png "The keyboard shortcuts popup")](multitasking-images/keyboard03.png#lightbox)
+[![キーボードショートカットのポップアップ](multitasking-images/keyboard03.png)](multitasking-images/keyboard03.png#lightbox)
 
 実装の例については、サンプルのマルチ[タスキングアプリ](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-multitask)を参照してください。
 
@@ -228,7 +228,7 @@ Apple は、すべての iOS 9 アプリでマルチタスキングがサポー�
 
 Xamarin iOS アプリが、スライドアウトパネルまたは分割ビューモードで実行されないようにするには、プロジェクトの**情報 plist**ファイルを編集し、[**全画面表示が必要]** チェックボックスをオンにします。
 
-[![](multitasking-images/fullscreen01.png "Opting Out of Multitasking")](multitasking-images/fullscreen01.png#lightbox)
+[![マルチタスキングの無効化](multitasking-images/fullscreen01.png)](multitasking-images/fullscreen01.png#lightbox)
 
 > [!IMPORTANT]
 > マルチタスクを無効にしても、アプリがスライドアウトまたは分割ビューで実行されるのを防ぐことはできませんが、別のアプリがスライドアウトしたり、画像の画像がアプリと共に表示されたりするのを防ぐことはできません。

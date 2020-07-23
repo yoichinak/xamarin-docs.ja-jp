@@ -6,18 +6,18 @@ ms.assetid: 147BA370-67A7-4E6C-BF17-AA7C536C0A48
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 5e71ff86869c42d478fbf1ee3f6de5bff59431fc
-ms.sourcegitcommit: 4691b48f14b166afcec69d1350b769ff5bf8c9f6
+ms.openlocfilehash: 858d2a2399e1d294767b8afad36502b809955224
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75728214"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933280"
 ---
 # <a name="editing-nuget-metadata"></a>NuGet メタデータの編集
 
 _プロジェクトオプションを使用して、マルチプラットフォームライブラリの NuGet メタデータを編集する_
 
-ライブラリプロジェクトの種類 (PCL、.NET Standard、新しい NuGet プロジェクトの種類など) には、 **[プロジェクトオプション]** ウィンドウに **[nuget パッケージ]** セクションがあります。
+ライブラリプロジェクトの種類 (PCL、.NET Standard、新しい NuGet プロジェクトの種類など) には、[**プロジェクトオプション**] ウィンドウに [ **nuget パッケージ**] セクションがあります。
 
 **メタデータ**セクションでは、 [ **nuspec** NuGet パッケージマニフェストファイル](https://docs.microsoft.com/nuget/create-packages/creating-a-package#the-role-and-structure-of-the-nuspec-file)で使用される値を構成します。
 
@@ -25,10 +25,10 @@ _プロジェクトオプションを使用して、マルチプラットフォ�
 
 **[全般**] タブには、NuGet パッケージを生成するために入力する必要がある4つのフィールドがあります。
 
-[![](metadata-images/metadata-general-sml.png "NuGet package required metadata window")](metadata-images/metadata-general.png#lightbox)
+[![NuGet パッケージに必要なメタデータウィンドウ](metadata-images/metadata-general-sml.png)](metadata-images/metadata-general.png#lightbox)
 
 - **ID** –パッケージ識別子。 NuGet.org (またはパッケージが配布されるすべての場所) 内で一意である必要があります。 この[ガイダンス](https://docs.microsoft.com/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number)に従って、URL で有効な文字のみを使用します (スペースは不要で、ほとんどの特殊文字は使用しないでください)。
-- **[バージョン]** – [NuGet のバージョン管理ルール](https://docs.microsoft.com/nuget/create-packages/dependency-versions)と一致するバージョン番号を選択します。
+- [**バージョン**] – [NuGet のバージョン管理ルール](https://docs.microsoft.com/nuget/create-packages/dependency-versions)と一致するバージョン番号を選択します。
 - **作成者**–名前のコンマ区切りのリスト。
 - **説明**–パッケージを選択しているときに表示される、パッケージの機能の概要です。
 
@@ -42,9 +42,9 @@ _プロジェクトオプションを使用して、マルチプラットフォ�
 
 ## <a name="optional-metadata"></a>省略可能なメタデータ
 
-**[詳細]** タブには、NuGet パッケージマニフェストファイルに含めるオプションのフィールドが表示されます。
+[**詳細**] タブには、NuGet パッケージマニフェストファイルに含めるオプションのフィールドが表示されます。
 
-[![](metadata-images/metadata-detail-sml.png "NuGet package optional metadata window")](metadata-images/metadata-detail.png#lightbox)
+[![NuGet パッケージのオプションのメタデータウィンドウ](metadata-images/metadata-detail-sml.png)](metadata-images/metadata-detail.png#lightbox)
 
 必須フィールドとオプションフィールドの詳細については、[省略可能な要素のリファレンス](https://docs.microsoft.com/nuget/schema/nuspec#optional-metadata-elements)を参照してください。
 
@@ -53,4 +53,4 @@ _プロジェクトオプションを使用して、マルチプラットフォ�
 
 ## <a name="related-links"></a>関連リンク
 
-- [.nuspec 参照](https://docs.microsoft.com/nuget/schema/nuspec#general-form-and-schema)
+- [. nuspec リファレンス](https://docs.microsoft.com/nuget/schema/nuspec#general-form-and-schema)

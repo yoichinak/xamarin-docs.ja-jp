@@ -10,22 +10,22 @@ ms.date: 03/20/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 207b16f062a5c2137ac5fc3c21775d2486fda57d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 998584c3deebf5ab722758aeefe7560ba738f426
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135864"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939296"
 ---
 # <a name="the-skew-transform"></a>傾斜変換
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _傾斜変換による SkiaSharp での傾いたグラフオブジェクトの作成方法を確認する_
 
 SkiaSharp では、傾斜変換は、次の図の影などのグラフィカルオブジェクトを傾けます。
 
-![](skew-images/skewexample.png "An example of skewing from the Skew Shadow Text program")
+![傾斜シャドウテキストプログラムから傾斜する例](skew-images/skewexample.png)
 
 傾斜によって四角形が平行四辺形に変わりますが、傾斜した楕円は楕円のままです。
 
@@ -75,7 +75,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 引数の値 `xSkew` は、正の値の場合はテキストの右側、負の値の場合は左にシフトします。 正の `ySkew` 値の場合はテキストの右側にシフトし、負の値の場合は [上] の値を指定します。
 
-[![](skew-images/skewexperiment-small.png "Triple screenshot of the Skew Experiment page")](skew-images/skewexperiment-large.png#lightbox "Triple screenshot of the Skew Experiment page")
+[![スキュー実験ページのトリプルスクリーンショット](skew-images/skewexperiment-small.png)](skew-images/skewexperiment-large.png#lightbox "スキュー実験ページのトリプルスクリーンショット")
 
 値が負の値の場合、 `xSkew` `ySkew` 結果はローテーションになりますが、少しだけ拡大縮小されます。
 
@@ -89,7 +89,7 @@ y ' = ySkew ·x + y
 
 三角形200ピクセルと高さ100ピクセルがポイント (0, 0) の左上隅に配置され、値1.5 でレンダリングされる場合 `xSkew` 、次の平行四辺形が生成されます。
 
-![](skew-images/skeweffect.png "The effect of the skew transform on a rectangle")
+![四角形での傾斜変換の効果](skew-images/skeweffect.png)
 
 下端の座標には `y` 100 の値があるため、150ピクセルを右にシフトします。
 
@@ -111,7 +111,7 @@ y ' = ySkew ·(x – px) + y
 
 傾斜の角度として傾斜を指定する方が、次の図のような角度をαます。
 
-![](skew-images/skewangleeffect.png "The effect of the skew transform on a rectangle with a skewing angle indicated")
+![傾斜角度が示された四角形に対する傾斜変換の効果](skew-images/skewangleeffect.png)
 
 100ピクセルの垂直方向への150ピクセルシフトの比率は、その角度のタンジェント (この例では56.3 度) です。
 
@@ -158,7 +158,7 @@ void SkewDegrees(SKCanvas canvas, double xDegrees, double yDegrees)
 
 角度が正または負の90度に近づくにつれて、タンジェントは無限に近づいていますが、約80度までの角度を使用できます。
 
-[![](skew-images/skewangleexperiment-small.png "Triple screenshot of the Skew Angle Experiment page")](skew-images/skewangleexperiment-large.png#lightbox "Triple screenshot of the Skew Angle Experiment page")
+[![スキュー角度実験ページのトリプルスクリーンショット](skew-images/skewangleexperiment-small.png)](skew-images/skewangleexperiment-large.png#lightbox "スキュー角度実験ページのトリプルスクリーンショット")
 
 小さい負の水平方向の傾斜は、斜投影の**テキスト**ページで示すように、斜投影または斜体のテキストを模倣することができます。 クラスは、 [`ObliqueTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ObliqueTextPage.cs) その方法を示しています。
 
@@ -194,7 +194,7 @@ void SkewDegrees(SKCanvas canvas, double xDegrees, double yDegrees)
 
 `TextAlign`のプロパティ `SKPaint` がに設定されて `Center` います。 変換を行わない場合、 `DrawText` 座標 (0, 0) を指定した呼び出しでは、ベースラインの水平方向の中心が左上隅に配置されます。 は、 `SkewDegrees` ベースラインに対して相対的にテキストを20度水平に傾斜させます。 この呼び出しにより、 `Translate` テキストのベースラインの水平方向の中心がキャンバスの中央に移動します。
 
-[![](skew-images/obliquetext-small.png "Triple screenshot of the Oblique Text page")](skew-images/obliquetext-large.png#lightbox "Triple screenshot of the Oblique Text page")
+[![斜投影テキストページのトリプルスクリーンショット](skew-images/obliquetext-small.png)](skew-images/obliquetext-large.png#lightbox "斜投影テキストページのトリプルスクリーンショット")
 
 [**傾斜の影のテキスト**] ページでは、45度の傾斜と垂直方向のスケールの組み合わせを使用して、テキストから離れたテキストの影を作成する方法を示します。 ハンドラーの適切な部分を次に示し `PaintSurface` ます。
 
@@ -227,11 +227,11 @@ using (SKPaint textPaint = new SKPaint())
 
 最初に影が表示され、次にテキストが表示されます。
 
-[![](skew-images/skewshadowtext1-small.png "Triple screenshot of the Skew Shadow Text page")](skew-images/skewshadowtext1-large.png#lightbox "Triple screenshot of the Skew Shadow Text page")
+[![[傾斜影のテキスト] ページのトリプルスクリーンショット](skew-images/skewshadowtext1-small.png)](skew-images/skewshadowtext1-large.png#lightbox "[傾斜影のテキスト] ページのトリプルスクリーンショット")
 
 メソッドに渡される垂直座標は、ベースラインを基準とした `DrawText` テキストの位置を示します。 これは、傾斜の中心に使用される垂直方向の座標と同じです。 テキスト文字列にディセンダーが含まれている場合、この手法は機能しません。 たとえば、"Shadow" に対して "奇妙" という語を使用すると、結果が次のようになります。
 
-[![](skew-images/skewshadowtext2-small.png "Triple screenshot of the Skew Shadow Text page with an alternative word with descenders")](skew-images/skewshadowtext2-large.png#lightbox "Triple screenshot of the Skew Shadow Text page with an alternative word with descenders")
+[![ディセンダーがある別の単語が表示された [傾斜の影のテキスト] ページのトリプルスクリーンショット](skew-images/skewshadowtext2-small.png)](skew-images/skewshadowtext2-large.png#lightbox "ディセンダーがある別の単語が表示された [傾斜の影のテキスト] ページのトリプルスクリーンショット")
 
 シャドウとテキストはベースラインでまだアラインされていますが、効果が正しくないようです。 この問題を解決するには、テキストの境界を取得する必要があります。
 
@@ -251,7 +251,7 @@ canvas.Translate(-xText, -yText - textBounds.Bottom);
 
 これで、シャドウは、これらのディセンダーの下部から拡張されます。
 
-[![](skew-images/skewshadowtext3-small.png "Triple screenshot of the Skew Shadow Text page with adjustments for descenders")](skew-images/skewshadowtext3-large.png#lightbox "Triple screenshot of the Skew Shadow Text page with adjustments for descenders")
+[![ディセンダーの調整がある [傾斜影テキスト] ページのトリプルスクリーンショット](skew-images/skewshadowtext3-small.png)](skew-images/skewshadowtext3-large.png#lightbox "ディセンダーの調整がある [傾斜影テキスト] ページのトリプルスクリーンショット")
 
 ## <a name="related-links"></a>関連リンク
 
