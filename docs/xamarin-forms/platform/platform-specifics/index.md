@@ -10,16 +10,16 @@ ms.date: 10/01/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8478db85bd9904ee6c5cfeab9b2af390e7d3096d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e0c6e305287c97abac3500cba4771479b60381ac
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139504"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939803"
 ---
 # <a name="platform-specifics"></a>プラットフォーム固有設定
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 _プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。_
 
@@ -58,7 +58,7 @@ Fluent コード API を介して使用されるプラットフォームの詳�
 
 この[サンプルアプリケーション](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific)は、 `Shadow` コントロールによって表示されるテキストに影を追加するプラットフォーム固有の例を示してい [`Label`](xref:Xamarin.Forms.Label) ます。
 
-![](images/screenshots.png "Shadow Platform-Specific")
+![シャドウプラットフォーム固有](images/screenshots.png)
 
 この[サンプルアプリケーション](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific)では、理解しやすいように、プラットフォームごとにプラットフォーム固有のを実装して `Shadow` います。 ただし、プラットフォーム固有の各効果の実装とは別に、Shadow クラスの実装はプラットフォームごとにほぼ同じです。 このガイドでは、Shadow クラスの実装と、それに関連する1つのプラットフォームへの影響について焦点します。
 

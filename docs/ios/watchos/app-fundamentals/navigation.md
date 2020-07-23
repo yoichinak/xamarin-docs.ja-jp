@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 1ad4ecad90238436f8d2a02727596186c6205eeb
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 8b1ffe54ad199acbc7bf3918c187e198d96b51c8
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572092"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939400"
 ---
 # <a name="working-with-watchos-navigation-in-xamarin"></a>Xamarin での watchOS ナビゲーションの使用
 
@@ -49,7 +49,7 @@ DismissController();
 
 は、iOS での動作と同様に、移動できるスタックのようなシーンを提供 `UINavigationController` します。 シーンは、ナビゲーションスタックにプッシュしてポップすることができます (プログラムによって、またはユーザー選択によって)。
 
-![](navigation-images/hierarchy-1.png "シーンをナビゲーションスタックにプッシュすることができます") ![](navigation-images/hierarchy-2.png "シーンをナビゲーションスタックからポップすることができます")
+![シーンをナビゲーションスタックにプッシュすることができます](navigation-images/hierarchy-1.png) ![シーンをナビゲーションスタックからポップすることができます](navigation-images/hierarchy-2.png)
 
 IOS の場合と同様に、左の端のスワイプは階層型のナビゲーションスタックで親コントローラーに戻ります。
 
@@ -95,7 +95,7 @@ public override NSObject GetContextForSegue (string segueIdentifier)
 
 ページベースのインターフェイスは、iOS での動作と同様に左から右にスワイプさ `UIPageViewController` れます。 インジケーターのドットが画面の下部に表示され、現在表示されているページが表示されます。
 
-![](navigation-images/paged-1.png "最初のページのサンプル") ![](navigation-images/paged-2.png "サンプルの2ページ目") ![](navigation-images/paged-5.png "5ページ目のサンプル")
+![最初のページのサンプル](navigation-images/paged-1.png) ![サンプルの2ページ目](navigation-images/paged-2.png) ![5ページ目のサンプル](navigation-images/paged-5.png)
 
 ページベースのインターフェイスを watch アプリのメイン UI にするには、 `ReloadRootControllers` インターフェイスコントローラーとコンテキストの配列を使用してを使用します。
 

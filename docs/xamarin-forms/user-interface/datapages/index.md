@@ -10,16 +10,16 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7d99870dd975d0996ffcd05d4aef153f3515ec9e
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5e1ea94e42e98609b3f77f0198e125b94e2b437d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84134317"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86928836"
 ---
 # <a name="xamarinforms-datapages"></a>Xamarin.FormsDataPages
 
-![](~/media/shared/preview.png "This API is currently in preview")
+![この API は現在プレビューの段階です](~/media/shared/preview.png)
 
 > [!IMPORTANT]
 > DataPages Xamarin.Forms を表示するには、テーマ参照が必要です。 これには、のインストールが含ま[ Xamarin.Forms れます。Theme。](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/)プロジェクトの基本となる NuGet パッケージの後に、[のいずれかが続きます。 Xamarin.FormsTheme](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/)または[ Xamarin.Forms 。Theme. ダーク](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/)NuGet パッケージ。
@@ -30,7 +30,7 @@ DataPages は、事前に構築されたビューにデータソースをすば�
 
 基調講演のデモのしくみを確認するには、[ファーストステップガイド](get-started.md)を参照してください。
 
-[![](images/demo-sml.png "DataPages Sample Application")](images/demo.png#lightbox "DataPages Sample Application")
+[![DataPages サンプルアプリケーション](images/demo-sml.png)](images/demo.png#lightbox "DataPages サンプルアプリケーション")
 
 ## <a name="introduction"></a>はじめに
 

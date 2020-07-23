@@ -10,18 +10,18 @@ ms.date: 01/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 52246ce5d54ba97e91777f598f25c187901f89c4
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0cdbd39f0217b0e4d175eb2443250eb3df8dd046
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137775"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936176"
 ---
 # <a name="windows-platform-features"></a>Windows プラットフォームの機能
 
 Xamarin.FormsWindows プラットフォーム用のアプリケーションを開発するには、Visual Studio が必要です。 [[サポートされているプラットフォーム] ページ](~/get-started/supported-platforms.md)には、前提条件に関する詳細情報が表示されます。
 
-![](images/allhanselman.png "Xamarin.Forms Applications Running on Windows")
+![Xamarin.FormsWindows で実行されているアプリケーション](images/allhanselman.png)
 
 ## <a name="platform-specifics"></a>プラットフォーム固有設定
 
@@ -57,7 +57,7 @@ Xamarin.FormsVisual Studio で使用できるテンプレートには、ユニ�
 > [!NOTE]
 > Xamarin.Forms1.x と2.x のサポート_Windows Phone 8 Silverlight_、 _Windows Phone 8.1_、 _Windows 8.1_アプリケーション開発。 ただし、これらのプロジェクトの種類は非推奨とされます。
 
-## <a name="getting-started"></a>はじめに
+## <a name="getting-started"></a>作業の開始
 
 Visual Studio で [**ファイル] > [新しい > プロジェクト**] の順に選択し、[**クロスプラットフォーム > 空のアプリ ( Xamarin.Forms )** ] テンプレートの1つを選択して開始します。
 

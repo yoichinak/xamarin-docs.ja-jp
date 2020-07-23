@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 1d1e40de646362e9b573ad7040ab08ba6d01d6e8
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: ac4c8d7bbd28946b6089e7f22a36727d2d73ec18
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571611"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939205"
 ---
 # <a name="xamarinmac-extension-support"></a>Xamarin.Mac 拡張機能のサポート
 
@@ -20,7 +20,7 @@ ms.locfileid: "84571611"
 
 - 周り
 - 共有
-- 現在
+- 今日
 
 <a name="Limitations-and-Known-Issues"></a>
 
@@ -42,7 +42,7 @@ ms.locfileid: "84571611"
 - キャッチされていない例外が発生すると、拡張プロセスがクラッシュし、**システムログ**に表示される情報の量がわずかになります。 (例外) ブロックで厄介なコードをラップすることは、 `try/catch` `NSLog` 再スローの前に役に立つ可能性があります。
 - **システムログ**には、**コンソール**アプリの [**アプリケーション**ユーティリティ] からアクセスでき  >  **Utilities**ます。
 
-    [![](extensions-images/extension02.png "The system log")](extensions-images/extension02.png#lightbox)
+    [![システムログ](extensions-images/extension02.png)](extensions-images/extension02.png#lightbox)
 - 前述のように、拡張機能ホストアプリケーションを実行すると、システムに登録されます。 登録を解除してアプリケーションバンドルを削除しています。 
 - アプリの拡張機能の "存在しない" バージョンが登録されている場合は、次のコマンドを使用してそれらを見つけます (削除することもできます)。`plugin kit -mv`
 

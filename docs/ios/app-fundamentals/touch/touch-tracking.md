@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: c3998424c8f4e9482a41e2891e65f0d13d8ac2f3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b1ba548135cedd951d7f0a349f273b29182839d1
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73009186"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86928680"
 ---
 # <a name="multi-touch-finger-tracking-in-xamarinios"></a>Xamarin のマルチタッチ指トラッキング
 
@@ -20,9 +20,9 @@ _このドキュメントでは、複数の指からタッチイベントを追�
 
 マルチタッチアプリケーションでは、画面上で同時に移動するたびに個々の指を追跡する必要がある場合があります。 1つの一般的なアプリケーションは、フィンガーペイントプログラムです。 ユーザーが1本の指で描画できるようにし、同時に複数の指で描画することもできます。 複数のタッチイベントを処理するプログラムでは、これらの指を区別する必要があります。
 
-指が画面に触れると、iOS はその指の[`UITouch`](xref:UIKit.UITouch)オブジェクトを作成します。 このオブジェクトは、指が画面上で移動し、画面から離れると、オブジェクトが破棄されたときと同じ状態になります。 指を追跡するには、プログラムでこの `UITouch` オブジェクトを直接格納しないようにする必要があります。 代わりに、型 `IntPtr` の[`Handle`](xref:Foundation.NSObject.Handle)プロパティを使用して、これらの `UITouch` オブジェクトを一意に識別できます。
+指が画面に触れると、iOS によって [`UITouch`](xref:UIKit.UITouch) その指のオブジェクトが作成されます。 このオブジェクトは、指が画面上で移動し、画面から離れると、オブジェクトが破棄されたときと同じ状態になります。 指を追跡するには、プログラムがこのオブジェクトを直接格納しないようにする必要があり `UITouch` ます。 代わりに、型のプロパティを使用して、 [`Handle`](xref:Foundation.NSObject.Handle) `IntPtr` これらのオブジェクトを一意に識別でき `UITouch` ます。
 
-ほとんどの場合、個々の指を追跡するプログラムは、タッチ追跡用のディクショナリを保持します。 IOS プログラムの場合、ディクショナリキーは、特定の指を識別する `Handle` の値です。 ディクショナリ値は、アプリケーションによって異なります。 [FingerPaint](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-fingerpaint)プログラムでは、各指ストローク (タッチからリリースまで) が、その指で描画された直線を描画するために必要なすべての情報を含むオブジェクトに関連付けられています。 このプログラムでは、この目的のために小さい `FingerPaintPolyline` クラスを定義します。
+ほとんどの場合、個々の指を追跡するプログラムは、タッチ追跡用のディクショナリを保持します。 IOS プログラムの場合、ディクショナリキーは特定の `Handle` 指を識別する値です。 ディクショナリ値は、アプリケーションによって異なります。 [FingerPaint](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-fingerpaint)プログラムでは、各指ストローク (タッチからリリースまで) が、その指で描画された直線を描画するために必要なすべての情報を含むオブジェクトに関連付けられています。 プログラムは、 `FingerPaintPolyline` この目的のための小さいクラスを定義します。
 
 ```csharp
 class FingerPaintPolyline
@@ -40,25 +40,25 @@ class FingerPaintPolyline
 }
 ```
 
-各ポリラインには、色、ストロークの幅、および iOS グラフィックス[`CGPath`](xref:CoreGraphics.CGPath)オブジェクトがあり、描画中に線の複数の点を蓄積してレンダリングします。
+各ポリラインには、色、ストロークの幅、および、 [`CGPath`](xref:CoreGraphics.CGPath) 描画中の線の複数のポイントを蓄積してレンダリングするための iOS グラフィックスオブジェクトがあります。
 
-次に示すコードの残りの部分はすべて、`FingerPaintCanvasView`という `UIView` の派生物に含まれています。 このクラスは、1つまたは複数の指によってアクティブに描画されている間に `FingerPaintPolyline` 型のオブジェクトのディクショナリを保持します。
+次に示すコードの残りの部分はすべて、という派生物に含まれてい `UIView` `FingerPaintCanvasView` ます。 このクラスは、 `FingerPaintPolyline` 1 つまたは複数の指によってアクティブに描画されているときに、型のオブジェクトのディクショナリを保持します。
 
 ```csharp
 Dictionary<IntPtr, FingerPaintPolyline> inProgressPolylines = new Dictionary<IntPtr, FingerPaintPolyline>();
 ```
 
-このディクショナリを使用すると、ビューは `UITouch` オブジェクトの `Handle` プロパティに基づいて、各指に関連付けられている `FingerPaintPolyline` 情報をすばやく取得できます。
+このディクショナリを使用すると、ビューは、 `FingerPaintPolyline` オブジェクトのプロパティに基づいて、各指に関連付けられている情報をすばやく取得でき `Handle` `UITouch` ます。
 
-`FingerPaintCanvasView` クラスは、完成したポリラインの `List` オブジェクトも保持します。
+`FingerPaintCanvasView`また、クラスは、 `List` 完成したポリラインのオブジェクトも保持します。
 
 ```csharp
 List<FingerPaintPolyline> completedPolylines = new List<FingerPaintPolyline>();
 ```
 
-この `List` のオブジェクトは、描画された順序と同じ順序になっています。
+この内のオブジェクト `List` は、描画された順序と同じ順序になります。
 
-`FingerPaintCanvasView` は、`View`によって定義された5つのメソッドをオーバーライドします。
+`FingerPaintCanvasView`によって定義された5つのメソッドをオーバーライドし `View` ます。
 
 - [`TouchesBegan`](xref:UIKit.UIResponder.TouchesBegan(Foundation.NSSet,UIKit.UIEvent))
 - [`TouchesMoved`](xref:UIKit.UIResponder.TouchesMoved(Foundation.NSSet,UIKit.UIEvent))
@@ -68,7 +68,7 @@ List<FingerPaintPolyline> completedPolylines = new List<FingerPaintPolyline>();
 
 さまざまな `Touches` オーバーライドは、ポリラインを構成する点を累積します。
 
-[`Draw`] のオーバーライドは、完成したポリラインと進行中のポリラインを描画します。
+[] のオーバーライドは、 `Draw` 完成したポリラインと進行中のポリラインを描画します。
 
 ```csharp
 public override void Draw(CGRect rect)
@@ -102,7 +102,7 @@ public override void Draw(CGRect rect)
 }
 ```
 
-`Touches` の各オーバーライドでは、`touches` 引数に格納されている1つ以上の `UITouch` オブジェクトによって示される複数の指のアクションがメソッドに報告される可能性があります。 `TouchesBegan` は、これらのオブジェクトのループをオーバーライドします。 メソッドは、`UITouch` オブジェクトごとに、`LocationInView` メソッドから取得した指の初期位置を格納するなど、新しい `FingerPaintPolyline` オブジェクトを作成して初期化します。 この `FingerPaintPolyline` オブジェクトは、`UITouch` オブジェクトの `Handle` プロパティをディクショナリキーとして使用して、`InProgressPolylines` ディクショナリに追加されます。
+各オーバーライドは、 `Touches` `UITouch` メソッドの引数に格納されている1つ以上のオブジェクトによって示される複数の指のアクションを報告する可能性があり `touches` ます。 `TouchesBegan`これらのオブジェクトをオーバーライドします。 メソッドは、オブジェクトごとに、 `UITouch` `FingerPaintPolyline` メソッドから取得した指の初期位置を格納するなど、新しいオブジェクトを作成して初期化し `LocationInView` ます。 この `FingerPaintPolyline` オブジェクトは、ディクショナリ `InProgressPolylines` `Handle` キーとしてオブジェクトのプロパティを使用してディクショナリに追加され `UITouch` ます。
 
 ```csharp
 public override void TouchesBegan(NSSet touches, UIEvent evt)
@@ -125,9 +125,9 @@ public override void TouchesBegan(NSSet touches, UIEvent evt)
 }
 ```
 
-メソッドは、`SetNeedsDisplay` を呼び出して、オーバーライド `Draw` の呼び出しを生成し、画面を更新します。
+メソッドは、を呼び出して `SetNeedsDisplay` 、オーバーライドの呼び出しを生成 `Draw` し、画面を更新します。
 
-指または指が画面上を移動すると、`View` は `TouchesMoved` オーバーライドの複数の呼び出しを取得します。 このオーバーライドは同様に、`touches` 引数に格納されている `UITouch` オブジェクトをループし、指の現在位置をグラフィックパスに追加します。
+指や指が画面上を移動すると、は `View` そのオーバーライドの複数の呼び出しを取得し `TouchesMoved` ます。 このオーバーライド `UITouch` は同様に、引数に格納されているオブジェクトをループ `touches` し、指の現在の位置をグラフィックパスに追加します。
 
 ```csharp
 public override void TouchesMoved(NSSet touches, UIEvent evt)
@@ -143,9 +143,9 @@ public override void TouchesMoved(NSSet touches, UIEvent evt)
 }
 ```
 
-`touches` コレクションには、`TouchesBegan` または `TouchesMoved`への最後の呼び出し以降に移動した指の `UITouch` オブジェクトのみが含まれます。 現在画面と接触している*すべて*の指に対応する `UITouch` オブジェクトが必要な場合は、メソッドの `UIEvent` 引数の `AllTouches` プロパティを使用してその情報を取得できます。
+`touches`コレクションに `UITouch` は、またはへの最後の呼び出し以降に移動した指のオブジェクトだけが格納され `TouchesBegan` `TouchesMoved` ます。 `UITouch`現在画面と接触している*すべて*の指に対応するオブジェクトが必要な場合は、 `AllTouches` メソッドの引数のプロパティを使用してその情報を取得でき `UIEvent` ます。
 
-`TouchesEnded` のオーバーライドには2つのジョブがあります。 グラフィックスパスに最後の点を追加し、`FingerPaintPolyline` オブジェクトを `inProgressPolylines` ディクショナリから `completedPolylines` リストに転送する必要があります。
+`TouchesEnded`オーバーライドには2つのジョブがあります。 このメソッドは、グラフィックスパスに最後の点を追加し、 `FingerPaintPolyline` ディクショナリから一覧にオブジェクトを転送する必要があり `inProgressPolylines` `completedPolylines` ます。
 
 ```csharp
 public override void TouchesEnded(NSSet touches, UIEvent evt)
@@ -166,7 +166,7 @@ public override void TouchesEnded(NSSet touches, UIEvent evt)
 }
 ```
 
-`TouchesCancelled` のオーバーライドは、ディクショナリ内の `FingerPaintPolyline` オブジェクトを破棄するだけで処理されます。
+この `TouchesCancelled` オーバーライドは、ディクショナリ内のオブジェクトを破棄するだけで処理され `FingerPaintPolyline` ます。
 
 ```csharp
 public override void TouchesCancelled(NSSet touches, UIEvent evt)
@@ -183,7 +183,7 @@ public override void TouchesCancelled(NSSet touches, UIEvent evt)
 
 この処理によって、 [FingerPaint](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-fingerpaint)プログラムは個々の指を追跡し、画面に結果を描画できます。
 
-[![](touch-tracking-images/image01.png "Tracking individual fingers and drawing the results on the screen")](touch-tracking-images/image01.png#lightbox)
+[![個々の指を追跡して結果を画面に描画する](touch-tracking-images/image01.png)](touch-tracking-images/image01.png#lightbox)
 
 これで、画面上の個々の指を追跡し、それらを区別する方法がわかりました。
 

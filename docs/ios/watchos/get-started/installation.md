@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 12/05/2017
-ms.openlocfilehash: 5908d8493821eed54f5adee09eee1341bf458609
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 4cc321f44238a7b738e40c02656b42f1eda1155a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84564889"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938763"
 ---
 # <a name="installing-and-using-watchos-in-xamarin"></a>Xamarin での watchOS のインストールと使用
 
@@ -37,11 +37,11 @@ Watch アプリは、次の3つのプロジェクトで構成されています�
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-![](installation-images/catalog-solution.png "The solution in Visual Studio")
+![Visual Studio のソリューション](installation-images/catalog-solution.png)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-![](installation-images/catalog-solution-vs.png "The solution in Visual Studio")
+![Visual Studio のソリューション](installation-images/catalog-solution-vs.png)
 
 -----
 
@@ -54,19 +54,19 @@ Watch アプリは、次の3つのプロジェクトで構成されています�
 
 1. 既存のプロジェクトがない場合は、まず [**ファイル > 新しいソリューション**] を選択し、iOS アプリを作成します ( **1 つのビューアプリ**など)。
 
-    [![](installation-images/cycle8-2-sml.png "Choose File > New Solution and create an iOS app")](installation-images/cycle8-2.png#lightbox)
+    [![[ファイル > 新しいソリューションを選択し、iOS アプリを作成する]](installation-images/cycle8-2-sml.png)](installation-images/cycle8-2.png#lightbox)
 
 2. IOS アプリが作成されたら (または、既存の iOS アプリを使用する予定の場合)、ソリューションを右クリックし、[追加]、[**新しいプロジェクトの追加 >**] の順に選択します。[**新しいプロジェクト**] ウィンドウで、[ **watchOS > App > WatchKit app**] を選択します。
 
-    [![](installation-images/cycle8-6-sml.png "Select watchOS > App > WatchKit App")](installation-images/cycle8-6.png#lightbox)
+    [![[WatchOS > App > WatchKit App] を選択します。](installation-images/cycle8-6-sml.png)](installation-images/cycle8-6.png#lightbox)
 
 3. 次の画面では、ウォッチアプリを含める iOS アプリプロジェクトを選択できます。
 
-    [![](installation-images/cycle8-7-sml.png "Choose which iOS app project should include the watch app")](installation-images/cycle8-7.png#lightbox)
+    [![ウォッチアプリを含める iOS アプリプロジェクトを選択します](installation-images/cycle8-7-sml.png)](installation-images/cycle8-7.png#lightbox)
 
 4. 最後に、プロジェクトを保存する場所 (および必要に応じてソース管理を有効にする) を選択します。
 
-    [![](installation-images/cycle8-8-sml.png "Choose the location to save the project")](installation-images/cycle8-8.png#lightbox)
+    [![プロジェクトを保存する場所を選択します](installation-images/cycle8-8-sml.png)](installation-images/cycle8-8.png#lightbox)
 
 5. Visual Studio for Mac により、[プロジェクト参照と**情報 plist**設定](~/ios/watchos/get-started/project-references.md)が自動的に構成されます。
 
@@ -80,11 +80,11 @@ Watch アプリは、次の3つのプロジェクトで構成されています�
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-[![](installation-images/iosdesigner-sml.png "The storyboard in the Designer")](installation-images/iosdesigner.png#lightbox)
+[![デザイナーのストーリーボード](installation-images/iosdesigner-sml.png)](installation-images/iosdesigner.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![](installation-images/iosdesigner-sml-vs.png "The storyboard in the Designer")](installation-images/iosdesigner-vs.png#lightbox)
+[![デザイナーのストーリーボード](installation-images/iosdesigner-sml-vs.png)](installation-images/iosdesigner-vs.png#lightbox)
 
 -----
 
@@ -92,11 +92,11 @@ Watch アプリは、次の3つのプロジェクトで構成されています�
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-![](installation-images/iosdesigner-classname.png "Give each new interface controller a Class")
+![各新しいインターフェイスコントローラーにクラスを指定する](installation-images/iosdesigner-classname.png)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-![](installation-images/iosdesigner-classname-vs.png "Give each new interface controller a Class")
+![各新しいインターフェイスコントローラーにクラスを指定する](installation-images/iosdesigner-classname-vs.png)
 
 -----
 
@@ -115,7 +115,7 @@ Visual Studio for Mac でソリューションを開き、Xcode ファイルを�
 
 -----
 
-![](installation-images/openwith-xcode.png "Open the Interface.storyboard in Xcode Interface Builder")
+![Xcode で Interface Builder を開きます。](installation-images/openwith-xcode.png)
 
 Xcode を使用する場合は、通常の[iOS アプリのストーリーボード](~/ios/user-interface/storyboards/index.md)の場合と同じ手順に従う必要があります (たとえば、 **Ctrl キーを押しながら** **.h**ヘッダーファイルにドラッグして、コンセントとアクションを作成するなど)。
 
@@ -147,7 +147,7 @@ WatchKit アプリを起動するには、次の2つのモードがあります�
 Xcode 8 (またはそれ以降) がインストールされると Apple Watch シミュレーターは iOS シミュレーターとは別になります (*外部ディスプレイ*として表示される[Xcode 6](#xcode6)とは異なります)。
 Watch App プロジェクトを選択してスタートアッププロジェクトにすると、シミュレーターの一覧に*iOS*シミュレーターが表示され、次のように選択できます。
 
-[![](installation-images/xs-xcode8-watchos3-sml.png "Selecting the Simulator type")](installation-images/xs-xcode8-watchos3.png#lightbox)
+[![シミュレーターの種類の選択](installation-images/xs-xcode8-watchos3-sml.png)](installation-images/xs-xcode8-watchos3.png#lightbox)
 
 デバッグを開始すると、iOS シミュレーター*と*Apple Watch シミュレーターの*2 つ*のシミュレーターが起動します。 **コマンド + Shift + H**を使用して、[ウォッチ] メニューと時計の表面に移動します。また、[**ハードウェア**] メニューを使用して、 **Force Touch の負荷**を設定します。 トラックパッドまたはマウスをスクロールすると、Digital Crown の使用がシミュレートされます。
 
@@ -186,18 +186,18 @@ Visual Studio for Mac は、通知の通知_スタートアップモード_で w
 
 Watch app プロジェクトを右クリックし、[ **> カスタム構成で実行**] を選択します。
 
-[![](installation-images/runwith-customparams-sml.png "Running a Custom Configuration")](installation-images/runwith-customparams.png#lightbox)
+[![カスタム構成の実行](installation-images/runwith-customparams-sml.png)](installation-images/runwith-customparams.png#lightbox)
 
 これにより、[**カスタムパラメーター** ] ウィンドウが開きます。このウィンドウで**通知**を選択し、JSON ペイロードを指定できます。次に、[**実行**] を押して、シミュレーターで watch アプリを起動します。
 
-[![](installation-images/runwith-execargs-sml.png "Setting the Notification and Payload")](installation-images/runwith-execargs.png#lightbox)
+[![通知とペイロードの設定](installation-images/runwith-execargs-sml.png)](installation-images/runwith-execargs.png#lightbox)
 
 ## <a name="debugging"></a>デバッグ
 
 デバッグは Visual Studio for Mac と Visual Studio の両方でサポートされています。
 通知モードでデバッグする場合は、通知 JSON ファイルを必ず指定してください。 このスクリーンショットは、ウォッチアプリでヒットしているデバッグブレークポイントを示しています。
 
-![](installation-images/debug-sml.png "This screenshot shows a debug breakpoint being hit in a watch app")
+![このスクリーンショットは、ウォッチアプリでヒットしているデバッグブレークポイントを示しています。](installation-images/debug-sml.png)
 
 起動手順に従うと、 **IOS シミュレーター (watch)** で実行される watch アプリが作成されます。
 通知モードでは、[デバッグ] を選択して**システムログ**(**CMD +/**) を開き、コードでを使用でき > `Console.WriteLine` ます。

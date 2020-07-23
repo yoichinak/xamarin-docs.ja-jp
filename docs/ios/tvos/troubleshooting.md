@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: c73be27ed82a643b01528ccba3887f59beeceb53
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 91ead74f1ae26e10046b1e57d722e84014546108
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574055"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929026"
 ---
 # <a name="troubleshooting-tvos-apps-built-with-xamarin"></a>Xamarin でビルドされた tvOS アプリのトラブルシューティング
 
@@ -21,7 +21,7 @@ _この記事では、Xamarin の tvOS サポートの使用中に発生する�
 
 <a name="Known-Issues"></a>
 
-## <a name="known-issues"></a>既知の問題
+## <a name="known-issues"></a>の既知の問題
 
 Xamarin の tvOS サポートの現在のリリースには、次の既知の問題があります。
 
@@ -47,7 +47,7 @@ TvOS アプリを Apple TV App Store に送信しようとすると、 _"無効�
 1. Visual Studio for Mac で、**ソリューションエクスプローラー**で TvOS プロジェクトファイルを右クリックし、[**オプション**] を選択します。
 2. [ **TvOS Build** ] を選択し、**リリース**構成になっていることを確認します。 
 
-    [![](troubleshooting-images/ts01.png "Select tvOS Build options")](troubleshooting-images/ts01.png#lightbox)
+    [![TvOS ビルドオプションの選択](troubleshooting-images/ts01.png)](troubleshooting-images/ts01.png#lightbox)
 3. [追加 `--bitcode=asmonly` の**mtouch 引数**] フィールドにを追加し、[ **OK** ] ボタンをクリックします。
 4. **リリース**構成でアプリをリビルドします。
 
@@ -125,7 +125,7 @@ _"Arm64 スライスだけを含むアプリには、UIRequiredDeviceCapabilitie
 
 サードパーティ製のライブラリ (モノゲームなど) を使用していて、で終了する長い一連のエラーメッセージがリリースコンパイルに失敗した場合は `Task "MTouch" execution -- FAILED` 、 `-gcc_flags="-framework OpenAL"` 追加の**タッチ引数**を追加してみてください。
 
-[![](troubleshooting-images/mtouch01.png "Task MTouch execution")](troubleshooting-images/mtouch01.png#lightbox)
+[![タスクの MTouch 実行](troubleshooting-images/mtouch01.png)](troubleshooting-images/mtouch01.png#lightbox)
 
 また、追加の `--bitcode=asmonly` **タッチ引数**にを含め、リンカーオプションを [**すべてリンク**] に設定して、クリーンコンパイルを実行する必要があります。
 
@@ -138,7 +138,7 @@ _"Arm64 スライスだけを含むアプリには、UIRequiredDeviceCapabilitie
 
 ### <a name="invalid-bundle--an-app-that-supports-game-controllers-must-also-support-the-apple-tv-remote"></a>無効なバンドル–ゲームコントローラーをサポートするアプリは、Apple TV リモコンもサポートする必要があります。
 
-or 
+または 
 
 ### <a name="invalid-bundle--apple-tv-apps-with-the-gamecontroller-framework-must-include-the-gcsupportedgamecontrollers-key-in-the-apps-infoplist"></a>バンドルが無効です– GameController フレームワークを使用する Apple TV アプリでは、GCSupportedGameControllers キーをアプリの情報に含める必要があります。 plist
 
@@ -150,7 +150,7 @@ _"アプリ名" の最新の配信に関する1つ以上の問題が検出され
 
 _無効なバンドル–ゲームコントローラーをサポートするアプリは、Apple TV リモコンもサポートする必要があります。_
 
-or 
+または 
 
 _バンドルが無効です– GameController フレームワークを使用した Apple TV アプリでは、GCSupportedGameControllers キーをアプリの情報 plist に含める必要があります。_
 

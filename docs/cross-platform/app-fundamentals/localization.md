@@ -6,12 +6,12 @@ ms.assetid: CC6847B2-23FB-4EDE-9F7E-EF29DD46A5C5
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: f496a831c226e377f62e2a6fab8ed328bf1be0b9
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: dab6d1ff573f0f74b3b230732aa4669ba9fda0d5
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571073"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934863"
 ---
 # <a name="localization"></a>ローカリゼーション
 
@@ -59,7 +59,7 @@ Xamarin アプリのローカライズに関する技術的な詳細に直接進
 
 IOS ホーム画面上のいくつかの項目の文字列の長さを英語、ドイツ語、日本語で比較します。
 
-[![](localization-images/language-compare-sml.png "German vs Japanese string length")](localization-images/language-compare.png#lightbox)
+[![ドイツ語と日本語の文字列長](localization-images/language-compare-sml.png)](localization-images/language-compare.png#lightbox)
 
 英語 (8 文字) の**設定**ではドイツ語の翻訳に13文字が必要ですが、日本語では2文字のみであることに注意してください。
 
