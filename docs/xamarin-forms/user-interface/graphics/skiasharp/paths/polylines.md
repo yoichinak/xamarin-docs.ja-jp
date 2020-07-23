@@ -10,12 +10,12 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b435e99180791b64e0a8ad975527fb3cb5316b7d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 8ffa7ab7c9d2cebb9854ed155c3a00fe65e497c9
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140219"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936137"
 ---
 # <a name="polylines-and-parametric-equations"></a>多角形やパラメーターの式
 
@@ -25,7 +25,7 @@ _SkiaSharp を使用して、パラメーター式を使用して定義できる
 
 このガイドの「 [**SkiaSharp の曲線とパス**](../curves/index.md)」セクションでは、 [`SKPath`](xref:SkiaSharp.SKPath) 特定の種類の曲線をレンダリングするためにが定義されているさまざまなメソッドについて説明します。 ただし、によって直接サポートされない型の曲線を描画することが必要になる場合があり `SKPath` ます。 このような場合は、ポリライン (接続された直線のコレクション) を使用して、数学的に定義できる曲線を描画できます。 行を十分に小さくして十分な数にすると、結果は曲線のようになります。 このらせんは実際には、次のようにわずかに3600です。
 
-![](polylines-images/spiralexample.png "A spiral")
+![らせん](polylines-images/spiralexample.png)
 
 一般に、パラメーター式のペアの観点から曲線を定義することをお勧めします。 これらは、3番目の変数に依存する X 座標と Y 座標の式であり、時間と呼ばれることもあり `t` ます。 たとえば、次のパラメーター式は、0 ~ 1 の*t*のポイント (0, 0) の中心が1である円を定義しています。
 
@@ -120,7 +120,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 各ループ間のオフセットは定数であるため、結果は*算術らせん*とも呼ばれます。
 
-[![](polylines-images/archimedeanspiral-small.png "Triple screenshot of the Archimedean Spiral page")](polylines-images/archimedeanspiral-large.png#lightbox "Triple screenshot of the Archimedean Spiral page")
+[![アーカイブの三重のらせんページのトリプルスクリーンショット](polylines-images/archimedeanspiral-small.png)](polylines-images/archimedeanspiral-large.png#lightbox "アーカイブの三重のらせんページのトリプルスクリーンショット")
 
 `SKPath`がブロック内に作成されていることに注意して `using` ください。 これは、 `SKPath` 前のプログラムのオブジェクトよりも多くのメモリを消費します `SKPath` 。これは、 `using` アンマネージリソースを破棄するためにブロックがより適切であることを示しています。
 

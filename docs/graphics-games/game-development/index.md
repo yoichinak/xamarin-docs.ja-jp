@@ -6,12 +6,12 @@ ms.assetid: 0E3CDCD2-FBE4-49F5-A70E-8A7B937BAF1D
 author: conceptdev
 ms.author: crdun
 ms.date: 03/24/2017
-ms.openlocfilehash: 5992e8df3080bb35fd123483e5ffb5e64f268b1a
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: 8f7ec5175895a31746710fad9ea7372052b698ff
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76724760"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936488"
 ---
 # <a name="introduction-to-game-development-with-xamarin"></a>Xamarin を使用したゲーム開発の概要
 
@@ -34,7 +34,7 @@ ms.locfileid: "76724760"
 
 単純なゲームループの図を次に示します。
 
-![](images/image1.png "This is a diagram of a simple game loop")
+![これは、単純なゲームループの図です。](images/image1.png)
 
 ここで取り上げるテクノロジは実際の while ループを抽象化していますが、この抽象化に関係なく、すべてのフレーム更新の概念が提示されます。
 
@@ -63,11 +63,11 @@ ms.locfileid: "76724760"
 
 ### <a name="math"></a>数値演算
 
-多くのゲームでは、ゲーム以外のアプリケーションよりも高度な数学が必要です。 もちろん、数値演算のレベルはゲームの複雑さによって異なります。 一般的な3D ゲームでは、2D よりも多くの計算が必要です。 さいわいなことに単純なゲームで常に開始することができ、更に学びを深めることが可能です。 ゲーム開発は、数学を学習する優れた方法かもしれません。
+多くのゲームでは、ゲーム以外のアプリケーションよりも高度な数学が必要です。 もちろん、数値演算のレベルはゲームの複雑さによって異なります。 一般的な3D ゲームでは、2D よりも多くの計算が必要です。 幸いなことに、いつでも簡単なゲームを始めて、いつでも学ぶことができます。 ゲーム開発は、数学を学ぶための優れた方法です。
 
 オブジェクトを配置するために X 座標と Y 座標を使用しているデカルト平面に慣れている場合は、ゲーム開発を始めるのに十分な知識があることがわかります。 次の図は、正の Y が上向きのデカルト平面を示しています。
 
-![](images/image2.png "This shows a Cartesian plane with positive Y pointing upward")
+![これは、正の Y を上向きにしたデカルト平面を示しています](images/image2.png)
 
 > [!IMPORTANT]
 > 一部のエンジン/Api では、オブジェクトの Y 値を大きくすると座標系が使用され、他のシステムでは正の Y がある座標系が使用されます。 システム間を移動する場合は、この点に注意してください。
@@ -86,8 +86,8 @@ ms.locfileid: "76724760"
 ゲーム開発では、プロセスに関係する個人に対して新しいロールとタイトルが導入されています。 ほとんどのゲーム開発者は、ゲーム全体をリリースするために必要な幅広いスキルを満たすことができないため、多くの分野が存在します。 これは、開発領域の完全な一覧ではなく、一般的なものの一部ではないことに注意してください。
 
 - **プログラマ**–この記事を読んでいるほとんどの方が、このカテゴリに分類されます。 ゲーム開発におけるプログラマの役割は、ゲーム以外のアプリケーションでのプログラマの役割に似ています。 責任には、ゲームのフローを制御するためのロジックの作成、特定のプロジェクトのコンテキストでの一般的なタスクのためのシステムの開発、コンテンツの追加と表示、もちろんバグの修正などが含まれます。
-- 2d**アーティスト**–2d アーティストは、 *2d アセット*の作成を担当します。 これには、ゲームの GUI、パーティクル、環境、および文字のイメージファイルが含まれます。 開発中のゲームが3D である場合、2D アーティストは環境や文字に対して責任を負いません。 [http://opengameart.org/](http://opengameart.org/)でゲーム用の無料のアートを見つけることができます。
-- 3d**アーティスト**–3d アーティストは 3d*アセット*の作成を担当します。 これには、環境、文字、および props (家具、プラント、およびその他の inanimate オブジェクト) の3D モデルが含まれます。 チームの規模に応じて、3D アーティストと3D アニメーターを区別するチームもあります。 ゲーム用のフリー3D アートは、 [http://opengameart.org/](http://opengameart.org/)で見つけることができます。
+- 2d**アーティスト**–2d アーティストは、 *2d アセット*の作成を担当します。 これには、ゲームの GUI、パーティクル、環境、および文字のイメージファイルが含まれます。 開発中のゲームが3D である場合、2D アーティストは環境や文字に対して責任を負いません。 ゲームのフリーアートはで見つけることができ [http://opengameart.org/](http://opengameart.org/) ます。
+- 3d**アーティスト**–3d アーティストは 3d*アセット*の作成を担当します。 これには、環境、文字、および props (家具、プラント、およびその他の inanimate オブジェクト) の3D モデルが含まれます。 チームの規模に応じて、3D アーティストと3D アニメーターを区別するチームもあります。 ゲーム用の無料の3D アートは、で見つけることができ [http://opengameart.org/](http://opengameart.org/) ます。
 - ゲーム**デザイナー** –ゲームデザイナーは、ゲームの再生方法を定義します。 これには、ゲームの設定、ゲームの全体的な目標、およびプレーヤーがゲームを実行する方法などの高度な決定が含まれます。 ゲームデザイナーは、アクションへの入力のマッピング、移動またはレベルアップの係数の定義、レベルのレイアウトの設計など、非常に詳細な決定にも関与できます。 コンテキストによっては、*デザイナー*という用語がゲームデザイナーまたはビジュアルデザイナーを参照する場合があることに注意してください。
 - **サウンドデザイナー** –サウンドデザイナーは、ゲームのオーディオ資産を担当します。 一部のチームでは、サウンド効果と作曲家の作成を担当する個人を区別することがありますが、小規模なチームでは、すべてのオーディオに対して1人の個人を担当することがあります。
 
@@ -121,11 +121,11 @@ Xamarin Android と Xamarin を使用する開発者は、さまざまなテク�
 
 FEZ:
 
-![](images/image7.png "FEZ")
+![FEZ](images/image7.png)
 
 要塞
 
-![](images/image8.jpg "Bastion")
+![Bastion](images/image8.jpg)
 
 モノゲームの使用を開始するには、[モノゲームガイド](~/graphics-games/monogame/index.md)に進んでください。
 
@@ -133,7 +133,7 @@ FEZ:
 
 UrhoSharp はクロスプラットフォームの高レベル3D および2D エンジンであり、ジオメトリ、素材、ライト、カメラを使用して、アプリケーション用のアニメーション化された3D および2D シーンを作成するために使用できます。
 
-![](images/urhosharp.gif "UrhoSharp is a cross-platform high-level 3D and 2D engine that can be used to create animated 3D and 2D scenes")
+![UrhoSharp は、アニメーション化された3D および2D シーンの作成に使用できるクロスプラットフォームの高レベル3D および2D エンジンです。](images/urhosharp.gif)
 
 開始するには、 [Urhosharp ガイド](~/graphics-games/urhosharp/index.md)をご覧ください。
 
@@ -141,9 +141,9 @@ UrhoSharp はクロスプラットフォームの高レベル3D および2D エ�
 
 上で強調されているテクノロジは、使用可能なテクノロジのサンプルだけです。 その他の注目すべきテクノロジは次のとおりです。
 
-- **スプライトキット**– Xamarin では、ネイティブ API のすべての機能にアクセスできる、Apple のスプライトキットゲームフレームワークがサポートされています。 スプライトキットは Apple によって作成されたテクノロジであるため、他の iOS エコシステムと緊密に統合されています。 もちろん、Sprite Kit はクロスプラットフォームではないため、Android では使用できません。 スプライトキットの使用方法の詳細については、次の投稿を参照してください: [https://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/](https://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/)
-- **シーンキット**– Xamarin では、Apple のシーンキットフレームワークもサポートしています。これにより、iOS アプリへの3d グラフィックスの実装が簡単になります。 シーンキットは、Apple によって提供されるテクノロジでもあるため、上記のスプライトキットについて説明した統合とプラットフォーム固有の考慮事項の両方を備えています。 シーンキットの詳細については、次の投稿を参照してください: [https://blog.xamarin.com/3d-in-ios-8-with-scene-kit/](https://blog.xamarin.com/3d-in-ios-8-with-scene-kit/)
-- **OpenTK –** OpenTK (Open Tool Kit を含む) は、iOS、Apple、および Mac ハードウェアに低レベルの OpenGL アクセスを提供します。 OpenTK の詳細については、次のメインページを参照してください: [https://opentk.net/](https://opentk.net/)
+- **スプライトキット**– Xamarin では、ネイティブ API のすべての機能にアクセスできる、Apple のスプライトキットゲームフレームワークがサポートされています。 スプライトキットは Apple によって作成されたテクノロジであるため、他の iOS エコシステムと緊密に統合されています。 もちろん、Sprite Kit はクロスプラットフォームではないため、Android では使用できません。 スプライトキットの使用方法の詳細については、次の投稿を参照してください。[https://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/](https://blog.xamarin.com/make-games-with-xamarin.ios-and-sprite-kit/)
+- **シーンキット**– Xamarin では、Apple のシーンキットフレームワークもサポートしています。これにより、iOS アプリへの3d グラフィックスの実装が簡単になります。 シーンキットは、Apple によって提供されるテクノロジでもあるため、上記のスプライトキットについて説明した統合とプラットフォーム固有の考慮事項の両方を備えています。 シーンキットの詳細については、次の投稿を参照してください。[https://blog.xamarin.com/3d-in-ios-8-with-scene-kit/](https://blog.xamarin.com/3d-in-ios-8-with-scene-kit/)
+- **OpenTK –** OpenTK (Open Tool Kit を含む) は、iOS、Apple、および Mac ハードウェアに低レベルの OpenGL アクセスを提供します。 OpenTK の詳細については、次のメインページを参照してください。[https://opentk.net/](https://opentk.net/)
 
 ## <a name="related-links"></a>関連リンク
 
