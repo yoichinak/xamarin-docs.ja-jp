@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 015be44f60dbf8cd2d70badd7c9edaf4e5a1d2a4
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: c4b818bcf3c4a5280c0280a2e28e2f59c65c8c81
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031454"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930222"
 ---
 # <a name="speech-recognition-in-xamarinios"></a>Xamarin の音声認識 (iOS)
 
@@ -25,7 +25,7 @@ IOS 10 の新機能である Apple は、音声認識 API をリリースしま�
 - 非常に正確
 - アートの状態
 - 使いやすい
-- Fast
+- 速い
 - 複数の言語をサポートする
 - ユーザーのプライバシーを尊重する
 
@@ -33,13 +33,13 @@ IOS 10 の新機能である Apple は、音声認識 API をリリースしま�
 
 音声認識は、iOS アプリで、(API がサポートしている任意の話された言語で) ライブオーディオまたは録音済みオーディオを取得し、音声認識エンジンに渡すことによって実装されます。
 
-[![](speech-images/speech01.png "How Speech Recognition Works")](speech-images/speech01.png#lightbox)
+[![音声認識のしくみ](speech-images/speech01.png)](speech-images/speech01.png#lightbox)
 
 ### <a name="keyboard-dictation"></a>キーボードディクテーション
 
 ほとんどのユーザーは、iOS デバイスで音声認識を考えている場合、組み込みの Siri 音声アシスタントを使用しています。これは、iOS 5 のキーボードディクテーションと iPhone 4S を使用してリリースされています。
 
-キーボードディクテーションは、TextKit (`UITextField` や `UITextArea`など) をサポートする任意のインターフェイス要素によってサポートされ、iOS 仮想キーボードの [ディクテーション] ボタン (space キーの左側) をクリックするとアクティブになります。
+キーボードディクテーションは、TextKit (やなど) をサポートする任意のインターフェイス要素によってサポートされ、 `UITextField` `UITextArea` iOS 仮想キーボードの [ディクテーション] ボタン (space キーの左側) をクリックするとアクティブ化されます。
 
 Apple は、次のキーボードディクテーション統計 (2011 以降に収集) をリリースしました。
 
@@ -66,7 +66,7 @@ IOS 10 の新機能である Apple は、音声認識 API をリリースしま�
 
 音声認識 API によって提供される結果は、アプリが個人のユーザーデータを収集したりアクセスしたりすることなく、個々のユーザーに対して透過的にカスタマイズされます。
 
-音声認識 API は、呼び出し元のアプリに、ユーザーが話しているときとほぼリアルタイムで結果を返します。これにより、テキストだけではなく翻訳の結果に関する詳細情報が提供されます。 次の設定があります。
+音声認識 API は、呼び出し元のアプリに、ユーザーが話しているときとほぼリアルタイムで結果を返します。これにより、テキストだけではなく翻訳の結果に関する詳細情報が提供されます。 次に例を示します。
 
 - ユーザーが言った内容を複数の意味で解釈します。
 - 個々の翻訳の信頼レベル。
@@ -78,56 +78,56 @@ IOS 10 の新機能である Apple は、音声認識 API をリリースしま�
 
 Apple には、現在のところ、特定の言語を翻訳できるかどうかを判断するための可用性 API が含まれています。 アプリは、インターネット接続自体を直接テストするのではなく、この API を使用する必要があります。
 
-前述の「キーボードのディクテーション」セクションで説明したように、音声認識では、インターネット経由で Apple のサーバー上のデータを転送および一時的に保存する必要が_あり_ます。そのため、アプリは、`Info.plist` ファイル内の `NSSpeechRecognitionUsageDescription` キー。 `SFSpeechRecognizer.RequestAuthorization` メソッドを呼び出します。 
+前述の「キーボードディクテーション」セクションで説明したように、音声認識では、インターネット経由で Apple のサーバー上のデータを転送および一時的に保存する必要があります。そのため、アプリは、ファイルにキーを含め、メソッドを呼び出すことによって、認識を実行するユーザーのアクセス許可を要求_する必要があり_ `NSSpeechRecognitionUsageDescription` `Info.plist` `SFSpeechRecognizer.RequestAuthorization` ます。 
 
-音声認識に使用されるオーディオのソースに基づいて、アプリの `Info.plist` ファイルに対するその他の変更が必要になる場合があります。 詳細については、[セキュリティとプライバシーの強化](~/ios/app-fundamentals/security-privacy.md)に関するドキュメントを参照してください。
+音声認識に使用されるオーディオのソースに基づいて、アプリのファイルに対するその他の変更 `Info.plist` が必要になる場合があります。 詳細については、[セキュリティとプライバシーの強化](~/ios/app-fundamentals/security-privacy.md)に関するドキュメントを参照してください。
 
 ## <a name="adopting-speech-recognition-in-an-app"></a>アプリで音声認識を導入する
 
 IOS アプリで音声認識を採用するには、次の4つの主要な手順を実行する必要があります。
 
-- `NSSpeechRecognitionUsageDescription` キーを使用して、アプリの `Info.plist` ファイルに使用方法の説明を入力します。 たとえば、カメラアプリには次のような説明が含まれている場合があり_ます。 "チーズという単語を言うだけで写真を撮ることができます。"_
-- `SFSpeechRecognizer.RequestAuthorization` メソッドを呼び出して、ダイアログボックスでユーザーに音声認識アクセスを要求し、受け入れまたは拒否を許可する必要がある理由の `NSSpeechRecognitionUsageDescription` 説明を提示することで、承認を要求します。
+- キーを使用して、アプリのファイルに使用方法の説明を入力し `Info.plist` `NSSpeechRecognitionUsageDescription` ます。 たとえば、カメラアプリには次のような説明が含まれている場合があり_ます。 "チーズという単語を言うだけで写真を撮ることができます。"_
+- メソッドを呼び出して、 `SFSpeechRecognizer.RequestAuthorization` `NSSpeechRecognitionUsageDescription` ダイアログボックスでユーザーに音声認識アクセスを要求し、受け入れまたは拒否を許可する必要がある理由の説明を提示することによって、承認を要求します。
 - 音声認識要求を作成します。
-  - ディスク上の録音済みオーディオの場合は、`SFSpeechURLRecognitionRequest` クラスを使用します。
-  - ライブオーディオ (またはメモリからのオーディオ) の場合は、`SFSPeechAudioBufferRecognitionRequest` クラスを使用します。
-- 音声認識要求を音声認識エンジン (`SFSpeechRecognizer`) に渡して、認識を開始します。 アプリは、返された `SFSpeechRecognitionTask` に保持して、認識結果を監視および追跡できます。
+  - ディスク上の録音済みオーディオの場合は、クラスを使用し `SFSpeechURLRecognitionRequest` ます。
+  - ライブオーディオ (またはメモリからのオーディオ) の場合は、クラスを使用し `SFSPeechAudioBufferRecognitionRequest` ます。
+- 音声認識要求を音声認識エンジン () に渡して、 `SFSpeechRecognizer` 認識を開始します。 アプリは、返されたを使用して、 `SFSpeechRecognitionTask` 認識結果を監視および追跡できます。
 
 これらの手順については、以下で詳しく説明します。
 
 ### <a name="providing-a-usage-description"></a>使用法の説明を指定する
 
-`Info.plist` ファイルに必要な `NSSpeechRecognitionUsageDescription` キーを指定するには、次の手順を実行します。
+ファイルに必要なキーを指定するには、 `NSSpeechRecognitionUsageDescription` `Info.plist` 次の手順を実行します。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. `Info.plist` ファイルをダブルクリックして開き、編集します。
+1. ファイルをダブルクリックし `Info.plist` て開き、編集します。
 2. **ソース**ビューに切り替えます。 
 
-    [![](speech-images/speech02.png "The Source view")](speech-images/speech02.png#lightbox)
-3. **新しいエントリの追加** をクリックし、**プロパティ**に「`NSSpeechRecognitionUsageDescription`」と入力し、**種類** に `String`、**値**として**使用法の説明**を入力します。 (例: 
+    [![ソースビュー](speech-images/speech02.png)](speech-images/speech02.png#lightbox)
+3. [**新しいエントリの追加**] をクリックし、プロパティとして「」と入力し、 `NSSpeechRecognitionUsageDescription` **Property** `String` **使用法の説明**を**値**と**Type**して入力します。 次に例を示します。 
 
-    [![](speech-images/speech03.png "Adding NSSpeechRecognitionUsageDescription")](speech-images/speech03.png#lightbox)
-4. アプリがライブオーディオの議事録処理を行う場合は、マイクの使用方法の説明も必要になります。 **新しいエントリの追加** をクリックし、**プロパティ**に「`NSMicrophoneUsageDescription`」と入力し、**種類** に `String`、**値**として**使用法の説明**を入力します。 (例: 
+    [![NSSpeechRecognitionUsageDescription の追加](speech-images/speech03.png)](speech-images/speech03.png#lightbox)
+4. アプリがライブオーディオの議事録処理を行う場合は、マイクの使用方法の説明も必要になります。 [**新しいエントリの追加**] をクリックし、プロパティとして「」と入力し、 `NSMicrophoneUsageDescription` **Property** `String` **使用法の説明**を**値**と**Type**して入力します。 次に例を示します。 
 
-    [![](speech-images/speech04.png "Adding NSMicrophoneUsageDescription")](speech-images/speech04.png#lightbox)
-5. 変更内容をファイルに保存します。
+    [![Nsマイクロの操作の説明を追加しています](speech-images/speech04.png)](speech-images/speech04.png#lightbox)
+5. 変更をファイルに保存します。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. `Info.plist` ファイルをダブルクリックして開き、編集します。
-2. **新しいエントリの追加** をクリックし、**プロパティ**に「`NSSpeechRecognitionUsageDescription`」と入力し、**種類** に `String`、**値**として**使用法の説明**を入力します。 (例: 
+1. ファイルをダブルクリックし `Info.plist` て開き、編集します。
+2. [**新しいエントリの追加**] をクリックし、プロパティとして「」と入力し、 `NSSpeechRecognitionUsageDescription` **Property** `String` **使用法の説明**を**値**と**Type**して入力します。 次に例を示します。 
 
-    [![](speech-images/speech03w.png "Adding NSSpeechRecognitionUsageDescription")](speech-images/speech03w.png#lightbox)
-3. アプリがライブオーディオの議事録処理を行う場合は、マイクの使用方法の説明も必要になります。 **新しいエントリの追加** をクリックし、**プロパティ**に「`NSMicrophoneUsageDescription`」と入力し、**種類** に `String`、**値**として**使用法の説明**を入力します。 (例: 
+    [![NSSpeechRecognitionUsageDescription の追加](speech-images/speech03w.png)](speech-images/speech03w.png#lightbox)
+3. アプリがライブオーディオの議事録処理を行う場合は、マイクの使用方法の説明も必要になります。 [**新しいエントリの追加**] をクリックし、プロパティとして「」と入力し、 `NSMicrophoneUsageDescription` **Property** `String` **使用法の説明**を**値**と**Type**して入力します。 次に例を示します。 
 
-    [![](speech-images/speech04w.png "Adding NSMicrophoneUsageDescription")](speech-images/speech04w.png#lightbox)
-4. 変更内容をファイルに保存します。
+    [![Nsマイクロの操作の説明を追加しています](speech-images/speech04w.png)](speech-images/speech04w.png#lightbox)
+4. 変更をファイルに保存します。
 
 -----
 
 > [!IMPORTANT]
-> 上記の `Info.plist` キー (`NSSpeechRecognitionUsageDescription` または `NSMicrophoneUsageDescription`) のいずれかを指定しないと、音声認識またはマイクを使用してライブオーディオにアクセスしようとしても、警告なしにアプリが失敗する可能性があります。
+> 上記のいずれかのキーを指定し `Info.plist` ないと ( `NSSpeechRecognitionUsageDescription` または `NSMicrophoneUsageDescription` )、音声認識またはマイクを使用してライブオーディオにアクセスしようとすると、アプリが警告なしに失敗する可能性があります。
 
 ### <a name="requesting-authorization"></a>承認の要求
 
@@ -178,9 +178,9 @@ namespace MonkeyTalk
 }
 ```
 
-`SFSpeechRecognizer` クラスの `RequestAuthorization` メソッドは、`Info.plist` ファイルの `NSSpeechRecognitionUsageDescription` キーで開発者が提供した理由を使用して、音声認識にアクセスするためのアクセス許可をユーザーに要求します。
+`RequestAuthorization`クラスのメソッドは、 `SFSpeechRecognizer` `NSSpeechRecognitionUsageDescription` ファイルのキーで開発者が提供した理由を使用して、音声認識にアクセスするためのアクセス許可をユーザーに要求します `Info.plist` 。
 
-`SFSpeechRecognizerAuthorizationStatus` の結果が、ユーザーのアクセス許可に基づいてアクションを実行するために使用できる `RequestAuthorization` メソッドのコールバックルーチンに返されます。 
+`SFSpeechRecognizerAuthorizationStatus`結果は、 `RequestAuthorization` ユーザーのアクセス許可に基づいてアクションを実行するために使用できる、メソッドのコールバックルーチンに返されます。 
 
 > [!IMPORTANT]
 > Apple は、このアクセス許可を要求する前に、音声認識を必要とするアプリのアクションをユーザーが開始するまで待機することを提案します。
@@ -230,17 +230,17 @@ public void RecognizeFile (NSUrl url)
 }
 ```
 
-このコードを詳しく見てみると、まず、音声認識エンジン (`SFSpeechRecognizer`) の作成が試行されます。 既定の言語が音声認識でサポートされていない場合は `null` が返され、関数は終了します。
+まず、このコードを詳しく見て、音声認識エンジン () を作成しようと `SFSpeechRecognizer` します。 既定の言語で音声認識がサポートされていない場合 `null` は、が返され、関数が終了します。
 
-音声認識エンジンが既定の言語で利用できる場合、アプリは `Available` プロパティを使用して現在認識できるかどうかを確認します。 たとえば、デバイスにアクティブなインターネット接続がない場合は、認識を利用できないことがあります。
+音声認識エンジンが既定の言語で使用できる場合、アプリは、プロパティを使用して現在認識できるかどうかを確認し `Available` ます。 たとえば、デバイスにアクティブなインターネット接続がない場合は、認識を利用できないことがあります。
 
-`SFSpeechUrlRecognitionRequest` は、iOS デバイス上の事前記録されたファイルの `NSUrl` の場所から作成され、音声認識エンジンに渡され、コールバックルーチンで処理されます。
+は、 `SFSpeechUrlRecognitionRequest` iOS デバイス上の事前記録されたファイルの場所から作成され、 `NSUrl` 音声認識エンジンに渡され、コールバックルーチンで処理されます。
 
-コールバックが呼び出されたときに、`NSError` が `null` ない場合は、処理する必要があるエラーが発生しています。 音声認識は段階的に行われるため、コールバックルーチンは複数回呼び出される可能性があるため、`SFSpeechRecognitionResult.Final` プロパティをテストして、変換が完了しているかどうかを確認し、変換の最適なバージョンを書き出す (`BestTranscription`) ことができます。
+コールバックが呼び出されたときに、によっ `NSError` `null` て処理される必要があるエラーが発生している場合。 音声認識は段階的に行われるため、コールバックルーチンは複数回呼び出される可能性があります。そのため、プロパティをテストして、 `SFSpeechRecognitionResult.Final` 変換が完了したかどうかを確認し、変換の最適なバージョンを書き出すことができ `BestTranscription` ます ()。
 
 ### <a name="recognizing-live-speech"></a>ライブ音声認識
 
-アプリでライブ音声認識が必要な場合、このプロセスは、事前に記録された音声を認識することとよく似ています。 (例:
+アプリでライブ音声認識が必要な場合、このプロセスは、事前に記録された音声を認識することとよく似ています。 次に例を示します。
 
 ```csharp
 using System;
@@ -317,7 +317,7 @@ private SFSpeechAudioBufferRecognitionRequest LiveSpeechRequest = new SFSpeechAu
 private SFSpeechRecognitionTask RecognitionTask;
 ```
 
-この例では、AV Foundation を使用して、認識要求を処理するために `SFSpeechAudioBufferRecognitionRequest` に渡されるオーディオを記録します。
+これは、認識要求を処理するためにに渡されるオーディオを、AV Foundation を使用して記録し `SFSpeechAudioBufferRecognitionRequest` ます。
 
 ```csharp
 var node = AudioEngine.InputNode;
@@ -343,7 +343,7 @@ if (error != null) {
 }
 ```
 
-認識タスクが開始され、ハンドルが認識タスク (`SFSpeechRecognitionTask`) に保持されます。
+認識タスクが開始され、ハンドルが認識タスク () に保持され `SFSpeechRecognitionTask` ます。
 
 ```csharp
 RecognitionTask = SpeechRecognizer.GetRecognitionTask (LiveSpeechRequest, (SFSpeechRecognitionResult result, NSError err) => {
@@ -367,10 +367,10 @@ AudioEngine.Stop ();
 RecognitionTask.Cancel ();
 ```
 
-ユーザーが変換をキャンセルしてメモリとデバイスのプロセッサの両方を解放する場合は、`RecognitionTask.Cancel` を呼び出すことが重要です。
+`RecognitionTask.Cancel`メモリとデバイスのプロセッサの両方を解放するためにユーザーが変換をキャンセルした場合は、を呼び出すことが重要です。
 
 > [!IMPORTANT]
-> `NSSpeechRecognitionUsageDescription` または `NSMicrophoneUsageDescription` の `Info.plist` キーを指定しないと、音声認識またはマイク (ライブオーディオ) にアクセスしようとしたときにアプリが警告を表示せずに失敗する可能性があります (`var node = AudioEngine.InputNode;`)。 詳細については、上記の「**使用方法の説明を指定する**」を参照してください。
+> `NSSpeechRecognitionUsageDescription`キーまたはキーを指定しないと、 `NSMicrophoneUsageDescription` `Info.plist` 音声認識またはマイク (ライブオーディオ) にアクセスしようとしたときにアプリが警告を表示せずに失敗する可能性が `var node = AudioEngine.InputNode;` あります ()。 詳細については、上記の「**使用方法の説明を指定する**」を参照してください。
 
 ## <a name="speech-recognition-limits"></a>音声認識の制限
 
