@@ -10,12 +10,12 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c8c54f3d3815e418d2f71960dc7733711cb40ae2
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e82572d88e380997fb2435179dba824c1b3f0c2f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139049"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936189"
 ---
 # <a name="the-path-fill-types"></a>パスの塗りつぶしの種類
 
@@ -25,7 +25,7 @@ _SkiaSharp path fill 型で可能なさまざまな効果を発見する_
 
 パスの2つの輪郭が重なり、1つの輪郭を構成する線が重なり合うことがあります。 囲まれた領域はすべて塗りつぶされる可能性がありますが、囲まれたすべての領域を塗りつぶす必要はありません。 次に例を示します。
 
-![](fill-types-images/filltypeexample.png "Five-pointed star partially filles")
+![5つの星の部分的な種類](fill-types-images/filltypeexample.png)
 
 これについては、簡単に制御できます。 入力アルゴリズムは、 [`SKFillType`](xref:SkiaSharp.SKPath.FillType) `SKPath` 列挙体のメンバーに設定したのプロパティによって管理され [`SKPathFillType`](xref:SkiaSharp.SKPathFillType) ます。
 
@@ -173,7 +173,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 通常、パスの塗りつぶしの種類は塗りつぶしにのみ影響し、ストロークは影響しませんが、2つの `Inverse` モードは塗りつぶしとストロークの両方に影響します。 塗りつぶしの場合、2つの型は、 `Inverse` 星の外側の領域が塗りつぶされるように、塗りつぶし領域を oppositely ます。 ストロークの場合、この 2 `Inverse` 種類の色はストロークを除くすべての色になります。 これらの逆フィルの種類を使用すると、iOS のスクリーンショットに示すように、いくつかの奇妙な効果が生じる可能性があります。
 
-[![](fill-types-images/fivepointedstar-small.png "Triple screenshot of the Five-Pointed Star page")](fill-types-images/fivepointedstar-large.png#lightbox "Triple screenshot of the Five-Pointed Star page")
+[![5つの星のページのトリプルスクリーンショット](fill-types-images/fivepointedstar-small.png)](fill-types-images/fivepointedstar-large.png#lightbox "5つの星のページのトリプルスクリーンショット")
 
 Android のスクリーンショットには、通常の奇数とワインディングの効果が示されていますが、ストロークと塗りつぶしの順序も結果に影響します。
 
@@ -226,7 +226,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 これは、最小限のコードで作成された興味深いイメージです。
 
-[![](fill-types-images/overlappingcircles-small.png "Triple screenshot of the Overlapping Circles page")](fill-types-images/overlappingcircles-large.png#lightbox "Triple screenshot of the Overlapping Circles page")
+[![重なり合った円ページのトリプルスクリーンショット](fill-types-images/overlappingcircles-small.png)](fill-types-images/overlappingcircles-large.png#lightbox "重なり合った円ページのトリプルスクリーンショット")
 
 ## <a name="related-links"></a>関連リンク
 

@@ -19,7 +19,7 @@ ms.locfileid: "86938475"
 ---
 # <a name="the-translate-transform"></a>平行移動変換
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _変換変換を使用して SkiaSharp グラフィックスをシフトする方法について説明します。_
 

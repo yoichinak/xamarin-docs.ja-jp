@@ -10,12 +10,12 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9fe0d751b1aa1cb609100e43c0f0015fd804327a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0e4300354588e5055e58251caa547a56c751fd94
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128857"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936072"
 ---
 # <a name="visualelement-legacy-color-mode-on-android"></a>Android での VisualElement レガシカラーモード
 
@@ -53,7 +53,7 @@ _legacyColorModeDisabledButton.On<Android>().SetIsLegacyColorModeEnabled(false);
 
 その結果、レガシ色モードを無効にして、ビューが無効になっている場合でも、ユーザーがビューに設定した色をそのまま使用できるようになります。
 
-![](legacy-color-mode-images/legacy-color-mode-disabled.png "Legacy color mode disabled")
+![レガシカラーモードが無効です](legacy-color-mode-images/legacy-color-mode-disabled.png)
 
 > [!NOTE]
 > ビューにを設定すると、 [`VisualStateGroup`](xref:Xamarin.Forms.VisualStateGroup) 従来の色モードは完全に無視されます。 表示状態の詳細については、「 [ Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)」を参照してください。

@@ -10,12 +10,12 @@ ms.date: 02/26/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8c4fc732082a77a2e471465af448a487862b513c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a15ca2e11dabb73054f5f0a1dc3f79342d8ce7f5
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136293"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938607"
 ---
 # <a name="setting-a-pickers-itemssource-property"></a>ピッカーの ItemsSource プロパティの設定
 
@@ -178,7 +178,7 @@ detailsLabel.SetBinding(Label.TextProperty, "SelectedMonkey.Details");
 
 [`SelectedItem`](xref:Xamarin.Forms.Picker.SelectedItem)プロパティデータは、 `SelectedMonkey` 接続されたビューモデルのプロパティにバインドされます。これは型 `Monkey` です。 そのため、ユーザーが内の項目を選択すると、プロパティは選択され [`Picker`](xref:Xamarin.Forms.Picker) `SelectedMonkey` たオブジェクトに設定され `Monkey` ます。 `SelectedMonkey`オブジェクトデータは、およびビューによってユーザーインターフェイスに表示され [`Label`](xref:Xamarin.Forms.Label) [`Image`](xref:Xamarin.Forms.Image) ます。
 
-![](populating-itemssource-images/monkeys.png "Picker Item Selection")
+![選択項目の選択](populating-itemssource-images/monkeys.png)
 
 > [!NOTE]
 > [`SelectedItem`](xref:Xamarin.Forms.Picker.SelectedItem)プロパティとプロパティは、 [`SelectedIndex`](xref:Xamarin.Forms.Picker.SelectedIndex) どちらも既定で双方向のバインディングをサポートしていることに注意してください。

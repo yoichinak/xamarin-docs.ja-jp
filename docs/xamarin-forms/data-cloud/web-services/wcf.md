@@ -10,12 +10,12 @@ ms.date: 03/28/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cf95427807e0179a608b428bc7e02499c9616fe7
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: cee301178880a62695f4208161965b01bb6f522e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139153"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938594"
 ---
 # <a name="consume-a-windows-communication-foundation-wcf-web-service"></a>Windows Communication Foundation (WCF) Web サービスを使用する
 
@@ -41,7 +41,7 @@ ASP.NET ウェブサービス (ASMX) と WCF には違いがありますが、WC
 
 サンプルアプリケーションソリューションには、ローカルで実行できる WCF サービスが含まれています。次のスクリーンショットを参照してください。
 
-![](wcf-images/portal.png "Sample Application")
+![サンプル アプリケーション](wcf-images/portal.png)
 
 > [!NOTE]
 > IOS 9 以降では、アプリトランスポートセキュリティ (ATS) によって、インターネットリソース (アプリのバックエンドサーバーなど) とアプリの間にセキュリティで保護された接続が適用されるため、機密情報が誤って開示されるのを防ぐことができます。 IOS 9 用に構築されたアプリでは、ATS が既定で有効になっているため、すべての接続は、ATS のセキュリティ要件の対象となります。 接続がこれらの要件を満たしていない場合、例外が発生して失敗します。
@@ -136,7 +136,7 @@ static TodoItem FromWCFServiceTodoItem (TodoWCFService.TodoItem item)
 
 このメソッドは、単純にプロキシによって生成された型からデータを取得 `TodoItem` し、新しく作成されたインスタンスに設定し `TodoItem` ます。
 
-### <a name="retrieve-data"></a>データの取得
+### <a name="retrieve-data"></a>データを取得する
 
 `TodoServiceClient.BeginGetTodoItems`メソッドと `TodoServiceClient.EndGetTodoItems` メソッドは、 `GetTodoItems` web サービスによって提供される操作を呼び出すために使用されます。 これらの非同期メソッドは、 `Task` 次のコード例に示すように、オブジェクトにカプセル化されます。
 

@@ -10,16 +10,16 @@ ms.date: 05/15/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 939727d3dd8d419cdc020d33d3e7241dcedb8158
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 279df31eeda506d6780533bac8ae190f799424a3
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137749"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936033"
 ---
 # <a name="xamarinforms-c-markup"></a>Xamarin.FormsC# マークアップ
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![プレリリース API](~/media/shared/preview.png "この API は現在プレリリースです")
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
 
@@ -235,7 +235,7 @@ new Label { Text = "Tap Me" }
 
 C# マークアップには、レイアウト内のビューの配置をサポートする一連のレイアウト拡張メソッドと、ビューのコンテンツが含まれています。
 
-| 型 | 拡張メソッド |
+| 種類 | 拡張メソッド |
 |---|---|
 | `FlexLayout` | `AlignSelf`, `Basis`, `Grow`, `Menu`, `Order`, `Shrink` |
 | `Grid` | `Row`, `Column`, `RowSpan`, `ColumnSpan` |
@@ -253,7 +253,7 @@ C# マークアップには、レイアウト内のビューの配置をサポ�
 
 左から右方向と右から左方向のフロー方向をサポートするように設計された C# マークアップでは、上記の名前空間のいずれかではなく、次の表に示す拡張メソッドを使用することをお勧めします。
 
-| 型 | 拡張メソッド |
+| 種類 | 拡張メソッド |
 |---|---|
 | `Label` | `TextStart`, `TextEnd` |
 | `LayoutOptions` | `Start`, `End` <br/> `StartExpand`, `EndExpand` |

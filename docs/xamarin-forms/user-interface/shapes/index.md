@@ -10,16 +10,16 @@ ms.date: 06/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1a1ba09b5be6901b1b07ed9aa3fd9a1b88770efc
-ms.sourcegitcommit: 91b4d2f93687fadec5c3f80aadc8f7298d911624
+ms.openlocfilehash: 053da71fdd91af91f0a037e7573def91c36df503
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85795010"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935513"
 ---
 # <a name="xamarinforms-shapes"></a>Xamarin.Forms図形
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![プレリリース API](~/media/shared/preview.png "この API は現在プレリリースです")
 
 は、 `Shape` [`View`](xref:Xamarin.Forms.View) 画面に図形を描画できるようにするの型です。 `Shape`オブジェクトは、クラスがクラスから派生するため、レイアウトクラスやほとんどのコントロール内で使用でき `Shape` `View` ます。
 

@@ -10,12 +10,12 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ee97ee2aae11e4e54a0d25e80ffd7bce301fa2f3
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a98c7210f2e71f6f26d53da3555f3f9b5e016952
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137684"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935981"
 ---
 # <a name="integrating-text-and-graphics"></a>テキストとグラフィックスの統合
 
@@ -25,7 +25,7 @@ _テキストを SkiaSharp グラフィックスと統合するために表示�
 
 この記事では、テキストを測定し、テキストを特定のサイズにスケーリングし、テキストを他のグラフィックスと統合する方法について説明します。
 
-![](text-images/textandgraphicsexample.png "Text surrounded by rectangles")
+![四角形で囲まれるテキスト](text-images/textandgraphicsexample.png)
 
 このイメージには、角丸四角形も含まれます。 SkiaSharp クラスには、四角形を描画し、 `Canvas` [`DrawRect`](xref:SkiaSharp.SKCanvas.DrawRect*) [`DrawRoundRect`](xref:SkiaSharp.SKCanvas.DrawRoundRect*) 角が丸い四角形を描画するメソッドが含まれています。 これらのメソッドを使用すると、四角形を値として、 `SKRect` またはその他の方法で定義できます。
 
@@ -126,7 +126,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 その後、メソッドの残りの部分はストレートになります。 この例で `SKPaint` は、境界に対して別のオブジェクトを作成し、を `DrawRoundRect` 2 回呼び出します。 2番目の呼び出しでは、別の10ピクセルで拡大された四角形を使用します。 最初の呼び出しでは、角の半径として20ピクセルが指定されています。 2番目の角の半径は30ピクセルであるため、並列であるように見えます。
 
- [![](text-images/framedtext-small.png "Triple screenshot of the Framed Text page")](text-images/framedtext-large.png#lightbox "Triple screenshot of the Framed Text page")
+ [![フレームテキストページのトリプルスクリーンショット](text-images/framedtext-small.png)](text-images/framedtext-large.png#lightbox "フレームテキストページのトリプルスクリーンショット")
 
 電話またはシミュレーターを横向きにして、テキストとフレームのサイズの増加を確認することができます。
 
@@ -134,7 +134,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 テキストは、他のグラフィカルオブジェクトと同様に扱うことができます。 簡単な方法の1つとして、テキスト文字のアウトラインを表示する方法があります。
 
-[![](text-images/outlinedtext-small.png "Triple screen shot of the Outlined Text page")](text-images/outlinedtext-large.png#lightbox "Triple screenshot of the Outlined Text page")
+[![アウトライン表示されたテキストページのトリプルスクリーンショット](text-images/outlinedtext-small.png)](text-images/outlinedtext-large.png#lightbox "アウトライン表示されたテキストページのトリプルスクリーンショット")
 
 これを実現するには、 `Style` オブジェクトの通常のプロパティを `SKPaint` の既定の設定から `SKPaintStyle.Fill` に変更し、ストロークの幅を指定し `SKPaintStyle.Stroke` ます。 アウトライン表示された `PaintSurface` **テキスト**ページのハンドラーは、その方法を示しています。
 

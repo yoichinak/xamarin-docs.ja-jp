@@ -10,12 +10,12 @@ ms.date: 02/17/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2a222c3ee2234904cce94b52a14654728a1aa6d1
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: ae3759c1e111906b82596af80d4bdcffd5d23305
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140128"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938529"
 ---
 # <a name="global-styles-in-xamarinforms"></a>グローバルスタイルXamarin.Forms
 
@@ -65,7 +65,7 @@ _スタイルは、アプリケーションのリソースディクショナリ�
 
 この結果、次のスクリーンショットに示すような外観が表示されます。
 
-[![](application-images/application-styles-1.png "Global Styles Example")](application-images/application-styles-1-large.png#lightbox "Global Styles Example")
+[![グローバルスタイルの例](application-images/application-styles-1.png)](application-images/application-styles-1-large.png#lightbox "グローバルスタイルの例")
 
 ページ内でスタイルを作成する方法の詳細については [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 、「[明示的なスタイル](~/xamarin-forms/user-interface/styles/explicit.md)と[暗黙的なスタイル](~/xamarin-forms/user-interface/styles/implicit.md)」を参照してください。
 
@@ -103,7 +103,7 @@ _スタイルは、アプリケーションのリソースディクショナリ�
 
 `buttonStyle`アプリケーションレベルで定義されている元のは、 `buttonStyle` ページレベルで定義されているインスタンスによってオーバーライドされます。 また、ページレベルのスタイルは、コントロールレベルによってオーバーライドされ `buttonStyle` ます。 そのため、 [`Button`](xref:Xamarin.Forms.Button) 次のスクリーンショットに示すように、インスタンスは青色のテキストと共に表示されます。
 
-[![](application-images/application-styles-2.png "Overriding Styles Example")](application-images/application-styles-2-large.png#lightbox "Overriding Styles Example")
+[![スタイルのオーバーライドの例](application-images/application-styles-2.png)](application-images/application-styles-2-large.png#lightbox "スタイルのオーバーライドの例")
 
 ## <a name="create-a-global-style-in-c35"></a>C&#35; でグローバルスタイルを作成する
 

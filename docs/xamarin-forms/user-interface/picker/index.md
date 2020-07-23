@@ -10,12 +10,12 @@ ms.date: 02/26/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 50f605f4ad9839521fd4169531ad46d197f20dbf
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5e3153e796f26ef150dccc79d8ea6f90127c6a26
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139663"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938685"
 ---
 # <a name="xamarinforms-picker"></a>Xamarin.Forms効果
 
@@ -38,15 +38,15 @@ _ピッカービューは、データの一覧からテキスト項目を選択�
 
 は、 [`Picker`](xref:Xamarin.Forms.Picker) 最初に表示されたときにデータを表示しません。 代わりに、そのプロパティの値 [`Title`](xref:Xamarin.Forms.Picker.Title) は、iOS および Android プラットフォームのプレースホルダーとして表示されます。
 
-[![](images/picker-initial.png "Initial Picker Display")](images/picker-initial-large.png#lightbox "Initial Picker Display")
+[![初期ピッカーの表示](images/picker-initial.png)](images/picker-initial-large.png#lightbox "初期ピッカーの表示")
 
 がフォーカスを取得すると、 [`Picker`](xref:Xamarin.Forms.Picker) そのデータが表示され、ユーザーは項目を選択できるようになります。
 
-[![](images/picker-selection.png "Picker Selecting an Item")](images/picker-selection-large.png#lightbox "Picker Selecting an Item")
+[![ピッカー項目を選択する](images/picker-selection.png)](images/picker-selection-large.png#lightbox "ピッカー項目を選択する")
 
 は、 [`Picker`](xref:Xamarin.Forms.Picker) [`SelectedIndexChanged`](xref:Xamarin.Forms.Picker.SelectedIndexChanged) ユーザーが項目を選択したときにイベントを発生させます。 選択すると、選択した項目がによって表示され `Picker` ます。
 
-![](images/picker-after-selection.png "Picker after Selection")
+![選択後のピッカー](images/picker-after-selection.png)
 
 にデータを読み込むには、次の2つの方法があり [`Picker`](xref:Xamarin.Forms.Picker) ます。
 

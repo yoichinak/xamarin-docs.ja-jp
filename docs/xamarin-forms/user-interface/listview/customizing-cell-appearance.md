@@ -10,12 +10,12 @@ ms.date: 09/12/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cdede547e3ef7cf9f7b6d89751c7476a2ce66d3d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 05a001d3b49f38b2cb5306d8a19a08b4f8392425
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84129013"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935565"
 ---
 # <a name="customizing-listview-cell-appearance"></a>ListView セルの外観のカスタマイズ
 
@@ -37,7 +37,7 @@ Xamarin.Formsには、多くのアプリケーションで使用できる組み�
 
 [`TextCell`](xref:Xamarin.Forms.TextCell)テキストを表示するためのセルです。オプションで、詳細テキストとして2行目を使用できます。 次のスクリーンショットは、 `TextCell` iOS と Android の項目を示しています。
 
-![](customizing-cell-appearance-images/text-cell-default.png "Default TextCell Example")
+![既定の TextCell の例](customizing-cell-appearance-images/text-cell-default.png)
 
 TextCells は実行時にネイティブコントロールとしてレンダリングされるため、カスタムと比較してパフォーマンスが非常に優れてい `ViewCell` ます。 TextCells はカスタマイズ可能であり、次のプロパティを設定できます。
 
@@ -48,7 +48,7 @@ TextCells は実行時にネイティブコントロールとしてレンダリ�
 
 次のスクリーンショットは、カスタマイズされ `TextCell` た色プロパティを持つ項目を示しています。
 
-![](customizing-cell-appearance-images/text-cell-custom.png "Custom TextCell Example")
+![カスタムの TextCell の例](customizing-cell-appearance-images/text-cell-custom.png)
 
 ### <a name="imagecell"></a>ImageCell
 

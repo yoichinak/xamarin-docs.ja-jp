@@ -7,12 +7,12 @@ ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 author: davidortinau
 ms.author: daortin
 ms.date: 04/18/2018
-ms.openlocfilehash: f81df8ac253e53b16c3ab09bf80d66a7b6324854
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: b9b771efe338fbcc250aa6e7a83b73f35269d3bf
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571520"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996813"
 ---
 # <a name="updating-component-references-to-nuget"></a>コンポーネント参照を NuGet に更新しています
 
@@ -27,7 +27,7 @@ ms.locfileid: "84571520"
 
 ## <a name="manually-removing-component-references"></a>手動によるコンポーネント参照の削除
 
-Visual Studio for Mac の 15.6 7.4 リリースでは、プロジェクトのコンポーネントがサポートされなくなりました。 
+Visual Studio for Mac の 15.6 7.4 リリースでは、プロジェクトのコンポーネントがサポートされなくなりました。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -37,7 +37,7 @@ Visual Studio for Mac の 15.6 7.4 リリースでは、プロジェクトのコ
 
 プロジェクトからコンポーネントを削除するには、次のようにします。
 
-1. **.csproj** ファイルを開きます。 これを行うには、プロジェクト名を右クリックし、[**プロジェクトのアンロード**] を選択します。 
+1. **.csproj** ファイルを開きます。 これを行うには、プロジェクト名を右クリックし、[**プロジェクトのアンロード**] を選択します。
 
 2. アンロードしたプロジェクトでもう一度右クリックし、[ **{プロジェクト名} の編集**] を選択します。
 
@@ -151,7 +151,7 @@ NuGet パッケージは [**パッケージ**] ノードに表示されたまま
 
 [**パッケージ**] タブは、必ず空になっていることに注意してください。
 
-![](component-nuget-images/packages-tab-empty-sml.png)
+![[パッケージ] タブ](component-nuget-images/packages-tab-empty-sml.png)
 
 _NuGet の依存関係が含まれている場合がありますが、これらは無視してかまいません。_
 
@@ -174,12 +174,12 @@ NuGet でコンポーネントが使用可能であることを確認したら�
 
 これにより、コンポーネントとすべての参照が削除されます。 これにより、同等の NuGet パッケージを追加して置き換えられるまで、ビルドが中断されます。
 
-#### <a name="add-the-nuget-package"></a>NuGet パッケージを取得する
+#### <a name="add-the-nuget-package"></a>NuGet パッケージを追加する
 
 1. [**パッケージ**] ノードを右クリックし、[**パッケージの追加**] を選択します。
 2. 名前または作成者で NuGet の置換を検索します。
 
-    ![](component-nuget-images/nuget-search-sml.png)
+    ![NuGet 検索](component-nuget-images/nuget-search-sml.png)
 
 3. [**パッケージの追加**...
 

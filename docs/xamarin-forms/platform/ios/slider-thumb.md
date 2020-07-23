@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 93b4dba3e8543bd2cc2a4f2187f617aae5daff77
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d8ca0dfb533dc5fb0b7442b85de41dcf7c18fec8
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137073"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938542"
 ---
 # <a name="slider-thumb-tap-on-ios"></a>IOS でのスライダーの Thumb タップ
 
@@ -48,7 +48,7 @@ slider.On<iOS>().SetUpdateOnTap(true);
 
 結果として、バーのタップによって [`Slider`](xref:Xamarin.Forms.Slider) つまみが移動し、プロパティが設定され `Slider` [`Slider.Value`](xref:Xamarin.Forms.Slider.Value) ます。
 
-![](slider-thumb-images/slider-updateontap.png "Slider Update on Tap enabled")
+![タップが有効になっているスライダーの更新](slider-thumb-images/slider-updateontap.png)
 
 ## <a name="related-links"></a>関連リンク
 

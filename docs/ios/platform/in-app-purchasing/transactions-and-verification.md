@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: d92de14dc42f7c20a1f25b6454623c7ad4441e8a
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 605f82c90f98bb4b50e5b630a53721d186ff35a1
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032287"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935760"
 ---
 # <a name="transactions-and-verification-in-xamarinios"></a>Xamarin. iOS でのトランザクションと検証
 
@@ -29,7 +29,7 @@ ms.locfileid: "73032287"
 
 ### <a name="implementing-restore"></a>復元の実装
 
-ユーザーインターフェイスの **[復元]** ボタンをクリックすると、次のメソッドが呼び出され、`SKPaymentQueue`の RestoreCompletedTransactions がトリガーされます。
+ユーザーインターフェイスの [**復元**] ボタンをクリックすると、で RestoreCompletedTransactions がトリガーされ、次のメソッドが呼び出され `SKPaymentQueue` ます。
 
 ```csharp
 public void Restore()
@@ -41,7 +41,7 @@ public void Restore()
 
 StoreKit は、Apple のサーバーに復元要求を非同期的に送信します。   
    
-`CustomPaymentObserver` はトランザクションオブザーバーとして登録されるため、Apple のサーバーが応答するときにメッセージを受信します。 応答には、このユーザーがこのアプリケーションに対して実行したすべてのトランザクション (すべてのデバイスで) が含まれます。 このコードでは、各トランザクションをループ処理し、復元された状態を検出して、`UpdatedTransactions` メソッドを呼び出して、次のように処理します。
+は `CustomPaymentObserver` トランザクションオブザーバーとして登録されるため、Apple のサーバーが応答するときにメッセージを受信します。 応答には、このユーザーがこのアプリケーションに対して実行したすべてのトランザクション (すべてのデバイスで) が含まれます。 このコードは、各トランザクションをループ処理し、復元された状態を検出し、次のようにメソッドを呼び出して `UpdatedTransactions` 処理します。
 
 ```csharp
 // called when the transaction status is updated
@@ -67,9 +67,9 @@ default:
 }
 ```
 
-ユーザーに対して復元可能な製品がない場合、`UpdatedTransactions` は呼び出されません。   
+ユーザーに対して復元可能な製品がない場合、 `UpdatedTransactions` は呼び出されません。   
    
-サンプル内の特定のトランザクションを復元する最も簡単なコードは、購入時と同じアクションを実行します。ただし、`OriginalTransaction` プロパティを使用して製品 ID にアクセスする点が異なります。
+このサンプルでは、特定のトランザクションを復元するための最も簡単なコードは、 `OriginalTransaction` 商品 ID にアクセスするためにプロパティが使用される点を除いて、購入時と同じアクションを実行します。
 
 ```csharp
 public void RestoreTransaction (SKPaymentTransaction transaction)
@@ -82,11 +82,11 @@ public void RestoreTransaction (SKPaymentTransaction transaction)
 }
 ```
 
-より高度な実装では、元の日付や受領番号など、他の `transaction.OriginalTransaction` プロパティを確認できます。 この情報は、一部の製品の種類 (サブスクリプションなど) に役立ちます。
+より高度な実装では、 `transaction.OriginalTransaction` 元の日付や受信確認番号などの他のプロパティを確認できます。 この情報は、一部の製品の種類 (サブスクリプションなど) に役立ちます。
 
 #### <a name="restore-completion"></a>復元の完了
 
-`CustomPaymentObserver` には、次に示すように、復元プロセスが完了した (正常にまたはエラーが発生した) 場合に、StoreKit によって呼び出される2つの追加のメソッドがあります。
+には、 `CustomPaymentObserver` 次に示すように、復元処理が完了した (正常に完了したか失敗した) 場合に、StoreKit によって呼び出される2つの追加のメソッドがあります。
 
 ```csharp
 public override void PaymentQueueRestoreCompletedTransactionsFinished (SKPaymentQueue queue)
@@ -103,15 +103,15 @@ public override void RestoreCompletedTransactionsFailedWithError (SKPaymentQueue
 
 ## <a name="securing-purchases"></a>購入のセキュリティ保護
 
-このドキュメントの2つの例では、`NSUserDefaults` を使用して購入を追跡します。   
+このドキュメントの2つの例では、を使用して `NSUserDefaults` 購入を追跡します。   
    
- **消耗品**–クレジット購入の "残高" は、購入ごとにインクリメントされる単純な `NSUserDefaults` 整数値です。   
+ **消耗品**–クレジット購入の "残高" は、 `NSUserDefaults` 購入ごとにインクリメントされる単純な整数値です。   
    
- **非消耗品**–各写真フィルターの購入は、`NSUserDefaults`にキーと値のペアとして格納されます。
+ **非消耗品**–各写真フィルター購入は、のキーと値のペアとして格納され `NSUserDefaults` ます。
 
-`NSUserDefaults` を使用すると、コード例は単純に維持されますが、技術的には志向ユーザーが設定を更新できる可能性があります (支払い方法をバイパスする)。   
+を使用する `NSUserDefaults` と、コード例は単純に保持されますが、技術的には志向ユーザーが設定を更新できる可能性があるため、非常に安全なソリューションは提供されません (支払いメカニズムをバイパスする)。   
    
-メモ:実際のアプリケーションでは、ユーザーの改ざんの対象とならない購入済みコンテンツを格納するための安全なメカニズムを採用する必要があります。 暗号化やその他の手法 (リモートサーバー認証など) が含まれる場合があります。   
+注: 実際のアプリケーションでは、ユーザーの改ざんの対象とならない購入済みコンテンツを格納するための安全なメカニズムを採用する必要があります。 暗号化やその他の手法 (リモートサーバー認証など) が含まれる場合があります。   
    
  このメカニズムは、iOS、iTunes、iCloud の組み込みのバックアップと回復機能を利用するように設計する必要もあります。 これにより、ユーザーがバックアップを復元した後、前回の購入がすぐに使用できるようになります。   
    
@@ -121,7 +121,7 @@ IOS 固有のガイドラインの詳細については、Apple の安全なコ�
 
 ここまでの例では、アプリストアサーバーと直接通信するアプリケーションだけで、アプリにコード化された機能や機能のロックを解除するアプリケーションのみを購入しました。   
    
-Apple では、購入確認を別のサーバーが個別に確認できるようにすることで、追加のレベルの購入セキュリティを提供しています。これは、デジタルブックの一部としてデジタルコンテンツを配信する前に、要求を検証するのに便利です。マガジン)。   
+Apple では、購入確認を別のサーバーで個別に確認できるようにすることで、追加のレベルの購入セキュリティを提供しています。これは、購入の一部としてデジタルコンテンツを配信する前に、要求を検証するのに役立ちます (デジタルブック、雑誌など)。   
    
  **組み込み製品**: このドキュメントの例と同様に、購入した製品は、アプリケーションに付属する機能として存在します。 アプリ内購入では、ユーザーは機能にアクセスできます。
 製品 Id はハードコードされています。   
@@ -137,7 +137,7 @@ Apple では、購入確認を別のサーバーが個別に確認できるよ�
 
 製品がリモートで配信されるため、書籍の追加や雑誌の新しい問題など、時間の経過と共に製品を追加することもできます (アプリコードを更新する必要はありません)。 アプリケーションがこれらのニュース製品を検出してユーザーに表示できるように、追加のサーバーはこの情報を保存して提供する必要があります。   
    
-[![](transactions-and-verification-images/image38.png "Getting Prices for Server-Delivered Products")](transactions-and-verification-images/image38.png#lightbox)   
+[![サーバーで提供される製品の価格を取得する](transactions-and-verification-images/image38.png)](transactions-and-verification-images/image38.png#lightbox)   
    
 1. 製品情報は、サーバーと iTunes Connect の複数の場所に保存する必要があります。 さらに、各製品にはコンテンツファイルが関連付けられています。 これらのファイルは、正常に購入した後に配信されます。   
    
@@ -151,21 +151,21 @@ Apple では、購入確認を別のサーバーが個別に確認できるよ�
    
 6. ITunes サーバーは、有効な製品情報 (説明と現在の価格) で応答します。   
    
-7. アプリケーションの `SKProductsRequestDelegate` には、表示する製品情報がユーザーに渡されます。
+7. アプリケーションのに `SKProductsRequestDelegate` は、表示する製品情報がユーザーに渡されます。
 
 #### <a name="purchasing-server-delivered-products"></a>サーバーで提供される製品の購入
 
 リモートサーバーでは、コンテンツ要求が有効であることを検証する何らかの方法が必要であるため (つまり、に対して支払いが行われています)、受信情報が認証のために渡されます。 リモートサーバーは、検証のためにそのデータを iTunes に転送します。成功した場合、アプリケーションへの応答に製品のコンテンツが含まれます。   
    
- [![](transactions-and-verification-images/image39.png "Purchasing Server-Delivered Products")](transactions-and-verification-images/image39.png#lightbox)   
+ [![サーバーで提供される製品の購入](transactions-and-verification-images/image39.png)](transactions-and-verification-images/image39.png#lightbox)   
    
-1. アプリによって `SKPayment` がキューに追加されます。 必要に応じて、ユーザーは Apple ID の入力を求められ、支払いの確認を求められます。   
+1. アプリによってがキューに追加され `SKPayment` ます。 必要に応じて、ユーザーは Apple ID の入力を求められ、支払いの確認を求められます。   
    
 2. StoreKit は、要求をサーバーに送信して処理します。   
    
 3. トランザクションが完了すると、サーバーはトランザクションの確認で応答します。   
    
-4. `SKPaymentTransactionObserver` サブクラスは、受信確認を受信して処理します。 製品はサーバーからダウンロードする必要があるため、アプリケーションはリモートサーバーへのネットワーク要求を開始します。   
+4. サブクラスは、受信 `SKPaymentTransactionObserver` 確認を受信して処理します。 製品はサーバーからダウンロードする必要があるため、アプリケーションはリモートサーバーへのネットワーク要求を開始します。   
    
 5. ダウンロード要求には、受信データが付属しているので、リモートサーバーはコンテンツにアクセスする権限があることを確認できます。 アプリケーションのネットワーククライアントは、この要求に対する応答を待機します。   
    
@@ -177,15 +177,15 @@ Apple では、購入確認を別のサーバーが個別に確認できるよ�
   
 9. アプリケーションは、応答を受信して解析し、製品の内容をデバイスのファイルシステムに保存します。   
    
-10. アプリケーションによって製品が有効になり、StoreKit の `FinishTransaction`が呼び出されます。 アプリケーションでは、購入したコンテンツを必要に応じて表示することができます (たとえば、購入した本や雑誌の問題の最初のページを表示します)。
+10. アプリケーションによって製品が有効になり、StoreKit のが呼び出さ `FinishTransaction` れます。 アプリケーションでは、購入したコンテンツを必要に応じて表示することができます (たとえば、購入した本や雑誌の問題の最初のページを表示します)。
 
-非常に大規模な製品コンテンツファイルの別の実装では、トランザクションを迅速に完了でき、実際の製品コンテンツをダウンロードするためのユーザーインターフェイスをユーザーに提供できるように、単に手順 #9 にトランザクション受信を格納するだけで済みます。後で実行します。 以降のダウンロード要求では、保存されている確認メッセージを再送信して、必要な製品コンテンツファイルにアクセスできます。
+非常に大規模な製品コンテンツファイルの別の実装では、トランザクションを迅速に完了できるように、手順 #9 でトランザクションの受信を格納するだけで、後で実際の製品コンテンツをダウンロードするユーザーインターフェイスをユーザーに提供することができます。 以降のダウンロード要求では、保存されている確認メッセージを再送信して、必要な製品コンテンツファイルにアクセスできます。
 
 ### <a name="writing-server-side-receipt-verification-code"></a>サーバー側の受信確認コードを書き込んでいます
 
 サーバー側コードでの受信確認は、ワークフロー図の #8 を通じて #5 手順を含む単純な HTTP POST 要求/応答を使用して行うことができます。   
    
-アプリの `SKPaymentTansaction.TransactionReceipt` プロパティを抽出します。 これは、検証のために iTunes に送信する必要があるデータです (手順 #5)。
+アプリのプロパティを抽出し `SKPaymentTansaction.TransactionReceipt` ます。 これは、検証のために iTunes に送信する必要があるデータです (手順 #5)。
 
 トランザクション受信データを Base64 でエンコードします (手順 #5 または #6)。
 
@@ -197,7 +197,7 @@ Apple では、購入確認を別のサーバーが個別に確認できるよ�
 }
 ```
 
-HTTP は、テストのために運用または[https://sandbox.itunes.apple.com/verifyReceipt](https://sandbox.itunes.apple.com/verifyReceipt)のために JSON を[https://buy.itunes.apple.com/verifyReceipt](https://buy.itunes.apple.com/verifyReceipt)に投稿します。   
+HTTP は、運用またはテストのために JSON をにポストし [https://buy.itunes.apple.com/verifyReceipt](https://buy.itunes.apple.com/verifyReceipt) [https://sandbox.itunes.apple.com/verifyReceipt](https://sandbox.itunes.apple.com/verifyReceipt) ます。   
    
  JSON 応答には、次のキーが含まれます。
 
@@ -208,6 +208,6 @@ HTTP は、テストのために運用または[https://sandbox.itunes.apple.com
 }
 ```
 
-状態が0の場合は、有効な受信確認を示します。 サーバーは、購入した製品のコンテンツを満たすことができます。 受信確認キーには、アプリによって受信された `SKPaymentTransaction` オブジェクトと同じプロパティを持つ JSON ディクショナリが含まれているため、サーバーコードはこのディクショナリにクエリを実行して、購入の product_id や数量などの情報を取得できます。
+状態が0の場合は、有効な受信確認を示します。 サーバーは、購入した製品のコンテンツを満たすことができます。 受信キーには、アプリによって受信されたオブジェクトと同じプロパティを持つ JSON ディクショナリが含まれているので、 `SKPaymentTransaction` サーバーコードはこのディクショナリにクエリを実行して、購入の product_id や数量などの情報を取得できます。
 
 詳細については、Apple の受信確認の[プログラミングガイド](https://developer.apple.com/library/archive/releasenotes/General/ValidateAppStoreReceipt/Introduction.html)に関するドキュメントを参照してください。

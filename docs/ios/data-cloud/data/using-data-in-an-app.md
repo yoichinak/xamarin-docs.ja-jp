@@ -1,44 +1,44 @@
 ---
 title: IOS アプリでのデータの使用
-description: このドキュメントでは、DataAccess_Adv サンプルについて説明します。これは、ユーザー入力を収集し、Xamarin. iOS アプリで作成、読み取り、更新、削除 (CRUD) データベース操作を実行する方法を示しています。
+description: このドキュメントでは、DataAccess_Adv サンプルについて説明します。このサンプルでは、Xamarin iOS アプリでユーザー入力を収集し、作成、読み取り、更新、削除 (CRUD) データベース操作を実行する方法を示します。
 ms.prod: xamarin
 ms.assetid: 2CB8150E-CD2C-4E97-8605-1EE8CBACFEEC
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/11/2016
-ms.openlocfilehash: 060e4b8e7856e0024e6d236652c2b04c1da16f66
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: c888c132748c4212b1e52413647614ca83897d75
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73008251"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938516"
 ---
 # <a name="using-data-in-an-ios-app"></a>IOS アプリでのデータの使用
 
-**DataAccess_Adv**サンプルは、ユーザーの入力と*CRUD* (作成、読み取り、更新、および削除) データベース機能を使用できる動作するアプリケーションを示しています。 アプリケーションは、リストとデータ入力フォームの2つの画面で構成されます。 すべてのデータアクセスコードは、iOS および Android では変更なしで再利用できます。
+**DataAccess_Adv**サンプルでは、データベース機能のユーザー入力と*CRUD* (作成、読み取り、更新、および削除) を可能にする実用的なアプリケーションを示します。 アプリケーションは、リストとデータ入力フォームの2つの画面で構成されます。 すべてのデータアクセスコードは、iOS および Android では変更なしで再利用できます。
 
 データを追加した後、アプリケーション画面は次のようになります。
 
- ![](using-data-in-an-app-images/image9.png "iOS sample list")
+ ![iOS のサンプル一覧](using-data-in-an-app-images/image9.png)
 
- ![](using-data-in-an-app-images/image10.png "iOS sample detail")
+ ![iOS のサンプルの詳細](using-data-in-an-app-images/image10.png)
 
 IOS プロジェクトを以下に示します。このセクションで示すコードは、 **Orm**ディレクトリに含まれています。
 
- ![](using-data-in-an-app-images/image13.png "iOS project tree")
+ ![iOS プロジェクトツリー](using-data-in-an-app-images/image13.png)
 
 IOS の ViewControllers のネイティブ UI コードは、このドキュメントの対象外です。
 UI コントロールの詳細については、「 [iOS のテーブルとセルの操作](~/ios/user-interface/controls/tables/index.md)ガイド」を参照してください。
 
-## <a name="read"></a>読み取り
+## <a name="read"></a>Read
 
 サンプルには、次のような読み取り操作がいくつかあります。
 
 - リストを読み取っています
 - 個々のレコードの読み取り
 
-`StockDatabase` クラスの2つのメソッドは次のとおりです。
+クラスの2つのメソッド `StockDatabase` は次のとおりです。
 
 ```csharp
 public IEnumerable<Stock> GetStocks ()
@@ -55,11 +55,11 @@ public Stock GetStock (int id)
 }
 ```
 
-iOS では、`UITableView` とは異なる方法でデータを表示します。
+iOS では、としてデータが異なる方法で表示され `UITableView` ます。
 
 ## <a name="create-and-update"></a>作成と更新
 
-アプリケーションコードを簡略化するために、PrimaryKey が設定されているかどうかに応じて挿入または更新を行う1つの save メソッドが用意されています。 `Id` プロパティは `[PrimaryKey]` 属性でマークされているので、コードで設定しないでください。
+アプリケーションコードを簡略化するために、PrimaryKey が設定されているかどうかに応じて挿入または更新を行う1つの save メソッドが用意されています。 プロパティは属性でマークされているので、 `Id` `[PrimaryKey]` コードで設定しないでください。
 このメソッドは、(主キープロパティをチェックして) 値が以前に保存されているかどうかを検出し、それに応じてオブジェクトを挿入または更新します。
 
 ```csharp
@@ -81,8 +81,8 @@ public int SaveStock (Stock item)
 
 ## <a name="delete"></a>削除
 
-`Insert` メソッドと `Update` メソッドとは異なり、`Delete<T>` メソッドは、完全な `Stock` オブジェクトではなく、主キーの値のみを受け入れることができます。
-この例では、`Stock` オブジェクトがメソッドに渡されますが、`Delete<T>` メソッドに渡されるのは Id プロパティだけです。
+`Insert`メソッドとメソッドとは異なり `Update` 、メソッドは、 `Delete<T>` 完全なオブジェクトではなく、主キーの値のみを受け入れることができ `Stock` ます。
+この例では、 `Stock` オブジェクトはメソッドに渡されますが、Id プロパティのみがメソッドに渡され `Delete<T>` ます。
 
 ```csharp
 public int DeleteStock(Stock stock)
@@ -101,9 +101,9 @@ public int DeleteStock(Stock stock)
 - **SQLite Manager Firefox Extension** – Mac および Windows で動作し、IOS および Android と互換性のあるファイルを生成します。
 - **コマンドライン**–「 [Www.sqlite.org/sqlite.html](https://www.sqlite.org/sqlite.html) 」を参照してください。
 
-アプリケーションと共に配布するデータベースファイルを作成する場合は、テーブルと列の名前付けを使用して、コードが期待するものと一致することを確認します。特に、SQLite.NET C#を使用していて、名前がクラスやプロパティと一致することを期待する場合は特に、または、関連付けられているカスタム属性)。
+アプリケーションと共に配布するデータベースファイルを作成する場合は、テーブルと列の名前付けを使用して、コードが期待するものと一致することを確認します。特に、C# のクラスとプロパティ (または関連するカスタム属性) と名前が一致することを期待する SQLite.NET を使用する場合は特にそうです。
 
-IOS の場合は、アプリケーションに sqlite ファイルを含め、**ビルドアクション: コンテンツ**でマークされていることを確認します。 データメソッドを呼び出す*前に*、`FinishedLaunching` にコードを配置して、書き込み可能なディレクトリにファイルをコピーします。 次のコードでは、 **data. sqlite**という名前の既存のデータベースがまだ存在しない場合にのみコピーします。
+IOS の場合は、アプリケーションに sqlite ファイルを含め、**ビルドアクション: コンテンツ**でマークされていることを確認します。 `FinishedLaunching`データメソッドを呼び出す*前に*、ファイルを書き込み可能なディレクトリにコピーするコードをに配置します。 次のコードでは、 **data. sqlite**という名前の既存のデータベースがまだ存在しない場合にのみコピーします。
 
 ```csharp
 // Copy the database across (if it doesn't exist)

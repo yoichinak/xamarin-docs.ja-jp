@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 75ef118b642a8c6a66205c6f7e3bc03089c6593c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: f7149a818506611176f7c34a6fae4ec733cd2ad9
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127895"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938568"
 ---
 # <a name="picker-item-selection-on-ios"></a>IOS でのピッカー項目の選択
 
@@ -66,7 +66,7 @@ switch (picker.On<iOS>().UpdateMode())
 
 結果として、指定された `UpdateMode` がに適用され [`Picker`](xref:Xamarin.Forms.Picker) ます。これは、項目の選択が行われるタイミングを制御します。
 
-[![](picker-selection-images/picker-updatemode.png "Picker UpdateMode Platform-Specific")](picker-selection-images/picker-updatemode-large.png#lightbox "Picker UpdateMode Platform-Specific")
+[![ピッカー UpdateMode プラットフォーム固有](picker-selection-images/picker-updatemode.png)](picker-selection-images/picker-updatemode-large.png#lightbox "ピッカー UpdateMode プラットフォーム固有")
 
 ## <a name="related-links"></a>関連リンク
 

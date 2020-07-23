@@ -10,16 +10,16 @@ ms.date: 05/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7ae6e5e764dc066940971dd9b5a8fdc36c7a1970
-ms.sourcegitcommit: cd0c0999b53e825b60471bfbfd4144cfcd783587
+ms.openlocfilehash: 3ad0981c0249bc81a97d5c48489167d81a1523de
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86225495"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938469"
 ---
 # <a name="images-in-xamarinforms"></a>画像Xamarin.Forms
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithimages)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithimages)
 
 _イメージは、を使用してプラットフォーム間で共有でき Xamarin.Forms 、プラットフォームごとに個別に読み込むことも、表示用にダウンロードすることもできます。_
 
@@ -136,7 +136,7 @@ IDE では、このプロジェクトの既定の**名前空間**とファイル
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-![](images-images/xs-buildaction.png "Set Build Action: EmbeddedResource")
+![ビルドアクションの設定: EmbeddedResource](images-images/xs-buildaction.png)
 
 **ビルドアクション**は、ファイルの**プロパティ**パッドで表示および変更することもできます。
 このパッドには、コードでリソースを参照するために使用される**リソース ID**が表示されます。 次のスクリーンショットでは、**リソース ID**は**WorkingWithImages.beach.jpg**しています。

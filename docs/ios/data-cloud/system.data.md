@@ -1,18 +1,18 @@
 ---
 title: Xamarin. iOS のシステムデータ
-description: このドキュメントでは、system.string と Mono を使用して、Xamarin. iOS アプリケーションの SQLite データにアクセスする方法について説明します。
+description: このドキュメントでは、system.string と Mono.Data.Sqlite.dll を使用して、Xamarin. iOS アプリケーションの SQLite データにアクセスする方法について説明します。
 ms.prod: xamarin
 ms.assetid: F10C0C57-7BDE-A3F3-B011-9839949D15C8
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 11/25/2015
-ms.openlocfilehash: 736d70aebcf861b5557d5f076a42ff0a3dcfc043
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: eb3453c3475fdc2e309a888a1aa1318eccc59228
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569955"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938737"
 ---
 # <a name="systemdata-in-xamarinios"></a>Xamarin. iOS のシステムデータ
 
@@ -34,7 +34,7 @@ ADO.NET プロバイダー[を含む、system.string のサポート](xref:Syste
 
 最初に、[**参照**] ノードを右クリックし、[**参照の編集**] を選択します。次に、[and] を選択します。 `System.Data` `Mono.Data.Sqlite`
 
-[![](system.data-images/edit-references-sml.png "Adding new references")](system.data-images/edit-references.png#lightbox)
+[![新しい参照の追加](system.data-images/edit-references-sml.png)](system.data-images/edit-references.png#lightbox)
 
 ### <a name="sample-code"></a>サンプル コード
 
@@ -139,7 +139,7 @@ using (var addCmd = conn.CreateCommand ()) {
 
 ### <a name="systemdata"></a>System.Data
 
-System.string にない機能は次のもので構成さ**れ**ます。
+**System.Data.dll**にない機能は次のもので構成されます。
 
 - [システム CodeDom](xref:System.CodeDom)が必要なもの ( [TypedDataSetGenerator](xref:System.Data.TypedDataSetGenerator) )
 - XML 構成ファイルのサポート (例: [DbProviderConfigurationHandler](xref:System.Data.Common.DbProviderConfigurationHandler) ) のようになります。
@@ -152,7 +152,7 @@ System.string にない機能は次のもので構成さ**れ**ます。
 
 ### <a name="monodatasqlite"></a>Mono. Data. Sqlite
 
-一方、 **Mono**は、ソースコードの変更はありませんが、代わりに Sqlite 3.5 をバインドしているため、多くの*実行時*の問題が発生する可能性があります。 `Mono.Data.Sqlite.dll` 一方、iOS 8 には SQLite 3.8.5 が付属しています。 ここでは、2つのバージョンの間で変更されたものがあるとします。
+一方、 **Mono.Data.Sqlite.dll**ではソースコードの変更はありませんが、代わりに SQLite 3.5 をバインドしているため、多くの*実行時*の問題が発生する可能性があり `Mono.Data.Sqlite.dll` ます。 一方、iOS 8 には SQLite 3.8.5 が付属しています。 ここでは、2つのバージョンの間で変更されたものがあるとします。
 
 以前のバージョンの iOS には、次のバージョンの SQLite が付属しています。
 

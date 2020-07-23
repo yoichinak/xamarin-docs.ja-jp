@@ -19,7 +19,7 @@ ms.locfileid: "86936345"
 ---
 # <a name="entry-cursor-color-on-ios"></a>IOS のエントリカーソルの色
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 この iOS プラットフォーム固有のは、のカーソルの色 [`Entry`](xref:Xamarin.Forms.Entry) を、指定された色に設定します。 これは、バインド可能なプロパティをに設定することによって XAML で使用され [`Entry.CursorColor`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.CursorColorProperty) [`Color`](xref:Xamarin.Forms.Color) ます。
 

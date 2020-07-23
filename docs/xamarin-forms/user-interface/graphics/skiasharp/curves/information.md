@@ -10,12 +10,12 @@ ms.date: 09/12/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 931b8d0946f1af5e697e581a04c0feefb31ba2d3
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4fee695a20cae26537beb30513423492114e5c77
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84131925"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936241"
 ---
 # <a name="path-information-and-enumeration"></a>パス情報と列挙
 
@@ -29,7 +29,7 @@ _パスに関する情報を取得して内容を列挙する_
 
 また、パスを構成するすべての描画操作とポイントを取得すると便利な場合もあります。 最初に、この機能は不要に思えるかもしれません。プログラムがパスを作成した場合、プログラムは既にその内容を認識しています。 ただし、[パスの効果](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md)や[テキスト文字列をパスに](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)変換することによって、パスを作成することもできます。 これらのパスを構成するすべての描画操作とポイントを取得することもできます。 1つの方法として、すべてのポイントにアルゴリズム変換を適用して、たとえば、次のように、すべてのポイントにテキストをラップすることができます。
 
-![](information-images/pathenumerationsample.png "Text wrapped on a hemisphere")
+![[文字]](information-images/pathenumerationsample.png)
 
 ## <a name="getting-the-path-length"></a>パスの長さを取得する
 
@@ -115,7 +115,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 `Length`新しく作成されたオブジェクトのプロパティは、 `SKPathMeasure` パスの長さを取得します。 パスの長さは、 `baseTextWidth` 値 (10 のテキストサイズに基づいたテキストの幅) で除算され、基本テキストのサイズ (10) で乗算されます。 結果は、そのパスに沿ってテキストを表示するための新しいテキストサイズになります。
 
-[![](information-images/pathlength-small.png "Triple screenshot of the Path Length page")](information-images/pathlength-large.png#lightbox "Triple screenshot of the Path Length page")
+[![[パスの長さ] ページのトリプルスクリーンショット](information-images/pathlength-small.png)](information-images/pathlength-large.png#lightbox "[パスの長さ] ページのトリプルスクリーンショット")
 
 ベジエ曲線が長くなるか、短くなるにつれて、テキストサイズの変更を確認できます。
 
@@ -141,7 +141,7 @@ Boolean GetMatrix (Single distance, out SKMatrix matrix, SKPathMeasureMatrixFlag
 
 **Unicycle ハーフパイプ**ページでは、3次ベジエ曲線に沿って逆方向になるように見える Unicycle で、スティック図形をアニメーション化します。
 
-[![](information-images/unicyclehalfpipe-small.png "Triple screenshot of the Unicycle Half-Pipe page")](information-images/unicyclehalfpipe-large.png#lightbox "Triple screenshot of the Unicycle Half-Pipe page")
+[![Unicycle ハーフパイプページのトリプルスクリーンショット](information-images/unicyclehalfpipe-small.png)](information-images/unicyclehalfpipe-large.png#lightbox "Unicycle ハーフパイプページのトリプルスクリーンショット")
 
 `SKPaint`ハーフパイプと unicycle の両方を描画するために使用されるオブジェクトは、クラスのフィールドとして定義され `UnicycleHalfPipePage` ます。 また、unicycle のオブジェクトも定義されてい `SKPath` ます。
 
@@ -252,7 +252,7 @@ SKPathVerb pathVerb = rawIterator.Next(points);
 
 何らかの方法で攻撃を行うために、アルゴリズムの変換をパスに適用することが望ましい場合があります。
 
-![](information-images/pathenumerationsample.png "Text wrapped on a hemisphere")
+![[文字]](information-images/pathenumerationsample.png)
 
 これらの文字のほとんどは直線で構成されていますが、これらの直線は曲線にツイストされています。 どうすればよいでしょうか。
 
@@ -441,7 +441,7 @@ static class PathExtensions
 
 **GlobularText**サンプルでは、この拡張メソッドを使用して、次のように3d 効果で、この拡張メソッドを使用します。
 
-[![](information-images/globulartext-small.png "Triple screenshot of the Globular Text page")](information-images/globulartext-large.png#lightbox "Triple screenshot of the Globular Text page")
+[![Globular テキストページのトリプルスクリーンショット](information-images/globulartext-small.png)](information-images/globulartext-large.png#lightbox "Globular テキストページのトリプルスクリーンショット")
 
 [`GlobularTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/GlobularTextPage.cs)クラスコンストラクターは、この変換を実行します。 この `SKPaint` メソッドは、テキストのオブジェクトを作成し、 `SKPath` メソッドからオブジェクトを取得し `GetTextPath` ます。 これは、 `CloneWithTransform` 変換関数と共に拡張メソッドに渡されるパスです。
 
