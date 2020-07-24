@@ -6,12 +6,12 @@ ms.assetid: A4130995-48FD-4E2E-9C2B-ADCEFF35BE3A
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: a38f4b81f684d6d416e6abe017bc463e3097c6b1
-ms.sourcegitcommit: 93697a20e6fc7da547a8714ac109d7953b61d63f
+ms.openlocfilehash: 54a4c6e32059b6ff32b3a93abf5fd30c65f16b5f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/28/2019
-ms.locfileid: "72980866"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936631"
 ---
 # <a name="3d-coordinates-in-monogame"></a>モノゲームの3D 座標
 
@@ -23,7 +23,7 @@ _3d の座標系を理解することは、3D ゲームを開発する上で重�
 
 ここでは、次のトピックについて説明します。
 
-- Visual C++ プロジェクト
+- プロジェクトの作成
 - ロボットエンティティの作成
 - ロボットエンティティの移動
 - 行列乗算
@@ -32,23 +32,23 @@ _3d の座標系を理解することは、3D ゲームを開発する上で重�
 
 完了すると、ロボットが円で移動するプロジェクトと、タッチ入力で制御できるカメラが作成されます。
 
-![](part3-images/image1.gif "Once finished, the app will include a project with a robot moving in a circle and a camera which can be controlled by touch input")
+![完了すると、アプリにはロボットが円で移動するプロジェクトと、タッチ入力で制御できるカメラが含まれます。](part3-images/image1.gif)
 
-## <a name="creating-a-project"></a>Visual C++ プロジェクト
+## <a name="creating-a-project"></a>プロジェクトの作成
 
 このチュートリアルでは、3D 空間でオブジェクトを移動する方法について説明します。 [ここ](https://docs.microsoft.com/samples/xamarin/mobile-samples/modelsandvertsmg/)では、モデルと頂点配列をレンダリングするためのプロジェクトについて説明します。 ダウンロードが完了したら、プロジェクトを解凍して開き、実行されていることを確認します。次のように表示されます。
 
-![](part3-images/image2.png "Once downloaded, unzip and open the project to make sure it runs and this view should be displayed")
+![ダウンロードが完了したら、プロジェクトを解凍して開いて、実行されていることを確認します。このビューが表示されます。](part3-images/image2.png)
 
 ## <a name="creating-a-robot-entity"></a>ロボットエンティティの作成
 
-ロボットの移動を始める前に、描画と移動のロジックを含む `Robot` クラスを作成します。 ゲーム開発者は、このロジックとデータを*エンティティ*としてカプセル化します。
+ロボットの移動を始める前に、 `Robot` 描画と移動のロジックを含むクラスを作成します。 ゲーム開発者は、このロジックとデータを*エンティティ*としてカプセル化します。
 
-新しい空のクラスファイルを、プラットフォーム固有の ModelAndVerts ではなく、 **MonoGame3D**ポータブルクラスライブラリに追加します。 **ロボット**に名前を指定し、 **[新規]** をクリックします。
+新しい空のクラスファイルを、プラットフォーム固有の ModelAndVerts ではなく、 **MonoGame3D**ポータブルクラスライブラリに追加します。 **ロボット**に名前を指定し、[**新規**] をクリックします。
 
-![](part3-images/image3.png "Name it Robot and click New")
+![ロボットに名前を指定し、[新規] をクリックします。](part3-images/image3.png)
 
-`Robot` クラスを次のように変更します。
+クラスを次のように変更 `Robot` します。
 
 ```csharp
 using System;
@@ -104,7 +104,7 @@ namespace MonoGame3D
 }
 ```
 
-`Robot` コードは、基本的に `Model`を描画するための `Game1` のコードと同じです。 `Model` の読み込みと描画に関するレビューについては、[モデルの使用に関するこのガイド](~/graphics-games/monogame/3d/part1.md)を参照してください。 `Game1`から `Model` の読み込みおよびレンダリングコードをすべて削除し、`Robot` インスタンスに置き換えることができるようになりました。
+この `Robot` コードは、基本的に `Game1` を描画するためののコードと同じです `Model` 。 読み込みと描画の詳細につい `Model` ては、[モデルの使用に関するこのガイド](~/graphics-games/monogame/3d/part1.md)を参照してください。 `Model`から読み込みとレンダリングのコードをすべて削除 `Game1` し、インスタンスに置き換えることができるようになりました `Robot` 。
 
 ```csharp
 using Microsoft.Xna.Framework;
@@ -227,15 +227,15 @@ namespace MonoGame3D
 
 ここでコードを実行すると、1つのロボットだけを含むシーンが作成されます。これは、主にフロアの下に描画されます。
 
-![](part3-images/image4.png "If the code is run now, the app will display a scene with only one robot which is drawn mostly under the floor")
+![コードがすぐに実行された場合、アプリには、主にフロアの下に描画されるロボットを1つだけ持つシーンが表示されます。](part3-images/image4.png)
 
 ## <a name="moving-the-robot"></a>ロボットの移動
 
-`Robot` クラスを用意したので、次はロボットに移動ロジックを追加します。 この例では、ゲーム時間に従ってロボットを円形に移動させるだけです。 これは、通常、文字が入力または人工知能に応答する可能性があるため、実際のゲームでは実用的ではない実装ですが、3D の位置と回転を調べるための環境を提供します。
+クラスを用意したので `Robot` 、移動ロジックをロボットに追加できます。 この例では、ゲーム時間に従ってロボットを円形に移動させるだけです。 これは、通常、文字が入力または人工知能に応答する可能性があるため、実際のゲームでは実用的ではない実装ですが、3D の位置と回転を調べるための環境を提供します。
 
-`Robot` クラスの外部から必要な情報は、現在のゲーム時刻だけです。 `GameTime` パラメーターを受け取る `Update` メソッドを追加します。 この `GameTime` パラメーターを使用して、ロボットの最終的な位置を決定するために使用する角度変数をインクリメントします。
+クラスの外部から必要な情報 `Robot` は、現在のゲーム時刻だけです。 ここで `Update` は、パラメーターを受け取るメソッドを追加 `GameTime` します。 この `GameTime` パラメーターは、ロボットの最終的な位置を決定するために使用する角度変数をインクリメントするために使用されます。
 
-まず、[角度] フィールドを [`model`] フィールドの `Robot` クラスに追加します。
+まず、フィールドの下にあるクラスに angle フィールドを追加し `Robot` `model` ます。
 
 ```csharp
 public class Robot
@@ -247,7 +247,7 @@ public class Robot
     ...
 ```
 
- これで、`Update` 関数でこの値をインクリメントできます。
+ 関数内でこの値をインクリメントできるようになりました `Update` 。
 
 ```csharp
 public void Update(GameTime gameTime)
@@ -257,7 +257,7 @@ public void Update(GameTime gameTime)
 }
 ```
 
-`Update` メソッドが `Game1.Update`から呼び出されるようにする必要があります。
+メソッドがから呼び出されるようにする必要があり `Update` `Game1.Update` ます。
 
 ```csharp
 protected override void Update(GameTime gameTime)
@@ -267,7 +267,7 @@ protected override void Update(GameTime gameTime)
 }
 ```
 
-もちろん、この時点では、[角度] フィールドは何も行いません。これを使用するコードを記述する必要があります。 `Draw` メソッドを変更して、専用のメソッドで世界 `Matrix` を計算できるようにします。 
+もちろん、この時点では、[角度] フィールドは何も行いません。これを使用するコードを記述する必要があります。 メソッドを変更して、 `Draw` 専用のメソッドで世界を計算できるようにします `Matrix` 。 
 
 ```csharp
 public void Draw(Vector3 cameraPosition, float aspectRatio)
@@ -300,7 +300,7 @@ public void Draw(Vector3 cameraPosition, float aspectRatio)
 }
 ```
 
-次に、`Robot` クラスに `GetWorldMatrix` メソッドを実装します。
+次に、 `GetWorldMatrix` クラスにメソッドを実装し `Robot` ます。
 
 ```csharp
 Matrix GetWorldMatrix()
@@ -324,17 +324,17 @@ Matrix GetWorldMatrix()
 
 このコードを実行した結果、ロボットが円で移動します。
 
-![](part3-images/image5.gif "Running this code results in the robot moving in a circle")
+![このコードを実行すると、ロボットが円で移動します。](part3-images/image5.gif)
 
 ## <a name="matrix-multiplication"></a>行列乗算
 
-上記のコードは、`GetWorldMatrix` メソッドに `Matrix` を作成することによってロボットを回転させます。 `Matrix` 構造体には、変換 (位置の設定)、回転、およびスケール (サイズの設定) に使用できる16の浮動小数点値が含まれています。 `effect.World` プロパティを割り当てたときに、基になるレンダリングシステムに、描画しようとしているもの (頂点からの `Model` またはジオメトリ) の位置、サイズ、および向きを指示します。 
+上記のコードでは、メソッドでを作成することによってロボットを回転して `Matrix` `GetWorldMatrix` います。 `Matrix`構造体には、変換 (位置の設定)、回転、およびスケール (サイズの設定) に使用できる16の浮動小数点値が含まれています。 このプロパティを割り当てるときに、 `effect.World` 基になるレンダリングシステムに、描画しようとしているもの ( `Model` または頂点からのジオメトリ) の位置、サイズ、および向きを指示します。 
 
-幸いにも、`Matrix` 構造体には、一般的な種類のマトリックスの作成を簡略化する多くのメソッドが含まれています。 上記のコードで使用されている最初のは `Matrix.CreateTranslation`です。 数学的用語の*変換*とは、(この場合はモデルの) ある場所から別の場所に移動する (回転やサイズ変更など) 操作を指します。 関数は、変換に対して X、Y、および Z の値を受け取ります。 シーンを上から表示すると、`CreateTranslation` 方法 (分離) によって次の処理が実行されます。
+幸いにも、構造体には、 `Matrix` 一般的な種類のマトリックスの作成を簡略化する多くのメソッドが含まれています。 上記のコードで使用されている最初のは、 `Matrix.CreateTranslation` です。 数学的用語の*変換*とは、(この場合はモデルの) ある場所から別の場所に移動する (回転やサイズ変更など) 操作を指します。 関数は、変換に対して X、Y、および Z の値を受け取ります。 シーンを上から表示すると、 `CreateTranslation` メソッド (分離) によって次の処理が実行されます。
 
-![](part3-images/image6.png "The CreateTranslation method in isolation performs this action")
+![分離における CreateTranslation メソッドは、このアクションを実行します。](part3-images/image6.png)
 
-2番目に作成する行列は、`CreateRotationZ` 行列を使用した回転行列です。 これは、ローテーションを作成するために使用できる3つの方法のうちの1つです。
+2番目に作成する行列は、マトリックスを使用した回転行列です `CreateRotationZ` 。 これは、ローテーションを作成するために使用できる3つの方法のうちの1つです。
 
 - `CreateRotationX`
 - `CreateRoationY`
@@ -342,9 +342,9 @@ Matrix GetWorldMatrix()
 
 各メソッドは、指定された軸を中心に回転行列を作成します。 ここでは、Z 軸を中心に回転しています。これは "up" を指します。 以下は、軸ベースの回転のしくみを視覚化するのに役立ちます。
 
-![](part3-images/image7.png "This can help visualize how axis-based rotation works")
+![これは、軸ベースの回転のしくみを視覚化するのに役立ちます。](part3-images/image7.png)
 
-また、`CreateRotationZ` メソッドを angle フィールドと共に使用しています。これは、`Update` メソッドが呼び出されているため、時間の経過と共に増加します。 結果として、`CreateRotationZ` メソッドによって、ロボットが元の位置を時間パスとしてラップすることになります。
+また、メソッドを `CreateRotationZ` angle フィールドと共に使用しています。これは、メソッドが呼び出されているため、時間の経過と共に増加し `Update` ます。 結果として、 `CreateRotationZ` メソッドによって、ロボットが開始元を時間の経過と共に移動することになります。
 
 最後のコード行では、2つの行列を1つに結合しています。
 
@@ -352,9 +352,9 @@ Matrix GetWorldMatrix()
 Matrix combined = translationMatrix * rotationMatrix;
 ```
 
-これは、通常の乗算とは少し異なる動作をする行列乗算と呼ばれます。 *乗算の可換プロパティ*は、乗算演算の数値の順序によって結果が変更されないことを表します。 つまり、3 \* 4 は 4 \* 3 に相当します。 行列乗算は、可換ではないという点で異なります。 つまり、上記の行は、"translationMatrix を適用してモデルを移動し、rotationMatrix を適用してすべてを回転させる" として読み取ることができます。 次のように、上の行が位置と回転にどのように影響するかを視覚化することができます。
+これは、通常の乗算とは少し異なる動作をする行列乗算と呼ばれます。 *乗算の可換プロパティ*は、乗算演算の数値の順序によって結果が変更されないことを表します。 つまり、3 \* 4 は 4 3 に相当 \* します。 行列乗算は、可換ではないという点で異なります。 つまり、上記の行は、"translationMatrix を適用してモデルを移動し、rotationMatrix を適用してすべてを回転させる" として読み取ることができます。 次のように、上の行が位置と回転にどのように影響するかを視覚化することができます。
 
-![](part3-images/image8.png "A visualization pf the way that the above line affects the position and rotation")
+![上の行が位置と回転に影響する方法を示す、視覚エフェクト](part3-images/image8.png)
 
 行列乗算の順序が結果にどのように影響するかを理解するために、次の点を考慮してください。
 
@@ -364,17 +364,17 @@ Matrix combined = rotationMatrix * translationMatrix;
 
 上記のコードでは、まずモデルをその場で回転させてから、次のように変換します。
 
-![](part3-images/image9.png "The code above would first rotate the model in-place, then translate it")
+![上記のコードでは、まずモデルをその場で回転させ、次に変換します。](part3-images/image9.png)
 
 反転された乗算でコードを実行すると、最初に回転が適用されるため、モデルの向きにのみ影響し、モデルの位置は変わりません。 言い換えると、モデルは次のように回転します。
 
-![](part3-images/image10.gif "The model rotates in place")
+![モデルが所定の位置に回転する](part3-images/image10.gif)
 
 ## <a name="creating-the-camera-entity"></a>カメラエンティティの作成
 
-`Camera` エンティティには、入力ベースの移動を実行するために必要なすべてのロジックが含まれ、`BasicEffect` クラスでプロパティを割り当てるためのプロパティを提供します。
+`Camera`エンティティには、入力ベースの移動を実行するために必要なすべてのロジックが含まれ、クラスにプロパティを割り当てるためのプロパティを提供し `BasicEffect` ます。
 
-まず、静的なカメラ (入力ベースの移動は不要) を実装し、それを既存のプロジェクトに統合します。 **MonoGame3D**ポータブルクラスライブラリ (`Robot.cs`と同じプロジェクト) に新しいクラスを追加し、「**カメラ**」という名前を付けます。 このファイルの内容を次のコードに置き換えます。
+まず、静的なカメラ (入力ベースの移動は不要) を実装し、それを既存のプロジェクトに統合します。 **MonoGame3D**ポータブルクラスライブラリ (と同じプロジェクト) に新しいクラスを追加し、「 `Robot.cs` **カメラ**」という名前を付けます。 このファイルの内容を次のコードに置き換えます。
 
 ```csharp
 using System;
@@ -430,9 +430,9 @@ namespace MonoGame3D
 }
 ```
 
-上記のコードは `Game1` と `Robot` のコードによく似ており、`BasicEffect`にマトリックスを割り当てます。 
+上記のコードは、のコードと非常によく似て `Game1` おり、 `Robot` でマトリックスを割り当て `BasicEffect` ます。 
 
-これで、新しい `Camera` クラスを既存のプロジェクトに統合できるようになりました。 まず、`Robot` クラスを変更して `Draw` メソッドで `Camera` インスタンスを取得します。これにより、重複するコードが多数削除されます。 `Robot.Draw` メソッドを次のように置き換えます。
+これで、新しいクラスを既存のプロジェクトに統合できるようになりました `Camera` 。 まず、クラスを変更して、 `Robot` メソッドのインスタンスを取得し `Camera` `Draw` ます。これにより、重複するコードが多数削除されます。 メソッドを `Robot.Draw` 次のように置き換えます。
 
 ```csharp
 public void Draw(Camera camera)
@@ -454,7 +454,7 @@ public void Draw(Camera camera)
 }
 ```
 
-次に、`Game1.cs` ファイルを変更します。
+次に、ファイルを変更し `Game1.cs` ます。
 
 ```csharp
 using Microsoft.Xna.Framework;
@@ -570,17 +570,17 @@ namespace MonoGame3D
 }
 ```
 
-以前のバージョン (`// New camera code` で識別される) の `Game1` に対する変更は次のとおりです。
+`Game1`以前のバージョン (で識別される) のに対する変更 `// New camera code` は次のとおりです。
 
-- `Game1` の `Camera` フィールド
-- `Game1.Initialize` での `Camera` インスタンス化
-- `Game1.Update` での `Camera.Update` の呼び出し
-- `Robot.Draw` が `Camera` パラメーターを受け取るようになりました
-- `Game1.Draw` で `Camera.ViewMatrix` と `Camera.ProjectionMatrix` が使用されるようになりました
+- `Camera`のフィールド`Game1`
+- `Camera`でのインスタンス化`Game1.Initialize`
+- `Camera.Update`での呼び出し`Game1.Update`
+- `Robot.Draw`パラメーターを受け取るようになりました。 `Camera`
+- `Game1.Draw`はとを使用するようになりました。 `Camera.ViewMatrix``Camera.ProjectionMatrix`
 
 ## <a name="moving-the-camera-with-input"></a>入力によるカメラの移動
 
-ここまでは、`Camera` エンティティを追加しましたが、実行時の動作を変更するためには何も実行していません。 次の操作をユーザーに許可する動作を追加します。
+ここまでは、エンティティを追加しました `Camera` が、実行時の動作を変更するための処理は何も行われていませんでした。 次の操作をユーザーに許可する動作を追加します。
 
 - 画面の左側をタッチして、カメラを左に移動します。
 - 画面の右側をタッチして、カメラを右に切り替えます。
@@ -588,11 +588,11 @@ namespace MonoGame3D
 
 ### <a name="making-lookat-relative"></a>LookAt を相対的に作成する
 
-まず、`Camera` クラスを更新して、`Camera` が接続している方向を設定するために使用される `angle` フィールドを追加します。 現時点では、`Camera` は、`Vector3.Zero`に割り当てられているローカル `lookAtVector`を介して接続する方向を決定します。 つまり、`Camera` は常に元の場所を参照します。 カメラが移動すると、カメラが直面している角度も変わります。
+まず、クラスを更新して `Camera` `angle` 、 `Camera` が接続している方向を設定するために使用されるフィールドを追加します。 現時点では、 `Camera` に割り当てられているローカルのでの方向が決定され `lookAtVector` `Vector3.Zero` ます。 言い換えると、は `Camera` 常に配信元を調べます。 カメラが移動すると、カメラが直面している角度も変わります。
 
-![](part3-images/image11.gif "If the Camera moves, then the angle that the camera is facing will also change")
+![カメラが移動した場合、カメラが直面している角度も変わります。](part3-images/image11.gif)
 
-その位置に関係なく、少なくとも入力を使用して `Camera` を回転させるロジックを実装するまで、`Camera` は同じ方向に接している必要があります。 最初の変更は、絶対位置を見るのではなく、現在の場所に基づいて `lookAtVector` 変数を調整することです。
+は、その `Camera` 位置に関係なく同じ方向に接続するようにします。少なくとも、入力を使用してを回転させるロジックを実装する必要があり `Camera` ます。 最初の変更は、 `lookAtVector` 絶対位置を見るのではなく、現在の場所に基づいて変数を調整することです。
 
 ```csharp
 public class Camera
@@ -618,17 +618,17 @@ public class Camera
     ...
 ```
 
-これにより、世界の `Camera` が表示されるようになります。 `Camera` が X 軸の中央に配置されるように、初期 `position` 値が `(0, 20, 10)` に変更されていることに注意してください。 ゲームを実行すると、次のように表示されます。
+これにより、 `Camera` 世界の表示が簡単になります。 `position`を `(0, 20, 10)` `Camera` X 軸の中央に配置するために、初期値がに変更されていることに注意してください。 ゲームを実行すると、次のように表示されます。
 
-![](part3-images/image12.png "Running the game displays this view")
+![ゲームを実行すると、このビューが表示されます](part3-images/image12.png)
 
 ### <a name="creating-an-angle-variable"></a>Angle 変数の作成
 
-`lookAtVector` 変数は、カメラが表示している角度を制御します。 現時点では、負の Y 軸を表示し、(`-.5f` Z 値から) 下向きに傾斜させるように修正されています。 ここでは、`lookAtVector` プロパティを調整するために使用する `angle` 変数を作成します。 
+変数は、 `lookAtVector` カメラが表示している角度を制御します。 現在は、負の Y 軸を表示し、(Z 値から) 少し傾いていくように修正されてい `-.5f` ます。 `angle`プロパティを調整するために使用される変数を作成 `lookAtVector` します。 
 
-このチュートリアルの前のセクションでは、マトリックスを使用してオブジェクトの描画方法をローテーションできることを示しました。 また、マトリックスを使用して、`Vector3.Transform` メソッドを使用して `lookAtVector` のようにベクターを回転させることもできます。 
+このチュートリアルの前のセクションでは、マトリックスを使用してオブジェクトの描画方法をローテーションできることを示しました。 また、マトリックスを使用して、メソッドを使用してのようなベクターを回転させることもでき `lookAtVector` `Vector3.Transform` ます。 
 
-`angle` フィールドを追加し、次のように `ViewMatrix` プロパティを変更します。
+フィールドを追加 `angle` し、次のようにプロパティを変更し `ViewMatrix` ます。
 
 ```csharp
 public class Camera
@@ -661,19 +661,19 @@ public class Camera
 
 ### <a name="reading-input"></a>読み取り (入力を)
 
-`Camera` エンティティは、位置と角度の変数によって完全に制御できるようになりました。入力に従って変更するだけで済みます。
+この `Camera` エンティティは、位置と角度の変数を使用して完全に制御できるようになりました。入力に従って変更するだけで済みます。
 
-まず、`TouchPanel` の状態を取得して、ユーザーが画面に触れる場所を見つけます。 `TouchPanel` クラスの使用方法の詳細については、「[タッチパネル API リファレンス](http://www.monogame.net/documentation/?page=T_Microsoft_Xna_Framework_Input_Touch_TouchPanel)」を参照してください。
+最初に、 `TouchPanel` ユーザーが画面に触れる場所を見つけるための状態を取得します。 クラスの使用方法の詳細については、 `TouchPanel` 「[タッチパネル API リファレンス](http://www.monogame.net/documentation/?page=T_Microsoft_Xna_Framework_Input_Touch_TouchPanel)」を参照してください。
 
-ユーザーが3番目の左に触れている場合は、`Camera` が左に回転するように `angle` 値を調整します。また、ユーザーが右3番目に触れている場合は、別の方法で回転します。 ユーザーが画面の中央上に触れている場合は、`Camera` を転送します。
+ユーザーが3番目の左に触れている場合は `angle` 、が左に回転するように値を調整し `Camera` ます。ユーザーが右3番目に触れると、他の方法で回転します。 ユーザーが画面の中央上に触れている場合は、先に進み `Camera` ます。
 
-まず、`Camera.cs`で `TouchPanel` と `TouchCollection` クラスを修飾する using ステートメントを追加します。
+まず、でクラスとクラスを修飾する using ステートメントを追加し `TouchPanel` `TouchCollection` `Camera.cs` ます。
 
 ```csharp
 using Microsoft.Xna.Framework.Input.Touch; 
 ```
 
-次に、`Update` メソッドを変更して、タッチパネルを読み取り、`angle` と `position` 変数を適切に調整します。
+次に、メソッドを変更して、 `Update` タッチパネルを読み取り、 `angle` 変数と変数を適切に調整し `position` ます。
 
 ```csharp
 public void Update(GameTime gameTime)
@@ -711,19 +711,19 @@ public void Update(GameTime gameTime)
 }
 ```
 
-これで、`Camera` がタッチ入力に応答するようになります。
+これで、は `Camera` タッチ入力に応答します。
 
-![](part3-images/image1.gif "Now the Camera will respond to touch input")
+![カメラがタッチ入力に応答するようになりました](part3-images/image1.gif)
 
-Update メソッドは、`TouchPanel.GetState`を呼び出すことによって開始します。これにより、タッチのコレクションが返されます。 `TouchPanel.GetState` は複数のタッチポイントを返すことができますが、わかりやすくするために最初のタッチポイントについて心配するだけです。
+Update メソッドは、を呼び出すことによって開始され `TouchPanel.GetState` ます。これは、のコレクションを返します。 `TouchPanel.GetState`は複数のタッチポイントを返すことができますが、わかりやすくするために最初のタッチポイントだけを気にします。
 
-ユーザーが画面に触れている場合、コードは、画面の左、中央、または右の3番目のタッチがあるかどうかを確認します。 左端と右端は、`TotalSeconds` の値に従って `angle` 変数を増減してカメラを回転させます (ゲームがフレームレートに関係なく同じように動作するようにします)。
+ユーザーが画面に触れている場合、コードは、画面の左、中央、または右の3番目のタッチがあるかどうかを確認します。 左端と右端では、値に従って変数を増減して、カメラを回転させ `angle` `TotalSeconds` ます (ゲームがフレームレートに関係なく同じように動作するようにします)。
 
-ユーザーが画面の中央の3番目に触れると、カメラが先に進みます。 まず、前方ベクトルを取得します。これは、最初は負の Y 軸を指すように定義され、次に `Matrix.CreateRotationZ` と `angle` 値を使用して作成された行列で回転します。 最後に、`forwardVector` は、`unitsPerSecond` 係数を使用して `position` に適用されます。
+ユーザーが画面の中央の3番目に触れると、カメラが先に進みます。 まず、前方ベクトルを取得します。これは、最初は負の Y 軸をポイントするように定義され、次に、と値を使用して作成された行列によって回転され `Matrix.CreateRotationZ` `angle` ます。 最後 `forwardVector` に、係数を使用してにを適用し `position` `unitsPerSecond` ます。
 
 ## <a name="summary"></a>まとめ
 
-このチュートリアルでは、`Matrices` と `BasicEffect.World` プロパティを使用して、3D 空間で `Models` を移動および回転させる方法について説明します。 この形式の移動は、3D ゲームでオブジェクトを移動するための基礎となります。 このチュートリアルでは、任意の位置や角度から世界を表示するための `Camera` エンティティを実装する方法についても説明します。
+このチュートリアル `Models` では、およびプロパティを使用して、3d 空間を移動および回転させる方法について説明し `Matrices` `BasicEffect.World` ます。 この形式の移動は、3D ゲームでオブジェクトを移動するための基礎となります。 このチュートリアルでは、 `Camera` 任意の位置や角度から世界を表示するためのエンティティを実装する方法についても説明します。
 
 ## <a name="related-links"></a>関連リンク
 

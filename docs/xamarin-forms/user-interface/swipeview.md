@@ -10,16 +10,16 @@ ms.date: 03/26/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9c9d0621cdd5bb85690771d8bdfd0060b6a352cb
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 94fa094f579ad33947f1cc89e0d36c862c824472
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136254"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938945"
 ---
 # <a name="xamarinforms-swipeview"></a>Xamarin.FormsSwipeView
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![プレリリース API](~/media/shared/preview.png "この API は現在プレリリースです")
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-swipeviewdemos/)
 
@@ -147,7 +147,7 @@ SwipeView swipeView = new SwipeView
 
 ## <a name="swipe-items"></a>項目のスワイプ
 
-`LeftItems`、、 `RightItems` 、およびの各 `TopItems` `BottomItems` コレクションは、すべて型 `SwipeItems` です。 `SwipeItems`クラスは、次のプロパティを定義します。
+`LeftItems`、、 `RightItems` 、およびの各 `TopItems` `BottomItems` コレクションは、すべて型 `SwipeItems` です。 `SwipeItems` クラスでは、次のプロパティが定義されます。
 
 - `Mode``SwipeMode`スワイプ操作の効果を示す型の。 スワイプモードの詳細については、「[スワイプモード](#swipe-mode)」を参照してください。
 - `SwipeBehaviorOnInvoked`型の `SwipeBehaviorOnInvoked` `SwipeView` 。スワイプ項目が呼び出された後のの動作を示します。 スワイプ動作の詳細については、「[スワイプ動作](#swipe-behavior)」を参照してください。

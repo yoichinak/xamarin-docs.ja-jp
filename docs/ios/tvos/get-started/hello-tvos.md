@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 02/02/2018
-ms.openlocfilehash: 7b254d3a7cfc04893b3b240d8d372f8df60c655c
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 55e41c01421e2cd5a0bb5c3a0a9fe2d025c8a223
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571762"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938048"
 ---
 # <a name="hello-tvos-quick-start-guide"></a>はじめての tvOS クイック スタート ガイド
 
@@ -34,7 +34,7 @@ TvOS を使用すると、 *Swift* *(または*) および*Xcode*での開発時
 
 この記事では、tvOS と Visual Studio を使用して Apple TV アプリを作成するために必要な主要な概念について説明します。これにより、ボタンがクリックされた回数をカウントする基本的な**Hello, tvOS**アプリを構築するプロセスについて説明します。
 
-[![](hello-tvos-images/run05.png "Example app run")](hello-tvos-images/run05.png#lightbox)
+[![アプリの実行例](hello-tvos-images/run05.png)](hello-tvos-images/run05.png#lightbox)
 
 ここでは、次の概念について説明します。
 
@@ -51,21 +51,21 @@ TvOS を使用すると、 *Swift* *(または*) および*Xcode*での開発時
 
 1. Visual Studio for Mac を起動します。
 
-    [![](hello-tvos-images/setup01.png "Visual Studio for Mac")](hello-tvos-images/setup01.png#lightbox)
+    [![Visual Studio for Mac](hello-tvos-images/setup01.png)](hello-tvos-images/setup01.png#lightbox)
 2. 画面の左上隅にある [**新しいソリューション...** ] リンクをクリックして、[**新しいプロジェクト**] ダイアログボックスを開きます。
 3. [ **TvOS**  >  **app**  >  **Single View app** ] を選択し、[**次へ**] ボタンをクリックします。
 
-    [![](hello-tvos-images/setup02.png "Select Single View App")](hello-tvos-images/setup02.png#lightbox)
+    [![単一ビューアプリを選択する](hello-tvos-images/setup02.png)](hello-tvos-images/setup02.png#lightbox)
 4. アプリ名として「」と入力し、 `Hello, tvOS` **組織の識別子**を入力して、[**次へ**] ボタンをクリックします。 **App Name**
 
-    [![](hello-tvos-images/setup04.png "Enter Hello, tvOS")](hello-tvos-images/setup04.png#lightbox)
+    [![「Hello, tvOS」と入力します。](hello-tvos-images/setup04.png)](hello-tvos-images/setup04.png#lightbox)
 5. `Hello_tvOS`**プロジェクト名**として「」と入力し、[**作成**] ボタンをクリックします。
 
-    [![](hello-tvos-images/setup03.png "Enter HellotvOS")](hello-tvos-images/setup03.png#lightbox)
+    [![「HellotvOS」と入力します。](hello-tvos-images/setup03.png)](hello-tvos-images/setup03.png#lightbox)
 
 Visual Studio for Mac によって新しい tvOS アプリが作成され、アプリケーションのソリューションに追加される既定のファイルが表示されます。
 
- [![](hello-tvos-images/project01.png "The default files view")](hello-tvos-images/project01.png#lightbox)
+ [![既定のファイルビュー](hello-tvos-images/project01.png)](hello-tvos-images/project01.png#lightbox)
 
 Visual Studio for Mac は、Visual Studio とまったく同じ方法で**ソリューション**と**プロジェクト**を使用します。 ソリューションは、1つまたは複数のプロジェクトを保持できるコンテナーです。プロジェクトには、アプリケーション、サポートライブラリ、テストアプリケーションなどを含めることができます。この場合、Visual Studio for Mac によってソリューションとアプリケーションプロジェクトの両方が作成されます。
 
@@ -253,71 +253,71 @@ TvOS アプリのユーザーインターフェイスを作成するために Xa
 
 UI の作成を開始するには、ソリューションエクスプローラー内のファイルをダブルクリックし `Main.storyboard` て、IOS Designer で編集するために開きます。 **Solution Explorer**
 
-[![](hello-tvos-images/designer01.png "The Main.storyboard file in the Solution Explorer")](hello-tvos-images/designer01.png#lightbox)
+[![ソリューションエクスプローラーのメインのストーリーボードファイル](hello-tvos-images/designer01.png)](hello-tvos-images/designer01.png#lightbox)
 
 これにより、デザイナーが起動し、次のように表示されます。
 
-[![](hello-tvos-images/designer02.png "The Designer")](hello-tvos-images/designer02.png#lightbox)
+[![デザイナー](hello-tvos-images/designer02.png)](hello-tvos-images/designer02.png#lightbox)
 
 IOS Designer とそのしくみの詳細については、「Xamarin Designer for iOS ガイド[の概要](~/ios/user-interface/designer/introduction.md)」を参照してください。
 
 これで、tvOS アプリのデザイン画面にコントロールを追加できるようになりました。
 
-次の操作を行います。
+次の手順を実行します。
 
 1. デザインサーフェイスの右側にある**ツールボックス**を見つけます。
 
-    [![](hello-tvos-images/designer03.png "The Toolbox")](hello-tvos-images/designer03.png#lightbox)
+    [![ツールボックス](hello-tvos-images/designer03.png)](hello-tvos-images/designer03.png#lightbox)
 
     ここで見つからない場合は、表示されている **> パッド > ツールボックス**を参照して表示します。
 2. **ツールボックス**からデザイン画面に**ラベル**をドラッグします。
 
-    [![](hello-tvos-images/designer04.png "Drag a Label from the Toolbox")](hello-tvos-images/designer04.png#lightbox)
+    [![ツールボックスからラベルをドラッグする](hello-tvos-images/designer04.png)](hello-tvos-images/designer04.png#lightbox)
 3. **プロパティパッド**で**title**プロパティをクリックし、ボタンのタイトルをに変更し、 `Hello, tvOS` **フォントサイズ**を128に設定します。
 
-    [![](hello-tvos-images/designer05.png "Set the title to Hello, tvOS and set the Font Size to 128")](hello-tvos-images/designer05.png#lightbox)
+    [![タイトルを Hello, tvOS に設定し、フォントサイズを128に設定します。](hello-tvos-images/designer05.png)](hello-tvos-images/designer05.png#lightbox)
 4. すべての単語が表示されるようにラベルのサイズを変更し、ウィンドウの上部に中央に配置します。
 
-    [![](hello-tvos-images/designer06.png "Resize and center the label")](hello-tvos-images/designer06.png#lightbox)
+    [![ラベルのサイズを変更して中央揃えにする](hello-tvos-images/designer06.png)](hello-tvos-images/designer06.png#lightbox)
 5. ラベルは、意図したとおりに表示されるように、その位置に制約される必要があります。 画面のサイズに関係なく。 これを行うには、 *T 形状のハンドル*が表示されるまでラベルをクリックします。
 
-    [![](hello-tvos-images/designer07.png "The T-shaped handle")](hello-tvos-images/designer07.png#lightbox)
+    [![T 形状のハンドル](hello-tvos-images/designer07.png)](hello-tvos-images/designer07.png#lightbox)
 6. ラベルを水平方向に制限するには、中央の四角形を選択し、垂直線にドラッグします。
 
-    [![](hello-tvos-images/designer08.png "Select the center square")](hello-tvos-images/designer08zoom.png#lightbox)
+    [![中央の四角形を選択します](hello-tvos-images/designer08.png)](hello-tvos-images/designer08zoom.png#lightbox)
 
      ラベルをオレンジ色にする必要があります。
 7. ラベルの上部にある T ハンドルを選択し、ウィンドウの上端にドラッグします。
 
-    [![](hello-tvos-images/designer09.png "Drag the handle to the top edge of the window")](hello-tvos-images/designer09.png#lightbox)
+    [![ハンドルをウィンドウの上端にドラッグします。](hello-tvos-images/designer09.png)](hello-tvos-images/designer09.png#lightbox)
 8. 次に、幅をクリックし、次に示すように、高さの*ボーンハンドル*をクリックします。
 
-    [![](hello-tvos-images/designer10.png "The width and the height bone handles")](hello-tvos-images/designer10.png#lightbox)
+    [![幅と高さのボーンが処理する](hello-tvos-images/designer10.png)](hello-tvos-images/designer10.png#lightbox)
 
      各*ボーンハンドル*をクリックしたら、幅と高さの両方を選択して固定の寸法を設定します。
 9. 完了すると、制約は、プロパティパッドの [レイアウト] タブに表示されるようになります。
 
-    [![](hello-tvos-images/designer11.png "Example Constraints")](hello-tvos-images/designer11.png#lightbox)
+    [![制約の例](hello-tvos-images/designer11.png)](hello-tvos-images/designer11.png#lightbox)
 10. [**ツールボックス** **] からボタン**をドラッグして、ラベルの下に配置します。
 11. **プロパティパッド**で [**タイトル**] プロパティをクリックし、ボタンのタイトルを次のように変更し `Click Me` ます。
 
-    [![](hello-tvos-images/designer12.png "Change the buttons title to Click Me")](hello-tvos-images/designer12.png#lightbox)
+    [![ボタンのタイトルを変更してクリックします](hello-tvos-images/designer12.png)](hello-tvos-images/designer12.png#lightbox)
 12. 上記の手順 5. ~ 8. を繰り返して、[tvOS] ウィンドウのボタンを制限します。 ただし、(手順 #7 のように) ウィンドウの上部に T ハンドルをドラッグするのではなく、ラベルの一番下にドラッグします。
 
-    [![](hello-tvos-images/designer14.png "Constrain the button")](hello-tvos-images/designer14.png#lightbox)
+    [![ボタンを制限する](hello-tvos-images/designer14.png)](hello-tvos-images/designer14.png#lightbox)
 13. ボタンの下に別のラベルをドラッグし、最初のラベルと同じ幅になるようにサイズを変更し、その**配置**を [**中央**揃え] に設定します。
 
-    [![](hello-tvos-images/designer15.png "Drag another label under the button, size it to be the same width as the first label and set its Alignment to Center")](hello-tvos-images/designer15.png#lightbox)
+    [![ボタンの下に別のラベルをドラッグし、最初のラベルと同じ幅になるようにサイズを変更して、その配置を [中央] に設定します。](hello-tvos-images/designer15.png)](hello-tvos-images/designer15.png#lightbox)
 14. 最初のラベルとボタンと同じように、このラベルを [center] に設定し、[位置とサイズ] にピン留めします。
 
-    [![](hello-tvos-images/designer16.png "Pin the label into location and size")](hello-tvos-images/designer16.png#lightbox)
+    [![ラベルを位置とサイズにピン留めする](hello-tvos-images/designer16.png)](hello-tvos-images/designer16.png#lightbox)
 15. ユーザーインターフェイスへの変更を保存します。
 
 コントロールのサイズ変更や移動を行っているときに、 [APPLE TV のヒューマンインターフェイスガイドライン](https://developer.apple.com/tvos/human-interface-guidelines/)に基づく便利なスナップヒントがデザイナーに表示されていることに注意してください。 これらのガイドラインは、Apple TV ユーザーの使い慣れたルックアンドフィールを備えた高品質のアプリケーションを作成するのに役立ちます。
 
 [**ドキュメントアウトライン**] セクションを確認すると、ユーザーインターフェイスを構成する要素のレイアウトと階層がどのように表示されるかがわかります。
 
-[![](hello-tvos-images/designer17.png "The Document Outline section")](hello-tvos-images/designer17.png#lightbox)
+[![ドキュメントアウトラインセクション](hello-tvos-images/designer17.png)](hello-tvos-images/designer17.png#lightbox)
 
 ここから、必要に応じて、編集またはドラッグする項目を選択して、UI 要素を並べ替えることができます。 たとえば、UI 要素が別の要素によってカバーされていた場合は、それをリストの一番下にドラッグして、ウィンドウ上の一番上の項目にすることができます。
 
@@ -339,30 +339,30 @@ IOS デザイナーでコードから追加したコントロールにアクセ�
 1. Xamarin iOS Designer で、ビューコントローラーのボタンを選択します。
 2. [プロパティ] パッドで、[**イベント**] タブを選択します。
 
-    [![](hello-tvos-images/event1.png "The Events tab")](hello-tvos-images/event1.png#lightbox)
+    [![[イベント] タブ](hello-tvos-images/event1.png)](hello-tvos-images/event1.png#lightbox)
 3. TouchUpInside イベントを見つけて、という名前のイベントハンドラーを指定し `Clicked` ます。
 
-    [![](hello-tvos-images/event2.png "The TouchUpInside event")](hello-tvos-images/event2.png#lightbox)
+    [![TouchUpInside イベント](hello-tvos-images/event2.png)](hello-tvos-images/event2.png#lightbox)
 4. **Enter キーを**押すと、イベントハンドラーの場所がコードに提示され、 **viewcontroller**.cs ファイルが開きます。 キーボードの方向キーを使用して、場所を設定します。
 
-    [![](hello-tvos-images/event3.png "Setting the location")](hello-tvos-images/event3.png#lightbox)
+    [![場所の設定](hello-tvos-images/event3.png)](hello-tvos-images/event3.png#lightbox)
 5. これにより、次のような部分メソッドが作成されます。
 
-    [![](hello-tvos-images/event4.png "The partial method")](hello-tvos-images/event4.png#lightbox)
+    [![部分メソッド](hello-tvos-images/event4.png)](hello-tvos-images/event4.png#lightbox)
 
 これで、ボタンを機能させるためのコードの追加を開始する準備ができました。
 
 ### <a name="naming-a-control"></a>コントロールの名前付け
 
-このボタンをクリックすると、クリック数に基づいてラベルが更新されます。 これを行うには、コードでラベルにアクセスする必要があります。 これは、名前を付けることによって行われます。 次の操作を行います。
+このボタンをクリックすると、クリック数に基づいてラベルが更新されます。 これを行うには、コードでラベルにアクセスする必要があります。 これは、名前を付けることによって行われます。 次の手順を実行します。
 
 1. ストーリーボードを開き、ビューコントローラーの下部にあるラベルを選択します。
 2. [プロパティ] パッドで、[**ウィジェット**] タブを選択します。
 
-    [![](hello-tvos-images/name1.png "Select the Widget tab")](hello-tvos-images/name1.png#lightbox)
+    [![[ウィジェット] タブを選択します。](hello-tvos-images/name1.png)](hello-tvos-images/name1.png#lightbox)
 3. [ **Id > 名**] に、次のように追加し `ClickedLabel` ます。
 
-    [![](hello-tvos-images/name2.png "Set ClickedLabel")](hello-tvos-images/name2.png#lightbox)
+    [![ClickedLabel の設定](hello-tvos-images/name2.png)](hello-tvos-images/name2.png#lightbox)
 
 これで、ラベルの更新を開始する準備ができました。
 
@@ -370,7 +370,7 @@ IOS デザイナーでコードから追加したコントロールにアクセ�
 
 ソリューションエクスプローラーでを選択すると、 `ViewController.designer.cs` **Solution Explorer** `ClickedLabel` ラベルと `Clicked` イベントハンドラーが C# の**アウトレット**と**アクション**にどのようにマップされているかを確認できます。
 
-[![](hello-tvos-images/accesscontrol.png "Outlets and Actions")](hello-tvos-images/accesscontrol.png#lightbox)
+[![Outlet と Action](hello-tvos-images/accesscontrol.png)](hello-tvos-images/accesscontrol.png#lightbox)
 
 また、 `ViewController.designer.cs` は部分クラスであるため、クラスに加えられた変更を上書きするように Visual Studio for Mac を変更する必要がないことにも注意して `ViewController.cs` ください。
 
@@ -386,7 +386,7 @@ IOS デザイナーでコードから追加したコントロールにアクセ�
 
 アプリケーションでは、最初のボタンがクリックされるたびに、ボタンがクリックされた回数を表示するようにラベルを更新します。 これを行うには、 `ViewController.cs` **Solution Pad**でファイルをダブルクリックして、ファイルを編集用に開く必要があります。
 
-[![](hello-tvos-images/code01.png "The Solution Pad")](hello-tvos-images/code01.png#lightbox)
+[![Solution Pad](hello-tvos-images/code01.png)](hello-tvos-images/code01.png#lightbox)
 
 まず、クラスのクラスレベルの変数を作成して、 `ViewController` 発生したクリックの回数を追跡する必要があります。 クラス定義を編集し、次のようにします。
 
@@ -440,7 +440,7 @@ partial void Clicked (UIButton sender)
 
 Visual Studio for Mac 画面の左上隅にある**構成セレクター**からビルドの種類を選択できます。
 
-[![](hello-tvos-images/run01.png "Select the type of build")](hello-tvos-images/run01.png#lightbox)
+[![ビルドの種類を選択します](hello-tvos-images/run01.png)](hello-tvos-images/run01.png#lightbox)
 
 ### <a name="building-the-application"></a>アプリケーションのビルド
 
@@ -462,13 +462,13 @@ Visual Studio for Mac 画面の左上隅にある**構成セレクター**から
 
 [**ハードウェア**] メニューの [ **Apple TV リモコンの表示**] を選択して、シミュレーターを制御できるようにします。
 
-[![](hello-tvos-images/run04.png "Select Show Apple TV Remote")](hello-tvos-images/run04.png#lightbox)
+[![[Apple TV リモコンを表示する] を選択します。](hello-tvos-images/run04.png)](hello-tvos-images/run04.png#lightbox)
 
 シミュレーターのリモートを使用して、ボタンを数回クリックすると、ラベルがカウントで更新されます。
 
-[![](hello-tvos-images/run05.png "The label with updated count")](hello-tvos-images/run05.png#lightbox)
+[![カウントが更新されたラベル](hello-tvos-images/run05.png)](hello-tvos-images/run05.png#lightbox)
 
-おめでとうございます。 ここでは、このチュートリアルについて詳しく説明しましたが、このチュートリアルを最初から最後まで実行した場合は、tvOS アプリのコンポーネントと、それらを作成するためのツールを十分に理解する必要があります。
+お疲れさまでした。 ここでは、このチュートリアルについて詳しく説明しましたが、このチュートリアルを最初から最後まで実行した場合は、tvOS アプリのコンポーネントと、それらを作成するためのツールを十分に理解する必要があります。
 
 ## <a name="where-to-next"></a>次の場所
 

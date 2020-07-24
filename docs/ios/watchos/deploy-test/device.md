@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: cbbf8194505e9caa09587471020026d495f9f99b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: a1ff70349ca7d7b97431b2e3d07aa4c8028c38c0
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569703"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996358"
 ---
 # <a name="testing-on-apple-watch-devices"></a>Apple Watch デバイスでのテスト
 
@@ -28,19 +28,19 @@ ms.locfileid: "84569703"
 
 実際の iPhone または iPad で iOS アプリをテストするには、常にデベロッパーセンターにデバイスを登録する必要があります。 デバイスの一覧は次のよう **+** になります (新しいデバイスを追加するには、プラス記号をクリックします)。
 
-![](device-images/devices-sml.png "The device list looks like this")
+![デバイスの一覧は次のようになります。](device-images/devices-sml.png)
 
 監視は異なります。アプリを展開する前に、Apple Watch デバイスを追加する必要があります。 **Xcode** (**Windows > Devices** list) を使用して、ウォッチの udid を検索します。 ペアリングされた電話が接続されると、ウォッチの情報も表示されます。
 
-[![](device-images/xcode-devices-sml.png "Paired Watch Information")](device-images/xcode-devices.png#lightbox)
+[![ペアになっているウォッチ情報](device-images/xcode-devices-sml.png)](device-images/xcode-devices.png#lightbox)
 
 ウォッチの UDID がわかったら、デベロッパーセンターのデバイスの一覧に追加します。
 
-![](device-images/devices-watch-sml.png "The Watch's UDID in the device list")
+![デバイス一覧でのウォッチの UDID](device-images/devices-watch-sml.png)
 
 監視デバイスを追加したら、新規または既存の開発またはカスタムプロビジョニングプロファイルで作成したものを選択します。
 
-![](device-images/devices-provisioning.png "Available device list")
+![使用可能なデバイスの一覧](device-images/devices-provisioning.png)
 
 既存のプロビジョニングプロファイルを編集してダウンロードして再インストールするかどうかを忘れないでください。
 
@@ -52,17 +52,17 @@ ms.locfileid: "84569703"
 
 ワイルドカードアプリ ID がある場合は、*プロビジョニングプロファイルが1つだけ必要*です。ただし、プロジェクトごとに個別のアプリ ID がある場合は、アプリ ID ごとにプロビジョニングプロファイルが必要になります。
 
-![](device-images/provisioningprofile-development.png "The Development Provisioning Profile")
+![開発プロビジョニングプロファイル](device-images/provisioningprofile-development.png)
 
 3つのプロファイルがすべて作成されると、一覧に表示されます。 各ファイルをダウンロードしてインストールすることを忘れないでください。
 
-![](device-images/provisioningprofiles.png "The available Development Provisioning Profiles")
+![利用可能な開発プロビジョニングプロファイル](device-images/provisioningprofiles.png)
 
 **プロジェクトオプション**でプロビジョニングプロファイルを確認するには、[**ビルド > iOS バンドル署名**] 画面を選択し、[ **Release** ] または [ **Debug iPhone** ] 構成を選択します。
 
 [**プロビジョニングプロファイル**] の一覧には、一致するすべてのプロファイルが表示されます。このドロップダウンリストで作成した一致するプロファイルが表示されます。
 
-![](device-images/options-selectprofile.png "The Provisioning Profile list")
+![プロビジョニングプロファイルの一覧](device-images/options-selectprofile.png)
 
 <a name="testing"></a>
 
@@ -97,7 +97,7 @@ ms.locfileid: "84569703"
 
 この問題を*一時的*に回避するには、[ウォッチ拡張機能]**プロジェクトオプション > [ビルド > watchOS ビルド**] ウィンドウで**インクリメンタルビルド**を無効にします。
 
-[![](device-images/disable-incremental-sml.png "The Incremental Builds checkbox")](device-images/disable-incremental.png#lightbox)
+[![インクリメンタルビルドチェックボックス](device-images/disable-incremental-sml.png)](device-images/disable-incremental.png#lightbox)
 
 これは今後のリリースで修正される予定です。これにより、インクリメンタルビルドを再度有効にして、より高速なビルド時間を利用することができます。
 
@@ -112,7 +112,7 @@ Failed to install [APPNAME]
 Invalid executable/Application Verification Failed
 ```
 
-![](device-images/invalid-application-executable.png "Invalid Application Executable alert")
+![無効なアプリケーション実行可能ファイルのアラート](device-images/invalid-application-executable.png)
 
 アプリをインストールしようとした後に、これらのメッセージが *[ウォッチ] 画面に*表示される場合は、いくつかの問題が考えられます。
 

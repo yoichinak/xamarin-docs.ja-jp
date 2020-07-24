@@ -10,12 +10,12 @@ ms.date: 12/28/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a69edd3bf014809cc479dcb7cba0e430dcefbe5b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: f67543a6c678e2c3a1395f816e020d69af4bf873
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84564681"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936657"
 ---
 # <a name="store-and-access-data-in-azure-storage-from-xamarinforms"></a>Azure Storage のデータの格納とアクセスXamarin.Forms
 
@@ -46,7 +46,7 @@ Azure Storage の詳細については、「[ストレージの概要](https://a
 
 Blob ストレージは、次の図に示す3つのコンポーネントで構成されています。
 
-![](azure-storage-images/blob-storage.png "Blob Storage Concepts")
+![Blob Storage の概念](azure-storage-images/blob-storage.png)
 
 Azure Storage へのすべてのアクセスは、ストレージアカウントを介して行われます。 ストレージアカウントには、無制限の数のコンテナーを含めることができ、コンテナーに格納できる blob の数に制限はありません。これは、ストレージアカウントの容量の上限までです。
 
@@ -69,7 +69,7 @@ Azure Storage に格納されているすべてのオブジェクトには、一
 
 Azure Storage アカウントをアプリケーションに統合するプロセスは次のとおり Xamarin.Forms です。
 
-1. ストレージ アカウントを作成します。 詳細については、「[ストレージアカウントの作成](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/#create-a-storage-account)」を参照してください。
+1. ストレージ アカウントを作成します。 詳しくは、「[ストレージ アカウントの作成](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/#create-a-storage-account)」をご覧ください。
 1. [Azure Storage クライアントライブラリ](https://www.nuget.org/packages/WindowsAzure.Storage/)をアプリケーションに追加し Xamarin.Forms ます。
 1. ストレージ接続文字列を構成します。 詳細については、「 [Azure Storage への接続](#connecting-to-azure-storage)」を参照してください。
 1. `using` `Microsoft.WindowsAzure.Storage` `Microsoft.WindowsAzure.Storage.Blob` 名前空間と名前空間のディレクティブを Azure Storage にアクセスするクラスに追加します。

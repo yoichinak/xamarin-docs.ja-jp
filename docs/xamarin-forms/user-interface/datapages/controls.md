@@ -10,16 +10,16 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 86b526fff305b195221aca3fb6a86ad0823cb145
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e206c89de278c8b85848294e76e4431825eaee85
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84569401"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938958"
 ---
 # <a name="datapages-controls-reference"></a>DataPages コントロールのリファレンス
 
-![](~/media/shared/preview.png "This API is currently in preview")
+![この API は現在プレビューの段階です](~/media/shared/preview.png)
 
 > [!IMPORTANT]
 > DataPages Xamarin.Forms を表示するには、テーマ参照が必要です。 これには、のインストールが含ま[ Xamarin.Forms れます。Theme。](https://www.nuget.org/packages/Xamarin.Forms.Theme.Base/)プロジェクトの基本となる NuGet パッケージの後に、[のいずれかが続きます。 Xamarin.FormsTheme](https://www.nuget.org/packages/Xamarin.Forms.Theme.Light/)または[ Xamarin.Forms 。Theme. ダーク](https://www.nuget.org/packages/Xamarin.Forms.Theme.Dark/)NuGet パッケージ。
@@ -47,10 +47,10 @@ DataPages NuGet には、 Xamarin.Forms データソースバインドを利用�
 
 この `HeroImage` コントロールには、次の4つのプロパティがあります。
 
-* テキスト
+* Text
 * 詳細
 * ImageSource
-* 特徴
+* 側面
 
 ```xaml
 <pages:HeroImage
@@ -62,11 +62,11 @@ DataPages NuGet には、 Xamarin.Forms データソースバインドを利用�
 
 **Android**
 
-![](controls-images/heroimage-light-android.png "Android の HeroImage コントロール") ![](controls-images/heroimage-dark-android.png "Android の HeroImage コントロール")
+![Android の HeroImage コントロール](controls-images/heroimage-light-android.png) ![Android の HeroImage コントロール](controls-images/heroimage-dark-android.png)
 
 **iOS**
 
-![](controls-images/heroimage-light-ios.png "IOS の HeroImage コントロール") ![](controls-images/heroimage-dark-ios.png "IOS の HeroImage コントロール")
+![IOS の HeroImage コントロール](controls-images/heroimage-light-ios.png) ![IOS の HeroImage コントロール](controls-images/heroimage-dark-ios.png)
 
 ### <a name="listitem"></a>ListItem
 
@@ -74,11 +74,11 @@ DataPages NuGet には、 Xamarin.Forms データソースバインドを利用�
 
 次の5つのプロパティがあります。
 
-* Title
+* タイトル
 * 詳細
 * ImageSource
 * PlaceholdImageSource
-* 特徴
+* 側面
 
 ```xaml
 <StackLayout Spacing="0">
@@ -94,11 +94,11 @@ DataPages NuGet には、 Xamarin.Forms データソースバインドを利用�
 
 **Android**
 
-![](controls-images/listitem-light-android.png "Android での ListItem コントロール") ![](controls-images/listitem-dark-android.png "Android での ListItem コントロール")
+![Android での ListItem コントロール](controls-images/listitem-light-android.png) ![Android での ListItem コントロール](controls-images/listitem-dark-android.png)
 
 **iOS**
 
-![](controls-images/listitem-light-ios.png "IOS の ListItem コントロール") ![](controls-images/listitem-dark-ios.png "IOS の ListItem コントロール")
+![IOS の ListItem コントロール](controls-images/listitem-light-ios.png) ![IOS の ListItem コントロール](controls-images/listitem-dark-ios.png)
 
 ## <a name="custom-control-example"></a>カスタムコントロールの例
 
@@ -106,7 +106,7 @@ DataPages NuGet には、 Xamarin.Forms データソースバインドを利用�
 
 次の3つのプロパティが含まれます。
 
-* テキスト
+* Text
 * 詳細
 * ImageSource
 
@@ -124,11 +124,11 @@ DataPages NuGet には、 Xamarin.Forms データソースバインドを利用�
 
 **Android**
 
-![](controls-images/cardview-light-android.png "Android での CardView カスタムコントロール") ![](controls-images/cardview-dark-android.png "Android での CardView カスタムコントロール")
+![Android での CardView カスタムコントロール](controls-images/cardview-light-android.png) ![Android での CardView カスタムコントロール](controls-images/cardview-dark-android.png)
 
 **iOS**
 
-![](controls-images/cardview-light-ios.png "IOS での CardView カスタムコントロール") ![](controls-images/cardview-dark-ios.png "IOS での CardView カスタムコントロール")
+![IOS での CardView カスタムコントロール](controls-images/cardview-light-ios.png) ![IOS での CardView カスタムコントロール](controls-images/cardview-dark-ios.png)
 
 ### <a name="building-the-custom-cardview"></a>カスタム CardView のビルド
 

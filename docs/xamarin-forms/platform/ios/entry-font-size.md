@@ -19,7 +19,7 @@ ms.locfileid: "86936319"
 ---
 # <a name="entry-font-size-on-ios"></a>IOS のエントリのフォントサイズ
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 この iOS プラットフォーム固有のを使用して、のフォントサイズを拡大縮小し、 [`Entry`](xref:Xamarin.Forms.Entry) 入力テキストがコントロールに収まるようにします。 添付プロパティを値に設定することにより、XAML で使用 [`Entry.AdjustsFontSizeToFitWidth`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.AdjustsFontSizeToFitWidthProperty) され `boolean` ます。
 

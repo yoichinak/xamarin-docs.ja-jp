@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: bd5217173e00de7d09e4ec14a5acf4d6a8389b10
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: fbd6e4a3b1c5cdb45a057f1ed664a0d5e71e224d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574445"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937892"
 ---
 # <a name="introduction-to-opentk-in-xamarinmac"></a>Xamarin. Mac での OpenTK の概要
 
 OpenTK (オープンツールキット) は、OpenGL、OpenCL、OpenAL を簡単に操作できる高度な低レベルの C# ライブラリです。 OpenTK は、ゲーム、科学的なアプリケーション、または3D グラフィックス、オーディオ、または計算機能を必要とするその他のプロジェクトに使用できます。 この記事では、OpenTK アプリでの使用方法について簡単に説明します。
 
-[![](opentk-images/intro01.png "An example app run")](opentk-images/intro01.png#lightbox)
+[![アプリの実行例](opentk-images/intro01.png)](opentk-images/intro01.png#lightbox)
 
 この記事では、Xamarin. Mac アプリケーションでの OpenTK の基本について説明します。 この記事で使用する主要な概念と手法について説明しているように、最初に[Hello, Mac](~/mac/get-started/hello-mac.md)の記事「 [Xcode と Interface Builder の概要](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)」と「[アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions)」セクションをご覧になることを強くお勧めします。
 
@@ -54,11 +54,11 @@ Xamarin. Mac アプリで OpenTK を使用する方法の概要として、簡�
 
 Visual Studio for Mac を開始し、新しい Xamarin. Mac ソリューションを作成します。 **Mac**  >  **アプリ**の  >  **一般**  >  **共同 coa アプリ**を選択します。
 
-[![](opentk-images/sample01.png "Adding a new Cocoa App")](opentk-images/sample01.png#lightbox)
+[![新しい Cocoa アプリを追加する](opentk-images/sample01.png)](opentk-images/sample01.png#lightbox)
 
 `MacOpenTK`**プロジェクト名**として「」を入力します。
 
-[![](opentk-images/sample02.png "Setting the project name")](opentk-images/sample02.png#lightbox)
+[![プロジェクト名の設定](opentk-images/sample02.png)](opentk-images/sample02.png#lightbox)
 
 [**作成**] ボタンをクリックして、新しいプロジェクトをビルドします。
 
@@ -70,7 +70,7 @@ Xamarin. Mac アプリケーションで Open TK を使用するには、OpenTK 
 
 チェックボックスをオンにし `OpenTK` 、[ **OK** ] ボタンをクリックします。
 
-[![](opentk-images/sample03.png "Editing the project references")](opentk-images/sample03.png#lightbox)
+[![プロジェクト参照の編集](opentk-images/sample03.png)](opentk-images/sample03.png#lightbox)
 
 <a name="Using_OpenTK"></a>
 
@@ -297,7 +297,7 @@ Game.Run(60.0);
 
 アプリを実行し、出力を確認してみましょう。
 
-[![](opentk-images/intro01.png "A sample of the apps output")](opentk-images/intro01.png#lightbox)
+[![アプリ出力のサンプル](opentk-images/intro01.png)](opentk-images/intro01.png#lightbox)
 
 ウィンドウのサイズを変更すると、ゲームビューも存在し、三角形のサイズが変更され、リアルタイムで更新されます。
 

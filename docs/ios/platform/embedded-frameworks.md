@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/05/2018
-ms.openlocfilehash: cf74c31b149c24bc6e515c0f00803a60b10d5d1c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 690aaf81ee2600bd792a36f14b81df3d15e2d21b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032536"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930274"
 ---
 # <a name="embedded-frameworks-in-xamarinios"></a>Xamarin の埋め込みフレームワーク。 iOS
 
@@ -34,17 +34,17 @@ Xamarin でフレームワークを使用するには、次の2つの方法が�
 
 - コンテキストメニューからのネイティブ参照の追加
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 プロジェクトを右クリックし、[参照] をクリックしてネイティブ参照を追加します。
 
-![](embedded-frameworks-images/xam-native-refs.png "Select Add native references in Visual Studio for Mac")
+![Visual Studio for Mac で [ネイティブ参照の追加] を選択します。](embedded-frameworks-images/xam-native-refs.png)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 プロジェクトを右クリックし、[参照] をクリックしてネイティブ参照を追加します。
 
-![](embedded-frameworks-images/vs-native-refs.png "Select Add native references in Visual Studio")
+![Visual Studio で [ネイティブ参照の追加] を選択する](embedded-frameworks-images/vs-native-refs.png)
 
 -----
 
@@ -71,6 +71,6 @@ Xamarin でフレームワークを使用するには、次の2つの方法が�
 この動作は、アプリ開発者によってオーバーライドできます。そのためには、プロジェクトの iOS ビルドオプションで追加の mtouch 引数として次のものを追加します。
 
 - `--mono:static`: Mono ランタイムに静的にリンクします。
-- `--mono:framework`: フレームワークとして Mono ランタイムにリンクします。
+- `--mono:framework`: フレームワークとしての Mono ランタイムとのリンク。
 
-Mono ランタイムとのフレームワークとしてのリンクの1つのシナリオは、拡張機能のないアプリでも、実行可能ファイルのサイズを小さくして、Apple が実行可能ファイルに適用するサイズ制限を克服することです。 参考までに、Mono ランタイムはアーキテクチャあたり約 1.7 MB を追加しています (Xamarin. iOS 8.12 の場合)。ただし、これらはリリースとアプリ間でも異なります。 Mono フレームワークは、アーキテクチャあたり約 2.3 MB を追加します。これは、拡張機能を持たない単一アーキテクチャアプリの場合、アプリをフレームワークとして Mono ランタイムにリンクさせると、実行可能ファイルは約 1.7 MB に圧縮されますが、結果としては ~ 2.3 mb のフレームワークを追加します。最大 0.6 MB の大きなアプリ。
+Mono ランタイムとのフレームワークとしてのリンクの1つのシナリオは、拡張機能のないアプリでも、実行可能ファイルのサイズを小さくして、Apple が実行可能ファイルに適用するサイズ制限を克服することです。 参考までに、Mono ランタイムはアーキテクチャあたり約 1.7 MB を追加しています (Xamarin. iOS 8.12 の場合)。ただし、これらはリリースとアプリ間でも異なります。 Mono フレームワークは、アーキテクチャあたり約 2.3 MB を追加します。これは、拡張機能を持たない1つのアーキテクチャアプリの場合、アプリをフレームワークとして Mono ランタイムにリンクすると、実行可能ファイルのサイズが 1.7 MB に短縮されるのに対し、~ 2.3 mb の大規模アプリ全体が作成されることを意味します。

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/25/2017
-ms.openlocfilehash: cc83fa65fd040b30d71a30fb703da866c5d0824c
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 40640f903ad82c5f154dbb74307c0003d7271561
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84570818"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936605"
 ---
 # <a name="working-with-row-actions-in-xamarinios"></a>Xamarin の行アクションの操作 (iOS)
 
@@ -175,7 +175,7 @@ table.Delegate = tableDelegate;
 
 上のコードを実行し、ユーザーがテーブルの行にスワイプすると、既定で表示される [**削除**] ボタンの代わりに [ **Hi** ] ボタンが表示されます。
 
-[![](row-action-images/action01.png "The Hi button being displayed instead of the Delete button")](row-action-images/action01.png#lightbox)
+[![[削除] ボタンの代わりに表示される [Hi] ボタン](row-action-images/action01.png)](row-action-images/action01.png#lightbox)
 
 ユーザーが [**こんにちは**] ボタンをタップする `Hello World!` と、アプリケーションがデバッグモードで実行されるときに、Visual Studio for Mac または Visual Studio のコンソールにが出力されます。
 

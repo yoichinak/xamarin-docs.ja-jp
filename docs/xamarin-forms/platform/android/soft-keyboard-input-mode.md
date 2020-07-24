@@ -19,7 +19,7 @@ ms.locfileid: "86933316"
 ---
 # <a name="soft-keyboard-input-mode-on-android"></a>Android でのソフトキーボード入力モード
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 この Android プラットフォーム固有のは、ソフトキーボード入力領域の動作モードを設定するために使用され、XAML では、 [`Application.WindowSoftInputModeAdjust`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Application.WindowSoftInputModeAdjustProperty) 添付プロパティを列挙体の値に設定することによって使用され [`WindowSoftInputModeAdjust`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust) ます。
 

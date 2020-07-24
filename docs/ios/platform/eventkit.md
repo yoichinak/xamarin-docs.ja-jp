@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 1be6da2bbaf4aeffe00d90945bd06867f929c334
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: a797fc654c7bdbbdb621c9d18dc7f1a82676778b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032547"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930235"
 ---
 # <a name="eventkit-in-xamarinios"></a>Xamarin. iOS の EventKit
 
 iOS には、カレンダーアプリケーションとアラームアプリケーションという2つのカレンダー関連アプリケーションが組み込まれています。 カレンダーアプリケーションがカレンダーデータをどのように管理するかを理解するのは簡単ですが、リマインダーアプリケーションはあまり明確ではありません。 アラームには、実際に期限切れになったとき、完了したときなどに、日付を関連付けることができます。そのため、iOS では、予定表のイベントかリマインダーかにかかわらず、カレンダー*データベース*と呼ばれるすべてのカレンダーデータが1か所に格納されます。
 
-EventKit フレームワークを使用すると、Calendar データベースに格納されているカレンダー、*カレンダーイベント*、および*アラーム* *データにアクセス*できます。 IOS 4 以降、カレンダーとカレンダーイベントへのアクセスが利用可能になりましたが、iOS 6 ではリマインダーへのアクセスが新たに追加されました。
+EventKit フレームワークを使用すると、Calendar データベースに格納されているカレンダー、*カレンダーイベント*、および*アラーム**データにアクセス*できます。 IOS 4 以降、カレンダーとカレンダーイベントへのアクセスが利用可能になりましたが、iOS 6 ではリマインダーへのアクセスが新たに追加されました。
 
 このガイドでは、次の内容について説明します。
 
@@ -27,9 +27,9 @@ EventKit フレームワークを使用すると、Calendar データベース�
 
 このガイドのすべてのタスクは、付属のサンプルアプリケーションで利用できます。
 
- [![](eventkit-images/01.png "The companion sample application screens")](eventkit-images/01.png#lightbox)
+ [![コンパニオンサンプルアプリケーション画面](eventkit-images/01.png)](eventkit-images/01.png#lightbox)
 
-## <a name="requirements"></a>［要件］
+## <a name="requirements"></a>必要条件
 
 EventKit は iOS 4.0 で導入されましたが、リマインダーデータへのアクセスは iOS 6.0 で導入されました。 そのため、一般的な EventKit 開発を行うには、少なくともバージョン4.0 を対象とし、通知を行うために6.0 をターゲットにする必要があります。
 
@@ -37,17 +37,17 @@ EventKit は iOS 4.0 で導入されましたが、リマインダーデータ�
 
 ## <a name="event-kit-basics"></a>イベントキットの基礎
 
-EventKit を使用する場合は、共通のクラスとその使用方法を把握しておくことが重要です。 これらのクラスはすべて、`EventKit` と `EventKitUI` (`EKEventEditController`) にあります。
+EventKit を使用する場合は、共通のクラスとその使用方法を把握しておくことが重要です。 これらのクラスはすべて、 `EventKit` と `EventKitUI` (の場合) にあり `EKEventEditController` ます。
 
 ### <a name="eventstore"></a>EventStore
 
-*Eventstore*クラスは、eventstore で任意の操作を実行するために必要なため、eventstore の中で最も重要なクラスです。 これは、すべての EventKit データの永続ストレージ (データベースエンジン) と考えることができます。 `EventStore` から、カレンダーアプリケーションのカレンダーイベントとカレンダーイベントの両方にアクセスできます。また、アラームアプリケーションでアラームを使用することもできます。
+*Eventstore*クラスは、eventstore で任意の操作を実行するために必要なため、eventstore の中で最も重要なクラスです。 これは、すべての EventKit データの永続ストレージ (データベースエンジン) と考えることができます。 では、 `EventStore` カレンダーアプリケーションのカレンダーイベントとカレンダーイベントの両方にアクセスできます。また、アラームアプリケーションでアラームを使用することもできます。
 
-`EventStore` はデータベースエンジンに似ているので、長期間にわたって作成および破棄する必要があります。つまり、アプリケーションインスタンスの有効期間中はできるだけ少なくする必要があります。 実際には、アプリケーションに `EventStore` のインスタンスを1つ作成した後は、アプリケーションの有効期間全体にわたってその参照を保持しておくことをお勧めします。この場合、再度必要にならないようにしてください。 さらに、すべての呼び出しは1つの `EventStore` インスタンスに送られます。 このため、単一のインスタンスを使用可能な状態に保つには、シングルトンパターンをお勧めします。
+`EventStore`はデータベースエンジンに似ているため、有効期間が長くなることが必要です。つまり、アプリケーションインスタンスの有効期間中は、できるだけ少ない時間で作成および破棄する必要があります。 実際には、アプリケーションでのインスタンスを1つ作成した後は、 `EventStore` アプリケーションの有効期間全体にわたってその参照を保持することをお勧めします。再利用する必要がない場合は除きます。 さらに、すべての呼び出しが1つのインスタンスに送ら `EventStore` れます。 このため、単一のインスタンスを使用可能な状態に保つには、シングルトンパターンをお勧めします。
 
 #### <a name="creating-an-event-store"></a>イベントストアの作成
 
-次のコードは、`EventStore` クラスの1つのインスタンスを作成し、アプリケーション内から静的に使用できるようにする効率的な方法を示しています。
+次のコードは、クラスの単一のインスタンスを作成し、 `EventStore` アプリケーション内から静的に使用できるようにする効率的な方法を示しています。
 
 ```csharp
 public class App
@@ -73,17 +73,17 @@ public class App
 }
 ```
 
-上記のコードでは、アプリケーションの読み込み時に、シングルトンパターンを使用して `EventStore` のインスタンスをインスタンス化しています。 この `EventStore` は、次のようにアプリケーション内からグローバルにアクセスできます。
+上記のコードでは、アプリケーションの読み込み時に、シングルトンパターンを使用してのインスタンスをインスタンス化して `EventStore` います。 その後、次のように、 `EventStore` アプリケーション内からグローバルにアクセスできます。
 
 ```csharp
 App.Current.EventStore;
 ```
 
-ここに示したすべての例では、このパターンが使用されているので、`App.Current.EventStore`経由で `EventStore` を参照しています。
+ここに示したすべての例では、このパターンを使用するため、via を参照し `EventStore` `App.Current.EventStore` ます。
 
 #### <a name="requesting-access-to-calendar-and-reminder-data"></a>カレンダーとリマインダーデータへのアクセスの要求
 
-イベントストア経由で任意のデータにアクセスできるようにするには、まず、必要なものに応じて、カレンダーイベントデータまたはアラームデータへのアクセスをアプリケーションが要求する必要があります。 これを容易にするために、`EventStore` は `RequestAccess` と呼ばれるメソッドを公開します。このメソッドを呼び出すと、に渡される `EKEntityType` に応じて、アプリケーションがカレンダーデータまたはアラームデータへのアクセスを要求していることをユーザーに通知するメッセージが表示されます。し. アラートビューが生成されるため、呼び出しは非同期であり、2つのパラメーターを受け取る `NSAction` (またはラムダ) として渡される完了ハンドラーを呼び出します。アクセスが許可されたかどうかのブール値、および `NSError`。つまり、null でない場合は、要求にエラー情報が含まれます。 たとえば、次のコードは、カレンダーイベントデータへのアクセスを要求し、要求が許可されていない場合はアラートビューを表示します。
+イベントストア経由で任意のデータにアクセスできるようにするには、まず、必要なものに応じて、カレンダーイベントデータまたはアラームデータへのアクセスをアプリケーションが要求する必要があります。 これを容易にするために、はと呼ばれるメソッドを公開しています。このメソッドは、呼び出されると、に渡されたものに `EventStore` `RequestAccess` 応じて、カレンダーデータまたはリマインダーデータへのアクセスをアプリケーションが要求していることをユーザーに通知し `EKEntityType` ます。 この呼び出しは、アラートビューを生成するため、呼び出しは非同期であり、2つのパラメーターを受け取る (またはラムダ) として渡される完了ハンドラーを呼び出します `NSAction` 。これは、アクセスが許可されたかどうかのブール値です `NSError` 。また、null でない場合、要求にエラー情報が含まれていない場合はです。 たとえば、次のコードは、カレンダーイベントデータへのアクセスを要求し、要求が許可されていない場合はアラートビューを表示します。
 
 ```csharp
 App.Current.EventStore.RequestAccess (EKEntityType.Event, 
@@ -102,23 +102,23 @@ App.Current.EventStore.RequestAccess (EKEntityType.Event,
 
 アクセス許可が記憶されているため、要求を毎回行う方が比較的安価です。そのため、操作を実行する前に常にアクセスを要求することをお勧めします。
 
-また、完了ハンドラーが別の (UI ではない) スレッドで呼び出されるため、完了ハンドラーの UI に対する更新は `InvokeOnMainThread`経由で呼び出される必要があります。そうしないと、例外がスローされ、キャッチされない場合はアプリケーションがクラッシュします。
+また、完了ハンドラーが別の (UI ではない) スレッドで呼び出されるため、完了ハンドラーの UI に対する更新は経由で呼び出される必要があります。そうしないと、 `InvokeOnMainThread` 例外がスローされ、キャッチされない場合はアプリケーションがクラッシュします。
 
 ### <a name="ekentitytype"></a>EKEntityType
 
-`EKEntityType` は、`EventKit` 項目またはデータの型を記述する列挙体です。 `Event` とリマインダーの2つの値があります。 このメソッドは、アクセスまたは取得するデータの種類を `EventKit` `EventStore.RequestAccess` など、さまざまな方法で使用されます。
+`EKEntityType`項目またはデータの型を記述する列挙体です `EventKit` 。 2つの値 (とのリマインダー) があり `Event` ます。 これは、 `EventStore.RequestAccess` `EventKit` アクセスまたは取得するデータの種類を指定するなど、さまざまな方法で使用されます。
 
 ### <a name="ekcalendar"></a>EKCalendar
 
- *EKCalendar*は、カレンダーイベントのグループを含む calendar を表します。 予定表は、 *Exchange Server*や*Google*などのサードパーティのプロバイダーの場所に、 *iCloud*でローカルに保存するなど、さまざまな場所に格納することができます。多くの場合 `EKCalendar` を使用して、イベントを検索する場所 `EventKit` を指定したり、イベントを保存する場所を指定したりします。
+ *EKCalendar*は、カレンダーイベントのグループを含む calendar を表します。 予定表は、 *Exchange Server*や*Google*などのサードパーティのプロバイダーの場所に、 *iCloud*でローカルに保存するなど、さまざまな場所に格納することができます。`EKCalendar` `EventKit` イベントの検索場所や保存場所を指定するために、何度も使用されます。
 
 ### <a name="ekeventeditcontroller"></a>EKEventEditController
 
- *EKEventEditController*は `EventKitUI` 名前空間にあり、カレンダーイベントの編集や作成に使用できる組み込みのコントローラーです。 組み込みカメラコントローラーと同様に、`EKEventEditController` は、UI を表示して保存を処理するために多くの処理を行います。
+ *EKEventEditController*は名前空間にあり、 `EventKitUI` カレンダーイベントの編集や作成に使用できる組み込みのコントローラーです。 組み込みのカメラコントローラーと同じように、で `EKEventEditController` は、UI を表示して保存処理を行うために、大量の処理が行われます。
 
 ### <a name="ekevent"></a>EKEvent
 
- *EKEvent*はカレンダーイベントを表します。 `EKEvent` と `EKReminder` はどちらも `EKCalendarItem` から継承され、`Title`や `Notes`などのフィールドがあります。
+ *EKEvent*はカレンダーイベントを表します。 とはどちらも `EKEvent` `EKReminder` 、、などのフィールドを継承 `EKCalendarItem` し `Title` `Notes` ます。
 
 ### <a name="ekreminder"></a>EKReminder
 
@@ -126,15 +126,15 @@ App.Current.EventStore.RequestAccess (EKEntityType.Event,
 
 ### <a name="ekspan"></a>EKSpan
 
-*EKSpan*は、再発する可能性があるイベントを変更するときのイベントの範囲を示す列挙体です。*含め*と*FutureEvents*の2つの値があります。 `ThisEvent` は、参照されている系列内の特定のイベントに対してのみ変更が発生することを意味し、`FutureEvents` はそのイベントと今後のすべての繰り返しに影響します。
+*EKSpan*は、再発する可能性があるイベントを変更するときのイベントの範囲を示す列挙体です。*含め*と*FutureEvents*の2つの値があります。 `ThisEvent`は、参照されている系列内の特定のイベントにのみ変更が発生することを意味しますが、 `FutureEvents` はそのイベントと今後のすべての繰り返しに影響します。
 
-## <a name="tasks"></a>[タスク]
+## <a name="tasks"></a>タスク
 
 使いやすくするために、EventKit の使用状況は、次のセクションで説明する一般的なタスクに分割されています。
 
 ### <a name="enumerate-calendars"></a>カレンダーの列挙
 
-デバイスでユーザーが構成したカレンダーを列挙するには、`EventStore` で `GetCalendars` を呼び出し、受信する予定のカレンダー (アラームまたはイベント) の種類を渡します。
+デバイスでユーザーが構成したカレンダーを列挙するには、でを呼び出し、 `GetCalendars` `EventStore` 受信する予定のカレンダー (アラームまたはイベント) の種類を渡します。
 
 ```csharp
 EKCalendar[] calendars = 
@@ -145,7 +145,7 @@ App.Current.EventStore.GetCalendars ( EKEntityType.Event );
 
 Calendar アプリケーションの使用時にユーザーに表示されるものと同じ UI を使用してイベントを作成または編集する場合、 *EKEventEditViewController*は多くの処理を実行します。
 
- [![](eventkit-images/02.png "The UI that is presented to the user when using the Calendar Application")](eventkit-images/02.png#lightbox)
+ [![カレンダーアプリケーションを使用しているときにユーザーに表示される UI](eventkit-images/02.png)](eventkit-images/02.png#lightbox)
 
 これを使用するには、メソッド内で宣言されている場合にガベージコレクションが行われないように、クラスレベル変数として宣言します。
 
@@ -157,7 +157,7 @@ public class HomeController : DialogViewController
 }
 ```
 
-次に、それを起動するには、インスタンス化して、`EventStore`への参照を指定し、それに*EKEventEditViewDelegate*デリゲートを接続してから、`PresentViewController`を使用して表示します。
+次に、それを起動するには、インスタンス化して、への参照を指定します。次に、 `EventStore` *EKEventEditViewDelegate*デリゲートを接続し、を使用して表示し `PresentViewController` ます。
 
 ```csharp
 EventKitUI.EKEventEditViewController eventController = 
@@ -195,7 +195,7 @@ eventController.Event = newEvent;
 
 既存のイベントを使用するには、後の「 *ID でイベントを取得*する」セクションを参照してください。
 
-デリゲートは `Completed` メソッドをオーバーライドする必要があります。これは、ユーザーがダイアログで終了したときにコントローラーによって呼び出されます。
+デリゲートは、メソッドをオーバーライドする必要があります `Completed` 。これは、ユーザーがダイアログを終了したときにコントローラーによって呼び出されます。
 
 ```csharp
 protected class CreateEventEditViewDelegate : EventKitUI.EKEventEditViewDelegate
@@ -218,7 +218,7 @@ protected class CreateEventEditViewDelegate : EventKitUI.EKEventEditViewDelegate
 }
 ```
 
-必要に応じて、デリゲートで `Completed` メソッドの*アクション*を確認して、イベントと再保存を変更したり、キャンセルされた場合はありを実行することができます。
+必要に応じて、デリゲートでメソッド内の*アクション*を確認し `Completed` て、イベントと再保存を変更したり、キャンセルされた場合は他の処理を実行したりできます。あり:
 
 ```csharp
 public override void Completed (EventKitUI.EKEventEditViewController controller, EKEventEditViewAction action)
@@ -242,7 +242,7 @@ public override void Completed (EventKitUI.EKEventEditViewController controller,
 
 ### <a name="creating-an-event-programmatically"></a>プログラムによるイベントの作成
 
-コードでイベントを作成するには、`EKEvent` クラスで*Fromstore*ファクトリメソッドを使用し、そこにデータを設定します。
+コードでイベントを作成するには、クラスで*Fromstore*ファクトリメソッドを使用 `EKEvent` し、そこにデータを設定します。
 
 ```csharp
 EKEvent newEvent = EKEvent.FromStore ( App.Current.EventStore );
@@ -261,7 +261,7 @@ newEvent.Notes = "This is your motivational event to go and do 30 minutes of exe
 newEvent.Calendar = App.Current.EventStore.DefaultCalendarForNewEvents;
 ```
 
-イベントを保存するには、`EventStore`で*Saveevent*メソッドを呼び出します。
+イベントを保存するには、で*Saveevent*メソッドを呼び出し `EventStore` ます。
 
 ```csharp
 NSError e;
@@ -274,7 +274,7 @@ App.Current.EventStore.SaveEvent ( newEvent, EKSpan.ThisEvent, out e );
 Console.WriteLine ("Event Saved, ID: " + newEvent.CalendarItemIdentifier);
 ```
 
- `EventIdentifier` は、文字列形式の GUID です。
+ `EventIdentifier`文字列形式の GUID を指定します。
 
 ### <a name="create-a-reminder-programmatically"></a>プログラムによるリマインダーの作成
 
@@ -286,7 +286,7 @@ reminder.Title = "Do something awesome!";
 reminder.Calendar = App.Current.EventStore.DefaultCalendarForNewReminders;
 ```
 
-保存するには、`EventStore`で*SaveReminder*メソッドを呼び出します。
+保存するには、で*SaveReminder*メソッドを呼び出し `EventStore` ます。
 
 ```csharp
 NSError e;
@@ -295,51 +295,51 @@ App.Current.EventStore.SaveReminder ( reminder, true, out e );
 
 ### <a name="retrieving-an-event-by-id"></a>ID でイベントを取得する
 
-イベントを ID で取得するには、`EventStore` で*Eventfromidentifier*メソッドを使用し、イベントからプルされた `EventIdentifier` を渡します。
+イベントを ID で取得するには、で*Eventfromidentifier*メソッドを使用 `EventStore` し、 `EventIdentifier` イベントからプルされたを渡します。
 
 ```csharp
 EKEvent mySavedEvent = App.Current.EventStore.EventFromIdentifier ( newEvent.EventIdentifier );
 ```
 
-イベントについては、他に2つの識別子プロパティがありますが、この場合に機能するのは `EventIdentifier` だけです。
+イベントについては、他に2つの識別子プロパティがありますが、 `EventIdentifier` これが機能するのは1つだけです。
 
 ### <a name="retrieving-a-reminder-by-id"></a>ID でリマインダーを取得する
 
-リマインダーを取得するには、`EventStore` で*Getcalendaritem*メソッドを使用し、それに*calendaritemidentifier*を渡します。
+リマインダーを取得するには、で*Getcalendaritem*メソッドを使用 `EventStore` し、それに*calendaritemidentifier*を渡します。
 
 ```csharp
 EKCalendarItem myReminder = App.Current.EventStore.GetCalendarItem ( reminder.CalendarItemIdentifier );
 ```
 
-`GetCalendarItem` は `EKCalendarItem`を返すため、リマインダーデータにアクセスする必要がある場合、または後で `EKReminder` としてインスタンスを使用する必要がある場合は、`EKReminder` にキャストする必要があります。
+はを `GetCalendarItem` 返すため `EKCalendarItem` 、 `EKReminder` リマインダーデータにアクセスする必要がある場合、または後でとしてインスタンスを使用する必要がある場合は、にキャストする必要があり `EKReminder` ます。
 
-カレンダーイベントには `GetCalendarItem` を使用しないでください。作成時には機能しません。
+予定表のイベントには使用しないで `GetCalendarItem` ください。作成時には機能しません。
 
 ### <a name="deleting-an-event"></a>イベントの削除
 
-カレンダーイベントを削除するには、`EventStore` で*Removeevent*を呼び出し、イベントへの参照と適切な `EKSpan`を渡します。
+カレンダーイベントを削除するには、で*Removeevent*を呼び出し、 `EventStore` イベントへの参照と適切なを渡し `EKSpan` ます。
 
 ```csharp
 NSError e;
 App.Current.EventStore.RemoveEvent ( mySavedEvent, EKSpan.ThisEvent, true, out e);
 ```
 
-ただし、イベントが削除されると、イベント参照が `null`されます。
+ただし、イベントが削除されると、イベント参照はになり `null` ます。
 
 ### <a name="deleting-a-reminder"></a>リマインダーの削除
 
-リマインダーを削除するには、`EventStore` で*RemoveReminder*を呼び出し、リマインダーへの参照を渡します。
+リマインダーを削除するには、で*RemoveReminder*を呼び出し、 `EventStore` リマインダーへの参照を渡します。
 
 ```csharp
 NSError e;
 App.Current.EventStore.RemoveReminder ( myReminder as EKReminder, true, out e);
 ```
 
-上記のコードでは、`GetCalendarItem` を取得するために使用されたため、`EKReminder`にキャストがあります。
+上のコードでは、を取得するために `EKReminder` `GetCalendarItem` が使用されたため、にキャストされていることに注意してください。
 
 ### <a name="searching-for-events"></a>イベントの検索
 
-カレンダーイベントを検索するには、`EventStore`の*PredicateForEvents*メソッドを使用して*NSPredicate*オブジェクトを作成する必要があります。 `NSPredicate` は、iOS が一致を見つけるために使用するクエリデータオブジェクトです。
+カレンダーイベントを検索するには、の*PredicateForEvents*メソッドを使用して*NSPredicate*オブジェクトを作成する必要があり `EventStore` ます。 `NSPredicate`は、iOS が一致を見つけるために使用するクエリデータオブジェクトです。
 
 ```csharp
 DateTime startDate = DateTime.Now.AddDays ( -7 );
@@ -348,7 +348,7 @@ DateTime endDate = DateTime.Now;
 NSPredicate query = App.Current.EventStore.PredicateForEvents ( startDate, endDate, null );
 ```
 
-`NSPredicate`を作成したら、`EventStore`に対して、次のよう*にメソッドを使用します*。
+を作成したら、 `NSPredicate` で次の*EventsMatching*ように、のメソッドを使用し `EventStore` ます。
 
 ```csharp
 // execute the query
@@ -374,7 +374,7 @@ App.Current.EventStore.FetchReminders (
 
 ## <a name="summary"></a>まとめ
 
-このドキュメントでは、EventKit フレームワークの重要な部分と、多くの一般的なタスクの概要について説明しました。 ただし、EventKit フレームワークは非常に大規模で強力な機能を備えています。また、バッチ更新、アラームの構成、イベントの繰り返しの構成、カレンダーデータベースでの変更の登録とリッスンなど、ここでは紹介されていない機能が含まれています。ジオフェンスなどを設定します。  詳細については、「Apple の[予定表とアラームのプログラミングガイド](https://developer.apple.com/library/prerelease/ios/#documentation/DataManagement/Conceptual/EventKitProgGuide/Introduction/Introduction.html)」を参照してください。
+このドキュメントでは、EventKit フレームワークの重要な部分と、多くの一般的なタスクの概要について説明しました。 ただし、EventKit フレームワークは非常に大きく、強力な機能を備えています。また、バッチ更新、アラームの構成、イベントでの繰り返しの構成、カレンダーデータベースでの変更の登録とリッスン、ジオフェンスの設定など、ここでは紹介されていない機能が含まれています。  詳細については、「Apple の[予定表とアラームのプログラミングガイド](https://developer.apple.com/library/prerelease/ios/#documentation/DataManagement/Conceptual/EventKitProgGuide/Introduction/Introduction.html)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 

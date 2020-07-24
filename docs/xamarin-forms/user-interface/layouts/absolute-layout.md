@@ -10,12 +10,12 @@ ms.date: 11/25/2015
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 110b01d6482fbe3e23a772c90194b6bf40d54877
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 923f7643bd1e137192bfb80dbbc7c5d2c25b5471
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84570532"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938425"
 ---
 # <a name="xamarinforms-absolutelayout"></a>Xamarin.FormsAbsoluteLayout
 
@@ -23,7 +23,7 @@ ms.locfileid: "84570532"
 
 [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout)子要素のサイズと位置または絶対値に比例して、子要素の位置とサイズを調整します。 子ビューは、比例値または静的な値を使用して配置およびサイズ設定できます。また、比例値と静的な値を混在させることができます。
 
-[![](absolute-layout-images/layouts-sml.png "Xamarin.Forms Layouts")](absolute-layout-images/layouts.png#lightbox "Xamarin.Forms Layouts")
+[![Xamarin.Formsレイアウト](absolute-layout-images/layouts-sml.png)](absolute-layout-images/layouts.png#lightbox "[!ファンド.非 LOC (Xamarin)] レイアウト")
 
 この記事では、次の内容を取り上げます。
 
@@ -40,7 +40,7 @@ ms.locfileid: "84570532"
 
 `AbsoluteLayout`任意の場所の要素をビュー内に配置する必要があり、要素を端に配置するときに特に便利です。
 
-## <a name="usage"></a>使用方法
+## <a name="usage"></a>使用法
 
 ### <a name="proportional-layouts"></a>プロポーショナルレイアウト
 
@@ -53,9 +53,9 @@ ms.locfileid: "84570532"
 
 次のスクリーンショットでは、ボックスのアンカーは白い点を示しています。 アンカーとボックスがレイアウト内を移動する間の関係を確認します。
 
-![](absolute-layout-images/anchor-start.png "Anchor at Start")
-![](absolute-layout-images/anchor-center.png "Anchor at Center")
-![](absolute-layout-images/anchor-end.png "Anchor at End")
+![スタートアンカーの ](absolute-layout-images/anchor-start.png)
+ ![ ](absolute-layout-images/anchor-center.png)
+ ![ 端にアンカーを配置します。](absolute-layout-images/anchor-end.png)
 
 ### <a name="specifying-values"></a>値の指定
 
@@ -109,7 +109,7 @@ Title="Absolute Layout Exploration">
 </ContentPage>
 ```
 
-![](absolute-layout-images/exploration.png "AbsoluteLayout Examples")
+![AbsoluteLayout の例](absolute-layout-images/exploration.png)
 
 次のことを考慮してください。
 
@@ -275,7 +275,7 @@ Title="AbsoluteLayout">
 
 上記のコードでは、次のレイアウトが生成されます。
 
-![](absolute-layout-images/abs.png "Complex AbsoluteLayout")
+![Complex AbsoluteLayout](absolute-layout-images/abs.png)
 
 が入れ子になっていることに注意してください。入れ子になったレイアウトは、 `AbsoluteLayout` 同じレイアウト内のすべての要素を表示するよりも簡単な場合があるためです。
 

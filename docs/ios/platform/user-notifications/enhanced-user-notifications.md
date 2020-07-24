@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2017
-ms.openlocfilehash: 92d62e7ea53893089131a127bf9f2d808c6252b0
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: d4fe04412eb4fb456bc49d71c1e5fe87df5f9e76
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031349"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939642"
 ---
 # <a name="enhanced-user-notifications-in-xamarinios"></a>Xamarin でのユーザー通知の強化
 
@@ -84,7 +84,7 @@ IOS アプリで使用可能なリモート通知には、次の2種類があり
 
 ### <a name="about-the-existing-notifications-api"></a>既存の通知 API について
 
-Ios 10 より前の iOS アプリでは、`UIApplication` を使用して、システムに通知を登録し、通知をトリガーする方法 (時刻または場所) をスケジュールします。
+Ios 10 より前では、iOS アプリはを使用して `UIApplication` 通知をシステムに登録し、通知のトリガー方法 (時刻または場所) をスケジュールします。
 
 既存の notification API を使用しているときに開発者が遭遇する可能性がある問題がいくつかあります。
 
@@ -94,7 +94,7 @@ Ios 10 より前の iOS アプリでは、`UIApplication` を使用して、シ�
 
 ### <a name="about-the-new-user-notification-framework"></a>新しいユーザー通知フレームワークについて
 
-IOS 10 では、Apple は、前述の既存の `UIApplication` 方法を置き換える新しいユーザー通知フレームワークを導入しました。
+IOS 10 では、Apple は、前述の既存の方法を置き換える新しいユーザー通知フレームワークを導入しました `UIApplication` 。
 
 ユーザー通知フレームワークには、次のものがあります。
 
@@ -127,7 +127,7 @@ IOS アプリからユーザーに通知を送信する前に、アプリケー�
 
 また、これらの承認レベルは、ローカルとリモートの両方の通知を要求して設定する必要があります。
 
-通知アクセス許可は、アプリが起動するとすぐに、`AppDelegate` の `FinishedLaunching` メソッドに次のコードを追加し、必要な通知の種類 (`UNAuthorizationOptions`) を設定することによって要求する必要があります。
+通知アクセス許可は、アプリが起動するとすぐに、のメソッドに次のコードを追加し、 `FinishedLaunching` `AppDelegate` 必要な通知の種類 () を設定することによって要求する必要があり `UNAuthorizationOptions` ます。
 
 ```csharp
 using UserNotifications;
@@ -157,38 +157,38 @@ UNUserNotificationCenter.Current.GetNotificationSettings ((settings) => {
 
 IOS 10 の新機能として、開発者は、どの環境プッシュ通知がどの環境で実行されているかを、開発と運用のどちらとして OS に通知する必要があります この情報を指定しなかった場合、次のような通知を含む iTune App ストアに送信されると、アプリが拒否される可能性があります。
 
-> プッシュ通知の権利がありません-アプリには Apple のプッシュ通知サービス用の API が含まれていますが、アプリの署名には `aps-environment` の権利がありません。
+> プッシュ通知の権利がありません-アプリに Apple のプッシュ通知サービス用の API が含まれていますが、 `aps-environment` アプリの署名に権利がありません。
 
 必要な権利を提供するには、次の手順を実行します。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. **Solution Pad**内の `Entitlements.plist` ファイルをダブルクリックして、編集用に開きます。
+1. Solution Pad 内のファイルをダブルクリックし `Entitlements.plist` て、編集用に**Solution Pad**開きます。
 2. **ソース**ビューに切り替えます。 
 
-    [![](enhanced-user-notifications-images/setup01.png "The Source view")](enhanced-user-notifications-images/setup01.png#lightbox)
-3. [ **+** ] ボタンをクリックして、新しいキーを追加します。
-4. **プロパティ**に `aps-environment` を入力し、 **[型]** を [`String`] のままにして、**値**として `development` または `production` を入力します。 
+    [![ソースビュー](enhanced-user-notifications-images/setup01.png)](enhanced-user-notifications-images/setup01.png#lightbox)
+3. **+** 新しいキーを追加するには、このボタンをクリックします。
+4. プロパティとして「」と入力し、[型] をそのままにして、値として「 `aps-environment` **Property** **Type** `String` 」または「」を入力し `development` `production` ます。 **Value** 
 
-    [![](enhanced-user-notifications-images/setup02.png "The aps-environment Property")](enhanced-user-notifications-images/setup02.png#lightbox)
-5. 変更内容をファイルに保存します。
+    [![Aps-environment プロパティ](enhanced-user-notifications-images/setup02.png)](enhanced-user-notifications-images/setup02.png#lightbox)
+5. 変更をファイルに保存します。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. **ソリューションエクスプローラー**内の `Entitlements.plist` ファイルをダブルクリックして、編集用に開きます。
-2. [ **+** ] ボタンをクリックして、新しいキーを追加します。
-3. **プロパティ**に `aps-environment` を入力し、 **[型]** を [`String`] のままにして、**値**として `development` または `production` を入力します。 
+1. ソリューションエクスプローラー内のファイルをダブルクリックし `Entitlements.plist` て、編集用に**Solution Explorer**開きます。
+2. **+** 新しいキーを追加するには、このボタンをクリックします。
+3. プロパティとして「」と入力し、[型] をそのままにして、値として「 `aps-environment` **Property** **Type** `String` 」または「」を入力し `development` `production` ます。 **Value** 
 
-    [![](enhanced-user-notifications-images/setup02w.png "The aps-environment Property")](enhanced-user-notifications-images/setup02.png#lightbox)
-4. 変更内容をファイルに保存します。
+    [![Aps-environment プロパティ](enhanced-user-notifications-images/setup02w.png)](enhanced-user-notifications-images/setup02.png#lightbox)
+4. 変更をファイルに保存します。
 
 -----
 
 ### <a name="registering-for-remote-notifications"></a>リモート通知の登録
 
-アプリがリモート通知を送受信する場合でも、既存の `UIApplication` API を使用して_トークン登録_を行う必要があります。 この登録を行うには、デバイスが APNs にライブネットワーク接続アクセスする必要があります。これにより、アプリに送信される必要なトークンが生成されます。 次に、アプリはこのトークンを開発者のサーバー側アプリに転送して、リモート通知を登録する必要があります。
+アプリがリモート通知を送受信する場合でも、既存の API を使用して_トークン登録_を行う必要があり `UIApplication` ます。 この登録を行うには、デバイスが APNs にライブネットワーク接続アクセスする必要があります。これにより、アプリに送信される必要なトークンが生成されます。 次に、アプリはこのトークンを開発者のサーバー側アプリに転送して、リモート通知を登録する必要があります。
 
-[![](enhanced-user-notifications-images/token01.png "Token Registration overview")](enhanced-user-notifications-images/token01.png#lightbox)
+[![トークン登録の概要](enhanced-user-notifications-images/token01.png)](enhanced-user-notifications-images/token01.png#lightbox)
 
 次のコードを使用して、必要な登録を初期化します。
 
@@ -198,7 +198,7 @@ UIApplication.SharedApplication.RegisterForRemoteNotifications ();
 
 開発者のサーバー側アプリに送信されるトークンは、リモート通知を送信するときにサーバーから APNs に送信される通知ペイロードの一部として含める必要があります。
 
-[![](enhanced-user-notifications-images/token02.png "The token included as part of the Notification Payload")](enhanced-user-notifications-images/token02.png#lightbox)
+[![通知ペイロードの一部として含まれるトークン](enhanced-user-notifications-images/token02.png)](enhanced-user-notifications-images/token02.png#lightbox)
 
 このトークンは、通知と、通知を開いたり応答したりするために使用されるアプリを相互に結び付けるキーとして機能します。
 
@@ -242,11 +242,11 @@ content.Badge = 1;
 通知の内容を作成したら、*トリガー*を設定してユーザーに通知を表示するタイミングをアプリでスケジュールする必要があります。 iOS 10 には、次の4種類のトリガーがあります。
 
 - **プッシュ通知**-リモート通知でのみ使用され、APNs がデバイスで実行されているアプリに通知パッケージを送信するときにトリガーされます。
-- **[時間間隔]** -現在から開始し、将来のある時点を終了するまでの時間間隔からローカル通知をスケジュールできます。 たとえば、`var trigger =  UNTimeIntervalNotificationTrigger.CreateTrigger (5, false);`
+- [**時間間隔**]-現在から開始し、将来のある時点を終了するまでの時間間隔からローカル通知をスケジュールできます。 たとえば、`var trigger =  UNTimeIntervalNotificationTrigger.CreateTrigger (5, false);` のように指定します。
 - **カレンダー日付**-ローカル通知を特定の日時にスケジュールすることを許可します。
 - **場所ベース**-iOS デバイスが特定の地理的な場所に出入りする場合、または Bluetooth ビーコンに隣接している場合に、ローカル通知をスケジュールすることを許可します。
 
-ローカル通知の準備ができたら、アプリは `UNUserNotificationCenter` オブジェクトの `Add` メソッドを呼び出して、ユーザーに表示をスケジュールする必要があります。 リモート通知の場合、サーバー側アプリは APNs に通知ペイロードを送信します。これにより、パケットがユーザーのデバイスに送信されます。
+ローカル通知の準備ができたら、アプリケーションはオブジェクトのメソッドを呼び出して、 `Add` `UNUserNotificationCenter` ユーザーに表示をスケジュールする必要があります。 リモート通知の場合、サーバー側アプリは APNs に通知ペイロードを送信します。これにより、パケットがユーザーのデバイスに送信されます。
 
 すべての要素をまとめると、ローカル通知のサンプルは次のようになります。
 
@@ -274,7 +274,7 @@ UNUserNotificationCenter.Current.AddNotificationRequest (request, (err) => {
 
 ## <a name="handling-foreground-app-notifications"></a>フォアグラウンドアプリの通知の処理
 
-IOS 10 を初めて使用する場合、アプリは、フォアグラウンドにいるときに通知を別の方法で処理でき、通知がトリガーされます。 `UNUserNotificationCenterDelegate` を提供し、`WillPresentNotification` メソッドを実装することで、アプリは通知を表示する責任を負うことができます。 (例:
+IOS 10 を初めて使用する場合、アプリは、フォアグラウンドにいるときに通知を別の方法で処理でき、通知がトリガーされます。 を提供 `UNUserNotificationCenterDelegate` し、メソッドを実装することで `WillPresentNotification` 、アプリは通知を表示する責任を負うことができます。 次に例を示します。
 
 ```csharp
 using System;
@@ -305,15 +305,15 @@ namespace MonkeyNotification
 }
 ```
 
-このコードは、アプリケーションの出力に `UNNotification` の内容を書き出し、通知の標準アラートを表示するようシステムに要求するだけです。 
+このコードでは、の内容を `UNNotification` アプリケーション出力に書き込み、通知の標準アラートを表示するようシステムに要求します。 
 
-アプリがフォアグラウンドにあったときに通知を表示し、システムの既定値を使用しないようにする場合は、`None` を完了ハンドラーに渡します。 例:
+アプリがフォアグラウンドにあったときに通知を表示し、システムの既定値を使用しないようにする場合は、 `None` 完了ハンドラーにを渡します。 例:
 
 ```csharp
 completionHandler (UNNotificationPresentationOptions.None);
 ```
 
-このコードを使用して、`AppDelegate.cs` ファイルを編集用に開き、`FinishedLaunching` メソッドを次のように変更します。
+このコードを配置したら、 `AppDelegate.cs` ファイルを編集用に開き、 `FinishedLaunching` メソッドを次のように変更します。
 
 ```csharp
 public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
@@ -330,13 +330,13 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
 }
 ```
 
-このコードは、前の手順で作成したカスタム `UNUserNotificationCenterDelegate` を現在の `UNUserNotificationCenter` にアタッチしています。これにより、アプリは、アクティブなときとフォアグラウンドで通知を処理できるようになります。
+このコードでは、上記のカスタムを現在のにアタッチしてい `UNUserNotificationCenterDelegate` `UNUserNotificationCenter` ます。これにより、アプリは、アクティブなときとフォアグラウンドで通知を処理できるようになります。
 
 ## <a name="notification-management"></a>通知管理
 
 IOS 10 の新機能である通知管理を使用すると、保留中と配信済みの両方の通知にアクセスでき、これらの通知を削除、更新、または昇格する機能が追加されます。
 
-通知管理の重要な部分は、システムで作成およびスケジュールされたときに通知に割り当てられた_要求識別子_です。 リモート通知の場合は、HTTP 要求ヘッダーの新しい `apps-collapse-id` フィールドを通じて割り当てられます。
+通知管理の重要な部分は、システムで作成およびスケジュールされたときに通知に割り当てられた_要求識別子_です。 リモート通知の場合は、HTTP 要求ヘッダーの新しいフィールドを通じて割り当てられ `apps-collapse-id` ます。
 
 要求 Id は、アプリで通知管理を実行する通知を選択するために使用されます。
 
@@ -395,7 +395,7 @@ IOS 10 では、ユーザーに配信される通知は静的なものではな�
 IOS アプリが応答できるアクションには、次の3種類があります。
 
 - **既定のアクション**-ユーザーが通知をタップしてアプリを開き、指定された通知の詳細を表示します。
-- **カスタムアクション**-これらは iOS 8 で追加されたものであり、ユーザーがアプリを起動しなくても、通知から直接カスタムタスクを実行することができます。 これらは、カスタマイズ可能なタイトルを持つボタンのリスト、またはバックグラウンドで (アプリが要求を処理するための短い時間が与えられている) バックグラウンドで実行できるテキスト入力フィールドのいずれかとして、またはフォアグラウンドで (アプリがフォアグラウンドで起動されたときに)、fu に表示されます。要求を埋めます)。 カスタムアクションは、iOS と watchOS の両方で使用できます。
+- **カスタムアクション**-これらは iOS 8 で追加されたものであり、ユーザーがアプリを起動しなくても、通知から直接カスタムタスクを実行することができます。 これらは、カスタマイズ可能なタイトルを持つボタンのリストとして、またはバックグラウンドで (アプリが要求を処理するための短い時間が与えられている) バックグラウンドで実行できるテキスト入力フィールドとして、またはフォアグラウンド (アプリが要求を処理するためにフォアグラウンドで起動される) のいずれかとして表示できます。 カスタムアクションは、iOS と watchOS の両方で使用できます。
 - **アクションを無視**する-このアクションは、ユーザーが特定の通知を終了したときにアプリに送信されます。
 
 ### <a name="creating-custom-actions"></a>カスタムアクションの作成
@@ -420,17 +420,17 @@ var categories = new UNNotificationCategory [] { category };
 UNUserNotificationCenter.Current.SetNotificationCategories (new NSSet<UNNotificationCategory>(categories)); 
 ```
 
-新しい `UNNotificationAction`を作成すると、一意の ID と、ボタンに表示されるタイトルが割り当てられます。 既定では、アクションはバックグラウンドアクションとして作成されますが、アクションの動作を調整するオプションを指定できます (たとえば、フォアグラウンドアクションとして設定します)。
+新しいを作成する場合 `UNNotificationAction` は、一意の ID と、ボタンに表示されるタイトルが割り当てられます。 既定では、アクションはバックグラウンドアクションとして作成されますが、アクションの動作を調整するオプションを指定できます (たとえば、フォアグラウンドアクションとして設定します)。
 
-作成された各アクションは、カテゴリに関連付けられている必要があります。 新しい `UNNotificationCategory`の作成時には、一意の ID、実行可能なアクションのリスト、カテゴリ内のアクションの目的に関する詳細情報を提供するためのインテント Id の一覧、およびカテゴリの動作を制御するためのいくつかのオプションが割り当てられます。
+作成された各アクションは、カテゴリに関連付けられている必要があります。 新しいを作成するときに `UNNotificationCategory` は、一意の id、実行できるアクションのリスト、カテゴリ内のアクションの目的に関する詳細情報を提供するためのインテント id の一覧、およびカテゴリの動作を制御するためのオプションが割り当てられます。
 
-最後に、`SetNotificationCategories` メソッドを使用して、すべてのカテゴリがシステムに登録されます。
+最後に、メソッドを使用して、すべてのカテゴリがシステムに登録され `SetNotificationCategories` ます。
 
 ### <a name="presenting-custom-actions"></a>カスタムアクションの表示
 
 一連のカスタムアクションとカテゴリが作成され、システムに登録されると、ローカルまたはリモートの通知から表示されるようになります。
 
-リモート通知の場合は、上で作成したいずれかのカテゴリに一致するリモート通知ペイロードの `category` を設定します。 (例:
+リモート通知の場合は、 `category` 上で作成したいずれかのカテゴリに一致するリモート通知ペイロードでを設定します。 次に例を示します。
 
 ```csharp
 {
@@ -441,7 +441,7 @@ UNUserNotificationCenter.Current.SetNotificationCategories (new NSSet<UNNotifica
 }
 ```
 
-ローカル通知の場合は、`UNMutableNotificationContent` オブジェクトの `CategoryIdentifier` プロパティを設定します。 (例:
+ローカル通知の場合は、 `CategoryIdentifier` オブジェクトのプロパティを設定し `UNMutableNotificationContent` ます。 次に例を示します。
 
 ```csharp
 var content = new UNMutableNotificationContent ();
@@ -457,7 +457,7 @@ content.CategoryIdentifier = "message";
 
 ### <a name="handling-dismiss-actions"></a>破棄操作の処理
 
-前述のように、ユーザーが通知を終了したときに、無視アクションをアプリに送信できます。 これは標準の操作ではないため、カテゴリの作成時にオプションを設定する必要があります。 (例:
+前述のように、ユーザーが通知を終了したときに、無視アクションをアプリに送信できます。 これは標準の操作ではないため、カテゴリの作成時にオプションを設定する必要があります。 次に例を示します。
 
 ```csharp
 var categoryID = "message";
@@ -470,7 +470,7 @@ var category = UNNotificationCategory.FromIdentifier (categoryID, actions, inten
 
 ### <a name="handling-action-responses"></a>アクションの応答の処理
 
-ユーザーが、上で作成されたカスタムアクションおよびカテゴリを操作する場合、アプリは要求されたタスクを満たす必要があります。 これを行うには、`UNUserNotificationCenterDelegate` を提供し、`UserNotificationCenter` メソッドを実装します。 (例:
+ユーザーが、上で作成されたカスタムアクションおよびカテゴリを操作する場合、アプリは要求されたタスクを満たす必要があります。 これを行うには、を提供 `UNUserNotificationCenterDelegate` し、メソッドを実装し `UserNotificationCenter` ます。 次に例を示します。
 
 ```csharp
 using System;
@@ -508,9 +508,9 @@ namespace MonkeyNotification
 }
 ```
 
-渡された `UNNotificationResponse` クラスには、既定のアクションまたは無視アクションのいずれかを指定できる `ActionIdentifier` プロパティがあります。 `response.Notification.Request.Identifier` を使用して、カスタムアクションをテストします。
+渡されたクラスには、 `UNNotificationResponse` `ActionIdentifier` 既定のアクションまたは無視アクションのいずれかのプロパティがあります。 `response.Notification.Request.Identifier`カスタムアクションをテストするには、を使用します。
 
-`UserText` プロパティは、任意のユーザーテキスト入力の値を保持します。 `Notification` プロパティは、トリガーと通知の内容を含む要求を含む送信元の通知を保持します。 アプリは、トリガーの種類に基づいて、ローカルまたはリモートの通知であるかどうかを判断できます。
+プロパティは、 `UserText` 任意のユーザーテキスト入力の値を保持します。 プロパティは、 `Notification` トリガーと通知の内容を含む要求を含む送信元の通知を保持します。 アプリは、トリガーの種類に基づいて、ローカルまたはリモートの通知であるかどうかを判断できます。
 
 > [!NOTE]
 > iOS 12 を使用すると、カスタム通知 UI で実行時にアクションボタンを変更することができます。 詳細については、[動的通知アクションボタン](~/ios/platform/introduction-to-ios12/notifications/dynamic-actions.md)のドキュメントを参照してください。
@@ -519,7 +519,7 @@ namespace MonkeyNotification
 
 リモート通知を使用する場合、_サービス拡張_は、通知ペイロード内でエンドツーエンドの暗号化を有効にする方法を提供します。 サービス拡張は、ユーザーに表示される前に通知の表示内容を補強または置換するための主な目的として、バックグラウンドで実行される非ユーザーインターフェイス拡張 (iOS 10 で利用可能) です。 
 
-[![](enhanced-user-notifications-images/extension01.png "Service Extension overview")](enhanced-user-notifications-images/extension01.png#lightbox)
+[![サービス拡張機能の概要](enhanced-user-notifications-images/extension01.png)](enhanced-user-notifications-images/extension01.png#lightbox)
 
 サービス拡張は迅速に実行することを意図しており、システムによって実行されるのに短時間しか与えられません。 サービス拡張が、割り当てられた時間内にタスクの完了に失敗した場合、フォールバックメソッドが呼び出されます。 フォールバックに失敗した場合、元の通知コンテンツがユーザーに表示されます。
 
@@ -532,35 +532,35 @@ namespace MonkeyNotification
 
 Xamarin iOS アプリでサービス拡張機能を実装するには、次の手順を実行します。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 1. Visual Studio for Mac でアプリのソリューションを開きます。
-2. **Solution Pad**でソリューション名を右クリックし、 **[追加]**  >  **[新しいプロジェクトの追加]** の順に選択します。
-3. [ **IOS** > **拡張機能** > **Notification Service 拡張**機能] を選択し、 **[次へ]** ボタンをクリックします。 
+2. **Solution Pad**でソリューション名を右クリックし、[**追加**] [  >  **新しいプロジェクト**] の順に選択します。
+3. [ **IOS**  >  **extensions**  >  **Notification Service の拡張機能**] を選択し、[**次へ**] ボタンをクリックします。 
 
-    [![](enhanced-user-notifications-images/extension02.png "Select Notification Service Extensions")](enhanced-user-notifications-images/extension02.png#lightbox)
-4. 拡張機能の**名前**を入力し、 **[次へ]** ボタンをクリックします。 
+    [![Notification Service 拡張機能の選択](enhanced-user-notifications-images/extension02.png)](enhanced-user-notifications-images/extension02.png#lightbox)
+4. 拡張機能の**名前**を入力し、[**次へ**] ボタンをクリックします。 
 
-    [![](enhanced-user-notifications-images/extension03.png "Enter a Name for the extension")](enhanced-user-notifications-images/extension03.png#lightbox)
-5. 必要に応じて**プロジェクト名**または**ソリューション名**を調整し、 **[作成]** ボタンをクリックします。 
+    [![拡張機能の名前を入力してください](enhanced-user-notifications-images/extension03.png)](enhanced-user-notifications-images/extension03.png#lightbox)
+5. 必要に応じて**プロジェクト名**または**ソリューション名**を調整し、[**作成**] ボタンをクリックします。 
 
-    [![](enhanced-user-notifications-images/extension04.png "Adjust the Project Name and/or Solution Name")](enhanced-user-notifications-images/extension04.png#lightbox) 
+    [![プロジェクト名またはソリューション名の調整](enhanced-user-notifications-images/extension04.png)](enhanced-user-notifications-images/extension04.png#lightbox) 
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. Visual Studio でアプリのソリューションを開きます。
-2. **ソリューションエクスプローラー**でソリューション名を右クリックし、 **[> 新しいプロジェクトの追加]** を選択します。
-3. **Visual C# > iOS 拡張機能 > Notification Service 拡張機能**を選択します。
+2. **ソリューションエクスプローラー**でソリューション名を右クリックし、[ **> 新しいプロジェクトの追加**] を選択します。
+3. [ **Visual C# > IOS 拡張機能 > Notification Service 拡張機能**] を選択します。
 
-    [![](enhanced-user-notifications-images/extension01.w157-sml.png "Select Notification Service Extensions")](enhanced-user-notifications-images/extension01.w157.png#lightbox)
-4. 拡張機能の**名前**を入力し、 **[OK]** をクリックします。
+    [![Notification Service 拡張機能の選択](enhanced-user-notifications-images/extension01.w157-sml.png)](enhanced-user-notifications-images/extension01.w157.png#lightbox)
+4. 拡張機能の**名前**を入力し、[ **OK** ] をクリックします。
 
 -----
 
 > [!IMPORTANT]
-> サービス拡張機能のバンドル識別子は、メインアプリのバンドル識別子と `.appnameserviceextension` 末尾に追加される必要があります。 たとえば、メインアプリに `com.xamarin.monkeynotify`のバンドル識別子がある場合、サービス拡張には `com.xamarin.monkeynotify.monkeynotifyserviceextension`のバンドル識別子が必要です。 これは、拡張機能をソリューションに追加するときに自動的に設定されます。 
+> サービス拡張機能のバンドル識別子は、メインアプリのバンドル識別子を末尾に追加したものと一致している必要があり `.appnameserviceextension` ます。 たとえば、メインアプリのバンドル識別子がの場合、 `com.xamarin.monkeynotify` サービス拡張はのバンドル識別子を持つ必要があり `com.xamarin.monkeynotify.monkeynotifyserviceextension` ます。 これは、拡張機能をソリューションに追加するときに自動的に設定されます。 
 
-Notification Service 拡張機能には、必要な機能を提供するために変更する必要があるメインクラスが1つあります。 (例:
+Notification Service 拡張機能には、必要な機能を提供するために変更する必要があるメインクラスが1つあります。 次に例を示します。
 
 ```csharp
 using System;
@@ -609,13 +609,13 @@ namespace MonkeyChatServiceExtension
 }
 ```
 
-最初のメソッド `DidReceiveNotificationRequest`には、`request` オブジェクトを介して通知 Id と通知コンテンツが渡されます。 ユーザーに通知を表示するには、渡された `contentHandler` を呼び出す必要があります。
+最初のメソッドであるには、通知の Id だけでなく、通知の `DidReceiveNotificationRequest` 内容がオブジェクトを介して渡され `request` ます。 ユーザーに通知を表示するには、渡されたを `contentHandler` 呼び出す必要があります。
 
-2番目のメソッドである `TimeWillExpire`は、要求を処理するためにサービス拡張に対して実行される直前に呼び出されます。 サービス拡張が、割り当てられた時間内に `contentHandler` を呼び出すことができない場合は、元のコンテンツがユーザーに表示されます。
+2番目のメソッドであるは、 `TimeWillExpire` 要求を処理するためにサービス拡張に対して実行される直前に呼び出されます。 割り当てられた時間内にサービス拡張がを呼び出すことができない場合は、 `contentHandler` 元のコンテンツがユーザーに表示されます。
 
 ### <a name="triggering-a-service-extension"></a>サービス拡張機能のトリガー
 
-サービス拡張を作成してアプリと共に配信することで、デバイスに送信されるリモート通知ペイロードを変更することによって、サービス拡張をトリガーできます。 (例:
+サービス拡張を作成してアプリと共に配信することで、デバイスに送信されるリモート通知ペイロードを変更することによって、サービス拡張をトリガーできます。 次に例を示します。
 
 ```csharp
 {
@@ -627,7 +627,7 @@ namespace MonkeyChatServiceExtension
 }
 ```
 
-新しい `mutable-content` キーは、リモート通知コンテンツを更新するためにサービス拡張を起動する必要があることを指定します。 `encrypted-content` キーは、ユーザーに提示する前にサービス拡張が復号化できる暗号化されたデータを保持します。
+新しいキーは、 `mutable-content` リモート通知コンテンツを更新するためにサービス拡張を起動する必要があることを指定します。 キーは、 `encrypted-content` ユーザーに提示する前にサービス拡張が復号化できる暗号化されたデータを保持します。
 
 次のサービス拡張機能の例を見てみましょう。
 
@@ -658,7 +658,7 @@ namespace myApp {
 }
 ```
 
-このコードは、暗号化されたコンテンツを `encrypted-content` キーから復号化し、新しい `UNMutableNotificationContent`を作成し、`Body` プロパティを復号化されたコンテンツに設定し、`contentHandler` を使用してユーザーに通知を提示します。
+このコードは、暗号化されたコンテンツをキーから復号化し、 `encrypted-content` 新しいを作成し、プロパティを復号化さ `UNMutableNotificationContent` `Body` れたコンテンツに設定し、を使用して `contentHandler` 通知をユーザーに提示します。
 
 ## <a name="summary"></a>まとめ
 

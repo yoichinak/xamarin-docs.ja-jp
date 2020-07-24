@@ -19,7 +19,7 @@ ms.locfileid: "86931873"
 ---
 # <a name="display-pop-ups"></a>ポップアップを表示する
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-pop-ups)
 
 警告を表示する、ユーザーに選択を求める、またはプロンプトを表示することは、一般的な UI タスクです。 Xamarin.Formsには [`Page`](xref:Xamarin.Forms.Page) 、ポップアップを使用してユーザーと対話するためのクラスに [`DisplayAlert`](xref:Xamarin.Forms.Page.DisplayAlert*) 、、、およびの3つのメソッドがあります [`DisplayActionSheet`](xref:Xamarin.Forms.Page.DisplayActionSheet*) `DisplayPromptAsync` 。 それらは適切なネイティブ コントロールを使用して、各プラットフォーム上に表示されます。
 

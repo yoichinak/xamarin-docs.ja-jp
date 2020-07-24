@@ -19,7 +19,7 @@ ms.locfileid: "86937307"
 ---
 # <a name="pixels-and-device-independent-units"></a>ピクセル、およびデバイスに依存しない単位
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _SkiaSharp の座標と座標の違いを調べる Xamarin.Forms_
 

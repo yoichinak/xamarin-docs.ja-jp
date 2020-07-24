@@ -10,12 +10,12 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fb873102bfb8568b8298a39ea2429fb6c27af175
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 785532d1a8fedfaef367c8fb8ae437220c3de9c4
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137723"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938178"
 ---
 # <a name="drawing-a-simple-circle-in-skiasharp"></a>SkiaSharp での単純な円の描画
 
@@ -27,7 +27,7 @@ _キャンバスオブジェクトと paint オブジェクトを含む SkiaShar
 
 [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラムには、この一連の SkiaSharp 記事のすべてのサンプルコードが含まれています。 最初のページには、**単純な円**が付き、ページクラスを呼び出し [`SimpleCirclePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs) ます。 このコードは、100ピクセルの半径でページの中央に円を描画する方法を示しています。 円の輪郭は赤、円の内部は青になります。
 
-![](circle-images/circleexample.png "A blue circle outlined in red")
+![赤で囲まれた青い円](circle-images/circleexample.png)
 
 [`SimpleCircle`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/SimpleCirclePage.cs)ページクラスはから派生 `ContentPage` し、 `using` SkiaSharp 名前空間の2つのディレクティブを含みます。
 
@@ -109,7 +109,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 - [`Stroke`](xref:SkiaSharp.SKPaintStyle.Stroke)
 - [`StrokeAndFill`](xref:SkiaSharp.SKPaintStyle.StrokeAndFill)
 
-既定値は、`Fill` です。 3番目のオプションを使用して、線のストロークを描画し、同じ色で内部を塗りつぶします。
+既定では、 `Fill`です。 3番目のオプションを使用して、線のストロークを描画し、同じ色で内部を塗りつぶします。
 
 プロパティを [`Color`](xref:SkiaSharp.SKPaint.Color) 型の値に設定 [`SKColor`](xref:SkiaSharp.SKColor) します。 値を取得する方法の1つ `SKColor` は Xamarin.Forms `Color` `SKColor` 、拡張メソッドを使用して値を値に変換することです [`ToSKColor`](xref:SkiaSharp.Views.Forms.Extensions.ToSKColor*) 。 名前空間のクラスには、 [`Extensions`](xref:SkiaSharp.Views.Forms.Extensions) `SkiaSharp.Views.Forms` 値と SkiaSharp 値の間で変換を行う他のメソッドが含まれてい Xamarin.Forms ます。
 
@@ -146,7 +146,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 IOS と Android で実行されているプログラムは次のようになります。
 
-[![](circle-images/simplecircle-small.png "Triple screenshot of the Simple Circle page")](circle-images/simplecircle-large.png#lightbox "Triple screenshot of the Simple Circle page")
+[![単純な円ページのトリプルスクリーンショット](circle-images/simplecircle-small.png)](circle-images/simplecircle-large.png#lightbox "単純な円ページのトリプルスクリーンショット")
 
 自分でプログラムを実行するときに、電話またはシミュレーターを横向きにして、グラフィックがどのように再描画されるかを確認できます。 グラフィックを再描画する必要があるたびに、 `PaintSurface` イベントハンドラーが再度呼び出されます。
 

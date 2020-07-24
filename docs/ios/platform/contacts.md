@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 918030120e6b7d0e22abdf5ea3e57f3849b86616
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 0af77464f849971050246a1676f89fe4702737e8
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572573"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997294"
 ---
 # <a name="contacts-and-contactsui-in-xamarinios"></a>ContactsUI の Contacts と連絡先
 
@@ -27,7 +27,7 @@ IOS 9 の導入により、Apple は2つの新しいフレームワークをリ�
 
 - [**ContactsUI**](#contactsui) -ios デバイスで連絡先を表示、編集、選択、および作成するための XAMARIN の UI 要素を提供します。
 
-[![](contacts-images/add01.png "An example Contact Sheet on an iOS device")](contacts-images/add01.png#lightbox)
+[![IOS デバイス上の連絡先シートの例](contacts-images/add01.png)](contacts-images/add01.png#lightbox)
 
 > [!IMPORTANT]
 > `AddressBook` `AddressBookUI` Ios 8 (およびそれ以前) で使用されていた既存のおよびフレームワークは、ios 9 では非推奨とされており、 `Contacts` `ContactsUI` 既存の Xamarin iOS アプリでできるだけ早く新しいとフレームワークに置き換える必要があります。 新しいアプリは、新しいフレームワークに対して作成する必要があります。
@@ -46,7 +46,7 @@ IOS 9 の導入により、Apple は2つの新しいフレームワークをリ�
 
 クラスは、 `CNContact` 連絡先のプロパティ (名前、住所、電話番号など) に対して、スレッドセーフで読み取り専用のアクセスを提供します。 `CNContact`やなどの関数には、 `NSDictionary` 複数の読み取り専用のプロパティのコレクション (住所や電話番号など) が含まれています。
 
-[![](contacts-images/contactobjects.png "Contact Object overview")](contacts-images/contactobjects.png#lightbox)
+[![Contact オブジェクトの概要](contacts-images/contactobjects.png)](contacts-images/contactobjects.png#lightbox)
 
 複数の値 (電子メールアドレスや電話番号など) を持つことができるプロパティについては、オブジェクトの配列として表現され `NSLabeledValue` ます。 `NSLabeledValue`は、ラベルと値の読み取り専用セットで構成されるスレッドセーフなタプルで、ラベルはユーザーの値を定義します (自宅や勤務先の電子メールなど)。 連絡先フレームワークには、アプリで使用できる定義済みのラベル (および静的クラスを使用) が用意されてい `CNLabelKey` `CNLabelPhoneNumberKey` ます。また、ニーズに合わせてカスタムラベルを定義することもできます。
 
@@ -110,7 +110,7 @@ else
 
 このコードが iOS 9 デバイスで実行されている場合は、新しい連絡先がユーザーのコレクションに追加されます。 次に例を示します。
 
-[![](contacts-images/add01.png "A new contact added to the user's collection")](contacts-images/add01.png#lightbox)
+[![新しい連絡先がユーザーのコレクションに追加されました](contacts-images/add01.png)](contacts-images/add01.png#lightbox)
 
 ### <a name="contact-formatting-and-localization"></a>連絡先の書式設定とローカライズ
 
@@ -193,7 +193,7 @@ if (!contact.IsKeyAvailable(CNContactOption.PostalAddresses)) {
 
 ユーザーは、連絡先データベース (iCloud、Facebook、Google Mail など) の1人に対して、異なる連絡先情報のソースを持っている場合があります。 IOS と OS X のアプリでは、この連絡先情報は自動的にリンクされ、単一の統合された_連絡先_としてユーザーに表示されます。
 
-[![](contacts-images/unified01.png "Unified Contacts overview")](contacts-images/unified01.png#lightbox)
+[![統合連絡先の概要](contacts-images/unified01.png)](contacts-images/unified01.png#lightbox)
 
 このユニファイド連絡先は、リンクの連絡先情報を一時的にメモリ内で表示したものであり、独自の一意の識別子が付与されます (必要に応じて連絡先を再フェッチために使用する必要があります)。 既定では、可能な限り、連絡先フレームワークは統合された連絡先を返します。
 
@@ -258,11 +258,11 @@ if (store.ExecuteSaveRequest(saveRequest, out error)) {
 
 ユーザーの連絡先は、ユーザーのデバイスにローカルに存在することも、1つまたは複数のサーバーアカウント (Facebook や Google など) からデバイスに同期された連絡先として使用することもできます。 連絡先の各プールには独自の_コンテナー_があり、特定の連絡先は1つのコンテナーにのみ存在できます。
 
-[![](contacts-images/containers01.png "Containers and Groups overview")](contacts-images/containers01.png#lightbox)
+[![コンテナーとグループの概要](contacts-images/containers01.png)](contacts-images/containers01.png#lightbox)
 
 一部のコンテナーでは、連絡先を1つ以上の_グループ_または_サブグループ_に配置できます。 この動作は、特定のコンテナーのバッキングストアに依存します。 たとえば、iCloud に含まれるコンテナーは1つだけですが、多数のグループを持つことができます (ただし、サブグループは含まれません)。 一方、Microsoft Exchange では、グループはサポートされていませんが、複数のコンテナー (Exchange フォルダーごとに1つ) を持つことができます。
 
-[![](contacts-images/containers02.png "Overlap within Containers and Groups")](contacts-images/containers02.png#lightbox)
+[![コンテナーとグループ内の重複](contacts-images/containers02.png)](contacts-images/containers02.png#lightbox)
 
 <a name="contactsui"></a>
 

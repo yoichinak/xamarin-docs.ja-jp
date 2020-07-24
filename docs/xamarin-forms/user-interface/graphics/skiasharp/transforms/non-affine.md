@@ -10,12 +10,12 @@ ms.date: 04/14/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 91a639b2d3c2f6a8437a09a70808dc6d793ba76b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: b4c6569acbade7edf64c9aaf54237ebaa342ea54
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84131756"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936644"
 ---
 # <a name="non-affine-transforms"></a>非アフィン変換
 
@@ -27,7 +27,7 @@ _変換行列の3番目の列を使用して、パースペクティブとテー
 
 ただし、SkiaSharp は、四角形を任意の凸形に変換する機能を持つ非アフィン変換にも対応しています。
 
-![](non-affine-images/nonaffinetransformexample.png "A bitmap transformed into a convex quadrilateral")
+![凸状の四角形に変換されたビットマップ](non-affine-images/nonaffinetransformexample.png)
 
 凸形の四角形は、内側の角度が常に180度未満であり、互いに交差していない辺を持つ4つの辺の図です。
 
@@ -99,7 +99,7 @@ y ' = y/(0.01 x + 1)
 
 X が100の場合、z の分母は2であるため、x 座標と y 座標は実質的に半分になります。 ボックスの右側が左側よりも短くなっています。
 
-![](non-affine-images/nonaffinetransform.png "A box subjected to a non-affine transform")
+![非アフィン変換を受けたボックス](non-affine-images/nonaffinetransform.png)
 
 `Persp`これらのセル名の一部は "パースペクティブ" を意味します。これは、縮み率によって、箱がビューアーからさらに右側に傾いていることがわかるからです。
 
@@ -233,7 +233,7 @@ public partial class TestPerspectivePage : ContentPage
 
 いくつかのサンプルイメージを次に示します。
 
-[![](non-affine-images/testperspective-small.png "Triple screenshot of the Test Perspective page")](non-affine-images/testperspective-large.png#lightbox "Triple screenshot of the Test Perspective page")
+[![[テストパースペクティブ] ページのトリプルスクリーンショット](non-affine-images/testperspective-small.png)](non-affine-images/testperspective-large.png#lightbox "[テストパースペクティブ] ページのトリプルスクリーンショット")
 
 スライダーを試してみると、0.0066 以上の範囲の値が0.0066 を超えていることがわかります。これにより、イメージが突然フラクチャされ統一性になります。 変換されるビットマップは300ピクセルの四角形です。 この値は、中心を基準として変換されます。したがって、ビットマップの座標は-150 ~ 150 の範囲になります。 Z の値が次のようになっていることを思い出してください。
 
@@ -245,7 +245,7 @@ z ' = Persp0 · x + Persp1 · y + 1
 
 このような非アフィン変換の1つは、*テーパ変換*です。 この種類の非アフィン変換は、四角形の全体の次元を保持しますが、1辺を tapers ます。
 
-![](non-affine-images/tapertransform.png "A box subjected to a taper transform")
+![テーパ変換を受けたボックス](non-affine-images/tapertransform.png)
 
 クラスは、 [`TaperTransform`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TaperTransform.cs) これらのパラメーターに基づいて、非アフィン変換の一般化された計算を実行します。
 
@@ -397,13 +397,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 次に例をいくつか示します。
 
-[![](non-affine-images/tapertransform-small.png "Triple screenshot of the Taper Transform page")](non-affine-images/tapertransform-large.png#lightbox "Triple screenshot of the Taper Transform page")
+[![[テーパ変換] ページのトリプルスクリーンショット](non-affine-images/tapertransform-small.png)](non-affine-images/tapertransform-large.png#lightbox "[テーパ変換] ページのトリプルスクリーンショット")
 
 次の記事「 [**3d**](3d-rotation.md)の回転」で説明されているように、一般的な非アフィン変換の別の型は3d ローテーションです。
 
 非アフィン変換は、四角形を任意の凸形に変換できます。 これは、[**非アフィン行列の表示**] ページで示されています。 これは、ビットマップの4番目の隅を操作する4番目のオブジェクトがある点を除いて、[**マトリックス変換**](matrix.md)の記事の [**アフィン行列の表示**] ページとよく似てい `TouchPoint` ます。
 
-[![](non-affine-images/shownonaffinematrix-small.png "Triple screenshot of the Show Non-Affine Matrix page")](non-affine-images/shownonaffinematrix-large.png#lightbox "Triple screenshot of the Show Non-Affine Matrix page")
+[![[非アフィン行列の表示] ページのトリプルスクリーンショット](non-affine-images/shownonaffinematrix-small.png)](non-affine-images/shownonaffinematrix-large.png#lightbox "[非アフィン行列の表示] ページのトリプルスクリーンショット")
 
 ビットマップのいずれかのコーナーの内部角度を180度より大きくしようとしたり、2つの辺を相互に交差させようとしたりしない限り、プログラムはクラスからこのメソッドを使用して変換を正常に計算し [`ShowNonAffineMatrixPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowNonAffineMatrixPage.xaml.cs) ます。
 

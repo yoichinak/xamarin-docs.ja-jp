@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: b405643096699e1d965f485bdc590afa178881d6
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: bd57232b183d5940a22915a0277a016cab36af8a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031817"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931613"
 ---
 # <a name="introduction-to-ios-7"></a>iOS 7 の概要
 
@@ -22,14 +22,14 @@ ios 7 は、iOS の主要な更新プログラムです。 アプリケーショ
 
 ## <a name="uiview-animation-enhancements"></a>UIView アニメーションの機能強化
 
-iOS 7 では、UIKit でのアニメーションのサポートが強化されており、以前にコアアニメーションフレームワークへの直接の削除が必要な処理をアプリケーションで実行できます。 たとえば、`UIView` は、以前は `CALayer` に適用された `CAKeyframeAnimation`、スプリングアニメーションとキーフレームアニメーションを実行できるようになりました。
+iOS 7 では、UIKit でのアニメーションのサポートが強化されており、以前にコアアニメーションフレームワークへの直接の削除が必要な処理をアプリケーションで実行できます。 たとえば、は、 `UIView` 以前は `CAKeyframeAnimation` に適用されていた、スプリングアニメーションおよびキーフレームアニメーションを実行できるようになりました `CALayer` 。
 
 ### <a name="spring-animations"></a>Spring アニメーション
 
- `UIView` は、スプリング効果を使用してプロパティの変更をアニメーション化できるようになりました。 これを追加するには、次に示すように、`AnimateNotify` または `AnimateNotifyAsync` のいずれかのメソッドを呼び出して、spring の減衰率と最初の spring ベロシティの値を渡します。
+ `UIView`では、スプリング効果を使用してプロパティの変更をアニメーション化できるようになりました。 これを追加するには、 `AnimateNotify` 次に示すように、メソッドまたはメソッドのいずれかを呼び出して、 `AnimateNotifyAsync` spring の減衰率と最初の spring ベロシティの値を渡します。
 
-- `springWithDampingRatio` –0と1の間の値。この値を超えると、振幅が小さくなります。
-- `initialSpringVelocity` –1秒あたりのアニメーション距離の合計に対する割合で示す、最初の spring velocity。
+- `springWithDampingRatio`–0から1までの値。振幅の値は、小さい値になります。
+- `initialSpringVelocity`–1秒あたりのアニメーション距離の合計に対する割合で示す、最初の spring velocity。
 
 次のコードでは、イメージビューの中心が変化したときに spring effect が生成されます。
 
@@ -49,11 +49,11 @@ void AnimateWithSpring ()
 
 このばね効果は、次に示すように、イメージビューが新しい中心位置にアニメーションを完了すると、移動するように見えます。
 
- ![](images/spring-animation.png "This spring effect causes the image view to appear to bounce as it completes its animation to a new center location")
+ ![このスプリング効果は、新しい中心位置にアニメーションが完了すると、イメージビューがバウンスされるようになります。](images/spring-animation.png)
 
 ### <a name="keyframe-animations"></a>キーフレームアニメーション
 
-`UIView` クラスに、`UIView`でキーフレームアニメーションを作成するための `AnimateWithKeyframes` メソッドが含まれるようになりました。 このメソッドは、他の `UIView` アニメーションメソッドと似ていますが、キーフレームを含む追加の `NSAction` がパラメーターとして渡される点が異なります。 `NSAction`内では、`UIView.AddKeyframeWithRelativeStartTime`を呼び出すことによってキーフレームが追加されます。
+`UIView`クラスに `AnimateWithKeyframes` は、にキーフレームアニメーションを作成するメソッドが含まれるようになりました `UIView` 。 このメソッドは、他のアニメーションメソッドと似てい `UIView` ますが、追加の `NSAction` がパラメーターとして渡され、キーフレームが含まれる点が異なります。 内では `NSAction` 、キーフレームはを呼び出すことによって追加され `UIView.AddKeyframeWithRelativeStartTime` ます。
 
 たとえば、次のコードスニペットは、ビューの中心をアニメーション化し、ビューを回転するためのキーフレームアニメーションを作成します。
 
@@ -82,26 +82,26 @@ void AnimateViewWithKeyframes ()
 }
 ```
 
-`AddKeyframeWithRelativeStartTime` メソッドの最初の2つのパラメーターでは、キーフレームの開始時刻と期間をそれぞれ、アニメーションの全体の長さに対する割合として指定します。 上の例では、最初の1秒間に新しい中心をアニメーション化した後、次の1秒間に90度回転したイメージビューが生成されます。 アニメーションでは `UIViewKeyframeAnimationOptions.Autoreverse` がオプションとして指定されているため、両方のキーフレームが逆にアニメーション化されます。 最後に、最終的な値は、完了ハンドラーの初期状態に設定されます。
+メソッドの最初の2つのパラメーターは、 `AddKeyframeWithRelativeStartTime` キーフレームの開始時刻と期間をそれぞれ、アニメーションの全体の長さに対する割合として指定します。 上の例では、最初の1秒間に新しい中心をアニメーション化した後、次の1秒間に90度回転したイメージビューが生成されます。 アニメーションではオプションとしてが指定されているため `UIViewKeyframeAnimationOptions.Autoreverse` 、両方のキーフレームが逆にアニメーション化されます。 最後に、最終的な値は、完了ハンドラーの初期状態に設定されます。
 
 次のスクリーンショットは、キーフレームを使用したアニメーションの結合を示しています。
 
- ![](images/keyframes.png "This screenshots illustrates the combined animation through the keyframes")
+ ![このスクリーンショットは、キーフレームを使用したアニメーションの結合を示しています。](images/keyframes.png)
 
 ## <a name="uikit-dynamics"></a>UIKit Dynamics
 
 UIKit Dynamics は、アプリケーションが物理に基づいてアニメーション化された対話を作成できるようにする、UIKit の新しい Api のセットです。 UIKit Dynamics は、これを可能にするために2D 物理エンジンをカプセル化します。
 
-API は本質的に宣言されています。 オブジェクトと呼ばれる*動作*を作成して、物理的な相互作用がどのように動作するかを宣言します。これは、重力、コリジョン、スプリングなどの物理概念を表します。次に、ビューをカプセル化する*動的アニメーター*と呼ばれる別のオブジェクトに動作をアタッチします。 動的なアニメーターは、宣言された物理動作を*動的な項目*(`UIView` などの `IUIDynamicItem` を実装する項目) に適用することを考慮します。
+API は本質的に宣言されています。 オブジェクトと呼ばれる*動作*を作成して、物理的な相互作用がどのように動作するかを宣言します。これは、重力、コリジョン、スプリングなどの物理概念を表します。次に、ビューをカプセル化する*動的アニメーター*と呼ばれる別のオブジェクトに動作をアタッチします。 動的なアニメーターは、宣言された物理動作を、などの*動的項目*(を実装する項目) に適用することを考慮し `IUIDynamicItem` `UIView` ます。
 
 複雑な相互作用をトリガーするには、次のようなさまざまなプリミティブ動作があります。
 
-- `UIAttachmentBehavior` –2つの動的項目が一緒に移動するように、または動的な項目を添付ファイルポイントにアタッチします。
-- `UICollisionBehavior` –動的な項目が競合に参加できるようにします。
-- `UIDynamicItemBehavior` –弾力性、密度、摩擦などの動的な項目に適用するプロパティの一般的なセットを指定します。
+- `UIAttachmentBehavior`–2つの動的項目が一緒に移動するように、または動的な項目を添付ファイルポイントにアタッチするようにアタッチします。
+- `UICollisionBehavior`–動的な項目が競合に参加できるようにします。
+- `UIDynamicItemBehavior`–弾力性、密度、摩擦など、動的な項目に適用するプロパティの一般的なセットを指定します。
 - `UIGravityBehavior`-動的な項目に重力を適用し、gravitational 方向に項目を加速させます。
-- `UIPushBehavior` –動的な項目に強制的に適用されます。
-- `UISnapBehavior` –動的な項目を spring 効果を持つ位置にスナップできるようにします。
+- `UIPushBehavior`–動的な項目に強制的に適用されます。
+- `UISnapBehavior`–動的な項目を spring 効果を持つ位置にスナップできるようにします。
 
 多くのプリミティブがありますが、UIKit Dynamics を使用して、ビューに物理的に基づく相互作用を追加する一般的なプロセスは、動作間で一貫しています。
 
@@ -111,13 +111,13 @@ API は本質的に宣言されています。 オブジェクトと呼ばれる
 
 ### <a name="dynamics-example"></a>Dynamics の例
 
-`UIView`に重心とコリジョン境界を追加する例を見てみましょう。
+に重心と衝突境界を追加する例を見てみましょう `UIView` 。
 
 #### <a name="uigravitybehavior"></a>UIGravityBehavior
 
 画像ビューに重力を追加すると、上記の3つの手順に従います。
 
-この例では、`ViewDidLoad` メソッドで作業します。 まず、次のように `UIImageView` インスタンスを追加します。
+この例では、メソッドを使用し `ViewDidLoad` ます。 まず、インスタンスを次のように追加し `UIImageView` ます。
 
 ```csharp
 image = UIImage.FromFile ("monkeys.jpg");
@@ -129,21 +129,21 @@ imageView = new UIImageView (new CGRect (new CGPoint (View.Center.X - image.Size
 View.AddSubview (imageView);
 ```
 
-これにより、画面の上端に中央揃えでイメージビューが作成されます。 画像が重力で "フォール" されるようにするには、`UIDynamicAnimator` のインスタンスを作成します。
+これにより、画面の上端に中央揃えでイメージビューが作成されます。 画像が重力で "フォール" されるようにするには、のインスタンスを作成し `UIDynamicAnimator` ます。
 
 ```csharp
 dynAnimator = new UIDynamicAnimator (this.View);
 ```
 
-`UIDynamicAnimator` は、参照 `UIView` または `UICollectionViewLayout`のインスタンスを受け取ります。このインスタンスには、添付された動作ごとにアニメーション化される項目が含まれています。
+は、 `UIDynamicAnimator` 参照またはのインスタンスを受け取ります。これには、添付された `UIView` `UICollectionViewLayout` 動作ごとにアニメーション化される項目が含まれています。
 
-次に、`UIGravityBehavior` インスタンスを作成します。 `UIView`のように、`IUIDynamicItem`を実装する1つ以上のオブジェクトを渡すことができます。
+次に、インスタンスを作成 `UIGravityBehavior` します。 次のように、を実装する1つ以上のオブジェクトを渡すことができ `IUIDynamicItem` `UIView` ます。
 
 ```csharp
 var gravity = new UIGravityBehavior (dynItems);
 ```
 
-動作には `IUIDynamicItem` の配列が渡されます。この例では、アニメーション化する単一の `UIImageView` インスタンスが含まれています。
+動作はの配列に渡され `IUIDynamicItem` ます。この例では、アニメーション化する1つのインスタンスが含まれてい `UIImageView` ます。
 
 最後に、動的なアニメーターに動作を追加します。
 
@@ -153,16 +153,16 @@ dynAnimator.AddBehavior (gravity);
 
 次に示すように、この結果、画像は重力で下にアニメーション化されます。
 
-![](images/gravity2.png "The starting image location")
-![](images/gravity3.png "The ending image location")
+![イメージの終了位置 ](images/gravity2.png)
+ の開始イメージの場所 ![](images/gravity3.png)
 
-画面の境界が制限されていないため、イメージビューは単に一番下にありません。 画像が画面の端と競合するようにビューを制限するには、`UICollisionBehavior` を追加します。 これについては、次のセクションで説明します。
+画面の境界が制限されていないため、イメージビューは単に一番下にありません。 画像が画面の端と競合するようにビューを制限するには、を追加 `UICollisionBehavior` します。 これについては、次のセクションで説明します。
 
 #### <a name="uicollisionbehavior"></a>UICollisionBehavior
 
-まず、`UICollisionBehavior` を作成し、それを動的なアニメーターに追加します。 `UIGravityBehavior` の場合と同様です。
+まずを作成 `UICollisionBehavior` し、動的なアニメーターに追加します。これは、の場合と同様 `UIGravityBehavior` です。
 
-`UICollisionBehavior`を含めるようにコードを変更します。
+を含めるようにコードを変更し `UICollisionBehavior` ます。
 
 ```csharp
 using (image = UIImage.FromFile ("monkeys.jpg")) {
@@ -187,19 +187,19 @@ using (image = UIImage.FromFile ("monkeys.jpg")) {
 }
 ```
 
-`UICollisionBehavior` には `TranslatesReferenceBoundsIntoBoundry`というプロパティがあります。 これを `true` に設定すると、参照ビューの境界が衝突境界として使用されます。
+には、 `UICollisionBehavior` というプロパティがあり `TranslatesReferenceBoundsIntoBoundry` ます。 これをに設定すると `true` 、参照ビューの境界が衝突境界として使用されます。
 
 これで、画像が重力で下にアニメーション化されたときに、残りの部分になる前に画面の下部から少し離れています。
 
 <!--, as shown below:
 
- ![](images/bounce.png "Now, when the image animates downward with gravity, it bounces slightly off the bottom of the screen before settling to rest there")-->
+ ![Now, when the image animates downward with gravity, it bounces slightly off the bottom of the screen before settling to rest there](images/bounce.png)-->
 
 #### <a name="uidynamicitembehavior"></a>UIDynamicItemBehavior
 
-その他の動作によって、イメージの表示ビューの動作をさらに制御できます。 たとえば、`UIDynamicItemBehavior` を追加して弾力性を高めることができます。これにより、画面の下部との競合が発生したときに、イメージビューのバウンスが増加します。
+その他の動作によって、イメージの表示ビューの動作をさらに制御できます。 たとえば、を追加して弾力性を高めることができ `UIDynamicItemBehavior` ます。これにより、画面の下部との競合が発生したときに、イメージビューのバウンスが増加します。
 
-`UIDynamicItemBehavior` の追加は、他の動作と同じ手順に従います。 最初に動作を作成します。
+を追加する `UIDynamicItemBehavior` と、他の動作と同じ手順に従います。 最初に動作を作成します。
 
 ```csharp
 var dynBehavior = new UIDynamicItemBehavior (dynItems) {

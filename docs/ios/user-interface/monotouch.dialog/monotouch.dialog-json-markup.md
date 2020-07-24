@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: davidortinau
 ms.author: daortin
-ms.openlocfilehash: fc6066155a4171b106e772c1fe6fe7ee3e5c67cf
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 023a85451ca83df6c15e8b3bbc3169f2884a0a46
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573509"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936566"
 ---
 # <a name="monotouchdialog-json-markup"></a>MonoTouch.Dialog Json マークアップ
 
@@ -77,7 +77,7 @@ ms.locfileid: "84573509"
 
 上記のマークアップでは、次の UI が生成されます。
 
- [![](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png "The UI created by the given markup")](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png#lightbox)
+ [![指定したマークアップによって作成された UI](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png)](monotouch.dialog-json-markup-images/screen-shot-2012-03-02-at-11.31.31-am.png#lightbox)
 
 ツリー内のすべての要素には、プロパティを含めることができ `"id"` ます。 実行時に、JsonElement インデクサーを使用して個々のセクションまたは要素を参照することができます。 例:
 
@@ -257,7 +257,7 @@ Background プロパティは、セルの背景色を設定します。 値は�
 
 ### <a name="linebreak"></a>改行
 
-行をどのように分割するかを決定します。 次の値を指定できます。
+行をどのように分割するかを決定します。 指定できる値は、
 
 - `character-wrap`
 - `clip`
@@ -297,10 +297,10 @@ class Foo {
 
  <a name="style"></a>
 
-### <a name="style"></a>スタイル
+### <a name="style"></a>style
 
 スタイルは、コンテンツの表示に使用されるセルスタイルの種類を決定し、UITableViewCellStyle 列挙値に対応します。
-次の値を指定できます。
+指定できる値は、
 
 - `"default"`
 - `"value1"`
@@ -330,7 +330,7 @@ class Foo {
 
 ## <a name="boolean-elements"></a>ブール型の要素
 
-ブール型の要素では、型をに設定し `"bool"` 、を表示するを含むことができ `"caption"` `"value"` ます。また、は true または false に設定されます。 `"on"` `"off"` プロパティとプロパティが設定されている場合、それらは画像と見なされます。 イメージは、アプリケーションの現在の作業ディレクトリを基準にして解決されます。 バンドル相対ファイルを参照する場合は、 `"~"` アプリケーションバンドルディレクトリを表すショートカットとしてを使用できます。 たとえば、 `"~/favorite.png"` は、バンドルファイルに格納されている .png です。 次に例を示します。
+ブール型の要素では、型をに設定し `"bool"` 、を表示するを含むことができ `"caption"` `"value"` ます。また、は true または false に設定されます。 `"on"` `"off"` プロパティとプロパティが設定されている場合、それらは画像と見なされます。 イメージは、アプリケーションの現在の作業ディレクトリを基準にして解決されます。 バンドル相対ファイルを参照する場合は、 `"~"` アプリケーションバンドルディレクトリを表すショートカットとしてを使用できます。 たとえば `"~/favorite.png"` 、は、バンドルファイルに含まれる favorite.png になります。 次に例を示します。
 
 ```json
 { 
@@ -397,7 +397,7 @@ class Foo {
 
 ### <a name="capitalization"></a>大文字使用
 
-エントリに使用する大文字/小文字のスタイル。 次の値を指定できます。
+エントリに使用する大文字/小文字のスタイル。 指定できる値は、
 
 - `all`
 - `none`
@@ -414,7 +414,7 @@ class Foo {
 
 ### <a name="keyboard"></a>キーボード
 
-データ入力に使用するキーボードの種類。 次の値を指定できます。
+データ入力に使用するキーボードの種類。 指定できる値は、
 
 - `ascii`
 - `decimal`
@@ -436,7 +436,7 @@ class Foo {
 
 ### <a name="return-key"></a>return キー
 
-Return キーに使用されるラベルです。 次の値を指定できます。
+Return キーに使用されるラベルです。 指定できる値は、
 
 - `default`
 - `done`

@@ -10,12 +10,12 @@ ms.date: 06/27/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 24206f6d6764c73f13a4b06fb44fa746f9d353af
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e86224ffb5da3f4b300c82a2821cee0a9b17469d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135708"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939335"
 ---
 # <a name="adding-appcompat-and-material-design"></a>AppCompat とマテリアルデザインの追加
 
@@ -37,7 +37,7 @@ https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/ --
 
 Android プロジェクトのターゲットフレームワークが Android 6.0 (Marshmallow) であることを確認します。 **Android プロジェクト > オプション > ビルド > 全般設定]** をオンにして、corrent フレームワークが選択されていることを確認します。
 
- ![](appcompat-images/target-android-6-sml.png "Android General Build Configuration")
+ ![Android の一般ビルド構成](appcompat-images/target-android-6-sml.png)
 
 ### <a name="3-add-new-themes-to-support-material-design"></a>3. 新しいテーマを追加して、マテリアルデザインをサポートする
 

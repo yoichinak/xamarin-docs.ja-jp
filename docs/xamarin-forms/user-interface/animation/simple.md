@@ -10,12 +10,12 @@ ms.date: 11/05/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 89f0182bfebc4d018eb083904595f0fbb211e3ba
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: b13ec7ab079dcf7069b5f4b0dccbb52faf25f927
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573379"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933797"
 ---
 # <a name="simple-animations-in-xamarinforms"></a>単純なアニメーションXamarin.Forms
 
@@ -53,7 +53,7 @@ _ViewExtensions クラスは、単純なアニメーションを構築するた�
 
 の各拡張メソッドは、 [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) 一定の期間にわたってプロパティをある値から別の値に徐々に変更する1つのアニメーション操作を実装します。 このセクションでは、各アニメーション操作について説明します。
 
-### <a name="rotation"></a>回転
+### <a name="rotation"></a>ローテーション
 
 次のコード例は、[ `RotateTo` ] (xref: を使用する方法を示して Xamarin.Forms います。ViewExtensions Xamarin.Forms . RotateTo ()VisualElement、system.string、system.string、 Xamarin.Forms 。イージング)) メソッドのプロパティをアニメーション化するメソッド [`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation) [`Image`](xref:Xamarin.Forms.Image) 。
 
@@ -66,7 +66,7 @@ image.Rotation = 0;
 
 次のスクリーンショットは、各プラットフォームでの進行中の回転を示しています。
 
-![](simple-images/rotateto.png "Rotation Animation")
+![回転アニメーション](simple-images/rotateto.png)
 
 > [!NOTE]
 > [ `RotateTo` ] (Xref: Xamarin.Forms .ViewExtensions Xamarin.Forms . RotateTo ()VisualElement、system.string、system.string、 Xamarin.Forms 。イージング)) メソッドにも [ `RotateXTo` ] (xref: があり Xamarin.Forms ます。ViewExtensions Xamarin.Forms . RotateXTo ()VisualElement、system.string、system.string、 Xamarin.Forms 。イージング) と [ `RotateYTo` ] (xref: Xamarin.Forms .ViewExtensions Xamarin.Forms . RotateYTo ()VisualElement、system.string、system.string、 Xamarin.Forms 。イージング) [`RotationX`](xref:Xamarin.Forms.VisualElement.RotationX) [`RotationY`](xref:Xamarin.Forms.VisualElement.RotationY) 。プロパティとプロパティをそれぞれアニメーション化するメソッド。
@@ -83,7 +83,7 @@ await image.RelRotateTo (360, 2000);
 
 次のスクリーンショットは、各プラットフォームで実行されている相対的な回転を示しています。
 
-![](simple-images/relrotateto.png "Relative Rotation Animation")
+![相対回転アニメーション](simple-images/relrotateto.png)
 
 ### <a name="scaling"></a>Scaling
 
@@ -97,7 +97,7 @@ await image.ScaleTo (2, 2000);
 
 次のスクリーンショットは、各プラットフォームでのスケーリングの進行状況を示しています。
 
-![](simple-images/scaleto.png "Scaling Animation")
+![スケーリング (アニメーションを)](simple-images/scaleto.png)
 
 > [!NOTE]
 > メソッドに加えて、 [`ScaleTo`](xref:Xamarin.Forms.ViewExtensions.ScaleTo*) `ScaleXTo` プロパティと `ScaleYTo` [`ScaleX`](xref:Xamarin.Forms.VisualElement.ScaleX) プロパティをそれぞれアニメーション化するメソッドとメソッドもあり [`ScaleY`](xref:Xamarin.Forms.VisualElement.ScaleY) ます。
@@ -126,7 +126,7 @@ await image.RotateTo(360, 2000);
 
 レイアウトの中心を中心にインスタンスを回転させるには、 [`Image`](xref:Xamarin.Forms.Image) [`AnchorX`](xref:Xamarin.Forms.VisualElement.AnchorX) プロパティとプロパティをの [`AnchorY`](xref:Xamarin.Forms.VisualElement.AnchorY) 幅と高さに対して相対的な値に設定する必要があり `Image` ます。 この例では、の中心 `Image` がレイアウトの中心になるように定義されているため、 `AnchorX` 0.5 の既定値は変更する必要がありません。 ただし、 `AnchorY` プロパティは、の上部からレイアウトの中心点までの値に再定義され `Image` ます。 これにより、 `Image` 次のスクリーンショットに示すように、によってレイアウトの中心点を中心に360度の完全な回転が行われます。
 
-![](simple-images/rotate-anchors.png "Rotation Animation with Anchors")
+![アンカーを使用した回転アニメーション](simple-images/rotate-anchors.png)
 
 ### <a name="translation"></a>翻訳
 
@@ -140,7 +140,7 @@ await image.TranslateTo (-100, -100, 1000);
 
 次のスクリーンショットは、各プラットフォームで実行されている変換を示しています。
 
-![](simple-images/translateto.png "Translation Animation")
+![翻訳アニメーション](simple-images/translateto.png)
 
 > [!NOTE]
 > 要素が最初に画面にレイアウトされてから画面に変換された場合、変換後、要素の入力レイアウトは画面に表示されず、ユーザーは操作できません。 そのため、ビューを最終的な位置に配置し、必要な変換を実行することをお勧めします。
@@ -158,7 +158,7 @@ await image.FadeTo (1, 4000);
 
 次のスクリーンショットは、各プラットフォームでのフェードインを示しています。
 
-![](simple-images/fadeto.png "Fading Animation")
+![フェードアニメーション](simple-images/fadeto.png)
 
 ## <a name="compound-animations"></a>複合アニメーション
 
@@ -218,7 +218,7 @@ await Task.WhenAll (
 
 次のスクリーンショットは、各プラットフォームで進行中の複数の回転を示しています。
 
-![](simple-images/multiple-rotations.png "Composite Animation")
+![複合アニメーション](simple-images/multiple-rotations.png)
 
 ## <a name="canceling-animations"></a>アニメーションの取り消し
 

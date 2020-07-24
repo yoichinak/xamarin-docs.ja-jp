@@ -10,12 +10,12 @@ ms.date: 02/09/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9e763184f38719cda4526eb0a2dfdf39b2191a03
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 60f53fb00786b183f36f7cfefa6af9062bb682db
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137697"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938165"
 ---
 # <a name="integrating-with-xamarinforms"></a>との統合Xamarin.Forms
 
@@ -25,7 +25,7 @@ _タッチおよび要素に応答する SkiaSharp グラフィックスを作�
 
 SkiaSharp グラフィックスは、いくつかの方法で、の残りの部分と統合でき Xamarin.Forms ます。 同じページ上の SkiaSharp キャンバスと Xamarin.Forms 要素を結合し、SkiaSharp canvas の上に要素を配置することもでき Xamarin.Forms ます。
 
-![](integration-images/integrationexample.png "Selecting a color with sliders")
+![スライダーを使用して色を選択する](integration-images/integrationexample.png)
 
 で対話型の SkiaSharp グラフィックスを作成するもう1つの方法は、タッチを使用すること Xamarin.Forms です。
 [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラムの2番目のページには、[**塗りつぶし**の設定/解除] があります。 この例では、塗りつぶしのない2つの方法で、 &mdash; &mdash; タップによって塗りつぶしが切り替わります。 クラスは、 [`TapToggleFillPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs) ユーザー入力に応じて SkiaSharp グラフィックスを変更する方法を示しています。
@@ -240,7 +240,7 @@ HSV モデルでは、鮮やかさと値の両方が100の場合、純粋な色�
 
 しかし、2つのモデルの感覚を得る最良の方法は、自分で試してみることです。
 
-[![](integration-images/colorexplore-large.png "Triple screenshot of the Color Explore page")](integration-images/colorexplore-small.png#lightbox "Triple screenshot of the Color Explore page")
+[![色の調査ページのトリプルスクリーンショット](integration-images/colorexplore-large.png)](integration-images/colorexplore-small.png#lightbox "色の調査ページのトリプルスクリーンショット")
 
 ## <a name="related-links"></a>関連リンク
 

@@ -7,31 +7,31 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 7b4042d9090823fbeff89face7c00e5753666c97
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f65b4f8f97059858067df8c847bc9ed181c8cc4c
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021916"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932679"
 ---
 # <a name="customizing-a-tables-appearance-in-xamarinios"></a>Xamarin でのテーブルの外観のカスタマイズ
 
-テーブルの外観を変更する最も簡単な方法は、別のセルスタイルを使用することです。 `UITableViewSource`の `GetCell` メソッドで各セルを作成するときに使用されるセルスタイルを変更できます。
+テーブルの外観を変更する最も簡単な方法は、別のセルスタイルを使用することです。 のメソッドで各セルを作成するときに使用されるセルスタイルを変更でき `UITableViewSource` `GetCell` ます。
 
 ## <a name="cell-styles"></a>セルのスタイル
 
 次の4つの組み込みスタイルがあります。
 
-- **Default** – `UIImageView`をサポートします。
-- **サブタイトル**– `UIImageView` とサブタイトルをサポートします。
-- **Value1** –右にアラインされたサブタイトルは、`UIImageView`をサポートします。
+- **Default** –をサポート `UIImageView` します。
+- **サブタイトル**–とのサブタイトルをサポートし `UIImageView` ます。
+- **Value1** –右にアラインされたサブタイトルは、をサポート `UIImageView` します。
 - **Value2** –タイトルは右揃えになり、サブタイトルは左揃えになります (ただし、イメージは含まれません)。
 
 これらのスクリーンショットは、各スタイルの表示方法を示しています。
 
- [![](customizing-table-appearance-images/image7.png "These screenshots show how each style appears")](customizing-table-appearance-images/image7.png#lightbox)
+ [![これらのスクリーンショットは、各スタイルの表示方法を示しています。](customizing-table-appearance-images/image7.png)](customizing-table-appearance-images/image7.png#lightbox)
 
-サンプルの**Celldefaulttable**には、これらの画面を生成するためのコードが含まれています。 セルスタイルは、次のように `UITableViewCell` コンストラクターで設定されます。
+サンプルの**Celldefaulttable**には、これらの画面を生成するためのコードが含まれています。 セルスタイルは、次のようにコンストラクターで設定され `UITableViewCell` ます。
 
 ```csharp
 cell = new UITableViewCell (UITableViewCellStyle.Default, cellIdentifier);
@@ -48,20 +48,20 @@ cell.DetailTextLabel.Text = tableItems[indexPath.Row].SubHeading;
 cell.ImageView.Image = UIImage.FromFile("Images/" + tableItems[indexPath.Row].ImageName); // don't use for Value2
 ```
 
-## <a name="accessories"></a>[アクセサリ]
+## <a name="accessories"></a>アクセサリ
 
 セルでは、次のアクセサリをビューの右側に追加できます。
 
 - **チェックマーク**–テーブルの複数選択を示すために使用できます。
-- **[表示] ボタン**–セルの残りの部分とは無関係にタッチに応答します。これにより、別の関数を実行してセル自体に触れることができます (`UINavigationController` スタックの一部ではないポップアップや新しいウィンドウを開くなど)。
+- **[入力] ボタン**–セルの残りの部分とは無関係にタッチに応答します。これにより、別の関数を実行してセル自体に触れることができます (たとえば、ポップアップやスタックの一部ではない新しいウィンドウを開くなど `UINavigationController` )。
 - **DisclosureIndicator** –通常、セルをタッチすると別のビューが開くことを示すために使用します。
-- **DetailDisclosureButton** – `DetailButton` と `DisclosureIndicator`の組み合わせです。
+- **DetailDisclosureButton** –との組み合わせ `DetailButton` `DisclosureIndicator` 。
 
 次のようになります。
 
- [![](customizing-table-appearance-images/image8.png "Sample Accessories")](customizing-table-appearance-images/image8.png#lightbox)
+ [![サンプルのアクセサリ](customizing-table-appearance-images/image8.png)](customizing-table-appearance-images/image8.png#lightbox)
 
-これらのアクセサリのいずれかを表示するには、`GetCell` メソッドで `Accessory` プロパティを設定します。
+これらのアクセサリのいずれかを表示するには、 `Accessory` メソッドでプロパティを設定し `GetCell` ます。
 
 ```csharp
 cell.Accessory = UITableViewCellAccessory.Checkmark;
@@ -70,7 +70,7 @@ cell.Accessory = UITableViewCellAccessory.Checkmark;
 //cell.Accessory = UITableViewCellAccessory.None; // to clear the accessory
 ```
 
-`DetailButton` または `DetailDisclosureButton` が表示されている場合は、操作が行われたときにアクションを実行するように `AccessoryButtonTapped` もオーバーライドする必要があります。
+`DetailButton`またはが表示されたら、を `DetailDisclosureButton` オーバーライドし `AccessoryButtonTapped` て、操作が行われたときにアクションを実行する必要もあります。
 
 ```csharp
 public override void AccessoryButtonTapped (UITableView tableView, NSIndexPath indexPath)
@@ -116,14 +116,14 @@ TableView.SeparatorInset.InsetRect(new CGRect(4, 4, 150, 2));
 
 テーブルの視覚スタイルを変更するには、表示するカスタムセルを指定する必要があります。 カスタムセルの色とコントロールのレイアウトは異なる場合があります。
 
-CellCustomTable の例では、`UILabel`s のカスタムレイアウトとフォントと色が異なる `UIImage` を定義する `UITableViewCell` サブクラスを実装しています。 結果として得られるセルは次のようになります。
+CellCustomTable の例では、 `UITableViewCell` のカスタムレイアウトを定義するサブクラスを実装して `UILabel` おり、 `UIImage` フォントと色が異なるを使用しています。 結果として得られるセルは次のようになります。
 
- [![](customizing-table-appearance-images/image9.png "Custom Cell Layouts")](customizing-table-appearance-images/image9.png#lightbox)
+ [![カスタムセルレイアウト](customizing-table-appearance-images/image9.png)](customizing-table-appearance-images/image9.png#lightbox)
 
 カスタムセルクラスは、次の3つのメソッドのみで構成されます。
 
 - **コンストラクター** – UI コントロールを作成し、カスタムスタイルプロパティを設定します (例: フォントフェイス、サイズ、および色)。
-- **UpdateCell** –セルのプロパティを設定するために使用する `UITableView.GetCell` のメソッド。
+- **UpdateCell** – `UITableView.GetCell` セルのプロパティを設定するために使用するのメソッド。
 - **Layoutsubviews**ビュー– UI コントロールの位置を設定します。 この例では、すべてのセルに同じレイアウトが使用されていますが、表示されるコンテンツによっては、より複雑なセル (特にサイズが変化する) でレイアウト位置が異なる場合があります。
 
 **Cellcustomtable > CustomVegeCell.cs**の完全なサンプルコードは次のとおりです。
@@ -167,7 +167,7 @@ public class CustomVegeCell : UITableViewCell  {
 }
 ```
 
-カスタムセルを作成するには、`UITableViewSource` の `GetCell` メソッドを変更する必要があります。
+`GetCell`カスタムセルを作成するには、のメソッドを `UITableViewSource` 変更する必要があります。
 
 ```csharp
 public override UITableViewCell GetCell (UITableView tableView, NSIndexPath indexPath)

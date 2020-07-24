@@ -6,12 +6,12 @@ ms.assetid: 9D4E10E8-A288-4C6C-9475-02969198C119
 author: davidortinau
 ms.author: daortin
 ms.date: 06/19/2018
-ms.openlocfilehash: a044169f86b46abff4158011e99320c528180ffc
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 99ecf661679f02bda6cfffa6093bd4a904676bce
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573886"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939348"
 ---
 # <a name="workbooks-installation-and-requirements"></a>ブックのインストールと要件
 
@@ -37,7 +37,7 @@ ms.locfileid: "84573886"
 
 ## <a name="requirements"></a>必要条件
 
-#### <a name="supported-operating-systems"></a>Supported Operating Systems
+#### <a name="supported-operating-systems"></a>サポートされるオペレーティング システム
 
 - **Mac** -OS X 10.11 以上
 - **Windows** -windows 7 以降 (Internet Explorer 11 以降および .net 4.6.1 以上)
@@ -88,7 +88,7 @@ Visual Studio For Mac
 - **Visual studio について > Visual Studio については > 情報のコピー > 詳細の表示**
 - バグレポートに貼り付け
 
-Visual Studio
+Visual Studio
 
 - **Visual Studio > コピー情報の > に関するヘルプ**
 - オペレーティングシステムのバージョンと、32ビットまたは64ビットの Windows を実行しているかどうかをお知らせください。
@@ -128,7 +128,7 @@ Visual Studio 2017 を使用している場合は**Visual Studio インストー
 
 > **システム > アプリ & の機能 > > 設定を開始します**
 
-![](install-images/windows-remove.png "Xamarin Workbooks as listed in &quot;Apps &amp; features&quot;")
+![アプリの機能に記載されている Xamarin Workbooks &quot; &amp;&quot;](install-images/windows-remove.png)
 
 **その場合でも、Visual Studio インストーラーの手順に従って、ブックがユーザーの知らないうちに再インストールされないようにする必要があります。**
 

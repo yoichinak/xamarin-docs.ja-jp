@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 7005b7a675af084db6d0563acd3ba4b9c0190832
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 4da0bd1c47c37430b278bed46f658b935a502e2d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572365"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937879"
 ---
 # <a name="unified-storyboards-in-xamarinios"></a>Xamarin の統合されたストーリーボード
 
@@ -33,7 +33,7 @@ IOS 8 より前の開発者は、とを使用して、 `UIInterfaceOrientation` 
 
 2つの概念が一緒に使用されている場合は、次の図に示すように、異なる向きの両方で使用できるさまざまなサイズを定義する2つの x 2 グリッドが生成されます。
 
- [![](unified-storyboards-images/sizeclassgrid.png "A 2 x 2 grid that defines the different possible sizes that can be used in Regular and Compact orientations")](unified-storyboards-images/sizeclassgrid.png#lightbox)
+ [![標準とコンパクトの向きで使用できるさまざまなサイズを定義する2×2のグリッド](unified-storyboards-images/sizeclassgrid.png)](unified-storyboards-images/sizeclassgrid.png#lightbox)
 
 開発者は、(上の図に示すように) レイアウトが異なる4つの方法のいずれかを使用するビューコントローラーを作成できます。
 
@@ -41,13 +41,13 @@ IOS 8 より前の開発者は、とを使用して、 `UIInterfaceOrientation` 
 
 IPad は、サイズが原因で、両方の向きに対して**通常**のクラスサイズが使用されます。
 
- [![](unified-storyboards-images/image1.png "iPad Size Classes")](unified-storyboards-images/image1.png#lightbox)
+ [![iPad サイズクラス](unified-storyboards-images/image1.png)](unified-storyboards-images/image1.png#lightbox)
 
 ### <a name="iphone-size-classes"></a>iPhone サイズクラス
 
 IPhone のサイズクラスは、デバイスの向きによって異なります。
 
- [![](unified-storyboards-images/iphonesizeclasses.png "iPhone Size Classes")](unified-storyboards-images/iphonesizeclasses.png#lightbox)
+ [![iPhone サイズクラス](unified-storyboards-images/iphonesizeclasses.png)](unified-storyboards-images/iphonesizeclasses.png#lightbox)
 
 - デバイスが縦モードのとき、画面には水平方向と**標準**時の**コンパクト**なクラスがあります。
 - デバイスが横モードの場合、画面クラスは縦モードから逆になります。
@@ -56,7 +56,7 @@ IPhone のサイズクラスは、デバイスの向きによって異なりま�
 
 サイズは、縦向きの場合は以前のスマートフォンと同じですが、横には異なります。
 
-[![](unified-storyboards-images/iphone6sizeclasses.png "iPhone 6 Plus Size Classes")](unified-storyboards-images/iphone6sizeclasses.png#lightbox)
+[![iPhone 6 Plus サイズクラス](unified-storyboards-images/iphone6sizeclasses.png)](unified-storyboards-images/iphone6sizeclasses.png#lightbox)
 
 IPhone 6 Plus には十分な大きさの画面があるため、横モードでは通常の幅サイズクラスを持つことができます。
 
@@ -100,7 +100,7 @@ IOS 8 を初めて使用する場合、開発者は、 `.xib` Auto Layout クラ
 
 すべての特徴環境は、次の図に示すように階層を作成します。
 
- [![](unified-storyboards-images/viewhierarchy.png "The Trait Environments hierarchy diagram")](unified-storyboards-images/viewhierarchy.png#lightbox)
+ [![特徴環境階層図](unified-storyboards-images/viewhierarchy.png)](unified-storyboards-images/viewhierarchy.png#lightbox)
 
 上記の特徴の特徴コレクションでは、既定で親環境から子環境にフローします。
 
@@ -115,7 +115,7 @@ IOS 8 を初めて使用する場合、開発者は、 `.xib` Auto Layout クラ
 |プロパティ|値|
 |--- |--- |
 |`HorizontalSizeClass`|コンパクト|
-|`VerticalSizeClass`|標準|
+|`VerticalSizeClass`|通常|
 |`UserInterfaceIdom`|Phone|
 |`DisplayScale`|2.0|
 
@@ -188,17 +188,17 @@ IPhone が横向きの場合、分割ビューコントローラーは、iPad �
 
 特徴環境は、次の図に示すように、親コンテナーから子コンテナーにカスケードされます。これは、iPad 上の分割ビューコントローラーが横向きに表示されることを示しています。
 
- [![](unified-storyboards-images/cascadingclasses01.png "A Split View Controller on an iPad in the landscape orientation")](unified-storyboards-images/cascadingclasses01.png#lightbox)
+ [![一方向の iPad 上の分割ビューコントローラー](unified-storyboards-images/cascadingclasses01.png)](unified-storyboards-images/cascadingclasses01.png#lightbox)
 
 IPad では、水平方向と垂直方向の両方に通常のサイズクラスがあるため、分割ビューにはマスタービューと詳細ビューの両方が表示されます。
 
 サイズクラスが両方の方向で圧縮されている iPhone では、分割ビューコントローラーは詳細ビューのみを表示します。次に例を示します。
 
- [![](unified-storyboards-images/cascadingclasses02.png "The Split View Controller only displays the detail view")](unified-storyboards-images/cascadingclasses02.png#lightbox)
+ [![分割ビューコントローラーには詳細ビューのみが表示されます](unified-storyboards-images/cascadingclasses02.png)](unified-storyboards-images/cascadingclasses02.png#lightbox)
 
 開発者が横方向の iPhone でマスタービューと詳細ビューの両方を表示する必要があるアプリケーションでは、開発者は分割ビューコントローラーの親コンテナーを挿入し、特徴コレクションをオーバーライドする必要があります。 次の図に示すようになります。
 
- [![](unified-storyboards-images/cascadingclasses03.png "The developer must insert a parent container for the Split View Controller and override the Trait Collection")](unified-storyboards-images/cascadingclasses03.png#lightbox)
+ [![開発者は、分割ビューコントローラーの親コンテナーを挿入し、特徴コレクションをオーバーライドする必要があります。](unified-storyboards-images/cascadingclasses03.png)](unified-storyboards-images/cascadingclasses03.png#lightbox)
 
 は `UIView` 分割ビューコントローラーの親として設定され、 `SetOverrideTraitCollection` メソッドは、新しい特徴コレクションを渡し、分割ビューコントローラーを対象とするビューで呼び出されます。 新しい特徴コレクションは、をオーバーライドしてをに設定します。これにより、 `HorizontalSizeClass` `Regular` 分割ビューコントローラーでは、iPhone のマスタービューと詳細ビューの両方が横向きに表示されるようになります。
 
@@ -208,13 +208,13 @@ IPad では、水平方向と垂直方向の両方に通常のサイズクラス
 
 このセクションでは、特徴の環境が変更されたときに特徴コレクションがどのように変化するかについて詳しく説明します。 たとえば、デバイスが縦向きから横方向に回転しているとします。
 
- [![](unified-storyboards-images/traittransitions01.png "The portrait to landscape Trait Changes overview")](unified-storyboards-images/traittransitions01.png#lightbox)
+ [![縦と横の特徴の変更の概要](unified-storyboards-images/traittransitions01.png)](unified-storyboards-images/traittransitions01.png#lightbox)
 
 まず、iOS 8 では、移行を行うための準備としていくつかのセットアップを行います。 次に、システムによって遷移状態がアニメーション化されます。 最後に、iOS 8 は、移行中に必要な一時的な状態をクリーンアップします。
 
 iOS 8 には、次の表に示すように、開発者が特徴の変更に参加するために使用できるいくつかのコールバックが用意されています。
 
-|フェーズ|コールバック|説明|
+|段階|コールバック|説明|
 |--- |--- |--- |
 |セットアップ|<ul><li>`WillTransitionToTraitCollection`</li><li>`TraitCollectionDidChange`</li></ul>|<ul><li>このメソッドは、特徴コレクションが新しい値に設定される前に、特徴変更の開始時に呼び出されます。</li><li>このメソッドは、特徴コレクションの値が変更されたときに、アニメーションが行われる前に呼び出されます。</li></ul>|
 |アニメーション|`WillTransitionToTraitCollection`|このメソッドに渡される遷移コーディネーターには、 `AnimateAlongside` 開発者が既定のアニメーションと共に実行されるアニメーションを追加できるようにするプロパティがあります。|
@@ -257,7 +257,7 @@ Apple が iOS 8 に加えたもう1つの変更は、開発者がビューコン
 
 このセクションでは、これらのメソッドが実際に iOS 8 でどのように実装されているかを見ていきます。 まず、新しいメソッドを見てみましょう `GetTargetForAction` 。
 
- [![](unified-storyboards-images/gettargetforaction.png "The new GetTargetForAction method")](unified-storyboards-images/gettargetforaction.png#lightbox)
+ [![新しい GetTargetForAction メソッド](unified-storyboards-images/gettargetforaction.png)](unified-storyboards-images/gettargetforaction.png#lightbox)
 
 このメソッドは、正しいコンテナービューコントローラーが見つかるまで階層チェーンをウォークします。 次に例を示します。
 
@@ -292,7 +292,7 @@ IOS 8 では、Apple は Segue プレゼンテーション () のアダプティ
 
 IPhone でアダプティブフォトアプリケーションを実行しているときに、ユーザーがデバイスを縦向きから横方向に回転させると、分割ビューコントローラーには、マスタービューと詳細ビューの両方が表示されます。
 
- [![](unified-storyboards-images/rotation.png "The Split View Controller will display both the master and details view as seen here")](unified-storyboards-images/rotation.png#lightbox)
+ [![分割ビューコントローラーには、次に示すように、マスタービューと詳細ビューの両方が表示されます。](unified-storyboards-images/rotation.png)](unified-storyboards-images/rotation.png#lightbox)
 
 これは `UpdateConstraintsForTraitCollection` 、ビューコントローラーのメソッドをオーバーライドし、の値に基づいて制約を調整することで実現され `VerticalSizeClass` ます。 次に例を示します。
 
@@ -566,11 +566,11 @@ IOS 8 を初めて使用する場合、統合されたストーリーボード�
 
 これを行うには、iOS デザイナーで変換するストーリーボードを開き、[**サイズクラスを使用**する] チェックボックスをオンにします。
 
- [![](unified-storyboards-images/sizeclass01.png "The Use Size Classes check box")](unified-storyboards-images/sizeclass01.png#lightbox)
+ [![[サイズクラスを使用する] チェックボックス](unified-storyboards-images/sizeclass01.png)](unified-storyboards-images/sizeclass01.png#lightbox)
 
 IOS デザイナーによって、開発者がサイズクラスを使用するようにストーリーボードの形式を変換する必要があることが確認されます。
 
- [![](unified-storyboards-images/sizeclass02.png "The use Size Classes alert")](unified-storyboards-images/sizeclass02.png#lightbox)
+ [![サイズクラスを使用するアラート](unified-storyboards-images/sizeclass02.png)](unified-storyboards-images/sizeclass02.png#lightbox)
 
 > [!IMPORTANT]
 > また、サイズクラスが正常に機能するためには、自動レイアウトもチェックする必要があります。
@@ -579,41 +579,41 @@ IOS デザイナーによって、開発者がサイズクラスを使用する�
 
 サイズクラスを使用するようにストーリーボードが変換されると、デザインサーフェイスに再表示され、デバイスが汎用になる**ようにビューが表示**されます。
 
- [![](unified-storyboards-images/sizeclass03.png "View as a Generic device type")](unified-storyboards-images/sizeclass03.png#lightbox)
+ [![汎用デバイスの種類として表示](unified-storyboards-images/sizeclass03.png)](unified-storyboards-images/sizeclass03.png#lightbox)
 
 デバイスの種類として [汎用] を選択すると、すべてのビューコントローラーのサイズが 600 x 600 二乗に変更されます。 この正方形は、任意の幅と高さのサイズを表します。 IOS Designer がこのモードのときは、すべてのサイズクラスに編集が適用されます。
 
 開発者は、デザイン画面を iPhone として表示することもできます。
 
- [![](unified-storyboards-images/sizeclass04.png "Viewing the design surface as an iPhone")](unified-storyboards-images/sizeclass04.png#lightbox)
+ [![IPhone としてデザイン画面を表示する](unified-storyboards-images/sizeclass04.png)](unified-storyboards-images/sizeclass04.png#lightbox)
 
 または、iPad として表示します。
 
- [![](unified-storyboards-images/sizeclass05.png "Viewing the design surface as an iPad")](unified-storyboards-images/sizeclass05.png#lightbox)
+ [![IPad としてデザイン画面を表示する](unified-storyboards-images/sizeclass05.png)](unified-storyboards-images/sizeclass05.png#lightbox)
 
 ### <a name="select-a-size-class"></a>サイズクラスを選択してください
 
 サイズクラスセレクターボタンはデザインサーフェイスの左上隅に表示されます ([表示] ボックスの近く)。 これにより、現在編集中のサイズクラスを開発者が選択できるようになります。
 
- [![](unified-storyboards-images/sizeclass06.png "Select a Size Class")](unified-storyboards-images/sizeclass06.png#lightbox)
+ [![サイズクラスを選択してください](unified-storyboards-images/sizeclass06.png)](unified-storyboards-images/sizeclass06.png#lightbox)
 
 セレクターは、サイズクラスの選択を 3 x 3 グリッドとして表示します。 グリッド内の各四角形は、幅クラスと高さクラスの組み合わせを表します。 中央の四角形では、任意の幅/高さサイズのクラス (統合されたストーリーボードの既定のビュー) を選択します。 この四角形を選択すると、開発者は既定のレイアウトを編集します。これは、他のすべての構成によって継承されます。
 
 グリッドの左上隅にある四角形は、Compact Width/Compact Height Size クラスを表します。
 
- [![](unified-storyboards-images/sizeclass07.png "The Compact Width/Compact Height Size Class")](unified-storyboards-images/sizeclass07.png#lightbox)
+ [![Compact Width/Compact Height Size クラス](unified-storyboards-images/sizeclass07.png)](unified-storyboards-images/sizeclass07.png#lightbox)
 
 このモードは、横長の iPhone に対応しています。 グリッドの右下隅にある四角形は、iPad を表す通常の幅/標準の高さサイズクラスを表します。
 
- [![](unified-storyboards-images/sizeclass08.png "The Regular Width/Regular Height Size Class")](unified-storyboards-images/sizeclass08.png#lightbox)
+ [![標準幅/標準高さサイズクラス](unified-storyboards-images/sizeclass08.png)](unified-storyboards-images/sizeclass08.png#lightbox)
 
 縦向きで iPhone のレイアウトを編集するには、左下隅にある四角形を選択します。 これは、Compact Width/Regular Height Size クラスを表します。
 
- [![](unified-storyboards-images/sizeclass09.png "The Compact Width/Regular Height Size Class")](unified-storyboards-images/sizeclass09.png#lightbox)
+ [![Compact Width/Regular Height Size クラス](unified-storyboards-images/sizeclass09.png)](unified-storyboards-images/sizeclass09.png#lightbox)
 
 四角形をクリックして選択すると、デザインサーフェイスによってビューコントローラーのサイズが新しい選択に合わせて変更されます。
 
- [![](unified-storyboards-images/sizeclass10.png "The Design Surface will change the size of the View Controllers to match the new selection as shown")](unified-storyboards-images/sizeclass10.png#lightbox)
+ [![デザインサーフェイスは、表示されている新しい選択に合わせてビューコントローラーのサイズを変更します。](unified-storyboards-images/sizeclass10.png)](unified-storyboards-images/sizeclass10.png#lightbox)
 
 サイズクラスの詳細および iPhones と Ipad のレイアウトへの影響については、この記事の「サイズクラス」セクションを参照してください。
 
@@ -628,49 +628,49 @@ IOS デザイナーによって、開発者がサイズクラスを使用する�
 
 この効果を実現するには、iOS デザイナーで [] ボタンをクリックし、表示するビューコントローラーに線をドラッグします。 マウスボタンが離されたら、[ `Show Detail` セグエ Type] ポップアップメニューから次のように選択します。
 
- [![](unified-storyboards-images/segue01.png "Select Show Detail from the Segue Type Popup menu")](unified-storyboards-images/segue01.png#lightbox)
+ [![セグエの種類のポップアップメニューから [詳細の表示] を選択します。](unified-storyboards-images/segue01.png)](unified-storyboards-images/segue01.png#lightbox)
 
 新しいセグエは、ボタンとビューコントローラーの間に作成されます。 次に、iPhone シミュレーターでアプリケーションを実行すると、メインメニューが表示されます。
 
- [![](unified-storyboards-images/segue02.png "The Main Menu")](unified-storyboards-images/segue02.png#lightbox)
+ [![メインメニュー](unified-storyboards-images/segue02.png)](unified-storyboards-images/segue02.png#lightbox)
 
 [ゲームの**選択**] ボタンをクリックすると、項目の View Controller がナビゲーションスタックにプッシュされます。
 
- [![](unified-storyboards-images/segue03.png "The items View Controller will be pushed onto the Navigation Stack as shown")](unified-storyboards-images/segue03.png#lightbox)
+ [![項目ビューコントローラーは、以下のようにナビゲーションスタックにプッシュされます](unified-storyboards-images/segue03.png)](unified-storyboards-images/segue03.png#lightbox)
 
 IPhone シミュレーターを停止し、iPad シミュレーターでアプリケーションを実行します。 横向きに切り替えると、メインメニューが再び表示されます。
 
- [![](unified-storyboards-images/segue04.png "The main menu displayed")](unified-storyboards-images/segue04.png#lightbox)
+ [![メインメニューが表示されます。](unified-storyboards-images/segue04.png)](unified-storyboards-images/segue04.png#lightbox)
 
 ここでも、[**ゲームの選択**] ボタンをクリックすると、アイテムの view Controller が分割ビューコントローラーの詳細セクションに表示されます。
 
- [![](unified-storyboards-images/segue05.png "The items View Controller shown in the Details section of the Split View Controller")](unified-storyboards-images/segue05.png#lightbox)
+ [![分割ビューコントローラーの詳細セクションに表示される項目ビューコントローラー](unified-storyboards-images/segue05.png)](unified-storyboards-images/segue05.png#lightbox)
 
 ### <a name="excluding-an-element-from-a-size-class"></a>サイズクラスからの要素の除外
 
 特定のサイズクラス内では、特定の要素 (ビュー、コントロール、制約など) が必要ない場合があります。 サイズクラスから要素を除外するには、**デザインサーフェイス**で除外する目的の項目を選択します。 **プロパティエクスプローラー**の一番下までスクロールし、**歯車**のドロップダウンメニューをクリックします。 項目を除外する**幅**と**高さ**の組み合わせを選択してください:
 
-[![](unified-storyboards-images/exclude-a.png "Select the combination of Width and Height")](unified-storyboards-images/exclude-a.png#lightbox)
+[![幅と高さの組み合わせを選択します](unified-storyboards-images/exclude-a.png)](unified-storyboards-images/exclude-a.png#lightbox)
 
 新しい*除外ケース*が、**プロパティエクスプローラー**の下部にある要素に追加されます。 次に、指定されたサイズクラスの [**インストール済み**] チェックボックスをオフにします。
 
-[![](unified-storyboards-images/exclude-b.png "Uncheck the Installed checkbox")](unified-storyboards-images/exclude-b.png#lightbox)
+[![インストールされているチェックボックスをオフにする](unified-storyboards-images/exclude-b.png)](unified-storyboards-images/exclude-b.png#lightbox)
 
 デザインサーフェイスを、アイテムが除外された幅と高さに切り替えます。指定されたサイズクラスからは削除されていますが、UI デザイン全体は削除されていません。
 
- [![](unified-storyboards-images/exclude02.png "Switch the Design Surface to the Width and Height that the item was excluded from")](unified-storyboards-images/exclude02.png#lightbox)
+ [![デザインサーフェイスを、アイテムが除外された幅と高さに切り替えます。](unified-storyboards-images/exclude02.png)](unified-storyboards-images/exclude02.png#lightbox)
 
 任意の幅と高さのいずれかのサイズのクラスに切り替えて、要素がまだ配置されている場合は、次のようになります。
 
- [![](unified-storyboards-images/exclude03.png "Switching back to the Any Width/Any Height size class")](unified-storyboards-images/exclude03.png#lightbox)
+ [![任意の幅/高さサイズのクラスへの切り替え](unified-storyboards-images/exclude03.png)](unified-storyboards-images/exclude03.png#lightbox)
 
 アプリケーションが iPad シミュレーターで実行されると、要素が表示されます。
 
- [![](unified-storyboards-images/exclude04.png "The element shown when the running app in the iPad Simulator")](unified-storyboards-images/exclude04.png#lightbox)
+ [![IPad シミュレーターでアプリを実行しているときに表示される要素](unified-storyboards-images/exclude04.png)](unified-storyboards-images/exclude04.png#lightbox)
 
 また、iPhone シミュレーターでアプリケーションを実行すると、要素が不足しています。
 
- [![](unified-storyboards-images/exclude05.png "The element missing when the running app in the iPhone Simulator")](unified-storyboards-images/exclude05.png#lightbox)
+ [![IPhone シミュレーターでアプリを実行しているときに要素が見つからない](unified-storyboards-images/exclude05.png)](unified-storyboards-images/exclude05.png#lightbox)
 
 要素から除外のケースを削除するには、**デザインサーフェイス**で要素を選択し、**プロパティエクスプローラー**の一番下までスクロールして、 **-** 削除するケースの横にあるボタンをクリックします。
 
@@ -695,53 +695,53 @@ IOS 8 を初めて使用する場合、開発者は、 `.xib` Auto Layout クラ
 
 上記のガイドラインを考慮して、既存の Xamarin iOS 8 プロジェクトに動的起動画面を追加する方法を見てみましょう。
 
-次の操作を行います。
+次の手順を実行します。
 
 1. **Visual Studio for Mac**を開き、**ソリューション**を読み込んで、動的起動画面をに追加します。
 2. **ソリューションエクスプローラー**で、ファイルを右クリック `MainStoryboard.storyboard` し、[ **Open With**  >  **Xcode Interface Builder**] を選択します。
 
-    [![](unified-storyboards-images/dls01.png "Open With Xcode Interface Builder")](unified-storyboards-images/dls01.png#lightbox)
+    [![Xcode を使用して開く Interface Builder](unified-storyboards-images/dls01.png)](unified-storyboards-images/dls01.png#lightbox)
 3. Xcode で、[**ファイル**] [  >  **新しい**  >  **ファイル**] を選択します。
 
-    [![](unified-storyboards-images/dls02.png "Select File / New")](unified-storyboards-images/dls02.png#lightbox)
+    [![ファイル/新規の選択](unified-storyboards-images/dls02.png)](unified-storyboards-images/dls02.png#lightbox)
 4. [ **IOS**  >  **ユーザーインターフェイス**  >  の**起動画面**] を選択し、[**次へ**] ボタンをクリックします。
 
-    [![](unified-storyboards-images/dls03.png "Select iOS / User Interface / Launch Screen")](unified-storyboards-images/dls03.png#lightbox)
+    [![IOS/ユーザーインターフェイス/起動画面の選択](unified-storyboards-images/dls03.png)](unified-storyboards-images/dls03.png#lightbox)
 5. ファイルに名前 `LaunchScreen.xib` を指定し、[**作成**] ボタンをクリックします。
 
-    [![](unified-storyboards-images/dls04.png "Name the file LaunchScreen.xib")](unified-storyboards-images/dls04.png#lightbox)
+    [![ファイルの名前を LaunchScreen にします。 xib](unified-storyboards-images/dls04.png)](unified-storyboards-images/dls04.png#lightbox)
 6. 起動画面のデザインを編集するには、グラフィック要素を追加し、レイアウトの制約を使用して、特定のデバイス、向き、画面のサイズに合わせます。
 
-    [![](unified-storyboards-images/dls05.png "Editing the design of the launch screen")](unified-storyboards-images/dls05.png#lightbox)
+    [![起動画面のデザインを編集する](unified-storyboards-images/dls05.png)](unified-storyboards-images/dls05.png#lightbox)
 7. `LaunchScreen.xib` に対する変更を保存します。
 8. [**アプリケーション] ターゲット**と [**全般**] タブを選択します。
 
-    [![](unified-storyboards-images/dls06.png "Select the Applications Target and the General tab")](unified-storyboards-images/dls06.png#lightbox)
+    [![[アプリケーション] ターゲットと [全般] タブを選択します。](unified-storyboards-images/dls06.png)](unified-storyboards-images/dls06.png#lightbox)
 9. [**情報の選択**] ボタンをクリックし、 `Info.plist` Xamarin アプリのを選択して、[**選択**] ボタンをクリックします。
 
-    [![](unified-storyboards-images/dls07.png "Select the Info.plist for the Xamarin app")](unified-storyboards-images/dls07.png#lightbox)
+    [![Xamarin アプリの情報を選択します。](unified-storyboards-images/dls07.png)](unified-storyboards-images/dls07.png#lightbox)
 10. [**アプリアイコンと起動イメージ**] セクションで、[**起動画面ファイル**] ドロップダウンを開き、上で作成したを選択し `LaunchScreen.xib` ます。
 
-    [![](unified-storyboards-images/dls08.png "Choose the LaunchScreen.xib")](unified-storyboards-images/dls08.png#lightbox)
+    [![LaunchScreen. xib を選択します。](unified-storyboards-images/dls08.png)](unified-storyboards-images/dls08.png#lightbox)
 11. 変更内容をファイルに保存し、Visual Studio for Mac に戻ります。
 12. Visual Studio for Mac が Xcode との変更の同期を完了するまで待ちます。
 13. **ソリューションエクスプローラー**で、**リソース**フォルダーを右クリックし、[**追加**] [  >  **ファイル**の追加] の順に選択します。
 
-    [![](unified-storyboards-images/dls09.png "Select Add / Add Files...")](unified-storyboards-images/dls09.png#lightbox)
+    [![[Add/Add Files...] を選択します。](unified-storyboards-images/dls09.png)](unified-storyboards-images/dls09.png#lightbox)
 14. 上で作成したファイルを選択 `LaunchScreen.xib` し、[**開く**] ボタンをクリックします。
 
-    [![](unified-storyboards-images/dls10.png "Select the LaunchScreen.xib file")](unified-storyboards-images/dls10.png#lightbox)
+    [![LaunchScreen. xib ファイルを選択します。](unified-storyboards-images/dls10.png)](unified-storyboards-images/dls10.png#lightbox)
 15. アプリケーションをビルドします。
 
 ### <a name="testing-the-dynamic-launch-screen"></a>動的起動画面のテスト
 
 Visual Studio for Mac で、iPhone 4 Retina シミュレーターを選択し、アプリケーションを実行します。 動的起動画面は、正しい形式と向きで表示されます。
 
-[![](unified-storyboards-images/dls11.png "The Dynamic Launch Screen displayed in the vertical orientation")](unified-storyboards-images/dls11.png#lightbox)
+[![垂直方向に表示される動的起動画面](unified-storyboards-images/dls11.png)](unified-storyboards-images/dls11.png#lightbox)
 
 Visual Studio for Mac でアプリケーションを停止し、iPad iOS 8 デバイスを選択します。 アプリケーションを実行します。起動画面は、このデバイスと向きに対して正しく書式設定されます。
 
-[![](unified-storyboards-images/dls12.png "The Dynamic Launch Screen displayed in the horizontal orientation")](unified-storyboards-images/dls12.png#lightbox)
+[![水平方向に表示される動的起動画面](unified-storyboards-images/dls12.png)](unified-storyboards-images/dls12.png#lightbox)
 
 Visual Studio for Mac に戻り、アプリケーションの実行を停止します。
 

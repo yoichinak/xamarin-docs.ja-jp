@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: ac746c8489dae600bc2d8c6d1752d8fb10d4e016
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 84e21378a8ac7b61bc1a389352eb53b75881592a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84564720"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929650"
 ---
 # <a name="core-graphics-in-xamarinios"></a>Xamarin のコアグラフィック
 
@@ -133,7 +133,7 @@ path.CloseSubpath ();
 
 結果のビューは次のようになります。
 
- ![](core-graphics-images/00-bluetriangle.png "The sample output triangle")
+ ![サンプルの出力三角形](core-graphics-images/00-bluetriangle.png)
 
 ## <a name="creating-gradient-fills"></a>グラデーションの塗りつぶしの作成
 
@@ -167,7 +167,7 @@ g.Clip ();
 
 これらの変更により、次のようにグラデーションの塗りつぶしが生成されます。
 
- ![](core-graphics-images/01-gradient-fill.png "The example with a gradient fill")
+ ![グラデーションの塗りつぶしを含む例](core-graphics-images/01-gradient-fill.png)
 
 ## <a name="modifying-line-patterns"></a>線のパターンの変更
 
@@ -180,7 +180,7 @@ g.SetLineDash (0, new nfloat[] { 10, 4 * (nfloat)Math.PI });
 
 描画操作の前にこのコードを追加すると、次に示すように、ダッシュの間に4単位の間隔が付き、破線の長さが10単位になります。
 
- ![](core-graphics-images/02-dashed-stroke.png "Adding this code before any drawing operations results in dashed strokes")
+ ![描画操作の前にこのコードを追加すると、破線になります](core-graphics-images/02-dashed-stroke.png)
 
 Xamarin の Unified API を使用する場合、配列の型はである必要があります。 `nfloat` また、数学的に明示的にキャストする必要があります。
 
@@ -203,7 +203,7 @@ public override void Draw (CGRect rect)
 
 ただし、次のように、反転されたイメージが生成されます。
 
- ![](core-graphics-images/03-upside-down-monkey.png "An image drawn upside down")
+ ![反転された画像](core-graphics-images/03-upside-down-monkey.png)
 
 この理由は、画像描画の中心となるグラフィックスの原点は左下にあり、ビューの原点は左上にあります。 そのため、イメージを正しく表示するには、origin を変更する必要があります。これは、*現在の変換行列* *(CTM)* を変更することで実現できます。 CTM は、ポイントが存在する場所 (*ユーザー空間*とも呼ばれます) を定義します。 Y 方向の CTM を反転し、負の y 方向の境界の高さでシフトすることで、イメージを反転させることができます。
 
@@ -225,7 +225,7 @@ public override void Draw (CGRect rect)
 
 次に、結果として得られたイメージが上下に表示されます。
 
- ![](core-graphics-images/04-upright-monkey.png "The sample image displayed upright")
+ ![上に表示されているサンプルイメージ](core-graphics-images/04-upright-monkey.png)
 
 > [!IMPORTANT]
 > グラフィックスコンテキストに加えた変更は、後続のすべての描画操作に適用されます。 そのため、CTM が変換されると、追加の描画に影響します。 たとえば、CTM 変換の後に三角形を描画した場合、その三角形は反転して表示されます。
@@ -264,7 +264,7 @@ public override void Draw (RectangleF rect)
 
 次に示すように、結果として得られるテキストがイメージと共に表示されます。
 
- ![](core-graphics-images/05-text-on-image.png "The resulting text is displayed with the image")
+ ![結果のテキストが画像と共に表示されます。](core-graphics-images/05-text-on-image.png)
 
 ## <a name="memory-backed-images"></a>メモリによってサポートされるイメージ
 

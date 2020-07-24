@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: f8c449045de292590aa833324d443579332be999
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 5d10f1def56d73c6837587bbbd47299d208a345a
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86935812"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997476"
 ---
 # <a name="building-modern-macos-apps"></a>最新の macOS アプリの構築
 
@@ -64,7 +64,7 @@ namespace MacModern
 
 この機能は、ウィンドウを選択し、**フルサイズのコンテンツビュー**をチェックすることで、Xcode の Interface Builder で有効にすることもできます。
 
-[![](modern-cocoa-apps-images/content01.png "Editing the main storyboard in Xcode's Interface Builder")](modern-cocoa-apps-images/content01.png#lightbox)
+[![Xcode の Interface Builder のメインストーリーボードの編集](modern-cocoa-apps-images/content01.png)](modern-cocoa-apps-images/content01.png#lightbox)
 
 フルサイズのコンテンツビューを使用する場合、開発者はタイトルとツールバー領域の下にあるコンテンツをオフセットして、特定のコンテンツ (ラベルなど) がその下にスライドしないようにする必要があります。
 
@@ -163,7 +163,7 @@ public override void ViewWillAppear ()
 }
 ```
 
-通常、この効果は、マップ、カレンダー、メモ、システム設定などの_Shoebox アプリケーション_(1 つのウィンドウアプリ) に使用されます。 
+通常、この効果は、マップ、カレンダー、メモ、システム設定などの_Shoebox アプリケーション_(1 つのウィンドウアプリ) に使用されます。
 
 <a name="Using-Accessory-View-Controllers"></a>
 
@@ -178,13 +178,13 @@ public override void ViewWillAppear ()
 アクセサリビューコントローラーを追加するには、次の手順を実行します。
 
 1. **ソリューション エクスプローラー**で `Main.storyboard` ファイルをダブルクリックして、編集用に開きます。
-2. **カスタムビューコントローラー**をウィンドウの階層にドラッグします。 
+2. **カスタムビューコントローラー**をウィンドウの階層にドラッグします。
 
     [![新しいカスタムビューコントローラーの追加](modern-cocoa-apps-images/content05.png)](modern-cocoa-apps-images/content05.png#lightbox)
-3. アクセサリビューの UI のレイアウト: 
+3. アクセサリビューの UI のレイアウト:
 
     [![新しいビューのデザイン](modern-cocoa-apps-images/content06.png)](modern-cocoa-apps-images/content06.png#lightbox)
-4. アクセサリビューを、その UI の**アウトレット**とその他の**アクション**または**アウトレット**として公開します。 
+4. アクセサリビューを、その UI の**アウトレット**とその他の**アクション**または**アウトレット**として公開します。
 
     [![必要なアウトレットの追加](modern-cocoa-apps-images/content07.png)](modern-cocoa-apps-images/content07.png#lightbox)
 5. 変更を保存します。
@@ -302,7 +302,7 @@ namespace MacModern
 
             // Display
             controller.ShowWindow (this);
-        } 
+        }
         #endregion
     }
 }
@@ -496,7 +496,7 @@ namespace MacModern
         {
             base.UpdateLayer ();
 
-            // Draw view 
+            // Draw view
             Layer.BackgroundColor = NSColor.Red.CGColor;
         }
         #endregion
@@ -571,7 +571,7 @@ namespace MacModern
         {
             // Return required pasteboard writer
             ...
-            
+
             // Pasteboard writer failed
             return null;
         }
@@ -733,7 +733,7 @@ Static `NSTableViewRowAction.FromStyle` は、次のスタイルの新しいテ�
 
 <a name="Scroll-View-Enhancements"></a>
 
-## <a name="scroll-view-enhancements"></a>スクロールビューの機能強化 
+## <a name="scroll-view-enhancements"></a>スクロールビューの機能強化
 
 スクロールビュー () を直接使用する場合 `NSScrollView` 、または別のコントロール (など) の一部として使用する場合 `NSTableView` 、スクロールビューの内容は、最新の外観とビューを使用して、Xamarin. Mac アプリのタイトルとツールバーの領域の下にスライドできます。
 
@@ -760,9 +760,9 @@ Apple には、開発者が国際化 macOS アプリを簡単に作成できる�
 
 <a name="Implementing-Base-Internationalization"></a>
 
-### <a name="implementing-base-internationalization"></a>基本の国際化の実装 
+### <a name="implementing-base-internationalization"></a>基本の国際化の実装
 
-基本の国際化を実装することにより、開発者は、アプリの UI を表す1つのストーリーボードファイルを提供し、ユーザー向けのすべての文字列を分離することができます。 
+基本の国際化を実装することにより、開発者は、アプリの UI を表す1つのストーリーボードファイルを提供し、ユーザー向けのすべての文字列を分離することができます。
 
 開発者が、アプリのユーザーインターフェイスを定義する初期ストーリーボードファイル (またはファイル) を作成すると、基本の国際化 (開発者が話す言語) でビルドされます。
 
@@ -865,7 +865,7 @@ namespace MacModern
     public partial class ViewController : NSViewController
     {
         ...
-    
+
         #region Override Methods
         public override void ViewWillAppear ()
         {
@@ -898,7 +898,7 @@ namespace MacModern
 
 開発者は、コントローラーを使用して、要素をコンポジションの単位に収集し、セグエ abstract を実行し、ビュー階層全体で移動するために必要な一般的な "グルーコード" を削除できます。
 
-[![](modern-cocoa-apps-images/content12.png "Editing the UI in Xcode's Interface Builder")](modern-cocoa-apps-images/content12.png#lightbox)
+[![Xcode の Interface Builder の UI の編集](modern-cocoa-apps-images/content12.png)](modern-cocoa-apps-images/content12.png#lightbox)
 
 詳細については、[ストーリーボードの概要に](~/mac/platform/storyboards/index.md)関するドキュメントを参照してください。
 
@@ -948,7 +948,7 @@ Apple には、次のように、開発者が最も多くの Mac プラットフ
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>要約
+## <a name="summary"></a>まとめ
 
 この記事では、開発者が Xamarin. Mac で最新の macOS アプリを構築するために使用できるいくつかのヒント、機能、および手法について説明しました。
 

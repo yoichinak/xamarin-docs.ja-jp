@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: davidortinau
 ms.author: daortin
-ms.openlocfilehash: 68f8349fd6c8f90b36fb5edb2838dfec352a5800
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 8216e0e41eea98dcdcd34ccfac6a9573224f3093
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73002574"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936670"
 ---
 # <a name="introduction-to-monotouchdialog-for-xamarinios"></a>Xamarin の Monotouch.dialog の概要
 
 Monotouch.dialog。 MT と呼ばれます。D は、簡単な UI 開発ツールキットです。これを使用すると、開発者はビューコントローラーやテーブルなどの面倒な作業を作成するのではなく、情報を使用してアプリケーション画面とナビゲーションを構築できます。そのため、UI の開発とコードの削減が大幅に簡素化されます。 たとえば、次のスクリーンショットを考えてみます。
 
- [![](images/image1.png "For example, consider this screenshot")](images/image1.png#lightbox)
+ [![たとえば、次のスクリーンショットを考えてみます。](images/image1.png)](images/image1.png#lightbox)
 
 次のコードは、この画面全体を定義するために使用されています。
 
@@ -69,7 +69,7 @@ MT.D には、画面作成用の多数の組み込み UI 要素が用意され�
 
 ## <a name="setting-up-mtd"></a>MT を設定しています。A
 
-MT.D は、Xamarin. iOS と共に配布されます。 これを使用するには、Visual Studio 2017 または Visual Studio for Mac で Xamarin. iOS プロジェクトの **[参照]** ノードを右クリックし、 **monotouch.dialog**アセンブリへの参照を追加します。 次に、必要に応じて、ソースコードに `using MonoTouch.Dialog` ステートメントを追加します。
+MT.D は、Xamarin. iOS と共に配布されます。 これを使用するには、Visual Studio 2017 または Visual Studio for Mac で Xamarin. iOS プロジェクトの [**参照**] ノードを右クリックし、 **monotouch.dialog**アセンブリへの参照を追加します。 次に、 `using MonoTouch.Dialog` 必要に応じて、ソースコードにステートメントを追加します。
 
 ## <a name="understanding-the-pieces-of-mtd"></a>MT の部分を理解する。A
 
@@ -79,28 +79,28 @@ MT.D は、次の4つの部分を使用して画面を構築します。
 
 - **コントロールの診断**
 - **RootElement**
-- **Section**
+- **セクション**
 - **要素**
 
 ### <a name="dialogviewcontroller"></a>コントロールの診断
 
-DVC*は、* `UITableViewController` から継承されます。そのため、テーブルを含む画面を表します。 DVCs は、通常の UITableViewController と同様にナビゲーションコントローラーにプッシュできます。
+DVC の場合は、 *DVC* *を継承* `UITableViewController` します。この場合、テーブルを含む画面を表します。 DVCs は、通常の UITableViewController と同様にナビゲーションコントローラーにプッシュできます。
 
 ### <a name="rootelement"></a>RootElement
 
 *Rootelement*は、DVC に入る項目の最上位レベルのコンテナーです。 これには、要素を含めることができるセクションが含まれています。 RootElements はレンダリングされません。実際に表示されるのは単なるコンテナーです。 RootElement は DVC に割り当てられ、その子が DVC によってレンダリングされます。
 
-### <a name="section"></a>セクション
+### <a name="section"></a>Section
 
 セクションは、テーブル内のセルのグループです。 通常のテーブルセクションと同様に、次のスクリーンショットに示すように、必要に応じてヘッダーとフッターを指定することもできます。これはテキストでもカスタムビューでもかまいません。
 
- [![](images/image2.png "As with a normal table section, it can optionally have a header and footer that can either be text, or even custom views, as in this screenshot")](images/image2.png#lightbox)
+ [![通常のテーブルセクションと同様に、必要に応じて、このスクリーンショットのように、テキストまたはカスタムビューのいずれかを指定できるヘッダーとフッターを含めることができます。](images/image2.png)](images/image2.png#lightbox)
 
 ### <a name="element"></a>要素
 
 要素は、テーブル内の実際のセルを表します。 MT.D には、さまざまなデータ型または異なる入力を表すさまざまな要素が用意されています。 たとえば、次のスクリーンショットは、使用可能ないくつかの要素を示しています。
 
- [![](images/image3.png "For example, this screenshots illustrate a few of the available elements")](images/image3.png#lightbox)
+ [![たとえば、次のスクリーンショットは、使用可能ないくつかの要素を示しています。](images/image3.png)](images/image3.png#lightbox)
 
 ## <a name="more-on-sections-and-rootelements"></a>セクションと RootElements の詳細
 
@@ -112,9 +112,9 @@ Monotouch.dialog プロセスを開始するには、少なくとも1つの Root
 
 RootElement がセクション/要素の値で初期化されている場合、この値を使用して、構成の概要を提供する子要素を検索します。これは、ディスプレイの右側に表示されます。 たとえば、次のスクリーンショットでは、左側にテーブルが表示され、右側に詳細画面のタイトル、"デザート"、および選択した砂漠の値が含まれています。
 
- [![](images/image4.png "このスクリーンショットでは、左側にテーブルが表示されます。セルには、右側の詳細画面のタイトル、デザート、および選択した砂漠の値が含まれます。")](images/image4.png#lightbox)[![](images/image5.png "次のスクリーンショットでは、左側の表に、右側の詳細画面のタイトル、デザート、および選択した砂漠の値を含むセルが示されています。")](images/image5.png#lightbox)
+ [ ![ このスクリーンショットは、右側のテーブルと、右側のデザートのタイトルを含むセルが、選択した砂漠の値と共に表示さ](images/image4.png)](images/image4.png#lightbox)れます。次のスクリーンショットでは、 [ ![ 右側の詳細画面のタイトルを含むセルと、選択した砂漠の値と共に、左側にテーブルが表示](images/image5.png)](images/image5.png#lightbox)されています。
 
-上の例のように、ルート要素をセクション内で使用して、入れ子になった新しい構成ページの読み込みをトリガーすることもできます。 このモードで使用すると、指定されたキャプションがセクション内に表示されるときに使用され、サブページのタイトルとしても使用されます。 (例:
+上の例のように、ルート要素をセクション内で使用して、入れ子になった新しい構成ページの読み込みをトリガーすることもできます。 このモードで使用すると、指定されたキャプションがセクション内に表示されるときに使用され、サブページのタイトルとしても使用されます。 次に例を示します。
 
 ```csharp
 var root = new RootElement ("Meals") {
@@ -134,7 +134,7 @@ var root = new RootElement ("Meals") {
 
 このサンプルでは、"デザート" セクションで "2" という値を RadioGroup に渡したため、ラジオグループによって "チョコレートケーキ" が選択されています。 これは、リストの3番目の項目 (ゼロインデックス) を選択することを意味します。
 
-Add メソッドを呼び出すか、 C# 4 つの初期化子構文を使用すると、セクションが追加されます。
+Add メソッドを呼び出すか、C# 4 の初期化子構文を使用すると、セクションが追加されます。
 挿入メソッドは、アニメーションを使用してセクションを挿入するために用意されています。
 
 RadioGroup の代わりにグループインスタンスを使用して RootElement を作成する場合、セクションに表示される RootElement の summary 値は、BooleanElements と同じキーを持つすべてのと CheckboxElements の累積数になります。キー値。
@@ -163,7 +163,7 @@ var section = new Section (header);
 
 #### <a name="handling-nsaction"></a>NSAction の処理
 
-MT.D は、コールバックを処理するためのデリゲートとして `NSAction` をサーフェイスします。
+MT.D は、 `NSAction` コールバックを処理するためのデリゲートとしてを使用します。
 たとえば、MT によって作成されたテーブルセルのタッチイベントを処理するとします。A. MT を使用して要素を作成する場合。次に示すように、単にコールバック関数を指定します。
 
 ```csharp
@@ -174,7 +174,7 @@ new Section () {
 
 #### <a name="retrieving-element-value"></a>要素の値を取得しています
 
-コールバックは、`Element.Value` プロパティと組み合わせて、他の要素で設定された値を取得できます。 次に例を示します。
+コールバックは、プロパティと組み合わせて、 `Element.Value` 他の要素で設定された値を取得できます。 次に例を示します。
 
 ```csharp
 var element = new EntryElement (task.Name, "Enter task description", task.Description);
@@ -190,9 +190,9 @@ var taskElement = new RootElement (task.Name) {
 
 次に示すように、このコードでは UI を作成します。 この例の完全なチュートリアルについては、 [ELEMENTS API チュートリアル](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)のチュートリアルを参照してください。
 
- [![](images/image6.png "Combined with the Element.Value property, the callback can retrieve the value set in other elements")](images/image6.png#lightbox)
+ [![また、コールバックは他の要素で設定された値を取得できます。値プロパティと組み合わせて使用します。](images/image6.png)](images/image6.png#lightbox)
 
-ユーザーが下部のテーブルセルを押すと、匿名関数のコードが実行され、`element` インスタンスから Visual Studio for Mac の**アプリケーション出力**パッドに値が書き込まれます。
+ユーザーが下部のテーブルセルを押すと、匿名関数のコードが実行され、 `element` インスタンスから Visual Studio for Mac の**アプリケーション出力**パッドに値が書き込まれます。
 
 ## <a name="built-in-elements"></a>組み込み要素
 
@@ -203,17 +203,17 @@ MT.D には、要素と呼ばれる多数の組み込みテーブルセルアイ
 
 ### <a name="working-with-element-values"></a>要素の値の操作
 
-ユーザー入力のキャプチャに使用される要素は、いつでも要素の現在の値を保持するパブリック `Value` プロパティを公開します。 ユーザーがアプリケーションを使用すると、自動的に更新されます。
+ユーザー入力のキャプチャに使用される要素は、いつ `Value` でも要素の現在の値を保持するパブリックプロパティを公開します。 ユーザーがアプリケーションを使用すると、自動的に更新されます。
 
 これは、Monotouch.dialog の一部であるすべての要素の動作ですが、ユーザーが作成した要素には必要ありません。
 
 ### <a name="string-element"></a>String 要素
 
-`StringElement` には、テーブルセルの左側にキャプションが表示され、セルの右側に文字列値が表示されます。
+は、 `StringElement` テーブルセルの左側にキャプションを表示し、セルの右側に文字列値を表示します。
 
- [![](images/image7.png "A StringElement shows a caption on the left side of a table cell and the string value on the right side of the cell")](images/image7.png#lightbox)
+ [![StringElement は、テーブルセルの左側にキャプションを、セルの右側に文字列値を表示します。](images/image7.png)](images/image7.png#lightbox)
 
-ボタンとして `StringElement` を使用するには、デリゲートを指定します。
+を `StringElement` ボタンとして使用するには、デリゲートを指定します。
 
 ```csharp
 new StringElement ("Click me", () => { 
@@ -221,129 +221,129 @@ new StringElement ("Click me", () => {
 });
 ```
 
- [![](images/image8.png "To use a StringElement as a button, provide a delegate")](images/image8.png#lightbox)
+ [![StringElement をボタンとして使用するには、デリゲートを指定します。](images/image8.png)](images/image8.png#lightbox)
 
 ### <a name="styled-string-element"></a>スタイルが指定した文字列要素
 
-`StyledStringElement` を使用すると、組み込みテーブルセルスタイルまたはカスタム書式設定を使用して文字列を表示できます。
+では、 `StyledStringElement` 組み込みのテーブルセルスタイルまたはカスタム書式設定を使用して文字列を表示できます。
 
- [![](images/image9.png "A StyledStringElement allows strings to be presented using either built-in table cell styles or with custom formatting")](images/image9.png#lightbox)
+ [![StyledStringElement を使用すると、組み込みのテーブルセルスタイルまたはカスタム書式設定を使用して文字列を表示できます。](images/image9.png)](images/image9.png#lightbox)
 
-`StyledStringElement` クラスは `StringElement`から派生しますが、開発者は、フォント、テキストの色、背景のセルの色、改行モード、表示する行数、およびアクセサリを表示するかどうかなど、いくつかのプロパティをカスタマイズできます。
+`StyledStringElement`クラスはから派生しますが、開発者は、 `StringElement` フォント、テキストの色、背景のセルの色、改行モード、表示する行数、アクセサリを表示するかどうかなど、いくつかのプロパティをカスタマイズできます。
 
 ### <a name="multiline-element"></a>複数行要素
 
- [![](images/image10.png "Multiline Element")](images/image10.png#lightbox)
+ [![複数行要素](images/image10.png)](images/image10.png#lightbox)
 
 ### <a name="entry-element"></a>Entry 要素
 
-名前が示すように `EntryElement`は、ユーザー入力を取得するために使用されます。 これは、文字が非表示になっている通常の文字列またはパスワードのいずれかをサポートしています。
+`EntryElement`名前が示すように、は、ユーザー入力を取得するために使用されます。 これは、文字が非表示になっている通常の文字列またはパスワードのいずれかをサポートしています。
 
- [![](images/image11.png "The EntryElement is used to get user input")](images/image11.png#lightbox)
+ [![EntryElement は、ユーザー入力を取得するために使用されます。](images/image11.png)](images/image11.png#lightbox)
 
 次の3つの値で初期化されます。
 
 - ユーザーに表示されるエントリのキャプション。
 - プレースホルダーテキスト (これは、ユーザーにヒントを提供するグレー表示のテキストです)。 
-- テキストの値。
+- テキストの値です。
 
 プレースホルダーと値には null を指定できます。 ただし、キャプションは必須です。
 
-任意の時点で、Value プロパティにアクセスすると、`EntryElement`の値を取得できます。
+任意の時点で、その値プロパティにアクセスすると、の値を取得でき `EntryElement` ます。
 
-さらに、`KeyboardType` プロパティは、作成時にデータ入力に必要なキーボードの種類のスタイルに設定できます。 これを使用すると、次に示すように、`UIKeyboardType` の値を使用してキーボードを構成できます。
+さらに、プロパティは、 `KeyboardType` 作成時にデータ入力に必要なキーボードの種類のスタイルに設定できます。 これは、次に示すの値を使用してキーボードを構成するために使用でき `UIKeyboardType` ます。
 
-- 数字
-- 電話番号
-- URL
-- 電子メール
+- 数値
+- Phone
+- url
+- Email
 
 ### <a name="boolean-element"></a>ブール型の要素
 
- [![](images/image12.png "Boolean Element")](images/image12.png#lightbox)
+ [![ブール型の要素](images/image12.png)](images/image12.png#lightbox)
 
 ### <a name="checkbox-element"></a>Checkbox 要素
 
- [![](images/image13.png "Checkbox Element")](images/image13.png#lightbox)
+ [![Checkbox 要素](images/image13.png)](images/image13.png#lightbox)
 
 ### <a name="radio-element"></a>Radio 要素
 
-`RadioElement` を使用するには、`RootElement`で `RadioGroup` が指定されている必要があります。
+では、 `RadioElement` でを指定する必要があり `RadioGroup` `RootElement` ます。
 
 ```csharp
 mtRoot = new RootElement ("Demos", new RadioGroup("MyGroup", 0));
 ```
 
- [![](images/image14.png "A RadioElement requires a RadioGroup to be specified in the RootElement")](images/image14.png#lightbox)
+ [![RadioElement を使用するには、RootElement に RadioGroup を指定する必要があります。](images/image14.png)](images/image14.png#lightbox)
 
- `RootElements` は、無線要素を調整するためにも使用されます。 `RadioElement` メンバーは、複数のセクションにまたがることができます (たとえば、リングトーンセレクターに似たものを実装し、システムの着信音からカスタムリングトーンを分離します)。 [概要] ビューには、現在選択されているラジオ要素が表示されます。 これを使用するには、次のように、グループコンストラクターを使用して `RootElement` を作成します。
+ `RootElements`は、無線要素を調整するためにも使用されます。 `RadioElement`メンバーは複数のセクションにまたがることができます (たとえば、リングトーンセレクターに似たようなものを実装し、システムの着信音からカスタムリングトーンを分離します)。 [概要] ビューには、現在選択されているラジオ要素が表示されます。 これを使用するには、次のように、グループコンストラクターを使用してを作成し `RootElement` ます。
 
 ```csharp
 var root = new RootElement ("Meals", new RadioGroup ("myGroup", 0));
 ```
 
-`RadioGroup` 内のグループの名前は、含んでいるページで選択されている値 (存在する場合) を表示するために使用されます。この場合の値は0で、この場合は最初に選択された項目のインデックスになります。
+内のグループの名前 `RadioGroup` は、含まれるページ (存在する場合) で選択されている値を表示するために使用されます。この場合の値は0で、この場合は最初に選択された項目のインデックスになります。
 
 ### <a name="badge-element"></a>バッジ要素
 
- [![](images/image15.png "Badge Element")](images/image15.png#lightbox)
+ [![バッジ要素](images/image15.png)](images/image15.png#lightbox)
 
 ### <a name="float-element"></a>Float 要素
 
- [![](images/image16.png "Float Element")](images/image16.png#lightbox)
+ [![Float 要素](images/image16.png)](images/image16.png#lightbox)
 
 ### <a name="activity-element"></a>Activity 要素
 
- [![](images/image17.png "Activity Element")](images/image17.png#lightbox)
+ [![Activity 要素](images/image17.png)](images/image17.png#lightbox)
 
 ### <a name="date-element"></a>Date 要素
 
- ![](images/image18.png "Date Element")
+ ![Date 要素](images/image18.png)
 
 DateElement に対応するセルが選択されると、次のような日付の選択が表示されます。
 
- [![](images/image19.png "When the cell corresponding to the DateElement is selected, a date picker is presented as shown")](images/image19.png#lightbox)
+ [![DateElement に対応するセルが選択されると、日付の選択が表示されます。](images/image19.png)](images/image19.png#lightbox)
 
 ### <a name="time-element"></a>Time 要素
 
- [![](images/image20.png "Time Element")](images/image20.png#lightbox)
+ [![Time 要素](images/image20.png)](images/image20.png#lightbox)
 
 TimeElement に対応するセルが選択されると、次のようにタイムピッカーが表示されます。
 
- [![](images/image21.png "When the cell corresponding to the TimeElement is selected, a time picker is presented as shown")](images/image21.png#lightbox)
+ [![TimeElement に対応するセルが選択されると、タイムピッカーが表示されます。](images/image21.png)](images/image21.png#lightbox)
 
 ### <a name="datetime-element"></a>DateTime 要素
 
- [![](images/image22.png "DateTime Element")](images/image22.png#lightbox)
+ [![DateTime 要素](images/image22.png)](images/image22.png#lightbox)
 
 DateTimeElement に対応するセルが選択されると、次のように datetime ピッカーが表示されます。
 
- [![](images/image23.png "When the cell corresponding to the DateTimeElement is selected, a datetime picker is presented as shown")](images/image23.png#lightbox)
+ [![DateTimeElement に対応するセルが選択されると、datetime ピッカーが表示されます。](images/image23.png)](images/image23.png#lightbox)
 
 ### <a name="html-element"></a>HTML 要素
 
- [![](images/image24.png "HTML Element")](images/image24.png#lightbox)
+ [![HTML 要素](images/image24.png)](images/image24.png#lightbox)
 
-`HTMLElement` には、テーブルセルの `Caption` プロパティの値が表示されます。 選択した要素に割り当てられている `Url` は、次に示すように `UIWebView` コントロールに読み込まれます。
+は、 `HTMLElement` テーブルセルにそのプロパティの値を表示し `Caption` ます。 選択されている場合、 `Url` 要素に割り当てられたは次のようにコントロールに読み込まれ `UIWebView` ます。
 
- [![](images/image25.png "Whe selected, the Url assigned to the element is loaded in a UIWebView control as shown below")](images/image25.png#lightbox)
+ [![選択されている場合、要素に割り当てられた Url は、次に示すように UIWebView コントロールに読み込まれます。](images/image25.png)](images/image25.png#lightbox)
 
 ### <a name="message-element"></a>Message 要素
 
- [![](images/image26.png "Message Element")](images/image26.png#lightbox)
+ [![Message 要素](images/image26.png)](images/image26.png#lightbox)
 
 ### <a name="load-more-element"></a>さらに要素を読み込む
 
 この要素を使用して、ユーザーがリスト内の項目をさらに読み込むことができるようにします。 フォントとテキストの色だけでなく、通常のキャプションや読み込みキャプションをカスタマイズすることもできます。
-`UIActivity` インジケーターはアニメーション化を開始し、ユーザーがセルをタップすると読み込みキャプションが表示されます。その後、コンストラクターに渡された `NSAction` が実行されます。 `NSAction` のコードが完了すると、`UIActivity` インジケーターがアニメーションを停止し、通常のキャプションが再び表示されます。
+`UIActivity`インジケーターはアニメーション化を開始し、ユーザーがセルをタップすると読み込みキャプションが表示され、コンストラクターに渡されたが実行され `NSAction` ます。 のコード `NSAction` が完了すると、インジケーターは `UIActivity` アニメーションを停止し、通常のキャプションが再び表示されます。
 
 ### <a name="uiview-element"></a>UIView 要素
 
-また、`UIViewElement`を使用してカスタム `UIView` を表示することもできます。
+また、カスタムはを `UIView` 使用して表示でき `UIViewElement` ます。
 
 ### <a name="owner-drawn-element"></a>オーナー描画要素
 
-この要素は抽象クラスであるため、サブクラス化する必要があります。 `Draw(RectangleF bounds, CGContext context, UIView view)` 要素の高さを返す必要がある `Height(RectangleF bounds)` メソッドをオーバーライドする必要があります。また、コンテキストとビューのパラメーターを使用して、特定の境界内でカスタマイズされたすべての描画を行う必要があります。 この要素は、`UIView`をサブクラス化して返されるセルに配置し、2つの単純なオーバーライドを実装するだけで済みます。 サンプルアプリでは、`DemoOwnerDrawnElement.cs` ファイルにより適切なサンプル実装を確認できます。
+この要素は抽象クラスであるため、サブクラス化する必要があります。 要素の高さを返すメソッドをオーバーライドする必要があります `Height(RectangleF bounds)` `Draw(RectangleF bounds, CGContext context, UIView view)` 。また、コンテキストとビューのパラメーターを使用して、特定の境界内でカスタマイズされたすべての描画を行う必要があります。 この要素は、をサブクラス化し、 `UIView` 返されるセルに配置して、2つの単純なオーバーライドを実装するだけで済みます。 ファイルのサンプルアプリで、より適切なサンプル実装を確認でき `DemoOwnerDrawnElement.cs` ます。
 
 クラスを実装する非常に簡単な例を次に示します。
 
@@ -375,15 +375,15 @@ public class SampleOwnerDrawnElement : OwnerDrawnElement
 
 ### <a name="json-element"></a>JSON 要素
 
-`JsonElement` は、ローカルまたはリモートの url から入れ子になった子の内容を読み込むために `RootElement` を拡張する `RootElement` のサブクラスです。
+は、 `JsonElement` `RootElement` を拡張して、入れ子になった `RootElement` 子の内容をローカルまたはリモートの url から読み込むことができるようにするのサブクラスです。
 
-`JsonElement` は、2つの形式でインスタンス化できる `RootElement` です。 1つのバージョンでは、必要に応じてコンテンツを読み込む `RootElement` が作成されます。 これらは、末尾に追加の引数を受け取る `JsonElement` コンストラクターを使用して作成されます。これは、コンテンツの読み込み元の url です。
+は、 `JsonElement` `RootElement` 2 つの形式でインスタンス化できるです。 1つのバージョン `RootElement` では、必要に応じてコンテンツを読み込むが作成されます。 これらは、末尾に追加の引数を受け取るコンストラクターを使用して作成されます。これは、 `JsonElement` コンテンツの読み込み元の url です。
 
 ```csharp
 var je = new JsonElement ("Dynamic Data", "https://tirania.org/tmp/demo.json");
 ```
 
-もう1つの形式では、ローカルファイルまたは既に解析済みの既存の `System.Json.JsonObject` からデータが作成されます。
+もう1つの形式では、ローカルファイルまたは既に解析済みの既存のデータからデータが作成され `System.Json.JsonObject` ます。
 
 ```csharp
 var je = JsonElement.FromFile ("json.sample");
@@ -397,17 +397,17 @@ MT で JSON を使用する方法の詳細については、「」を参照し�
 
 ### <a name="pull-to-refresh-support"></a>プルから更新への対応
 
- *プルから* *更新*は、 *Tweetie2*アプリで最初に見られた視覚効果です。多くのアプリケーションで一般的な効果がありました。
+ *プルから**更新*は、 *Tweetie2*アプリで最初に見られた視覚効果です。多くのアプリケーションで一般的な効果がありました。
 
-自動的なプル更新サポートをダイアログに追加するには、次の2つの操作を行う必要があります。ユーザーがデータをプルしたときに通知されるようにイベントハンドラーをフックし、データが読み込まれたときに、既定の状態に戻るように `DialogViewController` に通知します。
+自動的な自動更新サポートをダイアログに追加するには、次の2つの操作を実行するだけです。ユーザーがデータを取得したときに通知されるようにイベントハンドラーをフックし、データが読み込まれたときにに通知し `DialogViewController` て、既定の状態に戻ります。
 
-通知をフックするのは簡単です。次のように、`DialogViewController`の `RefreshRequested` イベントに接続するだけです。
+通知をフックするのは簡単です。次のように、でイベントに接続するだけ `RefreshRequested` `DialogViewController` です。
 
 ```csharp
 dvc.RefreshRequested += OnUserRequestedRefresh;
 ```
 
-次に、メソッド `OnUserRequestedRefresh`で、データの読み込みをキューに入れたり、データをネットワークから要求したり、データを計算するためにスレッドをスピンしたりします。 データが読み込まれたら、新しいデータが含まれていることを `DialogViewController` に通知し、ビューを既定の状態に復元するには、`ReloadComplete`を呼び出します。
+次に、メソッドで `OnUserRequestedRefresh` 、いくつかのデータの読み込みをキューに入れたり、データをネットワークから要求したり、スレッドをスピンしてデータを計算したりします。 データが読み込まれたら、 `DialogViewController` 新しいデータが存在することを通知し、ビューを既定の状態に復元するには、次のようにを呼び出し `ReloadComplete` ます。
 
 ```csharp
 dvc.ReloadComplete ();
@@ -415,9 +415,9 @@ dvc.ReloadComplete ();
 
 ### <a name="search-support"></a>サポートの検索
 
-検索をサポートするには、`DialogViewController`の `EnableSearch` プロパティを設定します。 また、`SearchPlaceholder` プロパティを設定して、検索バーでウォーターマークテキストとして使用することもできます。
+検索をサポートするには、でプロパティを設定し `EnableSearch` `DialogViewController` ます。 `SearchPlaceholder`検索バーで透かしテキストとして使用するプロパティを設定することもできます。
 
-検索では、ユーザーの入力に応じてビューの内容が変更されます。 表示されているフィールドを検索し、ユーザーに表示します。 `DialogViewController` は、結果に対して新しいフィルター操作をプログラムで開始、終了、またはトリガーする3つのメソッドを公開します。 これらのメソッドを次に示します。
+検索では、ユーザーの入力に応じてビューの内容が変更されます。 表示されているフィールドを検索し、ユーザーに表示します。 は、 `DialogViewController` 結果に対して新しいフィルター操作をプログラムで開始、終了、またはトリガーする3つのメソッドを公開します。 これらのメソッドを次に示します。
 
 - `StartSearch`
 - `FinishSearch`
@@ -431,9 +431,9 @@ Monotouch.dialog には、 [TweetStation](https://github.com/migueldeicaza/Tweet
 
 また、発信ネットワーク接続の数も制限されます。
 
-イメージローダーは `ImageLoader` クラスに実装されています。 `DefaultRequestImage` メソッドを呼び出すために必要なのは、読み込むイメージの Uri と、イメージが呼び出されたときに呼び出される `IImageUpdated` インターフェイスのインスタンスを指定することだけです。が読み込まれました。
+イメージローダーはクラスに実装されています `ImageLoader` 。メソッドを呼び出すだけで、 `DefaultRequestImage` 読み込むイメージの Uri と、 `IImageUpdated` イメージが読み込まれたときに呼び出されるインターフェイスのインスタンスを指定することが必要になります。
 
-たとえば、次のコードでは、Url から `BadgeElement`にイメージを読み込みます。
+たとえば、次のコードでは、Url からにイメージを読み込み `BadgeElement` ます。
 
 ```csharp
 string uriString = "http://some-server.com/some image url";
@@ -449,7 +449,7 @@ ImageLoader クラスは、メモリに現在キャッシュされているす�
 
 ## <a name="using-linq-to-create-element-hierarchy"></a>LINQ を使用して要素階層を作成する
 
-LINQ とC#の初期化構文の使い方により、linq を使用して要素階層を作成できます。 たとえば、次のコードでは、いくつかの文字列配列から画面を作成し、各 `StringElement`に渡される匿名関数によるセル選択を処理します。
+LINQ と C# の初期化構文を使用することで、LINQ を使用して要素階層を作成できます。 たとえば、次のコードでは、いくつかの文字列配列から画面を作成し、それぞれに渡される匿名関数によってセルの選択を処理し `StringElement` ます。
 
 ```csharp
 var rootElement = new RootElement ("LINQ root element") {
@@ -491,14 +491,14 @@ void Selected (DialogViewController dvc, UITableView tableView, NSIndexPath path
 bool Matches (string text);
 ```
 
-要素のサイズが可変の場合は、1つのメソッドを含む `IElementSizing` インターフェイスを実装する必要があります。
+要素のサイズが可変の場合は、 `IElementSizing` 1 つのメソッドを含むインターフェイスを実装する必要があります。
 
 ```csharp
 // Returns the height for the cell at indexPath.Section, indexPath.Row
 float GetHeight (UITableView tableView, NSIndexPath indexPath);
 ```
 
-`base.GetCell(tv)` を呼び出し、返されたセルをカスタマイズすることによって `GetCell` メソッドを実装する予定がある場合は、次のように、`CellKey` プロパティをオーバーライドして、要素に対して一意のキーを返す必要があります。
+を呼び出し、返されたセルをカスタマイズすることによってメソッドを実装する予定がある場合は、次のように、プロパティをオーバーライドして、 `GetCell` `base.GetCell(tv)` `CellKey` 要素に対して一意のキーを返す必要があります。
 
 ```csharp
 static NSString MyKey = new NSString ("MyKey");
@@ -509,15 +509,15 @@ protected override NSString CellKey {
 }
 ```
 
-これはほとんどの要素に対して機能しますが、さまざまなレンダリングシナリオで独自のキーセットを使用するため、`StringElement` と `StyledStringElement` では使用できません。 これらのクラスでコードをレプリケートする必要があります。
+これはほとんどの要素に対して機能しますが、とでは使用できません `StringElement` 。また、 `StyledStringElement` さまざまなレンダリングシナリオで独自のキーセットを使用します。 これらのクラスでコードをレプリケートする必要があります。
 
 ### <a name="dialogviewcontrollers-dvcs"></a>コントロールビューコントローラー (DVCs)
 
-リフレクションと Elements API は、どちらも同じ `DialogViewController`を使用します。 場合によっては、ビューの外観をカスタマイズしたり、Ui の基本的な作成を超える `UITableViewController` の一部の機能を使用したりすることができます。
+リフレクションと Elements API は、どちらも同じを使用し `DialogViewController` ます。 場合によっては、ビューの外観をカスタマイズしたり、 `UITableViewController` ui の基本的な作成を超えるの機能を使用したりすることが必要になる場合があります。
 
-`DialogViewController` は `UITableViewController` の単なるサブクラスであり、`UITableViewController`をカスタマイズするのと同じ方法でカスタマイズできます。
+はの `DialogViewController` サブクラスであるだけ `UITableViewController` で、をカスタマイズするのと同じ方法でカスタマイズでき `UITableViewController` ます。
 
-たとえば、`Grouped` または `Plain`のいずれかになるようにリストスタイルを変更する場合は、次のように、コントローラーの作成時にプロパティを変更することによって、この値を設定できます。
+たとえば、リストスタイルをまたはのいずれかに変更する場合は、 `Grouped` `Plain` コントローラーを作成するときにプロパティを変更することによって、次のようにこの値を設定できます。
 
 ```csharp
 var myController = new DialogViewController (root, true) {
@@ -525,7 +525,7 @@ var myController = new DialogViewController (root, true) {
 }
 ```
 
-背景を設定するなど、`DialogViewController`の高度なカスタマイズを行うには、次の例に示すように、それをサブクラス化し、適切なメソッドをオーバーライドします。
+の背景を設定するなど、の高度なカスタマイズについては、 `DialogViewController` 次の例に示すように、それをサブクラス化し、適切なメソッドをオーバーライドします。
 
 ```csharp
 class SpiffyDialogViewController : DialogViewController {
@@ -547,25 +547,25 @@ class SpiffyDialogViewController : DialogViewController {
 }
 ```
 
-別のカスタマイズポイントは、`DialogViewController`の次の仮想メソッドです。
+別のカスタマイズポイントは、の次の仮想メソッドです `DialogViewController` 。
 
 ```csharp
 public override Source CreateSizingSource (bool unevenRows)
 ```
 
-このメソッドは、セルが均等にサイズ設定されている場合は `DialogViewController.Source` のサブクラスを返し、セルが不均一である場合は `DialogViewController.SizingSource` のサブクラスを返します。
+このメソッドは、セルが均等にサイズ設定されている場合はのサブクラスを返し、 `DialogViewController.Source` セルが不均一である場合はのサブクラスを返し `DialogViewController.SizingSource` ます。
 
-このオーバーライドを使用して、`UITableViewSource` メソッドのいずれかをキャプチャできます。 たとえば、 [TweetStation](https://github.com/migueldeicaza/TweetStation)はこれを使用して、ユーザーが一番上にスクロールした時間を追跡し、それに応じて未読のツイートの数を更新します。
+このオーバーライドを使用すると、任意のメソッドをキャプチャでき `UITableViewSource` ます。 たとえば、 [TweetStation](https://github.com/migueldeicaza/TweetStation)はこれを使用して、ユーザーが一番上にスクロールした時間を追跡し、それに応じて未読のツイートの数を更新します。
 
 ## <a name="validation"></a>検証
 
 Web ページおよびデスクトップアプリケーションに適したモデルは、iPhone の相互作用モデルに直接マップされないため、要素は検証自体を提供しません。
 
-データの検証を行う場合は、ユーザーが入力されたデータを使用してアクションをトリガーするときに、この操作を行う必要があります。 たとえば、上部のツールバーの **[完了]** または **[次へ**] ボタン、または次のステージに進むためのボタンとして使用される `StringElement` があります。
+データの検証を行う場合は、ユーザーが入力されたデータを使用してアクションをトリガーするときに、この操作を行う必要があります。 たとえば、上部のツールバーの [**完了**] または **[次へ**] ボタン、または `StringElement` 次のステージに進むボタンとして使用されているものがあります。
 
 ここでは、基本的な入力検証を実行し、サーバーとのユーザー/パスワードの組み合わせの有効性を確認するなど、より複雑な検証を実行します。
 
-ユーザーにエラーを通知する方法は、アプリケーション固有です。 `UIAlertView` をポップアップ表示したり、ヒントを表示したりすることができます。
+ユーザーにエラーを通知する方法は、アプリケーション固有です。 ポップアップを `UIAlertView` 表示したり、ヒントを表示したりできます。
 
 ## <a name="summary"></a>まとめ
 

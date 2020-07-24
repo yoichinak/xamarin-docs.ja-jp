@@ -10,12 +10,12 @@ ms.date: 02/08/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7c2a63c40d1006c7d83c9dde871e17d4b194bdca
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: cce5b0fc9c3d1d04c20b1be242197e3bc9e4f901
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84129715"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929338"
 ---
 # <a name="xamarinforms-and-azure-cognitive-services-introduction"></a>Xamarin.Formsおよび Azure Cognitive Services の概要
 
@@ -42,17 +42,17 @@ _Microsoft Cognitive Services は、顔認識、音声認識、言語の理解�
 
 は、 `TodoListPage` アプリケーションの起動時に表示されます。 このページには、ローカルデータベースに格納されているタスクの一覧が表示され、ユーザーは新しいタスクを作成したり、アプリケーションを評価したりすることができます。
 
-![](introduction-images/sample-application-1.png "TodoListPage")
+![TodoListPage](introduction-images/sample-application-1.png)
 
 新しい項目を作成するには、[] ボタンをクリックします。このボタンをクリックすると *+* 、に移動し `TodoItemPage` ます。 このページには、タスクを選択して移動することもできます。
 
-![](introduction-images/sample-application-2.png "TodoItemPage")
+![TodoItemPage](introduction-images/sample-application-2.png)
 
 では、 `TodoItemPage` タスクの作成、編集、スペルチェック、翻訳、保存、および削除を行うことができます。 音声認識は、タスクを作成または編集するために使用できます。 これを実現するには、マイクボタンを押して録音を開始し、もう一度同じボタンを押して記録を停止します。これにより、記録が Bing Speech 認識 API に送信されます。
 
 の [smilies] ボタンをクリックすると、 `TodoListPage` `RateAppPage` 顔式のイメージに対して感情認識を実行するために使用されるに移動します。
 
-![](introduction-images/sample-application-3.png "RateAppPage")
+![RateAppPage](introduction-images/sample-application-3.png)
 
 を `RateAppPage` 使用すると、ユーザーは顔の写真を撮ることができます。これは、返された感情が表示された状態で Face API に送信されます。
 
@@ -60,13 +60,13 @@ _Microsoft Cognitive Services は、顔認識、音声認識、言語の理解�
 
 サンプルアプリケーションの共有コードプロジェクトは、次の5つの主要なフォルダーで構成されています。
 
-|フォルダー|目的|
+|Folder|目的|
 |--- |--- |
 |モデル|アプリケーションのデータモデルクラスが含まれています。 これには、 `TodoItem` アプリケーションによって使用される1つのデータ項目をモデル化するクラスが含まれます。 このフォルダーには、さまざまな Microsoft 認知サービス Api から返された JSON 応答のモデル化に使用されるクラスも含まれています。|
 |リポジトリ|`ITodoItemRepository` `TodoItemRepository` データベース操作を実行するために使用されるインターフェイスとクラスが含まれています。|
 |サービス|さまざまな Microsoft 認知サービス Api にアクセスするために使用されるインターフェイスとクラス、およびプラットフォームプロジェクトでインターフェイスを実装するクラスを検索するためにクラスによって使用されるインターフェイスが含まれてい `DependencyService` ます。|
 |Utils|クラスを含み `Timer` ます。このクラスは、 `AuthenticationService` 9 分ごとに JWT アクセストークンを更新するためにクラスによって使用されます。|
-|ビュー|アプリケーションのページが含まれています。|
+|Views|アプリケーションのページが含まれています。|
 
 共有コードプロジェクトには、いくつかの重要なファイルも含まれています。
 
@@ -86,7 +86,7 @@ _Microsoft Cognitive Services は、顔認識、音声認識、言語の理解�
 
 また、これらの NuGet パッケージでは、独自の依存関係もインストールされます。
 
-### <a name="model-the-data"></a>データのモデル化
+### <a name="model-the-data"></a>データをモデリングする
 
 このサンプルアプリケーションでは、クラスを使用して、ローカルの SQLite データベースに表示され、格納されて `TodoItem` いるデータをモデル化します。 次に示すのは、`TodoItem` クラスのコード例です。
 

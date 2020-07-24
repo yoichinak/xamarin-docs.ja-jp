@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: ca6ccce934b32fa0d7e48cd8f295d9acefe6e121
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: aa9d946f295b46a3aa2d9559d28907d9a30f184b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031509"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938971"
 ---
 # <a name="search-and-home-screen-widget-enhancements-in-ios-10"></a>IOS 10 での検索とホーム画面のウィジェットの機能強化
 
@@ -24,7 +24,7 @@ Apple では、ウィジェットシステムにいくつかの機能強化が�
 
 ウィジェットは高度なカスタマイズが可能であり、テキスト、画像、ボタンなどの UI 要素を含めることができます。さらに、開発者はウィジェットのレイアウトをカスタマイズすることもできます。
 
-[![](widgets-images/widgets01.png "Example widgets")](widgets-images/widgets01.png#lightbox)
+[![ウィジェットの例](widgets-images/widgets01.png)](widgets-images/widgets01.png#lightbox)
 
 ユーザーはアプリのウィジェットを表示して操作できる主な場所が2つあります。
 
@@ -50,14 +50,14 @@ Apple では、ウィジェットシステムにいくつかの機能強化が�
 
 ## <a name="working-with-vibrancy"></a>Vibrancy の操作
 
-Vibrancy を使うと、ウィジェットの光源に表示されるときにウィジェットのテキストが読みやすくなり、(システムによって提供される) ぼやけた背景が保証されます。 IOS 10 より前の開発者は、ウィジェットの vibrancy に[NotificationCenterVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1613917-notificationcentervibrancyeffect)を使用します。 (例:
+Vibrancy を使うと、ウィジェットの光源に表示されるときにウィジェットのテキストが読みやすくなり、(システムによって提供される) ぼやけた背景が保証されます。 IOS 10 より前の開発者は、ウィジェットの vibrancy に[NotificationCenterVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1613917-notificationcentervibrancyeffect)を使用します。 次に例を示します。
 
 ```csharp
 // DEPRECATED: Get Widget Vibrancy Effect
 var vibrancy = UIVibrancyEffect.CreateForNotificationCenter ();
 ```
 
-これは iOS 10 で非推奨とされており、 [WidgetPrimaryVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1771278-widgetprimaryvibrancyeffect)または[WidgetSecondaryVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1771277-widgetsecondaryvibrancyeffect)のいずれかで置き換える必要があります。 (例:
+これは iOS 10 で非推奨とされており、 [WidgetPrimaryVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1771278-widgetprimaryvibrancyeffect)または[WidgetSecondaryVibrancyEffect](https://developer.apple.com/reference/uikit/uivibrancyeffect/1771277-widgetsecondaryvibrancyeffect)のいずれかで置き換える必要があります。 次に例を示します。
 
 ```csharp
 // Get Primary Widget Vibrancy Effect

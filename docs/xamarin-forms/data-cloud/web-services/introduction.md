@@ -10,12 +10,12 @@ ms.date: 02/28/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d714b4c9d598d8cca26ae992abf3f15df703d11b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: cd9815c6448efae0bb0af982c8807c47263ae13e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139179"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938210"
 ---
 # <a name="xamarinforms-web-services-introduction"></a>Xamarin.FormsWeb サービスの概要
 
@@ -34,8 +34,8 @@ _このトピックでは、 Xamarin.Forms さまざまな web サービスと�
 
 アプリケーションが起動すると、web サービスから取得したすべてのタスクを一覧表示するページが表示され、ユーザーは新しいタスクを作成できます。 タスクをクリックすると、アプリケーションが2番目のページに移動します。このページでは、タスクを編集、保存、削除、および読み上げることができます。 最終的なアプリケーションは、次のとおりです。
 
-![](introduction-images/app-example-1.png "Todo application - first page")
-![](introduction-images/app-example-2.png "Todo application - second page")
+![Todo アプリケーション-最初 ](introduction-images/app-example-1.png)
+ ![ のページ todo アプリケーション-2 ページ](introduction-images/app-example-2.png)
 
 このガイドの各トピックでは、特定の種類の web サービスバックエンドを示す、*別*のバージョンのアプリケーションへのダウンロードリンクを提供します。 各 web サービススタイルに関連するページで、関連するサンプルコードをダウンロードします。
 
@@ -43,11 +43,11 @@ _このトピックでは、 Xamarin.Forms さまざまな web サービスと�
 
 各サンプルアプリケーションの共有コードプロジェクトは、次の3つの主要なフォルダーで構成されています。
 
-|フォルダー|目的|
+|Folder|目的|
 |--- |--- |
 |Data|データ項目を管理し、web サービスと通信するために使用されるクラスとインターフェイスが含まれています。 これには、少なくともクラスが含まれ `TodoItemManager` ます。これは、 `App` web サービス操作を呼び出すためにクラスのプロパティを介して公開されます。|
 |モデル|アプリケーションのデータモデルクラスが含まれています。 少なくとも、 `TodoItem` アプリケーションによって使用される1つのデータ項目をモデル化するクラスが含まれています。 このフォルダーには、ユーザーデータのモデル化に使用する追加のクラスを含めることもできます。|
-|ビュー|アプリケーションのページが含まれています。 これは通常、 `TodoListPage` クラスと `TodoItemPage` クラス、および認証のために使用される追加のクラスで構成されます。|
+|Views|アプリケーションのページが含まれています。 これは通常、 `TodoListPage` クラスと `TodoItemPage` クラス、および認証のために使用される追加のクラスで構成されます。|
 
 各アプリケーションの共有コードプロジェクトも、いくつかの重要なファイルで構成されています。
 
@@ -66,7 +66,7 @@ _このトピックでは、 Xamarin.Forms さまざまな web サービスと�
 
 また、一部のサンプルアプリケーションには、ユーザー認証プロセスを管理するために使用される追加のページが含まれています。
 
-### <a name="model-the-data"></a>データのモデル化
+### <a name="model-the-data"></a>データをモデリングする
 
 各サンプルアプリケーションでは、クラスを使用して、 `TodoItem` ストレージ用に web サービスに送信されるデータをモデル化します。 次に示すのは、`TodoItem` クラスのコード例です。
 

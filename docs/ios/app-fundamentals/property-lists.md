@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 6c2b5869f647f65b932b6ec92f359f8a79402c8f
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 46954f989f4bafddf3f57d360096871b4a0f0b22
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569297"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939946"
 ---
 # <a name="working-with-property-lists-in-xamarinios"></a>Xamarin のプロパティリストの操作
 
@@ -24,7 +24,7 @@ Visual Studio for Mac には、アプリのプロパティや機能を簡単に�
 
 Information プロパティリスト ( `Info.plist` ) は、アプリケーションの構成に関する情報をシステムに提供する必須の iOS ファイルです。 Visual Studio for Mac のカスタム `Info.plist` エディター機能には、エディターウィンドウの左下にあるタブで制御される3つのパネルがあります。
 
- [![](property-lists-images/tabs.png "The Info.plist editor tabs at the bottom left of the editor window")](property-lists-images/tabs.png#lightbox)
+ [![エディターウィンドウの左下にある [情報エディター] タブ](property-lists-images/tabs.png)](property-lists-images/tabs.png#lightbox)
 
 各パネルでは、次に示すように、さまざまなプロパティを制御します。
 
@@ -54,11 +54,11 @@ Visual Studio for Mac は、アプリケーションの共通エントリを編�
 このセクションには、アプリケーションについて説明する重要な情報が含まれています。
 ここに格納されている**識別子**は、iTunes Connect (app Store アプリの場合) および IOS プロビジョニングポータルのアプリ id リストと、開発および配布証明書に入力されたバンドル id と一致する必要があります。
 
- [![](property-lists-images/image24.png "iOS Application Target")](property-lists-images/image24.png#lightbox)
+ [![iOS アプリケーションのターゲット](property-lists-images/image24.png)](property-lists-images/image24.png#lightbox)
 
-### <a name="device-deployment"></a>デバイスの展開
+### <a name="device-deployment"></a>デバイスのデプロイ
 
- [![](property-lists-images/deployment.png "Device Deployment")](property-lists-images/deployment.png#lightbox)
+ [![デバイスのデプロイ](property-lists-images/deployment.png)](property-lists-images/deployment.png#lightbox)
 
 上の [**アプリケーションターゲット**] セクションの [**デバイス**] ドロップダウンで選択した内容に応じて、[デバイスの**展開**情報] セクションが選択的に表示されます。 **メインのインターフェイス**ドロップダウンは、ストーリーボード駆動型アプリケーションでは**mainstoryboard.storyboard ファイル**に設定されます。 ユーザーインターフェイスがコードで完全に記述されている場合は、空白のままにすることができます。
 
@@ -70,7 +70,7 @@ Visual Studio for Mac は、アプリケーションの共通エントリを編�
 
 [**ステータスバーのスタイル**] セクションは、アプリケーションを編集するためのグラフィカルインターフェイスです `UIStatusBarStyle` 。
 
- [![](property-lists-images/status.png "Status Bar Styles")](property-lists-images/status.png#lightbox)
+ [![ステータスバーのスタイル](property-lists-images/status.png)](property-lists-images/status.png#lightbox)
 
  <a name="Icons"></a>
 
@@ -82,11 +82,11 @@ Visual Studio for Mac は、アプリケーションの共通エントリを編�
 
 には、 `Info.plist` マップの統合モードとバックグラウンド処理モードを指定するための特殊なセクションが含まれています。 サポートするオプションを選択すると、必要なプロパティがアプリケーションに追加されます。
 
- [![](property-lists-images/maps.png "Maps Integration")](property-lists-images/maps.png#lightbox)
+ [![マップの統合](property-lists-images/maps.png)](property-lists-images/maps.png#lightbox)
 
 マップの操作の詳細については、Xamarin [IOS maps](~/ios/user-interface/controls/ios-maps/index.md)ガイドを参照してください。
 
- [![](property-lists-images/bging.png "Background Modes")](property-lists-images/bging.png#lightbox)
+ [![バックグラウンドモード](property-lists-images/bging.png)](property-lists-images/bging.png#lightbox)
 
 バックグラウンドモードの詳細については、「iOS 用 Xamarin[バックグラウンド処理](~/ios/app-fundamentals/backgrounding/introduction-to-backgrounding-in-ios.md)」ガイドを参照してください。
 
@@ -94,7 +94,7 @@ Visual Studio for Mac は、アプリケーションの共通エントリを編�
 
 [詳細] パネルでは、アプリケーションがサポートするドキュメントの種類と URL スキームを制御します。
 
- [![](property-lists-images/image34.png "Advanced Panel")](property-lists-images/image34.png#lightbox)
+ [![[詳細設定] パネル](property-lists-images/image34.png)](property-lists-images/image34.png#lightbox)
 
  <a name="Document_Types"></a>
 
@@ -108,7 +108,7 @@ Visual Studio for Mac は、アプリケーションの共通エントリを編�
 
 場合によっては、アプリケーションでカスタムファイルの種類を開くことがサポートされている必要があります。 たとえば、カスタムの拡張機能を使用してイメージファイルを開くことができ*ます。* カスタムファイルの種類を指定するには、キーを使用して、カスタムの UTI 型識別子を作成し `UIExportedTypeDeclarations` ます。 次のスクリーンショットは、UTI 拡張機能のカスタムの作成方法を示しています。
 
- [![](property-lists-images/uti.png "UTIs Editor")](property-lists-images/uti.png#lightbox)
+ [![Uti エディター](property-lists-images/uti.png)](property-lists-images/uti.png#lightbox)
 
 エクスポートされた型 Uti は、アプリに固有のカスタム Uti を指定するのと同様に、インポートされる*型 uti* ( `UIImportedTypeDeclarations` キー) はサポートされているものの、アプリケーションで所有されていないカスタム型を指定します。
 
@@ -118,7 +118,7 @@ Visual Studio for Mac は、アプリケーションの共通エントリを編�
 
 Url の最初の部分は、URL スキーム名 (プロトコルとも呼ばれます) です。 たとえば、 `http://` と `https://` は一般的な URL スキームです。 アプリケーションのカスタム URL スキームを作成することもできます。 カスタム URL スキームは、他のアプリケーションとの間で送受信されるデータのやり取りに使用されます。 次のスクリーンショットは、という新しいカスタム URL スキームを作成する方法を示してい `monkeys://` ます。
 
- [![](property-lists-images/url.png "Custom URLs")](property-lists-images/url.png#lightbox)
+ [![カスタム URL](property-lists-images/url.png)](property-lists-images/url.png#lightbox)
 
 カスタム URL スキームの実装の詳細については、[このガイドの「Apple のカスタム Url スキームの実装」](https://developer.apple.com/library/ios/documentation/iPhone/Conceptual/iPhoneOSProgrammingGuide/AdvancedAppTricks/AdvancedAppTricks.html)を参照してください。
 
@@ -126,15 +126,15 @@ Url の最初の部分は、URL スキーム名 (プロトコルとも呼ばれ�
 
 ファイルの [**ソース**] タブでは、 `Info.plist` カスタム値の追加または編集を行うことができます。 Visual Studio for Mac では、最も一般的なプロパティの一覧が表示されます。
 
- [![](property-lists-images/image31.png "Adding a new property from a dropdown")](property-lists-images/image31.png#lightbox)
+ [![ドロップダウンからの新しいプロパティの追加](property-lists-images/image31.png)](property-lists-images/image31.png#lightbox)
 
 既知のプロパティについては、次のスクリーンショットに示すように、Visual Studio for Mac に有効な値の一覧が表示されます。
 
- [![](property-lists-images/image32.png "Select a value from a know value list")](property-lists-images/image32.png#lightbox)
+ [![[既知の値] の一覧から値を選択します。](property-lists-images/image32.png)](property-lists-images/image32.png#lightbox)
 
 次に示すように、Visual Studio for Mac もプロパティの型を検出します。
 
- [![](property-lists-images/image33.png "The available property types")](property-lists-images/image33.png#lightbox)
+ [![使用可能なプロパティの型](property-lists-images/image33.png)](property-lists-images/image33.png#lightbox)
 
 オプションのプロパティの詳細については、Apple の[アプリ関連リソース](https://developer.apple.com/library/ios/#DOCUMENTATION/iPhone/Conceptual/iPhoneOSProgrammingGuide/App-RelatedResources/App-RelatedResources.html)のリンクを確認してください。
 

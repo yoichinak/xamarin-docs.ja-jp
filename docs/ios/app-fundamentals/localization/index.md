@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 04/28/2017
-ms.openlocfilehash: c42b41f9b853fba58ef70b8bd2f8ab20a3369647
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 1f5f9e13607d672a6fdec5ed8fb116466973a260
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569248"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938035"
 ---
 # <a name="localization-in-xamarinios"></a>Xamarin. iOS でのローカライズ
 
@@ -24,7 +24,7 @@ Unicode 以外のデータを処理する必要があるアプリケーション
 
 ここでは、iOS のローカライズ機能の一部について説明します。 特定のコードと例については、[次のセクション](#localization-basics-in-ios)に進んでください。
 
-### <a name="language"></a>言語
+### <a name="language"></a>Language
 
 ユーザーは、**設定**アプリで言語を選択します。 この設定は、オペレーティングシステムおよびアプリによって表示される言語の文字列とイメージに影響します。
 
@@ -173,9 +173,9 @@ IOS でイメージをローカライズするには:
     UIImage.FromBundle("flag");
     ```
 
-2. 既定のイメージファイルの**フラグ .png**を、**基本の lproj** (ネイティブ開発言語のディレクトリ) に配置します。
+2. 既定のイメージファイル**flag.png**を、**基本の lproj** (ネイティブ開発言語のディレクトリ) に配置します。
 
-3. 必要に応じて、ローカライズされたバージョンのイメージを各言語の**lproj**フォルダーに配置します (例 **es**. lproj, **ja-jp**)。 各言語ディレクトリで同じファイル名の**フラグ .png**を使用します。
+3. 必要に応じて、ローカライズされたバージョンのイメージを各言語の**lproj**フォルダーに配置します (例 **es**. lproj, **ja-jp**)。 各言語ディレクトリで同じファイル名**flag.png**を使用します。
 
 特定の言語のイメージが存在しない場合、iOS は既定のネイティブ言語フォルダーに戻り、そこからイメージを読み込みます。
 
@@ -255,9 +255,9 @@ iOS には、RTL 対応アプリの構築に役立つさまざまな機能が用
 
 次のスクリーンショットは、アラビア語とヘブライ語のローカライズされた[Tasky サンプル](https://github.com/conceptdev/xamarin-samples/tree/master/TaskyL10n)を示しています (ただし、フィールドには英語が入力されています)。
 
-[![](images/rtl-ar-sml.png "Localization in Arabic")](images/rtl-ar.png#lightbox "Arabic")
+[![アラビア語でのローカライズ](images/rtl-ar-sml.png)](images/rtl-ar.png#lightbox "アラビア語")
 
-[![](images/rtl-he-sml.png "Localization in Hebrew")](images/rtl-he.png#lightbox "Hebrew")
+[![ヘブライ語でのローカライズ](images/rtl-he-sml.png)](images/rtl-he.png#lightbox "ヘブライ語")
 
 iOS では、が自動的に反転され、 `UINavigationController` その他のコントロールは `UIStackView` 自動レイアウトに沿って配置されます。
 RTL テキストは、LTR テキストと同じように、文字列ファイルを使用してローカライズされます **。**
@@ -270,7 +270,7 @@ RTL テキストは、LTR テキストと同じように、文字列ファイル
 
 ### <a name="project-structure"></a>プロジェクト構造
 
-![](images/solution-code.png "Resources tree")
+![リソースツリー](images/solution-code.png)
 
 ### <a name="localizablestrings-file"></a>ローカライズ可能な文字列ファイル
 
@@ -311,7 +311,7 @@ someControl.Text = localizedString;
 
 他の言語ディレクトリには、コードで参照されている文字列リソースのローカライズ可能な**文字列**ファイルと、ストーリーボードのテキストの翻訳を含む**mainstoryboard.storyboard ファイル**ファイルが含まれています。
 
-![](images/solution-storyboard.png "Resources tree")
+![リソースツリー](images/solution-storyboard.png)
 
 言語ディレクトリには、ローカライズ済みのイメージのコピーが含まれていなければなり**ません。**
 
@@ -324,7 +324,7 @@ someControl.Text = localizedString;
 
 この文字列値は、次のスクリーンショットに示すように、"NF3-h8-xmR" のような形式になっていることがよくあります。
 
-![](images/xs-designer-localization-id.png "Xcode view of Storyboard localization")
+![ストーリーボードのローカライズの Xcode ビュー](images/xs-designer-localization-id.png)
 
 この値は、各コントロールに翻訳されたテキストを自動的に割り当てるために、文字列ファイルで使用され**ます。**
 
@@ -347,7 +347,7 @@ someControl.Text = localizedString;
 > [!IMPORTANT]
 > サイズクラスのストーリーボードを使用すると、アプリケーションに表示されない翻訳が発生する可能性があります。 [Apple の Xcode のリリースノート](https://developer.apple.com/library/content/releasenotes/DeveloperTools/RN-Xcode/Chapters/Introduction.html)では、ストーリーボードまたは XIB が、サイズクラスを使用していて、基本ローカリゼーションとビルドターゲットが Universal に設定されており、ビルドが iOS 7.0 を対象としている場合は、正しくローカライズされないことを示しています。 この問題を解決するには、次のスクリーンショットに示すように、ストーリーボード文字列ファイルを2つの同じファイル ( **mainstoryboard.storyboard ファイル ~ iphone**と**mainstoryboard.storyboard ファイル ~ ipad. 文字列**) に複製します。
 >
-> ![](images/xs-dup-strings.png "Strings files")
+> ![文字列ファイル](images/xs-dup-strings.png)
 
 <a name="appstore"></a>
 

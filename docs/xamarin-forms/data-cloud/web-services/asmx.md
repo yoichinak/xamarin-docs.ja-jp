@@ -19,7 +19,7 @@ ms.locfileid: "86936553"
 ---
 # <a name="consume-an-aspnet-web-service-asmx"></a>ASP.NET Web サービス (ASMX) を使用する
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
 
 _ASMX は、Simple Object Access Protocol (SOAP) を使用してメッセージを送信する web サービスを構築する機能を提供します。SOAP は、web サービスを構築してアクセスするための、プラットフォームに依存しない、言語に依存しないプロトコルです。ASMX サービスのコンシューマーは、サービスの実装に使用されるプラットフォーム、オブジェクトモデル、プログラミング言語について何も知る必要はありません。SOAP メッセージを送受信する方法を理解する必要があるだけです。この記事では、アプリケーションから ASMX SOAP サービスを使用する方法について説明し Xamarin.Forms ます。_
 

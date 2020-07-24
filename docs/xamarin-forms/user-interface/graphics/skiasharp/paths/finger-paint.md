@@ -10,12 +10,12 @@ ms.date: 04/05/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 61ae651a2402204f69f642235d74d8d641b47988
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 074b782bfc5458cf89e593913b6f31de633ffd73
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139023"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938152"
 ---
 # <a name="finger-painting-in-skiasharp"></a>SkiaSharp での指描画
 
@@ -25,7 +25,7 @@ _指を使用して、キャンバス上に描画します。_
 
 `SKPath`オブジェクトは継続的に更新および表示できます。 この機能を使用すると、指描画プログラムなどの対話型描画にパスを使用できます。
 
-![](finger-paint-images/fingerpaintsample.png "An exercise in finger painting")
+![指での描画の演習](finger-paint-images/fingerpaintsample.png)
 
 のタッチサポートで Xamarin.Forms は、画面上の個々の指を追跡することはできません。そのため、タッチ Xamarin.Forms 追跡効果は、追加のタッチサポートを提供するために開発されています。 この効果については、「[**効果からイベントを呼び出す**](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)」を参照してください。 サンプルプログラムの[**タッチ追跡効果のデモ**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/)には、SkiaSharp を使用する2つのページが含まれています (指描画プログラムを含む)。
 
@@ -168,7 +168,7 @@ public partial class FingerPaintPage : ContentPage
 
 指描いは、自分の才能によってのみ制限されています。
 
-[![](finger-paint-images/fingerpaint-small.png "Triple screenshot of the Finger Paint page")](finger-paint-images/fingerpaint-large.png#lightbox "Triple screenshot of the Finger Paint page")
+[![[Finger Paint] ページのトリプル スクリーンショット](finger-paint-images/fingerpaint-small.png)](finger-paint-images/fingerpaint-large.png#lightbox "[Finger Paint] ページのトリプル スクリーンショット")
 
 ここでは、直線を描画し、パラメーター式を使用して曲線を定義する方法を説明しました。 [**SkiaSharp の曲線とパス**](../curves/index.md)の後のセクションでは、でサポートされるさまざまな種類の曲線について説明し `SKPath` ます。 しかし、前提条件として、 [**SkiaSharp 変換**](../transforms/index.md)の探索が役立ちます。
 

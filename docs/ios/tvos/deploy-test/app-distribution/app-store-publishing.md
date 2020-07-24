@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: dd453ab5397e409cc9a7ccef9b4b845d47f32a8b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 1b2b9cdc08f20e2867d51c3b9c413f45c7cbdf69
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573730"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939322"
 ---
 # <a name="publishing-to-the-apple-tv-app-store"></a>Apple TV App Store への発行
 
@@ -47,7 +47,7 @@ Apple では、Apple TV App Store の提出に関するヒントの一覧も保�
 
 [ITunes Connect](https://itunesconnect.apple.com/WebObjects/iTunesConnect.woa)は、特に、Apple TV App Store で tvOS アプリを管理するための web ベースのツールのスイートです。 TvOS アプリは、確認のために Apple に提出する前に iTunes Connect で適切に設定して構成する必要があります。最終的には、Apple TV App Store で販売または無料のアプリとしてリリースされます。
 
-次の操作を行います。
+次の手順を実行します。
 
 1. 無償または販売用の iOS アプリケーションをリリースするために、iTunes Connect の「**契約/税金/口座情報**」セクションで契約が適切で最新であることを確認します。
 2. アプリケーションの新しい**ITunes Connect レコード**を作成し、その**表示名**を指定します (Apple TV App Store に表示されます)。
@@ -125,7 +125,7 @@ tvOS では、*プロビジョニングプロファイル*を使用して、特�
 
 既定では、新しい tvOS アプリを作成すると、**デバッグ**配置と**リリース**配置の両方に対して_ビルド構成_が自動的に作成されます。 Apple に提出するアプリの最終ビルドを実行する前に、基本**リリース**構成に加える必要がある変更がいくつかあります。
 
-次の操作を行います。
+次の手順を実行します。
 
 1. [**ソリューションエクスプローラー**と選択 **] オプション**で**プロジェクト名**を右クリックして、編集用に開きます。
 2. TvOS の特定のバージョンを対象としている場合は、[ **tvOS**] [  >  **iOS SDK バージョン**] の下で選択します。 TvOS サポートのプレビューリリースでは、この値を**既定**値のままにしてください。
@@ -145,17 +145,17 @@ TvOS アプリが適切に構成されたら、レビューとリリースのた
 
 1. Visual Studio for Mac で**リリースとデバイス**の構成を選択します。
 
-    ![](app-store-publishing-images/buildxs01new.png "Select the Release configuration")
+    ![リリース構成を選択します](app-store-publishing-images/buildxs01new.png)
 2. **[ビルド]** メニューから **[発行のためのアーカイブ]** を選択します。
 
-    [![](app-store-publishing-images/buildxs02new.png "Select Archive for Publishing")](app-store-publishing-images/buildxs02new.png#lightbox)
-3. アーカイブが作成されると、**[アーカイブ]** ビューが表示されます。
+    [![[発行のためのアーカイブ] を選択します](app-store-publishing-images/buildxs02new.png)](app-store-publishing-images/buildxs02new.png#lightbox)
+3. アーカイブが作成されると、 **[アーカイブ]** ビューが表示されます。
 
-    [![](app-store-publishing-images/buildxs03new.png "The Archives view")](app-store-publishing-images/buildxs03new.png#lightbox)
+    [![アーカイブビュー](app-store-publishing-images/buildxs03new.png)](app-store-publishing-images/buildxs03new.png#lightbox)
 
 ### <a name="sign-and-distribute-your-app"></a>アプリに署名して配布する
 
-アーカイブのためにアプリケーションをビルドするたびに、*アーカイブ ビュー*が自動的に開き、アーカイブされているすべてのプロジェクトがソリューション別にグループ化されて表示されます。 既定では、このビューには現在開いているソリューションのみが表示されます。 アーカイブのあるソリューションをすべて表示するには、**[アーカイブをすべて表示]** オプションをクリックします。
+アーカイブのためにアプリケーションをビルドするたびに、*アーカイブ ビュー*が自動的に開き、アーカイブされているすべてのプロジェクトがソリューション別にグループ化されて表示されます。 既定では、このビューには現在開いているソリューションのみが表示されます。 アーカイブのあるソリューションをすべて表示するには、 **[アーカイブをすべて表示]** オプションをクリックします。
 
 (App Store 展開またはエンタープライズ展開で) 顧客に展開したアーカイブは保存しておくことをお勧めします。そうすれば、デバッグ情報が生成された場合、後でそれを記号で表すことができます。
 
@@ -163,19 +163,19 @@ TvOS アプリが適切に構成されたら、レビューとリリースのた
 
 1. 次に示すように、[**署名と配布...**] を選択します。
 
-    [![](app-store-publishing-images/buildxs04new.png ", Select theSign and Distribute...")](app-store-publishing-images/buildxs04new.png#lightbox)
+    [![で、[theSign と配布...] を選択します。](app-store-publishing-images/buildxs04new.png)](app-store-publishing-images/buildxs04new.png#lightbox)
 2. これにより、発行ウィザードが開きます。 **[App Store]** 配布チャネルを選択してパッケージを作成し、アプリケーション ローダーを開きます。
 
-    [![](app-store-publishing-images/distribute01.png "Select the App Store distribution channel")](app-store-publishing-images/distribute01.png#lightbox)
+    [![App Store の配布チャネルを選択します](app-store-publishing-images/distribute01.png)](app-store-publishing-images/distribute01.png#lightbox)
 3. [プロビジョニングプロファイル] 画面で、署名 id と対応するプロビジョニングプロファイルを選択するか、別の id で再署名します。
 
-    [![](app-store-publishing-images/distribute02.png "Select the signing identity and corresponding provisioning profile")](app-store-publishing-images/distribute02.png#lightbox)
+    [![署名 ID と対応するプロビジョニング プロファイルを選択します](app-store-publishing-images/distribute02.png)](app-store-publishing-images/distribute02.png#lightbox)
 4. パッケージの詳細を確認し、**[発行]** をクリックして `.ipa` パッケージを保存します。
 
-    [![](app-store-publishing-images/distribute03.png "Verify the details of the package")](app-store-publishing-images/distribute03.png#lightbox)
+    [![パッケージの詳細を確認する](app-store-publishing-images/distribute03.png)](app-store-publishing-images/distribute03.png#lightbox)
 5. `.ipa` が保存されたら、アプリケーション ローダーを使用して、アプリを iTunes Connect にアップロードできます。
 
-    [![](app-store-publishing-images/distribute04.png "Uploaded to iTunes Connect via the Application Loader")](app-store-publishing-images/distribute04.png#lightbox)
+    [![アプリケーションローダーを介して iTunes Connect にアップロードされました](app-store-publishing-images/distribute04.png)](app-store-publishing-images/distribute04.png#lightbox)
 
 配布ビルドが作成され、アーカイブされたら、アプリケーションを iTunes Connect に提出できます。
 
@@ -189,15 +189,15 @@ TvOS アプリが適切に構成されたら、レビューとリリースのた
 
 1. *[Deliver Your App]\(アプリの配信\)* を選択して、*[選択]* ボタンをクリックします。
 
-    [![](app-store-publishing-images/publishvs01.png "Select Deliver Your App")](app-store-publishing-images/publishvs01.png#lightbox)
+    [![[Deliver Your App]\(アプリの配信\) を選択する](app-store-publishing-images/publishvs01.png)](app-store-publishing-images/publishvs01.png#lightbox)
 
 2. 前の手順で作成した IPA ファイルまたは zip ファイルを選択し、**[OK]** ボタンをクリックします。
 3. アプリケーション ローダーはファイルを検証します。
 
-    [![](app-store-publishing-images/publishvs02.png "The Application Loader validation screen")](app-store-publishing-images/publishvs02.png#lightbox)
+    [![アプリケーションローダーの検証画面](app-store-publishing-images/publishvs02.png)](app-store-publishing-images/publishvs02.png#lightbox)
 4. *[次へ]* ボタンをクリックすると、アプリケーションは App Store に対して検証されます。
 
-    [![](app-store-publishing-images/publishvs03.png "The application being validated against the App Store")](app-store-publishing-images/publishvs03.png#lightbox)
+    [![アプリストアに対して検証されているアプリケーション](app-store-publishing-images/publishvs03.png)](app-store-publishing-images/publishvs03.png#lightbox)
 5. **[送信]** ボタンをクリックして、審査のために Apple にアプリケーションを送信します。
 6. アプリケーション ローダーは、ファイルが正常にアップロードされたときに通知します。
 
@@ -207,7 +207,7 @@ TvOS アプリが適切に構成されたら、レビューとリリースのた
 
 ITunes Connect にログインして、使用可能なアプリの一覧からアプリを選択した場合、iTunes Connect の状態は、**確認を待機**していることを示します (処理中に**受信したアップロード**を一時的に読み取ることができます)。
 
-[![](app-store-publishing-images/image21.png "The status in iTunes Connect showing Waiting for Review")](app-store-publishing-images/image21.png#lightbox)
+[![確認待ちの iTunes Connect の状態](app-store-publishing-images/image21.png)](app-store-publishing-images/image21.png#lightbox)
 
 <a name="Troubleshooting"></a>
 

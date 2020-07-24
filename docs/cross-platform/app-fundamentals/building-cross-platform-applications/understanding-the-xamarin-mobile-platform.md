@@ -6,40 +6,40 @@ ms.assetid: FBCEF258-D3D8-A420-79ED-3AAB4A7308E4
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: e10e9f5330de3226fb0f08051ab135ea58900fe7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b010af4794c31e3dd3ccb85a81c9c05bcb6aec55
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016864"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930807"
 ---
 # <a name="part-1--understanding-the-xamarin-mobile-platform"></a>パート 1-Xamarin Mobile Platform について
 
 Xamarin プラットフォームは、iOS および Android 用のアプリケーションの開発を可能にするいくつかの要素で構成されています。
 
-- 言語–使い慣れた構文と、ジェネリック、LINQ、並列タスクライブラリなどの高度な機能を使用できます。 **C#**
+- **C# 言語**–使い慣れた構文と、ジェネリック、LINQ、並列タスクライブラリなどの高度な機能を使用できます。
 - **Mono .net framework** – Microsoft .net framework の広範な機能をクロスプラットフォームで実装します。
 - **コンパイラ**–プラットフォームによっては、ネイティブアプリを作成します (例: iOS) または統合された .NET アプリケーションとランタイム ( Android)。 また、コンパイラは、使用されなくなったコードのリンクなど、モバイルデプロイの多くの最適化を実行します。
 - **IDE ツール**– Mac と Windows の Visual Studio を使用すると、Xamarin プロジェクトを作成、ビルド、配置できます。
 
-さらに、基になる言語がC# .net framework であるため、Windows Phone に配置できるコードを共有するようにプロジェクトを構成することもできます。
+また、基になる言語は .NET framework を使用した C# であるため、Windows Phone に配置できるコードを共有するようにプロジェクトを構成することもできます。
 
-## <a name="under-the-hood"></a>内部
+## <a name="under-the-hood"></a>しくみ
 
-Xamarin では、アプリを作成しC#、複数のプラットフォーム間で同じコードを共有できますが、各システムの実際の実装は大きく異なります。
+Xamarin では、C# でアプリを作成し、複数のプラットフォームで同じコードを共有することができますが、各システムの実際の実装は大きく異なります。
 
 ## <a name="compilation"></a>コンパイル
 
-ソースC#は、プラットフォームごとに異なる方法でネイティブアプリに変換します。
+C# ソースは、プラットフォームごとに異なる方法でネイティブアプリに変換します。
 
-- **iOS** : C# ARM アセンブリ言語にコンパイルされた事前 (AOT) です。 .NET framework が含まれています。リンク中に未使用のクラスを削除して、アプリケーションのサイズを小さくします。 Apple では、iOS でランタイムコードを生成することはできないため、一部の言語機能は使用できません (「 [Xamarin. iOS の制限事項](~/ios/internals/limitations.md)」を参照してください)。
-- **Android** – C# IL にコンパイルされ、モノ vm + JIT'ing を使用してパッケージ化されます。 フレームワーク内の未使用のクラスは、リンク時に除去されます。 アプリケーションは Java/ART (Android ランタイム) とサイドバイサイドで実行され、JNI を使用してネイティブの型と対話します (「 [Xamarin の制限事項](~/android/internals/limitations.md)」を参照してください)。
-- **Windows** – C#は IL にコンパイルされ、組み込みのランタイムによって実行されるため、Xamarin ツールは必要ありません。 Xamarin のガイダンスに従って Windows アプリケーションを設計すると、iOS と Android でコードを簡単に再利用できるようになります。
+- **iOS** – C# は、ARM アセンブリ言語にコンパイルされた事前 (AOT) です。 .NET framework が含まれています。リンク中に未使用のクラスを削除して、アプリケーションのサイズを小さくします。 Apple では、iOS でランタイムコードを生成することはできないため、一部の言語機能は使用できません (「 [Xamarin. iOS の制限事項](~/ios/internals/limitations.md)」を参照してください)。
+- **Android** – C# は IL にコンパイルされ、モノ Vm + JIT'ing を使用してパッケージ化されます。 フレームワーク内の未使用のクラスは、リンク時に除去されます。 アプリケーションは Java/ART (Android ランタイム) とサイドバイサイドで実行され、JNI を使用してネイティブの型と対話します (「 [Xamarin の制限事項](~/android/internals/limitations.md)」を参照してください)。
+- **Windows** – C# は IL にコンパイルされ、組み込みのランタイムによって実行されるため、Xamarin ツールは必要ありません。 Xamarin のガイダンスに従って Windows アプリケーションを設計すると、iOS と Android でコードを簡単に再利用できるようになります。
   ユニバーサル Windows プラットフォームには、Xamarin. iOS ' AOT のコンパイルと同様に動作する **.NET ネイティブ**オプションもあります。
 
 [Xamarin. iOS](~/ios/deploy-test/linker.md)および[xamarin. Android](~/android/deploy-test/linker.md)のリンカードキュメントでは、コンパイルプロセスのこの部分について詳しく説明しています。
 
-ランタイム ' コンパイル ' – `System.Reflection.Emit` で動的にコードを生成することは避けてください。
+ランタイムの ' コンパイル ' –を使用してコードを動的に生成する `System.Reflection.Emit` ことは避ける必要があります。
 
 Apple のカーネルでは、iOS デバイスでの動的なコード生成を防ぐことができます。そのため、Xamarin でコードを出力することはできません。 同様に、動的言語ランタイム機能を Xamarin ツールで使用することはできません。
 
@@ -47,15 +47,15 @@ Apple のカーネルでは、iOS デバイスでの動的なコード生成を�
 
 ## <a name="platform-sdk-access"></a>プラットフォーム SDK アクセス
 
-Xamarin では、プラットフォーム固有の SDK によって提供される機能C#を、使い慣れた構文で簡単に使用できます。
+Xamarin では、プラットフォーム固有の SDK によって提供される機能が、使い慣れた C# 構文で簡単にアクセスできるようになります。
 
-- **ios** – Xamarin。 ios は、参照可能な名前空間として Apple の CocoaTouch C#SDK フレームワークを公開します。 たとえば、すべてのユーザーインターフェイスコントロールを含む UIKit フレームワークは、単純な `using UIKit;` ステートメントに含めることができます。
-- **Android** – Xamarin android では、Google の Android SDK を名前空間として公開するため、サポートされている SDK の任意の部分を using ステートメント (`using Android.Views;` など) で参照して、ユーザーインターフェイスコントロールにアクセスできます。
+- **ios** – Xamarin。 ios は、C# から参照できる名前空間として Apple の CocoaTouch SDK フレームワークを公開します。 たとえば、すべてのユーザーインターフェイスコントロールを含む UIKit フレームワークは、単純なステートメントに含めることができ `using UIKit;` ます。
+- **Android** – Xamarin android は、Google の Android SDK を名前空間として公開します。そのため、ユーザーインターフェイスコントロールにアクセスするなど、サポートされている SDK の任意の部分を using ステートメントで参照でき `using Android.Views;` ます。
 - **Windows – windows**アプリは、windows 上の Visual Studio を使用してビルドされます。 プロジェクトの種類には、Windows フォーム、WPF、WinRT、ユニバーサル Windows プラットフォーム (UWP) などがあります。
 
 ## <a name="seamless-integration-for-developers"></a>開発者のためのシームレスな統合
 
-Xamarin の利点は、内部で違いがあっても (Microsoft の Windows Sdk と組み合わせて)、3つのすべてのプラットフォーム間で再利用できるコードC#をシームレスに記述できることです。
+Xamarin の利点は、内部で違いがあっても (Microsoft の Windows Sdk と組み合わせて)、3つのすべてのプラットフォームで再利用できる C# コードをシームレスに記述できることです。
 
 ビジネスロジック、データベースの使用状況、ネットワークアクセス、およびその他の一般的な機能は、各プラットフォームで一度記述して再利用できます。これにより、ネイティブアプリケーションとして検索して実行するプラットフォーム固有のユーザーインターフェイスの基盤が提供されます。
 
@@ -86,11 +86,11 @@ Android アプリケーションの開発には、Java および Android Sdk を
 
 Xamarin には、前提条件となる Java、Android、および Xamarin ツール (画面レイアウト用のビジュアルデザイナーを含む) を使用してシステムを構成する統合インストーラーが用意されています。 詳細な手順については、 [Xamarin のインストールガイド](~/android/get-started/installation/index.md)を参照してください。
 
-Google のライセンスを使用せずに、実際のデバイスでアプリケーションのビルドとテストを行うことができます。ただし、ストア (Google Play、Amazon、Barnes &amp; 立派など) を使用してアプリケーションを配布するには、登録料がオペレーターに支払われる可能性があります。 Google Play は、アプリをすぐに発行します。他のストアには、Apple のと同様の承認プロセスがあります。
+Google のライセンスを使用せずに、実際のデバイスでアプリケーションをビルドしてテストすることができます。ただし、ストア (Google Play、Amazon、Barnes 立派など) を介してアプリケーションを配布するには、 &amp; 登録料がオペレーターに支払われる可能性があります。 Google Play は、アプリをすぐに発行します。他のストアには、Apple のと同様の承認プロセスがあります。
 
 ### <a name="windows"></a>Windows
 
-Windows アプリ (WinForms、WPF、UWP) は、Visual Studio でビルドされます。 これらのユーザーは、Xamarin を直接使用しません。 ただし、 C#コードは、Windows、iOS、および Android 間で共有できます。
+Windows アプリ (WinForms、WPF、UWP) は、Visual Studio でビルドされます。 これらのユーザーは、Xamarin を直接使用しません。 ただし、C# コードは、Windows、iOS、および Android 間で共有できます。
 Windows 開発に必要なツールの詳細については、Microsoft の[デベロッパーセンター](https://developer.microsoft.com/)を参照してください。
 
 ## <a name="creating-the-user-interface-ui"></a>ユーザー インターフェイス (UI) の作成
@@ -115,7 +115,7 @@ Xamarin を使用する主な利点は、アプリケーションのユーザー
 
 これらのスクリーンショットは、各プラットフォームで使用できるビジュアルスクリーンデザイナーを示しています。
 
- [![](understanding-the-xamarin-mobile-platform-images/designer-all1.png "These screenshots show the visual screen designers available on each platform")](understanding-the-xamarin-mobile-platform-images/designer-all1.png#lightbox)
+ [![これらのスクリーンショットは、各プラットフォームで使用できるビジュアルスクリーンデザイナーを示しています。](understanding-the-xamarin-mobile-platform-images/designer-all1.png)](understanding-the-xamarin-mobile-platform-images/designer-all1.png#lightbox)
 
 どのような場合でも、視覚的に作成した要素をコード内で参照できます。
 
@@ -137,13 +137,13 @@ Xamarin を使用してクロスプラットフォームアプリケーション
 
 ## <a name="library-and-code-re-use"></a>ライブラリとコードの再利用
 
-Xamarin プラットフォームでは、すべてのプラットフォームでC#既存のコードを再利用できるだけでなく、プラットフォームごとにネイティブに作成されたライブラリを統合することもできます。
+Xamarin プラットフォームでは、すべてのプラットフォームで既存の C# コードを再利用できるだけでなく、プラットフォームごとにネイティブに作成されたライブラリを統合することもできます。
 
-### <a name="c-source-and-libraries"></a>C#ソースとライブラリ
+### <a name="c-source-and-libraries"></a>C# のソースとライブラリ
 
-Xamarin 製品ではC#と .net framework が使用されるため、既存のソースコードの多く (オープンソースプロジェクトと社内プロジェクトの両方) を Xamarin. iOS プロジェクトまたは xamarin Android プロジェクトで再利用できます。 多くの場合、ソースは Xamarin ソリューションに簡単に追加でき、すぐに機能します。 サポートされていない .NET framework の機能が使用されている場合は、いくつかの調整が必要になることがあります。
+Xamarin 製品では C# と .NET framework が使用されるため、既存のソースコードの多く (オープンソースプロジェクトと社内プロジェクトの両方) を Xamarin. iOS プロジェクトまたは Xamarin Android プロジェクトで再利用できます。 多くの場合、ソースは Xamarin ソリューションに簡単に追加でき、すぐに機能します。 サポートされていない .NET framework の機能が使用されている場合は、いくつかの調整が必要になることがあります。
 
-Xamarin、 C# iOS、または Xamarin. Android で使用できるソースの例として、SQLITE-NET、NewtonSoft. JSON、SharpZipLib があります。
+Xamarin. iOS または Xamarin. Android で使用できる C# ソースの例として、SQLite-NET、NewtonSoft.JSON、SharpZipLib があります。
 
 ### <a name="objective-c-bindings--binding-projects"></a>目的-C バインド + バインドプロジェクト
 
@@ -159,7 +159,7 @@ Xamarin では、xamarin Android の既存の Java ライブラリの使用を�
 
 ### <a name="c-via-pinvoke"></a>PInvoke を使用した C
 
-"プラットフォーム呼び出し" テクノロジ (P/Invoke) を使用するとC#、マネージコード () でネイティブライブラリのメソッドを呼び出したり、マネージコードにコールバックするためのネイティブライブラリをサポートしたりできます。
+"プラットフォーム呼び出し" テクノロジ (P/Invoke) を使用すると、マネージコード (C#) でネイティブライブラリのメソッドを呼び出したり、マネージコードにコールバックするためのネイティブライブラリをサポートしたりできます。
 
 たとえば、 [SQLite-NET](https://github.com/praeclarum/sqlite-net)ライブラリでは、次のようなステートメントを使用します。
 
@@ -169,8 +169,8 @@ public static extern Result Open (string filename, out IntPtr db);
 ```
 
 これは、iOS および Android のネイティブ C 言語の SQLite 実装にバインドされます。
-既存の C API を使い慣れている開発者はC# 、ネイティブ api にマップするクラスのセットを構築し、既存のプラットフォームコードを利用できます。 Xamarin で[ネイティブライブラリをリンク](~/ios/platform/native-interop.md)するためのドキュメントがあります。 iOS でも同様の原則が適用されます。
+既存の C API を使い慣れている開発者は、C# クラスのセットを構築して、ネイティブ API にマップし、既存のプラットフォームコードを利用することができます。 Xamarin で[ネイティブライブラリをリンク](~/ios/platform/native-interop.md)するためのドキュメントがあります。 iOS でも同様の原則が適用されます。
 
-### <a name="c-via-cppsharp"></a>C++CppSharp 経由
+### <a name="c-via-cppsharp"></a>CppSharp による C++
 
-Miguel は、彼の[ブログ](https://tirania.org/blog/archive/2011/Dec-19.html)で CXXI ( [cppsharp](https://github.com/mono/CppSharp)と呼ばれる) について説明しています。 C++ライブラリに直接バインドする代わりに、C ラッパーを作成し、P/Invoke を使用してそれにバインドすることもできます。
+Miguel は、彼の[ブログ](https://tirania.org/blog/archive/2011/Dec-19.html)で CXXI ( [cppsharp](https://github.com/mono/CppSharp)と呼ばれる) について説明しています。 C++ ライブラリに直接バインドする代わりに、C ラッパーを作成し、P/Invoke を使用してそれにバインドすることもできます。

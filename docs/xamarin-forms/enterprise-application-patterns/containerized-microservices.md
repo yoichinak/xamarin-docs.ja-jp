@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3ebd3940cbd61342977bde60addc773460a08854
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 3f85c6528a1bf599c38a39b4e88400bc8b0c4f05
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84569570"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931990"
 ---
 # <a name="containerized-microservices"></a>コンテナー化 Microservices
 
@@ -23,7 +23,7 @@ ms.locfileid: "84569570"
 
 特にクラウドの時代に関しては、個々のコンポーネントを簡単にスケーリングすることはできません。 モノリシックアプリケーションにはドメイン固有の機能が含まれており、通常はフロントエンド、ビジネスロジック、データストレージなどの機能層によって分割されます。 図8-1 に示すように、アプリケーション全体を複数のコンピューターに複製することで、モノリシックアプリケーションが拡張されます。
 
-![](containerized-microservices-images/monolithicapp.png "Monolithic application scaling approach")
+![モノリシックアプリケーションのスケーリングアプローチ](containerized-microservices-images/monolithicapp.png)
 
 **図 8-1**: モノリシックアプリケーションのスケーリングアプローチ
 
@@ -33,7 +33,7 @@ ms.locfileid: "84569570"
 
 マイクロサービスは、一緒にスケールアウトされるジャイアントモノリシックアプリケーションと比較して、個別にスケールアウトできます。 これは、要求をサポートするためにより多くの処理能力またはネットワーク帯域幅を必要とする特定の機能領域で、アプリケーションの他の領域を不必要にスケールアウトするのではなく、スケーリングできることを意味します。 図8-2 は、マイクロサービスが個別にデプロイおよびスケーリングされ、マシン間でサービスのインスタンスを作成する方法を示しています。
 
-![](containerized-microservices-images/microservicesapp.png "Microservices application scaling approach")
+![マイクロサービスアプリケーションのスケーリングアプローチ](containerized-microservices-images/microservicesapp.png)
 
 **図 8-2**: マイクロサービスアプリケーションのスケーリングアプローチ
 
@@ -59,7 +59,7 @@ ms.locfileid: "84569570"
 - 運用環境では、多数の独立したサービスが侵害されたシステムの展開と管理には、運用上の複雑さがあります。
 - クライアントからマイクロサービスへの直接通信によって、マイクロサービスのコントラクトをリファクターするのが困難になる場合があります。 たとえば、システムをサービスに分割する時間の経過と共に、変更が必要になる場合があります。 1つのサービスが2つ以上のサービスに分割され、2つのサービスがマージされる可能性があります。 クライアントがマイクロサービスと直接通信する場合、このリファクタリング作業によってクライアントアプリとの互換性が損なわれる可能性があります。
 
-## <a name="containerization"></a>コンテナー化
+## <a name="containerization"></a>コンテナー詰め
 
 コンテナー化は、アプリケーションとそのバージョンの依存関係、および配置マニフェストファイルとして抽象化された環境構成を、コンテナーイメージとしてパッケージ化し、1つのユニットとしてテストし、ホストオペレーティングシステムに展開するソフトウェア開発の手法です。
 
@@ -67,7 +67,7 @@ ms.locfileid: "84569570"
 
 図8-3 に示すように、コンテナーと仮想マシンの間には多くの類似点があります。
 
-![](containerized-microservices-images/containersvsvirtualmachines.png "Microservices application scaling approach")
+![マイクロサービスアプリケーションのスケーリングアプローチ](containerized-microservices-images/containersvsvirtualmachines.png)
 
 **図 8-3**: 仮想マシンとコンテナーの比較
 
@@ -87,7 +87,7 @@ ms.locfileid: "84569570"
 
 EShopOnContainers 参照アプリケーションは、図8-4 に示すように、Docker を使用して、4つのコンテナー化されたバックエンドマイクロサービスをホストします。
 
-![](containerized-microservices-images/microservicesarchitecture.png "eShopOnContainers reference application back-end microservices")
+![eShopOnContainers リファレンスアプリケーションバックエンドマイクロサービス](containerized-microservices-images/microservicesarchitecture.png)
 
 **図 8-4**: eShopOnContainers reference application バックエンドマイクロサービス
 
@@ -101,7 +101,7 @@ EShopOnContainers 参照アプリケーションは、図8-4 に示すように�
 
 EShopOnContainers モバイルアプリは、図8-5 に示すように、*クライアントからマイクロサービスへの直接*通信を使用して、コンテナー化されたバックエンドマイクロサービスと通信します。
 
-![](containerized-microservices-images/directclienttomicroservicecommunication.png "Microservices application scaling approach")
+![マイクロサービスアプリケーションのスケーリングアプローチ](containerized-microservices-images/directclienttomicroservicecommunication.png)
 
 **図 8-5**: クライアントからマイクロサービスへの直接通信
 
@@ -120,19 +120,19 @@ EShopOnContainers モバイルアプリは、図8-5 に示すように、*クラ
 
 イベントバスを使用すると、図8-6 に示すように、コンポーネントが互いを明示的に認識する必要がなく、マイクロサービス間で公開/サブスクライブ通信を行うことができます。
 
-![](containerized-microservices-images/eventbus.png "Publish-subscribe with an event bus")
+![イベントバスを使用したパブリッシュとサブスクライブ](containerized-microservices-images/eventbus.png)
 
 **図 8-6:** イベントバスを使用したパブリッシュとサブスクライブ
 
 アプリケーションの観点から見ると、イベントバスは、単にインターフェイスを介して公開されるサブスクライブチャネルです。 ただし、イベントバスの実装方法は異なる場合があります。 たとえば、イベントバスの実装では、RabbitMQ、Azure Service Bus、または NServiceBus や MassTransit などのその他のサービスバスを使用できます。 図8-7 は、eShopOnContainers 参照アプリケーションでのイベントバスの使用方法を示しています。
 
-![](containerized-microservices-images/microservicesarchitecturewitheventbus.png "Asynchronous event-driven communication in the reference application")
+![参照アプリケーションでの非同期イベントドリブン通信](containerized-microservices-images/microservicesarchitecturewitheventbus.png)
 
 **図 8-7:** 参照アプリケーションでの非同期イベントドリブン通信
 
 RabbitMQ を使用して実装される eShopOnContainers イベントバスは、1対多の非同期パブリッシュ/サブスクライブ機能を提供します。 これは、イベントを発行した後、複数のサブスクライバーが同じイベントをリッスンしている可能性があることを意味します。 図8-9 は、この関係を示しています。
 
-![](containerized-microservices-images/eventdrivencommunication.png "One-to-many communication")
+![1対多の通信](containerized-microservices-images/eventdrivencommunication.png)
 
 **図 8-9**: 1 対多の通信
 

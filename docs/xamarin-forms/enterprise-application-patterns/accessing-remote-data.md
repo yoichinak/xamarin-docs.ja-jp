@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cef3c2369bb4aee81a52ddd27d6ad732d7544dfa
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: df79a9b6a7b0ab44d4fcf03f12a7b4d8aabd0a82
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573847"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939270"
 ---
 # <a name="accessing-remote-data"></a>リモート データへのアクセス
 
@@ -54,7 +54,7 @@ EShopOnContainers モバイルアプリでは、クラスを使用して `HttpCl
 
 図10-1 は、によって表示されるようにカタログマイクロサービスからカタログデータを読み取るクラスの相互作用を示して `CatalogView` います。
 
-[![](accessing-remote-data-images/catalogdata.png "Retrieving data from the catalog microservice")](accessing-remote-data-images/catalogdata-large.png#lightbox "Retrieving data from the catalog microservice")
+[![カタログマイクロサービスからデータを取得する](accessing-remote-data-images/catalogdata.png)](accessing-remote-data-images/catalogdata-large.png#lightbox "カタログマイクロサービスからデータを取得する")
 
 **図 10-1**: カタログマイクロサービスからのデータの取得
 
@@ -159,7 +159,7 @@ public async Task<IActionResult> Items(
 
 図10-2 は、によって表示されるバスケットデータを送信するクラスの相互作用を `BasketView` バスケットマイクロサービスに示しています。
 
-[![](accessing-remote-data-images/basketdata.png "Sending data to the basket microservice")](accessing-remote-data-images/basketdata-large.png#lightbox "Sending data to the basket microservice")
+[![バスケットマイクロサービスにデータを送信しています](accessing-remote-data-images/basketdata.png)](accessing-remote-data-images/basketdata-large.png#lightbox "バスケットマイクロサービスにデータを送信しています")
 
 **図 10-2**: バスケットマイクロサービスへのデータの送信
 
@@ -232,7 +232,7 @@ public async Task<IActionResult> Post([FromBody]CustomerBasket value)
 
 図10-3 は、のバスケットマイクロサービスからバスケットデータを削除するクラスの相互作用を示して `CheckoutView` います。
 
-![](accessing-remote-data-images/checkoutdata.png "Deleteing data from the basket microservice")
+![バスケットマイクロサービスからのデータの一回](accessing-remote-data-images/checkoutdata.png)
 
 **図 10-3**: バスケットマイクロサービスからのデータの削除
 
@@ -372,7 +372,7 @@ FFImageLoading の `CachedImage` コントロールは、 Xamarin.Forms [`Image`
 > [!NOTE]
 > 試行間の待ち時間を最小限に抑え、大量の再試行を行う積極的な再試行戦略では、容量の近くまたは大部分で実行されているリモートサービスが低下する可能性があります。 また、このような再試行戦略は、失敗した操作を継続的に実行しようとしている場合に、アプリの応答性に影響を与える可能性もあります。
 
-多くの再試行の後も要求が失敗する場合は、同じリソースに対する要求がそれ以上失敗しないようにすることをお勧めします。 その後、一定期間が経過すると、アプリはリソースに対して1つ以上の要求を行って、成功したかどうかを確認できます。 詳細については、「[Circuit Breaker Pattern (Circuit Breaker パターン)](#circuit-breaker-pattern)」をご覧ください。
+多くの再試行の後も要求が失敗する場合は、同じリソースに対する要求がそれ以上失敗しないようにすることをお勧めします。 その後、一定期間が経過すると、アプリはリソースに対して1つ以上の要求を行って、成功したかどうかを確認できます。 詳細については、「[サーキットブレーカーパターン](#circuit-breaker-pattern)」を参照してください。
 
 > [!TIP]
 > 再試行が際限なく繰り返される設計は確実に避けてください。 有限の回数の再試行を使用するか、サービスが復旧できるように[サーキットブレーカー](/azure/architecture/patterns/circuit-breaker/)パターンを実装します。

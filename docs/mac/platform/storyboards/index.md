@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 395ac62cd4db62c02863e352ed5643958348dcff
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 8b911be4b1bf547a9a1ad5d6b795894ddba3c26d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574391"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939062"
 ---
 # <a name="introduction-to-storyboards-in-xamarinmac"></a>Xamarin. Mac でのストーリーボードの概要
 
@@ -20,7 +20,7 @@ _この記事では、Xamarin. Mac アプリでストーリーボードを操作
 
 ストーリーボードを使用すると、ウィンドウの定義とコントロールだけでなく、さまざまなウィンドウ (セグエ via) とビューステートの間のリンクも含まれている Xamarin. Mac アプリ用のユーザーインターフェイスを開発できます。
 
-[![](images/intro01.png "A sample UI in Xcode")](images/intro01.png#lightbox)
+[![Xcode のサンプル UI](images/intro01.png)](images/intro01.png#lightbox)
 
 この記事では、ストーリーボードを使用して Xamarin. Mac アプリのユーザーインターフェイスを定義する方法について説明します。
 
@@ -36,11 +36,11 @@ _この記事では、Xamarin. Mac アプリでストーリーボードを操作
 
 前述のように、ストーリーボードは、特定のアプリのすべての UI を、その_ビューコントローラー_の機能の概要に分割して定義します。 Xcode の Interface Builder では、各コントローラーが独自の_シーン_に存在します。
 
-[![](images/intro02.png "An example view controller")](images/intro02.png#lightbox)
+[![ビューコントローラーの例](images/intro02.png)](images/intro02.png#lightbox)
 
 各シーンは、特定のビューとビューコントローラーのペアを表します。これは、UI 内の各シーンを接続する一連の行 (セグエと呼ばれます) で、それらのリレーションシップを示します。 一部のセグエでは、1つのビューコントローラーに1つ以上の子ビューまたはビューコントローラーがどのように含まれるかを定義します。 その他のセグエ、ビューコントローラー間の遷移を定義します (segue やダイアログボックスの表示など)。 
 
-[![](images/intro03.png "A sample segue")](images/intro03.png#lightbox)
+[![セグエのサンプル](images/intro03.png)](images/intro03.png#lightbox)
 
 注意する必要がある最も重要な点は、各セグエは、アプリの UI の特定の要素間にある何らかの形式のデータのフローを表すことです。
 
@@ -50,7 +50,7 @@ _この記事では、Xamarin. Mac アプリでストーリーボードを操作
 
 ビューコントローラーは、Mac アプリ内の情報の特定のビューと、その情報を提供するデータモデルとの間の関係を定義します。 ストーリーボードの最上位レベルの各シーンは、Xamarin. Mac アプリのコード内の1つのビューコントローラーを表します。
 
-[![](images/intro04.png "An example slips view controller")](images/intro04.png#lightbox)
+[![スリップビューコントローラーの例](images/intro04.png)](images/intro04.png#lightbox)
 
 このようにして、各ビューコントローラーは、情報の視覚的表現 (ビュー) とその情報を提示および制御するロジックの両方の自己完結型で再利用可能な組み合わせです。
 

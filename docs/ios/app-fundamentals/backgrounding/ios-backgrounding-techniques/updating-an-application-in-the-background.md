@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: ae08d7d2d8d9de700570311f2294df737240b73f
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 2e5b7a65f565f8c4f3265c5c95e6e4a296e4681f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572157"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938100"
 ---
 # <a name="updating-a-xamarinios-app-in-the-background"></a>バックグラウンドでの Xamarin iOS アプリの更新
 
@@ -43,7 +43,7 @@ IOS 6 では、フォアグラウンドに新しいコンテンツを読み込�
 
 バックグラウンドフェッチを実装するには、[*情報] plist*を編集し、[バックグラウンドモードおよび**バックグラウンドフェッチ****を有効にする**] チェックボックスをオンにします。
 
- [![](updating-an-application-in-the-background-images/fetch.png "Edit the Info.plist and check the Enable Background Modes and Background Fetch check boxes")](updating-an-application-in-the-background-images/fetch.png#lightbox)
+ [![情報を編集し、[バックグラウンドモードとバックグラウンドフェッチを有効にする] チェックボックスをオンにします。](updating-an-application-in-the-background-images/fetch.png)](updating-an-application-in-the-background-images/fetch.png#lightbox)
 
 次に、で、メソッドをオーバーライドして `AppDelegate` `FinishedLaunching` 最小フェッチ間隔を設定します。 この例では、OS が新しいコンテンツを取得する頻度を決定します。
 
@@ -101,7 +101,7 @@ IOS 6 では、受信プッシュ通知は、アプリケーションで問題�
 
 リモート通知を実装するには、[*情報] plist*を編集し、[バックグラウンドモードと**リモート通知****を有効にする**] チェックボックスをオンにします。
 
- [![](updating-an-application-in-the-background-images/remote.png "Background Mode set to Enable Background Modes and Remote notifications")](updating-an-application-in-the-background-images/remote.png#lightbox)
+ [![バックグラウンドモードとリモート通知を有効にするために設定されたバックグラウンドモード](updating-an-application-in-the-background-images/remote.png)](updating-an-application-in-the-background-images/remote.png#lightbox)
 
 次に、 `content-available` プッシュ通知自体のフラグを1に設定します。 これにより、アプリケーションは、アラートを表示する前に新しいコンテンツを取得することができます。
 
@@ -147,7 +147,7 @@ public override void DidReceiveRemoteNotification (UIApplication application, NS
 
 ただし、APNs は、通常のリモート通知またはキープアライブ応答と共にサイレント通知 "便乗" を使用します。 次の図に示すように、通常の通知はレート制限されていないため、APNs からデバイスに保存されたサイレント通知をプッシュするために使用できます。
 
- [![](updating-an-application-in-the-background-images/silent.png "Regular notifications can be used to push stored silent notifications from the APNs to the device, as illustrated by this diagram")](updating-an-application-in-the-background-images/silent.png#lightbox)
+ [![次の図に示すように、通常の通知を使用すると、保存されているサイレント通知を APNs からデバイスにプッシュできます。](updating-an-application-in-the-background-images/silent.png)](updating-an-application-in-the-background-images/silent.png#lightbox)
 
 > [!IMPORTANT]
 > Apple では、アプリケーションが必要とするたびにサイレントプッシュ通知を送信することを開発者に促し、APNs が配信をスケジュールできるようにします。

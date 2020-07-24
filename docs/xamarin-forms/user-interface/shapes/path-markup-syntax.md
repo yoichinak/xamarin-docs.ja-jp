@@ -10,18 +10,18 @@ ms.date: 06/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 124c739f68ce8a3fcbc359a07513a2bcb178578f
-ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
+ms.openlocfilehash: 971cf76fece1ea9b0744052eb23e696d02ce0bc1
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85853122"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937736"
 ---
 # <a name="xamarinforms-shapes-path-markup-syntax"></a>Xamarin.Forms図形: パスマークアップ構文
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![プレリリース API](~/media/shared/preview.png "この API は現在プレリリースです")
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 Xamarin.Formsパスマークアップ構文を使用すると、XAML でパスジオメトリをコンパクトに指定できます。 構文は、プロパティに文字列値として指定され `Path.Data` ます。
 

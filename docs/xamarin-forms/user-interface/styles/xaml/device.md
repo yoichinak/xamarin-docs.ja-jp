@@ -10,18 +10,18 @@ ms.date: 02/17/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b835847fea39e1c2f968e7b81fb9d22f68ea461c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 04669479bb321da4fee6c45fd0f2c00deb5bbf1a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140102"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929728"
 ---
 # <a name="device-styles-in-xamarinforms"></a>のデバイスのスタイルXamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
 
-_Xamarin. Forms には、デバイススタイルと呼ばれる6つの動的スタイルが、デバイススタイルクラスに含まれています。_
+_Xamarin.Formsには、デバイススタイルと呼ばれる6つの動的スタイルが、デバイススタイルクラスに含まれています。_
 
 *デバイス*のスタイルは次のとおりです。
 
@@ -70,7 +70,7 @@ _Xamarin. Forms には、デバイススタイルと呼ばれる6つの動的ス
 
 デバイススタイルは、マークアップ拡張機能を使用してにバインドされ `DynamicResource` ます。 スタイルの動的な性質は、テキストサイズの**ユーザー補助**の設定を変更することで、iOS で見ることができます。 *デバイス*スタイルの外観は、次のスクリーンショットに示すように、プラットフォームによって異なります。
 
-![](device-images/device-styles.png "Device Styles on Each Platform")
+![各プラットフォームでのデバイスのスタイル](device-images/device-styles.png)
 
 *デバイススタイル* [`BaseResourceKey`](xref:Xamarin.Forms.Style.BaseResourceKey) は、プロパティをデバイススタイルのキー名に設定することによって、から派生させることもできます。 上記のコード例では、はを `myBodyStyle` 継承 [`BodyStyle`](xref:Xamarin.Forms.Device.Styles.BodyStyle) し、アクセント付きのテキストの色を設定します。 動的スタイルの継承の詳細については、「[動的スタイルの継承](~/xamarin-forms/user-interface/styles/xaml/dynamic.md#dynamic-style-inheritance)」を参照してください。
 
@@ -114,17 +114,17 @@ public class DeviceStylesPageCS : ContentPage
 
 [`Style`](xref:Xamarin.Forms.NavigableElement.Style)各インスタンスのプロパティ [`Label`](xref:Xamarin.Forms.Label) は、クラスからの適切なプロパティに設定され [`Devices.Styles`](xref:Xamarin.Forms.Device.Styles) ます。
 
-## <a name="accessibility"></a>アクセシビリティ
+## <a name="accessibility"></a>ユーザー補助
 
 *デバイス*のスタイルはユーザー補助の設定を優先します。そのため、各プラットフォームでアクセシビリティの設定が変更されると、フォントサイズが変更されます。 そのため、ユーザー補助テキストをサポートするには、アプリケーション内でテキストスタイルのベースとして*デバイス*のスタイルが使用されていることを確認してください。
 
 次のスクリーンショットは、各プラットフォームのデバイススタイルを示しています。アクセス可能なフォントサイズは最も小さくなっています。
 
-[![](device-images/minimum-size.png "Accessible Small Device Styles on Each Platform")](device-images/minimum-size-large.png#lightbox "Accessible Small Device Styles on Each Platform")
+[![各プラットフォームでアクセス可能な小さいデバイススタイル](device-images/minimum-size.png)](device-images/minimum-size-large.png#lightbox "各プラットフォームでアクセス可能な小さいデバイススタイル")
 
 次のスクリーンショットは、各プラットフォームのデバイススタイルを示しています。アクセス可能なフォントサイズは最大です。
 
-![](device-images/maximum-size.png "Accessible Large Device Styles on Each Platform")
+![各プラットフォームのアクセス可能な大規模なデバイススタイル](device-images/maximum-size.png)
 
 ## <a name="related-links"></a>関連リンク
 

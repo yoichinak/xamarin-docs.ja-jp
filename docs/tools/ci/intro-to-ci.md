@@ -6,12 +6,12 @@ ms.assetid: C034200E-2947-4309-9DDD-80DAC505C43F
 author: davidortinau
 ms.author: daortin
 ms.date: 07/19/2017
-ms.openlocfilehash: 2862f05f2d183c9345d2b92268ddf2101cc2492e
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 21c8cba39031e133d96ed6a5ebeeab87f945af51
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029817"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938270"
 ---
 # <a name="introduction-to-continuous-integration-with-xamarin"></a>Xamarin との継続的インテグレーションの概要
 
@@ -32,13 +32,13 @@ _継続的インテグレーションは、プロジェクトのバージョン�
 
 このプロセスを次の図に示します。
 
-[![](intro-to-ci-images/intro01-small.png "This diagram illustrates this process")](intro-to-ci-images/intro01.png#lightbox)
+[![この図は、このプロセスを示しています。](intro-to-ci-images/intro01-small.png)](intro-to-ci-images/intro01.png#lightbox)
 
 モバイルアプリでは、継続的インテグレーションのための固有の課題が生じます。 アプリには、物理デバイスでのみ使用できる GPS やカメラなどのセンサーが必要になる場合があります。 さらに、シミュレーターまたはエミュレーターはハードウェアの近似値であり、問題を隠すか不明瞭にすることができます。 最終的には、実際のハードウェアでモバイルアプリをテストして、本当に顧客の準備が整っていることを確信する必要があります。
 
 [App Center テスト](https://docs.microsoft.com/appcenter/test-cloud)では、数百の物理デバイス上で直接アプリをテストすることで、この問題に対処します。 開発者は、強力な UI テストを可能にする自動化された受け入れテストを作成します。 これらのテストが App Center にアップロードされると、CI サーバーは、次の図に示すように CI プロセスの一部として自動的に実行できます。
 
-[![](intro-to-ci-images/intro02-small.png "Once these tests are uploaded to App Center, the CI server can run them automatically as part of a CI process as shown in this diagram")](intro-to-ci-images/intro02.png#lightbox)
+[![これらのテストを App Center にアップロードすると、CI サーバーは、次の図に示すように CI プロセスの一部として自動的に実行できます。](intro-to-ci-images/intro02-small.png)](intro-to-ci-images/intro02.png#lightbox)
 
 ## <a name="components-of-continuous-integration"></a>継続的インテグレーションのコンポーネント
 
@@ -50,7 +50,7 @@ CI をサポートするように設計された商用およびオープンソ�
 
 [Azure DevOps](https://azure.microsoft.com/services/devops/) and [Team Foundation Server](https://visualstudio.microsoft.com/tfs/) (TFS) は、継続的インテグレーションビルドサービス、タスク追跡、アジャイル計画およびレポートツール、バージョン管理を行うための Microsoft のコラボレーションツールです。 バージョン管理を使用すると、Azure DevOps および TFS は、独自のシステム (Team Foundation バージョン管理または TFVC)、または GitHub でホストされているプロジェクトと連携できます。
 
-- Azure DevOps は、クラウド経由でサービスを提供します。 主な利点は、専用のハードウェアまたはインフラストラクチャを必要とせず、どこからでも web ブラウザーや Visual Studio などの一般的な開発ツールを介してアクセスできることです。地理的に分散しているチームにとって魅力があります. 5人の開発者のチームにとっては無料です。その後、拡大するチームに対応するために追加のライセンスを購入できます。
+- Azure DevOps は、クラウド経由でサービスを提供します。 主な利点は、専用のハードウェアまたはインフラストラクチャを必要とせず、どこからでも web ブラウザーや Visual Studio などの一般的な開発ツールを介してアクセスでき、地理的に分散しているチームにとって魅力があることです。 5人の開発者のチームにとっては無料です。その後、拡大するチームに対応するために追加のライセンスを購入できます。
 - TFS は、オンプレミスの Windows サーバー向けに設計されており、ローカルネットワークまたはそのネットワークへの VPN 接続を介してアクセスします。 主な利点は、ビルドサーバーの構成を完全に制御し、必要な追加のソフトウェアやサービスをインストールできることです。 TFS には、小規模なチーム向けの無料のエントリレベルの Express edition があります。
 
 TFS と Azure DevOps はどちらも Visual Studio と密接に統合されており、開発者は1つの IDE から快適に多くのバージョンコントロールと CI タスクを実行できます。 Eclipse 用の Team Explorer Everywhere プラグイン (下記参照) も使用できます。 Visual Studio for Mac には[、TFVC のプレビューが用意](/visualstudio/mac/tf-version-control/)されています。
@@ -71,7 +71,7 @@ Git は、web ブラウザー、または Linux、Mac OSX、Windows で実行さ
 
 現在のバージョンの Visual Studio for Windows と Mac では、Git のネイティブサポートが提供されています。 Microsoft では、以前のバージョンの Visual Studio で[Git のダウンロード可能な拡張機能](https://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c)を提供しています。 前述のように、Azure DevOps と TFS では、TFVC ではなくバージョン管理に Git を使用できます。
 
-#### <a name="subversion"></a>破壊
+#### <a name="subversion"></a>Subversion
 
 [Subversion](https://subversion.apache.org) (SVN) は、2000以降に使用されていた、広く普及しているオープンソースのバージョン管理システムです。 SVN は、OS X、Windows、FreeBSD、Linux、および Unix のすべての最新バージョンで実行されます。 Visual Studio for Mac は、SVN をネイティブでサポートしています。 SVN サポートを Visual Studio に導入するサードパーティ製の拡張機能があります。
 
@@ -97,7 +97,7 @@ Team Foundation Server では、特定のターゲットプラットフォーム
 
 次の図は、このようになっていることを示しています。
 
-[![](intro-to-ci-images/intro03-small.png "This diagram illustrates this topography")](intro-to-ci-images/intro03.png#lightbox)
+[![この図は次のようになっています。](intro-to-ci-images/intro03-small.png)](intro-to-ci-images/intro03.png#lightbox)
 
 また、ローカルの TFS サーバーを Azure DevOps プロジェクトにリンクして、Azure DevOps のビルドがローカルサーバーに委任されるようにすることもできます。 詳細については、「[ビルドエージェントとリリースエージェント](https://docs.microsoft.com/azure/devops/pipelines/agents/agents/)」を参照してください。
 
@@ -105,13 +105,13 @@ Team Foundation Server では、特定のターゲットプラットフォーム
 
 Jenkins を使用してアプリをビルドする場合は、Azure DevOps または Team Foundation Server にコードを保存し、CI ビルドに対して Jenkins を引き続き使用することができます。 チームプロジェクトの Git リポジトリにコードをプッシュするとき、または TFVC にコードをチェックインするときに、Jenkins ビルドをトリガーできます。 詳細については、「 [Jenkins With Azure DevOps](https://docs.microsoft.com/azure/devops/service-hooks/services/jenkins)」を参照してください。
 
-[![](intro-to-ci-images/intro04-small.png "If you use Jenkins to build your apps, you can store your code in Azure DevOps or Team Foundation Server and continue to use Jenkins for your CI builds")](intro-to-ci-images/intro04.png#lightbox)
+[![Jenkins を使用してアプリをビルドする場合は、Azure DevOps または Team Foundation Server にコードを保存し、CI ビルドに対して Jenkins を引き続き使用することができます。](intro-to-ci-images/intro04-small.png)](intro-to-ci-images/intro04.png#lightbox)
 
 #### <a name="git-and-jenkins"></a>Git と Jenkins
 
 もう1つの一般的な CI 環境は、完全に OS X ベースにすることができます。 このシナリオでは、ソースコード管理に Git を使用し、ビルドサーバーに Jenkins を使用します。 これらはどちらも、Visual Studio for Mac がインストールされている1台の Mac OS X コンピューター上で実行されています。 これは、前のセクションで説明した Azure DevOps + Jenkins 環境とよく似ています。
 
-[![](intro-to-ci-images/intro05-small.png "This is very similar to the Azure DevOps + Jenkins environment discussed in the previous section")](intro-to-ci-images/intro05.png#lightbox)
+[![これは、前のセクションで説明した Azure DevOps + Jenkins 環境とよく似ています。](intro-to-ci-images/intro05-small.png)](intro-to-ci-images/intro05.png#lightbox)
 
 > [!IMPORTANT]
 > **Jenkins は[Microsoft がサポートしていません](~/cross-platform/troubleshooting/questions/xamarin-jenkins.md)。**

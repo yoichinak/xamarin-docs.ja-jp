@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: b9b8d1dbaf7872ab629392e15d906540ae491db4
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 7319cc50a147da93018bdd1c2036d70cf01e9b80
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572599"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936683"
 ---
 # <a name="homekit-in-xamarinios"></a>Xamarin. iOS のホームキット
 
 _ホームキットは、自宅のオートメーションデバイスを制御するための Apple のフレームワークです。この記事では、ホームキットと、ホームキットアクセサリシミュレーターでのテストアクセサリの構成、およびこれらのアクセサリと対話するための簡単な Xamarin iOS アプリの作成について説明します。_
 
-[![](homekit-images/accessory01.png "An example HomeKit enabled App")](homekit-images/accessory01.png#lightbox)
+[![ホームキットが有効になっているアプリの例](homekit-images/accessory01.png)](homekit-images/accessory01.png#lightbox)
 
 Apple では、さまざまなベンダーの複数のホームオートメーションデバイスを1つの一貫した単位にシームレスに統合する方法として、iOS 8 のホームキットを導入しました。 Home Kit では、ホームオートメーションデバイスの検出、構成、制御のために共通のプロトコルを昇格させることにより、関連のないベンダーのデバイスを連携させることができます。これにより、個々のベンダーが作業をコーディネートする必要がなくなります。
 
@@ -50,28 +50,28 @@ Apple では、さまざまなベンダーの複数のホームオートメー�
 
 ホームキットによって課せられるセキュリティ要件により、Sekit フレームワークを使用する Xamarin iOS アプリは、Apple Developer ポータルと Xamarin の iOS プロジェクトファイルの両方で適切に構成されている必要があります。
 
-次の操作を行います。
+次の手順を実行します。
 
 1. [Apple Developer ポータル](https://developer.apple.com)にログインします。
 2. [**証明書]、[識別子 & プロファイル**] の順にクリックします。
 3. まだ行っていない場合は、[**識別子**] をクリックし、アプリの id を作成します (例:)。それ以外の場合は、既存の id を編集します。 `com.company.appname`
 4. 指定された ID について、**ホームキット**サービスがチェックされていることを確認します。 
 
-    [![](homekit-images/provision01.png "Enable the HomeKit service for the given ID")](homekit-images/provision01.png#lightbox)
-5. 変更内容を保存します。
+    [![指定された ID のホームキットサービスを有効にします](homekit-images/provision01.png)](homekit-images/provision01.png#lightbox)
+5. 変更を保存します。
 6. [**プロビジョニングプロファイル**の開発] をクリックし、  >  **Development**アプリの新しい開発プロビジョニングプロファイルを作成します。 
 
-    [![](homekit-images/provision02.png "Create a new development provisioning profile for the app")](homekit-images/provision02.png#lightbox)
+    [![アプリの新しい開発プロビジョニングプロファイルを作成する](homekit-images/provision02.png)](homekit-images/provision02.png#lightbox)
 7. 新しいプロビジョニングプロファイルをダウンロードしてインストールするか、Xcode を使用してプロファイルをダウンロードしてインストールします。
 8. Xamarin. iOS プロジェクトのオプションを編集し、先ほど作成したプロビジョニングプロファイルを使用していることを確認します。 
 
-    [![](homekit-images/provision03.png "Select provisioning profile just created")](homekit-images/provision03.png#lightbox)
+    [![作成したプロビジョニングプロファイルの選択](homekit-images/provision03.png)](homekit-images/provision03.png#lightbox)
 9. 次に、**情報の plist**ファイルを編集し、プロビジョニングプロファイルの作成に使用したアプリ ID を使用していることを確認します。 
 
-    [![](homekit-images/provision04.png "Set the App ID ")](homekit-images/provision04.png#lightbox)
+    [![アプリ ID を設定する](homekit-images/provision04.png)](homekit-images/provision04.png#lightbox)
 10. 最後に、**権利の plist**ファイルを編集し、[**ホームキット**の権利] が選択されていることを確認します。 
 
-    [![](homekit-images/provision05.png "Enable the HomeKit entitlement")](homekit-images/provision05.png#lightbox)
+    [![ホームキットの権利を有効にする](homekit-images/provision05.png)](homekit-images/provision05.png#lightbox)
 11. すべてのファイルに変更を保存します。
 
 これらの設定を適用すると、アプリケーションはホームキットフレームワークの Api にアクセスする準備ができました。 プロビジョニングの詳細については、[デバイスのプロビジョニング](~/ios/get-started/installation/device-provisioning/index.md)と[プロビジョニング](~/ios/get-started/installation/device-provisioning/index.md)に関するガイドを参照してください。
@@ -87,12 +87,12 @@ Apple では、さまざまなベンダーの複数のホームオートメー�
 
 Apple では、Xcode からの個別のダウンロードとして、ホームキットのアクセサリシミュレーターが提供されているので、続行する前にインストールする必要があります。
 
-次の操作を行います。
+次の手順を実行します。
 
 1. Web ブラウザーで、 [Apple 開発者向けダウンロード](https://developer.apple.com/download/more/?name=for%20Xcode)にアクセスします。
 2. **Xcode xxx 用の追加ツール**をダウンロードします (xxx は、インストールした Xcode のバージョンです)。 
 
-    [![](homekit-images/simulator01.png "Download the Additional Tools for Xcode")](homekit-images/simulator01.png#lightbox)
+    [![Xcode 用の追加ツールをダウンロードする](homekit-images/simulator01.png)](homekit-images/simulator01.png#lightbox)
 3. ディスクイメージを開いて、**アプリケーション**ディレクトリにツールをインストールします。
 
 ホームキットアクセサリシミュレーターがインストールされているので、テスト用に仮想アクセサリを作成できます。
@@ -103,22 +103,22 @@ Apple では、Xcode からの個別のダウンロードとして、ホーム�
 
 1. [アプリケーション] フォルダーから、ホームキットアクセサリシミュレーターを起動します。 
 
-    [![](homekit-images/simulator02.png "The HomeKit Accessory Simulator")](homekit-images/simulator02.png#lightbox)
+    [![ホームキットアクセサリシミュレーター](homekit-images/simulator02.png)](homekit-images/simulator02.png#lightbox)
 2. ボタンをクリックし、[ **+** **新しいアクセサリ...**] を選択します。 
 
-    [![](homekit-images/simulator03.png "Add a new accessory")](homekit-images/simulator03.png#lightbox)
+    [![新しいアクセサリを追加する](homekit-images/simulator03.png)](homekit-images/simulator03.png#lightbox)
 3. 新しいアクセサリに関する情報を入力し、[**完了**] ボタンをクリックします。 
 
-    [![](homekit-images/simulator04.png "Fill out the information about the new accessory")](homekit-images/simulator04.png#lightbox)
+    [![新しいアクセサリに関する情報を入力します](homekit-images/simulator04.png)](homekit-images/simulator04.png#lightbox)
 4. [**サービスの追加**] をクリックします。 ] をクリックし、ドロップダウンからサービスの種類を選択します。 
 
-    [![](homekit-images/simulator05.png "Select a service type from the dropdown")](homekit-images/simulator05.png#lightbox)
+    [![ドロップダウンリストからサービスの種類を選択します](homekit-images/simulator05.png)](homekit-images/simulator05.png#lightbox)
 5. サービスの**名前**を指定し、[**完了**] ボタンをクリックします。 
 
-    [![](homekit-images/simulator06.png "Enter a Name for the service")](homekit-images/simulator06.png#lightbox)
+    [![サービスの名前を入力してください](homekit-images/simulator06.png)](homekit-images/simulator06.png#lightbox)
 6. [**特性の追加**] ボタンをクリックし、必要な設定を構成することにより、サービスのオプションの特性を指定できます。 
 
-    [![](homekit-images/simulator07.png "Configuring the required settings")](homekit-images/simulator07.png#lightbox)
+    [![必要な設定の構成](homekit-images/simulator07.png)](homekit-images/simulator07.png#lightbox)
 7. 上記の手順を繰り返して、ホームキットがサポートする各種類の仮想ホームオートメーションデバイスの1つを作成します。
 
 Virtual ホームキットのアクセサリをいくつか作成して構成したので、これらのデバイスを Xamarin iOS アプリから使用し、制御できるようになりました。
@@ -127,7 +127,7 @@ Virtual ホームキットのアクセサリをいくつか作成して構成し
 
 IOS 10 (およびそれ以降) の新機能として、開発者は `NSHomeKitUsageDescription` アプリのファイルにキーを追加 `Info.plist` し、アプリがユーザーのホームキットデータベースにアクセスする理由を宣言する文字列を指定する必要があります。 この文字列は、アプリを初めて実行するときにユーザーに表示されます。
 
-[![](homekit-images/info01.png "The HomeKit permission dialog")](homekit-images/info01.png#lightbox)
+[![[ホームキットのアクセス許可] ダイアログ](homekit-images/info01.png)](homekit-images/info01.png#lightbox)
 
 このキーを設定するには、次の手順を実行します。
 
@@ -136,11 +136,11 @@ IOS 10 (およびそれ以降) の新機能として、開発者は `NSHomeKitUs
 3. リストに新しい**エントリ**を追加します。
 4. ドロップダウンリストから、[**プライバシー-ホームキットの使用状況の説明**] を選択します。 
 
-    [![](homekit-images/info02.png "Select Privacy - HomeKit Usage Description")](homekit-images/info02.png#lightbox)
+    [![プライバシー-ホームキットの利用状況の説明の選択](homekit-images/info02.png)](homekit-images/info02.png#lightbox)
 5. アプリがユーザーのホームキットデータベースにアクセスする理由の説明を入力します。 
 
-    [![](homekit-images/info03.png "Enter a description")](homekit-images/info03.png#lightbox)
-6. 変更内容をファイルに保存します。
+    [![説明を入力してください](homekit-images/info03.png)](homekit-images/info03.png#lightbox)
+6. 変更をファイルに保存します。
 
 > [!IMPORTANT]
 > `NSHomeKitUsageDescription`ファイルにキーを設定し `Info.plist` ないと、iOS 10 (またはそれ以降) で実行したときに、アプリがサイレント (実行時にシステムによって終了される) エラーなしで_失敗_します。
@@ -189,7 +189,7 @@ public override void FinishedLaunching (UIApplication application)
 
 アプリケーションが最初に実行されるときに、ユーザーが自分のホームキット情報にアクセスできるようにするかどうかを確認するメッセージが表示されます。
 
-[![](homekit-images/home01.png "The user will be asked if they want to allow it to access their HomeKit information")](homekit-images/home01.png#lightbox)
+[![自分のホームキット情報へのアクセスを許可するかどうかを確認するメッセージがユーザーに表示されます。](homekit-images/home01.png)](homekit-images/home01.png#lightbox)
 
 ユーザーが **「OK」** と答えた場合、アプリケーションはホームキットのアクセサリを操作できるようになります。それ以外の場合は、それ以外の場合は失敗し、ホームキットへの呼び出しはエラーで失敗します。
 
@@ -282,7 +282,7 @@ ThisApp.HomeManager.AddHome(HomeName.Text,(home,error) =>{
 
 新しいアクセサリが見つかると、ユーザーに表示され、それを選択してホームに追加できるようになります。 例:
 
-[![](homekit-images/accessory01.png "Finding a new accessory")](homekit-images/accessory01.png#lightbox)
+[![新しいアクセサリの検索](homekit-images/accessory01.png)](homekit-images/accessory01.png#lightbox)
 
 メソッドを呼び出して、 `AddAccessory` 選択したアクセサリをホームのコレクションに追加します。 次に例を示します。
 
@@ -299,11 +299,11 @@ ThisApp.HomeManager.PrimaryHome.AddAccessory (_controller.AccessoryBrowser.Disco
 
 `err`プロパティがでない場合は `null` 、エラーが発生し、ユーザーに表示されます。 それ以外の場合、ユーザーは、追加するデバイスのセットアップコードを入力するように求められます。
 
-[![](homekit-images/accessory02.png "Enter the setup code for the device to add")](homekit-images/accessory02.png#lightbox)
+[![追加するデバイスのセットアップコードを入力してください](homekit-images/accessory02.png)](homekit-images/accessory02.png#lightbox)
 
 ホームキットアクセサリシミュレーターでは、この数値は [**セットアップコード**] フィールドにあります。
 
-[![](homekit-images/accessory03.png "The Setup Code field in the HomeKit Accessory Simulator")](homekit-images/accessory03.png#lightbox)
+[![ホームキットアクセサリシミュレーターのセットアップコードフィールド](homekit-images/accessory03.png)](homekit-images/accessory03.png#lightbox)
 
 実際のホームキットのアクセサリの場合、セットアップコードは、デバイス自体、製品ボックス、またはアクセサリのユーザーマニュアルのラベルに印刷されます。
 
@@ -319,7 +319,7 @@ ThisApp.HomeManager.PrimaryHome.AddAccessory (_controller.AccessoryBrowser.Disco
 
 オブジェクトには、 `HMHome` プロパティでユーザーに提示できる、割り当てられたアクセサリの一覧が含まれてい `Accessories` ます。 次に例を示します。
 
-[![](homekit-images/accessory04.png "An example accessory")](homekit-images/accessory04.png#lightbox)
+[![アクセサリの例](homekit-images/accessory04.png)](homekit-images/accessory04.png#lightbox)
 
 このフォームでは、ユーザーは特定のアクセサリを選択し、提供されているサービスを使用できます。
 
@@ -367,7 +367,7 @@ ThisApp.HomeManager.PrimaryHome.AddAccessory (_controller.AccessoryBrowser.Disco
 
 を読み込むと、 `HMAccessory` 提供された個々のオブジェクトに対してクエリを実行 `HNService` し、その情報をユーザーに表示できます。
 
-[![](homekit-images/accessory05.png "Displaying Service Information")](homekit-images/accessory05.png#lightbox)
+[![サービス情報の表示](homekit-images/accessory05.png)](homekit-images/accessory05.png#lightbox)
 
 の使用 `Reachable` を試みる前に、常にのプロパティを確認する必要があり `HMAccessory` ます。 ユーザーがデバイスの範囲内にない場合、または取り外されている場合、アクセサリに到達できないことがあります。
 
@@ -422,7 +422,7 @@ ThisApp.HomeManager.PrimaryHome.AddAccessory (_controller.AccessoryBrowser.Disco
 - LockManagementControlPoint
 - LockMechanismLastKnownAction
 - ログ
-- Manufacturer
+- 製造元
 - モデル
 - 検出された motion
 - 名前
@@ -657,7 +657,7 @@ Characteristic.WriteValue(NSObject.FromObject(value),(err) =>{
 
 実際の iOS デバイスハードウェアで実行されている**HomeKitIntro**アプリでは、特性の値に対する変更は、ホームキットアクセサリシミュレーターでほぼ瞬時に表示されます。 たとえば、iOS アプリのライトの状態を変更すると、次のようになります。
 
-[![](homekit-images/test01.png "Changing the state of a light in an iOS app")](homekit-images/test01.png#lightbox)
+[![IOS アプリのライトの状態を変更する](homekit-images/test01.png)](homekit-images/test01.png#lightbox)
 
 では、ホームキットアクセサリシミュレーターのライトの状態を変更する必要があります。 値が変更されない場合は、新しい特性値を書き込むときにエラーメッセージの状態を確認し、アクセサリに到達可能であることを確認します。
 

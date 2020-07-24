@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 1d64a212dae055d6a7a5ff1005b25dc48a10d52e
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: e779b874cda016a0cd6cc0444ff42a761ee7483e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84566202"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934681"
 ---
 # <a name="tvos-user-interface-styles-in-xamarin"></a>Xamarin の tvOS ユーザーインターフェイススタイル
 
@@ -28,11 +28,11 @@ tvOS 10 では、ユーザーの設定に基づいて、すべての組み込み
 
 このテーマを切り替えるには、[**設定**] [全般] [全般] に移動し、[明るい] と [ダーク] を切り替え  >  **General**  >  **Appearance**ます**Light** **Dark**。
 
-[![](user-interface-styles-images/theme01.png "The Settings app")](user-interface-styles-images/theme01.png#lightbox)
+[![設定アプリ](user-interface-styles-images/theme01.png)](user-interface-styles-images/theme01.png#lightbox)
 
 **ダーク**テーマを選択すると、すべてのユーザーインターフェイス要素が暗い背景で明るいテキストに切り替わります。
 
-[![](user-interface-styles-images/theme02.png "The Dark theme")](user-interface-styles-images/theme02.png#lightbox)
+[![ダークテーマ](user-interface-styles-images/theme02.png)](user-interface-styles-images/theme02.png#lightbox)
 
 ユーザーは、いつでもテーマを切り替えることができます。また、現在のアクティビティ (Apple TV が配置されている場所または時刻) に基づいて、このオプションを選択することもできます。
 
@@ -50,11 +50,11 @@ tvOS 10 では、ユーザーの設定に基づいて、すべての組み込み
 2. (エディターの下部から)**ソース**ビューを選択します。
 3. 新しいキーを追加し、次のように呼び出し `UIUserInterfaceStyle` ます。
 
-    [![](user-interface-styles-images/theme03.png "The UIUserInterfaceStyle key")](user-interface-styles-images/theme03.png#lightbox)
+    [![UIUserInterfaceStyle キー](user-interface-styles-images/theme03.png)](user-interface-styles-images/theme03.png#lightbox)
 4. 型をに設定したままに `String` し、次のように値を入力し `Automatic` ます。
 
-    [![](user-interface-styles-images/theme04.png "Enter Automatic")](user-interface-styles-images/theme04.png#lightbox)
-5. 変更内容をファイルに保存します。
+    [![自動入力](user-interface-styles-images/theme04.png)](user-interface-styles-images/theme04.png#lightbox)
+5. 変更をファイルに保存します。
 
 このキーには、次の3つの値を指定でき `UIUserInterfaceStyle` ます。
 
@@ -169,13 +169,13 @@ TvOS 10 では、特徴コレクションに応答するようにアプリのス
 
 1. **ソリューションエクスプローラー**でストーリーボードファイルを右クリックし、[ **Open With**  >  **Xcode Interface Builder**] を選択します。
 
-    [![](user-interface-styles-images/theme05.png "Open With Xcode Interface Builder")](user-interface-styles-images/theme05.png#lightbox)
+    [![Xcode を使用して開く Interface Builder](user-interface-styles-images/theme05.png)](user-interface-styles-images/theme05.png#lightbox)
 2. 特徴コレクションのサポートを有効にするには、**ファイルインスペクター**に切り替えて、 **Interface Builder ドキュメント**のセクションにある [**特徴のバリエーションを使用する**] プロパティをオンにします。
 
-    [![](user-interface-styles-images/theme06.png "Enable Trait Collection support")](user-interface-styles-images/theme06.png#lightbox)
+    [![特徴コレクションのサポートを有効にする](user-interface-styles-images/theme06.png)](user-interface-styles-images/theme06.png#lightbox)
 3. 特性のバリエーションを使用するように変更を確認します。
 
-    [![](user-interface-styles-images/theme07.png "The use Trait Variations alert")](user-interface-styles-images/theme07.png#lightbox)
+    [![特徴バリエーションの使用のアラート](user-interface-styles-images/theme07.png)](user-interface-styles-images/theme07.png#lightbox)
 4. 変更内容をストーリーボードファイルに保存します。
 
 Interface Builder で tvOS Storyboard を編集するときに、Apple は次の機能を追加しました。
@@ -184,20 +184,20 @@ Interface Builder で tvOS Storyboard を編集するときに、Apple は次の
 
   - いくつかのプロパティの **+** 横に、UI テーマ固有のバージョンを追加するためにクリックすることができるようになりました。
 
-    [![](user-interface-styles-images/theme08.png "Add a UI theme specific version")](user-interface-styles-images/theme08.png#lightbox)
+    [![UI テーマ固有のバージョンを追加する](user-interface-styles-images/theme08.png)](user-interface-styles-images/theme08.png#lightbox)
 
   - 開発者は、新しいプロパティを指定したり、[ **x** ] ボタンをクリックして削除したりできます。
 
-    [![](user-interface-styles-images/theme09.png "Specify a new property or click the x button to remove it")](user-interface-styles-images/theme09.png#lightbox)
+    [![新しいプロパティを指定するか、[x] ボタンをクリックして削除します](user-interface-styles-images/theme09.png)](user-interface-styles-images/theme09.png#lightbox)
 - 開発者は、Interface Builder 内の明るいテーマまたはダークテーマで UI デザインをプレビューできます。
 
   - デザインサーフェイスの下部を使用すると、開発者は現在の UI テーマを切り替えることができます。
 
-    [![](user-interface-styles-images/theme10.png "The bottom of the Design Surface")](user-interface-styles-images/theme10.png#lightbox)
+    [![デザインサーフェイスの下部](user-interface-styles-images/theme10.png)](user-interface-styles-images/theme10.png#lightbox)
 
   - 新しいテーマが Interface Builder に表示され、特徴コレクション固有の調整がすべて表示されます。
 
-    [![](user-interface-styles-images/theme11.png "The theme displayed in Interface Builder")](user-interface-styles-images/theme11.png#lightbox)
+    [![Interface Builder に表示されるテーマ](user-interface-styles-images/theme11.png)](user-interface-styles-images/theme11.png#lightbox)
 
 さらに、tvOS シミュレーターには、開発者が tvOS アプリをデバッグするときに、明るいテーマと暗いテーマをすばやく切り替えることができるショートカットキーが追加されました。 ライトとダークを切り替えるには、**コマンドライン**のキーボードシーケンスを使用します。
 

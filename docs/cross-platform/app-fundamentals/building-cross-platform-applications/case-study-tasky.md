@@ -6,12 +6,12 @@ ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 71d5ed3512980086d244acc5a604d7b33a5dd77c
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 87ba471dad102059788695f3fe50633bc1a3de0c
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571351"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930183"
 ---
 # <a name="cross-platform-app-case-study-tasky"></a>クロスプラットフォームアプリのケーススタディ: Tasky
 
@@ -42,7 +42,7 @@ ms.locfileid: "84571351"
 まず、ターゲットプラットフォーム全体に実装できる高レベルの設計を使用します。 プラットフォーム特定の UI 制約に注意してください。 たとえば、 `TabBarController` iOS のは5つ以上のボタンを表示できますが、同等の Windows Phone には最大4つのボタンを表示できます。
 任意のツールを使用して画面フローを描画します (paper works)。
 
- [![](case-study-tasky-images/taskydesign.png "Draw the screen-flow using the tool of your choice paper works")](case-study-tasky-images/taskydesign.png#lightbox)
+ [![選択した用紙のツールを使用して画面フローを描画する](case-study-tasky-images/taskydesign.png)](case-study-tasky-images/taskydesign.png#lightbox)
 
  <a name="Data_Model"></a>
 
@@ -79,7 +79,7 @@ Tasky では、' TaskItem ' ごとに3つのプロパティを格納する必要
 - **共通コード**-タスクデータを格納するための再有効コードを含む共通のプロジェクトです。モデルクラスと API を公開して、データの保存と読み込みを管理します。
 - **プラットフォーム固有のコード**– "バックエンド" として共通のコードを使用して、各オペレーティングシステムのネイティブ UI を実装するプラットフォーム固有のプロジェクト。
 
-[![](case-study-tasky-images/taskypro-architecture.png "Platform-specific projects implement a native UI for each operating system, utilizing the common code as the back end")](case-study-tasky-images/taskypro-architecture.png#lightbox)
+[![プラットフォーム固有のプロジェクトは、一般的なコードをバックエンドとして使用して、各オペレーティングシステムのネイティブ UI を実装します。](case-study-tasky-images/taskypro-architecture.png)](case-study-tasky-images/taskypro-architecture.png#lightbox)
 
 以下のセクションでは、これらの2つの部分について説明します。
 
@@ -93,11 +93,11 @@ Tasky ポータブルは、共通コードを共有するためのポータブ�
 
 次に、完全な PCL プロジェクトを示します。 ポータブルライブラリ内のすべてのコードは、対象となる各プラットフォームと互換性があります。 デプロイされると、各ネイティブアプリはそのライブラリを参照します。
 
-![](case-study-tasky-images/portable-project.png "When deployed, each native app will reference that library")
+![デプロイされると、各ネイティブアプリはそのライブラリを参照します。](case-study-tasky-images/portable-project.png)
 
 次のクラス図は、レイヤーごとにグループ化されたクラスを示しています。 クラスは、 `SQLiteConnection` Sqlite-NET パッケージの定型コードです。 クラスの残りの部分は Tasky のカスタムコードです。 `TaskItemManager`クラスと `TaskItem` クラスは、プラットフォーム固有のアプリケーションに公開されている API を表します。
 
- [![](case-study-tasky-images/classdiagram-core.png "The TaskItemManager and TaskItem classes represent the API that is exposed to the platform-specific applications")](case-study-tasky-images/classdiagram-core.png#lightbox)
+ [![TaskItemManager クラスと TaskItem クラスは、プラットフォーム固有のアプリケーションに公開されている API を表します。](case-study-tasky-images/classdiagram-core.png)](case-study-tasky-images/classdiagram-core.png#lightbox)
 
 名前空間を使用してレイヤーを分離すると、各レイヤー間の参照を管理するのに役立ちます。 プラットフォーム固有のプロジェクトでは、ビジネス層のステートメントのみを含める必要があり `using` ます。 データアクセス層とデータ層は、ビジネス層でによって公開される API によってカプセル化される必要があり `TaskItemManager` ます。
 
@@ -255,11 +255,11 @@ Tasky では、モデルは `TaskItem` クラスで `TaskItemManager` あり、�
 
 データの格納と取得に共通 PCL プロジェクトを使用して iOS Tasky アプリケーションを実装するために必要なクラスはごくわずかです。 完全な iOS Xamarin. iOS プロジェクトを次に示します。
 
- ![](case-study-tasky-images/taskyios-solution.png "iOS project is shown here")
+ ![iOS プロジェクトはここに表示されます](case-study-tasky-images/taskyios-solution.png)
 
 クラスは、この図のようにレイヤーにグループ化されています。
 
- [![](case-study-tasky-images/classdiagram-android.png "The classes are shown in this diagram, grouped into layers")](case-study-tasky-images/classdiagram-android.png#lightbox)
+ [![クラスは、この図のようにレイヤーにグループ化されています。](case-study-tasky-images/classdiagram-android.png)](case-study-tasky-images/classdiagram-android.png#lightbox)
 
  <a name="References"></a>
 
@@ -270,7 +270,7 @@ IOS アプリはプラットフォーム固有の SDK ライブラリを参照�
 PCL プロジェクトも参照する必要があり `TaskyPortableLibrary` ます。
 参照の一覧を次に示します。
 
- ![](case-study-tasky-images/taskyios-references.png "The references list is shown here")
+ ![参照の一覧を次に示します。](case-study-tasky-images/taskyios-references.png)
 
 アプリケーションレイヤーとユーザーインターフェイスレイヤーは、これらの参照を使用して、このプロジェクトに実装されます。
 
@@ -328,7 +328,7 @@ public class TaskDialog {
 
 ホーム画面は、 `MonoTouch.Dialog` SQLite データベースからのタスクの一覧を表示する画面です。 を継承し、コードを実装して `DialogViewController` 、表示する `Root` オブジェクトのコレクションを格納するようにを設定し `TaskItem` ます。
 
- [![](case-study-tasky-images/ios-taskylist.png "It inherits from DialogViewController and implements code to set the Root to contain a collection of TaskItem objects for display")](case-study-tasky-images/ios-taskylist.png#lightbox)
+ [![このメソッドは、コントロールを表示し、表示するために TaskItem オブジェクトのコレクションを含むようにルートを設定するコードを実装します。](case-study-tasky-images/ios-taskylist.png)](case-study-tasky-images/ios-taskylist.png#lightbox)
 
 タスク一覧の表示と対話に関連する2つの主要な方法を次に示します。
 
@@ -345,7 +345,7 @@ Tasky では `MonoTouch.Dialog` 、リフレクション API を使用して画�
 
 このスクリーンショットは、[ `Entry` **名前**] フィールドと [**メモ**] フィールドにウォーターマークテキストを設定する属性を示す空の画面を示しています。
 
- [![](case-study-tasky-images/ios-taskydetail.png "This screenshot shows an empty screen that demonstrates the Entry attribute setting the watermark text in the Name and Notes fields")](case-study-tasky-images/ios-taskydetail.png#lightbox)
+ [![このスクリーンショットでは、"名前" フィールドと "メモ" フィールドにウォーターマークテキストを設定する Entry 属性を示す空の画面を示しています。](case-study-tasky-images/ios-taskydetail.png)](case-study-tasky-images/ios-taskydetail.png#lightbox)
 
 **タスクの詳細**画面 (タスクの保存や削除など) の機能は、が作成される場所であるため、クラスに実装する必要があり `HomeScreen` `MonoTouch.Dialog.BindingContext` ます。 次の `HomeScreen` メソッドでは、タスクの詳細画面がサポートされています。
 
@@ -359,11 +359,11 @@ Tasky では `MonoTouch.Dialog` 、リフレクション API を使用して画�
 
 完全な Xamarin. Android プロジェクトを次に示します。
 
- ![](case-study-tasky-images/taskyandroid-solution.png "Android project is pictured here")
+ ![Android プロジェクトはここに示されています](case-study-tasky-images/taskyandroid-solution.png)
 
 クラス図。クラスはレイヤーごとにグループ化されています。
 
- [![](case-study-tasky-images/classdiagram-android.png "The class diagram, with classes grouped by layer")](case-study-tasky-images/classdiagram-android.png#lightbox)
+ [![クラス図 (クラスをレイヤー別にグループ化)](case-study-tasky-images/classdiagram-android.png)](case-study-tasky-images/classdiagram-android.png#lightbox)
 
  <a name="References"></a>
 
@@ -373,7 +373,7 @@ Android アプリプロジェクトは、Android SDK からクラスにアクセ
 
 また、PCL プロジェクトを参照する必要があります (例として、 TaskyPortableLibrary) を使用して、共通のデータとビジネスレイヤーのコードにアクセスします。
 
- ![](case-study-tasky-images/taskyandroid-references.png "TaskyPortableLibrary to access the common data and business layer code")
+ ![共通データとビジネスレイヤーコードにアクセスするための TaskyPortableLibrary](case-study-tasky-images/taskyandroid-references.png)
 
  <a name="Application_Layer_(AL)"></a>
 
@@ -399,7 +399,7 @@ Android アプリのユーザーインターフェイスレイヤーは、コー
 
 ホーム画面は、アクティビティサブクラス `HomeScreen` と、 `HomeScreen.axml` レイアウト (ボタンとタスク一覧の位置) を定義するファイルで構成されています。 画面は次のようになります。
 
- [![](case-study-tasky-images/android-taskylist.png "The screen looks like this")](case-study-tasky-images/android-taskylist.png#lightbox)
+ [![画面は次のようになります。](case-study-tasky-images/android-taskylist.png)](case-study-tasky-images/android-taskylist.png#lightbox)
 
 ホーム画面のコードでは、ボタンをクリックしてリスト内の項目をクリックするためのハンドラーを定義します。また、メソッドにリストを設定する `OnResume` こともできます (タスクの詳細画面で行った変更が反映されます)。 データは、ビジネス層とアプリケーション層のを使用して読み込まれ `TaskItemManager` `TaskListAdapter` ます。
 
@@ -409,7 +409,7 @@ Android アプリのユーザーインターフェイスレイヤーは、コー
 
 また、[タスクの詳細] 画面は、 `Activity` サブクラスと AXML レイアウトファイルで構成されています。 レイアウトは入力コントロールの位置を決定し、C# クラスはオブジェクトを読み込んで保存する動作を定義し `TaskItem` ます。
 
- [![](case-study-tasky-images/android-taskydetail.png "The class defines the behavior to load and save TaskItem objects")](case-study-tasky-images/android-taskydetail.png#lightbox)
+ [![クラスは、TaskItem オブジェクトを読み込んで保存する動作を定義します。](case-study-tasky-images/android-taskydetail.png)](case-study-tasky-images/android-taskydetail.png#lightbox)
 
 PCL ライブラリへのすべての参照は、クラスを介して行われ `TaskItemManager` ます。
 
@@ -418,11 +418,11 @@ PCL ライブラリへのすべての参照は、クラスを介して行われ 
 ## <a name="windows-phone-app"></a>Windows Phone アプリ
 完成した Windows Phone プロジェクト:
 
- ![](case-study-tasky-images/taskywp7-solution.png "Windows Phone App The complete Windows Phone project")
+ ![完全な Windows Phone プロジェクトを Windows Phone アプリ](case-study-tasky-images/taskywp7-solution.png)
 
 次の図は、レイヤーにグループ化されたクラスを示しています。
 
- [![](case-study-tasky-images/classdiagram-wp7.png "This diagram presents the classes grouped into layers")](case-study-tasky-images/classdiagram-wp7.png#lightbox)
+ [![この図は、レイヤーにグループ化されたクラスを示しています。](case-study-tasky-images/classdiagram-wp7.png)](case-study-tasky-images/classdiagram-wp7.png#lightbox)
 
  <a name="References"></a>
 
@@ -432,7 +432,7 @@ PCL ライブラリへのすべての参照は、クラスを介して行われ 
 
 また、PCL プロジェクトを参照する必要があります (例として、 `TaskyPortableLibrary`) を使用し `TaskItem` て、クラスとデータベースを使用します。
 
- ![](case-study-tasky-images/taskywp7-references.png "TaskyPortableLibrary to utilize the TaskItem class and database")
+ ![TaskItem クラスとデータベースを利用する TaskyPortableLibrary](case-study-tasky-images/taskywp7-references.png)
 
  <a name="Application_Layer_(AL)"></a>
 
@@ -479,7 +479,7 @@ Mainpage.xaml クラスは、を使用し `TaskListViewModel` て、XAML のデ�
 
 アプリケーションでは、[追加] ボタンをナビゲーションバーに配置し、組み込みの**正符号 (+)** アイコンを使用するなど、iOS 標準のユーザーインターフェイスデザインを使用します。 また、既定 `UINavigationController` の [戻る] ボタンの動作も使用され、テーブル内の "スワイプして削除" をサポートしています。
 
- [![](case-study-tasky-images/ios-taskylist.png "また、既定の UINavigationController back ボタンの動作を使用し、テーブルでのスワイプからの削除もサポートします。")](case-study-tasky-images/ios-taskylist.png#lightbox) [![](case-study-tasky-images/ios-taskylist.png "また、既定の UINavigationController back ボタンの動作を使用し、テーブルでのスワイプからの削除もサポートします。")](case-study-tasky-images/ios-taskylist.png#lightbox)
+ [ ![ また、既定の UINavigationController back ボタンの動作を使用し、テーブルでのスワイプ](case-study-tasky-images/ios-taskylist.png)](case-study-tasky-images/ios-taskylist.png#lightbox)からの削除もサポートします。この場合、 [ ![ 既定の UINavigationController back ボタンの動作が使用](case-study-tasky-images/ios-taskylist.png)](case-study-tasky-images/ios-taskylist.png#lightbox)され、テーブルでのスワイプからの削除がサポートされます。
 
  <a name="Android"></a>
 
@@ -487,7 +487,7 @@ Mainpage.xaml クラスは、を使用し `TaskListViewModel` て、XAML のデ�
 
 Android アプリでは、' ティック ' を必要とする行に組み込みのレイアウトを含む組み込みのコントロールを使用します。 ハードウェア/システムのバック動作は、画面上に戻るボタンに加えてサポートされています。
 
- [![](case-study-tasky-images/android-taskylist.png "The hardware/system back behavior is supported in addition to an on-screen back button")](case-study-tasky-images/android-taskylist.png#lightbox)[![](case-study-tasky-images/android-taskylist.png "The hardware/system back behavior is supported in addition to an on-screen back button")](case-study-tasky-images/android-taskylist.png#lightbox)
+ [ ![ ハードウェア/システムのバック動作は、画面](case-study-tasky-images/android-taskylist.png)](case-study-tasky-images/android-taskylist.png#lightbox)上に戻るボタンに加えて、[ ![ ハードウェア/システムのバック動作が](case-study-tasky-images/android-taskylist.png)](case-study-tasky-images/android-taskylist.png#lightbox)サポートされています。
 
  <a name="Windows_Phone"></a>
 
@@ -495,7 +495,7 @@ Android アプリでは、' ティック ' を必要とする行に組み込み�
 
 Windows Phone アプリでは、標準レイアウトを使用して、上部にナビゲーションバーではなく、画面の下部にアプリバーを設定します。
 
- [![](case-study-tasky-images/wp-taskylist.png "Windows Phone アプリでは、標準レイアウトを使用して、画面の一番上にあるナビゲーションバーではなく、画面の下部にアプリバーを設定します。")](case-study-tasky-images/wp-taskylist.png#lightbox) [![](case-study-tasky-images/wp-taskylist.png "Windows Phone アプリでは、標準レイアウトを使用して、画面の一番上にあるナビゲーションバーではなく、画面の下部にアプリバーを設定します。")](case-study-tasky-images/wp-taskylist.png#lightbox)
+ Windows Phone アプリでは、 [ ![ 標準レイアウトを使用します。画面の上部にあるナビゲーションバーではなく、画面の下部にアプリバー](case-study-tasky-images/wp-taskylist.png)](case-study-tasky-images/wp-taskylist.png#lightbox)を設定します。 [ ![ Windows Phone アプリでは標準レイアウトが使用され、画面の一番上にあるナビゲーションバーではなく、アプリバーが画面の下部に](case-study-tasky-images/wp-taskylist.png)](case-study-tasky-images/wp-taskylist.png#lightbox)設定されます。
 
  <a name="Summary"></a>
 

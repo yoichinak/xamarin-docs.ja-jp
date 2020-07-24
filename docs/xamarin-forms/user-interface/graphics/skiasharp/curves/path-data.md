@@ -10,12 +10,12 @@ ms.date: 05/24/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 680c924280f8f3a6080b2fcc1968ecaf308f33a0
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 2571375e7ad28acbf367870b5c48e19d3a7525e7
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138061"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931250"
 ---
 # <a name="svg-path-data-in-skiasharp"></a>SkiaSharp の SVG パスデータ
 
@@ -25,7 +25,7 @@ _スケーラブルなベクターグラフィックス形式でテキスト文�
 
 クラスは、 [`SKPath`](xref:SkiaSharp.SKPath) スケーラブルベクターグラフィックス (SVG) 仕様によって確立された形式で、テキスト文字列からパスオブジェクト全体の定義をサポートします。 この記事の後半では、次のようなパス全体をテキスト文字列で表現する方法について説明します。
 
-![](path-data-images/pathdatasample.png "A sample path defined with SVG path data")
+![SVG パスデータで定義されたサンプルパス](path-data-images/pathdatasample.png)
 
 SVG は、web ページ用の XML ベースのグラフィックスプログラミング言語です。 SVG では、一連の関数呼び出しではなくマークアップでパスを定義できる必要があるため、SVG 標準には、グラフィックスパス全体をテキスト文字列として指定する非常に簡潔な方法が用意されています。
 
@@ -222,7 +222,7 @@ public class PathDataHelloPage : ContentPage
 
 パスは、横モードで表示するとより適切に見えるキャンバスを塗りつぶします。
 
-[![](path-data-images/pathdatahello-small.png "Triple screenshot of the Path Data Hello page")](path-data-images/pathdatahello-large.png#lightbox "Triple screenshot of the Path Data Hello page")
+[![パスデータ Hello ページのトリプルスクリーンショット](path-data-images/pathdatahello-small.png)](path-data-images/pathdatahello-large.png#lightbox "パスデータ Hello ページのトリプルスクリーンショット")
 
 [ **Path Data Cat** ] ページは似ています。 Path オブジェクトと paint オブジェクトは、どちらもクラスのフィールドとして定義されてい [`PathDataCatPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataCatPage.cs) ます。
 
@@ -293,7 +293,7 @@ public class PathDataCatPage : ContentPage
 
 実行中のプログラムを次に示します。
 
-[![](path-data-images/pathdatacat-small.png "Triple screenshot of the Path Data Cat page")](path-data-images/pathdatacat-large.png#lightbox "Triple screenshot of the Path Data Cat page")
+[![Path Data Cat ページのトリプルスクリーンショット](path-data-images/pathdatacat-small.png)](path-data-images/pathdatacat-large.png#lightbox "Path Data Cat ページのトリプルスクリーンショット")
 
 通常、オブジェクトがフィールドとして定義されている場合、その `SKPath` パスの輪郭は、コンストラクターまたは別のメソッドで定義されている必要があります。 ただし、SVG パスデータを使用する場合は、フィールド定義でパスを完全に指定できることがわかりました。
 
@@ -430,7 +430,7 @@ public class PrettyAnalogClockPage : ContentPage
 
 ただし、特別な処理は2番目の作業で行われます。 クロックは16ミリ秒ごとに更新されるため、 `Millisecond` 値のプロパティを使用して、 `DateTime` 2 番目から2秒の間に不連続のジャンプで移動するスイープをアニメーション化することができます。 しかし、このコードでは、動きを滑らかにすることはできません。 代わりに、 Xamarin.Forms [`SpringIn`](xref:Xamarin.Forms.Easing.SpringIn) および [`SpringOut`](xref:Xamarin.Forms.Easing.SpringOut) アニメーションイージング関数を別の種類の移動に使用します。 これらのイージング関数を使用すると、2番目の手が移動する前に少し jerkier 方法で移動した &mdash; 後、その変換先を少しずつ撮ることができます。この効果は、これらの静的なスクリーンショットでは再現できません。
 
-[![](path-data-images/prettyanalogclock-small.png "Triple screenshot of the Pretty Analog Clock page")](path-data-images/prettyanalogclock-large.png#lightbox "Triple screenshot of the Pretty Analog Clock page")
+[![かなりアナログ時計のページのトリプルスクリーンショット](path-data-images/prettyanalogclock-small.png)](path-data-images/prettyanalogclock-large.png#lightbox "かなりアナログ時計のページのトリプルスクリーンショット")
 
 ## <a name="related-links"></a>関連リンク
 

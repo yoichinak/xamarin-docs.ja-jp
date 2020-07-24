@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: aa03ab7a3663fa5e0704a605116b19147f14a10b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: fd1bf68e45fa163588d91640147d9e9dbf8ff237
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572586"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939491"
 ---
 # <a name="working-with-tvos-collection-views-in-xamarin"></a>Xamarin での tvOS Collection ビューの使用
 
 コレクションビューでは、任意のレイアウトを使用してコンテンツのグループを表示できます。 組み込みのサポートを使用すると、簡単に作成できるグリッドのようなレイアウトや、カスタムレイアウトをサポートすることができます。
 
-[![](collection-views-images/collection01.png "Sample collection view")](collection-views-images/collection01.png#lightbox)
+[![サンプルコレクションビュー](collection-views-images/collection01.png)](collection-views-images/collection01.png#lightbox)
 
 コレクションビューでは、ユーザーの操作とコレクションの内容を提供するために、デリゲートとデータソースの両方を使用して項目のコレクションを保持します。 コレクションビューはビュー自体に依存しないレイアウトサブシステムに基づいているため、異なるレイアウトを指定すると、コレクションビューのデータの表示を即座に変更できます。
 
@@ -100,37 +100,37 @@ TvOS アプリでコレクションビューを操作する最も簡単な方法
 1. **ソリューションエクスプローラー**で、ファイルをダブルクリックして、 `Main.storyboard` iOS Designer で開きます。
 1. イメージビュー、ラベル、ボタンを既存のビューに追加し、次のように構成します。 
 
-    [![](collection-views-images/collection02.png "Sample layout")](collection-views-images/collection02.png#lightbox)
+    [![サンプルレイアウト](collection-views-images/collection02.png)](collection-views-images/collection02.png#lightbox)
 1. [**プロパティエクスプローラー**] の [**ウィジェット] タブ**で、イメージビューとラベルに**名前**を割り当てます。 次に例を示します。 
 
-    [![](collection-views-images/collection03.png "Setting the name")](collection-views-images/collection03.png#lightbox)
+    [![名前の設定](collection-views-images/collection03.png)](collection-views-images/collection03.png#lightbox)
 1. 次に、コレクションビューコントローラーをストーリーボードにドラッグします。 
 
-    [![](collection-views-images/collection04.png "A Collection View Controller")](collection-views-images/collection04.png#lightbox)
+    [![コレクションビューコントローラー](collection-views-images/collection04.png)](collection-views-images/collection04.png#lightbox)
 1. コントロール-ボタンからコレクションビューコントローラーにドラッグし、ポップアップから [**プッシュ**] を選択します。 
 
-    [![](collection-views-images/collection05.png "Select Push from the popup")](collection-views-images/collection05.png#lightbox)
+    [![ポップアップから [プッシュ] を選択します。](collection-views-images/collection05.png)](collection-views-images/collection05.png#lightbox)
 1. アプリを実行すると、ユーザーがボタンをクリックするたびにコレクションビューが表示されるようになります。
 1. コレクションビューを選択し、**プロパティエクスプローラー**の [**レイアウト] タブ**で次の値を入力します。 
 
-    [![](collection-views-images/collection06.png "The Properties Explorer")](collection-views-images/collection06.png#lightbox)
+    [![プロパティエクスプローラー](collection-views-images/collection06.png)](collection-views-images/collection06.png#lightbox)
 1. これにより、個々のセルのサイズと、コレクションビューの外部境界との間の境界線を制御します。
 1. コレクションビューコントローラーを選択し、[ `CityCollectionViewController` **ウィジェット] タブ**でクラスをに設定します。 
 
-    [![](collection-views-images/collection07.png "Set the class to CityCollectionViewController")](collection-views-images/collection07.png#lightbox)
+    [![クラスを CityCollectionViewController に設定します。](collection-views-images/collection07.png)](collection-views-images/collection07.png#lightbox)
 1. コレクションビューを選択し、[ `CityCollectionView` **ウィジェット] タブ**でクラスをに設定します。 
 
-    [![](collection-views-images/collection08.png "Set the class to CityCollectionView")](collection-views-images/collection08.png#lightbox)
+    [![クラスを CityCollectionView に設定します。](collection-views-images/collection08.png)](collection-views-images/collection08.png#lightbox)
 1. [コレクションビュー] セルを選択し、[ `CityCollectionViewCell` **ウィジェット] タブ**でクラスをに設定します。 
 
-    [![](collection-views-images/collection09.png "Set the class to CityCollectionViewCell")](collection-views-images/collection09.png#lightbox)
+    [![クラスを CityCollectionViewCell に設定します。](collection-views-images/collection09.png)](collection-views-images/collection09.png#lightbox)
 1. [**ウィジェット] タブ**で、**レイアウト**がであること、 `Flow` およびコレクションビューの**スクロール方向**がであることを確認し `Vertical` ます。 
 
-    [![](collection-views-images/collection10.png "The Widget Tab")](collection-views-images/collection10.png#lightbox)
+    [![[ウィジェット] タブ](collection-views-images/collection10.png)](collection-views-images/collection10.png#lightbox)
 1. [ **Identity** `CityCell` **ウィジェット] タブ**で、[コレクションビュー] セルを選択し、その id をに設定します。 
 
-    [![](collection-views-images/collection11.png "Set the Identity to CityCell")](collection-views-images/collection11.png#lightbox)
-1. 変更内容を保存します。
+    [![Id を CityCell に設定します。](collection-views-images/collection11.png)](collection-views-images/collection11.png#lightbox)
+1. 変更を保存します。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -138,35 +138,35 @@ TvOS アプリでコレクションビューを操作する最も簡単な方法
 1. **ソリューションエクスプローラー**で、ファイルをダブルクリックして、 `Main.storyboard` iOS Designer で開きます。
 1. イメージビュー、ラベル、ボタンを既存のビューに追加し、次のように構成します。 
 
-    [![](collection-views-images/collection02vs.png "Configure the layout")](collection-views-images/collection02vs.png#lightbox)
+    [![レイアウトを構成する](collection-views-images/collection02vs.png)](collection-views-images/collection02vs.png#lightbox)
 1. [**プロパティエクスプローラー**] の [**ウィジェット] タブ**で、イメージビューとラベルに**名前**を割り当てます。 次に例を示します。 
 
-    [![](collection-views-images/collection03vs.png "The Properties Explorer")](collection-views-images/collection03vs.png#lightbox)
+    [![プロパティエクスプローラー](collection-views-images/collection03vs.png)](collection-views-images/collection03vs.png#lightbox)
 1. 次に、コレクションビューコントローラーをストーリーボードにドラッグします。 
 
-    [![](collection-views-images/collection04vs.png "A Collection View Controller")](collection-views-images/collection04vs.png#lightbox)
+    [![コレクションビューコントローラー](collection-views-images/collection04vs.png)](collection-views-images/collection04vs.png#lightbox)
 1. コントロール-ボタンからコレクションビューコントローラーにドラッグし、ポップアップから [**プッシュ**] を選択します。 
 
-    [![](collection-views-images/collection05vs.png "Select Push from the popup")](collection-views-images/collection05vs.png#lightbox)
+    [![ポップアップから [プッシュ] を選択します。](collection-views-images/collection05vs.png)](collection-views-images/collection05vs.png#lightbox)
 1. アプリを実行すると、ユーザーがボタンをクリックするたびにコレクションビューが表示されるようになります。
 1. コレクションビューを選択し、**プロパティエクスプローラー**の [**レイアウト] タブ**で、**幅**を_361_ 、**高さ**を_256_として入力します。 
 1. これにより、個々のセルのサイズと、コレクションビューの外部境界との間の境界線を制御します。
 1. コレクションビューコントローラーを選択し、[ `CityCollectionViewController` **ウィジェット] タブ**でクラスをに設定します。 
 
-    [![](collection-views-images/collection07vs.png "Set the class to CityCollectionViewController")](collection-views-images/collection07vs.png#lightbox)
+    [![クラスを CityCollectionViewController に設定します。](collection-views-images/collection07vs.png)](collection-views-images/collection07vs.png#lightbox)
 1. コレクションビューを選択し、[ `CityCollectionView` **ウィジェット] タブ**でクラスをに設定します。 
 
-    [![](collection-views-images/collection08vs.png "Set the class to CityCollectionView")](collection-views-images/collection08vs.png#lightbox)
+    [![クラスを CityCollectionView に設定します。](collection-views-images/collection08vs.png)](collection-views-images/collection08vs.png#lightbox)
 1. [コレクションビュー] セルを選択し、[ `CityCollectionViewCell` **ウィジェット] タブ**でクラスをに設定します。 
 
-    [![](collection-views-images/collection09vs.png "Set the class to CityCollectionViewCell")](collection-views-images/collection09vs.png#lightbox)
+    [![クラスを CityCollectionViewCell に設定します。](collection-views-images/collection09vs.png)](collection-views-images/collection09vs.png#lightbox)
 1. [**ウィジェット] タブ**で、**レイアウト**がであること、 `Flow` およびコレクションビューの**スクロール方向**がであることを確認し `Vertical` ます。 
 
-    [![](collection-views-images/collection10vs.png "Tthe Widget Tab")](collection-views-images/collection10vs.png#lightbox)
+    [![T ウィジェットタブ](collection-views-images/collection10vs.png)](collection-views-images/collection10vs.png#lightbox)
 1. [ **Identity** `CityCell` **ウィジェット] タブ**で、[コレクションビュー] セルを選択し、その id をに設定します。 
 
-    [![](collection-views-images/collection11vs.png "Set the Identity to CityCell")](collection-views-images/collection11vs.png#lightbox)
-1. 変更内容を保存します。
+    [![Id を CityCell に設定します。](collection-views-images/collection11vs.png)](collection-views-images/collection11vs.png#lightbox)
+1. 変更を保存します。
 
 -----
 
@@ -797,17 +797,17 @@ public override void ViewWillAppear (bool animated)
 
 すべての場所で、アプリをビルドして実行すると、メインビューが既定の city と共に表示されます。
 
-[![](collection-views-images/run01.png "The main screen")](collection-views-images/run01.png#lightbox)
+[![メイン画面](collection-views-images/run01.png)](collection-views-images/run01.png#lightbox)
 
 ユーザーが [ビューの**選択**] ボタンをクリックすると、コレクションビューが表示されます。
 
-[![](collection-views-images/run02.png "The collection view")](collection-views-images/run02.png#lightbox)
+[![コレクションビュー](collection-views-images/run02.png)](collection-views-images/run02.png#lightbox)
 
 プロパティがに設定されているすべての都市 `CanSelect` `false` が淡色表示され、ユーザーはフォーカスを設定できなくなります。 ユーザーが項目を強調表示する (フォーカスを設定する) と、タイトルが表示され、視差効果を使用して3D で画像をはらみ傾けることができます。
 
 ユーザーが選択したイメージをクリックすると、コレクションビューが閉じられ、メインビューが新しいイメージと共に再表示されます。
 
-[![](collection-views-images/run03.png "A new image on the home screen")](collection-views-images/run03.png#lightbox)
+[![ホーム画面の新しい画像](collection-views-images/run03.png)](collection-views-images/run03.png#lightbox)
 
 <a name="Creating-Custom-Layout-and-Reordering-Items"></a>
 

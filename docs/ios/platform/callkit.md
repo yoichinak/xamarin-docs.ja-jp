@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2017
-ms.openlocfilehash: 116ae63619aa90defb25db31b959e36b8b44edf2
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 791ab82e0e5f47929eff561ac836ec87e6d6c134
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86934733"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997320"
 ---
 # <a name="callkit-in-xamarinios"></a>Xamarin の CallKit
 
@@ -635,7 +635,7 @@ Provider = new CXProvider (Configuration);
 Provider.SetDelegate (this, null);
 ```
 
-CallKit を使用すると、アプリは独自のオーディオセッションを作成して処理しなくなります。代わりに、システムによって作成および処理されるオーディオセッションを構成して使用する必要があります。 
+CallKit を使用すると、アプリは独自のオーディオセッションを作成して処理しなくなります。代わりに、システムによって作成および処理されるオーディオセッションを構成して使用する必要があります。
 
 実際のアプリの場合、メソッドを使用して、システムによって `DidActivateAudioSession` 提供される構成済みのを使用して呼び出しを開始し `AVAudioSession` ます。
 
@@ -697,7 +697,7 @@ namespace MonkeyCall
             // Found?
             if (handle == null) {
                 // No, report to system
-                Console.WriteLine ("Unable to get call handle from URL: {0}", url); 
+                Console.WriteLine ("Unable to get call handle from URL: {0}", url);
                 return false;
             } else {
                 // Yes, start call and inform system
@@ -820,7 +820,7 @@ public override void PerformAnswerCallAction (CXProvider provider, CXAnswerCallA
 
 ユーザーがアプリの UI 内から呼び出しを終了する場合、次のようになります。
 
-[![](callkit-images/callkit07.png "The user terminates the call from within the app's UI")](callkit-images/callkit07.png#lightbox)
+[![ユーザーは、アプリの UI 内から呼び出しを終了します。](callkit-images/callkit07.png)](callkit-images/callkit07.png#lightbox)
 
 1. アプリは `CXEndCallAction` 、 `CXTransaction` 呼び出しが終了したことを通知するためにシステムに送信されるにバンドルされるを作成します。
 2. システムは、エンド呼び出しの目的を確認し、を `CXEndCallAction` 介してアプリにを送り返し `CXProvider` ます。
@@ -872,12 +872,12 @@ public override void PerformEndCallAction (CXProvider provider, CXEndCallAction 
 
 [![開始呼び出しの目的を受信する](callkit-images/callkit08.png)](callkit-images/callkit08.png#lightbox)
 
-1. アプリは、システムから受信した開始呼び出しのインテントに基づいて、 _Start 呼び出しアクション_を作成します。 
+1. アプリは、システムから受信した開始呼び出しのインテントに基づいて、 _Start 呼び出しアクション_を作成します。
 2. アプリはを使用して、 `CXCallController` システムから開始呼び出しアクションを要求します。
 3. システムがアクションを受け入れると、デリゲートを介してアプリに返され `XCProvider` ます。
 4. アプリは、通信ネットワークを使用して発信呼び出しを開始します。
 
-インテントの詳細については、[インテントとインテントの UI 拡張機能](~/ios/platform/sirikit/understanding-sirikit.md)に関するドキュメントを参照してください。 
+インテントの詳細については、[インテントとインテントの UI 拡張機能](~/ios/platform/sirikit/understanding-sirikit.md)に関するドキュメントを参照してください。
 
 ### <a name="the-outgoing-call-lifecycle"></a>発信呼び出しのライフサイクル
 
@@ -1025,7 +1025,7 @@ public void EndCall (ActiveCall call)
 }
 ```
 
-が end の呼び出しの UUID を使用してを作成した場合、は、 `CXEndCallAction` `CXTransaction` クラスのメソッドを使用してシステムに送信されるにバンドルし `RequestTransaction` `CXCallController` ます。 
+が end の呼び出しの UUID を使用してを作成した場合、は、 `CXEndCallAction` `CXTransaction` クラスのメソッドを使用してシステムに送信されるにバンドルし `RequestTransaction` `CXCallController` ます。
 
 ## <a name="additional-callkit-details"></a>その他の CallKit の詳細
 
@@ -1044,11 +1044,11 @@ public void EndCall (ActiveCall call)
 
 - ローカライズされた名前を表示します。
 - ビデオ通話のサポートを有効にします。
-- 独自のテンプレートイメージアイコンを表示して、呼び出し中の UI のボタンをカスタマイズします。 カスタムボタンを使用したユーザー操作は、処理するアプリに直接送信されます。 
+- 独自のテンプレートイメージアイコンを表示して、呼び出し中の UI のボタンをカスタマイズします。 カスタムボタンを使用したユーザー操作は、処理するアプリに直接送信されます。
 
 ### <a name="action-errors"></a>アクションエラー
 
-CallKit を使用する iOS 10 VOIP アプリは、正常に失敗したアクションを処理し、常にユーザーにアクション状態を通知する必要があります。 
+CallKit を使用する iOS 10 VOIP アプリは、正常に失敗したアクションを処理し、常にユーザーにアクション状態を通知する必要があります。
 
 次の例を考慮してください。
 
@@ -1082,7 +1082,7 @@ public class ProviderDelegate : CXProviderDelegate
         // Create update to describe the incoming call and caller
         var update = new CXCallUpdate ();
         update.RemoteHandle = new CXHandle (CXHandleType.Generic, handle);
-    
+
         // Report incoming call to system
         Provider.ReportNewIncomingCall (uuid, update, (error) => {
             // Was the call accepted
@@ -1134,21 +1134,21 @@ Xamarin iOS アプリで Call Directory 拡張機能を実装するには、次�
 
 1. Visual Studio for Mac でアプリのソリューションを開きます。
 2. **ソリューションエクスプローラー**でソリューション名を右クリックし、[**追加**] [  >  **新しいプロジェクト**] の順に選択します。
-3. [ **IOS**  >  **拡張機能**] [  >  **ディレクトリ拡張機能を呼び出す**] を選択し、[**次へ**] ボタンをクリックします。 
+3. [ **IOS**  >  **拡張機能**] [  >  **ディレクトリ拡張機能を呼び出す**] を選択し、[**次へ**] ボタンをクリックします。
 
     [![新しい Call Directory 拡張機能を作成する](callkit-images/calldir01.png)](callkit-images/calldir01.png#lightbox)
-4. 拡張機能の**名前**を入力し、[**次へ**] ボタンをクリックします。 
+4. 拡張機能の**名前**を入力し、[**次へ**] ボタンをクリックします。
 
     [![拡張機能の名前を入力する](callkit-images/calldir02.png)](callkit-images/calldir02.png#lightbox)
-5. 必要に応じて**プロジェクト名**または**ソリューション名**を調整し、[**作成**] ボタンをクリックします。 
+5. 必要に応じて**プロジェクト名**または**ソリューション名**を調整し、[**作成**] ボタンをクリックします。
 
-    [![プロジェクトの作成](callkit-images/calldir03.png)](callkit-images/calldir03.png#lightbox) 
+    [![プロジェクトの作成](callkit-images/calldir03.png)](callkit-images/calldir03.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. Visual Studio でアプリのソリューションを開きます。
 2. **ソリューションエクスプローラー**でソリューション名を右クリックし、[**追加**] [  >  **新しいプロジェクト**] の順に選択します。
-3. [ **IOS**  >  **拡張機能**] [  >  **ディレクトリ拡張機能を呼び出す**] を選択し、[**次へ**] ボタンをクリックします。 
+3. [ **IOS**  >  **拡張機能**] [  >  **ディレクトリ拡張機能を呼び出す**] を選択し、[**次へ**] ボタンをクリックします。
 
     [![新しい Call Directory 拡張機能を作成する](callkit-images/calldir01w.png)](callkit-images/calldir01.png#lightbox)
 4. 拡張機能の**名前**を入力し、[ **OK** ] ボタンをクリックします。
@@ -1255,7 +1255,7 @@ namespace MonkeyCallDirExtension
 
 VOIP アプリに知られている連絡先番号のアプリに連絡するには、 `AddIdentificationEntry` クラスのメソッドを使用 `CXCallDirectoryExtensionContext` し、番号と識別ラベルの両方を指定します。 ここでも、メソッドに指定する数値は、数値の昇順にする_必要があり_ます。 多数の電話番号がある場合のパフォーマンスとメモリの最適な使用方法については、特定の時点で数値のサブセットを読み込み、autorelease pool を使用して、読み込まれた番号の各バッチの間に割り当てられたオブジェクトを解放することを検討してください。
 
-## <a name="summary"></a>要約
+## <a name="summary"></a>まとめ
 
 この記事では、Apple が iOS 10 でリリースした新しい CallKit API と、Xamarin iOS VOIP アプリで実装する方法について説明しました。 CallKit では、アプリを iOS システムに統合する方法、組み込みアプリ (Phone など) との機能の同等性を提供する方法、Siri の相互作用と連絡先アプリを使用して、ロックやホーム画面などの場所でアプリの可視性を向上させる方法について説明しました。
 

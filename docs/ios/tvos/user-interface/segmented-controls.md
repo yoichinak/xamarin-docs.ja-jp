@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: a31b0bcf3a61b5a1ea7e84f35131e6ceca1eef82
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: f9f1b09c5cbd5660018e8e8d346aa1d25e51dab2
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569882"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937385"
 ---
 # <a name="working-with-tvos-segmented-controls-in-xamarin"></a>Xamarin での tvOS セグメント化されるコントロールの操作
 
 セグメント化されたコントロールは、一連の線形要素を提供します。各要素にはアイコンまたはテキストを含めることができ、関連する一連の選択肢をユーザーに提供するために使用されます。
 
-[![](segmented-controls-images/segment01.png "Sample segment controls")](segmented-controls-images/segment01.png#lightbox)
+[![サンプルセグメントコントロール](segmented-controls-images/segment01.png)](segmented-controls-images/segment01.png#lightbox)
 
 次に、セグメント化されたコントロールの操作に関する推奨事項を示します。
 
@@ -59,32 +59,32 @@ TvOS アプリでセグメントコントロールを操作する最も簡単な
 1. **Solution Pad**で、ファイルをダブルクリックし `Main.storyboard` て開き、編集します。
 1. [**ツールボックス**] から**セグメントコントロール**をドラッグし、ビューにドロップします。 
 
-    [![](segmented-controls-images/segment02.png "A Segment Control")](segmented-controls-images/segment02.png#lightbox)
+    [![セグメントコントロール](segmented-controls-images/segment02.png)](segmented-controls-images/segment02.png#lightbox)
 1. **プロパティパッド**の [**ウィジェット] タブ**では、**スタイル**や**状態**など、セグメントコントロールのいくつかのプロパティを調整できます。 
 
-    [![](segmented-controls-images/segment03.png "The Widget Tab")](segmented-controls-images/segment03.png#lightbox)
+    [![[ウィジェット] タブ](segmented-controls-images/segment03.png)](segmented-controls-images/segment03.png#lightbox)
 1. [**セグメント**] フィールドを使用して、コントローラー内のセグメントの数を制御します。
 1. [**セグメント] ドロップダウン**から特定のセグメントを選択し、[**タイトル**] や [**画像**] などの個々のプロパティを調整して、コントロールの表示時に特定のセグメントが有効に**なって**いるか**選択さ**れているかを制御します。
 1. 最後に、コントロールに**名前**を割り当てて、C# コードでそれらに応答できるようにします。 次に例を示します。 
 
-    [![](segmented-controls-images/segment04.png "Assign a Name")](segmented-controls-images/segment04.png#lightbox)
-1. 変更内容を保存します。
+    [![名前を割り当てる](segmented-controls-images/segment04.png)](segmented-controls-images/segment04.png#lightbox)
+1. 変更を保存します。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. **ソリューションエクスプローラー**で、ファイルをダブルクリックし `Main.storyboard` て開き、編集します。
 1. [**ツールボックス**] から**セグメントコントロール**をドラッグし、ビューにドロップします。 
 
-    [![](segmented-controls-images/segment02-vs.png "A Segment Control")](segmented-controls-images/segment02-vs.png#lightbox)
+    [![セグメントコントロール](segmented-controls-images/segment02-vs.png)](segmented-controls-images/segment02-vs.png#lightbox)
 1. **プロパティエクスプローラー**の [**ウィジェット] タブ**では、[**スタイル**] や [**状態**] など、セグメントコントロールのいくつかのプロパティを調整できます。 
 
-    [![](segmented-controls-images/segment03-vs.png "The Widget Tab")](segmented-controls-images/segment03-vs.png#lightbox)
+    [![[ウィジェット] タブ](segmented-controls-images/segment03-vs.png)](segmented-controls-images/segment03-vs.png#lightbox)
 1. [**セグメント**] フィールドを使用して、コントローラー内のセグメントの数を制御します。
 1. [**セグメント] ドロップダウン**から特定のセグメントを選択し、[**タイトル**] や [**画像**] などの個々のプロパティを調整して、コントロールの表示時に特定のセグメントが有効に**なって**いるか**選択さ**れているかを制御します。
 1. 最後に、コントロールに**名前**を割り当てて、C# コードでそれらに応答できるようにします。 次に例を示します。 
 
-    [![](segmented-controls-images/segment04-vs.png "Assign a Name")](segmented-controls-images/segment04-vs.png#lightbox)
-1. 変更内容を保存します。
+    [![名前を割り当てる](segmented-controls-images/segment04-vs.png)](segmented-controls-images/segment04-vs.png#lightbox)
+1. 変更を保存します。
 
 -----
 
@@ -206,10 +206,10 @@ SegmentedControl.SetBackgroundImage (UIImage.FromFile("background.png"), UIContr
 
 ここでは、 `UIControlState` イメージを設定するコントロールの状態をとして指定します。
 
-- 標準
+- Normal
 - 強調
 - 無効
-- 選択済み
+- オン
 - フォーカスされている
 
 とは、 `UIBarMetrics` 次のように使用するメトリックを指定します。

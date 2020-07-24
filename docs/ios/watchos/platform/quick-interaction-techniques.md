@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 8b851721aa5b2b993ad64b89d90d02b5f2bd0ee3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: e57b6df0f0137d5a8a8f2c0ba68793008986ba18
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028188"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932185"
 ---
 # <a name="quick-interaction-techniques-for-watchos-3-in-xamarin"></a>Xamarin の watchOS 3 のクイック対話技法
 
@@ -22,7 +22,7 @@ _この記事では、Apple が watchOS 3 で追加したクイック対話手�
 
 ## <a name="what-are-quick-interactions"></a>クイック操作とは
 
-IOS または macOS 用のアプリケーションを作成するために使用される開発者向け (ユーザーがアプリとの対話に費やした時間が分単位または時間単位で測定される場合)、Apple Watch に対してアプリを正常に設計することは困難であり、異なるしたがっ.
+IOS または macOS 用のアプリケーションの作成に使用される開発者向け (ユーザーがアプリとの対話に費やした時間が分単位または時間単位で測定される場合)、Apple Watch に適したアプリを設計することは困難であり、別のアプローチが必要になることがあります。
 
 WatchOS では、通常、ユーザーは手首を起動し、アプリをすばやく対話 (通常は数秒) してから、その手首をドロップして、実行していたものを削除したいと考えています。
 
@@ -63,11 +63,11 @@ Apple は、開発者が Apple Watch アプリに迅速な対話を追加する�
 watchOS 3 では、次の4つのジェスチャレコグナイザーがサポートされます。
 
 - 離散ジェスチャの種類:
-  - スワイプジェスチャ (`WKSwipeGestureRecognizer`)。
-  - Tap ジェスチャ (`WKTapGestureRecognizer`)。
+  - スワイプジェスチャ ( `WKSwipeGestureRecognizer` )。
+  - Tap ジェスチャ ( `WKTapGestureRecognizer` )。
 - 連続するジェスチャの種類:
-  - パンジェスチャ (`WKPanGestureRecognizer`)。
-  - 長押しジェスチャ (`WKLongPressGestureRecognizer`)。
+  - パンジェスチャ ( `WKPanGestureRecognizer` )。
+  - 長押しジェスチャ ( `WKLongPressGestureRecognizer` )。
 
 新しいジェスチャレコグナイザーを実装するには、Visual Studio for Mac の iOS デザイナーのデザイン画面にドラッグして、そのプロパティを構成するだけです。
 
@@ -75,19 +75,19 @@ watchOS 3 では、次の4つのジェスチャレコグナイザーがサポー
 
 #### <a name="discrete-gesture-states"></a>離散ジェスチャの状態
 
-離散ジェスチャでは、ジェスチャが認識され、状態 (`WKGestureRecognizerState`) が次のように割り当てられると、アクションが呼び出されます。
+離散ジェスチャでは、ジェスチャが認識され、状態 () が次のように割り当てられると、アクションが呼び出され `WKGestureRecognizerState` ます。
 
-[![](quick-interaction-techniques-images/quick01.png "Discrete Gesture States")](quick-interaction-techniques-images/quick01.png#lightbox)
+[![離散ジェスチャの状態](quick-interaction-techniques-images/quick01.png)](quick-interaction-techniques-images/quick01.png#lightbox)
 
-すべての個別のジェスチャは、`Possible` 状態で開始され、`Failed` または `Recognized` 状態に遷移します。 離散ジェスチャを使用する場合、開発者は通常、状態を直接処理しません。 代わりに、ジェスチャが認識されるときに呼び出されるアクションに依存します。
+すべての離散ジェスチャは、状態で開始され、 `Possible` `Failed` 状態または状態に遷移し `Recognized` ます。 離散ジェスチャを使用する場合、開発者は通常、状態を直接処理しません。 代わりに、ジェスチャが認識されるときに呼び出されるアクションに依存します。
 
 #### <a name="continuous-gesture-states"></a>連続するジェスチャの状態
 
 連続ジェスチャは、ジェスチャが認識されるときにアクションが複数回呼び出される不連続のジェスチャとは若干異なります。
 
-[![](quick-interaction-techniques-images/quick02.png "Continuous Gesture States")](quick-interaction-techniques-images/quick02.png#lightbox)
+[![連続するジェスチャの状態](quick-interaction-techniques-images/quick02.png)](quick-interaction-techniques-images/quick02.png#lightbox)
 
-ここでも、連続ジェスチャは `Possible` 状態で開始されますが、複数の更新が進行します。 ここでは、エンジンが最終的に `Recognized` または `Canceled`されるまで、開発者は認識エンジンの状態を考慮し、アプリの UI を `Changed` フェーズ中に更新する必要があります。
+この場合も、連続ジェスチャは状態で開始さ `Possible` れますが、複数の更新プログラムが進行します。 ここでは、開発者が認識エンジンの状態を考慮し、 `Changed` ジェスチャが最後またはになるまで、フェーズ中にアプリの UI を更新する必要があり `Recognized` `Canceled` ます。
 
 #### <a name="gesture-recognizer-usage-tips"></a>ジェスチャレコグナイザーの使用方法に関するヒント
 
@@ -103,9 +103,9 @@ Apple では、watchOS 3 でジェスチャレコグナイザーを使用する�
 
 WatchOS 3 アプリにサポート Digital Crown を実装することにより、開発者はユーザーのナビゲーション速度と精度を向上させることができます。
 
-WatchOS 2 以降、Apple Watch アプリでは `WKInterfacePicker` オブジェクトを使用して Digital Crown にアクセスすることができます。これには、`WKPickerItems` とピッカースタイル (リスト、積み上げ、またはイメージシーケンス) のリストが用意されています。 watchOS は、ユーザーが Digital Crown を使用して一覧から項目を選択できるようにしました。
+WatchOS 2 以降、Apple Watch アプリは、オブジェクトを使用し `WKInterfacePicker` て、 `WKPickerItems` とピッカースタイル (リスト、積み上げ、またはイメージシーケンス) のリストを提供することによって Digital Crown にアクセスできます。 watchOS は、ユーザーが Digital Crown を使用して一覧から項目を選択できるようにしました。
 
-`WKInterfacePicker`を使用する場合、WatchKit はほとんどの作業を処理します。
+を使用する場合 `WKInterfacePicker` 、WatchKit はほとんどの作業を処理します。
 
 - リストと個々のインターフェイス要素を描画します。
 - Digital Crown イベントの処理。
@@ -115,12 +115,12 @@ WatchOS 3 を初めて使用する場合、開発者は、ローテーション�
 
 Digital Crown アクセスは、次の要素によって提供されます。
 
-- `WKCrownSequencer`-1 秒あたりのローテーションへのアクセスを提供します。
+- `WKCrownSequencer`-1 秒あたりの回転へのアクセスを提供します。
 - `WKCrownDelegate`-回転デルタイベントへのアクセスを提供します。
 
 #### <a name="rotations-per-second"></a>1秒あたりの回転数
 
-Digital Crown からの1秒あたりの回転数へのアクセスは、物理アニメーションを使用する場合に便利です。 1秒あたりの回転数にアクセスするには、Watch 拡張機能の `WKInterfaceController` の `CrownSequencer` プロパティを使用します。 (例:
+Digital Crown からの1秒あたりの回転数へのアクセスは、物理アニメーションを使用する場合に便利です。 1秒あたりの回転数にアクセスするには、 `CrownSequencer` `WKInterfaceController` Watch 拡張機能ののプロパティを使用します。 次に例を示します。
 
 ```csharp
 var rotationsPerSecond = CrownSequencer.RotationsPerSecond;
@@ -128,7 +128,7 @@ var rotationsPerSecond = CrownSequencer.RotationsPerSecond;
 
 #### <a name="rotational-deltas"></a>デルタの回転
 
-回転数をカウントするには、Digital Crown からの回転デルタを使用します。 回転デルタにアクセスするには、`WKCrownDelegate` の `CrownDidRotate` override メソッドを使用します。 (例:
+回転数をカウントするには、Digital Crown からの回転デルタを使用します。 の `CrownDidRotate` override メソッドを使用して、 `WKCrownDelegate` 回転デルタにアクセスします。 次に例を示します。
 
 ```csharp
 using System;
@@ -162,13 +162,13 @@ namespace MonkeyWatch.MonkeySeeExtension
 }
 ```
 
-ここでは、アプリケーションはアキュムレータ (`AccumulatedRotations`) を保持して、回転の回数を決定します。 Digital Crown の完全なローテーションは、`1.0` の累積デルタと同じであり、半ローテーションは `0.5`されます。
+ここでは、アプリケーションはアキュムレータ ( `AccumulatedRotations` ) を保持して、回転の回数を決定します。 Digital Crown の1つの完全ローテーションは、の累積デルタと同じであり、半ローテーションはになり `1.0` `0.5` ます。
 
 Apple では、更新される UI 要素に対する変更の感度に応じてローテーション数がどのように対応するかを決定するために、開発者に代わっています。
 
-回転デルタの符号 (`+/-`) は、ユーザーが Digital Crown をオンにしている方向を示します。
+`+/-`回転デルタの符号 () は、ユーザーが Digital Crown をオンにする方向を示します。
 
-[![](quick-interaction-techniques-images/quick03.png "The sign of the Rotational Delta indicates the direction that the user is turning the Digital Crown")](quick-interaction-techniques-images/quick03.png#lightbox)
+[![回転デルタの符号は、ユーザーが旋回する方向を示し Digital Crown](quick-interaction-techniques-images/quick03.png)](quick-interaction-techniques-images/quick03.png#lightbox)
 
 ユーザーがスクロールしている場合、WatchKit は正のデルタを返し、スクロールすると負のデルタが返されます。ユーザーがどの向きを使用しているかは関係ありません。
 
@@ -179,24 +179,24 @@ Apple では、更新される UI 要素に対する変更の感度に応じて�
 たとえば、次のコントロールのいずれかが Digital Crown のフォーカスを盗み出す可能性があります。
 
 - ピッカー
-- Slider
+- スライダー
 - コントローラーのスクロール
 
 開発者は、カスタムインターフェイス要素が Digital Crown のフォーカスである必要があるかどうかを判断します。 Apple では、新しいジェスチャレコグナイザーを使用して、カスタム UI 要素にフォーカスを移すことを提案しています。
 
 ### <a name="vertical-paging"></a>垂直方向のページング
 
-WatchOS アプリでテーブルビューを移動するには、標準的な方法として、目的のデータをスクロールし、特定の行をタップして詳細ビューを表示します。詳細を確認したら、[戻る] ボタンをタップし、y はテーブル内からの関心があります。
+ユーザーが watchOS アプリでテーブルビューを移動するには、標準的な方法として、目的のデータをスクロールし、特定の行をタップして詳細ビューを表示し、詳細を表示した後に [戻る] ボタンをタップして、テーブル内から興味のあるその他の情報に対してプロセスを繰り返します。
 
-[![](quick-interaction-techniques-images/quick04.png "Moving between a table and the Detail view")](quick-interaction-techniques-images/quick04.png#lightbox)
+[![テーブルと詳細ビューの間の移動](quick-interaction-techniques-images/quick04.png)](quick-interaction-techniques-images/quick04.png#lightbox)
 
 WatchOS 3 を初めて使用する場合、開発者はテーブルビューコントロールで垂直ページングを有効にすることができます。 この機能を有効にすると、スクロールしてテーブルビュー行を検索し、行をタップしてその詳細を前と同じように表示できます。 ただし、テーブルビューに戻ることなく、テーブル内の次の行を選択して前の行を選択する (または Digital Crown を使用する) ことができるようになりました。
 
-[![](quick-interaction-techniques-images/quick05.png "Moving between a table and the Detail view and swiping up and down to move between the other rows")](quick-interaction-techniques-images/quick05.png#lightbox)
+[![テーブルと詳細ビューの間を移動し、他の行の間を移動するためにスワイプして下に移動する](quick-interaction-techniques-images/quick05.png)](quick-interaction-techniques-images/quick05.png#lightbox)
 
-このモードを有効にするには、Xcode で watchOS アプリのストーリーボードを開いて編集し、テーブルビューを選択して、 **[垂直方向の詳細ページング]** チェックボックスをオンにします。
+このモードを有効にするには、Xcode で watchOS アプリのストーリーボードを開いて編集し、テーブルビューを選択して、[**垂直方向の詳細ページング**] チェックボックスをオンにします。
 
-[![](quick-interaction-techniques-images/quick06.png "Check the Vertical Detail Paging checkbox")](quick-interaction-techniques-images/quick06.png#lightbox)
+[![垂直方向の詳細ページングのチェックボックス](quick-interaction-techniques-images/quick06.png)](quick-interaction-techniques-images/quick06.png#lightbox)
 
 テーブルでセグエを使用して詳細ビューを表示し、変更をストーリーボードに保存し、Visual Studio for Mac に戻して同期することを確認します。
 
@@ -244,7 +244,7 @@ WatchOS 3 では、ローカル通知は Apple Watch でスケジュールでき
 
 Apple Watch と iPhone の両方のバージョンの通知に同じ通知識別子を含めることによって、監視に重複する通知が表示されないようにすることができます。 通知の Apple Watch バージョンは、iPhone のバージョンよりも優先されます。
 
-WatchOS 3 では、iOS 10 と同じ `UINotification` API フレームワークを使用しているため、詳細については、iOS 10[ユーザー通知フレームワーク](~/ios/platform/user-notifications/index.md)のドキュメントを参照してください。
+WatchOS 3 では iOS 10 と同じ API フレームワークを使用しているため `UINotification` 、詳細については、ios 10[ユーザー通知フレームワーク](~/ios/platform/user-notifications/index.md)のドキュメントを参照してください。
 
 ### <a name="using-spritekit-and-scenekit"></a>SpriteKit と SceneKit の使用
 
@@ -252,12 +252,12 @@ WatchOS 3 を初めて使用すると、開発者は、アプリのユーザー�
 
 この機能をサポートするために、次の2つの新しいインターフェイスクラスが追加されました。
 
-- `WKInterfaceSKScene`-SpriteKit 2D グラフィックスを操作するために使用します。
-- `WKInterfaceSCNScene`-SceneKit 3D グラフィックスを操作するために使用します。
+- `WKInterfaceSKScene`-SpriteKit 2D グラフィックスを操作する場合。
+- `WKInterfaceSCNScene`-SceneKit 3D グラフィックスを操作する場合。
 
 これらのオブジェクトを使用するには、Xcode の Interface Builder の watch アプリのストーリーボード内のデザイン画面にドラッグし、**属性インスペクター**を使用してこれらのオブジェクトを構成します。
 
-この時点から、SpriteKit または SceneKit のいずれかのシーンの操作は、iOS アプリの内部と同じように動作します。 Watch アプリでは、いずれかの `Present` メソッドを呼び出すことによって `WKInterfaceSKScene` が表示されます。 SceneKit の場合は、単に `WKInterfaceSCNScene` オブジェクトの `Scene` プロパティを設定します。
+この時点から、SpriteKit または SceneKit のいずれかのシーンの操作は、iOS アプリの内部と同じように動作します。 Watch アプリでは、 `WKInterfaceSKScene` メソッドのいずれかを呼び出すことによってが表示され `Present` ます。 SceneKit の場合は、オブジェクトのプロパティを設定するだけ `Scene` `WKInterfaceSCNScene` です。
 
 ## <a name="actionable-complications"></a>実行可能な複雑さ
 
@@ -310,9 +310,9 @@ Apple では、watchOS 3 に追加されたすべての新しいクイック対�
 
 適切に設計されたクイック操作エクスペリエンスを使用すると、ユーザーは現在の操作を完了したときに、手首 (およびアプリを使用して停止) を削除できます。
 
-特に問題になるのは、watch アプリが任意の種類のネットワーク接続を実行している場合や、関連する iPhone アプリで情報を共有している場合です。 これにより、トランザクションの実行中に待機インジケーターが生じることがよくあります。これは、迅速なやり取りの際には望ましくありません。 次の例を参照してください。
+特に問題になるのは、watch アプリが任意の種類のネットワーク接続を実行している場合や、関連する iPhone アプリで情報を共有している場合です。 これにより、トランザクションの実行中に待機インジケーターが生じることがよくあります。これは、迅速なやり取りの際には望ましくありません。 次に例を示します。
 
-[![](quick-interaction-techniques-images/quick07.png "Diagram of the watch app doing a network connection and sharing information with its companion iPhone app")](quick-interaction-techniques-images/quick07.png#lightbox)
+[![ネットワーク接続を実行し、関連する iPhone アプリで情報を共有している watch アプリの図](quick-interaction-techniques-images/quick07.png)](quick-interaction-techniques-images/quick07.png#lightbox)
 
 1. ユーザーは、ウォッチで購入する項目を選択します。
 2. [購入] ボタンをタップします。
@@ -324,7 +324,7 @@ Apple では、watchOS 3 に追加されたすべての新しいクイック対�
 
 Apple の提案されたモデルを使用して、同じクイック対話をもう一度見てみましょう。
 
-[![](quick-interaction-techniques-images/quick08.png "Apples suggested model diagram")](quick-interaction-techniques-images/quick08.png#lightbox)
+[![リンゴの提案モデルの図](quick-interaction-techniques-images/quick08.png)](quick-interaction-techniques-images/quick08.png#lightbox)
 
 1. ユーザーは、ウォッチで購入する項目を選択します。
 2. [購入] ボタンをタップします。
@@ -334,7 +334,7 @@ Apple の提案されたモデルを使用して、同じクイック対話を�
 
 このとき、ユーザーが [購入] ボタンをタップするとすぐに、購入が開始されたことを示すメッセージが表示されます。そのため、この時点では、手首を自信を持ってドロップし、迅速な対話を終了できます。 その後、ユーザー通知でトランザクションが成功したか失敗したかが通知されます。 このようにして、ユーザーはプロセスの "アクティブ" フェーズ中にのみアプリと対話します。
 
-ネットワークを使用しているアプリでは、バックグラウンド `NSURLSession` を使用して、ダウンロードタスクを使用したネットワーク通信を処理できます。 これにより、アプリをバックグラウンドでウェイクアップして、ダウンロードした情報を処理できます。 バックグラウンド処理を必要とするアプリでは、バックグラウンドタスクアサーションを使用して必要な処理を処理します。
+ネットワークを使用しているアプリでは、バックグラウンドを使用して、ダウンロードタスクを使用した `NSURLSession` ネットワーク通信を処理することができます。 これにより、アプリをバックグラウンドでウェイクアップして、ダウンロードした情報を処理できます。 バックグラウンド処理を必要とするアプリでは、バックグラウンドタスクアサーションを使用して必要な処理を処理します。
 
 ## <a name="quick-interaction-design-tips"></a>クイック操作のデザインのヒント
 

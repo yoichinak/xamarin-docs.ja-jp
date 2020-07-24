@@ -10,12 +10,12 @@ ms.date: 05/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8d7ae5eb16b8a94f16b6eca013b4ec7a93f427bd
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 972a5ac99ff775ea7301f803c333d8239ae7f193
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84198129"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938191"
 ---
 # <a name="consume-a-restful-web-service"></a>RESTful Web サービスを使用する
 
@@ -43,7 +43,7 @@ REST の簡潔さは、モバイルアプリケーションで web サービス�
 
 サンプルアプリケーションを実行すると、次のスクリーンショットに示すように、ローカルにホストされている REST サービスに接続します。
 
-![](rest-images/portal.png "Sample Application")
+![サンプル アプリケーション](rest-images/portal.png)
 
 > [!NOTE]
 > IOS 9 以降では、アプリトランスポートセキュリティ (ATS) によって、インターネットリソース (アプリのバックエンドサーバーなど) とアプリの間にセキュリティで保護された接続が適用されるため、機密情報が誤って開示されるのを防ぐことができます。 IOS 9 用に構築されたアプリでは、ATS が既定で有効になっているため、すべての接続は、ATS のセキュリティ要件の対象となります。 接続がこれらの要件を満たしていない場合、例外が発生して失敗します。

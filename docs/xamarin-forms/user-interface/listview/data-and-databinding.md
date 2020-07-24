@@ -10,12 +10,12 @@ ms.date: 03/23/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 38a895c9064fc012aec35b37eac78bb16ff009a9
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 1e5f3b6cb84081f5e167d9afe7e7f2f2dffce247
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84131509"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938113"
 ---
 # <a name="listview-data-sources"></a>ListView データソース
 
@@ -63,7 +63,7 @@ listView.ItemsSource = new string[]
 };
 ```
 
-![](data-and-databinding-images/itemssource-simple.png "ListView Displaying List of Strings")
+![ListView に文字列のリストが表示される](data-and-databinding-images/itemssource-simple.png)
 
 この方法では、に文字列のリストが設定され `ListView` ます。 既定で `ListView` は、はを呼び出し、 `ToString` 各行のに結果を表示し `TextCell` ます。 データの表示方法をカスタマイズするには、「[セルの外観](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)」を参照してください。
 
@@ -144,7 +144,7 @@ public EmployeeListPage()
 
 この XAML の例では `ContentPage` 、を含むを定義 `ListView` します。 `ListView` のデータ ソースは、`ItemsSource` 属性を使用して設定されます。 `ItemsSource` の各行のレイアウトは、`ListView.ItemTemplate` 要素内で定義されます。 この結果、次のスクリーンショットが表示されます。
 
-![](data-and-databinding-images/bound-data.png "ListView using Data Binding")
+![データバインディングを使用した ListView](data-and-databinding-images/bound-data.png)
 
 > [!WARNING]
 > `ObservableCollection` はスレッド セーフではありません。 を変更する `ObservableCollection` と、変更を行ったのと同じスレッドで UI の更新が発生します。 スレッドがプライマリ UI スレッドでない場合は、例外が発生します。

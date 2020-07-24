@@ -10,12 +10,12 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8698bacd7257df431b12166c749f5826e8d6fd3c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 47182578a6583dde34cb7f06e3433cdb2703f6ba
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138451"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937684"
 ---
 # <a name="dots-and-dashes-in-skiasharp"></a>SkiaSharp のドットとダッシュ
 
@@ -25,7 +25,7 @@ _SkiaSharp に点線や破線を描画した場合の複雑さをマスタにし
 
 SkiaSharp を使用すると、実線ではなく、ドットとダッシュで構成される直線を描画できます。
 
-![](dots-images/dottedlinesample.png "Dotted line")
+![点線](dots-images/dottedlinesample.png)
 
 これを行うには、*パス効果*を使用します。これは、 [`SKPathEffect`](xref:SkiaSharp.SKPathEffect) のプロパティに設定するクラスのインスタンスです [`PathEffect`](xref:SkiaSharp.SKPaint.PathEffect) `SKPaint` 。 で定義されているいずれかの静的作成方法を使用して、パス効果を作成する (またはパス効果を結合する) ことができ `SKPathEffect` ます。 ( `SKPathEffect` は、SkiaSharp でサポートされている6つの効果の1つです。その他は、 [**SkiaSharp の効果**](../effects/index.md)に関するセクションで説明されています)。
 
@@ -153,7 +153,7 @@ float[] GetPickerArray(Picker picker)
 
 次のスクリーンショットでは、左側の iOS 画面に点線が表示されています。
 
-[![](dots-images/dotsanddashes-small.png "Triple screenshot of the Dots and Dashes page")](dots-images/dotsanddashes-large.png#lightbox "Triple screenshot of the Dots and Dashes page")
+[![[ドットとダッシュ] ページのトリプルスクリーンショット](dots-images/dotsanddashes-small.png)](dots-images/dotsanddashes-large.png#lightbox "[ドットとダッシュ] ページのトリプルスクリーンショット")
 
 ただし、Android の画面では、配列 {10, 10} を使用して点線を表示することも想定されていますが、線は実線です。 何が起きましたか? 問題は、Android の画面にも、のストロークキャップが設定されていることです `Square` 。 これにより、すべてのダッシュがストローク幅の半分まで拡張され、ギャップを埋めることができます。
 
@@ -214,7 +214,7 @@ public class AnimatedSpiralPage : ContentPage
 
 もちろん、アニメーションを表示するには、プログラムを実際に実行する必要があります。
 
-[![](dots-images/animatedspiral-small.png "Triple screenshot of the Animated Spiral page")](dots-images/animatedspiral-large.png#lightbox "Triple screenshot of the Animated Spiral page")
+[![アニメーション化されたらせんページのトリプルスクリーンショット](dots-images/animatedspiral-small.png)](dots-images/animatedspiral-large.png#lightbox "アニメーション化されたらせんページのトリプルスクリーンショット")
 
 ## <a name="related-links"></a>関連リンク
 

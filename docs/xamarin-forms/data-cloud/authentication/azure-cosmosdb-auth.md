@@ -10,12 +10,12 @@ ms.date: 06/16/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7e1fb6342db4c97ea6946db366d356267c8c1b90
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 05547e960ba1ea141a830396f803dfc265283627
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84570558"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936462"
 ---
 # <a name="authenticate-users-with-an-azure-cosmos-db-document-database-and-xamarinforms"></a>Azure Cosmos DB ドキュメントデータベースを使用してユーザーを認証するXamarin.Forms
 
@@ -36,7 +36,7 @@ _Azure Cosmos DB ドキュメントデータベースは、複数のサーバー
 
 リソーストークンを要求、生成、およびモバイルアプリケーションに配信するための一般的な方法は、リソーストークンブローカーを使用することです。 次の図は、サンプルアプリケーションがリソーストークンブローカーを使用してドキュメントデータベースデータへのアクセスを管理する方法の概要を示しています。
 
-![](azure-cosmosdb-auth-images/documentdb-authentication.png "Document Database Authentication Process")
+![ドキュメントデータベースの認証プロセス](azure-cosmosdb-auth-images/documentdb-authentication.png)
 
 リソーストークンブローカーは、Azure App Service でホストされる中間層 Web API サービスで、Cosmos DB アカウントのマスターキーを所有します。 このサンプルアプリケーションでは、リソーストークンブローカーを使用して、次のようにドキュメントデータベースデータへのアクセスを管理します。
 
@@ -85,7 +85,7 @@ Azure App Service でリソーストークンブローカーをホストする�
 
     次のスクリーンショットは、この構成を示しています。
 
-    [![](azure-cosmosdb-auth-images/azure-web-app-settings.png "App Service Web App Settings")](azure-cosmosdb-auth-images/azure-web-app-settings-large.png#lightbox "App Service Web App Settings")
+    [![Web アプリの設定を App Service する](azure-cosmosdb-auth-images/azure-web-app-settings.png)](azure-cosmosdb-auth-images/azure-web-app-settings-large.png#lightbox "Web アプリの設定を App Service する")
 
 1. リソーストークンブローカーソリューションを Azure App Service web アプリに発行します。
 
@@ -102,7 +102,7 @@ Azure App Service でリソーストークンブローカーをホストする�
 
   次のスクリーンショットは、この構成を示しています。
 
-  ![](azure-cosmosdb-auth-images/facebook-oauth-settings.png "Facebook Login OAuth Settings")
+  ![Facebook ログイン OAuth 設定](azure-cosmosdb-auth-images/facebook-oauth-settings.png)
 
 詳細については、「[アプリケーションを Facebook に登録する](/azure/app-service-mobile/app-service-mobile-how-to-configure-facebook-authentication#a-nameregister-aregister-your-application-with-facebook)」を参照してください。
 
@@ -117,7 +117,7 @@ App Service 簡単な認証を構成するためのプロセスは次のとお�
 
     次のスクリーンショットは、この構成を示しています。
 
-    [![](azure-cosmosdb-auth-images/app-service-authentication-settings.png "App Service Web App Authentication Settings")](azure-cosmosdb-auth-images/app-service-authentication-settings-large.png#lightbox "App Service Web App Authentication Settings")
+    [![Web アプリの認証設定を App Service する](azure-cosmosdb-auth-images/app-service-authentication-settings.png)](azure-cosmosdb-auth-images/app-service-authentication-settings-large.png#lightbox "Web アプリの認証設定を App Service する")
 
 また、Facebook アプリと通信して認証フローを有効にするように、App Service web アプリを構成する必要があります。 これを実現するには、facebook id プロバイダーを選択し、facebook デベロッパーセンターの Facebook アプリ設定から**アプリ ID**と**アプリシークレット**の値を入力します。 詳細については、「[アプリケーションに Facebook 情報を追加する](/azure/app-service-mobile/app-service-mobile-how-to-configure-facebook-authentication#a-namesecrets-aadd-facebook-information-to-your-application)」を参照してください。
 
@@ -144,7 +144,7 @@ var auth = new Xamarin.Auth.WebRedirectAuthenticator(
 
 これにより、Azure App Service と Facebook の間で OAuth 認証フローが開始され、Facebook ログインページが表示されます。
 
-![](azure-cosmosdb-auth-images/login.png "Facebook Login")
+![Facebook ログイン](azure-cosmosdb-auth-images/login.png)
 
 ログインは、iOS の [**キャンセル**] ボタンを押すか、Android の [**戻る**] ボタンを押すことで取り消すことができます。この場合、ユーザーは認証されず、id プロバイダーのユーザーインターフェイスが画面から削除されます。
 

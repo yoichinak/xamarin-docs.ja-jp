@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/18/2016
-ms.openlocfilehash: 2259566fc6342a40a8c0a94bacd1c146b6509d52
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: e976f5bf0789ca6c703a14b667e75b05a7f47819
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574159"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937853"
 ---
 # <a name="accessibility-on-ios"></a>IOS でのユーザー補助
 
@@ -29,7 +29,7 @@ iOS には、 `AccessibilityLabel` 開発者向けのプロパティとプロパ
 
 **Properties Pad**には、IOS UI デザイナーでコントロールを選択したときにこれらの設定を編集できるようにするアクセシビリティのセクションが含まれています。
 
-![](accessibility-images/ios-designer-sml.png "Accessibility Settings")
+![ユーザー補助の設定](accessibility-images/ios-designer-sml.png)
 
 **C#**
 
@@ -115,7 +115,7 @@ notesText.AccessibilityHint = NSBundle.MainBundle.LocalizedString ("Provide more
 
 VoiceOver**は、** **[全般] > [アクセシビリティ > VoiceOver**:
 
-![](accessibility-images/settings-sml.png "Setting the speaking rate")
+![読み上げ速度の設定](accessibility-images/settings-sml.png)
 
 また、[**ユーザー補助**] 画面では、ズーム、テキストサイズ、色 & コントラストオプション、音声設定、およびその他の構成オプションの設定も提供されています。
 
@@ -125,12 +125,12 @@ IOS デバイスでアクセシビリティをテストするには、次の[Voi
 
 シミュレーターでテストする場合、アクセシビリティ**インスペクター**を使用して、ユーザー補助のプロパティとイベントが正しく構成されていることを確認できます。 [全般] > [アクセシビリティ] **> [アクセシビリティ**] [インスペクター] の順に移動して、**設定**アプリのインスペクターをオンにします。
 
-![](accessibility-images/settings-inspector-sml.png "Enable Accessibility Inspector")
+![アクセシビリティインスペクターを有効にする](accessibility-images/settings-inspector-sml.png)
 
 有効にすると、[インスペクター] ウィンドウが常に [iOS] 画面に表示されます。
 テーブルビューの行が選択されたときの出力の例を次に示します。**ラベル**には、行の内容を示す文と、それが "done" であることも示されています (つまり、ティックは表示されています)。
 
-![](accessibility-images/tableview-a11y-sml.png "Using Accessibility Inspector")
+![アクセシビリティインスペクターの使用](accessibility-images/tableview-a11y-sml.png)
 
 インスペクターが表示されている間、左上にある "X" アイコンを使用して、オーバーレイを一時的に表示および非表示にしたり、ユーザー補助の設定を有効または無効にしたりします。
 

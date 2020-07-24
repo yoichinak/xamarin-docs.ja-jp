@@ -10,12 +10,12 @@ ms.date: 09/25/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5142965216b328172ae7fa04cdc0c13590f5ff38
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 287b116d9ba2cb84e4e196fff080b8212e4eca3b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139888"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938412"
 ---
 # <a name="listview-interactivity"></a>ListView の対話機能
 
@@ -48,7 +48,7 @@ ms.locfileid: "84139888"
 
 次のスクリーンショットは、既定の選択モードのを示してい [`ListView`](xref:Xamarin.Forms.ListView) ます。
 
-![](interactivity-images/selection-default.png "ListView with Selection Enabled")
+![選択可能な ListView](interactivity-images/selection-default.png)
 
 ### <a name="disable-selection"></a>選択の無効化
 
@@ -66,7 +66,7 @@ var listView = new ListView { ... SelectionMode = ListViewSelectionMode.None };
 
 多くの場合、ユーザーはの項目に対してアクションを実行する必要があり `ListView` ます。 たとえば、メールアプリの電子メールの一覧を考えてみましょう。 IOS では、スワイプしてメッセージを削除することができます。
 
-![](interactivity-images/context-default.png "ListView with Context Actions")
+![コンテキストアクションを含む ListView](interactivity-images/context-default.png)
 
 コンテキストアクションは、C# および XAML で実装できます。 以下では、その両方に関する特定のガイドを紹介しますが、まず、その両方についていくつかの重要な実装の詳細を見てみましょう。
 
@@ -181,11 +181,11 @@ listView.RefreshControlColor = Color.Red;
 
 次のスクリーンショットは、ユーザーがプルしているときのプルツーリフレッシュを示しています。
 
-![](interactivity-images/refresh-start.png "ListView Pull to Refresh In-Progress")
+![ListView のプルによる更新の進行中](interactivity-images/refresh-start.png)
 
 次のスクリーンショットは、ユーザーがプルを解放した後のプルから更新を示しています。これは、の更新中にスピンボタンが表示され [`ListView`](xref:Xamarin.Forms.ListView) ます。
 
-![](interactivity-images/refresh-in-progress.png "ListView Pull to Refresh Complete")
+![ListView の更新が完了しました](interactivity-images/refresh-in-progress.png)
 
 [`ListView`](xref:Xamarin.Forms.ListView)イベントを発生させて [`Refreshing`](xref:Xamarin.Forms.ListView.Refreshing) 更新を開始し、 [`IsRefreshing`](xref:Xamarin.Forms.ListView.IsRefreshing) プロパティをに設定し `true` ます。 の内容を更新するために必要なすべてのコードは、 `ListView` イベントのイベントハンドラー、またはによって実行されるメソッドによって実行される必要があり `Refreshing` [`RefreshCommand`](xref:Xamarin.Forms.ListView.RefreshCommand) ます。 が更新されたら `ListView` 、 `IsRefreshing` `false` [`EndRefresh`](xref:Xamarin.Forms.ListView.EndRefresh) 更新が完了したことを示すために、プロパティをに設定するか、メソッドを呼び出す必要があります。
 

@@ -10,12 +10,12 @@ ms.date: 03/23/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 520c4c3b61049bf17c2c964523714db196da6839
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 533cb607cc2c47bf108d5e03733f31ebfc2fe475
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84132185"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934135"
 ---
 # <a name="the-rotate-transform"></a>回転変換
 
@@ -25,7 +25,7 @@ _SkiaSharp rotate 変換で可能な効果とアニメーションを調べる_
 
 回転変換を使用すると、SkiaSharp グラフィックスオブジェクトは、水平軸と垂直軸を使用した配置の制約を解除します。
 
-![](rotate-images/rotateexample.png "Text rotated around a center")
+![中心を中心に回転したテキスト](rotate-images/rotateexample.png)
 
 ポイント (0, 0) を中心にしてグラフィカルオブジェクトを回転させる場合、SkiaSharp ではメソッドとメソッドの両方がサポートされ [`RotateDegrees`](xref:SkiaSharp.SKCanvas.RotateDegrees(System.Single)) [`RotateRadians`](xref:SkiaSharp.SKCanvas.RotateRadians(System.Single)) ます。
 
@@ -63,7 +63,7 @@ using (SKPaint textPaint = new SKPaint
 
 回転はキャンバスの左上隅を中心としているため、このプログラムで設定されているほとんどの角度では、テキストは画面から回転します。
 
-[![](rotate-images/basicrotate-small.png "Triple screenshot of the Basic Rotate page")](rotate-images/basicrotate-large.png#lightbox "Triple screenshot of the Basic Rotate page")
+[![基本的な回転ページのトリプルスクリーンショット](rotate-images/basicrotate-small.png)](rotate-images/basicrotate-large.png#lightbox "基本的な回転ページのトリプルスクリーンショット")
 
 これらのバージョンのメソッドとメソッドを使用して、指定されたピボットポイントを中心に回転することがよくあり [`RotateDegrees`](xref:SkiaSharp.SKCanvas.RotateDegrees(System.Single,System.Single,System.Single)) [`RotateRadians`](xref:SkiaSharp.SKCanvas.RotateRadians(System.Single,System.Single,System.Single)) ます。
 
@@ -91,7 +91,7 @@ using (SKPaint textPaint = new SKPaint
 
 テキストは、テキストの配置に使用した点を中心に回転します。これは、テキストのベースラインの水平方向の中心です。
 
-[![](rotate-images/centeredrotate-small.png "Triple screenshot of the Centered Rotate page")](rotate-images/centeredrotate-large.png#lightbox "Triple screenshot of the Centered Rotate page")
+[![中央回転ページのトリプルスクリーンショット](rotate-images/centeredrotate-small.png)](rotate-images/centeredrotate-large.png#lightbox "中央回転ページのトリプルスクリーンショット")
 
 中心となるバージョンのメソッドと同様 `Scale` に、呼び出しの中心と `RotateDegrees` なるバージョンはショートカットです。 メソッドを次に示します。
 
@@ -145,7 +145,7 @@ canvas.DrawText(Title, 0, 0, textPaint);
 
 通常、回転と平行移動を組み合わせるにはいくつかの方法があります。 回転した**テキスト**ページでは、次の表示が作成されます。
 
-[![](rotate-images/rotatedtext-small.png "Triple screenshot of the Rotated Text page")](rotate-images/rotatedtext-large.png#lightbox "Triple screenshot of the Rotated Text page")
+[![回転したテキストページのトリプルスクリーンショット](rotate-images/rotatedtext-small.png)](rotate-images/rotatedtext-large.png#lightbox "回転したテキストページのトリプルスクリーンショット")
 
 `PaintSurface`クラスのハンドラーを次に示し [`RotatedTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/RotatedTextPage.cs) ます。
 
@@ -369,7 +369,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 時計は確かに機能しますが、実際にはむしろ、
 
-[![](rotate-images/uglyanalogclock-small.png "Triple screenshot of the Ugly Analog Clock Text page")](rotate-images/uglyanalogclock-large.png#lightbox "Triple screenshot of the Ugly Analog page")
+[![見づらいアナログ時計のテキストページのトリプルスクリーンショット](rotate-images/uglyanalogclock-small.png)](rotate-images/uglyanalogclock-large.png#lightbox "見づらいアナログページのトリプルスクリーンショット")
 
 より魅力的なクロックについては、「 [**SkiaSharp の SVG パスデータ**](../curves/path-data.md)」を参照してください。
 

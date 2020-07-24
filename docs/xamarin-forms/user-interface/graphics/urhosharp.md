@@ -10,12 +10,12 @@ ms.date: 03/11/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fbf717092da7f77e265803fae87efb5bf0e9876f
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: fd1893a91d9d8e5d2c2581a9f3f9b5ef8ee59f1f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84574367"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937671"
 ---
 # <a name="using-urhosharp-in-xamarinforms"></a>で UrhoSharp を使用するXamarin.Forms
 
@@ -28,8 +28,8 @@ ms.locfileid: "84574367"
 UrhoSharp は、アプリケーションでグラフィックスをレンダリングするために使用でき Xamarin.Forms ます。
 この[サンプル](https://github.com/xamarin/urho-samples/tree/master/FormsSample)では、UrhoSharp を使用して対話型3d グラフを構築する方法を示します。
 
-![](urhosharp-images/ios-animation.gif "UrhoSharp 3D Interactive Chart on iOS")
-![](urhosharp-images/android-animation.gif "UrhoSharp 3D Interactive Chart on Android")
+![](urhosharp-images/ios-animation.gif)
+Android での iOS urhosharp 3d インタラクティブグラフの UrhoSharp 3D 対話型グラフ ![](urhosharp-images/android-animation.gif)
 
 ## <a name="adding-the-urhosharp-nuget-packages"></a>UrhoSharp NuGet パッケージの追加
 
@@ -38,11 +38,11 @@ UrhoSharp を使用する前に、開発者は UrhoSharp NuGet パッケージ�
 UrhoSharp 形式の NuGet パッケージには、UrhoSharp オブジェクトを作成するために必要なすべてのオブジェクトが含まれています。 UrhoSharp 形式の NuGet パッケージには、 `UrhoSurface` で UrhoSharp をホストするために使用されるクラスが含まれてい Xamarin.Forms ます。
 開始するには、.NET Standard ライブラリプロジェクトの**packages**フォルダーを右クリックし、[**パッケージの追加**] を選択します。検索語句を入力し、**に Urhosharp Xamarin.Forms **を選択して、[パッケージの**追加**] をクリック**します。**
 
-[![](urhosharp-images/add-package-sml.png "Add Packages Dialog")](urhosharp-images/add-package.png#lightbox "Add Packages Dialog")
+[![[パッケージの追加] ダイアログ](urhosharp-images/add-package-sml.png)](urhosharp-images/add-package.png#lightbox "[パッケージの追加] ダイアログ")
 
 UrhoSharp 形式の NuGet パッケージがプロジェクトに追加されます。
 
-![](urhosharp-images/packages.png "Packages Folder")
+![パッケージフォルダー](urhosharp-images/packages.png)
 
 プラットフォーム固有のプロジェクト (iOS や Android など) に対して上記の手順を繰り返します。
 

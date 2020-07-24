@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: ed58694073f8d04d16cf19840a07f5210f0afb91
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 1274fc409cd20b974c44fecd87b6d1b175591710
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574068"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930170"
 ---
 # <a name="working-with-tvos-alerts-in-xamarin"></a>Xamarin での tvOS アラートの使用
 
@@ -20,7 +20,7 @@ _この記事では、UIAlertController を使用して tvOS のユーザーに�
 
 TvOS ユーザーに注意を喚起する必要がある場合、または破壊的な操作 (ファイルの削除など) を実行するアクセス許可を要求する場合は、を使用して警告メッセージを表示でき `UIAlertViewController` ます。
 
-[![](alerts-images/alert01.png "An example UIAlertViewController")](alerts-images/alert01.png#lightbox)
+[![UIAlertViewController の例](alerts-images/alert01.png)](alerts-images/alert01.png#lightbox)
 
 メッセージを表示するだけでなく、ボタンやテキストフィールドを警告に追加して、ユーザーがアクションに応答してフィードバックを提供できるようにすることもできます。
 
@@ -30,7 +30,7 @@ TvOS ユーザーに注意を喚起する必要がある場合、または破壊
 
 前述のように、アラートを使用してユーザーの注意を受け取り、アプリの状態またはフィードバックの要求を通知します。 アラートにはタイトルを指定する必要があります。また、必要に応じて、メッセージと1つ以上のボタンまたはテキストフィールドを含めることができます。
 
-[![](alerts-images/alert04.png "An example alert")](alerts-images/alert04.png#lightbox)
+[![アラートの例](alerts-images/alert04.png)](alerts-images/alert04.png#lightbox)
 
 Apple では、アラートの使用に関して次のような提案があります。
 
@@ -117,11 +117,11 @@ UIAlertAction.Create ("Button Title", UIAlertActionStyle.Default, _ =>
 
 アラートにアクション (ボタン) を追加するだけでなく、テキストフィールドをアラートに追加して、ユーザーがユーザー Id やパスワードなどの情報を入力できるようにすることができます。
 
-[![](alerts-images/alert02.png "Text Field in an alert")](alerts-images/alert02.png#lightbox)
+[![警告のテキストフィールド](alerts-images/alert02.png)](alerts-images/alert02.png#lightbox)
 
 ユーザーがテキストフィールドを選択すると、標準の tvOS キーボードが表示され、フィールドの値を入力できます。
 
-[![](alerts-images/alert03.png "Entering text")](alerts-images/alert03.png#lightbox)
+[![テキストを入力する](alerts-images/alert03.png)](alerts-images/alert03.png#lightbox)
 
 次のコードでは、値を入力するための1つのテキストフィールドを含む、OK/キャンセルアラートを表示します。
 

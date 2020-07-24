@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 5aa3baa6aba76483866911d905687be6c3a5ae4e
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 44297e32821721d483a265e7d2a69016f4e1a87b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569830"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86940024"
 ---
 # <a name="auto-layout-with-the-xamarin-designer-for-ios"></a>Xamarin Designer for iOS を使用した自動レイアウト
 
@@ -45,13 +45,13 @@ View.AddConstraint (NSLayoutConstraint.Create (Button1, NSLayoutAttribute.Left, 
 1. デザイン画面の空の領域をクリックします。 これにより、すべての要素が選択解除され、ストーリーボードドキュメントのプロパティが表示されます。
 1. プロパティパネルで、[**オートレイアウトを使用する**] チェックボックスをオンまたはオフにします。
 
-    ![](designer-auto-layout-images/image01.png "The Use Autolayout checkbox in the property panel")
+    ![プロパティパネルの [オートレイアウトを使用する] チェックボックス](designer-auto-layout-images/image01.png)
 
 既定では、画面上に制約が作成または表示されません。 代わりに、コンパイル時にフレーム情報から自動的に推論されます。 制約を追加するには、デザイン画面で要素を選択し、制約を追加する必要があります。 これは、[**制約] ツールバー**を使用して行うことができます。
 
 ## <a name="constraints-toolbar"></a>制約ツールバー
 
- [![](designer-auto-layout-images/toolbarnew.png "The Context Menu Commands")](designer-auto-layout-images/toolbarnew.png#lightbox)
+ [![コンテキストメニューのコマンド](designer-auto-layout-images/toolbarnew.png)](designer-auto-layout-images/toolbarnew.png#lightbox)
 
 [制約] ツールバーが更新され、次の2つの主要部分で構成されるようになりました。
 
@@ -93,7 +93,7 @@ IOS デザイナーツールには、デザインサーフェイス上の要素�
 
 制約を作成するには、ハンドルを選択し、デザインサーフェイス上の任意の場所にドラッグします。 ドラッグを開始すると、一連の緑色の線/ボックスが画面に表示され、制約できるものが示されます。 たとえば、次のスクリーンショットでは、中央のボタンの上側を制限しています。
 
- [![](designer-auto-layout-images/image07.png "Constraining the top side of the middle button")](designer-auto-layout-images/image07.png#lightbox)
+ [![中央のボタンの上側を制限する](designer-auto-layout-images/image07.png)](designer-auto-layout-images/image07.png#lightbox)
 
 他の2つのボタンの間にある3つの点線の緑色の線に注意してください。 緑色の線は、*ドロップ領域*、または制限できる他の要素の属性を示します。 上のスクリーンショットでは、その他の2つのボタンは、ボタンを制限するための垂直方向の3つのドロップエリア (*下部*、*中央の y*、*上*) を提供しています。 ビューの上部にある緑色の点線は、ビューコントローラーがビューの一番上に制約を提供することを意味します。緑色の緑色の場合は、ビューコントローラーがトップレイアウトガイドの下に制約を提供することを意味します。
 
@@ -106,13 +106,13 @@ IOS デザイナーツールには、デザインサーフェイス上の要素�
 
 サイズの制約がある場合 (*高さ*と*幅*)、2つのオプションがあります。 最初のオプションでは、上の例で示すように、ハンドルをドラッグして近隣の要素サイズを制限します。 もう1つのオプションは、ハンドルをダブルクリックして自己制約を作成することです。 これにより、次のスクリーンショットに示すように、定数サイズ値を指定できます。
 
- [![](designer-auto-layout-images/sizec.png "Drag the handle to constrain to a neighbor element size, as illustrated here")](designer-auto-layout-images/sizec.png#lightbox)
+ [![次に示すように、ハンドルをドラッグして近隣の要素サイズに制限します。](designer-auto-layout-images/sizec.png)](designer-auto-layout-images/sizec.png#lightbox)
 
 ### <a name="center-constraints"></a>中央の制約
 
 Square ハンドルは、コンテキストに応じて、 *system.windows.media.rotatetransform.centerx*または*センター y*制約を作成します。 四角形ハンドルをドラッグすると、次のスクリーンショットに示すように、垂直方向と水平方向の両方のドロップ領域を提供するために、他の要素が淡色表示されます。
 
- [![](designer-auto-layout-images/centerc.png "Center Constraints")](designer-auto-layout-images/centerc.png#lightbox)
+ [![中央の制約](designer-auto-layout-images/centerc.png)](designer-auto-layout-images/centerc.png#lightbox)
 
 垂直のドロップエリアを選択すると、*中央の y*制約が作成されます。 水平方向のドロップ領域を選択した場合、制約は*system.windows.media.rotatetransform.centerx*に基づいて作成されます。
 
@@ -120,17 +120,17 @@ Square ハンドルは、コンテキストに応じて、 *system.windows.media
 
 2つの要素間のアラインメントとサイズの等価性の両方の制約を作成するには、次のスクリーンショットに示すように、上部のツールバーから項目を選択して、水平方向の配置、垂直方向の配置、およびサイズの等号を指定できます。
 
- [![](designer-auto-layout-images/image06.png "Combinational Constraints")](designer-auto-layout-images/image06.png#lightbox)
+ [![主要制約の連結](designer-auto-layout-images/image06.png)](designer-auto-layout-images/image06.png#lightbox)
 
 ### <a name="visualizing-and-editing-constraints"></a>制約の視覚化と編集
 
 制約を追加すると、項目を選択したときに、デザインサーフェイスに青い線として表示されます。
 
- [![](designer-auto-layout-images/image09.png "Visualizing Constraints")](designer-auto-layout-images/image09.png#lightbox)
+ [![視覚化 (制約を)](designer-auto-layout-images/image09.png)](designer-auto-layout-images/image09.png#lightbox)
 
 制約を選択するには、青い線をクリックし、[プロパティ] パネルで直接制約値を編集します。 または、青い線をダブルクリックすると、デザインサーフェイス上で値を直接編集できる segue が表示されます。
 
- [![](designer-auto-layout-images/image08.png "Editing Constraints")](designer-auto-layout-images/image08.png#lightbox)
+ [![制約の編集](designer-auto-layout-images/image08.png)](designer-auto-layout-images/image08.png#lightbox)
 
 ## <a name="constraint-issues"></a>制約の問題
 
@@ -146,27 +146,27 @@ Square ハンドルは、コンテキストに応じて、 *system.windows.media
 
 競合する制約は赤色でマークされ、警告記号が付きます。 警告シンボルをポイントすると、segue に競合に関する情報が表示されます。
 
- [![](designer-auto-layout-images/image11.png "Conflicting Constraints warning")](designer-auto-layout-images/image11.png#lightbox)
+ [![競合する制約の警告](designer-auto-layout-images/image11.png)](designer-auto-layout-images/image11.png#lightbox)
 
 ### <a name="underconstrained-items"></a>Underconstrained Items
 
 Underconstrained items はオレンジ色で表示され、ビューコントローラーオブジェクトバーにオレンジ色のマーカーアイコンが表示されます。
 
- [![](designer-auto-layout-images/image02.png "Underconstrained items appear in orange")](designer-auto-layout-images/image02.png#lightbox)
+ [![Underconstrained の項目はオレンジ色で表示されます](designer-auto-layout-images/image02.png)](designer-auto-layout-images/image02.png#lightbox)
 
 そのマーカーアイコンをクリックすると、次のスクリーンショットに示すように、シーン内の underconstrained アイテムに関する情報を取得し、問題を解決することができます。
 
- [![](designer-auto-layout-images/image10.png "Fixing Underconstrained Items")](designer-auto-layout-images/image10.png#lightbox)
+ [![Underconstrained 項目の修正](designer-auto-layout-images/image10.png)](designer-auto-layout-images/image10.png#lightbox)
 
 ### <a name="frame-misplacement"></a>フレーム Misplacement
 
 Frame misplacement は、underconstrained items と同じカラーコードを使用します。 項目は常にネイティブフレームを使用してサーフェイス上に表示されますが、フレーム misplacement の場合は、次のスクリーンショットに示すように、アプリケーションの実行時に項目が終了する位置が赤い四角形でマークされます。
 
- [![](designer-auto-layout-images/image05.png "Sample Frame Misplacement view")](designer-auto-layout-images/image05.png#lightbox)
+ [![サンプルフレーム Misplacement ビュー](designer-auto-layout-images/image05.png)](designer-auto-layout-images/image05.png#lightbox)
 
 フレーム misplacement エラーを解決するには、[制約] ツールバーの [**制約に基づいてフレームを更新**する] ボタン (右端のボタン) を選択します。
 
- [![](designer-auto-layout-images/image03.png "Update Frames based on Constraints toolbar button")](designer-auto-layout-images/image03.png#lightbox)
+ [![[制約に基づいてフレームを更新する] ツールバーボタン](designer-auto-layout-images/image03.png)](designer-auto-layout-images/image03.png#lightbox)
 
 これにより、コントロールによって定義された位置と一致するように、要素フレームが自動的に調整されます。
 
@@ -181,11 +181,11 @@ Frame misplacement は、underconstrained items と同じカラーコードを�
 1. (上記のいずれかの方法を使用して) 通常どおり制約を作成します。
 2. **ドキュメントアウトラインエクスプローラー**で、目的の制約を見つけて選択します。
 
-    [![](designer-auto-layout-images/modify01.png "The Document Outline Explorer")](designer-auto-layout-images/modify01.png#lightbox)
+    [![ドキュメントアウトラインエクスプローラー](designer-auto-layout-images/modify01.png)](designer-auto-layout-images/modify01.png#lightbox)
 3. 次に、**プロパティエクスプローラー**の [**ウィジェット**] タブで、制約に**名前**を割り当てます。
 
-    [![](designer-auto-layout-images/modify02.png "The Widget Tab")](designer-auto-layout-images/modify02.png#lightbox)
-4. 変更内容を保存します。
+    [![[ウィジェット] タブ](designer-auto-layout-images/modify02.png)](designer-auto-layout-images/modify02.png#lightbox)
+4. 変更を保存します。
 
 上記の変更を適用したら、コードで制約にアクセスし、そのプロパティを変更できます。 たとえば、次のコードを使用して、添付ビューの高さをゼロに設定できます。
 
@@ -195,7 +195,7 @@ ViewInfoHeight.Constant = 0;
 
 IOS デザイナーでは、次のような制約が設定されています。
 
-[![](designer-auto-layout-images/modify03.png "Editing a Constraint in the Property Explorer")](designer-auto-layout-images/modify03.png#lightbox)
+[![プロパティエクスプローラーでの制約の編集](designer-auto-layout-images/modify03.png)](designer-auto-layout-images/modify03.png#lightbox)
 
 ### <a name="the-deferred-layout-pass"></a>遅延レイアウトパス
 

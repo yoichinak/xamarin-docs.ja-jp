@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: bf023543d3159f5d5baf7f7036a576b8a746cf9e
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 6002e5cc62dfe30c14f21943c690a5a1b15a0c12
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572131"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936592"
 ---
 # <a name="table-parts-and-functionality-in-xamarinios"></a>Xamarin. iOS のテーブルパーツと機能
 
@@ -21,12 +21,12 @@ UITableView は、"グループ化" または "plain" スタイルを持つこ�
 - [セクションヘッダー](#Section_Header)
 - [セル](#Cells)(または必要に応じて行)
 - [セクションフッター](#Section_Footer)
-- [化](#Index)
+- [Index](#Index)
 - [編集モード](#Edit_Features)(行の順序を変更するには ' スワイプする ' とドラッグハンドルを含む) 
 
 これらのスクリーンショットは、セクション行、ヘッダー、フッター、編集コントロール、およびインデックスがどのように表示されるかを示しています。
 
- [![](table-parts-and-functionality-images/image1a.png "These screenshots show how section rows, headers, footers, edit controls and the index are displayed")](table-parts-and-functionality-images/image1a.png#lightbox)
+ [![これらのスクリーンショットは、セクション行、ヘッダー、フッター、編集コントロール、およびインデックスがどのように表示されるかを示しています。](table-parts-and-functionality-images/image1a.png)](table-parts-and-functionality-images/image1a.png#lightbox)
 
 これらの部分については、以下で詳しく説明します。
 
@@ -72,7 +72,7 @@ UITableView は、"グループ化" または "plain" スタイルを持つこ�
 
 テーブルビューの表示に使用される主なクラスを次に示します。
 
-[![](table-parts-and-functionality-images/classdiagram.png "The primary classes used to display table views are shown here")](table-parts-and-functionality-images/classdiagram.png#lightbox)
+[![テーブルビューを表示するために使用される主なクラスを次に示します。](table-parts-and-functionality-images/classdiagram.png)](table-parts-and-functionality-images/classdiagram.png#lightbox)
 
 各クラスの目的は次のとおりです。
 

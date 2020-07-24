@@ -10,16 +10,16 @@ ms.date: 01/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 462948905f40679e2b931d4aa0039308c64a0a8f
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: cf5d3924a726247ea1884acc75720566d76c76e4
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136498"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929217"
 ---
 # <a name="xamarinforms-carouselview-scrolling"></a>Xamarin.FormsCarouselView スクロール
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![プレリリース API](~/media/shared/preview.png "この API は現在プレリリースです")
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 
@@ -135,7 +135,7 @@ carouselView.ScrollTo(monkey, position: ScrollToPosition.MakeVisible);
 > [!NOTE]
 > [`ScrollToPosition.MakeVisible`](xref:Xamarin.Forms.ScrollToPosition)メンバーは、 `position` メソッドの呼び出し時に引数が指定されていない場合に、既定で使用され `ScrollTo` ます。
 
-### <a name="start"></a>開始
+### <a name="start"></a>[開始]
 
 メンバーは、 [`ScrollToPosition.Start`](xref:Xamarin.Forms.ScrollToPosition) 項目をビューの先頭までスクロールする必要があることを示します。
 
@@ -231,7 +231,7 @@ CarouselView carouselView = new CarouselView
 > [!IMPORTANT]
 > プロパティの値は、 [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment) [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) プロパティがまたはに設定されている場合にのみ尊重され `Mandatory` `MandatorySingle` ます。
 
-#### <a name="start"></a>開始
+#### <a name="start"></a>[開始]
 
 メンバーは、 `SnapPointsAlignment.Start` スナップポイントが項目の先頭端に合わせて整列されていることを示します。 次の XAML の例は、この列挙型のメンバーを設定する方法を示しています。
 

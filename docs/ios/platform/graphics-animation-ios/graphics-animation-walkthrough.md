@@ -7,26 +7,26 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: b35e88cfdc0bce321068951f1617885c90331c83
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 632577d290c6d50a53d2f3fc236b5956f3795b35
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032448"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929546"
 ---
 # <a name="using-core-graphics-and-core-animation-in-xamarinios"></a>Xamarin でのコアグラフィックスとコアアニメーションの使用
 
-このチュートリアルでは、タッチ入力に応じてコアグラフィックスを使用してパスを描画します。 次に、パスに沿ってアニメーション化するイメージを含む `CALayer` を追加します。
+このチュートリアルでは、タッチ入力に応じてコアグラフィックスを使用してパスを描画します。 次に、 `CALayer` パスに沿ってアニメーション化するイメージを含むを追加します。
 
-次のスクリーンショットは、完成したアプリケーションを示しています。
+次に示すのは完成したアプリケーションのスクリーンショットです。
 
-![](graphics-animation-walkthrough-images/00-final-app.png "The completed application")
+![完成したアプリケーション](graphics-animation-walkthrough-images/00-final-app.png)
 
-このガイドに付属する*GraphicsDemo*サンプルのダウンロードを開始する前に、こちらを参照してください。 [ここで](https://docs.microsoft.com/samples/xamarin/ios-samples/graphicsandanimation)ダウンロードでき、 **GraphicsWalkthrough**ディレクトリ内に配置されています。 **GraphicsDemo_starter**という名前のプロジェクトを開き、ダブルクリックして、`DemoView` クラスを開きます。
+このガイドに付属する*GraphicsDemo*サンプルのダウンロードを開始する前に、こちらを参照してください。 [ここで](https://docs.microsoft.com/samples/xamarin/ios-samples/graphicsandanimation)ダウンロードでき、 **GraphicsWalkthrough**ディレクトリ内に配置されています。 **GraphicsDemo_starter**という名前のプロジェクトを開き、ダブルクリックしてクラスを開き `DemoView` ます。
 
 ## <a name="drawing-a-path"></a>パスの描画
 
-1. `DemoView`、`CGPath` 変数をクラスに追加し、コンストラクターでインスタンス化します。 また、パスの構築元のタッチポイントをキャプチャするために使用する2つの `CGPoint` 変数 `initialPoint` と `latestPoint`も宣言します。
+1. で `DemoView` `CGPath` 、変数をクラスに追加し、コンストラクターでインスタンス化します。 また、 `CGPoint` パスを構築するための `initialPoint` `latestPoint` タッチポイントをキャプチャするために使用するとという2つの変数も宣言します。
 
     ```csharp
     public class DemoView : UIView
@@ -44,7 +44,7 @@ ms.locfileid: "73032448"
     }
     ```
 
-2. 次の using ディレクティブを追加します。
+2. ディレクティブを使用して以下を追加します。
 
     ```csharp
     using CoreGraphics;
@@ -52,7 +52,7 @@ ms.locfileid: "73032448"
     using Foundation;
     ```
 
-3. 次に、`TouchesBegan` と `TouchesMoved,` をオーバーライドし、次の実装を追加して、最初のタッチポイントと後続の各タッチポイントをそれぞれキャプチャします。
+3. 次に、とをオーバーライドし、 `TouchesBegan` `TouchesMoved,` 次の実装を追加して、最初のタッチポイントと後続の各タッチポイントをそれぞれキャプチャします。
 
     ```csharp
     public override void TouchesBegan (NSSet touches, UIEvent evt){
@@ -79,9 +79,9 @@ ms.locfileid: "73032448"
     }
     ```
 
-    `SetNeedsDisplay` は、次の実行ループパスで `Draw` を呼び出すために、移動するたびに呼び出されます。
+    `SetNeedsDisplay`は `Draw` 、次の実行ループパスでを呼び出すために、が移動するたびに呼び出されます。
 
-4. `Draw` メソッドのパスに行を追加し、で描画するには赤い破線を使用します。 次に示すコードを使用して[`Draw`を実装](~/ios/platform/graphics-animation-ios/core-graphics.md)します。
+4. メソッドのパスに行を追加し、 `Draw` 赤い破線を使用してを描画します。 [実装 `Draw` ](~/ios/platform/graphics-animation-ios/core-graphics.md)次に示すコードを使用します。
 
     ```csharp
     public override void Draw (CGRect rect){
@@ -117,13 +117,13 @@ ms.locfileid: "73032448"
 
 ここでアプリケーションを実行すると、次のスクリーンショットに示すように、画面に触れることができます。
 
-![](graphics-animation-walkthrough-images/01-path.png "Drawing on the screen")
+![画面上の描画](graphics-animation-walkthrough-images/01-path.png)
 
 ## <a name="animating-along-a-path"></a>パスに沿ってアニメーション化する
 
 ユーザーがパスを描画できるようにコードを実装したので、次に、描画されたパスに沿ってレイヤーをアニメーション化するコードを追加します。
 
-1. まず、 [`CALayer`](~/ios/platform/graphics-animation-ios/core-animation.md)変数をクラスに追加し、コンストラクターで作成します。
+1. まず、変数を [`CALayer`](~/ios/platform/graphics-animation-ios/core-animation.md) クラスに追加し、コンストラクターで作成します。
 
     ```csharp
     public class DemoView : UIView
@@ -148,9 +148,9 @@ ms.locfileid: "73032448"
             }
     ```
 
-2. 次に、ユーザーが画面から指を離したときに、ビューのレイヤーのサブレイヤーとしてレイヤーを追加します。 次に、パスを使用してキーフレームアニメーションを作成し、レイヤーの `Position`をアニメーション化します。
+2. 次に、ユーザーが画面から指を離したときに、ビューのレイヤーのサブレイヤーとしてレイヤーを追加します。 次に、パスを使用してキーフレームアニメーションを作成し、レイヤーのをアニメーション化し `Position` ます。
 
-    これを実現するには、`TouchesEnded` をオーバーライドし、次のコードを追加する必要があります。
+    これを実現するには、をオーバーライドし、次のコードを追加する必要があり `TouchesEnded` ます。
 
     ```csharp
     public override void TouchesEnded (NSSet touches, UIEvent evt)
@@ -173,11 +173,11 @@ ms.locfileid: "73032448"
 
 3. ここでアプリケーションを実行し、描画した後、イメージを含むレイヤーが追加され、描画されたパスに沿って移動します。
 
-![](graphics-animation-walkthrough-images/00-final-app.png "A layer with an image is added and travels along the drawn path")
+![イメージを含むレイヤーが追加され、描画パスに沿って移動します。](graphics-animation-walkthrough-images/00-final-app.png)
 
 ## <a name="summary"></a>まとめ
 
-この記事では、グラフィックスとアニメーションの概念を連携させる例について説明します。 まず、コアグラフィックスを使用して、ユーザータッチに応じて `UIView` にパスを描画する方法を説明しました。 次に、コアアニメーションを使用して、そのパスに沿ってイメージを移動する方法を説明しました。
+この記事では、グラフィックスとアニメーションの概念を連携させる例について説明します。 まず、コアグラフィックスを使用して、ユーザータッチへの応答としてでパスを描画する方法を説明しました `UIView` 。 次に、コアアニメーションを使用して、そのパスに沿ってイメージを移動する方法を説明しました。
 
 ## <a name="related-links"></a>関連リンク
 

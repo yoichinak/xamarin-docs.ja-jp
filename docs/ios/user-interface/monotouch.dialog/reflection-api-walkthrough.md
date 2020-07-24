@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: davidortinau
 ms.author: daortin
-ms.openlocfilehash: 1a6391c0e626c60fe35acee61f55f2f202f077b8
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: bdbff7760e7680173c57e5fc83cecb80967c0a51
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573444"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996098"
 ---
 # <a name="creating-a-xamarinios-application-using-the-reflection-api"></a>リフレクション API を使用して Xamarin iOS アプリケーションを作成する
 
@@ -27,12 +27,12 @@ MT.D は、Xamarin. iOS と共に配布されます。 これを使用するに�
 リフレクション API の使用方法は次のように単純です。
 
 1. MT で修飾されたクラスを作成します。D 属性。
-1. インスタンスを作成し `BindingContext` 、上記のクラスのインスタンスを渡します。 
-1. を作成し、を `DialogViewController` 渡し `BindingContext’s` `RootElement` ます。 
+1. インスタンスを作成し `BindingContext` 、上記のクラスのインスタンスを渡します。
+1. を作成し、を `DialogViewController` 渡し `BindingContext’s` `RootElement` ます。
 
 リフレクション API の使用方法を示す例を見てみましょう。 この例では、次のように単純なデータ入力画面を作成します。
 
- [![](reflection-api-walkthrough-images/01-expense-entry.png "In this example, we'll build a simple data entry screen as shown here")](reflection-api-walkthrough-images/01-expense-entry.png#lightbox)
+ [![この例では、次に示すように単純なデータ入力画面を作成します。](reflection-api-walkthrough-images/01-expense-entry.png)](reflection-api-walkthrough-images/01-expense-entry.png#lightbox)
 
 ## <a name="creating-a-class-with-mtd-attributes"></a>MT を使用したクラスの作成。D 属性
 
@@ -45,13 +45,13 @@ public class Expense
 
     [Entry("Enter expense name")]
     public string Name;
-        
+
     [Section("Expense Details")]
-  
+
     [Caption("Description")]
     [Entry]
     public string Details;
-        
+
     [Checkbox]
     public bool IsApproved = true;
 }
@@ -81,14 +81,14 @@ UIWindow window;
 public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 {   
     window = new UIWindow (UIScreen.MainScreen.Bounds);
-            
+
     var expense = new Expense ();
     var bctx = new BindingContext (null, expense, "Create a task");
     var dvc = new DialogViewController (bctx.Root);
-            
+
     window.RootViewController = dvc;
     window.MakeKeyAndVisible ();
-            
+
     return true;
 }
 ```
@@ -106,7 +106,7 @@ window.RootViewController = nav;
 
 アプリケーションを実行すると、次のスクリーンショットに示すように、タイトルがナビゲーションバーに表示され `UINavigationController’s` ます。
 
- [![](reflection-api-walkthrough-images/02-create-task.png "Now when we run the application, the title appears in the UINavigationControllers navigation bar")](reflection-api-walkthrough-images/02-create-task.png#lightbox)
+ [![アプリケーションを実行すると、UINavigationControllers ナビゲーションバーにタイトルが表示されるようになりました。](reflection-api-walkthrough-images/02-create-task.png)](reflection-api-walkthrough-images/02-create-task.png#lightbox)
 
 を含めることにより `UINavigationController` 、MT の他の機能を利用できるようになりました。ナビゲーションが必要な D。 たとえば、クラスに列挙を追加して、 `Expense` 経費のカテゴリと MT を定義できます。D は選択画面を自動的に作成します。 例を示すために、次のよう `Expense` にフィールドを含めるようにクラスを変更し `ExpenseCategory` ます。
 
@@ -117,7 +117,7 @@ public enum Category
     Lodging,
     Books
 }
-        
+
 public class Expense
 {
     …
@@ -129,11 +129,11 @@ public class Expense
 
 アプリケーションを実行すると、次のように、カテゴリのテーブルに新しい行が生成されます。
 
- [![](reflection-api-walkthrough-images/03-set-details.png "Running the application now results in a new row in the table for the category as shown")](reflection-api-walkthrough-images/03-set-details.png#lightbox)
+ [![アプリケーションを実行すると、次のように、カテゴリのテーブルに新しい行が表示されます。](reflection-api-walkthrough-images/03-set-details.png)](reflection-api-walkthrough-images/03-set-details.png#lightbox)
 
 行を選択すると、次に示すように、アプリケーションは列挙に対応する行を含む新しい画面に移動します。
 
- [![](reflection-api-walkthrough-images/04-set-category.png "Selecting the row results in the application navigating to a new screen with rows corresponding to the enumeration")](reflection-api-walkthrough-images/04-set-category.png#lightbox)
+ [![行を選択すると、アプリケーションは、列挙に対応する行を含む新しい画面に移動します。](reflection-api-walkthrough-images/04-set-category.png)](reflection-api-walkthrough-images/04-set-category.png#lightbox)
 
  <a name="Summary"></a>
 

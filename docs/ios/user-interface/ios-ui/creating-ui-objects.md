@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: ef54cebebb3881f5bb08aa6edfdc344169f179b4
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 729289c1764746f9777ef3d720e77865c9a71389
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574094"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937255"
 ---
 # <a name="creating-user-interface-objects-in-xamarinios"></a>Xamarin でのユーザーインターフェイスオブジェクトの作成
 
@@ -42,17 +42,17 @@ IOS Designer でユーザーインターフェイスの作成を開始するに�
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
- [![](creating-ui-objects-images/image2b.png "Toolbox Pad")](creating-ui-objects-images/image2b.png#lightbox)
+ [![ツールボックスパッド](creating-ui-objects-images/image2b.png)](creating-ui-objects-images/image2b.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
- [![](creating-ui-objects-images/image2b-vs.png "Toolbox Pad - Visual Stuio")](creating-ui-objects-images/image2b.png#lightbox)
+ [![ツールボックスパッド-Visual Studio](creating-ui-objects-images/image2b-vs.png)](creating-ui-objects-images/image2b.png#lightbox)
 
 -----
 
 デザインサーフェイスでコントロールを選択すると、そのコントロールの属性が**Properties Pad**に表示されます。 次のスクリーンショットに入力されている**ウィジェット > id > 名**フィールドは、*アウトレット*名として使用されます。 C# でコントロールを参照するには、次の手順を実行します。
 
- [![](creating-ui-objects-images/image3b.png "Properties Widget Pad")](creating-ui-objects-images/image3b.png#lightbox)
+ [![プロパティウィジェットパッド](creating-ui-objects-images/image3b.png)](creating-ui-objects-images/image3b.png#lightbox)
 
 IOS designer の使用方法の詳細については、 [Ios designer の概要](~/ios/user-interface/designer/introduction.md)に関するガイドを参照してください。
 
@@ -64,27 +64,27 @@ Xcode でストーリーボードを開くには、右クリックしてスト�
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
- [![](creating-ui-objects-images/imagexcode.png "Storyboard context menu - Xcode")](creating-ui-objects-images/imagexcode.png#lightbox)
+ [![ストーリーボードコンテキストメニュー-Xcode](creating-ui-objects-images/imagexcode.png)](creating-ui-objects-images/imagexcode.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![](creating-ui-objects-images/imagexcode-vs.png "Storyboard context menu - Xcode")](creating-ui-objects-images/imagexcode-vs.png#lightbox)
+[![ストーリーボードコンテキストメニュー-Xcode](creating-ui-objects-images/imagexcode-vs.png)](creating-ui-objects-images/imagexcode-vs.png#lightbox)
 
 -----
 
 コントロールは、次に示す**オブジェクトライブラリ**からデザインサーフェイスにドラッグできます。
 
- [![](creating-ui-objects-images/image5a.png "Xcode Object Library")](creating-ui-objects-images/image5a.png#lightbox)
+ [![Xcode オブジェクトライブラリ](creating-ui-objects-images/image5a.png)](creating-ui-objects-images/image5a.png#lightbox)
 
 Interface Builder を使用して UI をデザインするときは、C# で参照するコントロールごとに**アウトレット**を作成する必要があります。 これを行うには、[Xcode] ツールバーボタンの [center**エディター** ] ボタンを使用して、**アシスタントエディター**を有効にします。
 
- [![](creating-ui-objects-images/image6a.png "Assistant Editor button")](creating-ui-objects-images/image6a.png#lightbox)
+ [![アシスタントエディターボタン](creating-ui-objects-images/image6a.png)](creating-ui-objects-images/image6a.png#lightbox)
 
 ユーザーインターフェイスオブジェクトをクリックします。次に、.h ファイルに**ドラッグ**します。 **ドラッグを制御**するには、コントロールキーを押したまま、コンセント (またはアクション) を作成するユーザーインターフェイスオブジェクトをクリックしたままにします。 ヘッダーファイルにドラッグしたまま、Ctrl キーを押したままにしておきます。 定義の下にドラッグを完了 `@interface` します。 次のスクリーンショットに示すように、青い線が、キャプションの挿入コンセントまたはアウトレットコレクションと共に表示されます。
 
 このボタンを離すと、アウトレットの名前を入力するように求められます。これは、コードで参照できる C# プロパティを作成するために使用されます。
 
- [![](creating-ui-objects-images/image8a.png "Creating an outlet")](creating-ui-objects-images/image8a.png#lightbox)
+ [![アウトレットの作成](creating-ui-objects-images/image8a.png)](creating-ui-objects-images/image8a.png#lightbox)
 
 Xcode の Interface Builder と Visual Studio for Mac との統合方法の詳細については、 [Xib コード生成](~/ios/internals/xib-code-generation.md#generated)に関するドキュメントを参照してください。
 
@@ -118,7 +118,7 @@ public override void ViewDidLoad () {
 
 ビューコントローラーがデザインサーフェイスに追加されると、対応する2つの C# ファイルがプロジェクトに作成されます。 この例では、 `ControlsViewController.cs` と `ControlsViewController.designer.cs` が自動的に作成されています。
 
- [![](creating-ui-objects-images/image9b.png "ViewController partial class")](creating-ui-objects-images/image9b.png#lightbox)
+ [![ViewController 部分クラス](creating-ui-objects-images/image9b.png)](creating-ui-objects-images/image9b.png#lightbox)
 
 この `ControlsViewController.cs` ファイルは、*コード*を対象としています。 ここでは、 `View` やなどのライフサイクルメソッドを `ViewDidLoad` `ViewWillAppear` 実装し、独自のプロパティ、フィールド、およびメソッドを追加できます。
 

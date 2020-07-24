@@ -6,12 +6,12 @@ ms.assetid: 066d36a3-e553-48d6-8769-c972274d7641
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 6cd5acb529d617c72d8c9e1bd642a831f90b2e8c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 976d0882c5875c1d3e1c8f0ea1732de08df8e07f
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73013742"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996176"
 ---
 # <a name="missing-visual-studio-extensions-after-installation"></a>インストール後に見つからない Visual Studio の拡張機能がある
 
@@ -23,17 +23,17 @@ Visual Studio 2017 (Community、Professional、または Enterprise) 以降が�
 
 ## <a name="possible-fix-1-change-the-installation-to-make-sure-the-visual-studio-extensions-are-installed"></a>考えられる修正プログラム 1: Visual Studio 拡張機能がインストールされていることを確認するために、インストールを変更します。
 
-場合によっては、Xamarin インストーラーによって、Visual Studio 拡張機能のインストールオプションが自動的にオフにされることがあります。 これが問題の原因である場合は、インストーラーの **[変更]** コマンドを使用して、不足している Visual Studio 拡張機能をインストールします。 たとえば、Visual Studio 2013 の拡張機能をインストールするには、次のようにします。
+場合によっては、Xamarin インストーラーによって、Visual Studio 拡張機能のインストールオプションが自動的にオフにされることがあります。 これが問題の原因である場合は、インストーラーの [**変更**] コマンドを使用して、不足している Visual Studio 拡張機能をインストールします。 たとえば、Visual Studio 2013 の拡張機能をインストールするには、次のようにします。
 
 1. コントロールパネルの [Windows の**プログラムと機能**] を開きます。
 
-2. **Xamarin**エントリを右クリックし、 **[変更]** を選択します。
+2. **Xamarin**エントリを右クリックし、[**変更**] を選択します。
 
-3. **[次へ]** 、 **[変更]** の順にクリックします。
+3. [**次へ**]、[**変更**] の順にクリックします。
 
 4. **Xamarin for Visual Studio 2013**オプションが [インストール] に設定されていることを確認します。
 
-    ![](missing-vs-extensions-images/installer.png "Enable Xamarin for Visual Studio 2013 installation option")
+    ![Visual Studio 2013 インストールオプションでの Xamarin の有効化](missing-vs-extensions-images/installer.png)
 
 5. インストーラーウィザードの残りの部分を続行します。
 
@@ -45,7 +45,7 @@ Visual Studio 2017 (Community、Professional、または Enterprise) 以降が�
 
     拡張機能が正しくインストールされている場合 (バージョン3.1.228 の場合)、次のフォルダーに60項目が表示されます。
 
-    ![](missing-vs-extensions-images/folder.png "List of 'Xamarin\3.1.228.0' folder contents in Explorer")
+    ![エクスプローラーの Xamarin\3.1.228.0 フォルダーの内容の一覧](missing-vs-extensions-images/folder.png)
 
 2. このフォルダーが正しく表示されていることを確認した後、Visual Studio に拡張機能のセットアップをもう一度試してください。
 
@@ -77,11 +77,11 @@ Visual Studio 2017 (Community、Professional、または Enterprise) 以降が�
 
 5. このキーを探します。
 
-    _HKEY\_ローカル\_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\SharedDlls_
+    _HKEY \_ LOCAL \_ MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\SharedDlls_
 
 6. 次のパターンに一致するエントリがあれば、削除します。
 
-    _C:\Program Files\*\Microsoft Visual Studio 1\*. 0 \ Common7\IDE\Extensions\Xamarin_
+    _C:\Program Files \* \Microsoft Visual Studio 1 \* .0 \ Common7\IDE\Extensions\Xamarin_
 
 7. このキーを探します。
 
@@ -99,6 +99,6 @@ Visual Studio 2017 (Community、Professional、または Enterprise) 以降が�
 
 1. コントロールパネルの [Windows の**プログラムと機能**] を開きます。
 
-2. 関連する Microsoft Visual Studio エントリを右クリックし、 **[変更]** を選択します。
+2. 関連する Microsoft Visual Studio エントリを右クリックし、[**変更**] を選択します。
 
-3. 表示された Visual Studio ダイアログで **[修復]** ボタンをクリックします。
+3. 表示された Visual Studio ダイアログで [**修復**] ボタンをクリックします。

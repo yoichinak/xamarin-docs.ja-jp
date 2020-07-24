@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/13/2016
-ms.openlocfilehash: 3dcd5f17b35b9829831adcf997d8bde97c0572e7
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 96873e1bff34a4ef3ed76d675ca0a2b5c03f0d72
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030169"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997242"
 ---
 # <a name="watchos-project-references-in-xamarin"></a>Xamarin での watchOS プロジェクト参照
 
@@ -26,30 +26,30 @@ WatchOS ソリューション内の3つのプロジェクトは、watchOS 3 ア�
 
 - **iPhone アプリ**が**ウォッチアプリ**を参照
 
-  ![](project-references-images/catalog-reference1.png "iPhone app references Watch App")
+  ![iPhone アプリがウォッチアプリを参照](project-references-images/catalog-reference1.png)
 
 - **アプリ**参照の監視**アプリの拡張機能**を見る
 
-  ![](project-references-images/catalog-reference2.png "iPhone app references Watch App")
+  ![iPhone アプリがウォッチアプリを参照](project-references-images/catalog-reference2.png)
 
 - **Watch アプリの拡張機能**は、他のプロジェクトのいずれも参照していません
 
-  ![](project-references-images/catalog-reference3.png "Watch App Extension does not reference the other projects")
+  ![Watch App Extension は他のプロジェクトを参照していません](project-references-images/catalog-reference3.png)
 
 ## <a name="bundle-identifiers"></a>バンドル識別子
 
 また、**バンドル識別子**が正しいことを確認する必要もあります。
-3つのプロジェクトはすべて*同じ*識別子プレフィックスを持つ必要があります。2つの watch プロジェクトには `watchkitextension` と `watchkitapp`の事前定義された拡張機能があり、 **WatchKitCatalog**の例では次のようになっています。
+3つのプロジェクトすべての識別子プレフィックスは*同じ*である必要があります。2つの watch プロジェクトでは、次のように、およびの定義済みの拡張があり `watchkitextension` `watchkitapp` ます ( **WatchKitCatalog**の例の場合)。
 
 - Xamarin. iOS 統合プロジェクト-`com.xamarin.WatchKitCatalog`
 
-- WatchKit 拡張機能プロジェクト-`com.xamarin.WatchKitCatalog.watchkitextension`
+- WatchKit Extension プロジェクト-`com.xamarin.WatchKitCatalog.watchkitextension`
 
-- アプリプロジェクトを見る-`com.xamarin.WatchKitCatalog.watchkitapp`
+- アプリプロジェクトの監視-`com.xamarin.WatchKitCatalog.watchkitapp`
 
 また、次の**情報の plist**設定が正しいことを確認します。
 
-- Watch アプリプロジェクトの `WKCompanionAppBundleIdentifier` が、親/コンテナーアプリのバンドル ID (iPhone で実行されているもの) に一致します。
+- Watch アプリプロジェクトは、 `WKCompanionAppBundleIdentifier` 親/コンテナーアプリのバンドル ID (iPhone で実行されるもの) に一致します。
 
 - Watch Kit 拡張機能プロジェクトの**WKApp バンドル id**は、watch アプリプロジェクトのバンドル id と一致します。
 
@@ -57,19 +57,19 @@ WatchOS ソリューション内の3つのプロジェクトは、watchOS 3 ア�
 
 このスクリーンショットは、watch**アプリの**識別子も表示されている**Watch の拡張機能の**情報 plist ファイルです。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-![](project-references-images/infoplist-extension.png "This screenshot is the Watch Extension's Info.plist file")
+![このスクリーンショットは、Watch 拡張機能の情報の plist ファイルです。](project-references-images/infoplist-extension.png)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-![](project-references-images/infoplist-extension-vs.png "This screenshot is the Watch Extension's Info.plist file")
+![このスクリーンショットは、Watch 拡張機能の情報の plist ファイルです。](project-references-images/infoplist-extension-vs.png)
 
 -----
 
 このスクリーンショットは、 **Watch アプリの**情報の plist ファイルです。
 現在の**WATCH OS**バージョンは8.2 であるため、ウォッチアプリの**デプロイターゲット**は**8.2**である必要があります。 Xcode 6.3 がインストールされている場合は、この値が8.3 に設定されている可能性があることに注意してください。8.2 を変更する必要があります。
 
-![](project-references-images/infoplist-watchapp.png "The watch Info.plist file")
+![ウォッチ情報の plist ファイル](project-references-images/infoplist-watchapp.png)
 
 Watch アプリのデプロイターゲットは、Watch 拡張機能と iOS アプリとは異なる場合があります。

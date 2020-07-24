@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: ec63407189b635a9586b02e848647518aaf0170f
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: d95261a3b884507d3fc4a68018d57c5d3e3a2c84
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031563"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939413"
 ---
 # <a name="search-apis-in-xamarinios"></a>Xamarin での Api の検索
 
@@ -22,7 +22,7 @@ IOS 9 では Search が拡張されており、Xamarin iOS アプリ内の情報
 
 また、新しい検索 Api を使用すると、以前に検索を実装することなく、アプリ内の検索を簡単に統合できます。 このため、Apple は、アプリ検索を使用して、iOS 9 アプリのコンテンツを汎用的に検索できるように、通常は数時間かかることを要求しています。
 
-[![](images/intro01.png "An example of iOS 9 app content universally searchable using App Search")](images/intro01.png#lightbox)
+[![アプリ検索を使用して、汎用的に検索可能な iOS 9 アプリコンテンツの例](images/intro01.png)](images/intro01.png#lightbox)
 
 アプリ検索は、3つの個別の Api で構成されています。
 
@@ -36,7 +36,7 @@ IOS 9 では Search が拡張されており、Xamarin iOS アプリ内の情報
 
 実装する方法を決定する方法は、アプリによって提供される相互作用の種類と、アプリが提示するコンテンツの種類によって異なります。
 
-次のガイドラインを参考にしてください。
+次のガイドラインに従ってください。
 
 - [**Nsuseractivity**](nsuseractivity.md) –このフレームワークを使用して、パブリックコンテンツとプライベートコンテンツの両方に対して検索機能を提供し、アプリ内のナビゲーションポイントを検索できます。
 
@@ -64,8 +64,8 @@ Apple では、アプリで検索インデックスを提供するコンテン�
 IOS 10 のコアスポットライトは、次のようなアプリ検索に対していくつかの機能強化を提供します。
 
 - **引き出しディープリンクの人気度 (差分プライバシー)** -検索結果でディープリンクアプリのコンテンツを昇格する方法を提供します。
-- **アプリ内検索**-新しい `CSSearchQuery` クラスを使用して、メール、メッセージ、ノートアプリの動作と同様に、アプリ内スポットライト検索機能を提供します。
-- **[検索の継続]** -ユーザーがスポットライトまたは Safari で検索を開始し、アプリを開いて検索を続行できるようにします。
+- **アプリ内検索**-新しいクラスを使用して、 `CSSearchQuery` メール、メッセージ、ノートアプリの動作と同様に、アプリ内スポットライト検索機能を提供します。
+- [**検索の継続**]-ユーザーがスポットライトまたは Safari で検索を開始し、アプリを開いて検索を続行できるようにします。
 - **検証結果の視覚化**-Apple の[App Search API 検証ツール](https://search.developer.apple.com/appsearch-validation-tool)では、テストを事前に形成するときに、web サイトのマークアップとディープリンクが視覚的に表示されるようになりました。
 - **メッセージアプリイメージの共有**-メッセージ (メッセージアプリ拡張機能を使用) での共有用に提供された、人気のあるアプリ内イメージがスポットライト検索に表示されます。
 
@@ -78,7 +78,7 @@ iOS 10 は、システムが適切なタイミングで有益な情報をユー�
 - アプリスイッチャー
 - ロック画面
 - CarPlay
-- マップ
+- Maps
 - Siri の相互作用
 - QuickType 候補 
 

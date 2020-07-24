@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: cbf5f8c6f53b075f587a0e7763a4019d44352f14
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: bbd3d1663c3d796768095a12e5048b18f447fa7a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84568999"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937021"
 ---
 # <a name="search-with-nsuseractivity-in-xamarinios"></a>Xamarin で NSUserActivity を検索します。 iOS
 
@@ -21,7 +21,7 @@ ms.locfileid: "84568999"
 
 IOS 9 を初めて使用する場合は、 `NSUserActivity` (パブリックとプライベートの両方の) インデックスを作成し、スポットライト検索および Safari から検索することができます。 を `NSUserActivity` 検索可能としてマークし、インデックス可能なメタデータを追加することにより、アクティビティは iOS デバイスの検索結果に一覧表示されます。
 
-[![](nsuseractivity-images/apphistory01.png "The App History overview")](nsuseractivity-images/apphistory01.png#lightbox)
+[![アプリ履歴の概要](nsuseractivity-images/apphistory01.png)](nsuseractivity-images/apphistory01.png#lightbox)
 
 アプリからアクティビティに属する検索結果をユーザーが選択すると、アプリが起動され、によって記述されたアクティビティが再起動され、 `NSUserActivity` ユーザーに表示されます。
 
@@ -59,7 +59,7 @@ Apple では、競合を避けるために、アクティビティの種類の�
 
 この動作をサポートするために必要なアクティビティの種類の識別子を作成するには、**情報の plist**ファイルを編集し、**ソース**ビューに切り替えます。 キーを追加 `NSUserActivityTypes` し、次の形式で識別子を作成します。
 
-[![](nsuseractivity-images/type01.png "The NSUserActivityTypes key and required identifiers in the plist editor")](nsuseractivity-images/type01.png#lightbox)
+[![Plist エディターでの NSUserActivityTypes キーと必須識別子](nsuseractivity-images/type01.png)](nsuseractivity-images/type01.png#lightbox)
 
 上の例では、検索アクティビティ () に新しいアクティビティの種類の識別子を1つ作成しました `com.xamarin.platform` 。 独自のアプリを作成するときに、配列の内容を、 `NSUserActivityTypes` アプリがサポートするアクティビティに固有のアクティビティの種類の識別子に置き換えます。
 
@@ -88,7 +88,7 @@ activity.BecomeCurrent();
 
 次のように、のプロパティを設定して詳細を追加でき `ContentAttributeSet` `NSUserActivity` ます。
 
-[![](nsuseractivity-images/apphistory02.png "Addition Search Details overview")](nsuseractivity-images/apphistory02.png#lightbox)
+[![追加の検索の詳細の概要](nsuseractivity-images/apphistory02.png)](nsuseractivity-images/apphistory02.png#lightbox)
 
 を使用 `ContentAttributeSet` すると、エンドユーザーが対話できるようにする、豊富な検索結果を作成できます。
 
@@ -115,7 +115,7 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 
 これは、ハンドオフ要求への応答に使用されるメソッドオーバーライドと同じであることに注意してください。 これで、ユーザーがスポットライト検索結果のアプリからリンクをクリックすると、アプリがフォアグラウンドになり (まだ実行されていない場合は開始され)、そのリンクによって表されるコンテンツ、ナビゲーション、機能が表示されます。
 
-[![](nsuseractivity-images/apphistory03.png "Restore Previous State from Search")](nsuseractivity-images/apphistory03.png#lightbox)
+[![以前の状態を検索から復元する](nsuseractivity-images/apphistory03.png)](nsuseractivity-images/apphistory03.png#lightbox)
 
 <a name="indexing"></a>
 

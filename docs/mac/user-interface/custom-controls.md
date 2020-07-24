@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: c4bec7d77e7778d8922640c75d23f4b1464f864f
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 8ed83ee8f0bded6258b695f7a6383cda1929f542
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573925"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997086"
 ---
 # <a name="creating-custom-controls-in-xamarinmac"></a>Xamarin. Mac でカスタムコントロールを作成する
 
@@ -20,7 +20,7 @@ Xamarin. Mac アプリケーションで C# と .NET を使用する場合、Xco
 
 MacOS には豊富な組み込みのユーザーコントロールが用意されていますが、カスタムコントロールを作成して、すぐには提供されない機能を提供したり、カスタム UI テーマ (ゲームインターフェイスなど) と一致させたりすることが必要になる場合があります。
 
-[![](custom-controls-images/intro01.png "Example of a custom UI control")](custom-controls-images/intro01.png#lightbox)
+[![カスタム UI コントロールの例](custom-controls-images/intro01.png)](custom-controls-images/intro01.png#lightbox)
 
 この記事では、Xamarin. Mac アプリケーションで再利用可能なカスタムユーザーインターフェイスコントロールを作成するための基本について説明します。 この記事で使用する主要な概念と手法について説明しているように、最初に[Hello, Mac](~/mac/get-started/hello-mac.md)の記事「 [Xcode と Interface Builder の概要](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)」と「[アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions)」セクションをご覧になることを強くお勧めします。
 
@@ -48,7 +48,7 @@ MacOS には豊富な組み込みのユーザーコントロールが用意さ�
 
 Visual Studio for Mac で、カスタムユーザーインターフェイスコントロールを作成する (または新規作成する) Xamarin プロジェクトを開きます。 新しいクラスを追加し、それを呼び出し `NSFlipSwitch` ます。
 
-[![](custom-controls-images/custom01.png "Adding a new class")](custom-controls-images/custom01.png#lightbox)
+[![新しいクラスの追加](custom-controls-images/custom01.png)](custom-controls-images/custom01.png#lightbox)
 
 次に、クラスを編集 `NSFlipSwitch.cs` し、次のように表示します。
 
@@ -334,19 +334,19 @@ if (this.Action !=null)
 
 Interface Builder を使用してコントロールを追加するには、まず Xamarin. Mac プロジェクトのクリーンビルドを実行し、次にファイルをダブルクリックして `Main.storyboard` 編集用の Interface Builder で開きます。
 
-[![](custom-controls-images/custom02.png "Editing the storyboard in Xcode")](custom-controls-images/custom02.png#lightbox)
+[![Xcode でストーリーボードを編集する](custom-controls-images/custom02.png)](custom-controls-images/custom02.png#lightbox)
 
 次に、を `Custom View` ユーザーインターフェイスのデザインにドラッグします。
 
-[![](custom-controls-images/custom03.png "Selecting a Custom View from the Library")](custom-controls-images/custom03.png#lightbox)
+[![ライブラリからカスタムビューを選択する](custom-controls-images/custom03.png)](custom-controls-images/custom03.png#lightbox)
 
 カスタムビューが選択された状態で、 **Id インスペクター**に切り替えて、ビューの**クラス**を次のように変更し `NSFlipSwitch` ます。
 
-[![](custom-controls-images/custom04.png "Setting the View's class")](custom-controls-images/custom04.png#lightbox)
+[![ビューのクラスの設定](custom-controls-images/custom04.png)](custom-controls-images/custom04.png#lightbox)
 
 **アシスタントエディター**に切り替えて、カスタムコントロールの**アウトレット**を作成します (ファイルではなく、ファイルにバインドするようにしてください `ViewController.h` `.m` )。
 
-[![](custom-controls-images/custom05.png "Configuring a new Outlet")](custom-controls-images/custom05.png#lightbox)
+[![新しいアウトレットの構成](custom-controls-images/custom05.png)](custom-controls-images/custom05.png#lightbox)
 
 変更を保存し Visual Studio for Mac に戻り、変更を同期できるようにします。ファイルを編集 `ViewController.cs` し、 `ViewDidLoad` メソッドを次のようにします。
 
@@ -367,7 +367,7 @@ public override void ViewDidLoad ()
 
 必要に応じて Interface Builder に戻り、コントロールの**アクション**を定義することもできます。
 
-[![](custom-controls-images/custom06.png "Configuring a new Action")](custom-controls-images/custom06.png#lightbox)
+[![新しいアクションの構成](custom-controls-images/custom06.png)](custom-controls-images/custom06.png#lightbox)
 
 ここでも、 `ViewController.cs` ファイルを編集し、次のメソッドを追加します。
 

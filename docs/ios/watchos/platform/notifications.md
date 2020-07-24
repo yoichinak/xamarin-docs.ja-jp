@@ -1,80 +1,80 @@
 ---
-title: watchOS Xamarin での通知
-description: このドキュメントでは、Xamarin で watchOS 通知と連携する方法について説明します。 作成通知コント ローラー、通知の生成と通知のテストがについて説明します。
+title: Xamarin での watchOS 通知
+description: このドキュメントでは、Xamarin で watchOS 通知を使用する方法について説明します。 ここでは、通知コントローラーの作成、通知の生成、および通知のテストについて説明します。
 ms.prod: xamarin
 ms.assetid: 0BC1306E-0713-4592-996E-7530CCF281E7
 ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 85a55967446da5cf89e8ce19dadf88d0de16d80a
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: 0358b2b422e4cc69faa15187ee24d72c7d02ca38
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725070"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937931"
 ---
-# <a name="watchos-notifications-in-xamarin"></a>watchOS Xamarin での通知
+# <a name="watchos-notifications-in-xamarin"></a>Xamarin での watchOS 通知
 
-Watch アプリは、親 iOS アプリには、それらがサポートしている場合、通知を受け取ることができます。 通知の動作と外観をカスタマイズする場合は、次に示す追加の通知のサポートを追加する*必要*はありませんが、通知の処理が組み込まれています。
+Watch アプリは、含まれている iOS アプリでサポートされている場合、通知を受け取ることができます。 通知の動作と外観をカスタマイズする場合は、次に示す追加の通知のサポートを追加する*必要*はありませんが、通知の処理が組み込まれています。
 
 ソリューションの iOS アプリに通知サポートを追加する方法の詳細については、 [ios の通知](~/ios/platform/user-notifications/deprecated/index.md)ドキュメントを参照してください。
 
-## <a name="creating-notification-controllers"></a>通知コント ローラーを作成します。
+## <a name="creating-notification-controllers"></a>通知コントローラーの作成
 
-通知コント ローラーではストーリー ボード上のトリガーとなったセグエの特別な種類があります。 新しい**Notification Interface コントローラー**をストーリーボードにドラッグすると、自動的にセグエが添付されます。
+ストーリーボードの通知コントローラーには、特別な種類のセグエがトリガーされます。 新しい**Notification Interface コントローラー**をストーリーボードにドラッグすると、自動的にセグエが添付されます。
 
-![](notifications-images/notification-storyboard1.png "A new Notification Interface Controller with a segue attached")
+![セグエがアタッチされた新しい Notification Interface コントローラー](notifications-images/notification-storyboard1.png)
 
-選択されている通知のセグエとそのプロパティを編集することができます。
+Notification セグエを選択すると、そのプロパティを編集できます。
 
-![](notifications-images/notification-storyboard2.png "The notification segue selected")
+![選択された notification セグエ](notifications-images/notification-storyboard2.png)
 
-コント ローラーをカスタマイズした後、WatchKitCatalog からこの例のように見えます。
+コントローラーをカスタマイズした後、WatchKitCatalog から次の例のようになります。
 
-![](notifications-images/notifications-segue.png "The Notification Properties")
+![通知のプロパティ](notifications-images/notifications-segue.png)
 
-2 つの種類の通知があります。
+通知には、次の2種類があります。
 
 - システムによって定義されて**いる、スクロール不可能な静的**ビューです。
 
-- **長い外観**で、カスタマイズ可能なビューが定義されています。 単純化し、静的バージョンより複雑な動的バージョンを指定することができます。
+- **長い外観**で、カスタマイズ可能なビューが定義されています。 より単純な静的バージョンとより複雑な動的バージョンを指定できます。
 
-### <a name="short-look-notification-controller"></a>短い表示通知コント ローラー
+### <a name="short-look-notification-controller"></a>短い通知コントローラー
 
-短い外観 UI は、アプリのアイコン、アプリ名、および通知のタイトル文字列で構成されます。
+ショート表示 UI は、アプリアイコン、アプリ名、通知タイトル文字列で構成されています。
 
-ユーザーが通知を無視しない場合は、システムが情報を提供する時間の長い確認通知を自動的に切り替わります。
+ユーザーが通知を無視しない場合、システムは詳細情報を提供する長い表示通知に自動的に切り替わります。
 
-### <a name="long-look-notification-controller"></a>通知コント ローラーの時間の長い検索
+### <a name="long-look-notification-controller"></a>長い外観の Notification Controller
 
-OS は、さまざまな要因に基づく静的または動的なビューを表示するかどうかを決定します。 静的のインターフェイスを提供し、必要に応じてことができます必要がありますも通知の動的なインターフェイスが含まれます。
+OS は、さまざまな要因に基づいて静的ビューと動的ビューのどちらを表示するかを決定します。 静的インターフェイスを指定する必要があります。また、必要に応じて、通知の動的インターフェイスを含めることもできます。
 
 #### <a name="static"></a>静的
 
-静的なビューには、簡単かつ迅速に表示があります。
+静的ビューは単純で、簡単に表示できます。
 
-![](notifications-images/notification-static.png "The static view")
+![静的ビュー](notifications-images/notification-static.png)
 
 #### <a name="dynamic"></a>動的
 
-動的ビューより多くのデータを表示でき、他のインタラクティビティを提供することができます。
+動的ビューでは、より多くのデータを表示し、対話性を高めることができます。
 
-![](notifications-images/notification-dynamic.png "The dynamic view")
+![動的ビュー](notifications-images/notification-dynamic.png)
 
-## <a name="generating-notifications"></a>通知を生成します。
+## <a name="generating-notifications"></a>通知の生成
 
 通知は、リモートサーバーから取得することも、iOS アプリでローカルに生成することもできます。
 
 ローカル通知を生成する方法の例については、 [iOS の通知](~/ios/platform/user-notifications/deprecated/local-notifications-in-ios-walkthrough.md)に関するチュートリアルを参照してください。
 
-ローカル通知では、`AlertTitle` が Apple Watch に表示されるように設定されている必要があります。 `AlertTitle` 文字列は、ショート表示インターフェイスに表示されます。 `AlertTitle` と `AlertBody` の両方が [通知] の一覧に表示されます。また、`AlertBody` が長い外観のインターフェイスに表示されます。
+ローカル通知には、 `AlertTitle` Apple Watch に表示されるセットが必要です `AlertTitle` 。この文字列は、短い外観のインターフェイスに表示されます。 との `AlertTitle` 両方 `AlertBody` が [通知] の一覧に表示され、が `AlertBody` 長い外観のインターフェイスに表示されます。
 
-このスクリーンショットは、[通知] の一覧に表示されている `AlertTitle` と、長い外観のインターフェイスに表示されている `AlertBody` を示しています。
+このスクリーンショットは、[ `AlertTitle` 通知] の一覧に表示されていると、長い外観のインターフェイスに表示されているを示してい `AlertBody` ます。
 
-![](notifications-images/watch-notificationslist-sml.png "このスクリーンショットは、通知の一覧に表示されている AlertTitle を示しています。")![](notifications-images/watch-notificationcontroller-sml.png "長い外観のインターフェイスに表示される AlertBody")
+![このスクリーンショットは、通知の一覧に表示されている AlertTitle を示しています。](notifications-images/watch-notificationslist-sml.png) ![長い外観のインターフェイスに表示される AlertBody](notifications-images/watch-notificationcontroller-sml.png)
 
-## <a name="testing-notifications"></a>テスト通知
+## <a name="testing-notifications"></a>テスト (通知を)
 
 通知 (ローカルとリモートの両方) は、デバイスでのみ適切にテストできます。ただし、iOS シミュレーターでは、 **json**ファイルを使用してシミュレートできます。
 
@@ -82,48 +82,48 @@ OS は、さまざまな要因に基づく静的または動的なビューを�
 
 Apple Watch で通知をテストするときは、 [Apple のドキュメント](https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/BasicSupport.html)に次のような内容が記載されていることに注意してください。
 
-> ユーザーの iphone アプリのローカルまたはリモート通知のいずれかが到着すると、iOS は、iPhone または Apple Watch に通知を表示するかどうかを決定します。
+> アプリのローカル通知またはリモート通知の1つがユーザーの iPhone に到着すると、iOS は iPhone または Apple Watch でその通知を表示するかどうかを決定します。
 
-という事実にほのめかしこれは、iOS は、iphone、または Watch で通知が表示されるかどうかを決定します。 通知を受信したときに、ペアになっている iPhone がアクティブになっている場合、通知は iPhone に表示される可能性があり、ウォッチにはルーティングされ*ません*。
+これは、iOS によって、alluding に通知を表示するかどうかを決定するという事実です。 通知を受信したときに、ペアになっている iPhone がアクティブになっている場合、通知は iPhone に表示される可能性があり、ウォッチにはルーティングされ*ません*。
 
-Watch で通知が表示されることを確認するには、するには、(1 回の電源ボタンを押す) iPhone 画面をオフにかスリープ状態にそのまま使用します。 ペアになっているウォッチが範囲内にするには、電源が入っておよび手首に装着されている、通知がルーティングされ、(によって、わかりにくいことを義務付けられて) ウォッチに表示します。
+監視に通知が表示されるようにするには、iPhone 画面をオフにします (電源ボタンを1回押す) か、スリープ状態にします。 ペアになっている Watch が範囲内にあり、パワーを持ち、手首に装着されていない場合、通知がそこにルーティングされ、ウォッチに表示されます (これについては、微妙になります)。
 
 ### <a name="testing-on-the-ios-simulator"></a>IOS シミュレーターでのテスト
 
-IOS シミュレーターで通知モードをテストするときは、テスト用の JSON ペイロードを指定する*必要があり*ます。 Visual Studio for Mac の **[カスタム実行引数]** ウィンドウでパスを設定します。
+IOS シミュレーターで通知モードをテストするときは、テスト用の JSON ペイロードを指定する*必要があり*ます。 Visual Studio for Mac の [**カスタム実行引数**] ウィンドウでパスを設定します。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 [ウォッチ] 拡張が**スタートアッププロジェクト**として設定されている場合、Visual Studio for Mac には追加のオプションが表示されます。
 Watch extension プロジェクトを右クリックし、[ **> のカスタムパラメーターを使用して実行**する] を選択します。
 
-[![](notifications-images/runwith-customparams-sml.png "Running with Custom Properties")](notifications-images/runwith-customparams.png#lightbox)
+[![実行 (カスタムプロパティで)](notifications-images/runwith-customparams-sml.png)](notifications-images/runwith-customparams.png#lightbox)
 
-**[実行引数]** ウィンドウが開き、 **[WatchKit]** タブが表示されます。 **[通知]** を選択し、JSON ペイロードを指定してから、 **[実行]** を押してシミュレーターで watch アプリを起動します。
+[**実行引数**] ウィンドウが開き、[ **WatchKit** ] タブが表示されます。 [**通知**] を選択し、JSON ペイロードを指定してから、[**実行**] を押してシミュレーターで watch アプリを起動します。
 
-[![](notifications-images/runwith-execargs-sml.png "Select Notification Payload Default")](notifications-images/runwith-execargs.png#lightbox)
+[![通知ペイロードの既定値の選択](notifications-images/runwith-execargs-sml.png)](notifications-images/runwith-execargs.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-Visual Studio でテスト通知ペイロードを設定するには、ウォッチ拡張機能を右クリックして**プロジェクトのプロパティ**を編集します。 **[デバッグ]** セクションにアクセスし、一覧から通知 json ファイルを選択します (プロジェクトに含まれるすべての json ファイルが自動的に一覧表示されます)。
+Visual Studio でテスト通知ペイロードを設定するには、ウォッチ拡張機能を右クリックして**プロジェクトのプロパティ**を編集します。 [**デバッグ**] セクションにアクセスし、一覧から通知 json ファイルを選択します (プロジェクトに含まれるすべての json ファイルが自動的に一覧表示されます)。
 
-[![](notifications-images/runwith-execargs-sml-vs.png "Select a notifications JSON file")](notifications-images/runwith-execargs-vs.png#lightbox)
+[![通知 JSON ファイルを選択します](notifications-images/runwith-execargs-sml-vs.png)](notifications-images/runwith-execargs-vs.png#lightbox)
 
 ウォッチ拡張機能が**スタートアッププロジェクト**の場合、Visual Studio では次のように追加のオプションが表示されます。 **通知オプションの**1 つを選択して、**通知**モードでウォッチアプリを起動します ([プロパティ] ウィンドウで選択した JSON ファイルを使用します)。
 
-![](notifications-images/runwith-vs.png "The Device menu")
+![デバイスメニュー](notifications-images/runwith-vs.png)
 
 -----
 
-既定の通知コント ローラーは、既定のペイロードの JSON ファイルを使用して、シミュレーターでテストするときに、ようになります。
+既定の通知コントローラーは、シミュレーターで既定のペイロード JSON ファイルをテストするときに、次のようになります。
 
-![](notifications-images/notification-debug-sml.png "An example notification")
+![通知の例](notifications-images/notification-debug-sml.png)
 
 また、[コマンドライン](~/ios/watchos/troubleshooting.md#command_line)を使用して iOS シミュレーターを起動することもできます。
 
 ### <a name="example-notification-payload"></a>通知ペイロードの例
 
-[Watch Kit カタログ](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)サンプルには、ペイロード Json ファイル**notificationpayload. json**の例があります (以下を参照)。
+[Watch Kit カタログ](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)サンプルには、**にNotificationPayload.js**ペイロード JSON ファイルの例があります (以下の一覧を参照)。
 
 ```json
 {

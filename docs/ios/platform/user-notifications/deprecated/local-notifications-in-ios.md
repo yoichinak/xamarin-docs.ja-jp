@@ -1,5 +1,5 @@
 ---
-title: Xamarin. iOS での通知
+title: Xamarin.iOS での通知
 description: このセクションでは、Xamarin. iOS でローカル通知を実装する方法について説明します。 ここでは、iOS の通知のさまざまな UI 要素について説明し、通知の作成と表示に関連する API について説明します。
 ms.prod: xamarin
 ms.assetid: 5BB76915-5DB0-48C7-A267-FA9F7C50793E
@@ -7,14 +7,14 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/13/2018
-ms.openlocfilehash: 0cd0937229e8679af46313d0bce4c62792c0f36b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 04631993d47a1d51858ab24948ab61170d37bb6e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031376"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939884"
 ---
-# <a name="notifications-in-xamarinios"></a>Xamarin. iOS での通知
+# <a name="notifications-in-xamarinios"></a>Xamarin.iOS での通知
 
 > [!IMPORTANT]
 > このセクションの情報は、iOS 9 以前に関連しています。 IOS 10 以降については、「[ユーザー通知フレームワークガイド](~/ios/platform/user-notifications/index.md)」を参照してください。
@@ -43,7 +43,7 @@ application.RegisterUserNotificationSettings(notificationSettings);
 
 [![ローカル通知を送信する機能を確認しています](local-notifications-in-ios-images/image0-sml.png "ローカル通知を送信する機能を確認しています")](local-notifications-in-ios-images/image0.png#lightbox)
 
-ローカル通知をスケジュールするには、`UILocalNotification` オブジェクトを作成し、`FireDate`を設定して、`UIApplication.SharedApplication` オブジェクトの `ScheduleLocalNotification` メソッドを使用してスケジュールを設定します。 次のコードスニペットは、1分後に起動される通知をスケジュールし、メッセージと共にアラートを表示する方法を示しています。
+ローカル通知をスケジュールするには、オブジェクトを作成し、 `UILocalNotification` を設定して、 `FireDate` オブジェクトのメソッドを使用してスケジュールを設定し `ScheduleLocalNotification` `UIApplication.SharedApplication` ます。 次のコードスニペットは、1分後に起動される通知をスケジュールし、メッセージと共にアラートを表示する方法を示しています。
 
 ```csharp
 UILocalNotification notification = new UILocalNotification();
@@ -56,7 +56,7 @@ UIApplication.SharedApplication.ScheduleLocalNotification(notification);
 
 次のスクリーンショットは、このアラートの内容を示しています。
 
-[![](local-notifications-in-ios-images/image2-sml.png "An example alert")](local-notifications-in-ios-images/image2.png#lightbox)
+[![アラートの例](local-notifications-in-ios-images/image2-sml.png)](local-notifications-in-ios-images/image2.png#lightbox)
 
 ユーザーが通知を*許可しない*ことを選択した場合は、何も表示されないことに注意してください。
 
@@ -79,7 +79,7 @@ notification.SoundName = UILocalNotification.DefaultSoundName;
 
 ## <a name="handling-notifications"></a>通知の処理
 
-iOS アプリケーションは、リモートおよびローカルの通知をほぼ同じ方法で処理します。 アプリケーションが実行されている場合、`AppDelegate` クラスの `ReceivedLocalNotification` メソッドまたは `ReceivedRemoteNotification` メソッドが呼び出され、通知情報がパラメーターとして渡されます。
+iOS アプリケーションは、リモートおよびローカルの通知をほぼ同じ方法で処理します。 アプリケーションが実行されている場合、 `ReceivedLocalNotification` クラスのメソッドまたは `ReceivedRemoteNotification` メソッドが `AppDelegate` 呼び出され、通知情報がパラメーターとして渡されます。
 
 アプリケーションでは、通知をさまざまな方法で処理できます。 たとえば、アプリケーションでは、ある程度のイベントについてユーザーに通知するアラートを表示できます。 または、通知を使用して、プロセスが完了したことを示す警告をユーザーに表示することができます (ファイルをサーバーに同期するなど)。
 
@@ -99,7 +99,7 @@ public override void ReceivedLocalNotification(UIApplication application, UILoca
 }
 ```
 
-アプリケーションが実行されていない場合、iOS はサウンドを再生するか、アイコンバッジを適宜更新します。 ユーザーがアラートに関連付けられているアプリケーションを起動すると、アプリケーションが起動し、アプリのデリゲートの `FinishedLaunching` メソッドが呼び出され、通知情報が `launchOptions` パラメーターを介して渡されます。 オプションディクショナリにキー `UIApplication.LaunchOptionsLocalNotificationKey`が含まれている場合、`AppDelegate` は、アプリケーションがローカル通知から起動されたことを認識します。 次のコードスニペットは、このプロセスを示しています。
+アプリケーションが実行されていない場合、iOS はサウンドを再生するか、アイコンバッジを適宜更新します。 ユーザーがアラートに関連付けられているアプリケーションを起動すると、アプリケーションが起動し、アプリのデリゲートのメソッドが呼び出され、パラメーターを使用して `FinishedLaunching` 通知情報が渡され `launchOptions` ます。 オプションディクショナリにキーが含まれている場合、 `UIApplication.LaunchOptionsLocalNotificationKey` は `AppDelegate` アプリケーションがローカル通知から起動されたことを認識します。 次のコードスニペットは、このプロセスを示しています。
 
 ```csharp
 // check for a local notification
@@ -119,7 +119,7 @@ if (launchOptions.ContainsKey(UIApplication.LaunchOptionsLocalNotificationKey))
 }
 ```
 
-リモート通知の場合、`launchOptions` には、リモート通知ペイロードを含む `NSDictionary` に関連付けられた `LaunchOptionsRemoteNotificationKey` があります。 通知ペイロードは、`alert`、`badge`、および `sound` キーを使用して抽出できます。 次のコードスニペットは、リモート通知を取得する方法を示しています。
+リモート通知の場合、には、 `launchOptions` `LaunchOptionsRemoteNotificationKey` `NSDictionary` リモート通知ペイロードを含むが関連付けられています。 、、およびの各キーを使用して、通知ペイロードを抽出でき `alert` `badge` `sound` ます。 次のコードスニペットは、リモート通知を取得する方法を示しています。
 
 ```csharp
 NSDictionary remoteNotification = options[UIApplication.LaunchOptionsRemoteNotificationKey];
@@ -131,12 +131,12 @@ if(remoteNotification != null)
 
 ## <a name="summary"></a>まとめ
 
-このセクションでは、Xamarin. iOS で通知を作成して発行する方法について説明しました。 この例では、`ReceivedLocalNotification` メソッドまたは `AppDelegate`の `ReceivedRemoteNotification` メソッドをオーバーライドすることによって、アプリケーションが通知にどのように対処するかを示します。
+このセクションでは、Xamarin. iOS で通知を作成して発行する方法について説明しました。 この例 `ReceivedLocalNotification` では、でメソッドまたはメソッドをオーバーライドすることによって、アプリケーションが通知にどのように対処するかを示し `ReceivedRemoteNotification` `AppDelegate` ます。
 
 ## <a name="related-links"></a>関連リンク
 
 - [ローカル通知 (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/localnotifications)
 - [開発者向けのローカル通知とプッシュ通知](https://developer.apple.com/notifications/)
-- [ローカルおよびプッシュ通知のプログラミングガイド](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)
+- [Local and Push Notification Programming Guide (ローカルおよびプッシュ通知プログラミング ガイド) (ローカルおよびプッシュ通知プログラミング ガイド)](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)
 - [UIApplication](https://docs.microsoft.com/dotnet/api/uikit.uiapplication)
 - [UILocalNotification](https://docs.microsoft.com/dotnet/api/uikit.UILocalNotification)

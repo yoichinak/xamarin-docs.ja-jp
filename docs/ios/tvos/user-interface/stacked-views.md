@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 321ea87bfa4f460c4eaab31ef2ede6f3eb1b927f
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 1e1a9f3cd601a9d469bb53cce412daf08a8140f6
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573574"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938893"
 ---
 # <a name="working-with-tvos-stacked-views-in-xamarin"></a>Xamarin での tvOS 積み上げビューの使用
 
@@ -20,7 +20,7 @@ ms.locfileid: "84573574"
 
 スタックビューにアタッチされているすべてのサブビューのレイアウトは、軸、分布、配置、スペースなどの開発者が定義したプロパティに基づいて、it 部門によって管理されます。
 
-[![](stacked-views-images/stacked01.png "Subview layout diagram")](stacked-views-images/stacked01.png#lightbox)
+[![サブビューレイアウトダイアグラム](stacked-views-images/stacked01.png)](stacked-views-images/stacked01.png#lightbox)
 
 TvOS アプリでを使用する場合、 `UIStackView` 開発者は、IOS デザイナーのストーリーボード内でサブビューを定義するか、C# コードでサブビューを追加および削除することができます。
 
@@ -97,48 +97,48 @@ TvOS アプリでスタックビューを操作する最も簡単な方法は、
 1. **Solution Pad**で、ファイルをダブルクリック `Main.storyboard` して開き、編集します。
 1. スタックビューに追加する個々の要素のレイアウトをデザインします。
 
-    [![](stacked-views-images/layout01.png "Element layout example")](stacked-views-images/layout01.png#lightbox)
+    [![要素のレイアウトの例](stacked-views-images/layout01.png)](stacked-views-images/layout01.png#lightbox)
 1. 要素に必要な制約を追加して、それらが正しく拡張されるようにします。 要素がスタックビューに追加されると、この手順が重要になります。
 1. 必要な数のコピー (この場合は4つ) を作成します。
 
-    [![](stacked-views-images/layout02.png "The required number of copies")](stacked-views-images/layout02.png#lightbox)
+    [![必要なコピー数](stacked-views-images/layout02.png)](stacked-views-images/layout02.png#lightbox)
 1. [**ツールボックス**] から**スタックビュー**をドラッグし、ビューにドロップします。
 
-    [![](stacked-views-images/layout03.png "A Stack View")](stacked-views-images/layout03.png#lightbox)
+    [![スタックビュー](stacked-views-images/layout03.png)](stacked-views-images/layout03.png#lightbox)
 1. [スタック] ビューを選択し、 **Properties Pad**の [**ウィジェット] タブ**で、[**配置**] の [**塗りつぶし**] を選択し、**配布**に**均等**に入力して、[間隔] に「」と入力し `25` ます。 **Spacing**
 
-    [![](stacked-views-images/layout04.png "The Widget Tab")](stacked-views-images/layout04.png#lightbox)
+    [![[ウィジェット] タブ](stacked-views-images/layout04.png)](stacked-views-images/layout04.png#lightbox)
 1. 必要に応じて、画面上にスタックビューを配置し、制約を追加して必要な場所に保持します。
 1. 個々の要素を選択し、スタックビューにドラッグします。
 
-    [![](stacked-views-images/layout05.png "The individual elements in the Stack View")](stacked-views-images/layout05.png#lightbox)
+    [![スタックビュー内の個々の要素](stacked-views-images/layout05.png)](stacked-views-images/layout05.png#lightbox)
 1. レイアウトが調整され、上で設定した属性に基づいて、要素がスタックビューに配置されます。
 1. C# コードで UI コントロールを操作するには、**プロパティエクスプローラー**の [**ウィジェット] タブ**で**名前**を割り当てます。
-1. 変更内容を保存します。
+1. 変更を保存します。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. **ソリューションエクスプローラー**で、ファイルをダブルクリック `Main.storyboard` して開き、編集します。
 1. スタックビューに追加する個々の要素のレイアウトをデザインします。
 
-    [![](stacked-views-images/layout01.png "Example element layout")](stacked-views-images/layout01.png#lightbox)
+    [![要素のレイアウトの例](stacked-views-images/layout01.png)](stacked-views-images/layout01.png#lightbox)
 1. 要素に必要な制約を追加して、それらが正しく拡張されるようにします。 要素がスタックビューに追加されると、この手順が重要になります。
 1. 必要な数のコピー (この場合は4つ) を作成します。
 
-    [![](stacked-views-images/layout02.png "The required number of copies")](stacked-views-images/layout02.png#lightbox)
+    [![必要なコピー数](stacked-views-images/layout02.png)](stacked-views-images/layout02.png#lightbox)
 1. [**ツールボックス**] から**スタックビュー**をドラッグし、ビューにドロップします。
 
-    [![](stacked-views-images/layout03-vs.png "A Stack View")](stacked-views-images/layout03-vs.png#lightbox)
+    [![スタックビュー](stacked-views-images/layout03-vs.png)](stacked-views-images/layout03-vs.png#lightbox)
 1. スタックビューを選択し、**プロパティエクスプローラー**の [**ウィジェット] タブ**で、[**配置**] の [**塗りつぶし**] を選択し、**分布**に**均等**に入力して、スペースとして「」と入力し `25` ます。 **Spacing**
 
-    [![](stacked-views-images/layout04-vs.png "The Widget Tab")](stacked-views-images/layout04-vs.png#lightbox)
+    [![[ウィジェット] タブ](stacked-views-images/layout04-vs.png)](stacked-views-images/layout04-vs.png#lightbox)
 1. 必要に応じて、画面上にスタックビューを配置し、制約を追加して必要な場所に保持します。
 1. 個々の要素を選択し、スタックビューにドラッグします。
 
-    [![](stacked-views-images/layout05-vs.png "The individual elements in the Stack View")](stacked-views-images/layout05-vs.png#lightbox)
+    [![スタックビュー内の個々の要素](stacked-views-images/layout05-vs.png)](stacked-views-images/layout05-vs.png#lightbox)
 1. レイアウトが調整され、上で設定した属性に基づいて、要素がスタックビューに配置されます。
 1. C# コードで UI コントロールを操作するには、**プロパティエクスプローラー**の [**ウィジェット] タブ**で**名前**を割り当てます。
-1. 変更内容を保存します。
+1. 変更を保存します。
 
 -----
 
@@ -184,11 +184,11 @@ partial void PlayerCountChanged (Foundation.NSObject sender) {
 
 アプリを実行すると、次の4つの要素がスタックビューに均等に配分されます。
 
-[![](stacked-views-images/layout06.png "When the app is run, the four elements will equally be distributed in our Stack View")](stacked-views-images/layout06.png#lightbox)
+[![アプリを実行すると、4つの要素がスタックビューに均等に配分されます。](stacked-views-images/layout06.png)](stacked-views-images/layout06.png#lightbox)
 
 プレーヤーの数が減少している場合は、未使用のビューが非表示になり、スタックビューによってレイアウトが調整されます。
 
-[![](stacked-views-images/layout07.png "If the number of players is decreased, the unused views are hidden and the Stack View adjust the layout to fit")](stacked-views-images/layout07.png#lightbox)
+[![プレーヤーの数が減少している場合は、未使用のビューが非表示になり、スタックビューによってレイアウトが調整されます。](stacked-views-images/layout07.png)](stacked-views-images/layout07.png#lightbox)
 
 <a name="Populate-a-Stack-View-from-Code"></a>
 

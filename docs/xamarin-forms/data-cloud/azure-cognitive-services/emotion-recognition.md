@@ -19,7 +19,7 @@ ms.locfileid: "86936371"
 ---
 # <a name="perceived-emotion-recognition-using-the-face-api"></a>Face API を使用した感情認識
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 Face API は、人間の占めるによって認識された注釈に基づいて、顔式で怒り、軽蔑、嫌悪感、恐怖、しあわせ度、ニュートラル、悲しみ、および驚くべき感情検出を実行できます。 ただし、顔式は、必ずしも人の内部状態を表すとは限らないことに注意する必要があります。
 

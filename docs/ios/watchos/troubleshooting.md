@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 17ccc67b2976b93fbb290a1d2425168cab50228e
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 497096e7f422e8337498339737ab304b0d896dfe
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84568790"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938997"
 ---
 # <a name="watchos-troubleshooting"></a>watchOS のトラブルシューティング
 
@@ -29,14 +29,14 @@ ms.locfileid: "84568790"
 
 <a name="knownissues"></a>
 
-## <a name="known-issues"></a>既知の問題
+## <a name="known-issues"></a>の既知の問題
 
 ### <a name="general"></a>全般
 
 <a name="deploy"></a>
 
 - 以前のリリースの Visual Studio for Mac では、 **AppleCompanionSettings**アイコンの1つが正しくないとして表示されます。これにより、App Store に送信しようとするとアイコンが表示されないという**エラーが発生**します。
-    このアイコンは87x87 ピクセル (Retina 画面の場合は29単位) にする必要があり **@3x** ます。 Xcode のイメージ資産を編集するか、ファイルを手動で編集すること Visual Studio for Mac で、これを修正することはでき**ません。**
+    このアイコンは87x87 ピクセル (Retina 画面の場合は29単位) にする必要があり **@3x** ます。 Xcode のイメージ資産を編集するか、ファイル**のContents.js**を手動で編集する Visual Studio for Mac では、この問題を修正することはできません。
 
 - Watch 拡張機能プロジェクト > の**WKApp バンドル id**が watch アプリの**バンドル id**と一致するように[正しく設定](~/ios/watchos/get-started/project-references.md)されていない場合、デバッガーは接続に失敗し、Visual Studio for Mac は *"デバッガーの接続を待機*しています" というメッセージを表示して待機します。
 
@@ -47,12 +47,12 @@ ms.locfileid: "84568790"
 - ストーリーボードに2つを追加することはできません `WKNotificationControllers` 。
     回避策: `notificationCategory` ストーリーボード XML 内の要素は、常に同じで挿入されます `id` 。 この問題を回避するには、2つ (以上) の通知コントローラーを追加し、ストーリーボードファイルをテキストエディターで開き、 `id` 要素を一意になるように手動で変更します。
 
-    [![](troubleshooting-images/duplicate-id-sml.png "Opening the storyboard file in a text editor and manually change the id element to be unique")](troubleshooting-images/duplicate-id.png#lightbox)
+    [![ストーリーボードファイルをテキストエディターで開き、id 要素を手動で変更して一意にする](troubleshooting-images/duplicate-id-sml.png)](troubleshooting-images/duplicate-id.png#lightbox)
 
 - アプリを起動しようとすると、"アプリケーションがビルドされていません" というエラーが表示されることがあります。 このエラーは、スタートアッププロジェクトが watch 拡張機能プロジェクトに設定されている場合、**クリーン**後に発生します。
     この問題を解決するには、[**ビルド > リビルド**] を選択し、アプリを再起動します。
 
-### <a name="visual-studio"></a>Visual Studio
+### <a name="visual-studio"></a>Visual Studio
 
 IOS Designer support for Watch Kit を使用するには、ソリューションが正しく構成されている*必要があり*ます。 プロジェクト参照が設定されていない場合 (「[参照の設定方法」を](~/ios/watchos/get-started/project-references.md)参照)、デザインサーフェイスは正しく機能しません。
 
@@ -74,7 +74,7 @@ with an alpha channel. Icons should not have an alpha channel.
 
 2. アルファチャネルが存在する場合、表示されるダイアログには [**アルファ**] チェックボックスが表示されます。
 
-    ![](troubleshooting-images/remove-alpha-sml.png "The dialog that appears will include an Alpha checkbox if an alpha channel is present")
+    ![アルファチャネルが存在する場合、表示されるダイアログには [アルファ] チェックボックスが表示されます。](troubleshooting-images/remove-alpha-sml.png)
 
 3. **アルファ**チェックボックスを*オフにし*、正しい場所にファイルを**保存**します。
 
@@ -91,15 +91,15 @@ Xcode Interface Builder を使用して*いる場合*は、次の手順に従っ
 
 1. **Xcode Interface Builder**で watch アプリのインターフェイスを開きます **。**
 
-    ![](troubleshooting-images/add-6.png "Opening the storyboard in Xcode Interface Builder")
+    ![Xcode Interface Builder でストーリーボードを開く](troubleshooting-images/add-6.png)
 
 2. 新しいを `InterfaceController` ストーリーボードにドラッグします。
 
-    ![](troubleshooting-images/add-1.png "A InterfaceController")
+    ![InterfaceController](troubleshooting-images/add-1.png)
 
 3. コントロールをインターフェイスコントローラーにドラッグできるようになりました (例 ラベルとボタン) を作成することはできません **。 h**ヘッダーファイルがないためです。 次の手順を実行すると、必要な **.h**ヘッダーファイルが作成されます。
 
-    ![](troubleshooting-images/add-2.png "A button in the layout")
+    ![レイアウト内のボタン](troubleshooting-images/add-2.png)
 
 4. ストーリーボードを閉じて Visual Studio for Mac に戻ります。 **Watch アプリ拡張機能**プロジェクトに新しい C# ファイル**MyInterfaceController.cs** (または好きな名前) を作成します (ストーリーボードがある watch アプリ自体ではありません)。 次のコードを追加します (名前空間、classname、コンストラクター名を更新します)。
 
@@ -158,34 +158,34 @@ Xcode Interface Builder を使用して*いる場合*は、次の手順に従っ
     > [!TIP]
     > このファイルを最初のファイルの子ノードにする (必要に応じて) Visual Studio for Mac Solution Pad 内の他の C# ファイルにドラッグすることもできます。 その後、次のように表示されます。
 
-    ![](troubleshooting-images/add-5.png "The Solution pad")
+    ![ソリューションパッド](troubleshooting-images/add-5.png)
 
 6. Xcode 同期で、使用した新しいクラス (属性を使用) が認識されるように、[**ビルド >** ビルド] を選択し `Register` ます。
 
 7. [ウォッチ] アプリのストーリーボードファイルを右クリックし、[ **Open With > Xcode Interface Builder**] を選択して、ストーリーボードを再度開きます。
 
-    ![](troubleshooting-images/add-6.png "Opening the storyboard in Interface Builder")
+    ![Interface Builder でストーリーボードを開く](troubleshooting-images/add-6.png)
 
 8. 新しいインターフェイスコントローラーを選択し、前の手順で定義したクラス名を指定します。例を示します。 `MyInterfaceController`.
     すべてが正常に動作している場合は、[**クラス:** ] ドロップダウンリストに自動的に表示され、そこから選択できます。
 
-    ![](troubleshooting-images/add-4.png "Setting a custom class")
+    ![カスタムクラスの設定](troubleshooting-images/add-4.png)
 
 9. ストーリーボードとコードをサイドバイサイドで表示できるように、Xcode (2 つの重なり合う円があるアイコン) で**アシスタントエディター**ビューを選択します。
 
-    ![](troubleshooting-images/add-7.png "The Assistant Editor toolbar item")
+    ![アシスタントエディターのツールバー項目](troubleshooting-images/add-7.png)
 
     コードペインにフォーカスがある場合は、 **.h**ヘッダーファイルを参照していることを確認し、階層リンクバーを右クリックして適切なファイル (**MyInterfaceController**) を選択します。
 
-    ![](troubleshooting-images/add-8.png "Select MyInterfaceController")
+    ![MyInterfaceController の選択](troubleshooting-images/add-8.png)
 
 10. **Ctrl キーを押しながら**、ストーリーボードから **.h**ヘッダーファイルにドラッグして、コンセントとアクションを作成できるようになりました。
 
-    ![](troubleshooting-images/add-9.png "Creating outlets and actions")
+    ![アウトレットとアクションの作成](troubleshooting-images/add-9.png)
 
     ドラッグを解除すると、アウトレットまたはアクションを作成するかどうかを選択し、その名前を選択するように求められます。
 
-    ![](troubleshooting-images/add-a.png "The outlet and an action dialog")
+    ![アウトレットとアクションダイアログ](troubleshooting-images/add-a.png)
 
 11. ストーリーボードの変更が保存され、Xcode が閉じられたら、Visual Studio for Mac に戻ります。 このメソッドは、ヘッダーファイルの変更を検出し、 **designer.cs**ファイルにコードを自動的に追加します。
 
@@ -257,7 +257,7 @@ C# では、コントロールを参照する (またはアクションを実装
 
 ### <a name="--sdkroot"></a>--sdkroot
 
-必須です。 Xcode (6.2 以降) へのパスを指定します。
+必須。 Xcode (6.2 以降) へのパスを指定します。
 
 例:
 

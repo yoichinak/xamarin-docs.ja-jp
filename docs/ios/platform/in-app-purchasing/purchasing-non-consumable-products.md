@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 2341d90a297d6241c47a5f03fbe8fffa89dd34b0
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 6d87f99ae504346d55c4ddf86a093799ba9ddbd5
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032312"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936722"
 ---
 # <a name="purchasing-non-consumable-products-in-xamarinios"></a>Xamarin での非消費製品の購入
 
@@ -22,21 +22,21 @@ ms.locfileid: "73032312"
 
 [InAppPurchaseSample コード](https://docs.microsoft.com/samples/xamarin/ios-samples/storekit)には、*非消耗品*と呼ばれるプロジェクトが含まれています。 このコードサンプルでは、例としてフォトフィルターを使用して非消費製品を実装する方法を示します。 フィルターを購入したら、それを何度も写真に適用できます。 再購入する必要はありません。   
 
-購入プロセスは次の一連のスクリーンショットに示されています。 **購入** ボタンが 機能のアクティブ化 ボタンになります。   
+購入プロセスは次の一連のスクリーンショットに示されています。 [**購入**] ボタンが [機能のアクティブ化] ボタンになります。   
 
- [![](purchasing-non-consumable-products-images/image34.png "The purchase process is shown in this series of screenshots")](purchasing-non-consumable-products-images/image34.png#lightbox)   
+ [![購入プロセスを次の一連のスクリーンショットに示します。](purchasing-non-consumable-products-images/image34.png)](purchasing-non-consumable-products-images/image34.png#lightbox)   
 
 購入プロセスは、消費製品と同じです。重要な違いは、アプリケーションコードで購入を追跡する方法です。 この例では、製品がまだ購入されていない場合にのみ、[購入] ボタンを使用できます。それ以外の場合は、このボタンをクリックすると機能自体がアクティブになります。   
 
 次の図は、クラスと App Store サーバーの間の相互作用を示しています。これにより、非消費製品購入が実行されます。   
 
- [![](purchasing-non-consumable-products-images/image35.png "The interactions between classes and the App Store server to perform a non-consumable product purchase")](purchasing-non-consumable-products-images/image35.png#lightbox)   
+ [![クラスと App Store サーバーの間の対話により、非消費製品購入を実行する](purchasing-non-consumable-products-images/image35.png)](purchasing-non-consumable-products-images/image35.png#lightbox)   
 
-使用例との主な違いは、購入が完了すると、再購入を防ぐためにユーザーインターフェイスが更新されることです。 この例では、トランザクションの成功通知によってユーザーインターフェイスが更新され、 **[購入]** ボタンが機能自体をアクティブにするボタンに変換されます。
+使用例との主な違いは、購入が完了すると、再購入を防ぐためにユーザーインターフェイスが更新されることです。 この例では、トランザクションの成功通知によってユーザーインターフェイスが更新され、[**購入**] ボタンが機能自体をアクティブにするボタンに変換されます。
 
 ## <a name="re-purchasing-non-consumable-products"></a>非消費製品の再購入
 
-製品が正常に購入されると、コードでは通常、購入ボタンを非表示にしたり、再利用したりできます。これにより、ユーザーが製品を再び購入するのを防ぐことができます。 サンプルアプリケーションでこれを行うには、 **[購入]** ボタンをボタンに変更します。これにより、例の写真フィルターが機能するようになります。   
+製品が正常に購入されると、コードでは通常、購入ボタンを非表示にしたり、再利用したりできます。これにより、ユーザーが製品を再び購入するのを防ぐことができます。 サンプルアプリケーションでこれを行うには、[**購入**] ボタンをボタンに変更します。これにより、例の写真フィルターが機能するようになります。   
 
 アプリケーションで、非消費製品が既に購入されているかどうかを判断できない場合があります。
 
@@ -47,5 +47,5 @@ ms.locfileid: "73032312"
 このシナリオのコードパスは、通常の購入とまったく同じですが、唯一の違いは次のとおりです。
 
 - ユーザーは、製品に対して再度請求されることはありません。
-- アプリケーションに渡される `SKPaymentTransaction` オブジェクトには、最初に製品を購入したときに生成されたトランザクションを参照する `OriginalTransaction` プロパティがあります。 
+- アプリケーションに渡されたオブジェクトには、最初に製品を購入したときに生成された `SKPaymentTransaction` `OriginalTransaction` トランザクションを参照するプロパティがあります。 
 - 非消費製品を販売するアプリケーションでは、ユーザーが既存の購入を取得できるように、StoreKit の**復元**機能も実装する必要があります。 

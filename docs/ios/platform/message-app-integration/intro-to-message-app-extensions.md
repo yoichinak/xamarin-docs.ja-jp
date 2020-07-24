@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2017
-ms.openlocfilehash: 51a89533390eb1be8c1f36e0121229fb5a942279
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2cc27b18bdb58ee633cae2d61e8cc6a8064df581
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031659"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937128"
 ---
 # <a name="message-app-extension-basics-in-xamarinios"></a>Xamarin. iOS でのメッセージアプリ拡張機能の基本
 
@@ -37,13 +37,13 @@ IOS 10 の新機能であるメッセージアプリには、独自の専用の�
 
 また、iOS 10 の新機能である Apple では、ユーザーがアプリを簡単に検出できるようにするインラインアプリの属性が追加されています。 たとえば、1人のユーザーが、2番目のユーザーがインストールしていないアプリから別のユーザーにコンテンツを送信した場合 (ステッカーなど)、送信元アプリの名前はメッセージ履歴のコンテンツの下に一覧表示されます。 ユーザーがアプリ名をタップすると、メッセージアプリストアが開き、ストアでアプリが選択されます。
 
-メッセージアプリの拡張機能は、開発者が作成に慣れている既存の iOS アプリに似ており、標準の iOS アプリのすべての標準フレームワークと機能にアクセスできます。 (例:
+メッセージアプリの拡張機能は、開発者が作成に慣れている既存の iOS アプリに似ており、標準の iOS アプリのすべての標準フレームワークと機能にアクセスできます。 次に例を示します。
 
 - アプリ内購入にアクセスできます。
 - Apple Pay にアクセスできます。
 - これらのユーザーは、カメラなどのデバイスハードウェアにアクセスできます。
 
-メッセージアプリの拡張機能は、iOS 10 でのみサポートされていますが、これらの拡張機能が送信するコンテンツは、watchOS および macOS デバイスで表示できます。 WatchOS 3 に追加された新しい  _Recents ページ_には、電話から送信された最近のステッカー (メッセージアプリの拡張機能を含む) が表示され、ユーザーはこれらのステッカーをウォッチから送信できます。
+メッセージアプリの拡張機能は、iOS 10 でのみサポートされていますが、これらの拡張機能が送信するコンテンツは、watchOS および macOS デバイスで表示できます。 WatchOS 3 に追加された新しい [ _Recents ページ_には、電話から送信された最近のステッカー (メッセージアプリの拡張機能を含む) が表示され、ユーザーはこれらのステッカーをウォッチから送信できます。
 
 ## <a name="about-the-messages-framework"></a>Messages Framework について
 
@@ -57,7 +57,7 @@ Messages framework と Message Apps の拡張機能は、既存の iOS アプリ
 
 メッセージアプリの拡張機能が iOS アプリのバンドルに含まれている場合、アプリのアイコンは、デバイスのホーム画面と、Messages アプリ内からのメッセージアプリドロアーの両方に表示されます。 アプリバンドルに含まれていない場合、メッセージアプリの拡張機能はメッセージアプリドロワーにのみ表示されます。
 
-メッセージアプリの拡張機能がホストアプリバンドルに含まれていない場合でも、開発者はメッセージアプリの拡張機能のバンドルにアプリアイコンを提供する必要があります。これは、メッセージアプリのドロアーや設定など、システムの他の部分に表示されるアイコンです。拡張機能の。
+メッセージアプリの拡張機能がホストアプリバンドルに含まれていない場合でも、開発者は、メッセージアプリの拡張機能のバンドルにアプリアイコンを提供する必要があります。これは、拡張機能のメッセージアプリのドロアーや設定など、システムの他の部分に表示されるアイコンです。
 
 ## <a name="about-stickers"></a>ステッカーの概要
 
@@ -87,7 +87,7 @@ Apple は、ステッカーを他のメッセージコンテンツとしてイ�
 - イメージは 100 x 100 x 206 ポイントより小さくすること206はできません。
 
 > [!IMPORTANT]
-> ステッカー画像は、300 x 300 から 618 x 618 ピクセル範囲の `@3x` の解像度で常に指定する必要があります。 必要に応じて、システムによって `@2x` と `@1x` のバージョンが実行時に自動的に生成されます。
+> ステッカー画像は `@3x` 、300 x 300 から 618 x 618 ピクセル範囲の解像度で常に指定する必要があります。 システムは、必要に応じて、およびの各バージョンを実行時に自動的に生成し `@2x` `@1x` ます。
 
 Apple では、さまざまな色の背景 (白、黒、赤、黄、および複数色) に対してステッカーイメージ資産をテストし、すべての可能性がある状況に最適であることを確認することを提案しています。
 
@@ -117,65 +117,65 @@ Xcode の属性インスペクターを使用して、ステッカーパック�
 
 <!-- markdownlint-disable MD001 -->
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 1. Visual Studio for Mac を起動します。
 2. ソリューションを開いて、メッセージアプリの拡張機能を追加します。
-3. [ **IOS** > **Extensions** > **iMessage Extension** ] を選択し、 **[次へ]** ボタンをクリックします。
+3. [ **IOS**  >  **Extensions**  >  **iMessage Extension** ] を選択し、[**次へ**] ボタンをクリックします。
 
-    [![](intro-to-message-app-extensions-images/message01.png "Select iMessage Extension")](intro-to-message-app-extensions-images/message01.png#lightbox)
-4. **拡張機能の名前**を入力し、 **[次へ]** ボタンをクリックします。
+    [![IMessage 拡張機能の選択](intro-to-message-app-extensions-images/message01.png)](intro-to-message-app-extensions-images/message01.png#lightbox)
+4. **拡張機能の名前**を入力し、[**次へ**] ボタンをクリックします。
 
-    [![](intro-to-message-app-extensions-images/message02.png "Enter an Extension Name")](intro-to-message-app-extensions-images/message02.png#lightbox)
-5. **[作成]** ボタンをクリックして拡張機能をビルドします。
+    [![拡張機能名を入力してください](intro-to-message-app-extensions-images/message02.png)](intro-to-message-app-extensions-images/message02.png#lightbox)
+5. [**作成**] ボタンをクリックして拡張機能をビルドします。
 
-    [![](intro-to-message-app-extensions-images/message03.png "Click the Create button")](intro-to-message-app-extensions-images/message03.png#lightbox)
+    [![[作成] ボタンをクリックします。](intro-to-message-app-extensions-images/message03.png)](intro-to-message-app-extensions-images/message03.png#lightbox)
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. Visual Studio を起動します。
 2. ソリューションを開いて、メッセージアプリの拡張機能を追加します。
-3. **[Ios Extensions > IMessage Extension (ios)]** を選択し、 **[次へ]** ボタンをクリックします。
+3. [ **Ios Extensions > IMessage Extension (ios)** ] を選択し、[**次へ**] ボタンをクリックします。
 
-    [![iMessage 拡張機能 (iOS) を選択します。](intro-to-message-app-extensions-images/message01.w157-sml.png)](intro-to-message-app-extensions-images/message01.w157.png#lightbox)
+    [![IMessage 拡張機能 (iOS) を選択します。](intro-to-message-app-extensions-images/message01.w157-sml.png)](intro-to-message-app-extensions-images/message01.w157.png#lightbox)
 
-4. **名前**を入力し、 **[OK]** ボタンをクリックします。
+4. **名前**を入力し、[ **OK** ] ボタンをクリックします。
 
 -----
 
-既定では、`MessagesViewController.cs` ファイルはソリューションに追加されます。 これは拡張機能へのメインエントリポイントであり、`MSMessageAppViewController` クラスから継承されます。
+既定では、 `MessagesViewController.cs` ファイルはソリューションに追加されます。 これは拡張機能へのメインエントリポイントであり、クラスから継承され `MSMessageAppViewController` ます。
 
 Messages フレームワークには、ユーザーに使用可能なステッカーを表示するためのクラスが用意されています。
 
-- `MSStickerBrowserViewController`-ステッカーが表示されるビューを制御します。 また、指定されたブラウザーインデックスのステッカーカウントとステッカーを返すために、`IMSStickerBrowserViewDataSource` インターフェイスに準拠しています。
-- `MSStickerBrowserView`-使用可能なステッカーがに表示されるビューです。
+- `MSStickerBrowserViewController`-ステッカーが表示されるビューを制御します。 また、 `IMSStickerBrowserViewDataSource` 指定されたブラウザーインデックスのステッカーカウントとステッカーを返すインターフェイスに準拠しています。
+- `MSStickerBrowserView`-使用可能なステッカーが表示されるビューです。
 - `MSStickerSize`-ブラウザービューに表示されるステッカーのグリッドの個々のセルサイズを決定します。
 
 ### <a name="creating-a-custom-sticker-browser"></a>カスタムステッカーブラウザーを作成する
 
-開発者は、メッセージアプリ拡張機能にカスタムステッカーブラウザー (`MSMessageAppBrowserViewController`) を提供することにより、ユーザーのステッカーエクスペリエンスをさらにカスタマイズできます。 カスタムステッカーブラウザーは、メッセージストリームに含めるステッカーを選択するときに、ユーザーにステッカーを表示する方法を変更します。
+開発者は、 `MSMessageAppBrowserViewController` メッセージアプリ拡張機能にカスタムステッカーブラウザー () を提供することで、ユーザーのステッカーエクスペリエンスをさらにカスタマイズできます。 カスタムステッカーブラウザーは、メッセージストリームに含めるステッカーを選択するときに、ユーザーにステッカーを表示する方法を変更します。
 
-次の手順で行います。
+次の手順を実行します。
 
-# <a name="visual-studio-for-mactabmacos"></a>[Visual Studio for Mac](#tab/macos)
+# <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. **Solution Pad**で、拡張機能のプロジェクト名を右クリックし、[ > **新しいファイル**の**追加**... > iOS |] を選択します。 > **インターフェイスコントローラー**を Apple Watch します。
-2. **名前**として「`StickerBrowserViewController`」と入力し、 **[新規]** ボタンをクリックします。
+1. **Solution Pad**で、拡張機能のプロジェクト名を右クリックし、[**追加**] [  >  **新しいファイル...**  >  ] の順に選択します。**iOS |Apple Watch**  >  **インターフェイスコントローラー**。
+2. `StickerBrowserViewController`**名前**として「」と入力し、[**新規**] ボタンをクリックします。
 
-    [![](intro-to-message-app-extensions-images/browser01.png "Enter StickerBrowserViewController for the Name")](intro-to-message-app-extensions-images/browser01.png#lightbox)
-3. `StickerBrowserViewController.cs` ファイルを編集用に開きます。
+    [![名前として「StickerBrowserViewController」と入力します。](intro-to-message-app-extensions-images/browser01.png)](intro-to-message-app-extensions-images/browser01.png#lightbox)
+3. 編集のために `StickerBrowserViewController.cs` ファイルを開きます。
 
-# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
+# <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. **ソリューションエクスプローラー**で、拡張機能のプロジェクト名を右クリックし、[ > **新しいファイル**の**追加**... > iOS |] を選択します。 > **インターフェイスコントローラー**を Apple Watch します。
-2. **名前**として「`StickerBrowserViewController`」と入力し、 **[新規]** ボタンをクリックします。
+1. **ソリューションエクスプローラー**で、拡張機能のプロジェクト名を右クリックし、[**追加**] [  >  **新しいファイル...**  >  ] の順に選択します。**iOS |Apple Watch**  >  **インターフェイスコントローラー**。
+2. `StickerBrowserViewController`**名前**として「」と入力し、[**新規**] ボタンをクリックします。
 
-    [![](intro-to-message-app-extensions-images/browser01.w157-sml.png "Enter StickerBrowserViewController for the Name")](intro-to-message-app-extensions-images/browser01.w157.png#lightbox)
-3. `StickerBrowserViewController.cs` ファイルを編集用に開きます。
+    [![名前として「StickerBrowserViewController」と入力します。](intro-to-message-app-extensions-images/browser01.w157-sml.png)](intro-to-message-app-extensions-images/browser01.w157.png#lightbox)
+3. 編集のために `StickerBrowserViewController.cs` ファイルを開きます。
 
 -----
 
-`StickerBrowserViewController.cs` は次のようになります。
+次のようにし `StickerBrowserViewController.cs` ます。
 
 ```csharp
 using System;
@@ -270,7 +270,7 @@ namespace MonkeyStickers
 public List<MSSticker> Stickers { get; set; } = new List<MSSticker> ();
 ```
 
-とは、このデータストアからブラウザーにデータを提供するために、`MSStickerBrowserViewController` クラスの2つのメソッドをオーバーライドします。
+とは、 `MSStickerBrowserViewController` このデータストアからブラウザーにデータを提供するために、クラスの2つのメソッドをオーバーライドします。
 
 ```csharp
 public override nint GetNumberOfStickers (MSStickerBrowserView stickerBrowserView)
@@ -284,7 +284,7 @@ public override MSSticker GetSticker (MSStickerBrowserView stickerBrowserView, n
 }
 ```
 
-`CreateSticker` メソッドは、拡張機能のバンドルからイメージ資産のパスを取得し、それを使用して、この資産から `MSSticker` の新しいインスタンスを作成し、コレクションに追加します。
+メソッドは、 `CreateSticker` 拡張機能のバンドルからイメージ資産のパスを取得し、それを使用して、この資産からの新しいインスタンスを作成し `MSSticker` 、コレクションに追加します。
 
 ```csharp
 private void CreateSticker (string assetName, string localizedDescription)
@@ -311,9 +311,9 @@ private void CreateSticker (string assetName, string localizedDescription)
 }
 ```
 
-`LoadSticker` メソッドは `ViewDidLoad` から呼び出され、名前付きイメージ資産 (アプリのバンドルに含まれています) からステッカーを作成し、ステッカーのコレクションに追加します。
+`LoadSticker`メソッドは、 `ViewDidLoad` 名前付きイメージアセット (アプリのバンドルに含まれています) からステッカーを作成し、ステッカーのコレクションに追加するために、から呼び出されます。
 
-カスタムステッカーブラウザーを実装するには、`MessagesViewController.cs` ファイルを編集し、次のようにします。
+カスタムステッカーブラウザーを実装するには、ファイルを編集し、次のようにし `MessagesViewController.cs` ます。
 
 ```csharp
 using System;
@@ -361,7 +361,7 @@ namespace MonkeyStickers
 public StickerBrowserViewController BrowserViewController { get; set;}
 ```
 
-`ViewDidLoad` メソッドでは、新しいブラウザーをインスタンス化して構成します。
+メソッドでは `ViewDidLoad` 、新しいブラウザーをインスタンス化して構成します。
 
 ```csharp
 // Create new browser and configure it
@@ -393,7 +393,7 @@ View.AddSubview (BrowserViewController.View);
 
 このステッカービューは、プログラムによって、またはユーザーが手動で切り替えることができます。
 
-2つの異なる表示モードの切り替えを処理する次の例を見てみましょう。 状態ごとに2つの異なるビューコントローラーが必要になります。 `StickerBrowserViewController` は**コンパクト**ビューを処理し、次のようになります。
+2つの異なる表示モードの切り替えを処理する次の例を見てみましょう。 状態ごとに2つの異なるビューコントローラーが必要になります。 は `StickerBrowserViewController` **コンパクト**ビューを処理し、次のようになります。
 
 ```csharp
 using System;
@@ -494,7 +494,7 @@ namespace MessageExtension
 }
 ```
 
-`AddStickerViewController` は、**拡張**されたステッカービューを処理し、次のようになります。
+は、 `AddStickerViewController` **展開**されたステッカービューを処理し、次のようになります。
 
 ```csharp
 using System;
@@ -546,7 +546,7 @@ namespace MessageExtension
 }
 ```
 
-`MessageViewController` は、要求された状態を駆動するために、これらのビューコントローラーを実装します。
+は、 `MessageViewController` 要求された状態を駆動するために、これらのビューコントローラーを実装します。
 
 ```csharp
 using System;
@@ -686,7 +686,7 @@ public void AddStickerToCollection (MSSticker sticker)
 }
 ```
 
-`DidTransition` メソッドは、次の2つのモード間の切り替えを処理するためにオーバーライドされます。
+`DidTransition`メソッドは、2つのモード間の切り替えを処理するためにオーバーライドされます。
 
 ```csharp
 public override void DidTransition (MSMessagesAppPresentationStyle presentationStyle)

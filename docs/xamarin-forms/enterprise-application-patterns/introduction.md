@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e78e7c3056d4f1e22114819f54c1df261aec70e1
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 665971607d8c67f77ad5172778cddcd97bf79841
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84198113"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932627"
 ---
 # <a name="introduction-to-enterprise-app-development"></a>エンタープライズアプリ開発の概要
 
@@ -65,7 +65,7 @@ ms.locfileid: "84198113"
 
 図1-1 は、サンプルアプリケーションのアーキテクチャの概要を示しています。
 
-![](introduction-images/architecture.png "eShopOnContainers high-level architecture")
+![eShopOnContainers のアーキテクチャの概要](introduction-images/architecture.png)
 
 **図 1-1**: eShopOnContainers のアーキテクチャの概要
 
@@ -92,7 +92,7 @@ Web アプリケーションの詳細については、「 [ASP.NET Core と Mic
 
 このガイドでは、を使用してクロスプラットフォームのエンタープライズアプリを構築することに重点を置いて、 Xamarin.Forms 例として eShopOnContainers mobile アプリを使用します。 図1-2 に、前に説明した機能を提供する eShopOnContainers モバイルアプリのページを示します。
 
-[![](introduction-images/screenshots.png "The eShopOnContainers mobile app")](introduction-images/screenshots-large.png#lightbox "The eShopOnContainers mobile app")
+[![EShopOnContainers モバイルアプリ](introduction-images/screenshots.png)](introduction-images/screenshots-large.png#lightbox "EShopOnContainers モバイルアプリ")
 
 **図 1-2**: eShopOnContainers モバイルアプリ
 
@@ -122,7 +122,7 @@ EShopOnContainers mobile アプリでは、次の Xamarin.Forms 機能を実行�
 
 EShopOnContainers mobile app ソリューションは、ソースコードとその他のリソースをプロジェクトに編成します。 すべてのプロジェクトは、フォルダーを使用してソースコードやその他のリソースをカテゴリに整理します。 次の表に、eShopOnContainers モバイルアプリを構成するプロジェクトの概要を示します。
 
-|Project|説明|
+|プロジェクト|説明|
 |--- |--- |
 |eShopOnContainers|このプロジェクトは、共有コードと共有 UI を含む、ポータブルクラスライブラリ (PCL) プロジェクトです。|
 |eShopOnContainers|このプロジェクトは Android 固有のコードを保持し、Android アプリのエントリポイントです。|
@@ -147,15 +147,15 @@ EShopOnContainers PCL プロジェクトには、次のフォルダーが含ま�
 |コンバーター|カスタムロジックをバインディングに適用する値コンバーターを格納します。|
 |エフェクト|特定の `EntryLineColorEffect` コントロールの境界線の色を変更するために使用されるクラスが含まれてい `Entry` ます。|
 |例外|カスタムを格納し `ServiceAuthenticationException` ます。|
-|Extensions|クラスおよびクラスの拡張メソッドが含まれてい `VisualElement` `IEnumerable` ます。|
+|拡張機能|クラスおよびクラスの拡張メソッドが含まれてい `VisualElement` `IEnumerable` ます。|
 |ヘルパー|アプリのヘルパークラスが含まれています。|
 |モデル|アプリのモデルクラスが含まれています。|
-|プロパティ|`AssemblyInfo.cs`.Net アセンブリメタデータファイルを含みます。|
+|Properties|`AssemblyInfo.cs`.Net アセンブリメタデータファイルを含みます。|
 |サービス|アプリに提供されるサービスを実装するインターフェイスとクラスが含まれています。|
 |トリガー|`BeginAnimation`XAML でアニメーションを呼び出すために使用されるトリガーが含まれています。|
 |Validations (検証)|データ入力の検証に関連するクラスが含まれています。|
 |ViewModels|ページに公開されているアプリケーションロジックを格納します。|
-|ビュー|アプリのページが含まれています。|
+|Views|アプリのページが含まれています。|
 
 ##### <a name="platform-projects"></a>プラットフォームプロジェクト
 

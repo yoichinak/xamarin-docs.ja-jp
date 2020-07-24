@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: d390ff40a964101297e205060b892b4108fe2281
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: eccd0415fdc1db357f904b843a015df60a35a488
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569908"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939608"
 ---
 # <a name="collection-views-in-xamarinios"></a>Xamarin. iOS のコレクションビュー
 
@@ -36,7 +36,7 @@ iOS には、というレイアウトクラスが用意されており、 `UICol
 
 セルは、コレクションビューによって表示されるデータセット内の1つのアイテムを表すオブジェクトです。 各セルはクラスのインスタンスであり、 `UICollectionViewCell` 次の図に示すように、3つの異なるビューで構成されています。
 
- [![](uicollectionview-images/01-uicollectionviewcell.png "Each cell is composed of three different views, as shown here")](uicollectionview-images/01-uicollectionviewcell.png#lightbox)
+ [![次に示すように、各セルは3つの異なるビューで構成されています。](uicollectionview-images/01-uicollectionviewcell.png)](uicollectionview-images/01-uicollectionviewcell.png#lightbox)
 
 `UICollectionViewCell`クラスには、これらの各ビューに対して次のプロパティがあります。
 
@@ -46,7 +46,7 @@ iOS には、というレイアウトクラスが用意されており、 `UICol
 
 `ContentView`をおよびよりも小さい値に設定すると、を使用して `BackgroundView` `SelectedBackgroundView` コンテンツを `BackgroundView` 視覚的に `SelectedBackgroundView` 表示できます。次に示すように、セルを選択すると、が表示されます。
 
- [![](uicollectionview-images/02-cells.png "The different cell elements")](uicollectionview-images/02-cells.png#lightbox)
+ [![さまざまなセル要素](uicollectionview-images/02-cells.png)](uicollectionview-images/02-cells.png#lightbox)
 
 上のスクリーンショットのセルは `UICollectionViewCell` `ContentView` 、 `SelectedBackgroundView` 次のコードに示すように、、、およびの各プロパティをそれぞれ継承して設定することによって作成され `BackgroundView` ます。
 
@@ -90,7 +90,7 @@ public class AnimalCell : UICollectionViewCell
 
 たとえば、次の図に示すように、補助ビューを使用して特定のセクションのヘッダーを表示することができます。
 
- [![](uicollectionview-images/02a-supplementary-view.png "A Supplementary View used to present a header for a particular section, as shown here")](uicollectionview-images/02a-supplementary-view.png#lightbox)
+ [![次に示すように、特定のセクションのヘッダーを表示するために使用する補助ビュー。](uicollectionview-images/02a-supplementary-view.png)](uicollectionview-images/02a-supplementary-view.png#lightbox)
 
 補助ビューを使用するには、まず、メソッドに登録する必要があり `ViewDidLoad` ます。
 
@@ -119,7 +119,7 @@ public override UICollectionReusableView GetViewForSupplementaryElement (UIColle
 
 装飾ビューは、で表示できる純粋な視覚ビューです `UICollectionView` 。 セルや補助ビューとは異なり、データドリブンではありません。 これらは常にレイアウトのサブクラス内に作成され、その後、コンテンツのレイアウトとして変更できます。 たとえば、次に示すように、装飾ビューを使用すると、のコンテンツと共にスクロールする背景ビューを表示でき `UICollectionView` ます。
 
- [![](uicollectionview-images/02c-decoration-view.png "Decoration View with a red background")](uicollectionview-images/02c-decoration-view.png#lightbox)
+ [![赤の背景を持つ装飾ビュー](uicollectionview-images/02c-decoration-view.png)](uicollectionview-images/02c-decoration-view.png#lightbox)
 
  次のコードスニペットは、samples クラスの背景を赤に変更し `CircleLayout` ます。
 
@@ -149,7 +149,7 @@ public override UICollectionReusableView GetViewForSupplementaryElement (UIColle
 と同様に、クラスは、 `UITableView` `UICollectionView` そのデータソースを呼び出して、画面上の項目のセルを取得します。
 画面の外にスクロールするセルは、次の図に示すように、再利用のためにキューに配置されます。
 
- [![](uicollectionview-images/03-cell-reuse.png "Cells that scroll off the screen are placed in to a queue for reuse as shown here")](uicollectionview-images/03-cell-reuse.png#lightbox)
+ [![画面の外にスクロールするセルは、次に示すように、再利用のためにキューに配置されます](uicollectionview-images/03-cell-reuse.png)](uicollectionview-images/03-cell-reuse.png#lightbox)
 
 とでは、セルの再利用が簡略化されてい `UICollectionView` `UITableView` ます。 セルがシステムに登録されているため、再利用キューで使用できない場合、データソースに直接セルを作成する必要はなくなりました。 再利用キューからセルを逆キューにする呼び出しを行うときにセルを使用できない場合、iOS では、登録された種類または nib に基づいて、そのセルが自動的に作成されます。
 補助ビューでも同じ手法を使用できます。
@@ -200,7 +200,7 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, F
 
 セルを押すと、セルは強調表示された状態に遷移し、ユーザーがセルから指を離したときに選択されません。 これにより、実際に選択される前に、セルの外観を一時的に変更することができます。 選択すると、セルの `SelectedBackgroundView` が表示されます。 次の図は、選択が発生する直前の状態を示しています。
 
- [![](uicollectionview-images/04-cell-highlight.png "This figure shows the highlighted state just before the selection occurs")](uicollectionview-images/04-cell-highlight.png#lightbox)
+ [![この図は、選択が発生する直前に強調表示された状態を示しています。](uicollectionview-images/04-cell-highlight.png)](uicollectionview-images/04-cell-highlight.png#lightbox)
 
 強調表示を実装するには、 `ItemHighlighted` `ItemUnhighlighted` のメソッドとメソッドを `UICollectionViewDelegate` 使用できます。 たとえば、次のコードでは、 `ContentView` 上の図に示すように、セルが強調表示されている場合はの背景が黄色で、強調表示されていない場合は白い背景が適用されます。
 
@@ -247,7 +247,7 @@ public override bool ShouldHighlightItem (UICollectionView collectionView, NSInd
 
 次のスクリーンショットは、セルが長押されたときのメニューを示しています。
 
- [![](uicollectionview-images/04a-menu.png "This screenshot show the menu when a cell is long pressed")](uicollectionview-images/04a-menu.png#lightbox)
+ [![このスクリーンショットは、セルが長押しされたときのメニューを示しています。](uicollectionview-images/04a-menu.png)](uicollectionview-images/04a-menu.png#lightbox)
 
  <a name="Layout"></a>
 
@@ -287,7 +287,7 @@ simpleCollectionViewController = new SimpleCollectionViewController (layout);
 
 これは、グリッド内のコンテンツをレイアウトするために必要なすべてのものです。 また、次に示すように、向きが変わると、によっ `UICollectionViewFlowLayout` てコンテンツが適切に再配置されます。
 
- [![](uicollectionview-images/05-layout-orientation.png "Example of the orientation changes")](uicollectionview-images/05-layout-orientation.png#lightbox)
+ [![方向の変更の例](uicollectionview-images/05-layout-orientation.png)](uicollectionview-images/05-layout-orientation.png#lightbox)
 
  <a name="Section_Inset"></a>
 
@@ -302,7 +302,7 @@ layout.SectionInset = new UIEdgeInsets (50,50,50,50);
 
 この結果、次のように、セクションの周囲にスペースが表示されます。
 
- [![](uicollectionview-images/06-sectioninset.png "Spacing around the section as shown here")](uicollectionview-images/06-sectioninset.png#lightbox)
+ [![次に示すように、セクションの周囲にスペースを空ける](uicollectionview-images/06-sectioninset.png)](uicollectionview-images/06-sectioninset.png#lightbox)
 
  <a name="Subclassing_UICollectionViewFlowLayout"></a>
 
@@ -310,7 +310,7 @@ layout.SectionInset = new UIEdgeInsets (50,50,50,50);
 
 を直接使用するためのエディションでは `UICollectionViewFlowLayout` 、行に沿ってコンテンツのレイアウトをさらにカスタマイズするために、サブクラス化することもできます。 たとえば、次に示すように、この方法を使用して、セルをグリッドにラップしないレイアウトを作成できます。代わりに、次に示すように、水平スクロール効果を使用して1つの行を作成します。
 
- [![](uicollectionview-images/07-line-layout.png "A single row with a horizontal scrolling effect")](uicollectionview-images/07-line-layout.png#lightbox)
+ [![水平スクロール効果のある単一行](uicollectionview-images/07-line-layout.png)](uicollectionview-images/07-line-layout.png#lightbox)
 
 をサブクラス化して実装するに `UICollectionViewFlowLayout` は、次のものが必要です。
 
@@ -402,7 +402,7 @@ namespace SimpleCollectionView
 
 たとえば、次に示すように、同じコンテンツを円形のレイアウトで表示できます。
 
- [![](uicollectionview-images/08-circle-layout.png "A circular custom layout as shown here")](uicollectionview-images/08-circle-layout.png#lightbox)
+ [![次に示すように、円形のカスタムレイアウト](uicollectionview-images/08-circle-layout.png)](uicollectionview-images/08-circle-layout.png#lightbox)
 
 レイアウトに関する強力な点は、グリッドに似たレイアウトから水平スクロールレイアウトに変更することです。その後、この循環レイアウトに対して指定されたレイアウトクラスのみが変更 `UICollectionView` されます。 、その `UICollectionView` デリゲート、またはデータソースコードはまったく変更されません。
 
@@ -412,7 +412,7 @@ IOS 9 では、コレクションビュー ( `UICollectionView` ) で、新し�
 
 これらの新しいメソッドを使用すると、簡単にドラッグしてコレクションビュー内で順序を変更できます。また、並べ替え処理のいずれかの段階でアイテムの外観をカスタマイズすることもできます。
 
-[![](uicollectionview-images/intro01.png "An example of the reordering process")](uicollectionview-images/intro01.png#lightbox)
+[![並べ替え処理の例](uicollectionview-images/intro01.png)](uicollectionview-images/intro01.png#lightbox)
 
 この記事では、Xamarin. iOS アプリケーションでのドラッグツーオーダーの実装に加え、iOS 9 がコレクションビューコントロールに対して行ったその他の変更についても説明します。
 
@@ -446,7 +446,7 @@ public override void MoveItem (UICollectionView collectionView, NSIndexPath sour
 
 簡単な例として、新しい Xamarin. iOS プロジェクトを開始し、**メインの storyboard**ファイルを編集します。 を `UICollectionViewController` デザインサーフェイスにドラッグします。
 
-[![](uicollectionview-images/quick01.png "Adding a UICollectionViewController")](uicollectionview-images/quick01.png#lightbox)
+[![UICollectionViewController の追加](uicollectionview-images/quick01.png)](uicollectionview-images/quick01.png#lightbox)
 
 コレクションビューを選択します (これはドキュメントアウトラインから簡単に実行できます)。 次のスクリーンショットに示すように、Properties Pad の [レイアウト] タブで、次のサイズを設定します。
 
@@ -456,7 +456,7 @@ public override void MoveItem (UICollectionView collectionView, NSIndexPath sour
 - **最小間隔**: セルの場合– 8 |行の場合–8
 - **セクションのインセット**: 上-16 |下-16 |左-16 |右-16
 
-[![](uicollectionview-images/quick04.png "Set the Collection View sizes")](uicollectionview-images/quick04.png#lightbox)
+[![コレクションビューのサイズを設定する](uicollectionview-images/quick04.png)](uicollectionview-images/quick04.png#lightbox)
 
 次に、既定のセルを編集します。
 
@@ -464,21 +464,21 @@ public override void MoveItem (UICollectionView collectionView, NSIndexPath sour
 - セルのタイトルとして機能するラベルを追加します。
 - 再利用識別子を**セル**に設定する
 
-[![](uicollectionview-images/quick02.png "Edit the default Cell")](uicollectionview-images/quick02.png#lightbox)
+[![既定のセルを編集する](uicollectionview-images/quick02.png)](uicollectionview-images/quick02.png#lightbox)
 
 サイズを変更するときにラベルをセルの中央に維持するための制約を追加します。
 
 _Collectionviewcell_の**プロパティパッド**で、**クラス**を次のように設定し `TextCollectionViewCell` ます。
 
-[![](uicollectionview-images/quick05.png "Set the Class to TextCollectionViewCell")](uicollectionview-images/quick05.png#lightbox)
+[![クラスを TextCollectionViewCell に設定します。](uicollectionview-images/quick05.png)](uicollectionview-images/quick05.png#lightbox)
 
 コレクションの**再利用可能なビュー**を次のように設定し `Cell` ます。
 
-[![](uicollectionview-images/quick06.png "Set the Collection Reusable View to Cell")](uicollectionview-images/quick06.png#lightbox)
+[![コレクション再利用可能ビューをセルに設定します](uicollectionview-images/quick06.png)](uicollectionview-images/quick06.png#lightbox)
 
 最後に、ラベルを選択し、次のように名前を付け `TextLabel` ます。
 
-[![](uicollectionview-images/quick07.png "name label TextLabel")](uicollectionview-images/quick07.png#lightbox)
+[![名前ラベルの TextLabel](uicollectionview-images/quick07.png)](uicollectionview-images/quick07.png#lightbox)
 
 クラスを編集し、 `TextCollectionViewCell` 次のプロパティを追加します。
 
@@ -674,7 +674,7 @@ UI に加えた変更を保存し、アプリを実行します。
 ユーザーが一覧から項目を選択して新しい場所にドラッグした場合、他の項目は項目の外に移動するときに自動的にアニメーション化されます。
 ユーザーが新しい場所に項目をドロップすると、その場所が表示されます。 次に例を示します。
 
-[![](uicollectionview-images/intro01.png "An example of dragging an item to a new location")](uicollectionview-images/intro01.png#lightbox)
+[![項目を新しい場所にドラッグする例](uicollectionview-images/intro01.png)](uicollectionview-images/intro01.png#lightbox)
 
 <a name="Using-a-Custom-Gesture-Recognizer"></a>
 
@@ -1183,7 +1183,7 @@ public override void AwakeFromNib ()
 
 Xamarin. iOS アプリを再度実行すると、コレクションビューは次のようになります。
 
-[![](uicollectionview-images/custom01.png "The collection view will now look like this")](uicollectionview-images/custom01.png#lightbox)
+[![コレクションビューは次のようになります。](uicollectionview-images/custom01.png)](uicollectionview-images/custom01.png#lightbox)
 
 前と同じように項目をドラッグして並べ替えることもできますが、項目がドロップされたときに新しい場所に合わせてサイズが変更されるようになりました。
 

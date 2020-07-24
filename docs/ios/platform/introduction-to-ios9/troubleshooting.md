@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 2d554fa2f967a966195007ea67c48506eaac1e79
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 435fe894e4082f7eddf37d100bb8b2d2ed3a166f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84570883"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938009"
 ---
 # <a name="xamarinios-9--troubleshooting"></a>Xamarin iOS 9 –トラブルシューティング
 
@@ -32,7 +32,7 @@ Xcode 7 (またはそれ以降) がインストールされている場合、既
 
 Xcode で、[ **Xcode** ]、[**基本設定...**  >  ] の順に選択します。**ダウンロード**:
 
-[![](troubleshooting-images/ios8.png "iOS 8 Simulators Downloads")](troubleshooting-images/ios8.png#lightbox)
+[![iOS 8 シミュレーターダウンロード](troubleshooting-images/ios8.png)](troubleshooting-images/ios8.png#lightbox)
 
 [**今すぐ確認してインストール**する] ボタンをクリックして、iOS 8 シミュレーターを再インストールします。
 
@@ -139,26 +139,26 @@ Dyld Message: no cach image with name (/System/Library/PrivateFrameworks/JavaScr
 
 Ios 9 バージョンの Xamarin iOS アプリを実際の iOS ハードウェアで実行しようとすると、開発者アカウントがデバイス上で信頼されていないというメッセージが表示されることがあります。 次に例を示します。
 
-[![](troubleshooting-images/untrusted01.png "Untrusted Enterprise Developer alert")](troubleshooting-images/untrusted01.png#lightbox)
+[![信頼されていない企業の開発者向けアラート](troubleshooting-images/untrusted01.png)](troubleshooting-images/untrusted01.png#lightbox)
 
 この問題を解決するには、次の手順を実行します。
 
 1. 開発用 Mac で Xcode (最新のベータ版) を開始します。
 2. [**ウィンドウ**] メニューの [**デバイス**] を選択して、[デバイス] ウィンドウを開きます。 
 
-    [![](troubleshooting-images/untrusted02.png "The Devices Window")](troubleshooting-images/untrusted02.png#lightbox)
+    [![[デバイス] ウィンドウ](troubleshooting-images/untrusted02.png)](troubleshooting-images/untrusted02.png#lightbox)
 3. [**デバイス**] サイドパネルで、デバイスを選択し、右クリックして、[**プロビジョニングプロファイルの表示**] を選択します。 
 
-    [![](troubleshooting-images/untrusted03.png "SShow Provisioning Profiles")](troubleshooting-images/untrusted03.png#lightbox)
+    [![プロビジョニングプロファイルを表示する](troubleshooting-images/untrusted03.png)](troubleshooting-images/untrusted03.png#lightbox)
 4. 現在デバイス上にある各プロビジョニングプロファイルを選択し、ボタンをクリックし **-** て削除します。 
 
-    [![](troubleshooting-images/untrusted04.png "Deleting a provisioning profile")](troubleshooting-images/untrusted04.png#lightbox)
+    [![プロビジョニングプロファイルを削除しています](troubleshooting-images/untrusted04.png)](troubleshooting-images/untrusted04.png#lightbox)
 5. [ **Xcode** ] メニューの [**基本設定...** ] を選択し、[**アカウント**] を選択します。 
 
-    [![](troubleshooting-images/untrusted05.png "Xcode account preferences")](troubleshooting-images/untrusted05.png#lightbox)
+    [![Xcode アカウントの基本設定](troubleshooting-images/untrusted05.png)](troubleshooting-images/untrusted05.png#lightbox)
 6. [**詳細の表示...** ] ボタンをクリックし、[**すべてダウンロード**] ボタンをクリックします。 
 
-    [![](troubleshooting-images/untrusted06.png "Download all profiles")](troubleshooting-images/untrusted06.png#lightbox)
+    [![すべてのプロファイルのダウンロード](troubleshooting-images/untrusted06.png)](troubleshooting-images/untrusted06.png#lightbox)
 7. 一覧の更新が完了したら、[**完了**] ボタンをクリックして、[設定] ウィンドウを閉じます。
 8. IOS デバイスからテストしようとしていた既存のバージョンの Xamarin iOS アプリを削除します。
 9. Visual Studio for Mac に戻り、クリーンビルドを実行して、デバイスでアプリを再実行します。

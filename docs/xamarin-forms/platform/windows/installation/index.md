@@ -10,12 +10,12 @@ ms.date: 04/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 13b46fd06b0116332241b0d523aea707d56b39ec
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 06f7a138ee27fe095b99a55917267aaa6e01998e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573366"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939023"
 ---
 # <a name="setup-windows-projects"></a>Windows プロジェクトのセットアップ
 
@@ -35,21 +35,21 @@ Windows 10 の電話、タブレット、デスクトップで実行する UWP �
 
  1. ソリューションを右クリックし、[**新しいプロジェクトの追加 >** ] を選択して、**空のアプリ (ユニバーサル Windows)** プロジェクトを追加します。
 
-  ![](universal-images/add-wu.png "Add New Project Dialog")
+  ![[新しいプロジェクトの追加] ダイアログ](universal-images/add-wu.png)
 
  3. [**新しいユニバーサル Windows プラットフォームプロジェクト**] ダイアログで、アプリが実行される Windows 10 の最小バージョンとターゲットバージョンを選択します。
 
-  ![](universal-images/target-version.png "New Universal Windows Platform Project Dialog")
+  ![[新しいユニバーサル Windows プラットフォームプロジェクト] ダイアログ](universal-images/target-version.png)
 
  番. UWP プロジェクトを右クリックし、[ **NuGet パッケージの管理...** ] を選択して、パッケージを追加します。 **Xamarin.Forms** ソリューション内の他のプロジェクトが同じバージョンのパッケージにも更新されていることを確認し Xamarin.Forms ます。
 
  4/4. 新しい UWP プロジェクトが**ビルド > Configuration Manager**ウィンドウにビルドされることを確認します (これは既定では発生しない可能性があります)。 ユニバーサルプロジェクトの [**ビルド**] ボックスと [**配置**] ボックスを目盛りします。
 
-  [![](universal-images/configuration-sml.png "Configuration Manager Window")](universal-images/configuration.png#lightbox "Configuration Manager Window")
+  [![Configuration Manager ウィンドウ](universal-images/configuration-sml.png)](universal-images/configuration.png#lightbox "Configuration Manager ウィンドウ")
 
  5/5. プロジェクトを右クリックし、[ **> の参照の追加**] を選択して、 Xamarin.Forms アプリケーションプロジェクト (.NET Standard または共有プロジェクト) への参照を作成します。
 
-  ![](universal-images/addref-sml.png "Reference Manager Dialog")
+  ![[参照マネージャー] ダイアログ](universal-images/addref-sml.png)
 
  4/6. UWP プロジェクトで、 **App.xaml.cs**を編集して、 `Init` 52 行目のメソッド内にメソッド呼び出しを含め `OnLaunched` ます。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 102c0e7dbd2f4c903793e83d7551a84a52cac4fb
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 285243c832d080d93e557deada5bb824e03f8d89
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031574"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939426"
 ---
 # <a name="search-with-core-spotlight-in-xamarinios"></a>Xamarin のコアスポットライトで検索する
 
@@ -47,11 +47,11 @@ CSSearchableIndex.DefaultSearchableIndex.Index (new CSSearchableItem[]{ item }, 
 
 検索結果には、次のような情報が表示されます。
 
-[![](corespotlight-images/corespotlight01.png "Core Spotlight search result overview")](corespotlight-images/corespotlight01.png#lightbox)
+[![コアスポットライト検索結果の概要](corespotlight-images/corespotlight01.png)](corespotlight-images/corespotlight01.png#lightbox)
 
 ## <a name="restoring-an-item"></a>項目を復元する
 
-アプリのコアスポットライトを使用して検索結果に追加された項目をユーザーがタップすると、`AppDelegate` メソッド `ContinueUserActivity` が呼び出されます (このメソッドは `NSUserActivity`にも使用されます)。 (例:
+アプリのコアスポットライトを使用して検索結果に追加された項目をユーザーがタップすると、 `AppDelegate` メソッド `ContinueUserActivity` が呼び出されます (このメソッドはにも使用され `NSUserActivity` ます)。 次に例を示します。
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application,
@@ -74,14 +74,14 @@ public override bool ContinueUserActivity (UIApplication application,
 }
 ```
 
-今回は、`CSSearchableItem.ActionType`の `ActivityType` があるアクティビティを確認します。
+今度は、アクティビティのがであることを確認 `ActivityType` `CSSearchableItem.ActionType` します。
 
 ## <a name="updating-an-item"></a>項目を更新する
 
 重要なスポットライトで作成したインデックス項目を変更する必要がある場合があります。たとえば、タイトルやサムネイル画像の変更が必要になる場合があります。 この変更を行うには、最初にインデックスを作成するときと同じ方法を使用します。
-項目の作成に使用したものと同じ ID を使用して新しい `CSSearchableItem` を作成し、変更された属性を含む新しい `CSSearchableItemAttributeSet` をアタッチします。
+`CSSearchableItem`項目の作成に使用したものと同じ ID を使用して新しいを作成し、変更された属性を含む新しいをアタッチし `CSSearchableItemAttributeSet` ます。
 
-[![](corespotlight-images/corespotlight02.png "Updating an Item overview")](corespotlight-images/corespotlight02.png#lightbox)
+[![項目の更新の概要](corespotlight-images/corespotlight02.png)](corespotlight-images/corespotlight02.png#lightbox)
 
 この項目が検索可能なインデックスに書き込まれると、既存の項目が新しい情報で更新されます。
 
@@ -101,7 +101,7 @@ CSSearchableIndex.DefaultSearchableIndex.Delete(new string[]{"1","16"},(error) =
 });
 ```
 
-次に、ドメイン名を指定して、インデックス項目のグループを削除できます。 (例:
+次に、ドメイン名を指定して、インデックス項目のグループを削除できます。 次に例を示します。
 
 ```csharp
 // Delete by Domain Name
@@ -129,8 +129,8 @@ CSSearchableIndex.DefaultSearchableIndex.DeleteAll((error) => {
 
 コアスポットライトには、インデックスを正確かつ最新の状態に保つために役立つ次の機能があります。
 
-- **バッチ更新のサポート**–アプリで大規模なインデックスのグループを同時に作成または変更する必要がある場合は、バッチ全体を1回の呼び出しで `CSSearchableIndex` クラスの `Index` メソッドに送信できます。
-- **インデックスの変更に応答する**–アプリ `CSSearchableIndexDelegate` を使用して、検索可能なインデックスからの変更と通知に応答できます。
+- **バッチ更新のサポート**–アプリで大規模なインデックスのグループを同時に作成または変更する必要がある場合は、バッチ全体を `Index` `CSSearchableIndex` 1 回の呼び出しでクラスのメソッドに送信できます。
+- **インデックスの変更に応答する**–アプリを使用して、 `CSSearchableIndexDelegate` 検索可能なインデックスからの変更と通知に応答できます。
 - **データ保護の適用**–データ保護クラスを使用して、コアスポットライトを使用して検索可能なインデックスに追加するアイテムにセキュリティを実装できます。
 
 ## <a name="related-links"></a>関連リンク

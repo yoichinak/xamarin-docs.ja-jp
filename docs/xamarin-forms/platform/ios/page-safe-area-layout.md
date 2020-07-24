@@ -19,7 +19,7 @@ ms.locfileid: "86933718"
 ---
 # <a name="safe-area-layout-guide-on-ios"></a>IOS の安全な領域レイアウトガイド
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 この iOS プラットフォーム固有のは、iOS 11 以上を使用するすべてのデバイスで安全なページコンテンツが画面の領域に配置されるようにするために使用されます。 具体的には、デバイスの角の丸み、ホームインジケーター、または iPhone X のセンサーハウジングによってコンテンツがクリップされないようにすることができます。添付プロパティを値に設定することにより、XAML で使用 `Page.UseSafeArea` され `boolean` ます。
 

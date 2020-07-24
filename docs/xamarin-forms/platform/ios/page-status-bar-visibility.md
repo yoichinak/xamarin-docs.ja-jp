@@ -19,7 +19,7 @@ ms.locfileid: "86936826"
 ---
 # <a name="page-status-bar-visibility-on-ios"></a>IOS でのページステータスバーの表示
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 この iOS プラットフォーム固有のは、のステータスバーの表示を設定するために使用され [`Page`](xref:Xamarin.Forms.Page) ます。また、ステータスバーがを入力または脱退する方法を制御することもでき `Page` ます。 XAML で使用されるのは、 `Page.PrefersStatusBarHidden` 添付プロパティを列挙値に設定 `StatusBarHiddenMode` し、必要に応じて、 `Page.PreferredStatusBarUpdateAnimation` 添付プロパティを列挙値に設定すること `UIStatusBarAnimation` です。
 

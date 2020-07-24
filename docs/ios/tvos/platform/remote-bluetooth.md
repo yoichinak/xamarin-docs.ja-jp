@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: a97d3da4f451051dcb17c68da54cadf7d841fd50
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 743bdf4d843d9e427e2343bf58cc29b98ec07e2b
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84566228"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997047"
 ---
 # <a name="siri-remote-and-bluetooth-controllers-for-tvos-in-xamarin"></a>Xamarin の tvOS 用 siri リモートおよび Bluetooth コントローラー
 
@@ -20,7 +20,7 @@ TvOS アプリのユーザーは、iOS と直接やり取りするのではな�
 
 アプリがゲームの場合は、必要に応じて、アプリで iOS (MFI) [Bluetooth ゲームコントローラー](#Bluetooth-Game-Controllers)用に作成されたサードパーティのサポートを組み込むこともできます。
 
-[![](remote-bluetooth-images/intro01.png "The Bluetooth Remote and Game Controller")](remote-bluetooth-images/intro01.png#lightbox)
+[![Bluetooth リモートコントローラーとゲームコントローラー](remote-bluetooth-images/intro01.png)](remote-bluetooth-images/intro01.png#lightbox)
 
 この記事では、 [Siri リモコン](#The-Siri-Remote)、[タッチスクリーンのジェスチャ](#Touch-Surface-Gestures)、および[siri のリモートボタン](#Siri-Remote-Buttons)について説明し、[ジェスチャ、ストーリーボード](#Gestures-and-Storyboards)、[ジェスチャ、コード](#Gestures-and-Code)、[低レベルのイベント処理](#Low-Level-Event-Handling)を使用してそれらを操作する方法を示します。 最後に、tvOS アプリでの[ゲームコントローラーの操作](#Working-with-Game-Controllers)について説明します。
 
@@ -32,17 +32,17 @@ TvOS アプリのユーザーは、iOS と直接やり取りするのではな�
 
 TvOS アプリ開発者としての課題は、Siri リモコンのタッチスクリーン、加速度計、ジャイロスコープ、およびボタンを活用する、簡単で使いやすく、視覚的に説得力のあるユーザーインターフェイスを作成することです。
 
-[![](remote-bluetooth-images/remote01.png "The Siri Remote")](remote-bluetooth-images/remote01.png#lightbox)
+[![Siri リモート](remote-bluetooth-images/remote01.png)](remote-bluetooth-images/remote01.png#lightbox)
 
 Siri リモートには、tvOS アプリ内で次の機能と想定される使用法があります。
 
 |機能|一般的なアプリの使用状況|ゲームアプリの使用状況|
 |---|---|---|
-|**タッチ画面**<br />スワイプして移動し、を押してコンテキストメニューを選択して保持します。|**タップ/スワイプ**<br />フォーカスがある項目間の UI ナビゲーション。<br /><br />**ここを**<br />選択した (フォーカスされている) 項目をアクティブにします。|**タップ/スワイプ**<br />ゲームの設計によって異なり、端をタップして D パッドとして使用できます。<br /><br />**ここを**<br />主ボタンの機能を実行します。|
-|**メニュー**<br />前の画面またはメニューに戻るには、キーを押します。|前の画面に戻り、メインアプリ画面から Apple TV ホーム画面に出ます。|ゲームプレイを一時停止して再開し、前の画面に戻り、メインアプリ画面から Apple TV ホーム画面に出ます。|
+|**タッチ画面**<br />スワイプして移動し、を押してコンテキストメニューを選択して保持します。|**タップ/スワイプ**<br />フォーカスがある項目間の UI ナビゲーション。<br /><br />**]**<br />選択した (フォーカスされている) 項目をアクティブにします。|**タップ/スワイプ**<br />ゲームの設計によって異なり、端をタップして D パッドとして使用できます。<br /><br />**]**<br />主ボタンの機能を実行します。|
+|**Menu**<br />前の画面またはメニューに戻るには、キーを押します。|前の画面に戻り、メインアプリ画面から Apple TV ホーム画面に出ます。|ゲームプレイを一時停止して再開し、前の画面に戻り、メインアプリ画面から Apple TV ホーム画面に出ます。|
 |**Siri/検索**<br />Siri を使用している国では、音声制御のためにプレスアンドホールドを行うと、他のすべての国で検索画面が表示されます。|該当なし|該当なし|
 |**再生/一時停止**<br />メディアを再生または一時停止するか、アプリでセカンダリ機能を提供します。|メディアの再生を開始し、再生を一時停止/再開します。|2番目のボタン関数を実行します。または、導入ビデオ (存在する場合) をスキップします。|
-|**ホーム**<br />を押してホーム画面に戻り、ダブルクリックして実行中のアプリを表示し、スリープデバイスに押したままにします。|該当なし|該当なし|
+|**Home**<br />を押してホーム画面に戻り、ダブルクリックして実行中のアプリを表示し、スリープデバイスに押したままにします。|該当なし|該当なし|
 |**数量**<br />接続されているオーディオ/ビデオ機器ボリュームを制御します。|該当なし|該当なし|
 
 <a name="Touch-Surface-Gestures"></a>
@@ -53,7 +53,7 @@ Siri リモコンのタッチ画面は、tvOS アプリで応答できる、次�
 
 |スワイプ|ここを|タップ|
 |---|---|---|
-|![](remote-bluetooth-images/Gesture01.png)|![](remote-bluetooth-images/Gesture02.png)|![](remote-bluetooth-images/Gesture03.png)|
+|![選択範囲を移動](remote-bluetooth-images/Gesture01.png)|![選択した項目の在職者](remote-bluetooth-images/Gesture02.png)|![方向ボタン](remote-bluetooth-images/Gesture03.png)|
 |画面上の UI 要素 (上、左、右) の間で選択 (フォーカス) を移動します。 スワイプを使用すると、慣性を使用して、コンテンツの大きなリストをすばやくスクロールできます。|選択した (フォーカスされている) 項目をアクティブにします。または、ゲームの主ボタンと同じように動作します。 クリックして保持すると、コンテキストメニューまたはセカンダリ関数をアクティブにすることができます。|端のタッチサーフェスを軽くタップすると、D パッドの方向ボタンと同じように動作し、タップされた領域に応じて上下左右左右に移動します。 アプリによっては、を使用して非表示のコントロールを表示できます。|
 
 Apple では、タッチスクリーンのジェスチャを操作するための次の提案が提供されています。
@@ -85,14 +85,14 @@ TvOS アプリで Siri リモートを操作する最も簡単な方法は、イ
 1. **ソリューションエクスプローラー**で、ファイルをダブルクリック `Main.storyboard` して開き、インターフェイスデザイナーを編集します。
 2. **タップジェスチャレコグナイザー**を**ライブラリ**からドラッグし、ビューにドロップします。
 
-    [![](remote-bluetooth-images/storyboard01.png "A Tap Gesture Recognizer")](remote-bluetooth-images/storyboard01.png#lightbox)
+    [![タップジェスチャレコグナイザー](remote-bluetooth-images/storyboard01.png)](remote-bluetooth-images/storyboard01.png#lightbox)
 3. **属性インスペクター**の [**ボタン**] セクションで **[選択] を選択し**ます。
 
-    [![](remote-bluetooth-images/storyboard02.png "Check Select")](remote-bluetooth-images/storyboard02.png#lightbox)
+    [![選択のチェック](remote-bluetooth-images/storyboard02.png)](remote-bluetooth-images/storyboard02.png#lightbox)
 4. **選択**すると、ユーザーに対してジェスチャが Siri リモートの**タッチ画面**をクリックしたときに応答します。 **メニュー**、**再生/一時停止**、**上**、**下**、**左**、**右**の各ボタンに応答するオプションも用意されています。
 5. 次に、**タップジェスチャ認識エンジン**から**アクション**を接続して、次のように呼び出し `TouchSurfaceClicked` ます。
 
-    [![](remote-bluetooth-images/storyboard03.png "An Action from the Tap Gesture Recognizer")](remote-bluetooth-images/storyboard03.png#lightbox)
+    [![タップジェスチャ認識エンジンからのアクション](remote-bluetooth-images/storyboard03.png)](remote-bluetooth-images/storyboard03.png#lightbox)
 6. 変更内容を保存し、Visual Studio for Mac に戻ります。
 
 ビューコントローラー (例 `FirstViewController.cs` ) ファイルを編集し、トリガーされるジェスチャを処理する次のコードを追加します。
@@ -271,7 +271,7 @@ namespace tvRemote
 
 Apple TV に同梱されている標準 Siri リモートに加え、iOS (MFI) Bluetooth ゲームコントローラー用に作成されたサードパーティは、Apple TV とペアリングし、tvOS アプリを制御するために使用できます。
 
-[![](remote-bluetooth-images/game01.png "Bluetooth Game Controllers")](remote-bluetooth-images/game01.png#lightbox)
+[![Bluetooth ゲームコントローラー](remote-bluetooth-images/game01.png)](remote-bluetooth-images/game01.png#lightbox)
 
 ゲームコントローラーを使用してゲームプレイを強化し、ゲームで immersion を実現できます。 また、標準の Apple TV インターフェイスを制御するために使用することもできます。そのため、リモートとコントローラーを使用する必要はありません。
 
@@ -287,7 +287,7 @@ Apple TV に同梱されている標準 Siri リモートに加え、iOS (MFI) B
 |**B**|アプリのメイン画面で、前の画面に戻るか、ホーム画面を終了します。|2番目のボタンの機能を実行するか、前の画面に戻ります。|
 |**X**|メディアの再生を開始するか、再生を一時停止/再開します。|ゲームに依存します。|
 |**Y**|該当なし|ゲームに依存します。|
-|**メニュー**|アプリのメイン画面で、前の画面に戻るか、ホーム画面を終了します。|ゲームプレイを一時停止/再開する、前の画面に戻る、またはアプリのメイン画面にある場合はホーム画面を終了します。|
+|**Menu**|アプリのメイン画面で、前の画面に戻るか、ホーム画面を終了します。|ゲームプレイを一時停止/再開する、前の画面に戻る、またはアプリのメイン画面にある場合はホーム画面を終了します。|
 |**左ショルダーボタン**|左に移動します。|ゲームに依存します。|
 |**左のトリガー**|左に移動します。|ゲームに依存します。|
 |**右ショルダーボタン**|右に移動します。|ゲームに依存します。|
@@ -329,7 +329,7 @@ TvOS アプリでゲームコントローラーがサポートされている場
 
 TvOS アプリでゲームコントローラーのサポートを有効にするには、ソリューションエクスプローラー内のファイルをダブルクリックし `Info.plist` て、編集用に**Solution Explorer**開きます。
 
-[![](remote-bluetooth-images/game02.png "The Info.plist editor")](remote-bluetooth-images/game02.png#lightbox)
+[![情報 plist エディター](remote-bluetooth-images/game02.png)](remote-bluetooth-images/game02.png#lightbox)
 
 [ **Game Controller** ] セクションで、[game controller] を**有効**にして、アプリでサポートされるすべてのゲームコントローラーの種類を確認します。
 

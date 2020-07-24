@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/09/2016
-ms.openlocfilehash: 843a6212be44778f9637de631398a56a1d633a69
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 6588747fb806c858f5bc7b024980ae0d0771c60e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016981"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938789"
 ---
 # <a name="using-icloud-with-xamarinios"></a>Xamarin で iCloud を使用する
 
@@ -33,7 +33,7 @@ IOS 5 の iCloud ストレージ API を使用すると、アプリケーショ�
 > [!IMPORTANT]
 > Apple からは、開発者が欧州連合の一般データ保護規則 (GDPR) を適切に処理するための[ツールが提供](https://developer.apple.com/support/allowing-users-to-manage-data/)されています。
 
-## <a name="requirements"></a>［要件］
+## <a name="requirements"></a>必要条件
 
 - 最新の安定したバージョンの Xamarin. iOS
 - Xcode 10
@@ -49,16 +49,16 @@ ICloud にアクセスするようにアプリケーションを正しく構成�
 
 - **新しいアプリ id を作成**する-アプリ id を作成するには、 [「Device Provisioning guide」の「ストアテクノロジのプロビジョニング」セクション](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)に記載されている手順に従って、 **iCloud**を許可されたサービスとして確認します。
 
- [![](introduction-to-icloud-images/icloud-sml.png "Check iCloud as an allowed service")](introduction-to-icloud-images/icloud.png#lightbox)
+ [![ICloud を許可されたサービスとして確認する](introduction-to-icloud-images/icloud-sml.png)](introduction-to-icloud-images/icloud.png#lightbox)
 
 - **新しいプロビジョニングプロファイルを作成**する-プロビジョニングプロファイルを作成するには、「 [Device Provisioning Guide (デバイスプロビジョニングガイド](~/ios/get-started/installation/device-provisioning/index.md#provisioning-your-device))」に記載されている手順に従います。
 
-- **コンテナー識別子を追加します。 plist** -コンテナー識別子形式は `TeamID.BundleID`です。 詳細については、「[権利の使用](~/ios/deploy-test/provisioning/entitlements.md)」ガイドを参照してください。
+- **コンテナー識別子を追加します。 plist** -コンテナー識別子の形式は `TeamID.BundleID` です。 詳細については、「[権利の使用](~/ios/deploy-test/provisioning/entitlements.md)」ガイドを参照してください。
 
 - **プロジェクトのプロパティを構成**する-情報ファイルで、**バンドル**id が[アプリ id を作成](~/ios/deploy-test/provisioning/capabilities/index.md)するときに設定した**バンドル id**と一致することを確認します。IOS バンドル署名では、iCloud App Service のアプリ ID と、選択した**カスタム権利**ファイルを含む**プロビジョニングプロファイル**を使用します。 これはすべて、Visual Studio のプロジェクトプロパティペインで実行できます。
 
 - **デバイスで Icloud を有効**にする-[**設定] > iCloud**にアクセスし、デバイスがログインしていることを確認します。
-**[ドキュメント & データ]** オプションをオンまたはオンにします。
+[**ドキュメント & データ**] オプションをオンまたはオンにします。
 
 - **ICloud をテストするにはデバイスを使用する必要があり**ます。これはシミュレーターでは機能しません。
 実際には、複数のデバイスが同じ Apple ID でサインインしていて、iCloud が動作していることを確認する必要があります。
@@ -81,7 +81,7 @@ ICloud にアクセスするようにアプリケーションを正しく構成�
 
 このスクリーンショットは、使用されているサンプルを示しています。 ICloud から変更通知を受信すると、画面の下部にあるスクロールテキストビューに印刷され、入力フィールドで更新されます。
 
- [![](introduction-to-icloud-images/icloud-kv-arrows.png "The flow of messages between devices")](introduction-to-icloud-images/icloud-kv-arrows.png#lightbox)
+ [![デバイス間でのメッセージフロー](introduction-to-icloud-images/icloud-kv-arrows.png)](introduction-to-icloud-images/icloud-kv-arrows.png#lightbox)
 
 ### <a name="setting-and-retrieving-data"></a>データの設定と取得
 
@@ -116,8 +116,8 @@ store.Synchronize();
 
 ### <a name="observing-changes"></a>変更の監視
 
-アプリケーションでは、`NSNotificationCenter.DefaultCenter`にオブザーバーを追加することによって、iCloud によって値が変更された場合に通知を受け取ることもできます。
-次の**KeyValueViewController.cs** `ViewWillAppear` メソッドのコードは、これらの通知をリッスンし、変更されたキーの一覧を作成する方法を示しています。
+アプリケーションでは、にオブザーバーを追加することによって、iCloud によって値が変更された場合にも通知を受け取ることができ `NSNotificationCenter.DefaultCenter` ます。
+次の**KeyValueViewController.cs**メソッドのコードは、 `ViewWillAppear` これらの通知をリッスンし、変更されたキーの一覧を作成する方法を示しています。
 
 ```csharp
 keyValueNotification =
@@ -147,15 +147,15 @@ NSNotificationCenter.DefaultCenter.AddObserver (
 
 iCloud ドキュメントストレージは、アプリ (およびユーザー) にとって重要なデータを管理するように設計されています。 これを使用すると、アプリで実行する必要のあるファイルやその他のデータを管理できます。同時に、すべてのユーザーのデバイスで iCloud ベースのバックアップと共有機能を提供します。
 
-この図は、すべてがどのように組み合わされているかを示しています。 各デバイスには、ローカルストレージ (UbiquityContainer) に保存されたデータがあり、オペレーティングシステムの iCloud デーモンはクラウドでのデータの送受信を行います。 同時アクセスを防止するには、UbiquityContainer へのすべてのファイルアクセスを FilePresenter/FileCoordinator で実行する必要があります。 これらのクラスは、`UIDocument` クラスによって実装されます。この例は、UIDocument の使用方法を示しています。
+この図は、すべてがどのように組み合わされているかを示しています。 各デバイスには、ローカルストレージ (UbiquityContainer) に保存されたデータがあり、オペレーティングシステムの iCloud デーモンはクラウドでのデータの送受信を行います。 同時アクセスを防止するには、UbiquityContainer へのすべてのファイルアクセスを FilePresenter/FileCoordinator で実行する必要があります。 クラスは、 `UIDocument` このクラスを実装します。この例では、UIDocument の使用方法を示しています。
 
- [![](introduction-to-icloud-images/icloud-overview.png "The document storage overview")](introduction-to-icloud-images/icloud-overview.png#lightbox)
+ [![ドキュメントストレージの概要](introduction-to-icloud-images/icloud-overview.png)](introduction-to-icloud-images/icloud-overview.png#lightbox)
 
-ICloudUIDoc の例では、単一のテキストフィールドを含む単純な `UIDocument` サブクラスを実装しています。 テキストは `UITextView` に表示され、iCloud によって、通知メッセージが赤で示された他のデバイスに反映されます。 このサンプルコードでは、競合解決など、より高度な iCloud 機能については扱いません。
+ICloudUIDoc の例では、 `UIDocument` 単一のテキストフィールドを含む単純なサブクラスを実装しています。 テキストはでレンダリングされ、 `UITextView` iCloud によって、通知メッセージが赤で示された他のデバイスに反映されます。 このサンプルコードでは、競合解決など、より高度な iCloud 機能については扱いません。
 
 このスクリーンショットは、サンプルアプリケーションを示しています。テキストを変更し、 **Updatechangecount**を押すと、ドキュメントは iCloud 経由で他のデバイスに同期されます。
 
- [![](introduction-to-icloud-images/iclouduidoc.png "This screenshot shows the sample application after changing the text and pressing UpdateChangeCount")](introduction-to-icloud-images/iclouduidoc.png#lightbox)
+ [![このスクリーンショットは、テキストを変更して UpdateChangeCount を押した後のサンプルアプリケーションを示しています。](introduction-to-icloud-images/iclouduidoc.png)](introduction-to-icloud-images/iclouduidoc.png#lightbox)
 
 ICloudUIDoc サンプルには、次の5つの部分があります。
 
@@ -163,25 +163,25 @@ ICloudUIDoc サンプルには、次の5つの部分があります。
 
 1. **UIDocument サブクラスの作成**-iCloud ストレージとモデルオブジェクトの間の中間にクラスを作成します。
 
-1. **Icloud ドキュメントの検索とオープン**-`NSFileManager` と `NSPredicate` を使用して icloud ドキュメントを検索し、開くことができます。
+1. **Icloud ドキュメントの検索とオープン**-およびを使用して `NSFileManager` `NSPredicate` icloud ドキュメントを検索し、それを開きます。
 
-1. **ICloud ドキュメントの表示**-UI コントロールと対話できるように、`UIDocument` のプロパティを公開します。
+1. **ICloud ドキュメントの表示**- `UIDocument` UI コントロールと対話できるように、のプロパティを公開します。
 
 1. **Icloud ドキュメントの保存**-UI で行った変更がディスクと iCloud に永続化されていることを確認します。
 
 すべての iCloud 操作は非同期に実行されるので、何かの処理を待機している間はブロックされません。 サンプルでこれを実現するには、次の3つの方法があります。
 
- `AppDelegate.FinishedLaunching`**スレッド**では、メインスレッドがブロックされないように、`GetUrlForUbiquityContainer` への最初の呼び出しが別のスレッドで実行されます。
+ **スレッド**-の `AppDelegate.FinishedLaunching` 最初の呼び出し `GetUrlForUbiquityContainer` は、メインスレッドがブロックされないようにするために、別のスレッドで実行されます。
 
- **Notificationcenter** -`NSMetadataQuery.StartQuery` などの非同期操作が完了したときの通知の登録。
+ **Notificationcenter** -完了などの非同期操作の通知の登録 `NSMetadataQuery.StartQuery` 。
 
- **完了ハンドラー** -`UIDocument.Open`のような非同期操作の完了時に実行するメソッドを渡します。
+ **完了ハンドラー** -などの非同期操作の完了時に実行するメソッドを渡し `UIDocument.Open` ます。
 
 ### <a name="accessing-the-ubiquitycontainer"></a>UbiquityContainer へのアクセス
 
 ICloud ドキュメントストレージを使用する最初の手順では、iCloud が有効になっているかどうかを判断し、その場合は "ユビキタス container" (iCloud が有効なファイルがデバイスに格納されているディレクトリ) の場所を確認します。
 
-このコードは、サンプルの `AppDelegate.FinishedLaunching` メソッドに含まれています。
+このコードは、サンプルのメソッドに含まれてい `AppDelegate.FinishedLaunching` ます。
 
 ```csharp
 // GetUrlForUbiquityContainer is blocking, Apple recommends background thread or your UI will freeze
@@ -275,7 +275,7 @@ public class MonkeyDocument : UIDocument
 
 ### <a name="finding-and-opening-icloud-documents"></a>ICloud ドキュメントの検索と開く
 
-サンプルアプリでは1つのファイル test.txt のみが処理されるため、 **AppDelegate.cs**のコードによって `NSPredicate` が作成され、そのファイル名を具体的に検索する `NSMetadataQuery` ます。 `NSMetadataQuery` は非同期に実行され、完了時に通知を送信します。 通知オブザーバーによって呼び出される `DidFinishGathering` は、クエリを停止し、LoadDocument を呼び出します。この場合、`UIDocument.Open` メソッドと完了ハンドラーを使用して、ファイルを読み込み、`MonkeyDocumentViewController`に表示しようとします。
+サンプルアプリは1つのファイル test.txt のみを処理するので、 **AppDelegate.cs**のコードはを作成し、 `NSPredicate` `NSMetadataQuery` そのファイル名を具体的に検索します。 は `NSMetadataQuery` 非同期に実行され、完了時に通知を送信します。 `DidFinishGathering`通知オブザーバーによって呼び出され、クエリを停止して、LoadDocument を呼び出します。この場合、メソッドを完了ハンドラーと共に使用して、 `UIDocument.Open` ファイルを読み込み、そのファイルをに表示しようとし `MonkeyDocumentViewController` ます。
 
 ```csharp
 string monkeyDocFilename = "test.txt";
@@ -341,7 +341,7 @@ void LoadDocument (NSMetadataQuery metadataQuery)
 
 UIDocument を他のモデルクラスと同じように表示することはできません。 UI コントロールにはプロパティが表示され、ユーザーによって編集された後、モデルに書き戻される可能性があります。
 
-この例では、 **iCloudUIDoc\MonkeyDocumentViewController.cs** `UITextView`に MonkeyDocument テキストを表示します。 `ViewDidLoad` は、`MonkeyDocument.LoadFromContents` メソッドで送信された通知をリッスンします。 `LoadFromContents` は、iCloud がファイルの新しいデータを持っている場合に呼び出されます。そのため、ドキュメントが更新されたことが通知に示されます。
+**ICloudUIDoc\MonkeyDocumentViewController.cs**の例では、に MonkeyDocument テキストを表示し `UITextView` ます。 `ViewDidLoad`メソッドで送信された通知をリッスンし `MonkeyDocument.LoadFromContents` ます。 `LoadFromContents`iCloud がファイルの新しいデータを持っている場合に、ドキュメントが更新されたことを通知に示すために、が呼び出されます。
 
 ```csharp
 NSNotificationCenter.DefaultCenter.AddObserver (this,
@@ -365,7 +365,7 @@ void DataReloaded (NSNotification notification)
 
 ### <a name="saving-icloud-documents"></a>ICloud ドキュメントの保存
 
-UIDocument を iCloud に追加するには、`UIDocument.Save` を直接呼び出すか (新しいドキュメントの場合のみ)、`NSFileManager.DefaultManager.SetUbiquitious`を使用して既存のファイルを移動します。 このコード例では、このコードを使用してユビキタスコンテナーに新しいドキュメントを直接作成します (2 つの完了ハンドラーがあります。1つは `Save` 操作用、もう1つは開いています)。
+UIDocument を iCloud に追加するには、 `UIDocument.Save` 直接 (新しいドキュメントの場合のみ) を呼び出すか、を使用して既存のファイルを移動し `NSFileManager.DefaultManager.SetUbiquitious` ます。 このコード例では、このコードを使用してユビキタスコンテナーに新しいドキュメントを直接作成します (2 つの完了ハンドラーがあります。1つは操作用で、もう1つは開いてい `Save` ます)。
 
 ```csharp
 var docsFolder = Path.Combine (iCloudUrl.Path, "Documents"); // NOTE: Documents folder is user-accessible in Settings
@@ -390,7 +390,7 @@ if (saveSuccess) {
 }
 ```
 
-ドキュメントに対する後続の変更は、直接 "保存" されません。その代わり、`UpdateChangeCount`で変更されたことを `UIDocument` に伝え、ディスクへの保存操作を自動的にスケジュールします。
+ドキュメントに対するその後の変更は、直接 "保存" されません。代わりに、 `UIDocument` を使用して変更されたことを通知 `UpdateChangeCount` し、ディスクへの保存操作を自動的にスケジュールします。
 
 ```csharp
 doc.UpdateChangeCount (UIDocumentChangeKind.Done);
@@ -400,13 +400,13 @@ doc.UpdateChangeCount (UIDocumentChangeKind.Done);
 
 ユーザーは、設定を使用して、アプリケーションの外部にある "ユビキタスコンテナー" の**documents**ディレクトリにある iCloud ドキュメントを管理できます。ファイルの一覧を表示し、スワイプして削除することができます。 アプリケーションコードは、ユーザーがドキュメントを削除する状況を処理できる必要があります。 内部アプリケーションデータを**Documents**ディレクトリに格納しないでください。
 
- [![](introduction-to-icloud-images/icloudstorage.png "Managing iCloud Documents workflow")](introduction-to-icloud-images/icloudstorage.png#lightbox)
+ [![ICloud ドキュメントの管理ワークフロー](introduction-to-icloud-images/icloudstorage.png)](introduction-to-icloud-images/icloudstorage.png#lightbox)
 
 また、iCloud が有効になっているアプリケーションをデバイスから削除しようとすると、そのアプリケーションに関連する iCloud ドキュメントの状態を通知するために、異なる警告が表示されます。
 
- [![](introduction-to-icloud-images/icloud-delete1.png "Sample dialog when the user attempts to remove an iCloud-enabled application from their device")](introduction-to-icloud-images/icloud-delete1.png#lightbox)
+ [![ユーザーが iCloud 対応アプリケーションをデバイスから削除しようとしたときのサンプルダイアログ](introduction-to-icloud-images/icloud-delete1.png)](introduction-to-icloud-images/icloud-delete1.png#lightbox)
 
- [![](introduction-to-icloud-images/icloud-delete2.png "Sample dialog when the user attempts to remove an iCloud-enabled application from their device")](introduction-to-icloud-images/icloud-delete2.png#lightbox)
+ [![ユーザーが iCloud 対応アプリケーションをデバイスから削除しようとしたときのサンプルダイアログ](introduction-to-icloud-images/icloud-delete2.png)](introduction-to-icloud-images/icloud-delete2.png#lightbox)
 
 ## <a name="icloud-backup"></a>iCloud バックアップ
 
@@ -415,7 +415,7 @@ Apple は、ios アプリケーションで開発者が実行できる[Ios デ�
 
 最も重要な考慮事項は、ユーザーが生成していない大きなファイルをアプリで格納するかどうかです (たとえば、問題ごとに 100 mb のコンテンツを格納する雑誌 reader アプリケーションなど)。 Apple では、この種のデータを保存しないことをお勧めします。このようなデータは iCloud にバックアップされ、ユーザーの iCloud クォータを不必要に埋めることになります。
 
-このような大量のデータを格納するアプリケーションでは、バックアップされていないユーザーディレクトリのいずれかに保存する必要があります (例: キャッシュまたは tmp)、または `NSFileManager.SetSkipBackupAttribute` を使用してこれらのファイルにフラグを適用し、バックアップ操作中に iCloud によって無視されるようにします。
+このような大量のデータを格納するアプリケーションでは、バックアップされていないユーザーディレクトリのいずれかに保存する必要があります (例: キャッシュまたは tmp) またはを使用し `NSFileManager.SetSkipBackupAttribute` てこれらのファイルにフラグを適用し、iCloud がバックアップ操作中にそれらを無視するようにします。
 
 ## <a name="summary"></a>まとめ
 

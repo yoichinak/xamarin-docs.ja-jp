@@ -10,12 +10,12 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 76724ff17613fcebe35cb68518a1c932eee8aad7
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: fb4d1e28fded70005ef23eb4f7540eccd2fba372
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128727"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939309"
 ---
 # <a name="page-lifecycle-events-on-android"></a>Android でのページライフサイクルイベント
 
@@ -58,7 +58,7 @@ Xamarin.Forms.Application.Current.On<Android>()
 
 結果として、 [`Disappearing`](xref:Xamarin.Forms.Page.Appearing) との [`Appearing`](xref:Xamarin.Forms.Page.Appearing) ページイベントは、それぞれアプリケーションの一時停止と再開時には起動されず、アプリケーションが一時停止したときにソフトキーボードが表示された場合は、アプリケーションの再開時にも表示されます。
 
-[![](page-lifecycle-events-images/keyboard-on-resume.png "Lifecycle Events Platform-Specific")](page-lifecycle-events-images/keyboard-on-resume-large.png#lightbox "Lifecycle Events Platform-Specific")
+[![ライフサイクルイベントプラットフォーム固有](page-lifecycle-events-images/keyboard-on-resume.png)](page-lifecycle-events-images/keyboard-on-resume-large.png#lightbox "ライフサイクルイベントプラットフォーム固有")
 
 ## <a name="related-links"></a>関連リンク
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 74d6dfb2b6a722e5af4dc97cdf23b84aa4bd95d0
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: ddd46da0787f853e949d08c45dff5be17b9451fd
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84565045"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932757"
 ---
 # <a name="core-animation-in-xamarinios"></a>Xamarin のコアアニメーション
 
@@ -70,7 +70,7 @@ PresentViewController (vc2, true, null);
 
 次のスクリーンショットは、このような場合に移行がどのように見えるかを示してい `PartialCurl` ます。
 
- ![](core-animation-images/06-view-transitions.png "This screenshot shows the PartialCurl transition")
+ ![このスクリーンショットは、PartialCurl の遷移を示しています。](core-animation-images/06-view-transitions.png)
 
 ### <a name="view-transitions"></a>切り替え効果の表示
 
@@ -92,7 +92,7 @@ UIView.Transition (
 
 次のスクリーンショットは、を使用した場合のイメージビュー間のアニメーション化された切り替えを示して `TransitionFlipFromTop` います。
 
- ![](core-animation-images/07-animated-transition.png "This screenshot shows the animated transition between the image views when TransitionFlipFromTop is used")
+ ![このスクリーンショットは、TransitionFlipFromTop が使用されたときのイメージビュー間のアニメーション化された切り替えを示しています。](core-animation-images/07-animated-transition.png)
 
 ### <a name="view-property-animations"></a>プロパティアニメーションの表示
 
@@ -125,11 +125,11 @@ UIView.Animate (
 
 次に示すように、この結果、イメージが画面の上部で前後にアニメーション化されます。
 
- ![](core-animation-images/08-animate-center.png "An image animating back and forth across the top of the screen as the output")
+ ![画面の上部から出力としてアニメーション化する画像](core-animation-images/08-animate-center.png)
 
 メソッドと同様に `Transition` 、では、 `Animate` イージング関数と共に期間を設定できます。 この例では、オプションも使用して `UIViewAnimationOptions.Autoreverse` います。これにより、アニメーションは、値から最初の値にアニメーション化されます。 ただし、このコードでは、 `Center` 完了ハンドラーの初期値にも設定します。 アニメーションは、時間の経過と共にプロパティ値を補間しますが、プロパティの実際のモデル値は常に設定されている最終的な値になります。 この例では、値はスーパービューの右側にあるポイントです。 を初期の `Center` ポイントに設定しない `Autoreverse` と、次に示すように、アニメーションが完了した後、イメージは右側にスナップバックされます。
 
- ![](core-animation-images/09-animation-complete.png "Without setting the Center to the initial point, the image would snap back to the right side after the animation completes")
+ ![中央を最初のポイントに設定しないと、アニメーションが完了した後、イメージは右側にスナップバックされます。](core-animation-images/09-animation-complete.png)
 
 ## <a name="using-core-animation"></a>コアアニメーションの使用
 
@@ -184,11 +184,11 @@ public override void ViewDidAppear (bool animated)
 
 次の図は、位置とアンカーポイントを示しています。
 
- ![](core-animation-images/10-postion-anchorpt.png "This figure shows the position and anchor point")
+ ![この図は、位置とアンカーポイントを示しています。](core-animation-images/10-postion-anchorpt.png)
 
 この例を実行すると、 `Position` `BorderWidth` 次の `BorderColor` スクリーンショットに示すように、、およびアニメーション化されます。
 
- ![](core-animation-images/11-implicit-animation.png "When the example is run, the Position, BorderWidth and BorderColor animate as shown")
+ ![この例を実行すると、Position、BorderWidth、BorderColor は、次のようにアニメーション化されます。](core-animation-images/11-implicit-animation.png)
 
 ### <a name="explicit-animations"></a>明示的なアニメーション
 
@@ -229,7 +229,7 @@ public override void ViewDidAppear (bool animated)
 
 次のスクリーンショットは、指定されたパスをアニメーション化するイメージを含むレイヤーを示しています。
 
- ![](core-animation-images/12-explicit-animation.png "This screenshot shows the layer containing the image animating through the specified path")
+ ![このスクリーンショットは、指定されたパスをアニメーション化している画像を含むレイヤーを示しています。](core-animation-images/12-explicit-animation.png)
 
 ## <a name="summary"></a>まとめ
 

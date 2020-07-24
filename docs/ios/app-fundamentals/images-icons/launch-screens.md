@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2018
-ms.openlocfilehash: a2f15c8385b7df7afc3f04e033a085cb00bc9005
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: b4191ae3c25ee5d2eeccd44377177d7d0df6f19e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573860"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937372"
 ---
 # <a name="launch-screens-for-xamarinios-apps"></a>Xamarin iOS アプリの起動画面
 
@@ -191,34 +191,34 @@ IOS 8 (以降) では、開発者は、1つまたは複数の静的起動イメ�
 
 既存のアプリを更新してその起動画面にストーリーボードを使用する場合は、**ソリューションエクスプローラー**で**プロジェクト名**を右クリックし、[ **Add**  >  **新しいファイル**の追加] を選択します。[ **IOS**  >  の**起動画面**] を選択し、[**新規**] ボタンをクリックします。
 
-![](launch-screens-images/storyboard02.png "Select an iOS Launch Screen")
+![IOS の起動画面を選択する](launch-screens-images/storyboard02.png)
 
 次に、ソリューションエクスプローラー内のファイルをダブルクリックし `Info.plist` て、編集用に**Solution Explorer**開きます。 [**起動画面**] で、上で作成した新しいストーリーボードファイルを選択します。
 
-![](launch-screens-images/storyboard09.png "Select the new Storyboard file created above")
+![上で作成した新しいストーリーボードファイルを選択します](launch-screens-images/storyboard09.png)
 
 新しいストーリーボードを起動画面として使用するには、次の手順を実行します。
 
 1. ソリューションエクスプローラー内のファイルをダブルクリックし `Info.plist` て、編集用に**Solution Explorer**開きます。
 2. エディターの [**ユニバーサル起動イメージ**] セクションまでスクロールし、[**起動画面]** ドロップダウンを開いて、上で作成したストーリーボードの名前を選択します。 
 
-    ![](launch-screens-images/storyboard08.png "Setting the launch screen to the storyboard")
+    ![ストーリーボードへの起動画面の設定](launch-screens-images/storyboard08.png)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. **ソリューションエクスプローラー**でプロジェクト名を右クリックし、[ **Add**  >  **新しいファイル**の追加] を選択します。 
 
-    ![](launch-screens-images/image012.png "Add new file")
+    ![新しいファイルの追加](launch-screens-images/image012.png)
 2. 起動画面の名前を入力し、[**追加**] ボタンをクリックします。 
 
-    ![](launch-screens-images/image013.png "Enter a name for the launch screen")
+    ![起動画面の名前を入力してください](launch-screens-images/image013.png)
 3. **ソリューションエクスプローラー**で、新しく作成したストーリーボードファイルをダブルクリックして開き、編集します。
 4. **Size クラス**が Any と**表示****され**ていることを確認します **。** 
 
-    ![](launch-screens-images/image016.png "Ensure that the Size Class is set to any:any and the View As is Generic")
+    ![Size クラスが any に設定されていることを確認します。](launch-screens-images/image016.png)
 5. 起動画面は、サイズクラス、単純な UI 要素 (など `UIImageView` )、およびアプリケーションのバンドルに含まれているイメージからアセンブリします。 
 
-    ![](launch-screens-images/image017.png "Assembly the launch screen in the iOS Designer")
+    ![IOS デザイナーで起動画面をアセンブリする](launch-screens-images/image017.png)
 6. 変更内容をストーリーボードに保存します。
 
 -----

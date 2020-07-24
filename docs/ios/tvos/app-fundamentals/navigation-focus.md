@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 69886a0da53d419a0c40bdf34f91d301c9efe504
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: d9e8d91b03a5a82373012da215bd29a747e67d3e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573717"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939452"
 ---
 # <a name="working-with-tvos-navigation-and-focus-in-xamarin"></a>TvOS ナビゲーションを使用して Xamarin にフォーカスを移動する
 
@@ -20,7 +20,7 @@ _この記事では、フォーカスの概念と、tvOS アプリ内のナビ�
 
 この記事では、[フォーカス](#Focus-and-Selection)の概念と、tvOS アプリのユーザーインターフェイスでの[ナビゲーション](#Navigation)の処理に使用する方法について説明します。 ここでは、組み込みの tvOS ナビゲーションコントロールでフォーカス、強調表示、および選択を使用して、tvOS アプリのユーザーインターフェイスナビゲーションを提供する方法について説明します。
 
-[![](navigation-focus-images/intro01.png "tvOS apps User Interface Navigation")](navigation-focus-images/intro01.png#lightbox)
+[![tvOS apps のユーザーインターフェイスのナビゲーション](navigation-focus-images/intro01.png)](navigation-focus-images/intro01.png#lightbox)
 
 次に、[視差](#Focus-and-Parallax)およびレイヤー化された*イメージ*でフォーカスを使用して、エンドユーザーに現在のナビゲーション状態を視覚的に把握する方法について説明します。
 
@@ -28,13 +28,13 @@ _この記事では、フォーカスの概念と、tvOS アプリ内のナビ�
 
 <a name="Navigation"></a>
 
-## <a name="navigation"></a>［ナビゲーション］
+## <a name="navigation"></a>ナビゲーション
 
 TvOS アプリのユーザーは、iOS と直接やり取りするのではなく、デバイスの画面上のイメージをタップしますが、 [Siri リモート](~/ios/tvos/platform/remote-bluetooth.md#The-Siri-Remote)を使用してルーム間で間接的に移動します。 アプリのユーザーインターフェイスをデザインするときは、この点に留意する必要があります。これにより、ユーザーは Apple TV エクスペリエンスに専念ことができます。
 
 成功した tvOS アプリは、アプリケーションの目的をスムーズにサポートするような方法でナビゲーションを実装し、ナビゲーション自体に注意を払わずに表示されるデータの構造を実装します。 ユーザーインターフェイスを占め、またはコンテンツやアプリのユーザーエクスペリエンスに焦点を当てることなく、自然でなじみのあるナビゲーションをデザインします。
 
-[![](navigation-focus-images/nav01.png "The tvOS settings app")](navigation-focus-images/nav01.png#lightbox)
+[![TvOS settings アプリ](navigation-focus-images/nav01.png)](navigation-focus-images/nav01.png#lightbox)
 
 Apple TV を使用する場合、ユーザーは通常、一連の画面に移動し、それぞれが特定のコンテンツのセットを提示します。 また、新しい画面では、[ボタン](~/ios/tvos/user-interface/buttons.md)、[タブバー](~/ios/tvos/user-interface/tab-bars.md)、テーブル、[コレクションビュー](~/ios/tvos/user-interface/collection-views.md) 、[分割ビュー](~/ios/tvos/user-interface/split-views.md)などの標準 UI コントロールを使用して、コンテンツの1つ以上のサブ画面が表示されることがあります。
 
@@ -57,7 +57,7 @@ Apple では、tvOS アプリのナビゲーションを設計するときに、
 
 Apple TV では、イメージ、ボタン、またはその他の UI 要素は、現在のナビゲーションのターゲットである場合、_フォーカス_されていると見なされます。
 
-[![](navigation-focus-images/focus01.png "Focus and Selection example")](navigation-focus-images/focus01.png#lightbox)
+[![フォーカスと選択の例](navigation-focus-images/focus01.png)](navigation-focus-images/focus01.png#lightbox)
 
 ユーザーがデバイスのタッチスクリーン上の要素を直接操作している iOS デバイスとは異なり、ユーザーは、Siri リモートを使用して、部屋全体の tvOS 要素と対話します。 このユーザーの操作を提示して処理するために、Apple TV は_フォーカス_ベースのモデルを使用します。
 
@@ -134,7 +134,7 @@ TvOS に組み込まれているフォーカスエンジンは、水平グリッ
 
 例については、次の UI レイアウトを実行してください。
 
- [![](navigation-focus-images/guide01.png "Working with Focus Guides example")](navigation-focus-images/guide01.png#lightbox)
+ [![フォーカスガイドの操作の例](navigation-focus-images/guide01.png)](navigation-focus-images/guide01.png#lightbox)
 
 [**詳細情報**] ボタンは、[**購入**] ボタンが付いた水平方向および垂直方向のグリッドには収まらないため、ユーザーはアクセスできません。 ただし、フォーカス_ガイド_を使用すると、フォーカスエンジンに移動ヒントを提供することで、簡単に修正できます。 
 
@@ -164,9 +164,9 @@ public override void ViewDidLoad ()
 
 まず、 `UIFocusGuide` メソッドを使用して、新しいが作成され、ビューのレイアウトガイドコレクションに追加され `AddLayoutGuide` ます。
 
-次に、フォーカスガイドの [上]、[左]、[幅]、[高さ] のアンカーは、[**詳細情報**] と [**購入**] ボタンを基準にして調整され、それらの間に配置されます。 参照トピック
+次に、フォーカスガイドの [上]、[左]、[幅]、[高さ] のアンカーは、[**詳細情報**] と [**購入**] ボタンを基準にして調整され、それらの間に配置されます。 参照:
 
-[![](navigation-focus-images/guide02.png "Example Focus Guide")](navigation-focus-images/guide02.png#lightbox)
+[![フォーカスガイドの例](navigation-focus-images/guide02.png)](navigation-focus-images/guide02.png#lightbox)
 
 また、新しい制約が作成されるときに、そのプロパティをに設定することによってアクティブ化されることにも注意する必要が `Active` `true` あります。
 

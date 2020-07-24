@@ -6,12 +6,12 @@ ms.assetid: 191c71fb-44a4-4e6c-af4b-7b1107dce6af
 author: davidortinau
 ms.author: daortin
 ms.date: 07/18/2018
-ms.openlocfilehash: b8be06b9da4561ffc0d628b53f8daf639b5e3179
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 1a71b84d1068fef1730196bafb0f0d7e2a948c5c
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571099"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936917"
 ---
 # <a name="shared-projects-code-sharing"></a>共有プロジェクトコード共有
 
@@ -27,7 +27,7 @@ _共有プロジェクトを使用すると、さまざまなアプリケーシ�
 
 他のほとんどのプロジェクトの種類とは異なり、共有プロジェクトには (DLL 形式の) 出力がありません。代わりに、コードを参照する各プロジェクトにコンパイルされます。 これを次の図に示します。概念的には、共有プロジェクトのコンテンツ全体が "コピー先" に "コピー" され、それらのプロジェクトの一部としてコンパイルされます。
 
-![](shared-projects-images/sharedassetproject.png "Shared Project architecture")
+![共有プロジェクトのアーキテクチャ](shared-projects-images/sharedassetproject.png)
 
 共有プロジェクトのコードには、コードを使用しているアプリケーションプロジェクトに応じて、コードのセクションを有効または無効にするコンパイラディレクティブを含めることができます。このコードは、図の色分けされたプラットフォームのボックスによって提案されます。
 
@@ -57,7 +57,7 @@ Android アプリケーションプロジェクトは他の Android アプリケ
 
 共有プロジェクトへの参照の追加は、通常のライブラリプロジェクトを参照する場合と同じように行われます。 このスクリーンショットは、共有プロジェクトを参照している Xamarin の iOS プロジェクトを示しています。
 
-![](shared-projects-images/xs-reference.png "Project reference to Shared Project")
+![共有プロジェクトへのプロジェクト参照](shared-projects-images/xs-reference.png)
 
 共有プロジェクトが別のライブラリまたはアプリケーションによって参照されたら、ソリューションをビルドし、コード内のエラーを表示することができます。 共有プロジェクトが他の_2 つ_以上のプロジェクトによって参照されている場合、ソースコードエディターの左上にメニューが表示され、このファイルを参照するプロジェクトを選択できます。
 
@@ -67,7 +67,7 @@ Android アプリケーションプロジェクトは他の Android アプリケ
 
 [**オプション**] 画面を次に示します。プロジェクト**名**と**既定の名前空間**は、一般的に変更される2つの設定のみです。
 
-![](shared-projects-images/xs-sharedprojectoptions.png "Shared Project Options")
+![共有プロジェクトのオプション](shared-projects-images/xs-sharedprojectoptions.png)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -87,13 +87,13 @@ Visual Studio 2017 で、[**共有プロジェクト**] テンプレートを選
 
 ソリューションファイルを右クリックし、[**新しいプロジェクトの追加 >**] を選択して、既存のソリューションに新しい共有プロジェクトを追加することもできます。 新しい共有プロジェクトは、次のようになります (クラスファイルが追加された後)。 参照またはコンポーネントノードがないことに注意してください。これらは共有プロジェクトではサポートされていません。
 
-![](shared-projects-images/vs-empty.png "Empty Shared Project")
+![空の共有プロジェクト](shared-projects-images/vs-empty.png)
 
 共有プロジェクトを使用するには、少なくとも1つのビルド可能なプロジェクト (iOS、Android のアプリケーション、ライブラリ、PCL プロジェクトなど) によって参照される必要があります。 共有プロジェクトは、それを参照するものがない場合はコンパイルされません。そのため、構文 (またはその他の) エラーは、他のものによって参照されるまで強調表示されません。
 
 共有プロジェクトへの参照の追加は、通常のライブラリプロジェクトを参照する場合と同じように行われます。 このスクリーンショットは、共有プロジェクトを参照している Xamarin の iOS プロジェクトを示しています。
 
-![](shared-projects-images/vs-reference.png "Project reference to Shared Project")
+![共有プロジェクトへのプロジェクト参照](shared-projects-images/vs-reference.png)
 
 共有プロジェクトが別のライブラリまたはアプリケーションによって参照されたら、ソリューションをビルドし、コード内のエラーを表示することができます。 共有プロジェクトが他の_2 つ_以上のプロジェクトによって参照されている場合は、ソースコードエディターの左上にメニューが表示され、現在のコードファイルを参照しているプロジェクトを確認できます。
 
@@ -103,7 +103,7 @@ Visual Studio 2017 で、[**共有プロジェクト**] テンプレートを選
 
 [**プロパティ**] パネルは次のようになります。**ルート名前空間**は、変更できる唯一の設定です。
 
-![](shared-projects-images/vs-sharedprojectproperties.png "Shared Project Properties")
+![共有プロジェクトのプロパティ](shared-projects-images/vs-sharedprojectproperties.png)
 
 -----
 
@@ -117,11 +117,11 @@ Visual Studio 2017 で、[**共有プロジェクト**] テンプレートを選
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-![](shared-projects-images/xs-examplesolution.png "Visual Studio for Mac solution")
+![Visual Studio for Mac ソリューション](shared-projects-images/xs-examplesolution.png)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-![](shared-projects-images/vs-examplesolution.png "Visual Studio solution")
+![Visual Studio ソリューション](shared-projects-images/vs-examplesolution.png)
 
 -----
 
@@ -129,7 +129,7 @@ Windows Phone プロジェクトは、Visual Studio for Mac でのコンパイ�
 
 実行中のアプリケーションは次のようになります。
 
-![](shared-projects-images/example.png "iOS, Android, Windows Phone examples")
+![iOS、Android、Windows Phone の例](shared-projects-images/example.png)
 
 ## <a name="summary"></a>まとめ
 

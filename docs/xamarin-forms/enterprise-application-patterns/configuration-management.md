@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f6f61503f619c08ed3e4eae2adf6ddb2c474f99f
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 6def31ebfe2a619f1d5db1e0fba071494afbcd3e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84571481"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931964"
 ---
 # <a name="configuration-management"></a>構成管理
 
@@ -124,7 +124,7 @@ public class GlobalSetting
 
 EShopOnContainers モバイルアプリでは、は `SettingsView` 2 つのユーザー設定を公開しています。 これらの設定により、アプリが Docker コンテナーとしてデプロイされているマイクロサービスからデータを取得する必要があるかどうか、またはアプリがインターネット接続を必要としないモックサービスからデータを取得する必要があるかどうかを構成できます。 コンテナー化されたマイクロサービスからデータを取得することを選択する場合は、マイクロサービスのベースエンドポイント URL を指定する必要があります。 図7-1 は、コンテナー化された `SettingsView` マイクロサービスからデータを取得することをユーザーが選択した場合を示しています。
 
-![](configuration-management-images/settings-endpoint.png "User settings exposed by the eShopOnContainers mobile app")
+![EShopOnContainers モバイルアプリによって公開されるユーザー設定](configuration-management-images/settings-endpoint.png)
 
 **図 7-1**: eShopOnContainers モバイルアプリによって公開されるユーザー設定
 

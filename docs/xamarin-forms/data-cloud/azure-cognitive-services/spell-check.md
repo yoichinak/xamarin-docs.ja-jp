@@ -10,12 +10,12 @@ ms.date: 02/08/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1703f0049408381a86da73fb28696ef8708cc790
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4c07f2667230695c6b884eb4902e68f7f4120f6b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139296"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939504"
 ---
 # <a name="spell-checking-using-the-bing-spell-check-api"></a>Bing Spell Check API を使用したスペルチェック
 
@@ -157,9 +157,9 @@ foreach (var flaggedToken in spellCheckResult.FlaggedTokens)
 
 このコードは、コレクションを反復処理 `FlaggedTokens` し、ソーステキスト内のスペルミスまたは文法的に誤りのある単語を最初の候補と置き換えます。 次のスクリーンショットは、スペルチェックの前後を示しています。
 
-![](spell-check-images/before-spell-check.png "Before Spell Check")
+![Spell Check 前](spell-check-images/before-spell-check.png)
 
-![](spell-check-images/after-spell-check.png "After Spell Check")
+![Spell Check 後](spell-check-images/after-spell-check.png)
 
 > [!NOTE]
 > 上記の例では、 `Replace` わかりやすくするためにを使用していますが、大量のテキストを使用すると、間違ったトークンが置き換えられる可能性があります。 API では、 `offset` 更新を実行するソーステキスト内の正しい場所を識別するために、運用アプリで使用される値が提供されます。

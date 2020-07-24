@@ -21,7 +21,7 @@ ms.locfileid: "86937294"
 
 ![プレリリース API](~/media/shared/preview.png "この API は現在プレリリースです")
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 いくつか Xamarin.Forms の図形クラス `FillRule` には、型のプロパティがあり `FillRule` ます。 これらには、 `Polygon` 、 `Polyline` 、および `GeometryGroup` が含まれます。
 

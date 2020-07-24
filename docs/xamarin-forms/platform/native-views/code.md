@@ -10,12 +10,12 @@ ms.date: 04/27/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 18cdeccbdff86a6b20aab4b33db259f1f06ee096
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4cad46bdee1b49c316947bc56bdb69a3b9e9a270
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139595"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938213"
 ---
 # <a name="native-views-in-c"></a>C のネイティブビュー\#
 
@@ -29,7 +29,7 @@ Xamarin.Formsを設定できるコントロール `Content` 、またはコレ�
 
 次のスクリーンショットは、に追加されたプラットフォーム固有のビューを示してい Xamarin.Forms [`StackLayout`](xref:Xamarin.Forms.StackLayout) ます。
 
-[![](code-images/screenshots-sml.png "StackLayout Containing Platform-Specific Views")](code-images/screenshots.png#lightbox "StackLayout Containing Platform-Specific Views")
+[![プラットフォーム固有のビューを含む StackLayout](code-images/screenshots-sml.png)](code-images/screenshots.png#lightbox "プラットフォーム固有のビューを含む StackLayout")
 
 プラットフォーム固有のビューをレイアウトに追加する機能 Xamarin.Forms は、各プラットフォームの2つの拡張メソッドによって有効になります。
 
@@ -132,7 +132,7 @@ stackLayout.Children.Add (customControl);
 
 ただし、 `CustomControl.SizeThatFits` このオーバーライドは常に高さ150を返します。そのため、次のスクリーンショットに示すように、ビューの上と下に空の領域が表示されます。
 
-![](code-images/ios-bad-measurement.png "iOS CustomControl with Bad SizeThatFits Implementation")
+![実装に適した無効なサイズの iOS CustomControl](code-images/ios-bad-measurement.png)
 
 この問題を解決するには、 `GetDesiredSizeDelegate` 次のコード例に示すように、実装を提供します。
 
@@ -163,7 +163,7 @@ stackLayout.Children.Add (customControl, FixSize);
 
 この結果、次のスクリーンショットに示すように、カスタムビューが正しく表示されます。
 
-![](code-images/ios-good-measurement.png "iOS CustomControl with GetDesiredSize Override")
+![iOS CustomControl と GetDesiredSize Override](code-images/ios-good-measurement.png)
 
 ### <a name="android"></a>Android
 
@@ -201,7 +201,7 @@ stackLayout.Children.Add (customControl);
 
 ただし、この `CustomControl.OnMeasure` オーバーライドは常に要求された幅の半分を返すので、次のスクリーンショットに示すように、デバイスの使用可能な幅の半分だけを使用してビューが表示されます。
 
-![](code-images/android-bad-measurement.png "Android CustomControl with Bad OnMeasure Implementation")
+![不適切な OnMeasure 実装による Android CustomControl](code-images/android-bad-measurement.png)
 
 この問題を解決するには、 `GetDesiredSizeDelegate` 次のコード例に示すように、実装を提供します。
 
@@ -230,7 +230,7 @@ stackLayout.Children.Add (customControl, FixSize);
 
 これにより、次のスクリーンショットに示すように、カスタムビューが正しく表示され、デバイスの幅が含まれるようになります。
 
-![](code-images/android-good-measurement.png "Android CustomControl with Custom GetDesiredSize Delegate")
+![カスタム GetDesiredSize デリゲートを使用した Android CustomControl](code-images/android-good-measurement.png)
 
 ### <a name="universal-windows-platform"></a>ユニバーサル Windows プラットフォーム
 
@@ -298,7 +298,7 @@ stackLayout.Children.Add(brokenControl);
 
 ただし、この `CustomControl.ArrangeOverride` オーバーライドは常に要求された幅の半分を返すため、次のスクリーンショットに示すように、ビューはデバイスの使用可能な幅の半分にクリップされます。
 
-![](code-images/winrt-bad-measurement.png "UWP CustomControl with Bad ArrangeOverride Implementation")
+![不適切な CustomControl が実装される UWP](code-images/winrt-bad-measurement.png)
 
 この問題を解決するには、 `ArrangeOverrideDelegate` [`StackLayout`](xref:Xamarin.Forms.StackLayout) 次のコード例に示すように、ビューをに追加するときに、実装を提供します。
 
@@ -317,7 +317,7 @@ stackLayout.Children.Add(fixedControl, arrangeOverrideDelegate: (renderer, final
 
 このメソッドは、メソッドによって提供される幅を使用し `CustomControl.ArrangeOverride` ますが、2で乗算します。 これにより、次のスクリーンショットに示すように、カスタムビューが正しく表示され、デバイスの幅が含まれるようになります。
 
-![](code-images/winrt-good-measurement.png "UWP CustomControl with ArrangeOverride Delegate")
+![CustomControl を使用した UWP のオーバーライドデリゲート](code-images/winrt-good-measurement.png)
 
 ## <a name="summary"></a>まとめ
 

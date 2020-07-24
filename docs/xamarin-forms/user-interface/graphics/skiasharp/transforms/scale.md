@@ -10,12 +10,12 @@ ms.date: 03/23/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: bdf33f499bf43d99436cef815c03d35b27866b80
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5cb43bfe572b98a6530dfeb8d923ac71b5b633a7
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140180"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932043"
 ---
 # <a name="the-scale-transform"></a>スケール変換
 
@@ -25,7 +25,7 @@ _オブジェクトをさまざまなサイズにスケーリングするため�
 
 変換[**変換に関する記事で**](translate.md)説明したように、変換変換では、グラフィカルオブジェクトをある場所から別の場所に移動できます。 一方、スケール変換は、グラフィカルオブジェクトのサイズを変更します。
 
-![](scale-images/scaleexample.png "A tall word scaled in size")
+![高さの長い単語のサイズ調整](scale-images/scaleexample.png)
 
 また、多くの場合、スケール変換によってグラフィック座標が大きくなるため、移動します。
 
@@ -109,7 +109,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ご覧のように、呼び出し後に描画されたものはすべて比例して `Scale` 増加します。
 
-[![](scale-images/basicscale-small.png "Triple screenshot of the Basic Scale page")](scale-images/basicscale-large.png#lightbox "Triple screenshot of the Basic Scale page")
+[![[基本スケール] ページのトリプルスクリーンショット](scale-images/basicscale-small.png)](scale-images/basicscale-large.png#lightbox "[基本スケール] ページのトリプルスクリーンショット")
 
 テキスト、破線の幅、その行のダッシュの長さ、角の丸み、および四角形の左端と上端の間の10ピクセルの余白は、すべて同じスケールファクターになりますが、この場合はそのままです。
 
@@ -171,7 +171,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 角丸四角形の左上隅は、キャンバスの左側からピクセルに位置し、 `margin` ピクセルは上端からピクセルに配置され `margin` ます。 メソッドの最後の2つの引数は、 `Scale` これらの値に、テキストの幅と高さに加えて、丸みのある四角形の幅と高さにも設定されます。 これは、すべてのスケーリングが、その四角形の中心を基準としていることを意味します。
 
-[![](scale-images/centeredscale-small.png "Triple screenshot of the Centered Scale page")](scale-images/centeredscale-large.png#lightbox "Triple screenshot of the Centered Scale page")
+[![中央のスケールページのトリプルスクリーンショット](scale-images/centeredscale-small.png)](scale-images/centeredscale-large.png#lightbox "中央のスケールページのトリプルスクリーンショット")
 
 `Slider`このプログラムの要素の範囲は 10 ~ &ndash; 10 です。 ご覧のように、垂直方向のスケーリングの負の値 (たとえば、中央の Android 画面) では、オブジェクトがスケールの中心を通過する水平軸を中心に反転します。 水平方向のスケーリングの負の値 (右側の UWP 画面のなど) では、オブジェクトが垂直軸を中心に反転して、スケーリングの中心を通過します。
 
@@ -252,7 +252,7 @@ using (SKPaint strokePaint = new SKPaint
 
 `pathBounds`このコードの先頭付近に四角形が取得され、その後、呼び出しでキャンバスの幅と高さが使用され `Scale` ます。 この呼び出しでは、呼び出しによってレンダリングされるときに、パスの座標が拡大縮小され `DrawPath` ますが、星はキャンバスの右上隅に中央揃えで表示されます。 左に移動する必要があります。 これは呼び出しのジョブです `Translate` 。 の2つのプロパティ `pathBounds` は、約100であるため、翻訳要素は約100です。 この呼び出しは呼び出しの後に行われるため、 `Translate` `Scale` これらの値はスケールファクターによって実質的にスケーリングされるので、星の中央をキャンバスの中央に移動します。
 
-[![](scale-images/anisotropicscaling-small.png "Triple screenshot of the Anisotropic Scaling page")](scale-images/anisotropicscaling-large.png#lightbox "Triple screenshot of the Anisotropic Scaling page")
+[![[異方性の拡大/縮小] ページのトリプルスクリーンショット](scale-images/anisotropicscaling-small.png)](scale-images/anisotropicscaling-large.png#lightbox "[異方性の拡大/縮小] ページのトリプルスクリーンショット")
 
 との呼び出しについて考えることができるもう1つの方法 `Scale` `Translate` は、逆の順序で効果を判断することです。 `Translate` 呼び出しはパスを移動するため、完全に見えるようになりますが、キャンバスの左上隅に配置されます。 次に、メソッドによって、 `Scale` 左上隅を基準としてその星が大きくなります。
 
@@ -295,7 +295,7 @@ using (SKPaint textPaint = new SKPaint
 
 これは同様のロジックであり、テキストはから返されたテキスト境界四角形に基づいてページのサイズに拡張 `MeasureText` されます (これは実際のテキストよりも少し大きくなります)。
 
-[![](scale-images/anisotropictext-small.png "Triple screenshot of the Anisotropic Test page")](scale-images/anisotropictext-large.png#lightbox "Triple screenshot of the Anisotropic Test page")
+[![[異方性テスト] ページのトリプルスクリーンショット](scale-images/anisotropictext-small.png)](scale-images/anisotropictext-large.png#lightbox "[異方性テスト] ページのトリプルスクリーンショット")
 
 グラフィカルオブジェクトの縦横比を維持する必要がある場合は、等幅スケーリングを使用します。 [**等幅スケーリング**] ページでは、このことを示しています。 概念的には、等幅スケーリングを使用して、ページの中央にグラフィカルオブジェクトを表示する手順は次のとおりです。
 
@@ -344,7 +344,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 また、このコードでは、次のように星10も表示されます。スケールファクターが10% 減少し、色が赤から青に徐々に変化します。
 
-[![](scale-images/isotropicscaling-small.png "Triple screenshot of the Isotropic Scaling page")](scale-images/isotropicscaling-large.png#lightbox "Triple screenshot of the Isotropic Scaling page")
+[![[等幅スケール] ページのトリプルスクリーンショット](scale-images/isotropicscaling-small.png)](scale-images/isotropicscaling-large.png#lightbox "[等幅スケール] ページのトリプルスクリーンショット")
 
 ## <a name="related-links"></a>関連リンク
 

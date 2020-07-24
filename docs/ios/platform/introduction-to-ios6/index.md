@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: be78e76e2a52fb6e924fd67e3f0de9e0890ee25b
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: b81e7b980c37f238fe9c2a299aa360cc01294ebe
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86933433"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997190"
 ---
 # <a name="introduction-to-ios-6"></a>iOS 6 の概要
 
@@ -25,7 +25,7 @@ IOS 6 と Xamarin. iOS 6 を使用すると、開発者は、iPhone 5 を対象�
 
 ## <a name="introduction-to-collection-views"></a>[コレクションビューの概要](~/ios/user-interface/controls/uicollectionview.md)
 
-コレクションビューでは、任意のレイアウトを使用してコンテンツを表示できます。 カスタムレイアウトをサポートすると同時に、グリッドに似たレイアウトをすぐに作成できます。 詳細については、「[コレクションビューの概要](~/ios/user-interface/controls/uicollectionview.md)」ガイドを参照してください [](~/ios/user-interface/controls/uicollectionview.md) 。
+コレクションビューでは、任意のレイアウトを使用してコンテンツを表示できます。 カスタムレイアウトをサポートすると同時に、グリッドに似たレイアウトをすぐに作成できます。 詳細については、「[コレクションビューの概要](~/ios/user-interface/controls/uicollectionview.md)」ガイドを参照してください。
 
 ## <a name="introduction-to-passkit"></a>[PassKit の概要](~/ios/platform/passkit.md)
 

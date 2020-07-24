@@ -10,18 +10,18 @@ ms.date: 06/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c0cd0e1939e443bc2c4a1ead8d0a29462ce04a68
-ms.sourcegitcommit: 91b4d2f93687fadec5c3f80aadc8f7298d911624
+ms.openlocfilehash: 8e23e4151c4841dd4dce80ba0358471c64a26f39
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85795058"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937612"
 ---
 # <a name="xamarinforms-shapes-path"></a>Xamarin.Forms図形: パス
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![プレリリース API](~/media/shared/preview.png "この API は現在プレリリースです")
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 `Path`クラスはクラスから派生 `Shape` し、曲線や複雑な図形を描画するために使用できます。 これらの曲線と図形は、多くの場合、オブジェクトを使用して記述され `Geometry` ます。 クラスから継承されるプロパティの詳細につい `Path` `Shape` ては、「 [ Xamarin.Forms 図形](index.md)」を参照してください。
 

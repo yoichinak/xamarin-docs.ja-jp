@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: bcf293b29d6ddca10ab60ae061491b60f1e30520
-ms.sourcegitcommit: b751605179bef8eee2df92cb484011a7dceb6fda
+ms.openlocfilehash: a70095c5897163d3699d03ec42c33826f6d40419
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77495638"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997151"
 ---
 # <a name="ios-platform-features-overview"></a>iOS プラットフォームの機能の概要
 
@@ -20,9 +20,9 @@ ms.locfileid: "77495638"
 
 ## <a name="ios-releases"></a>iOS リリース
 
-|  |  |
+| Release | 説明 |
 |-------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [IOS 13 の概要](~/ios/platform/ios13/index.md) | このドキュメントでは、Xamarin. iOS 13 について説明します。|
+| [iOS 13 の概要](~/ios/platform/ios13/index.md) | このドキュメントでは、Xamarin. iOS 13 について説明します。|
 | [iOS 12 の概要](~/ios/platform/introduction-to-ios12/index.md) | このドキュメントでは、Xamarin iOS アプリケーションをビルドするときに使用できる iOS 12 の機能について説明します。|
 | [iOS 11 の概要](~/ios/platform/introduction-to-ios11/index.md) | このドキュメントでは、ARKit、Core ML、コア NFC、ドラッグアンドドロップ、MapKit、PDFKit、SiriKit、ビジョンなど、iOS 11 および Xcode 9 の新機能と更新された機能について説明します。 これらの機能を Xamarin で使用する方法について説明しているガイドにリンクしています。 |
 | [iOS 10 の概要](~/ios/platform/introduction-to-ios10/index.md) | iOS 10 には、新しい機能を備えたアプリの開発を可能にする新しい Api とサービスがいくつか含まれています。 IOS 10 では、マップ、メッセージ、電話、Siri の拡張などの新機能がアプリに搭載されています。 このセクションでは、他社アプリでこれらの機能を利用する方法について説明します。 |
@@ -37,11 +37,11 @@ Apple Pay は、iOS 8 と共に導入され、ユーザーは iOS デバイス�
 
 ## <a name="callkit"></a>[CallKit](~/ios/platform/callkit.md)
 
-IOS 10 の新しい CallKit API は、VOIP アプリを iPhone UI と統合し、使い慣れたインターフェイスとエクスペリエンスをエンドユーザーに提供するための手段を提供します。 この API を使用すると、ユーザーは iOS デバイスのロック画面から VOIP 通話を表示して操作したり、電話アプリの **[お気に入り]** ビューと **[受信者]** ビューを使用して連絡先を管理したりできます。
+IOS 10 の新しい CallKit API は、VOIP アプリを iPhone UI と統合し、使い慣れたインターフェイスとエクスペリエンスをエンドユーザーに提供するための手段を提供します。 この API を使用すると、ユーザーは iOS デバイスのロック画面から VOIP 通話を表示して操作したり、電話アプリの [**お気に入り**] ビューと [**受信者**] ビューを使用して連絡先を管理したりできます。
 
 ## <a name="contacts-and-contactsui"></a>[連絡先と ContactsUI](~/ios/platform/contacts.md)
 
-IOS 9 の導入により、Apple は、iOS 8 以前で使用されていた既存のアドレス帳とアドレス帳の UI フレームワークを置き換える2つの新しいフレームワーク `Contacts` と `ContactsUI`をリリースしました。
+IOS 9 の導入により、Apple は2つの新しいフレームワークをリリースしました。これは、 `Contacts` `ContactsUI` ios 8 以前で使用されていた既存のアドレス帳とアドレス帳の UI フレームワークを置き換えるものです。
 
 ## <a name="document-picker"></a>[ドキュメント ピッカー](~/ios/platform/document-picker.md)
 
@@ -53,13 +53,13 @@ iOS には、カレンダーアプリケーションとアラームアプリケ�
 
 ## <a name="ios-extensions"></a>[iOS の拡張機能](~/ios/platform/extensions.md)
 
-IOS 8 で導入された拡張機能は、 **Notification Center**内などの標準コンテキスト内で ios によって提供される特殊な `UIViewControllers` であり、特殊な入力を実行するためにユーザーによって要求されるカスタムキーボードの種類、または拡張機能が特別な効果フィルターを提供できるようなその他のコンテキストを実行するためにユーザーが要求する
+IOS 8 で導入された拡張機能は、 `UIViewControllers` ios によって、**通知センター**内などの標準コンテキスト内で、特殊な入力を実行するためにユーザーによって要求されたカスタムキーボードの種類、または拡張機能が特殊効果フィルターを提供できる画像の編集などの他のコンテキストに特化したものです。
 
-## <a name="graphics-and-animation-in-ios"></a>[IOS でのグラフィックスとアニメーション](~/ios/platform/graphics-animation-ios/index.md)
+## <a name="graphics-and-animation-in-ios"></a>[iOS のグラフィックスとアニメーション](~/ios/platform/graphics-animation-ios/index.md)
 
 IOS のグラフィックスとアニメーションでは、CoreImage、コアグラフィックス、コアアニメーションなど、iOS の主要なグラフィックスの概念が説明されています。
 
-## <a name="handoff"></a>[Handoff](~/ios/platform/handoff.md)
+## <a name="handoff"></a>[ハンドオフ](~/ios/platform/handoff.md)
 
 Apple では、iOS 8 および OS X ヨーク Semite (10.10) にハンドオフが導入されました。ユーザーは、デバイスの1つで開始されたアクティビティを、同じアプリを実行している別のデバイス、または同じアクティビティをサポートする別のデバイスに転送するための一般的なメカニズムを提供します。
 
@@ -99,9 +99,9 @@ Photo Kit は、アプリケーションがシステムイメージライブラ�
 
 ## <a name="request-app-review"></a>[アプリレビューの要求](~/ios/platform/request-app-review.md)
 
-IOS 10.3 の新機能である `RequestReview()` 方法では、iOS アプリはユーザーに対して評価またはレビューを要求できます。 ユーザーが App Store からインストールした出荷アプリでこのメソッドが呼び出されると、iOS 10 は開発者の評価およびレビュープロセス全体を処理します。 このプロセスは App Store ポリシーによって管理されているため、アラートが表示されない場合があります。
+IOS 10.3 を初めて使用する場合、メソッドを使用すると、 `RequestReview()` ios アプリでユーザーに評価または確認を求めることができます。 ユーザーが App Store からインストールした出荷アプリでこのメソッドが呼び出されると、iOS 10 は開発者の評価およびレビュープロセス全体を処理します。 このプロセスは App Store ポリシーによって管理されているため、アラートが表示されない場合があります。
 
-## <a name="search-apis"></a>[API の検索](~/ios/platform/search/index.md)
+## <a name="search-apis"></a>[Search API](~/ios/platform/search/index.md)
 
 IOS 9 では Search が拡張されており、Xamarin iOS アプリ内の情報や機能にアクセスするための新しい方法を提供しています。 新しいアプリ検索 Api を使用すると、アプリのコンテンツはスポットライトと Safari の検索結果、ハンドオフおよび Siri のリマインダーと提案によって検索可能になります。 これにより、ユーザーはアプリ内のアクティビティや情報にすばやくアクセスできます。
 
@@ -137,13 +137,13 @@ IOS 10 の新機能であるユーザー通知フレームワークを使用す�
 
 iOS 10 と macOS Sierra は、コアグラフィックス、コアイメージ、メタル、AVFoundation などのフレームワークを含む、システム全体にわたる拡張範囲のピクセル形式と広い範囲の色空間のサポートを強化します。 グラフィックススタック全体でこの動作を提供することにより、さまざまな色で表示されるデバイスのサポートがさらに緩和さます。
 
-## <a name="binding-objective-c"></a>[Objective-C のバインド](binding-objective-c/index.md)
+## <a name="binding-objective-c"></a>[Objective-C のバインディング](binding-objective-c/index.md)
 
-IOS で作業している場合、サードパーティの目標 C ライブラリを使用することが必要になる場合があります。 このような状況では、Monotouch.dialog のバインディングプロジェクトを使用しC#て、ネイティブの目的 C ライブラリへのバインディングを作成できます。 このプロジェクトでは、iOS Api をにC#持ち込むのと同じツールを使用します。 このドキュメントでは、目標 C Api をバインドする方法について説明します。
+IOS で作業している場合、サードパーティの目標 C ライブラリを使用することが必要になる場合があります。 このような状況では、Monotouch.dialog のバインドプロジェクトを使用して、ネイティブの目的 C ライブラリへの C# バインドを作成できます。 このプロジェクトでは、iOS Api を C# に持ち込むために使用するのと同じツールを使用します。 このドキュメントでは、目標 C Api をバインドする方法について説明します。
 
-## <a name="bind-ios-swift-libraries"></a>[IOS Swift ライブラリをバインドする](binding-swift/index.md)
+## <a name="bind-ios-swift-libraries"></a>[iOS Swift ライブラリをバインドする](binding-swift/index.md)
 
-このドキュメントでは、Swift C#コードへのバインドを作成する方法について説明します。これにより、ネイティブライブラリを使用したり、Xamarin. iOS アプリケーションで併置したりすることができます。
+このドキュメントでは、コードを Swift にする C# バインディングを作成する方法について説明します。これにより、ネイティブライブラリを使用したり、Xamarin. iOS アプリケーションで併置したりすることができます。
 
 ## <a name="referencing-native-libraries"></a>[参照 (ネイティブライブラリを)](native-interop.md)
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 5c73f046f349598c9f0b0e8d7c7d6438c150c05c
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: eb95970066f85bb62eb207f23cfc135dc1625a11
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84566345"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937099"
 ---
 # <a name="working-with-tvos-table-views-in-xamarin"></a>Xamarin での tvOS テーブルビューの使用
 
@@ -22,7 +22,7 @@ TvOS では、テーブルビューがスクロール行の単一の列として
 
 通常、テーブルビューは[分割ビュー](~/ios/tvos/user-interface/split-views.md)の1つの側にナビゲーションとして表示され、選択した項目の詳細が反対側に表示されます。
 
-[![](table-views-images/intro01.png "Sample table view")](table-views-images/intro01.png#lightbox)
+[![サンプルテーブルビュー](table-views-images/intro01.png)](table-views-images/intro01.png#lightbox)
 
 <a name="About-Table-Views"></a>
 
@@ -30,7 +30,7 @@ TvOS では、テーブルビューがスクロール行の単一の列として
 
 では、スクロール可能な `UITableView` 行の単一の列が、必要に応じてグループやセクションに分類できる情報の階層リストとして表示されます。 
 
-[![](table-views-images/table01.png "A selected item")](table-views-images/table01.png#lightbox)
+[![選択された項目](table-views-images/table01.png)](table-views-images/table01.png#lightbox)
 
 Apple には、テーブルを操作するための次のような推奨事項があります。
 
@@ -66,92 +66,92 @@ Apple には、テーブルビューのセルを操作するための次のよ�
 
 TvOS アプリでテーブルビューを操作する最も簡単な方法は、インターフェイスデザイナーでその外観を作成および変更することです。
 
-開始するには、次の操作を行います。
+使用を開始するには、以下を実行します。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 1. Visual Studio for Mac で、新しい tvOS app プロジェクトを開始し、[ **tvOS**  >  **app**  >  **Single View app** ] を選択し、[**次へ**] ボタンをクリックします。 
 
-    [![](table-views-images/table02.png "Select Single View App")](table-views-images/table02.png#lightbox)
+    [![単一ビューアプリを選択する](table-views-images/table02.png)](table-views-images/table02.png#lightbox)
 1. アプリの**名前**を入力し、[**次へ**] をクリックします。 
 
-    [![](table-views-images/table03.png "Enter a Name for the app")](table-views-images/table03.png#lightbox)
+    [![アプリの名前を入力してください](table-views-images/table03.png)](table-views-images/table03.png#lightbox)
 1. **プロジェクト名**と**ソリューション名**を調整するか、既定値をそのまま使用し、[**作成**] ボタンをクリックして新しいソリューションを作成します。 
 
-    [![](table-views-images/table04.png "The Project Name and Solution Name")](table-views-images/table04.png#lightbox)
+    [![プロジェクト名とソリューション名](table-views-images/table04.png)](table-views-images/table04.png#lightbox)
 1. **Solution Pad**で、ファイルをダブルクリックし `Main.storyboard` て、iOS Designer で開きます。 
 
-    [![](table-views-images/table05.png "The Main.storyboard file")](table-views-images/table05.png#lightbox)
+    [![メインのストーリーボードファイル](table-views-images/table05.png)](table-views-images/table05.png#lightbox)
 1. **既定のビューコントローラー**を選択して削除します。 
 
-    [![](table-views-images/table06.png "Select and delete the Default View Controller")](table-views-images/table06.png#lightbox)
+    [![既定のビューコントローラーを選択して削除する](table-views-images/table06.png)](table-views-images/table06.png#lightbox)
 1. **ツールボックス**から**分割ビューコントローラー**を選択し、デザインサーフェイスにドラッグします。
 1. 既定では、**ナビゲーションビューコントローラー** 、左側に**テーブルビュー**コントローラー、右側に**ビューコントローラー**がある[分割ビュー](~/ios/tvos/user-interface/split-views.md)が表示されます。 これは、tvOS のテーブルビューで使用される Apple の推奨される使用方法です。 
 
-    [![](table-views-images/table08.png "Add a Split View")](table-views-images/table08.png#lightbox)
+    [![分割ビューを追加する](table-views-images/table08.png)](table-views-images/table08.png#lightbox)
 1. テーブルビューのすべての部分を選択し、[**プロパティエクスプローラー** ] の [**ウィジェット**] タブでカスタム**クラス名**を割り当てる必要があります。これにより、後で C# コードでアクセスできるようになります。 たとえば、**テーブルビューコントローラー**は次のようになります。 
 
-    [![](table-views-images/table09.png "Assign a class name")](table-views-images/table09.png#lightbox)
+    [![クラス名を割り当てる](table-views-images/table09.png)](table-views-images/table09.png#lightbox)
 1. **テーブルビューコントローラー**、**テーブルビュー** 、および**プロトタイプセル**のカスタムクラスを作成していることを確認します。 次のように、作成時にカスタムクラスをプロジェクトツリーに追加 Visual Studio for Mac ます。 
 
-    [![](table-views-images/table10.png "The custom classes in the Project Tree")](table-views-images/table10.png#lightbox)
+    [![プロジェクトツリー内のカスタムクラス](table-views-images/table10.png)](table-views-images/table10.png#lightbox)
 1. 次に、デザインサーフェイスでテーブルビューを選択し、必要に応じてプロパティを調整します。 **プロトタイプセル**の数や**スタイル**(Plain またはグループ化) など。 
 
-    [![](table-views-images/table11.png "The widget tab")](table-views-images/table11.png#lightbox)
+    [![[ウィジェット] タブ](table-views-images/table11.png)](table-views-images/table11.png#lightbox)
 1. [**プロトタイプ] セル**ごとに、そのセルを選択し、[**プロパティエクスプローラー**] の [**ウィジェット**] タブで一意の**識別子**を割り当てます。 この手順は、後でテーブルを設定するときにこの識別子が必要になるため、_非常に重要_です。 例: `AttrCell` 
 
-    [![](table-views-images/table12.png "The Widget Tab")](table-views-images/table12.png#lightbox)
+    [![[ウィジェット] タブ](table-views-images/table12.png)](table-views-images/table12.png#lightbox)
 1. また、[**スタイル**] ドロップダウンを使用してセルを[既定のテーブルビュー](#table-view-cell-types)の1つとして表示するか、[**カスタム**] に設定して、デザインサーフェイスを使用して、他の UI ウィジェットを**ツールボックス**からドラッグしてセルをレイアウトすることもできます。 
 
-    [![](table-views-images/table13.png "The cell layout")](table-views-images/table13.png#lightbox)
+    [![セルのレイアウト](table-views-images/table13.png)](table-views-images/table13.png#lightbox)
 1. [**プロパティエクスプローラー** ] の [**ウィジェット**] タブで、プロトタイプセルのデザインの各 UI 要素に一意の**名前**を割り当てます。これにより、後で C# コードでアクセスできるようになります。 
 
-    [![](table-views-images/table14.png "Assign a name")](table-views-images/table14.png#lightbox)
+    [![名前の割り当て](table-views-images/table14.png)](table-views-images/table14.png#lightbox)
 1. テーブルビューのすべてのプロトタイプセルに対して上記の手順を繰り返します。
 1. 次に、UI デザインの残りの部分にカスタムクラスを割り当てます。詳細ビューをレイアウトし、詳細ビューの各 UI 要素に一意の**名前**を割り当てて、C# でもアクセスできるようにします。 たとえば次のようになります。 
 
-    [![](table-views-images/table15.png "The UI layout")](table-views-images/table15.png#lightbox)
+    [![UI レイアウト](table-views-images/table15.png)](table-views-images/table15.png#lightbox)
 1. ストーリーボードへの変更を保存します。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. Visual Studio で、新しい tvOS app プロジェクトを開始し、[ **tvOS**  >  **Single View app] \ (シングルビューアプリ**の作成 \) を選択して、アプリの名前を入力します。 [ **Ok** ] をクリックして、新しいソリューションを作成します。 
 
-    [![](table-views-images/table02-vs.png "Select Single View App")](table-views-images/table02-vs.png#lightbox)
+    [![単一ビューアプリを選択する](table-views-images/table02-vs.png)](table-views-images/table02-vs.png#lightbox)
 1. **ソリューションエクスプローラー**で、ファイルをダブルクリックし `Main.storyboard` て、iOS Designer で開きます。 
 
-    [![](table-views-images/table05-vs.png "The Main.storyboard file")](table-views-images/table05-vs.png#lightbox)
+    [![メインのストーリーボードファイル](table-views-images/table05-vs.png)](table-views-images/table05-vs.png#lightbox)
 1. **既定のビューコントローラー**を選択して削除します。 
 
-    [![](table-views-images/table06-vs.png "Select and delete the Default View Controller")](table-views-images/table06-vs.png#lightbox)
+    [![既定のビューコントローラーを選択して削除する](table-views-images/table06-vs.png)](table-views-images/table06-vs.png#lightbox)
 1. **ツールボックス**から**分割ビューコントローラー**を選択し、デザインサーフェイスにドラッグします。 
 
-    [![](table-views-images/table07-vs.png "A Split View Controller")](table-views-images/table07-vs.png#lightbox)
+    [![分割ビューコントローラー](table-views-images/table07-vs.png)](table-views-images/table07-vs.png#lightbox)
 1. 既定では、**ナビゲーションビューコントローラー** 、左側に**テーブルビュー**コントローラー、右側に**ビューコントローラー**がある[分割ビュー](~/ios/tvos/user-interface/split-views.md)が表示されます。 これは、tvOS のテーブルビューで使用される Apple の推奨される使用方法です。 
 
-    [![](table-views-images/table08-vs.png "Layout the UI")](table-views-images/table08-vs.png#lightbox)
+    [![UI のレイアウト](table-views-images/table08-vs.png)](table-views-images/table08-vs.png#lightbox)
 1. テーブルビューのすべての部分を選択し、[**プロパティエクスプローラー** ] の [**ウィジェット**] タブでカスタム**クラス名**を割り当てる必要があります。これにより、後で C# コードでアクセスできるようになります。 たとえば、**テーブルビューコントローラー**は次のようになります。 
 
-    [![](table-views-images/table09-vs.png "The Widget Tab")](table-views-images/table09-vs.png#lightbox)
+    [![[ウィジェット] タブ](table-views-images/table09-vs.png)](table-views-images/table09-vs.png#lightbox)
 1. **テーブルビューコントローラー**、**テーブルビュー** 、および**プロトタイプセル**のカスタムクラスを作成していることを確認します。 次のように、作成時にカスタムクラスをプロジェクトツリーに追加 Visual Studio for Mac ます。 
 
-    [![](table-views-images/table10-vs.png "The custom classes in the Project Tree")](table-views-images/table10-vs.png#lightbox)
+    [![プロジェクトツリー内のカスタムクラス](table-views-images/table10-vs.png)](table-views-images/table10-vs.png#lightbox)
 1. 次に、デザインサーフェイスでテーブルビューを選択し、必要に応じてプロパティを調整します。 **プロトタイプセル**の数や**スタイル**(Plain またはグループ化) など。 
 
-    [![](table-views-images/table11-vs.png "The Widget Tab")](table-views-images/table11-vs.png#lightbox)
+    [![[ウィジェット] タブ](table-views-images/table11-vs.png)](table-views-images/table11-vs.png#lightbox)
 1. [**プロトタイプ] セル**ごとに、そのセルを選択し、[**プロパティエクスプローラー**] の [**ウィジェット**] タブで一意の**識別子**を割り当てます。 この手順は、後でテーブルを設定するときにこの識別子が必要になるため、_非常に重要_です。 例: `AttrCell` 
 
-    [![](table-views-images/table12-vs.png "Assign an Identifier")](table-views-images/table12-vs.png#lightbox)
+    [![識別子を割り当てる](table-views-images/table12-vs.png)](table-views-images/table12-vs.png#lightbox)
 1. また、[**スタイル**] ドロップダウンを使用してセルを[既定のテーブルビュー](#table-view-cell-types)の1つとして表示するか、[**カスタム**] に設定して、デザインサーフェイスを使用して、他の UI ウィジェットを**ツールボックス**からドラッグしてセルをレイアウトすることもできます。 
 
-    [![](table-views-images/table13-vs.png "The Style dropdown")](table-views-images/table13-vs.png#lightbox)
+    [![スタイルドロップダウン](table-views-images/table13-vs.png)](table-views-images/table13-vs.png#lightbox)
 1. [**プロパティエクスプローラー** ] の [**ウィジェット**] タブで、プロトタイプセルのデザインの各 UI 要素に一意の**名前**を割り当てます。これにより、後で C# コードでアクセスできるようになります。 
 
-    [![](table-views-images/table14-vs.png "The Widget Tab")](table-views-images/table14-vs.png#lightbox)
+    [![[ウィジェット] タブ](table-views-images/table14-vs.png)](table-views-images/table14-vs.png#lightbox)
 1. テーブルビューのすべてのプロトタイプセルに対して上記の手順を繰り返します。
 1. 次に、UI デザインの残りの部分にカスタムクラスを割り当てます。詳細ビューをレイアウトし、詳細ビューの各 UI 要素に一意の**名前**を割り当てて、C# でもアクセスできるようにします。 たとえば次のようになります。 
 
-    [![](table-views-images/table15.png "The UI Layout")](table-views-images/table15.png#lightbox)
+    [![UI レイアウト](table-views-images/table15.png)](table-views-images/table15.png#lightbox)
 1. ストーリーボードへの変更を保存します。
 
 -----
@@ -168,13 +168,13 @@ TvOS アプリでテーブルビューを操作する最も簡単な方法は、
 
 **引力**のデータモデルを作成するには、 **Solution Pad**でプロジェクト名を右クリックし、[ **Add**  >  **新しいファイル**の追加] を選択します。`AttractionInformation`**名前**として「」と入力し、[**新規**] ボタンをクリックします。 
 
-[![](table-views-images/data01.png "Enter AttractionInformation for the Name")](table-views-images/data01.png#lightbox)
+[![名前に「AttractionInformation」と入力します。](table-views-images/data01.png)](table-views-images/data01.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 **引力**のデータモデルを作成するには、**ソリューションエクスプローラー**でプロジェクト名を右クリックし、[ **Add**  >  **新しい項目**の追加] を選択します。[**クラス**] を選択し、名前として「」と入力 `AttractionInformation` して、[**追加**] ボタンをクリックします。 **Name** 
 
-[![](table-views-images/data01-vs.png "Select Class and enter AttractionInformation for the Name")](table-views-images/data01-vs.png#lightbox)
+[![[クラス] を選択し、名前に「AttractionInformation」と入力します。](table-views-images/data01-vs.png)](table-views-images/data01-vs.png#lightbox)
 
 -----
 
@@ -216,13 +216,13 @@ namespace tvTable
 
 次に、 **Solution Pad**でプロジェクト名を右クリックし、[ **Add**  >  **新しいファイル**の追加] を選択します。`CityInformation`**名前**として「」と入力し、[**新規**] ボタンをクリックします。 
 
-[![](table-views-images/data02.png "Enter CityInformation for the Name")](table-views-images/data02.png#lightbox)
+[![名前として「CityInformation」と入力します。](table-views-images/data02.png)](table-views-images/data02.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 次に、**ソリューションエクスプローラー**でプロジェクト名を右クリックし、[ **Add**  >  **新しい項目**の追加] を選択します。名前として「」と入力し、 `CityInformation` [**追加**] ボタンをクリックします。 **Name** 
 
-[![](table-views-images/data02-vs.png "Enter CityInformation for the Name")](table-views-images/data02-vs.png#lightbox)
+[![名前として「CityInformation」と入力します。](table-views-images/data02-vs.png)](table-views-images/data02-vs.png#lightbox)
 
 -----
 
@@ -733,7 +733,7 @@ namespace tvTable
 
 このドキュメントの冒頭で説明したように、通常、テーブルビューは[分割ビュー](~/ios/tvos/user-interface/split-views.md)の1つの側にナビゲーションとして表示され、選択した項目の詳細が反対側に表示されます。 次に例を示します。 
 
-[![](table-views-images/intro01.png "Sample app run")](table-views-images/intro01.png#lightbox)
+[![サンプルアプリの実行](table-views-images/intro01.png)](table-views-images/intro01.png#lightbox)
 
 これは tvOS の標準パターンなので、最後の手順を見て、すべてをまとめて、分割ビューの左右左右に相互作用させます。
 

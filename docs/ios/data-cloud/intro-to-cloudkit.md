@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/11/2016
-ms.openlocfilehash: 3ff868ed10d59a7c1026a222f314a1166a8de45e
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 588dadbfe63a46bc7658d5d29a052cebe52be65c
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86930196"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997411"
 ---
 # <a name="cloudkit-in-xamarinios"></a>Xamarin. iOS の CloudKit
 
@@ -145,7 +145,7 @@ PrivateDatabase = CKContainer.DefaultContainer.PrivateCloudDatabase;
 |---|--- |--- |
 |**[データ型]**|共有データ|現在のユーザーのデータ|
 |**[クォータ]**|開発者のクォータについて考慮されます。|ユーザーのクォータについて考慮されます。|
-|**既定の権限**|世界での読み取り可能|ユーザーが読み取り可能|
+|**既定のアクセス許可**|世界での読み取り可能|ユーザーが読み取り可能|
 |**アクセス許可の編集**|レコードクラスレベルを使用した iCloud ダッシュボードロール|該当なし|
 
 ### <a name="records"></a>レコード
@@ -790,7 +790,7 @@ CloudKit は、アプリケーションのレコードの種類とデータに�
 
 CloudKit を使用するアプリケーションを出荷する前に、**運用環境の Cloudkit 環境**を対象とするように構成する必要があります。そうしないと、アプリケーションは Apple によって拒否されます。
 
-次の操作を行います。
+次の手順を実行します。
 
 1. Visual Studio for Ma で、**リリース**  >  **iOS デバイス**用にアプリケーションをコンパイルします。
 
@@ -811,7 +811,7 @@ CloudKit を使用するアプリケーションを出荷する前に、**運用
 
 6. アプリケーションのアーカイブを選択し、[**エクスポート**] ボタンをクリックします。
 
-    [![](intro-to-cloudkit-images/shipping05.png "The application's archive")](intro-to-cloudkit-images/shipping05.png#lightbox)
+    [![アプリケーションのアーカイブ](intro-to-cloudkit-images/shipping05.png)](intro-to-cloudkit-images/shipping05.png#lightbox)
 
 7. エクスポートするメソッドを選択し、[**次へ**] ボタンをクリックします。
 
@@ -848,7 +848,7 @@ CloudKit を使用するアプリケーションを出荷する前に、**運用
 
 開発者は、このようなユースケースを念頭に置いて、現在必要なアプリケーション機能を提供し、将来の成長に優れたスケーラビリティを提供するために、適切な iCloud テクノロジを選択する必要があります。
 
-## <a name="summary"></a>要約
+## <a name="summary"></a>まとめ
 
 この記事では、CloudKit API の簡単な概要について説明しました。 CloudKit を使用するように Xamarin iOS アプリケーションをプロビジョニングして構成する方法について説明しました。 CloudKit の便利な API の機能について説明しました。 ここでは、クエリとサブスクリプションを使用して、CloudKit が有効になっているアプリケーションのスケーラビリティを設計する方法を説明しました。 最後に、CloudKit によってアプリケーションに公開されるユーザーアカウント情報が表示されます。
 

@@ -19,7 +19,7 @@ ms.locfileid: "86937060"
 ---
 # <a name="listview-separator-style-on-ios"></a>IOS での ListView 区切り記号のスタイル
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 この iOS プラットフォーム固有の制御は、のセル間の区切り記号がの [`ListView`](xref:Xamarin.Forms.ListView) 完全な幅を使用するかどうかを制御し `ListView` ます。 これは、 [`ListView.SeparatorStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.ListView.SeparatorStyleProperty) 添付プロパティを列挙体の値に設定することによって XAML で使用され [`SeparatorStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle) ます。
 

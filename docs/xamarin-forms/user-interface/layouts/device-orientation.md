@@ -10,12 +10,12 @@ ms.date: 04/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0b1a47d4dcc92fca4d280708a2cbbe9374c17da8
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: de5ebf086af7fa8d7c6360bf3a1f48f57b834e44
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573298"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938438"
 ---
 # <a name="device-orientation"></a>デバイスの向き
 
@@ -123,11 +123,11 @@ protected override void OnSizeAllocated(double width, double height)
 
 デバイスの向きの変更が検出されたら、使用可能な領域の変更に対応するために、ユーザーインターフェイスに対して追加のビューの追加または削除を行うことができます。 たとえば、各プラットフォームの組み込みの電卓を縦方向に検討します。
 
-![](device-orientation-images/calculator-portrait.png "Calculator Application in Portrait")
+![縦長の電卓アプリケーション](device-orientation-images/calculator-portrait.png)
 
 横:
 
-![](device-orientation-images/calculator-landscape.png "Calculator Application in Landscape")
+![横長の電卓アプリケーション](device-orientation-images/calculator-landscape.png)
 
 アプリでは、横長に機能を追加することで、使用可能な領域を活用できます。
 
@@ -147,11 +147,11 @@ protected override void OnSizeAllocated(double width, double height)
 
 縦に表示される次のアプリケーションについて考えてみましょう。
 
-![](device-orientation-images/photo-stack-portrait.png "Photo Application in Portrait")
+![写真アプリケーション (縦向き)](device-orientation-images/photo-stack-portrait.png)
 
 横:
 
-![](device-orientation-images/photo-stack-landscape.png "Photo Application in Landscape")
+![横向きの写真アプリケーション](device-orientation-images/photo-stack-landscape.png)
 
 これは、次の XAML を使用して実現されます。
 
@@ -221,11 +221,11 @@ protected override void OnSizeAllocated (double width, double height){
 
 縦に表示される次のアプリケーションについて考えてみましょう。
 
-![](device-orientation-images/photo-abs-portrait.png "Photo Application in Portrait")
+![写真アプリケーション (縦向き)](device-orientation-images/photo-abs-portrait.png)
 
 横:
 
-![](device-orientation-images/photo-abs-landscape.png "Photo Application in Landscape")
+![横向きの写真アプリケーション](device-orientation-images/photo-abs-landscape.png)
 
 これは、次の XAML を使用して実現されます。
 
@@ -273,11 +273,11 @@ Title="AbsoluteLayout - XAML" BackgroundImageSource="deer.jpg">
 
 縦に表示される次のアプリケーションについて考えてみましょう。
 
-![](device-orientation-images/photo-rel-portrait.png "Photo Application in Portrait")
+![写真アプリケーション (縦向き)](device-orientation-images/photo-rel-portrait.png)
 
 横:
 
-![](device-orientation-images/photo-rel-landscape.png "Photo Application in Landscape")
+![横向きの写真アプリケーション](device-orientation-images/photo-rel-landscape.png)
 
 これは、次の XAML を使用して実現されます。
 
@@ -364,11 +364,11 @@ BackgroundImageSource="deer.jpg">
 
 縦に表示される次のアプリケーションについて考えてみましょう。
 
-![](device-orientation-images/photo-grid-portrait.png "Photo Application in Portrait")
+![写真アプリケーション (縦向き)](device-orientation-images/photo-grid-portrait.png)
 
 横:
 
-![](device-orientation-images/photo-grid-landscape.png "Photo Application in Landscape")
+![横向きの写真アプリケーション](device-orientation-images/photo-grid-landscape.png)
 
 これは、次の XAML を使用して実現されます。
 

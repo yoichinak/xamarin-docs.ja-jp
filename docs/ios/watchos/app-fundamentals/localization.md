@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 82b739697705ac4c90390a36405d755a5f523159
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 9e33f843d836ed5b66ed36397c9367dc671c51ed
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028411"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996254"
 ---
 # <a name="working-with-watchos-localization-in-xamarin"></a>Xamarin での watchOS ローカライズの使用
 
 _WatchOS アプリを複数の言語向けに適応する_
 
-![](localization-images/both-languages-sml.png "Apple Watch displaying localized content")
+![ローカライズされたコンテンツの表示 Apple Watch](localization-images/both-languages-sml.png)
 
 watchOS アプリは、標準の iOS メソッドを使用してローカライズされます。
 
@@ -35,7 +35,7 @@ Apple Watch アプリには、2つのパーツウォッチアプリと Watch 拡
 
 ## <a name="watch-app"></a>アプリを見る
 
-Watch アプリには、アプリのユーザーインターフェイスを説明するストーリーボードが含まれています。 ローカライズをサポートするコントロール (`Label`、`Image`など) には、**ローカライズ ID**があります。
+Watch アプリには、アプリのユーザーインターフェイスを説明するストーリーボードが含まれています。 ローカリゼーションをサポートするコントロール (やなど) には、 `Label` `Image` **ローカライズ ID**があります。
 
 各言語固有の**lproj**ディレクトリには、各要素 (**ローカライズ ID**を使用) の翻訳を含む**文字列**ファイルと、ストーリーボードによって参照されるイメージが含まれている必要があります。
 
@@ -48,7 +48,7 @@ Watch の拡張機能は、アプリのコードを実行します。 コード�
 ## <a name="globalizing-the-watch-solution"></a>Watch ソリューションのグローバル化
 
 グローバリゼーションとは、アプリケーションをローカライズ可能にするプロセスのことです。
-Watch アプリの場合、これは、さまざまなテキスト長を考慮してストーリーボードを設計し、表示されるテキストに応じて各画面レイアウトが適切に調整されるようにすることを意味します。 また、watch 拡張コードで参照されている文字列を `LocalizedString` メソッドを使用して変換できることを確認する必要もあります。
+Watch アプリの場合、これは、さまざまなテキスト長を考慮してストーリーボードを設計し、表示されるテキストに応じて各画面レイアウトが適切に調整されるようにすることを意味します。 また、watch 拡張コードで参照されている文字列をメソッドを使用して変換できることも確認する必要があり `LocalizedString` ます。
 
 ### <a name="watch-app"></a>アプリを見る
 
@@ -56,21 +56,21 @@ Watch アプリの場合、これは、さまざまなテキスト長を考慮�
 
 1. **Base. lproj**ディレクトリを作成し、**インターフェイス**をその中に移動します。
 
-2. サポートする言語ごとに、 **\<言語 >** のディレクトリを作成します。
+2. サポートする言語ごとに** \<language> lproj**ディレクトリを作成します。
 
 3. **Lproj**ディレクトリには、 **Interface. 文字列**テキストファイルが含まれている必要があります (ファイル名は storboard の名前と一致している必要があります)。 必要に応じて、これらのディレクトリでローカライズが必要なイメージを配置することもできます。
 
 これらの変更が行われると、watch アプリプロジェクトは次のようになります (英語とスペイン語のファイルのみが追加されています)。
 
-  ![](localization-images/watchapp-solution.png "The watch app project with English and Spanish language files")
+  ![英語とスペイン語の言語ファイルを含む watch アプリプロジェクト](localization-images/watchapp-solution.png)
 
 #### <a name="storyboard-text"></a>ストーリーボードのテキスト
 
-ストーリーボードを編集するときに、各要素を選択し、 **[プロパティ]** パッドに表示される**ローカライズ ID**を確認します。
+ストーリーボードを編集するときに、各要素を選択し、[**プロパティ**] パッドに表示される**ローカライズ ID**を確認します。
 
-  [![](localization-images/storyboard-sml.png "The Localization ID that appears in the Properties pad")](localization-images/storyboard.png#lightbox)
+  [![プロパティパッドに表示されるローカライズ ID](localization-images/storyboard-sml.png)](localization-images/storyboard.png#lightbox)
 
-基本の**lproj**フォルダーで、次に示すようにキーと値のペアを作成します。キーは、**ローカライズ ID**とコントロールのプロパティ名で形成され、ドット (`.`) で結合されます。
+基本の**lproj**フォルダーで、次のようにキーと値のペアを作成します。ここでは、キーが**ローカライズ ID**とコントロールのプロパティ名で形成され、ドット () で結ばれて `.` います。
 
 ```csharp
 "AgC-eL-Hgc.title" = "WatchL10nEN"; // interface controller title
@@ -81,25 +81,25 @@ Watch アプリの場合、これは、さまざまなテキスト長を考慮�
 "39.text" = "Second screen";
 ```
 
-この例では、**ローカライズ ID**は単純な数値文字列であることに注意してください (例として、 "0"、"1" など)、またはより複雑な文字列 ("AgC-eL-Hgc" など)。 `Label` コントロールには `Text` プロパティがあり、`Button`には、ローカライズされた値の設定方法に反映される `Title` プロパティがあります。上記の例に示すように、小文字のプロパティ名を使用してください。
+この例では、**ローカライズ ID**は単純な数値文字列であることに注意してください (例として、 "0"、"1" など)、またはより複雑な文字列 ("AgC-eL-Hgc" など)。 `Label`コントロールにはプロパティがあり、には `Text` `Button` プロパティがあり `Title` 、これはローカライズされた値の設定方法に反映されます。上記の例に示すように、小文字のプロパティ名を使用するようにしてください。
 
 ストーリーボードがウォッチにレンダリングされると、ユーザーが選択した言語に従って、正しい値が自動的に抽出されて表示されます。
 
 #### <a name="storyboard-images"></a>ストーリーボードイメージ
 
-このソリューションの例には、各言語フォルダー内の **gradient@2x.png** イメージも含まれています。 このイメージは、言語によって異なる場合があります (例として、 変換が必要なテキストが埋め込まれている場合や、ローカライズされた iconography を使用している場合があります)。
+このサンプルソリューションには、 **gradient@2x.png** 各言語フォルダー内のイメージも含まれています。 このイメージは、言語によって異なる場合があります (例として、 変換が必要なテキストが埋め込まれている場合や、ローカライズされた iconography を使用している場合があります)。
 
 ストーリーボードに画像の**画像**のプロパティを設定するだけで、ユーザーが選択した言語に応じて、正しい画像がウォッチにレンダリングされます。
 
-![](localization-images/storyboard-image.png "Set the images Image property in the storyboard")
+![ストーリーボードのイメージイメージのプロパティを設定する](localization-images/storyboard-image.png)
 
-注: すべての Apple Watch に Retina が表示されるため、イメージの **@2x** バージョンのみが必要です。 ストーリーボードで **@2x** を指定する必要はありません。
+注: すべての Apple Watch に Retina が表示されるため、 **@2x** イメージのバージョンのみが必要です。 ストーリーボードでを指定する必要はありません **@2x** 。
 
 ### <a name="watch-extension"></a>Watch 拡張機能
 
-Watch 拡張機能では、ローカライズをサポートするために同様のディレクトリ構造が必要ですが、ストーリーボードはありません。 拡張機能のローカライズされた文字列は、コードC#によって参照される文字列のみです。
+Watch 拡張機能では、ローカライズをサポートするために同様のディレクトリ構造が必要ですが、ストーリーボードはありません。 拡張機能のローカライズされた文字列は、C# コードによって参照される文字列のみです。
 
-![](localization-images/watchextension-solution.png "The watch extension directory structure to support localization")
+![ローカライズをサポートする watch extension ディレクトリ構造](localization-images/watchextension-solution.png)
 
 #### <a name="strings-in-code"></a>コード内の文字列
 
@@ -112,7 +112,7 @@ Watch 拡張機能では、ローカライズをサポートするために同�
 "Bed time" = "Bed time!"; // night
 ```
 
-`NSBundle.MainBundle.LocalizedString` メソッドを使用して、次のコードに示すように、変換された対応する文字列に文字列を解決します。
+`NSBundle.MainBundle.LocalizedString`次のコードに示すように、メソッドを使用して、変換された対応する文字列に文字列を解決します。
 
 ```csharp
 var display = "Breakfast time";
@@ -125,13 +125,13 @@ displayText.SetText (localizedDisplay);
 
 コードによって設定されたイメージは、次の2つの方法で設定できます。
 
-1. `Image` コントロールを変更するには、その値を Watch アプリに既に存在するイメージの文字列名に設定します。たとえば、
+1. コントロールを変更するには、 `Image` その値を Watch アプリに既に存在するイメージの文字列名に設定します。たとえば、
 
     ```csharp
     displayImage.SetImage("gradient"); // image in Watch App (as shown above)
     ```
 
-2. `FromBundle` を使用して拡張機能からウォッチにイメージを移動すると、アプリはユーザーの言語選択に適したイメージを自動的に選択します。 この例のソリューションでは、各言語フォルダーに **language@2x.png** イメージがあり、次のコードを使用して `DetailController` に表示されます。
+2. を使用して拡張機能からウォッチにイメージを移動する `FromBundle` と、アプリはユーザーの言語選択に適したイメージを自動的に選択します。 この例のソリューションでは、 **language@2x.png** 各言語フォルダーにイメージがあり、 `DetailController` 次のコードを使用してに表示されます。
 
     ```csharp
     using (var image = UIImage.FromBundle ("language")) {
@@ -139,7 +139,7 @@ displayText.SetText (localizedDisplay);
     }
     ```
 
-    イメージのファイル名を参照するときは、 **@2x** を指定する必要がないことに注意してください。
+    **@2x**イメージのファイル名を参照するときは、を指定する必要はありません。
 
 2番目の方法は、リモートサーバーからイメージをダウンロードしてウォッチにレンダリングする場合にも適用できます。ただし、この場合は、ダウンロードしたイメージがユーザーの設定に従って正しくローカライズされていることを確認する必要があります。
 
@@ -185,7 +185,7 @@ displayText.SetText (localizedDisplay);
 "Bed time" = "la hora de dormir"; // night
 ```
 
-## <a name="testing"></a>テスト中
+## <a name="testing"></a>テスト
 
 言語の設定を変更する方法は、シミュレーターと物理デバイスで異なります。
 
@@ -193,13 +193,13 @@ displayText.SetText (localizedDisplay);
 
 シミュレーターで、iOS**設定**アプリ (シミュレーターのホーム画面の灰色の歯車アイコン) を使用してテストする言語を選択します。
 
-  ![](localization-images/sim-settings-sml.png "The iOS Settings app Localization settings")
+  ![IOS 設定アプリのローカリゼーション設定](localization-images/sim-settings-sml.png)
 
 ### <a name="watch-device"></a>デバイスの監視
 
 ウォッチを使用してテストする場合は、ペアになっている iPhone の**Apple Watch**アプリでウォッチの言語を変更します。
 
-  ![](localization-images/phone-settings-sml.png "Change the watch's language in the Apple Watch app on the paired iPhone")
+  ![ペアになっている iPhone の Apple Watch アプリでウォッチの言語を変更する](localization-images/phone-settings-sml.png)
 
 ## <a name="related-links"></a>関連リンク
 

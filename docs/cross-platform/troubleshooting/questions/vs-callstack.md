@@ -6,12 +6,12 @@ ms.assetid: 64c24b09-2c4a-43ad-b94d-6cd05a1aee44
 author: davidortinau
 ms.author: daortin
 ms.date: 03/30/2017
-ms.openlocfilehash: 9ed79b2273758b8051a96169d4c9b53870de1fb1
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: aa8ce8791c598fa4891257b3d832478ecc5ee136
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73013027"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938802"
 ---
 # <a name="how-do-i-collect-the-current-call-stacks-of-the-visual-studio-process"></a>Visual Studio のプロセスの現在の呼び出し履歴はどのようにして収集しますか
 
@@ -21,22 +21,22 @@ Visual Studio で GUI がロックアップ (ハング、フリーズ) すると
 
 2. Visual Studio の新しいインスタンスで、開いているソリューションをすべて終了します。
 
-3. **[デバッグ]、[プロセスにアタッチ]** の順に選択します。
+3. [**デバッグ > [プロセスにアタッチ**] を選択します。
 
-   ![](vs-callstack-images/image1.png "Select Debug > Attach to Process")
+   ![デバッグ > [プロセスにアタッチ] を選択](vs-callstack-images/image1.png)
 
-4. **使用可能なプロセス**の一覧から、`devenv.exe` の元のハングしたインスタンスを選択します。
+4. `devenv.exe`**使用可能なプロセス**の一覧から、元のハングしたインスタンスを選択します。
 
-5. **[デバッグ > すべて中断]** を選択します。
+5. [**デバッグ > すべて中断**] を選択します。
 
-   ![](vs-callstack-images/image2.png "Select Debug > Break All")
+   ![[デバッグ > すべて中断] を選択します。](vs-callstack-images/image2.png)
 
-6. **デバッグ > ダンプに名前を付けて保存** を選択します。
+6. [**デバッグ > [ダンプに名前を付けて保存**] を選択します。
 
-   ![](vs-callstack-images/image3.png "Select Debug > Save Dump As")
+   ![デバッグ > [ダンプに名前を付けて保存] を選択します。](vs-callstack-images/image3.png)
 
-7. **ファイルの種類**を**ミニダンプ (\*.dmp)** に変更します。 これにより、**ヒープ付きミニダンプ**よりもはるかに小さなファイルが生成されます。また、ヒープは通常、フリーズの診断には関係ありません。
+7. **ファイルの種類**を**ミニダンプ ( \* .dmp)** に変更します。 これにより、**ヒープ付きミニダンプ**よりもはるかに小さなファイルが生成されます。また、ヒープは通常、フリーズの診断には関係ありません。
 
-   ![](vs-callstack-images/image4.png "This will produce a much smaller file than Minidump with Heap, and the heap is usually not relevant for diagnosing freezes")
+   ![これにより、ヒープ付きミニダンプよりもはるかに小さなファイルが生成され、ヒープは通常、フリーズの診断には関係ありません。](vs-callstack-images/image4.png)
 
 8. ダンプファイルを保存します。 ファイルをオンラインで送信する場合は、zip 形式でサイズを小さくすることができます。

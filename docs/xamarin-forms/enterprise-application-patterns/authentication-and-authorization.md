@@ -10,12 +10,12 @@ ms.date: 08/08/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8b712b2a5d7eeb2ee5e71047b9e6c460eb10d72a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5550ea7a355492f724459449f3b37cdcb8d05b1e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573834"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932146"
 ---
 # <a name="authentication-and-authorization"></a>認証と承認
 
@@ -42,7 +42,7 @@ OpenID Connect と OAuth 2.0 の組み合わせによって、認証と API ア�
 
 EShopOnContainers 参照アプリケーションなどのクライアントからマイクロサービスへの直接通信を使用するアプリケーションでは、図9-1 に示すように、セキュリティトークンサービス (STS) として機能する専用の認証マイクロサービスを使用して、ユーザーを認証できます。 クライアントからマイクロサービスへの直接通信の詳細については、「[クライアントとマイクロサービス間の通信](~/xamarin-forms/enterprise-application-patterns/containerized-microservices.md#communication-between-client-and-microservices)」を参照してください。
 
-![](authentication-and-authorization-images/authentication.png "Authentication by a dedicated authentication microservice")
+![専用認証マイクロサービスによる認証](authentication-and-authorization-images/authentication.png)
 
 **図 9-1:** 専用認証マイクロサービスによる認証
 
@@ -211,7 +211,7 @@ public static IEnumerable<Client> GetClients(Dictionary<string,string> clien
 
 - [Implicit] このフローは、ブラウザーベースのアプリケーション用に最適化されているため、ユーザー認証のみ、または認証とアクセストークン要求のどちらかを使用する必要があります。 すべてのトークンがブラウザーを介して送信されるため、更新トークンなどの高度な機能は使用できません。
 - 認証コード。 このフローでは、クライアント認証もサポートしながら、ブラウザーのフロントチャネルとは対照的に、バックチャネルでトークンを取得する機能が提供されます。
-- [ハイブリッド] : このフローは、暗黙的および承認のコード許可の種類を組み合わせたものです。 Id トークンは、ブラウザーチャネルを介して送信されます。また、認証コードなどの他の成果物と共に、署名済みのプロトコル応答が含まれています。 応答が正常に検証されたら、バックチャネルを使用してアクセストークンと更新トークンを取得する必要があります。
+- ハイブリッド。 このフローは、暗黙的および承認のコード許可の種類を組み合わせたものです。 Id トークンは、ブラウザーチャネルを介して送信されます。また、認証コードなどの他の成果物と共に、署名済みのプロトコル応答が含まれています。 応答が正常に検証されたら、バックチャネルを使用してアクセストークンと更新トークンを取得する必要があります。
 
 > [!TIP]
 > ハイブリッド認証フローを使用します。 ハイブリッド認証フローは、ブラウザーチャネルに適用される多数の攻撃を軽減します。また、アクセストークン (および場合によってはトークンを更新することもあります) を取得する必要があるネイティブアプリケーションに推奨されるフローです。
@@ -224,7 +224,7 @@ public static IEnumerable<Client> GetClients(Dictionary<string,string> clien
 
 EShopOnContainers モバイルアプリは、図9-2 に示すハイブリッド認証フローを使用して、identity Server で認証を行います。
 
-![](authentication-and-authorization-images/sign-in.png "High-level overview of the sign-in process")
+![サインインプロセスの大まかな概要](authentication-and-authorization-images/sign-in.png)
 
 **図 9-2:** サインインプロセスの大まかな概要
 
@@ -232,7 +232,7 @@ EShopOnContainers モバイルアプリは、図9-2 に示すハイブリッド�
 
 EShopOnContainers モバイルアプリは、追加のパラメーターを使用してに要求を送信することによって、サーバーからサインアウトし `<base endpoint>:5105/connect/endsession` ます。 サインアウトが発生すると、サーバーは、post ログアウトリダイレクト URI をモバイルアプリに送り返すことで応答します。 図9-3 はこのプロセスを示しています。
 
-![](authentication-and-authorization-images/sign-out.png "High-level overview of the sign-out process")
+![サインアウトプロセスの大まかな概要](authentication-and-authorization-images/sign-out.png)
 
 **図 9-3:** サインアウトプロセスの大まかな概要
 
@@ -288,7 +288,7 @@ public string CreateAuthorizationRequest()
 
 返された URI は、クラスのプロパティに格納され `LoginUrl` `LoginViewModel` ます。 プロパティがになると、内のが表示されるようになり `IsLogin` `true` [`WebView`](xref:Xamarin.Forms.WebView) `LoginView` ます。 データは、 `WebView` その [`Source`](xref:Xamarin.Forms.WebView.Source) プロパティを `LoginUrl` クラスのプロパティにバインド `LoginViewModel` します。これにより、 `LoginUrl` プロパティが "identity server" 認証エンドポイントに設定されている場合に、"サーバーにサインイン" 要求が行われます。 ユーザーがこの要求を受信し、ユーザーが認証されていない場合、は、 `WebView` 図9-4 に示すように、構成されたログインページにリダイレクトされます。
 
-![](authentication-and-authorization-images/login.png "Login page displayed by the WebView")
+![WebView によって表示されるログインページ](authentication-and-authorization-images/login.png)
 
 **図 9-4:** WebView によって表示されるログインページ
 
@@ -409,7 +409,7 @@ public class BasketController : Controller
 
 認証ワークフローには、アクセストークンによって制御承認が提供されるように、サービスを統合することができます。 このアプローチを図9-5 に示します。
 
-![](authentication-and-authorization-images/authorization.png "Authorization by access token")
+![アクセストークンによる承認](authentication-and-authorization-images/authorization.png)
 
 **図 9-5:** アクセストークンによる承認
 

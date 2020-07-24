@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 0eead476fe7842ac326b61771776a83c7a35461c
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: b61d851e793d3fb0ae5e97718b151dd87f37da61
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84567386"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937047"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Xamarin のストーリーボードの概要
 
@@ -30,7 +30,7 @@ IOS アプリケーションの UI を視覚的に表現するために、Apple 
 
 ストーリーボードは、アプリケーションのすべての画面を視覚的に表現したものです。 これには一連のシーンが含まれており、各シーンは*ビューコントローラー*とその*ビュー*を表します。 これらのビューには、ユーザーがアプリケーションと対話できるようにするオブジェクトと[コントロール](~/ios/user-interface/controls/index.md)が含まれている場合があります。 このビューとコントロール *(または*サブビュー) のコレクションは、*コンテンツビュー階層*と呼ばれます。 シーンはセグエオブジェクトによって接続されます。これは、ビューコントローラー間の遷移を表します。 これは通常、初期ビューのオブジェクトと接続ビューの間にセグエを作成することによって実現されます。 次の図は、デザイン画面上のリレーションシップを示しています。
 
- [![](images/storyboardsview.png "The relationships on the design surface are illustrated in this image")](images/storyboardsview.png#lightbox)
+ [![この図は、デザイン画面上のリレーションシップを示しています。](images/storyboardsview.png)](images/storyboardsview.png#lightbox)
 
 このように、ストーリーボードでは、既にレンダリングされているコンテンツを使用して各シーンをレイアウトし、それらの間の接続を示します。  この時点では、iPhone でシーンについて話すときに、ストーリーボード上の1つの*シーン*がデバイス上のコンテンツの1つの*画面*と同じであると想定するのは安全です。 ただし、iPad では、複数のシーンを一度に表示することができます (たとえば、Segue view controller を使用します)。
 
@@ -45,22 +45,22 @@ IOS アプリケーションの UI を視覚的に表現するために、Apple 
 
 *セグエ*または*セグエオブジェクト*は、バックグラウンド間の遷移を表すために、iOS 開発で使用されます。 セグエを作成するには、 **Ctrl**キーを押しながら1つのシーンから別のシーンへドラッグします。 マウスをドラッグすると、青いコネクタが表示され、次の図に示すように、セグエの潜在顧客が示されます。
 
- [![](images/createsegue.png "A blue connector appears, indicating where the segue will lead as demonstrated in this image")](images/createsegue.png#lightbox)
+ [![青いコネクタが表示され、この図に示すように、セグエがどの場所につながるかが示されます。](images/createsegue.png)](images/createsegue.png#lightbox)
 
 マウスポインターを押すと、セグエの操作を選択できるメニューが表示されます。 次の図のようになります。
 
 **IOS より前の8とサイズのクラス**:
 
-[![](images/segue1.png "The Action Segue dropdown without Size Classes")](images/segue1.png#lightbox)
+[![Size クラスのない Action セグエ dropdown](images/segue1.png)](images/segue1.png#lightbox)
 
 **サイズクラスとアダプティブセグエを使用する場合**:
 
-[![](images/16new.png "The Action Segue dropdown with Size Classes")](images/16new.png#lightbox)
+[![Size クラスを使用した Action セグエ dropdown](images/16new.png)](images/16new.png#lightbox)
 
 > [!IMPORTANT]
 > Windows 仮想マシンに VMWare を使用している場合、Ctrl キーを押しながらクリックすると、既定で_右クリック_のマウスボタンとしてマップされます。 セグエを作成するには、次に示すように、**好み**の  >  **キーボード & マウス**の  >  **マウスショートカット**を使用し、**セカンダリボタン**を再マップして、キーボードの基本設定を編集します。
 >
-> [![](images/image22.png "Keyboard and Mouse preference settings")](images/image22.png#lightbox)
+> [![キーボードとマウスの基本設定](images/image22.png)](images/image22.png#lightbox)
 >
 > これで、ビューコントローラー間に通常どおりセグエを追加できるようになります。
 
@@ -72,7 +72,7 @@ IOS アプリケーションの UI を視覚的に表現するために、Apple 
 - **アンワイン**ド–アンワインドセグエを使用して、プッシュまたはモーダルセグエに戻ることができます。たとえば、モーダルで示されたビューコントローラーを終了します。 これに加えて、1つだけではなく、一連のプッシュとモーダルセグエを使用してアンワインドし、1つのアンワインドアクションでナビゲーション階層内の複数のステップを戻ることができます。 IOS でアンワインドセグエを使用する方法については、[アンワインドセグエの作成](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/storyboard/unwind_segue)に関するレシピをご覧ください。
 - **ソースレス**–セグエは、初期ビューコントローラーを含むシーンを示します。したがって、ユーザーが最初に表示されるビューを示します。 次に示すセグエによって表されます。  
 
-    [![](images/sourcelesssegue.png "A sourceless segue")](images/sourcelesssegue.png#lightbox)
+    [![ソースレスセグエ](images/sourcelesssegue.png)](images/sourcelesssegue.png#lightbox)
 
 ### <a name="adaptive-segue-types"></a>Adaptive セグエの種類
 
@@ -80,7 +80,7 @@ IOS アプリケーションの UI を視覚的に表現するために、Apple 
 
 サイズクラスを使用するアプリケーションでは、新しい[*Adaptive セグエ*](~/ios/user-interface/storyboards/unified-storyboards.md)も使用されます。 サイズクラスを使用する場合は、iPhone または iPad を使用している天気を直接指定していないことに注意してください。 つまり、どのくらいの作業が必要であるかに関係なく、常に同じように表示される1つの UI を作成しています。 Adaptive セグエ work は、環境を審査し、コンテンツをどの程度最適に提示するかを決定します。 Adaptive セグエを次に示します。
 
-[![](images/adaptivesegue.png "The Adaptive Segues dropdown")](images/adaptivesegue.png#lightbox)
+[![Adaptive セグエドロップダウン](images/adaptivesegue.png)](images/adaptivesegue.png#lightbox)
 
 |セグエ|説明|
 |--- |--- |
@@ -132,11 +132,11 @@ if (callHistoryController != null) {
 
 1. 次に示すように、 **iOS > storyboard > [ファイル > 新しいファイル**] を参照して、新しいストーリーボードファイルを作成します。
 
-    [![](images/new-storyboard-xs.png "The new file dialog")](images/new-storyboard-xs.png#lightbox)
+    [![[新しいファイル] ダイアログ](images/new-storyboard-xs.png)](images/new-storyboard-xs.png#lightbox)
 
 2. 次に示すように、**情報を plist**の**Main インターフェイス**セクションにストーリーボード名を追加します。
 
-    [![](images/infoplist.png "The Info.plist editor")](images/infoplist.png#lightbox)
+    [![情報 plist エディター](images/infoplist.png)](images/infoplist.png#lightbox)
 
     これは、アプリデリゲート内のメソッドで初期ビューコントローラーをインスタンス化するのと同じです `FinishedLaunching` 。 このオプションを設定すると、アプリケーションはウィンドウ (以下を参照) をインスタンス化し、メインのストーリーボードを読み込み、ストーリーボードの初期ビューコントローラーのインスタンス (ソースレスセグエの横) をウィンドウのプロパティとして割り当て、 `RootViewController` ウィンドウを画面に表示します。
 
@@ -153,11 +153,11 @@ if (callHistoryController != null) {
 
 1. 次に示すように、新しい**ファイル > iOS > 空のストーリーボードに追加**するプロジェクトを右クリックして、新しいストーリーボードファイルを作成 > ます。
 
-    [![](images/new-storyboard-vs.png "The new item dialog")](images/new-storyboard-vs.png#lightbox)
+    [![[新しい項目] ダイアログ](images/new-storyboard-vs.png)](images/new-storyboard-vs.png#lightbox)
 
 2. 次に示すように、iOS アプリケーションの**メインインターフェイス**セクションにストーリーボード名を追加します。
 
-    [![](images/ios-app.png "The Info.plist editor")](images/ios-app.png#lightbox)
+    [![情報 plist エディター](images/ios-app.png)](images/ios-app.png#lightbox)
 
     これは、アプリデリゲート内のメソッドで初期ビューコントローラーをインスタンス化するのと同じです `FinishedLaunching` 。 このオプションを設定すると、アプリケーションはウィンドウ (以下を参照) をインスタンス化し、メインのストーリーボードを読み込み、ストーリーボードの初期ビューコントローラーのインスタンス (ソースレスセグエの横) をウィンドウのプロパティとして割り当て、 `RootViewController` ウィンドウを画面に表示します。
 
@@ -184,37 +184,37 @@ Visual Studio for Mac で開発した iOS アプリで使用するために、Xc
 
 1. 空の_IPhone ストーリーボード_を既存のプロジェクトプロジェクトに追加します。
 
-    [![](images/add-storyboard2.png "Adding storyboard")](images/add-storyboard2.png#lightbox)
+    [![ストーリーボードの追加](images/add-storyboard2.png)](images/add-storyboard2.png#lightbox)
 
 2. ストーリーボードファイルを右クリックし、[ **> Xcode Interface Builder で開く**] を選択して、Xcode で開きます。
 
     *既定で Xcode Interface builder を使用する場合は、[プロジェクト] の [Visual Studio for Mac の設定] で [ **iOS] >** 選択できます。*
 
-![](images/set-preferred-designer-tool.png "Selecting the preferred designer tool")
+![優先デザイナーツールの選択](images/set-preferred-designer-tool.png)
 
 3. Xcode で、ライブラリを開きます (**ビュー > [ライブラリ**の表示] または [ *Shift + Command + L*] を使用)。これにより、ストーリーボードに追加できるオブジェクトの一覧が表示されます。 `Navigation Controller`リストからストーリーボードにオブジェクトをドラッグして、ストーリーボードにを追加します。 既定では、は `Navigation Controller` 2 つの画面を提供します。右側の画面は、単純なビューで置き換えられます。その `TableViewController` ため、ビューをクリックし、del キーを押して削除できます。
 
-    [![](images/add-navigation-controller.png "Adding a NavigationController from the Library")](images/add-navigation-controller.png#lightbox)
+    [![ライブラリからの NavigationController の追加](images/add-navigation-controller.png)](images/add-navigation-controller.png#lightbox)
 
 4. このビューコントローラーには独自のカスタムクラスがあり、独自のストーリーボード ID も必要です。 この新しく追加したビューの上にあるボックスをクリックすると、3つのアイコンが表示されます。左端はビューのビューコントローラーを表します。 このアイコンを選択すると、右側のウィンドウの [id] タブでクラスと ID の値を設定できます。これらの値をに設定 `MainViewController` し、特定のチェックを行い `Use Storyboard ID` ます。
 
-    [![](images/identity-panel.png "Setting the MainViewController in the identity panel")](images/identity-panel.png#lightbox)
+    [![Id パネルでの MainViewController の設定](images/identity-panel.png)](images/identity-panel.png#lightbox)
 
 5. もう一度ライブラリを使用して、ビューコントローラーを画面にドラッグします。 これはルートビューコントローラーとして設定されます。 Ctrl キーを押しながら、左側のナビゲーションコントローラーから右に新しく追加されたビューコントローラーをクリックしてドラッグし、メニューの [*ルートビューコントローラー* ] をクリックします。
 
-    [![](images/add-view-controller.png "Adding a NavigationController from the Library and setting the MainViewController as a Root View Controller")](images/add-view-controller.png#lightbox)
+    [![ライブラリから NavigationController を追加し、ルートビューコントローラーとして MainViewController を設定する](images/add-view-controller.png)](images/add-view-controller.png#lightbox)
 
 6. このアプリは別のビューに移動します。そのため、前と同様に、ストーリーボードにもう1つビューを追加します。 これをと呼び `PinkViewController` ます。これらの値は、と同じ方法で設定でき `MainViewController` ます。
 
-    [![](images/add-additional-view-controller.png "Adding an additional View Controller")](images/add-additional-view-controller.png#lightbox)
+    [![追加のビューコントローラーの追加](images/add-additional-view-controller.png)](images/add-additional-view-controller.png#lightbox)
 
 7. ビューコントローラーはピンク色で表示されるため、の横にあるドロップダウンを使用して、[属性] パネルでそのプロパティを設定でき `Background` ます。
 
-    [![](images/set-pink-background.png "Adding an additional View Controller")](images/set-pink-background.png#lightbox)
+    [![追加のビューコントローラーの追加](images/set-pink-background.png)](images/set-pink-background.png#lightbox)
 
 8. がに移動するようにするため、前者には `MainViewController` `PinkViewController` と対話するためのボタンが必要です。 ライブラリを使用して、にボタンを追加でき `MainViewController` ます。
 
-    [![](images/add-button.png "Adding a Button to the MainViewController")](images/add-button.png#lightbox)
+    [![MainViewController にボタンを追加する](images/add-button.png)](images/add-button.png#lightbox)
 
 ストーリーボードは完了しましたが、ここでプロジェクトをデプロイすると、空の画面が表示されます。 それは、ストーリーボードを使用するように IDE に指示する必要があり、最初のビューとして機能するようにルートビューコントローラーを設定する必要があるためです。 通常、これは、上記のように、プロジェクトオプションを使用して行うことができます。 ただし、この例では、次のコードを**Appdelegate**に追加することにより、同じ結果が得られます。
 
@@ -302,7 +302,7 @@ public partial class MainViewController : UIViewController
 
 アプリケーションを実行すると、2画面アプリケーションが生成されます。
 
-![](images/finishedstoryboard.png "Sample app run screens")
+![サンプルアプリの実行画面](images/finishedstoryboard.png)
 
 ## <a name="conditional-segues"></a>条件付きセグエ
 
@@ -324,13 +324,13 @@ public partial class MainViewController : UIViewController
         - 行: 2
         - ' Hidden ' チェックボックスがオンにされました    
 
-    [![](images/passwordvc.png "Center Lines")](images/passwordvc.png#lightbox)
+    [![中心線](images/passwordvc.png)](images/passwordvc.png#lightbox)
 
 2. [ピンクに移動] ボタンと [ビューコントローラー] の間のセグエを作成するには、[ *Pinkbutton* ] から [ *Pinkviewcontroller*] に移動し、[マウスの**プッシュ**] を選択します。
 
 3. セグエをクリックして、*識別子*を指定し `SegueToPink` ます。
 
-    [![](images/namesegue.png "Click on the Segue and give it the Identifier SegueToPink")](images/namesegue.png#lightbox)  
+    [![セグエをクリックし、Id を SegueToPink に指定します。](images/namesegue.png)](images/namesegue.png#lightbox)  
 
 4. 最後に、次の ShouldPerformSegue メソッドをクラスに追加し `MainViewController` ます。
 
@@ -374,29 +374,29 @@ public partial class MainViewController : UIViewController
 
 1. **ソリューションエクスプローラー**で、プロジェクト名を右クリックし、[新しいファイルの**追加**  >  **...**  >  ] を選択します。**iOS**  > **ストーリーボード**。 新しいストーリーボードの**名前**を入力し、[**新規**] ボタンをクリックします。
 
-    [![](images/ref01.png "The New File Dialog")](images/ref01.png#lightbox)
+    [![[新しいファイル] ダイアログ](images/ref01.png)](images/ref01.png#lightbox)
 
 2. 通常どおりに新しいストーリーボードのシーンのレイアウトをデザインし、変更を保存します。
 
-    [![](images/ref02.png "The layout of the new scene")](images/ref02.png#lightbox)
+    [![新しいシーンのレイアウト](images/ref02.png)](images/ref02.png#lightbox)
 
 3. IOS Designer で、参照を追加するストーリーボードを開きます。
 
 4. **ツールボックス**からデザインサーフェイスに**ストーリーボード参照**をドラッグします。
 
-    [![](images/ref03.png "A Storyboard Reference")](images/ref03.png#lightbox)
+    [![ストーリーボード参照](images/ref03.png)](images/ref03.png#lightbox)
 
 5. **プロパティエクスプローラー**の [**ウィジェット**] タブで、上で作成した**ストーリーボード**の名前を選択します。
 
-    [![](images/ref04.png "The Widget tab")](images/ref04.png#lightbox)
+    [![[ウィジェット] タブ](images/ref04.png)](images/ref04.png#lightbox)
 
 6. 既存のシーンの UI ウィジェット (ボタンなど) を制御し、先ほど作成した**ストーリーボード参照**に新しいセグエを作成します。
 
-    [![](images/ref05.png "Creating a segue")](images/ref05.png#lightbox)
+    [![セグエの作成](images/ref05.png)](images/ref05.png#lightbox)
 
 7. ポップアップメニューから [**表示**] を選択して、セグエを完了します。
 
-    [![](images/ref06.png "Selecting Show to complete the Segue")](images/ref06.png#lightbox)
+    [![[表示] を選択してセグエを完了する](images/ref06.png)](images/ref06.png#lightbox)
 
 8. ストーリーボードへの変更を保存します。
 
@@ -412,29 +412,29 @@ public partial class MainViewController : UIViewController
 
 2. 次のように、新しいシーンを追加し、そのレイアウトをデザインします。
 
-    [![](images/ref07.png "The new scene layout")](images/ref07.png#lightbox)
+    [![新しいシーンレイアウト](images/ref07.png)](images/ref07.png#lightbox)
 
 3. **プロパティエクスプローラー**の [**ウィジェット**] タブで、新しいシーンのビューコントローラーの**ストーリーボード ID**を入力します。
 
-    [![](images/ref08.png "Enter a Storyboard ID for the new Scenes View Controller")](images/ref08.png#lightbox)
+    [![新しいシーンビューコントローラーのストーリーボード ID を入力してください](images/ref08.png)](images/ref08.png#lightbox)
 
 4. IOS Designer で、参照を追加するストーリーボードを開きます。
 
 5. **ツールボックス**からデザインサーフェイスに**ストーリーボード参照**をドラッグします。
 
-    [![](images/ref03.png "A Storyboard Reference")](images/ref03.png#lightbox)
+    [![ストーリーボード参照](images/ref03.png)](images/ref03.png#lightbox)
 
 6. **プロパティエクスプローラー**の [**ウィジェット**] タブで、前の手順で作成したシーンの**ストーリーボード**の名前と**参照 ID** (ストーリーボード id) を選択します。
 
-    [![](images/ref09.png "The Widget tab ")](images/ref09.png#lightbox)
+    [![[ウィジェット] タブ](images/ref09.png)](images/ref09.png#lightbox)
 
 7. 既存のシーンの UI ウィジェット (ボタンなど) を制御し、先ほど作成した**ストーリーボード参照**に新しいセグエを作成します。
 
-    [![](images/ref10.png "Creating a segue")](images/ref10.png#lightbox)
+    [![セグエの作成](images/ref10.png)](images/ref10.png#lightbox)
 
 8. ポップアップメニューから [**表示**] を選択して、セグエを完了します。
 
-    [![](images/ref06.png "Selecting Show to complete the Segue")](images/ref06.png#lightbox)
+    [![[表示] を選択してセグエを完了する](images/ref06.png)](images/ref06.png#lightbox)
 
 9. ストーリーボードへの変更を保存します。
 
@@ -450,27 +450,27 @@ public partial class MainViewController : UIViewController
 
 2. 次のように、新しいシーンを追加し、そのレイアウトをデザインします。
 
-    [![](images/ref11.png "The new scene layout")](images/ref11.png#lightbox)
+    [![新しいシーンレイアウト](images/ref11.png)](images/ref11.png#lightbox)
 
 3. **プロパティエクスプローラー**の [**ウィジェット**] タブで、新しいシーンのビューコントローラーの**ストーリーボード ID**を入力します。
 
-    [![](images/ref12.png "The Widget tab")](images/ref12.png#lightbox)
+    [![[ウィジェット] タブ](images/ref12.png)](images/ref12.png#lightbox)
 
 4. **ツールボックス**からデザインサーフェイスに**ストーリーボード参照**をドラッグします。
 
-   [![](images/ref03.png "A Storyboard Reference")](images/ref03.png#lightbox)
+   [![ストーリーボード参照](images/ref03.png)](images/ref03.png#lightbox)
 
 5. **プロパティエクスプローラー**の [**ウィジェット**] タブで、前の手順で作成したシーンの [**参照 ID** (ストーリーボード id)] を選択します。
 
-    [![](images/ref13.png "The Widget tab")](images/ref13.png#lightbox)
+    [![[ウィジェット] タブ](images/ref13.png)](images/ref13.png#lightbox)
 
 6. 既存のシーンの UI ウィジェット (ボタンなど) を制御し、先ほど作成した**ストーリーボード参照**に新しいセグエを作成します。
 
-    [![](images/ref14.png "Creating a segue")](images/ref14.png#lightbox)
+    [![セグエの作成](images/ref14.png)](images/ref14.png#lightbox)
 
 7. ポップアップメニューから [**表示**] を選択して、セグエを完了します。
 
-    [![](images/ref06.png "Selecting Show to complete the Segue")](images/ref06.png#lightbox)
+    [![[表示] を選択してセグエを完了する](images/ref06.png)](images/ref06.png#lightbox)
 
 8. ストーリーボードへの変更を保存します。
 

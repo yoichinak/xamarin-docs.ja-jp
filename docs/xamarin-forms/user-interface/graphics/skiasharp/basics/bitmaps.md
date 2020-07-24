@@ -19,7 +19,7 @@ ms.locfileid: "86937203"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>SkiaSharp でのビットマップの基礎
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _さまざまなソースからビットマップを読み込んで表示します。_
 

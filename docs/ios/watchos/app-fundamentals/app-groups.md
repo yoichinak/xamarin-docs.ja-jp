@@ -7,12 +7,12 @@ ms.assetid: 6968606B-C287-424F-A321-2492E12BC0BB
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: e117fce77e9cdc8d9e9dc8b9ed7b3aa22eca4e39
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: ee3897f14c460149e840fcea8b3fb533beeab935
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73001710"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931626"
 ---
 # <a name="working-with-watchos-app-groups-in-xamarin"></a>Xamarin での watchOS App Groups の使用
 
@@ -28,17 +28,17 @@ ms.locfileid: "73001710"
 
 ### <a name="provisioning"></a>プロビジョニング
 
-アプリグループには識別子があります。これは通常、`group.` プレフィックスを持つバンドル ID です。 たとえば、バンドル ID `com.xamarin.WatchSettings` とアプリグループ `group.com.xamarin.WatchSettings`を使用できます。
+アプリグループには識別子があります。これは通常、プレフィックスを持つバンドル ID です `group.` 。 たとえば、バンドル ID `com.xamarin.WatchSettings` とアプリグループを使用でき `group.com.xamarin.WatchSettings` ます。
 
-[![](app-groups-images/app-group-sml.png "Use the Bundle ID com.xamarin.WatchSettings and the app group   group.com.xamarin.WatchSettings")](app-groups-images/app-group.png#lightbox)
+[![バンドル ID WatchSettings とアプリグループ WatchSettings を使用します。この場合、](app-groups-images/app-group-sml.png)](app-groups-images/app-group.png#lightbox)
 
 ### <a name="entitlementsplist"></a>Entitlements.plist
 
-プロビジョニングプロファイルを構成するだけでなく、 **[権利]** の [**アプリグループ] を有効に**し、選択した ID を入力します。
+プロビジョニングプロファイルを構成するだけでなく、[**権利**] の [**アプリグループ] を有効に**し、選択した ID を入力します。
 
-[![](app-groups-images/entitlements-sml.png "Configure the plist and enter the ID")](app-groups-images/entitlements.png#lightbox)
+[![Plist を構成して ID を入力する](app-groups-images/entitlements-sml.png)](app-groups-images/entitlements.png#lightbox)
 
-### <a name="deployment"></a>展開
+### <a name="deployment"></a>デプロイ
 
 [デプロイ](~/ios/watchos/deploy-test/index.md#App_Groups)のプロビジョニングで、アプリグループが正しく構成されていることを確認します。
 

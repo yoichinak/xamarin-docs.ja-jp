@@ -10,12 +10,12 @@ ms.date: 12/13/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c7fdecdb0ce209c88dbe9e6f4e6e6588ec4fd3fd
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: be8dd5d29aebf29395885d650fbd28082013d0d1
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139920"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929165"
 ---
 # <a name="listview-appearance"></a>ListView の外観
 
@@ -114,7 +114,7 @@ static PageTypeGroup()
 
 次のスクリーンショットは、結果として得られる UI を示しています。
 
-![](customizing-list-appearance-images/grouping-depth.png "ListView Grouping Example")
+![ListView グループ化の例](customizing-list-appearance-images/grouping-depth.png)
 
 ### <a name="customizing-grouping"></a>カスタマイズ (グループ化を)
 
@@ -163,7 +163,7 @@ ListView は、リストの要素でスクロールするヘッダーとフッ�
 
 またはを値に設定することも、 `Header` `Footer` `string` より複雑なレイアウトに設定することもできます。 また `HeaderTemplate` 、 `FooterTemplate` データバインディングをサポートするヘッダーとフッターに対してより複雑なレイアウトを作成するためのプロパティもあります。
 
-基本ヘッダー/フッターを作成するには、表示するテキストにヘッダーまたはフッターのプロパティを設定するだけです。 コード内で以下のように指定します。
+基本ヘッダー/フッターを作成するには、表示するテキストにヘッダーまたはフッターのプロパティを設定するだけです。 コードは次のとおりです。
 
 ```csharp
 ListView HeaderList = new ListView()
@@ -183,7 +183,7 @@ XAML の場合:
 </ListView>
 ```
 
-![](customizing-list-appearance-images/header-default.png "ListView with Header and Footer")
+![ヘッダーとフッターを含む ListView](customizing-list-appearance-images/header-default.png)
 
 カスタマイズしたヘッダーとフッターを作成するには、次のようにヘッダーとフッターのビューを定義します。
 
@@ -204,7 +204,7 @@ XAML の場合:
 </ListView.Footer>
 ```
 
-![](customizing-list-appearance-images/header-custom.png "ListView with Customized Header and Footer")
+![カスタマイズされたヘッダーとフッターを含む ListView](customizing-list-appearance-images/header-custom.png)
 
 ## <a name="scrollbar-visibility"></a>スクロールバーの表示
 
@@ -235,7 +235,7 @@ XAML:
 <ListView x:Name="SeparatorDemoListView" SeparatorVisibility="Default" />
 ```
 
-![](customizing-list-appearance-images/separator-default.png "ListView with Default Row Separators")
+![既定の行区切り記号を含む ListView](customizing-list-appearance-images/separator-default.png)
 
 なし: 
 
@@ -251,7 +251,7 @@ XAML:
 <ListView x:Name="SeparatorDemoListView" SeparatorVisibility="None" />
 ```
 
-![](customizing-list-appearance-images/separator-none.png "ListView without Row Separators")
+![行区切り記号を含まない ListView](customizing-list-appearance-images/separator-none.png)
 
 プロパティを使用して、区切り線の色を設定することもでき `SeparatorColor` ます。
 
@@ -267,7 +267,7 @@ XAML:
 <ListView x:Name="SeparatorDemoListView" SeparatorColor="Green" />
 ```
 
-![](customizing-list-appearance-images/separator-custom.png "ListView with Green Row Separators")
+![緑色の行区切り記号を含む ListView](customizing-list-appearance-images/separator-custom.png)
 
 > [!NOTE]
 > の読み込み後に Android でこれらのプロパティのいずれかを設定すると、 `ListView` パフォーマンスが大幅に低下します。
@@ -295,7 +295,7 @@ XAML:
 <ListView x:Name="RowHeightDemoListView" RowHeight="100" />
 ```
 
-![](customizing-list-appearance-images/height-custom.png "ListView with Fixed Row Height")
+![行の高さが固定される ListView](customizing-list-appearance-images/height-custom.png)
 
 ### <a name="uneven-rows"></a>不均等の行
 
@@ -313,7 +313,7 @@ XAML:
 <ListView x:Name="RowHeightDemoListView" HasUnevenRows="true" />
 ```
 
-![](customizing-list-appearance-images/height-uneven.png "ListView with Uneven Rows")
+![不均等な行を含む ListView](customizing-list-appearance-images/height-uneven.png)
 
 ### <a name="resize-rows-at-runtime"></a>実行時に行のサイズを変更する
 
@@ -334,7 +334,7 @@ void OnImageTapped (object sender, EventArgs args)
 
 `OnImageTapped`イベントハンドラーは、タップされるセル内のに対する応答として実行され、 [`Image`](xref:Xamarin.Forms.Image) セルに表示されるのサイズを大きくして、簡単に `Image` 表示できるようにします。
 
-![](customizing-list-appearance-images/dynamic-row-resizing.png "ListView with Runtime Row Resizing")
+![ランタイム行のサイズ変更による ListView](customizing-list-appearance-images/dynamic-row-resizing.png)
 
 > [!WARNING]
 > ランタイム行のサイズ変更が過剰になると、パフォーマンスが低下する可能性があります。

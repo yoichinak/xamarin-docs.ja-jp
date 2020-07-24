@@ -10,12 +10,12 @@ ms.date: 04/14/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3706139a2c15d01af67203c2bd09b281de80ed52
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 855fde62483dcbc6f8769e7a8eb66d84aadfe1da
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140206"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934980"
 ---
 # <a name="3d-rotations-in-skiasharp"></a>SkiaSharp の3D 回転
 
@@ -25,7 +25,7 @@ _非アフィン変換を使用して、3D 空間内の2D オブジェクトを�
 
 非アフィン変換の一般的なアプリケーションの1つは、3D 空間における2D オブジェクトの回転をシミュレートすることです。
 
-![](3d-rotation-images/3drotationsexample.png "A text string rotated in 3D space")
+![3D 空間で回転したテキスト文字列](3d-rotation-images/3drotationsexample.png)
 
 このジョブでは、3次元の回転を操作した後、これらの3D 回転を実行する非アフィン変換を派生させ `SKMatrix` ます。
 
@@ -412,7 +412,7 @@ public partial class Rotation3DPage : ContentPage
 
 4番目のスライダーを使用して実験すると、異なる深度設定によってオブジェクトがビューアーからさらに移動されるのではなく、パースペクティブ効果の範囲が変更されることがわかります。
 
-[![](3d-rotation-images/rotation3d-small.png "Triple screenshot of the Rotation 3D page")](3d-rotation-images/rotation3d-large.png#lightbox "Triple screenshot of the Rotation 3D page")
+[![回転3D ページのトリプルスクリーンショット](3d-rotation-images/rotation3d-small.png)](3d-rotation-images/rotation3d-large.png#lightbox "回転3D ページのトリプルスクリーンショット")
 
 **アニメーションの回転 3d**では、を使用して、 `SKMatrix44` 3d 空間のテキスト文字列をアニメーション化することもできます。 `textPaint`フィールドとして設定されたオブジェクトは、テキストの境界を決定するためにコンストラクターで使用されます。
 
@@ -536,7 +536,7 @@ public class AnimatedRotation3DPage : ContentPage
 
 この3D 回転は、回転の中心を画面の中央に移動し、テキスト文字列のサイズを拡大して画面と同じ幅にするために、いくつかの2D 変換で囲まれています。
 
-[![](3d-rotation-images/animatedrotation3d-small.png "Triple screenshot of the Animated Rotation 3D page")](3d-rotation-images/animatedrotation3d-large.png#lightbox "Triple screenshot of the Animated Rotation 3D page")
+[![アニメーション化された回転3D ページのトリプルスクリーンショット](3d-rotation-images/animatedrotation3d-small.png)](3d-rotation-images/animatedrotation3d-large.png#lightbox "アニメーション化された回転3D ページのトリプルスクリーンショット")
 
 ## <a name="related-links"></a>関連リンク
 

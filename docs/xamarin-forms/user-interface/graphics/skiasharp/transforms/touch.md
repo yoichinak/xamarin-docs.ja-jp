@@ -10,12 +10,12 @@ ms.date: 09/14/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f5738f376e2a814ef1af455178c2e68135184402
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 6de2caf95d4ce983f7e97e0bc017932df534aedb
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140167"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931860"
 ---
 # <a name="touch-manipulations"></a>タッチ操作
 
@@ -25,7 +25,7 @@ _マトリックス変換を使用してタッチドラッグ、ピンチ、お�
 
 モバイルデバイス上のようなマルチタッチ環境では、ユーザーが指を使用して画面上のオブジェクトを操作することがよくあります。 ワンフィンガードラッグや2つの指によるピンチ操作などの一般的なジェスチャでは、オブジェクトの移動や拡大、または回転が可能です。 これらのジェスチャは、一般に変換行列を使用して実装されます。この記事では、その方法について説明します。
 
-![](touch-images/touchmanipulationsexample.png "A bitmap subjected to translation, scaling, and rotation")
+![平行移動、拡大縮小、および回転に影響を受けるビットマップ](touch-images/touchmanipulationsexample.png)
 
 ここに示されているすべてのサンプルでは、 Xamarin.Forms 「[**効果からのイベントの呼び出し**](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)」に示されているタッチトラッキング効果を使用します。
 
@@ -920,7 +920,7 @@ public partial class TouchManipulationPage : ContentPage
 
 この `PaintSurface` ハンドラーは、累積し `MatrixDisplay` たタッチ行列を示すオブジェクトを表示して終了します。
 
-[![](touch-images/touchmanipulation-small.png "Triple screenshot of the Touch Manipulation page")](touch-images/touchmanipulation-large.png#lightbox "Triple screenshot of the Touch Manipulation page")
+[![タッチ操作ページのトリプルスクリーンショット](touch-images/touchmanipulation-small.png)](touch-images/touchmanipulation-large.png#lightbox "タッチ操作ページのトリプルスクリーンショット")
 
 ## <a name="manipulating-multiple-bitmaps"></a>複数のビットマップの操作
 
@@ -1058,7 +1058,7 @@ public partial class BitmapScatterViewPage : ContentPage
 
 このコードはコレクションをループ処理し、コレクションの先頭から末尾までのビットマップの束を表示します。
 
-[![](touch-images/bitmapscatterview-small.png "Triple screenshot of the Bitmap Scatter View page")](touch-images/bitmapscatterview-large.png#lightbox "Triple screenshot of the Bitmap Scatter View page")
+[![ビットマップ散布図ビューページのトリプルスクリーンショット](touch-images/bitmapscatterview-small.png)](touch-images/bitmapscatterview-large.png#lightbox "ビットマップ散布図ビューページのトリプルスクリーンショット")
 
 ## <a name="single-finger-scaling"></a>1本指によるスケーリング
 
