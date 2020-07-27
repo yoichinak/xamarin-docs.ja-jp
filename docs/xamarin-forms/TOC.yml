@@ -1,1023 +1,1021 @@
-- name: Xamarin.Forms
-  href: index.yml
-  items:
-    - name: はじめに
-      href: ~/get-started/index.yml
-      items:
-        - name: Xamarin.Forms とは
-          href: ~/get-started/what-is-xamarin-forms.md
-        - name: インストール
-          href: ~/get-started/installation/index.md
-          items:
-            - name: Windows での Xamarin のインストール
-              href: ~/get-started/installation/windows.md
-              items:
-                - name: Xamarin のインストールのプレビュー (Windows)
-                  href: ~/get-started/installation/windows-preview.md
-                - name: Visual Studio からの Xamarin のアンインストール
-                  href: ~/get-started/installation/uninstalling-xamarin.md
-            - name: Visual Studio for Mac のインストール
-              href: /visualstudio/mac/installation/
-              items:
-                - name: Xamarin のインストールのプレビュー (Mac)
-                  href: /visualstudio/mac/update/
-                - name: Visual Studio for Mac のアンインストール
-                  href: /visualstudio/mac/uninstall
-            - name: Xamarin ファイアウォールの構成手順
-              href: ~/get-started/installation/firewall.md
-        - name: サポートされているプラットフォーム
-          href: ~/get-started/supported-platforms.md
-        - name: 最初のアプリ
-          href: ~/get-started/first-app/index.md
-        - name: クイックスタート
-          href: ~/get-started/quickstarts/index.md
-          items:
-            - name: ファイル > 新規
-              href: ~/get-started/quickstarts/single-page.md
-            - name: マルチページ
-              href: ~/get-started/quickstarts/multi-page.md
-            - name: データベース
-              href: ~/get-started/quickstarts/database.md
-            - name: スタイル
-              href: ~/get-started/quickstarts/styling.md
-            - name: Deep Dive
-              href: ~/get-started/quickstarts/deepdive.md
-        - name: チュートリアル
-          href: ~/get-started/tutorials/index.yml
-          items:
-            - name: スタック レイアウト
-              href: ~/get-started/tutorials/stacklayout/index.yml
-            - name: ラベル
-              href: ~/get-started/tutorials/label/index.yml
-            - name: Button
-              href: ~/get-started/tutorials/button/index.yml
-            - name: テキスト入力
-              href: ~/get-started/tutorials/entry/index.yml
-            - name: テキスト エディター
-              href: ~/get-started/tutorials/editor/index.yml
-            - name: イメージ
-              href: ~/get-started/tutorials/image/index.yml
-            - name: Grid レイアウト
-              href: ~/get-started/tutorials/grid/index.yml
-            - name: 表示内容
-              href: ~/get-started/tutorials/listview/index.yml
-            - name: ポップアップ
-              href: ~/get-started/tutorials/pop-ups/index.yml
-            - name: アプリのライフサイクル
-              href: ~/get-started/tutorials/app-lifecycle/index.yml
-            - name: ローカル データベース
-              href: ~/get-started/tutorials/local-database/index.yml
-            - name: Web サービス
-              href: ~/get-started/tutorials/web-service/index.yml
-        - name: Xamarin について学習する
-          items:
-            - name: .NET 開発者
-              href: ~/cross-platform/desktop/index.md
-            - name: Java 開発者
-              href: ~/android/get-started/java-developers.md
-            - name: Objective-C 開発者
-              href: ~/ios/get-started/objective-c-developers/index.md
-            - name: Azure
-              href: ~/xamarin-forms/data-cloud/index.yml
-        - name: 開発ガイダンス
-          href: ~/cross-platform/index.yml
-    - name: XAML
-      items:
-        - name: 概要
-          href: xaml/index.yml
-        - name: XAML の基礎
-          href: xaml/xaml-basics/index.md
-          items:
-            - name: 第 1 部 XAML の使用を開始する
-              href: xaml/xaml-basics/get-started-with-xaml.md
-            - name: 第 2 部 基本的な XAML 構文
-              href: xaml/xaml-basics/essential-xaml-syntax.md
-            - name: 第 3 部 XAML マークアップ拡張
-              href: xaml/xaml-basics/xaml-markup-extensions.md
-            - name: 第 4 部 データ バインディングの基礎
-              href: xaml/xaml-basics/data-binding-basics.md
-            - name: 第 5 部 データ バインディングから MVVM まで
-              href: xaml/xaml-basics/data-bindings-to-mvvm.md
-        - name: XAML コントロール
-          href: xaml/xaml-controls.md
-        - name: XAML のコンパイル
-          href: xaml/xamlc.md
-        - name: XAML マークアップ拡張
-          href: xaml/markup-extensions/index.md
-          items:
-            - name: XAML マークアップ拡張の使用
-              href: xaml/markup-extensions/consuming.md
-            - name: XAML マークアップ拡張の作成
-              href: xaml/markup-extensions/creating.md
-        - name: ツール
-          items:
-            - name: XAML ホット リロード
-              href: xaml/hot-reload.md
-            - name: XAML ツールボックス
-              href: xaml/toolbox.md
-            - name: XAML プレビューアー
-              href: xaml/xaml-previewer/index.md
-              items:
-                - name: デザイン時のデータ
-                  href: xaml/xaml-previewer/design-time-data.md
-                - name: カスタム コントロール
-                  href: xaml/xaml-previewer/render-custom-controls.md
-        - name: 名前空間
-          items:
-            - name: XAML 名前空間
-              href: xaml/namespaces.md
-            - name: XAML カスタム名前空間スキーマ
-              href: xaml/custom-namespace-schemas.md
-            - name: XAML 名前空間で推奨されるプレフィックス
-              href: xaml/custom-prefix.md
-        - name: その他の機能
-          items:
-            - name: 連結可能プロパティ
-              href: xaml/bindable-properties.md
-            - name: アタッチされるプロパティ
-              href: xaml/attached-properties.md
-            - name: リソース ディクショナリ
-              href: xaml/resource-dictionaries.md
-            - name: 引数の受け渡し
-              href: xaml/passing-arguments.md
-            - name: ジェネリック
-              href: xaml/generics.md
-            - name: フィールド修飾子
-              href: xaml/field-modifiers.md
-            - name: 実行時の XAML の読み込み
-              href: xaml/runtime-load.md
-    - name: アプリケーションの基礎
-      items:
-        - name: 概要
-          href: app-fundamentals/index.yml
-        - name: ユーザー補助
-          href: app-fundamentals/accessibility/index.md
-          items:
-            - name: オートメーションのプロパティ
-              href: app-fundamentals/accessibility/automation-properties.md
-            - name: キーボード アクセシビリティ
-              href: app-fundamentals/accessibility/keyboard.md
-        - name: App クラス
-          href: app-fundamentals/application-class.md
-        - name: アプリのライフサイクル
-          href: app-fundamentals/app-lifecycle.md
-        - name: アプリケーション インデックス作成とディープ リンクの設定
-          href: app-fundamentals/deep-linking.md
-        - name: ビヘイビアー
-          href: app-fundamentals/behaviors/index.md
-          items:
-            - name: はじめに
-              href: app-fundamentals/behaviors/introduction.md
-            - name: アタッチされたビヘイビアー
-              href: app-fundamentals/behaviors/attached.md
-            - name: Xamarin.Forms のビヘイビアー
-              href: app-fundamentals/behaviors/creating.md
-            - name: 再利用可能なビヘイビアー
-              href: app-fundamentals/behaviors/reusable/index.md
-              items:
-                - name: EffectBehavior
-                  href: app-fundamentals/behaviors/reusable/effect-behavior.md
-                - name: EventToCommandBehavior
-                  href: app-fundamentals/behaviors/reusable/event-to-command-behavior.md
-        - name: カスタム レンダラー
-          href: app-fundamentals/custom-renderer/index.md
-          items:
-            - name: はじめに
-              href: app-fundamentals/custom-renderer/introduction.md
-            - name: レンダラーの基本クラスおよびネイティブ コントロール
-              href: app-fundamentals/custom-renderer/renderers.md
-            - name: Entry のカスタマイズ
-              href: app-fundamentals/custom-renderer/entry.md
-            - name: ContentPage のカスタマイズ
-              href: app-fundamentals/custom-renderer/contentpage.md
-            - name: マップ ピンのカスタマイズ
-              href: app-fundamentals/custom-renderer/map-pin.md
-            - name: ListView のカスタマイズ
-              href: app-fundamentals/custom-renderer/listview.md
-            - name: ViewCell のカスタマイズ
-              href: app-fundamentals/custom-renderer/viewcell.md
-            - name: WebView のカスタマイズ
-              href: app-fundamentals/custom-renderer/hybridwebview.md
-            - name: ページの実装
-              href: app-fundamentals/custom-renderer/view.md
-            - name: ビデオ プレーヤーの実装
-              href: app-fundamentals/custom-renderer/video-player/index.md
-              items:
-                - name: プラットフォーム ビデオ プレーヤーの作成
-                  href: app-fundamentals/custom-renderer/video-player/player-creation.md
-                - name: Web ビデオの再生
-                  href: app-fundamentals/custom-renderer/video-player/web-videos.md
-                - name: プレーヤーへのビデオ ソースのバインド
-                  href: app-fundamentals/custom-renderer/video-player/source-bindings.md
-                - name: アプリケーション リソース ビデオの読み込み
-                  href: app-fundamentals/custom-renderer/video-player/loading-resources.md
-                - name: デバイスのビデオ ライブラリへのアクセス
-                  href: app-fundamentals/custom-renderer/video-player/accessing-library.md
-                - name: カスタムのビデオ トランスポート コントロール
-                  href: app-fundamentals/custom-renderer/video-player/custom-transport.md
-                - name: ビデオのカスタム位置
-                  href: app-fundamentals/custom-renderer/video-player/custom-positioning.md
-        - name: データ バインディング
-          href: app-fundamentals/data-binding/index.md
-          items:
-            - name: 基本的なバインド
-              href: app-fundamentals/data-binding/basic-bindings.md
-            - name: バインド モード
-              href: app-fundamentals/data-binding/binding-mode.md
-            - name: 文字列の形式設定
-              href: app-fundamentals/data-binding/string-formatting.md
-            - name: バインド パス
-              href: app-fundamentals/data-binding/binding-path.md
-            - name: 値コンバーターのバインド
-              href: app-fundamentals/data-binding/converters.md
-            - name: 相対的なバインディング
-              href: app-fundamentals/data-binding/relative-bindings.md
-            - name: フォールバックのバインド
-              href: app-fundamentals/data-binding/binding-fallbacks.md
-            - name: 複数バインド
-              href: app-fundamentals/data-binding/multibinding.md
-            - name: コマンド インターフェイス
-              href: app-fundamentals/data-binding/commanding.md
-            - name: コンパイル済みのバインド
-              href: app-fundamentals/data-binding/compiled-bindings.md
-        - name: DependencyService
-          href: app-fundamentals/dependency-service/index.md
-          items:
-            - name: はじめに
-              href: app-fundamentals/dependency-service/introduction.md
-            - name: 登録と解決
-              href: app-fundamentals/dependency-service/registration-and-resolution.md
-            - name: フォト ライブラリから選択
-              href: app-fundamentals/dependency-service/photo-picker.md
-        - name: デュアル画面
-          href: app-fundamentals/dual-screen/index.md
-          items:
-            - name: デュアル画面のパターン
-              href: app-fundamentals/dual-screen/design-patterns.md
-            - name: デュアル画面のレイアウト
-              href: app-fundamentals/dual-screen/twopaneview.md
-            - name: デュアル画面のデバイスの機能
-              href: app-fundamentals/dual-screen/dual-screen-info.md
-            - name: デュアル画面のプラットフォーム ヘルパー
-              href: app-fundamentals/dual-screen/dual-screen-helper.md
-            - name: デュアル画面のトリガー
-              href: app-fundamentals/dual-screen/triggers.md
-        - name: エフェクト
-          href: app-fundamentals/effects/index.md
-          items:
-            - name: はじめに
-              href: app-fundamentals/effects/introduction.md
-            - name: エフェクトの作成
-              href: app-fundamentals/effects/creating.md
-            - name: パラメーターの引き渡し
-              href: app-fundamentals/effects/passing-parameters/index.md
-              items:
-                - name: CLR プロパティとしてのパラメーター
-                  href: app-fundamentals/effects/passing-parameters/clr-properties.md
-                - name: 添付プロパティとしてのパラメーター
-                  href: app-fundamentals/effects/passing-parameters/attached-properties.md
-            - name: イベントの呼び出し
-              href: app-fundamentals/effects/touch-tracking.md
-            - name: 再利用可能な RoundEffect
-              href: app-fundamentals/effects/reusable-roundeffect.md
-        - name: ジェスチャ
-          href: app-fundamentals/gestures/index.md
-          items:
-            - name: タップ
-              href: app-fundamentals/gestures/tap.md
-            - name: ピンチ
-              href: app-fundamentals/gestures/pinch.md
-            - name: パン
-              href: app-fundamentals/gestures/pan.md
-            - name: スワイプ
-              href: app-fundamentals/gestures/swipe.md
-        - name: ローカル通知
-          href: app-fundamentals/local-notifications.md
-        - name: ローカリゼーション
-          href: app-fundamentals/localization/index.md
-          items:
-            - name: 文字列とイメージのローカライズ
-              href: app-fundamentals/localization/text.md
-            - name: 右から左へのローカライズ
-              href: app-fundamentals/localization/right-to-left.md
-        - name: MessagingCenter
-          href: app-fundamentals/messaging-center.md
-        - name: ナビゲーション
-          href: app-fundamentals/navigation/index.md
-          items:
-            - name: 階層ナビゲーション
-              href: app-fundamentals/navigation/hierarchical.md
-            - name: TabbedPage
-              href: app-fundamentals/navigation/tabbed-page.md
-            - name: CarouselPage
-              href: app-fundamentals/navigation/carousel-page.md
-            - name: MasterDetailPage
-              href: app-fundamentals/navigation/master-detail-page.md
-            - name: モーダル ページ
-              href: app-fundamentals/navigation/modal.md
-        - name: Shell
-          href: app-fundamentals/shell/index.md
-          items:
-            - name: はじめに
-              href: app-fundamentals/shell/introduction.md
-            - name: シェル アプリケーションを作成する
-              href: app-fundamentals/shell/create.md
-            - name: ポップアップ
-              href: app-fundamentals/shell/flyout.md
-            - name: タブ
-              href: app-fundamentals/shell/tabs.md
-            - name: ページの構成
-              href: app-fundamentals/shell/configuration.md
-            - name: ナビゲーション
-              href: app-fundamentals/shell/navigation.md
-            - name: 検索
-              href: app-fundamentals/shell/search.md
-            - name: ライフサイクル
-              href: app-fundamentals/shell/lifecycle.md
-            - name: カスタム レンダラー
-              href: app-fundamentals/shell/customrenderers.md
-        - name: テンプレート
-          items:
-            - name: 概要
-              href: app-fundamentals/templates/index.md
-            - name: コントロール テンプレート
-              href: app-fundamentals/templates/control-template.md
-            - name: データ テンプレート
-              href: app-fundamentals/templates/data-templates/index.md
-              items:
-                - name: はじめに
-                  href: app-fundamentals/templates/data-templates/introduction.md
-                - name: データ テンプレートの作成
-                  href: app-fundamentals/templates/data-templates/creating.md
-                - name: データ テンプレートの選択
-                  href: app-fundamentals/templates/data-templates/selector.md
-        - name: トリガー
-          href: app-fundamentals/triggers.md
-    - name: ユーザー インターフェイス
-      items:
-        - name: 概要
-          href: user-interface/index.yml
-        - name: C# のマークアップ
-          href: user-interface/csharp-markup.md
-        - name: コントロールのリファレンス
-          items:
-            - name: 概要
-              href: user-interface/controls/index.md
-            - name: Pages
-              href: user-interface/controls/pages.md
-            - name: レイアウト
-              href: user-interface/controls/layouts.md
-            - name: Views
-              href: user-interface/controls/views.md
-            - name: セル
-              href: user-interface/controls/cells.md
-            - name: 共通のプロパティ、メソッド、およびイベント
-              href: user-interface/controls/common-properties.md
-            - name: サードパーティ コントロール
-              href: user-interface/controls/thirdparty.md
-        - name: データの表示
-          items:
-            - name: BoxView
-              href: user-interface/boxview.md
-            - name: Expander
-              href: user-interface/expander.md
-            - name: Image
-              href: user-interface/images.md
-            - name: ラベル
-              href: user-interface/text/label.md
-            - name: マップ
-              items:
-                - name: 概要
-                  href: user-interface/map/index.md
-                - name: 初期化と構成
-                  href: user-interface/map/setup.md
-                - name: マップ コントロール
-                  href: user-interface/map/map.md
-                - name: 位置と距離
-                  href: user-interface/map/position-distance.md
-                - name: ピン
-                  href: user-interface/map/pins.md
-                - name: 多角形、ポリライン、円
-                  href: user-interface/map/polygons.md
-                - name: ジオコーディング
-                  href: user-interface/map/geocoder.md
-                - name: ネイティブ マップ アプリを起動する
-                  href: user-interface/map/native-map-app.md
-            - name: MediaElement
-              href: user-interface/mediaelement.md
-            - name: 図形
-              items:
-                - name: 概要
-                  href: user-interface/shapes/index.md
-                - name: Ellipse
-                  href: user-interface/shapes/ellipse.md
-                - name: ルールの入力
-                  href: user-interface/shapes/fillrules.md
-                - name: ジオメトリ
-                  href: user-interface/shapes/geometries.md
-                - name: 行
-                  href: user-interface/shapes/line.md
-                - name: パス
-                  items:
-                    - name: パス
-                      href: user-interface/shapes/path.md
-                    - name: パス マークアップ構文
-                      href: user-interface/shapes/path-markup-syntax.md
-                    - name: パスの変換
-                      href: user-interface/shapes/path-transforms.md
-                - name: 多角形
-                  href: user-interface/shapes/polygon.md
-                - name: ポリライン
-                  href: user-interface/shapes/polyline.md
-                - name: Rectangle
-                  href: user-interface/shapes/rectangle.md
-            - name: WebView
-              href: user-interface/webview.md
-        - name: コマンドの開始
-          items:
-            - name: Button
-              href: user-interface/button.md
-            - name: ImageButton
-              href: user-interface/imagebutton.md
-            - name: RadioButton
-              href: user-interface/radiobutton.md
-            - name: RefreshView
-              href: user-interface/refreshview.md
-            - name: SearchBar
-              href: user-interface/searchbar.md
-            - name: SwipeView
-              href: user-interface/swipeview.md
-        - name: 値の設定
-          items:
-            - name: CheckBox
-              href: user-interface/checkbox.md
-            - name: DatePicker
-              href: user-interface/datepicker.md
-            - name: Slider
-              href: user-interface/slider.md
-            - name: ステッパ
-              href: user-interface/stepper.md
-            - name: Switch
-              href: user-interface/switch.md
-            - name: TimePicker
-              href: user-interface/timepicker.md
-        - name: テキストの編集
-          items:
-            - name: エディター
-              href: user-interface/text/editor.md
-            - name: 入力
-              href: user-interface/text/entry.md
-        - name: アクティビティを示す
-          items:
-            - name: ActivityIndicator
-              href: user-interface/activityindicator.md
-            - name: ProgressBar
-              href: user-interface/progressbar.md
-        - name: コレクションの表示
-          items:
-            - name: CarouselView
-              href: user-interface/carouselview/index.md
-              items:
-                - name: はじめに
-                  href: user-interface/carouselview/introduction.md
-                - name: データ
-                  href: user-interface/carouselview/populate-data.md
-                - name: レイアウト
-                  href: user-interface/carouselview/layout.md
-                - name: 相互作用
-                  href: user-interface/carouselview/interaction.md
-                - name: EmptyView
-                  href: user-interface/carouselview/emptyview.md
-                - name: スクロール
-                  href: user-interface/carouselview/scrolling.md
-            - name: CollectionView
-              href: user-interface/collectionview/index.md
-              items:
-                - name: はじめに
-                  href: user-interface/collectionview/introduction.md
-                - name: データ
-                  href: user-interface/collectionview/populate-data.md
-                - name: レイアウト
-                  href: user-interface/collectionview/layout.md
-                - name: 選択ツール
-                  href: user-interface/collectionview/selection.md
-                - name: EmptyView
-                  href: user-interface/collectionview/emptyview.md
-                - name: スクロール
-                  href: user-interface/collectionview/scrolling.md
-                - name: グループ化
-                  href: user-interface/collectionview/grouping.md
-            - name: IndicatorView
-              href: user-interface/indicatorview.md
-            - name: ListView
-              href: user-interface/listview/index.md
-              items:
-                - name: Data Sources
-                  href: user-interface/listview/data-and-databinding.md
-                - name: セルの外観
-                  href: user-interface/listview/customizing-cell-appearance.md
-                - name: リストの外観
-                  href: user-interface/listview/customizing-list-appearance.md
-                - name: 対話機能
-                  href: user-interface/listview/interactivity.md
-                - name: パフォーマンス
-                  href: user-interface/listview/performance.md
-            - name: ピッカー
-              href: user-interface/picker/index.md
-              items:
-                - name: ピッカーの ItemsSource プロパティの設定
-                  href: user-interface/picker/populating-itemssource.md
-                - name: ピッカーの項目コレクションへのデータの追加
-                  href: user-interface/picker/populating-items.md
-            - name: TableView
-              href: user-interface/tableview.md
-        - name: その他のコントロール
-          items:
-            - name: MenuItem
-              href: user-interface/menuitem.md
-            - name: ToolbarItem
-              href: user-interface/toolbaritem.md
-        - name: 概念
-          items:
-            - name: アニメーション
-              href: user-interface/animation/index.md
-              items:
-                - name: 単純なアニメーション
-                  href: user-interface/animation/simple.md
-                - name: イージング関数
-                  href: user-interface/animation/easing.md
-                - name: カスタム アニメーション
-                  href: user-interface/animation/custom.md
-            - name: 色
-              href: user-interface/colors.md
-            - name: DataPages
-              href: user-interface/datapages/index.md
-              items:
-                - name: はじめに
-                  href: user-interface/datapages/get-started.md
-                - name: コントロールのリファレンス
-                  href: user-interface/datapages/controls.md
-            - name: ポップアップの表示
-              href: user-interface/pop-ups.md
-            - name: フォント
-              href: user-interface/text/fonts.md
-            - name: SkiaSharp を使用したグラフィックス
-              href: user-interface/graphics/skiasharp/index.md
-            - name: スプラッシュ スクリーン
-              href: user-interface/splashscreen.md
-            - name: スタイル
-              href: user-interface/styles/index.md
-              items:
-                - name: XAML スタイルを使用した Xamarin.Forms アプリのスタイル設定
-                  href: user-interface/styles/xaml/index.md
-                  items:
-                    - name: はじめに
-                      href: user-interface/styles/xaml/introduction.md
-                    - name: 明示的なスタイル
-                      href: user-interface/styles/xaml/explicit.md
-                    - name: 暗黙的なスタイル
-                      href: user-interface/styles/xaml/implicit.md
-                    - name: グローバル スタイル
-                      href: user-interface/styles/xaml/application.md
-                    - name: スタイルの継承
-                      href: user-interface/styles/xaml/inheritance.md
-                    - name: 動的なスタイル
-                      href: user-interface/styles/xaml/dynamic.md
-                    - name: デバイスのスタイル
-                      href: user-interface/styles/xaml/device.md
-                    - name: スタイル クラス
-                      href: user-interface/styles/xaml/style-class.md
-                - name: カスケード スタイル シート (CSS) を使用した Xamarin.Forms アプリのスタイル設定
-                  href: user-interface/styles/css/index.md
-            - name: テーマ
-              href: user-interface/theming/index.md
-              items:
-                - name: アプリケーションのテーマを設定する
-                  href: user-interface/theming/theming.md
-                - name: システム テーマの変更に対応する
-                  href: user-interface/theming/system-theme-changes.md
-            - name: ビジュアル
-              href: user-interface/visual/index.md
-              items:
-                - name: 素材のビジュアル
-                  href: user-interface/visual/material-visual.md
-                - name: Visual Renderer の作成
-                  href: user-interface/visual/create.md
-            - name: Visual State Manager
-              href: user-interface/visual-state-manager.md
-        - name: レイアウト
-          items:
-            - name: 概要
-              href: user-interface/layouts/index.yml
-            - name: レイアウトの選択
-              href: user-interface/layouts/choose-layout.md
-            - name: コア レイアウト
-              items:
-                - name: AbsoluteLayout
-                  href: user-interface/layouts/absolute-layout.md
-                - name: FlexLayout
-                  href: user-interface/layouts/flex-layout.md
-                - name: グリッド
-                  href: user-interface/layouts/grid.md
-                - name: RelativeLayout
-                  href: user-interface/layouts/relative-layout.md
-                - name: StackLayout
-                  href: user-interface/layouts/stacklayout.md
-            - name: その他のレイアウト
-              items:
-                - name: ContentView
-                  href: user-interface/layouts/contentview.md
-                - name: フレーム
-                  href: user-interface/layouts/frame.md
-                - name: ScrollView
-                  href: user-interface/layouts/scrollview.md
-            - name: 概念
-              items:
-                - name: バインド可能なレイアウト
-                  href: user-interface/layouts/bindable-layouts.md
-                - name: カスタム レイアウト
-                  href: user-interface/layouts/custom.md
-                - name: デバイスの向き
-                  href: user-interface/layouts/device-orientation.md
-                - name: LayoutOptions
-                  href: user-interface/layouts/layout-options.md
-                - name: レイアウト圧縮
-                  href: user-interface/layouts/layout-compression.md
-                - name: 余白とスペース
-                  href: user-interface/layouts/margin-and-padding.md
-                - name: タブレットおよびデスクトップ
-                  href: user-interface/layouts/tablet.md
-    - name: プラットフォーム機能
-      items:
-        - name: 概要
-          href: platform/index.yml
-        - name: Android
-          items:
-            - name: 概要
-              href: platform/android/index.md
-            - name: AndroidX への移行
-              href: platform/android/androidx-migration.md
-            - name: AppCompat と素材の設計
-              href: platform/android/appcompat-material-design.md
-            - name: ボタンの余白とシャドウ
-              href: platform/android/button-padding-shadow.md
-            - name: エントリの入力方式のエディター オプション
-              href: platform/android/entry-ime-options.md
-            - name: ImageButton ドロップ シャドウ
-              href: platform/android/imagebutton-drop-shadow.md
-            - name: ListView 高速スクロール
-              href: platform/android/listview-fast-scrolling.md
-            - name: NavigationPage のバーの高さ
-              href: platform/android/navigationpage-bar-height.md
-            - name: ページ ライフサイクル イベント
-              href: platform/android/page-lifecycle-events.md
-            - name: ソフト キーボードの入力モード
-              href: platform/android/soft-keyboard-input-mode.md
-            - name: SwipeView スワイプ切り替えモード
-              href: platform/android/swipeview-swipetransitionmode.md
-            - name: TabbedPage ページ スワイプ
-              href: platform/android/tabbedpage-page-swiping.md
-            - name: TabbedPage ページ切り替え効果アニメーション
-              href: platform/android/tabbedpage-transition-animations.md
-            - name: TabbedPage ツールバーの配置と色
-              href: platform/android/tabbedpage-toolbar-placement-color.md
-            - name: ViewCell コンテキスト アクション
-              href: platform/android/viewcell-context-actions.md
-            - name: VisualElement の昇格
-              href: platform/android/visualelement-elevation.md
-            - name: VisualElement レガシ カラー モード
-              href: platform/android/legacy-color-mode.md
-            - name: WebView 混合コンテンツ
-              href: platform/android/webview-mixed-content.md
-            - name: WebView のズーム
-              href: platform/android/webview-zoom-controls.md
-        - name: iOS
-          items:
-            - name: 概要
-              href: platform/ios/index.md
-            - name: 名前付きフォント サイズに関するアクセシビリティのスケーリング
-              href: platform/ios/named-font-size-scaling.md
-            - name: セルの背景色
-              href: platform/ios/cell-background-color.md
-            - name: DatePicker の項目選択
-              href: platform/ios/datepicker-selection.md
-            - name: エントリのカーソルの色
-              href: platform/ios/entry-cursor-color.md
-            - name: エントリのフォント サイズ
-              href: platform/ios/entry-font-size.md
-            - name: 書式設定
-              href: platform/ios/formatting.md
-            - name: モーダル ページのプレゼンテーション スタイル
-              href: platform/ios/page-presentation-style.md
-            - name: ラージ ページ タイトル
-              href: platform/ios/page-large-title.md
-            - name: ListView グループ ヘッダーのスタイル
-              href: platform/ios/listview-group-header-style.md
-            - name: ListView の行のアニメーション
-              href: platform/ios/listview-row-animations.md
-            - name: ListView の区切り記号のスタイル
-              href: platform/ios/listview-separator-style.md
-            - name: メイン スレッドのコントロール更新
-              href: platform/ios/main-thread-updates-ui.md
-            - name: MasterDetailPage のシャドウ
-              href: platform/ios/masterdetailpage-shadow.md
-            - name: NavigationPage のバーの区切り記号
-              href: platform/ios/navigation-bar-separator.md
-            - name: NavigationPage のバーのテキストの色のモード
-              href: platform/ios/status-bar-text-color.md
-            - name: NavigationPage のバーの透明度
-              href: platform/ios/navigation-bar-translucent.md
-            - name: ページのホーム インジケーターの表示
-              href: platform/ios/page-home-indicator.md
-            - name: ページのステータス バーの表示
-              href: platform/ios/page-status-bar-visibility.md
-            - name: 選択項目の選択
-              href: platform/ios/picker-selection.md
-            - name: 安全領域レイアウト ガイド
-              href: platform/ios/page-safe-area-layout.md
-            - name: ScrollView コンテンツの仕上げ
-              href: platform/ios/scrollview-content-touches.md
-            - name: SearchBar のスタイル
-              href: platform/ios/searchbar-style.md
-            - name: 同時パン ジェスチャの認識
-              href: platform/ios/application-pan-gesture.md
-            - name: スライダーのつまみのタップ
-              href: platform/ios/slider-thumb.md
-            - name: SwipeView スワイプ切り替えモード
-              href: platform/ios/swipeview-swipetransitionmode.md
-            - name: TabbedPage の半透明タブ バー
-              href: platform/ios/tabbedpage-translucent-tabbar.md
-            - name: TimePicker の項目選択
-              href: platform/ios/timepicker-selection.md
-            - name: VisualElement ぼかし
-              href: platform/ios/visualelement-blur.md
-            - name: VisualElement ドロップ シャドウ
-              href: platform/ios/visualelement-drop-shadow.md
-            - name: VisualElement レガシ カラー モード
-              href: platform/ios/legacy-color-mode.md
-            - name: VisualElement ファースト レスポンダー
-              href: platform/ios/visualelement-first-responder.md
-        - name: Windows
-          items:
-            - name: 概要
-              href: platform/windows/index.md
-            - name: 既定の画像ディレクトリ
-              href: platform/windows/default-image-directory.md
-            - name: InputView 読み取り順序
-              href: platform/windows/inputview-reading-order.md
-            - name: ListView SelectionMode
-              href: platform/windows/listview-selectionmode.md
-            - name: MasterDetailPage ナビゲーション バー
-              href: platform/windows/masterdetailpage-navigation-bar.md
-            - name: ページのツールバーの配置
-              href: platform/windows/page-toolbar-placement.md
-            - name: プラットフォームのセットアップ
-              href: platform/windows/installation/index.md
-            - name: RefreshView のプル方向
-              href: platform/windows/refreshview-pulldirection.md
-            - name: SearchBar スペル チェック
-              href: platform/windows/searchbar-spell-check.md
-            - name: TabbedPage アイコン
-              href: platform/windows/tabbedpage-icons.md
-            - name: VisualElement アクセス キー
-              href: platform/windows/visualelement-access-keys.md
-            - name: VisualElement レガシ カラー モード
-              href: platform/windows/legacy-color-mode.md
-            - name: WebView JavaScript アラート
-              href: platform/windows/webview-javascript-alert.md
-        - name: プラットフォーム固有設定の作成
-          href: platform/platform-specifics/index.md
-        - name: デバイス クラス
-          href: platform/device.md
-        - name: ネイティブ フォーム
-          href: platform/native-forms.md
-        - name: ネイティブ ビュー
-          href: platform/native-views/index.md
-          items:
-            - name: XAML のネイティブ ビュー
-              href: platform/native-views/xaml.md
-            - name: C# のネイティブ ビュー
-              href: platform/native-views/code.md
-        - name: Apple でのサインイン
-          href: platform/sign-in-with-apple/index.md
-          items:
-            - name: iOS 用のセットアップ
-              href: ~/ios/platform/ios13/sign-in.md
-            - name: その他のプラットフォーム用のセットアップ
-              href: platform/sign-in-with-apple/setup.md
-            - name: Apple でのサインインの使用
-              href: platform/sign-in-with-apple/android-ios-sign-in.md
-        - name: その他のプラットフォーム
-          href: platform/other/index.md
-          items:
-            - name: GTK#
-              href: platform/other/gtk.md
-            - name: Mac
-              href: platform/other/mac.md
-            - name: Tizen
-              href: platform/other/tizen.md
-            - name: WPF
-              href: platform/other/wpf.md
-    - name: Xamarin.Essentials
-      href: ~/essentials/index.md?context=xamarin/xamarin-forms
-      items:
-        - name: はじめに
-          href: ~/essentials/get-started.md?context=xamarin/xamarin-forms
-        - name: プラットフォームと機能のサポート
-          href: ~/essentials/platform-feature-support.md?context=xamarin/xamarin-forms
-        - name: 加速度計
-          href: ~/essentials/accelerometer.md?context=xamarin/xamarin-forms
-        - name: アプリ情報
-          href: ~/essentials/app-information.md?context=xamarin/xamarin-forms
-        - name: アプリのテーマ
-          href: ~/essentials/app-theme.md?context=xamarin/xamarin-forms
-        - name: バロメーター
-          href: ~/essentials/barometer.md?context=xamarin/xamarin-forms
-        - name: バッテリ
-          href: ~/essentials/battery.md?context=xamarin/xamarin-forms
-        - name: クリップボードのトピック
-          href: ~/essentials/clipboard.md?context=xamarin/xamarin-forms
-        - name: 色のコンバーター
-          href: ~/essentials/color-converters.md?context=xamarin/xamarin-forms
-        - name: コンパス
-          href: ~/essentials/compass.md?context=xamarin/xamarin-forms
-        - name: 接続
-          href: ~/essentials/connectivity.md?context=xamarin/xamarin-forms
-        - name: シェイクの検出
-          href: ~/essentials/detect-shake.md?context=xamarin/xamarin-forms
-        - name: デバイス ディスプレイ情報
-          href: ~/essentials/device-display.md?context=xamarin/xamarin-forms
-        - name: デバイス情報
-          href: ~/essentials/device-information.md?context=xamarin/xamarin-forms
-        - name: 電子メール
-          href: ~/essentials/email.md?context=xamarin/xamarin-forms
-        - name: ファイル システム ヘルパー
-          href: ~/essentials/file-system-helpers.md?context=xamarin/xamarin-forms
-        - name: 懐中電灯
-          href: ~/essentials/flashlight.md?context=xamarin/xamarin-forms
-        - name: ジオコーディング
-          href: ~/essentials/geocoding.md?context=xamarin/xamarin-forms
-        - name: 位置情報
-          href: ~/essentials/geolocation.md?context=xamarin/xamarin-forms
-        - name: ジャイロスコープ
-          href: ~/essentials/gyroscope.md?context=xamarin/xamarin-forms
-        - name: ランチャー
-          href: ~/essentials/launcher.md?context=xamarin/xamarin-forms
-        - name: 磁力計
-          href: ~/essentials/magnetometer.md?context=xamarin/xamarin-forms
-        - name: メイン スレッド
-          href: ~/essentials/main-thread.md?context=xamarin/xamarin-forms
-        - name: マップ
-          href: ~/essentials/maps.md?context=xamarin/xamarin-forms
-        - name: ブラウザーを開く
-          href: ~/essentials/open-browser.md?context=xamarin/xamarin-forms
-        - name: 向きセンサー
-          href: ~/essentials/orientation-sensor.md?context=xamarin/xamarin-forms
-        - name: アクセス許可
-          href: ~/essentials/permissions.md?context=xamarin/xamarin-forms
-        - name: ダイヤラー
-          href: ~/essentials/phone-dialer.md?context=xamarin/xamarin-forms
-        - name: プラットフォームの拡張機能 (サイズ、四角形、ポイント)
-          href: ~/essentials/platform-extensions.md?context=xamarin/xamarin-forms
-        - name: Preferences
-          href: ~/essentials/preferences.md?context=xamarin/xamarin-forms
-        - name: セキュリティで保護されたストレージ
-          href: ~/essentials/secure-storage.md?context=xamarin/xamarin-forms
-        - name: 共有
-          href: ~/essentials/share.md?context=xamarin/xamarin-forms
-        - name: SMS
-          href: ~/essentials/sms.md?context=xamarin/xamarin-forms
-        - name: 音声合成
-          href: ~/essentials/text-to-speech.md?context=xamarin/xamarin-forms
-        - name: 単位コンバーター
-          href: ~/essentials/unit-converters.md?context=xamarin/xamarin-forms
-        - name: バージョンの追跡
-          href: ~/essentials/version-tracking.md?context=xamarin/xamarin-forms
-        - name: バイブレーション
-          href: ~/essentials/vibrate.md?context=xamarin/xamarin-forms
-        - name: Web Authenticator
-          href: ~/essentials/web-authenticator.md?context=xamarin/xamarin-forms
-        - name: Xamarin.Essentials のリリース ノート
-          href: 'https://docs.microsoft.com/xamarin/essentials/release-notes/'
-        - name: トラブルシューティング
-          href: ~/essentials/troubleshooting.md?context=xamarin/xamarin-forms
-    - name: データと Azure Cloud Services
-      items:
-        - name: 概要
-          href: data-cloud/index.yml
-        - name: ローカル データ ストレージ
-          items:
-            - name: 概要
-              href: data-cloud/data/index.md
-            - name: ファイル処理
-              href: data-cloud/data/files.md
-            - name: ローカル データベース
-              href: data-cloud/data/databases.md
-        - name: Azure サービス
-          items:
-            - name: Azure サービスの概要
-              href: data-cloud/azure-services/index.md
-            - name: Azure Cosmos DB ドキュメント データベース
-              href: data-cloud/azure-services/azure-cosmosdb.md
-            - name: Azure Notification Hubs
-              href: data-cloud/azure-services/azure-notification-hub.md
-            - name: Azure ストレージ
-              href: data-cloud/azure-services/azure-storage.md
-            - name: Azure Search
-              href: data-cloud/azure-services/azure-search.md
-            - name: Azure Functions
-              href: data-cloud/azure-services/azure-functions.md
-            - name: Azure SignalR Service
-              href: data-cloud/azure-services/azure-signalr.md
-        - name: Azure Cognitive Services
-          items:
-            - name: Cognitive Services の概要
-              href: data-cloud/azure-cognitive-services/index.md
-            - name: はじめに
-              href: data-cloud/azure-cognitive-services/introduction.md
-            - name: 音声認識
-              href: data-cloud/azure-cognitive-services/speech-recognition.md
-            - name: スペル チェック
-              href: data-cloud/azure-cognitive-services/spell-check.md
-            - name: テキストの変換
-              href: data-cloud/azure-cognitive-services/text-translation.md
-            - name: 認識された感情認識
-              href: data-cloud/azure-cognitive-services/emotion-recognition.md
-        - name: Web サービス
-          items:
-            - name: Web サービスの概要
-              href: data-cloud/web-services/index.md
-            - name: はじめに
-              href: data-cloud/web-services/introduction.md
-            - name: ASMX
-              href: data-cloud/web-services/asmx.md
-            - name: WCF
-              href: data-cloud/web-services/wcf.md
-            - name: REST
-              href: data-cloud/web-services/rest.md
-        - name: 認証
-          items:
-            - name: 認証の概要
-              href: data-cloud/authentication/index.md
-            - name: REST
-              href: data-cloud/authentication/rest.md
-            - name: Azure Active Directory B2C
-              href: data-cloud/authentication/azure-ad-b2c.md
-            - name: Azure Cosmos DB 認証
-              href: data-cloud/authentication/azure-cosmosdb-auth.md
-    - name: 配置とテスト
-      items:
-        - name: 概要
-          href: deploy-test/index.yml
-        - name: パフォーマンスの向上
-          href: deploy-test/performance.md
-        - name: ホット再起動
-          href: deploy-test/hot-restart.md
-        - name: Visual Studio App Center を使用したテストの自動化
-          href: /appcenter/test-cloud/uitest/get-started-xamarin-forms
-        - name: iOS アプリの発行
-          href: ~/ios/deploy-test/app-distribution/index.md
-        - name: Android アプリの発行
-          href: ~/android/deploy-test/publishing/index.md
-        - name: UWP アプリの発行
-          href: /windows/uwp/packaging/
-        - name: Mac アプリの発行
-          href: ~/mac/deploy-test/publishing-to-the-app-store/index.md
-    - name: 高度な概念と内部構造
-      items:
-        - name: 概要
-          href: internals/index.md
-        - name: コントロール クラスの階層構造
-          href: internals/class-hierarchy.md
-        - name: 依存関係の解決
-          href: internals/dependency-resolution.md
-        - name: 試験的なフラグ
-          href: internals/experimental-flags.md
-        - name: 高速レンダラー
-          href: internals/fast-renderers.md
-        - name: ソース リンク
-          href: internals/sourcelink.md
-    - name: トラブルシューティング
-      href: troubleshooting/index.md
-      items:
-        - name: よく寄せられる質問
-          href: troubleshooting/questions/index.md
-          items:
-            - name: Xamarin.Forms の既定のテンプレートを新しい NuGet パッケージに更新することはできますか。
-              href: troubleshooting/questions/update-forms-template.md
-            - name: Visual Studio XAML デザイナーが Xamarin.Forms XAML ファイルに有効でない理由を教えてください。
-              href: troubleshooting/questions/forms-xaml-designer.md
-            - name: 'Android のビルド エラー: LinkAssemblies タスクが予期せず失敗しました'
-              href: troubleshooting/questions/android-linkassemblies-error.md
-            - name: 'Xamarin.Forms.Maps Android プロジェクトが COMPILETODALVIK : UNEXPECTED TOP-LEVEL ERROR で失敗するのはなぜですか。'
-              href: troubleshooting/questions/maps-compiletodalvik-error.md
-    - name: リリース ノート
-      href: 'https://docs.microsoft.com/xamarin/xamarin-forms/release-notes/'
-    - name: サンプル
-      href: samples/index.md
-    - name: Xamarin.Forms Book で Mobile Apps を作成する
-      href: creating-mobile-apps-xamarin-forms/index.md
-    - name: エンタープライズ アプリケーション パターン電子ブック
-      href: enterprise-application-patterns/index.md
-    - name: Xamarin.Forms での SkiaSharp グラフィックス
-      href: user-interface/graphics/skiasharp/index.md
+href: index.yml
+items:
+  - name: はじめに
+    href: ~/get-started/index.yml
+    items:
+      - name: Xamarin.Forms とは
+        href: ~/get-started/what-is-xamarin-forms.md
+      - name: インストール
+        href: ~/get-started/installation/index.md
+        items:
+          - name: Windows での Xamarin のインストール
+            href: ~/get-started/installation/windows.md
+            items:
+              - name: Xamarin のインストールのプレビュー (Windows)
+                href: ~/get-started/installation/windows-preview.md
+              - name: Visual Studio からの Xamarin のアンインストール
+                href: ~/get-started/installation/uninstalling-xamarin.md
+          - name: Visual Studio for Mac のインストール
+            href: /visualstudio/mac/installation/
+            items:
+              - name: Xamarin のインストールのプレビュー (Mac)
+                href: /visualstudio/mac/update/
+              - name: Visual Studio for Mac のアンインストール
+                href: /visualstudio/mac/uninstall
+          - name: Xamarin ファイアウォールの構成手順
+            href: ~/get-started/installation/firewall.md
+      - name: サポートされているプラットフォーム
+        href: ~/get-started/supported-platforms.md
+      - name: 最初のアプリ
+        href: ~/get-started/first-app/index.md
+      - name: クイックスタート
+        href: ~/get-started/quickstarts/index.md
+        items:
+          - name: ファイル > 新規
+            href: ~/get-started/quickstarts/single-page.md
+          - name: マルチページ
+            href: ~/get-started/quickstarts/multi-page.md
+          - name: データベース
+            href: ~/get-started/quickstarts/database.md
+          - name: スタイル
+            href: ~/get-started/quickstarts/styling.md
+          - name: Deep Dive
+            href: ~/get-started/quickstarts/deepdive.md
+      - name: チュートリアル
+        href: ~/get-started/tutorials/index.yml
+        items:
+          - name: スタック レイアウト
+            href: ~/get-started/tutorials/stacklayout/index.yml
+          - name: ラベル
+            href: ~/get-started/tutorials/label/index.yml
+          - name: Button
+            href: ~/get-started/tutorials/button/index.yml
+          - name: テキスト入力
+            href: ~/get-started/tutorials/entry/index.yml
+          - name: テキスト エディター
+            href: ~/get-started/tutorials/editor/index.yml
+          - name: イメージ
+            href: ~/get-started/tutorials/image/index.yml
+          - name: Grid レイアウト
+            href: ~/get-started/tutorials/grid/index.yml
+          - name: 表示内容
+            href: ~/get-started/tutorials/listview/index.yml
+          - name: ポップアップ
+            href: ~/get-started/tutorials/pop-ups/index.yml
+          - name: アプリのライフサイクル
+            href: ~/get-started/tutorials/app-lifecycle/index.yml
+          - name: ローカル データベース
+            href: ~/get-started/tutorials/local-database/index.yml
+          - name: Web サービス
+            href: ~/get-started/tutorials/web-service/index.yml
+      - name: Xamarin について学習する
+        items:
+          - name: .NET 開発者
+            href: ~/cross-platform/desktop/index.md
+          - name: Java 開発者
+            href: ~/android/get-started/java-developers.md
+          - name: Objective-C 開発者
+            href: ~/ios/get-started/objective-c-developers/index.md
+          - name: Azure
+            href: ~/xamarin-forms/data-cloud/index.yml
+      - name: 開発ガイダンス
+        href: ~/cross-platform/index.yml
+  - name: XAML
+    items:
+      - name: 概要
+        href: xaml/index.yml
+      - name: XAML の基礎
+        href: xaml/xaml-basics/index.md
+        items:
+          - name: 第 1 部 XAML の使用を開始する
+            href: xaml/xaml-basics/get-started-with-xaml.md
+          - name: 第 2 部 基本的な XAML 構文
+            href: xaml/xaml-basics/essential-xaml-syntax.md
+          - name: 第 3 部 XAML マークアップ拡張
+            href: xaml/xaml-basics/xaml-markup-extensions.md
+          - name: 第 4 部 データ バインディングの基礎
+            href: xaml/xaml-basics/data-binding-basics.md
+          - name: 第 5 部 データ バインディングから MVVM まで
+            href: xaml/xaml-basics/data-bindings-to-mvvm.md
+      - name: XAML コントロール
+        href: xaml/xaml-controls.md
+      - name: XAML のコンパイル
+        href: xaml/xamlc.md
+      - name: XAML マークアップ拡張
+        href: xaml/markup-extensions/index.md
+        items:
+          - name: XAML マークアップ拡張の使用
+            href: xaml/markup-extensions/consuming.md
+          - name: XAML マークアップ拡張の作成
+            href: xaml/markup-extensions/creating.md
+      - name: ツール
+        items:
+          - name: XAML ホット リロード
+            href: xaml/hot-reload.md
+          - name: XAML ツールボックス
+            href: xaml/toolbox.md
+          - name: XAML プレビューアー
+            href: xaml/xaml-previewer/index.md
+            items:
+              - name: デザイン時のデータ
+                href: xaml/xaml-previewer/design-time-data.md
+              - name: カスタム コントロール
+                href: xaml/xaml-previewer/render-custom-controls.md
+      - name: 名前空間
+        items:
+          - name: XAML 名前空間
+            href: xaml/namespaces.md
+          - name: XAML カスタム名前空間スキーマ
+            href: xaml/custom-namespace-schemas.md
+          - name: XAML 名前空間で推奨されるプレフィックス
+            href: xaml/custom-prefix.md
+      - name: その他の機能
+        items:
+          - name: 連結可能プロパティ
+            href: xaml/bindable-properties.md
+          - name: アタッチされるプロパティ
+            href: xaml/attached-properties.md
+          - name: リソース ディクショナリ
+            href: xaml/resource-dictionaries.md
+          - name: 引数の受け渡し
+            href: xaml/passing-arguments.md
+          - name: ジェネリック
+            href: xaml/generics.md
+          - name: フィールド修飾子
+            href: xaml/field-modifiers.md
+          - name: 実行時の XAML の読み込み
+            href: xaml/runtime-load.md
+  - name: アプリケーションの基礎
+    items:
+      - name: 概要
+        href: app-fundamentals/index.yml
+      - name: ユーザー補助
+        href: app-fundamentals/accessibility/index.md
+        items:
+          - name: オートメーションのプロパティ
+            href: app-fundamentals/accessibility/automation-properties.md
+          - name: キーボード アクセシビリティ
+            href: app-fundamentals/accessibility/keyboard.md
+      - name: App クラス
+        href: app-fundamentals/application-class.md
+      - name: アプリのライフサイクル
+        href: app-fundamentals/app-lifecycle.md
+      - name: アプリケーション インデックス作成とディープ リンクの設定
+        href: app-fundamentals/deep-linking.md
+      - name: ビヘイビアー
+        href: app-fundamentals/behaviors/index.md
+        items:
+          - name: はじめに
+            href: app-fundamentals/behaviors/introduction.md
+          - name: アタッチされたビヘイビアー
+            href: app-fundamentals/behaviors/attached.md
+          - name: Xamarin.Forms のビヘイビアー
+            href: app-fundamentals/behaviors/creating.md
+          - name: 再利用可能なビヘイビアー
+            href: app-fundamentals/behaviors/reusable/index.md
+            items:
+              - name: EffectBehavior
+                href: app-fundamentals/behaviors/reusable/effect-behavior.md
+              - name: EventToCommandBehavior
+                href: app-fundamentals/behaviors/reusable/event-to-command-behavior.md
+      - name: カスタム レンダラー
+        href: app-fundamentals/custom-renderer/index.md
+        items:
+          - name: はじめに
+            href: app-fundamentals/custom-renderer/introduction.md
+          - name: レンダラーの基本クラスおよびネイティブ コントロール
+            href: app-fundamentals/custom-renderer/renderers.md
+          - name: Entry のカスタマイズ
+            href: app-fundamentals/custom-renderer/entry.md
+          - name: ContentPage のカスタマイズ
+            href: app-fundamentals/custom-renderer/contentpage.md
+          - name: マップ ピンのカスタマイズ
+            href: app-fundamentals/custom-renderer/map-pin.md
+          - name: ListView のカスタマイズ
+            href: app-fundamentals/custom-renderer/listview.md
+          - name: ViewCell のカスタマイズ
+            href: app-fundamentals/custom-renderer/viewcell.md
+          - name: WebView のカスタマイズ
+            href: app-fundamentals/custom-renderer/hybridwebview.md
+          - name: ページの実装
+            href: app-fundamentals/custom-renderer/view.md
+          - name: ビデオ プレーヤーの実装
+            href: app-fundamentals/custom-renderer/video-player/index.md
+            items:
+              - name: プラットフォーム ビデオ プレーヤーの作成
+                href: app-fundamentals/custom-renderer/video-player/player-creation.md
+              - name: Web ビデオの再生
+                href: app-fundamentals/custom-renderer/video-player/web-videos.md
+              - name: プレーヤーへのビデオ ソースのバインド
+                href: app-fundamentals/custom-renderer/video-player/source-bindings.md
+              - name: アプリケーション リソース ビデオの読み込み
+                href: app-fundamentals/custom-renderer/video-player/loading-resources.md
+              - name: デバイスのビデオ ライブラリへのアクセス
+                href: app-fundamentals/custom-renderer/video-player/accessing-library.md
+              - name: カスタムのビデオ トランスポート コントロール
+                href: app-fundamentals/custom-renderer/video-player/custom-transport.md
+              - name: ビデオのカスタム位置
+                href: app-fundamentals/custom-renderer/video-player/custom-positioning.md
+      - name: データ バインディング
+        href: app-fundamentals/data-binding/index.md
+        items:
+          - name: 基本的なバインド
+            href: app-fundamentals/data-binding/basic-bindings.md
+          - name: バインド モード
+            href: app-fundamentals/data-binding/binding-mode.md
+          - name: 文字列の形式設定
+            href: app-fundamentals/data-binding/string-formatting.md
+          - name: バインド パス
+            href: app-fundamentals/data-binding/binding-path.md
+          - name: 値コンバーターのバインド
+            href: app-fundamentals/data-binding/converters.md
+          - name: 相対的なバインディング
+            href: app-fundamentals/data-binding/relative-bindings.md
+          - name: フォールバックのバインド
+            href: app-fundamentals/data-binding/binding-fallbacks.md
+          - name: 複数バインド
+            href: app-fundamentals/data-binding/multibinding.md
+          - name: コマンド インターフェイス
+            href: app-fundamentals/data-binding/commanding.md
+          - name: コンパイル済みのバインド
+            href: app-fundamentals/data-binding/compiled-bindings.md
+      - name: DependencyService
+        href: app-fundamentals/dependency-service/index.md
+        items:
+          - name: はじめに
+            href: app-fundamentals/dependency-service/introduction.md
+          - name: 登録と解決
+            href: app-fundamentals/dependency-service/registration-and-resolution.md
+          - name: フォト ライブラリから選択
+            href: app-fundamentals/dependency-service/photo-picker.md
+      - name: デュアル画面
+        items:
+          - name: 作業開始
+            href: app-fundamentals/dual-screen/index.md
+          - name: デュアル画面のパターン
+            href: app-fundamentals/dual-screen/design-patterns.md
+          - name: TwoPaneView レイアウト
+            href: app-fundamentals/dual-screen/twopaneview.md
+          - name: DualScreenInfo ヘルパー クラス
+            href: app-fundamentals/dual-screen/dual-screen-info.md
+          - name: デュアル画面のトリガー
+            href: app-fundamentals/dual-screen/triggers.md
+      - name: エフェクト
+        href: app-fundamentals/effects/index.md
+        items:
+          - name: はじめに
+            href: app-fundamentals/effects/introduction.md
+          - name: エフェクトの作成
+            href: app-fundamentals/effects/creating.md
+          - name: パラメーターの引き渡し
+            href: app-fundamentals/effects/passing-parameters/index.md
+            items:
+              - name: CLR プロパティとしてのパラメーター
+                href: app-fundamentals/effects/passing-parameters/clr-properties.md
+              - name: 添付プロパティとしてのパラメーター
+                href: app-fundamentals/effects/passing-parameters/attached-properties.md
+          - name: イベントの呼び出し
+            href: app-fundamentals/effects/touch-tracking.md
+          - name: 再利用可能な RoundEffect
+            href: app-fundamentals/effects/reusable-roundeffect.md
+      - name: ジェスチャ
+        href: app-fundamentals/gestures/index.md
+        items:
+          - name: タップ
+            href: app-fundamentals/gestures/tap.md
+          - name: ピンチ
+            href: app-fundamentals/gestures/pinch.md
+          - name: パン
+            href: app-fundamentals/gestures/pan.md
+          - name: スワイプ
+            href: app-fundamentals/gestures/swipe.md
+      - name: ローカル通知
+        href: app-fundamentals/local-notifications.md
+      - name: ローカリゼーション
+        href: app-fundamentals/localization/index.md
+        items:
+          - name: 文字列とイメージのローカライズ
+            href: app-fundamentals/localization/text.md
+          - name: 右から左へのローカライズ
+            href: app-fundamentals/localization/right-to-left.md
+      - name: MessagingCenter
+        href: app-fundamentals/messaging-center.md
+      - name: ナビゲーション
+        href: app-fundamentals/navigation/index.md
+        items:
+          - name: 階層ナビゲーション
+            href: app-fundamentals/navigation/hierarchical.md
+          - name: TabbedPage
+            href: app-fundamentals/navigation/tabbed-page.md
+          - name: CarouselPage
+            href: app-fundamentals/navigation/carousel-page.md
+          - name: MasterDetailPage
+            href: app-fundamentals/navigation/master-detail-page.md
+          - name: モーダル ページ
+            href: app-fundamentals/navigation/modal.md
+      - name: Shell
+        href: app-fundamentals/shell/index.md
+        items:
+          - name: はじめに
+            href: app-fundamentals/shell/introduction.md
+          - name: シェル アプリケーションを作成する
+            href: app-fundamentals/shell/create.md
+          - name: ポップアップ
+            href: app-fundamentals/shell/flyout.md
+          - name: タブ
+            href: app-fundamentals/shell/tabs.md
+          - name: ページの構成
+            href: app-fundamentals/shell/configuration.md
+          - name: ナビゲーション
+            href: app-fundamentals/shell/navigation.md
+          - name: 検索
+            href: app-fundamentals/shell/search.md
+          - name: ライフサイクル
+            href: app-fundamentals/shell/lifecycle.md
+          - name: カスタム レンダラー
+            href: app-fundamentals/shell/customrenderers.md
+      - name: テンプレート
+        items:
+          - name: 概要
+            href: app-fundamentals/templates/index.md
+          - name: コントロール テンプレート
+            href: app-fundamentals/templates/control-template.md
+          - name: データ テンプレート
+            href: app-fundamentals/templates/data-templates/index.md
+            items:
+              - name: はじめに
+                href: app-fundamentals/templates/data-templates/introduction.md
+              - name: データ テンプレートの作成
+                href: app-fundamentals/templates/data-templates/creating.md
+              - name: データ テンプレートの選択
+                href: app-fundamentals/templates/data-templates/selector.md
+      - name: トリガー
+        href: app-fundamentals/triggers.md
+  - name: ユーザー インターフェイス
+    items:
+      - name: 概要
+        href: user-interface/index.yml
+      - name: C# のマークアップ
+        href: user-interface/csharp-markup.md
+      - name: コントロールのリファレンス
+        items:
+          - name: 概要
+            href: user-interface/controls/index.md
+          - name: Pages
+            href: user-interface/controls/pages.md
+          - name: レイアウト
+            href: user-interface/controls/layouts.md
+          - name: Views
+            href: user-interface/controls/views.md
+          - name: セル
+            href: user-interface/controls/cells.md
+          - name: 共通のプロパティ、メソッド、およびイベント
+            href: user-interface/controls/common-properties.md
+          - name: サードパーティ コントロール
+            href: user-interface/controls/thirdparty.md
+      - name: データの表示
+        items:
+          - name: BoxView
+            href: user-interface/boxview.md
+          - name: Expander
+            href: user-interface/expander.md
+          - name: Image
+            href: user-interface/images.md
+          - name: ラベル
+            href: user-interface/text/label.md
+          - name: マップ
+            items:
+              - name: 概要
+                href: user-interface/map/index.md
+              - name: 初期化と構成
+                href: user-interface/map/setup.md
+              - name: マップ コントロール
+                href: user-interface/map/map.md
+              - name: 位置と距離
+                href: user-interface/map/position-distance.md
+              - name: ピン
+                href: user-interface/map/pins.md
+              - name: 多角形、ポリライン、円
+                href: user-interface/map/polygons.md
+              - name: ジオコーディング
+                href: user-interface/map/geocoder.md
+              - name: ネイティブ マップ アプリを起動する
+                href: user-interface/map/native-map-app.md
+          - name: MediaElement
+            href: user-interface/mediaelement.md
+          - name: 図形
+            items:
+              - name: 概要
+                href: user-interface/shapes/index.md
+              - name: Ellipse
+                href: user-interface/shapes/ellipse.md
+              - name: ルールの入力
+                href: user-interface/shapes/fillrules.md
+              - name: ジオメトリ
+                href: user-interface/shapes/geometries.md
+              - name: 行
+                href: user-interface/shapes/line.md
+              - name: パス
+                items:
+                  - name: パス
+                    href: user-interface/shapes/path.md
+                  - name: パス マークアップ構文
+                    href: user-interface/shapes/path-markup-syntax.md
+                  - name: パスの変換
+                    href: user-interface/shapes/path-transforms.md
+              - name: 多角形
+                href: user-interface/shapes/polygon.md
+              - name: ポリライン
+                href: user-interface/shapes/polyline.md
+              - name: Rectangle
+                href: user-interface/shapes/rectangle.md
+          - name: WebView
+            href: user-interface/webview.md
+      - name: コマンドの開始
+        items:
+          - name: Button
+            href: user-interface/button.md
+          - name: ImageButton
+            href: user-interface/imagebutton.md
+          - name: RadioButton
+            href: user-interface/radiobutton.md
+          - name: RefreshView
+            href: user-interface/refreshview.md
+          - name: SearchBar
+            href: user-interface/searchbar.md
+          - name: SwipeView
+            href: user-interface/swipeview.md
+      - name: 値の設定
+        items:
+          - name: CheckBox
+            href: user-interface/checkbox.md
+          - name: DatePicker
+            href: user-interface/datepicker.md
+          - name: Slider
+            href: user-interface/slider.md
+          - name: ステッパ
+            href: user-interface/stepper.md
+          - name: Switch
+            href: user-interface/switch.md
+          - name: TimePicker
+            href: user-interface/timepicker.md
+      - name: テキストの編集
+        items:
+          - name: エディター
+            href: user-interface/text/editor.md
+          - name: 入力
+            href: user-interface/text/entry.md
+      - name: アクティビティを示す
+        items:
+          - name: ActivityIndicator
+            href: user-interface/activityindicator.md
+          - name: ProgressBar
+            href: user-interface/progressbar.md
+      - name: コレクションの表示
+        items:
+          - name: CarouselView
+            href: user-interface/carouselview/index.md
+            items:
+              - name: はじめに
+                href: user-interface/carouselview/introduction.md
+              - name: データ
+                href: user-interface/carouselview/populate-data.md
+              - name: レイアウト
+                href: user-interface/carouselview/layout.md
+              - name: 相互作用
+                href: user-interface/carouselview/interaction.md
+              - name: EmptyView
+                href: user-interface/carouselview/emptyview.md
+              - name: スクロール
+                href: user-interface/carouselview/scrolling.md
+          - name: CollectionView
+            href: user-interface/collectionview/index.md
+            items:
+              - name: はじめに
+                href: user-interface/collectionview/introduction.md
+              - name: データ
+                href: user-interface/collectionview/populate-data.md
+              - name: レイアウト
+                href: user-interface/collectionview/layout.md
+              - name: 選択ツール
+                href: user-interface/collectionview/selection.md
+              - name: EmptyView
+                href: user-interface/collectionview/emptyview.md
+              - name: スクロール
+                href: user-interface/collectionview/scrolling.md
+              - name: グループ化
+                href: user-interface/collectionview/grouping.md
+          - name: IndicatorView
+            href: user-interface/indicatorview.md
+          - name: ListView
+            href: user-interface/listview/index.md
+            items:
+              - name: Data Sources
+                href: user-interface/listview/data-and-databinding.md
+              - name: セルの外観
+                href: user-interface/listview/customizing-cell-appearance.md
+              - name: リストの外観
+                href: user-interface/listview/customizing-list-appearance.md
+              - name: 対話機能
+                href: user-interface/listview/interactivity.md
+              - name: パフォーマンス
+                href: user-interface/listview/performance.md
+          - name: ピッカー
+            href: user-interface/picker/index.md
+            items:
+              - name: ピッカーの ItemsSource プロパティの設定
+                href: user-interface/picker/populating-itemssource.md
+              - name: ピッカーの項目コレクションへのデータの追加
+                href: user-interface/picker/populating-items.md
+          - name: TableView
+            href: user-interface/tableview.md
+      - name: その他のコントロール
+        items:
+          - name: MenuItem
+            href: user-interface/menuitem.md
+          - name: ToolbarItem
+            href: user-interface/toolbaritem.md
+      - name: 概念
+        items:
+          - name: アニメーション
+            href: user-interface/animation/index.md
+            items:
+              - name: 単純なアニメーション
+                href: user-interface/animation/simple.md
+              - name: イージング関数
+                href: user-interface/animation/easing.md
+              - name: カスタム アニメーション
+                href: user-interface/animation/custom.md
+          - name: 色
+            href: user-interface/colors.md
+          - name: DataPages
+            href: user-interface/datapages/index.md
+            items:
+              - name: はじめに
+                href: user-interface/datapages/get-started.md
+              - name: コントロールのリファレンス
+                href: user-interface/datapages/controls.md
+          - name: ポップアップの表示
+            href: user-interface/pop-ups.md
+          - name: フォント
+            href: user-interface/text/fonts.md
+          - name: SkiaSharp を使用したグラフィックス
+            href: user-interface/graphics/skiasharp/index.md
+          - name: スプラッシュ スクリーン
+            href: user-interface/splashscreen.md
+          - name: スタイル
+            href: user-interface/styles/index.md
+            items:
+              - name: XAML スタイルを使用した Xamarin.Forms アプリのスタイル設定
+                href: user-interface/styles/xaml/index.md
+                items:
+                  - name: はじめに
+                    href: user-interface/styles/xaml/introduction.md
+                  - name: 明示的なスタイル
+                    href: user-interface/styles/xaml/explicit.md
+                  - name: 暗黙的なスタイル
+                    href: user-interface/styles/xaml/implicit.md
+                  - name: グローバル スタイル
+                    href: user-interface/styles/xaml/application.md
+                  - name: スタイルの継承
+                    href: user-interface/styles/xaml/inheritance.md
+                  - name: 動的なスタイル
+                    href: user-interface/styles/xaml/dynamic.md
+                  - name: デバイスのスタイル
+                    href: user-interface/styles/xaml/device.md
+                  - name: スタイル クラス
+                    href: user-interface/styles/xaml/style-class.md
+              - name: カスケード スタイル シート (CSS) を使用した Xamarin.Forms アプリのスタイル設定
+                href: user-interface/styles/css/index.md
+          - name: テーマ
+            href: user-interface/theming/index.md
+            items:
+              - name: アプリケーションのテーマを設定する
+                href: user-interface/theming/theming.md
+              - name: システム テーマの変更に対応する
+                href: user-interface/theming/system-theme-changes.md
+          - name: ビジュアル
+            href: user-interface/visual/index.md
+            items:
+              - name: 素材のビジュアル
+                href: user-interface/visual/material-visual.md
+              - name: Visual Renderer の作成
+                href: user-interface/visual/create.md
+          - name: Visual State Manager
+            href: user-interface/visual-state-manager.md
+      - name: レイアウト
+        items:
+          - name: 概要
+            href: user-interface/layouts/index.yml
+          - name: レイアウトの選択
+            href: user-interface/layouts/choose-layout.md
+          - name: コア レイアウト
+            items:
+              - name: AbsoluteLayout
+                href: user-interface/layouts/absolute-layout.md
+              - name: FlexLayout
+                href: user-interface/layouts/flex-layout.md
+              - name: グリッド
+                href: user-interface/layouts/grid.md
+              - name: RelativeLayout
+                href: user-interface/layouts/relative-layout.md
+              - name: StackLayout
+                href: user-interface/layouts/stacklayout.md
+          - name: その他のレイアウト
+            items:
+              - name: ContentView
+                href: user-interface/layouts/contentview.md
+              - name: フレーム
+                href: user-interface/layouts/frame.md
+              - name: ScrollView
+                href: user-interface/layouts/scrollview.md
+          - name: 概念
+            items:
+              - name: バインド可能なレイアウト
+                href: user-interface/layouts/bindable-layouts.md
+              - name: カスタム レイアウト
+                href: user-interface/layouts/custom.md
+              - name: デバイスの向き
+                href: user-interface/layouts/device-orientation.md
+              - name: LayoutOptions
+                href: user-interface/layouts/layout-options.md
+              - name: レイアウト圧縮
+                href: user-interface/layouts/layout-compression.md
+              - name: 余白とスペース
+                href: user-interface/layouts/margin-and-padding.md
+              - name: タブレットおよびデスクトップ
+                href: user-interface/layouts/tablet.md
+  - name: プラットフォーム機能
+    items:
+      - name: 概要
+        href: platform/index.yml
+      - name: Android
+        items:
+          - name: 概要
+            href: platform/android/index.md
+          - name: AndroidX への移行
+            href: platform/android/androidx-migration.md
+          - name: AppCompat と素材の設計
+            href: platform/android/appcompat-material-design.md
+          - name: ボタンの余白とシャドウ
+            href: platform/android/button-padding-shadow.md
+          - name: エントリの入力方式のエディター オプション
+            href: platform/android/entry-ime-options.md
+          - name: ImageButton ドロップ シャドウ
+            href: platform/android/imagebutton-drop-shadow.md
+          - name: ListView 高速スクロール
+            href: platform/android/listview-fast-scrolling.md
+          - name: NavigationPage のバーの高さ
+            href: platform/android/navigationpage-bar-height.md
+          - name: ページ ライフサイクル イベント
+            href: platform/android/page-lifecycle-events.md
+          - name: ソフト キーボードの入力モード
+            href: platform/android/soft-keyboard-input-mode.md
+          - name: SwipeView スワイプ切り替えモード
+            href: platform/android/swipeview-swipetransitionmode.md
+          - name: TabbedPage ページ スワイプ
+            href: platform/android/tabbedpage-page-swiping.md
+          - name: TabbedPage ページ切り替え効果アニメーション
+            href: platform/android/tabbedpage-transition-animations.md
+          - name: TabbedPage ツールバーの配置と色
+            href: platform/android/tabbedpage-toolbar-placement-color.md
+          - name: ViewCell コンテキスト アクション
+            href: platform/android/viewcell-context-actions.md
+          - name: VisualElement の昇格
+            href: platform/android/visualelement-elevation.md
+          - name: VisualElement レガシ カラー モード
+            href: platform/android/legacy-color-mode.md
+          - name: WebView 混合コンテンツ
+            href: platform/android/webview-mixed-content.md
+          - name: WebView のズーム
+            href: platform/android/webview-zoom-controls.md
+      - name: iOS
+        items:
+          - name: 概要
+            href: platform/ios/index.md
+          - name: 名前付きフォント サイズに関するアクセシビリティのスケーリング
+            href: platform/ios/named-font-size-scaling.md
+          - name: セルの背景色
+            href: platform/ios/cell-background-color.md
+          - name: DatePicker の項目選択
+            href: platform/ios/datepicker-selection.md
+          - name: エントリのカーソルの色
+            href: platform/ios/entry-cursor-color.md
+          - name: エントリのフォント サイズ
+            href: platform/ios/entry-font-size.md
+          - name: 書式設定
+            href: platform/ios/formatting.md
+          - name: モーダル ページのプレゼンテーション スタイル
+            href: platform/ios/page-presentation-style.md
+          - name: ラージ ページ タイトル
+            href: platform/ios/page-large-title.md
+          - name: ListView グループ ヘッダーのスタイル
+            href: platform/ios/listview-group-header-style.md
+          - name: ListView の行のアニメーション
+            href: platform/ios/listview-row-animations.md
+          - name: ListView の区切り記号のスタイル
+            href: platform/ios/listview-separator-style.md
+          - name: メイン スレッドのコントロール更新
+            href: platform/ios/main-thread-updates-ui.md
+          - name: MasterDetailPage のシャドウ
+            href: platform/ios/masterdetailpage-shadow.md
+          - name: NavigationPage のバーの区切り記号
+            href: platform/ios/navigation-bar-separator.md
+          - name: NavigationPage のバーのテキストの色のモード
+            href: platform/ios/status-bar-text-color.md
+          - name: NavigationPage のバーの透明度
+            href: platform/ios/navigation-bar-translucent.md
+          - name: ページのホーム インジケーターの表示
+            href: platform/ios/page-home-indicator.md
+          - name: ページのステータス バーの表示
+            href: platform/ios/page-status-bar-visibility.md
+          - name: 選択項目の選択
+            href: platform/ios/picker-selection.md
+          - name: 安全領域レイアウト ガイド
+            href: platform/ios/page-safe-area-layout.md
+          - name: ScrollView コンテンツの仕上げ
+            href: platform/ios/scrollview-content-touches.md
+          - name: SearchBar のスタイル
+            href: platform/ios/searchbar-style.md
+          - name: 同時パン ジェスチャの認識
+            href: platform/ios/application-pan-gesture.md
+          - name: スライダーのつまみのタップ
+            href: platform/ios/slider-thumb.md
+          - name: SwipeView スワイプ切り替えモード
+            href: platform/ios/swipeview-swipetransitionmode.md
+          - name: TabbedPage の半透明タブ バー
+            href: platform/ios/tabbedpage-translucent-tabbar.md
+          - name: TimePicker の項目選択
+            href: platform/ios/timepicker-selection.md
+          - name: VisualElement ぼかし
+            href: platform/ios/visualelement-blur.md
+          - name: VisualElement ドロップ シャドウ
+            href: platform/ios/visualelement-drop-shadow.md
+          - name: VisualElement レガシ カラー モード
+            href: platform/ios/legacy-color-mode.md
+          - name: VisualElement ファースト レスポンダー
+            href: platform/ios/visualelement-first-responder.md
+      - name: Windows
+        items:
+          - name: 概要
+            href: platform/windows/index.md
+          - name: 既定の画像ディレクトリ
+            href: platform/windows/default-image-directory.md
+          - name: InputView 読み取り順序
+            href: platform/windows/inputview-reading-order.md
+          - name: ListView SelectionMode
+            href: platform/windows/listview-selectionmode.md
+          - name: MasterDetailPage ナビゲーション バー
+            href: platform/windows/masterdetailpage-navigation-bar.md
+          - name: ページのツールバーの配置
+            href: platform/windows/page-toolbar-placement.md
+          - name: プラットフォームのセットアップ
+            href: platform/windows/installation/index.md
+          - name: RefreshView のプル方向
+            href: platform/windows/refreshview-pulldirection.md
+          - name: SearchBar スペル チェック
+            href: platform/windows/searchbar-spell-check.md
+          - name: TabbedPage アイコン
+            href: platform/windows/tabbedpage-icons.md
+          - name: VisualElement アクセス キー
+            href: platform/windows/visualelement-access-keys.md
+          - name: VisualElement レガシ カラー モード
+            href: platform/windows/legacy-color-mode.md
+          - name: WebView JavaScript アラート
+            href: platform/windows/webview-javascript-alert.md
+      - name: プラットフォーム固有設定の作成
+        href: platform/platform-specifics/index.md
+      - name: デバイス クラス
+        href: platform/device.md
+      - name: ネイティブ フォーム
+        href: platform/native-forms.md
+      - name: ネイティブ ビュー
+        href: platform/native-views/index.md
+        items:
+          - name: XAML のネイティブ ビュー
+            href: platform/native-views/xaml.md
+          - name: C# のネイティブ ビュー
+            href: platform/native-views/code.md
+      - name: Apple でのサインイン
+        href: platform/sign-in-with-apple/index.md
+        items:
+          - name: iOS 用のセットアップ
+            href: ~/ios/platform/ios13/sign-in.md
+          - name: その他のプラットフォーム用のセットアップ
+            href: platform/sign-in-with-apple/setup.md
+          - name: Apple でのサインインの使用
+            href: platform/sign-in-with-apple/android-ios-sign-in.md
+      - name: その他のプラットフォーム
+        href: platform/other/index.md
+        items:
+          - name: GTK#
+            href: platform/other/gtk.md
+          - name: Mac
+            href: platform/other/mac.md
+          - name: Tizen
+            href: platform/other/tizen.md
+          - name: WPF
+            href: platform/other/wpf.md
+  - name: Xamarin.Essentials
+    href: ~/essentials/index.md?context=xamarin/xamarin-forms
+    items:
+      - name: はじめに
+        href: ~/essentials/get-started.md?context=xamarin/xamarin-forms
+      - name: プラットフォームと機能のサポート
+        href: ~/essentials/platform-feature-support.md?context=xamarin/xamarin-forms
+      - name: 加速度計
+        href: ~/essentials/accelerometer.md?context=xamarin/xamarin-forms
+      - name: アプリ情報
+        href: ~/essentials/app-information.md?context=xamarin/xamarin-forms
+      - name: アプリのテーマ
+        href: ~/essentials/app-theme.md?context=xamarin/xamarin-forms
+      - name: バロメーター
+        href: ~/essentials/barometer.md?context=xamarin/xamarin-forms
+      - name: バッテリ
+        href: ~/essentials/battery.md?context=xamarin/xamarin-forms
+      - name: クリップボードのトピック
+        href: ~/essentials/clipboard.md?context=xamarin/xamarin-forms
+      - name: 色のコンバーター
+        href: ~/essentials/color-converters.md?context=xamarin/xamarin-forms
+      - name: コンパス
+        href: ~/essentials/compass.md?context=xamarin/xamarin-forms
+      - name: 接続
+        href: ~/essentials/connectivity.md?context=xamarin/xamarin-forms
+      - name: シェイクの検出
+        href: ~/essentials/detect-shake.md?context=xamarin/xamarin-forms
+      - name: デバイス ディスプレイ情報
+        href: ~/essentials/device-display.md?context=xamarin/xamarin-forms
+      - name: デバイス情報
+        href: ~/essentials/device-information.md?context=xamarin/xamarin-forms
+      - name: 電子メール
+        href: ~/essentials/email.md?context=xamarin/xamarin-forms
+      - name: ファイル システム ヘルパー
+        href: ~/essentials/file-system-helpers.md?context=xamarin/xamarin-forms
+      - name: 懐中電灯
+        href: ~/essentials/flashlight.md?context=xamarin/xamarin-forms
+      - name: ジオコーディング
+        href: ~/essentials/geocoding.md?context=xamarin/xamarin-forms
+      - name: 位置情報
+        href: ~/essentials/geolocation.md?context=xamarin/xamarin-forms
+      - name: ジャイロスコープ
+        href: ~/essentials/gyroscope.md?context=xamarin/xamarin-forms
+      - name: ランチャー
+        href: ~/essentials/launcher.md?context=xamarin/xamarin-forms
+      - name: 磁力計
+        href: ~/essentials/magnetometer.md?context=xamarin/xamarin-forms
+      - name: メイン スレッド
+        href: ~/essentials/main-thread.md?context=xamarin/xamarin-forms
+      - name: マップ
+        href: ~/essentials/maps.md?context=xamarin/xamarin-forms
+      - name: ブラウザーを開く
+        href: ~/essentials/open-browser.md?context=xamarin/xamarin-forms
+      - name: 向きセンサー
+        href: ~/essentials/orientation-sensor.md?context=xamarin/xamarin-forms
+      - name: アクセス許可
+        href: ~/essentials/permissions.md?context=xamarin/xamarin-forms
+      - name: ダイヤラー
+        href: ~/essentials/phone-dialer.md?context=xamarin/xamarin-forms
+      - name: プラットフォームの拡張機能 (サイズ、四角形、ポイント)
+        href: ~/essentials/platform-extensions.md?context=xamarin/xamarin-forms
+      - name: Preferences
+        href: ~/essentials/preferences.md?context=xamarin/xamarin-forms
+      - name: セキュリティで保護されたストレージ
+        href: ~/essentials/secure-storage.md?context=xamarin/xamarin-forms
+      - name: 共有
+        href: ~/essentials/share.md?context=xamarin/xamarin-forms
+      - name: SMS
+        href: ~/essentials/sms.md?context=xamarin/xamarin-forms
+      - name: 音声合成
+        href: ~/essentials/text-to-speech.md?context=xamarin/xamarin-forms
+      - name: 単位コンバーター
+        href: ~/essentials/unit-converters.md?context=xamarin/xamarin-forms
+      - name: バージョンの追跡
+        href: ~/essentials/version-tracking.md?context=xamarin/xamarin-forms
+      - name: バイブレーション
+        href: ~/essentials/vibrate.md?context=xamarin/xamarin-forms
+      - name: Web Authenticator
+        href: ~/essentials/web-authenticator.md?context=xamarin/xamarin-forms
+      - name: Xamarin.Essentials のリリース ノート
+        href: 'https://docs.microsoft.com/xamarin/essentials/release-notes/'
+      - name: トラブルシューティング
+        href: ~/essentials/troubleshooting.md?context=xamarin/xamarin-forms
+  - name: データと Azure Cloud Services
+    items:
+      - name: 概要
+        href: data-cloud/index.yml
+      - name: ローカル データ ストレージ
+        items:
+          - name: 概要
+            href: data-cloud/data/index.md
+          - name: ファイル処理
+            href: data-cloud/data/files.md
+          - name: ローカル データベース
+            href: data-cloud/data/databases.md
+      - name: Azure サービス
+        items:
+          - name: Azure サービスの概要
+            href: data-cloud/azure-services/index.md
+          - name: Azure Cosmos DB ドキュメント データベース
+            href: data-cloud/azure-services/azure-cosmosdb.md
+          - name: Azure Notification Hubs
+            href: data-cloud/azure-services/azure-notification-hub.md
+          - name: Azure ストレージ
+            href: data-cloud/azure-services/azure-storage.md
+          - name: Azure Search
+            href: data-cloud/azure-services/azure-search.md
+          - name: Azure Functions
+            href: data-cloud/azure-services/azure-functions.md
+          - name: Azure SignalR Service
+            href: data-cloud/azure-services/azure-signalr.md
+      - name: Azure Cognitive Services
+        items:
+          - name: Cognitive Services の概要
+            href: data-cloud/azure-cognitive-services/index.md
+          - name: はじめに
+            href: data-cloud/azure-cognitive-services/introduction.md
+          - name: 音声認識
+            href: data-cloud/azure-cognitive-services/speech-recognition.md
+          - name: スペル チェック
+            href: data-cloud/azure-cognitive-services/spell-check.md
+          - name: テキストの変換
+            href: data-cloud/azure-cognitive-services/text-translation.md
+          - name: 認識された感情認識
+            href: data-cloud/azure-cognitive-services/emotion-recognition.md
+      - name: Web サービス
+        items:
+          - name: Web サービスの概要
+            href: data-cloud/web-services/index.md
+          - name: はじめに
+            href: data-cloud/web-services/introduction.md
+          - name: ASMX
+            href: data-cloud/web-services/asmx.md
+          - name: WCF
+            href: data-cloud/web-services/wcf.md
+          - name: REST
+            href: data-cloud/web-services/rest.md
+      - name: 認証
+        items:
+          - name: 認証の概要
+            href: data-cloud/authentication/index.md
+          - name: REST
+            href: data-cloud/authentication/rest.md
+          - name: Azure Active Directory B2C
+            href: data-cloud/authentication/azure-ad-b2c.md
+          - name: Azure Cosmos DB 認証
+            href: data-cloud/authentication/azure-cosmosdb-auth.md
+  - name: 配置とテスト
+    items:
+      - name: 概要
+        href: deploy-test/index.yml
+      - name: パフォーマンスの向上
+        href: deploy-test/performance.md
+      - name: ホット再起動
+        href: deploy-test/hot-restart.md
+      - name: Visual Studio App Center を使用したテストの自動化
+        href: /appcenter/test-cloud/uitest/get-started-xamarin-forms
+      - name: iOS アプリの発行
+        href: ~/ios/deploy-test/app-distribution/index.md
+      - name: Android アプリの発行
+        href: ~/android/deploy-test/publishing/index.md
+      - name: UWP アプリの発行
+        href: /windows/uwp/packaging/
+      - name: Mac アプリの発行
+        href: ~/mac/deploy-test/publishing-to-the-app-store/index.md
+  - name: 高度な概念と内部構造
+    items:
+      - name: 概要
+        href: internals/index.md
+      - name: コントロール クラスの階層構造
+        href: internals/class-hierarchy.md
+      - name: 依存関係の解決
+        href: internals/dependency-resolution.md
+      - name: 試験的なフラグ
+        href: internals/experimental-flags.md
+      - name: 高速レンダラー
+        href: internals/fast-renderers.md
+      - name: ソース リンク
+        href: internals/sourcelink.md
+  - name: トラブルシューティング
+    href: troubleshooting/index.md
+    items:
+      - name: よく寄せられる質問
+        href: troubleshooting/questions/index.md
+        items:
+          - name: Xamarin.Forms の既定のテンプレートを新しい NuGet パッケージに更新することはできますか。
+            href: troubleshooting/questions/update-forms-template.md
+          - name: Visual Studio XAML デザイナーが Xamarin.Forms XAML ファイルに有効でない理由を教えてください。
+            href: troubleshooting/questions/forms-xaml-designer.md
+          - name: 'Android のビルド エラー: LinkAssemblies タスクが予期せず失敗しました'
+            href: troubleshooting/questions/android-linkassemblies-error.md
+          - name: 'Xamarin.Forms.Maps Android プロジェクトが COMPILETODALVIK : UNEXPECTED TOP-LEVEL ERROR で失敗するのはなぜですか。'
+            href: troubleshooting/questions/maps-compiletodalvik-error.md
+  - name: リリース ノート
+    href: 'https://docs.microsoft.com/xamarin/xamarin-forms/release-notes/'
+  - name: サンプル
+    href: samples/index.md
+  - name: Xamarin.Forms Book で Mobile Apps を作成する
+    href: creating-mobile-apps-xamarin-forms/index.md
+  - name: エンタープライズ アプリケーション パターン電子ブック
+    href: enterprise-application-patterns/index.md
+  - name: Xamarin.Forms での SkiaSharp グラフィックス
+    href: user-interface/graphics/skiasharp/index.md
