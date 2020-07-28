@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 86b887b7aa913572d5fb6093fe682cd2933b282e
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: f020219f28ce9389c3f8d5157ddfddc32af07f0f
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573184"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939972"
 ---
 # <a name="using-testflight-to-distribute-xamarinios-apps"></a>TestFlight を使用して Xamarin.iOS アプリを配布する
 
@@ -41,7 +41,7 @@ TestFlight でビルドをテストするには、新しいベータ資格で "*
 
 [Xcode でビルドを検証する](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)ときに、配布プロファイルにベータ資格が含まれることを確認できます (下図参照)。
 
-[![](testflight-images/validate-build.png "Submitting the App to Apple")](testflight-images/validate-build.png#lightbox)
+[![Apple へのアプリの提出](testflight-images/validate-build.png)](testflight-images/validate-build.png#lightbox)
 
 ## <a name="testflight-workflow"></a>TestFlight のワークフロー
 
@@ -63,7 +63,7 @@ TestFlight でビルドをテストするには、新しいベータ資格で "*
 1. Apple 開発者の資格情報を使って、[iTunes Connect ポータル](https://itunesconnect.apple.com/)にログインします。
 2. **[My Apps]\(マイ アプリ\)** を選びます。
 
-    [![](testflight-images/my-apps.png "Select My Apps")](testflight-images/my-apps.png#lightbox)
+    [![[My Apps] を選びます](testflight-images/my-apps.png)](testflight-images/my-apps.png#lightbox)
 
 3. **[My Apps]\(マイ アプリ\)** 画面の左上隅にある **[+]** ボタンをクリックして、新しいアプリを追加します。 Mac および iOS の開発者アカウントがある場合は、ここで新しいアプリの種類を選ぶように求められます。
 
@@ -75,8 +75,8 @@ TestFlight でビルドをテストするには、新しいベータ資格で "*
 
 このフォームはアプリの Info.plist ファイルとまったく同じ情報にする必要があります (下図参照)。
 
-[![](testflight-images/infoplist.png "The app's Info.plist")](testflight-images/infoplist.png#lightbox)
-[![](testflight-images/newiosapp.png "The form on iTunes Connect")](testflight-images/newiosapp.png#lightbox)
+[![](testflight-images/infoplist.png "アプリの Info.plist")](testflight-images/infoplist.png#lightbox)
+[![iTunes Connect のフォーム](testflight-images/newiosapp.png)](testflight-images/newiosapp.png#lightbox)
 
 - **[Name]\(名前\)** — アプリ バンドルの設定に使われるわかりやすい名前。 `Info.plist` の**アプリケーション名**エントリと完全に一致する必要があります。
 - **[Primary Language]\(第一言語\)** — アプリ内で使われるベース言語。 通常はユーザーが使っている言語です。
@@ -99,7 +99,7 @@ iTunes Connect レコードが作成されたら、新しいビルドをアッ�
 
  Visual Studio for Mac でバイナリをビルドするには、"_アーカイブ_" 機能を使う必要があります。 プロジェクトを右クリックし、 **[発行のためのアーカイブ]** を選びます (下図参照)。
 
- [![](testflight-images/new-archive.png "Select Archive for Publishing")](testflight-images/new-archive.png#lightbox)
+ [![[発行のためのアーカイブ] を選択します](testflight-images/new-archive.png)](testflight-images/new-archive.png#lightbox)
 
  詳しくは、「[Building the Distributable](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)」(配布可能アプリのビルド) ガイドをご覧ください。
 
@@ -107,11 +107,11 @@ iTunes Connect レコードが作成されたら、新しいビルドをアッ�
 
  アーカイブを作成すると**アーカイブ ビュー**が自動的に開き、アーカイブされているすべてのプロジェクトがソリューション別にグループ化されて表示されます。 アプリに署名して配布の準備をするには、 **[署名と配布...]** を選びます (下図参照)。
 
-[![](testflight-images/archive-view.png "Creating an archive will automatically open the Archives View")](testflight-images/archive-view.png#lightbox)
+[![アーカイブを作成するとアーカイブ ビューが自動的に開きます](testflight-images/archive-view.png)](testflight-images/archive-view.png#lightbox)
 
  これにより、発行ウィザードが開きます。 **[App Store]** 配布チャネルを選んでパッケージを作成し、アプリケーション ローダーを開きます。 [プロビジョニング プロファイル] 画面で、署名 ID とプロビジョニング プロファイルを選ぶか、別の ID で再署名します。 パッケージの詳細を確認し、 **[発行]** をクリックして `.ipa` を保存します。
 
-[![](testflight-images/group.png "Select your signing identity and provisioning profile, or re-sign with another identity")](testflight-images/group.png#lightbox)
+[![署名 ID とプロビジョニング プロファイルを選ぶか、別の ID で再署名します](testflight-images/group.png)](testflight-images/group.png#lightbox)
 
  手順について詳しくは、「[Submitting your App to Apple](~/ios/deploy-test/app-distribution/app-store-distribution/publishing-to-the-app-store.md)」(Apple へのアプリの送信) セクションをご覧ください。
 
@@ -149,11 +149,11 @@ iTunes Connect の **[My Apps]\(マイ アプリ\)** セクションに戻ると
 
 TestFlight を使い始めるには、アプリの **[Prerelease]\(プレリリース\)** タブに移動します。 3 つのタブ [Builds]\(ビルド\)、[Internal Testers]\(内部テスト担当者\)、[External Testers]\(外部テスト担当者\) に一覧が表示されます (下図参照)。
 
-[![](testflight-images/app-uploaded.png "Builds, Internal Testers, and External Testers tabs")](testflight-images/app-uploaded.png#lightbox)
+[![[Builds] タブ、[Internal Testers] タブ、[External Testers] タブ](testflight-images/app-uploaded.png)](testflight-images/app-uploaded.png#lightbox)
 
 アプリにメタデータを追加するには、ビルド番号をクリックし、TestFlight をクリックします。
 
-[![](testflight-images/metadata.png "Add Metadata")](testflight-images/metadata.png#lightbox)
+[![メタデータを追加します](testflight-images/metadata.png)](testflight-images/metadata.png#lightbox)
 
 **[Test Information]\(テスト情報\)** では、アプリに関する重要な情報をテスト担当者に提供できます。以下はその例です。
 
@@ -171,11 +171,11 @@ TestFlight を使い始めるには、アプリの **[Prerelease]\(プレリリ�
 
 アプリのテストを開始する準備ができたら、バージョンの **[TestFlight Beta Testing]\(TestFlight ベータ テスト\)** スイッチをオンにします。
 
-[![](testflight-images/turn-on-testing.png "Turn on the TestFlight Beta Testing switch")](testflight-images/turn-on-testing.png#lightbox)
+[![[TestFlight Beta Testing] スイッチをオンにします](testflight-images/turn-on-testing.png)](testflight-images/turn-on-testing.png#lightbox)
 
 各ビルドは、[TestFlight Beta Testing]\(TestFlight ベータ テスト\) をオンにしてから **60 日**間アクティブになります。 各ビルドの残り日数は、 **[Test Information]\(テスト情報\)** ページで確認できます。
 
-[![](testflight-images/daysleft.png "The Test Information page")](testflight-images/daysleft.png#lightbox)
+[![テスト情報ページ](testflight-images/daysleft.png)](testflight-images/daysleft.png#lightbox)
 
 いつでもテストを無効にできます。
 
@@ -191,25 +191,25 @@ TestFlight を使い始めるには、アプリの **[Prerelease]\(プレリリ�
 
 テスト担当者を追加するには、iTunes Connect メイン画面の **[Users and Roles]\(ユーザーとロール\)** を使います。
 
-[![](testflight-images/users-and-roles.png "Users and Roles on the main iTunes Connect screen")](testflight-images/users-and-roles.png#lightbox)
+[![iTunes Connect メイン画面の [Users and Roles]\(ユーザーとロール\)](testflight-images/users-and-roles.png)](testflight-images/users-and-roles.png#lightbox)
 
 既存の iTunes Connect ユーザーが一覧に表示されます。 ユーザーを選ぶには、名前をクリックし、 **[Internal Tester]\(内部テスト担当者\)** スイッチをオンにして、 **[Save]\(保存\)** をクリックします。
 
-[![](testflight-images/internal-tester.png "Turn on the Internal Tester switch")](testflight-images/internal-tester.png#lightbox)
+[![[Internal Tester] \(内部テスト担当者\) スイッチをオンにします](testflight-images/internal-tester.png)](testflight-images/internal-tester.png#lightbox)
 
 一覧にないユーザーを追加するには、 *[Users]\(ユーザー\)* の横の **[+]** を選び、名、姓、メール アドレスを指定してアカウントを作成します。 アカウントをアクティブ化するには、ユーザーがメールを確認する必要があります。
 
-[![](testflight-images/add-new-user.png "Adding a user")](testflight-images/add-new-user.png#lightbox)
+[![ユーザーの追加](testflight-images/add-new-user.png)](testflight-images/add-new-user.png#lightbox)
 
 **[My Apps]\(マイ アプリ\) > [Prerelease]\(プレリリース\) > [Internal Testers]\(内部テスト担当者\)** に戻ると、TestFlight 内部ベータ テストに追加されたユーザーが表示されます。
 
-[![](testflight-images/select-users.png "A list of users that have been added for TestFlight Internal beta testing")](testflight-images/select-users.png#lightbox)
+[![TestFlight 内部ベータ テストに追加されたユーザーの一覧](testflight-images/select-users.png)](testflight-images/select-users.png#lightbox)
 
 名前を選んで **[Invite]\(招待\)** ボタンをクリックすることで、これらのテスト担当者を招待できます。 テスト担当者は、アプリのテストに招待するメールを受け取ります。
 
 [Internal Testers]\(内部テスト担当者\) ページの状態列で、招待の状態を確認できます。
 
-[![](testflight-images/status-added.png "The invitation status")](testflight-images/status-added.png#lightbox)
+[![招待の状態](testflight-images/status-added.png)](testflight-images/status-added.png#lightbox)
 
 ### <a name="external-testers"></a>外部テスト担当者
 
@@ -217,13 +217,13 @@ TestFlight を使い始めるには、アプリの **[Prerelease]\(プレリリ�
 
 レビュー用にアプリを送信するには、ビルドの隣にある **[Submit For Beta App Review]\(ベータ アプリ レビュー用に送信\)** テキストをクリックします (下図参照)。
 
-[![](testflight-images/beta-app-review.png "Submit For Beta App Review")](testflight-images/beta-app-review.png#lightbox)
+[![[Submit For Beta App Review]\(ベータ版 App Review 用に送信\)](testflight-images/beta-app-review.png)](testflight-images/beta-app-review.png#lightbox)
 
 アプリがレビューに合格するには、TestFlight のベータ情報ページで必要なすべてのメタデータを入力する必要があります。
 
 招待の準備を開始し、[External Testers]\(外部テスト担当者\) タブでメール アドレス、名、姓を入力して、最大 2000 人の外部テスト担当者を追加できます (下図参照)。 入力するメール アドレスは、Apple ID でなくてもかまいません。これは、招待を受け取るためだけのメール アドレスです。
 
-[![](testflight-images/add-external.png "Invite testers")](testflight-images/add-external.png#lightbox)
+[![テスターを招待します](testflight-images/add-external.png)](testflight-images/add-external.png#lightbox)
 
 外部テスト担当者の数が多い場合は、 **[Import File]\(ファイルのインポート\)** リンクを使い、次のような形式の行を含む `CSV` ファイルをインポートできます。
 
@@ -235,7 +235,7 @@ first name, last name, email address
 
 外部テスト担当者の詳細を入力した後、 **[Add]\(追加\)** をクリックして、招待に対するユーザーの同意があることを確認します。
 
-[![](testflight-images/confirm-consent.png "Confirm you have the users consent to invite them")](testflight-images/confirm-consent.png#lightbox)
+[![招待に対するユーザーの同意があることを確認します](testflight-images/confirm-consent.png)](testflight-images/confirm-consent.png#lightbox)
 
 ベータ アプリ レビューが正常に行われた後でのみ、外部テスト担当者に招待を送信できます。 この時点で、ビルド ページの **[External]\(外部\)** の下のテキストが、 **[Send Invites]\(招待の送信\)** に変わります。 これをクリックして、既に追加しているすべてのテスト担当者に招待を送信します。
 
@@ -245,13 +245,13 @@ first name, last name, email address
 
 テスト担当者を招待すると、テスト担当者は以下のスクリーンショットのようなメールを受け取ります。
 
-[![](testflight-images/tester-email.png "An example invite email")](testflight-images/tester-email.png#lightbox)
+[![電子メールの招待状の例](testflight-images/tester-email.png)](testflight-images/tester-email.png#lightbox)
 
 **[Open in TestFlight]\(TestFlight で開く\)** ボタンをクリックすると、アプリが TestFlight アプリケーションで開きます。または、まだダウンロードされていない場合は、App Store に移動してダウンロードできます。
 
 アプリが TestFlight で開くと、テスト内容の詳細が表示され、テスト担当者は自分の iOS 8.0 (またはそれ以降) デバイスにアプリケーションをインストールするように求められます。
 
-[![](testflight-images/install-app.png "TestFlight will show details of what to test for")](testflight-images/install-app.png#lightbox)
+[![TestFlight に、テスト内容の詳細が表示されます](testflight-images/install-app.png)](testflight-images/install-app.png#lightbox)
 
 デバイスのホーム画面では、テスト ビルドはアプリケーション名の前のオレンジ色のドットで示されます。
 
@@ -261,7 +261,7 @@ first name, last name, email address
 
 ベータ テストが完了すると、Apple による App Store レビュー用にアプリを送信できます。 このプロセスは、iTunes Connect で **[Submit for Review]\(レビュー用に送信\)** ボタンをクリックするだけの簡単なものです (下図参照)。
 
-[![](testflight-images/submit-for-review.png "Click the Submit for Review button")](testflight-images/submit-for-review.png#lightbox)
+[![[Submit for Review] \(レビュー用に送信\) ボタンをクリックします](testflight-images/submit-for-review.png)](testflight-images/submit-for-review.png#lightbox)
 
 ## <a name="summary"></a>まとめ
 

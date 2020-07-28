@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: a2435b30b7d5b468fca6c55d295c87b9a0d20652
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 173af9638f4e7b2da39a89dd745ec53f54cf6c39
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303727"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937567"
 ---
 # <a name="xamarinios-api-design"></a>Xamarin.iOS API の設計
 
@@ -537,7 +537,7 @@ public class AppController : UIApplicationDelegate {
 > [!IMPORTANT]
 > このセクションでは、XIB ファイルの使用時、アウトレットとの IDE 統合について説明します。 Xamarin Designer for iOS を使用するとき、下の画像のように、IDE の [プロパティ] セクションにある **[ID] の [名前]** に名前を入力することで、これが全部置換されます。
 >
-> [![](images/designeroutlet.png "Entering an item Name in the iOS Designer")](images/designeroutlet.png#lightbox)
+> [![iOS Designer に項目 Name を入力する](images/designeroutlet.png)](images/designeroutlet.png#lightbox)
 >
 >iOS デザイナーの詳細については、「[iOS デザイナーの概要](~/ios/user-interface/designer/introduction.md#how-it-works)」ドキュメントを参照してください。
 

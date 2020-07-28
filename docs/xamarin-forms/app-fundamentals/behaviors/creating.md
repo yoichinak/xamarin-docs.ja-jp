@@ -10,18 +10,18 @@ ms.date: 04/06/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 67db30b5caadce75a41755530db2b245562d0304
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: f265d1da894b195402c91cbf9468a11837c53bcf
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135825"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933711"
 ---
 # <a name="create-xamarinforms-behaviors"></a>Xamarin.Forms ビヘイビアーの作成
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)
 
-"_Xamarin.Forms のビヘイビアーは、Behavior または Behavior&lt;T&gt; クラスから派生させることで作成されます。この記事では、Xamarin.Forms のビヘイビアーを作成して使用する方法を示します。_
+_Xamarin.Forms のビヘイビアーは、Behavior または Behavior&lt;T&gt; クラスから派生させることで作成されます。この記事では、Xamarin.Forms のビヘイビアーを作成して使用する方法を示します。_
 
 ## <a name="overview"></a>概要
 
@@ -113,7 +113,7 @@ entry.Behaviors.Add (new NumericValidationBehavior ());
 
 実行時、ビヘイビアーは、ビヘイビアーの実装に従って、コントロールとのやりとりに応答します。 次のスクリーン ショットで、無効な入力に応答しているビヘイビアーを示します。
 
-[![](creating-images/screenshots-sml.png "Sample Application with Xamarin.Forms Behavior")](creating-images/screenshots.png#lightbox "Sample Application with Xamarin.Forms Behavior")
+[![Xamarin.Forms Behavior を使用したサンプル アプリケーション](creating-images/screenshots-sml.png)](creating-images/screenshots.png#lightbox "Xamarin.Forms のビヘイビアーを使用したサンプル アプリケーション")
 
 > [!NOTE]
 > ビヘイビアーは特定のコントロールの種類 (または複数のコントロールに適用できるスーパークラス) に対して記述され、互換性のあるコントロールにのみ追加する必要があります。 互換性のないコントロールにビヘイビアーをアタッチしようとすると、例外がスローされます。

@@ -9,18 +9,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 5dcc37730008e6e39b96128bc1368f022daa2d06
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 655cf1efcb479df27131029aa30036f0343c1841
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73022995"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931158"
 ---
 # <a name="hello-ios--quickstart"></a>Hello, iOS – クイックスタート
 
 このガイドでは、ユーザーが入力した英字の電話番号を数値の電話番号に変換してから、その番号に電話をかけるアプリケーションの作成方法を説明します。 最終的にアプリケーションは次のようになります。
 
- [![](hello-ios-quickstart-images/image1.png "The Hello.iOS Quickstart app")](hello-ios-quickstart-images/image1.png#lightbox)
+ [![Hello.iOS クイック スタート アプリ](hello-ios-quickstart-images/image1.png)](hello-ios-quickstart-images/image1.png#lightbox)
 
 ## <a name="requirements"></a>必要条件
 
@@ -58,80 +58,80 @@ Xamarin.iOS は次のセットアップで機能します。
 
 1. **Applications** フォルダーまたは**スポットライト**から Visual Studio for Mac を起動します。
 
-    ![](hello-ios-quickstart-images/image2new.png "The Launch screen")
+    ![起動画面](hello-ios-quickstart-images/image2new.png)
 
     起動画面で、 **[新しいプロジェクト...]** をクリックして、新しい Xamarin.iOS ソリューションを作成します。
 
-    ![](hello-ios-quickstart-images/image3new.png "iOS solution")
+    ![iOS ソリューション](hello-ios-quickstart-images/image3new.png)
 
 2. **[新しいソリューション]** ダイアログで **[iOS]、[アプリ]、[単一ビュー アプリケーション]** テンプレートの順に選択し、C# が選択されていることを確認します。 **[次へ]** をクリックします。
 
-    ![](hello-ios-quickstart-images/image4new.png "Choose Single View Application")
+    ![単一ビュー アプリケーションの選択](hello-ios-quickstart-images/image4new.png)
 
 3. アプリを構成します。 **[名前]** に `Phoneword_iOS` を指定し、他のすべてを既定値のままにします。 **[次へ]** をクリックします。
 
-    ![](hello-ios-quickstart-images/image5new.png "Enter the app name")
+    ![アプリ名の入力](hello-ios-quickstart-images/image5new.png)
 
 4. プロジェクトとソリューションの名前はそのままにします。 ここでプロジェクトの場所を選択するか、既定のままにします。
 
-    ![](hello-ios-quickstart-images/image6new.png "Choose the location of the project")
+    ![プロジェクトの場所の選択](hello-ios-quickstart-images/image6new.png)
 
 5. **[作成]** をクリックして**ソリューション**を作成します。
 
 6. **Solution Pad** で **Main.storyboard** ファイルをダブルクリックして開きます。 これで目視で確認しながら UI を作成できます。
 
-    ![](hello-ios-quickstart-images/image7new.png "The iOS Designer")
+    ![iOS Designer](hello-ios-quickstart-images/image7new.png)
 
     "_サイズ クラス_" は既定で有効になっています。 詳細については、[Unified Storyboards](~/ios/user-interface/storyboards/unified-storyboards.md) ガイドをご覧ください。
 
 7. **ツールボックス パッド**の検索バーに「label」と入力し、デザイン サーフェイス (中央の領域) に**ラベル**をドラッグします。
 
-    ![](hello-ios-quickstart-images/image8new.png "Drag a Label onto the design surface the area in the center")
+    ![デザイン サーフェイス (中央の領域) にラベルをドラッグする](hello-ios-quickstart-images/image8new.png)
 
     > [!NOTE]
     > **[表示] > [パッド]** の順に選択すれば、**プロパティ** や**ツールボックス**をいつでも表示できます。
 
 8. *ドラッグ コントロール*のハンドル (コントロールを囲む円) をつかみ、ラベルを大きくします。
 
-    ![](hello-ios-quickstart-images/image9.png "Make the label wider")
+    ![ラベルの幅を広げる](hello-ios-quickstart-images/image9.png)
 
 9. デザイン サーフェイスで**ラベル**が選択されている状態で、 **[プロパティ]** パッドを利用し、 **[ラベル]** の **[テキスト]** プロパティを "Enter a Phoneword:" に変更します。
 
-    ![](hello-ios-quickstart-images/image10.png "Set the label to Enter a Phoneword")
+    ![ラベルに「Enter a Phoneword」を設定する](hello-ios-quickstart-images/image10.png)
 
 10. ツールボックス内で “テキスト フィールド” を検索し、 **[ツールボックス]** の **[テキスト フィールド]** をデザイン サーフェイスにドラッグし、 **[ラベル]** の下に置きます。 **テキスト フィールド**の幅が**ラベル**の幅と同じになるまで幅を調整します。
 
-    ![](hello-ios-quickstart-images/image12new.png "Make the Text Field the same width as the Label")
+    ![テキスト フィールドをラベルと同じ幅にする](hello-ios-quickstart-images/image12new.png)
 
 11. デザイン サーフェイスで**テキスト フィールド**が選択されている状態で、**Properties Pad** の ID セクションの **[テキスト フィールド]** の **[名前]** プロパティを `PhoneNumberText` に変更し、 **[テキスト]** プロパティを "1-855-XAMARIN" に変更します。
 
-    ![](hello-ios-quickstart-images/image13new.png "Change the Title property to 1-855-XAMARIN")
+    ![[タイトル] プロパティを 1-855-XAMARIN に変更する](hello-ios-quickstart-images/image13new.png)
 
 12. **[ボタン]** を **[ツールボックス]** からデザイン サーフェスにドラッグし、 **[テキスト フィールド]** の下に配置します。 **ボタン**の幅が**テキスト フィールド**や**ラベル**の幅と同じになるように幅を調整します。
 
-    ![](hello-ios-quickstart-images/image14new.png "Adjust the width so the Button is as wide as the Text Field and Label")
+    ![ボタンの幅がテキスト フィールドやラベルの幅と同じになるように調整する](hello-ios-quickstart-images/image14new.png)
 
 13. デザイン サーフェイスで**ボタン**が選択されている状態で、**Properties Pad** の **[ID]** セクションの **[名前]** プロパティを `TranslateButton` に変更します。 **[タイトル]** プロパティを "Translate" に変更します。
 
-    ![](hello-ios-quickstart-images/image15new.png "Change the Title property to Translate")
+    ![[タイトル] プロパティを Translate に変更する](hello-ios-quickstart-images/image15new.png)
 
 14. 上記の 2 つの手順を繰り返し、 **[ボタン]** を **[ツールボックス]** からデザイン サーフェスにドラッグし、最初の **[ボタン]** の下に配置します。 **ボタン**の幅が最初の**ボタン**の幅と同じになるように幅を調整します。
 
-    ![](hello-ios-quickstart-images/image16new.png "Adjust the width so the Button is as wide as the first Button")
+    ![ボタンの幅が最初のボタンの幅と同じになるように調整する](hello-ios-quickstart-images/image16new.png)
 
 15. デザイン サーフェイスで 2 つ目の**ボタン**が選択されている状態で、 **[プロパティ]** パッドの **[ID]** セクションの **[名前]** プロパティを `CallButton` に変更します。 **[タイトル]** プロパティを "Call" に変更します。
 
-    ![](hello-ios-quickstart-images/image17new.png "Change the Title property to Call")
+    ![[タイトル] プロパティを Call に変更する](hello-ios-quickstart-images/image17new.png)
 
     **[ファイル]、[保存]** の順に選択するか、**⌘ + s** を押し、変更内容を保存します。
 
 16. 電話番号を英数字から数字に変換するには、いくつかのロジックをアプリに追加する必要があります。 **Solution Pad** の **Phoneword_iOS** プロジェクトを右クリックし、 **[追加]、[新しいファイル...]** の順に選択するか、**⌘ + n** を押し、新しいファイルをプロジェクトに追加します。
 
-    ![](hello-ios-quickstart-images/image18.png "Add a new file to the Project")
+    ![新しいファイルをプロジェクトに追加する](hello-ios-quickstart-images/image18.png)
 
 17. **[新しいファイル]** ダイアログで **[全般]、[空のクラス]** の順に選択し、新しいファイルに「`PhoneTranslator`」という名前を付けます。
 
-    ![](hello-ios-quickstart-images/image19.png "Select Empty Class and name the new file PhoneTranslator")
+    ![[空のクラス] を選択し、新しいファイル PhoneTranslator という名前を付ける](hello-ios-quickstart-images/image19.png)
 
 18. これで、新しい空の C# クラスが作成されます。 テンプレート コードをすべて削除し、次のコードに置き換えます。
 
@@ -201,7 +201,7 @@ Xamarin.iOS は次のセットアップで機能します。
 
 19. ユーザー インターフェイスを接続するコードを追加します。 **Solution Pad** で **ViewController.cs** をダブルクリックして開きます。
 
-    ![](hello-ios-quickstart-images/image20new.png "Add code to wire up the user interface")
+    ![ユーザー インターフェイスを接続するコードを追加する](hello-ios-quickstart-images/image20new.png)
 
 20. 最初に `TranslateButton` を接続します。 **ViewController** クラスで、`ViewDidLoad` メソッドを見つけ、`base.ViewDidLoad()` 呼び出しの下に次のコードを追加します。
 
@@ -248,24 +248,24 @@ Xamarin.iOS は次のセットアップで機能します。
 
 22. 変更内容を保存したら、 **[ビルド]、[すべてビルド]** の順に選択するか、**⌘ + B** を押し、アプリケーションをビルドします。アプリケーションがコンパイルされると、IDE の一番上に成功メッセージが表示されます。
 
-    ![](hello-ios-quickstart-images/image21.png "A success message will appear at the top of the IDE")
+    ![IDE の一番上に成功メッセージが表示される](hello-ios-quickstart-images/image21.png)
 
     エラーがある場合は、アプリケーションが正常にビルドされるまで、前の手順を実行し、誤りを修正します。
 
 23. 最後に **iOS シミュレーター**でアプリケーションをテストします。 IDE の左上で、最初のドロップダウンから **[デバッグ]** を選択し、2 つ目のドロップダウンから **[iPhone XR iOS 12.0]** (またはその他の使用可能なシミュレーター) を選択し、 **[開始]** (再生ボタンに似た三角形のボタン) を押します。
 
-    ![](hello-ios-quickstart-images/image27.png "Select a simulator and press start")
+    ![シミュレーターを選択して [開始] を押す](hello-ios-quickstart-images/image27.png)
 
     > [!NOTE]
     > 現在のところ、Apple の要件に起因し、場合によっては、デバイスまたはシミュレーターのコードをビルドするため、開発証明書または "*署名 ID*" を用意する必要があります。 [デバイス プロビジョニング ガイド](~/ios/get-started/installation/device-provisioning/manual-provisioning.md)の手順に従ってこれを設定します。
 
 24. これにより、iOS シミュレーター内でアプリケーションが起動します。
 
-    ![](hello-ios-quickstart-images/image28.png "The application running inside the iOS Simulator")
+    ![iOS シミュレーター内で実行されているアプリケーション](hello-ios-quickstart-images/image28.png)
 
     iOS シミュレーターでは通話に対応していません。代わりに、電話をかけようとすると警告ダイアログが表示されます。
 
-    ![](hello-ios-quickstart-images/image29.png "The alert dialog when trying to place a call")
+    ![電話をかけようとしたときの警告ダイアログ](hello-ios-quickstart-images/image29.png)
 
 ::: zone-end
 ::: zone pivot="windows"
@@ -282,7 +282,7 @@ Xamarin.iOS は次のセットアップで機能します。
 
 1. **[スタート]** メニューから Visual Studio を起動します。
 
-    ![](hello-ios-quickstart-images/image001-.png "The Start screen")
+    ![スタート画面](hello-ios-quickstart-images/image001-.png)
 
     **[ファイル] > [新規] > [プロジェクト...] > [Visual C#] > [iPhone と iPad] > [iOS アプリ (Xamarin)]** の順に選択し、新しい Xamarin.iOS ソリューションを作成します。
 
@@ -300,56 +300,56 @@ Xamarin.iOS は次のセットアップで機能します。
 
 1. **ソリューション エクスプローラー** で iOS デザイナーの **Main.storyboard** ファイルをダブルクリックして開きます。
 
-    ![](hello-ios-quickstart-images/vs-image7.png "The iOS Designer")
+    ![iOS Designer](hello-ios-quickstart-images/vs-image7.png)
 
 1. **[ツールボックス]** タブの検索バーに「label」と入力し、デザイン サーフェイス (中央の領域) に**ラベル**をドラッグします。
 
-    ![](hello-ios-quickstart-images/vs-image8.png "Drag a Label onto the design surface the area in the center")
+    ![デザイン サーフェイス (中央の領域) にラベルをドラッグする](hello-ios-quickstart-images/vs-image8.png)
 
 1. 次に、*ドラッグ コントロール*のハンドルをつかみ、ラベルを大きくします。
 
-    ![](hello-ios-quickstart-images/vs-image9.png "Make the label wider")
+    ![ラベルの幅を広げる](hello-ios-quickstart-images/vs-image9.png)
 
 1. デザイン サーフェイスで**ラベル**が選択されている状態で、 **[プロパティ]** ウィンドウを利用し、 **[ラベル]** の **[テキスト]** プロパティを "Enter a Phoneword:" に変更します。
 
-    ![](hello-ios-quickstart-images/vs-image10.png "Change the Text property of the Label to `Enter a Phoneword`")
+    ![ラベルの [テキスト] プロパティに「Enter a Phoneword」を設定する](hello-ios-quickstart-images/vs-image10.png)
 
     > [!NOTE]
     > **[表示]** メニューに移動すれば、 **[プロパティ]** や **[ツールボックス]** をいつでも表示できます。
 
 1. ツールボックス内で “テキスト フィールド” を検索し、 **[ツールボックス]** の **[テキスト フィールド]** をデザイン サーフェイスにドラッグし、 **[ラベル]** の下に置きます。 **テキスト フィールド**の幅が**ラベル**の幅と同じになるまで幅を調整します。
 
-    ![](hello-ios-quickstart-images/vs-image12.png "Adjust the width until the Text Field is the same width as the Label")
+    ![テキスト フィールドの幅がラベルの幅と同じになるまで調整する](hello-ios-quickstart-images/vs-image12.png)
 
 1. デザイン サーフェイスで**テキスト フィールド**が選択されている状態で、 **[プロパティ]** パッドの ID セクションの **[テキスト フィールド]** の **[名前]** プロパティを `PhoneNumberText` に変更し、 **[テキスト]** プロパティを "1-855-XAMARIN" に変更します。
 
-    ![](hello-ios-quickstart-images/vs-image13.png "Change the Text property to 1-855-XAMARIN")
+    ![[テキスト] プロパティを 1-855-XAMARIN に変更する](hello-ios-quickstart-images/vs-image13.png)
 
 1. **[ボタン]** を **[ツールボックス]** からデザイン サーフェスにドラッグし、 **[テキスト フィールド]** の下に配置します。 **ボタン**の幅が**テキスト フィールド**や**ラベル**の幅と同じになるように幅を調整します。
 
-    ![](hello-ios-quickstart-images/vs-image14.png "Adjust the width so the Button is as wide as the Text Field and Label")
+    ![ボタンの幅がテキスト フィールドやラベルの幅と同じになるように調整する](hello-ios-quickstart-images/vs-image14.png)
 
 1. デザイン サーフェイスで**ボタン**が選択されている状態で、 **[プロパティ]** パッドの **[ID]** セクションの **[名前]** プロパティを `TranslateButton` に変更します。 **[タイトル]** プロパティを "Translate" に変更します。
 
-    ![](hello-ios-quickstart-images/vs-image15.png "Change the Title property to Translate")
+    ![[タイトル] プロパティを Translate に変更する](hello-ios-quickstart-images/vs-image15.png)
 
 1. 前の 2 つの手順を繰り返し、 **[ボタン]** を **[ツールボックス]** からデザイン サーフェスにドラッグし、最初の **[ボタン]** の下に配置します。 **ボタン**の幅が最初の**ボタン**の幅と同じになるように幅を調整します。
 
-    ![](hello-ios-quickstart-images/vs-image16.png "Adjust the width so the Button is as wide as the first Button")
+    ![ボタンの幅が最初のボタンの幅と同じになるように調整する](hello-ios-quickstart-images/vs-image16.png)
 
 1. デザイン サーフェイスで 2 つ目の**ボタン**が選択されている状態で、 **[プロパティ]** の **[ID]** セクションの **[名前]** プロパティを `CallButton` に変更します。 **[タイトル]** プロパティを "Call" に変更します。
 
-    ![](hello-ios-quickstart-images/vs-image17.png "Change the Title property to Call")
+    ![[タイトル] プロパティを Call に変更する](hello-ios-quickstart-images/vs-image17.png)
 
     **[ファイル]、[すべて保存]** の順に選択するか、**Ctrl + s** を押し、変更内容を保存します。
 
 1. 電話番号を英数字から数字に変換するコードをいくつか追加します。 最初に新しいファイルをプロジェクトに追加します。**ソリューション エクスプローラー**で **Phoneword** プロジェクトを右クリックし、 **[追加]、[新しい項目...]** の順に選択するか、**Ctrl + Shift + A** を押してください。
 
-    ![](hello-ios-quickstart-images/vs-image18.png "Add some code to translate phone numbers from alphanumeric to numeric")
+    ![電話番号を英数字から数字に変換するコードをいくつか追加する](hello-ios-quickstart-images/vs-image18.png)
 
 1. (プロジェクトを右クリックし、[追加]、[新しいアイテム] の順に選択すると表示される) **[新しいアイテムの追加]** ダイアログで **[Apple]、[クラス]** の順に選択し、新しいファイルに「`PhoneTranslator`」という名前を付けます。
 
-    ![](hello-ios-quickstart-images/vs-image19.w157.png "Add a new class named PhoneTranslator")
+    ![PhoneTranslator という名前の新しいクラスを追加する](hello-ios-quickstart-images/vs-image19.w157.png)
 
     > [!IMPORTANT]
     > アイコンに C# がある 'class' テンプレートを必ず選択してください。 それ以外を選択すると、この新しいクラスを参照できないことがあります。
@@ -422,7 +422,7 @@ Xamarin.iOS は次のセットアップで機能します。
 
 1. ハンドルとボタンの相互作用にロジックを追加できるように、**ソリューション エクスプローラー**の **ViewController.cs** をダブルクリックして開きます。
 
-    ![](hello-ios-quickstart-images/vs-image20.png "Logic added to handle interactions with the buttons")
+    ![ボタンとの相互作用を処理するために追加されたロジック](hello-ios-quickstart-images/vs-image20.png)
 
 1. 最初に `TranslateButton` を接続します。 **ViewController** クラスで、`ViewDidLoad` メソッドを見つけます。 `ViewDidLoad` 内の `base.ViewDidLoad()` 呼び出しの下に次のボタン コードを追加します。
 
@@ -470,21 +470,21 @@ Xamarin.iOS は次のセットアップで機能します。
 
 1. 変更内容を保存したら、 **[ビルド]、[ソリューションのビルド]** の順に選択するか、**Ctrl + Shift + B** を押し、アプリケーションをビルドします。アプリケーションがコンパイルされると、IDE の一番下に成功メッセージが表示されます。
 
-    ![](hello-ios-quickstart-images/vs-image21.png "A success message will appear at the bottom of the IDE")
+    ![IDE の一番下に成功メッセージが表示される](hello-ios-quickstart-images/vs-image21.png)
 
     エラーがある場合は、アプリケーションが正常にビルドされるまで、前の手順を実行し、誤りを修正します。
 
 1. 最後に**リモートの iOS シミュレーター**でアプリケーションをテストします。 IDE ツール バーで、ドロップダウン メニューから **[デバッグ]** と **[iPhone 8 Plus iOS x.x]** を選択し、 **[開始]** (再生ボタンに似た緑の三角形) を押します。
 
-    ![](hello-ios-quickstart-images/vs-image27.png "Press Start")
+    ![[開始] を押す](hello-ios-quickstart-images/vs-image27.png)
 
 1. これにより、iOS シミュレーター内でアプリケーションが起動します。
 
-    ![](hello-ios-quickstart-images/vs-image28.png "The application running inside the iOS Simulator")
+    ![iOS シミュレーター内で実行されているアプリケーション](hello-ios-quickstart-images/vs-image28.png)
 
     iOS シミュレーターでは通話に対応していません。代わりに、電話をかけようとすると警告ダイアログが表示されます。
 
-    ![](hello-ios-quickstart-images/vs-image29.png "An alert dialog will display when trying to place a call")
+    ![電話をかけようとすると警告ダイアログが表示される](hello-ios-quickstart-images/vs-image29.png)
 
 ::: zone-end
 

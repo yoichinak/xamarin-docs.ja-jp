@@ -10,12 +10,12 @@ ms.date: 03/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 45b7d0d20c43aa22ebde3a17552f10ceea77a48b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5367d7933e70c59298faacff85c1d5f533bc0776
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139140"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929282"
 ---
 # <a name="xamarin-hot-restart-preview"></a>Xamarin のホット再起動 (プレビュー)
 
@@ -44,7 +44,7 @@ Xamarin のホット再起動を使用すると、複数ファイルのコード
 
 2. ツール バーの **[ローカル デバイス]** を選択してクリックし、セットアップ ウィザードを起動します。
 
-    [![](hot-restart-images/toolbar.png "Screenshot of the Visual Studio toolbar with local device set as the debug target.")](hot-restart-images/toolbar.png)
+    [![ローカル デバイスがデバッグ ターゲットとして設定されている Visual Studio ツール バーのスクリーンショット。](hot-restart-images/toolbar.png)](hot-restart-images/toolbar.png)
 
 3. iTunes がインストールされていない場合は、 **[Download iTunes]\(iTunes をダウンロード\)** をクリックして、インストーラーをダウンロードします。 iTunes のインストールが完了したら **[次へ]** をクリックします。
 
@@ -62,7 +62,7 @@ Xamarin のホット再起動を使用すると、複数ファイルのコード
 
 デバッグ中にコード ファイルを編集し、[デバッグ] ツール バーの **[再起動]** ボタンを押すか、**Ctrl + Shift + F5** キーを使用して、新しい変更が適用されたデバッグ セッションを再起動することができます。
 
-[![](hot-restart-images/restart.png "Screenshot of the debug toolbar with the restart button highlighted.")](hot-restart-images/toolbar.png)
+[![[再起動] ボタンが強調表示されている [デバッグ] ツール バーのスクリーンショット。](hot-restart-images/restart.png)](hot-restart-images/toolbar.png)
 
 また、`HOTRESTART` プリプロセッサ シンボルを使用して、Xamarin のホット再起動でデバッグするときに特定のコードが実行されないようにすることもできます。
 

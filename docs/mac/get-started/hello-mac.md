@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 09/02/2018
-ms.openlocfilehash: b56275ef903aa7def239a2e19980f52d83e6194f
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 767282516d9fc2ce097d13641697290dad7bd8ad
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75489740"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938074"
 ---
 # <a name="hello-mac-walkthrough"></a>Hello, Mac - チュートリアル
 
@@ -23,7 +23,7 @@ Xamarin.Mac を使うと、*Objective-C* または *Swift* で開発するとき
 
 この記事では、ボタンがクリックされた回数を数えるシンプルな **Hello Mac** アプリを構築するプロセスを示しながら、Xamarin.Mac、Visual Studio for Mac、Xcode の Interface Builder を使用して Mac アプリを作成するために必要な主要概念を紹介します。
 
-[![](hello-mac-images/run02-sml.png "Example of the Hello, Mac app running")](hello-mac-images/run02.png#lightbox)
+[![Hello, Mac アプリの実行例](hello-mac-images/run02-sml.png)](hello-mac-images/run02.png#lightbox)
 
 次の概念について説明します。
 
@@ -57,25 +57,25 @@ Xamarin.Mac を使って構築されたアプリケーションを実行する�
 
 1. Visual Studio for Mac を起動します。
 
-    [![](hello-mac-images/setup01-sml.png "The main Visual Studio for Mac interface")](hello-mac-images/setup01.png#lightbox)
+    [![メインの Visual Studio for Mac インターフェイス](hello-mac-images/setup01-sml.png)](hello-mac-images/setup01.png#lightbox)
 
 2. **[新しいプロジェクト...]** ボタンをクリックして **[新しいプロジェクト]** ダイアログ ボックスを開き、 **[Mac]**  >  **[アプリ]**  >  **[Cocoa アプリ]** の順に選択して **[次へ]** ボタンをクリックします。
 
-    [![](hello-mac-images/setup02-sml.png "Selecting a Cocoa App")](hello-mac-images/setup02.png#lightbox)
+    [![Cocoa アプリの選択](hello-mac-images/setup02-sml.png)](hello-mac-images/setup02.png#lightbox)
 
 3. **[アプリ名]** に「`Hello_Mac`」と入力し、それ以外はすべて既定値のままにします。 **[次へ]** をクリックします。
 
-    [![](hello-mac-images/setup03-sml.png "Setting the name of the app")](hello-mac-images/setup03.png#lightbox)
+    [![アプリの名前の設定](hello-mac-images/setup03-sml.png)](hello-mac-images/setup03.png#lightbox)
 
 4. コンピューター上の新しいプロジェクトの場所を確認します。
 
-    [![](hello-mac-images/setup04-sml.png "Verifying the new solution details")](hello-mac-images/setup04.png#lightbox)
+    [![新しいソリューションの詳細の確認](hello-mac-images/setup04-sml.png)](hello-mac-images/setup04.png#lightbox)
 
 5. **[作成]** ボタンをクリックします。
 
 Visual Studio for Mac で新しい Xamarin.Mac アプリが作成され、アプリのソリューションに追加される既定のファイルが表示されます。
 
-[![](hello-mac-images/project01-sml.png "The new solution default view")](hello-mac-images/project01.png#lightbox)
+[![ソリューションの新しい既定のビュー](hello-mac-images/project01-sml.png)](hello-mac-images/project01.png#lightbox)
 
 Visual Studio for Mac では、Visual Studio 2019 と同じ **[ソリューション]** と **[プロジェクト]** の構造が使用されます。 ソリューションは 1 つまたは複数のプロジェクトを保持できるコンテナーです。プロジェクトには、アプリケーション、サポート ライブラリ、テスト アプリケーションなどを含めることができます。 **[ファイル] > [新しいプロジェクト]** テンプレートにより、ソリューションとアプリケーション プロジェクトが自動的に作成されます。
 
@@ -228,7 +228,7 @@ Xamarin.Mac アプリ プロジェクトを作成し、そのコンポーネン�
 
 `Info.plist` ファイルには、**名前**や**バンドル ID** などの Xamarin.Mac アプリに関する情報が含まれています。
 
-[![](hello-mac-images/infoplist01.png "The Visual Studio for Mac plist editor")](hello-mac-images/infoplist01.png#lightbox)
+[![Visual Studio for Mac plist エディター](hello-mac-images/infoplist01.png)](hello-mac-images/infoplist01.png#lightbox)
 
 また、**メイン インターフェイス** ドロップダウンの Xamarin.Mac アプリのユーザー インターフェイスを表示するために使用される_ストーリーボード_も定義します。 上記の例において、ドロップダウンの `Main` は**ソリューション エクスプローラー**のプロジェクト ツリーにある `Main.storyboard` に関連しています。 また、それらを含む*アセット カタログ* (この場合は **AppIcons**) を指定することで、アプリのアイコンが定義されます。
 
@@ -236,7 +236,7 @@ Xamarin.Mac アプリ プロジェクトを作成し、そのコンポーネン�
 
 アプリの `Entitlements.plist` ファイルは、Xamarin.Mac アプリの**サンドボックス**や **iCloud** などの権利を制御します。
 
-[![](hello-mac-images/entitlements01.png "The Visual Studio for Mac entitlements editor")](hello-mac-images/entitlements01.png#lightbox)
+[![Visual Studio for Mac 権利エディター](hello-mac-images/entitlements01.png)](hello-mac-images/entitlements01.png#lightbox)
 
 Hello World の例に権利は不要です。 次のセクションでは、Xcode の Interface Builder を使用して **Main.storyboard** ファイルを編集し、Xamarin.Mac アプリの UI を定義する方法を示します。
 
@@ -246,11 +246,11 @@ Xcode の一部として、Apple は Interface Builder というツールを作�
 
 作業を開始するには、**ソリューション エクスプローラー**で `Main.storyboard` ファイルをダブルクリックして、Xcode と Interface Builder での編集用に開きます。
 
-[![](hello-mac-images/xcode01.png "The Main.storyboard file in the Solution Explorer")](hello-mac-images/xcode01.png#lightbox)
+[![ソリューション エクスプローラーの Main.storyboard ファイル](hello-mac-images/xcode01.png)](hello-mac-images/xcode01.png#lightbox)
 
 これで、次のスクリーンショットのように Xcode が起動します。
 
-[![](hello-mac-images/xcode02.png "The default Xcode Interface Builder view")](hello-mac-images/xcode02.png#lightbox)
+[![既定の Xcode Interface Builder ビュー](hello-mac-images/xcode02.png)](hello-mac-images/xcode02.png#lightbox)
 
 インターフェイスのデザインを始める前に、デザインに使用する主な機能を中心に Xcode の概要を簡単に説明します。
 
@@ -261,7 +261,7 @@ Xcode の一部として、Apple は Interface Builder というツールを作�
 
 Visual Studio for Mac から Xcode で **.storyboard** ファイルを開くと、左側に**プロジェクト ナビゲーター**、中央に**インターフェイス階層**と**インターフェイス エディター**、右側に**プロパティとユーティリティ**のセクションが表示されます。
 
-[![](hello-mac-images/xcode03.png "The various sections of Interface Builder in Xcode")](hello-mac-images/xcode03.png#lightbox)
+[![Xcode での Interface Builder のさまざまなセクション](hello-mac-images/xcode03.png)](hello-mac-images/xcode03.png#lightbox)
 
 以下のセクションでは、これらの Xcode の各機能と Xamarin.Mac アプリのインターフェイスを作成する方法について説明します。
 
@@ -283,13 +283,13 @@ Xcode で **.storyboard** ファイルを開くと、Visual Studio for Mac に�
 
 **プロパティとユーティリティ**のセクションは、**プロパティ** (インスペクターとも呼ばれる) と**ライブラリ**という 2 つの主要なセクションに分かれています。
 
-[![](hello-mac-images/xcode04.png "The Properties Inspector")](hello-mac-images/xcode04.png#lightbox)
+[![プロパティ インスペクター](hello-mac-images/xcode04.png)](hello-mac-images/xcode04.png#lightbox)
 
 最初はこのセクションはほとんど空ですが、開発者が**インターフェイス エディター**または**インターフェイス階層**で要素を選択すると、**プロパティ** セクションには指定した要素と調整可能なプロパティに関する情報が設定されます。
 
 **プロパティ** セクション内には、次の図に示すように 8 つの異なる*インスペクター タブ*があります。
 
-[![](hello-mac-images/xcode05.png "An overview of all Inspectors")](hello-mac-images/xcode05.png#lightbox)
+[![すべてのインスペクターの概要](hello-mac-images/xcode05.png)](hello-mac-images/xcode05.png#lightbox)
 
 ### <a name="properties--utility-types"></a>プロパティとユーティリティの種類
 
@@ -306,7 +306,7 @@ Xcode で **.storyboard** ファイルを開くと、Visual Studio for Mac に�
 
 **ライブラリ** セクションでは、コントロールとオブジェクトを探してデザイナーに配置し、グラフィカルにユーザー インターフェイスを構築します。
 
-[![](hello-mac-images/xcode06.png "The Xcode Library Inspector")](hello-mac-images/xcode06.png#lightbox)
+[![Xcode ライブラリ インスペクター](hello-mac-images/xcode06.png)](hello-mac-images/xcode06.png#lightbox)
 
 ## <a name="creating-the-interface"></a>インターフェイスの作成
 
@@ -316,11 +316,11 @@ Xcode IDE と Interface Builder の基本を理解したら、開発者はメイ
 
 1. Xcode で、**ライブラリ** セクションから**ボタン**をドラッグします。
 
-    [![](hello-mac-images/xcode07.png "Selecting a NSButton from the Library Inspector")](hello-mac-images/xcode07.png#lightbox)
+    [![ライブラリ インスペクターからの NSButton の選択](hello-mac-images/xcode07.png)](hello-mac-images/xcode07.png#lightbox)
 
 2. **Interface Editor** の**ビュー** (**ウィンドウ コントローラー**の下) にボタンをドロップします。
 
-    [![](hello-mac-images/xcode08.png "Adding a Button to the interface design")](hello-mac-images/xcode08.png#lightbox)
+    [![インターフェイス デザインへのボタンの追加](hello-mac-images/xcode08.png)](hello-mac-images/xcode08.png#lightbox)
 
 3. **属性インスペクター**の **Title** プロパティをクリックし、ボタンのタイトルを「**クリックしてください**」に変更します。
 
@@ -328,19 +328,19 @@ Xcode IDE と Interface Builder の基本を理解したら、開発者はメイ
 
 4. **ライブラリ セクション**から**ラベル**をドラッグします。
 
-    [![](hello-mac-images/xcode10.png "Selecting a Label from the Library Inspector")](hello-mac-images/xcode10.png#lightbox)
+    [![ライブラリ インスペクターからのラベルの選択](hello-mac-images/xcode10.png)](hello-mac-images/xcode10.png#lightbox)
 
 5. **Interface Editor** のボタンの横にある**ウィンドウ**にラベルをドラッグします。
 
-    [![](hello-mac-images/xcode11.png "Adding a Label to the Interface Design")](hello-mac-images/xcode11.png#lightbox)
+    [![インターフェイス デザインへのラベルの追加](hello-mac-images/xcode11.png)](hello-mac-images/xcode11.png#lightbox)
 
 6. ラベルの右ハンドルをつかみ、ウィンドウの端に近づくまでドラッグします。
 
-    [![](hello-mac-images/xcode12.png "Resizing the Label")](hello-mac-images/xcode12.png#lightbox)
+    [![ラベルのサイズの変更](hello-mac-images/xcode12.png)](hello-mac-images/xcode12.png#lightbox)
 
 7. 追加したボタンを**インターフェイス エディター**で選択し、ウィンドウ下部の**制約エディター** アイコンをクリックします。
 
-    [![](hello-mac-images/xcode13.png "Adding constraints to the button")](hello-mac-images/xcode13.png#lightbox)
+    [![ボタンへの制約の追加](hello-mac-images/xcode13.png)](hello-mac-images/xcode13.png#lightbox)
 
 8. エディターの上部で、左上の**赤い I ビーム**をクリックします。 これにより、ウィンドウのサイズが変更されても、ボタンが画面の左上隅の同じ位置に維持されます。
 
@@ -350,7 +350,7 @@ Xcode IDE と Interface Builder の基本を理解したら、開発者はメイ
 
 11. ラベルを選択し、**制約エディター** アイコンをもう一度クリックします。
 
-    [![](hello-mac-images/xcode14.png "Adding constraints to the label")](hello-mac-images/xcode14.png#lightbox)
+    [![ラベルへの制約の追加](hello-mac-images/xcode14.png)](hello-mac-images/xcode14.png#lightbox)
 
 12. **制約エディター**の上、右、左にある**赤い I ビーム**をクリックすると、指定された X と Y の位置にラベルが固定され、実行中のアプリケーションでウィンドウのサイズが変更されたときに拡大、縮小するように指定されます。
 
@@ -362,7 +362,7 @@ Xcode IDE と Interface Builder の基本を理解したら、開発者はメイ
 
 **インターフェイス階層**セクションを参照して、ユーザー インターフェイスを構成する要素のレイアウトと階層がどのように表示されるかを確認します。
 
-[![](hello-mac-images/xcode15.png "Selecting an element in the Interface Hierarchy")](hello-mac-images/xcode15.png#lightbox)
+[![インターフェイス階層内の要素の選択](hello-mac-images/xcode15.png)](hello-mac-images/xcode15.png#lightbox)
 
 ここから、開発者は必要に応じて項目を選択して編集したり、UI 要素をドラッグして順序を変更したりできます。 たとえば、UI 要素が別の要素で覆われている場合、その要素をリストの一番下にドラッグすると、その要素をウィンドウの一番上の項目にすることができます。
 
@@ -379,7 +379,7 @@ Xcode では、**Outlet** と **Action** は*コントロールのドラッグ*�
 
 Xamarin.Mac 開発者にとって、これは開発者が**アウトレット**または**アクション**を作成する Objective-C スタブ ファイル (C# ファイルに対応) にドラッグすることを意味します。 Visual Studio for Mac は、Interface Builder を使用するために生成した shim Xcode プロジェクトの一部として `ViewController.h` というファイルを作成しました。
 
-[![](hello-mac-images/xcode16-sml.png "Viewing source in Xcode")](hello-mac-images/xcode16.png#lightbox)
+[![Xcode でのソースの表示](hello-mac-images/xcode16-sml.png)](hello-mac-images/xcode16.png#lightbox)
 
 このスタブ `.h` ファイルは、新しい `NSWindow` が作成されたときに自動的に Xamarin.Mac プロジェクトに追加される `ViewController.designer.cs` を反映しています。 このファイルは、Interface Builder によって行われた変更を同期するためにも使用されます。そしてこのファイルで **Outlet** と **Action** が作成され、UI 要素が C# コードに公開されます。
 
@@ -391,7 +391,7 @@ Xamarin.Mac 開発者にとって、これは開発者が**アウトレット**�
 
 1. Xcode の画面の右上の端にある**二連の輪**のボタンをクリックして、**アシスタント エディター**を開きます。
 
-    [![](hello-mac-images/outlet01.png "Displaying the Assistant Editor")](hello-mac-images/outlet01.png#lightbox)
+    [![アシスタント エディターの表示](hello-mac-images/outlet01.png)](hello-mac-images/outlet01.png#lightbox)
 
 2. Xcode が分割ビュー モードに切り替わり、一方の側に**インターフェイス エディター**、もう一方の側に**コード エディター**が表示されます。
 
@@ -399,25 +399,25 @@ Xamarin.Mac 開発者にとって、これは開発者が**アウトレット**�
 
 4. **コード エディター**の上部で、 **[自動リンク]** をクリックし、`ViewController.h` ファイルを選択します。
 
-    [![](hello-mac-images/outlet02.png "Selecting the correct file")](hello-mac-images/outlet02.png#lightbox)
+    [![正しいファイルの選択](hello-mac-images/outlet02.png)](hello-mac-images/outlet02.png#lightbox)
 
 5. Xcode で正しいファイルが選択されます。
 
-    [![](hello-mac-images/outlet03.png "Viewing the ViewController.h file")](hello-mac-images/outlet03.png#lightbox)
+    [![ViewController.h ファイルの表示](hello-mac-images/outlet03.png)](hello-mac-images/outlet03.png#lightbox)
 
 6. **最後のステップは非常に重要です。** 正しいファイルを選択しなかった場合、**Outlet** と **Action** を作成することができなくなるか、またはそれらが C# の間違ったクラスに公開されます。
 
 7. **インターフェイス エディター**で、キーボードの **Control** キーを押しながら、前述の手順で作成したラベルをクリックしてコード エディターの `@interface ViewController : NSViewController {}` コードのすぐ下にドラッグします。
 
-    [![](hello-mac-images/outlet04.png "Dragging to create an Outlet")](hello-mac-images/outlet04.png#lightbox)
+    [![ドラッグしてアウトレットを作成](hello-mac-images/outlet04.png)](hello-mac-images/outlet04.png#lightbox)
 
 8. ダイアログ ボックスが表示されます。 **[接続]** を **[アウトレット]** に設定したままにして、 **[名前]** に「`ClickedLabel`」と入力します。
 
-    [![](hello-mac-images/outlet05.png "Defining the Outlet")](hello-mac-images/outlet05.png#lightbox)
+    [![アウトレットの定義](hello-mac-images/outlet05.png)](hello-mac-images/outlet05.png#lightbox)
 
 9. **[接続]** ボタンをクリックして**アウトレット**を作成します。
 
-    [![](hello-mac-images/outlet06.png "Viewing the final Outlet")](hello-mac-images/outlet06.png#lightbox)
+    [![最終アウトレットの表示](hello-mac-images/outlet06.png)](hello-mac-images/outlet06.png#lightbox)
 
 10. 変更内容をファイルに保存します。
 
@@ -431,19 +431,19 @@ Xamarin.Mac 開発者にとって、これは開発者が**アウトレット**�
 
 2. **インターフェイス エディター**で、キーボードの **Control** キーを押しながら、前述の手順で作成したボタンをクリックしてコード エディターの `@property (assign) IBOutlet NSTextField *ClickedLabel;` コードのすぐ下にドラッグします。
 
-    [![](hello-mac-images/action01.png "Dragging to create an Action")](hello-mac-images/action01.png#lightbox)
+    [![ドラッグしてアクションを作成](hello-mac-images/action01.png)](hello-mac-images/action01.png#lightbox)
 
 3. **[接続]** の種類を **[アクション]** に変更します。
 
-    [![](hello-mac-images/action02.png "Defining the Action")](hello-mac-images/action02.png#lightbox)
+    [![アクションの定義](hello-mac-images/action02.png)](hello-mac-images/action02.png#lightbox)
 
 4. **[名前]** に「`ClickedButton`」を入力します。
 
-    [![](hello-mac-images/action03.png "Naming the new Action")](hello-mac-images/action03.png#lightbox)
+    [![新しいアクションの名前付け](hello-mac-images/action03.png)](hello-mac-images/action03.png#lightbox)
 
 5. **[接続]** ボタンをクリックして**アクション**を作成します。
 
-    [![](hello-mac-images/action04.png "Viewing the final Action")](hello-mac-images/action04.png#lightbox)
+    [![最終アクションの表示](hello-mac-images/action04.png)](hello-mac-images/action04.png#lightbox)
 
 6. 変更内容をファイルに保存します。
 
@@ -458,7 +458,7 @@ Xamarin.Mac 開発者にとって、これは開発者が**アウトレット**�
 
 **ソリューション エクスプローラー**で **ViewController.designer.cs** を選択して、**Outlet** と **Action** が C# コードでどのように接続されているかを確認します。
 
-[![](hello-mac-images/sync01-sml.png "Synchronizing changes with Xcode")](hello-mac-images/sync01.png#lightbox)
+[![Xcode との変更の同期](hello-mac-images/sync01-sml.png)](hello-mac-images/sync01.png#lightbox)
 
 **ViewController.designer.cs** ファイル内の 2 つの定義がどのようになっているかに注目してください。
 
@@ -490,7 +490,7 @@ Visual Studio for Mac は **.h** ファイルの変更をリッスンし、そ�
 
 このサンプル アプリでは、最初のボタンをクリックするたびにラベルが更新され、ボタンがクリックされた回数が表示されます。 これを行うには、**ソリューション エクスプローラー**で `ViewController.cs` ファイルをダブルクリックして編集用に開きます。
 
-[![](hello-mac-images/code01-sml.png "Viewing the ViewController.cs file in Visual Studio for Mac")](hello-mac-images/code01.png#lightbox)
+[![Visual Studio for Mac での ViewController.cs ファイルの表示](hello-mac-images/code01-sml.png)](hello-mac-images/code01.png#lightbox)
 
 まず、`ViewController` クラスにクラスレベル変数を作成して、発生したクリックの回数を記録します。 クラス定義を編集し、次のようにします。
 
@@ -539,7 +539,7 @@ partial void ClickedButton (Foundation.NSObject sender) {
 
 開発者は、Visual Studio for Mac 画面の左上隅にある**構成セレクター**からビルドの種類を選択できます。
 
-[![](hello-mac-images/run01-sml.png "Selecting a Debug build")](hello-mac-images/run01.png#lightbox)
+[![デバッグ ビルドの選択](hello-mac-images/run01-sml.png)](hello-mac-images/run01.png#lightbox)
 
 ## <a name="building-the-application"></a>アプリケーションのビルド
 
@@ -557,11 +557,11 @@ partial void ClickedButton (Foundation.NSObject sender) {
 
 アプリはビルド (まだビルドされていない場合)、デバッグ モードで起動し、メイン インターフェイス ウィンドウを表示します。
 
-[![](hello-mac-images/run02-sml.png "Running the application")](hello-mac-images/run02.png#lightbox)
+[![アプリケーションの実行](hello-mac-images/run02-sml.png)](hello-mac-images/run02.png#lightbox)
 
 ボタンを何回かクリックすると、ラベルのカウントが更新されます。
 
-[![](hello-mac-images/run03-sml.png "Showing the results of clicking the button")](hello-mac-images/run03.png#lightbox)
+[![ボタンをクリックした結果の表示](hello-mac-images/run03-sml.png)](hello-mac-images/run03.png#lightbox)
 
 ## <a name="where-to-next"></a>次の場所
 

@@ -9,12 +9,12 @@ ms.date: 11/04/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5fafc24d9c4bd35d4ef0010ae4530341316c878a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: eb35750372c5ccb878c7b38f9d25898b09fd7f1e
+ms.sourcegitcommit: e412858ce431b3280c88241e324fcab33066eb58
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84802358"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865898"
 ---
 # <a name="xamarinessentials-file-system-helpers"></a>Xamarin.Essentials:ファイル システム ヘルパー
 
@@ -69,6 +69,9 @@ var mainDir = FileSystem.AppDataDirectory;
 
 - **CacheDirectory** – [Library/Caches](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html) ディレクトリを返します。
 - **AppDataDirectory** – iTunes と iCloud でバックアップされる [Library](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html) ディレクトリを返します。
+
+> [!IMPORTANT]
+> iOS シミュレーターでは、アプリケーション ID (ディレクトリ名の一部) はビルドごとに変更されるため、シミュレーター用のアプリケーションをビルドするたびに正しい ID を取得する必要があります。
 
 ファイルを iOS プロジェクトの **Resources** フォルダーに追加し、`OpenAppPackageFileAsync` で使用されるようにビルド アクションを **BundledResource** としてマークします。
 

@@ -10,12 +10,12 @@ ms.date: 10/24/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0ed11ccacec73dd3c5c220c41bffd090af6c5b27
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d1aead9297312e190a5a04ee0f33328d81f2547a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139387"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939959"
 ---
 # <a name="creating-an-effect"></a>エフェクトの作成
 
@@ -38,12 +38,12 @@ ms.locfileid: "84139387"
 
 サンプル アプリケーションでは、コントロールがフォーカスを取得したときに背景色を変更する `FocusEffect` を示します。 次の図に、サンプル アプリケーション内の各プロジェクトの役割と、それらの関係を示します。
 
-![](creating-images/focus-effect.png "Focus Effect Project Responsibilities")
+![フォーカス エフェクト プロジェクトの責任](creating-images/focus-effect.png)
 
 `HomePage` 上の [`Entry`](xref:Xamarin.Forms.Entry) コントロールが、各プラットフォーム固有のプロジェクト内の `FocusEffect` クラスによってカスタマイズされます。 各プラットフォームの `PlatformEffect` クラスから、各 `FocusEffect` クラスが派生します。 この結果、次のスクリーンショットに示すように、プラットフォーム固有の背景色を使用して `Entry` コントロールがレンダリングされ、フォーカスを取得するとその色が変更されます。
 
-![](creating-images/screenshots-1.png "Focus Effect on each Platform")
-![](creating-images/screenshots-2.png "Focus Effect on each Platform")
+![各プラットフォームでのフォーカス効果](creating-images/screenshots-1.png)
+![各プラットフォームでのフォーカス効果](creating-images/screenshots-2.png)
 
 ## <a name="creating-the-effect-on-each-platform"></a>各プラットフォームでのエフェクトの作成
 

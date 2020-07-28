@@ -1,6 +1,6 @@
 ---
-title: 'title: "複数ページの Xamarin.Forms アプリケーションでナビゲーションを実行する" の説明: "この記事では、単一のメモを格納できるシングルページ アプリケーションを、複数のメモを格納できる複数ページのアプリケーションに変更する方法について説明します。"'
-description: 'zone_pivot_groups: platform ms.topic: quickstart ms.prod: xamarin ms.assetid: 9DC3B3D6-6CBC-4705-BE80-3D86A9E65F92 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 04/01/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: 複数ページの Xamarin.Forms アプリケーションでナビゲーションを実行する
+description: この記事では、単一のメモを格納できるシングルページ アプリケーションを、複数のメモを格納できる複数ページのアプリケーションに変更する方法について説明します。
 zone_pivot_groups: platform
 ms.topic: quickstart
 ms.prod: xamarin
@@ -12,12 +12,12 @@ ms.date: 04/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b3616d0cf4804dfb37d4fe65034796c672dec828
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: 8858a66d2caeea815bf06d5d2741bfc3623598f5
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84127882"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933732"
 ---
 # <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>複数ページの Xamarin.Forms アプリケーションでナビゲーションを実行する
 
@@ -31,8 +31,8 @@ ms.locfileid: "84127882"
 
 このクイックスタートでは、単一のメモを格納できるクロスプラットフォームの Xamarin.Forms のシングルページ アプリケーションを、複数のメモを格納できる複数ページのアプリケーションに変更する方法について説明します。 最終的なアプリケーションは、次のとおりです。
 
-[![](multi-page-images/screenshots1-sml.png "Notes Page")](multi-page-images/screenshots1.png#lightbox "Notes Page")
-[![](multi-page-images/screenshots2-sml.png "Note Entry Page")](multi-page-images/screenshots2.png#lightbox "Note Entry Page")
+[![Notes ページ](multi-page-images/screenshots1-sml.png)](multi-page-images/screenshots1.png#lightbox "Notes ページ")
+[![Note Entry ページ](multi-page-images/screenshots2-sml.png)](multi-page-images/screenshots2.png#lightbox "Note Entry ページ")
 
 ### <a name="prerequisites"></a>必須コンポーネント
 
@@ -44,23 +44,23 @@ ms.locfileid: "84127882"
 
 1. Visual Studio を起動します。 スタート ウィンドウの最近使ったプロジェクトまたはソリューションのリストで **Notes** ソリューションをクリックするか、 **[プロジェクトやソリューションを開く]** をクリックします。次に、 **[プロジェクト/ソリューションを開く]** ダイアログで、Notes プロジェクトのソリューション ファイルを選択します。
 
-    ![](multi-page-images/vs/open-solution.png "Open Project")
+    ![プロジェクトを開く](multi-page-images/vs/open-solution.png)
 
 2. **ソリューション エクスプローラー**で、 **[Notes]** プロジェクトを右クリックし、 **[追加]、[新しいフォルダー]** の順に選択します。
 
-    ![](multi-page-images/vs/add-new-item.png "Add New Item")
+    ![新しい項目の追加](multi-page-images/vs/add-new-item.png)
 
 3. **ソリューション エクスプローラー**で、新しいフォルダーに **Models** という名前を付けます。
 
-    ![](multi-page-images/vs/name-folder.png "Models Folder")
+    ![Models フォルダー](multi-page-images/vs/name-folder.png)
 
 4. **ソリューション エクスプローラー**で、 **[Models]** フォルダーを選択して右クリックし、 **[追加]、[新しい項目]** の順に選択します。
 
-    ![](multi-page-images/vs/add-new-models-file.png "Add New File")
+    ![新しいファイルの追加](multi-page-images/vs/add-new-models-file.png)
 
 5. **[新しい項目の追加]** ダイアログで、 **[Visual C# アイテム]、[クラス]** の順に選択し、新しいファイルに **Note** という名前を付け、 **[追加]** ボタンをクリックします。
 
-    ![](multi-page-images/vs/add-note-class.png "Add Note Class")
+    ![Note クラスの追加](multi-page-images/vs/add-note-class.png)
 
     これにより、**Note** という名前のクラスが **Notes** プロジェクトの **Models** フォルダーに追加されます。
 
@@ -86,7 +86,7 @@ ms.locfileid: "84127882"
 
 7. **ソリューション エクスプローラー**で、 **[Notes]** プロジェクトを右クリックし、 **[追加]、[新しい項目]** の順に選択します。 **[新しい項目の追加]** ダイアログで、 **[Visual C# アイテム]、[Xamarin.Forms]、[コンテンツ ページ]** の順に選択し、新しいファイルに **NoteEntryPage** という名前を付け、 **[追加]** ボタンをクリックします。
 
-    ![](multi-page-images/vs/add-note-entry-page.png "Add Xamarin.Forms ContentPage")
+    ![Xamarin.Forms ContentPage を追加する](multi-page-images/vs/add-note-entry-page.png)
 
     これにより、**NoteEntryPage** という名前の新しいページがプロジェクトのルート フォルダーに追加されます。 このページは、アプリケーションの 2 ページ目になります。
 
@@ -327,23 +327,23 @@ ms.locfileid: "84127882"
 
 1. Visual Studio for Mac を起動します。 スタート ウィンドウで **[開く]** をクリックし、ダイアログで Notes プロジェクトのソリューション ファイルを選択します。
 
-    ![](multi-page-images/vsmac/open-solution.png "Open Solution")
+    ![[ソリューションを開く]](multi-page-images/vsmac/open-solution.png)
 
 2. **Solution Pad** で **[Notes]** プロジェクトを選択して右クリックし、 **[追加]、[新しいフォルダー]** の順に選択します。
 
-    ![](multi-page-images/vsmac/add-new-folder.png "Add New Folder")
+    ![新しいフォルダーの追加](multi-page-images/vsmac/add-new-folder.png)
 
 3. **Solution Pad** で、新しいフォルダーに **Models** という名前を付けます。
 
-    ![](multi-page-images/vsmac/name-folder.png "Models Folder")
+    ![Models フォルダー](multi-page-images/vsmac/name-folder.png)
 
 4. **Solution Pad** で、 **[Models]** フォルダーを選択して右クリックし、 **[追加]、[新しいファイル]** の順に選択します。
 
-    ![](multi-page-images/vsmac/add-new-models-file.png "Add New File")
+    ![新しいファイルの追加](multi-page-images/vsmac/add-new-models-file.png)
 
 5. **[新しいファイル]** ダイアログで **[全般]、[空のクラス]** の順に選択して、新しいファイルに **Note** という名前を付け **[新規]** ボタンをクリックします。
 
-    ![](multi-page-images/vsmac/add-note-class.png "Add Note Class")
+    ![Note クラスの追加](multi-page-images/vsmac/add-note-class.png)
 
     これにより、**Note** という名前のクラスが **Notes** プロジェクトの **Models** フォルダーに追加されます。
 
@@ -369,7 +369,7 @@ ms.locfileid: "84127882"
 
 7. **Solution Pad** で **[Notes]** プロジェクトを選択して右クリックし、 **[追加]、[新しいファイル]** の順に選択します。 **[新しいファイル]** ダイアログで、 **[フォーム]、[フォーム ContentPage XAML]** の順に選択して、新しいファイルに **NoteEntryPage** という名前を付け、 **[新規]** ボタンをクリックします。
 
-    ![](multi-page-images/vsmac/add-note-entry-page.png "Add Xamarin.Forms ContentPage")
+    ![Xamarin.Forms ContentPage を追加する](multi-page-images/vsmac/add-note-entry-page.png)
 
     これにより、**NoteEntryPage** という名前の新しいページがプロジェクトのルート フォルダーに追加されます。 このページは、アプリケーションの 2 ページ目になります。
 

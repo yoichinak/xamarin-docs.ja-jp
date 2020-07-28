@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2018
-ms.openlocfilehash: ae32588d75ec3152a1b8b8558d40abbe2e76d1b4
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 2650bda7115cd132e87bf669914320f63214e295
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73022486"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933225"
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Xamarin.iOS for Visual Studio の概要
 
@@ -53,7 +53,7 @@ Xamarin iOS for Visual Studio は、アイテムを標準のツール バーと�
 
 Xamarin iOS 開発に関連するコントロールは赤い円で囲まれています。
 
-[![](introduction-to-xamarin-ios-for-visual-studio-images/03.png "The controls relevant to Xamarin iOS development are circled in red")](introduction-to-xamarin-ios-for-visual-studio-images/03.png#lightbox "The controls relevant to Xamarin iOS development are circled in red")
+[![Xamarin iOS 開発に関連するコントロールは赤い円で囲まれています](introduction-to-xamarin-ios-for-visual-studio-images/03.png)](introduction-to-xamarin-ios-for-visual-studio-images/03.png#lightbox "Xamarin iOS 開発に関連するコントロールは赤い円で囲まれています")
 
 - **開始** - 選択されたプラットフォームでアプリケーションのデバッグまたは実行を開始します。 接続された Mac が必要です (iOS ツール バーのステータス インジケーターを確認してください)。
 - **ソリューション構成** – 使用する構成 (デバッグ、リリースなど) を選択できます。
@@ -63,7 +63,7 @@ Xamarin iOS 開発に関連するコントロールは赤い円で囲まれて�
 
 Visual Studio の各バージョンでの、Visual Studio の iOS ツール バーは似ています。 それらすべてを以下に示します。
 
-[![](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png "iOS Toolbar")](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png#lightbox)
+[![iOS ツール バー](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png)](introduction-to-xamarin-ios-for-visual-studio-images/iostoolbar.png#lightbox)
 
 各アイテムについては以下に説明します。
 
@@ -79,31 +79,31 @@ Visual Studio の各バージョンでの、Visual Studio の iOS ツール バ�
 
 次のスクリーンショットは、プロジェクトの種類に応じて異なる場合がある、使用可能な出力ウィンドウを示しています。
 
-[![](introduction-to-xamarin-ios-for-visual-studio-images/output-sml.png "The available output windows")](introduction-to-xamarin-ios-for-visual-studio-images/output-large.png#lightbox)
+[![使用可能な出力ウィンドウ](introduction-to-xamarin-ios-for-visual-studio-images/output-sml.png)](introduction-to-xamarin-ios-for-visual-studio-images/output-large.png#lightbox)
 
 - **Xamarin** – これには、Mac への接続やアクティブ化の状態など、Xamarin のみに関連する情報が含まれます。
 
-  [![](introduction-to-xamarin-ios-for-visual-studio-images/output3-sml.png "Information relating solely to Xamarin, such as the connection to the Mac and activation status")](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
+  [![Mac への接続やアクティブ化の状態など、Xamarin のみに関連する情報](introduction-to-xamarin-ios-for-visual-studio-images/output3-sml.png)](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
 
 - **Xamarin 診断** – Android との対話など、Xamarin プロジェクトに関する詳細情報が示されます。
 
-  [![](introduction-to-xamarin-ios-for-visual-studio-images/output4-sml.png "Detailed information about the Xamarin project")](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
+  [![Xamarin プロジェクトに関する詳細情報](introduction-to-xamarin-ios-for-visual-studio-images/output4-sml.png)](introduction-to-xamarin-ios-for-visual-studio-images/output3-large.png#lightbox)
 
 デバッグやビルドなどの Visual Studio の他の既定の出力ウィンドウは出力ビュー内でも使用でき、次のようにデバッグ出力や MSBuild 出力で使用されます。
 
 - **デバッグ**
 
-  [![](introduction-to-xamarin-ios-for-visual-studio-images/output2-sml.png "Debugging Output")](introduction-to-xamarin-ios-for-visual-studio-images/output2-large.png#lightbox)
+  [![デバッグの出力](introduction-to-xamarin-ios-for-visual-studio-images/output2-sml.png)](introduction-to-xamarin-ios-for-visual-studio-images/output2-large.png#lightbox)
 
 - **ビルド** & **ビルドの順序**
 
-  [![](introduction-to-xamarin-ios-for-visual-studio-images/output1-sml.png "MSBuild Output")](introduction-to-xamarin-ios-for-visual-studio-images/output1-large.png#lightbox)
+  [![MSBuild 出力](introduction-to-xamarin-ios-for-visual-studio-images/output1-sml.png)](introduction-to-xamarin-ios-for-visual-studio-images/output1-large.png#lightbox)
 
 ## <a name="ios-project-properties"></a>iOS プロジェクト プロパティ
 
 Visual Studio のプロジェクト プロパティには、プロジェクト名を右クリックし、コンテキスト メニューの *[プロパティ]* を選択することでアクセス可能です。 これにより、次のスクリーンショットのように、iOS アプリケーションを構成できるようになります。
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/iosproperties.png "Configuring an iOS application")
+![iOS アプリケーションの構成](introduction-to-xamarin-ios-for-visual-studio-images/iosproperties.png)
 
 - *iOS バンドル署名* – Mac に接続して、コード署名 ID とプロビジョニング プロファイルを設定します。
 
@@ -133,11 +133,11 @@ Visual Studio 内からの新しい iOS プロジェクトの作成は、他の�
 
 ストーリーボードの作成または編集を開始するには、`Main.storyboard` をダブルクリックして iOS Designer で開きます。
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/iosdesigner.png "The Main.storyboard in the iOS Designer")
+![iOS Designer の Main.storyboard](introduction-to-xamarin-ios-for-visual-studio-images/iosdesigner.png)
 
 オブジェクトをビューに追加するには、 **[ツールボックス]** ウィンドウを使用して、デザイン サーフェイスにアイテムをドラッグ アンド ドロップします。 ツールボックスがまだ追加されていない場合は、 **[ビュー]、[ツールボックス]** の順に選択して追加できます。 以下のように **[プロパティ]** ウィンドウを使用して、オブジェクト プロパティを変更し、そのレイアウトを調整し、イベントを作成することができます。
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/properties.png "The Properties pane")
+![[プロパティ] ウィンドウ](introduction-to-xamarin-ios-for-visual-studio-images/properties.png)
 
  iOS Designer の使用の詳細については、[Designer](~/ios/user-interface/designer/index.md) のガイドを参照してください。
 
@@ -163,7 +163,7 @@ Visual Studio 用の新しい [デバイス ログ] ツール ウィンドウで
 
 ブレークポイントは、プログラムの実行を一時的に停止するように、アプリケーションがデバッガーに通知する任意の時点に設定できます。 Visual Studio でブレークポイントを設定するには、エディターで、中断するコードの行番号の横にある余白領域をクリックします。
 
-![](introduction-to-xamarin-ios-for-visual-studio-images/image18.png "Setting a debug point")
+![デバッグ ポイントの設定](introduction-to-xamarin-ios-for-visual-studio-images/image18.png)
 
 デバッグを開始し、シミュレーターまたはデバイスを使用して、ブレークポイントにアプリケーションを移動します。 ブレークポイントにヒットすると、行が強調表示され、Visual Studio の通常のデバッグ動作が有効になります。コードのステップ イン、ステップ オーバー、またはステップ アウトを行ったり、ローカル変数を確認したり、あるいはイミディエイト ウィンドウを使用することができます。
 

@@ -9,12 +9,12 @@ ms.date: 01/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b4d644591ab85f185709e7bd53353580a6578d77
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 1eae29e8531c9d401630f9d113b01eb3c2510689
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84570111"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939166"
 ---
 # <a name="uninstall-xamarin-from-visual-studio"></a>Visual Studio から Xamarin をアンインストールする
 
@@ -30,25 +30,25 @@ Xamarin は、インストーラー アプリを使用して、Visual Studio 201
 
 2. 変更するインスタンスの **[変更]** ボタンを押します。
 
-    [![](uninstalling-xamarin-images/vs2017-02-sml.png "Press the modify button")](uninstalling-xamarin-images/vs2017-02.png#lightbox)
+    [![[変更] ボタンを押します](uninstalling-xamarin-images/vs2017-02-sml.png)](uninstalling-xamarin-images/vs2017-02.png#lightbox)
 
 3. **[ワークロード]** タブで、( **[モバイルとゲーム]** セクションの) **[.NET によるモバイル開発]** オプションの選択を解除します。
 
-    [![](uninstalling-xamarin-images/vs2017-03-sml.png "Uncheck the Mobile Development workload")](uninstalling-xamarin-images/vs2017-03.png#lightbox)
+    [![[モバイル開発] ワークロードをオフにします](uninstalling-xamarin-images/vs2017-03-sml.png)](uninstalling-xamarin-images/vs2017-03.png#lightbox)
 
 4. ウィンドウの右下にある **[変更]** ボタンをクリックします。
 
 5. インストーラーは、選択を解除したコンポーネントを削除します (インストーラーで変更を加えるには、Visual Studio 2017 を閉じる必要があります)。
 
-    [![](uninstalling-xamarin-images/vs2017-04-sml.png "Press the Modify button")](uninstalling-xamarin-images/vs2017-04.png#lightbox)
+    [![[変更] ボタンを押します](uninstalling-xamarin-images/vs2017-04-sml.png)](uninstalling-xamarin-images/vs2017-04.png#lightbox)
 
 個別の Xamarin コンポーネント (Profiler、Workbooks など) は、手順 3 で **[個別のコンポーネント]** タブに切り替えて、特定のコンポーネントの選択を解除して、アンインストールすることができます。
 
-[![](uninstalling-xamarin-images/vs2017-components-sml.png "Uninstall individual components")](uninstalling-xamarin-images/vs2017-components.png#lightbox)
+[![個々のコンポーネントをアンインストールします](uninstalling-xamarin-images/vs2017-components-sml.png)](uninstalling-xamarin-images/vs2017-components.png#lightbox)
 
 Visual Studio 2017 を完全にアンインストールするには、 **[起動]** ボタンの横にある 3 本線のメニューから **[アンインストール]** を選びます。
 
-[![](uninstalling-xamarin-images/vs2017-uninstall-sml.png "Uninstall Visual Studio completely")](uninstalling-xamarin-images/vs2017-uninstall.png#lightbox)
+[![Visual Studio を完全にアンインストールします](uninstalling-xamarin-images/vs2017-uninstall-sml.png)](uninstalling-xamarin-images/vs2017-uninstall.png#lightbox)
 
 > [!IMPORTANT]
 > Visual Studio の 2 つ (以上) のインスタンスを side-by-side (SxS) でインストールしている場合 (リリース バージョンとプレビュー バージョンなど)、1 つのインスタンスをアンインストールすると、次のような他の Visual Studio インスタンスから一部の Xamarin の機能が削除される可能性があります。
@@ -70,7 +70,7 @@ Visual Studio 2015 を完全にアンインストールするには、[visualstu
 
 Xamarin は、**コントロール パネル**を使って Windows コンピューターからアンインストールできます。 次の図に示すように、 **[プログラムと機能]** または **[プログラム] > [プログラムのアンインストール]** に移動します。
 
- [![](uninstalling-xamarin-images/image3.png "Navigate to Programs and Features or Programs  Uninstall a Program as illustrated here")](uninstalling-xamarin-images/image3.png#lightbox)
+ [![図に示すように、[プログラムと機能] または [プログラム] > [プログラムのアンインストール] に移動します](uninstalling-xamarin-images/image3.png)](uninstalling-xamarin-images/image3.png#lightbox)
 
 コントロール パネルで、表示されている次のいずれかをアンインストールします。
 

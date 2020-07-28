@@ -1,6 +1,6 @@
 ---
-title: 'title: "Xamarin.Formsモーダル ページ" の説明: "Xamarin.Forms は、モーダル ページをサポートしています。'
-description: 'モーダル ページは、そのタスクが完了するかキャンセルされるまで、他の操作ができない自己完結型のタスクを完了させるようユーザーに促します。 この記事では、モーダル ページに移動する方法について説明します。" ms.prod: xamarin ms.assetid:486CB7FD-2B9A-4DE3-94BD-C8D904E5D3C6 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:12/01/2017 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms モーダル ページ
+description: Xamarin.Forms はモーダル ページをサポートしています。 モーダル ページは、そのタスクが完了するかキャンセルされるまで、他の操作ができない自己完結型のタスクを完了させるようユーザーに促します。 この記事では、モーダル ページに移動する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 486CB7FD-2B9A-4DE3-94BD-C8D904E5D3C6
 ms.technology: xamarin-forms
@@ -10,18 +10,18 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: aecab26efaed9815ec6916877b5f42297821582c
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: ea0d38946a773dc7571a08f999be5eb6500bfc9b
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569609"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934499"
 ---
 # <a name="xamarinforms-modal-pages"></a>Xamarin.Forms モーダル ページ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-modal)
 
-_Xamarin.Forms はモーダル ページをサポートしています。モーダル ページは、そのタスクが完了するかキャンセルされるまで、他の操作ができない自己完結型のタスクを完了させるようユーザーに促します。この記事では、モーダル ページに移動する方法について説明します。_
+_Xamarin.Forms ではモーダル ページがサポートされています。モーダル ページは、そのタスクが完了するかキャンセルされるまで、他の操作ができない自己完結型のタスクを完了させるようユーザーに促します。この記事では、モーダル ページに移動する方法について説明します。_
 
 この記事では、次のトピックについて説明します。
 
@@ -32,11 +32,11 @@ _Xamarin.Forms はモーダル ページをサポートしています。モー�
 
 モーダル ページは、Xamarin.Forms でサポートされている任意の [Page](~/xamarin-forms/user-interface/controls/pages.md) の種類にすることができます。 次の図に示すように、モーダル ページを表示するために、アプリケーションからモーダル スタックにプッシュされ、アクティブ ページになります。
 
-![](modal-images/pushing.png "Pushing a Page to the Modal Stack")
+![ページをモーダル スタックにプッシュする](modal-images/pushing.png)
 
 次の図に示すように、前のページに戻るために、アプリケーションでは現在のページがモーダル スタックからポップされ、新しい最上位のページがアクティブ ページになります。
 
-![](modal-images/popping.png "Popping a Page from the Modal Stack")
+![モーダル スタックからページをポップする](modal-images/popping.png)
 
 ## <a name="performing-navigation"></a>ナビゲーションを実行する
 
@@ -64,7 +64,7 @@ async void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
 
 これにより、`MainPage` インスタンス上の [`ListView`](xref:Xamarin.Forms.ListView) で項目が選択されている場合は、`ModalPage` インスタンスがモーダル スタックにプッシュされ、アクティブ ページになります。 次のスクリーンショットに `ModalPage` インスタンスを示します。
 
-![](modal-images/modalpage.png "Modal Page Example")
+![モーダル ページの例](modal-images/modalpage.png)
 
 [`PushModalAsync`](xref:Xamarin.Forms.INavigation.PushModalAsync*) が呼び出されると、次のイベントが発生します。
 

@@ -12,12 +12,12 @@ ms.date: 04/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2864c7edabde18faec06c2c42042168d3e6c9671
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a28e391c6bacd460f095c94e30b2d9433a5191e4
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139803"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86931795"
 ---
 # <a name="store-data-in-a-local-sqlitenet-database"></a>ローカルの SQLite.NET データベースにデータを格納する
 
@@ -30,8 +30,8 @@ ms.locfileid: "84139803"
 
 このクイック スタートでは、ローカルの SQLite.NET データベースにデータを格納する方法について説明します。 最終的なアプリケーションは、次のとおりです。
 
-[![](database-images/screenshots1-sml.png "Notes Page")](database-images/screenshots1.png#lightbox "Notes Page")
-[![](database-images/screenshots2-sml.png "Note Entry Page")](database-images/screenshots2.png#lightbox "Note Entry Page")
+[![Notes ページ](database-images/screenshots1-sml.png)](database-images/screenshots1.png#lightbox "Notes ページ")
+[![Note Entry ページ](database-images/screenshots2-sml.png)](database-images/screenshots2.png#lightbox "Note Entry ページ")
 
 ## <a name="prerequisites"></a>必須コンポーネント
 
@@ -45,11 +45,11 @@ ms.locfileid: "84139803"
 
 2. **ソリューション エクスプローラー**で、 **[Notes]** プロジェクトを選択し、右クリックして **[NuGet パッケージの管理]** を選択します。
 
-    ![](database-images/vs/add-nuget-packages.png "Add NuGet Packages")    
+    ![NuGet パッケージの追加](database-images/vs/add-nuget-packages.png)    
 
 3. **NuGet パッケージ マネージャー**で、 **[参照]** タブを選択し、**pcl-sqlite-net** NuGet パッケージを検索して選択し、 **[インストール]** ボタンをクリックしてプロジェクトに追加します。
 
-    ![](database-images/vs/add-package.png "Add Package")
+    ![パッケージの追加](database-images/vs/add-package.png)
 
     > [!NOTE]
     > 類似した名前を持つ NuGet パッケージが多数あります。 正しいパッケージには、次の属性があります。
@@ -262,11 +262,11 @@ ms.locfileid: "84139803"
 
 2. **Solution Pad** で、 **[Notes]** プロジェクトを選択し、右クリックして **[追加] > [NuGet パッケージの追加]** の順に選択します。
 
-    ![](database-images/vsmac/add-nuget-packages.png "Add NuGet Packages")    
+    ![NuGet パッケージの追加](database-images/vsmac/add-nuget-packages.png)    
 
 3. **[パッケージを追加]** ウィンドウで、**sqlite-net-pcl** NuGet パッケージを検索して選択し、 **[パッケージを追加]** ボタンをクリックしてプロジェクトに追加します。
 
-    ![](database-images/vsmac/add-package.png "Add Package")
+    ![パッケージの追加](database-images/vsmac/add-package.png)
 
     > [!NOTE]
     > 類似した名前を持つ NuGet パッケージが多数あります。 正しいパッケージには、次の属性があります。

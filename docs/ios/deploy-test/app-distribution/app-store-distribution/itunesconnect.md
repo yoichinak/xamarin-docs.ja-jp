@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 172fd6a8c7ac1cfc0cfdaa428809a173b4999301
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 1de157540011011be6d48db25414c8667195c679
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84570090"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932709"
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>iTunes Connect でのアプリの構成
 
@@ -40,7 +40,7 @@ iTunes Connect は、次のことに使用できます。
 
 iTunes Connect の **[Agreements, Tax, and Banking]\(契約、税金と銀行の情報\)** セクションは、iTunes 開発者の支払いと源泉徴収に関する必須の財務情報を提供し、Apple と結んだすべての契約のステータスを追跡するために使用されます。 App Store で iOS アプリケーションをリリース (無償または販売) するには、その前に適切な契約を締結し、既存の契約の変更に合意する必要があります。
 
-[![](itunesconnect-images/agreement01.png "Managing Agreements, Tax and Banking")](itunesconnect-images/agreement01.png#lightbox)
+[![契約、税金、銀行の管理](itunesconnect-images/agreement01.png)](itunesconnect-images/agreement01.png#lightbox)
 
 ここでは、次の操作を実行できます。
 
@@ -63,13 +63,13 @@ iOS アプリケーションを iTunes Connect に追加するには、**チー�
 
 1. **[My Apps]\(マイ App\)** をクリックします。
 
-    [![](itunesconnect-images/add01.png "Click on My Apps")](itunesconnect-images/add01.png#lightbox)
+    [![[My Apps]\(マイ App\) をクリックする](itunesconnect-images/add01.png)](itunesconnect-images/add01.png#lightbox)
 2. 左上隅の **+** をクリックして、 **[New iOS App]\(\新規 iOS アプリ)** を選択します。
 
-    [![](itunesconnect-images/add02.png "Adding a New iOS App")](itunesconnect-images/add02.png#lightbox)
+    [![新しい iOS アプリの追加](itunesconnect-images/add02.png)](itunesconnect-images/add02.png#lightbox)
 3. iTunes Connect で **[New iOS App]\(\新規 iOS アプリ)** ダイアログが表示されます。
 
-    [![](itunesconnect-images/add03.png "The New iOS App dialog")](itunesconnect-images/add03.png#lightbox)
+    [![[新しい iOS アプリ] ダイアログ](itunesconnect-images/add03.png)](itunesconnect-images/add03.png#lightbox)
 4. App Store に表示するアプリケーションの**名前**と**バージョン番号**を入力します。
 5. **プライマリ言語**を選択します。
 6. **SKU** 番号を入力します。これはアプリケーションを追跡するために使用される、一意の定数の識別子です。 これはエンドユーザーには表示されず、アプリが作成されると、変更_できません_。
@@ -78,7 +78,7 @@ iOS アプリケーションを iTunes Connect に追加するには、**チー�
 
 新しいアプリケーションが iTunes Connect で作成され、説明、価格、カテゴリ、評価などの必要な情報を入力できます。
 
-[![](itunesconnect-images/add04.png "The new application will be created in iTunes Connect")](itunesconnect-images/add04.png#lightbox)
+[![新しいアプリケーションは iTunes Connect に作成されます](itunesconnect-images/add04.png)](itunesconnect-images/add04.png#lightbox)
 
 <a name="managing"></a>
 
@@ -112,7 +112,7 @@ Apple では、アプリケーションがサポートするすべての画面�
 4. **[Screenshots]\(スクリーンショット\)** セクションまでスクロールします。
 5. **[Image Size]\(画像サイズ\)** を選択し、必要なイメージにドラッグします (画面サイズあたり 5 まで)。
 
-    [![](itunesconnect-images/screenshot01.png "Select the Image Size and drag in the required images")](itunesconnect-images/screenshot01.png#lightbox)
+    [![[Image Size]\(画像サイズ\) を選択し、必要なイメージにドラッグします](itunesconnect-images/screenshot01.png)](itunesconnect-images/screenshot01.png#lightbox)
 6. すべての必要な画面サイズに繰り返します。
 7. 画面の上部にある **[Save]\(保存\)** ボタンをクリックして、変更を保存します。
 
@@ -189,7 +189,7 @@ Apple では、ユーザーのアプリケーションに関する問題や質�
 6. 画面の上部にある **[Save]\(保存\)** ボタンをクリックして、変更を保存します。
 
 > [!IMPORTANT]
-> メモ:名前、説明、新機能、キーワード、または URL がアプリケーションの現在の機能と一致しない場合、Apple によって提出が拒否されます。
+> 注: 名前、説明、新機能、キーワード、または URL がアプリケーションの現在の機能と一致しない場合、Apple によって提出が拒否されます。
 
 <a name="general"></a>
 
@@ -250,10 +250,10 @@ Apple では、アプリケーションの著作権情報を提供すること�
 4. **[General App Information]\(App 一般情報\)** セクションまでスクロールします。
 5. 必要なすべての情報を入力します。
 
-    [![](itunesconnect-images/general01.png "Editing General App Information in iTunes Connect")](itunesconnect-images/general01.png#lightbox)
+    [![iTunes Connect での一般的なアプリ情報の編集](itunesconnect-images/general01.png)](itunesconnect-images/general01.png#lightbox)
 6. **[Edit]\(編集\)** ボタンをクリックして、 **[Rating]\(レーティング\)** で評価情報を設定します。
 
-    [![](itunesconnect-images/general02.png "Editing the Rating")](itunesconnect-images/general02.png#lightbox)
+    [![評価の編集](itunesconnect-images/general02.png)](itunesconnect-images/general02.png#lightbox)
 7. 画面の上部にある **[Save]\(保存\)** ボタンをクリックして、変更を保存します。
 
 > [!NOTE]
@@ -276,14 +276,14 @@ Apple の Game Center をサポートする iOS ゲーム アプリケーショ�
 5. **[Game Center]** セクションのスイッチを、**オン**の位置にします。
 6. 必要なすべての情報を入力します。
 
-    [![](itunesconnect-images/gamecenter01.png "Editing Game Center Information in iTunes Connect")](itunesconnect-images/gamecenter01.png#lightbox)
+    [![iTunes Connect での Game Center 情報の編集](itunesconnect-images/gamecenter01.png)](itunesconnect-images/gamecenter01.png#lightbox)
 7. 画面の上部にある **[Save]\(保存\)** ボタンをクリックして、変更を保存します。
 
 **[Game Center]** タブを使用して Game Center をアクティブにし、このアプリケーションに使用可能な **Leaderboards** または **Achievements** を保持します。
 
-[![](itunesconnect-images/gamecenter02.png "Activate Game Center")](itunesconnect-images/gamecenter02.png#lightbox)
+[![Game Center を有効にする](itunesconnect-images/gamecenter02.png)](itunesconnect-images/gamecenter02.png#lightbox)
 
-[![](itunesconnect-images/gamecenter03.png "Maintain any available Leaderboards or Achievements for this application")](itunesconnect-images/gamecenter03.png#lightbox)
+[![このアプリケーションに使用可能な Leaderboards または Achievements を保持する](itunesconnect-images/gamecenter03.png)](itunesconnect-images/gamecenter03.png#lightbox)
 
 ## <a name="maintaining-app-review-information"></a>App Review 情報の保持
 
@@ -299,17 +299,17 @@ Apple の Game Center をサポートする iOS ゲーム アプリケーショ�
 4. **[App Review Information]\(App Review に関する情報\)** セクションまでスクロールします。
 5. 必要なすべての情報を入力します。
 
-    [![](itunesconnect-images/review01.png "Editing App Review Information in iTunes Connect")](itunesconnect-images/review01.png#lightbox)
+    [![iTunes Connect での App Review 情報の編集](itunesconnect-images/review01.png)](itunesconnect-images/review01.png#lightbox)
 6. アプリケーションのレビューが問題なく終了したら、App Store にどのようにリリースするかを選択します。
 
-    [![](itunesconnect-images/review02.png "Editing release information in iTunes Connect")](itunesconnect-images/review02.png#lightbox)
+    [![iTunes Connect でのリリース情報の編集](itunesconnect-images/review02.png)](itunesconnect-images/review02.png#lightbox)
 7. 画面の上部にある **[Save]\(保存\)** ボタンをクリックして、変更を保存します。
 
 ## <a name="maintaining-pricing-information"></a>価格情報の保持
 
 販売用にアプリケーションをリリースすることを計画している場合は、Apple の使用可能な Price Tier を選択して販売価格を設定し、指定した価格を有効にする日付を設定する必要があります。 たとえば、このドキュメントの執筆時点では、**Tier 1** 価格は次のようになっています。
 
-[![](itunesconnect-images/price01.png "Maintaining Pricing Information")](itunesconnect-images/price01.png#lightbox)
+[![価格情報の保持](itunesconnect-images/price01.png)](itunesconnect-images/price01.png#lightbox)
 
 ### <a name="educational-discount"></a>教育用の割引
 
@@ -329,7 +329,7 @@ Apple の Game Center をサポートする iOS ゲーム アプリケーショ�
 2. 編集するアプリケーションの**アイコン**をクリックします。
 3. **[Pricing]\(価格\)** タブを選択します。
 
-    [![](itunesconnect-images/price02.png "Editing Pricing Information in iTunes Connect")](itunesconnect-images/price02.png#lightbox)
+    [![iTunes Connect での価格情報の編集](itunesconnect-images/price02.png)](itunesconnect-images/price02.png#lightbox)
 4. **[Availability Date]\(公開日\)** を選択します。
 5. **[Price Tier]\(価格\)** ドロップダウン リストから希望価格を選択します。
 6. 必要に応じて**教育機関への割引**を有効にします。
@@ -342,7 +342,7 @@ Apple の Game Center をサポートする iOS ゲーム アプリケーショ�
 
 アプリケーションから仮想のアプリ内製品 (新しいゲーム レベルやアプリケーションの機能など) の販売を計画している場合は、このセクションを使用してこれらの購入アイテムを作成および管理します。
 
-[![](itunesconnect-images/inapp01.png "Maintaining In-App Purchase Information")](itunesconnect-images/inapp01.png#lightbox)
+[![アプリ内購入情報の保持](itunesconnect-images/inapp01.png)](itunesconnect-images/inapp01.png#lightbox)
 
 Xamarin.iOS アプリケーションでのアプリ内購入の使用に関する詳細については、「[In-App Purchasing](~/ios/platform/in-app-purchasing/index.md)」 (アプリ内購入) ドキュメントを参照してください。
 
@@ -350,7 +350,7 @@ Xamarin.iOS アプリケーションでのアプリ内購入の使用に関す�
 
 App Store にアプリがリリースされると、アプリケーションを購入したユーザーまたは無料でダウンロードしたユーザーはアプリのレビューを記入し、星評価をすることができます。 このセクションを使用して、これらのレビューを表示します。 次に例を示します。
 
-[![](itunesconnect-images/reviews01.png "Viewing Application Reviews")](itunesconnect-images/reviews01.png#lightbox)
+[![アプリケーションのレビューの表示](itunesconnect-images/reviews01.png)](itunesconnect-images/reviews01.png#lightbox)
 
 ## <a name="summary"></a>まとめ
 

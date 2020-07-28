@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/06/2018
-ms.openlocfilehash: bb1ef1e948c796e6b0d91230be3c82c5a8c7d366
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: dea08895b59626da97c1ca3d97464cfc80f42b88
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303739"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86928706"
 ---
 # <a name="device-provisioning-for-xamarinios"></a>Xamarin.iOS のデバイス プロビジョニング
 
@@ -20,9 +20,9 @@ Xamarin.iOS アプリケーションを開発する場合、シミュレータ�
 
 下図で強調表示されているセクションは、iOS のプロビジョニングの設定に必要な手順を示しています。
 
-[![](images/provisioningdiagram.png "The highlighted sections in this image show the steps required to get set up for iOS provisioning")](images/provisioningdiagram.png#lightbox)
+[![この図で強調表示されているセクションは、iOS のプロビジョニングの設定に必要な手順を示しています](images/provisioningdiagram.png)](images/provisioningdiagram.png#lightbox)
 
-次の手順は、アプリケーションの配布です。 展開の詳細については、「[App Distribution](~/ios/deploy-test/app-distribution/index.md)」(アプリの配布) ガイドを参照してください。
+このあと、次の手順はアプリケーションの配布です。 展開の詳細については、「[App Distribution](~/ios/deploy-test/app-distribution/index.md)」(アプリの配布) ガイドを参照してください。
 
 デバイスにアプリケーションを展開する前に、Apple の Developer Program の有効なサブスクリプションがあるか *、* [無料プロビジョニング](~/ios/get-started/installation/device-provisioning/free-provisioning.md)を使用する必要があります。 Apple は 2 つのプログラム オプションを用意しています。
 

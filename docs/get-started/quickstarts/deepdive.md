@@ -1,6 +1,6 @@
 ---
-title: 'title: "Xamarin.Forms クイック スタート Deep Dive" の説明: "この記事では、Xamarin.Forms を使用したアプリケーション開発の基礎について説明します。'
-description: '取り上げたテーマには、Xamarin.Forms アプリケーションの構造、アーキテクチャとアプリケーションの基礎、ユーザー インターフェイスが含まれていました。" zone_pivot_groups: platform ms.topic: quickstart ms.prod: xamarin ms.custom: video ms.assetid: 7B2340A1-6883-41D8-860C-0BB6C4E0C316 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 11/27/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms クイック スタート Deep Dive
+description: この記事では、Xamarin.Forms を使用したアプリケーション開発の基礎について説明します。 取り上げたテーマには、Xamarin.Forms アプリケーションの構造、アーキテクチャとアプリケーションの基礎、ユーザー インターフェイスが含まれていました。
 zone_pivot_groups: platform
 ms.topic: quickstart
 ms.prod: xamarin
@@ -13,12 +13,12 @@ ms.date: 11/27/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1bfb76f71a2ac9d8bc9ae84152501909000b9623
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: d1670506fa78b39825368fc91d2452a44ddf8f03
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84132523"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939920"
 ---
 # <a name="xamarinforms-quickstart-deep-dive"></a>Xamarin.Forms クイック スタート Deep Dive
 
@@ -30,7 +30,7 @@ ms.locfileid: "84132523"
 
 Visual Studio は、コードを*ソリューション*と*プロジェクト*に分けて整理しています。 ソリューションとは、1 つまたは複数のプロジェクトを保持できるコンテナーです。 プロジェクトは、アプリケーション、サポートするライブラリ、テスト アプリケーションなどの場合があります。 Notes アプリケーションは、次のスクリーンショットに示されているように、4 つのプロジェクトを含む 1 つのソリューションで構成されています。
 
-![](deepdive-images/vs/solution.png "Visual Studio Solution Explorer")
+![Visual Studio ソリューション エクスプローラー](deepdive-images/vs/solution.png)
 
 プロジェクトの内容:
 
@@ -43,7 +43,7 @@ Visual Studio は、コードを*ソリューション*と*プロジェクト*�
 
 次のスクリーンショットは、Visual Studio の Notes .NET Standard プロジェクトの内容です。
 
-![](deepdive-images/vs/net-standard-project.png "Phoneword .NET Standard Project Contents")
+![Phoneword .NET Standard プロジェクトの内容](deepdive-images/vs/net-standard-project.png)
 
 このプロジェクトには、**NuGet** ノードと **SDK** ノードを含む **Dependencies** ノードがあります。
 
@@ -57,7 +57,7 @@ Visual Studio は、コードを*ソリューション*と*プロジェクト*�
 
 [Visual Studio for Mac ](/visualstudio/mac/)は、コードを*ソリューション*と*プロジェクト*に分けて整理するという Visual Studio の方法に従っています。 ソリューションとは、1 つまたは複数のプロジェクトを保持できるコンテナーです。 プロジェクトは、アプリケーション、サポートするライブラリ、テスト アプリケーションなどの場合があります。 Notes アプリケーションは、次のスクリーンショットに示されているように、3 つのプロジェクトを含む 1 つのソリューションで構成されています。
 
-![](deepdive-images/vsmac/solution.png "Visual Studio for Mac Solution Pane")
+![Visual Studio for Mac ソリューション ウィンドウ](deepdive-images/vsmac/solution.png)
 
 プロジェクトの内容:
 
@@ -69,7 +69,7 @@ Visual Studio は、コードを*ソリューション*と*プロジェクト*�
 
 次のスクリーンショットは、Visual Studio for Mac の Notes .NET Standard プロジェクトの内容を示しています。
 
-![](deepdive-images/vsmac/net-standard-project.png "Phoneword .NET Standard Library Project Contents")
+![Phoneword .NET Standard ライブラリ プロジェクトの内容](deepdive-images/vsmac/net-standard-project.png)
 
 このプロジェクトには、**NuGet** ノードと **SDK** ノードを含む **Dependencies** ノードがあります。
 
@@ -98,12 +98,12 @@ Xamarin.Forms アプリケーションは、従来のクロスプラットフォ
 
 ::: zone pivot="windows"
 
-![](deepdive-images/vs/architecture.png "Notes Architecture")
+![Notes アーキテクチャ](deepdive-images/vs/architecture.png)
 
 ::: zone-end
 ::: zone pivot="macos"
 
-![](deepdive-images/vsmac/architecture.png "Notes Architecture")
+![Notes アーキテクチャ](deepdive-images/vsmac/architecture.png)
 
 ::: zone-end
 
@@ -388,7 +388,7 @@ Xamarin.Forms アプリケーションがデータを表示し、相互作用す
 
 データ バインディングでは、*ソース*と*ターゲット*と呼ばれる 2 つのオブジェクトを接続します。 *ソース* オブジェクトはデータを提供します。 *ターゲット* オブジェクトは、ソース オブジェクトのデータを使用し (またしばしば表示し) ます。 たとえば、[`Editor`](xref:Xamarin.Forms.Editor) ("*ターゲット*" オブジェクト) は一般的にその [`Text`](xref:Xamarin.Forms.InputView.Text) プロパティを "*ソース*" オブジェクトのパブリック プロパティ `string` にバインドします。 次の図では、バインドの関係を示します。
 
-![](deepdive-images/data-binding.png "Data Binding")
+![データ バインディング](deepdive-images/data-binding.png)
 
 データ バインディングの主な利点は、ビューとデータ ソース間でデータを同期する心配がないことです。 *ソース* オブジェクトの変更は、バインディング フレームワークによって背後で自動的に*ターゲット* オブジェクトにプッシュされます。そして、ターゲット オブジェクトの変更は、オプションで*ソース* オブジェクトに戻されます。
 
@@ -532,7 +532,7 @@ Visual Studio for Mac と Visual Studio のいずれも、アプリケーショ�
 - エフェクトでは、各プラットフォームのネイティブ コントロールのカスタマイズを可能にします。 エフェクトは、プラットフォーム固有のプロジェクトで [`PlatformEffect`](xref:Xamarin.Forms.PlatformEffect`2) クラスをサブクラス化することによって作成され、適切な Xamarin.Forms コントロールに添付することによって使用されます。 詳細については、「[Effects](~/xamarin-forms/app-fundamentals/effects/index.md)」 (エフェクト) を参照してください。
 - 共有コードはネイティブ機能に [`DependencyService`](xref:Xamarin.Forms.DependencyService) クラスを介してアクセスできます。 詳細については、「[Accessing Native Features with DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md)」 (DependencyService を使用したネイティブ機能へのアクセス) を参照してください。
 
-または、「[_Xamarin.Forms でモバイル アプリを作成する_](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)」 (Charles Petzold 著) でも Xamarin.Forms の詳細を学習できます。 この書籍は、PDF またはさまざまな形式の電子ブックとして入手可能です。
+または、「[ _Xamarin.Forms でモバイル アプリを作成する_](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)」 (Charles Petzold 著) でも Xamarin.Forms の詳細を学習できます。 この書籍は、PDF またはさまざまな形式の電子ブックとして入手可能です。
 
 ## <a name="related-links"></a>関連リンク
 

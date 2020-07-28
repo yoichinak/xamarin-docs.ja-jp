@@ -6,12 +6,12 @@ ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
 author: davidortinau
 ms.author: daortin
 ms.date: 11/22/2016
-ms.openlocfilehash: c428d39911da9abff7d53d478fbe99dbe9a3604e
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 32dec6b8fcdd5387e138a7812d8c3e2074673111
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76724835"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86939621"
 ---
 # <a name="mobile-software-development-lifecycle"></a>モバイル ソフトウェア開発ライフ サイクル
 
@@ -72,7 +72,7 @@ ms.locfileid: "76724835"
 
 通常 UX は、多くの[デザイン ツールキット](https://docs.microsoft.com/windows/uwp/design/downloads/)のいずれかを使用したワイヤフレームまたはモックアップで行います。 UX モックアップを使用すると、実際の UI デザインを心配することなく UX をデザインできます。
 
- [![](introduction-to-mobile-sdlc-images/balsamiq.png "UX is usually done via wireframes or mockups using tools such as Balsamiq")](introduction-to-mobile-sdlc-images/balsamiq.png#lightbox)
+ [![通常 UX は、Balsamiq などのツールを使用したワイヤフレームまたはモックアップで行います](introduction-to-mobile-sdlc-images/balsamiq.png)](introduction-to-mobile-sdlc-images/balsamiq.png#lightbox)
 
 UX モックアップを作成するときは、アプリが対象とする多様なプラットフォームのインターフェイス ガイドラインを考慮することが重要です。 各プラットフォームで "使い慣れた感覚" のアプリになるようにします。 各プラットフォームの公式デザイン ガイドラインは次のとおりです。
 
@@ -84,11 +84,11 @@ UX モックアップを作成するときは、アプリが対象とする多�
 
 また、ハードウェア自体にも UX を決定する要素があります。 たとえば、iOS デバイスには物理的な*戻る*ボタンがないため、ナビゲーション コントローラーのメタファーを導入します。
 
- ![](introduction-to-mobile-sdlc-images/01-navigation-controller.png "iOS devices have no physical back button, and therefore introduce the Navigation Controller metaphor")
+ ![iOS デバイスには物理的な [戻る] ボタンがないため、ナビゲーション コントローラーのメタファーを導入します](introduction-to-mobile-sdlc-images/01-navigation-controller.png)
 
 さらに、フォーム ファクターも UX の決定に影響があります。 タブレットにははるかに広いスペースがあるため、より多くの情報を表示できます。 多くの場合、スマートフォンで複数の画面が必要な機能は、タブレットでは 1 つの画面に収まります。
 
- [![](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png "Often what needs multiple screens on a phone is compressed into one for a tablet")](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png#lightbox)
+ [![スマートフォンで複数の画面を必要とする機能は、多くの場合、タブレットでは 1 つの画面に収まります](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png)](introduction-to-mobile-sdlc-images/iphone-vs-ipad.png#lightbox)
 
 また、さまざまなフォーム ファクターがあるため、多くの場合、中サイズのフォーム ファクター (スマートフォンとタブレットの間くらい) を対象とすることがあります。
 
@@ -98,7 +98,7 @@ UX が決まったら、次の手順は UI デザインの作成です。 通常
 
 UX の場合と同様に、各プラットフォームには独自のデザイン言語があることを理解することが重要です。また、適切なデザインのアプリケーションの外観は、プラットフォームによって異なる可能性があります。
 
- [![](introduction-to-mobile-sdlc-images/multiplatform-1.png "A well-designed application may still look different on each platform")](introduction-to-mobile-sdlc-images/multiplatform-1.png#lightbox)
+ [![適切にデザインされたアプリケーションは、プラットフォームごとに異なって見える可能性があります](introduction-to-mobile-sdlc-images/multiplatform-1.png)](introduction-to-mobile-sdlc-images/multiplatform-1.png#lightbox)
 
 ### <a name="development"></a>開発
 

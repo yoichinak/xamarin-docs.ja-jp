@@ -10,18 +10,18 @@ ms.date: 09/11/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f71e0a67b823d92a17158a076707f606f6a4c73f
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 3558352c9f43b8e301492077806bbb611e9b58cf
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136111"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929312"
 ---
 # <a name="introduction-to-xamarinforms-data-templates"></a>Xamarin.Forms データ テンプレートの概要
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
 
-_Xamarin.Forms のデータ テンプレートを使うと、サポートされているコントロール上のデータの表現方法を定義することができます。この記事では、データ テンプレートの概要について説明し、これが必要である理由について調べます。_
+_Xamarin.Forms のデータ テンプレートを使うと、サポートされているコントロール上のデータの表現方法を定義できます。この記事では、データ テンプレートの概要について説明し、これが必要である理由について調べます。_
 
 `Person` オブジェクトのコレクションを表示する [`ListView`](xref:Xamarin.Forms.ListView) について検討します。 次のコード例は、`Person` クラスの定義を示しています。
 
@@ -93,7 +93,7 @@ public WithoutDataTemplatePageCS()
 
 コレクション内のオブジェクトを表示するときに、[`ListView`](xref:Xamarin.Forms.ListView) によって `ToString` が呼び出されます。 次のスクリーンショットに示すように、`Person.ToString` のオーバーライドがないため、`ToString` から各オブジェクトの型名が返されます。
 
-![](introduction-images/no-data-template.png "ListView without a Data Template")
+![データ テンプレートを使用しない ListView](introduction-images/no-data-template.png)
 
 次のコード例に示すように、意味のあるデータを表示するために `Person` オブジェクトによって `ToString` メソッドをオーバーライドできます。
 
@@ -110,7 +110,7 @@ public class Person
 
 この結果、次のスクリーンショットに示すように、[`ListView`](xref:Xamarin.Forms.ListView) でコレクション内の各オブジェクトの `Person.Name` プロパティ値が表示されます。
 
-![](introduction-images/override-tostring.png "ListView with a Data Template")
+![データ テンプレートを使用する ListView](introduction-images/override-tostring.png)
 
 `Person.ToString` のオーバーライドから、`Name`、`Age`、および `Location` プロパティで構成される書式設定された文字列が返される可能性があります。 ただし、このアプローチでは、各データ項目の外観に対して制限されたコントロールのみが提供されます。 柔軟性を高めるために、データの外観を定義する [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) を作成することができます。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 1f71179ccafc2daf65e792c4538bf47ea2df1e7d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 2f70dd3b18c36d478548672bb78d329cb2a4c9ab
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75663732"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938776"
 ---
 # <a name="compiling-for-different-devices-in-xamarinios"></a>Xamarin.iOS の各種デバイス向けコンパイル
 
@@ -20,11 +20,11 @@ ms.locfileid: "75663732"
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-[![](compiling-for-different-devices-images/image1.png "The Projects iOS Build properties page")](compiling-for-different-devices-images/image1.png#lightbox) 
+[![プロジェクト iOS ビルドのプロパティ ページ](compiling-for-different-devices-images/image1.png)](compiling-for-different-devices-images/image1.png#lightbox) 
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[![](compiling-for-different-devices-images/image1a.png "The Projects iOS Build properties page")](compiling-for-different-devices-images/image1a.png#lightbox)
+[![プロジェクト iOS ビルドのプロパティ ページ](compiling-for-different-devices-images/image1a.png)](compiling-for-different-devices-images/image1a.png#lightbox)
 
 -----
 
@@ -58,9 +58,9 @@ LLVM 最適化バックエンド エンジンは、Mono エンジンより簡潔
 
 生成エンジンは、Visual Studio for Mac または Visual Studio の iOS ビルド オプションから有効にすることができます。
 
-[![](compiling-for-different-devices-images/image2.png "Enabling LLVM")](compiling-for-different-devices-images/image2.png#lightbox)
+[![LLVM を有効にする](compiling-for-different-devices-images/image2.png)](compiling-for-different-devices-images/image2.png#lightbox)
 
-[![](compiling-for-different-devices-images/image2a.png "Enabling LLVM")](compiling-for-different-devices-images/image2a.png#lightbox)
+[![LLVM を有効にする](compiling-for-different-devices-images/image2a.png)](compiling-for-different-devices-images/image2a.png#lightbox)
 
 ## <a name="architecture-support"></a>アーキテクチャ サポート
 
@@ -112,7 +112,7 @@ Thumb は、ARM プロセッサで利用される、より簡潔な命令セッ�
 - **[プロジェクト オプション]** を開き、 **[iOS ビルド]** ウィンドウに移動します。
 - 弱くリンクする構成ごとに **[追加オプション]** に `'-gcc_flags "-weak_framework iAd"'` を追加します。
 
-[![](compiling-for-different-devices-images/image3.png "Additional Options")](compiling-for-different-devices-images/image3.png#lightbox)
+[![その他のオプション](compiling-for-different-devices-images/image3.png)](compiling-for-different-devices-images/image3.png#lightbox)
 
 これに加え、型の処理が旧バージョンの iOS で実行されないようにする必要があります。その型が旧バージョンにはない可能性があります。 これを行う方法はいくつかありますが、その 1 つは `UIDevice.CurrentDevice.SystemVersion` を解析することです。
 

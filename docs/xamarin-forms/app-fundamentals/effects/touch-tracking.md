@@ -10,12 +10,12 @@ ms.date: 12/14/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 892bffa4027a1a61d6c22cc26d1556fb007432d8
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: cc150ecffbf9b6b31ec2f533bcc33876100614dc
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136982"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86936852"
 ---
 # <a name="invoking-events-from-effects"></a>エフェクトからのイベントの呼び出し
 
@@ -456,7 +456,7 @@ void OnTouchEffectAction(object sender, TouchActionEventArgs args)
 
 異なる指を使用し、複数の `BoxView` 要素を同時に動かすことができます。
 
-[![](touch-tracking-images/boxviewdragging-small.png "Triple screenshot of the BoxView Dragging page")](touch-tracking-images/boxviewdragging-large.png#lightbox "Triple screenshot of the BoxView Dragging page")
+[![[BoxView Dragging]\(BoxView ドラッグ操作\) ページのトリプル スクリーンショット](touch-tracking-images/boxviewdragging-small.png)](touch-tracking-images/boxviewdragging-large.png#lightbox "[BoxView Dragging]\(BoxView ドラッグ操作\) ページのトリプル スクリーンショット")
 
 ### <a name="subclassing-the-view"></a>ビューのサブクラス化
 
@@ -519,7 +519,7 @@ class DraggableBoxView : BoxView
 
 **[Ellipse Drawing]\(楕円の描画\)** ページでは、画面を指でなぞることで楕円を描くことができます。 指の動かし方に基づき、左上から右下に、あるいは任意の他の隅からその反対側の隅に楕円を描くことができます。 楕円は無作為で選択された色と不透明度で描画されます。
 
-[![](touch-tracking-images/ellipsedrawing-small.png "Triple screenshot of the Ellipse Drawing page")](touch-tracking-images/ellipsedrawing-large.png#lightbox "Triple screenshot of the Ellipse Drawing page")
+[![[Ellipse Drawing]\(楕円の描画\) ページのトリプル スクリーンショット](touch-tracking-images/ellipsedrawing-small.png)](touch-tracking-images/ellipsedrawing-large.png#lightbox "[Ellipse Drawing]\(楕円の描画\) ページのトリプル スクリーンショット")
 
 楕円の 1 つに触れたら、それを別の場所にドラッグできます。 これには "ヒットテスト" と呼ばれている手法が必要です。ヒットテストでは、特定の点にあるグラフィカル オブジェクトが検索されます。 SkiaSharp の楕円は Xamarin.Forms 要素ではありません。そのため、独自の `TouchEffect` 処理を実行できません。 `TouchEffect` は `SKCanvasView` オブジェクト全体に適用する必要があります。
 
@@ -691,7 +691,7 @@ case TouchActionType.Pressed:
 
 もう 1 つの SkiaSharp 例は **[Finger Paint]** ページです。 2 つの `Picker` ビューからストロークの色と幅を選択し、1 本または複数の指で描画できます。
 
-[![](touch-tracking-images/fingerpaint-small.png "Triple screenshot of the Finger Paint page")](touch-tracking-images/fingerpaint-large.png#lightbox "Triple screenshot of the Finger Paint page")
+[![[Finger Paint] ページのトリプル スクリーンショット](touch-tracking-images/fingerpaint-small.png)](touch-tracking-images/fingerpaint-large.png#lightbox "[Finger Paint] ページのトリプル スクリーンショット")
 
 この例では、画面にペイントされる各線を表す個別のクラスも必要になります。
 
@@ -799,7 +799,7 @@ void OnTouchEffectAction(object sender, TouchActionEventArgs args)
 
 さまざまな `WhiteKey` および `BlackKey` 要素がページの [XAML ファイル](https://github.com/xamarin/xamarin-forms-samples/blob/master/Effects/TouchTrackingEffect/TouchTrackingEffect/TouchTrackingEffect/SilentKeyboardPage.xaml) に配置されます。電話を横に構えると見栄えが良くなります。
 
-[![](touch-tracking-images/silentkeyboard-small.png "Triple screenshot of the Silent Keyboard page")](touch-tracking-images/silentkeyboard-large.png#lightbox "Triple screenshot of the Silent Keyboard page")
+[![[Silent Keyboard]\(サイレント キーボード\) ページのトリプル スクリーンショット](touch-tracking-images/silentkeyboard-small.png)](touch-tracking-images/silentkeyboard-large.png#lightbox "[Silent Keyboard]\(サイレント キーボード\) ページのトリプル スクリーンショット")
 
 鍵盤で指をすべらすと、タッチ イベントが鍵盤間を移動することが微妙な色の変化によりわかります。
 

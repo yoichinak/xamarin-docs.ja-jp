@@ -10,12 +10,12 @@ ms.date: 05/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c239955a093120c3a16ea3236946eb645ea9a4b4
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 8215454f80614c0c7cca79af5cf51e2dd96453ae
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84570805"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86929482"
 ---
 # <a name="implementing-a-view"></a>ページの実装
 
@@ -27,7 +27,7 @@ _Xamarin.Forms のカスタム ユーザー インターフェイス コント�
 
 次の図は、[`View`](xref:Xamarin.Forms.View) と、それを実装する、対応しているネイティブ コントロールの関係を示しています。
 
-![](view-images/view-classes.png "Relationship Between the View Class and its Implementing Native Classes")
+![View クラスとそれを実装するネイティブ クラス間の関係](view-images/view-classes.png)
 
 レンダリング プロセスを使用して各プラットフォーム上の [`View`](xref:Xamarin.Forms.View) にカスタム レンダラーを作成することで、プラットフォーム固有のカスタマイズを実装することができます。 その実行プロセスは次のとおりです。
 
@@ -118,11 +118,11 @@ public class MainPageCS : ContentPage
 
 次の図に、サンプル アプリケーション内の各プロジェクトの役割と、それらの関係を示します。
 
-![](view-images/solution-structure.png "CameraPreview Custom Renderer Project Responsibilities")
+![CameraPreview カスタム レンダラーのプロジェクトの役割](view-images/solution-structure.png)
 
 `CameraPreview` カスタム コントロールはプラットフォーム固有のレンダラー クラスによってレンダリングされます。このクラスはすべて各プラットフォームの `ViewRenderer` クラスから派生しています。 この結果、次のスクリーンショットに示すように、プラットフォーム固有のコントロールを使用してそれぞれの `CameraPreview` カスタム コントロールがレンダリングされます。
 
-![](view-images/screenshots.png "CameraPreview on each Platform")
+![各プラットフォーム上の CameraPreview](view-images/screenshots.png)
 
 `ViewRenderer` クラスは `OnElementChanged` メソッドを公開します。このメソッドは、該当するネイティブ コントロールをレンダリングするために、Xamarin.Forms カスタム コントロールの作成時に呼び出されます。 このメソッドでは、`OldElement` および `NewElement` プロパティを含む `ElementChangedEventArgs` パラメーターを受け取ります。 これらのプロパティは、レンダラーがアタッチされて*いた* Xamarin.Forms 要素と、レンダラーが現在アタッチされて*いる* Xamarin.Forms 要素をそれぞれ表しています。 サンプル アプリケーションでは、`OldElement` プロパティが `null` になり、`NewElement` プロパティに `CameraPreview` インスタンスへの参照が含まれます。
 

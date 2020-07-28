@@ -10,20 +10,28 @@ ms.date: 05/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 12f3ac86d2418c6516d000371753fc8ae65d557c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 760d03cb5667853ab7eea021e281ebd863dd8dc4
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84946352"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935227"
 ---
-# <a name="xamarinforms-dual-screen-device-capabilities"></a>デュアル画面デバイスに関する Xamarin.Forms の機能
+# <a name="xamarinforms-dualscreeninfo-helper-class"></a>Xamarin.Forms DualScreenInfo ヘルパー クラス
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![プレリリース API](~/media/shared/preview.png "この API は現在プレリリースです")
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 
 `DualScreenInfo` で、表示されるペイン、その大きさ、デバイスがどのようなものか、ヒンジの角度などを決定できるようになります。
+
+## <a name="configure-dualscreeninfo"></a>DualScreenInfo を構成する
+
+次の手順に従って、アプリにデュアル画面レイアウトを作成します。
+
+1. [概要](index.md)手順に従って NuGet を追加し、Android `MainActivity` クラスを構成します。
+1. クラス ファイルに `using Xamarin.Forms.DualScreen;` を追加します。
+1. アプリで `DualScreenInfo.Current` クラスを使用します。
 
 ## <a name="properties"></a>プロパティ
 
@@ -213,7 +221,7 @@ public partial class GridUsingDualScreenInfo : ContentPage
 
 次のスクリーンショットは、結果のレイアウトを示しています。
 
-![](dual-screen-info-images/grid-on-two-screens.png "Positioning Grid on Two Screens")
+![2 画面へのグリッドの配置](dual-screen-info-images/grid-on-two-screens.png)
 
 ## <a name="related-links"></a>関連リンク
 

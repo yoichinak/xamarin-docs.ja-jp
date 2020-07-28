@@ -1,6 +1,6 @@
 ---
-title: 'title: "Xamarin.Forms のデュアル画面" の説明:"このガイドでは、デュアル画面デバイス用の Xamarin.Formsアプリを作成する方法について説明します。"'
-description: 'ms.prod: xamarin ms.assetid: f9906e83-f8ae-48f9-997b-e1540b96ee8e ms.technology: xamarin-forms author: davidortinau ms.author: daortin ms.date:02/08/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms のデュアル画面
+description: このガイドでは、デュアル画面デバイス用の Xamarin.Forms アプリを作成する方法について説明します。
 ms.prod: xamarin
 ms.assetid: f9906e83-f8ae-48f9-997b-e1540b96ee8e
 ms.technology: xamarin-forms
@@ -10,35 +10,56 @@ ms.date: 02/08/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: aeaaeb732adaea45446d6baf833027801abf4d2a
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: 737cb819cfd762e81536fba03f3ae5b563416a4e
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84138906"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86930742"
 ---
 # <a name="xamarinforms-dual-screen"></a>Xamarin.Forms のデュアル画面
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![プレリリース API](~/media/shared/preview.png "この API は現在プレリリースです")
 
-Surface Duo (Android) と Surface Neo (Windows 10X) では、タッチ アプリケーションの新しいパターンが導入されています。 Xamarin.Forms には `TwoPaneView` クラスと `DualScreenInfo` クラスが含まれているため、これらのデバイス用のアプリを開発できます。
+Microsoft Surface Duo のようなデュアル画面デバイスでは、アプリケーションの新しいユーザー体験が促進されます。 Xamarin.Forms には `TwoPaneView` クラスと `DualScreenInfo` クラスが含まれているため、デュアル画面デバイス用のアプリを開発できます。
 
-## <a name="dual-screen-design-patterns"></a>[デュアル画面の設計パターン](design-patterns.md)
+## <a name="get-started"></a>作業開始
 
-デュアル画面のデバイスで複数の画面を最適に使用する方法を検討する場合は、このパターンに関するガイダンスを参照して、アプリケーション インターフェイスに最適なものを見つけてください。
+以下の手順に従い、デュアル画面機能を Xamarin.Forms アプリに追加します。
 
-## <a name="dual-screen-layout"></a>[デュアル画面のレイアウト](twopaneview.md)
+1. ソリューションの **[NuGet パッケージ マネージャー]** ダイアログを開きます。
+2. **[参照]** タブで `Xamarin.Forms.DualScreen` を検索します。
+3. ソリューションに `Xamarin.Forms.DualScreen` パッケージをインストールします。
+4. `OnCreate` イベントで Android プロジェクトの `MainActivity` クラスに次の初期化メソッド呼び出しを追加します。
 
-同じ名前の UWP コントロールがきっかけとなった Xamarin.Forms の `TwoPaneView` クラスは、デュアル画面デバイス用に最適化されたクロスプラットフォームのレイアウトです。
+    ```csharp
+    Xamarin.Forms.DualScreen.DualScreenService.Init(this);
+    ```
 
-## <a name="dual-screen-device-capabilities"></a>[デュアル画面のデバイスの機能](dual-screen-info.md)
+    2 つの画面にまたがるなど、アプリの状態変化をアプリが検出するにはこのメソッドが必要です。
 
-`DualScreenInfo` で、表示されるペイン、その大きさ、デバイスがどのようなものか、ヒンジの角度などを決定できるようになります。
+5. これらの `ConfigurationChanges` オプションが "_すべて_" 含まれるよう、Android プロジェクトの `MainActivity` クラスで `Activity` 属性を更新します。
 
-## <a name="dual-screen-platform-helpers"></a>[デュアル画面のプラットフォーム ヘルパー](dual-screen-helper.md)
+    ```@csharp
+    ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation 
+        | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize | ConfigChanges.UiMode
+    ```
 
-`DualScreenHelper` クラスでは、プラットフォームでピクチャ イン ピクチャとして新しいウィンドウを開くことができるかどうかを確認できます。 Neo では、これによりデバイスが作成モードのときに Wonderbar に表示されるウィンドウを開くことができるようになります。
+    これらの値は、構成の変更や範囲の状態をより確実に報告できるようにするために必要です。 既定では、2 つだけが Xamarin.Forms プロジェクトに追加されます。そのため、信頼できるデュアル画面サポートのために残りを忘れずに追加してください。
 
-## <a name="dual-screen-triggers"></a>[デュアル画面のトリガー](triggers.md)
+## <a name="troubleshooting"></a>トラブルシューティング
 
-[`Xamarin.Forms.DualScreen`](xref:Xamarin.Forms.DualScreen) 名前空間には、アタッチされたレイアウト (ウィンドウ) の表示モードが変更されたときに [`VisualState`](xref:Xamarin.Forms.VisualState) 変更をトリガーする 2 つの状態トリガーが含まれています。
+`DualScreenInfo` クラスまたは `TwoPaneView` レイアウトが想定どおりに動作しない場合、このページのセットアップ手順を再確認してください。 `Init` メソッドまたは `ConfigurationChanges` 属性値を省略したり、間違って構成したりすることは、よくあるエラーの原因です。
+
+追加のガイダンスと参照実装が必要であれば、[Xamarin.Forms デュアル画面サンプル](https://docs.microsoft.com/dual-screen/xamarin/samples)をご覧ください。
+
+## <a name="next-steps"></a>次の手順
+
+NuGet を追加したら、次の手順でアプリにデュアル画面機能を追加します。
+
+- [デュアル画面デザイン パターン](design-patterns.md) - デュアル画面のデバイスで複数の画面を最適に使用する方法を検討する場合は、このパターンに関するガイダンスを参照して、アプリケーション インターフェイスに最適なものを見つけてください。
+- [TwoPaneView レイアウト](twopaneview.md) - 同じ名前の UWP コントロールがきっかけとなった Xamarin.Forms の `TwoPaneView` クラスは、デュアル画面デバイス用に最適化されたクロスプラットフォームのレイアウトです。
+- [DualScreenInfo ヘルパー クラス](dual-screen-info.md) - `DualScreenInfo` で、表示されるペイン、その大きさ、デバイスがどのようなものか、ヒンジの角度などを決定できるようになります。
+- [デュアル画面トリガー](triggers.md) - [`Xamarin.Forms.DualScreen`](xref:Xamarin.Forms.DualScreen) 名前空間には、アタッチされたレイアウト (ウィンドウ) の表示モードが変更されたときに [`VisualState`](xref:Xamarin.Forms.VisualState) 変更をトリガーする 2 つの状態トリガーが含まれています。
+
+詳細については、[デュアル画面開発者向けのドキュメント](https://docs.microsoft.com/dual-screen/)を参照してください。

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 08ddf282c8839a6283b90c0736c0b4259bd01469
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: f5796ee17e947494d1e22f750bc43ff823d56d55
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73028441"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937281"
 ---
 # <a name="unit-testing-xamarinios-apps"></a>Xamarin.iOS アプリの単体テスト
 
@@ -23,11 +23,11 @@ Xamarin.iOS での単体テストは、Touch.Unit フレームワークを使用
 
 プロジェクトの単体テスト フレームワークを設定する場合、単に **iOS 単体テスト プロジェクト**という種類のプロジェクトをソリューションに追加するだけです。 その場合、ソリューションを右クリックし、 **[追加]、[新しいプロジェクトの追加]** の順に選択します。 リストから、 **[iOS]、[テスト]、[Unified API]、[iOS 単体テスト プロジェクト]** の順に選択します (C# または F# を選択できます)。
 
-![](touch.unit-images/00.png "Choose either C# or F#")
+![C# または F# を選択する](touch.unit-images/00.png)
 
 これで基本的なプロジェクトが作成されます。このプロジェクトは基本的なランナー プログラムを含み、新しい MonoTouch.NUnitLite アセンブリを参照します。プロジェクトは次のようになります。
 
-![](touch.unit-images/01.png "The project in the Solution Explorer")
+![ソリューション エクスプローラーのプロジェクト](touch.unit-images/01.png)
 
 `AppDelegate.cs` クラスにはテスト ランナーが含まれ、次のようになります。
 
@@ -105,14 +105,14 @@ namespace Fixtures {
 
 テスト ランナーでは、登録されるテストを確認し、実行可能なテストを個別に選択できます。
 
-[![](touch.unit-images/02-sml.png "The list of registered tests")](touch.unit-images/02.png#lightbox) 
-[![](touch.unit-images/03-sml.png "An individual text")](touch.unit-images/03.png#lightbox) 
+[![登録済みのテストの一覧](touch.unit-images/02-sml.png)](touch.unit-images/02.png#lightbox) 
+[![個々のテキスト](touch.unit-images/03-sml.png)](touch.unit-images/03.png#lightbox) 
 
-[![](touch.unit-images/04-sml.png "The run results")](touch.unit-images/04.png#lightbox)
+[![実行結果](touch.unit-images/04-sml.png)](touch.unit-images/04.png#lightbox)
 
 個々のテスト フィクスチャを実行する場合は、入れ子ビューからテスト フィクスチャを選択します。あるいは、"すべて実行" ですべてのテストを実行することもできます。 既定のテストを実行する場合、成功したテスト、失敗したテストおよび無視されたテストが 1 つずつ含まれることが想定されます。 そのレポートは次のようになり、失敗したテストに直接ドリルダウンして、失敗に関する詳細情報を見つけることができます。
 
-[![](touch.unit-images/05-sml.png "サンプル レポート")](touch.unit-images/05.png#lightbox) [![](touch.unit-images/06-sml.png "サンプル レポート")](touch.unit-images/06.png#lightbox) [![](touch.unit-images/07-sml.png "サンプル レポート")](touch.unit-images/07.png#lightbox)
+[![サンプル レポート](touch.unit-images/05-sml.png)](touch.unit-images/05.png#lightbox) [![サンプル レポート](touch.unit-images/06-sml.png)](touch.unit-images/06.png#lightbox) [![サンプル レポート](touch.unit-images/07-sml.png)](touch.unit-images/07.png#lightbox)
 
 IDE のアプリケーション出力ウィンドウで、実行中のテストとその現在の状態を確認することもできます。
 

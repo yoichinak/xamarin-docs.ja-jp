@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: f05e763df58e6fafc4d4ed1d4007979859670c28
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 84a764054567bc504b3432a503a1072362e374dd
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76725463"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86938490"
 ---
 # <a name="signing-xamarinmac-apps-with-a-developer-id"></a>開発者 ID で Xamarin.Mac アプリに署名する
 
@@ -24,23 +24,23 @@ Apple の Web サイトで、「[Developer ID and Gatekeeper](https://developer.
 
 アプリを、(Mac App Store を介してではなく) ユーザーに直接配布するよう構築する場合、 **[Signing Settings]\(署名の設定\)** を設定して **[Developer ID]** を使用します。 **[Release]\(リリース\)** 構成は必ず編集します。
 
- [![](signing-images/config02.png "The Mac Signing options")](signing-images/config02.png#lightbox)
+ [![Mac の署名オプション](signing-images/config02.png)](signing-images/config02.png#lightbox)
 
 ## <a name="build"></a>ビルド
 
 ビルド前に、正しい構成が選択されていることを確認し、 **[Mac Build]\(Mac ビルド\)** 設定にインストール パッケージを作成するよう選択します。
 
-[![](signing-images/config03.png "The build options")](signing-images/config03.png#lightbox)
+[![ビルド オプション](signing-images/config03.png)](signing-images/config03.png#lightbox)
 
 アプリを構築する際、開発者は両方の証明書を使用するよう求められます。
 
- [![](signing-images/image57.png "Allowing keychain access")](signing-images/image57.png#lightbox)
+ [![キーチェーン アクセスの許可](signing-images/image57.png)](signing-images/image57.png#lightbox)
 
- [![](signing-images/image58.png "Allowing keychain access")](signing-images/image58.png#lightbox)
+ [![キーチェーン アクセスの許可](signing-images/image58.png)](signing-images/image58.png#lightbox)
 
 アプリケーションがビルドされると、開発者はプロジェクトを右クリックし、 **[Open Containing Folder]\(含まれているフォルダーを開く\)** を選択して、パッケージ ファイルを (`bin/Release` ディレクトリから) 検索することができます。 このパッケージ ファイルには、アプリケーションのインストーラーが含まれているので、任意の macOS ユーザーにインストール用に配布することができます。
 
- [![](signing-images/image59.png "Selecting the app package in Finder")](signing-images/image59.png#lightbox)
+ [![Finder でのアプリ パッケージの選択](signing-images/image59.png)](signing-images/image59.png#lightbox)
 
 ## <a name="related-links"></a>関連リンク
 

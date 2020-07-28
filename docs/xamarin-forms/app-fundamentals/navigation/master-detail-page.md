@@ -1,6 +1,6 @@
 ---
-title: 'title: "Xamarin.Formsのマスター詳細ページ" の説明:"Xamarin.Forms の MasterDetailPage は、2 つの関連する情報ページ、つまり項目を表示するマスター ページと、マスター ページ上の項目に関する詳細を表示する詳細ページを管理するページです。'
-description: 'この記事では、MasterDetailPage を使用する方法と、情報ページ間を移動する方法について説明します。" ms.prod: xamarin ms.assetid:119945E3-58B8-4630-A3D2-8B561529D53B ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:12/01/2017 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms のマスター詳細ページ
+description: Xamarin.Forms の MasterDetailPage は、2 つの関連する情報ページ、つまり項目を表示するマスター ページと、マスター ページ上の項目に関する詳細を表示する詳細ページを管理するページです。 この記事では、MasterDetailPage を使用する方法と、情報ページ間を移動する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 119945E3-58B8-4630-A3D2-8B561529D53B
 ms.technology: xamarin-forms
@@ -10,12 +10,12 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c751a1843479f1e98739964631999dfdb0e3b634
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 3a65e9bb90f01bcb5e0b1182a21d998e2335da9a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84569635"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86934525"
 ---
 # <a name="xamarinforms-master-detail-page"></a>Xamarin.Forms のマスター詳細ページ
 
@@ -27,7 +27,7 @@ _Xamarin.Forms の MasterDetailPage は、2 つの関連する情報ページ、
 
 通常、マスター ページには、次のスクリーンショットのように、項目の一覧が表示されます。
 
-[![](master-detail-page-images/masterpage-components.png "Master Page Components")](master-detail-page-images/masterpage-components-large.png#lightbox "Master Page Components")
+[![マスター ページのコンポーネント](master-detail-page-images/masterpage-components.png)](master-detail-page-images/masterpage-components-large.png#lightbox "マスター ページのコンポーネント")
 
 項目の一覧の場所は各プラットフォームで同じであり、いずれかの項目を選択すると対応する詳細ページに移動します。 さらに、マスター ページのナビゲーション バーに含まれるボタンを使用してアクティブな詳細ページに移動することもできます。
 
@@ -37,7 +37,7 @@ _Xamarin.Forms の MasterDetailPage は、2 つの関連する情報ページ、
 
 次のスクリーンショットのように、詳細ページには、マスター ページで選択されている項目に対応するデータと、詳細ページの主要コンポーネントが表示されます。
 
-![](master-detail-page-images/detailpage-components.png "Detail Page Components")
+![詳細ページのコンポーネント](master-detail-page-images/detailpage-components.png)
 
 詳細ページにはナビゲーション バーが含まれ、その内容はプラットフォームによって異なります。
 
@@ -213,7 +213,7 @@ public class MasterPageCS : ContentPage
 
 次のスクリーンショットでは、各プラットフォームでのマスター ページを示します。
 
-![](master-detail-page-images/masterpage.png "Master Page Example")
+![マスター ページの例](master-detail-page-images/masterpage.png)
 
 ### <a name="creating-and-displaying-the-detail-page"></a>詳細ページを作成して表示する
 
@@ -248,7 +248,7 @@ public partial class MainPage : MasterDetailPage
 
 次のスクリーンショットでは、`ContactPage` の詳細ページを示します。これは、マスター ページで選択された後に表示されます。
 
-![](master-detail-page-images/detailpage.png "Detail Page Example")
+![詳細ページの例](master-detail-page-images/detailpage.png)
 
 ### <a name="controlling-the-detail-page-display-behavior"></a>詳細ページの表示動作を制御する
 

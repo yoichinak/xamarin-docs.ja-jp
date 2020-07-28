@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/23/2017
-ms.openlocfilehash: ee8ff58566732c6a86a339d3080c7243be4b4a4e
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: c9882944938b2d5136d36304c4a400208a68663a
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572196"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937333"
 ---
 # <a name="app-store-distribution"></a>App Store 配布
 
@@ -53,13 +53,13 @@ Xamarin.iOS アプリケーションをリリースするためにどのよう�
 3. **+** ボタンをクリックして、新しい証明書を作成します。
 4. *[Production]\(運用\)* の見出しの下で **[App Store and Ad Hoc]\(App Store およびアドホック\)** を選択します。
 
-    [![](images/createcertmanually01.png "Select App Store and Ad Hoc")](images/createcertmanually01.png#lightbox)
+    [![[App Store and Ad Hoc]\(App Store およびアドホック\) を選択する](images/createcertmanually01.png)](images/createcertmanually01.png#lightbox)
 5. **[Continue]\(続行\)** をクリックし、指示に従って Keychain Access を使用して証明書署名要求を作成します。
 
-    [![](images/createcertmanually02.png "Create a Certificate Signing Request via Keychain Access")](images/createcertmanually02.png#lightbox)
+    [![キーチェーン アクセスを使用して証明書署名要求を作成します](images/createcertmanually02.png)](images/createcertmanually02.png#lightbox)
 6. 指示どおりに CSR を作成したら、 **[Continue]\(続行\)** をクリックし、CSR を Member Center にアップロードします。
 
-    [![](images/createcertmanually03.png "Upload the CSR to the Member Center")](images/createcertmanually03.png#lightbox)
+    [![CSR を Member Center にアップロードします](images/createcertmanually03.png)](images/createcertmanually03.png#lightbox)
 
 7. **[Generate]\(生成\)** をクリックして証明書を作成します。
 8. 最後に、完成した証明書を**ダウンロード**し、ファイルをダブルクリックしてインストールします。
@@ -67,11 +67,11 @@ Xamarin.iOS アプリケーションをリリースするためにどのよう�
 
 または、Xcode の [Preferences]\(環境設定\) ダイアログを使用して証明書を要求することができます。 この操作を行うには、次の手順に従います。
 
-1. チームを選択し、 **[証明書の管理...** ] をクリックします: [![](images/selectteam.png "チーム、[View Details]\(詳細の表示\) の順に選択する")](images/selectteam.png#lightbox)
+1. チームを選択し、 **[証明書の管理...** ] をクリックします。[![チーム、[View Details]\(詳細の表示\) の順に選択する](images/selectteam.png)](images/selectteam.png#lightbox)
 
-2. 次に、 **[iOS Distribution Certificate]\(iOS 配布証明書\)** の横の **[作成]** ボタンをクリックします: [![](images/selectcert.png "iOS 配布証明書を作成する")](images/selectcert.png#lightbox)
+2. 次に、 **[iOS Distribution Certificate]\(iOS 配布証明書\)** の横の **[作成]** ボタンをクリックします。[![iOS 配布証明書を作成する](images/selectcert.png)](images/selectcert.png#lightbox)
 
-3. チーム権限に応じて、次のように署名 ID が生成されます。チーム エージェントまたは管理者が承認するまで待機する必要がある場合もあります: [![](images/generated.png "署名 ID が生成され、ダイアログが表示されます")](images/generated.png#lightbox)
+3. チーム権限に応じて、次のように署名 ID が生成されます。チーム エージェントまたは管理者が承認するまで待機する必要がある場合もあります。[![署名 ID が生成され、ダイアログが表示されます](images/generated.png)](images/generated.png#lightbox)
 
 <a name="creatingprofile"></a>
 
@@ -97,27 +97,27 @@ Xamarin.iOS アプリケーションをリリースするためにどのよう�
 
 1. Apple Provisioning ポータルに戻り、 **[Provisioning]\(プロビジョニング\)**  >  **[Distribution]\(配布\)** の順に選択します。
 
-    [![](images/distribute01.png "RSelect Provisioning > Distribution")](images/distribute01.png#lightbox)
+    [![[Provisioning]、[Distribution] の順に選択する](images/distribute01.png)](images/distribute01.png#lightbox)
 
 2. **+** ボタンをクリックし、**App Store** として作成する配布プロファイルの種類を選択します。
 
-    [![](images/distribute02.png "Create an App Store distribution profile")](images/distribute02.png#lightbox)
+    [![App Store 配布プロファイルを作成する](images/distribute02.png)](images/distribute02.png#lightbox)
 
 3. **[Continue]\(続行\)** ボタンをクリックし、配布プロファイルを作成するアプリ ID をドロップダウン リストから選択します。
 
-    [![](images/distribute03.png "Select App ID from the dropdown list")](images/distribute03.png#lightbox)
+    [![ドロップダウン リストからアプリ ID を選択します](images/distribute03.png)](images/distribute03.png#lightbox)
 
 4. **[Continue]\(続行\)** ボタンをクリックし、アプリケーションに署名するために必要な証明書を選択します。
 
-    [![](images/distribute04.png "Select the certificate required to sign the application")](images/distribute04.png#lightbox)
+    [![アプリケーションに署名するために必要な証明書を選択する](images/distribute04.png)](images/distribute04.png#lightbox)
 
 5. **[Continue]\(続行\)** ボタンをクリックし、Xamarin.iOS アプリケーションを実行できるようにする iOS を選択します。
 
-    [![](images/distribute05.png "Select the iOS devices that app will be allowed to run on")](images/distribute05.png#lightbox)
+    [![アプリを実行できるようにする iOS デバイスを選択する](images/distribute05.png)](images/distribute05.png#lightbox)
 
 6. **[Continue]\(続行\)** ボタンをクリックし、新しい配布プロファイルの**名前**を入力します。
 
-    [![](images/distribute06.png "Enter a Name for the new Distribution Profile")](images/distribute06.png#lightbox)
+    [![新しい配布プロファイルの名前を入力します](images/distribute06.png)](images/distribute06.png#lightbox)
 
 7. **[Generate]\(生成\)** ボタンをクリックし、新しいプロファイルを作成してプロセスを終了します。
 
@@ -144,13 +144,13 @@ iTunes App Store の販売向けの Xamarin.iOS アプリケーションの最�
 1. **ソリューション エクスプローラー**でプロジェクト名をダブルクリックして、編集用に開きます。
 2. **[iOS バンドル署名]** を選択し、 **[構成]** ドロップダウン リストから **[Release | iPhone]\(リリース | iPhone\)** を選択します。
 
-    ![](images/releasexs01.png "Select Release | iPhone from the Configuration dropdown")
+    ![[構成] ドロップダウン リストから [Release | iPhone]\(リリース | iPhone\) を選択する](images/releasexs01.png)
 3. ほとんどの場合、 **[署名 ID]** と **[プロビジョニング プロファイル]** は既定値の **[自動]** のままにしておいてかまいません。Visual Studio for Mac は、Info.plist のバンドル識別子に従って適切なプロファイルを選択します。
 
-    ![](images/releasexs02.png "The Signing Identity and the Provisioning Profile set to the default values of Automatic")
+    ![既定値の [自動] に設定された署名 ID とプロビジョニング プロファイル](images/releasexs02.png)
 4. 必要に応じて、ドロップダウン リストから署名 ID と配布プロファイル (前の手順で作成したもの) を選択します。
 
-    ![](images/releasexs03.png "Select the Signing Identity and Distribution Profiles")
+    ![署名 ID と配布プロファイルを選択する](images/releasexs03.png)
 5. **[OK]** ボタンをクリックして、変更を保存します。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
@@ -160,13 +160,13 @@ iTunes App Store の販売向けの Xamarin.iOS アプリケーションの最�
 1. **ソリューション エクスプローラー**でプロジェクト名を右クリックし、 **[プロパティ]** を選択して編集用に開きます。
 2. **[iOS バンドル署名]** を選択し、 **[構成]** ドロップダウン リストから **[Release | iPhone]\(リリース | iPhone\)** を選択します。
 
-    ![](images/releasevs01.png "Select Release | iPhone from the Configuration dropdown")
+    ![[構成] ドロップダウン リストから [Release | iPhone]\(リリース | iPhone\) を選択する](images/releasevs01.png)
 3. ほとんどの場合、 **[署名 ID]** と **[プロビジョニング プロファイル]** は既定値の **[自動]** のままにしておいてかまいません。Visual Studio は、Info.plist のバンドル識別子に従って適切なプロファイルを選択します。
 
-    ![](images/releasevs02.png "The Signing Identity and the Provisioning Profile set to the default values of Automatic")
+    ![既定値の [自動] に設定された署名 ID とプロビジョニング プロファイル](images/releasevs02.png)
 4. 必要に応じて、ドロップダウン リストから署名 ID と配布プロファイル (前の手順で作成したもの) を選択します。
 
-    ![](images/releasevs03.png "Select the Signing Identity and Distribution Profile")
+    ![署名 ID と配布プロファイルを選択します](images/releasevs03.png)
 5. プロジェクトのプロパティへの変更を保存します。
 
 -----

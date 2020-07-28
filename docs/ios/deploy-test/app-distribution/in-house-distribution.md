@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 854fecd7945c1090b475b3571678388b8e1cf127
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 1c70aca4812214b424820ecb5a769a871e7e703c
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573236"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937905"
 ---
 # <a name="in-house-distribution-for-xamarinios-apps"></a>Xamarin.iOS アプリ用の社内配布
 
@@ -56,15 +56,15 @@ Apple Developer Enterprise Program 証明書は、3 年間有効で、プロビ�
 3. **+** ボタンをクリックして、新しい証明書を作成します。
 4. *[Production]\(運用\)* の見出しの下で **[In-House and Ad Hoc]\(社内およびアドホック\)** を選択します。
 
-   [![](in-house-distribution-images/createcertmanually01.png "Select In-House and Ad Hoc")](in-house-distribution-images/createcertmanually01.png#lightbox)
+   [![[In-House and Ad Hoc]\(社内およびアドホック\) を選択する](in-house-distribution-images/createcertmanually01.png)](in-house-distribution-images/createcertmanually01.png#lightbox)
 
 5. [Continue]\(続行\) をクリックし、指示に従って Keychain Access を使用して証明書署名要求を作成します。
 
-   [![](in-house-distribution-images/createcertmanually02.png "Create a Certificate Signing Request via Keychain Access")](in-house-distribution-images/createcertmanually02.png#lightbox)
+   [![キーチェーン アクセスを使用して証明書署名要求を作成します](in-house-distribution-images/createcertmanually02.png)](in-house-distribution-images/createcertmanually02.png#lightbox)
 
 6. 指示どおりに CSR を作成したら、[Continue]\(続行\) をクリックし、CSR を Member Center にアップロードします。
 
-   [![](in-house-distribution-images/createcertmanually03.png "Upload the CSR to the Member Center")](in-house-distribution-images/createcertmanually03.png#lightbox)
+   [![CSR を Member Center にアップロードします](in-house-distribution-images/createcertmanually03.png)](in-house-distribution-images/createcertmanually03.png#lightbox)
 
 7. [Generate]\(生成\) をクリックして証明書を作成します。
 8. 完成した証明書をダウンロードし、ファイルをダブルクリックしてインストールします。
@@ -74,15 +74,15 @@ Apple Developer Enterprise Program 証明書は、3 年間有効で、プロビ�
 
 1. 自分のチームを選択し、 *[View Details]\(詳細の表示\)* をクリックします。
 
-   [![](in-house-distribution-images/selectteam.png "Select your team")](in-house-distribution-images/selectteam.png#lightbox)
+   [![チームを選択する](in-house-distribution-images/selectteam.png)](in-house-distribution-images/selectteam.png#lightbox)
 
-2. 次に、 **[iOS Distribution Certificate]\(iOS 配布証明書\)** の横の **[Create]\(作成\)** ボタンをクリックします。
+2. 次に、 **[iOS Distribution Certificate]\(iOS 配布証明書\)** の横の **[作成]** ボタンをクリックします。
 
-   [![](in-house-distribution-images/selectcert.png "Create the iOS Distribution Certificate")](in-house-distribution-images/selectcert.png#lightbox)
+   [![iOS 配布証明書を作成する](in-house-distribution-images/selectcert.png)](in-house-distribution-images/selectcert.png#lightbox)
 
 3. 次に、**プラス (+)** ボタンをクリックして **[iOS App Store]** を選択します。
 
-   [![](in-house-distribution-images/selectcert.png "Select iOS App Store")](in-house-distribution-images/selectcert.png#lightbox)
+   [![iOS App Store を選択する](in-house-distribution-images/selectcert.png)](in-house-distribution-images/selectcert.png#lightbox)
 
 <a name="profile"></a>
 
@@ -104,23 +104,23 @@ Apple Developer Enterprise Program 証明書は、3 年間有効で、プロビ�
 
 1. Apple Provisioning ポータルに戻り、 **[Provisioning]\(プロビジョニング\)**  >  **[Distribution]\(配布\)** の順に選択します。
 
-   [![](in-house-distribution-images/distribute01.png "Select Provisioning > Distribution")](in-house-distribution-images/distribute01.png#lightbox)
+   [![[Provisioning]、[Distribution] の順に選択します](in-house-distribution-images/distribute01.png)](in-house-distribution-images/distribute01.png#lightbox)
 
 2. **+** ボタンをクリックし、**社内配布** として作成する配布プロファイルの種類を選択します。
 
-   [![](in-house-distribution-images/distribute02.png "Create an In-House Distribution Profile")](in-house-distribution-images/distribute02.png#lightbox)
+   [![社内配布プロファイルを作成する](in-house-distribution-images/distribute02.png)](in-house-distribution-images/distribute02.png#lightbox)
 
 3. **[Continue]\(続行\)** ボタンをクリックし、配布プロファイルを作成するアプリ ID をドロップダウン リストから選択します。
 
-   [![](in-house-distribution-images/distribute03.png "Select App ID from the dropdown list")](in-house-distribution-images/distribute03.png#lightbox)
+   [![ドロップダウン リストからアプリ ID を選択します](in-house-distribution-images/distribute03.png)](in-house-distribution-images/distribute03.png#lightbox)
 
 4. **[Continue]\(続行\)** ボタンをクリックし、アプリケーションに署名するために必要な配布証明書を選択します。
 
-   [![](in-house-distribution-images/distribute04.png "Select distribution certificate required to sign the application")](in-house-distribution-images/distribute04.png#lightbox)
+   [![アプリケーションに署名するために必要な配布証明書を選択します](in-house-distribution-images/distribute04.png)](in-house-distribution-images/distribute04.png#lightbox)
 
 5. **[Continue]\(続行\)** ボタンをクリックし、新しい配布プロファイルの**名前**を入力します。
 
-   [![](in-house-distribution-images/distribute06.png "Enter a Name for the new Distribution Profile")](in-house-distribution-images/distribute06.png#lightbox)
+   [![新しい配布プロファイルの名前を入力します](in-house-distribution-images/distribute06.png)](in-house-distribution-images/distribute06.png#lightbox)
 
 6. **[Generate]\(生成\)** ボタンをクリックし、新しいプロファイルを作成してプロセスを終了します。
 

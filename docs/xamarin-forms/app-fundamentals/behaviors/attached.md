@@ -10,12 +10,12 @@ ms.date: 04/06/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 08b1c738dc87bb9373436a3fd96486eb15341112
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a705eef2ecd240b8944117a67a90ebeebc382bcb
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139426"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86933748"
 ---
 # <a name="attached-behaviors"></a>アタッチされたビヘイビアー
 
@@ -106,7 +106,7 @@ NumericValidationBehavior.SetAttachBehavior (entry, true);
 
 実行時、ビヘイビアーは、ビヘイビアーの実装に従って、コントロールとのやりとりに応答します。 次のスクリーン ショットは、無効な入力に応答しているアタッチされたビヘイビアーを示しています。
 
-[![](attached-images/screenshots-sml.png "Sample Application with Attached Behavior")](attached-images/screenshots.png#lightbox "Sample Application with Attached Behavior")
+[![アタッチされたビヘイビアーを使用したサンプル アプリケーション](attached-images/screenshots-sml.png)](attached-images/screenshots.png#lightbox "アタッチされたビヘイビアーを使用したサンプル アプリケーション")
 
 > [!NOTE]
 > アタッチされたビヘイビアーは特定のコントロールの種類 (または複数のコントロールに適用できるスーパークラス) に対して記述され、互換性のあるコントロールにのみ追加する必要があります。 互換性のないコントロールにビヘイビアーをアタッチしようとすると、不明なビヘイビアーになり、結果はビヘイビアーの実装によって変わります。

@@ -1,6 +1,6 @@
 ---
-title: 'title: "Xamarin.Forms のデュアル画面の設計パターン" の説明:"このガイドでは、デュアル画面デバイス用に最適化されたさまざまな設計パターンを Xamarin.Forms がどのようにサポートしているかについて説明します。"'
-description: 'ms.prod: xamarin ms.assetid:3176d792-6dba-4e00-b463-497c58678ee9 ms.technology: xamarin-forms author: davidortinau ms.author: daortin ms.date:02/08/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms のデュアル画面の設計パターン
+description: このガイドでは、デュアル画面デバイス用に最適化されたさまざまな設計パターンを Xamarin.Forms がどのようにサポートしているかについて説明します。
 ms.prod: xamarin
 ms.assetid: 3176d792-6dba-4e00-b463-497c58678ee9
 ms.technology: xamarin-forms
@@ -10,16 +10,16 @@ ms.date: 02/08/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 277fb67eeea465239d9340e755240288286d2359
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: 79c0f41e8ed0bffce0154ee618729316aab5e8e2
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84138789"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86935279"
 ---
 # <a name="xamarinforms-dual-screen-design-patterns"></a>Xamarin.Forms のデュアル画面の設計パターン
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![プレリリース API](~/media/shared/preview.png "この API は現在プレリリースです")
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 
@@ -29,7 +29,7 @@ ms.locfileid: "84138789"
 
 拡張キャンバス パターンでは、両方の画面を、マップ、イメージ、スプレッドシート、最大限のスペースを活用することで利点が得られるその他のコンテンツを表示するための 1 つの大きなキャンバスとして扱います。
 
-![](design-patterns-images/extended-canvas-sample.png "Extended canvas sample")
+![拡張キャンバスのサンプル](design-patterns-images/extended-canvas-sample.png)
 
 ```xaml
 <ContentPage xmlns:local="clr-namespace:Xamarin.Duo.Forms.Samples"
@@ -59,7 +59,7 @@ ms.locfileid: "84138789"
 
 マスター/詳細のパターンは、マスター ビュー (通常は左側のリスト) にユーザーが選択したコンテンツが提供され、その項目の詳細が右側に表示される場合です。
 
-![](design-patterns-images/master-detail-sample.png "Master detail sample")
+![マスター/詳細のサンプル](design-patterns-images/master-detail-sample.png)
 
 ```xaml
 <ContentPage xmlns:local="clr-namespace:Xamarin.Duo.Forms.Samples"
@@ -85,7 +85,7 @@ ms.locfileid: "84138789"
 
 2 ページのパターンは、ドキュメント リーダー、メモ、アートボードなどの 2 アップのレイアウトにするコンテンツに適しています。
 
-![](design-patterns-images/two-page-sample.png "Two page sample")
+![2 ページのサンプル](design-patterns-images/two-page-sample.png)
 
 ```xaml
 <Grid x:Name="layout">
@@ -126,7 +126,7 @@ ms.locfileid: "84138789"
 
 デュアル ビューのパターンは、"2 ページ" ビューと同じように見えますが、コンテンツとユーザーのシナリオで違いがあります。 このパターンでは、コンテンツを並べて比較して、ドキュメントや写真を編集したり、さまざまなレストランのメニューを比較したり、コード ファイルのマージ競合の差分を確認したりします。
 
-![](design-patterns-images/dual-view-sample.png "Dual view sample")
+![デュアル ビューのサンプル](design-patterns-images/dual-view-sample.png)
 
 ```xaml
 <ContentPage xmlns:local="clr-namespace:Xamarin.Duo.Forms.Samples"
@@ -164,7 +164,7 @@ ms.locfileid: "84138789"
 
 コンパニオンのパターンは、2 番目の画面を使用して、描画アプリ、ゲーム、メディア編集などでプライマリ ビューに関連するコンテンツの 2 番目のレベルをどのように提供するかを示します。
 
-![](design-patterns-images/companion-pane-sample.png "Companion pane sample")
+![コンパニオン ペインのサンプル](design-patterns-images/companion-pane-sample.png)
 
 ```xaml
 <ContentPage xmlns:local="clr-namespace:Xamarin.Duo.Forms.Samples"

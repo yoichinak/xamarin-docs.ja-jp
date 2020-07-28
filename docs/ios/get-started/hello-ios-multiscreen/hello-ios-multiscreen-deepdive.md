@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 3bcfb20d8283f621ac1d32730ee67be2b09efe50
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 28dddc35ac829cb58a40a9296bb995e119b5b6e3
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303697"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937268"
 ---
 # <a name="hello-ios-multiscreen--deep-dive"></a>Hello, iOS マルチスクリーン – 詳細
 
@@ -26,7 +26,7 @@ ms.locfileid: "79303697"
 
 「[Hello, iOS](~/ios/get-started/hello-ios/index.md)」チュートリアルでは、iOS アプリケーションには、ウィンドウに*コンテンツ ビュー階層*を読み込む処理を行う*ウィンドウ*が 1 つのみあることを学びました。 2 つ目の Phoneword チュートリアルでは、以下の図のように、アプリケーションに 2 つ目の画面を追加し、一部のデータ (電話番号の一覧) を 2 つの画面間で渡しました。
 
- [![](hello-ios-multiscreen-deepdive-images/08.png "This diagram illustrates passing data between two screens")](hello-ios-multiscreen-deepdive-images/08.png#lightbox)
+ [![この図は、2 つの画面間のデータの受け渡しを示しています](hello-ios-multiscreen-deepdive-images/08.png)](hello-ios-multiscreen-deepdive-images/08.png#lightbox)
 
 この例では、1 つ目の画面でデータが収集され、1 つ目のビュー コントローラーから 2 つ目に渡され、2 つ目の画面に表示されました。 この画面の分離、ビュー コントローラー、およびデータは、*モデル ビュー コントローラー (MVC)* パターンに従っています。 以降のセクションでは、MVC パターンの利点、コンポーネント、Phoneword アプリケーションで使用する方法について説明します。
 
@@ -34,7 +34,7 @@ ms.locfileid: "79303697"
 
 モデル ビュー コントローラーは*設計パターン*です。つまり、コードの一般的な問題やユース ケースに再利用可能なソリューションです。 MVC は、*グラフィカル ユーザー インターフェイス (GUI)* が含まれるアプリケーションのアーキテクチャです。 アプリケーション内のオブジェクトに、*モデル* (データまたはアプリケーション ロジック)、*ビュー* (ユーザー インターフェイス)、*コントローラー* (分離コード) という 3 つの役割のいずれかを割り当てます。 次の図は、3 つの MVC パターンとユーザー間の関係を示しています。
 
- [![](hello-ios-multiscreen-deepdive-images/00.png "This diagram illustrates the relationships between the three pieces of the MVC pattern and the user")](hello-ios-multiscreen-deepdive-images/00.png#lightbox)
+ [![この図は、3 つの MVC パターンとユーザー間の関係を示しています](hello-ios-multiscreen-deepdive-images/00.png)](hello-ios-multiscreen-deepdive-images/00.png#lightbox)
 
 MVC パターンを使用すると、GUI アプリケーションの各部分を論理的に分けることができ、コードとビューを再利用しやすくなります。 3 つの各役割について詳しく見てみましょう。
 
@@ -68,13 +68,13 @@ Phoneword アプリケーションでは、複数の画面間のナビゲーシ�
 
 ナビゲーション コントローラーは iOS アプリでは一般的であり、以下のスクリーンショットの**設定**アプリのような定番の iOS アプリケーションのナビゲーションを行います。
 
- [![](hello-ios-multiscreen-deepdive-images/01.png "The navigation controller provides navigation for iOS applications like the Settings app shown here")](hello-ios-multiscreen-deepdive-images/01.png#lightbox)
+ [![ナビゲーション コントローラーによって、ここで示す設定アプリのような iOS アプリケーションのナビゲーションが提供されます](hello-ios-multiscreen-deepdive-images/01.png)](hello-ios-multiscreen-deepdive-images/01.png#lightbox)
 
 ナビゲーション コントローラーには、主に次の 3 つの機能があります。
 
 - **転送ナビゲーション用のフック機能**: ナビゲーション コントローラーは、コンテンツ ビュー階層が*ナビゲーション スタック*に*プッシュ*される階層ナビゲーションの象徴を使用しています。 ナビゲーション スタックは、積み重ねたトランプと考えることができます。次の図のように、一番上のカードのみが見えます。  
 
-    [![](hello-ios-multiscreen-deepdive-images/02.png "This diagram illustrates navigation as a stack of cards")](hello-ios-multiscreen-deepdive-images/02.png#lightbox)
+    [![この図は、ナビゲーションを積み重ねたカードとして示しています](hello-ios-multiscreen-deepdive-images/02.png)](hello-ios-multiscreen-deepdive-images/02.png#lightbox)
 
 - **オプションの戻るボタン機能**: 新しい項目をナビゲーション スタックにプッシュすると、タイトル バーに*戻るボタン*が自動的に表示されます。ユーザーはこのボタンを押して戻る操作を行うことができます。 戻るボタンを押すと、ナビゲーション スタックから現在のビュー コントローラーが*ポップ*され、前のコンテンツ ビュー階層がウィンドウに読み込まれます。  
 
@@ -82,18 +82,18 @@ Phoneword アプリケーションでは、複数の画面間のナビゲーシ�
 
 - **タイトル バー機能**: ナビゲーション コントローラーの上部は*タイトル バー*と呼ばれます。 次の図のように、ビュー コントローラーのタイトルを表示する処理を担当します。  
 
-    [![](hello-ios-multiscreen-deepdive-images/04.png "The Title Bar is responsible for displaying the view controller title")](hello-ios-multiscreen-deepdive-images/04.png#lightbox)
+    [![タイトル バーは、ビュー コントローラーのタイトルを表示します](hello-ios-multiscreen-deepdive-images/04.png)](hello-ios-multiscreen-deepdive-images/04.png#lightbox)
 
 ### <a name="root-view-controller"></a>ルート ビュー コントローラー
 
 ナビゲーション コントローラーはコンテンツ ビュー階層を管理しないため、ナビゲーション コントローラー自体では何も表示しません。
 その代わりに、ナビゲーション コントローラーは*ルート ビュー コントローラー*と組み合わされています。
 
- [![](hello-ios-multiscreen-deepdive-images/05.png "A navigation controller is paired with a Root view controller")](hello-ios-multiscreen-deepdive-images/05.png#lightbox)
+ [![ナビゲーション コントローラーは、ルート ビュー コントローラーと組み合わされています](hello-ios-multiscreen-deepdive-images/05.png)](hello-ios-multiscreen-deepdive-images/05.png#lightbox)
 
 ルート ビュー コントローラーは、ナビゲーション コントローラーのスタックで最初のビュー コントローラーを表します。ルート ビュー コントローラーのコンテンツ ビュー階層は、ウィンドウに最初に読み込まれるコンテンツ ビュー階層です。 ナビゲーション コントローラーのスタックにアプリケーション全体を配置するには、Phoneword アプリの場合と同様に、ソースレス セグエをナビゲーション コントローラーに移動し、最初の画面のビュー コントローラーをルート ビュー コントローラーとして設定します。
 
- [![](hello-ios-multiscreen-deepdive-images/06.png "The Sourceless Segue sets the first screens view controller as the Root view controller")](hello-ios-multiscreen-deepdive-images/06.png#lightbox)
+ [![ソースレス セグエでは、最初の画面のビュー コントローラーをルート ビュー コントローラーとして設定します](hello-ios-multiscreen-deepdive-images/06.png)](hello-ios-multiscreen-deepdive-images/06.png#lightbox)
 
 ### <a name="additional-navigation-options"></a>その他のナビゲーション オプション
 
@@ -107,7 +107,7 @@ Phoneword チュートリアルでは、2 つの異なる方法で 2 つのコ�
 
 **表示**アクションを使用してセグエをストーリーボードに追加するときに、2 つ目のビュー コントローラーをナビゲーション コントローラーのスタックにプッシュするように iOS に指示します。
 
- [![](hello-ios-multiscreen-deepdive-images/09.png "Setting the segue type from a dropdown list")](hello-ios-multiscreen-deepdive-images/09.png#lightbox)
+ [![ドロップダウン リストからのセグエの種類の設定](hello-ios-multiscreen-deepdive-images/09.png)](hello-ios-multiscreen-deepdive-images/09.png#lightbox)
 
 セグエをストーリーボードに追加するだけで、画面間の簡単な切り替えを作成できます。 ビュー コントローラー間でデータを渡すには、`PrepareForSegue` メソッドをオーバーライドし、データ自体を処理する必要があります。
 

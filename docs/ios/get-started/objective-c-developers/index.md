@@ -7,20 +7,20 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: 2c5451b379968230d75599601052e3a33f5b5951
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: c6e1faec24b62464efa1ffb5325844bfed41d110
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73022441"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86932770"
 ---
 # <a name="xamarin-for-objective-c-developers"></a>Objective-C 開発者向けの Xamarin
 
-iOS を対象とした開発者は Xamarin を使用し、 ユーザーインターフェイス 以外のコードをプラットフォームに依存しないC＃に移行する事で、Xamarin.Android を利用した Android や様々な Windows など、C#が使用可能なプラットフォームであればどこでもそのコードを使用できるようなります。 ただし、Xamarin で C# を使用したからといって、既存のスキルや Objective-C のコードを活用できなくなるわけではありません。 実際、Objective-C を理解することでより優れた Xamarin.iOS の開発者になることができます。Xamarin にはすべてのネイティブ iOS と、UIKit、Core Animation、Core Foundation、Core Graphics といった慣れ親しんだ OS X プラットフォームの API が公開されているためです。 同時に、LINQ や Generics などの機能を含む C# 言語の威力や、ネイティブ アプリケーションで使用できる .NET 基底クラスの豊富なライブラリを活用できます。
+Xamarin は Android via Xamarin.Android やさまざまな Windows など、使えるところであればどこでも C# が使用できるように、プラットフォームにとらわれない C# に非ユーザー インターフェイスを移すための iOS を対象とした開発者向けパスを提供します。 ただし、Xamarin で C# を使用したからといって、既存のスキルや Objective-C のコードを活用できなくなるわけではありません。 実際、Objective-C を理解することでより優れた Xamarin.iOS の開発者になることができます。Xamarin にはすべてのネイティブ iOS と、UIKit、Core Animation、Core Foundation、Core Graphics といった慣れ親しんだ OS X プラットフォームの API が公開されているためです。 同時に、LINQ や Generics などの機能を含む C# 言語の威力や、ネイティブ アプリケーションで使用できる .NET 基底クラスの豊富なライブラリを活用できます。
 
 さらに、Xamarin ではバインディングを使用して既存の Objective-C のアセットも利用できます。 次の図で説明されているように、Objective-C で静的ライブラリを作成し、バインディングを使用して C# に公開するだけです。
 
- [![](images/01-bindings.png "A static library in Objective-C exposed to C# via a binding")](images/01-bindings.png#lightbox)
+ [![バインディングを使用して C# に公開された Objective-C の静的ライブラリ](images/01-bindings.png)](images/01-bindings.png#lightbox)
 
 これは非 UI コードに制限する必要はありません。 バインドでは Objective-C で開発されたユーザー インターフェイス コードも公開できます。
 

@@ -1,6 +1,6 @@
 ---
-title: 'タイトル: "Xamarin.Forms のデュアル画面のレイアウト" の説明:"このガイドでは、Xamarin.Forms の TwoPaneView を使用して Surface Duo や Surface Neo などのデュアル画面デバイスのアプリ エクスペリエンスを最適化する方法について説明します。"'
-description: 'ms.prod: xamarin ms.assetid:17ee8afa-5e7c-4a4f-a9b6-2aca03f30fe3 ms.technology: xamarin-forms author: davidortinau ms.author: daortin ms.date:02/08/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms のデュアル画面のレイアウト
+description: このガイドでは、Xamarin.Forms の TwoPaneView を使用して Surface Duo や Surface Neo などのデュアル画面デバイスのアプリ エクスペリエンスを最適化する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 17ee8afa-5e7c-4a4f-a9b6-2aca03f30fe3
 ms.technology: xamarin-forms
@@ -10,16 +10,16 @@ ms.date: 02/08/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 28d4b3da44cc1a022b70c0de0720be747e047f9f
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: fb5474c7436cb985a1404b662fcf842f22cfdc0d
+ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84138893"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86937697"
 ---
-# <a name="xamarinforms-dual-screen-layout"></a>Xamarin.Forms のデュアル画面のレイアウト
+# <a name="xamarinforms-twopaneview-layout"></a>Xamarin.Forms TwoPaneView レイアウト
 
-![](~/media/shared/preview.png "This API is currently pre-release")
+![プレリリース API](~/media/shared/preview.png "この API は現在プレリリースです")
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 
@@ -27,24 +27,31 @@ ms.locfileid: "84138893"
 
 ## <a name="set-up-twopaneview"></a>TwoPaneView を設定する
 
-`TwoPaneView.Source` プロパティは URI またはローカル ファイル パスを受け取ることができます。 再生は、メディアを開くとすぐに開始されます。
+次の手順に従って、アプリにデュアル画面レイアウトを作成します。
 
-```xaml
-<ContentPage xmlns:dualScreen="clr-namespace:Xamarin.Forms.DualScreen;assembly=Xamarin.Forms.DualScreen">
-    <dualScreen:TwoPaneView>
-        <dualScreen:TwoPaneView.Pane1>
-            <StackLayout>
-                <Label Text="Pane1 Content" />
-            </StackLayout>
-        </dualScreen:TwoPaneView.Pane1>
-        <dualScreen:TwoPaneView.Pane2>
-            <StackLayout>
-                <Label Text="Pane2 Content" />
-            </StackLayout>
-        </dualScreen:TwoPaneView.Pane2>
-    </dualScreen:TwoPaneView>
-</ContentPage>
-```
+1. [概要](index.md)手順に従って NuGet を追加し、Android `MainActivity` クラスを構成します。
+1. 次の XAML を使用し、基本的な `TwoPaneView` で開始します。
+
+    ```xaml
+    <ContentPage 
+        xmlns:dualScreen="clr-namespace:Xamarin.Forms.DualScreen;assembly=Xamarin.Forms.DualScreen">
+        <dualScreen:TwoPaneView>
+            <dualScreen:TwoPaneView.Pane1>
+                <StackLayout>
+                    <Label Text="Pane1 Content" />
+                </StackLayout>
+            </dualScreen:TwoPaneView.Pane1>
+            <dualScreen:TwoPaneView.Pane2>
+                <StackLayout>
+                    <Label Text="Pane2 Content" />
+                </StackLayout>
+            </dualScreen:TwoPaneView.Pane2>
+        </dualScreen:TwoPaneView>
+    </ContentPage>
+    ```
+
+> [!TIP]
+> 上の XAML では、`ContentPage` 要素から多くの共通属性が除外されています。 アプリに `TwoPaneView` を追加するとき、画像のように `xmlns:dualScreen` 名前空間を忘れずに宣言してください。
 
 ## <a name="understand-twopaneview-modes"></a>TwoPaneView モードについて
 

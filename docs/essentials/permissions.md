@@ -9,12 +9,12 @@ ms.date: 01/06/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5de10511d73614570d6308b6f4deb7b4ca55549a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d594e627fed21c3c2a73770313fcae29695370c5
+ms.sourcegitcommit: a658de488a6da916145ed4aa016825565110e767
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84802226"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86972559"
 ---
 # <a name="xamarinessentials-permissions"></a>Xamarin.Essentials:アクセス許可
 
@@ -148,7 +148,7 @@ public async Task<PermissionStatus> CheckAndRequestPermissionAsync<T>(T permissi
 
 ## <a name="extending-permissions"></a>アクセス許可の拡張
 
-Permissions API は、Xamarin.Essentials に含まれていない追加の検証やアクセス許可が必要なアプリケーションに対して、柔軟かつ拡張可能であるように作成されています。 `BasePermission` から継承した新しいクラスを作成し、必要な抽象メソッドを実装します。 Then
+Permissions API は、Xamarin.Essentials に含まれていない追加の検証やアクセス許可が必要なアプリケーションに対して、柔軟かつ拡張可能であるように作成されています。 `BasePermission` から継承した新しいクラスを作成し、必要な抽象メソッドを実装します。
 
 ```csharp
 public class MyPermission : BasePermission
@@ -173,21 +173,10 @@ public class MyPermission : BasePermission
 }
 ```
 
-特定のプラットフォームでアクセス許可を実装する場合、`BasePlatformPermission` クラスから継承することができます。 これにより、宣言を自動的に確認するための、追加のプラットフォーム ヘルパー メソッドが提供されます。 これは、グループ化のためのカスタム アクセス許可を作成する場合に役立ちます。 たとえば、次のカスタム アクセス許可を使用して、Android 上のストレージへの読み取りアクセスと書き込みアクセスの両方を要求できます。
-
-アクセス許可の呼び出し元であるプロジェクトに、新しいアクセス許可を作成します。
+特定のプラットフォームでアクセス許可を実装する場合、`BasePlatformPermission` クラスから継承することができます。 これにより、宣言を自動的に確認するための、追加のプラットフォーム ヘルパー メソッドが提供されます。 これは、グループ化を行うカスタム アクセス許可を作成する場合に役立ちます。 たとえば、次のカスタム アクセス許可を使用して、Android 上のストレージへの読み取りアクセスと書き込みアクセスの両方を要求できます。
 
 ```csharp
-public partial class ReadWriteStoragePermission  : Xamarin.Essentials.Permissions.BasePlatformPermission
-{
-
-}
-```
-
-Android プロジェクトで、要求するアクセス許可を使用してアクセス許可を拡張します。
-
-```csharp
-public partial class ReadWriteStoragePermission : Xamarin.Essentials.Permissions.BasePlatformPermission
+public class ReadWriteStoragePermission : Xamarin.Essentials.Permissions.BasePlatformPermission
 {
     public override (string androidPermission, bool isRuntime)[] RequiredPermissions => new List<(string androidPermission, bool isRuntime)>
     {
@@ -197,10 +186,49 @@ public partial class ReadWriteStoragePermission : Xamarin.Essentials.Permissions
 }
 ```
 
-その後、共有ロジックから新しいアクセス許可を呼び出すことができます。
+その後、Android プロジェクトから新しいアクセス許可を呼び出すことができます。
 
 ```csharp
 await Permissions.RequestAsync<ReadWriteStoragePermission>();
+```
+
+共有コードからこの API を呼び出す場合、インターフェイスを作成し、[依存関係サービス](https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/dependency-service/)を使用して実装を登録したり、取得したりできます。
+
+```csharp
+public interface IReadWritePermission
+{        
+    Task<PermissionStatus> CheckStatusAsync();
+    Task<PermissionStatus> RequestAsync();
+}
+```
+
+その後、プラットフォーム プロジェクト内にインターフェイスを実装します。
+
+```csharp
+public class ReadWriteStoragePermission : Xamarin.Essentials.Permissions.BasePlatformPermission, IReadWritePermission
+{
+    public override (string androidPermission, bool isRuntime)[] RequiredPermissions => new List<(string androidPermission, bool isRuntime)>
+    {
+        (Android.Manifest.Permission.ReadExternalStorage, true),
+        (Android.Manifest.Permission.WriteExternalStorage, true)
+    }.ToArray();
+}
+```
+
+次に、特定の実装を登録できます。
+
+```csharp
+DependencyService.Register<IReadWritePermission, ReadWriteStoragePermission>();
+```
+その後、共有プロジェクトからそれを解決したり、使用したりできます。
+
+```csharp
+var readWritePermission = DependencyService.Get<IReadWritePermission>();
+var status = await readWritePermission.CheckStatusAsync();
+if (status != PermissionStatus.Granted)
+{
+    status = await readWritePermission.RequestAsync();
+}
 ```
 
 ## <a name="platform-implementation-specifics"></a>プラットフォームの実装の詳細
