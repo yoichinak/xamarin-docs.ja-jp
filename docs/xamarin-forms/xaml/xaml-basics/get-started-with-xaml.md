@@ -10,12 +10,12 @@ ms.date: 09/30/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e38080fc9bc4ef0b74eb8c12c3a3f646c4888f53
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 874793975f027e1323dbf8a8acd30d19e980370b
+ms.sourcegitcommit: 562d4f2d51a43af21b7dc3ab892dd3a4264349a1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84198074"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87177646"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>第 1 部 XAML の概要
 
@@ -148,7 +148,7 @@ Visual Studio によってプロジェクトがビルドされると、XAML フ�
 
 このプログラムをコンパイルして実行すると、 `Label` XAML が示すように、要素がページの中央に表示されます。
 
-[![既定の Xamarin.Forms 表示](get-started-with-xaml-images/xamlsamples.png)](get-started-with-xaml-images/xamlsamples-large.png#lightbox)
+[![Default::: no-loc (Xamarin. Forms)::: display](get-started-with-xaml-images/xamlsamples.png)](get-started-with-xaml-images/xamlsamples-large.png#lightbox)
 
 より興味深いビジュアルについては、さらに興味深い XAML が必要です。
 
@@ -214,7 +214,7 @@ Visual Studio によってプロジェクトがビルドされると、XAML フ�
 
 多くのショートカットは、これらのプロパティの値を設定するために用意されています。 プロパティには基本的なデータ型があります。たとえば、プロパティとプロパティは型で、は型であり、(既定ではこのように設定されてい `Title` `Text` `String` `Rotation` `Double` `IsVisible` `true` ます) は型 `Boolean` です。
 
-`HorizontalTextAlignment`プロパティは、列挙体である型です `TextAlignment` 。 任意の列挙型のプロパティの場合は、メンバー名だけを指定する必要があります。
+`HorizontalTextAlignment`プロパティは、列挙体である型です `TextAlignment` 。 列挙型のプロパティの場合、指定する必要があるのはメンバー名だけです。
 
 ただし、より複雑な型のプロパティの場合は、XAML を解析するためにコンバーターが使用されます。 これらは、 Xamarin.Forms から派生するのクラスです `TypeConverter` 。 多くはパブリッククラスですが、一部はパブリッククラスではありません。 この特定の XAML ファイルでは、これらのクラスのいくつかがバックグラウンドで役割を果たします。
 
