@@ -10,18 +10,18 @@ ms.date: 07/19/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e38c319db0d0adf23a2ec0d328ccc3822e33f66d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: de85e9108244230e9c0a740b1aa9140ecf92a033
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84198278"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997398"
 ---
-# <a name="creating-mobile-apps-with-xamarinforms-book"></a>書籍『Creating Mobile Apps with Xamarin.Forms』
+# <a name="creating-mobile-apps-with-no-locxamarinforms-book"></a>書籍『Creating Mobile Apps with Xamarin.Forms』
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples)
 
-<img src="images/cover-sml.png" title="書籍『Creating Mobile Apps with Xamarin.Forms』" align="left" />書籍『*Creating Mobile Apps with Xamarin.Forms* 』(Charles Petzold 著) は、Xamarin.Forms アプリケーションを作成する方法について学習するためのガイドです。 唯一の前提条件は、C# プログラミング言語の知識です。 この本では、Xamarin.Forms のユーザー インターフェイスと、アニメーション、MVVM、トリガー、ビヘイビアー、カスタム レイアウト、カスタム レンダラーなどについて詳しく解説されています。
+<img src="images/cover-sml.png" title="書籍『Creating Mobile Apps with Xamarin.Forms』" alt="Creating Mobile Apps with Xamarin.Forms Book" align="left" />書籍『*Creating Mobile Apps with Xamarin.Forms* 』(Charles Petzold 著) は、Xamarin.Forms アプリケーションを作成する方法について学習するためのガイドです。 唯一の前提条件は、C# プログラミング言語の知識です。 この本では、Xamarin.Forms のユーザー インターフェイスと、アニメーション、MVVM、トリガー、ビヘイビアー、カスタム レイアウト、カスタム レンダラーなどについて詳しく解説されています。
 
 この本は 2016 年春に発行されて以降、改訂されていません。 多くの情報はまだ価値がありますが、一部の[資料は古く](#ways-in-which-the-book-is-outdated)なっており、トピックの中にはまったく正しくないものまたは不完全なものもあります。
 

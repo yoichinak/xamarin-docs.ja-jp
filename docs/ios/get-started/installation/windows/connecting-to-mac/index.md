@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/29/2018
-ms.openlocfilehash: 81377d790d695b60465319aeb166eb1e62483211
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 7bc6a7ce1b8cd20aa782ddde42925e4e72374ec4
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76940929"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996948"
 ---
 # <a name="pair-to-mac-for-xamarinios-development"></a>Xamarin.iOS 開発のために Mac とペアリングする
 
@@ -176,9 +176,9 @@ Visual Studio 2019 を [Mac に接続している](#connect-to-the-mac-from-visu
 
 次のスクリーンショットで示すように (クリックすると拡大します)、さまざまなプロンプトで進行状況が示されます。
 
-||インストールのチェック|ダウンロード中|インストール
+|Mono|インストールのチェック|ダウンロード中|インストール
 |---|---|---|---|
-|Mono|[![Mono がインストールされていない](images/mono-missing.png "Mono がインストールされていない")](images/mono-missing-large.png#lightbox)|[![Mono のダウンロード中](images/mono-downloading.png "Mono のダウンロード中")](images/mono-downloading-large.png#lightbox)|[![Mono のインストール](images/mono-installing.png "Mono のインストール")](images/mono-installing-large.png#lightbox)|
+||[![Mono がインストールされていない](images/mono-missing.png "Mono がインストールされていない")](images/mono-missing-large.png#lightbox)|[![Mono のダウンロード中](images/mono-downloading.png "Mono のダウンロード中")](images/mono-downloading-large.png#lightbox)|[![Mono のインストール](images/mono-installing.png "Mono のインストール")](images/mono-installing-large.png#lightbox)|
 
 ### <a name="xamarinios"></a>Xamarin.iOS
 
@@ -192,17 +192,17 @@ Visual Studio 2019 を [Mac に接続している](#connect-to-the-mac-from-visu
 
 次のスクリーンショットで示すように (クリックすると拡大します)、さまざまなプロンプトで進行状況が示されます。
 
-||インストールのチェック|ダウンロード中|インストール
+|Xamarin.iOS|インストールのチェック|ダウンロード中|インストール
 |---|---|---|---|
-|Xamarin.iOS|[![Xamarin.iOS がインストールされていない](images/xamios-missing.png "Xamarin.iOS がインストールされていない")](images/xamios-missing-large.png#lightbox)|[![Xamarin.iOS のダウンロード中](images/xamios-downloading.png "Xamarin.iOS のダウンロード中")](images/xamios-downloading-large.png#lightbox)|[![Xamarin.iOS のインストール](images/xamios-installing.png "Xamarin.iOS をインストールする")](images/xamios-installing-large.png#lightbox)|
+||[![Xamarin.iOS がインストールされていない](images/xamios-missing.png "Xamarin.iOS がインストールされていない")](images/xamios-missing-large.png#lightbox)|[![Xamarin.iOS のダウンロード中](images/xamios-downloading.png "Xamarin.iOS のダウンロード中")](images/xamios-downloading-large.png#lightbox)|[![Xamarin.iOS のインストール](images/xamios-installing.png "Xamarin.iOS をインストールする")](images/xamios-installing-large.png#lightbox)|
 
 ### <a name="xcode-tools-and-license"></a>Xcode ツールとライセンス
 
 [Mac とペアリング] は、Xcode がインストールされ、そのライセンスが同意されているかどうかも調べて判断します。 [Mac とペアリング] では Xcode はインストールされませんが、次のスクリーンショットで示すように (クリックすると拡大します)、ライセンス同意のプロンプトは表示されます。
 
-||インストールのチェック|ライセンスの同意|
+|Xcode|インストールのチェック|ライセンスの同意|
 |---|---|---|
-|Xcode|[![Xcode がインストールされていない](images/xcode-missing.png "Xcode がインストールされていない")](images/xcode-missing-large.png#lightbox)|[![Xcode ライセンス](images/xcode-license.png "Xcode ライセンス")](images/xcode-license-large.png#lightbox)|
+||[![Xcode がインストールされていない](images/xcode-missing.png "Xcode がインストールされていない")](images/xcode-missing-large.png#lightbox)|[![Xcode ライセンス](images/xcode-license.png "Xcode ライセンス")](images/xcode-license-large.png#lightbox)|
 
 さらに、[Mac とペアリング] は Xcode と共に配布されるさまざまなパッケージをインストールまたは更新します。 次に例を示します。
 

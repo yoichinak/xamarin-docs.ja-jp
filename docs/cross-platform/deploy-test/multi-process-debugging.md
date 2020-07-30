@@ -6,16 +6,16 @@ ms.assetid: 852F8AB1-F9E2-4126-9C8A-12500315C599
 author: davidortinau
 ms.author: daortin
 ms.date: 03/24/2017
-ms.openlocfilehash: f27a95481bc590814b6031cbdd9fc9606fe0e19f
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 9bdc5790133241ed30e903617541244a9d6ee06e
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86932523"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996579"
 ---
 # <a name="multi-process-debugging"></a>マルチプロセス デバッグ
 
-Visual Studio for Mac で開発された最新のソリューションには、一般的に、複数のプラットフォームをターゲットとする複数のプロジェクトが含まれています。 たとえば、Web サービス プロジェクトが提供するデータに依存するモバイル アプリケーション プロジェクトが含まれるソリューションがあります。 このソリューションを開発する場合、開発者はエラーを解決するために、必要に応じて両方のプロジェクトを同時に実行します。 [Xamarin Cycle 9 リリース](https://releases.xamarin.com/stable-release-cycle-9/)以降、同時に実行されている複数のプロセスを Visual Studio for Mac でデバッグできるようになりました。 その結果、ブレークポイントを設定し、変数を検査し、実行中の複数のプロジェクトでスレッドを表示することができるようになりました。 これは、_複数プロセスのデバッグ_と呼ばれます。 
+Visual Studio for Mac で開発された最新のソリューションには、一般的に、複数のプラットフォームをターゲットとする複数のプロジェクトが含まれています。 たとえば、Web サービス プロジェクトが提供するデータに依存するモバイル アプリケーション プロジェクトが含まれるソリューションがあります。 このソリューションを開発する場合、開発者はエラーを解決するために、必要に応じて両方のプロジェクトを同時に実行します。 [Xamarin Cycle 9 リリース](https://releases.xamarin.com/stable-release-cycle-9/)以降、同時に実行されている複数のプロセスを Visual Studio for Mac でデバッグできるようになりました。 その結果、ブレークポイントを設定し、変数を検査し、実行中の複数のプロジェクトでスレッドを表示することができるようになりました。 これは、_複数プロセスのデバッグ_と呼ばれます。
 
 このガイドでは、複数プロセスのデバッグをサポートする Visual Studio for Mac の主な変更点、複数プロセスをデバッグするソリューションを構成する方法、Visual Studio for Mac で既存のプロセスにアタッチする方法について説明します。
 
@@ -74,7 +74,7 @@ Visual Studio for Mac で複数のプロセスを開始し、デバッグする�
 
 複数のプロジェクトにブレーク ポイントがある場合、Visual Studio for Mac は両方のプロセスを一時停止します。 アクティブ スレッドのコードの**ステップ オーバー**のみが可能です。 スコープの変更によって、デバッガーがフォーカスをアクティブ スレッドから切り替えることができるようになるまで、他のプロセスは一時停止されます。 たとえば、次のスクリーンショットのように、Visual Studio for Mac で 2 つのプロジェクトをデバッグしているとします。
 
-![](multi-process-debugging-images/mpd09-xs.png  "Visual Studio for Mac debugging two projects")
+![2 つのプロジェクトをデバッグする Visual Studio for Mac](multi-process-debugging-images/mpd09-xs.png)
 
 このスクリーンショットで、各ソリューションにはそれぞれブレークポイントがあります。 デバッグが始まり、最初に到達するブレークポイントは、**SecondProject** の `MainClass` の**行 10** です。 どちらのプロジェクトにもブレークポイントがあるので、各プロセスが停止します。 ブレークポイントに到達すると、**ステップ オーバー**の各呼び出しによって、Visual Studio for Mac はアクティブ スレッドのコードをステップ オーバーします。
 
@@ -92,7 +92,7 @@ Visual Studio for Mac で複数のプロセスを開始し、デバッグする�
 
 デバッグ ツールバーの外観は、デバッグ対象のプロジェクトの状態に応じて変わります。 複数のプロジェクトが実行中の場合、少なくとも 1 つのプロジェクトが実行中で 1 つのプロジェクトが一時停止であれば、デバッグ ツールバーには **[一時停止]** ボタンと **[再開]** ボタンの両方が表示されます。
 
-![](multi-process-debugging-images/mpd07-xs.png  "Debug toolbar")
+![[デバッグ] ツールバー](multi-process-debugging-images/mpd07-xs.png)
 
 **[デバッグ] ツールバー**の **[一時停止]** ボタンをクリックすると、デバッグ対象のすべてのプロセスが一時停止されます。 **[再開]** ボタンをクリックすると、一時停止されているすべてのプロセスが再開されます。
 
@@ -100,7 +100,7 @@ Visual Studio for Mac で複数のプロセスを開始し、デバッグする�
 
 Visual Studio for Mac で 1 つ目のプロジェクトの開始後に、2 つ目のプロジェクトをデバッグすることもできます。 1 つ目のプロジェクトが開始された後に、**Solution Pad** のプロジェクトを**右クリック*し、 **[デバッグの開始]** を選択します。
 
-![](multi-process-debugging-images/mpd13-xs.png  "Start Debugging Item")
+![デバッグの開始項目](multi-process-debugging-images/mpd13-xs.png)
 
 ## <a name="creating-a-solution-configuration"></a>ソリューション構成の作成
 
@@ -114,7 +114,7 @@ Xamarin Studio で新しいソリューション構成を作成するには、�
 
 2. **[新規作成]** ボタンをクリックし、新しいソリューション構成の名前を入力し、 **[作成]** をクリックします。 新しいソリューション構成が **[構成]** ウィンドウに表示されます。
 
-    ![](multi-process-debugging-images/mpd11-xs.png  "Naming a new solution configuration")
+    ![新しいソリューション構成の名前付け](multi-process-debugging-images/mpd11-xs.png)
 
 3. 構成一覧で新しい実行構成を選択します。 **[ソリューション オプション]** ダイアログには、ソリューションの各プロジェクトが表示されます。 デバッグ セッションの開始時に開始する各プロジェクトをオンにします。
 
