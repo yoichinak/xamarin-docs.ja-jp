@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: f020219f28ce9389c3f8d5157ddfddc32af07f0f
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 1f86227573fc5e9dc39d4781125c49a067e8967d
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939972"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997489"
 ---
 # <a name="using-testflight-to-distribute-xamarinios-apps"></a>TestFlight を使用して Xamarin.iOS アプリを配布する
 
@@ -75,7 +75,7 @@ TestFlight でビルドをテストするには、新しいベータ資格で "*
 
 このフォームはアプリの Info.plist ファイルとまったく同じ情報にする必要があります (下図参照)。
 
-[![](testflight-images/infoplist.png "アプリの Info.plist")](testflight-images/infoplist.png#lightbox)
+[![アプリの Info.plist](testflight-images/infoplist.png)](testflight-images/infoplist.png#lightbox)
 [![iTunes Connect のフォーム](testflight-images/newiosapp.png)](testflight-images/newiosapp.png#lightbox)
 
 - **[Name]\(名前\)** — アプリ バンドルの設定に使われるわかりやすい名前。 `Info.plist` の**アプリケーション名**エントリと完全に一致する必要があります。
@@ -227,7 +227,7 @@ TestFlight を使い始めるには、アプリの **[Prerelease]\(プレリリ�
 
 外部テスト担当者の数が多い場合は、 **[Import File]\(ファイルのインポート\)** リンクを使い、次のような形式の行を含む `CSV` ファイルをインポートできます。
 
-``` 
+```
 first name, last name, email address
 ```
 

@@ -10,14 +10,14 @@ ms.date: 02/08/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fb5474c7436cb985a1404b662fcf842f22cfdc0d
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 4f7fdc0bb18a49e601c00ce1e3eb13371bb80be3
+ms.sourcegitcommit: 3698b35c823225a74892a47139d19e8ae8e6d9ed
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937697"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87113820"
 ---
-# <a name="xamarinforms-twopaneview-layout"></a>Xamarin.Forms TwoPaneView レイアウト
+# <a name="no-locxamarinforms-twopaneview-layout"></a>Xamarin.Forms TwoPaneView レイアウト
 
 ![プレリリース API](~/media/shared/preview.png "この API は現在プレリリースです")
 
@@ -77,8 +77,8 @@ ms.locfileid: "86937697"
 
 `TwoPaneView` が 1 つまたは 2 つの画面を占有する場合は、次のプロパティが適用されます。
 
-- `TallModeConfiguration` は、縦長モードの場合の左/右の配置を示します。または、TwoPaneViewPriority で定義されているように 1 つのペインだけを表示したい場合です。
-- `WideModeConfiguration` は、横長モードの場合の上/下の配置を示します。または、TwoPaneViewPriority で定義されているように 1 つのペインだけを表示したい場合です。
+- `TallModeConfiguration` は、縦長モードの場合の上/下の配置を示します。または、TwoPaneViewPriority で定義されているように 1 つのペインだけを表示したい場合です。
+- `WideModeConfiguration` は、横長モードの場合の左/右の配置を示します。または、TwoPaneViewPriority で定義されているように 1 つのペインだけを表示したい場合です。
 - `PanePriority` は SinglePane モードの場合に Pane1 または Pane2 を表示するかどうかを決定します。
 
 ## <a name="related-links"></a>関連リンク

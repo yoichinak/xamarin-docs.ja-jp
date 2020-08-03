@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 28dddc35ac829cb58a40a9296bb995e119b5b6e3
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 8a9a38c24af3e14cd6930cbb27717ba184dd0235
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937268"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86996410"
 ---
 # <a name="hello-ios-multiscreen--deep-dive"></a>Hello, iOS マルチスクリーン – 詳細
 
@@ -78,7 +78,7 @@ Phoneword アプリケーションでは、複数の画面間のナビゲーシ�
 
 - **オプションの戻るボタン機能**: 新しい項目をナビゲーション スタックにプッシュすると、タイトル バーに*戻るボタン*が自動的に表示されます。ユーザーはこのボタンを押して戻る操作を行うことができます。 戻るボタンを押すと、ナビゲーション スタックから現在のビュー コントローラーが*ポップ*され、前のコンテンツ ビュー階層がウィンドウに読み込まれます。  
 
-    [![](hello-ios-multiscreen-deepdive-images/03.png "This diagram illustrates 'popping' a card off the stack")](hello-ios-multiscreen-deepdive-images/03.png#lightbox)
+    [![この図は、スタックからのカードのポップを示しています](hello-ios-multiscreen-deepdive-images/03.png)](hello-ios-multiscreen-deepdive-images/03.png#lightbox)
 
 - **タイトル バー機能**: ナビゲーション コントローラーの上部は*タイトル バー*と呼ばれます。 次の図のように、ビュー コントローラーのタイトルを表示する処理を担当します。  
 

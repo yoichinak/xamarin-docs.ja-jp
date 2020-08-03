@@ -7,18 +7,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/21/2018
-ms.openlocfilehash: 043ad02f9ca9148910364ac82917551ee58d72ba
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 56c9fc307166ec9c72ab6cb1f7a726c4cd12cb3e
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73027404"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997034"
 ---
 # <a name="fragments-walkthrough-ndash-phone"></a>フラグメントのチュートリアル &ndash; スマートフォン
 
-これは、縦向きの Android デバイスを対象とする Xamarin.Android アプリを作成するチュートリアルの最初のパートです。 このチュートリアルでは、Xamarin. Android でフラグメントを作成する方法と、それらをサンプルに追加する方法について説明します。
+これは、縦向きの Android デバイスを対象とした Xamarin.Android アプリを作成する、チュートリアルの最初のパートです。 このチュートリアルでは、Xamarin. Android でフラグメントを作成する方法と、それらをサンプルに追加する方法について説明します。
 
-[![](./images/intro-screenshot-phone-sml.png)](./images/intro-screenshot-phone.png#lightbox)
+[![チュートリアル アプリのスクリーンショット](./images/intro-screenshot-phone-sml.png)](./images/intro-screenshot-phone.png#lightbox)
 
 このアプリでは次のクラスを作成します。
 

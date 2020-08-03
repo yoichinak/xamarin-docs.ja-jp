@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 1de157540011011be6d48db25414c8667195c679
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 90309fe8a9282110a685151455d0b1407b269128
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86932709"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997359"
 ---
 # <a name="configuring-an-app-in-itunes-connect"></a>iTunes Connect でのアプリの構成
 
@@ -185,7 +185,7 @@ Apple では、ユーザーのアプリケーションに関する問題や質�
 4. **[Name]\(名前\)** セクションまでスクロールします。
 5. 必要なすべての情報を入力します。
 
-    [![](itunesconnect-images/name01.png "Editing Name, Description, What's New, Keywords and URLs in iTunes Connect")](itunesconnect-images/name01.png#lightbox)
+    [![iTunes Connect での名前、説明、新機能、キーワード、URL の編集](itunesconnect-images/name01.png)](itunesconnect-images/name01.png#lightbox)
 6. 画面の上部にある **[Save]\(保存\)** ボタンをクリックして、変更を保存します。
 
 > [!IMPORTANT]

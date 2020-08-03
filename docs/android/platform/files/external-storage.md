@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 07/23/2018
-ms.openlocfilehash: 96b0d6a00c7825939b1f89ed63e3e5559ca4ef59
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: e6eb62def5aeb9e4a4a347becffcae82116c1b11
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73020482"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997073"
 ---
 # <a name="external-storage"></a>外部ストレージ
 
@@ -50,7 +50,7 @@ ms.locfileid: "73020482"
 
 `GetExternalFilesDir()` に対するパラメーターは、"_アプリケーション ディレクトリ_" を指定する文字列です。 これは、ファイルの論理編成に対する標準的な場所を提供するためのディレクトリです。 この文字列値は、`Android.OS.Environment` クラスの定数を通じて使用できます。
 
-| `Android.OS.Environment` | ディレクトリ |
+| Android.OS.Environment | ディレクトリ |
 |-|-|
 | DirectoryAlarms | **_PRIVATE\_EXTERNAL\_STORAGE_/Alarms** |
 | DirectoryDcim | **_PRIVATE\_EXTERNAL\_STORAGE_/DCIM** |

@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 1b279b125ce88a37ddb3209cfe689a7fef50a256
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: b937cc653275f509b7f759af5c3d995e84381cb2
+ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938750"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86997346"
 ---
 # <a name="hello-ios-multiscreen--quickstart"></a>Hello, iOS マルチスクリーン – クイック スタート
 
@@ -67,7 +67,7 @@ ms.locfileid: "86938750"
 
 8. **Phoneword** 画面の**タイトル** バーをダブルクリックして、**タイトル**を **Phoneword** に変更します。
 
-    ![](hello-ios-multiscreen-quickstart-images/09.png "Change the Title to 'Phoneword'")
+    ![タイトルを Phoneword に変更する](hello-ios-multiscreen-quickstart-images/09.png)
 
 9. **[ツールボックス]** から**ボタン**をドラッグして、**通話ボタン**の下に配置します。 ハンドルをドラッグして、新しい**ボタン**を**通話ボタン**と同じ幅にします。
 
@@ -90,7 +90,7 @@ ms.locfileid: "86938750"
     ![Solution Pad の CallHistoryController.cs ファイル](hello-ios-multiscreen-quickstart-images/14new.png)
 
 13. **CallHistoryController.cs** ファイルをダブルクリックして開き、その内容を以下のコードに置き換えます。
-    
+
     ```csharp
     using System;
     using Foundation;
@@ -314,7 +314,7 @@ ms.locfileid: "86938750"
 
 10. **プロパティ エクスプローラー**で、**ボタン**の**名前**を `CallHistoryButton` に変更し、**タイトル**を**通話履歴**に変更します。
 
-    ![](hello-ios-multiscreen-quickstart-images/image9.png "Change the Name of the Button to 'CallHistoryButton' and the Title to 'Call History'")
+    ![ボタンの [名前] を CallHistoryButton に変更し、[タイトル] を通話履歴に変更する](hello-ios-multiscreen-quickstart-images/image9.png)
 
 11. **通話履歴**画面を作成します。 **[ツールボックス]** から、**テーブル ビュー コントローラー**をデザイン サーフェイスにドラッグします。
 
