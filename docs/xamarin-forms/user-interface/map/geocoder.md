@@ -10,18 +10,21 @@ ms.date: 10/22/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fe099235857f6bd0531539e3aa84e41bf59b50ba
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 7e92385f3a82c2d12881be4ff3e54bc47533696d
+ms.sourcegitcommit: ea2abdc789d0e292c3e1700a2b53b92097e0e542
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139868"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517494"
 ---
-# <a name="xamarinforms-map-geocoding"></a>Xamarin.Formsマップジオコーディング
+# <a name="no-locxamarinforms-map-geocoding"></a>Xamarin.Formsマップジオコーディング
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
 [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps)名前空間は、 [`Geocoder`](xref:Xamarin.Forms.Maps.Geocoder) オブジェクトに格納されている文字列のアドレスと緯度、経度の座標を変換するクラスを提供し [`Position`](xref:Xamarin.Forms.Maps.Position) ます。 構造体の詳細については [`Position`](xref:Xamarin.Forms.Maps.Position) 、「[マップの位置と距離](position-distance.md)」を参照してください。
+
+> [!NOTE]
+> 代替のジオコーディング API は avalible に Xamarin.Essentials あります。 Api は、 Xamarin.Essentials `Geocoding` この api によって返される文字列ではなく、アドレスをジオコーディングするときに、構造化されたアドレスデータを提供します。 詳細については、「 [ Xamarin.Essentials ジオコーディング](~/essentials/geocoding.md)」を参照してください。
 
 ## <a name="geocode-an-address"></a>Geocode のアドレス
 
