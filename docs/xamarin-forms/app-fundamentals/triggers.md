@@ -10,14 +10,14 @@ ms.date: 04/17/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2a71f48fb9911267188e7aa4b4124cd9b7488d31
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: fa907babc8dae0f466fd870f55b0e5be23114498
+ms.sourcegitcommit: 37ad3c1ef8faa5bfeeb305fde06e7b4654a643e1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936475"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87795995"
 ---
-# <a name="xamarinforms-triggers"></a>Xamarin.Forms のトリガー
+# <a name="no-locxamarinforms-triggers"></a>Xamarin.Forms のトリガー
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
 
@@ -276,7 +276,7 @@ XAML を以下に示します。 最初のマルチ トリガーの例と次の�
         <Trigger TargetType="Entry"
                  Property="Entry.IsFocused" Value="True">
             <Trigger.EnterActions>
-                <local:FadeTriggerAction StartsFrom="0"" />
+                <local:FadeTriggerAction StartsFrom="0" />
             </Trigger.EnterActions>
 
             <Trigger.ExitActions>
@@ -319,7 +319,7 @@ public class FadeTriggerAction : TriggerAction<VisualElement>
 
 ## <a name="state-triggers"></a>状態トリガー
 
-状態トリガーは [`VisualState`](xref:Xamarin.Forms.VisualState) が適用される条件を定義するための特殊なトリガーのグループです。 
+状態トリガーは [`VisualState`](xref:Xamarin.Forms.VisualState) が適用される条件を定義するための特殊なトリガーのグループです。
 
 状態トリガーは、[`VisualState`](xref:Xamarin.Forms.VisualState) の [`StateTriggers`](xref:Xamarin.Forms.VisualState.StateTriggers) コレクションに追加されます。 このコレクションには、1 つの状態トリガーを含めることも、複数の状態トリガーを含めることもできます。 コレクション内のいずれかの状態トリガーがアクティブになっていると、[`VisualState`](xref:Xamarin.Forms.VisualState) が適用されます。
 

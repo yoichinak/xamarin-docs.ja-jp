@@ -1,6 +1,6 @@
 ---
-title: 'title: "Xamarin.Formsシェル レイアウト" の説明:"シェル アプリケーションにおけるポップアップの次のレベルのナビゲーションは、下部のタブ バーです。'
-description: 'または、アプリケーションのナビゲーション パターンを下部のタブから始めて、ポップアップを使用しないようにすることができます。 どちらの場合も下部のタブに複数のページが含まれる場合は、上部のタブからページをナビゲートできます。" ms.prod: xamarin ms.assetid:318D81DB-E456-4E44-B083-36A27DBD9523 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:11/06/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms シェルのレイアウト
+description: シェル アプリケーションにおけるポップアップの次のレベルのナビゲーションは、下部のタブ バーです。 または、アプリケーションのナビゲーション パターンを下部のタブから始めて、ポップアップを使用しないようにすることができます。 どちらの場合も下部のタブに複数のページが含まれる場合は、上部のタブからページをナビゲートできます。
 ms.prod: xamarin
 ms.assetid: 318D81DB-E456-4E44-B083-36A27DBD9523
 ms.technology: xamarin-forms
@@ -10,14 +10,14 @@ ms.date: 11/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fa49cdb7944e3ab942ccda611af906e2822b072a
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: 7c4ed503e0379c2c7f235bd91621a031bd660c85
+ms.sourcegitcommit: 69d9a61ba479f707d96eb4c1c56a4b05a2a2a26f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84139959"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87426891"
 ---
-# <a name="xamarinforms-shell-tabs"></a>Xamarin.Forms シェルのタブ
+# <a name="no-locxamarinforms-shell-tabs"></a>Xamarin.Forms シェルのタブ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
@@ -268,7 +268,7 @@ ms.locfileid: "84139959"
 </Shell>
 ```
 
-この XAML では `CatsPage` を作成して表示していますが、それは、これがサブクラス化された `Shell` オブジェクト内で宣言されたコンテンツの最初の項目であるためです。 下部のタブを使って `CatsPage` と `MonkeysPage` に移動できます。そのページは、ユーザーがそれらに移動したときにのみ作成されます。 この方法の利点は、起動エクスペリエンスの低下を回避できることです。ページが、アプリケーションの起動時ではなく、必要に応じてナビゲーションへの応答として作成されるためです。
+この XAML では `CatsPage` を作成して表示していますが、それは、これがサブクラス化された `Shell` オブジェクト内で宣言されたコンテンツの最初の項目であるためです。 下部のタブを使って `DogsPage` と `MonkeysPage` に移動できます。そのページは、ユーザーがそれらに移動したときにのみ作成されます。 この方法の利点は、起動エクスペリエンスの低下を回避できることです。ページが、アプリケーションの起動時ではなく、必要に応じてナビゲーションへの応答として作成されるためです。
 
 ## <a name="tab-appearance"></a>タブの外観
 

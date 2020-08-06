@@ -1,6 +1,6 @@
 ---
-title: 'title: "Xamarin.FormsTabbedPage" description: "Xamarin.Forms の TabbedPage は、タブのリストと大きい詳細エリアで構成されており、各タブでは、コンテンツが詳細エリアに読み込まれます。'
-description: 'この記事では、TabbedPage を使用してページのコレクションを移動する方法について説明します。" ms.prod: xamarin ms.assetid:C946057F-C77C-412D-82A0-DAF475A24EF5 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:11/07/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms の TabbedPage
+description: Xamarin.Forms の TabbedPage は、タブのリストと大きい詳細エリアで構成されており、各タブでは、コンテンツが詳細エリアに読み込まれます。 この記事では、TabbedPage を使用してページのコレクションを移動する方法について説明します。
 ms.prod: xamarin
 ms.assetid: C946057F-C77C-412D-82A0-DAF475A24EF5
 ms.technology: xamarin-forms
@@ -10,14 +10,14 @@ ms.date: 11/07/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 38389867ba52e63d8310e3b59d7838f58e8cf488
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: 733ec985f4d285f26aca62930868970026847825
+ms.sourcegitcommit: 69d9a61ba479f707d96eb4c1c56a4b05a2a2a26f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84137515"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87426878"
 ---
-# <a name="xamarinforms-tabbedpage"></a>Xamarin.Forms の TabbedPage
+# <a name="no-locxamarinforms-tabbedpage"></a>Xamarin.Forms の TabbedPage
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
 
@@ -33,7 +33,7 @@ iOS では、タブのリストが画面の下部に表示され、その上に�
 Android では、タブのリストが画面の上部に表示され、その下に詳細エリアが表示されます。 各タブは、タイトルとアイコンで構成されます。これは、アルファ チャネルを含む PNG ファイルです。 タブは、プラットフォーム固有で画面の下部に移動できます。 6 個以上のタブがあり、画面の下部にタブ リストがある場合、 *[その他]* タブが表示され、これを使用して追加のタブにアクセスできます。 アイコン要件の詳細については、material.io の[タブ](https://material.io/components/tabs/#)に関するページと、developer.android.com の「[各種のセル密度をサポートする](https://developer.android.com/training/multiscreen/screendensities)」を参照してください。 タブを画面の下部に移動する方法については、[TabbedPage ツール バーの配置と色の設定](~/xamarin-forms/platform/android/tabbedpage-toolbar-placement-color.md)に関する記事を参照してください。
 
 > [!TIP]
-> Android AppCompat 用の `TabbedPageRenderer` には、カスタム `Drawable` からタブ アイコンを読み込むために使用できるオーバーライド可能な `GetIconDrawable` メソッドがあります。 このオーバーライドは、SVG イメージを `TabbedPage` のアイコンとして使用できるようにし、上部のタブ バーと下部のタブ バーの両方で機能します。 また、オーバーライド可能な `SetTabIcon` メソッドは、上部のタブ バー用のカスタム `Drawable` からタブ アイコンを読み込むために使用することもできます。
+> Android AppCompat 用の `TabbedPageRenderer` には、カスタム `Drawable` からタブ アイコンを読み込むために使用できるオーバーライド可能な `SetTabIconImageSource` メソッドがあります。 このオーバーライドは、SVG イメージを `TabbedPage` のアイコンとして使用できるようにし、上部のタブ バーと下部のタブ バーの両方で機能します。
 
 Universal Windows Platform (UWP) では、タブのリストが画面の上部に表示され、その下に詳細エリアが表示されます。 各タブは、タイトルで構成されます。 ただし、各タブにはプラットフォーム固有のアイコンを追加できます。 詳細については、「[Windows 上の TabbedPage アイコン](~/xamarin-forms/platform/windows/tabbedpage-icons.md)」を参照してください。
 
