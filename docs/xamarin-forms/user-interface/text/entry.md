@@ -6,28 +6,24 @@ ms.assetid: 9923C541-3C10-4D14-BAB5-C4D6C514FB1E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 09/25/2019
+ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5c17d6a106474c4c5b183bd41923533ffc95789b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 3738a0fa3519f18864c2430430a6716bed5be130
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136202"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918232"
 ---
-# <a name="xamarinforms-entry"></a>Xamarin.Formsキー
+# <a name="no-locxamarinforms-entry"></a>Xamarin.Formsキー
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
-
-_単一行のテキストまたはパスワードの入力_
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 は、 Xamarin.Forms [`Entry`](xref:Xamarin.Forms.Entry) 単一行のテキスト入力に使用されます。 は、 `Entry` ビューのように、 [`Editor`](xref:Xamarin.Forms.Editor) 複数のキーボードの種類をサポートしています。 また、は `Entry` パスワードフィールドとして使用できます。
 
-## <a name="display-customization"></a>表示のカスタマイズ
-
-### <a name="setting-and-reading-text"></a>設定とテキストの読み取り
+## <a name="set-and-read-text"></a>テキストの設定と読み取り
 
 は、 `Entry` 他のテキスト表示ビューと同様に、プロパティを公開し [`Text`](xref:Xamarin.Forms.InputView.Text) ます。 このプロパティを使用して、によって表示されるテキストを設定および読み取ることができ `Entry` ます。 次の例は、XAML でプロパティを設定する方法を示してい `Text` ます。
 
@@ -47,7 +43,7 @@ var MyEntry = new Entry { Text = "I am an Entry" };
 var text = MyEntry.Text;
 ```
 
-### <a name="setting-placeholder-text"></a>プレースホルダーテキストの設定
+## <a name="set-placeholder-text"></a>プレースホルダーテキストの設定
 
 は、 [`Entry`](xref:Xamarin.Forms.Entry) ユーザー入力を格納していない場合にプレースホルダーテキストを表示するように設定できます。 これは、プロパティをに設定することによって実現され、多くの場合 [`Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) `string` 、に適したコンテンツの種類を示すために使用され `Entry` ます。 また、プロパティをに設定することによって、プレースホルダーテキストの色を制御できます [`PlaceholderColor`](xref:Xamarin.Forms.InputView.PlaceholderColor) [`Color`](xref:Xamarin.Forms.Color) 。
 
@@ -62,7 +58,7 @@ var entry = new Entry { Placeholder = "Username", PlaceholderColor = Color.Olive
 > [!NOTE]
 > の幅は、 `Entry` そのプロパティを設定することによって定義でき `WidthRequest` ます。 定義されているの幅は、 `Entry` プロパティの値によって異なり `Text` ます。
 
-### <a name="preventing-text-entry"></a>テキスト入力の防止
+## <a name="prevent-text-entry"></a>テキスト入力を禁止する
 
 [`Entry`](xref:Xamarin.Forms.Entry) `IsReadOnly` の既定値であるプロパティを次のように設定することによって、のテキストを変更できないようにすることができます `false` `true` 。
 
@@ -78,7 +74,33 @@ var entry = new Entry { Text = "This is a read-only Entry", IsReadOnly = true })
 > [!NOTE]
 > プロパティは、の `IsReadonly` [`Entry`](xref:Xamarin.Forms.Entry) 視覚的な外観を `IsEnabled` 灰色に変更するプロパティとは異なり、の外観を変更しません `Entry` 。
 
-### <a name="limiting-input-length"></a>制限 (入力の長さを)
+## <a name="transform-text"></a>テキストの変換
+
+は、プロパティを [`Entry`](xref:Xamarin.Forms.Entry) `Text` `TextTransform` 列挙体の値に設定することによって、プロパティに格納されているテキストの大文字と小文字を変換できます `TextTransform` 。 この列挙体には、次の4つの値があります。
+
+- `None`テキストが変換されないことを示します。
+- `Default`プラットフォームの既定の動作が使用されることを示します。 これは、`TextTransform` プロパティの既定値です。
+- `Lowercase`テキストが小文字に変換されることを示します。
+- `Uppercase`テキストが大文字に変換されることを示します。
+
+次の例では、テキストを大文字に変換しています。
+
+```xaml
+<Entry Text="This text will be displayed in uppercase."
+       TextTransform="Uppercase" />
+```
+
+これに相当する C# コードを次に示します。
+
+```csharp
+Entry entry = new Entry
+{
+    Text = "This text will be displayed in uppercase.",
+    TextTransform = TextTransform.Uppercase
+};
+```
+
+## <a name="limit-input-length"></a>入力の長さを制限する
 
 プロパティは、で許可されて [`MaxLength`](xref:Xamarin.Forms.InputView.MaxLength) いる入力の長さを制限するために使用でき [`Entry`](xref:Xamarin.Forms.Entry) ます。 このプロパティは、正の整数に設定する必要があります。
 
@@ -92,7 +114,7 @@ var entry = new Entry { ... MaxLength = 10 };
 
 [`MaxLength`](xref:Xamarin.Forms.InputView.MaxLength)プロパティ値が0の場合、入力が許可されないことを示します。の値 (の既定値) は、 `int.MaxValue` [`Entry`](xref:Xamarin.Forms.Entry) 入力可能な文字数に有効な制限がないことを示します。
 
-### <a name="character-spacing"></a>文字間隔
+## <a name="character-spacing"></a>文字間隔
 
 [`Entry`](xref:Xamarin.Forms.Entry)プロパティを値に設定することによって、文字間隔をに適用でき `Entry.CharacterSpacing` `double` ます。
 
@@ -112,7 +134,7 @@ Entry entry = new Entry { CharacterSpacing = 10 };
 > [!NOTE]
 > `CharacterSpacing`プロパティ値は、プロパティおよびプロパティによって表示されるテキストに適用され `Text` `Placeholder` ます。
 
-### <a name="password-fields"></a>パスワードフィールド
+## <a name="password-fields"></a>パスワードフィールド
 
 `Entry`プロパティを提供 `IsPassword` します。 がの場合 `IsPassword` `true` 、フィールドの内容は黒の円として表示されます。
 
@@ -146,7 +168,7 @@ var MyEntry = new Entry { IsPassword = true, Placeholder = "Password" };
 
 ![Entry IsPassword と Placeholder の例](entry-images/passwordplaceholder.png)
 
-### <a name="setting-the-cursor-position-and-text-selection-length"></a>カーソル位置とテキスト選択の長さの設定
+## <a name="set-the-cursor-position-and-text-selection-length"></a>カーソルの位置とテキスト選択の長さを設定する
 
 プロパティは、 [`CursorPosition`](xref:Xamarin.Forms.Entry.CursorPosition) プロパティに格納されている文字列に次の文字が挿入される位置を取得または設定するために使用でき [`Text`](xref:Xamarin.Forms.InputView.Text) ます。
 
@@ -172,7 +194,7 @@ var entry = new Entry { Text = "Cursor position and selection length set", Curso
 
 プロパティの既定値 [`SelectionLength`](xref:Xamarin.Forms.Entry.SelectionLength) は0です。これは、テキストが選択されていないことを示します。
 
-### <a name="displaying-a-clear-button"></a>クリアボタンを表示する
+## <a name="display-a-clear-button"></a>クリアボタンを表示する
 
 プロパティを使用して、 `ClearButtonVisibility` がクリアボタンを表示するかどうかを制御し、 [`Entry`](xref:Xamarin.Forms.Entry) ユーザーがテキストをクリアできるようにすることができます。 このプロパティは、列挙体のメンバーに設定する必要があり `ClearButtonVisibility` ます。
 
@@ -196,7 +218,7 @@ var entry = new Entry { Text = "Xamarin.Forms", ClearButtonVisibility = ClearBut
 
 ![IOS と Android でのクリアボタンを使用したエントリのスクリーンショット](entry-images/entry-clear-button.png)
 
-### <a name="customizing-the-keyboard"></a>キーボードのカスタマイズ
+## <a name="customize-the-keyboard"></a>キーボードをカスタマイズする
 
 ユーザーがを操作するときに表示されるキーボードは、プロパティを使用して、 [`Entry`](xref:Xamarin.Forms.Entry) [`Keyboard`](xref:Xamarin.Forms.InputView.Keyboard) クラスの次のいずれかのプロパティにプログラムで設定でき [`Keyboard`](xref:Xamarin.Forms.Keyboard) ます。
 
@@ -255,7 +277,7 @@ var entry = new Entry { Placeholder = "Enter text here" };
 entry.Keyboard = Keyboard.Create(KeyboardFlags.Suggestions | KeyboardFlags.CapitalizeCharacter);
 ```
 
-#### <a name="customizing-the-return-key"></a>リターンキーのカスタマイズ
+### <a name="customize-the-return-key"></a>リターンキーをカスタマイズする
 
 にフォーカスがあるときに表示される、ソフトキーボードの戻り値キーの外観は、 [`Entry`](xref:Xamarin.Forms.Entry) [`ReturnType`](xref:Xamarin.Forms.Entry.ReturnType) プロパティを列挙体の値に設定することによってカスタマイズでき [`ReturnType`](xref:Xamarin.Forms.ReturnType) ます。
 
@@ -283,7 +305,7 @@ var entry = new Entry { ReturnType = ReturnType.Send };
 
 Return キーが押されると、 [`Completed`](xref:Xamarin.Forms.Entry.Completed) イベントが発生し、 `ICommand` プロパティによって指定された [`ReturnCommand`](xref:Xamarin.Forms.Entry.ReturnCommand) が実行されます。 また、 `object` プロパティによって指定されたは [`ReturnCommandParameter`](xref:Xamarin.Forms.Entry.ReturnCommandParameter) 、 `ICommand` パラメーターとしてに渡されます。 コマンドについて詳しくは、[コマンド インターフェイス](~/xamarin-forms/app-fundamentals/data-binding/commanding.md)に関するページをご覧ください。
 
-### <a name="enabling-and-disabling-spell-checking"></a>スペルチェックを有効または無効にする
+## <a name="enable-and-disable-spell-checking"></a>スペルチェックを有効または無効にする
 
 プロパティは、 [`IsSpellCheckEnabled`](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) スペルチェックを有効にするかどうかを制御します。 既定では、プロパティはに設定されて `true` います。 ユーザーがテキストを入力すると、スペルミスが示されます。
 
@@ -300,7 +322,7 @@ var entry = new Entry { ... IsSpellCheckEnabled = false };
 > [!NOTE]
 > [`IsSpellCheckEnabled`](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled)プロパティがに設定され `false` ていて、カスタムキーボードが使用されていない場合、ネイティブスペルチェックは無効になります。 ただし、など、 [`Keyboard`](xref:Xamarin.Forms.Keyboard) スペルチェックを無効にするが設定されている場合、 [`Keyboard.Chat`](xref:Xamarin.Forms.Keyboard.Chat) `IsSpellCheckEnabled` プロパティは無視されます。 このため、プロパティを使用して、明示的に無効にするのスペルチェックを有効にすることはできません `Keyboard` 。
 
-### <a name="enabling-and-disabling-text-prediction"></a>テキスト予測の有効化と無効化
+## <a name="enable-and-disable-text-prediction"></a>テキスト予測を有効または無効にする
 
 プロパティは、 [`IsTextPredictionEnabled`](xref:Xamarin.Forms.Entry.IsTextPredictionEnabled) テキストの予測と自動テキスト修正が有効かどうかを制御します。 既定では、プロパティはに設定されて `true` います。 ユーザーがテキストを入力すると、ワード予測が表示されます。
 
@@ -317,7 +339,7 @@ var entry = new Entry { ... IsTextPredictionEnabled = false };
 > [!NOTE]
 > [`IsTextPredictionEnabled`](xref:Xamarin.Forms.Entry.IsTextPredictionEnabled)プロパティがに設定され `false` ていて、カスタムキーボードが使用されていない場合、テキスト予測と自動テキスト修正は無効になります。 ただし、 [`Keyboard`](xref:Xamarin.Forms.Keyboard) テキスト予測を無効にするが設定されている場合、 `IsTextPredictionEnabled` プロパティは無視されます。 このため、プロパティを使用して、明示的に無効にするのテキスト予測を有効にすることはできません `Keyboard` 。
 
-### <a name="colors"></a>色
+## <a name="colors"></a>色
 
 次のバインド可能なプロパティを使用して、カスタムの背景色とテキスト色を使用するようにエントリを設定できます。
 

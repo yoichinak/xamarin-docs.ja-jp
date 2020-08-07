@@ -10,18 +10,18 @@ ms.date: 05/15/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 279df31eeda506d6780533bac8ae190f799424a3
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 3e8c95e84dd525c274403290712260ba86abd677
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936033"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918565"
 ---
-# <a name="xamarinforms-c-markup"></a>Xamarin.FormsC# マークアップ
+# <a name="no-locxamarinforms-c-markup"></a>Xamarin.FormsC# マークアップ
 
-![プレリリース API](~/media/shared/preview.png "この API は現在プレリリースです")
+![プレリリース API](~/media/shared/preview.png)
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
 
 C# マークアップは、c# で宣言型のユーザーインターフェイスを構築するプロセスを簡略化するための、fluent ヘルパーメソッドとクラスのオプトインセットです Xamarin.Forms 。 C# マークアップによって提供される fluent API は、名前空間で使用でき `Xamarin.Forms.Markup` ます。
 
@@ -231,11 +231,11 @@ new Label { Text = "Tap Me" }
 
 ジェスチャ認識エンジンはであるため `BindableObject` 、 `Bind` `BindCommand` 初期化時におよび拡張メソッドを使用できます。 拡張メソッドを使用してカスタムジェスチャ認識エンジンの種類を初期化することもでき `Gesture<TGestureElement, TGestureRecognizer>` ます。
 
-## <a name="layout"></a>Layout
+## <a name="layout"></a>レイアウト
 
 C# マークアップには、レイアウト内のビューの配置をサポートする一連のレイアウト拡張メソッドと、ビューのコンテンツが含まれています。
 
-| 種類 | 拡張メソッド |
+| Type | 拡張メソッド |
 |---|---|
 | `FlexLayout` | `AlignSelf`, `Basis`, `Grow`, `Menu`, `Order`, `Shrink` |
 | `Grid` | `Row`, `Column`, `RowSpan`, `ColumnSpan` |
@@ -253,7 +253,7 @@ C# マークアップには、レイアウト内のビューの配置をサポ�
 
 左から右方向と右から左方向のフロー方向をサポートするように設計された C# マークアップでは、上記の名前空間のいずれかではなく、次の表に示す拡張メソッドを使用することをお勧めします。
 
-| 種類 | 拡張メソッド |
+| Type | 拡張メソッド |
 |---|---|
 | `Label` | `TextStart`, `TextEnd` |
 | `LayoutOptions` | `Start`, `End` <br/> `StartExpand`, `EndExpand` |

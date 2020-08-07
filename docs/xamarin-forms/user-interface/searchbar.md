@@ -6,26 +6,26 @@ ms.assetId: F5EFEA72-CB23-4DD6-9545-D9BB755AF3CB
 ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
-ms.date: 11/04/2019
+ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d8ceb139b1b9cd77aa922f98c80884d5c3e1a474
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a4c782f95db0f8e777494c47e9e668e9af67a2cc
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127544"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917767"
 ---
-# <a name="xamarinforms-searchbar"></a>Xamarin.FormsSearchBar
+# <a name="no-locxamarinforms-searchbar"></a>Xamarin.FormsSearchBar
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/)
 
 Xamarin.Forms [`SearchBar`](xref:Xamarin.Forms.SearchBar) は、検索を開始するために使用されるユーザー入力コントロールです。 コントロールは、 `SearchBar` プレースホルダーテキスト、クエリ入力、検索実行、およびキャンセルをサポートしています。 次のスクリーンショットは、 `SearchBar` 結果がに表示されるクエリを示してい `ListView` ます。
 
 [![IOS と Android の SearchBar のスクリーンショット](searchbar-images/device-searchbars-cropped.png "IOS と Android の SearchBar")](searchbar-images/device-searchbars.png#lightbox "IOS と Android の SearchBar")
 
-`SearchBar`クラスは、次のプロパティを定義します。
+`SearchBar` クラスでは、次のプロパティが定義されます。
 
 * [`CancelButtonColor`](xref:Xamarin.Forms.SearchBar.CancelButtonColor)`Color`[キャンセル] ボタンの色を定義するです。
 * `CharacterSpacing`: `double` 型、`SearchBar` テキストの文字間の間隔。
@@ -40,6 +40,7 @@ Xamarin.Forms [`SearchBar`](xref:Xamarin.Forms.SearchBar) は、検索を開始�
 * [`SearchCommandParameter`](xref:Xamarin.Forms.SearchBar.SearchCommandParameter)`object`に渡す必要があるパラメーターを指定するです `SearchCommand` 。
 * [`Text`](xref:Xamarin.Forms.InputView.Text)`string`のクエリテキストを含むです `SearchBar` 。
 * [`TextColor`](xref:Xamarin.Forms.InputView.TextColor)`Color`クエリテキストの色を定義するです。
+* `TextTransform``TextTransform`テキストの大文字と小文字を区別するかどうかを決定する値です `SearchBar` 。
 
 これらのプロパティはオブジェクトによってバックアップされ [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ます。つまり、を `SearchBar` カスタマイズして、データバインディングのターゲットにすることができます。 でフォントプロパティを指定すること `SearchBar` は、他の[ Xamarin.Forms テキストコントロール](~/xamarin-forms/user-interface/text/index.md)のテキストをカスタマイズするのと同じです。 詳細については、「 [」の Xamarin.Forms 「フォント](~/xamarin-forms/user-interface/text/fonts.md)」を参照してください。
 
@@ -66,6 +67,7 @@ SearchBar searchBar = new SearchBar{ Placeholder = "Search items..." };
            CancelButtonColor="Orange"
            PlaceholderColor="Orange"
            TextColor="Orange"
+           TextTransform="Lowercase"
            HorizontalTextAlignment="Center"
            FontSize="Medium"
            FontAttributes="Italic" />
@@ -79,6 +81,7 @@ SearchBar searchBar = new SearchBar
     Placeholder = "Search items...",
     PlaceholderColor = Color.Orange,
     TextColor = Color.Orange,
+    TextTransform = TextTransform.Lowercase,
     HorizontalTextAlignment = TextAlignment.Center,
     FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(SearchBar)),
     FontAttributes = FontAttributes.Italic

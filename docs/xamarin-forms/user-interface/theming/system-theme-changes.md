@@ -6,18 +6,18 @@ ms.prod: xamarin
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/17/2020
+ms.date: 08/06/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b451fe004ca21c8770658f31c9c38253e073c259
-ms.sourcegitcommit: 82eabb0eaa4a674897aa6d5e64efb91fd580c330
+ms.openlocfilehash: efd9cabc9504a9fa56f1f7a763013e6852be9382
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86100184"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918095"
 ---
-# <a name="respond-to-system-theme-changes-in-xamarinforms-applications"></a>アプリケーションのシステムテーマの変更に応答する Xamarin.Forms
+# <a name="respond-to-system-theme-changes-in-no-locxamarinforms-applications"></a>アプリケーションのシステムテーマの変更に応答する Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)
 
@@ -26,9 +26,6 @@ ms.locfileid: "86100184"
 システムテーマは、デバイスの構成によっては、さまざまな理由で変更される可能性があります。 これには、ユーザーによって明示的に変更されたシステムテーマが含まれ、時刻によって変化します。また、低光などの環境要因によって変化します。
 
 Xamarin.Formsアプリケーションは、マークアップ拡張機能を使用してリソースを消費することによって、システムテーマの変更に応答でき `AppThemeBinding` `SetAppThemeColor` ます。また、およびの拡張メソッドも対象と `SetOnAppTheme<T>` なります。
-
-> [!IMPORTANT]
-> システムテーマの変更への対応は、現在試験段階であり、フラグを設定することによってのみ使用でき `AppTheme_Experimental` ます。 詳細については、「試験的な[フラグ](~/xamarin-forms/internals/experimental-flags.md)」を参照してください。
 
 Xamarin.Formsシステムテーマの変更に応答するには、次の要件を満たす必要があります。
 
@@ -166,5 +163,5 @@ Application.Current.RequestedThemeChanged += (s, a) =>
 
 - [SystemThemes (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)
 - [AppThemeBinding マークアップ拡張](~/xamarin-forms/xaml/markup-extensions/consuming.md#appthemebinding-markup-extension)
-- [リソース ディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [リソースディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [XAML スタイルを使用して Xamarin.Forms アプリのスタイルを設定する](~/xamarin-forms/user-interface/styles/xaml/index.md)

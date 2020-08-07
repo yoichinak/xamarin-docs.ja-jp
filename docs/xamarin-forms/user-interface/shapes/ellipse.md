@@ -10,18 +10,18 @@ ms.date: 06/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b4369fdb7c5a35d6b9a192d9222fd82670b7e3f3
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 0796ba2a3b1ab28370fd8280e12df273223b9f4d
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86933589"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917734"
 ---
-# <a name="xamarinforms-shapes-ellipse"></a>Xamarin.Forms図形: 楕円
+# <a name="no-locxamarinforms-shapes-ellipse"></a>Xamarin.Forms図形: 楕円
 
-![プレリリース API](~/media/shared/preview.png "この API は現在プレリリースです")
+![プレリリース API](~/media/shared/preview.png)
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 `Ellipse`クラスはクラスから派生 `Shape` し、楕円と円を描画するために使用できます。 クラスから継承されるプロパティの詳細につい `Ellipse` `Shape` ては、「 [ Xamarin.Forms 図形](index.md)」を参照してください。
 

@@ -10,18 +10,18 @@ ms.date: 06/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9d79f232a77972b6abbce23ba65d9c277b090311
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: a5d130922a9bd8f30b33b99f7f3dc512f056269f
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86935448"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918636"
 ---
-# <a name="xamarinforms-shapes-line"></a>Xamarin.Forms図形: 線
+# <a name="no-locxamarinforms-shapes-line"></a>Xamarin.Forms図形: 線
 
-![プレリリース API](~/media/shared/preview.png "この API は現在プレリリースです")
+![プレリリース API](~/media/shared/preview.png)
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 `Line`クラスはクラスから派生 `Shape` し、線を描画するために使用できます。 クラスから継承されるプロパティの詳細につい `Line` `Shape` ては、「 [ Xamarin.Forms 図形](index.md)」を参照してください。
 
@@ -50,7 +50,8 @@ ms.locfileid: "86935448"
       Y1="0"
       X2="0"
       Y2="120"
-      Stroke="Red" />
+      Stroke="Red"
+      StrokeThickness="1" />
 ```
 
 この例では、赤い斜線が (40, 0) から (0120) に描画されます。
@@ -61,6 +62,7 @@ ms.locfileid: "86935448"
 
 ```xaml
 <Line Stroke="Red"
+      StrokeThickness="1"
       X2="200" />
 ```
 
@@ -74,6 +76,7 @@ ms.locfileid: "86935448"
       X2="0"
       Y2="120"
       Stroke="DarkBlue"
+      StrokeThickness="1"
       StrokeDashArray="1,1"
       StrokeDashOffset="6" />
 ```

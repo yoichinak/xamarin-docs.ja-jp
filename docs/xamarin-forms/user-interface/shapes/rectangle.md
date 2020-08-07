@@ -10,16 +10,16 @@ ms.date: 06/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 91960c08640a412e02298ed051469a86c1a9f368
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 42ecfc9f09683ccc61640520975b3f50beedaaf5
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86930573"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918505"
 ---
-# <a name="xamarinforms-shapes-rectangle"></a>Xamarin.Forms図形: 四角形
+# <a name="no-locxamarinforms-shapes-rectangle"></a>Xamarin.Forms図形: 四角形
 
-![プレリリース API](~/media/shared/preview.png "この API は現在プレリリースです")
+![プレリリース API](~/media/shared/preview.png)
 
 [![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 

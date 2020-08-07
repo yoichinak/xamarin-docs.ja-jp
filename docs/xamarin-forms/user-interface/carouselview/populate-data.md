@@ -10,18 +10,18 @@ ms.date: 04/29/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e8898120ae234c13c6650a7c818796fd25fa1101
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: f2359880626b292f410af094c82ba6bb3ed50426
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929126"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918416"
 ---
-# <a name="xamarinforms-carouselview-data"></a>Xamarin.Formsデータの CarouselView
+# <a name="no-locxamarinforms-carouselview-data"></a>Xamarin.Formsデータの CarouselView
 
-![プレリリース API](~/media/shared/preview.png "この API は現在プレリリースです")
+![プレリリース API](~/media/shared/preview.png)
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)には、表示するデータとその外観を定義する次のプロパティが含まれています。
 

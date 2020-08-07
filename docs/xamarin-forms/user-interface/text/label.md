@@ -6,22 +6,22 @@ ms.assetid: 02E6C553-5670-49A0-8EE9-5153ED21EA91
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/09/2020
+ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8bf6517e3624ad80c2fd4d209e5a77472460be76
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 1fcfc2c3fbb91a7ee326db7aeef08459e05d834d
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84570519"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917876"
 ---
-# <a name="xamarinforms-label"></a>Xamarin.Formsタイトル
+# <a name="no-locxamarinforms-label"></a>Xamarin.Formsタイトル
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
-_Xamarin 形式でテキストを表示する_
+_テキストを表示するXamarin.Forms_
 
 [`Label`](xref:Xamarin.Forms.Label)ビューは、1つのテキストと複数行のテキストを表示するために使用されます。 ラベルには、文字装飾、色分けされたテキスト、およびカスタムフォント (ファミリ、サイズ、およびオプション) を使用できます。
 
@@ -55,6 +55,32 @@ var bothLabel = new Label { Text = "This is underlined text with strikethrough."
 
 > [!NOTE]
 > 文字装飾はインスタンスにも適用でき [`Span`](xref:Xamarin.Forms.Span) ます。 クラスの詳細については `Span` 、「[書式設定](#formatted-text)されたテキスト」を参照してください。
+
+## <a name="transform-text"></a>テキストの変換
+
+は、プロパティを [`Label`](xref:Xamarin.Forms.Entry) `Text` `TextTransform` 列挙体の値に設定することによって、プロパティに格納されているテキストの大文字と小文字を変換できます `TextTransform` 。 この列挙体には、次の4つの値があります。
+
+- `None`テキストが変換されないことを示します。
+- `Default`プラットフォームの既定の動作が使用されることを示します。 これは、`TextTransform` プロパティの既定値です。
+- `Lowercase`テキストが小文字に変換されることを示します。
+- `Uppercase`テキストが大文字に変換されることを示します。
+
+次の例では、テキストを大文字に変換しています。
+
+```xaml
+<Label Text="This text will be displayed in uppercase."
+       TextTransform="Uppercase" />
+```
+
+これに相当する C# コードを次に示します。
+
+```csharp
+Label label = new Label
+{
+    Text = "This text will be displayed in uppercase.",
+    TextTransform = TextTransform.Uppercase
+};
+```
 
 ## <a name="character-spacing"></a>文字間隔
 
@@ -390,7 +416,7 @@ var label = new Label
 
 ![Span LineHeight の例](label-images/span-lineheight.png)
 
-## <a name="padding"></a>余白
+## <a name="padding"></a>パディング
 
 余白は、要素とその子要素の間のスペースを表し、要素を独自のコンテンツから分離するために使用されます。 [`Label`](xref:Xamarin.Forms.Label)プロパティを値に設定することによって、インスタンスに埋め込みを適用でき `Label.Padding` [`Thickness`](xref:Xamarin.Forms.Thickness) ます。
 

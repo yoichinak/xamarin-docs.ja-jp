@@ -6,20 +6,20 @@ ms.assetid: 4E749FE8-852C-46DA-BB1E-652936106357
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/22/2020
+ms.date: 07/30/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 053da71fdd91af91f0a037e7573def91c36df503
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 6a0771ac0dbbbc89301aeca3812c3b49e14655a2
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86935513"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918464"
 ---
-# <a name="xamarinforms-shapes"></a>Xamarin.Forms図形
+# <a name="no-locxamarinforms-shapes"></a>Xamarin.Forms図形
 
-![プレリリース API](~/media/shared/preview.png "この API は現在プレリリースです")
+![プレリリース API](~/media/shared/preview.png)
 
 は、 `Shape` [`View`](xref:Xamarin.Forms.View) 画面に図形を描画できるようにするの型です。 `Shape`オブジェクトは、クラスがクラスから派生するため、レイアウトクラスやほとんどのコントロール内で使用でき `Shape` `View` ます。
 
@@ -31,13 +31,14 @@ Xamarin.Forms図形は、 `Xamarin.Forms.Shapes` iOS、Android、macOS、ユニ�
 `Shape` は次の特性を定義します。
 
 - `Aspect`型のは、 `Stretch` 割り当てられた領域を形状がどのように塗りつぶすかを記述します。 このプロパティの既定値は `Stretch.None` です。
-- `Fill`型のは、 [`Color`](xref:Xamarin.Forms.Color) 図形の内部を描画するために使用する色を示します。
-- `Stroke`型のは、 [`Color`](xref:Xamarin.Forms.Color) 図形の輪郭の描画に使用する色を示します。
+- `Fill`型のは、 `Brush` 図形の内部を描画するために使用されるブラシを示します。
+- `Stroke`型のは、 `Brush` 図形の輪郭の描画に使用するブラシを示します。
 - `StrokeDashArray`型の。 `DoubleCollection` これ `double` は、形状のアウトラインに使用される破線のパターンを示す値のコレクションを表します。
 - `StrokeDashOffset`型のは、ダッシュ `double` を開始する破線パターン内の距離を指定します。 このプロパティの既定値は0.0 です。
 - `StrokeLineCap`型のは、 `PenLineCap` 直線またはセグメントの開始位置と終了位置にある図形を記述します。 このプロパティの既定値は `PenLineCap.Flat` です。
 - `StrokeLineJoin`型のは、 `PenLineJoin` 図形の頂点で使用される結合の種類を指定します。 このプロパティの既定値は `PenLineJoin.Miter` です。
-- `StrokeThickness`型のは、 `double` 図形のアウトラインの幅を示します。 このプロパティの既定値は1.0 です。
+- `StrokeMiterLimit`型のは、 `double` 図形の半分に対するマイタの長さの比率の制限を指定し `StrokeThickness` ます。 このプロパティの既定値は10.0 です。
+- `StrokeThickness`型のは、 `double` 図形のアウトラインの幅を示します。 このプロパティの既定値は0.0 です。
 
 これらのプロパティは、オブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。これは、データバインディングのターゲットとスタイルを設定できることを意味します。
 
@@ -45,7 +46,7 @@ Xamarin.Formsクラスから派生するオブジェクトの数を定義 `Shape
 
 ## <a name="paint-shapes"></a>描画図形
 
-[`Color`](xref:Xamarin.Forms.Color)オブジェクトは、図形のおよびを描画するために使用され `Stroke` `Fill` ます。
+`Brush`オブジェクトは、図形のおよびを描画するために使用され `Stroke` `Fill` ます。
 
 ```xaml
 <Ellipse Fill="DarkBlue"
@@ -61,9 +62,11 @@ Xamarin.Formsクラスから派生するオブジェクトの数を定義 `Shape
 ![描画図形](images/ellipse.png "描画図形")
 
 > [!IMPORTANT]
-> に値を指定しなかった場合、 [`Color`](xref:Xamarin.Forms.Color) `Stroke` またはを0に設定した場合、 `StrokeThickness` 図形の周りの境界線は描画されません。
+> `Brush`オブジェクトは、プロパティに対して値を指定できるようにする型コンバーターを使用し [`Color`](xref:Xamarin.Forms.Color) `Stroke` ます。
 
-有効な値の詳細について [`Color`](xref:Xamarin.Forms.Color) は、「[の Xamarin.Forms 色](~/xamarin-forms/user-interface/colors.md)」を参照してください。
+にオブジェクトを指定しない場合、 `Brush` `Stroke` またはを0に設定した場合、 `StrokeThickness` 図形の周りの境界線は描画されません。
+
+オブジェクトの詳細について `Brush` は、「 [ Xamarin.Forms ブラシ](~/xamarin-forms/user-interface/brushes/index.md)」を参照してください。 有効な値の詳細について [`Color`](xref:Xamarin.Forms.Color) は、「[の Xamarin.Forms 色](~/xamarin-forms/user-interface/colors.md)」を参照してください。
 
 ## <a name="stretch-shapes"></a>拡張図形
 
@@ -81,6 +84,7 @@ Xamarin.Formsクラスから派生するオブジェクトの数を定義 `Shape
 ```xaml
 <Path Aspect="Uniform"
       Stroke="Yellow"
+      StrokeThickness="1"
       Fill="Red"
       BackgroundColor="LightGray"
       HorizontalOptions="Start"
@@ -158,6 +162,9 @@ Xamarin.Formsクラスから派生するオブジェクトの数を定義 `Shape
 - `Bevel`。傾斜した頂点を表します。
 - `Round`。丸い頂点を表します。
 
+> [!NOTE]
+> プロパティがに設定されている場合、プロパティをに設定して、 `StrokeLineJoin` `Miter` `StrokeMiterLimit` `double` 図形内の直線結合のマイタ長を制限できます。
+
 次の XAML は、プロパティを設定する方法を示してい `StrokeLineJoin` ます。
 
 ```xaml
@@ -174,4 +181,5 @@ Xamarin.Formsクラスから派生するオブジェクトの数を定義 `Shape
 ## <a name="related-links"></a>関連リンク
 
 - [図形のデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [Xamarin.Formsブラシ](~/xamarin-forms/user-interface/brushes/index.md)
 - [色Xamarin.Forms](~/xamarin-forms/user-interface/colors.md)

@@ -6,20 +6,20 @@ ms.assetid: 5FE78207-1BD6-4706-91EF-B13932321FC9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/22/2019
+ms.date: 07/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 425eb7abc14fb941dbfc28219907d98558cbfabb
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 73e7ace96c17aea2b397f2706e128ea498338b09
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137437"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918269"
 ---
-# <a name="xamarinforms-collectionview-layout"></a>Xamarin.FormsCollectionView レイアウト
+# <a name="no-locxamarinforms-collectionview-layout"></a>Xamarin.FormsCollectionView レイアウト
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)レイアウトを制御する次のプロパティを定義します。
 
@@ -97,7 +97,7 @@ ms.locfileid: "84137437"
 </CollectionView>
 ```
 
-ただし、完全を期すために、 [`CollectionView`](xref:Xamarin.Forms.CollectionView) プロパティをに設定することによって、項目を縦に並べて表示するようにを設定でき [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) `VerticalList` ます。
+ただし、完全を期すために、XAML では、 [`CollectionView`](xref:Xamarin.Forms.CollectionView) プロパティをに設定することにより、項目を垂直方向の一覧に表示するように設定できます [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) `VerticalList` 。
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}"
@@ -133,7 +133,7 @@ CollectionView collectionView = new CollectionView
 
 ## <a name="horizontal-list"></a>横方向の一覧
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)では、プロパティをに設定することにより、項目を横方向の一覧に表示でき [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) `HorizontalList` ます。
+XAML では、の [`CollectionView`](xref:Xamarin.Forms.CollectionView) プロパティをに設定することによって、項目を水平方向の一覧に表示でき [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) `HorizontalList` ます。
 
 ```xaml
 <CollectionView ItemsSource="{Binding Monkeys}"
@@ -197,14 +197,11 @@ CollectionView collectionView = new CollectionView
 
 ## <a name="vertical-grid"></a>垂直グリッド
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)では、プロパティ [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) [`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout) [`Orientation`](xref:Xamarin.Forms.ItemsLayout.Orientation) がに設定されているオブジェクトにプロパティを設定することにより、項目を垂直グリッドに表示できます `Vertical` 。
+XAML では、の [`CollectionView`](xref:Xamarin.Forms.CollectionView) プロパティをに設定することにより、項目を垂直グリッドに表示でき [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) `VerticalGrid` ます。
 
 ```xaml
-<CollectionView ItemsSource="{Binding Monkeys}">
-    <CollectionView.ItemsLayout>
-       <GridItemsLayout Orientation="Vertical"
-                        Span="2" />
-    </CollectionView.ItemsLayout>
+<CollectionView ItemsSource="{Binding Monkeys}"
+                ItemsLayout="VerticalGrid, 2">
     <CollectionView.ItemTemplate>
         <DataTemplate>
             <Grid Padding="10">
@@ -237,6 +234,18 @@ CollectionView collectionView = new CollectionView
 </CollectionView>
 ```
 
+または、プロパティを [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) [`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout) [`Orientation`](xref:Xamarin.Forms.ItemsLayout.Orientation) プロパティがに設定されているオブジェクトに設定することによって、このレイアウトを実現することもでき `Vertical` ます。
+
+```xaml
+<CollectionView ItemsSource="{Binding Monkeys}">
+    <CollectionView.ItemsLayout>
+       <GridItemsLayout Orientation="Vertical"
+                        Span="2" />
+    </CollectionView.ItemsLayout>
+    ...
+</CollectionView>
+```
+
 これに相当する C# コードを次に示します。
 
 ```csharp
@@ -253,14 +262,11 @@ CollectionView collectionView = new CollectionView
 
 ## <a name="horizontal-grid"></a>水平グリッド
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)では、プロパティ [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) [`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout) [`Orientation`](xref:Xamarin.Forms.ItemsLayout.Orientation) がに設定されているオブジェクトにプロパティを設定することにより、項目を水平グリッドに表示できます `Horizontal` 。
+XAML では、の [`CollectionView`](xref:Xamarin.Forms.CollectionView) プロパティをに設定することにより、項目を水平グリッドに表示でき [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) `HorizontalGrid` ます。
 
 ```xaml
-<CollectionView ItemsSource="{Binding Monkeys}">
-    <CollectionView.ItemsLayout>
-       <GridItemsLayout Orientation="Horizontal"
-                        Span="4" />
-    </CollectionView.ItemsLayout>
+<CollectionView ItemsSource="{Binding Monkeys}"
+                ItemsLayout="HorizontalGrid, 4">
     <CollectionView.ItemTemplate>
         <DataTemplate>
             <Grid Padding="10">
@@ -290,6 +296,18 @@ CollectionView collectionView = new CollectionView
             </Grid>
         </DataTemplate>
     </CollectionView.ItemTemplate>
+</CollectionView>
+```
+
+または、プロパティを [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) [`GridItemsLayout`](xref:Xamarin.Forms.GridItemsLayout) [`Orientation`](xref:Xamarin.Forms.ItemsLayout.Orientation) プロパティがに設定されているオブジェクトに設定することによって、このレイアウトを実現することもでき `Horizontal` ます。
+
+```xaml
+<CollectionView ItemsSource="{Binding Monkeys}">
+    <CollectionView.ItemsLayout>
+       <GridItemsLayout Orientation="Horizontal"
+                        Span="4" />
+    </CollectionView.ItemsLayout>
+    ...
 </CollectionView>
 ```
 

@@ -6,18 +6,18 @@ ms.assetId: 85A0CCF5-C1D8-40BB-927F-A4D944E5534D
 ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
-ms.date: 06/19/2020
+ms.date: 07/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9afad335de60e605ef6551b0878455674a40750f
-ms.sourcegitcommit: 91b4d2f93687fadec5c3f80aadc8f7298d911624
+ms.openlocfilehash: b4c0ef44f528e3cbc56a27e98a1c38246736ff8c
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85795024"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918340"
 ---
-# <a name="xamarinforms-common-control-properties-methods-and-events"></a>Xamarin.Formsコモンコントロールのプロパティ、メソッド、およびイベント
+# <a name="no-locxamarinforms-common-control-properties-methods-and-events"></a>Xamarin.Formsコモンコントロールのプロパティ、メソッド、およびイベント
 
 クラスは、 Xamarin.Forms `VisualElement` アプリケーションで使用されるほとんどのコントロールの基本クラスです Xamarin.Forms 。 クラスは、 `VisualElement` 派生クラスで使用される多くの[プロパティ](#properties)、[メソッド](#methods)、および[イベント](#events)を定義します。
 
@@ -32,6 +32,10 @@ ms.locfileid: "85795024"
 ### [`AnchorY`](xref:Xamarin.Forms.VisualElement.AnchorY)
 
 プロパティは、 `AnchorY` `double` スケールや回転などの変換の X 軸の中心点を定義する値です。 既定値は0.5 です。
+
+### `Background`
+
+`Background`プロパティは、 `Brush` ブラシをコントロールの背景として使用できるようにする値です。 既定値は `Brush.Default` です。
 
 ### [`BackgroundColor`](xref:Xamarin.Forms.VisualElement.BackgroundColor)
 

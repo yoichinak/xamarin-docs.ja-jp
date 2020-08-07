@@ -10,16 +10,16 @@ ms.date: 06/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: be0c12231ff6106e07c935a111195df779698172
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 420099cadd3a541736084403265b9302c9a32b37
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86934278"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918322"
 ---
-# <a name="xamarinforms-shapes-geometries"></a>Xamarin.Forms図形: ジオメトリ
+# <a name="no-locxamarinforms-shapes-geometries"></a>Xamarin.Forms図形: ジオメトリ
 
-![プレリリース API](~/media/shared/preview.png "この API は現在プレリリースです")
+![プレリリース API](~/media/shared/preview.png)
 
 [![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
@@ -62,7 +62,8 @@ ms.locfileid: "86934278"
 
 ```xaml
 <Path Fill="Blue"
-      Stroke="Red">
+      Stroke="Red"
+      StrokeThickness="1">
   <Path.Data>
     <EllipseGeometry Center="50,50"
                      RadiusX="50"
@@ -89,7 +90,8 @@ ms.locfileid: "86934278"
 次の例は、オブジェクトでを作成して表示する方法を示してい `LineGeometry` `Path` ます。
 
 ```xaml
-<Path Stroke="Black">
+<Path Stroke="Black"
+      StrokeThickness="1">
   <Path.Data>
     <LineGeometry StartPoint="10,20"
                   EndPoint="100,130" />
@@ -108,13 +110,14 @@ ms.locfileid: "86934278"
 
 四角形のジオメトリは、四角形または正方形のジオメトリを表し、 `Rect` 相対位置と高さおよび幅を指定する構造体で定義されます。
 
-クラスは、 `RectangleGeometry` `Rect` 四角形の大きさを表す型のプロパティを定義し [`Rectangle`](xref:Xamarin.Forms.Rectangle) ます。 このプロパティは、オブジェクトによって支えられています。これは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) データバインディングのターゲットとスタイルを設定できることを意味します。
+クラスは、 `RectangleGeometry` `Rect` 四角形の大きさを表す型のプロパティを定義し `Rect` ます。 このプロパティは、オブジェクトによって支えられています。これは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) データバインディングのターゲットとスタイルを設定できることを意味します。
 
 次の例は、オブジェクトでを作成して表示する方法を示してい `RectangleGeometry` `Path` ます。
 
 ```xaml
 <Path Fill="Blue"
-      Stroke="Red">
+      Stroke="Red"
+      StrokeThickness="1">
   <Path.Data>
     <RectangleGeometry Rect="10,10,150,100" />
   </Path.Data>
@@ -156,7 +159,8 @@ ms.locfileid: "86934278"
 `PathFigure` 内のセグメントは 1 つの幾何学図形に結合されて、各セグメントの終点が次のセグメントの始点になります。 `PathFigure` の `StartPoint` プロパティでは、最初のセグメントが描画される開始点を指定します。 後続の各セグメントは、前のセグメントの終点から始まります。 たとえば、からへの垂直線を定義するには、 `10,50` `10,150` プロパティを `StartPoint` に設定し、プロパティ設定を使用して `10,50` を作成し `LineSegment` `Point` `10,150` ます。
 
 ```xaml
-<Path Stroke="Black">
+<Path Stroke="Black"
+      StrokeThickness="1">
     <Path.Data>
         <PathGeometry>
             <PathGeometry.Figures>
@@ -202,7 +206,8 @@ ms.locfileid: "86934278"
 次の例は、オブジェクトでを作成して表示する方法を示してい `ArcSegment` `Path` ます。
 
 ```xaml
-<Path Stroke="Black">
+<Path Stroke="Black"
+      StrokeThickness="1">
     <Path.Data>
         <PathGeometry>
             <PathGeometry.Figures>
@@ -247,7 +252,8 @@ ms.locfileid: "86934278"
 次の例は、オブジェクトでを作成して表示する方法を示してい `BezierSegment` `Path` ます。
 
 ```xaml
-<Path Stroke="Black">
+<Path Stroke="Black"
+      StrokeThickness="1">
     <Path.Data>
         <PathGeometry>
             <PathGeometry.Figures>
@@ -285,6 +291,7 @@ ms.locfileid: "86934278"
 
 ```xaml
 <Path Stroke="Black"
+      StrokeThickness="1"
       Aspect="Uniform"
       HorizontalOptions="Start">
     <Path.Data>
@@ -323,7 +330,8 @@ ms.locfileid: "86934278"
 次の例は、オブジェクトでを作成して表示する方法を示してい `PolyBezierSegment` `Path` ます。
 
 ```xaml
-<Path Stroke="Black">
+<Path Stroke="Black"
+      StrokeThickness="1">
     <Path.Data>
         <PathGeometry>
             <PathGeometry.Figures>
@@ -358,7 +366,8 @@ ms.locfileid: "86934278"
 次の例は、オブジェクトでを作成して表示する方法を示してい `PolyLineSegment` `Path` ます。
 
 ```xaml
-<Path Stroke="Black">
+<Path Stroke="Black"
+      StrokeThickness="1">
     <Path.Data>
         <PathGeometry>
             <PathGeometry.Figures>
@@ -389,7 +398,8 @@ ms.locfileid: "86934278"
 次の例では、オブジェクトでを作成およびレンダリングする方法を示し `PolyQuadraticBezierSegment` `Path` ます。
 
 ```xaml
-<Path Stroke="Black">
+<Path Stroke="Black"
+      StrokeThickness="1">
     <Path.Data>
         <PathGeometry>
             <PathGeometry.Figures>
@@ -429,7 +439,8 @@ ms.locfileid: "86934278"
 次の例は、オブジェクトでを作成して表示する方法を示してい `QuadraticBezierSegment` `Path` ます。
 
 ```xaml
-<Path Stroke="Black">
+<Path Stroke="Black"
+      StrokeThickness="1">
     <Path.Data>
         <PathGeometry>
             <PathGeometry.Figures>
@@ -458,7 +469,8 @@ ms.locfileid: "86934278"
 より複雑なジオメトリは、 `PathSegment` オブジェクトの組み合わせを使用して作成できます。 次の例では、、、およびを使用して図形を作成し `BezierSegment` `LineSegment` `ArcSegment` ます。
 
 ```xaml
-<Path Stroke="Black">
+<Path Stroke="Black"
+      StrokeThickness="1">
     <Path.Data>
         <PathGeometry>
             <PathGeometry.Figures>

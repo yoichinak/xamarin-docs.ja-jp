@@ -6,25 +6,26 @@ ms.assetid: AF4BDD27-89F6-48AE-A8CD-D7E4DDA2CCA2
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/15/2020
+ms.date: 07/31/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: bd35722c76cce245701b7a548514d402cd978d38
-ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
+ms.openlocfilehash: 6dafdc547e4673134e8ff3badc85a3527dfc55c4
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85853071"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917428"
 ---
-# <a name="xamarinforms-experimental-flags"></a>Xamarin.Forms試験的なフラグ
+# <a name="no-locxamarinforms-experimental-flags"></a>Xamarin.Forms試験的なフラグ
 
 新しい Xamarin.Forms 機能が実装されると、実験用フラグの背後に配置されることがあります。 これにより、エンジニアリングチームは新しい機能をより迅速に提供できるようになりますが、安定したリリースに移行する前に機能 Api を変更することもできます。 その後、機能が安定したリリースに移行すると、実験的なフラグが削除されます。
 
 Xamarin.Formsには、次の実験的なフラグが含まれています。
 
-- `AppTheme_Experimental`
+- `Brush_Experimental`
 - `CarouselView_Experimental`
+- `DragAndDrop_Experimental`
 - `Expander_Experimental`
 - `Markup_Experimental`
 - `MediaElement_Experimental`

@@ -10,18 +10,18 @@ ms.date: 06/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2f00daff6cada3f74b2dbcf6daa8245b80cf13eb
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 5b7e6404dec40814b800aef696afd058cafb69e5
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937658"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918357"
 ---
-# <a name="xamarinforms-shapes-polyline"></a>Xamarin.Forms図形: ポリライン
+# <a name="no-locxamarinforms-shapes-polyline"></a>Xamarin.Forms図形: ポリライン
 
-![プレリリース API](~/media/shared/preview.png "この API は現在プレリリースです")
+![プレリリース API](~/media/shared/preview.png)
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 `Polyline`クラスはクラスから派生し、接続された `Shape` 一連の直線を描画するために使用できます。 ポリラインは多角形に似ていますが、ポリラインの最後の点は最初の点に接続されていません。 クラスから継承されるプロパティの詳細につい `Polyline` `Shape` ては、「 [ Xamarin.Forms 図形](index.md)」を参照してください。
 
@@ -47,7 +47,8 @@ ms.locfileid: "86937658"
 
 ```xaml
 <Polyline Points="0,0 10,30, 15,0 18,60 23,30 35,30 40,0 43,60 48,30 100,30"
-          Stroke="Red" />
+          Stroke="Red"
+          StrokeThickness="1" />
 ```
 
 この例では、赤いポリラインが描画されます。

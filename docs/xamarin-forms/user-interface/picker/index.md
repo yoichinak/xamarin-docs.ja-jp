@@ -6,33 +6,35 @@ ms.assetid: D4815A4B-104B-4294-951B-BD8F2EC33C86
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 02/26/2019
+ms.date: 07/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5e3153e796f26ef150dccc79d8ea6f90127c6a26
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 30f5aefe5fcb327a7c3333bee8e8b553e2630f57
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938685"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918013"
 ---
-# <a name="xamarinforms-picker"></a>Xamarin.Forms効果
+# <a name="no-locxamarinforms-picker"></a>Xamarin.Forms効果
 
 _ピッカービューは、データの一覧からテキスト項目を選択するためのコントロールです。_
 
 では、項目 Xamarin.Forms [`Picker`](xref:Xamarin.Forms.Picker) の簡単な一覧が表示されます。このリストから、ユーザーは項目を選択できます。 `Picker` は次の特性を定義します。
 
-- [`Title`](xref:Xamarin.Forms.Picker.Title)型の `string` 。既定値は `null` です。
-- `TitleColor`型の [`Color`](xref:Xamarin.Forms.Color) 。テキストの表示に使用する色 `Title` 。
+- [`CharacterSpacing`](xref:Xamarin.Forms.Picker.CharacterSpacing)型の `double` は、によって表示される項目の文字間の間隔です `Picker` 。
+- [`FontAttributes`](xref:Xamarin.Forms.Picker.FontAttributes)型の [`FontAttributes`](xref:Xamarin.Forms.FontAttributes) 。既定値は [`FontAtributes.None`](xref:Xamarin.Forms.FontAttributes.None) です。
+- [`FontFamily`](xref:Xamarin.Forms.Picker.FontFamily)型の `string` 。既定値は `null` です。
+- [`FontSize`](xref:Xamarin.Forms.Picker.FontSize)型の `double` 。既定値は-1.0 です。
+- `HorizontalTextAlignment`型のは、 [`TextAlignment`](xref:Xamarin.Forms.TextAlignment) によって表示されるテキストの水平方向の配置です `Picker` 。
 - [`ItemsSource`](xref:Xamarin.Forms.Picker.ItemsSource)型の `IList` 場合は、表示する項目のソースリスト。既定値は `null` です。
 - [`SelectedIndex`](xref:Xamarin.Forms.Picker.SelectedIndex)型の `int` 場合は、選択された項目のインデックス。既定値は-1 です。
 - [`SelectedItem`](xref:Xamarin.Forms.Picker.SelectedItem)型 `object` (選択された項目)。既定値は `null` です。
 - [`TextColor`](xref:Xamarin.Forms.Picker.TextColor)型の [`Color`](xref:Xamarin.Forms.Color) 場合は、テキストの表示に使用する色。既定値は [`Color.Default`](xref:Xamarin.Forms.Color.Default) です。
-- [`FontAttributes`](xref:Xamarin.Forms.Picker.FontAttributes)型の [`FontAttributes`](xref:Xamarin.Forms.FontAttributes) 。既定値は [`FontAtributes.None`](xref:Xamarin.Forms.FontAttributes.None) です。
-- [`FontFamily`](xref:Xamarin.Forms.Picker.FontFamily)型の `string` 。既定値は `null` です。
-- [`FontSize`](xref:Xamarin.Forms.Picker.FontSize)型の `double` 。既定値は-1.0 です。
-- `CharacterSpacing`型の `double` は、によって表示される項目の文字間の間隔です `Picker` 。
+- [`Title`](xref:Xamarin.Forms.Picker.Title)型の `string` 。既定値は `null` です。
+- [`TitleColor`](xref:Xamarin.Forms.Picker.TitleColor)型の [`Color`](xref:Xamarin.Forms.Color) 。テキストの表示に使用する色 `Title` 。
+- `VerticalTextAlignment`型のは、 [`TextAlignment`](xref:Xamarin.Forms.TextAlignment) によって表示されるテキストの垂直方向の配置です `Picker` 。
 
 すべてのプロパティはオブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。これはスタイルを設定でき、プロパティはデータバインディングのターゲットにすることができることを意味します。 [`SelectedIndex`](xref:Xamarin.Forms.Picker.SelectedIndex)プロパティと [`SelectedItem`](xref:Xamarin.Forms.Picker.SelectedItem) プロパティには、の既定のバインディングモードがあります [`BindingMode.TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay) 。つまり、[モデルビュービューモデル (MVVM)](~/xamarin-forms/enterprise-application-patterns/mvvm.md)アーキテクチャを使用するアプリケーションでデータバインディングのターゲットにすることができます。 フォントプロパティの設定の詳細については、「[フォント](~/xamarin-forms/user-interface/text/fonts.md)」を参照してください。
 

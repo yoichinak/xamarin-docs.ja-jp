@@ -10,18 +10,18 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 628218f47f318aebe7e4d0ff30efdce9617eb2c6
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 52043bd507d35a1ebe2628c13c14429c604569c9
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937645"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918493"
 ---
-# <a name="xamarinforms-shapes-polygon"></a>Xamarin.Forms図形: 多角形
+# <a name="no-locxamarinforms-shapes-polygon"></a>Xamarin.Forms図形: 多角形
 
-![プレリリース API](~/media/shared/preview.png "この API は現在プレリリースです")
+![プレリリース API](~/media/shared/preview.png)
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 `Polygon`クラスはクラスから派生 `Shape` し、閉じた図形を形成する一連の線が接続されている多角形を描画するために使用できます。 クラスから継承されるプロパティの詳細につい `Polygon` `Shape` ては、「 [ Xamarin.Forms 図形](index.md)」を参照してください。
 
