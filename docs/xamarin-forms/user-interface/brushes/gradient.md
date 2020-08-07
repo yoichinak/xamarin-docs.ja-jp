@@ -10,18 +10,18 @@ ms.date: 07/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6b6fe37fda3fd54b4df5cb6f5dacce0d910ecb3f
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 254a4433888be0e441ae37d41c24b1886040998b
+ms.sourcegitcommit: 579ec4f2884fa391e5e214a3952cd6004c521eb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87919194"
+ms.locfileid: "87919620"
 ---
 # <a name="no-locxamarinforms-brushes-gradients"></a>Xamarin.Formsブラシ: グラデーション
 
 ![プレビュー API](~/media/shared/preview.png "この API は現在プレリリースです")
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
 
 `GradientBrush`クラスはクラスから派生し、グラデーションの分岐点で `Brush` 構成されるグラデーションを記述する抽象クラスです。 グラデーション ブラシは、軸に沿って互いに溶け込む複数の色で領域を塗りつぶします。 から派生するクラスは、 `GradientBrush` グラデーションの分岐点を解釈するさまざまな方法を記述し、 Xamarin.Forms 次のグラデーションブラシを提供します。
 
@@ -71,6 +71,6 @@ ms.locfileid: "87919194"
 
 ## <a name="related-links"></a>関連リンク
 
-- [BrushesDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
+- [BrushesDemos (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
 - [Xamarin.Formsブラシ: 線状グラデーション](lineargradient.md)
 - [Xamarin.Formsブラシ: 放射状グラデーション](radialgradient.md)

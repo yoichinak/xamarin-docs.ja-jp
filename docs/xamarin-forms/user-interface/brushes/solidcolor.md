@@ -10,18 +10,18 @@ ms.date: 07/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 04e882f9b64d0e1f56e1170d353af4e13b079933
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 7b77cab7c0f87dbedf66651c3ab59ef20b7f3ecd
+ms.sourcegitcommit: 579ec4f2884fa391e5e214a3952cd6004c521eb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 08/07/2020
-ms.locfileid: "87919106"
+ms.locfileid: "87919564"
 ---
 # <a name="no-locxamarinforms-brushes-solid-colors"></a>Xamarin.Formsブラシ: 純色
 
 ![プレビュー API](~/media/shared/preview.png "この API は現在プレリリースです")
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
 
 `SolidColorBrush`クラスはクラスから派生 `Brush` し、純色で領域を塗りつぶすために使用されます。 の色を指定するには、さまざまな方法があり `SolidColorBrush` ます。 たとえば、値を使用して色を指定することも、 [`Color`](xref:Xamarin.Forms.Color) クラスによって提供される定義済みオブジェクトのいずれかを使用することもでき `SolidColorBrush` `Brush` ます。
 
@@ -131,5 +131,5 @@ Frame frame = new Frame
 
 ## <a name="related-links"></a>関連リンク
 
-- [BrushesDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
+- [BrushesDemos (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
 - [色Xamarin.Forms](~/xamarin-forms/user-interface/colors.md)
