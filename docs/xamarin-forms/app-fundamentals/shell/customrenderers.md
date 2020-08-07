@@ -6,18 +6,18 @@ ms.assetid: 3B1A6AE8-1D1E-4C34-B9AB-48F4444FEF32
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/06/2019
+ms.date: 07/29/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 321539f877a86804245d27a2d76d1edeb1abd1e9
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 76f9b4e243af908e5d00ba8b812dfd143104fe65
+ms.sourcegitcommit: 69d9a61ba479f707d96eb4c1c56a4b05a2a2a26f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137788"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87426852"
 ---
-# <a name="xamarinforms-shell-custom-renderers"></a>Xamarin.Forms シェルのカスタム レンダラー
+# <a name="no-locxamarinforms-shell-custom-renderers"></a>Xamarin.Forms シェルのカスタム レンダラー
 
 Xamarin.Forms シェル アプリケーションの 1 つのメリットは、さまざまなシェル クラスが公開しているプロパティとメソッドを利用して、外観と動作を高度にカスタマイズできることです。 ただし、プラットフォーム固有のより詳細なカスタマイズが必要な場合は、シェルのカスタム レンダラーを作成することも可能です。 他のカスタム レンダラーと同様に、シェルのカスタム レンダラーは、他のプラットフォーム上での既定の動作を可能にしたまま、1 つのプラットフォーム プロジェクトのみに追加して外観と動作をカスタマイズできます。また、iOS および Android 上の両方で外観と動作をカスタマイズするために、別のシェル カスタム レンダラーを各プラットフォーム プロジェクトに追加することもできます。
 
@@ -42,14 +42,14 @@ Xamarin.Forms シェル アプリケーションの 1 つのメリットは、�
 
 `ShellRenderer` クラスでは、オーバーライドできる次のようなメソッドを公開しています。
 
-| iOS | Android |
-| --- | --- |
-| `SetElementSize`<br />`CreateFlyoutRenderer`<br />`CreateNavBarAppearanceTracker`<br />`CreatePageRendererTracker`<br />`CreateShellFlyoutContentRenderer`<br />`CreateShellItemRenderer`<br />`CreateShellItemTransition`<br />`CreateShellSearchResultsRenderer`<br />`CreateShellSectionRenderer`<br />`CreateTabBarAppearanceTracker`<br />`Dispose`<br />`OnCurrentItemChanged`<br />`OnElementPropertyChanged`<br />`OnElementSet`<br />`UpdateBackgroundColor` | `CreateFragmentForPage`<br />`CreateShellFlyoutContentRenderer`<br />`CreateShellFlyoutRenderer`<br />`CreateShellItemRenderer`<br />`CreateShellSectionRenderer`<br />`CreateTrackerForToolbar`<br />`CreateToolbarAppearanceTracker`<br />`CreateTabLayoutAppearanceTracker`<br />`CreateBottomNavViewAppearanceTracker`<br />`OnElementPropertyChanged`<br />`OnElementSet`<br />`SwitchFragment`<br />`Dispose` |
+| iOS | Android | UWP |
+| --- | --- | --- |
+| `SetElementSize`<br />`CreateFlyoutRenderer`<br />`CreateNavBarAppearanceTracker`<br />`CreatePageRendererTracker`<br />`CreateShellFlyoutContentRenderer`<br />`CreateShellItemRenderer`<br />`CreateShellItemTransition`<br />`CreateShellSearchResultsRenderer`<br />`CreateShellSectionRenderer`<br />`CreateTabBarAppearanceTracker`<br />`Dispose`<br />`OnCurrentItemChanged`<br />`OnElementPropertyChanged`<br />`OnElementSet`<br />`UpdateBackgroundColor` | `CreateFragmentForPage`<br />`CreateShellFlyoutContentRenderer`<br />`CreateShellFlyoutRenderer`<br />`CreateShellItemRenderer`<br />`CreateShellSectionRenderer`<br />`CreateTrackerForToolbar`<br />`CreateToolbarAppearanceTracker`<br />`CreateTabLayoutAppearanceTracker`<br />`CreateBottomNavViewAppearanceTracker`<br />`OnElementPropertyChanged`<br />`OnElementSet`<br />`SwitchFragment`<br />`Dispose` | `CreateShellFlyoutTemplateSelector`<br />`CreateShellHeaderRenderer`<br />`CreateShellItemRenderer`<br />`CreateShellSectionRenderer`<br />`OnElementPropertyChanged`<br />`OnElementSet`<br />`UpdateFlyoutBackdropColor`<br />`UpdateFlyoutBackgroundColor` |
 
 `FlyoutItem` および `TabBar` クラスは `ShellItem` クラスの別名であり、`Tab` クラスは `ShellSection` クラスの別名です。 そのため、`FlyoutItem` オブジェクトのカスタム レンダラーを作成するときは、`CreateShellItemRenderer` メソッドをオーバーライドする必要があり、`Tab` オブジェクトのカスタム レンダラーを作成するときは、`CreateShellSectionRenderer` メソッドをオーバーライドする必要があります。
 
 > [!IMPORTANT]
-> iOS および Android 上の両方に、`ShellSectionRenderer` および `ShellItemRenderer` など、追加のシェル レンダラー クラスがあります。 ただし、これらの追加のレンダラー クラスは、`ShellRenderer` クラス内でのオーバーライドによって作成されます。 そのため、これらの追加のレンダラー クラスは、サブクラス化したうえで、サブクラス化された `ShellRenderer` クラスでの適切なオーバーライドの中で、そのサブクラスのインスタンスを作成することで、動作のカスタマイズを実現できます。
+> iOS、Android、および UWP 上に、`ShellSectionRenderer` や `ShellItemRenderer` など、追加のシェル レンダラー クラスがあります。 ただし、これらの追加のレンダラー クラスは、`ShellRenderer` クラス内でのオーバーライドによって作成されます。 そのため、これらの追加のレンダラー クラスは、サブクラス化したうえで、サブクラス化された `ShellRenderer` クラスでの適切なオーバーライドの中で、そのサブクラスのインスタンスを作成することで、動作のカスタマイズを実現できます。
 
 ### <a name="ios-example"></a>iOS の例
 
