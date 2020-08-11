@@ -289,6 +289,8 @@ items:
             href: app-fundamentals/gestures/pan.md
           - name: スワイプ
             href: app-fundamentals/gestures/swipe.md
+          - name: ドラッグ アンド ドロップ
+            href: app-fundamentals/gestures/drag-and-drop.md
       - name: ローカル通知
         href: app-fundamentals/local-notifications.md
       - name: ローカリゼーション
@@ -546,6 +548,20 @@ items:
                 href: user-interface/animation/easing.md
               - name: カスタム アニメーション
                 href: user-interface/animation/custom.md
+          - name: ブラシ
+            items:
+              - name: 概要
+                href: user-interface/brushes/index.md
+              - name: 純色
+                href: user-interface/brushes/solidcolor.md
+              - name: グラデーション
+                items:
+                  - name: 概要
+                    href: user-interface/brushes/gradient.md
+                  - name: 線状グラデーション
+                    href: user-interface/brushes/lineargradient.md
+                  - name: 放射状グラデーション
+                    href: user-interface/brushes/radialgradient.md
           - name: 色
             href: user-interface/colors.md
           - name: DataPages
