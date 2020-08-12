@@ -10,22 +10,22 @@ ms.date: 08/21/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 16a48423d05ce1cede75c0020bf18f4f398f5adc
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 9a097d6dad067f209d3aad27bde382f28910324a
+ms.sourcegitcommit: c3329ab25d377907d8804cdd5e26dc84a274f39c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138503"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88130930"
 ---
-# <a name="choose-a-xamarinforms-layout"></a>レイアウトの選択 Xamarin.Forms
+# <a name="choose-a-no-locxamarinforms-layout"></a>レイアウトの選択 Xamarin.Forms
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
 Xamarin.Formsレイアウトクラスを使用すると、アプリケーションに UI コントロールを配置してグループ化できます。 レイアウトクラスを選択するには、レイアウトが子要素を配置する方法と、レイアウトがその子要素をどのようにサイズ調整するかについての知識が必要です。 また、レイアウトを入れ子にして目的のレイアウトを作成することが必要になる場合もあります。
 
 次の図は、メインレイアウトクラスを使用して実現できる一般的なレイアウトを示してい Xamarin.Forms ます。
 
-[![のメインレイアウトクラスXamarin.Forms](images/layouts.png "[!ファンド.NO LOC (Xamarin)] レイアウトクラス")](images/layouts-large.png#lightbox "[!ファンド.NO LOC (Xamarin)] レイアウトクラス")
+[![::: No loc (Xamarin. Forms) のメインレイアウトクラス:::](images/layouts.png "::: no-loc (Xamarin. Forms)::: layout クラス")](images/layouts-large.png#lightbox "::: no-loc (Xamarin. Forms)::: layout クラス")
 
 ## <a name="stacklayout"></a>StackLayout
 
@@ -234,7 +234,7 @@ Xamarin.Formsレイアウトクラスを使用すると、アプリケーショ�
 > [!CAUTION]
 > [`AbsoluteLayout.AutoSize`](xref:Xamarin.Forms.AbsoluteLayout.AutoSize)レイアウトエンジンでは追加のレイアウト計算が実行されるため、可能な限りプロパティを使用しないでください。
 
-詳細については、「 [ Xamarin.Forms AbsoluteLayout](absolute-layout.md)」を参照してください。
+詳細については、「 [ Xamarin.Forms AbsoluteLayout](absolutelayout.md)」を参照してください。
 
 ## <a name="input-transparency"></a>入力の透明度
 
@@ -255,7 +255,7 @@ Xamarin.Formsレイアウトクラスを使用すると、アプリケーショ�
 - [Xamarin.FormsStackLayout](stacklayout.md)
 - [Xamarin.Forms行列](grid.md)
 - [Xamarin.FormsFlexLayout](flex-layout.md)
-- [Xamarin.FormsAbsoluteLayout](absolute-layout.md)
+- [Xamarin.FormsAbsoluteLayout](absolutelayout.md)
 - [Xamarin.FormsRelativeLayout](relative-layout.md)
 - [レイアウトのパフォーマンスを最適化する](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)
 - [レイアウトの圧縮](layout-compression.md)

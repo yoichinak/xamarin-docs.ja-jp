@@ -10,16 +10,16 @@ ms.date: 07/26/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 06f1813bafb34a9c32603490e66f8caa6c6a6a22
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 3f4788c0201d2d286ff4de9b29ba6385d323a3b0
+ms.sourcegitcommit: c3329ab25d377907d8804cdd5e26dc84a274f39c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573821"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88130943"
 ---
-# <a name="xamarinforms-boxview"></a>Xamarin.FormsBoxView
+# <a name="no-locxamarinforms-boxview"></a>Xamarin.FormsBoxView
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)
 
 [`BoxView`](xref:Xamarin.Forms.BoxView)指定した幅、高さ、および色の単純な四角形を描画します。 `BoxView`装飾、基本的なグラフィックス、およびタッチによるユーザーとの対話には、を使用できます。
 
@@ -64,13 +64,13 @@ ms.locfileid: "84573821"
 </ContentPage>
 ```
 
-結果は次のようになります。
+結果は次のとおりです。
 
 [![基本 BoxView](boxview-images/basicboxview-small.png "基本 BoxView")](boxview-images/basicboxview-large.png#lightbox "BasicBoxView")
 
 `VerticalOptions` `HorizontalOptions` プロパティとプロパティがタグから削除された場合 `BoxView` 、またはに設定されている場合 `Fill` 、は `BoxView` ページのサイズによって制限され、ページに収まるように拡大されます。
 
-は、 `BoxView` の子にすることもでき `AbsoluteLayout` ます。 その場合、の位置とサイズの両方が、アタッチ可能なバインド可能な `BoxView` プロパティを使用して設定され `LayoutBounds` ます。 に `AbsoluteLayout` ついては、 [**AbsoluteLayout**](~/xamarin-forms/user-interface/layouts/absolute-layout.md)の記事で説明されています。
+は、 `BoxView` の子にすることもでき `AbsoluteLayout` ます。 その場合、の位置とサイズの両方が、アタッチ可能なバインド可能な `BoxView` プロパティを使用して設定され `LayoutBounds` ます。 に `AbsoluteLayout` ついては、 [**AbsoluteLayout**](~/xamarin-forms/user-interface/layouts/absolutelayout.md)の記事で説明されています。
 
 これらのすべてのケースの例については、次のサンプルプログラムを参照してください。
 
