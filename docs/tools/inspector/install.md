@@ -6,12 +6,12 @@ ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
 author: davidortinau
 ms.author: daortin
 ms.date: 06/19/2018
-ms.openlocfilehash: 39e7a6c86a2d4ab4231a29c0e1014de702af01ac
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 1545af984c0a409244c323048b448ec44e9be6a8
+ms.sourcegitcommit: f7fe46c0236a7130b63a33d9d1670d5111582dd2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573418"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88186188"
 ---
 # <a name="inspector-installation-and-requirements"></a>インスペクターのインストールと要件
 
@@ -33,7 +33,7 @@ ms.locfileid: "84573418"
 
 ## <a name="requirements"></a>必要条件
 
-### <a name="supported-operating-systems"></a>Supported Operating Systems
+### <a name="supported-operating-systems"></a>サポートされるオペレーティング システム
 
 - **Mac** -OS X 10.11 以上
 - **Windows** -windows 7 以降 (Internet Explorer 11 以降および .net 4.6.1 以上)
@@ -49,10 +49,10 @@ ms.locfileid: "84573418"
 
 ### <a name="supported-app-platforms"></a>サポートされているアプリプラットフォーム
 
-|アプリ プラットフォーム|IDE のサポート|メモ|
+|アプリ プラットフォーム|IDE のサポート|Notes|
 |--- |--- |--- |
 |Mac|Visual Studio for Mac でのみサポートされています|
-|iOS|Visual Studio 2017 および Visual Studio for Mac でサポートされています| リンカーの動作は [**リンクしない**] に設定する必要があります ([ **iOS ビルド**プロジェクトオプション] の下) |
+|iOS|Visual Studio 2017 および Visual Studio for Mac でサポートされています| リンカーの動作は [[**リンクしない**](~/ios/deploy-test/linker.md)] に設定する必要があります ([ **iOS ビルド**プロジェクトオプション] の下) |
 |Android|Visual Studio 2017 および Visual Studio for Mac でサポートされています|**Fastdev**が有効になっている Android >= 4.0.3 を対象とする必要があります。<br />Google、Visual Studio、または Xamarin Android エミュレーターを使用する必要があります。 Android 7 エミュレーターでは、現時点では検査できない場合があります。|
 |WPF|Visual Studio 2017 でのみサポートされます|
 

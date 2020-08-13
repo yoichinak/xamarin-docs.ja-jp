@@ -10,14 +10,14 @@ ms.date: 12/28/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f67543a6c678e2c3a1395f816e020d69af4bf873
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: d7b97f21e5184a445cfac85dc06a7da0e1a6a4c5
+ms.sourcegitcommit: f7fe46c0236a7130b63a33d9d1670d5111582dd2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936657"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88186214"
 ---
-# <a name="store-and-access-data-in-azure-storage-from-xamarinforms"></a>Azure Storage のデータの格納とアクセスXamarin.Forms
+# <a name="store-and-access-data-in-azure-storage-from-no-locxamarinforms"></a>Azure Storage のデータの格納とアクセスXamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
 
@@ -81,22 +81,22 @@ Azure Storage アカウントをアプリケーションに統合するプロセ
 - 共有キー。 このアプローチでは、Azure Storage アカウント名とアカウントキーを使用してストレージサービスにアクセスします。 ストレージアカウントには、共有キー認証に使用できる2つの秘密キーが作成時に割り当てられます。
 - Shared Access Signature。 これは、有効である期間のストレージリソースへの委任アクセスを可能にする URL に追加できるトークンです。これにより、指定したアクセス許可が付与されます。
 
-アプリケーションから Azure Storage リソースにアクセスするために必要な認証情報を含む接続文字列を指定できます。 また、Visual Studio から Azure Storage エミュレーターに接続するように接続文字列を構成することもできます。
+アプリケーションから Azure Storage リソースにアクセスするために必要な認証情報を含む接続文字列を指定できます。 さらに、Visual Studio から Azure ストレージエミュレーターに接続するように接続文字列を構成することもできます。
 
 > [!NOTE]
 > Azure Storage は、接続文字列で HTTP と HTTPS をサポートしています。 ただし、HTTPS を使用することをお勧めします。
 
 ### <a name="connecting-to-the-azure-storage-emulator"></a>Azure Storage エミュレーターへの接続
 
-Azure Storage emulator は、開発目的で Azure blob、queue、および table service をエミュレートするローカル環境を提供します。
+Azure ストレージエミュレーターは、開発目的で Azure blob、queue、および table service をエミュレートするローカル環境を提供します。
 
-Azure Storage emulator に接続するには、次の接続文字列を使用する必要があります。
+Azure ストレージエミュレーターに接続するには、次の接続文字列を使用する必要があります。
 
 ```csharp
 UseDevelopmentStorage=true
 ```
 
-Azure Storage Emulator の詳細については、「[開発とテストのための Azure Storage emulator の使用](https://azure.microsoft.com/documentation/articles/storage-use-emulator/)」を参照してください。
+Azure ストレージエミュレーターの詳細については、「[開発とテストのための azure ストレージエミュレーターの使用](https://azure.microsoft.com/documentation/articles/storage-use-emulator/)」を参照してください。
 
 ### <a name="connecting-to-azure-storage-using-a-shared-key"></a>共有キーを使用した Azure Storage への接続
 

@@ -10,12 +10,12 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0a43ce2d27c8152137101d616302f6e56a57bd39
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: bf0315d2d077e06ff3ded4d66814afe050fdfad4
+ms.sourcegitcommit: f7fe46c0236a7130b63a33d9d1670d5111582dd2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931977"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88186201"
 ---
 # <a name="communicating-between-loosely-coupled-components"></a>疎結合コンポーネント間の通信
 
@@ -58,7 +58,7 @@ EShopOnContainers モバイルアプリでは、を [`MessagingCenter`](xref:Xam
 [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter)メッセージは、メッセージを識別するために使用される文字列です。 次のコード例は、eShopOnContainers モバイルアプリ内で定義されているメッセージを示しています。
 
 ```csharp
-public class MessengerKeys  
+public class MessageKeys  
 {  
     // Add product to basket  
     public const string AddProduct = "AddProduct";  
@@ -78,7 +78,7 @@ public class MessengerKeys
 パブリッシャーは、[`MessagingCenter.Send`](xref:Xamarin.Forms.MessagingCenter.Send*) オーバーロードの 1 つを使用してメッセージをサブスクライバーに通知します。 次のコード例は、メッセージを公開する方法を示してい `AddProduct` ます。
 
 ```csharp
-MessagingCenter.Send(this, MessengerKeys.AddProduct, catalogItem);
+MessagingCenter.Send(this, MessageKeys.AddProduct, catalogItem);
 ```
 
 この例では、 [`Send`](xref:Xamarin.Forms.MessagingCenter.Send*) メソッドは次の3つの引数を指定します。
@@ -118,7 +118,7 @@ MessagingCenter.Subscribe<CatalogViewModel, CatalogItem>(
 サブスクライバーは、受信する必要がなくなったメッセージのサブスクライブを解除することができます。 これは、 [`MessagingCenter.Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) 次のコード例に示すように、オーバーロードのいずれかを使用して実現されます。
 
 ```csharp
-MessagingCenter.Unsubscribe<CatalogViewModel, CatalogItem>(this, MessengerKeys.AddProduct);
+MessagingCenter.Unsubscribe<CatalogViewModel, CatalogItem>(this, MessageKeys.AddProduct);
 ```
 
 この例では、 [`Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) メソッドの構文は、メッセージを受信するためにサブスクライブするときに指定された型引数を反映して `AddProduct` います。
