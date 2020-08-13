@@ -10,16 +10,16 @@ ms.date: 02/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2e4d85077e1047f4158164d0c752570519c8ecdc
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 16a76fb06c0ee54e90fa1bf0d44e419be40ee254
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936839"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918290"
 ---
-# <a name="xamarinforms-dual-screen-triggers"></a>Xamarin.Forms のデュアル画面のトリガー
+# <a name="no-locxamarinforms-dual-screen-triggers"></a>Xamarin.Forms のデュアル画面のトリガー
 
-![プレリリース API](~/media/shared/preview.png "この API は現在プレリリースです")
+![プレリリース API](~/media/shared/preview.png)
 
 [`Xamarin.Forms.DualScreen`](xref:Xamarin.Forms.DualScreen) 名前空間には、次の 2 つの状態トリガーが含まれています。
 

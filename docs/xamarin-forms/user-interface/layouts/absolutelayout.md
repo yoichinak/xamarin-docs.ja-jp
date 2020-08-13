@@ -10,12 +10,12 @@ ms.date: 08/07/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 696429e04775640d46add77ec6a4bbf6e69f675b
-ms.sourcegitcommit: c3329ab25d377907d8804cdd5e26dc84a274f39c
+ms.openlocfilehash: a6efa4615f0061c83243f2d00d2d141a51607301
+ms.sourcegitcommit: 808ff109928a1eea16e17e23ea81f8c903a239e8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88134158"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88181499"
 ---
 # <a name="no-locxamarinforms-absolutelayout"></a>Xamarin.FormsAbsoluteLayout
 
@@ -55,7 +55,7 @@ ms.locfileid: "88134158"
 
 ## <a name="absolute-positioning-and-sizing"></a>絶対位置とサイズ設定
 
-既定では、は、 [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) デバイスに依存しない単位で指定された絶対値を使用して、子の位置とサイズを設定します。これにより、ビューをレイアウト内に配置する場所を明示的に定義します。 これを実現するには、子を `Children` のコレクションに追加 `AbsoluteLayout` し、 [`AbsoluteLayout.LayoutBounds`](xref:Xamarin.Forms.AbsoluteLayout.LayoutBoundsProperty) 各子の添付プロパティを絶対位置またはサイズ値に設定します。
+既定では、は、 [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) デバイスに依存しない単位で指定される絶対値を使用して、子の位置とサイズを設定します。これにより、子をレイアウトに配置する場所を明示的に定義します。 これを実現するには、子を `Children` のコレクションに追加 `AbsoluteLayout` し、 [`AbsoluteLayout.LayoutBounds`](xref:Xamarin.Forms.AbsoluteLayout.LayoutBoundsProperty) 各子の添付プロパティを絶対位置またはサイズ値に設定します。
 
 > [!WARNING]
 > さまざまなデバイスの画面サイズと解像度が異なるため、子の位置やサイズ設定に絶対値を使用すると問題が発生する可能性があります。 そのため、あるデバイス上の画面中央の座標は、他のデバイスでオフセットされる場合があります。
@@ -190,7 +190,7 @@ C# では、 [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) `Children` �
 
 次のスクリーンショットは、結果のレイアウトを示しています。
 
-![プロポーショナル positino 値を使用して AbsoluteLayout に配置された子](absolutelayout-images/proportional-position.png)
+![比例する位置の値を使用して AbsoluteLayout に配置された子](absolutelayout-images/proportional-position.png)
 
 同等の C# コードを次に示します。
 

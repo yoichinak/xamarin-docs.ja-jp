@@ -10,12 +10,12 @@ ms.date: 07/19/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 72ee9c4a481388e69aeeb52dbd5b8eeaabb164f6
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5aa62927efe0a9803efbddaef97ac6557edccd6c
+ms.sourcegitcommit: c3329ab25d377907d8804cdd5e26dc84a274f39c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136761"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88130904"
 ---
 # <a name="summary-of-chapter-14-absolute-layout"></a>第 14 章の概要: 絶対レイアウト
 
@@ -106,5 +106,5 @@ XAML で `AbsoluteLayout` を使用し、`AbsoluteLayout.LayoutBounds` と `Abso
 
 - [第 14 章の全文 (PDF)](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch14-Apr2016.pdf)
 - [第 14 章のサンプル](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14)
-- [AbsoluteLayout](~/xamarin-forms/user-interface/layouts/absolute-layout.md)
+- [AbsoluteLayout](~/xamarin-forms/user-interface/layouts/absolutelayout.md)
 - [関連付けられたプロパティ](~/xamarin-forms/xaml/attached-properties.md)

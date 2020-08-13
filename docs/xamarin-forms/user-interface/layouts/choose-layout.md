@@ -10,12 +10,12 @@ ms.date: 08/21/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9a097d6dad067f209d3aad27bde382f28910324a
-ms.sourcegitcommit: c3329ab25d377907d8804cdd5e26dc84a274f39c
+ms.openlocfilehash: 38b44bbb8f01f090d286bb2203014455a32a2290
+ms.sourcegitcommit: 808ff109928a1eea16e17e23ea81f8c903a239e8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88130930"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88181486"
 ---
 # <a name="choose-a-no-locxamarinforms-layout"></a>レイアウトの選択 Xamarin.Forms
 
@@ -78,7 +78,7 @@ Xamarin.Formsレイアウトクラスを使用すると、アプリケーショ�
 
 詳細については、「 [ Xamarin.Forms stacklayout](stacklayout.md)」を参照してください。
 
-## <a name="grid"></a>グリッド
+## <a name="grid"></a>Grid
 
 は、 [`Grid`](xref:Xamarin.Forms.Grid) 行と列に要素を表示するために使用されます。これは、比例または絶対的なサイズを持つことができます。 グリッドの行と列は、プロパティとプロパティで指定し [`RowDefinitions`](xref:Xamarin.Forms.Grid.RowDefinitions) [`ColumnDefinitions`](xref:Xamarin.Forms.Grid.ColumnDefinitions) ます。
 
@@ -194,7 +194,7 @@ Xamarin.Formsレイアウトクラスを使用すると、アプリケーショ�
 > [!WARNING]
 > 可能であれば、`RelativeLayout` は使用しないでください。 CPU で相当な量の作業を実行しなければならなくなります。
 
-詳細については、「 [ Xamarin.Forms RelativeLayout](relative-layout.md)」を参照してください。
+詳細については、「 [ Xamarin.Forms RelativeLayout](relativelayout.md)」を参照してください。
 
 ## <a name="absolutelayout"></a>AbsoluteLayout
 
@@ -256,6 +256,6 @@ Xamarin.Formsレイアウトクラスを使用すると、アプリケーショ�
 - [Xamarin.Forms行列](grid.md)
 - [Xamarin.FormsFlexLayout](flex-layout.md)
 - [Xamarin.FormsAbsoluteLayout](absolutelayout.md)
-- [Xamarin.FormsRelativeLayout](relative-layout.md)
+- [Xamarin.FormsRelativeLayout](relativelayout.md)
 - [レイアウトのパフォーマンスを最適化する](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)
 - [レイアウトの圧縮](layout-compression.md)

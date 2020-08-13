@@ -10,16 +10,16 @@ ms.date: 06/17/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e1429c3f39e37dc552d7f6ca8767058e5aec853b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: b23aca29fa77b58183a1f09053bc2bb9ba66bb49
+ms.sourcegitcommit: 808ff109928a1eea16e17e23ea81f8c903a239e8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84903111"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88181512"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>XAML マークアップ拡張の使用
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 
 XAML マークアップ拡張機能は、さまざまなソースから要素属性を設定できるようにすることで、XAML のパワーと柔軟性を向上させるのに役立ちます。 Xaml のマークアップ拡張機能のいくつかは、XAML 2009 仕様に含まれています。 これらは、慣例として名前空間プレフィックスを持つ XAML ファイルに表示され、 `x` 一般的にこのプレフィックスで参照されます。 この記事では、次のマークアップ拡張機能について説明します。
 
@@ -42,7 +42,7 @@ XAML マークアップ拡張機能は、さまざまなソースから要素属
 - `TemplateBinding`-コントロールテンプレートからデータバインディングを実行します。これについては、「 [** Xamarin.Forms コントロールテンプレート**](~/xamarin-forms/app-fundamentals/templates/control-template.md)」をご覧ください。
 - `RelativeSource`-バインドソースを、バインディングターゲットの位置に対して相対的に設定します。これについては、「[相対バインド](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)」を参照してください。
 
-レイアウトでは、 [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) カスタムマークアップ拡張機能を使用し [`ConstraintExpression`](xref:Xamarin.Forms.ConstraintExpression) ます。 このマークアップ拡張機能については、記事[**RelativeLayout**](~/xamarin-forms/user-interface/layouts/relative-layout.md)を参照してください。
+レイアウトでは、 [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) カスタムマークアップ拡張機能を使用し [`ConstraintExpression`](xref:Xamarin.Forms.ConstraintExpression) ます。 このマークアップ拡張機能については、記事[**RelativeLayout**](~/xamarin-forms/user-interface/layouts/relativelayout.md)を参照してください。
 
 ## <a name="xstatic-markup-extension"></a>x:Static マークアップ拡張機能
 
@@ -580,7 +580,7 @@ public partial class TypeDemoPage : ContentPage
 
 オブジェクトのフォントアイコンデータを指定してフォントアイコンを表示する方法の詳細について `FontImageSource` は、「[フォント](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons)アイコンの表示」を参照してください。
 
-## <a name="appthemebinding-markup-extension"></a>AppThemeBinding のマークアップ拡張機能
+## <a name="appthemebinding-markup-extension"></a>AppThemeBinding マークアップ拡張
 
 `AppThemeBinding`マークアップ拡張機能を使用すると、現在のシステムテーマに基づいて、イメージや色など、消費するリソースを指定できます。
 
@@ -638,8 +638,8 @@ public partial class TypeDemoPage : ContentPage
 
 - [マークアップ拡張機能 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 - [本の XAML マークアップ拡張機能の章 Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
-- [リソースディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
-- [動的スタイル](~/xamarin-forms/user-interface/styles/dynamic.md)
+- [リソース ディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [動的なスタイル](~/xamarin-forms/user-interface/styles/dynamic.md)
 - [データ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)
-- [Xamarin.Forms シェル](~/xamarin-forms/app-fundamentals/shell/index.md)
+- [Xamarin.Forms のシェル](~/xamarin-forms/app-fundamentals/shell/index.md)
 - [アプリケーションのシステムテーマの変更に応答する Xamarin.Forms](~/xamarin-forms/user-interface/theming/system-theme-changes.md)

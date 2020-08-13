@@ -10,16 +10,16 @@ ms.date: 02/08/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 737cb819cfd762e81536fba03f3ae5b563416a4e
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 2b0290daedab4a6e825d2bab4bea9889b4966645
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86930742"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918305"
 ---
-# <a name="xamarinforms-dual-screen"></a>Xamarin.Forms のデュアル画面
+# <a name="no-locxamarinforms-dual-screen"></a>Xamarin.Forms のデュアル画面
 
-![プレリリース API](~/media/shared/preview.png "この API は現在プレリリースです")
+![プレリリース API](~/media/shared/preview.png)
 
 Microsoft Surface Duo のようなデュアル画面デバイスでは、アプリケーションの新しいユーザー体験が促進されます。 Xamarin.Forms には `TwoPaneView` クラスと `DualScreenInfo` クラスが含まれているため、デュアル画面デバイス用のアプリを開発できます。
 
@@ -41,7 +41,7 @@ Microsoft Surface Duo のようなデュアル画面デバイスでは、アプ�
 5. これらの `ConfigurationChanges` オプションが "_すべて_" 含まれるよう、Android プロジェクトの `MainActivity` クラスで `Activity` 属性を更新します。
 
     ```@csharp
-    ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation 
+    ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation
         | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize | ConfigChanges.UiMode
     ```
 

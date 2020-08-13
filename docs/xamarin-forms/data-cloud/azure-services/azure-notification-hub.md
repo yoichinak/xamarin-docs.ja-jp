@@ -11,14 +11,14 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 - Firebase
-ms.openlocfilehash: 5f7b83c1fc907de790b382aabde0c5a957e5a8bb
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5fd657a3d55bd26b95e79e39540dcfe5b8bce08f
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84565422"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918593"
 ---
-# <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-xamarinforms"></a>Azure Notification Hubs と Xamarin.Forms を使用してプッシュ通知を送受信する
+# <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-no-locxamarinforms"></a>Azure Notification Hubs と Xamarin.Forms を使用してプッシュ通知を送受信する
 
 [![サンプルをダウンロードする](~/media/shared/download.png)サンプルをダウンロードする](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurenotificationhub/)
 
@@ -77,7 +77,7 @@ Azure Notification Hub では、モバイル アプリケーションをハブ�
 
 各プラットフォームでのこれらの手順の詳細については、「[通知用に Android アプリケーションを構成する](#configure-the-android-application-for-notifications)」セクションと「[通知用に iOS を構成する](#configure-ios-for-notifications)」セクションを参照してください。
 
-## <a name="xamarinforms-application-functionality"></a>Xamarin.Forms アプリケーションの機能
+## <a name="no-locxamarinforms-application-functionality"></a>Xamarin.Forms アプリケーションの機能
 
 サンプルの Xamarin.Forms アプリケーションでは、プッシュ通知メッセージの一覧を表示します。 これを実現するには、`AddMessage` メソッドを使用します。このメソッドにより、指定したプッシュ通知メッセージが UI に追加されます。 また、このメソッドは、重複するメッセージが UI に追加されないようにし、任意のスレッドから呼び出すことができるようにメイン スレッドで実行します。 `AddMessage` メソッドのコードを次に示します。
 
@@ -169,7 +169,7 @@ public static class AppConstants
 </manifest>
 ```
 
-### <a name="override-firebasemessagingservice-to-handle-messages"></a>`FirebaseMessagingService` をオーバーライドしてメッセージを処理する
+### <a name="override-no-locfirebasemessagingservice-to-handle-messages"></a>`FirebaseMessagingService` をオーバーライドしてメッセージを処理する
 
 Firebase に登録してメッセージを処理するには、`FirebaseMessagingService` クラスをサブクラス化します。 このサンプル アプリケーションでは、`FirebaseMessagingService` をサブクラス化する `FirebaseService` クラスを定義しています。 このクラスには、`com.google.firebase.MESSAGING_EVENT` フィルターを含む `IntentFilter` 属性がタグ付けされています。 このフィルターにより、Android では、次の処理を行うために、このクラスに受信メッセージを渡すことができます。
 
@@ -281,7 +281,7 @@ void SendMessageToMainPage(string body)
 > [!NOTE]
 > Android アプリケーションでは、バックグラウンドまたはフォアグラウンドで実行されている場合にのみプッシュ通知を受信します。 メイン `Activity` が実行されていないときにプッシュ通知を受信するには、サービスを実装する必要があります。これは、このサンプルの範囲を超えています。 詳細については、[Android サービスの作成](/xamarin/android/app-fundamentals/services/)に関するページをご覧ください
 
-### <a name="add-incoming-notifications-to-the-xamarinforms-ui"></a>Xamarin.Forms UI に受信通知を追加する
+### <a name="add-incoming-notifications-to-the-no-locxamarinforms-ui"></a>Xamarin.Forms UI に受信通知を追加する
 
 `MainActivity` クラスでは、通知を処理し、受信メッセージ データを管理するためのアクセス許可を取得する必要があります。 次のコードは、`MainActivity` の完全な実装を示しています。
 
@@ -471,9 +471,9 @@ public override void RegisteredForRemoteNotifications(UIApplication application,
 ```
 
 > [!NOTE]
-> ネットワーク接続がないなどの状況では、リモート通知の登録に失敗することがあります。 登録の失敗を処理するように `FailedToRegisterForRemoveNotifications` メソッドをオーバーライドすることを選択できます。
+> ネットワーク接続がないなどの状況では、リモート通知の登録に失敗することがあります。 登録の失敗を処理するように `FailedToRegisterForRemoteNotifications` メソッドをオーバーライドすることを選択できます。
 
-### <a name="add-apns-notifications-to-xamarinforms-ui"></a>APNS の通知を Xamarin.Forms UI に追加する
+### <a name="add-apns-notifications-to-no-locxamarinforms-ui"></a>APNS の通知を Xamarin.Forms UI に追加する
 
 デバイスがリモート通知を受信すると、iOS では `ReceivedRemoteNotification` メソッドを呼び出します。 受信メッセージ JSON は `NSDictionary` オブジェクトに変換され、`ProcessNotification` メソッドで、ディクショナリから値を抽出して Xamarin.Forms の `MainPage` インスタンスに送信します。 `ReceivedRemoteNotifications` メソッドは、次のコードに示されるように、`ProcessNotification` を呼び出すようにオーバーライドされます。
 
