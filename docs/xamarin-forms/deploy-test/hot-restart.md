@@ -10,12 +10,12 @@ ms.date: 03/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5367d7933e70c59298faacff85c1d5f533bc0776
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 3240906cdf964bcf798137e640a82dbd1e2341d9
+ms.sourcegitcommit: a662910a6ba14d241e01047739eb1cd87aa7d884
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929282"
+ms.lasthandoff: 08/10/2020
+ms.locfileid: "88029722"
 ---
 # <a name="xamarin-hot-restart-preview"></a>Xamarin のホット再起動 (プレビュー)
 
@@ -73,6 +73,7 @@ Xamarin のホット再起動を使用すると、複数ファイルのコード
 - ストーリーボードと XIB のファイルはサポートされていません。これらを実行時に読み込もうとすると、アプリがクラッシュする可能性があります。 `HOTRESTART` プリプロセッサ シンボルを使用して、このコードが実行されないようにします。
 - 静的な iOS ライブラリとフレームワークはサポートされていません。アプリがこれらを読み込もうとすると、実行時エラーまたはクラッシュが発生する可能性があります。 `HOTRESTART` プリプロセッサ シンボルを使用して、このコードが実行されないようにします。 動的な iOS ライブラリはサポートされています。
 - Xamarin のホット再起動を使用して、発行用のアプリ バンドルを作成することはできません。 アプリケーションを運用環境に完全にコンパイル、署名、配置するには、引き続き Mac マシンが必要です。
+- 現在、資産カタログはサポートされていません。 ホット再起動を使用すると、アプリには Xamarin アプリに対する既定のアイコンと起動画面が表示されます。 Mac とペアにした場合、または Mac 上で開発している場合は、資産カタログが機能します。
 
 ## <a name="troubleshoot"></a>トラブルシューティング
 

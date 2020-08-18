@@ -1,5 +1,5 @@
 ---
-title: ピンチ ジェスチャ認識エンジンの追加
+title: ピンチ ジェスチャ認識エンジンを追加する
 description: この記事では、ピンチ ジェスチャを使用して、ピンチ場所の画像に対して対話型のズームを実行する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 832F7810-F0CF-441A-B04A-3975F3FB8B29
@@ -10,14 +10,14 @@ ms.date: 01/21/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: da4a8bc66a7986efd3683de6dce1f6af618b85cc
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a3405e3bff1b500bcf0f7fab6bea1a888f2d4604
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137853"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918283"
 ---
-# <a name="adding-a-pinch-gesture-recognizer"></a>ピンチ ジェスチャ認識エンジンの追加
+# <a name="add-a-pinch-gesture-recognizer"></a>ピンチ ジェスチャ認識エンジンを追加する
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pinchgesture)
 

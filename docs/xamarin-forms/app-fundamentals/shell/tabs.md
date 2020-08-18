@@ -10,12 +10,12 @@ ms.date: 11/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7c4ed503e0379c2c7f235bd91621a031bd660c85
-ms.sourcegitcommit: 69d9a61ba479f707d96eb4c1c56a4b05a2a2a26f
+ms.openlocfilehash: 9ecdc3aca3264b52163d35e29659f434f521147f
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87426891"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87918622"
 ---
 # <a name="no-locxamarinforms-shell-tabs"></a>Xamarin.Forms シェルのタブ
 
@@ -184,6 +184,7 @@ ms.locfileid: "87426891"
 - `Icon`: `ImageSource` 型、ポップアップではないクロムのパーツに表示するアイコンを定義します。
 - `IsChecked`: `boolean` 型、現在ポップアップで項目を強調表示するかどうかを定義します。
 - `IsEnabled`: `boolean` 型、クロム内の項目を選択できるかどうかを定義します。
+- `IsVisible`: `bool` 型、`ShellContent` がすべての UI 構造で非表示になっているかどうかを示します。 既定値は `true` です。
 - `MenuItems`: `MenuItemCollection` 型、この `ShellContent` が表示ページであるときに、ポップアップに表示するメニュー項目。
 - `Title`: `string` 型、UI に表示するタイトル。
 

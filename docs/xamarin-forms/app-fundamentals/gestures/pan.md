@@ -1,6 +1,6 @@
 ---
-title: 'title:"パン ジェスチャ認識エンジンの追加" description: "この記事では、パン ジェスチャを使用してイメージを水平方向や垂直方向にパンし、イメージをそのイメージのディメンションより小さいビューポートで表示するときに、そのコンテンツがすべて表示されるようにする方法について説明します。"'
-description: 'ms.prod: xamarin ms.assetid:42CBD2CF-432D-4F19-A05E-D569BB7F8713 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:01/21/2016 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: パン ジェスチャ認識エンジンを追加する
+description: この記事では、パン ジェスチャを使用してイメージを水平方向や垂直方向にパンし、イメージをそのイメージのディメンションより小さいビューポートで表示するときに、そのコンテンツがすべて表示されるようにする方法について説明します。
 ms.prod: xamarin
 ms.assetid: 42CBD2CF-432D-4F19-A05E-D569BB7F8713
 ms.technology: xamarin-forms
@@ -10,14 +10,14 @@ ms.date: 01/21/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 53122991811c06360e8d015a753096cb35c1cca0
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: 886191725421a754e696409deb7a3cca0f6ea923
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84137632"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917697"
 ---
-# <a name="adding-a-pan-gesture-recognizer"></a>パン ジェスチャ認識エンジンの追加
+# <a name="add-a-pan-gesture-recognizer"></a>パン ジェスチャ認識エンジンを追加する
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pangesture)
 

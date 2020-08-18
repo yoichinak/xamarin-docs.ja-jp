@@ -6,18 +6,18 @@ ms.assetid: FEDE51EB-577E-4B3E-9890-B7C1A5E52516
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/10/2020
+ms.date: 07/30/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1a1d47b2b37fa532b3e2a64ada5f367e612f557d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 821eafab6896d8771ba38332a43c0cbc319797a7
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84946261"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917841"
 ---
-# <a name="xamarinforms-shell-flyout"></a>Xamarin.Forms シェルのポップアップ
+# <a name="no-locxamarinforms-shell-flyout"></a>Xamarin.Forms シェルのポップアップ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
@@ -234,6 +234,7 @@ Shell.Current.FlyoutIsPresented = false;
 - `IsChecked`: `boolean` 型、現在ポップアップで項目を強調表示するかどうかを定義します。
 - `IsEnabled`: `boolean` 型、クロム内の項目を選択できるかどうかを定義します。
 - `IsTabStop`: `bool` 型、タブのナビゲーションに `FlyoutItem` を含めるかどうかを指定します。 既定値は `true` で、値を `false` にすると、`FlyoutItem` は、`TabIndex` が設定されているかどうかにかかわらず、タブ ナビゲーション インフラストラクチャによって無視されます。
+- `IsVisible`: `bool` 型、`FlyoutItem` がポップアップ メニューで非表示になっているかどうかを示します。 既定値は `true` です。
 - `TabIndex`: `int` 型、ユーザーが Tab キーを押して項目間を移動するときに、`FlyoutItem` オブジェクトがフォーカスを受け取る順序を指定します。 このプロパティの既定値は 0 です。
 - `Title`: `string` 型、UI に表示するタイトル。
 - `Route`: `string` 型、項目を処理するために使う文字列。
@@ -249,6 +250,46 @@ Shell.Current.FlyoutIsPresented = false;
 - `OnTabStopPropertyChanged`: `IsTabStop` プロパティが変更されるたびに呼び出されます。
 - `TabIndexDefaultValueCreator`: `int` を返します。`TabIndex` プロパティの既定値を設定するために呼び出されます。
 - `TabStopDefaultValueCreator`: `bool` を返します。`TabStop` プロパティの既定値を設定するために呼び出されます。
+
+## <a name="flyout-backdrop"></a>ポップアップの背景
+
+ポップアップの背景は、ポップアップ オーバーレイの外観であり、`Shell.FlyoutBackdrop` 添付プロパティを `Brush` に設定することによって指定できます。
+
+```xaml
+<Shell ...
+       FlyoutBackdrop="Silver">
+    ...
+</Shell>
+```
+
+この例では、ポップアップの背景がシルバー `SolidColorBrush` で描画されます。
+
+> [!IMPORTANT]
+> `FlyoutBackdrop` 添付プロパティは、任意の Shell 要素に設定できますが、`Shell`、`FlyoutItem`、または `TabBar` オブジェクトに設定されている場合にのみ適用されます。
+
+次の例では、`FlyoutItem` のポップアップの背景を `LinearGradientBrush` に設定する場合を示します。
+
+```xaml
+<Shell ...>
+    <FlyoutItem ...>
+      <Shell.FlyoutBackdrop>
+          <LinearGradientBrush StartPoint="0,0"
+                               EndPoint="1,1">
+              <GradientStop Color="#8A2387"
+                            Offset="0.1" />
+              <GradientStop Color="#E94057"
+                            Offset="0.6" />
+              <GradientStop Color="#F27121"
+                            Offset="1.0" />
+          </LinearGradientBrush>
+      </Shell.FlyoutBackdrop>
+      ...
+    </FlyoutItem>
+    ...
+</Shell>
+```
+
+ブラシの詳細については、「[Xamarin.Forms ブラシ](~/xamarin-forms/user-interface/brushes/index.md)」を参照してください。
 
 ## <a name="flyout-vertical-scroll"></a>ポップアップ垂直スクロール
 
@@ -652,3 +693,4 @@ Shell.Current.CurrentItem = aboutItem;
 - [Xaminals (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 - [Xamarin.Forms のスタイル クラス](~/xamarin-forms/user-interface/styles/xaml/style-class.md)
 - [Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)
+- [Xamarin.Forms ブラシ](~/xamarin-forms/user-interface/brushes/index.md)

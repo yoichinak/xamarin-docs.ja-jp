@@ -6,18 +6,18 @@ ms.assetid: F8F9471D-6771-4D23-96C0-2B79473A06D4
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/18/2019
+ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cc5e0c4cb8b474a1b7e23b476b0c5125eb2ba298
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 00dfec5b48507c83f43d0622c11770ecec304ea6
+ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138087"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917553"
 ---
-# <a name="xamarinforms-shell-search"></a>Xamarin.Forms シェルでの検索
+# <a name="no-locxamarinforms-shell-search"></a>Xamarin.Forms シェルでの検索
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
@@ -224,6 +224,7 @@ Shell.SetSearchHandler(this, new MonkeySearchHandler
 - `HorizontalTextAlignment`:`TextAlignment` 型、検索ボックスのテキストの水平方向の配置。
 - `PlaceholderColor`:`Color` 型、プレースホルダー検索ボックスのテキストの色。
 - `TextColor`:`Color` 型、検索ボックスのテキストの色。
+- `TextTransform`:`TextTransform` 型、検索ボックスのテキストが大文字か小文字かを決定します。
 - `VerticalTextAlignment`: `TextAlignment` 型、検索ボックスのテキストの垂直方向の配置。
 
 ## <a name="searchhandler-keyboard"></a>SearchHandler キーボード
@@ -320,6 +321,7 @@ searchHandler.Keyboard = Keyboard.Create(KeyboardFlags.Suggestions | KeyboardFla
 - `SelectedItem`: `object` 型、検索結果内の選択された項目。 このプロパティは読み取り専用であり、既定値は `null` です。
 - `ShowsResults`: `bool` 型、テキスト入力時に、候補領域に検索結果が表示されるかどうかを指示します。 既定値は `false` です。
 - `TextColor`:`Color` 型、検索ボックスのテキストの色。
+- `TextTransform`:`TextTransform` 型、検索ボックスのテキストが大文字か小文字かを決定します。
 
 これらのプロパティはすべて、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトを基盤としています。つまり、プロパティはデータ バインディングの対象にすることができます。
 
