@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsAbsoluteLayout
+title: Xamarin.Forms AbsoluteLayout
 description: Xamarin.FormsAbsoluteLayout は、明示的な値、またはレイアウトのサイズに比例した値を使用して要素の位置とサイズを指定するために使用されます。
 ms.prod: xamarin
 ms.assetid: 01A5CCE0-AD45-4806-84FD-72C007005B38
@@ -7,19 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2020
+ms.custom: contperfq1
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a6efa4615f0061c83243f2d00d2d141a51607301
-ms.sourcegitcommit: 808ff109928a1eea16e17e23ea81f8c903a239e8
+ms.openlocfilehash: 3fa88976c49d3ccb89b74a0ce40de0583fa20795
+ms.sourcegitcommit: 9bd6b1b20d126b3f837c4cf859b25895c242e54e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88181499"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88648162"
 ---
-# <a name="no-locxamarinforms-absolutelayout"></a>Xamarin.FormsAbsoluteLayout
+# <a name="no-locxamarinforms-absolutelayout"></a>Xamarin.Forms AbsoluteLayout
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-absolutelayoutdemos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-absolutelayoutdemos)
 
 [![::: no-loc (Xamarin. Forms)::: AbsoluteLayout](absolutelayout-images/layouts.png)](absolutelayout-images/layouts-large.png#lightbox)
 
@@ -37,11 +38,11 @@ ms.locfileid: "88181499"
 クラスは、 [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) `Layout<T>` 型のプロパティを定義するクラスから派生 `Children` `IList<T>` します。 `Children`プロパティは `ContentProperty` クラスのである `Layout<T>` ため、XAML から明示的に設定する必要はありません。
 
 > [!TIP]
-> レイアウトの最適なパフォーマンスを得るには、「[レイアウトのパフォーマンスを最適化](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)する」のガイドラインに従ってください。
+> レイアウトの最適なパフォーマンスを得るには、「 [レイアウトのパフォーマンスを最適化](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)する」のガイドラインに従ってください。
 
 ## <a name="position-and-size-children"></a>子の位置とサイズを変更する
 
-の子の位置とサイズは、 [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) [`AbsoluteLayout.LayoutBounds`](xref:Xamarin.Forms.AbsoluteLayout.LayoutBoundsProperty) 絶対値または比例値を使用して、各子の添付プロパティを設定することによって定義されます。 位置のスケールを設定するときに、絶対値と比例値を子に混在させることができますが、サイズは固定したままにしておく必要があります。 絶対値の詳細については、「[絶対位置とサイズ](#absolute-positioning-and-sizing)設定」を参照してください。 比例値の詳細については、「[比例配置とサイズ](#proportional-positioning-and-sizing)設定」を参照してください。
+の子の位置とサイズは、 [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) [`AbsoluteLayout.LayoutBounds`](xref:Xamarin.Forms.AbsoluteLayout.LayoutBoundsProperty) 絶対値または比例値を使用して、各子の添付プロパティを設定することによって定義されます。 位置のスケールを設定するときに、絶対値と比例値を子に混在させることができますが、サイズは固定したままにしておく必要があります。 絶対値の詳細については、「 [絶対位置とサイズ](#absolute-positioning-and-sizing)設定」を参照してください。 比例値の詳細については、「 [比例配置とサイズ](#proportional-positioning-and-sizing)設定」を参照してください。
 
 [`AbsoluteLayout.LayoutBounds`](xref:Xamarin.Forms.AbsoluteLayout.LayoutBoundsProperty)添付プロパティは、絶対値または比例値が使用されているかどうかに関係なく、2つの形式を使用して設定できます。
 
@@ -236,6 +237,6 @@ public class ProportionalDemoPageCS : ContentPage
 ## <a name="related-links"></a>関連リンク
 
 - [AbsoluteLayout デモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-absolutelayoutdemos)
-- [Xamarin.Forms添付プロパティ](~/xamarin-forms/xaml/attached-properties.md)
+- [Xamarin.Forms 添付プロパティ](~/xamarin-forms/xaml/attached-properties.md)
 - [レイアウトの選択 Xamarin.Forms](choose-layout.md)
 - [アプリのパフォーマンスを向上させる Xamarin.Forms](~/xamarin-forms/deploy-test/performance.md)

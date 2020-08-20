@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsRelativeLayout
+title: Xamarin.Forms RelativeLayout
 description: Xamarin.FormsRelativeLayout は、レイアウトまたは兄弟要素のプロパティと比較して、子の位置とサイズを使用します。
 ms.prod: xamarin
 ms.assetid: 2530BCB8-01B8-4C4F-BF14-CA53659F1B5A
@@ -7,19 +7,20 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 08/13/2020
+ms.custom: contperfq1
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b23da34239d99faa64578bd30c5a3e969cf4b289
-ms.sourcegitcommit: 808ff109928a1eea16e17e23ea81f8c903a239e8
+ms.openlocfilehash: 77b1837fb58d5743fd887b9f636f7f7311b807d3
+ms.sourcegitcommit: 9bd6b1b20d126b3f837c4cf859b25895c242e54e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88181823"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88648175"
 ---
-# <a name="no-locxamarinforms-relativelayout"></a>Xamarin.FormsRelativeLayout
+# <a name="no-locxamarinforms-relativelayout"></a>Xamarin.Forms RelativeLayout
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-relativelayoutdemos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-relativelayoutdemos)
 
 [![::: no-loc (Xamarin. Forms)::: RelativeLayout](relativelayout-images/layouts.png)](relativelayout-images/layouts-large.png#lightbox)
 
@@ -54,7 +55,7 @@ ms.locfileid: "88181823"
 | **絶対値** | 絶対制約は、添付プロパティを値に設定することによって指定し [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) `double` ます。 | 絶対制約は、メソッドによって指定される [`Constraint.Constant`](xref:Xamarin.Forms.Constraint.Constant*) か、引数を必要とするオーバーロードを使用して指定され `Children.Add` `Func<Rectangle>` ます。 |
 | **相対値** | 相対制約は [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) [`Constraint`](xref:Xamarin.Forms.Constraint) 、 `ConstraintExpression` マークアップ拡張機能によって返されるオブジェクトに添付プロパティを設定することによって指定します。 | 相対制約は [`Constraint`](xref:Xamarin.Forms.Constraint) 、クラスのメソッドによって返されるオブジェクトによって指定され `Constraint` ます。 |
 
-絶対値を使用して制約を指定する方法の詳細については、「[絶対位置とサイズ](#absolute-positioning-and-sizing)設定」を参照してください。 相対値を使用して制約を指定する方法の詳細については、「[相対位置とサイズ](#relative-positioning-and-sizing)設定」を参照してください。
+絶対値を使用して制約を指定する方法の詳細については、「 [絶対位置とサイズ](#absolute-positioning-and-sizing)設定」を参照してください。 相対値を使用して制約を指定する方法の詳細については、「 [相対位置とサイズ](#relative-positioning-and-sizing)設定」を参照してください。
 
 C# では、3つのオーバーロードによってに子を追加でき [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) `Add` ます。 最初のオーバーロードでは、 `Expression<Func<Rectangle>>` 子の位置とサイズを指定するためにが必要です。 2番目のオーバーロードでは、、、 `Expression<Func<double>>` `x` `y` 、およびの各引数にオプションのオブジェクトが必要です `width` `height` 。 3番目のオーバーロードでは、、、 `Constraint` `x` `y` 、およびの各引数にオプションのオブジェクトが必要です `width` `height` 。
 
@@ -224,7 +225,7 @@ Xamarin.Forms マークアップ拡張機能の詳細については、「[XAML 
 この例で [`BoxView`](xref:Xamarin.Forms.BoxView) は、 [`XConstraint`](xref:Xamarin.Forms.RelativeLayout.XConstraintProperty) プロパティと添付プロパティを設定することによって、各オブジェクトの位置を定義し [`YConstraint`](xref:Xamarin.Forms.RelativeLayout.YConstraintProperty) ます。 最初のは、 `BoxView` `XConstraint` `YConstraint` プロパティと添付プロパティを定数に設定します。これは絶対値です。 残りの `BoxView` オブジェクトはすべて、少なくとも1つの相対値を使用して位置を設定します。 たとえば、黄色のオブジェクトは、 `BoxView` `XConstraint` 添付プロパティをその親の幅 () から40を引いた値に設定し [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) ます。 同様に、これにより、 `BoxView` `YConstraint` 添付プロパティが親の高さから40を引いた値に設定されます。 これにより、 `BoxView` 画面の右下隅に黄色が表示されます。
 
 > [!NOTE]
-> [`BoxView`](xref:Xamarin.Forms.BoxView)サイズを指定していないオブジェクトは、自動的に 40 x 40 にサイズ変更され Xamarin.Forms ます。
+> [`BoxView`](xref:Xamarin.Forms.BoxView) サイズを指定していないオブジェクトは、自動的に 40 x 40 にサイズ変更され Xamarin.Forms ます。
 
 という名前のシルバーは、 [`BoxView`](xref:Xamarin.Forms.BoxView) `oneThird` 親を基準にして中央揃えで配置されます。 また、親を基準としてサイズが調整され、幅と高さの3分の1になります。 これを実現するには [`XConstraint`](xref:Xamarin.Forms.RelativeLayout.XConstraintProperty) 、 [`WidthConstraint`](xref:Xamarin.Forms.RelativeLayout.WidthConstraintProperty) プロパティと添付プロパティを、親の幅 () に0.33 を乗算して設定し [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) ます。 同様に、 [`YConstraint`](xref:Xamarin.Forms.RelativeLayout.YConstraintProperty) との [`HeightConstraint`](xref:Xamarin.Forms.RelativeLayout.HeightConstraintProperty) 添付プロパティは、親の高さに0.33 を乗算して設定されます。
 
@@ -341,7 +342,7 @@ public class RelativePositioningAndSizingDemoPageCS : ContentPage
 ## <a name="related-links"></a>関連リンク
 
 - [RelativeLayout デモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-relativelayoutdemos)
-- [Xamarin.Forms添付プロパティ](~/xamarin-forms/xaml/attached-properties.md)
+- [Xamarin.Forms 添付プロパティ](~/xamarin-forms/xaml/attached-properties.md)
 - [XAML マークアップ拡張](~/xamarin-forms/xaml/markup-extensions/index.md)
 - [レイアウトの選択 Xamarin.Forms](choose-layout.md)
 - [アプリのパフォーマンスを向上させる Xamarin.Forms](~/xamarin-forms/deploy-test/performance.md)
