@@ -8,12 +8,12 @@ author: davidortinau
 ms.author: daortin
 ms.custom: video
 ms.date: 03/05/2020
-ms.openlocfilehash: 069c40b74876bea1d3a0c8fca23b3d90c4b91635
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 09d20ef2e4fece36ce67a7891892defb05a5f3df
+ms.sourcegitcommit: ca1eca5bcf6c82bc4ec05db12ee1be585006d59f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79510680"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88514630"
 ---
 # <a name="automatic-provisioning-for-xamarinios"></a>Xamarin.iOS の自動プロビジョニング
 
@@ -45,13 +45,15 @@ iOS デバイスで開発のためにアプリに自動的に署名するには�
 
 2. **Info.plist** ファイルを開きます。
 
-3. **[署名]** セクションで、 **[自動プロビジョニング]** を選択します。
+3. **[アプリケーション]** タブを選択します。
+
+4. **[署名]** セクションで、**[自動プロビジョニング]** を選択します。
 
     ![チーム セレクターのドロップダウン](automatic-provisioning-images/image2.png)
 
-4. **[チーム]** ドロップダウンからチームを選択します。
+5. **[チーム]** ドロップダウンからチームを選択します。
 
-5. 数秒後に、署名証明書とプロビジョニング プロファイルが作成されます。
+6. 数秒後に、署名証明書とプロビジョニング プロファイルが作成されます。
 
     ![証明書とプロファイルが正常に作成されました](automatic-provisioning-images/image5.png)
 

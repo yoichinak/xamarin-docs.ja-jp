@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 07/23/2018
-ms.openlocfilehash: 1bb0fae73a1e3647cdc0e3266c7b44ac04fcc1ee
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 746433293c52d7071a3289962ea021f716fd0cfe
+ms.sourcegitcommit: f7fe46c0236a7130b63a33d9d1670d5111582dd2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "79303667"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88186175"
 ---
 # <a name="file-storage-and-access-with-xamarinandroid"></a>Xamarin.Android でのファイルストレージとアクセス
 
@@ -64,7 +64,7 @@ Android アプリの一般的な要件として、画像の保存、ドキュメ
 
 コード共有を最大化するには、Xamarin Android アプリ (または Xamarin Android を対象とする Xamarin.Forms アプリ) で [`System.Environment.GetFolderPath()`](xref:System.Environment.GetFolderPath*) メソッドを使用する必要があります。 Xamarin Android では、このメソッドは `Android.Content.Context.FilesDir` と同じ場所にあるディレクトリの文字列を返します。 このメソッドは、列挙型の `System.Environment.SpecialFolder` を受け取ります。これは、オペレーティング システムによって使用される特殊なフォルダーのパスを表す列挙された定数のセットを識別するために使用されます。 すべての `System.Environment.SpecialFolder` 値が、Xamarin. Android 上の有効なディレクトリにマップされるとは限りません。 次の表では、`System.Environment.SpecialFolder` の特定の値に対して想定できるパスについて説明します。
 
-| System.Environment.SpecialFolder | パス  |
+| System.Environment.SpecialFolder | Path  |
 |----------------------|---|
 | `ApplicationData` | **_INTERNAL\_STORAGE_/.config** |
 | `Desktop` | **_INTERNAL\_STORAGE_/Desktop** |
@@ -74,6 +74,10 @@ Android アプリの一般的な要件として、画像の保存、ドキュメ
 | `MyPictures` | **_INTERNAL\_STORAGE_/Pictures** |
 | `MyVideos` | **_INTERNAL\_STORAGE_/Videos** |
 | `Personal` | **_INTERNAL\_STORAGE_** |
+| `Fonts` | **_INTERNAL\_STORAGE_/.fonts** |
+| `Templates` | **_INTERNAL\_STORAGE_/Templates** |
+| `CommonApplicationData` | **/usr/share** |
+| `CommonApplicationData` | **/usr/share** |
 
 ### <a name="reading-or-writing-to-files-on-internal-storage"></a>内部ストレージでのファイルの読み取りまたは書き込み
 

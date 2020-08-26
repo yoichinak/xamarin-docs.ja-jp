@@ -1,6 +1,6 @@
 ---
-title: 'title:"Xamarin.Forms での文字列とイメージのローカライズ" description: "Xamarin.Forms アプリは .NET リソース ファイルを使用してローカライズできます。"'
-description: 'zone_pivot_groups: "platform" ms.prod: xamarin ms.assetid:852B4ED3-2D2D-48A5-A759-A6591F6A1509 ms.technology: xamarin-forms author: profexorgeek ms.author: jusjohns ms.date:11/01/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms での文字列とイメージのローカライズ
+description: Xamarin.Forms アプリは、.NET リソース ファイルを使用してローカライズできます。
 zone_pivot_groups: platform
 ms.prod: xamarin
 ms.assetid: 852B4ED3-2D2D-48A5-A759-A6591F6A1509
@@ -11,14 +11,14 @@ ms.date: 11/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: af15dc5a23404a11be6207bef7b4fc3e4bf9fad7
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: d68227fbf4a4c9db8f4ba8858fdeda6637ce4732
+ms.sourcegitcommit: 14d67a2db82e67471584b1749e0d5b9ec0c0c09b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84137606"
+ms.lasthandoff: 08/14/2020
+ms.locfileid: "88228608"
 ---
-# <a name="xamarinforms-string-and-image-localization"></a>Xamarin.Forms の文字列とイメージのローカライズ
+# <a name="no-locxamarinforms-string-and-image-localization"></a>Xamarin.Forms の文字列とイメージのローカライズ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingresxlocalization)
 
@@ -59,7 +59,7 @@ Visual Studio 2019 では、 **[新しい項目の追加]** ダイアログを�
 
 **[アクセス修飾子]** ドロップダウン設定では、リソースへのアクセスに使用されるクラスが Visual Studio でどのように生成されるかが決定されます。 [アクセス修飾子] を **[公開]** または **[内部]** に設定すると、指定したアクセシビリティ レベルを持つクラスが生成されます。 [アクセス修飾子] を **[コード生成なし]** に設定すると、クラス ファイルは生成されません。 既定のリソース ファイルは、クラス ファイルを生成するように構成する必要があります。これにより、 **.designer.cs** 拡張子を持つファイルがプロジェクトに追加されます。
 
-既定のリソース ファイルが作成されたら、アプリケーションでサポートされるカルチャごとに追加のファイルを作成できます。 追加の各リソース ファイルでは、ファイル名に翻訳カルチャを含める必要があります。また、 **[アクセス修飾子]** を **[コード生成なし]** に設定する必要があります。 
+既定のリソース ファイルが作成されたら、アプリケーションでサポートされるカルチャごとに追加のファイルを作成できます。 追加の各リソース ファイルでは、ファイル名に翻訳カルチャを含める必要があります。また、 **[アクセス修飾子]** を **[コード生成なし]** に設定する必要があります。
 
 実行時に、アプリケーションではリソース要求を特異性の順に解決することが試行されます。 たとえば、デバイスのカルチャが **en-US** である場合、アプリケーションでは次の順序でリソース ファイルが検索されます。
 
@@ -149,7 +149,37 @@ using System.Resources;
 
 リソース ファイルの詳細については、「[Create resource files for .NET apps](https://docs.microsoft.com/dotnet/framework/resources/creating-resource-files-for-desktop-apps)」(.NET アプリでのリソース ファイルの作成) を参照してください。
 
-## <a name="localize-text-in-xamarinforms"></a>Xamarin.Forms のテキストをローカライズする
+## <a name="specify-supported-languages-on-ios"></a>iOS でサポートされる言語を指定する
+
+iOS では、サポートされるすべての言語をプロジェクトの **Info.plist** ファイルで宣言する必要があります。 **Info.plist** ファイルで、 **[Source]\(ソース\)** ビューを使用して `CFBundleLocalizations` キーの配列を設定し、Resx ファイルに対応する値を指定します。 さらに、`CFBundleDevelopmentRegion` キーを使用して、予期される言語が設定されていることを確認します。
+
+![ローカライズのセクションを示す Info.plist エディターのスクリーンショット](text-images/info-plist.png)
+
+または、XML エディターで **Info.plist** ファイルを開き、次を追加します。
+
+```xml
+<key>CFBundleLocalizations</key>
+<array>
+    <string>de</string>
+    <string>es</string>
+    <string>fr</string>
+    <string>ja</string>
+    <string>pt</string> <!-- Brazil -->
+    <string>pt-PT</string> <!-- Portugal -->
+    <string>ru</string>
+    <string>zh-Hans</string>
+    <string>zh-Hant</string>
+</array>
+<key>CFBundleDevelopmentRegion</key>
+<string>en</string>
+```
+
+> [!NOTE]
+> Apple では、ポルトガル語の扱いが予期したものとは若干異なる可能性があります。 詳細については、developer.apple.com の「[Adding Languages](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPInternational/LocalizingYourApp/LocalizingYourApp.html#//apple_ref/doc/uid/10000171i-CH5-SW2)」(言語の追加) を参照してください。
+
+詳細については、「[Info.plst での既定の言語とサポートされる言語の指定](~/ios/app-fundamentals/localization/index.md#specifying-default-and-supported-languages-in-infoplist)」を参照してください。
+
+## <a name="localize-text-in-no-locxamarinforms"></a>Xamarin.Forms のテキストをローカライズする
 
 Xamarin.Forms では、テキストは、生成される `AppResources` クラスを使用してローカライズされます。 このクラスには、既定のリソース ファイル名に基づいた名前が付けられます。 サンプル プロジェクトのリソース ファイルは **AppResources.cs** という名前であるため、Visual Studio では、`AppResources` という名前の一致するクラスが生成されます。 静的プロパティは、リソース ファイル内の行ごとに `AppResources` クラスで生成されます。 サンプル アプリケーションの `AppResources` クラスでは、次の静的プロパティが生成されます。
 
@@ -178,19 +208,19 @@ public LocalizedCodePage()
         Text = AppResources.NotesLabel,
         // ...
     };
-    
+
     Entry notesEntry = new Entry
     {
         Placeholder = AppResources.NotesPlaceholder,
         //...
     };
-    
+
     Button addButton = new Button
     {
         Text = AppResources.AddButton,
         // ...
     };
-    
+
     Content = new StackLayout
     {
         Children = {
