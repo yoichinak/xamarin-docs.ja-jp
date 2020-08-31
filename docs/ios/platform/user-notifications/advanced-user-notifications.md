@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/03/2018
-ms.openlocfilehash: edf224428103c318307f3a05dc79e1e8d286f512
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: ce4614f7b21a42945a8541f2b18877e75a200f1a
+ms.sourcegitcommit: f6a2f07d2e689e0cfd01b30008d50c83c63fa70c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86935118"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89052774"
 ---
 # <a name="advanced-user-notifications-in-xamarinios"></a>Xamarin. iOS の高度なユーザー通知
 
@@ -28,9 +28,9 @@ IOS 10 の新機能であるユーザー通知フレームワークを使用す�
 
 このフレームワークには、アプリがユーザーに通知を配信するための次の方法が用意されています。
 
-- **視覚的な警告**-通知が画面の上部からバナーとしてロールダウンされます。
+- **視覚的な警告** -通知が画面の上部からバナーとしてロールダウンされます。
 - **Sound と Vibrations** -通知に関連付けることができます。
-- **アプリアイコン**のバッジ: アプリのアイコンに、新しいコンテンツが使用可能であることを示すバッジが表示されます。 (未読の電子メールメッセージの数など)。
+- **アプリアイコン** のバッジ: アプリのアイコンに、新しいコンテンツが使用可能であることを示すバッジが表示されます。 (未読の電子メールメッセージの数など)。
 
 さらに、ユーザーの現在のコンテキストによっては、通知が表示されるさまざまな方法があります。
 
@@ -40,10 +40,10 @@ IOS 10 の新機能であるユーザー通知フレームワークを使用す�
 
 Xamarin iOS アプリには、次の2種類のユーザー通知を送信できます。
 
-- **ローカル通知**-これらは、ユーザーのデバイスにローカルにインストールされたアプリによって送信されます。
-- **リモート通知**-リモートサーバーから送信され、ユーザーに表示されるか、アプリのコンテンツのバックグラウンド更新をトリガーします。
+- **ローカル通知** -これらは、ユーザーのデバイスにローカルにインストールされたアプリによって送信されます。
+- **リモート通知** -リモートサーバーから送信され、ユーザーに表示されるか、アプリのコンテンツのバックグラウンド更新をトリガーします。
 
-詳細については、強化された[ユーザー通知](~/ios/platform/user-notifications/enhanced-user-notifications.md)に関するドキュメントを参照してください。
+詳細については、強化された [ユーザー通知](~/ios/platform/user-notifications/enhanced-user-notifications.md) に関するドキュメントを参照してください。
 
 ## <a name="the-new-user-notification-interface"></a>新しいユーザー通知インターフェイス
 
@@ -65,7 +65,7 @@ IOS 10 の新機能であるユーザー通知 UI API を使用すると、Xamar
 
 ただし、小さなイメージの送信にはサイズが関係しているため、リモート通知ペイロードへのアタッチは実用的ではなくなります。 この状況に対処するために、開発者は iOS 10 の新しいサービス拡張機能を使用して、別のソース (CloudKit データストアなど) からイメージをダウンロードし、ユーザーに表示する前に通知のコンテンツに添付できます。
 
-リモート通知をサービス拡張によって変更するには、そのペイロードを変更可能としてマークする必要があります。 次に例を示します。
+リモート通知をサービス拡張によって変更するには、そのペイロードを変更可能としてマークする必要があります。 たとえば、次のように入力します。
 
 ```csharp
 {
@@ -96,7 +96,7 @@ namespace MonkeyNotification
     public class NotificationService : UNNotificationServiceExtension
     {
         #region Constructors
-        public NotificationService ()
+        public NotificationService (IntPtr handle) : base(handle)
         {
         }
         #endregion
@@ -149,7 +149,7 @@ IOS 10 の通知では、イメージ (静的および Gif)、オーディオま
 
 ユーザー通知用のカスタムユーザーインターフェイスを作成するには、開発者はアプリのソリューションに通知コンテンツ拡張機能 (iOS 10 の新機能) を追加する必要があります。
 
-通知コンテンツ拡張機能を使用すると、開発者は独自のビューを通知 UI に追加し、必要なコンテンツを描画できます。 IOS 12 以降では、通知コンテンツの拡張機能によって、ボタンやスライダーなどの対話型 UI コントロールがサポートされるようになります。 詳細については、 [iOS 12](~/ios/platform/introduction-to-ios12/notifications/interactive.md)ドキュメントの「対話型通知」を参照してください。
+通知コンテンツ拡張機能を使用すると、開発者は独自のビューを通知 UI に追加し、必要なコンテンツを描画できます。 IOS 12 以降では、通知コンテンツの拡張機能によって、ボタンやスライダーなどの対話型 UI コントロールがサポートされるようになります。 詳細については、 [iOS 12](~/ios/platform/introduction-to-ios12/notifications/interactive.md) ドキュメントの「対話型通知」を参照してください。
 
 ユーザー通知を使用したユーザーの操作をサポートするには、システムに登録されたカスタムアクションを作成してシステムに登録し、通知に添付してからシステムでのスケジュールを設定する必要があります。 これらのアクションの処理を処理するために、通知コンテンツの拡張機能が呼び出されます。 カスタムアクションの詳細については、[拡張ユーザー通知](~/ios/platform/user-notifications/enhanced-user-notifications.md)に関するドキュメントの「[通知アクション](~/ios/platform/user-notifications/enhanced-user-notifications.md)の使用」セクションを参照してください。
 
@@ -172,10 +172,10 @@ IOS 10 の通知では、イメージ (静的および Gif)、オーディオま
 3. **IOS**  >  **拡張機能**  >  の**通知コンテンツ拡張機能**を選択し、[**次へ**] ボタンをクリックします。 
 
     [![通知コンテンツの拡張機能の選択](advanced-user-notifications-images/notify01.png)](advanced-user-notifications-images/notify01.png#lightbox)
-4. 拡張機能の**名前**を入力し、[**次へ**] ボタンをクリックします。 
+4. 拡張機能の **名前** を入力し、[ **次へ** ] ボタンをクリックします。 
 
     [![拡張機能の名前を入力してください](advanced-user-notifications-images/notify02.png)](advanced-user-notifications-images/notify02.png#lightbox)
-5. 必要に応じて**プロジェクト名**または**ソリューション名**を調整し、[**作成**] ボタンをクリックします。 
+5. 必要に応じて **プロジェクト名** または **ソリューション名** を調整し、[ **作成** ] ボタンをクリックします。 
 
     [![プロジェクト名またはソリューション名の調整](advanced-user-notifications-images/notify03.png)](advanced-user-notifications-images/notify03.png#lightbox)
 
@@ -186,15 +186,15 @@ IOS 10 の通知では、イメージ (静的および Gif)、オーディオま
 3. [ **Visual C# > IOS Extensions > Notification Content Extension**] を選択します。
 
     [![通知コンテンツの拡張機能の選択](advanced-user-notifications-images/notify01.w157-sml.png)](advanced-user-notifications-images/notify01.w157.png#lightbox)
-4. 拡張機能の**名前**を入力し、[ **OK** ] をクリックします。
+4. 拡張機能の **名前** を入力し、[ **OK** ] をクリックします。
 
 -----
 
 通知コンテンツ拡張機能をソリューションに追加すると、拡張機能のプロジェクトに次の3つのファイルが作成されます。
 
-1. `NotificationViewController.cs`-これは、通知コンテンツ拡張機能のメインビューコントローラーです。
-2. `MainInterface.storyboard`-開発者は、iOS デザイナーで通知コンテンツ拡張機能の表示可能な UI をレイアウトします。
-3. `Info.plist`-通知コンテンツ拡張機能の構成を制御します。
+1. `NotificationViewController.cs` -これは、通知コンテンツ拡張機能のメインビューコントローラーです。
+2. `MainInterface.storyboard` -開発者は、iOS デザイナーで通知コンテンツ拡張機能の表示可能な UI をレイアウトします。
+3. `Info.plist` -通知コンテンツ拡張機能の構成を制御します。
 
 既定の `NotificationViewController.cs` ファイルは次のようになります。
 
@@ -244,7 +244,7 @@ namespace MonkeyChatNotifyExtension
 
 ### <a name="setting-the-notification-content-extensions-categories"></a>通知コンテンツ拡張機能のカテゴリの設定
 
-システムは、応答する特定のカテゴリに基づいて、アプリの通知コンテンツ拡張機能を検索する方法を通知する必要があります。 次の手順を実行します。
+システムは、応答する特定のカテゴリに基づいて、アプリの通知コンテンツ拡張機能を検索する方法を通知する必要があります。 以下のようにします。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -267,7 +267,7 @@ namespace MonkeyChatNotifyExtension
 
 -----
 
-通知コンテンツ拡張機能のカテゴリ ( `UNNotificationExtensionCategory` ) は、通知アクションの登録に使用されるのと同じカテゴリ値を使用します。 アプリが複数のカテゴリに同じ UI を使用する場合は、を型の `UNNotificationExtensionCategory` **配列**に切り替えて、必要なすべてのカテゴリを指定します。 次に例を示します。
+通知コンテンツ拡張機能のカテゴリ ( `UNNotificationExtensionCategory` ) は、通知アクションの登録に使用されるのと同じカテゴリ値を使用します。 アプリが複数のカテゴリに同じ UI を使用する場合は、を型の `UNNotificationExtensionCategory` **配列** に切り替えて、必要なすべてのカテゴリを指定します。 たとえば、次のように入力します。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -298,9 +298,9 @@ namespace MonkeyChatNotifyExtension
 Notification Content 拡張機能のカスタムユーザーインターフェイスをデザインするには、ファイルをダブルクリックし `MainInterface.storyboard` て IOS デザイナーで編集できるようにし、目的のインターフェイスを構築するために必要な要素をドラッグし `UILabels` ます (やなど `UIImageViews` )。
 
 > [!NOTE]
-> IOS 12 の場合、通知コンテンツの拡張機能には、ボタンやテキストフィールドなどの対話型のコントロールを含めることができます。 詳細については、 [iOS 12](~/ios/platform/introduction-to-ios12/notifications/interactive.md)ドキュメントの「対話型通知」を参照してください。
+> IOS 12 の場合、通知コンテンツの拡張機能には、ボタンやテキストフィールドなどの対話型のコントロールを含めることができます。 詳細については、 [iOS 12](~/ios/platform/introduction-to-ios12/notifications/interactive.md) ドキュメントの「対話型通知」を参照してください。
 
-UI がレイアウトされ、必要なコントロールが C# コードに公開されたら、を編集するためにを開き、 `NotificationViewController.cs` `DidReceiveNotification` ユーザーが通知を展開するときに ui を設定するようにメソッドを変更します。 次に例を示します。
+UI がレイアウトされ、必要なコントロールが C# コードに公開されたら、を編集するためにを開き、 `NotificationViewController.cs` `DidReceiveNotification` ユーザーが通知を展開するときに ui を設定するようにメソッドを変更します。 たとえば、次のように入力します。
 
 ```csharp
 using System;
@@ -361,7 +361,7 @@ namespace MonkeyChatNotifyExtension
 
 通知コンテンツの拡張機能が呼び出される前に通知システムが既に実行されているため、コンテンツ領域は完全にサイズが変更され、ユーザーに表示されると要求されたサイズまでアニメーション化されます。
 
-この影響をなくすには、 `Info.plist` 拡張機能のファイルを編集し、 `UNNotificationExtensionInitialContentSizeRatio` キーのキー `NSExtensionAttributes` に、目的の比率を表す値を入力します。 **Number** 次に例を示します。
+この影響をなくすには、 `Info.plist` 拡張機能のファイルを編集し、 `UNNotificationExtensionInitialContentSizeRatio` キーのキー `NSExtensionAttributes` に、目的の比率を表す値を入力します。 **Number** たとえば、次のように入力します。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -375,7 +375,7 @@ namespace MonkeyChatNotifyExtension
 
 ### <a name="using-media-attachments-in-custom-ui"></a>カスタム UI でのメディア添付ファイルの使用
 
-メディア添付ファイル (上記の「[メディア添付ファイルの追加](#adding-media-attachments)」セクションを参照) は通知ペイロードの一部であるため、既定の通知 UI の場合と同様に、通知コンテンツの拡張機能にアクセスして表示できます。
+メディア添付ファイル (上記の「 [メディア添付ファイルの追加](#adding-media-attachments) 」セクションを参照) は通知ペイロードの一部であるため、既定の通知 UI の場合と同様に、通知コンテンツの拡張機能にアクセスして表示できます。
 
 たとえば、上のカスタム UI に、C# コードに公開されたが含まれている場合、 `UIImageView` 次のコードを使用して、メディア添付ファイルをに読み込むことができます。
 
@@ -448,12 +448,12 @@ namespace MonkeyChatNotifyExtension
 
 カスタムアクションに加えて、通知コンテンツの拡張機能は、次の組み込みアクションにも応答できます。
 
-- **既定のアクション**-ユーザーが通知をタップしてアプリを開き、指定された通知の詳細を表示します。
-- **アクションを無視**する-このアクションは、ユーザーが特定の通知を終了したときにアプリに送信されます。
+- **既定のアクション** -ユーザーが通知をタップしてアプリを開き、指定された通知の詳細を表示します。
+- **アクションを無視** する-このアクションは、ユーザーが特定の通知を終了したときにアプリに送信されます。
 
-また、通知コンテンツの拡張機能では、ユーザーがカスタムアクションのいずれかを実行したときに UI を更新することもできます。たとえば、ユーザーが [カスタムアクションを**受け入れる**] ボタンをタップしたときに受理された日付を表示できます。 また、通知コンテンツの拡張機能は、通知を閉じる前にユーザーがアクションの効果を確認できるように、通知 UI の無視を遅らせるようにシステムに指示することができます。
+また、通知コンテンツの拡張機能では、ユーザーがカスタムアクションのいずれかを実行したときに UI を更新することもできます。たとえば、ユーザーが [カスタムアクションを **受け入れる** ] ボタンをタップしたときに受理された日付を表示できます。 また、通知コンテンツの拡張機能は、通知を閉じる前にユーザーがアクションの効果を確認できるように、通知 UI の無視を遅らせるようにシステムに指示することができます。
 
-これを行うには、完了ハンドラーを含む2番目のバージョンのメソッドを実装し `DidReceiveNotification` ます。 次に例を示します。
+これを行うには、完了ハンドラーを含む2番目のバージョンのメソッドを実装し `DidReceiveNotification` ます。 たとえば、次のように入力します。
 
 ```csharp
 using System;
@@ -527,7 +527,7 @@ namespace myApp {
 }
 ```
 
-`Server.PostEventResponse`通知コンテンツ拡張機能のメソッドにハンドラーを追加することで `DidReceiveNotification` 、拡張機能はすべてのカスタムアクションを処理*する必要があり*ます。 拡張機能では、を変更することによって、それを含むアプリにカスタムアクションを転送することもでき `UNNotificationContentExtensionResponseOption` ます。 次に例を示します。
+`Server.PostEventResponse`通知コンテンツ拡張機能のメソッドにハンドラーを追加することで `DidReceiveNotification` 、拡張機能はすべてのカスタムアクションを処理*する必要があり*ます。 拡張機能では、を変更することによって、それを含むアプリにカスタムアクションを転送することもでき `UNNotificationContentExtensionResponseOption` ます。 たとえば、次のように入力します。
 
 ```csharp
 // Close Notification
@@ -538,7 +538,7 @@ completionHandler (UNNotificationContentExtensionResponseOption.DismissAndForwar
 
 アプリの設計と通知によっては、ユーザーが通知にテキストを入力する必要がある場合があります (メッセージへの返信など)。 通知コンテンツの拡張機能は、標準の通知と同様に、組み込みのテキスト入力アクションにアクセスできます。
 
-次に例を示します。
+たとえば、次のように入力します。
 
 ```csharp
 using System;
