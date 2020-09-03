@@ -1,6 +1,6 @@
 ---
-title: title:"The Xamarin.Forms コマンド インターフェイス" の説明:"この記事では、Xamarin.Forms のデータ バインディングで Command プロパティを実装する方法について説明します。
-description: 'コマンド実行インターフェイスを使用すると、MVVM アーキテクチャにより適した方法でコマンドを実装することができます。" ms.prod: xamarin ms.assetid:69922284-F398-45C3-B4CC-B8E29BB4C533 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:01/05/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms コマンド インターフェイス
+description: この記事では、Xamarin.Forms のデータ バインディングで Command プロパティを実装する方法について説明します。 コマンド実行インターフェイスでは、MVVM アーキテクチャにいっそうよく適した代わりのコマンド実装方法が提供されます。
 ms.prod: xamarin
 ms.assetid: 69922284-F398-45C3-B4CC-B8E29BB4C533
 ms.technology: xamarin-forms
@@ -10,14 +10,14 @@ ms.date: 01/05/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 253255f08cec6f08e03df94798c8572f7cf10f30
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: ad36bd5efe09909753fed948a961a690feb0592a
+ms.sourcegitcommit: a003b036f6fb83818e2ecc9c72a641e3aeb373bd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84139725"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88964663"
 ---
-# <a name="the-xamarinforms-command-interface"></a>Xamarin.Forms コマンド インターフェイス
+# <a name="the-no-locxamarinforms-command-interface"></a>Xamarin.Forms コマンド インターフェイス
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
@@ -688,10 +688,6 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
 `canExecute` メソッドは、引数が小数点であり (小数点が押されたことを示す)、`Entry` に小数点が既に含まれる場合にのみ、`false` を返します。
 
 すべての `execute` メソッドは `RefreshCanExecutes` を呼び出し、それはさらに `DigitCommand` と `ClearCommand` の両方に対して `ChangeCanExecute` を呼び出します。 これにより、現在入力されている数字のシーケンスに基づいて、小数点ボタンとバックスペース ボタンが有効または無効になります。
-
-## <a name="adding-commands-to-existing-views"></a>既存のビューへのコマンドの追加
-
-コマンド実行インターフェイスがサポートされていないビューでコマンド実行インターフェイスを使用したい場合は、イベントをコマンドに変換する Xamarin.Forms の動作を使用することができます。 これについては、「[**再利用可能な EventToCommandBehavior**](~/xamarin-forms/app-fundamentals/behaviors/reusable/event-to-command-behavior.md)」の記事で説明されています。
 
 ## <a name="asynchronous-commanding-for-navigation-menus"></a>ナビゲーション メニューのための非同期コマンド実行
 

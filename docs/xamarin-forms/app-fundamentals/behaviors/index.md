@@ -10,14 +10,14 @@ ms.date: 04/06/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 83952982bd163725fb931c860cac3e267726315c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d917d7d6421cfae7fc877c81023a835573fa99b1
+ms.sourcegitcommit: a003b036f6fb83818e2ecc9c72a641e3aeb373bd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135812"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88964624"
 ---
-# <a name="xamarinforms-behaviors"></a>Xamarin.Forms のビヘイビアー
+# <a name="no-locxamarinforms-behaviors"></a>Xamarin.Forms のビヘイビアー
 
 _ビヘイビアーを使うと、ユーザー インターフェイス コントロールをサブクラス化することなくそれらに機能を追加できます。ビヘイビアーはコードとして記述され、XAML のコントロールまたはコードに追加されます。_
 
@@ -29,10 +29,10 @@ _ビヘイビアーを使うと、ユーザー インターフェイス コン�
 
 アタッチされたビヘイビアーは、1 つ以上のプロパティがアタッチされた `static` クラスです。 この記事では、アタッチされたビヘイビアーを作成して使用する方法を示します。
 
-## <a name="xamarinforms-behaviorscreatingmd"></a>[Xamarin.Forms のビヘイビアー](creating.md)
+## <a name="no-locxamarinforms-behaviors"></a>[Xamarin.Forms のビヘイビアー](creating.md)
 
 Xamarin.Forms のビヘイビアーは、[`Behavior`](xref:Xamarin.Forms.Behavior) または [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) クラスから派生させて作成されます。 この記事では、Xamarin.Forms のビヘイビアーを作成して使用する方法を示します。
 
-## <a name="reusable-behaviors"></a>[再利用可能なビヘイビアー](reusable/index.md)
+## <a name="reusable-effectbehavior"></a>[再利用可能な EffectBehavior](effect-behavior.md)
 
-ビヘイビアーは複数のアプリケーション全体で再利用可能です。 これらの記事では、便利なビヘイビアーを作成して一般的に使用される機能を実行する方法について説明します。
+ビヘイビアーは、コントロールにエフェクトを追加するために役立つ方法です。エフェクトを処理する定型コードを分離コード ファイルから削除します。 この記事では、Xamarin.Forms のビヘイビアーを作成および使用して、コントロールにエフェクトを追加する方法を示します。
