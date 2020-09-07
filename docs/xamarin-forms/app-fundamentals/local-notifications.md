@@ -1,6 +1,6 @@
 ---
-title: 'title: "Xamarin.Forms のローカル通知" description: "この記事では、Xamarin.Forms でローカル通知を送受信する方法について説明します。"'
-description: 'ms.prod: xamarin ms.assetid:60460F57-63C6-4916-BBB5-A870F1DF53D7 ms.technology: xamarin-forms author: profexorgeek ms.author: jusjohns ms.date:10/10/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms のローカル通知
+description: この記事では、Xamarin.Forms でローカル通知を送受信する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 60460F57-63C6-4916-BBB5-A870F1DF53D7
 ms.technology: xamarin-forms
@@ -10,14 +10,14 @@ ms.date: 10/10/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 40e040f216ddda40931273f4e7f5614964862fe8
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: da867dd017ed50ccbc09f969891bb91011379d3f
+ms.sourcegitcommit: f6a2f07d2e689e0cfd01b30008d50c83c63fa70c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84137595"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89052748"
 ---
-# <a name="local-notifications-in-xamarinforms"></a>Xamarin.Forms でのローカル通知
+# <a name="local-notifications-in-no-locxamarinforms"></a>Xamarin.Forms でのローカル通知
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/local-notifications)
 
@@ -50,7 +50,7 @@ public interface INotificationManager
 
 このインターフェイスは、各プラットフォームのプロジェクトで実装されます。 `NotificationReceived` イベントを使うと、アプリケーションで受信した通知を処理できるようになります。 `Initialize` メソッドでは、通知システムを準備するために必要なネイティブ プラットフォームのロジックをすべて実行する必要があります。 `ScheduleNotification` メソッドでは、通知を送信する必要があります。 `ReceiveNotification` メソッドは、メッセージを受信したときに基になるプラットフォームによって呼び出される必要があります。
 
-## <a name="consume-the-interface-in-xamarinforms"></a>Xamarin.Forms でのインターフェイスの使用
+## <a name="consume-the-interface-in-no-locxamarinforms"></a>Xamarin.Forms でのインターフェイスの使用
 
 作成されたインターフェイスは、プラットフォームの実装がまだ作成されていない場合でも、Xamarin.Forms の共有プロジェクトで使用することができます。 サンプル アプリケーションには、次の内容が記載された **MainPage.xaml** という `ContentPage` が含まれています。
 
@@ -113,6 +113,16 @@ public partial class MainPage : ContentPage
 ```
 
 `MainPage` クラスのコンストラクターでは、プラットフォーム固有の `INotificationManager` のインスタンスを取得するために Xamarin.Forms の `DependencyService` が使用されています。 `OnScheduleClicked` メソッドでは、新しい通知のスケジュールを設定するために `INotificationManager` インスタンスが使用されています。 `NotificationReceived` イベントにアタッチされたイベント ハンドラーから呼び出される `ShowNotification` メソッドでは、そのイベントが呼び出されたときに、ページに新しい `Label` が挿入されます。
+
+`NotificationReceived` イベント ハンドラーは、そのイベント引数を `NotificationEventArgs` にキャストします。 この型は、共有の Xamarin.Forms プロジェクトで定義されています。
+
+```csharp
+public class NotificationEventArgs : EventArgs
+{
+    public string Title { get; set; }
+    public string Message { get; set; }
+}
+```
 
 Xamarin.Forms の `DependencyService` の詳細については、[Xamarin.Forms の DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/introduction.md) に関するページを参照してください。
 

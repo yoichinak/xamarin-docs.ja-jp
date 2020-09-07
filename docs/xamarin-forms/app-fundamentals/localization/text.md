@@ -11,12 +11,12 @@ ms.date: 11/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d68227fbf4a4c9db8f4ba8858fdeda6637ce4732
-ms.sourcegitcommit: 14d67a2db82e67471584b1749e0d5b9ec0c0c09b
+ms.openlocfilehash: 727bac49c5bff522125a2f21a9742e428b81c924
+ms.sourcegitcommit: bb18e6b3b5d592374b17932efa1e85c3b5fbad57
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88228608"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88950743"
 ---
 # <a name="no-locxamarinforms-string-and-image-localization"></a>Xamarin.Forms の文字列とイメージのローカライズ
 
@@ -69,7 +69,7 @@ Visual Studio 2019 では、 **[新しい項目の追加]** ダイアログを�
 
 次のスクリーンショットは、**AppResources.es.cs** という名前のスペイン語の翻訳ファイルを示しています。
 
-![.resx ファイルで既定のテキスト リソースを指定する](text-images/pc-spanish-strings.png)
+![.resx ファイルで既定のスペイン語のテキスト リソースを指定する](text-images/pc-spanish-strings.png)
 
 翻訳ファイルでは、既定のファイルに指定されているのと同じ **[名前]** 値が使用されますが、 **[値]** 列にはスペイン語の文字列が含まれています。 また、 **[アクセス修飾子]** は **[コード生成なし]** に設定されています。
 
@@ -139,6 +139,12 @@ Visual Studio 2019 for Mac では、 **[新しい項目の追加]** ダイアロ
 ```csharp
 using System.Resources;
 
+// The resources from the neutral language .resx file are stored directly
+// within the library assembly. For that reason, changing en-US to a different
+// language in this line will not by itself change the language shown in the
+// app. See the discussion of UltimateResourceFallbackLocation in the
+// documentation for additional information:
+// https://docs.microsoft.com/dotnet/api/system.resources.neutralresourceslanguageattribute
 [assembly: NeutralResourcesLanguage("en-US")]
 ```
 

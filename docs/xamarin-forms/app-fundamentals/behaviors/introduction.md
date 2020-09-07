@@ -10,12 +10,12 @@ ms.date: 04/06/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d5bee3baa08387a1ed67384ba4089d63aad08d2c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 37c76a5f325c363a92c2a2c1e597dab28f064cd9
+ms.sourcegitcommit: a003b036f6fb83818e2ecc9c72a641e3aeb373bd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135773"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88964611"
 ---
 # <a name="introduction-to-behaviors"></a>ビヘイビアーの概要
 
@@ -32,7 +32,7 @@ _ビヘイビアーを使うと、ユーザー インターフェイス コン�
 
 Xamarin.Forms は、2 つの異なるスタイルのビヘイビアーをサポートしています。
 
-- **Xamarin.Forms ビヘイビアー**: [`Behavior`](xref:Xamarin.Forms.Behavior) または [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) クラスから派生するクラス。`T` は、このビヘイビアーが適用されるコントロールの種類です。 Xamarin.Forms ビヘイビアーの詳細については、「[Xamarin.Forms Behaviors](~/xamarin-forms/app-fundamentals/behaviors/creating.md)」(Xamarin.Forms ビヘイビアー) と「[再利用可能なビヘイビアー](~/xamarin-forms/app-fundamentals/behaviors/reusable/index.md)」を参照してください。
+- **Xamarin.Forms ビヘイビアー**: [`Behavior`](xref:Xamarin.Forms.Behavior) または [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) クラスから派生するクラス。`T` は、このビヘイビアーが適用されるコントロールの種類です。 Xamarin.Forms ビヘイビアーの詳細については、[Xamarin.Forms のビヘイビアー](~/xamarin-forms/app-fundamentals/behaviors/creating.md)に関する記事を参照してください。
 - **アタッチされたビヘイビアー**: 1 つ以上のプロパティがアタッチされている `static` クラス。 アタッチされたビヘイビアーの詳細については、「[Attached Behaviors](~/xamarin-forms/app-fundamentals/behaviors/attached.md)」(アタッチされたビヘイビアー) を参照してください。
 
 このガイドでは、ビヘイビアーの構築に推奨されるアプローチなので Xamarin.Forms ビヘイビアーに重点を置いています。

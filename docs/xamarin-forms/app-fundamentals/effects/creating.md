@@ -10,12 +10,12 @@ ms.date: 10/24/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d1aead9297312e190a5a04ee0f33328d81f2547a
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: bb4e0c81fb3f2e58be9c44d1ec7fddcf4d72a656
+ms.sourcegitcommit: a003b036f6fb83818e2ecc9c72a641e3aeb373bd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939959"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88964598"
 ---
 # <a name="creating-an-effect"></a>エフェクトの作成
 
@@ -42,8 +42,8 @@ ms.locfileid: "86939959"
 
 `HomePage` 上の [`Entry`](xref:Xamarin.Forms.Entry) コントロールが、各プラットフォーム固有のプロジェクト内の `FocusEffect` クラスによってカスタマイズされます。 各プラットフォームの `PlatformEffect` クラスから、各 `FocusEffect` クラスが派生します。 この結果、次のスクリーンショットに示すように、プラットフォーム固有の背景色を使用して `Entry` コントロールがレンダリングされ、フォーカスを取得するとその色が変更されます。
 
-![各プラットフォームでのフォーカス効果](creating-images/screenshots-1.png)
-![各プラットフォームでのフォーカス効果](creating-images/screenshots-2.png)
+![コントロールにフォーカスがある、各プラットフォームのフォーカス エフェクト](creating-images/screenshots-1.png)
+![コントロールにフォーカスがない、各プラットフォームのフォーカス エフェクト](creating-images/screenshots-2.png)
 
 ## <a name="creating-the-effect-on-each-platform"></a>各プラットフォームでのエフェクトの作成
 
@@ -239,7 +239,7 @@ public class FocusEffect : RoutingEffect
 
 `FocusEffect` クラスで [`RoutingEffect`](xref:Xamarin.Forms.RoutingEffect) クラスがサブクラス化されます。これは、通常はプラットフォーム固有である内部効果をラップするプラットフォームに依存しない効果を表します。 `FocusEffect` クラスで基底クラス コンストラクターが呼び出され、解決グループ名 (効果クラスの [`ResolutionGroupName`](xref:Xamarin.Forms.ResolutionGroupNameAttribute) 属性を使用して指定されます) と効果クラスの [`ExportEffect`](xref:Xamarin.Forms.ExportEffectAttribute) 属性を使用して指定された一意の ID の連結を構成するパラメーターが渡されます。 このため、実行時に [`Entry`](xref:Xamarin.Forms.Entry) が初期化されるときに、`MyCompany.FocusEffect` の新しいインスタンスがコントロールの [`Effects`](xref:Xamarin.Forms.Element.Effects) コレクションに追加されます。
 
-ビヘイビアーを使用するか、アタッチされるプロパティを使用して、効果をアタッチすることもできます。 ビヘイビアーを使用してコントロールに効果をアタッチする方法の詳細については、「[Reusable EffectBehavior](~/xamarin-forms/app-fundamentals/behaviors/reusable/effect-behavior.md)」(再利用可能な EffectBehavior) を参照してください。 アタッチされるプロパティを使用してコントロールに効果をアタッチする方法の詳細については、「[Passing Parameters to an Effect](~/xamarin-forms/app-fundamentals/effects/passing-parameters/index.md)」(効果にパラメーターを渡す) を参照してください。
+ビヘイビアーを使用するか、アタッチされるプロパティを使用して、効果をアタッチすることもできます。 ビヘイビアーを使用してコントロールに効果をアタッチする方法の詳細については、「[Reusable EffectBehavior](~/xamarin-forms/app-fundamentals/behaviors/effect-behavior.md)」(再利用可能な EffectBehavior) を参照してください。 アタッチされるプロパティを使用してコントロールに効果をアタッチする方法の詳細については、「[Passing Parameters to an Effect](~/xamarin-forms/app-fundamentals/effects/passing-parameters/index.md)」(効果にパラメーターを渡す) を参照してください。
 
 ## <a name="consuming-the-effect-in-cnum"></a>C&num; でのエフェクトの使用
 

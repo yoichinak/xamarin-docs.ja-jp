@@ -10,12 +10,12 @@ ms.date: 04/06/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a705eef2ecd240b8944117a67a90ebeebc382bcb
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 55c987ab9f9a95eaeacf648af11c3518a1c27c2a
+ms.sourcegitcommit: a003b036f6fb83818e2ecc9c72a641e3aeb373bd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86933748"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88964650"
 ---
 # <a name="attached-behaviors"></a>アタッチされたビヘイビアー
 
@@ -32,7 +32,7 @@ _アタッチされたビヘイビアーは、1 つ以上のプロパティが�
 1. `propertyChanged` のデリゲートによって、[`BindableObject`](xref:Xamarin.Forms.BindableObject) として受け取られるコントロールの参照が、ビヘイビアーが強化されるように設計されたコントロールの種類にキャストされます。
 1. `propertyChanged` のデリゲートによってコントロールのプロパティ変更、コントロールのメソッド呼び出し、またはコントロールで公開されているイベントに対するイベント ハンドラーの登録が行われ、コア ビヘイビアー機能が実装されます。
 
-アタッチされたビヘイビアーに関する問題は、`static` プロパティおよびメソッドを使用して `static` クラスで定義されている点です。 そのため、状態があるアタッチされたビヘイビアーを作成することは困難です。 さらに、ビヘイビアー構築の推奨されるアプローチとして、Xamarin.Forms ビヘイビアーによって、アタッチされたビヘイビアーが置き換えられます。 Xamarin.Forms ビヘイビアーの詳細については、「[Xamarin.Forms Behaviors](~/xamarin-forms/app-fundamentals/behaviors/creating.md)」(Xamarin.Forms ビヘイビアー) と「[再利用可能なビヘイビアー](~/xamarin-forms/app-fundamentals/behaviors/reusable/index.md)」を参照してください。
+アタッチされたビヘイビアーに関する問題は、`static` プロパティおよびメソッドを使用して `static` クラスで定義されている点です。 そのため、状態があるアタッチされたビヘイビアーを作成することは困難です。 さらに、ビヘイビアー構築の推奨されるアプローチとして、Xamarin.Forms ビヘイビアーによって、アタッチされたビヘイビアーが置き換えられます。 Xamarin.Forms ビヘイビアーの詳細については、[Xamarin.Forms のビヘイビアー](~/xamarin-forms/app-fundamentals/behaviors/creating.md)に関する記事を参照してください。
 
 ## <a name="creating-an-attached-behavior"></a>アタッチされたビヘイビアーを作成する
 
