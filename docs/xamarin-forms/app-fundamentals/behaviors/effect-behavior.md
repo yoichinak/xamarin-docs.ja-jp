@@ -29,8 +29,8 @@ _ビヘイビアーは、コントロールにエフェクトを追加するた�
 
 ビヘイビアーを使用するには、次のビヘイビアー プロパティを設定する必要があります。
 
-- **グループ** – エフェクト クラスの [`ResolutionGroupName`](xref:Xamarin.Forms.ResolutionGroupNameAttribute) 属性の値。
-- **名前** – エフェクト クラスの [`ExportEffect`](xref:Xamarin.Forms.ExportEffectAttribute) 属性の値。
+- **Group** – エフェクト クラスの [`ResolutionGroupName`](xref:Xamarin.Forms.ResolutionGroupNameAttribute) 属性の値。
+- **Name** – エフェクト クラスの [`ExportEffect`](xref:Xamarin.Forms.ExportEffectAttribute) 属性の値。
 
 エフェクトの詳細については、[エフェクト](~/xamarin-forms/app-fundamentals/effects/index.md)に関するページを参照してください。
 
@@ -70,7 +70,7 @@ public class EffectBehavior : Behavior<View>
 
 ### <a name="implementing-the-overrides"></a>オーバーライドの実装
 
-次のコード例に示すように、[`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) クラスの [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) and [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) メソッドは `EffectBehavior` クラスによってオーバーライドされます。
+次のコード例に示すように、[`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) クラスの [`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) および [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) メソッドは `EffectBehavior` クラスによってオーバーライドされます。
 
 ```csharp
 public class EffectBehavior : Behavior<View>
@@ -91,7 +91,7 @@ public class EffectBehavior : Behavior<View>
 }
 ```
 
-[`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) method performs setup by calling the `AddEffect` method, passing in the attached control as a parameter. The [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) メソッドでは、`RemoveEffect` メソッドを呼び出し、アタッチされているコントロールをパラメーターとして渡すことで、クリーンアップが実行されます。
+[`OnAttachedTo`](xref:Xamarin.Forms.Behavior`1.OnAttachedTo(Xamarin.Forms.BindableObject)) メソッドでは、アタッチされているコントロールをパラメーターとして渡して `AddEffect` メソッドを呼び出すことで、セットアップが実行されます。 [`OnDetachingFrom`](xref:Xamarin.Forms.Behavior`1.OnDetachingFrom(Xamarin.Forms.BindableObject)) メソッドでは、アタッチされているコントロールをパラメーターとして渡して `RemoveEffect` メソッドを呼び出すことで、クリーンアップが実行されます。
 
 ### <a name="implementing-the-behavior-functionality"></a>ビヘイビアー機能の実装
 
