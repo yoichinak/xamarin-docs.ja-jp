@@ -11,13 +11,13 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: f265d1da894b195402c91cbf9468a11837c53bcf
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.sourcegitcommit: f6a2f07d2e689e0cfd01b30008d50c83c63fa70c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
+ms.lasthandoff: 09/10/2020
 ms.locfileid: "86933711"
 ---
-# <a name="create-xamarinforms-behaviors"></a>Xamarin.Forms ビヘイビアーの作成
+# <a name="create-no-locxamarinforms-behaviors"></a>Xamarin.Forms ビヘイビアーの作成
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)
 
@@ -59,7 +59,7 @@ public class CustomBehavior : Behavior<View>
 
 その後、適切なコントロールの [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) コレクションにアタッチすることで、ビヘイビアーを使用できます。
 
-## <a name="creating-a-xamarinforms-behavior"></a>Xamarin.Forms ビヘイビアーの作成
+## <a name="creating-a-no-locxamarinforms-behavior"></a>Xamarin.Forms ビヘイビアーの作成
 
 サンプル アプリケーションでは、`NumericValidationBehavior` を示します。ここでは、ユーザーが [`Entry`](xref:Xamarin.Forms.Entry) コントロールに入力した値が `double` でない場合に、その値を赤色で強調表示します。 このビヘイビアーを次のコード例に示します。
 
@@ -92,7 +92,7 @@ public class NumericValidationBehavior : Behavior<Entry>
 > [!NOTE]
 > ビヘイビアーはスタイルを利用して共有し、複数のコントロールに適用できるため、Xamarin.Forms では、ビヘイビアーの `BindingContext` は設定されません。
 
-## <a name="consuming-a-xamarinforms-behavior"></a>Xamarin.Forms ビヘイビアーの使用
+## <a name="consuming-a-no-locxamarinforms-behavior"></a>Xamarin.Forms ビヘイビアーの使用
 
 次の XAML のコード例に示すように、すべての Xamarin.Forms コントロールには、1 つまたは複数のビヘイビアーを追加できる [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) コレクションがあります。
 
@@ -113,12 +113,12 @@ entry.Behaviors.Add (new NumericValidationBehavior ());
 
 実行時、ビヘイビアーは、ビヘイビアーの実装に従って、コントロールとのやりとりに応答します。 次のスクリーン ショットで、無効な入力に応答しているビヘイビアーを示します。
 
-[![Xamarin.Forms Behavior を使用したサンプル アプリケーション](creating-images/screenshots-sml.png)](creating-images/screenshots.png#lightbox "Xamarin.Forms のビヘイビアーを使用したサンプル アプリケーション")
+[![Xamarin.Forms のビヘイビアーを使用したサンプル アプリケーション](creating-images/screenshots-sml.png)](creating-images/screenshots.png#lightbox "Xamarin.Forms のビヘイビアーを使用したサンプル アプリケーション動作")
 
 > [!NOTE]
 > ビヘイビアーは特定のコントロールの種類 (または複数のコントロールに適用できるスーパークラス) に対して記述され、互換性のあるコントロールにのみ追加する必要があります。 互換性のないコントロールにビヘイビアーをアタッチしようとすると、例外がスローされます。
 
-### <a name="consuming-a-xamarinforms-behavior-with-a-style"></a>スタイルによる Xamarin.Forms ビヘイビアーの使用
+### <a name="consuming-a-no-locxamarinforms-behavior-with-a-style"></a>スタイルによる Xamarin.Forms ビヘイビアーの使用
 
 明示的または暗黙的なスタイルによってビヘイビアーを使用することもできます。 ただし、コントロールの [`Behaviors`](xref:Xamarin.Forms.VisualElement.Behaviors) プロパティは読み取り専用であるため、このプロパティを設定するスタイルを作成することはできません。 解決策は、ビヘイビアーの追加と削除を制御する添付プロパティをビヘイビアー クラスに追加することです。 プロセスは、次のとおりです。
 
