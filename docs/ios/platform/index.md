@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: a70095c5897163d3699d03ec42c33826f6d40419
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: aca9227bc5c885000bffe858e0fc8b34d3724dfd
+ms.sourcegitcommit: 0c45e3f810947e3d43223aa01bf3e43a0defca65
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997151"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90843500"
 ---
 # <a name="ios-platform-features-overview"></a>iOS プラットフォームの機能の概要
 
@@ -20,8 +20,9 @@ ms.locfileid: "86997151"
 
 ## <a name="ios-releases"></a>iOS リリース
 
-| Release | 説明 |
+| Release | Description |
 |-------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [IOS 14 の概要](~/ios/platform/ios14/index.md) | このドキュメントでは、Xamarin. iOS 14 について説明します。|
 | [iOS 13 の概要](~/ios/platform/ios13/index.md) | このドキュメントでは、Xamarin. iOS 13 について説明します。|
 | [iOS 12 の概要](~/ios/platform/introduction-to-ios12/index.md) | このドキュメントでは、Xamarin iOS アプリケーションをビルドするときに使用できる iOS 12 の機能について説明します。|
 | [iOS 11 の概要](~/ios/platform/introduction-to-ios11/index.md) | このドキュメントでは、ARKit、Core ML、コア NFC、ドラッグアンドドロップ、MapKit、PDFKit、SiriKit、ビジョンなど、iOS 11 および Xcode 9 の新機能と更新された機能について説明します。 これらの機能を Xamarin で使用する方法について説明しているガイドにリンクしています。 |
@@ -37,7 +38,7 @@ Apple Pay は、iOS 8 と共に導入され、ユーザーは iOS デバイス�
 
 ## <a name="callkit"></a>[CallKit](~/ios/platform/callkit.md)
 
-IOS 10 の新しい CallKit API は、VOIP アプリを iPhone UI と統合し、使い慣れたインターフェイスとエクスペリエンスをエンドユーザーに提供するための手段を提供します。 この API を使用すると、ユーザーは iOS デバイスのロック画面から VOIP 通話を表示して操作したり、電話アプリの [**お気に入り**] ビューと [**受信者**] ビューを使用して連絡先を管理したりできます。
+IOS 10 の新しい CallKit API は、VOIP アプリを iPhone UI と統合し、使い慣れたインターフェイスとエクスペリエンスをエンドユーザーに提供するための手段を提供します。 この API を使用すると、ユーザーは iOS デバイスのロック画面から VOIP 通話を表示して操作したり、電話アプリの [ **お気に入り** ] ビューと [ **受信者** ] ビューを使用して連絡先を管理したりできます。
 
 ## <a name="contacts-and-contactsui"></a>[連絡先と ContactsUI](~/ios/platform/contacts.md)
 
@@ -45,15 +46,15 @@ IOS 9 の導入により、Apple は2つの新しいフレームワークをリ�
 
 ## <a name="document-picker"></a>[ドキュメント ピッカー](~/ios/platform/document-picker.md)
 
-ドキュメントピッカーでは、アプリ間でドキュメントを共有できます。 これらのドキュメントは iCloud または別のアプリのディレクトリに格納されている場合があります。 ドキュメントは、ユーザーがデバイスにインストールした[ドキュメントプロバイダーの拡張機能](~/ios/platform/extensions.md)のセットを介して共有されます。
+ドキュメントピッカーでは、アプリ間でドキュメントを共有できます。 これらのドキュメントは iCloud または別のアプリのディレクトリに格納されている場合があります。 ドキュメントは、ユーザーがデバイスにインストールした [ドキュメントプロバイダーの拡張機能](~/ios/platform/extensions.md) のセットを介して共有されます。
 
 ## <a name="eventkit"></a>[EventKit](~/ios/platform/eventkit.md)
 
-iOS には、カレンダーアプリケーションとアラームアプリケーションという2つのカレンダー関連アプリケーションが組み込まれています。 カレンダーアプリケーションがカレンダーデータをどのように管理するかを理解するのは簡単ですが、リマインダーアプリケーションはあまり明確ではありません。 アラームには、実際に期限切れになったとき、完了したときなどに、日付を関連付けることができます。そのため、iOS では、予定表のイベントかリマインダーかにかかわらず、カレンダー*データベース*と呼ばれるすべてのカレンダーデータが1か所に格納されます。
+iOS には、カレンダーアプリケーションとアラームアプリケーションという2つのカレンダー関連アプリケーションが組み込まれています。 カレンダーアプリケーションがカレンダーデータをどのように管理するかを理解するのは簡単ですが、リマインダーアプリケーションはあまり明確ではありません。 アラームには、実際に期限切れになったとき、完了したときなどに、日付を関連付けることができます。そのため、iOS では、予定表のイベントかリマインダーかにかかわらず、カレンダー *データベース*と呼ばれるすべてのカレンダーデータが1か所に格納されます。
 
 ## <a name="ios-extensions"></a>[iOS の拡張機能](~/ios/platform/extensions.md)
 
-IOS 8 で導入された拡張機能は、 `UIViewControllers` ios によって、**通知センター**内などの標準コンテキスト内で、特殊な入力を実行するためにユーザーによって要求されたカスタムキーボードの種類、または拡張機能が特殊効果フィルターを提供できる画像の編集などの他のコンテキストに特化したものです。
+IOS 8 で導入された拡張機能は、 `UIViewControllers` ios によって、 **通知センター**内などの標準コンテキスト内で、特殊な入力を実行するためにユーザーによって要求されたカスタムキーボードの種類、または拡張機能が特殊効果フィルターを提供できる画像の編集などの他のコンテキストに特化したものです。
 
 ## <a name="graphics-and-animation-in-ios"></a>[iOS のグラフィックスとアニメーション](~/ios/platform/graphics-animation-ios/index.md)
 
@@ -81,7 +82,7 @@ Apple は、iOS 9 のゲーム Api に技術的にいくつかの機能強化を
 
 ## <a name="message-app-integration"></a>[メッセージアプリの統合](~/ios/platform/message-app-integration/index.md)
 
-IOS 10 を初めて使用する場合、メッセージアプリ拡張機能は**Messages**アプリと統合され、ユーザーに新しい機能を提供します。 拡張機能は、テキスト、ステッカー、メディアファイル、および対話型メッセージを送信できます。
+IOS 10 を初めて使用する場合、メッセージアプリ拡張機能は **Messages** アプリと統合され、ユーザーに新しい機能を提供します。 拡張機能は、テキスト、ステッカー、メディアファイル、および対話型メッセージを送信できます。
 
 ## <a name="multitasking-for-ipad"></a>[iPad のマルチタスキング](~/ios/platform/multitasking.md)
 
@@ -107,11 +108,11 @@ IOS 9 では Search が拡張されており、Xamarin iOS アプリ内の情報
 
 ## <a name="sirikit"></a>[SiriKit](~/ios/platform/sirikit/index.md)
 
-IOS 10 の新機能である SiriKit を使用すると、ios アプリは、アプリ拡張機能と新しい**インテント**および**インテント UI**フレームワークを使用して、Ios デバイスで siri と Maps アプリを使用して、ユーザーがアクセスできるサービスを提供できます。
+IOS 10 の新機能である SiriKit を使用すると、ios アプリは、アプリ拡張機能と新しい **インテント** および **インテント UI** フレームワークを使用して、Ios デバイスで siri と Maps アプリを使用して、ユーザーがアクセスできるサービスを提供できます。
 
 ## <a name="social-framework"></a>[ソーシャルフレームワーク](~/ios/platform/social-framework.md)
 
-ソーシャルフレームワークは、 _Twitter_や_Facebook_などのソーシャルネットワークや中国のユーザー向けの_sinaweibo_と対話するための統一された API を提供します。
+ソーシャルフレームワークは、 _Twitter_ や _Facebook_などのソーシャルネットワークや中国のユーザー向けの _sinaweibo_ と対話するための統一された API を提供します。
 
 ## <a name="speech-recognition"></a>[音声認識](~/ios/platform/speech.md)
 
