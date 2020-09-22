@@ -56,7 +56,7 @@
           items:
             - name: Objective-C 開発者向け Xamarin
               href: get-started/objective-c-developers/index.md
-            - name: 'Objective-C 開発者向けの C# Primer'
+            - name: Objective-C 開発者向けの C# Primer
               href: get-started/objective-c-developers/primer.md
     - name: アプリケーションの基礎
       items:
@@ -244,6 +244,12 @@
       items:
         - name: 概要
           href: platform/index.md
+        - name: iOS 14
+          items:
+            - name: iOS 14 の概要
+              href: platform/ios14/index.md
+            - name: 作業開始
+              href: platform/ios14/get-started.md
         - name: iOS 13
           items:
             - name: iOS 13 の概要
