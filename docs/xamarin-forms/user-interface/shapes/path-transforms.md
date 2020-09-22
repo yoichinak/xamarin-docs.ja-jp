@@ -1,5 +1,5 @@
 ---
-title: 'Xamarin.Forms図形: パスの変換'
+title: 'Xamarin.Forms 図形: パスの変換'
 description: 変換は、 Xamarin.Forms パスオブジェクトをある座標空間から別の座標空間に変換する方法を定義します。
 ms.prod: xamarin
 ms.assetid: 07DE3D66-1820-4642-BDDF-84146D40C99D
@@ -10,35 +10,35 @@ ms.date: 07/02/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fc0ff4a361175b52c0014427cee54ce5e14ab8f8
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 6bc61eadb40a66c278955936e15158f34709fd18
+ms.sourcegitcommit: aeefe667156ca8d3ee2ee21d9bec0fa629589e33
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918395"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90928648"
 ---
-# <a name="no-locxamarinforms-shapes-path-transforms"></a>Xamarin.Forms図形: パスの変換
+# <a name="no-locxamarinforms-shapes-path-transforms"></a>Xamarin.Forms 図形: パスの変換
 
 ![プレリリース API](~/media/shared/preview.png)
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 は、ある `Transform` `Path` 座標空間から別の座標空間にオブジェクトを変換する方法を定義します。 変換がオブジェクトに適用されると `Path` 、オブジェクトが UI でどのようにレンダリングされるかが変更されます。
 
-変換は、回転、拡大縮小、傾斜、および平行移動という4つの一般的な分類に分類できます。 Xamarin.Formsは、次の各変換分類のクラスを定義します。
+変換は、回転、拡大縮小、傾斜、および平行移動という4つの一般的な分類に分類できます。 Xamarin.Forms は、次の各変換分類のクラスを定義します。
 
 - `RotateTransform``Path`。指定したでを回転させ `Angle` ます。
 - `ScaleTransform``Path`。指定された量だけオブジェクトをスケーリングし `ScaleX` `ScaleY` ます。
 - `SkewTransform``Path`。指定された量だけオブジェクトを傾斜させ `AngleX` `AngleY` ます。
 - `TranslateTransform``Path`。指定された量だけオブジェクトを移動し `X` `Y` ます。
 
-Xamarin.Formsには、より複雑な変換を作成するための次のクラスも用意されています。
+Xamarin.Forms には、より複雑な変換を作成するための次のクラスも用意されています。
 
 - `TransformGroup`。複数の変換オブジェクトで構成される複合変換を表します。
 - `CompositeTransform`。オブジェクトに複数の変換操作を適用 `Path` します。
 - `MatrixTransform`。他の変換クラスによって提供されないカスタム変換を作成します。
 
-これらのクラスはすべて `Transform` 、型のプロパティを定義するクラスから派生 `Value` `Matrix` します。 このプロパティは、現在の変換をオブジェクトとして表し `Matrix` ます。 構造体の詳細については `Matrix` 、「 [Transform matrix](#transform-matrix)」を参照してください。
+これらのクラスはすべて、 `Transform` `Value` 現在の変換を `Matrix` オブジェクトとして表す型のプロパティを定義するクラスから派生し `Matrix` ます。 このプロパティは、オブジェクトによって支えられています。これは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) データバインディングのターゲットとスタイルを設定できることを意味します。 構造体の詳細については `Matrix` 、「 [Transform matrix](#transform-matrix)」を参照してください。
 
 に変換を適用するには `Path` 、変換クラスを作成し、プロパティの値として設定し `Path.RenderTransform` ます。
 
@@ -52,7 +52,7 @@ Xamarin.Formsには、より複雑な変換を作成するための次のクラ�
 - `CenterX`型のは、 `double` 回転中心点の x 座標を表します。 このプロパティの既定値は0.0 です。
 - `CenterY`型のは、 `double` 回転の中心点の y 座標を表します。 このプロパティの既定値は0.0 です。
 
-これらのプロパティは、オブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。これは、データバインディングのターゲットとスタイルを設定できることを意味します。
+これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトが基になっています。つまり、これらは、データ バインディングの対象にすることができ、スタイルを設定できます。
 
 `CenterX`プロパティと `CenterY` プロパティは、オブジェクトを回転させるポイントを指定し `Path` ます。 この中心点は、変換されたオブジェクトの座標空間で表されます。 既定では、回転は (0, 0) に適用されます。これはオブジェクトの左上隅です `Path` 。
 
@@ -87,7 +87,7 @@ Xamarin.Formsには、より複雑な変換を作成するための次のクラ�
 - `CenterX``double`この変換の中心点の x 座標を表す型の。 このプロパティの既定値は0.0 です。
 - `CenterY``double`この変換の中心点の y 座標を表す型の。 このプロパティの既定値は0.0 です。
 
-これらのプロパティは、オブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。これは、データバインディングのターゲットとスタイルを設定できることを意味します。
+これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトが基になっています。つまり、これらは、データ バインディングの対象にすることができ、スタイルを設定できます。
 
 との値は、 `ScaleX` `ScaleY` 結果のスケーリングに大きな影響を与えます。
 
@@ -133,7 +133,7 @@ Xamarin.Formsには、より複雑な変換を作成するための次のクラ�
 - `CenterX``double`変換の中心の x 座標を表す型の。 このプロパティの既定値は0.0 です。
 - `CenterY``double`変換の中心の y 座標を表す型の。 このプロパティの既定値は0.0 です。
 
-これらのプロパティは、オブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。これは、データバインディングのターゲットとスタイルを設定できることを意味します。
+これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトが基になっています。つまり、これらは、データ バインディングの対象にすることができ、スタイルを設定できます。
 
 傾斜変換の効果を予測する際は、`AngleX` によって元の座標系に対して x 軸の値が傾斜することを考慮します。 したがって、が `AngleX` 30 の場合、y 軸は原点を介して30°回転し、原点から30°回転して値を傾斜させます。 同様に、 `AngleY` 30 のは、オブジェクトの y 値を `Path` 原点から30°傾斜させます。
 
@@ -170,7 +170,7 @@ Xamarin.Formsには、より複雑な変換を作成するための次のクラ�
 - `X``double`x 軸に沿って移動する距離を表す型の。 このプロパティの既定値は0.0 です。
 - `Y``double`y 軸に沿って移動する距離を表す型の。 このプロパティの既定値は0.0 です。
 
-これらのプロパティは、オブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。これは、データバインディングのターゲットとスタイルを設定できることを意味します。
+これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトが基になっています。つまり、これらは、データ バインディングの対象にすることができ、スタイルを設定できます。
 
 負 `X` の値はオブジェクトを左に移動し、正の値はオブジェクトを右に移動します。 負 `Y` の値はオブジェクトを上に移動し、正の値はオブジェクトを下へ移動します。
 
@@ -195,7 +195,7 @@ Xamarin.Formsには、より複雑な変換を作成するための次のクラ�
 
 ## <a name="multiple-transforms"></a>複数の変換
 
-Xamarin.Formsには、オブジェクトへの複数の変換の適用をサポートする2つのクラスがあり `Path` ます。 これらは `TransformGroup` 、、および `CompositeTransform` です。 は `TransformGroup` 任意の順序で変換を実行し、は `CompositeTransform` 特定の順序で変換を実行します。
+Xamarin.Forms には、オブジェクトへの複数の変換の適用をサポートする2つのクラスがあり `Path` ます。 これらは `TransformGroup` 、、および `CompositeTransform` です。 は `TransformGroup` 任意の順序で変換を実行し、は `CompositeTransform` 特定の順序で変換を実行します。
 
 ### <a name="transform-groups"></a>変換グループ
 
@@ -243,7 +243,7 @@ Xamarin.Formsには、オブジェクトへの複数の変換の適用をサポ�
 - `TranslateX``double`x 軸に沿って移動する距離を表す型の。 このプロパティの既定値は0.0 です。
 - `TranslateY``double`y 軸に沿って移動する距離を表す型の。 このプロパティの既定値は0.0 です。
 
-これらのプロパティは、オブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。これは、データバインディングのターゲットとスタイルを設定できることを意味します。
+これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトが基になっています。つまり、これらは、データ バインディングの対象にすることができ、スタイルを設定できます。
 
 は、次の `CompositeTransform` 順序で変換を適用します。
 
@@ -401,4 +401,4 @@ Xamarin.Formsには、オブジェクトへの複数の変換の適用をサポ�
 ## <a name="related-links"></a>関連リンク
 
 - [図形のデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
-- [Xamarin.Forms図形](index.md)
+- [Xamarin.Forms 図形](index.md)
