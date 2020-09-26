@@ -2,7 +2,7 @@
   href: index.yml
   expanded: true
   items:
-    - name: はじめに
+    - name: 作業開始
       href: get-started/index.md
       expanded: true
       items:
@@ -18,7 +18,7 @@
               items:
                 - name: ハードウェアの高速化 (Hyper-V と HAXM)
                   href: get-started/installation/android-emulator/hardware-acceleration.md
-                - name: デバイス マネージャー
+                - name: デバイス マネージャ
                   href: get-started/installation/android-emulator/device-manager.md
                 - name: デバイスのプロパティ
                   href: get-started/installation/android-emulator/device-properties.md
@@ -28,19 +28,19 @@
               href: get-started/installation/set-up-device-for-development.md
             - name: Microsoft Mobile OpenJDK のプレビュー
               href: get-started/installation/openjdk.md
-        - name: 'Hello, Android'
+        - name: Hello Android
           href: get-started/hello-android/index.md
           items:
-            - name: '第 1 部:クイック スタート'
+            - name: 'パート 1: クイック スタート'
               href: get-started/hello-android/hello-android-quickstart.md
-            - name: '第 2 部: 詳しく調べる'
+            - name: 'パート 2: 深い分析'
               href: get-started/hello-android/hello-android-deepdive.md
         - name: Hello Android のマルチスクリーン
           href: get-started/hello-android-multiscreen/index.md
           items:
-            - name: '第 1 部:クイック スタート'
+            - name: 'パート 1: クイック スタート'
               href: get-started/hello-android-multiscreen/hello-android-multiscreen-quickstart.md
-            - name: '第 2 部: 詳しく調べる'
+            - name: 'パート 2: 深い分析'
               href: get-started/hello-android-multiscreen/hello-android-multiscreen-deepdive.md
         - name: Java 開発者向け Xamarin
           href: get-started/java-developers.md
@@ -139,13 +139,13 @@
               href: user-interface/android-designer/resource-qualifiers.md
             - name: 代替レイアウト ビュー
               href: user-interface/android-designer/alternative-layout-views.md
-            - name: マテリアル デザイン機能
+            - name: 素材のデザイン機能
               href: user-interface/android-designer/material-design-features.md
             - name: Android レイアウト診断
               href: user-interface/android-designer/diagnostics.md
             - name: Android Designer 診断アナライザー
               href: user-interface/android-designer/diagnostic-analyzers.md
-        - name: マテリアル テーマ
+        - name: Material Theme
           href: user-interface/material-theme.md
         - name: ユーザー プロファイル
           href: user-interface/user-profile.md
@@ -211,17 +211,17 @@
                   href: user-interface/controls/buttons/check-box.md
                 - name: カスタム ボタン
                   href: user-interface/controls/buttons/custom-button.md
-            - name: 予定表
+            - name: Calendar
               href: user-interface/controls/calendar.md
             - name: CardView
               href: user-interface/controls/card-view.md
             - name: EditText
               href: user-interface/controls/edit-text.md
-            - name: Gallery
+            - name: '[ギャラリー]'
               href: user-interface/controls/gallery.md
             - name: ナビゲーション バー
               href: user-interface/controls/navigation-bar.md
-            - name: 選択
+            - name: ピッカー
               href: user-interface/controls/pickers/index.md
               items:
                 - name: 日付選択
@@ -234,7 +234,7 @@
               href: user-interface/controls/ratingbar.md
             - name: Spinner
               href: user-interface/controls/spinner.md
-            - name: Switch
+            - name: スイッチ
               href: user-interface/controls/switch.md
             - name: TextureView
               href: user-interface/controls/texture-view.md
@@ -287,7 +287,7 @@
           href: platform/android-job-scheduler.md
         - name: Firebase ジョブ ディスパッチャー
           href: platform/firebase-job-dispatcher.md
-        - name: フラグメント
+        - name: fragments
           href: platform/fragments/index.md
           items:
             - name: フラグメントの実装
@@ -330,7 +330,7 @@
         - name: コンテンツ プロバイダー
           href: platform/content-providers/index.md
           items:
-            - name: しくみ
+            - name: 機能
               href: platform/content-providers/how-it-works.md
             - name: 連絡先の ContentProvider の使用
               href: platform/content-providers/contacts-contentprovider.md
@@ -341,7 +341,7 @@
           items:
             - name: 場所
               href: platform/maps-and-location/location.md
-            - name: マップ
+            - name: Maps
               href: platform/maps-and-location/maps/index.md
               items:
                 - name: マップ アプリケーション
@@ -359,7 +359,7 @@
               href: platform/java-integration/android-callable-wrappers.md
             - name: JNI の使用
               href: platform/java-integration/working-with-jni.md
-            - name: 'Java から C# への移植'
+            - name: Java から C# への移植
               href: platform/java-integration/porting-java-to-csharp.md
         - name: Java ライブラリのバインド
           href: platform/binding-java-library/index.md
@@ -526,6 +526,12 @@
           items:
             - name: ビルド プロセス
               href: deploy-test/building-apps/build-process.md
+            - name: ビルド項目
+              href: deploy-test/building-apps/build-items.md
+            - name: ビルド プロパティ
+              href: deploy-test/building-apps/build-properties.md
+            - name: ビルド ターゲット
+              href: deploy-test/building-apps/build-targets.md
             - name: ABI 固有の APK のビルド
               href: deploy-test/building-apps/abi-specific-apks.md
         - name: コマンド ライン エミュレーター
@@ -643,7 +649,7 @@
     - name: Wear
       href: wear/index.md
       items:
-        - name: はじめに
+        - name: 作業開始
           href: wear/get-started/index.md
           items:
             - name: Android Wear の概要
@@ -674,7 +680,7 @@
               href: wear/deploy-test/debug-on-emulator.md
             - name: Wear デバイスでのデバッグ
               href: wear/deploy-test/debug-on-device.md
-            - name: パッケージ化
+            - name: 梱包
               href: wear/deploy-test/packaging.md
     - name: リリース ノート
       href: 'https://docs.microsoft.com/xamarin/android/release-notes/'
