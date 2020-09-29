@@ -7,20 +7,20 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 49f2bdf63c286464073308cd1f17239692aa2395
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 002c57a1549201018cb2068f000a038f686eb2c0
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84567334"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436733"
 ---
 # <a name="working-with-the-watchos-parent-application-in-xamarin"></a>Xamarin での watchOS 親アプリケーションの操作
 
 Watch アプリとバンドルされている iOS アプリとの間で通信を行うには、さまざまな方法があります。
 
-- Watch アプリは、iPhone の親アプリで[コードを実行](#run-code)できます。
+- Watch アプリは、iPhone の親アプリで [コードを実行](#run-code) できます。
 
-- 監視拡張機能は、親 iPhone アプリと[ストレージの場所を共有](#shared-storage)できます。
+- 監視拡張機能は、親 iPhone アプリと [ストレージの場所を共有](#shared-storage) できます。
 
 - ハンドオフを使用して、通知からのデータを watch アプリに渡し、ユーザーをアプリの特定のインターフェイスコントローラーに送信します。
 
@@ -30,8 +30,8 @@ Watch アプリとバンドルされている iOS アプリとの間で通信を
 
 次の2つのサンプルでは、を使用して `WCSession` コードを実行し、watch アプリとペアになっている iPhone との間でメッセージを送信する方法を示します。
 
-- [接続の監視](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchconnectivity/)
-- [SimpleWatchConnectivity](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-simplewatchconnectivity/) 
+- [接続の監視](/samples/xamarin/ios-samples/watchos-watchconnectivity/)
+- [SimpleWatchConnectivity](/samples/xamarin/ios-samples/watchos-simplewatchconnectivity/) 
 
 ## <a name="shared-storage"></a>ストレージの共有
 
@@ -70,9 +70,9 @@ Console.WriteLine ("agcpath: " + appGroupContainerPath);
 // use the path to create and update files
 ```
 
-注: パスがの場合は、 `null` [アプリグループの構成](~/ios/watchos/app-fundamentals/app-groups.md)を確認して、プロビジョニングプロファイルが正しく構成されており、開発用コンピューターにダウンロード/インストールされていることを確認します。
+注: パスがの場合は、 `null` [アプリグループの構成](~/ios/watchos/app-fundamentals/app-groups.md) を確認して、プロビジョニングプロファイルが正しく構成されており、開発用コンピューターにダウンロード/インストールされていることを確認します。
 
-詳細については、[アプリグループ機能](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md)のドキュメントを参照してください。
+詳細については、 [アプリグループ機能](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md) のドキュメントを参照してください。
 
 ## <a name="related-links"></a>関連リンク
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: davidortinau
 ms.author: daortin
-ms.openlocfilehash: bdbff7760e7680173c57e5fc83cecb80967c0a51
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 2eef38791f420fd49b87b46fd131f1e6ce501892
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86996098"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436582"
 ---
 # <a name="creating-a-xamarinios-application-using-the-reflection-api"></a>リフレクション API を使用して Xamarin iOS アプリケーションを作成する
 
@@ -20,15 +20,15 @@ MT。D リフレクション API を使用すると、MT の属性でクラス�
 
 ## <a name="setting-up-mtd"></a>MT を設定しています。A
 
-MT.D は、Xamarin. iOS と共に配布されます。 これを使用するには、Visual Studio 2017 または Visual Studio for Mac で Xamarin. iOS プロジェクトの [**参照**] ノードを右クリックし、 **monotouch.dialog**アセンブリへの参照を追加します。 次に、 `using MonoTouch.Dialog` 必要に応じて、ソースコードにステートメントを追加します。
+MT.D は、Xamarin. iOS と共に配布されます。 これを使用するには、Visual Studio 2017 または Visual Studio for Mac で Xamarin. iOS プロジェクトの [ **参照** ] ノードを右クリックし、 **monotouch.dialog** アセンブリへの参照を追加します。 次に、 `using MonoTouch.Dialog` 必要に応じて、ソースコードにステートメントを追加します。
 
 ## <a name="getting-started-with-the-reflection-api"></a>リフレクション API の概要
 
 リフレクション API の使用方法は次のように単純です。
 
 1. MT で修飾されたクラスを作成します。D 属性。
-1. インスタンスを作成し `BindingContext` 、上記のクラスのインスタンスを渡します。
-1. を作成し、を `DialogViewController` 渡し `BindingContext’s` `RootElement` ます。
+1. インスタンスを作成し  `BindingContext` 、上記のクラスのインスタンスを渡します。
+1. を作成し、を  `DialogViewController` 渡し  `BindingContext’s` `RootElement` ます。
 
 リフレクション API の使用方法を示す例を見てみましょう。 この例では、次のように単純なデータ入力画面を作成します。
 
@@ -143,7 +143,7 @@ public class Expense
 
 ## <a name="related-links"></a>関連リンク
 
-- [MTDReflectionWalkthrough (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/mtdreflectionwalkthrough)
+- [MTDReflectionWalkthrough (サンプル)](/samples/xamarin/ios-samples/mtdreflectionwalkthrough)
 - [Monotouch.dialog ダイアログの概要](~/ios/user-interface/monotouch.dialog/index.md)
 - [Elements API のチュートリアル](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
 - [JSON 要素のチュートリアル](~/ios/user-interface/monotouch.dialog/monotouch.dialog-json-markup.md)

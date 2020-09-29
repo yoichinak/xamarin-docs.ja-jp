@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/30/2017
-ms.openlocfilehash: bddab35044c2b85b69146a03babd9884784baceb
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 8ccafec971a97a05dbf16488974d7a8e8e349708
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574588"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91437342"
 ---
 # <a name="new-features-in-mapkit-on-ios-11"></a>IOS 11 の MapKit の新機能
 
@@ -29,7 +29,7 @@ iOS 11 では、MapKit に次の新機能が追加されています。
 
 ## <a name="automatically-grouping-markers-while-zooming"></a>ズーム中にマーカーを自動的にグループ化する
 
-サンプル[Mapkit サンプル "Tandm"](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-mapkitsample)は、新しい iOS 11 注釈クラスタリング機能を実装する方法を示しています。
+サンプル [Mapkit サンプル "Tandm"](/samples/xamarin/ios-samples/ios11-mapkitsample) は、新しい iOS 11 注釈クラスタリング機能を実装する方法を示しています。
 
 ### <a name="1-create-an-mkpointannotation-subclass"></a>1. サブクラスを作成する `MKPointAnnotation`
 
@@ -106,9 +106,9 @@ public class BikeView : MKMarkerAnnotationView
 
 ### <a name="3-create-an-mkannotationview-to-represent-clusters-of-markers"></a>3. `MKAnnotationView` マーカーのクラスターを表すを作成する
 
-マーカーのクラスターを表す注釈ビューは単純なイメージ_である場合_がありますが、ユーザーは、グループ化されたマーカーの数について視覚的な手掛かりを提供するようアプリに要求します。
+マーカーのクラスターを表す注釈ビューは単純なイメージ _である場合_ がありますが、ユーザーは、グループ化されたマーカーの数について視覚的な手掛かりを提供するようアプリに要求します。
 
-この[サンプルコード](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-mapkitsample)では、coregraphics を使用して、クラスター内のマーカーの数と、各マーカーの種類の比率の円グラフ表現を表示します。
+この [サンプルコード](/samples/xamarin/ios-samples/ios11-mapkitsample) では、coregraphics を使用して、クラスター内のマーカーの数と、各マーカーの種類の比率の円グラフ表現を表示します。
 
 次の設定も行う必要があります。
 
@@ -194,13 +194,13 @@ MapView.Register(typeof(ClusterView), MKMapViewDefault.ClusterAnnotationViewReus
 
 ![マップ上のクラスター化マーカーを示すシミュレーター](mapkit-images/cyclemap-sml.png)
 
-MapKit を使用してデータを表示する方法の詳細については、 [「マップ」セクション](~/ios/user-interface/controls/ios-maps/index.md)を参照してください。
+MapKit を使用してデータを表示する方法の詳細については、 [「マップ」セクション](~/ios/user-interface/controls/ios-maps/index.md) を参照してください。
 
 <a name="compass"></a>
 
 ## <a name="compass-button"></a>コンパスボタン
 
-iOS 11 では、マップからコンパスをポップして、ビュー内の他の場所にレンダリングする機能が追加されています。 例については、 [Tandm サンプルアプリ](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-mapkitsample)を参照してください。
+iOS 11 では、マップからコンパスをポップして、ビュー内の他の場所にレンダリングする機能が追加されています。 例については、 [Tandm サンプルアプリ](/samples/xamarin/ios-samples/ios11-mapkitsample) を参照してください。
 
 コンパス (マップの向きが変更されたときのライブアニメーションを含む) のようなボタンを作成し、別のコントロールでレンダリングします。
 
@@ -255,6 +255,6 @@ View.AddSubview(button); // constraints omitted for simplicity
 
 ## <a name="related-links"></a>関連リンク
 
-- [MapKit サンプル ' Tandm '](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-mapkitsample)
+- [MapKit サンプル ' Tandm '](/samples/xamarin/ios-samples/ios11-mapkitsample)
 - [MKCompassButton](https://developer.apple.com/documentation/mapkit/mkcompassbutton)
 - [MapKit (WWDC) の新機能 (ビデオ)](https://developer.apple.com/videos/play/wwdc2017/237/)

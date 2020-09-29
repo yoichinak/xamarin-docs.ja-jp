@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/19/2017
-ms.openlocfilehash: 7262e44fe862e7a5c71f0b1dcfa5d672932fd4ee
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 35de7c5cf8fdb46f5bba0552e767ac00ee0fe34f
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73032185"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91437354"
 ---
 # <a name="introduction-to-ios-11"></a>iOS 11 の概要
 
@@ -20,28 +20,28 @@ ms.locfileid: "73032185"
 
 iOS 11 には、さまざまなフレームワークにわたる多くの新機能と機能強化が含まれています。
 
-## <a name="preparing-your-app-for-ios-11updating-your-appindexmd"></a>[IOS 11 用アプリの準備](updating-your-app/index.md)
+## <a name="preparing-your-app-for-ios-11"></a>[IOS 11 用アプリの準備](updating-your-app/index.md)
 
 Apple は、iOS 11 用のアーキテクチャの更新、新しいビジュアルの変更、および更新された iTunes Connect プロセスを導入しました。 このガイドを使用して、新しいリリース用に Xamarin iOS アプリが準備されていることを確認してください。
 
-## <a name="arkitarkitindexmd"></a>[ARKit](arkit/index.md)
+## <a name="arkit"></a>[ARKit](arkit/index.md)
 
 ARKit は、iOS に拡張された現実をもたらし、ユーザーはデバイスのカメラを介して世界中と対話できるようにします。
 Xamarin では、 [Arkit を UrhoSharp と共](arkit/urhosharp.md)に使用することもできます。
 
-## <a name="coremlcoremlmd"></a>[CoreML](coreml.md)
+## <a name="coreml"></a>[CoreML](coreml.md)
 
 Machine learning モデルは、CoreML で iOS 11 アプリに統合できます。 CoreML フレームワークには、既存のモデルをアプリプロジェクトに組み込むための単純な API が用意されているため、アプリで問題を分析することができます。
 
-## <a name="corenfccorenfcmd"></a>[CoreNFC](corenfc.md)
+## <a name="corenfc"></a>[CoreNFC](corenfc.md)
 
 iPhone 7 以降のデバイスでは、近距離無線通信 (NFC) タグを読み取ることができます。これにより、アプリはタグ付けされた製品、場所、または世界中の物を検出できます。
 
-## <a name="drag-and-dropdrag-and-dropmd"></a>[ドラッグ アンド ドロップ](drag-and-drop.md)
+## <a name="drag-and-drop"></a>[ドラッグ アンド ドロップ](drag-and-drop.md)
 
 ドラッグアンドドロップフレームワークを使用すると、タッチによってデータを移動するための iOS 全体のサポートが提供されます。 IPad では、さまざまなアプリの両方でドラッグできます。iPhone では、同じアプリ内でのみドラッグできます。 豊富なデータ型、アニメーション、マルチタッチジェスチャの処理など、さまざまな種類のカスタマイズがサポートされています。
 
-## <a name="mapkitmapkitmd"></a>[MapKit](mapkit.md)
+## <a name="mapkit"></a>[MapKit](mapkit.md)
 
 MapKit には、自動マーカーグループ化のサポートや、ビューへのコンパスの追加など、さまざまな機能強化が施されています。
 
@@ -49,37 +49,37 @@ MapKit には、自動マーカーグループ化のサポートや、ビュー�
 
 IOS 11 で PDFKit が利用可能になり、アプリに PDF の作成と編集の機能が提供されるようになりました。
 
-## <a name="sirikitsirikitmd"></a>[SiriKit](sirikit.md)
+## <a name="sirikit"></a>[SiriKit](sirikit.md)
 
 Siri では、リストやメモなど、さらに多くの相互作用がサポートされるようになりました。その他の拡張機能としては、別のアプリ名があります
 
-## <a name="visionvisionmd"></a>[Vision](vision.md)
+## <a name="vision"></a>[Vision](vision.md)
 
 顔検出と認識、CoreML モデル、新しいバーコード検出 Api、テキストとホライズンの検出、および一般的なオブジェクトの検出と追跡を含む、さまざまなイメージ処理および分析機能を iOS に提供します。
 
 ## <a name="samples"></a>サンプル
 
-使用を開始するためC#の[サンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS11)がいくつか用意されています。
+使用を開始するための C# [サンプル](/samples/browse/?products=xamarin&term=Xamarin.iOS%2biOS11) がいくつか用意されています。
 
-- [ARKit サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-arkitsample)
-- [オブジェクトを配置する ARKit](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-arkitplacingobjects)
+- [ARKit サンプル](/samples/xamarin/ios-samples/ios11-arkitsample)
+- [オブジェクトを配置する ARKit](/samples/xamarin/ios-samples/ios11-arkitplacingobjects)
 - [ARKit と UrhoSharp](arkit/urhosharp.md)
-- [CoreML イメージ認識のサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlimagerecognition)
-- [Azure カスタムモデルを使用した CoreML](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlazuremodel)
-- [CoreNFC タグリーダーのサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-nfctagreader)
-- [ドラッグ & ドロップテーブルビュー](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddroptableview)
-- [& ドロップコレクションビューをドラッグします](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddropcollectionview)
-- [ドラッグ & ドロップカスタムビュー](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddropcustomview)
-- [DragBoard ドラッグ & ドロップサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-draganddropdragboard)
-- [MapKit サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-mapkitsample)
-- [SiriKit のサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-sirikitsample)
-- [更新された Photos フレームワークのサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-samplephotoapp)
-- [ビジョン & CoreML サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlvision)
-- [視覚四角形の検出のサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionrectangles/)
-- [ビジョン検出のサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionfaces)
-- [PDKFit ウィジェットのサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-pdfannotationwidgetsadvanced)
-- [PDFKit 透かしサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-pdfdocumentwatermark)
+- [CoreML イメージ認識のサンプル](/samples/xamarin/ios-samples/ios11-coremlimagerecognition)
+- [Azure カスタムモデルを使用した CoreML](/samples/xamarin/ios-samples/ios11-coremlazuremodel)
+- [CoreNFC タグリーダーのサンプル](/samples/xamarin/ios-samples/ios11-nfctagreader)
+- [ドラッグ & ドロップテーブルビュー](/samples/xamarin/ios-samples/ios11-draganddroptableview)
+- [& ドロップコレクションビューをドラッグします](/samples/xamarin/ios-samples/ios11-draganddropcollectionview)
+- [ドラッグ & ドロップカスタムビュー](/samples/xamarin/ios-samples/ios11-draganddropcustomview)
+- [DragBoard ドラッグ & ドロップサンプル](/samples/xamarin/ios-samples/ios11-draganddropdragboard)
+- [MapKit サンプル](/samples/xamarin/ios-samples/ios11-mapkitsample)
+- [SiriKit のサンプル](/samples/xamarin/ios-samples/ios11-sirikitsample)
+- [更新された Photos フレームワークのサンプル](/samples/xamarin/ios-samples/ios11-samplephotoapp)
+- [ビジョン & CoreML サンプル](/samples/xamarin/ios-samples/ios11-coremlvision)
+- [視覚四角形の検出のサンプル](/samples/xamarin/ios-samples/ios11-visionrectangles/)
+- [ビジョン検出のサンプル](/samples/xamarin/ios-samples/ios11-visionfaces)
+- [PDKFit ウィジェットのサンプル](/samples/xamarin/ios-samples/ios11-pdfannotationwidgetsadvanced)
+- [PDFKit 透かしサンプル](/samples/xamarin/ios-samples/ios11-pdfdocumentwatermark)
 
 ## <a name="related-links"></a>関連リンク
 
-- [Xamarin iOS 11 サンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS11)
+- [Xamarin iOS 11 サンプル](/samples/browse/?products=xamarin&term=Xamarin.iOS%2biOS11)

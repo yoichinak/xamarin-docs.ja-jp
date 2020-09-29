@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 56b9f82fcc15afc8c75012b204588b4da65a32c4
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 9cd19cfccac03ea1edb59c0422f197e33873abc6
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939738"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436896"
 ---
 # <a name="working-with-tvos-split-view-controllers-in-xamarin"></a>Xamarin での tvOS Split ビューコントローラーの使用
 
@@ -30,15 +30,15 @@ ms.locfileid: "86939738"
 
 [![マスタービューコントローラーの非表示](split-views-images/intro02.png)](split-views-images/intro02.png#lightbox)
 
-分割ビューコントローラーは、フィルター可能なコンテンツの一覧を表示するために使用されることがよくあります。これには、マスタービューのカテゴリと詳細ビューのフィルター処理された結果が含まれます。 これは通常、左側にテーブルビューとして表示され、右側には[コレクションビュー](~/ios/tvos/user-interface/collection-views.md)として表示されます。
+分割ビューコントローラーは、フィルター可能なコンテンツの一覧を表示するために使用されることがよくあります。これには、マスタービューのカテゴリと詳細ビューのフィルター処理された結果が含まれます。 これは通常、左側にテーブルビューとして表示され、右側には [コレクションビュー](~/ios/tvos/user-interface/collection-views.md) として表示されます。
 
 分割ビューコントローラーを必要とするユーザーインターフェイスを設計する場合、Apple では、変更されないマスターおよび詳細ビューコントローラーの使用が提案されます (構造体ではなくコンテンツのみが変更されます)。 ビューコントローラーをスワップアウトする必要がある場合は、(Master または Detail) を変更する必要があるビューコントローラーのベースとして、ナビゲーションコントローラーを使用することをお勧めします。
 
 Apple では、分割ビューコントローラーの操作に関して次のような推奨事項があります。
 
-- **適切な分割率を使用する**-既定では、分割ビューコントローラーは、マスタービューコントローラーの場合は画面の1/3、詳細ビューコントローラーの場合は 2 ~ 3 を使用します。 必要に応じて、50/50 split を使用できます。 コンテンツを画面に均等に表示するための適切なパーセンテージを選択します。
-- **メインの選択範囲を保持**します。詳細ビューの内容は、マスタービューでのユーザーの選択に応じて変更できますが、マスタービューコンテンツは修正する必要があります。 また、マスタービューで現在選択されている項目を明確に表示する必要があります。
-- **1 つの統合されたタイトルを使用**します。通常は、詳細ビューとマスタービューの両方でタイトルを使用するのではなく、1つの中央のタイトルを詳細ビューで使用します。
+- **適切な分割率を使用する** -既定では、分割ビューコントローラーは、マスタービューコントローラーの場合は画面の1/3、詳細ビューコントローラーの場合は 2 ~ 3 を使用します。 必要に応じて、50/50 split を使用できます。 コンテンツを画面に均等に表示するための適切なパーセンテージを選択します。
+- **メインの選択範囲を保持** します。詳細ビューの内容は、マスタービューでのユーザーの選択に応じて変更できますが、マスタービューコンテンツは修正する必要があります。 また、マスタービューで現在選択されている項目を明確に表示する必要があります。
+- **1 つの統合されたタイトルを使用** します。通常は、詳細ビューとマスタービューの両方でタイトルを使用するのではなく、1つの中央のタイトルを詳細ビューで使用します。
 
 <a name="Split-View-Controllers-and-Storyboards"></a>
 
@@ -174,7 +174,7 @@ Enum は、 `UISplitViewControllerDisplayMode` 次のいずれかとしてマス
 
 ## <a name="related-links"></a>関連リンク
 
-- [tvOS のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [tvOS のサンプル](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS ヒューマンインターフェイスガイド](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS のアプリプログラミングガイド](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

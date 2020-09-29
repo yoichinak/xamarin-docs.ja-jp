@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/07/2016
-ms.openlocfilehash: 2a883c85eede7f7600e5716dded71f3c90f49026
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 552a163636c85b13be64a0613b1523263deb5e92
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939751"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91437037"
 ---
 # <a name="introduction-to-tvos-9"></a>tvOS 9 の概要
 
@@ -24,7 +24,7 @@ TvOS は、初めて Apple TV platform を開発者にオープンさせます�
 
 Xamarin の開発に慣れている場合は、tvOS が非常に単純なものに移行することをお勧めします。 Api と機能のほとんどは同じですが、多くの一般的な Api は使用できません (WebKit など)。 さらに、Siri リモコンでを使用すると、タッチスクリーンベースの iOS デバイスには存在しない設計上の課題が生じます。
 
-このガイドでは、tvOS 9 for Xamarin. tvOS 開発者向けの新しい Api と変更された Api と機能をすべて紹介します。 TvOS の詳細については、apple の[開発に関する新しい APPLE TV のドキュメントを](https://developer.apple.com/tvos/)参照してください。
+このガイドでは、tvOS 9 for Xamarin. tvOS 開発者向けの新しい Api と変更された Api と機能をすべて紹介します。 TvOS の詳細については、apple の [開発に関する新しい APPLE TV のドキュメントを](https://developer.apple.com/tvos/) 参照してください。
 
 <a name="Supported-and-Unsupported-Capabilities"></a>
 
@@ -49,13 +49,13 @@ Apple TV で実行される tvOS アプリには、次のサポートされて�
 - HealthKit
 - HomeKit
 - Inter-App オーディオ
-- Maps
+- マップ
 - 個人の VPN
 - プッシュ通知
 - ウォレット
 - Wireless Accessory Configuration
 
-詳細については、[サポートされ](~/ios/tvos/internals/assemblies.md)ているアセンブリと[サポートされているフレームワーク](~/ios/tvos/internals/frameworks.md)に関するドキュメントを参照してください。
+詳細については、 [サポートされ](~/ios/tvos/internals/assemblies.md) ているアセンブリと [サポートされているフレームワーク](~/ios/tvos/internals/frameworks.md) に関するドキュメントを参照してください。
 
 <a name="Apple-TV-Hardware"></a>
 
@@ -92,7 +92,7 @@ Siri リモートは、現在、次の国でご利用いただけます。
 
 [![Siri リモート](tvos9-images/remote02.png)](tvos9-images/remote02.png#lightbox)
 
-詳細については、 [Siri リモートおよび Bluetooth コントローラー](~/ios/tvos/platform/remote-bluetooth.md)のドキュメントを参照してください。
+詳細については、 [Siri リモートおよび Bluetooth コントローラー](~/ios/tvos/platform/remote-bluetooth.md) のドキュメントを参照してください。
 
 <a name="Apple-TV-Provisioning"></a>
 
@@ -100,9 +100,9 @@ Siri リモートは、現在、次の国でご利用いただけます。
 
 IOS 用の開発と同様に、新しい tvOS では、Apple で既に確立したチームメンバーシップと署名 Id に基づいて、開発と配布の両方に適したプロビジョニングプロファイルが必要になります。
 
-ICloud KVS や CloudKit データストアなどの tvOS 機能にアクセスするには、適切なプロビジョニングも必要です。 TvOS アプリで iCloud をサポートする方法の詳細については、[リソースとデータストレージ](~/ios/tvos/app-fundamentals/resources-data-storage.md)に関する記事をご覧ください。
+ICloud KVS や CloudKit データストアなどの tvOS 機能にアクセスするには、適切なプロビジョニングも必要です。 TvOS アプリで iCloud をサポートする方法の詳細については、 [リソースとデータストレージ](~/ios/tvos/app-fundamentals/resources-data-storage.md) に関する記事をご覧ください。
 
-プロビジョニングプロファイルは、Xamarin iOS アプリを使用する場合と同じ方法で作成およびインストールされます。 そのため、詳細については、iOS[デバイスのプロビジョニング](~/ios/get-started/installation/device-provisioning/index.md)に関するドキュメントを参照してください。
+プロビジョニングプロファイルは、Xamarin iOS アプリを使用する場合と同じ方法で作成およびインストールされます。 そのため、詳細については、iOS [デバイスのプロビジョニング](~/ios/get-started/installation/device-provisioning/index.md) に関するドキュメントを参照してください。
 
 <a name="Apple-TV-Apps"></a>
 
@@ -116,9 +116,9 @@ ICloud KVS や CloudKit データストアなどの tvOS 機能にアクセス�
 
 従来のアプリは Apple TV App Store から購入され、デバイスに直接インストールされます。 これらのアプリは、Xamarin iOS アプリと同じフレームワークと手法を使用して開発されたゲーム、ユーティリティ、またはメディアアプリにすることができます。
 
-Apple TV アプリの最大サイズは 200 MB で、オンデマンドリソースを使用してさらに 2 GB のコンテンツをダウンロードできます。 詳細については、microsoft の[リソースとデータストレージ](~/ios/tvos/app-fundamentals/resources-data-storage.md)を参照してください。
+Apple TV アプリの最大サイズは 200 MB で、オンデマンドリソースを使用してさらに 2 GB のコンテンツをダウンロードできます。 詳細については、microsoft の [リソースとデータストレージ](~/ios/tvos/app-fundamentals/resources-data-storage.md) を参照してください。
 
-TvOS を使用して tvOS アプリを開発するために必要なツールと概念について理解を深めるには、「 [Hello, tvOS クイックスタートガイド](~/ios/tvos/get-started/hello-tvos.md)」を参照してください。
+TvOS を使用して tvOS アプリを開発するために必要なツールと概念について理解を深めるには、「 [Hello, tvOS クイックスタートガイド](~/ios/tvos/get-started/hello-tvos.md) 」を参照してください。
 
 <a name="Summary"></a>
 
@@ -132,7 +132,7 @@ Apple TV では、インストールされている従来のアプリに加え�
 
 ## <a name="user-interface-challenges"></a>ユーザーインターフェイスの課題
 
-IOS や OS X とは異なり、Apple TV には、ユーザーがアプリやそのコンテンツを直接選択して操作できるタッチスクリーンまたはマウスがありません。 代わりに、アプリのユーザーインターフェイスを移動するために、新しい Siri リモートまたは Bluetooth ゲームコントローラーをユーザーに対して行います。 詳細については、 [Siri リモートおよび Bluetooth コントローラー](~/ios/tvos/platform/remote-bluetooth.md)のドキュメントを参照してください。
+IOS や OS X とは異なり、Apple TV には、ユーザーがアプリやそのコンテンツを直接選択して操作できるタッチスクリーンまたはマウスがありません。 代わりに、アプリのユーザーインターフェイスを移動するために、新しい Siri リモートまたは Bluetooth ゲームコントローラーをユーザーに対して行います。 詳細については、 [Siri リモートおよび Bluetooth コントローラー](~/ios/tvos/platform/remote-bluetooth.md) のドキュメントを参照してください。
 
 さらに、ユーザーエクスペリエンス全体は、シングルユーザーエクスペリエンスとなる傾向がある iOS または Mac アプリとは大きく異なります。 Apple TV では、ユーザーエクスペリエンスが本質的により社会的になる傾向があります。これは、複数のユーザーが1つのアプリと相互作用するソファに座っている可能性があります。 Apple TV アプリのエクスペリエンス (新しいアプリまたは既存のアプリの移植) を設計するには、これらの変更を考慮する必要があります。 
 
@@ -146,7 +146,7 @@ IOS や OS X とは異なり、Apple TV には、ユーザーがアプリやそ�
 
 ユーザーが Siri リモートで低速で円形のジェスチャを実行した場合、フォーカスがある項目は、この移動に応じてリアルタイムで表示されます。 Sway が発生すると、光の光沢が画像に適用され、表面が光に見えるようになります。 一定量の非アクティブな状態が続くと、フォーカスのないコンテンツが淡色表示され、フォーカスがある項目はさらに大きくなります。
 
-詳細については、「[ナビゲーションの操作](~/ios/tvos/app-fundamentals/navigation-focus.md)」および「[アイコンとイメージの操作](~/ios/tvos/app-fundamentals/icons-images.md)」のドキュメントを参照してください。
+詳細については、「 [ナビゲーションの操作](~/ios/tvos/app-fundamentals/navigation-focus.md) 」および「 [アイコンとイメージの操作](~/ios/tvos/app-fundamentals/icons-images.md) 」のドキュメントを参照してください。
 
 <a name="The-Home-Screen"></a>
 
@@ -160,7 +160,7 @@ Apple TV ホーム画面には、インストールされているすべての�
 
 すべてのアプリで、アプリアイコンの小さいバージョンと大きなバージョンの両方を提供する必要があります。 小さいアイコンは、アプリのインストール時に、Apple TV ホーム画面で使用されます。 大規模なバージョンは、App Store によって使用されます。 大きいアプリアイコンは、小さいアイコンバージョンのルックアンドフィールを模倣します。
 
-詳細については、[アイコンとイメージの操作に](~/ios/tvos/app-fundamentals/icons-images.md)関するドキュメントを参照してください。
+詳細については、 [アイコンとイメージの操作に](~/ios/tvos/app-fundamentals/icons-images.md) 関するドキュメントを参照してください。
 
 <a name="The-Top-Shelf"></a>
 
@@ -174,11 +174,11 @@ Apple TV ホーム画面には、インストールされているすべての�
 
 静的なトップシェルフイメージを表示する代わりに、動的な行またはフォーカス可能な項目、またはスクロール用の動的な一連のバナーを含めることができます。 どちらの動的スタイルでも、アプリによって提供されるコンテンツを強調表示したり、最も使用されている機能にジャンプしたりすることができます。
 
-詳細については、「[アイコンとイメージの操作](~/ios/tvos/app-fundamentals/icons-images.md)」のドキュメントと Apple の[TVServices Framework リファレンス](https://developer.apple.com/library/prerelease/tvos/documentation/TVServices/Reference/TVServices_Ref/index.html#//apple_ref/doc/uid/TP40016412)を参照してください。これにより、アプリに上位棚の拡張機能を追加して、動的な上位シェルフコンテンツを提供する方法についての詳細を確認できます。
+詳細については、「 [アイコンとイメージの操作](~/ios/tvos/app-fundamentals/icons-images.md) 」のドキュメントと Apple の [TVServices Framework リファレンス](https://developer.apple.com/library/prerelease/tvos/documentation/TVServices/Reference/TVServices_Ref/index.html#//apple_ref/doc/uid/TP40016412) を参照してください。これにより、アプリに上位棚の拡張機能を追加して、動的な上位シェルフコンテンツを提供する方法についての詳細を確認できます。
 
 ## <a name="related-links"></a>関連リンク
 
-- [tvOS のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [tvOS のサンプル](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS ヒューマンインターフェイスガイド](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS のアプリプログラミングガイド](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

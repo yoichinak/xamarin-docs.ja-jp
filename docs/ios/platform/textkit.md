@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 91db8ad0008afa29c732429c3304c24f4ab030a6
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 9468c7d00ec23743eb7772d2d5eeb252a44a957c
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86935383"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91437310"
 ---
 # <a name="textkit-in-xamarinios"></a>Xamarin の TextKit
 
@@ -28,9 +28,9 @@ TextKit の機能を標準コントロールで使用できるようにするた
 
 TextKit には、次のクラスを含む、レイアウトと表示からテキストストレージを分離するレイヤーアーキテクチャが用意されています。
 
-- `NSTextContainer`–テキストのレイアウトに使用される座標系と geometry を提供します。
-- `NSLayoutManager`–テキストをグリフに変えることによってテキストをレイアウトします。
-- `NSTextStorage`–テキストデータを保持し、バッチテキストプロパティの更新を処理します。 バッチ更新は、レイアウトの再計算やテキストの再描画など、実際に変更を処理するためにレイアウトマネージャーに渡されます。
+- `NSTextContainer` –テキストのレイアウトに使用される座標系と geometry を提供します。
+- `NSLayoutManager` –テキストをグリフに変えることによってテキストをレイアウトします。
+- `NSTextStorage` –テキストデータを保持し、バッチテキストプロパティの更新を処理します。 バッチ更新は、レイアウトの再計算やテキストの再描画など、実際に変更を処理するためにレイアウトマネージャーに渡されます。
 
 これら3つのクラスは、テキストを表示するビューに適用されます。 、、などの組み込みのテキスト処理ビューでは、既に設定されてい `UITextView` `UITextField` `UILabel` ますが、インスタンスを作成して任意のインスタンスに適用することもでき `UIView` ます。
 
@@ -40,7 +40,7 @@ TextKit には、次のクラスを含む、レイアウトと表示からテキ
 
 ## <a name="text-storage-and-attributes"></a>テキストの格納と属性
 
-クラスは、 `NSTextStorage` ビューによって表示されるテキストを保持します。 また、文字やその属性に対する変更などのテキストへの変更が、表示のためにレイアウトマネージャーに伝達されます。 `NSTextStorage`文字列から継承 `MSMutableAttributed` されます。これにより、との呼び出しの間で、テキスト属性を変更してバッチで指定することができ `BeginEditing` `EndEditing` ます。
+クラスは、 `NSTextStorage` ビューによって表示されるテキストを保持します。 また、文字やその属性に対する変更などのテキストへの変更が、表示のためにレイアウトマネージャーに伝達されます。 `NSTextStorage` 文字列から継承 `MSMutableAttributed` されます。これにより、との呼び出しの間で、テキスト属性を変更してバッチで指定することができ `BeginEditing` `EndEditing` ます。
 
 たとえば、次のコードスニペットでは、前景色と背景色の変更をそれぞれ特定の範囲で指定しています。
 
@@ -55,7 +55,7 @@ textView.TextStorage.EndEditing ();
 
 ## <a name="layout-with-exclusion-path"></a>除外パスを使用したレイアウト
 
-TextKit はレイアウトもサポートしており、複数列テキストなどの複雑なシナリオに対応し、*除外パス*と呼ばれる指定されたパスにテキストを流し込むことができます。 除外パスはテキストコンテナーに適用されます。これによりテキストレイアウトのジオメトリが変更され、テキストが指定したパスの周りに流れます。
+TextKit はレイアウトもサポートしており、複数列テキストなどの複雑なシナリオに対応し、 *除外パス*と呼ばれる指定されたパスにテキストを流し込むことができます。 除外パスはテキストコンテナーに適用されます。これによりテキストレイアウトのジオメトリが変更され、テキストが指定したパスの周りに流れます。
 
 除外パスを追加するには、レイアウトマネージャーでプロパティを設定する必要があり `ExclusionPaths` ます。 このプロパティを設定すると、レイアウトマネージャーによってテキストレイアウトが無効になり、除外パスの周囲にテキストが流し込まれます。
 
@@ -164,6 +164,6 @@ TextContainer.ExclusionPaths = new UIBezierPath[] { bezierPath };
 
 ## <a name="related-links"></a>関連リンク
 
-- [IOS 7 の概要 (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/introtoios7)
+- [IOS 7 の概要 (サンプル)](/samples/xamarin/ios-samples/introtoios7)
 - [iOS 7 ユーザー インターフェイスの概要](~/ios/platform/introduction-to-ios7/ios7-ui.md)
 - [バックグラウンド処理](~/ios/app-fundamentals/backgrounding/index.md)

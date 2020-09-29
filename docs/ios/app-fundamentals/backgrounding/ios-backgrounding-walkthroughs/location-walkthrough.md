@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: bbb0dfbc9a6bf1396c8d517cc2c3289e2857a836
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 2350db2e8d4f43a33b0ce394e06ffd2c16b6b7ad
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938399"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436550"
 ---
 # <a name="walkthrough---background-location-in-xamarinios"></a>チュートリアル-Xamarin のバックグラウンドの場所
 
@@ -22,17 +22,17 @@ ms.locfileid: "86938399"
 
 ## <a name="application-set-up"></a>アプリケーションのセットアップ
 
-1. まず、**単一ビューアプリケーション > 新しい iOS > アプリ**を作成します (C#)。 その_場所_を呼び出し、IPad と iPhone の両方が選択されていることを確認します。
+1. まず、 **単一ビューアプリケーション > 新しい iOS > アプリ**を作成します (C#)。 その _場所_ を呼び出し、IPad と iPhone の両方が選択されていることを確認します。
 
-1. 場所アプリケーションは、iOS のバックグラウンドで必要なアプリケーションとして認定されます。 プロジェクトの**情報の plist**ファイルを編集して、アプリケーションを場所アプリケーションとして登録します。
+1. 場所アプリケーションは、iOS のバックグラウンドで必要なアプリケーションとして認定されます。 プロジェクトの **情報の plist** ファイルを編集して、アプリケーションを場所アプリケーションとして登録します。
 
-    [ソリューションエクスプローラー] の下で、 **[ファイル]** をダブルクリックして開き、一覧の一番下までスクロールします。 [**バックグラウンドモードを有効にする**] チェックボックスと [**場所の更新**] チェックボックスの両方をオンにします。
+    [ソリューションエクスプローラー] の下で、 **[ファイル]** をダブルクリックして開き、一覧の一番下までスクロールします。 [ **バックグラウンドモードを有効にする** ] チェックボックスと [ **場所の更新** ] チェックボックスの両方をオンにします。
 
     Visual Studio for Mac では、次のようになります。
 
     [![[バックグラウンドモードを有効にする] チェックボックスと [場所の更新] チェックボックスの両方をオンにします。](location-walkthrough-images/image7.png)](location-walkthrough-images/image7.png#lightbox)
 
-    Visual Studio では、次のキーと値のペアを追加して、手動で**情報**を更新する必要があります。
+    Visual Studio では、次のキーと値のペアを追加して、手動で **情報** を更新する必要があります。
 
     ```xml
     <key>UIBackgroundModes</key>
@@ -71,20 +71,20 @@ ms.locfileid: "86938399"
     }
     ```
 
-    上記のコードでは、 [Cllocationmanager](xref:CoreLocation.CLLocationManager)クラスに対するいくつかのプロパティと権限を設定しています。
+    上記のコードでは、 [Cllocationmanager](xref:CoreLocation.CLLocationManager) クラスに対するいくつかのプロパティと権限を設定しています。
 
-    - `PausesLocationUpdatesAutomatically`–これは、システムが位置情報の更新を一時停止できるかどうかに応じて設定できるブール値です。 一部のデバイスでは、既定でに設定さ `true` れます。これにより、デバイスは約15分後にバックグラウンドの場所の更新の取得を停止する可能性があります。
-    - `RequestAlwaysAuthorization`-このメソッドを渡す必要があります。これにより、アプリのユーザーは、バックグラウンドで場所にアクセスできるようになります。 `RequestWhenInUseAuthorization`アプリがフォアグラウンドにあるときにのみ場所へのアクセスを許可するオプションをユーザーに付与する場合にも渡すことができます。
-    - `AllowsBackgroundLocationUpdates`–これは、iOS 9 で導入されたブール型のプロパティであり、中断されたときにアプリが位置情報の更新を受け取ることができるように設定できます。
+    - `PausesLocationUpdatesAutomatically` –これは、システムが位置情報の更新を一時停止できるかどうかに応じて設定できるブール値です。 一部のデバイスでは、既定でに設定さ `true` れます。これにより、デバイスは約15分後にバックグラウンドの場所の更新の取得を停止する可能性があります。
+    - `RequestAlwaysAuthorization` -このメソッドを渡す必要があります。これにより、アプリのユーザーは、バックグラウンドで場所にアクセスできるようになります。 `RequestWhenInUseAuthorization` アプリがフォアグラウンドにあるときにのみ場所へのアクセスを許可するオプションをユーザーに付与する場合にも渡すことができます。
+    - `AllowsBackgroundLocationUpdates` –これは、iOS 9 で導入されたブール型のプロパティであり、中断されたときにアプリが位置情報の更新を受け取ることができるように設定できます。
 
     > [!IMPORTANT]
-    > iOS 8 (およびそれ以降) では、ユーザーを承認要求の一部として表示するために、**情報 plist**ファイルのエントリも必要です。
+    > iOS 8 (およびそれ以降) では、ユーザーを承認要求の一部として表示するために、 **情報 plist** ファイルのエントリも必要です。
 
-1. アプリが必要とするアクセス許可の種類 (、、、/または) の情報を入力し**ます。** このキーは `NSLocationAlwaysUsageDescription` 、 `NSLocationWhenInUseUsageDescription` `NSLocationAlwaysAndWhenInUseUsageDescription` 場所データへのアクセスを要求する警告でユーザーに表示される文字列と共に追加します。
+1. アプリが必要とするアクセス許可の種類 (、、、/または) の情報を入力し **ます。** このキーは `NSLocationAlwaysUsageDescription` 、 `NSLocationWhenInUseUsageDescription` `NSLocationAlwaysAndWhenInUseUsageDescription` 場所データへのアクセスを要求する警告でユーザーに表示される文字列と共に追加します。
 
 1. iOS 9 では、情報を使用するときに、キーと値が含まれている必要があり `AllowsBackgroundLocationUpdates` **Info.plist** `UIBackgroundModes` `location` ます。 このチュートリアルの手順2を完了している場合は、既に情報 plist ファイルに含まれています。
 
-1. クラス内で `LocationManager` 、 `StartLocationUpdates` 次のコードを使用してというメソッドを作成します。 このコードは、から場所の更新の受信を開始する方法を示してい `CLLocationManager` ます。
+1. クラス内で `LocationManager` 、 `StartLocationUpdates` 次のコードを使用してというメソッドを作成します。 このコードは、から場所の更新の受信を開始する方法を示してい   `CLLocationManager` ます。
 
     ```csharp
     if (CLLocationManager.LocationServicesEnabled) {
@@ -99,9 +99,9 @@ ms.locfileid: "86938399"
     }
     ```
 
-    この方法では、いくつかの重要な点があります。 まず、アプリケーションがデバイス上の場所データにアクセスできるかどうかを確認します。 これを確認するに `LocationServicesEnabled` は、でを呼び出し `CLLocationManager` ます。 ユーザーが場所情報へのアプリケーションのアクセスを拒否した場合、このメソッドは**false**を返します。
+    この方法では、いくつかの重要な点があります。 まず、アプリケーションがデバイス上の場所データにアクセスできるかどうかを確認します。 これを確認するに `LocationServicesEnabled` は、でを呼び出し `CLLocationManager` ます。 ユーザーが場所情報へのアプリケーションのアクセスを拒否した場合、このメソッドは **false** を返します。
 
-1. 次に、ロケーションマネージャーに更新頻度を通知します。 `CLLocationManager`には、更新の頻度など、場所データのフィルター処理と構成に関する多くのオプションが用意されています。 この例では、 `DesiredAccuracy` 場所がメーターによって変更されるたびに、を更新するようにを設定します。 場所の更新頻度とその他の設定の構成の詳細については、Apple のドキュメントの「 [Cllocationmanager クラスリファレンス](https://developer.apple.com/library/ios/#documentation/CoreLocation/Reference/CLLocationManager_Class/CLLocationManager/CLLocationManager.html)」を参照してください。
+1. 次に、ロケーションマネージャーに更新頻度を通知します。 `CLLocationManager` には、更新の頻度など、場所データのフィルター処理と構成に関する多くのオプションが用意されています。 この例では、 `DesiredAccuracy` 場所がメーターによって変更されるたびに、を更新するようにを設定します。 場所の更新頻度とその他の設定の構成の詳細については、Apple のドキュメントの「 [Cllocationmanager クラスリファレンス](https://developer.apple.com/library/ios/#documentation/CoreLocation/Reference/CLLocationManager_Class/CLLocationManager/CLLocationManager.html) 」を参照してください。
 
 1. 最後に、 `StartUpdatingLocation` インスタンスでを呼び出し `CLLocationManager` ます。 これにより、ロケーションマネージャーは、現在の場所で最初の修正を取得し、更新の送信を開始するように指示します。
 
@@ -112,7 +112,7 @@ ms.locfileid: "86938399"
 public event EventHandler<LocationUpdatedEventArgs>LocationUpdated = delegate { };
 ```
 
-次の手順では、から場所の更新をサブスクライブ `CLLocationManager` し、 `LocationUpdated` 新しい場所のデータが使用可能になったときにカスタムイベントを発生させて、その場所を引数として渡します。 これを行うには、新しいクラス**LocationUpdateEventArgs.cs**を作成します。 このコードはメインアプリケーション内でアクセスでき、イベントが発生したときにデバイスの場所を返します。
+次の手順では、から場所の更新をサブスクライブ `CLLocationManager` し、 `LocationUpdated` 新しい場所のデータが使用可能になったときにカスタムイベントを発生させて、その場所を引数として渡します。 これを行うには、新しいクラス **LocationUpdateEventArgs.cs**を作成します。 このコードはメインアプリケーション内でアクセスでき、イベントが発生したときにデバイスの場所を返します。
 
 ```csharp
 public class LocationUpdatedEventArgs : EventArgs
@@ -133,7 +133,7 @@ public class LocationUpdatedEventArgs : EventArgs
 
 ## <a name="user-interface"></a>ユーザー インターフェイス
 
-1. IOS designer を使用して、場所の情報を表示する画面を作成します。 開始する**メインのストーリーボード**ファイルをダブルクリックします。
+1. IOS designer を使用して、場所の情報を表示する画面を作成します。 開始する **メインのストーリーボード** ファイルをダブルクリックします。
 
     ストーリーボードで、場所情報のプレースホルダーとして機能する複数のラベルを画面にドラッグします。 この例では、緯度、経度、標高、コース、および速度のラベルがあります。
 
@@ -278,5 +278,5 @@ UIApplication.Notifications.ObserveDidBecomeActive ((sender, args) => {
 
 ## <a name="related-links"></a>関連リンク
 
-- [場所 (パート 4) (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/location)
+- [場所 (パート 4) (サンプル)](/samples/xamarin/ios-samples/location)
 - [コアロケーションフレームワークリファレンス](https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CoreLocation_Framework/_index.html)

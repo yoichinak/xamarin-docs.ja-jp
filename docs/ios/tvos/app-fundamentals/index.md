@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/07/2016
-ms.openlocfilehash: 1032e6a180b05337d3dcf849b2b4ad79e6e08bb8
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 7337b70d08e5b3494be8eed9f292ac9d87ded537
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573743"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91437095"
 ---
 # <a name="tvos-application-fundamentals"></a>tvOS アプリケーションの基礎
 
@@ -24,7 +24,7 @@ _このセクションでは、tvOS アプリを記述するときに開発者�
 
 このセクションのドキュメントでは、tvOS アプリを作成するときに使用する tvOS の基本的な概念と機能についての実用的な知識を提供します。
 
-すべての記事で使用する主要な概念と手法について説明しているため、最初に[Hello、tvOS クイックスタートガイド](~/ios/tvos/get-started/hello-tvos.md)を使用することを強くお勧めします。
+すべての記事で使用する主要な概念と手法について説明しているため、最初に [Hello、tvOS クイックスタートガイド](~/ios/tvos/get-started/hello-tvos.md) を使用することを強くお勧めします。
 
 <a name="Working-with-Icons-and-Images"></a>
 
@@ -52,7 +52,7 @@ IOS デバイスとは異なり、新しい Apple TV は tvOS アプリ用の永
 
 ## <a name="related-links"></a>関連リンク
 
-- [tvOS のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [tvOS のサンプル](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS ヒューマンインターフェイスガイド](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS のアプリプログラミングガイド](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

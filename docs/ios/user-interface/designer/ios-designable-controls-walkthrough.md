@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 4652497aa6a7819afe7224617a429b2852566255
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: ad07d6e7381c646273eae8fe6aaecb2d487027f7
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86934694"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436807"
 ---
 # <a name="using-custom-controls-with-the-ios-designer"></a>iOS Designer でのカスタム コントロールの使用
 
@@ -20,14 +20,14 @@ ms.locfileid: "86934694"
 
 Xamarin Designer for iOS は Visual Studio for Mac と Visual Studio 2017 以降の Windows で使用できます。
 
-このガイドでは、[はじめにガイド](~/ios/get-started/index.md)で説明されている内容を理解していることを前提としています。
+このガイドでは、 [はじめにガイド](~/ios/get-started/index.md)で説明されている内容を理解していることを前提としています。
 
 ## <a name="walkthrough"></a>チュートリアル
 
 > [!IMPORTANT]
 > Xamarin. Studio 5.5 以降では、カスタムコントロールの作成方法は、以前のバージョンと少し異なります。 カスタムコントロールを作成するには、 `IComponent` インターフェイスが (関連付けられている実装メソッドを使用して) 必要であるか、またはクラスに注釈を付けることができ `[DesignTimeVisible(true)]` ます。 後者の方法は、次のチュートリアルの例で使用されています。
 
-1. IOS > アプリから新しいソリューションを作成します。**単一ビューアプリケーション > C# テンプレート >** 、名前 `ScratchTicket` を指定し、新しいプロジェクトウィザードを続行します。
+1. IOS > アプリから新しいソリューションを作成します。 **単一ビューアプリケーション > C# テンプレート >** 、名前 `ScratchTicket` を指定し、新しいプロジェクトウィザードを続行します。
 
     [![新しいソリューションを作成する](ios-designable-controls-walkthrough-images/01new.png)](ios-designable-controls-walkthrough-images/01new.png#lightbox)
 
@@ -168,7 +168,7 @@ Xamarin Designer for iOS は Visual Studio for Mac と Visual Studio 2017 以降
 
 1. **イメージビュー**を選択し、その**イメージ**プロパティをに変更し `Monkey.png` ます。
 
-    [![Image View Image プロパティを Monkey.pngに設定しています](ios-designable-controls-walkthrough-images/05new.png)](ios-designable-controls-walkthrough-images/05new.png#lightbox)
+    [![Image View Image プロパティを Monkey.pngに設定しています ](ios-designable-controls-walkthrough-images/05new.png)](ios-designable-controls-walkthrough-images/05new.png#lightbox)
 
 1. サイズクラスを使用しているため、このイメージビューを制限する必要があります。 イメージを2回クリックして、制約モードにします。 中央にピン留めするハンドルをクリックし、垂直方向と水平方向に並べて配置します。
 
@@ -256,15 +256,15 @@ public override void Draw(CGRect rect)
 }
 ```
 
-引数を `ExportAttribute` に設定したおよびを含めると、 `BrowsableAttribute` `true` デザイナーの [**プロパティ**] パネルにプロパティが表示されます。 次に示すように、プロパティをプロジェクトに含まれる別のイメージ (など) に変更すると `FillTexture2.png` 、デザイン時にコントロールが更新されます。
+引数を `ExportAttribute` に設定したおよびを含めると、 `BrowsableAttribute` `true` デザイナーの [ **プロパティ** ] パネルにプロパティが表示されます。 次に示すように、プロパティをプロジェクトに含まれる別のイメージ (など) に変更すると `FillTexture2.png` 、デザイン時にコントロールが更新されます。
 
  [![デザイン時のプロパティの編集](ios-designable-controls-walkthrough-images/11-customproperty.png)](ios-designable-controls-walkthrough-images/10-app.png#lightbox)
 
 ## <a name="summary"></a>まとめ
 
-この記事では、iOS デザイナーを使用して、カスタムコントロールを作成し、iOS アプリケーションで使用する方法について説明します。 デザイナーの**ツールボックス**で、コントロールを作成してビルドし、アプリケーションで使用できるようにする方法を説明しました。 また、デザイン時と実行時の両方で適切にレンダリングされるようにコントロールを実装する方法についても説明しました。また、デザイナーでカスタムコントロールのプロパティを公開する方法についても説明しました。
+この記事では、iOS デザイナーを使用して、カスタムコントロールを作成し、iOS アプリケーションで使用する方法について説明します。 デザイナーの **ツールボックス**で、コントロールを作成してビルドし、アプリケーションで使用できるようにする方法を説明しました。 また、デザイン時と実行時の両方で適切にレンダリングされるようにコントロールを実装する方法についても説明しました。また、デザイナーでカスタムコントロールのプロパティを公開する方法についても説明しました。
 
 ## <a name="related-links"></a>関連リンク
 
-- [ScratchTicket (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/scratchticket)
+- [ScratchTicket (サンプル)](/samples/xamarin/ios-samples/scratchticket)
 - [必要なイメージ (サンプル)](https://github.com/xamarin/ios-samples/blob/master/ScratchTicket/Resources/images.zip?raw=true)

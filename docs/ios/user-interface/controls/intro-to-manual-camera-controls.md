@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: dcfa727499859164d950ca9abc24fb935b3d76f9
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 04c33b59e2a1bab7fb401ffdc49d120bcfd679d0
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937008"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436829"
 ---
 # <a name="manual-camera-controls-in-xamarinios"></a>Xamarin の手動カメラコントロール
 
@@ -32,9 +32,9 @@ IOS デバイスでカメラを使用してビデオまたは静止画像を撮�
 
 IOS 8 に用意されている新しい Api を使用して、アプリケーションは次のカメラ機能を制御できます。
 
-- **手動フォーカス**: エンドユーザーが直接フォーカスを制御できるようにすることで、アプリケーションは、撮影されたイメージをより細かく制御できます。
-- **手動**による露出: 公開を手動で制御することにより、アプリケーションはユーザーに自由に制御し、ユーザーが体裁を整えられるようにすることができます。
-- **手動のホワイトバランス**–画像の色を調整するために使用されます。これは、多くの場合、現実的に見えるようにします。 光源の色温度は異なるため、イメージのキャプチャに使用されるカメラの設定は、これらの違いを補うために調整されます。 この場合も、ユーザーがホワイトバランスを制御できるようにすることで、自動的には実行できない調整を行うことができます。
+- **手動フォーカス** : エンドユーザーが直接フォーカスを制御できるようにすることで、アプリケーションは、撮影されたイメージをより細かく制御できます。
+- **手動** による露出: 公開を手動で制御することにより、アプリケーションはユーザーに自由に制御し、ユーザーが体裁を整えられるようにすることができます。
+- **手動のホワイトバランス** –画像の色を調整するために使用されます。これは、多くの場合、現実的に見えるようにします。 光源の色温度は異なるため、イメージのキャプチャに使用されるカメラの設定は、これらの違いを補うために調整されます。 この場合も、ユーザーがホワイトバランスを制御できるようにすることで、自動的には実行できない調整を行うことができます。
 
 iOS 8 では、既存の iOS Api の拡張機能と拡張機能を使用して、イメージキャプチャプロセスをきめ細かく制御できるようになっています。
 
@@ -48,9 +48,9 @@ iOS 8 では、既存の iOS Api の拡張機能と拡張機能を使用して�
 
 この記事に記載されている手順を完了するには、次のものが必要です。
 
-- **Xcode 7 以降と ios 8**以降– Apple の Xcode 7 と ios 8 以降の api は、開発者のコンピューターにインストールして構成する必要があります。
+- **Xcode 7 以降と ios 8** 以降– Apple の Xcode 7 と ios 8 以降の api は、開発者のコンピューターにインストールして構成する必要があります。
 - **Visual Studio for Mac** –ユーザーデバイスで Visual Studio for Mac の最新バージョンをインストールして構成する必要があります。
-- **ios 8 デバイス**-ios 8 の最新バージョンを実行している ios デバイス。 IOS シミュレーターでは、カメラの機能をテストできません。
+- **ios 8 デバイス** -ios 8 の最新バージョンを実行している ios デバイス。 IOS シミュレーターでは、カメラの機能をテストできません。
 
 ## <a name="general-av-capture-setup"></a>一般的な AV キャプチャのセットアップ
 
@@ -272,11 +272,11 @@ AV キャプチャセッションは、iOS デバイスのカメラからのラ�
 
 エンドユーザーがフォーカスを直接制御できるようにすることで、アプリケーションは、撮影された画像をより視覚的に制御できます。
 
-たとえば、専門家の写真を使用すると、画像の[フォーカスを和らげる](https://en.wikipedia.org/wiki/Bokeh)ことができます。
+たとえば、専門家の写真を使用すると、画像の [フォーカスを和らげる](https://en.wikipedia.org/wiki/Bokeh)ことができます。
 
 [![Bokeh 効果](intro-to-manual-camera-controls-images/image2.png)](intro-to-manual-camera-controls-images/image2.png#lightbox)
 
-または、[フォーカスのプル効果](http://www.mediacollege.com/video/camera/focus/pull.html)を作成します。次に例を示します。
+または、 [フォーカスのプル効果](http://www.mediacollege.com/video/camera/focus/pull.html)を作成します。次に例を示します。
 
 [![フォーカスのプル効果](intro-to-manual-camera-controls-images/image3.png)](intro-to-manual-camera-controls-images/image3.png#lightbox)
 
@@ -297,10 +297,10 @@ IOS デバイスでは、レンズは、マグネットとスプリングによ�
 フォーカスを処理する際には、開発者が理解しておくべき用語がいくつかあります。
 
 - [**フィールドの深さ**] –最も近い、最も遠い範囲内のオブジェクト間の距離です。
-- **マクロ**-フォーカススペクトルの近くにあり、レンズが焦点を当てる最も近い距離です。
-- **無限大**–これはフォーカスの範囲の一番上の端で、レンズがフォーカスできる最も遠い距離です。
-- **ハイパーフォーカス距離**–これは、フレーム内の最も遠いオブジェクトがフォーカスの一番端に位置する、フォーカス範囲のポイントです。 言い換えると、これはフィールドの深さを最大にする焦点です。
-- **レンズの位置**–上記の他のすべての用語を制御します。 これはセンサーからのレンズの距離であり、それによってフォーカスが制御されます。
+- **マクロ** -フォーカススペクトルの近くにあり、レンズが焦点を当てる最も近い距離です。
+- **無限大** –これはフォーカスの範囲の一番上の端で、レンズがフォーカスできる最も遠い距離です。
+- **ハイパーフォーカス距離** –これは、フレーム内の最も遠いオブジェクトがフォーカスの一番端に位置する、フォーカス範囲のポイントです。 言い換えると、これはフィールドの深さを最大にする焦点です。
+- **レンズの位置** –上記の他のすべての用語を制御します。 これはセンサーからのレンズの距離であり、それによってフォーカスが制御されます。
 
 これらの用語と知識を考慮して、新しい手動フォーカス制御を iOS 8 アプリケーションで正常に実装できます。
 
@@ -308,16 +308,16 @@ IOS デバイスでは、レンズは、マグネットとスプリングによ�
 
 iOS 7 以前のバージョンでは、次のようにプロパティを使用して既存のフォーカス制御を提供していました `FocusMode` 。
 
-- `AVCaptureFocusModeLocked`–フォーカスは1つのフォーカスポイントでロックされます。
-- `AVCaptureFocusModeAutoFocus`–カメラは、鋭いフォーカスが検出されてそこに残るまで、すべての中心点を通じてレンズをスイープします。
-- `AVCaptureFocusModeContinuousAutoFocus`: カメラは、フォーカスのない状態を検出するたびに refocuses ます。
+- `AVCaptureFocusModeLocked` –フォーカスは1つのフォーカスポイントでロックされます。
+- `AVCaptureFocusModeAutoFocus` –カメラは、鋭いフォーカスが検出されてそこに残るまで、すべての中心点を通じてレンズをスイープします。
+- `AVCaptureFocusModeContinuousAutoFocus` : カメラは、フォーカスのない状態を検出するたびに refocuses ます。
 
 また、既存のコントロールは、プロパティを使用して設定可能なポイントを提供し、 `FocusPointOfInterest` ユーザーが特定の領域にフォーカスを設定できるようにします。 アプリケーションでは、プロパティを監視して、レンズの動きを追跡することもでき `IsAdjustingFocus` ます。
 
 さらに、範囲制限はプロパティによって次のように提供されてい `AutoFocusRangeRestriction` ます。
 
-- `AVCaptureAutoFocusRangeRestrictionNear`–自動フォーカスを近くの深度に限定します。 QR コードやバーコードのスキャンなどの状況で役立ちます。
-- `AVCaptureAutoFocusRangeRestrictionFar`–自動フォーカスを遠くの深度に限定します。 関連性のないオブジェクトがビューのフィールド (たとえば、ウィンドウフレーム) に存在する場合に便利です。
+- `AVCaptureAutoFocusRangeRestrictionNear` –自動フォーカスを近くの深度に限定します。 QR コードやバーコードのスキャンなどの状況で役立ちます。
+- `AVCaptureAutoFocusRangeRestrictionFar` –自動フォーカスを遠くの深度に限定します。 関連性のないオブジェクトがビューのフィールド (たとえば、ウィンドウフレーム) に存在する場合に便利です。
 
 最後に、 `SmoothAutoFocus` 自動フォーカスアルゴリズムの速度を低下させるプロパティがあります。また、ビデオを録画するときにアーティファクトの移動を回避するために、小さなインクリメントでステップインします。
 
@@ -505,9 +505,9 @@ IOS 8 アプリケーションでの公開の制御の詳細について説明�
 
 公開を制御するためにまとめられる3つの基本的な要素は次のとおりです。
 
-- **シャッター速度**–シャッターを開いてカメラセンサーに光を表示する時間の長さです。 シャッターが開いている時間が短いほど、では小さくなり、画像が鮮明になります (モーションブラーは小さくなります)。 シャッターが開いている時間が長いほど、ではより多くの光源が使用され、動きが多くなります。
-- **ISO マッピング**–これはフィルム写真から借用した用語であり、フィルム内の薬品の感度を意味します。 フィルムの低い ISO 値は、粒度が低く、色がより正確に再現されています。デジタルセンサーの ISO の値が低い場合、センサーのノイズは低くなりますが、明るさは低くなります。 ISO の値が大きいほど、イメージは明るくなりますが、センサーノイズが多くなります。 デジタルセンサーの "ISO" は、物理的な機能ではなく、[電子的な利得](https://en.wikipedia.org/wiki/Gain)の尺度です。
-- **レンズ絞り**–これは、レンズを開くためのサイズです。 すべての iOS デバイスでレンズの絞りが固定されているため、露出の調整に使用できる値はシャッター速度と ISO だけです。
+- **シャッター速度** –シャッターを開いてカメラセンサーに光を表示する時間の長さです。 シャッターが開いている時間が短いほど、では小さくなり、画像が鮮明になります (モーションブラーは小さくなります)。 シャッターが開いている時間が長いほど、ではより多くの光源が使用され、動きが多くなります。
+- **ISO マッピング** –これはフィルム写真から借用した用語であり、フィルム内の薬品の感度を意味します。 フィルムの低い ISO 値は、粒度が低く、色がより正確に再現されています。デジタルセンサーの ISO の値が低い場合、センサーのノイズは低くなりますが、明るさは低くなります。 ISO の値が大きいほど、イメージは明るくなりますが、センサーノイズが多くなります。 デジタルセンサーの "ISO" は、物理的な機能ではなく、 [電子的な利得](https://en.wikipedia.org/wiki/Gain)の尺度です。
+- **レンズ絞り** –これは、レンズを開くためのサイズです。 すべての iOS デバイスでレンズの絞りが固定されているため、露出の調整に使用できる値はシャッター速度と ISO だけです。
 
 ### <a name="how-continuous-auto-exposure-works"></a>継続的自動露出のしくみ
 
@@ -529,8 +529,8 @@ IOS 8 アプリケーションでの公開の制御の詳細について説明�
 
 iOS 7 以降では、プロパティを使用して次の既存の露出コントロールを提供し `ExposureMode` ます。
 
-- `AVCaptureExposureModeLocked`–シーンを1回サンプリングし、その値をシーン全体で使用します。
-- `AVCaptureExposureModeContinuousAutoExposure`–シーンを継続的にサンプリングして、適切に点灯するようにします。
+- `AVCaptureExposureModeLocked` –シーンを1回サンプリングし、その値をシーン全体で使用します。
+- `AVCaptureExposureModeContinuousAutoExposure` –シーンを継続的にサンプリングして、適切に点灯するようにします。
 
 を `ExposurePointOfInterest` 使用すると、公開するターゲットオブジェクトを選択してシーンを公開できます。また、アプリケーションはプロパティを監視して、露出が調整されていることを `AdjustingExposure` 確認できます。
 
@@ -799,7 +799,7 @@ CaptureDevice.UnlockForConfiguration();
 
 IOS 8 アプリケーションでのホワイトバランスの制御の詳細について説明する前に。 次に、ホワイトバランスのしくみについて簡単に見てみましょう。
 
-色認識の研究では、 [cie 1931 の RGB 色空間と cie 1931 XYZ 色空間](https://en.wikipedia.org/wiki/CIE_1931_color_space)が、数学的に定義された最初の色空間になります。 これらは、1931の国際照明 (CIE) によって作成されたものです。
+色認識の研究では、 [cie 1931 の RGB 色空間と cie 1931 XYZ 色空間](https://en.wikipedia.org/wiki/CIE_1931_color_space) が、数学的に定義された最初の色空間になります。 これらは、1931の国際照明 (CIE) によって作成されたものです。
 
 [![CIE 1931 RGB 色空間と CIE 1931 XYZ 色空間](intro-to-manual-camera-controls-images/image17.png)](intro-to-manual-camera-controls-images/image17.png#lightbox)
 
@@ -817,8 +817,8 @@ iOS デバイスでは、反対色のゲインを上げることで色のキャ�
 
 iOS 7 以降では、プロパティを使用して次の既存のホワイトバランスコントロールを提供していました `WhiteBalanceMode` 。
 
-- `AVCapture WhiteBalance ModeLocked`–シーンを1回サンプリングし、その値をシーン全体で使用します。
-- `AVCapture WhiteBalance ModeContinuousAutoExposure`–シーンを継続的にサンプリングして、バランスが取れていることを確認します。
+- `AVCapture WhiteBalance ModeLocked` –シーンを1回サンプリングし、その値をシーン全体で使用します。
+- `AVCapture WhiteBalance ModeContinuousAutoExposure` –シーンを継続的にサンプリングして、バランスが取れていることを確認します。
 
 また、アプリケーションは、プロパティを監視して、 `AdjustingWhiteBalance` 公開が調整されていることを確認できます。
 
@@ -845,13 +845,13 @@ Ios 7 以降で既に提供されている機能に加えて、iOS 8 では、�
 
 変換ルーチンは、デバイスに依存しない色空間との間での変換を支援するために、iOS 8 に追加されました。 変換ルーチンを実装するために、 `AVCaptureWhiteBalanceChromaticityValues` 次のメンバーと共に構造体が追加されています。
 
-- `X`-0 ~ 1 の値です。
-- `Y`-0 ~ 1 の値です。
+- `X` -0 ~ 1 の値です。
+- `Y` -0 ~ 1 の値です。
 
 構造体には、 `AVCaptureWhiteBalanceTemperatureAndTintValues` 次のメンバーも追加されています。
 
-- `Temperature`-ケルビンの浮動小数点値です。
-- `Tint`-は、緑またはマゼンタから150までのオフセットであり、正の値は緑の方向に、マゼンタの場合は負の値になります。
+- `Temperature` -ケルビンの浮動小数点値です。
+- `Tint` -は、緑またはマゼンタから150までのオフセットであり、正の値は緑の方向に、マゼンタの場合は負の値になります。
 
 とのメソッドを使用して、 `CaptureDevice.GetTemperatureAndTintValues` `CaptureDevice.GetDeviceWhiteBalanceGains` 温度と濃淡、度、および RGB ゲインの色空間を変換します。
 
@@ -1106,9 +1106,9 @@ IOS 8 の角かっこで囲まれたキャプチャを使用すると、アプ�
 
 ここでも、角かっこで囲まれたキャプチャは、画像間のさまざまな設定で撮影された静止画像のバーストです。 角かっこで囲まれたキャプチャの種類は次のとおりです。
 
-- **自動露出角かっこ**–すべてのイメージのバイアス量が変動します。
+- **自動露出角かっこ** –すべてのイメージのバイアス量が変動します。
 - [**手動露出角かっこ**] –すべてのイメージのシャッター速度 (期間) と ISO 金額が変化します。
-- **単純なバーストブラケット**は、連続して次々に撮影された一連のイメージです。
+- **単純なバーストブラケット** は、連続して次々に撮影された一連のイメージです。
 
 ### <a name="new-bracketed-capture-controls-in-ios-8"></a>IOS 8 の新しいかっこ付きキャプチャコントロール
 
@@ -1116,8 +1116,8 @@ IOS 8 の角かっこで囲まれたキャプチャを使用すると、アプ�
 
 設定を処理するために、次の2つの新しいクラスが実装されています。
 
-- `AVCaptureAutoExposureBracketedStillImageSettings`– `ExposureTargetBias` 自動露出角かっこのバイアスを設定するために使用されるプロパティが1つあります。
-- `AVCaptureManual`  `ExposureBracketedStillImageSettings`–には、とという2つのプロパティがあります。これは、 `ExposureDuration` `ISO` 手動露出角かっこのシャッター速度と ISO を設定するために使用されます。
+- `AVCaptureAutoExposureBracketedStillImageSettings` –  `ExposureTargetBias` 自動露出角かっこのバイアスを設定するために使用されるプロパティが1つあります。
+- `AVCaptureManual`  `ExposureBracketedStillImageSettings` –には、とという2つのプロパティがあります。これは、  `ExposureDuration`  `ISO` 手動露出角かっこのシャッター速度と ISO を設定するために使用されます。
 
 ### <a name="bracketed-capture-controls-dos-and-donts"></a>かっこで囲まれたキャプチャコントロールの実行とすべき
 
@@ -1125,9 +1125,9 @@ IOS 8 の角かっこで囲まれたキャプチャを使用すると、アプ�
 
 次に示すのは、iOS 8 で、角かっこで囲まれたキャプチャコントロールを使用する場合に行う必要がある項目の一覧です。
 
-- メソッドを呼び出すことによって、最悪のケースのキャプチャ状況に対してアプリを準備し `PrepareToCaptureStillImageBracket` ます。
+- メソッドを呼び出すことによって、最悪のケースのキャプチャ状況に対してアプリを準備し  `PrepareToCaptureStillImageBracket` ます。
 - サンプルバッファーが同じ共有プールから取得されるものとします。
-- 前の prepare 呼び出しで割り当てられたメモリを解放するには、を再度呼び出して、 `PrepareToCaptureStillImageBracket` 1 つのオブジェクトの配列を送信します。
+- 前の prepare 呼び出しで割り当てられたメモリを解放するには、を再度呼び出して、  `PrepareToCaptureStillImageBracket` 1 つのオブジェクトの配列を送信します。
 
 #### <a name="donts"></a>非推奨
 
@@ -1140,7 +1140,7 @@ IOS 8 の角かっこで囲まれたキャプチャを使用すると、アプ�
 
 IOS 8 での角かっこで囲まれたキャプチャを使用する場合は、次の詳細を考慮する必要があります。
 
-- かっこで囲まれた設定は、設定を一時的にオーバーライド `AVCaptureDevice` します。
+- かっこで囲まれた設定は、設定を一時的にオーバーライド  `AVCaptureDevice` します。
 - Flash と静止画像の安定化設定は無視されます。
 - すべてのイメージで同じ出力形式 (jpeg、png など) を使用する必要があります。
 - ビデオのプレビューでは、フレームを削除することができます。
@@ -1321,5 +1321,5 @@ IOS 8 での角かっこで囲まれたキャプチャを使用する場合は�
 
 ## <a name="related-links"></a>関連リンク
 
-- [ManualCameraControls (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/manualcameracontrols)
+- [ManualCameraControls (サンプル)](/samples/xamarin/ios-samples/manualcameracontrols)
 - [iOS 8 の概要](~/ios/platform/introduction-to-ios8.md)

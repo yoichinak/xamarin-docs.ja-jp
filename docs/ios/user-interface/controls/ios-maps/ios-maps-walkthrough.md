@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 59ad6a11eecf629fc2a815e21a29493f4a1a1397
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 56306b04b57295a3625804bdbbb6a9810675be2b
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86932224"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436769"
 ---
 # <a name="annotations-and-overlays-in-xamarinios"></a>Xamarin. iOS の注釈とオーバーレイ
 
@@ -20,9 +20,9 @@ ms.locfileid: "86932224"
 
  [![MapKit アプリの例](ios-maps-walkthrough-images/00-map-overlay.png)](ios-maps-walkthrough-images/00-map-overlay.png#lightbox)
 
-完成したコードは、マップの[チュートリアルのサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/mapswalkthrough)で確認できます。
+完成したコードは、マップの [チュートリアルのサンプル](/samples/xamarin/ios-samples/mapswalkthrough)で確認できます。
 
-まず、新しい IOS の空の**プロジェクト**を作成し、関連する名前を付けます。 まず、ビューコントローラーに MapView を表示するコードを追加し、Mapview の新しいクラスとカスタム注釈を作成します。 以下の手順でビルドします。
+まず、新しい IOS の空の **プロジェクト**を作成し、関連する名前を付けます。 まず、ビューコントローラーに MapView を表示するコードを追加し、Mapview の新しいクラスとカスタム注釈を作成します。 以下の手順でビルドします。
 
 ## <a name="viewcontroller"></a>ViewController
 
@@ -80,7 +80,7 @@ ms.locfileid: "86932224"
 
     ```
 
-1. の新しいインスタンスを作成し、のに `MapDelegate` 割り当て `Delegate` `MKMapView` ます。 ここでも、すぐにを実装し `MapDelegate` ます。
+1. の新しいインスタンスを作成し、のに  `MapDelegate` 割り当て `Delegate` `MKMapView` ます。 ここでも、すぐにを実装し `MapDelegate` ます。
 
     ```csharp
     mapDelegate = new MapDelegate ();
@@ -101,7 +101,7 @@ ms.locfileid: "86932224"
     }
     ```
 
-1. 最後に、ユーザーが場所を要求する理由をユーザーに通知するために、**情報 plist**ファイルを編集する必要があります。 **情報 plist**の [**ソース**] メニューで、次のキーを追加します。
+1. 最後に、ユーザーが場所を要求する理由をユーザーに通知するために、 **情報 plist** ファイルを編集する必要があります。 **情報 plist**の [**ソース**] メニューで、次のキーを追加します。
 
     `NSLocationWhenInUseUsageDescription`
 
@@ -286,6 +286,6 @@ ms.locfileid: "86932224"
 
 ## <a name="related-links"></a>関連リンク
 
-- [Maps チュートリアルのサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/mapswalkthrough)
-- [マップのデモのサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/mapdemo)
+- [Maps チュートリアルのサンプル](/samples/xamarin/ios-samples/mapswalkthrough)
+- [マップのデモのサンプル](/samples/xamarin/ios-samples/mapdemo)
 - [iOS のマップ](~/ios/user-interface/controls/ios-maps/index.md)

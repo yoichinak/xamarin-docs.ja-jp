@@ -7,29 +7,29 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/07/2017
-ms.openlocfilehash: 48ea94b62ba01f32699bf595bc004de133371468
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 7bc102069d673b9459c863282b0423952c8fa59d
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574570"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91437329"
 ---
 # <a name="sirikit-updates-in-ios-11"></a>IOS 11 での SiriKit の更新
 
-SiriKit は iOS 10 で導入され、多数のサービスドメイン (ワークスペース、乗り物予約、通話の作成など) を備えています。 Sirikit の概念と、アプリに SiriKit を実装する方法については、 [「sirikit」セクション](~/ios/platform/sirikit/index.md)を参照してください。
+SiriKit は iOS 10 で導入され、多数のサービスドメイン (ワークスペース、乗り物予約、通話の作成など) を備えています。 Sirikit の概念と、アプリに SiriKit を実装する方法については、 [「sirikit」セクション](~/ios/platform/sirikit/index.md) を参照してください。
 
 ![Siri タスク一覧のデモ](sirikit-images/sirikit.png)
 
 IOS 11 の SiriKit では、次のような新しいインテントドメインが追加されています。
 
-- [**リストとメモ**](#listsnotes)–新機能 タスクとメモを処理するアプリの API を提供します。
-- **ビジュアルコード**–新規! Siri では、連絡先情報を共有したり、支払いトランザクションに参加したりするための QR コードを表示できます。
-- **支払い**–支払い操作のための検索および転送インテントが追加されました。
-- **乗り物予約**–キャンセル乗り物とフィードバックインテントを追加しました。
+- [**リストとメモ**](#listsnotes) –新機能 タスクとメモを処理するアプリの API を提供します。
+- **ビジュアルコード** –新規! Siri では、連絡先情報を共有したり、支払いトランザクションに参加したりするための QR コードを表示できます。
+- **支払い** –支払い操作のための検索および転送インテントが追加されました。
+- **乗り物予約** –キャンセル乗り物とフィードバックインテントを追加しました。
 
 その他に次の新機能があります。
 
-- [**代替アプリ名**](#alternativenames)–ユーザーが代替の名前/発音を提供することで、アプリを対象とするように siri に指示するために役立つエイリアスを提供します。
+- [**代替アプリ名**](#alternativenames) –ユーザーが代替の名前/発音を提供することで、アプリを対象とするように siri に指示するために役立つエイリアスを提供します。
 - 作業の**開始**–バックグラウンドでトレーニングを開始する機能を提供します。
 
 これらの機能の一部を以下に説明します。 その他の詳細については、 [Apple の SiriKit のドキュメント](https://developer.apple.com/documentation/sirikit)を参照してください。
@@ -45,17 +45,17 @@ IOS 11 の SiriKit では、次のような新しいインテントドメイン�
 - タイトルと完了ステータスを取得します。
 - 必要に応じて、期限と場所を指定します。
 
-**メモ**
+**ノート**
 
 - タイトルとコンテンツフィールドがあること。
 
-タスクとメモの両方をグループにまとめることができます。 このセクションの残りの部分では、[タスクノート SiriKit の例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-sirikitsample)を使用して、sirikit でこの新しいドメインを実装する方法について説明します。
+タスクとメモの両方をグループにまとめることができます。 このセクションの残りの部分では、 [タスクノート SiriKit の例](/samples/xamarin/ios-samples/ios11-sirikitsample)を使用して、sirikit でこの新しいドメインを実装する方法について説明します。
 
 ### <a name="how-to-process-a-sirikit-request"></a>SiriKit 要求を処理する方法
 
 次の手順に従って、SiriKit 要求を処理します。
 
-1. **解決**–パラメーターを検証し、必要に応じてユーザーから追加情報を要求します。
+1. **解決** –パラメーターを検証し、必要に応じてユーザーから追加情報を要求します。
 2. [確認] –要求を処理できることを**確認**します。
 3. **Handle** –操作を実行します (データの更新またはネットワーク操作の実行)。
 
@@ -68,10 +68,10 @@ IOS 11 の SiriKit では、次のような新しいインテントドメイン�
 
 たとえば、インターフェイスの場合、 `IINCreateTaskListIntent` 必要なメソッドはです `HandleCreateTaskList` 。 Siri の相互作用をより詳細に制御できる4つの省略可能なメソッドがあります。
 
-- `ResolveTitle`–タイトルを検証し、必要に応じて既定のタイトルを設定するか、データが不要であることを通知します。
-- `ResolveTaskTitles`–ユーザーによって読み上げられたタスクの一覧を検証します。
-- `ResolveGroupName`–グループ名を検証したり、既定のグループを選択したり、データが不要であることを通知したりします。
-- `ConfirmCreateTaskList`–コードが要求された操作を実行できることを検証しますが、実行しません (メソッドのみが `Handle*` データを変更する必要があります)。
+- `ResolveTitle` –タイトルを検証し、必要に応じて既定のタイトルを設定するか、データが不要であることを通知します。
+- `ResolveTaskTitles` –ユーザーによって読み上げられたタスクの一覧を検証します。
+- `ResolveGroupName` –グループ名を検証したり、既定のグループを選択したり、データが不要であることを通知したりします。
+- `ConfirmCreateTaskList` –コードが要求された操作を実行できることを検証しますが、実行しません (メソッドのみが `Handle*` データを変更する必要があります)。
 
 ### <a name="handle-the-intent"></a>目的を処理する
 
@@ -94,18 +94,18 @@ IOS 11 の SiriKit では、次のような新しいインテントドメイン�
 
 必須 `Handle*` メソッドと省略可能なメソッドは、 `Confirm*` 完了ハンドラーに渡すオブジェクトの値を設定することによって、応答コードを示します。 応答は列挙から取得され `INCreateTaskListIntentResponseCode` ます。
 
-- `Ready`–確認フェーズ中にを返します (メソッドから `Confirm*` ではなく、メソッドから `Handle*` )。
-- `InProgress`–長時間実行されるタスク (ネットワーク/サーバー操作など) に使用されます。
-- `Success`–成功した操作の詳細を使用して応答します (メソッドの場合のみ `Handle*` )。
-- `Failure`–エラーが発生したため、操作を完了できませんでした。
-- `RequiringAppLaunch`–インテントによって処理することはできませんが、アプリでは操作が可能です。
-- `Unspecified`–使用しない: エラーメッセージがユーザーに表示されます。
+- `Ready` –確認フェーズ中にを返します (メソッドから `Confirm*` ではなく、メソッドから `Handle*` )。
+- `InProgress` –長時間実行されるタスク (ネットワーク/サーバー操作など) に使用されます。
+- `Success` –成功した操作の詳細を使用して応答します (メソッドの場合のみ `Handle*` )。
+- `Failure` –エラーが発生したため、操作を完了できませんでした。
+- `RequiringAppLaunch` –インテントによって処理することはできませんが、アプリでは操作が可能です。
+- `Unspecified` –使用しない: エラーメッセージがユーザーに表示されます。
 
-これらのメソッドと応答の詳細については、Apple の[Sirikit リストとメモのドキュメント](https://developer.apple.com/documentation/sirikit/lists_and_notes)を参照してください。
+これらのメソッドと応答の詳細については、Apple の [Sirikit リストとメモのドキュメント](https://developer.apple.com/documentation/sirikit/lists_and_notes)を参照してください。
 
 ### <a name="implementing-lists-and-notes"></a>リストとメモの実装
 
-次の手順に従って、空の iOS アプリに SiriKit サポートを追加することで、[タスクノート SiriKit の例](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-sirikitsample)が作成されました。
+次の手順に従って、空の iOS アプリに SiriKit サポートを追加することで、 [タスクノート SiriKit の例](/samples/xamarin/ios-samples/ios11-sirikitsample) が作成されました。
 
 まず、SiriKit サポートを追加するには、iOS アプリで次の手順を実行します。
 
@@ -116,9 +116,9 @@ IOS 11 の SiriKit では、次のような新しいインテントドメイン�
 
 次に、Siri 要求を処理する新しい拡張機能プロジェクトをアプリに追加します。
 
-1. ソリューションを右クリックし、[**追加] > [新しいプロジェクトの追加**] の順に選択します。
+1. ソリューションを右クリックし、[ **追加] > [新しいプロジェクトの追加**] の順に選択します。
 2. **IOS > 拡張機能の > インテント拡張機能**テンプレートを選択します。
-3. 2つの新しいプロジェクトが追加されます: インテントと IntentUI。 UI のカスタマイズは省略可能であるため、このサンプルでは**インテント**プロジェクトのコードのみが含まれています。
+3. 2つの新しいプロジェクトが追加されます: インテントと IntentUI。 UI のカスタマイズは省略可能であるため、このサンプルでは **インテント** プロジェクトのコードのみが含まれています。
 
 拡張プロジェクトは、すべての SiriKit 要求が処理される場所です。 別の拡張機能として、メインアプリと通信する方法は自動的にはありません。これは通常、アプリグループを使用して共有ファイルストレージを実装することによって解決されます。
 
@@ -150,16 +150,16 @@ public partial class IntentHandler : INExtension, IINNotebookDomainHandling
 >
 > - .NET では、インターフェイスのプレフィックスとして大文字を付ける規則があり `I` ます。これは、IOS SDK からプロトコルをバインドするときに Xamarin に準拠します。
 > - Xamarin では、iOS の型名も保持し、Apple は型名の最初の2文字を使用して、型が属しているフレームワークを反映します。
-> - フレームワークでは `Intents` 、型にプレフィックスが付き `IN*` ます (例として、 `INExtension`) ですが、これらはインターフェイスでは_ありません_。
+> - フレームワークでは `Intents` 、型にプレフィックスが付き `IN*` ます (例として、 `INExtension`) ですが、これらはインターフェイスでは _ありません_ 。
 > - また、そのプロトコル (C# ではインターフェイスになります) は、のように2つのになり `I` `IINAddTasksIntentHandling` ます。
 
 #### <a name="handling-intents"></a>処理インテント
 
 各インテント (タスクの追加、タスク属性の設定など) は、次に示すような1つの方法で実装されます。 このメソッドは、次の3つの主な機能を実行する必要があります。
 
-1. **インテントの処理**– siri によって解析されたデータは、 `intent` インテントの種類に固有のオブジェクトで使用できます。 アプリケーションで、オプションのメソッドを使用してデータを検証した可能性があり `Resolve*` ます。
-2. **データストアの検証と更新**–データをファイルシステムに保存します (アプリグループを使用して、メイン iOS アプリがアクセスできるようにします)。または、ネットワーク要求を介してデータを保存します。
-3. **応答を提供**する–ハンドラーを使用して、 `completion` siri に応答を送信し、ユーザーに読み取り/表示します。
+1. **インテントの処理** – siri によって解析されたデータは、 `intent` インテントの種類に固有のオブジェクトで使用できます。 アプリケーションで、オプションのメソッドを使用してデータを検証した可能性があり `Resolve*` ます。
+2. **データストアの検証と更新** –データをファイルシステムに保存します (アプリグループを使用して、メイン iOS アプリがアクセスできるようにします)。または、ネットワーク要求を介してデータを保存します。
+3. **応答を提供** する–ハンドラーを使用して、 `completion` siri に応答を送信し、ユーザーに読み取り/表示します。
 
 ```csharp
 public void HandleCreateTaskList(INCreateTaskListIntent intent, Action<INCreateTaskListIntentResponse> completion)
@@ -202,11 +202,11 @@ IOS アプリでサポートされている限り、カスタムアクティビ�
 
 ## <a name="alternative-names"></a>代替名
 
-この新しい iOS 11 機能は、ユーザーが Siri で適切にトリガーできるように、アプリの代替名を構成できることを意味します。 IOS アプリプロジェクトの**情報**ファイルに、次のキーを追加します。
+この新しい iOS 11 機能は、ユーザーが Siri で適切にトリガーできるように、アプリの代替名を構成できることを意味します。 IOS アプリプロジェクトの **情報** ファイルに、次のキーを追加します。
 
 ![別のアプリ名のキーと値を示す情報 plist](sirikit-images/alternative-names.png)
 
-別のアプリ名を設定すると、次のフレーズもサンプルアプリで使用できます (実際には、**タスクノート**と呼ばれます)。
+別のアプリ名を設定すると、次のフレーズもサンプルアプリで使用できます (実際には、 **タスクノート**と呼ばれます)。
 
 - " _MonkeyNotes_での bananas と pears による食料品の一覧の作成"
 - " _Monkeytodo_でのタスクの wwdc の追加"
@@ -219,8 +219,8 @@ IOS アプリでサポートされている限り、カスタムアクティビ�
 
 _目標-C 例外がスローされました。 名前: NSInternalInconsistencyException Reason: クラス <INPreferences: 0x60400082ff00> をアプリから使用するには、資格のが必要です。Xcode プロジェクトで Siri 機能を有効にしましたか?_
 
-- SiriKit は、権利の**plist**に含まれています。
-- **権利**は、 **iOS バンドル署名 > ビルド > プロジェクトオプション**で構成されます。
+- SiriKit は、権利の **plist**に含まれています。
+- **権利** は、 **iOS バンドル署名 > ビルド > プロジェクトオプション**で構成されます。
 
   [![権利が正しく設定されたプロジェクトオプション](sirikit-images/set-entitlements-sml.png)](sirikit-images/set-entitlements.png#lightbox)
 
@@ -229,5 +229,5 @@ _目標-C 例外がスローされました。 名前: NSInternalInconsistencyEx
 ## <a name="related-links"></a>関連リンク
 
 - [SiriKit (Apple)](https://developer.apple.com/documentation/sirikit)
-- [タスクノート SiriKit サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-sirikitsample)
+- [タスクノート SiriKit サンプル](/samples/xamarin/ios-samples/ios11-sirikitsample)
 - [SiriKit (WWDC) の新機能 (ビデオ)](https://developer.apple.com/videos/play/wwdc2017/214/)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 177701b8b50edea965e97da225265912f1f0c198
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 78c5d639ef75891c037529f270bfb36f776a12e7
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86932328"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436642"
 ---
 # <a name="maps-in-xamarinios"></a>Xamarin. iOS のマップ
 
@@ -28,13 +28,13 @@ map = new MKMapView (UIScreen.MainScreen.Bounds);
 View = map;
 ```
 
-`MKMapView`は、 `UIView` マップを表示するサブクラスです。 上記のコードを使用してマップを追加するだけで、対話型のマップが生成されます。
+`MKMapView` は、 `UIView` マップを表示するサブクラスです。 上記のコードを使用してマップを追加するだけで、対話型のマップが生成されます。
 
 ![サンプルマップ](images/00-map.png)
 
 ## <a name="map-style"></a>マップスタイル
 
-`MKMapView`では、3種類のマップのスタイルがサポートされています。 マップスタイルを適用するには、単に `MapType` プロパティを列挙型の値に設定し `MKMapType` ます。
+`MKMapView` では、3種類のマップのスタイルがサポートされています。 マップスタイルを適用するには、単に `MapType` プロパティを列挙型の値に設定し `MKMapType` ます。
 
 ```csharp
 map.MapType = MKMapType.Standard; //road map
@@ -48,7 +48,7 @@ map.MapType = MKMapType.Hybrid;
 
 ## <a name="panning-and-zooming"></a>パンとズーム
 
-`MKMapView`には、次のようなマップインタラクティビティ機能のサポートが含まれています。
+`MKMapView` には、次のようなマップインタラクティビティ機能のサポートが含まれています。
 
 - ピンチジェスチャを使用したズーム
 - パンジェスチャによるパン
@@ -62,7 +62,7 @@ map.ScrollEnabled = false;
 
 ## <a name="user-location"></a>ユーザーの位置
 
-ユーザーの操作に加えて、に `MKMapView` は、デバイスの場所を表示するためのサポートも組み込まれています。 これは、*コアロケーション*フレームワークを使用して行われます。 ユーザーの場所にアクセスするには、ユーザーにメッセージを表示する必要があります。 これを行うには、のインスタンスを作成し、を `CLLocationManager` 呼び出し `RequestWhenInUseAuthorization` ます。
+ユーザーの操作に加えて、に `MKMapView` は、デバイスの場所を表示するためのサポートも組み込まれています。 これは、 *コアロケーション* フレームワークを使用して行われます。 ユーザーの場所にアクセスするには、ユーザーにメッセージを表示する必要があります。 これを行うには、のインスタンスを作成し、を `CLLocationManager` 呼び出し `RequestWhenInUseAuthorization` ます。
 
 ```csharp
 CLLocationManager locationManager = new CLLocationManager();
@@ -72,12 +72,12 @@ locationManager.RequestWhenInUseAuthorization();
 
 8.0 より前のバージョンの iOS では、を呼び出そうとするとエラーが発生することに注意 `RequestWhenInUseAuthorization` してください。 8より前のバージョンをサポートする場合は、その呼び出しを行う前に iOS のバージョンを確認してください。
 
-ユーザーの場所にアクセスするには、**情報 plist**を変更する必要もあります。 位置データに関連する次のキーを設定する必要があります。
+ユーザーの場所にアクセスするには、 **情報 plist**を変更する必要もあります。 位置データに関連する次のキーを設定する必要があります。
 
 - **NSLocationWhenInUseUsageDescription**: アプリでやり取りしている間にユーザーの場所にアクセスする場合。
 - **NSLocationAlwaysUsageDescription**: アプリがバック グラウンドでユーザーの場所にアクセスする場合。
 
-これらのキーを追加するには、[ **plist** ] を開き、エディターの下部にある [*ソース*] を選択します。
+これらのキーを追加するには、[ **plist** ] を開き、エディターの下部にある [ *ソース* ] を選択します。
 
 **情報**を更新し、ユーザーにその場所へのアクセス許可を求めるメッセージが表示されたら、プロパティを true に設定してマップ上のユーザーの場所を表示できます `ShowsUserLocation` 。
 
@@ -87,9 +87,9 @@ map.ShowsUserLocation = true;
 
  ![場所へのアクセスを許可するアラート](images/02-location-alert.png)
 
-## <a name="annotations"></a>コメント
+## <a name="annotations"></a>注釈
 
- `MKMapView`では、マップ上の画像 (注釈) の表示もサポートされています。 これには、カスタムイメージ、またはさまざまな色のシステム定義の pin を使用できます。 たとえば、次のスクリーンショットは、ピンとカスタムイメージの両方を含むマップを示しています。
+ `MKMapView` では、マップ上の画像 (注釈) の表示もサポートされています。 これには、カスタムイメージ、またはさまざまな色のシステム定義の pin を使用できます。 たとえば、次のスクリーンショットは、ピンとカスタムイメージの両方を含むマップを示しています。
 
  ![このスクリーンショットは、ピンとカスタムイメージの両方を含むマップを示しています。](images/03-annotations.png)
 
@@ -97,7 +97,7 @@ map.ShowsUserLocation = true;
 
 注釈自体には、次の2つの部分があります。
 
-- 注釈 `MKAnnotation` のタイトルや場所など、注釈に関するモデルデータを含むオブジェクト。
+- 注釈  `MKAnnotation` のタイトルや場所など、注釈に関するモデルデータを含むオブジェクト。
 - `MKAnnotationView`表示するイメージと、ユーザーが注釈をタップしたときに表示されるコールアウトを格納する。
 
 マップキットでは、iOS の委任パターンを使用して、の `Delegate` プロパティ `MKMapView` がのインスタンスに設定されているマップに注釈を追加し `MKMapViewDelegate` ます。 これは、このデリゲートの実装であり、 `MKAnnotationView` 注釈のを返します。
@@ -187,8 +187,8 @@ public override void CalloutAccessoryControlTapped (MKMapView mapView, MKAnnotat
 
 注釈と同様に、オーバーレイの追加には次の2つの部分が含まれます。
 
-- オーバーレイのモデルオブジェクトを作成し、に追加し `MKMapView` ます。
-- でオーバーレイのビューを作成 `MKMapViewDelegate` します。
+- オーバーレイのモデルオブジェクトを作成し、に追加し  `MKMapView` ます。
+- でオーバーレイのビューを作成  `MKMapViewDelegate` します。
 
 オーバーレイのモデルには、任意の `MKShape` サブクラスを指定できます。 Xamarin. iOS には、、、およびの各クラスを使用して、 `MKShape` 多角形、ポリライン、および円のサブクラスが含まれてい `MKPolygon` `MKPolyline` `MKCircle` ます。
 
@@ -377,7 +377,7 @@ public void Search (string forSearchString)
 }
 ```
 
-次に、「 `MapViewController` `UISearchResultsUpdating` `SearchResultsUpdater` `searchController` [ローカル検索 UI を追加](#Adding_a_Local_Search_UI)する」セクションでのプロパティに割り当てられたのカスタム実装を作成します。
+次に、「 `MapViewController` `UISearchResultsUpdating` `SearchResultsUpdater` `searchController` [ローカル検索 UI を追加](#Adding_a_Local_Search_UI) する」セクションでのプロパティに割り当てられたのカスタム実装を作成します。
 
 ```csharp
 public class SearchResultsUpdator : UISearchResultsUpdating
@@ -396,13 +396,13 @@ public class SearchResultsUpdator : UISearchResultsUpdating
  ![結果から項目が選択されたときにマップに追加された注釈](images/08-search-results.png)
 
 > [!IMPORTANT]
-> `UISearchController`は、iOS 8 で実装されました。 これより前のデバイスをサポートする場合は、を使用する必要があり `UISearchDisplayController` ます。
+> `UISearchController` は、iOS 8 で実装されました。 これより前のデバイスをサポートする場合は、を使用する必要があり `UISearchDisplayController` ます。
 
 ## <a name="summary"></a>まとめ
 
-この記事では、iOS 用*Map* *Kit*フレームワークについて説明します。 まず、クラスを使用して、 `MKMapView` 対話的なマップをアプリケーションに含める方法を見てきました。 さらに、注釈とオーバーレイを使用してマップをカスタマイズする方法についても説明します。 最後に、iOS 6.1 を使用してマップキットに追加されたローカル検索機能を確認しました。ここでは、関心のあるポイントに対して場所ベースのクエリを実行し、マップに追加する方法を示します。
+この記事では、iOS 用 *Map* *Kit* フレームワークについて説明します。 まず、クラスを使用して、 `MKMapView` 対話的なマップをアプリケーションに含める方法を見てきました。 さらに、注釈とオーバーレイを使用してマップをカスタマイズする方法についても説明します。 最後に、iOS 6.1 を使用してマップキットに追加されたローカル検索機能を確認しました。ここでは、関心のあるポイントに対して場所ベースのクエリを実行し、マップに追加する方法を示します。
 
 ## <a name="related-links"></a>関連リンク
 
 - [SearchController](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/search-controller)
-- [MapDemo (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/mapdemo)
+- [MapDemo (サンプル)](/samples/xamarin/ios-samples/mapdemo)

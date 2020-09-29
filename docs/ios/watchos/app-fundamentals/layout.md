@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 345c05a439423474644ac64ef86f9adc580ab0b1
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 1fdb7a10bd767085ba8758fa2e026cc36c93639a
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937723"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436918"
 ---
 # <a name="working-with-watchos-layout-in-xamarin"></a>Xamarin での watchOS レイアウトの使用
 
-Apple Watch[画面サイズ](~/ios/watchos/app-fundamentals/screen-sizes.md)のレイアウトを設計すると、独自の課題が生じます。
+Apple Watch [画面サイズ](~/ios/watchos/app-fundamentals/screen-sizes.md) のレイアウトを設計すると、独自の課題が生じます。
 
 ## <a name="design-tips"></a>デザインのヒント
 
@@ -42,21 +42,21 @@ Watch Kit には、魅力的なウォッチアプリのレイアウトを作成�
 
 は、 `WKInterfaceController` すべてのシーンの基本クラスです。
 
-インターフェイスコントローラーのデザインサーフェイスは、垂直方向の**グループ**のように動作します。他のコントロールをインターフェイスコントローラーにドラッグすると、他のコントロールの上に自動的に配置されます。
+インターフェイスコントローラーのデザインサーフェイスは、垂直方向の **グループ**のように動作します。他のコントロールをインターフェイスコントローラーにドラッグすると、他のコントロールの上に自動的に配置されます。
 
 ![コントロールは、他のコントロールの上に自動的に配置されます。](layout-images/controller-scene.png)
 
-各コントロールの**Position**プロパティと**Size**プロパティを設定して、外観を制御できます。
+各コントロールの **Position** プロパティと **Size** プロパティを設定して、外観を制御できます。
 
 ![各コントロールの Position プロパティと Size プロパティの設定](layout-images/positionsize-attributes.png)
 
-サイズが**コンテナーに対して相対的**に設定されている場合は、比例値とオフセット調整を指定できます。 このスクリーンショットは、ウォッチ画面の幅 (**0.8**) の80% を使用するように設定されたボタンを示しています。
+サイズが **コンテナーに対して相対的** に設定されている場合は、比例値とオフセット調整を指定できます。 このスクリーンショットは、ウォッチ画面の幅 (**0.8**) の80% を使用するように設定されたボタンを示しています。
 
 ![比例値とオフセット調整を指定する](layout-images/button-attributes.png)
 
-### <a name="group"></a>グループ
+### <a name="group"></a>Group
 
-`WKInterfaceGroup`は、コントロールを垂直方向または水平方向に積み重ねるように構成できる単純なレイアウトコンテナーです。 既定では、各コントロールの間隔が含まれますが、[**属性**] インスペクターで間隔 (およびインセット) を変更できます。
+`WKInterfaceGroup` は、コントロールを垂直方向または水平方向に積み重ねるように構成できる単純なレイアウトコンテナーです。 既定では、各コントロールの間隔が含まれますが、[ **属性** ] インスペクターで間隔 (およびインセット) を変更できます。
 
 ![属性インスペクターの間隔とインセットを変更する](layout-images/group-attributes.png)
 
@@ -70,15 +70,15 @@ Watch Kit には、魅力的なウォッチアプリのレイアウトを作成�
 
 ![区切り記号の使用例](layout-images/separator-scene.png)
 
-注: 画面の全幅を使用しない青と緑の区切り記号は、**固定**または**コンテナーサイズからの相対**値で構成されています。
+注: 画面の全幅を使用しない青と緑の区切り記号は、 **固定** または **コンテナーサイズからの相対** 値で構成されています。
 
 ### <a name="content-controls"></a>コンテンツ コントロール
 
-、、、、、 `Label` `Image` `Button` `Switch` `Slider` `Map` 、および[その他のコントロール](~/ios/watchos/user-interface/index.md)を使用せずにレイアウトを完了することはできません。
-これらは、**グループ**、または各コントロールの位置とサイズの設定を使用して、レイアウトに配置できます。
+、、、、、 `Label` `Image` `Button` `Switch` `Slider` `Map` 、および [その他のコントロール](~/ios/watchos/user-interface/index.md)を使用せずにレイアウトを完了することはできません。
+これらは、 **グループ** 、または各コントロールの位置とサイズの設定を使用して、レイアウトに配置できます。
 
 ## <a name="related-links"></a>関連リンク
 
-- [WatchKitCatalog (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
+- [WatchKitCatalog (サンプル)](/samples/xamarin/ios-samples/watchos-watchkitcatalog)
 - [Apple のレイアウトリファレンス](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/WatchHumanInterfaceGuidelines/Layout.html)
 - [Apple の色 & タイポグラフィリファレンス](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/WatchHumanInterfaceGuidelines/ColorandTypography.html)

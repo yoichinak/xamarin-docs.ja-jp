@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: davidortinau
 ms.author: daortin
-ms.openlocfilehash: 8ad1bf746c129cfb5cfbc8b3e04b871224df486d
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: c19cf373a89798703224574fe13724dfbade33bb
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936579"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436686"
 ---
 # <a name="using-json-to-create-a-user-interface-in-xamarinios"></a>JSON を使用した Xamarin でのユーザーインターフェイスの作成
 
@@ -24,11 +24,11 @@ MT.D は、JSON を使用するときに Elements API で使用できるすべ�
 
 [ ![ たとえば、このスクリーンショットのアプリケーションは json を使用して完全に宣言さ](json-element-walkthrough-images/01-load-from-file.png)](json-element-walkthrough-images/01-load-from-file.png#lightbox)れています。 [ ![ たとえば、このスクリーンショットのアプリケーションは json を使用して完全に宣言されてい](json-element-walkthrough-images/01-load-from-file.png)](json-element-walkthrough-images/01-load-from-file.png#lightbox)ます。
 
-ここでは、JSON を使用してタスクの詳細画面を追加する方法を示す[ELEMENTS API チュートリアル](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)のチュートリアルの例について説明します。
+ここでは、JSON を使用してタスクの詳細画面を追加する方法を示す [ELEMENTS API チュートリアル](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md) のチュートリアルの例について説明します。
 
 ## <a name="setting-up-mtd"></a>MT を設定しています。A
 
-MT.D は、Xamarin. iOS と共に配布されます。 これを使用するには、Visual Studio 2017 または Visual Studio for Mac で Xamarin. iOS プロジェクトの [**参照**] ノードを右クリックし、 **monotouch.dialog**アセンブリへの参照を追加します。 次に、 `using MonoTouch.Dialog` 必要に応じて、ソースコードにステートメントを追加します。
+MT.D は、Xamarin. iOS と共に配布されます。 これを使用するには、Visual Studio 2017 または Visual Studio for Mac で Xamarin. iOS プロジェクトの [ **参照** ] ノードを右クリックし、 **monotouch.dialog** アセンブリへの参照を追加します。 次に、 `using MonoTouch.Dialog` 必要に応じて、ソースコードにステートメントを追加します。
 
 ## <a name="json-walkthrough"></a>JSON チュートリアル
 
@@ -167,7 +167,7 @@ _rootElement = new RootElement ("Json Example") {
 
 ## <a name="related-links"></a>関連リンク
 
-- [MTDJsonDemo (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/mtdjsondemo)
+- [MTDJsonDemo (サンプル)](/samples/xamarin/ios-samples/mtdjsondemo)
 - [Monotouch.dialog の概要](~/ios/user-interface/monotouch.dialog/index.md)
 - [Elements API のチュートリアル](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)
 - [リフレクション API のチュートリアル](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)

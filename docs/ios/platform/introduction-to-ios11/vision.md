@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/31/2017
-ms.openlocfilehash: 89a21eec369691e5c6e1ec8ce2430d679b6b309d
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 9a31cd31f7cbfb4748991d45204ca867b5d62c8c
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572144"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436627"
 ---
 # <a name="vision-framework-in-xamarinios"></a>Xamarin のビジョンフレームワーク
 
@@ -35,7 +35,7 @@ ms.locfileid: "84572144"
 
 ## <a name="rectangle-detection"></a>四角形の検出
 
-[VisionRects サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionrectangles)では、イメージを処理し、検出された四角形を描画する方法を示します。
+[VisionRects サンプル](/samples/xamarin/ios-samples/ios11-visionrectangles)では、イメージを処理し、検出された四角形を描画する方法を示します。
 
 ### <a name="1-initialize-the-vision-request"></a>1. ビジョン要求を初期化します
 
@@ -94,19 +94,19 @@ private void HandleRectangles(VNRequest request, NSError error){
 - 四角形を描画して、それぞれが検出された場所を示します。
 - CoreGraphics を使用して各四角形のテキストラベルを追加する。
 
-正確な CoreGraphics メソッドの[サンプルのソース](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionrectangles)を表示します。
+正確な CoreGraphics メソッドの [サンプルのソース](/samples/xamarin/ios-samples/ios11-visionrectangles) を表示します。
 
 ![3つの四角形が検出された写真](vision-images/found-rectangles-phone-sml.png)
 
 ### <a name="5-further-processing"></a>5. さらに処理
 
-四角形の検出は、多くの場合、操作チェーンの最初の手順にすぎません。[たとえば、この CoreMLVision の例](~/ios/platform/introduction-to-ios11/coreml.md#coremlvision)では、四角形を coreml モデルに渡して、手書きの数字を解析します。
+四角形の検出は、多くの場合、操作チェーンの最初の手順にすぎません。 [たとえば、この CoreMLVision の例](~/ios/platform/introduction-to-ios11/coreml.md#coremlvision)では、四角形を coreml モデルに渡して、手書きの数字を解析します。
 
 <a name="faces"></a>
 
 ## <a name="face-detection"></a>顔検出
 
-[VisionFaces サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionfaces)は、別のビジョン要求クラスを使用して、 **VisionRectangles**サンプルと同様の方法で動作します。
+[VisionFaces サンプル](/samples/xamarin/ios-samples/ios11-visionfaces)は、別のビジョン要求クラスを使用して、 **VisionRectangles**サンプルと同様の方法で動作します。
 
 ### <a name="1-initialize-the-vision-request"></a>1. ビジョン要求を初期化します
 
@@ -167,7 +167,7 @@ private void HandleRectangles(VNRequest request, NSError error){
 - 検出された各顔に四角形を描画します。
 - CoreGraphics を使用して、各面にテキストラベルを追加します。
 
-正確な CoreGraphics メソッドの[サンプルのソース](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionfaces)を表示します。
+正確な CoreGraphics メソッドの [サンプルのソース](/samples/xamarin/ios-samples/ios11-visionfaces) を表示します。
 
 ![2つの顔が検出された写真](vision-images/found-faces-phone-sml.png)
 
@@ -177,6 +177,6 @@ private void HandleRectangles(VNRequest request, NSError error){
 
 ## <a name="related-links"></a>関連リンク
 
-- [ビジョン四角形 (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionrectangles)
-- [ビジョン (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-visionfaces)
+- [ビジョン四角形 (サンプル)](/samples/xamarin/ios-samples/ios11-visionrectangles)
+- [ビジョン (サンプル)](/samples/xamarin/ios-samples/ios11-visionfaces)
 - [主要なイメージ (フィルター、金属、ビジョンなど) の進歩 (WWDC) (ビデオ)](https://developer.apple.com/videos/play/wwdc2017/510/)

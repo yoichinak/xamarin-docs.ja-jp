@@ -1,22 +1,22 @@
 ---
 title: Elements API を使用して Xamarin iOS アプリケーションを作成する
-description: この記事は、「Monotouch.dialog の概要」の記事に記載されている情報に基づいています。 ここでは、Monotouch.dialog (MT) の使用方法を示すチュートリアルを示します。D) Elements API を使用して、MT を使用したアプリケーションの構築をすぐに始めることができます。A.
+description: この記事は、「Monotouch.dialog の概要」の記事に記載されている情報に基づいています。 ここでは、Monotouch.dialog (MT) の使用方法を示すチュートリアルを示します。D) Elements API を使用して、MT を使用したアプリケーションの構築をすぐに始めることができます。
 ms.prod: xamarin
 ms.assetid: F1124734-DF44-F1F3-0832-46F52A788CDC
 ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: davidortinau
 ms.author: daortin
-ms.openlocfilehash: 3e1e7a9c5fb01f73cddb4cab3a95aa421bd8c3fb
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: b95066379e7b6845bf1265b43681aec83b130aa4
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86933368"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436755"
 ---
 # <a name="creating-a-xamarinios-application-using-the-elements-api"></a>Elements API を使用して Xamarin iOS アプリケーションを作成する
 
-_この記事は、「Monotouch.dialog の概要」の記事に記載されている情報に基づいています。ここでは、Monotouch.dialog (MT) の使用方法を示すチュートリアルを示します。D) Elements API を使用して、MT を使用したアプリケーションの構築をすぐに始めることができます。A._
+_この記事は、「Monotouch.dialog の概要」の記事に記載されている情報に基づいています。ここでは、Monotouch.dialog (MT) の使用方法を示すチュートリアルを示します。D) Elements API を使用して、MT を使用したアプリケーションの構築をすぐに始めることができます。_
 
 このチュートリアルでは、MT を使用します。D Elements API は、タスク一覧を表示するアプリケーションのマスター/詳細スタイルを作成します。 ユーザーがナビゲーションバーでボタンを選択すると、 **+** タスクのテーブルに新しい行が追加されます。 行を選択すると、次に示すように、タスクの説明と期限を更新できる詳細画面に移動します。
 
@@ -24,11 +24,11 @@ _この記事は、「Monotouch.dialog の概要」の記事に記載されて�
 
 ## <a name="setting-up-mtd"></a>MT を設定しています。A
 
-MT.D は、Xamarin. iOS と共に配布されます。 これを使用するには、Visual Studio 2017 または Visual Studio for Mac で Xamarin. iOS プロジェクトの [**参照**] ノードを右クリックし、 **monotouch.dialog**アセンブリへの参照を追加します。 次に、 `using MonoTouch.Dialog` 必要に応じて、ソースコードにステートメントを追加します。
+MT.D は、Xamarin. iOS と共に配布されます。 これを使用するには、Visual Studio 2017 または Visual Studio for Mac で Xamarin. iOS プロジェクトの [ **参照** ] ノードを右クリックし、 **monotouch.dialog** アセンブリへの参照を追加します。 次に、 `using MonoTouch.Dialog` 必要に応じて、ソースコードにステートメントを追加します。
 
 ## <a name="elements-api-walkthrough"></a>Elements API のチュートリアル
 
-Monotouch.dialog の[概要ダイアログ](~/ios/user-interface/monotouch.dialog/index.md)の記事では、MT のさまざまな部分について十分に理解しています。A. Elements API を使用して、それらをすべてまとめてアプリケーションに配置しましょう。
+Monotouch.dialog の [概要ダイアログ](~/ios/user-interface/monotouch.dialog/index.md) の記事では、MT のさまざまな部分について十分に理解しています。 Elements API を使用して、それらをすべてまとめてアプリケーションに配置しましょう。
 
 ## <a name="setting-up-the-multi-screen-application"></a>マルチスクリーンアプリケーションの設定
 
@@ -38,8 +38,8 @@ Monotouch.dialog を使用してマルチスクリーンアプリケーション
 
 1. 認証要求の処理に使用する `UINavigationController.`
 1. 認証要求の処理に使用する `DialogViewController.`
-1. を、の `DialogViewController` ルートとして追加します。`UINavigationController.` 
-1. をに追加し `RootElement` ます。`DialogViewController.`
+1. を、の `DialogViewController` ルートとして追加します。  `UINavigationController.` 
+1. をに追加し `RootElement` ます。  `DialogViewController.`
 1. `Sections`と `Elements` をに追加します。`RootElement.` 
 
 ### <a name="using-a-uinavigationcontroller"></a>UINavigationController を使用する
@@ -143,7 +143,7 @@ public class Task
 
 ## <a name="related-links"></a>関連リンク
 
-- [MTDWalkthrough (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/mtdwalkthrough)
+- [MTDWalkthrough (サンプル)](/samples/xamarin/ios-samples/mtdwalkthrough)
 - [Monotouch.dialog の概要](~/ios/user-interface/monotouch.dialog/index.md)
 - [リフレクション API のチュートリアル](~/ios/user-interface/monotouch.dialog/reflection-api-walkthrough.md)
 - [JSON 要素のチュートリアル](~/ios/user-interface/monotouch.dialog/json-element-walkthrough.md)

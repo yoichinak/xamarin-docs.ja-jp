@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 8b1ffe54ad199acbc7bf3918c187e198d96b51c8
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: a44d68426ff03ba0b6ab41f57e339caebce62c39
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939400"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436708"
 ---
 # <a name="working-with-watchos-navigation-in-xamarin"></a>Xamarin での watchOS ナビゲーションの使用
 
-ウォッチで使用できる最も簡単なナビゲーションオプションは、現在のシーンの上に表示される単純な[モーダルポップアップ](#modal)です。
+ウォッチで使用できる最も簡単なナビゲーションオプションは、現在のシーンの上に表示される単純な [モーダルポップアップ](#modal) です。
 
 マルチシーンウォッチアプリの場合、次の2つのナビゲーションパラダイムを利用できます。
 
@@ -27,7 +27,7 @@ ms.locfileid: "86939400"
 
 ## <a name="modal-interfaces"></a>モーダルインターフェイス
 
-インターフェイスコントローラーをモーダルとして開くには、メソッドを使用し `PresentController` ます。 インターフェイスコントローラーは、既に**インターフェイスの storyboard**で定義されている必要があります。
+インターフェイスコントローラーをモーダルとして開くには、メソッドを使用し `PresentController` ます。 インターフェイスコントローラーは、既に **インターフェイスの storyboard**で定義されている必要があります。
 
 ```csharp
 PresentController ("pageController","some context info");
@@ -53,7 +53,7 @@ DismissController();
 
 IOS の場合と同様に、左の端のスワイプは階層型のナビゲーションスタックで親コントローラーに戻ります。
 
-[WatchKitCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)と[WatchTables](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchtables)の両方のサンプルには、階層ナビゲーションが含まれています。
+[WatchKitCatalog](/samples/xamarin/ios-samples/watchos-watchkitcatalog)と[WatchTables](/samples/xamarin/ios-samples/watchos-watchtables)の両方のサンプルには、階層ナビゲーションが含まれています。
 
 ### <a name="pushing-and-popping-in-code"></a>コードでのプッシュとポップ
 
@@ -63,7 +63,7 @@ Watch Kit では、iOS と同様に arching "ナビゲーションコントロ�
 PushController("secondPageController","some context info");
 ```
 
-ウォッチの画面には左上に [**戻る**] ボタンが表示されますが、を使用してナビゲーションスタックからシーンをプログラムで削除することもでき `PopController` ます。
+ウォッチの画面には左上に [ **戻る** ] ボタンが表示されますが、を使用してナビゲーションスタックからシーンをプログラムで削除することもでき `PopController` ます。
 
 ```csharp
 PopController();
@@ -115,5 +115,5 @@ PresentController (controllerNames, contexts);
 
 ## <a name="related-links"></a>関連リンク
 
-- [WatchKitCatalog (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
+- [WatchKitCatalog (サンプル)](/samples/xamarin/ios-samples/watchos-watchkitcatalog)
 - [WatchTables (サンプル)](https://developer.xamarin.com//samples/monotouch/watchOS/WatchTables/)
