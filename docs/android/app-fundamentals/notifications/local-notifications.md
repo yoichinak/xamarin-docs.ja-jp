@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/16/2018
-ms.openlocfilehash: 87a6790e89f7f7ff0f84b4b59e7b4de9b1383bc3
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: f56e02a89474ebf5f89800b1f96318db7965159d
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84566966"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91456302"
 ---
 # <a name="local-notifications-on-android"></a>Android でのローカル通知
 
@@ -20,19 +20,19 @@ _このセクションでは、Xamarin. Android でローカル通知を実装�
 
 ## <a name="local-notifications-overview"></a>ローカル通知の概要
 
-Android には、ユーザーに通知アイコンと通知情報を表示するための、システムによって管理される2つの領域が用意されています。 通知が最初に発行されると、次のスクリーンショットに示すように、通知*領域*にアイコンが表示されます。
+Android には、ユーザーに通知アイコンと通知情報を表示するための、システムによって管理される2つの領域が用意されています。 通知が最初に発行されると、次のスクリーンショットに示すように、通知 *領域*にアイコンが表示されます。
 
 ![デバイスの通知領域の例](local-notifications-images/01-notification-shade.png)
 
-通知の詳細を取得するために、ユーザーは通知ドロワーを開き (各通知アイコンを展開して通知コンテンツを表示)、通知に関連付けられているアクションを実行できます。 次のスクリーンショットは、上に表示されている通知領域に対応する*通知ドロワー*を示しています。
+通知の詳細を取得するために、ユーザーは通知ドロワーを開き (各通知アイコンを展開して通知コンテンツを表示)、通知に関連付けられているアクションを実行できます。 次のスクリーンショットは、上に表示されている通知領域に対応する *通知ドロワー* を示しています。
 
 [![3つの通知を表示している通知ドロワーの例](local-notifications-images/02-notification-drawer-sml.png)](local-notifications-images/02-notification-drawer.png#lightbox)
 
 Android の通知では、次の2種類のレイアウトを使用します。
 
-- ***基本レイアウト*** &ndash;コンパクトで固定のプレゼンテーション形式。
+- ***基本レイアウト*** &ndash; コンパクトで固定のプレゼンテーション形式。
 
-- ***展開***されたレイアウト &ndash;より大きなサイズに拡張して詳細情報を表示できるプレゼンテーション形式。
+- ***展開***されたレイアウト &ndash; より大きなサイズに拡張して詳細情報を表示できるプレゼンテーション形式。
 
 これらの各レイアウトの種類 (およびそれらを作成する方法) については、次のセクションで説明します。
 
@@ -45,7 +45,7 @@ Android の通知では、次の2種類のレイアウトを使用します。
 
 1. *通知アイコン*。アプリがさまざまな種類の通知をサポートしている場合、発信元アプリまたは通知の種類を表します。
 
-2. 通知の*タイトル*。通知が個人のメッセージの場合は、送信者の名前。
+2. 通知の *タイトル*。通知が個人のメッセージの場合は、送信者の名前。
 
 3. 通知メッセージ。
 
@@ -67,7 +67,7 @@ Android 5.0 以降では、通知はロック画面にも表示されます。
 
 ユーザーは、ロック画面の通知をダブルタップしてデバイスのロックを解除し、その通知を開始したアプリに移動するか、スワイプして通知を破棄することができます。 アプリでは、ロック画面に表示される内容を制御する通知の表示レベルを設定できます。また、ユーザーは、機密性の高いコンテンツをロック画面の通知に表示するかどうかを選択できます。
 
-Android 5.0 では、*ヘッドアップ*と呼ばれる優先順位の高い通知プレゼンテーション形式が導入されました。 ヘッドアップ通知は、画面の上部から数秒後にスライドダウンし、通知領域に戻るようになります。
+Android 5.0 では、 *ヘッドアップ*と呼ばれる優先順位の高い通知プレゼンテーション形式が導入されました。 ヘッドアップ通知は、画面の上部から数秒後にスライドダウンし、通知領域に戻るようになります。
 
 [![ヘッドアップ通知の例](local-notifications-images/06-heads-up-notification-sml.png)](local-notifications-images/06-heads-up-notification.png#lightbox)
 
@@ -75,14 +75,14 @@ Android 5.0 では、*ヘッドアップ*と呼ばれる優先順位の高い通
 
 Android では、通知の並べ替えと表示をインテリジェントに行えるように、通知メタデータのサポートが追加されています。 通知メタデータは、ロック画面およびヘッドアップ形式で通知を表示する方法も制御します。 アプリケーションでは、次の種類の通知メタデータを設定できます。
 
-- **優先順位** &ndash;通知を表示する方法とタイミングは、優先度レベルによって決まります。 たとえば、Android 5.0 では、優先度の高い通知はヘッドアップ通知として表示されます。
+- **優先順位** &ndash; 通知を表示する方法とタイミングは、優先度レベルによって決まります。 たとえば、Android 5.0 では、優先度の高い通知はヘッドアップ通知として表示されます。
 
-- **可視性** &ndash;通知がロック画面に表示されたときに表示される通知コンテンツの量を指定します。
+- **可視性** &ndash; 通知がロック画面に表示されたときに表示される通知コンテンツの量を指定します。
 
-- **カテゴリ** &ndash;デバイスが "*応答不可*" モードの場合など、さまざまな状況で通知を処理する方法をシステムに通知します。
+- **カテゴリ** &ndash; デバイスが " *応答不可* " モードの場合など、さまざまな状況で通知を処理する方法をシステムに通知します。
 
 > [!NOTE]
-> **可視性**と**カテゴリ**は、android 5.0 で導入されたものであり、以前のバージョンの android では使用できません。 Android 8.0 以降では、[通知チャネル](#notif-chan)を使用して、ユーザーに通知を表示する方法を制御します。
+> **可視性** と **カテゴリ** は、android 5.0 で導入されたものであり、以前のバージョンの android では使用できません。 Android 8.0 以降では、 [通知チャネル](#notif-chan) を使用して、ユーザーに通知を表示する方法を制御します。
 
 ### <a name="expanded-layouts"></a>展開されたレイアウト
 
@@ -96,31 +96,31 @@ Android 4.1 以降では、展開されたレイアウトスタイルを使用�
 
 Android では、単一イベント通知用に展開された3つのレイアウトスタイルがサポートされています。
 
-- ***大きいテキスト*** &ndash;[契約] モードでは、メッセージの最初の行の抜粋の後に2つの期間が表示されます。 展開モードでは、メッセージ全体が表示されます (上の例を参照)。
+- ***大きいテキスト*** &ndash; [契約] モードでは、メッセージの最初の行の抜粋の後に2つの期間が表示されます。 展開モードでは、メッセージ全体が表示されます (上の例を参照)。
 
-- ***受信トレイ*** &ndash;[契約] モードでは、新しいメッセージの数が表示されます。 展開モードでは、最初の電子メールメッセージ、または受信トレイ内のメッセージの一覧が表示されます。
+- ***受信トレイ*** &ndash; [契約] モードでは、新しいメッセージの数が表示されます。 展開モードでは、最初の電子メールメッセージ、または受信トレイ内のメッセージの一覧が表示されます。
 
-- ***イメージ*** &ndash;[契約] モードでは、メッセージテキストのみが表示されます。 展開モードでは、テキストとイメージが表示されます。
+- ***イメージ*** &ndash; [契約] モードでは、メッセージテキストのみが表示されます。 展開モードでは、テキストとイメージが表示されます。
 
-[基本の通知以外](#beyond-the-basic-notification)(この記事の後半) では、*テキスト*、*受信トレイ*、および*イメージ*の通知を作成する方法について説明します。
+[基本の通知以外](#beyond-the-basic-notification) (この記事の後半) では、 *テキスト*、 *受信トレイ*、および *イメージ* の通知を作成する方法について説明します。
 
 <a name="notif-chan"></a>
 <a name="notification-channels"></a>
 ## <a name="notification-channels"></a>通知チャネル
 
-Android 8.0 (Oreo) 以降では、*通知チャネル*機能を使用して、表示する通知の種類ごとにユーザーがカスタマイズ可能なチャネルを作成できます。 通知チャネルを使用すると、チャネルにポストされたすべての通知の動作が同じになるように、通知をグループ化することができます。 たとえば、すぐに対処する必要がある通知用の通知チャネル、および情報メッセージに使用される別の "静かな" チャネルがあるとします。
+Android 8.0 (Oreo) 以降では、 *通知チャネル* 機能を使用して、表示する通知の種類ごとにユーザーがカスタマイズ可能なチャネルを作成できます。 通知チャネルを使用すると、チャネルにポストされたすべての通知の動作が同じになるように、通知をグループ化することができます。 たとえば、すぐに対処する必要がある通知用の通知チャネル、および情報メッセージに使用される別の "静かな" チャネルがあるとします。
 
-Android Oreo と共にインストールされる**YouTube**アプリには、次の2つの通知カテゴリ (**ダウンロード通知**と**一般的な通知**) が一覧表示されます。
+Android Oreo と共にインストールされる **YouTube** アプリには、次の2つの通知カテゴリ ( **ダウンロード通知** と **一般的な通知**) が一覧表示されます。
 
 [![Android Oreo の YouTube の通知画面](local-notifications-images/27-youtube-sml.png)](local-notifications-images/27-youtube.png#lightbox)
 
-これらの各カテゴリは、通知チャネルに対応します。 YouTube アプリでは、**ダウンロード通知**チャネルと**一般通知**チャネルが実装されています。 ユーザーは [**ダウンロード通知**] をタップすると、アプリのダウンロード通知チャネルの [設定] 画面が表示されます。
+これらの各カテゴリは、通知チャネルに対応します。 YouTube アプリでは、 **ダウンロード通知**  チャネルと **一般通知** チャネルが実装されています。 ユーザーは [ **ダウンロード通知**] をタップすると、アプリのダウンロード通知チャネルの [設定] 画面が表示されます。
 
 [![YouTube アプリの [ダウンロード通知] 画面](local-notifications-images/28-yt-download-sml.png)](local-notifications-images/28-yt-download.png#lightbox)
 
-この画面では、ユーザーは次の手順に従って、**ダウンロード**通知チャネルの動作を変更できます。
+この画面では、ユーザーは次の手順に従って、 **ダウンロード** 通知チャネルの動作を変更できます。
 
-- [重要度] レベルを [**緊急**]、[**高**]、[**中**]、または [**低**] に設定します。これにより、サウンドとビジュアルの中断のレベルが構成されます。
+- [重要度] レベルを [ **緊急**]、[ **高**]、[ **中**]、または [   **低**] に設定します。これにより、サウンドとビジュアルの中断のレベルが構成されます。
 
 - 通知ドットをオンまたはオフにします。
 
@@ -128,7 +128,7 @@ Android Oreo と共にインストールされる**YouTube**アプリには、�
 
 - ロック画面で通知を表示または非表示にします。
 
-- [**応答不可**] 設定をオーバーライドします。
+- [ **応答不可** ] 設定をオーバーライドします。
 
 **一般的な通知**チャネルには、次のような設定があります。
 
@@ -139,15 +139,15 @@ Android Oreo と共にインストールされる**YouTube**アプリには、�
 ## <a name="notification-creation"></a>通知の作成
 
 Android で通知を作成するには、 [Xamarin. Android.](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)の NuGet パッケージの[notificationcompat ビルダー](https://developer.android.com/reference/android/support/v4/app/NotificationCompat.Builder)クラスを使用します。 このクラスを使用すると、以前のバージョンの Android で通知を作成して発行することができます。
-`NotificationCompat.Builder`についても説明します。
+`NotificationCompat.Builder` についても説明します。
 
-`NotificationCompat.Builder`通知のさまざまなオプションを設定するためのメソッドを提供します。次に例を示します。
+`NotificationCompat.Builder` 通知のさまざまなオプションを設定するためのメソッドを提供します。次に例を示します。
 
 - コンテンツ (タイトル、メッセージテキスト、通知アイコンなど)。
 
 - *ビッグテキスト*、*受信トレイ*、*画像*のスタイルなど、通知のスタイル。
 
-- 通知の優先度。 [最小]、[低]、[既定]、[高]、または [最大] を設定します。 Android 8.0 以降では、[_通知チャネル_](#notification-channels)を使用して優先度が設定されます。
+- 通知の優先度。 [最小]、[低]、[既定]、[高]、または [最大] を設定します。 Android 8.0 以降では、 [_通知チャネル_](#notification-channels)を使用して優先度が設定されます。
 
 - ロック画面での通知の可視性 (パブリック、プライベート、またはシークレット)。
 
@@ -157,7 +157,7 @@ Android で通知を作成するには、 [Xamarin. Android.](https://www.nuget.
 
 - 通知が発行される通知チャネルの ID (Android 8.0 以降)。
 
-ビルダーでこれらのオプションを設定すると、設定を含む通知オブジェクトが生成されます。 通知を発行するには、この通知オブジェクトを*通知マネージャー*に渡します。 Android には、 [Notificationmanager](xref:Android.App.NotificationManager)クラスが用意されています。このクラスは、通知を発行してユーザーに表示します。 このクラスへの参照は、アクティビティやサービスなど、任意のコンテキストから取得できます。
+ビルダーでこれらのオプションを設定すると、設定を含む通知オブジェクトが生成されます。 通知を発行するには、この通知オブジェクトを *通知マネージャー*に渡します。 Android には、 [Notificationmanager](xref:Android.App.NotificationManager) クラスが用意されています。このクラスは、通知を発行してユーザーに表示します。 このクラスへの参照は、アクティビティやサービスなど、任意のコンテキストから取得できます。
 
 ### <a name="creating-a-notification-channel"></a>通知チャネルの作成
 
@@ -203,9 +203,9 @@ Android で通知を生成するには、次の手順を実行します。
 
 2. オブジェクトのさまざまなメソッドを呼び出して、 `NotificationCompat.Builder` 通知オプションを設定します。
 
-3. オブジェクトの[ビルド](xref:Android.App.Notification.Builder.Build)メソッドを呼び出して、 `NotificationCompat.Builder` 通知オブジェクトをインスタンス化します。
+3. オブジェクトの [ビルド](xref:Android.App.Notification.Builder.Build) メソッドを呼び出して、 `NotificationCompat.Builder` 通知オブジェクトをインスタンス化します。
 
-4. 通知マネージャーの[Notify](xref:Android.App.NotificationManager.Notify*)メソッドを呼び出して、通知を発行します。
+4. 通知マネージャーの [Notify](xref:Android.App.NotificationManager.Notify*) メソッドを呼び出して、通知を発行します。
 
 通知ごとに、少なくとも次の情報を指定する必要があります。
 
@@ -215,7 +215,7 @@ Android で通知を生成するには、次の手順を実行します。
 
 - 通知のテキスト
 
-次のコード例は、を使用して基本通知を生成する方法を示してい `NotificationCompat.Builder` ます。 メソッドで `NotificationCompat.Builder` は[メソッドチェーン](https://en.wikipedia.org/wiki/Method_chaining)がサポートされていることに注意してください。つまり、各メソッドはビルダーオブジェクトを返します。これにより、最後のメソッド呼び出しの結果を使用して次のメソッド呼び出しを呼び出すことができます。
+次のコード例は、を使用して基本通知を生成する方法を示してい `NotificationCompat.Builder` ます。 メソッドで `NotificationCompat.Builder` は [メソッドチェーン](https://en.wikipedia.org/wiki/Method_chaining)がサポートされていることに注意してください。つまり、各メソッドはビルダーオブジェクトを返します。これにより、最後のメソッド呼び出しの結果を使用して次のメソッド呼び出しを呼び出すことができます。
 
 ```csharp
 // Instantiate the builder and set notification elements:
@@ -236,7 +236,7 @@ const int notificationId = 0;
 notificationManager.Notify (notificationId, notification);
 ```
 
-この例で `NotificationCompat.Builder` は、という新しいオブジェクト `builder` が、使用される通知チャネルの ID と共にインスタンス化されます。 通知のタイトルとテキストが設定され、通知アイコンが**リソース/合成/ic_notification .png**から読み込まれます。 通知ビルダーのメソッドを呼び出すと、 `Build` これらの設定を使用して通知オブジェクトが作成されます。 次の手順では、 `Notify` 通知マネージャーのメソッドを呼び出します。 通知マネージャーを検索するには、上記のように `GetSystemService` を呼び出します。
+この例で `NotificationCompat.Builder` は、という新しいオブジェクト `builder` が、使用される通知チャネルの ID と共にインスタンス化されます。 通知のタイトルとテキストが設定され、通知アイコンが **Resources/合成/ic_notification.png**から読み込まれます。 通知ビルダーのメソッドを呼び出すと、 `Build` これらの設定を使用して通知オブジェクトが作成されます。 次の手順では、 `Notify` 通知マネージャーのメソッドを呼び出します。 通知マネージャーを検索するには、上記のように `GetSystemService` を呼び出します。
 
 メソッドは、 `Notify` 通知 id と通知オブジェクトという2つのパラメーターを受け取ります。 通知識別子は、アプリケーションへの通知を識別する一意の整数です。 この例では、通知識別子がゼロ (0) に設定されています。ただし、実稼働アプリケーションでは、各通知に一意の識別子を付けることをお勧めします。 の呼び出しで前の識別子の値を再利用する `Notify` と、最後の通知が上書きされます。
 
@@ -244,9 +244,9 @@ notificationManager.Notify (notificationId, notification);
 
 ![サンプルコードの通知結果](local-notifications-images/09-hello-world.png)
 
-通知アイコンは、通知の左側に表示され &ndash; ます。この画像には、円の &ldquo; 背後にグレーの円形の &rdquo; 背景を描画できるようにアルファチャネルがあります。 また、アルファチャネルなしでアイコンを指定することもできます。 写真画像をアイコンとして表示するには、このトピックで後述する「[大きいアイコン形式](#large-icon-format)」を参照してください。
+通知アイコンは、通知の左側に表示され &ndash; ます。この画像には、円の &ldquo; 背後にグレーの円形の &rdquo; 背景を描画できるようにアルファチャネルがあります。 また、アルファチャネルなしでアイコンを指定することもできます。 写真画像をアイコンとして表示するには、このトピックで後述する「 [大きいアイコン形式](#large-icon-format) 」を参照してください。
 
-タイムスタンプは自動的に設定されますが、通知ビルダーの[Setwhen](xref:Android.App.Notification.Builder.SetWhen*)メソッドを呼び出すことにより、この設定をオーバーライドできます。 たとえば、次のコード例では、タイムスタンプを現在の時刻に設定しています。
+タイムスタンプは自動的に設定されますが、通知ビルダーの [Setwhen](xref:Android.App.Notification.Builder.SetWhen*) メソッドを呼び出すことにより、この設定をオーバーライドできます。 たとえば、次のコード例では、タイムスタンプを現在の時刻に設定しています。
 
 ```csharp
 builder.SetWhen (Java.Lang.JavaSystem.CurrentTimeMillis());
@@ -254,7 +254,7 @@ builder.SetWhen (Java.Lang.JavaSystem.CurrentTimeMillis());
 
 ### <a name="enabling-sound-and-vibration"></a>サウンドと振動の有効化
 
-通知でもサウンドを再生する場合は、通知ビルダーの[Setdefaults](xref:Android.App.Notification.Builder.SetDefaults*)メソッドを呼び出して、フラグを渡すことができ `NotificationDefaults.Sound` ます。
+通知でもサウンドを再生する場合は、通知ビルダーの [Setdefaults](xref:Android.App.Notification.Builder.SetDefaults*) メソッドを呼び出して、フラグを渡すことができ `NotificationDefaults.Sound` ます。
 
 ```csharp
 // Instantiate the notification builder and enable sound:
@@ -271,7 +271,7 @@ NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNE
 builder.SetDefaults (NotificationDefaults.Sound | NotificationDefaults.Vibrate);
 ```
 
-再生するサウンドを指定せずにサウンドを有効にすると、Android では既定のシステム通知音が使用されます。 ただし、通知ビルダーの[setsound](xref:Android.App.Notification.Builder.SetSound*)メソッドを呼び出すことによって再生されるサウンドを変更することができます。 たとえば、(既定の通知音ではなく) 通知でアラームサウンドを再生するには、 [RingtoneManager](xref:Android.Media.RingtoneManager)からアラーム音の URI を取得して、次のように渡します `SetSound` 。
+再生するサウンドを指定せずにサウンドを有効にすると、Android では既定のシステム通知音が使用されます。 ただし、通知ビルダーの [setsound](xref:Android.App.Notification.Builder.SetSound*) メソッドを呼び出すことによって再生されるサウンドを変更することができます。 たとえば、(既定の通知音ではなく) 通知でアラームサウンドを再生するには、 [RingtoneManager](xref:Android.Media.RingtoneManager) からアラーム音の URI を取得して、次のように渡します `SetSound` 。
 
 ```csharp
 builder.SetSound (RingtoneManager.GetDefaultUri(RingtoneType.Alarm));
@@ -283,7 +283,7 @@ builder.SetSound (RingtoneManager.GetDefaultUri(RingtoneType.Alarm));
 builder.SetSound (RingtoneManager.GetDefaultUri(RingtoneType.Ringtone));
 ```
 
-通知オブジェクトを作成した後は、通知オブジェクトの通知プロパティを設定できます (メソッドを使用して事前に構成するのではなく `NotificationCompat.Builder` )。 たとえば、 `SetDefaults` 通知で振動を有効にするためにメソッドを呼び出す代わりに、通知の[Defaults](xref:Android.App.Notification.Defaults)プロパティのビットフラグを直接変更できます。
+通知オブジェクトを作成した後は、通知オブジェクトの通知プロパティを設定できます (メソッドを使用して事前に構成するのではなく `NotificationCompat.Builder` )。 たとえば、 `SetDefaults` 通知で振動を有効にするためにメソッドを呼び出す代わりに、通知の [Defaults](xref:Android.App.Notification.Defaults) プロパティのビットフラグを直接変更できます。
 
 ```csharp
 // Build the notification:
@@ -320,17 +320,17 @@ notificationManager.Notify (notificationId, notification);
 
 通知は、次の3つのうちのいずれかが発生するまで表示されたままになります。
 
-- ユーザーが通知を破棄する (または*クリアオール*をタップする)。
+- ユーザーが通知を破棄する (または *クリアオール*をタップする)。
 
 - アプリケーションは、 `NotificationManager.Cancel` 通知が発行されたときに割り当てられた一意の通知 ID を渡して、への呼び出しを行います。
 
 - アプリケーションが `NotificationManager.CancelAll` を呼び出します。
 
-Android の通知を更新する方法の詳細については、「[通知を変更する](https://developer.android.com/training/notify-user/managing.html#Updating)」を参照してください。
+Android の通知を更新する方法の詳細については、「 [通知を変更する](https://developer.android.com/training/notify-user/managing.html#Updating)」を参照してください。
 
 ### <a name="starting-an-activity-from-a-notification"></a>通知からのアクティビティの開始
 
-Android では、通知は、 *action* &ndash; ユーザーが通知をタップしたときに起動されるアクティビティに関連付けられるのが一般的です。 このアクティビティは、別のアプリケーションまたは別のタスクに配置できます。 通知にアクションを追加するには、 [Pendingintent](xref:Android.App.PendingIntent)オブジェクトを作成し、を `PendingIntent` 通知に関連付けます。 は、 `PendingIntent` 受信者アプリケーションが送信側アプリケーションのアクセス許可を持つ定義済みのコードを実行できるようにする特殊なインテントです。 ユーザーが通知をタップすると、Android はによって指定されたアクティビティを開始し `PendingIntent` ます。
+Android では、通知は、 *action* &ndash; ユーザーが通知をタップしたときに起動されるアクティビティに関連付けられるのが一般的です。 このアクティビティは、別のアプリケーションまたは別のタスクに配置できます。 通知にアクションを追加するには、 [Pendingintent](xref:Android.App.PendingIntent) オブジェクトを作成し、を `PendingIntent` 通知に関連付けます。 は、 `PendingIntent` 受信者アプリケーションが送信側アプリケーションのアクセス許可を持つ定義済みのコードを実行できるようにする特殊なインテントです。 ユーザーが通知をタップすると、Android はによって指定されたアクティビティを開始し `PendingIntent` ます。
 
 次のコードスニペットは、を使用して通知を作成し、 `PendingIntent` 元のアプリのアクティビティを起動する方法を示してい `MainActivity` ます。
 
@@ -362,14 +362,14 @@ const int notificationId = 0;
 notificationManager.Notify (notificationId, notification);
 ```
 
-このコードは、が通知オブジェクトに追加される点を除いて、前のセクションの通知コードによく似てい `PendingIntent` ます。 この例では、は、 `PendingIntent` 通知ビルダーの[Setcontentintent](xref:Android.App.Notification.Builder.SetContentIntent*)メソッドに渡される前に、元のアプリのアクティビティに関連付けられています。 `PendingIntentFlags.OneShot`フラグは `PendingIntent.GetActivity` 、 `PendingIntent` が1回だけ使用されるようにメソッドに渡されます。 このコードを実行すると、次の通知が表示されます。
+このコードは、が通知オブジェクトに追加される点を除いて、前のセクションの通知コードによく似てい `PendingIntent` ます。 この例では、は、 `PendingIntent` 通知ビルダーの [Setcontentintent](xref:Android.App.Notification.Builder.SetContentIntent*) メソッドに渡される前に、元のアプリのアクティビティに関連付けられています。 `PendingIntentFlags.OneShot`フラグは `PendingIntent.GetActivity` 、 `PendingIntent` が1回だけ使用されるようにメソッドに渡されます。 このコードを実行すると、次の通知が表示されます。
 
 ![最初のアクション通知](local-notifications-images/10-first-action-notification.png)
 
 この通知をタップすると、ユーザーは元のアクティビティに戻ります。
 
 運用アプリでは、ユーザーが通知アクティビティ内で [**戻る**] ボタンを押したときに、アプリケーションが*バックスタック*を処理する必要があります (Android タスクとバックスタックに慣れていない場合は、「[タスクとバックスタック](https://developer.android.com/guide/components/tasks-and-back-stack.html)」を参照してください)。
-ほとんどの場合、通知アクティビティからさかのぼって移動すると、アプリからユーザーが返され、ホーム画面に戻ります。 バックスタックを管理するために、アプリは[Taskstackbuilder](xref:Android.App.TaskStackBuilder)クラスを使用し `PendingIntent` て、バックスタックを持つを作成します。
+ほとんどの場合、通知アクティビティからさかのぼって移動すると、アプリからユーザーが返され、ホーム画面に戻ります。 バックスタックを管理するために、アプリは [Taskstackbuilder](xref:Android.App.TaskStackBuilder) クラスを使用し `PendingIntent` て、バックスタックを持つを作成します。
 
 もう1つの実際の考慮事項は、元のアクティビティが通知アクティビティにデータを送信する必要があることです。 たとえば、通知はテキストメッセージが届いたことを示し、通知アクティビティ (メッセージ表示画面) では、メッセージをユーザーに表示するためにメッセージの ID が必要です。 を作成するアクティビティは、 `PendingIntent` インテントを使用してデータ (文字列など) をインテントに追加することで、このデータが通知アクティビティに渡されるようにすることができ[ます。](xref:Android.Content.Intent.PutExtra*)
 
@@ -428,7 +428,7 @@ notificationManager.Notify (notificationId, notification);
 string message = Intent.Extras.GetString ("message", "");
 ```
 
-上記のスクリーンショットに示されているように、この取得したメッセージ (MainActivity! からの応答) が画面に表示され `SecondActivity` ます。 の間にユーザーが [**戻る**] ボタンを押すと、アプリの `SecondActivity` 外部に移動し、アプリの起動前の画面に戻ります。
+上記のスクリーンショットに示されているように、この取得したメッセージ (MainActivity! からの応答) が画面に表示され `SecondActivity` ます。 の間にユーザーが [ **戻る** ] ボタンを押すと、アプリの `SecondActivity` 外部に移動し、アプリの起動前の画面に戻ります。
 
 保留中のインテントの作成の詳細については、「 [Pendingintent](xref:Android.App.PendingIntent)」を参照してください。
 
@@ -442,7 +442,7 @@ string message = Intent.Extras.GetString ("message", "");
 
 ### <a name="large-icon-format"></a>大きいアイコン形式
 
-通常、Android の通知には、(通知の左側にある) 元のアプリのアイコンが表示されます。 ただし、通知では、標準の小さいアイコンの代わりに画像や写真 (*大きいアイコン*) を表示できます。 たとえば、メッセージングアプリでは、アプリアイコンではなく、送信者の写真を表示できます。
+通常、Android の通知には、(通知の左側にある) 元のアプリのアイコンが表示されます。 ただし、通知では、標準の小さいアイコンの代わりに画像や写真 ( *大きいアイコン*) を表示できます。 たとえば、メッセージングアプリでは、アプリアイコンではなく、送信者の写真を表示できます。
 
 基本的な Android 5.0 通知の例を次に示し &ndash; ます。小さいアプリアイコンのみが表示されます。
 
@@ -454,13 +454,13 @@ string message = Intent.Extras.GetString ("message", "");
 
 通知が大きいアイコン形式で表示されると、小さいアプリのアイコンが大きいアイコンの右下隅にバッジとして表示されることに注意してください。
 
-画像を通知で大きいアイコンとして使用するには、通知ビルダーの[SetLargeIcon](xref:Android.App.Notification.Builder.SetLargeIcon*)メソッドを呼び出し、イメージのビットマップを渡します。 とは異なり `SetSmallIcon` 、は `SetLargeIcon` ビットマップのみを受け入れます。 イメージファイルをビットマップに変換するには、 [Bitmapfactory](xref:Android.Graphics.BitmapFactory)クラスを使用します。 次に例を示します。
+画像を通知で大きいアイコンとして使用するには、通知ビルダーの [SetLargeIcon](xref:Android.App.Notification.Builder.SetLargeIcon*) メソッドを呼び出し、イメージのビットマップを渡します。 とは異なり `SetSmallIcon` 、は `SetLargeIcon` ビットマップのみを受け入れます。 イメージファイルをビットマップに変換するには、 [Bitmapfactory](xref:Android.Graphics.BitmapFactory) クラスを使用します。 次に例を示します。
 
 ```csharp
 builder.SetLargeIcon (BitmapFactory.DecodeResource (Resources, Resource.Drawable.monkey_icon));
 ```
 
-このコード例では、イメージ、描画ファイル、 **monkey_icon .png**でイメージファイルを開き、ビットマップに変換して、結果のビットマップをに渡し `NotificationCompat.Builder` ます。 通常、ソースイメージの解像度は小さいアイコンよりも大きくなりますが、それほど &ndash; 大きくはありません。 画像が大きすぎると、通知の投稿を遅らせてしまう可能性のある、不要なサイズ変更操作が発生する可能性があります。
+このコード例では、イメージ、描画、 **または monkey_icon.png**でイメージファイルを開き、ビットマップに変換して、結果のビットマップをに渡し `NotificationCompat.Builder` ます。 通常、ソースイメージの解像度は小さいアイコンよりも大きくなりますが、それほど &ndash; 大きくはありません。 画像が大きすぎると、通知の投稿を遅らせてしまう可能性のある、不要なサイズ変更操作が発生する可能性があります。
 
 ### <a name="big-text-style"></a>ビッグテキストスタイル
 
@@ -495,17 +495,17 @@ builder.SetStyle (textStyle);
 // Create the notification and publish it ...
 ```
 
-この例では、に渡される前に、メッセージテキストと概要テキストがオブジェクト () に格納されています `BigTextStyle` `textStyle` 。`NotificationCompat.Builder.`
+この例では、に渡される前に、メッセージテキストと概要テキストがオブジェクト () に格納されています `BigTextStyle` `textStyle` 。 `NotificationCompat.Builder.`
 
 ### <a name="image-style"></a>画像のスタイル
 
-*画像*のスタイル (*大きな画像*のスタイルとも呼ばれます) は、通知の本文に画像を表示するために使用できる、拡張された通知形式です。 たとえば、スクリーンショットアプリや写真アプリでは、*イメージ*通知スタイルを使用して、キャプチャされた最後のイメージの通知をユーザーに提供できます。 *イメージ*通知の最大の高さは256であることに注意してください。 dp Android では、 &ndash; 使用可能なメモリの制限内で、この最大の高さの制限に収まるようにイメージのサイズが変更されます。
+*画像*のスタイル (*大きな画像*のスタイルとも呼ばれます) は、通知の本文に画像を表示するために使用できる、拡張された通知形式です。 たとえば、スクリーンショットアプリや写真アプリでは、 *イメージ* 通知スタイルを使用して、キャプチャされた最後のイメージの通知をユーザーに提供できます。 *イメージ*通知の最大の高さは256であることに注意してください。 dp Android では、 &ndash; 使用可能なメモリの制限内で、この最大の高さの制限に収まるようにイメージのサイズが変更されます。
 
-展開されたすべてのレイアウト通知と同様に、*イメージ*通知は最初にコンパクト形式で表示され、付随するメッセージテキストの抜粋が表示されます。
+展開されたすべてのレイアウト通知と同様に、 *イメージ* 通知は最初にコンパクト形式で表示され、付随するメッセージテキストの抜粋が表示されます。
 
 ![イメージが表示されないことを示すイメージの通知](local-notifications-images/17-image-compact.png)
 
-ユーザーが*イメージ*の通知を下にドラッグすると、画像が表示されます。 たとえば、前の通知の拡張バージョンを次に示します。
+ユーザーが *イメージ* の通知を下にドラッグすると、画像が表示されます。 たとえば、前の通知の拡張バージョンを次に示します。
 
 ![展開されたイメージの通知画像を目にする](local-notifications-images/18-image-expanded.png)
 
@@ -529,9 +529,9 @@ builder.SetStyle (picStyle);
 // Create the notification and publish it ...
 ```
 
-`SetLargeIcon`のメソッドと同様 `NotificationCompat.Builder` に、の[bigpicture](xref:Android.App.Notification.BigPictureStyle.BigPicture*)メソッドでは、 `BigPictureStyle` 通知の本文に表示するイメージのビットマップが必要です。 この例では、の[DecodeResource](xref:Android.Graphics.BitmapFactory.DecodeResource*)メソッドは、 `BitmapFactory` **Resources//x_bldg**にあるイメージファイルを読み取り、それをビットマップに変換します。
+`SetLargeIcon`のメソッドと同様 `NotificationCompat.Builder` に、の[bigpicture](xref:Android.App.Notification.BigPictureStyle.BigPicture*)メソッドでは、 `BigPictureStyle` 通知の本文に表示するイメージのビットマップが必要です。 この例では、の [DecodeResource](xref:Android.Graphics.BitmapFactory.DecodeResource*) メソッドは、 `BitmapFactory` **Resources//x_bldg.png** にあるイメージファイルを読み取り、それをビットマップに変換します。
 
-リソースとしてパッケージ化されていないイメージを表示することもできます。 たとえば、次のサンプルコードは、ローカル SD カードからイメージを読み込み、*イメージ*通知に表示します。
+リソースとしてパッケージ化されていないイメージを表示することもできます。 たとえば、次のサンプルコードは、ローカル SD カードからイメージを読み込み、 *イメージ* 通知に表示します。
 
 ```csharp
 // Using the Image (Big Picture) style:
@@ -552,13 +552,13 @@ builder.SetStyle (picStyle);
 // Create notification and publish it ...
 ```
 
-この例では、 **/sdcard/Pictures/my-tshirt.jpg**にあるイメージファイルが読み込まれ、元のサイズの半分にサイズ変更された後、通知で使用するビットマップに変換されます。
+この例では、 **/sdcard/Pictures/my-tshirt.jpg** にあるイメージファイルが読み込まれ、元のサイズの半分にサイズ変更された後、通知で使用するビットマップに変換されます。
 
 ![通知での T シャツ画像の例](local-notifications-images/19-tshirt-notification.png)
 
-イメージファイルのサイズが事前にわからない場合は、例外ハンドラーで DecodeFile への呼び出しをラップすることをお勧めします[。](xref:Android.Graphics.BitmapFactory.DecodeFile*)これは &ndash; `OutOfMemoryError` 、画像が Android のサイズ変更に対して大きすぎる場合に例外がスローされる可能性があるためです。
+イメージファイルのサイズが事前にわからない場合は、例外ハンドラーで DecodeFile への呼び出しをラップすることをお勧めします [。](xref:Android.Graphics.BitmapFactory.DecodeFile*) これは &ndash; `OutOfMemoryError` 、画像が Android のサイズ変更に対して大きすぎる場合に例外がスローされる可能性があるためです。
 
-大きなビットマップイメージの読み込みとデコードの詳細については、「大きなビットマップを[効率的に読み込む](https://github.com/xamarin/recipes/tree/master/Recipes/android/resources/general/load_large_bitmaps_efficiently)」を参照してください。
+大きなビットマップイメージの読み込みとデコードの詳細については、「大きなビットマップを [効率的に読み込む](https://github.com/xamarin/recipes/tree/master/Recipes/android/resources/general/load_large_bitmaps_efficiently)」を参照してください。
 
 ### <a name="inbox-style"></a>受信トレイのスタイル
 
@@ -590,13 +590,13 @@ inboxStyle.SetSummaryText ("+2 more");
 builder.SetStyle (inboxStyle);
 ```
 
-通知本文に新しいテキスト行を追加するには、オブジェクトの[Addline](xref:Android.App.Notification.InboxStyle.AddLine*)メソッドを呼び出し `InboxStyle` ます (*受信トレイ*通知の最大の高さは 256 dp です)。 *ビッグテキスト*スタイルとは異なり、*受信トレイ*スタイルでは、通知本文内の個々のテキスト行がサポートされることに注意してください。
+通知本文に新しいテキスト行を追加するには、オブジェクトの [Addline](xref:Android.App.Notification.InboxStyle.AddLine*) メソッドを呼び出し `InboxStyle` ます ( *受信トレイ* 通知の最大の高さは 256 dp です)。 *ビッグテキスト*スタイルとは異なり、*受信トレイ*スタイルでは、通知本文内の個々のテキスト行がサポートされることに注意してください。
 
-また、拡張された形式で個々のテキスト行を表示する必要があるすべての通知に対して、*受信トレイ*スタイルを使用することもできます。 たとえば、*受信トレイ*の通知スタイルを使用して、複数の保留中の通知をまとめて概要通知を作成できます &ndash; 。1つの*受信トレイ*スタイルの通知を新しい通知コンテンツの行で更新できます (上記の「[通知の更新](#updating-a-notification)」を参照してください)。これは、ほぼ同様の新しい通知の連続ストリームを生成することです。
+また、拡張された形式で個々のテキスト行を表示する必要があるすべての通知に対して、 *受信トレイ* スタイルを使用することもできます。 たとえば、 *受信トレイ* の通知スタイルを使用して、複数の保留中の通知をまとめて概要通知を作成できます &ndash; 。1つの *受信トレイ* スタイルの通知を新しい通知コンテンツの行で更新できます (上記の「 [通知の更新](#updating-a-notification) 」を参照してください)。これは、ほぼ同様の新しい通知の連続ストリームを生成することです。
 
 ## <a name="configuring-metadata"></a>メタデータの構成
 
-`NotificationCompat.Builder`には、優先度、可視性、カテゴリなど、通知に関するメタデータを設定するために呼び出すことができるメソッドが用意されています。 Android では、この情報をユーザー設定と共に使用して &mdash; &mdash; 、通知を表示する方法とタイミングを決定します。
+`NotificationCompat.Builder` には、優先度、可視性、カテゴリなど、通知に関するメタデータを設定するために呼び出すことができるメソッドが用意されています。 Android では、この情報をユーザー設定と共に使用して &mdash; &mdash; 、通知を表示する方法とタイミングを決定します。
 
 ### <a name="priority-settings"></a>優先順位の設定
 
@@ -605,7 +605,7 @@ Android 7.1 以降で実行されているアプリでは、通知自体に優�
 - 通知は、他の通知に関連して表示されます。
     たとえば、優先度の高い通知は、各通知が公開されたタイミングに関係なく、通知ドロワーの優先度の低い通知の上に表示されます。
 
-- 通知をヘッドアップ通知形式 (Android 5.0 以降) で表示するかどうかを指定します。 優先度が*高*および*最大*の通知だけが、ヘッドアップ通知として表示されます。
+- 通知をヘッドアップ通知形式 (Android 5.0 以降) で表示するかどうかを指定します。 優先度が *高* および *最大* の通知だけが、ヘッドアップ通知として表示されます。
 
 Xamarin Android では、通知の優先度を設定するために次の列挙が定義されています。
 
@@ -619,7 +619,7 @@ Xamarin Android では、通知の優先度を設定するために次の列挙�
 
 - `NotificationPriority.Min`&ndash;通知を表示する場合にのみユーザーに通知される背景情報 (場所や天気情報など)。
 
-通知の優先度を設定するには、オブジェクトの[Setpriority](xref:Android.App.Notification.Builder.SetPriority*)メソッドを呼び出して `NotificationCompat.Builder` 、優先度レベルで渡します。 次に例を示します。
+通知の優先度を設定するには、オブジェクトの [Setpriority](xref:Android.App.Notification.Builder.SetPriority*) メソッドを呼び出して `NotificationCompat.Builder` 、優先度レベルで渡します。 次に例を示します。
 
 ```csharp
 builder.SetPriority (NotificationPriority.High);
@@ -644,7 +644,7 @@ builder.SetPriority (NotificationPriority.High);
 
 ### <a name="visibility-settings"></a>可視性の設定
 
-Android 5.0 以降では、[*可視性*] 設定を使用して、セキュリティで保護されたロック画面に表示される通知コンテンツの量を制御できます。
+Android 5.0 以降では、[ *可視性* ] 設定を使用して、セキュリティで保護されたロック画面に表示される通知コンテンツの量を制御できます。
 Xamarin Android では、通知の可視性を設定するために次の列挙が定義されています。
 
 - `NotificationVisibility.Public`&ndash;通知の完全な内容が、セキュリティで保護されたロック画面に表示されます。
@@ -663,7 +663,7 @@ builder.SetVisibility (NotificationVisibility.Private);
 
 ![デバイスの通知メッセージのロック解除](local-notifications-images/25-lockscreen-private.png)
 
-この例では、 **Notificationslab**は、発信元アプリの名前です。 この最終バージョンの通知は、ロック画面がセキュリティで保護されていない場合 (つまり、PIN、パターン、またはパスワードを使用してセキュリティで保護されている場合) にのみ表示されます。ロック画面では、 &ndash; 通知の完全な内容を利用できます。
+この例では、 **Notificationslab** は、発信元アプリの名前です。 この最終バージョンの通知は、ロック画面がセキュリティで保護されていない場合 (つまり、PIN、パターン、またはパスワードを使用してセキュリティで保護されている場合) にのみ表示されます。ロック画面では、 &ndash; 通知の完全な内容を利用できます。
 
 ### <a name="category-settings"></a>カテゴリの設定
 
@@ -703,17 +703,17 @@ Android 5.0 以降では、通知の順位付けとフィルター処理に定�
 builder.SetCategory (Notification.CategoryCall);
 ```
 
-"*応答不可*" 機能 (Android 5.0 の新機能) は、カテゴリに基づいて通知をフィルター処理します。 たとえば、[**設定**] の [*応答不可*] 画面では、ユーザーは通話とメッセージの通知を除外できます。
+" *応答不可* " 機能 (Android 5.0 の新機能) は、カテゴリに基づいて通知をフィルター処理します。 たとえば、[**設定**] の [*応答不可*] 画面では、ユーザーは通話とメッセージの通知を除外できます。
 
 ![スクリーンスイッチに応答しない](local-notifications-images/26-do-not-disturb.png)
 
-ユーザーが電話以外のすべての割り込みをブロックするように設定*され*ている場合 (上のスクリーンショットを例として)、Android で `Notification.CategoryCall` は、デバイスが [*応答不可*] モードのときに、カテゴリ設定がの通知を表示できます。 `Notification.CategoryAlarm`通知は、[*応答不可*モードではブロックされないことに注意してください。
+ユーザーが電話以外のすべての割り込みをブロックするように設定 *され* ている場合 (上のスクリーンショットを例として)、Android で `Notification.CategoryCall` は、デバイスが [ *応答不可* ] モードのときに、カテゴリ設定がの通知を表示できます。 `Notification.CategoryAlarm`通知は、[*応答不可*モードではブロックされないことに注意してください。
 
-[Localnotifications](https://docs.microsoft.com/samples/xamarin/monodroid-samples/localnotifications)サンプルでは、を使用して、 `NotificationCompat.Builder` 通知から2番目のアクティビティを起動する方法を示します。 このサンプルコードについては、 [「Xamarin. Android でのローカル通知の使用](~/android/app-fundamentals/notifications/local-notifications-walkthrough.md)」チュートリアルで説明しています。
+[Localnotifications](/samples/xamarin/monodroid-samples/localnotifications)サンプルでは、を使用して、 `NotificationCompat.Builder` 通知から2番目のアクティビティを起動する方法を示します。 このサンプルコードについては、 [「Xamarin. Android でのローカル通知の使用](~/android/app-fundamentals/notifications/local-notifications-walkthrough.md) 」チュートリアルで説明しています。
 
 ### <a name="notification-styles"></a>通知スタイル
 
-で*テキスト*、*画像*、または*受信トレイ*のスタイルに関する通知を作成するには `NotificationCompat.Builder` 、アプリでこれらのスタイルの互換性バージョンを使用する必要があります。 たとえば、*ビッグテキスト*スタイルを使用するには、次のようにインスタンス化し `NotificationCompat.BigTextstyle` ます。
+で *テキスト*、 *画像*、または *受信トレイ* のスタイルに関する通知を作成するには `NotificationCompat.Builder` 、アプリでこれらのスタイルの互換性バージョンを使用する必要があります。 たとえば、 *ビッグテキスト* スタイルを使用するには、次のようにインスタンス化し `NotificationCompat.BigTextstyle` ます。
 
 ```csharp
 NotificationCompat.BigTextStyle textStyle = new NotificationCompat.BigTextStyle();
@@ -722,11 +722,11 @@ NotificationCompat.BigTextStyle textStyle = new NotificationCompat.BigTextStyle(
 builder.SetStyle (textStyle);
 ```
 
-同様に、アプリではとを使用して、 `NotificationCompat.InboxStyle` `NotificationCompat.BigPictureStyle` *受信トレイ*と*画像*のスタイルをそれぞれ使用できます。
+同様に、アプリではとを使用して、 `NotificationCompat.InboxStyle` `NotificationCompat.BigPictureStyle` *受信トレイ* と *画像* のスタイルをそれぞれ使用できます。
 
 ### <a name="notification-priority-and-category"></a>通知の優先度とカテゴリ
 
-`NotificationCompat.Builder``SetPriority`(Android 4.1 以降で使用可能) メソッドをサポートしています。 ただし、では、 `SetCategory` Android 5.0 で導入された新しい通知メタデータシステムにカテゴリが含まれているため、このメソッドはサポートされて*いません* `NotificationCompat.Builder` 。
+`NotificationCompat.Builder``SetPriority`(Android 4.1 以降で使用可能) メソッドをサポートしています。 ただし、では、 `SetCategory` Android 5.0 で導入された新しい通知メタデータシステムにカテゴリが含まれているため、このメソッドはサポートされて *いません* `NotificationCompat.Builder` 。
 
 以前のバージョンの Android (を使用できない) をサポートするには、 `SetCategory` `SetCategory` api レベルが Android 5.0 (api レベル 21) 以上であるときに、実行時に api レベルを条件付きで呼び出すことができます。
 
@@ -736,7 +736,7 @@ if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop) {
 }
 ```
 
-この例では、アプリの**ターゲットフレームワーク**は android 5.0 に設定されており、 **Android の最小バージョン**は**android 4.1 (API レベル 16)** に設定されています。 `SetCategory`は api レベル21以降で使用可能であるため、このコード例は、 `SetCategory` 使用可能な場合にのみを呼び出します &ndash; `SetCategory` 。 api レベルが21より小さい場合には呼び出されません。
+この例では、アプリの **ターゲットフレームワーク** は android 5.0 に設定されており、 **Android の最小バージョン** は **android 4.1 (API レベル 16)** に設定されています。 `SetCategory`は api レベル21以降で使用可能であるため、このコード例は、 `SetCategory` 使用可能な場合にのみを呼び出します &ndash; `SetCategory` 。 api レベルが21より小さい場合には呼び出されません。
 
 ### <a name="lock-screen-visibility"></a>ロック画面の表示
 
@@ -750,14 +750,14 @@ if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Lollipop) {
 
 ## <a name="summary"></a>まとめ
 
-この記事では、Android でローカル通知を作成する方法について説明しました。 ここでは、通知の構造について説明し、を使用して通知を作成する方法 `NotificationCompat.Builder` 、大きいアイコンで通知をスタイル設定する方法、*大きなテキスト*、*画像*と*受信トレイ*の形式、通知メタデータの設定 (優先度、可視性、カテゴリなど)、通知からアクティビティを起動する方法について説明しました。 この記事では、これらの通知設定が、Android 5.0 で導入された新しいヘッドアップ、ロック画面、および*応答不可*機能とどのように連携するかについても説明しました。 最後に、を使用し `NotificationCompat.Builder` て、以前のバージョンの Android との通知の互換性を維持する方法を学習しました。
+この記事では、Android でローカル通知を作成する方法について説明しました。 ここでは、通知の構造について説明し、を使用して通知を作成する方法 `NotificationCompat.Builder` 、大きいアイコンで通知をスタイル設定する方法、 *大きなテキスト*、 *画像* と *受信トレイ* の形式、通知メタデータの設定 (優先度、可視性、カテゴリなど)、通知からアクティビティを起動する方法について説明しました。 この記事では、これらの通知設定が、Android 5.0 で導入された新しいヘッドアップ、ロック画面、および *応答不可* 機能とどのように連携するかについても説明しました。 最後に、を使用し `NotificationCompat.Builder` て、以前のバージョンの Android との通知の互換性を維持する方法を学習しました。
 
-Android 用の通知の設計に関するガイドラインについては、「[通知](https://developer.android.com/guide/topics/ui/notifiers/notifications.html)」を参照してください。
+Android 用の通知の設計に関するガイドラインについては、「 [通知](https://developer.android.com/guide/topics/ui/notifiers/notifications.html)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 
-- [NotificationsLab (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-notificationslab)
-- [LocalNotifications (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/localnotifications)
+- [NotificationsLab (サンプル)](/samples/xamarin/monodroid-samples/android50-notificationslab)
+- [LocalNotifications (サンプル)](/samples/xamarin/monodroid-samples/localnotifications)
 - [Android でのローカル通知のチュートリアル](~/android/app-fundamentals/notifications/local-notifications-walkthrough.md)
 - [ユーザーへの通知](https://developer.android.com/training/notify-user/index.html)
 - [通知](xref:Android.App.Notification)

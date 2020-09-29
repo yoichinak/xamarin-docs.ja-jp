@@ -6,12 +6,12 @@ ms.assetid: B73675D2-09A3-14C1-E41E-20352B819B53
 author: davidortinau
 ms.author: daortin
 ms.date: 08/06/2018
-ms.openlocfilehash: 5edfd8216892eb28a2b1ad14d3ccee1668b21a43
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: b097a0549db6178576d9e10eb3282c88e96b9ddb
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571221"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91453299"
 ---
 # <a name="sharing-code-overview"></a>コードの共有の概要
 
@@ -19,9 +19,9 @@ _このドキュメントでは、クロスプラットフォームプロジェ�
 
 クロスプラットフォームアプリケーション間でコードを共有するには、次の3つの方法があります。
 
-- [**.NET Standard ライブラリ**](#Net_Standard)– .NET Standard プロジェクトは、複数のプラットフォーム間で共有されるコードを実装できます。また、多数の .net api にアクセスできます (バージョンによって異なります)。 .NET Standard 1.0-1.6 は、徐々に大きくなる Api のセットを実装しますが、.NET Standard 2.0 は .NET BCL (Xamarin アプリで利用可能な .NET Api を含む) の最適な範囲を提供します。
-- [**共有プロジェクト**](#Shared_Projects)–共有アセットプロジェクトタイプを使用してソースコードを整理し、 `#if` 必要に応じてコンパイラディレクティブを使用してプラットフォーム固有の要件を管理します。
-- [**ポータブルクラスライブラリ**](#Portable_Class_Libraries)(非推奨) –ポータブルクラスライブラリ (pcl) は、共通の API サーフェイスを使用して複数のプラットフォームを対象とし、インターフェイスを使用してプラットフォーム固有の機能を提供できます。 PCLs は、Visual Studio の最新バージョンでは非推奨とされ &ndash; ます。代わりに .NET Standard を使用します。
+- [**.NET Standard ライブラリ**](#Net_Standard) – .NET Standard プロジェクトは、複数のプラットフォーム間で共有されるコードを実装できます。また、多数の .net api にアクセスできます (バージョンによって異なります)。 .NET Standard 1.0-1.6 は、徐々に大きくなる Api のセットを実装しますが、.NET Standard 2.0 は .NET BCL (Xamarin アプリで利用可能な .NET Api を含む) の最適な範囲を提供します。
+- [**共有プロジェクト**](#Shared_Projects) –共有アセットプロジェクトタイプを使用してソースコードを整理し、 `#if` 必要に応じてコンパイラディレクティブを使用してプラットフォーム固有の要件を管理します。
+- [**ポータブルクラスライブラリ**](#Portable_Class_Libraries) (非推奨) –ポータブルクラスライブラリ (pcl) は、共通の API サーフェイスを使用して複数のプラットフォームを対象とし、インターフェイスを使用してプラットフォーム固有の機能を提供できます。 PCLs は、Visual Studio の最新バージョンでは非推奨とされ &ndash; ます。代わりに .NET Standard を使用します。
 
 コード共有戦略の目的は、この図に示すアーキテクチャをサポートすることです。ここでは、単一のコードベースを複数のプラットフォームで使用できます。
 
@@ -33,7 +33,7 @@ _このドキュメントでは、クロスプラットフォームプロジェ�
 
 ## <a name="net-standard-libraries"></a>.NET Standard ライブラリ
 
-[.NET Standard](~/cross-platform/app-fundamentals/net-standard.md)ライブラリは、さまざまな種類のプロジェクトで参照できる、適切に定義された基本クラスライブラリのセットを提供します。これには、xamarin Android や xamarin などのクロスプラットフォームプロジェクトが含まれます。 既存の .NET Framework コードとの互換性を最大にするには、.NET Standard 2.0 をお勧めします。
+[.NET Standard](~/cross-platform/app-fundamentals/net-standard.md) ライブラリは、さまざまな種類のプロジェクトで参照できる、適切に定義された基本クラスライブラリのセットを提供します。これには、xamarin Android や xamarin などのクロスプラットフォームプロジェクトが含まれます。 既存の .NET Framework コードとの互換性を最大にするには、.NET Standard 2.0 をお勧めします。
 
 ![.NET Standard ダイアグラム](code-sharing-images/netstandard.png ".NET Standard ダイアグラム")
 
@@ -47,17 +47,17 @@ _このドキュメントでは、クロスプラットフォームプロジェ�
 
 - のようなコンパイラディレクティブは使用できません `#if __IOS__` 。
 
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>注釈
 
-.NET Standard は[PCL に似](https://docs.microsoft.com/dotnet/standard/net-standard#comparison-to-portable-class-libraries)ていますが、プラットフォームのサポートと BCL のクラスの数がより単純なモデルになっています。
+.NET Standard は [PCL に似](/dotnet/standard/net-standard#comparison-to-portable-class-libraries)ていますが、プラットフォームのサポートと BCL のクラスの数がより単純なモデルになっています。
 
 <a name="Shared_Projects"></a>
 
 ## <a name="shared-projects"></a>共有プロジェクト
 
-[共有プロジェクト](~/cross-platform/app-fundamentals/shared-projects.md)には、コードファイルと、それらを参照するプロジェクトに含まれるアセットが含まれています。 プロジェクトの共有は、コンパイルされた出力を独自に生成しません。
+[共有プロジェクト](~/cross-platform/app-fundamentals/shared-projects.md) には、コードファイルと、それらを参照するプロジェクトに含まれるアセットが含まれています。 プロジェクトの共有は、コンパイルされた出力を独自に生成しません。
 
-このスクリーンショットは、次の3つのアプリケーションプロジェクト (Android、iOS、および Windows 用) を含むソリューションファイルを示しています。共通の C# ソースコードファイルを含む**共有**プロジェクトがあります。
+このスクリーンショットは、次の3つのアプリケーションプロジェクト (Android、iOS、および Windows 用) を含むソリューションファイルを示しています。共通の C# ソースコードファイルを含む **共有** プロジェクトがあります。
 
 ![共有プロジェクトソリューション](code-sharing-images/sharedsolution.png "共有プロジェクトソリューション")
 
@@ -71,7 +71,7 @@ IOS、Android、および Windows をサポートするクロスプラットフ�
 
 ソリューションの例には、次のフォルダーとプロジェクトが含まれています (表現力のためにプロジェクト名が選択されています。プロジェクトでは、これらの名前付けガイドラインに従う必要はありません)。
 
-- **共有**–すべてのプロジェクトに共通のコードを含む共有プロジェクト。
+- **共有** –すべてのプロジェクトに共通のコードを含む共有プロジェクト。
 - **Appandroid** – Xamarin アプリケーションプロジェクト。
 - **Appios** – Xamarin ios アプリケーションプロジェクト。
 - **Appwindows** – windows アプリケーションプロジェクト。
@@ -82,7 +82,7 @@ IOS、Android、および Windows をサポートするクロスプラットフ�
 
 - を使用すると、複数のプロジェクト間でコードを共有できます。
 - 共有コードは、コンパイラディレクティブを使用してプラットフォームに基づいて分岐できます ( `#if __ANDROID__`「[クロスプラットフォームアプリケーションの構築](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)」ドキュメントで説明されているように、を使用します。
-- アプリケーションプロジェクトには、共有コードが利用できるプラットフォーム固有の参照を含めることができ `Community.CsharpSqlite.WP7` ます (たとえば、Windows Phone の Tasky サンプルでを使用するなど)。
+- アプリケーションプロジェクトには、共有コードが利用できるプラットフォーム固有の参照を含めることができ  `Community.CsharpSqlite.WP7` ます (たとえば、Windows Phone の Tasky サンプルでを使用するなど)。
 
 ### <a name="disadvantages"></a>短所
 
@@ -91,7 +91,7 @@ IOS、Android、および Windows をサポートするクロスプラットフ�
 
 <a name="Shared_Remarks"></a>
 
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>注釈
 
 アプリケーション開発者向けの優れたソリューションで、アプリ内での共有のみを目的としたコードを作成できます (他の開発者に配布することはできません)。
 
@@ -102,7 +102,7 @@ IOS、Android、および Windows をサポートするクロスプラットフ�
 > [!TIP]
 > ポータブルクラスライブラリよりも .NET Standard 2.0 ライブラリをお勧めします。
 
-ポータブルクラスライブラリの[詳細につい](~/cross-platform/app-fundamentals/pcl.md)ては、こちらを参照してください。
+ポータブルクラスライブラリの [詳細につい](~/cross-platform/app-fundamentals/pcl.md)ては、こちらを参照してください。
 
 ![ポータブルクラスライブラリの図](code-sharing-images/portableclasslibrary.png "ポータブルクラスライブラリの図")
 
@@ -113,11 +113,11 @@ IOS、Android、および Windows をサポートするクロスプラットフ�
 
 ### <a name="disadvantages"></a>短所
 
-- Visual Studio の最新バージョンで非推奨とされました。代わりに .NET Standard ライブラリをお勧めします。 PCL と .NET Standard[の違いについては、](https://docs.microsoft.com/dotnet/standard/net-standard#comparison-to-portable-class-libraries)こちらを参照してください。
+- Visual Studio の最新バージョンで非推奨とされました。代わりに .NET Standard ライブラリをお勧めします。 PCL と .NET Standard [の違いについては、](/dotnet/standard/net-standard#comparison-to-portable-class-libraries) こちらを参照してください。
 - コンパイラディレクティブは使用できません。
-- 使用できる .NET framework のサブセットは、選択したプロファイルによって決まります (詳細については、「 [PCL の概要」を](~/cross-platform/app-fundamentals/pcl.md)参照してください)。
+- 使用できる .NET framework のサブセットは、選択したプロファイルによって決まります (詳細については、「  [PCL の概要」を](~/cross-platform/app-fundamentals/pcl.md) 参照してください)。
 
-### <a name="remarks"></a>Remarks
+### <a name="remarks"></a>注釈
 
 PCL テンプレートは、最新バージョンの Visual Studio では非推奨と見なされます。
 

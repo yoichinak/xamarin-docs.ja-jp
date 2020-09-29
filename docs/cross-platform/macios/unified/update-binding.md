@@ -6,12 +6,12 @@ ms.assetid: 5E2A3251-D17F-4F9C-9EA0-6321FEBE8577
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2017
-ms.openlocfilehash: c74c4bedc040ef8f01222b12ee3e6cb99bf5355a
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: d545daa10f9f771cd1708adf32569a49f6c4e709
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938906"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91453507"
 ---
 # <a name="migrating-a-binding-to-the-unified-api"></a>バインドの Unified API への移行
 
@@ -34,9 +34,9 @@ Windows コンピューターの Visual studio では、プロジェクトのバ
 
 ## <a name="modify-the-using-statements"></a>Using ステートメントを変更する
 
-統合された Api を使用すると、Mac と iOS の間でコードを共有できるだけでなく、同じバイナリで32および64ビットアプリケーションをサポートすることができます。 名前空間から_モノ Mac_と_monotouch.dialog_プレフィックスを削除することにより、xamarin と xamarin の両方のアプリケーションプロジェクトでより簡単な共有が実現されます。
+統合された Api を使用すると、Mac と iOS の間でコードを共有できるだけでなく、同じバイナリで32および64ビットアプリケーションをサポートすることができます。 名前空間から _モノ Mac_ と _monotouch.dialog_ プレフィックスを削除することにより、xamarin と xamarin の両方のアプリケーションプロジェクトでより簡単な共有が実現されます。
 
-そのため、microsoft の `.cs` ステートメントから、_モノの Mac_と_monotouch.dialog_のプレフィックスを削除するには、バインドコントラクト (およびバインドプロジェクト内のその他のファイル) を変更する必要があり `using` ます。
+そのため、microsoft の `.cs` ステートメントから、 _モノの Mac_ と _monotouch.dialog_ のプレフィックスを削除するには、バインドコントラクト (およびバインドプロジェクト内のその他のファイル) を変更する必要があり `using` ます。
 
 たとえば、バインドコントラクトで次の using ステートメントを使用したとします。
 
@@ -60,7 +60,7 @@ using ObjCRuntime;
 
 ここでも、バインドプロジェクト内の任意のファイルに対してこれを行う必要があり `.cs` ます。 この変更が行われたら、次の手順では、新しいネイティブデータ型を使用するようにバインドプロジェクトを更新します。
 
-Unified API の詳細については、 [Unified API](~/cross-platform/macios/unified/index.md)のドキュメントを参照してください。 32および64ビットアプリケーションのサポートとフレームワークに関する情報の背景については、 [32 および64ビットプラットフォームに関する考慮事項](~/cross-platform/macios/32-and-64/index.md)に関するドキュメントを参照してください。
+Unified API の詳細については、 [Unified API](~/cross-platform/macios/unified/index.md) のドキュメントを参照してください。 32および64ビットアプリケーションのサポートとフレームワークに関する情報の背景については、 [32 および64ビットプラットフォームに関する考慮事項](~/cross-platform/macios/32-and-64/index.md) に関するドキュメントを参照してください。
 
 ## <a name="update-to-native-data-types"></a>ネイティブデータ型への更新
 
@@ -92,7 +92,7 @@ nint Add(nint operandUn, nint operandDeux);
 
 最初にリンクしたものより新しいバージョンのサードパーティライブラリにマッピングする場合は、 `.h` ライブラリのヘッダーファイルを確認し、、、、またはへの明示的な呼び出しが、、、 `int` `int32_t` `unsigned int` `uint32_t` またはに `float` アップグレードされ `NSInteger` た `NSUInteger` かどうかを `CGFloat` 確認する必要があります。 その場合は、、、および型に対する同じ変更を、 `nint` `nuint` `nfloat` マッピングにも加える必要があります。
 
-これらのデータ型の変更の詳細については、[ネイティブ型](~/cross-platform/macios/nativetypes.md)のドキュメントを参照してください。
+これらのデータ型の変更の詳細については、 [ネイティブ型](~/cross-platform/macios/nativetypes.md) のドキュメントを参照してください。
 
 ## <a name="update-the-coregraphics-types"></a>CoreGraphics 型を更新する
 
@@ -132,7 +132,7 @@ IntPtr Constructor (CGRect frame);
 
 ## <a name="modify-the-binding-project"></a>バインドプロジェクトを変更する
 
-統合された Api を使用するようにバインドプロジェクトを更新する最後の手順として、プロジェクトのビルドに使用するを変更するか、 `MakeFile` Xamarin プロジェクトの種類 (Visual Studio for Mac 内からバインドする場合) を変更して、従来の api ではなく統合 api にバインドするように_btouch_に指示する必要があります。
+統合された Api を使用するようにバインドプロジェクトを更新する最後の手順として、プロジェクトのビルドに使用するを変更するか、 `MakeFile` Xamarin プロジェクトの種類 (Visual Studio for Mac 内からバインドする場合) を変更して、従来の api ではなく統合 api にバインドするように _btouch_ に指示する必要があります。
 
 ### <a name="updating-a-makefile"></a>メイクファイルの更新
 
@@ -202,7 +202,7 @@ Visual Studio for Mac バインドプロジェクトテンプレートを使用�
 3. [新しいソリューション] ダイアログボックスで、[ **ios**  >  **Unified API**  >  **ios バインドプロジェクト**] を選択します。 
 
     [![[新しいソリューション] ダイアログボックスで、[iOS/Unified API/iOS バインドプロジェクト] を選択します。](update-binding-images/image01new.png)](update-binding-images/image01new.png#lightbox)
-4. [新しいプロジェクトの構成] ダイアログで、新しいバインドプロジェクトの**名前**を入力し、[ **OK** ] をクリックします。
+4. [新しいプロジェクトの構成] ダイアログで、新しいバインドプロジェクトの **名前** を入力し、[ **OK** ] をクリックします。
 5. バインドを作成する対象となる、64ビットバージョンの目標 C ライブラリを含めます。
 6. 既存の32ビット Classic API バインドプロジェクト (やファイルなど) からソースコードをコピー `ApiDefinition.cs` し `StructsAndEnums.cs` ます。
 7. 上記の変更をソースコードファイルに加えます。
@@ -220,4 +220,4 @@ Visual Studio for Mac バインドプロジェクトテンプレートを使用�
 - [32/64 ビットプラットフォームに関する考慮事項](~/cross-platform/macios/32-and-64/index.md)
 - [既存の iOS アプリのアップグレード](~/cross-platform/macios/unified/updating-ios-apps.md)
 - [Unified API](~/cross-platform/macios/unified/index.md)
-- [BindingSample](https://docs.microsoft.com/samples/xamarin/ios-samples/bindingsample/)
+- [BindingSample](/samples/xamarin/ios-samples/bindingsample/)

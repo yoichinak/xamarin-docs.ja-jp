@@ -5,76 +5,76 @@ description: このドキュメントでは、Xamarin、Windows フォーム、W
 author: davidortinau
 ms.author: daortin
 ms.date: 04/26/2017
-ms.openlocfilehash: 854d05d004276fa4ce3ccdfc63c541217c6c7acd
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b4cffd9e95f24dea9fc5fed5a6badeec624a4e25
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73016503"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91453091"
 ---
 # <a name="ui-controls-comparison"></a>UI コントロールの比較
 
-次に示すのは、[このテーブル](/dotnet/framework/wpf/advanced/windows-forms-controls-and-equivalent-wpf-controls)に基づく WINDOWS フォームと WPF を使用した Xamarin コントロールの比較です。
+次に示すのは、 [このテーブル](/dotnet/framework/wpf/advanced/windows-forms-controls-and-equivalent-wpf-controls)に基づく WINDOWS フォームと WPF を使用した Xamarin コントロールの比較です。
 
 詳細については、「」を参照してください。これにより、モバイルアプリ開発用のデスクトップナレッジを更新でき[ます。](wpf.md)
 
 |Windows フォーム|WPF|Xamarin.Forms|
 |--- |--- |--- |
-|[BindingNavigator](https://msdn.microsoft.com/library/system.windows.forms.bindingnavigator(v=vs.110).aspx)|-|-|
-|[BindingSource](https://msdn.microsoft.com/library/system.windows.forms.bindingsource(v=vs.110).aspx)|[CollectionViewSource](https://msdn.microsoft.com/library/system.windows.data.collectionviewsource(v=vs.110).aspx)|バインディングプロパティ (例) BindingContext|
-|[Button](https://msdn.microsoft.com/library/system.windows.forms.button(v=vs.110).aspx)|[Button](https://msdn.microsoft.com/library/system.windows.controls.button(v=vs.110).aspx)|Button|
-|[CheckBox](https://msdn.microsoft.com/library/system.windows.forms.checkbox(v=vs.110).aspx)|[CheckBox](https://msdn.microsoft.com/library/system.windows.controls.checkbox(v=vs.110).aspx)|切り替え|
-|[CheckedListBox](https://msdn.microsoft.com/library/system.windows.forms.checkedlistbox(v=vs.110).aspx)|コンポジションを含む[ListBox](https://msdn.microsoft.com/library/system.windows.controls.listbox(v=vs.110).aspx) 。|コンポジションを含む ListView。|
-|[ColorDialog](https://msdn.microsoft.com/library/system.windows.forms.colordialog(v=vs.110).aspx)|-|-|
-|[ComboBox](https://msdn.microsoft.com/library/system.windows.forms.combobox(v=vs.110).aspx)|[ComboBox](https://msdn.microsoft.com/library/system.windows.controls.combobox(v=vs.110).aspx) (オートコンプリートをサポートしていません)|ピッカー|
-|[ContextMenuStrip](https://msdn.microsoft.com/library/system.windows.forms.contextmenustrip(v=vs.110).aspx)|[ContextMenu](https://msdn.microsoft.com/library/system.windows.controls.contextmenu(v=vs.110).aspx)|-|
-|[DataGridView](https://msdn.microsoft.com/library/system.windows.forms.datagridview(v=vs.110).aspx)|[DataGrid](https://msdn.microsoft.com/library/system.windows.controls.datagrid(v=vs.110).aspx)|-|
-|[DateTimePicker](https://msdn.microsoft.com/library/system.windows.forms.datetimepicker(v=vs.110).aspx)|[DatePicker](https://msdn.microsoft.com/library/system.windows.controls.datepicker(v=vs.110).aspx)|DatePicker & TimePicker|
-|[DomainUpDown](https://msdn.microsoft.com/library/system.windows.forms.domainupdown(v=vs.110).aspx)|[TextBox](https://msdn.microsoft.com/library/system.windows.controls.textbox(v=vs.110).aspx)と2つの[repeatbutton](https://msdn.microsoft.com/library/system.windows.controls.primitives.repeatbutton(v=vs.110).aspx)コントロール。|ステッパ|
-|[ErrorProvider](https://msdn.microsoft.com/library/system.windows.forms.errorprovider(v=vs.110).aspx)|-|-|
-|[FlowLayoutPanel](https://msdn.microsoft.com/library/system.windows.forms.flowlayoutpanel(v=vs.110).aspx)|[WrapPanel](https://msdn.microsoft.com/library/system.windows.controls.wrappanel(v=vs.110).aspx)または[StackPanel](https://msdn.microsoft.com/library/system.windows.controls.stackpanel(v=vs.110).aspx)|StackLayout または FlexLayout|
-|[FolderBrowserDialog](https://msdn.microsoft.com/library/system.windows.forms.folderbrowserdialog(v=vs.110).aspx)|-|-|
-|[FontDialog](https://msdn.microsoft.com/library/system.windows.forms.fontdialog(v=vs.110).aspx)|-|-|
-|[フォーム](https://msdn.microsoft.com/library/system.windows.forms.form(v=vs.110).aspx)|[ウィンドウ](https://msdn.microsoft.com/library/system.windows.window(v=vs.110).aspx)|ページ|
-|[GroupBox](https://msdn.microsoft.com/library/system.windows.forms.groupbox(v=vs.110).aspx)|[GroupBox](https://msdn.microsoft.com/library/system.windows.controls.groupbox(v=vs.110).aspx)|-|
-|[HelpProvider](https://msdn.microsoft.com/library/system.windows.forms.helpprovider(v=vs.110).aspx)|同等のコントロールはありません (ツールヒントを使用します)。|-|
-|[Hscrollbar コントロール](https://msdn.microsoft.com/library/system.windows.forms.hscrollbar(v=vs.110).aspx)|[ScrollBar](https://msdn.microsoft.com/library/system.windows.controls.primitives.scrollbar(v=vs.110).aspx) (スクロールはコンテナーコントロールに組み込まれています)|ScrollView を使用する|
-|[ImageList](https://msdn.microsoft.com/library/system.windows.forms.imagelist(v=vs.110).aspx)|-|-|
-|[group1](https://msdn.microsoft.com/library/system.windows.forms.label(v=vs.110).aspx)|[group1](https://msdn.microsoft.com/library/system.windows.controls.label(v=vs.110).aspx)|group1|
-|[LinkLabel](https://msdn.microsoft.com/library/system.windows.forms.linklabel(v=vs.110).aspx)|同等のコントロールはありません ( [Hyperlink](https://msdn.microsoft.com/library/system.windows.documents.hyperlink(v=vs.110).aspx)クラスを使用して、フローコンテンツ内のハイパーリンクをホストできます)。|-|
-|[ListBox](https://msdn.microsoft.com/library/system.windows.forms.listbox(v=vs.110).aspx)|[ListBox](https://msdn.microsoft.com/library/system.windows.controls.listbox(v=vs.110).aspx)|ListView の使用|
-|[ListView](https://msdn.microsoft.com/library/system.windows.forms.listview(v=vs.110).aspx)|[ListView](https://msdn.microsoft.com/library/system.windows.controls.listview(v=vs.110).aspx)|ListView|
-|[MaskedTextBox](https://msdn.microsoft.com/library/system.windows.forms.maskedtextbox(v=vs.110).aspx)|-|-|
-|[MenuStrip](https://msdn.microsoft.com/library/system.windows.forms.menustrip(v=vs.110).aspx)|[Menu](https://msdn.microsoft.com/library/system.windows.controls.menu(v=vs.110).aspx)|Masterのページまたは TabbedPage を検討する|
-|[MonthCalendar](https://msdn.microsoft.com/library/system.windows.forms.monthcalendar(v=vs.110).aspx)|[カレンダー](https://msdn.microsoft.com/library/system.windows.controls.calendar(v=vs.110).aspx)|-|
-|[NotifyIcon](https://msdn.microsoft.com/library/system.windows.forms.notifyicon(v=vs.110).aspx)|-|-|
-|[NumericUpDown](https://msdn.microsoft.com/library/system.windows.forms.numericupdown(v=vs.110).aspx)|[TextBox](https://msdn.microsoft.com/library/system.windows.controls.textbox(v=vs.110).aspx)と2つの[repeatbutton](https://msdn.microsoft.com/library/system.windows.controls.primitives.repeatbutton(v=vs.110).aspx)コントロール。|ステッパ|
-|[OpenFileDialog](https://msdn.microsoft.com/library/system.windows.forms.openfiledialog(v=vs.110).aspx)|[OpenFileDialog](https://msdn.microsoft.com/library/microsoft.win32.openfiledialog(v=vs.110).aspx)|-|
-|[PageSetupDialog](https://msdn.microsoft.com/library/system.windows.forms.pagesetupdialog(v=vs.110).aspx)|-|-|
-|[Panel](https://msdn.microsoft.com/library/system.windows.forms.panel(v=vs.110).aspx)|[Canvas](https://msdn.microsoft.com/library/system.windows.controls.canvas(v=vs.110).aspx)|View または AbsoluteLayout|
-|[ピクチャ](https://msdn.microsoft.com/library/system.windows.forms.picturebox(v=vs.110).aspx)|[イメージ](https://msdn.microsoft.com/library/system.windows.controls.image(v=vs.110).aspx)|Image|
-|[PrintDialog](https://msdn.microsoft.com/library/system.windows.forms.printdialog(v=vs.110).aspx)|[PrintDialog](https://msdn.microsoft.com/library/system.windows.controls.printdialog(v=vs.110).aspx)|-|
-|[PrintDocument](https://msdn.microsoft.com/library/system.drawing.printing.printdocument(v=vs.110).aspx)|-|-|
-|[PrintPreviewControl](https://msdn.microsoft.com/library/system.windows.forms.printpreviewcontrol(v=vs.110).aspx)|[DocumentViewer](https://msdn.microsoft.com/library/system.windows.controls.documentviewer(v=vs.110).aspx)|-|
-|[PrintPreviewDialog](https://msdn.microsoft.com/library/system.windows.forms.printpreviewdialog(v=vs.110).aspx)|-|-|
-|[ProgressBar](https://msdn.microsoft.com/library/system.windows.forms.progressbar(v=vs.110).aspx)|[ProgressBar](https://msdn.microsoft.com/library/system.windows.controls.progressbar(v=vs.110).aspx)|ProgressBar|
-|[PropertyGrid](https://msdn.microsoft.com/library/system.windows.forms.propertygrid(v=vs.110).aspx)|-|-|
-|[RadioButton](https://msdn.microsoft.com/library/system.windows.forms.radiobutton(v=vs.110).aspx)|[RadioButton](https://msdn.microsoft.com/library/system.windows.controls.radiobutton(v=vs.110).aspx)|-|
-|[RichTextBox](https://msdn.microsoft.com/library/system.windows.forms.richtextbox(v=vs.110).aspx)|[RichTextBox](https://msdn.microsoft.com/library/system.windows.controls.richtextbox(v=vs.110).aspx)|エディターは、リッチ (書式設定された) テキストをサポートしていません。単一行テキストの入力です|
-|[SaveFileDialog](https://msdn.microsoft.com/library/system.windows.forms.savefiledialog(v=vs.110).aspx)|[SaveFileDialog](https://msdn.microsoft.com/library/microsoft.win32.savefiledialog(v=vs.110).aspx)|-|
-|[ScrollableControl](https://msdn.microsoft.com/library/system.windows.forms.scrollablecontrol(v=vs.110).aspx)|[ScrollViewer](https://msdn.microsoft.com/library/system.windows.controls.scrollviewer(v=vs.110).aspx)|ScrollView|
-|[SoundPlayer](https://msdn.microsoft.com/library/system.media.soundplayer(v=vs.110).aspx)|[MediaPlayer](https://msdn.microsoft.com/library/system.windows.media.mediaplayer(v=vs.110).aspx)|-|
-|[SplitContainer](https://msdn.microsoft.com/library/system.windows.forms.splitcontainer(v=vs.110).aspx)|[GridSplitter](https://msdn.microsoft.com/library/system.windows.controls.gridsplitter(v=vs.110).aspx)|Masterのページを検討する|
-|[StatusStrip](https://msdn.microsoft.com/library/system.windows.forms.statusstrip(v=vs.110).aspx)|[StatusBar](https://msdn.microsoft.com/library/system.windows.controls.primitives.statusbar(v=vs.110).aspx)|-|
-|[TabControl](https://msdn.microsoft.com/library/system.windows.forms.tabcontrol(v=vs.110).aspx)|[TabControl](https://msdn.microsoft.com/library/system.windows.controls.tabcontrol(v=vs.110).aspx)|TabbedPage|
-|[TableLayoutPanel](https://msdn.microsoft.com/library/system.windows.forms.tablelayoutpanel(v=vs.110).aspx)|[グリッド](https://msdn.microsoft.com/library/system.windows.controls.grid(v=vs.110).aspx)|グリッド|
-|[TextBox](https://msdn.microsoft.com/library/system.windows.forms.textbox(v=vs.110).aspx)|[TextBox](https://msdn.microsoft.com/library/system.windows.controls.textbox(v=vs.110).aspx)|エディターはリッチ (書式設定された) テキストをサポートしていません|
-|[タイマー](https://msdn.microsoft.com/library/system.windows.forms.timer(v=vs.110).aspx)|[DispatcherTimer](https://msdn.microsoft.com/library/system.windows.threading.dispatchertimer(v=vs.110).aspx)|デバイス. StartTime ()|
-|[ToolStrip](https://msdn.microsoft.com/library/system.windows.forms.toolstrip(v=vs.110).aspx)|[ToolBar](https://msdn.microsoft.com/library/system.windows.controls.toolbar(v=vs.110).aspx)|ページの ToolbarItems と ToolbarItem|
-|[ToolStripContainer](https://msdn.microsoft.com/library/system.windows.forms.toolstripcontainer(v=vs.110).aspx)、 [ToolStripDropDown](https://msdn.microsoft.com/library/system.windows.forms.toolstripdropdown(v=vs.110).aspx)、[タイミング](https://msdn.microsoft.com/library/system.windows.forms.toolstripdropdownmenu(v=vs.110).aspx)、 [ToolStripPanel](https://msdn.microsoft.com/library/system.windows.forms.toolstrippanel(v=vs.110).aspx)|コンポジションを含む[ツールバー](https://msdn.microsoft.com/library/system.windows.controls.toolbar(v=vs.110).aspx) 。|コンポジションを使用した ToolbarItems と ToolbarItem|
-|[ToolTip](https://msdn.microsoft.com/library/system.windows.forms.tooltip(v=vs.110).aspx)|[ToolTip](https://msdn.microsoft.com/library/system.windows.controls.tooltip(v=vs.110).aspx)|ユーザー補助機能を使用する|
-|[左右](https://msdn.microsoft.com/library/system.windows.forms.trackbar(v=vs.110).aspx)|[スライダー](https://msdn.microsoft.com/library/system.windows.controls.slider(v=vs.110).aspx)|Slider|
-|[TreeView](https://msdn.microsoft.com/library/system.windows.forms.treeview(v=vs.110).aspx)|[TreeView](https://msdn.microsoft.com/library/system.windows.controls.treeview(v=vs.110).aspx)|NavigationPage での階層的な ListView の検討|
-|[UserControl](https://msdn.microsoft.com/library/system.windows.forms.usercontrol(v=vs.110).aspx)|[UserControl](https://msdn.microsoft.com/library/system.windows.controls.usercontrol(v=vs.110).aspx)|ビューとカスタムレンダラー|
-|[VScrollBar](https://msdn.microsoft.com/library/system.windows.forms.vscrollbar(v=vs.110).aspx)|[ScrollBar](https://msdn.microsoft.com/library/system.windows.controls.primitives.scrollbar(v=vs.110).aspx)|ScrollView を使用する|
-|[ブラウザー](https://msdn.microsoft.com/library/system.windows.forms.webbrowser(v=vs.110).aspx)|[ブラウザー](https://msdn.microsoft.com/library/system.windows.controls.webbrowser(v=vs.110).aspx)|WebView|
+|[BindingNavigator](/dotnet/api/system.windows.forms.bindingnavigator)|-|-|
+|[BindingSource](/dotnet/api/system.windows.forms.bindingsource)|[CollectionViewSource](/dotnet/api/system.windows.data.collectionviewsource)|バインディングプロパティ (例) BindingContext|
+|[ボタン](/dotnet/api/system.windows.forms.button)|[ボタン](/dotnet/api/system.windows.controls.button)|Button|
+|[CheckBox](/dotnet/api/system.windows.forms.checkbox)|[CheckBox](/dotnet/api/system.windows.controls.checkbox)|Switch|
+|[CheckedListBox](/dotnet/api/system.windows.forms.checkedlistbox)|コンポジションを含む[ListBox](/dotnet/api/system.windows.controls.listbox) 。|コンポジションを含む ListView。|
+|[ColorDialog](/dotnet/api/system.windows.forms.colordialog)|-|-|
+|[ComboBox](/dotnet/api/system.windows.forms.combobox)|[ComboBox](/dotnet/api/system.windows.controls.combobox) (オートコンプリートをサポートしていません)|ピッカー|
+|[ContextMenuStrip](/dotnet/api/system.windows.forms.contextmenustrip)|[ContextMenu](/dotnet/api/system.windows.controls.contextmenu)|-|
+|[DataGridView](/dotnet/api/system.windows.forms.datagridview)|[DataGrid](/dotnet/api/system.windows.controls.datagrid)|-|
+|[DateTimePicker](/dotnet/api/system.windows.forms.datetimepicker)|[DatePicker](/dotnet/api/system.windows.controls.datepicker)|DatePicker & TimePicker|
+|[DomainUpDown](/dotnet/api/system.windows.forms.domainupdown)|[TextBox](/dotnet/api/system.windows.controls.textbox) と2つの [repeatbutton](/dotnet/api/system.windows.controls.primitives.repeatbutton) コントロール。|ステッパ|
+|[ErrorProvider](/dotnet/api/system.windows.forms.errorprovider)|-|-|
+|[FlowLayoutPanel](/dotnet/api/system.windows.forms.flowlayoutpanel)|[WrapPanel](/dotnet/api/system.windows.controls.wrappanel) または [StackPanel](/dotnet/api/system.windows.controls.stackpanel)|StackLayout または FlexLayout|
+|[FolderBrowserDialog](/dotnet/api/system.windows.forms.folderbrowserdialog)|-|-|
+|[FontDialog](/dotnet/api/system.windows.forms.fontdialog)|-|-|
+|[形式](/dotnet/api/system.windows.forms.form)|[ウィンドウ](/dotnet/api/system.windows.window)|Page|
+|[GroupBox](/dotnet/api/system.windows.forms.groupbox)|[GroupBox](/dotnet/api/system.windows.controls.groupbox)|-|
+|[HelpProvider](/dotnet/api/system.windows.forms.helpprovider)|同等のコントロールはありません (ツールヒントを使用します)。|-|
+|[Hscrollbar コントロール](/dotnet/api/system.windows.forms.hscrollbar)|[ScrollBar](/dotnet/api/system.windows.controls.primitives.scrollbar) (スクロールはコンテナーコントロールに組み込まれています)|ScrollView を使用する|
+|[リスト](/dotnet/api/system.windows.forms.imagelist)|-|-|
+|[Label](/dotnet/api/system.windows.forms.label)|[Label](/dotnet/api/system.windows.controls.label)|ラベル|
+|[LinkLabel](/dotnet/api/system.windows.forms.linklabel)|同等のコントロールはありません ( [Hyperlink](/dotnet/api/system.windows.documents.hyperlink) クラスを使用して、フローコンテンツ内のハイパーリンクをホストできます)。|-|
+|[ListBox](/dotnet/api/system.windows.forms.listbox)|[ListBox](/dotnet/api/system.windows.controls.listbox)|ListView の使用|
+|[ListView](/dotnet/api/system.windows.forms.listview)|[ListView](/dotnet/api/system.windows.controls.listview)|ListView|
+|[MaskedTextBox](/dotnet/api/system.windows.forms.maskedtextbox)|-|-|
+|[MenuStrip](/dotnet/api/system.windows.forms.menustrip)|[Menu](/dotnet/api/system.windows.controls.menu)|Masterのページまたは TabbedPage を検討する|
+|[MonthCalendar](/dotnet/api/system.windows.forms.monthcalendar)|[Calendar](/dotnet/api/system.windows.controls.calendar)|-|
+|[NotifyIcon](/dotnet/api/system.windows.forms.notifyicon)|-|-|
+|[NumericUpDown](/dotnet/api/system.windows.forms.numericupdown)|[TextBox](/dotnet/api/system.windows.controls.textbox) と2つの [repeatbutton](/dotnet/api/system.windows.controls.primitives.repeatbutton) コントロール。|ステッパ|
+|[OpenFileDialog](/dotnet/api/system.windows.forms.openfiledialog)|[OpenFileDialog](/dotnet/api/microsoft.win32.openfiledialog)|-|
+|[PageSetupDialog](/dotnet/api/system.windows.forms.pagesetupdialog)|-|-|
+|[Panel](/dotnet/api/system.windows.forms.panel)|[キャンバス](/dotnet/api/system.windows.controls.canvas)|View または AbsoluteLayout|
+|[PictureBox](/dotnet/api/system.windows.forms.picturebox)|[Image](/dotnet/api/system.windows.controls.image)|Image|
+|[PrintDialog](/dotnet/api/system.windows.forms.printdialog)|[PrintDialog](/dotnet/api/system.windows.controls.printdialog)|-|
+|[PrintDocument](/dotnet/api/system.drawing.printing.printdocument)|-|-|
+|[PrintPreviewControl](/dotnet/api/system.windows.forms.printpreviewcontrol)|[DocumentViewer](/dotnet/api/system.windows.controls.documentviewer)|-|
+|[PrintPreviewDialog](/dotnet/api/system.windows.forms.printpreviewdialog)|-|-|
+|[ProgressBar](/dotnet/api/system.windows.forms.progressbar)|[ProgressBar](/dotnet/api/system.windows.controls.progressbar)|ProgressBar|
+|[PropertyGrid](/dotnet/api/system.windows.forms.propertygrid)|-|-|
+|[RadioButton](/dotnet/api/system.windows.forms.radiobutton)|[RadioButton](/dotnet/api/system.windows.controls.radiobutton)|-|
+|[RichTextBox](/dotnet/api/system.windows.forms.richtextbox)|[RichTextBox](/dotnet/api/system.windows.controls.richtextbox)|エディターは、リッチ (書式設定された) テキストをサポートしていません。単一行テキストの入力です|
+|[SaveFileDialog](/dotnet/api/system.windows.forms.savefiledialog)|[SaveFileDialog](/dotnet/api/microsoft.win32.savefiledialog)|-|
+|[ScrollableControl](/dotnet/api/system.windows.forms.scrollablecontrol)|[ScrollViewer](/dotnet/api/system.windows.controls.scrollviewer)|ScrollView|
+|[SoundPlayer](/dotnet/api/system.media.soundplayer)|[MediaPlayer](/dotnet/api/system.windows.media.mediaplayer)|-|
+|[SplitContainer](/dotnet/api/system.windows.forms.splitcontainer)|[GridSplitter](/dotnet/api/system.windows.controls.gridsplitter)|Masterのページを検討する|
+|[StatusStrip](/dotnet/api/system.windows.forms.statusstrip)|[StatusBar](/dotnet/api/system.windows.controls.primitives.statusbar)|-|
+|[TabControl](/dotnet/api/system.windows.forms.tabcontrol)|[TabControl](/dotnet/api/system.windows.controls.tabcontrol)|TabbedPage|
+|[TableLayoutPanel](/dotnet/api/system.windows.forms.tablelayoutpanel)|[Grid](/dotnet/api/system.windows.controls.grid)|グリッド|
+|[TextBox](/dotnet/api/system.windows.forms.textbox)|[TextBox](/dotnet/api/system.windows.controls.textbox)|エディターはリッチ (書式設定された) テキストをサポートしていません|
+|[Timer](/dotnet/api/system.windows.forms.timer)|[DispatcherTimer](/dotnet/api/system.windows.threading.dispatchertimer)|デバイス. StartTime ()|
+|[ToolStrip](/dotnet/api/system.windows.forms.toolstrip)|[ToolBar](/dotnet/api/system.windows.controls.toolbar)|ページの ToolbarItems と ToolbarItem|
+|[ToolStripContainer](/dotnet/api/system.windows.forms.toolstripcontainer)、 [ToolStripDropDown](/dotnet/api/system.windows.forms.toolstripdropdown)、 [タイミング](/dotnet/api/system.windows.forms.toolstripdropdownmenu)、 [ToolStripPanel](/dotnet/api/system.windows.forms.toolstrippanel)|コンポジションを含む[ツールバー](/dotnet/api/system.windows.controls.toolbar) 。|コンポジションを使用した ToolbarItems と ToolbarItem|
+|[ToolTip](/dotnet/api/system.windows.forms.tooltip)|[ToolTip](/dotnet/api/system.windows.controls.tooltip)|ユーザー補助機能を使用する|
+|[TrackBar](/dotnet/api/system.windows.forms.trackbar)|[スライダー](/dotnet/api/system.windows.controls.slider)|Slider|
+|[TreeView](/dotnet/api/system.windows.forms.treeview)|[TreeView](/dotnet/api/system.windows.controls.treeview)|NavigationPage での階層的な ListView の検討|
+|[UserControl](/dotnet/api/system.windows.forms.usercontrol)|[UserControl](/dotnet/api/system.windows.controls.usercontrol)|ビューとカスタムレンダラー|
+|[VScrollBar](/dotnet/api/system.windows.forms.vscrollbar)|[ScrollBar](/dotnet/api/system.windows.controls.primitives.scrollbar)|ScrollView を使用する|
+|[WebBrowser](/dotnet/api/system.windows.forms.webbrowser)|[WebBrowser](/dotnet/api/system.windows.controls.webbrowser)|WebView|

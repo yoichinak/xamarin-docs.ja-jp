@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/25/2018
-ms.openlocfilehash: f960c3cec90bd331f5a1433a869c7720b40c9680
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 8c2e06d2700cd7b61c16fc993d807ca4d042a063
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73024275"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91455119"
 ---
 # <a name="multi-touch-finger-tracking"></a>複数タッチの指トラッキング
 
@@ -23,7 +23,7 @@ _このトピックでは、複数の指からタッチイベントを追跡す�
 特定の指に関連付けられているすべてのイベントについて、ID コードは変わりません。 ID コードは、指が最初に画面に触れたときに割り当てられ、指が画面から離した後は無効になります。
 これらの ID コードは一般に非常に小さな整数であり、Android はこれらを後のタッチイベントに再利用します。
 
-ほとんどの場合、個々の指を追跡するプログラムは、タッチ追跡用のディクショナリを保持します。 Dictionary キーは、特定の指を識別する ID コードです。 ディクショナリ値は、アプリケーションによって異なります。 [FingerPaint](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-fingerpaint)プログラムでは、各指ストローク (タッチからリリースまで) が、その指で描画された直線を描画するために必要なすべての情報を含むオブジェクトに関連付けられています。 このプログラムでは、この目的のために小さい `FingerPaintPolyline` クラスを定義します。
+ほとんどの場合、個々の指を追跡するプログラムは、タッチ追跡用のディクショナリを保持します。 Dictionary キーは、特定の指を識別する ID コードです。 ディクショナリ値は、アプリケーションによって異なります。 [FingerPaint](/samples/xamarin/monodroid-samples/applicationfundamentals-fingerpaint)プログラムでは、各指ストローク (タッチからリリースまで) が、その指で描画された直線を描画するために必要なすべての情報を含むオブジェクトに関連付けられています。 プログラムは、 `FingerPaintPolyline` この目的のための小さいクラスを定義します。
 
 ```csharp
 class FingerPaintPolyline
@@ -41,29 +41,29 @@ class FingerPaintPolyline
 }
 ```
 
-各ポリラインには、色、ストロークの幅、および Android グラフィックス[`Path`](xref:Android.Graphics.Path)オブジェクトがあり、描画中に線の複数の点を蓄積してレンダリングします。
+各ポリラインには、色、ストロークの幅、および [`Path`](xref:Android.Graphics.Path) 描画されるときに線の複数の点を累積して表示するための Android グラフィックスオブジェクトがあります。
 
-次に示すコードの残りの部分は、`FingerPaintCanvasView`という `View` の派生物に含まれています。 このクラスは、1つまたは複数の指によってアクティブに描画されている間に `FingerPaintPolyline` 型のオブジェクトのディクショナリを保持します。
+次に示すコードの残りの部分は、という派生物に含まれてい `View` `FingerPaintCanvasView` ます。 このクラスは、 `FingerPaintPolyline` 1 つまたは複数の指によってアクティブに描画されているときに、型のオブジェクトのディクショナリを保持します。
 
 ```csharp
 Dictionary<int, FingerPaintPolyline> inProgressPolylines = new Dictionary<int, FingerPaintPolyline>();
 ```
 
-このディクショナリは、ビューが特定の指に関連付けられている `FingerPaintPolyline` 情報をすばやく取得できるようにします。
+このディクショナリは、ビューが `FingerPaintPolyline` 特定の指に関連付けられている情報をすばやく取得できるようにします。
 
-`FingerPaintCanvasView` クラスは、完成したポリラインの `List` オブジェクトも保持します。
+`FingerPaintCanvasView`また、クラスは、 `List` 完成したポリラインのオブジェクトも保持します。
 
 ```csharp
 List<FingerPaintPolyline> completedPolylines = new List<FingerPaintPolyline>();
 ```
 
-この `List` のオブジェクトは、描画された順序と同じ順序になっています。
+この内のオブジェクト `List` は、描画された順序と同じ順序になります。
 
-`View`で定義されている2つのメソッドをオーバーライドする `FingerPaintCanvasView`: [`OnDraw`](xref:Android.Views.View.OnDraw*)
-および[`OnTouchEvent`](xref:Android.Views.View.OnTouchEvent*)ます。
-`OnDraw` のオーバーライドでは、ビューは完成したポリラインを描画し、進行中のポリラインを描画します。
+`FingerPaintCanvasView` によって定義される2つのメソッドをオーバーライドし `View` ます。 [`OnDraw`](xref:Android.Views.View.OnDraw*)
+および [`OnTouchEvent`](xref:Android.Views.View.OnTouchEvent*) に対して多くの機能強化が行われました。
+そのオーバーライドでは `OnDraw` 、ビューは完成したポリラインを描画し、進行中のポリラインを描画します。
 
-`OnTouchEvent` メソッドのオーバーライドは、`ActionIndex` プロパティから `pointerIndex` 値を取得することによって開始されます。 この `ActionIndex` 値は複数の指を区別しますが、複数のイベント間では一貫していません。 そのため、`pointerIndex` を使用して、`GetPointerId` メソッドからポインター `id` 値を取得します。 この ID*は*、複数のイベントにわたって一貫しています。
+メソッドのオーバーライドは、 `OnTouchEvent` プロパティから値を取得することによって開始され `pointerIndex` `ActionIndex` ます。 この `ActionIndex` 値は複数の指を区別しますが、複数のイベント間では一貫していません。 そのため、を使用して、 `pointerIndex` メソッドからポインター値を取得し `id` `GetPointerId` ます。 この ID *は* 、複数のイベントにわたって一貫しています。
 
 ```csharp
 public override bool OnTouchEvent(MotionEvent args)
@@ -88,17 +88,17 @@ public override bool OnTouchEvent(MotionEvent args)
 }
 ```
 
-オーバーライドでは、`Action` プロパティではなく、`switch` ステートメントの `ActionMasked` プロパティが使用されていることに注意してください。 その理由を説明します。
+オーバーライドでは、プロパティではなく、ステートメントのプロパティが使用されていることに注意して `ActionMasked` `switch` `Action` ください。 理由は次のとおりです。
 
-マルチタッチを扱う場合、`Action` プロパティの値は、最初の指が画面に触れるときに `MotionEventsAction.Down` になります。2番目と3本目の指と同じように `Pointer2Down` と `Pointer3Down` の値も画面に接します。 4番目と5番目の指が接触すると、`Action` プロパティには、`MotionEventsAction` 列挙体のメンバーに対応していない数値が含まれます。 値のビットフラグの値を調べて、それらの意味を解釈する必要があります。
+マルチタッチを扱う場合、プロパティは最初の `Action` 指が画面をタッチするための値を持ち、2番目と3番目の指が `MotionEventsAction.Down` `Pointer2Down` 画面に触れるように、との値を持ち `Pointer3Down` ます。 4番目と5番目の指が接触すると、 `Action` プロパティには、列挙体のメンバーに対応していない数値が含まれます `MotionEventsAction` 。 値のビットフラグの値を調べて、それらの意味を解釈する必要があります。
 
-同様に、指が画面との接点を離れると、`Action` プロパティの値は、2番目と3本の `Pointer2Up` と `Pointer3Up` の値になり、最初の指の `Up` ます。
+同様に、指が画面に接続したままである場合、 `Action` プロパティの値は、 `Pointer2Up` `Pointer3Up` 2 番目と3番目の指、および最初の指の値に `Up` なります。
 
-`ActionMasked` プロパティは、複数の指を区別するために `ActionIndex` プロパティと組み合わせて使用することを意図しているため、より多くの値を受け取ります。 指が画面をタッチすると、プロパティは最初の指の `MotionEventActions.Down` と同じになり、それ以降の指では `PointerDown` できます。 指が画面から離れると、`ActionMasked` には、その後の指と最初の指の `Up` に対して `Pointer1Up` の値が与えられます。
+プロパティは、 `ActionMasked` 複数の指を区別するためにプロパティと組み合わせて使用することを意図しているため、より少数の値を受け取り `ActionIndex` ます。 指が画面をタッチすると、プロパティは `MotionEventActions.Down` 最初の指とそれ以降の指でのみ同じに `PointerDown` なります。 指が画面から離れると、は、後続の指 `ActionMasked` `Pointer1Up` と最初の指の値を持ち `Up` ます。
 
-`ActionMasked`を使用する場合、`ActionIndex` は、タッチするために後続の指を区別して画面を離れることができますが、通常は `MotionEvent` オブジェクト内の他のメソッドの引数として使用する以外に、その値を使用する必要はありません。 マルチタッチの場合、上記のコードでは、これらのメソッドのうち最も重要なものの1つが `GetPointerId` 呼び出されます。 このメソッドは、特定のイベントを指に関連付けるためにディクショナリキーに使用できる値を返します。
+を使用する場合、 `ActionMasked` は `ActionIndex` 後続の指を区別して画面を離れるようにしますが、通常は、オブジェクト内の他のメソッドの引数として、その値を使用する必要はありません `MotionEvent` 。 マルチタッチの場合、上記のコードでは、これらのメソッドの中で最も重要なものの1つが `GetPointerId` 呼び出されます。 このメソッドは、特定のイベントを指に関連付けるためにディクショナリキーに使用できる値を返します。
 
-[FingerPaint](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-fingerpaint)プログラムの `OnTouchEvent` オーバーライドは、新しい `FingerPaintPolyline` オブジェクトを作成し、それをディクショナリに追加することで、`MotionEventActions.Down` と `PointerDown` イベントを同じように処理します。
+`OnTouchEvent` [FingerPaint](/samples/xamarin/monodroid-samples/applicationfundamentals-fingerpaint)プログラムのオーバーライドは、 `MotionEventActions.Down` `PointerDown` 新しいオブジェクトを作成 `FingerPaintPolyline` し、それをディクショナリに追加することで、イベントとイベントをまったく同じように処理します。
 
 ```csharp
 public override bool OnTouchEvent(MotionEvent args)
@@ -133,9 +133,9 @@ public override bool OnTouchEvent(MotionEvent args)
 }
 ```
 
-`pointerIndex` がビュー内の指の位置を取得するためにも使用されていることに注意してください。 すべてのタッチ情報は、`pointerIndex` 値に関連付けられています。 `id` は、複数のメッセージ間で指を一意に識別するため、を使用してディクショナリエントリを作成します。
+は、 `pointerIndex` ビュー内の指の位置を取得するためにも使用されていることに注意してください。 すべてのタッチ情報は、値に関連付けられてい `pointerIndex` ます。 は、 `id` 複数のメッセージ間で指を一意に識別するため、を使用してディクショナリエントリを作成します。
 
-同様に、`OnTouchEvent` のオーバーライドは、完了したポリラインを `completedPolylines` コレクションに転送することによって、`MotionEventActions.Up` と `Pointer1Up` 同じように処理します。これにより、`OnDraw` のオーバーライド中に描画できるようになります。 このコードでは、ディクショナリからも `id` エントリが削除されます。
+同様に、オーバーライドは、 `OnTouchEvent` `MotionEventActions.Up` 完了したポリラインをコレクションに転送することで、との両方を同じように処理し、 `Pointer1Up` `completedPolylines` オーバーライド中に描画できるようにし `OnDraw` ます。 また、このコードは `id` ディクショナリからエントリを削除します。
 
 ```csharp
 public override bool OnTouchEvent(MotionEvent args)
@@ -165,7 +165,7 @@ public override bool OnTouchEvent(MotionEvent args)
 
 では、注意を要する部分です。
 
-Down イベントと up イベントの間には、通常、多数の `MotionEventActions.Move` イベントがあります。 これらは `OnTouchEvent`の1回の呼び出しにバンドルされ、`Down` イベントと `Up` イベントとは異なる方法で処理する必要があります。 `ActionIndex` プロパティから取得した `pointerIndex` 値は無視する必要があります。 代わりに、メソッドは、0と `PointerCount` プロパティの間をループして複数の `pointerIndex` 値を取得し、それらの `pointerIndex` 値ごとに `id` を取得する必要があります。
+ダウンイベントと上位イベントの間には、通常、多数のイベントがあり `MotionEventActions.Move` ます。 これらは、の1回の呼び出しでバンドルされ、 `OnTouchEvent` イベントとイベントとは異なる方法で処理する必要があり `Down` `Up` ます。 `pointerIndex`プロパティから取得した値は `ActionIndex` 無視する必要があります。 代わりに、メソッドは、 `pointerIndex` 0 とプロパティの間でループして複数の値を取得 `PointerCount` し、その値ごとにを取得する必要があり `id` `pointerIndex` ます。
 
 ```csharp
 public override bool OnTouchEvent(MotionEvent args)
@@ -191,13 +191,13 @@ public override bool OnTouchEvent(MotionEvent args)
 }
 ```
 
-この種の処理では、 [FingerPaint](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-fingerpaint)プログラムが個々の指を追跡し、画面に結果を描画できます。
+この種の処理では、 [FingerPaint](/samples/xamarin/monodroid-samples/applicationfundamentals-fingerpaint) プログラムが個々の指を追跡し、画面に結果を描画できます。
 
-[![サンプルのスクリーンショット FingerPaint の例](touch-tracking-images/image01.png)](touch-tracking-images/image01.png#lightbox)
+[![FingerPaint の例のスクリーンショットの例](touch-tracking-images/image01.png)](touch-tracking-images/image01.png#lightbox)
 
 これで、画面上の個々の指を追跡し、それらを区別する方法がわかりました。
 
 ## <a name="related-links"></a>関連リンク
 
 - [同等の Xamarin iOS ガイド](~/ios/app-fundamentals/touch/touch-tracking.md)
-- [FingerPaint (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-fingerpaint)
+- [FingerPaint (サンプル)](/samples/xamarin/monodroid-samples/applicationfundamentals-fingerpaint)

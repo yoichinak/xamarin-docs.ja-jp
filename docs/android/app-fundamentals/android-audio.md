@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/28/2018
-ms.openlocfilehash: ac59bcbb062dc9dae784d18054048f50094c2145
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f8fb2c8b1d87ec1a02c0920cc4d3670e7e8f9cb0
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73018071"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91456251"
 ---
 # <a name="android-audio"></a>Android オーディオ
 
@@ -20,36 +20,36 @@ _Android OS では、オーディオとビデオの両方を含むマルチメ�
 
 ## <a name="overview"></a>概要
 
-最新のモバイルデバイスには、カメラ、音楽プレーヤー、およびビデオレコーダー &ndash; 専用の機器を必要とする機能が採用されています。 このため、マルチメディアフレームワークはモバイル Api のファーストクラス機能になりました。
+最新のモバイルデバイスでは、以前は専用の機器 &ndash; カメラ、音楽プレーヤー、ビデオレコーダーが必要だった機能が採用されています。 このため、マルチメディアフレームワークはモバイル Api のファーストクラス機能になりました。
 
 Android では、マルチメディアが幅広くサポートされています。 この記事では、Android でのオーディオの使用について説明し、次のトピックについて説明します。
 
-1. 組み込みの `MediaPlayer` クラスを使用して、`AudioTrack` クラスでローカルオーディオファイルやストリーミングされたオーディオファイルを含むオーディオを再生 &ndash;、 **MediaPlayer でオーディオを再生**します。
+1. MediaPlayer での**オーディオの再生** &ndash;組み込みクラスを使用して `MediaPlayer` オーディオを再生します。これには、ローカルオーディオファイルや、クラスを使用したストリーミングオーディオファイルが含ま `AudioTrack` れます。
 
-2. オーディオを**記録**するには、組み込みの `MediaRecorder` クラスを使用してオーディオを記録 &ndash; ます。
+2. **オーディオ** &ndash; の録音組み込みクラスを使用して `MediaRecorder` オーディオを記録する。
 
-3. オーディオ通知の使用 &ndash; オーディオ通知を使用して、オーディオ出力を中断またはキャンセルすることによって、イベント (着信電話など) に正しく応答する適切に**動作**するアプリケーションを作成できます。
+3. **オーディオ通知** &ndash; の操作オーディオ通知を使用して、オーディオ出力を中断またはキャンセルすることによって、イベント (着信通話など) に正しく応答する、適切に動作するアプリケーションを作成します。
 
-4. メモリバッファーに直接書き込むことによって、`AudioTrack` クラスを使用してオーディオを再生 &ndash;**低レベルのオーディオを操作**します。 `AudioRecord` クラスを使用してオーディオを記録し、メモリバッファーから直接読み取ります。
+4. **低レベルのオーディオ** &ndash; の操作 `AudioTrack` メモリバッファーに直接書き込むことによって、クラスを使用してオーディオを再生します。 クラスを使用してオーディオを記録し、 `AudioRecord` メモリバッファーから直接読み取る。
 
-## <a name="requirements"></a>［要件］
+## <a name="requirements"></a>必要条件
 
 このガイドには、Android 2.0 (API レベル 5) 以上が必要です。 Android でのオーディオのデバッグはデバイスで実行する必要があることに注意してください。
 
-**Androidmanifest .xml**で `RECORD_AUDIO` アクセス許可を要求する必要があります。
+`RECORD_AUDIO` **AndroidManifest.XML**でアクセス許可を要求する必要があります。
 
-![レコード\_オーディオが有効になっている Android マニフェストの必要なアクセス許可セクション](android-audio-images/image01.png)
+![レコードオーディオが有効になっている Android マニフェストの必要なアクセス許可セクション \_](android-audio-images/image01.png)
 
 ## <a name="playing-audio-with-the-mediaplayer-class"></a>MediaPlayer クラスを使用したオーディオの再生
 
-Android でオーディオを再生する最も簡単な方法は、組み込みの[MediaPlayer](xref:Android.Media.MediaPlayer)クラスを使用することです。
-`MediaPlayer` は、ファイルパスを渡すことによって、ローカルまたはリモートのいずれかのファイルを再生できます。 ただし、`MediaPlayer` は非常に状態が重要であり、そのメソッドのいずれかを間違った状態で呼び出すと、例外がスローされます。 エラーを回避するには、以下で説明する順序で `MediaPlayer` と対話することが重要です。
+Android でオーディオを再生する最も簡単な方法は、組み込みの [MediaPlayer](xref:Android.Media.MediaPlayer) クラスを使用することです。
+`MediaPlayer` では、ファイルパスを渡すことによって、ローカルまたはリモートのいずれかのファイルを再生できます。 ただし、の `MediaPlayer` 状態は非常に重要であり、そのメソッドの1つを間違った状態で呼び出すと、例外がスローされます。 `MediaPlayer`エラーを回避するには、以下で説明する順序でと対話することが重要です。
 
 ### <a name="initializing-and-playing"></a>初期化と再生
 
-`MediaPlayer` でオーディオを再生するには、次の順序が必要です。
+でオーディオを再生 `MediaPlayer` するには、次の順序が必要です。
 
-1. 新しい[MediaPlayer](xref:Android.Media.MediaPlayer)オブジェクトをインスタンス化します。
+1. 新しい [MediaPlayer](xref:Android.Media.MediaPlayer) オブジェクトをインスタンス化します。
 
 1. [Setdatasource](xref:Android.Media.MediaPlayer.SetDataSource*)メソッドを使用して再生するようにファイルを構成します。
 
@@ -76,26 +76,26 @@ public void StartPlayer(String  filePath)
 
 ### <a name="suspending-and-resuming-playback"></a>再生の中断と再開
 
-再生を中断するには、 [Pause](xref:Android.Media.MediaPlayer.Pause)メソッドを呼び出します。
+再生を中断するには、 [Pause](xref:Android.Media.MediaPlayer.Pause) メソッドを呼び出します。
 
 ```csharp
 player.Pause();
 ```
 
-一時停止中の再生を再開するには、 [Start](xref:Android.Media.MediaPlayer.Start)メソッドを呼び出します。
+一時停止中の再生を再開するには、 [Start](xref:Android.Media.MediaPlayer.Start) メソッドを呼び出します。
 これは、再生中の一時停止した場所から再開します。
 
 ```csharp
 player.Start();
 ```
 
-プレーヤーで[Stop](xref:Android.Media.MediaPlayer.Stop)メソッドを呼び出すと、進行中の再生が終了します。
+プレーヤーで [Stop](xref:Android.Media.MediaPlayer.Stop) メソッドを呼び出すと、進行中の再生が終了します。
 
 ```csharp
 player.Stop();
 ```
 
-プレーヤーが不要になったら、 [Release](xref:Android.Media.MediaPlayer.Release)メソッドを呼び出してリソースを解放する必要があります。
+プレーヤーが不要になったら、 [Release](xref:Android.Media.MediaPlayer.Release) メソッドを呼び出してリソースを解放する必要があります。
 
 ```csharp
 player.Release();
@@ -103,13 +103,13 @@ player.Release();
 
 ## <a name="using-the-mediarecorder-class-to-record-audio"></a>MediaRecorder クラスを使用したオーディオの記録
 
-Android でオーディオを記録するために `MediaPlayer` することは、 [mediarecorder](xref:Android.Media.MediaRecorder)クラスです。 `MediaPlayer`と同様に、状態を区別し、いくつかの状態を遷移して、記録を開始できるポイントに移動します。 オーディオを記録するには、`RECORD_AUDIO` のアクセス許可を設定する必要があります。 アプリケーションのアクセス許可を設定する方法については、「 [AndroidManifest .xml の操作](~/android/platform/android-manifest.md)」を参照してください。
+`MediaPlayer`Android でオーディオを記録するためのには、 [mediarecorder](xref:Android.Media.MediaRecorder)クラスが使用されています。 と同様に、 `MediaPlayer` 状態を区別し、いくつかの状態を遷移して、記録を開始できるポイントに移動します。 オーディオを記録するには、 `RECORD_AUDIO` アクセス許可を設定する必要があります。 アプリケーションのアクセス許可を設定する方法については、「 [AndroidManifest.xmlの操作 ](~/android/platform/android-manifest.md)」を参照してください。
 
 ### <a name="initializing-and-recording"></a>初期化と記録
 
-`MediaRecorder` でオーディオを記録するには、次の手順を実行する必要があります。
+でオーディオを記録するには、 `MediaRecorder` 次の手順を実行する必要があります。
 
-1. 新しい[Mediarecorder](xref:Android.Media.MediaRecorder)オブジェクトをインスタンス化します。
+1. 新しい [Mediarecorder](xref:Android.Media.MediaRecorder) オブジェクトをインスタンス化します。
 
 2. [Setaudiosource](xref:Android.Media.MediaRecorder.SetAudioSource*)メソッドを使用してオーディオ入力のキャプチャに使用するハードウェアデバイスを指定します。
 
@@ -154,21 +154,21 @@ void RecordAudio (String filePath)
 
 ### <a name="stopping-recording"></a>記録の停止
 
-記録を停止するには、`MediaRecorder`で `Stop` メソッドを呼び出します。
+記録を停止するには、 `Stop` でメソッドを呼び出し `MediaRecorder` ます。
 
 ```csharp
 recorder.Stop();
 ```
 
-### <a name="cleaning-up"></a>クリーンアップしています
+### <a name="cleaning-up"></a>クリーンアップ
 
-`MediaRecorder` が停止したら、 [Reset](xref:Android.Media.MediaRecorder.Reset)メソッドを呼び出して、アイドル状態に戻します。
+`MediaRecorder`が停止したら、 [Reset](xref:Android.Media.MediaRecorder.Reset)メソッドを呼び出して、アイドル状態に戻します。
 
 ```csharp
 recorder.Reset();
 ```
 
-`MediaRecorder` が不要になった場合は、 [Release](xref:Android.Media.MediaRecorder.Release)メソッドを呼び出してそのリソースを解放する必要があります。
+が不要になった場合は、 `MediaRecorder` [Release](xref:Android.Media.MediaRecorder.Release) メソッドを呼び出してそのリソースを解放する必要があります。
 
 ```csharp
 recorder.Release();
@@ -178,7 +178,7 @@ recorder.Release();
 
 ### <a name="the-audiomanager-class"></a>AudioManager クラス
 
-[Audiomanager](xref:Android.Media.AudioManager)クラスは、オーディオイベントが発生したときにアプリケーションが認識できるようにするオーディオ通知へのアクセスを提供します。 このサービスでは、ボリュームや着信音モードの制御など、他のオーディオ機能にもアクセスできます。 `AudioManager` を使用すると、アプリケーションはオーディオの再生を制御するためにオーディオ通知を処理できます。
+[Audiomanager](xref:Android.Media.AudioManager)クラスは、オーディオイベントが発生したときにアプリケーションが認識できるようにするオーディオ通知へのアクセスを提供します。 このサービスでは、ボリュームや着信音モードの制御など、他のオーディオ機能にもアクセスできます。 を `AudioManager` 使用すると、アプリケーションはオーディオの再生を制御するためにオーディオ通知を処理できます。
 
 ### <a name="managing-audio-focus"></a>オーディオフォーカスの管理
 
@@ -186,31 +186,31 @@ recorder.Release();
 
 概念的には、これは、1つのアプリケーションのみがキーボードフォーカスを持つデスクトップコンピューターのアプリケーションに似ています。実行中のアプリケーションの1つをクリックして選択した後、キーボード入力はそのアプリケーションにのみ適用されます。
 
-オーディオフォーカスは同様のアイデアであり、複数のアプリケーションが同時にオーディオを再生または録音できないようにします。 これは、キーボードフォーカスとは関係があります。これは、アプリケーションが、現在オーディオフォーカスを持っていないことと、要求できるさまざまな種類のオーディオフォーカスがあることが原因で、&ndash; にかかわらず再生されることを無視できることを &ndash; するためです。 たとえば、要求元が非常に短い時間だけオーディオを再生する場合、一時的なフォーカスを要求することがあります。
+オーディオフォーカスは同様のアイデアであり、複数のアプリケーションが同時にオーディオを再生または録音できないようにします。 これは、キーボードフォーカスよりも複雑です。これは、 &ndash; アプリケーションが、現在オーディオフォーカスを持っていないこと、 &ndash; および要求できるさまざまな種類のオーディオフォーカスがあることを無視できるという点です。 たとえば、要求元が非常に短い時間だけオーディオを再生する場合、一時的なフォーカスを要求することがあります。
 
 オーディオフォーカスはすぐに許可されるか、または最初に拒否され、後で付与されることがあります。 たとえば、通話中にアプリケーションがオーディオフォーカスを要求した場合、その通話は拒否されますが、通話が終了すると、フォーカスが付与される可能性があります。 この場合、オーディオフォーカスが離れると、それに応じて応答するようにリスナーが登録されます。 オーディオフォーカスの要求は、オーディオを再生または録音することができているかどうかを判断するために使用されます。
 
-オーディオフォーカスの詳細については、「[オーディオフォーカスの管理](https://developer.android.com/training/managing-audio/audio-focus.html)」を参照してください。
+オーディオフォーカスの詳細については、「 [オーディオフォーカスの管理](https://developer.android.com/training/managing-audio/audio-focus.html)」を参照してください。
 
 #### <a name="registering-the-callback-for-audio-focus"></a>オーディオフォーカスのコールバックの登録
 
-`IOnAudioChangeListener` からの `FocusChangeListener` コールバックの登録は、オーディオフォーカスの取得と解放の重要な部分です。 これは、オーディオフォーカスの許可が、後で遅延される可能性があるためです。 たとえば、アプリケーションでは、通話中に音楽を再生するように要求できます。 通話が終了するまで、オーディオフォーカスは付与されません。
+からの `FocusChangeListener` コールバックの登録 `IOnAudioChangeListener` は、オーディオフォーカスの取得と解放の重要な部分です。 これは、オーディオフォーカスの許可が、後で遅延される可能性があるためです。 たとえば、アプリケーションでは、通話中に音楽を再生するように要求できます。 通話が終了するまで、オーディオフォーカスは付与されません。
 
-このため、コールバックオブジェクトは、`AudioManager`の `GetAudioFocus` メソッドにパラメーターとして渡され、この呼び出しによってコールバックが登録されます。 オーディオフォーカスが最初に拒否されたが、後で許可された場合は、コールバックで `OnAudioFocusChange` を呼び出すことによって、アプリケーションに通知されます。 同じメソッドを使用して、オーディオフォーカスが奪われていることをアプリケーションに通知します。
+このため、コールバックオブジェクトはのメソッドにパラメーターとして渡され、この呼び出しによって `GetAudioFocus` `AudioManager` コールバックが登録されます。 オーディオフォーカスが最初に拒否されたが、後で許可された場合は、コールバックでを呼び出すことによって、アプリケーションに通知され `OnAudioFocusChange` ます。 同じメソッドを使用して、オーディオフォーカスが奪われていることをアプリケーションに通知します。
 
-アプリケーションでオーディオリソースの使用が完了すると、`AudioManager`の `AbandonFocus` メソッドが呼び出され、コールバックが再度渡されます。 これにより、コールバックが解除され、他のアプリケーションがオーディオフォーカスを取得できるように、オーディオリソースが解放されます。
+アプリケーションでオーディオリソースの使用が完了すると、のメソッドが呼び出され、 `AbandonFocus` `AudioManager` コールバックが再度渡されます。 これにより、コールバックが解除され、他のアプリケーションがオーディオフォーカスを取得できるように、オーディオリソースが解放されます。
 
 #### <a name="requesting-audio-focus"></a>要求 (オーディオフォーカスを)
 
 デバイスのオーディオリソースを要求するために必要な手順は次のとおりです。
 
-1. `AudioManager` システムサービスへのハンドルを取得します。
+1. System サービスへのハンドルを取得 `AudioManager` します。
 
 2. コールバッククラスのインスタンスを作成します。
 
-3. `AudioManager` で `RequestAudioFocus` メソッドを呼び出して、デバイスのオーディオリソースを要求します。 パラメーターは、コールバックオブジェクト、ストリームの種類 (音楽、音声通話、リングなど) と要求されているアクセス権の種類 (オーディオリソースは、一時的に要求することも、無期限に要求することもできます) です。
+3. でメソッドを呼び出して、デバイスのオーディオリソースを要求 `RequestAudioFocus` `AudioManager` します。 パラメーターは、コールバックオブジェクト、ストリームの種類 (音楽、音声通話、リングなど) と要求されているアクセス権の種類 (オーディオリソースは、一時的に要求することも、無期限に要求することもできます) です。
 
-4. 要求が許可されると、`playMusic` メソッドが直ちに呼び出され、オーディオの再生が開始されます。
+4. 要求が許可されると、 `playMusic` メソッドが直ちに呼び出され、オーディオが再生を開始します。
 
 5. 要求が拒否された場合、それ以上の操作は行われません。 この場合、オーディオは、要求が後で許可された場合にのみ再生されます。
 
@@ -234,11 +234,11 @@ Boolean RequestAudioResources(INotificationReceiver parent)
 
 #### <a name="releasing-audio-focus"></a>リリース (オーディオフォーカスを)
 
-トラックの再生が完了すると、`AudioManager` の `AbandonFocus` メソッドが呼び出されます。 これにより、別のアプリケーションがデバイスのオーディオリソースを取得できるようになります。 他のアプリケーションは、独自のリスナーを登録している場合に、このオーディオフォーカス変更の通知を受け取ります。
+トラックの再生が完了すると、 `AbandonFocus` のメソッド `AudioManager` が呼び出されます。 これにより、別のアプリケーションがデバイスのオーディオリソースを取得できるようになります。 他のアプリケーションは、独自のリスナーを登録している場合に、このオーディオフォーカス変更の通知を受け取ります。
 
 ## <a name="low-level-audio-api"></a>低レベルのオーディオ API
 
-低レベルのオーディオ Api は、ファイルの Uri を使用する代わりにメモリバッファーと直接やり取りするため、オーディオの再生と記録をより細かく制御できます。 このアプローチが推奨されるシナリオがいくつかあります。 このようなシナリオを次に示します。
+低レベルのオーディオ Api は、ファイルの Uri を使用する代わりにメモリバッファーと直接やり取りするため、オーディオの再生と記録をより細かく制御できます。 このアプローチが推奨されるシナリオがいくつかあります。 これらのシナリオは、次のとおりです。
 
 1. 暗号化されたオーディオファイルから再生する場合。
 
@@ -248,25 +248,25 @@ Boolean RequestAudioResources(INotificationReceiver parent)
 
 ### <a name="audiotrack-class"></a>AudioTrack クラス
 
-[Audiotrack](xref:Android.Media.AudioTrack)クラスは、記録のために低レベルのオーディオ api を使用し、`MediaPlayer` クラスの下位レベルに相当します。
+[Audiotrack](xref:Android.Media.AudioTrack)クラスは、記録のために低レベルのオーディオ api を使用します。これはクラスの下位レベルのオーディオ api です `MediaPlayer` 。
 
 #### <a name="initializing-and-playing"></a>初期化と再生
 
-オーディオを再生するには、`AudioTrack` の新しいインスタンスをインスタンス化する必要があります。 [コンストラクター](xref:Android.Media.AudioTrack)に渡された引数リストは、バッファーに格納されているオーディオサンプルの再生方法を指定します。 引数は次のとおりです。
+オーディオを再生するには、の新しいインスタンスを `AudioTrack` インスタンス化する必要があります。 [コンストラクター](xref:Android.Media.AudioTrack)に渡された引数リストは、バッファーに格納されているオーディオサンプルの再生方法を指定します。 引数は次のとおりです。
 
-1. 音声、着信音、音楽、システム、またはアラーム &ndash; ストリームの種類。
+1. &ndash;音声、着信音、音楽、システム、またはアラームのストリーム型。
 
-2. 頻度 &ndash;、Hz で表されたサンプリングレートです。
+2. 頻度- &ndash; Hz で表されたサンプリングレート。
 
 3. チャネル構成 &ndash; Mono またはステレオ。
 
-4. オーディオ形式 &ndash; 8 ビットまたは16ビットエンコードです。
+4. オーディオ形式 &ndash; 8 ビットまたは16ビットエンコード。
 
-5. バッファーサイズ &ndash; バイト単位で格納されます。
+5. &ndash;バイト単位のバッファーサイズ。
 
-6. バッファーモード &ndash; streaming または static です。
+6. バッファーモード &ndash; のストリーミングまたは静的。
 
-構築後、`AudioTrack` の[Play](xref:Android.Media.AudioTrack.Play)メソッドが呼び出され、再生を開始するように設定されます。 オーディオバッファーを `AudioTrack` に書き込むと、再生が開始されます。
+構築後、の [Play](xref:Android.Media.AudioTrack.Play) メソッド `AudioTrack` が呼び出され、再生を開始するように設定されます。 にオーディオバッファーを書き込むと、 `AudioTrack` 再生が開始されます。
 
 ```csharp
 void PlayAudioTrack(byte[] audioBuffer)
@@ -292,7 +292,7 @@ void PlayAudioTrack(byte[] audioBuffer)
 
 #### <a name="pausing-and-stopping-the-playback"></a>再生の一時停止と停止
 
-再生を一時停止するには、 [pause](xref:Android.Media.AudioTrack.Pause)メソッドを呼び出します。
+再生を一時停止するには、 [pause](xref:Android.Media.AudioTrack.Pause) メソッドを呼び出します。
 
 ```csharp
 audioTrack.Pause();
@@ -304,9 +304,9 @@ audioTrack.Pause();
 audioTrack.Stop();
 ```
 
-#### <a name="cleanup"></a>清掃
+#### <a name="cleanup"></a>クリーンアップ
 
-`AudioTrack` が不要になった場合は、 [Release](xref:Android.Media.AudioTrack.Release)を呼び出してリソースを解放する必要があります。
+が不要になった場合は、 `AudioTrack` [Release](xref:Android.Media.AudioTrack.Release)を呼び出してリソースを解放する必要があります。
 
 ```csharp
 audioTrack.Release();
@@ -314,25 +314,25 @@ audioTrack.Release();
 
 ### <a name="the-audiorecord-class"></a>AudioRecord クラス
 
-[AudioRecord](xref:Android.Media.AudioRecord)クラスは、記録側の `AudioTrack` に相当します。 `AudioTrack`と同様に、ファイルと Uri の代わりにメモリバッファーを直接使用します。 マニフェストで `RECORD_AUDIO` アクセス許可を設定する必要があります。
+[AudioRecord](xref:Android.Media.AudioRecord)クラスは、 `AudioTrack` 記録側のに相当します。 と同様に `AudioTrack` 、ファイルと uri の代わりにメモリバッファーを直接使用します。 `RECORD_AUDIO`マニフェストにアクセス許可を設定する必要があります。
 
 #### <a name="initializing-and-recording"></a>初期化と記録
 
-最初の手順では、新しい[AudioRecord](xref:Android.Media.AudioRecord)オブジェクトを構築します。 [コンストラクター](xref:Android.Media.AudioRecord)に渡される引数リストは、記録に必要なすべての情報を提供します。 `AudioTrack`の場合とは異なり、引数が主に列挙型の場合、`AudioRecord` 内の等価の引数は整数になります。 次の設定があります。
+最初の手順では、新しい [AudioRecord](xref:Android.Media.AudioRecord) オブジェクトを構築します。 [コンストラクター](xref:Android.Media.AudioRecord)に渡される引数リストは、記録に必要なすべての情報を提供します。 引数が `AudioTrack` 主に列挙されるとは異なり、の等価の引数 `AudioRecord` は整数です。 次に例を示します。
 
 1. マイクなどのハードウェアオーディオ入力ソース。
 
-2. 音声、着信音、音楽、システム、またはアラーム &ndash; ストリームの種類。
+2. &ndash;音声、着信音、音楽、システム、またはアラームのストリーム型。
 
-3. 頻度 &ndash;、Hz で表されたサンプリングレートです。
+3. 頻度- &ndash; Hz で表されたサンプリングレート。
 
 4. チャネル構成 &ndash; Mono またはステレオ。
 
-5. オーディオ形式 &ndash; 8 ビットまたは16ビットエンコードです。
+5. オーディオ形式 &ndash; 8 ビットまたは16ビットエンコード。
 
 6. バッファーサイズ (バイト単位)
 
-`AudioRecord` が構築されると、その[Startrecording](xref:Android.Media.AudioRecord.StartRecording)メソッドが呼び出されます。 これで、記録を開始する準備ができました。 `AudioRecord` は、入力のためにオーディオバッファーを継続的に読み取り、この入力をオーディオファイルに書き込みます。
+`AudioRecord`が構築されると、その[startrecording](xref:Android.Media.AudioRecord.StartRecording)メソッドが呼び出されます。 これで、記録を開始する準備ができました。 は、 `AudioRecord` 入力のためにオーディオバッファーを継続的に読み取り、この入力をオーディオファイルに書き込みます。
 
 ```csharp
 void RecordAudio()
@@ -373,9 +373,9 @@ void RecordAudio()
 audRecorder.Stop();
 ```
 
-#### <a name="cleanup"></a>清掃
+#### <a name="cleanup"></a>クリーンアップ
 
-`AudioRecord` オブジェクトが不要になった場合、 [Release](xref:Android.Media.AudioRecord.Release)メソッドを呼び出すと、関連付けられているすべてのリソースが解放されます。
+オブジェクトが不要になった場合 `AudioRecord` 、 [Release](xref:Android.Media.AudioRecord.Release) メソッドを呼び出すと、関連付けられているすべてのリソースが解放されます。
 
 ```csharp
 audRecorder.Release();
@@ -383,11 +383,11 @@ audRecorder.Release();
 
 ## <a name="summary"></a>まとめ
 
-Android OS は、オーディオを再生、記録、および管理するための強力なフレームワークを提供します。 この記事では、高レベルの `MediaPlayer` と `MediaRecorder` クラスを使用してオーディオを再生および録音する方法について説明します。 次に、オーディオ通知を使用して、デバイスのオーディオリソースを異なるアプリケーション間で共有する方法を説明します。 最後に、メモリバッファーと直接やり取りする低レベルの Api を使用してオーディオを再生し、録音する方法について説明します。
+Android OS は、オーディオを再生、記録、および管理するための強力なフレームワークを提供します。 この記事では、高レベルのクラスとクラスを使用してオーディオを再生および録音する方法について説明し `MediaPlayer` `MediaRecorder` ます。 次に、オーディオ通知を使用して、デバイスのオーディオリソースを異なるアプリケーション間で共有する方法を説明します。 最後に、メモリバッファーと直接やり取りする低レベルの Api を使用してオーディオを再生し、録音する方法について説明します。
 
 ## <a name="related-links"></a>関連リンク
 
-- [オーディオの操作 (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/example-workingwithaudio)
+- [オーディオの操作 (サンプル)](/samples/xamarin/monodroid-samples/example-workingwithaudio)
 - [Media Player](xref:Android.Media.MediaPlayer)
 - [メディアレコーダー](xref:Android.Media.MediaRecorder)
 - [オーディオマネージャー](xref:Android.Media.AudioManager)

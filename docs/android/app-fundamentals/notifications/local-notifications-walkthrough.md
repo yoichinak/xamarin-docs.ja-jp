@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/16/2018
-ms.openlocfilehash: 6d48d650b0900e71b7d3d4d5e1ff1ac919dcb948
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 09603fa86bce18c7cfdc141938267ee54710842c
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73025545"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91455731"
 ---
 # <a name="walkthrough---using-local-notifications-in-xamarinandroid"></a>チュートリアル-Xamarin. Android でのローカル通知の使用
 
@@ -24,16 +24,16 @@ _このチュートリアルでは、Xamarin Android アプリケーションで
 
 次のスクリーンショットは、このアプリケーションの例を示しています。
 
-[通知を含む![のスクリーンショットの例](local-notifications-walkthrough-images/1-overview-sml.png)](local-notifications-walkthrough-images/1-overview.png#lightbox)
+[![通知を含むスクリーンショットの例](local-notifications-walkthrough-images/1-overview-sml.png)](local-notifications-walkthrough-images/1-overview.png#lightbox)
 
 > [!NOTE]
 > このガイドでは、 [Android サポートライブラリ](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)の[notificationcompat api](https://developer.android.com/reference/android/support/v4/app/NotificationCompat.html)に焦点を当てています。 これらの Api によって、Android 4.0 (API レベル 14) との下位互換性が最大になります。
 
 ## <a name="creating-the-project"></a>プロジェクトの作成
 
-まず、 **Android アプリ**テンプレートを使用して新しい android プロジェクトを作成してみましょう。 このプロジェクトの**localnotifications**を呼び出しましょう。 (Xamarin Android プロジェクトの作成に慣れていない場合は、「 [Hello, android](~/android/get-started/hello-android/hello-android-quickstart.md)」を参照してください)。
+まず、 **Android アプリ** テンプレートを使用して新しい android プロジェクトを作成してみましょう。 このプロジェクトの **localnotifications**を呼び出しましょう。 (Xamarin Android プロジェクトの作成に慣れていない場合は、「 [Hello, android](~/android/get-started/hello-android/hello-android-quickstart.md)」を参照してください)。
 
-リソースファイルの**値/文字列 .xml**を編集して、通知チャネルの作成時に使用される2つの余分な文字列リソースが含まれるようにします。
+リソースファイルの **値/Strings.xml** を編集して、通知チャネルの作成時に使用される2つの余分な文字列リソースが含まれるようにします。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -49,15 +49,15 @@ _このチュートリアルでは、Xamarin Android アプリケーションで
 
 ### <a name="add-the-androidsupportv4-nuget-package"></a>Android. サポートの NuGet パッケージを追加する
 
-このチュートリアルでは、`NotificationCompat.Builder` を使用してローカル通知を作成します。 「[ローカル通知](~/android/app-fundamentals/notifications/local-notifications.md)」で説明されているように、`NotificationCompat.Builder`を使用するには、 [Android サポートライブラリ v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) NuGet をプロジェクトに含める必要があります。
+このチュートリアルでは、を使用して `NotificationCompat.Builder` ローカル通知を作成します。 「 [ローカル通知](~/android/app-fundamentals/notifications/local-notifications.md)」で説明されているように、使用するプロジェクトに [Android サポートライブラリ v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) NuGet を含める必要があり `NotificationCompat.Builder` ます。
 
-次に、 **MainActivity.cs**を編集し、次の `using` ステートメントを追加して、`Android.Support.V4.App` 内の型がコードで使用できるようにします。
+次に、 **MainActivity.cs** を編集し、次のステートメントを追加して、 `using` の型がコードで使用できるようにしましょう `Android.Support.V4.App` 。
 
 ```csharp
 using Android.Support.V4.App;
 ```
 
-また、`Android.App` バージョンではなく、`TaskStackBuilder` の `Android.Support.V4.App` バージョンを使用していることをコンパイラに明確にする必要があります。 あいまいさを解決するには、次の `using` ステートメントを追加します。
+また、バージョンではなくバージョンのを使用していることをコンパイラに対して明確にする必要があり `Android.Support.V4.App` `TaskStackBuilder` `Android.App` ます。 あいまいさを解決するには、次のステートメントを追加し `using` ます。
 
 ```csharp
 using TaskStackBuilder = Android.Support.V4.App.TaskStackBuilder;
@@ -65,7 +65,7 @@ using TaskStackBuilder = Android.Support.V4.App.TaskStackBuilder;
 
 ### <a name="create-the-notification-channel"></a>通知チャネルを作成する
 
-次に、必要に応じて通知チャネルを作成する `MainActivity` するメソッドを追加します。
+次に、通知チャネルを作成するメソッドをに追加し `MainActivity` ます (必要な場合)。
 
 ```csharp
 void CreateNotificationChannel()
@@ -90,7 +90,7 @@ void CreateNotificationChannel()
 }
 ```
 
-この新しいメソッドを呼び出すように `OnCreate` メソッドを更新します。
+メソッドを更新して、 `OnCreate` この新しいメソッドを呼び出します。
 
 ```csharp
 protected override void OnCreate(Bundle bundle)
@@ -104,7 +104,7 @@ protected override void OnCreate(Bundle bundle)
 
 ### <a name="define-the-notification-id"></a>通知 ID を定義する
 
-通知と通知チャネルには一意の ID が必要です。 **MainActivity.cs**を編集し、次の静的インスタンス変数を `MainActivity` クラスに追加してみましょう。
+通知と通知チャネルには一意の ID が必要です。 **MainActivity.cs**を編集し、次の静的インスタンス変数をクラスに追加してみましょう `MainActivity` 。
 
 ```csharp
 static readonly int NOTIFICATION_ID = 1000;
@@ -114,7 +114,7 @@ internal static readonly string COUNT_KEY = "count";
 
 ### <a name="add-code-to-generate-the-notification"></a>通知を生成するコードを追加する
 
-次に、ボタン `Click` イベントの新しいイベントハンドラーを作成する必要があります。 次のメソッドを `MainActivity` に追加します。
+次に、ボタンイベントの新しいイベントハンドラーを作成する必要があり `Click` ます。 次のメソッドを `MainActivity` に追加します。
 
 ```csharp
 void ButtonOnClick(object sender, EventArgs eventArgs)
@@ -155,7 +155,7 @@ void ButtonOnClick(object sender, EventArgs eventArgs)
 }
 ```
 
-MainActivity の `OnCreate` メソッドでは、通知チャネルを作成し、`ButtonOnClick` メソッドをボタンの `Click` イベントに割り当てる必要があります (テンプレートによって提供されるデリゲートイベントハンドラーを置き換える)。
+`OnCreate`MainActivity のメソッドは、通知チャネルを作成し、その `ButtonOnClick` メソッドをボタンのイベントに割り当てる必要があり `Click` ます (テンプレートによって提供されるデリゲートイベントハンドラーを置き換えます)。
 
 ```csharp
 protected override void OnCreate(Bundle bundle)
@@ -208,7 +208,7 @@ namespace LocalNotifications
 }
 ```
 
-また、次のように、同じ**アクティビティ**のリソースレイアウトを作成する必要があります。 **2 番目の axml**という名前の新しい**Android レイアウト**ファイルをプロジェクトに追加します。 **2 番目の axml**を編集し、次のレイアウトコードを貼り付けます。
+また、次のように、同じ **アクティビティ**のリソースレイアウトを作成する必要があります。 **2 番目の axml**という名前の新しい**Android レイアウト**ファイルをプロジェクトに追加します。 **2 番目の axml**を編集し、次のレイアウトコードを貼り付けます。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -229,7 +229,7 @@ namespace LocalNotifications
 
 ### <a name="add-a-notification-icon"></a>通知アイコンの追加
 
-最後に、通知が開始されたときに通知領域に表示される小さいアイコンを追加します。 [このアイコン](local-notifications-walkthrough-images/ic-stat-button-click.png)をプロジェクトにコピーするか、独自のカスタムアイコンを作成することができます。 アイコンファイルに「 **ic\_stat\_」** という名前を付いたボタンをクリックし、[.png] をクリックして、[ **Resources/** \_] フォルダーにコピーします。 このアイコンファイルをプロジェクトに含めるには、 **[既存の項目の追加 >]** を忘れずに使用してください。
+最後に、通知が開始されたときに通知領域に表示される小さいアイコンを追加します。 [このアイコン](local-notifications-walkthrough-images/ic-stat-button-click.png)をプロジェクトにコピーするか、独自のカスタムアイコンを作成することができます。 アイコンファイルに [ **ic \_ stat \_ ] ボタン \_click.png** という名前を指定し、[ **Resources/アブル** ] フォルダーにコピーします。 このアイコンファイルをプロジェクトに含めるには、[ **既存の項目の追加 >** ] を忘れずに使用してください。
 
 ### <a name="run-the-application"></a>アプリケーションの実行
 
@@ -245,21 +245,21 @@ namespace LocalNotifications
 
 [![通知メッセージ](local-notifications-walkthrough-images/4-notifications-sml.png)](local-notifications-walkthrough-images/4-notifications.png#lightbox)
 
-通知をクリックすると、通知が表示されなくなり、次のスクリーンショットのように、その他のアクティビティが起動 &ndash; ます。
+通知をクリックすると、通知が表示されなくなり、 &ndash; 次のスクリーンショットのように他のアクティビティを開始する必要があります。
 
-[![2 番目のアクティビティのスクリーンショット](local-notifications-walkthrough-images/5-second-activity-sml.png)](local-notifications-walkthrough-images/5-second-activity.png#lightbox)
+[![2番目のアクティビティのスクリーンショット](local-notifications-walkthrough-images/5-second-activity-sml.png)](local-notifications-walkthrough-images/5-second-activity.png#lightbox)
 
-おめでとうございます! この時点で、Android のローカル通知チュートリアルが完了し、参照できる実用的なサンプルがあります。 ここでは説明したよりも多くの通知があります。詳細については、[通知に関する Google のドキュメント](https://developer.android.com/guide/topics/ui/notifiers/notifications.html)を参照してください。
+おめでとうございます! この時点で、Android のローカル通知チュートリアルが完了し、参照できる実用的なサンプルがあります。 ここでは説明したよりも多くの通知があります。詳細については、 [通知に関する Google のドキュメント](https://developer.android.com/guide/topics/ui/notifiers/notifications.html)を参照してください。
 
 ## <a name="summary"></a>まとめ
 
-このチュートリアルでは `NotificationCompat.Builder` を使用して通知を作成および表示します。 ここでは、通知によるユーザーの操作に応答する方法として2番目のアクティビティを開始する方法の基本的な例を示し、最初のアクティビティから2番目のアクティビティへのデータの転送について説明しました。
+このチュートリアル `NotificationCompat.Builder` では、通知の作成と表示に使用します。 ここでは、通知によるユーザーの操作に応答する方法として2番目のアクティビティを開始する方法の基本的な例を示し、最初のアクティビティから2番目のアクティビティへのデータの転送について説明しました。
 
 ## <a name="related-links"></a>関連リンク
 
-- [LocalNotifications (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/localnotifications)
+- [LocalNotifications (サンプル)](/samples/xamarin/monodroid-samples/localnotifications)
 - [Android Oreo の通知チャネル](https://blog.xamarin.com/android-oreo-notification-channels/)
-- [警告](xref:Android.App.Notification)
+- [通知](xref:Android.App.Notification)
 - [NotificationManager](xref:Android.App.NotificationManager)
 - [NotificationCompat。ビルダー](https://developer.android.com/reference/android/support/v4/app/NotificationCompat.Builder.html)
 - [PendingIntent](xref:Android.App.PendingIntent)

@@ -6,12 +6,12 @@ ms.assetid: F87BF587-AB64-4C60-84B1-184CAE36ED65
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 3bb2ba863913c2cc3098a2481ebd034c78eabdea
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 9821519c680de61767792c8122938bf826e457f5
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938862"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91453247"
 ---
 # <a name="async-support-overview"></a>非同期サポートの概要
 
@@ -23,7 +23,7 @@ Xamarin の非同期サポートは Mono 3.0 foundation 上に構築されてお
 
 このドキュメントでは、新しい async キーワードと await キーワードについて説明し、Xamarin と Xamarin の非同期メソッドを実装する簡単な例をいくつか紹介します。
 
-C# 5 の新しい非同期機能 (多くのサンプルとさまざまな使用シナリオを含む) の詳細については、「[非同期プログラミング](https://docs.microsoft.com/dotnet/csharp/async)」を参照してください。
+C# 5 の新しい非同期機能 (多くのサンプルとさまざまな使用シナリオを含む) の詳細については、「 [非同期プログラミング](/dotnet/csharp/async)」を参照してください。
 
 サンプルアプリケーションは、単純な非同期 web 要求 (メインスレッドをブロックせずに) を作成し、ダウンロードした html と文字数を使用して UI を更新します。
 
@@ -37,7 +37,7 @@ C# 5 の機能には、Xamarin に含まれる Mono 3.0 が必要です。 iOS 6
 
 ## <a name="using-async-amp-await"></a>Async await の使用 &amp;
 
- `async`と `await` は、タスク並列ライブラリと連携して動作する新しい C# 言語機能で、アプリケーションのメインスレッドをブロックせずに、長時間実行されるタスクを実行するスレッドコードを簡単に記述できます。
+ `async` と `await` は、タスク並列ライブラリと連携して動作する新しい C# 言語機能で、アプリケーションのメインスレッドをブロックせずに、長時間実行されるタスクを実行するスレッドコードを簡単に記述できます。
 
 ## <a name="async"></a>async
 
@@ -69,7 +69,7 @@ Await を使用しても、呼び出し元のスレッドがブロックされ�
 
 タスクが完了すると、メソッドはコード内の同じ位置で実行を再開します。 これには、try-catch ブロック (存在する場合) の try スコープに戻ることが含まれます。 await を catch または finally ブロックで使用することはできません。
 
-[Await](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/await)の詳細については、Microsoft Docs を参照してください。
+[Await](/dotnet/csharp/language-reference/keywords/await)の詳細については、Microsoft Docs を参照してください。
 
 ## <a name="exception-handling"></a>例外処理
 
@@ -85,11 +85,11 @@ Await を使用しても、呼び出し元のスレッドがブロックされ�
 
 その後、タスクが取り消され、取り消しが確認されます。
 
-取り消しの詳細については、「[Fine Tuning Your Async Application (C#) (非同期アプリケーションの微調整 (C#))](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/async/fine-tuning-your-async-application)」を参照してください。
+取り消しの詳細については、「[Fine Tuning Your Async Application (C#) (非同期アプリケーションの微調整 (C#))](/dotnet/csharp/programming-guide/concepts/async/fine-tuning-your-async-application)」を参照してください。
 
 ## <a name="example"></a>例
 
-サンプルの[Xamarin ソリューション](https://docs.microsoft.com/samples/xamarin/mobile-samples/asyncawait/)(IOS と Android の両方) をダウンロードして、 `async` mobile apps での実際の例を参照してください `await` 。 コード例については、このセクションで詳しく説明します。
+サンプルの [Xamarin ソリューション](/samples/xamarin/mobile-samples/asyncawait/) (IOS と Android の両方) をダウンロードして、 `async` mobile apps での実際の例を参照してください `await` 。 コード例については、このセクションで詳しく説明します。
 
 ### <a name="writing-an-async-method"></a>非同期メソッドの記述
 
@@ -120,9 +120,9 @@ public async Task<int> DownloadHomepage()
 
 次の点に注意してください。
 
-- メソッドの宣言には、キーワードが含まれてい `async` ます。
-- 戻り値の型は、 `Task<int>` 呼び出し元のコードが `int` このメソッドで計算された値にアクセスできるようにするためです。
-- Return ステートメントは整数オブジェクトであり、 `return exampleInt;` メソッドが返す事実は `Task<int>` 言語の機能強化の一部です。
+- メソッドの宣言には、キーワードが含まれてい  `async` ます。
+- 戻り値の型は、  `Task<int>` 呼び出し元のコードが  `int` このメソッドで計算された値にアクセスできるようにするためです。
+- Return ステートメントは整数オブジェクトであり、  `return exampleInt;` メソッドが返す事実は  `Task<int>` 言語の機能強化の一部です。
 
 ### <a name="calling-an-async-method-1"></a>非同期メソッドの呼び出し1
 
@@ -149,8 +149,8 @@ GetButton.Click += async (sender, e) => {
 
 - 匿名デリゲートには、async キーワードプレフィックスがあります。
 - 非同期メソッド DownloadHomepage は、 \<int> sizetask 変数に格納されているタスクを返します。
-- このコードは、sizeTask 変数を待機しています。  *これ*は、メソッドが中断された場所であり、非同期タスクが独自のスレッドで終了するまで、呼び出し元のコードに制御が返されます。
-- タスクが作成されているにもかかわらず、メソッドの最初の行にタスクが作成されても、実行は一時停止し*ません*。 Await キーワードは、実行が一時停止されている場所を示します。
+- このコードは、sizeTask 変数を待機しています。  *これ* は、メソッドが中断された場所であり、非同期タスクが独自のスレッドで終了するまで、呼び出し元のコードに制御が返されます。
+- タスクが作成されているにもかかわらず、メソッドの最初の行にタスクが作成されても、実行は一時停止し  *ません* 。 Await キーワードは、実行が一時停止されている場所を示します。
 - 非同期タスクが完了すると、intResult が設定され、await 行から元のスレッドで実行が続行されます。
 
 ### <a name="calling-an-async-method-2"></a>非同期メソッド2の呼び出し
@@ -179,9 +179,9 @@ async void HandleTouchUpInside (object sender, EventArgs e)
 
 いくつかの重要な点:
 
-- メソッドはとしてマークされ `async` ますが、はを返し `void` ます。 これは通常、イベントハンドラーに対してのみ実行されます (それ以外の場合 `Task` は、またはを返し `Task<TResult>` ます)。
-- メソッドのキーワードは、 `await` `DownloadHomepage` `intResult` 前の例とは異なり、タスクを参照するために中間変数を使用した場合とは異なり、変数 () に直接割り当てられ `Task<int>` ます。  *これ*は、非同期メソッドが別のスレッドで完了するまで、制御が呼び出し元に返される場所です。
-- 非同期メソッドが完了して戻ると、で実行が再開されます `await` 。これは、整数の結果が返され、UI ウィジェットで表示されることを意味します。
+- メソッドはとしてマークされ  `async` ますが、はを返し  `void` ます。 これは通常、イベントハンドラーに対してのみ実行されます (それ以外の場合  `Task` は、またはを返し  `Task<TResult>` ます)。
+- メソッドのキーワードは、 `await`  `DownloadHomepage` `intResult` 前の例とは異なり、タスクを参照するために中間変数を使用した場合とは異なり、変数 () に直接割り当てられ  `Task<int>` ます。  *これ* は、非同期メソッドが別のスレッドで完了するまで、制御が呼び出し元に返される場所です。
+- 非同期メソッドが完了して戻ると、で実行が再開されます  `await` 。これは、整数の結果が返され、UI ウィジェットで表示されることを意味します。
 
 ## <a name="summary"></a>まとめ
 
@@ -191,14 +191,14 @@ Async と await を使用すると、メインスレッドをブロックせず�
 
 ## <a name="related-links"></a>関連リンク
 
-- [AsyncAwait (サンプル)](https://docs.microsoft.com/samples/xamarin/mobile-samples/asyncawait/)
+- [AsyncAwait (サンプル)](/samples/xamarin/mobile-samples/asyncawait/)
 - ["Generation To ステートメント" としてのコールバック](https://tirania.org/blog/archive/2013/Aug-15.html)
-- [データ (iOS) (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/data/)
-- [HttpClient (iOS) (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/httpclient/)
+- [データ (iOS) (サンプル)](/samples/xamarin/ios-samples/data/)
+- [HttpClient (iOS) (サンプル)](/samples/xamarin/ios-samples/httpclient/)
 - [MapKitSearch (iOS) (サンプル)](https://github.com/xamarin/monotouch-samples/tree/master/MapKitSearch)
-- [非同期プログラミング](https://docs.microsoft.com/dotnet/csharp/async)
-- [非同期アプリケーションの微調整 (C#)](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/async/fine-tuning-your-async-application)
+- [非同期プログラミング](/dotnet/csharp/async)
+- [非同期アプリケーションの微調整 (C#)](/dotnet/csharp/programming-guide/concepts/async/fine-tuning-your-async-application)
 - [Await、UI、およびデッドロック。あらららら！](https://devblogs.microsoft.com/pfxteam/await-and-ui-and-deadlocks-oh-my/)
 - [タスクの完了時の処理](https://devblogs.microsoft.com/pfxteam/processing-tasks-as-they-complete/)
-- [タスク ベースの非同期パターン (TAP)](https://msdn.microsoft.com/library/hh873175.aspx)
-- [C# 5 の非同期性 (Eric Lippert のブログ) –キーワードの概要について](https://blogs.msdn.microsoft.com/ericlippert/2010/11/11/asynchrony-in-c-5-part-six-whither-async/)
+- [タスク ベースの非同期パターン (TAP)](/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)
+- [C# 5 の非同期性 (Eric Lippert のブログ) –キーワードの概要について](/archive/blogs/ericlippert/asynchrony-in-c-5-part-six-whither-async)

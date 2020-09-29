@@ -7,12 +7,12 @@ manager: crdun
 ms.workload:
 - xamarin
 ms.date: 10/23/2018
-ms.openlocfilehash: bd1a728dfe14ff9243402bedae74db7be93bf466
-ms.sourcegitcommit: db422e33438f1b5c55852e6942c3d1d75dc025c4
+ms.openlocfilehash: 61a7017d2ba784770d1199b6332d781b36b6d0e0
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76725132"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91452480"
 ---
 # <a name="devops-with-xamarin"></a>Xamarin を使用した DevOps
 
@@ -30,7 +30,7 @@ Visual Studio、Azure DevOps Services、Team Foundation Server は、さまざ�
 
 一般的なコメント: すべての計画機能と追跡機能は、プロジェクトの種類とコーディング言語には依存しません。
 
-|特性|Xamarin でサポートされているかどうか|その他のコメント|
+|機能|Xamarin でサポートされているかどうか|その他のコメント|
 |-------------|----------------------------|-------------------------|
 |バックログとスプリントの管理|はい||
 |作業の追跡|はい||
@@ -42,9 +42,9 @@ Visual Studio、Azure DevOps Services、Team Foundation Server は、さまざ�
 
 参照リンク: **[アーキテクチャの分析とモデル化](/visualstudio/modeling/analyze-and-model-your-architecture)**
 
-デザイン機能は、コーディング言語に依存しないか、または C# のような .NET 言語と一緒に機能します。 コードに関連する側面については「[ソフトウェア開発におけるアーキテクチャ図とモデル図の役割](/visualstudio/modeling/scenario-change-your-design-using-visualization-and-modeling#ModelingDiagramsTools)」を参照してください。
+デザイン機能は、コーディング言語に依存しないか、または C# のような .NET 言語と一緒に機能します。 コードに関連する側面については、「 [ソフトウェア開発におけるアーキテクチャとモデリング図の役割](/visualstudio/modeling/scenario-change-your-design-using-visualization-and-modeling#ModelingDiagramsTools) 」を参照してください。
 
-|特性|Xamarin でサポートされているかどうか|その他のコメント|
+|機能|Xamarin でサポートされているかどうか|その他のコメント|
 |-------------|----------------------------|-------------------------|
 |シーケンス図|はい||
 |依存関係グラフ|はい||
@@ -57,7 +57,7 @@ Visual Studio、Azure DevOps Services、Team Foundation Server は、さまざ�
 
 ## <a name="code"></a>コード
 
-|特性|Xamarin でサポートされているかどうか|その他のコメント|
+|機能|Xamarin でサポートされているかどうか|その他のコメント|
 |-------------|----------------------------|-------------------------|
 |[Team Foundation バージョン管理 (TFVC)](/azure/devops/repos/tfvc/overview?view=vsts) または Azure Repos を使用する|はい||
 |[Azure Repos で Git を使用した作業の開始](/azure/devops/repos/git/gitquickstart?view=vsts&tabs=visual-studio)|はい||
@@ -65,55 +65,55 @@ Visual Studio、Azure DevOps Services、Team Foundation Server は、さまざ�
 |[コード変更およびその他の履歴の検索](/visualstudio/ide/find-code-changes-and-other-history-with-codelens)|はい|ただし、実行時まで実装が解決しない、プラットフォームに固有の境界をまたぐ場合を除きます。|
 |[コード マップを使用してアプリケーションをデバッグする](/visualstudio/modeling/use-code-maps-to-debug-your-applications)|はい||
 
-## <a name="build"></a>Build
+## <a name="build"></a>ビルド
 
 参照リンク: **[Azure Pipelines](/azure/devops/pipelines/index?view=vsts)**
 
-|特性|Xamarin でサポートされているかどうか|その他のコメント|
+|機能|Xamarin でサポートされているかどうか|その他のコメント|
 |-------------|----------------------------|-------------------------|
-|オンプレミス TFS サーバー|はい|ビルド コンピューターに Xamarin がインストールされている必要があります。iOS 用にビルドするには、OSX コンピューターにリンクできる必要があります。 「[TFVC の使用](/azure/devops/repos/tfvc/overview?view=vsts)」を参照してください。|
+|オンプレミス TFS サーバー|はい|ビルド コンピューターに Xamarin がインストールされている必要があります。iOS 用にビルドするには、OSX コンピューターにリンクできる必要があります。 [TFVC の使用](/azure/devops/repos/tfvc/overview?view=vsts)|
 |Azure Pipelines にリンクされたオンプレミスのビルド サーバー|はい|手順については、「[Build and release agents](/azure/devops/pipelines/agents/agents?view=vsts)」 (ビルド エージェントとリリース エージェント) を参照してください。|
 |Azure Pipelines のホスト コント ローラー サービス|はい|「[Build your Xamarin app](/azure/devops/pipelines/languages/xamarin?view=vsts&tabs=vsts)」 (Xamarin アプリのビルド) を参照してください。|
 |事前スクリプトと事後スクリプトによるビルド定義|はい||
 |継続的な統合 (ゲート チェックインを含む)|はい|Git としての TFVC へのゲート チェックインのみ、チェックイン モデルではなく、プル要求モデルで機能します。|
 
-## <a name="test"></a>[テスト]
+## <a name="test"></a>テスト
 
-|特性|Xamarin でサポートされているかどうか|その他のコメント|
+|機能|Xamarin でサポートされているかどうか|その他のコメント|
 |-------------|----------------------------|-------------------------|
 |テストの計画、テスト ケースの作成、およびテスト スイートの編成|はい||
 |手動テスト|はい||
 |テスト マネージャー (テストの記録と再生)|はい|Windows デバイスと Android エミュレーター (Visual Studio からのみ)。|
-|コード カバレッジ|該当なし||
+|コード カバレッジ|N/A||
 |[コードの単体テスト](/visualstudio/test/unit-test-your-code/)|はい|Windows と Android を対象にする場合は、組み込みの MSTest ツールを使用できます。 Windows、Android、および iOS で単体テストを実行するには、Xamarin では NUnit が推奨されています。 「[TFVC の使用](/azure/devops/repos/tfvc/overview?view=vsts)」を参照してください。|
 |[UI オートメーションを使用してコードをテストする](/visualstudio/test/use-ui-automation-to-test-your-code/)|Windows のみ|Visual Studio の UI テスト レコーダーは Windows のみです。 すべてのプラットフォームについては、[Xamarin.UITest](/appcenter/test-cloud/uitest/) を参照してください。|
 
 ## <a name="improve-code-quality"></a>コード品質の向上
 
-参照リンク: **[コードの品質の向上](/visualstudio/test/improve-code-quality)**
+参照リンク: **[コード品質の向上](/visualstudio/test/improve-code-quality)**
 
-|特性|Xamarin でサポートされているかどうか|その他のコメント|
+|機能|Xamarin でサポートされているかどうか|その他のコメント|
 |-------------|----------------------------|-------------------------|
 |[マネージド コードの品質の分析](/visualstudio/code-quality/analyzing-managed-code-quality-by-using-code-analysis)|はい||
-|[コード クローン検出を使用した重複コードの検出](https://msdn.microsoft.com/library/hh205279.aspx)|はい||
+|[コード クローン検出を使用した重複コードの検出](/previous-versions/hh205279(v=vs.140))|はい||
 |[マネージド コードの複雑さと保守性の測定](/visualstudio/code-quality/measuring-complexity-and-maintainability-of-managed-code)|はい||
-|[パフォーマンス エクスプ ローラー](/visualstudio/profiling/performance-explorer)|いいえ|代わりに Visual Studio for Mac [Xamarin Profiler](/xamarin/tools/profiler/)を使用します。 Xamarin プロファイラーは現在プレビュー期間中であり、Windows を対象にした場合はまだ動作しないことに注意してください。|
-|[.NET Framework のメモリ分析の問題](https://msdn.microsoft.com/library/dn342825.aspx)|いいえ|Visual Studio ツールには、プロファイリング用の Mono フレームワークへのフックはありません。|
+|[パフォーマンス エクスプローラー](/visualstudio/profiling/performance-explorer)|いいえ|代わりに Visual Studio for Mac [Xamarin Profiler](../profiler/index.md) を使用します。 Xamarin プロファイラーは現在プレビュー期間中であり、Windows を対象にした場合はまだ動作しないことに注意してください。|
+|[.NET Framework のメモリ分析の問題](/visualstudio/misc/analyze-dotnet-framework-memory-issues)|いいえ|Visual Studio ツールには、プロファイリング用の Mono フレームワークへのフックはありません。|
 
 ## <a name="release-management"></a>リリース管理
 
-参照リンク: **[Azure Pipelines および TFS でのビルドとリリース](/azure/devops/pipelines/overview?view=vsts)**
+参照リンク: ** [AZURE PIPELINES と TFS でのビルドとリリース](/azure/devops/pipelines/overview?view=vsts)**
 
-|特性|Xamarin でサポートされているかどうか|その他のコメント|
+|機能|Xamarin でサポートされているかどうか|その他のコメント|
 |-------------|----------------------------|-------------------------|
 |リリース プロセスの管理|はい||
 |スクリプトによるサイドローディング用のサーバーへの配置|はい||
-|アプリ ストアへのアップロード|部分的|一部のアプリ ストアに対して、このプロセスを自動化することができる拡張機能が使用できます。  たとえば、[Google Play の拡張機能](https://marketplace.visualstudio.com/VSTS)については、[Azure DevOps Services の拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-vsclient.google-play)を参照してください。|
+|アプリ ストアへのアップロード|Partial|一部のアプリ ストアに対して、このプロセスを自動化することができる拡張機能が使用できます。  たとえば、[Google Play の拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-vsclient.google-play)については、[Azure DevOps Services の拡張機能](https://marketplace.visualstudio.com/VSTS)を参照してください。|
 
 ## <a name="monitor-with-hockeyapp"></a>HockeyApp による監視
 
 参照リンク: **[HockeyApp による監視](https://www.hockeyapp.net/features/)**
 
-|特性|Xamarin でサポートされているかどうか|その他のコメント|
+|機能|Xamarin でサポートされているかどうか|その他のコメント|
 |-------------|----------------------------|-------------------------|
 |クラッシュ分析、製品利用統計情報、およびベータ版の配布|はい||

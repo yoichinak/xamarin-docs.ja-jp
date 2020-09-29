@@ -6,29 +6,29 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 960f75126fdfed770f79e0b4dad5641886eaf8ba
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 154c33944e48f1409b52f14c297befa960b84f39
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73024317"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91455132"
 ---
 # <a name="touch-in-android"></a>Android でのタッチ
 
-IOS と同様に、Android では、ユーザーが `Android.View.MotionEvent` オブジェクト &ndash; 画面との物理的な対話に関するデータを保持するオブジェクトを作成します。 このオブジェクトには、実行されたアクション、タッチが行われた場所、適用された負荷などのデータが保持されます。`MotionEvent` オブジェクトは、への移動を次の値に分割します。
+IOS と同様に、Android では、ユーザーの画面とオブジェクトの物理的な相互作用に関するデータを保持するオブジェクトが作成さ &ndash; `Android.View.MotionEvent` れます。 このオブジェクトには、実行されたアクション、タッチが行われた場所、適用された負荷などのデータが保持されます。オブジェクトは、 `MotionEvent` への移動を次の値に分割します。
 
 - 初期タッチ、画面上でのタッチの移動、タッチの終了など、モーションの種類を記述するアクションコード。
 
-- `MotionEvent` の位置と、タッチが行われる場所、タッチが発生したタイミング、使用された圧力などのその他の移動プロパティを表す軸値のセット。
+- タッチが行われている場所、タッチが発生した `MotionEvent` とき、使用された圧力など、の移動プロパティおよびその他の移動プロパティの位置を表す軸値のセット。
    軸の値はデバイスによって異なる場合があるため、前の一覧にはすべての軸の値が記述されていません。
 
-`MotionEvent` オブジェクトは、アプリケーションの適切なメソッドに渡されます。 Xamarin Android アプリケーションがタッチイベントに応答するには、次の3つの方法があります。
+オブジェクトは、 `MotionEvent` アプリケーション内の適切なメソッドに渡されます。 Xamarin Android アプリケーションがタッチイベントに応答するには、次の3つの方法があります。
 
-- *`View.Touch`にイベントハンドラーを割り当てる*-`Android.Views.View` クラスには、アプリケーションがハンドラーを割り当てることのできる `EventHandler<View.TouchEventArgs>` があります。 これは、一般的な .NET の動作です。
+- *イベントハンドラーをに `View.Touch` 割り当て*ます。- `Android.Views.View` クラスには、 `EventHandler<View.TouchEventArgs>` ハンドラーを割り当てることができるアプリケーションがあります。 これは、一般的な .NET の動作です。
 
-- このインターフェイスの `View.IOnTouchListener`インスタンスの*実装*は、ビューを使用してビューオブジェクトに割り当てることができます。 `SetOnListener` メソッド。これは、イベントハンドラーを `View.Touch` イベントに割り当てることと機能的には同じです。 いくつかの一般的なロジックや共有ロジックがあり、それらのビューを操作するときにさまざまなビューが必要になることがある場合は、クラスを作成し、各ビューに独自のイベントハンドラーを割り当てるよりも、このメソッドを実装する方が効率的です。
+- *実装 `View.IOnTouchListener` *-ビューを使用して、このインターフェイスのインスタンスをビューオブジェクトに割り当てることができます。 `SetOnListener` b.これは、イベントハンドラーをイベントに割り当てることと機能的には同じです `View.Touch` 。 いくつかの一般的なロジックや共有ロジックがあり、それらのビューを操作するときにさまざまなビューが必要になることがある場合は、クラスを作成し、各ビューに独自のイベントハンドラーを割り当てるよりも、このメソッドを実装する方が効率的です。
 
-- *`View.OnTouchEvent`* -Android サブクラスのすべてのビュー `Android.Views.View`をオーバーライドします。 ビューにタッチすると、Android は `OnTouchEvent` を呼び出し、それに `MotionEvent` オブジェクトをパラメーターとして渡します。
+- *上書き `View.OnTouchEvent` *-Android サブクラスのすべてのビュー `Android.Views.View` 。 ビューにタッチすると、Android はを呼び出し、 `OnTouchEvent` `MotionEvent` パラメーターとしてオブジェクトを渡します。
 
 > [!NOTE]
 > すべての Android デバイスがタッチスクリーンをサポートしているわけではありません。 
@@ -43,9 +43,9 @@ IOS と同様に、Android では、ユーザーが `Android.View.MotionEvent` �
 
 ジェスチャは、タッチスクリーン上のハンド描画された図形です。 ジェスチャは、1つまたは複数のストロークを持つことができます。各ストロークは、画面とは異なる接点によって作成されたポイントのシーケンスで構成されます。 Android では、画面上の単純な theory からマルチタッチを含む複雑なジェスチャまで、さまざまな種類のジェスチャをサポートできます。
 
-Android には、ジェスチャを管理して応答するための `Android.Gestures` 名前空間が用意されています。 すべてのジェスチャの中核となるのは、`Android.Gestures.GestureDetector`と呼ばれる特殊なクラスです。 名前が示すように、このクラスは、オペレーティングシステムによって提供される `MotionEvents` に基づいて、ジェスチャとイベントをリッスンします。
+Android には、 `Android.Gestures` ジェスチャの管理と応答を行うための名前空間が用意されています。 すべてのジェスチャの中核となるのは、と呼ばれる特殊なクラスです `Android.Gestures.GestureDetector` 。 名前が示すように、このクラスは、 `MotionEvents` オペレーティングシステムによって提供されるジェスチャとイベントをリッスンします。
 
-ジェスチャ検出機能を実装するには、アクティビティは、次のコードスニペットに示すように、`GestureDetector` クラスをインスタンス化し、`IOnGestureListener`のインスタンスを提供する必要があります。
+ジェスチャ検出機能を実装するには、 `GestureDetector` `IOnGestureListener` 次のコードスニペットに示すように、アクティビティでクラスをインスタンス化し、のインスタンスを提供する必要があります。
 
 ```csharp
 GestureOverlayView.IOnGestureListener myListener = new MyGestureListener();
@@ -62,24 +62,24 @@ public override bool OnTouchEvent(MotionEvent e)
 }
 ```
 
-`GestureDetector` のインスタンスが関心のあるジェスチャを識別すると、イベントを発生させるか、`GestureDetector.IOnGestureListener`によって提供されるコールバックを使用して、アクティビティまたはアプリケーションに通知します。
+のインスタンスは、 `GestureDetector` 目的のジェスチャを識別するときに、イベントを発生させるか、によって提供されるコールバックを使用して、アクティビティまたはアプリケーションに通知し `GestureDetector.IOnGestureListener` ます。
 このインターフェイスは、さまざまなジェスチャに対して6つのメソッドを提供します。
 
 - *Ondown* -タップが発生したが、解放されていない場合に呼び出されます。
 
 - *OnFling* -theory が発生し、イベントをトリガーした開始および終了のタッチにデータを提供するときに呼び出されます。
 
-- *Onlongpress*は、長い押下が発生したときに呼び出されます。
+- *Onlongpress* は、長い押下が発生したときに呼び出されます。
 
 - *Onscroll* -scroll イベントが発生したときに呼び出されます。
 
-- *Onshowpress*は、ondown が発生し、move または up イベントが実行されていない状態で呼び出されました。
+- *Onshowpress* は、ondown が発生し、move または up イベントが実行されていない状態で呼び出されました。
 
 - *OnSingleTapUp* -シングルタップが発生したときに呼び出されます。
 
 多くの場合、アプリケーションはジェスチャのサブセットのみを対象にすることができます。 この場合、アプリケーションは GestureDetector クラスを拡張し、関心のあるイベントに対応するメソッドをオーバーライドする必要があります。
 
-## <a name="custom-gestures"></a>カスタムジェスチャ
+## <a name="custom-gestures"></a>カスタム ジェスチャ
 
 ジェスチャは、ユーザーがアプリケーションと対話するための優れた方法です。 これまでに見てきた Api は、単純なジェスチャには十分ですが、より複雑なジェスチャに対しては、少し煩雑を証明することがあります。 Android では、より複雑なジェスチャに対応するために、カスタムジェスチャに関連する負荷の一部を簡単にするために、別の API セットが Android のジェスチャ名前空間に用意されています。
 
@@ -87,11 +87,11 @@ public override bool OnTouchEvent(MotionEvent e)
 
 Android 1.6 以降、Android SDK には、ジェスチャビルダーと呼ばれるエミュレーターにプレインストールされたアプリケーションが付属しています。 このアプリケーションを使用すると、開発者は、アプリケーションに埋め込むことができる定義済みのジェスチャを作成できます。 次のスクリーンショットは、ジェスチャビルダーの例を示しています。
 
-[ジェスチャの例を含むジェスチャビルダーのスクリーンショット![](touch-in-android-images/image11.png)](touch-in-android-images/image11.png#lightbox)
+[![ジェスチャの例を含むジェスチャビルダーのスクリーンショット](touch-in-android-images/image11.png)](touch-in-android-images/image11.png#lightbox)
 
 ジェスチャツールと呼ばれるこのアプリケーションの改良されたバージョンは Google Play 見つかります。 ジェスチャツールは、作成後にジェスチャをテストできる点を除いて、ジェスチャビルダーとよく似ています。 次のスクリーンショットは、ジェスチャビルダーを示しています。
 
-[ジェスチャの例を含むジェスチャツールのスクリーンショット![](touch-in-android-images/image12.png)](touch-in-android-images/image12.png#lightbox)
+[![ジェスチャの例を含むジェスチャツールのスクリーンショット](touch-in-android-images/image12.png)](touch-in-android-images/image12.png#lightbox)
 
 ジェスチャツールは、ジェスチャを作成時にテストし、Google Play で簡単に使用できるようにすることで、カスタムジェスチャを作成する場合に少し便利です。
 
@@ -131,11 +131,11 @@ SetContentView(gestureOverlayView);
     android:layout_height="match_parent" />
 ```
 
-`GestureOverlayView` には、ジェスチャの描画プロセス中に発生するいくつかのイベントがあります。 最も興味深いイベントは `GesturePerformed`です。 このイベントは、ユーザーがジェスチャの描画を完了したときに発生します。
+には、 `GestureOverlayView` ジェスチャの描画プロセス中に発生するいくつかのイベントがあります。 最も興味深いイベントは `GesturePerformed` です。 このイベントは、ユーザーがジェスチャの描画を完了したときに発生します。
 
-このイベントが発生すると、アクティビティは `GestureLibrary` に対して、ジェスチャツールによって作成されたジェスチャの1つを使用してユーザーとのジェスチャを検索します。 `GestureLibrary` は、予測オブジェクトの一覧を返します。
+このイベントが発生すると、アクティビティは、 `GestureLibrary` ユーザーがジェスチャツールによって作成されたジェスチャの1つを使用して、ユーザーとのジェスチャを試行するように要求します。 `GestureLibrary` は、予測オブジェクトの一覧を返します。
 
-各予測オブジェクトは、`GestureLibrary`内のいずれかのジェスチャのスコアと名前を保持します。 スコアが高いほど、予測に示されているジェスチャが、ユーザーによって描画されたジェスチャと一致する可能性が高くなります。
+各予測オブジェクトは、内のいずれかのジェスチャのスコアと名前を保持し `GestureLibrary` ます。 スコアが高いほど、予測に示されているジェスチャが、ユーザーによって描画されたジェスチャと一致する可能性が高くなります。
 一般に、1.0 より低いスコアは、一致していないと見なされます。
 
 次のコードは、ジェスチャを照合する例を示しています。
@@ -164,5 +164,5 @@ private void GestureOverlayViewOnGesturePerformed(object sender, GestureOverlayV
 
 ## <a name="related-links"></a>関連リンク
 
-- [Android タッチスタート (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-touch-start)
-- [Android のタッチ最終 (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/applicationfundamentals-touch-final)
+- [Android タッチスタート (サンプル)](/samples/xamarin/monodroid-samples/applicationfundamentals-touch-start)
+- [Android のタッチ最終 (サンプル)](/samples/xamarin/monodroid-samples/applicationfundamentals-touch-final)
