@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: a77b5cd33710a7a8755441efc8b7134d82855c2a
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 0c5f2a5c6a3274b298d3de216a2a0f42ed590611
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937970"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436472"
 ---
 # <a name="social-framework-in-xamarinios"></a>Xamarin のソーシャルフレームワーク
 
@@ -50,11 +50,11 @@ if (SLComposeViewController.IsAvailable (SLServiceKind.Twitter)) {
 }
 ```
 
- `SLComposeViewController`は、ユーザーの介入なしに直接ツイートを送信しません。 ただし、次のメソッドを使用して初期化することができます。
+ `SLComposeViewController` は、ユーザーの介入なしに直接ツイートを送信しません。 ただし、次のメソッドを使用して初期化することができます。
 
-- `SetInitialText`–ツイートに表示する最初のテキストを追加します。
-- `AddUrl`–ツイートに Url を追加します。
-- `AddImage`–イメージをツイートに追加します。
+- `SetInitialText` –ツイートに表示する最初のテキストを追加します。
+- `AddUrl` –ツイートに Url を追加します。
+- `AddImage` –イメージをツイートに追加します。
 
 初期化されると、を呼び出すと `PresentVIewController` 、によって作成されたビューが表示され `SLComposeViewController` ます。 ユーザーは必要に応じて、ツイートを編集して送信することも、送信をキャンセルすることもできます。 どちらの場合も、コントローラーはで破棄される必要があります。この場合、 `CompletionHandler` 次に示すように、ツイートが送信またはキャンセルされたかどうかを確認するために結果を確認することもできます。
 
@@ -282,7 +282,7 @@ request.PerformRequest ((data, response, error) => {
 
 [![生の JSON データ表示の例](social-framework-images/twitter03.png)](social-framework-images/twitter03.png#lightbox)
 
-実際のアプリでは、JSON の結果が通常どおりに解析され、結果がユーザーに表示されます。 JSON を解析する方法の詳細については、「 [Web サービスの概要](~/cross-platform/data-cloud/web-services/index.md)」を参照してください。
+実際のアプリでは、JSON の結果が通常どおりに解析され、結果がユーザーに表示されます。 JSON を解析する方法の詳細については、「 [Web サービスの概要](~/cross-platform/data-cloud/web-services/index.md) 」を参照してください。
 
 ## <a name="connecting-to-facebook"></a>Facebook に接続しています
 
@@ -362,7 +362,7 @@ namespace SocialFrameworkDemo
 }
 ```
 
-Facebook と共に使用すると、 `SLComposeViewController` Twitter の例とほぼ同じ外観のビューが表示されます。この場合のタイトルとして**Facebook**が示されます。
+Facebook と共に使用すると、 `SLComposeViewController` Twitter の例とほぼ同じ外観のビューが表示されます。この場合のタイトルとして **Facebook** が示されます。
 
 [![Slて Seviewcontroller ディスプレイ](social-framework-images/facebook02.png)](social-framework-images/facebook02.png#lightbox)
 
@@ -472,5 +472,5 @@ accountStore.RequestAccess (accountType, options, (granted, error) => {
 
 ## <a name="related-links"></a>関連リンク
 
-- [社会 Alframeworkdemo (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/socialframeworkdemo)
+- [社会 Alframeworkdemo (サンプル)](/samples/xamarin/ios-samples/socialframeworkdemo)
 - [Web サービスの概要](~/cross-platform/data-cloud/web-services/index.md)

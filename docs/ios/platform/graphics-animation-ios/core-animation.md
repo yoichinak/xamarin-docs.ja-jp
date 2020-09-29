@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: ddd46da0787f853e949d08c45dff5be17b9451fd
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: d25d48421ad9b05925c1fa373ddba600ad3bac2e
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86932757"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431229"
 ---
 # <a name="core-animation-in-xamarinios"></a>Xamarin のコアアニメーション
 
 _この記事では、主要なアニメーションフレームワークについて説明します。これは、パフォーマンスの向上、UIKit での滑らかなアニメーション、および下位レベルのアニメーションコントロールに対して直接使用する方法を示しています。_
 
-iOS には、アプリケーションでのビューのアニメーションサポートを提供するための[*コアアニメーション*](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/CoreAnimation_guide/Introduction/Introduction.html)が含まれています。
+iOS には、アプリケーションでのビューのアニメーションサポートを提供するための [*コアアニメーション*](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/CoreAnimation_guide/Introduction/Introduction.html) が含まれています。
 テーブルのスクロールやさまざまなビュー間のスワイプなど、iOS の非常にスムーズなアニメーションはすべて、内部的にコアアニメーションに依存しているため、実行されます。
 
 コアアニメーションとコアグラフィックスフレームワークを連携させることで、美しいアニメーションの2D グラフィックスを作成できます。 実際のコアアニメーションでは、3D 空間の2D グラフィックスを変換して、驚くような映像エクスペリエンスを作成することもできます。 ただし、真の3D グラフィックスを作成するには、OpenGL ES のようなものを使用するか、またはゲームがモノゲームなどの API に切り替える必要があります。ただし、3D はこの記事の範囲を超えています。
@@ -46,7 +46,7 @@ UIKit には、アプリケーションにアニメーションを簡単に追�
 
 ### <a name="view-controller-transitions"></a>ビュー コントローラーの切り替え
 
- `UIViewController`には、メソッドを使用したビューコントローラー間の移行のサポートが組み込まれて `PresentViewController` います。 を使用する場合 `PresentViewController` 、2つ目のコントローラーへの切り替えをアニメーション化することもできます。
+ `UIViewController` には、メソッドを使用したビューコントローラー間の移行のサポートが組み込まれて `PresentViewController` います。 を使用する場合 `PresentViewController` 、2つ目のコントローラーへの切り替えをアニメーション化することもできます。
 
 たとえば、2つのコントローラーを持つアプリケーションについて考えてみます。この場合、最初のコントローラーのボタンに触れると `PresentViewController` 2 つ目のコントローラーが表示されます。 2番目のコントローラーを表示するために使用する遷移アニメーションを制御するには、 [`ModalTransitionStyle`](xref:UIKit.UIModalTransitionStyle) 次に示すようにプロパティを設定するだけです。
 
@@ -58,9 +58,9 @@ SecondViewController vc2 = new SecondViewController {
 
 この場合、 `PartialCurl` アニメーションが使用されますが、他にも次のようなものがあります。
 
-- `CoverVertical`–画面の下部からスライドアップします。
-- `CrossDissolve`–新しいビューがフェードイン & 前のビューがフェードアウトします。
-- `FlipHorizontal`-右から左への水平方向の反転。 無視では、遷移は左から右へとフリップします。
+- `CoverVertical` –画面の下部からスライドアップします。
+- `CrossDissolve` –新しいビューがフェードイン & 前のビューがフェードアウトします。
+- `FlipHorizontal` -右から左への水平方向の反転。 無視では、遷移は左から右へとフリップします。
 
 遷移をアニメーション化するには、 `true` 次のように2番目の引数としてを渡し `PresentViewController` ます。
 
@@ -88,7 +88,7 @@ UIView.Transition (
   completion: () => { Console.WriteLine ("transition complete"); });
 ```
 
-`UIView.Transition`また、は、 `duration` アニメーションの実行時間を制御したり、 [`options`](xref:UIKit.UIViewAnimationOptions) 使用するアニメーションやイージング関数などを指定したりするためのパラメーターを受け取ります。 また、アニメーションが完了したときに呼び出される完了ハンドラーを指定することもできます。
+`UIView.Transition` また、は、 `duration` アニメーションの実行時間を制御したり、 [`options`](xref:UIKit.UIViewAnimationOptions) 使用するアニメーションやイージング関数などを指定したりするためのパラメーターを受け取ります。 また、アニメーションが完了したときに呼び出される完了ハンドラーを指定することもできます。
 
 次のスクリーンショットは、を使用した場合のイメージビュー間のアニメーション化された切り替えを示して `TransitionFlipFromTop` います。
 
@@ -133,17 +133,17 @@ UIView.Animate (
 
 ## <a name="using-core-animation"></a>コアアニメーションの使用
 
- `UIView`アニメーションは多数の機能を使用でき、実装が簡単なため、可能であれば使用する必要があります。 既に説明したように、UIView アニメーションでは、コアアニメーションフレームワークが使用されます。 ただし、アニメーションでは実行できないものもあり `UIView` ます。たとえば、ビューでアニメーション化できない追加のプロパティをアニメーション化したり、非線形パスに沿って補間したりすることはできません。 さらに細かい制御が必要な場合は、コアアニメーションを直接使用することもできます。
+ `UIView` アニメーションは多数の機能を使用でき、実装が簡単なため、可能であれば使用する必要があります。 既に説明したように、UIView アニメーションでは、コアアニメーションフレームワークが使用されます。 ただし、アニメーションでは実行できないものもあり `UIView` ます。たとえば、ビューでアニメーション化できない追加のプロパティをアニメーション化したり、非線形パスに沿って補間したりすることはできません。 さらに細かい制御が必要な場合は、コアアニメーションを直接使用することもできます。
 
 ### <a name="layers"></a>レイヤー
 
-コアアニメーションを使用する場合、アニメーションは*レイヤー*(型) を介して行われ `CALayer` ます。 レイヤーは、ビュー階層のようにレイヤー階層があるという点で、概念的にはビューに似ています。 実際には、レイヤーがビューに戻り、ビューでユーザー操作のサポートが追加されます。 ビューのプロパティを使用して、任意のビューのレイヤーにアクセスでき `Layer` ます。 実際、のメソッドで使用されるコンテキスト `Draw` `UIView` は、実際にはレイヤーから作成されます。 内部的には、をバッキングするレイヤーには、 `UIView` そのデリゲートがビュー自体に設定されます。これはを呼び出し `Draw` ます。 そのため、に描画すると `UIView` 、実際にはレイヤーに描画されます。
+コアアニメーションを使用する場合、アニメーションは *レイヤー*(型) を介して行われ `CALayer` ます。 レイヤーは、ビュー階層のようにレイヤー階層があるという点で、概念的にはビューに似ています。 実際には、レイヤーがビューに戻り、ビューでユーザー操作のサポートが追加されます。 ビューのプロパティを使用して、任意のビューのレイヤーにアクセスでき `Layer` ます。 実際、のメソッドで使用されるコンテキスト `Draw` `UIView` は、実際にはレイヤーから作成されます。 内部的には、をバッキングするレイヤーには、 `UIView` そのデリゲートがビュー自体に設定されます。これはを呼び出し `Draw` ます。 そのため、に描画すると `UIView` 、実際にはレイヤーに描画されます。
 
 レイヤーアニメーションは、暗黙的または明示的にすることができます。 暗黙のアニメーションは宣言型です。 変更するレイヤープロパティを宣言するだけで、アニメーションが動作します。 一方、明示的なアニメーションは、レイヤーに追加されるアニメーションクラスを使用して作成されます。 明示的なアニメーションを使用すると、アニメーションの作成方法をさらに制御できます。 以下のセクションでは、暗黙的および明示的なアニメーションについて詳しく説明します。
 
 ### <a name="implicit-animations"></a>暗黙のアニメーション
 
-レイヤーのプロパティをアニメーション化する方法の1つは、暗黙的なアニメーションを使用することです。 `UIView`アニメーションでは、暗黙的なアニメーションを作成します。 ただし、暗黙的なアニメーションをレイヤーに対して直接作成することもできます。
+レイヤーのプロパティをアニメーション化する方法の1つは、暗黙的なアニメーションを使用することです。 `UIView` アニメーションでは、暗黙的なアニメーションを作成します。 ただし、暗黙的なアニメーションをレイヤーに対して直接作成することもできます。
 
 たとえば、次のコードでは、イメージからレイヤーのを設定し、 `Contents` 境界線の幅と色を設定し、ビューのレイヤーのサブレイヤーとしてレイヤーを追加しています。
 
@@ -233,11 +233,11 @@ public override void ViewDidAppear (bool animated)
 
 ## <a name="summary"></a>まとめ
 
-この記事では、*主要なアニメーション*フレームワークによって提供されるアニメーション機能について説明しました。 ここでは、UIKit でのアニメーションの動作と、下位レベルのアニメーションコントロールに対して直接使用する方法の両方を示す、コアアニメーションを検証しています。
+この記事では、 *主要なアニメーション* フレームワークによって提供されるアニメーション機能について説明しました。 ここでは、UIKit でのアニメーションの動作と、下位レベルのアニメーションコントロールに対して直接使用する方法の両方を示す、コアアニメーションを検証しています。
 
 ## <a name="related-links"></a>関連リンク
 
-- [コアアニメーションのサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/graphicsandanimation)
+- [コアアニメーションのサンプル](/samples/xamarin/ios-samples/graphicsandanimation)
 - [コア グラフィックス](~/ios/platform/graphics-animation-ios/core-graphics.md)
 - [グラフィックスとアニメーションのチュートリアル](~/ios/platform/graphics-animation-ios/graphics-animation-walkthrough.md)
 - [コア アニメーション](https://github.com/xamarin/recipes/tree/master/Recipes/ios/animation/coreanimation)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: cf0e617b225cc7535acffa0880a0bc089ae8da28
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 01a09294d55490a723eb59b0365ac2dc516110c9
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86934057"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434665"
 ---
 # <a name="sliders-switches-and-segmented-controls-in-xamarinios"></a>Xamarin のスライダー、スイッチ、およびセグメント化されたコントロール
 
@@ -22,7 +22,7 @@ ms.locfileid: "86934057"
 
 スライダーコントロールを使用すると、範囲内の数値を簡単に選択できます。 コントロールの既定値は0と1の間の値ですが、これらの制限はカスタマイズできます。
 
- [![スライダー](slider-switch-segmented-controls-images/image25a.png)](slider-switch-segmented-controls-images/image25a.png#lightbox)
+ [![Slider](slider-switch-segmented-controls-images/image25a.png)](slider-switch-segmented-controls-images/image25a.png#lightbox)
 
 次のスクリーンショットは、デザイナーで編集できるプロパティを示しています。
 
@@ -50,21 +50,21 @@ slider1.MaximumTrackTintColor = UIColor.Green;
  [![カスタムスライダー](slider-switch-segmented-controls-images/image27a.png)](slider-switch-segmented-controls-images/image28a.png#lightbox)
 
 > [!IMPORTANT]
-> 現在、[バグ](https://stackoverflow.com/a/19496179)が発生した `ThumbTint` ため、が実行時に期待どおりにレンダリングされません。 回避策として、上記のコードの**前に**次のコード行を追加できます。 [[ソース](https://stackoverflow.com/a/21396794)]:
+> 現在、 [バグ](https://stackoverflow.com/a/19496179) が発生した `ThumbTint` ため、が実行時に期待どおりにレンダリングされません。 回避策として、上記のコードの **前に** 次のコード行を追加できます。 [[ソース](https://stackoverflow.com/a/21396794)]:
 >
 > `slider1.SetThumbImage(UIImage.FromBundle("thumb.png"),UIControlState.Normal);`
 > 
-> オーバーライドされるイメージを使用できますが、リソースディレクトリ_に_配置され、コード内で呼び出されることを確認してください。
+> オーバーライドされるイメージを使用できますが、リソースディレクトリ _に_ 配置され、コード内で呼び出されることを確認してください。
 
 <a name="Switch"></a>
 
 ## <a name="switch"></a>Switch
 
-iOS では、 `UISwitch` 他のプラットフォームのラジオボタンで表すことができるブール型の入力としてを使用します。 ユーザーは、*つまみ*を**オン/オフ**の位置に移動することによって、コントロールを操作できます。
+iOS では、 `UISwitch` 他のプラットフォームのラジオボタンで表すことができるブール型の入力としてを使用します。 ユーザーは、 *つまみ* を **オン/オフ** の位置に移動することによって、コントロールを操作できます。
 
  [![Switch](slider-switch-segmented-controls-images/image28a.png)](slider-switch-segmented-controls-images/image28a.png#lightbox)
 
-スイッチの外観は、デザイナーの**Properties Pad**でカスタマイズできます。これにより、既定の状態、**オン/オフの濃淡**の色、**オン/オフイメージ**を制御できます。 これを次の図に示します。
+スイッチの外観は、デザイナーの **Properties Pad** でカスタマイズできます。これにより、既定の状態、 **オン/オフの濃淡** の色、 **オン/オフイメージ**を制御できます。 これを次の図に示します。
 
  [![スイッチのプロパティ](slider-switch-segmented-controls-images/image29a.png)](slider-switch-segmented-controls-images/image29a.png#lightbox)
 
@@ -78,7 +78,7 @@ switch1.On = true;
 
 ## <a name="segmented-controls"></a>セグメント付きコントロール
 
-セグメント化されたコントロールは、ユーザーが少数のオプションと対話できるようにするための整理された方法です。 水平方向にレイアウトされ、各セグメントは個別のボタンとして機能します。 デザイナーを使用すると、セグメント化されたコントロールは [**ツールボックス > コントロール**] の下にあり、次の図のようになります。
+セグメント化されたコントロールは、ユーザーが少数のオプションと対話できるようにするための整理された方法です。 水平方向にレイアウトされ、各セグメントは個別のボタンとして機能します。 デザイナーを使用すると、セグメント化されたコントロールは [ **ツールボックス > コントロール**] の下にあり、次の図のようになります。
 
  [![セグメント化コントロール](slider-switch-segmented-controls-images/segmentedcontrol.png)](slider-switch-segmented-controls-images/segmentedcontrol.png#lightbox)
 
@@ -94,5 +94,5 @@ switch1.On = true;
 
 ## <a name="related-links"></a>関連リンク
 
-- [コントロール (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)
+- [コントロール (サンプル)](/samples/xamarin/ios-samples/controls)
 - [警告コントローラー](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: c4b818bcf3c4a5280c0280a2e28e2f59c65c8c81
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 98cbcd333d223d741602786643ef1948915d7dfc
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86930222"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436470"
 ---
 # <a name="speech-recognition-in-xamarinios"></a>Xamarin の音声認識 (iOS)
 
@@ -49,7 +49,7 @@ Apple は、次のキーボードディクテーション統計 (2011 以降に�
 
 キーボードディクテーションは、アプリの UI デザインで TextKit インターフェイス要素を使用するのではなく、開発者の作業を必要としないため、非常に簡単に使用できます。 キーボードのディクテーションでは、アプリを使用する前に、アプリから特別な特権を要求する必要がないという利点もあります。
 
-新しい音声認識 Api を使用するアプリでは、ユーザーがアクセスするための特殊なアクセス許可が必要です。音声認識では、Apple のサーバー上のデータの伝送と一時的な保存が必要になるためです。 詳細については、[セキュリティとプライバシーの強化](~/ios/app-fundamentals/security-privacy.md)に関するドキュメントを参照してください。
+新しい音声認識 Api を使用するアプリでは、ユーザーがアクセスするための特殊なアクセス許可が必要です。音声認識では、Apple のサーバー上のデータの伝送と一時的な保存が必要になるためです。 詳細については、 [セキュリティとプライバシーの強化](~/ios/app-fundamentals/security-privacy.md) に関するドキュメントを参照してください。
 
 キーボードディクテーションは簡単に実装できますが、いくつかの制限事項と欠点があります。
 
@@ -78,15 +78,15 @@ IOS 10 の新機能である Apple は、音声認識 API をリリースしま�
 
 Apple には、現在のところ、特定の言語を翻訳できるかどうかを判断するための可用性 API が含まれています。 アプリは、インターネット接続自体を直接テストするのではなく、この API を使用する必要があります。
 
-前述の「キーボードディクテーション」セクションで説明したように、音声認識では、インターネット経由で Apple のサーバー上のデータを転送および一時的に保存する必要があります。そのため、アプリは、ファイルにキーを含め、メソッドを呼び出すことによって、認識を実行するユーザーのアクセス許可を要求_する必要があり_ `NSSpeechRecognitionUsageDescription` `Info.plist` `SFSpeechRecognizer.RequestAuthorization` ます。 
+前述の「キーボードディクテーション」セクションで説明したように、音声認識では、インターネット経由で Apple のサーバー上のデータを転送および一時的に保存する必要があります。そのため、アプリは、ファイルにキーを含め、メソッドを呼び出すことによって、認識を実行するユーザーのアクセス許可を要求 _する必要があり_ `NSSpeechRecognitionUsageDescription` `Info.plist` `SFSpeechRecognizer.RequestAuthorization` ます。 
 
-音声認識に使用されるオーディオのソースに基づいて、アプリのファイルに対するその他の変更 `Info.plist` が必要になる場合があります。 詳細については、[セキュリティとプライバシーの強化](~/ios/app-fundamentals/security-privacy.md)に関するドキュメントを参照してください。
+音声認識に使用されるオーディオのソースに基づいて、アプリのファイルに対するその他の変更 `Info.plist` が必要になる場合があります。 詳細については、 [セキュリティとプライバシーの強化](~/ios/app-fundamentals/security-privacy.md) に関するドキュメントを参照してください。
 
 ## <a name="adopting-speech-recognition-in-an-app"></a>アプリで音声認識を導入する
 
 IOS アプリで音声認識を採用するには、次の4つの主要な手順を実行する必要があります。
 
-- キーを使用して、アプリのファイルに使用方法の説明を入力し `Info.plist` `NSSpeechRecognitionUsageDescription` ます。 たとえば、カメラアプリには次のような説明が含まれている場合があり_ます。 "チーズという単語を言うだけで写真を撮ることができます。"_
+- キーを使用して、アプリのファイルに使用方法の説明を入力し `Info.plist` `NSSpeechRecognitionUsageDescription` ます。 たとえば、カメラアプリには次のような説明が含まれている場合があり _ます。 "チーズという単語を言うだけで写真を撮ることができます。"_
 - メソッドを呼び出して、 `SFSpeechRecognizer.RequestAuthorization` `NSSpeechRecognitionUsageDescription` ダイアログボックスでユーザーに音声認識アクセスを要求し、受け入れまたは拒否を許可する必要がある理由の説明を提示することによって、承認を要求します。
 - 音声認識要求を作成します。
   - ディスク上の録音済みオーディオの場合は、クラスを使用し `SFSpeechURLRecognitionRequest` ます。
@@ -370,7 +370,7 @@ RecognitionTask.Cancel ();
 `RecognitionTask.Cancel`メモリとデバイスのプロセッサの両方を解放するためにユーザーが変換をキャンセルした場合は、を呼び出すことが重要です。
 
 > [!IMPORTANT]
-> `NSSpeechRecognitionUsageDescription`キーまたはキーを指定しないと、 `NSMicrophoneUsageDescription` `Info.plist` 音声認識またはマイク (ライブオーディオ) にアクセスしようとしたときにアプリが警告を表示せずに失敗する可能性が `var node = AudioEngine.InputNode;` あります ()。 詳細については、上記の「**使用方法の説明を指定する**」を参照してください。
+> `NSSpeechRecognitionUsageDescription`キーまたはキーを指定しないと、 `NSMicrophoneUsageDescription` `Info.plist` 音声認識またはマイク (ライブオーディオ) にアクセスしようとしたときにアプリが警告を表示せずに失敗する可能性が `var node = AudioEngine.InputNode;` あります ()。 詳細については、上記の「 **使用方法の説明を指定する** 」を参照してください。
 
 ## <a name="speech-recognition-limits"></a>音声認識の制限
 
@@ -390,7 +390,7 @@ IOS アプリで音声認識を使用する場合、Apple は透過的であり�
 
 - ユーザーの音声を録音する場合は、アプリのユーザーインターフェイスで記録が行われていることを明確に確認してください。 たとえば、アプリは "録音" サウンドを再生し、記録インジケーターを表示する場合があります。
 - パスワード、正常性データ、財務情報などの重要なユーザー情報には音声認識を使用しないでください。
-- 機能_する前_に認識結果を表示します。 これにより、アプリが何を行っているかについてのフィードバックだけでなく、ユーザーが作成時に認識エラーを処理できるようになります。
+- 機能 _する前_ に認識結果を表示します。 これにより、アプリが何を行っているかについてのフィードバックだけでなく、ユーザーが作成時に認識エラーを処理できるようになります。
 
 ## <a name="summary"></a>まとめ
 
@@ -398,4 +398,4 @@ IOS アプリで音声認識を使用する場合、Apple は透過的であり�
 
 ## <a name="related-links"></a>関連リンク
 
-- [SpeakToMe (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-speaktome)
+- [SpeakToMe (サンプル)](/samples/xamarin/ios-samples/ios10-speaktome)

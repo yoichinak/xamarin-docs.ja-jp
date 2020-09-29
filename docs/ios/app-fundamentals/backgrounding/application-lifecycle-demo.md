@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/17/2018
-ms.openlocfilehash: bb3fd0623d0361a42c573cf2b2bcb8249d32181c
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 08ef81f55ac1705224f2953197bfe582718b9cf7
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86933184"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91432510"
 ---
 # <a name="application-lifecycle-demo-for-xamarinios"></a>Xamarin. iOS のアプリケーションライフサイクルデモ
 
-この記事と[サンプルコード](https://docs.microsoft.com/samples/xamarin/ios-samples/lifecycledemo)では、iOS の4つのアプリケーション状態と、 `AppDelegate` 状態が変化したときにをアプリケーションに通知するためのメソッドの役割について説明します。 アプリが状態を変更するたびに、アプリケーションはコンソールに更新を出力します。
+この記事と [サンプルコード](/samples/xamarin/ios-samples/lifecycledemo) では、iOS の4つのアプリケーション状態と、 `AppDelegate` 状態が変化したときにをアプリケーションに通知するためのメソッドの役割について説明します。 アプリが状態を変更するたびに、アプリケーションはコンソールに更新を出力します。
 
 [![サンプル アプリ](application-lifecycle-demo-images/image3-sml.png)](application-lifecycle-demo-images/image3.png#lightbox)
 
@@ -51,9 +51,9 @@ ms.locfileid: "86933184"
     }
     ```
 
-1. シミュレーターまたはデバイスでアプリケーションを起動します。 `OnActivated`アプリが起動すると、が呼び出されます。 これで、アプリケーションは_アクティブ_状態になります。
-1. シミュレーターまたはデバイスの [ホーム] ボタンをクリックして、アプリケーションをバックグラウンドにします。 `OnResignActivation`と `DidEnterBackground` は、アプリがからに、状態に遷移するときに呼び出され `Active` `Inactive` `Backgrounded` ます。 バックグラウンドで実行するように設定されたアプリケーションコードがないため、アプリケーションはメモリ内で_中断_されていると見なされます。
-1. アプリに戻り、前面に戻ります。 `WillEnterForeground`と `OnActivated` は両方とも呼び出されます。
+1. シミュレーターまたはデバイスでアプリケーションを起動します。 `OnActivated` アプリが起動すると、が呼び出されます。 これで、アプリケーションは _アクティブ_ 状態になります。
+1. シミュレーターまたはデバイスの [ホーム] ボタンをクリックして、アプリケーションをバックグラウンドにします。 `OnResignActivation` と `DidEnterBackground` は、アプリがからに、状態に遷移するときに呼び出され `Active` `Inactive` `Backgrounded` ます。 バックグラウンドで実行するように設定されたアプリケーションコードがないため、アプリケーションはメモリ内で _中断_ されていると見なされます。
+1. アプリに戻り、前面に戻ります。 `WillEnterForeground` と `OnActivated` は両方とも呼び出されます。
 
     ![コンソールに印刷される状態の変更](application-lifecycle-demo-images/image4.png)
 
@@ -65,7 +65,7 @@ ms.locfileid: "86933184"
     });
     ```
 
-1. [**ホーム**] ボタンをクリックして、アプリケーションを背景に配置します。 次に、[**ホーム**] ボタンをダブルタップして、アプリケーションスイッチャーを開きます。 IPhone X で、画面の下部から上方向にスワイプします。
+1. [ **ホーム** ] ボタンをクリックして、アプリケーションを背景に配置します。 次に、[ **ホーム** ] ボタンをダブルタップして、アプリケーションスイッチャーを開きます。 IPhone X で、画面の下部から上方向にスワイプします。
 
     [![アプリケーションスイッチャー](application-lifecycle-demo-images/app-switcher-sml.png "アプリケーションスイッチャー")](application-lifecycle-demo-images/app-switcher.png#lightbox)
   
@@ -77,4 +77,4 @@ iOS によってアプリケーションが終了します。 `WillTerminate`ア
 
 ## <a name="related-links"></a>関連リンク
 
-- [LifecycleDemo (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/lifecycledemo)
+- [LifecycleDemo (サンプル)](/samples/xamarin/ios-samples/lifecycledemo)

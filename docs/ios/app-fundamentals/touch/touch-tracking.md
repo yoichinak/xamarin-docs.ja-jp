@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: b1ba548135cedd951d7f0a349f273b29182839d1
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: deda3a96272db42af17221e613822b858d57abb1
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86928680"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436341"
 ---
 # <a name="multi-touch-finger-tracking-in-xamarinios"></a>Xamarin のマルチタッチ指トラッキング
 
@@ -22,7 +22,7 @@ _このドキュメントでは、複数の指からタッチイベントを追�
 
 指が画面に触れると、iOS によって [`UITouch`](xref:UIKit.UITouch) その指のオブジェクトが作成されます。 このオブジェクトは、指が画面上で移動し、画面から離れると、オブジェクトが破棄されたときと同じ状態になります。 指を追跡するには、プログラムがこのオブジェクトを直接格納しないようにする必要があり `UITouch` ます。 代わりに、型のプロパティを使用して、 [`Handle`](xref:Foundation.NSObject.Handle) `IntPtr` これらのオブジェクトを一意に識別でき `UITouch` ます。
 
-ほとんどの場合、個々の指を追跡するプログラムは、タッチ追跡用のディクショナリを保持します。 IOS プログラムの場合、ディクショナリキーは特定の `Handle` 指を識別する値です。 ディクショナリ値は、アプリケーションによって異なります。 [FingerPaint](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-fingerpaint)プログラムでは、各指ストローク (タッチからリリースまで) が、その指で描画された直線を描画するために必要なすべての情報を含むオブジェクトに関連付けられています。 プログラムは、 `FingerPaintPolyline` この目的のための小さいクラスを定義します。
+ほとんどの場合、個々の指を追跡するプログラムは、タッチ追跡用のディクショナリを保持します。 IOS プログラムの場合、ディクショナリキーは特定の `Handle` 指を識別する値です。 ディクショナリ値は、アプリケーションによって異なります。 [FingerPaint](/samples/xamarin/ios-samples/applicationfundamentals-fingerpaint)プログラムでは、各指ストローク (タッチからリリースまで) が、その指で描画された直線を描画するために必要なすべての情報を含むオブジェクトに関連付けられています。 プログラムは、 `FingerPaintPolyline` この目的のための小さいクラスを定義します。
 
 ```csharp
 class FingerPaintPolyline
@@ -58,7 +58,7 @@ List<FingerPaintPolyline> completedPolylines = new List<FingerPaintPolyline>();
 
 この内のオブジェクト `List` は、描画された順序と同じ順序になります。
 
-`FingerPaintCanvasView`によって定義された5つのメソッドをオーバーライドし `View` ます。
+`FingerPaintCanvasView` によって定義された5つのメソッドをオーバーライドし `View` ます。
 
 - [`TouchesBegan`](xref:UIKit.UIResponder.TouchesBegan(Foundation.NSSet,UIKit.UIEvent))
 - [`TouchesMoved`](xref:UIKit.UIResponder.TouchesMoved(Foundation.NSSet,UIKit.UIEvent))
@@ -181,7 +181,7 @@ public override void TouchesCancelled(NSSet touches, UIEvent evt)
 }
 ```
 
-この処理によって、 [FingerPaint](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-fingerpaint)プログラムは個々の指を追跡し、画面に結果を描画できます。
+この処理によって、 [FingerPaint](/samples/xamarin/ios-samples/applicationfundamentals-fingerpaint) プログラムは個々の指を追跡し、画面に結果を描画できます。
 
 [![個々の指を追跡して結果を画面に描画する](touch-tracking-images/image01.png)](touch-tracking-images/image01.png#lightbox)
 
@@ -190,4 +190,4 @@ public override void TouchesCancelled(NSSet touches, UIEvent evt)
 ## <a name="related-links"></a>関連リンク
 
 - [同等の Xamarin Android ガイド](~/android/app-fundamentals/touch/touch-tracking.md)
-- [FingerPaint (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/applicationfundamentals-fingerpaint)
+- [FingerPaint (サンプル)](/samples/xamarin/ios-samples/applicationfundamentals-fingerpaint)

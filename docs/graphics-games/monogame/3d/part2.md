@@ -6,18 +6,18 @@ ms.assetid: 932AF5C2-884D-46E1-9455-4C359FD7C092
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: dfb03815f8642519cecf49ab7b626b9575821af1
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: ccec89253c58d7d43cb09f33777c253a2f0da56d
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937632"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431128"
 ---
 # <a name="drawing-3d-graphics-with-vertices-in-monogame"></a>モノゲームでの頂点を使用した3D グラフィックスの描画
 
 _モノゲームでは、頂点の配列を使用して、3D オブジェクトをポイント単位でどのようにレンダリングするかを定義できます。ユーザーは、頂点配列を利用して動的なジオメトリを作成し、特殊効果を実装し、カリングによってレンダリングの効率を向上させることができます。_
 
-[レンダリングモデルのガイド](~/graphics-games/monogame/3d/part1.md)に目を通しているユーザーは、モノゲームで3d モデルをレンダリングすることに慣れています。 クラスは、 `Model` ファイルで定義されているデータ (fbx など) を操作するときや、静的データを処理するときに、3d グラフィックスを効果的にレンダリングするための方法です。 一部のゲームでは、実行時に動的に3D ジオメトリを定義または操作する必要があります。 このような場合は、*頂点*の配列を使用して、ジオメトリを定義およびレンダリングできます。 頂点は、ジオメトリを定義するために使用される順序付けられたリストの一部である、3D 空間内のポイントの一般的な用語です。 通常、頂点は、一連の三角形を定義するように並べられています。
+[レンダリングモデルのガイド](~/graphics-games/monogame/3d/part1.md)に目を通しているユーザーは、モノゲームで3d モデルをレンダリングすることに慣れています。 クラスは、 `Model` ファイルで定義されているデータ (fbx など) を操作するときや、静的データを処理するときに、3d グラフィックスを効果的にレンダリングするための方法です。 一部のゲームでは、実行時に動的に3D ジオメトリを定義または操作する必要があります。 このような場合は、 *頂点* の配列を使用して、ジオメトリを定義およびレンダリングできます。 頂点は、ジオメトリを定義するために使用される順序付けられたリストの一部である、3D 空間内のポイントの一般的な用語です。 通常、頂点は、一連の三角形を定義するように並べられています。
 
 頂点を使用して3D オブジェクトを作成する方法を視覚化するには、次の球体を考えてみましょう。
 
@@ -42,13 +42,13 @@ _モノゲームでは、頂点の配列を使用して、3D オブジェクト�
 
 ## <a name="creating-a-project"></a>プロジェクトの作成
 
-まず、開始点として機能するプロジェクトをダウンロードします。 [ここで](https://docs.microsoft.com/samples/xamarin/mobile-samples/modelrenderingmg/)は、モデルプロジェクトを使用します。
+まず、開始点として機能するプロジェクトをダウンロードします。 [ここで](/samples/xamarin/mobile-samples/modelrenderingmg/)は、モデルプロジェクトを使用します。
 
 ダウンロードして解凍したら、プロジェクトを開いて実行します。 画面上に6つのロボットモデルが描画されていることが予想されます。
 
 ![画面上に描画されている6つのロボットモデル](part2-images/image4.png)
 
-このプロジェクトの終わりまでに、独自のカスタム頂点レンダリングをロボットと組み合わせます `Model` 。そのため、ロボットレンダリングコードは削除しません。 代わりに、 `Game1.Draw` 6 つのロボットの描画を削除するための呼び出しをクリアするだけです。 これを行うには、 **Game1.cs**ファイルを開き、 `Draw` メソッドを見つけます。 次のコードが含まれるように変更します。
+このプロジェクトの終わりまでに、独自のカスタム頂点レンダリングをロボットと組み合わせます `Model` 。そのため、ロボットレンダリングコードは削除しません。 代わりに、 `Game1.Draw` 6 つのロボットの描画を削除するための呼び出しをクリアするだけです。 これを行うには、 **Game1.cs** ファイルを開き、 `Draw` メソッドを見つけます。 次のコードが含まれるように変更します。
 
 ```csharp
 protected override void Draw(GameTime gameTime)
@@ -77,7 +77,7 @@ protected override void Draw(GameTime gameTime)
 
 - Position –すべての頂点型には、コンポーネントが含ま `Position` れます。 値は、 `Position` 頂点が3d 空間 (X、Y、Z) に配置される場所を定義します。
 - Color –頂点は、必要に応じて、 `Color` カスタムの色合いを実行する値を指定できます。
-- Normal –オブジェクトのサーフェイスがどのように接しているかを法線で定義します。 光源は、光を使用してオブジェクトをレンダリングする場合に必要です。これは、表面が接している方向が、受け取ったライトの量に影響するからです。 通常、法線は、長さが1の3D ベクトルである、通常は*単位ベクター*として指定されます。
+- Normal –オブジェクトのサーフェイスがどのように接しているかを法線で定義します。 光源は、光を使用してオブジェクトをレンダリングする場合に必要です。これは、表面が接している方向が、受け取ったライトの量に影響するからです。 通常、法線は、長さが1の3D ベクトルである、通常は *単位ベクター* として指定されます。
 - テクスチャ–テクスチャはテクスチャ座標を表します。つまり、テクスチャのどの部分を特定の頂点に表示するかを指定します。 テクスチャを使用して3D オブジェクトをレンダリングする場合は、テクスチャ値が必要です。 テクスチャ座標は正規化された座標で、値は 0 ~ 1 の範囲になります。 テクスチャ座標については、このガイドの後半で詳しく説明します。
 
 航空機はフロアとして機能します。レンダリングの実行時にテクスチャを適用したいので、型を使用して `VertexPositionTexture` 頂点を定義します。
@@ -207,7 +207,7 @@ protected override void Draw (GameTime gameTime)
 
 ### <a name="view-and-projection-properties"></a>ビューとプロジェクションのプロパティ
 
-`View`プロパティと `Projection` プロパティは、シーンを表示する方法を制御します。 このコードは、後でモデルレンダリングコードを再追加するときに変更します。 具体的には、 `View` カメラの位置と向きを制御し、 `Projection` (カメラのズームに使用できる)*ビューのフィールド*を制御します。
+`View`プロパティと `Projection` プロパティは、シーンを表示する方法を制御します。 このコードは、後でモデルレンダリングコードを再追加するときに変更します。 具体的には、 `View` カメラの位置と向きを制御し、 `Projection` (カメラのズームに使用できる) *ビューのフィールド* を制御します。
 
 ### <a name="techniques-and-passes"></a>手法と成功
 
@@ -219,7 +219,7 @@ protected override void Draw (GameTime gameTime)
 
 ### <a name="drawuserprimitives"></a>DrawUserPrimitives
 
-`DrawUserPrimitives`頂点がレンダリングされる場所です。 最初のパラメーターは、頂点の編成方法をメソッドに指示します。 各三角形が3つの順序付けられた頂点によって定義されるように、これらの要素を構成しました。そのため、値を使用し `PrimitiveType.TriangleList` ます。
+`DrawUserPrimitives` 頂点がレンダリングされる場所です。 最初のパラメーターは、頂点の編成方法をメソッドに指示します。 各三角形が3つの順序付けられた頂点によって定義されるように、これらの要素を構成しました。そのため、値を使用し `PrimitiveType.TriangleList` ます。
 
 2番目のパラメーターは、前に定義した頂点の配列です。
 
@@ -231,7 +231,7 @@ protected override void Draw (GameTime gameTime)
 
 この時点で、アプリは白い平面 (パースペクティブ) をレンダリングします。 次に、平面をレンダリングするときに使用するテクスチャをプロジェクトに追加します。
 
-簡単にするために、モノのゲームパイプラインツールを使用するのではなく、プロジェクトに .png を直接追加します。 これを行うには、[この .png ファイル](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/checkerboard.png?raw=true)をコンピューターにダウンロードします。 ダウンロードしたら、Solution pad で**コンテンツ**フォルダーを右クリックし、[**追加]>[ファイルの追加**] の順に選択します。 Android で作業している場合、このフォルダーは Android 固有のプロジェクトの**Assets**フォルダーの下に配置されます。 IOS の場合、このフォルダーは iOS プロジェクトのルートにあります。 **checkerboard.png**が保存されている場所に移動し、このファイルを選択します。 ファイルをディレクトリにコピーする場合に選択します。
+簡単にするために、モノのゲームパイプラインツールを使用するのではなく、プロジェクトに .png を直接追加します。 これを行うには、 [この .png ファイル](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/checkerboard.png?raw=true) をコンピューターにダウンロードします。 ダウンロードしたら、Solution pad で **コンテンツ** フォルダーを右クリックし、[ **追加]>[ファイルの追加** ] の順に選択します。 Android で作業している場合、このフォルダーは Android 固有のプロジェクトの **Assets** フォルダーの下に配置されます。 IOS の場合、このフォルダーは iOS プロジェクトのルートにあります。 **checkerboard.png**が保存されている場所に移動し、このファイルを選択します。 ファイルをディレクトリにコピーする場合に選択します。
 
 次に、インスタンスを作成するためのコードを追加します `Texture2D` 。 最初に、を `Texture2D` インスタンスのメンバーとして追加し `Game1` `BasicEffect` ます。
 
@@ -468,4 +468,4 @@ Vector3 cameraPosition = new Vector3(15, 10, 10);
 ## <a name="related-links"></a>関連リンク
 
 - [チェッカーボードファイル (サンプル)](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/checkerboard.png?raw=true)
-- [完成したプロジェクト (サンプル)](https://docs.microsoft.com/samples/xamarin/mobile-samples/modelsandvertsmg/)
+- [完成したプロジェクト (サンプル)](/samples/xamarin/mobile-samples/modelsandvertsmg/)

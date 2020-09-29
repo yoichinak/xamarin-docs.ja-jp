@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 093ac4a3242866413042de0b650433d4369ad35f
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 2a55991dacd6c35a2fe90cf90ad6f0e2208ff71f
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028250"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430453"
 ---
 # <a name="watchos-3-troubleshooting"></a>watchOS 3 のトラブルシューティング
 
@@ -34,7 +34,7 @@ _この記事では、Xamarin Apple Watch アプリで watchOS 3 を操作する
 
 既知の問題:
 
-- Apple Pay の新しい支払い処理に対して正しくない有効期限日または CW コードを入力した場合、**次**にヒットすると、実行中のプロセスがクラッシュします。
+- Apple Pay の新しい支払い処理に対して正しくない有効期限日または CW コードを入力した場合、 **次** にヒットすると、実行中のプロセスがクラッシュします。
 - 暗証番号 (PIN) を必要とするアプリ内 Apple Pay 購入がクラッシュする場合があります。
 
 ## <a name="auto-mac-unlock"></a>Mac の自動ロック解除
@@ -66,29 +66,29 @@ WatchOS 3 beta 2 (またはそれ以降) と macOS Sierra beta 2 (またはそ�
 
 ## <a name="nsurlconnection"></a>N・ Lconnection
 
-以前の TLS プロトコルを使用している `NSURLConnection` 接続はすべて失敗します。 すべての SSL/TLS 接続では、RC4 対称暗号が既定で無効になっています。 さらに、セキュリティで保護されたトランスポート API は SSLv3 をサポートしなくなりました。アプリは、できるだけ早く SHA-1 と3DES 暗号化の使用を停止することをお勧めします。
+`NSURLConnection`以前の TLS プロトコルを使用している接続はすべて失敗します。 すべての SSL/TLS 接続では、RC4 対称暗号が既定で無効になっています。 さらに、セキュリティで保護されたトランスポート API は SSLv3 をサポートしなくなりました。アプリは、できるだけ早く SHA-1 と3DES 暗号化の使用を停止することをお勧めします。
 
 WatchOS 3 では、SSL/TLS 接続のセキュリティは Apple によって厳密に適用されています。 影響を受けるサービスとアプリは、最新の TLS プロトコルバージョンを使用するように web サーバーを更新する必要があります。
 
 ## <a name="nsurlsession"></a>NSURLSession
 
-WatchOS 3 の時点では、`NSMutableURLRequest` クラスの `HTTPBodyStream` プロパティを未開封ストリームに設定する必要があります。これは `NSURLConnection` と `NSURLSession` がこの要件を厳密に適用するためです。
+WatchOS 3 の時点で、では、 `HTTPBodyStream` クラスのプロパティを未 `NSMutableURLRequest` 開封のストリームに設定し、この要件を厳密に適用する必要があり `NSURLConnection` `NSURLSession` ます。
 
 ## <a name="privacy"></a>プライバシー
 
 既知の問題:
 
-`https://` Url を使用する場合 `NSURLSession` と `NSURLConnection` は、TLS ハンドシェイク中に RC4 暗号スイートをサポートしなくなりました。 次のエラーコードのいずれかが生成される可能性があります。
+Url を使用する場合 `https://` `NSURLSession` 、とでは、 `NSURLConnection` TLS ハンドシェイク中に RC4 暗号スイートがサポートされなくなりました。 次のエラーコードのいずれかが生成される可能性があります。
 
-- **-1200 または-98** -`NSURLErrorSecurityConnectionFailed` と securetransport のエラーの場合。
+- **-1200 または-98** - `NSURLErrorSecurityConnectionFailed` および securetransport エラー。
 - **-1200 [3:-9824]** -Http の読み込みに失敗しました。
-- **-1200** - `NSURLConnection` 完了しましたが、エラーが発生しました。
+- **-1200**  -  `NSURLConnection`エラーで終了しました。
 
-WatchOS 3 では、SSL/TLS 接続のセキュリティは Apple によって厳密に適用されています。 影響を受けるサービスとアプリは、最新の TLS プロトコルバージョンを使用するように web サーバーを更新する必要があります。 詳細については、上記の[Nn1 接続](#nsurlconnection)を参照してください。
+WatchOS 3 では、SSL/TLS 接続のセキュリティは Apple によって厳密に適用されています。 影響を受けるサービスとアプリは、最新の TLS プロトコルバージョンを使用するように web サーバーを更新する必要があります。 詳細については、上記の [Nn1 接続](#nsurlconnection) を参照してください。
 
 ## <a name="snapshots"></a>スナップショット
 
-新しい `HandelBackgroundTask` API を採用していない WatchKit アプリは、watchOS 3 で定期的な更新プログラムを受信しなくなります。 
+新しい API を採用していない WatchKit アプリ `HandelBackgroundTask` は、watchOS 3 で定期的な更新プログラムを受信しなくなります。 
 
 ## <a name="watchkit"></a>WatchKit
 
@@ -96,5 +96,5 @@ SpriteKit と SceneKit のシーンは、アプリが watchOS Dock の背景に�
 
 ## <a name="related-links"></a>関連リンク
 
-- [watchOS のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+watchOS)
+- [watchOS のサンプル](/samples/browse/?products=xamarin&term=Xamarin.iOS%2bwatchOS)
 - [WatchOS 3 の新機能](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewInwatchOS/Articles/watchOS3.html#//apple_ref/doc/uid/TP40017085-SW1)

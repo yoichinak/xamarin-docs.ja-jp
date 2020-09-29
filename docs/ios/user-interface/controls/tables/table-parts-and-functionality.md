@@ -7,22 +7,22 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: 6002e5cc62dfe30c14f21943c690a5a1b15a0c12
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 55f471fe02618becbfc4a7ab8571d9690fe44843
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936592"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430588"
 ---
 # <a name="table-parts-and-functionality-in-xamarinios"></a>Xamarin. iOS のテーブルパーツと機能
 
 UITableView は、"グループ化" または "plain" スタイルを持つことができ、次の部分で構成されます。
 
 - [セクションヘッダー](#Section_Header)
-- [セル](#Cells)(または必要に応じて行)
+- [セル](#Cells) (または必要に応じて行)
 - [セクションフッター](#Section_Footer)
 - [Index](#Index)
-- [編集モード](#Edit_Features)(行の順序を変更するには ' スワイプする ' とドラッグハンドルを含む) 
+- [編集モード](#Edit_Features) (行の順序を変更するには ' スワイプする ' とドラッグハンドルを含む) 
 
 これらのスクリーンショットは、セクション行、ヘッダー、フッター、編集コントロール、およびインデックスがどのように表示されるかを示しています。
 
@@ -78,7 +78,7 @@ UITableView は、"グループ化" または "plain" スタイルを持つこ�
 
 - **Uitableview** –スクロールコンテナー内のセルのコレクションを含むビューです。 テーブルビューでは、通常、iPhone アプリで画面全体が使用されますが、iPad 上のより大きなビューの一部として存在する (または segue に表示される) ことがあります。 
 - **Uitableviewcell** –テーブルビュー内の1つのセル (または行) を表すビューです。 4つの組み込みのセル型があり、C# または iOS Designer の両方でカスタムセルを作成することができます。 
-- **Uitableviewsource** –テーブルを表示するために必要なすべてのメソッド (行数、各行のセルビューの返却、行の選択の処理、およびその他のオプション機能など) を提供する、非排他的抽象クラス。 UITableView を機能させるには、これをサブクラス化する*必要があり*ます。 
+- **Uitableviewsource** –テーブルを表示するために必要なすべてのメソッド (行数、各行のセルビューの返却、行の選択の処理、およびその他のオプション機能など) を提供する、非排他的抽象クラス。 UITableView を機能させるには、これをサブクラス化する  *必要があり* ます。 
 - **Nsindexpath** –テーブル内のセルの位置を一意に識別する行とセクションのプロパティが含まれています。 
 - **Uitableviewcontroller** –すぐに使用できる uiviewcontroller。 uitableview がビューとしてハードコーディングされ、TableView プロパティを介してアクセスできます。 
 - **Uiviewcontroller** –テーブルが画面全体を占有していない場合は、フレームセットが適切に設定された UIViewController に UITableView を追加できます。 
@@ -92,4 +92,4 @@ UITableViewSource は、次の2つのクラスを置き換えます。これら�
 
 ## <a name="related-links"></a>関連リンク
 
-- [WorkingWithTables (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithtables)
+- [WorkingWithTables (サンプル)](/samples/xamarin/ios-samples/workingwithtables)

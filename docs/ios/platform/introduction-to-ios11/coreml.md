@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/30/2017
-ms.openlocfilehash: 572ba31a1f19ab099765cc92bb1b389ba1115d1b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 875ae9c4712c974c663854f7790c51111eea4807
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84564694"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434502"
 ---
 # <a name="introduction-to-coreml-in-xamarinios"></a>Xamarin. iOS の CoreML の概要
 
@@ -27,15 +27,15 @@ CoreML は機械学習を iOS にもたらします。アプリはトレーニ�
 
 ## <a name="getting-started-with-coreml"></a>CoreML のはじめに
 
-次の手順では、iOS プロジェクトに CoreML を追加する方法について説明します。 実際の例については、 [Mars Habitat Pricer サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-marshabitatcoremltimer/)を参照してください。
+次の手順では、iOS プロジェクトに CoreML を追加する方法について説明します。 実際の例については、 [Mars Habitat Pricer サンプル](/samples/xamarin/ios-samples/ios12-marshabitatcoremltimer/) を参照してください。
 
 ![Mars Habitat Price 予測のサンプルのスクリーンショット](coreml-images/marspricer-heading.png)
 
 ### <a name="1-add-the-coreml-model-to-the-project"></a>1. CoreML モデルをプロジェクトに追加します。
 
-CoreML モデル ( **mlmodel**拡張子を持つファイル) をプロジェクトの**Resources**ディレクトリに追加します。 
+CoreML モデル ( **mlmodel** 拡張子を持つファイル) をプロジェクトの **Resources** ディレクトリに追加します。 
 
-モデルファイルのプロパティでは、その**ビルドアクション**は**Coremlmodel**に設定されます。 これは、アプリケーションのビルド時に、このファイルが**mlmodelc**ファイルにコンパイルされることを意味します。
+モデルファイルのプロパティでは、その **ビルドアクション** は **Coremlmodel**に設定されます。 これは、アプリケーションのビルド時に、このファイルが **mlmodelc** ファイルにコンパイルされることを意味します。
 
 ### <a name="2-load-the-model"></a>2. モデルを読み込む
 
@@ -92,13 +92,13 @@ var result = outFeatures.GetFeatureValue("theResult").DoubleValue; // eg. 622702
 
 CoreML をビジョンフレームワークと組み合わせて使用して、図形の認識、オブジェクトの識別、その他のタスクなどのイメージに対する操作を実行することもできます。
 
-次の手順では、 [Coremlビジョンのサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlvision)で coreml とビジョンを一緒に使用する方法について説明します。 このサンプルでは、ビジョンフレームワークの[四角形認識](~/ios/platform/introduction-to-ios11/vision.md#rectangles)と_MNINSTClassifier_ coreml モデルを組み合わせて、写真内の手書き数字を識別します。
+次の手順では、 [Coremlビジョンのサンプル](/samples/xamarin/ios-samples/ios11-coremlvision)で coreml とビジョンを一緒に使用する方法について説明します。 このサンプルでは、ビジョンフレームワークの [四角形認識](~/ios/platform/introduction-to-ios11/vision.md#rectangles) と _MNINSTClassifier_ coreml モデルを組み合わせて、写真内の手書き数字を識別します。
 
 ![数値3の画像認識](coreml-images/vision3.png) ![番号5の画像認識](coreml-images/vision5.png)
 
 ### <a name="1-create-a-vision-coreml-model"></a>1. ビジョン CoreML モデルを作成する
 
-CoreML モデル_MNISTClassifier_が読み込まれ、にラップされ `VNCoreMLModel` ます。これにより、モデルをビジョンタスクで使用できるようになります。 このコードでは、イメージ内の四角形を検索するために最初に2つのビジョン要求を作成し、次に CoreML モデルで四角形を処理します。
+CoreML モデル _MNISTClassifier_ が読み込まれ、にラップされ `VNCoreMLModel` ます。これにより、モデルをビジョンタスクで使用できるようになります。 このコードでは、イメージ内の四角形を検索するために最初に2つのビジョン要求を作成し、次に CoreML モデルで四角形を処理します。
 
 ```csharp
 // Load the ML model
@@ -171,17 +171,17 @@ void HandleClassification(VNRequest request, NSError error){
 
 次の3つの CoreML サンプルを試すことができます。
 
-- [Mars Habitat Price の予測サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-marshabitatcoremltimer/)には、単純な数値入力と出力があります。
+- [Mars Habitat Price の予測サンプル](/samples/xamarin/ios-samples/ios12-marshabitatcoremltimer/)には、単純な数値入力と出力があります。
 
-- この[ビジョン & coreml サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlvision)は image パラメーターを受け取り、ビジョンフレームワークを使用してイメージ内の四角形領域を識別します。これは、1桁の数字を認識する coreml モデルに渡されます。
+- この [ビジョン & coreml サンプル](/samples/xamarin/ios-samples/ios11-coremlvision) は image パラメーターを受け取り、ビジョンフレームワークを使用してイメージ内の四角形領域を識別します。これは、1桁の数字を認識する coreml モデルに渡されます。
 
-- 最後に、 [Coreml イメージ認識サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlimagerecognition)では、coreml を使用して写真内の機能を識別します。 既定では、小さい**SqueezeNet**モデル (5 mb) を使用しますが、大規模な**VGG16**モデル (553mb) をダウンロードして組み込むことができるように記述されています。 詳細については、[サンプルの readme](https://github.com/xamarin/ios-samples/blob/master/ios11/CoreMLImageRecognition/CoreMLImageRecognition/README.md)を参照してください。
+- 最後に、 [Coreml イメージ認識サンプル](/samples/xamarin/ios-samples/ios11-coremlimagerecognition) では、coreml を使用して写真内の機能を識別します。 既定では、小さい **SqueezeNet** モデル (5 mb) を使用しますが、大規模な **VGG16** モデル (553mb) をダウンロードして組み込むことができるように記述されています。 詳細については、 [サンプルの readme](https://github.com/xamarin/ios-samples/blob/master/ios11/CoreMLImageRecognition/CoreMLImageRecognition/README.md)を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 
 - [Machine Learning (Apple)](https://developer.apple.com/machine-learning/)
-- [CoreML の例 (Mars Habitat) (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-marshabitatcoremltimer/)
-- [CoreML とビジョン (数値認識) (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlvision)
-- [CoreML イメージ認識 (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlimagerecognition)
-- [CoreML と Azure Custom Vision (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-coremlazuremodel)
+- [CoreML の例 (Mars Habitat) (サンプル)](/samples/xamarin/ios-samples/ios12-marshabitatcoremltimer/)
+- [CoreML とビジョン (数値認識) (サンプル)](/samples/xamarin/ios-samples/ios11-coremlvision)
+- [CoreML イメージ認識 (サンプル)](/samples/xamarin/ios-samples/ios11-coremlimagerecognition)
+- [CoreML と Azure Custom Vision (サンプル)](/samples/xamarin/ios-samples/ios11-coremlazuremodel)
 - [CoreML (WWDC) の概要 (ビデオ)](https://developer.apple.com/videos/play/wwdc2017/703/)

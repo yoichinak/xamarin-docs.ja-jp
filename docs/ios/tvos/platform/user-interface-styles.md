@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: e779b874cda016a0cd6cc0444ff42a761ee7483e
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 793a82b7bb88f3e0c0a233c8c18c2d90f741b137
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86934681"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434768"
 ---
 # <a name="tvos-user-interface-styles-in-xamarin"></a>Xamarin の tvOS ユーザーインターフェイススタイル
 
@@ -47,7 +47,7 @@ tvOS 10 では、ユーザーの設定に基づいて、すべての組み込み
 明るいテーマとダークテーマのサポートをオプトインするには、次の手順を実行します。
 
 1. **ソリューション エクスプローラー**で `Info.plist` ファイルをダブルクリックして、編集用に開きます。
-2. (エディターの下部から)**ソース**ビューを選択します。
+2. (エディターの下部から) **ソース** ビューを選択します。
 3. 新しいキーを追加し、次のように呼び出し `UIUserInterfaceStyle` ます。
 
     [![UIUserInterfaceStyle キー](user-interface-styles-images/theme03.png)](user-interface-styles-images/theme03.png#lightbox)
@@ -59,8 +59,8 @@ tvOS 10 では、ユーザーの設定に基づいて、すべての組み込み
 このキーには、次の3つの値を指定でき `UIUserInterfaceStyle` ます。
 
 - **Light** -tvOS アプリの UI が常にライトテーマを使用するように強制します。
-- **ダーク**-tvOS アプリの UI が常にダークテーマを使用するように強制します。
-- **自動**-[設定] のユーザーの設定に基づいて、ライトとダークのテーマを切り替えます。 これは推奨される設定です。
+- **ダーク** -tvOS アプリの UI が常にダークテーマを使用するように強制します。
+- **自動** -[設定] のユーザーの設定に基づいて、ライトとダークのテーマを切り替えます。 これは推奨される設定です。
 
 <a name="UIKit-Theme-Support"></a>
 
@@ -81,8 +81,8 @@ TvOS アプリが標準の組み込みベースのコントロールを使用し
 
 TvOS 10 アプリで明るいテーマとダークテーマをサポートするために、Apple は2つの新しいぼかし効果を追加しました。 これらの新しい効果は、次のようにユーザーが選択した UI テーマに基づいてぼかしを自動的に調整します。
 
-- `UIBlurEffectStyleRegular`-明るいテーマでは薄いぼかし、ダークテーマではダークぼかしを使用します。
-- `UIBlurEffectStyleProminent`-明るいテーマでは薄いぼかし、ダークテーマでは濃いぼかしを使用します。
+- `UIBlurEffectStyleRegular` -明るいテーマでは薄いぼかし、ダークテーマではダークぼかしを使用します。
+- `UIBlurEffectStyleProminent` -明るいテーマでは薄いぼかし、ダークテーマでは濃いぼかしを使用します。
 
 <a name="Working-with-Trait-Collections"></a>
 
@@ -91,8 +91,8 @@ TvOS 10 アプリで明るいテーマとダークテーマをサポートする
 クラスの新しいプロパティを使用して、 `UserInterfaceStyle` `UITraitCollection` 現在選択されている UI テーマを取得し、 `UIUserInterfaceStyle` 次のいずれかの値の列挙体にすることができます。
 
 - **Light** -明るい UI テーマが選択されています。
-- **ダーク**-暗い UI テーマが選択されています。
-- **未指定**-ビューはまだ画面に表示されていないため、現在の UI テーマは不明です。
+- **ダーク** -暗い UI テーマが選択されています。
+- **未指定** -ビューはまだ画面に表示されていないため、現在の UI テーマは不明です。
 
 さらに、特徴コレクションには tvOS 10 の次の特徴があります。
 
@@ -180,7 +180,7 @@ TvOS 10 では、特徴コレクションに応答するようにアプリのス
 
 Interface Builder で tvOS Storyboard を編集するときに、Apple は次の機能を追加しました。
 
-- 開発者は、**属性インスペクター**の UI テーマに基づいて、さまざまな種類のユーザーインターフェイス要素を指定できます。
+- 開発者は、 **属性インスペクター**の UI テーマに基づいて、さまざまな種類のユーザーインターフェイス要素を指定できます。
 
   - いくつかのプロパティの **+** 横に、UI テーマ固有のバージョンを追加するためにクリックすることができるようになりました。
 
@@ -199,7 +199,7 @@ Interface Builder で tvOS Storyboard を編集するときに、Apple は次の
 
     [![Interface Builder に表示されるテーマ](user-interface-styles-images/theme11.png)](user-interface-styles-images/theme11.png#lightbox)
 
-さらに、tvOS シミュレーターには、開発者が tvOS アプリをデバッグするときに、明るいテーマと暗いテーマをすばやく切り替えることができるショートカットキーが追加されました。 ライトとダークを切り替えるには、**コマンドライン**のキーボードシーケンスを使用します。
+さらに、tvOS シミュレーターには、開発者が tvOS アプリをデバッグするときに、明るいテーマと暗いテーマをすばやく切り替えることができるショートカットキーが追加されました。 ライトとダークを切り替えるには、 **コマンドライン** のキーボードシーケンスを使用します。
 
 <a name="Summary"></a>
 
@@ -209,5 +209,5 @@ Interface Builder で tvOS Storyboard を編集するときに、Apple は次の
 
 ## <a name="related-links"></a>関連リンク
 
-- [tvOS のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [tvOS のサンプル](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [TvOS 10 の新機能](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS10.html#//apple_ref/doc/uid/TP40017259-SW1)

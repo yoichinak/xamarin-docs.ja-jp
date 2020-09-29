@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 0af77464f849971050246a1676f89fe4702737e8
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 6fe6c254daf23f5f3d2fb267f6ba4986b94bcbd7
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997294"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431746"
 ---
 # <a name="contacts-and-contactsui-in-xamarinios"></a>ContactsUI の Contacts と連絡先
 
@@ -22,7 +22,7 @@ IOS 9 の導入により、Apple は2つの新しいフレームワークをリ�
 
 2つの新しいフレームワークには、次の機能が含まれています。
 
-- [**連絡先**](#contacts)-ユーザーの連絡先一覧データへのアクセスを提供します。
+- [**連絡先**](#contacts) -ユーザーの連絡先一覧データへのアクセスを提供します。
   ほとんどのアプリは読み取り専用アクセスのみを必要とするため、このフレームワークは、スレッドセーフで読み取り専用アクセスに対して最適化されています。
 
 - [**ContactsUI**](#contactsui) -ios デバイスで連絡先を表示、編集、選択、および作成するための XAMARIN の UI 要素を提供します。
@@ -44,11 +44,11 @@ IOS 9 の導入により、Apple は2つの新しいフレームワークをリ�
 
 ### <a name="contact-objects"></a>Contact オブジェクト
 
-クラスは、 `CNContact` 連絡先のプロパティ (名前、住所、電話番号など) に対して、スレッドセーフで読み取り専用のアクセスを提供します。 `CNContact`やなどの関数には、 `NSDictionary` 複数の読み取り専用のプロパティのコレクション (住所や電話番号など) が含まれています。
+クラスは、 `CNContact` 連絡先のプロパティ (名前、住所、電話番号など) に対して、スレッドセーフで読み取り専用のアクセスを提供します。 `CNContact` やなどの関数には、 `NSDictionary` 複数の読み取り専用のプロパティのコレクション (住所や電話番号など) が含まれています。
 
 [![Contact オブジェクトの概要](contacts-images/contactobjects.png)](contacts-images/contactobjects.png#lightbox)
 
-複数の値 (電子メールアドレスや電話番号など) を持つことができるプロパティについては、オブジェクトの配列として表現され `NSLabeledValue` ます。 `NSLabeledValue`は、ラベルと値の読み取り専用セットで構成されるスレッドセーフなタプルで、ラベルはユーザーの値を定義します (自宅や勤務先の電子メールなど)。 連絡先フレームワークには、アプリで使用できる定義済みのラベル (および静的クラスを使用) が用意されてい `CNLabelKey` `CNLabelPhoneNumberKey` ます。また、ニーズに合わせてカスタムラベルを定義することもできます。
+複数の値 (電子メールアドレスや電話番号など) を持つことができるプロパティについては、オブジェクトの配列として表現され `NSLabeledValue` ます。 `NSLabeledValue` は、ラベルと値の読み取り専用セットで構成されるスレッドセーフなタプルで、ラベルはユーザーの値を定義します (自宅や勤務先の電子メールなど)。 連絡先フレームワークには、アプリで使用できる定義済みのラベル (および静的クラスを使用) が用意されてい `CNLabelKey` `CNLabelPhoneNumberKey` ます。また、ニーズに合わせてカスタムラベルを定義することもできます。
 
 既存の連絡先の値を調整する必要がある (または新しい連絡先を作成する) Xamarin iOS アプリの場合は、 `NSMutableContact` クラスとそのサブクラス (など) のバージョンを使用し `CNMutablePostalAddress` ます。
 
@@ -143,7 +143,7 @@ var predicate = CNContact.GetPredicateForContacts("Appleseed");
 > [!IMPORTANT]
 > 汎用述語と複合述語は、Contacts フレームワークではサポートされていません。
 
-たとえば、アドレス帳の**GivenName**および**FamilyName**プロパティのみにフェッチを制限するには、次のコードを使用します。
+たとえば、アドレス帳の **GivenName** および **FamilyName** プロパティのみにフェッチを制限するには、次のコードを使用します。
 
 ```csharp
 // Define fields to be searched
@@ -159,7 +159,7 @@ NSError error;
 var contacts = store.GetUnifiedContacts(predicate, fetchKeys, out error);
 ```
 
-上記の「 **Contacts オブジェクト**」セクションで作成したサンプルの後でこのコードを実行すると、先ほど作成した "John Appleseed" 連絡先が返されます。
+上記の「 **Contacts オブジェクト** 」セクションで作成したサンプルの後でこのコードを実行すると、先ほど作成した "John Appleseed" 連絡先が返されます。
 
 ### <a name="contact-access-privacy"></a>連絡先アクセスのプライバシー
 
@@ -191,7 +191,7 @@ if (!contact.IsKeyAvailable(CNContactOption.PostalAddresses)) {
 
 ### <a name="unified-contacts"></a>ユニファイド連絡先
 
-ユーザーは、連絡先データベース (iCloud、Facebook、Google Mail など) の1人に対して、異なる連絡先情報のソースを持っている場合があります。 IOS と OS X のアプリでは、この連絡先情報は自動的にリンクされ、単一の統合された_連絡先_としてユーザーに表示されます。
+ユーザーは、連絡先データベース (iCloud、Facebook、Google Mail など) の1人に対して、異なる連絡先情報のソースを持っている場合があります。 IOS と OS X のアプリでは、この連絡先情報は自動的にリンクされ、単一の統合された _連絡先_としてユーザーに表示されます。
 
 [![統合連絡先の概要](contacts-images/unified01.png)](contacts-images/unified01.png#lightbox)
 
@@ -256,11 +256,11 @@ if (store.ExecuteSaveRequest(saveRequest, out error)) {
 
 ### <a name="containers-and-groups"></a>コンテナーとグループ
 
-ユーザーの連絡先は、ユーザーのデバイスにローカルに存在することも、1つまたは複数のサーバーアカウント (Facebook や Google など) からデバイスに同期された連絡先として使用することもできます。 連絡先の各プールには独自の_コンテナー_があり、特定の連絡先は1つのコンテナーにのみ存在できます。
+ユーザーの連絡先は、ユーザーのデバイスにローカルに存在することも、1つまたは複数のサーバーアカウント (Facebook や Google など) からデバイスに同期された連絡先として使用することもできます。 連絡先の各プールには独自の _コンテナー_ があり、特定の連絡先は1つのコンテナーにのみ存在できます。
 
 [![コンテナーとグループの概要](contacts-images/containers01.png)](contacts-images/containers01.png#lightbox)
 
-一部のコンテナーでは、連絡先を1つ以上の_グループ_または_サブグループ_に配置できます。 この動作は、特定のコンテナーのバッキングストアに依存します。 たとえば、iCloud に含まれるコンテナーは1つだけですが、多数のグループを持つことができます (ただし、サブグループは含まれません)。 一方、Microsoft Exchange では、グループはサポートされていませんが、複数のコンテナー (Exchange フォルダーごとに1つ) を持つことができます。
+一部のコンテナーでは、連絡先を1つ以上の _グループ_ または _サブグループ_に配置できます。 この動作は、特定のコンテナーのバッキングストアに依存します。 たとえば、iCloud に含まれるコンテナーは1つだけですが、多数のグループを持つことができます (ただし、サブグループは含まれません)。 一方、Microsoft Exchange では、グループはサポートされていませんが、複数のコンテナー (Exchange フォルダーごとに1つ) を持つことができます。
 
 [![コンテナーとグループ内の重複](contacts-images/containers02.png)](contacts-images/containers02.png#lightbox)
 
@@ -359,7 +359,7 @@ PresentViewController(view, true, null);
 
 ## <a name="related-links"></a>関連リンク
 
-- [連絡先のサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/contacts/)
+- [連絡先のサンプル](/samples/xamarin/ios-samples/contacts/)
 - [IOS 9 の新機能](https://developer.apple.com/library/content/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
 - [Contacts フレームワークリファレンス](https://developer.apple.com/documentation/contacts?language=objc)
 - [ContactsUI Framework リファレンス](https://developer.apple.com/documentation/contactsui?language=objc)

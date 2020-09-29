@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2017
-ms.openlocfilehash: d4fe04412eb4fb456bc49d71c1e5fe87df5f9e76
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 207aac33101615a0a103176cd2bf5dd061e0d264
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939642"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430421"
 ---
 # <a name="enhanced-user-notifications-in-xamarinios"></a>Xamarin でのユーザー通知の強化
 
@@ -28,9 +28,9 @@ IOS 10 の新機能であるユーザー通知フレームワークを使用す�
 
 このフレームワークには、アプリがユーザーに通知を配信するための次の方法が用意されています。
 
-- **視覚的な警告**-通知が画面の上部からバナーとしてロールダウンされます。
+- **視覚的な警告** -通知が画面の上部からバナーとしてロールダウンされます。
 - **Sound と Vibrations** -通知に関連付けることができます。
-- **アプリアイコン**のバッジ: アプリのアイコンに、未読の電子メールメッセージの数など、新しいコンテンツが利用可能であることを示すバッジが表示されます。
+- **アプリアイコン** のバッジ: アプリのアイコンに、未読の電子メールメッセージの数など、新しいコンテンツが利用可能であることを示すバッジが表示されます。
 
 さらに、ユーザーの現在のコンテキストによっては、通知が表示されるさまざまな方法があります。
 
@@ -40,8 +40,8 @@ IOS 10 の新機能であるユーザー通知フレームワークを使用す�
 
 Xamarin iOS アプリには、次の2種類のユーザー通知を送信できます。
 
-- **ローカル通知**-これらは、ユーザーのデバイスにローカルにインストールされたアプリによって送信されます。
-- **リモート通知**-リモートサーバーから送信され、ユーザーに表示されるか、アプリのコンテンツのバックグラウンド更新をトリガーします。
+- **ローカル通知** -これらは、ユーザーのデバイスにローカルにインストールされたアプリによって送信されます。
+- **リモート通知** -リモートサーバーから送信され、ユーザーに表示されるか、アプリのコンテンツのバックグラウンド更新をトリガーします。
 
 ### <a name="about-local-notifications"></a>ローカル通知について
 
@@ -58,7 +58,7 @@ IOS アプリが送信できるローカル通知には、次の機能と属性�
 - リマインダーアラート
 - 場所を認識するトリガー
 
-詳細については、Apple の[ローカルおよびリモート通知のプログラミングガイド](https://developer.apple.com/documentation/usernotifications)に関するドキュメントを参照してください。
+詳細については、Apple の [ローカルおよびリモート通知のプログラミングガイド](https://developer.apple.com/documentation/usernotifications) に関するドキュメントを参照してください。
 
 ### <a name="about-remote-notifications"></a>リモート通知について
 
@@ -77,10 +77,10 @@ IOS アプリが送信できるリモート通知には、次の機能と属性�
 
 IOS アプリで使用可能なリモート通知には、次の2種類があります。
 
-- **ユーザー**への接続-デバイス上のユーザーに表示されます。
-- **サイレント更新**-バックグラウンドで iOS アプリのコンテンツを更新するためのメカニズムが用意されています。 サイレント更新を受信すると、アプリはリモートサーバーに接続して最新のコンテンツを取得することができます。
+- **ユーザー** への接続-デバイス上のユーザーに表示されます。
+- **サイレント更新** -バックグラウンドで iOS アプリのコンテンツを更新するためのメカニズムが用意されています。 サイレント更新を受信すると、アプリはリモートサーバーに接続して最新のコンテンツを取得することができます。
 
-詳細については、Apple の[ローカルおよびリモート通知のプログラミングガイド](https://developer.apple.com/documentation/usernotifications)に関するドキュメントを参照してください。
+詳細については、Apple の [ローカルおよびリモート通知のプログラミングガイド](https://developer.apple.com/documentation/usernotifications) に関するドキュメントを参照してください。
 
 ### <a name="about-the-existing-notifications-api"></a>既存の通知 API について
 
@@ -113,7 +113,7 @@ IOS 10 では、Apple は、前述の既存の方法を置き換える新しい�
 - **tvOS** -ローカル通知とリモート通知のアプリアイコンをバッジする機能を追加します。
 - **watchOS** -ユーザーのペアリングされた iOS デバイスから Apple Watch に通知を転送する機能を追加します。 watch アプリは、ウォッチ自体でローカル通知を直接行うことができます。
 
-詳細については、Apple の[Usernotifications フレームワークリファレンス](https://developer.apple.com/reference/usernotifications)と[UserNotificationsUI](https://developer.apple.com/reference/usernotificationsui)のドキュメントを参照してください。
+詳細については、Apple の [Usernotifications フレームワークリファレンス](https://developer.apple.com/reference/usernotifications) と [UserNotificationsUI](https://developer.apple.com/reference/usernotificationsui) のドキュメントを参照してください。
 
 ## <a name="preparing-for-notification-delivery"></a>通知配信の準備
 
@@ -144,7 +144,7 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
 }
 ```
 
-さらに、ユーザーは、デバイスの**設定**アプリを使用していつでも、いつでもアプリの通知特権をいつでも変更できます。 アプリは、次のコードを使用して通知を提示する前に、ユーザーの要求された通知特権を確認する必要があります。
+さらに、ユーザーは、デバイスの **設定** アプリを使用していつでも、いつでもアプリの通知特権をいつでも変更できます。 アプリは、次のコードを使用して通知を提示する前に、ユーザーの要求された通知特権を確認する必要があります。
 
 ```csharp
 // Get current notification settings
@@ -186,7 +186,7 @@ IOS 10 の新機能として、開発者は、どの環境プッシュ通知が�
 
 ### <a name="registering-for-remote-notifications"></a>リモート通知の登録
 
-アプリがリモート通知を送受信する場合でも、既存の API を使用して_トークン登録_を行う必要があり `UIApplication` ます。 この登録を行うには、デバイスが APNs にライブネットワーク接続アクセスする必要があります。これにより、アプリに送信される必要なトークンが生成されます。 次に、アプリはこのトークンを開発者のサーバー側アプリに転送して、リモート通知を登録する必要があります。
+アプリがリモート通知を送受信する場合でも、既存の API を使用して _トークン登録_ を行う必要があり `UIApplication` ます。 この登録を行うには、デバイスが APNs にライブネットワーク接続アクセスする必要があります。これにより、アプリに送信される必要なトークンが生成されます。 次に、アプリはこのトークンを開発者のサーバー側アプリに転送して、リモート通知を登録する必要があります。
 
 [![トークン登録の概要](enhanced-user-notifications-images/token01.png)](enhanced-user-notifications-images/token01.png#lightbox)
 
@@ -202,7 +202,7 @@ UIApplication.SharedApplication.RegisterForRemoteNotifications ();
 
 このトークンは、通知と、通知を開いたり応答したりするために使用されるアプリを相互に結び付けるキーとして機能します。
 
-詳細については、Apple の[ローカルおよびリモート通知のプログラミングガイド](https://developer.apple.com/documentation/usernotifications)に関するドキュメントを参照してください。
+詳細については、Apple の [ローカルおよびリモート通知のプログラミングガイド](https://developer.apple.com/documentation/usernotifications) に関するドキュメントを参照してください。
 
 ## <a name="notification-delivery"></a>通知配信
 
@@ -210,7 +210,7 @@ UIApplication.SharedApplication.RegisterForRemoteNotifications ();
 
 ### <a name="providing-notification-content"></a>通知コンテンツの提供
 
-IOS 10 を初めて使用する場合、すべての通知には、通知コンテンツの**本文**と共に常に表示される**タイトル**と**サブタイトル**の両方が含まれます。 また、新しいは、通知コンテンツに**メディア添付ファイル**を追加する機能です。
+IOS 10 を初めて使用する場合、すべての通知には、通知コンテンツの**本文**と共に常に表示される**タイトル**と**サブタイトル**の両方が含まれます。 また、新しいは、通知コンテンツに **メディア添付ファイル** を追加する機能です。
 
 ローカル通知の内容を作成するには、次のコードを使用します。
 
@@ -239,12 +239,12 @@ content.Badge = 1;
 
 ### <a name="scheduling-when-a-notification-is-sent"></a>通知が送信されたときのスケジュール
 
-通知の内容を作成したら、*トリガー*を設定してユーザーに通知を表示するタイミングをアプリでスケジュールする必要があります。 iOS 10 には、次の4種類のトリガーがあります。
+通知の内容を作成したら、 *トリガー*を設定してユーザーに通知を表示するタイミングをアプリでスケジュールする必要があります。 iOS 10 には、次の4種類のトリガーがあります。
 
-- **プッシュ通知**-リモート通知でのみ使用され、APNs がデバイスで実行されているアプリに通知パッケージを送信するときにトリガーされます。
-- [**時間間隔**]-現在から開始し、将来のある時点を終了するまでの時間間隔からローカル通知をスケジュールできます。 たとえば、`var trigger =  UNTimeIntervalNotificationTrigger.CreateTrigger (5, false);` のように指定します。
-- **カレンダー日付**-ローカル通知を特定の日時にスケジュールすることを許可します。
-- **場所ベース**-iOS デバイスが特定の地理的な場所に出入りする場合、または Bluetooth ビーコンに隣接している場合に、ローカル通知をスケジュールすることを許可します。
+- **プッシュ通知** -リモート通知でのみ使用され、APNs がデバイスで実行されているアプリに通知パッケージを送信するときにトリガーされます。
+- [**時間間隔**]-現在から開始し、将来のある時点を終了するまでの時間間隔からローカル通知をスケジュールできます。 たとえば、 `var trigger =  UNTimeIntervalNotificationTrigger.CreateTrigger (5, false);` と記述します。
+- **カレンダー日付** -ローカル通知を特定の日時にスケジュールすることを許可します。
+- **場所ベース** -iOS デバイスが特定の地理的な場所に出入りする場合、または Bluetooth ビーコンに隣接している場合に、ローカル通知をスケジュールすることを許可します。
 
 ローカル通知の準備ができたら、アプリケーションはオブジェクトのメソッドを呼び出して、 `Add` `UNUserNotificationCenter` ユーザーに表示をスケジュールする必要があります。 リモート通知の場合、サーバー側アプリは APNs に通知ペイロードを送信します。これにより、パケットがユーザーのデバイスに送信されます。
 
@@ -336,7 +336,7 @@ public override bool FinishedLaunching (UIApplication application, NSDictionary 
 
 IOS 10 の新機能である通知管理を使用すると、保留中と配信済みの両方の通知にアクセスでき、これらの通知を削除、更新、または昇格する機能が追加されます。
 
-通知管理の重要な部分は、システムで作成およびスケジュールされたときに通知に割り当てられた_要求識別子_です。 リモート通知の場合は、HTTP 要求ヘッダーの新しいフィールドを通じて割り当てられ `apps-collapse-id` ます。
+通知管理の重要な部分は、システムで作成およびスケジュールされたときに通知に割り当てられた _要求識別子_ です。 リモート通知の場合は、HTTP 要求ヘッダーの新しいフィールドを通じて割り当てられ `apps-collapse-id` ます。
 
 要求 Id は、アプリで通知管理を実行する通知を選択するために使用されます。
 
@@ -394,9 +394,9 @@ IOS 10 では、ユーザーに配信される通知は静的なものではな�
 
 IOS アプリが応答できるアクションには、次の3種類があります。
 
-- **既定のアクション**-ユーザーが通知をタップしてアプリを開き、指定された通知の詳細を表示します。
-- **カスタムアクション**-これらは iOS 8 で追加されたものであり、ユーザーがアプリを起動しなくても、通知から直接カスタムタスクを実行することができます。 これらは、カスタマイズ可能なタイトルを持つボタンのリストとして、またはバックグラウンドで (アプリが要求を処理するための短い時間が与えられている) バックグラウンドで実行できるテキスト入力フィールドとして、またはフォアグラウンド (アプリが要求を処理するためにフォアグラウンドで起動される) のいずれかとして表示できます。 カスタムアクションは、iOS と watchOS の両方で使用できます。
-- **アクションを無視**する-このアクションは、ユーザーが特定の通知を終了したときにアプリに送信されます。
+- **既定のアクション** -ユーザーが通知をタップしてアプリを開き、指定された通知の詳細を表示します。
+- **カスタムアクション** -これらは iOS 8 で追加されたものであり、ユーザーがアプリを起動しなくても、通知から直接カスタムタスクを実行することができます。 これらは、カスタマイズ可能なタイトルを持つボタンのリストとして、またはバックグラウンドで (アプリが要求を処理するための短い時間が与えられている) バックグラウンドで実行できるテキスト入力フィールドとして、またはフォアグラウンド (アプリが要求を処理するためにフォアグラウンドで起動される) のいずれかとして表示できます。 カスタムアクションは、iOS と watchOS の両方で使用できます。
+- **アクションを無視** する-このアクションは、ユーザーが特定の通知を終了したときにアプリに送信されます。
 
 ### <a name="creating-custom-actions"></a>カスタムアクションの作成
 
@@ -513,11 +513,11 @@ namespace MonkeyNotification
 プロパティは、 `UserText` 任意のユーザーテキスト入力の値を保持します。 プロパティは、 `Notification` トリガーと通知の内容を含む要求を含む送信元の通知を保持します。 アプリは、トリガーの種類に基づいて、ローカルまたはリモートの通知であるかどうかを判断できます。
 
 > [!NOTE]
-> iOS 12 を使用すると、カスタム通知 UI で実行時にアクションボタンを変更することができます。 詳細については、[動的通知アクションボタン](~/ios/platform/introduction-to-ios12/notifications/dynamic-actions.md)のドキュメントを参照してください。
+> iOS 12 を使用すると、カスタム通知 UI で実行時にアクションボタンを変更することができます。 詳細については、 [動的通知アクションボタン](~/ios/platform/introduction-to-ios12/notifications/dynamic-actions.md) のドキュメントを参照してください。
 
 ## <a name="working-with-service-extensions"></a>サービス拡張機能の使用
 
-リモート通知を使用する場合、_サービス拡張_は、通知ペイロード内でエンドツーエンドの暗号化を有効にする方法を提供します。 サービス拡張は、ユーザーに表示される前に通知の表示内容を補強または置換するための主な目的として、バックグラウンドで実行される非ユーザーインターフェイス拡張 (iOS 10 で利用可能) です。 
+リモート通知を使用する場合、 _サービス拡張_ は、通知ペイロード内でエンドツーエンドの暗号化を有効にする方法を提供します。 サービス拡張は、ユーザーに表示される前に通知の表示内容を補強または置換するための主な目的として、バックグラウンドで実行される非ユーザーインターフェイス拡張 (iOS 10 で利用可能) です。 
 
 [![サービス拡張機能の概要](enhanced-user-notifications-images/extension01.png)](enhanced-user-notifications-images/extension01.png#lightbox)
 
@@ -539,10 +539,10 @@ Xamarin iOS アプリでサービス拡張機能を実装するには、次の�
 3. [ **IOS**  >  **extensions**  >  **Notification Service の拡張機能**] を選択し、[**次へ**] ボタンをクリックします。 
 
     [![Notification Service 拡張機能の選択](enhanced-user-notifications-images/extension02.png)](enhanced-user-notifications-images/extension02.png#lightbox)
-4. 拡張機能の**名前**を入力し、[**次へ**] ボタンをクリックします。 
+4. 拡張機能の **名前** を入力し、[ **次へ** ] ボタンをクリックします。 
 
     [![拡張機能の名前を入力してください](enhanced-user-notifications-images/extension03.png)](enhanced-user-notifications-images/extension03.png#lightbox)
-5. 必要に応じて**プロジェクト名**または**ソリューション名**を調整し、[**作成**] ボタンをクリックします。 
+5. 必要に応じて **プロジェクト名** または **ソリューション名** を調整し、[ **作成** ] ボタンをクリックします。 
 
     [![プロジェクト名またはソリューション名の調整](enhanced-user-notifications-images/extension04.png)](enhanced-user-notifications-images/extension04.png#lightbox) 
 
@@ -553,12 +553,12 @@ Xamarin iOS アプリでサービス拡張機能を実装するには、次の�
 3. [ **Visual C# > IOS 拡張機能 > Notification Service 拡張機能**] を選択します。
 
     [![Notification Service 拡張機能の選択](enhanced-user-notifications-images/extension01.w157-sml.png)](enhanced-user-notifications-images/extension01.w157.png#lightbox)
-4. 拡張機能の**名前**を入力し、[ **OK** ] をクリックします。
+4. 拡張機能の **名前** を入力し、[ **OK** ] をクリックします。
 
 -----
 
 > [!IMPORTANT]
-> サービス拡張機能のバンドル識別子は、メインアプリのバンドル識別子を末尾に追加したものと一致している必要があり `.appnameserviceextension` ます。 たとえば、メインアプリのバンドル識別子がの場合、 `com.xamarin.monkeynotify` サービス拡張はのバンドル識別子を持つ必要があり `com.xamarin.monkeynotify.monkeynotifyserviceextension` ます。 これは、拡張機能をソリューションに追加するときに自動的に設定されます。 
+> サービス拡張機能のバンドル識別子は、メインアプリのバンドル識別子を末尾に追加したものと一致している必要があり `.appnameserviceextension` ます。 たとえば、メインアプリのバンドル識別子がの場合、  `com.xamarin.monkeynotify` サービス拡張はのバンドル識別子を持つ必要があり `com.xamarin.monkeynotify.monkeynotifyserviceextension` ます。 これは、拡張機能をソリューションに追加するときに自動的に設定されます。 
 
 Notification Service 拡張機能には、必要な機能を提供するために変更する必要があるメインクラスが1つあります。 次に例を示します。
 
@@ -666,7 +666,7 @@ namespace myApp {
 
 ## <a name="related-links"></a>関連リンク
 
-- [iOS 10 のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)
+- [iOS 10 のサンプル](/samples/browse/?products=xamarin&term=Xamarin.iOS%2biOS10)
 - [UserNotifications フレームワークリファレンス](https://developer.apple.com/reference/usernotifications)
 - [UserNotificationsUI](https://developer.apple.com/reference/usernotificationsui)
 - [ローカルおよびリモートの通知プログラミングガイド](https://developer.apple.com/documentation/usernotifications)

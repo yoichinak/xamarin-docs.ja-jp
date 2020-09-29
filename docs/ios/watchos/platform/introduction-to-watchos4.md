@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/07/2017
-ms.openlocfilehash: 947e64c010d60a13a79a7832413d6f0226fdbdb4
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: c299772916cbf706dfb5a52c1fa452ff7a26a48a
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028233"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430446"
 ---
 # <a name="introduction-to-watchos-4"></a>watchOS 4 の概要
 
@@ -31,6 +31,6 @@ WatchOS 3 以降の変更点:
 
 ## <a name="related-links"></a>関連リンク
 
-* [watchOS のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+watchOS)
+* [watchOS のサンプル](/samples/browse/?products=xamarin&term=Xamarin.iOS%2bwatchOS)
 * [WatchKit (Apple)](https://developer.apple.com/documentation/watchkit)
 * [WatchOS 4 (Apple) の新機能 (ビデオ)](https://developer.apple.com/videos/play/wwdc2017/205/)

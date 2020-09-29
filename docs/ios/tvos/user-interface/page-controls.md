@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: d4a1cab23b8d295d899c47edc5ffe77f6d20a467
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 47e9c1ed4a043f7d11b5dfd52dca903e0a613b33
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939764"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436426"
 ---
 # <a name="working-with-tvos-page-controls-in-xamarin"></a>Xamarin での tvOS Page コントロールの使用
 
@@ -24,8 +24,8 @@ ms.locfileid: "86939764"
 
 ページコントロールを使用する場合、Apple には次の推奨事項があります。
 
-- **完全なコレクションでのみ使用**する-ページコントロールは全画面環境で最適に機能し、1つのコレクションに存在する複数のページを表示します。
-- ページ**の数を制限**します。ページコントロールは、10 (10) 以下のページ、および最大で 20 (20) ページに最適です。 20ページを超える場合は、[コレクションビュー](~/ios/tvos/user-interface/collection-views.md)を使用し、グリッドにページを表示することを検討してください。
+- **完全なコレクションでのみ使用** する-ページコントロールは全画面環境で最適に機能し、1つのコレクションに存在する複数のページを表示します。
+- ページ**の数を制限**します。ページコントロールは、10 (10) 以下のページ、および最大で 20 (20) ページに最適です。 20ページを超える場合は、 [コレクションビュー](~/ios/tvos/user-interface/collection-views.md) を使用し、グリッドにページを表示することを検討してください。
 
 <a name="Page-Controls-and-Storyboards"></a>
 
@@ -43,7 +43,7 @@ TvOS アプリでページコントロールを操作する最も簡単な方法
 
     [![[ウィジェット] タブ](page-controls-images/page03.png)](page-controls-images/page03.png#lightbox)
 1. 次に、コントロールまたはジェスチャをビューに追加して、ページのコレクションを前後に移動します。
-1. 最後に、コントロールに**名前**を割り当てて、C# コードでそれらに応答できるようにします。 次に例を示します。
+1. 最後に、コントロールに **名前** を割り当てて、C# コードでそれらに応答できるようにします。 次に例を示します。
 
     [![コントロールに名前を指定する](page-controls-images/page04.png)](page-controls-images/page04.png#lightbox)
 1. 変更を保存します。
@@ -58,7 +58,7 @@ TvOS アプリでページコントロールを操作する最も簡単な方法
 
     [![[ウィジェット] タブ](page-controls-images/page03-vs.png)](page-controls-images/page03-vs.png#lightbox)
 1. 次に、コントロールまたはジェスチャをビューに追加して、ページのコレクションを前後に移動します。
-1. 最後に、コントロールに**名前**を割り当てて、C# コードでそれらに応答できるようにします。 次に例を示します。
+1. 最後に、コントロールに **名前** を割り当てて、C# コードでそれらに応答できるようにします。 次に例を示します。
 
     [![コントロールに名前を指定する](page-controls-images/page04-vs.png)](page-controls-images/page04-vs.png#lightbox)
 1. 変更を保存します。
@@ -166,7 +166,7 @@ PageView.CurrentPage = PageNumber;
 
 ## <a name="related-links"></a>関連リンク
 
-- [tvOS のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [tvOS のサンプル](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS ヒューマンインターフェイスガイド](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS のアプリプログラミングガイド](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

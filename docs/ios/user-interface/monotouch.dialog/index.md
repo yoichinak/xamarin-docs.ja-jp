@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 ms.date: 11/25/2015
 author: davidortinau
 ms.author: daortin
-ms.openlocfilehash: 8216e0e41eea98dcdcd34ccfac6a9573224f3093
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: c57a6d02488272934ea77714b07c0328ac501d26
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936670"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431213"
 ---
 # <a name="introduction-to-monotouchdialog-for-xamarinios"></a>Xamarin の Monotouch.dialog の概要
 
@@ -54,8 +54,8 @@ IOS でテーブルを使用する場合、多くの場合、大量の繰り返�
 
 MT.D では、すべてのコードをテーブル作成用の汎用 API にカプセル化することで、これを簡略化しています。 次に、その API の上に抽象化を提供します。これにより、宣言型オブジェクトのバインディング構文を簡単に使用できるようになります。 そのため、MT で使用できる Api は2つあります。A
 
-- **低レベル要素 api** – *elements api*は、画面とそのコンポーネントを表す要素の階層ツリーを作成することに基づいています。 Elements API を使用すると、開発者は Ui を作成する際の柔軟性と制御を最大限に高めることができます。 さらに、Elements API は JSON による宣言型定義の高度なサポートを備えています。これにより、非常に高速な宣言と、サーバーからの動的 UI 生成が可能になります。 
-- **高レベルリフレクション api** :*バインディング*  *api*とも呼ばれ、UI ヒントと MT でクラスに注釈が付けられます。D では、オブジェクトに基づいて画面が自動的に作成され、画面に表示される内容 (および必要に応じて編集) と、基になるオブジェクトの間のバインドが提供されます。 上記の例では、リフレクション API の使用方法を示しています。 この API は、elements API が行う細かい制御を提供していませんが、クラス属性に基づいて要素階層を自動的に構築することで、複雑さをさらに軽減します。 
+- **低レベル要素 api** –  *elements api* は、画面とそのコンポーネントを表す要素の階層ツリーを作成することに基づいています。 Elements API を使用すると、開発者は Ui を作成する際の柔軟性と制御を最大限に高めることができます。 さらに、Elements API は JSON による宣言型定義の高度なサポートを備えています。これにより、非常に高速な宣言と、サーバーからの動的 UI 生成が可能になります。 
+- **高レベルリフレクション api** :  *バインディング*  *api* とも呼ばれ、UI ヒントと MT でクラスに注釈が付けられます。D では、オブジェクトに基づいて画面が自動的に作成され、画面に表示される内容 (および必要に応じて編集) と、基になるオブジェクトの間のバインドが提供されます。 上記の例では、リフレクション API の使用方法を示しています。 この API は、elements API が行う細かい制御を提供していませんが、クラス属性に基づいて要素階層を自動的に構築することで、複雑さをさらに軽減します。 
 
 MT.D には、画面作成用の多数の組み込み UI 要素が用意されていますが、カスタマイズされた要素や高度な画面レイアウトが必要であることも認識しています。 そのため、拡張機能は API に組み込まれているファーストクラスの機能です。 開発者は、既存の要素を拡張したり、新しい要素を作成してシームレスに統合したりできます。
 
@@ -63,17 +63,17 @@ MT.D には、画面作成用の多数の組み込み UI 要素が用意され�
 
 この記事では、MT の使用方法について詳しく説明します。D (次を含む):
 
-- **MT。D コンポーネント**– MT を構成するクラスを理解することに重点を置いています。D を使用すると、短時間で迅速に作業を開始できます。 
-- **Elements リファレンス**– MT の組み込み要素の包括的な一覧です。A. 
-- **高度な使用法**–これは、プルから更新、検索、背景画像の読み込み、LINQ を使用した要素階層の構築、MT で使用するカスタム要素、セル、およびコントローラーの作成などの高度な機能に対応しています。A. 
+- **MT。D コンポーネント** – MT を構成するクラスを理解することに重点を置いています。D を使用すると、短時間で迅速に作業を開始できます。 
+- **Elements リファレンス** – MT. D の組み込み要素の包括的な一覧です。 
+- **高度な使用法** –これは、プルから更新、検索、背景画像の読み込み、LINQ を使用した要素階層の構築、および MT で使用するカスタム要素、セル、およびコントローラーの作成などの高度な機能について説明します。 
 
 ## <a name="setting-up-mtd"></a>MT を設定しています。A
 
-MT.D は、Xamarin. iOS と共に配布されます。 これを使用するには、Visual Studio 2017 または Visual Studio for Mac で Xamarin. iOS プロジェクトの [**参照**] ノードを右クリックし、 **monotouch.dialog**アセンブリへの参照を追加します。 次に、 `using MonoTouch.Dialog` 必要に応じて、ソースコードにステートメントを追加します。
+MT.D は、Xamarin. iOS と共に配布されます。 これを使用するには、Visual Studio 2017 または Visual Studio for Mac で Xamarin. iOS プロジェクトの [ **参照** ] ノードを右クリックし、 **monotouch.dialog** アセンブリへの参照を追加します。 次に、 `using MonoTouch.Dialog` 必要に応じて、ソースコードにステートメントを追加します。
 
 ## <a name="understanding-the-pieces-of-mtd"></a>MT の部分を理解する。A
 
-リフレクション API を使用している場合でも、MT です。D は、Elements API を直接使用して作成された場合と同様に、要素階層を内部で作成します。 また、前のセクションで説明した JSON サポートでも要素が作成されます。 このため、MT の構成要素について基本的な知識を持っていることが重要です。A.
+リフレクション API を使用している場合でも、MT です。D は、Elements API を直接使用して作成された場合と同様に、要素階層を内部で作成します。 また、前のセクションで説明した JSON サポートでも要素が作成されます。 このため、MT の構成要素を基本的に理解しておくことが重要です。
 
 MT.D は、次の4つの部分を使用して画面を構築します。
 
@@ -90,7 +90,7 @@ DVC の場合は、 *DVC* *を継承* `UITableViewController` します。この
 
 *Rootelement*は、DVC に入る項目の最上位レベルのコンテナーです。 これには、要素を含めることができるセクションが含まれています。 RootElements はレンダリングされません。実際に表示されるのは単なるコンテナーです。 RootElement は DVC に割り当てられ、その子が DVC によってレンダリングされます。
 
-### <a name="section"></a>Section
+### <a name="section"></a>セクション
 
 セクションは、テーブル内のセルのグループです。 通常のテーブルセクションと同様に、次のスクリーンショットに示すように、必要に応じてヘッダーとフッターを指定することもできます。これはテキストでもカスタムビューでもかまいません。
 
@@ -164,7 +164,7 @@ var section = new Section (header);
 #### <a name="handling-nsaction"></a>NSAction の処理
 
 MT.D は、 `NSAction` コールバックを処理するためのデリゲートとしてを使用します。
-たとえば、MT によって作成されたテーブルセルのタッチイベントを処理するとします。A. MT を使用して要素を作成する場合。次に示すように、単にコールバック関数を指定します。
+たとえば、MT によって作成されたテーブルセルのタッチイベントを処理するとします。 MT を使用して要素を作成する場合。次に示すように、単にコールバック関数を指定します。
 
 ```csharp
 new Section () {
@@ -188,11 +188,11 @@ var taskElement = new RootElement (task.Name) {
 };
 ```
 
-次に示すように、このコードでは UI を作成します。 この例の完全なチュートリアルについては、 [ELEMENTS API チュートリアル](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md)のチュートリアルを参照してください。
+次に示すように、このコードでは UI を作成します。 この例の完全なチュートリアルについては、 [ELEMENTS API チュートリアル](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md) のチュートリアルを参照してください。
 
  [![また、コールバックは他の要素で設定された値を取得できます。値プロパティと組み合わせて使用します。](images/image6.png)](images/image6.png#lightbox)
 
-ユーザーが下部のテーブルセルを押すと、匿名関数のコードが実行され、 `element` インスタンスから Visual Studio for Mac の**アプリケーション出力**パッドに値が書き込まれます。
+ユーザーが下部のテーブルセルを押すと、匿名関数のコードが実行され、 `element` インスタンスから Visual Studio for Mac の **アプリケーション出力** パッドに値が書き込まれます。
 
 ## <a name="built-in-elements"></a>組み込み要素
 
@@ -256,7 +256,7 @@ new StringElement ("Click me", () => {
 - 数値
 - Phone
 - url
-- Email
+- 電子メール
 
 ### <a name="boolean-element"></a>ブール型の要素
 
@@ -276,7 +276,7 @@ mtRoot = new RootElement ("Demos", new RadioGroup("MyGroup", 0));
 
  [![RadioElement を使用するには、RootElement に RadioGroup を指定する必要があります。](images/image14.png)](images/image14.png#lightbox)
 
- `RootElements`は、無線要素を調整するためにも使用されます。 `RadioElement`メンバーは複数のセクションにまたがることができます (たとえば、リングトーンセレクターに似たようなものを実装し、システムの着信音からカスタムリングトーンを分離します)。 [概要] ビューには、現在選択されているラジオ要素が表示されます。 これを使用するには、次のように、グループコンストラクターを使用してを作成し `RootElement` ます。
+ `RootElements` は、無線要素を調整するためにも使用されます。 `RadioElement`メンバーは複数のセクションにまたがることができます (たとえば、リングトーンセレクターに似たようなものを実装し、システムの着信音からカスタムリングトーンを分離します)。 [概要] ビューには、現在選択されているラジオ要素が表示されます。 これを使用するには、次のように、グループコンストラクターを使用してを作成し `RootElement` ます。
 
 ```csharp
 var root = new RootElement ("Meals", new RadioGroup ("myGroup", 0));
@@ -391,7 +391,7 @@ using (var reader = File.OpenRead ("json.sample"))
     return JsonElement.FromJson (JsonObject.Load (reader) as JsonObject, arg);
 ```
 
-MT で JSON を使用する方法の詳細については、「」を参照してください。D 「 [JSON 要素のチュートリアル](https://docs.microsoft.com/xamarin/ios/user-interface/monotouch.dialog/json-element-walkthrough)」を参照してください。
+MT で JSON を使用する方法の詳細については、「」を参照してください。D 「 [JSON 要素のチュートリアル](./json-element-walkthrough.md) 」を参照してください。
 
 ## <a name="other-features"></a>その他の機能
 
@@ -427,7 +427,7 @@ dvc.ReloadComplete ();
 
 ### <a name="background-image-loading"></a>背景画像の読み込み
 
-Monotouch.dialog には、 [TweetStation](https://github.com/migueldeicaza/TweetStation)アプリケーションのイメージローダーが組み込まれています。 このイメージローダーを使用すると、イメージをバックグラウンドで読み込み、キャッシュをサポートし、イメージが読み込まれたときにコードに通知することができます。
+Monotouch.dialog には、 [TweetStation](https://github.com/migueldeicaza/TweetStation) アプリケーションのイメージローダーが組み込まれています。 このイメージローダーを使用すると、イメージをバックグラウンドで読み込み、キャッシュをサポートし、イメージが読み込まれたときにコードに通知することができます。
 
 また、発信ネットワーク接続の数も制限されます。
 
@@ -555,13 +555,13 @@ public override Source CreateSizingSource (bool unevenRows)
 
 このメソッドは、セルが均等にサイズ設定されている場合はのサブクラスを返し、 `DialogViewController.Source` セルが不均一である場合はのサブクラスを返し `DialogViewController.SizingSource` ます。
 
-このオーバーライドを使用すると、任意のメソッドをキャプチャでき `UITableViewSource` ます。 たとえば、 [TweetStation](https://github.com/migueldeicaza/TweetStation)はこれを使用して、ユーザーが一番上にスクロールした時間を追跡し、それに応じて未読のツイートの数を更新します。
+このオーバーライドを使用すると、任意のメソッドをキャプチャでき `UITableViewSource` ます。 たとえば、 [TweetStation](https://github.com/migueldeicaza/TweetStation) はこれを使用して、ユーザーが一番上にスクロールした時間を追跡し、それに応じて未読のツイートの数を更新します。
 
 ## <a name="validation"></a>検証
 
 Web ページおよびデスクトップアプリケーションに適したモデルは、iPhone の相互作用モデルに直接マップされないため、要素は検証自体を提供しません。
 
-データの検証を行う場合は、ユーザーが入力されたデータを使用してアクションをトリガーするときに、この操作を行う必要があります。 たとえば、上部のツールバーの [**完了**] または **[次へ**] ボタン、または `StringElement` 次のステージに進むボタンとして使用されているものがあります。
+データの検証を行う場合は、ユーザーが入力されたデータを使用してアクションをトリガーするときに、この操作を行う必要があります。 たとえば、上部のツールバーの [ **完了** ] または **[次へ** ] ボタン、または `StringElement` 次のステージに進むボタンとして使用されているものがあります。
 
 ここでは、基本的な入力検証を実行し、サーバーとのユーザー/パスワードの組み合わせの有効性を確認するなど、より複雑な検証を実行します。
 
@@ -569,7 +569,7 @@ Web ページおよびデスクトップアプリケーションに適したモ�
 
 ## <a name="summary"></a>まとめ
 
-この記事では、Monotouch.dialog に関するさまざまな情報について説明します。 ここでは、MT の基礎について説明しました。D は、MT を構成するさまざまなコンポーネントを対象としています。A. また、MT によってサポートされるさまざまな要素とテーブルのカスタマイズについても説明しました。D では、MT について説明しました。D はカスタム要素で拡張できます。 さらに、MT での JSON サポートについても説明しました。JSON から動的に要素を作成できる D。
+この記事では、Monotouch.dialog に関するさまざまな情報について説明します。 ここでは、MT の基礎について説明しました。D は動作し、MT. D を構成するさまざまなコンポーネントについて説明します。 また、MT によってサポートされるさまざまな要素とテーブルのカスタマイズについても説明しました。D では、MT について説明しました。D はカスタム要素で拡張できます。 さらに、MT での JSON サポートについても説明しました。JSON から動的に要素を作成できる D。
 
 ## <a name="related-links"></a>関連リンク
 

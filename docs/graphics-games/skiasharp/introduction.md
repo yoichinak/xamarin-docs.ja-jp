@@ -7,22 +7,22 @@ ms.assetid: 19506F08-2603-465E-A806-6BD01638DE90
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/03/2018
-ms.openlocfilehash: 4d0e57b98a479112b9fdf4f9c503418f3966cc73
-ms.sourcegitcommit: 9bfedf07940dad7270db86767eb2cc4007f2a59f
+ms.openlocfilehash: fd8926edce6b2310271e15418f2498162723ba49
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2019
-ms.locfileid: "64749919"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436447"
 ---
 # <a name="skiasharp-platform-independent-examples"></a>SkiaSharp プラットフォームに依存しない例
 
 _これにより、SkiaSharp の背後にある概念の概要を簡単に説明することができるようになります。_
 
-SkiaSharp には、2D バッファーにレンダリングするために使用できる、豊富で強力な2D グラフィックス API が用意されています。  これらの要素を使用して、アプリケーションに組み込むことができるカスタムユーザーインターフェイス要素と2D グラフィックスを実装できます。 SkiaSharp は[Skia](https://skia.org)ライブラリへの .net バインドで、このライブラリの機能と機能を継承します。
+SkiaSharp には、2D バッファーにレンダリングするために使用できる、豊富で強力な2D グラフィックス API が用意されています。  これらの要素を使用して、アプリケーションに組み込むことができるカスタムユーザーインターフェイス要素と2D グラフィックスを実装できます。 SkiaSharp は [Skia](https://skia.org) ライブラリへの .net バインドで、このライブラリの機能と機能を継承します。
 
-ライブラリは、現在、クロスプラットフォーム[Nuget パッケージ](https://www.nuget.org/packages/SkiaSharp)として使用できます。 nuget 参照を追加することで、このライブラリをプロジェクトに追加できます。
+ライブラリは、現在、クロスプラットフォーム [Nuget パッケージ](https://www.nuget.org/packages/SkiaSharp)として使用できます。 nuget 参照を追加することで、このライブラリをプロジェクトに追加できます。
 
-描画するには、コードで描画操作を実行するサーフェイスを記述する `SkCanvas` を作成します。
+描画するには、コードでを作成し `SkCanvas` ます。これにより、描画操作が行われるサーフェイスが記述されます。
 
 ## <a name="obtaining-an-skcanvas"></a>SKCanvas の取得
 
@@ -36,7 +36,7 @@ using (var surface = SKSurface.Create (width: 640, height: 480, SKImageInfo.Plat
 
 ## <a name="drawing-on-skcanvas"></a>SKCanvas での描画
 
-この `SKCanvas` では、使い慣れた他の描画モデルと同じような描画モデルを使用しており、オプションの透明度チャネルを使用して色を使用し、線、円弧、テキスト、およびイメージを描画できます。
+では、 `SKCanvas` 使い慣れた他の描画モデルに似たような描画モデルを使用しており、オプションの透明度チャネルを使用して色を使用し、線、円弧、テキスト、およびイメージを描画できます。
 
 次に、SkiaSharp で実行できるさまざまな項目をいくつか紹介します。  次の例では、変数 `canvas` は SKCanvas 型です。
 
@@ -133,6 +133,6 @@ using (var paint = new SKPaint()) {
 }
 ```
 
-## <a name="more-information"></a>説明
+## <a name="more-information"></a>詳細情報
 
-SkiaSharp の使用方法の詳細については、 [API のドキュメント](https://docs.microsoft.com/dotnet/api/skiasharp)を参照してください。
+SkiaSharp の使用方法の詳細については、 [API のドキュメント](/dotnet/api/skiasharp)を参照してください。

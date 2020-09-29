@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: c02b810cc61779f5c3b5ee5eb61169e8c3fceab4
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 724d6ab8d39a5c0054302685c5f9f4ba0f3d9908
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931210"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431730"
 ---
 # <a name="ios-7-user-interface-overview"></a>iOS 7 ユーザー インターフェイスの概要
 
@@ -70,7 +70,7 @@ UIBarButtonItem button = new UIBarButtonItem ("Bar Button", UIBarButtonItemStyle
 
  ![UIAlertView のサンプル](ios7-ui-images/alert.png)
 
- 注: UIAlertView は、iOS 8 では非推奨となりました。 IOS 8 以降のアラートビューを使用して、[警告コントローラー](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)のレシピを表示します。
+ 注: UIAlertView は、iOS 8 では非推奨となりました。 IOS 8 以降のアラートビューを使用して、 [警告コントローラー](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller) のレシピを表示します。
 
 ### <a name="uisegmentedcontrol"></a>UISegmentedControl
 
@@ -124,7 +124,7 @@ cell.SeparatorInset = new UIEdgeInsets (0, 50, 0, 0);
 
 ### <a name="additional-control-changes"></a>追加の制御変更
 
-他の UIKit コントロールも、スライダー、スイッチ、steppers など、変更されています。 これらの変更は純粋にビジュアルです。 詳細については、「Apple の[iOS 7 UI 遷移ガイド」](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/TransitionGuide/index.html)を参照してください。
+他の UIKit コントロールも、スライダー、スイッチ、steppers など、変更されています。 これらの変更は純粋にビジュアルです。 詳細については、「Apple の [iOS 7 UI 遷移ガイド」](https://developer.apple.com/library/prerelease/ios/documentation/UserExperience/Conceptual/TransitionGuide/index.html)を参照してください。
 
 ## <a name="general-user-interface-changes"></a>一般的なユーザーインターフェイスの変更
 
@@ -140,11 +140,11 @@ UIKit に加えられた変更に加え、iOS 7 では、次のようなさま�
 
 iOS 7 は、アプリケーションで画面全体を利用できるように設計されています。 ビューコントローラーがステータスバーとナビゲーションバーに重なって表示されるようになりました。ステータスバーとナビゲーションバーがある場合は、ステータスバーとナビゲーションバーの下に表示されません。
 
-IOS 7 用にアプリケーションを準備するときに、 *Interface Builder*または*Xamarin iOS Designer*を使用して、サブビューを視覚的に再調整できます。 新しい Api の1つを使用して、全画面表示のコンテンツをプログラムで処理することもできます。 これらの Api は次のように導入されています。
+IOS 7 用にアプリケーションを準備するときに、 *Interface Builder* または *Xamarin iOS Designer*を使用して、サブビューを視覚的に再調整できます。 新しい Api の1つを使用して、全画面表示のコンテンツをプログラムで処理することもできます。 これらの Api は次のように導入されています。
 
 #### <a name="toplayoutguide-and-bottomlayoutguide"></a>TopLayoutGuide と下端の Layoutguide
 
- `TopLayoutGuide`とは、次の例のように、 `BottomLayoutGuide` コンテンツが半透明バーに重ならないように、ビューの開始位置または終了位置の参照として機能し `UIKit` ます。
+ `TopLayoutGuide` とは、次の例のように、 `BottomLayoutGuide` コンテンツが半透明バーに重ならないように、ビューの開始位置または終了位置の参照として機能し `UIKit` ます。
 
  [![半透明な UIKit バーに重ならないサンプルコンテンツ](ios7-ui-images/clipped.png)](ios7-ui-images/clipped.png#lightbox)
 
@@ -168,12 +168,12 @@ public override void ViewDidLayoutSubviews ()
 
  [![画面の上部からの ImageViews の移動の例](ios7-ui-images/good2.png)](ios7-ui-images/good2.png#lightbox)
 
-実際のサンプルについては、 [Imageviewer](https://docs.microsoft.com/samples/xamarin/ios-samples/ios7-ui-updates/)を参照してください。
+実際のサンプルについては、 [Imageviewer](/samples/xamarin/ios-samples/ios7-ui-updates/) を参照してください。
 
 ディスプレイスメント値は、ビューが階層に追加された後に動的に生成されるため、との値を読み取ろうとする `TopLayoutGuide` と `BottomLayoutGuide` `ViewDidLoad` 0 が返されます。 など、ビューが読み込まれた後の値を計算し `ViewDidLayoutSubviews` ます。
 
 > [!IMPORTANT]
-> `TopLayoutGuide`と `BottomLayoutGuide` は、新しいセーフエリアレイアウトを優先するため、iOS 11 では非推奨とされます。 この安全領域の使用は、iOS 11 より前の iOS バージョンと互換性があることが Apple によって示されています。 詳細については、「 [iOS 11 用アプリの更新](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md#fullscreen)」ガイドを参照してください。
+> `TopLayoutGuide` と `BottomLayoutGuide` は、新しいセーフエリアレイアウトを優先するため、iOS 11 では非推奨とされます。 この安全領域の使用は、iOS 11 より前の iOS バージョンと互換性があることが Apple によって示されています。 詳細については、「 [iOS 11 用アプリの更新](~/ios/platform/introduction-to-ios11/updating-your-app/visual-design.md#fullscreen) 」ガイドを参照してください。
 
 #### <a name="edgesforextendedlayout"></a>EdgesForExtendedLayout
 
@@ -203,7 +203,7 @@ if (UIDevice.CurrentDevice.CheckSystemVersion (7, 0)) {
 
 と api の効果は似ていますが、異なる目標を設定することを意図してい `TopLayoutGuide/BottomLayoutGuide` `EdgesForExtendedLayout` ます。 既定値から設定を変更すると、 `EdgesForExtendedLayout` ios 6 向けに設計されたアプリケーションでは、クリップされたビューが修正される場合がありますが、適切な ios 7 の設計では全画面表示を行い、全画面表示エクスペリエンスを実現し、ユーザーにとって快適に操作されるコンテンツを適切に配置する必要があり `TopLayoutGuide` `BottomLayoutGuide` ます。
 
-実際のサンプルについては、 [Imageviewer](https://docs.microsoft.com/samples/xamarin/ios-samples/ios7-ui-updates/)を参照してください。
+実際のサンプルについては、 [Imageviewer](/samples/xamarin/ios-samples/ios7-ui-updates/) を参照してください。
 
 ### <a name="status-and-navigation-bars"></a>ステータスバーとナビゲーションバー
 
@@ -256,12 +256,12 @@ public override bool PrefersStatusBarHidden ()
 
 ### <a name="dynamic-type"></a>動的な型
 
-IOS 7 では、ユーザーはシステム設定でテキストのサイズを指定できます。 動的な型の場合、フォントはサイズに関係なく、適切に表示されるように動的に調整されます。 `UIFont.PreferredFontForTextStyle`は、ユーザーが制御するサイズに最適化されたフォントを取得するために使用する必要があります。
+IOS 7 では、ユーザーはシステム設定でテキストのサイズを指定できます。 動的な型の場合、フォントはサイズに関係なく、適切に表示されるように動的に調整されます。 `UIFont.PreferredFontForTextStyle` は、ユーザーが制御するサイズに最適化されたフォントを取得するために使用する必要があります。
 
-## <a name="summary"></a>要約
+## <a name="summary"></a>まとめ
 
 この記事では、iOS 7 のユーザーインターフェイス要素に加えられた変更について説明します。 ここでは、UIKit のビューとコントロールに加えられたいくつかの変更を調べ、ビジュアルの変更と関連する Api の変更の両方を強調表示しています。 最後に、全画面コンテンツ、新しい着色色のサポート、および動的な型を操作するための新しい Api が導入されました。
 
 ## <a name="related-links"></a>関連リンク
 
-- [ImageViewer (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios7-ui-updates)
+- [ImageViewer (サンプル)](/samples/xamarin/ios-samples/ios7-ui-updates)

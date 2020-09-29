@@ -8,12 +8,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 91ead74f1ae26e10046b1e57d722e84014546108
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: db630ba7db1532f24fb6e810653427d1678ad5e2
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929026"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434650"
 ---
 # <a name="troubleshooting-tvos-apps-built-with-xamarin"></a>Xamarin でビルドされた tvOS アプリのトラブルシューティング
 
@@ -26,10 +26,10 @@ _この記事では、Xamarin の tvOS サポートの使用中に発生する�
 Xamarin の tvOS サポートの現在のリリースには、次の既知の問題があります。
 
 - Mono**フレームワーク**– Mono 4.3 ProtectedData は、mono 4.2 からのデータの暗号化解除に失敗します。 その結果、保護された NuGet ソースが構成されていると、NuGet パッケージはエラーが発生して復元に失敗し `Data unprotection failed` ます。
-  - **回避策**: Visual Studio for Mac、パッケージの復元を再試行する前に、パスワード認証を使用するすべての NuGet パッケージソースを追加し直す必要があります。
-- **Visual Studio for Mac w/f # アドイン**-Windows で f # Android テンプレートを作成するときにエラーが発生します。 これは Mac でも正常に機能します。
+  - **回避策** : Visual Studio for Mac、パッケージの復元を再試行する前に、パスワード認証を使用するすべての NuGet パッケージソースを追加し直す必要があります。
+- **Visual Studio for Mac w/f # アドイン** -Windows で f # Android テンプレートを作成するときにエラーが発生します。 これは Mac でも正常に機能します。
 - **Xamarin. mac** –ターゲットフレームワークがに設定された xamarin の統合テンプレートプロジェクトを実行すると、 `Unsupported` ポップアップ `Could not connect to the debugger` が表示される場合があります。
-  - **考えられる回避策**–安定したチャネルで利用できる Mono フレームワークのバージョンをダウングレードします。
+  - **考えられる回避策** –安定したチャネルで利用できる Mono フレームワークのバージョンをダウングレードします。
 - **Xamarin Visual studio & xamarin. iOS** – WatchKit アプリケーションを visual studio にデプロイすると、エラー `The file ‘bin\iPhoneSimulator\Debug\WatchKitApp1WatchKitApp.app\WatchKitApp1WatchKitApp’ does not exist` が表示されることがあります。
 
 [GitHub](https://github.com/xamarin/xamarin-macios/issues/new)で見つかったすべてのバグを報告してください。
@@ -44,11 +44,11 @@ TvOS アプリを Apple TV App Store に送信しようとすると、 _"無効�
 
 この問題を解決するには、次の手順を実行します。
 
-1. Visual Studio for Mac で、**ソリューションエクスプローラー**で TvOS プロジェクトファイルを右クリックし、[**オプション**] を選択します。
-2. [ **TvOS Build** ] を選択し、**リリース**構成になっていることを確認します。 
+1. Visual Studio for Mac で、 **ソリューションエクスプローラー** で TvOS プロジェクトファイルを右クリックし、[ **オプション**] を選択します。
+2. [ **TvOS Build** ] を選択し、 **リリース** 構成になっていることを確認します。 
 
     [![TvOS ビルドオプションの選択](troubleshooting-images/ts01.png)](troubleshooting-images/ts01.png#lightbox)
-3. [追加 `--bitcode=asmonly` の**mtouch 引数**] フィールドにを追加し、[ **OK** ] ボタンをクリックします。
+3. [追加 `--bitcode=asmonly` の **mtouch 引数** ] フィールドにを追加し、[ **OK** ] ボタンをクリックします。
 4. **リリース**構成でアプリをリビルドします。
 
 ### <a name="verifying-that-your-tvos-app-contains-bitcode"></a>TvOS アプリにビットコードが含まれていることを確認しています
@@ -76,7 +76,7 @@ Section
  reserved2 0
 ```
 
-`addr`と `size` は異なりますが、他のフィールドは同じである必要があります。
+`addr` と `size` は異なりますが、他のフィールドは同じである必要があります。
 
 使用しているサードパーティの静的 ( `.a` ) ライブラリが (iOS ライブラリではなく) tvOS ライブラリに対してビルドされていること、およびビットコード情報も含まれていることを確認する必要があります。
 
@@ -123,11 +123,11 @@ _"Arm64 スライスだけを含むアプリには、UIRequiredDeviceCapabilitie
 
 ### <a name="task-mtouch-execution----failed"></a>タスク "MTouch" の実行-失敗
 
-サードパーティ製のライブラリ (モノゲームなど) を使用していて、で終了する長い一連のエラーメッセージがリリースコンパイルに失敗した場合は `Task "MTouch" execution -- FAILED` 、 `-gcc_flags="-framework OpenAL"` 追加の**タッチ引数**を追加してみてください。
+サードパーティ製のライブラリ (モノゲームなど) を使用していて、で終了する長い一連のエラーメッセージがリリースコンパイルに失敗した場合は `Task "MTouch" execution -- FAILED` 、 `-gcc_flags="-framework OpenAL"` 追加の **タッチ引数**を追加してみてください。
 
 [![タスクの MTouch 実行](troubleshooting-images/mtouch01.png)](troubleshooting-images/mtouch01.png#lightbox)
 
-また、追加の `--bitcode=asmonly` **タッチ引数**にを含め、リンカーオプションを [**すべてリンク**] に設定して、クリーンコンパイルを実行する必要があります。
+また、追加の `--bitcode=asmonly` **タッチ引数**にを含め、リンカーオプションを [ **すべてリンク** ] に設定して、クリーンコンパイルを実行する必要があります。
 
 ### <a name="itms-90471-error-the-large-icon-is-missing"></a>ITMS-90471 エラー。 大きいアイコンがありません
 
@@ -202,7 +202,7 @@ _互換性のないターゲットフレームワーク:。NetPortable、Version
 
 ## <a name="related-links"></a>関連リンク
 
-- [tvOS のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [tvOS のサンプル](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS ヒューマンインターフェイスガイド](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS のアプリプログラミングガイド](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

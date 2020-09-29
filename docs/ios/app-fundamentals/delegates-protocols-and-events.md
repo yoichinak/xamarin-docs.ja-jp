@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/17/2017
-ms.openlocfilehash: 1a7d7ec017bb226efb05014dc7ac80160aeaae48
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: ce436f907c70657ff6d08f39bdec9e7d796d519c
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938361"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431027"
 ---
 # <a name="events-protocols-and-delegates-in-xamarinios"></a>Xamarin. iOS のイベント、プロトコル、およびデリゲート
 
@@ -23,9 +23,9 @@ Xamarin iOS アプリケーションは、従来の .NET アプリケーショ�
 
 この記事では、これらのすべてのトピックについて学習し、次のような Xamarin のコールバックシナリオを処理するための堅固な基盤を提供します。
 
-- **イベント**– uikit コントロールでの .net イベントの使用。
-- **プロトコル**–プロトコルの概要と使用方法、およびマップの注釈にデータを提供する例の作成について説明します。
-- **デリゲート**–目的 C のデリゲートについて学習するには、注釈を含むユーザーの操作を処理するようにマップの例を拡張し、厳密なデリゲートと弱いデリゲートの違いを学習して、それぞれを使用するタイミングを学習します。
+- **イベント** – uikit コントロールでの .net イベントの使用。
+- **プロトコル** –プロトコルの概要と使用方法、およびマップの注釈にデータを提供する例の作成について説明します。
+- **デリゲート** –目的 C のデリゲートについて学習するには、注釈を含むユーザーの操作を処理するようにマップの例を拡張し、厳密なデリゲートと弱いデリゲートの違いを学習して、それぞれを使用するタイミングを学習します。
 
 プロトコルとデリゲートについて説明するために、次に示すように、マップに注釈を追加する単純なマップアプリケーションを作成します。
 
@@ -66,7 +66,7 @@ aButton.TouchUpInside += delegate {
 
 IOS ターゲットアクションパターンの詳細については、Apple の iOS Developer Library の「 [ios のコアアプリケーションコンピテンシー](https://developer.apple.com/library/ios/#DOCUMENTATION/General/Conceptual/Devpedia-CocoaApp/TargetAction.html) 」の「ターゲット-アクション」セクションを参照してください。
 
-Xamarin で iOS Designer を使用する方法の詳細については、 [Ios designer の概要](~/ios/user-interface/designer/index.md)に関するドキュメントを参照してください。
+Xamarin で iOS Designer を使用する方法の詳細については、 [Ios designer の概要](~/ios/user-interface/designer/index.md) に関するドキュメントを参照してください。
 
 ## <a name="events"></a>events
 
@@ -146,13 +146,13 @@ Apple では、iOS 全体でプロトコルを使用して、実装するクラ�
 
 ### <a name="protocols-with-xamarinios"></a>Xamarin を使用したプロトコル
 
-Xamarin. iOS の目的の C プロトコルを使用した例を見てみましょう。 この例で `MKAnnotation` は、フレームワークの一部であるプロトコルを使用し `MapKit` ます。 `MKAnnotation`は、これを採用する任意のオブジェクトが、マップに追加できる注釈に関する情報を提供できるようにするプロトコルです。 たとえば、を実装するオブジェクトは、 `MKAnnotation` 注釈の場所とそれに関連付けられているタイトルを提供します。
+Xamarin. iOS の目的の C プロトコルを使用した例を見てみましょう。 この例で `MKAnnotation` は、フレームワークの一部であるプロトコルを使用し `MapKit` ます。 `MKAnnotation` は、これを採用する任意のオブジェクトが、マップに追加できる注釈に関する情報を提供できるようにするプロトコルです。 たとえば、を実装するオブジェクトは、 `MKAnnotation` 注釈の場所とそれに関連付けられているタイトルを提供します。
 
 これにより、 `MKAnnotation` プロトコルが、注釈に付随する関連データを提供するために使用されます。 注釈自体の実際のビューは、プロトコルを採用するオブジェクトのデータから構築され `MKAnnotation` ます。 たとえば、次のスクリーンショットに示すように、ユーザーが注釈をタップしたときに表示される吹き出しのテキストは、 `Title` プロトコルを実装するクラスのプロパティから取得されます。
 
  [![ユーザーが注釈をタップしたときのコールアウトのテキストの例](delegates-protocols-and-events-images/04-annotation-with-callout-sml.png)](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
 
-次のセクション「[プロトコルの詳細](#protocols-deep-dive)」で説明されているように、Xamarin. iOS は、プロトコルを抽象クラスにバインドします。 プロトコルの場合 `MKAnnotation` 、バインドされた C# クラスには、 `MKAnnotation` プロトコルの名前を模倣する名前が付けられ `NSObject` ます。これは、CocoaTouch のルート基本クラスであるのサブクラスです。 このプロトコルでは、座標に対して getter と setter が実装されている必要があります。ただし、タイトルとサブタイトルは省略可能です。 したがって、 `MKAnnotation` クラスでは、 `Coordinate` プロパティは*abstract*であり、実装する必要があり `Title` `Subtitle` ます。次に示すように、プロパティとプロパティは*virtual*に設定され、省略可能になります。
+次のセクション「 [プロトコルの詳細](#protocols-deep-dive)」で説明されているように、Xamarin. iOS は、プロトコルを抽象クラスにバインドします。 プロトコルの場合 `MKAnnotation` 、バインドされた C# クラスには、 `MKAnnotation` プロトコルの名前を模倣する名前が付けられ `NSObject` ます。これは、CocoaTouch のルート基本クラスであるのサブクラスです。 このプロトコルでは、座標に対して getter と setter が実装されている必要があります。ただし、タイトルとサブタイトルは省略可能です。 したがって、 `MKAnnotation` クラスでは、 `Coordinate` プロパティは *abstract*であり、実装する必要があり `Title` `Subtitle` ます。次に示すように、プロパティとプロパティは *virtual*に設定され、省略可能になります。
 
 ```csharp
 [Register ("MKAnnotation"), Model ]
@@ -253,7 +253,7 @@ public abstract class UITableViewDataSource : NSObject
 
 Xamarin では、すべての iOS バインドが自動的に処理します。 ただし、プロトコルを目的の C から手動でバインドする必要がある場合は、を使用してクラスを装飾することによって、それを行うことができ `ExportAttribute` ます。 これは、Xamarin によって使用される方法と同じです。
 
-Xamarin の種類をバインドする方法の詳細については、「[バインディングの目的-c の型](~/ios/platform/binding-objective-c/index.md)」を参照してください。
+Xamarin の種類をバインドする方法の詳細については、「 [バインディングの目的-c の型](~/ios/platform/binding-objective-c/index.md)」を参照してください。
 
 ただし、まだプロトコルを使用しているわけではありません。 また、iOS では、次のセクションのトピックである目的 C のデリゲートの基礎としても使用されています。
 
@@ -385,7 +385,7 @@ map.DidSelectAnnotationView += (s,e) => {
 
 ## <a name="related-links"></a>関連リンク
 
-- [プロトコル、デリゲート、およびイベント (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/protocols-delegates-events)
+- [プロトコル、デリゲート、およびイベント (サンプル)](/samples/xamarin/ios-samples/protocols-delegates-events)
 - [Hello, iOS](~/ios/get-started/hello-ios/index.md)
 - [バインディングの目的 C の型](~/ios/platform/binding-objective-c/index.md)
 - [目的 C プログラミング言語](https://developer.apple.com/library/ios/#documentation/Cocoa/Conceptual/ObjectiveC/Introduction/introObjectiveC.html)

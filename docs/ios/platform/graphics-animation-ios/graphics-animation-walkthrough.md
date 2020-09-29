@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 632577d290c6d50a53d2f3fc236b5956f3795b35
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 1245531d68e43c833e892fe888830decc9d07c85
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929546"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430602"
 ---
 # <a name="using-core-graphics-and-core-animation-in-xamarinios"></a>Xamarin でのコアグラフィックスとコアアニメーションの使用
 
@@ -22,7 +22,7 @@ ms.locfileid: "86929546"
 
 ![完成したアプリケーション](graphics-animation-walkthrough-images/00-final-app.png)
 
-このガイドに付属する*GraphicsDemo*サンプルのダウンロードを開始する前に、こちらを参照してください。 [ここで](https://docs.microsoft.com/samples/xamarin/ios-samples/graphicsandanimation)ダウンロードでき、 **GraphicsWalkthrough**ディレクトリ内に配置されています。 **GraphicsDemo_starter**という名前のプロジェクトを開き、ダブルクリックしてクラスを開き `DemoView` ます。
+このガイドに付属する *GraphicsDemo* サンプルのダウンロードを開始する前に、こちらを参照してください。 [ここで](/samples/xamarin/ios-samples/graphicsandanimation)ダウンロードでき、 **GraphicsWalkthrough**ディレクトリ内に配置されています。 **GraphicsDemo_starter**という名前のプロジェクトを開き、ダブルクリックしてクラスを開き `DemoView` ます。
 
 ## <a name="drawing-a-path"></a>パスの描画
 
@@ -79,7 +79,7 @@ ms.locfileid: "86929546"
     }
     ```
 
-    `SetNeedsDisplay`は `Draw` 、次の実行ループパスでを呼び出すために、が移動するたびに呼び出されます。
+    `SetNeedsDisplay` は `Draw` 、次の実行ループパスでを呼び出すために、が移動するたびに呼び出されます。
 
 4. メソッドのパスに行を追加し、 `Draw` 赤い破線を使用してを描画します。 [実装 `Draw` ](~/ios/platform/graphics-animation-ios/core-graphics.md)次に示すコードを使用します。
 

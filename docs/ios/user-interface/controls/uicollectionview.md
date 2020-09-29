@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: eccd0415fdc1db357f904b843a015df60a35a488
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: e71760f813a8974a11ac46e6c9b286bb0eb55f83
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939608"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91432820"
 ---
 # <a name="collection-views-in-xamarinios"></a>Xamarin. iOS のコレクションビュー
 
@@ -28,7 +28,7 @@ iOS には、というレイアウトクラスが用意されており、 `UICol
 
 クラスは、 `UICollectionView` 3 つの異なる項目で構成されます。
 
-- **セル**–各項目のデータドリブンビュー
+- **セル** –各項目のデータドリブンビュー
 - **補助ビュー** –セクションに関連付けられているデータドリブンビュー。
 - **装飾ビュー** –レイアウトによって作成される非データドリブンビュー
 
@@ -40,9 +40,9 @@ iOS には、というレイアウトクラスが用意されており、 `UICol
 
 `UICollectionViewCell`クラスには、これらの各ビューに対して次のプロパティがあります。
 
-- `ContentView`–このビューには、セルに表示されるコンテンツが含まれます。 画面の最上位の z オーダーで表示されます。
-- `SelectedBackgroundView`–セルには、選択のためのサポートが組み込まれています。 このビューは、セルが選択されていることを視覚的に示すために使用されます。 セルが選択されると、のすぐ下に表示され `ContentView` ます。
-- `BackgroundView`–セルには、によって表示される背景を表示することもでき `BackgroundView` ます。 このビューは、の下に表示され `SelectedBackgroundView` ます。
+- `ContentView` –このビューには、セルに表示されるコンテンツが含まれます。 画面の最上位の z オーダーで表示されます。
+- `SelectedBackgroundView` –セルには、選択のためのサポートが組み込まれています。 このビューは、セルが選択されていることを視覚的に示すために使用されます。 セルが選択されると、のすぐ下に表示され  `ContentView` ます。
+- `BackgroundView` –セルには、によって表示される背景を表示することもでき  `BackgroundView` ます。 このビューは、の下に表示され  `SelectedBackgroundView` ます。
 
 `ContentView`をおよびよりも小さい値に設定すると、を使用して `BackgroundView` `SelectedBackgroundView` コンテンツを `BackgroundView` 視覚的に `SelectedBackgroundView` 表示できます。次に示すように、セルを選択すると、が表示されます。
 
@@ -138,10 +138,10 @@ public override UICollectionReusableView GetViewForSupplementaryElement (UIColle
 
 やなどの iOS の他の部分と同様に `UITableView` `MKMapView` 、 `UICollectionView` *データソース*からデータを取得します。このデータソースは、クラスを使用して Xamarin. iOS で公開されています。 **`UICollectionViewDataSource`** このクラスは、次のようなコンテンツをに提供し `UICollectionView` ます。
 
-- **セル**–メソッドから返され `GetCell` ます。
-- **補助ビュー** –メソッドから返され `GetViewForSupplementaryElement` ます。
-- **セクションの数**–メソッドから返され `NumberOfSections` ます。 実装されていない場合、既定値は1です。
-- **セクションごとの項目**数–メソッドから返され `GetItemsCount` ます。
+- **セル** –メソッドから返され  `GetCell` ます。
+- **補助ビュー** –メソッドから返され  `GetViewForSupplementaryElement` ます。
+- **セクションの数** –メソッドから返され  `NumberOfSections` ます。 実装されていない場合、既定値は1です。
+- **セクションごとの項目** 数–メソッドから返され  `GetItemsCount` ます。
 
 ### <a name="uicollectionviewcontroller"></a>UICollectionViewController
 便宜上、クラスを `UICollectionViewController` 使用できます。これは、次のセクションで説明するデリゲートと、そのビューのデータソースの両方になるように自動的に構成され `UICollectionView` ます。
@@ -188,8 +188,8 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, F
 
 `UICollectionView`クラスは、型のデリゲートを使用して `UICollectionViewDelegate` 、のコンテンツとの対話をサポートし `UICollectionView` ます。 これにより、次の制御が可能になります。
 
-- **セルの選択**–セルが選択されているかどうかを判断します。
-- **セルの強調表示**–セルが現在タッチされているかどうかを判断します。
+- **セルの選択** –セルが選択されているかどうかを判断します。
+- **セルの強調表示** –セルが現在タッチされているかどうかを判断します。
 - **セルメニュー** –長いプレスジェスチャに応じてセルに表示されるメニューです。
 
 データソースと同様に、は `UICollectionViewController` 既定でのデリゲートとして構成され `UICollectionView` ます。
@@ -233,7 +233,7 @@ public override bool ShouldHighlightItem (UICollectionView collectionView, NSInd
 
 強調表示が無効になっている場合は、セルを選択するプロセスも無効になります。 また、 `ShouldSelectItem` を実装して false を返す場合でも、を直接制御するメソッドもありますが、は `ShouldHighlightItem` `ShouldSelectItem` 呼び出されません。
 
- `ShouldSelectItem`が実装されていない場合に、項目ごとに選択をオンまたはオフにすることができ `ShouldHighlightItem` ます。 また、 `ShouldHighlightItem` が実装され、true が返された場合、は `ShouldSelectItem` false を返します。
+ `ShouldSelectItem` が実装されていない場合に、項目ごとに選択をオンまたはオフにすることができ `ShouldHighlightItem` ます。 また、 `ShouldHighlightItem` が実装され、true が返された場合、は `ShouldSelectItem` false を返します。
 
  <a name="Cell_Menus"></a>
 
@@ -242,8 +242,8 @@ public override bool ShouldHighlightItem (UICollectionView collectionView, NSInd
 の各セル `UICollectionView` は、必要に応じて、切り取り、コピー、および貼り付けを許可するメニューを表示できます。 セルに [編集] メニューを作成するには、次のようにします。
 
 1. `ShouldShowMenu`項目がメニューを表示する必要がある場合は、をオーバーライドして true を返します。
-1. をオーバーライド `CanPerformAction` し、項目が実行できるすべてのアクション (切り取り、コピー、または貼り付け) に対して true を返します。
-1. をオーバーライドし `PerformAction` て、編集、貼り付けのコピー操作を実行します。
+1. をオーバーライド  `CanPerformAction` し、項目が実行できるすべてのアクション (切り取り、コピー、または貼り付け) に対して true を返します。
+1. をオーバーライドし  `PerformAction` て、編集、貼り付けのコピー操作を実行します。
 
 次のスクリーンショットは、セルが長押されたときのメニューを示しています。
 
@@ -251,9 +251,9 @@ public override bool ShouldHighlightItem (UICollectionView collectionView, NSInd
 
  <a name="Layout"></a>
 
-## <a name="layout"></a>Layout
+## <a name="layout"></a>レイアウト
 
-`UICollectionView`は、そのすべての要素、セル、補助ビュー、および装飾ビューの配置を、単独とは独立して管理できるレイアウトシステムをサポートし `UICollectionView` ます。
+`UICollectionView` は、そのすべての要素、セル、補助ビュー、および装飾ビューの配置を、単独とは独立して管理できるレイアウトシステムをサポートし `UICollectionView` ます。
 レイアウトシステムを使用すると、アプリケーションは、この記事で説明したようなレイアウトをサポートしたり、カスタムレイアウトを提供したりすることができます。
 
  <a name="Layout_Basics"></a>
@@ -262,8 +262,8 @@ public override bool ShouldHighlightItem (UICollectionView collectionView, NSInd
 
 のレイアウト `UICollectionView` は、から継承するクラスで定義され `UICollectionViewLayout` ます。 レイアウト実装は、内のすべての項目のレイアウト属性を作成する役割を担い `UICollectionView` ます。 レイアウトを作成するには、次の2つの方法があります。
 
-- 組み込みのを使用し `UICollectionViewFlowLayout` ます。
-- から継承することにより、カスタムレイアウトを提供 `UICollectionViewLayout` します。
+- 組み込みのを使用し  `UICollectionViewFlowLayout` ます。
+- から継承することにより、カスタムレイアウトを提供  `UICollectionViewLayout` します。
 
  <a name="Flow_Layout"></a>
 
@@ -273,13 +273,13 @@ public override bool ShouldHighlightItem (UICollectionView collectionView, NSInd
 
 フローレイアウトを使用するには:
 
-- のインスタンスを作成し `UICollectionViewFlowLayout` ます。
+- のインスタンスを作成し  `UICollectionViewFlowLayout` ます。
 
 ```csharp
 var layout = new UICollectionViewFlowLayout ();
 ```
 
-- インスタンスをのコンストラクターに渡し `UICollectionView` ます。
+- インスタンスをのコンストラクターに渡し  `UICollectionView` ます。
 
 ```csharp
 simpleCollectionViewController = new SimpleCollectionViewController (layout);
@@ -315,9 +315,9 @@ layout.SectionInset = new UIEdgeInsets (50,50,50,50);
 をサブクラス化して実装するに `UICollectionViewFlowLayout` は、次のものが必要です。
 
 - レイアウト自体またはコンストラクター内のレイアウト内のすべての項目に適用されるレイアウトプロパティを初期化します。
-- をオーバーライド `ShouldInvalidateLayoutForBoundsChange` して true を返すことで、変更の範囲が変化したときに `UICollectionView` セルのレイアウトが再計算されるようになります。 この場合、中央のセルに適用される変換のコードがスクロール中に適用されることを確認します。
+- をオーバーライド  `ShouldInvalidateLayoutForBoundsChange` して true を返すことで、変更の範囲が変化したときに  `UICollectionView` セルのレイアウトが再計算されるようになります。 この場合、中央のセルに適用される変換のコードがスクロール中に適用されることを確認します。
 - `TargetContentOffset`スクロールが停止すると、中央のセルをの中央にスナップするようにをオーバーライドし `UICollectionView` ます。
-- `LayoutAttributesForElementsInRect`をオーバーライドして、の配列を返し `UICollectionViewLayoutAttributes` ます。 それぞれには `UICollectionViewLayoutAttribute` 、、、などのプロパティを含む、特定の項目のレイアウト方法に関する情報が含まれてい `Center` `Size` `ZIndex` `Transform3D` ます。
+- `LayoutAttributesForElementsInRect`をオーバーライドして、の配列を返し `UICollectionViewLayoutAttributes` ます。 それぞれには  `UICollectionViewLayoutAttribute` 、、、などのプロパティを含む、特定の項目のレイアウト方法に関する情報が含まれてい  `Center`  `Size`  `ZIndex`  `Transform3D` ます。
 
 次のコードは、このような実装を示しています。
 
@@ -396,9 +396,9 @@ namespace SimpleCollectionView
 
 オーバーライドする主な方法は次のとおりです。
 
-- `PrepareLayout`–レイアウトプロセス全体で使用される最初の幾何計算を実行するために使用されます。
-- `CollectionViewContentSize`–コンテンツの表示に使用される領域のサイズを返します。
-- `LayoutAttributesForElementsInRect`–前に示した UICollectionViewFlowLayout の例と同様に、このメソッドを使用して、各項目のレイアウト方法に関する情報をに提供し `UICollectionView` ます。 ただし、とは異なり、カスタムレイアウトを作成する場合は、選択した `UICollectionViewFlowLayout` 項目を配置できます。
+- `PrepareLayout` –レイアウトプロセス全体で使用される最初の幾何計算を実行するために使用されます。
+- `CollectionViewContentSize` –コンテンツの表示に使用される領域のサイズを返します。
+- `LayoutAttributesForElementsInRect` –前に示した UICollectionViewFlowLayout の例と同様に、このメソッドを使用して、各項目のレイアウト方法に関する情報をに提供し  `UICollectionView` ます。 ただし、とは異なり、カスタムレイアウトを作成する場合は、選択した  `UICollectionViewFlowLayout` 項目を配置できます。
 
 たとえば、次に示すように、同じコンテンツを円形のレイアウトで表示できます。
 
@@ -429,7 +429,7 @@ IOS 9 では、コレクションビュー ( `UICollectionView` ) で、新し�
 前述のように、iOS 9 でのコレクションビューの最も重要な変更点の1つは、すぐにドラッグして順序を変更する機能が追加されたことでした。
 
 IOS 9 では、コレクションビューに並べ替えを追加する最も簡単な方法は、を使用することです `UICollectionViewController` 。
-コレクションビューコントローラーにプロパティが追加されました。これにより、 `InstallsStandardGestureForInteractiveMovement` コレクション内の項目の順序を変更するためのドラッグをサポートする標準*ジェスチャレコグナイザー*が追加されます。
+コレクションビューコントローラーにプロパティが追加されました。これにより、 `InstallsStandardGestureForInteractiveMovement` コレクション内の項目の順序を変更するためのドラッグをサポートする標準 *ジェスチャレコグナイザー* が追加されます。
 既定値はであるため `true` 、ドラッグから順序変更をサポートするために必要なのは、 `MoveItem` クラスのメソッドを実装することだけです `UICollectionViewDataSource` 。 次に例を示します。
 
 ```csharp
@@ -444,7 +444,7 @@ public override void MoveItem (UICollectionView collectionView, NSIndexPath sour
 
 ### <a name="simple-reordering-example"></a>単純な並べ替えの例
 
-簡単な例として、新しい Xamarin. iOS プロジェクトを開始し、**メインの storyboard**ファイルを編集します。 を `UICollectionViewController` デザインサーフェイスにドラッグします。
+簡単な例として、新しい Xamarin. iOS プロジェクトを開始し、 **メインの storyboard** ファイルを編集します。 を `UICollectionViewController` デザインサーフェイスにドラッグします。
 
 [![UICollectionViewController の追加](uicollectionview-images/quick01.png)](uicollectionview-images/quick01.png#lightbox)
 
@@ -472,7 +472,7 @@ _Collectionviewcell_の**プロパティパッド**で、**クラス**を次の�
 
 [![クラスを TextCollectionViewCell に設定します。](uicollectionview-images/quick05.png)](uicollectionview-images/quick05.png#lightbox)
 
-コレクションの**再利用可能なビュー**を次のように設定し `Cell` ます。
+コレクションの **再利用可能なビュー** を次のように設定し `Cell` ます。
 
 [![コレクション再利用可能ビューをセルに設定します](uicollectionview-images/quick06.png)](uicollectionview-images/quick06.png#lightbox)
 
@@ -666,9 +666,9 @@ namespace CollectionView
 }
 ```
 
-上で `DataSource` 作成したと `Delegate` は、コレクションビューがストーリーボード (または**xib**ファイル) から構築されるときに設定されることに注意してください。
+上で `DataSource` 作成したと `Delegate` は、コレクションビューがストーリーボード (または **xib** ファイル) から構築されるときに設定されることに注意してください。
 
-メインの**ストーリーボード**ファイルをもう一度編集し、コレクションビューを選択して、**プロパティ**に切り替えます。 **クラス**を、前に定義したカスタムクラスに設定し `WaterfallCollectionView` ます。
+メインの **ストーリーボード** ファイルをもう一度編集し、コレクションビューを選択して、 **プロパティ**に切り替えます。 **クラス**を、前に定義したカスタムクラスに設定し `WaterfallCollectionView` ます。
 
 UI に加えた変更を保存し、アプリを実行します。
 ユーザーが一覧から項目を選択して新しい場所にドラッグした場合、他の項目は項目の外に移動するときに自動的にアニメーション化されます。
@@ -718,10 +718,10 @@ public override void ViewDidLoad ()
 
 ここでは、ドラッグ操作を実装および制御するために、コレクションビューに追加されたいくつかの新しいメソッドを使用しています。
 
-- `BeginInteractiveMovementForItem`-移動操作の開始をマークします。
-- `UpdateInteractiveMovementTargetPosition`-項目の場所が更新されると送信されます。
-- `EndInteractiveMovement`-項目の移動の終了をマークします。
-- `CancelInteractiveMovement`-ユーザーに移動操作の取り消しをマークします。
+- `BeginInteractiveMovementForItem` -移動操作の開始をマークします。
+- `UpdateInteractiveMovementTargetPosition` -項目の場所が更新されると送信されます。
+- `EndInteractiveMovement` -項目の移動の終了をマークします。
+- `CancelInteractiveMovement` -ユーザーに移動操作の取り消しをマークします。
 
 アプリケーションを実行すると、ドラッグ操作は、コレクションビューに付属する既定のドラッグジェスチャレコグナイザーと同じように動作します。
 
@@ -1195,77 +1195,77 @@ Xamarin. iOS アプリを再度実行すると、コレクションビューは�
 
 IOS 9 のクラスには、次の変更または追加が行われてい `UICollectionView` ます。
 
-- `BeginInteractiveMovementForItem`–ドラッグ操作の開始をマークします。
-- `CancelInteractiveMovement`–ユーザーがドラッグ操作を取り消したことをコレクションビューに通知します。
-- `EndInteractiveMovement`–ユーザーがドラッグ操作を完了したことをコレクションビューに通知します。
-- `GetIndexPathsForVisibleSupplementaryElements`– `indexPath` コレクションビューセクション内のヘッダーまたはフッターのを返します。
-- `GetSupplementaryView`–指定されたヘッダーまたはフッターを返します。
-- `GetVisibleSupplementaryViews`–表示されているすべてのヘッダーとフッターの一覧を返します。
-- `UpdateInteractiveMovementTargetPosition`–ユーザーがドラッグ操作中に項目を移動した、または移動していることをコレクションビューに通知します。
+- `BeginInteractiveMovementForItem` –ドラッグ操作の開始をマークします。
+- `CancelInteractiveMovement` –ユーザーがドラッグ操作を取り消したことをコレクションビューに通知します。
+- `EndInteractiveMovement` –ユーザーがドラッグ操作を完了したことをコレクションビューに通知します。
+- `GetIndexPathsForVisibleSupplementaryElements` – `indexPath` コレクションビューセクション内のヘッダーまたはフッターのを返します。
+- `GetSupplementaryView` –指定されたヘッダーまたはフッターを返します。
+- `GetVisibleSupplementaryViews` –表示されているすべてのヘッダーとフッターの一覧を返します。
+- `UpdateInteractiveMovementTargetPosition` –ユーザーがドラッグ操作中に項目を移動した、または移動していることをコレクションビューに通知します。
 
 ### <a name="uicollectionviewcontroller"></a>UICollectionViewController
 
 IOS 9 では、クラスに次の変更または追加が行われてい `UICollectionViewController` ます。
 
-- `InstallsStandardGestureForInteractiveMovement`–ドラッグして再配置 `true` を自動的にサポートする新しいジェスチャ認識エンジンが使用されます。
-- `CanMoveItem`–指定された項目をドラッグして並べ替えることができる場合は、コレクションビューに通知します。
-- `GetTargetContentOffset`-指定されたコレクションビューアイテムのオフセットを取得するために使用されます。
-- `GetTargetIndexPathForMove`– `indexPath` ドラッグ操作のために指定された項目のを取得します。
-- `MoveItem`–リスト内の指定された項目の順序を移動します。
+- `InstallsStandardGestureForInteractiveMovement` –ドラッグして再配置 `true` を自動的にサポートする新しいジェスチャ認識エンジンが使用されます。
+- `CanMoveItem` –指定された項目をドラッグして並べ替えることができる場合は、コレクションビューに通知します。
+- `GetTargetContentOffset` -指定されたコレクションビューアイテムのオフセットを取得するために使用されます。
+- `GetTargetIndexPathForMove` – `indexPath` ドラッグ操作のために指定された項目のを取得します。
+- `MoveItem` –リスト内の指定された項目の順序を移動します。
 
 ### <a name="uicollectionviewdatasource"></a>UICollectionViewDataSource
 
 IOS 9 では、クラスに次の変更または追加が行われてい `UICollectionViewDataSource` ます。
 
-- `CanMoveItem`–指定された項目をドラッグして並べ替えることができる場合は、コレクションビューに通知します。
-- `MoveItem`–リスト内の指定された項目の順序を移動します。
+- `CanMoveItem` –指定された項目をドラッグして並べ替えることができる場合は、コレクションビューに通知します。
+- `MoveItem` –リスト内の指定された項目の順序を移動します。
 
 ### <a name="uicollectionviewdelegate"></a>UICollectionViewDelegate
 
 IOS 9 では、クラスに次の変更または追加が行われてい `UICollectionViewDelegate` ます。
 
-- `GetTargetContentOffset`-指定されたコレクションビューアイテムのオフセットを取得するために使用されます。
-- `GetTargetIndexPathForMove`– `indexPath` ドラッグ操作のために指定された項目のを取得します。
+- `GetTargetContentOffset` -指定されたコレクションビューアイテムのオフセットを取得するために使用されます。
+- `GetTargetIndexPathForMove` – `indexPath` ドラッグ操作のために指定された項目のを取得します。
 
 ### <a name="uicollectionviewflowlayout"></a>UICollectionViewFlowLayout
 
 IOS 9 では、クラスに次の変更または追加が行われてい `UICollectionViewFlowLayout` ます。
 
-- `SectionFootersPinToVisibleBounds`–セクションフッターを、表示されているコレクションビューの境界にします。
-- `SectionHeadersPinToVisibleBounds`–セクションヘッダーを表示されているコレクションビューの境界にします。
+- `SectionFootersPinToVisibleBounds` –セクションフッターを、表示されているコレクションビューの境界にします。
+- `SectionHeadersPinToVisibleBounds` –セクションヘッダーを表示されているコレクションビューの境界にします。
 
 ### <a name="uicollectionviewlayout"></a>UICollectionViewLayout
 
 IOS 9 では、クラスに次の変更または追加が行われてい `UICollectionViewLayout` ます。
 
-- `GetInvalidationContextForEndingInteractiveMovementOfItems`–ドラッグ操作の終了時に、ユーザーがドラッグまたはキャンセルを完了したときに、無効化コンテキストを返します。
-- `GetInvalidationContextForInteractivelyMovingItems`–ドラッグ操作の開始時に無効化コンテキストを返します。
-- `GetLayoutAttributesForInteractivelyMovingItem`–項目のドラッグ中に、指定された項目のレイアウト属性を取得します。
-- `GetTargetIndexPathForInteractivelyMovingItem`–項目を `indexPath` ドラッグするときに、指定したポイントにある項目のを返します。
+- `GetInvalidationContextForEndingInteractiveMovementOfItems` –ドラッグ操作の終了時に、ユーザーがドラッグまたはキャンセルを完了したときに、無効化コンテキストを返します。
+- `GetInvalidationContextForInteractivelyMovingItems` –ドラッグ操作の開始時に無効化コンテキストを返します。
+- `GetLayoutAttributesForInteractivelyMovingItem` –項目のドラッグ中に、指定された項目のレイアウト属性を取得します。
+- `GetTargetIndexPathForInteractivelyMovingItem` –項目を `indexPath` ドラッグするときに、指定したポイントにある項目のを返します。
 
 ### <a name="uicollectionviewlayoutattributes"></a>UICollectionViewLayoutAttributes
 
 IOS 9 では、クラスに次の変更または追加が行われてい `UICollectionViewLayoutAttributes` ます。
 
-- `CollisionBoundingPath`–ドラッグ操作中に2つの項目の競合パスを返します。
-- `CollisionBoundsType`–ドラッグ操作中に発生した競合の種類 (として) を返し `UIDynamicItemCollisionBoundsType` ます。
+- `CollisionBoundingPath` –ドラッグ操作中に2つの項目の競合パスを返します。
+- `CollisionBoundsType` –ドラッグ操作中に発生した競合の種類 (として) を返し `UIDynamicItemCollisionBoundsType` ます。
 
 ### <a name="uicollectionviewlayoutinvalidationcontext"></a>UICollectionViewLayoutInvalidationContext
 
 IOS 9 では、クラスに次の変更または追加が行われてい `UICollectionViewLayoutInvalidationContext` ます。
 
-- `InteractiveMovementTarget`–ドラッグ操作のターゲット項目を返します。
-- `PreviousIndexPathsForInteractivelyMovingItems`– `indexPaths` ドラッグ操作に関連する他の項目のを返します。
-- `TargetIndexPathsForInteractivelyMovingItems`–ドラッグアンド `indexPaths` 並べ替え操作の結果として並べ替えられる項目のを返します。
+- `InteractiveMovementTarget` –ドラッグ操作のターゲット項目を返します。
+- `PreviousIndexPathsForInteractivelyMovingItems` – `indexPaths` ドラッグ操作に関連する他の項目のを返します。
+- `TargetIndexPathsForInteractivelyMovingItems` –ドラッグアンド `indexPaths` 並べ替え操作の結果として並べ替えられる項目のを返します。
 
 ### <a name="uicollectionviewsource"></a>UICollectionViewSource
 
 IOS 9 では、クラスに次の変更または追加が行われてい `UICollectionViewSource` ます。
 
-- `CanMoveItem`–指定された項目をドラッグして並べ替えることができる場合は、コレクションビューに通知します。
-- `GetTargetContentOffset`–ドラッグアンド並べ替え操作によって移動される項目のオフセットを返します。
-- `GetTargetIndexPathForMove`–ドラッグアンド `indexPath` 並べ替え操作中に移動される項目のを返します。
-- `MoveItem`–リスト内の指定された項目の順序を移動します。
+- `CanMoveItem` –指定された項目をドラッグして並べ替えることができる場合は、コレクションビューに通知します。
+- `GetTargetContentOffset` –ドラッグアンド並べ替え操作によって移動される項目のオフセットを返します。
+- `GetTargetIndexPathForMove` –ドラッグアンド `indexPath` 並べ替え操作中に移動される項目のを返します。
+- `MoveItem` –リスト内の指定された項目の順序を移動します。
 
 ## <a name="summary"></a>まとめ
 
@@ -1274,8 +1274,8 @@ IOS 9 では、クラスに次の変更または追加が行われてい `UIColl
 
 ## <a name="related-links"></a>関連リンク
 
-- [iOS 9 のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
-- [コレクションビューのサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-collectionview)
-- [SimpleCollectionView (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/simplecollectionview)
+- [iOS 9 のサンプル](/samples/browse/?products=xamarin&term=Xamarin.iOS%2biOS9)
+- [コレクションビューのサンプル](/samples/xamarin/ios-samples/ios9-collectionview)
+- [SimpleCollectionView (サンプル)](/samples/xamarin/ios-samples/simplecollectionview)
 - [イベント、プロトコル、デリゲート](~/ios/app-fundamentals/delegates-protocols-and-events.md)
 - [テーブルとセルの操作](~/ios/user-interface/controls/tables/index.md)

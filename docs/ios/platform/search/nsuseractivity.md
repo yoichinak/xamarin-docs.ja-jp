@@ -7,17 +7,17 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: bbd3d1663c3d796768095a12e5048b18f447fa7a
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 29ccf115facf9a086db473301f7dfb548a80dc9f
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937021"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431114"
 ---
 # <a name="search-with-nsuseractivity-in-xamarinios"></a>Xamarin で NSUserActivity を検索します。 iOS
 
-`NSUserActivity`は、iOS 8 で導入され、ハンドオフ用のデータを提供するために使用されます。
-これにより、アプリの特定の部分でアクティビティを作成し、別の iOS デバイスで実行されているアプリの別のインスタンスに渡すことができます。 受信デバイスは、前のデバイスで開始されたアクティビティを続行して、ユーザーが中断した場所を右に移動できます。 ハンドオフの使用の詳細については、「[ハンドオフ](~/ios/platform/handoff.md)ドキュメントの概要」を参照してください。
+`NSUserActivity` は、iOS 8 で導入され、ハンドオフ用のデータを提供するために使用されます。
+これにより、アプリの特定の部分でアクティビティを作成し、別の iOS デバイスで実行されているアプリの別のインスタンスに渡すことができます。 受信デバイスは、前のデバイスで開始されたアクティビティを続行して、ユーザーが中断した場所を右に移動できます。 ハンドオフの使用の詳細については、「 [ハンドオフ](~/ios/platform/handoff.md) ドキュメントの概要」を参照してください。
 
 IOS 9 を初めて使用する場合は、 `NSUserActivity` (パブリックとプライベートの両方の) インデックスを作成し、スポットライト検索および Safari から検索することができます。 を `NSUserActivity` 検索可能としてマークし、インデックス可能なメタデータを追加することにより、アクティビティは iOS デバイスの検索結果に一覧表示されます。
 
@@ -27,14 +27,14 @@ IOS 9 を初めて使用する場合は、 `NSUserActivity` (パブリックと�
 
 `NSUserActivity`アプリケーション検索をサポートするには、の次のプロパティを使用します。
 
-- `EligibleForHandoff`– `true` の場合、このアクティビティはハンドオフ操作で使用できます。
-- `EligibleForSearch`– `true` の場合、このアクティビティはデバイス上のインデックスに追加され、検索結果に表示されます。
-- `EligibleForPublicIndexing`–の場合 `true` 、このアクティビティは Apple のクラウドベースのインデックスに追加され、iOS デバイスにまだアプリがインストールされていないユーザーに (検索を使用して) 表示されます。 詳細については、以下の「[パブリック検索のインデックス作成](#public-search-indexing)」セクションを参照してください。
-- `Title`–アクティビティのタイトルを提供し、検索結果に表示されます。 ユーザーは、タイトル自体のテキストを検索することもできます。
-- `Keywords`–は、インデックスが作成され、エンドユーザーによって検索可能になるアクティビティを説明するために使用される文字列の配列です。
-- `ContentAttributeSet`–アクティビティを `CSSearchableItemAttributeSet` 詳細に説明し、検索結果に豊富なコンテンツを提供するために使用されます。
-- `ExpirationDate`–特定の日付までアクティビティを表示する場合は、ここでその日付を指定できます。
-- `WebpageURL`– Web でアクティビティを表示できる場合、またはアプリが Safari のディープリンクをサポートしている場合は、ここにアクセスするようにリンクを設定できます。
+- `EligibleForHandoff` – `true` の場合、このアクティビティはハンドオフ操作で使用できます。
+- `EligibleForSearch` – `true` の場合、このアクティビティはデバイス上のインデックスに追加され、検索結果に表示されます。
+- `EligibleForPublicIndexing` –の場合 `true` 、このアクティビティは Apple のクラウドベースのインデックスに追加され、iOS デバイスにまだアプリがインストールされていないユーザーに (検索を使用して) 表示されます。 詳細については、以下の「 [パブリック検索のインデックス作成](#public-search-indexing) 」セクションを参照してください。
+- `Title` –アクティビティのタイトルを提供し、検索結果に表示されます。 ユーザーは、タイトル自体のテキストを検索することもできます。
+- `Keywords` –は、インデックスが作成され、エンドユーザーによって検索可能になるアクティビティを説明するために使用される文字列の配列です。
+- `ContentAttributeSet` –アクティビティを `CSSearchableItemAttributeSet` 詳細に説明し、検索結果に豊富なコンテンツを提供するために使用されます。
+- `ExpirationDate` –特定の日付までアクティビティを表示する場合は、ここでその日付を指定できます。
+- `WebpageURL` – Web でアクティビティを表示できる場合、またはアプリが Safari のディープリンクをサポートしている場合は、ここにアクセスするようにリンクを設定できます。
 
 ## <a name="nsuseractivity-quickstart"></a>NSUserActivity のクイックスタート
 
@@ -45,19 +45,19 @@ IOS 9 を初めて使用する場合は、 `NSUserActivity` (パブリックと�
 - [アクティビティへの応答](#respondactivity)
 - [パブリック検索インデックス作成](#indexing)
 
-を使用すると、コンテンツを検索可能にするための[追加の利点](#benefits)がいくつかあり `NSUserActivity` ます。
+を使用すると、コンテンツを検索可能にするための [追加の利点](#benefits) がいくつかあり `NSUserActivity` ます。
 
 <a name="creatingtypeid"></a>
 
 ## <a name="creating-activity-type-identifiers"></a>アクティビティの種類の識別子の作成
 
-検索活動を作成する前に、_アクティビティの種類_を識別するための識別子を作成する必要があります。 アクティビティの種類の識別子は、 `NSUserActivityTypes` 特定のユーザーアクティビティの種類を一意に識別するために使用される、アプリの**情報 plist**ファイルの配列に追加される短い文字列です。 アプリがサポートし、アプリ検索に公開されるアクティビティごとに、配列に1つのエントリがあります。 
+検索活動を作成する前に、 _アクティビティの種類_ を識別するための識別子を作成する必要があります。 アクティビティの種類の識別子は、 `NSUserActivityTypes` 特定のユーザーアクティビティの種類を一意に識別するために使用される、アプリの **情報 plist** ファイルの配列に追加される短い文字列です。 アプリがサポートし、アプリ検索に公開されるアクティビティごとに、配列に1つのエントリがあります。 
 
 Apple では、競合を避けるために、アクティビティの種類の識別子に対して逆引き DNS スタイルの表記を使用することを提案しています。 たとえば、 `com.company-name.appname.activity` 特定のアプリベースのアクティビティ、または `com.company-name.activity` 複数のアプリで実行できるアクティビティなどです。
 
 アクティビティタイプ識別子は、 `NSUserActivity` アクティビティの種類を識別するためにインスタンスを作成するときに使用されます。 ユーザーが検索結果をタップしたときにアクティビティが続行されると、アクティビティの種類 (アプリのチーム ID と共に) によって、アクティビティを続行するために起動するアプリが決まります。
 
-この動作をサポートするために必要なアクティビティの種類の識別子を作成するには、**情報の plist**ファイルを編集し、**ソース**ビューに切り替えます。 キーを追加 `NSUserActivityTypes` し、次の形式で識別子を作成します。
+この動作をサポートするために必要なアクティビティの種類の識別子を作成するには、 **情報の plist** ファイルを編集し、 **ソース** ビューに切り替えます。 キーを追加 `NSUserActivityTypes` し、次の形式で識別子を作成します。
 
 [![Plist エディターでの NSUserActivityTypes キーと必須識別子](nsuseractivity-images/type01.png)](nsuseractivity-images/type01.png#lightbox)
 
@@ -96,7 +96,7 @@ activity.BecomeCurrent();
 
 ## <a name="responding-to-an-activity"></a>アクティビティへの応答
 
-アプリの検索結果 () をタップしてユーザーに応答するには、 `NSUserActivity` **AppDelegate.cs**ファイルを編集し、メソッドをオーバーライドし `ContinueUserActivity` ます。 次に例を示します。
+アプリの検索結果 () をタップしてユーザーに応答するには、 `NSUserActivity` **AppDelegate.cs** ファイルを編集し、メソッドをオーバーライドし `ContinueUserActivity` ます。 次に例を示します。
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -162,13 +162,13 @@ activity.BecomeCurrent();
 
 アプリでアプリ検索を使用することによって、 `NSUserActivity` 次の機能も利用できます。
 
-- **ハンドオフ**-アプリの検索では、ハンドオフ () と同じメカニズムを使用してコンテンツ、ナビゲーション、または機能を公開しているため `NSUserActivity` 、アプリのユーザーが1つのデバイスでアクティビティを開始して別のデバイスで続行できるようにすることが簡単にできます。
-- **Siri の提案**-Siri の提案によって通常作成される標準の提案と共に、アプリからの在職者を自動的に提案することができます。
+- **ハンドオフ** -アプリの検索では、ハンドオフ () と同じメカニズムを使用してコンテンツ、ナビゲーション、または機能を公開しているため `NSUserActivity` 、アプリのユーザーが1つのデバイスでアクティビティを開始して別のデバイスで続行できるようにすることが簡単にできます。
+- **Siri の提案** -Siri の提案によって通常作成される標準の提案と共に、アプリからの在職者を自動的に提案することができます。
 - **Siri スマートリマインダー** -ユーザーは、アプリからのアクティビティに関する通知を siri に要求できます。
 
 ## <a name="related-links"></a>関連リンク
 
-- [iOS 9 のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
+- [iOS 9 のサンプル](/samples/browse/?products=xamarin&term=Xamarin.iOS%2biOS9)
 - [iOS 9 (開発者向け)](https://developer.apple.com/ios/pre-release/)
 - [iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
 - [アプリ検索のプログラミングガイド](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/AppSearch/index.html#//apple_ref/doc/uid/TP40016308)

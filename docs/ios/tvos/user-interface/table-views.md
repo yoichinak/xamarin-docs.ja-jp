@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: eb95970066f85bb62eb207f23cfc135dc1625a11
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 364aa1ebc70517ee8378e603922486ae29adf6c1
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937099"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436438"
 ---
 # <a name="working-with-tvos-table-views-in-xamarin"></a>Xamarin での tvOS テーブルビューの使用
 
@@ -20,7 +20,7 @@ _この記事では、tvOS アプリ内のテーブルビューおよびテー�
 
 TvOS では、テーブルビューがスクロール行の単一の列として表示され、必要に応じてグループやセクションに整理することができます。 テーブルビューは、わかりやすい方法でユーザーに大量のデータを効率的に表示する必要がある場合に使用します。
 
-通常、テーブルビューは[分割ビュー](~/ios/tvos/user-interface/split-views.md)の1つの側にナビゲーションとして表示され、選択した項目の詳細が反対側に表示されます。
+通常、テーブルビューは [分割ビュー](~/ios/tvos/user-interface/split-views.md) の1つの側にナビゲーションとして表示され、選択した項目の詳細が反対側に表示されます。
 
 [![サンプルテーブルビュー](table-views-images/intro01.png)](table-views-images/intro01.png#lightbox)
 
@@ -34,9 +34,9 @@ TvOS では、テーブルビューがスクロール行の単一の列として
 
 Apple には、テーブルを操作するための次のような推奨事項があります。
 
-- **幅に注意**してください。テーブルの幅で正しいバランスを取るようにしてください。 テーブルの幅が広すぎると、距離からのスキャンが困難になり、使用可能なコンテンツ領域から離れてしまう可能性があります。 テーブルの幅が狭すぎると、情報が切り捨てられたり折り返されたりする可能性があります。この場合も、ユーザーが部屋から読み取るのが困難になる可能性があります。
-- **テーブルの内容をすばやく表示する**-データの大きなリストを表示するには、コンテンツを遅延読み込みし、テーブルがユーザーに表示されたらすぐに情報の表示を開始します。 テーブルの読み込みに時間がかかる場合、ユーザーはアプリの関心を失うか、ロックされていると考えられます。
-- **長いコンテンツの読み込みをユーザーに通知**する-長いテーブルの読み込み時間が回避できない場合は、アプリがロックされていないことを示す[進行状況バーまたはアクティビティインジケーター](~/ios/tvos/user-interface/progress-indicators.md)を提示します。
+- **幅に注意** してください。テーブルの幅で正しいバランスを取るようにしてください。 テーブルの幅が広すぎると、距離からのスキャンが困難になり、使用可能なコンテンツ領域から離れてしまう可能性があります。 テーブルの幅が狭すぎると、情報が切り捨てられたり折り返されたりする可能性があります。この場合も、ユーザーが部屋から読み取るのが困難になる可能性があります。
+- **テーブルの内容をすばやく表示する** -データの大きなリストを表示するには、コンテンツを遅延読み込みし、テーブルがユーザーに表示されたらすぐに情報の表示を開始します。 テーブルの読み込みに時間がかかる場合、ユーザーはアプリの関心を失うか、ロックされていると考えられます。
+- **長いコンテンツの読み込みをユーザーに通知** する-長いテーブルの読み込み時間が回避できない場合は、アプリがロックされていないことを示す [進行状況バーまたはアクティビティインジケーター](~/ios/tvos/user-interface/progress-indicators.md) を提示します。
 
 <a name="Table-Cell-Types"></a>
 
@@ -45,20 +45,20 @@ Apple には、テーブルを操作するための次のような推奨事項�
 は、 `UITableViewCell` テーブルビュー内の個々のデータ行を表すために使用されます。 Apple では、いくつかの既定のテーブルセルの種類が定義されています。
 
 - **Default** -この型は、右側のセルと左揃えのタイトルの左側にオプションのイメージを表示します。 
-- **サブタイトル**-この型では、最初の行に左揃えのタイトルが表示され、次の行に左揃えのサブタイトルが表示されます。
+- **サブタイトル** -この型では、最初の行に左揃えのタイトルが表示され、次の行に左揃えのサブタイトルが表示されます。
 - **値 1** -この型は左揃えのタイトルを表し、同じ行に右揃えで表示される白のサブタイトルが表示されます。
 - **値 2** -この型は、同じ行に左揃えの明るい字幕がある、右揃えのタイトルを示します。
 
 既定のテーブルビューのすべてのセルの種類では、表示インジケーターやチェックマークなどのグラフィック要素もサポートされます。 
 
-また、インターフェイスデザイナーまたはコードを使用して作成した**カスタム**テーブルビューのセルの種類を定義し、_プロトタイプのセル_を表示することもできます。
+また、インターフェイスデザイナーまたはコードを使用して作成した **カスタム** テーブルビューのセルの種類を定義し、 _プロトタイプのセル_を表示することもできます。
 
 Apple には、テーブルビューのセルを操作するための次のような推奨事項があります。
 
-- **テキスト領域を避け**ます。テキストの各行を短くして、最終的には切り捨てられないようにします。 切り捨てられた単語や語句は、ユーザーが部屋を越えて解析するのは困難です。
+- **テキスト領域を避け** ます。テキストの各行を短くして、最終的には切り捨てられないようにします。 切り捨てられた単語や語句は、ユーザーが部屋を越えて解析するのは困難です。
 - フォーカスさ**れている行の状態を考慮してください**。行が大きくなり、角が丸くなると、セルの外観をすべての状態でテストする必要があります。 画像またはテキストが、フォーカスされた状態でクリップされるか、正しく表示されない可能性があります。
-- **編集可能なテーブルを控えめに使用する**-テーブル行の移動または削除では、iOS よりも時間がかかります tvOS。 この機能によって tvOS アプリが追加されるかどうかについては、慎重に判断する必要があります。
-- **適切な場所にカスタムのセルの種類を作成**する-組み込みテーブルビューのセルの種類は多くの状況に適していますが、より高度な制御を提供し、ユーザーに情報を表示するために、標準以外の情報に対してカスタムのセル型を作成することを検討してください。
+- **編集可能なテーブルを控えめに使用する** -テーブル行の移動または削除では、iOS よりも時間がかかります tvOS。 この機能によって tvOS アプリが追加されるかどうかについては、慎重に判断する必要があります。
+- **適切な場所にカスタムのセルの種類を作成** する-組み込みテーブルビューのセルの種類は多くの状況に適していますが、より高度な制御を提供し、ユーザーに情報を表示するために、標準以外の情報に対してカスタムのセル型を作成することを検討してください。
 
 <a name="Working-With-Table-Views"></a>
 
@@ -73,7 +73,7 @@ TvOS アプリでテーブルビューを操作する最も簡単な方法は、
 1. Visual Studio for Mac で、新しい tvOS app プロジェクトを開始し、[ **tvOS**  >  **app**  >  **Single View app** ] を選択し、[**次へ**] ボタンをクリックします。 
 
     [![単一ビューアプリを選択する](table-views-images/table02.png)](table-views-images/table02.png#lightbox)
-1. アプリの**名前**を入力し、[**次へ**] をクリックします。 
+1. アプリの **名前** を入力し、[ **次へ**] をクリックします。 
 
     [![アプリの名前を入力してください](table-views-images/table03.png)](table-views-images/table03.png#lightbox)
 1. **プロジェクト名**と**ソリューション名**を調整するか、既定値をそのまま使用し、[**作成**] ボタンをクリックして新しいソリューションを作成します。 
@@ -89,7 +89,7 @@ TvOS アプリでテーブルビューを操作する最も簡単な方法は、
 1. 既定では、**ナビゲーションビューコントローラー** 、左側に**テーブルビュー**コントローラー、右側に**ビューコントローラー**がある[分割ビュー](~/ios/tvos/user-interface/split-views.md)が表示されます。 これは、tvOS のテーブルビューで使用される Apple の推奨される使用方法です。 
 
     [![分割ビューを追加する](table-views-images/table08.png)](table-views-images/table08.png#lightbox)
-1. テーブルビューのすべての部分を選択し、[**プロパティエクスプローラー** ] の [**ウィジェット**] タブでカスタム**クラス名**を割り当てる必要があります。これにより、後で C# コードでアクセスできるようになります。 たとえば、**テーブルビューコントローラー**は次のようになります。 
+1. テーブルビューのすべての部分を選択し、[**プロパティエクスプローラー** ] の [**ウィジェット**] タブでカスタム**クラス名**を割り当てる必要があります。これにより、後で C# コードでアクセスできるようになります。 たとえば、 **テーブルビューコントローラー**は次のようになります。 
 
     [![クラス名を割り当てる](table-views-images/table09.png)](table-views-images/table09.png#lightbox)
 1. **テーブルビューコントローラー**、**テーブルビュー** 、および**プロトタイプセル**のカスタムクラスを作成していることを確認します。 次のように、作成時にカスタムクラスをプロジェクトツリーに追加 Visual Studio for Mac ます。 
@@ -98,7 +98,7 @@ TvOS アプリでテーブルビューを操作する最も簡単な方法は、
 1. 次に、デザインサーフェイスでテーブルビューを選択し、必要に応じてプロパティを調整します。 **プロトタイプセル**の数や**スタイル**(Plain またはグループ化) など。 
 
     [![[ウィジェット] タブ](table-views-images/table11.png)](table-views-images/table11.png#lightbox)
-1. [**プロトタイプ] セル**ごとに、そのセルを選択し、[**プロパティエクスプローラー**] の [**ウィジェット**] タブで一意の**識別子**を割り当てます。 この手順は、後でテーブルを設定するときにこの識別子が必要になるため、_非常に重要_です。 例: `AttrCell` 
+1. [**プロトタイプ] セル**ごとに、そのセルを選択し、[**プロパティエクスプローラー**] の [**ウィジェット**] タブで一意の**識別子**を割り当てます。 この手順は、後でテーブルを設定するときにこの識別子が必要になるため、 _非常に重要_ です。 例: `AttrCell` 
 
     [![[ウィジェット] タブ](table-views-images/table12.png)](table-views-images/table12.png#lightbox)
 1. また、[**スタイル**] ドロップダウンを使用してセルを[既定のテーブルビュー](#table-view-cell-types)の1つとして表示するか、[**カスタム**] に設定して、デザインサーフェイスを使用して、他の UI ウィジェットを**ツールボックス**からドラッグしてセルをレイアウトすることもできます。 
@@ -108,7 +108,7 @@ TvOS アプリでテーブルビューを操作する最も簡単な方法は、
 
     [![名前の割り当て](table-views-images/table14.png)](table-views-images/table14.png#lightbox)
 1. テーブルビューのすべてのプロトタイプセルに対して上記の手順を繰り返します。
-1. 次に、UI デザインの残りの部分にカスタムクラスを割り当てます。詳細ビューをレイアウトし、詳細ビューの各 UI 要素に一意の**名前**を割り当てて、C# でもアクセスできるようにします。 たとえば次のようになります。 
+1. 次に、UI デザインの残りの部分にカスタムクラスを割り当てます。詳細ビューをレイアウトし、詳細ビューの各 UI 要素に一意の **名前** を割り当てて、C# でもアクセスできるようにします。 たとえば次のようになります。 
 
     [![UI レイアウト](table-views-images/table15.png)](table-views-images/table15.png#lightbox)
 1. ストーリーボードへの変更を保存します。
@@ -130,7 +130,7 @@ TvOS アプリでテーブルビューを操作する最も簡単な方法は、
 1. 既定では、**ナビゲーションビューコントローラー** 、左側に**テーブルビュー**コントローラー、右側に**ビューコントローラー**がある[分割ビュー](~/ios/tvos/user-interface/split-views.md)が表示されます。 これは、tvOS のテーブルビューで使用される Apple の推奨される使用方法です。 
 
     [![UI のレイアウト](table-views-images/table08-vs.png)](table-views-images/table08-vs.png#lightbox)
-1. テーブルビューのすべての部分を選択し、[**プロパティエクスプローラー** ] の [**ウィジェット**] タブでカスタム**クラス名**を割り当てる必要があります。これにより、後で C# コードでアクセスできるようになります。 たとえば、**テーブルビューコントローラー**は次のようになります。 
+1. テーブルビューのすべての部分を選択し、[**プロパティエクスプローラー** ] の [**ウィジェット**] タブでカスタム**クラス名**を割り当てる必要があります。これにより、後で C# コードでアクセスできるようになります。 たとえば、 **テーブルビューコントローラー**は次のようになります。 
 
     [![[ウィジェット] タブ](table-views-images/table09-vs.png)](table-views-images/table09-vs.png#lightbox)
 1. **テーブルビューコントローラー**、**テーブルビュー** 、および**プロトタイプセル**のカスタムクラスを作成していることを確認します。 次のように、作成時にカスタムクラスをプロジェクトツリーに追加 Visual Studio for Mac ます。 
@@ -139,7 +139,7 @@ TvOS アプリでテーブルビューを操作する最も簡単な方法は、
 1. 次に、デザインサーフェイスでテーブルビューを選択し、必要に応じてプロパティを調整します。 **プロトタイプセル**の数や**スタイル**(Plain またはグループ化) など。 
 
     [![[ウィジェット] タブ](table-views-images/table11-vs.png)](table-views-images/table11-vs.png#lightbox)
-1. [**プロトタイプ] セル**ごとに、そのセルを選択し、[**プロパティエクスプローラー**] の [**ウィジェット**] タブで一意の**識別子**を割り当てます。 この手順は、後でテーブルを設定するときにこの識別子が必要になるため、_非常に重要_です。 例: `AttrCell` 
+1. [**プロトタイプ] セル**ごとに、そのセルを選択し、[**プロパティエクスプローラー**] の [**ウィジェット**] タブで一意の**識別子**を割り当てます。 この手順は、後でテーブルを設定するときにこの識別子が必要になるため、 _非常に重要_ です。 例: `AttrCell` 
 
     [![識別子を割り当てる](table-views-images/table12-vs.png)](table-views-images/table12-vs.png#lightbox)
 1. また、[**スタイル**] ドロップダウンを使用してセルを[既定のテーブルビュー](#table-view-cell-types)の1つとして表示するか、[**カスタム**] に設定して、デザインサーフェイスを使用して、他の UI ウィジェットを**ツールボックス**からドラッグしてセルをレイアウトすることもできます。 
@@ -149,7 +149,7 @@ TvOS アプリでテーブルビューを操作する最も簡単な方法は、
 
     [![[ウィジェット] タブ](table-views-images/table14-vs.png)](table-views-images/table14-vs.png#lightbox)
 1. テーブルビューのすべてのプロトタイプセルに対して上記の手順を繰り返します。
-1. 次に、UI デザインの残りの部分にカスタムクラスを割り当てます。詳細ビューをレイアウトし、詳細ビューの各 UI 要素に一意の**名前**を割り当てて、C# でもアクセスできるようにします。 たとえば次のようになります。 
+1. 次に、UI デザインの残りの部分にカスタムクラスを割り当てます。詳細ビューをレイアウトし、詳細ビューの各 UI 要素に一意の **名前** を割り当てて、C# でもアクセスできるようにします。 たとえば次のようになります。 
 
     [![UI レイアウト](table-views-images/table15.png)](table-views-images/table15.png#lightbox)
 1. ストーリーボードへの変更を保存します。
@@ -162,7 +162,7 @@ TvOS アプリでテーブルビューを操作する最も簡単な方法は、
 
 テーブルビューに表示される情報を簡単に使用できるようにするには (ユーザーがテーブルビューの行を選択または強調表示したときに)、詳細情報を簡単に表示できるようにするには、表示される情報のデータモデルとして機能するカスタムクラスまたはクラスを作成します。
 
-旅行予約アプリの例を見てください。これには、ユーザーが選択できる**アトラクション**の一意のリストを含む**都市**の一覧が含まれています。 ユーザーは、引力を*お気に入り*としてマークすることができます。*引力を選択*し、特定の都市に*フライトを予約*します。
+旅行予約アプリの例を見てください。これには、ユーザーが選択できる**アトラクション**の一意のリストを含む**都市**の一覧が含まれています。 ユーザーは、引力を *お気に入り*としてマークすることができます。 *引力を選択* し、特定の都市に *フライトを予約* します。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -210,7 +210,7 @@ namespace tvTable
 }
 ```
 
-このクラスは、指定された**引力**に関する情報を格納するためのプロパティを提供します。
+このクラスは、指定された **引力**に関する情報を格納するためのプロパティを提供します。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -278,7 +278,7 @@ namespace tvTable
 }
 ```
 
-このクラスは、宛先の**都市**に関するすべての情報を保持し、その都市の**アトラクション**のコレクションであり、2つのヘルパーメソッド () を提供して、 `AddAttraction` 都市へのアトラクションの追加を容易にします。
+このクラスは、宛先の **都市**に関するすべての情報を保持し、その都市の **アトラクション** のコレクションであり、2つのヘルパーメソッド () を提供して、 `AddAttraction` 都市へのアトラクションの追加を容易にします。
 
 <a name="The-Table-Data-Source"></a>
 
@@ -440,7 +440,7 @@ public override nint RowsInSection (UITableView tableView, nint section)
 }
 ```
 
-この場合も、表**形式**のビューの場合は、データソース内の項目の合計数を返します。
+この場合も、表 **形式** のビューの場合は、データソース内の項目の合計数を返します。
 
 メソッドは、 `TitleForHeader` 指定されたセクションのタイトルを返します。
 
@@ -470,7 +470,7 @@ public override UITableViewCell GetCell (UITableView tableView, Foundation.NSInd
 }
 ```
 
-の使用方法の詳細については `UITableViewDatasource` 、Apple の[Uitableviewdatasource](https://developer.apple.com/library/prerelease/tvos/documentation/UIKit/Reference/UITableViewDataSource_Protocol/index.html#//apple_ref/doc/uid/TP40006941)のドキュメントを参照してください。
+の使用方法の詳細については `UITableViewDatasource` 、Apple の [Uitableviewdatasource](https://developer.apple.com/library/prerelease/tvos/documentation/UIKit/Reference/UITableViewDataSource_Protocol/index.html#//apple_ref/doc/uid/TP40006941) のドキュメントを参照してください。
 
 <a name="The-Table-View-Delegate"></a>
 
@@ -548,7 +548,7 @@ public AttractionTableDelegate (AttractionTableViewController controller)
 }
 ```
 
-次に、行が選択されている場合 (ユーザーが Apple リモコンのタッチ画面をクリックしたとき)、選択した行によって表される**引力**をお気に入りとしてマークします。
+次に、行が選択されている場合 (ユーザーが Apple リモコンのタッチ画面をクリックしたとき)、選択した行によって表される **引力** をお気に入りとしてマークします。
 
 ```csharp
 public override void RowSelected (UITableView tableView, Foundation.NSIndexPath indexPath)
@@ -561,7 +561,7 @@ public override void RowSelected (UITableView tableView, Foundation.NSIndexPath 
 }
 ```
 
-次に、ユーザーが (Apple リモートタッチサーフェイスを使用してフォーカスを与えることによって) 行を強調表示したときに、分割ビューコントローラーの [詳細] セクションで、その行によって表される**引力**の詳細を表示します。
+次に、ユーザーが (Apple リモートタッチサーフェイスを使用してフォーカスを与えることによって) 行を強調表示したときに、分割ビューコントローラーの [詳細] セクションで、その行によって表される **引力** の詳細を表示します。
 
 ```csharp
 public override bool CanFocusRow (UITableView tableView, Foundation.NSIndexPath indexPath)
@@ -584,7 +584,7 @@ internal void RaiseAttractionHighlighted (AttractionInformation attraction)
 
 `CanFocusRow`テーブルビューでフォーカスを取得しようとしている行ごとに、メソッドが呼び出されます。 `true`行がフォーカスを得ることができる場合はを返し、それ以外の場合はを返し `false` ます。 この例では、 `AttractionHighlighted` フォーカスを受け取るたびに各行で発生するカスタムイベントを作成しました。
 
-の使用方法の詳細については `UITableViewDelegate` 、Apple の[Uitableviewdelegate](https://developer.apple.com/library/prerelease/tvos/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/doc/uid/TP40006942)に関するドキュメントを参照してください。
+の使用方法の詳細については `UITableViewDelegate` 、Apple の [Uitableviewdelegate](https://developer.apple.com/library/prerelease/tvos/documentation/UIKit/Reference/UITableViewDelegate_Protocol/index.html#//apple_ref/doc/uid/TP40006942) に関するドキュメントを参照してください。
 
 <a name="The-Table-View-Cell"></a>
 
@@ -671,7 +671,7 @@ private void UpdateUI ()
 }
 ```
 
-の使用方法の詳細については `UITableViewCell` 、Apple の[Uitableviewcell](https://developer.apple.com/library/prerelease/tvos/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/doc/uid/TP40006938)のドキュメントを参照してください。
+の使用方法の詳細については `UITableViewCell` 、Apple の [Uitableviewcell](https://developer.apple.com/library/prerelease/tvos/documentation/UIKit/Reference/UITableViewCell_Class/index.html#//apple_ref/doc/uid/TP40006938) のドキュメントを参照してください。
 
 <a name="The-Table-View-Controller"></a>
 
@@ -725,13 +725,13 @@ namespace tvTable
 
 最後に、テーブルビューがメモリに読み込まれるときに、とのインスタンスを作成 `AttractionTableDatasource` `AttractionTableDelegate` し (どちらも上記で作成したもの)、テーブルビューにアタッチします。
 
-の使用方法の詳細については `UITableViewController` 、Apple の[Uitableviewcontroller](https://developer.apple.com/library/prerelease/tvos/documentation/UIKit/Reference/UITableViewController_Class/index.html#//apple_ref/doc/uid/TP40007523)のドキュメントを参照してください。
+の使用方法の詳細については `UITableViewController` 、Apple の [Uitableviewcontroller](https://developer.apple.com/library/prerelease/tvos/documentation/UIKit/Reference/UITableViewController_Class/index.html#//apple_ref/doc/uid/TP40007523) のドキュメントを参照してください。
 
 <a name="Pulling-it-All-Together"></a>
 
 ## <a name="pulling-it-all-together"></a>すべてをまとめてプルする
 
-このドキュメントの冒頭で説明したように、通常、テーブルビューは[分割ビュー](~/ios/tvos/user-interface/split-views.md)の1つの側にナビゲーションとして表示され、選択した項目の詳細が反対側に表示されます。 次に例を示します。 
+このドキュメントの冒頭で説明したように、通常、テーブルビューは [分割ビュー](~/ios/tvos/user-interface/split-views.md) の1つの側にナビゲーションとして表示され、選択した項目の詳細が反対側に表示されます。 次に例を示します。 
 
 [![サンプルアプリの実行](table-views-images/intro01.png)](table-views-images/intro01.png#lightbox)
 
@@ -883,8 +883,8 @@ namespace tvTable
 
 ここでも、このクラスは、分割ビューコントローラーの2つの側での通信を容易にするいくつかのショートカットを定義しています。
 
-- `SplitView`- `MainSpiltViewController` ナビゲーションビューコントローラーが属している分割ビューコントローラー () へのリンクです。
-- `TableController`- `AttractionTableViewController` ナビゲーションビューコントローラーの最上位ビューとして表示されるテーブルビューコントローラー () を取得します。
+- `SplitView` - `MainSpiltViewController` ナビゲーションビューコントローラーが属している分割ビューコントローラー () へのリンクです。
+- `TableController` - `AttractionTableViewController` ナビゲーションビューコントローラーの最上位ビューとして表示されるテーブルビューコントローラー () を取得します。
 
 <a name="The-Split-View-Controller"></a>
 
@@ -939,13 +939,13 @@ namespace tvTable
 
 まず、分割ビュー ( **Details** `AttractionViewController` ) と**マスター**側 () の詳細な側面へのショートカットを作成し `MasterNavigationController` ます。 この場合も、2つの側の間での通信が容易になります。
 
-次に、分割ビューがメモリに読み込まれるときに、分割ビューの両側に分割ビューコントローラーをアタッチし、テーブルビュー () の引力を強調表示しているユーザーに応答し `AttractionHighlighted` ます。これにより、分割ビューの**詳細**側に新しい引力が表示されます。
+次に、分割ビューがメモリに読み込まれるときに、分割ビューの両側に分割ビューコントローラーをアタッチし、テーブルビュー () の引力を強調表示しているユーザーに応答し `AttractionHighlighted` ます。これにより、分割ビューの **詳細** 側に新しい引力が表示されます。
 
-分割ビュー内のテーブルビューの完全な実装については、 [tvTables](https://docs.microsoft.com/samples/xamarin/ios-samples/tvos-tvtable)サンプルアプリを参照してください。
+分割ビュー内のテーブルビューの完全な実装については、 [tvTables](/samples/xamarin/ios-samples/tvos-tvtable) サンプルアプリを参照してください。
 
 ## <a name="table-views-in-detail"></a>テーブルビューの詳細
 
-TvOS は iOS に基づいているため、テーブルビューとテーブルビューコントローラーは同様の方法で設計および動作します。 Xamarin アプリでテーブルビューを操作する方法の詳細については、[テーブルとセルの操作](~/ios/user-interface/controls/tables/index.md)に関するドキュメントを参照してください。
+TvOS は iOS に基づいているため、テーブルビューとテーブルビューコントローラーは同様の方法で設計および動作します。 Xamarin アプリでテーブルビューを操作する方法の詳細については、 [テーブルとセルの操作](~/ios/user-interface/controls/tables/index.md) に関するドキュメントを参照してください。
 
 <a name="Summary"></a>
 
@@ -955,7 +955,7 @@ TvOS は iOS に基づいているため、テーブルビューとテーブル�
 
 ## <a name="related-links"></a>関連リンク
 
-- [tvOS のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [tvOS のサンプル](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [UITableViewController](https://developer.apple.com/library/prerelease/tvos/documentation/UIKit/Reference/UITableViewController_Class/index.html#//apple_ref/doc/uid/TP40007523)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS ヒューマンインターフェイスガイド](https://developer.apple.com/tvos/human-interface-guidelines/)

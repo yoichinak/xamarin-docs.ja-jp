@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: cd04450d1429092453e6d8b65278d87b5d52e45e
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 65a76c0196b79a17f935f59902c8e6d2f9f25933
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571624"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434920"
 ---
 # <a name="troubleshooting-tvos-10-apps-built-with-xamarin"></a>Xamarin でビルドされた tvOS 10 アプリのトラブルシューティング
 
@@ -28,7 +28,7 @@ ms.locfileid: "84571624"
 
 <a name="App-Store"></a>
 
-## <a name="app-store"></a>アプリ ストア
+## <a name="app-store"></a>App Store
 
 既知の問題:
 
@@ -63,7 +63,7 @@ ms.locfileid: "84571624"
 
 ## <a name="core-image"></a>コアイメージ
 
-API では、 `CIImageProcessor` 任意の入力イメージの数がサポートされるようになりました。 `CIImageProcessor`TvOS 10 beta 1 に含まれていた API は削除されます。
+API では、 `CIImageProcessor` 任意の入力イメージの数がサポートされるようになりました。 `CIImageProcessor` TvOS 10 beta 1 に含まれていた API は削除されます。
 
 <a name="NSUserActivity"></a>
 
@@ -86,5 +86,5 @@ API では、 `CIImageProcessor` 任意の入力イメージの数がサポー�
 
 ## <a name="related-links"></a>関連リンク
 
-- [tvOS のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [tvOS のサンプル](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [TvOS 10 の新機能](https://developer.apple.com/library/prerelease/content/releasenotes/General/WhatsNewinTVOS/Articles/tvOS10.html#//apple_ref/doc/uid/TP40017259-SW1)
