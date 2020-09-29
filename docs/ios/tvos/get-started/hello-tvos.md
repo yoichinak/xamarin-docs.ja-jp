@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 02/02/2018
-ms.openlocfilehash: 55e41c01421e2cd5a0bb5c3a0a9fe2d025c8a223
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: beaa26e0d028fb614baf76ff52d05b80584f14d4
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938048"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435252"
 ---
 # <a name="hello-tvos-quick-start-guide"></a>はじめての tvOS クイック スタート ガイド
 
@@ -24,24 +24,24 @@ Apple TV platform は開発者にオープンであり、充実したイマー�
 
 Xamarin の開発に慣れている場合は、tvOS が非常に単純なものに移行することをお勧めします。 Api と機能のほとんどは同じですが、多くの一般的な Api は使用できません (WebKit など)。 さらに、Siri リモコンでを使用すると、タッチスクリーンベースの iOS デバイスには存在しない設計上の課題が生じます。
 
-このガイドでは、Xamarin アプリでの tvOS の使用方法について説明します。 TvOS の詳細については、apple の apple [TV 4k ドキュメントの準備](https://developer.apple.com/tvos/)に関するドキュメントを参照してください。
+このガイドでは、Xamarin アプリでの tvOS の使用方法について説明します。 TvOS の詳細については、apple の apple [TV 4k ドキュメントの準備](https://developer.apple.com/tvos/) に関するドキュメントを参照してください。
 
 ## <a name="overview"></a>概要
 
-TvOS を使用すると、 *Swift* *(または*) および*Xcode*での開発時に使用されるものと同じ OS X ライブラリおよびインターフェイスコントロールを使用して、C# および .Net で完全にネイティブな Apple TV アプリを開発できます。
+TvOS を使用すると、 *Swift* *(または*) および *Xcode*での開発時に使用されるものと同じ OS X ライブラリおよびインターフェイスコントロールを使用して、C# および .Net で完全にネイティブな Apple TV アプリを開発できます。
 
 さらに、tvOS アプリは C# と .NET で記述されているため、一般的なバックエンドコードを Xamarin、xamarin、Android、および Xamarin. Mac アプリと共有できます。すべてのプラットフォームでネイティブエクスペリエンスを提供します。
 
-この記事では、tvOS と Visual Studio を使用して Apple TV アプリを作成するために必要な主要な概念について説明します。これにより、ボタンがクリックされた回数をカウントする基本的な**Hello, tvOS**アプリを構築するプロセスについて説明します。
+この記事では、tvOS と Visual Studio を使用して Apple TV アプリを作成するために必要な主要な概念について説明します。これにより、ボタンがクリックされた回数をカウントする基本的な **Hello, tvOS** アプリを構築するプロセスについて説明します。
 
 [![アプリの実行例](hello-tvos-images/run05.png)](hello-tvos-images/run05.png#lightbox)
 
 ここでは、次の概念について説明します。
 
-- **Visual Studio for Mac** – Visual Studio for Mac の概要と、それを使用して tvOS アプリケーションを作成する方法について説明します。
-- **TvOS アプリの構造**-tvOS アプリが構成されています。
-- **ユーザーインターフェイスの作成**–を使用してユーザーインターフェイスを作成する方法については、「」を Xamarin Designer for iOS。
-- **デプロイとテスト**– tvOS シミュレーターと real tvOS ハードウェアでアプリを実行およびテストする方法について説明します。
+- **Visual Studio for Mac**  – Visual Studio for Mac の概要と、それを使用して tvOS アプリケーションを作成する方法について説明します。
+- **TvOS アプリの構造** -tvOS アプリが構成されています。
+- **ユーザーインターフェイスの作成** –を使用してユーザーインターフェイスを作成する方法については、「」を Xamarin Designer for iOS。
+- **デプロイとテスト** – tvOS シミュレーターと real tvOS ハードウェアでアプリを実行およびテストする方法について説明します。
 
 ## <a name="starting-a-new-xamarintvos-app-in-visual-studio-for-mac"></a>Visual Studio for Mac で新しい Xamarin. tvOS アプリを開始する
 
@@ -52,7 +52,7 @@ TvOS を使用すると、 *Swift* *(または*) および*Xcode*での開発時
 1. Visual Studio for Mac を起動します。
 
     [![Visual Studio for Mac](hello-tvos-images/setup01.png)](hello-tvos-images/setup01.png#lightbox)
-2. 画面の左上隅にある [**新しいソリューション...** ] リンクをクリックして、[**新しいプロジェクト**] ダイアログボックスを開きます。
+2. 画面の左上隅にある [ **新しいソリューション...** ] リンクをクリックして、[ **新しいプロジェクト** ] ダイアログボックスを開きます。
 3. [ **TvOS**  >  **app**  >  **Single View app** ] を選択し、[**次へ**] ボタンをクリックします。
 
     [![単一ビューアプリを選択する](hello-tvos-images/setup02.png)](hello-tvos-images/setup02.png#lightbox)
@@ -67,7 +67,7 @@ Visual Studio for Mac によって新しい tvOS アプリが作成され、ア�
 
  [![既定のファイルビュー](hello-tvos-images/project01.png)](hello-tvos-images/project01.png#lightbox)
 
-Visual Studio for Mac は、Visual Studio とまったく同じ方法で**ソリューション**と**プロジェクト**を使用します。 ソリューションは、1つまたは複数のプロジェクトを保持できるコンテナーです。プロジェクトには、アプリケーション、サポートライブラリ、テストアプリケーションなどを含めることができます。この場合、Visual Studio for Mac によってソリューションとアプリケーションプロジェクトの両方が作成されます。
+Visual Studio for Mac は、Visual Studio とまったく同じ方法で **ソリューション** と **プロジェクト**を使用します。 ソリューションは、1つまたは複数のプロジェクトを保持できるコンテナーです。プロジェクトには、アプリケーション、サポートライブラリ、テストアプリケーションなどを含めることができます。この場合、Visual Studio for Mac によってソリューションとアプリケーションプロジェクトの両方が作成されます。
 
 必要に応じて、共通の共有コードを含む1つまたは複数のコードライブラリプロジェクトを作成できます。 これらのライブラリプロジェクトは、標準の .NET アプリケーションを構築している場合と同様に、アプリケーションプロジェクトで使用することも、tvOS アプリプロジェクト (または、コードの種類に基づいて xamarin、Xamarin、Android、Xamarin. Mac) と共有することもできます。
 
@@ -78,11 +78,11 @@ IOS プログラミングに精通している場合は、ここによく似て�
 プロジェクト内のファイルを見てみましょう。
 
 - `Main.cs` – このファイルには、アプリのメイン エントリ ポイントが含まれています。 アプリが起動した時点では、実行される最初のクラスとメソッドが含まれています。
-- `AppDelegate.cs`–このファイルには、オペレーティングシステムからのイベントのリッスンを担当するメインアプリケーションクラスが含まれています。
-- `Info.plist`–このファイルには、アプリケーション名、アイコンなどのアプリケーションプロパティが含まれています。
-- `ViewController.cs`–これは、メインウィンドウを表すクラスであり、そのライフサイクルを制御します。
-- `ViewController.designer.cs`–このファイルには、メイン画面のユーザーインターフェイスとの統合に役立つプラミングコードが含まれています。
-- `Main.storyboard`–メインウィンドウの UI。 このファイルは、Xamarin Designer for iOS によって作成および管理できます。
+- `AppDelegate.cs` –このファイルには、オペレーティングシステムからのイベントのリッスンを担当するメインアプリケーションクラスが含まれています。
+- `Info.plist` –このファイルには、アプリケーション名、アイコンなどのアプリケーションプロパティが含まれています。
+- `ViewController.cs` –これは、メインウィンドウを表すクラスであり、そのライフサイクルを制御します。
+- `ViewController.designer.cs` –このファイルには、メイン画面のユーザーインターフェイスとの統合に役立つプラミングコードが含まれています。
+- `Main.storyboard` –メインウィンドウの UI。 このファイルは、Xamarin Designer for iOS によって作成および管理できます。
 
 以下のセクションでは、これらのファイルのいくつかを簡単に見ていきます。 これらの詳細については後で詳しく説明しますが、ここでは基本を理解しておくことをお勧めします。
 
@@ -184,7 +184,7 @@ public override UIWindow Window {
 
 ```
 
-プロパティは、 `Window` メインウィンドウへのアクセスを提供します。 tvOS は、*モデルビューコントローラー* (MVC) パターンと呼ばれるものを使用します。 一般に、作成するすべてのウィンドウ (およびウィンドウ内の他の多くのもの) には、コントローラーがあります。これは、ウィンドウの表示、新しいビュー (コントロール) の追加など、ウィンドウのライフサイクルを担当します。
+プロパティは、 `Window` メインウィンドウへのアクセスを提供します。 tvOS は、 *モデルビューコントローラー* (MVC) パターンと呼ばれるものを使用します。 一般に、作成するすべてのウィンドウ (およびウィンドウ内の他の多くのもの) には、コントローラーがあります。これは、ウィンドウの表示、新しいビュー (コントロール) の追加など、ウィンドウのライフサイクルを担当します。
 
 次に、メソッドを用意しました `FinishedLaunching` 。 このメソッドは、アプリケーションがインスタンス化された後に実行され、実際にアプリケーションウィンドウを作成し、そこにビューを表示するプロセスを開始します。 アプリではストーリーボードを使用して UI を定義するため、ここで追加のコードは必要ありません。
 
@@ -253,23 +253,23 @@ TvOS アプリのユーザーインターフェイスを作成するために Xa
 
 UI の作成を開始するには、ソリューションエクスプローラー内のファイルをダブルクリックし `Main.storyboard` て、IOS Designer で編集するために開きます。 **Solution Explorer**
 
-[![ソリューションエクスプローラーのメインのストーリーボードファイル](hello-tvos-images/designer01.png)](hello-tvos-images/designer01.png#lightbox)
+[![ソリューション エクスプローラーの Main.storyboard ファイル](hello-tvos-images/designer01.png)](hello-tvos-images/designer01.png#lightbox)
 
 これにより、デザイナーが起動し、次のように表示されます。
 
 [![デザイナー](hello-tvos-images/designer02.png)](hello-tvos-images/designer02.png#lightbox)
 
-IOS Designer とそのしくみの詳細については、「Xamarin Designer for iOS ガイド[の概要](~/ios/user-interface/designer/introduction.md)」を参照してください。
+IOS Designer とそのしくみの詳細については、「Xamarin Designer for iOS ガイド [の概要](~/ios/user-interface/designer/introduction.md) 」を参照してください。
 
 これで、tvOS アプリのデザイン画面にコントロールを追加できるようになりました。
 
 次の手順を実行します。
 
-1. デザインサーフェイスの右側にある**ツールボックス**を見つけます。
+1. デザインサーフェイスの右側にある **ツールボックス**を見つけます。
 
     [![ツールボックス](hello-tvos-images/designer03.png)](hello-tvos-images/designer03.png#lightbox)
 
-    ここで見つからない場合は、表示されている **> パッド > ツールボックス**を参照して表示します。
+    ここで見つからない場合は、表示されている **> パッド > ツールボックス** を参照して表示します。
 2. **ツールボックス**からデザイン画面に**ラベル**をドラッグします。
 
     [![ツールボックスからラベルをドラッグする](hello-tvos-images/designer04.png)](hello-tvos-images/designer04.png#lightbox)
@@ -279,7 +279,7 @@ IOS Designer とそのしくみの詳細については、「Xamarin Designer fo
 4. すべての単語が表示されるようにラベルのサイズを変更し、ウィンドウの上部に中央に配置します。
 
     [![ラベルのサイズを変更して中央揃えにする](hello-tvos-images/designer06.png)](hello-tvos-images/designer06.png#lightbox)
-5. ラベルは、意図したとおりに表示されるように、その位置に制約される必要があります。 画面のサイズに関係なく。 これを行うには、 *T 形状のハンドル*が表示されるまでラベルをクリックします。
+5. ラベルは、意図したとおりに表示されるように、その位置に制約される必要があります。 画面のサイズに関係なく。 これを行うには、 *T 形状のハンドル* が表示されるまでラベルをクリックします。
 
     [![T 形状のハンドル](hello-tvos-images/designer07.png)](hello-tvos-images/designer07.png#lightbox)
 6. ラベルを水平方向に制限するには、中央の四角形を選択し、垂直線にドラッグします。
@@ -290,11 +290,11 @@ IOS Designer とそのしくみの詳細については、「Xamarin Designer fo
 7. ラベルの上部にある T ハンドルを選択し、ウィンドウの上端にドラッグします。
 
     [![ハンドルをウィンドウの上端にドラッグします。](hello-tvos-images/designer09.png)](hello-tvos-images/designer09.png#lightbox)
-8. 次に、幅をクリックし、次に示すように、高さの*ボーンハンドル*をクリックします。
+8. 次に、幅をクリックし、次に示すように、高さの *ボーンハンドル* をクリックします。
 
     [![幅と高さのボーンが処理する](hello-tvos-images/designer10.png)](hello-tvos-images/designer10.png#lightbox)
 
-     各*ボーンハンドル*をクリックしたら、幅と高さの両方を選択して固定の寸法を設定します。
+     各 *ボーンハンドル* をクリックしたら、幅と高さの両方を選択して固定の寸法を設定します。
 9. 完了すると、制約は、プロパティパッドの [レイアウト] タブに表示されるようになります。
 
     [![制約の例](hello-tvos-images/designer11.png)](hello-tvos-images/designer11.png#lightbox)
@@ -305,7 +305,7 @@ IOS Designer とそのしくみの詳細については、「Xamarin Designer fo
 12. 上記の手順 5. ~ 8. を繰り返して、[tvOS] ウィンドウのボタンを制限します。 ただし、(手順 #7 のように) ウィンドウの上部に T ハンドルをドラッグするのではなく、ラベルの一番下にドラッグします。
 
     [![ボタンを制限する](hello-tvos-images/designer14.png)](hello-tvos-images/designer14.png#lightbox)
-13. ボタンの下に別のラベルをドラッグし、最初のラベルと同じ幅になるようにサイズを変更し、その**配置**を [**中央**揃え] に設定します。
+13. ボタンの下に別のラベルをドラッグし、最初のラベルと同じ幅になるようにサイズを変更し、その **配置** を [ **中央**揃え] に設定します。
 
     [![ボタンの下に別のラベルをドラッグし、最初のラベルと同じ幅になるようにサイズを変更して、その配置を [中央] に設定します。](hello-tvos-images/designer15.png)](hello-tvos-images/designer15.png#lightbox)
 14. 最初のラベルとボタンと同じように、このラベルを [center] に設定し、[位置とサイズ] にピン留めします。
@@ -315,7 +315,7 @@ IOS Designer とそのしくみの詳細については、「Xamarin Designer fo
 
 コントロールのサイズ変更や移動を行っているときに、 [APPLE TV のヒューマンインターフェイスガイドライン](https://developer.apple.com/tvos/human-interface-guidelines/)に基づく便利なスナップヒントがデザイナーに表示されていることに注意してください。 これらのガイドラインは、Apple TV ユーザーの使い慣れたルックアンドフィールを備えた高品質のアプリケーションを作成するのに役立ちます。
 
-[**ドキュメントアウトライン**] セクションを確認すると、ユーザーインターフェイスを構成する要素のレイアウトと階層がどのように表示されるかがわかります。
+[ **ドキュメントアウトライン** ] セクションを確認すると、ユーザーインターフェイスを構成する要素のレイアウトと階層がどのように表示されるかがわかります。
 
 [![ドキュメントアウトラインセクション](hello-tvos-images/designer17.png)](hello-tvos-images/designer17.png#lightbox)
 
@@ -334,10 +334,10 @@ IOS デザイナーでコードから追加したコントロールにアクセ�
 
 ### <a name="creating-an-event-handler"></a>イベントハンドラーの作成
 
-このサンプルアプリケーションでは、ボタンをクリックすると_何らか_の処理が行われます。そのため、ボタンの特定のイベントにイベントハンドラーを追加する必要があります。 これを設定するには、次の手順を実行します。
+このサンプルアプリケーションでは、ボタンをクリックすると _何らか_ の処理が行われます。そのため、ボタンの特定のイベントにイベントハンドラーを追加する必要があります。 これを設定するには、次の手順を実行します。
 
 1. Xamarin iOS Designer で、ビューコントローラーのボタンを選択します。
-2. [プロパティ] パッドで、[**イベント**] タブを選択します。
+2. [プロパティ] パッドで、[ **イベント** ] タブを選択します。
 
     [![[イベント] タブ](hello-tvos-images/event1.png)](hello-tvos-images/event1.png#lightbox)
 3. TouchUpInside イベントを見つけて、という名前のイベントハンドラーを指定し `Clicked` ます。
@@ -357,7 +357,7 @@ IOS デザイナーでコードから追加したコントロールにアクセ�
 このボタンをクリックすると、クリック数に基づいてラベルが更新されます。 これを行うには、コードでラベルにアクセスする必要があります。 これは、名前を付けることによって行われます。 次の手順を実行します。
 
 1. ストーリーボードを開き、ビューコントローラーの下部にあるラベルを選択します。
-2. [プロパティ] パッドで、[**ウィジェット**] タブを選択します。
+2. [プロパティ] パッドで、[ **ウィジェット** ] タブを選択します。
 
     [![[ウィジェット] タブを選択します。](hello-tvos-images/name1.png)](hello-tvos-images/name1.png#lightbox)
 3. [ **Id > 名**] に、次のように追加し `ClickedLabel` ます。
@@ -382,7 +382,7 @@ IOS デザイナーでコードから追加したコントロールにアクセ�
 
 ## <a name="writing-the-code"></a>コードの記述
 
-ユーザーインターフェイスが作成され、その UI 要素が**コンセント**と**アクション**を使用してコードに公開されると、最終的には、プログラムの機能を提供するコードを記述する準備が整います。
+ユーザーインターフェイスが作成され、その UI 要素が **コンセント** と **アクション**を使用してコードに公開されると、最終的には、プログラムの機能を提供するコードを記述する準備が整います。
 
 アプリケーションでは、最初のボタンがクリックされるたびに、ボタンがクリックされた回数を表示するようにラベルを更新します。 これを行うには、 `ViewController.cs` **Solution Pad**でファイルをダブルクリックして、ファイルを編集用に開く必要があります。
 
@@ -403,7 +403,7 @@ namespace Hello_tvOS
         ...
 ```
 
-次に、同じクラス () で、 `ViewController` **ViewDidLoad**メソッドをオーバーライドし、ラベルの初期メッセージを設定するためのコードを追加する必要があります。
+次に、同じクラス () で、 `ViewController` **ViewDidLoad** メソッドをオーバーライドし、ラベルの初期メッセージを設定するためのコードを追加する必要があります。
 
 ```csharp
 public override void ViewDidLoad ()
@@ -415,7 +415,7 @@ public override void ViewDidLoad ()
 }
 ```
 
-は、OS が `ViewDidLoad` `Initialize` 読み込まれ、 `ViewDidLoad` ファイルからユーザーインターフェイスがインスタンス化され*た後*に呼び出されるため、などの別のメソッドではなく、を使用する必要があり `.storyboard` ます。 ファイルが完全に読み込まれてインスタンス化される前にラベルコントロールにアクセスしようとすると、 `.storyboard` `NullReferenceException` ラベルコントロールがまだ作成されていないため、エラーが発生します。
+は、OS が `ViewDidLoad` `Initialize` 読み込まれ、 `ViewDidLoad` ファイルからユーザーインターフェイスがインスタンス化され *た後* に呼び出されるため、などの別のメソッドではなく、を使用する必要があり `.storyboard` ます。 ファイルが完全に読み込まれてインスタンス化される前にラベルコントロールにアクセスしようとすると、 `.storyboard` `NullReferenceException` ラベルコントロールがまだ作成されていないため、エラーが発生します。
 
 次に、ボタンをクリックしたユーザーに応答するコードを追加する必要があります。 次の部分クラスを、作成したに追加します。
 
@@ -435,24 +435,24 @@ partial void Clicked (UIButton sender)
 
 アプリケーションをビルドするたびに、必要なビルドの種類を選択できます。
 
-- **デバッグ**–デバッグビルドは、追加のメタデータを含む ' ' (アプリケーション) ファイルにコンパイルされ、アプリケーションの実行中に何が起こっているかをデバッグできます。
-- **リリース**–リリースビルドでは ' ' ファイルも作成されますが、デバッグ情報は含まれていないため、サイズが小さくなり、実行速度が速くなります。  
+- **デバッグ** –デバッグビルドは、追加のメタデータを含む ' ' (アプリケーション) ファイルにコンパイルされ、アプリケーションの実行中に何が起こっているかをデバッグできます。
+- **リリース** –リリースビルドでは ' ' ファイルも作成されますが、デバッグ情報は含まれていないため、サイズが小さくなり、実行速度が速くなります。  
 
-Visual Studio for Mac 画面の左上隅にある**構成セレクター**からビルドの種類を選択できます。
+Visual Studio for Mac 画面の左上隅にある **構成セレクター** からビルドの種類を選択できます。
 
 [![ビルドの種類を選択します](hello-tvos-images/run01.png)](hello-tvos-images/run01.png#lightbox)
 
 ### <a name="building-the-application"></a>アプリケーションのビルド
 
-ここでは、デバッグビルドのみが必要なので、[**デバッグ**] が選択されていることを確認してみましょう。 まず、 **⌘ B**を押すか、[**ビルド**] メニューの [**すべてビルド**] をクリックして、アプリケーションをビルドします。
+ここでは、デバッグビルドのみが必要なので、[ **デバッグ** ] が選択されていることを確認してみましょう。 まず、 **⌘ B**を押すか、[ **ビルド** ] メニューの [ **すべてビルド**] をクリックして、アプリケーションをビルドします。
 
-エラーがない場合は、Visual Studio for Mac のステータスバーに**ビルド成功**メッセージが表示されます。 エラーが発生した場合は、プロジェクトを確認し、手順に従っていることを確認してください。 まず、コード (Xcode と Visual Studio for Mac 内の両方) がチュートリアルのコードと一致することを確認します。
+エラーがない場合は、Visual Studio for Mac のステータスバーに **ビルド成功** メッセージが表示されます。 エラーが発生した場合は、プロジェクトを確認し、手順に従っていることを確認してください。 まず、コード (Xcode と Visual Studio for Mac 内の両方) がチュートリアルのコードと一致することを確認します。
 
 ### <a name="running-the-application"></a>アプリケーションの実行
 
 アプリケーションを実行するには、次の3つのオプションがあります。
 
-- **⌘ + Enter**キーを押します。
+- **⌘+Enter** を押します。
 - **[実行]** メニューの **[デバッグ]** を選択します。
 - Visual Studio for Mac ツール バー (**ソリューション エクスプローラー**のすぐ上) の **[再生]** ボタンをクリックします。
 
@@ -460,7 +460,7 @@ Visual Studio for Mac 画面の左上隅にある**構成セレクター**から
 
 [![サンプルアプリのホーム画面](hello-tvos-images/run03.png)](hello-tvos-images/run03.png#lightbox)
 
-[**ハードウェア**] メニューの [ **Apple TV リモコンの表示**] を選択して、シミュレーターを制御できるようにします。
+[ **ハードウェア** ] メニューの [ **Apple TV リモコンの表示** ] を選択して、シミュレーターを制御できるようにします。
 
 [![[Apple TV リモコンを表示する] を選択します。](hello-tvos-images/run04.png)](hello-tvos-images/run04.png#lightbox)
 
@@ -468,7 +468,7 @@ Visual Studio for Mac 画面の左上隅にある**構成セレクター**から
 
 [![カウントが更新されたラベル](hello-tvos-images/run05.png)](hello-tvos-images/run05.png#lightbox)
 
-お疲れさまでした。 ここでは、このチュートリアルについて詳しく説明しましたが、このチュートリアルを最初から最後まで実行した場合は、tvOS アプリのコンポーネントと、それらを作成するためのツールを十分に理解する必要があります。
+おめでとうございます! ここでは、このチュートリアルについて詳しく説明しましたが、このチュートリアルを最初から最後まで実行した場合は、tvOS アプリのコンポーネントと、それらを作成するためのツールを十分に理解する必要があります。
 
 ## <a name="where-to-next"></a>次の場所
 
@@ -476,15 +476,15 @@ Apple TV アプリの開発では、ユーザーとインターフェイス (ユ
 
 そのため、tvOS アプリの設計に進む前に、次のドキュメントを読むことを強くお勧めします。
 
-- [TvOS 9 の概要](~/ios/tvos/platform/tvos9.md)–この記事では、tvOS 9 で使用できるすべての新しい api と変更された api と機能について、tvOS 開発者向けに紹介します。
-- [ナビゲーションとフォーカスの操作](~/ios/tvos/app-fundamentals/navigation-focus.md)– tvOS アプリのユーザーは、iOS と直接やり取りするのではなく、デバイスの画面上のイメージをタップしますが、Siri リモートを使用してルームから間接的に使用します。 この記事では、フォーカスの概念と、tvOS アプリのユーザーインターフェイスでのナビゲーションの処理に使用する方法について説明します。
+- [TvOS 9 の概要](~/ios/tvos/platform/tvos9.md) –この記事では、tvOS 9 で使用できるすべての新しい api と変更された api と機能について、tvOS 開発者向けに紹介します。
+- [ナビゲーションとフォーカスの操作](~/ios/tvos/app-fundamentals/navigation-focus.md) – tvOS アプリのユーザーは、iOS と直接やり取りするのではなく、デバイスの画面上のイメージをタップしますが、Siri リモートを使用してルームから間接的に使用します。 この記事では、フォーカスの概念と、tvOS アプリのユーザーインターフェイスでのナビゲーションの処理に使用する方法について説明します。
 - [Siri リモートおよび Bluetooth コントローラー](~/ios/tvos/platform/remote-bluetooth.md) : ユーザーが Apple TV と tvOS アプリを操作する主な方法は、付属の Siri リモートを使用することです。 アプリがゲームの場合は、必要に応じて、アプリで iOS (MFI) Bluetooth ゲームコントローラー用に作成されたサードパーティのサポートを組み込むこともできます。 この記事では、tvOS アプリでの新しい Siri リモートおよび Bluetooth ゲームコントローラーのサポートについて説明します。
-- [リソースとデータストレージ](~/ios/tvos/app-fundamentals/resources-data-storage.md)-iOS デバイスとは異なり、新しい Apple TV は tvOS アプリ用の永続的なローカルストレージを提供しません。 その結果、tvOS アプリで情報を保持する必要がある場合 (ユーザー設定など)、iCloud からそのデータを格納して取得する必要があります。 この記事では、tvOS アプリでのリソースと永続データストレージの使用について説明します。
-- [アイコンとイメージの操作](~/ios/tvos/app-fundamentals/icons-images.md)–魅了のアイコンと画像の作成は、Apple TV アプリのイマーシブユーザーエクスペリエンスを開発するうえで重要な部分です。 このガイドでは、tvOS アプリに必要なグラフィック資産を作成して含めるために必要な手順について説明します。
-- [ユーザーインターフェイス](~/ios/tvos/user-interface/index.md)–ユーザーインターフェイス (UI) コントロールを含む一般的なユーザーエクスペリエンス (ux) には、tvOS を操作するときに Xcode の INTERFACE BUILDER と UX の設計原則を使用します。
-- [デプロイとテスト](~/ios/tvos/deploy-test/index.md): このセクションでは、アプリのテストと配布方法に関するトピックについて説明します。 このトピックには、デバッグに使用するツール、テスト担当者へのデプロイ、Apple TV App Store にアプリケーションを発行する方法などが含まれます。
+- [リソースとデータストレージ](~/ios/tvos/app-fundamentals/resources-data-storage.md) -iOS デバイスとは異なり、新しい Apple TV は tvOS アプリ用の永続的なローカルストレージを提供しません。 その結果、tvOS アプリで情報を保持する必要がある場合 (ユーザー設定など)、iCloud からそのデータを格納して取得する必要があります。 この記事では、tvOS アプリでのリソースと永続データストレージの使用について説明します。
+- [アイコンとイメージの操作](~/ios/tvos/app-fundamentals/icons-images.md) –魅了のアイコンと画像の作成は、Apple TV アプリのイマーシブユーザーエクスペリエンスを開発するうえで重要な部分です。 このガイドでは、tvOS アプリに必要なグラフィック資産を作成して含めるために必要な手順について説明します。
+- [ユーザーインターフェイス](~/ios/tvos/user-interface/index.md) –ユーザーインターフェイス (UI) コントロールを含む一般的なユーザーエクスペリエンス (ux) には、tvOS を操作するときに Xcode の INTERFACE BUILDER と UX の設計原則を使用します。
+- [デプロイとテスト](~/ios/tvos/deploy-test/index.md) : このセクションでは、アプリのテストと配布方法に関するトピックについて説明します。 このトピックには、デバッグに使用するツール、テスト担当者へのデプロイ、Apple TV App Store にアプリケーションを発行する方法などが含まれます。
 
-TvOS の使用に関する問題が発生した場合は、[トラブルシューティング](~/ios/tvos/troubleshooting.md)のドキュメントを参照して、既知の問題と解決策の一覧を確認してください。
+TvOS の使用に関する問題が発生した場合は、 [トラブルシューティング](~/ios/tvos/troubleshooting.md) のドキュメントを参照して、既知の問題と解決策の一覧を確認してください。
 
 ## <a name="summary"></a>まとめ
 
@@ -492,7 +492,7 @@ TvOS の使用に関する問題が発生した場合は、[トラブルシュ�
 
 ## <a name="related-links"></a>関連リンク
 
-- [tvOS のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [tvOS のサンプル](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS ヒューマンインターフェイスガイド](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS のアプリプログラミングガイド](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 285243c832d080d93e557deada5bb824e03f8d89
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 684e2b8ad5098dd9cecb14eb9c5e265e3ea53035
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939426"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436126"
 ---
 # <a name="search-with-core-spotlight-in-xamarinios"></a>Xamarin のコアスポットライトで検索する
 
@@ -129,13 +129,13 @@ CSSearchableIndex.DefaultSearchableIndex.DeleteAll((error) => {
 
 コアスポットライトには、インデックスを正確かつ最新の状態に保つために役立つ次の機能があります。
 
-- **バッチ更新のサポート**–アプリで大規模なインデックスのグループを同時に作成または変更する必要がある場合は、バッチ全体を `Index` `CSSearchableIndex` 1 回の呼び出しでクラスのメソッドに送信できます。
-- **インデックスの変更に応答する**–アプリを使用して、 `CSSearchableIndexDelegate` 検索可能なインデックスからの変更と通知に応答できます。
-- **データ保護の適用**–データ保護クラスを使用して、コアスポットライトを使用して検索可能なインデックスに追加するアイテムにセキュリティを実装できます。
+- **バッチ更新のサポート** –アプリで大規模なインデックスのグループを同時に作成または変更する必要がある場合は、バッチ全体を `Index` `CSSearchableIndex` 1 回の呼び出しでクラスのメソッドに送信できます。
+- **インデックスの変更に応答する** –アプリを使用して、 `CSSearchableIndexDelegate` 検索可能なインデックスからの変更と通知に応答できます。
+- **データ保護の適用** –データ保護クラスを使用して、コアスポットライトを使用して検索可能なインデックスに追加するアイテムにセキュリティを実装できます。
 
 ## <a name="related-links"></a>関連リンク
 
-- [iOS 9 のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
+- [iOS 9 のサンプル](/samples/browse/?products=xamarin&term=Xamarin.iOS%2biOS9)
 - [iOS 9 (開発者向け)](https://developer.apple.com/ios/pre-release/)
 - [iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
 - [アプリ検索のプログラミングガイド](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/AppSearch/index.html#//apple_ref/doc/uid/TP40016308)

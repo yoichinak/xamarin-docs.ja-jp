@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 9e0363f941784ecc488861c0d2f089a30c275a10
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 7cb94956266a3094cc62ccc66c3d44e97884f04d
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937398"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435291"
 ---
 # <a name="core-image-in-xamarinios"></a>Xamarin のコアイメージ
 
@@ -28,7 +28,7 @@ _コアイメージは、iOS 5 で導入された新しいフレームワーク�
 
 これらの例では、Xamarin の iOS アプリケーションにコアイメージ機能を組み込む方法について説明します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 Xcode の最新バージョンを使用する必要があります。
 
@@ -152,7 +152,7 @@ imgview.Image = ui;
 
 これらのスクリーンショットは、 `CISepia` `CIHueAdjust` CoreImage.zip サンプルコードに示されているフィルターとフィルターの結果を示しています。
 
-フィルターの例については、「[イメージレシピのコントラクトと明るさの調整](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image)」を参照してください `CIColorControls` 。
+フィルターの例については、「 [イメージレシピのコントラクトと明るさの調整](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image) 」を参照してください `CIColorControls` 。
 
 ```csharp
 var uiimage = UIImage.FromFile("photo.JPG");
@@ -222,7 +222,7 @@ foreach (var filter in filters){
 
 ## <a name="related-links"></a>関連リンク
 
-- [コアイメージ (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/coreimage)
+- [コアイメージ (サンプル)](/samples/xamarin/ios-samples/coreimage)
 - [イメージレシピのコントラクトと明るさを調整する](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image)
 - [コアイメージフィルターの使用](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Conceptual/CoreImaging/ci_tasks/ci_tasks.html)
 - [CIFilter クラス参照](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/Reference/Reference.htm)

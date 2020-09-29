@@ -7,24 +7,24 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: 0de7fcd5af9e0338679893b3d7fde073c5274365
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 30709b9b75c18f954135e950b95094f9ee2d71ac
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84567723"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435266"
 ---
 # <a name="threading-in-xamarinios"></a>Xamarin でのスレッド処理
 
 Xamarin iOS ランタイムを使用すると、開発者は、スレッド () を使用する場合は明示的に、 `System.Threading.Thread, System.Threading.ThreadPool` 非同期デリゲートパターンまたは BeginXXX メソッドを使用する場合は暗黙的に、タスク並列ライブラリをサポートするすべての api を使用する場合は、.net スレッド api にアクセスできます。
 
-Xamarin では、アプリケーションを構築するために[タスク並列ライブラリ](https://msdn.microsoft.com/library/dd460717.aspx)(TPL) を使用することを強くお勧めします。いくつかの理由があります。
+Xamarin では、アプリケーションを構築するために [タスク並列ライブラリ](/dotnet/standard/parallel-programming/task-parallel-library-tpl) (TPL) を使用することを強くお勧めします。いくつかの理由があります。
 
 - 既定の TPL スケジューラは、タスクの実行をスレッドプールに委任します。これにより、スレッドの数が多すぎるために CPU 時間の競合が発生することを回避しながら、プロセスの実行に必要なスレッド数が動的に増加します。 
 - TPL タスクに関しては、操作について考える方が簡単です。 豊富な Api セットを使用して、それらを簡単に操作したり、スケジュールを設定したり、実行をシリアル化したり、多数のタスクを同時に起動したりすることができます。 
 - これは、C# の新しい非同期言語拡張機能を使用したプログラミングの基礎となります。 
 
-スレッドプールは、システムで使用可能な CPU コアの数、システムの負荷、およびアプリケーションの要求に基づいて、必要に応じてスレッドの数を徐々に拡大します。 このスレッドプールを使用するには、でメソッドを呼び出すか、 `System.Threading.ThreadPool` 既定の `System.Threading.Tasks.TaskScheduler` (*並列フレームワーク*の一部) を使用します。
+スレッドプールは、システムで使用可能な CPU コアの数、システムの負荷、およびアプリケーションの要求に基づいて、必要に応じてスレッドの数を徐々に拡大します。 このスレッドプールを使用するには、でメソッドを呼び出すか、 `System.Threading.ThreadPool` 既定の `System.Threading.Tasks.TaskScheduler` ( *並列フレームワーク*の一部) を使用します。
 
 通常、開発者は、応答性の高いアプリケーションを作成する必要があり、メイン UI の実行ループをブロックしたくない場合に、スレッドを使用します。
 

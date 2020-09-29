@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/04/2018
-ms.openlocfilehash: 8c4ad31d91e6f9e4415309eee6c3da8a095dc097
-ms.sourcegitcommit: 80bd4d74812d2c086a164323b72a14662276d302
+ms.openlocfilehash: 8c440d61a41fc26aa7537dc169be08c2bf413c68
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88608601"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435212"
 ---
 # <a name="grouped-notifications-in-xamarinios"></a>Xamarin でのグループ化された通知 (iOS)
 
@@ -22,7 +22,7 @@ ms.locfileid: "88608601"
 
 ## <a name="sample-app-groupednotifications"></a>サンプルアプリ: GroupedNotifications
 
-Xamarin. iOS でグループ化された通知を使用する方法については、 [Groupednotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-groupednotifications) サンプルアプリを参照してください。
+Xamarin. iOS でグループ化された通知を使用する方法については、 [Groupednotifications](/samples/xamarin/ios-samples/ios12-groupednotifications) サンプルアプリを参照してください。
 
 このサンプルアプリでは、さまざまな友人とのメッセージ交換をシミュレートし、各メッセージの通知を送信して、スレッド別にグループ化します。 また、スレッド化されていない通知をアプリケーションレベルのグループに配置する方法も示します。
 
@@ -139,7 +139,7 @@ async partial void ScheduleThreadedNotification(UIButton sender)
 
 ## <a name="related-links"></a>関連リンク
 
-- [サンプルアプリ– GroupedNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-groupednotifications)
+- [サンプルアプリ– GroupedNotifications](/samples/xamarin/ios-samples/ios12-groupednotifications)
 - [Xamarin. iOS のユーザー通知フレームワーク](~/ios/platform/user-notifications/index.md)
 - [ユーザー通知の新機能 (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/710/)
 - [グループ化された通知の使用 (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/711/)

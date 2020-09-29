@@ -7,20 +7,20 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/22/2017
-ms.openlocfilehash: 65e42e824a888934fd0f0a01093a6549dcf3d99d
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 8bf0df03419d3705d72b679cfbfca427b0ac1a93
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997463"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435645"
 ---
 # <a name="application-icons-in-xamarinios"></a>Xamarin. iOS のアプリケーションアイコン
 
 次のトピックで、詳しく説明します。
 
 - [[アプリケーション]、[スポットライト]、および [設定] アイコン](#icon-types)-iOS アプリに必要なさまざまな種類のアイコン。
-- [資産カタログ](#managing)を使用したアイコンの管理-資産カタログを使用したアプリケーションアイコンの管理。
-- [Itunes アートワーク](#itunes)-アプリケーションを提供するために必要な Itunes アートワークを提供します。
+- [資産カタログ](#managing) を使用したアイコンの管理-資産カタログを使用したアプリケーションアイコンの管理。
+- [Itunes アートワーク](#itunes) -アプリケーションを提供するために必要な Itunes アートワークを提供します。
 
 <a name="icon-types"></a>
 
@@ -28,13 +28,13 @@ ms.locfileid: "86997463"
 
 Xamarin iOS アプリで UI コントロールやドキュメントアイコンとしてイメージアセットを使用するのと同じ方法で、イメージアセットを使用してアプリケーションアイコンを提供できます。 IPad の次のスクリーンショットは、iOS でのアイコンの3つの使用方法を示しています。
 
-- **アプリケーションアイコン**-すべての iOS アプリで、アプリケーションアイコンを定義する必要があります。 これは、アプリを起動するためにユーザーが iOS ホーム画面からタップするアイコンです。 また、このアイコンは Game Center によって使用されます (該当する場合)。 例:
+- **アプリケーションアイコン** -すべての iOS アプリで、アプリケーションアイコンを定義する必要があります。 これは、アプリを起動するためにユーザーが iOS ホーム画面からタップするアイコンです。 また、このアイコンは Game Center によって使用されます (該当する場合)。 例:
 
     [![アプリケーションアイコン](app-icons-images/000.png)](app-icons-images/000-full.png#lightbox)
-- **スポットライトアイコン**-ユーザーがスポットライト検索でアプリの名前を入力するたびに、このアイコンが表示されます。 例:
+- **スポットライトアイコン** -ユーザーがスポットライト検索でアプリの名前を入力するたびに、このアイコンが表示されます。 例:
 
     [![スポットライトアイコン](app-icons-images/000a.png)](app-icons-images/000a-full.png#lightbox)
-- **設定アイコン**-ユーザーが iOS デバイスで**設定**アプリを入力すると、アプリの**設定**リストの最後にこのアイコンが表示されます。 例:
+- **設定アイコン** -ユーザーが iOS デバイスで **設定** アプリを入力すると、アプリの **設定** リストの最後にこのアイコンが表示されます。 例:
 
     [![設定アイコン](app-icons-images/000b.png)](app-icons-images/000b-full.png#lightbox)
 
@@ -99,21 +99,21 @@ Xamarin iOS アプリで UI コントロールやドキュメントアイコン�
  5. では、iPhone と同じサイズのアイコンが使用されます。
  6. アセットカタログのイメージセットでのみサポートされます。
 
- アイコンの詳細については、Apple の[アイコンとイメージのサイズ](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html#//apple_ref/doc/uid/TP40006556-CH27-SW1)に関するドキュメントを参照してください。
+ アイコンの詳細については、Apple の [アイコンとイメージのサイズ](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/IconMatrix.html#//apple_ref/doc/uid/TP40006556-CH27-SW1) に関するドキュメントを参照してください。
 
 <a name="managing"></a>
 
 ## <a name="managing-icons-with-asset-catalogs"></a>資産カタログを使用したアイコンの管理
 
-アイコンの場合は、 `AppIcon` アプリのプロジェクト内のファイルに特殊なイメージセットを追加でき `Assets.xcassets` ます。 すべての解像度をサポートするために必要なイメージのすべてのバージョンは、 _xcasset_に含まれ、グループ化されています。 Visual Studio for Mac の特別なエディターを使用すると、開発者はこれらのイメージをグラフィカルに追加して設定できます。
+アイコンの場合は、 `AppIcon` アプリのプロジェクト内のファイルに特殊なイメージセットを追加でき `Assets.xcassets` ます。 すべての解像度をサポートするために必要なイメージのすべてのバージョンは、 _xcasset_ に含まれ、グループ化されています。 Visual Studio for Mac の特別なエディターを使用すると、開発者はこれらのイメージをグラフィカルに追加して設定できます。
 
 アセットカタログを使用するには、次の手順を実行します。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 1. ソリューションエクスプローラー内のファイルをダブルクリックし `Info.plist` て、編集用に**Solution Explorer**開きます。
-2. [ **IPhone のアイコン**] セクションまで下にスクロールします。
-3. [**資産カタログに移行する**] ボタンをクリックします。
+2. [ **IPhone のアイコン** ] セクションまで下にスクロールします。
+3. [ **資産カタログに移行する** ] ボタンをクリックします。
 
     ![AppIcon が選択されていることを確認する](app-icons-images/migrate01.png)
 
@@ -126,12 +126,12 @@ Xamarin iOS アプリで UI コントロールやドキュメントアイコン�
     ![AppIcon エディター](app-icons-images/asset02.png)
 
 6. [指定されたアイコン] をクリックして、必要な種類/サイズのイメージファイルを選択するか、フォルダーからイメージをドラッグして目的のサイズにドロップします。
-7. [**開く**] ボタンをクリックして、プロジェクトに画像を含め、xcasset に設定します。
+7. [ **開く** ] ボタンをクリックして、プロジェクトに画像を含め、xcasset に設定します。
 8. 必要なすべてのイメージについて、この手順を繰り返します。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. * * [情報] をダブルクリックします。  * ***ソリューションエクスプローラー**内のファイル:
+1. * * [情報] をダブルクリックします。  * * **ソリューションエクスプローラー**内のファイル:
 
     ![[インフォ] を選択します。](app-icons-images/icon01w.png)
 
@@ -149,9 +149,9 @@ Xamarin iOS アプリで UI コントロールやドキュメントアイコン�
 
     ![エディターでメディアファイルを開きます。](app-icons-images/image010.png)
 
-5. 開発者は、**プロパティエクスプローラー**で、必要なさまざまな種類やサイズのアイコンを選択できます。
+5. 開発者は、 **プロパティエクスプローラー** で、必要なさまざまな種類やサイズのアイコンを選択できます。
 6. [指定されたアイコンの種類] をクリックし、必要な種類/サイズのイメージファイルを選択します。
-7. [**開く**] ボタンをクリックして、プロジェクトに画像を含め、xcasset に設定します。
+7. [ **開く** ] ボタンをクリックして、プロジェクトに画像を含め、xcasset に設定します。
 8. 必要なすべてのイメージについて、この手順を繰り返します。
 
 -----
@@ -169,7 +169,7 @@ iTunes アートワークは次の手順で指定します。
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 1. ソリューションエクスプローラー内のファイルをダブルクリックし `Info.plist` て、編集用に**Solution Explorer**開きます。
-2. エディターの**ITunes アートワーク**セクションまでスクロールします。
+2. エディターの **ITunes アートワーク** セクションまでスクロールします。
 
     ![エディターの iTunes アートワークセクションまでスクロールします。](app-icons-images/itunes01.png)
 3. イメージが見つからない場合は、エディターでサムネイルをクリックし、[ファイルを開く] ダイアログボックスで目的の iTunes アートワークのイメージファイルを選択して、[ **OK** ] ボタンをクリックします。
@@ -179,16 +179,16 @@ iTunes アートワークは次の手順で指定します。
 
 1. ソリューションエクスプローラー内のファイルをダブルクリックし `Info.plist` て、編集用に**Solution Explorer**開きます。
 
-2. [**ビジュアルアセット**] タブをクリックし、 **iTunes アートワーク**を展開します。
+2. [ **ビジュアルアセット** ] タブをクリックし、 **iTunes アートワーク**を展開します。
 
     ![Visual Studio での iTunes アートワークの編集](app-icons-images/itunes01w.png)
-3. イメージが見つからない場合は、エディターでサムネイルをクリックし、[ファイルを開く] ダイアログボックスで目的の iTunes アートワークのイメージファイルを選択して、[**開く**] ボタンをクリックします。
+3. イメージが見つからない場合は、エディターでサムネイルをクリックし、[ファイルを開く] ダイアログボックスで目的の iTunes アートワークのイメージファイルを選択して、[ **開く** ] ボタンをクリックします。
 4. アプリに必要なすべてのイメージが指定されるまで、この手順を繰り返します。
 
 -----
 
 ## <a name="related-links"></a>関連リンク
 
-- [イメージの操作 (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithimages)
+- [イメージの操作 (サンプル)](/samples/xamarin/ios-samples/workingwithimages)
 - [Hello, iPhone](~/ios/get-started/hello-ios/index.md)
 - [カスタムアイコンとイメージ作成のガイドライン](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html))

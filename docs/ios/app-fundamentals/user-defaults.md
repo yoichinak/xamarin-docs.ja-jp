@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/07/2016
-ms.openlocfilehash: c65a06b8f2a04eda669b2d741135538fa8a583f2
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 587ce48f3d40bb4f16634409920b01d150d628ef
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571728"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436309"
 ---
 # <a name="working-with-user-defaults-in-xamarinios"></a>Xamarin でのユーザーの既定値の使用
 
@@ -33,7 +33,7 @@ _この記事では、NSUserDefault を使用して Xamarin iOS アプリまた�
 > [!IMPORTANT]
 > Apple では、開発者がメソッドを呼び出して、 `Synchronize` メモリ内キャッシュをデータベースと直接同期することを推奨していません。 代わりに、メモリ内キャッシュとユーザーの既定のデータベースとの同期を維持するために、定期的に自動的に呼び出されます。
 
-クラスには、 `NSUserDefaults` string、integer、float、boolean、url などの一般的なデータ型の設定値の読み取りと書き込みを行うための便利なメソッドがいくつか含まれています。 他の種類のデータは、を使用してアーカイブし `NSData` た後、ユーザーの既定のデータベースに対して読み取りまたは書き込みを行うことができます。 詳細については、Apple の「[基本設定と設定のプログラミングガイド](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/UserDefaults/Introduction/Introduction.html#//apple_ref/doc/uid/10000059i)」を参照してください。
+クラスには、 `NSUserDefaults` string、integer、float、boolean、url などの一般的なデータ型の設定値の読み取りと書き込みを行うための便利なメソッドがいくつか含まれています。 他の種類のデータは、を使用してアーカイブし `NSData` た後、ユーザーの既定のデータベースに対して読み取りまたは書き込みを行うことができます。 詳細については、Apple の「 [基本設定と設定のプログラミングガイド](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/UserDefaults/Introduction/Introduction.html#//apple_ref/doc/uid/10000059i)」を参照してください。
 
 <a name="Accessing-the-Shared-NSUserDefaults-Instance"></a>
 
@@ -69,7 +69,7 @@ var plist = NSUserDefaults.StandardUserDefaults;
 var plist = new NSUserDefaults ("group.com.xamarin.todaysharing", NSUserDefaultsType.SuiteName);
 ```
 
-ここ `group.com.xamarin.todaysharing` で、は、[証明書] で作成されたアプリグループです。 **[識別子] は、アクセスする & プロファイル**です。 詳細については、[アプリグループ機能](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md)のドキュメントを参照してください。
+ここ `group.com.xamarin.todaysharing` で、は、[証明書] で作成されたアプリグループです。 **[識別子] は、アクセスする & プロファイル** です。 詳細については、 [アプリグループ機能](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md) のドキュメントを参照してください。
 
 <a name="Reading-Default-Values"></a>
 
@@ -77,16 +77,16 @@ var plist = new NSUserDefaults ("group.com.xamarin.todaysharing", NSUserDefaults
 
 目的のユーザーの既定のデータベースにアクセスした後、キーと値のペアを使用して既定値の値を読み取ることができます。また、読み取るデータの種類に基づいていくつかの便利な方法を使用することもできます。
 
-- `ArrayForKey`-指定されたキー値のの配列を返し `NSObjects` ます。
-- `BoolForKey`-指定されたキーのブール値を返します。
-- `DataForKey`- `NSData` 指定されたキーのオブジェクトを返します。
-- `DictionaryForKey`- `NSDictionary` 指定されたキーのを返します。
-- `DoubleForKey`-指定されたキーの double 型の値を返します。
-- `FloatForKey`-指定されたキーの float 値を返します。
-- `IntForKey`-指定されたキーの整数値を返します。
-- `StringArrayForKey`-指定された `String` キー値からオブジェクトの配列を返します。
-- `StringForKey`-指定されたキーの文字列値を返します。
-- `URLForKey`- `NSUrl` 指定されたキーの値を返します。
+- `ArrayForKey` -指定されたキー値のの配列を返し `NSObjects` ます。
+- `BoolForKey` -指定されたキーのブール値を返します。
+- `DataForKey` - `NSData` 指定されたキーのオブジェクトを返します。
+- `DictionaryForKey` - `NSDictionary` 指定されたキーのを返します。
+- `DoubleForKey` -指定されたキーの double 型の値を返します。
+- `FloatForKey` -指定されたキーの float 値を返します。
+- `IntForKey` -指定されたキーの整数値を返します。
+- `StringArrayForKey` -指定された `String` キー値からオブジェクトの配列を返します。
+- `StringForKey` -指定されたキーの文字列値を返します。
+- `URLForKey` - `NSUrl` 指定されたキーの値を返します。
 
 たとえば、次のコードは、ユーザーの既定値からブール値を読み取ります。
 
@@ -106,11 +106,11 @@ var useHeader = plist.BoolForKey("UseHeader");
 
 上記の値を読み取るのと同様に、目的のユーザーの既定のデータベースにアクセスした後、キーと値のペアを使用して既定値に値を書き込むことができ、記述されるデータの種類に基づいていくつかの便利な方法があります。
 
-- `SetBool`-指定されたキーに指定されたブール値を書き込みます。
-- `SetDouble`-指定されたキーに指定された double 値を書き込みます。
-- `SetFloat`-指定された float 値を指定されたキーに書き込みます。
-- `SetString`-指定されたキーに指定された文字列値を書き込みます。
-- `SetURL`-指定された URL ( `NSUrl` ) 値を指定されたキーに書き込みます。
+- `SetBool` -指定されたキーに指定されたブール値を書き込みます。
+- `SetDouble` -指定されたキーに指定された double 値を書き込みます。
+- `SetFloat` -指定された float 値を指定されたキーに書き込みます。
+- `SetString` -指定されたキーに指定された文字列値を書き込みます。
+- `SetURL` -指定された URL ( `NSUrl` ) 値を指定されたキーに書き込みます。
 
 たとえば、次のコードは、ユーザーの既定値にブール値を書き込みます。
 
@@ -136,6 +136,6 @@ plist.SetBool(useHeader, "UseHeader");
 
 ## <a name="related-links"></a>関連リンク
 
-- [tvOS のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [tvOS のサンプル](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [基本設定と設定のプログラミングガイド](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/UserDefaults/Introduction/Introduction.html#//apple_ref/doc/uid/10000059i)
 - [NSUserDefaults](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSUserDefaults_Class/#//apple_ref/doc/constant_group/NSUserDefaults_Domains)

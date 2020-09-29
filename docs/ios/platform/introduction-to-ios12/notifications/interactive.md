@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/04/2018
-ms.openlocfilehash: e629cd8f481558991d02c7fb879502ebd54753bd
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: af06aa4dc7ea836887edcc0416cfd15ce3aa1446
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031940"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433778"
 ---
 # <a name="interactive-notification-user-interfaces-in-xamarinios"></a>Xamarin の対話型通知ユーザーインターフェイス
 
@@ -20,7 +20,7 @@ IOS 10 で導入された[通知コンテンツ拡張機能](~/ios/platform/user
 
 ## <a name="sample-app-redgreennotifications"></a>サンプルアプリ: RedGreenNotifications
 
-[RedGreenNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-redgreennotifications)サンプルアプリには、対話ユーザーインターフェイスを備えた notification content 拡張機能が含まれています。
+[RedGreenNotifications](/samples/xamarin/ios-samples/ios12-redgreennotifications)サンプルアプリには、対話ユーザーインターフェイスを備えた notification content 拡張機能が含まれています。
 
 このガイドのコードスニペットは、このサンプルを基にしています。
 
@@ -58,15 +58,15 @@ IOS 10 で導入された[通知コンテンツ拡張機能](~/ios/platform/user
 
 次の機能に注意してください。
 
-- `UNNotificationExtensionCategory` 配列は、コンテンツ拡張機能が処理する通知カテゴリの種類を指定します。
-- 対話形式のコンテンツをサポートするために、notification content 拡張機能は `UNNotificationExtensionUserInteractionEnabled` キーを `true`に設定します。
-- `UNNotificationExtensionInitialContentSizeRatio` キーは、コンテンツ拡張機能のインターフェイスの初期の高さと幅の比率を指定します。
+- 配列は、 `UNNotificationExtensionCategory` コンテンツ拡張機能が処理する通知カテゴリの種類を指定します。
+- 対話形式のコンテンツをサポートするために、通知コンテンツの拡張機能によってキーがに設定され `UNNotificationExtensionUserInteractionEnabled` `true` ます。
+- キーは、 `UNNotificationExtensionInitialContentSizeRatio` コンテンツ拡張機能のインターフェイスの初期の高さと幅の比率を指定します。
 
 ## <a name="interactive-interface"></a>対話型インターフェイス
 
-通知コンテンツ拡張機能のインターフェイスを定義する**Maininterface storyboard**は、1つのビューコントローラーを含む標準のストーリーボードです。 このサンプルアプリでは、ビューコントローラーは `NotificationViewController`型で、イメージビュー、3つのボタン、およびスライダーが含まれています。 ストーリーボードは、 **NotificationViewController.cs**で定義されているハンドラーとこれらのコントロールを関連付けます。
+通知コンテンツ拡張機能のインターフェイスを定義する**Maininterface storyboard**は、1つのビューコントローラーを含む標準のストーリーボードです。 このサンプルアプリでは、ビューコントローラーの種類は `NotificationViewController` で、イメージビュー、3つのボタン、およびスライダーが含まれています。 ストーリーボードは、 **NotificationViewController.cs**で定義されているハンドラーとこれらのコントロールを関連付けます。
 
-- **アプリの起動**ボタンハンドラーは `ExtensionContext`で `PerformNotificationDefaultAction` アクションメソッドを呼び出し、アプリを起動します。
+- **アプリの起動**ボタンハンドラーは、 `PerformNotificationDefaultAction` でアクションメソッドを呼び出し `ExtensionContext` 、アプリを起動します。
 
     ```csharp
     partial void HandleLaunchAppButtonTap(UIButton sender)
@@ -75,7 +75,7 @@ IOS 10 で導入された[通知コンテンツ拡張機能](~/ios/platform/user
     }
     ```
 
-    アプリでは、ユーザー通知センターの `Delegate` (サンプルアプリでは `AppDelegate`) が `DidReceiveNotificationResponse` メソッドの対話に応答できます。
+    アプリでは、ユーザー通知センターの `Delegate` (サンプルアプリでは `AppDelegate` ) がメソッドの相互作用に応答でき   `DidReceiveNotificationResponse` ます。
 
     ```csharp
     [Export("userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:")]
@@ -87,7 +87,7 @@ IOS 10 で導入された[通知コンテンツ拡張機能](~/ios/platform/user
             // ...
     ```
 
-- **通知**を閉じるボタンハンドラーは `ExtensionContext`で `DismissNotificationContentExtension` を呼び出し、通知を閉じます。
+- [ **通知を閉じる** ] ボタンハンドラーは、 `DismissNotificationContentExtension` 通知を閉じるでを呼び出し `ExtensionContext` ます。
 
     ```csharp
     partial void HandleDismissNotificationButtonTap(UIButton sender)
@@ -96,7 +96,7 @@ IOS 10 で導入された[通知コンテンツ拡張機能](~/ios/platform/user
     }
     ```
 
-- 通知の**削除**ボタンハンドラーによって通知が破棄され、通知センターから削除されます。
+- 通知の **削除** ボタンハンドラーによって通知が破棄され、通知センターから削除されます。
 
     ```csharp
     partial void HandleRemoveNotificationButtonTap(UIButton sender)
@@ -117,7 +117,7 @@ IOS 10 で導入された[通知コンテンツ拡張機能](~/ios/platform/user
 
 ## <a name="related-links"></a>関連リンク
 
-- [サンプルアプリ– RedGreenNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-redgreennotifications)
+- [サンプルアプリ– RedGreenNotifications](/samples/xamarin/ios-samples/ios12-redgreennotifications)
 - [Xamarin. iOS のユーザー通知フレームワーク](~/ios/platform/user-notifications/index.md)
 - [UserNotifications (Apple)](https://developer.apple.com/documentation/usernotifications?language=objc)
 - [ユーザー通知の新機能 (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/710/)

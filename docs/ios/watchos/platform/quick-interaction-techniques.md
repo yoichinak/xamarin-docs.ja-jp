@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: e57b6df0f0137d5a8a8f2c0ba68793008986ba18
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 0252626cb58ff334e3cff2cc60e6544e4eba18c0
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86932185"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435389"
 ---
 # <a name="quick-interaction-techniques-for-watchos-3-in-xamarin"></a>Xamarin の watchOS 3 のクイック対話技法
 
@@ -36,7 +36,7 @@ WatchOS では、通常、ユーザーは手首を起動し、アプリをすば
 
 - これは、ユーザーが必要な情報を一目で**把握できるよう**にすることを意味します。 
 - 実行可能-ユーザーは、**十分な情報**に基づいた迅速な意思決定を行うことができることを意味します。
-- **応答性**-ユーザーは必要な情報を受信したり、必要な操作を実行したりすることができないことを意味します。
+- **応答性** -ユーザーは必要な情報を受信したり、必要な操作を実行したりすることができないことを意味します。
 
 ### <a name="quick-interactions-length"></a>クイック操作の長さ
 
@@ -115,8 +115,8 @@ WatchOS 3 を初めて使用する場合、開発者は、ローテーション�
 
 Digital Crown アクセスは、次の要素によって提供されます。
 
-- `WKCrownSequencer`-1 秒あたりの回転へのアクセスを提供します。
-- `WKCrownDelegate`-回転デルタイベントへのアクセスを提供します。
+- `WKCrownSequencer` -1 秒あたりの回転へのアクセスを提供します。
+- `WKCrownDelegate` -回転デルタイベントへのアクセスを提供します。
 
 #### <a name="rotations-per-second"></a>1秒あたりの回転数
 
@@ -179,7 +179,7 @@ Apple では、更新される UI 要素に対する変更の感度に応じて�
 たとえば、次のコントロールのいずれかが Digital Crown のフォーカスを盗み出す可能性があります。
 
 - ピッカー
-- スライダー
+- Slider
 - コントローラーのスクロール
 
 開発者は、カスタムインターフェイス要素が Digital Crown のフォーカスである必要があるかどうかを判断します。 Apple では、新しいジェスチャレコグナイザーを使用して、カスタム UI 要素にフォーカスを移すことを提案しています。
@@ -194,7 +194,7 @@ WatchOS 3 を初めて使用する場合、開発者はテーブルビューコ�
 
 [![テーブルと詳細ビューの間を移動し、他の行の間を移動するためにスワイプして下に移動する](quick-interaction-techniques-images/quick05.png)](quick-interaction-techniques-images/quick05.png#lightbox)
 
-このモードを有効にするには、Xcode で watchOS アプリのストーリーボードを開いて編集し、テーブルビューを選択して、[**垂直方向の詳細ページング**] チェックボックスをオンにします。
+このモードを有効にするには、Xcode で watchOS アプリのストーリーボードを開いて編集し、テーブルビューを選択して、[ **垂直方向の詳細ページング** ] チェックボックスをオンにします。
 
 [![垂直方向の詳細ページングのチェックボックス](quick-interaction-techniques-images/quick06.png)](quick-interaction-techniques-images/quick06.png#lightbox)
 
@@ -224,8 +224,8 @@ MenuTable.PerformSegue (0);
 - 明確に定義されて表示される通知については、ユーザーは何もせず、単に通知を無視します。
 - また、通知をタップして watchOS アプリを起動することもあります。
 - カスタムアクションをサポートする通知の場合、ユーザーはカスタムアクションの1つを選択できます。 次のいずれかを指定できます。
-  - **フォアグラウンドアクション**-アプリを起動してアクションを実行します。
-  - **バックグラウンドアクション**-常に watchOS 2 の iPhone にルーティングされていましたが、watchOS 3 の watchApp にルーティングできます。
+  - **フォアグラウンドアクション** -アプリを起動してアクションを実行します。
+  - **バックグラウンドアクション** -常に watchOS 2 の iPhone にルーティングされていましたが、watchOS 3 の watchApp にルーティングできます。
 
 WatchOS 3 の新:
 
@@ -244,7 +244,7 @@ WatchOS 3 では、ローカル通知は Apple Watch でスケジュールでき
 
 Apple Watch と iPhone の両方のバージョンの通知に同じ通知識別子を含めることによって、監視に重複する通知が表示されないようにすることができます。 通知の Apple Watch バージョンは、iPhone のバージョンよりも優先されます。
 
-WatchOS 3 では iOS 10 と同じ API フレームワークを使用しているため `UINotification` 、詳細については、ios 10[ユーザー通知フレームワーク](~/ios/platform/user-notifications/index.md)のドキュメントを参照してください。
+WatchOS 3 では iOS 10 と同じ API フレームワークを使用しているため `UINotification` 、詳細については、ios 10 [ユーザー通知フレームワーク](~/ios/platform/user-notifications/index.md) のドキュメントを参照してください。
 
 ### <a name="using-spritekit-and-scenekit"></a>SpriteKit と SceneKit の使用
 
@@ -252,10 +252,10 @@ WatchOS 3 を初めて使用すると、開発者は、アプリのユーザー�
 
 この機能をサポートするために、次の2つの新しいインターフェイスクラスが追加されました。
 
-- `WKInterfaceSKScene`-SpriteKit 2D グラフィックスを操作する場合。
-- `WKInterfaceSCNScene`-SceneKit 3D グラフィックスを操作する場合。
+- `WKInterfaceSKScene` -SpriteKit 2D グラフィックスを操作する場合。
+- `WKInterfaceSCNScene` -SceneKit 3D グラフィックスを操作する場合。
 
-これらのオブジェクトを使用するには、Xcode の Interface Builder の watch アプリのストーリーボード内のデザイン画面にドラッグし、**属性インスペクター**を使用してこれらのオブジェクトを構成します。
+これらのオブジェクトを使用するには、Xcode の Interface Builder の watch アプリのストーリーボード内のデザイン画面にドラッグし、 **属性インスペクター** を使用してこれらのオブジェクトを構成します。
 
 この時点から、SpriteKit または SceneKit のいずれかのシーンの操作は、iOS アプリの内部と同じように動作します。 Watch アプリでは、 `WKInterfaceSKScene` メソッドのいずれかを呼び出すことによってが表示され `Present` ます。 SceneKit の場合は、オブジェクトのプロパティを設定するだけ `Scene` `WKInterfaceSCNScene` です。
 
@@ -298,7 +298,7 @@ WatchOS 3 の新機能では、すべての通知がサポートされるよう�
 
 ## <a name="simple-navigation"></a>単純なナビゲーション
 
-watchOS 3 では、新しい[垂直ページング](#vertical-paging)、[ジェスチャレコグナイザーサポート](#gesture-recognizer-support)、上に示した[Digital Crown ローテーション](#digital-crown-rotation)機能など、watchOS アプリ内でのナビゲーションを簡略化するために開発者が行うことができるいくつかの方法が紹介されています。
+watchOS 3 では、新しい [垂直ページング](#vertical-paging)、 [ジェスチャレコグナイザーサポート](#gesture-recognizer-support) 、上に示した [Digital Crown ローテーション](#digital-crown-rotation) 機能など、watchOS アプリ内でのナビゲーションを簡略化するために開発者が行うことができるいくつかの方法が紹介されています。
 
 Digital Crown は Apple Watch に固有であり、ナビゲーションを簡略化するためにさまざまな方法で使用できます。 たとえば、タイマーアプリケーションは、Digital Crown を使用して、使用可能なタイマーの長さをスクラブできます。
 
@@ -354,4 +354,4 @@ Apple は次のことを提案します。
 
 ## <a name="related-links"></a>関連リンク
 
-- [watchOS のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+watchOS)
+- [watchOS のサンプル](/samples/browse/?products=xamarin&term=Xamarin.iOS%2bwatchOS)

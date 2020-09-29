@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/13/2017
-ms.openlocfilehash: 84953ce2ec09cc757b5719991e499dc24b708cae
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 98f7f7b23fc437dee28f6797c3401bae472fa672
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86996111"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433353"
 ---
 # <a name="watchos-background-tasks-in-xamarin"></a>watchOS のバックグラウンドタスク (Xamarin)
 
@@ -39,7 +39,7 @@ WatchOS 3 では、watch アプリで情報を最新の状態に保つには、�
 
 ユーザーが Apple Watch アプリを使用する方法の "概要" (3 秒未満) のため、通常は、アプリが必要な情報をフェッチして、ユーザーに表示する前に UI を更新するのに十分な時間がありません。
 
-Apple が watchOS 3 に追加した新しい Api を使用することにより、アプリは_バックグラウンド更新_のスケジュールを設定し、必要な情報をユーザーに要求する前に準備できます。 上記の気象の複雑な例を見てください。
+Apple が watchOS 3 に追加した新しい Api を使用することにより、アプリは _バックグラウンド更新_ のスケジュールを設定し、必要な情報をユーザーに要求する前に準備できます。 上記の気象の複雑な例を見てください。
 
 [![天気の複雑な例](background-tasks-images/update01.png)](background-tasks-images/update01.png#lightbox)
 
@@ -92,10 +92,10 @@ namespace MonkeyWatch.MonkeySeeExtension
 
 watchOS 3 では、アプリを開く前にユーザーが必要とするコンテンツがあることを確認するために、アプリで使用できるいくつかのバックグラウンドタスクについて説明します。次に例を示します。
 
-- **バックグラウンドアプリの更新**- [WKApplicationRefreshBackgroundTask](https://developer.apple.com/reference/watchkit/wkapplicationrefreshbackgroundtask)タスクを使用すると、アプリの状態をバックグラウンドで更新できます。 通常、これには、 [Nq&a Lsession](https://developer.apple.com/reference/foundation/nsurlsession)を使用したインターネットからの新しいコンテンツのダウンロードなど、別のタスクが含まれます。
-- **バックグラウンドスナップショット更新**- [WKSnapshotRefreshBackgroundTask](https://developer.apple.com/reference/watchkit/wksnapshotrefreshbackgroundtask)タスクを使用すると、アプリケーションは、ドッキングの設定に使用されるスナップショットを取得する前に、コンテンツと UI の両方を更新できます。
-- **バックグラウンドウォッチ接続**-ペアになっている iPhone からバックグラウンドデータを受信すると、アプリの[WKWatchConnectivityRefreshBackgroundTask](https://developer.apple.com/reference/watchkit/wkwatchconnectivityrefreshbackgroundtask)タスクが開始されます。
-- **バックグラウンド URL セッション**-バックグラウンド転送に承認が必要な場合や、(正常にまたはエラーが発生したときに) 完了した場合に、アプリの[WKURLSessionRefreshBackgroundTask](https://developer.apple.com/reference/watchkit/wkurlsessionrefreshbackgroundtask)タスクが開始されます。
+- **バックグラウンドアプリの更新** - [WKApplicationRefreshBackgroundTask](https://developer.apple.com/reference/watchkit/wkapplicationrefreshbackgroundtask) タスクを使用すると、アプリの状態をバックグラウンドで更新できます。 通常、これには、 [Nq&a Lsession](https://developer.apple.com/reference/foundation/nsurlsession)を使用したインターネットからの新しいコンテンツのダウンロードなど、別のタスクが含まれます。
+- **バックグラウンドスナップショット更新** - [WKSnapshotRefreshBackgroundTask](https://developer.apple.com/reference/watchkit/wksnapshotrefreshbackgroundtask) タスクを使用すると、アプリケーションは、ドッキングの設定に使用されるスナップショットを取得する前に、コンテンツと UI の両方を更新できます。
+- **バックグラウンドウォッチ接続** -ペアになっている iPhone からバックグラウンドデータを受信すると、アプリの [WKWatchConnectivityRefreshBackgroundTask](https://developer.apple.com/reference/watchkit/wkwatchconnectivityrefreshbackgroundtask) タスクが開始されます。
+- **バックグラウンド URL セッション** -バックグラウンド転送に承認が必要な場合や、(正常にまたはエラーが発生したときに) 完了した場合に、アプリの [WKURLSessionRefreshBackgroundTask](https://developer.apple.com/reference/watchkit/wkurlsessionrefreshbackgroundtask) タスクが開始されます。
 
 これらのタスクについては、以下のセクションで詳しく説明します。
 
@@ -258,11 +258,11 @@ private void ScheduleNextBackgroundUpdate ()
 
 [![スコアを更新するために必要な手順を示す5分のウィンドウ](background-tasks-images/update15.png)](background-tasks-images/update15.png#lightbox)
 
-1. 午後7:30:02 に、システムによってアプリがスリープ解除され、更新プログラムのバックグラウンドタスクが付与されます。 最初の優先順位は、サーバーから最新のスコアを取得することです。 後述[の「nq&a をスケジュールする」を](#Scheduling-a-NSUrlSession)参照してください。
+1. 午後7:30:02 に、システムによってアプリがスリープ解除され、更新プログラムのバックグラウンドタスクが付与されます。 最初の優先順位は、サーバーから最新のスコアを取得することです。 後述 [の「nq&a をスケジュールする」を](#Scheduling-a-NSUrlSession) 参照してください。
 2. 7:30:05 では、アプリが元のタスクを完了すると、システムはアプリをスリープ状態にし、要求されたデータをバックグラウンドでダウンロードし続けます。
 3. システムがダウンロードを完了すると、ダウンロードした情報を処理できるように、アプリをスリープ解除する新しいタスクが作成されます。 [バックグラウンドタスクの処理](#Handling-Background-Tasks)と以下[のダウンロードの処理に](#Handling-the-Download-Completing)関するページを参照してください。
-4. アプリは更新された情報を保存し、タスクが完了したことをマークします。 この時点で、開発者はアプリのユーザーインターフェイスを更新することが必要になる場合がありますが、Apple では、そのプロセスを処理するようにスナップショットタスクをスケジュールすることが提案されています。 「[スナップショット更新のスケジュール」を](#Scheduling-a-Snapshot-Update)参照してください。
-5. アプリはスナップショットタスクを受信し、そのユーザーインターフェイスを更新して、タスクが完了したことをマークします。 「[スナップショットの更新の処理」を](#Handling-a-Snapshot-Update)参照してください。
+4. アプリは更新された情報を保存し、タスクが完了したことをマークします。 この時点で、開発者はアプリのユーザーインターフェイスを更新することが必要になる場合がありますが、Apple では、そのプロセスを処理するようにスナップショットタスクをスケジュールすることが提案されています。 「 [スナップショット更新のスケジュール」を](#Scheduling-a-Snapshot-Update) 参照してください。
+5. アプリはスナップショットタスクを受信し、そのユーザーインターフェイスを更新して、タスクが完了したことをマークします。 「 [スナップショットの更新の処理」を](#Handling-a-Snapshot-Update) 参照してください。
 
 <a name="Scheduling-a-NSUrlSession"></a>
 
@@ -347,7 +347,7 @@ namespace MonkeySoccer.MonkeySoccerExtension
 }
 ```
 
-メソッドは、システムがを `HandleBackgroundTasks` 検索するためにアプリに送信したすべてのタスク (では) を順番に実行し `backgroundTasks` `WKUrlSessionRefreshBackgroundTask` ます。 見つかった場合は、セッションに再度参加し、ダウンロードの完了を処理するためのをアタッチし `NSUrlSessionDownloadDelegate` ます (以下[のダウンロードの処理](#Handling-the-Download-Completing)に関する説明を参照してください)。
+メソッドは、システムがを `HandleBackgroundTasks` 検索するためにアプリに送信したすべてのタスク (では) を順番に実行し `backgroundTasks` `WKUrlSessionRefreshBackgroundTask` ます。 見つかった場合は、セッションに再度参加し、ダウンロードの完了を処理するためのをアタッチし `NSUrlSessionDownloadDelegate` ます (以下 [のダウンロードの処理](#Handling-the-Download-Completing) に関する説明を参照してください)。
 
 ```csharp
 // Create new session
@@ -420,7 +420,7 @@ namespace MonkeySoccer.MonkeySoccerExtension
 }
 ```
 
-初期化されると、とそれを生成したの両方へのハンドルを保持し `ExtensionDelegate` `WKRefreshBackgroundTask` ます。 メソッドをオーバーライドして `DidFinishDownloading` 、ダウンロードの完了を処理します。 `CompleteTask`は、のメソッドを使用して、 `ExtensionDelegate` タスクが完了したことを通知し、保留中のタスクのコレクションから削除します。 前の「[バックグラウンドタスクの処理](#Handling-Background-Tasks)」を参照してください。
+初期化されると、とそれを生成したの両方へのハンドルを保持し `ExtensionDelegate` `WKRefreshBackgroundTask` ます。 メソッドをオーバーライドして `DidFinishDownloading` 、ダウンロードの完了を処理します。 `CompleteTask`は、のメソッドを使用して、 `ExtensionDelegate` タスクが完了したことを通知し、保留中のタスクのコレクションから削除します。 前の「 [バックグラウンドタスクの処理](#Handling-Background-Tasks) 」を参照してください。
 
 <a name="Scheduling-a-Snapshot-Update"></a>
 
@@ -459,7 +459,7 @@ private void ScheduleSnapshotUpdate ()
 
 ## <a name="handling-a-snapshot-update"></a>スナップショット更新の処理
 
-スナップショットタスクを処理するに `HandleBackgroundTasks` は、メソッド (上記の[バックグラウンドタスクの処理](#Handling-Background-Tasks)に関するページを参照) を次のように変更します。
+スナップショットタスクを処理するに `HandleBackgroundTasks` は、メソッド (上記の [バックグラウンドタスクの処理](#Handling-Background-Tasks) に関するページを参照) を次のように変更します。
 
 ```csharp
 public override void HandleBackgroundTasks (NSSet<WKRefreshBackgroundTask> backgroundTasks)
@@ -540,7 +540,7 @@ WatchOS 3 アプリがフォアグラウンドにある間は、常に実行が�
 - 特定のタスクを完了するのに数秒しか与えられません。 システムは、渡される時間だけでなく、アプリがこの制限を導き出すために使用している CPU 電力の量も考慮します。
 - 制限を超えたすべてのアプリは、次のエラーコードを使用して強制終了されます。
   - **CPU** -0xc51bad01
-  - **時間**-0xc51bad02
+  - **時間** -0xc51bad02
 - システムは、アプリで実行するように要求されたバックグラウンドタスクの種類に基づいて、異なる制限を課します。 たとえば、 `WKApplicationRefreshBackgroundTask` タスクと `WKURLSessionRefreshBackgroundTask` タスクには、他の種類のバックグラウンドタスクよりもやや長いランタイムが指定されています。
 
 <a name="Complications-and-App-Updates"></a>
@@ -621,10 +621,10 @@ Dock にピン留めされているアプリは、次のことを想定できま
 - 更新の予算は、Dock 内のすべてのアプリ間で配布されます。 そのため、ユーザーがピン留めしたアプリの数が減り、アプリごとに更新される可能性が高くなります。
 - アプリはメモリに保持されるため、Dock から選択したときにアプリがすぐに再開されます。
 
-ユーザーが最後に実行したアプリは、_最近使用_したアプリと見なされ、Dock の最後のスロットが占有されます。 そこから、ユーザーはドッキングに固定することを選択できます。 最近使用したは、ユーザーが既にドックにピン留めされている他のお気に入りアプリと同様に扱われます。
+ユーザーが最後に実行したアプリは、 _最近使用_ したアプリと見なされ、Dock の最後のスロットが占有されます。 そこから、ユーザーはドッキングに固定することを選択できます。 最近使用したは、ユーザーが既にドックにピン留めされている他のお気に入りアプリと同様に扱われます。
 
 > [!IMPORTANT]
-> ホーム画面に追加されただけのアプリには、定期的なスケジュールは付与されません。 定期的なスケジュール設定とバックグラウンド更新を受け取るには、アプリを Dock に追加する_必要があり_ます。
+> ホーム画面に追加されただけのアプリには、定期的なスケジュールは付与されません。 定期的なスケジュール設定とバックグラウンド更新を受け取るには、アプリを Dock に追加する _必要があり_ ます。
 
 このドキュメントで既に説明したように、スナップショットは、アプリのプレビューイメージと起動イメージの両方として機能するため、watchOS 3 では非常に重要です。 ユーザーがドッキング中のアプリでを終了すると、[全画面表示] に展開され、フォアグラウンドに入り、実行が開始されるため、スナップショットを最新の状態にする必要があります。
 
@@ -699,4 +699,4 @@ Apple には次のような提案があります。
 
 ## <a name="related-links"></a>関連リンク
 
-- [iOS 10 のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)
+- [iOS 10 のサンプル](/samples/browse/?products=xamarin&term=Xamarin.iOS%2biOS10)

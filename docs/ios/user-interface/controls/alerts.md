@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 1264b28b2ee56ec5de610350a199668c67d5c33c
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: b7dae8afbb5db378687f9ecb9469236dc68831ae
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022099"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435488"
 ---
 # <a name="displaying-alerts-in-xamarinios"></a>Xamarin でのアラートの表示
 
@@ -20,7 +20,7 @@ IOS 8 以降では、UIAlertController は、Uialertcontroller と Uialertcontro
 
 UIView のサブクラスである、置き換えられたクラスとは異なり、UIAlertController は UIViewController のサブクラスです。
 
-`UIAlertControllerStyle` を使用して、表示するアラートの種類を指定します。 これらのアラートの種類は次のとおりです。
+`UIAlertControllerStyle`表示するアラートの種類を示すには、を使用します。 これらのアラートの種類は次のとおりです。
 
 - **Uialertコントローラースタイルの Actionsheet**
   - IOS より前の8これは、UIActionSheet でした。
@@ -30,7 +30,7 @@ UIView のサブクラスである、置き換えられたクラスとは異な�
 警告コントローラーを作成するには、次の3つの手順を実行する必要があります。
 
 - 次のものを使用してアラートを作成および構成します。
-  - タイトル
+  - title
   - message
   - preferredStyle
 
@@ -81,7 +81,7 @@ okayCancelButton.TouchUpInside += ((sender, e) => {
 
  ![操作シートのアラート](alerts-images/alert3.png)
 
-`AddAction` メソッドを使用して、アラートにボタンが追加されます。
+次のメソッドを使用して、アラートにボタンが追加され `AddAction` ます。
 
 ```csharp
 actionSheetButton.TouchUpInside += ((sender, e) => {
@@ -111,5 +111,5 @@ actionSheetButton.TouchUpInside += ((sender, e) => {
 
 ## <a name="related-links"></a>関連リンク
 
-- [コントロール (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)
+- [コントロール (サンプル)](/samples/xamarin/ios-samples/controls)
 - [警告コントローラー](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)

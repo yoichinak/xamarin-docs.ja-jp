@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: bd57232b183d5940a22915a0277a016cab36af8a
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 9f27fa550bb21f4261288e8a9a3d809a0ccc7de2
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931613"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436506"
 ---
 # <a name="introduction-to-ios-7"></a>iOS 7 の概要
 
@@ -26,10 +26,10 @@ iOS 7 では、UIKit でのアニメーションのサポートが強化され�
 
 ### <a name="spring-animations"></a>Spring アニメーション
 
- `UIView`では、スプリング効果を使用してプロパティの変更をアニメーション化できるようになりました。 これを追加するには、 `AnimateNotify` 次に示すように、メソッドまたはメソッドのいずれかを呼び出して、 `AnimateNotifyAsync` spring の減衰率と最初の spring ベロシティの値を渡します。
+ `UIView` では、スプリング効果を使用してプロパティの変更をアニメーション化できるようになりました。 これを追加するには、 `AnimateNotify` 次に示すように、メソッドまたはメソッドのいずれかを呼び出して、 `AnimateNotifyAsync` spring の減衰率と最初の spring ベロシティの値を渡します。
 
-- `springWithDampingRatio`–0から1までの値。振幅の値は、小さい値になります。
-- `initialSpringVelocity`–1秒あたりのアニメーション距離の合計に対する割合で示す、最初の spring velocity。
+- `springWithDampingRatio` –0から1までの値。振幅の値は、小さい値になります。
+- `initialSpringVelocity` –1秒あたりのアニメーション距離の合計に対する割合で示す、最初の spring velocity。
 
 次のコードでは、イメージビューの中心が変化したときに spring effect が生成されます。
 
@@ -92,16 +92,16 @@ void AnimateViewWithKeyframes ()
 
 UIKit Dynamics は、アプリケーションが物理に基づいてアニメーション化された対話を作成できるようにする、UIKit の新しい Api のセットです。 UIKit Dynamics は、これを可能にするために2D 物理エンジンをカプセル化します。
 
-API は本質的に宣言されています。 オブジェクトと呼ばれる*動作*を作成して、物理的な相互作用がどのように動作するかを宣言します。これは、重力、コリジョン、スプリングなどの物理概念を表します。次に、ビューをカプセル化する*動的アニメーター*と呼ばれる別のオブジェクトに動作をアタッチします。 動的なアニメーターは、宣言された物理動作を、などの*動的項目*(を実装する項目) に適用することを考慮し `IUIDynamicItem` `UIView` ます。
+API は本質的に宣言されています。 オブジェクトと呼ばれる *動作* を作成して、物理的な相互作用がどのように動作するかを宣言します。これは、重力、コリジョン、スプリングなどの物理概念を表します。次に、ビューをカプセル化する *動的アニメーター*と呼ばれる別のオブジェクトに動作をアタッチします。 動的なアニメーターは、宣言された物理動作を、などの *動的項目* (を実装する項目) に適用することを考慮し `IUIDynamicItem` `UIView` ます。
 
 複雑な相互作用をトリガーするには、次のようなさまざまなプリミティブ動作があります。
 
-- `UIAttachmentBehavior`–2つの動的項目が一緒に移動するように、または動的な項目を添付ファイルポイントにアタッチするようにアタッチします。
-- `UICollisionBehavior`–動的な項目が競合に参加できるようにします。
-- `UIDynamicItemBehavior`–弾力性、密度、摩擦など、動的な項目に適用するプロパティの一般的なセットを指定します。
-- `UIGravityBehavior`-動的な項目に重力を適用し、gravitational 方向に項目を加速させます。
-- `UIPushBehavior`–動的な項目に強制的に適用されます。
-- `UISnapBehavior`–動的な項目を spring 効果を持つ位置にスナップできるようにします。
+- `UIAttachmentBehavior` –2つの動的項目が一緒に移動するように、または動的な項目を添付ファイルポイントにアタッチするようにアタッチします。
+- `UICollisionBehavior` –動的な項目が競合に参加できるようにします。
+- `UIDynamicItemBehavior` –弾力性、密度、摩擦など、動的な項目に適用するプロパティの一般的なセットを指定します。
+- `UIGravityBehavior` -動的な項目に重力を適用し、gravitational 方向に項目を加速させます。
+- `UIPushBehavior` –動的な項目に強制的に適用されます。
+- `UISnapBehavior` –動的な項目を spring 効果を持つ位置にスナップできるようにします。
 
 多くのプリミティブがありますが、UIKit Dynamics を使用して、ビューに物理的に基づく相互作用を追加する一般的なプロセスは、動作間で一貫しています。
 
@@ -231,7 +231,7 @@ iOS 7 は、バックグラウンド処理を実行するタイミングと方�
 - リモート通知-アプリケーションがプッシュ通知を受信したときにコンテンツを更新できるようにします。 通知はサイレントにするか、ロック画面にバナーを表示できます。
 - バックグラウンド転送サービス–サイズの大きなファイルなど、一定の時間制限なしでデータをアップロードおよびダウンロードできます。
 
-新しいマルチタスキング機能の詳細については、Xamarin[バックグラウンド処理 guide](~/ios/app-fundamentals/backgrounding/index.md)の iOS のセクションを参照してください。
+新しいマルチタスキング機能の詳細については、Xamarin [バックグラウンド処理 guide](~/ios/app-fundamentals/backgrounding/index.md)の iOS のセクションを参照してください。
 
 ## <a name="summary"></a>まとめ
 
@@ -239,6 +239,6 @@ iOS 7 は、バックグラウンド処理を実行するタイミングと方�
 
 ## <a name="related-links"></a>関連リンク
 
-- [IOS 7 の概要 (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/introtoios7)
+- [IOS 7 の概要 (サンプル)](/samples/xamarin/ios-samples/introtoios7)
 - [iOS 7 ユーザー インターフェイスの概要](~/ios/platform/introduction-to-ios7/ios7-ui.md)
 - [バックグラウンド処理](~/ios/app-fundamentals/backgrounding/index.md)

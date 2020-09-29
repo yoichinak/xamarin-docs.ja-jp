@@ -6,20 +6,20 @@ ms.assetid: AD0A7971-51B1-4E38-B412-7907CE43CDDF
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 909594fe86c9718d9922470d7fca36155e33aed3
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 06d585e976ce41080682f531b9661ff06cedaebe
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73005235"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91437013"
 ---
 # <a name="using-the-model-class"></a>モデルクラスの使用
 
 _モデルクラスは、従来の3D グラフィックスレンダリングの方法と比較して、複雑な3D オブジェクトのレンダリングを大幅に簡略化します。モデルオブジェクトはコンテンツファイルから作成されます。これにより、カスタムコードを使用せずにコンテンツを簡単に統合できます。_
 
-モノゲーム API には、コンテンツファイルから読み込まれたデータを格納したり、レンダリングを実行したりするために使用できる `Model` クラスが含まれています。 モデルファイルは非常に単純な場合があります (たとえば、純色の三角形)。または、テクスチャや照明など、複雑なレンダリングのための情報が含まれている場合があります。
+モノゲーム API には、 `Model` コンテンツファイルから読み込まれたデータを格納したり、レンダリングを実行したりするために使用できるクラスが含まれています。 モデルファイルは非常に単純な場合があります (たとえば、純色の三角形)。または、テクスチャや照明など、複雑なレンダリングのための情報が含まれている場合があります。
 
-このチュートリアルでは、[ロボットの3d モデルを](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/Content.zip?raw=true)使用して、次の内容について説明します。
+このチュートリアルでは、 [ロボットの3d モデルを](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/Content.zip?raw=true) 使用して、次の内容について説明します。
 
 - 新しいゲームプロジェクトの開始
 - モデルとそのテクスチャの XNBs を作成する
@@ -33,7 +33,7 @@ _モデルクラスは、従来の3D グラフィックスレンダリングの�
 
 ## <a name="creating-an-empty-game-project"></a>空のゲームプロジェクトを作成する
 
-まず、MonoGame3D という名前のゲームプロジェクトを設定する必要があります。 新しいモノゲームプロジェクトを作成する方法の詳細については、[クロスプラットフォームのモノゲームプロジェクトの作成に関するこのチュートリアル](~/graphics-games/monogame/introduction/part1.md)を参照してください。
+まず、MonoGame3D という名前のゲームプロジェクトを設定する必要があります。 新しいモノゲームプロジェクトを作成する方法の詳細については、 [クロスプラットフォームのモノゲームプロジェクトの作成に関するこのチュートリアル](~/graphics-games/monogame/introduction/part1.md)を参照してください。
 
 先に進む前に、プロジェクトが開いて正しく配置されていることを確認する必要があります。 デプロイされると、空のブルースクリーンが表示されます。
 
@@ -41,29 +41,29 @@ _モデルクラスは、従来の3D グラフィックスレンダリングの�
 
 ## <a name="including-the-xnbs-in-the-game-project"></a>ゲームプロジェクトに XNBs を含める
 
-Xnb ファイル形式は、ビルドされたコンテンツ ([モノゲームパイプラインツール](http://www.monogame.net/documentation/?page=Pipeline)によって作成されたコンテンツ) の標準の拡張機能です。 すべてのビルドされたコンテンツには、ソースファイル (モデルの場合は fbx ファイル) と変換先ファイル (xnb ファイル) があります。 Fbx 形式は、 [Maya](https://www.autodesk.com/products/maya/overview)や[Blender](https://www.blender.org/)などのアプリケーションで作成できる一般的な3d モデル形式です。 
+Xnb ファイル形式は、ビルドされたコンテンツ ( [モノゲームパイプラインツール](http://www.monogame.net/documentation/?page=Pipeline)によって作成されたコンテンツ) の標準の拡張機能です。 すべてのビルドされたコンテンツには、ソースファイル (モデルの場合は fbx ファイル) と変換先ファイル (xnb ファイル) があります。 Fbx 形式は、 [Maya](https://www.autodesk.com/products/maya/overview) や [Blender](https://www.blender.org/)などのアプリケーションで作成できる一般的な3d モデル形式です。 
 
-`Model` クラスは、3D geometry データを格納するディスクから、xnb ファイルを読み込むことによって作成できます。   この xnb ファイルは、コンテンツプロジェクトを通じて作成されます。 モノゲームテンプレートでは、コンテンツフォルダーにコンテンツプロジェクトが自動的に含まれます。 モノゲームパイプラインツールの詳細については、「[コンテンツパイプラインガイド](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/content-pipeline/introduction.md)」を参照してください。
+この `Model` クラスは、3d geometry データを含むディスクから、xnb ファイルを読み込むことによって作成できます。   この xnb ファイルは、コンテンツプロジェクトを通じて作成されます。 モノゲームテンプレートでは、コンテンツフォルダーにコンテンツプロジェクトが自動的に含まれます。 モノゲームパイプラインツールの詳細については、「 [コンテンツパイプラインガイド](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/content-pipeline/introduction.md)」を参照してください。
 
 このガイドでは、モノゲームパイプラインツールの使用をスキップし、を使用します。ここには XNB ファイルが含まれています。 であることに注意してください。XNB ファイルはプラットフォームごとに異なります。そのため、使用しているプラットフォームごとに正しい XNB ファイルセットを使用してください。
 
-[コンテンツ .zip ファイル](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/Content.zip?raw=true)を解凍して、含まれている xnb ファイルをゲームで使用できるようにします。 Android プロジェクトで作業している場合は、プレイ中の**android**プロジェクトの**Assets**フォルダーを右クリックします。 IOS プロジェクトで作業している場合は、プレイ中の**ios**プロジェクトを右クリックします。 **> 追加** を選択して ファイルの追加 を選択し、作業しているプラットフォームのフォルダーにある xnb ファイル を選択します。
+ここでは、 [Content.zip ファイル](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/Content.zip?raw=true) を解凍して、含まれている xnb ファイルをゲームで使用できるようにします。 Android プロジェクトで作業している場合は、プレイ中の**android**プロジェクトの**Assets**フォルダーを右クリックします。 IOS プロジェクトで作業している場合は、プレイ中の **ios** プロジェクトを右クリックします。 [ **>追加** ] を選択して [ファイルの追加] を選択し、作業しているプラットフォームのフォルダーにある [xnb ファイル] を選択します。
 
 2つのファイルは、プロジェクトの一部になります。
 
 ![Xnb ファイルを含むソリューションエクスプローラーコンテンツフォルダー](part1-images/xnbsinxs.png)
 
-新しく追加された XNBs のビルドアクションは、Visual Studio for Mac によって自動的に設定されない場合があります。 IOS の場合は、各ファイルを右クリックし、 **[ビルドアクション-> BundleResource]** を選択します。 Android の場合は、各ファイルを右クリックし、 **[ビルドアクション-> AndroidAsset]** を選択します。
+新しく追加された XNBs のビルドアクションは、Visual Studio for Mac によって自動的に設定されない場合があります。 IOS の場合は、各ファイルを右クリックし、[ **ビルドアクション->BundleResource**] を選択します。 Android の場合は、各ファイルを右クリックし、[ **ビルドアクション->AndroidAsset**] を選択します。
 
 ## <a name="rendering-a-3d-model"></a>3D モデルのレンダリング
 
 モデルを画面上に表示するために必要な最後の手順は、読み込みと描画のコードを追加することです。 具体的には、次のことを行います。
 
-- `Game1` クラスでの `Model` インスタンスの定義
-- `Game1.LoadContent` に `Model` インスタンスを読み込んでいます
-- `Game1.Draw` での `Model` インスタンスの描画
+- `Model`クラスでのインスタンスの `Game1` 定義
+- にインスタンスを読み込んでいます `Model``Game1.LoadContent`
+- インスタンスの描画 `Model``Game1.Draw`
 
-`Game1.cs` コードファイル (**ゲーム**PCL にある) を次のコードに置き換えます。
+`Game1.cs`(**ゲーム**PCL にある) コードファイルを次のコードに置き換えます。
 
 ```csharp
 public class Game1 : Game
@@ -167,15 +167,15 @@ public class Game1 : Game
 
 ### <a name="model-class"></a>モデルクラス
 
-`Model` クラスは、コンテンツファイル (fbx ファイルなど) からの3D レンダリングを実行するためのコアクラスです。 これには、表示に必要なすべての情報が含まれています。これには、3D ジオメトリ、テクスチャ参照、および位置、照明、カメラの値を制御する `BasicEffect` インスタンスが含まれます。
+クラスは、 `Model` コンテンツファイル (fbx ファイルなど) からの3d レンダリングを実行するためのコアクラスです。 これには、3D ジオメトリ、テクスチャ参照、 `BasicEffect` 位置、光源、およびカメラの値を制御するインスタンスを含む、レンダリングに必要なすべての情報が含まれています。
 
-`Model` クラス自体には、このガイドの後半で説明するように、1つのモデルインスタンスを複数の場所にレンダリングできるため、配置用の変数は直接ありません。
+`Model`このガイドの後半で説明するように、1つのモデルインスタンスを複数の場所にレンダリングできるため、クラス自体に配置用の変数は直接ありません。
 
-各 `Model` は、`Meshes` プロパティを通じて公開される1つ以上の `ModelMesh` インスタンスで構成されます。 `Model` は1つのゲームオブジェクト (ロボットや車など) として考えられるかもしれませんが、各 `ModelMesh` は異なる `BasicEffect` 値で描画できます。 たとえば、個々のメッシュパーツが、車のロボットまたは車輪の脚を表す場合があります。また、`BasicEffect` 値を割り当てて、車輪を回転させたり、脚を移動させたりすることがあります。 
+各 `Model` は、 `ModelMesh` プロパティを通じて公開される1つ以上のインスタンスで構成され `Meshes` ます。 は、 `Model` 1 つのゲームオブジェクト (ロボットや車など) として考えられますが、それぞれ `ModelMesh` 異なる値を使用して描画でき `BasicEffect` ます。 たとえば、個々のメッシュパーツは、車のロボットまたは車輪の脚を表すことができます。また、値を割り当てて、 `BasicEffect` 車輪や脚を移動させることができます。 
 
 ### <a name="basiceffect-class"></a>BasicEffect クラス
 
-`BasicEffect` クラスには、表示オプションを制御するためのプロパティが用意されています。 `BasicEffect` に対して行う最初の変更は、`EnableDefaultLighting` メソッドを呼び出すことです。 名前が示すように、これにより既定の照明が有効になります。これは、`Model` が意図したとおりにゲームに表示されることを確認するのに非常に便利です。 `EnableDefaultLighting` の呼び出しをコメントアウトすると、テクスチャだけを使用してレンダリングされたモデルが表示されますが、網掛けや反射グローはありません。
+クラスには、 `BasicEffect` 表示オプションを制御するためのプロパティが用意されています。 に対して最初に行った変更 `BasicEffect` は、メソッドを呼び出すことです `EnableDefaultLighting` 。 名前が示すように、これによって既定のライティングが有効になります。これは、が `Model` ゲーム内で期待どおりに表示されることを確認するのに非常に便利です。 呼び出しをコメントアウトする `EnableDefaultLighting` と、テクスチャだけでレンダリングされるモデルが表示されますが、網掛けや反射グローはありません。
 
 ```csharp
 //effect.EnableDefaultLighting ();
@@ -183,7 +183,7 @@ public class Game1 : Game
 
 ![テクスチャだけでレンダリングされるモデルですが、網掛けや反射グローはありません。](part1-images/image9.png "テクスチャだけでレンダリングされるモデルですが、網掛けや反射グローはありません。")
 
-`World` プロパティを使用して、モデルの位置、回転、およびスケールを調整できます。 上記のコードでは、`Matrix.Identity` 値を使用しています。これは、`Model` が fbx ファイルで指定されたとおりにゲーム内でレンダリングされることを意味します。 ここでは、[第3部](~/graphics-games/monogame/3d/part3.md)でマトリックスと3d 座標について詳しく説明しますが、例として、`World` プロパティを次のように変更して `Model` の位置を変更することができます。
+プロパティを使用して、 `World` モデルの位置、回転、およびスケールを調整できます。 上記のコードでは、 `Matrix.Identity` 値を使用しています。これは、が `Model` fbx ファイルで指定されたとおりにゲーム内でレンダリングされることを意味します。 ここでは、 [第3部](~/graphics-games/monogame/3d/part3.md)でマトリックスと3d 座標についてさらに詳しく説明しますが、例として、プロパティを次のように変更しての位置を変更することもでき `Model` `World` ます。
 
 ```csharp
 // Z is up, so changing Z to 3 moves the object up 3 units:
@@ -195,20 +195,20 @@ effect.World = Matrix.CreateTranslation (modelPosition);
 
 ![このコードにより、オブジェクトが3つのワールド単位で上に移動します。](part1-images/image10.png "このコードにより、オブジェクトが3つのワールド単位で上に移動します。")
 
-`BasicEffect` に割り当てられた最後の2つのプロパティは `View` と `Projection`です。 [第3部](~/graphics-games/monogame/3d/part3.md)では3d カメラについて説明しますが、例として、ローカル `cameraPosition` 変数を変更して、カメラの位置を変更することができます。
+に割り当てられた最後の2つのプロパティ `BasicEffect` は、 `View` と `Projection` です。 [第3部](~/graphics-games/monogame/3d/part3.md)では3d カメラについて説明しますが、例として、ローカル変数を変更してカメラの位置を変更でき `cameraPosition` ます。
 
 ```csharp
 // The 8 has been changed to a 30 to move the Camera further back
 var cameraPosition = new Vector3 (0, 30, 0);
 ```
 
-カメラがさらに後ろに移動したことがわかります。結果として、パースペクティブによって `Model` が小さくなります。
+カメラがさらに後ろに移動したことがわかります。結果として、パースペクティブによって次のように表示されるように `Model` なります。
 
 ![カメラがさらに後ろに移動したため、パースペクティブによってモデルが小さくなります。](part1-images/image11.png "カメラがさらに後ろに移動したため、パースペクティブによってモデルが小さくなります。")
 
 ## <a name="rendering-multiple-models"></a>複数のモデルのレンダリング
 
-前述のように、1つの `Model` を複数回描画できます。 これを簡単にするために、`Model` の描画コードを、目的の `Model` 位置をパラメーターとして受け取る独自のメソッドに移動します。 完了すると、`Draw` と `DrawModel` のメソッドは次のようになります。
+前述のように、1つのを `Model` 複数回描画できます。 これを簡単にするために、 `Model` パラメーターとして目的の位置を取得する独自のメソッドに描画コードを移動し `Model` ます。 完了 `Draw` すると、 `DrawModel` メソッドとメソッドは次のようになります。
 
 ```csharp
 protected override void Draw(GameTime gameTime)
@@ -257,10 +257,10 @@ void DrawModel(Vector3 modelPosition)
 
 ## <a name="summary"></a>まとめ
 
-このチュートリアルでは、モノゲームの `Model` クラスを導入しました。 この記事では、fbx ファイルを xnb に変換する方法について説明します。これは、`Model` クラスに読み込むことができます。 また、`BasicEffect` インスタンスに対する変更が `Model` 描画に与える影響についても示します。
+このチュートリアルでは、モノのゲームの `Model` クラスを導入しました。 この記事では、fbx ファイルを xnb に変換する方法について説明します。これは、クラスに読み込むことができます。 `Model` また、インスタンスへの変更が描画に与える影響についても示し `BasicEffect` `Model` ます。
 
 ## <a name="related-links"></a>関連リンク
 
 - [モノゲームモデルリファレンス](http://www.monogame.net/documentation/?page=T_Microsoft_Xna_Framework_Graphics_Model)
-- [コンテンツ .zip](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/Content.zip?raw=true)
-- [完成したプロジェクト (サンプル)](https://docs.microsoft.com/samples/xamarin/mobile-samples/modelrenderingmg/)
+- [Content.zip](https://github.com/xamarin/mobile-samples/blob/master/ModelRenderingMG/Resources/Content.zip?raw=true)
+- [完成したプロジェクト (サンプル)](/samples/xamarin/mobile-samples/modelrenderingmg/)

@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 2e8dde87456c6e33eda6846967ceea13eb412b93
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 9bd048239c404c0eb3309fdc74b26bcb94db4740
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86934304"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434123"
 ---
 # <a name="tab-bars-and-tab-bar-controllers-in-xamarinios"></a>Xamarin. iOS のタブバーとタブバーコントローラー
 
-タブ付きアプリケーションは、特定の順序で複数の画面にアクセスできるユーザーインターフェイスをサポートするために、iOS で使用されます。 クラスを使用すると、アプリケーションには、 `UITabBarController` このようなマルチスクリーンのシナリオのサポートを簡単に含めることができます。 `UITabBarController`複数画面の管理を行い、アプリケーション開発者が各画面の詳細に集中できるようにします。
+タブ付きアプリケーションは、特定の順序で複数の画面にアクセスできるユーザーインターフェイスをサポートするために、iOS で使用されます。 クラスを使用すると、アプリケーションには、 `UITabBarController` このようなマルチスクリーンのシナリオのサポートを簡単に含めることができます。 `UITabBarController` 複数画面の管理を行い、アプリケーション開発者が各画面の詳細に集中できるようにします。
 
 通常、タブ付きアプリケーションは、 `UITabBarController` メインウィンドウのを使用してビルドされ `RootViewController` ます。 ただし、追加のコードを記述することで、タブ付きアプリケーションを他の初期画面に連続して使用することもできます。たとえば、アプリケーションで最初にログイン画面が表示され、次にタブ付きインターフェイスが表示されます。
 
@@ -47,7 +47,7 @@ Visual Studio for Mac で使用できるタブ付きアプリケーションテ�
 
 まず、新しいアプリケーションを作成します。
 
-Visual Studio for Mac で [**ファイル > 新規 > ソリューション**] メニュー項目を選択し、[ **iOS > アプリ] > 空のプロジェクト**テンプレートを選択し `TabbedApplication` ます。次に示すように、プロジェクトの名前を指定します。
+Visual Studio for Mac で [ **ファイル > 新規 > ソリューション** ] メニュー項目を選択し、[ **iOS > アプリ] > 空のプロジェクト** テンプレートを選択し `TabbedApplication` ます。次に示すように、プロジェクトの名前を指定します。
 
 [![空のプロジェクトテンプレートを選択します](creating-tabbed-applications-images/newsolution1.png)](creating-tabbed-applications-images/newsolution1.png#lightbox)
 
@@ -55,7 +55,7 @@ Visual Studio for Mac で [**ファイル > 新規 > ソリューション**] �
 
 ### <a name="adding-the-uitabbarcontroller"></a>UITabBarController の追加
 
-次に、[**ファイル > 新しいファイル**] を選択し、 **[全般: 空のクラス**] テンプレートを選択して、空のクラスを追加します。 次のようにファイルに名前を `TabController` 付けます。
+次に、[ **ファイル > 新しいファイル** ] を選択し、 **[全般: 空のクラス** ] テンプレートを選択して、空のクラスを追加します。 次のようにファイルに名前を `TabController` 付けます。
 
 [![TabController クラスを追加する](creating-tabbed-applications-images/02-newclass.png)](creating-tabbed-applications-images/02-newclass.png#lightbox)
 
@@ -63,9 +63,9 @@ Visual Studio for Mac で [**ファイル > 新規 > ソリューション**] �
 
 を実装するには、 `UITabBarController` 次の手順を実行する必要があります。
 
-1. の基本クラス `TabController` をに設定 `UITabBarController` します。
+1. の基本クラス  `TabController` をに設定  `UITabBarController` します。
 1. `UIViewController`に追加するインスタンスを作成 `TabController` します。
-1. インスタンスをの `UIViewController` プロパティに割り当てられた配列に追加 `ViewControllers` `TabController` します。
+1. インスタンスをの  `UIViewController` プロパティに割り当てられた配列に追加  `ViewControllers`  `TabController` します。
 
 次のコードをクラスに追加して、 `TabController` これらの手順を実行します。
 
@@ -165,13 +165,13 @@ tab2.TabBarItem.Title = "Second";
 tab2.View.BackgroundColor = UIColor.Orange;
 ```
 
-上のコードでは、という名前のイメージが `second.png` プロジェクトのルート (または**リソース**ディレクトリ) に追加されていることを前提としています。 すべての画面密度をサポートするには、次のように3つのイメージが必要です。
+上のコードでは、という名前のイメージが `second.png` プロジェクトのルート (または **リソース** ディレクトリ) に追加されていることを前提としています。 すべての画面密度をサポートするには、次のように3つのイメージが必要です。
 
 ![プロジェクトに追加されたイメージ](creating-tabbed-applications-images/tabbedimages7new.png)
 
 正しいディメンションのガイダンスについては、 [Apple のカスタムアイコンページ](https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/custom-icons/)の**タブバーアイコンのサイズ**に関するセクションを参照してください。 推奨されるサイズは、イメージのスタイル (円形、正方形、横、または高さ) によって異なります。
 
-`Image`プロパティは**second.png**ファイル名に設定するだけで十分です。 iOS では、必要に応じて、より高い解像度のファイルが自動的に読み込まれます。 詳細については、「[イメージの操作](~/ios/app-fundamentals/images-icons/index.md)」ガイドを参照してください。 既定では、タブバー項目はグレーで、選択した場合は青色で表示されます。
+`Image`プロパティは**second.png**ファイル名に設定するだけで十分です。 iOS では、必要に応じて、より高い解像度のファイルが自動的に読み込まれます。 詳細については、「 [イメージの操作](~/ios/app-fundamentals/images-icons/index.md) 」ガイドを参照してください。 既定では、タブバー項目はグレーで、選択した場合は青色で表示されます。
 
 #### <a name="overriding-the-title"></a>タイトルのオーバーライド
 
@@ -213,17 +213,17 @@ tab3.TabBarItem.BadgeValue = null;
 
 この例では、ストーリーボードを使用してビューコントローラーをレイアウトします。 ストーリーボードを追加するには:
 
-- プロジェクト名を右クリックし、[**新しいファイルの追加 >**] を選択します。
+- プロジェクト名を右クリックし、[ **新しいファイルの追加 >**] を選択します。
 
 - [新しいファイル] ダイアログが表示されたら、[ **iOS > 空の IPhone ストーリーボード**] に移動します。
 
-次に示すように、この新しいストーリーボード**mainstoryboard.storyboard ファイル**を呼び出しましょう。
+次に示すように、この新しいストーリーボード **mainstoryboard.storyboard ファイル** を呼び出しましょう。
 
 [![Mainstoryboard.storyboard ファイルファイルをプロジェクトに追加する](creating-tabbed-applications-images/new-file-dialog.png)](creating-tabbed-applications-images/new-file-dialog.png#lightbox)
 
-前のストーリーボード以外のファイルにストーリーボードを追加する際に注意する必要がある重要な手順がいくつかあります。これについては、「[ストーリーボードの概要](~/ios/user-interface/storyboards/index.md)」ガイドで説明されています。 具体的には次のとおりです。
+前のストーリーボード以外のファイルにストーリーボードを追加する際に注意する必要がある重要な手順がいくつかあります。これについては、「 [ストーリーボードの概要](~/ios/user-interface/storyboards/index.md) 」ガイドで説明されています。 次のとおりです。
 
-1. の**メインインターフェイス**セクションにストーリーボード名を追加し `Info.plist` ます。
+1. の **メインインターフェイス** セクションにストーリーボード名を追加し `Info.plist` ます。
 
     [![Main インターフェイスを Mainstoryboard.storyboard ファイルに設定します。](creating-tabbed-applications-images/project-options.png)](creating-tabbed-applications-images/project-options.png#lightbox)
 1. で、 `App Delegate` 次のコードを使用して、ウィンドウメソッドをオーバーライドします。
@@ -235,7 +235,7 @@ tab3.TabBarItem.BadgeValue = null;
     }
     ```
 
-この例では、3つのビューコントローラーが必要になります。 という名前の1つは、最初 `ViewController1` のビューコントローラーとして、および最初のタブで使用されます。`ViewController2` `ViewController3` 2 番目と3番目のタブでそれぞれ使用されるおよびという名前のその他の2つの。
+この例では、3つのビューコントローラーが必要になります。 という名前の1つは、最初 `ViewController1` のビューコントローラーとして、および最初のタブで使用されます。 `ViewController2` `ViewController3` 2 番目と3番目のタブでそれぞれ使用されるおよびという名前のその他の2つの。
 
 Mainstoryboard.storyboard ファイルファイルをダブルクリックしてデザイナーを開き、3つのビューコントローラーをデザイン画面にドラッグします。 これらの各ビューコントローラーには上記の名前に対応する独自のクラスが必要です。そのため、次のスクリーンショットに示すように、[ **Identity > クラス**] に名前を入力します。
 
@@ -268,7 +268,7 @@ Mainstoryboard.storyboard ファイルファイルをダブルクリックして
 
 `ViewController1`アプリケーションを初めて起動するときに読み込みます。 ユーザーがボタンをタップすると、ボタンが非表示になり、 `UITabBarController` 最初のタブにインスタンスと共にが読み込ま `ViewController1` れます。
 
-ユーザーがをリリースすると `aButton` 、TouchUpInside イベントがトリガーされます。 ボタンを選択し、[プロパティ] パッドの [**イベント] タブ**で、イベントハンドラーを宣言し `InitialActionCompleted` ます。これは、コードで参照できるようにするためです。 これを次のスクリーンショットに示します。
+ユーザーがをリリースすると `aButton` 、TouchUpInside イベントがトリガーされます。 ボタンを選択し、[プロパティ] パッドの [ **イベント] タブ** で、イベントハンドラーを宣言し `InitialActionCompleted` ます。これは、コードで参照できるようにするためです。 これを次のスクリーンショットに示します。
 
 [![ユーザーが aButton を解放すると、TouchUpInside イベントがトリガーされます。](creating-tabbed-applications-images/event-handler.png)](creating-tabbed-applications-images/event-handler.png#lightbox)
 
@@ -295,9 +295,9 @@ partial void InitialActionCompleted (UIButton sender)
 
 このストーリーボードでは、セグエを使用して、TabBarController とビューコントローラーの間の遷移を処理できます。 最初のビューと対話した後、ユーザーに提示された TabBarController にそれを読み込みます。 デザイナーでこれを設定してみましょう。
 
-**Ctrl キーを押しながらクリック**して、ボタンから TabBarController に**ドラッグ**します。 マウスポインターを合わせると、コンテキストメニューが表示されます。 ここでは、モーダルセグエを使用します。
+**Ctrl キーを押しながらクリック** して、ボタンから TabBarController に **ドラッグ** します。 マウスポインターを合わせると、コンテキストメニューが表示されます。 ここでは、モーダルセグエを使用します。
 
-各タブを設定するには、次に示すように、1 ~ 3 の順に表示されている各ビューコントローラーに対して**Ctrl キーを押しながら [** リレーションシップ **] タブ**をクリックします。
+各タブを設定するには、次に示すように、1 ~ 3 の順に表示されている各ビューコントローラーに対して **Ctrl キーを押しながら [** リレーションシップ **] タブ** をクリックします。
 
 [![タブリレーションシップを選択します](creating-tabbed-applications-images/context-menu.png)](creating-tabbed-applications-images/context-menu.png#lightbox)
 
@@ -332,6 +332,6 @@ public override void ViewDidLoad ()
 
 ## <a name="related-links"></a>関連リンク
 
-- [タブ付きアプリケーションの作成 (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/creatingtabbedapplications)
+- [タブ付きアプリケーションの作成 (サンプル)](/samples/xamarin/ios-samples/creatingtabbedapplications)
 - [Images.zip](https://github.com/xamarin/ios-samples/blob/master/CreatingTabbedApplications/Resources/images.zip?raw=true)
 - [UITabBarController クラスのリファレンス](https://developer.apple.com/library/ios/#documentation/uikit/reference/UITabBarController_Class/Reference/Reference.html)

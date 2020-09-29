@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: d95261a3b884507d3fc4a68018d57c5d3e3a2c84
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 63daa2f449685b39cb7d622790fd3bccd7590f62
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939413"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433218"
 ---
 # <a name="search-apis-in-xamarinios"></a>Xamarin での Api の検索
 
@@ -28,7 +28,7 @@ IOS 9 では Search が拡張されており、Xamarin iOS アプリ内の情報
 
 1. [**Nsuseractivity**](nsuseractivity.md) -Apple が iOS 8 でリリースしたハンドオフ API の拡張機能です。 これは、ユーザーがアプリの相互作用の履歴をパブリックとプライベートの両方で検索できるようにするために使用されます。
 
-2. [**コアスポットライト**](corespotlight.md)-アプリが検索結果に表示されるコンテンツのインデックスを作成できるようにします。 これは、項目を追加および削除できるデータベース API と同様に動作し、アプリ内でプライベートコンテンツにインデックスを作成するための最適な方法です。
+2. [**コアスポットライト**](corespotlight.md) -アプリが検索結果に表示されるコンテンツのインデックスを作成できるようにします。 これは、項目を追加および削除できるデータベース API と同様に動作し、アプリ内でプライベートコンテンツにインデックスを作成するための最適な方法です。
 
 3. [**Webmarkup**](web-markup.md) -web インターフェイス経由でコンテンツへのアクセスを提供するアプリ (アプリ内からだけでなく)。 Web コンテンツは、Apple によってクロールされる特別なリンクを使用してマークすることができ、ユーザーの iOS 9 デバイス上のアプリへのディープリンクを提供します。
 
@@ -40,11 +40,11 @@ IOS 9 では Search が拡張されており、Xamarin iOS アプリ内の情報
 
 - [**Nsuseractivity**](nsuseractivity.md) –このフレームワークを使用して、パブリックコンテンツとプライベートコンテンツの両方に対して検索機能を提供し、アプリ内のナビゲーションポイントを検索できます。
 
-- [**コアスポットライト**](corespotlight.md)–このフレームワークを使用して、デバイスに格納されているプライベートデータの検索を提供します。
+- [**コアスポットライト**](corespotlight.md) –このフレームワークを使用して、デバイスに格納されているプライベートデータの検索を提供します。
 
-- [**Web マークアップ**](web-markup.md)–このフレームワークを使用すると、アプリ内だけでなく、アプリの web サイトからもコンテンツを提供するアプリを検索できます。
+- [**Web マークアップ**](web-markup.md) –このフレームワークを使用すると、アプリ内だけでなく、アプリの web サイトからもコンテンツを提供するアプリを検索できます。
 
-アプリの検索方法はそれぞれ異なり、個別に使用することができますが、Apple では連携するように設計されています。 複数の方法を使用して特定の項目のインデックスを作成する場合は、個々のリンクが連携するように、各アプローチで同じ**項目 ID**を使用するようにしてください。
+アプリの検索方法はそれぞれ異なり、個別に使用することができますが、Apple では連携するように設計されています。 複数の方法を使用して特定の項目のインデックスを作成する場合は、個々のリンクが連携するように、各アプローチで同じ **項目 ID** を使用するようにしてください。
 
 複数の方法を使用すると、エンドユーザーがコンテンツを見つけられるだけでなく、検索内から項目のランキングを向上させることができます。
 
@@ -64,12 +64,12 @@ Apple では、アプリで検索インデックスを提供するコンテン�
 IOS 10 のコアスポットライトは、次のようなアプリ検索に対していくつかの機能強化を提供します。
 
 - **引き出しディープリンクの人気度 (差分プライバシー)** -検索結果でディープリンクアプリのコンテンツを昇格する方法を提供します。
-- **アプリ内検索**-新しいクラスを使用して、 `CSSearchQuery` メール、メッセージ、ノートアプリの動作と同様に、アプリ内スポットライト検索機能を提供します。
+- **アプリ内検索** -新しいクラスを使用して、 `CSSearchQuery` メール、メッセージ、ノートアプリの動作と同様に、アプリ内スポットライト検索機能を提供します。
 - [**検索の継続**]-ユーザーがスポットライトまたは Safari で検索を開始し、アプリを開いて検索を続行できるようにします。
-- **検証結果の視覚化**-Apple の[App Search API 検証ツール](https://search.developer.apple.com/appsearch-validation-tool)では、テストを事前に形成するときに、web サイトのマークアップとディープリンクが視覚的に表示されるようになりました。
-- **メッセージアプリイメージの共有**-メッセージ (メッセージアプリ拡張機能を使用) での共有用に提供された、人気のあるアプリ内イメージがスポットライト検索に表示されます。
+- **検証結果の視覚化** -Apple の [App Search API 検証ツール](https://search.developer.apple.com/appsearch-validation-tool) では、テストを事前に形成するときに、web サイトのマークアップとディープリンクが視覚的に表示されるようになりました。
+- **メッセージアプリイメージの共有** -メッセージ (メッセージアプリ拡張機能を使用) での共有用に提供された、人気のあるアプリ内イメージがスポットライト検索に表示されます。
 
-詳細については、[アプリ検索の拡張機能](~/ios/platform/search/app-search-enhancements.md)に関するガイドを参照してください。
+詳細については、 [アプリ検索の拡張機能](~/ios/platform/search/app-search-enhancements.md) に関するガイドを参照してください。
 
 ### <a name="proactive-suggestions"></a>プロアクティブな候補
 
@@ -78,21 +78,21 @@ iOS 10 は、システムが適切なタイミングで有益な情報をユー�
 - アプリスイッチャー
 - ロック画面
 - CarPlay
-- Maps
+- マップ
 - Siri の相互作用
 - QuickType 候補 
 
 アプリは、 [Nsuseractivity](xref:Foundation.NSUserActivity)、web マークアップ、コアスポットライト、mapkit、Media Player、uikit などのテクノロジのコレクションを使用して、この機能をシステムに公開します。
 
-詳細については、「[プロアクティブな提案](~/ios/platform/search/proactive-suggestions.md)ガイド」を参照してください。
+詳細については、「 [プロアクティブな提案](~/ios/platform/search/proactive-suggestions.md) ガイド」を参照してください。
 
 ## <a name="summary"></a>まとめ
 
-この記事では、iOS 9 が Xamarin iOS アプリ用に提供する新しい Search API の機能について説明しました。 ここでは、コンテンツのインデックスを作成するための[Nsuseractivity](nsuseractivity.md)、[コアスポットライト](corespotlight.md)、 [Web マークアップ](web-markup.md)メソッドについて説明しています。 ここでは、特定の検索方法を使用するタイミングと、インデックスを作成する必要があるコンテンツの種類について簡単に説明しました。
+この記事では、iOS 9 が Xamarin iOS アプリ用に提供する新しい Search API の機能について説明しました。 ここでは、コンテンツのインデックスを作成するための [Nsuseractivity](nsuseractivity.md)、 [コアスポットライト](corespotlight.md) 、 [Web マークアップ](web-markup.md) メソッドについて説明しています。 ここでは、特定の検索方法を使用するタイミングと、インデックスを作成する必要があるコンテンツの種類について簡単に説明しました。
 
 ## <a name="related-links"></a>関連リンク
 
-- [iOS 9 のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
+- [iOS 9 のサンプル](/samples/browse/?products=xamarin&term=Xamarin.iOS%2biOS9)
 - [iOS 9 (開発者向け)](https://developer.apple.com/ios/pre-release/)
 - [iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
 - [アプリ検索のプログラミングガイド](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/AppSearch/index.html#//apple_ref/doc/uid/TP40016308)

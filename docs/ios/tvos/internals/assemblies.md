@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/07/2016
-ms.openlocfilehash: 2fde84441eeb9342d1a86e4dc565faf51d08c57b
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 138b65d51c7069f04433f5b4aee6f8d2b743ccdb
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573561"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435027"
 ---
 # <a name="assemblies-supported-by-xamarin-for-tvos"></a>Xamarin for tvOS でサポートされているアセンブリ
 
@@ -23,31 +23,31 @@ ms.locfileid: "84573561"
 |アセンブリ|追加|API の互換性|
 |---|---|---|
 |Mono.CompilerServices.SymbolWriter.dll|1.0|コンパイラライターの場合。|
-|Mono.Data.Sqlite.dll|1.2|SQLite 用 ADO.NET プロバイダー「[制限事項](~/ios/data-cloud/system.data.md)」を参照してください。|
-|Mono.Data.Tds.dll|1.2|TDS プロトコルのサポートsystem.string 内の[system.string サポートに](xref:System.Data.SqlClient)使用[され](~/ios/data-cloud/system.data.md)ます。|
+|Mono.Data.Sqlite.dll|1.2|SQLite 用 ADO.NET プロバイダー「 [制限事項](~/ios/data-cloud/system.data.md)」を参照してください。|
+|Mono.Data.Tds.dll|1.2|TDS プロトコルのサポートsystem.string 内の [system.string サポートに](xref:System.Data.SqlClient) 使用 [され](~/ios/data-cloud/system.data.md)ます。|
 |Mono.Security.dll|1.0|暗号化 Api。|
-|monotouch.dll|1.0|このアセンブリには、 [COCOATOUCH API への C# バインド](https://docs.microsoft.com/dotnet/api/?view=xamarinios-10.8)が含まれています。|
-|mscorlib.dll|1.0|[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)|
+|monotouch.dll|1.0|このアセンブリには、 [COCOATOUCH API への C# バインド](/dotnet/api/?view=xamarinios-10.8)が含まれています。|
+|mscorlib.dll|1.0|[Silverlight](/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc838194(v=vs.95))|
 |OpenTK.dll|1.0|OpenGL/OpenAL オブジェクト指向 Api。 [iPhone デバイスサポートを提供するために拡張](xref:OpenGLES)されています。|
-|System.dll|1.0|[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)に加えて、次の名前空間の型があります。 <ul><li>System.Collections.Specialized</li> <li>System.ComponentModel</li> <li>System.componentmodel</li> <li>System.Diagnostics</li> <li>System.IO.Compression</li> <li>System.Net</li> <li>システム .Net. キャッシュ</li> <li>System.Net.Mail</li> <li>システム .Net. Mime</li> <li>System.Net.NetworkInformation</li> <li>System.Net.Security</li> <li>System.Net.Sockets</li> <li>System.Security.Authentication</li> <li>System.Security.Cryptography</li> <li>システムタイマー</li></ul>|
-|System.Core.dll|1.0|[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)|
-|System.Data.dll|1.2|[.Net 3.5](https://msdn.microsoft.com/library/ms229335.aspx)。[一部の機能が削除されました](~/ios/data-cloud/system.data.md)。|
-|System.string. Service. .dll|3.x|完全な oData クライアント。|
+|System.dll|1.0|[Silverlight](/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc838194(v=vs.95))に加えて、次の名前空間の型があります。 <ul><li>System.Collections.Specialized</li> <li>System.ComponentModel</li> <li>System.componentmodel</li> <li>System.Diagnostics</li> <li>System.IO.Compression</li> <li>System.Net</li> <li>システム .Net. キャッシュ</li> <li>System.Net.Mail</li> <li>システム .Net. Mime</li> <li>System.Net.NetworkInformation</li> <li>System.Net.Security</li> <li>System.Net.Sockets</li> <li>System.Security.Authentication</li> <li>System.Security.Cryptography</li> <li>システムタイマー</li></ul>|
+|System.Core.dll|1.0|[Silverlight](/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc838194(v=vs.95))|
+|System.Data.dll|1.2|[.Net 3.5](/previous-versions/ms229335(v=vs.100))。 [一部の機能が削除されました](~/ios/data-cloud/system.data.md)。|
+|System.Data.Service.Client.dll|3.x|完全な oData クライアント。|
 |System.Drawing|1.0|Drawing API Classic API のみ。<br />_Xamarin .NET 4.5 またはモバイルフレームワークの Unified API では、Drawing はサポートされていません。_|
-|System.Json.dll|1.1|[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)|
-|System.Runtime.Serialization.dll|?|[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)|
-|System.ServiceModel.dll|1.1|[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)に存在する[WCF](https://docs.microsoft.com/xamarin/cross-platform/data-cloud/web-services/)スタック|
-|System.ServiceModel.Web.dll|?|[Silverlight](https://msdn.microsoft.com/library/cc838194(VS.95).aspx)に加えて、次の名前空間の型があります。 <ul><li>システム</li><li>System.ServiceModel.Channels</li><li>System.ServiceModel.Description</li><li>System.ServiceModel.Web</li></ul>|
-|System.Transactions.dll|1.2|[.Net 3.5](https://msdn.microsoft.com/library/ms229335.aspx);[システムデータ](https://docs.microsoft.com/xamarin/ios/data-cloud/system.data)のサポートの一部。|
-|System.Web.Services|1.1|.NET 3.5 プロファイルの[基本的な Web サービス](https://docs.microsoft.com/xamarin/cross-platform/data-cloud/web-services/)です。サーバー機能は削除されています。|
-|System.Xml.dll|1.0|[.NET 3.5](https://msdn.microsoft.com/library/ms229335.aspx)|
-|System.Xml.Linq.dll|1.0|[.NET 3.5](https://msdn.microsoft.com/library/ms229335.aspx)|
+|System.Json.dll|1.1|[Silverlight](/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc838194(v=vs.95))|
+|System.Runtime.Serialization.dll|?|[Silverlight](/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc838194(v=vs.95))|
+|System.ServiceModel.dll|1.1|[Silverlight](/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc838194(v=vs.95))に存在する[WCF](../../../cross-platform/data-cloud/web-services/index.md)スタック|
+|System.ServiceModel.Web.dll|?|[Silverlight](/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc838194(v=vs.95))に加えて、次の名前空間の型があります。 <ul><li>システム</li><li>System.ServiceModel.Channels</li><li>System.ServiceModel.Description</li><li>System.ServiceModel.Web</li></ul>|
+|System.Transactions.dll|1.2|[.Net 3.5](/previous-versions/ms229335(v=vs.100)); [システムデータ](../../data-cloud/system.data.md) のサポートの一部。|
+|System.Web.Services|1.1|.NET 3.5 プロファイルの[基本的な Web サービス](../../../cross-platform/data-cloud/web-services/index.md)です。サーバー機能は削除されています。|
+|System.Xml.dll|1.0|[.NET 3.5](/previous-versions/ms229335(v=vs.100))|
+|System.Xml.Linq.dll|1.0|[.NET 3.5](/previous-versions/ms229335(v=vs.100))|
 
 <a name="Summary"></a>
 
 ## <a name="portable-class-libraries"></a>ポータブル クラス ライブラリ
 
-Mac バインドに加えて、tvOS は[.Net ポータブルクラスライブラリ](~/cross-platform/app-fundamentals/pcl.md)を使用できます。
+Mac バインドに加えて、tvOS は [.Net ポータブルクラスライブラリ](~/cross-platform/app-fundamentals/pcl.md)を使用できます。
 
 ## <a name="related-links"></a>関連リンク
 

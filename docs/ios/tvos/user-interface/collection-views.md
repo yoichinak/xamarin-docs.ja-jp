@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: fd1bf68e45fa163588d91640147d9e9dbf8ff237
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 2adc161742e7891fcce65cf2025a1b7c531c7a39
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939491"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435243"
 ---
 # <a name="working-with-tvos-collection-views-in-xamarin"></a>Xamarin での tvOS Collection ビューの使用
 
@@ -56,8 +56,8 @@ TvOS でコレクションビューを使用する場合、アプリは、デー
 
 コレクションビューは、アイテムの大きなコレクションを処理するように設計されているため、個別のセルをデキューして再利用し、オーバーランのメモリ制限を維持することができます。 ビューを解除するには、次の2つの方法があります。
 
-- `DequeueReusableCell`-指定された型 (アプリのストーリーボードで指定) のセルを作成または返します。
-- `DequeueReusableSupplementaryView`-指定された種類の補助ビューを作成または返します (アプリのストーリーボードで指定)。
+- `DequeueReusableCell` -指定された型 (アプリのストーリーボードで指定) のセルを作成または返します。
+- `DequeueReusableSupplementaryView` -指定された種類の補助ビューを作成または返します (アプリのストーリーボードで指定)。
 
 これらのメソッドのいずれかを呼び出す前に、 `.xib` コレクションビューでセルのビューを作成するために使用されるクラス、ストーリーボード、またはファイルを登録する必要があります。 次に例を示します。
 
@@ -96,7 +96,7 @@ TvOS アプリでコレクションビューを操作する最も簡単な方法
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-1. Visual Studio for Mac で新しい**単一ビュー TvOS アプリ**を開始します。
+1. Visual Studio for Mac で新しい **単一ビュー TvOS アプリ** を開始します。
 1. **ソリューションエクスプローラー**で、ファイルをダブルクリックして、 `Main.storyboard` iOS Designer で開きます。
 1. イメージビュー、ラベル、ボタンを既存のビューに追加し、次のように構成します。 
 
@@ -107,7 +107,7 @@ TvOS アプリでコレクションビューを操作する最も簡単な方法
 1. 次に、コレクションビューコントローラーをストーリーボードにドラッグします。 
 
     [![コレクションビューコントローラー](collection-views-images/collection04.png)](collection-views-images/collection04.png#lightbox)
-1. コントロール-ボタンからコレクションビューコントローラーにドラッグし、ポップアップから [**プッシュ**] を選択します。 
+1. コントロール-ボタンからコレクションビューコントローラーにドラッグし、ポップアップから [ **プッシュ** ] を選択します。 
 
     [![ポップアップから [プッシュ] を選択します。](collection-views-images/collection05.png)](collection-views-images/collection05.png#lightbox)
 1. アプリを実行すると、ユーザーがボタンをクリックするたびにコレクションビューが表示されるようになります。
@@ -124,7 +124,7 @@ TvOS アプリでコレクションビューを操作する最も簡単な方法
 1. [コレクションビュー] セルを選択し、[ `CityCollectionViewCell` **ウィジェット] タブ**でクラスをに設定します。 
 
     [![クラスを CityCollectionViewCell に設定します。](collection-views-images/collection09.png)](collection-views-images/collection09.png#lightbox)
-1. [**ウィジェット] タブ**で、**レイアウト**がであること、 `Flow` およびコレクションビューの**スクロール方向**がであることを確認し `Vertical` ます。 
+1. [ **ウィジェット] タブ** で、 **レイアウト** がであること、 `Flow` およびコレクションビューの **スクロール方向** がであることを確認し `Vertical` ます。 
 
     [![[ウィジェット] タブ](collection-views-images/collection10.png)](collection-views-images/collection10.png#lightbox)
 1. [ **Identity** `CityCell` **ウィジェット] タブ**で、[コレクションビュー] セルを選択し、その id をに設定します。 
@@ -134,7 +134,7 @@ TvOS アプリでコレクションビューを操作する最も簡単な方法
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-1. Visual Studio で新しい**単一ビュー TvOS アプリ**を開始します。
+1. Visual Studio で新しい **単一ビュー TvOS アプリ** を開始します。
 1. **ソリューションエクスプローラー**で、ファイルをダブルクリックして、 `Main.storyboard` iOS Designer で開きます。
 1. イメージビュー、ラベル、ボタンを既存のビューに追加し、次のように構成します。 
 
@@ -145,7 +145,7 @@ TvOS アプリでコレクションビューを操作する最も簡単な方法
 1. 次に、コレクションビューコントローラーをストーリーボードにドラッグします。 
 
     [![コレクションビューコントローラー](collection-views-images/collection04vs.png)](collection-views-images/collection04vs.png#lightbox)
-1. コントロール-ボタンからコレクションビューコントローラーにドラッグし、ポップアップから [**プッシュ**] を選択します。 
+1. コントロール-ボタンからコレクションビューコントローラーにドラッグし、ポップアップから [ **プッシュ** ] を選択します。 
 
     [![ポップアップから [プッシュ] を選択します。](collection-views-images/collection05vs.png)](collection-views-images/collection05vs.png#lightbox)
 1. アプリを実行すると、ユーザーがボタンをクリックするたびにコレクションビューが表示されるようになります。
@@ -160,7 +160,7 @@ TvOS アプリでコレクションビューを操作する最も簡単な方法
 1. [コレクションビュー] セルを選択し、[ `CityCollectionViewCell` **ウィジェット] タブ**でクラスをに設定します。 
 
     [![クラスを CityCollectionViewCell に設定します。](collection-views-images/collection09vs.png)](collection-views-images/collection09vs.png#lightbox)
-1. [**ウィジェット] タブ**で、**レイアウト**がであること、 `Flow` およびコレクションビューの**スクロール方向**がであることを確認し `Vertical` ます。 
+1. [ **ウィジェット] タブ** で、 **レイアウト** がであること、 `Flow` およびコレクションビューの **スクロール方向** がであることを確認し `Vertical` ます。 
 
     [![T ウィジェットタブ](collection-views-images/collection10vs.png)](collection-views-images/collection10vs.png#lightbox)
 1. [ **Identity** `CityCell` **ウィジェット] タブ**で、[コレクションビュー] セルを選択し、その id をに設定します。 
@@ -281,7 +281,7 @@ CityView.Alpha = (City.CanSelect) ? 1.0f : 0.5f;
 CityView.AdjustsImageWhenAncestorFocused = true;
 ```
 
-ナビゲーションとフォーカスの詳細については、「[ナビゲーションとフォーカス](~/ios/tvos/app-fundamentals/navigation-focus.md)、 [Siri リモートおよび Bluetooth コントローラー](~/ios/tvos/platform/remote-bluetooth.md)の操作」を参照してください。
+ナビゲーションとフォーカスの詳細については、「 [ナビゲーションとフォーカス](~/ios/tvos/app-fundamentals/navigation-focus.md) 、 [Siri リモートおよび Bluetooth コントローラー](~/ios/tvos/platform/remote-bluetooth.md) の操作」を参照してください。
 
 <a name="The-Collection-View-Data-Provider"></a>
 
@@ -542,7 +542,7 @@ public override bool CanFocusItem (UICollectionView collectionView, NSIndexPath 
 }
 ```
 
-バッキングデータの特定の部分のフラグがに設定されているかどうかを確認 `CanSelect` `true` し、その値を返します。 ナビゲーションとフォーカスの詳細については、「[ナビゲーションとフォーカス](~/ios/tvos/app-fundamentals/navigation-focus.md)、 [Siri リモートおよび Bluetooth コントローラー](~/ios/tvos/platform/remote-bluetooth.md)の操作」を参照してください。
+バッキングデータの特定の部分のフラグがに設定されているかどうかを確認 `CanSelect` `true` し、その値を返します。 ナビゲーションとフォーカスの詳細については、「 [ナビゲーションとフォーカス](~/ios/tvos/app-fundamentals/navigation-focus.md) 、 [Siri リモートおよび Bluetooth コントローラー](~/ios/tvos/platform/remote-bluetooth.md) の操作」を参照してください。
 
 最後に、次のコードを使用して項目を選択するユーザーに応答します。
 
@@ -799,7 +799,7 @@ public override void ViewWillAppear (bool animated)
 
 [![メイン画面](collection-views-images/run01.png)](collection-views-images/run01.png#lightbox)
 
-ユーザーが [ビューの**選択**] ボタンをクリックすると、コレクションビューが表示されます。
+ユーザーが [ビューの **選択** ] ボタンをクリックすると、コレクションビューが表示されます。
 
 [![コレクションビュー](collection-views-images/run02.png)](collection-views-images/run02.png#lightbox)
 
@@ -813,9 +813,9 @@ public override void ViewWillAppear (bool animated)
 
 ## <a name="creating-custom-layout-and-reordering-items"></a>カスタムレイアウトの作成と項目の並べ替え
 
-コレクションビューを使用する主な機能の1つに、カスタムレイアウトを作成する機能があります。 TvOS は iOS から継承するため、カスタムレイアウトを作成するプロセスは同じです。 詳細については、[コレクションビューの概要に](~/ios/user-interface/controls/uicollectionview.md)関するドキュメントを参照してください。
+コレクションビューを使用する主な機能の1つに、カスタムレイアウトを作成する機能があります。 TvOS は iOS から継承するため、カスタムレイアウトを作成するプロセスは同じです。 詳細については、 [コレクションビューの概要に](~/ios/user-interface/controls/uicollectionview.md) 関するドキュメントを参照してください。
 
-IOS 9 のコレクションビューに最近追加されたのは、コレクション内の項目の並べ替えを簡単に許可することでした。 ここでも、tvOS 9 は iOS 9 のサブセットであるため、同じように実行されます。 詳細については、[コレクションビューの変更](~/ios/user-interface/controls/uicollectionview.md)に関するドキュメントを参照してください。
+IOS 9 のコレクションビューに最近追加されたのは、コレクション内の項目の並べ替えを簡単に許可することでした。 ここでも、tvOS 9 は iOS 9 のサブセットであるため、同じように実行されます。 詳細については、 [コレクションビューの変更](~/ios/user-interface/controls/uicollectionview.md) に関するドキュメントを参照してください。
 
 <a name="Summary"></a>
 
@@ -825,7 +825,7 @@ IOS 9 のコレクションビューに最近追加されたのは、コレク�
 
 ## <a name="related-links"></a>関連リンク
 
-- [tvOS のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [tvOS のサンプル](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS ヒューマンインターフェイスガイド](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS のアプリプログラミングガイド](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

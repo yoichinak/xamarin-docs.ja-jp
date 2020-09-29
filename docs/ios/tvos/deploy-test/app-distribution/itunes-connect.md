@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: b316e0629bce66e295241be9d67dc4eb37ce1972
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 43692bf2180887e7983cf35fb1812a91222dbc7a
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939569"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435155"
 ---
 # <a name="configure-your-tvos-app-in-itunes-connect"></a>iTunes Connect での tvOS アプリの構成
 
 _この記事では、tvOS 固有の構成のために、iTunes Connect でアプリを構成するための補足ガイドを提供します。_
 
-「 [ITunes Connect でアプリを構成](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)する」ガイドで説明されている構成と設定に加えて、このドキュメントでは、Apple TV app Store で tvOS アプリをリリースするために必要な特定の構成について説明します。
+「 [ITunes Connect でアプリを構成](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md) する」ガイドで説明されている構成と設定に加えて、このドキュメントでは、Apple TV app Store で tvOS アプリをリリースするために必要な特定の構成について説明します。
 
 <a name="Adding-a-tvOS-Release-Version"></a>
 
@@ -48,7 +48,7 @@ Apple TV App Store でリリースする新しいアプリを作成する場合�
 
 ## <a name="tvos-version-information"></a>tvOS のバージョン情報
 
-左側のサイドバーで、[tvOS APP] セクションの [ **1.0 For 送信**] を選択します。
+左側のサイドバーで、[tvOS APP] セクションの [ **1.0 For 送信** ] を選択します。
 
 [![tvOS のバージョン情報](itunes-connect-images/connect03.png)](itunes-connect-images/connect03.png#lightbox)
 
@@ -60,7 +60,7 @@ Apple TV App Store でリリースする新しいアプリを作成する場合�
 - オプション Game Center、スコアボードとアチーブメントでサポートされます。
 - 連絡先、デモ用アカウント、メモなどのアプリレビュー情報が必要です。
 
-必要な情報を入力したら、画面の右上隅にある [**保存**] ボタンをクリックして、変更を保存します。
+必要な情報を入力したら、画面の右上隅にある [ **保存** ] ボタンをクリックして、変更を保存します。
 
 [![tvOS のバージョン情報を送信する準備ができました](itunes-connect-images/connect04.png)](itunes-connect-images/connect04.png#lightbox)
 
@@ -68,7 +68,7 @@ Apple TV App Store でリリースする新しいアプリを作成する場合�
 
 ## <a name="preparing-to-submit-for-review"></a>レビューのために送信する準備をしています
 
-TvOS アプリを確認のために Apple TV App Store に送信する準備ができたら、アプリの iTunes Connect レコードに戻り、画面の右上隅にある [**レビュー用に送信**] ボタンをクリックします。
+TvOS アプリを確認のために Apple TV App Store に送信する準備ができたら、アプリの iTunes Connect レコードに戻り、画面の右上隅にある [ **レビュー用に送信** ] ボタンをクリックします。
 
 [![レビュー用に送信する](itunes-connect-images/connect05.png)](itunes-connect-images/connect05.png#lightbox)
 
@@ -80,7 +80,7 @@ TvOS アプリを確認のために Apple TV App Store に送信する準備が�
 
 ## <a name="related-links"></a>関連リンク
 
-- [tvOS のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [tvOS のサンプル](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS ヒューマンインターフェイスガイド](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS のアプリプログラミングガイド](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

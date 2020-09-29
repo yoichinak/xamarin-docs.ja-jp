@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/04/2018
-ms.openlocfilehash: 7d9fe2a651d8d75d8dd9d8c0dd1225350a58373d
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 745bfbc56dec12b7d46003a1d488e5638dc6c110
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031887"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435179"
 ---
 # <a name="provisional-notifications-in-xamarinios"></a>Xamarin. iOS での仮通知
 
@@ -22,12 +22,12 @@ ms.locfileid: "73031887"
 
 ## <a name="sample-app-redgreennotifications"></a>サンプルアプリ: RedGreenNotifications
 
-仮の通知を送信する[RedGreenNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-redgreennotifications)サンプルアプリを見てみましょう。
+仮の通知を送信する [RedGreenNotifications](/samples/xamarin/ios-samples/ios12-redgreennotifications) サンプルアプリを見てみましょう。
 
 ## <a name="sending-provisional-notifications"></a>仮通知の送信
 
-仮通知を送信するには、 [`RequestAuthorization`](xref:UserNotifications.UNUserNotificationCenter.RequestAuthorization*)にオプションとして `UNAuthorizationOptions.Provisional` を指定します
-`UNUserNotificationCenter`のメソッド:
+仮通知を送信するには、 `UNAuthorizationOptions.Provisional` のオプションとしてを指定します。 [`RequestAuthorization`](xref:UserNotifications.UNUserNotificationCenter.RequestAuthorization*)
+方法 `UNUserNotificationCenter` :
 
 ```csharp
 public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
@@ -41,11 +41,11 @@ public override bool FinishedLaunching(UIApplication application, NSDictionary l
 }
 ```
 
-ユーザーが仮の通知を著名な配信に昇格すると、`RequestAuthorization` に渡される `UNAuthorizationOptions` の値によって、新しい通知配信設定が決定されます (上のコード、`UNAuthorizationOptions.Alert` および `UNAuthorizationOptions.Sound`)。
+ユーザーが仮の通知を目立つ配信に昇格すると、に渡される値によって、 `UNAuthorizationOptions` `RequestAuthorization` 新しい通知配信設定が決定されます (上のコードでは、 `UNAuthorizationOptions.Alert` と `UNAuthorizationOptions.Sound` )。
 
 ## <a name="related-links"></a>関連リンク
 
-- [サンプルアプリ– RedGreenNotifications](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-redgreennotifications)
+- [サンプルアプリ– RedGreenNotifications](/samples/xamarin/ios-samples/ios12-redgreennotifications)
 - [Xamarin. iOS のユーザー通知フレームワーク](~/ios/platform/user-notifications/index.md)
 - [UserNotifications (Apple)](https://developer.apple.com/documentation/usernotifications?language=objc)
 - [ユーザー通知の新機能 (WWDC 2018)](https://developer.apple.com/videos/play/wwdc2018/710/)

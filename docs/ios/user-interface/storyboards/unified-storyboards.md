@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: 4da0bd1c47c37430b278bed46f658b935a502e2d
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: fdfdd385563ee425f0e8767aed13304ae9541b94
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937879"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435360"
 ---
 # <a name="unified-storyboards-in-xamarinios"></a>Xamarin の統合されたストーリーボード
 
@@ -24,11 +24,11 @@ iOS 8 には、統合されたストーリーボードという、ユーザー�
 
 ## <a name="size-classes"></a>サイズクラス
 
-IOS 8 より前の開発者は、とを使用して、 `UIInterfaceOrientation` `UIInterfaceIdiom` 縦モードと横モードを区別し、IPhone と iPad デバイスを区別していました。 IOS8 では、方向とデバイスは*サイズクラス*を使用して決定されます。
+IOS 8 より前の開発者は、とを使用して、 `UIInterfaceOrientation` `UIInterfaceIdiom` 縦モードと横モードを区別し、IPhone と iPad デバイスを区別していました。 IOS8 では、方向とデバイスは *サイズクラス*を使用して決定されます。
 
 デバイスは、垂直軸と水平軸の両方でサイズクラスによって定義され、iOS 8 には2種類のサイズクラスがあります。
 
-- **Regular** –これは、サイズの大きい画面 (iPad など)、または大きなサイズの印象を与えるガジェット (たとえば、`UIScrollView`
+- **Regular** –これは、サイズの大きい画面 (iPad など)、または大きなサイズの印象を与えるガジェット (たとえば、 `UIScrollView`
 - **Compact** –これは、より小さなデバイス (iPhone など) を対象としています。 このサイズでは、デバイスの向きが考慮されます。
 
 2つの概念が一緒に使用されている場合は、次の図に示すように、異なる向きの両方で使用できるさまざまなサイズを定義する2つの x 2 グリッドが生成されます。
@@ -39,7 +39,7 @@ IOS 8 より前の開発者は、とを使用して、 `UIInterfaceOrientation` 
 
 ### <a name="ipad-size-classes"></a>iPad サイズクラス
 
-IPad は、サイズが原因で、両方の向きに対して**通常**のクラスサイズが使用されます。
+IPad は、サイズが原因で、両方の向きに対して **通常** のクラスサイズが使用されます。
 
  [![iPad サイズクラス](unified-storyboards-images/image1.png)](unified-storyboards-images/image1.png#lightbox)
 
@@ -78,7 +78,7 @@ UIImage icon = UIImage.FromFile("MonkeyImage.png");
 
 アプリが実際に起動されていることをユーザーにフィードバックするために、iOS アプリケーションを起動しているときに、起動画面ファイルがスプラッシュスクリーンとして表示されます。 IOS 8 より前の開発者は、 `Default.png` アプリケーションが実行されるデバイスの種類、向き、画面の解像度ごとに、複数のイメージ資産を含める必要があります。
 
-IOS 8 を初めて使用する場合、開発者は、 `.xib` Auto Layout クラスと Size クラスを使用して、すべてのデバイス、解像度、および向きに対して機能する*動的起動画面*を作成する、Xcode で単一のアトミックファイルを作成できます。 これにより、開発者が必要なすべてのイメージ資産を作成して維持するために必要な作業量が減少するだけでなく、アプリケーションのインストール済みバンドルのサイズが縮小されます。
+IOS 8 を初めて使用する場合、開発者は、 `.xib` Auto Layout クラスと Size クラスを使用して、すべてのデバイス、解像度、および向きに対して機能する *動的起動画面* を作成する、Xcode で単一のアトミックファイルを作成できます。 これにより、開発者が必要なすべてのイメージ資産を作成して維持するために必要な作業量が減少するだけでなく、アプリケーションのインストール済みバンドルのサイズが縮小されます。
 
 ## <a name="traits"></a>Traits
 
@@ -115,13 +115,13 @@ IOS 8 を初めて使用する場合、開発者は、 `.xib` Auto Layout クラ
 |プロパティ|値|
 |--- |--- |
 |`HorizontalSizeClass`|コンパクト|
-|`VerticalSizeClass`|通常|
+|`VerticalSizeClass`|Regular|
 |`UserInterfaceIdom`|Phone|
 |`DisplayScale`|2.0|
 
 上のセットは、すべての特徴プロパティの値を持つため、完全修飾された特徴コレクションを表します。
 
-また、値の一部が欠落している特徴コレクションがある可能性もあります (Apple は*未指定*として参照します)。
+また、値の一部が欠落している特徴コレクションがある可能性もあります (Apple は *未指定*として参照します)。
 
 |プロパティ|値|
 |--- |--- |
@@ -164,7 +164,7 @@ Apple は、 `UIImageAsset` イメージ選択をさらに制御するために�
 
 イメージ資産は、イメージのさまざまなバージョンをすべてラップし、開発者が渡された特徴コレクションに一致する特定のイメージを要求できるようにします。 イメージは、イメージアセットから追加または削除できます。
 
-イメージ資産の詳細については、Apple の[Uiimageasset](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIImageAsset_Ref/index.html#//apple_ref/occ/cl/UIImageAsset)のドキュメントを参照してください。
+イメージ資産の詳細については、Apple の [Uiimageasset](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIImageAsset_Ref/index.html#//apple_ref/occ/cl/UIImageAsset) のドキュメントを参照してください。
 
 ## <a name="combining-trait-collections"></a>特徴コレクションの結合
 
@@ -228,17 +228,17 @@ iOS 8 には、次の表に示すように、開発者が特徴の変更に参�
 
 では、分割ビューコントローラーが2つの列から1つの列ビューに折りたたまれたときの動作について詳しく見ていきましょう。 この変更の一環として、次の2つのプロセスを実行する必要があります。
 
-- 既定では、分割ビューコントローラーは、折りたたみが発生した後に、ビューとしてプライマリビューコントローラーを使用します。 開発者は `GetPrimaryViewControllerForCollapsingSplitViewController` 、のメソッドをオーバーライド `UISplitViewControllerDelegate` し、折りたたまれた状態で表示するビューコントローラーを提供することで、この動作をオーバーライドできます。
+- 既定では、分割ビューコントローラーは、折りたたみが発生した後に、ビューとしてプライマリビューコントローラーを使用します。 開発者は  `GetPrimaryViewControllerForCollapsingSplitViewController` 、のメソッドをオーバーライド  `UISplitViewControllerDelegate` し、折りたたまれた状態で表示するビューコントローラーを提供することで、この動作をオーバーライドできます。
 - セカンダリビューコントローラーは、プライマリビューコントローラーにマージする必要があります。 通常、開発者はこの手順に対して何らかの操作を行う必要はありません。分割ビューコントローラーには、ハードウェアデバイスに基づくこのフェーズの自動的な処理が含まれます。 ただし、開発者がこの変更を操作する必要がある特殊なケースもあります。 `CollapseSecondViewController`のメソッドを呼び出す `UISplitViewControllerDelegate` と、詳細ビューではなく、折りたたみが発生したときにマスタービューコントローラーが表示されます。
 
 ### <a name="expanding-the-split-view-controller"></a>分割ビューコントローラーを展開する
 
 ここで、分割ビューコントローラーが折りたたまれた状態から展開された場合の動作について詳しく見ていきましょう。 この場合も、次の2つの段階があります。
 
-- まず、新しいプライマリビューコントローラーを定義します。 既定では、分割ビューコントローラーは、折りたたまれたビューのプライマリビューコントローラーを自動的に使用します。 ここでも、開発者はのメソッドを使用して、この動作をオーバーライドでき `GetPrimaryViewControllerForExpandingSplitViewController` `UISplitViewControllerDelegate` ます。
-- プライマリビューコントローラーを選択したら、セカンダリビューコントローラーを再作成する必要があります。 ここでも、分割ビューコントローラーには、ハードウェアデバイスに基づくこのフェーズの自動処理が含まれています。 開発者は、のメソッドを呼び出すことによって、この動作をオーバーライドでき `SeparateSecondaryViewController` `UISplitViewControllerDelegate` ます。
+- まず、新しいプライマリビューコントローラーを定義します。 既定では、分割ビューコントローラーは、折りたたまれたビューのプライマリビューコントローラーを自動的に使用します。 ここでも、開発者はのメソッドを使用して、この動作をオーバーライドでき  `GetPrimaryViewControllerForExpandingSplitViewController`  `UISplitViewControllerDelegate` ます。
+- プライマリビューコントローラーを選択したら、セカンダリビューコントローラーを再作成する必要があります。 ここでも、分割ビューコントローラーには、ハードウェアデバイスに基づくこのフェーズの自動処理が含まれています。 開発者は、のメソッドを呼び出すことによって、この動作をオーバーライドでき  `SeparateSecondaryViewController`  `UISplitViewControllerDelegate` ます。
 
-分割ビューコントローラーでは、プライマリビューコントローラーは `CollapseSecondViewController` 、のメソッドとメソッドを実装することによって、ビューの展開と折りたたみの両方でパーツを再生し `SeparateSecondaryViewController` `UISplitViewControllerDelegate` ます。 `UINavigationController`は、これらのメソッドを実装して、セカンダリビューコントローラーを自動的にプッシュしてポップします。
+分割ビューコントローラーでは、プライマリビューコントローラーは `CollapseSecondViewController` 、のメソッドとメソッドを実装することによって、ビューの展開と折りたたみの両方でパーツを再生し `SeparateSecondaryViewController` `UISplitViewControllerDelegate` ます。 `UINavigationController` は、これらのメソッドを実装して、セカンダリビューコントローラーを自動的にプッシュしてポップします。
 
 ### <a name="showing-view-controllers"></a>ビューコントローラーの表示
 
@@ -246,8 +246,8 @@ Apple が iOS 8 に加えたもう1つの変更は、開発者がビューコン
 
 これにより、ナビゲーションコントローラーと、それが実行されていた環境との間に非常に密接な結合が行われました。 IOS 8 では、Apple は次の2つの新しい方法を提供してこれを分離しました。
 
-- `ShowViewController`–環境に基づいて新しいビューコントローラーを表示するように適応します。 たとえば、では、 `UINavigationController` 新しいビューをスタックにプッシュするだけです。 分割ビューコントローラーでは、新しいビューコントローラーが新しいプライマリビューコントローラーとして左側に表示されます。 コンテナービューコントローラーが存在しない場合、新しいビューはモーダルビューコントローラーとして表示されます。
-- `ShowDetailViewController`–はと同様の方法で機能し `ShowViewController` ますが、詳細ビューを渡される新しいビューコントローラーに置き換えるために、分割ビューコントローラーに実装されます。 (IPhone アプリケーションで見られるように) 分割ビューコントローラーが折りたたまれている場合は、呼び出しがメソッドにリダイレクトされ、 `ShowViewController` 新しいビューがプライマリビューコントローラーとして表示されます。 ここでも、コンテナービューコントローラーが存在しない場合、新しいビューはモーダルビューコントローラーとして表示されます。
+- `ShowViewController` –環境に基づいて新しいビューコントローラーを表示するように適応します。 たとえば、では、  `UINavigationController` 新しいビューをスタックにプッシュするだけです。 分割ビューコントローラーでは、新しいビューコントローラーが新しいプライマリビューコントローラーとして左側に表示されます。 コンテナービューコントローラーが存在しない場合、新しいビューはモーダルビューコントローラーとして表示されます。
+- `ShowDetailViewController` –はと同様の方法で機能し  `ShowViewController` ますが、詳細ビューを渡される新しいビューコントローラーに置き換えるために、分割ビューコントローラーに実装されます。 (IPhone アプリケーションで見られるように) 分割ビューコントローラーが折りたたまれている場合は、呼び出しがメソッドにリダイレクトされ、  `ShowViewController` 新しいビューがプライマリビューコントローラーとして表示されます。 ここでも、コンテナービューコントローラーが存在しない場合、新しいビューはモーダルビューコントローラーとして表示されます。
 
 これらのメソッドは、リーフビューコントローラーから開始し、新しいビューの表示を処理する適切なコンテナービューコントローラーが見つかるまでビュー階層をウォークします。
 
@@ -262,7 +262,7 @@ Apple が iOS 8 に加えたもう1つの変更は、開発者がビューコン
 このメソッドは、正しいコンテナービューコントローラーが見つかるまで階層チェーンをウォークします。 次に例を示します。
 
 1. `ShowViewController`メソッドが呼び出されると、このメソッドを実装するチェーン内の最初のビューコントローラーがナビゲーションコントローラーになるため、新しいビューの親として使用されます。
-1. メソッドが代わりに呼び出された場合 `ShowDetailViewController` 、分割ビューコントローラーは、それを実装するための最初のビューコントローラーであるため、親として使用されます。
+1. メソッドが代わりに呼び出された場合  `ShowDetailViewController` 、分割ビューコントローラーは、それを実装するための最初のビューコントローラーであるため、親として使用されます。
 
 メソッドは、 `GetTargetForAction` 指定されたアクションを実装するビューコントローラーを特定し、そのアクションを受信するかどうかをそのビューコントローラーに要求することによって機能します。 このメソッドはパブリックであるため、開発者は、組み込みのメソッドとメソッドと同様に機能する独自のカスタムメソッドを作成でき `ShowViewController` `ShowDetailViewController` ます。
 
@@ -454,7 +454,7 @@ public class SplitViewControllerDelegate : UISplitViewControllerDelegate
 }
 ```
 
-メソッドは、 `SeparateSecondaryViewController` 写真が表示されているかどうかをテストし、その状態に基づいてアクションを実行します。 写真が表示されていない場合は、マスタービューコントローラーが表示されるように、セカンダリビューコントローラーを折りたたみます。
+メソッドは、 `SeparateSecondaryViewController`  写真が表示されているかどうかをテストし、その状態に基づいてアクションを実行します。 写真が表示されていない場合は、マスタービューコントローラーが表示されるように、セカンダリビューコントローラーを折りたたみます。
 
 メソッドは、分割ビューコントローラーを展開するときに使用され、スタックに写真が存在するかどうかを確認します。これにより、その `CollapseSecondViewController` ビューに戻ります。
 
@@ -564,7 +564,7 @@ IOS 8 を初めて使用する場合、統合されたストーリーボード�
 
 既定では、新しい Xamarin. iOS プロジェクトはすべて、クラスのサイズを変更します。 以前のプロジェクトのストーリーボード内でサイズクラスとアダプティブセグエを使用するには、まず iOS デザイナー内から Xcode 6 統合ストーリーボード形式に変換する必要があります。
 
-これを行うには、iOS デザイナーで変換するストーリーボードを開き、[**サイズクラスを使用**する] チェックボックスをオンにします。
+これを行うには、iOS デザイナーで変換するストーリーボードを開き、[ **サイズクラスを使用** する] チェックボックスをオンにします。
 
  [![[サイズクラスを使用する] チェックボックス](unified-storyboards-images/sizeclass01.png)](unified-storyboards-images/sizeclass01.png#lightbox)
 
@@ -577,7 +577,7 @@ IOS デザイナーによって、開発者がサイズクラスを使用する�
 
 ### <a name="generic-device-types"></a>一般的なデバイスの種類
 
-サイズクラスを使用するようにストーリーボードが変換されると、デザインサーフェイスに再表示され、デバイスが汎用になる**ようにビューが表示**されます。
+サイズクラスを使用するようにストーリーボードが変換されると、デザインサーフェイスに再表示され、デバイスが汎用になる **ようにビューが表示** されます。
 
  [![汎用デバイスの種類として表示](unified-storyboards-images/sizeclass03.png)](unified-storyboards-images/sizeclass03.png#lightbox)
 
@@ -619,7 +619,7 @@ IOS デザイナーによって、開発者がサイズクラスを使用する�
 
 ### <a name="adaptive-segue-types"></a>Adaptive セグエの種類
 
-開発者が以前にストーリーボードを使用していた場合は、**プッシュ**、**モーダル**、および**segue**の既存のセグエの種類について理解しておく必要があります。 統合されたストーリーボードファイルでサイズクラスが有効になっている場合、次のアダプティブセグエの種類 (上記で説明した新しいビューコントローラー API に対応する) が使用可能になります。詳細を**表示**して**表示**する。
+開発者が以前にストーリーボードを使用していた場合は、 **プッシュ**、 **モーダル** 、および **segue**の既存のセグエの種類について理解しておく必要があります。 統合されたストーリーボードファイルでサイズクラスが有効になっている場合、次のアダプティブセグエの種類 (上記で説明した新しいビューコントローラー API に対応する) が使用可能になります。詳細を **表示** して **表示**する。
 
 > [!IMPORTANT]
 > サイズクラスが有効になっている場合、既存のセグエはすべて新しい型に変換されます。
@@ -634,7 +634,7 @@ IOS デザイナーによって、開発者がサイズクラスを使用する�
 
  [![メインメニュー](unified-storyboards-images/segue02.png)](unified-storyboards-images/segue02.png#lightbox)
 
-[ゲームの**選択**] ボタンをクリックすると、項目の View Controller がナビゲーションスタックにプッシュされます。
+[ゲームの **選択** ] ボタンをクリックすると、項目の View Controller がナビゲーションスタックにプッシュされます。
 
  [![項目ビューコントローラーは、以下のようにナビゲーションスタックにプッシュされます](unified-storyboards-images/segue03.png)](unified-storyboards-images/segue03.png#lightbox)
 
@@ -642,17 +642,17 @@ IPhone シミュレーターを停止し、iPad シミュレーターでアプ�
 
  [![メインメニューが表示されます。](unified-storyboards-images/segue04.png)](unified-storyboards-images/segue04.png#lightbox)
 
-ここでも、[**ゲームの選択**] ボタンをクリックすると、アイテムの view Controller が分割ビューコントローラーの詳細セクションに表示されます。
+ここでも、[ **ゲームの選択** ] ボタンをクリックすると、アイテムの view Controller が分割ビューコントローラーの詳細セクションに表示されます。
 
  [![分割ビューコントローラーの詳細セクションに表示される項目ビューコントローラー](unified-storyboards-images/segue05.png)](unified-storyboards-images/segue05.png#lightbox)
 
 ### <a name="excluding-an-element-from-a-size-class"></a>サイズクラスからの要素の除外
 
-特定のサイズクラス内では、特定の要素 (ビュー、コントロール、制約など) が必要ない場合があります。 サイズクラスから要素を除外するには、**デザインサーフェイス**で除外する目的の項目を選択します。 **プロパティエクスプローラー**の一番下までスクロールし、**歯車**のドロップダウンメニューをクリックします。 項目を除外する**幅**と**高さ**の組み合わせを選択してください:
+特定のサイズクラス内では、特定の要素 (ビュー、コントロール、制約など) が必要ない場合があります。 サイズクラスから要素を除外するには、 **デザインサーフェイス**で除外する目的の項目を選択します。 **プロパティエクスプローラー**の一番下までスクロールし、**歯車**のドロップダウンメニューをクリックします。 項目を除外する **幅** と **高さ** の組み合わせを選択してください:
 
 [![幅と高さの組み合わせを選択します](unified-storyboards-images/exclude-a.png)](unified-storyboards-images/exclude-a.png#lightbox)
 
-新しい*除外ケース*が、**プロパティエクスプローラー**の下部にある要素に追加されます。 次に、指定されたサイズクラスの [**インストール済み**] チェックボックスをオフにします。
+新しい *除外ケース* が、 **プロパティエクスプローラー**の下部にある要素に追加されます。 次に、指定されたサイズクラスの [ **インストール済み** ] チェックボックスをオフにします。
 
 [![インストールされているチェックボックスをオフにする](unified-storyboards-images/exclude-b.png)](unified-storyboards-images/exclude-b.png#lightbox)
 
@@ -672,7 +672,7 @@ IPhone シミュレーターを停止し、iPad シミュレーターでアプ�
 
  [![IPhone シミュレーターでアプリを実行しているときに要素が見つからない](unified-storyboards-images/exclude05.png)](unified-storyboards-images/exclude05.png#lightbox)
 
-要素から除外のケースを削除するには、**デザインサーフェイス**で要素を選択し、**プロパティエクスプローラー**の一番下までスクロールして、 **-** 削除するケースの横にあるボタンをクリックします。
+要素から除外のケースを削除するには、 **デザインサーフェイス**で要素を選択し、 **プロパティエクスプローラー** の一番下までスクロールして、 **-** 削除するケースの横にあるボタンをクリックします。
 
 統合されたストーリーボードの実装を確認するには、 `UnifiedStoryboard` このドキュメントにアタッチされている Xamarin iOS 8 アプリケーションのサンプルを参照してください。
 
@@ -682,13 +682,13 @@ IPhone シミュレーターを停止し、iPad シミュレーターでアプ�
 
 新しい iPhone 6 および iPhone 6 Plus デバイス (および今後の Apple Watch) には、すべての既存の iPhone および iPad デバイスが含ま `Default.png` れています。これは、作成および管理する必要がある起動画面イメージ資産のさまざまなサイズ、向き、および解像度を表します。 さらに、これらのファイルは非常に大きくなる可能性があり、成果物アプリケーションバンドルを "肥大化" し、iTunes App Store からアプリケーションをダウンロードするために必要な時間 (携帯ネットワーク上で配信されないようにすることができます) を増やし、エンドユーザーのデバイスで必要とされるストレージの量を増やすことができます。
 
-IOS 8 を初めて使用する場合、開発者は、 `.xib` Auto Layout クラスと Size クラスを使用して、すべてのデバイス、解像度、および向きに対して機能する*動的起動画面*を作成する、Xcode で単一のアトミックファイルを作成できます。 これにより、開発者が必要なすべてのイメージ資産を作成して維持するために必要な作業量を削減できるだけでなく、アプリケーションのインストール済みバンドルのサイズを大幅に削減できます。
+IOS 8 を初めて使用する場合、開発者は、 `.xib` Auto Layout クラスと Size クラスを使用して、すべてのデバイス、解像度、および向きに対して機能する *動的起動画面* を作成する、Xcode で単一のアトミックファイルを作成できます。 これにより、開発者が必要なすべてのイメージ資産を作成して維持するために必要な作業量を削減できるだけでなく、アプリケーションのインストール済みバンドルのサイズを大幅に削減できます。
 
 動的起動画面には、次の制限事項と考慮事項があります。
 
 - クラスのみを使用 `UIKit` します。
 - オブジェクトまたはオブジェクトである単一のルートビューを使用し `UIView` `UIViewController` ます。
-- アプリケーションのコードには接続しないでください (**アクション**や**アウトレット**を追加しないでください)。
+- アプリケーションのコードには接続しないでください ( **アクション** や **アウトレット**を追加しないでください)。
 - オブジェクトを追加しないで `UIWebView` ください。
 - カスタムクラスは使用しないでください。
 - ランタイム属性は使用しないでください。
@@ -707,20 +707,20 @@ IOS 8 を初めて使用する場合、開発者は、 `.xib` Auto Layout クラ
 4. [ **IOS**  >  **ユーザーインターフェイス**  >  の**起動画面**] を選択し、[**次へ**] ボタンをクリックします。
 
     [![IOS/ユーザーインターフェイス/起動画面の選択](unified-storyboards-images/dls03.png)](unified-storyboards-images/dls03.png#lightbox)
-5. ファイルに名前 `LaunchScreen.xib` を指定し、[**作成**] ボタンをクリックします。
+5. ファイルに名前 `LaunchScreen.xib` を指定し、[ **作成** ] ボタンをクリックします。
 
     [![ファイルの名前を LaunchScreen にします。 xib](unified-storyboards-images/dls04.png)](unified-storyboards-images/dls04.png#lightbox)
 6. 起動画面のデザインを編集するには、グラフィック要素を追加し、レイアウトの制約を使用して、特定のデバイス、向き、画面のサイズに合わせます。
 
     [![起動画面のデザインを編集する](unified-storyboards-images/dls05.png)](unified-storyboards-images/dls05.png#lightbox)
 7. `LaunchScreen.xib` に対する変更を保存します。
-8. [**アプリケーション] ターゲット**と [**全般**] タブを選択します。
+8. [ **アプリケーション] ターゲット** と [ **全般** ] タブを選択します。
 
     [![[アプリケーション] ターゲットと [全般] タブを選択します。](unified-storyboards-images/dls06.png)](unified-storyboards-images/dls06.png#lightbox)
-9. [**情報の選択**] ボタンをクリックし、 `Info.plist` Xamarin アプリのを選択して、[**選択**] ボタンをクリックします。
+9. [ **情報の選択** ] ボタンをクリックし、 `Info.plist` Xamarin アプリのを選択して、[ **選択** ] ボタンをクリックします。
 
     [![Xamarin アプリの情報を選択します。](unified-storyboards-images/dls07.png)](unified-storyboards-images/dls07.png#lightbox)
-10. [**アプリアイコンと起動イメージ**] セクションで、[**起動画面ファイル**] ドロップダウンを開き、上で作成したを選択し `LaunchScreen.xib` ます。
+10. [ **アプリアイコンと起動イメージ** ] セクションで、[ **起動画面ファイル** ] ドロップダウンを開き、上で作成したを選択し `LaunchScreen.xib` ます。
 
     [![LaunchScreen. xib を選択します。](unified-storyboards-images/dls08.png)](unified-storyboards-images/dls08.png#lightbox)
 11. 変更内容をファイルに保存し、Visual Studio for Mac に戻ります。
@@ -728,7 +728,7 @@ IOS 8 を初めて使用する場合、開発者は、 `.xib` Auto Layout クラ
 13. **ソリューションエクスプローラー**で、**リソース**フォルダーを右クリックし、[**追加**] [  >  **ファイル**の追加] の順に選択します。
 
     [![[Add/Add Files...] を選択します。](unified-storyboards-images/dls09.png)](unified-storyboards-images/dls09.png#lightbox)
-14. 上で作成したファイルを選択 `LaunchScreen.xib` し、[**開く**] ボタンをクリックします。
+14. 上で作成したファイルを選択 `LaunchScreen.xib` し、[ **開く** ] ボタンをクリックします。
 
     [![LaunchScreen. xib ファイルを選択します。](unified-storyboards-images/dls10.png)](unified-storyboards-images/dls10.png#lightbox)
 15. アプリケーションをビルドします。
@@ -749,7 +749,7 @@ Visual Studio for Mac に戻り、アプリケーションの実行を停止し�
 
 IOS 7 との下位互換性を維持するには、通常の `Default.png` イメージ資産を ios 8 アプリケーションに通常どおりに含めます。 ios は以前の動作に戻り、iOS 7 デバイスで実行しているときにこれらのファイルをスタートアップ画面として使用します。
 
-Xamarin で動的起動画面の実装を確認するには、このドキュメントに添付されている[動的起動](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-dynamiclaunchscreen)画面のサンプル iOS 8 アプリケーションを確認してください。
+Xamarin で動的起動画面の実装を確認するには、このドキュメントに添付されている [動的起動](/samples/xamarin/ios-samples/ios8-dynamiclaunchscreen) 画面のサンプル iOS 8 アプリケーションを確認してください。
 
 ## <a name="summary"></a>まとめ
 
@@ -759,8 +759,8 @@ Xamarin で動的起動画面の実装を確認するには、このドキュメ
 
 ## <a name="related-links"></a>関連リンク
 
-- [アダプティブフォト (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-adaptivephotos)
-- [動的な起動画面 (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-dynamiclaunchscreen)
+- [アダプティブフォト (サンプル)](/samples/xamarin/ios-samples/ios8-adaptivephotos)
+- [動的な起動画面 (サンプル)](/samples/xamarin/ios-samples/ios8-dynamiclaunchscreen)
 - [iOS 8 の概要](~/ios/platform/introduction-to-ios8.md)
 - [IOS8 での動的レイアウト-進化 2014 (ビデオ)](https://youtu.be/f3mMGlS-lM4)
 - [Uiプレゼンテーションコントローラー](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UIPresentationController_class/)

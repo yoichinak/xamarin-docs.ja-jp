@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 0c733789883c9752d63824d0bca7356a88d05659
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 3d5bdfd78658803dcbb159101050aea48008b69e
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929663"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435228"
 ---
 # <a name="healthkit-in-xamarinios"></a>Xamarin. iOS の HealthKit
 
@@ -32,13 +32,13 @@ Health Kit は、ユーザーの正常性に関連する情報のセキュリテ
 
 [![ユーザーのハートレートを記録するサンプルアプリケーション](healthkit-images/image01.png)](healthkit-images/image01.png#lightbox)
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 この記事に記載されている手順を完了するには、次のものが必要です。
 
 - **Xcode 7 と ios 8 (またはそれ以降)** – Apple の最新の Xcode と ios api は、開発者のコンピューターにインストールして構成する必要があります。
 - **Visual Studio for Mac または Visual Studio** –最新バージョンの Visual Studio for Mac は、開発者のコンピューターにインストールして構成する必要があります。
-- **ios 8 (またはそれ以降) のデバイス**–テスト用に ios 8 以降の最新バージョンを実行している ios デバイスです。
+- **ios 8 (またはそれ以降) のデバイス** –テスト用に ios 8 以降の最新バージョンを実行している ios デバイスです。
 
 > [!IMPORTANT]
 > Health Kit は、iOS 8 で導入されました。 現在、iOS シミュレーターでは正常性キットを使用できません。また、デバッグを行うには、物理的な iOS デバイスに接続する必要があります。
@@ -48,7 +48,7 @@ Xamarin iOS 8 アプリケーションでは、HealthKit API を使用する前�
 
 ヘルスキットアプリには以下が必要です。
 
-- 明示的な**アプリ ID**。
+- 明示的な **アプリ ID**。
 - その明示的な**アプリ ID**と**正常性キット**のアクセス許可に関連付けられている**プロビジョニングプロファイル**。
 - `Entitlements.plist` `com.apple.developer.healthkit` 型のプロパティが `Boolean` に設定さ `Yes` れた。
 - `Info.plist` `UIRequiredDeviceCapabilities` 値を持つエントリを格納しているキーを持つ `String` `healthkit` 。
@@ -60,17 +60,17 @@ IOS アプリのプロビジョニングの詳細については、Xamarin の**
 
 ### <a name="explicit-app-id-and-provisioning-profile"></a>明示的なアプリ ID とプロビジョニングプロファイル
 
-明示的な**アプリ ID**と適切な**プロビジョニングプロファイル**の作成は、Apple の[iOS デベロッパーセンター](https://developer.apple.com/devcenter/ios/index.action)内で行われます。 
+明示的な **アプリ ID** と適切な **プロビジョニングプロファイル** の作成は、Apple の [iOS デベロッパーセンター](https://developer.apple.com/devcenter/ios/index.action)内で行われます。 
 
-現在の**アプリ id**は、デベロッパーセンターの [ [Certificates, identifier & Profiles](https://developer.apple.com/account/ios/identifiers/bundle/bundleList.action) ] セクション内に一覧表示されます。 多くの場合、この一覧にはの**id**値が表示されます。これは、 `*` **アプリ id**  -  **名**を任意の数のサフィックスと共に使用できることを示します。 このような*ワイルドカードアプリ id*を正常性キットと一緒に使用することはできません。
+現在の **アプリ id** は、デベロッパーセンターの [ [Certificates, identifier & Profiles](https://developer.apple.com/account/ios/identifiers/bundle/bundleList.action) ] セクション内に一覧表示されます。 多くの場合、この一覧にはの**id**値が表示されます。これは、 `*` **アプリ id**  -  **名**を任意の数のサフィックスと共に使用できることを示します。 このような *ワイルドカードアプリ id* を正常性キットと一緒に使用することはできません。
 
-明示的な**アプリ id**を作成するには、右上のボタンをクリックして **+** 、[ **IOS アプリ id の登録**] ページに移動します。
+明示的な **アプリ id**を作成するには、右上のボタンをクリックして **+** 、[ **IOS アプリ id の登録** ] ページに移動します。
 
 [![Apple Developer ポータルでのアプリの登録](healthkit-images/image02.png)](healthkit-images/image02.png#lightbox)
 
-上の図に示されているように、アプリの説明を作成した後、[**明示的なアプリ id** ] セクションを使用してアプリケーションの id を作成します。 [ **App Services** ] セクションで、[**サービスの有効化**] セクションの [ **Health Kit** ] をオンにします。
+上の図に示されているように、アプリの説明を作成した後、[ **明示的なアプリ id** ] セクションを使用してアプリケーションの id を作成します。 [ **App Services** ] セクションで、[**サービスの有効化**] セクションの [ **Health Kit** ] をオンにします。
 
-完了したら、[**続行**] ボタンをクリックして、アカウントに**アプリ ID**を登録します。 [**証明書、識別子、およびプロファイル**] ページに戻ります。 [**プロビジョニングプロファイル**] をクリックして現在のプロビジョニングプロファイルの一覧に移動し、右上隅にあるボタンをクリックして [ **+** **IOS プロビジョニングプロファイルの追加**] ページに移動します。 [ **IOS アプリ開発**] オプションを選択し、[**続行**] をクリックして [**アプリ ID の選択**] ページに移動します。 ここでは、前に指定した明示的な**アプリ ID**を選択します。
+完了したら、[ **続行** ] ボタンをクリックして、アカウントに **アプリ ID** を登録します。 [ **証明書、識別子、およびプロファイル** ] ページに戻ります。 [ **プロビジョニングプロファイル** ] をクリックして現在のプロビジョニングプロファイルの一覧に移動し、右上隅にあるボタンをクリックして [ **+** **IOS プロビジョニングプロファイルの追加** ] ページに移動します。 [ **IOS アプリ開発** ] オプションを選択し、[ **続行** ] をクリックして [ **アプリ ID の選択** ] ページに移動します。 ここでは、前に指定した明示的な **アプリ ID** を選択します。
 
 [![明示的なアプリ ID を選択します](healthkit-images/image03.png)](healthkit-images/image03.png#lightbox)
 
@@ -78,7 +78,7 @@ IOS アプリのプロビジョニングの詳細については、Xamarin の**
 
 [![プロビジョニングプロファイルを生成しています](healthkit-images/image04.png)](healthkit-images/image04.png#lightbox)
 
-[**生成**] をクリックして、プロファイルの作成を待機します。 ファイルをダウンロードし、ダブルクリックして Xcode にインストールします。 インストールされていることを確認するには、 **Xcode > の [基本設定] > アカウント > [詳細の表示...] を使用します。** インストール済みのプロビジョニングプロファイルが表示され、[**権利**] 行に [Health Kit] とその他の特別なサービスのアイコンが表示されます。
+[ **生成** ] をクリックして、プロファイルの作成を待機します。 ファイルをダウンロードし、ダブルクリックして Xcode にインストールします。 インストールされていることを確認するには、 **Xcode > の [基本設定] > アカウント > [詳細の表示...] を使用します。** インストール済みのプロビジョニングプロファイルが表示され、[ **権利** ] 行に [Health Kit] とその他の特別なサービスのアイコンが表示されます。
 
 [![Xcode でのプロファイルの表示](healthkit-images/image05.png)](healthkit-images/image05.png#lightbox)
 
@@ -86,23 +86,23 @@ IOS アプリのプロビジョニングの詳細については、Xamarin の**
 
 ### <a name="associating-the-app-id-and-provisioning-profile-with-your-xamarinios-app"></a>アプリ ID とプロビジョニングプロファイルを Xamarin iOS アプリに関連付ける
 
-説明に従って適切な**プロビジョニングプロファイル**を作成してインストールしたら、通常は Visual Studio for Mac または Visual Studio でソリューションを作成します。 ヘルスキットのアクセスは、すべての iOS C# または F # プロジェクトで利用できます。
+説明に従って適切な **プロビジョニングプロファイル** を作成してインストールしたら、通常は Visual Studio for Mac または Visual Studio でソリューションを作成します。 ヘルスキットのアクセスは、すべての iOS C# または F # プロジェクトで利用できます。
 
-Xamarin iOS 8 プロジェクトを手動で作成するプロセスを実行するのではなく、この記事に添付されているサンプルアプリ (ストーリーボードとコードを含む) を開きます。 サンプルアプリを正常性キットが有効になっている**プロビジョニングプロファイル**に関連付けるには、 **Solution Pad**でプロジェクトを右クリックし、[**オプション**] ダイアログを表示します。 **IOS アプリケーション**パネルに切り替え、以前にアプリの**バンドル識別子**として作成した明示的な**アプリ ID**を入力します。
+Xamarin iOS 8 プロジェクトを手動で作成するプロセスを実行するのではなく、この記事に添付されているサンプルアプリ (ストーリーボードとコードを含む) を開きます。 サンプルアプリを正常性キットが有効になっている **プロビジョニングプロファイル**に関連付けるには、 **Solution Pad**でプロジェクトを右クリックし、[ **オプション** ] ダイアログを表示します。 **IOS アプリケーション**パネルに切り替え、以前にアプリの**バンドル識別子**として作成した明示的な**アプリ ID**を入力します。
 
 [![明示的なアプリ ID を入力してください](healthkit-images/image06.png)](healthkit-images/image06.png#lightbox)
 
-次に、[ **IOS バンドル署名**] パネルに切り替えます。 最近インストールされた**プロビジョニングプロファイル**は、明示的な**アプリ ID**に関連付けられており、**プロビジョニングプロファイル**として使用できるようになりました。
+次に、[ **IOS バンドル署名** ] パネルに切り替えます。 最近インストールされた **プロビジョニングプロファイル**は、明示的な **アプリ ID**に関連付けられており、 **プロビジョニングプロファイル**として使用できるようになりました。
 
 [![プロビジョニングプロファイルの選択](healthkit-images/image07.png)](healthkit-images/image07.png#lightbox)
 
 **プロビジョニングプロファイル**を使用できない場合は、Ios**デベロッパーセンター**で指定されているものとは、Ios**アプリケーション**パネルで**バンドル Id**を再確認し、**プロビジョニングプロファイル**がインストールされていることを確認します (**Xcode > 設定 > アカウント > 詳細の表示...**)。
 
-[正常性キット対応の**プロビジョニングプロファイル**] を選択したら、[ **OK** ] をクリックして [プロジェクトオプション] ダイアログボックスを閉じます。
+[正常性キット対応の **プロビジョニングプロファイル** ] を選択したら、[ **OK** ] をクリックして [プロジェクトオプション] ダイアログボックスを閉じます。
 
 ### <a name="entitlementsplist-and-infoplist-values"></a>権利の plist と情報 plist の値
 
-このサンプルアプリには、 `Entitlements.plist` (正常性キットが有効になっているアプリに必要な) ファイルが含まれており、すべてのプロジェクトテンプレートには含まれていません。 プロジェクトに権利が含まれていない場合は、プロジェクトを右クリックし、[**ファイル > 新しいファイル]、[> iOS >** ]、[plist] の順に選択して手動で追加します。
+このサンプルアプリには、 `Entitlements.plist` (正常性キットが有効になっているアプリに必要な) ファイルが含まれており、すべてのプロジェクトテンプレートには含まれていません。 プロジェクトに権利が含まれていない場合は、プロジェクトを右クリックし、[ **ファイル > 新しいファイル]、[> iOS >** ]、[plist] の順に選択して手動で追加します。
 
 最終的に、には `Entitlements.plist` 次のキーと値のペアが必要です。
 
@@ -139,25 +139,25 @@ Xamarin iOS 8 プロジェクトを手動で作成するプロセスを実行す
 
 ヘルスキットデータは、Apple が指定した種類に限定されます。 これらの型は厳密に定義されています。血液型などの一部は、Apple が提供する列挙体の特定の値に制限されますが、他の型は測定単位 (グラム、calories、リットルなど) を持つ大きさを組み合わせたものです。 互換性のある測定単位を共有するデータであっても、によって識別されます `HKObjectType` 。たとえば、型システムでは、 `HKQuantityTypeIdentifier.NumberOfTimesFallen` 両方と `HKQuantityTypeIdentifier.FlightsClimbed` も測定単位が使用されていても、を想定しているフィールドに値を格納しようとする誤った試行をキャッチします。 `HKUnit.Count`
 
-正常性キットデータストアの格納できる型は、のすべてのサブクラスです `HKObjectType` 。 `HKCharacteristicType`オブジェクトには、生物性別、血液の種類、生年月日が格納されます。 ただし、一般的には、 `HKSampleType` 特定の時間または一定期間にサンプリングされるデータを表すオブジェクトです。 
+正常性キットデータストアの格納できる型は、のすべてのサブクラスです `HKObjectType` 。 `HKCharacteristicType` オブジェクトには、生物性別、血液の種類、生年月日が格納されます。 ただし、一般的には、 `HKSampleType` 特定の時間または一定期間にサンプリングされるデータを表すオブジェクトです。 
 
 [![HKSampleType オブジェクトグラフ](healthkit-images/image08.png)](healthkit-images/image08.png#lightbox)
 
-`HKSampleType`は abstract であり、4つの具象サブクラスを持ちます。 現在、スリープ分析であるデータの種類は1つだけです `HKCategoryType` 。 Health Kit のデータの大部分は型で、 `HKQuantityType` オブジェクトにデータを格納し `HKQuantitySample` ます。オブジェクトは、使い慣れたファクトリデザインパターンを使用して作成されます。
+`HKSampleType` は abstract であり、4つの具象サブクラスを持ちます。 現在、スリープ分析であるデータの種類は1つだけです `HKCategoryType` 。 Health Kit のデータの大部分は型で、 `HKQuantityType` オブジェクトにデータを格納し `HKQuantitySample` ます。オブジェクトは、使い慣れたファクトリデザインパターンを使用して作成されます。
 
 [![Health Kit のデータの大部分は HKQuantityType 型で、HKQuantitySample オブジェクトにデータを格納します。](healthkit-images/image09.png)](healthkit-images/image09.png#lightbox)
 
-`HKQuantityType`型の範囲 `HKQuantityTypeIdentifier.ActiveEnergyBurned` はから `HKQuantityTypeIdentifier.StepCount` です。 
+`HKQuantityType` 型の範囲 `HKQuantityTypeIdentifier.ActiveEnergyBurned` はから `HKQuantityTypeIdentifier.StepCount` です。 
 
 <a name="requesting-permission"></a>
 
 ### <a name="requesting-permission-from-the-user"></a>ユーザーにアクセス許可を要求しています
 
-エンドユーザーは、アプリが正常性キットデータの読み取りまたは書き込みを行えるようにするために、正の手順を実行する必要があります。 これは、iOS 8 デバイスにプレインストールされている正常性アプリを使用して行います。 正常性キットアプリを初めて実行すると、システムによって管理される**正常性のアクセス**ダイアログが表示されます。
+エンドユーザーは、アプリが正常性キットデータの読み取りまたは書き込みを行えるようにするために、正の手順を実行する必要があります。 これは、iOS 8 デバイスにプレインストールされている正常性アプリを使用して行います。 正常性キットアプリを初めて実行すると、システムによって管理される **正常性のアクセス** ダイアログが表示されます。
 
 [![ユーザーには、システムによって管理されているヘルスアクセスダイアログが表示されます。](healthkit-images/image10.png)](healthkit-images/image10.png#lightbox)
 
-その後、ユーザーは、ヘルスアプリの [**ソース**] ダイアログボックスを使用してアクセス許可を変更できます。
+その後、ユーザーは、ヘルスアプリの [ **ソース** ] ダイアログボックスを使用してアクセス許可を変更できます。
 
 [![ユーザーは、[ヘルスアプリソース] ダイアログボックスを使用してアクセス許可を変更できます。](healthkit-images/image11.png)](healthkit-images/image11.png#lightbox)
 
@@ -208,7 +208,7 @@ void ReactToHealthCarePermissions (bool success, NSError error)
 `ReactToHealthCarePermissions()`コールバックは、ユーザーがアクセス許可ダイアログを操作した後に呼び出され、2つの情報が渡されます。これは、ユーザーがアクセス許可ダイアログを操作した場合の値です。 `bool` また、 `true` `NSError` null 以外の場合は、アクセス許可ダイアログの表示に関連する何らかのエラーを示します。
 
 > [!IMPORTANT]
-> この関数の引数を明確にするために、 _success_および_error_パラメーターは、ユーザーが正常性キットデータへのアクセス許可を付与したかどうかを示しません。 ユーザーにデータへのアクセスを許可する機会が与えられていることだけを示します。
+> この関数の引数を明確にするために、 _success_ および _error_ パラメーターは、ユーザーが正常性キットデータへのアクセス許可を付与したかどうかを示しません。 ユーザーにデータへのアクセスを許可する機会が与えられていることだけを示します。
 
 アプリがデータにアクセスできるかどうかを確認するには、を使用してを `HKHealthStore.GetAuthorizationStatus()` 渡し `HKQuantityTypeIdentifierKey.HeartRate` ます。 返された状態に基づいて、アプリはデータを入力する機能を有効または無効にします。 アクセス拒否に対処するための標準的なユーザーエクスペリエンスはありません。また、多くのオプションがあります。 この例のアプリでは、シングルトンオブジェクトに状態が設定され、 `HeartRateModel` さらに関連するイベントが発生します。
 
@@ -331,19 +331,19 @@ namespace HKWork
 
 次に、は `HeartRateModel` 3 つのイベントを公開します。 
 
-- `EnabledChanged`-ハートレートストレージが有効になっているか無効になっていることを示します (ストレージが最初に無効になっていることに注意してください)。 
-- `ErrorMessageChanged`-このサンプルアプリでは、非常に単純なエラー処理モデル (最後のエラーを含む文字列) が用意されています。 
-- `HeartRateStored`-ハートレートが正常性キットデータベースに格納されている場合に発生します。
+- `EnabledChanged` -ハートレートストレージが有効になっているか無効になっていることを示します (ストレージが最初に無効になっていることに注意してください)。 
+- `ErrorMessageChanged` -このサンプルアプリでは、非常に単純なエラー処理モデル (最後のエラーを含む文字列) が用意されています。 
+- `HeartRateStored` -ハートレートが正常性キットデータベースに格納されている場合に発生します。
 
 これらのイベントが発生するたびに、によって実行されるので、 `NSObject.InvokeOnMainThread()` サブスクライバーは UI を更新できます。 または、イベントがバックグラウンドスレッドで発生しているとして文書化されていて、互換性を確認する必要があるかどうかを、ハンドラーに委ねておく必要があります。 権限要求などの多くの関数は非同期であり、メイン以外のスレッドでコールバックを実行するため、正常性キットアプリケーションではスレッドに関する考慮事項が重要です。
 
 のヘルスキット固有のコード `HeartRateModel` は、との2つの関数に含まれて `HeartRateInBeatsPerMinute()` `StoreHeartRate()` います。 
 
-`HeartRateInBeatsPerMinute()`引数を厳密に型指定された正常性キットに変換 `HKQuantity` します。 によって指定された数量の種類 `HKQuantityTypeIdentifierKey.HeartRate` と数量の単位が `HKUnit.Count` によって分割され `HKUnit.Minute` ます (つまり、単位は 1*分あたり拍*です)。 
+`HeartRateInBeatsPerMinute()` 引数を厳密に型指定された正常性キットに変換 `HKQuantity` します。 によって指定された数量の種類 `HKQuantityTypeIdentifierKey.HeartRate` と数量の単位が `HKUnit.Count` によって分割され `HKUnit.Minute` ます (つまり、単位は 1 *分あたり拍*です)。 
 
 `StoreHeartRate()`関数は `HKQuantity` (サンプルアプリでは、によって作成された) を受け取り `HeartRateInBeatsPerMinute()` ます。 データを検証するには、メソッドを使用します。これは、 `HKQuantity.IsCompatible()` `true` オブジェクトの単位を引数の単位に変換できる場合にを返します。 こので数量が作成された場合 `HeartRateInBeatsPerMinute()` は、が返されますが、たとえば、 `true` `true` *1 時間あたりの拍*数として数量が作成された場合にもが返されます。 より一般的には、 `HKQuantity.IsCompatible()` ユーザーまたはデバイスが1つの測定システム (ヤード単位など) で入力または表示しても、別のシステム (メトリックユニットなど) に格納されている可能性がある、質量、距離、およびエネルギーを検証するために使用できます。 
 
-数量の互換性が検証されると、ファクトリメソッドを使用して、 `HKQuantitySample.FromType()` 厳密に型指定されたオブジェクトが作成され `heartRateSample` ます。 `HKSample`オブジェクトには開始日と終了日があります。瞬間的に読み取れるように、これらの値は、例に示すように同じである必要があります。 また、このサンプルでは、引数にキー値データを設定しません `HKMetadata` が、次のコードのようなコードを使用してセンサーの場所を指定することもできます。
+数量の互換性が検証されると、ファクトリメソッドを使用して、 `HKQuantitySample.FromType()` 厳密に型指定されたオブジェクトが作成され `heartRateSample` ます。 `HKSample` オブジェクトには開始日と終了日があります。瞬間的に読み取れるように、これらの値は、例に示すように同じである必要があります。 また、このサンプルでは、引数にキー値データを設定しません `HKMetadata` が、次のコードのようなコードを使用してセンサーの場所を指定することもできます。
 
 ```csharp
 var hkm = new HKMetadata();
@@ -393,14 +393,14 @@ void OnHeartBeatStored (object sender, GenericEventArgs<double> args)
 
 IOS シミュレーターでは、Health Kit はサポートされていません。 デバッグは、iOS 8 を実行している物理デバイスで実行する必要があります。
 
-適切にプロビジョニングされた iOS 8 開発デバイスをシステムに接続します。 Visual Studio for Mac でデプロイターゲットとして選択し、メニューから [**実行] [> デバッグ**] の順に選択します。
+適切にプロビジョニングされた iOS 8 開発デバイスをシステムに接続します。 Visual Studio for Mac でデプロイターゲットとして選択し、メニューから [ **実行] [> デバッグ**] の順に選択します。
 
 > [!IMPORTANT]
 > プロビジョニングに関連する間違いはこの時点で表示されます。 エラーのトラブルシューティングを行うには、前の「正常性キットアプリの作成とプロビジョニング」セクションを参照してください。 コンポーネントは次のとおりです。 
 >
 > - **IOS デベロッパーセンター** -EXPLICIT アプリ ID & Health Kit が有効になっているプロビジョニングプロファイル。 
-> - **プロジェクトオプション**-バンドル識別子 (明示的なアプリ ID) & プロビジョニングプロファイル。
-> - **ソースコード**-権利 & 情報 plist
+> - **プロジェクトオプション** -バンドル識別子 (明示的なアプリ ID) & プロビジョニングプロファイル。
+> - **ソースコード** -権利 & 情報 plist
 
 プロビジョニングが適切に設定されていると仮定すると、アプリケーションが起動します。 そのメソッドに到達すると `OnActivated` 、正常性キットの承認を要求します。 オペレーティングシステムによって初めて検出された場合、ユーザーには次のダイアログが表示されます。
 
@@ -410,9 +410,9 @@ IOS シミュレーターでは、Health Kit はサポートされていませ�
 
 [![次の図は、イベントのシーケンスを示しています。](healthkit-images/image13.png)](healthkit-images/image13.png#lightbox)
 
-[**レコード**] ボタンを押します。 これにより、ハンドラーが実行されます。これにより、 `StoreData_TouchUpInside()` テキストフィールドの値を解析し、 `heartRate` 前に説明した関数を使用してに変換し、 `HKQuantity` `HeartRateModel.HeartRateInBeatsPerMinute()` その数量をに渡し `HeartRateModel.StoreHeartRate()` ます。 前に説明したように、これによりデータの格納が試行され、 `HeartRateStored` イベントまたはイベントが発生し `ErrorMessageChanged` ます。
+[ **レコード** ] ボタンを押します。 これにより、ハンドラーが実行されます。これにより、 `StoreData_TouchUpInside()` テキストフィールドの値を解析し、 `heartRate` 前に説明した関数を使用してに変換し、 `HKQuantity` `HeartRateModel.HeartRateInBeatsPerMinute()` その数量をに渡し `HeartRateModel.StoreHeartRate()` ます。 前に説明したように、これによりデータの格納が試行され、 `HeartRateStored` イベントまたはイベントが発生し `ErrorMessageChanged` ます。
 
-デバイスの [**ホーム**] ボタンをダブルクリックし、[Health app] を開きます。 [**ソース**] タブをクリックすると、サンプルアプリが一覧表示されます。 これを選択し、ハートレートデータを更新する権限を許可しません。 [**ホーム**] ボタンをダブルクリックして、アプリに戻ります。 ここでも、が呼び出されますが、今回はアクセスが拒否されたため、[ `ReactToHealthCarePermissions()` **storedata** ] ボタンが無効になります (これは非同期に発生し、ユーザーインターフェイスの変更はエンドユーザーに表示される可能性があります)。
+デバイスの [ **ホーム** ] ボタンをダブルクリックし、[Health app] を開きます。 [ **ソース** ] タブをクリックすると、サンプルアプリが一覧表示されます。 これを選択し、ハートレートデータを更新する権限を許可しません。 [ **ホーム** ] ボタンをダブルクリックして、アプリに戻ります。 ここでも、が呼び出されますが、今回はアクセスが拒否されたため、[ `ReactToHealthCarePermissions()` **storedata** ] ボタンが無効になります (これは非同期に発生し、ユーザーインターフェイスの変更はエンドユーザーに表示される可能性があります)。
 
 ## <a name="advanced-topics"></a>高度なトピック
 
@@ -420,7 +420,7 @@ IOS シミュレーターでは、Health Kit はサポートされていませ�
 
 述語ベースのクエリと、関連するデータが更新されたときに更新を実行するクエリを可能にする、より高度なクエリ関数がいくつかあります。 
 
-正常性キットアプリケーションの開発者は、Apple の[アプリレビューガイドライン](https://developer.apple.com/app-store/review/guidelines/#healthkit)の「正常性キット」セクションを確認する必要があります。
+正常性キットアプリケーションの開発者は、Apple の [アプリレビューガイドライン](https://developer.apple.com/app-store/review/guidelines/#healthkit)の「正常性キット」セクションを確認する必要があります。
 
 セキュリティとタイプシステムモデルが認識されると、共有正常性キットデータベースにデータを格納して読み取ることが非常に簡単になります。 正常性キット内の関数の多くは非同期に動作し、アプリケーション開発者はプログラムを適切に記述する必要があります。
 
@@ -436,5 +436,5 @@ IOS シミュレーターでは、Health Kit はサポートされていませ�
 
 ## <a name="related-links"></a>関連リンク
 
-- [HKWork (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios8-introtohealthkit)
+- [HKWork (サンプル)](/samples/xamarin/ios-samples/ios8-introtohealthkit)
 - [iOS 8 の概要](~/ios/platform/introduction-to-ios8.md)

@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/03/2018
-ms.openlocfilehash: edd49cc891a86d3323bab319ab811e85f9148640
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 7b6852485fed6cc14c9f9b2e1a303b7c2e576da9
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997099"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433578"
 ---
 # <a name="creating-ios-user-interfaces-in-code-in-xamarinios"></a>Xamarin のコードで iOS ユーザーインターフェイスを作成する
 
-IOS アプリのユーザーインターフェイスは、通常は1つのウィンドウに似ていますが、アプリケーションは通常1つのウィンドウを取得しますが、ウィンドウに必要な数のオブジェクトを入力できます。また、オブジェクトや配置は、アプリの表示内容に応じて変更できます。 このシナリオのオブジェクト (ユーザーに表示される物事) はビューと呼ばれます。 アプリケーションで 1 つの画面をビルドするには、コンテンツ ビュー階層にビューが相互に積み重ねられ、階層が単一のビュー コントローラーによって管理されます。 複数の画面を持つアプリケーションには、複数のコンテンツ ビュー階層、それぞれに独自のビュー コントローラー、およびウィンドウ内のアプリケーションの場所のビューがあり、ユーザーに表示される画面に基づいて異なるコンテンツ ビュー階層を作成します。
+IOS アプリのユーザーインターフェイスは、通常は1つのウィンドウに似ていますが、アプリケーションは通常1つのウィンドウを取得しますが、ウィンドウに必要な数のオブジェクトを入力できます。また、オブジェクトや配置は、アプリの表示内容に応じて変更できます。 このシナリオのオブジェクト (ユーザーに表示される物事) はビューと呼ばれます。 アプリケーションで1つの画面を作成するには、コンテンツビュー階層内でビューが相互に積み重ねられ、階層が1つのビューコントローラーによって管理されます。 複数の画面を持つアプリケーションには、複数のコンテンツ ビュー階層、それぞれに独自のビュー コントローラー、およびウィンドウ内のアプリケーションの場所のビューがあり、ユーザーに表示される画面に基づいて異なるコンテンツ ビュー階層を作成します。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -24,7 +24,7 @@ IOS アプリのユーザーインターフェイスは、通常は1つのウィ
 
 [![この図は、ウィンドウ、ビュー、サブビュー、ビューコントローラーの間の関係を示しています。](ios-code-only-images/image9.png)](ios-code-only-images/image9.png#lightbox)
 
-これらのビュー階層は、Visual Studio の[Xamarin Designer for iOS](~/ios/user-interface/designer/index.md)を使用して作成できますが、完全にコードで作業する方法について理解しておくことをお勧めします。 この記事では、コードのみのユーザーインターフェイスの開発を開始して実行するためのいくつかの基本的なポイントについて説明します。
+これらのビュー階層は、Visual Studio の [Xamarin Designer for iOS](~/ios/user-interface/designer/index.md) を使用して作成できますが、完全にコードで作業する方法について理解しておくことをお勧めします。 この記事では、コードのみのユーザーインターフェイスの開発を開始して実行するためのいくつかの基本的なポイントについて説明します。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -32,7 +32,7 @@ IOS アプリのユーザーインターフェイスは、通常は1つのウィ
 
 [![この図は、ウィンドウ、ビュー、サブビュー、ビューコントローラーの間の関係を示しています。](ios-code-only-images/image9.png)](ios-code-only-images/image9.png#lightbox)
 
-これらのビュー階層は、Visual Studio for Mac の[Xamarin Designer for iOS](~/ios/user-interface/designer/index.md)を使用して作成できますが、完全にコードで作業する方法についての基本的な理解が必要です。 この記事では、コードのみのユーザーインターフェイスの開発を開始して実行するためのいくつかの基本的なポイントについて説明します。
+これらのビュー階層は、Visual Studio for Mac の [Xamarin Designer for iOS](~/ios/user-interface/designer/index.md) を使用して作成できますが、完全にコードで作業する方法についての基本的な理解が必要です。 この記事では、コードのみのユーザーインターフェイスの開発を開始して実行するためのいくつかの基本的なポイントについて説明します。
 
 -----
 
@@ -42,20 +42,20 @@ IOS アプリのユーザーインターフェイスは、通常は1つのウィ
 
 ## <a name="ios-blank-project-template"></a>iOS の空のプロジェクトテンプレート
 
-まず、次に示すように、visual **C# > iPhone & iPad > IOS App (Xamarin) プロジェクト > ファイル > 新しいプロジェクト**を使用して、visual Studio で iOS プロジェクトを作成します。
+まず、次に示すように、visual **C# > iPhone & iPad > IOS App (Xamarin) プロジェクト > ファイル > 新しいプロジェクト** を使用して、visual Studio で iOS プロジェクトを作成します。
 
 [![[新しいプロジェクト] ダイアログ](ios-code-only-images/blankapp.w157-sml.png)](ios-code-only-images/blankapp.w157.png#lightbox)
 
-次に、[**空のアプリケーション**] プロジェクトテンプレートを選択します。
+次に、[ **空のアプリケーション** ] プロジェクトテンプレートを選択します。
 
 [![[テンプレートの選択] ダイアログ](ios-code-only-images/blankapp-2.w157-sml.png)](ios-code-only-images/blankapp-2.w157.png#lightbox)
 
 空のプロジェクトテンプレートは、次の4つのファイルをプロジェクトに追加します。
 
-[![プロジェクトファイル](ios-code-only-images/empty-project.w157-sml.png "プロジェクト ファイル")](ios-code-only-images/empty-project.w157.png#lightbox)
+[![プロジェクト ファイル](ios-code-only-images/empty-project.w157-sml.png "プロジェクト ファイル")](ios-code-only-images/empty-project.w157.png#lightbox)
 
-1. **AppDelegate.cs** -サブクラスが含まれてい `UIApplicationDelegate` `AppDelegate` ます。これは、iOS からのアプリケーションイベントを処理するために使用されます。 アプリケーションウィンドウは、のメソッドで作成され `AppDelegate` `FinishedLaunching` ます。
-1. **Main.cs** -アプリケーションのエントリポイントが含まれます。これは、のクラスを指定し `AppDelegate` ます。
+1. **AppDelegate.cs** -サブクラスが含まれてい  `UIApplicationDelegate`  `AppDelegate` ます。これは、iOS からのアプリケーションイベントを処理するために使用されます。 アプリケーションウィンドウは、のメソッドで作成され `AppDelegate`  `FinishedLaunching` ます。
+1. **Main.cs** -アプリケーションのエントリポイントが含まれます。これは、のクラスを指定し  `AppDelegate` ます。
 1. **情報. plist** -アプリケーションの構成情報を含むプロパティリストファイル。
 1. **権利. plist** –アプリケーションの機能およびアクセス許可に関する情報を含むプロパティリストファイル。
 
@@ -71,12 +71,12 @@ Visual Studio for Mac は空のテンプレートを提供しません。 すべ
 
     [![単一ビューアプリテンプレートを使用する](ios-code-only-images/single-view-app.png)](ios-code-only-images/single-view-app.png#lightbox)
 
-1. `Main.Storyboard`ファイルとファイルを削除し `ViewController.cs` ます。 を**削除しない**で `LaunchScreen.Storyboard` ください。 ビューコントローラーは、ストーリーボードに作成されたビューコントローラーの分離コードであるため、削除する必要があります。
-1. ポップアップダイアログから [**削除**] を選択してください。
+1. `Main.Storyboard`ファイルとファイルを削除し `ViewController.cs` ます。 を **削除しない** で `LaunchScreen.Storyboard` ください。 ビューコントローラーは、ストーリーボードに作成されたビューコントローラーの分離コードであるため、削除する必要があります。
+1. ポップアップダイアログから [ **削除** ] を選択してください。
 
     [![ポップアップダイアログから [削除] を選択します。](ios-code-only-images/delete.png)](ios-code-only-images/delete.png#lightbox)
 
-1. 情報 plist で、[**配置情報 > Main インターフェイス**] オプション内の情報を削除します。
+1. 情報 plist で、[ **配置情報 > Main インターフェイス** ] オプション内の情報を削除します。
 
     [![メインインターフェイスオプション内の情報を削除します。](ios-code-only-images/main-interface.png)](ios-code-only-images/main-interface.png#lightbox)
 
@@ -99,7 +99,7 @@ Visual Studio for Mac は空のテンプレートを提供しません。 すべ
 
 -----
 
-iOS アプリケーションは、 [MVC パターン](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md#model-view-controller-mvc)を使用して構築されます。 アプリケーションに表示される最初の画面は、ウィンドウのルートビューコントローラーから作成されます。 MVC パターン自体の詳細については、「 [Hello, IOS マルチスクリーン](~/ios/get-started/hello-ios-multiscreen/index.md)ガイド」を参照してください。
+iOS アプリケーションは、 [MVC パターン](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md#model-view-controller-mvc)を使用して構築されます。 アプリケーションに表示される最初の画面は、ウィンドウのルートビューコントローラーから作成されます。 MVC パターン自体の詳細については、「 [Hello, IOS マルチスクリーン](~/ios/get-started/hello-ios-multiscreen/index.md) ガイド」を参照してください。
 
 `AppDelegate`テンプレートによって追加されたの実装によって、アプリケーションウィンドウが作成されます。このウィンドウには、iOS アプリケーションごとに1つだけが存在し、次のコードで表示されます。
 
@@ -234,7 +234,7 @@ namespace CodeOnlyDemo
 
 ## <a name="initializing-the-view"></a>ビューの初期化
 
-`UIViewController`には、 `ViewDidLoad` ビューコントローラーが最初にメモリに読み込まれるときに呼び出されるというメソッドが含まれています。 これは、ビューのプロパティの設定など、ビューの初期化を行うための適切な場所です。
+`UIViewController` には、 `ViewDidLoad` ビューコントローラーが最初にメモリに読み込まれるときに呼び出されるというメソッドが含まれています。 これは、ビューのプロパティの設定など、ビューの初期化を行うための適切な場所です。
 
 たとえば、次のコードでは、ボタンが押されたときに新しいビューコントローラーをナビゲーションスタックにプッシュするためのボタンとイベントハンドラーを追加しています。
 
@@ -290,7 +290,7 @@ Window.RootViewController = navController;
 
  [![CustomViewController がナビゲーションコントローラー内に読み込まれる](ios-code-only-images/customvc.png)](ios-code-only-images/customvc.png#lightbox)
 
-このボタンをクリックすると、新しいビューコントローラーがナビゲーションスタックに_プッシュ_されます。
+このボタンをクリックすると、新しいビューコントローラーがナビゲーションスタックに _プッシュ_ されます。
 
 [![新しいビューコントローラーがナビゲーションスタックにプッシュされました](ios-code-only-images/customvca.png)](ios-code-only-images/customvca.png#lightbox)
 
@@ -304,7 +304,7 @@ iOS ユーザーインターフェイスは、ビュー階層で構成されま�
 
 ### <a name="adding-the-text-fields"></a>テキストフィールドの追加
 
-最初に、「[ビューの初期化](#initializing-the-view)」セクションで追加したボタンとイベントハンドラーを削除します。
+最初に、「 [ビューの初期化](#initializing-the-view) 」セクションで追加したボタンとイベントハンドラーを削除します。
 
 次に示すように、を作成して初期化 `UITextField` し、ビュー階層に追加することによって、ユーザー名のコントロールを追加します。
 
@@ -481,7 +481,7 @@ UIKit の一部であるコントロールを使用するだけでなく、カ�
 
 ### <a name="inheriting-from-uiview"></a>UIView からの継承
 
-まず、カスタムビューのクラスを作成する必要があります。 これを行うには、Visual Studio の**クラス**テンプレートを使用して、という名前の空のクラスを追加し `CircleView` ます。 基底クラスをに設定する必要があり `UIView` ます。これは、 `UIKit` 名前空間にあります。 また、名前空間も必要になり `System.Drawing` ます。 この例では、他のさまざまな `System.*` 名前空間は使用されないため、削除してもかまいません。
+まず、カスタムビューのクラスを作成する必要があります。 これを行うには、Visual Studio の **クラス** テンプレートを使用して、という名前の空のクラスを追加し `CircleView` ます。 基底クラスをに設定する必要があり `UIView` ます。これは、 `UIKit` 名前空間にあります。 また、名前空間も必要になり `System.Drawing` ます。 この例では、他のさまざまな `System.*` 名前空間は使用されないため、削除してもかまいません。
 
 クラスは次のようになります。
 
@@ -498,7 +498,7 @@ namespace CodeOnlyDemo
 
 ### <a name="drawing-in-a-uiview"></a>UIView での描画
 
-すべてのには、 `UIView` `Draw` 描画する必要があるときにシステムによって呼び出されるメソッドがあります。 `Draw`を直接呼び出すことはできません。 これは、実行ループ処理中にシステムによって呼び出されます。 ビューがビュー階層に追加された後に run ループを初めて実行すると、その `Draw` メソッドが呼び出されます。 後続のの呼び出しは、ビュー `Draw` にまたはのいずれかを呼び出すことによって描画する必要があるとしてマークされている場合に発生し `SetNeedsDisplay` `SetNeedsDisplayInRect` ます。
+すべてのには、 `UIView` `Draw` 描画する必要があるときにシステムによって呼び出されるメソッドがあります。 `Draw` を直接呼び出すことはできません。 これは、実行ループ処理中にシステムによって呼び出されます。 ビューがビュー階層に追加された後に run ループを初めて実行すると、その `Draw` メソッドが呼び出されます。 後続のの呼び出しは、ビュー `Draw` にまたはのいずれかを呼び出すことによって描画する必要があるとしてマークされている場合に発生し `SetNeedsDisplay` `SetNeedsDisplayInRect` ます。
 
 次に示すように、オーバーライドされたメソッド内にそのようなコードを追加することで、ビューに描画コードを追加でき `Draw` ます。
 
@@ -539,7 +539,7 @@ public CircleView()
 
 ### <a name="loading-a-view"></a>ビューの読み込み
 
- `UIViewController`には、という名前のメソッドがあり `LoadView` ます。このメソッドは、そのビューを作成するためにコントローラーによって呼び出されます。 これは、ビューを作成し、コントローラーのプロパティに割り当てるための適切な場所です `View` 。
+ `UIViewController` には、という名前のメソッドがあり `LoadView` ます。このメソッドは、そのビューを作成するためにコントローラーによって呼び出されます。 これは、ビューを作成し、コントローラーのプロパティに割り当てるための適切な場所です `View` 。
 
 まず、コントローラーが必要であるため、という名前の新しい空のクラスを作成 `CircleController` します。
 
@@ -586,7 +586,7 @@ submitButton.TouchUpInside += delegate
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-Visual Studio で iOS プロジェクトを作成すると、xib ファイルの形式で起動画面が表示されます。これは、プロジェクト内の**Resources**フォルダーにあります。
+Visual Studio で iOS プロジェクトを作成すると、xib ファイルの形式で起動画面が表示されます。これは、プロジェクト内の **Resources** フォルダーにあります。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -610,7 +610,7 @@ Apple では、iOS 8 以降を対象とするアプリケーションに対し�
 
 アプリケーションが iOS 8 より前のバージョンを対象としている場合は、xib またはストーリーボードの起動画面に加えて、静的イメージを使用できます。
 
-この静的イメージは、アプリケーションで、情報 plist ファイルで設定することも、アセットカタログ (iOS 7 の場合) として設定することもできます。 アプリケーションが実行される可能性のあるデバイスのサイズ (320x480、640x960、640x1136) ごとに個別のイメージを提供する必要があります。 起動画面のサイズの詳細については、[起動画面イメージ](~/ios/app-fundamentals/images-icons/launch-screens.md)ガイドを参照してください。
+この静的イメージは、アプリケーションで、情報 plist ファイルで設定することも、アセットカタログ (iOS 7 の場合) として設定することもできます。 アプリケーションが実行される可能性のあるデバイスのサイズ (320x480、640x960、640x1136) ごとに個別のイメージを提供する必要があります。 起動画面のサイズの詳細については、 [起動画面イメージ](~/ios/app-fundamentals/images-icons/launch-screens.md) ガイドを参照してください。
 
 > [!IMPORTANT]
 > アプリに起動画面が表示されない場合は、画面に完全に収まらないことがわかります。 この場合は、少なくとも、という名前の640x1136 イメージを `Default-568@2x.png` 情報 plist に含めてください。
@@ -629,4 +629,4 @@ Apple では、iOS 8 以降を対象とするアプリケーションに対し�
 
 ## <a name="related-links"></a>関連リンク
 
-- [SimpleLogin (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/simplelogin)
+- [SimpleLogin (サンプル)](/samples/xamarin/ios-samples/simplelogin)

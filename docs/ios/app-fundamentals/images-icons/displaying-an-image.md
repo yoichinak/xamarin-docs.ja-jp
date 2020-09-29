@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 04/24/2018
-ms.openlocfilehash: a7bc2b87e267e78d841217b7860e5d54c046b788
-ms.sourcegitcommit: d7c09c6cc2f479b8f14910ad2d20ec76800cd9c7
+ms.openlocfilehash: 709ec5e4652c58bfaa3956d5b860c0fac08cb05b
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91248140"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91437362"
 ---
 # <a name="displaying-an-image-in-xamarinios"></a>Xamarin でのイメージの表示
 
@@ -289,6 +289,6 @@ View.AddSubview (imageView);
 
 ## <a name="related-links"></a>関連リンク
 
-- [イメージの操作 (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithimages)
+- [イメージの操作 (サンプル)](/samples/xamarin/ios-samples/workingwithimages)
 - [Hello, iPhone](~/ios/get-started/hello-ios/index.md)
 - [イメージのサイズと解像度 (Apple)](https://developer.apple.com/design/human-interface-guidelines/ios/icons-and-images/image-size-and-resolution/)

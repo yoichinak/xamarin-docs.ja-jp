@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 8b911be4b1bf547a9a1ad5d6b795894ddba3c26d
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 24a1e1af5b56a3cd10557658a0cad0c4e73ebac8
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939062"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433365"
 ---
 # <a name="introduction-to-storyboards-in-xamarinmac"></a>Xamarin. Mac でのストーリーボードの概要
 
@@ -28,13 +28,13 @@ _この記事では、Xamarin. Mac アプリでストーリーボードを操作
 
 ## <a name="what-are-storyboards"></a>ストーリーボードとは
 
-ストーリーボードを使用すると、個々の要素とユーザーインターフェイスの間のすべてのナビゲーションを使用して、すべての Xamarin アプリの UI を1つの場所に定義できます。 Xamarin. Mac のストーリーボードは、Xamarin. iOS のストーリーボードと非常によく似た方法で動作します。 ただし、インターフェイスの表現方法が異なるため、異なる_セグエ型_のセットが含まれています。
+ストーリーボードを使用すると、個々の要素とユーザーインターフェイスの間のすべてのナビゲーションを使用して、すべての Xamarin アプリの UI を1つの場所に定義できます。 Xamarin. Mac のストーリーボードは、Xamarin. iOS のストーリーボードと非常によく似た方法で動作します。 ただし、インターフェイスの表現方法が異なるため、異なる _セグエ型_ のセットが含まれています。
 
 <a name="Working-with-Scenes"></a>
 
 ### <a name="working-with-scenes"></a>シーンの操作
 
-前述のように、ストーリーボードは、特定のアプリのすべての UI を、その_ビューコントローラー_の機能の概要に分割して定義します。 Xcode の Interface Builder では、各コントローラーが独自の_シーン_に存在します。
+前述のように、ストーリーボードは、特定のアプリのすべての UI を、その _ビューコントローラー_の機能の概要に分割して定義します。 Xcode の Interface Builder では、各コントローラーが独自の _シーン_に存在します。
 
 [![ビューコントローラーの例](images/intro02.png)](images/intro02.png#lightbox)
 
@@ -68,7 +68,7 @@ _この記事では、Xamarin. Mac アプリでストーリーボードを操作
 
 MacOS では、ほとんどのアプリは、分割ビューやタブなどの UI 要素を使用して、同じウィンドウ内にビューをグループ化する傾向があります。 IOS とは異なり、物理的な表示領域が限られているために、ビューをオンまたはオフに切り替える必要がある場合。
 
-MacOS の傾向に対しては、モーダルウィンドウ、シートビュー、Popovers などの_プレゼンテーションの_が使用される場合があります。
+MacOS の傾向に対しては、モーダルウィンドウ、シートビュー、Popovers などの _プレゼンテーションの_ が使用される場合があります。
 
 Presentation セグエを使用する場合は、表示 `PrepareForSegue` する親ビューコントローラーのメソッドをオーバーライドして、変数を初期化し、表示されているビューコントローラーにデータを提供することができます。
 
@@ -78,11 +78,11 @@ Presentation セグエを使用する場合は、表示 `PrepareForSegue` する
 
 デザイン時 (Xcode の Interface Builder の UI をレイアウトするとき) に、アプリの UI の各要素が構成項目に分割されます。
 
-- **シーン**: 次の要素で構成されます。
+- **シーン** : 次の要素で構成されます。
   - **ビューコントローラー** -ビューとそれらをサポートするデータの間のリレーションシップを定義します。
   - **ビューとサブビュー** -ユーザーインターフェイスを構成する実際の要素。
-  - **コンテインメントセグエ**-シーン間の親子リレーションシップを定義します。
-- **プレゼンテーションセグエ**-個々のプレゼンテーションモードを定義します。 
+  - **コンテインメントセグエ** -シーン間の親子リレーションシップを定義します。
+- **プレゼンテーションセグエ** -個々のプレゼンテーションモードを定義します。 
 
 各要素をこのように定義することによって、実行時に必要な場合にのみ、各要素の遅延読み込みを行うことができます。 MacOS では、プロセス全体が、開発者が作業を行うために最小限のバックアップコードを必要とする複雑で柔軟なユーザーインターフェイスを作成できるように設計されています。また、可能な限りシステムリソースを効率的に使用できます。
 
@@ -90,19 +90,19 @@ Presentation セグエを使用する場合は、表示 `PrepareForSegue` する
 
 ## <a name="storyboard-quick-start"></a>ストーリーボードクイックスタート
 
-[ストーリーボードクイックスタート](~/mac/platform/storyboards/quickstart.md)ガイドでは、ストーリーボードを使用してユーザーインターフェイスを作成するための主要な概念を紹介する単純な Xamarin. Mac アプリを作成します。 このサンプルアプリは、_コンテンツ領域_と_インスペクター領域_を含む、Spilt 含まれるビューで構成され、簡単な基本設定ダイアログウィンドウが表示されます。 セグエを使用して、すべてのユーザーインターフェイス要素を連結します。
+[ストーリーボードクイックスタート](~/mac/platform/storyboards/quickstart.md)ガイドでは、ストーリーボードを使用してユーザーインターフェイスを作成するための主要な概念を紹介する単純な Xamarin. Mac アプリを作成します。 このサンプルアプリは、 _コンテンツ領域_ と _インスペクター領域_ を含む、Spilt 含まれるビューで構成され、簡単な基本設定ダイアログウィンドウが表示されます。 セグエを使用して、すべてのユーザーインターフェイス要素を連結します。
 
 <a name="Working-with-Storyboards"></a>
 
 ## <a name="working-with-storyboards"></a>ストーリーボードの使用
 
-このセクションでは、Xamarin. Mac アプリでの[ストーリーボードの操作](~/mac/platform/storyboards/indepth.md)の詳細について説明します。 シーンの詳細と、ビューコントローラーとビューで構成される方法について詳しく説明します。 次に、セグエと共にシーンがどのように関連付けられているかを見ていきます。 最後に、カスタムのセグエ型の使用について説明します。 
+このセクションでは、Xamarin. Mac アプリでの [ストーリーボードの操作](~/mac/platform/storyboards/indepth.md) の詳細について説明します。 シーンの詳細と、ビューコントローラーとビューで構成される方法について詳しく説明します。 次に、セグエと共にシーンがどのように関連付けられているかを見ていきます。 最後に、カスタムのセグエ型の使用について説明します。 
 
 <a name="Complex-Storyboard-Example"></a>
 
 ## <a name="complex-storyboard-example"></a>複雑なストーリーボードの例
 
-Xamarin. Mac アプリでストーリーボードを操作する複雑な例の例については、 [Sourcewriter サンプルアプリ](https://docs.microsoft.com/samples/xamarin/mac-samples/sourcewriter)を参照してください。 SourceWriter は、コードの完了とシンプルな構文の強調表示をサポートするシンプルなソース コード エディターです。
+Xamarin. Mac アプリでストーリーボードを操作する複雑な例の例については、 [Sourcewriter サンプルアプリ](/samples/xamarin/mac-samples/sourcewriter)を参照してください。 SourceWriter は、コードの完了とシンプルな構文の強調表示をサポートするシンプルなソース コード エディターです。
 
 SourceWriter コード全体に詳細なコメントが付いていて、可能な場合は、重要な技術やメソッド、Xamarin.Mac ガイド ドキュメントの関連情報へのリンクが示されます。
 
@@ -114,7 +114,7 @@ SourceWriter コード全体に詳細なコメントが付いていて、可能�
 
 ## <a name="related-links"></a>関連リンク
 
-- [Hello Mac (サンプル)](https://docs.microsoft.com/samples/xamarin/mac-samples/hello-mac)
+- [Hello Mac (サンプル)](/samples/xamarin/mac-samples/hello-mac)
 - [Hello Mac](~/mac/get-started/hello-mac.md)
 - [Windows の操作](~/mac/user-interface/window.md)
 - [OS X ヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)

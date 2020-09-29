@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 11/15/2018
-ms.openlocfilehash: e2dcd5ea0f099ea84d7824eda4170df8efb22cb6
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 7ba6eca8f74c10254ae93b95725bc73ae100be70
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937216"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433850"
 ---
 # <a name="appearance-api-in-xamarinios"></a>Xamarin. iOS の外観 API
 
@@ -26,16 +26,16 @@ iOS では、多くの UIKit コントロールの外観をカスタマイズし
 
 カスタムの外観を適用するには、次の2つの方法があります。
 
-- **コントロールインスタンスで直接**実行する–ツールバー、ナビゲーションバー、ボタン、およびスライダーを含む多くのコントロールで、着色色、背景画像、タイトル位置 (およびその他の属性) を設定できます。
+- **コントロールインスタンスで直接** 実行する–ツールバー、ナビゲーションバー、ボタン、およびスライダーを含む多くのコントロールで、着色色、背景画像、タイトル位置 (およびその他の属性) を設定できます。
 
-- **外観の静的プロパティに既定値を設定**する–各コントロールのカスタマイズ可能な属性は静的プロパティを介して公開され `Appearance` ます。 これらのプロパティに適用したカスタマイズは、プロパティの設定後に作成されるその型のコントロールの既定値として使用されます。
+- **外観の静的プロパティに既定値を設定** する–各コントロールのカスタマイズ可能な属性は静的プロパティを介して公開され `Appearance` ます。 これらのプロパティに適用したカスタマイズは、プロパティの設定後に作成されるその型のコントロールの既定値として使用されます。
 
 外観サンプルアプリケーションは、次のスクリーンショットに示すように、3つのすべての方法を示しています。
 
 [![外観サンプルアプリケーションでは、3つの方法すべてを示しています。](introduction-to-the-appearance-api-images/appearance01-sml.png)](introduction-to-the-appearance-api-images/appearance01.png#lightbox)
 
 IOS 8 では、表示プロキシは TraitCollections に拡張されています。
- `AppearanceForTraitCollection`特定の特徴コレクションの既定の外観を設定するために使用できます。 詳細については、「[ストーリーボードの概要](~/ios/user-interface/storyboards/unified-storyboards.md)」ガイドを参照してください。
+ `AppearanceForTraitCollection` 特定の特徴コレクションの既定の外観を設定するために使用できます。 詳細については、「 [ストーリーボードの概要](~/ios/user-interface/storyboards/unified-storyboards.md) 」ガイドを参照してください。
 
 ## <a name="setting-appearance-properties"></a>外観プロパティの設定
 
@@ -54,7 +54,7 @@ UIProgressView.Appearance.ProgressTintColor = UIColor.Yellow;
 UIProgressView.Appearance.TrackTintColor = UIColor.Orange;
 ```
 
-緑の要素スタイルは、次のように、 `ViewDidLoad` 既定値と*外観*静的クラスをオーバーライドするメソッドで設定されます。
+緑の要素スタイルは、次のように、 `ViewDidLoad` 既定値と *外観* 静的クラスをオーバーライドするメソッドで設定されます。
 
 ```csharp
 slider2.ThumbTintColor = UIColor.FromRGB (0,127,70); // dark green
@@ -69,7 +69,7 @@ progress2.TrackTintColor = UIColor.FromRGB (197,255,132);
 
 ## <a name="using-uiappearance-in-xamarinforms"></a>Xamarin での UIAppearance の使用
 
-外観 API は、Xamarin. Forms ソリューションで[iOS アプリのスタイル](~/xamarin-forms/platform/ios/formatting.md#uiappearance-api)を設定するときに役立ちます。 クラスのいくつかの行は、 `AppDelegate` [カスタムレンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)を作成しなくても、特定の配色を実装するのに役立ちます。
+外観 API は、Xamarin. Forms ソリューションで [iOS アプリのスタイル](~/xamarin-forms/platform/ios/formatting.md#uiappearance-api) を設定するときに役立ちます。 クラスのいくつかの行は、 `AppDelegate` [カスタムレンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)を作成しなくても、特定の配色を実装するのに役立ちます。
 
 ### <a name="custom-themes-and-uiappearance"></a>カスタムテーマと UIAppearance
 
@@ -101,12 +101,12 @@ UISegmentedControl.Appearance.TintColor = UIColor.Magenta;
 
 [![外観コントロールの濃淡の設定](introduction-to-the-appearance-api-images/image54.png)](introduction-to-the-appearance-api-images/image54.png#lightbox)
 
-`Appearance`プロパティは、AppDelegate のイベントなど、アプリケーションのライフサイクルの早い段階で設定する `FinishedLaunching` か、影響を受けるコントロールが表示される前に ViewController で設定する必要があります。
+`Appearance` プロパティは、AppDelegate のイベントなど、アプリケーションのライフサイクルの早い段階で設定する `FinishedLaunching` か、影響を受けるコントロールが表示される前に ViewController で設定する必要があります。
 
-詳細については、「[外観 API の概要](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md)」を参照してください。
+詳細については、「 [外観 API の概要](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md) 」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 
-- [外観 (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/appearance)
+- [外観 (サンプル)](/samples/xamarin/ios-samples/appearance)
 - [UIAppearance プロトコルのリファレンス](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIAppearance_Protocol/)
 - [Xamarin. Forms での外観](~/xamarin-forms/platform/ios/formatting.md#uiappearance-api)

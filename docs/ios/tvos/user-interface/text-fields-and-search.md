@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 3822a03a78c91777ad9614ec298bbac1ab2332b1
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: ae54f4f4cfb9b2c604be9c55d2a47303fb22485e
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939478"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435571"
 ---
 # <a name="working-with-tvos-text-and-search-fields-in-xamarin"></a>Xamarin での tvOS Text フィールドと検索フィールドの操作
 
@@ -42,33 +42,33 @@ TvOS では、テキストフィールドは、ユーザーがクリックした
 
 [![TvOS のテキストフィールド](text-fields-and-search-images/text01.png)](text-fields-and-search-images/text01.png#lightbox)
 
-ユーザーが特定のテキストフィールドに[フォーカス](~/ios/tvos/app-fundamentals/navigation-focus.md)を移動すると、拡大して詳細な影が表示されます。 テキストフィールドは、フォーカスがあるときに他の UI 要素と重複する可能性があるため、ユーザーインターフェイスをデザインするときはこの点に注意する必要があります。
+ユーザーが特定のテキストフィールドに [フォーカス](~/ios/tvos/app-fundamentals/navigation-focus.md) を移動すると、拡大して詳細な影が表示されます。 テキストフィールドは、フォーカスがあるときに他の UI 要素と重複する可能性があるため、ユーザーインターフェイスをデザインするときはこの点に注意する必要があります。
 
 Apple には、テキストフィールドを操作するための次のような推奨事項があります。
 
-- **テキスト入力を控えめに使用する**-スクリーンキーボードの性質上、テキストの長いセクションの入力、または複数のテキストフィールドの入力は、ユーザーにとって面倒です。 より良い解決策は、選択リストまたは[ボタン](~/ios/tvos/user-interface/buttons.md)を使用してテキストエントリの量を制限することです。
+- **テキスト入力を控えめに使用する** -スクリーンキーボードの性質上、テキストの長いセクションの入力、または複数のテキストフィールドの入力は、ユーザーにとって面倒です。 より良い解決策は、選択リストまたは [ボタン](~/ios/tvos/user-interface/buttons.md)を使用してテキストエントリの量を制限することです。
 - [**ヒントを使用して目的を伝える**]: 空の場合は、プレースホルダー "ヒント" を表示できます。 必要に応じて、ヒントを使用して、別のラベルではなくテキストフィールドの目的を記述します。
-- **適切な既定のキーボードの種類を選択し**ます。 tvOS には、テキストフィールドに指定できるさまざまな用途に特化したキーボードの種類が用意されています。 たとえば、電子メールアドレスのキーボードは、ユーザーが最近入力したアドレスの一覧から選択できるようにすることで、入力を簡単にすることができます。
-- **必要に応じて、セキュリティで保護されたテキストフィールドを使用**します。セキュリティで保護されたテキストフィールドは、(実際の文字ではなく) ドットで入力された文字を示します。 パスワードなどの機密情報を収集するときは、常にセキュリティで保護されたテキストフィールドを使用します。
+- **適切な既定のキーボードの種類を選択し** ます。 tvOS には、テキストフィールドに指定できるさまざまな用途に特化したキーボードの種類が用意されています。 たとえば、電子メールアドレスのキーボードは、ユーザーが最近入力したアドレスの一覧から選択できるようにすることで、入力を簡単にすることができます。
+- **必要に応じて、セキュリティで保護されたテキストフィールドを使用** します。セキュリティで保護されたテキストフィールドは、(実際の文字ではなく) ドットで入力された文字を示します。 パスワードなどの機密情報を収集するときは、常にセキュリティで保護されたテキストフィールドを使用します。
 
 <a name="Keyboards"></a>
 
 ## <a name="keyboards"></a>キーボード
 
-ユーザーがユーザーインターフェイスのテキストフィールドをクリックするたびに、線形のスクリーンキーボードが表示されます。 ユーザーは、 [Siri リモート](~/ios/tvos/platform/remote-bluetooth.md#The-Siri-Remote)のタッチ画面を使用して、キーボードから個々の文字を選択し、要求された情報を入力します。
+ユーザーがユーザーインターフェイスのテキストフィールドをクリックするたびに、線形のスクリーンキーボードが表示されます。 ユーザーは、 [Siri リモート](~/ios/tvos/platform/remote-bluetooth.md#The-Siri-Remote) のタッチ画面を使用して、キーボードから個々の文字を選択し、要求された情報を入力します。
 
 [![Siri リモートキーボード](text-fields-and-search-images/keyboard01.png)](text-fields-and-search-images/keyboard01.png#lightbox)
 
-現在のビューに複数のテキストフィールドがある場合は、[**次**へ] ボタンが自動的に表示され、ユーザーは次のテキストフィールドに移動します。 最後のテキストフィールドに [**完了**] ボタンが表示され、テキスト入力が終了して、前の画面にユーザーが返されます。
+現在のビューに複数のテキストフィールドがある場合は、[ **次** へ] ボタンが自動的に表示され、ユーザーは次のテキストフィールドに移動します。 最後のテキストフィールドに [ **完了** ] ボタンが表示され、テキスト入力が終了して、前の画面にユーザーが返されます。
 
-ユーザーはいつでも、Siri リモコンの**メニュー**ボタンを押してテキスト入力を終了し、前の画面に戻ることができます。
+ユーザーはいつでも、Siri リモコンの **メニュー** ボタンを押してテキスト入力を終了し、前の画面に戻ることができます。
 
 Apple には、スクリーンキーボードでの作業に関して次のような推奨事項があります。
 
-- **適切な既定のキーボードの種類を選択し**ます。 tvOS には、テキストフィールドに指定できるさまざまな用途に特化したキーボードの種類が用意されています。 たとえば、電子メールアドレスのキーボードは、ユーザーが最近入力したアドレスの一覧から選択できるようにすることで、入力を簡単にすることができます。
+- **適切な既定のキーボードの種類を選択し** ます。 tvOS には、テキストフィールドに指定できるさまざまな用途に特化したキーボードの種類が用意されています。 たとえば、電子メールアドレスのキーボードは、ユーザーが最近入力したアドレスの一覧から選択できるようにすることで、入力を簡単にすることができます。
 - 必要**に応じて、キーボードアクセサリビューを使用**します。常に表示される標準情報に加えて、オプションのアクセサリビュー (画像やラベルなど) をスクリーンキーボードに追加して、テキスト入力の目的を明確にしたり、ユーザーが必要な情報を入力したりできるようにします。
 
-スクリーンキーボードの操作の詳細については、Apple の[Uikeyboard type](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputTraits_Protocol/index.html#//apple_ref/c/tdef/UIKeyboardType)、[キーボードの管理](https://developer.apple.com/library/tvos/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/KeyboardManagement/KeyboardManagement.html#//apple_ref/doc/uid/TP40009542-CH5-SW1)、[データ入力用のカスタムビュー](https://developer.apple.com/library/tvos/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/InputViews/InputViews.html#//apple_ref/doc/uid/TP40009542-CH12-SW1) 、および[iOS ドキュメントへのテキストプログラミングガイド](https://developer.apple.com/library/tvos/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/Introduction/Introduction.html)に関するページを参照してください。
+スクリーンキーボードの操作の詳細については、Apple の [Uikeyboard type](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITextInputTraits_Protocol/index.html#//apple_ref/c/tdef/UIKeyboardType)、 [キーボードの管理](https://developer.apple.com/library/tvos/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/KeyboardManagement/KeyboardManagement.html#//apple_ref/doc/uid/TP40009542-CH5-SW1)、 [データ入力用のカスタムビュー](https://developer.apple.com/library/tvos/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/InputViews/InputViews.html#//apple_ref/doc/uid/TP40009542-CH12-SW1) 、および [iOS ドキュメントへのテキストプログラミングガイド](https://developer.apple.com/library/tvos/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/Introduction/Introduction.html) に関するページを参照してください。
 
 <a name="Search"></a>
 
@@ -82,11 +82,11 @@ Apple には、スクリーンキーボードでの作業に関して次のよ�
 
 Apple では、検索フィールドの操作に関して次のような推奨事項があります。
 
-- **最近の検索を提供**する-Siri リモートでテキストを入力すると、ユーザーが検索要求を繰り返す傾向があるため、最近の検索結果のセクションをキーボード領域の下の現在の結果の前に追加することを検討してください。
-- **可能な場合は、結果の数を制限**します。ユーザーが解析したり移動したりすることが困難になる可能性があるため、返される結果の数を制限することを検討してください。
+- **最近の検索を提供** する-Siri リモートでテキストを入力すると、ユーザーが検索要求を繰り返す傾向があるため、最近の検索結果のセクションをキーボード領域の下の現在の結果の前に追加することを検討してください。
+- **可能な場合は、結果の数を制限** します。ユーザーが解析したり移動したりすることが困難になる可能性があるため、返される結果の数を制限することを検討してください。
 - 必要に応じて **、検索結果フィルターを指定**します。アプリによって提供されるコンテンツ自体が使用できる場合は、ユーザーが返された検索結果をさらにフィルター処理するために、スコープバーを追加することを検討してください。
 
-詳細については、「Apple の[Uisearchcontroller クラスのリファレンス](https://developer.apple.com/library/tvos/documentation/UIKit/Reference/UISearchController/index.html)」を参照してください。
+詳細については、「Apple の [Uisearchcontroller クラスのリファレンス](https://developer.apple.com/library/tvos/documentation/UIKit/Reference/UISearchController/index.html)」を参照してください。
 
 <a name="Working-with-Text-Fields"></a>
 
@@ -101,16 +101,16 @@ TvOS アプリでテキストフィールドを操作する最も簡単な方法
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 1. **Solution Pad**で、ファイルをダブルクリックし `Main.storyboard` て編集用に開きます。
-1. 1つまたは複数の**テキストフィールド**をドラッグして、デザインサーフェイスをビューに表示します。
+1. 1つまたは複数の **テキストフィールド** をドラッグして、デザインサーフェイスをビューに表示します。
 
     [![テキストフィールド](text-fields-and-search-images/text02.png)](text-fields-and-search-images/text02.png#lightbox)
 1. **テキストフィールド**を選択し、 **Properties Pad**の [**ウィジェット**] タブにそれぞれ一意の**名前**を付けます。
 
     [![Properties Pad の [ウィジェット] タブ](text-fields-and-search-images/text03.png)](text-fields-and-search-images/text03.png#lightbox)
-1. [**テキストフィールド**] セクションでは、**プレースホルダー**ヒントや既定**値**などの要素を定義できます。
+1. [ **テキストフィールド** ] セクションでは、 **プレースホルダー** ヒントや既定 **値**などの要素を定義できます。
 
     [![テキストフィールドセクション](text-fields-and-search-images/text04.png)](text-fields-and-search-images/text04.png#lightbox)
-1. 下にスクロールして**スペルチェック**、**大文字小文字**、キーボードの既定の**種類**などのプロパティを定義します。
+1. 下にスクロールして **スペルチェック**、 **大文字小文字** 、キーボードの既定の **種類**などのプロパティを定義します。
 
     [![スペルチェック、大文字小文字、および既定のキーボードの種類](text-fields-and-search-images/text05.png)](text-fields-and-search-images/text05.png#lightbox)
 1. 変更内容をストーリーボードに保存します。
@@ -118,16 +118,16 @@ TvOS アプリでテキストフィールドを操作する最も簡単な方法
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 1. **ソリューション エクスプローラー**で `Main.storyboard` ファイルをダブルクリックして、編集用に開きます。
-1. 1つまたは複数の**テキストフィールド**をドラッグして、デザインサーフェイスをビューに表示します。
+1. 1つまたは複数の **テキストフィールド** をドラッグして、デザインサーフェイスをビューに表示します。
 
     [![テキストフィールド](text-fields-and-search-images/text02-vs.png)](text-fields-and-search-images/text02-vs.png#lightbox)
 1. **テキストフィールド**を選択し、**プロパティエクスプローラー**の [**ウィジェット**] タブにそれぞれ一意の**名前**を付けます。
 
     [![[ウィジェット] タブ](text-fields-and-search-images/text03-vs.png)](text-fields-and-search-images/text03-vs.png#lightbox)
-1. [**テキストフィールド**] セクションでは、**プレースホルダー**ヒントや既定**値**などの要素を定義できます。
+1. [ **テキストフィールド** ] セクションでは、 **プレースホルダー** ヒントや既定 **値**などの要素を定義できます。
 
     [![テキストフィールドセクション](text-fields-and-search-images/text04-vs.png)](text-fields-and-search-images/text04-vs.png#lightbox)
-1. 下にスクロールして**スペルチェック**、**大文字小文字**、キーボードの既定の**種類**などのプロパティを定義します。
+1. 下にスクロールして **スペルチェック**、 **大文字小文字** 、キーボードの既定の **種類**などのプロパティを定義します。
 
     [![スペルチェック、大文字小文字、および既定のキーボードの種類](text-fields-and-search-images/text05-vs.png)](text-fields-and-search-images/text05-vs.png#lightbox)
 1. 変更内容をストーリーボードに保存します。
@@ -159,7 +159,7 @@ TvOS アプリで検索フィールドを操作する最も簡単な方法は、
 1. **Properties Pad**の [**ウィジェット**] タブで、 `SearchResultsViewController` **クラス**と `SearchResults` **ストーリーボード ID**にを使用します。
 
     [![[ウィジェット] タブ](text-fields-and-search-images/search03.png)](text-fields-and-search-images/search03.png#lightbox)
-1. デザイン画面で**セルプロトタイプ**を選択します。
+1. デザイン画面で **セルプロトタイプ** を選択します。
 1. **プロパティエクスプローラー**の [**ウィジェット**] タブで、 `SearchResultCell` **クラス**にを、 `ImageCell` **識別子**にを使用します。
 
     [![[ウィジェット] タブ](text-fields-and-search-images/search04.png)](text-fields-and-search-images/search04.png#lightbox)
@@ -177,7 +177,7 @@ TvOS アプリで検索フィールドを操作する最も簡単な方法は、
 1. **プロパティエクスプローラー**の [**ウィジェット**] タブで、 `SearchResultsViewController` **クラス**と `SearchResults` **ストーリーボード ID**にを使用します。
 
     [![[ウィジェット] タブ](text-fields-and-search-images/search03-vs.png)](text-fields-and-search-images/search03-vs.png#lightbox)
-1. デザイン画面で**セルプロトタイプ**を選択します。
+1. デザイン画面で **セルプロトタイプ** を選択します。
 1. **プロパティエクスプローラー**の [**ウィジェット**] タブで、 `SearchResultCell` **クラス**にを、 `ImageCell` **識別子**にを使用します。
 
     [![[ウィジェット] タブ](text-fields-and-search-images/search04-vs.png)](text-fields-and-search-images/search04-vs.png#lightbox)
@@ -239,7 +239,7 @@ namespace tvText
 
 ### <a name="the-collection-view-cell"></a>コレクションビューセル
 
-データモデルを配置した状態で、**プロトタイプセル**() を編集し、次のように表示されるように `SearchResultViewCell.cs` します。
+データモデルを配置した状態で、 **プロトタイプセル** () を編集し、次のように表示されるように `SearchResultViewCell.cs` します。
 
 ```csharp
 using Foundation;
@@ -293,7 +293,7 @@ namespace tvText
 }
 ```
 
-メソッドは、 `UpdateUI` プロパティが更新されるたびに、名前付き UI 要素の**画像情報**項目 (プロパティ) の個々のフィールドを表示するために使用され `PictureInfo` ます。 たとえば、画像に関連付けられている画像やタイトルなどです。
+メソッドは、 `UpdateUI` プロパティが更新されるたびに、名前付き UI 要素の **画像情報** 項目 (プロパティ) の個々のフィールドを表示するために使用され `PictureInfo` ます。 たとえば、画像に関連付けられている画像やタイトルなどです。
 
 <a name="The-Collection-View-Controller"></a>
 
@@ -457,7 +457,7 @@ namespace tvText
 public partial class SearchResultsViewController : UICollectionViewController , IUISearchResultsUpdating
 ```
 
-定数は、後でコレクションコントローラーが新しいセルを要求したときに使用される**プロトタイプセル**(上のインターフェイスデザイナーで定義されている id に一致する) の id を指定するためにも定義されています。
+定数は、後でコレクションコントローラーが新しいセルを要求したときに使用される **プロトタイプセル** (上のインターフェイスデザイナーで定義されている id に一致する) の id を指定するためにも定義されています。
 
 ```csharp
 public const string CellID = "ImageCell";
@@ -544,7 +544,7 @@ public override nint GetItemsCount (UICollectionView collectionView, nint sectio
 }
 ```
 
-メソッドは、 `GetCell` コレクションビューの各項目について、(ストーリーボードで定義されているに基づいて) 新しい**プロトタイプセル**を返し `CellID` ます。
+メソッドは、 `GetCell` コレクションビューの各項目について、(ストーリーボードで定義されているに基づいて) 新しい **プロトタイプセル** を返し `CellID` ます。
 
 ```csharp
 public override UICollectionViewCell GetCell (UICollectionView collectionView, NSIndexPath indexPath)
@@ -609,7 +609,7 @@ public override void ItemSelected (UICollectionView collectionView, NSIndexPath 
 
 検索フィールドを、それを呼び出しているビューの上部にモーダルダイアログビューとして表示した場合は、 `DismissViewController` ユーザーが項目を選択したときに、メソッドを使用して検索ビューを閉じます。 この例では、[検索] フィールドは [タブビュー] タブのコンテンツとして表示されるため、ここでは無視されません。
 
-コレクションビューの詳細については、[コレクションビュー](~/ios/tvos/user-interface/collection-views.md)の使用に関するドキュメントを参照してください。
+コレクションビューの詳細については、 [コレクションビュー](~/ios/tvos/user-interface/collection-views.md) の使用に関するドキュメントを参照してください。
 
 <a name="Presenting the Search Field"></a>
 
@@ -698,7 +698,7 @@ namespace tvText
 }
 ```
 
-まず、インターフェイスデザイナーで検索結果コレクションビューコントローラーに割り当てられた**ストーリーボード識別子**と一致する定数を定義します。
+まず、インターフェイスデザイナーで検索結果コレクションビューコントローラーに割り当てられた **ストーリーボード識別子** と一致する定数を定義します。
 
 ```csharp
 public const string SearchResultsID = "SearchResults";
@@ -738,7 +738,7 @@ public void ShowSearchController ()
 
 上のメソッドでは、 `SearchResultsViewController` がストーリーボードからインスタンス化されると、 `UISearchController` 検索フィールドとスクリーンキーボードをユーザーに表示する新しいが作成されます。 (で定義されているように) 検索結果のコレクション `SearchResultsViewController` がこのキーボードに表示されます。
 
-次に、は `SearchBar` **プレースホルダー**ヒントなどの情報で構成されます。 これにより、処理中の検索の種類に関する情報がユーザーに提供されます。
+次に、は `SearchBar` **プレースホルダー** ヒントなどの情報で構成されます。 これにより、処理中の検索の種類に関する情報がユーザーに提供されます。
 
 その後、次の2つの方法のいずれかで、検索フィールドがユーザーに表示されます。
 
@@ -786,7 +786,7 @@ public override void ViewDidAppear (bool animated)
 
 ## <a name="related-links"></a>関連リンク
 
-- [tvOS のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [tvOS のサンプル](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS ヒューマンインターフェイスガイド](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS のアプリプログラミングガイド](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

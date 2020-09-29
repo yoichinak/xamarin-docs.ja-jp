@@ -6,12 +6,12 @@ ms.assetid: A4130995-48FD-4E2E-9C2B-ADCEFF35BE3A
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 54a4c6e32059b6ff32b3a93abf5fd30c65f16b5f
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 06309c2d746d1349a672d947e27503018b80ae40
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936631"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436959"
 ---
 # <a name="3d-coordinates-in-monogame"></a>モノゲームの3D 座標
 
@@ -36,15 +36,15 @@ _3d の座標系を理解することは、3D ゲームを開発する上で重�
 
 ## <a name="creating-a-project"></a>プロジェクトの作成
 
-このチュートリアルでは、3D 空間でオブジェクトを移動する方法について説明します。 [ここ](https://docs.microsoft.com/samples/xamarin/mobile-samples/modelsandvertsmg/)では、モデルと頂点配列をレンダリングするためのプロジェクトについて説明します。 ダウンロードが完了したら、プロジェクトを解凍して開き、実行されていることを確認します。次のように表示されます。
+このチュートリアルでは、3D 空間でオブジェクトを移動する方法について説明します。 [ここ](/samples/xamarin/mobile-samples/modelsandvertsmg/)では、モデルと頂点配列をレンダリングするためのプロジェクトについて説明します。 ダウンロードが完了したら、プロジェクトを解凍して開き、実行されていることを確認します。次のように表示されます。
 
 ![ダウンロードが完了したら、プロジェクトを解凍して開いて、実行されていることを確認します。このビューが表示されます。](part3-images/image2.png)
 
 ## <a name="creating-a-robot-entity"></a>ロボットエンティティの作成
 
-ロボットの移動を始める前に、 `Robot` 描画と移動のロジックを含むクラスを作成します。 ゲーム開発者は、このロジックとデータを*エンティティ*としてカプセル化します。
+ロボットの移動を始める前に、 `Robot` 描画と移動のロジックを含むクラスを作成します。 ゲーム開発者は、このロジックとデータを *エンティティ*としてカプセル化します。
 
-新しい空のクラスファイルを、プラットフォーム固有の ModelAndVerts ではなく、 **MonoGame3D**ポータブルクラスライブラリに追加します。 **ロボット**に名前を指定し、[**新規**] をクリックします。
+新しい空のクラスファイルを、プラットフォーム固有の ModelAndVerts ではなく、 **MonoGame3D** ポータブルクラスライブラリに追加します。 **ロボット**に名前を指定し、[**新規**] をクリックします。
 
 ![ロボットに名前を指定し、[新規] をクリックします。](part3-images/image3.png)
 
@@ -104,7 +104,7 @@ namespace MonoGame3D
 }
 ```
 
-この `Robot` コードは、基本的に `Game1` を描画するためののコードと同じです `Model` 。 読み込みと描画の詳細につい `Model` ては、[モデルの使用に関するこのガイド](~/graphics-games/monogame/3d/part1.md)を参照してください。 `Model`から読み込みとレンダリングのコードをすべて削除 `Game1` し、インスタンスに置き換えることができるようになりました `Robot` 。
+この `Robot` コードは、基本的に `Game1` を描画するためののコードと同じです `Model` 。 読み込みと描画の詳細につい `Model` ては、 [モデルの使用に関するこのガイド](~/graphics-games/monogame/3d/part1.md)を参照してください。 `Model`から読み込みとレンダリングのコードをすべて削除 `Game1` し、インスタンスに置き換えることができるようになりました `Robot` 。
 
 ```csharp
 using Microsoft.Xna.Framework;
@@ -330,7 +330,7 @@ Matrix GetWorldMatrix()
 
 上記のコードでは、メソッドでを作成することによってロボットを回転して `Matrix` `GetWorldMatrix` います。 `Matrix`構造体には、変換 (位置の設定)、回転、およびスケール (サイズの設定) に使用できる16の浮動小数点値が含まれています。 このプロパティを割り当てるときに、 `effect.World` 基になるレンダリングシステムに、描画しようとしているもの ( `Model` または頂点からのジオメトリ) の位置、サイズ、および向きを指示します。 
 
-幸いにも、構造体には、 `Matrix` 一般的な種類のマトリックスの作成を簡略化する多くのメソッドが含まれています。 上記のコードで使用されている最初のは、 `Matrix.CreateTranslation` です。 数学的用語の*変換*とは、(この場合はモデルの) ある場所から別の場所に移動する (回転やサイズ変更など) 操作を指します。 関数は、変換に対して X、Y、および Z の値を受け取ります。 シーンを上から表示すると、 `CreateTranslation` メソッド (分離) によって次の処理が実行されます。
+幸いにも、構造体には、 `Matrix` 一般的な種類のマトリックスの作成を簡略化する多くのメソッドが含まれています。 上記のコードで使用されている最初のは、 `Matrix.CreateTranslation` です。 数学的用語の *変換* とは、(この場合はモデルの) ある場所から別の場所に移動する (回転やサイズ変更など) 操作を指します。 関数は、変換に対して X、Y、および Z の値を受け取ります。 シーンを上から表示すると、 `CreateTranslation` メソッド (分離) によって次の処理が実行されます。
 
 ![分離における CreateTranslation メソッドは、このアクションを実行します。](part3-images/image6.png)
 
@@ -374,7 +374,7 @@ Matrix combined = rotationMatrix * translationMatrix;
 
 `Camera`エンティティには、入力ベースの移動を実行するために必要なすべてのロジックが含まれ、クラスにプロパティを割り当てるためのプロパティを提供し `BasicEffect` ます。
 
-まず、静的なカメラ (入力ベースの移動は不要) を実装し、それを既存のプロジェクトに統合します。 **MonoGame3D**ポータブルクラスライブラリ (と同じプロジェクト) に新しいクラスを追加し、「 `Robot.cs` **カメラ**」という名前を付けます。 このファイルの内容を次のコードに置き換えます。
+まず、静的なカメラ (入力ベースの移動は不要) を実装し、それを既存のプロジェクトに統合します。 **MonoGame3D**ポータブルクラスライブラリ (と同じプロジェクト) に新しいクラスを追加し、「 `Robot.cs` **カメラ**」という名前を付けます。 ファイルの内容を次のコードに置き換えます。
 
 ```csharp
 using System;
@@ -572,9 +572,9 @@ namespace MonoGame3D
 
 `Game1`以前のバージョン (で識別される) のに対する変更 `// New camera code` は次のとおりです。
 
-- `Camera`のフィールド`Game1`
-- `Camera`でのインスタンス化`Game1.Initialize`
-- `Camera.Update`での呼び出し`Game1.Update`
+- `Camera` のフィールド `Game1`
+- `Camera` でのインスタンス化 `Game1.Initialize`
+- `Camera.Update` での呼び出し `Game1.Update`
 - `Robot.Draw`パラメーターを受け取るようになりました。 `Camera`
 - `Game1.Draw`はとを使用するようになりました。 `Camera.ViewMatrix``Camera.ProjectionMatrix`
 
@@ -663,7 +663,7 @@ public class Camera
 
 この `Camera` エンティティは、位置と角度の変数を使用して完全に制御できるようになりました。入力に従って変更するだけで済みます。
 
-最初に、 `TouchPanel` ユーザーが画面に触れる場所を見つけるための状態を取得します。 クラスの使用方法の詳細については、 `TouchPanel` 「[タッチパネル API リファレンス](http://www.monogame.net/documentation/?page=T_Microsoft_Xna_Framework_Input_Touch_TouchPanel)」を参照してください。
+最初に、 `TouchPanel` ユーザーが画面に触れる場所を見つけるための状態を取得します。 クラスの使用方法の詳細については、 `TouchPanel` 「 [タッチパネル API リファレンス](http://www.monogame.net/documentation/?page=T_Microsoft_Xna_Framework_Input_Touch_TouchPanel)」を参照してください。
 
 ユーザーが3番目の左に触れている場合は `angle` 、が左に回転するように値を調整し `Camera` ます。ユーザーが右3番目に触れると、他の方法で回転します。 ユーザーが画面の中央上に触れている場合は、先に進み `Camera` ます。
 
@@ -728,4 +728,4 @@ Update メソッドは、を呼び出すことによって開始され `TouchPan
 ## <a name="related-links"></a>関連リンク
 
 - [モノゲーム API リンク](http://www.monogame.net/documentation/?page=api)
-- [完成したプロジェクト (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/monogame3dcamera)
+- [完成したプロジェクト (サンプル)](/samples/xamarin/monodroid-samples/monogame3dcamera)

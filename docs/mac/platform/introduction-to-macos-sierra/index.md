@@ -7,18 +7,18 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 4dde8941b09ac7b235b94e73e86dc60167fb6bd4
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 8715559db3f551773f41659a0c7c36adb29f0d1e
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574458"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91437230"
 ---
 # <a name="introduction-to-macos-sierra"></a>macOS Sierra の概要
 
 新しい macOS Sierra では、開発者は新しい Api を活用して、エンドユーザーが以前に使用できない方法でアプリや web サイトと対話できるようにすることができます。 たとえば、Apple では、Apple Pay によって安全に支払いを行うことができるようになりました。また、メタルフレームワークの機能強化により、アプリのグラフィックスとコンピューティングの可能性を向上させることができます。 
 
-MacOS Sierra の詳細については、Apple の[macOS とアプリ](https://developer.apple.com/macos/)に関するドキュメントを参照してください。
+MacOS Sierra の詳細については、Apple の [macOS とアプリ](https://developer.apple.com/macos/) に関するドキュメントを参照してください。
 
 <a name="Whats-New-in-macOS-Sierra"></a>
 
@@ -32,7 +32,7 @@ Apple では、macOS Sierra に新しい Api とサービスがいくつか追�
 
 MacOS Sierra では、Apple は新しい Apple ファイルシステムを iOS、macOS、tvOS、watchOS の最新のファイルシステムとしてリリースしました。 Apple ファイルシステムは、フラッシュおよび SSD ストレージ用に最適化されており、強力な暗号化、書き込み可能なメタデータ、領域の共有、ファイルとディレクトリの複製、スナップショット、ディレクトリの高速サイズ設定、およびアトミックの安全な保存の機能を備えています。
 
-詳細については、Apple の[Apple ファイルシステムガイド](https://developer.apple.com/library/prerelease/content/documentation/FileManagement/Conceptual/APFS_Guide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40016999)を参照してください。
+詳細については、Apple の [Apple ファイルシステムガイド](https://developer.apple.com/library/prerelease/content/documentation/FileManagement/Conceptual/APFS_Guide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40016999)を参照してください。
 
 <a name="Apple-Pay-Enhancements"></a>
 
@@ -44,7 +44,7 @@ MacOS Sierra では、動的な支払いネットワークと新しいサンド�
 
 macOS Sierra には、開発者が iOS および macOS の Safari ベースの web サイトに直接 Apple Pay 組み込むことができる新しい ApplePay Javascript フレームワークが含まれています。 Apple Pay をサポートする web サイトでは、ユーザーは iPhone または Apple Watch のいずれかを使用して支払いを承認できます。
 
-詳細については、「Apple の[APPLEPAY JS Framework](https://developer.apple.com/reference/applepayjs)リファレンス」を参照してください。
+詳細については、「Apple の [APPLEPAY JS Framework](https://developer.apple.com/reference/applepayjs) リファレンス」を参照してください。
 
 <a name="Building-Modern-macOS-Apps"></a>
 
@@ -64,7 +64,7 @@ CloudKit フレームワークは macOS Sierra で拡張され、ユーザーは
 
 CloudKit には、共有レコードの招待を送受信するための完全な UI が用意されています。ユーザーは、レコードへのアクセス権を持つユーザーに対して、完全な読み取り/書き込み制御を行うことができます。
 
-詳細については、Apple の[Cloudkit Framework リファレンス](https://developer.apple.com/reference/clockkit)および[Cloudkit JS フレームワークリファレンス](https://developer.apple.com/reference/cloudkitjs)を参照してください。
+詳細については、Apple の [Cloudkit Framework リファレンス](https://developer.apple.com/reference/clockkit) および [Cloudkit JS フレームワークリファレンス](https://developer.apple.com/reference/cloudkitjs)を参照してください。
 
 > [!IMPORTANT]
 > Apple からは、開発者が欧州連合の一般データ保護規則 (GDPR) を適切に処理するための[ツールが提供](https://developer.apple.com/support/allowing-users-to-manage-data/)されています。
@@ -75,7 +75,7 @@ CloudKit には、共有レコードの招待を送受信するための完全�
 
 Safari アプリ拡張機能を使用すると、アプリは macOS Sierra と密接に統合されながら、Safari web ブラウザーの動作を拡張することができます。 MacOS Safari アプリ拡張機能は iOS Safari アプリ拡張機能に似ているため、あるシステムから別のシステムに簡単に移植できます。
 
-詳細については、「Apple の[Safari アプリ拡張機能のプログラミングガイド](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternetWeb/Conceptual/SafariAppExtension_PG/index.html#//apple_ref/doc/uid/TP40017319)」を参照してください。
+詳細については、「Apple の [Safari アプリ拡張機能のプログラミングガイド](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternetWeb/Conceptual/SafariAppExtension_PG/index.html#//apple_ref/doc/uid/TP40017319)」を参照してください。
 
 <a name="Security-and-Privacy-Enhancements"></a>
 
@@ -93,7 +93,7 @@ Apple では、アプリのセキュリティを向上させ、次のような�
 
 さらに、macOS Sierra (またはそれ以降) で実行されているアプリでは、特定の機能やユーザー情報にアクセスする目的を静的に宣言する必要があります。これには、 `Info.plist` アプリがアクセスする理由をユーザーに説明する1つ以上のプライバシー固有のキーをファイルに入力します。
 
-MacOS Sierra は iOS 10 でこれらの変更を共有するため、詳細については、iOS 10 の[セキュリティとプライバシーの強化](~/ios/app-fundamentals/security-privacy.md)に関するガイドを参照してください。
+MacOS Sierra は iOS 10 でこれらの変更を共有するため、詳細については、iOS 10 の [セキュリティとプライバシーの強化](~/ios/app-fundamentals/security-privacy.md) に関するガイドを参照してください。
 
 <a name="Smart-Card-Driver-Extension-Support"></a>
 
@@ -101,7 +101,7 @@ MacOS Sierra は iOS 10 でこれらの変更を共有するため、詳細に�
 
 MacOS Sierra では、アプリは、 `NSExtension` 特定の種類のスマートカードからのコンテンツへの読み取り専用アクセスを許可する、ベースのスマートカードドライバーを作成できます。 この情報は、システムキーチェーン内に表示されます (非推奨の Common Data Security Architecture メソッドを置き換えます)。
 
-詳細については、「Apple の[Cryptotokenkit フレームワークリファレンス](https://developer.apple.com/reference/cryptotokenkit)」を参照してください。
+詳細については、「Apple の [Cryptotokenkit フレームワークリファレンス](https://developer.apple.com/reference/cryptotokenkit)」を参照してください。
 
 <a name="Unified-Logging"></a>
 
@@ -115,7 +115,7 @@ macOS Sierra には、接続されているデバイスを含む複数のソー�
 
 また、コマンドラインツールを使用してログメッセージを表示および管理することもできます。
 
-詳細については、Apple の[ログ記録のリファレンス](https://developer.apple.com/documentation/os/logging)を参照してください。
+詳細については、Apple の [ログ記録のリファレンス](https://developer.apple.com/documentation/os/logging)を参照してください。
 
 <a name="Wide-Color"></a>
 
@@ -127,11 +127,11 @@ macOS Sierra は、コアグラフィックス、コアイメージ、メタル�
 
 Apple では、広範囲にわたる色を使用するときに、次のベストプラクティスを提供しています。
 
-- `NSColor`では、sRGB 色空間が使用されるようになり、値が to 範囲にクランプされなくなりました `0.0` `1.0` 。 アプリが以前のクランプ動作に依存している場合は、macOS Sierra に対して変更する必要があります。
+- `NSColor` では、sRGB 色空間が使用されるようになり、値が to 範囲にクランプされなくなりました `0.0` `1.0` 。 アプリが以前のクランプ動作に依存している場合は、macOS Sierra に対して変更する必要があります。
 - コアグラフィックスや金属などの低レベルの API を使用してイメージ処理を行う場合、アプリでは16ビット浮動小数点値をサポートする拡張範囲の色空間とピクセル形式を使用する必要があります。 必要に応じて、アプリで色コンポーネントの値を手動で固定する必要があります。
 - コアグラフィックス、コアイメージ、および金属パフォーマンスシェーダーはすべて、2つの色空間間で変換を行うための新しいメソッドを提供します。
 
-詳細については、「 [Wide カラー](~/ios/platform/wide-color.md)ガイドの概要」を参照してください。
+詳細については、「 [Wide カラー](~/ios/platform/wide-color.md) ガイドの概要」を参照してください。
 
 <a name="Additional-Framework-Changes"></a>
 
@@ -139,7 +139,7 @@ Apple では、広範囲にわたる色を使用するときに、次のベス�
 
 Apple では、上に示したフレームワークの主な変更点と追加機能に加えて、macOS Sierra に多くの重要なフレームワーク変更が加えられています。
 
-詳細については、追加の[フレームワーク変更](~/mac/platform/introduction-to-macos-sierra/additional-framework-changes.md)ガイドを参照してください。
+詳細については、追加の [フレームワーク変更](~/mac/platform/introduction-to-macos-sierra/additional-framework-changes.md) ガイドを参照してください。
 
 <a name="Deprecated-APIs"></a>
 
@@ -149,9 +149,9 @@ Apple では、上に示したフレームワークの主な変更点と追加�
 
 - HFS 標準ファイルシステムはサポートされなくなりました。
 
-廃止と変更の完全な一覧については、Apple の[macOS v 10.12 API の相違](https://developer.apple.com/library/archive/releasenotes/General/APIDiffsMacOS10_12/index.html)点に関するドキュメントを参照してください。
+廃止と変更の完全な一覧については、Apple の [macOS v 10.12 API の相違](https://developer.apple.com/library/archive/releasenotes/General/APIDiffsMacOS10_12/index.html) 点に関するドキュメントを参照してください。
 
 ## <a name="related-links"></a>関連リンク
 
-- [Mac サンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac)
+- [Mac サンプル](/samples/browse/?products=xamarin&term=Xamarin.Mac)
 - [MacOS 10.12 の新機能](https://developer.apple.com/library/prerelease/content/releasenotes/MacOSX/WhatsNewInOSX/Articles/OSXv10.html#//apple_ref/doc/uid/TP40017145-SW1)

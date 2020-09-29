@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/08/2018
-ms.openlocfilehash: 40b7adbed3489d449e583b22fa477287d11bdf42
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: f2a350cb227e55188830161818779e4155c53bcc
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73031867"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434172"
 ---
 # <a name="siri-shortcuts-in-xamarinios"></a>Xamarin の siri ショートカット
 
@@ -20,13 +20,13 @@ ms.locfileid: "73031867"
 
 [IOS 11](~/ios/platform/introduction-to-ios11/sirikit.md)では、sirikit により、より多くの種類のアプリをサポートし、UI のカスタマイズをより柔軟に行うことができます。
 
-iOS 12 では Siri ショートカットが追加され、すべての種類のアプリが Siri に機能を公開できるようになります。 Siri は、特定のアプリベースのタスクがユーザーに最も関係している場合に学習し、この知識を使用して_ショートカット_を使用して潜在的なアクションを提案します。 ショートカットをタップするか、音声コマンドを使用して呼び出すと、アプリが開かれるかバックグラウンドタスクが実行されます。
+iOS 12 では Siri ショートカットが追加され、すべての種類のアプリが Siri に機能を公開できるようになります。 Siri は、特定のアプリベースのタスクがユーザーに最も関係している場合に学習し、この知識を使用して _ショートカット_を使用して潜在的なアクションを提案します。 ショートカットをタップするか、音声コマンドを使用して呼び出すと、アプリが開かれるかバックグラウンドタスクが実行されます。
 
 ショートカットを使用すると、ユーザーが一般的なタスクを実行する能力を加速させることができます。多くの場合、問題のアプリを開く必要はありません。
 
 ## <a name="sample-app-soup-chef"></a>サンプルアプリ: スープ Chef
 
-Siri のショートカットについて理解を深めるには、[スープ Chef](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-soupchef)サンプルアプリを参照してください。 スープ Chef を使用すると、ユーザーは、架空のスープレストランから注文を配置したり、注文履歴を表示したり、Siri と対話することによってスープを並べ替えるときに使用する語句を定義したりできます。
+Siri のショートカットについて理解を深めるには、 [スープ Chef](/samples/xamarin/ios-samples/ios12-soupchef) サンプルアプリを参照してください。 スープ Chef を使用すると、ユーザーは、架空のスープレストランから注文を配置したり、注文履歴を表示したり、Siri と対話することによってスープを並べ替えるときに使用する語句を定義したりできます。
 
 > [!TIP]
 > IOS 12 シミュレーターまたはデバイスでスープ Chef をテストする前に、次の2つの設定を有効にします。これは、ショートカットをデバッグするときに便利です。
@@ -38,14 +38,14 @@ Siri のショートカットについて理解を深めるには、[スープ C
 
 サンプルアプリを使用するには:
 
-- スープ Chef サンプルアプリを iOS 12 シミュレーターまたは[デバイス](#testing-on-device)にインストールして実行します。
-- 右上にある [ **+** ] ボタンをクリックして、新しい注文を作成します。
-- スープの種類を選択し、数量とオプションを指定して、 **[位置の順序]** をタップします。
-- **[注文履歴]** 画面で、新しく作成された順序をタップして詳細を表示します。
+- スープ Chef サンプルアプリを iOS 12 シミュレーターまたは [デバイス](#testing-on-device)にインストールして実行します。
+- 右上のボタンをクリックして、 **+** 新しい注文を作成します。
+- スープの種類を選択し、数量とオプションを指定して、[ **位置の順序**] をタップします。
+- [ **注文履歴** ] 画面で、新しく作成された順序をタップして詳細を表示します。
 - [注文の詳細] 画面の下部にある [ **Siri に追加] を**タップします。
-- 注文に関連付ける音声語句を記録し、 **[完了]** をタップします。
+- 注文に関連付ける音声語句を記録し、[ **完了**] をタップします。
 - スープ Chef を最小化し、Siri を呼び出して、記録したばかりの音声フレーズを使用して順序を再設定します。
-- Siri が注文を完了したら、スープ Chef を再度開き、**注文履歴**画面に新しい注文が表示されていることを確認します。
+- Siri が注文を完了したら、スープ Chef を再度開き、 **注文履歴** 画面に新しい注文が表示されていることを確認します。
 
 サンプルアプリでは、次の方法を示しています。
 
@@ -56,13 +56,13 @@ Siri のショートカットについて理解を深めるには、[スープ C
 
 ## <a name="infoplist-and-entitlementsplist"></a>情報 plist と権利 plist
 
-スープ Chef のコードをより深く掘り下げていく前に、その**情報**を確認**してください**。
+スープ Chef のコードをより深く掘り下げていく前に、その **情報** を確認 **してください** 。
 
 ### <a name="infoplist"></a>Info.plist
 
-**SoupChef**プロジェクトの**情報の plist**ファイルは、**バンドル識別子**を `com.xamarin.SoupChef`として定義します。 このバンドル識別子は、このドキュメントで後述するインテントおよびインテント UI 拡張機能のバンドル識別子のプレフィックスとして使用されます。
+**SoupChef**プロジェクトの**情報の plist**ファイルは、**バンドル識別子**をとして定義します `com.xamarin.SoupChef` 。 このバンドル識別子は、このドキュメントで後述するインテントおよびインテント UI 拡張機能のバンドル識別子のプレフィックスとして使用されます。
 
-また、このファイルには次の**情報**も含まれています。
+また、このファイルには次の **情報** も含まれています。
 
 ```xml
 <key>NSUserActivityTypes</key>
@@ -72,9 +72,9 @@ Siri のショートカットについて理解を深めるには、[スープ C
 </array>
 ```
 
-この `NSUserActivityTypes` のキーと値のペアは、スープ Chef が `OrderSoupIntent`を処理する方法を認識し、"SoupChef" という[`ActivityType`](xref:Foundation.NSUserActivity.ActivityType)を持つ[`NSUserActivity`](xref:Foundation.NSUserActivity)を示します。
+この `NSUserActivityTypes` キーと値のペアは、スープ Chef がを処理する方法を認識し、に `OrderSoupIntent` "SoupChef" が含まれていることを示し [`NSUserActivity`](xref:Foundation.NSUserActivity) [`ActivityType`](xref:Foundation.NSUserActivity.ActivityType) ます。
 
-拡張機能とは対照的に、アプリ自体に渡されるアクティビティとカスタムインテントは、`AppDelegate` ( [`ContinueUserActivity`](xref:UIKit.UIApplicationDelegate.ContinueUserActivity*)メソッドによって[`UIApplicationDelegate`](xref:UIKit.UIApplicationDelegate)されます。
+拡張機能とは対照的に、アプリ自体に渡されるアクティビティとカスタムインテントは、 `AppDelegate` (メソッドによって) で処理され [`UIApplicationDelegate`](xref:UIKit.UIApplicationDelegate) [`ContinueUserActivity`](xref:UIKit.UIApplicationDelegate.ContinueUserActivity*) ます。
 
 ### <a name="entitlementsplist"></a>Entitlements.plist
 
@@ -89,21 +89,21 @@ Siri のショートカットについて理解を深めるには、[スープ C
 <true/>
 ```
 
-この構成は、アプリが "SoupChef" アプリグループを使用することを示します。 **SoupChefIntents**アプリ拡張機能では、この同じアプリグループを使用します。これにより、2つのプロジェクトが共有できるようになり[`NSUserDefaults`](xref:Foundation.NSUserDefaults)
-データ。
+この構成は、アプリが "SoupChef" アプリグループを使用することを示します。 **SoupChefIntents**アプリ拡張機能では、この同じアプリグループを使用します。これにより、2つのプロジェクトで共有できるようになります。[`NSUserDefaults`](xref:Foundation.NSUserDefaults)
+います。
 
-`com.apple.developer.siri` キーは、アプリが Siri と対話することを示します。
+キーは、 `com.apple.developer.siri` アプリが Siri と対話することを示します。
 
 > [!NOTE]
 > **SoupChef**プロジェクトのビルド構成によって、**カスタム権利**が**plist**に設定されます。
 
 ## <a name="using-an-nsuseractivity-shortcut-to-open-an-app"></a>NSUserActivity ショートカットを使用してアプリを開く
 
-特定のコンテンツを表示するアプリを開くショートカットを作成するには、`NSUserActivity` を作成し、ショートカットを開くための画面のビューコントローラーにアタッチします。
+特定のコンテンツを表示するアプリを開くショートカットを作成するには、を作成 `NSUserActivity` し、ショートカットを開くための画面のビューコントローラーにアタッチします。
 
 ### <a name="setting-up-an-nsuseractivity"></a>NSUserActivity の設定
 
-メニュー画面で、`SoupMenuViewController` によって `NSUserActivity` が作成され、ビューコントローラーの[`UserActivity`](xref:UIKit.UIResponder.UserActivity)プロパティに割り当てられます。
+メニュー画面で、 `SoupMenuViewController` が作成さ `NSUserActivity` れ、ビューコントローラーのプロパティに割り当てられ [`UserActivity`](xref:UIKit.UIResponder.UserActivity) ます。
 
 ```csharp
 public override void ViewDidLoad()
@@ -113,9 +113,9 @@ public override void ViewDidLoad()
 }
 ```
 
-`UserActivity` プロパティを_donates_に設定すると、アクティビティは siri になります。 この寄付から、Siri は、このアクティビティがユーザーに関連するタイミングと場所に関する情報を取得し、将来の提案を改善するために学習します。
+プロパティを設定 `UserActivity` すると、アクティビティの _Donates_ が siri に設定されます。 この寄付から、Siri は、このアクティビティがユーザーに関連するタイミングと場所に関する情報を取得し、将来の提案を改善するために学習します。
 
-`NSUserActivityHelper` は、 **SoupKit**クラスライブラリの**SoupChef**ソリューションに含まれるユーティリティクラスです。 `NSUserActivity` を作成し、Siri と検索に関連するさまざまなプロパティを設定します。
+`NSUserActivityHelper` は、 **SoupChef** ソリューションに含まれるユーティリティクラスで、 **SoupKit** クラスライブラリにあります。 を作成 `NSUserActivity` し、Siri と検索に関連するさまざまなプロパティを設定します。
 
 ```csharp
 public static string ViewMenuActivityType = "com.xamarin.SoupChef.viewMenu";
@@ -148,13 +148,13 @@ public static NSUserActivity ViewMenuActivity {
 
 特に次の点に注意してください。
 
-- `EligibleForPrediction` を `true` に設定すると、Siri がこのアクティビティを予測してショートカットとして表示できることを示します。
-- [`ContentAttributeSet`](xref:Foundation.NSUserActivity.ContentAttributeSet)配列は、iOS の検索結果に `NSUserActivity` を含めるために使用される標準[`CSSearchableItemAttributeSet`](xref:CoreSpotlight.CSSearchableItemAttributeSet)です。
-- [`SuggestedInvocationPhrase`](xref:Foundation.NSUserActivity.SuggestedInvocationPhrase)は、ショートカットに語句を割り当てるときに、siri がユーザーに候補として提示する語句です。
+- `EligibleForPrediction`をに設定する `true` と、siri がこのアクティビティを予測してショートカットとして表示できることを示します。
+- [`ContentAttributeSet`](xref:Foundation.NSUserActivity.ContentAttributeSet)配列は、 [`CSSearchableItemAttributeSet`](xref:CoreSpotlight.CSSearchableItemAttributeSet) `NSUserActivity` iOS の検索結果にを含めるために使用される標準です。
+- [`SuggestedInvocationPhrase`](xref:Foundation.NSUserActivity.SuggestedInvocationPhrase) は、ショートカットに語句を割り当てるときに、Siri がユーザーに候補として提示する語句です。
 
 ### <a name="handling-an-nsuseractivity-shortcut"></a>NSUserActivity ショートカットの処理
 
-ユーザーによって呼び出される `NSUserActivity` ショートカットを処理するには、iOS アプリケーションで `AppDelegate` クラスの `ContinueUserActivity` メソッドをオーバーライドし、渡された `NSUserActivity` オブジェクトの `ActivityType` フィールドに基づいて応答する必要があります。
+`NSUserActivity`ユーザーによって呼び出されたショートカットを処理するには、iOS アプリケーションで `ContinueUserActivity` クラスのメソッドをオーバーライド `AppDelegate` し、渡されたオブジェクトのフィールドに基づいて応答する必要があり `ActivityType` `NSUserActivity` ます。
 
 ```csharp
 public override bool ContinueUserActivity(UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -169,7 +169,7 @@ public override bool ContinueUserActivity(UIApplication application, NSUserActiv
 }
 ```
 
-このメソッドは `HandleUserActivity`を呼び出し、メニュー画面にセグエを検索して呼び出します。
+このメソッドは `HandleUserActivity` 、セグエをメニュー画面に検索して呼び出す、を呼び出します。
 
 ```csharp
 void HandleUserActivity()
@@ -188,7 +188,7 @@ void HandleUserActivity()
 
 ### <a name="assigning-a-phrase-to-an-nsuseractivity"></a>NSUserActivity に語句を割り当てる
 
-`NSUserActivity`に語句を割り当てるには、iOS**設定**アプリを開き、 **Siri & 検索 > マイショートカット**を選択します。 次に、ショートカット (この場合は "Order ランチ") を選択して、語句を記録します。
+に語句を割り当てるには `NSUserActivity` 、IOS **設定** アプリを開き、 **siri & 検索 > マイショートカット**を選択します。 次に、ショートカット (この場合は "Order ランチ") を選択して、語句を記録します。
 
 Siri を呼び出し、この語句を使用すると、スープ Chef がメニュー画面に表示されます。
 
@@ -200,14 +200,14 @@ Siri を呼び出し、この語句を使用すると、スープ Chef がメニ
 
 Xcode 10 を使用して、カスタムインテントを作成します。 [SoupChef リポジトリ](https://github.com/xamarin/ios-samples/tree/master/ios12/SoupChef)では、カスタムインテントは**OrderSoupIntentCodeGen**プロジェクトで定義されています。 このプロジェクトを開き、 **OrderSoup**インテントを表示する**プロジェクトナビゲーター**でインテントを選択し**ます**。
 
-次の点に注意してください。
+次に注意してください。
 
-- 目的には**Order**の**カテゴリ**があります。 カスタムインテントに使用できる定義済みのカテゴリがいくつかあります。カスタムインテントによって有効になるタスクに最も近いものを選択します。 これはスープ注文アプリであるため、 **OrderSoupIntent**は**Order**を使用します。
-- **[確認]** チェックボックスは、siri がタスクを実行する前に確認を要求する必要があるかどうかを示します。 スープ Chef の**注文スープ**のインテントでは、ユーザーが購入しているため、このオプションは有効になっています。
-- . Intentdefinition ファイルの**parameters**セクションでは、ショートカットに関連するパラメーターを定義します。 スープの順序を設定するには、スープ Chef はスープの種類、その数量、および関連するオプションを認識している必要があります。
-各パラメーターには型があります。定義済みの型で表すことができないパラメーターは、**カスタム**として設定されます。
-- ショートカットの**種類**のインターフェイスでは、ショートカットを提案するときに siri で使用できるさまざまなパラメーターの組み合わせについて説明しています。 関連する**タイトル**と**サブタイトル**セクションでは、ユーザーに推奨されるショートカットを提示するときに siri が使用するメッセージを定義できます。
-- [**バックグラウンド実行をサポート**する] チェックボックスをオンにすると、ユーザーの操作を続けるためにアプリを開くことなく実行できるショートカットを選択できます。
+- 目的には**Order**の**カテゴリ**があります。 カスタムインテントに使用できる定義済みのカテゴリがいくつかあります。カスタムインテントによって有効になるタスクに最も近いものを選択します。 これはスープ注文アプリであるため、 **OrderSoupIntent** は **Order**を使用します。
+- [ **確認** ] チェックボックスは、siri がタスクを実行する前に確認を要求する必要があるかどうかを示します。 スープ Chef の **注文スープ** のインテントでは、ユーザーが購入しているため、このオプションは有効になっています。
+- . Intentdefinition ファイルの **parameters** セクションでは、ショートカットに関連するパラメーターを定義します。 スープの順序を設定するには、スープ Chef はスープの種類、その数量、および関連するオプションを認識している必要があります。
+各パラメーターには型があります。定義済みの型で表すことができないパラメーターは、 **カスタム**として設定されます。
+- ショートカットの **種類** のインターフェイスでは、ショートカットを提案するときに siri で使用できるさまざまなパラメーターの組み合わせについて説明しています。 関連する **タイトル** と **サブタイトル** セクションでは、ユーザーに推奨されるショートカットを提示するときに siri が使用するメッセージを定義できます。
+- [ **バックグラウンド実行をサポート** する] チェックボックスをオンにすると、ユーザーの操作を続けるためにアプリを開くことなく実行できるショートカットを選択できます。
 
 ### <a name="defining-custom-intent-responses"></a>カスタムインテント応答の定義
 
@@ -215,9 +215,9 @@ Xcode 10 を使用して、カスタムインテントを作成します。 [Sou
 
 **OrderSoup**インテントの応答定義では、次の点に注意してください。
 
-- 応答の**プロパティ**を使用して、ユーザーに返されるメッセージをカスタマイズできます。 **OrderSoup**インテント応答には、**スープ**プロパティと**waitTime**プロパティがあります。
+- 応答の **プロパティ** を使用して、ユーザーに返されるメッセージをカスタマイズできます。 **OrderSoup**インテント応答には、**スープ**プロパティと**waitTime**プロパティがあります。
 - **応答テンプレート**は、インテントのタスクが完了した後の状態を示すために使用できる、さまざまな成功および失敗メッセージを指定します。
-- 成功を示す応答では、 **[成功]** チェックボックスをオンにする必要があります。
+- 成功を示す応答では、[ **成功** ] チェックボックスをオンにする必要があります。
 - **OrderSoupIntent** success 応答では、**スープ**プロパティと**waitTime**プロパティを使用して、スープの順序の準備がいつ完了するかを説明するわかりやすいメッセージを提供します。
 
 ### <a name="generating-code-for-the-custom-intent"></a>カスタムインテントのコードを生成する
@@ -227,80 +227,80 @@ Xcode 10 を使用して、カスタムインテントを作成します。 [Sou
 生成されたコードを表示するには:
 
 - **Appdelegate. m**を開きます。
-- カスタムインテントのヘッダーファイルにインポートを追加する: `#import "OrderSoupIntent.h"`
-- クラスの任意のメソッドで、`OrderSoupIntent`への参照を追加します。
-- `OrderSoupIntent` を右クリックし、 **[定義へ移動]** を選択します。
-- 新しく開かれたファイル**OrderSoupIntent**を右クリックし、 **[Finder で表示]** を選択します。
-- これにより、生成されたコードを含む .h ファイルと m ファイルを含む**ファインダー**ウィンドウが開きます。
+- カスタムインテントのヘッダーファイルにインポートを追加します。 `#import "OrderSoupIntent.h"`
+- クラスの任意のメソッドに、への参照を追加 `OrderSoupIntent` します。
+- を右クリック `OrderSoupIntent` し、[ **定義へ移動**] をクリックします。
+- 新しく開かれたファイル **OrderSoupIntent**を右クリックし、[ **Finder で表示**] を選択します。
+- これにより、生成されたコードを含む .h ファイルと m ファイルを含む **ファインダー** ウィンドウが開きます。
 
 生成されるコードは次のとおりです。
 
-- `OrderSoupIntent`: カスタムインテントを表すクラス。
-- `OrderSoupIntentHandling` –インテントを実行する必要があるかどうかを確認するために使用されるメソッドと、その意図を実際に実行するメソッドを定義するプロトコル。
-- `OrderSoupIntentResponseCode` –さまざまな応答の状態を定義する列挙型です。
-- `OrderSoupIntentResponse`: インテントの実行に対する応答を表すクラス。
+- `OrderSoupIntent` : カスタムインテントを表すクラス。
+- `OrderSoupIntentHandling` –インテントを実行する必要があることを確認するために使用されるメソッドと、その意図を実際に実行するメソッドを定義するプロトコル。
+- `OrderSoupIntentResponseCode` –さまざまな応答の状態を定義する列挙型。
+- `OrderSoupIntentResponse` –インテントの実行に対する応答を表すクラス。
 
 ### <a name="creating-a-binding-to-the-custom-intent"></a>カスタムインテントへのバインドの作成
 
-Xcode によって生成されたコードを Xamarin iOS アプリで使用するC#には、そのバインドを作成します。
+Xcode によって生成されたコードを Xamarin iOS アプリで使用するには、C# のバインドを作成します。
 
-#### <a name="creating-a-static-library-and-c-binding-definitions"></a>スタティックライブラリとC#バインディング定義の作成
+#### <a name="creating-a-static-library-and-c-binding-definitions"></a>スタティックライブラリと C# バインディング定義の作成
 
 [SoupChef リポジトリ](https://github.com/xamarin/ios-samples/tree/master/ios12/SoupChef)で、 **OrderSoupIntentStaticLib**フォルダーを参照して、 **OrderSoupIntentStaticLib**プロジェクトを開きます。これを実行します。
 
-この**Cocoa タッチスタティックライブラリ**プロジェクトには、Xcode によって生成された**OrderSoupIntent**ファイルと**OrderSoupIntent**ファイルが含まれています。
+この **Cocoa タッチスタティックライブラリ** プロジェクトには、Xcode によって生成された **OrderSoupIntent** ファイルと **OrderSoupIntent** ファイルが含まれています。
 
 #### <a name="configuring-the-static-library-project-build-settings"></a>スタティックライブラリプロジェクトのビルド設定の構成
 
-Xcode**プロジェクトナビゲーター**で、最上位レベルのプロジェクト**OrderSoupIntentStaticLib**を選択し、**ビルドフェーズ** に移動して > のコンパイル をクリックします。
-**OrderSoupIntent** ( **OrderSoupIntent**をインポートする) がここに表示されていることに注意してください。 「**リンクバイナリとライブラリ**」で、**インテント**と**基盤**が含まれていることに注意してください。
+Xcode **プロジェクトナビゲーター**で、最上位レベルのプロジェクト **OrderSoupIntentStaticLib**を選択し、[ **ビルドフェーズ**] に移動して [> のコンパイル] をクリックします。
+**OrderSoupIntent** ( **OrderSoupIntent**をインポートする) がここに表示されていることに注意してください。 「 **リンクバイナリとライブラリ**」で、 **インテント** と **基盤** が含まれていることに注意してください。
 これらの設定を適用すると、フレームワークは正しくビルドされます。
 
-#### <a name="building-the-static-library-and-generating-c-bindings-definitions"></a>スタティックライブラリの構築とバインディングC#定義の生成
+#### <a name="building-the-static-library-and-generating-c-bindings-definitions"></a>スタティックライブラリの構築と C# バインディング定義の生成
 
-スタティックライブラリをビルドし、バインドC#の定義を生成するには、次の手順を実行します。
+スタティックライブラリをビルドし、それに対して C# バインディング定義を生成するには、次の手順を実行します。
 
-- [マジックペンをインストール](https://docs.microsoft.com/xamarin/cross-platform/macios/binding/objective-sharpie/get-started?context=xamarin/mac#installing-objective-sharpie)します。このツールは、Xcode によって作成された .h ファイルと m ファイルからバインド定義を生成するために使用されます。
+- [マジックペンをインストール](../../../cross-platform/macios/binding/objective-sharpie/get-started.md?context=xamarin%252fmac#installing-objective-sharpie)します。このツールは、Xcode によって作成された .h ファイルと m ファイルからバインド定義を生成するために使用されます。
 
 - Xcode 10 コマンドラインツールを使用するようにシステムを構成します。
 
   > [!WARNING]
   > 選択したコマンドラインツールを更新すると、システムにインストールされている Xcode のすべてのバージョンに影響します。 スープ Chef サンプルアプリの使用が完了したら、この設定を元の構成に戻すようにしてください。
 
-  - Xcode で、[ **Xcode] > [> 設定**] の順に選択し、 **[コマンドラインツール]** を、システムで利用可能な最新の Xcode 10 インストールに設定します。
+  - Xcode で、[ **Xcode] > [> 設定** ] の順に選択し、[ **コマンドラインツール** ] を、システムで利用可能な最新の Xcode 10 インストールに設定します。
 
-- ターミナルで、 **OrderSoupIntentStaticLib**ディレクトリに `cd` します。
+- ターミナルで、 `cd` **OrderSoupIntentStaticLib** ディレクトリにします。
 
-- 次のようにビルドする `make`を入力します。
+- 「 `make` 」と入力します。
 
   - スタティックライブラリ、 **libOrderSoupIntentStaticLib**
-  - **Bo**出力ディレクトリで、バインドC#の定義を次に示します。
+  - **Bo**出力ディレクトリで、C# のバインディング定義を次に示します。
     - **ApiDefinitions.cs**
     - **StructsAndEnums.cs**
 
-このスタティックライブラリとそれに関連付けられているバインディング定義に依存する**OrderSoupIntentBindings**プロジェクトは、これらの項目を自動的にビルドします。
+このスタティックライブラリとそれに関連付けられているバインディング定義に依存する **OrderSoupIntentBindings** プロジェクトは、これらの項目を自動的にビルドします。
 ただし、上記のプロセスを通じて手動で実行すると、予期したとおりにビルドされます。
 
-スタティックライブラリの作成と、目的のマジックペンを使用したバインディングC#定義の作成の詳細については、「 [IOS の目的 C ライブラリのバインド](https://docs.microsoft.com/xamarin/ios/platform/binding-objective-c/walkthrough?tabs=vsmac#creating-a-static-library)」のチュートリアルを参照してください。
+スタティックライブラリの作成と、目標マジックペンを使用した C# バインディング定義の作成の詳細については、「 [iOS の目的 C ライブラリのバインド](../binding-objective-c/walkthrough.md?tabs=vsmac#creating-a-static-library) 」のチュートリアルを参照してください。
 
 #### <a name="creating-a-bindings-library"></a>バインドライブラリの作成
 
-スタティックライブラリとC#バインドの定義を作成した場合、Xamarin の Xcode によって生成されるインテント関連のコードを使用するために必要な残りの部分は、バインドライブラリです。
+スタティックライブラリと C# バインドの定義を作成した場合、Xamarin の Xcode によって生成されるインテント関連のコードを使用するために必要な残りの部分は、バインドライブラリです。
 
-[スープ Chef リポジトリ](https://github.com/xamarin/ios-samples/tree/master/ios12/SoupChef)で、 **SoupChef**ファイルを開きます。 特に、このソリューションには**OrderSoupIntentBinding**が含まれています。これは、上で生成されたスタティックライブラリのバインドライブラリです。
+[スープ Chef リポジトリ](https://github.com/xamarin/ios-samples/tree/master/ios12/SoupChef)で、 **SoupChef**ファイルを開きます。 特に、このソリューションには **OrderSoupIntentBinding**が含まれています。これは、上で生成されたスタティックライブラリのバインドライブラリです。
 
 特に、このプロジェクトには次のものが含まれることに注意してください。
 
-- **ApiDefinitions.cs** –目標マジックペンによって上に生成され、このプロジェクトに追加されるファイルです。 このファイルの**ビルドアクション**は**Objcbindingapidefinition**に設定されています。
-- **StructsAndEnums.cs** –前の手順で生成された別のファイルで、このプロジェクトに追加されます。 このファイルの**ビルドアクション**は**Objcbindingcoresource**に設定されています。
+- **ApiDefinitions.cs** –目標マジックペンによって上に生成され、このプロジェクトに追加されるファイルです。 このファイルの **ビルドアクション** は **Objcbindingapidefinition**に設定されています。
+- **StructsAndEnums.cs** –前の手順で生成された別のファイルで、このプロジェクトに追加されます。 このファイルの **ビルドアクション** は **Objcbindingcoresource**に設定されています。
 - 上に構築されたスタティックライブラリ**libOrderSoupIntentStaticLib**への**ネイティブ参照**。
 
 > [!NOTE]
-> **ApiDefinitions.cs**と**StructsAndEnums.cs**の両方に、`[Watch (5,0), iOS (12,0)]`などの属性が含まれています。 これらの属性は、目標マジックペンによって生成されたものであり、このプロジェクトに必要ではないため、コメントアウトされています。
+> **ApiDefinitions.cs**と**StructsAndEnums.cs**の両方に、のような属性が含まれて `[Watch (5,0), iOS (12,0)]` います。 これらの属性は、目標マジックペンによって生成されたものであり、このプロジェクトに必要ではないため、コメントアウトされています。
 
-バインドライブラリの作成の詳細については、「iOS の[目的 C ライブラリのバインド](https://docs.microsoft.com/xamarin/ios/platform/binding-objective-c/walkthrough?tabs=vsmac#create-a-xamarinios-binding-project)」のチュートリアルを参照してください。 C#
+C# バインドライブラリの作成の詳細については、「iOS の [目的 C ライブラリのバインド](../binding-objective-c/walkthrough.md?tabs=vsmac#create-a-xamarinios-binding-project) 」を参照してください。
 
-**SoupChef**プロジェクトには**OrderSoupIntentBinding**への参照が含まれていることに注意してください。 C#これは、それに含まれるクラス、インターフェイス、列挙型にアクセスできるようになったことを意味します。
+**SoupChef**プロジェクトには**OrderSoupIntentBinding**への参照が含まれていることに注意してください。これは、C# では、次のクラス、インターフェイス、および列挙型にアクセスできるようになったことを意味します。
 
 - `OrderSoupIntent`
 - `OrderSoupIntentHandling`
@@ -309,16 +309,16 @@ Xcode**プロジェクトナビゲーター**で、最上位レベルのプロ�
 
 ### <a name="adding-the-intentdefinition-file-to-your-solution"></a>ソリューションへの intentdefinition ファイルの追加
 
-C# **SoupChef**ソリューションでは、 **SoupKit**プロジェクトに、アプリとその拡張機能間で共有されるコードが含まれています。 **インテントの intentdefinition**ファイルが**SoupKit**の**基本**ディレクトリに配置されており、**コンテンツ**の**ビルドアクション**があります。 ビルドプロセスは、このファイルをスープ Chef アプリケーションバンドルにコピーします。このバンドルは、アプリが正常に機能するために必要です。
+C# **SoupChef** ソリューションでは、 **SoupKit** プロジェクトに、アプリとその拡張機能間で共有されるコードが含まれています。 **インテントの intentdefinition**ファイルが**SoupKit**の**基本**ディレクトリに配置されており、**コンテンツ**の**ビルドアクション**があります。 ビルドプロセスは、このファイルをスープ Chef アプリケーションバンドルにコピーします。このバンドルは、アプリが正常に機能するために必要です。
 
 ### <a name="donating-an-intent"></a>インテントの寄付
 
 Siri がショートカットを提案するには、まずショートカットが関連するタイミングを理解している必要があります。
 
-Siri にこの理解を与えるために、スープ Chef _donates_は、ユーザーがスープ注文を行うたびに siri を意図しています。 この寄付に基づき、寄付された場合は、寄付された場合は、それに含まれるパラメーターは、将来ショートカットを提案するタイミングを学習します。
+Siri にこの理解を与えるために、スープ Chef _donates_ は、ユーザーがスープ注文を行うたびに siri を意図しています。 この寄付に基づき、寄付された場合は、寄付された場合は、それに含まれるパラメーターは、将来ショートカットを提案するタイミングを学習します。
 
-**SoupChef**は、`SoupOrderDataManager` クラスを使用して寄付を配置します。
-ユーザーのスープ order を配置するために呼び出されると、`PlaceOrder` メソッドは[`DonateInteraction`](xref:Intents.INInteraction.DonateInteraction*)を呼び出します。
+**SoupChef** は、クラスを使用して `SoupOrderDataManager` 寄付を配置します。
+ユーザーのスープ order を配置するために呼び出されると、メソッドはを `PlaceOrder` 呼び出し [`DonateInteraction`](xref:Intents.INInteraction.DonateInteraction*) ます。
 
 ```csharp
 void DonateInteraction(Order order)
@@ -332,11 +332,11 @@ void DonateInteraction(Order order)
 }
 ```
 
-インテントをフェッチした後は、 [`INInteraction`](xref:Intents.INInteraction)にラップされます。
-`INInteraction` には、 [`Identifier`](xref:Intents.INInteraction.Identifier*)が指定されています。
+インテントをフェッチした後は、にラップされ [`INInteraction`](xref:Intents.INInteraction) ます。
+が指定されています。 `INInteraction`[`Identifier`](xref:Intents.INInteraction.Identifier*)
 注文の一意の ID に一致します (これは、後で無効になっているインテント寄付を削除するときに役立ちます)。 その後、対話は Siri に寄付されます。
 
-`order.Intent` getter への呼び出しは、その `Quantity`、`Soup`、`Options`、およびイメージを設定することによって、注文を表す `OrderSoupIntent` をフェッチします。また、ユーザーが Siri がインテントと関連付けられる語句を記録するときに、候補として使用する呼び出しフレーズを取得します。:
+Getter への呼び出しは `order.Intent` `OrderSoupIntent` 、その、、、およびの各イメージを設定することによって、注文を表すをフェッチし `Quantity` `Soup` `Options` ます。また、ユーザーが siri が意図と関連付けられる語句を記録するときに、候補として使用する呼び出しフレーズを取得します。
 
 ```csharp
 public OrderSoupIntent Intent
@@ -372,7 +372,7 @@ public OrderSoupIntent Intent
 
 Siri が立たないや紛らわしいショートカットの候補を作成しないように、有効ではなくなった寄付を削除することが重要です。
 
-スープ Chef では、[**構成] メニュー**画面を使用して、メニュー項目を使用不可としてマークできます。 Siri では、利用できないメニュー項目を並べ替えるためのショートカットが提案されなくなりました。そのため、使用できなくなったメニュー項目の寄付は、`SoupMenuManager` の `RemoveDonation` 方法によって削除されます。 これを行うには、次のようにします。
+スープ Chef では、[ **構成] メニュー** 画面を使用して、メニュー項目を使用不可としてマークできます。 Siri では、使用できなくなったメニュー項目を並べ替えるためのショートカットが提案されなくなりました。そのため、 `RemoveDonation` のメソッドは、 `SoupMenuManager` 使用できなくなったメニュー項目の寄付を削除します。 これを行うには、次のようにします。
 
 - 現在使用できないメニュー項目に関連付けられている注文を検索しています。
 - 識別子を取得しています。
@@ -417,9 +417,9 @@ Siri がインテントを呼び出すと実行されるコードは、インテ
 
 ##### <a name="soupchefintents-infoplist"></a>SoupChefIntents – Info. plist
 
-**SoupChefIntents**プロジェクトの**情報 Plist**は、**バンドル識別子**を `com.xamarin.SoupChef.SoupChefIntents`として定義します。
+**SoupChefIntents**プロジェクトの**情報 Plist**は、**バンドル識別子**をとして定義します `com.xamarin.SoupChef.SoupChefIntents` 。
 
-また、このファイルには次の**情報**も含まれています。
+また、このファイルには次の **情報** も含まれています。
 
 ```xml
 <key>NSExtension</key>
@@ -444,14 +444,14 @@ Siri がインテントを呼び出すと実行されるコードは、インテ
 
 上記の情報を次に示します **。**
 
-- `IntentsRestrictedWhileLocked` には、デバイスのロックが解除されている場合にのみ処理する必要があるインテントが一覧表示されます。
-- `IntentsSupported` は、この拡張機能によって処理されるインテントの一覧を表示します。
-- `NSExtensionPointIdentifier` では、アプリ拡張機能の種類を指定します (詳細については、 [Apple のドキュメント](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/AppExtensionKeys.html#//apple_ref/doc/uid/TP40014212-SW15)を参照してください)。
-- `NSExtensionPrincipalClass` は、この拡張機能でサポートされているインテントを処理するために使用する必要があるクラスを指定します。
+- `IntentsRestrictedWhileLocked` デバイスのロックが解除された場合にのみ処理する必要があるインテントを一覧表示します。
+- `IntentsSupported` この拡張機能によって処理されるインテントが一覧表示されます。
+- `NSExtensionPointIdentifier` アプリ拡張機能の種類を指定します (詳細については、 [Apple のドキュメント](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/AppExtensionKeys.html#//apple_ref/doc/uid/TP40014212-SW15) を参照してください)。
+- `NSExtensionPrincipalClass` この拡張機能でサポートされているインテントを処理するために使用する必要があるクラスを指定します。
 
 ##### <a name="soupchefintents-entitlementsplist"></a>SoupChefIntents –権利
 
-**SoupChefIntents**プロジェクトの**権利 plist**には、**アプリグループ**の機能があります。 この機能は、 **SoupChef**プロジェクトと同じアプリグループを使用するように構成されています。
+**SoupChefIntents**プロジェクトの**権利 plist**には、**アプリグループ**の機能があります。 この機能は、 **SoupChef** プロジェクトと同じアプリグループを使用するように構成されています。
 
 ```xml
 <key>com.apple.security.application-groups</key>
@@ -460,7 +460,7 @@ Siri がインテントを呼び出すと実行されるコードは、インテ
 </array>
 ```
 
-スープ Chef は `NSUserDefaults`でデータを永続化します。 アプリとアプリ拡張機能の間でデータを共有するために、それらのアプリケーションは、その**権利の plist**ファイルで同じアプリグループを参照します。
+スープ Chef は、を使用してデータを永続化 `NSUserDefaults` します。 アプリとアプリ拡張機能の間でデータを共有するために、それらのアプリケーションは、その **権利の plist** ファイルで同じアプリグループを参照します。
 
 > [!NOTE]
 > **SoupChefIntents**プロジェクトのビルド構成によって、**カスタム権利**が**plist**に設定されます。
@@ -469,7 +469,7 @@ Siri がインテントを呼び出すと実行されるコードは、インテ
 
 インテント拡張は、カスタムインテントに基づいて、ショートカットに必要なバックグラウンドタスクを実行します。
 
-Siri は、`IntentHandler` クラスの[`GetHandler`](xref:Intents.INExtension.GetHandler*)メソッド (`NSExtensionPrincipalClass`として定義されている) を**呼び出して、** `OrderSoupIntentHandling`を拡張するクラスのインスタンスを取得します。これは、`OrderSoupIntent`を処理するために使用できます。
+Siri は、 [`GetHandler`](xref:Intents.INExtension.GetHandler*) クラスのメソッド `IntentHandler` (. **.. plist** で定義されている) を呼び出し、を `NSExtensionPrincipalClass` 拡張するクラスのインスタンスを取得し `OrderSoupIntentHandling` ます。これは、を処理するために使用でき `OrderSoupIntent` ます。
 
 ```csharp
 [Register("IntentHandler")]
@@ -488,15 +488,15 @@ public class IntentHandler : INExtension
 }
 ```
 
-共有コードの**SoupKit**プロジェクトで定義されている `OrderSoupIntentHandler`は、次の2つの重要なメソッドを実装します。
+`OrderSoupIntentHandler`共有コードの **SoupKit** プロジェクトで定義されているは、次の2つの重要なメソッドを実装します。
 
-- `ConfirmOrderSoup` –インテントに関連付けられているタスクを実際に実行する必要があるかどうかを確認します。
+- `ConfirmOrderSoup` –インテントに関連付けられたタスクを実際に実行する必要があるかどうかを確認します。
 - `HandleOrderSoup` –スープの順序を配置し、渡された完了ハンドラーを呼び出してユーザーに応答します。
 
 #### <a name="handling-an-ordersoupintent-that-opens-the-app"></a>アプリを開く OrderSoupIntent の処理
 
 アプリでは、バックグラウンドで実行されないインテントを正しく処理する必要があります。
-これらは、`AppDelegate`の `ContinueUserActivity` メソッドで `NSUserActivity` ショートカットと同じように処理されます。
+これらは、 `NSUserActivity` のメソッドで、ショートカットと同じように処理され `ContinueUserActivity` `AppDelegate` ます。
 
 ```csharp
 public override bool ContinueUserActivity(UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -519,9 +519,9 @@ public override bool ContinueUserActivity(UIApplication application, NSUserActiv
 
 #### <a name="soupchefintentsui-infoplist"></a>SoupChefIntentsUI – Info. plist
 
-**SoupChefIntentsUI**プロジェクトの**情報 Plist**は、**バンドル識別子**を `com.xamarin.SoupChef.SoupChefIntentsui`として定義します。
+**SoupChefIntentsUI**プロジェクトの**情報 Plist**は、**バンドル識別子**をとして定義します `com.xamarin.SoupChef.SoupChefIntentsui` 。
 
-また、このファイルには次の**情報**も含まれています。
+また、このファイルには次の **情報** も含まれています。
 
 ```xml
 <key>NSExtension</key>
@@ -543,8 +543,8 @@ public override bool ContinueUserActivity(UIApplication application, NSUserActiv
 
 上記の情報を次に示します **。**
 
-- `IntentsSupported` は、`OrderSoupIntent` がこのインテント UI 拡張機能によって処理されることを示します。
-- `NSExtensionPointIdentifier` では、アプリ拡張機能の種類を指定します (詳細については、 [Apple のドキュメント](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/AppExtensionKeys.html#//apple_ref/doc/uid/TP40014212-SW15)を参照してください)。
+- `IntentsSupported` が `OrderSoupIntent` このインテント UI 拡張によって処理されることを示します。
+- `NSExtensionPointIdentifier` アプリ拡張機能の種類を指定します (詳細については、 [Apple のドキュメント](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/AppExtensionKeys.html#//apple_ref/doc/uid/TP40014212-SW15) を参照してください)。
 - `NSExtensionMainStoryboard` この拡張機能のプライマリインターフェイスを定義するストーリーボードを指定します
 
 #### <a name="soupchefintentsui-entitlementsplist"></a>SoupChefIntentsUI –権利
@@ -553,19 +553,19 @@ public override bool ContinueUserActivity(UIApplication application, NSUserActiv
 
 ### <a name="creating-the-user-interface"></a>ユーザー インターフェイスの作成
 
-**SoupChefIntentsUI**の**情報**は、`NSExtensionMainStoryboard` キーを `MainInterface`に設定するため、 **mainui**拡張機能のインターフェイスを定義します。
+**SoupChefIntentsUI**の**情報**によってキーがに設定されるため、 `NSExtensionMainStoryboard` `MainInterface` **MAININTERACE storyboard**ファイルはインテント UI 拡張機能のインターフェイスを定義します。
 
 このストーリーボードには、 **Intentviewcontroller**型の単一のビューコントローラーがあります。 2つのビューを参照します。
 
-- **invoiceView**(型 `InvoiceView`)
-- **confirmationView**(型 `ConfirmOrderView`)
+- **invoiceView**、型 `InvoiceView`
+- **confirmationView**、型 `ConfirmOrderView`
 
 > [!NOTE]
-> **InvoiceView**と**confirmationView**のインターフェイスは、**メインストーリーボード**でセカンダリビューとして定義されています。 Visual Studio for Mac と Visual Studio 2017 の iOS デザイナーでは、セカンダリビューの表示や編集はサポートされていません。これを行うには、Xcode の Interface Builder で**メインのストーリーボード**を開きます。
+> **InvoiceView**と**confirmationView**のインターフェイスは、**メインストーリーボード**でセカンダリビューとして定義されています。 Visual Studio for Mac と Visual Studio 2017 の iOS デザイナーでは、セカンダリビューの表示や編集はサポートされていません。これを行うには、Xcode の Interface Builder で **メインのストーリーボード** を開きます。
 
-`IntentViewController` は[`IINUIHostedViewControlling`](xref:IntentsUI.IINUIHostedViewControlling)を実装します
+`IntentViewController` を実装します。 [`IINUIHostedViewControlling`](xref:IntentsUI.IINUIHostedViewControlling)
 Siri インテントを操作するときにカスタムインターフェイスを提供するために使用されるインターフェイス。 [`ConfigureView`](xref:IntentsUI.INUIHostedViewControlling_Extensions.ConfigureView*)
-メソッドは、相互作用が確認されている ([`INIntentHandlingStatus.Ready`](xref:Intents.INIntentHandlingStatus)) か正常に実行されたか ([`INIntentHandlingStatus.Success`](xref:Intents.INIntentHandlingStatus)) に応じて、確認または請求書を表示するインターフェイスをカスタマイズするために呼び出されます。
+メソッドは、相互作用が確認されている () か、 [`INIntentHandlingStatus.Ready`](xref:Intents.INIntentHandlingStatus) 正常に実行されたか () に応じて、確認または請求書を表示するインターフェイスをカスタマイズするために呼び出され [`INIntentHandlingStatus.Success`](xref:Intents.INIntentHandlingStatus) ます。
 
 ```csharp
 [Export("configureViewForParameters:ofInteraction:interactiveBehavior:context:completion:")]
@@ -594,13 +594,13 @@ public void ConfigureView(
 ```
 
 > [!TIP]
-> `ConfigureView` 方法の詳細については、Apple の WWDC 2017 プレゼンテーションを視聴してください。 [SiriKit の新機能](https://developer.apple.com/videos/play/wwdc2017/214/)については、こちらをご覧ください。
+> メソッドの詳細については、 `ConfigureView` Apple の WWDC 2017 プレゼンテーションを視聴してください。 [SiriKit の新機能](https://developer.apple.com/videos/play/wwdc2017/214/)については、こちらをご覧ください。
 
 ## <a name="creating-a-voice-shortcut"></a>音声ショートカットの作成
 
 スープ Chef には、各注文に音声ショートカットを割り当てるインターフェイスが用意されており、Siri でスープを注文できます。 実際、音声ショートカットの記録と割り当てに使用されるインターフェイスは iOS によって提供され、カスタムコードはほとんど必要ありません。
 
-`OrderDetailViewController`では、ユーザーがテーブルの **[Siri に追加]** 行をタップすると、 [`RowSelected`](xref:UIKit.UITableViewSource.RowSelected*)メソッドによって、音声ショートカットを追加または編集するための画面が表示されます。
+では `OrderDetailViewController` 、ユーザーがテーブルの [ **siri に追加** ] 行をタップすると、メソッドによって、 [`RowSelected`](xref:UIKit.UITableViewSource.RowSelected*) 音声ショートカットを追加または編集するための画面が表示されます。
 
 ```csharp
 public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
@@ -631,9 +631,9 @@ public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
 }
 ```
 
-現在表示されている順序に対して既存の音声ショートカットが存在するかどうかに基づいて、`RowSelected` は[`INUIEditVoiceShortcutViewController`](xref:IntentsUI.INUIEditVoiceShortcutViewController)または[`INUIAddVoiceShortcutViewController`](xref:IntentsUI.INUIAddVoiceShortcutViewController)型のビューコントローラーを提示します。
-どちらの場合も、`OrderDetailViewController` 自身をビューコントローラーの `Delegate`として設定します。これが実装されるのはそのためです[`IINUIAddVoiceShortcutViewControllerDelegate`](xref:IntentsUI.IINUIAddVoiceShortcutViewControllerDelegate)
-および[`IINUIEditVoiceShortcutViewControllerDelegate`](xref:IntentsUI.IINUIEditVoiceShortcutViewControllerDelegate)ます。
+現在表示されている順序に対して既存の音声ショートカットが存在するかどうかによって、 `RowSelected` は型または型のビューコントローラーを提示し [`INUIEditVoiceShortcutViewController`](xref:IntentsUI.INUIEditVoiceShortcutViewController) [`INUIAddVoiceShortcutViewController`](xref:IntentsUI.INUIAddVoiceShortcutViewController) ます。
+どちらの場合も、は `OrderDetailViewController` 自身をビューコントローラーのとして設定します。これ `Delegate` は、 [`IINUIAddVoiceShortcutViewControllerDelegate`](xref:IntentsUI.IINUIAddVoiceShortcutViewControllerDelegate)
+および [`IINUIEditVoiceShortcutViewControllerDelegate`](xref:IntentsUI.IINUIEditVoiceShortcutViewControllerDelegate) に対して多くの機能強化が行われました。
 
 ## <a name="testing-on-device"></a>デバイスでのテスト
 
@@ -641,22 +641,22 @@ public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
 
 ### <a name="app-group-app-ids-provisioning-profiles"></a>アプリグループ、アプリ Id、プロビジョニングプロファイル
 
-[Apple Developer Portal](https://developer.apple.com/)の **[Certificates, IDs & Profiles]** セクションで、次の手順を実行します。
+[Apple Developer Portal](https://developer.apple.com/)の [ **Certificates, IDs & Profiles** ] セクションで、次の手順を実行します。
 
 - スープ Chef アプリとその拡張機能との間でデータを共有するためのアプリグループを作成します。 たとえば、 **SoupChef**のようになります。
 
-- アプリケーション Id を3つ作成します。1つはアプリ自体用で、もう1つはインテント拡張用、もう1つはインテント UI 拡張機能用です。 (例:
+- アプリケーション Id を3つ作成します。1つはアプリ自体用で、もう1つはインテント拡張用、もう1つはインテント UI 拡張機能用です。 次に例を示します。
 
   - アプリ: **.Com SoupChef**
-    - このアプリ ID には、SiriKit と**アプリグループ**の機能を割り当てます。
+    - このアプリ ID には、SiriKit と **アプリグループ** の機能を割り当てます。
 
   - インテントの拡張子: **SoupChef. インテント**
-    - このアプリ ID に、**アプリグループ**の機能を割り当てます。
+    - このアプリ ID に、 **アプリグループ** の機能を割り当てます。
 
   - インテント UI 拡張機能: **SoupChef. Intentsui**
     - このアプリ ID には特別な機能は必要ありません。
 
-- 上記のアプリ Id を作成したら、アプリに割り当てられている**アプリグループ**機能とインテント拡張機能を編集して、上で作成した特定のアプリグループを指定します。
+- 上記のアプリ Id を作成したら、アプリに割り当てられている **アプリグループ** 機能とインテント拡張機能を編集して、上で作成した特定のアプリグループを指定します。
 
 - 新しいアプリ Id ごとに1つずつ、3つの新しい開発プロビジョニングプロファイルを作成します。
 
@@ -666,7 +666,7 @@ public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
 
 Visual Studio for Mac または Visual Studio 2017 で、次の操作を行います。
 
-- ソリューション内のさまざまな**情報の plist**ファイルを更新します。 アプリ、インテント拡張、インテント UI 拡張**バンドル識別子**を、上記で定義したアプリ id に設定します。
+- ソリューション内のさまざまな **情報の plist** ファイルを更新します。 アプリ、インテント拡張、インテント UI 拡張 **バンドル識別子** を、上記で定義したアプリ id に設定します。
 
   - アプリ: **.Com SoupChef**
   - インテントの拡張子: **SoupChef. インテント**
@@ -679,28 +679,28 @@ Visual Studio for Mac または Visual Studio 2017 で、次の操作を行い�
 - **SoupChefIntents**プロジェクトの**権利の plist**ファイルを更新します。
   - **アプリグループ**の機能については、上で作成した新しいアプリグループにグループを設定します (上記の例では、 **SoupChef**)。
 
-- 最後に、 **NSUserDefaultsHelper.cs**を開きます。 `AppGroup` 変数を新しいアプリグループの値に設定します (たとえば、`group.com.yourcompanyname.SoupChef`に設定します)。
+- 最後に、 **NSUserDefaultsHelper.cs**を開きます。 変数を `AppGroup` 新しいアプリグループの値に設定します (たとえば、に設定し `group.com.yourcompanyname.SoupChef` ます)。
 
 ### <a name="configuring-the-build-settings"></a>ビルド設定の構成
 
 Visual Studio for Mac または Visual Studio 2017 の場合:
 
-- **SoupChef**プロジェクトのオプションとプロパティを開きます。 **IOS バンドル署名** タブで、**署名 id** を 自動 に設定し、前の手順で作成した新しいアプリ固有のプロビジョニングプロファイルに **プロビジョニングプロファイル** を設定します。
+- **SoupChef**プロジェクトのオプションとプロパティを開きます。 [ **IOS バンドル署名** ] タブで、[ **署名 id** ] を [自動] に設定し、前の手順で作成した新しいアプリ固有のプロビジョニングプロファイルに [ **プロビジョニングプロファイル** ] を設定します。
 
-- **SoupChefIntents**プロジェクトのオプションとプロパティを開きます。 **IOS バンドル署名** タブで、**署名 id** を 自動 に設定し、**プロビジョニングプロファイル** を、上記で作成した新しいインテント拡張機能固有のプロビジョニングプロファイルに設定します。
+- **SoupChefIntents**プロジェクトのオプションとプロパティを開きます。 [ **IOS バンドル署名** ] タブで、[ **署名 id** ] を [自動] に設定し、[ **プロビジョニングプロファイル** ] を、上記で作成した新しいインテント拡張機能固有のプロビジョニングプロファイルに設定します。
 
-- **SoupChefIntentsUI**プロジェクトのオプションとプロパティを開きます。 **IOS バンドル署名** タブで、**署名 id** を 自動 に設定し、**プロビジョニングプロファイル** を、上記で作成した新しいインテント UI 拡張機能固有のプロビジョニングプロファイルに設定します。
+- **SoupChefIntentsUI**プロジェクトのオプションとプロパティを開きます。 [ **IOS バンドル署名** ] タブで、[ **署名 id** ] を [自動] に設定し、[ **プロビジョニングプロファイル** ] を、上記で作成した新しいインテント UI 拡張機能固有のプロビジョニングプロファイルに設定します。
 
 これらの変更を適用すると、アプリは iOS デバイスで実行されます。
 
 ### <a name="automatic-provisioning"></a>自動プロビジョニング
 
-[自動プロビジョニング](https://docs.microsoft.com/xamarin/ios/get-started/installation/device-provisioning/automatic-provisioning)を使用すると、これらのプロビジョニングタスクの多くを IDE で直接行うことができます。
-ただし、自動プロビジョニングでは、アプリグループは設定されません。 使用するアプリグループの名前で、権利の plist ファイルを手動で構成する必要があり**ます。** Apple Developer Portal にアクセスしてアプリグループを作成し、そのアプリグループを自動プロビジョニングによって作成された各アプリ ID に割り当て、再生成します。新しく作成されたアプリグループを含むプロビジョニングプロファイル (アプリ、インテント拡張、インテント UI 拡張)。これらをダウンロードしてインストールします。
+[自動プロビジョニング](../../get-started/installation/device-provisioning/automatic-provisioning.md)を使用すると、これらのプロビジョニングタスクの多くを IDE で直接行うことができます。
+ただし、自動プロビジョニングでは、アプリグループは設定されません。 使用するアプリグループの名前で、権利の plist ファイルを手動で構成する必要があり **ます。** Apple Developer Portal にアクセスしてアプリグループを作成し、そのアプリグループを自動プロビジョニングによって作成された各アプリ ID に割り当て、プロビジョニングプロファイル (アプリ、インテント拡張、インテント UI 拡張) を再生成して、新しく作成したアプリグループを含め
 
 ## <a name="related-links"></a>関連リンク
 
-- [スープ Chef (Xamarin)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios12-soupchef)
+- [スープ Chef (Xamarin)](/samples/xamarin/ios-samples/ios12-soupchef)
 - [スープ Chef (Swift)](https://developer.apple.com/documentation/sirikit/accelerating_app_interactions_with_shortcuts?language=objc)
 - [SiriKit (Apple)](https://developer.apple.com/sirikit/)
 - [Siri ショートカットの概要– WWDC 2018](https://developer.apple.com/videos/play/wwdc2018/211/)

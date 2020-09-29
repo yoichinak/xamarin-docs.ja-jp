@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: b311f3121ea6a58975d41b9690e31a44daa0951e
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: a9e555c6e4713c4d34f4e14ea29164a769bc3db9
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84573704"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435633"
 ---
 # <a name="tvos-app-distribution-overview"></a>tvOS アプリの配布の概要
 
@@ -36,7 +36,7 @@ Apple では、tvOS でサポートされている tvOS アプリを配布する
 
 これは、tvOS アプリが Apple TV デバイス上のコンシューマーに配布される主な方法です。 Apple TV App Store に送信されたすべてのアプリは、Apple による承認を必要とします。
 
-アプリを App Store に提出するには、*iTunes Connect* というポータルを使用します。 次のトピックについては、 [ITunes Connect でのアプリの構成に](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md)関するガイドを参照してください。
+アプリを App Store に提出するには、*iTunes Connect* というポータルを使用します。 次のトピックについては、 [ITunes Connect でのアプリの構成に](~/ios/deploy-test/app-distribution/app-store-distribution/itunesconnect.md) 関するガイドを参照してください。
 
 - 契約、税金、銀行の管理。
 - ITunes Connect レコードを作成しています。
@@ -51,13 +51,13 @@ Apple では、tvOS でサポートされている tvOS アプリを配布する
 
 このドキュメントでは、tvOS 専用に記述されていませんが、Apple TV App Store でアプリを発行する準備を行うために、このポータルを設定して使用する方法についての情報を提供します。 IOS アプリと tvOS アプリのどちらを設定する場合でも、同じ手順の多くが必要です。
 
-上記のすべての手順を完了したら、「 [ITunes Connect で TvOS アプリを構成](~/ios/tvos/deploy-test/app-distribution/itunes-connect.md)する」を参照して、必要となる tvOS アプリ固有の情報を追加します。
+上記のすべての手順を完了したら、「 [ITunes Connect で TvOS アプリを構成](~/ios/tvos/deploy-test/app-distribution/itunes-connect.md) する」を参照して、必要となる tvOS アプリ固有の情報を追加します。
 
 **Apple Developer Program** に属する開発者のみが iTunes Connect にアクセスすることができる点に注意してください。 **Apple Developer Enterprise Program** のメンバーはアクセスできません。
 
-TvOS アプリを Apple TV App Store に送信する際に問題が発生した場合は、[トラブルシューティング](~/ios/tvos/troubleshooting.md)ガイドを参照してください。 これには、発生する可能性のある既知の問題と、それらを tvOS で解決する方法が含まれています。
+TvOS アプリを Apple TV App Store に送信する際に問題が発生した場合は、 [トラブルシューティング](~/ios/tvos/troubleshooting.md) ガイドを参照してください。 これには、発生する可能性のある既知の問題と、それらを tvOS で解決する方法が含まれています。
 
-詳細については、「 [APPLE TV App Store への発行](~/ios/tvos/deploy-test/app-distribution/app-store-publishing.md)」ガイドを参照してください。
+詳細については、「 [APPLE TV App Store への発行](~/ios/tvos/deploy-test/app-distribution/app-store-publishing.md) 」ガイドを参照してください。
 
 <a name="In-House-Distribution"></a>
 
@@ -65,15 +65,15 @@ TvOS アプリを Apple TV App Store に送信する際に問題が発生した�
 
 社内配布は、*エンタープライズ配布*とも呼ばれます。社内配布の場合、**Apple Developer Enterprise Program** のメンバーは、同じ組織内の他のメンバーにアプリを配布できます。 社内配布には、App Store のレビューを必要としないという利点があります。また、アプリケーションをインストールできるデバイス数に制限がありません。 ただし、**Apple Developer Enterprise Program** メンバーは iTunes Connect に**アクセスできない**ため、ライセンシーがアプリを配布する必要があります。
 
-社内でアプリケーションをセットアップして配布する方法の詳細については、[社内配布ガイド](~/ios/deploy-test/app-distribution/in-house-distribution.md)を参照してください。 このドキュメントは iOS に固有のものですが、tvOS アプリでも同じ手法が使用されます。
+社内でアプリケーションをセットアップして配布する方法の詳細については、 [社内配布ガイド](~/ios/deploy-test/app-distribution/in-house-distribution.md)を参照してください。 このドキュメントは iOS に固有のものですが、tvOS アプリでも同じ手法が使用されます。
 
 <a name="Ad_Hoc_Distribution"></a>
 
 ## <a name="ad-hoc-distribution"></a>アドホック配布
 
-TvOS アプリは、 **Apple Developer program**と**Apple developer Enterprise program**の両方で使用できるアドホック配布を使用してユーザーテストを行うことができ、最大100の apple TV デバイスをテストできます。 ITunes Connect がオプションでない場合、アドホック配布に最適なユースケースは社内で配布されます。
+TvOS アプリは、 **Apple Developer program**と **Apple developer Enterprise program**の両方で使用できるアドホック配布を使用してユーザーテストを行うことができ、最大100の apple TV デバイスをテストできます。 ITunes Connect がオプションでない場合、アドホック配布に最適なユースケースは社内で配布されます。
 
-社内でアプリをセットアップして配布する方法の詳細については、「[アドホック配布ガイド」](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)を参照してください。 ここでも、このドキュメントは iOS に固有のものですが、tvOS アプリでも同じ手法が使用されます。
+社内でアプリをセットアップして配布する方法の詳細については、「 [アドホック配布ガイド」](~/ios/deploy-test/app-distribution/ad-hoc-distribution.md)を参照してください。 ここでも、このドキュメントは iOS に固有のものですが、tvOS アプリでも同じ手法が使用されます。
 
 <a name="Summary"></a>
 
@@ -83,7 +83,7 @@ TvOS アプリは、 **Apple Developer program**と**Apple developer Enterprise 
 
 ## <a name="related-links"></a>関連リンク
 
-- [tvOS のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [tvOS のサンプル](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS ヒューマンインターフェイスガイド](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS のアプリプログラミングガイド](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

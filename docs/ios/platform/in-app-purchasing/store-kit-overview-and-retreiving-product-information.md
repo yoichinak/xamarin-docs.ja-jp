@@ -7,17 +7,17 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: f05bc534b1220e6659f123a17dc57e02185fdea4
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: b7bfa98f84210c921790989c60a7bda21b7c6bcd
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86996345"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435536"
 ---
 # <a name="storekit-overview-and-retrieving-product-info-in-xamarinios"></a>StoreKit の概要と Xamarin での製品情報の取得
 
 アプリ内購入のユーザーインターフェイスを次のスクリーンショットに示します。
-トランザクションが実行される前に、アプリケーションは、表示する製品の価格と説明を取得する必要があります。 その後、ユーザーが [**購入**] を押すと、アプリケーションは storekit に対して、確認ダイアログと Apple ID ログインを管理する要求を行います。 トランザクションが成功した場合、StoreKit はアプリケーションコードに通知します。このコードには、トランザクションの結果を格納し、ユーザーに購入へのアクセスを提供する必要があります。   
+トランザクションが実行される前に、アプリケーションは、表示する製品の価格と説明を取得する必要があります。 その後、ユーザーが [ **購入**] を押すと、アプリケーションは storekit に対して、確認ダイアログと Apple ID ログインを管理する要求を行います。 トランザクションが成功した場合、StoreKit はアプリケーションコードに通知します。このコードには、トランザクションの結果を格納し、ユーザーに購入へのアクセスを提供する必要があります。   
 
  [![StoreKit は、トランザクションの結果を格納し、ユーザーに購入へのアクセスを提供する必要があることをアプリケーションコードに通知します。](store-kit-overview-and-retreiving-product-information-images/image14.png)](store-kit-overview-and-retreiving-product-information-images/image14.png#lightbox)
 
@@ -25,16 +25,16 @@ ms.locfileid: "86996345"
 
 アプリ内購入を実装するには、StoreKit フレームワークの次のクラスが必要です。   
 
- **Skproducts 要求**: 販売する承認済み製品の storekit への要求 (App Store)。 複数の製品 Id を使用して構成できます。
+ **Skproducts 要求** : 販売する承認済み製品の storekit への要求 (App Store)。 複数の製品 Id を使用して構成できます。
 
 - **Sk$ Requestdelegate** –製品の要求と応答を処理するメソッドを宣言します。
-- **Sk製品応答**– storekit (App Store) からデリゲートに返されます。 要求と共に送信される製品 Id に一致する SKProducts を含みます。
+- **Sk製品応答** – storekit (App Store) からデリゲートに返されます。 要求と共に送信される製品 Id に一致する SKProducts を含みます。
 - **Skproduct** – Storekit (iTunes Connect で構成したもの) から取得された製品です。 製品 ID、タイトル、説明、価格などの製品に関する情報が含まれています。
 - **Skpayment** –製品 ID で作成され、購入を行うために支払キューに追加されます。
 - **SKPaymentQueue** – Apple に送信される、キューに入れられた支払い要求です。 通知は、各支払いの処理結果としてトリガーされます。
 - **SKPaymentTransaction** –完了したトランザクション (アプリストアによって処理され、storekit を介してアプリケーションに送信される購入要求) を表します。 トランザクションを購入、復元、または失敗させることができます。
 - **SKPaymentTransactionObserver** – storekit の支払キューによって生成されるイベントに応答するカスタムサブクラスです。
-- **Storekit 操作は非同期です**。 SKProductRequest が開始された後、または sk支払いがキューに追加されると、コードに制御が返されます。 StoreKit は、Apple のサーバーからデータを受信するときに、SKProductsRequestDelegate または SKPaymentTransactionObserver サブクラスでメソッドを呼び出します。
+- **Storekit 操作は非同期です** 。 SKProductRequest が開始された後、または sk支払いがキューに追加されると、コードに制御が返されます。 StoreKit は、Apple のサーバーからデータを受信するときに、SKProductsRequestDelegate または SKPaymentTransactionObserver サブクラスでメソッドを呼び出します。
 
 次の図は、さまざまな StoreKit クラス間の関係を示しています (抽象クラスはアプリケーションで実装する必要があります)。   
 
@@ -48,17 +48,17 @@ ms.locfileid: "86996345"
 
 注: StoreKit は、iOS シミュレーターでは動作しません。 IOS シミュレーターでアプリケーションを実行する場合、アプリケーションで支払いキューを取得しようとすると、StoreKit によって警告がログに記録されます。 ストアのテストは、実際のデバイスで行う必要があります。   
 
-重要: 設定アプリケーションでは、テストアカウントでサインインしないでください。 設定アプリケーションを使用して、既存の Apple ID アカウントからサインアウトすることができます。その後、*アプリ内購入シーケンス内で*、テスト Apple id を使用してログインするように求めるメッセージが表示されるまで待機する必要があります。   
+重要: 設定アプリケーションでは、テストアカウントでサインインしないでください。 設定アプリケーションを使用して、既存の Apple ID アカウントからサインアウトすることができます。その後、 *アプリ内購入シーケンス内で* 、テスト Apple id を使用してログインするように求めるメッセージが表示されるまで待機する必要があります。   
 
 テストアカウントを使用して実際のストアにサインインしようとすると、自動的に実際の Apple ID に変換されます。 このアカウントは、テストに使用できなくなります。
 
-StoreKit コードをテストするには、通常の iTunes テストアカウントからログアウトし、テストストアにリンクされている特別なテストアカウント (iTunes Connect で作成) を使用してログインする必要があります。 現在のアカウントからサインアウトするには、次に示すように、 **iTunes と App Store > の設定**にアクセスします。
+StoreKit コードをテストするには、通常の iTunes テストアカウントからログアウトし、テストストアにリンクされている特別なテストアカウント (iTunes Connect で作成) を使用してログインする必要があります。 現在のアカウントからサインアウトするには、次に示すように、 **iTunes と App Store > の設定** にアクセスします。
 
  [![現在のアカウントからサインアウトするには、[設定] [iTunes と App Store] を参照してください。](store-kit-overview-and-retreiving-product-information-images/image16.png)](store-kit-overview-and-retreiving-product-information-images/image16.png#lightbox)
 
-次に、*アプリ内で StoreKit によって要求されたとき*に、テストアカウントでサインインします。
+次に、 *アプリ内で StoreKit によって要求されたとき*に、テストアカウントでサインインします。
 
-ITunes でテストユーザーを作成するには、メインページで [**ユーザーとロール**] をクリックします。
+ITunes でテストユーザーを作成するには、メインページで [ **ユーザーとロール** ] をクリックします。
 
  [![ITunes Connect でテストユーザーを作成するには、メインページで [ユーザーとロール] をクリックします。](store-kit-overview-and-retreiving-product-information-images/image17.png)](store-kit-overview-and-retreiving-product-information-images/image17.png#lightbox)
 
@@ -78,21 +78,21 @@ ITunes でテストユーザーを作成するには、メインページで [**
 
 アプリ内購入製品を販売するための最初のステップでは、表示するために、アプリストアから現在の価格と説明を取得しています。   
 
-アプリで販売されている製品の種類 (消費、非消費、または種類のサブスクリプション) に関係なく、表示する製品情報を取得するプロセスは同じです。 この記事に付属する InAppPurchaseSample コードには、表示のために運用情報を取得する方法を示す、*コンシューマ*という名前のプロジェクトが含まれています。 次の方法を示します。
+アプリで販売されている製品の種類 (消費、非消費、または種類のサブスクリプション) に関係なく、表示する製品情報を取得するプロセスは同じです。 この記事に付属する InAppPurchaseSample コードには、表示のために運用情報を取得する方法を示す、 *コンシューマ* という名前のプロジェクトが含まれています。 次の方法を示します。
 
-- の実装を作成 `SKProductsRequestDelegate` し、抽象メソッドを実装し `ReceivedResponse` ます。 このコード例では、このクラスを呼び出し `InAppPurchaseManager` ます。
-- StoreKit で、支払いが許可されているかどうかを確認します (を使用 `SKPaymentQueue.CanMakePayments` )。
-- `SKProductsRequest`ITunes Connect で定義されている製品 id を使用して、をインスタンス化します。 これは、例のメソッドで行い `InAppPurchaseManager.RequestProductData` ます。
-- で Start メソッドを呼び出し `SKProductsRequest` ます。 これにより、App Store サーバーへの非同期呼び出しがトリガーされます。 デリゲート () は、 `InAppPurchaseManager` 結果と共に呼び出されます。
-- デリゲートの ( `InAppPurchaseManager` ) メソッドは、 `ReceivedResponse` アプリストアから返されたデータ (製品の価格 & の説明、または無効な製品に関するメッセージ) を使用して UI を更新します。
+- の実装を作成  `SKProductsRequestDelegate` し、抽象メソッドを実装し  `ReceivedResponse` ます。 このコード例では、このクラスを呼び出し  `InAppPurchaseManager` ます。
+- StoreKit で、支払いが許可されているかどうかを確認します (を使用  `SKPaymentQueue.CanMakePayments` )。
+- `SKProductsRequest`ITunes Connect で定義されている製品 id を使用して、をインスタンス化します。 これは、例のメソッドで行い  `InAppPurchaseManager.RequestProductData` ます。
+- で Start メソッドを呼び出し  `SKProductsRequest` ます。 これにより、App Store サーバーへの非同期呼び出しがトリガーされます。 デリゲート () は、 `InAppPurchaseManager` 結果と共に呼び出されます。
+- デリゲートの ( `InAppPurchaseManager` ) メソッドは、  `ReceivedResponse` アプリストアから返されたデータ (製品の価格 & の説明、または無効な製品に関するメッセージ) を使用して UI を更新します。
 
-全体的な相互作用は次のようになります ( **Storekit**は iOS に組み込まれており、 **App Store**は Apple のサーバーを表します)。
+全体的な相互作用は次のようになります ( **Storekit** は iOS に組み込まれており、 **App Store** は Apple のサーバーを表します)。
 
  [![製品情報の取得のグラフ](store-kit-overview-and-retreiving-product-information-images/image21.png)](store-kit-overview-and-retreiving-product-information-images/image21.png#lightbox)
 
 ### <a name="displaying-product-information-example"></a>製品情報の表示例
 
-[InAppPurchaseSample](https://docs.microsoft.com/samples/xamarin/ios-samples/storekit)の*消耗品*のサンプルコードでは、製品情報を取得する方法を示しています。 サンプルのメイン画面には、App Store から取得した2つの製品の情報が表示されます。   
+[InAppPurchaseSample](/samples/xamarin/ios-samples/storekit)の*消耗品*のサンプルコードでは、製品情報を取得する方法を示しています。 サンプルのメイン画面には、App Store から取得した2つの製品の情報が表示されます。   
 
  [![メイン画面には、App Store から取得した情報が表示されます。](store-kit-overview-and-retreiving-product-information-images/image23.png)](store-kit-overview-and-retreiving-product-information-images/image23.png#lightbox)   
 
@@ -179,7 +179,7 @@ public void RequestProductData (List<string> productIds)
 }
 ```
 
-iOS は、アプリケーションが実行されているプロビジョニングプロファイルに応じて、要求を ' sandbox ' または ' production ' バージョンのアプリストアに自動的にルーティングします。したがって、アプリを開発またはテストするとき、要求は iTunes Connect で構成されたすべての製品 (まだ Apple によって送信または承認されていないものも含む) アプリケーションが運用環境にある場合、StoreKit の要求は、**承認**された製品に関する情報のみを返します。   
+iOS は、アプリケーションが実行されているプロビジョニングプロファイルに応じて、要求を ' sandbox ' または ' production ' バージョンのアプリストアに自動的にルーティングします。したがって、アプリを開発またはテストするとき、要求は iTunes Connect で構成されたすべての製品 (まだ Apple によって送信または承認されていないものも含む) アプリケーションが運用環境にある場合、StoreKit の要求は、 **承認** された製品に関する情報のみを返します。   
 
 `ReceivedResponse`上書きされたメソッドは、Apple のサーバーがデータで応答した後に呼び出されます。 これはバックグラウンドで呼び出されるので、コードは有効なデータを解析し、通知を使用して、その通知の "待機中" の ViewControllers に製品情報を送信する必要があります。 有効な製品情報を収集して通知を送信するコードを次に示します。
 
@@ -218,17 +218,17 @@ public override void RequestFailed (SKRequest request, NSError error)
 
 は、 `SKProductsRequest` 無効な製品 id の一覧を返す場合もあります。 次のいずれかの理由により、通常、無効な製品が返されます。   
 
-**製品 id が**正しくありません–有効な製品 id のみが受け入れられます。   
+**製品 id が** 正しくありません–有効な製品 id のみが受け入れられます。   
 
- **製品は承認されていません**。テスト中、販売用にクリアされたすべての製品は、によって返される必要があります `SKProductsRequest` 。ただし、運用環境では、承認された製品のみが返されます。   
+ **製品は承認されていません** 。テスト中、販売用にクリアされたすべての製品は、によって返される必要があります `SKProductsRequest` 。ただし、運用環境では、承認された製品のみが返されます。   
 
- **アプリ id が明示的ではありません**-ワイルドカードアプリ id (アスタリスク) は、アプリ内購入を許可しません。   
+ **アプリ id が明示的ではありません** -ワイルドカードアプリ id (アスタリスク) は、アプリ内購入を許可しません。   
 
- **プロビジョニングプロファイルが正しくありません**-プロビジョニングポータルでアプリケーションの構成を変更する場合 (アプリ内購入を有効にする場合など) は、アプリをビルドするときに適切なプロビジョニングプロファイルを再生成して使用することを忘れないでください。   
+ **プロビジョニングプロファイルが正しくありません** -プロビジョニングポータルでアプリケーションの構成を変更する場合 (アプリ内購入を有効にする場合など) は、アプリをビルドするときに適切なプロビジョニングプロファイルを再生成して使用することを忘れないでください。   
 
- **iOS の有料アプリケーション契約が**適用されていない-ストアキットの機能は、Apple 開発者アカウントの有効な契約がない限り、まったく機能しません。   
+ **iOS の有料アプリケーション契約が** 適用されていない-ストアキットの機能は、Apple 開発者アカウントの有効な契約がない限り、まったく機能しません。   
 
- **バイナリが拒否状態に**なっています-以前に送信されたバイナリが拒否状態にある場合 (App Store チームまたは開発者によって)、storekit の機能は機能しません。
+ **バイナリが拒否状態に** なっています-以前に送信されたバイナリが拒否状態にある場合 (App Store チームまたは開発者によって)、storekit の機能は機能しません。
 
 `ReceivedResponse`サンプルコードのメソッドは、無効な製品をコンソールに出力します。
 

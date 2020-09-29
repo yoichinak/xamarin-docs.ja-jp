@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 002b6ced319bf7e7b1c5b9b7cc472c43eefcc450
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: e85a273c75fd09672c6c75738adcdc576705af09
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574285"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433982"
 ---
 # <a name="copy-and-paste-in-xamarinmac"></a>Xamarin. Mac にコピーして貼り付ける
 
@@ -24,12 +24,12 @@ Xamarin. Mac アプリケーションで C# と .NET を使用する場合は、
 
 この記事では、Xamarin. Mac アプリでクリップボードを使用する主な2つの方法について説明します。
 
-1. **標準データ型**-通常、クリップボードの操作は、関連付けられていない2つのアプリ間で実行されるため、どちらのアプリも、他のアプリケーションがサポートするデータの種類を認識しません。 共有の可能性を最大にするために、ペーストボードは特定の項目の複数の表現を (共通データ型の標準セットを使用して) 保持できます。これにより、使用中のアプリは、ニーズに最も適したバージョンを選択できます。
-2. **カスタムデータ**-Xamarin 内での複雑なデータのコピーと貼り付けをサポートするために、ペーストボードによって処理されるカスタムデータ型を定義できます。 たとえば、複数のデータ型とポイントで構成される複雑な図形のコピーと貼り付けをユーザーに許可するベクター描画アプリなどです。
+1. **標準データ型** -通常、クリップボードの操作は、関連付けられていない2つのアプリ間で実行されるため、どちらのアプリも、他のアプリケーションがサポートするデータの種類を認識しません。 共有の可能性を最大にするために、ペーストボードは特定の項目の複数の表現を (共通データ型の標準セットを使用して) 保持できます。これにより、使用中のアプリは、ニーズに最も適したバージョンを選択できます。
+2. **カスタムデータ** -Xamarin 内での複雑なデータのコピーと貼り付けをサポートするために、ペーストボードによって処理されるカスタムデータ型を定義できます。 たとえば、複数のデータ型とポイントで構成される複雑な図形のコピーと貼り付けをユーザーに許可するベクター描画アプリなどです。
 
 [![実行中のアプリの例](copy-paste-images/intro01.png "実行中のアプリの例")](copy-paste-images/intro01-large.png#lightbox)
 
-この記事では、コピーと貼り付け操作をサポートするために、Xamarin. Mac アプリケーションでの貼り付け操作の基本について説明します。 この記事で使用する主要な概念と手法について説明しているように、最初に[Hello, Mac](~/mac/get-started/hello-mac.md)の記事「 [Xcode と Interface Builder の概要](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)」と「[アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions)」セクションをご覧になることを強くお勧めします。
+この記事では、コピーと貼り付け操作をサポートするために、Xamarin. Mac アプリケーションでの貼り付け操作の基本について説明します。 この記事で使用する主要な概念と手法について説明しているように、最初に [Hello, Mac](~/mac/get-started/hello-mac.md) の記事「 [Xcode と Interface Builder の概要](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) 」と「 [アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions) 」セクションをご覧になることを強くお勧めします。
 
 ここでは、 [Xamarin の内部](~/mac/internals/how-it-works.md)ドキュメントの[c# クラス/メソッドを目的の c に公開する方法](~/mac/internals/how-it-works.md)について説明します `Register` `Export` 。 c# クラスを目的の c オブジェクトと UI 要素に接続するために使用される属性と属性についても説明します。
 
@@ -45,9 +45,9 @@ Xamarin. Mac アプリケーションで C# と .NET を使用する場合は、
 
 まず、コピーと貼り付けのサポートを追加する新しいドキュメントベースの Xamarin. Mac アプリを作成します。
 
-次の操作を行います。
+次の手順を実行します。
 
-1. Visual Studio for Mac を開始し、[**新しいプロジェクト...** ] リンクをクリックします。
+1. Visual Studio for Mac を開始し、[ **新しいプロジェクト...** ] リンクをクリックします。
 2. [ **Mac**  >  **アプリ**  >  **cocoa アプリ**] を選択し、[**次へ**] ボタンをクリックします。 
 
     [![新しい Cocoa アプリプロジェクトを作成する](copy-paste-images/sample01.png "新しい Cocoa アプリプロジェクトを作成する")](copy-paste-images/sample01-large.png#lightbox)
@@ -55,7 +55,7 @@ Xamarin. Mac アプリケーションで C# と .NET を使用する場合は、
 
     [![プロジェクトの名前を設定する](copy-paste-images/sample01a.png "プロジェクトの名前を設定する")](copy-paste-images/sample01a-large.png#lightbox)
 
-4. [**作成**] ボタンをクリックします。 
+4. [ **作成** ] ボタンをクリックします。 
 
     [![新しいプロジェクトの設定を確認しています](copy-paste-images/sample02.png "新しいプロジェクトの設定を確認しています")](copy-paste-images/sample02-large.png#lightbox)
 
@@ -67,7 +67,7 @@ Xamarin. Mac アプリケーションで C# と .NET を使用する場合は、
 
 ![NSDocument をプロジェクトに追加する](copy-paste-images/sample03.png "NSDocument をプロジェクトに追加する")
 
-**[名前]** に「`ImageDocument`」と入力し、**[新規]** ボタンをクリックします。 **ImageDocument.cs**クラスを編集し、次のようにします。
+**[名前]** に「`ImageDocument`」と入力し、 **[新規]** ボタンをクリックします。 **ImageDocument.cs**クラスを編集し、次のようにします。
 
 ```csharp
 using System;
@@ -267,9 +267,9 @@ public void PasteImage(NSObject sender) {
 
 [![ツールバーの編集](copy-paste-images/sample04.png "ツールバーの編集")](copy-paste-images/sample04-large.png#lightbox)
 
-ツールバーの左側に、[イメージのコピーと貼り付け **] ツールバー項目**を追加します。 これらは、[編集] メニューからコピーおよび貼り付けを行うためのショートカットとして使用されます。 次に、ツールバーの右側に4つの**イメージツールバー項目**を追加します。 これらを使用して、イメージに既定のイメージを設定します。
+ツールバーの左側に、[イメージのコピーと貼り付け **] ツールバー項目** を追加します。 これらは、[編集] メニューからコピーおよび貼り付けを行うためのショートカットとして使用されます。 次に、ツールバーの右側に4つの **イメージツールバー項目** を追加します。 これらを使用して、イメージに既定のイメージを設定します。
 
-ツールバーの操作の詳細については、[ツールバー](~/mac/user-interface/toolbar.md)のドキュメントを参照してください。
+ツールバーの操作の詳細については、 [ツールバー](~/mac/user-interface/toolbar.md) のドキュメントを参照してください。
 
 次に、ツールバー項目とイメージウェルの次のアウトレットとアクションを公開してみましょう。
 
@@ -547,7 +547,7 @@ var window = NSApplication.SharedApplication.KeyWindow as ImageWindow;
 window.Document.CopyImage (sender);
 ```
 
-既定のクリップボードにイメージデータがある場合、または現在アクティブなウィンドウのイメージウェルの場合にのみ、**切り取り**、**コピー** 、**貼り付け**の各メニュー項目にアクセスできるようにします。
+既定のクリップボードにイメージデータがある場合、または現在アクティブなウィンドウのイメージウェルの場合にのみ、 **切り取り**、 **コピー** 、 **貼り付け** の各メニュー項目にアクセスできるようにします。
 
 **EditMenuDelegate.cs**ファイルを Xamarin プロジェクトに追加し、次のように表示します。
 
@@ -615,7 +615,7 @@ public override void DidFinishLaunching (NSNotification notification)
 
 まず、[編集] メニューのメニュー項目の自動有効化と無効化を無効にします。 次に、 `EditMenuDelegate` 上記で作成したクラスのインスタンスをアタッチします。
 
-詳細については、[メニュー](~/mac/user-interface/menu.md)のドキュメントを参照してください。
+詳細については、 [メニュー](~/mac/user-interface/menu.md) のドキュメントを参照してください。
 
 ### <a name="testing-the-app"></a>アプリのテスト
 
@@ -623,7 +623,7 @@ public override void DidFinishLaunching (NSNotification notification)
 
 ![アプリケーションの実行](copy-paste-images/run01.png "アプリケーションの実行")
 
-[編集] メニューを開いた場合、[**切り取り**]、[**コピー** ]、および [**貼り付け**] は無効になっています。これは、イメージにイメージが表示されていない場合、または既定のペーストボードに画像がないためです。
+[編集] メニューを開いた場合、[ **切り取り**]、[ **コピー** ]、および [ **貼り付け** ] は無効になっています。これは、イメージにイメージが表示されていない場合、または既定のペーストボードに画像がないためです。
 
 ![[編集] メニューを開く](copy-paste-images/run02.png "[編集] メニューを開く")
 
@@ -631,7 +631,7 @@ public override void DidFinishLaunching (NSNotification notification)
 
 ![[編集] メニュー項目が有効になっていることを表示する](copy-paste-images/run03.png "[編集] メニュー項目が有効になっていることを表示する")
 
-イメージをコピーして [ファイル] メニューの [**新規作成**] を選択した場合は、そのイメージを新しいウィンドウに貼り付けることができます。
+イメージをコピーして [ファイル] メニューの [ **新規作成** ] を選択した場合は、そのイメージを新しいウィンドウに貼り付けることができます。
 
 ![新しいウィンドウへのイメージの貼り付け](copy-paste-images/run04.png "新しいウィンドウへのイメージの貼り付け")
 
@@ -646,7 +646,7 @@ MacOS (旧称 OS X) では、 `NSPasteboard` 貼り付け () によって、コ�
 クラスは、 `NSPasteboard` アプリケーション間または特定のアプリ内で情報を交換するための標準化されたメカニズムを提供します。 貼り付けの主な機能は、コピーと貼り付け操作を処理することです。
 
 1. ユーザーがアプリで項目を選択し、[切り取り] または [**コピー** ] メニュー項目を使用すると、選択した項目の1つ以上の表現が**貼り**付けに配置されます。
-2. ユーザーが貼り付けメニュー項目 (同じアプリ内または別のアプリ内) を使用すると、処理できるデータのバージョンが**貼り付け**られ、アプリに追加されます。
+2. ユーザーが貼り付けメニュー項目 (同じアプリ内または別のアプリ内) を使用すると、処理できるデータのバージョンが **貼り付け** られ、アプリに追加されます。
 
 [検索]、[ドラッグ]、[ドラッグアンドドロップ]、[アプリケーションサービス] の各操作を含む、わかりやすいペーストボードの使用方法:
 
@@ -659,11 +659,11 @@ MacOS (旧称 OS X) では、 `NSPasteboard` 貼り付け () によって、コ�
 
 クリップボードは、パブリックまたはプライベートにすることができ、アプリケーション内または複数のアプリ間でさまざまな目的で使用できます。 macOS にはいくつかの標準 pasteboards が用意されており、それぞれに特定の明確に定義された使用法があります。
 
-- `NSGeneralPboard`-**切り取り**、**コピー** 、および**貼り付け**操作の既定のペーストボード。
-- `NSRulerPboard`-**切り取り**、**コピー** 、および**貼り付け**操作を**ルーラー**に対してサポートします。
-- `NSFontPboard`-オブジェクトに対する**切り取り**、**コピー** 、および**貼り付け**操作をサポート `NSFont` します。
-- `NSFindPboard`-検索テキストを共有できるアプリケーション固有の検索パネルをサポートします。
-- `NSDragPboard`-**ドラッグ & ドロップ**操作をサポートします。
+- `NSGeneralPboard` - **切り取り**、 **コピー** 、および **貼り付け** 操作の既定のペーストボード。
+- `NSRulerPboard` - **切り取り**、 **コピー** 、および **貼り付け** 操作を **ルーラー**に対してサポートします。
+- `NSFontPboard` -オブジェクトに対する **切り取り**、 **コピー** 、および **貼り付け** 操作をサポート `NSFont` します。
+- `NSFindPboard` -検索テキストを共有できるアプリケーション固有の検索パネルをサポートします。
+- `NSDragPboard` - **ドラッグ & ドロップ** 操作をサポートします。
 
 ほとんどの場合、システム定義の pasteboards のいずれかを使用します。 ただし、独自の pasteboards を作成する必要がある場合もあります。 このような状況では、クラスのメソッドを使用して、 `FromName (string name)` `NSPasteboard` 指定された名前のカスタムのペーストボードを作成できます。
 
@@ -671,13 +671,13 @@ MacOS (旧称 OS X) では、 `NSPasteboard` 貼り付け () によって、コ�
 
 ### <a name="pasteboard-items"></a>クリップボード項目
 
-アプリケーションが1つのクリップボードに書き込むデータの各部分は、"_ペーストボード項目_" と見なされ、1つのクリップボードは同時に複数の項目を保持できます。 このようにすることで、アプリでは、コピーされた複数のバージョンのデータを貼り付け (プレーンテキストや書式設定されたテキストなど) することができます。また、取得元のアプリは、処理可能なデータ (プレーンテキストのみなど) を読み取ることができます。
+アプリケーションが1つのクリップボードに書き込むデータの各部分は、" _ペーストボード項目_ " と見なされ、1つのクリップボードは同時に複数の項目を保持できます。 このようにすることで、アプリでは、コピーされた複数のバージョンのデータを貼り付け (プレーンテキストや書式設定されたテキストなど) することができます。また、取得元のアプリは、処理可能なデータ (プレーンテキストのみなど) を読み取ることができます。
 
 ### <a name="data-representations-and-uniform-type-identifiers"></a>データ表現と uniform type 識別子
 
 通常、クリップボード操作は、相互に認識されない、またはそれぞれが処理できるデータの種類について、2つ (またはそれ以上) のアプリケーション間で行われます。 前のセクションで説明したように、情報を共有する可能性を最大にするために、貼り付けでは、コピーおよび貼り付けされるデータの複数の表現を保持できます。
 
-各表現は、統一型識別子 (UTI) によって識別されます。これは、表示されている日付の型を一意に識別する単純な文字列にすぎません (詳細については、Apple の[Uniform type](https://developer.apple.com/library/prerelease/mac/documentation/FileManagement/Conceptual/understanding_utis/understand_utis_intro/understand_utis_intro.html#//apple_ref/doc/uid/TP40001319) Identifier の概要に関するドキュメントを参照してください)。 
+各表現は、統一型識別子 (UTI) によって識別されます。これは、表示されている日付の型を一意に識別する単純な文字列にすぎません (詳細については、Apple の [Uniform type](https://developer.apple.com/library/prerelease/mac/documentation/FileManagement/Conceptual/understanding_utis/understand_utis_intro/understand_utis_intro.html#//apple_ref/doc/uid/TP40001319) Identifier の概要に関するドキュメントを参照してください)。 
 
 カスタムデータ型 (ベクター描画アプリ内の drawing オブジェクトなど) を作成する場合は、コピーおよび貼り付け操作で一意に識別できるように独自の UTI を作成できます。
 
@@ -695,7 +695,7 @@ MacOS (旧称 OS X) では、 `NSPasteboard` 貼り付け () によって、コ�
 
 ### <a name="change-count"></a>変更数
 
-各ペーストボードは、新しい所有者が宣言されるたびに増加する_変更数_を保持します。 アプリでは、変更回数の値をチェックすることによって、最後にそのクリップボードの内容が変更されたかどうかを判断できます。
+各ペーストボードは、新しい所有者が宣言されるたびに増加する _変更数_ を保持します。 アプリでは、変更回数の値をチェックすることによって、最後にそのクリップボードの内容が変更されたかどうかを判断できます。
 
 `ChangeCount`クラスのメソッドとメソッドを使用して、 `ClearContents` 特定の `NSPasteboard` ペーストボードの変更数を変更します。
 
@@ -716,9 +716,9 @@ pasteboard.ClearContents();
 pasteboard.WriteObjects (new NSImage[] {image});
 ```
 
-通常は、上の例で行ったように、一般的なペーストボードに書き込むだけです。 メソッドに送信するオブジェクトは、 `WriteObjects` インターフェイスに準拠している*必要があり* `INSPasteboardWriting` ます。 いくつかの組み込みクラス (、、、、、など) は、 `NSString` `NSImage` `NSURL` `NSColor` `NSAttributedString` `NSPasteboardItem` 自動的にこのインターフェイスに準拠します。
+通常は、上の例で行ったように、一般的なペーストボードに書き込むだけです。 メソッドに送信するオブジェクトは、 `WriteObjects` インターフェイスに準拠している *必要があり* `INSPasteboardWriting` ます。 いくつかの組み込みクラス (、、、、、など) は、 `NSString` `NSImage` `NSURL` `NSColor` `NSAttributedString` `NSPasteboardItem` 自動的にこのインターフェイスに準拠します。
 
-カスタムデータクラスをペーストボードに書き込む場合は、インターフェイスに準拠している `INSPasteboardWriting` か、クラスのインスタンスにラップされている必要があり `NSPasteboardItem` ます (以下の「[カスタムデータ型](#Custom_Data_Types)」を参照してください)。
+カスタムデータクラスをペーストボードに書き込む場合は、インターフェイスに準拠している `INSPasteboardWriting` か、クラスのインスタンスにラップされている必要があり `NSPasteboardItem` ます (以下の「 [カスタムデータ型](#Custom_Data_Types) 」を参照してください)。
 
 ## <a name="reading-data-from-a-pasteboard"></a>ペーストボードからのデータの読み取り
 
@@ -770,11 +770,11 @@ public void PasteImage(NSObject sender) {
 1. メソッドを1回呼び出して、必要 `ReadObjectsForClasses` なすべての表現の配列を (優先順に) 指定します。
 2. メソッドに対して複数の呼び出しを行い、 `ReadObjectsForClasses` 毎回異なる型の配列を要求します。
 
-ペーストボードからデータを取得する方法の詳細については、上記の「**単純な貼り付け操作**」セクションを参照してください。
+ペーストボードからデータを取得する方法の詳細については、上記の「 **単純な貼り付け操作** 」セクションを参照してください。
 
 ### <a name="checking-for-existing-data-types"></a>既存のデータ型の確認
 
-クリップボードに実際にデータを読み込むことなく、特定のデータ表現が含まれているかどうかを確認する必要がある場合があります (有効なデータが存在する場合にのみ**貼り付け**メニュー項目を有効にするなど)。
+クリップボードに実際にデータを読み込むことなく、特定のデータ表現が含まれているかどうかを確認する必要がある場合があります (有効なデータが存在する場合にのみ **貼り付け** メニュー項目を有効にするなど)。
 
 `CanReadObjectForClasses`指定した型が含まれているかどうかを確認するには、ペーストボードのメソッドを呼び出します。
 
@@ -974,7 +974,7 @@ public ImageInfo(NSCoder decoder) {
 }
 ```
 
-まず、の既定の目的 C メソッドの下に_空_のコンストラクターを公開し `init` ます。
+まず、の既定の目的 C メソッドの下に _空_ のコンストラクターを公開し `init` ます。
 
 次に、 `NSCoding` のエクスポートされた名前の下に貼り付けるときに、貼り付けによってオブジェクトの新しいインスタンスを作成するために使用される準拠コンストラクターを公開し `initWithCoder` ます。
 
@@ -994,7 +994,7 @@ public virtual string[] GetWritableTypesForPasteboard (NSPasteboard pasteboard) 
 }
 ```
 
-各表現は、統一型識別子 (UTI) によって識別されます。これは、表示されているデータの型を一意に識別する単純な文字列にすぎません (詳細については、Apple の[Uniform type](https://developer.apple.com/library/prerelease/mac/documentation/FileManagement/Conceptual/understanding_utis/understand_utis_intro/understand_utis_intro.html#//apple_ref/doc/uid/TP40001319) Identifier の概要に関するドキュメントを参照してください)。
+各表現は、統一型識別子 (UTI) によって識別されます。これは、表示されているデータの型を一意に識別する単純な文字列にすぎません (詳細については、Apple の [Uniform type](https://developer.apple.com/library/prerelease/mac/documentation/FileManagement/Conceptual/understanding_utis/understand_utis_intro/understand_utis_intro.html#//apple_ref/doc/uid/TP40001319) Identifier の概要に関するドキュメントを参照してください)。
 
 カスタム形式の場合は、独自の UTI を作成しています。 "" (はアプリ識別子と同じように逆表記であることに注意してください)。 クラスは、標準の文字列をペーストボード () に書き込むこともでき `public.text` ます。 
 
@@ -1040,7 +1040,7 @@ public virtual NSPasteboardWritingOptions GetWritingOptionsForType (string type,
 }
 ```
 
-現時点では、オプションのみを使用 `WritingPromised` できます。特定の型が約束されていて、実際にはペーストボードに書き込まれていない場合に使用する必要があります。 詳細については、前の「[約束データ](#Promised_Data)」セクションを参照してください。
+現時点では、オプションのみを使用 `WritingPromised` できます。特定の型が約束されていて、実際にはペーストボードに書き込まれていない場合に使用する必要があります。 詳細については、前の「 [約束データ](#Promised_Data) 」セクションを参照してください。
 
 これらのメソッドを使用すると、次のコードを使用して、カスタムクラスをクリップボードに書き込むことができます。
 
@@ -1069,9 +1069,9 @@ public static string[] GetReadableTypesForPasteboard (NSPasteboard pasteboard){
 }
 ```
 
-ここでも、これらは simple Uti として定義されており、前の「**ペーストボードセクションへの書き込み**」で定義したものと同じ型です。
+ここでも、これらは simple Uti として定義されており、前の「 **ペーストボードセクションへの書き込み** 」で定義したものと同じ型です。
 
-次に、次のメソッドを使用して、UTI の各型が_どのよう_に読み取られるかを、ペーストボードに指示する必要があります。
+次に、次のメソッドを使用して、UTI の各型が _どのよう_ に読み取られるかを、ペーストボードに指示する必要があります。
 
 ```csharp
 [Export ("readingOptionsForType:pasteboard:")]
@@ -1278,7 +1278,7 @@ if (ok) {
 
 ## <a name="related-links"></a>関連リンク
 
-- [MacCopyPaste (サンプル)](https://docs.microsoft.com/samples/xamarin/mac-samples/maccopypaste)
+- [MacCopyPaste (サンプル)](/samples/xamarin/mac-samples/maccopypaste)
 - [Hello Mac](~/mac/get-started/hello-mac.md)
 - [クリップボードのプログラミングガイド](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/PasteboardGuide106/Articles/pbGettingStarted.html)
 - [macOS ヒューマン インターフェイス ガイドライン](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)

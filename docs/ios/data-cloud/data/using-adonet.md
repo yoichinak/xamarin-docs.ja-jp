@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: d5830fcc4eab2feb5002253a519d72099d6bcdde
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: d72a9722a9d48ea52932e4fd6516c0712dbd693c
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929988"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436257"
 ---
 # <a name="using-adonet-with-xamarinios"></a>Xamarin で ADO.NET を使用する
 
@@ -32,20 +32,20 @@ ADO.NET 経由で SQLite へのアクセスを使用するには `System.Data` �
 
 -----
 
-[参照の**編集] >** 右クリックし、[参照の編集] をクリックして必要なアセンブリを選択します。
+[参照の **編集] >** 右クリックし、[参照の編集] をクリックして必要なアセンブリを選択します。
 
 ## <a name="about-monodatasqlite"></a>Mono. Data. Sqlite の概要
 
 クラスを使用して、 `Mono.Data.Sqlite.SqliteConnection` 空のデータベースファイルを作成し、その後、 `SqliteCommand` データベースに対して SQL 命令を実行するために使用できるオブジェクトをインスタンス化します。
 
-1. **空のデータベースの作成**- `CreateFile` 有効な (つまり、書き込み可能な) ファイルパスを使用してメソッドを呼び出します。 このメソッドを呼び出す前に、ファイルが既に存在するかどうかを確認する必要があります。そうしないと、新しい (空の) データベースが古いデータベースの先頭に作成され、古いファイルのデータは失われます。
+1. **空のデータベースの作成** - `CreateFile` 有効な (つまり、書き込み可能な) ファイルパスを使用してメソッドを呼び出します。 このメソッドを呼び出す前に、ファイルが既に存在するかどうかを確認する必要があります。そうしないと、新しい (空の) データベースが古いデータベースの先頭に作成され、古いファイルのデータは失われます。
 
     `Mono.Data.Sqlite.SqliteConnection.CreateFile (dbPath);`
 
     > [!NOTE]
     > 変数は、 `dbPath` このドキュメントで既に説明したルールに従って決定する必要があります。
 
-2. **データベース接続の作成**-SQLite データベースファイルが作成された後、データにアクセスするための接続オブジェクトを作成できます。 接続は、次に示すように、という形式の接続文字列を使用して構築され `Data Source=file_path` ます。
+2. **データベース接続の作成** -SQLite データベースファイルが作成された後、データにアクセスするための接続オブジェクトを作成できます。 接続は、次に示すように、という形式の接続文字列を使用して構築され `Data Source=file_path` ます。
 
     ```csharp
     var connection = new SqliteConnection ("Data Source=" + dbPath);
@@ -56,7 +56,7 @@ ADO.NET 経由で SQLite へのアクセスを使用するには `System.Data` �
 
     既に説明したように、異なるスレッド間で接続を再利用することはできません。 不明な場合は、必要に応じて接続を作成し、完了したら閉じます。しかし、必要以上に多くのことを行うことに注意してください。
 
-3. **データベースコマンドの作成と実行**-接続が確立されたら、それに対して任意の SQL コマンドを実行できます。 次のコードは、実行されている CREATE TABLE ステートメントを示しています。
+3. **データベースコマンドの作成と実行** -接続が確立されたら、それに対して任意の SQL コマンドを実行できます。 次のコードは、実行されている CREATE TABLE ステートメントを示しています。
 
     ```csharp
     using (var command = connection.CreateCommand ()) {
@@ -69,7 +69,7 @@ ADO.NET 経由で SQLite へのアクセスを使用するには `System.Data` �
 
 ## <a name="basic-data-access"></a>基本的なデータアクセス
 
-このドキュメントの*DataAccess_Basic*サンプルコードは、iOS で実行されている場合は次のようになります。
+このドキュメントの *DataAccess_Basic* サンプルコードは、iOS で実行されている場合は次のようになります。
 
  ![iOS ADO.NET のサンプル](using-adonet-images/image9.png)
 
@@ -149,7 +149,7 @@ public static string DoSomeDataAccess ()
 SQLite ではデータに対して任意の SQL コマンドを実行できるため、任意の作成、挿入、更新、削除、選択などのステートメントを実行できます。 SQLite でサポートされている SQL コマンドについては、Sqlite の web サイトを参照してください。 SQL ステートメントは、SqliteCommand オブジェクトに対して次の3つのメソッドのいずれかを使用して実行されます。
 
 - **ExecuteNonQuery** –通常、テーブルの作成またはデータの挿入に使用されます。 一部の操作の戻り値は、影響を受ける行の数を示します。それ以外の場合は-1 になります。
-- **ExecuteReader** –行のコレクションがとして返される必要がある場合に使用 `SqlDataReader` します。
+- **ExecuteReader** –行のコレクションがとして返される必要がある場合に使用  `SqlDataReader` します。
 - **ExecuteScalar** –1つの値 (集計など) を取得します。
 
 ### <a name="executenonquery"></a>EXECUTENONQUERY
@@ -214,7 +214,7 @@ using (var contents = connection.CreateCommand ()) {
 
 `Microsoft.Data.Sqlite` [NuGet からインストール](https://www.nuget.org/packages/Microsoft.Data.Sqlite)できる別のライブラリがあります。これは機能的にはと同じであり、 `Mono.Data.Sqlite` 同じ種類のクエリを許可します。
 
-[2 つのライブラリ](https://docs.microsoft.com/dotnet/standard/data/sqlite/compare)と[Xamarin 固有の詳細](https://docs.microsoft.com/dotnet/standard/data/sqlite/xamarin)を比較しています。 Xamarin iOS アプリで最も重要なのは、初期化呼び出しを含める必要があることです。
+[2 つのライブラリ](/dotnet/standard/data/sqlite/compare)と[Xamarin 固有の詳細](/dotnet/standard/data/sqlite/xamarin)を比較しています。 Xamarin iOS アプリで最も重要なのは、初期化呼び出しを含める必要があることです。
 
 ```csharp
 // required for Xamarin.iOS

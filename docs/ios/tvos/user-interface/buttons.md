@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/07/2017
-ms.openlocfilehash: 0de41379800d3f8fcb26e2bc58497010b8e3bf95
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 07d48a38751680f5e7227682d0639b77b3a3627b
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931379"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436147"
 ---
 # <a name="working-with-tvos-buttons-in-xamarin"></a>Xamarin での tvOS ボタンの使用
 
@@ -20,23 +20,23 @@ ms.locfileid: "86931379"
 
 [![ボタンの例](buttons-images/buttons01.png)](buttons-images/buttons01.png#lightbox)
 
-Siri リモートを使用してフォーカスを操作する方法の詳細については、「[ナビゲーションとフォーカス](~/ios/tvos/app-fundamentals/navigation-focus.md)、 [Siri リモートおよび Bluetooth コントローラー](~/ios/tvos/platform/remote-bluetooth.md)の操作」のドキュメントを参照してください。
+Siri リモートを使用してフォーカスを操作する方法の詳細については、「 [ナビゲーションとフォーカス](~/ios/tvos/app-fundamentals/navigation-focus.md) 、 [Siri リモートおよび Bluetooth コントローラー](~/ios/tvos/platform/remote-bluetooth.md) の操作」のドキュメントを参照してください。
 
 <a name="About-Buttons"></a>
 
 ## <a name="about-buttons"></a>ボタンの概要
 
-TvOS では、ボタンはアプリ固有のアクションに使用され、タイトル、アイコン、またはその両方が含まれる場合があります。 ユーザーが[Siri リモート](~/ios/tvos/platform/remote-bluetooth.md#The-Siri-Remote)を使用してアプリのユーザーインターフェイスを移動すると、指定したボタンにフォーカスが移り、テキストと背景色が変更されます。 影は、ボタンにも適用されます。これにより、ユーザーインターフェイスの他の部分を超えて3D 効果が上がります。
+TvOS では、ボタンはアプリ固有のアクションに使用され、タイトル、アイコン、またはその両方が含まれる場合があります。 ユーザーが [Siri リモート](~/ios/tvos/platform/remote-bluetooth.md#The-Siri-Remote)を使用してアプリのユーザーインターフェイスを移動すると、指定したボタンにフォーカスが移り、テキストと背景色が変更されます。 影は、ボタンにも適用されます。これにより、ユーザーインターフェイスの他の部分を超えて3D 効果が上がります。
 
 [![ボタンの例](buttons-images/buttons01.png)](buttons-images/buttons01.png#lightbox)
 
 Apple では、ボタンの操作に関して次のような推奨事項があります。
 
-- **タイトルまたはアイコンを使用**します。一方、ボタンにはアイコンとタイトルの両方を含めることができますが、スペースは制限されているので、両方を結合しないようにしてください。
-- **破棄ボタンを明確にマーク**する-ボタンが破壊的な操作 (ファイルの削除など) を実行する場合は、テキストやアイコンを使用して、それを明確にマークします。 破壊的なアクションでは、ユーザーにアクションを制限するように求める[アラート](~/ios/tvos/user-interface/alerts.md)を常に提示する必要があります。
-- [**戻る] ボタンを使用しない**-Siri リモートのメニューボタンは、前の画面に戻るために使用されます。 このルールの唯一の例外は、 **[キャンセル**] ボタンが表示されるアプリ内購入または破壊的なアクションです。
+- **タイトルまたはアイコンを使用** します。一方、ボタンにはアイコンとタイトルの両方を含めることができますが、スペースは制限されているので、両方を結合しないようにしてください。
+- **破棄ボタンを明確にマーク** する-ボタンが破壊的な操作 (ファイルの削除など) を実行する場合は、テキストやアイコンを使用して、それを明確にマークします。 破壊的なアクションでは、ユーザーにアクションを制限するように求める [アラート](~/ios/tvos/user-interface/alerts.md) を常に提示する必要があります。
+- [**戻る] ボタンを使用しない**-Siri リモートのメニューボタンは、前の画面に戻るために使用されます。 このルールの唯一の例外は、 **[キャンセル** ] ボタンが表示されるアプリ内購入または破壊的なアクションです。
 
-フォーカスとナビゲーションの操作の詳細については、「[ナビゲーションとフォーカスのドキュメントの操作](~/ios/tvos/app-fundamentals/navigation-focus.md)」を参照してください。
+フォーカスとナビゲーションの操作の詳細については、「 [ナビゲーションとフォーカスのドキュメントの操作](~/ios/tvos/app-fundamentals/navigation-focus.md) 」を参照してください。
 
 <a name="Button-Icons"></a>
 
@@ -50,10 +50,10 @@ Apple では、ボタンアイコンに対して、シンプルで認識しや�
 
 Apple では、ボタンのタイトルを作成するときに次のような推奨事項があります。
 
-- **アイコンボタンの下にわかりやすいテキストを表示**します。可能な場合は、[クリア]、[説明テキストをアイコンのみ] の下に配置して、ボタンの目的をさらに詳細に取得します。
-- **タイトルに動詞または動詞句を使用する**-ユーザーがボタンをクリックしたときに実行されるアクションを明確にします。
-- **タイトルとスタイルの大文字小**文字を使用します。記事、接続詞、または前置詞 (4 文字以下) を除き、ボタンのタイトルのすべての単語は大文字にする必要があります。
-- **短いタイトルのタイトルを使用**する-可能な限り短い表現を使用して、ボタンのアクションを記述します。
+- **アイコンボタンの下にわかりやすいテキストを表示** します。可能な場合は、[クリア]、[説明テキストをアイコンのみ] の下に配置して、ボタンの目的をさらに詳細に取得します。
+- **タイトルに動詞または動詞句を使用する** -ユーザーがボタンをクリックしたときに実行されるアクションを明確にします。
+- **タイトルとスタイルの大文字小** 文字を使用します。記事、接続詞、または前置詞 (4 文字以下) を除き、ボタンのタイトルのすべての単語は大文字にする必要があります。
+- **短いタイトルのタイトルを使用** する-可能な限り短い表現を使用して、ボタンのアクションを記述します。
 
 <a name="Buttons-and-Storyboards"></a>
 
@@ -145,9 +145,9 @@ View.AddSubview (button);
 
 コードに新しいを作成する場合は、 `UIButton` `UIButtonType` 次のいずれかとしてを指定します。
 
-- **システム**-tvOS によって表示される標準のボタンの種類であり、最も頻繁に使用する型です。
+- **システム** -tvOS によって表示される標準のボタンの種類であり、最も頻繁に使用する型です。
 - 詳細情報の**開示**-詳細情報を表示または非表示にするために使用されるボタンの "停止" の種類を示します。
-- **インフォダーク**-[濃い詳細情報] ボタンをクリックすると、円に "i" が表示されます。
+- **インフォダーク** -[濃い詳細情報] ボタンをクリックすると、円に "i" が表示されます。
 - [**ライトの詳細**情報] ボタンをクリックすると、円に "i" が表示されます。
 - **Addcontact** -ボタンを [Add contact] ボタンとして表示します。
 - [**カスタム**]: ボタンのいくつかの特徴をカスタマイズできます。
@@ -158,7 +158,7 @@ View.AddSubview (button);
 button.Frame = new CGRect (25, 25, 300, 150);
 ```
 
-次に、ボタンのタイトルを設定します。 `UIButtons`のほとんどのコントロールとは異なります。これは、単にタイトルを変更するだけではなく、特定のの `UIKit` ために変更する必要があるためです `UIControlState` 。 次に例を示します。
+次に、ボタンのタイトルを設定します。 `UIButtons` のほとんどのコントロールとは異なります。これは、単にタイトルを変更するだけではなく、特定のの `UIKit` ために変更する必要があるためです `UIControlState` 。 次に例を示します。
 
 ```csharp
 button.SetTitle ("Hello", UIControlState.Normal);
@@ -210,7 +210,7 @@ button.SetTitleColor (UIColor.White, UIControlState.Normal);
 button.SetTitleShadowColor(UIColor.Black, UIControlState.Normal);
 ```
 
-次のコードを使用して、ボタンが強調表示されているときに、影を*浮き彫り*から*エンボス*に変更するように設定できます。
+次のコードを使用して、ボタンが強調表示されているときに、影を *浮き彫り* から *エンボス* に変更するように設定できます。
 
 ```csharp
 button.ReverseTitleShadowWhenHighlighted = true;
@@ -248,13 +248,13 @@ button.SetImage(UIImage.FromFile("my image.png"), UIControlState.Normal);
 
 <a name="Summary"></a>
 
-## <a name="summary"></a>要約
+## <a name="summary"></a>まとめ
 
 この記事では、tvOS アプリ内のボタンの設計と操作について説明しました。 ここでは、iOS デザイナーでボタンを操作する方法と、C# コードでボタンを作成する方法を示しました。 最後に、ボタンのタイトルを変更し、そのスタイルと外観を変更する方法を示しました。
 
 ## <a name="related-links"></a>関連リンク
 
-- [tvOS のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [tvOS のサンプル](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS ヒューマンインターフェイスガイド](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS のアプリプログラミングガイド](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

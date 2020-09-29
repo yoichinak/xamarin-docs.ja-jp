@@ -7,32 +7,32 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/13/2018
-ms.openlocfilehash: 04631993d47a1d51858ab24948ab61170d37bb6e
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: f99776a0e6a84c193362d0e5a4efb68e70717ad0
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939884"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436111"
 ---
 # <a name="notifications-in-xamarinios"></a>Xamarin.iOS での通知
 
 > [!IMPORTANT]
-> このセクションの情報は、iOS 9 以前に関連しています。 IOS 10 以降については、「[ユーザー通知フレームワークガイド](~/ios/platform/user-notifications/index.md)」を参照してください。
+> このセクションの情報は、iOS 9 以前に関連しています。 IOS 10 以降については、「 [ユーザー通知フレームワークガイド](~/ios/platform/user-notifications/index.md)」を参照してください。
 
 iOS には、通知が受信されたことをユーザーに示す3つの方法があります。
 
-- **サウンドまたは振動**-iOS はサウンドを再生して、ユーザーに通知することができます。 サウンドが無効になっている場合は、デバイスをバイブレーションに構成できます。
-- **アラート**-通知に関する情報を含むダイアログを画面に表示することができます。
-- **バッジ**-通知が発行されると、アプリケーションアイコンに数字 (バッジ) が表示されます。
+- **サウンドまたは振動** -iOS はサウンドを再生して、ユーザーに通知することができます。 サウンドが無効になっている場合は、デバイスをバイブレーションに構成できます。
+- **アラート** -通知に関する情報を含むダイアログを画面に表示することができます。
+- **バッジ** -通知が発行されると、アプリケーションアイコンに数字 (バッジ) が表示されます。
 
-また、iOS には、ローカルとリモートの両方の通知をユーザーに表示する*通知センター*も用意されています。 ユーザーは、画面の上部からスワイプして、これにアクセスできます。
+また、iOS には、ローカルとリモートの両方の通知をユーザーに表示する *通知センター* も用意されています。 ユーザーは、画面の上部からスワイプして、これにアクセスできます。
 
 ![通知センター](local-notifications-in-ios-images/image13.png "通知センター")
 
 ## <a name="creating-local-notifications-in-ios"></a>IOS でのローカル通知の作成
 
 iOS を使用すると、ローカル通知を作成して処理することが非常に簡単になります。
-まず、iOS 8 では、通知を表示するためのユーザーのアクセス許可を要求するアプリケーションが必要です。 ローカル通知を送信する前に、アプリに次のコードを追加します。[添付さ](https://docs.microsoft.com/samples/xamarin/ios-samples/localnotifications)れたサンプルは、 **Appdelegate**の**FinishedLaunching**メソッドに配置します。
+まず、iOS 8 では、通知を表示するためのユーザーのアクセス許可を要求するアプリケーションが必要です。 ローカル通知を送信する前に、アプリに次のコードを追加します。 [添付さ](/samples/xamarin/ios-samples/localnotifications) れたサンプルは、 **Appdelegate**の **FinishedLaunching** メソッドに配置します。
 
 ```csharp
 var notificationSettings = UIUserNotificationSettings.GetSettingsForTypes(
@@ -58,7 +58,7 @@ UIApplication.SharedApplication.ScheduleLocalNotification(notification);
 
 [![アラートの例](local-notifications-in-ios-images/image2-sml.png)](local-notifications-in-ios-images/image2.png#lightbox)
 
-ユーザーが通知を*許可しない*ことを選択した場合は、何も表示されないことに注意してください。
+ユーザーが通知を *許可しない* ことを選択した場合は、何も表示されないことに注意してください。
 
 バッジを数値付きでアプリケーションアイコンに適用する場合は、次の行コードに示すように設定できます。
 
@@ -135,8 +135,8 @@ if(remoteNotification != null)
 
 ## <a name="related-links"></a>関連リンク
 
-- [ローカル通知 (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/localnotifications)
+- [ローカル通知 (サンプル)](/samples/xamarin/ios-samples/localnotifications)
 - [開発者向けのローカル通知とプッシュ通知](https://developer.apple.com/notifications/)
 - [Local and Push Notification Programming Guide (ローカルおよびプッシュ通知プログラミング ガイド) (ローカルおよびプッシュ通知プログラミング ガイド)](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)
-- [UIApplication](https://docs.microsoft.com/dotnet/api/uikit.uiapplication)
-- [UILocalNotification](https://docs.microsoft.com/dotnet/api/uikit.UILocalNotification)
+- [UIApplication](/dotnet/api/uikit.uiapplication)
+- [UILocalNotification](/dotnet/api/uikit.UILocalNotification)

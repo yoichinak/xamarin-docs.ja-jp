@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 4235e6049b9700edbb3974f1e4cbaf7c405f6e83
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 246757ddc43c5480b26ab4c1360a036fd111dcfa
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937476"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435345"
 ---
 # <a name="watchos-proactive-suggestions-in-xamarin"></a>Xamarin でのプロアクティブな提案の watchOS
 
@@ -44,20 +44,20 @@ Xamarin iOS アプリに事前提案サポートを追加するのは、通常�
 
 プロアクティブな提案は、次の3つの主な方法でアプリを操作します。
 
-- **`NSUserActivity`**-ユーザーが現在画面上で操作している情報をシステムが理解するのに役立ちます。
-- **場所の提案**-アプリが場所ベースの情報を提供または使用する場合、これらの API 拡張機能は、この情報をアプリ間で共有するための新しい方法を提供します。
+- **`NSUserActivity`** -ユーザーが現在画面上で操作している情報をシステムが理解するのに役立ちます。
+- **場所の提案** -アプリが場所ベースの情報を提供または使用する場合、これらの API 拡張機能は、この情報をアプリ間で共有するための新しい方法を提供します。
 
 とは、次のものを実装することによって、アプリでサポートされます。
 
 - **コンテキスト Siri リマインダー** -iOS 10 では、この `NSUserActivity` 拡張により、siri は、アプリで現在表示されているコンテンツを後ですぐに表示できるようになりました。
-- **場所の提案**-iOS 10 は、 `NSUserActivity` アプリ内で表示される場所をキャプチャし、システム全体のさまざまな場所で昇格するように拡張します。
+- **場所の提案** -iOS 10 は、 `NSUserActivity` アプリ内で表示される場所をキャプチャし、システム全体のさまざまな場所で昇格するように拡張します。
 - **コンテキスト Siri 要求**  -  `NSUserActivity`アプリ内に表示される情報を Siri に提供します。これにより、ユーザーはアプリ内から Siri を呼び出すことができるようになります。
 
 これらの機能はすべて、1つのフォームで使用されるか、 `NSUserActivity` またはその機能を提供するために使用されます。 
 
 ## <a name="nsuseractivity"></a>NSUserActivity
 
-前述のように、では、 `NSUserActivity` ユーザーが現在どのような情報を画面で操作しているかをシステムが理解するのに役立ちます。 `NSUserActivity`は、アプリ内を移動するときにユーザーのアクティビティをキャプチャする軽量の状態のキャッシュメカニズムです。 たとえば、レストランアプリを見ているとします。
+前述のように、では、 `NSUserActivity` ユーザーが現在どのような情報を画面で操作しているかをシステムが理解するのに役立ちます。 `NSUserActivity` は、アプリ内を移動するときにユーザーのアクティビティをキャプチャする軽量の状態のキャッシュメカニズムです。 たとえば、レストランアプリを見ているとします。
 
 [![レストランアプリ](proactive-suggestions-images/activity02.png)](proactive-suggestions-images/activity02.png#lightbox)
 
@@ -75,11 +75,11 @@ Xamarin iOS アプリに事前提案サポートを追加するのは、通常�
 
 次に、アプリは、ハンドオフのために活動を提供するかどうかを決定します。これは場所の提案の一時的な値として保存されるか、または検索結果に表示するためにデバイス上のスポットライトインデックスに追加されます。
 
-ハンドオフとスポットライト検索の詳細については、「[ハンドオフ](~/ios/platform/handoff.md)と[IOS 9 の新しい検索 api](~/ios/platform/search/index.md)ガイド」を参照してください。
+ハンドオフとスポットライト検索の詳細については、「 [ハンドオフ](~/ios/platform/handoff.md) と [IOS 9 の新しい検索 api](~/ios/platform/search/index.md) ガイド」を参照してください。
 
 ### <a name="creating-an-activity"></a>アクティビティの作成
 
-アクティビティを作成する前に、アクティビティの種類を識別するための識別子を作成する必要があります。 アクティビティの種類の識別子は、 `NSUserActivityTypes` `Info.plist` 特定のユーザーアクティビティの種類を一意に識別するために使用される、アプリのファイルの配列に追加される短い文字列です。 アプリがサポートし、アプリ検索に公開されるアクティビティごとに、配列に1つのエントリがあります。 詳細については、「[アクティビティの種類の識別子の作成](~/ios/platform/search/nsuseractivity.md)」を参照してください。
+アクティビティを作成する前に、アクティビティの種類を識別するための識別子を作成する必要があります。 アクティビティの種類の識別子は、 `NSUserActivityTypes` `Info.plist` 特定のユーザーアクティビティの種類を一意に識別するために使用される、アプリのファイルの配列に追加される短い文字列です。 アプリがサポートし、アプリ検索に公開されるアクティビティごとに、配列に1つのエントリがあります。 詳細については、「 [アクティビティの種類の識別子の作成](~/ios/platform/search/nsuseractivity.md) 」を参照してください。
 
 アクティビティの例を見てみましょう。
 
@@ -130,7 +130,7 @@ activity.WebPageUrl = new NSUrl("http://xamarin.com/platform");
 
 ### <a name="restoring-an-activity"></a>アクティビティの復元
 
-アプリの検索結果 () をタップしてユーザーに応答するには、 `NSUserActivity` **AppDelegate.cs**ファイルを編集し、メソッドをオーバーライドし `ContinueUserActivity` ます。 次に例を示します。
+アプリの検索結果 () をタップしてユーザーに応答するには、 `NSUserActivity` **AppDelegate.cs** ファイルを編集し、メソッドをオーバーライドし `ContinueUserActivity` ます。 次に例を示します。
 
 ```csharp
 public override bool ContinueUserActivity (UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
@@ -153,7 +153,7 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 
 上記のコードを最小限に抑えることで、アプリでは次の3つの新しい iOS 10 機能を利用できるようになりました。
 
-- **ハンドオフ**
+- **Handoff**
 - **スポットライト検索**
 - **コンテキスト Siri リマインダー**
 
@@ -175,7 +175,7 @@ public override bool ContinueUserActivity (UIApplication application, NSUserActi
 
 watchOS 3 は、いくつかの小さな変更や既存のフレームワークへの追加によってアプリでこの機能を有効にするように強化されています。
 
-- `NSUserActivity`には、アプリ内で表示される場所情報をキャプチャするための追加のフィールドがあります。
+- `NSUserActivity` には、アプリ内で表示される場所情報をキャプチャするための追加のフィールドがあります。
 - 位置情報をキャプチャするために、MapKit と CoreSpotlight にいくつかの追加が行われています。
 - 場所を認識する機能が、システム内の Siri、マップ、マルチタスク、およびその他のアプリに追加されました。
 
@@ -356,11 +356,11 @@ geocoder.GeocodeAddress(address, (place, err)=> {
 
 ```
 
-## <a name="summary"></a>要約
+## <a name="summary"></a>まとめ
 
 この記事では、プロアクティブな提案について説明し、開発者が Xamarin. iOS app for watchOS へのトラフィックを促進する方法について説明しました。 ここでは、プロアクティブな提案を実装し、使用ガイドラインを提示する手順について説明します。
 
 ## <a name="related-links"></a>関連リンク
 
-- [watchOS のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+watchOS)
+- [watchOS のサンプル](/samples/browse/?products=xamarin&term=Xamarin.iOS%2bwatchOS)
 - [SiriKit プログラミングガイド](https://developer.apple.com/library/prerelease/content/documentation/Intents/Conceptual/SiriIntegrationGuide/index.html)

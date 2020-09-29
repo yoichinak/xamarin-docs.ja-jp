@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/23/2017
-ms.openlocfilehash: 09fc582182729d3d8e17b85ac0a3ecc4bdcfce7e
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 3a74084db461271ca7fd440ab2c9779f949b30ff
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939816"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436841"
 ---
 # <a name="custom-document-icons-in-xamarinios"></a>Xamarin. iOS のカスタムドキュメントアイコン
 
 _この記事では、カスタムドキュメントの種類のアイコンとして使用する Xamarin. iOS アプリでのイメージアセットの追加と管理について説明します。_
 
-Xamarin iOS アプリで特定の種類のドキュメントの読み込みがサポートされている場合、開発者は、次に示すように、ユーザーが*メールアプリケーション*の添付ファイルを停止したときなど、そのドキュメントの種類を検出したときに使用するアイコンを提供できます。
+Xamarin iOS アプリで特定の種類のドキュメントの読み込みがサポートされている場合、開発者は、次に示すように、ユーザーが *メールアプリケーション* の添付ファイルを停止したときなど、そのドキュメントの種類を検出したときに使用するアイコンを提供できます。
 
  [![ドキュメントの種類のアイコンの例](custom-document-types-images/17.png)](custom-document-types-images/17.png#lightbox)
 
@@ -37,16 +37,16 @@ Xamarin iOS アプリで特定の種類のドキュメントの読み込みが�
 
  ![[詳細設定] タブの [ドキュメントの種類] セクションを開く](custom-document-types-images/doc01w.png)
 
-[**ドキュメントの種類の追加**] ボタンをクリックし、必要なフィールドを入力します。
+[ **ドキュメントの種類の追加** ] ボタンをクリックし、必要なフィールドを入力します。
 
 ![[ドキュメントの種類の追加フォーム](custom-document-types-images/doc02w.png)
 
 -----
 
-ドキュメントの種類の詳細については、「Apple の[Uniform Type Identifier リファレンス](https://developer.apple.com/library/ios/#documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html)」および「 [IOS のドキュメント相互作用プログラミング](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Introduction/Introduction.html)に関するトピック」を参照してください。
+ドキュメントの種類の詳細については、「Apple の [Uniform Type Identifier リファレンス](https://developer.apple.com/library/ios/#documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html) 」および「 [IOS のドキュメント相互作用プログラミング](https://developer.apple.com/library/ios/#documentation/FileManagement/Conceptual/DocumentInteraction_TopicsForIOS/Introduction/Introduction.html)に関するトピック」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 
-- [イメージの操作 (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithimages)
+- [イメージの操作 (サンプル)](/samples/xamarin/ios-samples/workingwithimages)
 - [Hello, iPhone](~/ios/get-started/hello-ios/index.md)
 - [カスタムアイコンとイメージ作成のガイドライン](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)

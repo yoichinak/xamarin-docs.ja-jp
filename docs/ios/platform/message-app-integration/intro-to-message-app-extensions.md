@@ -7,31 +7,31 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2017
-ms.openlocfilehash: 2cc27b18bdb58ee633cae2d61e8cc6a8064df581
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 0a2ca9fea8135e0188829b8651e9ec15303b933d
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937128"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436514"
 ---
 # <a name="message-app-extension-basics-in-xamarinios"></a>Xamarin. iOS でのメッセージアプリ拡張機能の基本
 
 _この記事では、メッセージアプリと統合し、ユーザーに新しい機能を提供する Xamarin. iOS ソリューションにメッセージアプリ拡張機能を含める方法を示します。_
 
-IOS 10 を初めて使用する場合、メッセージアプリ拡張機能は**Messages**アプリと統合され、ユーザーに新しい機能を提供します。 拡張機能は、テキスト、ステッカー、メディアファイル、および対話型メッセージを送信できます。
+IOS 10 を初めて使用する場合、メッセージアプリ拡張機能は **Messages** アプリと統合され、ユーザーに新しい機能を提供します。 拡張機能は、テキスト、ステッカー、メディアファイル、および対話型メッセージを送信できます。
 
 ## <a name="about-message-app-extensions"></a>メッセージアプリの拡張機能について
 
-前述のように、メッセージアプリ拡張機能は**Messages**アプリと統合され、ユーザーに新しい機能を提供します。 拡張機能は、テキスト、ステッカー、メディアファイル、および対話型メッセージを送信できます。 次の2種類のメッセージアプリ拡張機能を使用できます。
+前述のように、メッセージアプリ拡張機能は **Messages** アプリと統合され、ユーザーに新しい機能を提供します。 拡張機能は、テキスト、ステッカー、メディアファイル、および対話型メッセージを送信できます。 次の2種類のメッセージアプリ拡張機能を使用できます。
 
-- **ステッカーパック**-ユーザーがメッセージに追加できるステッカーのコレクションが含まれています。 ステッカーパックは、コードを記述せずに作成できます。
-- **IMessage アプリ**-メッセージアプリ内にカスタムユーザーインターフェイスを提供して、ステッカーの選択、テキストの入力 (オプションの型変換を含む)、および操作メッセージの作成、編集、および送信を行うことができます。
+- **ステッカーパック** -ユーザーがメッセージに追加できるステッカーのコレクションが含まれています。 ステッカーパックは、コードを記述せずに作成できます。
+- **IMessage アプリ** -メッセージアプリ内にカスタムユーザーインターフェイスを提供して、ステッカーの選択、テキストの入力 (オプションの型変換を含む)、および操作メッセージの作成、編集、および送信を行うことができます。
 
 メッセージアプリの拡張機能は、次の3つの主要なコンテンツの種類を提供します。
 
-- **対話型メッセージ**-アプリが生成するカスタムメッセージコンテンツの一種であり、ユーザーがメッセージをタップすると、アプリがフォアグラウンドで起動されます。
+- **対話型メッセージ** -アプリが生成するカスタムメッセージコンテンツの一種であり、ユーザーがメッセージをタップすると、アプリがフォアグラウンドで起動されます。
 - **ステッカー** -ユーザー間で送信されるメッセージに含めることができる、アプリによって生成されるイメージです。
-- **サポートされているその他のコンテンツ**-アプリは、メッセージアプリによって常にサポートされているその他のコンテンツの種類への写真、ビデオ、テキスト、リンクなどのコンテンツを提供できます。
+- **サポートされているその他のコンテンツ** -アプリは、メッセージアプリによって常にサポートされているその他のコンテンツの種類への写真、ビデオ、テキスト、リンクなどのコンテンツを提供できます。
 
 IOS 10 の新機能であるメッセージアプリには、独自の専用の組み込みアプリストアが含まれるようになりました。 メッセージアプリの拡張機能を含むすべてのアプリが、このストアに表示され、昇格されます。 新しいメッセージアプリドロワーには、Messages App Store からダウンロードされたすべてのアプリが表示され、ユーザーにすばやくアクセスできるようになります。
 
@@ -43,7 +43,7 @@ IOS 10 の新機能であるメッセージアプリには、独自の専用の�
 - Apple Pay にアクセスできます。
 - これらのユーザーは、カメラなどのデバイスハードウェアにアクセスできます。
 
-メッセージアプリの拡張機能は、iOS 10 でのみサポートされていますが、これらの拡張機能が送信するコンテンツは、watchOS および macOS デバイスで表示できます。 WatchOS 3 に追加された新しい [ _Recents ページ_には、電話から送信された最近のステッカー (メッセージアプリの拡張機能を含む) が表示され、ユーザーはこれらのステッカーをウォッチから送信できます。
+メッセージアプリの拡張機能は、iOS 10 でのみサポートされていますが、これらの拡張機能が送信するコンテンツは、watchOS および macOS デバイスで表示できます。 WatchOS 3 に追加された新しい [ _Recents ページ_ には、電話から送信された最近のステッカー (メッセージアプリの拡張機能を含む) が表示され、ユーザーはこれらのステッカーをウォッチから送信できます。
 
 ## <a name="about-the-messages-framework"></a>Messages Framework について
 
@@ -51,7 +51,7 @@ IOS 10 の新機能である Messages framework では、メッセージアプ�
 
 アプリが起動されると、ユーザーはこのアプリと対話して、メッセージを介して共有する新しいコンテンツを作成します。 その後、アプリは Messages フレームワークを使用して、新しく作成されたコンテンツを処理のためにメッセージアプリに転送します。
 
-Messages framework と Message Apps の拡張機能は、既存の iOS アプリ拡張機能の上に構築されています。 アプリ拡張機能の詳細については、「Apple の[アプリ拡張機能のプログラミングガイド](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)」を参照してください。
+Messages framework と Message Apps の拡張機能は、既存の iOS アプリ拡張機能の上に構築されています。 アプリ拡張機能の詳細については、「Apple の [アプリ拡張機能のプログラミングガイド](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)」を参照してください。
 
 システム全体で Apple が提供する他の拡張ポイントとは異なり、メッセージアプリ自体はコンテナーとして機能するため、開発者はメッセージアプリの拡張機能用のホストアプリを提供する必要はありません。 ただし、開発者は、新規または既存の iOS アプリ内に Message Apps 拡張機能を含め、バンドルと共に出荷することができます。
 
@@ -93,13 +93,13 @@ Apple では、さまざまな色の背景 (白、黒、赤、黄、および複
 
 ステッカーパックでは、次の3つのサイズのいずれかでステッカーを提供できます。
 
-- **小**-100 x 100 ポイント。
-- **中**~ 136 x 136 ポイント。 これが既定のサイズです。
+- **小** -100 x 100 ポイント。
+- **中** ~ 136 x 136 ポイント。 これが既定のサイズです。
 - **Large** -206 x 206 ポイント。
 
 Xcode の属性インスペクターを使用して、ステッカーパック全体のサイズを設定し、要求されたサイズに一致する画像アセットのみを提供します。これは、Messages アプリ内のステッカーブラウザーで最適な結果を得るために使用します。
 
-詳細については、[アイスクリームビルダー](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-icecreambuilder)アプリと Apple の[メッセージリファレンス](https://developer.apple.com/reference/messages)を参照してください。
+詳細については、 [アイスクリームビルダー](/samples/xamarin/ios-samples/ios10-icecreambuilder) アプリと Apple の [メッセージリファレンス](https://developer.apple.com/reference/messages)を参照してください。
 
 ## <a name="creating-a-custom-sticker-experience"></a>カスタムステッカーエクスペリエンスの作成
 
@@ -127,7 +127,7 @@ Xcode の属性インスペクターを使用して、ステッカーパック�
 4. **拡張機能の名前**を入力し、[**次へ**] ボタンをクリックします。
 
     [![拡張機能名を入力してください](intro-to-message-app-extensions-images/message02.png)](intro-to-message-app-extensions-images/message02.png#lightbox)
-5. [**作成**] ボタンをクリックして拡張機能をビルドします。
+5. [ **作成** ] ボタンをクリックして拡張機能をビルドします。
 
     [![[作成] ボタンをクリックします。](intro-to-message-app-extensions-images/message03.png)](intro-to-message-app-extensions-images/message03.png#lightbox)
 
@@ -135,7 +135,7 @@ Xcode の属性インスペクターを使用して、ステッカーパック�
 
 1. Visual Studio を起動します。
 2. ソリューションを開いて、メッセージアプリの拡張機能を追加します。
-3. [ **Ios Extensions > IMessage Extension (ios)** ] を選択し、[**次へ**] ボタンをクリックします。
+3. [ **Ios Extensions > IMessage Extension (ios)** ] を選択し、[ **次へ** ] ボタンをクリックします。
 
     [![IMessage 拡張機能 (iOS) を選択します。](intro-to-message-app-extensions-images/message01.w157-sml.png)](intro-to-message-app-extensions-images/message01.w157.png#lightbox)
 
@@ -147,9 +147,9 @@ Xcode の属性インスペクターを使用して、ステッカーパック�
 
 Messages フレームワークには、ユーザーに使用可能なステッカーを表示するためのクラスが用意されています。
 
-- `MSStickerBrowserViewController`-ステッカーが表示されるビューを制御します。 また、 `IMSStickerBrowserViewDataSource` 指定されたブラウザーインデックスのステッカーカウントとステッカーを返すインターフェイスに準拠しています。
-- `MSStickerBrowserView`-使用可能なステッカーが表示されるビューです。
-- `MSStickerSize`-ブラウザービューに表示されるステッカーのグリッドの個々のセルサイズを決定します。
+- `MSStickerBrowserViewController` -ステッカーが表示されるビューを制御します。 また、 `IMSStickerBrowserViewDataSource` 指定されたブラウザーインデックスのステッカーカウントとステッカーを返すインターフェイスに準拠しています。
+- `MSStickerBrowserView` -使用可能なステッカーが表示されるビューです。
+- `MSStickerSize` -ブラウザービューに表示されるステッカーのグリッドの個々のセルサイズを決定します。
 
 ### <a name="creating-a-custom-sticker-browser"></a>カスタムステッカーブラウザーを作成する
 
@@ -393,7 +393,7 @@ View.AddSubview (BrowserViewController.View);
 
 このステッカービューは、プログラムによって、またはユーザーが手動で切り替えることができます。
 
-2つの異なる表示モードの切り替えを処理する次の例を見てみましょう。 状態ごとに2つの異なるビューコントローラーが必要になります。 は `StickerBrowserViewController` **コンパクト**ビューを処理し、次のようになります。
+2つの異なる表示モードの切り替えを処理する次の例を見てみましょう。 状態ごとに2つの異なるビューコントローラーが必要になります。 は `StickerBrowserViewController` **コンパクト** ビューを処理し、次のようになります。
 
 ```csharp
 using System;
@@ -494,7 +494,7 @@ namespace MessageExtension
 }
 ```
 
-は、 `AddStickerViewController` **展開**されたステッカービューを処理し、次のようになります。
+は、 `AddStickerViewController` **展開** されたステッカービューを処理し、次のようになります。
 
 ```csharp
 using System;
@@ -666,14 +666,14 @@ namespace MessageExtension
 }
 ```
 
-ユーザーが使用可能なコレクションに新しいステッカーを追加するように要求すると、新しい `AddStickerViewController` が表示されるコントローラーになり、ステッカービューが**展開**されたビューになります。
+ユーザーが使用可能なコレクションに新しいステッカーを追加するように要求すると、新しい `AddStickerViewController` が表示されるコントローラーになり、ステッカービューが **展開** されたビューになります。
 
 ```csharp
 // Switch to expanded view mode
 Request (MSMessagesAppPresentationStyle.Expanded);
 ```
 
-ユーザーが追加するステッカーを選択すると、使用可能なコレクションに追加され、**コンパクト**ビューが要求されます。
+ユーザーが追加するステッカーを選択すると、使用可能なコレクションに追加され、 **コンパクト** ビューが要求されます。
 
 ```csharp
 public void AddStickerToCollection (MSSticker sticker)
@@ -707,10 +707,10 @@ public override void DidTransition (MSMessagesAppPresentationStyle presentationS
 
 ## <a name="summary"></a>まとめ
 
-この記事では、Xamarin. iOS ソリューションにおけるメッセージアプリ拡張機能について説明しました。このソリューションは、 **Messages**アプリと統合され、ユーザーに新しい機能を提供します。 拡張機能を使用して、テキスト、ステッカー、メディアファイル、および対話型メッセージを送信します。
+この記事では、Xamarin. iOS ソリューションにおけるメッセージアプリ拡張機能について説明しました。このソリューションは、 **Messages** アプリと統合され、ユーザーに新しい機能を提供します。 拡張機能を使用して、テキスト、ステッカー、メディアファイル、および対話型メッセージを送信します。
 
 ## <a name="related-links"></a>関連リンク
 
-- [アイスクリームビルダー (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios10-icecreambuilder)
+- [アイスクリームビルダー (サンプル)](/samples/xamarin/ios-samples/ios10-icecreambuilder)
 - [メッセージリファレンス](https://developer.apple.com/reference/messages)
 - [アプリ拡張機能のプログラミングガイド](https://developer.apple.com/library/prerelease/content/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214)
