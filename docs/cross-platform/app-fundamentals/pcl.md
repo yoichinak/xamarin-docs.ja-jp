@@ -6,28 +6,28 @@ ms.assetid: 76ba8f7a-9b6e-40f5-9a29-ff1274ece4f2
 author: davidortinau
 ms.author: daortin
 ms.date: 07/18/2018
-ms.openlocfilehash: 63ef7045051f21259e01c36fc5f702585b04a57b
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: a1672937b8c7c0ce429b82aee34ecf45aa59d4c8
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86934375"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457420"
 ---
 # <a name="portable-class-libraries-pcl"></a>ポータブル クラス ライブラリ (PCL)
 
 > [!TIP]
 > ポータブルクラスライブラリ (Pcl) は、最新バージョンの Visual Studio では非推奨と見なされます。
-> 新しいプロジェクトの場合でも、PCLs を開いて編集し、コンパイルすることはできますが、 [.NET Standard ライブラリ](~/cross-platform/app-fundamentals/net-standard.md)を使用して、より大きな API 領域にアクセスすることをお勧めします。
+> 新しいプロジェクトの場合でも、PCLs を開いて編集し、コンパイルすることはできますが、 [.NET Standard ライブラリ](~/cross-platform/app-fundamentals/net-standard.md) を使用して、より大きな API 領域にアクセスすることをお勧めします。
 
 クロスプラットフォームアプリケーションを構築するための重要なコンポーネントは、プラットフォーム固有のさまざまなプロジェクト間でコードを共有できることです。 ただし、これは複雑になります。これは、プラットフォームによって .NET 基底クラスライブラリ (BCL) の異なるサブセットを使用することが多いため、実際には別の .NET Core ライブラリプロファイルにビルドされるためです。 つまり、各プラットフォームで使用できるのは、同じプロファイルをターゲットとするクラスライブラリのみであるため、プラットフォームごとに個別のクラスライブラリプロジェクトが必要になります。
 
-この問題に対処するには、 **.NET Standard プロジェクト**、**共有アセットプロジェクト**、および**ポータブルクラスライブラリ (PCL) プロジェクト**という3つの主要な方法があります。
+この問題に対処するには、 **.NET Standard プロジェクト**、 **共有アセットプロジェクト**、および **ポータブルクラスライブラリ (PCL) プロジェクト**という3つの主要な方法があります。
 
-- **.NET Standard プロジェクト**は、.net コードを共有するために推奨される方法です。 [.NET Standard プロジェクトと Xamarin](~/cross-platform/app-fundamentals/net-standard.md)の詳細については、こちらを参照してください。
-- **共有アセットプロジェクト**は、1つのファイルセットを使用し、ソリューション内でコードを共有するためのすばやく簡単な方法を提供します。一般的に、条件付きコンパイルディレクティブを使用して、そのコードを使用するさまざまなプラットフォームのコードパスを指定します (詳細については、[共有プロジェクト](~/cross-platform/app-fundamentals/shared-projects.md)に関する記事を参照してください)。
-- **PCL**プロジェクトは、BCL クラス/機能の既知のセットをサポートする特定のプロファイルを対象としています。 ただし、PCL の場合は、プロファイル固有のコードを独自のライブラリに分離するために、追加のアーキテクチャ作業が必要になることがよくあります。
+- **.NET Standard プロジェクト** は、.net コードを共有するために推奨される方法です。 [.NET Standard プロジェクトと Xamarin](~/cross-platform/app-fundamentals/net-standard.md)の詳細については、こちらを参照してください。
+- **共有アセットプロジェクト** は、1つのファイルセットを使用し、ソリューション内でコードを共有するためのすばやく簡単な方法を提供します。一般的に、条件付きコンパイルディレクティブを使用して、そのコードを使用するさまざまなプラットフォームのコードパスを指定します (詳細については、 [共有プロジェクト](~/cross-platform/app-fundamentals/shared-projects.md)に関する記事を参照してください)。
+- **PCL** プロジェクトは、BCL クラス/機能の既知のセットをサポートする特定のプロファイルを対象としています。 ただし、PCL の場合は、プロファイル固有のコードを独自のライブラリに分離するために、追加のアーキテクチャ作業が必要になることがよくあります。
 
-このページでは、特定のプロファイルを対象とする**PCL**プロジェクトを作成する方法について説明します。このプロジェクトは、複数のプラットフォーム固有のプロジェクトで参照できます。
+このページでは、特定のプロファイルを対象とする **PCL** プロジェクトを作成する方法について説明します。このプロジェクトは、複数のプラットフォーム固有のプロジェクトで参照できます。
 
 ## <a name="what-is-a-portable-class-library"></a>ポータブルクラスライブラリとは何ですか。
 
@@ -37,7 +37,7 @@ ms.locfileid: "86934375"
 
 次の表は、.NET プラットフォームによって異なる機能の一部を示しています。 特定のデバイスまたはプラットフォームで実行することが保証されている PCL アセンブリを作成するには、プロジェクトの作成時に必要なサポートを選択するだけです。
 
-|特徴量|.NET Framework|UWP アプリ|Silverlight|Windows Phone|Xamarin|
+|機能|.NET Framework|UWP アプリ|Silverlight|Windows Phone|Xamarin|
 |---|---|---|---|---|---|
 |コア|Y|Y|Y|Y|Y|
 |LINQ|Y|Y|Y|Y|Y|
@@ -54,7 +54,7 @@ Xamarin 列には、Visual Studio に付属しているすべてのプロファ�
 - Windows Phone 8
 - UWP アプリ
 
-[Microsoft の web サイト](https://msdn.microsoft.com/library/gg597391(v=vs.110).aspx)にあるさまざまなプロファイルの機能の詳細を確認し、サポートされているフレームワーク情報やその他の注意事項を含む別のコミュニティメンバーの[PCL プロファイルの概要](https://portablelibraryprofiles.stephencleary.com/)を参照できます。
+[Microsoft の web サイト](/dotnet/standard/cross-platform/cross-platform-development-with-the-portable-class-library)にあるさまざまなプロファイルの機能の詳細を確認し、サポートされているフレームワーク情報やその他の注意事項を含む別のコミュニティメンバーの[PCL プロファイルの概要](https://portablelibraryprofiles.stephencleary.com/)を参照できます。
 
 **メリット**
 
@@ -68,7 +68,7 @@ Xamarin 列には、Visual Studio に付属しているすべてのプロファ�
 2. ポータブルクラスライブラリのサブセットには、Monotouch.dialog と Mono for Android (DllImport や system.object など) の両方で使用できるクラスが含まれていない場合があります。
 
 > [!NOTE]
-> ポータブルクラスライブラリは、最新バージョンの Visual Studio では非推奨とされており、代わりに[.NET Standard ライブラリ](net-standard.md)をお勧めします。
+> ポータブルクラスライブラリは、最新バージョンの Visual Studio では非推奨とされており、代わりに [.NET Standard ライブラリ](net-standard.md) をお勧めします。
 
 一部の短所は、プロバイダーパターンまたは依存関係の挿入を使用して、ポータブルクラスライブラリで定義されているインターフェイスまたは基本クラスに対してプラットフォームプロジェクトの実際の実装をコーディングすることを回避することができます。
 
@@ -86,7 +86,7 @@ Xamarin 列には、Visual Studio に付属しているすべてのプロファ�
 
 ポータブルクラスライブラリをソリューションに追加することは、通常のライブラリプロジェクトを追加することとよく似ています。
 
-1. [**新しいプロジェクト**] ダイアログで、[**マルチプラットフォーム > ライブラリ > ポータブルライブラリ**] オプションを選択します。
+1. [ **新しいプロジェクト** ] ダイアログで、[ **マルチプラットフォーム > ライブラリ > ポータブルライブラリ** ] オプションを選択します。
 
     ![新しい PCL プロジェクトを作成する](pcl-images/image2.png)
 
@@ -98,11 +98,11 @@ PCL は、コードを追加する準備ができました。 他のプロジェ
 
 ### <a name="editing-pcl-settings"></a>PCL 設定の編集
 
-このプロジェクトの PCL 設定を表示および変更するには、プロジェクトを右クリックし、[オプション] をクリックして [ **> 全般**] を選択し、次に示す画面を表示 > ます。
+このプロジェクトの PCL 設定を表示および変更するには、プロジェクトを右クリックし、[オプション] をクリックして [ **> 全般** ] を選択し、次に示す画面を表示 > ます。
 
 [![プロファイルを設定する PCL プロジェクトオプション](pcl-images/image4-sml.png)](pcl-images/image4.png#lightbox)
 
-このポータブルクラスライブラリのターゲットプロファイルを変更するには、[**変更.** ..] をクリックします。
+このポータブルクラスライブラリのターゲットプロファイルを変更するには、[ **変更.** ..] をクリックします。
 
 コードが既に PCL に追加された後にプロファイルが変更された場合、新しく選択されたプロファイルに含まれていない機能をコードが参照していると、ライブラリがコンパイルされなくなる可能性があります。
 
@@ -120,7 +120,7 @@ Xamarin. iOS または Xamarin. Android プロジェクトの System.IO オー�
 
 ### <a name="using-pcl"></a>PCL の使用
 
-PCL プロジェクトを作成したら、互換性のあるアプリケーションまたはライブラリプロジェクトから参照を追加できます。通常は参照を追加するのと同じ方法で行います。 Visual Studio for Mac で、[参照] ノードを右クリックし、[**参照の編集**] をクリックします。次に、次のように [**プロジェクト**] タブに切り替えます。
+PCL プロジェクトを作成したら、互換性のあるアプリケーションまたはライブラリプロジェクトから参照を追加できます。通常は参照を追加するのと同じ方法で行います。 Visual Studio for Mac で、[参照] ノードを右クリックし、[ **参照の編集** ] をクリックします。次に、次のように [ **プロジェクト** ] タブに切り替えます。
 
 [![[参照の編集] オプションを使用して PCL への参照を追加する](pcl-images/image8.png)](pcl-images/image8.png#lightbox)
 
@@ -140,7 +140,7 @@ PCL からの出力 (つまり、結果のアセンブリ DLL) は、ほとん�
 
 Visual Studio でソリューションに PCL を追加するのは、通常のプロジェクトを追加する場合と少し異なります。
 
-1. [**新しいプロジェクトの追加**] 画面で、[**クラスライブラリ (レガシポータブル)** ] オプションを選択します。 右側の説明には、このプロジェクトの種類が非推奨とされていることが示されています。
+1. [ **新しいプロジェクトの追加** ] 画面で、[ **クラスライブラリ (レガシポータブル)** ] オプションを選択します。 右側の説明には、このプロジェクトの種類が非推奨とされていることが示されています。
 
     [![ポータブルクラスライブラリを作成するための [新しいプロジェクト] ウィンドウ](pcl-images/image10-sml.png "ポータブル クラス ライブラリ")](pcl-images/image10.png#lightbox)
 
@@ -157,14 +157,14 @@ PCL は、コードを追加する準備ができました。 他のプロジェ
 
 ### <a name="editing-pcl-settings"></a>PCL 設定の編集
 
-PCL 設定を表示および変更するには、次のスクリーンショットに示すように、プロジェクトを右クリックし、[**プロパティ] > [ライブラリ**] を選択します。
+PCL 設定を表示および変更するには、次のスクリーンショットに示すように、プロジェクトを右クリックし、[ **プロパティ] > [ライブラリ** ] を選択します。
 
 [![プラットフォームターゲットの編集](pcl-images/image13-sml.png)](pcl-images/image13.png#lightbox)
 
 コードが既に PCL に追加された後にプロファイルが変更された場合、新しく選択されたプロファイルに含まれていない機能をコードが参照していると、ライブラリがコンパイルされなくなる可能性があります。
 
 > [!TIP]
-> また、そのことを示すメッセージも表示され**ます。NETStandard は、コードを共有するために推奨される方法です**。 これは、PCLs がまだサポートされていても、.NET Standard にアップグレードすることをお勧めします。
+> また、そのことを示すメッセージも表示され **ます。NETStandard は、コードを共有するために推奨される方法です**。 これは、PCLs がまだサポートされていても、.NET Standard にアップグレードすることをお勧めします。
 
 ### <a name="working-with-a-pcl"></a>PCL の使用
 
@@ -183,7 +183,7 @@ PCL ライブラリでコードを記述すると、Visual Studio は選択さ�
 
 ### <a name="using-pcl"></a>PCL の使用
 
-PCL プロジェクトを作成したら、互換性のあるアプリケーションまたはライブラリプロジェクトから参照を追加できます。通常は参照を追加するのと同じ方法で行います。 Visual Studio の [参照] ノードを右クリックし、次に `Add Reference...` 示すように [**ソリューション > プロジェクト**] タブに切り替えます。
+PCL プロジェクトを作成したら、互換性のあるアプリケーションまたはライブラリプロジェクトから参照を追加できます。通常は参照を追加するのと同じ方法で行います。 Visual Studio の [参照] ノードを右クリックし、次に `Add Reference...` 示すように [ **ソリューション > プロジェクト** ] タブに切り替えます。
 
 [![[参照プロジェクトの追加] タブを使用して PCL への参照を追加する](pcl-images/image16.png)](pcl-images/image16.png#lightbox)
 
@@ -198,7 +198,7 @@ PCL からの出力 (つまり、結果のアセンブリ DLL) は、ほとん�
 
 ## <a name="pcl-example"></a>PCL の例
 
-[Taskyportable](https://docs.microsoft.com/samples/xamarin/mobile-samples/taskyportable/)サンプルアプリケーションは、Xamarin でポータブルクラスライブラリを使用する方法を示しています。
+[Taskyportable](/samples/xamarin/mobile-samples/taskyportable/)サンプルアプリケーションは、Xamarin でポータブルクラスライブラリを使用する方法を示しています。
 次に、iOS および Android で実行されるアプリのスクリーンショットをいくつか示します。
 
 [![IOS、Android、および Windows Phone で実行されているアプリのスクリーンショットを次に示します。](pcl-images/image18.png)](pcl-images/image18.png#lightbox)
@@ -266,15 +266,15 @@ public static extern Result Close(IntPtr db);
 
 完全な実装については、サンプルコードを参照してください。
 
-## <a name="summary"></a>要約
+## <a name="summary"></a>まとめ
 
 この記事では、Visual Studio for Mac と Visual Studio の内部から PCLs を作成および使用する方法を示した、ポータブルクラスライブラリの利点と落とし穴について簡単に説明しました。最後に、作業中の PCL を示す完全なサンプルアプリケーション (TaskyPortable) が導入されました。
 
 ## <a name="related-links"></a>関連リンク
 
-- [TaskyPortable (サンプル)](https://docs.microsoft.com/samples/xamarin/mobile-samples/taskyportable/)
+- [TaskyPortable (サンプル)](/samples/xamarin/mobile-samples/taskyportable/)
 - [クロスプラットフォーム アプリケーションの構築](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md)
 - [ポータブル Visual Basic](~/cross-platform/platform/visual-basic/index.md)
 - [共有プロジェクト](~/cross-platform/app-fundamentals/shared-projects.md)
 - [コード共有のオプション](~/cross-platform/app-fundamentals/code-sharing.md)
-- [.NET Framework を使用したクロスプラットフォーム開発 (Microsoft)](https://docs.microsoft.com/dotnet/standard/cross-platform/cross-platform-development-with-the-portable-class-library)
+- [.NET Framework を使用したクロスプラットフォーム開発 (Microsoft)](/dotnet/standard/cross-platform/cross-platform-development-with-the-portable-class-library)

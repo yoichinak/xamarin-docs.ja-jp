@@ -6,12 +6,12 @@ ms.assetid: 3367A4A4-EC88-4B75-96D0-51B1FCBCE614
 author: davidortinau
 ms.author: daortin
 ms.date: 11/14/2017
-ms.openlocfilehash: e72f950dc6fcf12e70714e0fbb996ad5ea432548
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: c172208b77728423617d17b3f4c5b5a516a0b932
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029706"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457355"
 ---
 # <a name="objective-c-support"></a>目的-C のサポート
 
@@ -21,31 +21,31 @@ ms.locfileid: "73029706"
 
 ### <a name="automatic-reference-counting"></a>自動参照カウント
 
-生成されたバインディングを呼び出すには、自動参照カウント (弧) を使用する**必要**があります。 .NET 埋め込みベースのライブラリを使用するプロジェクトは、`-fobjc-arc`を使用してコンパイルする必要があります。
+生成されたバインディングを呼び出すには、自動参照カウント (弧) を使用する **必要** があります。 .NET 埋め込みベースのライブラリを使用するプロジェクトは、を使用してコンパイルする必要があり `-fobjc-arc` ます。
 
 ### <a name="nsstring-support"></a>NSString のサポート
 
-`System.String` 型を公開する Api は、`NSString`に変換されます。 これにより、`char*`を処理する場合よりもメモリ管理が簡単になります。
+型を公開する Api `System.String` はに変換され `NSString` ます。 これにより、を扱う場合よりもメモリ管理が簡単になり `char*` ます。
 
 ### <a name="protocols-support"></a>プロトコルのサポート
 
-マネージインターフェイスは、すべてのメンバーが `@required`する目的の C プロトコルに変換されます。
+マネージインターフェイスは、すべてのメンバーがである目的 C プロトコルに変換され `@required` ます。
 
 ### <a name="nsobject-protocol-support"></a>NSObject プロトコルのサポート
 
 既定では、.NET と目的 C ランタイムの両方の既定のハッシュおよび等価性は、類似したセマンティクスを共有しているため、交換可能であると見なされます。
 
-マネージ型が `Equals(Object)` または `GetHashCode`をオーバーライドする場合は、通常、既定の (.NET) 動作が不十分であったことを意味します。これは、既定の目的 C の動作では不十分である可能性があることを意味します。
+マネージ型がまたはをオーバーライドする場合は、 `Equals(Object)` 通常、既定の (.net) 動作では不十分であったことを意味します。 `GetHashCode` これは、既定の目的 C の動作では不十分である可能性があることを意味します。
 
-このような場合、ジェネレーターは[`NSObject` プロトコル](https://developer.apple.com/reference/objectivec/1418956-nsobject?language=objc)で定義されている[`isEqual:`](https://developer.apple.com/reference/objectivec/1418956-nsobject/1418795-isequal?language=objc)メソッドと[`hash`](https://developer.apple.com/reference/objectivec/1418956-nsobject/1418859-hash?language=objc)プロパティをオーバーライドします。 これにより、カスタムマネージ実装を目的の C コードから透過的に使用できるようになります。
+このような場合、ジェネレーターは、 [`isEqual:`](https://developer.apple.com/reference/objectivec/1418956-nsobject/1418795-isequal?language=objc) [`hash`](https://developer.apple.com/reference/objectivec/1418956-nsobject/1418859-hash?language=objc) [ `NSObject` プロトコル](https://developer.apple.com/reference/objectivec/1418956-nsobject?language=objc)で定義されているメソッドとプロパティをオーバーライドします。 これにより、カスタムマネージ実装を目的の C コードから透過的に使用できるようになります。
 
 ### <a name="exceptions-support"></a>例外のサポート
 
-`--nativeexception` を引数として `objcgen` に渡すと、マネージ例外が、キャッチして処理できるように、目的の C 例外に変換されます。 
+`--nativeexception`を引数として渡す `objcgen` と、マネージ例外は、キャッチして処理できるように、目標 C の例外に変換されます。 
 
-### <a name="comparison"></a>条件式
+### <a name="comparison"></a>比較
 
-`IComparable` (またはそのジェネリックバージョン `IComparable<T>`) を実装するマネージ型では、`NSComparisonResult` を返し、`nil` 引数を受け取る、目的の C のわかりやすいメソッドが生成されます。 これにより、生成された API が目的の C 開発者にとってよりわかりやすくなります。 (例:
+`IComparable`(またはそのジェネリックバージョン) を実装するマネージ型では `IComparable<T>` 、を返し、引数を受け入れる、目的の C のわかりやすいメソッドが生成され `NSComparisonResult` `nil` ます。 これにより、生成された API が目的の C 開発者にとってよりわかりやすくなります。 次に例を示します。
 
 ```objc
 - (NSComparisonResult)compare:(XAMComparableType * _Nullable)other;
@@ -53,7 +53,7 @@ ms.locfileid: "73029706"
 
 ### <a name="categories"></a>カテゴリ
 
-マネージ拡張メソッドは、カテゴリに変換されます。 たとえば、`Collection`の次の拡張メソッドがあります。
+マネージ拡張メソッドは、カテゴリに変換されます。 たとえば、に対して次の拡張メソッドを使用し `Collection` ます。
 
 ```csharp
 public static class SomeExtensions {
@@ -77,7 +77,7 @@ public static class SomeExtensions {
 
 ### <a name="subscripting"></a>添字演算子
 
-マネージインデックス付きプロパティは、オブジェクト時に変換されます。 (例:
+マネージインデックス付きプロパティは、オブジェクト時に変換されます。 次に例を示します。
 
 ```csharp
 public bool this[int index] {
@@ -102,19 +102,19 @@ if ([intCollection [0] isEqual:@42])
 
 インデクサーの種類に応じて、インデックス付きまたはキー付きの時が適切な場所に生成されます。
 
-この[記事](https://nshipster.com/object-subscripting/)では、時の概要について説明します。
+この [記事](https://nshipster.com/object-subscripting/) では、時の概要について説明します。
 
 ## <a name="main-differences-with-net"></a>.NET との主な違い
 
 ### <a name="constructors-vs-initializers"></a>コンストラクターと初期化子
 
-目的 C では、継承チェーン内の任意の親クラスの任意の初期化子プロトタイプを呼び出すことができます。ただし、使用不可 (`NS_UNAVAILABLE`) としてマークされている場合は除きます。
+目的 C では、継承チェーン内の任意の親クラスの任意の初期化子プロトタイプを呼び出すことができます (使用不可 () としてマークされている場合を除く `NS_UNAVAILABLE` )。
 
-でC#は、クラス内のコンストラクターメンバーを明示的に宣言する必要があります。これは、コンストラクターが継承されないことを意味します。
+C# では、クラス内のコンストラクターメンバーを明示的に宣言する必要があります。これは、コンストラクターが継承されないことを意味します。
 
-C# API の正しい表現を目的の C に公開するために、親クラスの子クラスに存在しない初期化子には`NS_UNAVAILABLE`が追加されます。
+C# API の正しい表現を目的の C に公開するために、 `NS_UNAVAILABLE` は親クラスの子クラスに存在しない任意の初期化子に追加されます。
 
-C#API
+C# API:
 
 ```csharp
 public class Unique {
@@ -145,11 +145,11 @@ public class SuperUnique : Unique {
 @end
 ```
 
-ここでは、`initWithId:` が使用不可としてマークされています。
+ここで `initWithId:` は、は使用不可としてマークされています。
 
 ### <a name="operator"></a>演算子
 
-目標 C は演算子のオーバーロードをそのC#ようにサポートしていないため、演算子はクラスセレクターに変換されます。
+目標 C は C# のように演算子のオーバーロードをサポートしていないため、演算子はクラスセレクターに変換されます。
 
 ```csharp
 public static AllOperators operator + (AllOperators c1, AllOperators c2)
@@ -158,13 +158,13 @@ public static AllOperators operator + (AllOperators c1, AllOperators c2)
 }
 ```
 
-から
+を
 
 ```objc
 + (instancetype)add:(Overloads_AllOperators *)anObjectC1 c2:(Overloads_AllOperators *)anObjectC2;
 ```
 
-ただし、一部の .NET 言語では演算子のオーバーロードがサポートされていないため、演算子のオーバーロードに加えて["わかりやすい"](https://docs.microsoft.com/dotnet/standard/design-guidelines/operator-overloads)名前付きメソッドを含めることもよくあります。
+ただし、一部の .NET 言語では演算子のオーバーロードがサポートされていないため、演算子のオーバーロードに加えて ["わかりやすい"](/dotnet/standard/design-guidelines/operator-overloads) 名前付きメソッドを含めることもよくあります。
 
 演算子のバージョンと "フレンドリ" の両方のバージョンが見つかった場合は、同じ目的の C 名に生成されるため、フレンドリバージョンのみが生成されます。
 
@@ -180,7 +180,7 @@ public static AllOperatorsWithFriendly Add (AllOperatorsWithFriendly c1, AllOper
 }
 ```
 
-となり
+次のようになります。
 
 ```objc
 + (instancetype)add:(Overloads_AllOperatorsWithFriendly *)anObjectC1 c2:(Overloads_AllOperatorsWithFriendly *)anObjectC2;
@@ -188,27 +188,27 @@ public static AllOperatorsWithFriendly Add (AllOperatorsWithFriendly c1, AllOper
 
 ### <a name="equality-operator"></a>等値演算子
 
-一般に、の `==` C#は、前述のように一般的な演算子として処理されます。
+`==`C# の一般演算子は、前述のように一般的な演算子として処理されます。
 
-ただし、"表示" 等号演算子が見つかった場合は、演算子 `==` と演算子 `!=` の両方が生成時にスキップされます。
+ただし、"表示" 等号演算子が見つかった場合は、演算子 `==` と演算子の両方が `!=` 生成時にスキップされます。
 
 ### <a name="datetime-vs-nsdate"></a>DateTime vs NSDate
 
-[`NSDate`](https://developer.apple.com/reference/foundation/nsdate?language=objc)のドキュメントを参照してください。
+次のドキュメントを参照して [`NSDate`](https://developer.apple.com/reference/foundation/nsdate?language=objc) ください。
 
-> `NSDate` オブジェクトは、特定の calendrical システムまたはタイムゾーンに依存せず、1つの時点をカプセル化します。 日付オブジェクトは不変であり、絶対参照日付を基準としたインバリアントな時間間隔を表します (00:00:00 UTC の1月 2001)。
+> `NSDate` オブジェクトは、特定の calendrical システムまたはタイムゾーンに依存しない、1つの時点をカプセル化します。 日付オブジェクトは不変であり、絶対参照日付を基準としたインバリアントな時間間隔を表します (00:00:00 UTC の1月 2001)。
 
-`NSDate` 参照日付のため、`DateTime` 間の変換はすべて UTC で行う必要があります。
+`NSDate`参照日付のため、との間のすべての変換 `DateTime` は UTC で実行する必要があります。
 
 #### <a name="datetime-to-nsdate"></a>DateTime から NSDate
 
-`DateTime` から `NSDate`に変換する場合、`DateTime` の `Kind` プロパティが次のように考慮されます。
+からに変換する場合 `DateTime` `NSDate` 、 `Kind` のプロパティ `DateTime` は次のように考慮されます。
 
 |種類|結果|
 |---|---|
-|`Utc`|変換は、指定された `DateTime` オブジェクトをそのように使用して実行されます。|
-|`Local`|指定された `DateTime` オブジェクトで `ToUniversalTime()` を呼び出した結果が変換に使用されます。|
-|`Unspecified`|指定された `DateTime` オブジェクトは UTC であると見なされるため、`Kind` が `Utc`場合にも同じ動作になります。|
+|`Utc`|変換は、指定されたオブジェクトをそのように使用して実行され `DateTime` ます。|
+|`Local`|指定されたオブジェクトでを呼び出した結果 `ToUniversalTime()` `DateTime` が変換に使用されます。|
+|`Unspecified`|指定された `DateTime` オブジェクトは UTC であると見なされるので、がの場合も同じ動作になり `Kind` `Utc` ます。|
 
 変換では、次の式を使用します。
 
@@ -218,19 +218,19 @@ TimeInterval = DateTimeObjectTicks - NSDateReferenceDateTicks / TicksPerSecond
 
 この数式の場合: 
 
-- `NSDateReferenceDateTicks` は、2001年1月1日の 00:00:00 UTC の `NSDate` 参照日付に基づいて計算されます。 
+- `NSDateReferenceDateTicks` は、 `NSDate` 2001 年1月1日の 00:00:00 UTC の参照日付に基づいて計算されます。 
 
     ```csharp
     new DateTime (year:2001, month:1, day:1, hour:0, minute:0, second:0, kind:DateTimeKind.Utc).Ticks;
     ```
 
-- [`TicksPerSecond`](https://docs.microsoft.com/dotnet/api/system.timespan.tickspersecond)は[`TimeSpan`](https://docs.microsoft.com/dotnet/api/system.timespan)で定義されています
+- [`TicksPerSecond`](/dotnet/api/system.timespan.tickspersecond) 定義されている [`TimeSpan`](/dotnet/api/system.timespan)
 
-`NSDate` オブジェクトを作成するには、`TimeInterval` を `NSDate` [dateWithTimeIntervalSinceReferenceDate:](https://developer.apple.com/reference/foundation/nsdate/1591577-datewithtimeintervalsincereferen?language=objc)セレクターと共に使用します。
+オブジェクトを作成するには、を `NSDate` `TimeInterval` `NSDate` [dateWithTimeIntervalSinceReferenceDate:](https://developer.apple.com/reference/foundation/nsdate/1591577-datewithtimeintervalsincereferen?language=objc) selector と共に使用します。
 
 #### <a name="nsdate-to-datetime"></a>NSDate to DateTime
 
-`NSDate` から `DateTime` への変換では、次の式を使用します。
+からへの `NSDate` 変換 `DateTime` では、次の式を使用します。
 
 ```
 DateTimeTicks = NSDateTimeIntervalSinceReferenceDate * TicksPerSecond + NSDateReferenceDateTicks
@@ -238,17 +238,17 @@ DateTimeTicks = NSDateTimeIntervalSinceReferenceDate * TicksPerSecond + NSDateRe
 
 この数式の場合: 
 
-- `NSDateReferenceDateTicks` は、2001年1月1日の 00:00:00 UTC の `NSDate` 参照日付に基づいて計算されます。 
+- `NSDateReferenceDateTicks` は、 `NSDate` 2001 年1月1日の 00:00:00 UTC の参照日付に基づいて計算されます。 
 
     ```csharp
     new DateTime (year:2001, month:1, day:1, hour:0, minute:0, second:0, kind:DateTimeKind.Utc).Ticks;
     ```
 
-- [`TicksPerSecond`](https://docs.microsoft.com/dotnet/api/system.timespan.tickspersecond)は[`TimeSpan`](https://docs.microsoft.com/dotnet/api/system.timespan)で定義されています
+- [`TicksPerSecond`](/dotnet/api/system.timespan.tickspersecond) 定義されている [`TimeSpan`](/dotnet/api/system.timespan)
 
-`DateTimeTicks`を計算した後、`DateTime`[コンストラクター](https://docs.microsoft.com/dotnet/api/system.datetime.-ctor?#System_DateTime__ctor_System_Int64_System_DateTimeKind_)が呼び出され、その `kind` が `DateTimeKind.Utc`に設定されます。
+計算が完了したら、 `DateTimeTicks` `DateTime` [コンストラクター](/dotnet/api/system.datetime.-ctor#System_DateTime__ctor_System_Int64_System_DateTimeKind_) が呼び出され、 `kind` をに設定 `DateTimeKind.Utc` します。
 
 > [!NOTE]
-> `NSDate` は `nil`できますが、`DateTime` は .NET の構造体であり、定義によって `null`することはできません。 `nil` `NSDate`を指定すると、`DateTime.MinValue`にマップされる既定の `DateTime` 値に変換されます。
+> `NSDate` はにすることができますが、は `nil` `DateTime` .net の構造体であり、定義上、をにすることはできません `null` 。 を指定した場合は、 `nil` `NSDate` にマップされる既定値に変換され `DateTime` `DateTime.MinValue` ます。
 
-`NSDate` は、`DateTime`よりも高い最大値と下限値をサポートします。 `NSDate` から `DateTime`に変換するときに、これらの値の上限と下限をそれぞれ `DateTime` [MaxValue](https://docs.microsoft.com/dotnet/api/system.datetime.maxvalue)または[MinValue](https://docs.microsoft.com/dotnet/api/system.datetime.minvalue)に変更します。
+`NSDate` は、より大きい最大値と下限値をサポートし `DateTime` ます。 からに変換する場合 `NSDate` `DateTime` 、これらの値が大きい値と下限値は `DateTime` それぞれ [MaxValue](/dotnet/api/system.datetime.maxvalue) または [MinValue](/dotnet/api/system.datetime.minvalue)に変更されます。

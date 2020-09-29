@@ -6,16 +6,16 @@ ms.assetid: 442FC40A-84DD-A218-0D15-EAD86594B6D7
 author: davidortinau
 ms.author: daortin
 ms.date: 01/28/2016
-ms.openlocfilehash: 2f7d09405f90ac9fc4c3ce80181baafa447df637
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: f725fe06a5438e4dbdca2773d93befc13bc8ff95
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571242"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457498"
 ---
 # <a name="building-cross-platform-applications"></a>クロスプラットフォーム アプリケーションの構築
 
-クロスプラットフォームモバイルアプリケーション間でコードを共有するには、共有アセットプロジェクトとポータブルクラスライブラリの2つのオプションがあります。 これらのオプションについては、[こちら](~/cross-platform/app-fundamentals/code-sharing.md)を参照してください。[ポータブルクラスライブラリ](~/cross-platform/app-fundamentals/pcl.md)と[共有プロジェクト](~/cross-platform/app-fundamentals/shared-projects.md)の詳細については、こちらも参照してください。
+クロスプラットフォームモバイルアプリケーション間でコードを共有するには、共有アセットプロジェクトとポータブルクラスライブラリの2つのオプションがあります。 これらのオプションについては、 [こちら](~/cross-platform/app-fundamentals/code-sharing.md)を参照してください。 [ポータブルクラスライブラリ](~/cross-platform/app-fundamentals/pcl.md) と [共有プロジェクト](~/cross-platform/app-fundamentals/shared-projects.md) の詳細については、こちらも参照してください。
 
 <a name="Sections"></a>
 
@@ -64,6 +64,6 @@ Xamarin を使用してクロスプラットフォームアプリケーション
 
 - [コード共有のオプション](~/cross-platform/app-fundamentals/code-sharing.md)
 - [ケース スタディ: Tasky](~/cross-platform/app-fundamentals/building-cross-platform-applications/case-study-tasky.md)
-- [Tasky サンプルアプリ (github)](https://docs.microsoft.com/samples/xamarin/mobile-samples/taskyportable/)
+- [Tasky サンプルアプリ (github)](/samples/xamarin/mobile-samples/taskyportable/)
 - [Xamarin モバイルアプリケーション開発: クロスプラットフォームの C# および Xamarin. Forms の基礎 (Amazon)](https://www.amazon.com/Xamarin-Mobile-Application-Development-Cross-Platform/dp/1484202155/)
 - [Greg Shackles による C# を使用したモバイル開発 (O'Reilly)](https://shop.oreilly.com/product/0636920024002.do)

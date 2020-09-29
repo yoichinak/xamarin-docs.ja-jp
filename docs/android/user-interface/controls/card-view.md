@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: 2684866d04f2b085c70c70a04ff2c828205f0f32
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: d378b48741b6640f342d51e6eaa16aaf1a2f74a5
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571893"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457459"
 ---
 # <a name="xamarinandroid-cardview"></a>Xamarin Android CardView
 
@@ -20,7 +20,7 @@ _Cardview ウィジェットは、カードに似たビューでテキストと�
 
 ## <a name="overview"></a>概要
 
-`Cardview`Android 5.0 (ロリポップ) で導入されたウィジェットは、カードに似たビューでテキストとイメージの内容を表示する UI コンポーネントです。 `CardView`は、角が `FrameLayout` 丸く、影が付いたウィジェットとして実装されます。 通常、 `CardView` またはビューグループに単一の行項目を表示するには、を使用し `ListView` `GridView` ます。 たとえば、次のスクリーンショットは、 `CardView` スクロール可能なでベースの旅行先カードを実装する旅行予約アプリの例です `ListView` 。
+`Cardview`Android 5.0 (ロリポップ) で導入されたウィジェットは、カードに似たビューでテキストとイメージの内容を表示する UI コンポーネントです。 `CardView` は、角が `FrameLayout` 丸く、影が付いたウィジェットとして実装されます。 通常、 `CardView` またはビューグループに単一の行項目を表示するには、を使用し `ListView` `GridView` ます。 たとえば、次のスクリーンショットは、 `CardView` スクロール可能なでベースの旅行先カードを実装する旅行予約アプリの例です `ListView` 。
 
 ![旅行先ごとに CardView を使用するサンプルアプリ](card-view-images/01-cardview-example.png)
 
@@ -34,28 +34,28 @@ Xamarin ベースのアプリで新しい Android 5.0 以降の機能 (を含む
 
 - **Xamarin android** &ndash; 4.20 以降をインストールして、Visual Studio または Visual Studio for Mac で構成する必要があります。
 
-- **Android SDK** &ndash;Android SDK Manager を使用して、Android 5.0 (API 21) 以降をインストールする必要があります。
+- **Android SDK** &ndash; Android SDK Manager を使用して、Android 5.0 (API 21) 以降をインストールする必要があります。
 
-- **JAVA JDK 1.8** &ndash;API レベル23以前を対象としている場合は、JDK 1.7 を使用できます。 JDK 1.8 は、 [Oracle](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)から入手できます。
+- **JAVA JDK 1.8** &ndash; API レベル23以前を対象としている場合は、JDK 1.7 を使用できます。 JDK 1.8 は、 [Oracle](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)から入手できます。
 
 アプリにもパッケージが含まれている必要があり `Xamarin.Android.Support.v7.CardView` ます。 Visual Studio for Mac にパッケージを追加するには、次のようにし `Xamarin.Android.Support.v7.CardView` ます。
 
-1. プロジェクトを開き、[**パッケージ**] を右クリックして [**パッケージの追加**] を選択します。
+1. プロジェクトを開き、[ **パッケージ** ] を右クリックして [ **パッケージの追加**] を選択します。
 
-2. [**パッケージの追加**] ダイアログボックスで、 **CardView**を検索します。
+2. [ **パッケージの追加** ] ダイアログボックスで、 **CardView**を検索します。
 
-3. [ **Xamarin Support Library V7 CardView**] を選択し、[**パッケージの追加**] をクリックします。
+3. [ **Xamarin Support Library V7 CardView**] を選択し、[ **パッケージの追加**] をクリックします。
 
 Visual Studio でパッケージを追加するには、次のようにし `Xamarin.Android.Support.v7.CardView` ます。
 
-1. プロジェクトを開き、[**参照**] ノード ([**ソリューションエクスプローラー** ] ウィンドウ) を右クリックして、[ **NuGet パッケージの管理...**] を選択します。
+1. プロジェクトを開き、[ **参照** ] ノード ([ **ソリューションエクスプローラー** ] ウィンドウ) を右クリックして、[ **NuGet パッケージの管理...**] を選択します。
 
-2. [ **NuGet パッケージの管理**] ダイアログボックスが表示されたら、検索ボックスに「 **CardView** 」と入力します。
+2. [ **NuGet パッケージの管理** ] ダイアログボックスが表示されたら、検索ボックスに「 **CardView** 」と入力します。
 
 3. **Xamarin Support Library V7 CardView**が表示されたら、[**インストール**] をクリックします。
 
 Android 5.0 アプリケーションプロジェクトを構成する方法については、「 [android 5.0 プロジェクトの設定](~/android/platform/lollipop.md)」を参照してください。
-NuGet パッケージのインストールの詳細については、「[チュートリアル: プロジェクトに nuget を含める](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)」を参照してください。
+NuGet パッケージのインストールの詳細については、「 [チュートリアル: プロジェクトに nuget を含める](/visualstudio/mac/nuget-walkthrough)」を参照してください。
 
 ## <a name="introducing-cardview"></a>CardView の概要
 
@@ -86,13 +86,13 @@ NuGet パッケージのインストールの詳細については、「[チュ�
 </LinearLayout>
 ```
 
-この XML を使用して、 **Main**の既存の内容を置き換える場合は、前の xml のリソースを参照する**MainActivity.cs**内のコードを必ずコメントアウトしてください。
+この XML を使用して、 **Main**の既存の内容を置き換える場合は、前の xml のリソースを参照する **MainActivity.cs** 内のコードを必ずコメントアウトしてください。
 
 このレイアウト例では、 `CardView` 次のスクリーンショットに示すように、1行のテキストで既定のを作成します。
 
 [![白の背景とテキスト行を含む CardView のスクリーンショット](card-view-images/02-basic-cardview-sml.png)](card-view-images/02-basic-cardview.png#lightbox)
 
-この例では、アプリのスタイルを明るいマテリアルのテーマ () に設定し `Theme.Material.Light` `CardView` て、影とエッジが見やすくなるようにしています。 Android 5.0 アプリのテーマの詳細については、「[マテリアルのテーマ](~/android/user-interface/material-theme.md)」を参照してください。 次のセクションでは、アプリケーションのをカスタマイズする方法について説明し `CardView` ます。
+この例では、アプリのスタイルを明るいマテリアルのテーマ () に設定し `Theme.Material.Light` `CardView` て、影とエッジが見やすくなるようにしています。 Android 5.0 アプリのテーマの詳細については、「 [マテリアルのテーマ](~/android/user-interface/material-theme.md)」を参照してください。 次のセクションでは、アプリケーションのをカスタマイズする方法について説明し `CardView` ます。
 
 ## <a name="customizing-cardview"></a>CardView のカスタマイズ
 
@@ -155,22 +155,22 @@ NuGet パッケージのインストールの詳細については、「[チュ�
 
 [![イメージとキャプションを画像の下に CardView](card-view-images/03-photo-cardview-sml.png)](card-view-images/03-photo-cardview.png#lightbox)
 
-このスクリーンショットは、 [RecyclerViewer](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-recyclerviewer)サンプルアプリから抜粋したものです。このアプリでは、ウィジェットを使用し `RecyclerView` て、写真を表示するためのイメージのスクロールリストを表示し `CardView` ます。 の詳細については、 `RecyclerView` [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)ガイドを参照してください。
+このスクリーンショットは、 [RecyclerViewer](/samples/xamarin/monodroid-samples/android50-recyclerviewer) サンプルアプリから抜粋したものです。このアプリでは、ウィジェットを使用し `RecyclerView` て、写真を表示するためのイメージのスクロールリストを表示し `CardView` ます。 の詳細については、 `RecyclerView` [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md) ガイドを参照してください。
 
 では、複数の `CardView` 子ビューをコンテンツ領域に表示できることに注意してください。 たとえば、上記の写真表示アプリの例では、コンテンツ領域はとを含むで構成されてい `ListView` `ImageView` `TextView` ます。 `CardView`多くの場合、インスタンスは垂直方向に配置されますが、水平方向に配置することもできます (例のスクリーンショットについては[、「カスタムビュースタイルの作成](~/android/user-interface/material-theme.md#customview)」を参照してください)。
 
 ### <a name="cardview-layout-options"></a>CardView レイアウトオプション
 
-`CardView`レイアウトをカスタマイズするには、埋め込み、標高、角の半径、および背景色に影響を与える1つ以上の属性を設定します。
+`CardView` レイアウトをカスタマイズするには、埋め込み、標高、角の半径、および背景色に影響を与える1つ以上の属性を設定します。
 
 [![CardView 属性の図](card-view-images/04-attributes-sml.png)](card-view-images/04-attributes.png#lightbox)
 
 各属性は、対応するメソッドを呼び出すことによって動的に変更することもでき `CardView` ます (メソッドの詳細については、 `CardView` 「 [CardView クラスのリファレンス](https://developer.android.com/reference/android/support/v7/widget/CardView.html)」を参照してください)。
 これらの属性 (背景色を除く) では、ディメンション値 (10 進数の後に単位が続く) を受け取ることに注意してください。 たとえば、は `11.5dp` 11.5 の密度に依存しないピクセルを指定します。
 
-#### <a name="padding"></a>余白
+#### <a name="padding"></a>パディング
 
-`CardView`は、カード内にコンテンツを配置するための5つの埋め込み属性を提供します。 これらは、レイアウト XML で設定するか、コード内で類似のメソッドを呼び出すことができます。
+`CardView` は、カード内にコンテンツを配置するための5つの埋め込み属性を提供します。 これらは、レイアウト XML で設定するか、コード内で類似のメソッドを呼び出すことができます。
 
 [![CardView padding 属性の図](card-view-images/05-padding-sml.png)](card-view-images/05-padding.png#lightbox)
 
@@ -191,7 +191,7 @@ NuGet パッケージのインストールの詳細については、「[チュ�
 
 #### <a name="elevation"></a>Elevation
 
-`CardView`は、昇格を制御する2つの昇格属性と、結果として、影のサイズを提供します。
+`CardView` は、昇格を制御する2つの昇格属性と、結果として、影のサイズを提供します。
 
 [![CardView の昇格属性の図](card-view-images/06-elevation-sml.png)](card-view-images/06-elevation.png#lightbox)
 
@@ -206,7 +206,7 @@ NuGet パッケージのインストールの詳細については、「[チュ�
 
 #### <a name="corner-radius-and-background-color"></a>角の半径と背景色
 
-`CardView`には、コーナー半径と背景色を制御するために使用できる属性が用意されています。 この2つのプロパティを使用すると、の全体的なスタイルを変更でき `CardView` ます。
+`CardView` には、コーナー半径と背景色を制御するために使用できる属性が用意されています。 この2つのプロパティを使用すると、の全体的なスタイルを変更でき `CardView` ます。
 
 [![CardView コーナーの図と背景色の属性](card-view-images/07-radius-bgcolor-sml.png)](card-view-images/07-radius-bgcolor.png#lightbox)
 
@@ -223,11 +223,11 @@ NuGet パッケージのインストールの詳細については、「[チュ�
 Android `CardView` 5.0 ロリポップより前のバージョンの android でを使用できます。 `CardView`は android v7 サポートライブラリの一部であるため、 `CardView` android 2.1 (API レベル 7) 以上のを使用できます。
 ただし、上記の要件に従ってパッケージをインストールする必要があり `Xamarin.Android.Support.v7.CardView` ます。 [Requirements](#requirements)
 
-`CardView`ロリポップの前のデバイスで動作が若干異なります (API レベル 21):
+`CardView` ロリポップの前のデバイスで動作が若干異なります (API レベル 21):
 
-- `CardView`プログラムによる影の実装を使用して、パディングを追加します。
+- `CardView` プログラムによる影の実装を使用して、パディングを追加します。
 
-- `CardView`は、の丸い角と交差する子ビューをクリップしません `CardView` 。
+- `CardView` は、の丸い角と交差する子ビューをクリップしません  `CardView` 。
 
 これらの互換性の違いを管理するために、には、 `CardView` レイアウトで構成できるいくつかの追加属性が用意されています。
 
@@ -235,7 +235,7 @@ Android `CardView` 5.0 ロリポップより前のバージョンの android で
 
 - `cardUseCompatPadding`&ndash; `true` アプリが API レベル21以降のバージョンで実行されている場合は、この属性をに設定して、埋め込みを追加します。 `CardView`ロリポップ以前のデバイスでを使用して、ロリポップ (またはそれ以降) で同じ外観にする場合は、この属性をに設定し `true` ます。 この属性が有効な場合、は、 `CardView` 事前ロリポップデバイスで実行されるときに影を描画するための余白を追加します。 これは、ロリポップのプログラムシャドウ実装が有効になっている場合に導入されるパディングの違いを克服するのに役立ちます。
 
-以前のバージョンの Android との互換性を維持する方法の詳細については、「[互換性の維持](https://developer.android.com/training/material/compatibility.html)」を参照してください。
+以前のバージョンの Android との互換性を維持する方法の詳細については、「 [互換性の維持](https://developer.android.com/training/material/compatibility.html)」を参照してください。
 
 ## <a name="summary"></a>まとめ
 
@@ -243,6 +243,6 @@ Android `CardView` 5.0 ロリポップより前のバージョンの android で
 
 ## <a name="related-links"></a>関連リンク
 
-- [RecyclerView (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-recyclerviewer)
+- [RecyclerView (サンプル)](/samples/xamarin/monodroid-samples/android50-recyclerviewer)
 - [ロリポップの概要](~/android/platform/lollipop.md)
 - [CardView クラスの参照](https://developer.android.com/reference/android/support/v7/widget/CardView.html)

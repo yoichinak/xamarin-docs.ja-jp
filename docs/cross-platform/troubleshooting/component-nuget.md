@@ -7,23 +7,23 @@ ms.assetid: 9E6C986F-3FBA-4599-8367-FB0C565C0ADE
 author: davidortinau
 ms.author: daortin
 ms.date: 04/18/2018
-ms.openlocfilehash: b9b771efe338fbcc250aa6e7a83b73f35269d3bf
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 08713afa4e781f0712ffccbbcf80533dda8e4bfc
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86996813"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457225"
 ---
 # <a name="updating-component-references-to-nuget"></a>コンポーネント参照を NuGet に更新しています
 
 > [!IMPORTANT]
-> 2018年5月15日の時点で、コンポーネントストアは廃止されました (このクロージャは、当初は2017年11月に[発表](https://blog.xamarin.com/hello-nuget-new-home-xamarin-components/)されました)。
+> 2018年5月15日の時点で、コンポーネントストアは廃止されました (このクロージャは、当初は2017年11月に [発表](https://blog.xamarin.com/hello-nuget-new-home-xamarin-components/) されました)。
 >
 > Xamarin コンポーネントは Visual Studio ではサポートされなくなったため、NuGet パッケージで置き換える必要があります。 プロジェクトからコンポーネント参照を手動で削除するには、次の手順に従います。
 
-[Windows](https://docs.microsoft.com/nuget/quickstart/use-a-package)または[Mac](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)で NuGet パッケージを追加する方法については、こちらの手順を参照してください。
+[Windows](/nuget/quickstart/use-a-package)または[Mac](/visualstudio/mac/nuget-walkthrough)で NuGet パッケージを追加する方法については、こちらの手順を参照してください。
 
-一般的な Xamarin[プラグインとライブラリ](https://github.com/xamarin/XamarinComponents/blob/master/README.md)の一覧を使用して、NuGet パッケージとして使用できないコンポーネントの代替を見つけることができます。
+一般的な Xamarin [プラグインとライブラリ](https://github.com/xamarin/XamarinComponents/blob/master/README.md) の一覧を使用して、NuGet パッケージとして使用できないコンポーネントの代替を見つけることができます。
 
 ## <a name="manually-removing-component-references"></a>手動によるコンポーネント参照の削除
 
@@ -37,7 +37,7 @@ Visual Studio for Mac の 15.6 7.4 リリースでは、プロジェクトのコ
 
 プロジェクトからコンポーネントを削除するには、次のようにします。
 
-1. **.csproj** ファイルを開きます。 これを行うには、プロジェクト名を右クリックし、[**プロジェクトのアンロード**] を選択します。
+1. **.csproj** ファイルを開きます。 これを行うには、プロジェクト名を右クリックし、[ **プロジェクトのアンロード**] を選択します。
 
 2. アンロードしたプロジェクトでもう一度右クリックし、[ **{プロジェクト名} の編集**] を選択します。
 
@@ -62,7 +62,7 @@ Visual Studio for Mac の 15.6 7.4 リリースでは、プロジェクトのコ
 
 4. への参照を削除 `XamarinComponentReference` し、ファイルを保存します。 上記の例では、全体を削除するのは安全 `ItemGroup` です。
 
-5. ファイルが保存されたら、プロジェクト名を右クリックし、[**プロジェクトの再読み込み**] を選択します。
+5. ファイルが保存されたら、プロジェクト名を右クリックし、[ **プロジェクトの再読み込み**] を選択します。
 
 6. ソリューション内のプロジェクトごとに上記の手順を繰り返します。
 
@@ -74,7 +74,7 @@ Visual Studio for Mac の 15.6 7.4 リリースでは、プロジェクトのコ
 
 プロジェクトからコンポーネントを削除するには、次のようにします。
 
-1. .csproj ファイルを開きます。 これを行うには、プロジェクト名を右クリックし、[**ツール] > [ファイルの編集**] の順に選択します。
+1. .csproj ファイルを開きます。 これを行うには、プロジェクト名を右クリックし、[ **ツール] > [ファイルの編集**] の順に選択します。
 
 2. ファイル内のすべての参照をに検索 `XamarinComponentReference` します。 これは、次の例のようになります。
 
@@ -95,7 +95,7 @@ Visual Studio for Mac の 15.6 7.4 リリースでは、プロジェクトのコ
     </ItemGroup>
     ```
 
-3. への参照を削除 `XamarinComponentReference` し、ファイルを保存します。 上記の例では、全体を削除するのは安全です。`ItemGroup`
+3. への参照を削除 `XamarinComponentReference` し、ファイルを保存します。 上記の例では、全体を削除するのは安全です。 `ItemGroup`
 
 4. ソリューション内のプロジェクトごとに上記の手順を繰り返します。
 
@@ -103,7 +103,7 @@ Visual Studio for Mac の 15.6 7.4 リリースでは、プロジェクトのコ
 
 > [!WARNING]
 > 以下の手順は、以前のバージョンの Visual Studio でのみ使用できます。
-> [ **Components (コンポーネント**) ノードは、Visual Studio 2017 または Visual Studio for Mac の現在のリリースでは使用できなくなりました。
+> [ **Components (コンポーネント** ) ノードは、Visual Studio 2017 または Visual Studio for Mac の現在のリリースでは使用できなくなりました。
 
 以下のセクションでは、既存の Xamarin ソリューションを更新して、NuGet パッケージへのコンポーネント参照を変更する方法について説明します。
 
@@ -111,7 +111,7 @@ Visual Studio for Mac の 15.6 7.4 リリースでは、プロジェクトのコ
 - [NuGet の置換を含むコンポーネント](#replace)
 
 ほとんどのコンポーネントは、上記のいずれかのカテゴリに分類されます。
-同等の NuGet パッケージがないと思われるコンポーネントを使用している場合は、以下の「 [nuget 移行パスのないコンポーネント](#require-update)」セクションを参照してください。
+同等の NuGet パッケージがないと思われるコンポーネントを使用している場合は、以下の「 [nuget 移行パスのないコンポーネント](#require-update) 」セクションを参照してください。
 
 <a name="contain"></a>
 
@@ -123,21 +123,21 @@ Visual Studio for Mac の 15.6 7.4 リリースでは、プロジェクトのコ
 
 ![展開されたコンポーネントノード](component-nuget-images/solution-sml.png)
 
-[**パッケージ**] タブには、コンポーネントに含まれている NuGet パッケージが一覧表示されます。
+[ **パッケージ** ] タブには、コンポーネントに含まれている NuGet パッケージが一覧表示されます。
 
 ![NuGet を含む [パッケージ] タブ](component-nuget-images/packages-tab-sml.png)
 
-[**アセンブリ**] タブは空になることに注意してください。
+[ **アセンブリ** ] タブは空になることに注意してください。
 
 ![[アセンブリ] タブが空です](component-nuget-images/assemblies-tab-empty-sml.png)
 
 ### <a name="updating-the-solution"></a>ソリューションを更新しています
 
-ソリューションを更新するには、ソリューションから**コンポーネント**のエントリを削除します。
+ソリューションを更新するには、ソリューションから **コンポーネント** のエントリを削除します。
 
 ![コンポーネントの削除](component-nuget-images/delete-component-sml.png)
 
-NuGet パッケージは [**パッケージ**] ノードに表示されたままになり、アプリは通常どおりコンパイルして実行されます。 今後、このパッケージの更新は**NuGet**の更新機能を使用して実行されます。
+NuGet パッケージは [ **パッケージ** ] ノードに表示されたままになり、アプリは通常どおりコンパイルして実行されます。 今後、このパッケージの更新は **NuGet** の更新機能を使用して実行されます。
 
 ![NuGet パッケージの更新](component-nuget-images/nuget-update-sml.png)
 
@@ -145,11 +145,11 @@ NuGet パッケージは [**パッケージ**] ノードに表示されたまま
 
 ## <a name="components-with-nuget-replacements"></a>NuGet の置換を含むコンポーネント
 
-[コンポーネント情報ページ**アセンブリ**] タブに次のようなエントリが含まれている場合は、対応する NuGet パッケージを手動で検索する必要があります。
+[コンポーネント情報ページ **アセンブリ** ] タブに次のようなエントリが含まれている場合は、対応する NuGet パッケージを手動で検索する必要があります。
 
 ![アセンブリを含む](component-nuget-images/assemblies-tab-sml.png)
 
-[**パッケージ**] タブは、必ず空になっていることに注意してください。
+[ **パッケージ** ] タブは、必ず空になっていることに注意してください。
 
 ![[パッケージ] タブ](component-nuget-images/packages-tab-empty-sml.png)
 
@@ -157,10 +157,10 @@ _NuGet の依存関係が含まれている場合がありますが、これら�
 
 置換 NuGet パッケージが存在することを確認するには、 [NuGet.org](https://www.nuget.org/packages)で、コンポーネント名を使用するか、または作成者で検索します。
 
-例として、次のように検索することで、一般的な**sqlite-net pcl**パッケージを見つけることができます。
+例として、次のように検索することで、一般的な **sqlite-net pcl** パッケージを見つけることができます。
 
-- [`sqlite-net-pcl`](https://www.nuget.org/packages?q=sqlite-net-pcl)–製品名。
-- [`praeclarum`](https://www.nuget.org/packages?q=praeclarum)–作成者のプロファイル。
+- [`sqlite-net-pcl`](https://www.nuget.org/packages?q=sqlite-net-pcl) –製品名。
+- [`praeclarum`](https://www.nuget.org/packages?q=praeclarum) –作成者のプロファイル。
 
 ### <a name="updating-the-solution"></a>ソリューションを更新しています
 
@@ -168,7 +168,7 @@ NuGet でコンポーネントが使用可能であることを確認したら�
 
 #### <a name="delete-the-component"></a>コンポーネントを削除します。
 
-ソリューション内のコンポーネントを右クリックし、[**削除**] を選択します。
+ソリューション内のコンポーネントを右クリックし、[ **削除**] を選択します。
 
 ![コンポーネントの削除](component-nuget-images/remove-component-sml.png)
 
@@ -176,12 +176,12 @@ NuGet でコンポーネントが使用可能であることを確認したら�
 
 #### <a name="add-the-nuget-package"></a>NuGet パッケージを追加する
 
-1. [**パッケージ**] ノードを右クリックし、[**パッケージの追加**] を選択します。
+1. [ **パッケージ** ] ノードを右クリックし、[ **パッケージの追加**] を選択します。
 2. 名前または作成者で NuGet の置換を検索します。
 
     ![NuGet 検索](component-nuget-images/nuget-search-sml.png)
 
-3. [**パッケージの追加**...
+3. [ **パッケージの追加**...
 
 NuGet パッケージは、すべての依存関係と共にプロジェクトに追加されます。
 これにより、ビルドが修正されます。 ビルドが引き続き失敗する場合は、各エラーを調査して、コンポーネントと NuGet パッケージ間の API の違いがあるかどうかを確認します。
@@ -190,9 +190,9 @@ NuGet パッケージは、すべての依存関係と共にプロジェクト�
 
 ## <a name="components-without-a-nuget-migration-path"></a>NuGet 移行パスのないコンポーネント
 
-アプリケーションで使用されているコンポーネントの代わりに代替が見つからない場合は、心配しないでください。 既存のコンポーネントは引き続き Visual Studio 15.5 で動作し、**コンポーネント**ノードはソリューションに通常どおり表示されます。
+アプリケーションで使用されているコンポーネントの代わりに代替が見つからない場合は、心配しないでください。 既存のコンポーネントは引き続き Visual Studio 15.5 で動作し、 **コンポーネント** ノードはソリューションに通常どおり表示されます。
 
-ただし、今後の Visual Studio のリリースでは、コンポーネントの復元や更新は_行われません_。
+ただし、今後の Visual Studio のリリースでは、コンポーネントの復元や更新は _行われません_ 。
 つまり、新しいコンピューターでソリューションを開くと、コンポーネントがダウンロードおよびインストールされません。また、作成者は更新プログラムを提供できません。 次のことを計画する必要があります。
 
 - コンポーネントからアセンブリを抽出し、プロジェクト内で直接参照します。
@@ -204,5 +204,5 @@ NuGet パッケージは、すべての依存関係と共にプロジェクト�
 ## <a name="related-links"></a>関連リンク
 
 - [一般的な Xamarin プラグインとライブラリの一覧](https://github.com/xamarin/XamarinComponents/blob/master/README.md)
-- [NuGet パッケージをインストールして使用する (Windows)](https://docs.microsoft.com/nuget/quickstart/use-a-package)
-- [NuGet パッケージ (Mac) を含む](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)
+- [NuGet パッケージをインストールして使用する (Windows)](/nuget/quickstart/use-a-package)
+- [NuGet パッケージ (Mac) を含む](/visualstudio/mac/nuget-walkthrough)

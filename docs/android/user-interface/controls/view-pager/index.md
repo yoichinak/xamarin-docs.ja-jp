@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: c7718ef7a02365e9ca09f7491804cbadfa0c9a41
-ms.sourcegitcommit: eca3b01098dba004d367292c8b0d74b58c4e1206
+ms.openlocfilehash: 427ace2043f966b617a258b5f50fa42f943e707e
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/13/2020
-ms.locfileid: "79305973"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457654"
 ---
 # <a name="viewpager"></a>ViewPager
 
@@ -20,60 +20,60 @@ _ViewPager は、gestural ナビゲーションを実装できるレイアウト
 
 ## <a name="overview"></a>概要
 
-アプリ開発の一般的なシナリオは、兄弟ビュー間の gestural ナビゲーションをユーザーに提供する必要があることです。 この方法では、ユーザーは、(セットアップウィザードやスライドショーなどで) コンテンツのページにアクセスするための左または右にスワイプます。 これらのスワイプビューは、 [Android Support Library v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)で入手できる `ViewPager` ウィジェットを使用して作成できます。 `ViewPager` は、複数の子ビューで構成されるレイアウトウィジェットで、各子ビューがレイアウト内のページを構成します。 
+アプリ開発の一般的なシナリオは、兄弟ビュー間の gestural ナビゲーションをユーザーに提供する必要があることです。 この方法では、ユーザーは、(セットアップウィザードやスライドショーなどで) コンテンツのページにアクセスするための左または右にスワイプます。 これらのスワイプビューは、 `ViewPager` [Android Support Library v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)で入手できるウィジェットを使用して作成できます。 は、 `ViewPager` 複数の子ビューで構成されるレイアウトウィジェットで、各子ビューがレイアウト内のページを構成します。 
 
-[TreePager アプリのスクリーンショットを ![横方向のスワイプの例](images/01-intro-sml.png)](images/01-intro.png#lightbox)
+[![横方向のスワイプを使用した TreePager アプリのスクリーンショットの例](images/01-intro-sml.png)](images/01-intro.png#lightbox)
 
-通常、`ViewPager` は[フラグメント](~/android/platform/fragments/index.md)と組み合わせて使用されます。ただし、`Fragment`s の複雑さを増すことなく `ViewPager` を使用することが必要になる状況もあります。
+通常、 `ViewPager` は [フラグメント](~/android/platform/fragments/index.md)と組み合わせて使用されます。ただし、を複雑にすることなく、を使用する必要がある状況もあり `ViewPager` `Fragment` ます。
 
-`ViewPager` は、アダプターパターンを使用して表示するビューを提供します。 ここで使用するアダプターは、概念的には[RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)が使用するアダプターと似ていますが、`PagerAdapter` の実装を指定して、`ViewPager` がユーザーに表示するページを生成 &ndash; ます。 `ViewPager` によって表示されるページは、s または `Fragment``View`にすることができます。 `View`が表示されると、アダプターは Android の `PagerAdapter` 基底クラスをサブクラス化します。 `Fragment`が表示される場合、アダプターは Android の `FragmentPagerAdapter`をサブクラス化します。 Android サポートライブラリには `FragmentPagerAdapter` (`PagerAdapter`のサブクラス) も含まれており、データへの `Fragment`の接続の詳細に役立ちます。 
+`ViewPager` アダプターパターンを使用して、表示するビューを指定します。 ここで使用するアダプターは、 [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md) &ndash; の実装を指定して、が `PagerAdapter` ユーザーに表示するページを生成する RecyclerView によって使用されるものと概念的に似てい `ViewPager` ます。 によって表示されるページは、 `ViewPager` `View` s または `Fragment` s です。 `View`が表示されると、アダプターは Android の基本クラスをサブクラスにし `PagerAdapter` ます。 が表示される場合 `Fragment` 、アダプターは Android のをサブクラス化し `FragmentPagerAdapter` ます。 Android サポートライブラリには、 `FragmentPagerAdapter` データへの接続の詳細を確認するための (サブクラス) も含まれてい `PagerAdapter` `Fragment` ます。 
 
 このガイドでは、次の両方の方法を示します。 
 
-- [Viewpager とビューが](~/android/user-interface/controls/view-pager/viewpager-and-views.md)あるので、 [treepager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-treepager)アプリは、`ViewPager` を使用してツリーカタログのビューを表示する方法を示すために開発されています (広葉樹および evergreen ツリーのイメージギャラリー)。 
-    `PagerTabStrip` と `PagerTitleStrip` は、ページナビゲーションに役立つタイトルを表示するために使用されます。
+- [Viewpager とビュー](~/android/user-interface/controls/view-pager/viewpager-and-views.md)。 [treepager](/samples/xamarin/monodroid-samples/userinterface-treepager)アプリは、を使用してツリーカタログのビューを表示する方法を示すために開発されてい `ViewPager` ます (広葉樹および evergreen ツリーのイメージギャラリー)。 
+    `PagerTabStrip`  および `PagerTitleStrip` は、ページナビゲーションに役立つタイトルを表示するために使用されます。
 
-- [Viewpager とフラグメント](~/android/user-interface/controls/view-pager/viewpager-and-fragments.md)を使用すると、より複雑な[FlashCardPager](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-flashcardpager)アプリが作成され、`Fragment`s で `ViewPager` を使用して、計算問題をフラッシュカードとして表示し、ユーザー入力に応答するアプリを構築する方法を示すことができます。 
+- [Viewpager とフラグメント](~/android/user-interface/controls/view-pager/viewpager-and-fragments.md)を使用すると、より複雑な[FlashCardPager](/samples/xamarin/monodroid-samples/userinterface-flashcardpager)アプリが作成され、を使用し `ViewPager` て、 `Fragment` 計算問題をフラッシュカードとして表示し、ユーザー入力に応答するアプリをビルドする方法を示すことができます。 
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
-アプリプロジェクトで `ViewPager` を使用するには、 [Android サポートライブラリ v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/)パッケージをインストールする必要があります。 NuGet パッケージのインストールの詳細については、「[チュートリアル: プロジェクトに nuget を含める](https://docs.microsoft.com/visualstudio/mac/nuget-walkthrough)」を参照してください。 
+アプリプロジェクトでを使用するには `ViewPager` 、 [Android サポートライブラリ v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) パッケージをインストールする必要があります。 NuGet パッケージのインストールの詳細については、「 [チュートリアル: プロジェクトに nuget を含める](/visualstudio/mac/nuget-walkthrough)」を参照してください。 
 
 ## <a name="architecture"></a>アーキテクチャ
 
-`ViewPager`を使用した gestural ナビゲーションの実装には、次の3つのコンポーネントが使用されます。
+Gestural ナビゲーションの実装には、次の3つのコンポーネントが使用され `ViewPager` ます。
 
 - ViewPager
-- アダプタ
+- アダプター
 - ページャーインジケーター
 
 これらの各コンポーネントの概要を次に示します。
 
 ### <a name="viewpager"></a>ViewPager
 
-`ViewPager` は、一度に1つの `View`のコレクションを表示するレイアウトマネージャーです。 そのジョブでは、ユーザーのスワイプジェスチャを検出し、必要に応じて次または前のビューに移動します。 たとえば、次のスクリーンショットは、ユーザージェスチャに応じて、あるイメージから次の画像への切り替えを行う `ViewPager` を示しています。 
+`ViewPager` は、一度に1つののコレクションを表示するレイアウトマネージャーです `View` 。 そのジョブでは、ユーザーのスワイプジェスチャを検出し、必要に応じて次または前のビューに移動します。 たとえば、次のスクリーンショットは、 `ViewPager` ユーザージェスチャに応じて1つのイメージから次の画像に遷移することを示しています。 
 
-[ビュー間の切り替えを表示する TreePager アプリの ![クローズアップ](images/02-transition-sml.png)](images/02-transition.png#lightbox)
+[![ビュー間の切り替えを表示する TreePager アプリのクローズアップ](images/02-transition-sml.png)](images/02-transition.png#lightbox)
 
-### <a name="adapter"></a>アダプタ
+### <a name="adapter"></a>アダプター
 
-`ViewPager` は、*アダプター*からデータをプルします。 アダプターのジョブは、`ViewPager`によって表示される `View`を作成し、必要に応じて提供します。 次の図は、アダプターが `View`s を作成して設定し、`ViewPager`に提供する &ndash; この概念を示しています。 `ViewPager` がユーザーのスワイプジェスチャを検出すると、表示する適切な `View` をアダプターに提供するように求められます。 
+`ViewPager`*アダプター*からデータをプルします。 アダプターのジョブは `View` 、によって表示されるを作成し `ViewPager` 、必要に応じて提供します。 次の図は、 &ndash; アダプターがを作成して設定し、に提供するこの概念を示してい `View` `ViewPager` ます。 は `ViewPager` ユーザーのスワイプジェスチャを検出すると、アダプターに対して、表示する適切なを指定するように求め `View` ます。 
 
-[アダプターが画像と名前を ViewPager に接続する方法を示す ![ダイアグラム](images/03-adapter-sml.png)](images/03-adapter.png#lightbox)
+[![アダプターが画像と名前を ViewPager に接続する方法を示す図](images/03-adapter-sml.png)](images/03-adapter.png#lightbox)
 
-この例では、各 `View` は、`ViewPager`に渡される前に、ツリーイメージとツリー名から構築されます。 
+この例では `View` 、に渡される前に、各がツリーイメージとツリー名から構築されてい `ViewPager` ます。 
 
 ### <a name="pager-indicator"></a>ページャーインジケーター
 
-`ViewPager` を使用すると、大きなデータセットを表示できます (たとえば、イメージギャラリーには数百のイメージが含まれる場合があります)。 ユーザーが大きなデータセットを移動できるように、多くの場合、`ViewPager` には、文字列を表示する*ページャーインジケーター*が付属しています。 文字列には、画像のタイトル、キャプション、または単にデータセット内の現在のビューの位置を指定できます。 
+`ViewPager` は、大きなデータセットを表示するために使用できます (たとえば、イメージギャラリーには数百のイメージが含まれる場合があります)。 ユーザーが大きなデータセットを移動できるように、には、多くの場合、 `ViewPager` 文字列を表示する *ページャーインジケーター* が付属しています。 文字列には、画像のタイトル、キャプション、または単にデータセット内の現在のビューの位置を指定できます。 
 
-このナビゲーション情報を生成できるビューは2つあります。 `PagerTabStrip` と `PagerTitleStrip.` はそれぞれ `ViewPager`の上部に文字列を表示し、それぞれが現在表示されている `View`と常に同期されるように、`ViewPager`のアダプターからデータをプルします。 これらの違いは、`PagerTabStrip` には、次のスクリーンショットに示すように、"current" `PagerTitleStrip` 文字列の視覚的なインジケーターが含まれている点です。 
+このナビゲーション情報を生成するビューが2つあります。 `PagerTabStrip` とは `PagerTitleStrip.` それぞれの先頭に文字列を表示し、それぞれが現在表示されていると `ViewPager` 常に同期さ `ViewPager` れるように、それぞれのアダプターからデータをプルします `View` 。 これらの違いは、に `PagerTabStrip` は含まれて `PagerTitleStrip` いません (これらのスクリーンショットに示すように)。 
 
-[Pagerタイトルストリップと PagerTabStrip を使用した TreePager アプリのスクリーンショットの ![](images/04-comparison-sml.png)](images/04-comparison.png#lightbox)
+[![Pagerタイトルストリップと PagerTabStrip を使用した TreePager アプリのスクリーンショット](images/04-comparison-sml.png)](images/04-comparison.png#lightbox)
 
-このガイドでは、`ViewPager`、アダプター、およびインジケーターアプリコンポーネントを immplement し、gestural ナビゲーションをサポートするように統合する方法について説明します。 
+このガイド `ViewPager` では、immplement、アダプター、およびインジケーターアプリコンポーネントを、gestural ナビゲーションをサポートするように統合する方法について説明します。 
 
 ## <a name="related-links"></a>関連リンク
 
-- [TreePager (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-treepager)
-- [FlashCardPager (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/userinterface-flashcardpager)
+- [TreePager (サンプル)](/samples/xamarin/monodroid-samples/userinterface-treepager)
+- [FlashCardPager (サンプル)](/samples/xamarin/monodroid-samples/userinterface-flashcardpager)

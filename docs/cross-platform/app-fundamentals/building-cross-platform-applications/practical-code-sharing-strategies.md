@@ -6,12 +6,12 @@ ms.assetid: 328D042A-FF78-A7B6-1574-B5AF49A1AADB
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: fd0e48c8f954ba926c5e1b5dc3a1c9bf6aab8c54
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: d10917471c37d91fa02db2585895f5694a5a4a60
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571195"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457446"
 ---
 # <a name="part-5---practical-code-sharing-strategies"></a>パート 5 - 実践的なコード共有戦略
 
@@ -28,13 +28,13 @@ SQLite は、オープンソースのデータベースの実装です。 ソー
 
 - **iOS** –オペレーティングシステムに組み込まれています。
 - **Android – android** 2.2 (API レベル 10) 以降、オペレーティングシステムに組み込まれています。
-- **Windows** –[ユニバーサル Windows プラットフォーム拡張機能の SQLite を](https://visualstudiogallery.msdn.microsoft.com/4913e7d5-96c9-4dde-a1a1-69820d615936)参照してください。
+- **Windows** – [ユニバーサル Windows プラットフォーム拡張機能の SQLite を](https://visualstudiogallery.msdn.microsoft.com/4913e7d5-96c9-4dde-a1a1-69820d615936)参照してください。
 
 データベースエンジンをすべてのプラットフォームで使用できる場合でも、データベースにアクセスするためのネイティブメソッドは異なります。 IOS と Android はどちらも、Xamarin. iOS または Xamarin. Android から使用できる SQLite にアクセスするための Api を提供しています。ただし、ネイティブ SDK メソッドを使用すると、コードを共有することはできません (文字列として格納されていると仮定して、SQL クエリ自体ではありません)。 ネイティブデータベース機能の詳細について `CoreData` は、iOS または Android のクラスでを検索してください。 `SQLiteOpenHelper` これらのオプションはクロスプラットフォームではないため、このドキュメントでは扱いません。
 
 ### <a name="adonet"></a>ADO.NET
 
-Xamarin と Xamarin Android の両方がサポートされ `System.Data` てい `Mono.Data.Sqlite` ます (詳細については、Xamarin の ios の[ドキュメント](~/ios/data-cloud/system.data.md)を参照してください)。
+Xamarin と Xamarin Android の両方がサポートされ `System.Data` てい `Mono.Data.Sqlite` ます (詳細については、Xamarin の ios の [ドキュメント](~/ios/data-cloud/system.data.md) を参照してください)。
 これらの名前空間を使用すると、両方のプラットフォームで動作する ADO.NET コードを記述できます。 とを含むようにプロジェクトの参照を編集し、 `System.Data.dll` `Mono.Data.Sqlite.dll` 次の using ステートメントをコードに追加します。
 
 ```csharp
@@ -90,11 +90,11 @@ SQLite-NET は、SQLite でクラスを保存および取得できる単純な O
 SQLite-NET の機能:
 
 - テーブルは、モデルクラスに属性を追加することによって定義されます。
-- データベースインスタンスは `SQLiteConnection` 、SQLite-Net ライブラリのメインクラスであるのサブクラスによって表されます。
+- データベースインスタンスは  `SQLiteConnection` 、SQLite-Net ライブラリのメインクラスであるのサブクラスによって表されます。
 - オブジェクトを使用してデータを挿入、照会、削除することができます。 SQL ステートメントは必要ありません (ただし、必要に応じて SQL ステートメントを記述できます)。
 - 基本的な Linq クエリは、SQLite-NET によって返されるコレクションに対して実行できます。
 
-SQLite-NET のソースコードとドキュメントは、 [github の sqlite-net](https://github.com/praeclarum/sqlite-net)で入手でき、両方のケーススタディで実装されています。 ( *Tasky Pro*ケーススタディからの) SQLite NET コードの簡単な例を次に示します。
+SQLite-NET のソースコードとドキュメントは、 [github の sqlite-net](https://github.com/praeclarum/sqlite-net) で入手でき、両方のケーススタディで実装されています。 ( *Tasky Pro* ケーススタディからの) SQLite NET コードの簡単な例を次に示します。
 
 まず、クラスは属性を使用して、 `TodoItem` データベースの主キーとしてフィールドを定義します。
 
@@ -140,7 +140,7 @@ Xamarin と Xamarin の両方で、名前空間のクラスを使用してファ
 
 各プラットフォームには、次の点を考慮する必要があるさまざまなアクセス制限があります。
 
-- iOS アプリケーションは、ファイルシステムへのアクセスが非常に制限されたサンドボックスで実行されます。 Apple では、バックアップする特定の場所 (および以外の場所) を指定することによって、ファイルシステムの使用方法をさらに決定します。 詳細については、「 [Xamarin. iOS でのファイルシステム](~/ios/app-fundamentals/file-system.md)の使用」ガイドを参照してください。
+- iOS アプリケーションは、ファイルシステムへのアクセスが非常に制限されたサンドボックスで実行されます。 Apple では、バックアップする特定の場所 (および以外の場所) を指定することによって、ファイルシステムの使用方法をさらに決定します。 詳細については、「  [Xamarin. iOS でのファイルシステム](~/ios/app-fundamentals/file-system.md) の使用」ガイドを参照してください。
 - Android では、アプリケーションに関連する特定のディレクトリへのアクセスも制限されますが、外部メディア ( SD カード) を利用し、共有データにアクセスします。
 - Windows Phone 8 (Silverlight) では、ファイルへの直接アクセスは許可されません。ファイルはを使用してのみ操作でき `IsolatedStorage` ます。
 - Windows 8.1 WinRT プロジェクトと Windows 10 UWP プロジェクトは、 `Windows.Storage` 他のプラットフォームとは異なる api を介した非同期ファイル操作のみを提供します。
@@ -158,7 +158,7 @@ System.IO.File.WriteAllText (filePath, "Contents of text file");
 Console.WriteLine (System.IO.File.ReadAllText (filePath));
 ```
 
-IOS 固有のファイルシステムの機能の詳細については、「Xamarin. iOS の[ファイルシステム](~/ios/app-fundamentals/file-system.md)ドキュメントの操作」を参照してください。 クロスプラットフォームのファイルアクセスコードを記述する場合、一部のファイルシステムでは大文字と小文字が区別され、ディレクトリの区切り記号が異なることに注意してください。 `Path.Combine()`ファイルまたはディレクトリのパスを構築するときは、常に、ファイル名とメソッドに同じ大文字小文字を使用することをお勧めします。
+IOS 固有のファイルシステムの機能の詳細については、「Xamarin. iOS の [ファイルシステム](~/ios/app-fundamentals/file-system.md) ドキュメントの操作」を参照してください。 クロスプラットフォームのファイルアクセスコードを記述する場合、一部のファイルシステムでは大文字と小文字が区別され、ディレクトリの区切り記号が異なることに注意してください。 `Path.Combine()`ファイルまたはディレクトリのパスを構築するときは、常に、ファイル名とメソッドに同じ大文字小文字を使用することをお勧めします。
 
 ### <a name="windowsstorage-for-windows-8-and-windows-10"></a>Windows 8 および windows 10 用のストレージ
 
@@ -174,7 +174,7 @@ IStorageFile storageFile = await localFolder.CreateFileAsync("MyFile.txt",
 await FileIO.WriteTextAsync(storageFile, "Contents of text file");
 ```
 
-詳細については、[書籍の章](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf)を参照してください。
+詳細については、 [書籍の章](https://developer.xamarin.com/r/xamarin-forms/book/chapter20.pdf) を参照してください。
 
 <a name="Isolated_Storage"></a>
 
@@ -184,13 +184,13 @@ await FileIO.WriteTextAsync(storageFile, "Contents of text file");
 
 これは、Xamarin に実装されている Windows Phone (Silverlight) のファイルアクセスの既定のメカニズムであり、一般的なファイルアクセスコードを記述できるようにします。 クラスは、 `System.IO.IsolatedStorage` [共有プロジェクト](~/cross-platform/app-fundamentals/shared-projects.md)内の3つのすべてのプラットフォームで参照できます。
 
-詳細については、 [Windows Phone の分離ストレージの概要](https://msdn.microsoft.com/library/windowsphone/develop/ff402541(v=vs.105).aspx)に関するトピックを参照してください。
+詳細については、 [Windows Phone の分離ストレージの概要](/previous-versions/windows/apps/ff402541(v=vs.105)) に関するトピックを参照してください。
 
-分離ストレージ Api は、[ポータブルクラスライブラリ](~/cross-platform/app-fundamentals/pcl.md)では使用できません。 PCL の代替手段として[Pclstorage NuGet](https://pclstorage.codeplex.com/)を使用することもあります。
+分離ストレージ Api は、 [ポータブルクラスライブラリ](~/cross-platform/app-fundamentals/pcl.md)では使用できません。 PCL の代替手段として[Pclstorage NuGet](https://pclstorage.codeplex.com/)を使用することもあります。
 
 ### <a name="cross-platform-file-access-in-pcls"></a>PCLs でのクロスプラットフォームファイルアクセス
 
-また、PCL 互換の NuGet – [Pclstorage](https://www.nuget.org/packages/PCLStorage/)があります。これにより、Xamarin でサポートされているプラットフォームと最新の Windows api のクロスプラットフォームファイルアクセスが可能になります。
+また、PCL 互換の NuGet – [Pclstorage](https://www.nuget.org/packages/PCLStorage/) があります。これにより、Xamarin でサポートされているプラットフォームと最新の Windows api のクロスプラットフォームファイルアクセスが可能になります。
 
 ## <a name="network-operations"></a>ネットワーク運用担当者
 
@@ -205,7 +205,7 @@ await FileIO.WriteTextAsync(storageFile, "Contents of text file");
 
 ### <a name="httpclient"></a>HttpClient
 
-`HttpClient`名前空間のクラスは、 `System.Net.Http` Xamarin、Xamarin、Android、およびほとんどの Windows プラットフォームで使用できます。 この API をポータブルクラスライブラリ (および Windows Phone 8 Silverlight) に取り込むために使用できる[MICROSOFT HTTP クライアントライブラリ NuGet](https://www.nuget.org/packages/Microsoft.Net.Http/)が用意されています。
+`HttpClient`名前空間のクラスは、 `System.Net.Http` Xamarin、Xamarin、Android、およびほとんどの Windows プラットフォームで使用できます。 この API をポータブルクラスライブラリ (および Windows Phone 8 Silverlight) に取り込むために使用できる [MICROSOFT HTTP クライアントライブラリ NuGet](https://www.nuget.org/packages/Microsoft.Net.Http/) が用意されています。
 
 ```csharp
 var client = new HttpClient();
@@ -217,7 +217,7 @@ var response = await myClient.SendAsync(request);
 
 クラスには、 `WebClient` リモートサーバーからリモートデータを取得するための単純な API が用意されています。
 
-ユニバーサル Windows プラットフォーム操作は非同期である*必要がありますが*、Xamarin と xamarin Android では同期操作 (バックグラウンドスレッドで実行可能) がサポートされています。
+ユニバーサル Windows プラットフォーム操作は非同期である *必要がありますが* 、Xamarin と xamarin Android では同期操作 (バックグラウンドスレッドで実行可能) がサポートされています。
 
 単純な非同期操作のコード `WebClient` は次のとおりです。
 
@@ -232,13 +232,13 @@ webClient.Encoding = System.Text.Encoding.UTF8;
 webClient.DownloadStringAsync (new Uri ("http://some-server.com/file.xml"));
 ```
 
- `WebClient`には `DownloadFileCompleted` 、 `DownloadFileAsync` バイナリデータを取得するためのともあります。
+ `WebClient` には `DownloadFileCompleted` 、 `DownloadFileAsync` バイナリデータを取得するためのともあります。
 
 <a name="HttpWebRequest"></a>
 
 ### <a name="httpwebrequest"></a>HttpWebRequest
 
-`HttpWebRequest`はより多くのカスタマイズを提供し `WebClient` ます。その結果、より多くのコードを使用する必要があります。
+`HttpWebRequest` はより多くのカスタマイズを提供し `WebClient` ます。その結果、より多くのコードを使用する必要があります。
 
 単純な同期操作のコード `HttpWebRequest` は次のとおりです。
 
@@ -307,7 +307,7 @@ WCF フレームワークのサイズと複雑さにより、Xamarin のクラ�
 
  <a name="Threading"></a>
 
-## <a name="threading"></a>スレッド処理
+## <a name="threading"></a>スレッド
 
 アプリケーションの応答性はモバイルアプリケーションにとって重要であり、ユーザーはアプリケーションの読み込みと実行を迅速に行うことが期待されます。 ユーザー入力の受け入れを停止する ' 凍結された ' 画面は、アプリケーションがクラッシュしたことを示しています。そのため、UI スレッドとネットワーク要求やローカルでの低速な操作 (ファイルの解凍など) の実行時間の長いブロック呼び出しを関連付けることは重要です。 特に、スタートアッププロセスには長時間実行されるタスクを含めないでください。すべてのモバイルプラットフォームは、読み込みに時間がかかりすぎるアプリを強制終了します。
 
@@ -345,14 +345,14 @@ static Context uiContext = TaskScheduler.FromCurrentSynchronizationContext();
 
 並列タスクライブラリを使用しないコードの場合、各プラットフォームには、UI スレッドに操作をマーシャリングするための独自の構文があります。
 
-- **iOS** –`owner.BeginInvokeOnMainThread(new NSAction(action))`
-- **Android** –`owner.RunOnUiThread(action)`
-- **Xamarin. フォーム**–`Device.BeginInvokeOnMainThread(action)`
-- **Windows** –`Deployment.Current.Dispatcher.BeginInvoke(action)`
+- **iOS** – `owner.BeginInvokeOnMainThread(new NSAction(action))`
+- **Android** – `owner.RunOnUiThread(action)`
+- **Xamarin. フォーム** – `Device.BeginInvokeOnMainThread(action)`
+- **Windows** – `Deployment.Current.Dispatcher.BeginInvoke(action)`
 
 IOS と Android の両方の構文では、' context ' クラスを使用できるようにする必要があります。これは、コードが UI スレッドでコールバックを必要とするメソッドにこのオブジェクトを渡す必要があることを意味します。
 
-UI スレッドが共有コードで呼び出されるようにするには、 [IDispatchOnUIThread の例](https://www.slideshare.net/follesoe/cross-platform-mobile-apps-using-net)(を参照) に従い [@follesoe](https://twitter.com/follesoe) ます。 次に示すように、共有コード内のインターフェイスに対してとプログラムを宣言し、 `IDispatchOnUIThread` プラットフォーム固有のクラスを実装します。
+UI スレッドが共有コードで呼び出されるようにするには、 [IDispatchOnUIThread の例](https://www.slideshare.net/follesoe/cross-platform-mobile-apps-using-net) (を参照) に従い [@follesoe](https://twitter.com/follesoe) ます。 次に示すように、共有コード内のインターフェイスに対してとプログラムを宣言し、 `IDispatchOnUIThread` プラットフォーム固有のクラスを実装します。
 
 ```csharp
 // program to the interface in shared code

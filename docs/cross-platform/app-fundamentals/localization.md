@@ -6,28 +6,28 @@ ms.assetid: CC6847B2-23FB-4EDE-9F7E-EF29DD46A5C5
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: dab6d1ff573f0f74b3b230732aa4669ba9fda0d5
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 38bee7e2c4c0b3cdf5107842e47feeeb1445d626
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86934863"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457732"
 ---
 # <a name="localization"></a>ローカリゼーション
 
-このガイドでは、*国際化*と*ローカリゼーション*の背後にある概念と、これらの概念を使用して Xamarin モバイルアプリケーションを作成する方法の手順へのリンクを紹介します。
+このガイドでは、 *国際化* と *ローカリゼーション* の背後にある概念と、これらの概念を使用して Xamarin モバイルアプリケーションを作成する方法の手順へのリンクを紹介します。
 
 Xamarin アプリのローカライズに関する技術的な詳細に直接進む場合は、次のプラットフォーム固有の操作方法に関する記事のいずれかから開始してください。
 
 - RESX ファイルを使用した[**Xamarin 形式**](~/xamarin-forms/app-fundamentals/localization/index.md)のクロスプラットフォームローカライズ。
-- [**Xamarin. iOS**](~/ios/app-fundamentals/localization/index.md)ネイティブプラットフォームのローカリゼーション。
-- [**Xamarin. Android**](~/android/app-fundamentals/localization.md)ネイティブプラットフォームのローカリゼーション。
+- [**Xamarin. iOS**](~/ios/app-fundamentals/localization/index.md) ネイティブプラットフォームのローカリゼーション。
+- [**Xamarin. Android**](~/android/app-fundamentals/localization.md) ネイティブプラットフォームのローカリゼーション。
 
 ## <a name="i18n-and-l10n"></a>i18n と L10n
 
-*国際化*とは、コードがさまざまな言語を表示し、さまざまなロケール (数値や日付の書式設定など) に合わせてその表示を調整できるようにするプロセスです。 これは、*グローバリゼーション*とも呼ばれます。
+*国際化* とは、コードがさまざまな言語を表示し、さまざまなロケール (数値や日付の書式設定など) に合わせてその表示を調整できるようにするプロセスです。 これは、 *グローバリゼーション*とも呼ばれます。
 
-*ローカリゼーション*は、各言語のリソース (文字列やイメージなど) を作成し、それらを国際化アプリにバンドルする手順です。
+*ローカリゼーション* は、各言語のリソース (文字列やイメージなど) を作成し、それらを国際化アプリにバンドルする手順です。
 
 国際化は、"i" と "n" の間の18文字の短縮形に短縮されることがよくあります。 ローカライズは、"L" と "n" の間の10文字の L10n と同様に短縮されます。
 
@@ -61,7 +61,7 @@ IOS ホーム画面上のいくつかの項目の文字列の長さを英語、�
 
 [![ドイツ語と日本語の文字列長](localization-images/language-compare-sml.png)](localization-images/language-compare.png#lightbox)
 
-英語 (8 文字) の**設定**ではドイツ語の翻訳に13文字が必要ですが、日本語では2文字のみであることに注意してください。
+英語 (8 文字) の **設定** ではドイツ語の翻訳に13文字が必要ですが、日本語では2文字のみであることに注意してください。
 
 表示ラベルと入力フィールドが左右に並んでいるレイアウトでは、ラベルの長さが大幅に異なる場合に、操作が困難になります。 多くの場合、フィールドの上にラベルが表示されているレイアウトは、ラベルと入力の両方に対して画面全体の幅が使用できるため、ローカライズが容易になります。
 
@@ -108,7 +108,7 @@ double.Parse("1,999.99", CultureInfo.InvariantCulture);
 double.Parse("1 999,99", CultureInfo.CreateSpecificCulture("fr-FR"));
 ```
 
-詳細については、「[数値文字列の解析](https://msdn.microsoft.com/library/xbtzcc4w(v=vs.110).aspx)」および「[日付と時刻文字列の解析](https://msdn.microsoft.com/library/2h3syy57(v=vs.110).aspx)」を参照してください。
+詳細については、「 [数値文字列の解析](/dotnet/standard/base-types/parsing-numeric) 」および「 [日付と時刻文字列の解析](/dotnet/standard/base-types/parsing-datetime) 」を参照してください。
 
 <a name="rtl"></a>
 
@@ -128,7 +128,7 @@ IOS と Android はどちらも、右から左へのレイアウトとフォン�
 
 異なる言語では、同じ文字セットを使用している場合でも、アルファベットの並べ替え順序が異なります。
 
-[文字列比較の詳細](https://msdn.microsoft.com/library/dd465121(v=vs.110).aspx#the_details_of_string_comparison)については、「 [.NET Framework で文字列を使用する場合のベストプラクティス](https://msdn.microsoft.com/library/dd465121(v=vs.110).aspx)」を参照してください。この例では、language (CultureInfo) が並べ替え順序に影響します。
+[文字列比較の詳細](/dotnet/standard/base-types/best-practices-strings#the_details_of_string_comparison)については、「 [.NET Framework で文字列を使用する場合のベストプラクティス](/dotnet/standard/base-types/best-practices-strings)」を参照してください。この例では、language (CultureInfo) が並べ替え順序に影響します。
 
 モバイルプラットフォームに組み込まれているデータベース機能では、言語固有の並べ替え順序がサポートされていない可能性があるため、ビジネスロジックに追加のコードを実装する必要がある場合があります。
 
@@ -279,7 +279,7 @@ IOS と Android はどちらも、右から左へのレイアウトとフォン�
 
 また、お客様の文字列を取得して独自の翻訳者に配布するプロ翻訳サービスも用意されています。これにより、翻訳が完成しました。
 
-よく知られているサービスの1つは[Lionbridge](https://www.lionbridge.com/)です。 ほとんどのプロフェッショナルサービスは、文字列、XML、RESX、および .POT などの一般的なファイルの種類をサポートしています。
+よく知られているサービスの1つは [Lionbridge](https://www.lionbridge.com/)です。 ほとんどのプロフェッショナルサービスは、文字列、XML、RESX、および .POT などの一般的なファイルの種類をサポートしています。
 
 ## <a name="summary"></a>まとめ
 
@@ -290,11 +290,11 @@ IOS と Android はどちらも、右から左へのレイアウトとフォン�
 興味のあるプラットフォームの技術的な詳細情報を引き続きお読みください。
 
 - RESX ファイルを使用した[Xamarin 形式](~/xamarin-forms/app-fundamentals/localization/index.md)のクロスプラットフォームローカライズ。
-- [Xamarin. iOS](~/ios/app-fundamentals/localization/index.md)ネイティブプラットフォームのローカリゼーション。
-- [Xamarin. Android](~/android/app-fundamentals/localization.md)ネイティブプラットフォームのローカリゼーション。
+- [Xamarin. iOS](~/ios/app-fundamentals/localization/index.md) ネイティブプラットフォームのローカリゼーション。
+- [Xamarin. Android](~/android/app-fundamentals/localization.md) ネイティブプラットフォームのローカリゼーション。
 
 ## <a name="related-links"></a>関連リンク
 
 - [Apple のローカリゼーションの概要](https://developer.apple.com/internationalization/)
 - [Android のローカライズのチェックリスト](https://developer.android.com/distribute/tools/localization-checklist.html)
-- [国際対応アプリケーションを開発するためのベストプラクティス (MSDN)](https://msdn.microsoft.com/library/w7x1y988%28v=vs.90%29.aspx)
+- [国際対応アプリケーションを開発するためのベストプラクティス (MSDN)](/previous-versions/visualstudio/visual-studio-2008/w7x1y988(v=vs.90))

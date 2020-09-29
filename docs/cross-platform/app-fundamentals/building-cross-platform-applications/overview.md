@@ -6,18 +6,18 @@ ms.assetid: E442EEFB-FA9C-40E9-9668-5A3F915C8400
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 6924379f49a80733714a488851533f506e83b245
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 72b41854160d0810bbc4a58972f638ef920a4068
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86930833"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457485"
 ---
 # <a name="building-cross-platform-applications-overview"></a>クロスプラットフォームアプリケーションの構築の概要
 
 このガイドでは、Xamarin プラットフォームを紹介し、クロスプラットフォームアプリケーションを設計してコードの再利用を最大化し、メインのすべてのモバイルプラットフォーム (iOS、Android、および Windows Phone) で高品質のネイティブエクスペリエンスを提供する方法について説明します。
 
-このドキュメントで使用されるアプローチは、一般に生産性向上アプリとゲームアプリの両方に適用されます。ただし、この方法は生産性とユーティリティ (ゲーム以外のアプリケーション) に重点を置いています。 [モノゲームドキュメントの概要](~/graphics-games/monogame/introduction/index.md)に関する記事またはクロスプラットフォームのゲーム開発ガイダンスについては、 [Visual Studio Tools for Unity](https://docs.microsoft.com/visualstudio/cross-platform/visual-studio-tools-for-unity)を参照してください。
+このドキュメントで使用されるアプローチは、一般に生産性向上アプリとゲームアプリの両方に適用されます。ただし、この方法は生産性とユーティリティ (ゲーム以外のアプリケーション) に重点を置いています。 [モノゲームドキュメントの概要](~/graphics-games/monogame/introduction/index.md)に関する記事またはクロスプラットフォームのゲーム開発ガイダンスについては、 [Visual Studio Tools for Unity](/visualstudio/cross-platform/visual-studio-tools-for-unity)を参照してください。
 
 "Write-once, すべての場所で実行する" という語句は、多くの場合、複数のプラットフォームで未変更で実行される単一のコードベースの多くを extol するために使用されます。 コードを再利用するという利点がありますが、このアプローチでは、共通の分母の特徴セットを持つアプリケーションや、ターゲットプラットフォームに適切に適合しない汎用的なユーザーインターフェイスを使用することがよくあります。
 
@@ -25,9 +25,9 @@ Xamarin は、プラットフォームごとに固有のネイティブユーザ
 
 Xamarin クロスプラットフォームアプリを作成するための主要なポイントの概要を次に示します。
 
-- **C# を使用する**-アプリを c# で記述します。 C# で記述された既存のコードは、Xamarin を使用して iOS および Android に簡単に移植でき、Windows アプリでも使用できます。
-- **MVC または MVVM のデザインパターンを利用**する-モデル/ビュー/コントローラーパターンを使用してアプリケーションのユーザーインターフェイスを開発します。 モデル/ビュー/コントローラーアプローチを使用するか、"モデル" と rest の間に明確な分離があるモデル/ビュー/ビューモデルの方法を使用して、アプリケーションを設計します。 アプリケーションのどの部分が各プラットフォームのネイティブユーザーインターフェイス要素 (iOS、Android、Windows、Mac) を使用するかを決定し、これをガイドラインとして使用して、"Core" と "User Interface" の2つのコンポーネントにアプリケーションを分割します。
-- **ネイティブ**Ui のビルド-OS 固有の各アプリケーションには、さまざまなユーザーインターフェイスレイヤーが用意されています (ネイティブ UI デザインツールを使用して C# で実装されています)。
+- **C# を使用する** -アプリを c# で記述します。 C# で記述された既存のコードは、Xamarin を使用して iOS および Android に簡単に移植でき、Windows アプリでも使用できます。
+- **MVC または MVVM のデザインパターンを利用** する-モデル/ビュー/コントローラーパターンを使用してアプリケーションのユーザーインターフェイスを開発します。 モデル/ビュー/コントローラーアプローチを使用するか、"モデル" と rest の間に明確な分離があるモデル/ビュー/ビューモデルの方法を使用して、アプリケーションを設計します。 アプリケーションのどの部分が各プラットフォームのネイティブユーザーインターフェイス要素 (iOS、Android、Windows、Mac) を使用するかを決定し、これをガイドラインとして使用して、"Core" と "User Interface" の2つのコンポーネントにアプリケーションを分割します。
+- **ネイティブ** Ui のビルド-OS 固有の各アプリケーションには、さまざまなユーザーインターフェイスレイヤーが用意されています (ネイティブ UI デザインツールを使用して C# で実装されています)。
 
 1. IOS では、UIKit Api を使用してネイティブアプリケーションを作成し、必要に応じて Xamarin の iOS デザイナーを利用して UI を視覚的に作成できます。
 1. Android では、Xamarin の UI デザイナーを利用して、ネイティブなアプリケーションを作成するために Android を使用します。
@@ -45,7 +45,7 @@ Xamarin. Forms プロジェクトはすべてのプラットフォームでサ�
 1. [Json.NET](https://www.nuget.org/packages/Newtonsoft.Json/)など、Xamarin プロジェクトと互換性のある[NuGet パッケージ](https://nuget.org)
 1. ネットワーク、web サービス、IO などに .NET framework の機能を使用します。
 
-これらのコンポーネントの一部は、 *Tasky*のケーススタディで実装されています。
+これらのコンポーネントの一部は、 *Tasky* のケーススタディで実装されています。
 
  <a name="Separate_Reusable_Code_into_a_Core_Library"></a>
 

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/25/2018
-ms.openlocfilehash: 86e05dc0e9cd5df325126cc5a339b36dd27c1e45
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 1747601596cd1772210d9a66755d7aa98ca14052
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73030355"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457030"
 ---
 # <a name="working-with-screen-sizes"></a>画面サイズの操作
 
@@ -21,15 +21,15 @@ Android の磨耗デバイスは、四角形または丸いディスプレイを
 
 ## <a name="identifying-screen-type"></a>画面の種類の識別
 
-磨耗サポートライブラリには、`WatchViewStub` や `BoxInsetLayout`などのさまざまな画面図形の検出と調整に役立つコントロールが用意されています。
+磨耗サポートライブラリには、やなど、さまざまな画面図形の検出と調整に役立つコントロールが用意されて `WatchViewStub` `BoxInsetLayout` います。
 
-他のサポートライブラリコントロール (`GridViewPager`など) の一部は*自動的に*スクリーンシェイプを検出し、以下で説明するコントロールの子として追加することはできないことに注意してください。
+他のサポートライブラリコントロール (など) の一部は `GridViewPager` *自動的に* スクリーンシェイプを検出し、以下で説明するコントロールの子として追加することはできないことに注意してください。
 
 ### <a name="watchviewstub"></a>WatchViewStub
 
-画面の種類を検出し、種類ごとに異なるレイアウトを表示する方法については、 [WatchViewStub](https://docs.microsoft.com/samples/xamarin/monodroid-samples/wear-watchviewstub)サンプルを参照してください。
+画面の種類を検出し、種類ごとに異なるレイアウトを表示する方法については、 [WatchViewStub](/samples/xamarin/monodroid-samples/wear-watchviewstub) サンプルを参照してください。
 
-メインレイアウトファイルには、`app:rectLayout` と `app:roundLayout` 属性を使用して、四角形と丸い画面のさまざまなレイアウトを参照する `android.support.wearable.view.WatchViewStub` が含まれています。
+メインレイアウトファイルには、 `android.support.wearable.view.WatchViewStub` 属性と属性を使用して、四角形と丸い画面のさまざまなレイアウトを参照するが含まれてい `app:rectLayout` `app:roundLayout` ます。
 
 ```xml
 <android.support.wearable.view.WatchViewStub
@@ -49,7 +49,7 @@ Android の磨耗デバイスは、四角形または丸いディスプレイを
 
 画面の種類ごとに異なるレイアウトを作成するのではなく、四角形または丸い画面に適応する1つのビューを作成することもできます。
 
-この[Google の例](https://developer.android.com/training/wearables/ui/layouts.html#same-layout)では、`BoxInsetLayout` を使用して、四角形と丸い両方の画面で同じレイアウトを使用する方法を示します。
+この [Google の例](https://developer.android.com/training/wearables/ui/layouts.html#same-layout) では、を使用して、 `BoxInsetLayout` 四角形と丸い両方の画面で同じレイアウトを使用する方法を示します。
 
 ## <a name="wear-ui-designer"></a>摩耗 UI デザイナー
 

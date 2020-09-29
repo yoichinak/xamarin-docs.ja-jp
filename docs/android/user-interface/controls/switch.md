@@ -7,22 +7,22 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/29/2018
-ms.openlocfilehash: 73becb5e4424854c9be6cdc3554f6cf93507b9a9
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: dabd4b5bd7d6dbd118314e94fe04bc4623cf11e1
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73029138"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457719"
 ---
 # <a name="xamarinandroid-switch"></a>Xamarin. Android スイッチ
 
-`Switch` ウィジェット (下図参照) では、ユーザーは2つの状態 (オン、オフなど) を切り替えることができます。 `Switch` の既定値は OFF です。 次に示すのは、このウィジェットのオンとオフの両方の状態です。
+`Switch`ウィジェット (下図参照) では、ユーザーは2つの状態 (オン、オフなど) を切り替えることができます。 `Switch`既定値は OFF です。 次に示すのは、このウィジェットのオンとオフの両方の状態です。
 
-[スイッチウィジェットのスクリーンショットをオフおよび状態に![](switch-images/16-switch-onoff.png)](switch-images/16-switch-onoff.png#lightbox)
+[![スイッチウィジェットのスクリーンショット (オフと状態)](switch-images/16-switch-onoff.png)](switch-images/16-switch-onoff.png#lightbox)
 
 ## <a name="creating-a-switch"></a>スイッチを作成する
 
-スイッチを作成するには、次のように XML 内の `Switch` 要素を宣言するだけです。
+スイッチを作成するには、次のように `Switch` XML 内の要素を宣言するだけです。
 
 ```xml
 <Switch android:layout_width="wrap_content"
@@ -31,11 +31,11 @@ ms.locfileid: "73029138"
 
 これにより、基本的なスイッチが次のように作成されます。
 
-[オフ状態のスイッチを表示しているデモアプリのスクリーンショット![](switch-images/07-switch.png)](switch-images/07-switch.png#lightbox)
+[![オフ状態のスイッチを表示しているデモアプリのスクリーンショット](switch-images/07-switch.png)](switch-images/07-switch.png#lightbox)
 
 ## <a name="changing-default-values"></a>既定値の変更
 
-オンとオフの状態に対してコントロールに表示されるテキストと、既定値の両方が構成可能です。 たとえば、スイッチの既定値を ON に設定し、OFF/ON ではなく read NO/YES を設定するには、次の XML の `checked`、`textOn`、および `textOff` 属性を設定します。
+オンとオフの状態に対してコントロールに表示されるテキストと、既定値の両方が構成可能です。 たとえば、スイッチを既定の ON に設定し、OFF/ON ではなく read NO/YES を設定するには、 `checked` `textOn` 次の XML で、、およびの各属性を設定し `textOff` ます。
 
 ```xml
 <Switch android:layout_width="wrap_content"
@@ -47,7 +47,7 @@ ms.locfileid: "73029138"
 
 ## <a name="providing-a-title"></a>タイトルの指定
 
-`Switch` ウィジェットでは、`text` 属性を次のように設定することによって、テキストラベルを含めることもできます。
+ウィジェットでは、 `Switch` 属性を次のように設定することによって、テキストラベルを含めることもでき `text` ます。
 
 ```xml
 <Switch android:text="Is Xamarin.Android great?"
@@ -60,10 +60,10 @@ ms.locfileid: "73029138"
 
 このマークアップは、実行時に次のスクリーンショットを生成します。
 
-[スイッチウィジェットの前に横書きのテキストを含むデモアプリのスクリーンショットを![します](switch-images/08-switch.png)](switch-images/08-switch.png#lightbox)
+[![スイッチウィジェットの前に横書きでテキストが表示されたデモアプリのスクリーンショット](switch-images/08-switch.png)](switch-images/08-switch.png#lightbox)
 
-`Switch`の値が変更されると、`CheckedChange` イベントが発生します。
-たとえば、次のコードでは、このイベントをキャプチャし、`Switch`の `isChecked` 値に基づいてメッセージを含む `Toast` ウィジェットを提示します。これは、`CompoundButton.CheckedChangeEventArg` 引数の一部としてイベントハンドラーに渡されます。
+の値が変更されると `Switch` 、イベントが発生 `CheckedChange` します。
+たとえば、次のコードでは、このイベントをキャプチャし、 `Toast` の値に基づいてメッセージを含むウィジェットを提示し `isChecked` `Switch` ます。これは、引数の一部としてイベントハンドラーに渡され `CompoundButton.CheckedChangeEventArg` ます。
 
 ```csharp
 Switch s = FindViewById<Switch> (Resource.Id.monitored_switch);
@@ -77,5 +77,5 @@ s.CheckedChange += delegate(object sender, CompoundButton.CheckedChangeEventArgs
 
 ## <a name="related-links"></a>関連リンク
 
-- [SwitchDemo (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/switchdemo)
+- [SwitchDemo (サンプル)](/samples/xamarin/monodroid-samples/switchdemo)
 - [タブレイアウトのチュートリアル](~/android/user-interface/layouts/tab-layout/index.md)

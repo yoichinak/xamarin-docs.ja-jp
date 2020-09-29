@@ -6,12 +6,12 @@ ms.assetid: 7b9aa8d9-c181-4c33-8ab0-2f56e4dbfc04
 author: davidortinau
 ms.author: daortin
 ms.date: 10/09/2017
-ms.openlocfilehash: 441ac213531c84aa3b7edfd6dfabab3f2c37d15d
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 9439b33c0e2c8458fd1308003aa9cd93148b6eac
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86934785"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457316"
 ---
 # <a name="microsoft-azure-and-xamarin"></a>Microsoft Azure と Xamarin
 
@@ -21,18 +21,18 @@ ms.locfileid: "86934785"
 
 ## <a name="connected-services-in-visual-studio-for-mac"></a>Visual Studio for Mac の接続済みサービス
 
-Visual Studio for Mac の新しい[接続済みサービス](connected-services.md)機能を使用すると、開発者は IDE 内からモバイルアプリケーションに Azure の機能をすばやく簡単に追加できます。 現在、アルファチャネルでのテストに使用できます。
+Visual Studio for Mac の新しい [接続済みサービス](/visualstudio/mac/connected-services) 機能を使用すると、開発者は IDE 内からモバイルアプリケーションに Azure の機能をすばやく簡単に追加できます。 現在、アルファチャネルでのテストに使用できます。
 
 ## <a name="azure-app-services"></a>Azure App Service
 
 Azure[モバイルクライアント](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)を実装するプロセスについて[説明する azure Mobile Apps ドキュメント](~/cross-platform/data-cloud/mobile-apps.md)のコレクションがあります。
-Xamarin は、 [iOS](https://www.nuget.org/packages/Xamarin.Azure.NotificationHubs.iOS/)および[Android](https://www.nuget.org/packages/Xamarin.Azure.NotificationHubs.Android/)用の Azure メッセージング NuGet パッケージも提供しており、プラットフォーム間でプッシュ通知を実装するのに役立ちます。
+Xamarin は、 [iOS](https://www.nuget.org/packages/Xamarin.Azure.NotificationHubs.iOS/) および [Android](https://www.nuget.org/packages/Xamarin.Azure.NotificationHubs.Android/) 用の Azure メッセージング NuGet パッケージも提供しており、プラットフォーム間でプッシュ通知を実装するのに役立ちます。
 
-Mobile Apps、Web Api、ストレージなどにアクセスするように、 [Azure アプリ Services ポータル](https://portal.azure.com/)でアプリを構成します。 [App services の違い](https://azure.microsoft.com/updates/whats-new-with-azure-app-service/)について説明し、 [Microsoft のビデオ](https://azure.microsoft.com/campaigns/azure-march-announcement/)をご覧ください。
+Mobile Apps、Web Api、ストレージなどにアクセスするように、 [Azure アプリ Services ポータル](https://portal.azure.com/) でアプリを構成します。 [App services の違い](https://azure.microsoft.com/updates/whats-new-with-azure-app-service/)について説明し、 [Microsoft のビデオ](https://azure.microsoft.com/campaigns/azure-march-announcement/)をご覧ください。
 
 ## <a name="active-directory-authentication"></a>Active Directory 認証
 
-[Azure Active Directory](~/cross-platform/data-cloud/active-directory/index.md)を使用して、Xamarin アプリにユーザーをログインさせることができます。 その後、アプリは Office 365 などの追加サービスにアクセスできます。
+[Azure Active Directory](~/cross-platform/data-cloud/active-directory/index.md) を使用して、Xamarin アプリにユーザーをログインさせることができます。 その後、アプリは Office 365 などの追加サービスにアクセスできます。
 
 ## <a name="webapi"></a>WebAPI
 
@@ -47,16 +47,16 @@ Microsoft の Web API は、Xamarin アプリケーションで簡単に使用�
 
 [ドキュメントサンプル](https://github.com/xamarin/mobile-samples/tree/master/Azure)に加えて、次の完全なアプリケーションでは、Xamarin アプリに組み込まれているさまざまな Azure 機能について説明しています。
 
-- [スポーツ](https://github.com/xamarin/Sport)–データストレージ & プッシュ通知を使用するフレンドリなスポーツリーグ追跡アプリです。
-- [モーメント](https://github.com/pierceboggan/Moments)–画像に Azure Storage を使用するインスタント写真共有です。
+- [スポーツ](https://github.com/xamarin/Sport) –データストレージ & プッシュ通知を使用するフレンドリなスポーツリーグ追跡アプリです。
+- [モーメント](https://github.com/pierceboggan/Moments) –画像に Azure Storage を使用するインスタント写真共有です。
 - [XAMARIN CRM](https://github.com/xamarin/app-crm) –バックエンドに Web API を使用します。
 - [MyShoppe](https://github.com/jamesmontemagno/MyShoppe) -Azure Mobile Apps。
 
-- [eShop](https://github.com/dotnet-architecture/eShopOnContainers) : Ebooks の[アーキテクチャシリーズ](https://www.microsoft.com/net/learn/architecture)のサンプルです。
+- [eShop](https://github.com/dotnet-architecture/eShopOnContainers) : Ebooks の [アーキテクチャシリーズ](https://www.microsoft.com/net/learn/architecture) のサンプルです。
 - ビルド2016の[Mydriving](https://azure.microsoft.com/campaigns/mydriving/) – Azure + IoT サンプル。
 
 ## <a name="related-links"></a>関連リンク
 
 - [Azure PCL の例 (by @paulbatum ) (サンプル)](https://github.com/paulbatum/mobile-services-xamarin-pcl)
-- [Azure portal](https://azure.microsoft.com/)
+- [Azure Portal](https://azure.microsoft.com/)
 - [Xamarin 用モバイルクライアント (NuGet)](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/)

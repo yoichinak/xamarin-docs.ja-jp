@@ -7,36 +7,36 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 07/13/2018
-ms.openlocfilehash: d50971c1ef0064463e576a895729ad84577e1788
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 80b7dc5554e0db525de7fcea274e82cdf3e8c7f4
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73028878"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457137"
 ---
 # <a name="extending-the-recyclerview-example"></a>RecyclerView の例を拡張する
 
-[基本的な RecyclerView の例](~/android/user-interface/layouts/recycler-view/recyclerview-example.md)で説明されている基本的なアプリは、実際には、スクロールして、参照を容易にするために写真項目の固定リストを表示する &ndash; あまりありません。 実際のアプリケーションでは、ユーザーはディスプレイの項目をタップすることで、アプリと対話できることを期待しています。 また、基になるデータソースが変更される (またはアプリによって変更される) 可能性があります。また、表示の内容は、これらの変更との整合性が維持されている必要があります。 以下のセクションでは、アイテムクリックイベントを処理する方法と、基になるデータソースが変更されたときに `RecyclerView` を更新する方法について説明します。
+[基本的な RecyclerView の例](~/android/user-interface/layouts/recycler-view/recyclerview-example.md)で説明されている基本的なアプリでは、実際にはスクロールするだけではなく、 &ndash; 写真項目の固定リストが表示されます。 実際のアプリケーションでは、ユーザーはディスプレイの項目をタップすることで、アプリと対話できることを期待しています。 また、基になるデータソースが変更される (またはアプリによって変更される) 可能性があります。また、表示の内容は、これらの変更との整合性が維持されている必要があります。 以下のセクションでは、アイテムクリックイベントを処理し、 `RecyclerView` 基になるデータソースが変更されたときに更新する方法について説明します。
 
 ### <a name="handling-item-click-events"></a>項目クリックイベントの処理
 
-ユーザーが `RecyclerView`の項目に触れると、項目クリックイベントが生成され、どの項目がタッチされたかをアプリに通知します。 このイベントは `RecyclerView` &ndash; によって生成されません。代わりに、項目ビュー (ビューの所有者にラップされています) が、クリックイベントとして接しているレポートを検出します。
+ユーザーが内の項目に触れると `RecyclerView` 、項目クリックイベントが生成され、どの項目がタッチされたかをアプリに通知します。 このイベントは、代わりにによって生成されるのでは `RecyclerView` &ndash; なく、項目ビュー (ビューの所有者にラップされています) が、クリックイベントとして接していることを検出します。
 
 項目クリックイベントを処理する方法を説明するために、次の手順では、ユーザーによってどの写真がタッチされたかをレポートするために、基本的な写真表示アプリがどのように変更されるかを説明します。 サンプルアプリで項目クリックイベントが発生すると、次のシーケンスが実行されます。
 
-1. 写真の `CardView` は、項目クリックイベントを検出し、アダプターに通知します。
+1. 写真のは、 `CardView` 項目クリックイベントを検出し、アダプターに通知します。
 
 2. アダプターは、(項目の位置情報を含む) イベントをアクティビティの項目クリックハンドラーに転送します。
 
 3. アクティビティの項目クリックハンドラーは、項目クリックイベントに応答します。
 
-まず、`ItemClick` という名前のイベントハンドラーメンバーを `PhotoAlbumAdapter` クラス定義に追加します。
+最初に、という名前のイベントハンドラーメンバー `ItemClick` がクラス定義に追加され `PhotoAlbumAdapter` ます。
 
 ```csharp
 public event EventHandler<int> ItemClick;
 ```
 
-次に、項目クリックイベントハンドラーメソッドが `MainActivity`に追加されます。
+次に、項目クリックイベントハンドラーメソッドがに追加され `MainActivity` ます。
 このハンドラーは、どの写真項目がタッチされたかを示すトーストを簡単に表示します。
 
 ```csharp
@@ -48,7 +48,7 @@ void OnItemClick (object sender, int position)
 
 ```
 
-次に、`PhotoAlbumAdapter`に `OnItemClick` ハンドラーを登録するためのコード行が必要です。 `PhotoAlbumAdapter` が作成された直後にこれを行うことをお勧めします。 
+次に、ハンドラーをに登録するためのコード行が必要です `OnItemClick` `PhotoAlbumAdapter` 。 この作業は、の作成直後に行うことをお勧めし `PhotoAlbumAdapter` ます。 
 
 ```csharp
 mAdapter = new PhotoAlbumAdapter (mPhotoAlbum);
@@ -56,9 +56,9 @@ mAdapter.ItemClick += OnItemClick;
 
 ```
 
-この基本的な例では、ハンドラーの登録はメインアクティビティの `OnCreate` メソッドで実行されますが、運用アプリでは `OnResume` にハンドラーを登録し、&ndash; `OnPause` で登録を解除することがあります。詳細については、[アクティビティのライフサイクル](~/android/app-fundamentals/activity-lifecycle/index.md)を参照してください。
+この基本的な例では、ハンドラーの登録はメインアクティビティのメソッドで行われ `OnCreate` ますが、運用アプリでは、 `OnResume` アクティビティの `OnPause` &ndash; [ライフサイクル](~/android/app-fundamentals/activity-lifecycle/index.md) を参照して、詳細を確認してください。
 
-これで、`PhotoAlbumAdapter` は、項目クリックイベントを受信したときに `OnItemClick` を呼び出します。 次の手順では、この `ItemClick` イベントを発生させるハンドラーをアダプターに作成します。 次のメソッド `OnClick`は、アダプターの `ItemCount` メソッドの直後に追加されます。
+`PhotoAlbumAdapter` は、 `OnItemClick` 項目クリックイベントを受け取ったときにを呼び出します。 次の手順では、このイベントを発生させるハンドラーをアダプターに作成し `ItemClick` ます。 次のメソッドは、 `OnClick` アダプターのメソッドの直後に追加され `ItemCount` ます。
 
 ```csharp
 void OnClick (int position)
@@ -68,8 +68,8 @@ void OnClick (int position)
 }
 ```
 
-この `OnClick` メソッドは、項目ビューの項目クリックイベントのアダプターの*リスナー*です。 このリスナーを項目ビューに登録する前に (項目ビューのビューホルダーを使用)、このメソッドを追加の引数として受け取るように `PhotoViewHolder` コンストラクターを変更し、項目ビュー `Click` イベントに `OnClick` を登録する必要があります。
-次に、変更された `PhotoViewHolder` コンストラクターを示します。
+この `OnClick` メソッドは、項目ビューの項目クリックイベントのアダプターの *リスナー* です。 このリスナーを項目ビューに登録する前に (項目ビューのビューホルダーを使用)、 `PhotoViewHolder` このメソッドを追加の引数として受け取るようにコンストラクターを変更し、 `OnClick` 項目ビューイベントに登録する必要があり `Click` ます。
+変更された `PhotoViewHolder` コンストラクターを次に示します。
 
 ```csharp
 public PhotoViewHolder (View itemView, Action<int> listener)
@@ -83,7 +83,7 @@ public PhotoViewHolder (View itemView, Action<int> listener)
 
 ```
 
-`itemView` パラメーターには、ユーザーがタッチした `CardView` への参照が含まれています。 ビューホルダーの基本クラスは、(`LayoutPosition` のプロパティを使用して) それが表すアイテム (`CardView`) のレイアウト位置を認識し、この位置は、項目クリックイベントが発生したときにアダプターの `OnClick` メソッドに渡されることに注意してください。 アダプターの `OnCreateViewHolder` メソッドは、アダプターの `OnClick` メソッドをビューホルダーのコンストラクターに渡すように変更されます。
+パラメーターには、 `itemView` ユーザーがタッチしたへの参照が含まれてい `CardView` ます。 ビューホルダーの基本クラスは、(プロパティを使用して) それが表す項目 () のレイアウト位置を認識 `CardView` `LayoutPosition` し、 `OnClick` 項目クリックイベントが発生したときに、この位置がアダプターのメソッドに渡されることに注意してください。 アダプターのメソッドは、 `OnCreateViewHolder` アダプターの `OnClick` メソッドをビューホルダーのコンストラクターに渡すように変更されます。
 
 ```csharp
 PhotoViewHolder vh = new PhotoViewHolder (itemView, OnClick);
@@ -91,11 +91,11 @@ PhotoViewHolder vh = new PhotoViewHolder (itemView, OnClick);
 
 これで、サンプルの写真表示アプリをビルドして実行すると、画面の写真をタップすると、タッチされた写真を報告するトーストが表示されます。
 
-[フォトカードをタップしたときに表示されるトーストの![例](extending-the-example-images/01-photo-selected-sml.png)](extending-the-example-images/01-photo-selected.png#lightbox)
+[![フォトカードをタップしたときに表示されるトーストの例](extending-the-example-images/01-photo-selected-sml.png)](extending-the-example-images/01-photo-selected.png#lightbox)
 
-この例では、`RecyclerView`でイベントハンドラーを実装する方法の1つを示します。 ここで使用できるもう1つの方法は、イベントをビューホルダーに配置し、アダプターがこれらのイベントをサブスクライブするように設定することです。 サンプルの写真アプリで写真編集機能が提供されている場合は、`ImageView` と各 `CardView`内の `TextView` で個別のイベントが必要になります。 `TextView` に触れると、ユーザーがキャプションを編集できるようにするための `EditView` ダイアログが起動されます。そして、`ImageView` に触れて、ユーザーが写真をトリミングまたは回転できるようにするための写真補正ツールを起動します。 アプリのニーズに応じて、タッチイベントの処理と応答に最適な方法を設計する必要があります。
+この例では、を使用してイベントハンドラーを実装する方法を1つだけ示し `RecyclerView` ます。 ここで使用できるもう1つの方法は、イベントをビューホルダーに配置し、アダプターがこれらのイベントをサブスクライブするように設定することです。 サンプルの写真アプリで写真編集機能が提供されている場合は、との間で個別のイベントが必要になります。では、ユーザーがキャプションを編集できるようにするためのダイアログを表示し、に `ImageView` `TextView` `CardView` `TextView` `EditView` 触れると、 `ImageView` ユーザーが写真をトリミングまたは回転できるようにするためのダイアログが開きます。 アプリのニーズに応じて、タッチイベントの処理と応答に最適な方法を設計する必要があります。
 
-データセットが変更されたときに `RecyclerView` を更新する方法を示すために、サンプルの写真表示アプリを変更して、データソース内の写真をランダムに選択し、最初の写真と入れ替えることができます。 まず、**ランダムな選択**ボタンがサンプルのフォトアプリのメインの**axml**レイアウトに追加されます。
+データセットが変更されたときにを更新する方法を示すために `RecyclerView` 、サンプルの写真表示アプリを変更して、データソース内の写真をランダムに選択し、最初の写真と入れ替えることができます。 まず、 **ランダムな選択** ボタンがサンプルのフォトアプリのメインの **axml** レイアウトに追加されます。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -118,7 +118,7 @@ PhotoViewHolder vh = new PhotoViewHolder (itemView, OnClick);
 </LinearLayout>
 ```
 
-次に、メインアクティビティの `OnCreate` メソッドの最後にコードを追加して、レイアウト内の `Random Pick` ボタンを見つけ、ハンドラーをアタッチします。
+次に、メインアクティビティのメソッドの最後にコードを追加 `OnCreate` `Random Pick` してレイアウト内のボタンを見つけ、ハンドラーをアタッチします。
 
 ```csharp
 Button randomPickBtn = FindViewById<Button>(Resource.Id.randPickButton);
@@ -134,9 +134,9 @@ randomPickBtn.Click += delegate
 
 ```
 
-このハンドラーは、**ランダム選択**ボタンがタップされたときに、フォトアルバムの `RandomSwap` メソッドを呼び出します。 `RandomSwap` メソッドは、データソース内の最初の写真と写真をランダムに交換し、ランダムに交換された写真のインデックスを返します。 このコードを使用してサンプルアプリをコンパイルして実行する場合、 **[ランダム選択]** ボタンをタップしても、データソースへの変更が認識されない `RecyclerView` ため、表示が変更されることはありません。
+このハンドラー `RandomSwap` は、 **ランダム選択** ボタンがタップされたときに、フォトアルバムのメソッドを呼び出します。 この `RandomSwap` メソッドは、データソース内の最初の写真と写真をランダムに交換し、ランダムにスワップされた写真のインデックスを返します。 このコードを使用してサンプルアプリをコンパイルして実行する場合、がデータソースへの変更を認識しないため、[ **ランダム選択** ] ボタンをタップしても、表示が変更されることはありません `RecyclerView` 。
 
-データソースが変更された後も `RecyclerView` 更新しないようにするには、**ランダム選択**クリックハンドラーを変更して、変更されたコレクション内の各項目に対してアダプターの `NotifyItemChanged` メソッドを呼び出す必要があります (この場合、2つの項目が変更されています。最初の写真と写真を交換した場合)。 これにより、`RecyclerView` によって、データソースの新しい状態と一致するように表示が更新されます。
+`RecyclerView`データソースが変更された後も更新されないようにするには、**ランダム選択**のクリックハンドラーを変更して、変更されたコレクション内の各項目に対してアダプターのメソッドを呼び出す必要があり `NotifyItemChanged` ます (この例では、最初の写真とスワップされた写真)。 これにより、は、 `RecyclerView` データソースの新しい状態と一貫性があるように表示を更新します。
 
 ```csharp
 Button randomPickBtn = FindViewById<Button>(Resource.Id.randPickButton);
@@ -157,15 +157,15 @@ randomPickBtn.Click += delegate
 
 ```
 
-これで、**ランダム選択**ボタンがタップされたときに、`RecyclerView` によってディスプレイが更新され、コレクション内のさらに下の写真がコレクションの最初の写真と交換されたことが示されます。
+これで、 **ランダム選択** ボタンがタップされたときに、 `RecyclerView` コレクション内の下にある写真がコレクション内の最初の写真とスワップされたことを示す表示を更新します。
 
-[スワップ前の最初のスクリーンショット![スワップ後の2番目のスクリーンショット](extending-the-example-images/02-random-pick-sml.png)](extending-the-example-images/02-random-pick.png#lightbox)
+[![スワップ前の最初のスクリーンショット、スワップ後の2番目のスクリーンショット](extending-the-example-images/02-random-pick-sml.png)](extending-the-example-images/02-random-pick.png#lightbox)
 
-もちろん、`NotifyItemChanged`への2つの呼び出しを行うのではなく、`NotifyDataSetChanged` を呼び出すこともできましたが、コレクション内の項目が2つしか変更されていなくても、コレクション全体の更新が強制的に `RecyclerView` されます。 `NotifyItemChanged` の呼び出しは、`NotifyDataSetChanged`を呼び出すよりもはるかに効率的です。
+もちろん、 `NotifyDataSetChanged` 2 つの呼び出しを行うのではなく、を呼び出すこともでき `NotifyItemChanged` ますが、 `RecyclerView` コレクション内の項目が2つしか変更されていなくても、はコレクション全体を強制的に更新します。 `NotifyItemChanged`の呼び出しは、を呼び出すよりもはるかに効率的です `NotifyDataSetChanged` 。
 
 ## <a name="related-links"></a>関連リンク
 
-- [RecyclerViewer (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-recyclerviewer)
+- [RecyclerViewer (サンプル)](/samples/xamarin/monodroid-samples/android50-recyclerviewer)
 - [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)
 - [RecyclerView のパーツと機能](~/android/user-interface/layouts/recycler-view/parts-and-functionality.md)
 - [基本的な RecyclerView の例](~/android/user-interface/layouts/recycler-view/recyclerview-example.md)

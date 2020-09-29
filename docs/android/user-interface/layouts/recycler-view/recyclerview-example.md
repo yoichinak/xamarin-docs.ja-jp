@@ -7,25 +7,25 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 07/30/2018
-ms.openlocfilehash: 6093c983a80c53b4900bb26c3a7020724a59c06d
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: d4a775d1e96fd6650623c2a151ae74b8b68ce0ac
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571305"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457082"
 ---
 # <a name="a-basic-recyclerview-example"></a>基本的な RecyclerView の例
 
-一般的なアプリケーションでの動作を理解するために `RecyclerView` 、このトピックでは、を使用して写真の大きなコレクションを表示する簡単なコード例である[RecyclerViewer](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-recyclerviewer)サンプルアプリについて説明し `RecyclerView` ます。 
+一般的なアプリケーションでの動作を理解するために `RecyclerView` 、このトピックでは、を使用して写真の大きなコレクションを表示する簡単なコード例である [RecyclerViewer](/samples/xamarin/monodroid-samples/android50-recyclerviewer) サンプルアプリについて説明し `RecyclerView` ます。 
 
 [![カードビューを使用して写真を表示する RecyclerView アプリの2つのスクリーンショット](recyclerview-example-images/01-recyclerviewer-sml.png)](recyclerview-example-images/01-recyclerviewer.png#lightbox)
 
-**RecyclerViewer**は、 [CardView](~/android/user-interface/controls/card-view.md)を使用して、レイアウトに各写真項目を実装し `RecyclerView` ます。 パフォーマンス上の利点があるため `RecyclerView` 、このサンプルアプリでは、大きな写真のコレクションをすばやくスクロールできます。
+**RecyclerViewer** は、 [CardView](~/android/user-interface/controls/card-view.md) を使用して、レイアウトに各写真項目を実装し `RecyclerView` ます。 パフォーマンス上の利点があるため `RecyclerView` 、このサンプルアプリでは、大きな写真のコレクションをすばやくスクロールできます。
 
 ### <a name="an-example-data-source"></a>データソースの例
 
 このサンプルアプリでは、"フォトアルバム" データソース (クラスによって表される `PhotoAlbum` ) が `RecyclerView` 項目の内容と共に提供されます。
-`PhotoAlbum`キャプション付きの写真のコレクションです。インスタンス化すると、準備が完了した32の写真のコレクションを取得できます。
+`PhotoAlbum` キャプション付きの写真のコレクションです。インスタンス化すると、準備が完了した32の写真のコレクションを取得できます。
 
 ```csharp
 PhotoAlbum mPhotoAlbum = new PhotoAlbum ();
@@ -38,13 +38,13 @@ int imageId = mPhotoAlbum[9].ImageId;
 string caption = mPhotoAlbum[9].Caption;
 ```
 
-`PhotoAlbum`また、には、コレクション内の `RandomSwap` 最初の写真を、コレクション内の他の場所でランダムに選択された写真とスワップするために呼び出すことができるメソッドも用意されています。
+`PhotoAlbum` また、には、コレクション内の `RandomSwap` 最初の写真を、コレクション内の他の場所でランダムに選択された写真とスワップするために呼び出すことができるメソッドも用意されています。
 
 ```csharp
 mPhotoAlbum.RandomSwap ();
 ```
 
-の実装の詳細は `PhotoAlbum` 理解には関係がないため `RecyclerView` 、 `PhotoAlbum` ソースコードはここには記載されていません。 のソースコード `PhotoAlbum` は、 [RecyclerViewer](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-recyclerviewer)サンプルアプリの[PhotoAlbum.cs](https://github.com/xamarin/monodroid-samples/blob/master/android5.0/RecyclerViewer/RecyclerViewer/PhotoAlbum.cs)で入手できます。
+の実装の詳細は `PhotoAlbum` 理解には関係がないため `RecyclerView` 、 `PhotoAlbum` ソースコードはここには記載されていません。 のソースコード `PhotoAlbum` は、 [RecyclerViewer](/samples/xamarin/monodroid-samples/android50-recyclerviewer)サンプルアプリの[PhotoAlbum.cs](https://github.com/xamarin/monodroid-samples/blob/master/android5.0/RecyclerViewer/RecyclerViewer/PhotoAlbum.cs)で入手できます。
 
 ### <a name="layout-and-initialization"></a>レイアウトと初期化
 
@@ -107,14 +107,14 @@ public class MainActivity : Activity
 
 ### <a name="layout-manager"></a>レイアウトマネージャー
 
-の各項目 `RecyclerView` は、 `CardView` 写真の画像とフォトキャプションを含むで構成されます (詳細については、以下の「[ビューホルダー](#view-holder) 」セクションで説明します)。 定義済みのは、 `LinearLayoutManager` 垂直方向のスクロールで各をレイアウトするために使用され `CardView` ます。
+の各項目 `RecyclerView` は、 `CardView` 写真の画像とフォトキャプションを含むで構成されます (詳細については、以下の「 [ビューホルダー](#view-holder) 」セクションで説明します)。 定義済みのは、 `LinearLayoutManager` 垂直方向のスクロールで各をレイアウトするために使用され `CardView` ます。
 
 ```csharp
 mLayoutManager = new LinearLayoutManager (this);
 mRecyclerView.SetLayoutManager (mLayoutManager);
 ```
 
-このコードは、メインアクティビティのメソッドに存在 `OnCreate` します。 レイアウトマネージャーのコンストラクターには*コンテキスト*が必要であるため、は `MainActivity` 上に示すようにを使用して渡され `this` ます。
+このコードは、メインアクティビティのメソッドに存在 `OnCreate` します。 レイアウトマネージャーのコンストラクターには *コンテキスト*が必要であるため、は `MainActivity` 上に示すようにを使用して渡され `this` ます。
 
 定義済みのを使用する代わりに、 `LinearLayoutManager` 2 つの項目を並べて表示するカスタムレイアウトマネージャーをプラグインして `CardView` 、写真のコレクションを走査するためのページめくりアニメーション効果を実装することができます。 このガイドの後半では、別のレイアウトマネージャーでスワップすることによってレイアウトを変更する方法の例を示します。
 
@@ -126,8 +126,8 @@ mRecyclerView.SetLayoutManager (mLayoutManager);
 
 [![ImageView と TextView を含む CardView の図](recyclerview-example-images/02-cardview-layout-sml.png)](recyclerview-example-images/02-cardview-layout.png#lightbox)
 
-`PhotoViewHolder`から派生 `RecyclerView.ViewHolder` し、 `ImageView` 上のレイアウトに表示されるへの参照を格納するプロパティを格納し `TextView` ます。
-`PhotoViewHolder`2つのプロパティと1つのコンストラクターで構成されます。
+`PhotoViewHolder` から派生 `RecyclerView.ViewHolder` し、 `ImageView` 上のレイアウトに表示されるへの参照を格納するプロパティを格納し `TextView` ます。
+`PhotoViewHolder` 2つのプロパティと1つのコンストラクターで構成されます。
 
 ```csharp
 public class PhotoViewHolder : RecyclerView.ViewHolder
@@ -150,7 +150,7 @@ public class PhotoViewHolder : RecyclerView.ViewHolder
 
 ### <a name="adapter"></a>アダプター
 
-アダプターは、各行を `RecyclerView` 特定の写真のデータと共に読み込みます。 たとえば、行位置*p*の特定の写真の場合、アダプターはデータソース内の位置*p*にある関連データを検索し、コレクションの位置*p*にある行項目にこのデータをコピーし `RecyclerView` ます。 アダプターはビューの所有者を使用して、その位置でとの参照を検索し `ImageView` `TextView` `FindViewById` ます。これにより、ユーザーが写真コレクションをスクロールしてビューを再利用するときに、これらのビューを繰り返し呼び出す必要がなくなります。
+アダプターは、各行を `RecyclerView` 特定の写真のデータと共に読み込みます。 たとえば、行位置 *p*の特定の写真の場合、アダプターはデータソース内の位置 *p* にある関連データを検索し、コレクションの位置 *p* にある行項目にこのデータをコピーし `RecyclerView` ます。 アダプターはビューの所有者を使用して、その位置でとの参照を検索し `ImageView` `TextView` `FindViewById` ます。これにより、ユーザーが写真コレクションをスクロールしてビューを再利用するときに、これらのビューを繰り返し呼び出す必要がなくなります。
 
 **RecyclerViewer**では、アダプタークラスはから派生 `RecyclerView.Adapter` して、次のものを作成し `PhotoAlbumAdapter` ます。
 
@@ -179,7 +179,7 @@ public class PhotoAlbumAdapter : RecyclerView.Adapter
 
 #### <a name="oncreateviewholder"></a>Oncreateの古い
 
-`OnCreateViewHolder`が `RecyclerView` 項目を表す新しいビューホルダーを必要とする場合、レイアウトマネージャーはを呼び出します。 `OnCreateViewHolder`ビューのレイアウトファイルから項目ビューを増えし、新しいインスタンスにビューをラップし `PhotoViewHolder` ます。 この `PhotoViewHolder` コンストラクターは、前の「[ビューホルダー](#view-holder)」で説明したように、レイアウト内の子ビューへの参照を検索して格納します。
+`OnCreateViewHolder`が `RecyclerView` 項目を表す新しいビューホルダーを必要とする場合、レイアウトマネージャーはを呼び出します。 `OnCreateViewHolder` ビューのレイアウトファイルから項目ビューを増えし、新しいインスタンスにビューをラップし `PhotoViewHolder` ます。 この `PhotoViewHolder` コンストラクターは、前の「 [ビューホルダー](#view-holder)」で説明したように、レイアウト内の子ビューへの参照を検索して格納します。
 
 各行項目は、 `CardView` `ImageView` (写真の場合) と (キャプションの場合) を含むで表され `TextView` ます。 このレイアウトは、 **PhotoCardView**ファイルにあります。
 
@@ -220,7 +220,7 @@ public class PhotoAlbumAdapter : RecyclerView.Adapter
 ```
 
 このレイアウトは、内の単一の行項目を表し `RecyclerView` ます。 `OnBindViewHolder`(以下で説明する) メソッドは、データソースから `ImageView` このレイアウトのおよびにデータをコピーし `TextView` ます。
-`OnCreateViewHolder`このレイアウトを内の特定の写真の場所に対して増え `RecyclerView` し、新しいインスタンスをインスタンス化し `PhotoViewHolder` `ImageView` ます (関連付けられているレイアウトのおよび子ビューへの参照を検索してキャッシュし `TextView` `CardView` ます)。
+`OnCreateViewHolder` このレイアウトを内の特定の写真の場所に対して増え `RecyclerView` し、新しいインスタンスをインスタンス化し `PhotoViewHolder` `ImageView` ます (関連付けられているレイアウトのおよび子ビューへの参照を検索してキャッシュし `TextView` `CardView` ます)。
 
 ```csharp
 public override RecyclerView.ViewHolder
@@ -241,7 +241,7 @@ public override RecyclerView.ViewHolder
 
 #### <a name="onbindviewholder"></a>OnBindViewHolder
 
-レイアウトマネージャーは、表示されている画面領域に特定のビューを表示する準備ができたら `RecyclerView` 、アダプターのメソッドを呼び出して、 `OnBindViewHolder` 指定した行の位置にある項目にデータソースの内容を読み込みます。 `OnBindViewHolder`指定した行の位置 (写真のイメージリソースと写真のキャプションの文字列) の写真情報を取得し、このデータを関連付けられたビューにコピーします。 ビューは、ビューホルダーオブジェクト (パラメーターを通じて渡されます) に格納されている参照によって検索され `holder` ます。
+レイアウトマネージャーは、表示されている画面領域に特定のビューを表示する準備ができたら `RecyclerView` 、アダプターのメソッドを呼び出して、 `OnBindViewHolder` 指定した行の位置にある項目にデータソースの内容を読み込みます。 `OnBindViewHolder` 指定した行の位置 (写真のイメージリソースと写真のキャプションの文字列) の写真情報を取得し、このデータを関連付けられたビューにコピーします。 ビューは、ビューホルダーオブジェクト (パラメーターを通じて渡されます) に格納されている参照によって検索され `holder` ます。
 
 ```csharp
 public override void
@@ -258,7 +258,7 @@ public override void
 ```
 
 渡されたビューホルダーオブジェクトは、使用する前に、派生ビューの所有者の種類 (この場合は) にキャストする必要があり `PhotoViewHolder` ます。
-アダプターは、ビューホルダーのプロパティによって参照されるビューにイメージリソースを読み込み、 `Image` ビューホルダーのプロパティによって参照されるビューにキャプションテキストをコピーし `Caption` ます。 これにより、関連付けられたビューがそのデータに*バインド*されます。
+アダプターは、ビューホルダーのプロパティによって参照されるビューにイメージリソースを読み込み、 `Image` ビューホルダーのプロパティによって参照されるビューにキャプションテキストをコピーし `Caption` ます。 これにより、関連付けられたビューがそのデータに *バインド* されます。
 
 は、 `OnBindViewHolder` データの構造を直接処理するコードであることに注意してください。 この場合、は、 `OnBindViewHolder` `RecyclerView` データソース内の関連付けられているデータ項目に項目の位置をマップする方法を理解します。 この場合のマッピングは簡単です。この場合、位置はフォトアルバムの配列インデックスとして使用できます。ただし、より複雑なデータソースでは、このようなマッピングを確立するために余分なコードが必要になる場合があります。
 
@@ -277,7 +277,7 @@ public override int ItemCount
 
 ### <a name="putting-it-all-together"></a>まとめ
 
-例の `RecyclerView` 写真アプリの結果の実装は、 `MainActivity` データソース、レイアウトマネージャー、およびアダプターを作成するコードで構成されています。 `MainActivity`インスタンスを作成し `mRecyclerView` 、データソースとアダプターをインスタンス化して、レイアウトマネージャーとアダプターにプラグインします。
+例の `RecyclerView` 写真アプリの結果の実装は、 `MainActivity` データソース、レイアウトマネージャー、およびアダプターを作成するコードで構成されています。 `MainActivity` インスタンスを作成し `mRecyclerView` 、データソースとアダプターをインスタンス化して、レイアウトマネージャーとアダプターにプラグインします。
 
 ```csharp
 public class MainActivity : Activity
@@ -306,7 +306,7 @@ public class MainActivity : Activity
 
 ```
 
-`PhotoViewHolder`ビュー参照を検索してキャッシュします。
+`PhotoViewHolder` ビュー参照を検索してキャッシュします。
 
 ```csharp
 public class PhotoViewHolder : RecyclerView.ViewHolder
@@ -323,7 +323,7 @@ public class PhotoViewHolder : RecyclerView.ViewHolder
 }
 ```
 
-`PhotoAlbumAdapter`は、次の3つの必須メソッドオーバーライドを実装します。
+`PhotoAlbumAdapter` は、次の3つの必須メソッドオーバーライドを実装します。
 
 ```csharp
 public class PhotoAlbumAdapter : RecyclerView.Adapter
@@ -362,13 +362,13 @@ public class PhotoAlbumAdapter : RecyclerView.Adapter
 
 [![写真カードを垂直方向にスクロールする、写真表示アプリの2つのスクリーンショット](recyclerview-example-images/03-recyclerviewer-basic-sml.png)](recyclerview-example-images/03-recyclerviewer-basic.png#lightbox)
 
-(上のスクリーンショットに示されているように) 影が描画されていない場合は、 **Properties/AndroidManifest**を編集し、要素に次の属性設定を追加し `<application>` ます。
+影が描画されていない場合は (上のスクリーンショットを参照)、[ **AndroidManifest.xmlプロパティ ** ] を編集し、次の属性設定を要素に追加し `<application>` ます。
 
 ```xml
 android:hardwareAccelerated="true"
 ```
 
-この basic アプリでは、フォトアルバムの閲覧のみがサポートされています。 項目タッチイベントに応答せず、基になるデータの変更を処理しません。 この機能は[、RecyclerView の例を拡張することによって](~/android/user-interface/layouts/recycler-view/extending-the-example.md)追加されます。
+この basic アプリでは、フォトアルバムの閲覧のみがサポートされています。 項目タッチイベントに応答せず、基になるデータの変更を処理しません。 この機能は [、RecyclerView の例を拡張することによって](~/android/user-interface/layouts/recycler-view/extending-the-example.md)追加されます。
 
 ### <a name="changing-the-layoutmanager"></a>LayoutManager の変更
 
@@ -389,7 +389,7 @@ mLayoutManager = new GridLayoutManager(this, 2, GridLayoutManager.Horizontal, fa
 
 ## <a name="related-links"></a>関連リンク
 
-- [RecyclerViewer (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-recyclerviewer)
+- [RecyclerViewer (サンプル)](/samples/xamarin/monodroid-samples/android50-recyclerviewer)
 - [RecyclerView](~/android/user-interface/layouts/recycler-view/index.md)
 - [RecyclerView のパーツと機能](~/android/user-interface/layouts/recycler-view/parts-and-functionality.md)
 - [RecyclerView の例を拡張する](~/android/user-interface/layouts/recycler-view/extending-the-example.md)

@@ -6,12 +6,12 @@ ms.assetid: B581B2D0-9890-C383-C654-0B0E12DAD5A6
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 96f5dd638de17569d105e95c44a539e652b35986
-ms.sourcegitcommit: d7c09c6cc2f479b8f14910ad2d20ec76800cd9c7
+ms.openlocfilehash: 803b42cfcc27dc86b0d4bc78fc4745af5565e8cb
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91248127"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457550"
 ---
 # <a name="cross-platform-app-case-study-tasky"></a>クロスプラットフォームアプリのケーススタディ: Tasky
 
@@ -164,7 +164,7 @@ public T GetItem<T> (int id) where T : BL.Contracts.IBusinessEntity, new ()
 
 #### <a name="locking-to-prevent-concurrent-access"></a>同時アクセスを防止するためのロック
 
-[ロック](https://msdn.microsoft.com/library/c5kehkcz(v=vs.100).aspx)は、 `TaskItemDatabase` データベースへの同時アクセスを防ぐために、クラス内に実装されます。 これは、異なるスレッドからの同時アクセスを確実にシリアル化するためです (そうしないと、バックグラウンドスレッドが更新しているときに、UI コンポーネントがデータベースの読み取りを試行することがあります)。 次に、ロックの実装方法の例を示します。
+[ロック](/previous-versions/visualstudio/visual-studio-2010/c5kehkcz(v=vs.100))は、 `TaskItemDatabase` データベースへの同時アクセスを防ぐために、クラス内に実装されます。 これは、異なるスレッドからの同時アクセスを確実にシリアル化するためです (そうしないと、バックグラウンドスレッドが更新しているときに、UI コンポーネントがデータベースの読み取りを試行することがあります)。 次に、ロックの実装方法の例を示します。
 
 ```csharp
 static object locker = new object ();

@@ -6,12 +6,12 @@ ms.assetid: 81174493-02D3-4FF5-AD57-04F3288A7F94
 author: davidortinau
 ms.author: daortin
 ms.date: 06/19/2018
-ms.openlocfilehash: 1545af984c0a409244c323048b448ec44e9be6a8
-ms.sourcegitcommit: f7fe46c0236a7130b63a33d9d1670d5111582dd2
+ms.openlocfilehash: 70bc0f90b2802587dba8e2da19430164fccfe861
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88186188"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457342"
 ---
 # <a name="inspector-installation-and-requirements"></a>インスペクターのインストールと要件
 
@@ -20,13 +20,13 @@ ms.locfileid: "88186188"
 # <a name="windows"></a>[Windows](#tab/windows)
 
 1. [Visual Studio Enterprise](https://visualstudio.microsoft.com/vs/)をダウンロードしてインストールし、[ **.net を使用したモバイル開発**] ワークロードを選択します。
-1. [サインイン](https://docs.microsoft.com/visualstudio/ide/signing-in-to-visual-studio)して、エンタープライズサブスクリプションを有効にします。
+1. [サインイン](/visualstudio/ide/signing-in-to-visual-studio) して、エンタープライズサブスクリプションを有効にします。
 1. 自分のアプリを[調査](~/tools/inspector/inspect.md)してください。
 
 # <a name="macos"></a>[macOS](#tab/macos)
 
 1. [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/)をダウンロードしてインストールします。
-1. [サインイン](https://docs.microsoft.com/visualstudio/mac/activation)して、エンタープライズサブスクリプションを有効にします。
+1. [サインイン](/visualstudio/mac/activation) して、エンタープライズサブスクリプションを有効にします。
 1. 自分のアプリを[調査](~/tools/inspector/inspect.md)してください。
 
 -----
@@ -41,7 +41,7 @@ ms.locfileid: "88186188"
 ### <a name="supported-ides"></a>サポートされている Ide
 
 - Visual Studio for Mac
-- .NET ワークロード**を使用したモバイル開発**を使用した Visual Studio 2017
+- .NET ワークロード **を使用したモバイル開発** を使用した Visual Studio 2017
 
 企業のお客様は、ライブアプリの検査を利用できます。
 
@@ -49,10 +49,10 @@ ms.locfileid: "88186188"
 
 ### <a name="supported-app-platforms"></a>サポートされているアプリプラットフォーム
 
-|アプリ プラットフォーム|IDE のサポート|Notes|
+|アプリ プラットフォーム|IDE のサポート|メモ|
 |--- |--- |--- |
 |Mac|Visual Studio for Mac でのみサポートされています|
-|iOS|Visual Studio 2017 および Visual Studio for Mac でサポートされています| リンカーの動作は [[**リンクしない**](~/ios/deploy-test/linker.md)] に設定する必要があります ([ **iOS ビルド**プロジェクトオプション] の下) |
+|iOS|Visual Studio 2017 および Visual Studio for Mac でサポートされています| リンカーの動作は [ [**リンクしない**](~/ios/deploy-test/linker.md) ] に設定する必要があります ([ **iOS ビルド** プロジェクトオプション] の下) |
 |Android|Visual Studio 2017 および Visual Studio for Mac でサポートされています|**Fastdev**が有効になっている Android >= 4.0.3 を対象とする必要があります。<br />Google、Visual Studio、または Xamarin Android エミュレーターを使用する必要があります。 Android 7 エミュレーターでは、現時点では検査できない場合があります。|
 |WPF|Visual Studio 2017 でのみサポートされます|
 
@@ -100,11 +100,11 @@ Visual Studio For Mac
 Visual Studio
 
 - `%LOCALAPPDATA%\Xamarin\Logs\{VS version}\Inspector {date}.log`
-- Visual Studio の [**出力**] ウィンドウの内容が有益な場合もあります。
+- Visual Studio の [ **出力** ] ウィンドウの内容が有益な場合もあります。
 
 ### <a name="project-settings"></a>[プロジェクトの設定]
 
-調べようとしているプロジェクトに **.csproj**をアタッチできる場合は、それが非常に便利です。 これは、個々の設定について質問するよりも簡単です。
+調べようとしているプロジェクトに **.csproj** をアタッチできる場合は、それが非常に便利です。 これは、個々の設定について質問するよりも簡単です。
 
 また、デバッグ構成であることを確認してください。
 

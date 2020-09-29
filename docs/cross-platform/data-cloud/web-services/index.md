@@ -6,12 +6,12 @@ ms.assetid: 72627B90-586A-02B6-E231-F7CE015A1B97
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 164c059b60c1b5b2aadb2cb348c6b5407da63928
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 2131dd7611d802b8e1b1a22d1fbab42b5ac64746
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86934707"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457966"
 ---
 # <a name="introduction-to-web-services"></a>Web サービスの概要
 
@@ -19,13 +19,13 @@ _このガイドでは、さまざまな web サービステクノロジを使�
 
 正常に機能するためには、多くのモバイルアプリケーションがクラウドに依存しているため、web サービスをモバイルアプリケーションに統合するのが一般的なシナリオです。 Xamarin プラットフォームは、さまざまな web サービステクノロジの使用をサポートしています。また、RESTful、ASMX、および Windows Communication Foundation (WCF) サービスを使用するための、組み込みのサードパーティサポートが含まれています。
 
-Xamarin. Forms を使用しているお客様には、 [xamarin. Forms Web Services](~/xamarin-forms/data-cloud/index.yml)のドキュメントに記載されている各テクノロジを使用した完全な例があります。
+Xamarin. Forms を使用しているお客様には、 [xamarin. Forms Web Services](~/xamarin-forms/data-cloud/index.yml) のドキュメントに記載されている各テクノロジを使用した完全な例があります。
 
 > [!IMPORTANT]
 > IOS 9 では、アプリトランスポートセキュリティ (ATS) によって、インターネットリソース (アプリのバックエンドサーバーなど) とアプリの間にセキュリティで保護された接続が適用されるため、機密情報が誤って開示されるのを防ぐことができます。
 > IOS 9 用に構築されたアプリでは、ATS が既定で有効になっているため、すべての接続は、ATS のセキュリティ要件の対象となります。 接続がこれらの要件を満たしていない場合、例外が発生して失敗します。
 
-`HTTPS`インターネットリソースに対してプロトコルとセキュリティで保護された通信を使用できない場合は、ATS をオプトアウトできます。 これは、アプリの**情報**ファイルを更新することで実現できます。 詳細については、「[アプリトランスポートセキュリティ](~/ios/app-fundamentals/ats.md)」を参照してください。
+`HTTPS`インターネットリソースに対してプロトコルとセキュリティで保護された通信を使用できない場合は、ATS をオプトアウトできます。 これは、アプリの **情報** ファイルを更新することで実現できます。 詳細については、「 [アプリトランスポートセキュリティ](~/ios/app-fundamentals/ats.md)」を参照してください。
 
 ## <a name="rest"></a>REST
 
@@ -101,7 +101,7 @@ using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
 
 ### <a name="restsharp"></a>RestSharp
 
-REST サービスを使用するためのもう1つの方法は、 [RestSharp](http://restsharp.org/)ライブラリを使用することです。 RestSharp は、未加工の文字列コンテンツまたは逆シリアル化された C# オブジェクトとして結果を取得するためのサポートなど、HTTP 要求をカプセル化します。 たとえば、次のコードでは、医療 web サービスの米国国立ライブラリに要求を行い、結果を JSON 形式の文字列として取得します。
+REST サービスを使用するためのもう1つの方法は、 [RestSharp](http://restsharp.org/) ライブラリを使用することです。 RestSharp は、未加工の文字列コンテンツまたは逆シリアル化された C# オブジェクトとして結果を取得するためのサポートなど、HTTP 要求をカプセル化します。 たとえば、次のコードでは、医療 web サービスの米国国立ライブラリに要求を行い、結果を JSON 形式の文字列として取得します。
 
 ```csharp
 var request = new RestRequest(string.Format("{0}/allinfo", rxcui));
@@ -113,7 +113,7 @@ if(string.IsNullOrWhiteSpace(response.Content) || response.StatusCode != System.
 rxTerm = DeserializeRxTerm(response.Content);
 ```
 
-`DeserializeRxTerm`は、プロパティから生の JSON 文字列を受け取り、 `RestSharp.RestResponse.Content` それを C# オブジェクトに変換するメソッドです。 Web サービスから返されたデータの逆シリアル化については、この記事の後半で説明します。
+`DeserializeRxTerm` は、プロパティから生の JSON 文字列を受け取り、 `RestSharp.RestResponse.Content` それを C# オブジェクトに変換するメソッドです。 Web サービスから返されたデータの逆シリアル化については、この記事の後半で説明します。
 
 <a name="Using_NSUrlconnection"></a>
 
@@ -165,7 +165,7 @@ public class RxTermNSURLConnectionDelegate : NSUrlConnectionDelegate
 
 ### <a name="servicestack"></a>ServiceStack
 
-Web サービスを呼び出すためのもう1つのオプションは、[サービススタック](https://servicestack.net)ライブラリです。 たとえば、次のコードは、サービススタックのメソッドを使用してサービス要求を発行する方法を示してい `IServiceClient.GetAsync` ます。
+Web サービスを呼び出すためのもう1つのオプションは、 [サービススタック](https://servicestack.net) ライブラリです。 たとえば、次のコードは、サービススタックのメソッドを使用してサービス要求を発行する方法を示してい `IServiceClient.GetAsync` ます。
 
 ```csharp
 client.GetAsync<CustomersResponse>("",
@@ -180,7 +180,7 @@ client.GetAsync<CustomersResponse>("",
 ```
 
 > [!IMPORTANT]
-> ServiceStack や RestSharp などのツールを使用すると REST サービスを簡単に呼び出すことができますが、標準の_DataContract_シリアル化規則に準拠していない XML または JSON を使用するのは簡単ではないことがあります。 必要に応じて、要求を呼び出し、後で説明する ServiceStack. テキストライブラリを使用して、適切なシリアル化を明示的に処理します。
+> ServiceStack や RestSharp などのツールを使用すると REST サービスを簡単に呼び出すことができますが、標準の _DataContract_ シリアル化規則に準拠していない XML または JSON を使用するのは簡単ではないことがあります。 必要に応じて、要求を呼び出し、後で説明する ServiceStack. テキストライブラリを使用して、適切なシリアル化を明示的に処理します。
 
 <a name="Options_for_consuming_RESTful_data"></a>
 
@@ -276,16 +276,16 @@ ASMX は、Simple Object Access Protocol (SOAP) を使用してメッセージ�
 
 SOAP メッセージは、次の要素を含む XML ドキュメントです。
 
-- SOAP メッセージとして XML ドキュメントを識別する、 *Envelope*という名前のルート要素。
-- 認証データなどのアプリケーション固有の情報を格納する*ヘッダー*要素 (省略可能)。 *Header*要素が存在する場合は、 *Envelope*要素の最初の子要素である必要があります。
-- 受信者を対象とした SOAP メッセージを含む必須の*Body*要素。
-- エラーメッセージを示すために使用されるオプションの*Fault*要素。 *Fault*要素が存在する場合は、 *Body*要素の子要素である必要があります。
+- SOAP メッセージとして XML ドキュメントを識別する、 *Envelope* という名前のルート要素。
+- 認証データなどのアプリケーション固有の情報を格納する *ヘッダー* 要素 (省略可能)。 *Header*要素が存在する場合は、 *Envelope*要素の最初の子要素である必要があります。
+- 受信者を対象とした SOAP メッセージを含む必須の *Body* 要素。
+- エラーメッセージを示すために使用されるオプションの *Fault* 要素。 *Fault*要素が存在する場合は、 *Body*要素の子要素である必要があります。
 
 SOAP は、HTTP、SMTP、TCP、UDP など、多くのトランスポートプロトコルに対して動作します。 ただし、ASMX サービスは HTTP 経由でのみ動作します。 Xamarin プラットフォームは、HTTP を介した標準的な SOAP 1.1 実装をサポートしています。これには、標準的な ASMX サービス構成の多くがサポートされています。
 
 ### <a name="generating-a-proxy"></a>プロキシの生成
 
-ASMX サービスを使用するために*プロキシ*を生成する必要があります。これにより、アプリケーションはサービスに接続できるようになります。 プロキシは、メソッドと関連付けられたサービス構成を定義するサービスメタデータを使用することによって構築されます。 このメタデータは、web サービスによって生成される Web サービス記述言語 (WSDL) ドキュメントとして公開されます。 プロキシは、Visual Studio for Mac または Visual Studio を使用して作成され、web サービスの web 参照をプラットフォーム固有のプロジェクトに追加します。
+ASMX サービスを使用するために *プロキシ* を生成する必要があります。これにより、アプリケーションはサービスに接続できるようになります。 プロキシは、メソッドと関連付けられたサービス構成を定義するサービスメタデータを使用することによって構築されます。 このメタデータは、web サービスによって生成される Web サービス記述言語 (WSDL) ドキュメントとして公開されます。 プロキシは、Visual Studio for Mac または Visual Studio を使用して作成され、web サービスの web 参照をプラットフォーム固有のプロジェクトに追加します。
 
 Web サービス URL は、ホストされているリモートソースまたはパスプレフィックスを使用してアクセスできるローカルファイルシステムリソースのいずれか `file:///` です。たとえば、次のようになります。
 
@@ -305,7 +305,7 @@ file:///Users/myUserName/projects/MyProjectName/service.wsdl
 
 ### <a name="consuming-the-proxy"></a>プロキシを使用する
 
-生成されたプロキシクラスは、非同期プログラミングモデル (APM) デザインパターンを使用する web サービスを使用するためのメソッドを提供します。 このパターンでは、非同期操作は、非同期操作を開始および終了する*Beginoperationname*と*EndOperationName*という2つのメソッドとして実装されます。
+生成されたプロキシクラスは、非同期プログラミングモデル (APM) デザインパターンを使用する web サービスを使用するためのメソッドを提供します。 このパターンでは、非同期操作は、非同期操作を開始および終了する *Beginoperationname* と *EndOperationName*という2つのメソッドとして実装されます。
 
 *Beginoperationname*メソッドは、非同期操作を開始し、インターフェイスを実装するオブジェクトを返し `IAsyncResult` ます。 *Beginoperationname*を呼び出した後、アプリケーションは、スレッドプールのスレッドで非同期操作を実行しながら、呼び出し元のスレッドで命令の実行を継続できます。
 
@@ -326,7 +326,7 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 
 タスク並列ライブラリ (TPL) を使用すると、非同期操作を同じオブジェクトにカプセル化することで、APM の begin/end メソッドのペアを使用するプロセスを簡略化でき `Task` ます。 このカプセル化は、メソッドの複数のオーバーロードによって提供され `Task.Factory.FromAsync` ます。 このメソッドは、メソッドが完了した後にメソッドを実行するを作成します。これには、 `Task` `TodoService.EndGetTodoItems` `TodoService.BeginGetTodoItems` `null` データがデリゲートに渡されていないことを示すパラメーターがあり `BeginGetTodoItems` ます。 最後に、列挙体の値は、 `TaskCreationOptions` タスクの作成と実行の既定の動作を使用することを指定します。
 
-APM の詳細については、MSDN の「[非同期プログラミングモデル](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx)と[TPL および従来の .NET Framework 非同期プログラミング](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx)」を参照してください。
+APM の詳細については、MSDN の「 [非同期プログラミングモデル](/dotnet/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm) と [TPL および従来の .NET Framework 非同期プログラミング](/dotnet/standard/parallel-programming/tpl-and-traditional-async-programming) 」を参照してください。
 
 ASMX サービスの使用方法の詳細については、「 [ASP.NET Web サービス (asmx) の使用](~/xamarin-forms/data-cloud/web-services/asmx.md)」を参照してください。
 
@@ -338,10 +338,10 @@ WCF は、サービス指向アプリケーションを構築するための Mic
 
 WCF では、次のようなさまざまなコントラクトを持つサービスが記述されています。
 
-- **データコントラクト**–メッセージ内のコンテンツの基礎となるデータ構造を定義します。
-- **メッセージコントラクト**–既存のデータコントラクトからメッセージを作成します。
-- **エラーコントラクト**-カスタム SOAP エラーを指定できるようにします。
-- **サービスコントラクト**: サービスがサポートする操作と、各操作との対話に必要なメッセージを指定します。 また、各サービスの操作に関連付けることができるカスタムのエラー動作も指定します。
+- **データコントラクト** –メッセージ内のコンテンツの基礎となるデータ構造を定義します。
+- **メッセージコントラクト** –既存のデータコントラクトからメッセージを作成します。
+- **エラーコントラクト** -カスタム SOAP エラーを指定できるようにします。
+- **サービスコントラクト** : サービスがサポートする操作と、各操作との対話に必要なメッセージを指定します。 また、各サービスの操作に関連付けることができるカスタムのエラー動作も指定します。
 
 ASP.NET ウェブサービス (ASMX) と WCF には違いがありますが、WCF では、ASMX が HTTP 経由の SOAP メッセージを提供するのと同じ機能をサポートしていることを理解しておくことが重要です。
 
@@ -350,9 +350,9 @@ ASP.NET ウェブサービス (ASMX) と WCF には違いがありますが、WC
 
 ### <a name="generating-a-proxy"></a>プロキシの生成
 
-WCF サービスを使用するために*プロキシ*を生成する必要があります。これにより、アプリケーションはサービスに接続できるようになります。 プロキシは、メソッドと関連付けられたサービス構成を定義するサービスメタデータを使用することによって構築されます。 このメタデータは、web サービスによって生成される Web サービス記述言語 (WSDL) ドキュメントの形式で公開されます。 プロキシを作成するには、Visual Studio 2017 の Microsoft WCF Web Service Reference Provider を使用して、Web サービスのサービス参照を .NET Standard ライブラリに追加します。
+WCF サービスを使用するために *プロキシ* を生成する必要があります。これにより、アプリケーションはサービスに接続できるようになります。 プロキシは、メソッドと関連付けられたサービス構成を定義するサービスメタデータを使用することによって構築されます。 このメタデータは、web サービスによって生成される Web サービス記述言語 (WSDL) ドキュメントの形式で公開されます。 プロキシを作成するには、Visual Studio 2017 の Microsoft WCF Web Service Reference Provider を使用して、Web サービスのサービス参照を .NET Standard ライブラリに追加します。
 
-Visual Studio 2017 の Microsoft WCF Web Service Reference Provider を使用してプロキシを作成する代わりに、ServiceModel Metadata Utility Tool (svcutil.exe) を使用することもできます。 詳細については、「 [ServiceModel メタデータユーティリティツール (Svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)」を参照してください。
+Visual Studio 2017 の Microsoft WCF Web Service Reference Provider を使用してプロキシを作成する代わりに、ServiceModel Metadata Utility Tool (svcutil.exe) を使用することもできます。 詳細については、「 [ServiceModel メタデータユーティリティツール (Svcutil.exe)](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)」を参照してください。
 
 <a name="Calling_a_WCF_Service_with_Client_Credential_Security"></a>
 
@@ -383,7 +383,7 @@ client = new Service1Client (binding, new EndpointAddress ("http://192.168.1.100
 
 ### <a name="consuming-the-proxy"></a>プロキシを使用する
 
-生成されたプロキシクラスは、非同期プログラミングモデル (APM) デザインパターンを使用する web サービスを使用するためのメソッドを提供します。 このパターンでは、非同期操作は、非同期操作を開始および終了する*Beginoperationname*と*EndOperationName*という2つのメソッドとして実装されます。
+生成されたプロキシクラスは、非同期プログラミングモデル (APM) デザインパターンを使用する web サービスを使用するためのメソッドを提供します。 このパターンでは、非同期操作は、非同期操作を開始および終了する *Beginoperationname* と *EndOperationName*という2つのメソッドとして実装されます。
 
 *Beginoperationname*メソッドは、非同期操作を開始し、インターフェイスを実装するオブジェクトを返し `IAsyncResult` ます。 *Beginoperationname*を呼び出した後、アプリケーションは、スレッドプールのスレッドで非同期操作を実行しながら、呼び出し元のスレッドで命令の実行を継続できます。
 
@@ -404,7 +404,7 @@ public async Task<List<TodoItem>> RefreshDataAsync ()
 
 タスク並列ライブラリ (TPL) を使用すると、非同期操作を同じオブジェクトにカプセル化することで、APM の begin/end メソッドのペアを使用するプロセスを簡略化でき `Task` ます。 このカプセル化は、メソッドの複数のオーバーロードによって提供され `Task.Factory.FromAsync` ます。 このメソッドは、メソッドが完了した後にメソッドを実行するを作成します。これには、 `Task` `TodoServiceClient.EndGetTodoItems` `TodoServiceClient.BeginGetTodoItems` `null` データがデリゲートに渡されていないことを示すパラメーターがあり `BeginGetTodoItems` ます。 最後に、列挙体の値は、 `TaskCreationOptions` タスクの作成と実行の既定の動作を使用することを指定します。
 
-APM の詳細については、MSDN の「[非同期プログラミングモデル](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx)と[TPL および従来の .NET Framework 非同期プログラミング](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx)」を参照してください。
+APM の詳細については、MSDN の「 [非同期プログラミングモデル](/dotnet/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm) と [TPL および従来の .NET Framework 非同期プログラミング](/dotnet/standard/parallel-programming/tpl-and-traditional-async-programming) 」を参照してください。
 
 WCF サービスの使用の詳細については、「 [Windows Communication Foundation (wcf) Web サービスの使用](~/xamarin-forms/data-cloud/web-services/wcf.md)」を参照してください。
 
@@ -443,5 +443,5 @@ HTTP 基本認証の詳細については、REST web サービスのコンテキ
 ## <a name="related-links"></a>関連リンク
 
 - [Xamarin. Forms の Web サービス](~/xamarin-forms/data-cloud/index.yml)
-- [ServiceModel メタデータユーティリティツール (svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
-- [BasicHttpBinding](https://msdn.microsoft.com/library/system.servicemodel.basichttpbinding.aspx)
+- [ServiceModel メタデータユーティリティツール (svcutil.exe)](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
+- [BasicHttpBinding](/dotnet/api/system.servicemodel.basichttpbinding)
