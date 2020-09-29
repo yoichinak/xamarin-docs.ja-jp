@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: fbd6e4a3b1c5cdb45a057f1ed664a0d5e71e224d
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 7f600593d7a3bb180ef8daca6639dbbea4bf07aa
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937892"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430073"
 ---
 # <a name="introduction-to-opentk-in-xamarinmac"></a>Xamarin. Mac での OpenTK の概要
 
@@ -20,9 +20,9 @@ OpenTK (オープンツールキット) は、OpenGL、OpenCL、OpenAL を簡単
 
 [![アプリの実行例](opentk-images/intro01.png)](opentk-images/intro01.png#lightbox)
 
-この記事では、Xamarin. Mac アプリケーションでの OpenTK の基本について説明します。 この記事で使用する主要な概念と手法について説明しているように、最初に[Hello, Mac](~/mac/get-started/hello-mac.md)の記事「 [Xcode と Interface Builder の概要](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)」と「[アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions)」セクションをご覧になることを強くお勧めします。
+この記事では、Xamarin. Mac アプリケーションでの OpenTK の基本について説明します。 この記事で使用する主要な概念と手法について説明しているように、最初に [Hello, Mac](~/mac/get-started/hello-mac.md) の記事「 [Xcode と Interface Builder の概要](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) 」と「 [アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions) 」セクションをご覧になることを強くお勧めします。
 
-「 [C# のクラス/メソッドを](~/mac/internals/how-it-works.md) [Xamarin. Mac の内部](~/mac/internals/how-it-works.md)ドキュメントの前に公開する」セクションを参照して `Register` `Export` ください。 c# クラスを目的の c オブジェクトと UI 要素に接続するために使用されるコマンドとコマンドについても説明します。
+「 [C# のクラス/メソッドを](~/mac/internals/how-it-works.md) [Xamarin. Mac の内部](~/mac/internals/how-it-works.md) ドキュメントの前に公開する」セクションを参照して `Register` `Export` ください。 c# クラスを目的の c オブジェクトと UI 要素に接続するために使用されるコマンドとコマンドについても説明します。
 
 <a name="About_OpenTK"></a>
 
@@ -30,17 +30,17 @@ OpenTK (オープンツールキット) は、OpenGL、OpenCL、OpenAL を簡単
 
 前述のように、OpenTK (オープンツールキット) は、OpenGL、OpenCL、OpenAL を簡単に操作できる高度な低レベルの C# ライブラリです。 Xamarin. Mac アプリで OpenTK を使用すると、次の機能が提供されます。
 
-- **迅速な開発**-OpenTK は、コーディングワークフローを改善し、エラーをより簡単かつ迅速にキャッチするための、強力なデータ型とインラインドキュメントを提供します。
-- **簡単な統合**-OpenTK は、.net アプリケーションと簡単に統合できるように設計されています。
+- **迅速な開発** -OpenTK は、コーディングワークフローを改善し、エラーをより簡単かつ迅速にキャッチするための、強力なデータ型とインラインドキュメントを提供します。
+- **簡単な統合** -OpenTK は、.net アプリケーションと簡単に統合できるように設計されています。
 - OpenTK は MIT/X11**ライセンスで配布**され、完全に無料です。
-- **リッチでタイプセーフなバインド**-OpenTK は、最新バージョンの OpenGL、OPENGL | ES、Openal、OpenCL をサポートし、自動拡張読み込み、エラーチェック、インラインドキュメントをサポートしています。
-- **柔軟な GUI オプション**-OpenTK は、ゲームおよび Xamarin. Mac 専用に設計された、ネイティブでハイパフォーマンスなゲームウィンドウを提供します。
+- **リッチでタイプセーフなバインド** -OpenTK は、最新バージョンの OpenGL、OPENGL | ES、Openal、OpenCL をサポートし、自動拡張読み込み、エラーチェック、インラインドキュメントをサポートしています。
+- **柔軟な GUI オプション** -OpenTK は、ゲームおよび Xamarin. Mac 専用に設計された、ネイティブでハイパフォーマンスなゲームウィンドウを提供します。
 - **完全に管理された CLS 準拠コード OpenTK は、** アンマネージライブラリを使用しない32ビットおよび64ビットバージョンの macOS をサポートしています。
-- **3D Math Toolkit**OpenTK `Vector` は、、 `Matrix` 、およびの `Quaternion` `Bezier` 各構造体を 3d Math Toolkit を介して提供します。
+- **3D Math Toolkit** OpenTK `Vector` は、、 `Matrix` 、およびの `Quaternion` `Bezier` 各構造体を 3d Math Toolkit を介して提供します。
 
 OpenTK は、ゲーム、科学的なアプリケーション、または3D グラフィックス、オーディオ、または計算機能を必要とするその他のプロジェクトに使用できます。
 
-詳細については、 [Open Toolkit の](https://opentk.net)web サイトを参照してください。
+詳細については、 [Open Toolkit の](https://opentk.net) web サイトを参照してください。
 
 <a name="OpenTK_Quickstart"></a>
 
@@ -60,7 +60,7 @@ Visual Studio for Mac を開始し、新しい Xamarin. Mac ソリューショ�
 
 [![プロジェクト名の設定](opentk-images/sample02.png)](opentk-images/sample02.png#lightbox)
 
-[**作成**] ボタンをクリックして、新しいプロジェクトをビルドします。
+[ **作成** ] ボタンをクリックして、新しいプロジェクトをビルドします。
 
 <a name="Including_OpenTK"></a>
 
@@ -313,9 +313,9 @@ Xamarin. mac アプリケーションで OpenTk を操作する方法の基本�
 - `for`イベントに複数の三角形を表示するには、ループを使用し `RenderFrame` ます。
 - 3D 空間の三角形の別のビューを表示するには、カメラを回転させます。 ヒント: メソッドを使用して `Matrix4.CreateTranslation` 変換行列を作成し、 `GL.LoadMatrix` メソッドを呼び出してそれを読み込みます。 `Vector2` `Vector3` `Vector4` カメラの操作には、、、およびクラスを使用することもでき `Matrix4` ます。
 
-その他の例については、 [OpenTK Samples github](https://github.com/opentk/opentk/tree/master/Source/Examples)リポジトリを参照してください。 OpenTK の使用例の公式リストが含まれています。 OpenTK の Xamarin バージョンでを使用するために、これらの例を適合させる必要があります。
+その他の例については、 [OpenTK Samples github](https://github.com/opentk/opentk/tree/master/Source/Examples) リポジトリを参照してください。 OpenTK の使用例の公式リストが含まれています。 OpenTK の Xamarin バージョンでを使用するために、これらの例を適合させる必要があります。
 
-OpenTK 実装のより複雑な Xamarin. Mac の例については、[モノ Mac view](https://docs.microsoft.com/samples/xamarin/mac-samples/monomacgamewindow)サンプルを参照してください。
+OpenTK 実装のより複雑な Xamarin. Mac の例については、 [モノ Mac view](/samples/xamarin/mac-samples/monomacgamewindow) サンプルを参照してください。
 
 <a name="Summary"></a>
 
@@ -325,8 +325,8 @@ OpenTK 実装のより複雑な Xamarin. Mac の例については、[モノ Mac
 
 ## <a name="related-links"></a>関連リンク
 
-- [MacOpenTK (サンプル)](https://docs.microsoft.com/samples/xamarin/mac-samples/macopentk)
-- [モノ Mac/ビュー (サンプル)](https://docs.microsoft.com/samples/xamarin/mac-samples/monomacgamewindow)
+- [MacOpenTK (サンプル)](/samples/xamarin/mac-samples/macopentk)
+- [モノ Mac/ビュー (サンプル)](/samples/xamarin/mac-samples/monomacgamewindow)
 - [Hello Mac](~/mac/get-started/hello-mac.md)
 - [Windows の操作](~/mac/user-interface/window.md)
 - [オープンツールキット](https://opentk.net)

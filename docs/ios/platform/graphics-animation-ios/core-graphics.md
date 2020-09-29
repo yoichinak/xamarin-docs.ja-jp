@@ -7,18 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/18/2017
-ms.openlocfilehash: 84e21378a8ac7b61bc1a389352eb53b75881592a
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 281595f45db48316feeebb88debf8c70873f87f3
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929650"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430853"
 ---
 # <a name="core-graphics-in-xamarinios"></a>Xamarin のコアグラフィック
 
 _この記事では、グラフィックスの主要な iOS フレームワークについて説明します。ここでは、コアグラフィックスを使用して、ジオメトリ、画像、Pdf を描画する方法を示します。_
 
-iOS には、低レベルの描画をサポートするための[*コアグラフィックス*](https://developer.apple.com/library/prerelease/ios/documentation/CoreGraphics/Reference/CoreGraphics_Framework/index.html)フレームワークが含まれています。 これらのフレームワークによって、UIKit 内の豊富なグラフィカル機能が有効になります。
+iOS には、低レベルの描画をサポートするための [*コアグラフィックス*](https://developer.apple.com/library/prerelease/ios/documentation/CoreGraphics/Reference/CoreGraphics_Framework/index.html) フレームワークが含まれています。 これらのフレームワークによって、UIKit 内の豊富なグラフィカル機能が有効になります。
 
 コアグラフィックスは、デバイスに依存しないグラフィックスを描画できる低レベルの2D グラフィックスフレームワークです。 UIKit のすべての2D 描画は、内部的にコアグラフィックスを使用します。
 
@@ -205,7 +205,7 @@ public override void Draw (CGRect rect)
 
  ![反転された画像](core-graphics-images/03-upside-down-monkey.png)
 
-この理由は、画像描画の中心となるグラフィックスの原点は左下にあり、ビューの原点は左上にあります。 そのため、イメージを正しく表示するには、origin を変更する必要があります。これは、*現在の変換行列* *(CTM)* を変更することで実現できます。 CTM は、ポイントが存在する場所 (*ユーザー空間*とも呼ばれます) を定義します。 Y 方向の CTM を反転し、負の y 方向の境界の高さでシフトすることで、イメージを反転させることができます。
+この理由は、画像描画の中心となるグラフィックスの原点は左下にあり、ビューの原点は左上にあります。 そのため、イメージを正しく表示するには、origin を変更する必要があります。これは、 *現在の変換行列* *(CTM)* を変更することで実現できます。 CTM は、ポイントが存在する場所 ( *ユーザー空間*とも呼ばれます) を定義します。 Y 方向の CTM を反転し、負の y 方向の境界の高さでシフトすることで、イメージを反転させることができます。
 
 グラフィックスコンテキストには、CTM を変換するためのヘルパーメソッドがあります。 この場合、 `ScaleCTM` 次に示すように、描画を "反転" し、 `TranslateCTM` 左上に移動します。
 
@@ -279,9 +279,9 @@ public override void Draw (RectangleF rect)
 
 1. `UIGraphics.BeginImageContext`(または) を呼び出すことによって `BeginImageContextWithOptions`
 
-2. 新しいを作成する`CGBitmapContextInstance`
+2. 新しいを作成する `CGBitmapContextInstance`
 
- `CGBitmapContextInstance`は、イメージビットを直接操作する場合 (カスタムイメージ操作アルゴリズムを使用している場合など) に便利です。 それ以外の場合は、またはを使用する必要があり `BeginImageContext` `BeginImageContextWithOptions` ます。
+ `CGBitmapContextInstance` は、イメージビットを直接操作する場合 (カスタムイメージ操作アルゴリズムを使用している場合など) に便利です。 それ以外の場合は、またはを使用する必要があり `BeginImageContext` `BeginImageContextWithOptions` ます。
 
 イメージコンテキストを作成したら、描画コードを追加することは、サブクラスの場合と同じです `UIView` 。 たとえば、前の例で示したように、三角形を描画するために使用したコード例は、次のようにではなく、メモリ内のイメージに描画するために使用でき `UIView` ます。
 
@@ -423,11 +423,11 @@ UIGraphics.EndPDFContent ();
 
 ## <a name="summary"></a>まとめ
 
-この記事では、*コアグラフィックス*フレームワークによって提供されるグラフィックス機能について説明しました。 コアグラフィックスを使用して、のコンテキスト内、 `UIView,` およびメモリによってサポートされるグラフィックスコンテキスト内で、ジオメトリ、画像、pdf を描画する方法について説明しました。
+この記事では、 *コアグラフィックス* フレームワークによって提供されるグラフィックス機能について説明しました。 コアグラフィックスを使用して、のコンテキスト内、 `UIView,` およびメモリによってサポートされるグラフィックスコンテキスト内で、ジオメトリ、画像、pdf を描画する方法について説明しました。
 
 ## <a name="related-links"></a>関連リンク
 
-- [コアグラフィックスのサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/graphicsandanimation)
+- [コアグラフィックスのサンプル](/samples/xamarin/ios-samples/graphicsandanimation)
 - [グラフィックスとアニメーションのチュートリアル](~/ios/platform/graphics-animation-ios/graphics-animation-walkthrough.md)
 - [コア アニメーション](~/ios/platform/graphics-animation-ios/core-animation.md)
 - [コアアニメーションのレシピ](https://github.com/xamarin/recipes/tree/master/Recipes/ios/animation/coreanimation)

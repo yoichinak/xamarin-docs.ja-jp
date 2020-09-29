@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 86c7c726465257d71b6b407686153650dddbcbca
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: e6879db1631bc6b58a36142344ff1fba997ee4fb
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574471"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91432045"
 ---
 # <a name="providing-haptic-feedback-in-xamarinios"></a>Xamarin での Haptic フィードバックの提供
 
@@ -37,9 +37,9 @@ IPhone 7 と iPhone 7 に加えて、Apple には、ユーザーに物理的に�
 
 開発者は、次のいずれかのサブクラスを使用して、 `UIFeedbackGenerator` プログラムで haptic フィードバックをトリガーできます。
 
-- `UIImpactFeedbackGenerator`-このフィードバックジェネレーターを使用して、ビューが配置されたとき、または2つの画面上のオブジェクトが競合する場合に "thud" を表示するなどのアクションまたはタスクを補完します。
-- `UINotificationFeedbackGenerator`-アクションの完了、失敗、またはその他の種類の警告などの通知には、このフィードバックジェネレーターを使用します。
-- `UISelectionFeedbackGenerator`-リストから項目を選択するなど、アクティブに変更する選択には、このフィードバックジェネレーターを使用します。
+- `UIImpactFeedbackGenerator` -このフィードバックジェネレーターを使用して、ビューが配置されたとき、または2つの画面上のオブジェクトが競合する場合に "thud" を表示するなどのアクションまたはタスクを補完します。
+- `UINotificationFeedbackGenerator` -アクションの完了、失敗、またはその他の種類の警告などの通知には、このフィードバックジェネレーターを使用します。
+- `UISelectionFeedbackGenerator` -リストから項目を選択するなど、アクティブに変更する選択には、このフィードバックジェネレーターを使用します。
 
 <a name="UIImpactFeedbackGenerator"></a>
 
@@ -129,4 +129,4 @@ selection.SelectionChanged ();
 
 ## <a name="related-links"></a>関連リンク
 
-- [iOS 10 のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)
+- [iOS 10 のサンプル](/samples/browse/?products=xamarin&term=Xamarin.iOS%2biOS10)

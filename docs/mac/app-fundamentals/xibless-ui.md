@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: fe4927384470a37581f556f06e71d489ef90ecbb
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 47025f48b1f3455f70a077f2ca55da2cdeeba761
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574518"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430883"
 ---
 # <a name="storyboardxib-less-user-interface-design-in-xamarinmac"></a>. xib のユーザーインターフェイスの設計 (Xamarin. Mac)
 
@@ -30,7 +30,7 @@ Xamarin. Mac アプリケーションで C# と .NET を使用する場合、 *X
 
 ## <a name="switching-a-window-to-use-code"></a>コードを使用するためのウィンドウの切り替え
 
-新しい Xamarin. Mac Cocoa アプリケーションを作成すると、既定で標準の空白のウィンドウが表示されます。 このウィンドウは、プロジェクトに自動的に含まれる**メインの storyboard** (または**xib**) ファイルで定義されています。 これには、アプリのメインビューを管理する**ViewController.cs**ファイル (または、従来は**MainWindow.cs**と**MainWindowController.cs**ファイル) も含まれています。
+新しい Xamarin. Mac Cocoa アプリケーションを作成すると、既定で標準の空白のウィンドウが表示されます。 このウィンドウは、プロジェクトに自動的に含まれる **メインの storyboard** (または **xib**) ファイルで定義されています。 これには、アプリのメインビューを管理する **ViewController.cs** ファイル (または、従来は **MainWindow.cs** と **MainWindowController.cs** ファイル) も含まれています。
 
 アプリケーションの Xibless ウィンドウに切り替えるには、次の手順を実行します。
 
@@ -38,17 +38,17 @@ Xamarin. Mac アプリケーションで C# と .NET を使用する場合、 *X
 2. **Solution Pad**で、 **mainwindow.xaml**ファイルまたは xib ファイルを右クリック**し、[** **削除**] を選択します。
 
     ![メインのストーリーボードまたはウィンドウの削除](xibless-ui-images/switch01.png "メインのストーリーボードまたはウィンドウの削除")
-3. [**削除] ダイアログボックス**で、[**削除**] ボタンをクリックして、プロジェクトから完全に storyboard または xib を削除します。
+3. [ **削除] ダイアログボックス**で、[ **削除** ] ボタンをクリックして、プロジェクトから完全に storyboard または xib を削除します。
 
     ![削除の確認](xibless-ui-images/switch02.png "削除の確認")
 
-次に、 **MainWindow.cs**ファイルを変更してウィンドウのレイアウトを定義し、 **ViewController.cs**または**MainWindowController.cs**ファイルを変更してクラスのインスタンスを作成する必要があります。これは `MainWindow` 、storyboard または xib ファイルを使用しなくなったためです。
+次に、 **MainWindow.cs** ファイルを変更してウィンドウのレイアウトを定義し、 **ViewController.cs** または **MainWindowController.cs** ファイルを変更してクラスのインスタンスを作成する必要があります。これは `MainWindow` 、storyboard または xib ファイルを使用しなくなったためです。
 
-ユーザーインターフェイスにストーリーボードを使用する最新の Xamarin. Mac アプリには、 **MainWindow.cs**、 **ViewController.cs** 、 **MainWindowController.cs**の各ファイルが自動的に含まれない場合があります。 必要に応じて、新しい空の C# クラスをプロジェクトに追加します (新しいファイルの**追加**  >  **...**  > **全般**  > **空のクラス**)また、見つからないファイルと同じ名前を付けます。
+ユーザーインターフェイスにストーリーボードを使用する最新の Xamarin. Mac アプリには、 **MainWindow.cs**、 **ViewController.cs** 、 **MainWindowController.cs** の各ファイルが自動的に含まれない場合があります。 必要に応じて、新しい空の C# クラスをプロジェクトに追加します (新しいファイルの**追加**  >  **...**  > **全般**  > **空のクラス**)また、見つからないファイルと同じ名前を付けます。
 
 ### <a name="defining-the-window-in-code"></a>コードでのウィンドウの定義
 
-次に、 **MainWindow.cs**ファイルを編集し、次のように表示します。
+次に、 **MainWindow.cs** ファイルを編集し、次のように表示します。
 
 ```csharp
 using System;
@@ -123,7 +123,7 @@ namespace MacXibless
 
 いくつかの重要な要素について説明します。
 
-まず、(ウィンドウが storyboard または xib ファイルで作成されたかのように) コンセントのように機能するいくつかの計算される_プロパティ_を追加しました。
+まず、(ウィンドウが storyboard または xib ファイルで作成されたかのように) コンセントのように機能するいくつかの計算される _プロパティ_ を追加しました。
 
 ```csharp
 public NSButton ClickMeButton { get; set;}
@@ -138,7 +138,7 @@ public MainWindow(CGRect contentRect, NSWindowStyle aStyle, NSBackingStore buffe
 }
 ```
 
-ここでは、ウィンドウのレイアウトをデザインし、必要なユーザーインターフェイスを作成するために必要な UI 要素を配置します。 UI 要素をウィンドウに追加する前に、要素を格納する_コンテンツビュー_が必要です。
+ここでは、ウィンドウのレイアウトをデザインし、必要なユーザーインターフェイスを作成するために必要な UI 要素を配置します。 UI 要素をウィンドウに追加する前に、要素を格納する _コンテンツビュー_ が必要です。
 
 ```csharp
 ContentView = new NSView (Frame);
@@ -173,7 +173,7 @@ ClickMeLabel = new NSTextField (new CGRect (120, Frame.Height - 65, Frame.Width 
 ContentView.AddSubview (ClickMeLabel);
 ```
 
-MacOS には特定の_ラベル_の UI 要素がないため、 `NSTextField` ラベルとして機能するように特別にスタイル設定された編集不可のを追加しました。 前のボタンと同じように、サイズと場所によって、ウィンドウの左下にある (0, 0) が考慮されます。 プロパティは、 `AutoresizingMask = NSViewResizingMask.WidthSizable | NSViewResizingMask.MinYMargin` **or**演算子を使用して2つの機能を結合し `NSViewResizingMask` ます。 これにより、ウィンドウのサイズを垂直方向に変更したときに、ウィンドウの上部と同じ場所にラベルが表示されるようになります。また、ウィンドウのサイズを水平方向に変更したときに、幅を縮小して拡大します。
+MacOS には特定の _ラベル_ の UI 要素がないため、 `NSTextField` ラベルとして機能するように特別にスタイル設定された編集不可のを追加しました。 前のボタンと同じように、サイズと場所によって、ウィンドウの左下にある (0, 0) が考慮されます。 プロパティは、 `AutoresizingMask = NSViewResizingMask.WidthSizable | NSViewResizingMask.MinYMargin` **or** 演算子を使用して2つの機能を結合し `NSViewResizingMask` ます。 これにより、ウィンドウのサイズを垂直方向に変更したときに、ウィンドウの上部と同じ場所にラベルが表示されるようになります。また、ウィンドウのサイズを水平方向に変更したときに、幅を縮小して拡大します。
 
 ここで `ContentView.AddSubview (ClickMeLabel)` も、メソッドは、をコンテンツビューに追加して、 `NSTextField` アプリケーションの実行時とウィンドウの開閉時に画面に表示されるようにします。
 
@@ -233,7 +233,7 @@ CGRect contentRect = new CGRect (0, 0, 1000, 500);
 base.Window = new MainWindow(contentRect, (NSWindowStyle.Titled | NSWindowStyle.Closable | NSWindowStyle.Miniaturizable | NSWindowStyle.Resizable), NSBackingStore.Buffered, false);
 ```
 
-ここでは、を使用して画面のウィンドウの場所を定義 `CGRect` します。 ウィンドウの座標系と同じように、画面の左下隅に (0, 0) が定義されています。 次に、 **or**演算子を使用して2つ以上の機能を結合することで、ウィンドウのスタイルを定義し `NSWindowStyle` ます。
+ここでは、を使用して画面のウィンドウの場所を定義 `CGRect` します。 ウィンドウの座標系と同じように、画面の左下隅に (0, 0) が定義されています。 次に、 **or** 演算子を使用して2つ以上の機能を結合することで、ウィンドウのスタイルを定義し `NSWindowStyle` ます。
 
 ```csharp
 ... (NSWindowStyle.Titled | NSWindowStyle.Closable | NSWindowStyle.Miniaturizable | NSWindowStyle.Resizable) ...
@@ -241,24 +241,24 @@ base.Window = new MainWindow(contentRect, (NSWindowStyle.Titled | NSWindowStyle.
 
 次の `NSWindowStyle` 機能を使用できます。
 
-- **フチなし**-ウィンドウには境界線がありません。
-- **タイトル-ウィンドウ**にはタイトルバーが表示されます。
+- **フチなし** -ウィンドウには境界線がありません。
+- **タイトル-ウィンドウ** にはタイトルバーが表示されます。
 - **Closable** -ウィンドウには [閉じる] ボタンがあり、閉じることができます。
 - **Miniaturizable** -ウィンドウには [Miniaturize] ボタンがあり、最小化することができます。
 - [サイズ**変更**可能]: ウィンドウにサイズ変更ボタンが表示され、サイズを変更できます。
-- **ユーティリティ**-ウィンドウはユーティリティスタイルウィンドウ (パネル) です。
+- **ユーティリティ** -ウィンドウはユーティリティスタイルウィンドウ (パネル) です。
 - **Docmodal** -ウィンドウがパネルの場合、システムモーダルではなくドキュメントモーダルになります。
-- **非アクティブ化パネル**-ウィンドウがパネルの場合は、メインウィンドウに表示されません。
+- **非アクティブ化パネル** -ウィンドウがパネルの場合は、メインウィンドウに表示されません。
 - **Texturedbackground** -ウィンドウの背景がテクスチャになります。
-- **スケールなし**-ウィンドウは拡大縮小されません。
+- **スケールなし** -ウィンドウは拡大縮小されません。
 - **UnifiedTitleAndToolbar** -ウィンドウのタイトルとツールバー領域が結合されます。
 - **Hud** -ウィンドウがヘッドアップ表示パネルとして表示されます。
 - **Fullscreenwindow** -ウィンドウを全画面表示モードにすることができます。
 - **FullSizeContentView** -ウィンドウのコンテンツビューは、タイトルとツールバー領域の背後にあります。
 
-最後の2つのプロパティは、ウィンドウの_バッファーの種類_を定義します。ウィンドウの描画が遅延される場合もあります。 の詳細について `NSWindows` は、Apple の[Windows の概要に](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/WinPanel/Introduction.html#//apple_ref/doc/uid/10000031-SW1)関するドキュメントを参照してください。
+最後の2つのプロパティは、ウィンドウの _バッファーの種類_ を定義します。ウィンドウの描画が遅延される場合もあります。 の詳細について `NSWindows` は、Apple の [Windows の概要に](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/WinPanel/Introduction.html#//apple_ref/doc/uid/10000031-SW1) 関するドキュメントを参照してください。
 
-最後に、ウィンドウが storyboard または xib ファイルから大きくなっていないため、windows のメソッドを呼び出して、 **MainWindowController.cs**でシミュレートする必要があり `AwakeFromNib` ます。
+最後に、ウィンドウが storyboard または xib ファイルから大きくなっていないため、windows のメソッドを呼び出して、 **MainWindowController.cs** でシミュレートする必要があり `AwakeFromNib` ます。
 
 ```csharp
 Window.AwakeFromNib ();
@@ -268,7 +268,7 @@ Window.AwakeFromNib ();
 
 ### <a name="displaying-the-window"></a>ウィンドウの表示
 
-Xib ファイルまたは**MainWindow.cs**ファイルと**MainWindowController.cs**ファイルを削除し、Xcode の Interface Builder で作成された通常のウィンドウと同様に、xib ファイルを使用してウィンドウを使用します。
+Xib ファイルまたは **MainWindow.cs** ファイルと **MainWindowController.cs** ファイルを削除し、Xcode の Interface Builder で作成された通常のウィンドウと同様に、xib ファイルを使用してウィンドウを使用します。
 
 次の例では、ウィンドウとそのコントローラーの新しいインスタンスを作成し、画面にウィンドウを表示します。
 
@@ -290,7 +290,7 @@ mainWindowController.Window.MakeKeyAndOrderFront (this);
 
 ![新しいウィンドウコントローラーの追加](xibless-ui-images/add01.png "新しいウィンドウコントローラーの追加")
 
-前と同様に、プロジェクト (この例では**xib**) から既定のストーリーボードまたは xib ファイルを削除し、上のコードセクションを使用した[ウィンドウの切り替え](#Switching_a_Window_to_use_Code)に関するセクションの手順に従って、ウィンドウの定義をコードに適用します。
+前と同様に、プロジェクト (この例では **xib**) から既定のストーリーボードまたは xib ファイルを削除し、上のコードセクションを使用した [ウィンドウの切り替え](#Switching_a_Window_to_use_Code) に関するセクションの手順に従って、ウィンドウの定義をコードに適用します。
 
 ## <a name="adding-a-ui-element-to-a-window-in-code"></a>コード内のウィンドウに UI 要素を追加する
 
@@ -309,7 +309,7 @@ MyWindow.ContentView.AddSubview (ClickMeButton);
 
 Xamarin. Mac の現在の制限により、コードでは Xamarin アプリケーションのメニューバーを作成することは推奨されていません `NSMenuBar` が、 **xib**ファイルを使用して定義する**ことはでき**ません。 ただし、C# コードでメニューとメニュー項目を追加および削除することはできます。
 
-たとえば、 **AppDelegate.cs**ファイルを編集し、メソッドを次のように設定し `DidFinishLaunching` ます。
+たとえば、 **AppDelegate.cs** ファイルを編集し、メソッドを次のように設定し `DidFinishLaunching` ます。
 
 ```csharp
 public override void DidFinishLaunching (NSNotification notification)
@@ -351,7 +351,7 @@ public override void DidFinishLaunching (NSNotification notification)
 }
 ```
 
-上の例では、コードからステータスバーメニューを作成し、アプリケーションの起動時に表示します。 メニューの操作の詳細については、[メニュー](~/mac/user-interface/menu.md)のドキュメントを参照してください。
+上の例では、コードからステータスバーメニューを作成し、アプリケーションの起動時に表示します。 メニューの操作の詳細については、 [メニュー](~/mac/user-interface/menu.md) のドキュメントを参照してください。
 
 ## <a name="summary"></a>まとめ
 
@@ -359,7 +359,7 @@ public override void DidFinishLaunching (NSNotification notification)
 
 ## <a name="related-links"></a>関連リンク
 
-- [MacXibless (サンプル)](https://docs.microsoft.com/samples/xamarin/mac-samples/macxibless)
+- [MacXibless (サンプル)](/samples/xamarin/mac-samples/macxibless)
 - [Windows](~/mac/user-interface/window.md)
 - [メニュー](~/mac/user-interface/menu.md)
 - [macOS ヒューマン インターフェイス ガイドライン](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)

@@ -8,12 +8,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/27/2018
-ms.openlocfilehash: 48399d35d27a700fa0b24583cce9cd0335f0e354
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 9f21ccccbc3faf17fc272f303ef913b40b11ecd3
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572079"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430911"
 ---
 # <a name="xamarinmac-error-messages-mmp"></a>Xamarin. Mac エラーメッセージ (mmp)
 
@@ -23,19 +23,19 @@ ms.locfileid: "84572079"
 
 <a name="MM0000"></a>
 
-#### <a name="mm0000-unexpected-error---please-file-a-bug-report-at-httpsgithubcomxamarinxamarin-maciosissuesnew"></a>MM0000: 予期しないエラー-のバグレポートをファイルに登録してくださいhttps://github.com/xamarin/xamarin-macios/issues/new
+#### <a name="mm0000-unexpected-error---please-file-a-bug-report-at-httpsgithubcomxamarinxamarin-maciosissuesnew"></a>MM0000: 予期しないエラー-のバグレポートをファイルに登録してください https://github.com/xamarin/xamarin-macios/issues/new
 
-予期しないエラー状態が発生しました。 次のような、できるだけ多くの情報を含む[バグレポートをファイル](https://github.com/xamarin/xamarin-macios/issues/new)に登録してください。
+予期しないエラー状態が発生しました。 次のような、できるだけ多くの情報を含む [バグレポートをファイル](https://github.com/xamarin/xamarin-macios/issues/new) に登録してください。
 
 * 最大冗長性を持つ完全なビルドログ ( `-v -v -v -v` **追加の mmp 引数**など)。
 * エラーを再現する最小限のテストケースそして
 * すべてのバージョンの解説
 
-正確なバージョン情報を取得する最も簡単な方法は、[ **Xamarin Studio** ] メニューを使用し**て、Xamarin Studio 項目について**、[**詳細の表示**] ボタンをクリックし、バージョン情報をコピー/貼り付けすることです ([**情報のコピー** ] ボタンを使用できます)。
+正確なバージョン情報を取得する最も簡単な方法は、[ **Xamarin Studio** ] メニューを使用し **て、Xamarin Studio 項目について** 、[ **詳細の表示** ] ボタンをクリックし、バージョン情報をコピー/貼り付けすることです ([ **情報のコピー** ] ボタンを使用できます)。
 
 <a name="MM0001"></a>
 
-#### <a name="mm0001-this-version-of-xamarinmac-requires-mono-0-the-current-mono-version-is-1-please-update-the-monoframework-from-httpmono-projectcomdownloads"></a>MM0001: このバージョンの Xamarin. Mac には Mono が必要です {0} (現在の mono バージョンはです {1} )。 Mono. フレームワークを更新してください。http://mono-project.com/Downloads
+#### <a name="mm0001-this-version-of-xamarinmac-requires-mono-0-the-current-mono-version-is-1-please-update-the-monoframework-from-httpmono-projectcomdownloads"></a>MM0001: このバージョンの Xamarin. Mac には Mono が必要です {0} (現在の mono バージョンはです {1} )。 Mono. フレームワークを更新してください。 http://mono-project.com/Downloads
 
 <a name="MM0003"></a>
 
@@ -57,7 +57,7 @@ ms.locfileid: "84572079"
 
 <a name="MM0010"></a>
 
-#### <a name="mm0010-could-not-parse-the-command-line-arguments-0"></a>MM0010: コマンドライン引数を解析できませんでした:{0}
+#### <a name="mm0010-could-not-parse-the-command-line-arguments-0"></a>MM0010: コマンドライン引数を解析できませんでした: {0}
 
 <!-- 0013 is unused -->
 
@@ -83,7 +83,7 @@ ms.locfileid: "84572079"
 
 <a name="MM0026"></a>
 
-#### <a name="mm0026-could-not-parse-the-command-line-argument-0-1"></a>MM0026: コマンドライン引数 ' ' を解析できませんでした {0} :{1}
+#### <a name="mm0026-could-not-parse-the-command-line-argument-0-1"></a>MM0026: コマンドライン引数 ' ' を解析できませんでした {0} : {1}
 
 <a name="MM0043"></a>
 
@@ -164,7 +164,7 @@ Straw の最後の解決策は、プロジェクトに必要な SDK をサポー
 
 <a name="MM0097"></a>
 
-#### <a name="mm0097-machineconfig-file-0-can-not-be-found"></a>MM0097: machine.config ファイル ' ' が {0} 見つかりません。
+#### <a name="mm0097-machineconfig-file-0-can-not-be-found"></a>MM0097: machine.config ファイル ' {0} ' が見つかりません。
 
 <a name="MM0098"></a>
 
@@ -204,13 +204,13 @@ Straw の最後の解決策は、プロジェクトに必要な SDK をサポー
 
 <a name="MM0132"></a>
 
-#### <a name="mm0132-unknown-optimization--valid-values-are-"></a>MM0132: 不明な最適化: \* 。 有効な値は次のとおりです。\*
+#### <a name="mm0132-unknown-optimization--valid-values-are-"></a>MM0132: 不明な最適化: \* 。 有効な値は次のとおりです。 \*
 
 指定された最適化を認識できませんでした。
 
 許容される形式はです `[+|-]optimization-name` `optimization-name` 。ここで、は、エラーメッセージに示されている値の1つです。
 
-各最適化の詳細については、「[ビルドの最適化](~/cross-platform/macios/optimizations.md)」を参照してください。
+各最適化の詳細については、「 [ビルドの最適化](~/cross-platform/macios/optimizations.md) 」を参照してください。
 
 <a name="MM0133"></a>
 
@@ -224,7 +224,7 @@ Apple は、32ビットアプリの macOS アプリストアの送信を許可�
 
 さらに、32ビットのアプリケーションは、"侵害なし" ではなく、macOS のバージョンでは実行されません。
 
-詳細情報:https://developer.apple.com/news/?id=06282017a
+詳細情報: https://developer.apple.com/news/?id=06282017a
 
 アプリケーションと依存関係をすべて64ビットに更新することを検討してください。
 
@@ -236,7 +236,7 @@ Apple は、32ビットアプリの macOS アプリストアの送信を許可�
 
 このエラーを修正するには、Xcode をアップグレードして必要な SDK を取得することをお勧めします。 複数のバージョンの Xcode がインストールされている場合、または既定以外の場所で Xcode を使用する場合は、IDE の設定で適切な Xcode の場所を設定してください。
 
-または、マネージ[リンカー](https://docs.microsoft.com/xamarin/mac/deploy-test/linker)を有効にして、指定したライブラリを必要とする新しい api (ほとんどの場合は) を含む未使用の api を削除します。 ただし、Xcode で提供されているものより新しい SDK で導入された Api がプロジェクトに必要な場合、これは機能しません。
+または、マネージ [リンカー](../deploy-test/linker.md) を有効にして、指定したライブラリを必要とする新しい api (ほとんどの場合は) を含む未使用の api を削除します。 ただし、Xcode で提供されているものより新しい SDK で導入された Api がプロジェクトに必要な場合、これは機能しません。
 
 最後の straw ソリューションとして、ビルドプロセス中にこれらの新しい Sdk が存在する必要がない古いバージョンの Xamarin. Mac を使用します。
 
@@ -280,7 +280,7 @@ Apple は、32ビットアプリの macOS アプリストアの送信を許可�
 
 <a name="MM1501"></a>
 
-#### <a name="mm1501-can-not-resolve-reference-0"></a>MM1501: 参照を解決できません:{0}
+#### <a name="mm1501-can-not-resolve-reference-0"></a>MM1501: 参照を解決できません: {0}
 
 ### <a name="machocs"></a>MachO.cs
 
@@ -314,7 +314,7 @@ Apple は、32ビットアプリの macOS アプリストアの送信を許可�
 
 <a name="MM2002"></a>
 
-#### <a name="mm2002-can-not-resolve-reference-0"></a>MM2002: 参照を解決できません:{0}
+#### <a name="mm2002-can-not-resolve-reference-0"></a>MM2002: 参照を解決できません: {0}
 
 <a name="MM2003"></a>
 
@@ -350,7 +350,7 @@ Apple は、32ビットアプリの macOS アプリストアの送信を許可�
 
 <a name="MM2012"></a>
 
-#### <a name="mm2012-only-first-0-of-1-referenced-by-warnings-shown--this-message-related-to-2009-"></a>MM2012: 最初 {0} の {1} "参照先" の警告のみが表示されます。 \*\*このメッセージは2009に関連しています。\*\*
+#### <a name="mm2012-only-first-0-of-1-referenced-by-warnings-shown--this-message-related-to-2009-"></a>MM2012: 最初 {0} の {1} "参照先" の警告のみが表示されます。 \*\* このメッセージは2009に関連しています。 \*\*
 
 <a name="MM2013"></a>
 
@@ -358,7 +358,7 @@ Apple は、32ビットアプリの macOS アプリストアの送信を許可�
 
 <a name="MM2014"></a>
 
-#### <a name="mm2014-xamarinmac-extensions-do-not-support-linking-request-for-linking-will-be-ignored--this-message-is-obsolete-in-xm-36-"></a>MM2014: Xamarin 拡張子はリンクをサポートしていません。 リンクの要求は無視されます。 \*\*XM 3.6 以降では、このメッセージは廃止されています。\*\*
+#### <a name="mm2014-xamarinmac-extensions-do-not-support-linking-request-for-linking-will-be-ignored--this-message-is-obsolete-in-xm-36-"></a>MM2014: Xamarin 拡張子はリンクをサポートしていません。 リンクの要求は無視されます。 \*\* XM 3.6 以降では、このメッセージは廃止されています。 \*\*
 
 <!-- 2015 used by mtouch -->
 
@@ -368,7 +368,7 @@ Apple は、32ビットアプリの macOS アプリストアの送信を許可�
 
 <a name="MM2017"></a>
 
-#### <a name="mm2017-could-not-process-xml-description-0"></a>MM2017: XML の説明を処理できませんでした:{0}
+#### <a name="mm2017-could-not-process-xml-description-0"></a>MM2017: XML の説明を処理できませんでした: {0}
 
 <a name="MM202x"></a>
 
@@ -384,7 +384,7 @@ Apple は、32ビットアプリの macOS アプリストアの送信を許可�
 
 アセンブリの処理中に予期しないエラーが発生しました。
 
-問題の原因となっているアセンブリの名前は、エラーメッセージで示されます。 この問題を解決するには、アセンブリを[バグ報告](https://bugzilla.xamarin.com)に含め、詳細が有効になっている完全なビルドログ (追加の `-v -v -v -v` **mtouch 引数**など) を指定する必要があります。
+問題の原因となっているアセンブリの名前は、エラーメッセージで示されます。 この問題を解決するには、アセンブリを [バグ報告](https://bugzilla.xamarin.com) に含め、詳細が有効になっている完全なビルドログ (追加の `-v -v -v -v` **mtouch 引数**など) を指定する必要があります。
 
 <a name="MM2104"></a>
 
@@ -402,7 +402,7 @@ https://docs.microsoft.com/cpp/dotnet/mixed-native-and-managed-assemblies混合�
 
 メッセージは、を呼び出すメソッドを指します `BlockLiteral.SetupBlock[Unsafe]` 。また、呼び出しを最適化できなかった理由について手掛かりを与えることもできます。
 
-問題が発生した原因を調査し、将来的にはより多くのシナリオを可能にするために、完全なビルドログと共に[問題](https://github.com/xamarin/xamarin-macios/issues/new)を報告してください。
+問題が発生した原因を調査し、将来的にはより多くのシナリオを可能にするために、完全なビルドログと共に [問題](https://github.com/xamarin/xamarin-macios/issues/new) を報告してください。
 
 <a name="MM2107"></a>
 
@@ -477,7 +477,7 @@ App Store は、32ビットのバリアントを含むライブラリとフレ�
 現在、この警告には次の2つの原因が考えられます。
 
 1. マネージデリゲートの型は、 `System.Delegate` または `System.MulticastDelegate` です。 これらの型は特定のシグネチャを表していません。つまり、レジスタは、対応するネイティブシグネチャを計算できません。 この場合の修正は、ブロックに特定のデリゲート型を使用することです (または、 `--nowarn:4173` プロジェクトの Mac ビルドオプションに追加の mmp 引数としてを追加することで警告を無視できます)。
-2. レジストラーはデリゲートのメソッドを見つけることができません `Invoke` 。 このような状況は発生しないので、テストプロジェクトに[問題](https://github.com/xamarin/xamarin-macios/issues/new)を報告して、修正できるようにしてください。
+2. レジストラーはデリゲートのメソッドを見つけることができません `Invoke` 。 このような状況は発生しないので、テストプロジェクトに [問題](https://github.com/xamarin/xamarin-macios/issues/new) を報告して、修正できるようにしてください。
 
 <a name="MT4174"></a>
 
@@ -487,7 +487,7 @@ App Store は、32ビットのバリアントを含むライブラリとフレ�
 
 この警告の考えられる原因の1つは、ブロックを使用する API のバインドを手動で作成することです。 バインディングプロジェクトを使用して、目的の C コードをバインドすることをお勧めします。特にブロックが関係している場合は、手動で実行したときに適切に取得するのが非常に複雑であるためです。
 
-そうでない場合は、テストケースに[問題](https://github.com/xamarin/xamarin-macios/issues/new)を報告してください。
+そうでない場合は、テストケースに [問題](https://github.com/xamarin/xamarin-macios/issues/new) を報告してください。
 
 ## <a name="mm5xxx-gcc-and-toolchain"></a>MM5xxx: GCC とツールチェーン
 
@@ -501,7 +501,7 @@ App Store は、32ビットのバリアントを含むライブラリとフレ�
 
 <a name="MM5103"></a>
 
-#### <a name="mm5103-failed-to-compile-error-code---0-please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MM5103: コンパイルに失敗しました。 エラーコード- {0} 。 バグレポートをファイルに登録してくださいhttp://bugzilla.xamarin.com
+#### <a name="mm5103-failed-to-compile-error-code---0-please-file-a-bug-report-at-httpbugzillaxamarincom"></a>MM5103: コンパイルに失敗しました。 エラーコード- {0} 。 バグレポートをファイルに登録してください http://bugzilla.xamarin.com
 
 <!-- 5104 used by mtouch -->
 
@@ -509,7 +509,7 @@ App Store は、32ビットのバリアントを含むライブラリとフレ�
 
 <a name="MM5202"></a>
 
-#### <a name="mm5202-monoframework-mdk-is-missing-please-install-the-mdk-for-your-monoframework-version-from-httpmono-projectcomdownloads"></a>MM5202: Mono. framework MDK が見つかりません。 Mono の MDK をインストールしてください。http://mono-project.com/Downloads
+#### <a name="mm5202-monoframework-mdk-is-missing-please-install-the-mdk-for-your-monoframework-version-from-httpmono-projectcomdownloads"></a>MM5202: Mono. framework MDK が見つかりません。 Mono の MDK をインストールしてください。 http://mono-project.com/Downloads
 
 <a name="MM5203"></a>
 
@@ -527,7 +527,7 @@ App Store は、32ビットのバリアントを含むライブラリとフレ�
 
 #### <a name="mm5218-cant-ignore-the-dynamic-symbol-symbol---ignore-dynamic-symbolsymbol-because-it-was-not-detected-as-a-dynamic-symbol"></a>MM5218: 動的シンボルとして検出されなかったため、動的シンボル {symbol} (--ignore-dynamic-symbol}) を無視できません。
 
-同等の[mtouch 警告](~/ios/troubleshooting/mtouch-errors.md#MT5218)を参照してください。
+同等の [mtouch 警告](~/ios/troubleshooting/mtouch-errors.md#MT5218)を参照してください。
 
 <!-- 5206 used by mtouch -->
 <!-- 5207 used by mtouch -->
@@ -546,7 +546,7 @@ App Store は、32ビットのバリアントを含むライブラリとフレ�
 
 <a name="MM5301"></a>
 
-#### <a name="mm5301-pkg-config-could-not-be-found-please-install-the-monoframework-from-httpmono-projectcomdownloads"></a>MM5301: pkg-config が見つかりませんでした。 の Mono をインストールしてください。http://mono-project.com/Downloads
+#### <a name="mm5301-pkg-config-could-not-be-found-please-install-the-monoframework-from-httpmono-projectcomdownloads"></a>MM5301: pkg-config が見つかりませんでした。 の Mono をインストールしてください。 http://mono-project.com/Downloads
 
 <!-- 5302 used by mtouch -->
 <!-- 5303 used by mtouch -->

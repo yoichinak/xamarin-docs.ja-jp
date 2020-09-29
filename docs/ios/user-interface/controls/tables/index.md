@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 01/06/2016
-ms.openlocfilehash: 7f5af84a8dfb9f774822e28e50cf8bbca9acf94b
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: fc2a76d97fe6c3bb52877bd58707872068f25968
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73021890"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430816"
 ---
 # <a name="working-with-tables-and-cells-in-xamarinios"></a>Xamarin でのテーブルとセルの操作
 
@@ -22,14 +22,14 @@ Xamarin を使用したクロスプラットフォームアプリケーション
 
 これらの記事では、次のようなテーブルの使用について、包括的に説明します。
 
-- **テーブルパーツ**– `UITableView` コントロールのビジュアル要素の概要と説明です。 
+- **テーブルパーツ** –コントロールのビジュアル要素の概要と説明  `UITableView` 。 
 - テーブル**でのデータの表示**–テーブルを作成および設定する方法を示すと共に、さまざまなテーブルとセルスタイルを使用して、セルオブジェクトを再利用することにより、メモリの問題を回避します。 
-- **高度な使用法**–カスタムセルを作成し、UITableView クラスの編集機能を使用します。 
-- **テーブルを視覚的に作成**する-Xamarin Designer for iOS を使用して、ストーリーボードを含むテーブルドリブンインターフェイスを作成します。 
+- **高度な使用法** –カスタムセルを作成し、UITableView クラスの編集機能を使用します。 
+- **テーブルを視覚的に作成** する-Xamarin Designer for iOS を使用して、ストーリーボードを含むテーブルドリブンインターフェイスを作成します。 
 
-## <a name="contents"></a>コンテンツ
+## <a name="contents"></a>内容
 
- [テーブルパーツ &amp; 機能](~/ios/user-interface/controls/tables/table-parts-and-functionality.md)
+ [テーブルパーツの &amp; 機能](~/ios/user-interface/controls/tables/table-parts-and-functionality.md)
 
  [テーブルへのデータの読み込み](~/ios/user-interface/controls/tables/populating-a-table-with-data.md)
 
@@ -45,8 +45,8 @@ Xamarin を使用したクロスプラットフォームアプリケーション
 
 ## <a name="related-links"></a>関連リンク
 
-- [WorkingWithTables (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithtables)
-- [ストーリーボードのテーブル (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/storyboardtable)
+- [WorkingWithTables (サンプル)](/samples/xamarin/ios-samples/workingwithtables)
+- [ストーリーボードのテーブル (サンプル)](/samples/xamarin/ios-samples/storyboardtable)
 - [ストーリーボードの概要](~/ios/user-interface/storyboards/index.md)
 - [TableView レシピのストーリーボード](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/storyboard/storyboard_a_tableview)
 - [Monotouch.dialog の概要](~/ios/user-interface/monotouch.dialog/index.md)

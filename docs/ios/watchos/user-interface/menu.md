@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 1a9013c8f3adad0f52c264ea1216cab784d6b58f
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 5ad45e1cc17a58875037f20996463f55f2b68685
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939660"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431552"
 ---
 # <a name="watchos-menu-control-force-touch-in-xamarin"></a>Xamarin の watchOS Menu コントロール (Force Touch)
 
@@ -35,7 +35,7 @@ Watch Kit は、ウォッチアプリ画面に実装されたときにメニュ�
 
 ![デザイン時のメニューの編集](menu-images/menu-action.png)
 
-メニューコントロールには、最大4つのメニュー項目を追加できます。 これらは、[**プロパティ**] パッドで構成できます。 次の属性を設定できます。
+メニューコントロールには、最大4つのメニュー項目を追加できます。 これらは、[ **プロパティ** ] パッドで構成できます。 次の属性を設定できます。
 
 - タイトル、および
 - カスタムイメージ、または
@@ -66,7 +66,7 @@ Menu items added the storyboard can be shown and hidden programmatically.
 
 ### <a name="adding-at-runtime"></a>追加 (実行時に)
 
-を実行時にインターフェイスコントローラーに追加することはできませんが、 `Menu` のコレクションは `MenuItem` プログラムによって変更*でき*ます。
+を実行時にインターフェイスコントローラーに追加することはできませんが、 `Menu` のコレクションは `MenuItem` プログラムによって変更 *でき* ます。
 `AddMenuItem`次に示すように、メソッドを使用します。
 
 ```csharp
@@ -85,11 +85,11 @@ void MenuItemTapped ()
 
 ### <a name="removing-at-runtime"></a>削除 (実行時に)
 
-メソッドを呼び出して、 `ClearAllMenuItems` *プログラムによって追加された*すべてのメニュー項目を削除できます。
+メソッドを呼び出して、 `ClearAllMenuItems` *プログラムによって追加された* すべてのメニュー項目を削除できます。
 
 ストーリーボードで構成されているメニュー項目を消去することはできません。
 
 ## <a name="related-links"></a>関連リンク
 
-- [WatchKitCatalog (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
+- [WatchKitCatalog (サンプル)](/samples/xamarin/ios-samples/watchos-watchkitcatalog)
 - [Apple のメニュードキュメント](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/Menus.html)

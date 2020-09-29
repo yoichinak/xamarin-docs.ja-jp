@@ -8,12 +8,12 @@ ms.custom: xamu-video
 author: davidortinau
 ms.author: daortin
 ms.date: 03/20/2017
-ms.openlocfilehash: b86f3a159a144f02ea13663bfddb41ed0100f740
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: e32042c4b7e7d67e219611014d3a06ad9ed17b9d
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931405"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91432467"
 ---
 # <a name="multitasking-for-ipad-in-xamarinios"></a>Xamarin の iPad のマルチタスキング
 
@@ -25,7 +25,7 @@ iOS 9 では、特定の iPad ハードウェアで同時に2つのアプリを�
 
 - [**スライドオーバー**](#Slide-Over) -ユーザーが、現在実行されているメインアプリの約25% をカバーするスライドアウトパネル (言語の方向に基づいて、画面の右側または左側) で2番目の iOS アプリを一時的に実行できるようにします。 スライドショーは、iPad Pro、iPad Air、iPad Air 2、iPad ミニ2、iPad ミニ3、iPad ミニ4でのみ利用できます。
 - [**分割ビュー**](#Split-View) -サポートされている ipad ハードウェア (ipad Air 2、ipad ミニ4、ipad Pro のみ) では、ユーザーは2つ目のアプリを選択して、現在実行中のアプリと並べて分割画面モードで実行できます。 ユーザーは、各アプリが占めるメイン画面の割合を制御できます。
-- [**画像の画像-ビデオ**](#Picture-in-Picture)コンテンツを再生するアプリでは、iOS デバイスで現在実行されている他のアプリの周囲にある、移動してサイズ変更が可能なウィンドウでビデオを再生できるようになりました。 ユーザーは、このウィンドウのサイズと位置を完全に制御できます。 画像の画像は、iPad Pro、iPad Air、iPad Air 2、iPad ミニ2、iPad ミニ3、iPad ミニ4でのみ使用できます。
+- [**画像の画像-ビデオ**](#Picture-in-Picture) コンテンツを再生するアプリでは、iOS デバイスで現在実行されている他のアプリの周囲にある、移動してサイズ変更が可能なウィンドウでビデオを再生できるようになりました。 ユーザーは、このウィンドウのサイズと位置を完全に制御できます。 画像の画像は、iPad Pro、iPad Air、iPad Air 2、iPad ミニ2、iPad ミニ3、iPad ミニ4でのみ使用できます。
 
 [アプリでマルチタスキングをサポート](#Supporting-Multitasking-in-your-App)するには、次のようないくつかの点を考慮する必要があります。
 
@@ -56,7 +56,7 @@ iOS 9 では、特定の iPad ハードウェアで同時に2つのアプリを�
 
 ## <a name="about-multitasking-for-ipad"></a>IPad のマルチタスキングについて
 
-iOS 9 では、iPad での新しいマルチタスク機能を提供しています。これには、_スライドオーバー_、_分割ビュー_ (ipad Air 2、iPad ミニ4、ipad Pro のみ) と_画像の画像が含ま_れています。 これらの機能については、次のセクションで詳しく説明します。
+iOS 9 では、iPad での新しいマルチタスク機能を提供しています。これには、 _スライドオーバー_、 _分割ビュー_ (ipad Air 2、iPad ミニ4、ipad Pro のみ) と _画像の画像が含ま_れています。 これらの機能については、次のセクションで詳しく説明します。
 
 <a name="Slide-Over"></a>
 
@@ -68,10 +68,10 @@ iOS 9 では、iPad での新しいマルチタスク機能を提供していま
 
 重要なのは、ユーザーが2つのアプリをサイドバイサイドで実行することと、開発者がこのプロセスを制御できないことを決定することです。 結果として、Xamarin の iOS アプリがパネル上のスライドで正しく動作するようにするために、次のことを行う必要があります。
 
-- **[オートレイアウトとサイズのクラスを使用**する] —スライドアウト側のパネルで Xamarin iOS アプリを実行できるようになったため、デバイス、画面のサイズ、または UI のレイアウトの向きに依存しなくなりました。 アプリによってインターフェイスが適切に拡張されるようにするには、オートレイアウトとサイズのクラスを使用する必要があります。 詳細については、統合されたストーリーボードのドキュメントの[概要に](~/ios/user-interface/storyboards/unified-storyboards.md)関する記事をご覧ください。
-- **リソースを効率的に使用**する—アプリは、実行中の別のアプリとシステムを共有できるようになったため、アプリではシステムリソースを効率的に使用することが重要です。 メモリがスパースになると、最も多くのメモリを消費しているアプリがシステムによって自動的に終了されます。 詳細については、「 [IOS アプリ向けの Apple のエネルギー効率ガイド](https://developer.apple.com/library/prerelease/ios/documentation/Performance/Conceptual/EnergyGuide-iOS/index.html#//apple_ref/doc/uid/TP40015243)」を参照してください。
+- **[オートレイアウトとサイズのクラスを使用** する] —スライドアウト側のパネルで Xamarin iOS アプリを実行できるようになったため、デバイス、画面のサイズ、または UI のレイアウトの向きに依存しなくなりました。 アプリによってインターフェイスが適切に拡張されるようにするには、オートレイアウトとサイズのクラスを使用する必要があります。 詳細については、統合されたストーリーボードのドキュメントの [概要に](~/ios/user-interface/storyboards/unified-storyboards.md) 関する記事をご覧ください。
+- **リソースを効率的に使用** する—アプリは、実行中の別のアプリとシステムを共有できるようになったため、アプリではシステムリソースを効率的に使用することが重要です。 メモリがスパースになると、最も多くのメモリを消費しているアプリがシステムによって自動的に終了されます。 詳細については、「 [IOS アプリ向けの Apple のエネルギー効率ガイド](https://developer.apple.com/library/prerelease/ios/documentation/Performance/Conceptual/EnergyGuide-iOS/index.html#//apple_ref/doc/uid/TP40015243) 」を参照してください。
 
-スライドショーは、iPad Pro、iPad Air、iPad Air 2、iPad ミニ2、iPad ミニ3、iPad ミニ4でのみ利用できます。 スライドオーバー用のアプリの準備の詳細については、「iPad のドキュメントでの、Apple[によるマルチタスキングの機能強化の導入](https://developer.apple.com/library/prerelease/ios/documentation/WindowsViews/Conceptual/AdoptingMultitaskingOniPad/index.html#//apple_ref/doc/uid/TP40015145)」を参照してください。
+スライドショーは、iPad Pro、iPad Air、iPad Air 2、iPad ミニ2、iPad ミニ3、iPad ミニ4でのみ利用できます。 スライドオーバー用のアプリの準備の詳細については、「iPad のドキュメントでの、Apple [によるマルチタスキングの機能強化の導入](https://developer.apple.com/library/prerelease/ios/documentation/WindowsViews/Conceptual/AdoptingMultitaskingOniPad/index.html#//apple_ref/doc/uid/TP40015145) 」を参照してください。
 
 <a name="Split-View"></a>
 
@@ -83,10 +83,10 @@ iOS 9 では、iPad での新しいマルチタスク機能を提供していま
 
 スライドオーバーと同様に、ユーザーは2つのアプリを同時に実行することを決定します。開発者はこのプロセスを制御できません。 その結果、分割ビューでは、次のような要件が Xamarin. iOS アプリに配置されます。
 
-- **[オートレイアウトとサイズのクラスを使用する**]: Xamarin iOS アプリは、ユーザーが指定したサイズで分割画面モードで実行できるため、デバイス、画面のサイズ、または UI のレイアウトに依存しなくなります。 アプリによってインターフェイスが適切に拡張されるようにするには、オートレイアウトとサイズのクラスを使用する必要があります。 詳細については、統合されたストーリーボードのドキュメントの[概要に](~/ios/user-interface/storyboards/unified-storyboards.md)関する記事をご覧ください。
-- **リソースを効率的に使用**する—アプリは、実行中の別のアプリとシステムを共有できるようになったため、アプリではシステムリソースを効率的に使用することが重要です。 メモリがスパースになると、最も多くのメモリを消費しているアプリがシステムによって自動的に終了されます。 詳細については、「 [IOS アプリ向けの Apple のエネルギー効率ガイド](https://developer.apple.com/library/prerelease/ios/documentation/Performance/Conceptual/EnergyGuide-iOS/index.html#//apple_ref/doc/uid/TP40015243)」を参照してください。
+- **[オートレイアウトとサイズのクラスを使用する** ]: Xamarin iOS アプリは、ユーザーが指定したサイズで分割画面モードで実行できるため、デバイス、画面のサイズ、または UI のレイアウトに依存しなくなります。 アプリによってインターフェイスが適切に拡張されるようにするには、オートレイアウトとサイズのクラスを使用する必要があります。 詳細については、統合されたストーリーボードのドキュメントの [概要に](~/ios/user-interface/storyboards/unified-storyboards.md) 関する記事をご覧ください。
+- **リソースを効率的に使用** する—アプリは、実行中の別のアプリとシステムを共有できるようになったため、アプリではシステムリソースを効率的に使用することが重要です。 メモリがスパースになると、最も多くのメモリを消費しているアプリがシステムによって自動的に終了されます。 詳細については、「 [IOS アプリ向けの Apple のエネルギー効率ガイド](https://developer.apple.com/library/prerelease/ios/documentation/Performance/Conceptual/EnergyGuide-iOS/index.html#//apple_ref/doc/uid/TP40015243) 」を参照してください。
 
-分割ビュー用にアプリを準備する方法の詳細については、iPad ドキュメントの「Apple[によるマルチタスキングの機能強化の導入](https://developer.apple.com/library/prerelease/ios/documentation/WindowsViews/Conceptual/AdoptingMultitaskingOniPad/index.html#//apple_ref/doc/uid/TP40015145)」を参照してください。
+分割ビュー用にアプリを準備する方法の詳細については、iPad ドキュメントの「Apple [によるマルチタスキングの機能強化の導入](https://developer.apple.com/library/prerelease/ios/documentation/WindowsViews/Conceptual/AdoptingMultitaskingOniPad/index.html#//apple_ref/doc/uid/TP40015145) 」を参照してください。
 
 <a name="Picture-in-Picture"></a>
 
@@ -98,15 +98,15 @@ iOS 9 では、iPad での新しいマルチタスク機能を提供していま
 
 スライドオーバービューおよび分割ビューの場合と同様に、ユーザーは画像内のビデオを画像モードで視聴する操作を完全に制御できます。 アプリの主要な機能がビデオを視聴する場合は、PIP モードで正しく動作するように変更を加える必要があります。 それ以外の場合、PIP をサポートするために変更は必要ありません。
 
-アプリでユーザーの要求に PIP ビデオを表示するには、 _Avkit_または_AV Foundation api_を使用している必要があります。 Media Player framework は、iOS 9 では償却されており、PIP はサポートされていません。
+アプリでユーザーの要求に PIP ビデオを表示するには、 _Avkit_ または _AV Foundation api_を使用している必要があります。 Media Player framework は、iOS 9 では償却されており、PIP はサポートされていません。
 
-画像の画像は、iPad Pro、iPad Air、iPad Air 2、iPad ミニ2、iPad ミニ3、iPad ミニ4でのみ使用できます。 詳細については、Picture [Inpicture サンプルアプリ](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)と Apple の[画像クイックスタートの](https://developer.apple.com/library/prerelease/ios/documentation/WindowsViews/Conceptual/AdoptingMultitaskingOniPad/QuickStartForPictureInPicture.html#//apple_ref/doc/uid/TP40015145-CH14)ドキュメントを参照してください。
+画像の画像は、iPad Pro、iPad Air、iPad Air 2、iPad ミニ2、iPad ミニ3、iPad ミニ4でのみ使用できます。 詳細については、Picture [Inpicture サンプルアプリ](/samples/browse/?products=xamarin&term=Xamarin.iOS%2biOS9) と Apple の [画像クイックスタートの](https://developer.apple.com/library/prerelease/ios/documentation/WindowsViews/Conceptual/AdoptingMultitaskingOniPad/QuickStartForPictureInPicture.html#//apple_ref/doc/uid/TP40015145-CH14) ドキュメントを参照してください。
 
 <a name="Supporting-Multitasking-in-your-App"></a>
 
 ## <a name="supporting-multitasking-in-your-app"></a>アプリでのマルチタスキングのサポート
 
-既存の Xamarin iOS アプリについては、アプリが Apple の設計ガイドと iOS 8 のベストプラクティスに従っている限り、マルチタスクのサポートは透過的なタスクです。 つまり、アプリでは、ユーザーインターフェイスのレイアウトに対して、オートレイアウトとサイズのクラスのストーリーボードを使用する必要があります (詳細については、「統合された[ストーリーボードの概要」を](~/ios/user-interface/storyboards/unified-storyboards.md)参照してください)。
+既存の Xamarin iOS アプリについては、アプリが Apple の設計ガイドと iOS 8 のベストプラクティスに従っている限り、マルチタスクのサポートは透過的なタスクです。 つまり、アプリでは、ユーザーインターフェイスのレイアウトに対して、オートレイアウトとサイズのクラスのストーリーボードを使用する必要があります (詳細については、「統合された [ストーリーボードの概要」を](~/ios/user-interface/storyboards/unified-storyboards.md) 参照してください)。
 
 これらのアプリでは、マルチタスキングをサポートし、その中で適切に動作するように変更する必要はほとんどありません。 アプリの UI が、C# コードで UI 要素の直接配置やサイズ変更などの他のメソッドを使用して作成された場合、または特定のデバイスの画面サイズまたは向きに依存している場合は、iOS 9 マルチタスクを正しくサポートするために大幅な変更が必要になります。
 
@@ -124,13 +124,13 @@ IPad では、全画面アプリには、標準の水平方向と垂直方向の
 
 スライドオーバーおよび分割ビューをサポートする Ipad では、最終的に次の組み合わせを使用できます。
 
-| **細かく** | **プライマリアプリ** | **セカンダリアプリ** |
+| **方向** | **プライマリアプリ** | **セカンダリアプリ** |
 |--- |--- |--- |
 | **縦** |画面の75%<br />水平方向に圧縮<br />標準縦|画面の25%<br />水平方向に圧縮<br />標準縦|
 | **横** |画面の75%<br />標準の水平方向<br />標準縦|画面の25%<br />水平方向に圧縮<br />標準縦|
 | **横** |画面の50%<br />水平方向に圧縮<br />標準縦|画面の50%<br />水平方向に圧縮<br />標準縦|
 
-例の[MuliTask](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-multitask)アプリでは、iPad on the ランドスケープモードで全画面表示を実行すると、リストと詳細ビューの両方が同時に表示されます。
+例の [MuliTask](/samples/xamarin/ios-samples/ios9-multitask) アプリでは、iPad on the ランドスケープモードで全画面表示を実行すると、リストと詳細ビューの両方が同時に表示されます。
 
 [![一覧と詳細ビューが同時に表示されます。](multitasking-images/sizeclasses03.png)](multitasking-images/sizeclasses03.png#lightbox)
 
@@ -138,7 +138,7 @@ IPad では、全画面アプリには、標準の水平方向と垂直方向の
 
 [![デバイスが横にあるときに表示されるリストのみ](multitasking-images/sizeclasses04.png)](multitasking-images/sizeclasses04.png#lightbox)
 
-このような状況でアプリが正しく動作するようにするには、特徴コレクションをサイズクラスと共に採用し、インターフェイスとインターフェイスに準拠させる必要があり `IUIContentContainer` `IUITraitEnvironment` ます。 詳細については、「Apple の[Uitraitcollection クラスリファレンス](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/doc/uid/TP40014202)」と「[統合ストーリーボード](~/ios/user-interface/storyboards/unified-storyboards.md)ガイドの概要」を参照してください。
+このような状況でアプリが正しく動作するようにするには、特徴コレクションをサイズクラスと共に採用し、インターフェイスとインターフェイスに準拠させる必要があり `IUIContentContainer` `IUITraitEnvironment` ます。 詳細については、「Apple の [Uitraitcollection クラスリファレンス](https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UITraitCollection_ClassReference/index.html#//apple_ref/doc/uid/TP40014202) 」と「 [統合ストーリーボード](~/ios/user-interface/storyboards/unified-storyboards.md) ガイドの概要」を参照してください。
 
 さらに、アプリの表示領域を定義するためにデバイスの画面境界に依存しなくなりました。代わりに、アプリのウィンドウ境界を使用する必要があります。 ウィンドウの境界はユーザーの制御下にあるため、プログラムを使用して調整したり、ユーザーがこれらの境界を変更できないようにしたりすることはできません。
 
@@ -150,13 +150,13 @@ IPad では、全画面アプリには、標準の水平方向と垂直方向の
 
 IPad で実行されている iOS 9 では、Apple はハードウェアキーボードのサポートを拡張しています。 Ipad には、Bluetooth 経由の基本的な外部キーボードサポートが常に含まれています。また、一部のキーボード製造元は、iOS 固有のハードワイヤードキーを含むキーボードを作成しました。
 
-IOS 9 では、アプリで独自のカスタムキーボードショートカットを作成できます。 また、基本的なキーボードショートカットの中には、**コマンド C** (copy)、**コマンド-X** (切り取り)、**コマンド V** (貼り付け)、**コマンドラインシフト-H** (ホーム) などのようなものもあります。このショートカットキーは、特にアプリケーションが応答しません。
+IOS 9 では、アプリで独自のカスタムキーボードショートカットを作成できます。 また、基本的なキーボードショートカットの中には、 **コマンド C** (copy)、 **コマンド-X** (切り取り)、 **コマンド V** (貼り付け)、 **コマンドラインシフト-H** (ホーム) などのようなものもあります。このショートカットキーは、特にアプリケーションが応答しません。
 
 次の**コマンド**を実行すると、Mac OS のように、ユーザーがキーボードからアプリをすばやく切り替えることができるアプリスイッチャーが表示されます。
 
 [![アプリスイッチャー](multitasking-images/keyboard01.png)](multitasking-images/keyboard01.png#lightbox)
 
-IOS 9 アプリにキーボードショートカットが含まれている場合、ユーザーは**コマンド**、**オプション**、または**制御**キーを押して、ポップアップに表示できます。
+IOS 9 アプリにキーボードショートカットが含まれている場合、ユーザーは **コマンド**、 **オプション** 、または **制御** キーを押して、ポップアップに表示できます。
 
 [![キーボードショートカットのポップアップ](multitasking-images/keyboard02.png)](multitasking-images/keyboard02.png#lightbox)
 
@@ -190,13 +190,13 @@ public void NewEntry() {
 
 まず、プロパティをオーバーライド `CanBecomeFirstResponder` し、 `true` ビューまたはビューコントローラーがキーボード入力を受け取ることができるように戻ります。 
 
-次に、プロパティをオーバーライド `KeyCommands` し、 `UIKeyCommand` **コマンド N**キーストローク用に新しいを作成します。 キーストロークがアクティブになったら、 `NewEntry` (コマンドを使用して iOS 9 に公開する) メソッドを呼び出して、 `Export` 要求されたアクションを実行します。
+次に、プロパティをオーバーライド `KeyCommands` し、 `UIKeyCommand` **コマンド N** キーストローク用に新しいを作成します。 キーストロークがアクティブになったら、 `NewEntry` (コマンドを使用して iOS 9 に公開する) メソッドを呼び出して、 `Export` 要求されたアクションを実行します。
 
-ハードウェアキーボードが接続されている iPad でこのアプリを実行し、ユーザーが**コマンド**を入力すると、新しいエントリが一覧に追加されます。 ユーザーが**コマンド**キーを押したままになっている場合は、ショートカットの一覧が表示されます。
+ハードウェアキーボードが接続されている iPad でこのアプリを実行し、ユーザーが **コマンド**を入力すると、新しいエントリが一覧に追加されます。 ユーザーが **コマンド** キーを押したままになっている場合は、ショートカットの一覧が表示されます。
 
 [![キーボードショートカットのポップアップ](multitasking-images/keyboard03.png)](multitasking-images/keyboard03.png#lightbox)
 
-実装の例については、サンプルのマルチ[タスキングアプリ](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-multitask)を参照してください。
+実装の例については、サンプルのマルチ [タスキングアプリ](/samples/xamarin/ios-samples/ios9-multitask) を参照してください。
 
 <a name="Resource-Management-Considerations"></a>
 
@@ -208,17 +208,17 @@ IOS 8 の設計ガイドとベストプラクティスを既に使用してい�
 
 次のユーザー操作とその影響について考えてみましょう。
 
-- **パネル上のスライドにテキストを入力**する-アプリにテキスト入力がない場合でも、システムキーボードを UI の上に表示できるようになりました。 その結果、アプリはキーボード表示通知 (キーボードの表示や非表示など) に応答する必要がある場合があります。
-- **パネル上のスライドで2つ目のアプリを実行**する-新しいアプリはフォアグラウンドで実行され、メモリや CPU サイクルなどのシステムリソースの既存のアプリと競合します。
-- **PIP ウィンドウでビデオを再生**する-このウィンドウがアプリのインターフェイスの一部をカバーするだけでなく、ビデオを起動したアプリがバックグラウンドで実行されていて、CPU とメモリのリソースを消費している場合もあります。
+- **パネル上のスライドにテキストを入力** する-アプリにテキスト入力がない場合でも、システムキーボードを UI の上に表示できるようになりました。 その結果、アプリはキーボード表示通知 (キーボードの表示や非表示など) に応答する必要がある場合があります。
+- **パネル上のスライドで2つ目のアプリを実行** する-新しいアプリはフォアグラウンドで実行され、メモリや CPU サイクルなどのシステムリソースの既存のアプリと競合します。
+- **PIP ウィンドウでビデオを再生** する-このウィンドウがアプリのインターフェイスの一部をカバーするだけでなく、ビデオを起動したアプリがバックグラウンドで実行されていて、CPU とメモリのリソースを消費している場合もあります。
 
 アプリがリソースを効率的に使用していることを確認するには、次の手順を実行する必要があります。
 
-- **インストルメント化されたアプリのプロファイル**-メモリリーク、overt CPU 使用率、アプリがメインスレッドをブロックしている可能性がある領域を確認します。
-- **状態遷移メソッドに応答**します。 **AppDelegate.cs**ファイルでは、アプリがバックグラウンドで入力または返すなどの状態変更メソッドに対してオーバーライドおよび応答を行います。 イメージ、データ、ビュー、ビューコントローラーなど、不要なアセットを解放します。
-- **メモリを集中的に使用するアプリとのサイドバイサイドのテスト**-マップ (サテライトビューモード) などのメモリを集中的に使用するアプリを使用して、物理 iOS ハードウェア上のスライドアウトと分割ビューの両方を使用してアプリを実行し、両方のアプリの応答性が維持され、クラッシュしないことをテストします。
+- **インストルメント化されたアプリのプロファイル** -メモリリーク、overt CPU 使用率、アプリがメインスレッドをブロックしている可能性がある領域を確認します。
+- **状態遷移メソッドに応答** します。 **AppDelegate.cs** ファイルでは、アプリがバックグラウンドで入力または返すなどの状態変更メソッドに対してオーバーライドおよび応答を行います。 イメージ、データ、ビュー、ビューコントローラーなど、不要なアセットを解放します。
+- **メモリを集中的に使用するアプリとのサイドバイサイドのテスト** -マップ (サテライトビューモード) などのメモリを集中的に使用するアプリを使用して、物理 iOS ハードウェア上のスライドアウトと分割ビューの両方を使用してアプリを実行し、両方のアプリの応答性が維持され、クラッシュしないことをテストします。
 
-リソース管理の詳細については、「 [IOS アプリ用の Apple のエネルギー効率ガイド](https://developer.apple.com/library/prerelease/ios/documentation/Performance/Conceptual/EnergyGuide-iOS/index.html#//apple_ref/doc/uid/TP40015243)」を参照してください。
+リソース管理の詳細については、「 [IOS アプリ用の Apple のエネルギー効率ガイド](https://developer.apple.com/library/prerelease/ios/documentation/Performance/Conceptual/EnergyGuide-iOS/index.html#//apple_ref/doc/uid/TP40015243) 」を参照してください。
 
 <a name="Opting-Out-of-Multitasking"></a>
 
@@ -226,7 +226,7 @@ IOS 8 の設計ガイドとベストプラクティスを既に使用してい�
 
 Apple は、すべての iOS 9 アプリでマルチタスキングがサポートされていることを示唆していますが、全画面を正しく動作させる必要があるゲームやカメラアプリなど、アプリについても非常に具体的な理由が考えられます。
 
-Xamarin iOS アプリが、スライドアウトパネルまたは分割ビューモードで実行されないようにするには、プロジェクトの**情報 plist**ファイルを編集し、[**全画面表示が必要]** チェックボックスをオンにします。
+Xamarin iOS アプリが、スライドアウトパネルまたは分割ビューモードで実行されないようにするには、プロジェクトの **情報 plist** ファイルを編集し、[ **全画面表示が必要]** チェックボックスをオンにします。
 
 [![マルチタスキングの無効化](multitasking-images/fullscreen01.png)](multitasking-images/fullscreen01.png#lightbox)
 
@@ -253,8 +253,8 @@ PIP ビデオの再生を無効にするには、アプリで次の操作を行�
 
 ## <a name="related-links"></a>関連リンク
 
-- [iOS 9 のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS9)
-- [マルチタスク (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-multitask)
+- [iOS 9 のサンプル](/samples/browse/?products=xamarin&term=Xamarin.iOS%2biOS9)
+- [マルチタスク (サンプル)](/samples/xamarin/ios-samples/ios9-multitask)
 - [統合されたストーリーボードの概要](~/ios/user-interface/storyboards/unified-storyboards.md)
 - [iOS 9 (開発者向け)](https://developer.apple.com/ios/pre-release/)
 - [iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)

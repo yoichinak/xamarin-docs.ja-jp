@@ -7,24 +7,24 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 8ed83ee8f0bded6258b695f7a6383cda1929f542
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: db4cab313b1c1f2fc1aaa969735f7f136feb7015
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997086"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91429690"
 ---
 # <a name="creating-custom-controls-in-xamarinmac"></a>Xamarin. Mac でカスタムコントロールを作成する
 
-Xamarin. Mac アプリケーションで C# と .NET を使用する場合、Xcode、 *Swift* *、および* *Xcode*で作業する開発者が同じユーザーコントロールにアクセスできます。 Xcode は直接統合されているため、Xcode の_Interface Builder_を使用してユーザーコントロールを作成および管理できます (または、必要に応じて C# コードで直接作成することもできます)。
+Xamarin. Mac アプリケーションで C# と .NET を使用する場合、Xcode、 *Swift* *、および* *Xcode*で作業する開発者が同じユーザーコントロールにアクセスできます。 Xcode は直接統合されているため、Xcode の _Interface Builder_ を使用してユーザーコントロールを作成および管理できます (または、必要に応じて C# コードで直接作成することもできます)。
 
 MacOS には豊富な組み込みのユーザーコントロールが用意されていますが、カスタムコントロールを作成して、すぐには提供されない機能を提供したり、カスタム UI テーマ (ゲームインターフェイスなど) と一致させたりすることが必要になる場合があります。
 
 [![カスタム UI コントロールの例](custom-controls-images/intro01.png)](custom-controls-images/intro01.png#lightbox)
 
-この記事では、Xamarin. Mac アプリケーションで再利用可能なカスタムユーザーインターフェイスコントロールを作成するための基本について説明します。 この記事で使用する主要な概念と手法について説明しているように、最初に[Hello, Mac](~/mac/get-started/hello-mac.md)の記事「 [Xcode と Interface Builder の概要](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)」と「[アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions)」セクションをご覧になることを強くお勧めします。
+この記事では、Xamarin. Mac アプリケーションで再利用可能なカスタムユーザーインターフェイスコントロールを作成するための基本について説明します。 この記事で使用する主要な概念と手法について説明しているように、最初に [Hello, Mac](~/mac/get-started/hello-mac.md) の記事「 [Xcode と Interface Builder の概要](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) 」と「 [アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions) 」セクションをご覧になることを強くお勧めします。
 
-「 [C# のクラス/メソッドを](~/mac/internals/how-it-works.md) [Xamarin. Mac の内部](~/mac/internals/how-it-works.md)ドキュメントの前に公開する」セクションを参照して `Register` `Export` ください。 c# クラスを目的の c オブジェクトと UI 要素に接続するために使用されるコマンドとコマンドについても説明します。
+「 [C# のクラス/メソッドを](~/mac/internals/how-it-works.md) [Xamarin. Mac の内部](~/mac/internals/how-it-works.md) ドキュメントの前に公開する」セクションを参照して `Register` `Export` ください。 c# クラスを目的の c オブジェクトと UI 要素に接続するために使用されるコマンドとコマンドについても説明します。
 
 <a name="Introduction-to-Outline-Views"></a>
 
@@ -126,7 +126,7 @@ namespace MacCustomControl
 }
 ```
 
-では、から継承 `NSControl` し、 **Register**コマンドを使用して、このクラスを目的の C と Xcode の Interface Builder に公開しているので、カスタムクラスについて最初に説明します。
+では、から継承 `NSControl` し、 **Register** コマンドを使用して、このクラスを目的の C と Xcode の Interface Builder に公開しているので、カスタムクラスについて最初に説明します。
 
 ```csharp
 [Register("NSFlipSwitch")]
@@ -157,7 +157,7 @@ public bool Value {
 
 スイッチの状態が変化したときに、UI を更新する方法が必要です。 これを行うには、コントロールの UI を強制的にに再描画し `NeedsDisplay = true` ます。
 
-コントロールで1つのオン/オフ状態 (たとえば、3つの位置を持つマルチ状態スイッチ) が必要である場合は、**列挙型**を使用して状態を追跡できます。 この例では、単純な**ブール**値が使用されます。
+コントロールで1つのオン/オフ状態 (たとえば、3つの位置を持つマルチ状態スイッチ) が必要である場合は、 **列挙型** を使用して状態を追跡できます。 この例では、単純な **ブール** 値が使用されます。
 
 また、オンとオフの切り替えの状態をスワップするヘルパーメソッドも追加しました。
 
@@ -206,13 +206,13 @@ public override void DrawRect (CGRect dirtyRect)
 }
 ```
 
-コントロールの状態が変化したときに、コントロールの視覚的表現を調整します (**オン**から**オフ**への移動など)。 状態が変化するたびに、コマンドを使用して、 `NeedsDisplay = true` コントロールを強制的に新しい状態に再描画できます。
+コントロールの状態が変化したときに、コントロールの視覚的表現を調整します ( **オン** から **オフ**への移動など)。 状態が変化するたびに、コマンドを使用して、 `NeedsDisplay = true` コントロールを強制的に新しい状態に再描画できます。
 
 <a name="Responding-to-User-Input"></a>
 
 ### <a name="responding-to-user-input"></a>ユーザー入力への応答
 
-カスタムコントロールにユーザー入力を追加できる基本的な方法が2つあります。**マウス処理ルーチン**や**ジェスチャレコグナイザー**をオーバーライドします。 使用する方法は、コントロールが必要とする機能に基づいています。
+カスタムコントロールにユーザー入力を追加できる基本的な方法が2つあります。 **マウス処理ルーチン** や **ジェスチャレコグナイザー**をオーバーライドします。 使用する方法は、コントロールが必要とする機能に基づいています。
 
 > [!IMPORTANT]
 > 作成するカスタムコントロールについては、**オーバーライドメソッド**_と_**ジェスチャレコグナイザー**のどちらかを使用する必要がありますが、両方を同時に競合させることはできません。
@@ -221,7 +221,7 @@ public override void DrawRect (CGRect dirtyRect)
 
 #### <a name="handling-user-input-with-override-methods"></a>オーバーライドメソッドを使用したユーザー入力の処理
 
-(または) を継承するオブジェクトには、 `NSControl` `NSView` マウスまたはキーボード入力を処理するためのオーバーライドメソッドがいくつかあります。 このコントロールの例では、ユーザーがマウスの左ボタンを使用してコントロールをクリックしたときの**オン**と**オフ**の切り替えの状態を切り替えます。 次のオーバーライドメソッドをクラスに追加して、 `NSFlipSwitch` これを処理できます。
+(または) を継承するオブジェクトには、 `NSControl` `NSView` マウスまたはキーボード入力を処理するためのオーバーライドメソッドがいくつかあります。 このコントロールの例では、ユーザーがマウスの左ボタンを使用してコントロールをクリックしたときの **オン** と **オフ** の切り替えの状態を切り替えます。 次のオーバーライドメソッドをクラスに追加して、 `NSFlipSwitch` これを処理できます。
 
 ```csharp
 #region Mouse Handling Methods
@@ -317,14 +317,14 @@ private void FlipSwitchState() {
 
 まず、 `ValueChanged` ユーザーがスイッチの状態を変更したときにアクションを実行できるように、C# コードでハンドラーをに追加できるイベントを提供します。
 
-次に、カスタムコントロールはから継承するため、 `NSControl` Xcode の Interface Builder で割り当てることができる**アクション**が自動的に設定されます。 状態が変化したときにこの**アクション**を呼び出すには、次のコードを使用します。
+次に、カスタムコントロールはから継承するため、 `NSControl` Xcode の Interface Builder で割り当てることができる **アクション** が自動的に設定されます。 状態が変化したときにこの **アクション** を呼び出すには、次のコードを使用します。
 
 ```csharp
 if (this.Action !=null)
     NSApplication.SharedApplication.SendAction (this.Action, this.Target, this);
 ```
 
-まず、コントロールに**アクション**が割り当てられているかどうかを確認します。 次に、アクションが定義されている場合は、その**アクション**を呼び出します。
+まず、コントロールに **アクション** が割り当てられているかどうかを確認します。 次に、アクションが定義されている場合は、その **アクション** を呼び出します。
 
 <a name="Using-the-Custom-Control"></a>
 
@@ -340,7 +340,7 @@ Interface Builder を使用してコントロールを追加するには、ま�
 
 [![ライブラリからカスタムビューを選択する](custom-controls-images/custom03.png)](custom-controls-images/custom03.png#lightbox)
 
-カスタムビューが選択された状態で、 **Id インスペクター**に切り替えて、ビューの**クラス**を次のように変更し `NSFlipSwitch` ます。
+カスタムビューが選択された状態で、 **Id インスペクター** に切り替えて、ビューの **クラス** を次のように変更し `NSFlipSwitch` ます。
 
 [![ビューのクラスの設定](custom-controls-images/custom04.png)](custom-controls-images/custom04.png#lightbox)
 
@@ -363,9 +363,9 @@ public override void ViewDidLoad ()
 }
 ```
 
-ここでは、 `ValueChanged` クラスで上で定義したイベントに応答 `NSFlipSwitch` し、ユーザーがコントロールをクリックしたときに現在の**値**を書き込みます。
+ここでは、 `ValueChanged` クラスで上で定義したイベントに応答 `NSFlipSwitch` し、ユーザーがコントロールをクリックしたときに現在の **値** を書き込みます。
 
-必要に応じて Interface Builder に戻り、コントロールの**アクション**を定義することもできます。
+必要に応じて Interface Builder に戻り、コントロールの **アクション** を定義することもできます。
 
 [![新しいアクションの構成](custom-controls-images/custom06.png)](custom-controls-images/custom06.png#lightbox)
 
@@ -379,7 +379,7 @@ partial void OptionTwoFlipped (Foundation.NSObject sender) {
 ```
 
 > [!IMPORTANT]
-> Interface Builder では、**イベント**を使用するか、**アクション**を定義する必要がありますが、両方の方法を同時に使用したり、互いに競合させたりすることはできません。
+> Interface Builder では、 **イベント** を使用するか、 **アクション** を定義する必要がありますが、両方の方法を同時に使用したり、互いに競合させたりすることはできません。
 
 <a name="Summary"></a>
 
@@ -389,7 +389,7 @@ partial void OptionTwoFlipped (Foundation.NSObject sender) {
 
 ## <a name="related-links"></a>関連リンク
 
-- [MacCustomControl (サンプル)](https://docs.microsoft.com/samples/xamarin/mac-samples/maccustomcontrol)
+- [MacCustomControl (サンプル)](/samples/xamarin/mac-samples/maccustomcontrol)
 - [Hello Mac](~/mac/get-started/hello-mac.md)
 - [データ バインディングとキー値コーディング](~/mac/app-fundamentals/databinding.md)
 - [OS X ヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)

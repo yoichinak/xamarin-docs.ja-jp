@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: f65b4f8f97059858067df8c847bc9ed181c8cc4c
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: dd79c2059d53702d947a966327bf22b2043d36c5
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86932679"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91429945"
 ---
 # <a name="customizing-a-tables-appearance-in-xamarinios"></a>Xamarin でのテーブルの外観のカスタマイズ
 
@@ -23,7 +23,7 @@ ms.locfileid: "86932679"
 次の4つの組み込みスタイルがあります。
 
 - **Default** –をサポート `UIImageView` します。
-- **サブタイトル**–とのサブタイトルをサポートし `UIImageView` ます。
+- **サブタイトル** –とのサブタイトルをサポートし `UIImageView` ます。
 - **Value1** –右にアラインされたサブタイトルは、をサポート `UIImageView` します。
 - **Value2** –タイトルは右揃えになり、サブタイトルは左揃えになります (ただし、イメージは含まれません)。
 
@@ -31,7 +31,7 @@ ms.locfileid: "86932679"
 
  [![これらのスクリーンショットは、各スタイルの表示方法を示しています。](customizing-table-appearance-images/image7.png)](customizing-table-appearance-images/image7.png#lightbox)
 
-サンプルの**Celldefaulttable**には、これらの画面を生成するためのコードが含まれています。 セルスタイルは、次のようにコンストラクターで設定され `UITableViewCell` ます。
+サンプルの **Celldefaulttable** には、これらの画面を生成するためのコードが含まれています。 セルスタイルは、次のようにコンストラクターで設定され `UITableViewCell` ます。
 
 ```csharp
 cell = new UITableViewCell (UITableViewCellStyle.Default, cellIdentifier);
@@ -40,7 +40,7 @@ cell = new UITableViewCell (UITableViewCellStyle.Default, cellIdentifier);
 //cell = new UITableViewCell (UITableViewCellStyle.Value2, cellIdentifier);
 ```
 
-[サポートされている](xref:UIKit.UITableViewCell)セルスタイルのプロパティは、次のように設定できます。
+[サポートされている](xref:UIKit.UITableViewCell) セルスタイルのプロパティは、次のように設定できます。
 
 ```csharp
 cell.TextLabel.Text = tableItems[indexPath.Row].Heading;
@@ -48,12 +48,12 @@ cell.DetailTextLabel.Text = tableItems[indexPath.Row].SubHeading;
 cell.ImageView.Image = UIImage.FromFile("Images/" + tableItems[indexPath.Row].ImageName); // don't use for Value2
 ```
 
-## <a name="accessories"></a>アクセサリ
+## <a name="accessories"></a>Accessories
 
 セルでは、次のアクセサリをビューの右側に追加できます。
 
-- **チェックマーク**–テーブルの複数選択を示すために使用できます。
-- **[入力] ボタン**–セルの残りの部分とは無関係にタッチに応答します。これにより、別の関数を実行してセル自体に触れることができます (たとえば、ポップアップやスタックの一部ではない新しいウィンドウを開くなど `UINavigationController` )。
+- **チェックマーク** –テーブルの複数選択を示すために使用できます。
+- **[入力] ボタン** –セルの残りの部分とは無関係にタッチに応答します。これにより、別の関数を実行してセル自体に触れることができます (たとえば、ポップアップやスタックの一部ではない新しいウィンドウを開くなど `UINavigationController` )。
 - **DisclosureIndicator** –通常、セルをタッチすると別のビューが開くことを示すために使用します。
 - **DetailDisclosureButton** –との組み合わせ `DetailButton` `DisclosureIndicator` 。
 
@@ -83,7 +83,7 @@ public override void AccessoryButtonTapped (UITableView tableView, NSIndexPath i
 }
 ```
 
-サンプル**CellAccessoryTable**は、アクセサリを使用した例を示しています。
+サンプル **CellAccessoryTable** は、アクセサリを使用した例を示しています。
 
 ## <a name="cell-separators"></a>セル区切り記号
 
@@ -123,8 +123,8 @@ CellCustomTable の例では、 `UITableViewCell` のカスタムレイアウト
 カスタムセルクラスは、次の3つのメソッドのみで構成されます。
 
 - **コンストラクター** – UI コントロールを作成し、カスタムスタイルプロパティを設定します (例: フォントフェイス、サイズ、および色)。
-- **UpdateCell** – `UITableView.GetCell` セルのプロパティを設定するために使用するのメソッド。
-- **Layoutsubviews**ビュー– UI コントロールの位置を設定します。 この例では、すべてのセルに同じレイアウトが使用されていますが、表示されるコンテンツによっては、より複雑なセル (特にサイズが変化する) でレイアウト位置が異なる場合があります。
+- **UpdateCell** –  `UITableView.GetCell` セルのプロパティを設定するために使用するのメソッド。
+- **Layoutsubviews** ビュー– UI コントロールの位置を設定します。 この例では、すべてのセルに同じレイアウトが使用されていますが、表示されるコンテンツによっては、より複雑なセル (特にサイズが変化する) でレイアウト位置が異なる場合があります。
 
 **Cellcustomtable > CustomVegeCell.cs**の完全なサンプルコードは次のとおりです。
 
@@ -184,4 +184,4 @@ public override UITableViewCell GetCell (UITableView tableView, NSIndexPath inde
 
 ## <a name="related-links"></a>関連リンク
 
-- [WorkingWithTables (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithtables)
+- [WorkingWithTables (サンプル)](/samples/xamarin/ios-samples/workingwithtables)

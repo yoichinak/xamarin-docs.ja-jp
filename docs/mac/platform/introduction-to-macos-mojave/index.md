@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 8c296e32fd0d1491c83ea3cb16e0921c0f0c5f12
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: dc3def5d5c709515574a72cf9f61d71d67690d87
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73017043"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91429704"
 ---
 # <a name="introduction-to-macos-mojave"></a>macOS Mojave の概要
 
@@ -38,14 +38,14 @@ Xamarin を使用した macOS Mojave アプリの構築を開始するには、 
 
 ## <a name="network-framework"></a>ネットワークフレームワーク
 
-Network framework は、iOS アプリケーションで一般的に使用される `URLSession` Api の基礎となるネットワークスタックをスタンドアロンフレームワークとして使用できるようになり、TCP、UDP、TLS、IPv4/IPv6 などを簡単に操作できるようになりました。
+IOS アプリケーションで一般的に使用されている api の基礎となるネットワークスタック `URLSession` が、スタンドアロンフレームワークとして使用できるようになりました。これにより、TCP、UDP、TLS、IPv4/IPv6 などを簡単に操作できます。
 
-## <a name="deprecations"></a>廃止
+## <a name="deprecations"></a>廃止予定
 
-MacOS Mojave では、Apple は OpenGL ES と OpenCL を非推奨にし、[開発者](https://developer.apple.com/macos/whats-new/)が金属および金属のパフォーマンスシェーダーを採用するようにしています。
+MacOS Mojave では、Apple は OpenGL ES と OpenCL を非推奨にし、 [開発者](https://developer.apple.com/macos/whats-new/) が金属および金属のパフォーマンスシェーダーを採用するようにしています。
 
 ## <a name="related-links"></a>関連リンク
 
-- [Xamarin. Mac サンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac)
+- [Xamarin.Mac サンプル](/samples/browse/?products=xamarin&term=Xamarin.Mac)
 - [macOS – Apple Developer](https://developer.apple.com/macos/)
-- [Xamarin. Mac 5.0 リリースノート](https://docs.microsoft.com/xamarin/mac/release-notes/5/5.0/)
+- [Xamarin. Mac 5.0 リリースノート](/xamarin/mac/release-notes/5/5.0/)

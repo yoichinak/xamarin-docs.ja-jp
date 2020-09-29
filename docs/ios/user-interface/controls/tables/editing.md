@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: c022c1af78a5a3800cd61096c3f142c1ed0235e7
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 3a33c2191f39ea72113a1d7eab660e1a172f752f
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86930937"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430881"
 ---
 # <a name="editing-tables-with-xamarinios"></a>Xamarin を使用したテーブルの編集
 
@@ -25,11 +25,11 @@ ms.locfileid: "86930937"
 
  [![スワイプして削除する例](editing-images/image10.png)](editing-images/image10.png#lightbox)
 
-セルに**Delete**ボタンを表示するには、スワイプジェスチャに影響するメソッドオーバーライドが3つあります。
+セルに **Delete** ボタンを表示するには、スワイプジェスチャに影響するメソッドオーバーライドが3つあります。
 
-- **Commit編集スタイル**–テーブルソースは、このメソッドがオーバーライドされたかどうかを検出し、スワイプして自動的に削除するジェスチャを有効にします。 メソッドの実装では、でを呼び出して、 `DeleteRows` `UITableView` セルを非表示にしたり、モデルから基になるデータ (配列、ディクショナリ、データベースなど) を削除したりする必要があります。 
+- **Commit編集スタイル** –テーブルソースは、このメソッドがオーバーライドされたかどうかを検出し、スワイプして自動的に削除するジェスチャを有効にします。 メソッドの実装では、でを呼び出して、  `DeleteRows`  `UITableView` セルを非表示にしたり、モデルから基になるデータ (配列、ディクショナリ、データベースなど) を削除したりする必要があります。 
 - **Caneditrow** – Commit編集スタイルがオーバーライドされると、すべての行が編集可能であると見なされます。 このメソッドが実装されていて、false (特定の行またはすべての行) が返された場合、そのセルでは、[削除] ジェスチャを使用できません。 
-- **TitleForDeleteConfirmation** –必要に応じて、[**削除**] ボタンのテキストを指定します。 このメソッドが実装されていない場合、ボタンのテキストは "Delete" になります。 
+- **TitleForDeleteConfirmation** –必要に応じて、[  **削除** ] ボタンのテキストを指定します。 このメソッドが実装されていない場合、ボタンのテキストは "Delete" になります。 
 
 これらのメソッドは、クラスで次のように実装され `TableSource` ます。
 
@@ -119,7 +119,7 @@ public override void MoveRow (UITableView tableView, NSIndexPath sourceIndexPath
 table.SetEditing (true, true);
 ```
 
-また、ユーザーの編集が完了したら、[**完了**] ボタンをクリックして編集モードをオフにする必要があります。
+また、ユーザーの編集が完了したら、[ **完了** ] ボタンをクリックして編集モードをオフにする必要があります。
 
 ```csharp
 table.SetEditing (false, true);
@@ -127,20 +127,20 @@ table.SetEditing (false, true);
 
 ## <a name="row-insertion-editing-style"></a>行の挿入の編集スタイル
 
-テーブル内からの行の挿入は、一般的ではないユーザーインターフェイスです。標準的な iOS アプリの主な例は、[**連絡先の編集**] 画面です。 このスクリーンショットは、行の挿入機能のしくみを示しています。編集モードでは、追加の行が追加されています (クリックすると、追加の行がデータに挿入されます)。 編集が完了すると、一時的な **([新規追加])** 行が削除されます。
+テーブル内からの行の挿入は、一般的ではないユーザーインターフェイスです。標準的な iOS アプリの主な例は、[ **連絡先の編集** ] 画面です。 このスクリーンショットは、行の挿入機能のしくみを示しています。編集モードでは、追加の行が追加されています (クリックすると、追加の行がデータに挿入されます)。 編集が完了すると、一時的な **([新規追加])** 行が削除されます。
 
  [![編集が完了すると、一時的な [新しい行の追加] が削除されます。](editing-images/image12.png)](editing-images/image12.png#lightbox)
 
 には、テーブルの編集モードの動作に影響するさまざまなメソッドがいくつかあり `UITableViewSource` ます。 これらのメソッドは、コード例で次のように実装されています。
 
-- **編集スタイル Forrow** – `UITableViewCellEditingStyle.Delete` データを含む行に対してを返し、 `UITableViewCellEditingStyle.Insert` 最後の行に対してを返します (挿入ボタンとして動作するように特別に追加されます)。 
-- **カスタマイズの Emovetarget** –ユーザーがセルを移動するときに、この省略可能なメソッドから戻り値を使用して、場所の選択をオーバーライドできます。 つまり、この例では、 **(新しい行の追加)** 行の後に行が移動されないようにするために、特定の位置にあるセルが "ドロップ" されるのを防ぐことができます。 
+- **編集スタイル Forrow** –  `UITableViewCellEditingStyle.Delete` データを含む行に対してを返し、  `UITableViewCellEditingStyle.Insert` 最後の行に対してを返します (挿入ボタンとして動作するように特別に追加されます)。 
+- **カスタマイズの Emovetarget** –ユーザーがセルを移動するときに、この省略可能なメソッドから戻り値を使用して、場所の選択をオーバーライドできます。 つまり、この例では、  **(新しい行の追加)** 行の後に行が移動されないようにするために、特定の位置にあるセルが "ドロップ" されるのを防ぐことができます。 
 - **CanMoveRow** – move ' handle ' または false を有効にして移動を回避するには true を返します。 この例では、最後の行の move ' handle ' が非表示になっています。これは、サーバーを insert ボタンとして使用するためです。 
 
-また、"insert" 行を追加する2つのカスタムメソッドを追加し、不要になったときにもう一度削除します。 これらは、[**編集**] ボタンと [**完了**] ボタンから呼び出されます。
+また、"insert" 行を追加する2つのカスタムメソッドを追加し、不要になったときにもう一度削除します。 これらは、[ **編集** ] ボタンと [ **完了** ] ボタンから呼び出されます。
 
-- **Begintableedit** – [**編集**] ボタンに触れると、が呼び出され `SetEditing` 、テーブルが編集モードになります。 これにより、"挿入ボタン" として機能するために、テーブルの末尾に **(新しい行の追加)** 行が表示されている場合に、このメソッドがトリガーされます。 
-- **DidFinishTableEditing** – [完了] ボタンがタッチされたときに、 `SetEditing` 編集モードを無効にするためにもう一度呼び出されます。 このコード例では、編集が不要になったときに、テーブルから **(add new)** 行を削除します。 
+- **Begintableedit** – [  **編集** ] ボタンに触れると、が呼び出され  `SetEditing` 、テーブルが編集モードになります。 これにより、"挿入ボタン" として機能するために、テーブルの末尾に  **(新しい行の追加)** 行が表示されている場合に、このメソッドがトリガーされます。 
+- **DidFinishTableEditing** – [完了] ボタンがタッチされたときに、  `SetEditing` 編集モードを無効にするためにもう一度呼び出されます。 このコード例では、編集が不要になったときに、テーブルから  **(add new)** 行を削除します。 
 
 これらのメソッドのオーバーライドは、 **Tableeditmodeadd/Code/Tableource**というサンプルファイルに実装されています。
 
@@ -194,7 +194,7 @@ public void DidFinishTableEditing (UITableView tableView)
 }
 ```
 
-最後に、このコードでは、編集モードと完了時に編集モードを有効または無効にするラムダを使用して、 **edit**および**Done**ボタンをインスタンス化しています。
+最後に、このコードでは、編集モードと完了時に編集モードを有効または無効にするラムダを使用して、 **edit** および **Done** ボタンをインスタンス化しています。
 
 ```csharp
 done = new UIBarButtonItem(UIBarButtonSystemItem.Done, (s,e)=>{
@@ -216,4 +216,4 @@ edit = new UIBarButtonItem(UIBarButtonSystemItem.Edit, (s,e)=>{
 
 ## <a name="related-links"></a>関連リンク
 
-- [WorkingWithTables (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithtables)
+- [WorkingWithTables (サンプル)](/samples/xamarin/ios-samples/workingwithtables)

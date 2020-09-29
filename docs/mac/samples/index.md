@@ -7,38 +7,38 @@ ms.technology: xamarin-mac
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 12/31/2019
-ms.openlocfilehash: 3d3d32dcf48659f295c579fff6ffe8d09abf10d0
-ms.sourcegitcommit: 5821c9709bf5e06e6126233932f94f9cf3524577
+ms.openlocfilehash: 816c60ee0c981775a5cd4c67acb02658b0a03a9d
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75558717"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91429569"
 ---
 # <a name="xamarinmac-samples"></a>Xamarin.Mac サンプル
 
 Xamarin.Mac のサンプル アプリとコード デモを参考にして、C# と Xamarin でモバイル アプリを構築してみてください。
 
-[すべての Xamarin. Mac サンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac)
+[すべての Xamarin. Mac サンプル](/samples/browse/?products=xamarin&term=Xamarin.Mac)
 
 :::row:::
     :::column:::
-[!["Hello, Mac"](images/hellomac.png)](https://docs.microsoft.com/samples/xamarin/mac-samples/hello-mac/)
+[!["Hello, Mac"](images/hellomac.png)](/samples/xamarin/mac-samples/hello-mac/)
 
-### <a name="hello-machttpsdocsmicrosoftcomsamplesxamarinmac-sampleshello-mac"></a>[Hello Mac](https://docs.microsoft.com/samples/xamarin/mac-samples/hello-mac/)
+### <a name="hello-mac"></a>[Hello Mac](/samples/xamarin/mac-samples/hello-mac/)
 
 Mac 開発を開始するための Hello World アプリです。
     :::column-end:::
     :::column:::
-[!["MacControls" の](images/controls.png)](https://docs.microsoft.com/samples/xamarin/mac-samples/maccontrols/)
+[!["MacControls"](images/controls.png)](/samples/xamarin/mac-samples/maccontrols/)
 
-### <a name="maccontrolshttpsdocsmicrosoftcomsamplesxamarinmac-samplesmaccontrols"></a>[MacControls](https://docs.microsoft.com/samples/xamarin/mac-samples/maccontrols/)
+### <a name="maccontrols"></a>[MacControls](/samples/xamarin/mac-samples/maccontrols/)
 
 Mac アプリの UI コントロールの例です。
     :::column-end:::
     :::column:::
-[!["MacImages" を](images/images.png)](https://docs.microsoft.com/samples/xamarin/mac-samples/macimages/)
+[!["MacImages"](images/images.png)](/samples/xamarin/mac-samples/macimages/)
 
-### <a name="macimageshttpsdocsmicrosoftcomsamplesxamarinmac-samplesmacimages"></a>[MacImages](https://docs.microsoft.com/samples/xamarin/mac-samples/macimages/)
+### <a name="macimages"></a>[MacImages](/samples/xamarin/mac-samples/macimages/)
 
 Mac アプリの UI コントロールの例です。
     :::column-end:::
@@ -46,9 +46,9 @@ Mac アプリの UI コントロールの例です。
 
 :::row:::
     :::column:::
-[!["SourceWriter" の](images/sourcewriter.png)](https://docs.microsoft.com/samples/xamarin/mac-samples/sourcewriter/)
+[![SourceWriter](images/sourcewriter.png)](/samples/xamarin/mac-samples/sourcewriter/)
 
-### <a name="sourcewriterhttpsdocsmicrosoftcomsamplesxamarinmac-samplessourcewriter"></a>[SourceWriter](https://docs.microsoft.com/samples/xamarin/mac-samples/sourcewriter/)
+### <a name="sourcewriter"></a>[SourceWriter](/samples/xamarin/mac-samples/sourcewriter/)
 
 コードの完了と構文の強調表示をサポートするシンプルなエディターです。
     :::column-end:::
@@ -60,4 +60,4 @@ Mac アプリの UI コントロールの例です。
 
 ## <a name="all-samples"></a>すべてのサンプル
 
-Xamarin サンプルアプリとコードデモの完全なセットについては、[すべての xamarin. mac サンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac)を参照してください。
+Xamarin サンプルアプリとコードデモの完全なセットについては、 [すべての xamarin. mac サンプル](/samples/browse/?products=xamarin&term=Xamarin.Mac)を参照してください。

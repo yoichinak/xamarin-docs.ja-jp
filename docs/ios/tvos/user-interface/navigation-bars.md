@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/16/2017
-ms.openlocfilehash: 0f3c91e175e5ccdefeaf3d6c9c83e9eb3e012e14
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 3ee159eaaf4a124f652b083e4dd7341909f52d82
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86935396"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433118"
 ---
 # <a name="working-with-tvos-navigation-bars-in-xamarin"></a>Xamarin での tvOS ナビゲーションバーの使用
 
@@ -37,10 +37,10 @@ TvOS アプリのナビゲーションバーを操作する最も簡単な方法
 1. **ツールボックス**から**ナビゲーションバー**をドラッグし、画面の上部にあるビューにドロップします。
 
     [![ナビゲーションバー](navigation-bars-images/navbar02.png)](navigation-bars-images/navbar02.png#lightbox)
-1. ナビゲーション**バー**をダブルクリックして、[**ナビゲーション項目**] を選択します。 **Properties Pad**の [**ウィジェット**] タブで、次のように**タイトル**を設定できます。
+1. ナビゲーション **バー** をダブルクリックして、[ **ナビゲーション項目**] を選択します。 **Properties Pad**の [**ウィジェット**] タブで、次のように**タイトル**を設定できます。
 
     [![タイトルの設定](navigation-bars-images/navbar03.png)](navigation-bars-images/navbar03.png#lightbox)
-1. 次に、バーの両端に1つまたは複数の**バーボタン項目**を追加できます。
+1. 次に、バーの両端に1つまたは複数の **バーボタン項目** を追加できます。
 
     [![バーボタンの項目](navigation-bars-images/navbar04.png)](navigation-bars-images/navbar04.png#lightbox)
 1. 最後に、**プロパティエクスプローラー**の [**イベント**] タブで、**バーボタンの項目**を操作に接続します。
@@ -54,10 +54,10 @@ TvOS アプリのナビゲーションバーを操作する最も簡単な方法
 1. **ツールボックス**から**ナビゲーションバー**をドラッグし、画面の上部にあるビューにドロップします。
 
     [![ナビゲーションバー](navigation-bars-images/navbar02-vs.png)](navigation-bars-images/navbar02-vs.png#lightbox)
-1. ナビゲーション**バー**をダブルクリックして、[**ナビゲーション項目**] を選択します。 **プロパティエクスプローラー**の [**ウィジェット**] タブで、次のように**タイトル**を設定できます。
+1. ナビゲーション **バー** をダブルクリックして、[ **ナビゲーション項目**] を選択します。 **プロパティエクスプローラー**の [**ウィジェット**] タブで、次のように**タイトル**を設定できます。
 
     [![タイトルの設定](navigation-bars-images/navbar03-vs.png)](navigation-bars-images/navbar03-vs.png#lightbox)
-1. 次に、バーの両端に1つまたは複数の**バーボタン項目**を追加できます。
+1. 次に、バーの両端に1つまたは複数の **バーボタン項目** を追加できます。
 
     [![バーボタン項目](navigation-bars-images/navbar04-vs.png)](navigation-bars-images/navbar04-vs.png#lightbox)
 1. 最後に、**プロパティエクスプローラー**の [**イベント**] タブで、**バーボタンの項目**を操作に接続します。
@@ -133,7 +133,7 @@ namespace MySingleView
 
 ## <a name="related-links"></a>関連リンク
 
-- [tvOS のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+tvOS)
+- [tvOS のサンプル](/samples/browse/?products=xamarin&term=Xamarin.iOS%2btvOS)
 - [tvOS](https://developer.apple.com/tvos/)
 - [tvOS ヒューマンインターフェイスガイド](https://developer.apple.com/tvos/human-interface-guidelines/)
 - [TvOS のアプリプログラミングガイド](https://developer.apple.com/library/prerelease/tvos/documentation/General/Conceptual/AppleTV_PG/)

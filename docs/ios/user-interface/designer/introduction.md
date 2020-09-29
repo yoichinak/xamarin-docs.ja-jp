@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 01/31/2018
-ms.openlocfilehash: e5cbbc10f189abb6d0d0b2ef99b50ae53d1103c2
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 7c6b5a4dd2f6f5d4992d84d5d8690a6dda3d20e3
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84572287"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91432766"
 ---
 # <a name="ios-designer-basics"></a>iOS Designer の基本
 
@@ -20,11 +20,11 @@ _このガイドでは、Xamarin Designer for iOS について説明します。
 
 Xamarin Designer for iOS は、Xcode の Interface Builder や Android Designer に似たビジュアルインターフェイスデザイナーです。 多くの機能の中には、Visual Studio for Windows および Mac とのシームレスな統合、ドラッグアンドドロップ編集、イベントハンドラーを設定するためのインターフェイス、カスタムコントロールのレンダリング機能などがあります。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 IOS デザイナーは、Visual Studio for Mac と Visual Studio 2017 以降の Windows で使用できます。 Visual Studio for Windows では、iOS Designer は適切に構成された Mac ビルドホストへの接続を必要としますが、Xcode は実行されている必要はありません。
 
-このガイドでは、[はじめにガイド](~/ios/get-started/index.md)で説明されている内容を理解していることを前提としています。
+このガイドでは、 [はじめにガイド](~/ios/get-started/index.md)で説明されている内容を理解していることを前提としています。
 
 <a name="how-it-works"></a>
 
@@ -32,7 +32,7 @@ IOS デザイナーは、Visual Studio for Mac と Visual Studio 2017 以降の 
 
 このセクションでは、iOS Designer によるユーザーインターフェイスの作成とコードへの接続を容易にする方法について説明します。
 
-IOS Designer を使用すると、開発者はアプリケーションのユーザーインターフェイスを視覚的にデザインできます。 「ストーリーボードの[概要](~/ios/user-interface/storyboards/index.md)」ガイドで説明したように、ストーリーボードは、アプリを構成する画面 (ビューコントローラー)、それらのビューコントローラーに配置されているインターフェイス要素 (ビュー)、およびアプリ全体のナビゲーションフローを記述します。 
+IOS Designer を使用すると、開発者はアプリケーションのユーザーインターフェイスを視覚的にデザインできます。 「ストーリーボードの [概要](~/ios/user-interface/storyboards/index.md) 」ガイドで説明したように、ストーリーボードは、アプリを構成する画面 (ビューコントローラー)、それらのビューコントローラーに配置されているインターフェイス要素 (ビュー)、およびアプリ全体のナビゲーションフローを記述します。 
 
 ビューコントローラーには、iOS デザイナーのビジュアル表現と関連付けられた C# クラスの2つの部分があります。
 
@@ -68,13 +68,13 @@ IOS Designer を使用すると、開発者はアプリケーションのユー�
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-コード内のボタンにアクセスして操作するには、一意の識別子を持っている必要があります。 一意の識別子を指定するには、[] ボタンを選択して**Properties Pad**を開き、[**名前**] フィールドに "submitbutton" などの値を設定します。
+コード内のボタンにアクセスして操作するには、一意の識別子を持っている必要があります。 一意の識別子を指定するには、[] ボタンを選択して **Properties Pad**を開き、[ **名前** ] フィールドに "submitbutton" などの値を設定します。
 
 [![Properties Pad でのボタンの名前の設定](introduction-images/4-settingbuttonname-vsmac.png "Properties Pad でのボタンの名前の設定")](introduction-images/4-settingbuttonname-vsmac-large.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-コード内のボタンにアクセスして操作するには、一意の識別子を持っている必要があります。 一意の識別子を指定するには、ボタンを選択し、[**プロパティ] ウィンドウ**を開き、[**名前**] フィールドに "submitbutton" などの値を設定します。
+コード内のボタンにアクセスして操作するには、一意の識別子を持っている必要があります。 一意の識別子を指定するには、ボタンを選択し、[ **プロパティ] ウィンドウ**を開き、[ **名前** ] フィールドに "submitbutton" などの値を設定します。
 
 [![[プロパティ] ウィンドウでのボタンの名前の設定](introduction-images/4-settingbuttonname-vs.png "[プロパティ] ウィンドウでのボタンの名前の設定")](introduction-images/4-settingbuttonname-vs-large.png#lightbox)
 
@@ -84,21 +84,21 @@ IOS Designer を使用すると、開発者はアプリケーションのユー�
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-**Solution Pad**で、 **ViewController.cs**に移動し、公開インジケーターをクリックすると、ビューコントローラーの `ViewController` クラス定義が2つのファイルにまたがり、それぞれに[部分クラス](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods)定義が含まれていることがわかります。
+**Solution Pad**で、 **ViewController.cs**に移動し、公開インジケーターをクリックすると、ビューコントローラーの `ViewController` クラス定義が2つのファイルにまたがり、それぞれに[部分クラス](/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods)定義が含まれていることがわかります。
 
 [![ViewController クラスを構成する2つのファイル: ViewController.cs と ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vsmac.png "ViewController クラスを構成する2つのファイル: ViewController.cs と ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vsmac-large.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-**ソリューションエクスプローラー**で、 **ViewController.cs**に移動し、公開インジケーターをクリックすると、ビューコントローラーの `ViewController` クラス定義が2つのファイルにまたがり、それぞれに[部分クラス](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods)定義が含まれていることがわかります。
+**ソリューションエクスプローラー**で、 **ViewController.cs**に移動し、公開インジケーターをクリックすると、ビューコントローラーの `ViewController` クラス定義が2つのファイルにまたがり、それぞれに[部分クラス](/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods)定義が含まれていることがわかります。
 
 [![ViewController クラスを構成する2つのファイル: ViewController.cs と ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vs.png "ViewController クラスを構成する2つのファイル: ViewController.cs と ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vs-large.png#lightbox)
 
 -----
 
-- **ViewController.cs**には、クラスに関連するカスタムコードを入力する必要があり `ViewController` ます。 このファイルでは、 `ViewController` クラスはさまざまな iOS ビューコントローラーのライフサイクルメソッドに応答し、UI をカスタマイズして、ボタンタップなどのユーザー入力に応答できます。
+- **ViewController.cs** には、クラスに関連するカスタムコードを入力する必要があり `ViewController` ます。 このファイルでは、 `ViewController` クラスはさまざまな iOS ビューコントローラーのライフサイクルメソッドに応答し、UI をカスタマイズして、ボタンタップなどのユーザー入力に応答できます。
 
-- **ViewController.designer.cs**は、視覚的に構築されたインターフェイスをコードにマップするために iOS デザイナーによって作成された、生成されたファイルです。 このファイルへの変更は上書きされるため、変更しないでください。 このファイルのプロパティ宣言を使用すると、クラス内のコードが `ViewController` 、IOS デザイナーで設定された**名前**でアクセスできるようになります。 **ViewController.designer.cs**を開くと、次のコードがわかります。
+- **ViewController.designer.cs** は、視覚的に構築されたインターフェイスをコードにマップするために iOS デザイナーによって作成された、生成されたファイルです。 このファイルへの変更は上書きされるため、変更しないでください。 このファイルのプロパティ宣言を使用すると、クラス内のコードが `ViewController` 、IOS デザイナーで設定された **名前**でアクセスできるようになります。 **ViewController.designer.cs**を開くと、次のコードがわかります。
 
 ```csharp
 namespace Designer
@@ -121,7 +121,7 @@ namespace Designer
 }
 ```
 
-プロパティの宣言は、 `SubmitButton` `ViewController` **ViewController.designer.cs**ファイルだけでなく、クラス全体をストーリーボードで定義されているボタンに接続します。 **ViewController.cs**はクラスの一部を定義 `ViewController` するため、にアクセス `SubmitButton` できます。
+プロパティの宣言は、 `SubmitButton` `ViewController` **ViewController.designer.cs** ファイルだけでなく、クラス全体をストーリーボードで定義されているボタンに接続します。 **ViewController.cs**はクラスの一部を定義 `ViewController` するため、にアクセス `SubmitButton` できます。
 
 次のスクリーンショットは、IntelliSense が ViewController.cs 内の参照を認識するようになったことを示してい `SubmitButton` ます。 **ViewController.cs**
 
@@ -153,7 +153,7 @@ Visual Studio for Mac で作成した Xamarin iOS プロジェクトには、ス
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-Visual Studio で作成されたほとんどの Xamarin. iOS プロジェクトには、ストーリーボードが含まれています。 ストーリーボードの内容を表示するには、**ソリューションエクスプローラー**で、storyboard ファイルをダブルクリックします。
+Visual Studio で作成されたほとんどの Xamarin. iOS プロジェクトには、ストーリーボードが含まれています。 ストーリーボードの内容を表示するには、 **ソリューションエクスプローラー**で、storyboard ファイルをダブルクリックします。
 
 [![IOS デザイナーでストーリーボードが開かれている](introduction-images/7-storyboardopen-vs.png "IOS デザイナーでストーリーボードが開かれている")](introduction-images/7-storyboardopen-vs-large.png#lightbox)
 
@@ -169,31 +169,31 @@ IOS Designer には、6つの主要なセクションがあります。
 
 [![IOS Designer のセクション](introduction-images/8-sixpartsofiosdesigner-vsmac.png "IOS Designer のセクション")](introduction-images/8-sixpartsofiosdesigner-vsmac-large.png#lightbox)
 
-1. **デザインサーフェイス**: iOS Designer のプライマリワークスペース。 ドキュメント領域に表示されているので、ユーザーインターフェイスを視覚的に構築できます。
+1. **デザインサーフェイス** : iOS Designer のプライマリワークスペース。 ドキュメント領域に表示されているので、ユーザーインターフェイスを視覚的に構築できます。
 2. **制約ツールバー** –ユーザーインターフェイスに要素を配置するための2つの異なる方法で、フレーム編集モードと制約編集モードを切り替えることができます。
 3. [**ツールボックス**] –コントローラー、オブジェクト、コントロール、データビュー、ジェスチャレコグナイザー、ウィンドウ、およびバーが表示されます。これらは、デザイン画面にドラッグしてユーザーインターフェイスに追加できます。
 4. **Properties Pad** –選択したコントロールのプロパティ (id、視覚スタイル、アクセシビリティ、レイアウト、動作など) を表示します。
-5. [**ドキュメントアウトライン**] –編集中のインターフェイスのレイアウトを構成するコントロールのツリーが表示されます。 ツリー内の項目をクリックすると、iOS デザイナーで項目が選択され、 **Properties Pad**にそのプロパティが表示されます。 これは、深く入れ子になったユーザーインターフェイスで特定のコントロールを選択する場合に便利です。
+5. [**ドキュメントアウトライン**] –編集中のインターフェイスのレイアウトを構成するコントロールのツリーが表示されます。 ツリー内の項目をクリックすると、iOS デザイナーで項目が選択され、  **Properties Pad**にそのプロパティが表示されます。 これは、深く入れ子になったユーザーインターフェイスで特定のコントロールを選択する場合に便利です。
 6. **下部のツールバー** –デバイス、向き、ズームを含む、iOS Designer でのストーリーボードまたは xib ファイルの表示方法を変更するためのオプションが含まれています。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
 [![IOS Designer のセクション](introduction-images/8-sixpartsofiosdesigner-vs.png "IOS Designer のセクション")](introduction-images/8-sixpartsofiosdesigner-vs-large.png#lightbox)
 
-1. **デザインサーフェイス**: iOS Designer のプライマリワークスペース。 ドキュメント領域に表示されているので、ユーザーインターフェイスを視覚的に構築できます。
+1. **デザインサーフェイス** : iOS Designer のプライマリワークスペース。 ドキュメント領域に表示されているので、ユーザーインターフェイスを視覚的に構築できます。
 2. **制約ツールバー** –ユーザーインターフェイスに要素を配置するための2つの異なる方法で、フレーム編集モードと制約編集モードを切り替えることができます。
 3. [**ツールボックス**] –コントローラー、オブジェクト、コントロール、データビュー、ジェスチャレコグナイザー、ウィンドウ、およびバーが表示されます。これらは、デザイン画面にドラッグしてユーザーインターフェイスに追加できます。
 4. [**プロパティウィンドウ**] –選択したコントロールのプロパティ (id、視覚スタイル、アクセシビリティ、レイアウト、動作など) が表示されます。
-5. [**ドキュメントアウトライン**] –編集中のインターフェイスのレイアウトを構成するコントロールのツリーが表示されます。 ツリー内の項目をクリックすると、iOS デザイナーで項目が選択され、そのプロパティが [**プロパティ] ウィンドウ**に表示されます。 これは、深く入れ子になったユーザーインターフェイスで特定のコントロールを選択する場合に便利です。
+5. [**ドキュメントアウトライン**] –編集中のインターフェイスのレイアウトを構成するコントロールのツリーが表示されます。 ツリー内の項目をクリックすると、iOS デザイナーで項目が選択され、そのプロパティが [  **プロパティ] ウィンドウ**に表示されます。 これは、深く入れ子になったユーザーインターフェイスで特定のコントロールを選択する場合に便利です。
 6. **下部のツールバー** –デバイス、向き、ズームを含む、iOS Designer でのストーリーボードまたは xib ファイルの表示方法を変更するためのオプションが含まれています。
 
 -----
 
-### <a name="design-workflow"></a>ワークフローの設計
+### <a name="design-workflow"></a>ワークフローを設計する
 
 #### <a name="adding-a-control-to-the-interface"></a>インターフェイスへのコントロールの追加
 
-インターフェイスにコントロールを追加するには、[**ツールボックス**] からコントロールをドラッグし、デザインサーフェイスにドロップします。 コントロールを追加または配置するときに、垂直方向および水平方向のガイドラインによって、垂直方向の中心、水平方向の中心、余白など、一般的に使用されるレイアウト位置が強調されます。
+インターフェイスにコントロールを追加するには、[ **ツールボックス** ] からコントロールをドラッグし、デザインサーフェイスにドロップします。 コントロールを追加または配置するときに、垂直方向および水平方向のガイドラインによって、垂直方向の中心、水平方向の中心、余白など、一般的に使用されるレイアウト位置が強調されます。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -211,7 +211,7 @@ IOS Designer には、6つの主要なセクションがあります。
 
 #### <a name="context-menu-commands"></a>コンテキスト メニュー コマンド
 
-コンテキストメニューは、デザイン画面と**ドキュメントアウトライン**の両方で使用できます。 このメニューには、選択したコントロールとその親のコマンドが表示されます。入れ子になった階層のビューを操作するときに便利です。
+コンテキストメニューは、デザイン画面と **ドキュメントアウトライン**の両方で使用できます。 このメニューには、選択したコントロールとその親のコマンドが表示されます。入れ子になった階層のビューを操作するときに便利です。
 
 [![デザインサーフェイスのコンテキストメニュー](introduction-images/10-contextmenudesignsurface-vsmac.png "デザインサーフェイスのコンテキストメニュー")](introduction-images/10-contextmenudesignsurface-vsmac-large.png#lightbox)
 
@@ -296,9 +296,9 @@ IOS Designer には、6つの主要なセクションがあります。
 
 -----
 
-デバイスと向きを選択すると、iOS デザイナーがデザインをプレビューする方法のみが変更されることに注意してください。 現在の選択内容に関係なく、新たに追加された制約は、[**特徴の編集**] ボタンを使用して指定しない限り、すべてのデバイスと方向に適用されます。
+デバイスと向きを選択すると、iOS デザイナーがデザインをプレビューする方法のみが変更されることに注意してください。 現在の選択内容に関係なく、新たに追加された制約は、[ **特徴の編集** ] ボタンを使用して指定しない限り、すべてのデバイスと方向に適用されます。
 
-[サイズクラス](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes)が[有効になって](~/ios/user-interface/storyboards/unified-storyboards.md#enabling-size-classes)いる場合は、[**特徴の編集**] ボタンが展開下部のツールバーに表示されます。  [**特徴の編集**] ボタンをクリックすると、選択したデバイスと向きによって表されるサイズクラスに基づいてインターフェイスのバリエーションを作成するためのオプションが表示されます。 次の例を考えてみます。
+[サイズクラス](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes)が[有効になって](~/ios/user-interface/storyboards/unified-storyboards.md#enabling-size-classes)いる場合は、[**特徴の編集**] ボタンが展開下部のツールバーに表示されます。  [ **特徴の編集** ] ボタンをクリックすると、選択したデバイスと向きによって表されるサイズクラスに基づいてインターフェイスのバリエーションを作成するためのオプションが表示されます。 次の例を考慮してください。
 
 - [ **IPhone SE**  /  **縦長**] が選択されている場合、segue には、compact width (標準高さサイズ) クラスのインターフェイスのバリエーションを作成するためのオプションが用意されています。 
 - **IPad Pro 9.7 "**  /  **横長**  /  **全画面**" が選択されている場合、segue は、標準幅、標準高さサイズクラスのインターフェイスのバリエーションを作成するオプションを提供します。
@@ -340,7 +340,7 @@ IOS Designer には、6つの主要なセクションがあります。
 
 ### <a name="properties-pad"></a>Properties Pad
 
-コントロールの id、視覚スタイル、アクセシビリティ、および動作を編集するには、 **Properties Pad**を使用します。 次のスクリーンショットは、ボタンの**Properties Pad**オプションを示しています。
+コントロールの id、視覚スタイル、アクセシビリティ、および動作を編集するには、 **Properties Pad** を使用します。 次のスクリーンショットは、ボタンの **Properties Pad** オプションを示しています。
 
 [![ボタンの Properties Pad](introduction-images/17-buttonpropertiespad-vsmac.png "ボタンの Properties Pad")](introduction-images/17-buttonpropertiespad-vsmac-large.png#lightbox)
 #### <a name="properties-pad-sections"></a>Properties Pad セクション
@@ -351,19 +351,19 @@ IOS Designer には、6つの主要なセクションがあります。
 
 ### <a name="properties-window"></a>[プロパティ] ウィンドウ
 
-コントロールの id、視覚スタイル、アクセシビリティ、および動作を編集するには、[**プロパティ] ウィンドウ**を使用します。 次のスクリーンショットは、ボタンの [**プロパティ] ウィンドウ**のオプションを示しています。
+コントロールの id、視覚スタイル、アクセシビリティ、および動作を編集するには、[ **プロパティ] ウィンドウ** を使用します。 次のスクリーンショットは、ボタンの [ **プロパティ] ウィンドウ** のオプションを示しています。
 
 [![ボタンの [プロパティ] ウィンドウ](introduction-images/17-buttonpropertieswindow-vs.png "ボタンの [プロパティ] ウィンドウ")](introduction-images/17-buttonpropertieswindow-vs-large.png#lightbox)
 
 #### <a name="properties-window-sections"></a>プロパティウィンドウのセクション
 
-[**プロパティ] ウィンドウ**には、次の3つのセクションがあります。
+[ **プロパティ] ウィンドウ** には、次の3つのセクションがあります。
 
 -----
 
-1. **ウィジェット**–名前、クラス、スタイルプロパティなど、コントロールの主要なプロパティです。コントロールのコンテンツを管理するためのプロパティは、通常、ここに配置されます。
+1. **ウィジェット** –名前、クラス、スタイルプロパティなど、コントロールの主要なプロパティです。コントロールのコンテンツを管理するためのプロパティは、通常、ここに配置されます。
 2. **Layout** –制約やフレームなど、コントロールの位置とサイズを追跡するプロパティを次に示します。
-3. **イベント: イベント**とイベントハンドラーがここで指定されます。 タッチ、タップ、ドラッグなどのイベントを処理する場合に便利です。イベントは、コード内で直接処理することもできます。
+3. **イベント: イベント** とイベントハンドラーがここで指定されます。 タッチ、タップ、ドラッグなどのイベントを処理する場合に便利です。イベントは、コード内で直接処理することもできます。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -379,7 +379,7 @@ IOS デザイナーでは、デザイン画面でのビジュアル編集に加�
 
 #### <a name="editing-properties-in-the-properties-window"></a>[プロパティ] ウィンドウでのプロパティの編集
 
-IOS デザイナーでは、デザイン画面でのビジュアル編集に加えて、[**プロパティ] ウィンドウ**でのプロパティの編集もサポートされています。 使用可能なプロパティは、次のスクリーンショットに示すように、選択したコントロールに基づいて変化します。
+IOS デザイナーでは、デザイン画面でのビジュアル編集に加えて、[ **プロパティ] ウィンドウ**でのプロパティの編集もサポートされています。 使用可能なプロパティは、次のスクリーンショットに示すように、選択したコントロールに基づいて変化します。
 
 [![ボタンのプロパティ](introduction-images/18a-buttonpropertieswindow-vs.png "ボタンのプロパティ")](introduction-images/18a-buttonpropertieswindow-vs-large.png#lightbox)
 
@@ -388,9 +388,9 @@ IOS デザイナーでは、デザイン画面でのビジュアル編集に加�
 -----
 
 > [!IMPORTANT]
-> Properties Pad の Id セクションに**モジュール**フィールドが表示されるようになりました。 Swift クラスと相互運用する場合にのみ、このセクションに入力する必要があります。 これを使用して、Swift クラスのモジュール名 (名前空間) を入力します。
+> Properties Pad の Id セクションに **モジュール** フィールドが表示されるようになりました。 Swift クラスと相互運用する場合にのみ、このセクションに入力する必要があります。 これを使用して、Swift クラスのモジュール名 (名前空間) を入力します。
 
-#### <a name="default-values"></a>既定の値
+#### <a name="default-values"></a>既定値
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -398,7 +398,7 @@ IOS デザイナーでは、デザイン画面でのビジュアル編集に加�
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-[**プロパティ] ウィンドウ**の多くのプロパティには、値も既定値も表示されません。 ただし、アプリケーションのコードでは、これらの値が変更される可能性があります。 [**プロパティ] ウィンドウ**には、コードで設定された値は表示されません。
+[ **プロパティ] ウィンドウ** の多くのプロパティには、値も既定値も表示されません。 ただし、アプリケーションのコードでは、これらの値が変更される可能性があります。 [ **プロパティ] ウィンドウ** には、コードで設定された値は表示されません。
 
 -----
 
@@ -406,13 +406,13 @@ IOS デザイナーでは、デザイン画面でのビジュアル編集に加�
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-さまざまなイベントのカスタムイベントハンドラーを指定するには、 **Properties Pad**の [**イベント**] タブを使用します。 たとえば、次のスクリーンショットでは、 `HandleClick` メソッドがイベント内のボタンの**タッチアップ**を処理しています。
+さまざまなイベントのカスタムイベントハンドラーを指定するには、 **Properties Pad**の [**イベント**] タブを使用します。 たとえば、次のスクリーンショットでは、 `HandleClick` メソッドがイベント内のボタンの **タッチアップ** を処理しています。
 
 [![ボタンのイベントハンドラーが設定されている Properties Pad。](introduction-images/19-buttonpropertiespadevents-vsmac.png "ボタンのイベントハンドラーが設定されている Properties Pad。")](introduction-images/19-buttonpropertiespadevents-vsmac-large.png#lightbox)
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-さまざまなイベントのカスタムイベントハンドラーを指定するには、[**プロパティ] ウィンドウ**の [**イベント**] タブを使用します。 たとえば、次のスクリーンショットでは、 `HandleClick` メソッドがイベント内のボタンの**タッチアップ**を処理しています。
+さまざまなイベントのカスタムイベントハンドラーを指定するには、[**プロパティ] ウィンドウ**の [**イベント**] タブを使用します。 たとえば、次のスクリーンショットでは、 `HandleClick` メソッドがイベント内のボタンの **タッチアップ** を処理しています。
 
 [![[プロパティ] ウィンドウ。ボタンのイベントハンドラーが設定されています。](introduction-images/19-buttonpropertieswindowevents-vs.png "[プロパティ] ウィンドウ。ボタンのイベントハンドラーが設定されています。")](introduction-images/19-buttonpropertieswindowevents-vs-large.png#lightbox)
 
@@ -436,7 +436,7 @@ IOS デザイナーでは、デザイン画面でのビジュアル編集に加�
 
 ### <a name="outline-view"></a>アウトライン ビュー
 
-IOS デザイナーでは、インターフェイスのコントロール階層をアウトラインとして表示することもできます。 次に示すように、[**ドキュメントアウトライン**] タブを選択すると、アウトラインを表示できます。
+IOS デザイナーでは、インターフェイスのコントロール階層をアウトラインとして表示することもできます。 次に示すように、[ **ドキュメントアウトライン** ] タブを選択すると、アウトラインを表示できます。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -484,7 +484,7 @@ Xib ファイルの使用に関するその他のドキュメントについて�
 - [Xib を使用してカスタム TableViewCell を作成する](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/tables/custom-tableviewcell)
 - [Xib を使用して起動画面を作成する](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/templates/launchscreen-xib)
 
-ストーリーボードの使用方法の詳細については、「[ストーリーボードの概要](~/ios/user-interface/storyboards/index.md)」を参照してください。
+ストーリーボードの使用方法の詳細については、「 [ストーリーボードの概要](~/ios/user-interface/storyboards/index.md)」を参照してください。
 
 この iOS デザイナー関連のガイドでは、ほとんどの Xamarin. iOS の新しいプロジェクトテンプレートでストーリーボードが既定で提供されるため、ユーザーインターフェイスを構築するための標準的なアプローチとしてストーリーボードを使用することを示しています。
 
@@ -499,6 +499,6 @@ Xib ファイルの使用に関するその他のドキュメントについて�
 - [Hello, iOS](~/ios/get-started/hello-ios/index.md)
 - [Hello, iOS マルチスクリーン](~/ios/get-started/hello-ios-multiscreen/index.md)
 - [Android Designer の概要](~/android/user-interface/android-designer/index.md)
-- [部分クラスと部分メソッド](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods)
+- [部分クラスと部分メソッド](/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods)
 - [Xamarin Designer for iOS の進化 2014 (ビデオ)](https://www.youtube.com/watch?v=W4H9uLjoEjM)
 - [IOS Designer を使用した起動画面の作成 (ビデオ)](https://university.xamarin.com/lightninglectures/using-the-ios-designer-to-create-a-launch-screen)

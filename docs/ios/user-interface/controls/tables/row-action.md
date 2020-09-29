@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/25/2017
-ms.openlocfilehash: 40640f903ad82c5f154dbb74307c0003d7271561
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 2cb453996a43d1e70f4fb818c86f6215c213b988
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936605"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91429744"
 ---
 # <a name="working-with-row-actions-in-xamarinios"></a>Xamarin の行アクションの操作 (iOS)
 
@@ -22,10 +22,10 @@ _このガイドでは、Uiswipeactions Configuration または Uiswipeactionsco
 
 iOS には、テーブルに対して操作を実行する2つの方法 (と) が用意されて `UISwipeActionsConfiguration` `UITableViewRowAction` います。
 
-`UISwipeActionsConfiguration`は、iOS 11 で導入され、ユーザーがテーブルビューの行に対して_いずれかの方向で_スワイプしたときに実行する一連のアクションを定義するために使用されます。 この動作は、ネイティブのメールアプリの動作と似ています。
+`UISwipeActionsConfiguration` は、iOS 11 で導入され、ユーザーがテーブルビューの行に対して _いずれかの方向で_ スワイプしたときに実行する一連のアクションを定義するために使用されます。 この動作は、ネイティブのメールアプリの動作と似ています。
 
 `UITableViewRowAction`クラスは、ユーザーがテーブルビューの行で水平にスワイプたときに実行されるアクションを定義するために使用されます。
-たとえば、テーブルを編集するときに、行を左にスワイプすると、既定で [**削除**] ボタンが表示されます。 クラスの複数のインスタンスをにアタッチすることにより、 `UITableViewRowAction` 複数のカスタムアクションを定義し、それぞれに独自の `UITableView` テキスト、書式設定、および動作を設定できます。
+たとえば、テーブルを編集するときに、行を左にスワイプすると、既定で [ **削除** ] ボタンが表示されます。 クラスの複数のインスタンスをにアタッチすることにより、 `UITableViewRowAction` 複数のカスタムアクションを定義し、それぞれに独自の `UITableView` テキスト、書式設定、および動作を設定できます。
 
 ## <a name="uiswipeactionsconfiguration"></a>Uiswipeactions 構成
 
@@ -39,9 +39,9 @@ iOS には、テーブルに対して操作を実行する2つの方法 (と) �
 
 ### <a name="1-implementing-the-swipeactionsconfigurations-methods"></a>1. SwipeActionsConfigurations メソッドを実装する
 
-`UITableViewController`(およびも) には、 `UITableViewSource` `UITableViewDelegate` `GetLeadingSwipeActionsConfiguration` `GetTrailingSwipeActionsConfiguration` テーブルビュー行にスワイプアクションのセットを実装するために使用されるとという2つのメソッドが含まれています。 先頭のスワイプ操作では、画面の左側から左から右の言語でスワイプを参照し、右から左に記述する言語で画面の右側からスワイプを参照します。
+`UITableViewController` (およびも) には、 `UITableViewSource` `UITableViewDelegate` `GetLeadingSwipeActionsConfiguration` `GetTrailingSwipeActionsConfiguration` テーブルビュー行にスワイプアクションのセットを実装するために使用されるとという2つのメソッドが含まれています。 先頭のスワイプ操作では、画面の左側から左から右の言語でスワイプを参照し、右から左に記述する言語で画面の右側からスワイプを参照します。
 
-次の例では、(「行[Wipeactions](https://docs.microsoft.com/samples/xamarin/ios-samples/tableswipeactions)サンプル」から) リーディングスワイプ構成を実装する方法を示しています。 コンテキストアクションからは、[次](#create-uicontextualaction)に説明する2つのアクションが作成されます。 これらのアクションは、 [`UISwipeActionsConfiguration`](#create-uiswipeactionsconfigurations) 戻り値として使用される、新しく初期化されたに渡されます。
+次の例では、(「行 [Wipeactions](/samples/xamarin/ios-samples/tableswipeactions) サンプル」から) リーディングスワイプ構成を実装する方法を示しています。 コンテキストアクションからは、 [次](#create-uicontextualaction)に説明する2つのアクションが作成されます。 これらのアクションは、 [`UISwipeActionsConfiguration`](#create-uiswipeactionsconfigurations) 戻り値として使用される、新しく初期化されたに渡されます。
 
 ```csharp
 public override UISwipeActionsConfiguration GetLeadingSwipeActionsConfiguration(UITableView tableView, NSIndexPath indexPath)
@@ -61,7 +61,7 @@ public override UISwipeActionsConfiguration GetLeadingSwipeActionsConfiguration(
 
 <a name="create-uiswipeactionsconfigurations"></a>
 
-### <a name="2-instantiate-a-uiswipeactionsconfiguration"></a>2. インスタンスをインスタンス化する`UISwipeActionsConfiguration`
+### <a name="2-instantiate-a-uiswipeactionsconfiguration"></a>2. インスタンスをインスタンス化する `UISwipeActionsConfiguration`
 
 次の `UISwipeActionsConfiguration` `FromActions` `UIContextualAction` コードスニペットに示すように、メソッドを使用してをインスタンス化し、の新しい配列を追加します。
 
@@ -177,9 +177,9 @@ table.Delegate = tableDelegate;
 
 [![[削除] ボタンの代わりに表示される [Hi] ボタン](row-action-images/action01.png)](row-action-images/action01.png#lightbox)
 
-ユーザーが [**こんにちは**] ボタンをタップする `Hello World!` と、アプリケーションがデバッグモードで実行されるときに、Visual Studio for Mac または Visual Studio のコンソールにが出力されます。
+ユーザーが [ **こんにちは** ] ボタンをタップする `Hello World!` と、アプリケーションがデバッグモードで実行されるときに、Visual Studio for Mac または Visual Studio のコンソールにが出力されます。
 
 ## <a name="related-links"></a>関連リンク
 
-- [個の Wipeactions (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/tableswipeactions)
-- [WorkingWithTables (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/workingwithtables)
+- [個の Wipeactions (サンプル)](/samples/xamarin/ios-samples/tableswipeactions)
+- [WorkingWithTables (サンプル)](/samples/xamarin/ios-samples/workingwithtables)

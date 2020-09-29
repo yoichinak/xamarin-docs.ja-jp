@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 3fd119828a953c002c7d66f248bf26b413018ae4
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: f1c21d64c8e1e271043e7d0b918f6033e21daac7
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939699"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91432993"
 ---
 # <a name="watchos-image-controls-in-xamarin"></a>Xamarin の watchOS Image コントロール
 
@@ -34,9 +34,9 @@ watchOS には、 [`WKInterfaceImage`](xref:WatchKit.WKInterfaceImage) イメー
 
 ## <a name="images-on-the-watch"></a>ウォッチの画像
 
-画像を表示する最も効率的な方法は、*それらを watch アプリプロジェクトに含め*、メソッドを使用して表示することです `SetImage(string imageName)` 。
+画像を表示する最も効率的な方法は、 *それらを watch アプリプロジェクトに含め* 、メソッドを使用して表示することです `SetImage(string imageName)` 。
 
-たとえば、 [WatchKitCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog/)サンプルには、watch アプリプロジェクトのアセットカタログにいくつかのイメージが追加されています。
+たとえば、 [WatchKitCatalog](/samples/xamarin/ios-samples/watchos-watchkitcatalog/) サンプルには、watch アプリプロジェクトのアセットカタログにいくつかのイメージが追加されています。
 
 ![WatchKitCatalog サンプルには、watch アプリプロジェクトのアセットカタログに多数のイメージが追加されています。](image-images/asset-whale-sml.png)
 
@@ -57,7 +57,7 @@ Watch アプリ自体に格納されているイメージを読み込むだけ�
 
 Watch 拡張機能からイメージを読み込むには、 `UIImage` インスタンスを作成し、オブジェクトを使用してを呼び出し `SetImage` `UIImage` ます。
 
-たとえば、 [WatchKitCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)サンプルには、watch 拡張機能プロジェクトの**Bumblebee**という名前のイメージがあります。
+たとえば、 [WatchKitCatalog](/samples/xamarin/ios-samples/watchos-watchkitcatalog) サンプルには、watch 拡張機能プロジェクトの **Bumblebee** という名前のイメージがあります。
 
 ![WatchKitCatalog サンプルには、watch 拡張機能プロジェクトの Bumblebee という名前のイメージがあります。](image-images/asset-bumblebee-sml.png)
 
@@ -76,7 +76,7 @@ using (var image = UIImage.FromBundle ("Bumblebee")) {
 
 一連のイメージをアニメーション化するには、すべてが同じプレフィックスで始まり、数字のサフィックスを持つ必要があります。
 
-[WatchKitCatalog](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)サンプルには、 **Bus**プレフィックスを持つ watch アプリプロジェクトに一連の番号付き画像が含まれています。
+[WatchKitCatalog](/samples/xamarin/ios-samples/watchos-watchkitcatalog)サンプルには、 **Bus**プレフィックスを持つ watch アプリプロジェクトに一連の番号付き画像が含まれています。
 
 ![WatchKitCatalog サンプルには、Bus プレフィックスを使用した watch アプリプロジェクト内の一連の番号付き画像が含まれています。](image-images/asset-bus-animation-sml.png)
 
@@ -124,5 +124,5 @@ using (var image = UIImage.FromBundle ("Bumblebee")) {
 
 ## <a name="related-links"></a>関連リンク
 
-- [WatchKitCatalog (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
+- [WatchKitCatalog (サンプル)](/samples/xamarin/ios-samples/watchos-watchkitcatalog)
 - [Apple のイメージドキュメント](https://developer.apple.com/documentation/watchkit/wkinterfaceimage)

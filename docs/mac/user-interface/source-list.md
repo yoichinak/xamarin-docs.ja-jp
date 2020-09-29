@@ -7,26 +7,26 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 9280917f451d58ae864398088bec7faaf15ad96a
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: ae82918c1f87e47be9446e80f99ebc4dc967c078
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937346"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431943"
 ---
 # <a name="source-lists-in-xamarinmac"></a>Xamarin. Mac のソースリスト
 
 _この記事では、Xamarin. Mac アプリケーションでのソースリストの使用について説明します。Xcode と Interface Builder でのソースリストの作成と保守、および C# コードでのソースリストとの対話について説明します。_
 
-Xamarin. Mac アプリケーションで C# と .NET を使用する場合、 *Xcode と*で作業*している*開発者が同じソースリストにアクセスできます。 Xcode は直接統合されているため、Xcode の_Interface Builder_を使用してソースリストを作成および管理できます (または、必要に応じて C# コードで直接作成することもできます)。
+Xamarin. Mac アプリケーションで C# と .NET を使用する場合、 *Xcode と*で作業*している*開発者が同じソースリストにアクセスできます。 Xcode は直接統合されているため、Xcode の _Interface Builder_ を使用してソースリストを作成および管理できます (または、必要に応じて C# コードで直接作成することもできます)。
 
 ソースリストは、Finder または iTunes のサイドバーのような、アクションのソースを表示するために使用される特殊な種類のアウトラインビューです。
 
 [![ソースリストの例](source-list-images/source05.png)](source-list-images/source05.png#lightbox)
 
-この記事では、Xamarin. Mac アプリケーションでのソースリストの使用に関する基本について説明します。 この記事で使用する主要な概念と手法について説明しているように、最初に[Hello, Mac](~/mac/get-started/hello-mac.md)の記事「 [Xcode と Interface Builder の概要](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)」と「[アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions)」セクションをご覧になることを強くお勧めします。
+この記事では、Xamarin. Mac アプリケーションでのソースリストの使用に関する基本について説明します。 この記事で使用する主要な概念と手法について説明しているように、最初に [Hello, Mac](~/mac/get-started/hello-mac.md) の記事「 [Xcode と Interface Builder の概要](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) 」と「 [アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions) 」セクションをご覧になることを強くお勧めします。
 
-「 [C# のクラス/メソッドを](~/mac/internals/how-it-works.md) [Xamarin. Mac の内部](~/mac/internals/how-it-works.md)ドキュメントの前に公開する」セクションを参照して `Register` `Export` ください。 c# クラスを目的の c オブジェクトと UI 要素に接続するために使用されるコマンドとコマンドについても説明します。
+「 [C# のクラス/メソッドを](~/mac/internals/how-it-works.md) [Xamarin. Mac の内部](~/mac/internals/how-it-works.md) ドキュメントの前に公開する」セクションを参照して `Register` `Export` ください。 c# クラスを目的の c オブジェクトと UI 要素に接続するために使用されるコマンドとコマンドについても説明します。
 
 <a name="Introduction_to_Outline_Views"></a>
 
@@ -40,7 +40,7 @@ Xamarin. Mac アプリケーションで C# と .NET を使用する場合、 *X
 
 ソースリストの動作をカスタマイズするには、アウトラインビューのデリゲート () のサブクラスを使用して、 `NSOutlineViewDelegate` アウトラインの種類をサポートし、各項目の機能、項目の選択と編集、カスタム追跡、およびカスタムビューを選択します。
 
-ソースリストでは、テーブルビューとアウトラインビューでの動作と機能の多くが共有されているため、この記事を続行する前に、[テーブルビュー](~/mac/user-interface/table-view.md)と[アウトラインビュー](~/mac/user-interface/outline-view.md)のドキュメントを参照することをお勧めします。
+ソースリストでは、テーブルビューとアウトラインビューでの動作と機能の多くが共有されているため、この記事を続行する前に、 [テーブルビュー](~/mac/user-interface/table-view.md) と [アウトラインビュー](~/mac/user-interface/outline-view.md) のドキュメントを参照することをお勧めします。
 
 <a name="Working_with_Source_Lists"></a>
 
@@ -530,19 +530,19 @@ namespace MacOutlines
 
 ## <a name="creating-and-maintaining-source-lists-in-xcode"></a>Xcode でのソースリストの作成と管理
 
-次に、Interface Builder でソースリストを設計しましょう。 ファイルをダブルクリックし `Main.storyboard` て編集するには Interface Builder で開き、[**ライブラリインスペクター**] から分割ビューをドラッグして、ビューコントローラーに追加し、[**制約エディター**] のビューでサイズを変更するように設定します。
+次に、Interface Builder でソースリストを設計しましょう。 ファイルをダブルクリックし `Main.storyboard` て編集するには Interface Builder で開き、[ **ライブラリインスペクター**] から分割ビューをドラッグして、ビューコントローラーに追加し、[ **制約エディター**] のビューでサイズを変更するように設定します。
 
 [![制約の編集](source-list-images/source00.png)](source-list-images/source00.png#lightbox)
 
-次に、**ライブラリインスペクター**からソースリストをドラッグし、分割ビューの左側に追加して、**制約エディター**のビューでサイズを変更するように設定します。
+次に、 **ライブラリインスペクター**からソースリストをドラッグし、分割ビューの左側に追加して、 **制約エディター**のビューでサイズを変更するように設定します。
 
 [![制約の編集](source-list-images/source02.png)](source-list-images/source02.png#lightbox)
 
-次に、 **Id ビュー**に切り替え、ソースリストを選択し、**クラス**をに変更し `SourceListView` ます。
+次に、 **Id ビュー**に切り替え、ソースリストを選択し、 **クラス** をに変更し `SourceListView` ます。
 
 [![クラス名の設定](source-list-images/source03.png)](source-list-images/source03.png#lightbox)
 
-最後に、ファイルにというソースリストの**アウトレット**を作成し `SourceList` `ViewController.h` ます。
+最後に、ファイルにというソースリストの **アウトレット** を作成し `SourceList` `ViewController.h` ます。
 
 [![アウトレットの構成](source-list-images/source04.png)](source-list-images/source04.png#lightbox)
 
@@ -624,7 +624,7 @@ public override void DidFinishLaunching (NSNotification notification)
 
 ## <a name="related-links"></a>関連リンク
 
-- [MacOutlines (サンプル)](https://docs.microsoft.com/samples/xamarin/mac-samples/macoutlines)
+- [MacOutlines (サンプル)](/samples/xamarin/mac-samples/macoutlines)
 - [Hello Mac](~/mac/get-started/hello-mac.md)
 - [テーブル ビュー](~/mac/user-interface/table-view.md)
 - [アウトライン ビュー](~/mac/user-interface/outline-view.md)

@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 5d10f1def56d73c6837587bbbd47299d208a345a
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: d2a3181360abd7ee7a5124602d0c4186b0a8ec38
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997476"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430164"
 ---
 # <a name="building-modern-macos-apps"></a>最新の macOS アプリの構築
 
@@ -30,7 +30,7 @@ _この記事では、開発者が Xamarin. Mac で最新の macOS アプリを�
 
 ### <a name="enabling-full-sized-content-views"></a>全サイズのコンテンツビューの有効化
 
-これを実現するために、開発者は_フルサイズのコンテンツビュー_を使用することをお勧めします。つまり、コンテンツはツール領域とタイトルバー領域の下に拡張され、macOS によって自動的に不鮮明になります。
+これを実現するために、開発者は _フルサイズのコンテンツビュー_を使用することをお勧めします。つまり、コンテンツはツール領域とタイトルバー領域の下に拡張され、macOS によって自動的に不鮮明になります。
 
 この機能をコードで有効にするには、のカスタムクラスを作成 `NSWindowController` し、次のようにします。
 
@@ -62,7 +62,7 @@ namespace MacModern
 }
 ```
 
-この機能は、ウィンドウを選択し、**フルサイズのコンテンツビュー**をチェックすることで、Xcode の Interface Builder で有効にすることもできます。
+この機能は、ウィンドウを選択し、 **フルサイズのコンテンツビュー**をチェックすることで、Xcode の Interface Builder で有効にすることもできます。
 
 [![Xcode の Interface Builder のメインストーリーボードの編集](modern-cocoa-apps-images/content01.png)](modern-cocoa-apps-images/content01.png#lightbox)
 
@@ -163,7 +163,7 @@ public override void ViewWillAppear ()
 }
 ```
 
-通常、この効果は、マップ、カレンダー、メモ、システム設定などの_Shoebox アプリケーション_(1 つのウィンドウアプリ) に使用されます。
+通常、この効果は、マップ、カレンダー、メモ、システム設定などの _Shoebox アプリケーション_ (1 つのウィンドウアプリ) に使用されます。
 
 <a name="Using-Accessory-View-Controllers"></a>
 
@@ -184,7 +184,7 @@ public override void ViewWillAppear ()
 3. アクセサリビューの UI のレイアウト:
 
     [![新しいビューのデザイン](modern-cocoa-apps-images/content06.png)](modern-cocoa-apps-images/content06.png#lightbox)
-4. アクセサリビューを、その UI の**アウトレット**とその他の**アクション**または**アウトレット**として公開します。
+4. アクセサリビューを、その UI の **アウトレット** とその他の **アクション** または **アウトレット** として公開します。
 
     [![必要なアウトレットの追加](modern-cocoa-apps-images/content07.png)](modern-cocoa-apps-images/content07.png#lightbox)
 5. 変更を保存します。
@@ -228,7 +228,7 @@ namespace MacModern
 }
 ```
 
-このコードの重要な点は、Interface Builder で定義され、**アウトレット**として公開されたカスタムビューにビューが設定される場所です。
+このコードの重要な点は、Interface Builder で定義され、 **アウトレット**として公開されたカスタムビューにビューが設定される場所です。
 
 ```csharp
 accessoryView.View = AccessoryViewGoBar;
@@ -419,16 +419,16 @@ public override void GetNewWindowForTab (NSObject sender)
 
 `CALayer`オブジェクトにはいくつかのプロパティが用意されており、開発者は、次のようにユーザーに表示される内容を制御できます。
 
-- `Content`- `NSImage` レイヤーのコンテンツを提供するまたはを指定でき `CGImage` ます。
-- `BackgroundColor`-レイヤーの背景色をとして設定します。`CGColor`
-- `BorderWidth`-境界線の幅を設定します。
-- `BorderColor`-境界線の色を設定します。
+- `Content` - `NSImage` レイヤーのコンテンツを提供するまたはを指定でき `CGImage` ます。
+- `BackgroundColor` -レイヤーの背景色をとして設定します。 `CGColor`
+- `BorderWidth` -境界線の幅を設定します。
+- `BorderColor` -境界線の色を設定します。
 
-アプリの UI で主要なグラフィックスを利用するには、_レイヤーがサポート_されたビューを使用する必要があります。 Apple は、ウィンドウのコンテンツビューで常にを有効にすることをお勧めします。 これにより、すべての子ビューでレイヤーのバッキングも自動的に継承されます。
+アプリの UI で主要なグラフィックスを利用するには、 _レイヤーがサポート_ されたビューを使用する必要があります。 Apple は、ウィンドウのコンテンツビューで常にを有効にすることをお勧めします。 これにより、すべての子ビューでレイヤーのバッキングも自動的に継承されます。
 
 さらに、Apple では、新しいをサブレイヤーとして追加するのではなく、レイヤーでサポートされているビューを使用することを提案して `CALayer` います。これは、必要な設定 (Retina ディスプレイで必要な設定など) の一部がシステムによって自動的に処理されるためです。
 
-レイヤーのバッキングを有効にするには、 `WantsLayer` `NSView` `true` [**ビュー効果インスペクター** ] の [Xcode の Interface Builder 内またはその内部で、次のように**コアアニメーションレイヤー**をチェックします。
+レイヤーのバッキングを有効にするには、 `WantsLayer` `NSView` `true` [ **ビュー効果インスペクター** ] の [Xcode の Interface Builder 内またはその内部で、次のように **コアアニメーションレイヤー**をチェックします。
 
 [![ビュー効果インスペクター](modern-cocoa-apps-images/content09.png)](modern-cocoa-apps-images/content09.png#lightbox)
 
@@ -508,7 +508,7 @@ namespace MacModern
 
 ## <a name="using-modern-drag-and-drop"></a>最新のドラッグアンドドロップを使用する
 
-ユーザーに最新のドラッグアンドドロップエクスペリエンスを提供するには、開発者はアプリのドラッグアンドドロップ操作で_ドラッグ Flocking_を採用する必要があります。 ドラッグ Flocking は、ユーザーがドラッグ操作を継続している間に、最初にドラッグされる個々のファイルまたは項目が、1つの要素として flocks (項目数のカウントでカーソルの下にグループ化される) 個々の要素として表示されます。
+ユーザーに最新のドラッグアンドドロップエクスペリエンスを提供するには、開発者はアプリのドラッグアンドドロップ操作で _ドラッグ Flocking_ を採用する必要があります。 ドラッグ Flocking は、ユーザーがドラッグ操作を継続している間に、最初にドラッグされる個々のファイルまたは項目が、1つの要素として flocks (項目数のカウントでカーソルの下にグループ化される) 個々の要素として表示されます。
 
 ユーザーがドラッグ操作を終了すると、個々の要素が Unflock され、元の場所に戻ります。
 
@@ -584,7 +584,7 @@ namespace MacModern
 
 を使用する場合は `NSCollectionViews` 、 `PasteboardWriterForItemAt` ドラッグを開始するときにメソッドではなく、メソッドをもう一度使用し `WriteItemsAt` ます。
 
-開発者は、クリップボードに大きなファイルを配置することは常に避ける必要があります。 MacOS Sierra を初めて使用すると、開発者は、新しいクラスとクラスを使用してユーザーがドロップ操作を終了したときに後で処理されるように、指定したファイルへの参照を、後で実行できるように、_ファイル_の promise に配置でき `NSFilePromiseProvider` `NSFilePromiseReceiver` ます。
+開発者は、クリップボードに大きなファイルを配置することは常に避ける必要があります。 MacOS Sierra を初めて使用すると、開発者は、新しいクラスとクラスを使用してユーザーがドロップ操作を終了したときに後で処理されるように、指定したファイルへの参照を、後で実行できるように、 _ファイル_ の promise に配置でき `NSFilePromiseProvider` `NSFilePromiseReceiver` ます。
 
 <a name="Using-Modern-Event-Tracking"></a>
 
@@ -728,8 +728,8 @@ namespace MacModern
 
 Static `NSTableViewRowAction.FromStyle` は、次のスタイルの新しいテーブル行アクションを作成するために使用されます。
 
-- `Regular`-行の内容の編集など、非破壊的な標準のアクションを実行します。
-- `Destructive`-テーブルから行を削除するなどの破壊的なアクションを実行します。 これらのアクションは、背景が赤で表示されます。
+- `Regular` -行の内容の編集など、非破壊的な標準のアクションを実行します。
+- `Destructive` -テーブルから行を削除するなどの破壊的なアクションを実行します。 これらのアクションは、背景が赤で表示されます。
 
 <a name="Scroll-View-Enhancements"></a>
 
@@ -741,8 +741,8 @@ Static `NSTableViewRowAction.FromStyle` は、次のスタイルの新しいテ�
 
 この問題を修正するために、Apple はクラスに2つの新しいプロパティを追加しました `NSScrollView` 。
 
-- `ContentInsets`- `NSEdgeInsets` スクロールビューの上部に適用されるオフセットを定義するオブジェクトを開発者が指定できるようにします。
-- `AutomaticallyAdjustsContentInsets`- `true` スクロールビューが `ContentInsets` 開発者のを自動的に処理する場合は。
+- `ContentInsets` - `NSEdgeInsets` スクロールビューの上部に適用されるオフセットを定義するオブジェクトを開発者が指定できるようにします。
+- `AutomaticallyAdjustsContentInsets` - `true` スクロールビューが `ContentInsets` 開発者のを自動的に処理する場合は。
 
 開発者はを使用して、次のよう `ContentInsets` なアクセサリを含めることができるように、スクロールビューの開始を調整できます。
 
@@ -756,7 +756,7 @@ Static `NSTableViewRowAction.FromStyle` は、次のスタイルの新しいテ�
 
 Apple には、開発者が国際化 macOS アプリを簡単に作成できるようにする Xcode にいくつかのテクノロジが含まれています。 Xcode を使用すると、開発者は、ストーリーボードファイル内のアプリのユーザーインターフェイスデザインからユーザー向けのテキストを分離し、UI が変更された場合にこの分離を維持するためのツールを提供できるようになりました。
 
-詳細については、「Apple の[国際化とローカリゼーションのガイド](https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPInternational/InternationalizingYourUserInterface/InternationalizingYourUserInterface.html)」を参照してください。
+詳細については、「Apple の [国際化とローカリゼーションのガイド](https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPInternational/InternationalizingYourUserInterface/InternationalizingYourUserInterface.html)」を参照してください。
 
 <a name="Implementing-Base-Internationalization"></a>
 
@@ -778,12 +778,12 @@ Apple には、開発者が国際化 macOS アプリを簡単に作成できる�
 
 Apple では、次のことを提案しています。
 
-- **固定幅制約を削除**する-テキストベースのすべてのビューのサイズをコンテンツに基づいて調整できます。 固定幅ビューでは、特定の言語でコンテンツをトリミングすることができます。
-- **組み込みのコンテンツサイズを使用**する-既定では、テキストベースのビューがコンテンツに合わせて自動的にサイズ変更されます。 適切にサイズ変更されていないテキストベースのビューの場合は、Xcode の**Edit**Interface Builder でそれらを選択してから、[  >  **コンテンツに合わせてサイズを**編集] を選択します。
-- **先頭と末尾の属性の適用**-テキストの方向はユーザーの言語に基づいて変わる可能性があるため、既存の属性と属性を使用するのではなく、new 属性と constraint 属性を使用し `Leading` `Trailing` `Right` `Left` ます。 `Leading`と `Trailing` は、言語の方向に基づいて自動的に調整されます。
-- **隣接するビューにビューをピン留め**する-選択した言語に応じてビューを変更するビューの位置を調整したり、サイズを変更したりできます。
-- **Windows の最小サイズと最大サイズのいずれかまたは両方を設定しない**-選択した言語がコンテンツ領域のサイズを変更したときに、windows によるサイズ変更を許可します。
-- アプリでの開発中に行われる**テストレイアウトの変更**は、常に異なる言語でテストする必要があります。 詳細については、Apple の[国際化アプリのテストに](https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPInternational/TestingYourInternationalApp/TestingYourInternationalApp.html#//apple_ref/doc/uid/10000171i-CH7-SW1)関するドキュメントを参照してください。
+- **固定幅制約を削除** する-テキストベースのすべてのビューのサイズをコンテンツに基づいて調整できます。 固定幅ビューでは、特定の言語でコンテンツをトリミングすることができます。
+- **組み込みのコンテンツサイズを使用** する-既定では、テキストベースのビューがコンテンツに合わせて自動的にサイズ変更されます。 適切にサイズ変更されていないテキストベースのビューの場合は、Xcode の**Edit**Interface Builder でそれらを選択してから、[  >  **コンテンツに合わせてサイズを**編集] を選択します。
+- **先頭と末尾の属性の適用** -テキストの方向はユーザーの言語に基づいて変わる可能性があるため、既存の属性と属性を使用するのではなく、new 属性と constraint 属性を使用し `Leading` `Trailing` `Right` `Left` ます。 `Leading` と `Trailing` は、言語の方向に基づいて自動的に調整されます。
+- **隣接するビューにビューをピン留め** する-選択した言語に応じてビューを変更するビューの位置を調整したり、サイズを変更したりできます。
+- **Windows の最小サイズと最大サイズのいずれかまたは両方を設定しない** -選択した言語がコンテンツ領域のサイズを変更したときに、windows によるサイズ変更を許可します。
+- アプリでの開発中に行われる**テストレイアウトの変更**は、常に異なる言語でテストする必要があります。 詳細については、Apple の [国際化アプリのテストに](https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPInternational/TestingYourInternationalApp/TestingYourInternationalApp.html#//apple_ref/doc/uid/10000171i-CH7-SW1) 関するドキュメントを参照してください。
 - **NSStackViews を使用してビュー**  -  `NSStackViews` をピン留めするを使用すると、予測可能な方法でコンテンツをシフトして拡大でき、選択した言語に基づいてコンテンツのサイズが変更されます。
 
 <a name="Localizing-in-Xcodes-Interface-Builder"></a>
@@ -796,24 +796,24 @@ Apple では、Xcode の Interface Builder にいくつかの機能が用意さ�
 
 **テキストの方向**には、次の3つの値を指定できます。
 
-- **自然**-レイアウトは、コントロールに割り当てられた文字列に基づいています。
-- **左から右**-レイアウトは常に左から右に強制的に適用されます。
+- **自然** -レイアウトは、コントロールに割り当てられた文字列に基づいています。
+- **左から右** -レイアウトは常に左から右に強制的に適用されます。
 - **Right To left** -レイアウトは常に右から左に強制的に適用されます。
 
 **レイアウト**には、次の2つの値を指定できます。
 
-- **左から右**-レイアウトは常に左から右に配置されます。
+- **左から右** -レイアウトは常に左から右に配置されます。
 - **Right To left** -レイアウトは常に右から左になります。
 
 通常、特定のアラインメントが必要な場合を除き、これらを変更しないでください。
 
 **Mirror**プロパティは、特定のコントロールのプロパティ (セルイメージの位置など) を反転するようシステムに指示します。 次の3つの値があります。
 
-- **自動**-選択された言語の方向に基づいて、位置が自動的に変更されます。
-- **右から左**へのインターフェイス-位置は右から左に記述された言語でのみ変更されます。
+- **自動** -選択された言語の方向に基づいて、位置が自動的に変更されます。
+- **右から左** へのインターフェイス-位置は右から左に記述された言語でのみ変更されます。
 - [**なし**-この位置は変更されません。
 
-開発者がテキストベースのビューのコンテンツに対して**中心**、**ジャスティファイ**、または**完全な**配置を指定している場合は、選択した言語に基づいてこれらが反転されることはありません。
+開発者がテキストベースのビューのコンテンツに対して **中心**、 **ジャスティファイ** 、または **完全な** 配置を指定している場合は、選択した言語に基づいてこれらが反転されることはありません。
 
 MacOS Sierra 前は、コードで作成されたコントロールは自動的にはミラー化されません。 開発者は、次のようなコードを使用してミラーリングを処理する必要がありました。
 
@@ -900,7 +900,7 @@ namespace MacModern
 
 [![Xcode の Interface Builder の UI の編集](modern-cocoa-apps-images/content12.png)](modern-cocoa-apps-images/content12.png#lightbox)
 
-詳細については、[ストーリーボードの概要に](~/mac/platform/storyboards/index.md)関するドキュメントを参照してください。
+詳細については、 [ストーリーボードの概要に](~/mac/platform/storyboards/index.md) 関するドキュメントを参照してください。
 
 ストーリーボードに定義されている特定のシーンには、ビュー階層の前のシーンからのデータが必要になる場合があります。 Apple では、次のような情報をシーン間で渡すための推奨事項があります。
 
@@ -925,7 +925,7 @@ public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
 }
 ```
 
-詳細については、[セグエ](~/mac/platform/storyboards/indepth.md#Segues)のドキュメントを参照してください。
+詳細については、 [セグエ](~/mac/platform/storyboards/indepth.md#Segues) のドキュメントを参照してください。
 
 <a name="Propagating-Actions"></a>
 
@@ -933,7 +933,7 @@ public override void PrepareForSegue (NSStoryboardSegue segue, NSObject sender)
 
 MacOS アプリの設計によっては、ui コントロールのアクションに最適なハンドラーが UI 階層内の別の場所にある場合があります。 これは、通常、アプリの UI の他の部分とは別に、独自のシーンに存在するメニューおよびメニュー項目に当てはまります。
 
-この状況に対処するために、開発者はカスタムアクションを作成し、そのアクションを応答側チェーンに渡すことができます。 詳細については、[カスタムウィンドウの操作に](~/mac/user-interface/menu.md)関するドキュメントを参照してください。
+この状況に対処するために、開発者はカスタムアクションを作成し、そのアクションを応答側チェーンに渡すことができます。 詳細については、 [カスタムウィンドウの操作に](~/mac/user-interface/menu.md) 関するドキュメントを参照してください。
 
 <a name="Modern-Mac-Features"></a>
 
@@ -941,10 +941,10 @@ MacOS アプリの設計によっては、ui コントロールのアクショ�
 
 Apple には、次のように、開発者が最も多くの Mac プラットフォームを作成できるようにするために、macOS Sierra にユーザー向けの機能がいくつか組み込まれています。
 
-- **Nsuseractivity** -これにより、アプリは、ユーザーが現在使用しているアクティビティを記述できます。 `NSUserActivity`は、最初はハンドオフをサポートするように作成されています。この場合、ユーザーのデバイスの1つで開始されたアクティビティを取得し、別のデバイスで続行することができます。 `NSUserActivity`macOS では、iOS の場合と同じように動作します。詳細については、「[ハンドオフ](~/ios/platform/handoff.md)iOS ドキュメントの概要」を参照してください。
+- **Nsuseractivity** -これにより、アプリは、ユーザーが現在使用しているアクティビティを記述できます。 `NSUserActivity` は、最初はハンドオフをサポートするように作成されています。この場合、ユーザーのデバイスの1つで開始されたアクティビティを取得し、別のデバイスで続行することができます。 `NSUserActivity` macOS では、iOS の場合と同じように動作します。詳細については、「 [ハンドオフ](~/ios/platform/handoff.md) iOS ドキュメントの概要」を参照してください。
 - **Siri On Mac** -siri は、現在のアクティビティ () を使用して、 `NSUserActivity` ユーザーが発行できるコマンドにコンテキストを提供します。
-- **状態の復元**-ユーザーが macOS でアプリを終了し、後で relaunches すると、アプリは自動的に以前の状態に戻ります。 開発者は、状態の復元 API を使用して、ユーザーインターフェイスがユーザーに表示される前に、一時的な UI の状態をエンコードおよび復元できます。 アプリがベースの場合 `NSDocument` 、状態の復元は自動的に処理されます。 ベースでないアプリの状態の復元を有効にするには、 `NSDocument` `Restorable` クラスのを `NSWindow` に設定 `true` します。
-- **クラウド内のドキュメント**-macOS Sierra する前に、アプリはユーザーの iCloud ドライブにあるドキュメントを使用することを明示的に選択する必要がありました。 MacOS Sierra、ユーザーの**デスクトップ**フォルダーと**ドキュメント**フォルダーは、システムによって自動的に iCloud ドライブと同期される場合があります。 その結果、ユーザーのコンピューター上の領域を解放するために、ドキュメントのローカルコピーが削除される可能性があります。 `NSDocument`この変更は、ベースのアプリによって自動的に処理されます。 他のすべてのアプリの種類では、を使用し `NSFileCoordinator` てドキュメントの読み取りと書き込みを同期する必要があります。
+- **状態の復元** -ユーザーが macOS でアプリを終了し、後で relaunches すると、アプリは自動的に以前の状態に戻ります。 開発者は、状態の復元 API を使用して、ユーザーインターフェイスがユーザーに表示される前に、一時的な UI の状態をエンコードおよび復元できます。 アプリがベースの場合 `NSDocument` 、状態の復元は自動的に処理されます。 ベースでないアプリの状態の復元を有効にするには、 `NSDocument` `Restorable` クラスのを `NSWindow` に設定 `true` します。
+- **クラウド内のドキュメント** -macOS Sierra する前に、アプリはユーザーの iCloud ドライブにあるドキュメントを使用することを明示的に選択する必要がありました。 MacOS Sierra、ユーザーの **デスクトップ** フォルダーと **ドキュメント** フォルダーは、システムによって自動的に iCloud ドライブと同期される場合があります。 その結果、ユーザーのコンピューター上の領域を解放するために、ドキュメントのローカルコピーが削除される可能性があります。 `NSDocument` この変更は、ベースのアプリによって自動的に処理されます。 他のすべてのアプリの種類では、を使用し `NSFileCoordinator` てドキュメントの読み取りと書き込みを同期する必要があります。
 
 <a name="Summary"></a>
 
@@ -954,4 +954,4 @@ Apple には、次のように、開発者が最も多くの Mac プラットフ
 
 ## <a name="related-links"></a>関連リンク
 
-- [macOS のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac)
+- [macOS のサンプル](/samples/browse/?products=xamarin&term=Xamarin.Mac)

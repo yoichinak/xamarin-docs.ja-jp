@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 09/22/2016
-ms.openlocfilehash: e7bc6fa12ab6720842ab264678cbf8124353fc40
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: d3ec300cbda5d22a285c3f63d3281bde29b94024
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574419"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430058"
 ---
 # <a name="xamarinmac---macos-sierra-troubleshooting"></a>Xamarin. Mac-macOS Sierra のトラブルシューティング
 
@@ -32,7 +32,7 @@ _この記事では、Xamarin. Mac アプリで macOS Sierra を操作するた�
 
 <a name="App-Store"></a>
 
-## <a name="app-store"></a>アプリ ストア
+## <a name="app-store"></a>App Store
 
 既知の問題:
 
@@ -72,7 +72,7 @@ Apple Pay に新しい支払カードを追加するときに、無効な有効�
 
 ## <a name="core-image"></a>コアイメージ
 
-API では、 `CIImageProcessor` 任意の入力イメージの数がサポートされるようになりました。 `CIImageProcessor`MacOS Sierra beta 1 に含まれていた API は削除されます。
+API では、 `CIImageProcessor` 任意の入力イメージの数がサポートされるようになりました。 `CIImageProcessor` MacOS Sierra beta 1 に含まれていた API は削除されます。
 
 <a name="Notifications"></a>
 
@@ -94,5 +94,5 @@ WebGeolocation は、 `https://` iOS 10 と macOS Sierra の両方で動作し�
 
 ## <a name="related-links"></a>関連リンク
 
-- [Mac サンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac)
+- [Mac サンプル](/samples/browse/?products=xamarin&term=Xamarin.Mac)
 - [MacOS 10.12 の新機能](https://developer.apple.com/library/prerelease/content/releasenotes/MacOSX/WhatsNewInOSX/Articles/OSXv10.html#//apple_ref/doc/uid/TP40017145-SW1)

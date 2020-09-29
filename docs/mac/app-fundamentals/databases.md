@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: 034169b4e77dace365b36733442afe295b62fb80
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: cae2b0ebfa81d140af1c233938ceddb9acd5ff07
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84574004"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91432912"
 ---
 # <a name="databases-in-xamarinmac"></a>Xamarin. Mac のデータベース
 
@@ -24,14 +24,14 @@ Xamarin. Mac アプリケーションで C# と .NET を使用する場合は、
 
 この記事では、SQLite データにアクセスする2つの方法について説明します。
 
-1. **直接アクセス**-SQLite データベースに直接アクセスすることにより、Xcode の Interface Builder で作成された UI 要素を使用して、キー値のコーディングとデータバインディングにデータベースのデータを使用できます。 UI 要素を設定して操作するために、Xamarin. Mac アプリケーションでキー値のコードとデータバインディングの手法を使用することにより、記述して維持する必要があるコードの量を大幅に減らすことができます。 また、フロントエンドのユーザーインターフェイス (_モデルビューコントローラー_) からバッキングデータ (_データモデル_) をさらに分離することもできます。これにより、管理が容易になり、アプリケーションの設計をより柔軟に行うことができます。
-2. **SQLITE.NET orm** -オープンソースの[SQLite.NET](https://www.sqlite.org)オブジェクトリレーションシップマネージャー (ORM) を使用することにより、SQLite データベースのデータの読み取りと書き込みに必要なコードの量を大幅に削減できます。 このデータを使用して、テーブルビューなどのユーザーインターフェイス項目を設定できます。
+1. **直接アクセス** -SQLite データベースに直接アクセスすることにより、Xcode の Interface Builder で作成された UI 要素を使用して、キー値のコーディングとデータバインディングにデータベースのデータを使用できます。 UI 要素を設定して操作するために、Xamarin. Mac アプリケーションでキー値のコードとデータバインディングの手法を使用することにより、記述して維持する必要があるコードの量を大幅に減らすことができます。 また、フロントエンドのユーザーインターフェイス (_モデルビューコントローラー_) からバッキングデータ (_データモデル_) をさらに分離することもできます。これにより、管理が容易になり、アプリケーションの設計をより柔軟に行うことができます。
+2. **SQLITE.NET orm** -オープンソースの [SQLite.NET](https://www.sqlite.org) オブジェクトリレーションシップマネージャー (ORM) を使用することにより、SQLite データベースのデータの読み取りと書き込みに必要なコードの量を大幅に削減できます。 このデータを使用して、テーブルビューなどのユーザーインターフェイス項目を設定できます。
 
 [![実行中のアプリの例](databases-images/intro01.png "実行中のアプリの例")](databases-images/intro01-large.png#lightbox)
 
-この記事では、Xamarin. Mac アプリケーションで SQLite データベースを使用してキー値のコーディングとデータバインディングを操作する方法の基本について説明します。 この記事で使用する主要な概念と手法について説明しているように、最初に[Hello, Mac](~/mac/get-started/hello-mac.md)の記事「 [Xcode と Interface Builder の概要](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)」と「[アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions)」セクションをご覧になることを強くお勧めします。
+この記事では、Xamarin. Mac アプリケーションで SQLite データベースを使用してキー値のコーディングとデータバインディングを操作する方法の基本について説明します。 この記事で使用する主要な概念と手法について説明しているように、最初に [Hello, Mac](~/mac/get-started/hello-mac.md) の記事「 [Xcode と Interface Builder の概要](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) 」と「 [アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions) 」セクションをご覧になることを強くお勧めします。
 
-ここではキーと値のコードおよびデータバインディングを使用するため、最初に[データバインディングとキー値のコーディング](~/mac/app-fundamentals/databinding.md)について説明します。このドキュメントとサンプルアプリケーションで使用される主要な手法と概念について説明します。
+ここではキーと値のコードおよびデータバインディングを使用するため、最初に [データバインディングとキー値のコーディング](~/mac/app-fundamentals/databinding.md) について説明します。このドキュメントとサンプルアプリケーションで使用される主要な手法と概念について説明します。
 
 ここでは、 [Xamarin の内部](~/mac/internals/how-it-works.md)ドキュメントの[c# クラス/メソッドを目的の c に公開する方法](~/mac/internals/how-it-works.md)について説明します `Register` `Export` 。 c# クラスを目的の c オブジェクトと UI 要素に接続するために使用される属性と属性についても説明します。
 
@@ -47,17 +47,17 @@ Xcode の Interface Builder の UI 要素にバインドされる SQLite デー�
 
 続行する前に、いくつかのへの参照を含めることにより、SQLite データベースサポートをアプリケーションに追加する必要があります。Dll ファイル。
 
-次の操作を行います。
+次の手順を実行します。
 
 1. **Solution Pad**で、[**参照**] フォルダーを右クリックし、[**参照の編集**] を選択します。
-2. 次のように、 **Mono** **と system.string**の両方のアセンブリを選択します。 
+2. 次のように、 **Mono** **と system.string** の両方のアセンブリを選択します。 
 
     [![必要な参照を追加しています](databases-images/reference01.png "必要な参照を追加しています")](databases-images/reference01-large.png#lightbox)
 3. [ **OK** ] ボタンをクリックして変更を保存し、参照を追加します。
 
 ### <a name="modifying-the-data-model"></a>データモデルの変更
 
-これで、SQLite データベースに直接アクセスするためのサポートがアプリケーションに追加されました。次は、データモデルオブジェクトを変更して、データベースのデータの読み取りと書き込みを行う必要があります (また、キー値のコーディングとデータバインディングを提供します)。 サンプルアプリケーションの場合は、 **PersonModel.cs**クラスを編集して次のようにします。
+これで、SQLite データベースに直接アクセスするためのサポートがアプリケーションに追加されました。次は、データモデルオブジェクトを変更して、データベースのデータの読み取りと書き込みを行う必要があります (また、キー値のコーディングとデータバインディングを提供します)。 サンプルアプリケーションの場合は、 **PersonModel.cs** クラスを編集して次のようにします。
 
 ```csharp
 using System;
@@ -476,7 +476,7 @@ public bool isManager {
 }
 ```
 
-以前にデータが保存されている場合 (変数がではない場合など)、**名前**、**職業**、または**ismanager**の各プロパティに加えられた変更がデータベースに送信され `_conn` `null` ます。 次に、データベースの people を**作成**、**更新**、**読み込み**、および**削除**するために追加したメソッドを見てみましょう。
+以前にデータが保存されている場合 (変数がではない場合など)、 **名前**、 **職業** 、または **ismanager** の各プロパティに加えられた変更がデータベースに送信され `_conn` `null` ます。 次に、データベースの people を **作成**、 **更新**、 **読み込み** 、および **削除** するために追加したメソッドを見てみましょう。
 
 #### <a name="create-a-new-record"></a>新しいレコードを作成する
 
@@ -594,7 +594,7 @@ public void Update(SqliteConnection conn) {
 }
 ```
 
-上記の**Create**と同様に、 `SQLiteCommand` 渡されたからを取得 `SQLiteConnection` して、レコードを更新するように SQL を設定します (パラメーターを指定)。
+上記の **Create** と同様に、 `SQLiteCommand` 渡されたからを取得 `SQLiteConnection` して、レコードを更新するように SQL を設定します (パラメーターを指定)。
 
 ```csharp
 command.CommandText = "UPDATE [People] SET Name = @COL2, Occupation = @COL3, isManager = @COL4, ManagerID = @COL5 WHERE ID = @COL1";
@@ -812,7 +812,7 @@ _people = new NSMutableArray();
 
 ### <a name="initializing-the-database"></a>データベースを初期化しています
 
-データベースへの読み取りと書き込みをサポートするようにデータモデルを変更したうえで、データベースへの接続を開き、最初の実行時に初期化する必要があります。 次のコードを**MainWindow.cs**ファイルに追加してみましょう。
+データベースへの読み取りと書き込みをサポートするようにデータモデルを変更したうえで、データベースへの接続を開き、最初の実行時に初期化する必要があります。 次のコードを **MainWindow.cs** ファイルに追加してみましょう。
 
 ```csharp
 using System.Data;
@@ -1016,13 +1016,13 @@ In SQL ステートメントの実際の違いは (マネージャーだけを�
 
 ### <a name="databases-and-comboboxes"></a>データベースとコンボコンボ
 
-MacOS で使用できるメニューコントロール (コンボボックスなど) は、内部リスト (Interface Builder で事前に定義されているか、コードを使用して設定可能) か、または独自のカスタムの外部データソースを提供することによってドロップダウンリストに入力するように設定できます。 詳細については、「[メニューコントロールデータの提供](~/mac/user-interface/standard-controls.md#Providing-Menu-Control-Data)」を参照してください。
+MacOS で使用できるメニューコントロール (コンボボックスなど) は、内部リスト (Interface Builder で事前に定義されているか、コードを使用して設定可能) か、または独自のカスタムの外部データソースを提供することによってドロップダウンリストに入力するように設定できます。 詳細については、「 [メニューコントロールデータの提供](~/mac/user-interface/standard-controls.md#Providing-Menu-Control-Data) 」を参照してください。
 
 例として、上記の単純なバインドの例を Interface Builder で編集し、コンボボックスを追加して、という名前のアウトレットを使用して公開し `EmployeeSelector` ます。
 
 [![コンボボックスのアウトレットを公開する](databases-images/combo01.png "コンボボックスのアウトレットを公開する")](databases-images/combo01-large.png#lightbox)
 
-[**属性] インスペクター**で、 **autocompletes**を確認し、**データソース**のプロパティを使用します。
+[ **属性] インスペクター**で、 **autocompletes** を確認し、 **データソース** のプロパティを使用します。
 
 ![コンボボックス属性の構成](databases-images/combo02.png "コンボボックス属性の構成")
 
@@ -1401,11 +1401,11 @@ namespace MacDatabase
 
 この例では、 `NSComboBoxDataSource` 任意の SQLite データソースからコンボボックス項目を表示できる新しいを作成します。 まず、次のプロパティを定義します。
 
-- `Conn`-SQLite データベースへの接続を取得または設定します。
-- `TableName`-テーブル名を取得または設定します。
-- `IDField`-指定されたテーブルの一意の ID を提供するフィールドを取得します。値の設定も可能です。 既定値は `ID` です。
-- `DisplayField`-ドロップダウンリストに表示されるフィールドを取得または設定します。
-- `RecordCount`-指定されたテーブル内のレコードの数を取得します。
+- `Conn` -SQLite データベースへの接続を取得または設定します。
+- `TableName` -テーブル名を取得または設定します。
+- `IDField` -指定されたテーブルの一意の ID を提供するフィールドを取得します。値の設定も可能です。 既定値は `ID` です。
+- `DisplayField` -ドロップダウンリストに表示されるフィールドを取得または設定します。
+- `RecordCount` -指定されたテーブル内のレコードの数を取得します。
 
 オブジェクトの新しいインスタンスを作成するときに、接続、テーブル名、必要に応じて ID フィールドと表示フィールドを渡します。
 
@@ -1910,7 +1910,7 @@ Person = new PersonModel (Conn, DataSource.IDForIndex(0));
 
 ## <a name="sqlitenet-orm"></a>SQLite.NET ORM
 
-前述のように、オープンソースの[SQLite.NET](https://www.sqlite.org)オブジェクトリレーションシップマネージャー (ORM) を使用すると、SQLite データベースからのデータの読み書きに必要なコードの量を大幅に削減できます。 これは、キー値のコーディングとデータバインディングがオブジェクトに配置する必要があるため、データをバインドするときには最適なルートではない可能性があります。
+前述のように、オープンソースの [SQLite.NET](https://www.sqlite.org) オブジェクトリレーションシップマネージャー (ORM) を使用すると、SQLite データベースからのデータの読み書きに必要なコードの量を大幅に削減できます。 これは、キー値のコーディングとデータバインディングがオブジェクトに配置する必要があるため、データをバインドするときには最適なルートではない可能性があります。
 
 SQLite.Net の web サイトによれば、 _"SQLite は、自己完結型のサーバーレス構成のトランザクション SQL データベースエンジンを実装するソフトウェアライブラリです。SQLite は、世界で最も広く導入されているデータベースエンジンです。SQLite のソースコードは、パブリックドメインにあります。 "_
 
@@ -1926,11 +1926,11 @@ SQLite.NET は、アプリケーションに含める NuGet パッケージと�
 2. `SQLite.net`**検索ボックス**に「」と入力し、 **sqlite-net**エントリを選択します。
 
     [![SQLite NuGet パッケージを追加しています](databases-images/nuget01.png "SQLite NuGet パッケージを追加しています")](databases-images/nuget01-large.png#lightbox)
-3. [**パッケージの追加**] ボタンをクリックして完了します。
+3. [ **パッケージの追加** ] ボタンをクリックして完了します。
 
 ### <a name="creating-the-data-model"></a>データモデルの作成
 
-ここでは、プロジェクトに新しいクラスを追加し、でを呼び出し `OccupationModel` ます。 次に、 **OccupationModel.cs**ファイルを編集して次のように表示します。
+ここでは、プロジェクトに新しいクラスを追加し、でを呼び出し `OccupationModel` ます。 次に、 **OccupationModel.cs** ファイルを編集して次のように表示します。
 
 ```csharp
 using System;
@@ -2224,7 +2224,7 @@ public override void AwakeFromNib ()
 
 ## <a name="related-links"></a>関連リンク
 
-- [MacDatabase (サンプル)](https://docs.microsoft.com/samples/xamarin/mac-samples/macdatabase)
+- [MacDatabase (サンプル)](/samples/xamarin/mac-samples/macdatabase)
 - [Hello Mac](~/mac/get-started/hello-mac.md)
 - [データバインディングとキー値のコーディング](~/mac/app-fundamentals/databinding.md)
 - [標準コントロール](~/mac/user-interface/standard-controls.md)

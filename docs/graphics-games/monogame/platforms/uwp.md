@@ -6,12 +6,12 @@ ms.assetid: C6B99E44-00C1-4139-A1B7-FCFBE8749AB1
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 59bfad17e4c3a4720360f007ddf3e85835f972fd
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 5d970c596d403c7d55ccc23bb5e9ba7e5fbd623a
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931080"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431970"
 ---
 # <a name="creating-a-monogame-uwp-project"></a>モノゲーム UWP プロジェクトの作成
 
@@ -19,9 +19,9 @@ _モノゲームを使用すると、ユニバーサル Windows プラットフ�
 
 このチュートリアルでは、モノゲームユニバーサル Windows プラットフォーム (UWP) プロジェクトの作成とコンテンツの読み込みについて説明します。 UWP アプリは、デスクトップ、タブレット、Windows Phone、Xbox One を含むすべての Windows 10 デバイスで実行できます。
 
-このチュートリアルでは、*コーンフラワーブルー blue*バックグラウンド (XNA アプリの従来の背景色) を表示する空のプロジェクトを作成します。
+このチュートリアルでは、 *コーンフラワーブルー blue* バックグラウンド (XNA アプリの従来の背景色) を表示する空のプロジェクトを作成します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 モノゲーム UWP アプリの開発には、次のものが必要です。
 
@@ -31,20 +31,20 @@ _モノゲームを使用すると、ユニバーサル Windows プラットフ�
 - デバイスを開発者モードに設定する
 - Visual Studio またはそれ以降[のモノゲーム 3.7.1](http://community.monogame.net/t/monogame-3-7-1-release/11173)
 
-詳細については、 [Windows 10 UWP 開発のセットアップに関するページ](https://msdn.microsoft.com/windows/uwp/get-started/get-set-up)を参照してください。
+詳細については、 [Windows 10 UWP 開発のセットアップに関するページ](/windows/uwp/get-started/get-set-up)を参照してください。
 
-Xbox One のゲームは、リテール版の Xbox One ハードウェアで開発できます。 開発用の PC と Xbox の両方で、追加のソフトウェアが必要です。 Xbox one をゲーム開発用に構成する方法の詳細については、 [Xbox one](https://msdn.microsoft.com/windows/uwp/xbox-apps/index)のセットアップに関するページを参照してください。
+Xbox One のゲームは、リテール版の Xbox One ハードウェアで開発できます。 開発用の PC と Xbox の両方で、追加のソフトウェアが必要です。 Xbox one をゲーム開発用に構成する方法の詳細については、 [Xbox one](/windows/uwp/xbox-apps/)のセットアップに関するページを参照してください。
 
 ## <a name="creating-an-empty-template"></a>空のテンプレートを作成する
 
 必要なすべてのリソースがインストールされ、Windows 10 コンピューターで開発者モードが有効になったら、Visual Studio を使用して新しいモノゲームプロジェクトを作成できます。そのためには、次の手順を実行します。
 
-1. **ファイル**の  >  **新規作成**  >  **プロジェクトの**選択...
+1. **[ファイル]**  >  **[新規作成]**  >  **[プロジェクト]** の順に選択します。
 1. **インストールされている**  >  **テンプレート**  >  **Visual C#**  >  **モノゲーム**カテゴリを選択します。
 
     ![モノゲームカテゴリ](uwp-images/image1.png)
 
-1. [**モノゲーム Windows 10 ユニバーサルプロジェクト**] オプションを選択します。
+1. [ **モノゲーム Windows 10 ユニバーサルプロジェクト** ] オプションを選択します。
 
     ![[モノゲーム Windows 10 ユニバーサルプロジェクト] オプションを選択します。](uwp-images/image2.png)
 
@@ -89,9 +89,9 @@ Xbox One のモノゲームテンプレートでは、安全な領域が考慮�
 
 ## <a name="referencing-content-in-uwp-projects"></a>参照 (UWP プロジェクトのコンテンツを)
 
-モノゲームプロジェクトのコンテンツは、ファイルから直接参照することも、[モノゲームコンテンツパイプライン](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/content-pipeline/introduction.md)を使用して参照することもできます。 小規模なゲームプロジェクトでは、ファイルからの読み込みを簡単に行うことができます。 大規模なプロジェクトでは、コンテンツパイプラインを使用してコンテンツを最適化し、サイズと読み込み時間を短縮できるというメリットがあります。 Xbox 360 の XNA とは異なり、 `System.IO.File` クラスは Xbox ONE UWP アプリで使用できます。
+モノゲームプロジェクトのコンテンツは、ファイルから直接参照することも、 [モノゲームコンテンツパイプライン](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/content-pipeline/introduction.md)を使用して参照することもできます。 小規模なゲームプロジェクトでは、ファイルからの読み込みを簡単に行うことができます。 大規模なプロジェクトでは、コンテンツパイプラインを使用してコンテンツを最適化し、サイズと読み込み時間を短縮できるというメリットがあります。 Xbox 360 の XNA とは異なり、 `System.IO.File` クラスは Xbox ONE UWP アプリで使用できます。
 
-コンテンツパイプラインを使用したコンテンツの読み込みの詳細については、「[コンテンツパイプラインガイド](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/content-pipeline/introduction.md)」を参照してください。
+コンテンツパイプラインを使用したコンテンツの読み込みの詳細については、「 [コンテンツパイプラインガイド](https://github.com/xamarin/docs-archive/blob/master/Docs/CocosSharp/content-pipeline/introduction.md)」を参照してください。
 
 ### <a name="loading-content-from-file"></a>ファイルからコンテンツを読み込んでいます
 
@@ -112,8 +112,8 @@ IOS や Android とは異なり、UWP プロジェクトは実行可能ファイ
     }
     ```
 
-の使用方法の詳細については、 `Texture2D` 「[入門ゲームガイド](~/graphics-games/monogame/introduction/index.md)」を参照してください。
+の使用方法の詳細については、 `Texture2D` 「 [入門ゲームガイド](~/graphics-games/monogame/introduction/index.md)」を参照してください。
 
-## <a name="summary"></a>要約
+## <a name="summary"></a>まとめ
 
-このガイドでは、ファイルの読み込み時に新しい UWP プロジェクトを作成する方法と UWP 固有の考慮事項について説明します。 UWP ゲーム全体の作成に関心がある開発者は、「[モノの概要」ゲームガイド](~/graphics-games/monogame/introduction/index.md)のモノゲームの詳細を参照できます。
+このガイドでは、ファイルの読み込み時に新しい UWP プロジェクトを作成する方法と UWP 固有の考慮事項について説明します。 UWP ゲーム全体の作成に関心がある開発者は、「 [モノの概要」ゲームガイド](~/graphics-games/monogame/introduction/index.md)のモノゲームの詳細を参照できます。

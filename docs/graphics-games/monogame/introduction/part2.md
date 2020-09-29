@@ -6,12 +6,12 @@ ms.assetid: F0622A01-DE7F-451A-A51F-129876AB6FFD
 author: conceptdev
 ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 2c290ac7d66147342087342bda5e5a19b4e6e6f7
-ms.sourcegitcommit: 57f815bf0024b1afe9754c0e28054fc0a53ce302
+ms.openlocfilehash: 835beca6866f5d3f82ae48d1c99557ceafe360ba
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70763621"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91429775"
 ---
 # <a name="part-2--implementing-the-walkinggame"></a>パート2–ゲームの実装
 
@@ -31,7 +31,7 @@ _このチュートリアルでは、ゲームロジックとコンテンツを�
 
 ## <a name="unzipping-our-game-content"></a>ゲームコンテンツの解凍
 
-コードの記述を開始する前に、ゲーム*コンテンツ*を解凍します。 多くの場合、ゲーム開発者は、*コンテンツ*という用語を使用して、通常はビジュアルアーティスト、ゲームデザイナー、またはオーディオデザイナーによって作成された非コードファイルを参照します。 一般的なコンテンツの種類には、ビジュアルの表示、サウンドの再生、人工知能 (AI) の動作の制御に使用されるファイルが含まれます。 ゲーム開発チームの観点から見たコンテンツは、通常、プログラマ以外が作成します。
+コードの記述を開始する前に、ゲーム *コンテンツ*を解凍します。 多くの場合、ゲーム開発者は、 *コンテンツ* という用語を使用して、通常はビジュアルアーティスト、ゲームデザイナー、またはオーディオデザイナーによって作成された非コードファイルを参照します。 一般的なコンテンツの種類には、ビジュアルの表示、サウンドの再生、人工知能 (AI) の動作の制御に使用されるファイルが含まれます。 ゲーム開発チームの観点から見たコンテンツは、通常、プログラマ以外が作成します。
 
 ここで使用するコンテンツについては、 [GitHub を](https://github.com/xamarin/mobile-samples/blob/master/WalkingGameMG/Resources/charactersheet.png?raw=true)参照してください。 これらのファイルは、このチュートリアルの後半でアクセスする場所にダウンロードする必要があります。
 
@@ -39,12 +39,12 @@ _このチュートリアルでは、ゲームロジックとコンテンツを�
 
 ここでは、基本的なレンダリングで使用されるモノゲームクラスについて説明します。
 
-- `SpriteBatch`–画面に2D グラフィックスを描画するために使用されます。 *スプライト*は、画面上にイメージを表示するために使用される2d ビジュアル要素です。 オブジェクト`SpriteBatch`は、メソッド`Begin`と`End`メソッドの間で一度に1つのスプライトを描画できます。また、複数のスプライトをグループ化または*バッチ*処理することもできます。
-- `Texture2D`–実行時にイメージオブジェクトを表します。 `Texture2D`インスタンスは、多くの場合、.png や .bmp などのファイル形式から作成されますが、実行時に動的に作成することもできます。 `Texture2D`インスタンスは、インスタンスを使用`SpriteBatch`して表示するときに使用されます。
-- `Vector2`–2D 座標系の位置を表します。これは、多くの場合、ビジュアルオブジェクトの配置に使用されます。 モノゲームにも`Vector3`が`Vector4`含まれています`Vector2`が、このチュートリアルでのみ使用します。
-- `Rectangle`–位置、幅、および高さを持つ4つの辺の領域。 ここでは、 `Texture2D`アニメーションの使用を開始するときにレンダリングするの部分を定義します。
+- `SpriteBatch` –画面に2D グラフィックスを描画するために使用されます。 *スプライト* は、画面上にイメージを表示するために使用される2d ビジュアル要素です。 オブジェクトは、 `SpriteBatch` メソッドとメソッドの間で一度に1つのスプライトを描画できます `Begin` `End` 。また、複数のスプライトをグループ化または *バッチ*処理することもできます。
+- `Texture2D` –実行時にイメージオブジェクトを表します。 `Texture2D` インスタンスは、多くの場合、.png や .bmp などのファイル形式から作成されますが、実行時に動的に作成することもできます。 `Texture2D` インスタンスは、インスタンスを使用して表示するときに使用され `SpriteBatch` ます。
+- `Vector2` –2D 座標系の位置を表します。これは、多くの場合、ビジュアルオブジェクトの配置に使用されます。 モノゲームにもが含まれてい `Vector3` `Vector4` ますが、 `Vector2` このチュートリアルでのみ使用します。
+- `Rectangle` –位置、幅、および高さを持つ4つの辺の領域。 ここでは、アニメーションの使用を開始するときにレンダリングするの部分を定義し `Texture2D` ます。
 
-また、モノの名前空間にかかわらず、モノゲームは Microsoft によって管理されていないことにも注意してください。 この`Microsoft.Xna`名前空間は、既存の XNA プロジェクトをモノゲームに簡単に移行できるようにするために、モノゲームで使用されています。
+また、モノの名前空間にかかわらず、モノゲームは Microsoft によって管理されていないことにも注意してください。 `Microsoft.Xna`この名前空間は、既存の XNA プロジェクトをモノゲームに簡単に移行できるようにするために、モノゲームで使用されています。
 
 ## <a name="rendering-our-first-sprite"></a>最初のスプライトをレンダリングする
 
@@ -52,23 +52,23 @@ _このチュートリアルでは、ゲームロジックとコンテンツを�
 
 ### <a name="creating-a-texture2d"></a>Texture2D の作成
 
-スプライトを表示するとき`Texture2D`に使用するインスタンスを作成する必要があります。 すべてのゲームコンテンツは、最終的にプラットフォーム固有のプロジェクトにある**コンテンツ**という名前のフォルダーに格納されます。 モノゲームの共有プロジェクトには、プラットフォーム固有のビルドアクションを使用する必要があるため、コンテンツを含めることはできません。 コンテンツフォルダーは、iOS プロジェクトと、Android プロジェクトの Assets フォルダー内にあります。
+`Texture2D`スプライトを表示するときに使用するインスタンスを作成する必要があります。 すべてのゲームコンテンツは、最終的にプラットフォーム固有のプロジェクトにある **コンテンツ** という名前のフォルダーに格納されます。 モノゲームの共有プロジェクトには、プラットフォーム固有のビルドアクションを使用する必要があるため、コンテンツを含めることはできません。 コンテンツフォルダーは、iOS プロジェクトと、Android プロジェクトの Assets フォルダー内にあります。
 
-ゲームのコンテンツを追加するには、 **[コンテンツ]** フォルダーを右クリックし、[**追加] > [ファイルの追加**] の順に選択します。コンテンツ .zip ファイルが抽出された場所に移動し、文字**シート .png**ファイルを選択します。 ファイルをフォルダーに追加する方法を確認するメッセージが表示されたら、 **[コピー]** オプションを選択します。
+ゲームのコンテンツを追加するには、[ **コンテンツ** ] フォルダーを右クリックし、[ **追加] > [ファイルの追加** ] の順に選択します。content.zip ファイルが抽出された場所に移動し、 **charactersheet.png** ファイルを選択します。 ファイルをフォルダーに追加する方法を確認するメッセージが表示されたら、[ **コピー** ] オプションを選択します。
 
 ![ファイルをフォルダーに追加する方法を確認するメッセージが表示されたら、[コピー] オプションを選択します。](part2-images/image1.png)
 
-コンテンツフォルダーには、文字シート .png ファイルが含まれるようになりました。
+コンテンツフォルダーに charactersheet.png ファイルが含まれるようになりました。
 
-![コンテンツフォルダーには、文字シート .png ファイルが含まれるようになりました。](part2-images/image2.png)
+![コンテンツフォルダーに charactersheet.png ファイルが含まれるようになりました](part2-images/image2.png)
 
-次に、文字シート .png ファイルを読み込んでを`Texture2D`作成するコードを追加します。 これを行うには`Game1.cs` 、ファイルを開き、次のフィールドを Game1.cs クラスに追加します。
+次に、charactersheet.png ファイルを読み込み、を作成するコードを追加し `Texture2D` ます。 これを行うには、ファイルを開き、 `Game1.cs` 次のフィールドを Game1.cs クラスに追加します。
 
 ```csharp
 Texture2D characterSheetTexture;
 ```
 
-次に、 `characterSheetTexture` `LoadContent`メソッドでを作成します。 変更`LoadContent`方法は、次のようになります。
+次に、 `characterSheetTexture` メソッドでを作成し `LoadContent` ます。 変更方法は、次の `LoadContent` ようになります。
 
 ```csharp
 protected override void LoadContent()
@@ -79,7 +79,7 @@ protected override void LoadContent()
 }
 ```
 
-既定のプロジェクトでは、インスタンスが`spriteBatch`既にインスタンス化されていることに注意してください。 これは後で使用しますが、 `spriteBatch`を使用するための準備として追加のコードは追加されません。 一方`spriteSheetTexture` 、は初期化を必要とするため、の`spriteBatch`作成後に初期化されます。
+既定のプロジェクトでは、インスタンスが既にインスタンス化されていることに注意してください `spriteBatch` 。 これは後で使用しますが、を使用するための準備として追加のコードは追加されません `spriteBatch` 。 一方、は `spriteSheetTexture` 初期化を必要とするため、の作成後に初期化され `spriteBatch` ます。
 
 ```csharp
 protected override void LoadContent()
@@ -94,7 +94,7 @@ protected override void LoadContent()
 }
 ```
 
-`SpriteBatch`インスタンス`Game1.Draw`とインスタンスが用意できたので、次のように表示コードをメソッドに`Texture2D`追加します。
+インスタンスとインスタンスが用意できたので、 `SpriteBatch` `Texture2D` 次のように表示コードをメソッドに追加し `Game1.Draw` ます。
 
 ```csharp
 protected override void Draw(GameTime gameTime)
@@ -114,9 +114,9 @@ protected override void Draw(GameTime gameTime)
 }
 ```
 
-ゲームを実行すると、文字シートから作成されたテクスチャを表示するスプライトが1つ表示されるようになりました。
+ゲームを実行すると、charactersheet.png から作成されたテクスチャを表示するスプライトが1つ表示されるようになりました。
 
-![ゲームを実行すると、文字シートから作成されたテクスチャを表示するスプライトが1つ表示されるようになりました。](part2-images/image3.png)
+![ゲームの実行中に、から作成されたテクスチャを表示するスプライトが1つ表示されるようになりました charactersheet.png](part2-images/image3.png)
 
 ## <a name="creating-the-characterentity"></a>文字エンティティの作成
 
@@ -124,7 +124,7 @@ protected override void Draw(GameTime gameTime)
 
 ### <a name="what-is-an-entity"></a>エンティティとは何ですか。
 
-ゲームコードを整理するための一般的なパターンは、game*エンティティ*型ごとに新しいクラスを作成することです。 ゲーム開発のエンティティは、次の特性のいくつかを含むことができるオブジェクトです (すべてが必須ではありません)。
+ゲームコードを整理するための一般的なパターンは、game *エンティティ* 型ごとに新しいクラスを作成することです。 ゲーム開発のエンティティは、次の特性のいくつかを含むことができるオブジェクトです (すべてが必須ではありません)。
 
 - スプライト、テキスト、3D モデルなどのビジュアル要素
 - 物理またはすべてのフレームの動作 (単位 patrolling 設定パスまたはプレーヤー文字が入力に応答する)
@@ -134,16 +134,16 @@ protected override void Draw(GameTime gameTime)
 
 ### <a name="defining-the-characterentity"></a>文字エンティティの定義
 
-私たちが呼び出す`CharacterEntity`エンティティは、次の特性を持ちます。
+私たちが呼び出すエンティティは、 `CharacterEntity` 次の特性を持ちます。
 
-- 独自のものを読み込む機能`Texture2D`
+- 独自のものを読み込む機能 `Texture2D`
 - ウォークアニメーションを更新する呼び出しメソッドを含む、それ自体をレンダリングする機能
-- `X`および Y プロパティを指定して、文字の位置を制御します。
+- `X` および Y プロパティを指定して、文字の位置を制御します。
 - 自分自身を更新する機能。具体的には、タッチスクリーンから値を読み取り、位置を適切に調整します。
 
-ゲーム`CharacterEntity`にを追加するには、 **[プレイ] プロジェクトを**右クリックまたはクリックし、 **[新しいファイルの追加 >]** を選択します。 **[空のクラス]** オプションを選択し、新しいファイルに「文字**エンティティ**」という名前を指定し、 **[新規作成]** をクリックします。
+ゲームにを追加するには、 `CharacterEntity` [プレイ] プロジェクトを右クリックまた**WalkingGame**はクリックし、[**新しいファイルの追加 >**] を選択します。[**空のクラス**] オプションを選択し、新しいファイルに「文字**エンティティ**」という名前を指定し、[**新規作成**] をクリックします。
 
-まず、 `CharacterEntity`を`Texture2D`読み込み、それ自体を描画する機能を追加します。 新しく追加さ`CharacterEntity.cs`れたファイルを次のように変更します。
+まず、を `CharacterEntity` 読み込み、 `Texture2D` それ自体を描画する機能を追加します。 新しく追加されたファイルを次のように変更し `CharacterEntity.cs` ます。
 
 ```csharp
 using System;
@@ -190,31 +190,31 @@ namespace WalkingGame
 }
 ```
 
-上のコードは、コンテンツの配置、表示、およびへ`CharacterEntity`の読み込みの責任を追加します。 上のコードでいくつかの考慮事項について説明します。
+上のコードは、コンテンツの配置、表示、およびへの読み込みの責任を追加し `CharacterEntity` ます。 上のコードでいくつかの考慮事項について説明します。
 
 ### <a name="why-are-x-and-y-floats"></a>X と Y がフローティングするのはなぜですか。
 
-ゲームプログラミングを初めて使用する開発者は、 `float`型が`int`または`double`ではなく使用されている理由を気にすることがあります。 これは、低レベルのレンダリングコードでの配置では、32ビットの値が最も一般的であるためです。 Double 型は、オブジェクトの配置に必要なことがほとんどない、精度の64ビットを占有します。 32ビットの違いは意味がないように思えるかもしれませんが、多くの最新のゲームには、フレームごとに数十の位置値 (1 秒あたり30または60回) を処理する必要があるグラフィックスが含まれています。 グラフィックスパイプライン内を半分ずつ移動する必要があるメモリ量を減らすことは、ゲームのパフォーマンスに大きな影響を与える可能性があります。
+ゲームプログラミングを初めて使用する開発者は、 `float` 型がまたはではなく使用されている理由を気にすることがあり `int` `double` ます。 これは、低レベルのレンダリングコードでの配置では、32ビットの値が最も一般的であるためです。 Double 型は、オブジェクトの配置に必要なことがほとんどない、精度の64ビットを占有します。 32ビットの違いは意味がないように思えるかもしれませんが、多くの最新のゲームには、フレームごとに数十の位置値 (1 秒あたり30または60回) を処理する必要があるグラフィックスが含まれています。 グラフィックスパイプライン内を半分ずつ移動する必要があるメモリ量を減らすことは、ゲームのパフォーマンスに大きな影響を与える可能性があります。
 
-データ`int`型は、配置に適した測定単位にすることができますが、エンティティの配置方法に制限を設定できます。 たとえば、整数値を使用すると、ズームインまたは3D カメラ (で許可されて`SpriteBatch`いる) をサポートするゲームのスムーズな移動を実装することが難しくなります。
+`int`データ型は、配置に適した測定単位にすることができますが、エンティティの配置方法に制限を設定できます。 たとえば、整数値を使用すると、ズームインまたは3D カメラ (で許可されている) をサポートするゲームのスムーズな移動を実装することが難しくなり `SpriteBatch` ます。
 
-最後に、ゲームのタイミング値を使用して、画面の周りで文字を移動するロジックについて説明します。 ベロシティと特定のフレームに渡された時間を乗算した結果、ほとんどの場合、整数にならないことが多い`float`ため`X` 、 `Y`とにはを使用する必要があります。
+最後に、ゲームのタイミング値を使用して、画面の周りで文字を移動するロジックについて説明します。 ベロシティと特定のフレームに渡された時間を乗算した結果、ほとんどの場合、整数にならないことが多いため、とにはを使用する必要があり `float` `X` `Y` ます。
 
 ### <a name="why-is-charactersheettexture-static"></a>文字は、静的なのはなぜですか。
 
-`characterSheetTexture` インスタンスは、文字シート.pngファイル`Texture2D`のランタイム表現です。 つまり、ソース文字**シート .png**ファイルから抽出された各ピクセルの色の値が含まれます。 ゲームで2つ`CharacterEntity`のインスタンスを作成する場合は、それぞれが文字シート .png からの情報にアクセスできる必要があります。 このような状況では、2回の文字を読み込む場合のパフォーマンスコストは発生しません。また、ram に重複するテクスチャメモリを格納する必要もありません。 フィールドを使用すると、すべて`CharacterEntity`のインスタンス`Texture2D`で同じを共有できます。 `static`
+`characterSheetTexture` `Texture2D` インスタンスは、charactersheet.png ファイルのランタイム表現です。 つまり、ソース **charactersheet.png** ファイルから抽出された各ピクセルの色の値が含まれます。 ゲームで2つのインスタンスを作成する場合は `CharacterEntity` 、charactersheet.png から情報にアクセスする必要があります。 このような状況では、charactersheet.png を2回読み込む場合のパフォーマンスコストは発生しません。また、ram に重複するテクスチャメモリを格納する必要もありません。 フィールドを使用 `static` すると、すべてのインスタンスで同じを共有でき `Texture2D` `CharacterEntity` ます。
 
-コンテンツ`static`のランタイム表現にメンバーを使用することは、単純なソリューションであり、あるレベルから別のレベルへの移動時にコンテンツをアンロードするなど、大規模なゲームで発生した問題に対処するものではありません。 このチュートリアルの範囲を超えた高度なソリューションには、モノゲームのコンテンツパイプラインの使用、またはカスタムコンテンツ管理システムの作成が含まれます。
+`static`コンテンツのランタイム表現にメンバーを使用することは、単純なソリューションであり、あるレベルから別のレベルへの移動時にコンテンツをアンロードするなど、大規模なゲームで発生した問題に対処するものではありません。 このチュートリアルの範囲を超えた高度なソリューションには、モノゲームのコンテンツパイプラインの使用、またはカスタムコンテンツ管理システムの作成が含まれます。
 
 ### <a name="why-is-spritebatch-passed-as-an-argument-instead-of-instantiated-by-the-entity"></a>SpriteBatch がエンティティによってインスタンス化されるのではなく、引数として渡されるのはなぜですか。
 
-上記`Draw`で実装`characterSheetTexture`されたメソッド`SpriteBatch`は引数を受け取り`CharacterEntity`ますが、はによってインスタンス化されます。
+`Draw`上記で実装されたメソッドは引数を受け取りますが、はに `SpriteBatch` `characterSheetTexture` よってインスタンス化され `CharacterEntity` ます。
 
-これは`SpriteBatch` 、すべて`Draw`の呼び出しに同じインスタンスを使用する場合と、1つのセットと`End`の`Begin`呼び出しの間で`Draw`すべての呼び出しが行われる場合に、最も効率的なレンダリングが可能であるためです。 もちろん、ゲームに含まれるエンティティインスタンスは1つだけですが、より複雑なゲームでは、複数のエンティティで同じ`SpriteBatch`インスタンスを使用できるパターンを利用できます。
+これは、すべての呼び出しに同じインスタンスを使用する場合と、 `SpriteBatch` `Draw` `Draw` 1 つのセットとの呼び出しの間ですべての呼び出しが行われる場合に `Begin` 、最も効率的なレンダリングが可能であるためです `End` 。 もちろん、ゲームに含まれるエンティティインスタンスは1つだけですが、より複雑なゲームでは、複数のエンティティで同じインスタンスを使用できるパターンを利用でき `SpriteBatch` ます。
 
 ## <a name="adding-characterentity-to-the-game"></a>キャラクターエンティティをゲームに追加する
 
-これで、をレンダリングする`CharacterEntity`ためのコードを追加したので、この新しい`Game1.cs`エンティティのインスタンスを使用するようにのコードを置き換えることができます。 これを行うには、 `Texture2D`フィールドをの`CharacterEntity` `Game1`フィールドに置き換えます。
+これで、をレンダリングする `CharacterEntity` ためのコードを追加したので、 `Game1.cs` この新しいエンティティのインスタンスを使用するようにのコードを置き換えることができます。 これを行うには、 `Texture2D` フィールドをのフィールドに置き換えます `CharacterEntity` `Game1` 。
 
 ```csharp
 public class Game1 : Game
@@ -229,7 +229,7 @@ public class Game1 : Game
     ...
 ```
 
-次に、このエンティティのインスタンス化をに`Game1.Initialize`追加します。
+次に、このエンティティのインスタンス化をに追加し `Game1.Initialize` ます。
 
 ```csharp
 protected override void Initialize()
@@ -240,7 +240,7 @@ protected override void Initialize()
 }
 ```
 
-また、から`Texture2D` `LoadContent`作成したを削除する必要があり`CharacterEntity`ます。これは、の内部で処理されるためです。 `Game1.LoadContent`次のようになります。
+また、から作成したを削除する必要があり `Texture2D` `LoadContent` ます。これは、の内部で処理されるためです `CharacterEntity` 。 `Game1.LoadContent` 次のようになります。
 
 ```csharp
 protected override void LoadContent()
@@ -250,7 +250,7 @@ protected override void LoadContent()
 }
 ```
 
-名前に関係なく、 `LoadContent`メソッドは、コンテンツを読み込むための唯一の場所ではありません。多くのゲームでは、初期化メソッドでコンテンツの読み込みを実装しています。または、コンテンツとしての更新コードでも、プレーヤーがに到達するまでは必要ない可能性があります。ゲームの特定のポイント。
+名前にかかわらず、 `LoadContent` メソッドがコンテンツを読み込むための唯一の場所ではないことに注意してください。多くのゲームは、初期化メソッドでコンテンツの読み込みを実装します。または、コンテンツとしての更新コードでも、プレーヤーがゲームの特定のポイントに到達するまでは必要ない可能性があります。
 
 最後に、次のように Draw メソッドを変更できます。
 
@@ -277,13 +277,13 @@ protected override void Draw(GameTime gameTime)
 
 ## <a name="creating-the-animation-class"></a>Animation クラスの作成
 
-現在のところ、完全な文字**シート .png**ファイルが表示されています。`CharacterEntity` このような複数のイメージを1つのファイルに配置することを、*スプライトシート*と呼びます。 通常、スプライトはスプライトシートの一部だけを表示します。 この文字**シート**の`CharacterEntity`一部をレンダリングするようにを変更します。この部分は、時間の経過と共に変更され、ウォーキングアニメーションが表示されます。
+現在、 `CharacterEntity` **charactersheet.png** ファイル全体が表示されています。 このような複数のイメージを1つのファイルに配置することを、 *スプライトシート*と呼びます。 通常、スプライトはスプライトシートの一部だけを表示します。 `CharacterEntity`この**charactersheet.png**の一部をレンダリングするようにを変更します。この部分は、時間の経過と共に変化して、ウォーキングアニメーションを表示します。
 
-ここでは、 `Animation`クラスを作成して、文字エンティティアニメーションのロジックと状態を制御します。 Animation クラスは、アニメーションだけ`CharacterEntity`でなくすべてのエンティティに使用できる一般的なクラスになります。 Ultimate クラスは`Rectangle` 、`CharacterEntity`を描画するときにが使用するを提供します。 `Animation` また、アニメーションの定義`AnimationFrame`に使用されるクラスも作成します。
+ここでは、クラスを作成して、文字 `Animation` エンティティアニメーションのロジックと状態を制御します。 Animation クラスは、アニメーションだけでなくすべてのエンティティに使用できる一般的なクラスになります `CharacterEntity` 。 Ultimate `Animation` クラスは `Rectangle` 、を描画するときにが使用するを提供し `CharacterEntity` ます。 また `AnimationFrame` 、アニメーションの定義に使用されるクラスも作成します。
 
 ### <a name="defining-animationframe"></a>定義 (アニメーションフレームを)
 
-`AnimationFrame`には、アニメーションに関連するロジックは含まれません。 データを格納するためだけに使用します。 `AnimationFrame`クラスを追加するには、 **[プレイ]** の共有プロジェクトを右クリックまたはクリックし、 **[新しいファイルの追加 >]** を選択します。「**アニメーションフレーム**」という名前を入力し、 **[新規]** ボタンをクリックします。 次のコードが`AnimationFrame.cs`含まれるようにファイルを変更します。
+`AnimationFrame` には、アニメーションに関連するロジックは含まれません。 データを格納するためだけに使用します。 クラスを追加するに `AnimationFrame` は、[ **プレイ** ] の共有プロジェクトを右クリックまたはクリックし、[ **新しいファイルの追加 >** ] を選択します。「 **アニメーションフレーム** 」という名前を入力し、[ **新規** ] ボタンをクリックします。 `AnimationFrame.cs`次のコードが含まれるようにファイルを変更します。
 
 ```csharp
 using System;
@@ -299,16 +299,16 @@ namespace WalkingGame
 }
 ```
 
-クラス`AnimationFrame`には、次の2つの情報が含まれています。
+クラスには、 `AnimationFrame` 次の2つの情報が含まれています。
 
-- `SourceRectangle`–に`Texture2D` `AnimationFrame`よって表示されるの領域を定義します。 この値はピクセル単位で計測され、左上は (0, 0) になります。
-- `Duration``AnimationFrame` –`Animation`での使用時にが表示される期間を定義します。
+- `SourceRectangle` –によって表示されるの領域を定義し `Texture2D` `AnimationFrame` ます。 この値はピクセル単位で計測され、左上は (0, 0) になります。
+- `Duration` – `AnimationFrame` での使用時にが表示される期間を定義 `Animation` します。
 
 ### <a name="defining-animation"></a>アニメーションの定義
 
-クラス`Animation`には、が`List<AnimationFrame>`経過した時間に従って現在表示されているフレームを切り替えるロジックと共に、が含まれます。
+クラスには `Animation` 、 `List<AnimationFrame>` が経過した時間に従って現在表示されているフレームを切り替えるロジックと共に、が含まれます。
 
-`Animation`クラスを追加するには、 **[プレイ]** の共有プロジェクトを右クリックまたはクリックし、 **[新しいファイルの追加 >]** を選択します。名前の**アニメーション**を入力し、 **[新規]** ボタンをクリックします。 次のコードが`Animation.cs`含まれるようにファイルを変更します。
+クラスを追加するに `Animation` は、[ **プレイ** ] の共有プロジェクトを右クリックまたはクリックし、[ **新しいファイルの追加 >**] を選択します。名前の **アニメーション** を入力し、[ **新規** ] ボタンをクリックします。 `Animation.cs`次のコードが含まれるようにファイルを変更します。
 
 ```csharp
 using System;
@@ -361,25 +361,25 @@ namespace WalkingGame
 }
 ```
 
-`Animation`クラスの詳細をいくつか見てみましょう。
+クラスの詳細をいくつか見てみましょう `Animation` 。
 
 ### <a name="frames-list"></a>フレーム一覧
 
-`frames`メンバーは、アニメーションのデータを格納するものです。 アニメーションをインスタンス化するコードは、 `AnimationFrame` `AddFrame`メソッドを使用`frames`してリストにインスタンスを追加します。 より完全な実装では`public` 、変更`frames`のためのメソッドまたはプロパティを提供できますが、このチュートリアルのフレームを追加するように機能を制限します。
+`frames`メンバーは、アニメーションのデータを格納するものです。 アニメーションをインスタンス化するコードは、 `AnimationFrame` メソッドを使用してリストにインスタンスを追加し `frames` `AddFrame` ます。 より完全な実装では `public` 、変更のためのメソッドまたはプロパティを提供できます `frames` が、このチュートリアルのフレームを追加するように機能を制限します。
 
-### <a name="duration"></a>存続期間
+### <a name="duration"></a>Duration
 
-Duration は、 `Animation,`含ま`AnimationFrame`れているすべてのインスタンスの期間を加算することによって取得されるの合計期間を返します。 が変更できないオブジェクトの`AnimationFrame`場合、この値はキャッシュされる可能性がありますが、アニメーションに追加した後に変更できるクラスとして animation frame が実装されているため、プロパティにアクセスするたびにこの値を計算する必要があります。
+Duration は、含まれている `Animation,` すべてのインスタンスの期間を加算することによって取得されるの合計期間を返し `AnimationFrame` ます。 が変更できないオブジェクトの場合、この値はキャッシュされる可能性 `AnimationFrame` がありますが、アニメーションに追加した後に変更できるクラスとして Animation frame が実装されているため、プロパティにアクセスするたびにこの値を計算する必要があります。
 
 ### <a name="update"></a>更新
 
-`Update`メソッドは、すべてのフレーム (つまり、ゲーム全体が更新されるたびに) を呼び出す必要があります。 その目的は、現在表示`timeIntoAnimation`されているフレームを返すために使用されるメンバーを増やすことです。 のロジック`Update`により、 `timeIntoAnimation`がアニメーション全体の継続時間よりも大きくなるのを防ぐことができます。
+メソッドは、 `Update` すべてのフレーム (つまり、ゲーム全体が更新されるたびに) を呼び出す必要があります。 その目的は、 `timeIntoAnimation` 現在表示されているフレームを返すために使用されるメンバーを増やすことです。 のロジックにより `Update` 、が `timeIntoAnimation` アニメーション全体の継続時間よりも大きくなるのを防ぐことができます。
 
-`Animation`クラスを使用してウォーキングアニメーションを表示するため、このアニメーションが最後に達したときに繰り返します。 これは、 `timeIntoAnimation`が`Duration`値より大きいかどうかを確認することで実現できます。 そのような場合は、最初に戻って残りの部分を保持し、ループアニメーションになります。
+クラスを使用して `Animation` ウォーキングアニメーションを表示するため、このアニメーションが最後に達したときに繰り返します。 これは、が値より大きいかどうかを確認することで実現でき `timeIntoAnimation` `Duration` ます。 そのような場合は、最初に戻って残りの部分を保持し、ループアニメーションになります。
 
 ### <a name="obtaining-the-current-frames-rectangle"></a>現在のフレームの四角形を取得する
 
-`Animation`クラスの目的は、スプライトを描画するとき`Rectangle`に使用できるを提供することです。 現在、 `Animation`クラスには、表示する`timeIntoAnimation` `Rectangle`必要があるメンバーを取得するために使用するメンバーを変更するためのロジックが含まれています。 これを行うには、 `CurrentRectangle` `Animation`クラスでプロパティを作成します。 次のプロパティをクラス`Animation`にコピーします。
+クラスの目的 `Animation` は、スプライトを描画するときに使用できるを提供する `Rectangle` ことです。 現在、クラスには、 `Animation` 表示する `timeIntoAnimation` 必要があるメンバーを取得するために使用するメンバーを変更するためのロジックが含まれてい `Rectangle` ます。 これを行うには `CurrentRectangle` 、クラスでプロパティを作成し `Animation` ます。 次のプロパティをクラスにコピーし `Animation` ます。
 
 ```csharp
 public Rectangle CurrentRectangle
@@ -426,16 +426,16 @@ public Rectangle CurrentRectangle
 
 ## <a name="adding-the-first-animation-to-characterentity"></a>最初のアニメーションを文字エンティティに追加する
 
-に`CharacterEntity`は、現在`Animation`表示されているへの参照だけでなく、ウォーキングのためのアニメーションも含まれます。
+に `CharacterEntity` は、現在表示されているへの参照だけでなく、ウォーキングのためのアニメーションも含まれ `Animation` ます。
 
-まず、これまでに記述し`Animation,`た機能をテストするために使用する最初のを追加します。 次のメンバーを文字エンティティクラスに追加してみましょう。
+まず、これ `Animation,` までに記述した機能をテストするために使用する最初のを追加します。 次のメンバーを文字エンティティクラスに追加してみましょう。
 
 ```csharp
 Animation walkDown;
 Animation currentAnimation;
 ```
 
-次に、アニメーションを`walkDown`定義します。 これを行うには`CharacterEntity` 、次のようにコンストラクターを変更します。
+次に、アニメーションを定義し `walkDown` ます。 これを行うには、次のようにコンストラクターを変更し `CharacterEntity` ます。
 
 ```csharp
 public CharacterEntity (GraphicsDevice graphicsDevice)
@@ -456,7 +456,7 @@ public CharacterEntity (GraphicsDevice graphicsDevice)
 }
 ```
 
-既に説明したように、 `Animation.Update`時間ベースのアニメーションを再生するには、を呼び出す必要があります。 また、 `currentAnimation`を割り当てる必要もあります。 ここでは、 `currentAnimation`をに割り当てますが、このコードは後で、移動ロジックを`walkDown`実装するときに置き換えます。 次のように`Update` 、メソッド`CharacterEntity`をに追加します。
+既に説明したように、 `Animation.Update` 時間ベースのアニメーションを再生するには、を呼び出す必要があります。 また、を割り当てる必要もあり `currentAnimation` ます。 ここでは、 `currentAnimation` をに割り当てます `walkDown` が、このコードは後で、移動ロジックを実装するときに置き換えます。 次のよう `Update` に、メソッドをに追加し `CharacterEntity` ます。
 
 ```csharp
 public void Update(GameTime gameTime)
@@ -469,7 +469,7 @@ public void Update(GameTime gameTime)
 }
 ```
 
-が割り当てられ、 `currentAnimation`更新されたので、それを使用して描画を実行できます。 次のよう`CharacterEntity.Draw`に変更します。
+が割り当てられ、更新されたので、それを使用して `currentAnimation` 描画を実行できます。 次のように変更 `CharacterEntity.Draw` します。
 
 ```csharp
 public void Draw(SpriteBatch spriteBatch)
@@ -482,7 +482,7 @@ public void Draw(SpriteBatch spriteBatch)
 }
 ```
 
-`CharacterEntity`アニメーションを取得する最後の手順は、から`Game1`新しく追加`Update`したメソッドを呼び出すことです。 次`Game1.Update`のように変更します。
+アニメーションを取得する最後の手順 `CharacterEntity` は、から新しく追加したメソッドを呼び出すことです `Update` `Game1` 。 次のように変更 `Game1.Update` します。
 
 ```csharp
 protected override void Update(GameTime gameTime)
@@ -492,7 +492,7 @@ protected override void Update(GameTime gameTime)
 }
 ```
 
-これで`CharacterEntity` 、は`walkDown`アニメーションを再生します。
+これで、は `CharacterEntity` アニメーションを再生し `walkDown` ます。
 
 ![これで、文字エンティティが再生ダウンアニメーションを再生します。](part2-images/image5.gif)
 
@@ -502,7 +502,7 @@ protected override void Update(GameTime gameTime)
 
 ### <a name="defining-getdesiredvelocityfrominput"></a>GetDesiredVelocityFromInput の定義
 
-ここでは、タッチスクリーンの`TouchPanel`現在の状態に関する情報を提供する、モノゲームのクラスを使用します。 を確認`TouchPanel`し、文字の目的の速度を返すメソッドを追加してみましょう。
+ここでは、 `TouchPanel` タッチスクリーンの現在の状態に関する情報を提供する、モノゲームのクラスを使用します。 を確認 `TouchPanel` し、文字の目的の速度を返すメソッドを追加してみましょう。
 
 ```csharp
 Vector2 GetDesiredVelocityFromInput()
@@ -528,22 +528,22 @@ Vector2 GetDesiredVelocityFromInput()
 }
 ```
 
-メソッド`TouchPanel.GetState`は、ユーザー `TouchCollection`が画面に触れる場所に関する情報を格納しているを返します。 ユーザーが画面に触れていない場合、は`TouchCollection`空になります。この場合、文字は移動できません。
+メソッドは、 `TouchPanel.GetState` `TouchCollection` ユーザーが画面に触れる場所に関する情報を格納しているを返します。 ユーザーが画面に触れていない場合、は `TouchCollection` 空になります。この場合、文字は移動できません。
 
-ユーザーが画面に触れている場合は、最初のタッチに向かって文字を移動します (つまり`TouchLocation` 、インデックス0の)。 最初に、文字の位置と最初のタッチの位置の差に等しいように、必要なベロシティを設定します。
+ユーザーが画面に触れている場合は、最初のタッチに向かって文字を移動します (つまり、 `TouchLocation` インデックス0の)。 最初に、文字の位置と最初のタッチの位置の差に等しいように、必要なベロシティを設定します。
 
 ```csharp
         desiredVelocity.X = touchCollection [0].Position.X - this.X;
         desiredVelocity.Y = touchCollection [0].Position.Y - this.Y;
 ```
 
-次に示すのは、文字を同じ速度で移動させるための少しの数値演算です。 なぜこれが重要なのかを説明するために、文字がどこから離れているかをユーザーが500ピクセルに接している状況を考えてみましょう。 が設定され`desiredVelocity.X`ている最初の行では、値500が割り当てられます。 ただし、ユーザーが文字の100単位の距離で画面にタッチしていた場合、は`desiredVelocity.X` 100 に設定されます。 結果として、文字の移動速度が文字からのタッチポイントの距離に応答することになります。 文字を常に同じ速度で移動させるため、desiredVelocity を変更する必要があります。
+次に示すのは、文字を同じ速度で移動させるための少しの数値演算です。 なぜこれが重要なのかを説明するために、文字がどこから離れているかをユーザーが500ピクセルに接している状況を考えてみましょう。 が設定されている最初の行では、 `desiredVelocity.X` 値500が割り当てられます。 ただし、ユーザーが文字の100単位の距離で画面にタッチしていた場合、は `desiredVelocity.X` 100 に設定されます。 結果として、文字の移動速度が文字からのタッチポイントの距離に応答することになります。 文字を常に同じ速度で移動させるため、desiredVelocity を変更する必要があります。
 
-この`if (desiredVelocity.X != 0 || desiredVelocity.Y != 0)`ステートメントでは、ベロシティが0以外であるかどうかが確認されています。つまり、ユーザーが文字の現在位置と同じ位置に触れていないことを確認しています。 そうでない場合は、タッチの距離に関係なく、文字の速度が一定になるように設定する必要があります。 これを実現するには、ベロシティベクターを正規化します。これにより、長さは1になります。 速度ベクトル1は、文字が1ピクセル/秒で移動することを意味します。 この値には、200の必要な速度を乗算することで、速度を上げます。
+`if (desiredVelocity.X != 0 || desiredVelocity.Y != 0)`このステートメントでは、ベロシティが0以外であるかどうかが確認されています。つまり、ユーザーが文字の現在位置と同じ位置に触れていないことを確認しています。 そうでない場合は、タッチの距離に関係なく、文字の速度が一定になるように設定する必要があります。 これを実現するには、ベロシティベクターを正規化します。これにより、長さは1になります。 速度ベクトル1は、文字が1ピクセル/秒で移動することを意味します。 この値には、200の必要な速度を乗算することで、速度を上げます。
 
 ### <a name="applying-velocity-to-position"></a>位置にベロシティを適用する
 
-から`GetDesiredVelocityFromInput`返されたベロシティを、実行時に影響`X`を`Y`与える文字の値と値に適用する必要があります。 次のように`Update`メソッドを変更します。
+から返されたベロシティを、 `GetDesiredVelocityFromInput` `X` 実行時に影響を与える文字の値と値に適用する必要があり `Y` ます。 次のように `Update` メソッドを変更します。
 
 ```csharp
 public void Update(GameTime gameTime)
@@ -562,7 +562,7 @@ public void Update(GameTime gameTime)
 }
 ```
 
-ここで実装した内容は、(*フレームベースの移動で*はなく)*時間ベースの*移動と呼ばれます。 時間ベースの移動は、に格納されている最後の`velocity` `gameTime.ElapsedGameTime.TotalSeconds`更新以降に経過した時間によって、ベロシティ値 (この場合は変数に格納されている値) を乗算します。 ゲームの実行時間が1秒あたりのフレーム数が少なくなると、フレーム間の経過時間が上がります。最終的には、時間ベースの移動を使用するオブジェクトは、フレームレートに関係なく、常に同じ速度で移動します。
+ここで実装した内容は、(*フレームベースの移動で*はなく)*時間ベースの*移動と呼ばれます。 時間ベースの移動は、 `velocity` に格納されている最後の更新以降に経過した時間によって、ベロシティ値 (この場合は変数に格納されている値) を乗算し `gameTime.ElapsedGameTime.TotalSeconds` ます。 ゲームの実行時間が1秒あたりのフレーム数が少なくなると、フレーム間の経過時間が上がります。最終的には、時間ベースの移動を使用するオブジェクトは、フレームレートに関係なく、常に同じ速度で移動します。
 
 ここでゲームを実行すると、文字がタッチの場所に移動していることがわかります。
 
@@ -577,7 +577,7 @@ public void Update(GameTime gameTime)
 
 ### <a name="defining-the-rest-of-the-animations"></a>アニメーションの残りの部分を定義する
 
-最初に、追加し`Animation`た`walkDown`のと`CharacterEntity`同じ場所にあるすべてのアニメーションのクラスにインスタンスを追加します。 これを行うと、に`CharacterEntity`は次`Animation`のメンバーが含まれます。
+最初に、 `Animation` `CharacterEntity` 追加したのと同じ場所にあるすべてのアニメーションのクラスにインスタンスを追加 `walkDown` します。 これを行うと、には `CharacterEntity` 次のメンバーが含まれ `Animation` ます。
 
 ```csharp
 Animation walkDown;
@@ -593,7 +593,7 @@ Animation standRight;
 Animation currentAnimation;
 ```
 
-次のように、 `CharacterEntity`コンストラクターでアニメーションを定義します。
+次のように、コンストラクターでアニメーションを定義し `CharacterEntity` ます。
 
 ```csharp
 public CharacterEntity (GraphicsDevice graphicsDevice)
@@ -645,9 +645,9 @@ public CharacterEntity (GraphicsDevice graphicsDevice)
 }
 ```
 
-このチュートリアルを短くするために、上記のコード`CharacterEntity`がコンストラクターに追加されていることに注意してください。 通常、ゲームでは、文字アニメーションの定義を独自のクラスに分割するか、XML や JSON などのデータ形式からこの情報を読み込みます。
+`CharacterEntity`このチュートリアルを短くするために、上記のコードがコンストラクターに追加されていることに注意してください。 通常、ゲームでは、文字アニメーションの定義を独自のクラスに分割するか、XML や JSON などのデータ形式からこの情報を読み込みます。
 
-次に、文字が移動する方向に従ってアニメーションを使用するようにロジックを調整します。または、文字が停止したばかりの場合は、最後のアニメーションに従います。 これを行うには、メソッドを`Update`次のように変更します。
+次に、文字が移動する方向に従ってアニメーションを使用するようにロジックを調整します。または、文字が停止したばかりの場合は、最後のアニメーションに従います。 これを行うには、メソッドを次のように変更し `Update` ます。
 
 ```csharp
 public void Update(GameTime gameTime)
@@ -716,19 +716,19 @@ public void Update(GameTime gameTime)
 }
 ```
 
-アニメーションを切り替えるコードは、2つのブロックに分割されます。 最初のチェックでは、ベロシティがに`Vector2.Zero`等しくないかどうかが確認されます。これは、文字が移動しているかどうかを示します。 文字が移動中の場合は、との`velocity.X`値を確認して`velocity.Y` 、再生する再生アニメーションを決定できます。
+アニメーションを切り替えるコードは、2つのブロックに分割されます。 最初のチェックでは、ベロシティがに等しくないかどうかが確認 `Vector2.Zero` されます。これは、文字が移動しているかどうかを示します。 文字が移動中の場合は、との値を確認し `velocity.X` て、 `velocity.Y` 再生する再生アニメーションを決定できます。
 
-文字が移動していない場合は、その文字`currentAnimation`を継続アニメーションに設定する必要がありますが、は、 `currentAnimation`がウォーキングアニメーションの場合、またはアニメーションが設定されていない場合にのみ実行します。 が4つのウォーキングアニメーションのいずれでもない場合、文字は既に存在するため、変更`currentAnimation`する必要はありません。 `currentAnimation`
+文字が移動していない場合は、その文字を継続アニメーションに設定する必要 `currentAnimation` がありますが、は、 `currentAnimation` がウォーキングアニメーションの場合、またはアニメーションが設定されていない場合にのみ実行します。 `currentAnimation`が4つのウォーキングアニメーションのいずれでもない場合、文字は既に存在するため、変更する必要はありません `currentAnimation` 。
 
 このコードの結果として、検索時に文字が適切にアニメーション化され、停止時にその最後の方向に直面することになります。
 
 ![このコードの結果として、検索時に文字が適切にアニメーション化され、停止時にその最後の方向に直面することになります。](part2-images/image7.gif)
 
-## <a name="summary"></a>Summary
+## <a name="summary"></a>まとめ
 
 このチュートリアルでは、モノゲームを使って、スプライト、オブジェクトの移動、入力検出、アニメーションを使用してクロスプラットフォームのゲームを作成する方法を説明しました。 汎用アニメーションクラスの作成について説明します。 また、コードロジックを整理するための文字エンティティを作成する方法についても説明しました。
 
 ## <a name="related-links"></a>関連リンク
 
 - [文字シートイメージリソース (サンプル)](https://github.com/xamarin/mobile-samples/blob/master/WalkingGameMG/Resources/charactersheet.png?raw=true)
-- [ゲーム完了のウォーク (サンプル)](https://docs.microsoft.com/samples/xamarin/mobile-samples/walkinggamemg/)
+- [ゲーム完了のウォーク (サンプル)](/samples/xamarin/mobile-samples/walkinggamemg/)

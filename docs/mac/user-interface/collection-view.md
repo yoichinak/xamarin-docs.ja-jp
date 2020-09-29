@@ -7,34 +7,34 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 05/24/2017
-ms.openlocfilehash: f6e9a9338c0bce628cfd62d1106601ddc7a11490
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 0d95ecb1997ba70a2994d74bacdedd334f2b4c61
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84568634"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91429725"
 ---
 # <a name="collection-views-in-xamarinmac"></a>Xamarin. Mac のコレクションビュー
 
 _この記事では、Xamarin. Mac アプリでのコレクションビューの操作について説明します。Xcode と Interface Builder でのコレクションビューの作成と管理、およびプログラムによる操作について説明します。_
 
-Xamarin. Mac アプリで C# と .NET を使用する場合、開発者は同じ AppKit コレクションビューコントロールにアクセスできます。このコントロールは、 *Xcode および*で作業する開発者が*実行します*。 Xcode は直接統合されているため、開発者は Xcode の_Interface Builder_を使用してコレクションビューを作成および管理します。
+Xamarin. Mac アプリで C# と .NET を使用する場合、開発者は同じ AppKit コレクションビューコントロールにアクセスできます。このコントロールは、 *Xcode および*で作業する開発者が*実行します*。 Xcode は直接統合されているため、開発者は Xcode の _Interface Builder_ を使用してコレクションビューを作成および管理します。
 
 は `NSCollectionView` 、を使用して整理されたサブビューのグリッドを表示 `NSCollectionViewLayout` します。 グリッド内の各サブビューは、 `NSCollectionViewItem` ファイルからのビューのコンテンツの読み込みを管理するによって表され `.xib` ます。
 
 [![アプリの実行例](collection-view-images/intro01.png)](collection-view-images/intro01.png#lightbox)
 
-この記事では、Xamarin. Mac アプリでコレクションビューを操作する方法の基本について説明します。 この記事で使用されている主要な概念と手法について説明しているように、最初に[Hello, Mac](~/mac/get-started/hello-mac.md)の記事「 [Xcode と Interface Builder の概要](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)」および「[アクション](~/mac/get-started/hello-mac.md#outlets-and-actions)」セクションをご覧になることを強くお勧めします。
+この記事では、Xamarin. Mac アプリでコレクションビューを操作する方法の基本について説明します。 この記事で使用されている主要な概念と手法について説明しているように、最初に [Hello, Mac](~/mac/get-started/hello-mac.md) の記事「 [Xcode と Interface Builder の概要](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) 」および「 [アクション](~/mac/get-started/hello-mac.md#outlets-and-actions) 」セクションをご覧になることを強くお勧めします。
 
-「 [C# のクラス/メソッドを](~/mac/internals/how-it-works.md) [Xamarin. Mac の内部](~/mac/internals/how-it-works.md)ドキュメントの前に公開する」セクションを参照して `Register` `Export` ください。 c# クラスを目的の c オブジェクトと UI 要素に接続するために使用されるコマンドとコマンドについても説明します。
+「 [C# のクラス/メソッドを](~/mac/internals/how-it-works.md) [Xamarin. Mac の内部](~/mac/internals/how-it-works.md) ドキュメントの前に公開する」セクションを参照して `Register` `Export` ください。 c# クラスを目的の c オブジェクトと UI 要素に接続するために使用されるコマンドとコマンドについても説明します。
 
 <a name="About_Collection_Views"></a>
 
 ## <a name="about-collection-views"></a>コレクションビューについて
 
-コレクションビュー () の主な目的は、 `NSCollectionView` コレクションビューレイアウト () を使用して整理された方法でオブジェクトのグループを視覚的に配置することです `NSCollectionViewLayout` 。個々のオブジェクト () は、 `NSCollectionViewItem` より大きなコレクションで独自のビューを取得します。 コレクションビューはデータバインディングとキー値のコーディング手法によって動作するため、この記事を続行する前に、[データバインディングとキー値のコーディング](~/mac/app-fundamentals/databinding.md)に関するドキュメントを読む必要があります。
+コレクションビュー () の主な目的は、 `NSCollectionView` コレクションビューレイアウト () を使用して整理された方法でオブジェクトのグループを視覚的に配置することです `NSCollectionViewLayout` 。個々のオブジェクト () は、 `NSCollectionViewItem` より大きなコレクションで独自のビューを取得します。 コレクションビューはデータバインディングとキー値のコーディング手法によって動作するため、この記事を続行する前に、 [データバインディングとキー値のコーディング](~/mac/app-fundamentals/databinding.md) に関するドキュメントを読む必要があります。
 
-コレクションビューには、標準の組み込みコレクションビューアイテム (アウトラインやテーブルビューなど) がないため、開発者は、イメージフィールド、テキストフィールド、ラベルなどの他の AppKit コントロールを使用して、_プロトタイプビュー_をデザインおよび実装する責任があります。このプロトタイプビューは、コレクションビューによって管理され、ファイルに格納されている各項目を表示および操作するために使用され `.xib` ます。
+コレクションビューには、標準の組み込みコレクションビューアイテム (アウトラインやテーブルビューなど) がないため、開発者は、イメージフィールド、テキストフィールド、ラベルなどの他の AppKit コントロールを使用して、 _プロトタイプビュー_ をデザインおよび実装する責任があります。このプロトタイプビューは、コレクションビューによって管理され、ファイルに格納されている各項目を表示および操作するために使用され `.xib` ます。
 
 開発者はコレクションビューアイテムのルックアンドフィールを担当しているため、コレクションビューには、グリッド内で選択された項目を強調表示するためのサポートが組み込まれていません。 この機能の実装については、この記事で説明します。
 
@@ -42,7 +42,7 @@ Xamarin. Mac アプリで C# と .NET を使用する場合、開発者は同じ
 
 ## <a name="defining-the-data-model"></a>データモデルの定義
 
-Interface Builder でコレクションビューをデータバインドする前に、バインドの_データモデル_として機能するように、キー値のコーディング (kvc)/Keyvalue 観測 (kvc) 準拠のクラスを Xamarin. Mac アプリで定義する必要があります。 データモデルは、コレクションに表示されるすべてのデータを提供し、アプリケーションの実行中にユーザーが UI で行ったデータへの変更を受け取ります。
+Interface Builder でコレクションビューをデータバインドする前に、バインドの _データモデル_ として機能するように、キー値のコーディング (kvc)/Keyvalue 観測 (kvc) 準拠のクラスを Xamarin. Mac アプリで定義する必要があります。 データモデルは、コレクションに表示されるすべてのデータを提供し、アプリケーションの実行中にユーザーが UI で行ったデータへの変更を受け取ります。
 
 従業員のグループを管理するアプリの例を見て、次のクラスを使用してデータモデルを定義できます。
 
@@ -197,7 +197,7 @@ namespace MacDatabinding
 
 コレクションビューには既定のセルプロトタイプが含まれていないため、開発者は1つ以上 `.xib` のファイルを Xamarin. Mac アプリに追加して、個々のセルのレイアウトとコンテンツを定義する必要があります。
 
-次の操作を行います。
+次の手順を実行します。
 
 1. **ソリューションエクスプローラー**で、プロジェクト名を右クリックし、[新しいファイルの**追加**  >  **...** ] を選択します。
 2. [ **Mac**  >  **ビューコントローラー**] を選択し、名前 ( `EmployeeItem` この例ではなど) を指定して、[**新規**作成] ボタンをクリックします。 
@@ -486,7 +486,7 @@ public override NSCollectionViewItem GetItem(NSCollectionView collectionView, NS
 EmployeeCollection.RegisterClassForItem(typeof(EmployeeItemController), "EmployeeCell");
 ``` 
 
-呼び出しで使用される**識別子**() は、 `EmployeeCell` `MakeItem` コレクションビューに登録されているビューコントローラーの名前と一致_する必要があり_ます。 この手順については、以下で詳しく説明します。
+呼び出しで使用される **識別子** () は、 `EmployeeCell` `MakeItem` コレクションビューに登録されているビューコントローラーの名前と一致 _する必要があり_ ます。 この手順については、以下で詳しく説明します。
 
 <a name="Handling-Item-Selection"></a>
 
@@ -573,7 +573,7 @@ namespace MacCollectionNew
 
 必要なすべてのサポートパーツが配置されているので、メインストーリーボードを編集し、コレクションビューを追加することができます。
 
-次の操作を行います。
+次の手順を実行します。
 
 1. ソリューションエクスプローラー内のファイルをダブルクリックし `Main.Storyboard` て、Xcode の Interface Builder で編集するために開きます。 **Solution Explorer**
 2. コレクションビューをメインビューにドラッグして、ビューに合わせてサイズを変更します。
@@ -769,7 +769,7 @@ var flowLayout = new NSCollectionViewFlowLayout()
 };
 ```
 
-プロパティは、 `ItemSize` コレクション内の個々のセルのサイズを定義します。 プロパティは、 `SectionInset` セルがレイアウトされるコレクションの端からのインセットを定義します。 `MinimumInteritemSpacing`項目間の最小間隔を定義し、 `MinimumLineSpacing` コレクション内の行の間の最小間隔を定義します。
+プロパティは、 `ItemSize` コレクション内の個々のセルのサイズを定義します。 プロパティは、 `SectionInset` セルがレイアウトされるコレクションの端からのインセットを定義します。 `MinimumInteritemSpacing` 項目間の最小間隔を定義し、 `MinimumLineSpacing` コレクション内の行の間の最小間隔を定義します。
 
 レイアウトはコレクションビューに割り当てられ、のインスタンス `CollectionViewDelegate` は項目の選択を処理するためにアタッチされます。
 
@@ -817,7 +817,7 @@ public override void ViewDidLoad()
 
 ## <a name="related-links"></a>関連リンク
 
-- [MacCollectionNew (サンプル)](https://docs.microsoft.com/samples/xamarin/mac-samples/maccollectionnew)
+- [MacCollectionNew (サンプル)](/samples/xamarin/mac-samples/maccollectionnew)
 - [Hello Mac](~/mac/get-started/hello-mac.md)
 - [データ バインディングとキー値コーディング](~/mac/app-fundamentals/databinding.md)
 - [NSCollectionView](https://developer.apple.com/reference/appkit/nscollectionview)

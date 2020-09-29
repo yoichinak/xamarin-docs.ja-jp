@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 729289c1764746f9777ef3d720e77865c9a71389
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 5b1bd4a07f9df13bff517db28715d985fc33e322
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937255"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91430255"
 ---
 # <a name="creating-user-interface-objects-in-xamarinios"></a>Xamarin でのユーザーインターフェイスオブジェクトの作成
 
-Apple は、関連する機能の一部を "フレームワーク" にグループ化します。これは、Xamarin の iOS 名前空間に相当します。 `UIKit`は、iOS のすべてのユーザーインターフェイスコントロールを含む名前空間です。
+Apple は、関連する機能の一部を "フレームワーク" にグループ化します。これは、Xamarin の iOS 名前空間に相当します。 `UIKit` は、iOS のすべてのユーザーインターフェイスコントロールを含む名前空間です。
 
 ラベルやボタンなどのユーザーインターフェイスコントロールをコードで参照する必要がある場合は必ず、次の using ステートメントを含めるようにしてください。
 
@@ -30,15 +30,15 @@ UI コントロールとレイアウトは、次の3つの方法で編集でき�
 
 - **[Xamarin IOS Designer](~/ios/user-interface/designer/index.md)** – xamarin の組み込みレイアウトデザイナーを使用して、画面をデザインします。 ストーリーボードまたは XIB ファイルをダブルクリックして、組み込みのデザイナーで編集します。
 - **Xcode Interface Builder** – Interface Builder を使用してコントロールを画面レイアウトにドラッグします。 **Solution Pad**内のファイルを右クリックし、[ **> Xcode Interface Builder で開く**] を選択して、ストーリーボードまたは XIB ファイルを開きます。
-- **C# を使用**する–コントロールは、コードを使用してプログラムで作成し、ビュー階層に追加することもできます。
+- **C# を使用** する–コントロールは、コードを使用してプログラムで作成し、ビュー階層に追加することもできます。
 
-新しいストーリーボードと XIB ファイルを追加するには、iOS プロジェクトを右クリックし、[**新しいファイルの追加 >.**..] を選択します。
+新しいストーリーボードと XIB ファイルを追加するには、iOS プロジェクトを右クリックし、[ **新しいファイルの追加 >.**..] を選択します。
 
 どちらの方法を使用しても、アプリケーションロジックでは、コントロールのプロパティとイベントを C# で操作できます。
 
 ## <a name="using-xamarin-ios-designer"></a>Xamarin iOS Designer の使用
 
-IOS Designer でユーザーインターフェイスの作成を開始するには、ストーリーボードファイルをダブルクリックします。 コントロールは、次に示すように、**ツールボックス**からデザインサーフェイスにドラッグできます。
+IOS Designer でユーザーインターフェイスの作成を開始するには、ストーリーボードファイルをダブルクリックします。 コントロールは、次に示すように、 **ツールボックス** からデザインサーフェイスにドラッグできます。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
@@ -50,15 +50,15 @@ IOS Designer でユーザーインターフェイスの作成を開始するに�
 
 -----
 
-デザインサーフェイスでコントロールを選択すると、そのコントロールの属性が**Properties Pad**に表示されます。 次のスクリーンショットに入力されている**ウィジェット > id > 名**フィールドは、*アウトレット*名として使用されます。 C# でコントロールを参照するには、次の手順を実行します。
+デザインサーフェイスでコントロールを選択すると、そのコントロールの属性が **Properties Pad** に表示されます。 次のスクリーンショットに入力されている **ウィジェット > id > 名** フィールドは、 *アウトレット* 名として使用されます。 C# でコントロールを参照するには、次の手順を実行します。
 
  [![プロパティウィジェットパッド](creating-ui-objects-images/image3b.png)](creating-ui-objects-images/image3b.png#lightbox)
 
-IOS designer の使用方法の詳細については、 [Ios designer の概要](~/ios/user-interface/designer/introduction.md)に関するガイドを参照してください。
+IOS designer の使用方法の詳細については、 [Ios designer の概要](~/ios/user-interface/designer/introduction.md) に関するガイドを参照してください。
 
 ## <a name="using-xcode-interface-builder"></a>Xcode Interface Builder の使用
 
-Interface Builder の使用に慣れていない場合は、Apple の[Interface Builder](https://developer.apple.com/xcode/interface-builder/)ドキュメントを参照してください。
+Interface Builder の使用に慣れていない場合は、Apple の [Interface Builder](https://developer.apple.com/xcode/interface-builder/) ドキュメントを参照してください。
 
 Xcode でストーリーボードを開くには、右クリックしてストーリーボードファイルのコンテキストメニューにアクセスし、[ **Xcode Interface Builder**で開く] を選択します。
 
@@ -72,21 +72,21 @@ Xcode でストーリーボードを開くには、右クリックしてスト�
 
 -----
 
-コントロールは、次に示す**オブジェクトライブラリ**からデザインサーフェイスにドラッグできます。
+コントロールは、次に示す **オブジェクトライブラリ** からデザインサーフェイスにドラッグできます。
 
  [![Xcode オブジェクトライブラリ](creating-ui-objects-images/image5a.png)](creating-ui-objects-images/image5a.png#lightbox)
 
-Interface Builder を使用して UI をデザインするときは、C# で参照するコントロールごとに**アウトレット**を作成する必要があります。 これを行うには、[Xcode] ツールバーボタンの [center**エディター** ] ボタンを使用して、**アシスタントエディター**を有効にします。
+Interface Builder を使用して UI をデザインするときは、C# で参照するコントロールごとに **アウトレット** を作成する必要があります。 これを行うには、[Xcode] ツールバーボタンの [center**エディター** ] ボタンを使用して、**アシスタントエディター**を有効にします。
 
  [![アシスタントエディターボタン](creating-ui-objects-images/image6a.png)](creating-ui-objects-images/image6a.png#lightbox)
 
-ユーザーインターフェイスオブジェクトをクリックします。次に、.h ファイルに**ドラッグ**します。 **ドラッグを制御**するには、コントロールキーを押したまま、コンセント (またはアクション) を作成するユーザーインターフェイスオブジェクトをクリックしたままにします。 ヘッダーファイルにドラッグしたまま、Ctrl キーを押したままにしておきます。 定義の下にドラッグを完了 `@interface` します。 次のスクリーンショットに示すように、青い線が、キャプションの挿入コンセントまたはアウトレットコレクションと共に表示されます。
+ユーザーインターフェイスオブジェクトをクリックします。次に、.h ファイルに **ドラッグ** します。 **ドラッグを制御**するには、コントロールキーを押したまま、コンセント (またはアクション) を作成するユーザーインターフェイスオブジェクトをクリックしたままにします。 ヘッダーファイルにドラッグしたまま、Ctrl キーを押したままにしておきます。 定義の下にドラッグを完了 `@interface` します。 次のスクリーンショットに示すように、青い線が、キャプションの挿入コンセントまたはアウトレットコレクションと共に表示されます。
 
 このボタンを離すと、アウトレットの名前を入力するように求められます。これは、コードで参照できる C# プロパティを作成するために使用されます。
 
  [![アウトレットの作成](creating-ui-objects-images/image8a.png)](creating-ui-objects-images/image8a.png#lightbox)
 
-Xcode の Interface Builder と Visual Studio for Mac との統合方法の詳細については、 [Xib コード生成](~/ios/internals/xib-code-generation.md#generated)に関するドキュメントを参照してください。
+Xcode の Interface Builder と Visual Studio for Mac との統合方法の詳細については、 [Xib コード生成](~/ios/internals/xib-code-generation.md#generated) に関するドキュメントを参照してください。
 
 ## <a name="using-c"></a>C\# の使用
 
@@ -120,7 +120,7 @@ public override void ViewDidLoad () {
 
  [![ViewController 部分クラス](creating-ui-objects-images/image9b.png)](creating-ui-objects-images/image9b.png#lightbox)
 
-この `ControlsViewController.cs` ファイルは、*コード*を対象としています。 ここでは、 `View` やなどのライフサイクルメソッドを `ViewDidLoad` `ViewWillAppear` 実装し、独自のプロパティ、フィールド、およびメソッドを追加できます。
+この `ControlsViewController.cs` ファイルは、 *コード*を対象としています。 ここでは、 `View` やなどのライフサイクルメソッドを `ViewDidLoad` `ViewWillAppear` 実装し、独自のプロパティ、フィールド、およびメソッドを追加できます。
 
 `ControlsViewController.designer.cs`は、部分クラスを含む生成されたコードです。 Visual Studio for Mac のデザイン画面にコントロールの名前を指定した場合、または Xcode でアウトレットまたはアクションを作成した場合は、対応するプロパティまたは部分メソッドがデザイナー (designer.cs) ファイルに追加されます。 次のコードは、2つのボタンとテキストビューに対して生成されるコードの例を示しています。ボタンの1つにもイベントがあり `TouchUpInside` ます。
 
@@ -171,4 +171,4 @@ public override void ViewDidLoad () {
 
 ## <a name="related-links"></a>関連リンク
 
-- [コントロール (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)
+- [コントロール (サンプル)](/samples/xamarin/ios-samples/controls)

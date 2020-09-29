@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: 87f81f96e51b6744e37a80819c3c88d1abb644f1
-ms.sourcegitcommit: 2fbe4932a319af4ebc829f65eb1fb1816ba305d3
+ms.openlocfilehash: 51a18042bea820221f450d8d7ceedf3f69359a6d
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73022229"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431634"
 ---
 # <a name="apple-pay-in-xamarinios"></a>Xamarin. iOS の Apple Pay
 
@@ -20,7 +20,7 @@ _このガイドでは、Apple Pay と共に使用して、食品、エンター
 
 Apple Pay は、iOS 8 と共に導入され、ユーザーは iOS デバイスを介して食品、エンターテイメント、メンバーシップなどの物理的な商品を支払うことができます。 IPhone 6 および iPhone 6 Plus で利用できます。また、ストア内購入の Apple Watch と組み合わせて使用することもできます。 IPhone で使用する場合、ユーザーのクレジットカードまたはデビットカードに対するトランザクションを確認して承認する手段として、Touch ID を使用します。
 
-## <a name="requirements"></a>［要件］
+## <a name="requirements"></a>要件
 
 Apple Pay は、iOS 8 以降でのみ使用できます。したがって、少なくとも Xcode 6 が必要です。
 
@@ -35,15 +35,15 @@ Apple Pay をアプリに統合するには、次の項目も必要です。
 
 ## <a name="differences-between-apple-pay-and-iap"></a>Apple Pay と IAP の違い
 
-Apple Pay と*アプリ内購入*(iap) の主な違いは、販売する製品に関連しています。 *物理的*な商品は Apple Pay を通じて販売されます。食べ物、宿泊施設、および物理的なエンターテイメント (映画チケットなど) はすべて、この例の一例です。 これに対し、IAP は、premium や追加のコンテンツ、サブスクリプションなどの*仮想*商品を販売しています。これは、ストリーミングサービスの追加の月やゲームの追加の生活を考えます。
+Apple Pay と *アプリ内購入* (iap) の主な違いは、販売する製品に関連しています。 *物理的* な商品は Apple Pay を通じて販売されます。食べ物、宿泊施設、および物理的なエンターテイメント (映画チケットなど) はすべて、この例の一例です。 これに対し、IAP は、premium や追加のコンテンツ、サブスクリプションなどの *仮想* 商品を販売しています。これは、ストリーミングサービスの追加の月やゲームの追加の生活を考えます。
 
-使用されるフレームワークも重要な違いです。Apple Pay には[Pass kit](https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentAuthorizationViewController_Ref/)が使用されますが、 [storekit](https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentAuthorizationViewController_Ref/)には iap 用のフレームワーク API が用意されています。
+使用されるフレームワークも重要な違いです。Apple Pay には [Pass kit](https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentAuthorizationViewController_Ref/) が使用されますが、 [storekit](https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentAuthorizationViewController_Ref/) には iap 用のフレームワーク API が用意されています。
 
-Apple Pay では、 [Apple は](https://developer.apple.com/apple-pay/Getting-Started-with-Apple-Pay.pdf)、"[はユーザー、商人、または開発者は支払いに Apple Pay を使用しません" ということを示しています。 これに対して、IAP ではトランザクションごとに30% の料金が請求されます。 さらに、Apple Pay では、トランザクションが Apple を経由することはありません。代わりに、支払いプラットフォームが使用されます。
+Apple Pay では、 [Apple は](https://developer.apple.com/apple-pay/Getting-Started-with-Apple-Pay.pdf) 、"[はユーザー、商人、または開発者は支払いに Apple Pay を使用しません" ということを示しています。 これに対して、IAP ではトランザクションごとに30% の料金が請求されます。 さらに、Apple Pay では、トランザクションが Apple を経由することはありません。代わりに、支払いプラットフォームが使用されます。
 
 ## <a name="using-a-payment-processor-platform"></a>支払いプロセッサプラットフォームの使用
 
-Apple Pay の基本的な部分の1つは、支払い処理です。 この操作は自分で行うことができますが、暗号化に関する重要な知識が必要です。詳細については、「Apple の[支払い処理ガイド](https://developer.apple.com/library/ios/ApplePay_Guide/ProcessPayment.html)」を参照してください。
+Apple Pay の基本的な部分の1つは、支払い処理です。 この操作は自分で行うことができますが、暗号化に関する重要な知識が必要です。詳細については、「Apple の [支払い処理ガイド](https://developer.apple.com/library/ios/ApplePay_Guide/ProcessPayment.html)」を参照してください。
 一方、支払い処理プラットフォームでは、これらの操作を処理して、アプリの構築に専念することができます。
 
 次の2つのオプションがあります。
@@ -57,13 +57,13 @@ Apple Pay の基本的な部分の1つは、支払い処理です。 この操�
 Apple Pay を使用するようにアプリを構成するには、Apple Developer ポータルおよびアプリ内でのセットアップが必要です。 Apple の支払い用にアプリを正常にプロビジョニングするには、次のようないくつかの手順を実行する必要があります。
 
 1. マーチャント ID を作成します。
-    - こちらの手順に従って[ください](~/ios/deploy-test/provisioning/capabilities/apple-pay-capabilities.md#merchantid)
+    - こちらの手順に従って [ください](~/ios/deploy-test/provisioning/capabilities/apple-pay-capabilities.md#merchantid)
 2. 支払い機能を適用してアプリ ID を作成し、それにマーチャントを追加します。
-    - こちらの手順に従って[ください](~/ios/deploy-test/provisioning/capabilities/apple-pay-capabilities.md#appid)
+    - こちらの手順に従って [ください](~/ios/deploy-test/provisioning/capabilities/apple-pay-capabilities.md#appid)
 3. マーチャント ID の証明書を生成します。
-    - こちらの手順に従って[ください](~/ios/deploy-test/provisioning/capabilities/apple-pay-capabilities.md#certificate)
+    - こちらの手順に従って [ください](~/ios/deploy-test/provisioning/capabilities/apple-pay-capabilities.md#certificate)
 4. 新しく作成されたアプリ ID でプロビジョニングプロファイルを生成します。
-    - こちらの手順に従って[ください](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#provisioning)
+    - こちらの手順に従って [ください](~/ios/get-started/installation/device-provisioning/manual-provisioning.md#provisioning)
 5. Apple Pay の権利を追加します。
     - [ここ](~/ios/deploy-test/provisioning/entitlements.md)で詳しく説明されている Apple の支払い資格を選択するか、キーと値のペアを[ここ](~/ios/deploy-test/provisioning/entitlements.md)からファイルに手動で追加します。
 
@@ -75,29 +75,29 @@ IOS 10 では、iOS と watchOS の両方を使用して、動的な支払いネ
 
 ### <a name="apple-pay-website-integration"></a>Apple Pay Web サイトの統合
 
-IOS 10 を初めて使用する場合、開発者は**APPLEPAY JS**を使用して web サイトに直接 Apple Pay を組み込むことができます。 IOS または macOS で Safari を使用して web サイトを参照しているユーザーは、iPhone または Apple Watch でトランザクションを検証することによって、Apple Pay で支払いを行うことができます。 詳細については、Apple の[APPLEPAY JP Framework リファレンス](https://developer.apple.com/reference/applepayjs)を参照してください。
+IOS 10 を初めて使用する場合、開発者は **APPLEPAY JS**を使用して web サイトに直接 Apple Pay を組み込むことができます。 IOS または macOS で Safari を使用して web サイトを参照しているユーザーは、iPhone または Apple Watch でトランザクションを検証することによって、Apple Pay で支払いを行うことができます。 詳細については、Apple の [APPLEPAY JP Framework リファレンス](https://developer.apple.com/reference/applepayjs)を参照してください。
 
 ### <a name="passkit-framework-enhancements"></a>Pass Kit フレームワークの機能強化
 
-IOS 10 では、Pass Kit フレームワークが拡張され、`UIKit` の外部 Apple Pay がサポートされるようになり、カードの発行者がアプリ内から独自のカードを提示できるようになりました。
+IOS 10 では、またはの外部で Apple Pay をサポートするように、Pass Kit フレームワークが拡張されて `UIKit` おり、カードの発行者がアプリ内から独自のカードを提示できるようになりました。
 
 #### <a name="supporting-apple-pay-outside-of-uikit"></a>UIKit 外での Apple Pay のサポート
 
-[PKPaymentAuthorizationController](https://developer.apple.com/reference/passkit/pkpaymentauthorizationcontroller)と[PKPaymentAuthorixationControllerDelegate](https://developer.apple.com/reference/passkit/pkpaymentauthorizationcontrollerdelegate)を使用すると、アプリは、uikit を使用せずに[PKPaymentAuthorizationViewController](https://developer.apple.com/reference/passkit/pkpaymentauthorizationviewcontroller)が提供するものと同じ機能をサポートできます。 この新しい API は、Apple Watch で Apple Pay をサポートするために必要ですが (具体的には、特定の目的でも)、他の状況 (既存のアプリなど) では省略可能です。 ただし、Apple では、できるだけ早く新しい API に移行することをお勧めします。これにより、1つのコードベースを持つすべての開発者のアプリで幅広い Apple Pay サポートを提供できるようになります。 インテントと Siri の統合の詳細については、 [SiriKit の概要に](~/ios/platform/sirikit/index.md)関するドキュメントを参照してください。
+[PKPaymentAuthorizationController](https://developer.apple.com/reference/passkit/pkpaymentauthorizationcontroller)と[PKPaymentAuthorixationControllerDelegate](https://developer.apple.com/reference/passkit/pkpaymentauthorizationcontrollerdelegate)を使用すると、アプリは、uikit を使用せずに[PKPaymentAuthorizationViewController](https://developer.apple.com/reference/passkit/pkpaymentauthorizationviewcontroller)が提供するものと同じ機能をサポートできます。 この新しい API は、Apple Watch で Apple Pay をサポートするために必要ですが (具体的には、特定の目的でも)、他の状況 (既存のアプリなど) では省略可能です。 ただし、Apple では、できるだけ早く新しい API に移行することをお勧めします。これにより、1つのコードベースを持つすべての開発者のアプリで幅広い Apple Pay サポートを提供できるようになります。 インテントと Siri の統合の詳細については、 [SiriKit の概要に](~/ios/platform/sirikit/index.md) 関するドキュメントを参照してください。
 
 #### <a name="presenting-issuer-cards-from-within-apps"></a>アプリ内での発行者カードの提示
 
-IOS 10 では、カードの発行者が独自のアプリ内からカードを提示できるようにする新しい機能が、Pass Kit フレームワークに追加されています。 開発者は、カードの Apple Pay ボタンを表示するアプリのユーザーインターフェイスに `PKPaymentButtonTypeInStore` UIButton を追加できます。
+IOS 10 では、カードの発行者が独自のアプリ内からカードを提示できるようにする新しい機能が、Pass Kit フレームワークに追加されています。 開発者は、 `PKPaymentButtonTypeInStore` カードの Apple Pay ボタンを表示する uibutton をアプリのユーザーインターフェイスに追加できます。
 
-[Pkpass library](https://developer.apple.com/reference/passkit/pkpasslibrary)クラスの `PresentPaymentPass` メソッドを使用して、カードをプログラムで表示することもできます。
+`PresentPaymentPass` [Pkpass library](https://developer.apple.com/reference/passkit/pkpasslibrary)クラスのメソッドを使用して、カードをプログラムで表示することもできます。
 
 ### <a name="new-payment-network-support"></a>新しい支払いネットワークのサポート
 
 IOS 10 を初めて使用する場合、アプリは、開発者がアプリケーションを変更して再コンパイルし、アプリストアに再送信することなく、新しい支払いネットワークが利用可能になったときに自動的にサポートできます。
 
-`PKPaymentNetwork` クラスの新しい[AvailableNetworks](https://developer.apple.com/reference/passkit/pkpaymentrequest/1833288-availablenetworks)メソッドを使用すると、アプリは実行時にユーザーのデバイスで利用可能なネットワークを検出できます。 さらに、 [Supportednetworks](https://developer.apple.com/reference/passkit/pkpaymentrequest/1619329-supportednetworks)プロパティが拡張され、支払プロバイダーの名前が引数として使用されるようになりました。 これらの方法を使用すると、アプリは、支払いプロバイダーがサポートする任意のネットワークを自動的にサポートできます。
+クラスの new [AvailableNetworks](https://developer.apple.com/reference/passkit/pkpaymentrequest/1833288-availablenetworks) メソッドを `PKPaymentNetwork` 使用すると、アプリは実行時にユーザーのデバイスで利用可能なネットワークを検出できます。 さらに、 [Supportednetworks](https://developer.apple.com/reference/passkit/pkpaymentrequest/1619329-supportednetworks) プロパティが拡張され、支払プロバイダーの名前が引数として使用されるようになりました。 これらの方法を使用すると、アプリは、支払いプロバイダーがサポートする任意のネットワークを自動的にサポートできます。
 
-詳細については、 [Apple Pay の構成](~/ios/platform/apple-pay.md)と Apple の[Apple Pay ガイド](https://developer.apple.com/apple-pay/)を参照してください。
+詳細については、 [Apple Pay の構成](~/ios/platform/apple-pay.md) と Apple の [Apple Pay ガイド](https://developer.apple.com/apple-pay/)を参照してください。
 
 ### <a name="new-testing-environment"></a>新しいテスト環境
 
@@ -111,11 +111,11 @@ IOS 10 では、開発者が iOS デバイスで直接テスト用の支払い�
 4. [Apple Pay ガイド](https://developer.apple.com/apple-pay/)のいずれかのテスト支払カードを使用して、支払いを行います。
 
 > [!IMPORTANT]
-> ICloud アカウントを切り替えると、デバイスは自動的に新しいテスト環境に切り替わります。 ただし、Apple では、iTunes App Store に送信する前に、実稼働環境で実際のカードを使用してアプリをテストする**必要があり**ます。
+> ICloud アカウントを切り替えると、デバイスは自動的に新しいテスト環境に切り替わります。 ただし、Apple では、iTunes App Store に送信する前に、実稼働環境で実際のカードを使用してアプリをテストする **必要があり** ます。
 
 ## <a name="summary"></a>まとめ
 
-この記事では、アプリ内で Apple Pay を使用するために必要なさまざまな項目について説明します。 ここでは、マーチャント ID を作成する方法と、手動で変更する必要がある**権利を plist**で使用する方法について説明しました。
+この記事では、アプリ内で Apple Pay を使用するために必要なさまざまな項目について説明します。 ここでは、マーチャント ID を作成する方法と、手動で変更する必要がある **権利を plist**で使用する方法について説明しました。
 
 ## <a name="related-links"></a>関連リンク
 
@@ -123,4 +123,4 @@ IOS 10 では、開発者が iOS デバイスで直接テスト用の支払い�
 - [Pass Kit の入門](~/ios/platform/passkit.md)
 - [PassKit](https://developer.apple.com/library/ios/documentation/PassKit/Reference/PKPaymentAuthorizationViewController_Ref/)
 - [Apple Pay](https://developer.apple.com/apple-pay/)
-- [Emporium (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/ios9-emporium)
+- [Emporium (サンプル)](/samples/xamarin/ios-samples/ios9-emporium)

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: c4fc1607667dd6201c28c4d00a2938760e429f0f
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 826d8c982e9976cb4147c0ed77a55a4b1d18f879
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938984"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91432408"
 ---
 # <a name="watchos-workout-apps-in-xamarin"></a>Xamarin での watchOS のトレーニングアプリ
 
@@ -30,9 +30,9 @@ WatchOS 3 の新機能であるトレーニング関連のアプリには、Appl
 
 [![適合性とトレーニングアプリの例](workout-apps-images/workout01.png)](workout-apps-images/workout01.png#lightbox)
 
-WatchOS 3 の新機能である_バックグラウンド実行_により、トレーニング関連のアプリが Apple Watch のバックグラウンドで実行し、HealthKit データにアクセスできるようになります。
+WatchOS 3 の新機能である _バックグラウンド実行_ により、トレーニング関連のアプリが Apple Watch のバックグラウンドで実行し、HealthKit データにアクセスできるようになります。
 
-このドキュメントでは、バックグラウンドで動作する機能を紹介し、トレーニングアプリのライフサイクルについて説明します。また、トレーニングアプリが Apple Watch のユーザーの_アクティビティリング_にどのように貢献するかを示します。
+このドキュメントでは、バックグラウンドで動作する機能を紹介し、トレーニングアプリのライフサイクルについて説明します。また、トレーニングアプリが Apple Watch のユーザーの _アクティビティリング_ にどのように貢献するかを示します。
 
 ## <a name="about-workout-sessions"></a>トレーニングセッションについて
 
@@ -60,10 +60,10 @@ Apple Watch の高いパフォーマンスを維持するには、バックグ�
 2. **ソース**ビューに切り替えます。 
 
     [![ソースビュー](workout-apps-images/plist01.png)](workout-apps-images/plist01.png#lightbox)
-3. という名前の新しいキーを追加 `WKBackgroundModes` し、**型**をに設定し `Array` ます。 
+3. という名前の新しいキーを追加 `WKBackgroundModes` し、 **型** をに設定し `Array` ます。 
 
     [![WKBackgroundModes という名前の新しいキーを追加します。](workout-apps-images/plist02.png)](workout-apps-images/plist02.png#lightbox)
-4. の**型**と値を使用して、配列に新しい項目を追加 `String` し `workout-processing` ます。 
+4. の **型** と値を使用して、配列に新しい項目を追加 `String` し `workout-processing` ます。 
 
     [![文字列の型とトレーニング処理の値を使用して、配列に新しい項目を追加します。](workout-apps-images/plist03.png)](workout-apps-images/plist03.png#lightbox)
 5. 変更をファイルに保存します。
@@ -281,17 +281,17 @@ private void StartOutdoorRun ()
 
 [![データの収集と制御の図](workout-apps-images/workout04.png)](workout-apps-images/workout04.png#lightbox)
 
-1. **サンプル**を確認する-アプリは、ユーザーに対して処理され、表示される情報を HealthKit から取得する必要があります。
-2. **イベントの監視**-アプリは、HealthKit またはアプリの UI (トレーニングを一時停止しているユーザーなど) から生成されたイベントに応答する必要があります。
-3. **実行状態を入力**-セッションが開始され、現在実行中です。
-4. **一時停止状態を入力**-ユーザーは現在のトレーニングセッションを一時停止し、後で再起動することができます。 ユーザーは、1回のトレーニングセッションで、実行中と一時停止の両方の状態を複数回切り替えることができます。
-5. **トレーニングセッションを終了**する-ユーザーがトレーニングセッションを終了できるようになるか、従量制のトレーニング (2 マイルの実行など) であった場合は、有効期限が切れ、独自に終了することができます。
+1. **サンプル** を確認する-アプリは、ユーザーに対して処理され、表示される情報を HealthKit から取得する必要があります。
+2. **イベントの監視** -アプリは、HealthKit またはアプリの UI (トレーニングを一時停止しているユーザーなど) から生成されたイベントに応答する必要があります。
+3. **実行状態を入力** -セッションが開始され、現在実行中です。
+4. **一時停止状態を入力** -ユーザーは現在のトレーニングセッションを一時停止し、後で再起動することができます。 ユーザーは、1回のトレーニングセッションで、実行中と一時停止の両方の状態を複数回切り替えることができます。
+5. **トレーニングセッションを終了** する-ユーザーがトレーニングセッションを終了できるようになるか、従量制のトレーニング (2 マイルの実行など) であった場合は、有効期限が切れ、独自に終了することができます。
 
 最後の手順は、トレーニングセッションの結果をユーザーの HealthKit データストアに保存することです。
 
 ### <a name="observing-healthkit-samples"></a>HealthKit サンプルの観察
 
-アプリは、関心のある HealthKit データポイント (ハートレートやアクティブエネルギーの書き込みなど) ごとに_アンカーオブジェクトクエリ_を開く必要があります。 監視対象のデータポイントごとに、更新ハンドラーを作成して、アプリに送信される新しいデータをキャプチャする必要があります。
+アプリは、関心のある HealthKit データポイント (ハートレートやアクティブエネルギーの書き込みなど) ごとに _アンカーオブジェクトクエリ_ を開く必要があります。 監視対象のデータポイントごとに、更新ハンドラーを作成して、アプリに送信される新しいデータをキャプチャする必要があります。
 
 これらのデータポイントから、アプリは総実行距離などの合計を累積し、必要に応じてユーザーインターフェイスを更新することができます。 さらに、アプリは、実行の次のマイルの完了など、特定の目標や達成に達したときにユーザーに通知することができます。
 
@@ -390,8 +390,8 @@ public override void DidGenerateEvent (HKWorkoutSession workoutSession, HKWorkou
 
 Apple では、watchOS 3 に次の新しいイベントの種類が追加されました。
 
-- `HKWorkoutEventType.Lap`-トレーニングを同じ距離部分に分割するイベント用です。 たとえば、実行中にトラックの周りに1つのマークを付けることができます。
-- `HKWorkoutEventType.Marker`-トレーニング中の任意のポイントに対応しています。 たとえば、屋外実行のルート上の特定のポイントに到達します。
+- `HKWorkoutEventType.Lap` -トレーニングを同じ距離部分に分割するイベント用です。 たとえば、実行中にトラックの周りに1つのマークを付けることができます。
+- `HKWorkoutEventType.Marker` -トレーニング中の任意のポイントに対応しています。 たとえば、屋外実行のルート上の特定のポイントに到達します。
 
 これらの新しい型は、アプリによって作成され、後でグラフや統計の作成に使用できるように、トレーニングに格納されます。
 
@@ -633,7 +633,7 @@ private void SaveWorkoutSamples (HKWorkout workout)
 
 ## <a name="workouts-and-ios-10"></a>ワークアウトと iOS 10
 
-WatchOS 3 のすべてのトレーニングアプリには、ios 10 ベースのトレーニングアプリがあります。 iOS 10 を初めて使用する場合は、この iOS アプリを使用して、(ユーザーの介入なしで) トレーニングモードに Apple Watch を配置し、バックグラウンドで実行モードで watchOS アプリを実行するためのトレーニングを開始できます (詳細[については、前述の](#about-background-running)「
+WatchOS 3 のすべてのトレーニングアプリには、ios 10 ベースのトレーニングアプリがあります。 iOS 10 を初めて使用する場合は、この iOS アプリを使用して、(ユーザーの介入なしで) トレーニングモードに Apple Watch を配置し、バックグラウンドで実行モードで watchOS アプリを実行するためのトレーニングを開始できます (詳細 [については、前述の](#about-background-running) 「
 
 WatchOS アプリの実行中は、メッセージングのための WatchConnectivity と、親 iOS アプリとの通信に使用できます。
 
@@ -646,7 +646,7 @@ WatchOS アプリの実行中は、メッセージングのための WatchConnec
 3. WatchOS 3 アプリは、渡されたトレーニングトレーニング構成を使用して、新しいトレーニングセッション () を開始し `HKWorkoutSession` ます。
 
 > [!IMPORTANT]
-> 親 iPhone アプリが Apple Watch でトレーニングを開始するには、watchOS 3 アプリでバックグラウンドを有効にする必要があります。 詳細については、前の「[バックグラウンドの有効化](#enabling-background-running)」を参照してください。
+> 親 iPhone アプリが Apple Watch でトレーニングを開始するには、watchOS 3 アプリでバックグラウンドを有効にする必要があります。 詳細については、前の「 [バックグラウンドの有効化](#enabling-background-running) 」を参照してください。
 
 このプロセスは、watchOS 3 アプリでトレーニングセッションを直接開始するプロセスとよく似ています。 IPhone で、次のコードを使用します。
 
@@ -1253,5 +1253,5 @@ Apple では、watchOS 3 および iOS 10 でトレーニングアプリを設�
 
 ## <a name="related-links"></a>関連リンク
 
-- [iOS 10 のサンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.iOS+iOS10)
+- [iOS 10 のサンプル](/samples/browse/?products=xamarin&term=Xamarin.iOS%2biOS10)
 - [HealthKit の概要](~/ios/platform/healthkit.md)

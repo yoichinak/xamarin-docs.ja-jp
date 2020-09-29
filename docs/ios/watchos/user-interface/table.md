@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/17/2017
-ms.openlocfilehash: 0358e1570a5e38e008894a7eb9b6ca1985a0fed0
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 21154ee5ed83d9d6af2c5d5f70bb64759de43137
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997255"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431514"
 ---
 # <a name="watchos-table-controls-in-xamarin"></a>Xamarin の watchOS Table コントロール
 
@@ -27,13 +27,13 @@ WatchOS `WKInterfaceTable` コントロールは、対応する iOS よりもは
 
 [![テーブルの追加](table-images/add-table-sml.png)](table-images/add-table.png#lightbox)
 
-コードで参照できるように、[**プロパティ**] パッドの [**名前**] ボックスにテーブルの名前を付けます。
+コードで参照できるように、[ **プロパティ** ] パッドの [ **名前** ] ボックスにテーブルの名前を付けます。
 
 ## <a name="add-a-row-controller"></a>行コントローラーを追加する
 
-このテーブルには、既定で**グループ**コントロールを含む行コントローラーによって表される1つの行が自動的に含まれます。
+このテーブルには、既定で **グループ** コントロールを含む行コントローラーによって表される1つの行が自動的に含まれます。
 
-行コントローラーの**クラス**を設定するには、**ドキュメントアウトライン**で行を選択し、[**プロパティ**] パッドでクラス名を入力します。
+行コントローラーの **クラス** を設定するには、 **ドキュメントアウトライン** で行を選択し、[ **プロパティ** ] パッドでクラス名を入力します。
 
 [![[プロパティ] パッドでのクラス名の入力](table-images/add-row-controller-sml.png)](table-images/add-row-controller.png#lightbox)
 
@@ -41,7 +41,7 @@ WatchOS `WKInterfaceTable` コントロールは、対応する iOS よりもは
 
 ## <a name="create-and-populate-rows"></a>行の作成と設定
 
-`SetNumberOfRows`を使用して正しい列を選択することにより、各行の行コントローラークラスを作成し `Identifier` ます。 行コントローラーにカスタムを設定した場合は `Identifier` 、次のコードスニペットの**既定値**を、使用した識別子に変更します。 が呼び出され、テーブルが表示されると、 `RowController` *すべての行に対し*てが作成され `SetNumberOfRows` ます。
+`SetNumberOfRows` を使用して正しい列を選択することにより、各行の行コントローラークラスを作成し `Identifier` ます。 行コントローラーにカスタムを設定した場合は `Identifier` 、次のコードスニペットの **既定値** を、使用した識別子に変更します。 が呼び出され、テーブルが表示されると、 `RowController` *すべての行に対し* てが作成され `SetNumberOfRows` ます。
 
 ```csharp
 myTable.SetNumberOfRows ((nint)rows.Count, "default");
@@ -51,7 +51,7 @@ myTable.SetNumberOfRows ((nint)rows.Count, "default");
 > [!IMPORTANT]
 > テーブル行は、iOS でのようには仮想化されません。 行の数を制限します (Apple では20未満にすることをお勧めします)。
 
-行が作成されたら、各セル (iOS の場合と同様) を設定する必要があり `GetCell` ます。 [WatchTables の例](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchtables)のこのコードスニペットでは、各行のラベルが更新されます。
+行が作成されたら、各セル (iOS の場合と同様) を設定する必要があり `GetCell` ます。 [WatchTables の例](/samples/xamarin/ios-samples/watchos-watchtables)のこのコードスニペットでは、各行のラベルが更新されます。
 
 ```csharp
 for (var i = 0; i < rows.Count; i++) {
@@ -86,8 +86,8 @@ public override void DidSelectRow (WKInterfaceTable table, nint rowIndex)
 
 ### <a name="getcontextforsegue"></a>GetContextForSegue
 
-ストーリーボード上のセグエを、テーブルの行から別のシーンにドラッグします (ドラッグ中は**ctrl**キーを押したままにします)。
-セグエを選択し、[**プロパティ**] パッドで識別子を指定します (以下の `secondLevel` 例を参照)。
+ストーリーボード上のセグエを、テーブルの行から別のシーンにドラッグします (ドラッグ中は **ctrl** キーを押したままにします)。
+セグエを選択し、[ **プロパティ** ] パッドで識別子を指定します (以下の `secondLevel` 例を参照)。
 
 インターフェイスコントローラーで、メソッドを実装 `GetContextForSegue` し、セグエによって示されるシーンに提供されるデータコンテキストを返します。
 
@@ -147,7 +147,7 @@ watchOS 3 ではテーブルの新機能が導入されました。テーブル�
 > [!IMPORTANT]
 > この機能は現在、Xcode Interface Builder でストーリーボードを編集することによってのみ使用できます。
 
-この機能を有効にするには、 `WKInterfaceTable` デザイン画面でを選択し、**垂直方向の詳細ページング**オプションをオンにします。
+この機能を有効にするには、 `WKInterfaceTable` デザイン画面でを選択し、 **垂直方向の詳細ページング** オプションをオンにします。
 
 ![垂直方向の詳細ページングオプションを選択する](table-images/vertical-detail-paging-sml.png)
 
@@ -204,10 +204,10 @@ namespace WatchTables.OnWatchExtension
 }
 ```
 
-ここで宣言されているコンセントとアクションは、コードで参照できます。ただし、 **designer.cs**ファイルは直接編集しないでください。
+ここで宣言されているコンセントとアクションは、コードで参照できます。ただし、 **designer.cs** ファイルは直接編集しないでください。
 
 ## <a name="related-links"></a>関連リンク
 
-- [WatchTables (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchtables)
-- [WatchKitCatalog (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/watchos-watchkitcatalog)
+- [WatchTables (サンプル)](/samples/xamarin/ios-samples/watchos-watchtables)
+- [WatchKitCatalog (サンプル)](/samples/xamarin/ios-samples/watchos-watchkitcatalog)
 - [Apple のテーブルドキュメント](https://developer.apple.com/reference/watchkit/wkinterfacetable)

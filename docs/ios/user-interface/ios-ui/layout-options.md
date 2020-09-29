@@ -7,27 +7,27 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 6cfb567e6f74228a0b7e9ce017c57436df06cb56
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 719436835f5d104930adfe8cd7aa95de326784e9
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939101"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91432080"
 ---
 # <a name="layout-options-in-xamarinios"></a>Xamarin. iOS のレイアウトオプション
 
 ビューのサイズ変更時または回転時にレイアウトを制御するには、次の2つの異なるメカニズムがあります。
 
-- **自動サイズ調整**–デザイナーの自動サイズ調整 inspector は、プロパティを設定する方法を提供し `AutoresizingMask` ます。 これにより、コントロールをコンテナーの端に固定したり、サイズを修正したりすることができます。 自動サイズ調整は、iOS のすべてのバージョンで動作します。 詳細については、以下を参照してください。
-- **自動レイアウト**– iOS 6 で導入され、UI コントロールの関係をきめ細かく制御できる機能です。 これにより、デザインサーフェイス上の他の要素を基準とした要素の位置を制御できます。 このトピックの詳細については、「 [Xamarin IOS Designer を使用した自動レイアウト](~/ios/user-interface/designer/designer-auto-layout.md)」を参照してください。
+- **自動サイズ調整** –デザイナーの自動サイズ調整 inspector は、プロパティを設定する方法を提供し `AutoresizingMask` ます。 これにより、コントロールをコンテナーの端に固定したり、サイズを修正したりすることができます。 自動サイズ調整は、iOS のすべてのバージョンで動作します。 詳細については、以下を参照してください。
+- **自動レイアウト** – iOS 6 で導入され、UI コントロールの関係をきめ細かく制御できる機能です。 これにより、デザインサーフェイス上の他の要素を基準とした要素の位置を制御できます。 このトピックの詳細については、「  [Xamarin IOS Designer を使用した自動レイアウト](~/ios/user-interface/designer/designer-auto-layout.md) 」を参照してください。
 
 ## <a name="autosizing"></a>自動サイズ調整
 
-ユーザーがウィンドウのサイズを変更すると (デバイスが回転して向きが変化した場合など)、自動サイズ調整の規則に従って、ウィンドウ内のビューのサイズが自動的に変更されます。 これらのルールは `AutoresizingMask` 、 `UIView` 次に示すように、iOS デザイナーの**Properties Pad**のまたはのプロパティを使用して、C# で設定できます。
+ユーザーがウィンドウのサイズを変更すると (デバイスが回転して向きが変化した場合など)、自動サイズ調整の規則に従って、ウィンドウ内のビューのサイズが自動的に変更されます。 これらのルールは `AutoresizingMask` 、 `UIView` 次に示すように、iOS デザイナーの **Properties Pad** のまたはのプロパティを使用して、C# で設定できます。
 
  [![Visual Studio for Mac デザイナー](layout-options-images/image41.png)](layout-options-images/image41.png#lightbox)
 
-コントロールを選択すると、コントロールの位置とサイズを手動で指定できるだけでなく、**自動サイズ調整**の動作を選択することもできます。 次のスクリーンショットに示すように、自動サイズ調整コントロールのスプリングと struts を使用して、選択したビューとその親との関係を定義できます。
+コントロールを選択すると、コントロールの位置とサイズを手動で指定できるだけでなく、 **自動サイズ調整** の動作を選択することもできます。 次のスクリーンショットに示すように、自動サイズ調整コントロールのスプリングと struts を使用して、選択したビューとその親との関係を定義できます。
 
  [![Visual Studio for Mac デザイナー](layout-options-images/image42.png)](layout-options-images/image42.png#lightbox)
 
@@ -40,7 +40,7 @@ textfield1.Frame = new RectangleF(15, 277, 79, 27);
 textfield1.AutoresizingMask = UIViewAutoresizing.FlexibleRightMargin | UIViewAutoresizing.FlexibleBottomMargin;
 ```
 
-自動サイズ調整の設定をテストするには、プロジェクトのオプションで、**サポートされている**さまざまなデバイスの向きを有効にします。
+自動サイズ調整の設定をテストするには、プロジェクトのオプションで、 **サポートされている** さまざまなデバイスの向きを有効にします。
 
  [![自動サイズ調整の設定](layout-options-images/image43a.png)](layout-options-images/image43a.png#lightbox)
 
@@ -64,4 +64,4 @@ imageview1.AutoresizingMask = UIViewAutoresizing.FlexibleTopMargin | UIViewAutor
 
 ## <a name="related-links"></a>関連リンク
 
-- [コントロール (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/controls)
+- [コントロール (サンプル)](/samples/xamarin/ios-samples/controls)

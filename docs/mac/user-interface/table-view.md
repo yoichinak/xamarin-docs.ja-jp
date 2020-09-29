@@ -7,26 +7,26 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/14/2017
-ms.openlocfilehash: d768be516b67ed23bdb851d87286a856a7269de4
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: d8c5cc10b4bce507f7a1d7896a41730745b08cbd
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86935552"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431642"
 ---
 # <a name="table-views-in-xamarinmac"></a>Xamarin. Mac のテーブルビュー
 
 _この記事では、Xamarin. Mac アプリケーションでのテーブルビューの使用について説明します。Xcode と Interface Builder でのテーブルビューの作成と、コードでのテーブルビューの操作について説明します。_
 
-Xamarin. Mac アプリケーションで C# と .NET を使用する場合、 *Xcode と*で作業している開発者が行うの*と同じ*テーブルビューにアクセスできます。 Xcode は直接統合されているため、Xcode の_Interface Builder_を使用してテーブルビューを作成および管理できます (また、必要に応じて C# コードで直接作成することもできます)。
+Xamarin. Mac アプリケーションで C# と .NET を使用する場合、 *Xcode と*で作業している開発者が行うの*と同じ*テーブルビューにアクセスできます。 Xcode は直接統合されているため、Xcode の _Interface Builder_ を使用してテーブルビューを作成および管理できます (また、必要に応じて C# コードで直接作成することもできます)。
 
 テーブルビューでは、複数行の情報の1つ以上の列を含む表形式のデータが表示されます。 ユーザーは、作成されるテーブルビューの種類に基づいて、列の並べ替え、列の再編成、列の追加、列の削除、テーブル内のデータの編集を行うことができます。
 
 [![テーブルの例](table-view-images/intro01.png)](table-view-images/intro01.png#lightbox)
 
-この記事では、Xamarin. Mac アプリケーションでのテーブルビューの使用に関する基本について説明します。 この記事で使用する主要な概念と手法について説明しているように、最初に[Hello, Mac](~/mac/get-started/hello-mac.md)の記事「 [Xcode と Interface Builder の概要](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder)」と「[アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions)」セクションをご覧になることを強くお勧めします。
+この記事では、Xamarin. Mac アプリケーションでのテーブルビューの使用に関する基本について説明します。 この記事で使用する主要な概念と手法について説明しているように、最初に [Hello, Mac](~/mac/get-started/hello-mac.md) の記事「 [Xcode と Interface Builder の概要](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) 」と「 [アウトレットとアクション](~/mac/get-started/hello-mac.md#outlets-and-actions) 」セクションをご覧になることを強くお勧めします。
 
-「 [C# のクラス/メソッドを](~/mac/internals/how-it-works.md) [Xamarin. Mac の内部](~/mac/internals/how-it-works.md)ドキュメントの前に公開する」セクションを参照して `Register` `Export` ください。 c# クラスを目的の c オブジェクトと UI 要素に接続するために使用されるコマンドとコマンドについても説明します。
+「 [C# のクラス/メソッドを](~/mac/internals/how-it-works.md) [Xamarin. Mac の内部](~/mac/internals/how-it-works.md) ドキュメントの前に公開する」セクションを参照して `Register` `Export` ください。 c# クラスを目的の c オブジェクトと UI 要素に接続するために使用されるコマンドとコマンドについても説明します。
 
 <a name="Introduction_to_Table_Views"></a>
 
@@ -49,7 +49,7 @@ Apple では、テーブルビューを作成するときに次のことが提�
 
 ## <a name="creating-and-maintaining-table-views-in-xcode"></a>Xcode でのテーブルビューの作成と管理
 
-新しい Xamarin. Mac Cocoa アプリケーションを作成すると、既定で標準の空白のウィンドウが表示されます。 このウィンドウは `.storyboard` 、プロジェクトに自動的に含まれるファイルに定義されています。 Windows のデザインを編集するには、**ソリューションエクスプローラー**で、ファイルをダブルクリックし `Main.storyboard` ます。
+新しい Xamarin. Mac Cocoa アプリケーションを作成すると、既定で標準の空白のウィンドウが表示されます。 このウィンドウは `.storyboard` 、プロジェクトに自動的に含まれるファイルに定義されています。 Windows のデザインを編集するには、 **ソリューションエクスプローラー**で、ファイルをダブルクリックし `Main.storyboard` ます。
 
 [![メインストーリーボードの選択](table-view-images/edit01.png)](table-view-images/edit01.png#lightbox)
 
@@ -69,49 +69,49 @@ Apple では、テーブルビューを作成するときに次のことが提�
 
 [![属性インスペクター](table-view-images/edit05.png)](table-view-images/edit05.png#lightbox)
 
-- **コンテンツモード**-ビュー () またはセル () のいずれかを使用して、 `NSView` `NSCell` 行と列のデータを表示できます。 MacOS 10.7 以降では、ビューを使用する必要があります。
+- **コンテンツモード** -ビュー () またはセル () のいずれかを使用して、 `NSView` `NSCell` 行と列のデータを表示できます。 MacOS 10.7 以降では、ビューを使用する必要があります。
 - [**フローティンググループ行]** -If `true` テーブルビューでは、グループ化されたセルが浮動小数点型として描画されます。
 - **Columns** -表示される列の数を定義します。
 - **Headers** -If `true` 列にはヘッダーが含まれます。
-- **順序**を変更する-の場合 `true` 、ユーザーはテーブル内の列の順序を変更することができます。
+- **順序** を変更する-の場合 `true` 、ユーザーはテーブル内の列の順序を変更することができます。
 - [**サイズ変更**]-の場合 `true` 、ユーザーは列ヘッダーをドラッグして列のサイズを変更できます。
-- **列**のサイズ変更-テーブルの列のサイズを自動調整する方法を制御します。
-- **強調表示**-セルを選択したときにテーブルで使用する強調表示の種類を制御します。
-- **代替行**-If `true` 、その他の行の背景色は異なります。
-- **水平グリッド**-横方向のセルの間に描画する境界線の種類を選択します。
-- **垂直グリッド**-セル間に描画する境界線の種類を垂直方向に選択します。
+- **列** のサイズ変更-テーブルの列のサイズを自動調整する方法を制御します。
+- **強調表示** -セルを選択したときにテーブルで使用する強調表示の種類を制御します。
+- **代替行** -If `true` 、その他の行の背景色は異なります。
+- **水平グリッド** -横方向のセルの間に描画する境界線の種類を選択します。
+- **垂直グリッド** -セル間に描画する境界線の種類を垂直方向に選択します。
 - [**グリッドの色**-セルの境界線の色を設定します。
 - **Background** -セルの背景色を設定します。
-- **選択**-ユーザーがテーブル内のセルを選択する方法を、次のように制御できます。
-  - **複数**の場合 `true` 、ユーザーは複数の行と列を選択できます。
-  - **列**-の場合 `true` 、ユーザーは列を選択できます。
+- **選択** -ユーザーがテーブル内のセルを選択する方法を、次のように制御できます。
+  - **複数** の場合 `true` 、ユーザーは複数の行と列を選択できます。
+  - **列** -の場合 `true` 、ユーザーは列を選択できます。
   - **「Select** -If」と入力すると、 `true` ユーザーは文字を入力して行を選択できます。
   - **Empty** - `true` ユーザーが行または列を選択する必要がない場合、テーブルでは何も選択できません。
 - [**自動**保存]-テーブル形式が自動的に保存される名前。
-- **列情報**-の場合、 `true` 列の順序と幅が自動的に保存されます。
+- **列情報** -の場合、 `true` 列の順序と幅が自動的に保存されます。
 - [**改行]-セル**が改行を処理する方法を選択します。
-- **最後に表示**される行を切り捨て `true` ます。の場合、セルはデータ内で切り捨てられ、その範囲内に収まりません。
+- **最後に表示** される行を切り捨て `true` ます。の場合、セルはデータ内で切り捨てられ、その範囲内に収まりません。
 
 > [!IMPORTANT]
-> 従来の Xamarin. Mac アプリケーションを維持していない場合は、ベースのテーブルビューでベースの `NSView` テーブルビューを使用する必要があり `NSCell` ます。 `NSCell`は従来と見なされ、今後サポートされない可能性があります。
+> 従来の Xamarin. Mac アプリケーションを維持していない場合は、ベースのテーブルビューでベースの `NSView` テーブルビューを使用する必要があり `NSCell` ます。 `NSCell` は従来と見なされ、今後サポートされない可能性があります。
 
 **インターフェイス階層**内のテーブル列を選択します。**属性インスペクター**では、次のプロパティを使用できます。
 
 [![属性インスペクター](table-view-images/edit06.png)](table-view-images/edit06.png#lightbox)
 
-- **タイトル**-列のタイトルを設定します。
+- **タイトル** -列のタイトルを設定します。
 - **Alignment** -セル内のテキストの配置を設定します。
 - [**タイトルのフォント**]-セルのヘッダーテキストのフォントを選択します。
 - **Sort key** -列のデータを並べ替えるために使用されるキーです。 ユーザーがこの列を並べ替えられない場合は、空白のままにします。
-- **Selector** -並べ替えを実行するために使用される**アクション**です。 ユーザーがこの列を並べ替えられない場合は、空白のままにします。
+- **Selector** -並べ替えを実行するために使用される **アクション** です。 ユーザーがこの列を並べ替えられない場合は、空白のままにします。
 - **Order** -列データの並べ替え順序です。
 - [**サイズ変更**中-列のサイズ変更の種類を選択します。
-- **編集可能**-の場合 `true` 、ユーザーはセルベーステーブル内のセルを編集できます。
+- **編集可能** -の場合 `true` 、ユーザーはセルベーステーブル内のセルを編集できます。
 - **Hidden** -の場合 `true` 、列は非表示になります。
 
 また、列のハンドル (垂直方向に列の右側に中央揃え) をドラッグして列のサイズを変更することもできます。
 
-テーブルビューの各列を選択し、最初の列に**タイトル** `Product` と2番目の列を指定してみましょう `Details` 。
+テーブルビューの各列を選択し、最初の列に **タイトル** `Product` と2番目の列を指定してみましょう `Details` 。
 
 インターフェイス階層でテーブルセルビュー () を選択する `NSTableViewCell` と、**属性インスペクター**で次のプロパティを使用できます。 **Interface Hierarchy**
 
@@ -132,24 +132,24 @@ Apple では、テーブルビューを作成するときに次のことが提�
 ここで最も重要な設定は次のとおりです。
 
 - [**レイアウト**]-この列のセルのレイアウトを選択します。
-- **単一行モードを使用**し `true` ます。の場合、セルは1行に制限されます。
-- **最初の実行時レイアウトの幅**-If の場合、アプリケーションを初めて実行したときに表示されるときに、 `true` セルの幅 (手動または自動) が優先されます。
-- **Action** -セルに対して編集**アクション**が送信されるタイミングを制御します。
+- **単一行モードを使用** し `true` ます。の場合、セルは1行に制限されます。
+- **最初の実行時レイアウトの幅** -If の場合、アプリケーションを初めて実行したときに表示されるときに、 `true` セルの幅 (手動または自動) が優先されます。
+- **Action** -セルに対して編集 **アクション** が送信されるタイミングを制御します。
 - **Behavior** -セルを選択可能にするか、編集可能にするかを定義します。
-- **リッチテキスト**-If `true` セルには、書式設定されたテキストを表示できます。
+- **リッチテキスト** -If `true` セルには、書式設定されたテキストを表示できます。
 - [**元に戻す**]: `true` このセルは、元に戻す動作の役割を担います。
 
 `NSTableFieldCell`**インターフェイス階層**のテーブル列の下部にあるテーブルセルビュー () を選択します。
 
 [![テーブルセルビューの選択](table-view-images/edit10.png)](table-view-images/edit10.png#lightbox)
 
-これにより、特定の列に対して作成されたすべてのセルのベース_パターン_として使用されるテーブルセルビューを編集できます。
+これにより、特定の列に対して作成されたすべてのセルのベース _パターン_ として使用されるテーブルセルビューを編集できます。
 
 <a name="Adding_Actions_and_Outlets"></a>
 
 ### <a name="adding-actions-and-outlets"></a>アクションとアウトレットの追加
 
-他の Cocoa UI コントロールと同様に、テーブルビューとその列とセルは、**アクション**と**アウトレット**(必要な機能に基づく) を使用して C# コードに公開する必要があります。
+他の Cocoa UI コントロールと同様に、テーブルビューとその列とセルは、 **アクション** と **アウトレット** (必要な機能に基づく) を使用して C# コードに公開する必要があります。
 
 このプロセスは、公開するすべてのテーブルビュー要素で同じです。
 
@@ -157,10 +157,10 @@ Apple では、テーブルビューを作成するときに次のことが提�
 
     [![アシスタントエディター](table-view-images/edit11.png)](table-view-images/edit11.png#lightbox)
 2. **インターフェイス階層**からテーブルビューを選択し、コントロールをクリックして、ファイルにドラッグし `ViewController.h` ます。
-3. テーブルビューの**アウトレット**を作成し `ProductTable` ます。 
+3. テーブルビューの **アウトレット** を作成し `ProductTable` ます。 
 
     [![アウトレットの構成](table-view-images/edit13.png)](table-view-images/edit13.png#lightbox)
-4. テーブルの列に対しても、およびと呼ばれる**コンセント**を作成し `ProductColumn` `DetailsColumn` ます。 
+4. テーブルの列に対しても、およびと呼ばれる **コンセント** を作成し `ProductColumn` `DetailsColumn` ます。 
 
     [![アウトレットの構成](table-view-images/edit14.png)](table-view-images/edit14.png#lightbox)
 5. 変更を保存し Visual Studio for Mac に戻り、Xcode と同期します。
@@ -171,7 +171,7 @@ Apple では、テーブルビューを作成するときに次のことが提�
 
 ## <a name="populating-the-table-view"></a>テーブルビューの設定
 
-Interface Builder で設計され、**アウトレット**を介して公開されているテーブルビューでは、次に C# コードを作成してそれを設定する必要があります。
+Interface Builder で設計され、 **アウトレット**を介して公開されているテーブルビューでは、次に C# コードを作成してそれを設定する必要があります。
 
 まず、 `Product` 個々の行の情報を保持する新しいクラスを作成してみましょう。 **ソリューションエクスプローラー**で、プロジェクトを右クリックし、[新しいファイルの**追加**  >  **...** ] を選択します。[**汎用**空のクラス] を選択し、名前として「」  >  **Empty Class**と入力して `Product` 、[**新規**] ボタンをクリックします。 **Name**
 
@@ -391,7 +391,7 @@ public override void SortDescriptorsChanged (NSTableView tableView, NSSortDescri
 }
 ```
 
-メソッドを使用すると、指定した `Sort` クラスフィールドに基づいてデータソース内のデータを `Product` 昇順または降順で並べ替えることができます。 オーバーライド `SortDescriptorsChanged` されたメソッドは、が列見出しをクリックするたびに呼び出されます。 Interface Builder に設定した**キー**値とその列の並べ替え順序が渡されます。
+メソッドを使用すると、指定した `Sort` クラスフィールドに基づいてデータソース内のデータを `Product` 昇順または降順で並べ替えることができます。 オーバーライド `SortDescriptorsChanged` されたメソッドは、が列見出しをクリックするたびに呼び出されます。 Interface Builder に設定した **キー** 値とその列の並べ替え順序が渡されます。
 
 アプリケーションを実行して列ヘッダーをクリックすると、行はその列で並べ替えられます。
 
@@ -420,10 +420,10 @@ public override bool ShouldSelectRow (NSTableView tableView, nint row)
 
 テーブルビュー () には、 `NSTableView` 行の選択を操作するための次のメソッドが含まれています。
 
-- `DeselectRow(nint)`-テーブル内の指定された行を選択解除します。
-- `SelectRow(nint,bool)`-指定された行を選択します。 `false`2 番目のパラメーターにを渡して、一度に1つの行だけを選択します。
-- `SelectedRow`-テーブルで選択されている現在の行を返します。
-- `IsRowSelected(nint)`-指定された `true` 行が選択されている場合はを返します。
+- `DeselectRow(nint)` -テーブル内の指定された行を選択解除します。
+- `SelectRow(nint,bool)` -指定された行を選択します。 `false`2 番目のパラメーターにを渡して、一度に1つの行だけを選択します。
+- `SelectedRow` -テーブルで選択されている現在の行を返します。
+- `IsRowSelected(nint)` -指定された `true` 行が選択されている場合はを返します。
 
 <a name="Multiple_Row_Selection"></a>
 
@@ -448,15 +448,15 @@ public override bool ShouldSelectRow (NSTableView tableView, nint row)
 
 テーブルビュー () には、 `NSTableView` 行の選択を操作するための次のメソッドが含まれています。
 
-- `DeselectAll(NSObject)`-テーブル内のすべての行を選択解除します。 最初のパラメーターとしてを使用して、 `this` 選択したオブジェクト内でを送信します。 
-- `DeselectRow(nint)`-テーブル内の指定された行を選択解除します。
-- `SelectAll(NSobject)`-テーブル内のすべての行を選択します。 最初のパラメーターとしてを使用して、 `this` 選択したオブジェクト内でを送信します。
-- `SelectRow(nint,bool)`-指定された行を選択します。 `false`2 番目のパラメーターにを渡して選択範囲をクリアし、1行だけを選択します。を渡して選択 `true` 範囲を拡張し、この行を含めます。
-- `SelectRows(NSIndexSet,bool)`-指定された行のセットを選択します。 `false`2 番目のパラメーターにを渡して選択範囲をクリアし、これらの行のみを選択し、を渡して `true` 選択範囲を拡張し、これらの行を含めます。
-- `SelectedRow`-テーブルで選択されている現在の行を返します。
-- `SelectedRows`- `NSIndexSet` 選択された行のインデックスを含むを返します。
-- `SelectedRowCount`-選択された行の数を返します。
-- `IsRowSelected(nint)`-指定された `true` 行が選択されている場合はを返します。
+- `DeselectAll(NSObject)` -テーブル内のすべての行を選択解除します。 最初のパラメーターとしてを使用して、 `this` 選択したオブジェクト内でを送信します。 
+- `DeselectRow(nint)` -テーブル内の指定された行を選択解除します。
+- `SelectAll(NSobject)` -テーブル内のすべての行を選択します。 最初のパラメーターとしてを使用して、 `this` 選択したオブジェクト内でを送信します。
+- `SelectRow(nint,bool)` -指定された行を選択します。 `false`2 番目のパラメーターにを渡して選択範囲をクリアし、1行だけを選択します。を渡して選択 `true` 範囲を拡張し、この行を含めます。
+- `SelectRows(NSIndexSet,bool)` -指定された行のセットを選択します。 `false`2 番目のパラメーターにを渡して選択範囲をクリアし、これらの行のみを選択し、を渡して `true` 選択範囲を拡張し、これらの行を含めます。
+- `SelectedRow` -テーブルで選択されている現在の行を返します。
+- `SelectedRows` - `NSIndexSet` 選択された行のインデックスを含むを返します。
+- `SelectedRowCount` -選択された行の数を返します。
+- `IsRowSelected(nint)` -指定された `true` 行が選択されている場合はを返します。
 
 <a name="Type_to_Select_Row"></a>
 
@@ -500,7 +500,7 @@ public override nint GetNextTypeSelectMatch (NSTableView tableView, nint startRo
 
 [![属性インスペクター](table-view-images/reorder01.png)](table-view-images/reorder01.png#lightbox)
 
-"**自動保存**" プロパティに値を指定して [**列情報**] フィールドを確認すると、テーブルのレイアウトに対して行った変更は自動的に保存され、次にアプリケーションが実行されたときに復元されます。
+" **自動保存** " プロパティに値を指定して [ **列情報** ] フィールドを確認すると、テーブルのレイアウトに対して行った変更は自動的に保存され、次にアプリケーションが実行されたときに復元されます。
 
 変更を保存し Visual Studio for Mac に戻り、Xcode と同期します。
 
@@ -644,9 +644,9 @@ public override NSView GetViewForItem (NSTableView tableView, NSTableColumn tabl
 
 ## <a name="adding-a-delete-button-to-a-row"></a>行に Delete ボタンを追加する
 
-アプリの要件に基づいて、テーブルの行ごとにアクションボタンを指定することが必要になる場合があります。 この例として、上記で作成したテーブルビューの例を拡張して、各行に [**削除**] ボタンを追加してみましょう。
+アプリの要件に基づいて、テーブルの行ごとにアクションボタンを指定することが必要になる場合があります。 この例として、上記で作成したテーブルビューの例を拡張して、各行に [ **削除** ] ボタンを追加してみましょう。
 
-まず、Xcode の Interface Builder のを編集し `Main.storyboard` 、テーブルビューを選択して、列の数を3に増やします。 次に、新しい列の**タイトル**を次のように変更し `Action` ます。
+まず、Xcode の Interface Builder のを編集し `Main.storyboard` 、テーブルビューを選択して、列の数を3に増やします。 次に、新しい列の **タイトル** を次のように変更し `Action` ます。
 
 [![列名の編集](table-view-images/delete01.png)](table-view-images/delete01.png#lightbox)
 
@@ -813,9 +813,9 @@ public override NSView GetViewForItem (NSTableView tableView, NSTableColumn tabl
 }
 ```
 
-このコードのいくつかのセクションをさらに詳しく見てみましょう。 まず、 `NSTableViewCell` 列の名前に基づいて新しいアクションが作成されます。 最初の2つの列 (**Product**および**Details**) では、新しい `ConfigureTextField` メソッドが呼び出されます。
+このコードのいくつかのセクションをさらに詳しく見てみましょう。 まず、 `NSTableViewCell` 列の名前に基づいて新しいアクションが作成されます。 最初の2つの列 (**Product** および **Details**) では、新しい `ConfigureTextField` メソッドが呼び出されます。
 
-[**アクション**] 列には、新しいが作成され、 `NSButton` そのセルにサブビューとして追加されます。
+[ **アクション** ] 列には、新しいが作成され、 `NSButton` そのセルにサブビューとして追加されます。
 
 ```csharp
 // Create new button
@@ -891,13 +891,13 @@ case "Action":
 
 ```
 
-[**アクション**] 列では、が見つかるまですべてのサブビューがスキャンされ、その `NSButton` `Tag` プロパティが現在の行をポイントするように更新されます。
+[ **アクション** ] 列では、が見つかるまですべてのサブビューがスキャンされ、その `NSButton` `Tag` プロパティが現在の行をポイントするように更新されます。
 
-これらの変更が適用されると、アプリの実行時に、各行に [**削除**] ボタンが表示されます。
+これらの変更が適用されると、アプリの実行時に、各行に [ **削除** ] ボタンが表示されます。
 
 [![[削除] ボタンが表示されたテーブルビュー](table-view-images/delete02.png)](table-view-images/delete02.png#lightbox)
 
-ユーザーが [**削除**] ボタンをクリックすると、特定の行を削除するように求める警告が表示されます。
+ユーザーが [ **削除** ] ボタンをクリックすると、特定の行を削除するように求める警告が表示されます。
 
 [![行の削除の警告](table-view-images/delete03.png)](table-view-images/delete03.png#lightbox)
 
@@ -923,8 +923,8 @@ UI 要素を設定して操作するために、Xamarin. Mac アプリケーシ�
 
 ## <a name="related-links"></a>関連リンク
 
-- [MacTables (サンプル)](https://docs.microsoft.com/samples/xamarin/mac-samples/mactables)
-- [MacImages (サンプル)](https://docs.microsoft.com/samples/xamarin/mac-samples/macimages)
+- [MacTables (サンプル)](/samples/xamarin/mac-samples/mactables)
+- [MacImages (サンプル)](/samples/xamarin/mac-samples/macimages)
 - [Hello Mac](~/mac/get-started/hello-mac.md)
 - [アウトライン ビュー](~/mac/user-interface/outline-view.md)
 - [ソース リスト](~/mac/user-interface/source-list.md)
