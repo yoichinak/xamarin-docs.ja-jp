@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: b1c6e031d30dc4c30007e04cd8e883c8ddf2e6a0
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 5bf1a6dea7d39dcf4601b3a2d09a34d1f50004c4
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "71107275"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91451635"
 ---
 これでこのチュートリアルは完了です。ここでは以下の方法を学習しました。
 
@@ -23,6 +23,6 @@ Xamarin.Forms を使用してモバイル アプリケーションを作成す�
 
 ## <a name="related-links"></a>関連リンク
 
-- [LabelTutorial (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-labeltutorial/)
+- [LabelTutorial (サンプル)](/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-labeltutorial/)
 - [Xamarin.Forms のラベル (ガイド)](~/xamarin-forms/user-interface/text/label.md)
 - [ラベルの API](xref:Xamarin.Forms.Label)

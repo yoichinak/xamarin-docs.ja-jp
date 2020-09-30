@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 3b1603b6af5ebb5558c3cd764f41fdbe24351b9b
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 5fe6bab32a70c8af03bdca2151312d44fbf3834e
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "68669721"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91451520"
 ---
 REST 要求は、Web ブラウザーがページの取得やサーバーへのデータ送信に使用するのと同じ HTTP 動詞を使用して HTTP 経由で行われます。 この演習では、GET 動詞を使用して [OpenWeatherMap](https://openweathermap.org/) Web API からデータを取得するクラスを作成します。 この Web API は、指定された場所の天気予報データを取得するために使用できます。 この Web API を使用するには、API キーにサインアップする必要があります。
 
@@ -82,7 +82,7 @@ REST 要求は、Web ブラウザーがページの取得やサーバーへの�
     このコードは、Web サービスから取得した JSON データをモデル化するために使用される 4 つのクラスを定義します。 各プロパティは、JSON フィールド名を含む `JsonProperty` 属性で装飾されます。 Newtonsoft.Json は、JSON データをモデル オブジェクトに逆シリアル化するときに、この JSON フィールド名と CLR プロパティとのマッピングを使用します。
 
     > [!NOTE]
-    > 上記のクラス定義は単純化されており、Web サービスから取得した JSON データを完全にはモデル化していません。 完全なデータ モデルの例については、[Weather App](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/weather/) サンプルをご覧ください。
+    > 上記のクラス定義は単純化されており、Web サービスから取得した JSON データを完全にはモデル化していません。 完全なデータ モデルの例については、[Weather App](/samples/xamarin/xamarin-forms-samples/weather/) サンプルをご覧ください。
 
 1. **ソリューション エクスプローラー**の **[WebServiceTutorial]** プロジェクトで、`RestService` という名前の新しいクラスをプロジェクトに追加します。 次に、**RestService.cs** のテンプレート コードをすべて削除し、次のコードに置き換えます。
 
@@ -202,7 +202,7 @@ REST 要求は、Web ブラウザーがページの取得やサーバーへの�
     このコードは、Web サービスから取得した JSON データをモデル化するために使用される 4 つのクラスを定義します。 各プロパティは、JSON フィールド名を含む `JsonProperty` 属性で装飾されます。 Newtonsoft.Json は、JSON データをモデル オブジェクトに逆シリアル化するときに、この JSON フィールド名と CLR プロパティとのマッピングを使用します。
 
     > [!NOTE]
-    > 上記のクラス定義は単純化されており、Web サービスから取得した JSON データを完全にはモデル化していません。 完全なデータ モデルの例については、[Weather App](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/weather/) サンプルをご覧ください。
+    > 上記のクラス定義は単純化されており、Web サービスから取得した JSON データを完全にはモデル化していません。 完全なデータ モデルの例については、[Weather App](/samples/xamarin/xamarin-forms-samples/weather/) サンプルをご覧ください。
 
 1. **Solution Pad** の **[WebServiceTutorial]** プロジェクトで、`RestService` という名前の新しいクラスをプロジェクトに追加します。 次に、**RestService.cs** のテンプレート コードをすべて削除し、次のコードに置き換えます。
 

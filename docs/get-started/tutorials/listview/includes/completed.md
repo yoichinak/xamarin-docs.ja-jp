@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: b01ea403fde614bc06e616c3b1e30bfd8ed10a0f
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 8d7572d4fb04bd7974c1badc28226c991e60ddcd
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "71107278"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91451435"
 ---
 これでこのチュートリアルは完了です。ここでは以下の方法を学習しました。
 
@@ -24,6 +24,6 @@ Xamarin.Forms を使用してモバイル アプリケーションを作成す�
 
 ## <a name="related-links"></a>関連リンク
 
-- [ListViewTutorial (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-listviewtutorial/)
+- [ListViewTutorial (サンプル)](/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-listviewtutorial/)
 - [Xamarin.Forms ListView (ガイド)](~/xamarin-forms/user-interface/listview/index.md)
 - [ListView API](xref:Xamarin.Forms.ListView)
