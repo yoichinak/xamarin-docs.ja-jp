@@ -10,12 +10,12 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7269b0617be7199c365f350fc26ecd42256e28f3
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 27d19773d86c125cd5574f7a281c37c26ef643fd
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128454"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563199"
 ---
 # <a name="webview-mixed-content-on-android"></a>Android での WebView 混合コンテンツ
 
@@ -42,9 +42,9 @@ webView.On<Android>().SetMixedContentMode(MixedContentHandling.AlwaysAllow);
 
 メソッドは、 `WebView.On<Android>` このプラットフォーム固有のが Android でのみ実行されることを指定します。 [ `WebView.SetMixedContentMode` ] (Xref: Xamarin.FormsPlatformConfiguration. SetMixedContentMode (を指定します。 Xamarin.FormsIPlatformElementConfiguration { Xamarin.Forms .PlatformConfiguration. Android、 Xamarin.Forms 。WebView}、 Xamarin.Forms 。PlatformConfiguration. AndroidSpecific) メソッド [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) は、混合コンテンツを表示できるかどうかを制御するために使用されます。列挙体には、 [`MixedContentHandling`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling) 次の3つの値を指定できます。
 
-- [`AlwaysAllow`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling.AlwaysAllow)–は、 [`WebView`](xref:Xamarin.Forms.WebView) HTTPS オリジンが HTTP オリジンからのコンテンツを読み込むことを許可することを示します。
-- [`NeverAllow`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling.NeverAllow)–が [`WebView`](xref:Xamarin.Forms.WebView) HTTPS オリジンによる HTTP オリジンからのコンテンツの読み込みを許可しないことを示します。
-- [`CompatibilityMode`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling.CompatibilityMode)–は、 [`WebView`](xref:Xamarin.Forms.WebView) 最新のデバイス web ブラウザーのアプローチとの互換性を試行することを示します。 一部の HTTP コンテンツは、HTTPS オリジンによって読み込まれる可能性があり、その他の種類のコンテンツはブロックされます。 ブロックまたは許可されているコンテンツの種類は、各オペレーティングシステムのリリースで変更される可能性があります。
+- [`AlwaysAllow`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling.AlwaysAllow) –は、 [`WebView`](xref:Xamarin.Forms.WebView) HTTPS オリジンが HTTP オリジンからのコンテンツを読み込むことを許可することを示します。
+- [`NeverAllow`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling.NeverAllow) –が [`WebView`](xref:Xamarin.Forms.WebView) HTTPS オリジンによる HTTP オリジンからのコンテンツの読み込みを許可しないことを示します。
+- [`CompatibilityMode`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling.CompatibilityMode) –は、 [`WebView`](xref:Xamarin.Forms.WebView) 最新のデバイス web ブラウザーのアプローチとの互換性を試行することを示します。 一部の HTTP コンテンツは、HTTPS オリジンによって読み込まれる可能性があり、その他の種類のコンテンツはブロックされます。 ブロックまたは許可されているコンテンツの種類は、各オペレーティングシステムのリリースで変更される可能性があります。
 
 結果として、指定された [`MixedContentHandling`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling) 値がに適用され [`WebView`](xref:Xamarin.Forms.WebView) 、混合コンテンツを表示できるかどうかを制御します。
 
@@ -52,7 +52,7 @@ webView.On<Android>().SetMixedContentMode(MixedContentHandling.AlwaysAllow);
 
 ## <a name="related-links"></a>関連リンク
 
-- [PlatformSpecifics (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [プラットフォーム固有設定の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [AndroidSpecific の API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
 - [AndroidSpecific の AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

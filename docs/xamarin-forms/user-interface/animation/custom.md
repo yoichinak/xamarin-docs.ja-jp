@@ -1,5 +1,5 @@
 ---
-title: でのカスタムアニメーションXamarin.Forms
+title: でのカスタムアニメーション Xamarin.Forms
 description: この記事では、Xamarin の [アニメーション] クラスを使用してアニメーションを作成およびキャンセルする方法、複数のアニメーションを同期する方法、および既存のアニメーションメソッドでアニメーション化されていないプロパティをアニメーション化するカスタムアニメーションを作成する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 03B2E3FC-E720-4D45-B9A0-711081FC1907
@@ -10,20 +10,20 @@ ms.date: 02/10/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 573f18de0d7593d832505eb6bb2b492caea024a1
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 3731f35ab03edf9b65c3adca7a2091c2a609b552
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84946105"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563394"
 ---
-# <a name="custom-animations-in-xamarinforms"></a>でのカスタムアニメーションXamarin.Forms
+# <a name="custom-animations-in-no-locxamarinforms"></a>でのカスタムアニメーション Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-custom)
 
 _Animation クラスは、すべてのアニメーションのビルドブロックであり Xamarin.Forms 、ViewExtensions クラスの拡張メソッドは1つ以上のアニメーションオブジェクトを作成します。この記事では、Animation クラスを使用してアニメーションを作成およびキャンセルする方法、複数のアニメーションを同期する方法、および既存のアニメーションメソッドでアニメーション化されていないプロパティをアニメーション化するカスタムアニメーションを作成する方法について説明します。_
 
-オブジェクトを作成するときには、アニメーション化する `Animation` プロパティの開始値と終了値、およびプロパティの値を変更するコールバックを含む、いくつかのパラメーターを指定する必要があります。 オブジェクトは、 `Animation` 実行および同期できる子アニメーションのコレクションを保持することもできます。 詳細については、「[子アニメーション](#child-animations)」を参照してください。
+オブジェクトを作成するときには、アニメーション化する `Animation` プロパティの開始値と終了値、およびプロパティの値を変更するコールバックを含む、いくつかのパラメーターを指定する必要があります。 オブジェクトは、 `Animation` 実行および同期できる子アニメーションのコレクションを保持することもできます。 詳細については、「 [子アニメーション](#child-animations)」を参照してください。
 
 クラスを使用して作成されたアニメーションを実行すると、 [`Animation`](xref:Xamarin.Forms.Animation) 子アニメーションを含む場合と含まない場合があります。これを行うには、[ `Commit` ] (xref: Xamarin.Forms . animation. Commit () を呼び出し Xamarin.Forms ます。System.windows.media.animation.ianimatable>、System.string、System.string、、、および Xamarin.Forms 。イージング、system.string {system.string}、system.string {System. Boolean})) メソッドを実行してください。 このメソッドは、アニメーションの期間と、アニメーションを繰り返すかどうかを制御するコールバックを指定します。
 
@@ -53,8 +53,8 @@ animation.Commit (this, "SimpleAnimation", 16, 2000, Easing.Linear, (v, c) => im
 - 2番目の引数 (*name*) は、名前を持つアニメーションを識別します。 名前は、アニメーションを一意に識別するために所有者と結合されます。 この一意の id を使用して、アニメーションが実行されているかどうかを判断できます ([ `AnimationIsRunning` ] (xref:) Xamarin.Forms 。AnimationIsRunning ( Xamarin.Forms .System.windows.media.animation.ianimatable>、System.string))、または取り消します ([ `AbortAnimation` ] (xref:) Xamarin.Forms 。アニメーション拡張機能。 AbortAnimation ( Xamarin.Forms .System.windows.media.animation.ianimatable>、System.string)) を指定します。
 - 3番目の引数 (*rate*) は、コンストラクターで定義されているコールバックメソッドへの各呼び出しの間のミリ秒数を示し [`Animation`](xref:Xamarin.Forms.Animation) ます。
 - 4番目の引数 (*長さ*) は、アニメーションの継続時間をミリ秒単位で示します。
-- 5番目の引数 (*イージング*) は、アニメーションで使用するイージング関数を定義します。 また、イージング関数をコンストラクターの引数として指定することもでき [`Animation`](xref:Xamarin.Forms.Animation) ます。 イージング関数の詳細については、「[イージング関数](~/xamarin-forms/user-interface/animation/easing.md)」を参照してください。
-- 6番目の引数 (*完成*) は、アニメーションが完了したときに実行されるコールバックです。 このコールバックは、2つの引数を受け取ります。最初の引数は最後の値を示し、2番目の引数は `bool` `true` アニメーションがキャンセルされた場合にに設定されます。 または、*完了*したコールバックをコンストラクターの引数として指定でき [`Animation`](xref:Xamarin.Forms.Animation) ます。 ただし、1つのアニメーションで、*完了*したコールバックがコンストラクターとメソッドの両方で指定されている場合は、 `Animation` `Commit` メソッドで指定されたコールバックだけが `Commit` 実行されます。
+- 5番目の引数 (*イージング*) は、アニメーションで使用するイージング関数を定義します。 また、イージング関数をコンストラクターの引数として指定することもでき [`Animation`](xref:Xamarin.Forms.Animation) ます。 イージング関数の詳細については、「 [イージング関数](~/xamarin-forms/user-interface/animation/easing.md)」を参照してください。
+- 6番目の引数 (*完成*) は、アニメーションが完了したときに実行されるコールバックです。 このコールバックは、2つの引数を受け取ります。最初の引数は最後の値を示し、2番目の引数は `bool` `true` アニメーションがキャンセルされた場合にに設定されます。 または、 *完了* したコールバックをコンストラクターの引数として指定でき [`Animation`](xref:Xamarin.Forms.Animation) ます。 ただし、1つのアニメーションで、 *完了* したコールバックがコンストラクターとメソッドの両方で指定されている場合は、 `Animation` `Commit` メソッドで指定されたコールバックだけが `Commit` 実行されます。
 - 7番目の引数 (*repeat*) は、アニメーションを繰り返すことができるコールバックです。 これはアニメーションの最後に呼び出され、を返す `true` ことは、アニメーションを繰り返す必要があることを示します。
 
 全体の効果とし [`Scale`](xref:Xamarin.Forms.VisualElement.Scale) [`Image`](xref:Xamarin.Forms.Image) て、イージング関数を使用して、のプロパティを 1 ~ 2 秒 (2000 ミリ秒間) に増加させるアニメーションを作成し [`Linear`](xref:Xamarin.Forms.Easing.Linear) ます。 アニメーションが完了するたびに、 `Scale` プロパティが1にリセットされ、アニメーションが繰り返されます。
@@ -95,11 +95,11 @@ new Animation {
 
 子アニメーションを使用するオブジェクトには、次のような違いがいくつ [`Animation`](xref:Xamarin.Forms.Animation) かあります。
 
-- 子アニメーションを使用する場合、子アニメーションでの*完了*コールバックは、子がいつ完了したかを示し、メソッドに渡された*完成*したコールバックが `Commit` アニメーション全体が完了したことを示します。
-- 子アニメーションを使用する場合、 `true` メソッドの*繰り返し*コールバックからを返すと、 `Commit` アニメーションは繰り返されませんが、アニメーションは新しい値なしで実行され続けます。
+- 子アニメーションを使用する場合、子アニメーションでの *完了* コールバックは、子がいつ完了したかを示し、メソッドに渡された *完成* したコールバックが `Commit` アニメーション全体が完了したことを示します。
+- 子アニメーションを使用する場合、 `true` メソッドの *繰り返し* コールバックからを返すと、 `Commit` アニメーションは繰り返されませんが、アニメーションは新しい値なしで実行され続けます。
 - イージング関数をメソッドに含め `Commit` 、イージング関数が1より大きい値を返す場合、アニメーションは終了します。 イージング関数が0未満の値を返す場合、値は0にクランプされます。 0未満または1より大きい値を返すイージング関数を使用するには、メソッドではなく、子アニメーションのいずれかで指定する必要があり `Commit` ます。
 
-クラスには、 [`Animation`](xref:Xamarin.Forms.Animation) [ `WithConcurrent` ] (xref: も含まれます Xamarin.Forms 。アニメーション。 WithConcurrent 実行 ( Xamarin.Forms .Animation、system.string、system.string) の各メソッドを使用して、親オブジェクトに子アニメーションを追加でき `Animation` ます。 ただし、 *begin*引数と*finish*引数の値は 0 ~ 1 に制限されませんが、0 ~ 1 の範囲に対応する子アニメーションの部分だけがアクティブになります。 たとえば、 `WithConcurrent` メソッド呼び出しで、1 ~ 6 のプロパティを対象とする子アニメーションが定義されていて、 [`Scale`](xref:Xamarin.Forms.VisualElement.Scale) *開始*値と*終了*値が-2 および3の場合、*開始*値-2 は `Scale` 1 の値に、3の*終了*値は `Scale` 6 の値に対応します。 0 ~ 1 の範囲外の値は、アニメーションの一部を再生しないので、 `Scale` プロパティは3から6までアニメーション化されます。
+クラスには、 [`Animation`](xref:Xamarin.Forms.Animation) [ `WithConcurrent` ] (xref: も含まれます Xamarin.Forms 。アニメーション。 WithConcurrent 実行 ( Xamarin.Forms .Animation、system.string、system.string) の各メソッドを使用して、親オブジェクトに子アニメーションを追加でき `Animation` ます。 ただし、 *begin* 引数と *finish* 引数の値は 0 ~ 1 に制限されませんが、0 ~ 1 の範囲に対応する子アニメーションの部分だけがアクティブになります。 たとえば、 `WithConcurrent` メソッド呼び出しで、1 ~ 6 のプロパティを対象とする子アニメーションが定義されていて、 [`Scale`](xref:Xamarin.Forms.VisualElement.Scale) *開始* 値と *終了* 値が-2 および3の場合、 *開始* 値-2 は `Scale` 1 の値に、3の *終了* 値は `Scale` 6 の値に対応します。 0 ~ 1 の範囲外の値は、アニメーションの一部を再生しないので、 `Scale` プロパティは3から6までアニメーション化されます。
 
 ## <a name="cancel-an-animation"></a>アニメーションをキャンセルする
 
@@ -165,7 +165,7 @@ public static class ViewExtensions
 }
 ```
 
-メソッドには、 [`Animate`](xref:Xamarin.Forms.AnimationExtensions.Animate*) コールバックメソッドである*変換*引数が必要です。 このコールバックへの入力は、常に `double` 0 ~ 1 の範囲内です。 したがって、 `ColorTo` メソッドは、 `Func` `double` 0 から1までの範囲を受け取り、その値に対応する値を返す独自の変換を定義し [`Color`](xref:Xamarin.Forms.Color) ます。 `Color`値は、指定された [`R`](xref:Xamarin.Forms.Color.R) [`G`](xref:Xamarin.Forms.Color.G) [`B`](xref:Xamarin.Forms.Color.B) [`A`](xref:Xamarin.Forms.Color.A) 2 つの引数の、、、および `Color` の各値を補間することによって計算されます。 `Color`値は、アプリケーションのコールバックメソッドに特定のプロパティに渡されます。
+メソッドには、 [`Animate`](xref:Xamarin.Forms.AnimationExtensions.Animate*) コールバックメソッドである *変換* 引数が必要です。 このコールバックへの入力は、常に `double` 0 ~ 1 の範囲内です。 したがって、 `ColorTo` メソッドは、 `Func` `double` 0 から1までの範囲を受け取り、その値に対応する値を返す独自の変換を定義し [`Color`](xref:Xamarin.Forms.Color) ます。 `Color`値は、指定された [`R`](xref:Xamarin.Forms.Color.R) [`G`](xref:Xamarin.Forms.Color.G) [`B`](xref:Xamarin.Forms.Color.B) [`A`](xref:Xamarin.Forms.Color.A) 2 つの引数の、、、および `Color` の各値を補間することによって計算されます。 `Color`値は、アプリケーションのコールバックメソッドに特定のプロパティに渡されます。
 
 この方法では、 `ColorTo` [`Color`](xref:Xamarin.Forms.Color) 次のコード例に示すように、メソッドで任意のプロパティをアニメーション化できます。
 
@@ -181,6 +181,6 @@ await boxView.ColorTo(Color.Blue, Color.Red, c => boxView.Color = c, 4000);
 
 ## <a name="related-links"></a>関連リンク
 
-- [カスタムアニメーション (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-custom)
+- [カスタムアニメーション (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-animation-custom)
 - [Animation API](xref:Xamarin.Forms.Animation)
 - [アニメーション拡張 API](xref:Xamarin.Forms.AnimationExtensions)

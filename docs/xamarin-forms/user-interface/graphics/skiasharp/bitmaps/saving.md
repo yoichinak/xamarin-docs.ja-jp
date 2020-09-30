@@ -10,12 +10,12 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 01f4fcf1953658af44d2a8996913860a3b605abf
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 2e0c4d247f3ecf9c1b8e077c4a96712e9ed138ca
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138659"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562952"
 ---
 # <a name="saving-skiasharp-bitmaps-to-files"></a>SkiaSharp ビットマップをファイルに保存しています
 
@@ -32,9 +32,9 @@ SkiaSharp アプリケーションでビットマップを作成または変更�
 
 ## <a name="file-formats-and-codecs"></a>ファイル形式とコーデック
 
-今日の一般的なビットマップファイル形式のほとんどは、圧縮を使用して記憶域スペースを削減します。 圧縮手法の2つの広範なカテゴリは、"_損失_" と "_損失_なし" です。 これらの用語は、圧縮アルゴリズムによってデータが失われるかどうかを示します。
+今日の一般的なビットマップファイル形式のほとんどは、圧縮を使用して記憶域スペースを削減します。 圧縮手法の2つの広範なカテゴリは、" _損失_ " と " _損失_なし" です。 これらの用語は、圧縮アルゴリズムによってデータが失われるかどうかを示します。
 
-最も人気のある可逆形式は、Joint Photographic Experts Group によって開発されたもので、JPEG と呼ばれています。 JPEG 圧縮アルゴリズムは、_離散余弦変換_と呼ばれる数学ツールを使用してイメージを分析し、画像の視覚的な忠実性を維持するために重要ではないデータを削除しようとします。 圧縮の程度は、一般に_品質_と呼ばれる設定で制御できます。 品質設定が高いほど、ファイルが大きくなります。
+最も人気のある可逆形式は、Joint Photographic Experts Group によって開発されたもので、JPEG と呼ばれています。 JPEG 圧縮アルゴリズムは、 _離散余弦変換_と呼ばれる数学ツールを使用してイメージを分析し、画像の視覚的な忠実性を維持するために重要ではないデータを削除しようとします。 圧縮の程度は、一般に _品質_と呼ばれる設定で制御できます。 品質設定が高いほど、ファイルが大きくなります。
 
 これに対して、ロスレス圧縮アルゴリズムでは、イメージを分析して、データを減らす方法でエンコードできるピクセルの繰り返しとパターンを分析しますが、情報の損失は発生しません。 元のビットマップデータは、圧縮されたファイルから完全に復元できます。 現在使用されているロスレス圧縮ファイル形式は、ポータブルネットワークグラフィックス (PNG) です。
 
@@ -42,12 +42,12 @@ SkiaSharp アプリケーションでビットマップを作成または変更�
 
 圧縮アルゴリズムは、圧縮と圧縮解除のプロセスを記述する2つの用語を保証するのに十分に複雑です。
 
-- _デコード_ &mdash;ビットマップファイル形式の読み取りと圧縮解除
-- _エンコード_ &mdash;ビットマップを圧縮し、ビットマップファイル形式に書き込みます。
+- _デコード_ &mdash; ビットマップファイル形式の読み取りと圧縮解除
+- _エンコード_ &mdash; ビットマップを圧縮し、ビットマップファイル形式に書き込みます。
 
 クラスには、 [`SKBitmap`](xref:SkiaSharp.SKBitmap) 圧縮されたソースからを作成するという名前のメソッドがいくつか含まれてい `Decode` `SKBitmap` ます。 必要なのは、ファイル名、ストリーム、またはバイト配列を指定することだけです。 デコーダーは、ファイル形式を特定し、適切な内部デコード関数に渡すことができます。
 
-また、クラスに [`SKCodec`](xref:SkiaSharp.SKCodec) は、という2つのメソッドがあります。これは、圧縮された `Create` `SKCodec` ソースからオブジェクトを作成し、アプリケーションがデコードプロセスにさらに関与できるようにします。 (クラスは、 `SKCodec` アニメーション gif ファイルのデコードと接続での[**SkiaSharp ビットマップのアニメーション**](animating.md#gif-animation)化に関する記事に記載されています)。
+また、クラスに [`SKCodec`](xref:SkiaSharp.SKCodec) は、という2つのメソッドがあります。これは、圧縮された `Create` `SKCodec` ソースからオブジェクトを作成し、アプリケーションがデコードプロセスにさらに関与できるようにします。 (クラスは、 `SKCodec` アニメーション gif ファイルのデコードと接続での [**SkiaSharp ビットマップのアニメーション**](animating.md#gif-animation) 化に関する記事に記載されています)。
 
 ビットマップをエンコードする場合は、詳細な情報が必要です。エンコーダーは、アプリケーションで使用する特定のファイル形式 (JPEG または PNG など) を認識している必要があります。 損失の多い形式が必要な場合は、エンコードで必要な品質レベルも把握している必要があります。
 
@@ -67,11 +67,11 @@ public Boolean Encode (SKWStream dst, SKEncodedImageFormat format, Int32 quality
 
 `SKBitmap`オブジェクトを特定のファイル形式にエンコードすると、通常、なんらかのストリームオブジェクト、またはデータの配列が残されます。 いくつかの `Encode` メソッド (で定義されているパラメーターがないものを含む) は、 `SKImage` [`SKData`](xref:SkiaSharp.SKData) メソッドを使用してバイトの配列に変換できるオブジェクトを返し [`ToArray`](xref:SkiaSharp.SKData.ToArray) ます。 その後、このデータをファイルに保存する必要があります。
 
-`System.IO`このタスクには標準のクラスとメソッドを使用できるため、アプリケーションのローカルストレージ内のファイルに保存するのは非常に簡単です。 この手法については、マンデルブロセットの一連のビットマップをアニメーション化する接続での[**SkiaSharp ビットマップのアニメーション**](animating.md#bitmap-animation)化に関する記事で説明されています。
+`System.IO`このタスクには標準のクラスとメソッドを使用できるため、アプリケーションのローカルストレージ内のファイルに保存するのは非常に簡単です。 この手法については、マンデルブロセットの一連のビットマップをアニメーション化する接続での [**SkiaSharp ビットマップのアニメーション**](animating.md#bitmap-animation) 化に関する記事で説明されています。
 
 ファイルを他のアプリケーションで共有する場合は、ユーザーの写真ライブラリに保存する必要があります。 このタスクでは、プラットフォーム固有のコードとを使用する必要があり Xamarin.Forms [`DependencyService`](xref:Xamarin.Forms.DependencyService) ます。
 
-[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)アプリケーションの**SkiaSharpFormsDemo**プロジェクトでは、 `IPhotoLibrary` クラスで使用されるインターフェイスを定義し `DependencyService` ます。 これにより、メソッドの構文が定義され `SavePhotoAsync` ます。
+[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)アプリケーションの**SkiaSharpFormsDemo**プロジェクトでは、 `IPhotoLibrary` クラスで使用されるインターフェイスを定義し `DependencyService` ます。 これにより、メソッドの構文が定義され `SavePhotoAsync` ます。
 
 ```csharp
 public interface IPhotoLibrary
@@ -114,7 +114,7 @@ public class PhotoLibrary : IPhotoLibrary
 
 残念ながら、イメージのファイル名またはフォルダーを指定する方法はありません。
 
-IOS プロジェクトの**情報の plist**ファイルには、写真ライブラリに画像を追加することを示すキーが必要です。
+IOS プロジェクトの **情報の plist** ファイルには、写真ライブラリに画像を追加することを示すキーが必要です。
 
 ```xml
 <key>NSPhotoLibraryAddUsageDescription</key>
@@ -248,7 +248,7 @@ public class PhotoLibrary : IPhotoLibrary
 public Boolean Encode (SKWStream dst, SKEncodedImageFormat format, Int32 quality)
 ```
 
-[`SKEncodedImageFormat`](xref:SkiaSharp.SKEncodedImageFormat)は、11個のビットマップファイル形式を参照するメンバーを含む列挙体です。その中には、次のように見えにくいものがあります。
+[`SKEncodedImageFormat`](xref:SkiaSharp.SKEncodedImageFormat) は、11個のビットマップファイル形式を参照するメンバーを含む列挙体です。その中には、次のように見えにくいものがあります。
 
 - `Astc`&mdash;アダプティブスケーラブルなテクスチャ圧縮
 - `Bmp`&mdash;Windows ビットマップ
@@ -283,7 +283,7 @@ using (SKManagedWStream wstream = new SKManagedWStream(memStream))
 
 `SKManagedWStream`クラスはから派生 `SKWStream` します ("書き込み可能なストリーム" を意味します)。 メソッドは、エンコードされ `Encode` たビットマップファイルをそのストリームに書き込みます。 そのコード内のコメントは、実行する必要のあるエラーチェックを指しています。
 
-[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)アプリケーションの [**ファイル形式の保存**] ページでは、同様のコードを使用して、さまざまな形式でビットマップを保存する方法を試すことができます。
+[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)アプリケーションの [**ファイル形式の保存**] ページでは、同様のコードを使用して、さまざまな形式でビットマップを保存する方法を試すことができます。
 
 XAML ファイルにはビットマップを表示するが含まれていますが、 `SKCanvasView` ページの残りの部分には、アプリケーションがメソッドを呼び出すために必要なすべてが含まれてい `Encode` `SKBitmap` ます。 これには、 `Picker` 列挙体のメンバーのがあります。これには、 `SKEncodedImageFormat` `Slider` 高損失のビットマップ形式の quality 引数の、 `Entry` ファイル名とフォルダー名の2つのビュー、およびファイルを保存するためのがあり `Button` ます。
 
@@ -454,9 +454,9 @@ public partial class SaveFileFormatsPage : ContentPage
 
 他のすべての形式では、 `Encode` メソッドはストリームに何も書き込みません。結果のバイト配列は空になります。
 
-[**ファイル形式の保存**] ページに保存されるビットマップは、600ピクセルの四角形です。 1ピクセルあたり4バイトで、メモリ内の合計は144万バイトです。 次の表は、ファイル形式と品質のさまざまな組み合わせのファイルサイズを示しています。
+[ **ファイル形式の保存** ] ページに保存されるビットマップは、600ピクセルの四角形です。 1ピクセルあたり4バイトで、メモリ内の合計は144万バイトです。 次の表は、ファイル形式と品質のさまざまな組み合わせのファイルサイズを示しています。
 
-|フォーマット|[品質]|サイズ|
+|形式|品質|サイズ|
 |------|------:|---:|
 | PNG | 該当なし | 492K |
 | JPEG | 0 | 2.95 k |
@@ -470,13 +470,13 @@ public partial class SaveFileFormatsPage : ContentPage
 
 ## <a name="saving-finger-paint-art"></a>フィンガーペイントアートを保存する
 
-ビットマップの一般的な用途の1つは、プログラムの描画です。この場合、_シャドウビットマップ_と呼ばれるものとして機能します。 すべての描画はビットマップに保持され、その後プログラムによって表示されます。 ビットマップは、描画を保存するのにも便利です。
+ビットマップの一般的な用途の1つは、プログラムの描画です。この場合、 _シャドウビットマップ_と呼ばれるものとして機能します。 すべての描画はビットマップに保持され、その後プログラムによって表示されます。 ビットマップは、描画を保存するのにも便利です。
 
 [**SkiaSharp 記事のフィンガーペイントで**](../paths/finger-paint.md)は、タッチ追跡を使用して、基本的な指描画プログラムを実装する方法を示しています。 このプログラムでサポートされるのは、1つの色と1つのストローク幅のみですが、オブジェクトのコレクションに描画全体を保持し `SKPath` ます。
 
-[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルの [ **Save を使用したフィンガーペイント**] ページでは、描画全体がオブジェクトのコレクションにも保持され `SKPath` ますが、ビットマップで描画がレンダリングされ、写真ライブラリに保存することができます。
+[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルの [ **Save を使用したフィンガーペイント**] ページでは、描画全体がオブジェクトのコレクションにも保持され `SKPath` ますが、ビットマップで描画がレンダリングされ、写真ライブラリに保存することができます。
 
-このプログラムの多くは、オリジナルの**フィンガーペイント**プログラムに似ています。 1つの拡張機能として、XAML ファイルで**Clear**および**Save**というラベルのボタンがインスタンス化されるようになりました。
+このプログラムの多くは、オリジナルの **フィンガーペイント** プログラムに似ています。 1つの拡張機能として、XAML ファイルで **Clear** および **Save**というラベルのボタンがインスタンス化されるようになりました。
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -658,7 +658,7 @@ public partial class FingerPaintSavePage : ContentPage
 
 `UpdateBitmap`メソッドは、 `saveBitmap` 新しいを作成して消去し、ビットマップのすべてのパスを表示することによって再描画し `SKCanvas` ます。 `canvasView`画面上にビットマップを描画できるように、無効にすることで終了します。
 
-2つのボタンのハンドラーを次に示します。 [**クリア**] ボタンをクリックすると、パスコレクションと更新 `saveBitmap` (ビットマップがクリアされます) の両方がクリアされ、が無効になり `SKCanvasView` ます。
+2つのボタンのハンドラーを次に示します。 [ **クリア** ] ボタンをクリックすると、パスコレクションと更新 `saveBitmap` (ビットマップがクリアされます) の両方がクリアされ、が無効になり `SKCanvasView` ます。
 
 ```csharp
 public partial class FingerPaintSavePage : ContentPage
@@ -701,7 +701,7 @@ public partial class FingerPaintSavePage : ContentPage
 
 [![フィンガーペイントによる保存](saving-images/FingerPaintSave.png "フィンガーペイントによる保存")](saving-images/FingerPaintSave-Large.png#lightbox)
 
-[**SpinPaint**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-spinpaint)サンプルでは、非常によく似た手法が使用されています。 これは、ユーザーが回転するディスク上に描画し、その他の4つの作業領域に設計を再現する点を除いて、指描画プログラムでもあります。 指の描画の色は、ディスクのスピン中に変わります。
+[**SpinPaint**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-spinpaint)サンプルでは、非常によく似た手法が使用されています。 これは、ユーザーが回転するディスク上に描画し、その他の4つの作業領域に設計を再現する点を除いて、指描画プログラムでもあります。 指の描画の色は、ディスクのスピン中に変わります。
 
 [![スピン描画](saving-images/SpinPaint.png "スピン描画")](saving-images/SpinPaint-Large.png#lightbox)
 
@@ -709,6 +709,6 @@ public partial class FingerPaintSavePage : ContentPage
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
-- [SpinPaint (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-spinpaint)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SpinPaint (サンプル)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-spinpaint)

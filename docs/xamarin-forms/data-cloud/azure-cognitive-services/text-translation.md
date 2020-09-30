@@ -10,16 +10,16 @@ ms.date: 02/08/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 38c7f11ecf65a2a9ec9ef54b5beb270f51d24dda
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 2b26e80267be9af6bf300b2ffc82e43fe717f59c
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929949"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563121"
 ---
 # <a name="text-translation-using-the-translator-api"></a>Translator API を使用したテキスト翻訳
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 _Microsoft Translator API を使用すると、REST API を通じて音声とテキストを変換できます。この記事では、Microsoft Translator Text API を使用して、アプリケーションでテキストをある言語から別の言語に変換する方法について説明し Xamarin.Forms ます。_
 
@@ -35,7 +35,7 @@ Translator API には、次の2つのコンポーネントがあります。
 > [!NOTE]
 > [Azure サブスクリプション](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)をお持ちでない場合は、開始する前に[無料アカウント](https://aka.ms/azfree-docs-mobileapps)を作成してください。
 
-Translator Text API を使用するには、API キーを取得する必要があります。 これは[、「Microsoft Translator Text API にサインアップする方法](/azure/cognitive-services/translator/translator-text-how-to-signup/)」で入手できます。
+Translator Text API を使用するには、API キーを取得する必要があります。 これは [、「Microsoft Translator Text API にサインアップする方法](/azure/cognitive-services/translator/translator-text-how-to-signup/)」で入手できます。
 
 Microsoft Translator Text API の詳細については、 [Translator Text API のドキュメント](/azure/cognitive-services/translator/)を参照してください。
 
@@ -131,7 +131,7 @@ async Task<string> SendRequestAsync(string url, string bearerToken)
 
 このメソッドは、プレフィックスが文字列であるヘッダーにアクセストークンを追加することによって、GET 要求をビルドし `Authorization` `Bearer` ます。 次に、GET 要求が API に送信され `translate` ます。要求 URL には翻訳するテキストを指定し、テキストを変換する言語を指定します。 次に、応答が読み取られ、呼び出し元のメソッドに返されます。
 
-要求が有効であり、要求された `translate` 情報が応答内にあることを示すために、API は応答で HTTP 状態コード 200 (OK) を送信します。 考えられるエラー応答の一覧については、「[翻訳の取得](/azure/cognitive-services/translator/reference/v3-0-translate)」にある応答メッセージを参照してください。
+要求が有効であり、要求された `translate` 情報が応答内にあることを示すために、API は応答で HTTP 状態コード 200 (OK) を送信します。 考えられるエラー応答の一覧については、「 [翻訳の取得](/azure/cognitive-services/translator/reference/v3-0-translate)」にある応答メッセージを参照してください。
 
 ### <a name="processing-the-response"></a>応答の処理
 
@@ -153,5 +153,5 @@ API 応答は XML 形式で返されます。 次の XML データは、一般�
 
 - [Translator Text API のドキュメント](/azure/cognitive-services/translator/)
 - [RESTful Web サービスを使用する](~/xamarin-forms/data-cloud/web-services/rest.md)
-- [Todo Cognitive Services (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+- [Todo Cognitive Services (サンプル)](/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 - [Translator Text API](/azure/cognitive-services/translator/reference/v3-0-reference)

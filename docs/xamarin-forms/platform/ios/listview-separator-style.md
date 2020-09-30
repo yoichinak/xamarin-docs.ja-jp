@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fda45bc0aa2b7bc582c30b752662055bd4bd4865
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: fe9a93e8e5a35df98587efc0dc3ad6192653d173
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937060"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563706"
 ---
 # <a name="listview-separator-style-on-ios"></a>IOS での ListView 区切り記号のスタイル
 
@@ -46,8 +46,8 @@ listView.On<iOS>().SetSeparatorStyle(SeparatorStyle.FullWidth);
 
 メソッドは、 `ListView.On<iOS>` このプラットフォーム固有のが iOS 上でのみ実行されることを指定します。 [ `ListView.SetSeparatorStyle` ] (Xref: Xamarin.FormsPlatformConfiguration. iOSSpecific Xamarin.Forms ()。IPlatformElementConfiguration { Xamarin.Forms .PlatformConfiguration。 iOS、 Xamarin.Forms 。ListView}、 Xamarin.Forms 。SeparatorStyle)) メソッドを名前空間で使用して、の [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) セル間の区切り記号がの完全な幅を使用するかどうかを制御します。列挙体では、 [`ListView`](xref:Xamarin.Forms.ListView) `ListView` [`SeparatorStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle) 2 つの値を指定できます。
 
-- [`Default`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle.Default)–既定の iOS の区切り記号の動作を示します。 これは、の既定の動作です Xamarin.Forms 。
-- [`FullWidth`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle.FullWidth)–のある端からもう一方の端まで、区切り記号が描画されることを示し `ListView` ます。
+- [`Default`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle.Default) –既定の iOS の区切り記号の動作を示します。 これは、の既定の動作です Xamarin.Forms 。
+- [`FullWidth`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle.FullWidth) –のある端からもう一方の端まで、区切り記号が描画されることを示し `ListView` ます。
 
 結果として、指定された [`SeparatorStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle) 値がに適用され [`ListView`](xref:Xamarin.Forms.ListView) 、セル間の区切り記号の幅が制御されます。
 
@@ -58,6 +58,6 @@ listView.On<iOS>().SetSeparatorStyle(SeparatorStyle.FullWidth);
 
 ## <a name="related-links"></a>関連リンク
 
-- [PlatformSpecifics (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [プラットフォーム固有設定の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific の API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

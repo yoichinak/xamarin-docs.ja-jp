@@ -10,12 +10,12 @@ ms.date: 09/30/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 874793975f027e1323dbf8a8acd30d19e980370b
-ms.sourcegitcommit: 562d4f2d51a43af21b7dc3ab892dd3a4264349a1
+ms.openlocfilehash: 319afff4572c02e363fef6296aca06ba290923c2
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87177646"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562835"
 ---
 # <a name="part-1-getting-started-with-xaml"></a>第 1 部 XAML の概要
 
@@ -33,7 +33,7 @@ _アプリケーションで Xamarin.Forms は、XAML はほとんどの場合�
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-Windows で Visual Studio 2019 を起動し、[スタート] ウィンドウで [**新しいプロジェクトの作成**] をクリックして新しいプロジェクトを作成します。
+Windows で Visual Studio 2019 を起動し、[スタート] ウィンドウで [ **新しいプロジェクトの作成** ] をクリックして新しいプロジェクトを作成します。
 
 ![新しいソリューションウィンドウ](get-started-with-xaml-images/win/new-solution-2019.png)
 
@@ -41,9 +41,9 @@ Windows で Visual Studio 2019 を起動し、[スタート] ウィンドウで 
 
 ![[新しいプロジェクト] ウィンドウ](get-started-with-xaml-images/win/new-project-2019.png)
 
-[**新しいプロジェクトの構成**] ウィンドウで、**プロジェクト名**を**xamlsamples** (または任意のもの) に設定し、[**作成**] ボタンをクリックします。
+[ **新しいプロジェクトの構成** ] ウィンドウで、 **プロジェクト名** を **xamlsamples** (または任意のもの) に設定し、[ **作成** ] ボタンをクリックします。
 
-[**新しいクロスプラットフォームアプリ**] ダイアログで、[**空白**] をクリックし、[ **OK** ] ボタンをクリックします。
+[ **新しいクロスプラットフォームアプリ** ] ダイアログで、[ **空白**] をクリックし、[ **OK** ] ボタンをクリックします。
 
 ![新しいアプリダイアログ](get-started-with-xaml-images/win/new-cross-platform-app.png)
 
@@ -51,23 +51,23 @@ Windows で Visual Studio 2019 を起動し、[スタート] ウィンドウで 
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-Visual Studio for Mac で、メニューから [**ファイル > 新しいソリューション**] を選択します。 [**新しいプロジェクト**] ダイアログボックスで、左側にある [**マルチプラットフォーム > アプリ**] を選択し、テンプレートの一覧から**空のフォームアプリ**(**フォームアプリ**では*ありません*) を選択します。
+Visual Studio for Mac で、メニューから [ **ファイル > 新しいソリューション** ] を選択します。 [**新しいプロジェクト**] ダイアログボックスで、左側にある [**マルチプラットフォーム > アプリ**] を選択し、テンプレートの一覧から**空のフォームアプリ**(**フォームアプリ**では*ありません*) を選択します。
 
 ![[新しいプロジェクト] ダイアログ1](get-started-with-xaml-images/mac/newprojectdialog1.png)
 
-[**次へ**] をクリックします。
+[ **次へ**] をクリックします。
 
-次のダイアログボックスで、プロジェクトに**Xamlsamples**の名前 (または任意のもの) を指定します。 [ **.NET Standard を使用**する] オプションボタンが選択されていることを確認します。
+次のダイアログボックスで、プロジェクトに **Xamlsamples** の名前 (または任意のもの) を指定します。 [ **.NET Standard を使用** する] オプションボタンが選択されていることを確認します。
 
 ![[新しいプロジェクト] ダイアログ2](get-started-with-xaml-images/mac/newprojectdialog2.png)
 
-[**次へ**] をクリックします。
+[ **次へ**] をクリックします。
 
 次のダイアログボックスで、プロジェクトの場所を選択できます。
 
 ![[新しいプロジェクト] ダイアログ3](get-started-with-xaml-images/mac/newprojectdialog3.png)
 
-[**作成**
+[ **作成**
 
 ソリューション内に3つのプロジェクトが作成されます。 **xamlsamples** .NET Standard Library、 **Xamlsamples. Android**、および**xamlsamples です。**
 
@@ -75,18 +75,18 @@ Visual Studio for Mac で、メニューから [**ファイル > 新しいソリ
 
 **Xamlsamples**ソリューションを作成した後、ソリューションのスタートアッププロジェクトとしてさまざまなプラットフォームプロジェクトを選択し、プロジェクトテンプレートによって作成された単純なアプリケーションを phone エミュレーターまたは実際のデバイスに構築してデプロイすることで、開発環境をテストできます。
 
-プラットフォーム固有のコードを記述する必要がある場合を除いて、共有されている**Xamlsamples** .NET Standard ライブラリプロジェクトには、ほぼすべてのプログラミング時間が費やされます。 これらの記事は、そのプロジェクトの外部では実行されません。
+プラットフォーム固有のコードを記述する必要がある場合を除いて、共有されている **Xamlsamples** .NET Standard ライブラリプロジェクトには、ほぼすべてのプログラミング時間が費やされます。 これらの記事は、そのプロジェクトの外部では実行されません。
 
 ### <a name="anatomy-of-a-xaml-file"></a>XAML ファイルの構造
 
 **Xamlsamples** .NET Standard ライブラリには、次の名前を持つファイルのペアが含まれています。
 
 - App.xaml **、xaml ファイル、** そして
-- **App.xaml.cs**。 xaml ファイルに関連付けられている C#*分離コード*ファイルです。
+- **App.xaml.cs**。 xaml ファイルに関連付けられている C# *分離コード* ファイルです。
 
 [ **App.xaml** ] の横にある矢印をクリックすると、分離コードファイルが表示されます。
 
-**App.xaml**と**App.xaml.cs**はどちらも、から派生したという名前のクラスに寄与し `App` `Application` ます。 XAML ファイルを持つその他のほとんどのクラスは、から派生するクラスに寄与します。これらのファイルは、XAML を使用して `ContentPage` ページ全体のビジュアルコンテンツを定義します。 これは、 **Xamlsamples**プロジェクト内の他の2つのファイルに当てはまります。
+**App.xaml**と**App.xaml.cs**はどちらも、から派生したという名前のクラスに寄与し `App` `Application` ます。 XAML ファイルを持つその他のほとんどのクラスは、から派生するクラスに寄与します。これらのファイルは、XAML を使用して `ContentPage` ページ全体のビジュアルコンテンツを定義します。 これは、 **Xamlsamples** プロジェクト内の他の2つのファイルに当てはまります。
 
 - **Mainpage.xaml。** xaml ファイルそして
 - **MainPage.xaml.cs**は、C# 分離コードファイルです。
@@ -111,7 +111,7 @@ Visual Studio for Mac で、メニューから [**ファイル > 新しいソリ
 
 2つの XML 名前空間 ( `xmlns` ) 宣言は、最初は Xamarin の web サイトで、もう1つは Microsoft の uri を参照します。 これらの Uri がどのようなものかを確認することは避けてください。 何もありません。 これらは、Xamarin と Microsoft が所有する単なる Uri であり、基本的にはバージョン識別子として機能します。
 
-最初の XML 名前空間宣言では、XAML ファイル内でプレフィックスなしのタグがを参照していることを意味し Xamarin.Forms ます。たとえば、のように `ContentPage` なります。 2番目の名前空間宣言は、のプレフィックスを定義し `x` ます。 これは、XAML 自体に固有であり、XAML の他の実装でサポートされているいくつかの要素と属性に使用されます。 ただし、これらの要素と属性は、URI に埋め込まれている年によって若干異なります。 Xamarin.Formsでは、2009 XAML 仕様がサポートされていますが、そのすべてはサポートされていません。
+最初の XML 名前空間宣言では、XAML ファイル内でプレフィックスなしのタグがを参照していることを意味し Xamarin.Forms ます。たとえば、のように `ContentPage` なります。 2番目の名前空間宣言は、のプレフィックスを定義し `x` ます。 これは、XAML 自体に固有であり、XAML の他の実装でサポートされているいくつかの要素と属性に使用されます。 ただし、これらの要素と属性は、URI に埋め込まれている年によって若干異なります。 Xamarin.Forms では、2009 XAML 仕様がサポートされていますが、そのすべてはサポートされていません。
 
 `local`名前空間の宣言を使用すると、.NET Standard ライブラリプロジェクトから他のクラスにアクセスできます。
 
@@ -142,7 +142,7 @@ namespace XamlSamples
 
 Visual Studio によってプロジェクトがビルドされると、XAML ファイルが解析され、C# コードファイルが生成されます。 **XamlSamples\XamlSamples\obj\Debug**ディレクトリを調べると、 **XamlSamples.MainPage.xaml.g.cs**という名前のファイルが表示されます。 ' G ' は、生成されたを表します。 これは、 `MainPage` `InitializeComponent` コンストラクターから呼び出されたメソッドの定義を含むのその他の部分クラス定義です `MainPage` 。 これらの2つの部分 `MainPage` クラス定義を一緒にコンパイルできます。 Xaml がコンパイルされているかどうかによって、xaml ファイルまたはバイナリ形式の XAML ファイルが実行可能ファイルに埋め込まれます。
 
-実行時に、特定のプラットフォームプロジェクトのコードは `LoadApplication` メソッドを呼び出し、.NET Standard ライブラリのクラスの新しいインスタンスに渡し `App` ます。 `App`クラスコンストラクターがインスタンス化し `MainPage` ます。 このクラスのコンストラクターは `InitializeComponent` 、を呼び出し、 `LoadFromXaml` XAML ファイル (またはコンパイルされたバイナリ) を抽出するメソッドを .NET Standard ライブラリから呼び出します。 `LoadFromXaml`XAML ファイルで定義されているすべてのオブジェクトを初期化し、それらを親子のリレーションシップですべて連結し、コードで定義されているイベントハンドラーを XAML ファイルに設定されたイベントにアタッチし、オブジェクトの結果ツリーをページの内容として設定します。
+実行時に、特定のプラットフォームプロジェクトのコードは `LoadApplication` メソッドを呼び出し、.NET Standard ライブラリのクラスの新しいインスタンスに渡し `App` ます。 `App`クラスコンストラクターがインスタンス化し `MainPage` ます。 このクラスのコンストラクターは `InitializeComponent` 、を呼び出し、 `LoadFromXaml` XAML ファイル (またはコンパイルされたバイナリ) を抽出するメソッドを .NET Standard ライブラリから呼び出します。 `LoadFromXaml` XAML ファイルで定義されているすべてのオブジェクトを初期化し、それらを親子のリレーションシップですべて連結し、コードで定義されているイベントハンドラーを XAML ファイルに設定されたイベントにアタッチし、オブジェクトの結果ツリーをページの内容として設定します。
 
 通常は、生成されたコードファイルを使用する必要はあまりありませんが、ランタイム例外が生成されたファイルのコードに対して発生することがあるので、理解しておく必要があります。
 
@@ -156,19 +156,19 @@ Visual Studio によってプロジェクトがビルドされると、XAML フ�
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
-他の XAML ベースのクラスをプロジェクトに追加するに `ContentPage` は、 **xamlsamples** .NET Standard ライブラリプロジェクトを選択し、右クリックして、[ **> 新しい項目の追加**] を選択します。[**新しい項目の追加**] ダイアログボックスで、[ **Visual C# 項目 > Xamarin.Forms > コンテンツページ**( **C#)**] を選択します。このページでは、コードのみのページを作成するか、ページではない**コンテンツビュー**を作成します。 ページに名前を付けます。たとえば、 **HelloXamlPage**のように指定します。
+他の XAML ベースのクラスをプロジェクトに追加するに `ContentPage` は、 **xamlsamples** .NET Standard ライブラリプロジェクトを選択し、右クリックして、[ **> 新しい項目の追加**] を選択します。[ **新しい項目の追加** ] ダイアログボックスで、[ **Visual C# 項目 > Xamarin.Forms > コンテンツページ** ( **C#)**] を選択します。このページでは、コードのみのページを作成するか、ページではない **コンテンツビュー**を作成します。 ページに名前を付けます。たとえば、 **HelloXamlPage**のように指定します。
 
 ![[新しい項目の追加] ダイアログ](get-started-with-xaml-images/win/add-new-item-dialog-2019.png)
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-他の XAML ベースのクラスをプロジェクトに追加するには、 `ContentPage` **xamlsamples** .NET Standard ライブラリプロジェクトを選択し、[**ファイル > 新しいファイル**] メニュー項目を呼び出します。 [**新しいファイル**] ダイアログの左側で、左側にある [**フォーム**] を選択します。フォーム**ContentPage Xaml** (コードのみのページを作成するか、ページで**はない****コンテンツビュー**) を選択します。 ページに名前を付けます。たとえば、 **HelloXamlPage**のように指定します。
+他の XAML ベースのクラスをプロジェクトに追加するには、 `ContentPage` **xamlsamples** .NET Standard ライブラリプロジェクトを選択し、[ **ファイル > 新しいファイル** ] メニュー項目を呼び出します。 [**新しいファイル**] ダイアログの左側で、左側にある [**フォーム**] を選択します。フォーム**ContentPage Xaml** (コードのみのページを作成するか、ページで**はない****コンテンツビュー**) を選択します。 ページに名前を付けます。たとえば、 **HelloXamlPage**のように指定します。
 
 ![[新しいファイル] ダイアログ](get-started-with-xaml-images/mac/newfiledialog.png)
 
 -----
 
-2つのファイルがプロジェクト**HelloXamlPage**と分離コードファイル**HelloXamlPage.xaml.cs**に追加されます。
+2つのファイルがプロジェクト **HelloXamlPage** と分離コードファイル **HelloXamlPage.xaml.cs**に追加されます。
 
 ## <a name="setting-page-content"></a>ページコンテンツの設定
 
@@ -186,7 +186,7 @@ Visual Studio によってプロジェクトがビルドされると、XAML フ�
 
 タグは、 `ContentPage.Content` XAML の一意の構文の一部です。 最初は無効な XML であるように見えるかもしれませんが、有効であると思われます。 ピリオドは XML の特殊文字ではありません。
 
-`ContentPage.Content`タグは、*プロパティ要素*タグと呼ばれます。 `Content`はのプロパティであり `ContentPage` 、通常は1つのビューまたは子ビューを持つレイアウトに設定されます。 通常、プロパティは XAML の属性になりますが、 `Content` 複雑なオブジェクトに属性を設定するのは困難です。 そのため、プロパティは、クラス名とプロパティ名で構成される、ピリオドで区切られた XML 要素として表されます。 これで、次の `Content` ようにタグ間にプロパティを設定でき `ContentPage.Content` ます。
+`ContentPage.Content`タグは、*プロパティ要素*タグと呼ばれます。 `Content` はのプロパティであり `ContentPage` 、通常は1つのビューまたは子ビューを持つレイアウトに設定されます。 通常、プロパティは XAML の属性になりますが、 `Content` 複雑なオブジェクトに属性を設定するのは困難です。 そのため、プロパティは、クラス名とプロパティ名で構成される、ピリオドで区切られた XML 要素として表されます。 これで、次の `Content` ようにタグ間にプロパティを設定でき `ContentPage.Content` ます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -248,9 +248,9 @@ Visual Studio によってプロジェクトがビルドされると、XAML フ�
 
 ## <a name="page-navigation"></a>ページのナビゲーション
 
-**Xamlsamples**プログラムを実行すると、 `MainPage` が表示されます。 新しいを表示するには、 `HelloXamlPage` **App.xaml.cs**ファイルの新しいスタートアップページとして設定するか、から新しいページに移動し `MainPage` ます。
+**Xamlsamples**プログラムを実行すると、 `MainPage` が表示されます。 新しいを表示するには、 `HelloXamlPage` **App.xaml.cs** ファイルの新しいスタートアップページとして設定するか、から新しいページに移動し `MainPage` ます。
 
-ナビゲーションを実装するには、まず**App.xaml.cs**コンストラクターのコードを変更して、 `NavigationPage` オブジェクトが作成されるようにします。
+ナビゲーションを実装するには、まず **App.xaml.cs** コンストラクターのコードを変更して、 `NavigationPage` オブジェクトが作成されるようにします。
 
 ```csharp
 public App()
@@ -432,7 +432,7 @@ async void OnButtonClicked(object sender, EventArgs args)
 
 XAML で定義されたオブジェクトが分離コードファイルで処理されるイベントを発生させることができ、分離コードファイルは、属性を使用して割り当てられた名前を使用して、XAML で定義されたオブジェクトにアクセスできることを確認しました `x:Name` 。 これらは、コードと XAML がやり取りする2つの基本的な方法です。
 
-新たに生成された**XamlPlusCode.xaml.g.cs ファイル**を調べることで、XAML の動作方法に関する追加の洞察を得ることができます。これには、任意の `x:Name` 属性にプライベートフィールドとして割り当てられた任意の名前が含まれるようになりました。 このファイルの簡略化されたバージョンを次に示します。
+新たに生成された **XamlPlusCode.xaml.g.cs ファイル**を調べることで、XAML の動作方法に関する追加の洞察を得ることができます。これには、任意の `x:Name` 属性にプライベートフィールドとして割り当てられた任意の名前が含まれるようになりました。 このファイルの簡略化されたバージョンを次に示します。
 
 ```csharp
 public partial class XamlPlusCodePage : ContentPage {
@@ -454,11 +454,11 @@ public partial class XamlPlusCodePage : ContentPage {
 
 ## <a name="summary"></a>まとめ
 
-この概要では、XAML ファイルとコードファイルがクラス定義にどのように影響するか、および XAML とコードファイルがどのように対話するかを説明しました。 しかし、XAML には、非常に柔軟な方法で使用できる独自の一意の構文機能もあります。 これらの操作については、[第2部で開始できます。必須の XAML 構文](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)。
+この概要では、XAML ファイルとコードファイルがクラス定義にどのように影響するか、および XAML とコードファイルがどのように対話するかを説明しました。 しかし、XAML には、非常に柔軟な方法で使用できる独自の一意の構文機能もあります。 これらの操作については、 [第2部で開始できます。必須の XAML 構文](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)。
 
 ## <a name="related-links"></a>関連リンク
 
-- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+- [XamlSamples](/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [第2部。必須の XAML 構文](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
 - [パート3。XAML マークアップ拡張機能](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
 - [パート4。データバインディングの基礎](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)

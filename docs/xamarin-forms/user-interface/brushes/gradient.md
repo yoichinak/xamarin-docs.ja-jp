@@ -1,5 +1,5 @@
 ---
-title: 'Xamarin.Formsブラシ: グラデーション'
+title: 'Xamarin.Forms ブラシ: グラデーション'
 description: Gradientbrush でクラスは、グラデーションの分岐 Xamarin.Forms 点で構成されるグラデーションを記述する抽象クラスです。
 ms.prod: xamarin
 ms.assetid: 24763E56-74EC-4082-897B-E4EAACCADFEE
@@ -10,18 +10,18 @@ ms.date: 07/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 254a4433888be0e441ae37d41c24b1886040998b
-ms.sourcegitcommit: 579ec4f2884fa391e5e214a3952cd6004c521eb8
+ms.openlocfilehash: 08a423830ee3db55cb0ec7facfa5630c8832885b
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87919620"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562939"
 ---
-# <a name="no-locxamarinforms-brushes-gradients"></a>Xamarin.Formsブラシ: グラデーション
+# <a name="no-locxamarinforms-brushes-gradients"></a>Xamarin.Forms ブラシ: グラデーション
 
 ![プレビュー API](~/media/shared/preview.png "この API は現在プレリリースです")
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
 
 `GradientBrush`クラスはクラスから派生し、グラデーションの分岐点で `Brush` 構成されるグラデーションを記述する抽象クラスです。 グラデーション ブラシは、軸に沿って互いに溶け込む複数の色で領域を塗りつぶします。 から派生するクラスは、 `GradientBrush` グラデーションの分岐点を解釈するさまざまな方法を記述し、 Xamarin.Forms 次のグラデーションブラシを提供します。
 
@@ -42,7 +42,7 @@ ms.locfileid: "87919620"
 - `Color`[`Color`](xref:Xamarin.Forms.Color)グラデーションの分岐点の色を表す、型の。 このプロパティの既定値は `Color.Default` です。
 - `Offset``float`グラデーションベクター内のグラデーション境界の位置を表す型の。 このプロパティの既定値は0で、有効な値は 0.0 ~ 1.0 の範囲内です。 この値が0に近いほど、色がグラデーションの始点に近づきます。 同様に、この値が1に近いほど、色がグラデーションの端に近づきます。
 
-これらのプロパティは、オブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。これは、データバインディングのターゲットとスタイルを設定できることを意味します。
+これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトが基になっています。つまり、これらは、データ バインディングの対象にすることができ、スタイルを設定できます。
 
 > [!IMPORTANT]
 > グラデーションで使用される座標系は、出力領域の境界ボックスに対して相対的です。 0 は境界ボックスの 0% を示し、1 は境界ボックスの 100% を示します。 したがって、(0.5, 0.5) は境界ボックスの中央にある点を表し、(1, 1) は境界ボックスの右下にある点を表します。
@@ -71,6 +71,6 @@ ms.locfileid: "87919620"
 
 ## <a name="related-links"></a>関連リンク
 
-- [BrushesDemos (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
-- [Xamarin.Formsブラシ: 線状グラデーション](lineargradient.md)
-- [Xamarin.Formsブラシ: 放射状グラデーション](radialgradient.md)
+- [BrushesDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
+- [Xamarin.Forms ブラシ: 線状グラデーション](lineargradient.md)
+- [Xamarin.Forms ブラシ: 放射状グラデーション](radialgradient.md)

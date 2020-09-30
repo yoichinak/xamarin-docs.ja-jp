@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Formsタイトル
+title: Xamarin.Forms タイトル
 description: この記事では、Label クラスを使用して、 Xamarin.Forms アプリケーションに単一のテキストと複数行のテキストを表示する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 02E6C553-5670-49A0-8EE9-5153ED21EA91
@@ -10,18 +10,18 @@ ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1fcfc2c3fbb91a7ee326db7aeef08459e05d834d
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 742cc1171901d5aa9b81cab31fd45258686c2085
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87917876"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557583"
 ---
-# <a name="no-locxamarinforms-label"></a>Xamarin.Formsタイトル
+# <a name="no-locxamarinforms-label"></a>Xamarin.Forms タイトル
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
-_テキストを表示するXamarin.Forms_
+_テキストを表示する Xamarin.Forms_
 
 [`Label`](xref:Xamarin.Forms.Label)ビューは、1つのテキストと複数行のテキストを表示するために使用されます。 ラベルには、文字装飾、色分けされたテキスト、およびカスタムフォント (ファミリ、サイズ、およびオプション) を使用できます。
 
@@ -54,16 +54,16 @@ var bothLabel = new Label { Text = "This is underlined text with strikethrough."
 ![文字装飾付きのラベル](label-images/label-textdecorations.png)
 
 > [!NOTE]
-> 文字装飾はインスタンスにも適用でき [`Span`](xref:Xamarin.Forms.Span) ます。 クラスの詳細については `Span` 、「[書式設定](#formatted-text)されたテキスト」を参照してください。
+> 文字装飾はインスタンスにも適用でき [`Span`](xref:Xamarin.Forms.Span) ます。 クラスの詳細については `Span` 、「 [書式設定](#formatted-text)されたテキスト」を参照してください。
 
 ## <a name="transform-text"></a>テキストの変換
 
 は、プロパティを [`Label`](xref:Xamarin.Forms.Entry) `Text` `TextTransform` 列挙体の値に設定することによって、プロパティに格納されているテキストの大文字と小文字を変換できます `TextTransform` 。 この列挙体には、次の4つの値があります。
 
-- `None`テキストが変換されないことを示します。
-- `Default`プラットフォームの既定の動作が使用されることを示します。 これは、`TextTransform` プロパティの既定値です。
-- `Lowercase`テキストが小文字に変換されることを示します。
-- `Uppercase`テキストが大文字に変換されることを示します。
+- `None` テキストが変換されないことを示します。
+- `Default` プラットフォームの既定の動作が使用されることを示します。 これは、`TextTransform` プロパティの既定値です。
+- `Lowercase` テキストが小文字に変換されることを示します。
+- `Uppercase` テキストが大文字に変換されることを示します。
 
 次の例では、テキストを大文字に変換しています。
 
@@ -167,22 +167,22 @@ public partial class LabelPage : ContentPage
 
 ![ラベルの TextColor の例](label-images/textcolor.png)
 
-色の詳細については、「[色](~/xamarin-forms/user-interface/colors.md)」を参照してください。
+色の詳細については、「 [色](~/xamarin-forms/user-interface/colors.md)」を参照してください。
 
 ## <a name="fonts"></a>フォント
 
-でフォントを指定する方法の詳細につい `Label` ては、「[フォント](~/xamarin-forms/user-interface/text/fonts.md)」を参照してください。
+でフォントを指定する方法の詳細につい `Label` ては、「 [フォント](~/xamarin-forms/user-interface/text/fonts.md)」を参照してください。
 
 ## <a name="truncation-and-wrapping"></a>切り捨てと折り返し
 
-ラベルは、プロパティによって公開されるいくつかの方法のいずれかで1行に収めることができないテキストを処理するように設定でき `LineBreakMode` ます。 [`LineBreakMode`](xref:Xamarin.Forms.LineBreakMode)は、次の値を持つ列挙体です。
+ラベルは、プロパティによって公開されるいくつかの方法のいずれかで1行に収めることができないテキストを処理するように設定でき `LineBreakMode` ます。 [`LineBreakMode`](xref:Xamarin.Forms.LineBreakMode) は、次の値を持つ列挙体です。
 
-- **ヘッドの切り捨て** &ndash;テキストの先頭を切り捨て、末尾を表示します。
+- **ヘッドの切り捨て** &ndash; テキストの先頭を切り捨て、末尾を表示します。
 - 文字の**折り返し** &ndash;文字の境界でテキストを新しい行に折り返します。
-- **MiddleTruncation** &ndash;テキストの先頭と末尾を表示します。中央の部分は省略記号で置き換えられます。
-- **NoWrap** &ndash;はテキストを折り返しません。1行に収まる程度のテキストだけを表示します。
-- **TailTruncation** &ndash;テキストの先頭を切り捨て、末尾を切り捨てます。
-- **折り返し** &ndash;ワード境界でテキストをラップします。
+- **MiddleTruncation** &ndash; テキストの先頭と末尾を表示します。中央の部分は省略記号で置き換えられます。
+- **NoWrap** &ndash; はテキストを折り返しません。1行に収まる程度のテキストだけを表示します。
+- **TailTruncation** &ndash; テキストの先頭を切り捨て、末尾を切り捨てます。
+- **折り返し** &ndash; ワード境界でテキストをラップします。
 
 ## <a name="display-a-specific-number-of-lines"></a>特定の行数を表示する
 
@@ -219,8 +219,8 @@ var label =
 
 クラスには、 [`Label`](xref:Xamarin.Forms.Label) `TextType` インスタンスで `Label` プレーンテキストを表示するか、HTML テキストを表示するかを決定するプロパティがあります。 このプロパティは、列挙体のいずれかのメンバーに設定する必要があり `TextType` ます。
 
-- `Text`は `Label` プレーンテキストを表示し、がプロパティの既定値であることを示し `Label.TextType` ます。
-- `Html`が HTML テキストを表示することを示し `Label` ます。
+- `Text` は `Label` プレーンテキストを表示し、がプロパティの既定値であることを示し `Label.TextType` ます。
+- `Html` が HTML テキストを表示することを示し `Label` ます。
 
 このため、インスタンスでは、 [`Label`](xref:Xamarin.Forms.Label) プロパティを `Label.TextType` に、 `Html` プロパティを html 文字列に設定することにより、html を表示でき `Label.Text` ます。
 
@@ -266,18 +266,18 @@ XAML では、シンボルと記号をさらにエスケープすることによ
 
 `FormattedText`プロパティは [`FormattedString`](xref:Xamarin.Forms.FormattedString) 、プロパティを使用して設定される1つ以上のインスタンスで構成される型です [`Span`](xref:Xamarin.Forms.Span) [`Spans`](xref:Xamarin.Forms.FormattedString.Spans) 。 次のプロパティを使用して、 `Span` 外観を設定できます。
 
-- [`BackgroundColor`](xref:Xamarin.Forms.Span.BackgroundColor): スパンの背景の色。
+- [`BackgroundColor`](xref:Xamarin.Forms.Span.BackgroundColor) : スパンの背景の色。
 - `CharacterSpacing`: `double` 型、`Span` テキストの文字間の間隔。
-- [`Font`](xref:Xamarin.Forms.Span.Font)–スパン内のテキストのフォント。
-- [`FontAttributes`](xref:Xamarin.Forms.Span.FontAttributes)–スパン内のテキストのフォント属性。
-- [`FontFamily`](xref:Xamarin.Forms.Span.FontFamily)–スパン内のテキストのフォントが属するフォントファミリ。
-- [`FontSize`](xref:Xamarin.Forms.Span.FontSize)–スパン内のテキストのフォントのサイズ。
-- [`ForegroundColor`](xref:Xamarin.Forms.Span.ForegroundColor)–スパン内のテキストの色。 このプロパティは互換性のために残されていますが、プロパティによって置き換えられてい `TextColor` ます。
-- [`LineHeight`](xref:Xamarin.Forms.Span.LineHeight)-スパンの既定の行の高さに適用する乗数。 詳細については、「[行の高さ](#line-height)」を参照してください。
-- [`Style`](xref:Xamarin.Forms.Span.Style)–スパンに適用するスタイル。
-- [`Text`](xref:Xamarin.Forms.Span.Text)–スパンのテキスト。
-- [`TextColor`](xref:Xamarin.Forms.Span.TextColor)–スパン内のテキストの色。
-- `TextDecorations`-スパン内のテキストに適用する装飾。 詳細については、「[文字装飾](#text-decorations)」を参照してください。
+- [`Font`](xref:Xamarin.Forms.Span.Font) –スパン内のテキストのフォント。
+- [`FontAttributes`](xref:Xamarin.Forms.Span.FontAttributes) –スパン内のテキストのフォント属性。
+- [`FontFamily`](xref:Xamarin.Forms.Span.FontFamily) –スパン内のテキストのフォントが属するフォントファミリ。
+- [`FontSize`](xref:Xamarin.Forms.Span.FontSize) –スパン内のテキストのフォントのサイズ。
+- [`ForegroundColor`](xref:Xamarin.Forms.Span.ForegroundColor) –スパン内のテキストの色。 このプロパティは互換性のために残されていますが、プロパティによって置き換えられてい `TextColor` ます。
+- [`LineHeight`](xref:Xamarin.Forms.Span.LineHeight) -スパンの既定の行の高さに適用する乗数。 詳細については、「 [行の高さ](#line-height)」を参照してください。
+- [`Style`](xref:Xamarin.Forms.Span.Style)  –スパンに適用するスタイル。
+- [`Text`](xref:Xamarin.Forms.Span.Text) –スパンのテキスト。
+- [`TextColor`](xref:Xamarin.Forms.Span.TextColor) –スパン内のテキストの色。
+- `TextDecorations` -スパン内のテキストに適用する装飾。 詳細については、「 [文字装飾](#text-decorations)」を参照してください。
 
 、、およびのバインド可能なプロパティには、 [`BackgroundColor`](xref:Xamarin.Forms.Span.BackgroundColor) [`Text`](xref:Xamarin.Forms.Span.Text) [`Text`](xref:Xamarin.Forms.Span.Text) の既定のバインディングモードがあり [`OneWay`](xref:Xamarin.Forms.BindingMode) ます。 このバインディングモードの詳細については、「[バインドモード](~/xamarin-forms/app-fundamentals/data-binding/binding-mode.md)ガイド」の[既定のバインドモード](~/xamarin-forms/app-fundamentals/data-binding/binding-mode.md#the-default-binding-mode)に関する説明を参照してください。
 
@@ -455,7 +455,7 @@ Label label = new Label
 >
 > Android およびユニバーサル Windows プラットフォームでは、 `Padding` の作成時または後にプロパティ値を指定でき `Label` ます。
 
-埋め込みの詳細については、「[余白と埋め込み](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)」を参照してください。
+埋め込みの詳細については、「 [余白と埋め込み](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)」を参照してください。
 
 ## <a name="hyperlinks"></a>ハイパーリンク
 
@@ -466,7 +466,7 @@ Label label = new Label
 1. に `ICommand` よって実行されるを定義し [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) ます。
 1. によって実行されるコードを記述し `ICommand` ます。
 
-次のコード例では、[ハイパーリンクのデモ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks/)のサンプルで、 [`Label`](xref:Xamarin.Forms.Label) 複数のインスタンスからコンテンツが設定されているを示してい [`Span`](xref:Xamarin.Forms.Span) ます。
+次のコード例では、 [ハイパーリンクのデモ](/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks/) のサンプルで、 [`Label`](xref:Xamarin.Forms.Label) 複数のインスタンスからコンテンツが設定されているを示してい [`Span`](xref:Xamarin.Forms.Span) ます。
 
 ```xaml
 <Label>
@@ -515,7 +515,7 @@ public partial class MainPage : ContentPage
 
 前の方法でハイパーリンクを作成するには、アプリケーションでハイパーリンクが必要になるたびに繰り返しコードを記述する必要があります。 ただし、クラスとクラスの両方をサブクラス化して、 [`Label`](xref:Xamarin.Forms.Label) [`Span`](xref:Xamarin.Forms.Span) クラスとクラスを作成することができます。これには、 `HyperlinkLabel` `HyperlinkSpan` ジェスチャ認識エンジンとテキスト書式コードを追加します。
 
-次のコード例は、ハイパーリンクの[デモ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks/)のサンプルから抜粋したクラスを示してい `HyperlinkSpan` ます。
+次のコード例は、ハイパーリンクの [デモ](/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks/) のサンプルから抜粋したクラスを示してい `HyperlinkSpan` ます。
 
 ```csharp
 public class HyperlinkSpan : Span
@@ -569,12 +569,12 @@ public class HyperlinkSpan : Span
 
 ## <a name="styling-labels"></a>ラベルのスタイル設定
 
-前のセクションでは、インスタンスごとの設定とプロパティについて説明して [`Label`](xref:Xamarin.Forms.Label) [`Span`](xref:Xamarin.Forms.Span) います。 ただし、一連のプロパティを1つのスタイルにグループ化して、1つまたは複数のビューに一貫して適用することができます。 これにより、コードの読みやすさが向上し、デザインの変更を実装しやすくなります。 詳細については、「[スタイル](~/xamarin-forms/user-interface/text/styles.md)」を参照してください。
+前のセクションでは、インスタンスごとの設定とプロパティについて説明して [`Label`](xref:Xamarin.Forms.Label) [`Span`](xref:Xamarin.Forms.Span) います。 ただし、一連のプロパティを1つのスタイルにグループ化して、1つまたは複数のビューに一貫して適用することができます。 これにより、コードの読みやすさが向上し、デザインの変更を実装しやすくなります。 詳細については、「 [スタイル](~/xamarin-forms/user-interface/text/styles.md)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 
-- [Text (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
-- [ハイパーリンク (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks)
+- [Text (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-text)
+- [ハイパーリンク (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-hyperlinks)
 - [第3章で Mobile Apps を作成する Xamarin.Forms](https://developer.xamarin.com/r/xamarin-forms/book/chapter03.pdf)
 - [ラベルの API](xref:Xamarin.Forms.Label)
 - [スパン API](xref:Xamarin.Forms.Span)

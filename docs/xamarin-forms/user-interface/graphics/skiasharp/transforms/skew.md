@@ -10,16 +10,16 @@ ms.date: 03/20/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 998584c3deebf5ab722758aeefe7560ba738f426
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: ed1bcbed86874362e291fb23ce86dea8992d3408
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939296"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563732"
 ---
 # <a name="the-skew-transform"></a>傾斜変換
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _傾斜変換による SkiaSharp での傾いたグラフオブジェクトの作成方法を確認する_
 
@@ -45,7 +45,7 @@ public void Skew (SKPoint skew)
 
 ただし、これら2つの方法のいずれかを単独で使用することはほとんどありません。
 
-[**傾斜実験**] ページでは、-10 ~ 10 の範囲の傾斜値を試すことができます。 テキスト文字列は、ページの左上隅に配置されます。傾斜値は2つの要素から取得され `Slider` ます。 クラスのハンドラーを次に示し `PaintSurface` [`SkewExperimentPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SkewExperimentPage.xaml.cs) ます。
+[ **傾斜実験** ] ページでは、-10 ~ 10 の範囲の傾斜値を試すことができます。 テキスト文字列は、ページの左上隅に配置されます。傾斜値は2つの要素から取得され `Slider` ます。 クラスのハンドラーを次に示し `PaintSurface` [`SkewExperimentPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SkewExperimentPage.xaml.cs) ます。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -160,7 +160,7 @@ void SkewDegrees(SKCanvas canvas, double xDegrees, double yDegrees)
 
 [![スキュー角度実験ページのトリプルスクリーンショット](skew-images/skewangleexperiment-small.png)](skew-images/skewangleexperiment-large.png#lightbox "スキュー角度実験ページのトリプルスクリーンショット")
 
-小さい負の水平方向の傾斜は、斜投影の**テキスト**ページで示すように、斜投影または斜体のテキストを模倣することができます。 クラスは、 [`ObliqueTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ObliqueTextPage.cs) その方法を示しています。
+小さい負の水平方向の傾斜は、斜投影の **テキスト** ページで示すように、斜投影または斜体のテキストを模倣することができます。 クラスは、 [`ObliqueTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ObliqueTextPage.cs) その方法を示しています。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -196,7 +196,7 @@ void SkewDegrees(SKCanvas canvas, double xDegrees, double yDegrees)
 
 [![斜投影テキストページのトリプルスクリーンショット](skew-images/obliquetext-small.png)](skew-images/obliquetext-large.png#lightbox "斜投影テキストページのトリプルスクリーンショット")
 
-[**傾斜の影のテキスト**] ページでは、45度の傾斜と垂直方向のスケールの組み合わせを使用して、テキストから離れたテキストの影を作成する方法を示します。 ハンドラーの適切な部分を次に示し `PaintSurface` ます。
+[ **傾斜の影のテキスト** ] ページでは、45度の傾斜と垂直方向のスケールの組み合わせを使用して、テキストから離れたテキストの影を作成する方法を示します。 ハンドラーの適切な部分を次に示し `PaintSurface` ます。
 
 ```csharp
 using (SKPaint textPaint = new SKPaint())
@@ -255,5 +255,5 @@ canvas.Translate(-xText, -yText - textBounds.Bottom);
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

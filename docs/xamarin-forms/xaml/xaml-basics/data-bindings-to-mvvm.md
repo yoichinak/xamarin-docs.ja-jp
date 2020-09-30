@@ -11,16 +11,16 @@ ms.date: 10/25/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 805bdef812b33d3f4329346a437e1202a16fe3ae
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 8cb59738519af933e509ebf63a923e573667941e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937320"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562913"
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>第 5 部 データ バインディングから MVVM まで
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _モデルビュービューモデル (MVVM) アーキテクチャパターンは、XAML を念頭に置いて考案されました。このパターンでは、3つのソフトウェアレイヤー (つまり、ビューと呼ばれる XAML ユーザーインターフェイス) の分離が適用されます。モデルと呼ばれる基になるデータ。ビューとモデルの間の中間点として、ビューモデルと呼ばれるものがあります。ビューとビューモデルは、多くの場合、XAML ファイルで定義されているデータバインディングを使用して接続されます。ビューの BindingContext は、通常、ビューモデルのインスタンスです。_
 
@@ -39,7 +39,7 @@ xmlns:sys="clr-namespace:System;assembly=netstandard"
 <StackLayout BindingContext="{x:Static sys:DateTime.Now}" …>
 ```
 
-`BindingContext`は特殊なプロパティです。要素にを設定すると、その要素 `BindingContext` のすべての子によって継承されます。 これは、のすべての子 `StackLayout` が同じであり、 `BindingContext` そのオブジェクトのプロパティへの単純なバインドを含むことができることを意味します。
+`BindingContext` は特殊なプロパティです。要素にを設定すると、その要素 `BindingContext` のすべての子によって継承されます。 これは、のすべての子 `StackLayout` が同じであり、 `BindingContext` そのオブジェクトのプロパティへの単純なバインドを含むことができることを意味します。
 
 **ワンショットの DateTime**プログラムでは、2つの子のうち、その値のプロパティへのバインドが含まれて `DateTime` いますが、他の2つの子にはバインドパスが欠落していると思われるバインドが含まれています。 これは `DateTime` 、値自体がに使用されることを意味し `StringFormat` ます。
 
@@ -306,20 +306,20 @@ namespace XamlSamples
 
 ただし、ビューには、ビューモデル内のさまざまなアクションをトリガーするボタンが含まれている必要があります。 ただし、ビューモデルは特定のユーザーインターフェイスパラダイムに関連付けられるため、ビューモデルに `Clicked` ボタンのハンドラーを含めることはできません。
 
-Viewmodel が特定のユーザーインターフェイスオブジェクトから独立していても、モデルビュー内でメソッドを呼び出すことができるようにするために、*コマンド*インターフェイスが存在します。 このコマンドインターフェイスは、の次の要素によってサポートされてい Xamarin.Forms ます。
+Viewmodel が特定のユーザーインターフェイスオブジェクトから独立していても、モデルビュー内でメソッドを呼び出すことができるようにするために、 *コマンド* インターフェイスが存在します。 このコマンドインターフェイスは、の次の要素によってサポートされてい Xamarin.Forms ます。
 
 - `Button`
 - `MenuItem`
 - `ToolbarItem`
 - `SearchBar`
-- `TextCell`( `ImageCell` また、
+- `TextCell` ( `ImageCell` また、
 - `ListView`
 - `TapGestureRecognizer`
 
 要素と要素を除き、これらの要素は次の `SearchBar` `ListView` 2 つのプロパティを定義します。
 
-- `Command`種類`System.Windows.Input.ICommand`
-- `CommandParameter`種類`Object`
+- `Command` 種類  `System.Windows.Input.ICommand`
+- `CommandParameter` 種類  `Object`
 
 は `SearchBar` 、 `SearchCommand` `SearchCommandParameter` プロパティとプロパティを定義しますが、は `ListView` `RefreshCommand` 型のプロパティを定義し `ICommand` ます。
 
@@ -585,7 +585,7 @@ void Download ()
 
 ## <a name="implementing-a-navigation-menu"></a>ナビゲーションメニューの実装
 
-この一連の記事のすべてのソースコードを含む[Xamlsamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)プログラムは、ホームページのビュービューを使用します。 このビューモデルは、、、およびという3つのプロパティを持つ短いクラスを定義したもので、 `Type` `Title` `Description` 各サンプルページの種類、タイトル、および簡単な説明が含まれています。 さらに、ビューモデルは、 `All` プログラム内のすべてのページのコレクションであるという名前の静的プロパティを定義します。
+この一連の記事のすべてのソースコードを含む [Xamlsamples](/samples/xamarin/xamarin-forms-samples/xamlsamples) プログラムは、ホームページのビュービューを使用します。 このビューモデルは、、、およびという3つのプロパティを持つ短いクラスを定義したもので、 `Type` `Title` `Description` 各サンプルページの種類、タイトル、および簡単な説明が含まれています。 さらに、ビューモデルは、 `All` プログラム内のすべてのページのコレクションであるという名前の静的プロパティを定義します。
 
 ```csharp
 public class PageDataViewModel
@@ -708,13 +708,13 @@ private async void OnListViewItemSelected(object sender, SelectedItemChangedEven
 
 **Xamarin の進化 2016: MVVM と Prism を使用したシンプルな作成 Xamarin.Forms**
 
-## <a name="summary"></a>要約
+## <a name="summary"></a>まとめ
 
 XAML は、アプリケーションでユーザーインターフェイスを定義するための強力なツールです Xamarin.Forms 。特に、データバインディングと MVVM を使用する場合に使用します。 結果として、コード内のすべてのバックグラウンドサポートを使用して、ユーザーインターフェイスをクリーンで洗練された形式で表現できます。
 
 ## <a name="related-links"></a>関連リンク
 
-- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+- [XamlSamples](/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [パート1。XAML を使用したはじめに](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
 - [第2部。必須の XAML 構文](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
 - [パート3。XAML マークアップ拡張機能](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)

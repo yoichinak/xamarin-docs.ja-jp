@@ -10,12 +10,12 @@ ms.date: 07/11/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9018cbe6e41350b22a0f1f91858017531c75a0ac
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 7f0b7c61d44170ab97b060a16693287c28903660
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135582"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562965"
 ---
 # <a name="accessing-skiasharp-bitmap-pixel-bits"></a>SkiaSharp ビットマップピクセルビットへのアクセス
 
@@ -35,12 +35,12 @@ SkiaSharp は、ビットマップのピクセルビットにアクセスする�
 
 - `GetPixel`メソッドとメソッドを使用すると、 `SetPixel` 1 つのピクセルの色を取得または設定できます。
 - プロパティは、 `Pixels` ビットマップ全体のピクセル色の配列を取得するか、色の配列を設定します。
-- `GetPixels`ビットマップによって使用されるピクセルメモリのアドレスを返します。
-- `SetPixels`ビットマップによって使用されるピクセルメモリのアドレスを置き換えます。
+- `GetPixels` ビットマップによって使用されるピクセルメモリのアドレスを返します。
+- `SetPixels` ビットマップによって使用されるピクセルメモリのアドレスを置き換えます。
 
 最初の2つの手法は "高レベル" で、2つ目は "低レベル" と考えることができます。 使用できるメソッドとプロパティは他にもいくつかありますが、これらは最も重要なものです。
 
-これらの手法のパフォーマンスの違いを確認できるように、 [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)アプリケーションには、グラデーションを作成するために赤と青の網掛けを組み合わせたピクセルのビットマップを作成する、**グラデーションビットマップ**という名前のページが含まれています。 このプログラムは、ビットマップピクセルを設定するためのさまざまな手法を使用して、このビットマップの8つの異なるコピーを作成します。 これらの8つのビットマップはそれぞれ、個別のメソッドで作成されます。この方法では、技術の簡単な説明が設定され、すべてのピクセルを設定するために必要な時間が計算されます。 各メソッドは、ピクセル設定ロジック100をループ処理して、パフォーマンスをより正確に推定します。
+これらの手法のパフォーマンスの違いを確認できるように、 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) アプリケーションには、グラデーションを作成するために赤と青の網掛けを組み合わせたピクセルのビットマップを作成する、 **グラデーションビットマップ** という名前のページが含まれています。 このプログラムは、ビットマップピクセルを設定するためのさまざまな手法を使用して、このビットマップの8つの異なるコピーを作成します。 これらの8つのビットマップはそれぞれ、個別のメソッドで作成されます。この方法では、技術の簡単な説明が設定され、すべてのピクセルを設定するために必要な時間が計算されます。 各メソッドは、ピクセル設定ロジック100をループ処理して、パフォーマンスをより正確に推定します。
 
 ### <a name="the-setpixel-method"></a>SetPixel メソッド
 
@@ -54,7 +54,7 @@ SKColor color = bitmap.GetPixel(col, row);
 
 引数は、 `col` 0 からビットマップのプロパティより1小さい値までの範囲で指定する必要があり `Width` ます。また、0 ~ 1 の範囲のプロパティよりも小さい値を指定する必要があり `row` `Height` ます。
 
-次に、メソッドを使用してビットマップの内容を設定する**グラデーションビットマップ**内のメソッドを示し `SetPixel` ます。 ビットマップは 256 x 256 ピクセルで、ループは `for` 値の範囲でハードコーディングされます。
+次に、メソッドを使用してビットマップの内容を設定する **グラデーションビットマップ** 内のメソッドを示し `SetPixel` ます。 ビットマップは 256 x 256 ピクセルで、ループは `for` 値の範囲でハードコーディングされます。
 
 ```csharp
 public class GradientBitmapPage : ContentPage
@@ -130,7 +130,7 @@ SKBitmap FillBitmapPixelsProp(out string description, out int milliseconds)
 
 配列のインデックスは、 `pixels` 変数と変数から計算する必要があることに注意して `row` `col` ください。 行に各行のピクセル数を乗算し (この場合は 256)、列が追加されます。
 
-`SKBitmap`は同様のプロパティも定義します `Bytes` 。これにより、ビットマップ全体のバイト配列が返されますが、フルカラービットマップの方が煩雑になります。
+`SKBitmap` は同様のプロパティも定義します `Bytes` 。これにより、ビットマップ全体のバイト配列が返されますが、フルカラービットマップの方が煩雑になります。
 
 ### <a name="the-getpixels-pointer"></a>GetPixels ポインター
 
@@ -156,7 +156,7 @@ byte pixelComponent = *ptr;
 *ptr = pixelComponent;
 ```
 
-このコンテキストでは、アスタリスクは C#_間接演算子_で、が指すメモリの内容を参照するために使用され `ptr` ます。 最初のは、 `ptr` ビットマップの最初の行の最初のピクセルの最初のバイトを指しますが、変数に対して算術演算を実行し `ptr` て、ビットマップ内の他の場所に移動することができます。
+このコンテキストでは、アスタリスクは C# _間接演算子_ で、が指すメモリの内容を参照するために使用され `ptr` ます。 最初のは、 `ptr` ビットマップの最初の行の最初のピクセルの最初のバイトを指しますが、変数に対して算術演算を実行し `ptr` て、ビットマップ内の他の場所に移動することができます。
 
 欠点の1つは `ptr` 、この変数をキーワードでマークされたコードブロックでのみ使用できることです `unsafe` 。 また、アセンブリには安全でないブロックを許可するようにフラグを設定する必要があります。 これは、プロジェクトのプロパティで行います。
 
@@ -287,13 +287,13 @@ SKBitmap FillBitmapUintPtrColor(out string description, out int milliseconds)
 
 ### <a name="the-setpixels-method"></a>SetPixels メソッド
 
-`SKBitmap`また、はという名前のメソッドを定義 [`SetPixels`](xref:SkiaSharp.SKBitmap.SetPixels(System.IntPtr)) します。このメソッドは次のように呼ばれます。
+`SKBitmap` また、はという名前のメソッドを定義 [`SetPixels`](xref:SkiaSharp.SKBitmap.SetPixels(System.IntPtr)) します。このメソッドは次のように呼ばれます。
 
 ```csharp
 bitmap.SetPixels(intPtr);
 ```
 
-ピクセルを `GetPixels` `IntPtr` 格納するためにビットマップによって使用されるメモリブロックを参照するを取得することを思い出してください。 この `SetPixels` 呼び出しは、そのメモリブロックを引数として指定されたによって参照されるメモリブロックに_置き換え_ `IntPtr` `SetPixels` ます。 ビットマップは、以前に使用されていたメモリブロックを解放します。 次にが呼び出されたときに、 `GetPixels` によって設定されたメモリブロックを取得し `SetPixels` ます。
+ピクセルを `GetPixels` `IntPtr` 格納するためにビットマップによって使用されるメモリブロックを参照するを取得することを思い出してください。 この `SetPixels` 呼び出しは、そのメモリブロックを引数として指定されたによって参照されるメモリブロックに _置き換え_ `IntPtr` `SetPixels` ます。 ビットマップは、以前に使用されていたメモリブロックを解放します。 次にが呼び出されたときに、 `GetPixels` によって設定されたメモリブロックを取得し `SetPixels` ます。
 
 一見すると、の方が便利ではないかのように、より `SetPixels` 強力でパフォーマンスが得られないように思え `GetPixels` ます。 で `GetPixels` は、ビットマップメモリブロックを取得し、それにアクセスします。 で `SetPixels` は、いくつかのメモリを割り当ててアクセスし、それをビットマップメモリブロックとして設定します。
 
@@ -402,7 +402,7 @@ SKBitmap FillBitmapUintBufferColor(out string description, out int milliseconds)
 
 ### <a name="comparing-the-techniques"></a>手法の比較
 
-[**グラデーションの色**] ページのコンストラクターは、上に示した8つのメソッドすべてを呼び出し、結果を保存します。
+[ **グラデーションの色** ] ページのコンストラクターは、上に示した8つのメソッドすべてを呼び出し、結果を保存します。
 
 ```csharp
 public class GradientBitmapPage : ContentPage
@@ -483,7 +483,7 @@ public class GradientBitmapPage : ContentPage
 }
 ```
 
-コンパイラがコードを最適化できるようにするため、このページは**リリース**モードで実行されました。 このページは、MacBook Pro の iPhone 8 シミュレーターで実行されているページ、または Windows 10 を実行している Microsoft の Android フォンと Surface Pro 3 です。 ハードウェアの違いにより、デバイス間のパフォーマンス時間を比較するのではなく、各デバイスの相対的な時間を確認します。
+コンパイラがコードを最適化できるようにするため、このページは **リリース** モードで実行されました。 このページは、MacBook Pro の iPhone 8 シミュレーターで実行されているページ、または Windows 10 を実行している Microsoft の Android フォンと Surface Pro 3 です。 ハードウェアの違いにより、デバイス間のパフォーマンス時間を比較するのではなく、各デバイスの相対的な時間を確認します。
 
 [![グラデーションビットマップ](pixel-bits-images/GradientBitmap.png "グラデーションビットマップ")](pixel-bits-images/GradientBitmap-Large.png#lightbox)
 
@@ -522,11 +522,11 @@ BB GG RR AA
 
 `FillBitmapBytePtr`[ `FillBitmapUintPtr` **グラデーションビットマップ**] ページのメソッドとメソッドは、ビットマップを順番に、 `for` 先頭行から末尾の行に、各行を左から右に設定するように設計されたループから効果を持ちます。 ピクセルは、ポインターをインクリメントしたのと同じステートメントを使用して設定できます。
 
-場合によっては、順番にではなく、ランダムにピクセルにアクセスする必要があります。 この方法を使用している場合は、 `GetPixels` 行と列に基づいてポインターを計算する必要があります。 これについては、「**レインボーサイン**」ページで説明されています。これは、サイン曲線の1サイクルの形でレインボーを示すビットマップを作成します。
+場合によっては、順番にではなく、ランダムにピクセルにアクセスする必要があります。 この方法を使用している場合は、 `GetPixels` 行と列に基づいてポインターを計算する必要があります。 これについては、「 **レインボーサイン** 」ページで説明されています。これは、サイン曲線の1サイクルの形でレインボーを示すビットマップを作成します。
 
 レインボーの色は、HSL (色合い、鮮やかさ、明るさ) の色モデルを使用して簡単に作成できます。 メソッドは、 `SKColor.FromHsl` `SKColor` 0 ~ 360 (円の角度、赤から、緑から赤、赤に戻る)、および 0 ~ 100 の範囲の鮮やかさと輝度の値を使用して値を作成します。 レインボーの色については、鮮やかさを最大100、輝度を50の中間点に設定する必要があります。
 
-**レインボーサイン**は、ビットマップの行をループしてから、360の色相値をループすることで、このイメージを作成します。 各色合いの値から、次のように正弦値に基づくビットマップ列が計算されます。
+**レインボーサイン** は、ビットマップの行をループしてから、360の色相値をループすることで、このイメージを作成します。 各色合いの値から、次のように正弦値に基づくビットマップ列が計算されます。
 
 ```csharp
 public class RainbowSinePage : ContentPage
@@ -616,7 +616,7 @@ uint* ptr = basePtr + bitmap.Width * row + col;
 
 ## <a name="from-one-bitmap-to-another"></a>1つのビットマップから別のビットマップに
 
-多くのイメージ処理タスクでは、1つのビットマップから別のビットマップに転送されるときに、ピクセルの変更が行われます。 この手法は、[**カラー調整**] ページで説明されています。 ページはビットマップリソースの1つを読み込み、次の3つのビューを使用してイメージを変更でき `Slider` ます。
+多くのイメージ処理タスクでは、1つのビットマップから別のビットマップに転送されるときに、ピクセルの変更が行われます。 この手法は、[ **カラー調整** ] ページで説明されています。 ページはビットマップリソースの1つを読み込み、次の3つのビューを使用してイメージを変更でき `Slider` ます。
 
 [![[ドライバーによる色補正]](pixel-bits-images/ColorAdjustment.png "[ドライバーによる色補正]")](pixel-bits-images/ColorAdjustment-Large.png#lightbox)
 
@@ -624,7 +624,7 @@ uint* ptr = basePtr + bitmap.Width * row + col;
 
 このプログラムは、という名前の元のソースビットマップとという名前の調整されたターゲットビットマップの2つのビットマップを保持し `srcBitmap` `dstBitmap` ます。 が移動されるたびに、 `Slider` プログラムはのすべての新しいピクセルを計算し `dstBitmap` ます。 もちろん、ユーザーはビューを非常に短時間で移動することで実験を `Slider` 行います。そのため、管理可能なパフォーマンスを最大限に高めることができます。 これには、 `GetPixels` コピー元とコピー先の両方のビットマップのメソッドが含まれます。
 
-[**カラー調整**] ページでは、コピー元とコピー先のビットマップの色形式は制御されません。 代わりに、形式と形式のロジックが若干異なり `SKColorType.Rgba8888` `SKColorType.Bgra8888` ます。 変換元と変換先は異なる形式にすることができ、プログラムは引き続き機能します。
+[ **カラー調整** ] ページでは、コピー元とコピー先のビットマップの色形式は制御されません。 代わりに、形式と形式のロジックが若干異なり `SKColorType.Rgba8888` `SKColorType.Bgra8888` ます。 変換元と変換先は異なる形式にすることができ、プログラムは引き続き機能します。
 
 次に示すのは、変換 `TransferPixels` 元から変換先にピクセルを転送する重要なメソッドを除いたプログラムです。 コンストラクターは `dstBitmap` と等しいを設定 `srcBitmap` します。 `PaintSurface`次のハンドラーが表示され `dstBitmap` ます。
 
@@ -790,11 +790,11 @@ public class PosterizePage : ContentPage
 }
 ```
 
-コンストラクター内のコードは、各ピクセルにアクセスし、値が0xE0E0E0FF のビットごとの AND 演算を実行してから、結果をビットマップに格納します。 値0xE0E0E0FF は、各カラーコンポーネントの上位3ビットを保持し、下位5ビットを0に設定します。 2 ~ 16777216 色<sup>ではなく</sup>、ビットマップが 2<sup>9</sup>または512色に縮小されます。
+コンストラクター内のコードは、各ピクセルにアクセスし、値が0xE0E0E0FF のビットごとの AND 演算を実行してから、結果をビットマップに格納します。 値0xE0E0E0FF は、各カラーコンポーネントの上位3ビットを保持し、下位5ビットを0に設定します。 2 ~ 16777216 色<sup>ではなく</sup> 、ビットマップが 2<sup>9</sup> または512色に縮小されます。
 
 [![ポスタリゼーション](pixel-bits-images/Posterize.png "ポスタリゼーション")](pixel-bits-images/Posterize-Large.png#lightbox)
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -10,12 +10,12 @@ ms.date: 08/27/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 10192e93d2e20f9aa58ca95dd81c07f560193905
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 827b5618dce019e2dedb773f270fe1090da5d616
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136410"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562510"
 ---
 # <a name="skiasharp-mask-filters"></a>SkiaSharp mask フィルター
 
@@ -27,7 +27,7 @@ ms.locfileid: "84136410"
 
 ![ぼかしの例](mask-filters-images/MaskFilterExample.png "ぼかしの例")
 
-これは、この記事で説明されている唯一のマスクフィルター機能です。 また、 [**SkiaSharp イメージフィルター**](image-filters.md)に関する次の記事でも、このようなぼかし効果について説明します。 
+これは、この記事で説明されている唯一のマスクフィルター機能です。 また、 [**SkiaSharp イメージフィルター**](image-filters.md) に関する次の記事でも、このようなぼかし効果について説明します。 
 
 静的 [`SKMaskFilter.CreateBlur`](xref:SkiaSharp.SKMaskFilter.CreateBlur(SkiaSharp.SKBlurStyle,System.Single)) メソッドの構文は次のとおりです。
 
@@ -37,7 +37,7 @@ public static SKMaskFilter CreateBlur (SKBlurStyle blurStyle, float sigma);
 
 オーバーロードでは、ぼかしの作成に使用されるアルゴリズムにフラグを指定したり、他のグラフィカルオブジェクトで覆われる領域のぼかしを避けるための四角形を使用したりできます。
 
-[`SKBlurStyle`](xref:SkiaSharp.SKBlurStyle)は、次のメンバーを持つ列挙体です。
+[`SKBlurStyle`](xref:SkiaSharp.SKBlurStyle) は、次のメンバーを持つ列挙体です。
 
 - `Normal`
 - `Solid`
@@ -46,7 +46,7 @@ public static SKMaskFilter CreateBlur (SKBlurStyle blurStyle, float sigma);
 
 これらのスタイルの効果を次の例に示します。 パラメーターは、 `sigma` ぼかしの範囲を指定します。 以前のバージョンの Skia では、ぼかしの範囲は半径値で示されていました。 Radius 値がアプリケーションに適している場合は、 [`SKMaskFilter.ConvertRadiusToSigma`](xref:SkiaSharp.SKMaskFilter.ConvertRadiusToSigma*) 一方を別のに変換できる静的メソッドがあります。 このメソッドは、半径を0.57735 で乗算し、0.5 を追加します。
 
-[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルの**マスクのぼかし実験**ページでは、ぼかしのスタイルとシグマの値を試すことができます。 XAML ファイルは、 `Picker` 4 つの `SKBlurStyle` 列挙体メンバーと、シグマ値を指定するを使用してをインスタンス化し `Slider` ます。
+[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルの**マスクのぼかし実験**ページでは、ぼかしのスタイルとシグマの値を試すことができます。 XAML ファイルは、 `Picker` 4 つの `SKBlurStyle` 列挙体メンバーと、シグマ値を指定するを使用してをインスタンス化し `Slider` ます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -168,7 +168,7 @@ public partial class MaskBlurExperimentPage : ContentPage
 
 引数の値を大きくすると、テキストがぼやけて表示され `sigma` ます。 このプログラムを試してみると、特定の値について `sigma` は、Windows 10 デスクトップでのぼかしがより極端に増えていることがわかります。 この違いが発生するのは、ピクセル密度がモバイルデバイスよりもデスクトップモニターで低いため、テキストの高さ (ピクセル単位) が低いためです。 `sigma`値はぼかしの範囲 (ピクセル単位) に比例します。したがって、特定の値に対しては、 `sigma` 解像度が低いほど高い効果が得られます。 実稼働アプリケーションでは、 `sigma` グラフィックのサイズに比例した値を計算することが必要になる場合があります。 
 
-アプリケーションに最適なぼかしレベルを使用する前に、いくつかの値を試してください。 たとえば、[ぼかしの**マスクの実験**] ページで、次のように設定し `sigma` ます。
+アプリケーションに最適なぼかしレベルを使用する前に、いくつかの値を試してください。 たとえば、[ぼかしの **マスクの実験** ] ページで、次のように設定し `sigma` ます。
 
 ```csharp
 sigma = paint.TextSize / 18;
@@ -276,5 +276,5 @@ paint.MaskFilter = SKMaskFilter.CreateBlur(SKBlurStyle.Normal, paint.TextSize / 
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

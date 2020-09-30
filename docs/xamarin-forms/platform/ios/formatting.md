@@ -10,16 +10,16 @@ ms.date: 01/29/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4381b1fbe7b38c2695bce645903d599bdb792fc2
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: f447a89ca4b4f21554a75ec52c5771ee9f9d35fd
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937437"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562991"
 ---
 # <a name="adding-ios-specific-formatting"></a>IOS 固有の書式設定の追加
 
-IOS 固有の書式設定を行う1つの方法は、コントロールの[カスタムレンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)を作成し、プラットフォームごとにプラットフォーム固有のスタイルと色を設定することです。
+IOS 固有の書式設定を行う1つの方法は、コントロールの [カスタムレンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md) を作成し、プラットフォームごとにプラットフォーム固有のスタイルと色を設定することです。
 
 IOS アプリの外観を制御する他のオプションは Xamarin.Forms 次のとおりです。
 
@@ -32,7 +32,7 @@ IOS アプリの外観を制御する他のオプションは Xamarin.Forms 次�
 
 **情報 plist**ファイルを使用すると、ステータスバーを表示する方法 (およびその有無) など、iOS アプリケーションのさまざまな機能を構成できます。
 
-たとえば、 [Todo サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)では、次のコードを使用して、すべてのプラットフォームのナビゲーションバーの色とテキストの色を設定します。
+たとえば、 [Todo サンプル](/samples/xamarin/xamarin-forms-samples/todo) では、次のコードを使用して、すべてのプラットフォームのナビゲーションバーの色とテキストの色を設定します。
 
 ```csharp
 var nav = new NavigationPage (new TodoListPage ());
@@ -44,11 +44,11 @@ nav.BarTextColor = Color.White;
 
 ![iOS のテーマ](theme-images/status-default-sml.png)
 
-理想的には、ステータスバーは、iOS プロジェクトで直接実行できる問題でもあります。 次のエントリを**情報 plist**に追加して、ステータスバーを強制的に白にします。
+理想的には、ステータスバーは、iOS プロジェクトで直接実行できる問題でもあります。 次のエントリを **情報 plist** に追加して、ステータスバーを強制的に白にします。
 
 ![iOS 情報 plist エントリ](theme-images/info-plist.png)
 
-または、対応する**情報の plist**ファイルを直接編集して、次の内容を含めます。
+または、対応する **情報の plist** ファイルを直接編集して、次の内容を含めます。
 
 ```xml
 <key>UIStatusBarStyle</key>
@@ -57,7 +57,7 @@ nav.BarTextColor = Color.White;
 <false/>
 ```
 
-アプリを実行すると、ナビゲーションバーは緑色になり、テキストは (書式設定により) 白になり Xamarin.Forms ます。また、iOS 固有の構成により、ステータスバー*の*テキストも白になります。
+アプリを実行すると、ナビゲーションバーは緑色になり、テキストは (書式設定により) 白になり Xamarin.Forms ます。また、iOS 固有の構成により、ステータスバー *の* テキストも白になります。
 
 ![iOS のテーマ](theme-images/status-white-sml.png)
 
@@ -85,7 +85,7 @@ public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 
 ### <a name="uitabbar"></a>UITabBar
 
-既定では、で選択されたタブバーアイコンが[`TabbedPage`](~/xamarin-forms/app-fundamentals/navigation/tabbed-page.md)
+既定では、で選択されたタブバーアイコンが [`TabbedPage`](~/xamarin-forms/app-fundamentals/navigation/tabbed-page.md)
 青になります。
 
 ![TabbedPage の既定の iOS タブバーアイコン](theme-images/tabbar-default.png)
@@ -100,8 +100,8 @@ UITabBar.Appearance.SelectedImageTintColor = UIColor.FromRGB(0x91, 0xCA, 0x47); 
 
 ![TabbedPage の緑の [iOS] タブバーアイコン](theme-images/tabbar-custom.png)
 
-この API を使用すると、次のような外観をカスタマイズできます。Xamarin.Forms
-`TabbedPage`コードがほとんどない iOS の場合。 カスタムレンダラーを使用してタブに特定のフォントを設定する方法の詳細については、[タブのカスタマイズ](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/iOS/customize-tabs)に関するレシピを参照してください。
+この API を使用すると、次のような外観をカスタマイズできます。 Xamarin.Forms
+`TabbedPage` コードがほとんどない iOS の場合。 カスタムレンダラーを使用してタブに特定のフォントを設定する方法の詳細については、 [タブのカスタマイズ](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/iOS/customize-tabs) に関するレシピを参照してください。
 
 ### <a name="uiswitch"></a>UISwitch
 
@@ -111,7 +111,7 @@ UITabBar.Appearance.SelectedImageTintColor = UIColor.FromRGB(0x91, 0xCA, 0x47); 
 UISwitch.Appearance.OnTintColor = UIColor.FromRGB(0x91, 0xCA, 0x47); // green
 ```
 
-次の2つの画面キャプチャでは、既定のコントロールが左側に表示され、カスタマイズされた `UISwitch` バージョン (設定 `Appearance` ) が[Todo サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)の右側に表示されます。
+次の2つの画面キャプチャでは、既定のコントロールが左側に表示され、カスタマイズされた `UISwitch` バージョン (設定 `Appearance` ) が [Todo サンプル](/samples/xamarin/xamarin-forms-samples/todo)の右側に表示されます。
 
 ![既定の UISwitch の色](theme-images/switch-default.png) ![カスタマイズされた UISwitch の色](theme-images/switch-custom.png)
 

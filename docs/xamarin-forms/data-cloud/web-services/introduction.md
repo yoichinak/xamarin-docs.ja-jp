@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsWeb サービスの概要
+title: Xamarin.Forms Web サービスの概要
 description: このガイドでは、 Xamarin.Forms さまざまな web サービスと通信する方法を示すサンプルアプリケーションのチュートリアルを提供します。 各 web サービスは個別のサンプルアプリケーションを使用しますが、機能的に類似した共通クラスを共有します。
 ms.prod: xamarin
 ms.assetid: A3FEB262-0D79-42E6-8F8B-A565618C490B
@@ -10,14 +10,14 @@ ms.date: 02/28/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cd9815c6448efae0bb0af982c8807c47263ae13e
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: ebff259519776718f41ab0fcc0a7abb0c692dac6
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938210"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563420"
 ---
-# <a name="xamarinforms-web-services-introduction"></a>Xamarin.FormsWeb サービスの概要
+# <a name="no-locxamarinforms-web-services-introduction"></a>Xamarin.Forms Web サービスの概要
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
 
@@ -37,7 +37,7 @@ _このトピックでは、 Xamarin.Forms さまざまな web サービスと�
 ![Todo アプリケーション-最初 ](introduction-images/app-example-1.png)
  ![ のページ todo アプリケーション-2 ページ](introduction-images/app-example-2.png)
 
-このガイドの各トピックでは、特定の種類の web サービスバックエンドを示す、*別*のバージョンのアプリケーションへのダウンロードリンクを提供します。 各 web サービススタイルに関連するページで、関連するサンプルコードをダウンロードします。
+このガイドの各トピックでは、特定の種類の web サービスバックエンドを示す、 *別* のバージョンのアプリケーションへのダウンロードリンクを提供します。 各 web サービススタイルに関連するページで、関連するサンプルコードをダウンロードします。
 
 ## <a name="understand-the-application-anatomy"></a>アプリケーションの構造を理解する
 
@@ -45,7 +45,7 @@ _このトピックでは、 Xamarin.Forms さまざまな web サービスと�
 
 |Folder|目的|
 |--- |--- |
-|Data|データ項目を管理し、web サービスと通信するために使用されるクラスとインターフェイスが含まれています。 これには、少なくともクラスが含まれ `TodoItemManager` ます。これは、 `App` web サービス操作を呼び出すためにクラスのプロパティを介して公開されます。|
+|データ|データ項目を管理し、web サービスと通信するために使用されるクラスとインターフェイスが含まれています。 これには、少なくともクラスが含まれ `TodoItemManager` ます。これは、 `App` web サービス操作を呼び出すためにクラスのプロパティを介して公開されます。|
 |モデル|アプリケーションのデータモデルクラスが含まれています。 少なくとも、 `TodoItem` アプリケーションによって使用される1つのデータ項目をモデル化するクラスが含まれています。 このフォルダーには、ユーザーデータのモデル化に使用する追加のクラスを含めることもできます。|
 |Views|アプリケーションのページが含まれています。 これは通常、 `TodoListPage` クラスと `TodoItemPage` クラス、および認証のために使用される追加のクラスで構成されます。|
 
@@ -96,6 +96,6 @@ Web サービスの操作には、 `TodoItemManager` クラスを介してアク
 
 ## <a name="related-links"></a>関連リンク
 
-- [ASMX (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
-- [WCF (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todowcf)
-- [REST (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
+- [ASMX (サンプル)](/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
+- [WCF (サンプル)](/samples/xamarin/xamarin-forms-samples/webservices-todowcf)
+- [REST (サンプル)](/samples/xamarin/xamarin-forms-samples/webservices-todorest)

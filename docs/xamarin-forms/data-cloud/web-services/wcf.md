@@ -10,12 +10,12 @@ ms.date: 03/28/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cee301178880a62695f4208161965b01bb6f522e
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 596fab91a1f64e0fb6c5483e354c2ef15fd24346
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938594"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557921"
 ---
 # <a name="consume-a-windows-communication-foundation-wcf-web-service"></a>Windows Communication Foundation (WCF) Web サービスを使用する
 
@@ -25,10 +25,10 @@ _WCF は、サービス指向アプリケーションを構築するための Mi
 
 WCF は、次のようなさまざまなコントラクトを持つサービスを記述します。
 
-- **データコントラクト**–メッセージ内のコンテンツの基礎となるデータ構造を定義します。
-- **メッセージコントラクト**–既存のデータコントラクトからメッセージを作成します。
-- **エラーコントラクト**-カスタム SOAP エラーを指定できるようにします。
-- **サービスコントラクト**: サービスがサポートする操作と、各操作との対話に必要なメッセージを指定します。 また、各サービスの操作に関連付けることができるカスタムのエラー動作も指定します。
+- **データコントラクト** –メッセージ内のコンテンツの基礎となるデータ構造を定義します。
+- **メッセージコントラクト** –既存のデータコントラクトからメッセージを作成します。
+- **エラーコントラクト** -カスタム SOAP エラーを指定できるようにします。
+- **サービスコントラクト** : サービスがサポートする操作と、各操作との対話に必要なメッセージを指定します。 また、各サービスの操作に関連付けることができるカスタムのエラー動作も指定します。
 
 ASP.NET ウェブサービス (ASMX) と WCF には違いがありますが、WCF では、ASMX が HTTP 経由の SOAP メッセージを提供するのと同じ機能をサポートしています。 ASMX サービスの使用方法の詳細については、「 [ASP.NET ウェブサービス (asmx) の使用](~/xamarin-forms/data-cloud/web-services/asmx.md)」を参照してください。
 
@@ -37,7 +37,7 @@ ASP.NET ウェブサービス (ASMX) と WCF には違いがありますが、WC
 >
 > WCF サポートでは、プロキシを生成して TodoWCFService をホストするために、Windows 環境でのみ使用可能なツールを使用する必要があります。 IOS アプリをビルドしてテストするには、TodoWCFService を Windows コンピューターに展開するか、Azure web サービスとしてデプロイする必要があります。
 >
-> Xamarin Forms ネイティブアプリは、通常、コードを .NET Standard クラスライブラリと共有します。 ただし、現在、.NET Core では WCF がサポートされていないため、共有プロジェクトは従来のポータブルクラスライブラリである必要があります。 .NET Core の WCF サポートの詳細については、「[サーバーアプリ用 .Net core と .NET Framework の選択](/dotnet/standard/choosing-core-framework-server)」を参照してください。
+> Xamarin Forms ネイティブアプリは、通常、コードを .NET Standard クラスライブラリと共有します。 ただし、現在、.NET Core では WCF がサポートされていないため、共有プロジェクトは従来のポータブルクラスライブラリである必要があります。 .NET Core の WCF サポートの詳細については、「 [サーバーアプリ用 .Net core と .NET Framework の選択](/dotnet/standard/choosing-core-framework-server)」を参照してください。
 
 サンプルアプリケーションソリューションには、ローカルで実行できる WCF サービスが含まれています。次のスクリーンショットを参照してください。
 
@@ -46,7 +46,7 @@ ASP.NET ウェブサービス (ASMX) と WCF には違いがありますが、WC
 > [!NOTE]
 > IOS 9 以降では、アプリトランスポートセキュリティ (ATS) によって、インターネットリソース (アプリのバックエンドサーバーなど) とアプリの間にセキュリティで保護された接続が適用されるため、機密情報が誤って開示されるのを防ぐことができます。 IOS 9 用に構築されたアプリでは、ATS が既定で有効になっているため、すべての接続は、ATS のセキュリティ要件の対象となります。 接続がこれらの要件を満たしていない場合、例外が発生して失敗します。
 >
-> `HTTPS`インターネットリソースに対してプロトコルとセキュリティで保護された通信を使用できない場合は、ATS をオプトアウトできます。 これは、アプリの**情報**ファイルを更新することで実現できます。 詳細については、「[アプリトランスポートセキュリティ](~/ios/app-fundamentals/ats.md)」を参照してください。
+> `HTTPS`インターネットリソースに対してプロトコルとセキュリティで保護された通信を使用できない場合は、ATS をオプトアウトできます。 これは、アプリの **情報** ファイルを更新することで実現できます。 詳細については、「 [アプリトランスポートセキュリティ](~/ios/app-fundamentals/ats.md)」を参照してください。
 
 ## <a name="consume-the-web-service"></a>Web サービスを使用する
 
@@ -59,11 +59,11 @@ WCF サービスは、次の操作を提供します。
 |EditTodoItem|To Do アイテムの更新|XML シリアル化 TodoItem|
 |DeleteTodoItem|To Do アイテムの削除|XML シリアル化 TodoItem|
 
-アプリケーションで使用されるデータモデルの詳細については、「[データのモデリング](~/xamarin-forms/data-cloud/web-services/introduction.md)」を参照してください。
+アプリケーションで使用されるデータモデルの詳細については、「 [データのモデリング](~/xamarin-forms/data-cloud/web-services/introduction.md)」を参照してください。
 
-WCF サービスを使用するために*プロキシ*を生成する必要があります。これにより、アプリケーションはサービスに接続できるようになります。 プロキシは、メソッドと関連付けられたサービス構成を定義するサービスメタデータを使用することによって構築されます。 このメタデータは、web サービスによって生成される Web サービス記述言語 (WSDL) ドキュメントの形式で公開されます。 プロキシを作成するには、Visual Studio 2017 の Microsoft WCF Web Service Reference Provider を使用して、Web サービスのサービス参照を .NET Standard ライブラリに追加します。 Visual Studio 2017 の Microsoft WCF Web Service Reference Provider を使用してプロキシを作成する代わりに、ServiceModel Metadata Utility Tool (svcutil.exe) を使用することもできます。 詳細については、「 [ServiceModel メタデータユーティリティツール (Svcutil.exe)](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe/)」を参照してください。
+WCF サービスを使用するために *プロキシ* を生成する必要があります。これにより、アプリケーションはサービスに接続できるようになります。 プロキシは、メソッドと関連付けられたサービス構成を定義するサービスメタデータを使用することによって構築されます。 このメタデータは、web サービスによって生成される Web サービス記述言語 (WSDL) ドキュメントの形式で公開されます。 プロキシを作成するには、Visual Studio 2017 の Microsoft WCF Web Service Reference Provider を使用して、Web サービスのサービス参照を .NET Standard ライブラリに追加します。 Visual Studio 2017 の Microsoft WCF Web Service Reference Provider を使用してプロキシを作成する代わりに、ServiceModel Metadata Utility Tool (svcutil.exe) を使用することもできます。 詳細については、「 [ServiceModel メタデータユーティリティツール (Svcutil.exe)](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe/)」を参照してください。
 
-生成されたプロキシクラスは、非同期プログラミングモデル (APM) デザインパターンを使用する web サービスを使用するためのメソッドを提供します。 このパターンでは、非同期操作は、非同期操作を開始および終了する*Beginoperationname*と*EndOperationName*という2つのメソッドとして実装されます。
+生成されたプロキシクラスは、非同期プログラミングモデル (APM) デザインパターンを使用する web サービスを使用するためのメソッドを提供します。 このパターンでは、非同期操作は、非同期操作を開始および終了する *Beginoperationname* と *EndOperationName*という2つのメソッドとして実装されます。
 
 *Beginoperationname*メソッドは、非同期操作を開始し、インターフェイスを実装するオブジェクトを返し `IAsyncResult` ます。 *Beginoperationname*を呼び出した後、アプリケーションは、スレッドプールのスレッドで非同期操作を実行しながら、呼び出し元のスレッドで命令の実行を継続できます。
 
@@ -71,7 +71,7 @@ WCF サービスを使用するために*プロキシ*を生成する必要が�
 
 タスク並列ライブラリ (TPL) を使用すると、非同期操作を同じオブジェクトにカプセル化することで、APM の begin/end メソッドのペアを使用するプロセスを簡略化でき `Task` ます。 このカプセル化は、メソッドの複数のオーバーロードによって提供され `TaskFactory.FromAsync` ます。
 
-APM の詳細については、MSDN の「[非同期プログラミングモデル](https://msdn.microsoft.com/library/ms228963(v=vs.110).aspx)と[TPL および従来の .NET Framework 非同期プログラミング](https://msdn.microsoft.com/library/dd997423(v=vs.110).aspx)」を参照してください。
+APM の詳細については、MSDN の「 [非同期プログラミングモデル](/dotnet/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm) と [TPL および従来の .NET Framework 非同期プログラミング](/dotnet/standard/parallel-programming/tpl-and-traditional-async-programming) 」を参照してください。
 
 ### <a name="create-the-todoserviceclient-object"></a>TodoServiceClient オブジェクトを作成する
 
@@ -97,7 +97,7 @@ public class SoapService : ISoapService
 
 `TodoServiceClient`インスタンスは、バインド情報とエンドポイントアドレスを使用して構成されます。 バインディングは、アプリケーションとサービスが相互に通信するために必要なトランスポート、エンコーディング、およびプロトコルの詳細を指定するために使用されます。 は、 `BasicHttpBinding` テキストエンコードされた SOAP メッセージが HTTP トランスポートプロトコルを介して送信されることを指定します。 エンドポイントアドレスを指定すると、アプリケーションは、複数の公開されたインスタンスがある場合に、WCF サービスの異なるインスタンスに接続できます。
 
-サービス参照の構成の詳細については、「[サービス参照の構成](~/cross-platform/data-cloud/web-services/index.md#wcf)」を参照してください。
+サービス参照の構成の詳細については、「 [サービス参照の構成](~/cross-platform/data-cloud/web-services/index.md#wcf)」を参照してください。
 
 ### <a name="create-data-transfer-objects"></a>データ転送オブジェクトの作成
 
@@ -230,7 +230,7 @@ public async Task DeleteTodoItemAsync (string id)
 Web サービスは、 `FaultException` `TodoItem` アプリケーションによって処理されるを検索または削除できない場合、をスローします。
 
 ## <a name="configure-remote-access-to-iis-express"></a>IIS Express へのリモートアクセスを構成する
-Visual Studio 2017 または Visual Studio 2019 では、追加の構成なしで、PC で UWP アプリケーションをテストできます。 Android および iOS クライアントのテストには、このセクションの追加手順が必要になる場合があります。 詳細については[、「iOS シミュレーターおよび Android エミュレーターからのローカル Web サービスへの接続](~/cross-platform/deploy-test/connect-to-local-web-services.md)」を参照してください。
+Visual Studio 2017 または Visual Studio 2019 では、追加の構成なしで、PC で UWP アプリケーションをテストできます。 Android および iOS クライアントのテストには、このセクションの追加手順が必要になる場合があります。 詳細については [、「iOS シミュレーターおよび Android エミュレーターからのローカル Web サービスへの接続](~/cross-platform/deploy-test/connect-to-local-web-services.md) 」を参照してください。
 
 既定では、IIS Express はへの要求にのみ応答 `localhost` します。 リモートデバイス (Android デバイス、iPhone、シミュレーターなど) には、ローカル WCF サービスへのアクセス権はありません。 ローカルネットワーク上の Windows 10 ワークステーション IP アドレスを把握しておく必要があります。 この例では、ワークステーションに IP アドレスがあることを前提としてい `192.168.1.143` ます。 次の手順では、リモート接続を受け入れ、物理または仮想デバイスからサービスに接続するように Windows 10 と IIS Express を構成する方法について説明します。
 
@@ -278,7 +278,7 @@ Visual Studio 2017 または Visual Studio 2019 では、追加の構成なし�
     >[!IMPORTANT]
     >既定では、IIS Express は、セキュリティ上の理由から、外部ソースからの接続を受け入れません。 リモートデバイスからの接続を有効にするには、管理アクセス許可を使用して IIS Express を実行する必要があります。 これを行う最も簡単な方法は、管理アクセス許可を使用して Visual Studio 2017 を実行することです。 TodoWCFService を実行すると、管理者権限で IIS Express が起動します。
 
-    これらの手順を完了すると、TodoWCFService を実行して、サブネット上の他のデバイスから接続できるようになります。 これをテストするには、アプリケーションを実行し、にアクセスし `http://localhost:49393/TodoService.svc` ます。 その URL にアクセスしたときに**無効な要求**エラーが発生した場合、 `bindings` IIS Express の構成では正しくない可能性があります (要求は IIS Express に到達していますが、拒否されています)。 別のエラーが発生した場合は、アプリケーションが実行されていないか、ファイアウォールが正しく構成されていない可能性があります。
+    これらの手順を完了すると、TodoWCFService を実行して、サブネット上の他のデバイスから接続できるようになります。 これをテストするには、アプリケーションを実行し、にアクセスし `http://localhost:49393/TodoService.svc` ます。 その URL にアクセスしたときに **無効な要求** エラーが発生した場合、 `bindings` IIS Express の構成では正しくない可能性があります (要求は IIS Express に到達していますが、拒否されています)。 別のエラーが発生した場合は、アプリケーションが実行されていないか、ファイアウォールが正しく構成されていない可能性があります。
 
     IIS Express がサービスの実行とサービスの実行を継続できるようにするには、[**プロジェクトのプロパティ] > [Web > デバッガー**] の [**エディットコンティニュ**] オプションをオフにします。
 
@@ -286,7 +286,7 @@ Visual Studio 2017 または Visual Studio 2019 では、追加の構成なし�
 
     Android エミュレーターは、エミュレーターがホストコンピューターのアドレスに直接アクセスできないようにする内部プロキシを利用し `localhost` ます。 代わりに、エミュレーターのアドレス `10.0.2.2` が `localhost` 内部プロキシ経由でホストコンピューター上のにルーティングされます。 これらのプロキシされた要求は、 `127.0.0.1` 要求ヘッダーのホスト名としてを持ちます。このため、上記の手順でこのホスト名の IIS Express バインドを作成したのはそのためです。
 
-    IOS シミュレーターは、[リモートの Ios シミュレーター For Windows](~/tools/ios-simulator/index.md)を使用している場合でも、Mac ビルドホストで実行されます。 シミュレーターからのネットワーク要求では、ローカルネットワーク上のホスト名がホスト名として使用されます (この例では `192.168.1.143` 、実際の ip アドレスは異なる可能性があります)。 このため、上記の手順でこのホスト名の IIS Express バインドを作成したのはこのためです。
+    IOS シミュレーターは、 [リモートの Ios シミュレーター For Windows](~/tools/ios-simulator/index.md)を使用している場合でも、Mac ビルドホストで実行されます。 シミュレーターからのネットワーク要求では、ローカルネットワーク上のホスト名がホスト名として使用されます (この例では `192.168.1.143` 、実際の ip アドレスは異なる可能性があります)。 このため、上記の手順でこのホスト名の IIS Express バインドを作成したのはこのためです。
 
     `SoapUrl`TodoWCF (ポータブル) プロジェクトの**Constants.cs**ファイルのプロパティに、使用しているネットワークに適した値が設定されていることを確認します。
 
@@ -311,10 +311,10 @@ Visual Studio 2017 または Visual Studio 2019 では、追加の構成なし�
     }
     ```
 
-    適切なエンドポイントを使用して**Constants.cs**を構成すると、物理デバイスまたは仮想デバイスから、Windows 10 ワークステーションで実行されている TodoWCFService に接続できるようになります。
+    適切なエンドポイントを使用して **Constants.cs** を構成すると、物理デバイスまたは仮想デバイスから、Windows 10 ワークステーションで実行されている TodoWCFService に接続できるようになります。
 
 ## <a name="related-links"></a>関連リンク
 
-- [TodoWCF (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todowcf)
-- [方法 : Windows Communication Foundation クライアントを作成する](https://docs.microsoft.com/dotnet/framework/wcf/how-to-create-a-wcf-client)
-- [ServiceModel メタデータユーティリティツール (svcutil.exe)](https://docs.microsoft.com/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)
+- [TodoWCF (サンプル)](/samples/xamarin/xamarin-forms-samples/webservices-todowcf)
+- [方法 : Windows Communication Foundation クライアントを作成する](/dotnet/framework/wcf/how-to-create-a-wcf-client)
+- [ServiceModel メタデータユーティリティツール (svcutil.exe)](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe)

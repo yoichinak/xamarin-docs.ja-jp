@@ -1,6 +1,6 @@
 ---
 title: アプリケーションのシステムテーマの変更に応答する Xamarin.Forms
-description: Xamarin.Formsアプリケーションは、OnAppTheme の種類と DynamicResource マークアップ拡張機能を使用して、オペレーティングシステムのテーマの変更に応答できます。
+description: Xamarin.Forms アプリケーションは、OnAppTheme の種類と DynamicResource マークアップ拡張機能を使用して、オペレーティングシステムのテーマの変更に応答できます。
 ms.assetid: D10506DD-BAA0-437F-A4AD-882D16E7B60D
 ms.prod: xamarin
 ms.technology: xamarin-forms
@@ -10,26 +10,26 @@ ms.date: 08/06/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: efd9cabc9504a9fa56f1f7a763013e6852be9382
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 258061042fc8ab80b8bbdd9a0a9a965d87a1e064
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918095"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557570"
 ---
 # <a name="respond-to-system-theme-changes-in-no-locxamarinforms-applications"></a>アプリケーションのシステムテーマの変更に応答する Xamarin.Forms
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)
 
 通常、デバイスには明るいテーマとダークテーマが含まれており、それぞれがオペレーティングシステムレベルで設定できるさまざまな外観設定を参照しています。 アプリケーションはこれらのシステムテーマを尊重し、システムテーマが変更されたときに直ちに応答する必要があります。
 
 システムテーマは、デバイスの構成によっては、さまざまな理由で変更される可能性があります。 これには、ユーザーによって明示的に変更されたシステムテーマが含まれ、時刻によって変化します。また、低光などの環境要因によって変化します。
 
-Xamarin.Formsアプリケーションは、マークアップ拡張機能を使用してリソースを消費することによって、システムテーマの変更に応答でき `AppThemeBinding` `SetAppThemeColor` ます。また、およびの拡張メソッドも対象と `SetOnAppTheme<T>` なります。
+Xamarin.Forms アプリケーションは、マークアップ拡張機能を使用してリソースを消費することによって、システムテーマの変更に応答でき `AppThemeBinding` `SetAppThemeColor` ます。また、およびの拡張メソッドも対象と `SetOnAppTheme<T>`  なります。
 
 Xamarin.Formsシステムテーマの変更に応答するには、次の要件を満たす必要があります。
 
-- Xamarin.Forms4.6.0.967 以上。
+- Xamarin.Forms 4.6.0.967 以上。
 - iOS 13 以上。
 - Android 10 (API 29) 以上。
 - UWP ビルド14393以上。
@@ -145,7 +145,7 @@ Application.Current.UserAppTheme = OSAppTheme.Dark;
 
 ## <a name="react-to-theme-changes"></a>テーマの変更に反応する
 
-デバイスのシステムテーマは、デバイスの構成方法に応じて、さまざまな理由で変更される可能性があります。 Xamarin.Formsアプリは、イベントを処理することによってシステムテーマが変更されたときに通知を受けることができ `Application.RequestedThemeChanged` ます。
+デバイスのシステムテーマは、デバイスの構成方法に応じて、さまざまな理由で変更される可能性があります。 Xamarin.Forms アプリは、イベントを処理することによってシステムテーマが変更されたときに通知を受けることができ `Application.RequestedThemeChanged` ます。
 
 ```csharp
 Application.Current.RequestedThemeChanged += (s, a) =>
@@ -161,7 +161,7 @@ Application.Current.RequestedThemeChanged += (s, a) =>
 
 ## <a name="related-links"></a>関連リンク
 
-- [SystemThemes (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)
+- [SystemThemes (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-systemthemesdemo/)
 - [AppThemeBinding マークアップ拡張](~/xamarin-forms/xaml/markup-extensions/consuming.md#appthemebinding-markup-extension)
-- [リソースディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [リソース ディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [XAML スタイルを使用して Xamarin.Forms アプリのスタイルを設定する](~/xamarin-forms/user-interface/styles/xaml/index.md)

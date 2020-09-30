@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6c73f46d2845be7bb54e24cd02ec22f3c2cd386d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: de412e064fa84e516dcb8e9b604068c84a2689e6
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137249"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563615"
 ---
 # <a name="listview-selectionmode-on-windows"></a>Windows 上の ListView の SelectionMode
 
@@ -48,8 +48,8 @@ listView.On<Windows>().SetSelectionMode(ListViewSelectionMode.Inaccessible);
 
 `ListView.On<Windows>`メソッドは、このプラットフォーム固有のがユニバーサル Windows プラットフォームでのみ実行されることを指定します。 [ `ListView.SetSelectionMode` ] (Xref: Xamarin.FormsPlatformConfiguration. WindowsSpecific ListView. SetSelectionMode ( Xamarin.Forms .IPlatformElementConfiguration { Xamarin.Forms .PlatformConfiguration. Windows、 Xamarin.Forms 。ListView}、 Xamarin.Forms 。ListViewSelectionMode)) メソッドを名前空間で使用して、 [`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) 内の項目がタップジェスチャに応答できるかどうかを制御します [`ListView`](xref:Xamarin.Forms.ListView) [`ListViewSelectionMode`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode) 。列挙体では、2つの値を指定できます。
 
-- [`Accessible`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode.Accessible)–は、 `ListView` `ItemClick` 相互作用を処理するためにネイティブイベントを起動し、ユーザー補助機能を提供することを示します。 そのため、Windows ナレーターとキーボードは、と対話でき `ListView` ます。 ただし、の項目は `ListView` tap ジェスチャに応答できません。 これは、ユニバーサル Windows プラットフォーム上のインスタンスの既定の動作です `ListView` 。
-- [`Inaccessible`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode.Inaccessible)–は、が `ListView` ネイティブイベントを起動して操作を処理することを示し `Tapped` ます。 そのため、の項目は `ListView` tap ジェスチャに応答できます。 ただし、ユーザー補助機能がないため、Windows ナレーターとキーボードはと対話できません `ListView` 。
+- [`Accessible`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode.Accessible) –は、 `ListView` `ItemClick` 相互作用を処理するためにネイティブイベントを起動し、ユーザー補助機能を提供することを示します。 そのため、Windows ナレーターとキーボードは、と対話でき `ListView` ます。 ただし、の項目は `ListView` tap ジェスチャに応答できません。 これは、ユニバーサル Windows プラットフォーム上のインスタンスの既定の動作です `ListView` 。
+- [`Inaccessible`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ListViewSelectionMode.Inaccessible) –は、が `ListView` ネイティブイベントを起動して操作を処理することを示し `Tapped` ます。 そのため、の項目は `ListView` tap ジェスチャに応答できます。 ただし、ユーザー補助機能がないため、Windows ナレーターとキーボードはと対話できません `ListView` 。
 
 > [!NOTE]
 > `Accessible`と `Inaccessible` 選択モードは同時に指定でき [`ListView`](xref:Xamarin.Forms.ListView) `ListView` ません。タップジェスチャに応答するアクセス可能なまたはから選択する必要があります。
@@ -60,6 +60,6 @@ listView.On<Windows>().SetSelectionMode(ListViewSelectionMode.Inaccessible);
 
 ## <a name="related-links"></a>関連リンク
 
-- [PlatformSpecifics (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [プラットフォーム固有設定の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [WindowsSpecific の API](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

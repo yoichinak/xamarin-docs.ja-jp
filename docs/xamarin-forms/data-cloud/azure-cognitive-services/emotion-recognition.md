@@ -10,12 +10,12 @@ ms.date: 05/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ac7b90fb3e70fd07fcafe78a68136338469862e0
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 220b8a49f4f261568a653af16e333885edec23f8
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936371"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562874"
 ---
 # <a name="perceived-emotion-recognition-using-the-face-api"></a>Face API を使用した感情認識
 
@@ -27,7 +27,7 @@ Face API は、人間の占めるによって認識された注釈に基づい�
 
 感情認識は、クライアントライブラリと REST API 経由で実行できます。 この記事では、REST API による感情認識の実行に焦点を当てています。 REST API の詳細については、「 [Face REST API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)」を参照してください。
 
-Face API を使用して、ビデオ内のユーザーの顔式を認識し、感情の概要を返すこともできます。 詳細については、「[リアルタイムでビデオを分析する方法](/azure/cognitive-services/face/face-api-how-to-topics/howtoanalyzevideo_face/)」を参照してください。
+Face API を使用して、ビデオ内のユーザーの顔式を認識し、感情の概要を返すこともできます。 詳細については、「 [リアルタイムでビデオを分析する方法](/azure/cognitive-services/face/face-api-how-to-topics/howtoanalyzevideo_face/)」を参照してください。
 
 > [!NOTE]
 > [Azure サブスクリプション](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)をお持ちでない場合は、開始する前に[無料アカウント](https://aka.ms/azfree-docs-mobileapps)を作成してください。
@@ -54,9 +54,9 @@ Face API に有効な API キーを渡さないと、401応答エラーが発生
 
 感情認識は、の api のイメージを含む POST 要求を行うことによって実行され `detect` `https://[location].api.cognitive.microsoft.com/face/v1.0` ます。ここで、 `[location]]` は api キーを取得するために使用したリージョンです。 省略可能な要求パラメーターは次のとおりです。
 
-- `returnFaceId`–検出された顔の faceIds を返すかどうかを指定します。 既定値は `true` です。
-- `returnFaceLandmarks`–検出された顔の表面の目印を返すかどうかを指定します。 既定値は `false` です。
-- `returnFaceAttributes`–指定された1つ以上のフェイス属性を分析して返すかどうかを指定します。 サポートされている face 属性には、、、、、、、、、、、、、、およびがあり `age` `gender` `headPose` `smile` `facialHair` `glasses` `emotion` `hair` `makeup` `occlusion` `accessories` `blur` `exposure` `noise` ます。 Face 属性の分析には、追加の計算と時間のコストがあることに注意してください。
+- `returnFaceId` –検出された顔の faceIds を返すかどうかを指定します。 既定値は `true` です。
+- `returnFaceLandmarks` –検出された顔の表面の目印を返すかどうかを指定します。 既定値は `false` です。
+- `returnFaceAttributes` –指定された1つ以上のフェイス属性を分析して返すかどうかを指定します。 サポートされている face 属性には、、、、、、、、、、、、、、およびがあり `age` `gender` `headPose` `smile` `facialHair` `glasses` `emotion` `hair` `makeup` `occlusion` `accessories` `blur` `exposure` `noise` ます。 Face 属性の分析には、追加の計算と時間のコストがあることに注意してください。
 
 イメージコンテンツは、POST 要求の本文に URL またはバイナリデータとして配置する必要があります。
 
@@ -183,5 +183,5 @@ emotionResultLabel.Text = faces.FirstOrDefault().FaceAttributes.Emotion.ToRanked
 ## <a name="related-links"></a>関連リンク
 
 - [Face API](/azure/cognitive-services/face/overview/)。
-- [Todo Cognitive Services (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+- [Todo Cognitive Services (サンプル)](/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 - [顔 REST API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)

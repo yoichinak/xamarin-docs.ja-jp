@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Formsおよび Azure Cognitive Services の概要
+title: Xamarin.Forms および Azure Cognitive Services の概要
 description: この記事では、Microsoft 認知サービス Api の一部を呼び出す方法を示すサンプルアプリケーションの概要について説明します。
 ms.prod: xamarin
 ms.assetid: 74121ADB-1322-4C1E-A103-F37257BC7CB0
@@ -10,14 +10,14 @@ ms.date: 02/08/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cce5b0fc9c3d1d04c20b1be242197e3bc9e4f901
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: f40220a29611bb365dc77eeb5e85445a0df19fd6
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929338"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563251"
 ---
-# <a name="xamarinforms-and-azure-cognitive-services-introduction"></a>Xamarin.Formsおよび Azure Cognitive Services の概要
+# <a name="no-locxamarinforms-and-azure-cognitive-services-introduction"></a>Xamarin.Forms および Azure Cognitive Services の概要
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
@@ -36,9 +36,9 @@ _Microsoft Cognitive Services は、顔認識、音声認識、言語の理解�
 - Face API を使用して、アプリケーションを感情認識で評価します。 詳細については、「 [Face API を使用した感情認識](emotion-recognition.md)」を参照してください。
 
 > [!WARNING]
-> Bing Speech API は、Azure Speech サービスを優先するために非推奨とされました。 Azure Speech Service 専用のサンプルについては、「speech[サービス API による音声認識](~/xamarin-forms/data-cloud/azure-cognitive-services/speech-recognition.md)」を参照してください。
+> Bing Speech API は、Azure Speech サービスを優先するために非推奨とされました。 Azure Speech Service 専用のサンプルについては、「speech [サービス API による音声認識](~/xamarin-forms/data-cloud/azure-cognitive-services/speech-recognition.md)」を参照してください。
 
-タスクは、ローカルの SQLite データベースに格納されます。 ローカルの SQLite データベースの使用方法の詳細については、「[ローカルデータベースの操作](~/xamarin-forms/data-cloud/data/databases.md)」を参照してください。
+タスクは、ローカルの SQLite データベースに格納されます。 ローカルの SQLite データベースの使用方法の詳細については、「 [ローカルデータベースの操作](~/xamarin-forms/data-cloud/data/databases.md)」を参照してください。
 
 は、 `TodoListPage` アプリケーションの起動時に表示されます。 このページには、ローカルデータベースに格納されているタスクの一覧が表示され、ユーザーは新しいタスクを作成したり、アプリケーションを評価したりすることができます。
 
@@ -79,10 +79,10 @@ _Microsoft Cognitive Services は、顔認識、音声認識、言語の理解�
 
 サンプルアプリケーションでは、次の NuGet パッケージを使用します。
 
-- `Newtonsoft.Json`– .NET 用の JSON フレームワークを提供します。
-- `PCLStorage`–クロスプラットフォームのローカルファイル IO Api のセットを提供します。
-- `sqlite-net-pcl`– SQLite データベースストレージを提供します。
-- `Xam.Plugin.Media`–クロスプラットフォームの写真を取得および選択する Api を提供します。
+- `Newtonsoft.Json` – .NET 用の JSON フレームワークを提供します。
+- `PCLStorage` –クロスプラットフォームのローカルファイル IO Api のセットを提供します。
+- `sqlite-net-pcl` – SQLite データベースストレージを提供します。
+- `Xam.Plugin.Media` –クロスプラットフォームの写真を取得および選択する Api を提供します。
 
 また、これらの NuGet パッケージでは、独自の依存関係もインストールされます。
 
@@ -132,4 +132,4 @@ public class TodoItem
 
 - [Speech サービス API を使用した音声認識](~/xamarin-forms/data-cloud/azure-cognitive-services/speech-recognition.md)
 - [Microsoft Cognitive Services のドキュメント](https://www.microsoft.com/cognitive-services/documentation)
-- [Todo Cognitive Services (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+- [Todo Cognitive Services (サンプル)](/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)

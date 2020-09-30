@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Formsローカルデータベース
-description: Xamarin.Formsは、SQLite データベースエンジンを使用したデータベース駆動型アプリケーションをサポートします。これにより、共有コードでオブジェクトを読み込んで保存できるようになります。 この記事で Xamarin.Forms は、SQLite.Net を使用して、アプリケーションがローカルの SQLite データベースに対してデータの読み取りと書き込みを行う方法について説明します。
+title: Xamarin.Forms ローカルデータベース
+description: Xamarin.Forms は、SQLite データベースエンジンを使用したデータベース駆動型アプリケーションをサポートします。これにより、共有コードでオブジェクトを読み込んで保存できるようになります。 この記事で Xamarin.Forms は、SQLite.Net を使用して、アプリケーションがローカルの SQLite データベースに対してデータの読み取りと書き込みを行う方法について説明します。
 ms.prod: xamarin
 ms.assetid: F687B24B-7DF0-4F8E-A21A-A9BB507480EB
 ms.technology: xamarin-forms
@@ -10,14 +10,14 @@ ms.date: 12/05/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 021831da13a936fc5eb9d2e4cb63412484ceb465
-ms.sourcegitcommit: 69d9a61ba479f707d96eb4c1c56a4b05a2a2a26f
+ms.openlocfilehash: 6c5390057baf48634056101d44540020648ea709
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87426865"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563108"
 ---
-# <a name="no-locxamarinforms-local-databases"></a>Xamarin.Formsローカルデータベース
+# <a name="no-locxamarinforms-local-databases"></a>Xamarin.Forms ローカルデータベース
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
 
@@ -35,7 +35,7 @@ SQLite.NET をモバイルアプリに統合するには、次の手順を実行
 
 ## <a name="install-the-sqlite-nuget-package"></a>SQLite NuGet パッケージをインストールする
 
-NuGet パッケージマネージャーを使用して、 **sqlite-pcl**を検索し、共有コードプロジェクトに最新バージョンを追加します。
+NuGet パッケージマネージャーを使用して、 **sqlite-pcl** を検索し、共有コードプロジェクトに最新バージョンを追加します。
 
 類似した名前を持つ NuGet パッケージが多数あります。 正しいパッケージには、次の属性があります。
 
@@ -50,7 +50,7 @@ NuGet パッケージマネージャーを使用して、 **sqlite-pcl**を検�
 
 ## <a name="configure-app-constants"></a>アプリ定数の構成
 
-サンプルプロジェクトには、一般的な構成データを提供する**Constants.cs**ファイルが含まれています。
+サンプルプロジェクトには、一般的な構成データを提供する **Constants.cs** ファイルが含まれています。
 
 ```csharp
 public static class Constants
@@ -89,7 +89,7 @@ public static class Constants
 - `ProtectionCompleteUntilFirstUserAuthentication`: ファイルは、ユーザーがデバイスを起動してロックを解除した後に暗号化されます。
 - `ProtectionNone`: データベースファイルは暗号化されていません。
 
-データベースの使用方法に応じて、異なるフラグを指定することが必要になる場合があります。 の詳細については `SQLiteOpenFlags` 、「sqlite.org で[新しいデータベース接続を開く](https://www.sqlite.org/c3ref/open.html)」を参照してください。
+データベースの使用方法に応じて、異なるフラグを指定することが必要になる場合があります。 の詳細については `SQLiteOpenFlags` 、「sqlite.org で [新しいデータベース接続を開く](https://www.sqlite.org/c3ref/open.html) 」を参照してください。
 
 ## <a name="create-a-database-access-class"></a>データベースアクセスクラスを作成する
 
@@ -137,11 +137,11 @@ public class TodoItemDatabase
 
 ### <a name="the-safefireandforget-extension-method"></a>Safe焼討 And忘れる拡張メソッド
 
-`TodoItemDatabase`クラスがインスタンス化されるときは、非同期プロセスであるデータベース接続を初期化する必要があります。 ただし、
+`TodoItemDatabase`クラスがインスタンス化されるときは、非同期プロセスであるデータベース接続を初期化する必要があります。 ただし
 
 - クラスコンストラクターを非同期にすることはできません。
 - 待機されていない非同期メソッドは、例外をスローしません。
-- メソッドを使用する `Wait` と、スレッド_と_飲み込まよって例外が許可されます。
+- メソッドを使用する `Wait` と、スレッド _と_ 飲み込まよって例外が許可されます。
 
 非同期の初期化を開始するために、実行のブロックを避け、例外をキャッチする機会がある場合、サンプルアプリケーションではという拡張メソッドを使用し `SafeFireAndForget` ます。 `SafeFireAndForget`拡張メソッドは、クラスに追加の機能を提供し `Task` ます。
 
@@ -173,7 +173,7 @@ public static class TaskExtensions
 
 メソッドは、 `SafeFireAndForget` 指定されたオブジェクトの非同期実行を待機 `Task` し、 `Action` 例外がスローされた場合に呼び出されるをアタッチできるようにします。
 
-詳細については、「[タスクベースの非同期パターン (TAP)](https://docs.microsoft.com/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)」を参照してください。
+詳細については、「 [タスクベースの非同期パターン (TAP)](/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)」を参照してください。
 
 ### <a name="data-manipulation-methods"></a>データ操作方法
 
@@ -219,7 +219,7 @@ public class TodoItemDatabase {
 }
 ```
 
-## <a name="access-data-in-no-locxamarinforms"></a>データへのアクセスXamarin.Forms
+## <a name="access-data-in-no-locxamarinforms"></a>データへのアクセス Xamarin.Forms
 
 クラスは、 Xamarin.Forms `App` クラスのインスタンスを公開し `TodoItemDatabase` ます。
 
@@ -254,15 +254,15 @@ saveButton.Clicked += async (sender, e) =>
 
 SQLite は、この記事とサンプルアプリに記載されているよりも多くの機能を備えた堅牢な API を提供します。 以下のセクションでは、スケーラビリティにとって重要な機能について説明します。
 
-詳細については、sqlite.org に関する[SQLite のドキュメント](https://www.sqlite.org/docs.html)を参照してください。
+詳細については、sqlite.org に関する [SQLite のドキュメント](https://www.sqlite.org/docs.html) を参照してください。
 
 ### <a name="write-ahead-logging"></a>先行書き込みログ
 
 既定では、SQLite は従来の rollback ジャーナルを使用します。 変更されていないデータベースの内容のコピーが別のロールバックファイルに書き込まれ、変更がデータベースファイルに直接書き込まれます。 このコミットは、ロールバックジャーナルが削除されたときに発生します。
 
-先行書き込みログ (WAL) は、最初に個別の WAL ファイルに変更を書き込みます。 WAL モードでは、コミットは特殊なレコードで、WAL ファイルに追加されます。これにより、1つの WAL ファイルで複数のトランザクションを実行できます。 WAL ファイルは、_チェックポイント_と呼ばれる特殊な操作でデータベースファイルにマージされます。
+先行書き込みログ (WAL) は、最初に個別の WAL ファイルに変更を書き込みます。 WAL モードでは、コミットは特殊なレコードで、WAL ファイルに追加されます。これにより、1つの WAL ファイルで複数のトランザクションを実行できます。 WAL ファイルは、 _チェックポイント_と呼ばれる特殊な操作でデータベースファイルにマージされます。
 
-読み取りと書き込みの操作を同時に行うことができないため、ローカルデータベースでは WAL が高速になります。 ただし、WAL モードでは、_ページサイズ_を変更することはできません。また、データベースにファイルの関連付けを追加し、追加の_チェックポイント_操作を追加します。
+読み取りと書き込みの操作を同時に行うことができないため、ローカルデータベースでは WAL が高速になります。 ただし、WAL モードでは、 _ページサイズ_を変更することはできません。また、データベースにファイルの関連付けを追加し、追加の _チェックポイント_ 操作を追加します。
 
 SQLite.NET で WAL を有効にするには、 `EnableWriteAheadLoggingAsync` インスタンスでメソッドを呼び出し `SQLiteAsyncConnection` ます。
 
@@ -270,7 +270,7 @@ SQLite.NET で WAL を有効にするには、 `EnableWriteAheadLoggingAsync` �
 await Database.EnableWriteAheadLoggingAsync();
 ```
 
-詳細については、「sqlite.org での[SQLite 書き込みログ](https://www.sqlite.org/wal.html)」を参照してください。
+詳細については、「sqlite.org での [SQLite 書き込みログ](https://www.sqlite.org/wal.html) 」を参照してください。
 
 ### <a name="copying-a-database"></a>データベースのコピー
 
@@ -289,10 +289,10 @@ SQLite データベースのコピーが必要になる場合があります。
 
 ## <a name="related-links"></a>関連リンク
 
-- [Todo サンプルアプリケーション](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
+- [Todo サンプルアプリケーション](/samples/xamarin/xamarin-forms-samples/todo)
 - [SQLite.NET NuGet パッケージ](https://www.nuget.org/packages/sqlite-net-pcl/)
 - [SQLite のドキュメント](https://www.sqlite.org/docs.html)
 - [Android での SQLite の使用](~/android/data-cloud/data-access/using-sqlite-orm.md)
 - [IOS での SQLite の使用](~/ios/data-cloud/data/using-sqlite-orm.md)
-- [タスクベースの非同期パターン (TAP)](https://docs.microsoft.com/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)
+- [タスク ベースの非同期パターン (TAP)](/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)
 - [Lazy &lt; T &gt; クラス](xref:System.Lazy`1)

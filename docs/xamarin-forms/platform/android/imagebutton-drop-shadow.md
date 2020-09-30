@@ -10,12 +10,12 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d6f3304c9eeb87405ab303a80450a1cd8b2af267
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: c355816ec1b89801814b217cad8a23be2f453226
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938061"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563797"
 ---
 # <a name="imagebutton-drop-shadows-on-android"></a>Android での ImageButton ドロップシャドウ
 
@@ -67,8 +67,8 @@ imageButton.On<Android>()
 
 メソッドは、 `ImageButton.On<Android>` このプラットフォーム固有のが Android でのみ実行されることを指定します。 `ImageButton.SetIsShadowEnabled`名前空間のメソッドは、 [`Xamarin.Forms.PlatformConfiguration.AndroidSpecific`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific) でドロップシャドウを有効にするかどうかを制御するために使用され `ImageButton` ます。 さらに、次のメソッドを呼び出してドロップシャドウを制御できます。
 
-- `SetShadowColor`–ドロップシャドウの色を設定します。 既定の色は [`Color.Default`](xref:Xamarin.Forms.Color.Default*) です。
-- `SetShadowOffset`–ドロップシャドウのオフセットを設定します。 オフセットは影がキャストされる方向を変更し、値として指定され [`Size`](xref:Xamarin.Forms.Size) ます。 `Size`構造体の値は、デバイスに依存しない単位で表されます。最初の値は左 (負の値) または右 (正の値)、2番目の値は上の距離 (負の値) または下 (正の値) です。 このプロパティの既定値は (0.0, 0.0) です。これにより、のすべての辺に影がキャストされ `ImageButton` ます。
+- `SetShadowColor` –ドロップシャドウの色を設定します。 既定の色は [`Color.Default`](xref:Xamarin.Forms.Color.Default*) です。
+- `SetShadowOffset` –ドロップシャドウのオフセットを設定します。 オフセットは影がキャストされる方向を変更し、値として指定され [`Size`](xref:Xamarin.Forms.Size) ます。 `Size`構造体の値は、デバイスに依存しない単位で表されます。最初の値は左 (負の値) または右 (正の値)、2番目の値は上の距離 (負の値) または下 (正の値) です。 このプロパティの既定値は (0.0, 0.0) です。これにより、のすべての辺に影がキャストされ `ImageButton` ます。
 - `SetShadowRadius`–ドロップシャドウの描画に使用するぼかしの半径を設定します。 既定の radius 値は10.0 です。
 
 > [!NOTE]
@@ -80,7 +80,7 @@ imageButton.On<Android>()
 
 ## <a name="related-links"></a>関連リンク
 
-- [PlatformSpecifics (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [プラットフォーム固有設定の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [AndroidSpecific の API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)
 - [AndroidSpecific の AppCompat API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat)

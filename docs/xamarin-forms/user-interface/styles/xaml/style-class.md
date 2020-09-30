@@ -1,6 +1,6 @@
 ---
-title: Xamarin.Forms のスタイル クラス
-description: Xamarin.Formsスタイルクラスを使用すると、スタイルの継承を使用せずに、コントロールに複数のスタイルを適用できます。
+title: Xamarin.Forms スタイルクラス
+description: Xamarin.Forms スタイルクラスを使用すると、スタイルの継承を使用せずに、コントロールに複数のスタイルを適用できます。
 ms.prod: xamarin
 ms.assetid: 4762401E-2B48-48F1-B6E4-61F7AF8AA46F
 ms.technology: xamarin-forms
@@ -10,18 +10,18 @@ ms.date: 01/30/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2afb06c2d97e6f15c2041b9c2e9cad092b13d90d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: f100f98418b7e3cb82939bf67dda61b66cb5864e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138763"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557752"
 ---
-# <a name="xamarinforms-style-classes"></a>Xamarin.Forms のスタイル クラス
+# <a name="no-locxamarinforms-style-classes"></a>Xamarin.Forms スタイルクラス
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
-_Xamarin. Forms スタイルクラスを使用すると、スタイルの継承を使用せずに、コントロールに複数のスタイルを適用できます。_
+_Xamarin.Forms スタイルクラスを使用すると、スタイルの継承を使用せずに、コントロールに複数のスタイルを適用できます。_
 
 ## <a name="create-style-classes"></a>スタイルクラスの作成
 
@@ -79,7 +79,7 @@ _Xamarin. Forms スタイルクラスを使用すると、スタイルの継承�
 
 `Separator`、 `Rounded` 、および `Circle` スタイルクラスはそれぞれ、 [`BoxView`](xref:Xamarin.Forms.BoxView) プロパティを特定の値に設定します。
 
-スタイルクラスには、のがあります。これは、 `Rotated` [`TargetType`](xref:Xamarin.Forms.Style.TargetType) [`VisualElement`](xref:Xamarin.Forms.VisualElement) インスタンスにのみ適用できることを意味し `VisualElement` ます。 ただし、その [`ApplyToDerivedTypes`](xref:Xamarin.Forms.Style.ApplyToDerivedTypes) プロパティはに設定されます。これにより、など `true` 、から派生したコントロールに適用できるようになり `VisualElement` [`BoxView`](xref:Xamarin.Forms.BoxView) ます。 派生型にスタイルを適用する方法の詳細については、「[スタイルを派生型に適用する](implicit.md#apply-a-style-to-derived-types)」を参照してください。
+スタイルクラスには、のがあります。これは、 `Rotated` [`TargetType`](xref:Xamarin.Forms.Style.TargetType) [`VisualElement`](xref:Xamarin.Forms.VisualElement) インスタンスにのみ適用できることを意味し `VisualElement` ます。 ただし、その [`ApplyToDerivedTypes`](xref:Xamarin.Forms.Style.ApplyToDerivedTypes) プロパティはに設定されます。これにより、など `true` 、から派生したコントロールに適用できるようになり `VisualElement` [`BoxView`](xref:Xamarin.Forms.BoxView) ます。 派生型にスタイルを適用する方法の詳細については、「 [スタイルを派生型に適用する](implicit.md#apply-a-style-to-derived-types)」を参照してください。
 
 これに相当する C# コードを次に示します。
 
@@ -228,4 +228,4 @@ Content = new StackLayout
 
 ## <a name="related-links"></a>関連リンク
 
-- [基本スタイル (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+- [基本スタイル (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)

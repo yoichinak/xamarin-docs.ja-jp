@@ -1,5 +1,5 @@
 ---
-title: で Azure Cosmos DB ドキュメントデータベースを使用するXamarin.Forms
+title: で Azure Cosmos DB ドキュメントデータベースを使用する Xamarin.Forms
 description: この記事では、Azure Cosmos DB .NET Standard クライアントライブラリを使用して、Azure Cosmos DB ドキュメントデータベースをアプリケーションに統合する方法について説明し Xamarin.Forms ます。
 ms.prod: xamarin
 ms.assetid: 7C0605D9-9B7F-4002-9B60-2B5DAA3EA30C
@@ -11,14 +11,14 @@ ms.date: 06/16/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b8cd2ea2f54e4bfdfea4fa5787a01aca252691b4
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: ef6ccbaac73946ac19f4f5fe194f395234226b5e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84564655"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562848"
 ---
-# <a name="consume-an-azure-cosmos-db-document-database-in-xamarinforms"></a>で Azure Cosmos DB ドキュメントデータベースを使用するXamarin.Forms
+# <a name="consume-an-azure-cosmos-db-document-database-in-no-locxamarinforms"></a>で Azure Cosmos DB ドキュメントデータベースを使用する Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdb)
 
@@ -36,7 +36,7 @@ Azure Cosmos DB ドキュメントデータベースには、0個以上のドキ
 
 開発目的の場合は、エミュレーターを通じてドキュメントデータベースを使用することもできます。 エミュレーターを使用すると、Azure サブスクリプションを作成したりコストをかけたりすることなく、アプリケーションをローカルで開発およびテストできます。 エミュレーターの詳細については、「 [Azure Cosmos DB エミュレーターを使用したローカルでの開発](/azure/cosmos-db/local-emulator/)」を参照してください。
 
-この記事および付随するサンプルアプリケーションは、タスクが Azure Cosmos DB ドキュメントデータベースに格納される Todo リストアプリケーションを示しています。 サンプルアプリケーションの詳細については、「[サンプルに](~/xamarin-forms/data-cloud/web-services/introduction.md)ついて」を参照してください。
+この記事および付随するサンプルアプリケーションは、タスクが Azure Cosmos DB ドキュメントデータベースに格納される Todo リストアプリケーションを示しています。 サンプルアプリケーションの詳細については、「 [サンプルに](~/xamarin-forms/data-cloud/web-services/introduction.md)ついて」を参照してください。
 
 Azure Cosmos DB の詳細については、 [Azure Cosmos DB のドキュメント](/azure/cosmos-db/)を参照してください。
 
@@ -48,7 +48,7 @@ Azure Cosmos DB の詳細については、 [Azure Cosmos DB のドキュメン�
 Azure Cosmos DB ドキュメントデータベースをアプリケーションに統合するプロセスは次のとおり Xamarin.Forms です。
 
 1. Cosmos DB アカウントを作成します。 詳細については、「 [Create a Azure Cosmos DB account](/azure/cosmos-db/sql-api-dotnetcore-get-started#create-an-azure-cosmos-account)」を参照してください。
-1. ソリューションのプラットフォームプロジェクトに[Azure Cosmos DB .NET Standard クライアントライブラリ](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)NuGet パッケージを追加し Xamarin.Forms ます。
+1. ソリューションのプラットフォームプロジェクトに [Azure Cosmos DB .NET Standard クライアントライブラリ](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core) NuGet パッケージを追加し Xamarin.Forms ます。
 1. `using` `Microsoft.Azure.Documents` 、、およびの各名前空間のディレクティブを、 `Microsoft.Azure.Documents.Client` `Microsoft.Azure.Documents.Linq` Cosmos DB アカウントにアクセスするクラスに追加します。
 
 これらの手順を実行すると、Azure Cosmos DB .NET Standard クライアントライブラリを使用して、ドキュメントデータベースに対する要求を構成および実行できます。
@@ -229,7 +229,7 @@ await client.DeleteDatabaseAsync(UriFactory.CreateDatabaseUri(Constants.Database
 
 ## <a name="related-links"></a>関連リンク
 
-- [Todo Azure Cosmos DB (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdb)
+- [Todo Azure Cosmos DB (サンプル)](/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdb)
 - [Azure Cosmos DB のドキュメント](/azure/cosmos-db/)
 - [Azure Cosmos DB .NET Standard クライアントライブラリ](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.Core)
-- [Azure Cosmos DB API](https://docs.microsoft.com/dotnet/api/overview/azure/cosmosdb/client?view=azure-dotnet)
+- [Azure Cosmos DB API](/dotnet/api/overview/azure/cosmosdb/client?view=azure-dotnet)

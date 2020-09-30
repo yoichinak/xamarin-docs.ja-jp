@@ -10,12 +10,12 @@ ms.date: 03/23/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 533cb607cc2c47bf108d5e03733f31ebfc2fe475
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 2a6e19d25cefb4b8fcd870a9b590f129b2d9d85b
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86934135"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557882"
 ---
 # <a name="the-rotate-transform"></a>回転変換
 
@@ -45,7 +45,7 @@ x ' = x • cos (α) – y • sin (α)
 
 y ' = x • sin (α) + y • cos (α)
 
-[**基本的な回転**] ページでは、メソッドを示し `RotateDegrees` ます。 [**BasicRotate.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicRotatePage.xaml.cs)ファイルには、ページの中央にベースラインを持つテキストがいくつか表示され、-360 ~ 360 の範囲のを基にして回転し `Slider` ます。 ハンドラーの関連する部分を次に示し `PaintSurface` ます。
+[ **基本的な回転** ] ページでは、メソッドを示し `RotateDegrees` ます。 [**BasicRotate.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicRotatePage.xaml.cs)ファイルには、ページの中央にベースラインを持つテキストがいくつか表示され、-360 ~ 360 の範囲のを基にして回転し `Slider` ます。 ハンドラーの関連する部分を次に示し `PaintSurface` ます。
 
 ```csharp
 using (SKPaint textPaint = new SKPaint
@@ -107,7 +107,7 @@ canvas.RotateDegrees(degrees);
 canvas.Translate(-px, -py);
 ```
 
-呼び出しと呼び出しを組み合わせることもでき `Translate` `Rotate` ます。 たとえば、次に示すのは、 `RotateDegrees` `DrawText` 中央の**回転**ページのとです。
+呼び出しと呼び出しを組み合わせることもでき `Translate` `Rotate` ます。 たとえば、次に示すのは、 `RotateDegrees` `DrawText` 中央の **回転** ページのとです。
 
 ```csharp
 canvas.RotateDegrees((float)rotateSlider.Value, info.Width / 2, info.Height / 2);
@@ -143,7 +143,7 @@ canvas.DrawText(Title, 0, 0, textPaint);
 
 概念的には、2つの変換は、コード内での表示方法と逆の順序で適用されます。 この呼び出しによって、 `DrawText` キャンバスの左上隅にテキストが表示されます。 この `RotateDegrees` 呼び出しは、左上隅に対して相対的にテキストを回転させます。 その後、呼び出しによって `Translate` テキストがキャンバスの中央に移動します。
 
-通常、回転と平行移動を組み合わせるにはいくつかの方法があります。 回転した**テキスト**ページでは、次の表示が作成されます。
+通常、回転と平行移動を組み合わせるにはいくつかの方法があります。 回転した **テキスト** ページでは、次の表示が作成されます。
 
 [![回転したテキストページのトリプルスクリーンショット](rotate-images/rotatedtext-small.png)](rotate-images/rotatedtext-large.png#lightbox "回転したテキストページのトリプルスクリーンショット")
 
@@ -287,7 +287,7 @@ protected override void OnDisappearing()
 }
 ```
 
-見**づらいアナログクロック**プログラム (これは、より魅力的なアナログクロックが後の記事で説明されています) では、回転を使用して時計の分と時間のマークを描画し、ハンドを回転させます。 このプログラムは、ポイント (0, 0) の中心が100である円に基づいて、任意の座標系を使用して時計を描画します。 平行移動と拡大縮小を使用して、ページ上の円を拡大し、中央に配置します。
+見 **づらいアナログクロック** プログラム (これは、より魅力的なアナログクロックが後の記事で説明されています) では、回転を使用して時計の分と時間のマークを描画し、ハンドを回転させます。 このプログラムは、ポイント (0, 0) の中心が100である円に基づいて、任意の座標系を使用して時計を描画します。 平行移動と拡大縮小を使用して、ページ上の円を拡大し、中央に配置します。
 
 との呼び出しは、 `Translate` `Scale` クロックにグローバルに適用されるため、オブジェクトの初期化に従って最初に呼び出されるものです `SKPaint` 。
 
@@ -375,5 +375,5 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

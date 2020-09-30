@@ -1,5 +1,5 @@
 ---
-title: 'Xamarin.Formsブラシ: 放射状グラデーション'
+title: 'Xamarin.Forms ブラシ: 放射状グラデーション'
 description: Xamarin.FormsRadialGradientBrush クラスは、放射状グラデーションで領域を塗りつぶします。
 ms.prod: xamarin
 ms.assetid: 099BA530-3B38-4005-9B19-A0EB4D4DEEFC
@@ -10,27 +10,27 @@ ms.date: 07/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 897ffd8b86eb161f0264a095b5a041828e631dae
-ms.sourcegitcommit: 579ec4f2884fa391e5e214a3952cd6004c521eb8
+ms.openlocfilehash: a56d2f590b78bef0f47c764862b891c9c0d46129
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87919551"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563576"
 ---
-# <a name="no-locxamarinforms-brushes-radial-gradients"></a>Xamarin.Formsブラシ: 放射状グラデーション
+# <a name="no-locxamarinforms-brushes-radial-gradients"></a>Xamarin.Forms ブラシ: 放射状グラデーション
 
 ![プレビュー API](~/media/shared/preview.png "この API は現在プレリリースです")
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
 
-`RadialGradientBrush`クラスはクラスから派生 `GradientBrush` し、放射状グラデーションで領域を塗りつぶします。これにより、円全体で2つ以上の色がブレンドされます。 `GradientStop`オブジェクトは、グラデーションの色とその位置を指定するために使用されます。 オブジェクトの詳細について `GradientStop` は、「 [ Xamarin.Forms ブラシ: グラデーション](gradient.md)」を参照してください。
+`RadialGradientBrush`クラスはクラスから派生 `GradientBrush` し、放射状グラデーションで領域を塗りつぶします。これにより、円全体で2つ以上の色がブレンドされます。 `GradientStop` オブジェクトは、グラデーションの色とその位置を指定するために使用されます。 オブジェクトの詳細について `GradientStop` は、「 [ Xamarin.Forms ブラシ: グラデーション](gradient.md)」を参照してください。
 
 `RadialGradientBrush` クラスでは、次のプロパティが定義されます。
 
 - `Center`[`Point`](xref:Xamarin.Forms.Point)放射状グラデーションの円の中心点を表す型の。 このプロパティの既定値は (0.5, 0.5) です。
 - `Radius``double`放射状グラデーションの円の半径を表す型の。 このプロパティの既定値は0.5 です。
 
-これらのプロパティは、オブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。これは、データバインディングのターゲットとスタイルを設定できることを意味します。
+これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトが基になっています。つまり、これらは、データ バインディングの対象にすることができ、スタイルを設定できます。
 
 `RadialGradientBrush`クラスには、ブラシに `IsEmpty` `bool` オブジェクトが割り当てられているかどうかを表すを返すメソッドもあり `GradientStop` ます。
 
@@ -102,5 +102,5 @@ ms.locfileid: "87919551"
 
 ## <a name="related-links"></a>関連リンク
 
-- [BrushesDemos (サンプル)](https://github.com/xamarin/xamarin-forms-samples/tree/master/UserInterface/BrushDemos)
-- [Xamarin.Formsブラシ: グラデーション](gradient.md)
+- [BrushesDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
+- [Xamarin.Forms ブラシ: グラデーション](gradient.md)

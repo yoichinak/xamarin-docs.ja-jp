@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms行列
+title: Xamarin.Forms 行列
 description: Xamarin.Formsグリッドは、その子をセルの行と列に編成するレイアウトです。
 ms.prod: xamarin
 ms.assetid: 762B1802-D185-494C-B643-74EED55882FE
@@ -10,22 +10,22 @@ ms.date: 06/15/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9d2e697a07e033fd7c3c8d3efffa1d67f6c097c3
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 59a4d5c0730719d6cc332728c6cab641d02239b4
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84946339"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563563"
 ---
-# <a name="xamarinforms-grid"></a>Xamarin.Forms行列
+# <a name="no-locxamarinforms-grid"></a>Xamarin.Forms 行列
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-griddemos)
 
-[![Xamarin.Forms行列](grid-images/layouts.png "[!ファンド.NO LOC (Xamarin)] グリッド")](grid-images/layouts-large.png#lightbox "[!ファンド.NO LOC (Xamarin)] グリッド")
+[![::: なし (Xamarin. Forms)::: Grid](grid-images/layouts.png "::: なし (Xamarin. Forms)::: Grid")](grid-images/layouts-large.png#lightbox "::: なし (Xamarin. Forms)::: Grid")
 
 は、 [`Grid`](xref:Xamarin.Forms.Grid) その子を行と列に編成するレイアウトであり、比例または絶対的なサイズを持つことができます。 既定では、には `Grid` 1 つの行と1つの列が含まれます。 また、は、 `Grid` 他の子レイアウトを含む親レイアウトとして使用できます。
 
-[`Grid`](xref:Xamarin.Forms.Grid)レイアウトはテーブルと混同しないようにしてください。表形式のデータを表示するためのものではありません。 HTML テーブルとは異なり、は、コンテンツをレイアウトすることを目的とし `Grid` ています。 表形式データを表示する場合は、 [ListView](~/xamarin-forms/user-interface/listview/index.md)、 [CollectionView](~/xamarin-forms/user-interface/collectionview/index.md)、または[TableView](~/xamarin-forms/user-interface/tableview.md)を使用することを検討してください。
+[`Grid`](xref:Xamarin.Forms.Grid)レイアウトはテーブルと混同しないようにしてください。表形式のデータを表示するためのものではありません。 HTML テーブルとは異なり、は、コンテンツをレイアウトすることを目的とし `Grid` ています。 表形式データを表示する場合は、 [ListView](~/xamarin-forms/user-interface/listview/index.md)、 [CollectionView](~/xamarin-forms/user-interface/collectionview/index.md)、または [TableView](~/xamarin-forms/user-interface/tableview.md)を使用することを検討してください。
 
 [`Grid`](xref:Xamarin.Forms.Grid)クラスは、次のプロパティを定義します。
 
@@ -43,7 +43,7 @@ ms.locfileid: "84946339"
 クラスは、 [`Grid`](xref:Xamarin.Forms.Grid) `Layout<T>` 型のプロパティを定義するクラスから派生 `Children` `IList<T>` します。 `Children`プロパティは `ContentProperty` クラスのである `Layout<T>` ため、XAML から明示的に設定する必要はありません。
 
 > [!TIP]
-> レイアウトの最適なパフォーマンスを得るには、「[レイアウトのパフォーマンスを最適化](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)する」のガイドラインに従ってください。
+> レイアウトの最適なパフォーマンスを得るには、「 [レイアウトのパフォーマンスを最適化](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)する」のガイドラインに従ってください。
 
 ## <a name="rows-and-columns"></a>行と列
 
@@ -67,9 +67,9 @@ ms.locfileid: "84946339"
 
 クラスは、 [`RowDefinition`](xref:Xamarin.Forms.RowDefinition) [`Height`](xref:Xamarin.Forms.RowDefinition.Height) 型のプロパティを定義 [`GridLength`](xref:Xamarin.Forms.GridLength) し、 [`ColumnDefinition`](xref:Xamarin.Forms.ColumnDefinition) クラスは [`Width`](xref:Xamarin.Forms.ColumnDefinition.Width) 型のプロパティを定義し [`GridLength`](xref:Xamarin.Forms.GridLength) ます。 [`GridLength`](xref:Xamarin.Forms.GridLength)構造体は、 [`GridUnitType`](xref:Xamarin.Forms.GridUnitType) 次の3つのメンバーを持つ列挙体に関して行の高さまたは列の幅を指定します。
 
-- `Absolute`–行の高さまたは列の幅は、デバイスに依存しない単位 (XAML の数値) の値です。
-- `Auto`–行の高さまたは列の幅は、(XAML の) セルの内容に基づいて自動的に設定され `Auto` ます。
-- `Star`–未使用の行の高さまたは列の幅が比例して割り当てられます (XAML の数値の後に `*` )。
+- `Absolute` –行の高さまたは列の幅は、デバイスに依存しない単位 (XAML の数値) の値です。
+- `Auto` –行の高さまたは列の幅は、(XAML の) セルの内容に基づいて自動的に設定され `Auto` ます。
+- `Star` –未使用の行の高さまたは列の幅が比例して割り当てられます (XAML の数値の後に `*` )。
 
 [`Grid`](xref:Xamarin.Forms.Grid)のプロパティを持つ行では、 `Height` `Auto` 垂直方向と同じように、その行のビューの高さが制限され [`StackLayout`](xref:Xamarin.Forms.StackLayout) ます。 同様に、のプロパティを持つ列は、 `Width` `Auto` 水平方向と同様に機能し `StackLayout` ます。
 
@@ -270,7 +270,7 @@ public class BasicGridPageCS : ContentPage
 
 コードでは、オブジェクトの高さとオブジェクトの幅を指定するために、 [`RowDefinition`](xref:Xamarin.Forms.RowDefinition) [`ColumnDefinition`](xref:Xamarin.Forms.ColumnDefinition) 多くの場合、 [`GridLength`](xref:Xamarin.Forms.GridLength) 列挙と組み合わせて構造体の値を使用し [`GridUnitType`](xref:Xamarin.Forms.GridUnitType) ます。
 
-上のコード例では、に子を追加し、それらが存在するセルを指定するためのいくつかの異なる方法も示して [`Grid`](xref:Xamarin.Forms.Grid) います。 `Add` *Left*、 *right*、 *top*、および*bottom*の各引数を指定するオーバーロードを使用しているときに、 *left*および*top*引数が常に内のセルを参照しているときに、 `Grid` *右*と*下*の引数がの外部にあるセルを参照しているように見え `Grid` ます。 これは、 *right*引数は常に*左*の引数よりも大きくする必要があり、*下*の引数は常に*top*引数よりも大きくする必要があるためです。 次の例では、2x2 を前提とし `Grid` て、両方のオーバーロードを使用して同等のコードを示してい `Add` ます。
+上のコード例では、に子を追加し、それらが存在するセルを指定するためのいくつかの異なる方法も示して [`Grid`](xref:Xamarin.Forms.Grid) います。 `Add` *Left*、 *right*、 *top*、および*bottom*の各引数を指定するオーバーロードを使用しているときに、 *left*および*top*引数が常に内のセルを参照しているときに、 `Grid` *右*と*下*の引数がの外部にあるセルを参照しているように見え `Grid` ます。 これは、 *right* 引数は常に *左* の引数よりも大きくする必要があり、 *下* の引数は常に *top* 引数よりも大きくする必要があるためです。 次の例では、2x2 を前提とし `Grid` て、両方のオーバーロードを使用して同等のコードを示してい `Add` ます。
 
 ```csharp
 // left, top
@@ -344,7 +344,7 @@ public GridSpacingPageCS()
 }
 ```
 
-## <a name="alignment"></a>アラインメント
+## <a name="alignment"></a>Alignment
 
 の子ビューは、 [`Grid`](xref:Xamarin.Forms.Grid) プロパティとプロパティによってセル内に配置でき [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) ます。 これらのプロパティは、構造体から次のフィールドに設定でき [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) ます。
 
@@ -653,7 +653,7 @@ public class GridAlignmentPageCS : ContentPage
 [![入れ子になったグリッドのスクリーンショット](grid-images/nesting.png "入れ子になった Grid オブジェクト")](grid-images/nesting-large.png#lightbox "入れ子になった Grid オブジェクト")
 
 > [!IMPORTANT]
-> [`Grid`](xref:Xamarin.Forms.Grid)オブジェクトやその他のレイアウトの入れ子を深くするほど、入れ子になったレイアウトの方がパフォーマンスに影響します。 詳細については、「[適切なレイアウトを選択する](~/xamarin-forms/deploy-test/performance.md#choose-the-correct-layout)」を参照してください。
+> [`Grid`](xref:Xamarin.Forms.Grid)オブジェクトやその他のレイアウトの入れ子を深くするほど、入れ子になったレイアウトの方がパフォーマンスに影響します。 詳細については、「 [適切なレイアウトを選択する](~/xamarin-forms/deploy-test/performance.md#choose-the-correct-layout)」を参照してください。
 
 これに相当する C# コードを次に示します。
 
@@ -752,7 +752,7 @@ public class ColorSlidersGridPageCS : ContentPage
 
 ## <a name="related-links"></a>関連リンク
 
-- [グリッドのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-griddemos)
-- [レイアウトオプションXamarin.Forms](layout-options.md)
+- [グリッドのデモ (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-griddemos)
+- [レイアウトオプション Xamarin.Forms](layout-options.md)
 - [レイアウトの選択 Xamarin.Forms](choose-layout.md)
 - [アプリのパフォーマンスを向上させる Xamarin.Forms](~/xamarin-forms/deploy-test/performance.md)

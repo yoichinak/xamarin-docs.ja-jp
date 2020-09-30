@@ -10,12 +10,12 @@ ms.date: 05/24/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2571375e7ad28acbf367870b5c48e19d3a7525e7
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: f2e6735be2593133f755f87b365b8352bf09ebb4
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931250"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563082"
 ---
 # <a name="svg-path-data-in-skiasharp"></a>SkiaSharp の SVG パスデータ
 
@@ -29,7 +29,7 @@ _スケーラブルなベクターグラフィックス形式でテキスト文�
 
 SVG は、web ページ用の XML ベースのグラフィックスプログラミング言語です。 SVG では、一連の関数呼び出しではなくマークアップでパスを定義できる必要があるため、SVG 標準には、グラフィックスパス全体をテキスト文字列として指定する非常に簡潔な方法が用意されています。
 
-SkiaSharp 内では、この形式は "SVG パス-データ" と呼ばれます。 この形式は、Windows XAML ベースのプログラミング環境でもサポートされています。これには、Windows Presentation Foundation およびユニバーサル Windows プラットフォームが含まれます。これは、[パスマークアップ構文](/dotnet/framework/wpf/graphics-multimedia/path-markup-syntax)または[Move コマンドと draw commands 構文](/windows/uwp/xaml-platform/move-draw-commands-syntax/)と呼ばれます。 また、ベクターグラフィックスイメージの交換形式としても機能します。特に、XML などのテキストベースのファイルで使用できます。
+SkiaSharp 内では、この形式は "SVG パス-データ" と呼ばれます。 この形式は、Windows XAML ベースのプログラミング環境でもサポートされています。これには、Windows Presentation Foundation およびユニバーサル Windows プラットフォームが含まれます。これは、 [パスマークアップ構文](/dotnet/framework/wpf/graphics-multimedia/path-markup-syntax) または [Move コマンドと draw commands 構文](/windows/uwp/xaml-platform/move-draw-commands-syntax/)と呼ばれます。 また、ベクターグラフィックスイメージの交換形式としても機能します。特に、XML などのテキストベースのファイルで使用できます。
 
 [`SKPath`](xref:SkiaSharp.SKPath)クラスは2つのメソッドを定義し、名前に単語を使用し `SvgPathData` ます。
 
@@ -87,7 +87,7 @@ V y ...
 
 このコマンドは、パスに垂直線を追加し、新しい現在位置を行の末尾に設定します。
 
-## <a name="close"></a>**[閉じる]**
+## <a name="close"></a>**閉じる**
 
 ```
 Z
@@ -105,9 +105,9 @@ A rx ry rotation-angle large-arc-flag sweep-flag x y ...
 
 *Rx*との*パラメーターは*、楕円の水平方向と垂直方向の半径です。 *回転角度*は時計回りに回転します。
 
-大きな弧の場合は、*大きい*円弧の場合は1に、小さい場合は0に設定します。
+大きな弧の場合は、 *大きい* 円弧の場合は1に、小さい場合は0に設定します。
 
-時計回りの場合は*スイープフラグ*を1、反時計回りの場合は0に設定します。
+時計回りの場合は *スイープフラグ* を1、反時計回りの場合は0に設定します。
 
 弧は、新しい現在位置になる点 (*x*, *y*) に描画されます。
 
@@ -297,7 +297,7 @@ public class PathDataCatPage : ContentPage
 
 通常、オブジェクトがフィールドとして定義されている場合、その `SKPath` パスの輪郭は、コンストラクターまたは別のメソッドで定義されている必要があります。 ただし、SVG パスデータを使用する場合は、フィールド定義でパスを完全に指定できることがわかりました。
 
-[[**変換の回転**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/rotate.md)」では、前に見た見**づらいアナログクロック**サンプルが、時計の針を単純な線として表示していました。 次**の例の**ように、これらの行 `SKPath` は、クラスのフィールドとして定義されているオブジェクトとオブジェクトに置き換えられてい [`PrettyAnalogClockPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PrettyAnalogClockPage.cs) `SKPaint` ます。
+[[**変換の回転**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/rotate.md)」では、前に見た見**づらいアナログクロック**サンプルが、時計の針を単純な線として表示していました。 次 **の例の** ように、これらの行 `SKPath` は、クラスのフィールドとして定義されているオブジェクトとオブジェクトに置き換えられてい [`PrettyAnalogClockPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PrettyAnalogClockPage.cs) `SKPaint` ます。
 
 ```csharp
 public class PrettyAnalogClockPage : ContentPage
@@ -337,7 +337,7 @@ public class PrettyAnalogClockPage : ContentPage
 
 時間と分の針は、区分を囲みました。 これらを互いに区別するために、オブジェクトとオブジェクトを使用して、黒色のアウトラインとグレーの塗りつぶしの両方で描画され `handStrokePaint` `handFillPaint` ます。
 
-以前の見**づらいアナログクロック**サンプルでは、時間と分をマークした小さな円がループで描画されました。 この**非常にアナログクロック**サンプルでは、まったく異なるアプローチが使用されます。時間と分のマークは、オブジェクトとオブジェクトで描画される点線です `minuteMarkPaint` `hourMarkPaint` 。
+以前の見 **づらいアナログクロック** サンプルでは、時間と分をマークした小さな円がループで描画されました。 この **非常にアナログクロック** サンプルでは、まったく異なるアプローチが使用されます。時間と分のマークは、オブジェクトとオブジェクトで描画される点線です `minuteMarkPaint` `hourMarkPaint` 。
 
 ```csharp
 public class PrettyAnalogClockPage : ContentPage
@@ -434,5 +434,5 @@ public class PrettyAnalogClockPage : ContentPage
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

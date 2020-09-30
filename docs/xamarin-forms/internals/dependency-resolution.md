@@ -10,25 +10,25 @@ ms.date: 07/27/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ae30b4a4b75906613baf8a2568548c8890ccb33a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 6d4c9be2166881824e798e9cb801a5720ab55178
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139088"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557857"
 ---
-# <a name="dependency-resolution-in-xamarinforms"></a>Xamarin.Forms での依存関係の解決
+# <a name="dependency-resolution-in-no-locxamarinforms"></a>Xamarin.Forms での依存関係の解決
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)
 
-_この記事では、依存関係の解決方法をに挿入する方法について説明し Xamarin.Forms ます。これにより、アプリケーションの依存関係の挿入コンテナーが、カスタムレンダラー、効果、および DependencyService 実装の作成と有効期間を制御できるようになります。この記事のコード例は、「[コンテナーを使用した依存関係の解決](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)」のサンプルから抜粋したものです。_
+_この記事では、依存関係の解決方法をに挿入する方法について説明し Xamarin.Forms ます。これにより、アプリケーションの依存関係の挿入コンテナーが、カスタムレンダラー、効果、および DependencyService 実装の作成と有効期間を制御できるようになります。この記事のコード例は、「 [コンテナーを使用した依存関係の解決](/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo) 」のサンプルから抜粋したものです。_
 
-Xamarin.Formsモデルビュービューモデル (MVVM) パターンを使用するアプリケーションのコンテキストでは、依存関係挿入コンテナーを使用して、ビューモデルの登録と解決、およびサービスの登録とビューモデルへの挿入を行うことができます。 ビューモデルの作成中に、コンテナーは必要な依存関係を挿入します。 これらの依存関係が作成されていない場合、コンテナーはまず依存関係を作成して解決します。 ビューモデルへの依存関係の挿入の例を含む、依存関係の挿入の詳細については、「[依存関係の挿入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)」を参照してください。
+Xamarin.Formsモデルビュービューモデル (MVVM) パターンを使用するアプリケーションのコンテキストでは、依存関係挿入コンテナーを使用して、ビューモデルの登録と解決、およびサービスの登録とビューモデルへの挿入を行うことができます。 ビューモデルの作成中に、コンテナーは必要な依存関係を挿入します。 これらの依存関係が作成されていない場合、コンテナーはまず依存関係を作成して解決します。 ビューモデルへの依存関係の挿入の例を含む、依存関係の挿入の詳細については、「 [依存関係の挿入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)」を参照してください。
 
-プラットフォームプロジェクトでの型の作成と有効期間の制御は、従来 Xamarin.Forms 、メソッドを使用して `Activator.CreateInstance` カスタムレンダラー、効果、および実装のインスタンスを作成するによって実行され [`DependencyService`](xref:Xamarin.Forms.DependencyService) ます。 残念ながら、開発者がこれらの型の作成と有効期間を制御し、依存関係を挿入する機能を制限しています。 この動作は、 Xamarin.Forms アプリケーションの依存関係挿入コンテナーまたはによって、型の作成方法を制御する依存関係の解決メソッドをに挿入することによって変更できます Xamarin.Forms 。 ただし、依存関係の解決方法をに挿入する必要はありません Xamarin.Forms 。 Xamarin.Forms依存関係の解決方法が挿入されていない場合、はプラットフォームプロジェクトでの型の有効期間の作成と管理を続行します。
+プラットフォームプロジェクトでの型の作成と有効期間の制御は、従来 Xamarin.Forms 、メソッドを使用して `Activator.CreateInstance` カスタムレンダラー、効果、および実装のインスタンスを作成するによって実行され [`DependencyService`](xref:Xamarin.Forms.DependencyService) ます。 残念ながら、開発者がこれらの型の作成と有効期間を制御し、依存関係を挿入する機能を制限しています。 この動作は、 Xamarin.Forms アプリケーションの依存関係挿入コンテナーまたはによって、型の作成方法を制御する依存関係の解決メソッドをに挿入することによって変更できます Xamarin.Forms 。 ただし、依存関係の解決方法をに挿入する必要はありません Xamarin.Forms 。 Xamarin.Forms 依存関係の解決方法が挿入されていない場合、はプラットフォームプロジェクトでの型の有効期間の作成と管理を続行します。
 
 > [!NOTE]
-> この記事では、依存関係 Xamarin.Forms の挿入コンテナーを使用して登録された型を解決する依存関係の解決方法をに挿入することに焦点を当てていますが、ファクトリメソッドを使用して登録済みの型を解決する依存関係の解決方法を挿入することもできます。 詳細については、「[ファクトリメソッドを使用した依存関係の解決](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-factoriesdemo)」サンプルを参照してください。
+> この記事では、依存関係 Xamarin.Forms の挿入コンテナーを使用して登録された型を解決する依存関係の解決方法をに挿入することに焦点を当てていますが、ファクトリメソッドを使用して登録済みの型を解決する依存関係の解決方法を挿入することもできます。 詳細については、「 [ファクトリメソッドを使用した依存関係の解決](/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-factoriesdemo) 」サンプルを参照してください。
 
 ## <a name="injecting-a-dependency-resolution-method"></a>依存関係の解決方法の挿入
 
@@ -143,7 +143,7 @@ public partial class App : Application
 </ContentPage>
 ```
 
-ビューは、 `VideoPlayer` ビデオを再生する機能を提供するクラスによって各プラットフォームに実装され `VideoPlayerRenderer` ます。 これらのカスタムレンダラークラスの詳細については、「[ビデオプレーヤーの実装](~/xamarin-forms/app-fundamentals/custom-renderer/video-player/index.md)」を参照してください。
+ビューは、 `VideoPlayer` ビデオを再生する機能を提供するクラスによって各プラットフォームに実装され `VideoPlayerRenderer` ます。 これらのカスタムレンダラークラスの詳細については、「 [ビデオプレーヤーの実装](~/xamarin-forms/app-fundamentals/custom-renderer/video-player/index.md)」を参照してください。
 
 IOS とユニバーサル Windows プラットフォーム (UWP) では、クラスには、 `VideoPlayerRenderer` 引数を必要とする次のコンストラクターがあり `ILogger` ます。
 
@@ -199,7 +199,7 @@ var touchEffect = new TouchEffect();
 boxView.Effects.Add(touchEffect);
 ```
 
-クラスは、である `TouchEffect` [`RoutingEffect`](xref:Xamarin.Forms.RoutingEffect) クラスによって各プラットフォームに実装されるです `TouchEffect` `PlatformEffect` 。 Platform クラスには `TouchEffect` 、ページの周囲をドラッグする機能が用意されて `BoxView` います。 これらの効果クラスの詳細については、「[効果からのイベントの呼び出し](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)」を参照してください。
+クラスは、である `TouchEffect` [`RoutingEffect`](xref:Xamarin.Forms.RoutingEffect) クラスによって各プラットフォームに実装されるです `TouchEffect` `PlatformEffect` 。 Platform クラスには `TouchEffect` 、ページの周囲をドラッグする機能が用意されて `BoxView` います。 これらの効果クラスの詳細については、「 [効果からのイベントの呼び出し](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)」を参照してください。
 
 すべてのプラットフォームで、 `TouchEffect` クラスには、引数を必要とする次のコンストラクターがあり `ILogger` ます。
 
@@ -234,7 +234,7 @@ public interface IPhotoPicker
 }
 ```
 
-各プラットフォームプロジェクトでは、 `PhotoPicker` クラスは、 `IPhotoPicker` プラットフォーム api を使用してインターフェイスを実装します。 これらの依存サービスの詳細については、「[画像ライブラリからの写真の選択](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)」を参照してください。
+各プラットフォームプロジェクトでは、 `PhotoPicker` クラスは、 `IPhotoPicker` プラットフォーム api を使用してインターフェイスを実装します。 これらの依存サービスの詳細については、「 [画像ライブラリからの写真の選択](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)」を参照してください。
 
 IOS と UWP のクラスには、 `PhotoPicker` 引数を必要とする次のコンストラクターがあり `ILogger` ます。
 
@@ -304,7 +304,7 @@ async void OnSelectPhotoButtonClicked(object sender, EventArgs e)
 
 ## <a name="related-links"></a>関連リンク
 
-- [コンテナーを使用した依存関係の解決 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)
+- [コンテナーを使用した依存関係の解決 (サンプル)](/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)
 - [依存関係の挿入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)
 - [ビデオ プレーヤーの実装](~/xamarin-forms/app-fundamentals/custom-renderer/video-player/index.md)
 - [呼び出し (影響からイベントを)](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)

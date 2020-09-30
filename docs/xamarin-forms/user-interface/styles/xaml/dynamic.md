@@ -1,5 +1,5 @@
 ---
-title: 動的スタイルXamarin.Forms
+title: 動的スタイル Xamarin.Forms
 description: この記事では、 Xamarin.Forms 動的リソースを使用して、アプリケーションが実行時に動的にスタイル変更に応答する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 13D4FA4B-DF10-42BF-B001-2C49367FC216
@@ -11,14 +11,14 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.custom: video
-ms.openlocfilehash: d40ca3423cca68757cf458faf5cca1138aec5461
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d6944da583679d58885c20d327b3e43e176eb6fa
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140089"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563355"
 ---
-# <a name="dynamic-styles-in-xamarinforms"></a>動的スタイルXamarin.Forms
+# <a name="dynamic-styles-in-no-locxamarinforms"></a>動的スタイル Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
 
@@ -26,7 +26,7 @@ _スタイルは、プロパティの変更に応答せず、アプリケーシ�
 
 `DynamicResource`マークアップ拡張機能は、 `StaticResource` から値をフェッチするためにディクショナリキーを使用するという点で、マークアップ拡張機能に似てい [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) ます。 ただし、では、 `StaticResource` 単一の辞書参照が実行されますが、 `DynamicResource` ディクショナリキーへのリンクが保持されます。 そのため、キーに関連付けられているディクショナリエントリが置換された場合、変更はビジュアル要素に適用されます。 これにより、アプリケーションで実行時のスタイルの変更を行うことができます。
 
-次のコード例は、XAML ページの*動的*スタイルを示しています。
+次のコード例は、XAML ページの *動的* スタイルを示しています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.DynamicStylesPage" Title="Dynamic" IconImageSource="xaml.png">
@@ -132,7 +132,7 @@ C# では、インスタンスはメソッドを使用してを [`SearchBar`](xr
 
 動的スタイルからのスタイルの派生は、プロパティを使用して実現できません [`Style.BasedOn`](xref:Xamarin.Forms.Style.BasedOn) 。 代わりに、クラスには [`Style`](xref:Xamarin.Forms.Style) プロパティが含まれてい [`BaseResourceKey`](xref:Xamarin.Forms.Style.BaseResourceKey) ます。このプロパティは、値が動的に変更される可能性のあるディクショナリキーに設定できます。
 
-次のコード例は、XAML ページでの*動的*スタイルの継承を示しています。
+次のコード例は、XAML ページでの *動的* スタイルの継承を示しています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.DynamicStylesInheritancePage" Title="Dynamic Inheritance" IconImageSource="xaml.png">
@@ -214,8 +214,8 @@ public class DynamicStylesInheritancePageCS : ContentPage
 ## <a name="related-links"></a>関連リンク
 
 - [XAML マークアップ拡張](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [動的スタイル (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
-- [スタイルの使用 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
+- [動的スタイル (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
+- [スタイルの使用 (サンプル)](/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
 - [Style](xref:Xamarin.Forms.Style)
 - [Setter](xref:Xamarin.Forms.Setter)

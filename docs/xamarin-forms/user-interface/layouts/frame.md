@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Formsフレーム
+title: Xamarin.Forms フレーム
 description: Xamarin.FormsFrame クラスは、色、影、およびその他のオプションを使用して構成できる境界線を持つビューまたはレイアウトをラップするために使用されるレイアウトです。
 ms.prod: xamarin
 ms.assetId: 4E074714-0928-41C8-A468-B60E23236A8C
@@ -10,28 +10,28 @@ ms.date: 08/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 42192111befbefda7e0f62b7691a8392c2828818
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 8a14390afc04c1a0b2ccb5199350b69a9645a794
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137190"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563550"
 ---
-# <a name="xamarinforms-frame"></a>Xamarin.Formsフレーム
+# <a name="no-locxamarinforms-frame"></a>Xamarin.Forms フレーム
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-frame/)
 
-クラスは、 Xamarin.Forms [`Frame`](xref:Xamarin.Forms.Frame) 色、影、およびその他のオプションを使用して構成できる境界線を持つビューをラップするために使用されるレイアウトです。 フレームは、通常、コントロールの周囲に境界線を作成するために使用されますが、より複雑な UI を作成するために使用できます。 詳細については、「[高度なフレームの使用](#advanced-frame-usage)」を参照してください。
+クラスは、 Xamarin.Forms [`Frame`](xref:Xamarin.Forms.Frame) 色、影、およびその他のオプションを使用して構成できる境界線を持つビューをラップするために使用されるレイアウトです。 フレームは、通常、コントロールの周囲に境界線を作成するために使用されますが、より複雑な UI を作成するために使用できます。 詳細については、「 [高度なフレームの使用](#advanced-frame-usage)」を参照してください。
 
 次のスクリーンショットは、 `Frame` iOS と Android のコントロールを示しています。
 
 [!["IOS と Android のフレームの例"](frame-images/frame-cropped.png)](frame-images/frame-full.png#lightbox "IOS と Android のフレームの例")
 
-`Frame`クラスは、次のプロパティを定義します。
+`Frame` クラスでは、次のプロパティが定義されます。
 
 * [`BorderColor`](xref:Xamarin.Forms.Frame.BorderColor)`Color`境界線の色を決定する値です `Frame` 。
 * [`CornerRadius`](xref:Xamarin.Forms.Frame.CornerRadius)`float`角の丸みの半径を決定する値です。
-* [`HasShadow`](xref:Xamarin.Forms.Frame.HasShadow)フレームに `bool` ドロップシャドウがあるかどうかを決定する値です。
+* [`HasShadow`](xref:Xamarin.Forms.Frame.HasShadow) フレームに `bool` ドロップシャドウがあるかどうかを決定する値です。
 
 これらのプロパティは、オブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。つまり、は `Frame` データバインディングのターゲットにすることができます。
 
@@ -57,7 +57,7 @@ Frame defaultFrame = new Frame
 };
 ```
 
-`Frame`XAML でプロパティを設定することにより、角が丸く、色分けされた境界、ドロップシャドウでオブジェクトをカスタマイズできます。 次の例は、カスタマイズされたオブジェクトを示してい `Frame` ます。
+`Frame` XAML でプロパティを設定することにより、角が丸く、色分けされた境界、ドロップシャドウでオブジェクトをカスタマイズできます。 次の例は、カスタマイズされたオブジェクトを示してい `Frame` ます。
 
 ```xaml
 <Frame BorderColor="Orange"
@@ -196,5 +196,5 @@ Frame circleImageFrame = new Frame
 
 ## <a name="related-links"></a>関連リンク
 
-* [フレームのデモ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-frame/)
-* [画像Xamarin.Forms](~/xamarin-forms/user-interface/images.md)
+* [フレームのデモ](/samples/xamarin/xamarin-forms-samples/userinterface-frame/)
+* [画像 Xamarin.Forms](~/xamarin-forms/user-interface/images.md)

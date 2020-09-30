@@ -1,6 +1,6 @@
 ---
 title: Xamarin.Formsカスケードスタイルシートを使用したアプリのスタイル設定 (CSS)
-description: Xamarin.Formsカスケードスタイルシート (CSS) を使用したビジュアル要素のスタイル設定をサポートします。
+description: Xamarin.Forms カスケードスタイルシート (CSS) を使用したビジュアル要素のスタイル設定をサポートします。
 ms.prod: xamarin
 ms.assetid: C89D57A6-DAB9-4C42-963F-26D67627DDC2
 ms.technology: xamarin-forms
@@ -11,20 +11,20 @@ ms.date: 07/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 62c8fdd6a0dd2f07b17891346081ccbcebe26c77
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 39a6dbcbd5e825c6630bfb60b61bf00a308fdc0e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918576"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562783"
 ---
 # <a name="styling-no-locxamarinforms-apps-using-cascading-style-sheets-css"></a>Xamarin.Formsカスケードスタイルシートを使用したアプリのスタイル設定 (CSS)
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
 
-_Xamarin.Formsカスケードスタイルシート (CSS) を使用したビジュアル要素のスタイル設定をサポートします。_
+_Xamarin.Forms カスケードスタイルシート (CSS) を使用したビジュアル要素のスタイル設定をサポートします。_
 
-Xamarin.Formsアプリケーションは、CSS を使用してスタイルを設定できます。 スタイルシートは、ルールの一覧で構成され、各ルールは1つ以上のセレクターと宣言ブロックで構成されます。 宣言ブロックは、中かっこで囲まれた宣言のリストで構成され、各宣言はプロパティ、コロン、および値で構成されます。 1つのブロックに複数の宣言がある場合、セミコロンは区切り記号として挿入されます。 次のコード例は、準拠している CSS を示してい Xamarin.Forms ます。
+Xamarin.Forms アプリケーションは、CSS を使用してスタイルを設定できます。 スタイルシートは、ルールの一覧で構成され、各ルールは1つ以上のセレクターと宣言ブロックで構成されます。 宣言ブロックは、中かっこで囲まれた宣言のリストで構成され、各宣言はプロパティ、コロン、および値で構成されます。 1つのブロックに複数の宣言がある場合、セミコロンは区切り記号として挿入されます。 次のコード例は、準拠している CSS を示してい Xamarin.Forms ます。
 
 ```css
 navigationpage {
@@ -79,7 +79,7 @@ stacklayout>image {
 > [!NOTE]
 > 現時点では、XAML スタイルで可能なすべてのスタイル設定を CSS で実行することはできません。 ただし、XAML スタイルを使用して、で現在サポートされていないプロパティの CSS を補うことができ Xamarin.Forms ます。 XAML スタイルの詳細については、「[XAML スタイルを使用した Xamarin.Forms アプリのスタイル設定](~/xamarin-forms/user-interface/styles/xaml/index.md)」を参照してください。
 
-[Monkeyappcss](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)サンプルでは、単純なアプリのスタイルを CSS で使用する方法を示しています。次のスクリーンショットを参照してください。
+[Monkeyappcss](/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)サンプルでは、単純なアプリのスタイルを CSS で使用する方法を示しています。次のスクリーンショットを参照してください。
 
 [![CSS スタイルが設定される MonkeyApp メインページ](css-images/MonkeyAppMainPage.png "CSS スタイルが設定される MonkeyApp メインページ")](css-images/MonkeyAppMainPage-Large.png#lightbox "CSS スタイルが設定される MonkeyApp メインページ")
 
@@ -90,7 +90,7 @@ stacklayout>image {
 ソリューションにスタイルシートを追加するには、次の手順を実行します。
 
 1. 空の CSS ファイルを .NET Standard ライブラリプロジェクトに追加します。
-1. CSS ファイルのビルドアクションを**EmbeddedResource**に設定します。
+1. CSS ファイルのビルドアクションを **EmbeddedResource**に設定します。
 
 ### <a name="loading-a-style-sheet"></a>スタイルシートの読み込み
 
@@ -114,7 +114,7 @@ stacklayout>image {
 プロパティは、 [`StyleSheet.Source`](xref:Xamarin.Forms.Xaml.StyleSheetExtension.Source) 外側の XAML ファイルの位置からの相対 uri としてスタイルシートを指定します。または、uri がで始まる場合は、プロジェクトのルートからの相対 uri として指定し `/` ます。
 
 > [!WARNING]
-> ビルドアクションが**EmbeddedResource**に設定されていない場合、CSS ファイルの読み込みに失敗します。
+> ビルドアクションが  **EmbeddedResource**に設定されていない場合、CSS ファイルの読み込みに失敗します。
 
 または、スタイルシートをに追加する前に、クラスを使用してスタイルシートを読み込んで解析することもできます。これを行うには、 [`StyleSheet`](xref:Xamarin.Forms.StyleSheets.StyleSheet) [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) セクションにインライン展開し `CDATA` ます。
 
@@ -133,7 +133,7 @@ stacklayout>image {
 </ContentPage>
 ```
 
-リソースディクショナリの詳細については、「[リソースディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)」を参照してください。
+リソースディクショナリの詳細については、「 [リソースディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)」を参照してください。
 
 ### <a name="c"></a>C\#
 
@@ -160,7 +160,7 @@ public partial class MyPage : ContentPage
 
 CSS はセレクターを使用して、対象とする要素を決定します。 セレクターが一致するスタイルは、定義の順序で連続して適用されます。 特定の項目に定義されているスタイルは、常に最後に適用されます。 サポートされているセレクターの詳細については、「 [Selector Reference](#selector-reference)」を参照してください。
 
-CSS では、プロパティを使用して、選択した要素のスタイルを適用します。 各プロパティには使用可能な値のセットがあり、一部のプロパティは要素の型に影響を与えますが、他のプロパティは要素のグループに適用されます。 サポートされるプロパティの詳細については、「[プロパティリファレンス](#property-reference)」を参照してください。
+CSS では、プロパティを使用して、選択した要素のスタイルを適用します。 各プロパティには使用可能な値のセットがあり、一部のプロパティは要素の型に影響を与えますが、他のプロパティは要素のグループに適用されます。 サポートされるプロパティの詳細については、「 [プロパティリファレンス](#property-reference)」を参照してください。
 
 子スタイルシートで同じプロパティを設定した場合、親スタイルシートは常にオーバーライドされます。 そのため、同じプロパティを設定するスタイルを適用するときは、次の優先順位の規則に従います。
 
@@ -297,7 +297,7 @@ listview image {
 ```
 
 > [!NOTE]
-> このセレクターでは、 `element element` 子要素が親の_直接_の子である必要はありません。子要素は、親が異なる場合があります。 先祖が指定された最初の要素である場合、選択が行われます。
+> このセレクターでは、 `element element` 子要素が親の _直接_ の子である必要はありません。子要素は、親が異なる場合があります。 先祖が指定された最初の要素である場合、選択が行われます。
 
 ### <a name="selecting-direct-child-elements"></a>直接の子要素の選択
 
@@ -363,7 +363,7 @@ stacklayout>image {
 
 ## <a name="property-reference"></a>プロパティ リファレンス
 
-では、次の CSS プロパティがサポートされてい Xamarin.Forms ます ([**値**] 列では、型は_斜体_、文字列リテラルは `gray` )。
+では、次の CSS プロパティがサポートされてい Xamarin.Forms ます ([ **値** ] 列では、型は _斜体_、文字列リテラルは `gray` )。
 
 |プロパティ|適用対象|値|例|
 |---|---|---|---|
@@ -371,7 +371,7 @@ stacklayout>image {
 |`align-items`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| `flex-end` \| `initial` |`align-items: flex-start;`|
 |`align-self`|`VisualElement`| `auto` \| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| `flex-end` \| `initial`|`align-self: flex-end;`|
 |`background-color`|`VisualElement`|_色_ \|`initial` |`background-color: springgreen;`|
-|`background-image`|`Page`|_string_ \| `initial` |`background-image: bg.png;`|
+|`background-image`|`Page`|_文字列_ \|`initial` |`background-image: bg.png;`|
 |`border-color`|`Button`, `Frame`, `ImageButton`|_色_ \|`initial`|`border-color: #9acd32;`|
 |`border-radius`|`BoxView`, `Button`, `Frame`, `ImageButton`|_double_ \|`initial` |`border-radius: 10;`|
 |`border-width`|`Button`, `ImageButton`|_double_ \|`initial` |`border-width: .5;`|
@@ -383,7 +383,7 @@ stacklayout>image {
 |`flex-grow`|`VisualElement`|_float_ \|`initial`|`flex-grow: 1.5;`|
 |`flex-shrink`|`VisualElement`|_float_ \|`initial`|`flex-shrink: 1;`|
 |`flex-wrap`|`VisualElement`| `nowrap` \| `wrap` \| `reverse` \| `wrap-reverse` \| `initial`|`flex-wrap: wrap-reverse;`|
-|`font-family`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_string_ \| `initial` |`font-family: Consolas;`|
+|`font-family`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_文字列_ \|`initial` |`font-family: Consolas;`|
 |`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_double_ \|_namedsize_ \|  `initial` |`font-size: 12;`|
 |`font-style`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|`bold` \| `italic` \| `initial` |`font-style: bold;`|
 |`height`|`VisualElement`|_double_ \|`initial` |`min-height: 250;`|
@@ -395,11 +395,11 @@ stacklayout>image {
 |`margin-top`|`View`|_太さ_ \|`initial` |`margin-top: 2;`|
 |`margin-right`|`View`|_太さ_ \|`initial` |`margin-right: 1;`|
 |`margin-bottom`|`View`|_太さ_ \|`initial` |`margin-bottom: 6;`|
-|`max-lines`|`Label`|_INT_ \| `initial`|`max-lines: 2;`|
+|`max-lines`|`Label`|_int_ \|`initial`|`max-lines: 2;`|
 |`min-height`|`VisualElement`|_double_ \|`initial` |`min-height: 50;`|
 |`min-width`|`VisualElement`|_double_ \|`initial` |`min-width: 112;`|
 |`opacity`|`VisualElement`|_double_ \|`initial` |`opacity: .3;`|
-|`order`|`VisualElement`|_INT_ \| `initial`|`order: -1;`|
+|`order`|`VisualElement`|_int_ \|`initial`|`order: -1;`|
 |`padding`|`Button`, `ImageButton`, `Layout`, `Page`|_太さ_ \|`initial` |`padding: 6 12 12;`|
 |`padding-left`|`Button`, `ImageButton`, `Layout`, `Page`|_double_ \|`initial`|`padding-left: 3;`|
 |`padding-top`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \|`initial` |`padding-top: 4;`|
@@ -417,7 +417,7 @@ stacklayout>image {
 |`width`|`VisualElement`|_double_ \|`initial`|`min-width: 320;`|
 
 > [!NOTE]
-> `initial`は、すべてのプロパティの有効な値です。 別のスタイルから設定された値 (既定値にリセット) をクリアします。
+> `initial` は、すべてのプロパティの有効な値です。 別のスタイルから設定された値 (既定値にリセット) をクリアします。
 
 次のプロパティは現在サポートされていません。
 
@@ -429,30 +429,30 @@ stacklayout>image {
 
 ターゲット `Span` 要素には既知の問題があり、範囲が CSS スタイルのターゲットになるのを防ぐために、要素と名前の両方 (記号を使用 `#` ) になります。 `Span`要素はから派生 `GestureElement` します。これにはプロパティがないため、 `StyleClass` SPAN では CSS クラスのターゲット設定がサポートされません。 詳細については、「 [Span コントロールに CSS スタイルを適用できない](https://github.com/xamarin/Xamarin.Forms/issues/5979)」を参照してください。
 
-### <a name="no-locxamarinforms-specific-properties"></a>Xamarin.Forms特定のプロパティ
+### <a name="no-locxamarinforms-specific-properties"></a>Xamarin.Forms 特定のプロパティ
 
-次の Xamarin.Forms 特定の CSS プロパティもサポートされています ([**値**] 列では、型は_斜体_ですが、文字列リテラルは `gray` )。
+次の Xamarin.Forms 特定の CSS プロパティもサポートされています ([ **値** ] 列では、型は _斜体_ですが、文字列リテラルは `gray` )。
 
 |プロパティ|適用対象|値|例|
 |---|---|---|---|
 |`-xf-bar-background-color`|`NavigationPage`, `TabbedPage`|_色_ \|`initial` |`-xf-bar-background-color: teal;`|
 |`-xf-bar-text-color`|`NavigationPage`, `TabbedPage`|_色_ \|`initial` |`-xf-bar-text-color: gray`|
 |`-xf-horizontal-scroll-bar-visibility`|`ScrollView`| `default` \| `always` \| `never` \| `initial` |`-xf-horizontal-scroll-bar-visibility: never;`|
-|`-xf-max-length`|`Entry`, `Editor`, `SearchBar`|_INT_ \| `initial` |`-xf-max-length: 20;`|
+|`-xf-max-length`|`Entry`, `Editor`, `SearchBar`|_int_ \|`initial` |`-xf-max-length: 20;`|
 |`-xf-max-track-color`|`Slider`|_色_ \|`initial` |`-xf-max-track-color: red;`|
 |`-xf-min-track-color`|`Slider`|_色_ \|`initial` |`-xf-min-track-color: yellow;`|
-|`-xf-orientation`|`ScrollView`, `StackLayout`| `horizontal` \| `vertical` \| `both` \| `initial`. `both`は、でのみサポートされてい `ScrollView` ます。 |`-xf-orientation: horizontal;`|
+|`-xf-orientation`|`ScrollView`, `StackLayout`| `horizontal` \| `vertical` \| `both` \| `initial`. `both` は、でのみサポートされてい `ScrollView` ます。 |`-xf-orientation: horizontal;`|
 |`-xf-placeholder`|`Entry`, `Editor`, `SearchBar`|_引用符で囲まれたテキスト_ \|`initial` |`-xf-placeholder: Enter name;`|
 |`-xf-placeholder-color`|`Entry`, `Editor`, `SearchBar`|_色_ \|`initial` |`-xf-placeholder-color: green;`|
 |`-xf-spacing`|`StackLayout`|_double_ \|`initial` |`-xf-spacing: 8;`|
 |`-xf-thumb-color`|`Slider`, `Switch`|_色_ \|`initial` |`-xf-thumb-color: limegreen;`|
 |`-xf-vertical-scroll-bar-visibility`|`ScrollView`| `default` \| `always` \| `never` \| `initial` |`-xf-vertical-scroll-bar-visibility: always;`|
 |`-xf-vertical-text-alignment`|`Label`| `start` \| `center` \| `end` \| `initial`|`-xf-vertical-text-alignment: end;`|
-|`-xf-visual`|`VisualElement`|_string_ \| `initial` |`-xf-visual: material;`|
+|`-xf-visual`|`VisualElement`|_文字列_ \|`initial` |`-xf-visual: material;`|
 
-### <a name="no-locxamarinforms-shell-specific-properties"></a>Xamarin.Formsシェル固有のプロパティ
+### <a name="no-locxamarinforms-shell-specific-properties"></a>Xamarin.Forms シェル固有のプロパティ
 
-次の Xamarin.Forms シェル固有の CSS プロパティもサポートされています ([**値**] 列では、型は_斜体_ですが、文字列リテラルは `gray` )。
+次の Xamarin.Forms シェル固有の CSS プロパティもサポートされています ([ **値** ] 列では、型は _斜体_ですが、文字列リテラルは `gray` )。
 
 |プロパティ|適用対象|値|例|
 |---|---|---|---|
@@ -472,8 +472,8 @@ stacklayout>image {
 
 次の `color` 値がサポートされています。
 
-- `X11`CSS の色、UWP の定義済みの色、および色に一致する[色](https://en.wikipedia.org/wiki/X11_color_names) Xamarin.Forms 。 これらの色の値は大文字と小文字を区別しないことに注意してください。
-- 16進数の色: `#rgb` 、、 `#argb` `#rrggbb` 、`#aarrggbb`
+- `X11`CSS の色、UWP の定義済みの色、および色に一致する [色](https://en.wikipedia.org/wiki/X11_color_names) Xamarin.Forms 。 これらの色の値は大文字と小文字を区別しないことに注意してください。
+- 16進数の色: `#rgb` 、、 `#argb` `#rrggbb` 、 `#aarrggbb`
 - rgb 色: `rgb(255,0,0)` 、 `rgb(100%,0%,0%)` 。 値の範囲は 0-255 ~ 0%-100% です。
 - rgba 色: `rgba(255, 0, 0, 0.8)` 、 `rgba(100%, 0%, 0%, 0.8)` 。 不透明度の値は、0.0 ~ 1.0 の範囲で指定します。
 - hsl の色: `hsl(120, 100%, 50%)` 。 H 値は0-360 の範囲にあり、s と l の範囲は 0%-100% です。
@@ -511,10 +511,10 @@ stacklayout>image {
 
 > [!VIDEO https://youtube.com/embed/va-Vb7vtan8]
 
-**Xamarin.Forms3.0 CSS ビデオ**
+**Xamarin.Forms 3.0 CSS ビデオ**
 
 ## <a name="related-links"></a>関連リンク
 
-- [MonkeyAppCSS (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
-- [リソースディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [MonkeyAppCSS (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
+- [リソース ディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [XAML スタイルを使用して Xamarin.Forms アプリのスタイルを設定する](~/xamarin-forms/user-interface/styles/xaml/index.md)

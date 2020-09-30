@@ -10,20 +10,20 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 735aae1b9d94865bd34450861bd6c57b08c420c2
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: af1747a19af6c715d1594122393e500d1f73c79b
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84134720"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562523"
 ---
 # <a name="skiasharp-transparency"></a>SkiaSharp の透明度
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-既に説明したように、クラスには [`SKPaint`](xref:SkiaSharp.SKPaint) 型のプロパティが含まれてい [`Color`](xref:SkiaSharp.SKPaint.Color) [`SKColor`](xref:SkiaSharp.SKColor) ます。 `SKColor`にはアルファチャネルが含まれているため、値を使用して色を指定すると、 `SKColor` 部分的に透明になることがあります。 
+既に説明したように、クラスには [`SKPaint`](xref:SkiaSharp.SKPaint) 型のプロパティが含まれてい [`Color`](xref:SkiaSharp.SKPaint.Color) [`SKColor`](xref:SkiaSharp.SKColor) ます。 `SKColor` にはアルファチャネルが含まれているため、値を使用して色を指定すると、 `SKColor` 部分的に透明になることがあります。 
 
-いくつかの透過性は、 [**SkiaSharp 記事の基本的なアニメーション**](animation.md)に示されています。 この記事では、複数のオブジェクトを1つのシーン (_ブレンド_とも呼ばれます) で組み合わせることにより、透過性について少し掘り下げていきます。 より高度なブレンド手法については、「 [**SkiaSharp シェーダー**](../effects/shaders/index.md) 」セクションの記事で説明されています。
+いくつかの透過性は、 [**SkiaSharp 記事の基本的なアニメーション**](animation.md) に示されています。 この記事では、複数のオブジェクトを1つのシーン ( _ブレンド_とも呼ばれます) で組み合わせることにより、透過性について少し掘り下げていきます。 より高度なブレンド手法については、「 [**SkiaSharp シェーダー**](../effects/shaders/index.md) 」セクションの記事で説明されています。
 
 4つのパラメーターを持つコンストラクターを使用して最初に色を作成するときに、透明度レベルを設定でき [`SKColor`](xref:SkiaSharp.SKColor.%23ctor(System.Byte,System.Byte,System.Byte,System.Byte)) ます。
 
@@ -39,7 +39,7 @@ SKColor (byte red, byte green, byte blue, byte alpha);
 SKColor halfTransparentBlue = SKColors.Blue.WithAlpha(0x80);
 ```
 
-部分的に透明なテキストの使用方法については、 [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルのコードページを**参照**してください。 このページでは、値に透明度を組み込むことによって、2つのテキスト文字列をフェードアウトし `SKColor` ます。
+部分的に透明なテキストの使用方法については、 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルのコードページを**参照**してください。 このページでは、値に透明度を組み込むことによって、2つのテキスト文字列をフェードアウトし `SKColor` ます。
 
 ```csharp
 public class CodeMoreCodePage : ContentPage
@@ -147,7 +147,7 @@ paint.Color = SKColors.Blue.WithAlpha((byte)(0xFF * transparency));
 
 または、 `Color` このオブジェクトのプロパティを設定し `SKPaint` て、ある程度透明度のビットマップを表示することもできます。 のプロパティで透明度のレベルを設定すると、 `Color` `SKPaint` ビットマップをフェードインまたはフェードアウトしたり、ビットマップを別のビットマップに分割したりすることができます。 
 
-ビットマップの透明度は、[**ビットマップのディゾルブ**] ページで示されています。 XAML ファイルは、とをインスタンス化し `SKCanvasView` `Slider` ます。
+ビットマップの透明度は、[ **ビットマップのディゾルブ** ] ページで示されています。 XAML ファイルは、とをインスタンス化し `SKCanvasView` `Slider` ます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -238,9 +238,9 @@ public partial class BitmapDissolvePage : ContentPage
 
 [![ビットマップディゾルブ](transparency-images/BitmapDissolve.png "ビットマップディゾルブ")](transparency-images/BitmapDissolve-Large.png#lightbox)
 
-これまでのいくつかの記事では、SkiaSharp を使用して、テキスト、円、楕円、角丸四角形、ビットマップを描画する方法を説明しました。 次の手順では、 [SkiaSharp の行とパス](../paths/index.md)を使用して、接続された線をグラフィックパスに描画する方法を学習します。
+これまでのいくつかの記事では、SkiaSharp を使用して、テキスト、円、楕円、角丸四角形、ビットマップを描画する方法を説明しました。 次の手順では、 [SkiaSharp の行とパス](../paths/index.md) を使用して、接続された線をグラフィックパスに描画する方法を学習します。
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

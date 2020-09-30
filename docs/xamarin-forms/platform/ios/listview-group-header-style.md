@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 46e8dec3d5644defdeb8a2265a73815adfde92d8
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: b8be4610a327fb9902d62efb061406bff16de484
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136035"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557479"
 ---
 # <a name="listview-group-header-style-on-ios"></a>IOS 上の ListView グループヘッダーのスタイル
 
@@ -46,8 +46,8 @@ listView.On<iOS>().SetGroupHeaderStyle(GroupHeaderStyle.Grouped);
 
 メソッドは、 `ListView.On<iOS>` このプラットフォーム固有のが iOS 上でのみ実行されることを指定します。 `ListView.SetGroupHeaderStyle` [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) スクロール中にヘッダーセルをフローティングするかどうかを制御するには、名前空間のメソッドを使用し [`ListView`](xref:Xamarin.Forms.ListView) ます。 `GroupHeaderStyle`列挙体には、次の2つの値があります。
 
-- `Plain`– [`ListView`](xref:Xamarin.Forms.ListView) がスクロールされたとき (既定値)、ヘッダーセルがフローティングすることを示します。
-- `Grouped`–がスクロールされるときに、ヘッダーセルがフローティングしないことを示し [`ListView`](xref:Xamarin.Forms.ListView) ます。
+- `Plain` – [`ListView`](xref:Xamarin.Forms.ListView) がスクロールされたとき (既定値)、ヘッダーセルがフローティングすることを示します。
+- `Grouped` –がスクロールされるときに、ヘッダーセルがフローティングしないことを示し [`ListView`](xref:Xamarin.Forms.ListView) ます。
 
 また、メソッドを `ListView.GetGroupHeaderStyle` 使用して、に適用されたを返すこともでき `GroupHeaderStyle` [`ListView`](xref:Xamarin.Forms.ListView) ます。
 
@@ -57,6 +57,6 @@ listView.On<iOS>().SetGroupHeaderStyle(GroupHeaderStyle.Grouped);
 
 ## <a name="related-links"></a>関連リンク
 
-- [PlatformSpecifics (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [プラットフォーム固有設定の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific の API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

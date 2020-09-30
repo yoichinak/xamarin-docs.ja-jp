@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsXAML の基礎
+title: Xamarin.Forms XAML の基礎
 description: このガイドでは、モバイルデバイス用のクロスプラットフォーム XAML の使用を開始する方法について説明します。 XAML を使用すると、開発者は Xamarin.Forms コードではなくマークアップを使用して、アプリケーションのユーザーインターフェイスを定義できます。
 ms.prod: xamarin
 ms.custom: video
@@ -11,14 +11,14 @@ ms.date: 10/25/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8f5f69038f7d5cfe7ad46f013acb1519c4e9569f
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 3d2620014c9554712c746b98de3b9a0eeaa20864
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138620"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562757"
 ---
-# <a name="xamarinforms-xaml-basics"></a>Xamarin.FormsXAML の基礎
+# <a name="no-locxamarinforms-xaml-basics"></a>Xamarin.Forms XAML の基礎
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
@@ -37,7 +37,7 @@ XAML には、同等のコードよりもいくつかの利点があります。
 また、主にマークアップ言語に固有の制限事項に関連する欠点もあります。
 
 - XAML にコードを含めることはできません。 すべてのイベントハンドラーは、コードファイルで定義する必要があります。
-- XAML に繰り返し処理するためのループを含めることはできません。 (ただし、いくつかの Xamarin.Forms ビジュアルオブジェクト (特に) は、 [`ListView`](xref:Xamarin.Forms.ListView) コレクション内のオブジェクトに基づいて複数の子を生成でき `ItemsSource` ます)。
+- XAML に繰り返し処理するためのループを含めることはできません。 (ただし、いくつかの Xamarin.Forms ビジュアルオブジェクト (特に) は、  [`ListView`](xref:Xamarin.Forms.ListView) コレクション内のオブジェクトに基づいて複数の子を生成でき `ItemsSource` ます)。
 - XAML に条件付き処理を含めることはできません (ただし、データバインディングでは、一部の条件付き処理を効果的に許可するコードベースのバインディングコンバーターを参照できます)。
 - 一般に、パラメーターなしのコンストラクターを定義しないクラスを XAML でインスタンス化することはできません。 (ただし、この制限を回避する方法があります)。
 - XAML は、一般にメソッドを呼び出すことはできません。 (この場合も、この制限が克服される可能性があります)。
@@ -50,19 +50,19 @@ XAML は基本的に XML ですが、XAML にはいくつかの固有の構文�
 - 添付プロパティ
 - マークアップ拡張機能
 
-これらの機能は XML 拡張機能では*ありません*。 XAML は完全に有効な XML です。 ただし、これらの XAML 構文機能では、一意の方法で XML を使用します。 これらの詳細については、以下の記事で詳しく説明します。これについては、MVVM を実装するための XAML の使用の概要について説明します。
+これらの機能は XML 拡張機能では *ありません* 。 XAML は完全に有効な XML です。 ただし、これらの XAML 構文機能では、一意の方法で XML を使用します。 これらの詳細については、以下の記事で詳しく説明します。これについては、MVVM を実装するための XAML の使用の概要について説明します。
 
 ## <a name="requirements"></a>要件
 
-この記事では、に関する知識があることを前提としてい Xamarin.Forms ます。 また、この記事では、xml 名前空間宣言の使用方法、*要素*、*タグ*、*属性*などの xml について理解していることも前提としています。
+この記事では、に関する知識があることを前提としてい Xamarin.Forms ます。 また、この記事では、xml 名前空間宣言の使用方法、 *要素*、 *タグ*、 *属性*などの xml について理解していることも前提としています。
 
-と XML に慣れている場合 Xamarin.Forms は、パート1の読み取りを開始[します。XAML ではじめに](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)します。
+と XML に慣れている場合 Xamarin.Forms は、パート1の読み取りを開始 [します。XAML ではじめに](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)します。
 
 ## <a name="related-links"></a>関連リンク
 
-- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+- [XamlSamples](/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [Mobile Apps book の作成](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)
-- [Xamarin.Forms サンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
+- [Xamarin.Forms サンプル](/samples/browse/?products=xamarin&term=Xamarin.Forms)
 
 ## <a name="related-video"></a>関連ビデオ
 

@@ -10,12 +10,12 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 97c7305e59a023e65535186bbbe39a9c2b7d4c26
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 380c9d5b8159a1a142ebf005955e4345dbc6e6d8
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138997"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562900"
 ---
 # <a name="skiasharp-lines-and-paths"></a>SkiaSharp の線とパス
 
@@ -23,11 +23,11 @@ ms.locfileid: "84138997"
 
 _SkiaSharp を使用して線とグラフィックスパスを描画する_
 
-[前のセクション](~/xamarin-forms/user-interface/graphics/skiasharp/basics/index.md)では、SkiaSharp クラスに、 `SKCanvas` 円、楕円、四角形、角丸四角形、テキスト、ビットマップを描画するためのメソッドがいくつか含まれていることを示しています。 このセクションでは、*グラフィックスパス*の作成とレンダリングに関連するさまざまなクラスについて説明します。
+[前のセクション](~/xamarin-forms/user-interface/graphics/skiasharp/basics/index.md)では、SkiaSharp クラスに、 `SKCanvas` 円、楕円、四角形、角丸四角形、テキスト、ビットマップを描画するためのメソッドがいくつか含まれていることを示しています。 このセクションでは、 *グラフィックスパス*の作成とレンダリングに関連するさまざまなクラスについて説明します。
 
-グラフィックスパスは、SkiaSharp で直線と曲線を描画するための最も一般的なアプローチです。 ここでは、オブジェクトを使用して [`SKPath`](xref:SkiaSharp.SKPath) 直線を描画する方法と、小さな直線のコレクション (*ポリライン*と呼ばれます) を使用して、アルゴリズムを定義できる曲線を描画する方法について説明します。 [**SkiaSharp の曲線とパス**](../curves/index.md)に関する後のセクションでは、でサポートされるさまざまな種類の曲線について説明し `SKPath` ます。
+グラフィックスパスは、SkiaSharp で直線と曲線を描画するための最も一般的なアプローチです。 ここでは、オブジェクトを使用して [`SKPath`](xref:SkiaSharp.SKPath) 直線を描画する方法と、小さな直線のコレクション ( *ポリライン*と呼ばれます) を使用して、アルゴリズムを定義できる曲線を描画する方法について説明します。 [**SkiaSharp の曲線とパス**](../curves/index.md)に関する後のセクションでは、でサポートされるさまざまな種類の曲線について説明し `SKPath` ます。
 
-このセクションのすべてのサンプルプログラムは、 [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラムのホームページの見出し**とパス**、およびそのソリューションの[**paths**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths)フォルダーの下に表示されます。
+このセクションのすべてのサンプルプログラムは、 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラムのホームページの見出し**とパス**、およびそのソリューションの[**paths**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths)フォルダーの下に表示されます。
 
 ## <a name="lines-and-stroke-caps"></a>[線とストローク キャップ](lines.md)
 
@@ -55,5 +55,5 @@ SkiaSharp に点線と破線を描画した複雑な部分をマスターしま�
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

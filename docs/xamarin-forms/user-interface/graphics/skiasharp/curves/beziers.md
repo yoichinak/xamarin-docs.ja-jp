@@ -10,12 +10,12 @@ ms.date: 05/25/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1ad548846500ccbacc2a3d117919bfb4df1a1d79
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 9193cef76a5f474f3681b15a1315e5840b41d88a
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138685"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562978"
 ---
 # <a name="three-types-of-bzier-curves"></a>3 つの種類のベジエ曲線
 
@@ -31,7 +31,7 @@ _SkiaSharp を使用して、3次ベジエ曲線を描画する方法につい�
 
 コンピューターベースのフォントの文字アウトラインは、通常、ベジエ曲線で定義されます。
 
-[**ベジエ曲線**](https://en.wikipedia.org/wiki/B%C3%A9zier_curve)の Wikipedia の記事には、いくつかの便利な背景情報が含まれています。 *ベジエ曲線*という用語は、実際には同様の曲線のファミリを指します。 SkiaSharp*は、* 3 種類のベジエ曲線 (3*種類のベジエ*曲線) をサポート*しています。* 円錐は、*有理数*とも呼ばれます。
+[**ベジエ曲線**](https://en.wikipedia.org/wiki/B%C3%A9zier_curve)の Wikipedia の記事には、いくつかの便利な背景情報が含まれています。 *ベジエ曲線*という用語は、実際には同様の曲線のファミリを指します。 SkiaSharp*は、* 3 種類のベジエ曲線 (3*種類のベジエ*曲線) をサポート*しています。* 円錐は、 *有理数*とも呼ばれます。
 
 ## <a name="the-cubic-bzier-curve"></a>3次ベジエ曲線
 
@@ -54,7 +54,7 @@ public void CubicTo (Single x1, Single y1, Single x2, Single y2, Single x3, Sing
 
 結果の曲線は始点から開始し、終点で終了します。 通常、曲線は2つの制御点を通過しません。代わりに、コントロールポイントはマグネットとよく似ていて、曲線を引きます。
 
-3次ベジエ曲線の感覚を得る最良の方法は実験です。 これは、から派生する [**ベジエ曲線**] ページの目的です `InteractivePage` 。 [**BezierCurvePage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml)ファイルは、とをインスタンス化します `SKCanvasView` `TouchEffect` 。 [**BezierCurvePage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml.cs)分離コードファイルは、コンストラクターに4つのオブジェクトを作成し `TouchPoint` ます。 `PaintSurface`イベントハンドラーは、 `SKPath` 4 つのオブジェクトに基づいてベジエ曲線を描画するを作成し、さらに、 `TouchPoint` コントロールポイントからエンドポイントまでの点線のタンジェント線を描画します。
+3次ベジエ曲線の感覚を得る最良の方法は実験です。 これは、から派生する [ **ベジエ曲線** ] ページの目的です `InteractivePage` 。 [**BezierCurvePage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml)ファイルは、とをインスタンス化します `SKCanvasView` `TouchEffect` 。 [**BezierCurvePage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml.cs)分離コードファイルは、コンストラクターに4つのオブジェクトを作成し `TouchPoint` ます。 `PaintSurface`イベントハンドラーは、 `SKPath` 4 つのオブジェクトに基づいてベジエ曲線を描画するを作成し、さらに、 `TouchPoint` コントロールポイントからエンドポイントまでの点線のタンジェント線を描画します。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -100,7 +100,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 数学的には、曲線は3次多項式になります。 曲線は、最大3点で直線と交差します。 開始点では、曲線は常に始点から最初の制御点までの直線と同じ方向に接しています。 エンドポイントでは、曲線は常に、2番目の制御点から終点までの直線と同じ方向に接しています。
 
-3次ベジエ曲線は、常に4つの点を結ぶ凸状の四角形によって制限されます。 これは、*凸ハル*と呼ばれます。 コントロールポイントが始点と終点の間の直線上にある場合、ベジエ曲線は直線としてレンダリングされます。 3番目のスクリーンショットに示すように、曲線もそれ自体を越えることができます。
+3次ベジエ曲線は、常に4つの点を結ぶ凸状の四角形によって制限されます。 これは、 *凸ハル*と呼ばれます。 コントロールポイントが始点と終点の間の直線上にある場合、ベジエ曲線は直線としてレンダリングされます。 3番目のスクリーンショットに示すように、曲線もそれ自体を越えることができます。
 
 パスの輪郭には、複数の接続された3次ベジエ曲線を含めることができますが、2つの三次ベジエ曲線間の接続は、次の3つの点が同じである (つまり、直線上にある) 場合にのみ、スムーズになります。
 
@@ -110,7 +110,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 [**SVG パスデータ**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md)に関する次の記事では、スムーズに接続されたベジエ曲線の定義を容易にする機能について説明します。
 
-3次ベジエ曲線を描画する、基になるパラメーター式を理解しておくと便利な場合があります。 0から1までの*t*の場合、パラメーター式は次のようになります。
+3次ベジエ曲線を描画する、基になるパラメーター式を理解しておくと便利な場合があります。 0から1までの *t* の場合、パラメーター式は次のようになります。
 
 x (t) = (1 – t) ³ x ₀ + 3t (1 – t) ² x ₁ + 3t ² (1 ~ t) x ₂ + t ³ x ₃
 
@@ -122,21 +122,21 @@ y (t) = (1 – t) ³ y ₀ + 3t (1 – t) ² y ₁ + 3t ² (1 ~ t) y ₂ + t ³ 
 
 ベジエ曲線を使用して円弧を描画すると便利な場合があります。3次ベジエ曲線では、円の弧が非常に大きくなる可能性があります。そのため、4つの接続されたベジエ曲線で円全体を定義できます。 この概数については、25年前に公開された2つの記事で説明されています。
 
-> Tor Dokken は、"*コンピューター支援ジオメトリ設計 7* (1990), 33-41" という、"曲率連続のベジエ曲線による丸の良い近似値" です。
+> Tor Dokken は、" *コンピューター支援ジオメトリ設計 7* (1990), 33-41" という、"曲率連続のベジエ曲線による丸の良い近似値" です。
 
-> Michael Goldapp、"3 次的 Polynomials による円弧の近似値"、"*コンピューター支援型のジオメトリック設計 8* (1991)、227-238。
+> Michael Goldapp、"3 次的 Polynomials による円弧の近似値"、" *コンピューター支援型のジオメトリック設計 8* (1991)、227-238。
 
 次の図は、、、およびというラベルが付いた4つの点を示してい `pto` `pt1` `pt2` `pt3` ます。ベジエ曲線 (赤で示されています) を定義します。
 
 ![ベジエ曲線を持つ円弧の近似値](beziers-images/bezierarc45.png)
 
-開始位置から制御点までの線は、円とベジエ曲線に接し、長さは*L*になっています。上記の最初の記事では、この長さの*L*が次のように計算される場合に、ベジエ曲線が円弧に近似されることを示しています。
+開始位置から制御点までの線は、円とベジエ曲線に接し、長さは *L*になっています。上記の最初の記事では、この長さの *L* が次のように計算される場合に、ベジエ曲線が円弧に近似されることを示しています。
 
 L = 4 × tan (α/4)/3
 
 この図は45度の角度を示しているため、L は0.265 になります。 コードでは、その値に円の必要な半径が乗算されます。
 
-[**ベジエ円弧**] ページを使用すると、ベジエ曲線を定義して実験し、最大180°の角度を円弧に近似できます。 [**BezierCircularArcPage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml)ファイルは、 `SKCanvasView` 角度を選択する `Slider` ためにとをインスタンス化します。 `PaintSurface` [**BezierCircularArgPage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml.cs)分離コードファイルのイベントハンドラーは、変換を使用して、ポイント (0, 0) をキャンバスの中央に設定します。 比較のためにそのポイントの中央に円を描画し、次にベジエ曲線の2つの制御点を計算します。
+[ **ベジエ円弧** ] ページを使用すると、ベジエ曲線を定義して実験し、最大180°の角度を円弧に近似できます。 [**BezierCircularArcPage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml)ファイルは、 `SKCanvasView` 角度を選択する `Slider` ためにとをインスタンス化します。 `PaintSurface` [**BezierCircularArgPage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml.cs)分離コードファイルのイベントハンドラーは、変換を使用して、ポイント (0, 0) をキャンバスの中央に設定します。 比較のためにそのポイントの中央に円を描画し、次にベジエ曲線の2つの制御点を計算します。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -222,7 +222,7 @@ float Magnitude(SKPoint v)
 
 ![ベジエ曲線を使用した四半期の円の近似値](beziers-images/bezierarc90.png)
 
-円の半径が100の場合、 *L*は55であり、覚えやすい数値です。
+円の半径が100の場合、 *L* は55であり、覚えやすい数値です。
 
 **2 乗**は、円と正方形の間の図形をアニメーション化します。 円は、次のように、クラスのこの配列定義の最初の列に座標が表示される4つのベジエ曲線によって近似され [`SquaringTheCirclePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/SquaringTheCirclePage.cs) ます。
 
@@ -249,7 +249,7 @@ public class SquaringTheCirclePage : ContentPage
 }
 ```
 
-2番目の列には、4つのベジエ曲線の座標が含まれています。これは、円の面積とほぼ同じ領域を持つ正方形を定義します。 (特定の円として*正確*な領域を持つ正方形を描画することは、[円を2乗](https://en.wikipedia.org/wiki/Squaring_the_circle)とする従来の解決不可能なジオメトリックの問題です)。ベジエ曲線で正方形をレンダリングする場合、各曲線の2つの制御点は同じであり、始点と終点が線形であるため、ベジエ曲線は直線としてレンダリングされます。
+2番目の列には、4つのベジエ曲線の座標が含まれています。これは、円の面積とほぼ同じ領域を持つ正方形を定義します。 (特定の円として *正確* な領域を持つ正方形を描画することは、 [円を2乗](https://en.wikipedia.org/wiki/Squaring_the_circle)とする従来の解決不可能なジオメトリックの問題です)。ベジエ曲線で正方形をレンダリングする場合、各曲線の2つの制御点は同じであり、始点と終点が線形であるため、ベジエ曲線は直線としてレンダリングされます。
 
 配列の3番目の列は、アニメーションの補間値用です。 このページでは、タイマーを16ミリ秒に設定し、 `PaintSurface` その速度でハンドラーが呼び出されます。
 
@@ -300,7 +300,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 このようなアニメーションは、円弧と直線の両方としてレンダリングするのに十分なアルゴリズムの曲線を使用することはできません。
 
-また、[**ベジエ無限大**] ページでは、ベジエ曲線の機能を利用して円弧を概数化できます。クラスのハンドラーを次に示し `PaintSurface` [`BezierInfinityPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierInfinityPage.cs) ます。
+また、[ **ベジエ無限大** ] ページでは、ベジエ曲線の機能を利用して円弧を概数化できます。クラスのハンドラーを次に示し `PaintSurface` [`BezierInfinityPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierInfinityPage.cs) ます。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -367,7 +367,7 @@ public void QuadTo (Single x1, Single y1, Single x2, Single y2)
 
 メソッドは、現在の位置からへの曲線を、 `point2` `point1` コントロールポイントとしてに追加します。
 
-2次ベジエ曲線は**2 次曲線**ページで試してみることができます。これは、3つのタッチポイントだけがある点を除いて、[**ベジエ曲線**] ページとよく似ています。 `PaintSurface` [**QuadraticCurve.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/QuadraticCurvePage.xaml.cs)分離コードファイルのハンドラーを次に示します。
+2次ベジエ曲線は **2 次曲線** ページで試してみることができます。これは、3つのタッチポイントだけがある点を除いて、[ **ベジエ曲線** ] ページとよく似ています。 `PaintSurface` [**QuadraticCurve.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/QuadraticCurvePage.xaml.cs)分離コードファイルのハンドラーを次に示します。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -418,9 +418,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ## <a name="the-conic-bzier-curve"></a>円錐ベジエ曲線
 
-円錐ベジエ曲線は、 &mdash; 2 次ベジエ曲線とも呼ばれて &mdash; いますが、ベジエ曲線のファミリには比較的最近の追加があります。 2次ベジエ曲線と同様、有理数の2次ベジエ曲線には、始点、終点、および1つのコントロールポイントが含まれます。 ただし、有理数の2次ベジエ曲線にも*重み*値が必要です。 パラメーター式には比率が含まれているため、これは*有理数*の2次式と呼ばれます。
+円錐ベジエ曲線は、 &mdash; 2 次ベジエ曲線とも呼ばれて &mdash; いますが、ベジエ曲線のファミリには比較的最近の追加があります。 2次ベジエ曲線と同様、有理数の2次ベジエ曲線には、始点、終点、および1つのコントロールポイントが含まれます。 ただし、有理数の2次ベジエ曲線にも *重み* 値が必要です。 パラメーター式には比率が含まれているため、これは *有理数* の2次式と呼ばれます。
 
-X と Y のパラメーター式は、同じ分母を共有する比率です。 次に示すのは、0から1までの*t*の分母と*w*の重み値の式です。
+X と Y のパラメーター式は、同じ分母を共有する比率です。 次に示すのは、0から1までの *t* の分母と *w*の重み値の式です。
 
 d (t) = (1 – t) ² + 2wt (1 ~ t) + t ²
 
@@ -432,7 +432,7 @@ x (t) = ((1 – t) ² x ₀ + 2wt (1 – t) x ₁ + t ² x ₂) ÷ d (t)
 
 y (t) = ((1 – t) ² y ₀ + 2wt (1 – t) y ₁ + t ² y ₂)) ÷ d (t)
 
-合理的な2次ベジエ曲線は*conics*とも呼ばれ &mdash; ます。これは、放物線、楕円、および円として、すべての円錐セクションのセグメントを正確に表すことができるためです。
+合理的な2次ベジエ曲線は *conics* とも呼ばれ &mdash; ます。これは、放物線、楕円、および円として、すべての円錐セクションのセグメントを正確に表すことができるためです。
 
 有理数の2次ベジエ曲線をパスに追加するには、メソッドまたはオーバーロードを使用して、 [`ConicTo`](xref:SkiaSharp.SKPath.ConicTo(SkiaSharp.SKPoint,SkiaSharp.SKPoint,System.Single)) [`ConicTo`](xref:SkiaSharp.SKPath.ConicTo(System.Single,System.Single,System.Single,System.Single,System.Single)) と座標を分け `x` `y` ます。
 
@@ -444,7 +444,7 @@ public void ConicTo (Single x1, Single y1, Single x2, Single y2, Single weight)
 
 最後のパラメーターに注意して `weight` ください。
 
-[**円錐曲線**] ページでは、これらの曲線を試すことができます。 `ConicCurvePage` クラスは、`InteractivePage` から派生したものです。 [**Coniccurvepage. .xaml**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml)ファイルは、をインスタンス化して、 `Slider` -2 ~ 2 の重み値を選択します。 [**ConicCurvePage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml.cs)分離コードファイルは3つの `TouchPoint` オブジェクトを作成し `PaintSurface` ます。このハンドラーは、結果の曲線を制御ポイントに接し線でレンダリングします。
+[ **円錐曲線** ] ページでは、これらの曲線を試すことができます。 `ConicCurvePage` クラスは、`InteractivePage` から派生したものです。 [**Coniccurvepage. .xaml**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml)ファイルは、をインスタンス化して、 `Slider` -2 ~ 2 の重み値を選択します。 [**ConicCurvePage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml.cs)分離コードファイルは3つの `TouchPoint` オブジェクトを作成し `PaintSurface` ます。このハンドラーは、結果の曲線を制御ポイントに接し線でレンダリングします。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -490,7 +490,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ご覧のように、コントロールポイントは、重みが高くなると、曲線をさらに大きくするように見えます。 重みが0の場合、曲線は始点から終点までの直線になります。
 
-理論的には、負の重みが許容され、曲線が制御ポイントから*離れる*ようになります。 ただし、-1 以下の重みを指定すると、パラメーター式の分母が*t*の特定の値に対して負になります。 このような理由から、メソッドで負の重みが無視される場合があり `ConicTo` ます。 **円錐曲線**プログラムを使用すると、負の重みを設定できます。ただし、実験によって表示されるように、負の重みは重み付けが0の場合と同じ効果を持ち、直線がレンダリングされます。
+理論的には、負の重みが許容され、曲線が制御ポイントから *離れる* ようになります。 ただし、-1 以下の重みを指定すると、パラメーター式の分母が *t*の特定の値に対して負になります。 このような理由から、メソッドで負の重みが無視される場合があり `ConicTo` ます。 **円錐曲線**プログラムを使用すると、負の重みを設定できます。ただし、実験によって表示されるように、負の重みは重み付けが0の場合と同じ効果を持ち、直線がレンダリングされます。
 
 メソッドを使用して、 `ConicTo` 半円を最大 (またはそれを除く) まで円弧を描画するために、制御点とウェイトを簡単に派生させることができます。 次の図では、始点と終点の接線線が制御ポイントで一致しています。
 
@@ -498,7 +498,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 三角を使用すると、円の中心から制御ポイントまでの距離を調べることができます。これは、円の半径を角度αのコサインで割った値です。 始点と終点の間に円弧を描画するには、その重みを角度の半分の同じコサインに設定します。 角度が180°の場合、接線は満たされず、weight はゼロになります。 しかし、180°未満の角度では、数値演算は正常に機能します。
 
-この例では、**円錐の円弧**ページが示されています。 [**ConicCircularArc**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml)ファイルは、 `Slider` 角度を選択するためのをインスタンス化します。 `PaintSurface` [**ConicCircularArc.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml.cs)分離コードファイルのハンドラーは、制御点と重みを計算します。
+この例では、 **円錐の円弧** ページが示されています。 [**ConicCircularArc**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml)ファイルは、 `Slider` 角度を選択するためのをインスタンス化します。 `PaintSurface` [**ConicCircularArc.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml.cs)分離コードファイルのハンドラーは、制御点と重みを計算します。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -558,5 +558,5 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -10,12 +10,12 @@ ms.date: 02/09/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0c1ae9e05b6671d45d8df485a89cfc0dea86632d
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 3df3a606c54d7367079638d48330dfe1b214043b
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937307"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563186"
 ---
 # <a name="pixels-and-device-independent-units"></a>ピクセル、およびデバイスに依存しない単位
 
@@ -29,9 +29,9 @@ _SkiaSharp の座標と座標の違いを調べる Xamarin.Forms_
 
 しばらくの間にプログラミングしている場合は Xamarin.Forms 、座標とサイズの感覚がある可能性があり Xamarin.Forms ます。 前の2つの記事で描画した円は、少し小さいように見えます。
 
-これらの円*は*、サイズと比較して小さく Xamarin.Forms なります。 既定では、SkiaSharp は、 Xamarin.Forms 基になるプラットフォームによって確立されたデバイスに依存しない単位に基づいて座標とサイズをピクセル単位で描画します。 (座標系の詳細については、「 Xamarin.Forms 5 章」を参照[してください。](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter05.md)*を使用して Mobile Apps Xamarin.Forms を作成する*本のサイズを処理します)。
+これらの円 *は* 、サイズと比較して小さく Xamarin.Forms なります。 既定では、SkiaSharp は、 Xamarin.Forms 基になるプラットフォームによって確立されたデバイスに依存しない単位に基づいて座標とサイズをピクセル単位で描画します。 (座標系の詳細については、「 Xamarin.Forms 5 章」を参照[してください。](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter05.md)*を使用して Mobile Apps Xamarin.Forms を作成する*本のサイズを処理します)。
 
-[**SkewSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラムで使用されている**画面サイズ**のページでは、SkiaSharp テキスト出力を使用して、3つの異なるソースからのディスプレイ画面のサイズを示しています。
+[**SkewSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラムで使用されている**画面サイズ**のページでは、SkiaSharp テキスト出力を使用して、3つの異なるソースからのディスプレイ画面のサイズを示しています。
 
 - Xamarin.Forms [`Width`](xref:Xamarin.Forms.VisualElement.Width) [`Height`](xref:Xamarin.Forms.VisualElement.Height) オブジェクトの通常のプロパティとプロパティ `SKCanvasView` 。
 - [`CanvasSize`](xref:SkiaSharp.Views.Forms.SKCanvasView.CanvasSize)オブジェクトのプロパティ `SKCanvasView` です。
@@ -52,13 +52,13 @@ public SurfaceSizePage()
 }
 ```
 
-`SKCanvas`には6つの異なるメソッドが含まれてい `DrawText` ますが、この [`DrawText`](xref:SkiaSharp.SKCanvas.DrawText(System.String,System.Single,System.Single,SkiaSharp.SKPaint)) 方法が最も簡単です。
+`SKCanvas` には6つの異なるメソッドが含まれてい `DrawText` ますが、この [`DrawText`](xref:SkiaSharp.SKCanvas.DrawText(System.String,System.Single,System.Single,SkiaSharp.SKPaint)) 方法が最も簡単です。
 
 ```csharp
 public void DrawText (String text, Single x, Single y, SKPaint paint)
 ```
 
-テキスト文字列、テキストの開始位置を示す X 座標と Y 座標、およびオブジェクトを指定し `SKPaint` ます。 X 座標は、テキストの左側が配置される場所を指定します。ただし、Y 座標はテキストの*ベースライン*の位置を指定します。 手書きの用紙を手に入れた場合、ベースラインは文字が置かれている行であり、ディセンダー (g、p、q、および y の文字など) が降下します。
+テキスト文字列、テキストの開始位置を示す X 座標と Y 座標、およびオブジェクトを指定し `SKPaint` ます。 X 座標は、テキストの左側が配置される場所を指定します。ただし、Y 座標はテキストの *ベースライン* の位置を指定します。 手書きの用紙を手に入れた場合、ベースラインは文字が置かれている行であり、ディセンダー (g、p、q、および y の文字など) が降下します。
 
 オブジェクトを使用すると、 `SKPaint` テキスト、フォントファミリ、およびテキストサイズの色を指定できます。 既定では、この [`TextSize`](xref:SkiaSharp.SKPaint.TextSize) プロパティの値は12であるため、電話などの高解像度のデバイスではテキストがわずかになります。 最も単純なアプリケーションであれば、表示するテキストのサイズに関する情報も必要になります。 クラスでは、 `SKPaint` [`FontMetrics`](xref:SkiaSharp.SKPaint.FontMetrics) プロパティといくつかのメソッドが定義されて [`MeasureText`](xref:SkiaSharp.SKPaint.MeasureText(System.String)) いますが、あまり凝っていない場合は、プロパティによって、 [`FontSpacing`](xref:SkiaSharp.SKPaint.FontSpacing) 連続するテキスト行に対して推奨される値が提供されます。
 
@@ -114,7 +114,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 同じイメージの解像度を維持するには、2つの座標系の間で変換するための単純な関数を作成する方が適しています。
 
-`DrawCircle`では、メソッドに加え `SKCanvas` て、楕円を描画する2つのメソッドも定義されて `DrawOval` います。 楕円は、1つの半径ではなく2つの半径によって定義されます。 これらは、*主要半径*と*補助半径*と呼ばれます。 この `DrawOval` メソッドは、X 軸と Y 軸に平行する2つの半径を持つ楕円を描画します。 (X 軸と Y 軸に平行になっていない軸を持つ楕円を描画する必要がある場合は、「[**円弧を描画する3つの方法**](../curves/arcs.md)」の記事で説明されているように、[**回転変換**](../transforms/rotate.md)またはグラフィックスパスに関する記事で説明されている回転変換を使用できます)。 このメソッドのオーバーロード [`DrawOval`](xref:SkiaSharp.SKCanvas.DrawOval(System.Single,System.Single,System.Single,System.Single,SkiaSharp.SKPaint)) は、2つの半径のパラメーターに名前を `rx` 指定し、 `ry` それらが X 軸と Y 軸に対して平行であることを示します。
+`DrawCircle`では、メソッドに加え `SKCanvas` て、楕円を描画する2つのメソッドも定義されて `DrawOval` います。 楕円は、1つの半径ではなく2つの半径によって定義されます。 これらは、 *主要半径* と *補助半径*と呼ばれます。 この `DrawOval` メソッドは、X 軸と Y 軸に平行する2つの半径を持つ楕円を描画します。 (X 軸と Y 軸に平行になっていない軸を持つ楕円を描画する必要がある場合は、「[**円弧を描画する3つの方法**](../curves/arcs.md)」の記事で説明されているように、[**回転変換**](../transforms/rotate.md)またはグラフィックスパスに関する記事で説明されている回転変換を使用できます)。 このメソッドのオーバーロード [`DrawOval`](xref:SkiaSharp.SKCanvas.DrawOval(System.Single,System.Single,System.Single,System.Single,SkiaSharp.SKPaint)) は、2つの半径のパラメーターに名前を `rx` 指定し、 `ry` それらが X 軸と Y 軸に対して平行であることを示します。
 
 ```csharp
 public void DrawOval (Single cx, Single cy, Single rx, Single ry, SKPaint paint)
@@ -149,7 +149,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 [![[画面サイズ] ページのトリプルスクリーンショット](pixels-images/ellipsefill-small.png)](pixels-images/ellipsefill-large.png#lightbox "[画面サイズ] ページのトリプルスクリーンショット")
 
-もう1つのメソッドには、 [`DrawOval`](xref:SkiaSharp.SKCanvas.DrawOval(SkiaSharp.SKRect,SkiaSharp.SKPaint)) 引数があります [`SKRect`](xref:SkiaSharp.SKRect) 。これは、左上隅と右下隅の X 座標と Y 座標の観点で定義された四角形です。 楕円はその四角形を塗りつぶします。これは、次のように楕円の**塗りつぶし**ページで使用できることを示しています。
+もう1つのメソッドには、 [`DrawOval`](xref:SkiaSharp.SKCanvas.DrawOval(SkiaSharp.SKRect,SkiaSharp.SKPaint)) 引数があります [`SKRect`](xref:SkiaSharp.SKRect) 。これは、左上隅と右下隅の X 座標と Y 座標の観点で定義された四角形です。 楕円はその四角形を塗りつぶします。これは、次のように楕円の **塗りつぶし** ページで使用できることを示しています。
 
 ```csharp
 SKRect rect = new SKRect(0, 0, info.Width, info.Height);
@@ -168,5 +168,5 @@ canvas.DrawOval(rect, paint);
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
