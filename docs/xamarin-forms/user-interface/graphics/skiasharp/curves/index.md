@@ -10,12 +10,12 @@ ms.date: 05/24/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7d5a4fc818cef77671b6cabddc56de8234cb858d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: f783dcc9d0070e8e816f378d261191444822841b
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127804"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561951"
 ---
 # <a name="skiasharp-curves-and-paths"></a>SkiaSharp の曲線とパス
 
@@ -25,7 +25,7 @@ _SkiaSharp を使用して曲線を描画し、パス機能を使用する方法
 
 [`SKPath`](xref:SkiaSharp.SKPath)メソッドとプロパティの探索は、SkiaSharp の[**行とパス**](../paths/index.md)に関する記事で開始しました。 この記事では、オブジェクトに曲線を追加 `SKPath` し、その他の強力なパス機能を利用するメソッドについて説明します。 簡潔なテキスト文字列でパス全体を指定する方法、パスの効果を使用する方法、およびパスの内部を掘り下げる方法について説明します。
 
-このセクションのすべてのサンプルプログラムは、 [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラムの [ **SkiaSharp の曲線とパス**] ページと、ソリューションの [[**曲線**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves)] フォルダーにあります。
+このセクションのすべてのサンプルプログラムは、 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラムの [ **SkiaSharp の曲線とパス**] ページと、ソリューションの [[**曲線**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves)] フォルダーにあります。
 
 ## <a name="three-ways-to-draw-an-arc"></a>[円弧を描画する 3 つの方法](arcs.md)
 
@@ -57,5 +57,5 @@ SkiaSharp を使用して、3次ベジエ曲線を描画する方法について
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 88761472c4beae3f40f2ca6852eea4db8276c4c9
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 162683c4fabb0a8b6deed1fb30bd7a7dece1f597
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86930682"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562289"
 ---
 # <a name="large-page-titles-on-ios"></a>IOS 上の大きなページタイトル
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 Ios 11 以上を使用するデバイスでは、この iOS プラットフォーム固有のを使用して、のナビゲーションバーにページタイトルを大きなタイトルとして表示し [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) ます。 大きなタイトルが左揃えになり、大きなフォントが使用され、ユーザーがコンテンツのスクロールを開始したときに標準のタイトルに移行して、画面の実際の使用量が効率的に使用されるようにします。 ただし、横方向では、タイトルはナビゲーションバーの中央に戻り、コンテンツレイアウトを最適化します。 添付プロパティを値に設定することにより、XAML で使用 `NavigationPage.PrefersLargeTitles` され `boolean` ます。
 
@@ -77,9 +77,9 @@ public class iOSLargeTitlePageCS : ContentPage
 
 メソッドは、 `Page.On<iOS>` このプラットフォーム固有のが iOS 上でのみ実行されることを指定します。 `Page.SetLargeTitleDisplay`名前空間のメソッドは、 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) の大規模なタイトルの動作を制御し [`Page`](xref:Xamarin.Forms.Page) `LargeTitleDisplayMode` ます。列挙体では、次の3つの値を指定できます。
 
-- `Always`–ナビゲーションバーとフォントサイズが大きい形式を使用するように強制します。
-- `Automatic`–ナビゲーションスタックの前の項目と同じスタイル (large または small) を使用します。
-- `Never`–標準の小さい形式のナビゲーションバーを強制的に使用します。
+- `Always` –ナビゲーションバーとフォントサイズが大きい形式を使用するように強制します。
+- `Automatic` –ナビゲーションスタックの前の項目と同じスタイル (large または small) を使用します。
+- `Never` –標準の小さい形式のナビゲーションバーを強制的に使用します。
 
 また、メソッドを `SetLargeTitleDisplay` 使用して、現在のを返すメソッドを呼び出すことにより、列挙値を切り替えることもでき `LargeTitleDisplay` `LargeTitleDisplayMode` ます。
 
@@ -104,6 +104,6 @@ switch (On<iOS>().LargeTitleDisplay())
 
 ## <a name="related-links"></a>関連リンク
 
-- [PlatformSpecifics (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [プラットフォーム固有設定の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific の API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

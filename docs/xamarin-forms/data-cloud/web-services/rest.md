@@ -10,12 +10,12 @@ ms.date: 05/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 972a5ac99ff775ea7301f803c333d8239ae7f193
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 6af0641fe1f8f9be772b25c26825232b6bdba9b7
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938191"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562380"
 ---
 # <a name="consume-a-restful-web-service"></a>RESTful Web サービスを使用する
 
@@ -37,7 +37,7 @@ REST に準拠する Web サービス Api は RESTful Api と呼ばれ、次の�
 - GET、POST、PUT、PATCH、DELETE などの HTTP メソッド。
 - データのメディアの種類 (JavaScript Object Notation (JSON) など)。
 
-RESTful web サービスは通常、JSON メッセージを使用して、クライアントにデータを返します。 JSON は、コンパクトなペイロードを生成するテキストベースのデータ交換形式であり、データの送信時に帯域幅の要件が少なくなります。 このサンプルアプリケーションでは、オープンソースの[Newtonsoft JSON.NET ライブラリ](https://www.newtonsoft.com/json)を使用してメッセージをシリアル化および逆シリアル化します。
+RESTful web サービスは通常、JSON メッセージを使用して、クライアントにデータを返します。 JSON は、コンパクトなペイロードを生成するテキストベースのデータ交換形式であり、データの送信時に帯域幅の要件が少なくなります。 このサンプルアプリケーションでは、オープンソースの [Newtonsoft JSON.NET ライブラリ](https://www.newtonsoft.com/json) を使用してメッセージをシリアル化および逆シリアル化します。
 
 REST の簡潔さは、モバイルアプリケーションで web サービスにアクセスするための主要な方法として役立ちました。
 
@@ -48,7 +48,7 @@ REST の簡潔さは、モバイルアプリケーションで web サービス�
 > [!NOTE]
 > IOS 9 以降では、アプリトランスポートセキュリティ (ATS) によって、インターネットリソース (アプリのバックエンドサーバーなど) とアプリの間にセキュリティで保護された接続が適用されるため、機密情報が誤って開示されるのを防ぐことができます。 IOS 9 用に構築されたアプリでは、ATS が既定で有効になっているため、すべての接続は、ATS のセキュリティ要件の対象となります。 接続がこれらの要件を満たしていない場合、例外が発生して失敗します。
 >
->インターネットリソースに対して**HTTPS**プロトコルとセキュリティで保護された通信を使用できない場合は、ATS をオプトアウトできます。 これは、アプリの**情報**ファイルを更新することで実現できます。 詳細については、「[アプリトランスポートセキュリティ](~/ios/app-fundamentals/ats.md)」を参照してください。
+>インターネットリソースに対して **HTTPS** プロトコルとセキュリティで保護された通信を使用できない場合は、ATS をオプトアウトできます。 これは、アプリの **情報** ファイルを更新することで実現できます。 詳細については、「 [アプリトランスポートセキュリティ](~/ios/app-fundamentals/ats.md)」を参照してください。
 
 ## <a name="consuming-the-web-service"></a>Web サービスを使用する
 
@@ -61,7 +61,7 @@ REST サービスは ASP.NET Core を使用して記述され、次の操作を�
 |To Do アイテムの更新|PUT|/api/todoitems/|JSON 形式の TodoItem|
 |To Do アイテムの削除|DELETE|/api/todoitems/{id}|
 
-Uri の大部分には、 `TodoItem` パス内の ID が含まれます。 たとえば、ID がであるを削除するために、 `TodoItem` `6bb8a868-dba1-4f1a-93b7-24ebce87e243` クライアントはに delete 要求を送信し `http://hostname/api/todoitems/6bb8a868-dba1-4f1a-93b7-24ebce87e243` ます。 サンプルアプリケーションで使用されるデータモデルの詳細については、「[データのモデリング](~/xamarin-forms/data-cloud/web-services/introduction.md)」を参照してください。
+Uri の大部分には、 `TodoItem` パス内の ID が含まれます。 たとえば、ID がであるを削除するために、 `TodoItem` `6bb8a868-dba1-4f1a-93b7-24ebce87e243` クライアントはに delete 要求を送信し `http://hostname/api/todoitems/6bb8a868-dba1-4f1a-93b7-24ebce87e243` ます。 サンプルアプリケーションで使用されるデータモデルの詳細については、「 [データのモデリング](~/xamarin-forms/data-cloud/web-services/introduction.md)」を参照してください。
 
 Web API フレームワークは、要求を受信すると、要求をアクションにルーティングします。 これらのアクションは、単にクラスのパブリックメソッドです `TodoItemsController` 。 フレームワークは、ルーティングテーブルを使用して、次のコード例に示すように、要求に応じて呼び出すアクションを決定します。
 
@@ -79,7 +79,7 @@ config.Routes.MapHttpRoute(
 - アクションを検索するために、Web API は HTTP メソッドを参照し、属性と同じ HTTP メソッドで修飾されたコントローラーアクションを調べます。
 - *{Id}* プレースホルダー変数がアクションパラメーターにマップされています。
 
-REST サービスは基本認証を使用します。 詳細について[は、「RESTful web サービスの認証](~/xamarin-forms/data-cloud/authentication/rest.md)」を参照してください。 ASP.NET Web API ルーティングの詳細については、ASP.NET web サイトの「[ルーティング」 ASP.NET Web API](https://www.asp.net/web-api/overview/web-api-routing-and-actions/routing-in-aspnet-web-api)を参照してください。 ASP.NET Core を使用した REST サービスの構築の詳細については、「[ネイティブモバイルアプリケーションのバックエンドサービスの作成](/aspnet/core/mobile/native-mobile-backend/)」を参照してください。
+REST サービスは基本認証を使用します。 詳細について [は、「RESTful web サービスの認証](~/xamarin-forms/data-cloud/authentication/rest.md)」を参照してください。 ASP.NET Web API ルーティングの詳細については、ASP.NET web サイトの「 [ルーティング」 ASP.NET Web API](https://www.asp.net/web-api/overview/web-api-routing-and-actions/routing-in-aspnet-web-api) を参照してください。 ASP.NET Core を使用した REST サービスの構築の詳細については、「 [ネイティブモバイルアプリケーションのバックエンドサービスの作成](/aspnet/core/mobile/native-mobile-backend/)」を参照してください。
 
 クラスは、 `HttpClient` HTTP を介して要求を送受信するために使用されます。 HTTP 要求を送信し、URI で識別されるリソースから HTTP 応答を受信するための機能を提供します。 各要求は、非同期操作として送信されます。 非同期操作の詳細については、「 [Async Support の概要](~/cross-platform/platform/async.md)」を参照してください。
 
@@ -214,5 +214,5 @@ REST サービスは、http `HttpResponseMessage.IsSuccessStatusCode` 要求が�
 ## <a name="related-links"></a>関連リンク
 
 - [ネイティブモバイルアプリケーションのバックエンドサービスの作成](/aspnet/core/mobile/native-mobile-backend/)
-- [TodoREST (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
-- [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx)
+- [TodoREST (サンプル)](/samples/xamarin/xamarin-forms-samples/webservices-todorest)
+- [HttpClient](/dotnet/api/system.net.http.httpclient)

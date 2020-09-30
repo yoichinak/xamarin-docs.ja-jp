@@ -10,12 +10,12 @@ ms.date: 04/14/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 855fde62483dcbc6f8769e7a8eb66d84aadfe1da
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 9bb2720d60f62c0bac6ab30007e226c362d1c5cd
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86934980"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563875"
 ---
 # <a name="3d-rotations-in-skiasharp"></a>SkiaSharp の3D 回転
 
@@ -117,7 +117,7 @@ Z 軸を中心とする回転は、2D グラフィックスの場合と同じで
 
 回転の方向は、座標系のきき手によって暗黙的に示されます。 これは左手座標系です。そのため、特定の軸の回転を左右するように左側のつまみをポイントし、Y 軸を中心に回転する場合は下向き、Z 軸を中心に回転する場合は、正の角度の回転の方向を示すことになります。
 
-`SKMatrix44`には、 [`CreateRotation`](xref:SkiaSharp.SKMatrix44.CreateRotation(System.Single,System.Single,System.Single,System.Single)) [`CreateRotationDegrees`](xref:SkiaSharp.SKMatrix44.CreateRotationDegrees(System.Single,System.Single,System.Single,System.Single)) 回転の中心となる軸を指定できる一般化された静的メソッドとメソッドがあります。
+`SKMatrix44` には、 [`CreateRotation`](xref:SkiaSharp.SKMatrix44.CreateRotation(System.Single,System.Single,System.Single,System.Single)) [`CreateRotationDegrees`](xref:SkiaSharp.SKMatrix44.CreateRotationDegrees(System.Single,System.Single,System.Single,System.Single)) 回転の中心となる軸を指定できる一般化された静的メソッドとメソッドがあります。
 
 ```csharp
 public static SKMatrix44 CreateRotationDegrees (Single x, Single y, Single z, Single degrees)
@@ -180,11 +180,11 @@ w ' = M14 · x + M24 · y + M44
 
 `y" = y' / w'`
 
-これは、4×4行列の3番目の行*と*3 番目の列を無視できることを意味します。
+これは、4×4行列の3番目の行 *と* 3 番目の列を無視できることを意味します。
 
 ただし、そのような場合は、最初に4×4のマトリックスが必要なのはなぜですか。
 
-4×4の3番目の行と3番目の列は2次元の変換には関係あり*ませ*んが、3番目の行と列は、さまざまな値が乗算される前にロールを果たし `SKMatrix44` ます。 たとえば、Y 軸を中心とした回転を透視線変換で乗算するとします。
+4×4の3番目の行と3番目の列は2次元の変換には関係あり *ませ* んが、3番目の行と列は、さまざまな値が乗算される前にロールを果たし `SKMatrix44` ます。 たとえば、Y 軸を中心とした回転を透視線変換で乗算するとします。
 
 <pre>
 |  cos(α)  0  –sin(α)  0  |   |  1  0  0      0     |   |  cos(α)  0  –sin(α)   sin(α)/depth  |
@@ -540,5 +540,5 @@ public class AnimatedRotation3DPage : ContentPage
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

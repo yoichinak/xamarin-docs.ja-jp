@@ -10,12 +10,12 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a98c7210f2e71f6f26d53da3555f3f9b5e016952
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 032a01a1e4e0f2b3e3d394aec6a30bd215fd84f8
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86935981"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562419"
 ---
 # <a name="integrating-text-and-graphics"></a>テキストとグラフィックスの統合
 
@@ -29,7 +29,7 @@ _テキストを SkiaSharp グラフィックスと統合するために表示�
 
 このイメージには、角丸四角形も含まれます。 SkiaSharp クラスには、四角形を描画し、 `Canvas` [`DrawRect`](xref:SkiaSharp.SKCanvas.DrawRect*) [`DrawRoundRect`](xref:SkiaSharp.SKCanvas.DrawRoundRect*) 角が丸い四角形を描画するメソッドが含まれています。 これらのメソッドを使用すると、四角形を値として、 `SKRect` またはその他の方法で定義できます。
 
-[フレーム**テキスト**] ページでは、ページに短いテキスト文字列が中央揃えで表示され、角丸四角形のペアで構成されるフレームで囲まれます。 クラスは、 [`FramedTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/FramedTextPage.cs) その方法を示しています。
+[フレーム **テキスト** ] ページでは、ページに短いテキスト文字列が中央揃えで表示され、角丸四角形のペアで構成されるフレームで囲まれます。 クラスは、 [`FramedTextPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/FramedTextPage.cs) その方法を示しています。
 
 SkiaSharp では、クラスを使用して `SKPaint` テキストとフォントの属性を設定しますが、テキストの表示サイズを取得することもできます。 次のイベントハンドラーの先頭は、 `PaintSurface` 2 つの異なるメソッドを呼び出し `MeasureText` ます。 最初の [`MeasureText`](xref:SkiaSharp.SKPaint.MeasureText(System.String)) 呼び出しには単純な引数があり、 `string` 現在のフォント属性に基づいて、テキストのピクセル幅が返されます。 次に、レンダリングされ `TextSize` `SKPaint` た幅、現在の `TextSize` プロパティ、および表示領域の幅に基づいて、オブジェクトの新しいプロパティを計算します。 この計算は、 `TextSize` テキスト文字列が画面の幅の90% で表示されるように設定することを目的としています。
 
@@ -65,10 +65,10 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 `Left` `Top` 構造体のプロパティとプロパティは、 `SKRect` テキストが `DrawText` X および Y 位置が0の呼び出しによって表示される場合に、表示されるテキストの左上隅の座標を示します。 たとえば、このプログラムが iPhone 7 シミュレーターで実行されている場合、の `TextSize` 最初の呼び出しに続く計算の結果、には値90.6254 が割り当てられ `MeasureText` ます。 の `SKRect` 2 回目の呼び出しから取得された値に `MeasureText` は、次のプロパティ値があります。
 
-- `Left`= 6
+- `Left` = 6
 - `Top` = &ndash;68
-- `Width`= 664.8214
-- `Height`= 88;
+- `Width` = 664.8214
+- `Height` = 88;
 
 メソッドに渡す X 座標と Y 座標は、 `DrawText` ベースラインでのテキストの左側を指定することに注意してください。 `Top`88 この値は、テキストがそのベースラインの上の68ピクセルまで拡張されていることを示します。また、ベースラインの下の20ピクセル下に68を引いたです。 `Left`値6は、呼び出しの X 値の右側にある6ピクセルのテキストを開始することを示し `DrawText` ます。 これにより、通常の文字間隔を使用できます。 ディスプレイの左上隅にテキストを表示する場合は、これらの `Left` 値と値の負の `Top` 値をの X 座標と Y 座標として渡し `DrawText` ます (この例では &ndash; 6 と 68)。
 
@@ -136,7 +136,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 [![アウトライン表示されたテキストページのトリプルスクリーンショット](text-images/outlinedtext-small.png)](text-images/outlinedtext-large.png#lightbox "アウトライン表示されたテキストページのトリプルスクリーンショット")
 
-これを実現するには、 `Style` オブジェクトの通常のプロパティを `SKPaint` の既定の設定から `SKPaintStyle.Fill` に変更し、ストロークの幅を指定し `SKPaintStyle.Stroke` ます。 アウトライン表示された `PaintSurface` **テキスト**ページのハンドラーは、その方法を示しています。
+これを実現するには、 `Style` オブジェクトの通常のプロパティを `SKPaint` の既定の設定から `SKPaintStyle.Fill` に変更し、ストロークの幅を指定し `SKPaintStyle.Stroke` ます。 アウトライン表示された `PaintSurface` **テキスト** ページのハンドラーは、その方法を示しています。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -179,5 +179,5 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

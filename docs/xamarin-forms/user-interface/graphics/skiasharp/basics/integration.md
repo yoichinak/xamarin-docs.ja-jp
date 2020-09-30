@@ -1,5 +1,5 @@
 ---
-title: との統合Xamarin.Forms
+title: との統合 Xamarin.Forms
 description: この記事では、タッチ要素と要素に応答する SkiaSharp グラフィックスを作成する方法について説明 Xamarin.Forms し、サンプルコードを使用してこれを示します。
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
@@ -10,14 +10,14 @@ ms.date: 02/09/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 60f53fb00786b183f36f7cfefa6af9062bb682db
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: cca93508e022420e0d5d11de079420b367188052
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938165"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562250"
 ---
-# <a name="integrating-with-xamarinforms"></a>との統合Xamarin.Forms
+# <a name="integrating-with-no-locxamarinforms"></a>との統合 Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
@@ -28,9 +28,9 @@ SkiaSharp グラフィックスは、いくつかの方法で、の残りの部�
 ![スライダーを使用して色を選択する](integration-images/integrationexample.png)
 
 で対話型の SkiaSharp グラフィックスを作成するもう1つの方法は、タッチを使用すること Xamarin.Forms です。
-[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラムの2番目のページには、[**塗りつぶし**の設定/解除] があります。 この例では、塗りつぶしのない2つの方法で、 &mdash; &mdash; タップによって塗りつぶしが切り替わります。 クラスは、 [`TapToggleFillPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs) ユーザー入力に応じて SkiaSharp グラフィックスを変更する方法を示しています。
+[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラムの2番目のページには、[**塗りつぶし**の設定/解除] があります。 この例では、塗りつぶしのない2つの方法で、 &mdash; &mdash; タップによって塗りつぶしが切り替わります。 クラスは、 [`TapToggleFillPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml.cs) ユーザー入力に応じて SkiaSharp グラフィックスを変更する方法を示しています。
 
-このページでは、 `SKCanvasView` クラスは[TapToggleFill](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml)ファイルでインスタンス化されます。このファイルは Xamarin.Forms ビューにもを設定します [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) 。
+このページでは、 `SKCanvasView` クラスは [TapToggleFill](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/TapToggleFillPage.xaml) ファイルでインスタンス化されます。このファイルは Xamarin.Forms ビューにもを設定します [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) 。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -91,7 +91,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 `StrokeWidth`差分を強調するには、プロパティが50に設定されています。 線の幅全体を表示するには、最初に内部を描き、次にアウトラインを描画します。 既定では、イベントハンドラーの後の方で描画されるグラフィックスの数値は、ハンドラーの前に描画された `PaintSurface` ものに見えません。
 
-[**カラー探索**] ページでは、SkiaSharp グラフィックスを他の要素と統合する方法についても説明 Xamarin.Forms します。また、SkiaSharp で色を定義するための2つの代替方法の違いについても説明します。 静的メソッドは、 [`SKColor.FromHsl`](xref:SkiaSharp.SKColor.FromHsl(System.Single,System.Single,System.Single,System.Byte)) `SKColor` 色合いと鮮やかさの輝度モデルに基づいて値を作成します。
+[ **カラー探索** ] ページでは、SkiaSharp グラフィックスを他の要素と統合する方法についても説明 Xamarin.Forms します。また、SkiaSharp で色を定義するための2つの代替方法の違いについても説明します。 静的メソッドは、 [`SKColor.FromHsl`](xref:SkiaSharp.SKColor.FromHsl(System.Single,System.Single,System.Single,System.Byte)) `SKColor` 色合いと鮮やかさの輝度モデルに基づいて値を作成します。
 
 ```csharp
 public static SKColor FromHsl (Single h, Single s, Single l, Byte a)
@@ -244,5 +244,5 @@ HSV モデルでは、鮮やかさと値の両方が100の場合、純粋な色�
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

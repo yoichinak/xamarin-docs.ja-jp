@@ -10,12 +10,12 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e20ea5d1d3f813b04a927601fbe1180ff39ed176
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 68cff80395f4bccf6acd718e044f708108ce4d18
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140193"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563862"
 ---
 # <a name="skiasharp-transforms"></a>SkiaSharp の変換
 
@@ -32,17 +32,17 @@ SkiaSharp の変換は、次の操作をサポートします。
 - ポイントの周りを回転するための*回転*
 - 四角形が平行四辺形になるように、水平方向または垂直方向にシフト座標に*傾斜*します
 
-これらは、*アフィン*変換と呼ばれます。 アフィン変換は、常に平行線を保持し、座標やサイズが無限になることはありません。 正方形は、平行四辺形以外には変換されず、円は楕円以外のものに変換されることはありません。
+これらは、 *アフィン* 変換と呼ばれます。 アフィン変換は、常に平行線を保持し、座標やサイズが無限になることはありません。 正方形は、平行四辺形以外には変換されず、円は楕円以外のものに変換されることはありません。
 
-SkiaSharp は、標準の 3-3 変換行列に基づいて、非アフィン変換 (*射影*または*パースペクティブ*変換とも呼ばれます) もサポートしています。 非アフィン変換を使用すると、四角形を任意の凸形に変換できます。これは、すべての内側の角度が180°未満の4つの辺を持つ図です。 非アフィン変換は、座標またはサイズが無限になる可能性がありますが、3D 効果にとっては重要です。
+SkiaSharp は、標準の 3-3 変換行列に基づいて、非アフィン変換 ( *射影* または *パースペクティブ* 変換とも呼ばれます) もサポートしています。 非アフィン変換を使用すると、四角形を任意の凸形に変換できます。これは、すべての内側の角度が180°未満の4つの辺を持つ図です。 非アフィン変換は、座標またはサイズが無限になる可能性がありますが、3D 効果にとっては重要です。
 
-## <a name="differences-between-skiasharp-and-xamarinforms-transforms"></a>SkiaSharp と変換の違い Xamarin.Forms
+## <a name="differences-between-skiasharp-and-no-locxamarinforms-transforms"></a>SkiaSharp と変換の違い Xamarin.Forms
 
-Xamarin.Formsでは、SkiaSharp の変換に似た変換もサポートされています。 クラスは、 Xamarin.Forms [`VisualElement`](xref:Xamarin.Forms.VisualElement) 次の変換プロパティを定義します。
+Xamarin.Forms では、SkiaSharp の変換に似た変換もサポートされています。 クラスは、 Xamarin.Forms [`VisualElement`](xref:Xamarin.Forms.VisualElement) 次の変換プロパティを定義します。
 
 - [`TranslationX`](xref:Xamarin.Forms.VisualElement.TranslationX) および [`TranslationY`](xref:Xamarin.Forms.VisualElement.TranslationY)
 - [`Scale`](xref:Xamarin.Forms.VisualElement.Scale)
-- [`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation)、[`RotationX`](xref:Xamarin.Forms.VisualElement.RotationX)、および [`RotationY`](xref:Xamarin.Forms.VisualElement.RotationY)
+- [`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation) 、 [`RotationX`](xref:Xamarin.Forms.VisualElement.RotationX) 、および [`RotationY`](xref:Xamarin.Forms.VisualElement.RotationY)
 
 `RotationX`プロパティと `RotationY` プロパティは、準3d 効果を作成するパースペクティブ変換です。
 
@@ -52,9 +52,9 @@ SkiaSharp の変換と変換には、いくつかの重要な違いがあり Xam
 
 SkiaSharp の変換は、の左上隅を基準としていますが、 `SKCanvas` Xamarin.Forms 変換は適用されるの左上隅を基準としてい `VisualElement` ます。 この違いは、スケーリングと回転の変換を適用するときに重要です。これらの変換は常に特定のポイントに対して相対的であるためです。
 
-非常に大きな違いは、変換がプロパティであるのに対して、SKiaSharp の変換が*メソッド*であることです Xamarin.Forms 。 *properties* これは、構文の相違点を超えるセマンティックな違いです。 SkiaSharp は、変換時に操作を実行 Xamarin.Forms し、変換は状態を設定します。 SkiaSharp の変換は、その後の描画グラフィックスオブジェクトに適用されますが、変換が適用される前に描画されるグラフィックスオブジェクトには適用されません。 これに対して、変換は、 Xamarin.Forms プロパティが設定されるとすぐに、以前にレンダリングされた要素に適用されます。 SkiaSharp の変換は、メソッドが呼び出されると累積されます。Xamarin.Formsプロパティが別の値に設定されている場合、変換は置き換えられます。
+非常に大きな違いは、変換がプロパティであるのに対して、SKiaSharp の変換が*メソッド*であることです Xamarin.Forms 。 *properties* これは、構文の相違点を超えるセマンティックな違いです。 SkiaSharp は、変換時に操作を実行 Xamarin.Forms し、変換は状態を設定します。 SkiaSharp の変換は、その後の描画グラフィックスオブジェクトに適用されますが、変換が適用される前に描画されるグラフィックスオブジェクトには適用されません。 これに対して、変換は、 Xamarin.Forms プロパティが設定されるとすぐに、以前にレンダリングされた要素に適用されます。 SkiaSharp の変換は、メソッドが呼び出されると累積されます。 Xamarin.Forms プロパティが別の値に設定されている場合、変換は置き換えられます。
 
-このセクションのすべてのサンプルプログラムは、 [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラムの**SkiaSharp の変換**セクションに表示されます。 ソースコードは、ソリューションの [[**変換**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms)] フォルダーにあります。
+このセクションのすべてのサンプルプログラムは、 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラムの**SkiaSharp の変換**セクションに表示されます。 ソースコードは、ソリューションの [ [**変換**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms) ] フォルダーにあります。
 
 ## <a name="the-translate-transform"></a>[平行移動変換](translate.md)
 
@@ -90,5 +90,5 @@ SkiaSharp rotate 変換で可能な効果とアニメーションについて説
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

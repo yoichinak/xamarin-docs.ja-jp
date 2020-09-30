@@ -1,5 +1,5 @@
 ---
-title: XAML ホットリロード ()Xamarin.Forms
+title: XAML ホットリロード () Xamarin.Forms
 description: 実行中のアプリケーションに直ちに XAML ファイルへの変更を再度読み込みます。これにより、XAML を変更するたびにプロジェクトをビルドする必要がなくなり Xamarin.Forms ます。
 ms.prod: xamarin
 ms.assetid: E220F054-32EE-424C-A7E5-6156BE271519
@@ -10,21 +10,21 @@ ms.date: 03/14/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0655739c95ba58b8d93aae6d3987d54bd0582c7b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: ca79a8a4059a303b6f4bfa152d645311a6056ffd
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127453"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563888"
 ---
-# <a name="xaml-hot-reload-for-xamarinforms"></a>XAML ホットリロード ()Xamarin.Forms
+# <a name="xaml-hot-reload-for-no-locxamarinforms"></a>XAML ホットリロード () Xamarin.Forms
 
 XAML ホットリロードは、生産性を向上させ、時間を節約するために、既存のワークフローにプラグインします。 Xaml のホットリロードを使用しない場合は、XAML の変更を確認するたびに、アプリをビルドして配置する必要があります。 ホットリロードでは、XAML ファイルを保存すると、実行中のアプリに変更が反映されます。 また、ナビゲーションの状態とデータが保持されるため、アプリ内の場所を失うことなく、UI をすばやく繰り返すことができます。 そのため、XAML のホットリロードでは、UI の変更を検証するためのアプリの再構築とデプロイにかかる時間が短縮されます。
 
 > [!NOTE]
 > WPF または UWP アプリを作成する場合は、「 [uwp と wpf の XAML ホットリロード](/visualstudio/debugger/xaml-hot-reload)」を参照してください。
 >
-> の XAML ホットリロード Xamarin.Forms は、現在 UWP プロジェクトに対しては機能し_ません_ Xamarin.Forms 。
+> の XAML ホットリロード Xamarin.Forms は、現在 UWP プロジェクトに対しては機能し _ません_ Xamarin.Forms 。
 
 ## <a name="system-requirements"></a>システム要件
 
@@ -34,7 +34,7 @@ XAML ホットリロードは、生産性を向上させ、時間を節約する
 Visual Studio 2019 for Mac | 8.4 以上
 Xamarin.Forms | 4.1 以上
 
-## <a name="enable-xaml-hot-reload-for-xamarinforms"></a>XAML ホットリロードを有効にするXamarin.Forms
+## <a name="enable-xaml-hot-reload-for-no-locxamarinforms"></a>XAML ホットリロードを有効にする Xamarin.Forms
 
 テンプレートから開始する場合は、XAML ホットリロードが既定で有効になり、プロジェクトは追加設定なしで動作するように構成されます。 Android または iOS エミュレーター、シミュレーター、または物理デバイスでアプリをデバッグし、XAML を変更して、XAML ホットリロードをトリガーするようにファイルを保存します。
 
@@ -57,15 +57,15 @@ XAML ホットリロードで再読み込みできないように変更すると
 ## <a name="reload-on-multiple-platforms-at-once"></a>複数のプラットフォームで一度に再読み込みする
 
 XAML ホットリロードは、Visual Studio と Visual Studio for Mac での同時デバッグをサポートしています。 Android と iOS ターゲットを同時にデプロイすると、両方のプラットフォームに同時に反映された変更を確認できます。 複数のプラットフォームでデバッグするには、次を参照してください。
-* **Windows** [方法: 複数のスタートアッププロジェクトを設定する](https://docs.microsoft.com/visualstudio/ide/how-to-set-multiple-startup-projects?view=vs-2019)
-* **Mac**で[複数のスタートアッププロジェクトを設定](https://docs.microsoft.com/visualstudio/mac/set-startup-projects?view=vsmac-2019)する
+* **Windows** [方法: 複数のスタートアッププロジェクトを設定する](/visualstudio/ide/how-to-set-multiple-startup-projects?view=vs-2019)
+* **Mac**で[複数のスタートアッププロジェクトを設定](/visualstudio/mac/set-startup-projects?view=vsmac-2019)する
 
 ## <a name="known-limitations"></a>既知の制限事項
 
-* UWP や macOS などの他の Xamarin.Forms ターゲットは、まだサポートされて*いません*。 UWP サポートの進行状況は[ここで](https://developercommunity.visualstudio.com/idea/661682/xaml-hot-reload-for-xamarinforms-on-uwp.html)追跡できます。
+* UWP や macOS などの他の Xamarin.Forms ターゲットは、まだサポートされて *いません* 。 UWP サポートの進行状況は [ここで](https://developercommunity.visualstudio.com/idea/661682/xaml-hot-reload-for-xamarinforms-on-uwp.html)追跡できます。
 * XAML ホットリロードセッション中に、ファイルまたは NuGet パッケージを追加、削除、または名前変更することはできません。 ファイルまたは NuGet パッケージを追加または削除する場合は、アプリケーションをリビルドして再デプロイし、引き続き XAML ホットリロードを使用します。
-* 最適なエクスペリエンスを得るには、**リンクしない**ようにリンカーを設定するか、または**リンク**しないようにします。 [ **SDK のみをリンク**する] の設定はほとんどの場合に機能しますが、特定の場合には失敗する可能性があります。 リンカーの設定は、Android および iOS のビルドオプションにあります。
-* 物理的な iPhone でデバッグを行うには、インタープリターで XAML ホットリロードを使用する必要があります。 これを行うには、プロジェクト設定を開き、[iOS ビルド] タブを選択し、[ **Mono インタープリターを有効にする**] 設定が有効になっていることを確認します。 場合によっては、プロパティページの上部にある**プラットフォーム**オプションを**iPhone**に変更する必要があります。
+* 最適なエクスペリエンスを得るには、 **リンクしない** ようにリンカーを設定するか、または **リンク** しないようにします。 [ **SDK のみをリンク** する] の設定はほとんどの場合に機能しますが、特定の場合には失敗する可能性があります。 リンカーの設定は、Android および iOS のビルドオプションにあります。
+* 物理的な iPhone でデバッグを行うには、インタープリターで XAML ホットリロードを使用する必要があります。 これを行うには、プロジェクト設定を開き、[iOS ビルド] タブを選択し、[ **Mono インタープリターを有効にする** ] 設定が有効になっていることを確認します。 場合によっては、プロパティページの上部にある **プラットフォーム** オプションを **iPhone**に変更する必要があります。
 * 値を使用してコントロールを別のフィールドまたはプロパティに割り当てることによって作成された参照は、再 `x:Name` 読み込みされません。
 * AppShell でシェルアプリケーションのビジュアル階層を更新すると、アプリケーションの状態を維持する際に問題が発生する可能性があります。 問題が発生した場合は、アプリをリビルドして再読み込みを続行します。
 * XAML ホットリロードでは、イベントハンドラー、カスタムコントロール、ページ分離コード、およびその他のクラスを含む C# コードを再読み込みすることはできません。
@@ -80,7 +80,7 @@ XAML ホットリロードは、Visual Studio と Visual Studio for Mac での�
 * XAML ホットリロードが初期化に失敗した場合:
   * Xamarin.Formsバージョンを更新します。
   * 最新バージョンの IDE を使用していることを確認します。
-  * Android または iOS のリンカー設定をプロジェクトのビルド設定で**リンクしない**ように設定します。
+  * Android または iOS のリンカー設定をプロジェクトのビルド設定で **リンクしない** ように設定します。
 * XAML ファイルの保存時に何も起こらない場合は、IDE で XAML ホットリロードが有効になっていることを確認します。
 * 物理 iPhone でデバッグしているときに、アプリが応答しなくなった場合は、インタープリターが有効になっていることを確認します。 有効にするには、iOS のビルド設定で [ **Mono インタープリターを有効に**する (visual studio 16.4/8.4 以上)] または [追加の**mtouch 引数**] フィールド (visual studio 16.3/8.3 以前) に [ **-インタープリター** ] をオンにします。
 

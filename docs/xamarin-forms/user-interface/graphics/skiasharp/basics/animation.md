@@ -10,16 +10,16 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 71e64f7b8286f22040a802336e9be756d932c0cd
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 3052220b914b09f18490846bbd2558bbf07e4d3a
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936540"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562263"
 ---
 # <a name="basic-animation-in-skiasharp"></a>SkiaSharp の基本的なアニメーション
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _SkiaSharp グラフィックスをアニメーション化する方法を見つける_
 
@@ -27,7 +27,7 @@ _SkiaSharp グラフィックスをアニメーション化する方法を見つ
 
 ![中心から拡張された複数の同心円の円](animation-images/animationexample.png)
 
-[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラムの2つの軸をアニメーション化して、その楕円の2つの軸をアニメーション**化します**。これにより、この pulsation の速度を制御することもできます。 [**PulsatingEllipsePage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml)ファイルは、 Xamarin.Forms `Slider` `Label` スライダーの現在の値を表示するためにとをインスタンス化します。 これは、を `SKCanvasView` 他のビューと統合する一般的な方法です Xamarin.Forms 。
+[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラムの2つの軸をアニメーション化して、その楕円の2つの軸をアニメーション**化します**。これにより、この pulsation の速度を制御することもできます。 [**PulsatingEllipsePage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml)ファイルは、 Xamarin.Forms `Slider` `Label` スライダーの現在の値を表示するためにとをインスタンス化します。 これは、を `SKCanvasView` 他のビューと統合する一般的な方法です Xamarin.Forms 。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -146,13 +146,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 [![[一形の楕円] ページのトリプルスクリーンショット](animation-images/pulsatingellipse-small.png)](animation-images/pulsatingellipse-large.png#lightbox "[一形の楕円] ページのトリプルスクリーンショット")
 
-`SKPaint`オブジェクトがブロック内に作成されていることに注意 `using` してください。 と同様に、多くの SkiaSharp クラスはから派生します `SKPaint` `SKObject` 。これは、 `SKNativeObject` インターフェイスを実装するから派生し [`IDisposable`](xref:System.IDisposable) ます。 `SKPaint`メソッドをオーバーライドして `Dispose` アンマネージリソースを解放します。
+`SKPaint`オブジェクトがブロック内に作成されていることに注意 `using` してください。 と同様に、多くの SkiaSharp クラスはから派生します `SKPaint` `SKObject` 。これは、 `SKNativeObject` インターフェイスを実装するから派生し [`IDisposable`](xref:System.IDisposable) ます。 `SKPaint` メソッドをオーバーライドして `Dispose` アンマネージリソースを解放します。
 
  ブロックに配置すると、 `SKPaint` `using` `Dispose` がブロックの最後に呼び出され、これらのアンマネージリソースが解放されます。 これは、オブジェクトによって使用されるメモリ `SKPaint` が .net ガベージコレクターによって解放される場合に発生しますが、アニメーションコードでは、より適切な方法でメモリを解放することをお勧めします。
 
  このような場合には、2つのオブジェクトを `SKPaint` 1 回作成し、それらをフィールドとして保存する方が適しています。
 
-これが、**拡大する円**のアニメーションによって行われます。 クラスは、 [`ExpandingCirclesPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ExpandingCirclesPage.cs) オブジェクトなど、いくつかのフィールドを定義することから始まり `SKPaint` ます。
+これが、 **拡大する円** のアニメーションによって行われます。 クラスは、 [`ExpandingCirclesPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/ExpandingCirclesPage.cs) オブジェクトなど、いくつかのフィールドを定義することから始まり `SKPaint` ます。
 
 ```csharp
 public class ExpandingCirclesPage : ContentPage
@@ -251,5 +251,5 @@ public class ExpandingCirclesPage : ContentPage
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

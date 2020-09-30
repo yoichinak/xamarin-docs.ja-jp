@@ -1,5 +1,5 @@
 ---
-title: 実行時の XAML の読み込みXamarin.Forms
+title: 実行時の XAML の読み込み Xamarin.Forms
 description: XAML は、LoadFromXaml 拡張メソッドを使用して実行時に読み込んで解析することができます。
 ms.prod: xamarin
 ms.assetid: 25F73FBF-2DD3-468E-A2D8-0897414F0F4A
@@ -10,14 +10,14 @@ ms.date: 12/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d750aa84a48ad4c8015a619d819134cefc63c3d9
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 071a7de630d7d7b7582e3c9fa8906919e92d1fb5
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139374"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562003"
 ---
-# <a name="loading-xaml-at-runtime-in-xamarinforms"></a>実行時の XAML の読み込みXamarin.Forms
+# <a name="loading-xaml-at-runtime-in-no-locxamarinforms"></a>実行時の XAML の読み込み Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-loadruntimexaml)
 
@@ -104,4 +104,4 @@ monkeyLabel.Text = "Seated Monkey";
 
 ## <a name="related-links"></a>関連リンク
 
-- [LoadRuntimeXAML (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-loadruntimexaml)
+- [LoadRuntimeXAML (サンプル)](/samples/xamarin/xamarin-forms-samples/xaml-loadruntimexaml)

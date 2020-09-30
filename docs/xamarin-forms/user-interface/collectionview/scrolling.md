@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsCollectionView スクロール
+title: Xamarin.Forms CollectionView スクロール
 description: ユーザーがスクロールを開始しようとしたときに、項目が完全に表示されるように、スクロールの終了位置を制御できます。 さらに、CollectionView は2つの ScrollTo メソッドを定義して、プログラムによって項目をビューにスクロールします。
 ms.prod: xamarin
 ms.assetid: 2ED719AF-33D2-434D-949A-B70B479C9BA5
@@ -10,32 +10,32 @@ ms.date: 09/17/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 04d190971fa5ef16e08091600558f7f016bc8605
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: dad0c3fd70e2484033268f9ad0686d0b3f42cb70
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84134538"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91564109"
 ---
-# <a name="xamarinforms-collectionview-scrolling"></a>Xamarin.FormsCollectionView スクロール
+# <a name="no-locxamarinforms-collectionview-scrolling"></a>Xamarin.Forms CollectionView スクロール
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)項目を [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) ビューにスクロールする2つのメソッドを定義します。 オーバーロードの1つは、指定されたインデックス位置にある項目をビューにスクロールし、もう一方は指定された項目をビューにスクロールします。 どちらのオーバーロードにも、項目が属するグループを示すために指定できる追加の引数、スクロールが完了した後の項目の正確な位置、およびスクロールをアニメーション化するかどうかを指定できます。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 項目を [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) ビューにスクロールする2つのメソッドを定義します。 オーバーロードの1つは、指定されたインデックス位置にある項目をビューにスクロールし、もう一方は指定された項目をビューにスクロールします。 どちらのオーバーロードにも、項目が属するグループを示すために指定できる追加の引数、スクロールが完了した後の項目の正確な位置、およびスクロールをアニメーション化するかどうかを指定できます。
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)[`ScrollToRequested`](xref:Xamarin.Forms.ItemsView.ScrollToRequested)メソッドのいずれかが呼び出されたときに発生するイベントを定義 [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) します。 [`ScrollToRequestedEventArgs`](xref:Xamarin.Forms.ScrollToRequestedEventArgs)イベントに付随するオブジェクトには、、、、などの `ScrollToRequested` 多くのプロパティがあり `IsAnimated` `Index` `Item` `ScrollToPosition` ます。 これらのプロパティは、メソッドの呼び出しで指定された引数によって設定され `ScrollTo` ます。
 
-また、は、スクロールが発生したことを [`CollectionView`](xref:Xamarin.Forms.CollectionView) `Scrolled` 示すために発生するイベントを定義します。 `ItemsViewScrolledEventArgs`イベントに付随するオブジェクトに `Scrolled` は、多くのプロパティがあります。 詳細については、「[スクロールの検出](#detect-scrolling)」を参照してください。
+また、は、スクロールが発生したことを [`CollectionView`](xref:Xamarin.Forms.CollectionView) `Scrolled` 示すために発生するイベントを定義します。 `ItemsViewScrolledEventArgs`イベントに付随するオブジェクトに `Scrolled` は、多くのプロパティがあります。 詳細については、「 [スクロールの検出](#detect-scrolling)」を参照してください。
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)`ItemsUpdatingScrollMode` `CollectionView` 新しい項目が追加されたときののスクロール動作を表すプロパティも定義します。 このプロパティの詳細については、「[新しい項目が追加されたときのコントロールのスクロール位置](#control-scroll-position-when-new-items-are-added)」を参照してください。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView)`ItemsUpdatingScrollMode` `CollectionView` 新しい項目が追加されたときののスクロール動作を表すプロパティも定義します。 このプロパティの詳細については、「 [新しい項目が追加されたときのコントロールのスクロール位置](#control-scroll-position-when-new-items-are-added)」を参照してください。
 
-ユーザーがスクロールを開始しようとしたときに、項目が完全に表示されるように、スクロールの終了位置を制御できます。 スクロールが停止したときに項目が位置にスナップされるため、この機能はスナップと呼ばれています。 詳細については、「[スナップポイント](#snap-points)」を参照してください。
+ユーザーがスクロールを開始しようとしたときに、項目が完全に表示されるように、スクロールの終了位置を制御できます。 スクロールが停止したときに項目が位置にスナップされるため、この機能はスナップと呼ばれています。 詳細については、「 [スナップポイント](#snap-points)」を参照してください。
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)ユーザーがスクロールするときに、データを徐々に読み込むこともできます。 詳細については、「[データの増分読み込み](populate-data.md#load-data-incrementally)」を参照してください。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) ユーザーがスクロールするときに、データを徐々に読み込むこともできます。 詳細については、「 [データの増分読み込み](populate-data.md#load-data-incrementally)」を参照してください。
 
 ## <a name="detect-scrolling"></a>スクロールの検出
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)スクロールが `Scrolled` 発生したことを示すために発生するイベントを定義します。 次の XAML の例は、 `CollectionView` イベントのイベントハンドラーを設定するを示してい `Scrolled` ます。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) スクロールが `Scrolled` 発生したことを示すために発生するイベントを定義します。 次の XAML の例は、 `CollectionView` イベントのイベントハンドラーを設定するを示してい `Scrolled` ます。
 
 ```xaml
 <CollectionView Scrolled="OnCollectionViewScrolled">
@@ -175,11 +175,11 @@ collectionView.ScrollTo(monkey, position: ScrollToPosition.End);
 
 ## <a name="control-scroll-position-when-new-items-are-added"></a>新しい項目が追加されたときのスクロール位置の制御
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)バインド可能 `ItemsUpdatingScrollMode` なプロパティによってサポートされるプロパティを定義します。 このプロパティは `ItemsUpdatingScrollMode` 、 `CollectionView` 新しい項目が追加されたときののスクロール動作を表す列挙値を取得または設定します。 `ItemsUpdatingScrollMode` 列挙体を使って、次のメンバーを定義できます。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) バインド可能 `ItemsUpdatingScrollMode` なプロパティによってサポートされるプロパティを定義します。 このプロパティは `ItemsUpdatingScrollMode` 、 `CollectionView` 新しい項目が追加されたときののスクロール動作を表す列挙値を取得または設定します。 `ItemsUpdatingScrollMode` 列挙体を使って、次のメンバーを定義できます。
 
-- `KeepItemsInView`新しい項目が追加されたときに表示される最初の項目を維持するために、スクロールのオフセットを調整します。
-- `KeepScrollOffset`新しい項目が追加されたときに、リストの先頭を基準としたスクロールオフセットを維持します。
-- `KeepLastItemInView`新しい項目が追加されたときに最後の項目が表示されるように、スクロールのオフセットを調整します。
+- `KeepItemsInView` 新しい項目が追加されたときに表示される最初の項目を維持するために、スクロールのオフセットを調整します。
+- `KeepScrollOffset` 新しい項目が追加されたときに、リストの先頭を基準としたスクロールオフセットを維持します。
+- `KeepLastItemInView` 新しい項目が追加されたときに最後の項目が表示されるように、スクロールのオフセットを調整します。
 
 プロパティの既定値 `ItemsUpdatingScrollMode` は `KeepItemsInView` です。 したがって、新しい項目がに追加されると、リスト内の最初に表示された [`CollectionView`](xref:Xamarin.Forms.CollectionView) 項目が表示されたままになります。 新しく追加された項目が常に一覧の一番下に表示されるようにするには、 `ItemsUpdatingScrollMode` プロパティを次のように設定する必要があり `KeepLastItemInView` ます。
 
@@ -202,9 +202,9 @@ CollectionView collectionView = new CollectionView
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)`HorizontalScrollBarVisibility`バインド可能 `VerticalScrollBarVisibility` なプロパティによってサポートされるプロパティとプロパティを定義します。 これらのプロパティは、 [`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollBarVisibility) 水平方向または垂直方向のスクロールバーを表示するタイミングを表す列挙値を取得または設定します。 `ScrollBarVisibility` 列挙体を使って、次のメンバーを定義できます。
 
-- [`Default`](xref:Xamarin.Forms.ScrollBarVisibility)プラットフォームの既定のスクロールバーの動作を示し `HorizontalScrollBarVisibility` ます。は、プロパティとプロパティの既定値です `VerticalScrollBarVisibility` 。
-- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility)ビューにコンテンツが収まる場合でも、スクロールバーが表示されることを示します。
-- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility)コンテンツがビューに収まらない場合でも、スクロールバーが表示されないことを示します。
+- [`Default`](xref:Xamarin.Forms.ScrollBarVisibility) プラットフォームの既定のスクロールバーの動作を示し `HorizontalScrollBarVisibility` ます。は、プロパティとプロパティの既定値です `VerticalScrollBarVisibility` 。
+- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility) ビューにコンテンツが収まる場合でも、スクロールバーが表示されることを示します。
+- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility) コンテンツがビューに収まらない場合でも、スクロールバーが表示されないことを示します。
 
 ## <a name="snap-points"></a>スナップ位置
 
@@ -222,9 +222,9 @@ CollectionView collectionView = new CollectionView
 
 [`SnapPointsType`](xref:Xamarin.Forms.SnapPointsType)列挙体は、次のメンバーを定義します。
 
-- `None`スクロールが項目にスナップされないことを示します。
-- `Mandatory`コンテンツを常に最も近いスナップポイントにスナップし、慣性の方向に沿ってスクロールが自然に停止することを示します。
-- `MandatorySingle`と同じ動作を示し `Mandatory` ますが、一度に1つの項目だけをスクロールします。
+- `None` スクロールが項目にスナップされないことを示します。
+- `Mandatory` コンテンツを常に最も近いスナップポイントにスナップし、慣性の方向に沿ってスクロールが自然に停止することを示します。
+- `MandatorySingle` と同じ動作を示し `Mandatory` ますが、一度に1つの項目だけをスクロールします。
 
 既定では、 [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) プロパティはに設定されます `SnapPointsType.None` 。これにより、次のスクリーンショットに示すように、スクロールによって項目がスナップされません。
 
@@ -340,4 +340,4 @@ CollectionView collectionView = new CollectionView
 
 ## <a name="related-links"></a>関連リンク
 
-- [CollectionView (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+- [CollectionView (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)

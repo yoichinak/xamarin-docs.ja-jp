@@ -10,12 +10,12 @@ ms.date: 04/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: de5ebf086af7fa8d7c6360bf3a1f48f57b834e44
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 01e439812c3935e890acf0b9b83579b5813d8e21
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938438"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563953"
 ---
 # <a name="device-orientation"></a>デバイスの向き
 
@@ -29,7 +29,7 @@ ms.locfileid: "86938438"
 
 ### <a name="ios"></a>iOS
 
-IOS では、デバイスの向きは、**情報 plist**ファイルを使用するアプリケーション用に構成されます。 このドキュメントの上部にある IDE オプションを使用して、表示する手順を選択します。
+IOS では、デバイスの向きは、 **情報 plist** ファイルを使用するアプリケーション用に構成されます。 このドキュメントの上部にある IDE オプションを使用して、表示する手順を選択します。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -39,11 +39,11 @@ Visual Studio で iOS プロジェクトを開き、[ **plist**] を開きます
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-Visual Studio for Mac で、iOS プロジェクトを開き、[ **plist**] を開きます。 [**アプリケーション**] タブで、[方向の設定] セクションを使用できるようになります。
+Visual Studio for Mac で、iOS プロジェクトを開き、[ **plist**] を開きます。 [ **アプリケーション** ] タブで、[方向の設定] セクションを使用できるようになります。
 
 ![Visual Studio for Mac の iPhone 展開情報](device-orientation-images/orientation-vsmac.png)
 
-キー値エディターインターフェイスを使用して値を編集する場合は、画面の下部にある [**ソース**>] タブを選択します。
+キー値エディターインターフェイスを使用して値を編集する場合は、画面の下部にある [ **ソース**>] タブを選択します。
 
 ![Visual Studio for Mac でサポートされているデバイスの向き](device-orientation-images/orientation-source-vsmac.png)
 
@@ -51,7 +51,7 @@ Visual Studio for Mac で、iOS プロジェクトを開き、[ **plist**] を�
 
 ### <a name="android"></a>Android
 
-Android の向きを制御するには、 **MainActivity.cs**を開き、クラスを装飾する属性を使用して方向を設定し `MainActivity` ます。
+Android の向きを制御するには、 **MainActivity.cs** を開き、クラスを装飾する属性を使用して方向を設定し `MainActivity` ます。
 
 ```csharp
 namespace MyRotatingApp.Droid
@@ -65,17 +65,17 @@ namespace MyRotatingApp.Droid
 
 Xamarin Android では、方向を指定するためのオプションがいくつかサポートされています。
 
-- **横** &ndash;センサーデータに関係なく、アプリケーションの向きを強制的に横にします。
-- **縦** &ndash;センサーデータに関係なく、アプリケーションの向きを強制的に縦にします。
-- **ユーザー** &ndash;ユーザーの優先方向を使用してアプリケーションを表示します。
-- **背後** &ndash;アプリケーションの向きが、その背後にある[アクティビティ](xref:Android.App.Activity)の向きと同じになるようにします。
-- **センサー** &ndash;ユーザーが自動回転を無効にしている場合でも、センサーによってアプリケーションの向きが決定されます。
-- **Sensorlandscape** &ndash;センサーデータを使用して画面の向きを変更するときに、アプリケーションが横向きの向きを使用するようにします (画面が上下反転されないようにするため)。
-- **Sensorportrait** &ndash;アプリケーションで、センサーデータを使用して画面の向きを変更するときに縦方向を使用します (画面が上下反転されないようにします)。
-- **ReverseLandscape** &ndash;アプリケーションで横向きの向きが使用されるようにします。これにより、通常とは逆の方向になります。
-- **ReversePortrait** &ndash;アプリケーションが縦向きを使用するようにします。通常とは逆方向に接続され、"逆さま" に見えるようになります。
-- **Fullsensor** &ndash;アプリケーションがセンサーデータを使用して正しい向きを選択するようにします (可能な4つのうちの一部)。
-- **Fulluser** &ndash;アプリケーションでユーザーの向きの設定を使用します。 自動回転が有効になっている場合は、4つの方向すべてを使用できます。
+- **横** &ndash; センサーデータに関係なく、アプリケーションの向きを強制的に横にします。
+- **縦** &ndash; センサーデータに関係なく、アプリケーションの向きを強制的に縦にします。
+- **ユーザー** &ndash; ユーザーの優先方向を使用してアプリケーションを表示します。
+- **背後** &ndash; アプリケーションの向きが、その背後にある [アクティビティ](xref:Android.App.Activity) の向きと同じになるようにします。
+- **センサー** &ndash; ユーザーが自動回転を無効にしている場合でも、センサーによってアプリケーションの向きが決定されます。
+- **Sensorlandscape** &ndash; センサーデータを使用して画面の向きを変更するときに、アプリケーションが横向きの向きを使用するようにします (画面が上下反転されないようにするため)。
+- **Sensorportrait** &ndash; アプリケーションで、センサーデータを使用して画面の向きを変更するときに縦方向を使用します (画面が上下反転されないようにします)。
+- **ReverseLandscape** &ndash; アプリケーションで横向きの向きが使用されるようにします。これにより、通常とは逆の方向になります。
+- **ReversePortrait** &ndash; アプリケーションが縦向きを使用するようにします。通常とは逆方向に接続され、"逆さま" に見えるようになります。
+- **Fullsensor** &ndash; アプリケーションがセンサーデータを使用して正しい向きを選択するようにします (可能な4つのうちの一部)。
+- **Fulluser** &ndash; アプリケーションでユーザーの向きの設定を使用します。 自動回転が有効になっている場合は、4つの方向すべてを使用できます。
 - **Userlandscape** &ndash;[ _ \[ サポート \] されていません_] を指定すると、ユーザーが自動回転を有効にしていない限り、アプリケーションは横向きの向きを使用します。この場合、センサーを使用して向きが決定されます。 このオプションを選択すると、コンパイルが中断されます。
 - **Userportrait** &ndash;[ _ \[ サポート \] されていません_] を指定すると、ユーザーが自動回転を有効にしていない限り、アプリケーションは縦向きを使用します。この場合は、センサーを使用して向きが決定されます。 このオプションを選択すると、コンパイルが中断されます。
 - **ロック** &ndash; 済み[ _ \[ サポート \] されていません_] を指定すると、アプリケーションは、デバイスの物理的な向きの変化に応答せずに、起動中の任意の画面の向きを使用します。 このオプションを選択すると、コンパイルが中断されます。
@@ -84,13 +84,13 @@ Xamarin Android では、方向を指定するためのオプションがいく�
 
 ### <a name="universal-windows-platform"></a>ユニバーサル Windows プラットフォーム
 
-ユニバーサル Windows プラットフォーム (UWP) では、サポートされる向きは**package.appxmanifest**ファイルで設定されます。 マニフェストを開くと、サポートされている向きを選択できる構成パネルが表示されます。
+ユニバーサル Windows プラットフォーム (UWP) では、サポートされる向きは **package.appxmanifest** ファイルで設定されます。 マニフェストを開くと、サポートされている向きを選択できる構成パネルが表示されます。
 
 ## <a name="reacting-to-changes-in-orientation"></a>向きの変化への対応
 
-Xamarin.Formsでは、共有コードの向きの変更をアプリに通知するためのネイティブイベントは提供されません。 ただし、に [Xamarin.Essentials](~/essentials/index.md) は、 `DeviceDisplay` 向きの変更の通知を提供する [] クラスが含まれています。
+Xamarin.Forms では、共有コードの向きの変更をアプリに通知するためのネイティブイベントは提供されません。 ただし、に [Xamarin.Essentials](~/essentials/index.md) は、 `DeviceDisplay` 向きの変更の通知を提供する [] クラスが含まれています。
 
-を使用せずに向きを検出するには、の Xamarin.Essentials イベントを監視し `SizeChanged` ます。これは、の `Page` 幅または高さのいずれかが変化したときに発生し `Page` ます。 の幅が `Page` 高さよりも大きい場合、デバイスは横モードになります。 詳細については、「[画面の向きに基づいてイメージを表示する](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation)」を参照してください。
+を使用せずに向きを検出するには、の Xamarin.Essentials イベントを監視し `SizeChanged` ます。これは、の `Page` 幅または高さのいずれかが変化したときに発生し `Page` ます。 の幅が `Page` 高さよりも大きい場合、デバイスは横モードになります。 詳細については、「 [画面の向きに基づいてイメージを表示する](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation)」を参照してください。
 
 または、のメソッドをオーバーライドし [`OnSizeAllocated`](xref:Xamarin.Forms.Page.OnSizeAllocated*) `Page` 、そこにレイアウト変更ロジックを挿入することもできます。 メソッドは、 `OnSizeAllocated` に新しいサイズが割り当てられるたびに呼び出され `Page` ます。これは、デバイスがローテーションされるたびに発生します。 の基本実装では `OnSizeAllocated` 、重要なレイアウト関数が実行されるため、オーバーライドで基本実装を呼び出すことが重要です。
 
@@ -215,7 +215,7 @@ protected override void OnSizeAllocated (double width, double height){
 
 次のことを考慮してください。
 
-- `outerStack`は、イメージとコントロールを向きに応じて水平方向または垂直方向のスタックとして表示し、使用可能な領域を最大限に活用できるように調整されます。
+- `outerStack` は、イメージとコントロールを向きに応じて水平方向または垂直方向のスタックとして表示し、使用可能な領域を最大限に活用できるように調整されます。
 
 ### <a name="absolutelayout"></a>AbsoluteLayout
 
@@ -464,7 +464,7 @@ protected override void OnSizeAllocated (double width, double height){
 
 ## <a name="related-links"></a>関連リンク
 
-- [レイアウト (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
-- [BusinessTumble の例 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)
-- [応答性の高いレイアウト (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-responsivelayout)
+- [レイアウト (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+- [BusinessTumble の例 (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-businesstumble)
+- [応答性の高いレイアウト (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-responsivelayout)
 - [画面の向きに基づいてイメージを表示する](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation)

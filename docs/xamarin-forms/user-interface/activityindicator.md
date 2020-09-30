@@ -1,5 +1,5 @@
 ---
-title: アクティビティインジケーターXamarin.Forms
+title: アクティビティインジケーター Xamarin.Forms
 description: ActivityIndicator コントロールは、進行状況を示すことなく、アプリケーションが時間のかかるアクティビティに関与していることをユーザーに示します。 この記事では、XAML とコードで ActivityIndicator を使用する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 4CEED02D-5CA3-4C3A-B7ED-3193FC272261
@@ -10,14 +10,14 @@ ms.date: 07/10/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a83885175a44f2174db343abf4591f8777041d39
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 76136067f40d378a6bfa28698f15b6872bb40c93
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136514"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562349"
 ---
-# <a name="xamarinforms-activityindicator"></a>Xamarin.FormsActivityIndicator
+# <a name="no-locxamarinforms-activityindicator"></a>Xamarin.Forms ActivityIndicator
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-activityindicatordemos/)
 
 コントロールには、 Xamarin.Forms [`ActivityIndicator`](xref:Xamarin.Forms.ActivityIndicator) アプリケーションが長時間のアクティビティに関与していることを示すアニメーションが表示されます。 とは異なり、で [`ProgressBar`](xref:Xamarin.Forms.ProgressBar) は `ActivityIndicator` 進行状況が示されません。 は、 `ActivityIndicator` から継承さ [`View`](xref:Xamarin.Forms.View) れます。
@@ -29,7 +29,7 @@ ms.locfileid: "84136514"
 コントロールは、 `ActivityIndicator` 次のプロパティを定義します。
 
 * [`Color`](xref:Xamarin.Forms.ActivityIndicator.Color)`Color`の表示色を定義する値です `ActivityIndicator` 。
-* [`IsRunning`](xref:Xamarin.Forms.ActivityIndicator.IsRunning)を `bool` `ActivityIndicator` 表示、アニメーション、または非表示にするかどうかを示す値です。 値がの場合 `false` 、は表示され `ActivityIndicator` ません。
+* [`IsRunning`](xref:Xamarin.Forms.ActivityIndicator.IsRunning) を `bool` `ActivityIndicator` 表示、アニメーション、または非表示にするかどうかを示す値です。 値がの場合 `false` 、は表示され `ActivityIndicator` ません。
 
 これらのプロパティは、オブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。つまり、を `ActivityIndicator` スタイル設定し、データバインディングのターゲットにすることができます。
 
@@ -67,5 +67,5 @@ ActivityIndicator activityIndicator = new ActivityIndicator { Color = Color.Oran
 
 ## <a name="related-links"></a>関連リンク
 
-* [ActivityIndicator デモ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-activityindicatordemos/)
+* [ActivityIndicator デモ](/samples/xamarin/xamarin-forms-samples/userinterface-activityindicatordemos/)
 * [ProgressBar](~/xamarin-forms/user-interface/progressbar.md)

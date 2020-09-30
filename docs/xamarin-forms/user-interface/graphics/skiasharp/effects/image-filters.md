@@ -10,12 +10,12 @@ ms.date: 08/27/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: eedbca080fce9f3001a7b1e2358845fd63c6121b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4f10d39ff9fb08897f12cf1991ddcd2d7793b695
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136345"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91564031"
 ---
 # <a name="skiasharp-image-filters"></a>SkiaSharp イメージフィルター
 
@@ -41,7 +41,7 @@ public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
 
 メソッドには、ぼかしの範囲の最初の方向が1つ、垂直方向が2番目のシグマ値が2つあり &mdash; ます。 別のイメージフィルターを省略可能な3番目の引数として指定することで、イメージフィルターを連鎖させることができます。 トリミング四角形を指定することもできます。
 
-[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)の**Image ぼかす実験**ページには、 `Slider` さまざまなぼかしレベルの設定を試すことができる2つのビューが含まれています。
+[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)の**Image ぼかす実験**ページには、 `Slider` さまざまなぼかしレベルの設定を試すことができる2つのビューが含まれています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -307,7 +307,7 @@ public partial class DropShadowExperimentPage : ContentPage
 
 3D 空間内の位置と方向は、どちらも構造の値と共に指定されます [`SKPoint3`](xref:SkiaSharp.SKPoint3) 。これはと似ていますが、、、 `SKPoint` およびという3つのプロパティが `X` `Y` `Z` あります。
 
-これらのメソッドのパラメーターの数と複雑さにより、実験が困難になります。 作業を開始するために、**遠くの薄い実験**ページでメソッドのパラメーターを試してみることができ `CreateDistantLightDiffuse` ます。
+これらのメソッドのパラメーターの数と複雑さにより、実験が困難になります。 作業を開始するために、 **遠くの薄い実験** ページでメソッドのパラメーターを試してみることができ `CreateDistantLightDiffuse` ます。
 
 ```csharp
 public static SKImageFilter CreateDistantLitDiffuse (SKPoint3 direction,
@@ -441,9 +441,9 @@ public partial class DistantLightExperimentPage : ContentPage
 
 Android のスクリーンショットの Z 値は0です。これは、ライトが下向きと右を指していることを意味します。 背景は照明されず、テキスト文字列の表面は点灯しません。 ライトは、非常に微妙な効果を実現するためにテキストの端にのみ影響します。
 
-エンボスおよび浮き彫りのテキストに対する別の方法として、「[変換変換](../transforms/translate.md)」の記事で説明されているように、テキスト文字列は異なる色で2回表示されます。
+エンボスおよび浮き彫りのテキストに対する別の方法として、「 [変換変換](../transforms/translate.md)」の記事で説明されているように、テキスト文字列は異なる色で2回表示されます。
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

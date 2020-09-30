@@ -10,12 +10,12 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ed20da1005447334a99ea40c177c8f88d59d71ce
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 31a76e160186caec74665b7615323eb8e60b698a
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938475"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562328"
 ---
 # <a name="the-translate-transform"></a>平行移動変換
 
@@ -41,7 +41,7 @@ public void Translate (Single dx, Single dy)
 public void Translate (SKPoint point)
 ```
 
-[**SkiaSharpForms**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルプログラムの**累積翻訳**ページは、メソッドの複数の呼び出しが累積されていることを示して `Translate` います。 クラスには、 [`AccumulatedTranslatePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AccumulatedTranslatePage.cs) 同じ四角形の20個のバージョンが表示されます。これは、前の四角形からのオフセットを1つだけ、対角線に沿って伸縮します。 `PaintSurface`イベントハンドラーを次に示します。
+[**SkiaSharpForms**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルプログラムの**累積翻訳**ページは、メソッドの複数の呼び出しが累積されていることを示して `Translate` います。 クラスには、 [`AccumulatedTranslatePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AccumulatedTranslatePage.cs) 同じ四角形の20個のバージョンが表示されます。これは、前の四角形からのオフセットを1つだけ、対角線に沿って伸縮します。 `PaintSurface`イベントハンドラーを次に示します。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -82,9 +82,9 @@ x ' = x + dx
 
 y ' = y + dy
 
-これらは、変換の*変換式*として知られています。 新しいのの既定 `dx` 値 `dy` `SKCanvas` は0です。
+これらは、変換の *変換式* として知られています。 新しいのの既定 `dx` 値 `dy` `SKCanvas` は0です。
 
-[**テキスト効果の変換**] ページで示すように、影効果や同様の手法には変換変換を使用するのが一般的です。 クラスのハンドラーに関連する部分を次 `PaintSurface` に示し [`TranslateTextEffectsPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TranslateTextEffectsPage.cs) ます。
+[ **テキスト効果の変換** ] ページで示すように、影効果や同様の手法には変換変換を使用するのが一般的です。 クラスのハンドラーに関連する部分を次 `PaintSurface` に示し [`TranslateTextEffectsPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TranslateTextEffectsPage.cs) ます。
 
 ```csharp
 float textSize = 150;
@@ -308,5 +308,5 @@ public class HendecagramAnimationPage : ContentPage
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

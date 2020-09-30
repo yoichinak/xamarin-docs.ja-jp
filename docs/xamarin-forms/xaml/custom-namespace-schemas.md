@@ -1,5 +1,5 @@
 ---
-title: の XAML カスタム名前空間スキーマXamarin.Forms
+title: の XAML カスタム名前空間スキーマ Xamarin.Forms
 description: XAML カスタム名前空間スキーマは、XmlnsDefinitionAttribute クラスを使用して定義できます。これは、カスタム URL と1つ以上の CLR 名前空間の間のマッピングを指定します。 その後、カスタム名前空間スキーマを XAML 名前空間宣言で使用できます。
 ms.prod: xamarin
 ms.assetid: FDF201A1-8C35-4569-A728-F9B0A0C5B31A
@@ -10,14 +10,14 @@ ms.date: 12/21/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 41a95b1a82ab8aa1f6938e5a2bcdebcef368e72d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 5c7e0d90358ec230436276070ea2792539c446e5
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138165"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561483"
 ---
-# <a name="xaml-custom-namespace-schemas-in-xamarinforms"></a>の XAML カスタム名前空間スキーマXamarin.Forms
+# <a name="xaml-custom-namespace-schemas-in-no-locxamarinforms"></a>の XAML カスタム名前空間スキーマ Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-customnamespaceschemas)
 
@@ -59,7 +59,7 @@ namespace MyCompany.Controls
 > [!NOTE]
 > クラスには `XmlnsDefinitionAttribute` 、という名前のプロパティもあります `AssemblyName` 。これはオプションでアセンブリの名前に設定できます。 これは、から参照される CLR 名前空間 `XmlnsDefinitionAttribute` が外部アセンブリにある場合にのみ必要です。
 
-は、 `XmlnsDefinitionAttribute` カスタム名前空間スキーマでマップされる CLR 名前空間を含むプロジェクトのアセンブリレベルで定義する必要があります。 次の例は、サンプルアプリケーションの**AssemblyInfo.cs**ファイルを示しています。
+は、 `XmlnsDefinitionAttribute` カスタム名前空間スキーマでマップされる CLR 名前空間を含むプロジェクトのアセンブリレベルで定義する必要があります。 次の例は、サンプルアプリケーションの **AssemblyInfo.cs** ファイルを示しています。
 
 ```csharp
 using Xamarin.Forms;
@@ -136,7 +136,7 @@ namespace CustomNamespaceSchemaDemo
 </ContentPage>
 ```
 
-`CircleButton`インスタンスをに追加するには、 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 名前空間プレフィックスを使用してインスタンスを宣言し `controls` ます。
+`CircleButton` インスタンスをに追加するには、 [`ContentPage`](xref:Xamarin.Forms.ContentPage) 名前空間プレフィックスを使用してインスタンスを宣言し `controls` ます。
 
 では、カスタム名前空間スキーマ型を検索するために、 Xamarin.Forms 参照されたアセンブリのインスタンスを検索 `XmlnsDefinitionAttribute` します。 `xmlns`XAML ファイル内の要素の属性がのプロパティ値と一致する場合 `XmlNamespace` `XmlnsDefinitionAttribute` 、 Xamarin.Forms は `XmlnsDefinitionAttribute.ClrNamespace` 型の解決のためにプロパティ値を使用しようとします。 型の解決が失敗した場合、 Xamarin.Forms は、その他の一致するインスタンスに基づいて、型の解決を引き続き試行し `XmlnsDefinitionAttribute` ます。
 
@@ -146,6 +146,6 @@ namespace CustomNamespaceSchemaDemo
 
 ## <a name="related-links"></a>関連リンク
 
-- [カスタム名前空間スキーマ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-customnamespaceschemas)
+- [カスタム名前空間スキーマ (サンプル)](/samples/xamarin/xamarin-forms-samples/xaml-customnamespaceschemas)
 - [XAML 名前空間で推奨されるプレフィックス](custom-prefix.md)
-- [での XAML 名前空間Xamarin.Forms](namespaces.md)
+- [での XAML 名前空間 Xamarin.Forms](namespaces.md)

@@ -10,18 +10,18 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a1e6290c0f85b54c3fd8958bc43667714bdece20
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 12e3e95b0f87d0e93d157bebe057874430866c2b
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84131054"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560781"
 ---
 # <a name="porter-duff-blend-modes"></a>Porter blend モード
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-Porter-Duff blend モードには、トーマス Porter と Tom Duff の後に名前が付けられます。この場合、Lucasfilm の作業中に合成の代数を開発しました。 これらの紙[_合成デジタル画像_](https://graphics.pixar.com/library/Compositing/paper.pdf)は、1984年7月の_コンピューターグラフィックス_の問題である253から259に発行されました。 これらの blend モードは、複合シーンにさまざまなイメージをアセンブルする合成に不可欠です。
+Porter-Duff blend モードには、トーマス Porter と Tom Duff の後に名前が付けられます。この場合、Lucasfilm の作業中に合成の代数を開発しました。 これらの紙 [_合成デジタル画像_](https://graphics.pixar.com/library/Compositing/paper.pdf) は、1984年7月の _コンピューターグラフィックス_の問題である253から259に発行されました。 これらの blend モードは、複合シーンにさまざまなイメージをアセンブルする合成に不可欠です。
 
 ![Porter-Duff サンプル](porter-duff-images/PorterDuffSample.png "Porter-Duff サンプル")
 
@@ -31,13 +31,13 @@ Porter-Duff blend モードには、トーマス Porter と Tom Duff の後に�
 
 ![Porter-Duff Destination](porter-duff-images/PorterDuffDst.png "Porter-Duff Destination")
 
-この領域は、_変換先_、または_背景_また_は_背景と呼ばれます。
+この領域は、 _変換先_ 、または _背景_ また _は_背景と呼ばれます。
 
 次の四角形を描画します。これは、変換先のサイズと同じです。 四角形は、右側と下 2 ~ 3 を占める bluish 領域を除いて透明です。
 
 ![Porter-Duff ソース](porter-duff-images/PorterDuffSrc.png "Porter-Duff ソース")
 
-これは、_ソース_または_フォアグラウンド_と呼ばれます。
+これは、 _ソース_ または _フォアグラウンド_と呼ばれます。
 
 変換先にソースを表示すると、次のようになります。
 
@@ -71,19 +71,19 @@ Skia はと呼ばれる14のモードを追加し `Modulate` ますが、これ�
 
 SkiaSharp で定義されている14の Porter Ff モードを次に示します。 次の表は、上の図の3つの空白以外の各領域の色を示しています。
 
-| モード       | 宛先 | 合う | source |
+| モード       | Destination | 合う | source |
 | ---------- |:-----------:|:------------:|:------:|
 | `Clear`    |             |              |        |
 | `Src`      |             | source       | X      |
-| `Dst`      | X           | 宛先  |        |
+| `Dst`      | X           | Destination  |        |
 | `SrcOver`  | X           | source       | X      |
-| `DstOver`  | X           | 宛先  | X      |
+| `DstOver`  | X           | Destination  | X      |
 | `SrcIn`    |             | source       |        |
-| `DstIn`    |             | 宛先  |        |
+| `DstIn`    |             | Destination  |        |
 | `SrcOut`   |             |              | X      |
 | `DstOut`   | X           |              |        |
 | `SrcATop`  | X           | source       |        |
-| `DstATop`  |             | 宛先  | X      |
+| `DstATop`  |             | Destination  | X      |
 | `Xor`      | X           |              | X      |
 | `Plus`     | X           | SUM          | X      |
 | `Modulate` |             | 製品      |        | 
@@ -92,8 +92,8 @@ SkiaSharp で定義されている14の Porter Ff モードを次に示します
 
 モードの命名規則は、次のいくつかの簡単な規則に従います。
 
-- **Src**または**Dst**自体は、変換元または変換先のピクセルだけが表示されることを意味します。
-- [サフィックス (**上**) の値は、交差部分に表示される内容を示します。 転送元または転送先がもう一方の "上" に描画されます。
+- **Src** または **Dst** 自体は、変換元または変換先のピクセルだけが表示されることを意味します。
+- [サフィックス ( **上** ) の値は、交差部分に表示される内容を示します。 転送元または転送先がもう一方の "上" に描画されます。
 - **In**サフィックスは、交差部分だけが色分けされていることを意味します。 出力は、転送元または転送先の部分のみに制限されます。
 - **出力**サフィックスは、交差部分に色が付いていないことを意味します。 出力は、交差部分の送信元または送信先の一部にすぎません。
 - **一番**上のサフィックスは、 **In**と**Out**の和集合です。これには、転送元または転送先が "一番上" である領域が含まれます。
@@ -260,7 +260,7 @@ public class PorterDuffGridPage : ContentPage
 }
 ```
 
-結果は次のようになります。
+結果は次のとおりです。
 
 [![Porter-Duff グリッド](porter-duff-images/PorterDuffGrid.png "Porter-Duff グリッド")](porter-duff-images/PorterDuffGrid-Large.png#lightbox)
 
@@ -282,15 +282,15 @@ canvas.Clear(SKColors.White);
 
 ## <a name="using-mattes-with-porter-duff"></a>Porter-Duff でのマットの使用
 
-**レンガの合成**のページには、従来の複合タスクの例が示されています。画像は、削除する必要がある背景を持つビットマップを含め、いくつかの部分から構成する必要があります。 次に、 **SeatedMonkey.jpg**のビットマップと、問題のある背景を示します。
+**レンガの合成**のページには、従来の複合タスクの例が示されています。画像は、削除する必要がある背景を持つビットマップを含め、いくつかの部分から構成する必要があります。 次に、 **SeatedMonkey.jpg** のビットマップと、問題のある背景を示します。
 
 ![取り付けられるサル](porter-duff-images/SeatedMonkey.jpg "取り付けられるサル")
 
-合成の準備として、対応する_マット_が作成されています。これは、イメージを表示したり透明にしたりするための黒の別のビットマップです。 このファイルには**SeatedMonkeyMatte.png**という名前が付けられ、 [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルの**メディア**フォルダーのリソースの中にあります。
+合成の準備として、対応する _マット_ が作成されています。これは、イメージを表示したり透明にしたりするための黒の別のビットマップです。 このファイルには**SeatedMonkeyMatte.png**という名前が付けられ、 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルの**メディア**フォルダーのリソースの中にあります。
 
 ![固定したサルのマット](porter-duff-images/SeatedMonkeyMatte.png "固定したサルのマット")
 
-これは、expertly に作成されたマットでは_ありません_。 最適な場合、マットには黒いピクセルの端に部分的に透明なピクセルを含める必要があります。また、このマットには含まれません。
+これは、expertly に作成されたマットでは _ありません_ 。 最適な場合、マットには黒いピクセルの端に部分的に透明なピクセルを含める必要があります。また、このマットには含まれません。
 
 **ブリックの合成**ページの XAML ファイルは、とをインスタンス化します。このファイルは、 `SKCanvasView` 最終的な `Button` イメージを作成するプロセスをユーザーに案内します。
 
@@ -368,7 +368,7 @@ public partial class BrickWallCompositingPage : ContentPage
 
 [![ブリックの合成手順0](porter-duff-images/BrickWallCompositing0.png "ブリックの合成手順0")](porter-duff-images/BrickWallCompositing0-Large.png#lightbox)
 
-を1回押すと、が `Button` `step` 1 にインクリメントし、 `PaintSurface` ハンドラーに**SeatedMonkey.jpg**が表示されるようになります。
+を1回押すと、が `Button` `step` 1 にインクリメントし、 `PaintSurface` ハンドラーに **SeatedMonkey.jpg**が表示されるようになります。
 
 ```csharp
 public partial class BrickWallCompositingPage : ContentPage
@@ -394,7 +394,7 @@ public partial class BrickWallCompositingPage : ContentPage
 
 [![ブリックの合成手順1](porter-duff-images/BrickWallCompositing1.png "ブリックの合成手順1")](porter-duff-images/BrickWallCompositing1-Large.png#lightbox)
 
-をもう一度押し、を `Button` `step` 2 に増やします。 これは、 **SeatedMonkeyMatte.png**ファイルを表示するための重要な手順です。
+をもう一度押し、を `Button` `step` 2 に増やします。 これは、 **SeatedMonkeyMatte.png** ファイルを表示するための重要な手順です。
 
 ```csharp
 public partial class BrickWallCompositingPage : ContentPage
@@ -493,22 +493,22 @@ public partial class BrickWallCompositingPage : ContentPage
 
 当然ながら、このシーンを作成する方法は他にもあります。 バックグラウンドで構築し、フォアグラウンドに向かって進行することができます。 ただし、blend モードを使用すると、柔軟性が向上します。 特に、マットを使用すると、作成されたシーンからビットマップの背景を除外することができます。
 
-記事「[パスと領域の使用](../../curves/clipping.md)」で学習したように、 `SKCanvas` クラスは、、、およびの各メソッドに対応する3種類のクリッピングを定義し [`ClipRect`](xref:SkiaSharp.SKCanvas.ClipRect*) [`ClipPath`](xref:SkiaSharp.SKCanvas.ClipPath*) [`ClipRegion`](xref:SkiaSharp.SKCanvas.ClipRegion*) ます。 Porter blend モードでは、別の種類のクリッピングが追加されます。これにより、ビットマップなど、描画可能なあらゆるものに画像を制限できます。 **レンガの合成**で使用されるマットは、基本的にクリッピング領域を定義します。
+記事「 [パスと領域の使用](../../curves/clipping.md)」で学習したように、 `SKCanvas` クラスは、、、およびの各メソッドに対応する3種類のクリッピングを定義し [`ClipRect`](xref:SkiaSharp.SKCanvas.ClipRect*) [`ClipPath`](xref:SkiaSharp.SKCanvas.ClipPath*) [`ClipRegion`](xref:SkiaSharp.SKCanvas.ClipRegion*) ます。 Porter blend モードでは、別の種類のクリッピングが追加されます。これにより、ビットマップなど、描画可能なあらゆるものに画像を制限できます。 **レンガの合成**で使用されるマットは、基本的にクリッピング領域を定義します。
 
 ## <a name="gradient-transparency-and-transitions"></a>グラデーションの透明度と遷移
 
-この記事で前述した Porter の blend モードの例では、不透明ピクセルと透明ピクセルで、部分的に透明なピクセルではなく、すべてのイメージが関係しています。 Blend モード関数は、これらのピクセルにも定義されています。 次の表は、Skia [**Skblendmode のリファレンス**](https://skia.org/user/api/SkBlendMode_Reference)に記載されている表記法を使用する、Porter のブレンドモードのより正式な定義です。 ( **Skblendmode 参照**は skia 参照であるため、C++ 構文が使用されます)。
+この記事で前述した Porter の blend モードの例では、不透明ピクセルと透明ピクセルで、部分的に透明なピクセルではなく、すべてのイメージが関係しています。 Blend モード関数は、これらのピクセルにも定義されています。 次の表は、Skia [**Skblendmode のリファレンス**](https://skia.org/user/api/SkBlendMode_Reference)に記載されている表記法を使用する、Porter のブレンドモードのより正式な定義です。 ( **Skblendmode 参照** は skia 参照であるため、C++ 構文が使用されます)。
 
 概念的には、各ピクセルの赤、緑、青、アルファの各要素が、0 ~ 1 の範囲の浮動小数点数に変換されます。 アルファチャネルの場合、0は完全に透明で、1は完全に不透明です。
 
 次の表に示す表記法では、次の省略形が使用されています。
 
 - 宛先のアルファチャネルである**Da**
-- **Dc**は移動先の RGB 色です
-- **Sa**はソースのアルファチャネルです
-- **Sc**はソースの RGB 色です
+- **Dc** は移動先の RGB 色です
+- **Sa** はソースのアルファチャネルです
+- **Sc** はソースの RGB 色です
 
-RGB 色は、アルファ値で事前乗算されます。 たとえば、 **Sc**が純粋な赤を表し、 **Sa**が0X80 の場合、RGB 色は **(0x80, 0, 0)** になります。 **Sa**が0の場合は、すべての RGB コンポーネントも0になります。
+RGB 色は、アルファ値で事前乗算されます。 たとえば、 **Sc** が純粋な赤を表し、 **Sa** が0X80 の場合、RGB 色は **(0x80, 0, 0)** になります。 **Sa**が0の場合は、すべての RGB コンポーネントも0になります。
 
 結果は、アルファチャネルを含む角かっこと、コンマで区切られた RGB 色で示されます。 **[アルファ,、色]** です。 色の場合は、赤、緑、および青のコンポーネントに対して個別に計算が実行されます。
 
@@ -529,11 +529,11 @@ RGB 色は、アルファ値で事前乗算されます。 たとえば、 **Sc*
 | `Plus`     | [Sa + Da、Sc + Dc] |
 | `Modulate` | SaDa、Sc修飾 | 
 
-これらの操作は、 **Da**と**Sa**が0または1の場合に分析しやすくなります。 たとえば、既定のモードでは、 `SrcOver` **Sa**が0の場合、 **Sc**も0になり、結果は **[Da, Dc]**、送信先のアルファと色になります。 **Sa**が1の場合、結果は **[sa, sc]**、ソースのアルファと色、または **[1, sc]** になります。
+これらの操作は、 **Da** と **Sa** が0または1の場合に分析しやすくなります。 たとえば、既定のモードでは、 `SrcOver` **Sa** が0の場合、 **Sc** も0になり、結果は **[Da, Dc]**、送信先のアルファと色になります。 **Sa**が1の場合、結果は **[sa, sc]**、ソースのアルファと色、または **[1, sc]** になります。
 
-`Plus`との `Modulate` モードは、変換元と変換先の組み合わせによって新しい色が生成される可能性があるという、他のモードとは少し異なります。 モードは、 `Plus` バイトコンポーネントまたは浮動小数点コンポーネントで解釈できます。 前に示した**Porter-Duff グリッド**ページでは、変換先の色は **(0xC0、0x80、0x00)** で、ソースの色は **(0x00、0x80、0xC0)** です。 コンポーネントの各ペアが追加されますが、合計は0xFF で固定されます。 結果は、色 **(0xC0、0xff、0xC0)** になります。 これは、交差部分に表示される色です。
+`Plus`との `Modulate` モードは、変換元と変換先の組み合わせによって新しい色が生成される可能性があるという、他のモードとは少し異なります。 モードは、 `Plus` バイトコンポーネントまたは浮動小数点コンポーネントで解釈できます。 前に示した **Porter-Duff グリッド** ページでは、変換先の色は **(0xC0、0x80、0x00)** で、ソースの色は **(0x00、0x80、0xC0)** です。 コンポーネントの各ペアが追加されますが、合計は0xFF で固定されます。 結果は、色 **(0xC0、0xff、0xC0)** になります。 これは、交差部分に表示される色です。
 
-モードでは、 `Modulate` RGB 値を浮動小数点型に変換する必要があります。 コピー先の色は **(0.75、0.5、0)** で、ソースは **(0、0.5、0.75)** です。 RGB コンポーネントはそれぞれ乗算され、結果は **(0, 0.25, 0)** になります。 このモードでは、 **Porter-Duff グリッド**ページの交差部分に表示される色です。
+モードでは、 `Modulate` RGB 値を浮動小数点型に変換する必要があります。 コピー先の色は **(0.75、0.5、0)** で、ソースは **(0、0.5、0.75)** です。 RGB コンポーネントはそれぞれ乗算され、結果は **(0, 0.25, 0)** になります。 このモードでは、 **Porter-Duff グリッド** ページの交差部分に表示される色です。
 
 **Porter の透明度**ページでは、部分的に透明なグラフィックオブジェクトに対して Porter の blend モードがどのように作用するかを調べることができます。 XAML ファイルには、Porter モードのが含まれてい `Picker` ます。
 
@@ -658,9 +658,9 @@ public partial class PorterDuffTransparencyPage : ContentPage
 
 [![Porter-Duff 透明度](porter-duff-images/PorterDuffTransparency.png "Porter-Duff 透明度")](porter-duff-images/PorterDuffTransparency-Large.png#lightbox)
 
-コピー先とコピー元の構成は、元の Porter-Duff の[_デジタル画像_](https://graphics.pixar.com/library/Compositing/paper.pdf)用紙のページ255に示されている図と非常によく似ていますが、このページでは、blend モードが部分的な透明度の領域に対して適切に動作していることを示しています。
+コピー先とコピー元の構成は、元の Porter-Duff の [_デジタル画像_](https://graphics.pixar.com/library/Compositing/paper.pdf) 用紙のページ255に示されている図と非常によく似ていますが、このページでは、blend モードが部分的な透明度の領域に対して適切に動作していることを示しています。
 
-透明なグラデーションは、いくつかの異なる効果に使用できます。 マスクは、 **SkiaSharp の丸いグラデーションページ**の [[**マスクの放射状グラデーション**](../shaders/circular-gradients.md#radial-gradients-for-masking)] セクションに示されている方法と似ています。 [**合成マスク**] ページの多くは、その前のプログラムに似ています。 ビットマップリソースを読み込み、それを表示する四角形を決定します。 放射状グラデーションは、事前に決定された中心と半径に基づいて作成されます。
+透明なグラデーションは、いくつかの異なる効果に使用できます。 マスクは、 **SkiaSharp の丸いグラデーションページ**の [[**マスクの放射状グラデーション**](../shaders/circular-gradients.md#radial-gradients-for-masking)] セクションに示されている方法と似ています。 [ **合成マスク** ] ページの多くは、その前のプログラムに似ています。 ビットマップリソースを読み込み、それを表示する四角形を決定します。 放射状グラデーションは、事前に決定された中心と半径に基づいて作成されます。
 
 ```csharp
 public class CompositingMaskPage : ContentPage
@@ -740,7 +740,7 @@ canvas.DrawColor(SKColors.Pink, SKBlendMode.DstOver);
 
 [![マスクの合成](porter-duff-images/CompositingMask.png "マスクの合成")](porter-duff-images/CompositingMask-Large.png#lightbox)
 
-また、Porter モードと部分的に透明なグラデーションを使用して、あるイメージから別のイメージへの遷移を行うこともできます。 [**グラデーションの切り替え**] ページには、 `Slider` 0 から1への移行の進行状況レベルを示すが含まれています。また、を使用して、 `Picker` 必要な移行の種類を選択します。
+また、Porter モードと部分的に透明なグラデーションを使用して、あるイメージから別のイメージへの遷移を行うこともできます。 [ **グラデーションの切り替え** ] ページには、 `Slider` 0 から1への移行の進行状況レベルを示すが含まれています。また、を使用して、 `Picker` 必要な移行の種類を選択します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -772,7 +772,7 @@ canvas.DrawColor(SKColors.Pink, SKBlendMode.DstOver);
 </ContentPage>
 ```
 
-分離コードファイルは、移行を示すために2つのビットマップリソースを読み込みます。 これらは、この記事の前の「**ビットマップのディゾルブ**」ページで使用されているのと同じ2つのイメージです。 このコードは、 &mdash; 線形、放射状、スイープという3種類のグラデーションに対応する3つのメンバーを持つ列挙体も定義します。 これらの値は、に読み込まれ `Picker` ます。
+分離コードファイルは、移行を示すために2つのビットマップリソースを読み込みます。 これらは、この記事の前の「 **ビットマップのディゾルブ** 」ページで使用されているのと同じ2つのイメージです。 このコードは、 &mdash; 線形、放射状、スイープという3種類のグラデーションに対応する3つのメンバーを持つ列挙体も定義します。 これらの値は、に読み込まれ `Picker` ます。
 
 ```csharp
 public partial class GradientTransitionsPage : ContentPage
@@ -905,5 +905,5 @@ public partial class GradientTransitionsPage : ContentPage
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

@@ -10,22 +10,22 @@ ms.date: 08/22/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d9fa710f5dfc61c2892b8fc409a39b37cf449018
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e63d92cde5925561dae4217c3c46af2c2c59f795
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136306"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563992"
 ---
 # <a name="skiasharp-effects"></a>SkiaSharp の効果
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-SkiaSharp クラスは、 [`SKPaint`](xref:SkiaSharp.SKPaint) 一般的な_効果_の下で分類できる6つのプロパティを定義します。 これらは、何らかの形でグラフィックスの通常の表示を変更するプロパティです。 SkiaSharp 効果は、次の6つのカテゴリに分類されます。
+SkiaSharp クラスは、 [`SKPaint`](xref:SkiaSharp.SKPaint) 一般的な _効果_の下で分類できる6つのプロパティを定義します。 これらは、何らかの形でグラフィックスの通常の表示を変更するプロパティです。 SkiaSharp 効果は、次の6つのカテゴリに分類されます。
 
 ## <a name="path-effects"></a>[パスの効果](../curves/effects.md)
 
-[`PathEffect`](xref:SkiaSharp.SKPaint.PathEffect)のプロパティを `SKPaint` 型のオブジェクトに設定し [`SKPathEffect`](xref:SkiaSharp.SKPathEffect) て、破線を表示するか、パスから作成されたパターンで領域を塗りつぶすか塗りつぶします。 パスの効果については、SkiaSharp の記事「[**パスの影響**](../curves/effects.md)」をご覧ください。
+[`PathEffect`](xref:SkiaSharp.SKPaint.PathEffect)のプロパティを `SKPaint` 型のオブジェクトに設定し [`SKPathEffect`](xref:SkiaSharp.SKPathEffect) て、破線を表示するか、パスから作成されたパターンで領域を塗りつぶすか塗りつぶします。 パスの効果については、SkiaSharp の記事「 [**パスの影響**](../curves/effects.md)」をご覧ください。
 
 ## <a name="shaders"></a>[シェーダー](shaders/index.md)
 
@@ -47,9 +47,9 @@ SkiaSharp クラスは、 [`SKPaint`](xref:SkiaSharp.SKPaint) 一般的な_効�
 
 [`ColorFilter`](xref:SkiaSharp.SKPaint.ColorFilter) `SKPaint` [`SKColorFilter`](xref:SkiaSharp.SKColorFilter) テーブルまたはマトリックス変換を使用して色を変更するには、のプロパティを型のオブジェクトに設定します。
 
-これらの記事のすべてのサンプルコードは、 [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)にあります。 ホームページで、[ **SkiaSharp Effects**] を選択します。
+これらの記事のすべてのサンプルコードは、 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)にあります。 ホームページで、[ **SkiaSharp Effects**] を選択します。
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

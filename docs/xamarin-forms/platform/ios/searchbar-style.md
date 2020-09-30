@@ -10,12 +10,12 @@ ms.date: 03/05/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e02ef600af761915d05c912b586e409dd6f46b85
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a9eacc76fb3da6296039a713e15c4eaa30828d44
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137086"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560963"
 ---
 # <a name="searchbar-style-on-ios"></a>IOS の SearchBar スタイル
 
@@ -47,9 +47,9 @@ searchBar.On<iOS>().SetSearchBarStyle(UISearchBarStyle.Minimal);
 
 メソッドは、 `SearchBar.On<iOS>` このプラットフォーム固有のが iOS 上でのみ実行されることを指定します。 `SearchBar.SetSearchBarStyle`名前空間のメソッドは [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 、に背景があるかどうかを制御するために使用され [`SearchBar`](xref:Xamarin.Forms.SearchBar) ます。 `UISearchBarStyle`列挙体には、次の3つの値があります。
 
-- `Default`に既定のスタイルが設定されていることを示し [`SearchBar`](xref:Xamarin.Forms.SearchBar) ます。 これは、バインド可能なプロパティの既定値です `SearchBar.SearchBarStyle` 。
-- `Prominent`の背景が [`SearchBar`](xref:Xamarin.Forms.SearchBar) 半透明で、検索フィールドが不透明であることを示します。
-- `Minimal`に背景が [`SearchBar`](xref:Xamarin.Forms.SearchBar) なく、検索フィールドが半透明であることを示します。
+- `Default` に既定のスタイルが設定されていることを示し [`SearchBar`](xref:Xamarin.Forms.SearchBar) ます。 これは、バインド可能なプロパティの既定値です `SearchBar.SearchBarStyle` 。
+- `Prominent` の背景が [`SearchBar`](xref:Xamarin.Forms.SearchBar) 半透明で、検索フィールドが不透明であることを示します。
+- `Minimal` に背景が [`SearchBar`](xref:Xamarin.Forms.SearchBar) なく、検索フィールドが半透明であることを示します。
 
 また、メソッドを `SearchBar.GetSearchBarStyle` 使用して、に適用されたを返すこともでき `UISearchBarStyle` `SearchBar` ます。
 
@@ -63,6 +63,6 @@ searchBar.On<iOS>().SetSearchBarStyle(UISearchBarStyle.Minimal);
 
 ## <a name="related-links"></a>関連リンク
 
-- [PlatformSpecifics (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [プラットフォーム固有設定の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific の API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

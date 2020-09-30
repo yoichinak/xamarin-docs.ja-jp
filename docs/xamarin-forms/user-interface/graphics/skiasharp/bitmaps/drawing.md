@@ -10,12 +10,12 @@ ms.date: 07/17/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c045e297beca675c0582efc2f75b1d6b2bcedcf8
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 91051b1ffc859d4e3deb62d41709db0c587b2789
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573294"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560833"
 ---
 # <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>SkiaSharp ビットマップの作成と描画
 
@@ -59,7 +59,7 @@ using (SKCanvas canvas = new SKCanvas(bitmap))
 
 ビットマップが表示されます。 後で、プログラムは `SKCanvas` 同じビットマップに基づいて新しいオブジェクトを作成し、それをさらに描画できます。
 
-**[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーションの**hello ビットマップ**ページには、"hello, Bitmap!" というテキストが書き込まれます。 ビットマップでは、そのビットマップが複数回表示されます。
+**[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーションの**hello ビットマップ**ページには、"hello, Bitmap!" というテキストが書き込まれます。 ビットマップでは、そのビットマップが複数回表示されます。
 
 のコンストラクターは、 `HelloBitmapPage` `SKPaint` テキストを表示するためのオブジェクトを作成することによって開始されます。 ここでは、テキスト文字列の大きさを決定し、それらの寸法を使用してビットマップを作成します。 次に、その `SKCanvas` ビットマップに基づいてオブジェクトを作成し、 `Clear` を呼び出して、を呼び出し `DrawText` ます。 `Clear`新しく作成されたビットマップにはランダムなデータが含まれている可能性があるため、必ず新しいビットマップを使用してを呼び出すことをお勧めします。
 
@@ -124,9 +124,9 @@ public partial class HelloBitmapPage : ContentPage
 
 [ **Hello bitmap** ] ページの表示では、作成されたプログラムが黒のテキスト以外に透明であることがわかります。 そのため、ディスプレイ画面の水色の色はから表示されます。
 
-のメソッドのドキュメントでは、 `Clear` `SKCanvas` "キャンバス ' 現在のクリップ内のすべてのピクセルを置き換える" というステートメントを使用してそれらを記述しています。 "置換" という単語を使用すると、これらのメソッドの重要な特性が明らかになります。つまり、 `SKCanvas` 既存の表示サーフェイスに何かを追加するすべての描画メソッドです。 メソッドは、 `Clear` 既に存在するものを_置き換え_ます。
+のメソッドのドキュメントでは、 `Clear` `SKCanvas` "キャンバス ' 現在のクリップ内のすべてのピクセルを置き換える" というステートメントを使用してそれらを記述しています。 "置換" という単語を使用すると、これらのメソッドの重要な特性が明らかになります。つまり、 `SKCanvas` 既存の表示サーフェイスに何かを追加するすべての描画メソッドです。 メソッドは、 `Clear` 既に存在するものを _置き換え_ ます。
 
-`Clear`2つの異なるバージョンに存在します。
+`Clear` 2つの異なるバージョンに存在します。
 
 - [`Clear`](xref:SkiaSharp.SKCanvas.Clear(SkiaSharp.SKColor))パラメーターを持つメソッドは、 `SKColor` 画面表面のピクセルをその色のピクセルで置き換えます。
 
@@ -170,14 +170,14 @@ Color = new SKColor(0, 0, 0, 0)
 - `Gray8`&mdash;各ピクセルは、黒色から白までの灰色の網掛けを表す8ビットです。
 - `RgbaF16`&mdash;各ピクセルは64ビットで、赤、緑、青、アルファは16ビットの浮動小数点の形式になります
 
-各ピクセルが32ピクセル (4 バイト) である2つの形式は、多くの場合、_フルカラー_形式と呼ばれます。 その他の書式設定の多くは、ビデオが自分で表示されたときから、完全な色には対応していませんでした。 色が制限されているビットマップは、これらの表示に対しては十分であり、使用可能なビットマップではメモリ内の領域が少なくなります。
+各ピクセルが32ピクセル (4 バイト) である2つの形式は、多くの場合、 _フルカラー_ 形式と呼ばれます。 その他の書式設定の多くは、ビデオが自分で表示されたときから、完全な色には対応していませんでした。 色が制限されているビットマップは、これらの表示に対しては十分であり、使用可能なビットマップではメモリ内の領域が少なくなります。
 
 これらの日には、ほとんどの場合、プログラマはフルカラービットマップを使用し、他の形式は使用しません。 この例外は `RgbaF16` 形式です。これにより、フルカラー形式であっても、より多くの色解像度が可能になります。 ただし、この形式は、医療イメージングなどの特別な目的で使用され、標準のフルカラー表示ではあまり意味がありません。
 
 この一連の記事では、 `SKBitmap` メンバーが指定されていない場合に、既定で使用される色の形式に制限され `SKColorType` ます。 この既定の形式は、基になるプラットフォームに基づいています。 でサポートされているプラットフォームでは、 Xamarin.Forms 既定の色の種類は次のとおりです。
 
-- `Rgba8888`iOS と Android の場合
-- `Bgra8888`UWP の場合
+- `Rgba8888` iOS と Android の場合
+- `Bgra8888` UWP の場合
 
 唯一の違いは、メモリ内の4バイトの順序です。これは、ピクセルビットに直接アクセスした場合にのみ問題になります。 これは、 [**SkiaSharp ビットマップピクセルにアクセス**](pixel-bits.md)する記事に到達するまで重要になりません。
 
@@ -267,7 +267,7 @@ public partial class MonkeyMoustachePage : ContentPage
 
 ビットマップを変更する最も汎用性の高い方法は、「 **[SkiaSharp ビットマップピクセルにアクセス](pixel-bits.md)** する」の記事で説明されている実際のピクセルビットにアクセスすることです。 ただし、ピクセルビットへのアクセスを必要としないビットマップを変更する方法は他にも多数あります。
 
-**[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーションに含まれる次のビットマップは、幅が360ピクセル、高さが480ピクセルです。
+**[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーションに含まれる次のビットマップは、幅が360ピクセル、高さが480ピクセルです。
 
 ![マウンテン Climbers](drawing-images/MountainClimbers.jpg "マウンテン Climbers")
 
@@ -405,7 +405,7 @@ using (SKCanvas canvas = new SKCanvas(rotatedBitmap))
 
 ただし、一般的なケースでは、このロジックは回転したビットマップのコーナーをトリミングします。 より良い方法は、三角を使用して回転したビットマップのサイズを計算し、その角を含めることです。
 
-この三角三角は、**ビットマップの回転**ページに表示されます。 XAML ファイルは、とをインスタンス化します。これは、 `SKCanvasView` 現在の値を `Slider` 示すを使用して、0 ~ 360 度の範囲で指定でき `Label` ます。
+この三角三角は、 **ビットマップの回転** ページに表示されます。 XAML ファイルは、とをインスタンス化します。これは、 `SKCanvasView` 現在の値を `Slider` 示すを使用して、0 ~ 360 度の範囲で指定でき `Label` ます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -495,9 +495,9 @@ public partial class BitmapRotatorPage : ContentPage
 
 ## <a name="flipping-bitmaps"></a>ビットマップの反転
 
-通常、ビットマップに対して実行されるもう1つの操作は、_反転_と呼ばれます。 概念的には、ビットマップは、垂直軸または水平軸を中心に、ビットマップの中心を通る3次元で回転します。 垂直方向の反転では、ミラーイメージが作成されます。
+通常、ビットマップに対して実行されるもう1つの操作は、 _反転_と呼ばれます。 概念的には、ビットマップは、垂直軸または水平軸を中心に、ビットマップの中心を通る3次元で回転します。 垂直方向の反転では、ミラーイメージが作成されます。
 
-**[SkiaSharpFormsDemos](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーションの**ビットマップフリッパー**ページは、これらのプロセスを示しています。 XAML ファイルには、 `SKCanvasView` 垂直方向および水平方向に反転するためのボタンと2つのボタンが含まれています。
+**[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーションの**ビットマップフリッパー**ページは、これらのプロセスを示しています。 XAML ファイルには、 `SKCanvasView` 垂直方向および水平方向に反転するためのボタンと2つのボタンが含まれています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -599,5 +599,5 @@ public partial class BitmapFlipperPage : ContentPage
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

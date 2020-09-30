@@ -10,12 +10,12 @@ ms.date: 05/06/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e0fbdc91c2661732e3afdbde44ce9891f89c5f62
-ms.sourcegitcommit: 14d67a2db82e67471584b1749e0d5b9ec0c0c09b
+ms.openlocfilehash: d535956e03ac02e2cf0c5d7528ee8e363a2a1e55
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88228639"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561652"
 ---
 # <a name="no-locxamarinforms-webview"></a>Xamarin.Forms WebView
 
@@ -263,7 +263,7 @@ namespace WorkingWithWebview.UWP
 }
 ```
 
-## <a name="navigation"></a>「ナビゲーション」
+## <a name="navigation"></a>ナビゲーション
 
 WebView では、使用できるようにするいくつかのメソッドとプロパティによるナビゲーションがサポートされています。
 
@@ -329,7 +329,7 @@ public partial class InAppBrowserXaml : ContentPage
 }
 ```
 
-以上で作業は終了です。
+これで完了です。
 
 ![WebView ナビゲーションボタン](webview-images/in-app-browser.png)
 
@@ -351,7 +351,7 @@ WebView は、状態の変化に対応するために次のイベントを発生
 [`WebNavigatedEventArgs`](xref:Xamarin.Forms.WebNavigatedEventArgs)イベントに付随するオブジェクトに [`Navigated`](xref:Xamarin.Forms.WebView.Navigated) は、次の4つのプロパティがあります。
 
 - `NavigationEvent` –発生したナビゲーションイベント。
-- `Result` –列挙メンバーを使用したナビゲーションの結果について説明し [`WebNavigationResult`](xref:Xamarin.Forms.WebNavigationResult) ます。 有効な値は `Cancel`、`Failure`、`Success`、および `Timeout` です。
+- `Result` –列挙メンバーを使用したナビゲーションの結果について説明し [`WebNavigationResult`](xref:Xamarin.Forms.WebNavigationResult) ます。 有効な値は、`Cancel`、`Failure`、`Success`、`Timeout` です。
 - `Source` –ナビゲーションを実行した要素。
 - `Url` : ナビゲーション先。
 
@@ -420,7 +420,7 @@ webView.Reload();
 
 `WebView` 既定では、Android では、組み込みのブラウザーほど高速です。
 
-[UWP WebView](https://docs.microsoft.com/windows/uwp/design/controls-and-patterns/web-view)では、Microsoft Edge レンダリングエンジンを使用します。 デスクトップデバイスとタブレットデバイスでは、Edge ブラウザー自体を使用した場合と同じパフォーマンスが表示されます。
+[UWP WebView](/windows/uwp/design/controls-and-patterns/web-view)では、Microsoft Edge レンダリングエンジンを使用します。 デスクトップデバイスとタブレットデバイスでは、Edge ブラウザー自体を使用した場合と同じパフォーマンスが表示されます。
 
 ## <a name="permissions"></a>アクセス許可
 
@@ -430,7 +430,7 @@ webView.Reload();
 - **Android** &ndash;`INTERNET`ネットワークのコンテンツを表示する場合にのみ必要です。 ローカルコンテンツには特別なアクセス許可は必要ありません。
 - **iOS** &ndash; 特別なアクセス許可は必要ありません。
 
-## <a name="layout"></a>Layout
+## <a name="layout"></a>レイアウト
 
 他のほとんどのビューとは異なり Xamarin.Forms 、で `WebView` `HeightRequest` は、 `WidthRequest` Stacklayout または RelativeLayout に含まれるときにとが指定されている必要があります。 これらのプロパティを指定しなかった場合、は `WebView` 表示されません。
 
@@ -490,7 +490,7 @@ AbsoluteLayout の幅を & 要求し *ない* の高さの要求:
 
 ## <a name="invoking-javascript"></a>JavaScript の呼び出し
 
-[`WebView`](xref:Xamarin.Forms.WebView) c# から JavaScript 関数を呼び出して、呼び出し元の C# コードに結果を返す機能が含まれています。 これは、次の [`WebView.EvaluateJavaScriptAsync`](xref:Xamarin.Forms.WebView.EvaluateJavaScriptAsync*) [WebView](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-webview) サンプルの例に示すように、メソッドを使用して実現されます。
+[`WebView`](xref:Xamarin.Forms.WebView) c# から JavaScript 関数を呼び出して、呼び出し元の C# コードに結果を返す機能が含まれています。 これは、次の [`WebView.EvaluateJavaScriptAsync`](xref:Xamarin.Forms.WebView.EvaluateJavaScriptAsync*) [WebView](/samples/xamarin/xamarin-forms-samples/userinterface-webview) サンプルの例に示すように、メソッドを使用して実現されます。
 
 ```csharp
 var numberEntry = new Entry { Text = "5" };
@@ -597,6 +597,6 @@ webView.Source = new UrlWebViewSource { Url = uri.ToString() };
 
 ## <a name="related-links"></a>関連リンク
 
-- [WebView の操作 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithwebview)
-- [WebView (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-webview)
+- [WebView の操作 (サンプル)](/samples/xamarin/xamarin-forms-samples/workingwithwebview)
+- [WebView (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-webview)
 - [UIWebView の廃止](~/ios/user-interface/controls/webview.md#uiwebview-deprecation)

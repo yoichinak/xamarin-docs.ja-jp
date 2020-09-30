@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Formsキー
+title: Xamarin.Forms キー
 description: この記事では、Entry クラスを使用して、 Xamarin.Forms アプリケーションで単一行のテキストまたはパスワード入力を受け入れる方法について説明します。
 ms.prod: xamarin
 ms.assetid: 9923C541-3C10-4D14-BAB5-C4D6C514FB1E
@@ -10,16 +10,16 @@ ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3738a0fa3519f18864c2430430a6716bed5be130
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: ab2f0880f694bd9e270385dd6e0256374ed76c43
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918232"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562224"
 ---
-# <a name="no-locxamarinforms-entry"></a>Xamarin.Formsキー
+# <a name="no-locxamarinforms-entry"></a>Xamarin.Forms キー
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 は、 Xamarin.Forms [`Entry`](xref:Xamarin.Forms.Entry) 単一行のテキスト入力に使用されます。 は、 `Entry` ビューのように、 [`Editor`](xref:Xamarin.Forms.Editor) 複数のキーボードの種類をサポートしています。 また、は `Entry` パスワードフィールドとして使用できます。
 
@@ -78,10 +78,10 @@ var entry = new Entry { Text = "This is a read-only Entry", IsReadOnly = true })
 
 は、プロパティを [`Entry`](xref:Xamarin.Forms.Entry) `Text` `TextTransform` 列挙体の値に設定することによって、プロパティに格納されているテキストの大文字と小文字を変換できます `TextTransform` 。 この列挙体には、次の4つの値があります。
 
-- `None`テキストが変換されないことを示します。
-- `Default`プラットフォームの既定の動作が使用されることを示します。 これは、`TextTransform` プロパティの既定値です。
-- `Lowercase`テキストが小文字に変換されることを示します。
-- `Uppercase`テキストが大文字に変換されることを示します。
+- `None` テキストが変換されないことを示します。
+- `Default` プラットフォームの既定の動作が使用されることを示します。 これは、`TextTransform` プロパティの既定値です。
+- `Lowercase` テキストが小文字に変換されることを示します。
+- `Uppercase` テキストが大文字に変換されることを示します。
 
 次の例では、テキストを大文字に変換しています。
 
@@ -136,7 +136,7 @@ Entry entry = new Entry { CharacterSpacing = 10 };
 
 ## <a name="password-fields"></a>パスワードフィールド
 
-`Entry`プロパティを提供 `IsPassword` します。 がの場合 `IsPassword` `true` 、フィールドの内容は黒の円として表示されます。
+`Entry` プロパティを提供 `IsPassword` します。 がの場合 `IsPassword` `true` 、フィールドの内容は黒の円として表示されます。
 
 XAML の場合:
 
@@ -198,8 +198,8 @@ var entry = new Entry { Text = "Cursor position and selection length set", Curso
 
 プロパティを使用して、 `ClearButtonVisibility` がクリアボタンを表示するかどうかを制御し、 [`Entry`](xref:Xamarin.Forms.Entry) ユーザーがテキストをクリアできるようにすることができます。 このプロパティは、列挙体のメンバーに設定する必要があり `ClearButtonVisibility` ます。
 
-- `Never`クリアボタンが表示されないことを示します。 これは、`Entry.ClearButtonVisibility` プロパティの既定値です。
-- `WhileEditing`にフォーカスとテキストがあるときに、にクリアボタンが表示されることを示し [`Entry`](xref:Xamarin.Forms.Entry) ます。
+- `Never` クリアボタンが表示されないことを示します。 これは、`Entry.ClearButtonVisibility` プロパティの既定値です。
+- `WhileEditing` にフォーカスとテキストがあるときに、にクリアボタンが表示されることを示し [`Entry`](xref:Xamarin.Forms.Entry) ます。
 
 次の例は、XAML でプロパティを設定する方法を示しています。
 
@@ -243,7 +243,7 @@ XAML では次のようにしてこれを実現できます。
 var entry = new Entry { Keyboard = Keyboard.Chat };
 ```
 
-各キーボードの例については、「[レシピ](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/choose-keyboard-for-entry)リポジトリ」を参照してください。
+各キーボードの例については、「 [レシピ](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/choose-keyboard-for-entry) リポジトリ」を参照してください。
 
 [`Keyboard`](xref:Xamarin.Forms.Keyboard) クラスには、大文字の設定、スペルチェック、および単語補完候補の動作を指定することで、キーボードをカスタマイズするために使用できる [`Create`](xref:Xamarin.Forms.Keyboard.Create*) ファクトリ メソッドもあります。 [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) 列挙値がメソッドへの引数として指定され、カスタマイズされた `Keyboard` が返されます。 `KeyboardFlags` 列挙体には次の値が含まれます。
 
@@ -281,12 +281,12 @@ entry.Keyboard = Keyboard.Create(KeyboardFlags.Suggestions | KeyboardFlags.Capit
 
 にフォーカスがあるときに表示される、ソフトキーボードの戻り値キーの外観は、 [`Entry`](xref:Xamarin.Forms.Entry) [`ReturnType`](xref:Xamarin.Forms.Entry.ReturnType) プロパティを列挙体の値に設定することによってカスタマイズでき [`ReturnType`](xref:Xamarin.Forms.ReturnType) ます。
 
-- [`Default`](xref:Xamarin.Forms.ReturnType.Default)–特定の return キーが必要ないこと、およびプラットフォームの既定値が使用されることを示します。
-- [`Done`](xref:Xamarin.Forms.ReturnType.Done)– "Done" 戻り値のキーを示します。
-- [`Go`](xref:Xamarin.Forms.ReturnType.Go)– "進む" 戻り値のキーを示します。
-- [`Next`](xref:Xamarin.Forms.ReturnType.Next)– "Next" 戻り値のキーを示します。
-- [`Search`](xref:Xamarin.Forms.ReturnType.Search)– "Search" キーを返します。
-- [`Send`](xref:Xamarin.Forms.ReturnType.Send)– "Send" キーを返します。
+- [`Default`](xref:Xamarin.Forms.ReturnType.Default) –特定の return キーが必要ないこと、およびプラットフォームの既定値が使用されることを示します。
+- [`Done`](xref:Xamarin.Forms.ReturnType.Done) – "Done" 戻り値のキーを示します。
+- [`Go`](xref:Xamarin.Forms.ReturnType.Go) – "進む" 戻り値のキーを示します。
+- [`Next`](xref:Xamarin.Forms.ReturnType.Next) – "Next" 戻り値のキーを示します。
+- [`Search`](xref:Xamarin.Forms.ReturnType.Search) – "Search" キーを返します。
+- [`Send`](xref:Xamarin.Forms.ReturnType.Send) – "Send" キーを返します。
 
 次の XAML の例は、return キーを設定する方法を示しています。
 
@@ -343,8 +343,8 @@ var entry = new Entry { ... IsTextPredictionEnabled = false };
 
 次のバインド可能なプロパティを使用して、カスタムの背景色とテキスト色を使用するようにエントリを設定できます。
 
-- **Textcolor** &ndash;テキストの色を設定します。
-- **BackgroundColor** &ndash;テキストの背後に表示される色を設定します。
+- **Textcolor** &ndash; テキストの色を設定します。
+- **BackgroundColor** &ndash; テキストの背後に表示される色を設定します。
 
 各プラットフォームで色が使用できるようにするには、特別な注意が必要です。 各プラットフォームにはテキストと背景色について異なる既定値があるため、1つを設定する場合は、両方を設定する必要があります。
 
@@ -396,7 +396,7 @@ entry.BackgroundColor = Color.FromHex("#2c3e50");
 
 ### <a name="completed"></a>完了
 
-`Completed`イベントは、エントリとの対話の完了に応答するために使用されます。 `Completed`は、ユーザーがキーボードの return キーを押すか、UWP の Tab キーを押すことによって、入力をフィールドで終了したときに発生します。 イベントのハンドラーは、送信者とを取得する汎用イベントハンドラーです `EventArgs` 。
+`Completed`イベントは、エントリとの対話の完了に応答するために使用されます。 `Completed` は、ユーザーがキーボードの return キーを押すか、UWP の Tab キーを押すことによって、入力をフィールドで終了したときに発生します。 イベントのハンドラーは、送信者とを取得する汎用イベントハンドラーです `EventArgs` 。
 
 ```csharp
 void Entry_Completed (object sender, EventArgs e)
@@ -424,7 +424,7 @@ entry.Completed += Entry_Completed;
 
 `TextChanged`イベントは、フィールドの内容の変更に対処するために使用されます。
 
-`TextChanged`のが変更されるたびに、が発生し `Text` `Entry` ます。 イベントのハンドラーは、のインスタンスを受け取り `TextChangedEventArgs` ます。 `TextChangedEventArgs`プロパティとプロパティを使用して、の古い値と新しい値へのアクセスを提供し `Entry` `Text` `OldTextValue` `NewTextValue` ます。
+`TextChanged` のが変更されるたびに、が発生し `Text` `Entry` ます。 イベントのハンドラーは、のインスタンスを受け取り `TextChangedEventArgs` ます。 `TextChangedEventArgs` プロパティとプロパティを使用して、の古い値と新しい値へのアクセスを提供し `Entry` `Text` `OldTextValue` `NewTextValue` ます。
 
 ```csharp
 void Entry_TextChanged (object sender, TextChangedEventArgs e)
@@ -449,5 +449,5 @@ entry.TextChanged += Entry_TextChanged;
 
 ## <a name="related-links"></a>関連リンク
 
-- [Text (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+- [Text (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-text)
 - [Entry API](xref:Xamarin.Forms.Entry)

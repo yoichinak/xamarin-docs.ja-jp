@@ -10,12 +10,12 @@ ms.date: 03/27/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3fcea963b253ea34601a36434007f18d925975eb
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 9923a7f0605a7ca5d9d81269c3d855e92fbccaf4
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84131340"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91564083"
 ---
 # <a name="part-3-xaml-markup-extensions"></a>第 3 部 XAML マークアップ拡張
 
@@ -27,7 +27,7 @@ _XAML マークアップ拡張機能は、他のソースから間接的に参�
 
 一般に、XAML を使用して、オブジェクトのプロパティを明示的な値に設定します。たとえば、文字列、数値、列挙体のメンバー、またはバックグラウンドの背後にある値に変換される文字列などです。
 
-ただし、場合によっては、プロパティは他の場所で定義された値を参照する必要があります。また、実行時にコードによって少し処理が必要になる場合もあります。 このため、XAML*マークアップ拡張機能*を使用できます。
+ただし、場合によっては、プロパティは他の場所で定義された値を参照する必要があります。また、実行時にコードによって少し処理が必要になる場合もあります。 このため、XAML *マークアップ拡張機能* を使用できます。
 
 これらの XAML マークアップ拡張機能は、XML の拡張機能ではありません。 XAML は完全に有効な XML です。 これらは、を実装するクラスのコードによってサポートされるため、"拡張機能" と呼ばれてい `IMarkupExtension` ます。 独自のカスタムマークアップ拡張機能を作成できます。
 
@@ -74,7 +74,7 @@ _XAML マークアップ拡張機能は、他のソースから間接的に参�
 
 これらのプロパティのいずれかを変更する必要がある場合は、3回ではなく、変更を1回だけ行うことをお勧めします。 これがコードである場合、定数と静的な読み取り専用オブジェクトを使用して、このような値の一貫性を保ち、変更しやすくすることができます。
 
-XAML では、このような値またはオブジェクトを*リソースディクショナリ*に格納するという一般的なソリューションが1つあります。 クラスは、型のと `VisualElement` いう名前のプロパティを定義し `Resources` `ResourceDictionary` ます。このプロパティは、型のキーと型の値を持つディクショナリです `string` `object` 。 このディクショナリにオブジェクトを格納してから、マークアップからそれらを参照することができます。
+XAML では、このような値またはオブジェクトを *リソースディクショナリ*に格納するという一般的なソリューションが1つあります。 クラスは、型のと `VisualElement` いう名前のプロパティを定義し `Resources` `ResourceDictionary` ます。このプロパティは、型のキーと型の値を持つディクショナリです `string` `object` 。 このディクショナリにオブジェクトを格納してから、マークアップからそれらを参照することができます。
 
 ページでリソースディクショナリを使用するには、プロパティ要素タグのペアを含め `Resources` ます。 ページの先頭に配置すると最も便利です。
 
@@ -146,7 +146,7 @@ XAML では、このような値またはオブジェクトを*リソースデ�
 
 `StaticResource`マークアップ拡張機能は、常に中かっこで区切られ、ディクショナリキーが含まれます。
 
-名前はと `StaticResource` 区別し `DynamicResource` Xamarin.Forms ます。これはもサポートします。 `DynamicResource`は、実行時に変更される可能性がある値に関連付けられたディクショナリキー用であり、は、 `StaticResource` ページ上の要素が構築されると、ディクショナリから要素に1回だけアクセスします。
+名前はと `StaticResource` 区別し `DynamicResource` Xamarin.Forms ます。これはもサポートします。 `DynamicResource` は、実行時に変更される可能性がある値に関連付けられたディクショナリキー用であり、は、 `StaticResource` ページ上の要素が構築されると、ディクショナリから要素に1回だけアクセスします。
 
 プロパティの場合 `BorderWidth` 、ディクショナリに double を格納する必要があります。 XAML では、やなどの一般的なデータ型のタグを簡単に定義でき `x:Double` `x:Int32` ます。
 
@@ -317,13 +317,13 @@ XAML では、このような値またはオブジェクトを*リソースデ�
 
 ボタンのテキストの色が青になっていることがわかります。 基本的に、XAML パーサーは、マークアップ拡張機能を検出するたびに、 `StaticResource` ビジュアルツリーを検索し、 `ResourceDictionary` そのキーを含んでいる最初に見つかったものを使用します。
 
-リソースディクショナリに格納されている最も一般的な種類のオブジェクトの1つは、 Xamarin.Forms `Style` プロパティ設定のコレクションを定義するです。 スタイルについては、記事の[スタイル](~/xamarin-forms/user-interface/styles/index.md)をご覧ください。
+リソースディクショナリに格納されている最も一般的な種類のオブジェクトの1つは、 Xamarin.Forms `Style` プロパティ設定のコレクションを定義するです。 スタイルについては、記事の [スタイル](~/xamarin-forms/user-interface/styles/index.md)をご覧ください。
 
 場合によっては、XAML を初めて使用する開発者は、などのビジュアル要素をに配置できると不思議になることがあり `Label` `Button` `ResourceDictionary` ます。 確かに可能ですが、あまり意味がありません。 の目的は、 `ResourceDictionary` オブジェクトを共有することです。 ビジュアル要素を共有することはできません。 1つのページで同じインスタンスを2回表示することはできません。
 
 ## <a name="the-xstatic-markup-extension"></a>X:Static マークアップ拡張機能
 
-名前の類似性にかかわらず、 `x:Static` と `StaticResource` は大きく異なります。 `StaticResource`はリソースディクショナリからオブジェクトを返し、 `x:Static` は次のいずれかにアクセスします。
+名前の類似性にかかわらず、 `x:Static` と `StaticResource` は大きく異なります。 `StaticResource` はリソースディクショナリからオブジェクトを返し、 `x:Static` は次のいずれかにアクセスします。
 
 - パブリック静的フィールド
 - パブリック静的プロパティ
@@ -398,7 +398,7 @@ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 xmlns:local="clr-namespace:XamlSamples"
 ```
 
-また、.NET Standard ライブラリが参照する任意のアセンブリの .NET 名前空間の XML 名前空間宣言を定義することもできます。 たとえば、次に示すのは、 `sys` `System` **netstandard.library**アセンブリに含まれる標準の .net 名前空間のプレフィックスです。 これは別のアセンブリなので、アセンブリ名も指定する必要があります。この場合、 **netstandard.library**:
+また、.NET Standard ライブラリが参照する任意のアセンブリの .NET 名前空間の XML 名前空間宣言を定義することもできます。 たとえば、次に示すのは、 `sys` `System` **netstandard.library** アセンブリに含まれる標準の .net 名前空間のプレフィックスです。 これは別のアセンブリなので、アセンブリ名も指定する必要があります。この場合、 **netstandard.library**:
 
 ```csharp
 xmlns:sys="clr-namespace:System;assembly=netstandard"
@@ -408,7 +408,7 @@ xmlns:sys="clr-namespace:System;assembly=netstandard"
 
 はい。コロンは後に続きますが、等号は `clr-namespace` 次のように `assembly` なります。 構文は、この方法で意図的に定義されています。ほとんどの XML 名前空間宣言は、などの URI スキーム名を開始する URI を参照します。この URI に `http` は、常にコロンが続きます。 `clr-namespace`この文字列の一部は、その規則を模倣することを目的としています。
 
-これらの名前空間宣言は、どちらも**StaticConstantsPage**サンプルに含まれています。 `BoxView`ディメンションはとに設定され `Math.PI` て `Math.E` いますが、係数は100でスケーリングされています。
+これらの名前空間宣言は、どちらも **StaticConstantsPage** サンプルに含まれています。 `BoxView`ディメンションはとに設定され `Math.PI` て `Math.E` いますが、係数は100でスケーリングされています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -444,9 +444,9 @@ xmlns:sys="clr-namespace:System;assembly=netstandard"
 
 いくつかのマークアップ拡張機能は XAML に固有であり、xaml ファイルでサポートされてい Xamarin.Forms ます。 これらの一部はあまり頻繁に使用されませんが、必要な場合には重要です。
 
-- 既定では、プロパティに値以外の `null` 値が設定されているが、これをに設定する場合は `null` 、 `{x:Null}` マークアップ拡張機能に設定します。
-- プロパティが型である場合は `Type` 、 `Type` マークアップ拡張機能を使用してオブジェクトに割り当てることができ `{x:Type someClass}` ます。
-- マークアップ拡張機能を使用して、XAML で配列を定義でき `x:Array` ます。 このマークアップ拡張機能には、 `Type` 配列内の要素の型を示すという名前の必須の属性があります。
+- 既定では、プロパティに値以外の `null` 値が設定されているが、これをに設定する場合は  `null` 、 `{x:Null}` マークアップ拡張機能に設定します。
+- プロパティが型である場合は `Type` 、  `Type` マークアップ拡張機能を使用してオブジェクトに割り当てることができ `{x:Type someClass}` ます。
+- マークアップ拡張機能を使用して、XAML で配列を定義でき `x:Array` ます。 このマークアップ拡張機能には、  `Type` 配列内の要素の型を示すという名前の必須の属性があります。
 - `Binding`マークアップ拡張機能については、パート4で説明し[ます。データバインディングの基礎](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)。
 - `RelativeSource`マークアップ拡張機能については、「[相対バインド](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)」を参照してください。
 
@@ -559,11 +559,11 @@ xmlns:sys="clr-namespace:System;assembly=netstandard"
 
 ## <a name="summary"></a>まとめ
 
-ここに示す XAML マークアップ拡張機能は、XAML ファイルの重要なサポートを提供します。 ただし、最も重要な XAML マークアップ拡張機能は、 `Binding` このシリーズの第4部で説明されてい[ます。データバインディングの基礎](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)。
+ここに示す XAML マークアップ拡張機能は、XAML ファイルの重要なサポートを提供します。 ただし、最も重要な XAML マークアップ拡張機能は、 `Binding` このシリーズの第4部で説明されてい [ます。データバインディングの基礎](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)。
 
 ## <a name="related-links"></a>関連リンク
 
-- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+- [XamlSamples](/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [パート1。XAML を使用したはじめに](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
 - [第2部。必須の XAML 構文](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
 - [パート4。データバインディングの基礎](~/xamarin-forms/xaml/xaml-basics/data-binding-basics.md)

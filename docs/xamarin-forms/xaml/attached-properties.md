@@ -10,26 +10,26 @@ ms.date: 06/02/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1277b3cd875c1b4e05e45202a8e30ef2ff93972a
-ms.sourcegitcommit: 898ba8e5140ae32a7df7e07c056aff65f6fe4260
+ms.openlocfilehash: 61edbb347b4d3466d1ca756208adb5d173d63b34
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86226795"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561548"
 ---
 # <a name="attached-properties"></a>アタッチされるプロパティ
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
 
 
-添付プロパティを使用すると、オブジェクトは、独自のクラスで定義されていないプロパティの値を割り当てることができます。 たとえば、子要素は添付プロパティを使用して、ユーザーインターフェイスにどのように表示されるかを親要素に知らせることができます。 コントロールでは、 [`Grid`](xref:Xamarin.Forms.Grid) `Grid.Row` プロパティと添付プロパティを設定することによって、子の行と列を指定でき `Grid.Column` ます。 `Grid.Row`と `Grid.Column` は、 `Grid` それ自体ではなく、の子である要素に設定されるため、添付プロパティです `Grid` 。
+添付プロパティを使用すると、オブジェクトは、独自のクラスで定義されていないプロパティの値を割り当てることができます。 たとえば、子要素は添付プロパティを使用して、ユーザーインターフェイスにどのように表示されるかを親要素に知らせることができます。 コントロールでは、 [`Grid`](xref:Xamarin.Forms.Grid) `Grid.Row` プロパティと添付プロパティを設定することによって、子の行と列を指定でき `Grid.Column` ます。 `Grid.Row` と `Grid.Column` は、 `Grid` それ自体ではなく、の子である要素に設定されるため、添付プロパティです `Grid` 。
 
 バインド可能なプロパティは、次のシナリオで添付プロパティとして実装する必要があります。
 
 - 定義クラス以外のクラスに対してプロパティ設定機構を使用できるようにする必要がある場合。
 - クラスが、他のクラスと簡単に統合する必要があるサービスを表す場合。
 
-バインド可能なプロパティの詳細については、「バインド可能な[プロパティ](~/xamarin-forms/xaml/bindable-properties.md)」を参照してください。
+バインド可能なプロパティの詳細については、「バインド可能な [プロパティ](~/xamarin-forms/xaml/bindable-properties.md)」を参照してください。
 
 ## <a name="create-an-attached-property"></a>添付プロパティを作成する
 
@@ -40,7 +40,7 @@ ms.locfileid: "86226795"
 
 ### <a name="create-a-property"></a>プロパティを作成する
 
-他の型で使用する添付プロパティを作成する場合、プロパティを作成するクラスはから派生する必要がありません [`BindableObject`](xref:Xamarin.Forms.BindableObject) 。 ただし、アクセサーの*ターゲット*プロパティは、またはから派生している必要があり [`BindableObject`](xref:Xamarin.Forms.BindableObject) ます。
+他の型で使用する添付プロパティを作成する場合、プロパティを作成するクラスはから派生する必要がありません [`BindableObject`](xref:Xamarin.Forms.BindableObject) 。 ただし、アクセサーの *ターゲット* プロパティは、またはから派生している必要があり [`BindableObject`](xref:Xamarin.Forms.BindableObject) ます。
 
 添付プロパティを作成するには、 `public static readonly` 型のプロパティを宣言し [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ます。 バインド可能なプロパティは、[ `BindableProperty.CreateAttached` ] (xref: のいずれかの戻り値に設定する必要があります Xamarin.Forms 。BindableProperty. CreateAttached られた (System.string, System.string, System.string, Xamarin.Forms system.object,)BindingMode、 Xamarin.Forms 。BindableProperty. ValidateValueDelegate、 Xamarin.Forms 。BindableProperty。 BindingPropertyChangedDelegate、 Xamarin.Forms 。BindableProperty。 Bindingpropertydelegate、 Xamarin.Forms 。BindableProperty. CoerceValueDelegate、 Xamarin.Forms 。BindableProperty. CreateDefaultValueDelegate)) メソッドオーバーロード。 宣言は、所有しているクラスの本体内で、メンバー定義の外部にある必要があります。
 
@@ -56,7 +56,7 @@ public static readonly BindableProperty HasShadowProperty =
 
 これにより、型のという名前の添付プロパティが作成され `HasShadowProperty` `bool` ます。 プロパティはクラスによって所有され、 `ShadowEffect` 既定値は `false` です。
 
-作成時に指定できるパラメーターなど、バインド可能なプロパティの作成の詳細については、「[バインド可能なプロパティの作成](~/xamarin-forms/xaml/bindable-properties.md#consume-a-bindable-property)」を参照してください。
+作成時に指定できるパラメーターなど、バインド可能なプロパティの作成の詳細については、「 [バインド可能なプロパティの作成](~/xamarin-forms/xaml/bindable-properties.md#consume-a-bindable-property)」を参照してください。
 
 ### <a name="create-accessors"></a>アクセサーの作成
 
@@ -76,7 +76,7 @@ public static void SetPropertyName(BindableObject target, valueType value)
 
 `Set` *PropertyName*アクセサーは、添付プロパティの対応するフィールドの値を設定する必要があり `BindableProperty` ます。 これは、[ `SetValue` ] (xref: を呼び出すことによって実現できます Xamarin.Forms 。BindableObject. SetValue ( Xamarin.Forms .BindableProperty, System.object) メソッドを使用して、値を設定するバインド可能なプロパティ識別子と設定する値を渡します。
 
-両方のアクセサーでは、*ターゲット*オブジェクトはであるか、またはから派生している必要があり [`BindableObject`](xref:Xamarin.Forms.BindableObject) ます。
+両方のアクセサーでは、 *ターゲット* オブジェクトはであるか、またはから派生している必要があり [`BindableObject`](xref:Xamarin.Forms.BindableObject) ます。
 
 次のコード例は、添付プロパティのアクセサーを示してい `HasShadow` ます。
 
@@ -119,7 +119,7 @@ ShadowEffect.SetHasShadow (label, true);
 
 ### <a name="consume-an-attached-property-with-a-style"></a>添付プロパティをスタイルで使用する
 
-添付プロパティは、スタイルによってコントロールに追加することもできます。 次の XAML コード例は、コントロールに適用できる添付プロパティを使用する*明示的*なスタイルを示してい `HasShadow` [`Label`](xref:Xamarin.Forms.Label) ます。
+添付プロパティは、スタイルによってコントロールに追加することもできます。 次の XAML コード例は、コントロールに適用できる添付プロパティを使用する *明示的* なスタイルを示してい `HasShadow` [`Label`](xref:Xamarin.Forms.Label) ます。
 
 ```xaml
 <Style x:Key="ShadowEffectStyle" TargetType="Label">
@@ -139,12 +139,12 @@ ShadowEffect.SetHasShadow (label, true);
 
 ## <a name="advanced-scenarios"></a>高度なシナリオ
 
-添付プロパティを作成するときに、添付プロパティの高度なシナリオを有効にするために設定できるオプションのパラメーターがいくつかあります。 これには、プロパティの変更の検出、プロパティ値の検証、プロパティ値の強制型変換が含まれます。 詳細については、「[高度なシナリオ](~/xamarin-forms/xaml/bindable-properties.md#advanced-scenarios)」を参照してください。
+添付プロパティを作成するときに、添付プロパティの高度なシナリオを有効にするために設定できるオプションのパラメーターがいくつかあります。 これには、プロパティの変更の検出、プロパティ値の検証、プロパティ値の強制型変換が含まれます。 詳細については、「 [高度なシナリオ](~/xamarin-forms/xaml/bindable-properties.md#advanced-scenarios)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 
 - [連結可能プロパティ](~/xamarin-forms/xaml/bindable-properties.md)
 - [XAML 名前空間](~/xamarin-forms/xaml/namespaces.md)
-- [影エフェクト (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
+- [影エフェクト (サンプル)](/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
 - [BindableProperty API](xref:Xamarin.Forms.BindableProperty)
 - [BindableObject API](xref:Xamarin.Forms.BindableObject)

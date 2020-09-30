@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms切り替わり
+title: Xamarin.Forms 切り替わり
 description: Xamarin.Formsスイッチは、ユーザーが状態のオンとオフを切り替えるために操作できるボタンの種類です。 この記事では、Switch クラスを使用して、切り替え UI 要素を表示する方法について説明します。
 ms.prod: xamarin
 ms.assetId: B2F9CC65-481B-4323-8E77-C6BE29C90DE9
@@ -10,28 +10,28 @@ ms.date: 05/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 12831eec6ba97eee7cde7479729c5c22dce78e90
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 94f77fd70fee595efd341ff7372828b12661442d
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84946431"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561730"
 ---
-# <a name="xamarinforms-switch"></a>Xamarin.Forms切り替わり
+# <a name="no-locxamarinforms-switch"></a>Xamarin.Forms 切り替わり
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
 
 Xamarin.Forms [`Switch`](xref:Xamarin.Forms.Switch) コントロールは水平方向のトグルボタンで、ユーザーは値で表されるオンとオフの状態を切り替えることができ `boolean` ます。 クラスは、 `Switch` から継承さ [`View`](xref:Xamarin.Forms.View) れます。
 
-次のスクリーンショットは、 `Switch` iOS と Android での**オン**と**オフ**の切り替え状態のコントロールを示しています。
+次のスクリーンショットは、 `Switch` iOS と Android での **オン** と **オフ** の切り替え状態のコントロールを示しています。
 
 ![IOS と Android でのオンとオフの状態の切り替えのスクリーンショット](switch-images/switch-states-default.png "IOS と Android でのスイッチ")
 
 コントロールは、 `Switch` 次のプロパティを定義します。
 
 - [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled)が `boolean` オンかどうかを示す値です `Switch` 。 **on**
-- [`OnColor`](xref:Xamarin.Forms.Switch.OnColor)は、が `Color` `Switch` 切り替えられるか、状態で表示さ**れるかに**影響するです。
-- `ThumbColor`は、 `Color` スイッチのつまみのです。
+- [`OnColor`](xref:Xamarin.Forms.Switch.OnColor) は、が `Color` `Switch` 切り替えられるか、状態で表示さ **れるかに**影響するです。
+- `ThumbColor` は、 `Color` スイッチのつまみのです。
 
 これらのプロパティはオブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。つまり、を `Switch` スタイル設定し、データバインディングのターゲットにすることができます。
 
@@ -53,7 +53,7 @@ Switch switchControl = new Switch { IsToggled = true };
 
 ## <a name="switch-appearance"></a>外観の切り替え
 
-クラスから継承されるプロパティに加えて [`Switch`](xref:Xamarin.Forms.Switch) [`View`](xref:Xamarin.Forms.View) 、は `Switch` `OnColor` プロパティとプロパティも定義し `ThumbColor` ます。 プロパティを設定して、 `OnColor` 状態が `Switch` **オン**の状態に切り替わるときの色を定義できます。また、プロパティを設定して、 `ThumbColor` スイッチのつまみのを定義でき `Color` ます。 次の例は、これらのプロパティを設定して、XAML でをインスタンス化する方法を示してい `Switch` ます。
+クラスから継承されるプロパティに加えて [`Switch`](xref:Xamarin.Forms.Switch) [`View`](xref:Xamarin.Forms.View) 、は `Switch` `OnColor` プロパティとプロパティも定義し `ThumbColor` ます。 プロパティを設定して、 `OnColor` 状態が `Switch` **オン** の状態に切り替わるときの色を定義できます。また、プロパティを設定して、 `ThumbColor` スイッチのつまみのを定義でき `Color` ます。 次の例は、これらのプロパティを設定して、XAML でをインスタンス化する方法を示してい `Switch` ます。
 
 ```xaml
 <Switch OnColor="Orange"
@@ -66,7 +66,7 @@ Switch switchControl = new Switch { IsToggled = true };
 Switch switch = new Switch { OnColor = Color.Orange, ThumbColor = Color.Green };
 ```
 
-次のスクリーンショットは、 `Switch` プロパティとプロパティが設定されている、**オン**と**オフ**の切り替え状態のを示してい `OnColor` `ThumbColor` ます。
+次のスクリーンショットは、 `Switch` プロパティとプロパティが設定されている、 **オン** と **オフ** の切り替え状態のを示してい `OnColor` `ThumbColor` ます。
 
 ![IOS と Android でのオンとオフの状態の切り替えのスクリーンショット](switch-images/switch-states-colors.png "IOS と Android でのスイッチ")
 
@@ -163,6 +163,6 @@ switchControl.Toggled += (sender, e) =>
 
 ## <a name="related-links"></a>関連リンク
 
-- [デモの切り替え](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
+- [デモの切り替え](/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
 - [Xamarin.Forms のトリガー](~/xamarin-forms/app-fundamentals/triggers.md)
 - [Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)

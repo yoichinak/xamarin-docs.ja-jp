@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsCarouselView の相互作用
+title: Xamarin.Forms CarouselView の相互作用
 description: CarouselView に現在表示されているアイテムには、CurrentItem プロパティと Position プロパティを使用してアクセスできます。
 ms.prod: xamarin
 ms.assetid: 854D97E5-D119-4BE2-AE7C-BD428792C992
@@ -10,18 +10,18 @@ ms.date: 02/11/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 57c501c0f789ce448d8381cbbccb46666cf06305
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 43f2e32a240b74fde50659033096c8a7246ea60c
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137411"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91564057"
 ---
-# <a name="xamarinforms-carouselview-interaction"></a>Xamarin.FormsCarouselView の相互作用
+# <a name="no-locxamarinforms-carouselview-interaction"></a>Xamarin.Forms CarouselView の相互作用
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)ユーザーの操作を制御する次のプロパティを定義します。
+[`CarouselView`](xref:Xamarin.Forms.CarouselView) ユーザーの操作を制御する次のプロパティを定義します。
 
 - `CurrentItem`型の、 `object` 現在表示されている項目。 このプロパティの既定のバインディングモードは `TwoWay` で、 `null` 表示するデータがない場合は値が設定されます。
 - `CurrentItemChangedCommand``ICommand`現在の項目が変更されたときに実行される、型の。
@@ -37,13 +37,13 @@ ms.locfileid: "84137411"
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)`CurrentItemChanged` `CurrentItem` ユーザーのスクロールによって、またはアプリケーションによってプロパティが設定されたときに、プロパティが変更されたときに発生するイベントを定義します。 `CurrentItemChangedEventArgs`イベントに付随するオブジェクトに `CurrentItemChanged` は、次の2種類のプロパティがあり `object` ます。
 
-- `PreviousItem`–プロパティが変更された後の前の項目。
-- `CurrentItem`–プロパティが変更された後の現在の項目。
+- `PreviousItem` –プロパティが変更された後の前の項目。
+- `CurrentItem` –プロパティが変更された後の現在の項目。
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)`PositionChanged` `Position` は、ユーザーのスクロールによって、またはアプリケーションがプロパティを設定するときに、プロパティが変更されたときに発生するイベントも定義します。 `PositionChangedEventArgs`イベントに付随するオブジェクトに `PositionChanged` は、次の2種類のプロパティがあり `int` ます。
 
-- `PreviousPosition`–プロパティが変更された後の前の位置。
-- `CurrentPosition`–プロパティが変更された後の現在の位置。
+- `PreviousPosition` –プロパティが変更された後の前の位置。
+- `CurrentPosition` –プロパティが変更された後の現在の位置。
 
 ## <a name="respond-to-the-current-item-changing"></a>現在の項目の変更に応答する
 
@@ -52,7 +52,7 @@ ms.locfileid: "84137411"
 > [!IMPORTANT]
 > プロパティが変更さ `Position` れると、プロパティが変更され `CurrentItem` ます。 これにより、が実行され、イベントが発生し `PositionChangedCommand` `PositionChanged` ます。
 
-### <a name="event"></a>イベント
+### <a name="event"></a>event
 
 次の XAML の例は、 [`CarouselView`](xref:Xamarin.Forms.CarouselView) イベントハンドラーを使用して、変更中の現在の項目に応答するを示しています。
 
@@ -85,7 +85,7 @@ void OnCurrentItemChanged(object sender, CurrentItemChangedEventArgs e)
 
 [![以前の項目と現在の項目を含む CarouselView のスクリーンショット (iOS と Android)](interaction-images/current-item-events.png "現在と以前の項目を含む CarouselView")](interaction-images/current-item-events-large.png#lightbox "現在と以前の項目を含む CarouselView")
 
-### <a name="command"></a>コマンド
+### <a name="command"></a>command
 
 次の XAML の例は、 [`CarouselView`](xref:Xamarin.Forms.CarouselView) コマンドを使用して、変更中の現在の項目に応答するを示しています。
 
@@ -125,7 +125,7 @@ public ICommand ItemChangedCommand => new Command<Monkey>((item) =>
 > [!NOTE]
 > プロパティを `Position` 0 に設定すると、基になるコレクションの最初の項目が表示されます。
 
-### <a name="event"></a>イベント
+### <a name="event"></a>event
 
 次の XAML の例は、 [`CarouselView`](xref:Xamarin.Forms.CarouselView) イベントハンドラーを使用してプロパティの変更に応答するを示してい `Position` ます。
 
@@ -158,7 +158,7 @@ void OnPositionChanged(object sender, PositionChangedEventArgs e)
 
 [![以前の位置と現在の位置を含む CarouselView のスクリーンショット (iOS と Android)](interaction-images/current-position-events.png "現在と以前の位置を含む CarouselView")](interaction-images/current-position-events-large.png#lightbox "現在と以前の位置を含む CarouselView")
 
-### <a name="command"></a>コマンド
+### <a name="command"></a>command
 
 次の XAML の例は、 [`CarouselView`](xref:Xamarin.Forms.CarouselView) コマンドを使用してプロパティの変更に応答するを示してい `Position` ます。
 
@@ -281,12 +281,12 @@ public class MonkeysViewModel : INotifyPropertyChanged
 
 ## <a name="define-visual-states"></a>視覚的状態の定義
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)4つの表示状態を定義します。
+[`CarouselView`](xref:Xamarin.Forms.CarouselView) 4つの表示状態を定義します。
 
-- `CurrentItem`現在表示されている項目の表示状態を表します。
-- `PreviousItem`以前に表示された項目の表示状態を表します。
-- `NextItem`次の項目の表示状態を表します。
-- `DefaultItem`項目の残りの部分の表示状態を表します。
+- `CurrentItem` 現在表示されている項目の表示状態を表します。
+- `PreviousItem` 以前に表示された項目の表示状態を表します。
+- `NextItem` 次の項目の表示状態を表します。
+- `DefaultItem` 項目の残りの部分の表示状態を表します。
 
 これらの表示状態は、によって表示される項目に対する視覚的な変更を開始するために使用でき [`CarouselView`](xref:Xamarin.Forms.CarouselView) ます。
 
@@ -362,5 +362,5 @@ public class MonkeysViewModel : INotifyPropertyChanged
 
 ## <a name="related-links"></a>関連リンク
 
-- [CarouselView (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
+- [CarouselView (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 - [Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)

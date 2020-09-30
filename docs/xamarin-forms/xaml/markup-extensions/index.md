@@ -10,12 +10,12 @@ ms.date: 01/05/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 568cffc335f28b1a47f3278ad061d851ebef84b6
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 98eb35697aee9022a837a7b0b531edb0c53b2239
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84130391"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562146"
 ---
 # <a name="xaml-markup-extensions"></a>XAML マークアップ拡張
 
@@ -39,7 +39,7 @@ XAML マークアップ拡張機能は、リテラルテキスト文字列以外
 
 代わりに、 `Color` リソースディクショナリに格納されている値、または作成したクラスの静的プロパティの値、またはページ上の別の要素の型のプロパティから、また `Color` は別の色相、鮮やかさ、明度の値から構築された属性を設定することをお勧めします。
 
-これらのオプションはすべて、XAML マークアップ拡張機能を使用して実行できます。 しかし、"マークアップ拡張機能" という語句を除いて、XAML マークアップ拡張機能は XML の拡張機能では*ありません*。 Xaml マークアップ拡張機能を使用している場合でも、XAML は常に有効な XML です。
+これらのオプションはすべて、XAML マークアップ拡張機能を使用して実行できます。 しかし、"マークアップ拡張機能" という語句を除いて、XAML マークアップ拡張機能は XML の拡張機能では *ありません* 。 Xaml マークアップ拡張機能を使用している場合でも、XAML は常に有効な XML です。
 
 マークアップ拡張機能は、実際には要素の属性を表す別の方法にすぎません。 通常、XAML マークアップ拡張機能は、中かっこで囲まれた属性設定で識別できます。
 
@@ -47,7 +47,7 @@ XAML マークアップ拡張機能は、リテラルテキスト文字列以外
 <BoxView Color="{StaticResource themeColor}" />
 ```
 
-中かっこ内のすべての属性設定は、*常に*XAML マークアップ拡張機能です。 ただし、このように、中かっこを使用せずに XAML マークアップ拡張機能を参照することもできます。
+中かっこ内のすべての属性設定は、 *常に* XAML マークアップ拡張機能です。 ただし、このように、中かっこを使用せずに XAML マークアップ拡張機能を参照することもできます。
 
 この記事は、次の2つの部分で構成されています。
 
@@ -61,8 +61,8 @@ XAML マークアップ拡張機能は、リテラルテキスト文字列以外
 
 ## <a name="related-links"></a>関連リンク
 
-- [マークアップ拡張機能 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
+- [マークアップ拡張機能 (サンプル)](/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 - [本の XAML マークアップ拡張機能の章 Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
-- [リソースディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
-- [動的スタイル](~/xamarin-forms/user-interface/styles/dynamic.md)
+- [リソース ディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
+- [動的なスタイル](~/xamarin-forms/user-interface/styles/dynamic.md)
 - [データ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)

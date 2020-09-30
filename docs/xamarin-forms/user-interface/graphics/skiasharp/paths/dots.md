@@ -10,12 +10,12 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 47182578a6583dde34cb7f06e3433cdb2703f6ba
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 5064a53b140c26acdc5149f5495cc002e657a9b0
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937684"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91564005"
 ---
 # <a name="dots-and-dashes-in-skiasharp"></a>SkiaSharp のドットとダッシュ
 
@@ -27,7 +27,7 @@ SkiaSharp を使用すると、実線ではなく、ドットとダッシュで�
 
 ![点線](dots-images/dottedlinesample.png)
 
-これを行うには、*パス効果*を使用します。これは、 [`SKPathEffect`](xref:SkiaSharp.SKPathEffect) のプロパティに設定するクラスのインスタンスです [`PathEffect`](xref:SkiaSharp.SKPaint.PathEffect) `SKPaint` 。 で定義されているいずれかの静的作成方法を使用して、パス効果を作成する (またはパス効果を結合する) ことができ `SKPathEffect` ます。 ( `SKPathEffect` は、SkiaSharp でサポートされている6つの効果の1つです。その他は、 [**SkiaSharp の効果**](../effects/index.md)に関するセクションで説明されています)。
+これを行うには、 *パス効果*を使用します。これは、 [`SKPathEffect`](xref:SkiaSharp.SKPathEffect) のプロパティに設定するクラスのインスタンスです [`PathEffect`](xref:SkiaSharp.SKPaint.PathEffect) `SKPaint` 。 で定義されているいずれかの静的作成方法を使用して、パス効果を作成する (またはパス効果を結合する) ことができ `SKPathEffect` ます。 ( `SKPathEffect` は、SkiaSharp でサポートされている6つの効果の1つです。その他は、 [**SkiaSharp の効果**](../effects/index.md)に関するセクションで説明されています)。
 
 点線または破線を描画するには、 [`SKPathEffect.CreateDash`](xref:SkiaSharp.SKPathEffect.CreateDash(System.Single[],System.Single)) 静的メソッドを使用します。 2つの引数があります。これは、 `float` ドットとダッシュの長さ、およびそれらの間のスペースの長さを示す値の配列です。 この配列には、偶数個の要素を含める必要があります。また、少なくとも2つの要素が必要です。 (配列には0個の要素がありますが、その結果、実線になります)。要素が2つある場合、1つ目はドットまたはダッシュの長さ、2番目は次のドットまたはダッシュの前のギャップの長さです。 3つ以上の要素がある場合は、ダッシュの長さ、ギャップの長さ、ダッシュの長さ、ギャップの長さなどの順序になります。
 
@@ -35,7 +35,7 @@ SkiaSharp を使用すると、実線ではなく、ドットとダッシュで�
 
 ただし、 `StrokeCap` オブジェクトの設定は、 `SKPaint` これらのドットとダッシュにも影響します。 すぐにわかるように、この配列の要素には影響があります。
 
-点線と破線は、**ドットとダッシュ**のページで示されています。 [**DotsAndDashesPage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/DotsAndDashesPage.xaml)ファイルは2つのビューをインスタンス化します。 `Picker` 1 つはストロークキャップを選択し、2番目はダッシュ配列を選択します。
+点線と破線は、 **ドットとダッシュ** のページで示されています。 [**DotsAndDashesPage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/DotsAndDashesPage.xaml)ファイルは2つのビューをインスタンス化します。 `Picker` 1 つはストロークキャップを選択し、2番目はダッシュ配列を選択します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -218,5 +218,5 @@ public class AnimatedSpiralPage : ContentPage
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

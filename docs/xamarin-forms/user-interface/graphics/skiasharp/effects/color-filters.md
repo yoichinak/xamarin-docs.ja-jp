@@ -10,12 +10,12 @@ ms.date: 08/28/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b9c89d4d426884d678e77687ffa226cced97be58
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 809477fe466ee7a8f0985308896c14341f2dd460
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136384"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561938"
 ---
 # <a name="skiasharp-color-filters"></a>SkiaSharp カラーフィルター
 
@@ -55,9 +55,9 @@ RGB のソースカラー (R、G、B、A) をコピー先の色 (R '、G '、B '
 | 1 |
 </pre>
 
-これらの R、G、B、値は、0 ~ 255 の範囲の元のバイトです。 これらは、0 ~ 1 の範囲の浮動小数点値に正規化され_ません_。
+これらの R、G、B、値は、0 ~ 255 の範囲の元のバイトです。 これらは、0 ~ 1 の範囲の浮動小数点値に正規化され _ません_ 。
 
-翻訳要素には余分なセルが必要です。 これは、座標点を変換するためのマトリックスの使用に関する[**記事で、3×**](../transforms/matrix.md#the-reason-for-the-3-by-3-matrix) 3 の行列を使用して2次元の座標点を変換することに似ています。
+翻訳要素には余分なセルが必要です。 これは、座標点を変換するためのマトリックスの使用に関する [**記事で、3×**](../transforms/matrix.md#the-reason-for-the-3-by-3-matrix) 3 の行列を使用して2次元の座標点を変換することに似ています。
 
 4×5行列は5×1行列で乗算され、製品は変換された色を持つ4×1行列になります。
 
@@ -123,7 +123,7 @@ M44 セルは、不透明度を維持するため、非常に重要です。 通
 public static SKColorFilter CreateColorMatrix (float[] matrix);
 ```
 
-ここで `matrix` 、は20の値の配列 `float` です。 C# で配列を作成すると、4×5行列に似た数値を書式設定することが簡単になります。 これは、 [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルの**グレースケールマトリックス**ページで説明されています。
+ここで `matrix` 、は20の値の配列 `float` です。 C# で配列を作成すると、4×5行列に似た数値を書式設定することが簡単になります。 これは、 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルの**グレースケールマトリックス**ページで説明されています。
 
 ```csharp
 public class GrayScaleMatrixPage : ContentPage
@@ -166,7 +166,7 @@ public class GrayScaleMatrixPage : ContentPage
 }
 ```
 
-`DrawBitmap`このコードで使用されるメソッドは、 [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルに含まれている**BitmapExtension.cs**ファイルからのものです。 
+`DrawBitmap`このコードで使用されるメソッドは、 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルに含まれている**BitmapExtension.cs**ファイルからのものです。 
 
 IOS、Android、ユニバーサル Windows プラットフォームで実行されている結果を次に示します。
 
@@ -174,9 +174,9 @@ IOS、Android、ユニバーサル Windows プラットフォームで実行さ�
 
 4番目の行と4番目の列の値を確認します。 これは、変換された色の "値" の元の色の値を乗算した重要な要素です。 そのセルが0の場合は何も表示されず、問題を見つけるのが困難な場合があります。
 
-カラーマトリックスを試してみると、変換元の観点から、または変換先の観点から変換を処理できます。 ソースの赤のピクセルが変換先の赤、緑、および青のピクセルにどのように作用するかを指定します。 これは、マトリックスの最初の_列_の値によって決まります。 または、変換先の赤のピクセルがソースの赤、緑、および青のピクセルにどのように影響するかを確認します。 これは、マトリックスの最初の_行_によって決まります。
+カラーマトリックスを試してみると、変換元の観点から、または変換先の観点から変換を処理できます。 ソースの赤のピクセルが変換先の赤、緑、および青のピクセルにどのように作用するかを指定します。 これは、マトリックスの最初の _列_ の値によって決まります。 または、変換先の赤のピクセルがソースの赤、緑、および青のピクセルにどのように影響するかを確認します。 これは、マトリックスの最初の _行_ によって決まります。
 
-色の変換を使用する方法については、「[**画像**](https://docs.microsoft.com/dotnet/framework/winforms/advanced/recoloring-images)の色の設定」ページを参照してください。 ディスカッションには Windows フォームがあり、マトリックスは異なる形式ですが、概念は同じです。
+色の変換を使用する方法については、「 [**画像**](/dotnet/framework/winforms/advanced/recoloring-images) の色の設定」ページを参照してください。 ディスカッションには Windows フォームがあり、マトリックスは異なる形式ですが、概念は同じです。
 
 **パステル行列**は、ソースの赤ピクセルを attenuating し、赤と緑のピクセルを少し強調することで、宛先の赤のピクセルを計算します。 このプロセスは、緑と青のピクセルに対しても同様に発生します。
 
@@ -249,7 +249,7 @@ public static SKColorFilter CreateTable (byte[] tableA, byte[] tableR, byte[] ta
 
 [SkiaSharp ビットマップピクセルビット](../bitmaps/pixel-bits.md#posterization)へのアクセスに関する記事の**Posterization**のセクションでは、ビットマップのピクセルビットを変更して色解像度を下げる方法を説明しました。 これは、 _posterization_と呼ばれる手法です。 
 
-カラーテーブルを使用してビットマップを表示することもできます。 [**ポスタリゼーションテーブル**] ページのコンストラクターは、下位6ビットがゼロに設定されたバイトにインデックスをマップするカラーテーブルを作成します。
+カラーテーブルを使用してビットマップを表示することもできます。 [ **ポスタリゼーションテーブル** ] ページのコンストラクターは、下位6ビットがゼロに設定されたバイトにインデックスをマップするカラーテーブルを作成します。
 
 ```csharp
 public class PosterizeTablePage : ContentPage
@@ -302,5 +302,5 @@ public class PosterizeTablePage : ContentPage
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

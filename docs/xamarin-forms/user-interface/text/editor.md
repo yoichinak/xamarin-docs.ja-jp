@@ -10,16 +10,16 @@ ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3a7dedad6fc33b75a687f94897b64d04a72a0b08
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 42f89f09bd84127fd19bc3ab64794bdac7f145d7
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918432"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561626"
 ---
 # <a name="no-locxamarinforms-editor"></a>Xamarin.Forms エディター
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 コントロールは、 [`Editor`](xref:Xamarin.Forms.Editor) 複数行の入力を受け入れるために使用されます。
 
@@ -75,10 +75,10 @@ var editor = new Editor { Text = "This is a read-only Editor", IsReadOnly = true
 
 は、プロパティを [`Editor`](xref:Xamarin.Forms.Editor) `Text` `TextTransform` 列挙体の値に設定することによって、プロパティに格納されているテキストの大文字と小文字を変換できます `TextTransform` 。 この列挙体には、次の4つの値があります。
 
-- `None`テキストが変換されないことを示します。
-- `Default`プラットフォームの既定の動作が使用されることを示します。 これは、`TextTransform` プロパティの既定値です。
-- `Lowercase`テキストが小文字に変換されることを示します。
-- `Uppercase`テキストが大文字に変換されることを示します。
+- `None` テキストが変換されないことを示します。
+- `Default` プラットフォームの既定の動作が使用されることを示します。 これは、`TextTransform` プロパティの既定値です。
+- `Lowercase` テキストが小文字に変換されることを示します。
+- `Uppercase` テキストが大文字に変換されることを示します。
 
 次の例では、テキストを大文字に変換しています。
 
@@ -135,8 +135,8 @@ Editor editor = new editor { CharacterSpacing = 10 };
 
 は、 [`Editor`](xref:Xamarin.Forms.Editor) [`Editor.AutoSize`](xref:Xamarin.Forms.Editor.AutoSize) プロパティを [`TextChanges`](xref:Xamarin.Forms.EditorAutoSizeOption.TextChanges) 列挙体の値であるに設定することにより、コンテンツへの自動サイズ変更を行うことができます [`EditoAutoSizeOption`](xref:Xamarin.Forms.EditorAutoSizeOption) 。 この列挙体には、次の2つの値があります。
 
-- [`Disabled`](xref:Xamarin.Forms.EditorAutoSizeOption.Disabled)自動サイズ変更が無効になっていることを示します。これは既定値です。
-- [`TextChanges`](xref:Xamarin.Forms.EditorAutoSizeOption.TextChanges)自動サイズ変更が有効になっていることを示します。
+- [`Disabled`](xref:Xamarin.Forms.EditorAutoSizeOption.Disabled) 自動サイズ変更が無効になっていることを示します。これは既定値です。
+- [`TextChanges`](xref:Xamarin.Forms.EditorAutoSizeOption.TextChanges) 自動サイズ変更が有効になっていることを示します。
 
 これは、次のようにコードで行うことができます。
 
@@ -178,7 +178,7 @@ XAML では次のようにしてこれを実現できます。
 var editor = new Editor { Keyboard = Keyboard.Chat };
 ```
 
-各キーボードの例については、「[レシピ](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/choose-keyboard-for-entry)リポジトリ」を参照してください。
+各キーボードの例については、「 [レシピ](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/choose-keyboard-for-entry) リポジトリ」を参照してください。
 
 [`Keyboard`](xref:Xamarin.Forms.Keyboard) クラスには、大文字の設定、スペルチェック、および単語補完候補の動作を指定することで、キーボードをカスタマイズするために使用できる [`Create`](xref:Xamarin.Forms.Keyboard.Create*) ファクトリ メソッドもあります。 [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) 列挙値がメソッドへの引数として指定され、カスタマイズされた `Keyboard` が返されます。 `KeyboardFlags` 列挙体には次の値が含まれます。
 
@@ -248,7 +248,7 @@ var editor = new Editor { ... IsTextPredictionEnabled = false };
 
 ## <a name="colors"></a>色
 
-`Editor`プロパティを使用してカスタムの背景色を使用するように設定でき `BackgroundColor` ます。 各プラットフォームで色が使用できるようにするには、特別な注意が必要です。 各プラットフォームにはテキストの色について異なる既定値があるため、プラットフォームごとにカスタムの背景色を設定する必要がある場合があります。 各プラットフォームの UI の最適化の詳細については、「[プラットフォームの微](~/xamarin-forms/platform/device.md)調整の操作」を参照してください。
+`Editor` プロパティを使用してカスタムの背景色を使用するように設定でき `BackgroundColor` ます。 各プラットフォームで色が使用できるようにするには、特別な注意が必要です。 各プラットフォームにはテキストの色について異なる既定値があるため、プラットフォームごとにカスタムの背景色を設定する必要がある場合があります。 各プラットフォームの UI の最適化の詳細については、「 [プラットフォームの微](~/xamarin-forms/platform/device.md) 調整の操作」を参照してください。
 
 C# の場合:
 
@@ -296,17 +296,17 @@ XAML の場合:
 
 ## <a name="events-and-interactivity"></a>イベントと対話機能
 
-`Editor`2つのイベントを公開します。
+`Editor` 2つのイベントを公開します。
 
-- [TextChanged](xref:Xamarin.Forms.InputView.TextChanged) &ndash;エディターのテキストが変更されたときに発生します。 変更前と変更後のテキストを提供します。
-- [完了](xref:Xamarin.Forms.Editor.Completed) &ndash;ユーザーがキーボードの return キーを押して入力を終了したときに発生します。
+- [TextChanged](xref:Xamarin.Forms.InputView.TextChanged) &ndash; エディターのテキストが変更されたときに発生します。 変更前と変更後のテキストを提供します。
+- [完了](xref:Xamarin.Forms.Editor.Completed) &ndash; ユーザーがキーボードの return キーを押して入力を終了したときに発生します。
 
 > [!NOTE]
 > [`VisualElement`](xref:Xamarin.Forms.VisualElement)継承元のクラスは、 [`Entry`](xref:Xamarin.Forms.Entry) とのイベントも持ってい [`Focused`](xref:Xamarin.Forms.VisualElement.Focused) [`Unfocused`](xref:Xamarin.Forms.VisualElement.Unfocused) ます。
 
 ### <a name="completed"></a>完了
 
-`Completed`イベントは、との相互作用の完了に応答するために使用され `Editor` ます。 `Completed`は、ユーザーがキーボードに戻りキーを入力するか、UWP の Tab キーを押すことによって、入力をフィールドで終了したときに発生します。 イベントのハンドラーは、送信者とを取得する汎用イベントハンドラーです `EventArgs` 。
+`Completed`イベントは、との相互作用の完了に応答するために使用され `Editor` ます。 `Completed` は、ユーザーがキーボードに戻りキーを入力するか、UWP の Tab キーを押すことによって、入力をフィールドで終了したときに発生します。 イベントのハンドラーは、送信者とを取得する汎用イベントハンドラーです `EventArgs` 。
 
 ```csharp
 void EditorCompleted (object sender, EventArgs e)
@@ -354,7 +354,7 @@ Title="Editor Demo">
 
 `TextChanged`イベントは、フィールドの内容の変更に対処するために使用されます。
 
-`TextChanged`のが変更されるたびに、が発生し `Text` `Editor` ます。 イベントのハンドラーは、のインスタンスを受け取り `TextChangedEventArgs` ます。 `TextChangedEventArgs`プロパティとプロパティを使用して、の古い値と新しい値へのアクセスを提供し `Editor` `Text` `OldTextValue` `NewTextValue` ます。
+`TextChanged` のが変更されるたびに、が発生し `Text` `Editor` ます。 イベントのハンドラーは、のインスタンスを受け取り `TextChangedEventArgs` ます。 `TextChangedEventArgs` プロパティとプロパティを使用して、の古い値と新しい値へのアクセスを提供し `Editor` `Text` `OldTextValue` `NewTextValue` ます。
 
 ```csharp
 void EditorTextChanged (object sender, TextChangedEventArgs e)
@@ -401,5 +401,5 @@ Title="Editor Demo">
 
 ## <a name="related-links"></a>関連リンク
 
-- [Text (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+- [Text (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-text)
 - [Editor API](xref:Xamarin.Forms.Editor)

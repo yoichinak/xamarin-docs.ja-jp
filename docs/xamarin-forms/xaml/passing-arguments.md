@@ -10,12 +10,12 @@ ms.date: 10/25/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 84d8901b7f8dee8ffd6c3ba22d30c76b456555f0
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: dcf09adc690aee5487107630eb74bb8c4e9599cb
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84571507"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562172"
 ---
 # <a name="passing-arguments-in-xaml"></a>XAML での引数の受け渡し
 
@@ -27,14 +27,14 @@ _この記事では、既定以外のコンストラクターに引数を渡す�
 
 多くの場合、引数を必要とするコンストラクターを使用するか、静的作成メソッドを呼び出すことによって、オブジェクトをインスタンス化する必要があります。 これは、XAML で属性と属性を使用して実現でき `x:Arguments` `x:FactoryMethod` ます。
 
-- 属性は、 `x:Arguments` 既定以外のコンストラクターまたはファクトリメソッドオブジェクトの宣言にコンストラクター引数を指定するために使用されます。 詳細については、「[コンストラクター引数の引き渡し](#passing-constructor-arguments)」を参照してください。
-- `x:FactoryMethod`属性は、オブジェクトの初期化に使用できるファクトリメソッドを指定するために使用されます。 詳細については、「[ファクトリメソッドの呼び出し](#calling-factory-methods)」を参照してください。
+- 属性は、 `x:Arguments` 既定以外のコンストラクターまたはファクトリメソッドオブジェクトの宣言にコンストラクター引数を指定するために使用されます。 詳細については、「 [コンストラクター引数の引き渡し](#passing-constructor-arguments)」を参照してください。
+- `x:FactoryMethod`属性は、オブジェクトの初期化に使用できるファクトリメソッドを指定するために使用されます。 詳細については、「 [ファクトリメソッドの呼び出し](#calling-factory-methods)」を参照してください。
 
-また、属性を使用して、ジェネリック型 `x:TypeArguments` のコンストラクターに対するジェネリック型引数を指定することもできます。 詳細については、「[ジェネリック型引数の指定](#specifying-a-generic-type-argument)」を参照してください。
+また、属性を使用して、ジェネリック型 `x:TypeArguments` のコンストラクターに対するジェネリック型引数を指定することもできます。 詳細については、「 [ジェネリック型引数の指定](#specifying-a-generic-type-argument)」を参照してください。
 
 ## <a name="passing-constructor-arguments"></a>コンストラクター引数の引き渡し
 
-属性を使用して、既定以外のコンストラクターに引数を渡すことができ `x:Arguments` ます。 各コンストラクター引数は、引数の型を表す XML 要素内で区切る必要があります。 Xamarin.Formsでは、基本型に対して次の要素がサポートされています。
+属性を使用して、既定以外のコンストラクターに引数を渡すことができ `x:Arguments` ます。 各コンストラクター引数は、引数の型を表す XML 要素内で区切る必要があります。 Xamarin.Forms では、基本型に対して次の要素がサポートされています。
 
 - `x:Array`
 - `x:Boolean`
@@ -136,7 +136,7 @@ _この記事では、既定以外のコンストラクターに引数を渡す�
 </BoxView>
 ```
 
-タグ内の要素の数、 `x:Arguments` およびこれらの要素の型は、呼び出されるファクトリメソッドの引数と一致する必要があります。 [`FromRgba`](xref:Xamarin.Forms.Color.FromRgba(System.Int32,System.Int32,System.Int32,System.Int32))ファクトリメソッドには、 [`Int32`](https://docs.microsoft.com/dotnet/api/system.int32) 赤、緑、青、およびアルファ値を表す4つのパラメーターが必要です。これは、それぞれ 0 ~ 255 の範囲内にあります。 [`FromHsla`](xref:Xamarin.Forms.Color.FromHsla(System.Double,System.Double,System.Double,System.Double))ファクトリメソッドには、 [`Double`](https://docs.microsoft.com/dotnet/api/system.double) 色合い、鮮やかさ、明るさ、およびアルファ値を表す4つのパラメーターが必要です。これは、それぞれ0から1までの範囲です。 [`FromHex`](xref:Xamarin.Forms.Color.FromHex(System.String))ファクトリメソッドには、 [`String`](https://docs.microsoft.com/dotnet/api/system.string) 16 進数 (a) の RGB 色を表すが必要です。
+タグ内の要素の数、 `x:Arguments` およびこれらの要素の型は、呼び出されるファクトリメソッドの引数と一致する必要があります。 [`FromRgba`](xref:Xamarin.Forms.Color.FromRgba(System.Int32,System.Int32,System.Int32,System.Int32))ファクトリメソッドには、 [`Int32`](/dotnet/api/system.int32) 赤、緑、青、およびアルファ値を表す4つのパラメーターが必要です。これは、それぞれ 0 ~ 255 の範囲内にあります。 [`FromHsla`](xref:Xamarin.Forms.Color.FromHsla(System.Double,System.Double,System.Double,System.Double))ファクトリメソッドには、 [`Double`](/dotnet/api/system.double) 色合い、鮮やかさ、明るさ、およびアルファ値を表す4つのパラメーターが必要です。これは、それぞれ0から1までの範囲です。 [`FromHex`](xref:Xamarin.Forms.Color.FromHex(System.String))ファクトリメソッドには、 [`String`](/dotnet/api/system.string) 16 進数 (a) の RGB 色を表すが必要です。
 
 次のスクリーンショットは、 [`Color`](xref:Xamarin.Forms.Color) 指定された引数値を使用して各ファクトリメソッドを呼び出した結果を示しています。
 
@@ -166,7 +166,7 @@ _この記事では、既定以外のコンストラクターに引数を渡す�
 
 ## <a name="related-links"></a>関連リンク
 
-- [コンストラクターの引数を渡す (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-passingconstructorarguments)
-- [ファクトリメソッドの呼び出し (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-callingfactorymethods)
+- [コンストラクターの引数を渡す (サンプル)](/samples/xamarin/xamarin-forms-samples/xaml-passingconstructorarguments)
+- [ファクトリメソッドの呼び出し (サンプル)](/samples/xamarin/xamarin-forms-samples/xaml-callingfactorymethods)
 - [XAML 名前空間](~/xamarin-forms/xaml/namespaces.md)
 - [XAML のジェネリック Xamarin.Forms](generics.md)
