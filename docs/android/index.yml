@@ -1,23 +1,23 @@
 ### YamlMime:Landing
 title: Xamarin.Android
-summary: Xamarin.Android は、.NET 開発者向けに Android SDK 全体を公開しています。 Visual Studio で C# または F# を使用して、完全にネイティブな Android アプリを構築できます。
+summary: Xamarin.Android では、.NET 開発者向けの完全な Android SDK が公開されています。 Visual Studio ではC#またはF#を使用して、完全にネイティブな Android アプリをビルドします。
 metadata:
   title: Xamarin.Android
-  description: Xamarin.Android は、.NET 開発者向けに Android SDK 全体を公開しています。
+  description: Xamarin.Android では、.NET 開発者向けの完全な Android SDK が公開されています。
   ms.topic: landing-page
   ms.prod: xamarin
   ms.technology: xamarin-android
   author: davidbritch
   ms.author: dabritch
   ms.date: 01/27/2020
-  ms.openlocfilehash: 394812b5150f7bbea46dff476bd2f896083b9a74
-  ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+  ms.openlocfilehash: 593d8d20433222e1b18fd65b86a7586aa5560933
+  ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 04/09/2020
-  ms.locfileid: "77374085"
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91454287"
 landingContent:
-- title: 作業開始
+- title: はじめに
   linkLists:
   - linkListType: concept
     links:
@@ -53,7 +53,7 @@ landingContent:
       url: ~/android/app-fundamentals/permissions.md
     - text: タッチとジェスチャ
       url: ~/android/app-fundamentals/touch/index.md
-    - text: 詳しく見る >
+    - text: 詳細表示 >
       url: ~/android/app-fundamentals/index.md
 - title: ユーザー インターフェイス
   linkLists:
@@ -61,9 +61,9 @@ landingContent:
     links:
     - text: Android デザイナー
       url: ~/android/user-interface/android-designer/index.md
-    - text: マテリアル テーマ
+    - text: 素材のテーマ
       url: ~/android/user-interface/material-theme.md
-    - text: ユーザー プロファイル
+    - text: User Profile
       url: ~/android/user-interface/user-profile.md
     - text: スプラッシュ スクリーン
       url: ~/android/user-interface/splash-screen.md
@@ -85,30 +85,30 @@ landingContent:
       url: ~/android/platform/files/index.md
     - text: 指紋認証
       url: ~/android/platform/fingerprint-authentication/index.md
-    - text: フラグメント
+    - text: fragments
       url: ~/android/platform/fragments/index.md
     - text: Java の統合
       url: ~/android/platform/java-integration/index.md
     - text: ジョブ スケジューラ
       url: ~/android/platform/android-job-scheduler.md
-    - text: マップと場所
+    - text: マップと位置情報
       url: ~/android/platform/maps-and-location/index.md
-    - text: 詳しく見る >
+    - text: 詳細表示 >
       url: ~/android/platform/index.md
 - title: Xamarin.Essentials
   linkLists:
   - linkListType: concept
     links:
-    - text: バージョン情報
+    - text: 詳細
       url: ~/essentials/index.md?context=xamarin/android
-    - text: 作業開始
+    - text: はじめに
       url: ~/essentials/get-started.md?context=xamarin/android
     - text: プラットフォームと機能のサポート
       url: ~/essentials/platform-feature-support.md?context=xamarin/android
     - text: トラブルシューティング
       url: ~/essentials/troubleshooting.md?context=xamarin/android
     - text: リリース ノート
-      url: https://docs.microsoft.com/xamarin/essentials/release-notes/
+      url: /xamarin/essentials/release-notes/
 - title: データとクラウド サービス
   linkLists:
   - linkListType: concept
@@ -129,7 +129,7 @@ landingContent:
     links:
     - text: アプリ パッケージ サイズ
       url: ~/android/deploy-test/app-package-size.md
-    - text: アプリの構築
+    - text: アプリを構築する
       url: ~/android/deploy-test/building-apps/index.md
     - text: リンク
       url: ~/android/deploy-test/linker.md
@@ -139,13 +139,13 @@ landingContent:
       url: ~/android/deploy-test/performance.md
     - text: プロファイル
       url: ~/android/deploy-test/profiling.md
-    - text: リリースの準備
+    - text: リリースに向けて準備する
       url: ~/android/deploy-test/release-prep/index.md
     - text: APK に署名する
       url: ~/android/deploy-test/signing/index.md
     - text: アプリの発行
       url: ~/android/deploy-test/publishing/index.md
-    - text: 詳しく見る >
+    - text: 詳細表示 >
       url: ~/android/deploy-test/index.md
 - title: 高度な概念と内部構造
   linkLists:
@@ -165,13 +165,13 @@ landingContent:
   linkLists:
   - linkListType: concept
     links:
-    - text: 作業開始
+    - text: はじめに
       url: ~/android/wear/get-started/index.md
     - text: ユーザー インターフェイス
       url: ~/android/wear/user-interface/index.md
     - text: プラットフォーム機能
       url: ~/android/wear/platform/index.md
-    - text: 画面のサイズ
+    - text: 画面サイズ
       url: ~/android/wear/screen-sizes.md
     - text: デプロイとテスト
       url: ~/android/wear/deploy-test/index.md

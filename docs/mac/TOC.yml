@@ -62,7 +62,7 @@
           href: user-interface/source-list.md
         - name: コレクション ビュー
           href: user-interface/collection-view.md
-        - name: カスタム コントロールの作成
+        - name: カスタム コントロールを作成する
           href: user-interface/custom-controls.md
     - name: プラットフォーム機能
       href: platform/index.md
@@ -222,6 +222,6 @@
         - name: エラー メッセージ (mmp)
           href: troubleshooting/mmp-errors.md
     - name: リリース ノート
-      href: 'https://docs.microsoft.com/xamarin/mac/release-notes/'
+      href: /xamarin/mac/release-notes/
     - name: サンプル
       href: samples/index.md

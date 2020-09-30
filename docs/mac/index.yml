@@ -1,22 +1,22 @@
 ### YamlMime:Landing
 title: Xamarin.Mac
-summary: Xamarin.Mac では、C# を使用し、ネイティブ Mac アプリケーションを構築する .NET 開発者向けの macOS SDK をすべて公開しています。
+summary: Xamarin. Mac は、.NET 開発者向けの完全な macOS SDK を公開しC#を使用してネイティブ Mac アプリケーションを構築します。
 metadata:
   title: Xamarin.Mac
-  description: Xamarin.Mac では、C# を使用し、ネイティブ Mac アプリケーションを構築する .NET 開発者向けの macOS SDK をすべて公開しています。
+  description: Xamarin. Mac は、.NET 開発者向けの完全な macOS SDK を公開しC#を使用してネイティブ Mac アプリケーションを構築します。
   author: davidortinau
   ms.author: daortin
   ms.date: 08/27/2019
   ms.topic: landing-page
   ms.technology: xamarin-mac
-  ms.openlocfilehash: c5db1f5865a2532dfc9372834bb2315f96607338
-  ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+  ms.openlocfilehash: f75d245c886114c50c1a71263c3f78eb86daadc8
+  ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 04/09/2020
-  ms.locfileid: "73017696"
+  ms.lasthandoff: 09/29/2020
+  ms.locfileid: "91433111"
 landingContent:
-- title: 作業開始
+- title: はじめに
   linkLists:
   - linkListType: quickstart
     links:
@@ -25,7 +25,7 @@ landingContent:
   - linkListType: download
     links:
     - text: Xamarin.Mac サンプル
-      url: https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Mac
+      url: /samples/browse/?products=xamarin&term=Xamarin.Mac
     - text: Visual Studio for Mac
       url: /visualstudio/mac/installation/
 - title: Mac の構築
@@ -49,10 +49,10 @@ landingContent:
   - linkListType: reference
     links:
     - text: Xamarin.Mac API ドキュメント
-      url: https://docs.microsoft.com/dotnet/api/?view=xamarin-mac-sdk-14
+      url: /dotnet/api/?view=xamarin-mac-sdk-14
     - text: Xamarin.Mac で使用できる基本クラス ライブラリ
-      url: https://docs.microsoft.com/dotnet/api/?view=xamarinmac-3.0
+      url: /dotnet/api/?view=xamarinmac-3.0
     - text: Xamarin.Mac リリースノート
-      url: https://docs.microsoft.com/xamarin/mac/release-notes/
+      url: /xamarin/mac/release-notes/
     - text: Apple の開発者向けドキュメント
       url: https://developer.apple.com/documentation/

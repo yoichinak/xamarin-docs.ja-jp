@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: a0f2e909d4c7003ba1314b848fd01e604d190a1b
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: c1d2900e31b76bb9f66bde55eb948d1f3f46e34e
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "71107284"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91451431"
 ---
-これでこのチュートリアルは完了です。ここでは、次のことを学習しました。
+これでこのチュートリアルは完了です。ここでは以下の方法を学習しました。
 
 > [!div class="checklist"]
 >
@@ -23,6 +23,6 @@ Xamarin.Forms を使用してモバイル アプリケーションを作成す�
 
 ## <a name="related-links"></a>関連リンク
 
-- [LocalDatabaseTutorial (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-localdatabasetutorial/)
+- [LocalDatabaseTutorial (サンプル)](/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-localdatabasetutorial/)
 - [Xamarin.Forms のローカル データベース (ガイド)](~/xamarin-forms/data-cloud/data/databases.md)
-- [SQLite.NET NuGet パッケージ](https://www.nuget.org/packages/sqlite-net-pcl/)
+- [SQLite.NET NuGet Package](https://www.nuget.org/packages/sqlite-net-pcl/)

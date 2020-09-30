@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 36454d9fe2903bc5e9b05c7809bd09a1f305f46b
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 4ee2326079ba9ddea6b0f4c5c4356412a3d5b492
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "71059714"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91451605"
 ---
 これでこのチュートリアルは完了です。ここでは以下の方法を学習しました。
 
@@ -23,7 +23,7 @@ Xamarin.Forms を使用してモバイル アプリケーションを作成す�
 
 ## <a name="related-links"></a>関連リンク
 
-- [GridTutorial (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-gridtutorial/)
+- [GridTutorial (サンプル)](/samples/xamarin/xamarin-forms-samples/getstarted-tutorials-gridtutorial/)
 - [Xamarin.Forms Grid (ガイド)](~/xamarin-forms/user-interface/layouts/grid.md)
 - [余白とスペース (ガイド)](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)
 - [Grid API](xref:Xamarin.Forms.Grid)
