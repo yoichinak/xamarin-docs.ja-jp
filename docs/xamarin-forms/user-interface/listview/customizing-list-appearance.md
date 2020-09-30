@@ -10,12 +10,12 @@ ms.date: 12/13/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: be8dd5d29aebf29395885d650fbd28082013d0d1
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: dcf4e7ca0f081ff000aaa69d8be3a3cb3aa43e8e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929165"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560287"
 ---
 # <a name="listview-appearance"></a>ListView の外観
 
@@ -35,7 +35,7 @@ ms.locfileid: "86929165"
 - のを `ListView` `ItemsSource` そのリストに設定します。
 - `IsGroupingEnabled` を true に設定します。
 - [`GroupDisplayBinding`](xref:Xamarin.Forms.ListView.GroupDisplayBinding)グループのタイトルとして使用されているグループのプロパティにバインドするように設定します。
-- Optional[`GroupShortNameBinding`](xref:Xamarin.Forms.ListView.GroupShortNameBinding)グループの短い名前として使用されているグループのプロパティにバインドするように設定します。 短い名前は、ジャンプリスト (iOS の右側の列) に使用されます。
+- Optional [`GroupShortNameBinding`](xref:Xamarin.Forms.ListView.GroupShortNameBinding) グループの短い名前として使用されているグループのプロパティにバインドするように設定します。 短い名前は、ジャンプリスト (iOS の右側の列) に使用されます。
 
 まず、グループのクラスを作成します。
 
@@ -55,7 +55,7 @@ public class PageTypeGroup : List<PageModel>
     }
 ```
 
-上記のコードで `All` は、は、ListView にバインドソースとして指定されるリストです。 `Title`および `ShortName` は、グループの見出しに使用されるプロパティです。
+上記のコードで `All` は、は、ListView にバインドソースとして指定されるリストです。 `Title` および `ShortName` は、グループの見出しに使用されるプロパティです。
 
 この段階で `All` は、は空のリストです。 プログラムの開始時にリストが設定されるように、静的コンストラクターを追加します。
 
@@ -159,7 +159,7 @@ XAML でグループヘッダーをカスタマイズする例を次に示しま
 
 ## <a name="headers-and-footers"></a>ヘッダーとフッター
 
-ListView は、リストの要素でスクロールするヘッダーとフッターを表示することができます。 ヘッダーとフッターには、テキストの文字列またはより複雑なレイアウトを指定できます。 この動作は、[セクショングループ](#grouping)とは別のものです。
+ListView は、リストの要素でスクロールするヘッダーとフッターを表示することができます。 ヘッダーとフッターには、テキストの文字列またはより複雑なレイアウトを指定できます。 この動作は、 [セクショングループ](#grouping)とは別のものです。
 
 またはを値に設定することも、 `Header` `Footer` `string` より複雑なレイアウトに設定することもできます。 また `HeaderTemplate` 、 `FooterTemplate` データバインディングをサポートするヘッダーとフッターに対してより複雑なレイアウトを作成するためのプロパティもあります。
 
@@ -210,15 +210,15 @@ XAML の場合:
 
 [`ListView`](xref:Xamarin.Forms.ListView)クラスには `HorizontalScrollBarVisibility` プロパティとプロパティがあり、 `VerticalScrollBarVisibility` [`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollBarVisibility) 水平または垂直のスクロールバーが表示されるタイミングを表す値を取得または設定します。 どちらのプロパティも、次の値に設定できます。
 
-- [`Default`](xref:Xamarin.Forms.ScrollBarVisibility)プラットフォームの既定のスクロールバーの動作を示し `HorizontalScrollBarVisibility` ます。は、プロパティとプロパティの既定値です `VerticalScrollBarVisibility` 。
-- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility)ビューにコンテンツが収まる場合でも、スクロールバーが表示されることを示します。
-- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility)コンテンツがビューに収まらない場合でも、スクロールバーが表示されないことを示します。
+- [`Default`](xref:Xamarin.Forms.ScrollBarVisibility) プラットフォームの既定のスクロールバーの動作を示し `HorizontalScrollBarVisibility` ます。は、プロパティとプロパティの既定値です `VerticalScrollBarVisibility` 。
+- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility) ビューにコンテンツが収まる場合でも、スクロールバーが表示されることを示します。
+- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility) コンテンツがビューに収まらない場合でも、スクロールバーが表示されないことを示します。
 
 ## <a name="row-separators"></a>行区切り記号
 
 `ListView`既定では、iOS と Android では、要素間に区切り線が表示されます。 IOS と Android の区切り線を非表示にする場合は、 `SeparatorVisibility` ListView でプロパティを設定します。 のオプション `SeparatorVisibility` は次のとおりです。
 
-- **既定**-IOS と Android の区切り線を表示します。
+- **既定** -IOS と Android の区切り線を表示します。
 - **None** -すべてのプラットフォームの区切り記号を非表示にします。
 
 既定の表示:
@@ -341,8 +341,8 @@ void OnImageTapped (object sender, EventArgs args)
 
 ## <a name="related-links"></a>関連リンク
 
-- [グループ化 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
-- [カスタムレンダラービュー (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative)
-- [行の動的なサイズ変更 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-dynamicunevenlistcells)
+- [グループ化 (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
+- [カスタムレンダラービュー (サンプル)](/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative)
+- [行の動的なサイズ変更 (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-listview-dynamicunevenlistcells)
 - [1.4 リリースノート](https://forums.xamarin.com/discussion/35451/xamarin-forms-1-4-0-released/)
 - [1.3 リリースノート](https://forums.xamarin.com/discussion/29934/xamarin-forms-1-3-0-released/)

@@ -10,12 +10,12 @@ ms.date: 10/25/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 08be571d3ba69891a56c08efd556a999e51431c8
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 2dd2abed23704f6a67ac34bc828c48e7200cf99a
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139855"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91558720"
 ---
 # <a name="part-4-data-binding-basics"></a>第 4 部 データ バインディングの基礎
 
@@ -25,7 +25,7 @@ _データバインディングを使用すると、2つのオブジェクトの
 
 ## <a name="data-bindings"></a>データバインディング
 
-データバインディングは、*ソース*と*ターゲット*と呼ばれる、2つのオブジェクトのプロパティを接続します。 コードでは、次の2つの手順が必要です。 `BindingContext` ターゲットオブジェクトのプロパティがソースオブジェクトに設定されている必要があります。また、 `SetBinding` `Binding` オブジェクトのプロパティをソースオブジェクトのプロパティにバインドするには、ターゲットオブジェクトでメソッドを呼び出す必要があります。
+データバインディングは、 *ソース* と *ターゲット*と呼ばれる、2つのオブジェクトのプロパティを接続します。 コードでは、次の2つの手順が必要です。 `BindingContext` ターゲットオブジェクトのプロパティがソースオブジェクトに設定されている必要があります。また、 `SetBinding` `Binding` オブジェクトのプロパティをソースオブジェクトのプロパティにバインドするには、ターゲットオブジェクトでメソッドを呼び出す必要があります。
 
 ターゲットプロパティは、バインド可能なプロパティである必要があります。これは、ターゲットオブジェクトがから派生する必要があることを意味し `BindableObject` ます。 オンライン Xamarin.Forms ドキュメントでは、バインド可能なプロパティを示しています。 などののプロパティ `Label` `Text` は、バインド可能なプロパティに関連付けられてい `TextProperty` ます。
 
@@ -33,7 +33,7 @@ _データバインディングを使用すると、2つのオブジェクトの
 
 ただし、XAML でデータバインディングを定義する場合、ターゲットオブジェクトのを設定する方法は複数あり `BindingContext` ます。 分離コードファイルから設定される場合もあります。場合によって `StaticResource` は、またはマークアップ拡張機能を使用します。また、場合によっては、 `x:Static` プロパティ要素タグの内容として設定し `BindingContext` ます。
 
-バインドは、基本的には、プログラムのビジュアルを基になるデータモデルに接続するために使用されます。通常は、パート5で説明したように、MVVM (モデルビューモデル) アプリケーションアーキテクチャの実現に使用され[ます。データバインディングから MVVM へのバインド](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)が可能です。
+バインドは、基本的には、プログラムのビジュアルを基になるデータモデルに接続するために使用されます。通常は、パート5で説明したように、MVVM (モデルビューモデル) アプリケーションアーキテクチャの実現に使用され [ます。データバインディングから MVVM へのバインド](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)が可能です。
 
 ## <a name="view-to-view-bindings"></a>ビューからビューへのバインド
 
@@ -114,9 +114,9 @@ Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 この問題およびその他の問題の解決策としては、 `Mode` 列挙体のメンバーに設定されているプロパティが `BindingMode` あります。
 
 - `Default`
-- `OneWay`—値はソースからターゲットに転送されます。
-- `OneWayToSource`-ターゲットからソースに値が転送されます。
-- `TwoWay`-値は、ソースとターゲットの間で両方の方法で転送されます。
+- `OneWay` —値はソースからターゲットに転送されます。
+- `OneWayToSource` -ターゲットからソースに値が転送されます。
+- `TwoWay` -値は、ソースとターゲットの間で両方の方法で転送されます。
 - `OneTime`-データがソースからターゲットに移動しますが、変更された場合にのみ `BindingContext`
 
 次のプログラムは、とのバインディングモードの1つの一般的な使用方法を示して `OneWayToSource` `TwoWay` います。 4つ `Slider` のビューは、 `Scale` の、 `Rotate` 、 `RotateX` 、およびの各プロパティを制御するため `RotateY` のもの `Label` です。 最初 `Label` は、それぞれがによって設定されているため、の4つのプロパティがデータバインディングターゲットであると考えられ `Slider` ます。 ただし、のは、 `BindingContext` `Label` オブジェクトを1つだけ持つことができ、4つの異なるスライダーがあります。
@@ -215,7 +215,7 @@ XAML とデータバインディングの機能が、テンプレート化され
 
 `ListView``ItemsSource`型のプロパティを定義 `IEnumerable` し、そのコレクション内の項目を表示します。 これらの項目は、任意の型のオブジェクトにすることができます。 既定では、は `ListView` `ToString` 各項目のメソッドを使用してその項目を表示します。 これが必要なものである場合もありますが、多くの場合、は `ToString` オブジェクトの完全修飾クラス名のみを返します。
 
-ただし、コレクション内の項目は、 `ListView` から派生したクラスを含む*テンプレート*を使用することによって、任意の方法で表示でき `Cell` ます。 テンプレートは、のすべての項目に対して複製され、 `ListView` テンプレートに設定されているデータバインディングが個々の複製に転送されます。
+ただし、コレクション内の項目は、 `ListView` から派生したクラスを含む *テンプレート*を使用することによって、任意の方法で表示でき `Cell` ます。 テンプレートは、のすべての項目に対して複製され、 `ListView` テンプレートに設定されているデータバインディングが個々の複製に転送されます。
 
 多くの場合、クラスを使用してこれらの項目のカスタムセルを作成する必要があり `ViewCell` ます。 このプロセスはコードの中で少し乱雑になりますが、XAML では非常に単純になります。
 
@@ -340,7 +340,7 @@ XamlSamples プロジェクトには、というクラスが含まれてい `Nam
 
 ## <a name="binding-value-converters"></a>値コンバーターのバインド
 
-前の**ListView Demo** XAML ファイルには、 `R` 構造体の個々の、、およびプロパティが表示され `G` `B` Xamarin.Forms `Color` ます。 これらのプロパティは `double` 、0から1までの型および範囲です。 16進値を表示する場合は、単に `StringFormat` "X2" 書式指定を使用することはできません。 これは整数に対してのみ機能し、以外の `double` 値を255で乗算する必要があります。
+前の **ListView Demo** XAML ファイルには、 `R` 構造体の個々の、、およびプロパティが表示され `G` `B` Xamarin.Forms `Color` ます。 これらのプロパティは `double` 、0から1までの型および範囲です。 16進値を表示する場合は、単に `StringFormat` "X2" 書式指定を使用することはできません。 これは整数に対してのみ機能し、以外の `double` 値を255で乗算する必要があります。
 
 この小さな問題は、*バインディングコンバーター*とも呼ばれる*値コンバーター*を使用して解決されました。 これは、インターフェイスを実装するクラスです。これは、 `IValueConverter` とという2つのメソッドがあることを意味し `Convert` `ConvertBack` ます。 メソッドは、 `Convert` 値がソースからターゲットに転送されるときに呼び出されます。 `ConvertBack` またはバインディングでターゲットからソースへの転送に対してメソッドが呼び出され `OneWayToSource` `TwoWay` ます。
 
@@ -403,15 +403,15 @@ namespace XamlSamples
 
 は、 `ListView` 基になるデータで動的に発生する可能性がある変更を処理するうえで非常に洗練されていますが、特定の手順を実行する場合に限られます。 のプロパティに割り当てられた項目のコレクションが `ItemsSource` `ListView` 実行時に変更された場合 (つまり、項目をコレクションに追加またはコレクションから削除できる場合) は、 `ObservableCollection` これらの項目に対してクラスを使用します。 `ObservableCollection``INotifyCollectionChanged`インターフェイスを実装し、 `ListView` イベントのハンドラーをインストールし `CollectionChanged` ます。
 
-実行時に項目のプロパティが変更された場合、コレクション内の項目はインターフェイスを実装 `INotifyPropertyChanged` し、イベントを使用してプロパティ値の変更を通知する必要があり `PropertyChanged` ます。 これについては、このシリーズの第5部で説明されてい[ます。データバインドから MVVM へ](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)。
+実行時に項目のプロパティが変更された場合、コレクション内の項目はインターフェイスを実装 `INotifyPropertyChanged` し、イベントを使用してプロパティ値の変更を通知する必要があり `PropertyChanged` ます。 これについては、このシリーズの第5部で説明されてい [ます。データバインドから MVVM へ](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)。
 
 ## <a name="summary"></a>まとめ
 
-データバインディングは、ページ内の2つのオブジェクト間、またはビジュアルオブジェクトと基になるデータの間でプロパティをリンクするための強力なメカニズムを提供します。 しかし、アプリケーションがデータソースの操作を開始すると、一般的なアプリケーションアーキテクチャパターンが有用なパラダイムとして浮上し始めます。 これについては、[パート5で説明します。データバインドから MVVM へ](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)。
+データバインディングは、ページ内の2つのオブジェクト間、またはビジュアルオブジェクトと基になるデータの間でプロパティをリンクするための強力なメカニズムを提供します。 しかし、アプリケーションがデータソースの操作を開始すると、一般的なアプリケーションアーキテクチャパターンが有用なパラダイムとして浮上し始めます。 これについては、 [パート5で説明します。データバインドから MVVM へ](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)。
 
 ## <a name="related-links"></a>関連リンク
 
-- [XamlSamples](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+- [XamlSamples](/samples/xamarin/xamarin-forms-samples/xamlsamples)
 - [パート1。XAML を使用したはじめに (サンプル)](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
 - [第2部。必須の XAML 構文 (サンプル)](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
 - [パート3。XAML マークアップ拡張機能 (サンプル)](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)

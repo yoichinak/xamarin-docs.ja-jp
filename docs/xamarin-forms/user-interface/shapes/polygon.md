@@ -1,5 +1,5 @@
 ---
-title: 'Xamarin.Forms図形: 多角形'
+title: 'Xamarin.Forms 図形: 多角形'
 description: Xamarin.FormsPolygon クラスを使用すると、閉じた図形を形成する一連の線が接続されたポリゴンを描画できます。
 ms.prod: xamarin
 ms.assetid: D6539F60-A5AC-46EF-86EB-E9F508EB1FA8
@@ -10,18 +10,18 @@ ms.date: 06/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 52043bd507d35a1ebe2628c13c14429c604569c9
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 7464b3e4088986a87aa29c77ee8c6baa78266f84
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918493"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91558974"
 ---
-# <a name="no-locxamarinforms-shapes-polygon"></a>Xamarin.Forms図形: 多角形
+# <a name="no-locxamarinforms-shapes-polygon"></a>Xamarin.Forms 図形: 多角形
 
 ![プレリリース API](~/media/shared/preview.png)
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 `Polygon`クラスはクラスから派生 `Shape` し、閉じた図形を形成する一連の線が接続されている多角形を描画するために使用できます。 クラスから継承されるプロパティの詳細につい `Polygon` `Shape` ては、「 [ Xamarin.Forms 図形](index.md)」を参照してください。
 
@@ -30,7 +30,7 @@ ms.locfileid: "87918493"
 - `Points`型の。 `PointCollection` これは、 [`Point`](xref:Xamarin.Forms.Point) 多角形の頂点を記述する構造体のコレクションです。
 - `FillRule``FillRule`形状の内部の塗りつぶしを決定する方法を指定する型の。 このプロパティの既定値は `FillRule.EvenOdd` です。
 
-これらのプロパティは、オブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。これは、データバインディングのターゲットとスタイルを設定できることを意味します。
+これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトが基になっています。つまり、これらは、データ バインディングの対象にすることができ、スタイルを設定できます。
 
 `PointsCollection`型は `ObservableCollection` オブジェクトのです [`Point`](xref:Xamarin.Forms.Point) 。 `Point`構造体は `X` 、 `Y` `double` 2d 空間の x 座標と y 座標のペアを表す、型のプロパティとプロパティを定義します。 したがって、 `Points` プロパティは、多角形の頂点を表す x 座標と y 座標のペアのリストに設定する必要があります。これは、1つのコンマや1つ以上の空白で区切られます。 たとえば、"40, 10 70, 80" と "40 10, 70 80" はどちらも有効です。
 
@@ -68,7 +68,7 @@ ms.locfileid: "87918493"
 
 ![破線の多角形](polygon-images/dashed.png "破線の多角形")
 
-破線の多角形の描画の詳細については、「[破線の図形を描画](index.md#draw-dashed-shapes)する」を参照してください。
+破線の多角形の描画の詳細については、「 [破線の図形を描画](index.md#draw-dashed-shapes)する」を参照してください。
 
 次の XAML の例は、既定の fill ルールを使用する polygon を示しています。
 
@@ -99,6 +99,6 @@ ms.locfileid: "87918493"
 
 ## <a name="related-links"></a>関連リンク
 
-- [図形のデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
-- [Xamarin.Forms図形](index.md)
-- [Xamarin.Forms図形: 塗りつぶしルール](fillrules.md)
+- [図形のデモ (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [Xamarin.Forms 図形](index.md)
+- [Xamarin.Forms 図形: 塗りつぶしルール](fillrules.md)

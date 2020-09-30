@@ -1,5 +1,5 @@
 ---
-title: からネイティブマップアプリを起動します。Xamarin.Forms
+title: からネイティブマップアプリを起動します。 Xamarin.Forms
 description: 各プラットフォーム上のネイティブマップアプリは、 Xamarin.Forms ランチャークラスによってアプリケーションから起動でき Xamarin.Essentials ます。
 ms.prod: xamarin
 ms.assetid: 5CF7CD67-3F20-4D80-B99E-D35A5FD1019A
@@ -10,14 +10,14 @@ ms.date: 10/30/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c135d5dd02bba5102f5a93132f079526c84865d5
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: ede34258650c378a45ee694f90de1e8b249acf71
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84129339"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559884"
 ---
-# <a name="launch-the-native-map-app-from-xamarinforms"></a>からネイティブマップアプリを起動します。Xamarin.Forms
+# <a name="launch-the-native-map-app-from-no-locxamarinforms"></a>からネイティブマップアプリを起動します。 Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
@@ -26,7 +26,7 @@ ms.locfileid: "84129339"
 > [!NOTE]
 > クラスを使用する代わりに、クラスを使用すること Xamarin.Essentials `Launcher` も `Map` できます。 詳細については、「 [ Xamarin.Essentials Map](~/essentials/maps.md?context=xamarin/xamarin-forms)」を参照してください。
 
-各プラットフォームの maps アプリでは、一意のカスタム URI スキームが使用されます。 IOS での maps URI スキームの詳細については、「 [Map Links](https://developer.apple.com/library/archive/featuredarticles/iPhoneURLScheme_Reference/MapLinks/MapLinks.html) on developer.apple.com」を参照してください。 Android の maps URI スキームの詳細については、「 [Maps 開発者ガイド](https://developer.android.com/guide/components/intents-common.html#Maps)」および「developers.android.com で[の Android 用の Google maps インテント](https://developers.google.com/maps/documentation/urls/android-intents)」を参照してください。 ユニバーサル Windows プラットフォーム (UWP) のマップ URI スキームの詳細については、「 [Windows maps アプリを起動する](/windows/uwp/launch-resume/launch-maps-app)」を参照してください。
+各プラットフォームの maps アプリでは、一意のカスタム URI スキームが使用されます。 IOS での maps URI スキームの詳細については、「 [Map Links](https://developer.apple.com/library/archive/featuredarticles/iPhoneURLScheme_Reference/MapLinks/MapLinks.html) on developer.apple.com」を参照してください。 Android の maps URI スキームの詳細については、「 [Maps 開発者ガイド](https://developer.android.com/guide/components/intents-common.html#Maps) 」および「developers.android.com で [の Android 用の Google maps インテント](https://developers.google.com/maps/documentation/urls/android-intents) 」を参照してください。 ユニバーサル Windows プラットフォーム (UWP) のマップ URI スキームの詳細については、「 [Windows maps アプリを起動する](/windows/uwp/launch-resume/launch-maps-app)」を参照してください。
 
 ## <a name="launch-the-map-app-at-a-specific-location"></a>特定の場所でマップアプリを起動する
 
@@ -80,7 +80,7 @@ else if (Device.RuntimePlatform == Device.UWP)
 
 ## <a name="related-links"></a>関連リンク
 
-- [Maps サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+- [Maps サンプル](/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 - [Xamarin.Essentials](~/essentials/index.md?context=xamarin/xamarin-forms)
 - [マップリンク](https://developer.apple.com/library/archive/featuredarticles/iPhoneURLScheme_Reference/MapLinks/MapLinks.html)
 - [Maps 開発者ガイド](https://developer.android.com/guide/components/intents-common.html#Maps)

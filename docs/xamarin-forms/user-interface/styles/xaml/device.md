@@ -1,6 +1,6 @@
 ---
-title: のデバイスのスタイルXamarin.Forms
-description: Xamarin.Formsには、デバイススタイルと呼ばれる6つの動的スタイルが、デバイススタイルクラスに含まれています。 この記事では、アプリケーションでデバイスのスタイルを使用する方法について説明し Xamarin.Forms ます。
+title: のデバイスのスタイル Xamarin.Forms
+description: Xamarin.Forms には、デバイススタイルと呼ばれる6つの動的スタイルが、デバイススタイルクラスに含まれています。 この記事では、アプリケーションでデバイスのスタイルを使用する方法について説明し Xamarin.Forms ます。
 ms.prod: xamarin
 ms.assetid: 7FF19ED1-0822-4238-9435-AD970317A2F8
 ms.technology: xamarin-forms
@@ -10,18 +10,18 @@ ms.date: 02/17/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 04669479bb321da4fee6c45fd0f2c00deb5bbf1a
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: b8665e5489da396cb9f7ef984c97fe79fda17434
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929728"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91558324"
 ---
-# <a name="device-styles-in-xamarinforms"></a>のデバイスのスタイルXamarin.Forms
+# <a name="device-styles-in-no-locxamarinforms"></a>のデバイスのスタイル Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
 
-_Xamarin.Formsには、デバイススタイルと呼ばれる6つの動的スタイルが、デバイススタイルクラスに含まれています。_
+_Xamarin.Forms には、デバイススタイルと呼ばれる6つの動的スタイルが、デバイススタイルクラスに含まれています。_
 
 *デバイス*のスタイルは次のとおりです。
 
@@ -34,7 +34,7 @@ _Xamarin.Formsには、デバイススタイルと呼ばれる6つの動的ス�
 
 6つのスタイルはすべてインスタンスにのみ適用でき [`Label`](xref:Xamarin.Forms.Label) ます。 たとえば、 `Label` 段落の本文を表示しているでは、プロパティがに設定されている可能性があり [`Style`](xref:Xamarin.Forms.NavigableElement.Style) [`BodyStyle`](xref:Xamarin.Forms.Device.Styles.BodyStyle) ます。
 
-次のコード例は、XAML ページで*デバイス*のスタイルを使用する方法を示しています。
+次のコード例は、XAML ページで *デバイス* のスタイルを使用する方法を示しています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Styles.DeviceStylesPage" Title="Device" IconImageSource="xaml.png">
@@ -68,11 +68,11 @@ _Xamarin.Formsには、デバイススタイルと呼ばれる6つの動的ス�
 </ContentPage>
 ```
 
-デバイススタイルは、マークアップ拡張機能を使用してにバインドされ `DynamicResource` ます。 スタイルの動的な性質は、テキストサイズの**ユーザー補助**の設定を変更することで、iOS で見ることができます。 *デバイス*スタイルの外観は、次のスクリーンショットに示すように、プラットフォームによって異なります。
+デバイススタイルは、マークアップ拡張機能を使用してにバインドされ `DynamicResource` ます。 スタイルの動的な性質は、テキストサイズの **ユーザー補助** の設定を変更することで、iOS で見ることができます。 *デバイス*スタイルの外観は、次のスクリーンショットに示すように、プラットフォームによって異なります。
 
 ![各プラットフォームでのデバイスのスタイル](device-images/device-styles.png)
 
-*デバイススタイル* [`BaseResourceKey`](xref:Xamarin.Forms.Style.BaseResourceKey) は、プロパティをデバイススタイルのキー名に設定することによって、から派生させることもできます。 上記のコード例では、はを `myBodyStyle` 継承 [`BodyStyle`](xref:Xamarin.Forms.Device.Styles.BodyStyle) し、アクセント付きのテキストの色を設定します。 動的スタイルの継承の詳細については、「[動的スタイルの継承](~/xamarin-forms/user-interface/styles/xaml/dynamic.md#dynamic-style-inheritance)」を参照してください。
+*デバイススタイル* [`BaseResourceKey`](xref:Xamarin.Forms.Style.BaseResourceKey) は、プロパティをデバイススタイルのキー名に設定することによって、から派生させることもできます。 上記のコード例では、はを `myBodyStyle` 継承 [`BodyStyle`](xref:Xamarin.Forms.Device.Styles.BodyStyle) し、アクセント付きのテキストの色を設定します。 動的スタイルの継承の詳細については、「 [動的スタイルの継承](~/xamarin-forms/user-interface/styles/xaml/dynamic.md#dynamic-style-inheritance)」を参照してください。
 
 次のコード例は、C# の対応するページを示しています。
 
@@ -116,7 +116,7 @@ public class DeviceStylesPageCS : ContentPage
 
 ## <a name="accessibility"></a>ユーザー補助
 
-*デバイス*のスタイルはユーザー補助の設定を優先します。そのため、各プラットフォームでアクセシビリティの設定が変更されると、フォントサイズが変更されます。 そのため、ユーザー補助テキストをサポートするには、アプリケーション内でテキストスタイルのベースとして*デバイス*のスタイルが使用されていることを確認してください。
+*デバイス*のスタイルはユーザー補助の設定を優先します。そのため、各プラットフォームでアクセシビリティの設定が変更されると、フォントサイズが変更されます。 そのため、ユーザー補助テキストをサポートするには、アプリケーション内でテキストスタイルのベースとして *デバイス* のスタイルが使用されていることを確認してください。
 
 次のスクリーンショットは、各プラットフォームのデバイススタイルを示しています。アクセス可能なフォントサイズは最も小さくなっています。
 
@@ -130,8 +130,8 @@ public class DeviceStylesPageCS : ContentPage
 
 - [テキストスタイル](~/xamarin-forms/user-interface/text/styles.md)
 - [XAML マークアップ拡張](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [動的スタイル (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
-- [スタイルの使用 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
+- [動的スタイル (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
+- [スタイルの使用 (サンプル)](/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [デバイス. スタイル](xref:Xamarin.Forms.Device.Styles)
 - [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
 - [Style](xref:Xamarin.Forms.Style)

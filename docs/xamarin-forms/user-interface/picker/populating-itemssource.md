@@ -10,12 +10,12 @@ ms.date: 02/26/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a15ca2e11dabb73054f5f0a1dc3f79342d8ce7f5
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 395536752fb0d581408d0b8f91ef623d926aeeb4
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938607"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559546"
 ---
 # <a name="setting-a-pickers-itemssource-property"></a>ピッカーの ItemsSource プロパティの設定
 
@@ -23,7 +23,7 @@ ms.locfileid: "86938607"
 
 _ピッカービューは、データの一覧からテキスト項目を選択するためのコントロールです。この記事では、ItemsSource プロパティを設定してピッカーにデータを設定する方法と、ユーザーが項目の選択に応答する方法について説明します。_
 
-Xamarin.Forms2.3.4 では、 [`Picker`](xref:Xamarin.Forms.Picker) プロパティを設定してデータを設定する機能を追加し、 [`ItemsSource`](xref:Xamarin.Forms.Picker.ItemsSource) プロパティから選択した項目を取得する機能を追加することで、ビューを拡張しました [`SelectedItem`](xref:Xamarin.Forms.Picker.SelectedItem) 。 また、プロパティをに設定すると、選択した項目のテキストの色を変更でき [`TextColor`](xref:Xamarin.Forms.Picker.TextColor) [`Color`](xref:Xamarin.Forms.Color) ます。
+Xamarin.Forms 2.3.4 では、 [`Picker`](xref:Xamarin.Forms.Picker) プロパティを設定してデータを設定する機能を追加し、 [`ItemsSource`](xref:Xamarin.Forms.Picker.ItemsSource) プロパティから選択した項目を取得する機能を追加することで、ビューを拡張しました [`SelectedItem`](xref:Xamarin.Forms.Picker.SelectedItem) 。 また、プロパティをに設定すると、選択した項目のテキストの色を変更でき [`TextColor`](xref:Xamarin.Forms.Picker.TextColor) [`Color`](xref:Xamarin.Forms.Color) ます。
 
 ## <a name="populating-a-picker-with-data"></a>データを使用したピッカーの設定
 
@@ -71,7 +71,7 @@ picker.ItemsSource = monkeyList;
 は、一度 [`Picker`](xref:Xamarin.Forms.Picker) に1つの項目の選択をサポートします。 ユーザーが項目を選択すると、 [`SelectedIndexChanged`](xref:Xamarin.Forms.Picker.SelectedIndexChanged) イベントが発生します [`SelectedIndex`](xref:Xamarin.Forms.Picker.SelectedIndex) 。プロパティは、リスト内で選択されている項目のインデックスを表す整数に更新され、 [`SelectedItem`](xref:Xamarin.Forms.Picker.SelectedItem) プロパティは選択した項目を表すに更新され `object` ます。 プロパティは、 [`SelectedIndex`](xref:Xamarin.Forms.Picker.SelectedIndex) ユーザーが選択した項目を示す0から始まる数値です。 項目が選択されていない場合 (が最初に作成されて初期化された場合 [`Picker`](xref:Xamarin.Forms.Picker) )、 `SelectedIndex` は-1 になります。
 
 > [!NOTE]
-> での項目選択の動作は、 [`Picker`](xref:Xamarin.Forms.Picker) プラットフォーム固有の iOS でカスタマイズできます。 詳細については、「[ピッカー項目の選択の制御](~/xamarin-forms/platform/ios/picker-selection.md)」を参照してください。
+> での項目選択の動作は、 [`Picker`](xref:Xamarin.Forms.Picker) プラットフォーム固有の iOS でカスタマイズできます。 詳細については、「 [ピッカー項目の選択の制御](~/xamarin-forms/platform/ios/picker-selection.md)」を参照してください。
 
 次のコード例は [`SelectedItem`](xref:Xamarin.Forms.Picker.SelectedItem) 、XAML でからプロパティ値を取得する方法を示してい [`Picker`](xref:Xamarin.Forms.Picker) ます。
 
@@ -185,7 +185,7 @@ detailsLabel.SetBinding(Label.TextProperty, "SelectedMonkey.Details");
 
 ## <a name="related-links"></a>関連リンク
 
-- [ピッカーのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-pickerdemo)
-- [サルアプリ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-monkeyapppicker)
-- [バインド可能なピッカー (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablepicker)
+- [ピッカーのデモ (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-pickerdemo)
+- [サルアプリ (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-monkeyapppicker)
+- [バインド可能なピッカー (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-bindablepicker)
 - [ピッカー API](xref:Xamarin.Forms.Picker)

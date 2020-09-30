@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms多角形、ポリライン、および円のマップ
+title: Xamarin.Forms 多角形、ポリライン、および円のマップ
 description: この記事では、マップインスタンスで多角形、ポリライン、および円を作成する方法について説明 Xamarin.Forms します。
 ms.prod: xamarin
 ms.assetid: CDAF0B02-1AA8-4AD6-94A7-ABFC18006A2D
@@ -10,14 +10,14 @@ ms.date: 03/10/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ca813f9f0f75aeaf4a2502faa7cb96d1fbead471
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d4b82cc9c04dd711cc99b558475c2e003e557252
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138412"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559780"
 ---
-# <a name="xamarinforms-map-polygons-and-polylines"></a>Xamarin.Forms多角形とポリラインのマップ
+# <a name="no-locxamarinforms-map-polygons-and-polylines"></a>Xamarin.Forms 多角形とポリラインのマップ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
@@ -40,8 +40,8 @@ ms.locfileid: "84138412"
 クラスは、 `Circle` 次のバインド可能なプロパティを定義します。
 
 - `Center`[`Position`](xref:Xamarin.Forms.Maps.Position)緯度と経度の円の中心を定義するオブジェクトです。
-- `Radius`は、 [`Distance`](xref:Xamarin.Forms.Maps.Distance) 円の半径をメートル、キロメートル、またはマイル単位で定義するオブジェクトです。
-- `FillColor`は、 `Color` 円の境界内の色を決定するプロパティです。
+- `Radius` は、 [`Distance`](xref:Xamarin.Forms.Maps.Distance) 円の半径をメートル、キロメートル、またはマイル単位で定義するオブジェクトです。
+- `FillColor` は、 `Color` 円の境界内の色を決定するプロパティです。
 
 > [!NOTE]
 > `StrokeColor`プロパティが指定されていない場合、ストロークは既定で黒に設定されます。 `FillColor`プロパティが指定されていない場合、塗りつぶしは既定で透過的になります。 したがって、どちらのプロパティも指定されていない場合、図形は塗りつぶされていない黒いアウトラインを持ちます。
@@ -233,4 +233,4 @@ map.MapElements.Add(circle);
 
 ## <a name="related-links"></a>関連リンク
 
-- [Maps サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+- [Maps サンプル](/samples/xamarin/xamarin-forms-samples/workingwithmaps)

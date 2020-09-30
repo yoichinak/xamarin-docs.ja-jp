@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Formsマップの位置と距離
+title: Xamarin.Forms マップの位置と距離
 description: Xamarin.Forms。Maps 名前空間には、マップとそのピンを配置するときに通常使用される位置構造体と、マップを配置するときに必要に応じて使用できる距離構造体が含まれます。
 ms.prod: xamarin
 ms.assetid: 2F4EA3D2-1351-40AD-A71D-CF7F1F18F1E8
@@ -10,27 +10,27 @@ ms.date: 03/10/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2b1613789029d59e46a6d0431bfa9da1a53082e8
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 896b7f878e1ec9c3ed3c8324330c288220963e62
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138399"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559715"
 ---
-# <a name="xamarinforms-map-position-and-distance"></a>Xamarin.Formsマップの位置と距離
+# <a name="no-locxamarinforms-map-position-and-distance"></a>Xamarin.Forms マップの位置と距離
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
 名前空間には、 [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps) [`Position`](xref:Xamarin.Forms.Maps.Position) マップとそのピンを配置するときに通常使用される構造体と、 [`Distance`](xref:Xamarin.Forms.Maps.Distance) マップを配置するときに必要に応じて使用できる構造体が含まれています。
 
-## <a name="position"></a>位置
+## <a name="position"></a>[位置]
 
 [`Position`](xref:Xamarin.Forms.Maps.Position)構造体は、緯度と経度の値として格納されている位置をカプセル化します。 この構造体は、次の2つの読み取り専用プロパティを定義します。
 
 - [`Latitude`](xref:Xamarin.Forms.Maps.Position.Latitude)型の `double` 。これは、小数点以下の位置の緯度を表します。
 - [`Longitude`](xref:Xamarin.Forms.Maps.Position.Longitude)型の `double` 。これは、小数点以下の位置の経度を表します。
 
-[`Position`](xref:Xamarin.Forms.Maps.Position)オブジェクトはコンストラクターを使用して作成されます。このコンストラクターには、 `Position` 値として指定された緯度と経度の引数が必要です `double` 。
+[`Position`](xref:Xamarin.Forms.Maps.Position) オブジェクトはコンストラクターを使用して作成されます。このコンストラクターには、 `Position` 値として指定された緯度と経度の引数が必要です `double` 。
 
 ```csharp
 Position position = new Position(36.9628066, -122.0194722);
@@ -41,7 +41,7 @@ Position position = new Position(36.9628066, -122.0194722);
 > [!NOTE]
 > `GeographyUtils`クラスには、 `ToRadians` `double` 値を度数からラジアンに変換する拡張メソッドと、値を `ToDegrees` ラジアンから度に変換する拡張メソッドがあり `double` ます。
 
-## <a name="distance"></a>Distance
+## <a name="distance"></a>距離
 
 [`Distance`](xref:Xamarin.Forms.Maps.Distance)構造体は、値として格納されている距離をカプセル化し `double` ます。これは、メートル単位の距離を表します。 この構造体は、次の3つの読み取り専用プロパティを定義します。
 
@@ -49,7 +49,7 @@ Position position = new Position(36.9628066, -122.0194722);
 - [`Meters`](xref:Xamarin.Forms.Maps.Distance.Meters)に `double` よってスパンされるメートル単位の距離を表す、型の `Distance` 。
 - [`Miles`](xref:Xamarin.Forms.Maps.Distance.Miles)によって分散され `double` ている距離 (マイル単位) を表す、型の `Distance` 。
 
-[`Distance`](xref:Xamarin.Forms.Maps.Distance)オブジェクトは、 `Distance` 次のように指定されたメーター引数を必要とするコンストラクターを使用して作成できます `double` 。
+[`Distance`](xref:Xamarin.Forms.Maps.Distance) オブジェクトは、 `Distance` 次のように指定されたメーター引数を必要とするコンストラクターを使用して作成できます `double` 。
 
 ```csharp
 Distance distance = new Distance(1450.5);
@@ -66,4 +66,4 @@ Distance distance4 = Distance.BetweenPositions(position1, position2);
 
 ## <a name="related-links"></a>関連リンク
 
-- [Maps サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+- [Maps サンプル](/samples/xamarin/xamarin-forms-samples/workingwithmaps)

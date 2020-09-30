@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsRadioButton
+title: Xamarin.Forms RadioButton
 description: Xamarin.FormsRadioButton は、ユーザーがセットから1つのオプションを選択できるようにするためのボタンの一種です。 各オプションは1つのラジオボタンで表され、1つのグループ内で選択できるラジオボタンは1つだけです。
 ms.prod: xamarin
 ms.assetid: E2AA40E0-69A5-41DF-BFC4-C151CA657451
@@ -10,14 +10,14 @@ ms.date: 03/13/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f7cbd11f98127cb73514112dae785102ff9c51c0
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 964bac947f46e5279cbdcc6bdb61d74deba7f622
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127624"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559390"
 ---
-# <a name="xamarinforms-radiobutton"></a>Xamarin.FormsRadioButton
+# <a name="no-locxamarinforms-radiobutton"></a>Xamarin.Forms RadioButton
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-radiobuttondemos/)
 
@@ -28,14 +28,14 @@ Xamarin.Forms `RadioButton` は、ユーザーがセットから1つのオプシ
 ![IOS と Android 上の選択された状態およびクリア状態の Radiobutton のスクリーンショット](radiobutton-images/radiobutton-states.png "IOS および Android の Radiobutton")
 
 > [!IMPORTANT]
-> `RadioButton`は現在試験段階であり、フラグを設定することによってのみ使用でき `RadioButton_Experimental` ます。 詳細については、「試験的な[フラグ](~/xamarin-forms/internals/experimental-flags.md)」を参照してください。
+> `RadioButton` は現在試験段階であり、フラグを設定することによってのみ使用でき `RadioButton_Experimental` ます。 詳しくは、[試験的なフラグ](~/xamarin-forms/internals/experimental-flags.md)に関する記事を参照してください。
 
 コントロールは、 `RadioButton` 次のプロパティを定義します。
 
 - `IsChecked``bool`が選択されているかどうかを定義する型の `RadioButton` 。 このプロパティは、 `TwoWay` バインディングを使用し、既定値は `false` です。
 - `GroupName`型の `string` 。これは、相互に排他的なコントロールを指定する名前を定義し `RadioButton` ます。 このプロパティの既定値は `null` です。
 
-これらのプロパティは、オブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。これは、データバインディングのターゲットとスタイルを設定できることを意味します。
+これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトが基になっています。つまり、これらは、データ バインディングの対象にすることができ、スタイルを設定できます。
 
 コントロールは、 `RadioButton` `CheckedChanged` `IsChecked` ユーザーまたはプログラムによる操作によってプロパティが変更されたときに発生するイベントを定義します。 `CheckedChangedEventArgs`イベントに付随するオブジェクト `CheckedChanged` には、型のという名前のプロパティが1つあり `Value` `bool` ます。 イベントが発生すると、プロパティの値は `Value` プロパティの新しい値に設定され `IsChecked` ます。
 
@@ -116,7 +116,7 @@ StackLayout stackLayout = new StackLayout
 
 ## <a name="respond-to-a-radiobutton-state-change"></a>RadioButton 状態の変更に応答する
 
-ラジオ ボタンには選択またはクリアの 2 つの状態があります。 オプションボタンが選択されている場合、その `IsChecked` プロパティはに `true` なります。 オプションボタンがオフの場合、 `IsChecked` プロパティはに `false` なります。 同じグループ内の別のラジオ ボタンをクリックするとラジオ ボタンをクリアにできますが、ボタンをもう一度クリックしてもクリアにすることはできません。 ただし、プロパティをに設定すると、オプションボタンをプログラムでクリアでき `IsChecked` `false` ます。
+ラジオ ボタンにはオンまたはオフの 2 つの状態があります。 オプションボタンが選択されている場合、その `IsChecked` プロパティはに `true` なります。 ラジオ ボタンが選択されていない場合、`IsChecked` プロパティは `false` です。 同じグループ内の別のラジオ ボタンをクリックするとラジオ ボタンをクリアにできますが、ボタンをもう一度クリックしてもクリアにすることはできません。 ただし、プログラムで `IsChecked` プロパティを `false` に設定すると、ラジオ ボタンをオフにすることができます。
 
 `IsChecked`ユーザーまたはプログラムによる操作によってプロパティが変更されると、 `CheckedChanged` イベントが発生します。 このイベントのイベントハンドラーは、変更に応答するように登録できます。
 
@@ -149,11 +149,11 @@ radioButton.CheckedChanged += (sender, e) =>
 ```
 
 > [!NOTE]
-> 状態の変化に対応するための別の方法として `RadioButton` 、を定義 `ICommand` し、それをプロパティに割り当てることが `RadioButton.Command` できます。 詳細については、「[ボタン: コマンドインターフェイスの使用](~/xamarin-forms/user-interface/button.md#using-the-command-interface)」を参照してください。
+> 状態の変化に対応するための別の方法として `RadioButton` 、を定義 `ICommand` し、それをプロパティに割り当てることが `RadioButton.Command` できます。 詳細については、「 [ボタン: コマンドインターフェイスの使用](~/xamarin-forms/user-interface/button.md#using-the-command-interface)」を参照してください。
 
 ## <a name="radiobutton-visual-states"></a>RadioButton の表示状態
 
-`RadioButton`が選択されている場合に、 `IsChecked` [`VisualState`](xref:Xamarin.Forms.VisualState) ビジュアルの変更を開始するために使用できるがあり `RadioButton` ます。
+`RadioButton` が選択されている場合に、 `IsChecked` [`VisualState`](xref:Xamarin.Forms.VisualState) ビジュアルの変更を開始するために使用できるがあり `RadioButton` ます。
 
 次の XAML の例は、状態の表示状態を定義する方法を示してい `IsChecked` ます。
 
@@ -211,6 +211,6 @@ radioButton.CheckedChanged += (sender, e) =>
 
 ## <a name="related-links"></a>関連リンク
 
-- [RadioButton のデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-radiobuttondemos/)
+- [RadioButton のデモ (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-radiobuttondemos/)
 - [Xamarin.Forms ボタン](~/xamarin-forms/user-interface/button.md)
 - [Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)

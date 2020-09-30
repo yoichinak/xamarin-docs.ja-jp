@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Formsマップ コントロール
+title: Xamarin.Forms マップ コントロール
 description: マップコントロールは、マップを表示して注釈を付けるためのクロスプラットフォームビューです。 プラットフォームごとにネイティブマップコントロールを使用して、ユーザーに高速で使い慣れた maps エクスペリエンスを提供します。
 ms.prod: xamarin
 ms.assetid: 22C99029-0B16-43A6-BF58-26B48C4AED38
@@ -10,14 +10,14 @@ ms.date: 05/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1aee81b6988e1f3a7099c2722b6f336f071ad8c0
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: df3189455102cedab232e0c629e63f65e242c9b5
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84946365"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560053"
 ---
-# <a name="xamarinforms-map-control"></a>Xamarin.Formsマップ コントロール
+# <a name="no-locxamarinforms-map-control"></a>Xamarin.Forms マップ コントロール
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
@@ -42,7 +42,7 @@ ms.locfileid: "84946365"
 
 これらのプロパティは `MapElements` 、、、およびの各プロパティを除き、 `Pins` `VisibleRegion` オブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。これは、データバインディングのターゲットになる可能性があることを意味します。
 
-[`Map`](xref:Xamarin.Forms.Maps.Map)また、クラスは、 `MapClicked` マップがタップされたときに発生するイベントも定義します。 `MapClickedEventArgs`イベントに付随するオブジェクトには、型のという名前のプロパティが1つあり `Position` [`Position`](xref:Xamarin.Forms.Maps.Position) ます。 イベントが発生すると、 `Position` プロパティは、タップされたマップの場所に設定されます。 構造体の詳細については [`Position`](xref:Xamarin.Forms.Maps.Position) 、「[マップの位置と距離](position-distance.md)」を参照してください。
+[`Map`](xref:Xamarin.Forms.Maps.Map)また、クラスは、 `MapClicked` マップがタップされたときに発生するイベントも定義します。 `MapClickedEventArgs`イベントに付随するオブジェクトには、型のという名前のプロパティが1つあり `Position` [`Position`](xref:Xamarin.Forms.Maps.Position) ます。 イベントが発生すると、 `Position` プロパティは、タップされたマップの場所に設定されます。 構造体の詳細については [`Position`](xref:Xamarin.Forms.Maps.Position) 、「 [マップの位置と距離](position-distance.md)」を参照してください。
 
 、、およびの各プロパティの詳細については [`ItemsSource`](xref:Xamarin.Forms.Maps.Map.ItemsSource) [`ItemTemplate`](xref:Xamarin.Forms.Maps.Map.ItemTemplate) `ItemTemplateSelector` 、「 [pin コレクションの表示](pins.md#display-a-pin-collection)」を参照してください。
 
@@ -83,15 +83,15 @@ namespace WorkingWithMaps
 
 [![IOS と Android での既定の場所を使用したマップコントロールのスクリーンショット](map-images/map-default.png "既定の場所でのマップコントロール")](map-images/map-default-large.png#lightbox "既定の場所でのマップコントロール")
 
-または、 [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) 引数をコンストラクターに渡し [`Map`](xref:Xamarin.Forms.Maps.Map) て、マップの読み込み時にマップの中心点とズームレベルを設定することもできます。 詳細については、「[マップに特定の場所を表示する](#display-a-specific-location-on-a-map)」を参照してください。
+または、 [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) 引数をコンストラクターに渡し [`Map`](xref:Xamarin.Forms.Maps.Map) て、マップの読み込み時にマップの中心点とズームレベルを設定することもできます。 詳細については、「 [マップに特定の場所を表示する](#display-a-specific-location-on-a-map)」を参照してください。
 
 ## <a name="map-types"></a>マップの種類
 
 [`Map.MapType`](xref:Xamarin.Forms.Maps.Map.MapType)プロパティを列挙メンバーに設定すると、 [`MapType`](xref:Xamarin.Forms.Maps.MapType) マップの表示スタイルを定義できます。 `MapType` 列挙体を使って、次のメンバーを定義できます。
 
-- `Street`道路地図が表示されることを指定します。
-- `Satellite`サテライト画像を含むマップが表示されることを指定します。
-- `Hybrid`道路と衛星のデータを組み合わせたマップが表示されることを指定します。
+- `Street` 道路地図が表示されることを指定します。
+- `Satellite` サテライト画像を含むマップが表示されることを指定します。
+- `Hybrid` 道路と衛星のデータを組み合わせたマップが表示されることを指定します。
 
 既定では、 [`Map`](xref:Xamarin.Forms.Maps.Map) プロパティが定義されていない場合、はストリートマップを表示し [`MapType`](xref:Xamarin.Forms.Maps.Map.MapType) ます。 また、 `MapType` プロパティを列挙型のメンバーの1つに設定することもでき [`MapType`](xref:Xamarin.Forms.Maps.MapType) ます。
 
@@ -151,7 +151,7 @@ MapSpan mapSpan = new MapSpan(position, 0.01, 0.01);
 Map map = new Map(mapSpan);
 ```
 
-この例 [`Map`](xref:Xamarin.Forms.Maps.Map) では、オブジェクトによって指定された領域を示すオブジェクトを作成し [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) ます。 オブジェクトは、 `MapSpan` オブジェクトによって表される緯度と経度の中央に [`Position`](xref:Xamarin.Forms.Maps.Position) あり、0.01 緯度と0.01 経度の角度にまたがります。 構造体の詳細については [`Position`](xref:Xamarin.Forms.Maps.Position) 、「[マップの位置と距離](position-distance.md)」を参照してください。 XAML で引数を渡す方法の詳細については、「 [xaml で引数を渡す](~/xamarin-forms/xaml/passing-arguments.md)」を参照してください。
+この例 [`Map`](xref:Xamarin.Forms.Maps.Map) では、オブジェクトによって指定された領域を示すオブジェクトを作成し [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) ます。 オブジェクトは、 `MapSpan` オブジェクトによって表される緯度と経度の中央に [`Position`](xref:Xamarin.Forms.Maps.Position) あり、0.01 緯度と0.01 経度の角度にまたがります。 構造体の詳細については [`Position`](xref:Xamarin.Forms.Maps.Position) 、「 [マップの位置と距離](position-distance.md)」を参照してください。 XAML で引数を渡す方法の詳細については、「 [xaml で引数を渡す](~/xamarin-forms/xaml/passing-arguments.md)」を参照してください。
 
 結果として、マップが表示されると、特定の位置に中央に配置され、緯度と経度の角度が特定の数にまたがります。
 
@@ -159,7 +159,7 @@ Map map = new Map(mapSpan);
 
 ## <a name="create-a-mapspan-object"></a>MapSpan オブジェクトを作成する
 
-オブジェクトを作成するには、いくつかの方法があり [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) ます。 一般的な方法では、コンストラクターに必須の引数を指定し `MapSpan` ます。 これらは、オブジェクトによって表される緯度と経度で、によっての [`Position`](xref:Xamarin.Forms.Maps.Position) `double` 緯度と経度の角度を表す値です `MapSpan` 。 構造体の詳細については [`Position`](xref:Xamarin.Forms.Maps.Position) 、「[マップの位置と距離](position-distance.md)」を参照してください。
+オブジェクトを作成するには、いくつかの方法があり [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) ます。 一般的な方法では、コンストラクターに必須の引数を指定し `MapSpan` ます。 これらは、オブジェクトによって表される緯度と経度で、によっての [`Position`](xref:Xamarin.Forms.Maps.Position) `double` 緯度と経度の角度を表す値です `MapSpan` 。 構造体の詳細については [`Position`](xref:Xamarin.Forms.Maps.Position) 、「 [マップの位置と距離](position-distance.md)」を参照してください。
 
 また、クラスには、新しいオブジェクトを返すメソッドが3つあり [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) `MapSpan` ます。
 
@@ -167,7 +167,7 @@ Map map = new Map(mapSpan);
 1. [`FromCenterAndRadius`](xref:Xamarin.Forms.Maps.MapSpan.FromCenterAndRadius*)`MapSpan`引数および引数によって定義されたを返し [`Position`](xref:Xamarin.Forms.Maps.Position) [`Distance`](xref:Xamarin.Forms.Maps.Distance) ます。
 1. [`WithZoom`](xref:Xamarin.Forms.Maps.MapSpan.WithZoom*)`MapSpan`メソッドのクラスインスタンスと同じ中心を持つを返します。ただし、radius の引数を乗算 `double` しています。
 
-構造体の詳細については [`Distance`](xref:Xamarin.Forms.Maps.Distance) 、「[マップの位置と距離](position-distance.md)」を参照してください。
+構造体の詳細については [`Distance`](xref:Xamarin.Forms.Maps.Distance) 、「 [マップの位置と距離](position-distance.md)」を参照してください。
 
 [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan)が作成されると、次のプロパティにアクセスしてデータを取得できます。
 
@@ -281,7 +281,7 @@ Map map = new Map
 ```
 
 > [!IMPORTANT]
-> IOS、Android、およびユニバーサル Windows プラットフォームでは、ユーザーの場所にアクセスするには、アプリケーションに対する場所のアクセス許可が付与されている必要があります。 詳細については、「[プラットフォームの構成](setup.md#platform-configuration)」を参照してください。
+> IOS、Android、およびユニバーサル Windows プラットフォームでは、ユーザーの場所にアクセスするには、アプリケーションに対する場所のアクセス許可が付与されている必要があります。 詳細については、「 [プラットフォームの構成](setup.md#platform-configuration)」を参照してください。
 
 ### <a name="maintain-map-region-on-layout-change"></a>レイアウトの変更時にマップ領域を維持する
 
@@ -302,7 +302,7 @@ Map map = new Map
 
 ### <a name="map-clicks"></a>マップのクリック
 
-クラスは、 [`Map`](xref:Xamarin.Forms.Maps.Map) `MapClicked` マップがタップされたときに発生するイベントを定義します。 `MapClickedEventArgs`イベントに付随するオブジェクトには、型のという名前のプロパティが1つあり `Position` [`Position`](xref:Xamarin.Forms.Maps.Position) ます。 イベントが発生すると、 `Position` プロパティは、タップされたマップの場所に設定されます。 構造体の詳細については [`Position`](xref:Xamarin.Forms.Maps.Position) 、「[マップの位置と距離](position-distance.md)」を参照してください。
+クラスは、 [`Map`](xref:Xamarin.Forms.Maps.Map) `MapClicked` マップがタップされたときに発生するイベントを定義します。 `MapClickedEventArgs`イベントに付随するオブジェクトには、型のという名前のプロパティが1つあり `Position` [`Position`](xref:Xamarin.Forms.Maps.Position) ます。 イベントが発生すると、 `Position` プロパティは、タップされたマップの場所に設定されます。 構造体の詳細については [`Position`](xref:Xamarin.Forms.Maps.Position) 、「 [マップの位置と距離](position-distance.md)」を参照してください。
 
 次のコード例は、イベントのイベントハンドラーを示してい `MapClicked` ます。
 
@@ -328,7 +328,7 @@ map.MapClicked += OnMapClicked;
 
 ## <a name="related-links"></a>関連リンク
 
-- [Maps サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+- [Maps サンプル](/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 - [マップの位置と距離](position-distance.md)
 - [マップのカスタマイズ Xamarin.Forms](~/xamarin-forms/app-fundamentals/custom-renderer/map-pin.md)
 - [XAML での引数の受け渡し](~/xamarin-forms/xaml/passing-arguments.md)

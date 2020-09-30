@@ -10,12 +10,12 @@ ms.date: 09/12/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 05a001d3b49f38b2cb5306d8a19a08b4f8392425
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: d3deb5631bd37e4081ebaa591a52adb09d9db274
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86935565"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560300"
 ---
 # <a name="customizing-listview-cell-appearance"></a>ListView セルの外観のカスタマイズ
 
@@ -24,18 +24,18 @@ ms.locfileid: "86935565"
 クラスは、 Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 要素を使用してカスタマイズできるスクロール可能なリストを表示するために使用され `ViewCell` ます。 `ViewCell`要素は、テキストとイメージの表示、true/false 状態の指定、およびユーザー入力の受信を行うことができます。
 
 ## <a name="built-in-cells"></a>組み込みセル
-Xamarin.Formsには、多くのアプリケーションで使用できる組み込みセルが用意されています。
+Xamarin.Forms には、多くのアプリケーションで使用できる組み込みセルが用意されています。
 
-- [`TextCell`](#textcell)コントロールは、詳細テキストの省略可能な2行目でテキストを表示するために使用されます。
-- [`ImageCell`](#imagecell)コントロールは s に似 `TextCell` ていますが、テキストの左側に画像が含まれています。
-- `SwitchCell`コントロールを使用して、オン/オフまたは true/false の状態の表示とキャプチャを行います。
-- `EntryCell`コントロールは、ユーザーが編集できるテキストデータを表示するために使用されます。
+- [`TextCell`](#textcell) コントロールは、詳細テキストの省略可能な2行目でテキストを表示するために使用されます。
+- [`ImageCell`](#imagecell) コントロールは s に似 `TextCell` ていますが、テキストの左側に画像が含まれています。
+- `SwitchCell` コントロールを使用して、オン/オフまたは true/false の状態の表示とキャプチャを行います。
+- `EntryCell` コントロールは、ユーザーが編集できるテキストデータを表示するために使用されます。
 
 [`SwitchCell`](~/xamarin-forms/user-interface/tableview.md#switchcell)コントロールと [`EntryCell`](~/xamarin-forms/user-interface/tableview.md#entrycell) コントロールは、のコンテキストでよく使用され [`TableView`](~/xamarin-forms/user-interface/tableview.md) ます。
 
 ### <a name="textcell"></a>TextCell
 
-[`TextCell`](xref:Xamarin.Forms.TextCell)テキストを表示するためのセルです。オプションで、詳細テキストとして2行目を使用できます。 次のスクリーンショットは、 `TextCell` iOS と Android の項目を示しています。
+[`TextCell`](xref:Xamarin.Forms.TextCell) テキストを表示するためのセルです。オプションで、詳細テキストとして2行目を使用できます。 次のスクリーンショットは、 `TextCell` iOS と Android の項目を示しています。
 
 ![既定の TextCell の例](customizing-cell-appearance-images/text-cell-default.png)
 
@@ -56,7 +56,7 @@ TextCells は実行時にネイティブコントロールとしてレンダリ�
 
 次のスクリーンショットは、 `ImageCell` iOS と Android の項目を示しています: !["Default ImageCell Example"](customizing-cell-appearance-images/image-cell-default.png "既定の ImageCell の例")
 
-`ImageCell`は、連絡先や映画の一覧など、視覚的な側面を持つデータの一覧を表示する必要がある場合に便利です。 `ImageCell`はカスタマイズ可能であり、次の設定を行うことができます。
+`ImageCell` は、連絡先や映画の一覧など、視覚的な側面を持つデータの一覧を表示する必要がある場合に便利です。 `ImageCell`はカスタマイズ可能であり、次の設定を行うことができます。
 
 - `Text`&ndash;最初の行に表示されるテキスト (大きいフォント)
 - `Detail`&ndash;最初の行の下に表示されるテキストで、小さいフォントで表示されます。
@@ -64,14 +64,14 @@ TextCells は実行時にネイティブコントロールとしてレンダリ�
 - `DetailColor`&ndash;詳細テキストの色
 - `ImageSource`&ndash;テキストの横に表示する画像
 
-次のスクリーンショットは、カスタマイズされ `ImageCell` た色プロパティを持つ項目を示しています。 "カスタマイズされた![ImageCell の例"](customizing-cell-appearance-images/image-cell-custom.png "カスタマイズされた ImageCell の例")
+次のスクリーンショットは、カスタマイズされ `ImageCell` た色プロパティを持つ項目を示しています。 "カスタマイズされた ![ImageCell の例"](customizing-cell-appearance-images/image-cell-custom.png "カスタマイズされた ImageCell の例")
 
 ## <a name="custom-cells"></a>カスタムセル
 カスタムセルを使用すると、組み込みセルでサポートされていないセルレイアウトを作成できます。 たとえば、重みが同じ2つのラベルを持つセルを表示する場合があります。 には、 `TextCell` 小さいラベルが1つあるため、十分ではあり `TextCell` ません。 ほとんどのセルのカスタマイズでは、追加のラベル、画像、その他の表示情報など、読み取り専用のデータが追加されます。
 
 すべてのカスタムセルは [`ViewCell`](xref:Xamarin.Forms.ViewCell) 、組み込みのすべてのセル型が使用するのと同じ基本クラスから派生する必要があります。
 
-Xamarin.Formsコントロールに[キャッシュ動作](~/xamarin-forms/user-interface/listview/performance.md#caching-strategy)を提供します `ListView` 。これにより、いくつかの種類のカスタムセルのスクロールパフォーマンスが向上します。
+Xamarin.Forms コントロールに [キャッシュ動作](~/xamarin-forms/user-interface/listview/performance.md#caching-strategy) を提供します `ListView` 。これにより、いくつかの種類のカスタムセルのスクロールパフォーマンスが向上します。
 
 次のスクリーンショットは、カスタムセルの例を示しています。
 
@@ -112,7 +112,7 @@ x:Class="demoListView.ImageCellPage">
 XAML は次のように機能します。
 
 - カスタムセルは内に入れ子になってい `DataTemplate` `ListView.ItemTemplate` ます。 これは、組み込みのセルを使用するプロセスと同じです。
-- `ViewCell`カスタムセルの型です。 要素の子は、クラスである `DataTemplate` か、またはクラスから派生している必要があり `ViewCell` ます。
+- `ViewCell` カスタムセルの型です。 要素の子は、クラスである `DataTemplate` か、またはクラスから派生している必要があり `ViewCell` ます。
 - 内では `ViewCell` 、レイアウトによってレイアウトを管理でき Xamarin.Forms ます。 この例では、レイアウトはによって管理されます。これにより、 `StackLayout` 背景色をカスタマイズできます。
 
 > [!NOTE]
@@ -254,10 +254,10 @@ var listView = new ListView
 };
 ```
 
-IOS および Android では、 [`ListView`](xref:Xamarin.Forms.ListView) がリサイクル要素であり、カスタムセルがカスタムレンダラーを使用する場合、カスタムレンダラーはプロパティ変更通知を正しく実装する必要があります。 セルが再利用されると、プロパティ値は、バインドコンテキストが、使用可能なセルのバインドコンテキストに更新されると変更され、 `PropertyChanged` イベントが発生します。 詳細については、「 [ViewCell のカスタマイズ](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md)」を参照してください。 セルのリサイクルの詳細については、「[キャッシュ方法](~/xamarin-forms/user-interface/listview/performance.md#caching-strategy)」を参照してください。
+IOS および Android では、 [`ListView`](xref:Xamarin.Forms.ListView) がリサイクル要素であり、カスタムセルがカスタムレンダラーを使用する場合、カスタムレンダラーはプロパティ変更通知を正しく実装する必要があります。 セルが再利用されると、プロパティ値は、バインドコンテキストが、使用可能なセルのバインドコンテキストに更新されると変更され、 `PropertyChanged` イベントが発生します。 詳細については、「 [ViewCell のカスタマイズ](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md)」を参照してください。 セルのリサイクルの詳細については、「 [キャッシュ方法](~/xamarin-forms/user-interface/listview/performance.md#caching-strategy)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 
-- [組み込みセル (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-builtincells)
-- [カスタムセル (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-customcells)
-- [バインドコンテキストの変更 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-bindingcontextchanged)
+- [組み込みセル (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-listview-builtincells)
+- [カスタムセル (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-listview-customcells)
+- [バインドコンテキストの変更 (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-listview-bindingcontextchanged)

@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsMenuItem
+title: Xamarin.Forms MenuItem
 description: MenuItem クラスは、ListView 項目のコンテキストメニューやシェルアプリケーションのポップアップメニューなどのメニューのメニュー項目を作成するために使用されます。
 ms.prod: xamarin
 ms.assetId: 62655C21-6053-466D-A7F4-DE2BE36538F5
@@ -10,14 +10,14 @@ ms.date: 08/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6b27f778a417a2bc0b458af4214ee8cb914fd93d
-ms.sourcegitcommit: 34fa3086c55b1e01838419c930f839c20662c362
+ms.openlocfilehash: 749e569e36896441c5b7cebbc4425d9c0e860e0b
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990854"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559637"
 ---
-# <a name="xamarinforms-menuitem"></a>Xamarin.FormsMenuItem
+# <a name="no-locxamarinforms-menuitem"></a>Xamarin.Forms MenuItem
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-menuitemdemos/)
 
@@ -27,12 +27,12 @@ ms.locfileid: "84990854"
 
 [!["IOS と Android での MenuItems"](menuitem-images/menuitem-demo-cropped.png "IOS と Android の MenuItems")](menuitem-images/menuitem-demo-full.png#lightbox "IOS と Android のフルイメージでの MenuItems")
 
-`MenuItem`クラスは、次のプロパティを定義します。
+`MenuItem` クラスでは、次のプロパティが定義されます。
 
-* [`Command`](xref:Xamarin.Forms.MenuItem.Command)は、 `ICommand` ユーザー操作 (指タップやクリックなど) を、ビューモデルで定義されているコマンドにバインドできるようにします。
+* [`Command`](xref:Xamarin.Forms.MenuItem.Command) は、 `ICommand` ユーザー操作 (指タップやクリックなど) を、ビューモデルで定義されているコマンドにバインドできるようにします。
 * [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter)`object`に渡す必要があるパラメーターを指定するです `Command` 。
 * [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource)`ImageSource`表示アイコンを定義する値です。
-* [`IsDestructive`](xref:Xamarin.Forms.MenuItem.IsDestructive)は `bool` 、 `MenuItem` 関連付けられている UI 要素をリストから削除するかどうかを示す値です。
+* [`IsDestructive`](xref:Xamarin.Forms.MenuItem.IsDestructive) は `bool` 、 `MenuItem` 関連付けられている UI 要素をリストから削除するかどうかを示す値です。
 * [`IsEnabled`](xref:Xamarin.Forms.MenuItem.IsEnabled)`bool`このオブジェクトがユーザー入力に応答するかどうかを示す値です。
 * [`Text`](xref:Xamarin.Forms.MenuItem.Text)`string`表示テキストを指定する値です。
 
@@ -40,7 +40,7 @@ ms.locfileid: "84990854"
 
 ## <a name="create-a-menuitem"></a>MenuItem を作成する
 
-`MenuItem`オブジェクトは、オブジェクトの項目のコンテキストメニュー内で使用でき `ListView` ます。 最も一般的なパターンは、インスタンス内にオブジェクトを作成することです `MenuItem` `ViewCell` 。これは、のオブジェクトとして使用され `DataTemplate` `ListView` `ItemTemplate` ます。 `ListView`オブジェクトが設定されると、を使用して各項目が作成され `DataTemplate` 、 `MenuItem` コンテキストメニューが項目に対してアクティブ化されたときに選択肢が公開されます。
+`MenuItem` オブジェクトは、オブジェクトの項目のコンテキストメニュー内で使用でき `ListView` ます。 最も一般的なパターンは、インスタンス内にオブジェクトを作成することです `MenuItem` `ViewCell` 。これは、のオブジェクトとして使用され `DataTemplate` `ListView` `ItemTemplate` ます。 `ListView`オブジェクトが設定されると、を使用して各項目が作成され `DataTemplate` 、 `MenuItem` コンテキストメニューが項目に対してアクティブ化されたときに選択肢が公開されます。
 
 次の例は、 `MenuItem` オブジェクトのコンテキスト内でのインスタンス化を示してい `ListView` ます。
 
@@ -192,7 +192,7 @@ public MenuItemXamlMvvmPage()
 ## <a name="menuitem-icons"></a>MenuItem アイコン
 
 > [!WARNING]
-> `MenuItem`オブジェクトには、Android のアイコンのみが表示されます。 他のプラットフォームでは、プロパティによって指定されたテキストのみ `Text` が表示されます。
+> `MenuItem` オブジェクトには、Android のアイコンのみが表示されます。 他のプラットフォームでは、プロパティによって指定されたテキストのみ `Text` が表示されます。
 
  アイコンは、プロパティを使用して指定し `IconImageSource` ます。 アイコンが指定されている場合、プロパティによって指定されたテキストは表示され `Text` ません。 次のスクリーンショットは、 `MenuItem` Android 上のアイコンを含むを示しています。
 
@@ -263,5 +263,5 @@ UWP では、コンテキストメニューは、リスト項目を右クリッ�
 
 ## <a name="related-links"></a>関連リンク
 
-* [MenuItem のデモ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-menuitemdemos/)
-* [画像Xamarin.Forms](~/xamarin-forms/user-interface/images.md)
+* [MenuItem のデモ](/samples/xamarin/xamarin-forms-samples/userinterface-menuitemdemos/)
+* [画像 Xamarin.Forms](~/xamarin-forms/user-interface/images.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Xamarin.Forms図形: 楕円'
+title: 'Xamarin.Forms 図形: 楕円'
 description: Xamarin.Forms楕円クラスを使用して、楕円と円を描画できます。
 ms.prod: xamarin
 ms.assetid: 5BF81E25-12E5-49F0-A40C-0CF4C5D63B9B
@@ -10,18 +10,18 @@ ms.date: 06/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0796ba2a3b1ab28370fd8280e12df273223b9f4d
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: d0379f37a48a4cd11de06868a7616882a598e6a6
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87917734"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559247"
 ---
-# <a name="no-locxamarinforms-shapes-ellipse"></a>Xamarin.Forms図形: 楕円
+# <a name="no-locxamarinforms-shapes-ellipse"></a>Xamarin.Forms 図形: 楕円
 
 ![プレリリース API](~/media/shared/preview.png)
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 `Ellipse`クラスはクラスから派生 `Shape` し、楕円と円を描画するために使用できます。 クラスから継承されるプロパティの詳細につい `Ellipse` `Shape` ては、「 [ Xamarin.Forms 図形](index.md)」を参照してください。
 
@@ -60,9 +60,9 @@ ms.locfileid: "87917734"
 
 ![Circle](ellipse-images/circle.png "Circle")
 
-破線の楕円を描画する方法の詳細については、「[破線の図形を描画](index.md#draw-dashed-shapes)する」を参照してください。
+破線の楕円を描画する方法の詳細については、「 [破線の図形を描画](index.md#draw-dashed-shapes)する」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 
-- [図形のデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
-- [Xamarin.Forms図形](index.md)
+- [図形のデモ (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [Xamarin.Forms 図形](index.md)

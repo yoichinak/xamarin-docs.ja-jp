@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsSearchBar
+title: Xamarin.Forms SearchBar
 description: Xamarin.FormsSearchbar は、検索を開始するために使用されるユーザー入力コントロールです。 SearchBar コントロールは、プレースホルダーテキスト、クエリ入力、実行、およびキャンセルをサポートしています。 この記事では、XAML とコードで SearchBar を使用する方法について説明します。
 ms.prod: xamarin
 ms.assetId: F5EFEA72-CB23-4DD6-9545-D9BB755AF3CB
@@ -10,16 +10,16 @@ ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a4c782f95db0f8e777494c47e9e668e9af67a2cc
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 3061692311811a360020041603bb8aca7af1b1f2
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87917767"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559273"
 ---
-# <a name="no-locxamarinforms-searchbar"></a>Xamarin.FormsSearchBar
+# <a name="no-locxamarinforms-searchbar"></a>Xamarin.Forms SearchBar
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/)
 
 Xamarin.Forms [`SearchBar`](xref:Xamarin.Forms.SearchBar) は、検索を開始するために使用されるユーザー入力コントロールです。 コントロールは、 `SearchBar` プレースホルダーテキスト、クエリ入力、検索実行、およびキャンセルをサポートしています。 次のスクリーンショットは、 `SearchBar` 結果がに表示されるクエリを示してい `ListView` ます。
 
@@ -30,13 +30,13 @@ Xamarin.Forms [`SearchBar`](xref:Xamarin.Forms.SearchBar) は、検索を開始�
 * [`CancelButtonColor`](xref:Xamarin.Forms.SearchBar.CancelButtonColor)`Color`[キャンセル] ボタンの色を定義するです。
 * `CharacterSpacing`: `double` 型、`SearchBar` テキストの文字間の間隔。
 * [`FontAttributes`](xref:Xamarin.Forms.SearchBar.FontAttributes)`FontAttributes` `SearchBar` フォントが太字、斜体、またはそのどちらでもないかを決定する列挙値です。
-* [`FontFamily`](xref:Xamarin.Forms.SearchBar.FontFamily)は `string` 、によって使用されるフォントファミリを決定するです `SearchBar` 。
-* [`FontSize`](xref:Xamarin.Forms.SearchBar.FontSize)には、 `NamedSize` 列挙値、または `double` プラットフォーム間の特定のフォントサイズを表す値を指定できます。
+* [`FontFamily`](xref:Xamarin.Forms.SearchBar.FontFamily) は `string` 、によって使用されるフォントファミリを決定するです `SearchBar` 。
+* [`FontSize`](xref:Xamarin.Forms.SearchBar.FontSize) には、 `NamedSize` 列挙値、または `double` プラットフォーム間の特定のフォントサイズを表す値を指定できます。
 * [`HorizontalTextAlignment`](xref:Xamarin.Forms.SearchBar.HorizontalTextAlignment)`TextAlignment`クエリテキストの水平方向の配置を定義する列挙値です。
 * `VerticalTextAlignment``TextAlignment`クエリテキストの垂直方向の配置を定義する列挙値です。
-* [`Placeholder`](xref:Xamarin.Forms.InputView.Placeholder)は、 `string` "検索..." などのプレースホルダーテキストを定義するです。
+* [`Placeholder`](xref:Xamarin.Forms.InputView.Placeholder) は、 `string` "検索..." などのプレースホルダーテキストを定義するです。
 * [`PlaceholderColor`](xref:Xamarin.Forms.InputView.PlaceholderColor)`Color`プレースホルダーテキストの色を定義するです。
-* [`SearchCommand`](xref:Xamarin.Forms.SearchBar.SearchCommand)は、 `ICommand` ユーザー操作 (指タップやクリックなど) を、ビューモデルで定義されているコマンドにバインドできるようにします。
+* [`SearchCommand`](xref:Xamarin.Forms.SearchBar.SearchCommand) は、 `ICommand` ユーザー操作 (指タップやクリックなど) を、ビューモデルで定義されているコマンドにバインドできるようにします。
 * [`SearchCommandParameter`](xref:Xamarin.Forms.SearchBar.SearchCommandParameter)`object`に渡す必要があるパラメーターを指定するです `SearchCommand` 。
 * [`Text`](xref:Xamarin.Forms.InputView.Text)`string`のクエリテキストを含むです `SearchBar` 。
 * [`TextColor`](xref:Xamarin.Forms.InputView.TextColor)`Color`クエリテキストの色を定義するです。
@@ -99,8 +99,8 @@ SearchBar searchBar = new SearchBar
 
 `SearchBar`次のいずれかのイベントにイベントハンドラーをアタッチすることで、コントロールを使用して検索を実行できます。
 
-* [`SearchButtonPressed`](xref:Xamarin.Forms.SearchBar.SearchButtonPressed)は、ユーザーが [検索] ボタンをクリックするか enter キーを押すと呼び出されます。
-* [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged)クエリボックス内のテキストが変更されるたびに呼び出されます。
+* [`SearchButtonPressed`](xref:Xamarin.Forms.SearchBar.SearchButtonPressed) は、ユーザーが [検索] ボタンをクリックするか enter キーを押すと呼び出されます。
+* [`TextChanged`](xref:Xamarin.Forms.InputView.TextChanged) クエリボックス内のテキストが変更されるたびに呼び出されます。
 
 次の例は、XAML でイベントにアタッチされ、 `TextChanged` を使用して `ListView` 検索結果を表示するイベントハンドラーを示しています。
 
@@ -132,7 +132,7 @@ void OnTextChanged(object sender, EventArgs e)
 
 ## <a name="perform-a-search-using-a-viewmodel"></a>ビューモデルを使用して検索を実行する
 
-`SearchCommand`プロパティとプロパティを実装にバインドすることにより、イベントハンドラーを使用せずに検索を実行でき `SearchCommandParameter` `ICommand` ます。 サンプルプロジェクトでは、モデルビュービューモデル (MVVM) パターンを使用してこれらの実装を示しています。 MVVM を使用したデータバインディングの詳細については、「[データバインディングと MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)」を参照してください。
+`SearchCommand`プロパティとプロパティを実装にバインドすることにより、イベントハンドラーを使用せずに検索を実行でき `SearchCommandParameter` `ICommand` ます。 サンプルプロジェクトでは、モデルビュービューモデル (MVVM) パターンを使用してこれらの実装を示しています。 MVVM を使用したデータバインディングの詳細については、「 [データバインディングと MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)」を参照してください。
 
 サンプルアプリケーションのビューモデルには、次のコードが含まれています。
 
@@ -195,7 +195,7 @@ public class SearchViewModel : INotifyPropertyChanged
 
 ## <a name="related-links"></a>関連リンク
 
-* [SearchBar デモ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/)
-* [Xamarin.Formsテキストコントロール](~/xamarin-forms/user-interface/text/index.md)
-* [フォントXamarin.Forms](~/xamarin-forms/user-interface/text/fonts.md)
-* [Xamarin.Formsデータバインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)
+* [SearchBar デモ](/samples/xamarin/xamarin-forms-samples/userinterface-searchbardemos/)
+* [Xamarin.Forms テキストコントロール](~/xamarin-forms/user-interface/text/index.md)
+* [フォント Xamarin.Forms](~/xamarin-forms/user-interface/text/fonts.md)
+* [Xamarin.Forms データバインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)

@@ -10,12 +10,12 @@ ms.date: 03/23/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1e5f3b6cb84081f5e167d9afe7e7f2f2dffce247
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: c77a219ab1b729aa279708d04610911fbbfe4e81
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938113"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560131"
 ---
 # <a name="listview-data-sources"></a>ListView データソース
 
@@ -65,9 +65,9 @@ listView.ItemsSource = new string[]
 
 ![ListView に文字列のリストが表示される](data-and-databinding-images/itemssource-simple.png)
 
-この方法では、に文字列のリストが設定され `ListView` ます。 既定で `ListView` は、はを呼び出し、 `ToString` 各行のに結果を表示し `TextCell` ます。 データの表示方法をカスタマイズするには、「[セルの外観](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)」を参照してください。
+この方法では、に文字列のリストが設定され `ListView` ます。 既定で `ListView` は、はを呼び出し、 `ToString` 各行のに結果を表示し `TextCell` ます。 データの表示方法をカスタマイズするには、「 [セルの外観](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md)」を参照してください。
 
-`ItemsSource`は配列に送信されているため、基になるリストまたは配列の変更に応じてコンテンツは更新されません。 基になるリストで項目が追加、削除、および変更されたときに ListView を自動的に更新する場合は、を使用する必要があり `ObservableCollection` ます。 [`ObservableCollection`](xref:System.Collections.ObjectModel.ObservableCollection`1)はで定義されて `System.Collections.ObjectModel` おり `List` 、変更を通知できる点を除いて、と同じです `ListView` 。
+`ItemsSource`は配列に送信されているため、基になるリストまたは配列の変更に応じてコンテンツは更新されません。 基になるリストで項目が追加、削除、および変更されたときに ListView を自動的に更新する場合は、を使用する必要があり `ObservableCollection` ます。 [`ObservableCollection`](xref:System.Collections.ObjectModel.ObservableCollection`1) はで定義されて `System.Collections.ObjectModel` おり `List` 、変更を通知できる点を除いて、と同じです `ListView` 。
 
 ```csharp
 ObservableCollection<Employee> employees = new ObservableCollection<Employee>();
@@ -165,4 +165,4 @@ public EmployeeListPage()
 
 ## <a name="related-links"></a>関連リンク
 
-- [双方向のバインディング (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-switchentrytwobinding)
+- [双方向のバインディング (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-listview-switchentrytwobinding)

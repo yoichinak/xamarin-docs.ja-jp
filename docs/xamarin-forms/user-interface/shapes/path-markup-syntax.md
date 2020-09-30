@@ -1,6 +1,6 @@
 ---
-title: 'Xamarin.Forms図形: パスマークアップ構文'
-description: Xamarin.Formsパスマークアップ構文を使用すると、XAML でパスジオメトリをコンパクトに指定できます。
+title: 'Xamarin.Forms 図形: パスマークアップ構文'
+description: Xamarin.Forms パスマークアップ構文を使用すると、XAML でパスジオメトリをコンパクトに指定できます。
 ms.prod: xamarin
 ms.assetid: A2C1BD59-1A16-4E26-A825-0338E2AF9E65
 ms.technology: xamarin-forms
@@ -10,20 +10,20 @@ ms.date: 06/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8250bd5e5f7d6c9cb93a986656e908b40cec9ae2
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 743f6366cc7e798247ea0151720a81e9cbddfeeb
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918513"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559105"
 ---
-# <a name="no-locxamarinforms-shapes-path-markup-syntax"></a>Xamarin.Forms図形: パスマークアップ構文
+# <a name="no-locxamarinforms-shapes-path-markup-syntax"></a>Xamarin.Forms 図形: パスマークアップ構文
 
 ![プレリリース API](~/media/shared/preview.png)
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
-Xamarin.Formsパスマークアップ構文を使用すると、XAML でパスジオメトリをコンパクトに指定できます。 構文は、プロパティに文字列値として指定され `Path.Data` ます。
+Xamarin.Forms パスマークアップ構文を使用すると、XAML でパスジオメトリをコンパクトに指定できます。 構文は、プロパティに文字列値として指定され `Path.Data` ます。
 
 ```xaml
 <Path Stroke="Black"
@@ -35,8 +35,8 @@ Xamarin.Formsパスマークアップ構文を使用すると、XAML でパス�
 
 この構文では、次のようになります。
 
-- *Fillrule*は、 `Xamarin.Forms.Shapes.FillRule` ジオメトリでまたはを使用する必要があるかどうかを指定する省略可能なです `EvenOdd` `Nonzero` `FillRule` 。 `F0`は、塗りつぶしルールを指定するために使用され `EvenOdd` `F1` ます。を使用して、 `Nonzero` 塗りつぶしルールを指定します。 塗りつぶしルールの詳細については、「 [ Xamarin.Forms 図形: 塗りつぶしルール](fillrules.md)」を参照してください。
-- *figureDescription*は、移動コマンド、描画コマンド、および省略可能な close コマンドで構成される図形を表します。 Move コマンドは、図形の始点を指定します。 描画コマンドは、図の内容を記述し、省略可能な [閉じる] コマンドを実行して図を閉じます。
+- *Fillrule* は、 `Xamarin.Forms.Shapes.FillRule` ジオメトリでまたはを使用する必要があるかどうかを指定する省略可能なです `EvenOdd` `Nonzero` `FillRule` 。 `F0` は、塗りつぶしルールを指定するために使用され `EvenOdd` `F1` ます。を使用して、 `Nonzero` 塗りつぶしルールを指定します。 塗りつぶしルールの詳細については、「 [ Xamarin.Forms 図形: 塗りつぶしルール](fillrules.md)」を参照してください。
+- *figureDescription* は、移動コマンド、描画コマンド、および省略可能な close コマンドで構成される図形を表します。 Move コマンドは、図形の始点を指定します。 描画コマンドは、図の内容を記述し、省略可能な [閉じる] コマンドを実行して図を閉じます。
 
 上記の例では、パスのマークアップ構文で、move コマンド () を使用して開始点を指定し、 `M` line コマンド () を使用して一連の直線を指定 `L` し、close コマンド () を使用してパスを閉じ `Z` ます。
 
@@ -47,11 +47,11 @@ Xamarin.Formsパスマークアップ構文を使用すると、XAML でパス�
 
 ## <a name="move-command"></a>移動コマンド
 
-Move コマンドは、新しい図形の始点を指定します。 このコマンドの構文は、 `M` *startPoint*または `m` *startPoint*です。
+Move コマンドは、新しい図形の始点を指定します。 このコマンドの構文は、 `M` *startPoint* または `m` *startPoint*です。
 
-この構文では、 *startPoint*は [`Point`](xref:Xamarin.Forms.Point) 新しい図形の始点を指定する構造体です。 Move コマンドの後に複数のポイントを指定すると、それらのポイントに線が描画されます。
+この構文では、 *startPoint* は [`Point`](xref:Xamarin.Forms.Point) 新しい図形の始点を指定する構造体です。 Move コマンドの後に複数のポイントを指定すると、それらのポイントに線が描画されます。
 
-`M 10,10`は、有効な move コマンドの例です。
+`M 10,10` は、有効な move コマンドの例です。
 
 ## <a name="draw-commands"></a>描画コマンド
 
@@ -70,9 +70,9 @@ Move コマンドは、新しい図形の始点を指定します。 このコ�
 
 ### <a name="line-command"></a>直線コマンド
 
-Line コマンドは、現在の点と指定された終点の間に直線を作成します。 このコマンドの構文は、 `L` *エンドポイント*または `l` *エンドポイント*です。
+Line コマンドは、現在の点と指定された終点の間に直線を作成します。 このコマンドの構文は、 `L` *エンドポイント* または `l` *エンドポイント*です。
 
-この構文では、*エンド*ポイントは、 [`Point`](xref:Xamarin.Forms.Point) 直線の終点を表すです。
+この構文では、 *エンド* ポイントは、 [`Point`](xref:Xamarin.Forms.Point) 直線の終点を表すです。
 
 たとえば、`L 20,30` や `L 20 30` は有効な直線コマンドです。
 
@@ -80,58 +80,58 @@ Line コマンドは、現在の点と指定された終点の間に直線を作
 
 ### <a name="horizontal-line-command"></a>水平線コマンド
 
-水平線コマンドは、現在の点と指定した x 座標の間に水平線を作成します。 このコマンドの構文は `H` *x*または `h` *x*です。
+水平線コマンドは、現在の点と指定した x 座標の間に水平線を作成します。 このコマンドの構文は `H` *x* または `h` *x*です。
 
-この構文では、 *x*は、 `double` 直線の終点の x 座標を表すです。
+この構文では、 *x* は、 `double` 直線の終点の x 座標を表すです。
 
 `H 90` は、有効な水平線コマンドの例です。
 
 ### <a name="vertical-line-command"></a>垂直線コマンド
 
-垂直線コマンドは、現在の点と指定された y 座標の間に垂直線を作成します。 このコマンドの構文は、 `V` *y*または `v` *y*です。
+垂直線コマンドは、現在の点と指定された y 座標の間に垂直線を作成します。 このコマンドの構文は、 `V` *y* または `v` *y*です。
 
-この構文で*y*は、 `double` 直線の終点の y 座標を表すです。
+この構文で *y* は、 `double` 直線の終点の y 座標を表すです。
 
 `V 90` は、有効な垂直線コマンドの例です。
 
 ### <a name="elliptical-arc-command"></a>楕円円弧コマンド
 
-楕円の弧コマンドは、現在の点と指定された終点の間に楕円の円弧を作成します。 このコマンドの構文は、 `A` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endpoint*または `a` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endpoint*です。
+楕円の弧コマンドは、現在の点と指定された終点の間に楕円の円弧を作成します。 このコマンドの構文は、 `A` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endpoint* または `a` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endpoint*です。
 
 この構文では、次のようになります。
 
-- `size`は、 [`Size`](xref:Xamarin.Forms.Size) 円弧の x 半径と y 半径を表すです。
+- `size` は、 [`Size`](xref:Xamarin.Forms.Size) 円弧の x 半径と y 半径を表すです。
 - `rotationAngle``double`楕円の回転を表すです (度単位)。
-- `isLargeArcFlag`弧の角度が180°以上でなければならない場合は、1に設定します。それ以外の場合は0に設定します。
-- `sweepDirectionFlag`円弧が正の方向に描画される場合は、1に設定されます。それ以外の場合は0に設定されます。
+- `isLargeArcFlag` 弧の角度が180°以上でなければならない場合は、1に設定します。それ以外の場合は0に設定します。
+- `sweepDirectionFlag` 円弧が正の方向に描画される場合は、1に設定されます。それ以外の場合は0に設定されます。
 - `endPoint`[`Point`](xref:Xamarin.Forms.Point)円弧が描画されるです。
 
-`A 150,150 0 1,0 150,-150`は、有効な楕円弧コマンドの例です。
+`A 150,150 0 1,0 150,-150` は、有効な楕円弧コマンドの例です。
 
 楕円の円弧をオブジェクトとして作成する方法については `PathGeometry` 、「 [Arcsegment を作成](geometries.md#create-an-arcsegment)する」を参照してください。
 
 ### <a name="cubic-bezier-curve-command"></a>3次ベジエ曲線コマンド
 
-3次ベジエ曲線コマンドは、指定された2つの制御点を使用して、現在の点と指定された終点の間に3次ベジエ曲線を作成します。 このコマンドの構文は、 `C` *controlPoint1* *controlPoint2* *endpoint*または `c` *controlPoint1* *controlPoint2* *endpoint*です。
+3次ベジエ曲線コマンドは、指定された2つの制御点を使用して、現在の点と指定された終点の間に3次ベジエ曲線を作成します。 このコマンドの構文は、 `C` *controlPoint1* *controlPoint2* *endpoint* または `c` *controlPoint1* *controlPoint2* *endpoint*です。
 
 この構文では、次のようになります。
 
-- *controlPoint1*は、曲線の [`Point`](xref:Xamarin.Forms.Point) 最初の制御点を表すです。これは曲線の開始接線を決定します。
-- *controlPoint2*は、曲線の [`Point`](xref:Xamarin.Forms.Point) 2 番目の制御点を表すです。これは曲線の終了タンジェントを決定します。
-- *エンドポイント*は、 [`Point`](xref:Xamarin.Forms.Point) 曲線が描画される点を表すです。
+- *controlPoint1* は、曲線の [`Point`](xref:Xamarin.Forms.Point) 最初の制御点を表すです。これは曲線の開始接線を決定します。
+- *controlPoint2* は、曲線の [`Point`](xref:Xamarin.Forms.Point) 2 番目の制御点を表すです。これは曲線の終了タンジェントを決定します。
+- *エンドポイント* は、 [`Point`](xref:Xamarin.Forms.Point) 曲線が描画される点を表すです。
 
-`C 100,200 200,400 300,200`は、有効な3次ベジエ曲線コマンドの例です。
+`C 100,200 200,400 300,200` は、有効な3次ベジエ曲線コマンドの例です。
 
 3次ベジエ曲線をオブジェクトとして作成する方法の詳細につい `PathGeometry` ては、「 [Create a system.windows.media.beziersegment>](geometries.md#create-a-beziersegment)」を参照してください。
 
 ### <a name="quadratic-bezier-curve-command"></a>2次ベジエ曲線コマンド
 
-2次ベジエ曲線コマンドは、指定された制御点を使用して、現在の点と指定された終点の間に2次ベジエ曲線を作成します。 このコマンドの構文は、 `Q` *controlpoint* *エンド*ポイントまたは `q` *controlpoint* *エンド*ポイントです。
+2次ベジエ曲線コマンドは、指定された制御点を使用して、現在の点と指定された終点の間に2次ベジエ曲線を作成します。 このコマンドの構文は、 `Q` *controlpoint* *エンド* ポイントまたは `q` *controlpoint* *エンド*ポイントです。
 
 この構文では、次のようになります。
 
-- *Controlpoint*は、曲線の [`Point`](xref:Xamarin.Forms.Point) 制御点を表すです。これは曲線の始点と終点を決定します。
-- *エンドポイント*は、 [`Point`](xref:Xamarin.Forms.Point) 曲線が描画される点を表すです。
+- *Controlpoint* は、曲線の [`Point`](xref:Xamarin.Forms.Point) 制御点を表すです。これは曲線の始点と終点を決定します。
+- *エンドポイント* は、 [`Point`](xref:Xamarin.Forms.Point) 曲線が描画される点を表すです。
 
 `Q 100,200 300,200` は、有効な 2 次ベジエ曲線コマンドの例です。
 
@@ -143,22 +143,22 @@ Smooth 三次ベジエ曲線コマンドは、指定された制御点を使用�
 
 この構文では、次のようになります。
 
-- *controlPoint2*は、曲線の [`Point`](xref:Xamarin.Forms.Point) 2 番目の制御点を表すです。これは曲線の終了タンジェントを決定します。
-- *エンドポイント*は、 [`Point`](xref:Xamarin.Forms.Point) 曲線が描画される点を表すです。
+- *controlPoint2* は、曲線の [`Point`](xref:Xamarin.Forms.Point) 2 番目の制御点を表すです。これは曲線の終了タンジェントを決定します。
+- *エンドポイント* は、 [`Point`](xref:Xamarin.Forms.Point) 曲線が描画される点を表すです。
 
 最初の制御点は、現在の点を基準として、前のコマンドの2つ目の制御点のリフレクションと見なされます。 前のコマンドがない場合、または前のコマンドが3次ベジエ曲線コマンドまたは smooth 三次ベジエ曲線コマンドでなかった場合、最初の制御点は、現在のポイントと一致していると見なされます。
 
-`S 100,200 200,300`は、有効な smooth 三次ベジエ曲線コマンドの例です。
+`S 100,200 200,300` は、有効な smooth 三次ベジエ曲線コマンドの例です。
 
 ### <a name="smooth-quadratic-bezier-curve-command"></a>Smooth 2 次ベジエ曲線コマンド
 
-Smooth 2 次ベジエ曲線コマンドは、コントロールポイントを使用して、現在の点と指定された終点の間に2次ベジエ曲線を作成します。 このコマンドの構文は、 `T` *エンドポイント*または `t` *エンドポイント*です。
+Smooth 2 次ベジエ曲線コマンドは、コントロールポイントを使用して、現在の点と指定された終点の間に2次ベジエ曲線を作成します。 このコマンドの構文は、 `T` *エンドポイント* または `t` *エンドポイント*です。
 
-この構文では、*エンドポイント*は、 [`Point`](xref:Xamarin.Forms.Point) 曲線が描画される点を表すです。
+この構文では、 *エンドポイント* は、 [`Point`](xref:Xamarin.Forms.Point) 曲線が描画される点を表すです。
 
 制御点は、現在の点に対する前のコマンドの制御点のリフレクションと見なされます。 前のコマンドが存在しない場合、または前のコマンドが2次ベジエ曲線または smooth 2 次ベジエ曲線コマンドでなかった場合、制御点は現在の点と一致していると見なされます。
 
-`T 100,30`は、有効な smooth 2 次ベジエ曲線コマンドの例です。
+`T 100,30` は、有効な smooth 2 次ベジエ曲線コマンドの例です。
 
 ## <a name="close-command"></a>終了コマンド
 
@@ -170,14 +170,14 @@ Close コマンドの構文は、 `Z` または `z` です。
 
 標準の数値の代わりに、次のような大文字と小文字を区別する特殊な値を使用することもできます。
 
-- `Infinity`を表し `double.PositiveInfinity` ます。
+- `Infinity` を表し `double.PositiveInfinity` ます。
 - `-Infinity`を表し `double.NegativeInfinity` ます。
-- `NaN`を表し `double.NaN` ます。
+- `NaN` を表し `double.NaN` ます。
 
 また、大文字と小文字を区別しない科学的表記法を使用することもできます。 したがって、 `+1.e17` は有効な値です。
 
 ## <a name="related-links"></a>関連リンク
 
-- [図形のデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
-- [Xamarin.Forms図形: ジオメトリ](geometries.md)
-- [Xamarin.Forms図形: 塗りつぶしルール](fillrules.md)
+- [図形のデモ (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [Xamarin.Forms 図形: ジオメトリ](geometries.md)
+- [Xamarin.Forms 図形: 塗りつぶしルール](fillrules.md)

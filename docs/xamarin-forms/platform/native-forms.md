@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsXamarin ネイティブプロジェクトで
+title: Xamarin.Forms Xamarin ネイティブプロジェクトで
 description: この記事では、Xamarin のネイティブプロジェクトに直接追加された ContentPage の派生ページを使用する方法と、それらの間を移動する方法について説明します。
 ms.prod: xamarin
 ms.assetid: f343fc21-dfb1-4364-a332-9da6705d36bc
@@ -10,18 +10,18 @@ ms.date: 08/19/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9fb741a03d1c8dd2a8754120d0b46567d8889a0b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e34144f253b19796ea6ec83cb3873fe373aeb914
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84132276"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560612"
 ---
-# <a name="xamarinforms-in-xamarin-native-projects"></a>Xamarin.FormsXamarin ネイティブプロジェクトで
+# <a name="no-locxamarinforms-in-xamarin-native-projects"></a>Xamarin.Forms Xamarin ネイティブプロジェクトで
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/native2forms)
 
-通常、アプリケーションには Xamarin.Forms 、から派生した1つ以上のページが含まれ [`ContentPage`](xref:Xamarin.Forms.ContentPage) ます。これらのページは、.NET Standard ライブラリプロジェクトまたは共有プロジェクトのすべてのプラットフォームで共有されます。 ただし、ネイティブ形式では、 `ContentPage` ネイティブの xamarin、iOS、xamarin、および UWP アプリケーションに、の派生ページを直接追加できます。 ネイティブプロジェクトが `ContentPage` .NET Standard ライブラリプロジェクトまたは共有プロジェクトから派生したページを使用する場合と比較して、ネイティブプロジェクトにページを直接追加する利点は、ネイティブビューでページを拡張できることです。 その後、ネイティブビューを XAML で名前付けし `x:Name` 、分離コードから参照できます。 ネイティブビューの詳細については、「[ネイティブビュー](~/xamarin-forms/platform/native-views/index.md)」を参照してください。
+通常、アプリケーションには Xamarin.Forms 、から派生した1つ以上のページが含まれ [`ContentPage`](xref:Xamarin.Forms.ContentPage) ます。これらのページは、.NET Standard ライブラリプロジェクトまたは共有プロジェクトのすべてのプラットフォームで共有されます。 ただし、ネイティブ形式では、 `ContentPage` ネイティブの xamarin、iOS、xamarin、および UWP アプリケーションに、の派生ページを直接追加できます。 ネイティブプロジェクトが `ContentPage` .NET Standard ライブラリプロジェクトまたは共有プロジェクトから派生したページを使用する場合と比較して、ネイティブプロジェクトにページを直接追加する利点は、ネイティブビューでページを拡張できることです。 その後、ネイティブビューを XAML で名前付けし `x:Name` 、分離コードから参照できます。 ネイティブビューの詳細については、「 [ネイティブビュー](~/xamarin-forms/platform/native-views/index.md)」を参照してください。
 
 ネイティブプロジェクトでを派生したページを使用するプロセスは、次のとおり Xamarin.Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage) です。
 
@@ -34,7 +34,7 @@ ms.locfileid: "84132276"
 Xamarin.Forms`Forms.Init`ネイティブプロジェクトが派生ページを構築するには、メソッドを呼び出すことによって初期化する必要があり [`ContentPage`](xref:Xamarin.Forms.ContentPage) ます。 この作業を行うタイミングの選択は、主にアプリケーションフローで最も便利なタイミングに依存します。これは、アプリケーションの起動時、または `ContentPage` の派生ページが構築される直前に実行されます。 この記事および付属のサンプルアプリケーションでは、 `Forms.Init` アプリケーションの起動時にメソッドが呼び出されます。
 
 > [!NOTE]
-> この**サンプルアプリケーション**ソリューションには、プロジェクトが含まれていません Xamarin.Forms 。 代わりに、Xamarin の iOS プロジェクト、Xamarin Android プロジェクト、および UWP プロジェクトで構成されます。 各プロジェクトは、ネイティブなフォームを使用して [`ContentPage`](xref:Xamarin.Forms.ContentPage) 、の派生ページを使用するネイティブプロジェクトです。 ただし、ネイティブプロジェクトが `ContentPage` .NET Standard ライブラリプロジェクトまたは共有プロジェクトから派生したページを使用できない理由はありません。
+> この **サンプルアプリケーション** ソリューションには、プロジェクトが含まれていません Xamarin.Forms 。 代わりに、Xamarin の iOS プロジェクト、Xamarin Android プロジェクト、および UWP プロジェクトで構成されます。 各プロジェクトは、ネイティブなフォームを使用して [`ContentPage`](xref:Xamarin.Forms.ContentPage) 、の派生ページを使用するネイティブプロジェクトです。 ただし、ネイティブプロジェクトが `ContentPage` .NET Standard ライブラリプロジェクトまたは共有プロジェクトから派生したページを使用できない理由はありません。
 
 、、およびデータバインディングエンジンなどのネイティブ形式を使用する場合は、 Xamarin.Forms [`DependencyService`](xref:Xamarin.Forms.DependencyService) すべてが引き続き機能 [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) します。 ただし、ページナビゲーションは、ネイティブナビゲーション API を使用して実行する必要があります。
 
@@ -80,7 +80,7 @@ public class AppDelegate : UIApplicationDelegate
 
 `FinishedLaunching` メソッドは、次のタスクを実行します。
 
-- Xamarin.Formsは、メソッドを呼び出すことによって初期化され `Forms.Init` ます。
+- Xamarin.Forms は、メソッドを呼び出すことによって初期化され `Forms.Init` ます。
 - クラスへの参照 `AppDelegate` は、フィールドに格納され `static` `Instance` ます。 これは、クラスで定義されているメソッドを他のクラスが呼び出すメカニズムを提供するためのものです `AppDelegate` 。
 - `UIWindow`ネイティブ iOS アプリケーションのビューのメインコンテナーであるが作成されます。
 - プロパティは、 `FolderPath` ノートデータが格納されるデバイス上のパスに初期化されます。
@@ -181,7 +181,7 @@ public class MainActivity : AppCompatActivity
 
 `OnCreate` メソッドは、次のタスクを実行します。
 
-- Xamarin.Formsは、メソッドを呼び出すことによって初期化され `Forms.Init` ます。
+- Xamarin.Forms は、メソッドを呼び出すことによって初期化され `Forms.Init` ます。
 - クラスへの参照 `MainActivity` は、フィールドに格納され `static` `Instance` ます。 これは、クラスで定義されているメソッドを他のクラスが呼び出すメカニズムを提供するためのものです `MainActivity` 。
 - `Activity`コンテンツはレイアウトリソースから設定されます。 サンプルアプリケーションでは、レイアウトは、、、 `LinearLayout` `Toolbar` および `FrameLayout` フラグメントコンテナーとして機能するを含むで構成されます。
 - `Toolbar`が取得され、の操作バーとして設定され、 `Activity` 操作バーのタイトルが設定されます。
@@ -189,7 +189,7 @@ public class MainActivity : AppCompatActivity
 - クラスは、 `NotesPage` Xamarin.Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage) XAML で定義されている派生ページであり、 `Fragment` 拡張メソッドを使用して構築され、に変換され `CreateSupportFragment` ます。
 - クラスは、 `SupportFragmentManager` インスタンスをクラスのに置き換えるトランザクションを作成し、コミットし `FrameLayout` `Fragment` `NotesPage` ます。
 
-フラグメントの詳細については、「[フラグメント](~/android/platform/fragments/index.md)」を参照してください。
+フラグメントの詳細については、「 [フラグメント](~/android/platform/fragments/index.md)」を参照してください。
 
 `OnCreate`メソッドが実行されると、 Xamarin.Forms `NotesPage` 次のスクリーンショットに示すように、クラスで定義されている UI が表示されます。
 
@@ -278,7 +278,7 @@ protected override void OnActivityResult(int requestCode, Result resultCode, Int
 
 ## <a name="uwp"></a>UWP
 
-UWP の場合、ネイティブ `App` クラスは、通常、アプリケーションの起動に関連するタスクを実行する場所です。 Xamarin.Formsは通常、UWP アプリケーションでは、 Xamarin.Forms `OnLaunched` ネイティブクラスのオーバーライドで、 `App` メソッドに引数を渡すために初期化され `LaunchActivatedEventArgs` `Forms.Init` ます。 このため、から派生したページを使用するネイティブ UWP アプリケーション Xamarin.Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage) は、メソッドからメソッドを呼び出すと最も簡単に呼び出すことができ `Forms.Init` `App.OnLaunched` ます。
+UWP の場合、ネイティブ `App` クラスは、通常、アプリケーションの起動に関連するタスクを実行する場所です。 Xamarin.Forms は通常、UWP アプリケーションでは、 Xamarin.Forms `OnLaunched` ネイティブクラスのオーバーライドで、 `App` メソッドに引数を渡すために初期化され `LaunchActivatedEventArgs` `Forms.Init` ます。 このため、から派生したページを使用するネイティブ UWP アプリケーション Xamarin.Forms [`ContentPage`](xref:Xamarin.Forms.ContentPage) は、メソッドからメソッドを呼び出すと最も簡単に呼び出すことができ `Forms.Init` `App.OnLaunched` ます。
 
 既定では、ネイティブクラスによって、 `App` `MainPage` クラスがアプリケーションの最初のページとして起動されます。 次のコード例は、サンプルアプリケーションのクラスを示してい `MainPage` ます。
 
@@ -314,7 +314,7 @@ public sealed partial class MainPage : Page
 
 コンストラクターが実行されると `MainPage` 、 Xamarin.Forms `NotesPage` 次のスクリーンショットに示すように、クラスで定義されている UI が表示されます。
 
-[![XAML で定義された UI を使用する UWP アプリケーションのスクリーンショット Xamarin.Forms](native-forms-images/uwp-notespage.png "を使用する UWP アプリファンド.NO LOC (Xamarin)] XAML UI")](native-forms-images/uwp-notespage-large.png#lightbox "を使用する UWP アプリファンド.NO LOC (Xamarin)] XAML UI")
+[![::: No loc (Xamarin. Forms)::: XAML で定義された UI を使用する UWP アプリケーションのスクリーンショット](native-forms-images/uwp-notespage.png "::: No loc (Xamarin. Forms)::: XAML UI を使用した UWP アプリ")](native-forms-images/uwp-notespage-large.png#lightbox "::: No loc (Xamarin. Forms)::: XAML UI を使用した UWP アプリ")
 
 たとえばをタップするなど、UI と対話すると、実行中の **+** [`Button`](xref:Xamarin.Forms.Button) 分離コードに次のイベントハンドラーが生成され `NotesPage` ます。
 
@@ -340,7 +340,7 @@ public void NavigateToNoteEntryPage(Note note)
 
 UWP でのナビゲーションは、通常、引数を受け取るメソッドを使用して実行され `Frame.Navigate` `Page` ます。 Xamarin.Forms`Frame.Navigate`派生ページインスタンスを受け取る拡張メソッドを定義 [`ContentPage`](xref:Xamarin.Forms.ContentPage) します。 このため、メソッドを実行すると、 `NavigateToNoteEntryPage` Xamarin.Forms `NoteEntryPage` 次のスクリーンショットに示すように、に定義されている UI が表示されます。
 
-[![XAML で定義された UI を使用する UWP アプリケーションのスクリーンショット Xamarin.Forms](native-forms-images/uwp-noteentrypage.png "を使用する UWP アプリファンド.NO LOC (Xamarin)] XAML UI")](native-forms-images/uwp-noteentrypage-large.png#lightbox "を使用する UWP アプリファンド.NO LOC (Xamarin)] XAML UI")
+[![::: No loc (Xamarin. Forms)::: XAML で定義された UI を使用する UWP アプリケーションのスクリーンショット](native-forms-images/uwp-noteentrypage.png "::: No loc (Xamarin. Forms)::: XAML UI を使用した UWP アプリ")](native-forms-images/uwp-noteentrypage-large.png#lightbox "::: No loc (Xamarin. Forms)::: XAML UI を使用した UWP アプリ")
 
 が表示されると、戻る矢印をタップすると、 `NoteEntryPage` アプリ内のバックスタックからのがポップされ、その `FrameworkElement` `NoteEntryPage` ユーザーがクラスのに返され `FrameworkElement` `NotesPage` ます。
 
@@ -419,5 +419,5 @@ UWP でのバックナビゲーションサポートの詳細については、�
 
 ## <a name="related-links"></a>関連リンク
 
-- [種類 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/native2forms)
+- [種類 (サンプル)](/samples/xamarin/xamarin-forms-samples/native2forms)
 - [ネイティブ ビュー](~/xamarin-forms/platform/native-views/index.md)

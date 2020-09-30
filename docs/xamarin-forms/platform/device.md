@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Formsデバイスクラス
+title: Xamarin.Forms デバイスクラス
 description: この記事では Xamarin.Forms 、デバイスクラスを使用して、プラットフォームごとに機能とレイアウトをきめ細かく制御する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 2F304AEC-8612-4833-81E5-B2F3F469B2DF
@@ -10,26 +10,26 @@ ms.date: 07/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 38452ac477404d92468b7c9c4d2c88ce60104b50
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 8eff115e894f77aeacff0f6c072bfd338fa19844
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918020"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560508"
 ---
-# <a name="no-locxamarinforms-device-class"></a>Xamarin.Formsデバイスクラス
+# <a name="no-locxamarinforms-device-class"></a>Xamarin.Forms デバイスクラス
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithdevice)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithdevice)
 
 クラスには、 [`Device`](xref:Xamarin.Forms.Device) 開発者がプラットフォームごとにレイアウトと機能をカスタマイズするのに役立つさまざまなプロパティとメソッドが含まれています。
 
-クラスには、特定のハードウェアの種類とサイズでコードをターゲットにするためのメソッドとプロパティに加え `Device` て、バックグラウンドスレッドから UI コントロールを操作するために使用できるメソッドが用意されています。 詳細については、「[バックグラウンドスレッドから UI を操作する](#interact-with-the-ui-from-background-threads)」を参照してください。
+クラスには、特定のハードウェアの種類とサイズでコードをターゲットにするためのメソッドとプロパティに加え `Device` て、バックグラウンドスレッドから UI コントロールを操作するために使用できるメソッドが用意されています。 詳細については、「 [バックグラウンドスレッドから UI を操作する](#interact-with-the-ui-from-background-threads)」を参照してください。
 
 ## <a name="provide-platform-specific-values"></a>プラットフォーム固有の値を指定する
 
 2.3.4 より前では、 Xamarin.Forms アプリケーションが実行されていたプラットフォームは、プロパティを調べて、、、の各列挙値と比較することによって取得でき [`Device.OS`](xref:Xamarin.Forms.Device.OS) [`TargetPlatform.iOS`](xref:Xamarin.Forms.TargetPlatform.iOS) [`TargetPlatform.Android`](xref:Xamarin.Forms.TargetPlatform.Android) [`TargetPlatform.WinPhone`](xref:Xamarin.Forms.TargetPlatform.WinPhone) [`TargetPlatform.Windows`](xref:Xamarin.Forms.TargetPlatform.Windows) ます。 同様に、オーバーロードの1つを使用して、 [`Device.OnPlatform`](xref:Xamarin.Forms.Device.OnPlatform(System.Action,System.Action,System.Action,System.Action)) プラットフォーム固有の値をコントロールに提供できます。
 
-ただし、 Xamarin.Forms これらの api の2.3.4 は非推奨とされ、置き換えられました。 クラスには、、、 [`Device`](xref:Xamarin.Forms.Device) [`Device.iOS`](xref:Xamarin.Forms.Device.iOS) [`Device.Android`](xref:Xamarin.Forms.Device.Android) `Device.WinPhone` (非推奨)、 `Device.WinRT` (非推奨) [`Device.UWP`](xref:Xamarin.Forms.Device.UWP) [`Device.macOS`](xref:Xamarin.Forms.Device.macOS) 、、およびの各プラットフォームを識別するパブリック文字列定数が含まれるようになりました。 同様に、 [`Device.OnPlatform`](xref:Xamarin.Forms.Device.OnPlatform(System.Action,System.Action,System.Action,System.Action)) オーバーロードは api と api に置き換えられてい [`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1) [`On`](xref:Xamarin.Forms.On) ます。
+ただし、 Xamarin.Forms これらの api の2.3.4 は非推奨とされ、置き換えられました。 クラスには、、、 [`Device`](xref:Xamarin.Forms.Device) [`Device.iOS`](xref:Xamarin.Forms.Device.iOS) [`Device.Android`](xref:Xamarin.Forms.Device.Android) `Device.WinPhone` (非推奨)、 `Device.WinRT` (非推奨) [`Device.UWP`](xref:Xamarin.Forms.Device.UWP) [`Device.macOS`](xref:Xamarin.Forms.Device.macOS) 、、およびの各プラットフォームを識別するパブリック文字列定数が含まれるようになりました。 同様に、  [`Device.OnPlatform`](xref:Xamarin.Forms.Device.OnPlatform(System.Action,System.Action,System.Action,System.Action)) オーバーロードは api と api に置き換えられてい [`OnPlatform`](xref:Xamarin.Forms.OnPlatform`1) [`On`](xref:Xamarin.Forms.On) ます。
 
 C# では、プロパティにステートメントを作成し、 `switch` [`Device.RuntimePlatform`](xref:Xamarin.Forms.Device.RuntimePlatform) `case` 必要なプラットフォームのステートメントを指定することによって、プラットフォーム固有の値を指定できます。
 
@@ -74,12 +74,12 @@ layout.Margin = new Thickness(5, top, 5, 0);
 
 プロパティは、 `Device.Idiom` アプリケーションが実行されているデバイスに応じてレイアウトまたは機能を変更するために使用できます。 列挙には [`TargetIdiom`](xref:Xamarin.Forms.TargetIdiom) 、次の値が含まれます。
 
-- **電話**– IPhone、iPod touch、および Android デバイスが 600 dip ^ よりも狭い
-- **タブレット**– IPad、Windows デバイス、および Android デバイスが 600 dip ^ よりも大きい
-- **デスクトップ**– windows 10 デスクトップコンピューター上の[UWP アプリ](~/xamarin-forms/platform/windows/installation/index.md)でのみ返されます ( `Phone` 連続性のあるシナリオの場合を含め、モバイル Windows デバイスでを返します)。
+- **電話** – IPhone、iPod touch、および Android デバイスが 600 dip ^ よりも狭い
+- **タブレット** – IPad、Windows デバイス、および Android デバイスが 600 dip ^ よりも大きい
+- **デスクトップ** – windows 10 デスクトップコンピューター上の [UWP アプリ](~/xamarin-forms/platform/windows/installation/index.md) でのみ返されます ( `Phone` 連続性のあるシナリオの場合を含め、モバイル Windows デバイスでを返します)。
 - **Tv** – Tizen tv デバイス
 - **Watch** – Tizen watch デバイス
-- **サポート**されていない–未使用
+- **サポート** されていない–未使用
 
 *^ dip は必ずしも物理ピクセル数ではありません*
 
@@ -132,7 +132,7 @@ C# の同等のコードは次のとおりです。
 this.FlowDirection = Device.FlowDirection;
 ```
 
-フローの方向の詳細については、「[右から左へのローカライズ](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)」を参照してください。
+フローの方向の詳細については、「 [右から左へのローカライズ](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)」を参照してください。
 
 ## <a name="devicestyles"></a>デバイス. スタイル
 
@@ -147,7 +147,7 @@ this.FlowDirection = Device.FlowDirection;
 
 ## <a name="devicegetnamedsize"></a>デバイス. GetNamedSize
 
-`GetNamedSize`C# コードでを設定するときに使用でき [`FontSize`](~/xamarin-forms/user-interface/text/fonts.md) ます。
+`GetNamedSize` C# コードでを設定するときに使用でき [`FontSize`](~/xamarin-forms/user-interface/text/fonts.md) ます。
 
 ```csharp
 myLabel.FontSize = Device.GetNamedSize (NamedSize.Small, myLabel);
@@ -160,7 +160,7 @@ someLabel.FontSize = Device.OnPlatform (
 
 ## <a name="devicegetnamedcolor"></a>Device.GetNamedColor
 
-Xamarin.Forms4.6 では、名前付きの色のサポートが導入されています。 名前付きの色とは、デバイス上でアクティブになっているシステムモード (たとえば、淡色や濃色) に応じて異なる値を持つ色です。 Android では、名前付きの色には、 [R. Color](https://developer.android.com/reference/android/R.color#constants_2)クラスを使用してアクセスします。 IOS では、名前付きの色は[システムカラー](https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/color/#system-colors)と呼ばれます。 ユニバーサル Windows プラットフォームでは、名前付きの色は[XAML テーマリソース](/windows/uwp/design/controls-and-patterns/xaml-theme-resources)と呼ばれます。
+Xamarin.Forms 4.6 では、名前付きの色のサポートが導入されています。 名前付きの色とは、デバイス上でアクティブになっているシステムモード (たとえば、淡色や濃色) に応じて異なる値を持つ色です。 Android では、名前付きの色には、 [R. Color](https://developer.android.com/reference/android/R.color#constants_2) クラスを使用してアクセスします。 IOS では、名前付きの色は [システムカラー](https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/color/#system-colors)と呼ばれます。 ユニバーサル Windows プラットフォームでは、名前付きの色は [XAML テーマリソース](/windows/uwp/design/controls-and-patterns/xaml-theme-resources)と呼ばれます。
 
 メソッドを使用して、 `GetNamedColor` Android、iOS、UWP の名前付きの色を取得できます。 メソッドは引数を受け取り、 `string` を返し [`Color`](xref:Xamarin.Forms.Color) ます。
 
@@ -169,7 +169,7 @@ Xamarin.Forms4.6 では、名前付きの色のサポートが導入されてい
 Color color = Device.GetNamedColor(NamedPlatformColor.HoloBlueBright);
 ```
 
-`Color.Default`は、色の名前が見つからない場合、または `GetNamedColor` サポートされていないプラットフォームでが呼び出された場合に返されます。
+`Color.Default` は、色の名前が見つからない場合、または `GetNamedColor` サポートされていないプラットフォームでが呼び出された場合に返されます。
 
 > [!NOTE]
 > `GetNamedColor`このメソッドは、 `Color` プラットフォームに固有のを返すため、通常はプロパティと組み合わせて使用する必要があり [`Device.RuntimePlatform`](xref:Xamarin.Forms.Device.RuntimePlatform) ます。
@@ -247,7 +247,7 @@ Device.StartTimer (new TimeSpan (0, 0, 60), () =>
 
 ## <a name="interact-with-the-ui-from-background-threads"></a>バックグラウンドスレッドから UI を操作する
 
-IOS、Android、およびユニバーサル Windows プラットフォームを含むほとんどのオペレーティングシステムは、ユーザーインターフェイスを含むコードにシングルスレッドモデルを使用します。 このスレッドは、多くの場合、*メインスレッド*または*UI スレッド*と呼ばれます。 このモデルの結果として、ユーザーインターフェイス要素にアクセスするすべてのコードは、アプリケーションのメインスレッドで実行する必要があります。
+IOS、Android、およびユニバーサル Windows プラットフォームを含むほとんどのオペレーティングシステムは、ユーザーインターフェイスを含むコードにシングルスレッドモデルを使用します。 このスレッドは、多くの場合、 *メインスレッド* または *UI スレッド*と呼ばれます。 このモデルの結果として、ユーザーインターフェイス要素にアクセスするすべてのコードは、アプリケーションのメインスレッドで実行する必要があります。
 
 アプリケーションでは、バックグラウンドスレッドを使用して、web サービスからデータを取得するなど、長時間実行される可能性がある操作を実行することがあります。 バックグラウンドスレッドで実行されているコードがユーザーインターフェイス要素にアクセスする必要がある場合は、メインスレッドでそのコードを実行する必要があります。
 
@@ -273,6 +273,6 @@ Device.BeginInvokeOnMainThread (() =>
 
 ## <a name="related-links"></a>関連リンク
 
-- [デバイスのサンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithdevice)
-- [スタイルのサンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithstyles)
+- [デバイスのサンプル](/samples/xamarin/xamarin-forms-samples/workingwithdevice)
+- [スタイルのサンプル](/samples/xamarin/xamarin-forms-samples/workingwithstyles)
 - [デバイス API](xref:Xamarin.Forms.Device)

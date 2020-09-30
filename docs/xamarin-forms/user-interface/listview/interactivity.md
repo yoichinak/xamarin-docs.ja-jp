@@ -10,12 +10,12 @@ ms.date: 09/25/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 287b116d9ba2cb84e4e196fff080b8212e4eca3b
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: d665a80d6f1e0319fc9dc8696db379cf781ee833
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938412"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560118"
 ---
 # <a name="listview-interactivity"></a>ListView の対話機能
 
@@ -27,13 +27,13 @@ ms.locfileid: "86938412"
 
 [`ListView`](xref:Xamarin.Forms.ListView)選択モードを制御するには、 [`ListView.SelectionMode`](xref:Xamarin.Forms.ListView.SelectionMode) プロパティを列挙体の値に設定し [`ListViewSelectionMode`](xref:Xamarin.Forms.ListViewSelectionMode) ます。
 
-- [`Single`](xref:Xamarin.Forms.ListViewSelectionMode.Single)選択した項目を強調表示して、1つの項目を選択できることを示します。 これが既定値です。
-- [`None`](xref:Xamarin.Forms.ListViewSelectionMode.None)項目を選択できないことを示します。
+- [`Single`](xref:Xamarin.Forms.ListViewSelectionMode.Single) 選択した項目を強調表示して、1つの項目を選択できることを示します。 これが既定値です。
+- [`None`](xref:Xamarin.Forms.ListViewSelectionMode.None) 項目を選択できないことを示します。
 
 ユーザーが項目をタップすると、次の2つのイベントが発生します。
 
-- [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected)新しい項目が選択されたときに発生します。
-- [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped)項目がタップされたときに発生します。
+- [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) 新しい項目が選択されたときに発生します。
+- [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) 項目がタップされたときに発生します。
 
 同じ項目を2回タップすると、2つのイベントが発生し [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) ますが、1つのイベントのみが発生 [`ItemSelected`](xref:Xamarin.Forms.ListView.ItemSelected) します。
 
@@ -76,7 +76,7 @@ var listView = new ListView { ... SelectionMode = ListViewSelectionMode.None };
 
 ### <a name="xaml"></a>XAML
 
-`MenuItem`要素は、XAML コレクション内に作成できます。 次の XAML は、2つのコンテキストアクションが実装されたカスタムセルを示しています。
+`MenuItem` 要素は、XAML コレクション内に作成できます。 次の XAML は、2つのコンテキストアクションが実装されたカスタムセルを示しています。
 
 ```xaml
 <ListView x:Name="ContextDemoList">
@@ -123,9 +123,9 @@ public void OnDelete (object sender, EventArgs e)
 
 コンテキストアクションは、 `Cell` インスタンスを作成してそれを `MenuItem` セルのコレクションに追加することで、任意のサブクラス (グループヘッダーとして使用されていない場合) で実装でき `ContextActions` ます。 コンテキストアクションに対して次のプロパティを構成できます。
 
-- **テキスト** &ndash;メニュー項目に表示される文字列。
-- **クリック** &ndash;項目がクリックされたときのイベント。
-- **Isdestructive** &ndash;(省略可能) true の場合、項目は iOS では異なる方法で表示されます。
+- **テキスト** &ndash; メニュー項目に表示される文字列。
+- **クリック** &ndash; 項目がクリックされたときのイベント。
+- **Isdestructive** &ndash; (省略可能) true の場合、項目は iOS では異なる方法で表示されます。
 
 複数のコンテキストアクションを1つのセルに追加できますが、をに設定する必要があるのは1つだけ `IsDestructive` `true` です。 次のコードは、コンテキストアクションをに追加する方法を示してい `ViewCell` ます。
 
@@ -187,7 +187,7 @@ listView.RefreshControlColor = Color.Red;
 
 ![ListView の更新が完了しました](interactivity-images/refresh-in-progress.png)
 
-[`ListView`](xref:Xamarin.Forms.ListView)イベントを発生させて [`Refreshing`](xref:Xamarin.Forms.ListView.Refreshing) 更新を開始し、 [`IsRefreshing`](xref:Xamarin.Forms.ListView.IsRefreshing) プロパティをに設定し `true` ます。 の内容を更新するために必要なすべてのコードは、 `ListView` イベントのイベントハンドラー、またはによって実行されるメソッドによって実行される必要があり `Refreshing` [`RefreshCommand`](xref:Xamarin.Forms.ListView.RefreshCommand) ます。 が更新されたら `ListView` 、 `IsRefreshing` `false` [`EndRefresh`](xref:Xamarin.Forms.ListView.EndRefresh) 更新が完了したことを示すために、プロパティをに設定するか、メソッドを呼び出す必要があります。
+[`ListView`](xref:Xamarin.Forms.ListView) イベントを発生させて [`Refreshing`](xref:Xamarin.Forms.ListView.Refreshing) 更新を開始し、 [`IsRefreshing`](xref:Xamarin.Forms.ListView.IsRefreshing) プロパティをに設定し `true` ます。 の内容を更新するために必要なすべてのコードは、 `ListView` イベントのイベントハンドラー、またはによって実行されるメソッドによって実行される必要があり `Refreshing` [`RefreshCommand`](xref:Xamarin.Forms.ListView.RefreshCommand) ます。 が更新されたら `ListView` 、 `IsRefreshing` `false` [`EndRefresh`](xref:Xamarin.Forms.ListView.EndRefresh) 更新が完了したことを示すために、プロパティをに設定するか、メソッドを呼び出す必要があります。
 
 > [!NOTE]
 > を定義するときに、コマンドのメソッドを指定して、 [`RefreshCommand`](xref:Xamarin.Forms.ListView.RefreshCommand) `CanExecute` コマンドを有効または無効にすることができます。
@@ -223,4 +223,4 @@ void OnListViewScrolled(object sender, ScrolledEventArgs e)
 
 ## <a name="related-links"></a>関連リンク
 
-- [ListView のインタラクティビティ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-interactivity)
+- [ListView のインタラクティビティ (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-listview-interactivity)

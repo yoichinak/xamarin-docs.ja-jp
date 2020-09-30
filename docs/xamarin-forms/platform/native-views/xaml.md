@@ -10,16 +10,16 @@ ms.date: 03/23/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2c271c3537c6e96497763c67c5b8128148191f16
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 78bd93e2f6556480ae7d2903771d7d6303dda148
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937359"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91558377"
 ---
 # <a name="native-views-in-xaml"></a>XAML のネイティブ ビュー
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)
 
 _IOS、Android、およびユニバーサル Windows プラットフォームからのネイティブビューは、XAML ファイルから直接参照でき Xamarin.Forms ます。プロパティとイベントハンドラーはネイティブビューで設定でき、ビューと対話でき Xamarin.Forms ます。この記事では、XAML ファイルからネイティブビューを使用する方法について説明 Xamarin.Forms します。_
 
@@ -31,7 +31,7 @@ _IOS、Android、およびユニバーサル Windows プラットフォームか
 > [!IMPORTANT]
 > ネイティブビューを使用するすべての XAML ページでは、コンパイルされた XAML を無効にする必要があります。 これは、XAML ページの分離コードクラスを属性で修飾することによって実現でき `[XamlCompilation(XamlCompilationOptions.Skip)]` ます。 XAML のコンパイルの詳細については、「 [」の Xamarin.Forms 「Xaml のコンパイル](~/xamarin-forms/xaml/xamlc.md)」を参照してください。
 
-分離コードファイルからネイティブビューを参照するには、共有アセットプロジェクト (SAP) を使用し、条件付きコンパイルディレクティブを使用してプラットフォーム固有のコードをラップする必要があります。 詳細については、「[コードからのネイティブビューの参照」を](#refer-to-native-views-from-code)参照してください。
+分離コードファイルからネイティブビューを参照するには、共有アセットプロジェクト (SAP) を使用し、条件付きコンパイルディレクティブを使用してプラットフォーム固有のコードをラップする必要があります。 詳細については、「 [コードからのネイティブビューの参照」を](#refer-to-native-views-from-code)参照してください。
 
 ## <a name="consume-native-views"></a>ネイティブビューの使用
 
@@ -63,14 +63,14 @@ _IOS、Android、およびユニバーサル Windows プラットフォームか
 > [!NOTE]
 > スタイルは、オブジェクトによってサポートされるプロパティのみを対象とするため、ネイティブビューでは使用できないことに注意して `BindableProperty` ください。
 
-Android ウィジェットのコンストラクターには、通常、 `Context` 引数として android オブジェクトが必要です。これは、クラスの静的プロパティを通じて使用でき `MainActivity` ます。 そのため、XAML で Android ウィジェットを作成する場合は、 `Context` 通常、 `x:Arguments` `x:Static` マークアップ拡張機能を持つ属性を使用して、オブジェクトをウィジェットのコンストラクターに渡す必要があります。 詳細については、「[ネイティブビューへの引数の引き渡し](#pass-arguments-to-native-views)」を参照してください。
+Android ウィジェットのコンストラクターには、通常、 `Context` 引数として android オブジェクトが必要です。これは、クラスの静的プロパティを通じて使用でき `MainActivity` ます。 そのため、XAML で Android ウィジェットを作成する場合は、 `Context` 通常、 `x:Arguments` `x:Static` マークアップ拡張機能を持つ属性を使用して、オブジェクトをウィジェットのコンストラクターに渡す必要があります。 詳細については、「 [ネイティブビューへの引数の引き渡し](#pass-arguments-to-native-views)」を参照してください。
 
 > [!NOTE]
-> `x:Name`.NET Standard ライブラリプロジェクトまたは共有アセットプロジェクト (SAP) でネイティブビューに名前を付けることはできません。 これにより、ネイティブ型の変数が生成され、コンパイルエラーが発生します。 ただし、SAP が使用されている場合は、ネイティブビューをインスタンスにラップ `ContentView` し、分離コードファイルで取得できます。 詳細については、「[コードからのネイティブビューの参照」を](#refer-to-native-views-from-code)参照してください。
+> `x:Name`.NET Standard ライブラリプロジェクトまたは共有アセットプロジェクト (SAP) でネイティブビューに名前を付けることはできません。 これにより、ネイティブ型の変数が生成され、コンパイルエラーが発生します。 ただし、SAP が使用されている場合は、ネイティブビューをインスタンスにラップ `ContentView` し、分離コードファイルで取得できます。 詳細については、「 [コードからのネイティブビューの参照」を](#refer-to-native-views-from-code)参照してください。
 
 ## <a name="native-bindings"></a>ネイティブバインド
 
-データバインディングは、UI とそのデータソースを同期するために使用され、 Xamarin.Forms アプリケーションがそのデータを表示および操作する方法を簡略化します。 ソースオブジェクトがインターフェイスを実装している `INotifyPropertyChanged` 場合、*ソース*オブジェクトの変更は、バインディングフレームワークによって*ターゲット*オブジェクトに自動的にプッシュされます。また、必要に応じて、*ターゲット*オブジェクトの変更を*ソース*オブジェクトにプッシュすることもできます。
+データバインディングは、UI とそのデータソースを同期するために使用され、 Xamarin.Forms アプリケーションがそのデータを表示および操作する方法を簡略化します。 ソースオブジェクトがインターフェイスを実装している `INotifyPropertyChanged` 場合、 *ソース* オブジェクトの変更は、バインディングフレームワークによって *ターゲット* オブジェクトに自動的にプッシュされます。また、必要に応じて、 *ターゲット* オブジェクトの変更を *ソース* オブジェクトにプッシュすることもできます。
 
 ネイティブビューのプロパティでは、データバインディングを使用することもできます。 次のコード例は、ネイティブビューのプロパティを使用したデータバインディングを示しています。
 
@@ -171,7 +171,7 @@ Android ウィジェットのコンストラクターには、通常、 `Context
 
 ファクトリメソッドを使用して、 [`Typeface.Create`](xref:Android.Graphics.Typeface.Create*) [`TextView.Typeface`](xref:Android.Widget.TextView.Typeface) Android 上の新しいにプロパティを設定し [`Typeface`](xref:Android.Graphics.Typeface) ます。 `Typeface`ファミリ名とスタイルは、属性の子であるメソッド引数によって指定され `x:Arguments` ます。
 
-[`FontFamily`](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.fontfamily)コンストラクターは、 [`TextBlock.FontFamily`](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.fontfamily) プロパティを `FontFamily` ユニバーサル Windows プラットフォーム (UWP) の新しいに設定するために使用されます。 名前は、 `FontFamily` 属性の子であるメソッド引数によって指定され `x:Arguments` ます。
+[`FontFamily`](/uwp/api/Windows.UI.Xaml.Media.FontFamily)コンストラクターは、 [`TextBlock.FontFamily`](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) プロパティを `FontFamily` ユニバーサル Windows プラットフォーム (UWP) の新しいに設定するために使用されます。 名前は、 `FontFamily` 属性の子であるメソッド引数によって指定され `x:Arguments` ます。
 
 > [!NOTE]
 > 引数は、コンストラクターまたはファクトリメソッドで必要な型と一致する必要があります。
@@ -466,9 +466,9 @@ class MySpinner : Spinner
 
 ## <a name="related-links"></a>関連リンク
 
-- [NativeSwitch (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)
-- [Forms2Native (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/forms2native)
-- [NativeViewInsideContentView (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeviewinsidecontentview)
-- [SubclassedNativeControls (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-subclassednativecontrols)
+- [NativeSwitch (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)
+- [Forms2Native (サンプル)](/samples/xamarin/xamarin-forms-samples/forms2native)
+- [NativeViewInsideContentView (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeviewinsidecontentview)
+- [SubclassedNativeControls (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-subclassednativecontrols)
 - [ネイティブ フォーム](~/xamarin-forms/platform/native-forms.md)
 - [XAML での引数の受け渡し](~/xamarin-forms/xaml/passing-arguments.md)

@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Formsマップジオコーディング
+title: Xamarin.Forms マップジオコーディング
 description: この記事では、を使用して geocode マップデータと reverse コードマップデータを逆にする方法について説明し Xamarin.Forms ます。Geocoder クラスをマップします。
 ms.prod: xamarin
 ms.assetid: DE7DB31A-8921-4614-8B49-DAEF1E7B03B3
@@ -10,18 +10,18 @@ ms.date: 10/22/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7e92385f3a82c2d12881be4ff3e54bc47533696d
-ms.sourcegitcommit: ea2abdc789d0e292c3e1700a2b53b92097e0e542
+ms.openlocfilehash: d6a63e952d7466dc4b7f2d3e8cfc39d6c63e4daf
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517494"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559975"
 ---
-# <a name="no-locxamarinforms-map-geocoding"></a>Xamarin.Formsマップジオコーディング
+# <a name="no-locxamarinforms-map-geocoding"></a>Xamarin.Forms マップジオコーディング
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
-[`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps)名前空間は、 [`Geocoder`](xref:Xamarin.Forms.Maps.Geocoder) オブジェクトに格納されている文字列のアドレスと緯度、経度の座標を変換するクラスを提供し [`Position`](xref:Xamarin.Forms.Maps.Position) ます。 構造体の詳細については [`Position`](xref:Xamarin.Forms.Maps.Position) 、「[マップの位置と距離](position-distance.md)」を参照してください。
+[`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps)名前空間は、 [`Geocoder`](xref:Xamarin.Forms.Maps.Geocoder) オブジェクトに格納されている文字列のアドレスと緯度、経度の座標を変換するクラスを提供し [`Position`](xref:Xamarin.Forms.Maps.Position) ます。 構造体の詳細については [`Position`](xref:Xamarin.Forms.Maps.Position) 、「 [マップの位置と距離](position-distance.md)」を参照してください。
 
 > [!NOTE]
 > 代替のジオコーディング API は avalible に Xamarin.Essentials あります。 Api は、 Xamarin.Essentials `Geocoding` この api によって返される文字列ではなく、アドレスをジオコーディングするときに、構造化されたアドレスデータを提供します。 詳細については、「 [ Xamarin.Essentials ジオコーディング](~/essentials/geocoding.md)」を参照してください。
@@ -60,6 +60,6 @@ string address = possibleAddresses.FirstOrDefault();
 
 ## <a name="related-links"></a>関連リンク
 
-- [Maps サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
-- [Xamarin.Formsマップの位置と距離](position-distance.md)
+- [Maps サンプル](/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+- [Xamarin.Forms マップの位置と距離](position-distance.md)
 - [Geocoder API](xref:Xamarin.Forms.Maps.Geocoder)

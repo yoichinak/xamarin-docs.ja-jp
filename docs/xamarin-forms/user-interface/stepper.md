@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Formsステッパ
+title: Xamarin.Forms ステッパ
 description: Xamarin.Formsステッパを使用すると、ユーザーは値の範囲から数値を選択できます。 これは、マイナス記号とプラス記号の付いた2つのボタンで構成されています。 2つのボタンを操作すると、選択した値が徐々に変化します。
 ms.prod: xamarin
 ms.assetid: 62571B3E-D84B-4F52-9FC7-C105D6733B16
@@ -10,14 +10,14 @@ ms.date: 10/17/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4f071530fb17de44d8ede786ca1b42f5e11f4f7c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 390bca8cb74fd2da725724769956b164e0264173
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84130547"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91558759"
 ---
-# <a name="xamarinforms-stepper"></a>Xamarin.Formsステッパ
+# <a name="no-locxamarinforms-stepper"></a>Xamarin.Forms ステッパ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)
 
@@ -27,29 +27,29 @@ _値の範囲から数値を選択するには、ステッパを使用します�
 
 は、 [`Stepper`](xref:Xamarin.Forms.Stepper) 型の4つのプロパティを定義し `double` ます。
 
-- [`Increment`](xref:Xamarin.Forms.Stepper.Increment)選択した値を変更する量を指定します。既定値は1です。
-- [`Minimum`](xref:Xamarin.Forms.Stepper.Minimum)範囲の最小値を指定します。既定値は0です。
-- [`Maximum`](xref:Xamarin.Forms.Stepper.Maximum)範囲の最大値を指定します。既定値は100です。
-- [`Value`](xref:Xamarin.Forms.Stepper.Value)ステッパの値を指定します。この値はとの間で、 `Minimum` `Maximum` 既定値は0です。
+- [`Increment`](xref:Xamarin.Forms.Stepper.Increment) 選択した値を変更する量を指定します。既定値は1です。
+- [`Minimum`](xref:Xamarin.Forms.Stepper.Minimum) 範囲の最小値を指定します。既定値は0です。
+- [`Maximum`](xref:Xamarin.Forms.Stepper.Maximum) 範囲の最大値を指定します。既定値は100です。
+- [`Value`](xref:Xamarin.Forms.Stepper.Value) ステッパの値を指定します。この値はとの間で、 `Minimum` `Maximum` 既定値は0です。
 
 これらのプロパティはすべて、オブジェクトによってバックアップされ [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ます。 [`Value`](xref:Xamarin.Forms.Stepper.Value)プロパティには、の既定のバインディングモードがあります。これは、 [`BindingMode.TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay) [モデルビュービューモデル (MVVM)](~/xamarin-forms/enterprise-application-patterns/mvvm.md)アーキテクチャを使用するアプリケーションでバインディングソースとして適切であることを意味します。
 
 > [!WARNING]
-> 内部的には、 [`Stepper`](xref:Xamarin.Forms.Stepper) [`Minimum`](xref:Xamarin.Forms.Stepper.Minimum) はよりも小さいことを保証し [`Maximum`](xref:Xamarin.Forms.Stepper.Maximum) ます。 またはが `Minimum` `Maximum` より小さい値に設定されている場合は `Minimum` `Maximum` 、例外が発生します。 プロパティとプロパティの設定の詳細につい `Minimum` `Maximum` ては、「[予防策](#precautions)」を参照してください。
+> 内部的には、 [`Stepper`](xref:Xamarin.Forms.Stepper) [`Minimum`](xref:Xamarin.Forms.Stepper.Minimum) はよりも小さいことを保証し [`Maximum`](xref:Xamarin.Forms.Stepper.Maximum) ます。 またはが `Minimum` `Maximum` より小さい値に設定されている場合は `Minimum` `Maximum` 、例外が発生します。 プロパティとプロパティの設定の詳細につい `Minimum` `Maximum` ては、「 [予防策](#precautions) 」を参照してください。
 
 は、 [`Stepper`](xref:Xamarin.Forms.Stepper) [`Value`](xref:Xamarin.Forms.Stepper.Value) との間であるように、プロパティを強制し [`Minimum`](xref:Xamarin.Forms.Stepper.Minimum) [`Maximum`](xref:Xamarin.Forms.Stepper.Maximum) ます。 プロパティ `Minimum` がプロパティよりも大きい値に設定されている場合、 `Value` は `Stepper` `Value` プロパティをに設定し `Minimum` ます。 同様に、 `Maximum` がよりも小さい値に設定されている場合は、 `Value` `Stepper` プロパティをに設定し `Value` `Maximum` ます。
 
-[`Stepper`](xref:Xamarin.Forms.Stepper)の [`ValueChanged`](xref:Xamarin.Forms.Stepper.ValueChanged) [`Value`](xref:Xamarin.Forms.Stepper.Value) ユーザー操作によって、 `Stepper` またはアプリケーションによってプロパティが直接設定されたときに、が変更されたときに発生するイベントを定義し `Value` ます。 `ValueChanged` `Value` 前の段落で説明したように、プロパティが強制変換された場合にもイベントが発生します。
+[`Stepper`](xref:Xamarin.Forms.Stepper) の [`ValueChanged`](xref:Xamarin.Forms.Stepper.ValueChanged) [`Value`](xref:Xamarin.Forms.Stepper.Value) ユーザー操作によって、 `Stepper` またはアプリケーションによってプロパティが直接設定されたときに、が変更されたときに発生するイベントを定義し `Value` ます。 `ValueChanged` `Value` 前の段落で説明したように、プロパティが強制変換された場合にもイベントが発生します。
 
 [`ValueChangedEventArgs`](xref:Xamarin.Forms.ValueChangedEventArgs)イベントに付随するオブジェクトに [`ValueChanged`](xref:Xamarin.Forms.Stepper.ValueChanged) は、型と型の2つのプロパティがあり `double` [`OldValue`](xref:Xamarin.Forms.ValueChangedEventArgs.OldValue) [`NewValue`](xref:Xamarin.Forms.ValueChangedEventArgs.NewValue) ます。 イベントが発生した時点で、の値 `NewValue` は [`Value`](xref:Xamarin.Forms.Stepper.Value) オブジェクトのプロパティと同じです [`Stepper`](xref:Xamarin.Forms.Stepper) 。
 
 ## <a name="basic-stepper-code-and-markup"></a>基本的なステッパコードとマークアップ
 
-[**Stepperdemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)サンプルには、機能的には異なる3つのページが含まれていますが、さまざまな方法で実装されています。 最初のページでは C# コードのみを使用し、2番目のページでは XAML をコード内のイベントハンドラーと共に使用します。3番目のページでは、XAML ファイルのデータバインディングを使用してイベントハンドラーを回避できます。
+[**Stepperdemos**](/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)サンプルには、機能的には異なる3つのページが含まれていますが、さまざまな方法で実装されています。 最初のページでは C# コードのみを使用し、2番目のページでは XAML をコード内のイベントハンドラーと共に使用します。3番目のページでは、XAML ファイルのデータバインディングを使用してイベントハンドラーを回避できます。
 
 ### <a name="creating-a-stepper-in-code"></a>コードでのステッパの作成
 
-[**Stepperdemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)サンプルの「**基本的なステッパコード**」ページでは、 [`Stepper`](xref:Xamarin.Forms.Stepper) コード内にとの2つのオブジェクトを作成する方法を示してい [`Label`](xref:Xamarin.Forms.Label) ます。
+[**Stepperdemos**](/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)サンプルの「**基本的なステッパコード**」ページでは、 [`Stepper`](xref:Xamarin.Forms.Stepper) コード内にとの2つのオブジェクトを作成する方法を示してい [`Label`](xref:Xamarin.Forms.Label) ます。
 
 ```csharp
 public class BasicStepperCodePage : ContentPage
@@ -95,11 +95,11 @@ public class BasicStepperCodePage : ContentPage
 
 は、 [`Stepper`](xref:Xamarin.Forms.Stepper) [`Maximum`](xref:Xamarin.Forms.Stepper.Maximum) プロパティが360、プロパティが30であるように初期化され [`Increment`](xref:Xamarin.Forms.Stepper.Increment) ます。 を操作 `Stepper` すると、 [`Minimum`](xref:Xamarin.Forms.Stepper.Minimum) `Maximum` プロパティの値に基づいて、選択した値がに変更され `Increment` ます。 [`ValueChanged`](xref:Xamarin.Forms.Stepper.ValueChanged)のハンドラーは、 `Stepper` [`Value`](xref:Xamarin.Forms.Stepper.Value) オブジェクトのプロパティを使用し `stepper` [`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation) て最初ののプロパティを設定 [`Label`](xref:Xamarin.Forms.Label) し、メソッドを `string.Format` イベント引数のプロパティと共に使用して `NewValue` [`Text`](xref:Xamarin.Forms.Label.Text) 、2番目のプロパティを設定し `Label` ます。 の現在の値を取得するための2つの方法 `Stepper` は、交換可能です。
 
-次のスクリーンショットは、**基本的なステッパコード**ページを示しています。
+次のスクリーンショットは、 **基本的なステッパコード** ページを示しています。
 
 [![基本的なステッパコード](stepper-images/basic-stepper-code.png "基本的なステッパコード")](stepper-images/basic-stepper-code-large.png#lightbox)
 
-2番目のは [`Label`](xref:Xamarin.Forms.Label) 、が操作されるまで "(初期化されていません)" というテキストを表示し [`Stepper`](xref:Xamarin.Forms.Stepper) ます。これにより、最初の [`ValueChanged`](xref:Xamarin.Forms.Stepper.ValueChanged) イベントが発生します。
+2番目のは [`Label`](xref:Xamarin.Forms.Label)  、が操作されるまで "(初期化されていません)" というテキストを表示し [`Stepper`](xref:Xamarin.Forms.Stepper) ます。これにより、最初の [`ValueChanged`](xref:Xamarin.Forms.Stepper.ValueChanged) イベントが発生します。
 
 ### <a name="creating-a-stepper-in-xaml"></a>XAML でのステッパの作成
 
@@ -161,7 +161,7 @@ double value = stepper.Value;
 
 ### <a name="data-binding-the-stepper"></a>ステッパのデータバインディング
 
-[**基本的なステッパのバインド**] ページには、 [`Value`](xref:Xamarin.Forms.Stepper.Value) [データバインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)を使用してイベントハンドラーを削除するほぼ同等のアプリケーションを作成する方法が示されています。
+[ **基本的なステッパのバインド** ] ページには、 [`Value`](xref:Xamarin.Forms.Stepper.Value) [データバインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)を使用してイベントハンドラーを削除するほぼ同等のアプリケーションを作成する方法が示されています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -226,7 +226,7 @@ XAML にも同じ問題があります。 が常により大きいことを保�
          Maximum="-180" ... />
 ```
 
-プロパティは、 [`Value`](xref:Xamarin.Forms.Stepper.Value) 常に値以上で、以下の値以上 [`Minimum`](xref:Xamarin.Forms.Stepper.Minimum) [`Maximum`](xref:Xamarin.Forms.Stepper.Maximum) です。 `Value`がその範囲外の値に設定されている場合、値はその範囲内に強制的に変換されますが、例外は発生しません。 たとえば、次のコードでは例外が発生し*ません*。
+プロパティは、 [`Value`](xref:Xamarin.Forms.Stepper.Value) 常に値以上で、以下の値以上 [`Minimum`](xref:Xamarin.Forms.Stepper.Minimum) [`Maximum`](xref:Xamarin.Forms.Stepper.Maximum) です。 `Value`がその範囲外の値に設定されている場合、値はその範囲内に強制的に変換されますが、例外は発生しません。 たとえば、次のコードでは例外が発生し *ません* 。
 
 ```csharp
 Stepper stepper = new Stepper
@@ -261,5 +261,5 @@ Stepper stepper = new Stepper
 
 ## <a name="related-links"></a>関連リンク
 
-- [ステッパデモのサンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)
+- [ステッパデモのサンプル](/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)
 - [ステッパ API](xref:Xamarin.Forms.Stepper)

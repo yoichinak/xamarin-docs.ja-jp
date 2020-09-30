@@ -10,12 +10,12 @@ ms.date: 07/02/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6bc61eadb40a66c278955936e15158f34709fd18
-ms.sourcegitcommit: aeefe667156ca8d3ee2ee21d9bec0fa629589e33
+ms.openlocfilehash: 37ee7fe2278176024dc1662b87b494e84344b98c
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90928648"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91558961"
 ---
 # <a name="no-locxamarinforms-shapes-path-transforms"></a>Xamarin.Forms 図形: パスの変換
 
@@ -400,5 +400,5 @@ Xamarin.Forms には、オブジェクトへの複数の変換の適用をサポ
 
 ## <a name="related-links"></a>関連リンク
 
-- [図形のデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [図形のデモ (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 - [Xamarin.Forms 図形](index.md)

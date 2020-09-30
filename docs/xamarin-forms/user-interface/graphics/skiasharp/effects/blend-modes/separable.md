@@ -10,12 +10,12 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c1939c30cbefdbf8d6546761a8c6ac7199bfff62
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0fd934a305e34bb7406a0379a0882873e3400fe8
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139686"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91558363"
 ---
 # <a name="the-separable-blend-modes"></a>分離可能 blend モード
 
@@ -29,7 +29,7 @@ ms.locfileid: "84139686"
 
 ビットマップは、暗すぎるか、または小さすぎることがよくあります。 分離可能な blend モードを使用すると、imabe を明るくしたり暗くしたりできます。  実際には、列挙型の分離可能な blend モードのうちの2つ [`SKBlendMode`](xref:SkiaSharp.SKBlendMode) はとという名前です `Lighten` `Darken` 。 
 
-この2つのモードについては、「**明るくと暗く**」ページで説明しています。 XAML ファイルは、2つの `SKCanvasView` オブジェクトと2つのビューをインスタンス化し `Slider` ます。
+この2つのモードについては、「 **明るくと暗く** 」ページで説明しています。 XAML ファイルは、2つの `SKCanvasView` オブジェクトと2つのビューをインスタンス化し `Slider` ます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -130,7 +130,7 @@ public partial class LightenAndDarkenPage : ContentPage
 
 [![明るくして暗くする](separable-images/LightenAndDarken.png "明るくして暗くする")](separable-images/LightenAndDarken-Large.png#lightbox)
 
-このプログラムは、分離可能な blend モードを使用する通常の方法を示しています。変換先は、何らかの種類の画像であり、非常に多くの場合、ビットマップです。 ソースは、 `SKPaint` `BlendMode` プロパティが分離可能な blend モードに設定されたオブジェクトを使用して表示される四角形です。 四角形は、(ここに示すように) 純色でもグラデーションでもかまいません。 透明度は、分離可能な blend モードでは通常使用され_ません_。
+このプログラムは、分離可能な blend モードを使用する通常の方法を示しています。変換先は、何らかの種類の画像であり、非常に多くの場合、ビットマップです。 ソースは、 `SKPaint` `BlendMode` プロパティが分離可能な blend モードに設定されたオブジェクトを使用して表示される四角形です。 四角形は、(ここに示すように) 純色でもグラデーションでもかまいません。 透明度は、分離可能な blend モードでは通常使用され _ません_ 。
 
 このプログラムを試してみると、これら2つの blend モードではイメージの明るさと暗くが統一されていないことがわかります。 代わりに、に `Slider` よって、ある種のしきい値が設定されているように見えます。 たとえば、モードのを大きくすると、 `Slider` `Lighten` 明るい領域が同じままでも、画像の暗い領域が最初に明るくなります。
 
@@ -146,31 +146,31 @@ public partial class LightenAndDarkenPage : ContentPage
  `Or = min(Dr, Sr)` `Og = min(Dg, Sg)`
  `Ob = min(Db, Sb)`
 
-赤、緑、および青のコンポーネントはそれぞれ個別に処理されるため、これらの blend モードは_分離_可能な blend モードと呼ばれます。 このため、ターゲットとソースの色には、省略形**Dc**と**Sc**を使用できます。また、計算は、赤、緑、および青の各コンポーネントに個別に適用されることがわかります。
+赤、緑、および青のコンポーネントはそれぞれ個別に処理されるため、これらの blend モードは _分離_ 可能な blend モードと呼ばれます。 このため、ターゲットとソースの色には、省略形 **Dc** と **Sc** を使用できます。また、計算は、赤、緑、および青の各コンポーネントに個別に適用されることがわかります。
 
 次の表に、すべての分離可能な blend モードの概要とその説明を示します。 2番目の列には、変更されていないソースの色が表示されます。
 
 | Blend モード   | 変更なし | 操作 |
 | ------------ | --------- | --------- |
 | `Plus`       | Black     | 色の追加による明るく: Sc + Dc |
-| `Modulate`   | White     | 色を乗算して暗くする: Sc ·修飾 | 
+| `Modulate`   | 白     | 色を乗算して暗くする: Sc ·修飾 | 
 | `Screen`     | Black     | 補完の製品を補完する: Sc + Dc &ndash; Sc ·修飾 |
-| `Overlay`    | グレー      | 逆`HardLight` |
-| `Darken`     | White     | 最小色: 最小値 (Sc、Dc) |
+| `Overlay`    | グレー      | 逆 `HardLight` |
+| `Darken`     | 白     | 最小色: 最小値 (Sc、Dc) |
 | `Lighten`    | Black     | 最大色: 最大値 (Sc、Dc) |
 | `ColorDodge` | Black     | ソースに基づいてターゲットを明るくする |
-| `ColorBurn`  | White     | ソースに基づいて変換先を暗くする | 
+| `ColorBurn`  | 白     | ソースに基づいて変換先を暗くする | 
 | `HardLight`  | グレー      | 強いスポットライトの効果と同様 |
 | `SoftLight`  | グレー      | ソフトスポットライトの効果と同様 | 
 | `Difference` | Black     | 淡い: Abs (Dc Sc) から暗い方を減算します。 &ndash; | 
 | `Exclusion`  | Black     | と似て `Difference` いますがコントラストが低い |
-| `Multiply`   | White     | 色を乗算して暗くする: Sc ·修飾 |
+| `Multiply`   | 白     | 色を乗算して暗くする: Sc ·修飾 |
 
-より詳細なアルゴリズムについては、W3C[**合成とブレンドレベル 1**](https://www.w3.org/TR/compositing-1/)仕様と Skia [**Skblendmode リファレンスを参照**](https://skia.org/user/api/SkBlendMode_Reference)してください。ただし、これらの2つのソースの表記は同じではありません。 は、通常、 `Plus` Porter-Duff blend モードと見なされ、W3C 仕様には含まれていないことに注意してください `Modulate` 。
+より詳細なアルゴリズムについては、W3C [**合成とブレンドレベル 1**](https://www.w3.org/TR/compositing-1/) 仕様と Skia [**Skblendmode リファレンスを参照**](https://skia.org/user/api/SkBlendMode_Reference)してください。ただし、これらの2つのソースの表記は同じではありません。 は、通常、 `Plus` Porter-Duff blend モードと見なされ、W3C 仕様には含まれていないことに注意してください `Modulate` 。
 
 ソースが透明である場合、を除くすべての分離可能な blend モードでは、 `Modulate` blend モードでは効果がありません。 前に見たように、 `Modulate` blend モードでは、乗算にアルファチャネルが組み込まれています。 それ以外の場合、 `Modulate` はと同じ効果を持ち `Multiply` ます。 
 
-とという2つのモードに注意して `ColorDodge` `ColorBurn` ください。 「_覆い焼き_」と「焼き_込み_」という言葉は、写真の暗室プラクティスに由来しています。 たまにを使用すると、光が負の値になるように写真を印刷できます。 ライトを使用しない場合、印刷は白になります。 印刷により長い時間がかかるほど、印刷が暗くなります。 多くの場合、紙または小さいオブジェクトを使用して、ある種の光が印刷の特定の部分に落下するのをブロックし、その領域を明るくしています。 これは_dodging_と呼ばれています。 反対に、穴がある不透明なマテリアル (または、ほとんどの光を手でブロックする) を使用して、特定のスポットに光を追加して、_書き込み_と呼ばれる暗くすることができます。
+とという2つのモードに注意して `ColorDodge` `ColorBurn` ください。 「 _覆い焼き_ 」と「焼き _込み_ 」という言葉は、写真の暗室プラクティスに由来しています。 たまにを使用すると、光が負の値になるように写真を印刷できます。 ライトを使用しない場合、印刷は白になります。 印刷により長い時間がかかるほど、印刷が暗くなります。 多くの場合、紙または小さいオブジェクトを使用して、ある種の光が印刷の特定の部分に落下するのをブロックし、その領域を明るくしています。 これは _dodging_と呼ばれています。 反対に、穴がある不透明なマテリアル (または、ほとんどの光を手でブロックする) を使用して、特定のスポットに光を追加して、 _書き込み_と呼ばれる暗くすることができます。
 
 **覆い焼きと書き込み**プログラムは、**明るく、暗く**するのとよく似ています。 XAML ファイルは同じように構成されていますが、要素名が異なるため、分離コードファイルも同様に似ていますが、これら2つの blend モードの効果は大きく異なります。
 
@@ -182,7 +182,7 @@ public partial class LightenAndDarkenPage : ContentPage
 
 ## <a name="exploring-the-separable-blend-modes"></a>分離可能 blend モードの調査
 
-[**分離可能な Blend モード**] ページでは、すべての分離可能な blend モードを調べることができます。 ブレンドモードの1つを使用して、ビットマップの変換先と色付きの四角形のソースが表示されます。 
+[ **分離可能な Blend モード** ] ページでは、すべての分離可能な blend モードを調べることができます。 ブレンドモードの1つを使用して、ビットマップの変換先と色付きの四角形のソースが表示されます。 
 
 XAML ファイルでは、 `Picker` (blend モードを選択するための) と4つのスライダーが定義されています。 最初の3つのスライダーを使用すると、ソースの赤、緑、および青のコンポーネントを設定できます。 4番目のスライダーは、灰色の網掛けを設定してこれらの値をオーバーライドすることを目的としています。 個々のスライダーは識別されませんが、色はその機能を示しています。
 
@@ -334,7 +334,7 @@ public partial class SeparableBlendModesPage : ContentPage
 
 ## <a name="additive-and-subtractive-primary-colors"></a>加法および減法混色の原色
 
-[**原色**] ページでは、赤、緑、および青の3つの重なり合う円が描画されます。
+[ **原色** ] ページでは、赤、緑、および青の3つの重なり合う円が描画されます。
 
 [![加法主色](separable-images/PrimaryColors-Additive.png "加法主色")](separable-images/PrimaryColors-Additive.png#lightbox)
 
@@ -430,5 +430,5 @@ public class PrimaryColorsPage : ContentPage
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

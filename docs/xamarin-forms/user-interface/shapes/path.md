@@ -1,5 +1,5 @@
 ---
-title: 'Xamarin.Forms図形: パス'
+title: 'Xamarin.Forms 図形: パス'
 description: Xamarin.FormsPath クラスを使用して、曲線や複雑な形状を描画できます。
 ms.prod: xamarin
 ms.assetid: B29486F4-9A5E-4588-ABDF-7EB1E69B9AE6
@@ -10,18 +10,18 @@ ms.date: 06/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 274ff08d7fffc1cd3a817906e14ebddfac2c9337
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 80b0bcd84602fc999764e7e0896a44f83401a9dd
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918252"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91558896"
 ---
-# <a name="no-locxamarinforms-shapes-path"></a>Xamarin.Forms図形: パス
+# <a name="no-locxamarinforms-shapes-path"></a>Xamarin.Forms 図形: パス
 
 ![プレリリース API](~/media/shared/preview.png)
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 `Path`クラスはクラスから派生 `Shape` し、曲線や複雑な図形を描画するために使用できます。 これらの曲線と図形は、多くの場合、オブジェクトを使用して記述され `Geometry` ます。 クラスから継承されるプロパティの詳細につい `Path` `Shape` ては、「 [ Xamarin.Forms 図形](index.md)」を参照してください。
 
@@ -30,7 +30,7 @@ ms.locfileid: "87918252"
 - `Data``Geometry`描画する図形を指定する型の。
 - `RenderTransform`型の `Transform` 。これは、描画される前のパスのジオメトリに適用される変換を表します。
 
-これらのプロパティは、オブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。これは、データバインディングのターゲットとスタイルを設定できることを意味します。
+これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトが基になっています。つまり、これらは、データ バインディングの対象にすることができ、スタイルを設定できます。
 
 変換の詳細については、「 [ Xamarin.Forms パス変換](path-transforms.md)」を参照してください。
 
@@ -53,7 +53,7 @@ ms.locfileid: "87918252"
       HorizontalOptions="Start" />
 ```
 
-`Data`文字列は `M` 、パスの絶対開始点を確立するによって示される move コマンドで始まります。 `L`は line コマンドです。このコマンドは、始点から指定された終点までの直線を作成します。 `Z`close コマンドです。このコマンドは、現在の点を開始点につなげる線を作成します。 結果は三角形です。
+`Data`文字列は `M` 、パスの絶対開始点を確立するによって示される move コマンドで始まります。 `L` は line コマンドです。このコマンドは、始点から指定された終点までの直線を作成します。 `Z` close コマンドです。このコマンドは、現在の点を開始点につなげる線を作成します。 結果は三角形です。
 
 ![パスの三角形](path-images/triangle.png "パスの三角形")
 
@@ -66,7 +66,7 @@ ms.locfileid: "87918252"
 
 曲線と図形は `Geometry` 、オブジェクトのプロパティを設定するために使用されるオブジェクトを使用して記述できます `Path` `Data` 。 さまざまな `Geometry` オブジェクトから選択できます。 `EllipseGeometry`、`LineGeometry`、`RectangleGeometry` の各クラスは、比較的単純な図形を記述します。 より複雑な図形を作成したり、曲線を作成したりするには、`PathGeometry` を使用します。
 
-`PathGeometry`オブジェクトは1つ以上のオブジェクトで構成され `PathFigure` ます。 各 `PathFigure` オブジェクトは、異なる形状を表します。 各 `PathFigure` オブジェクトは `PathSegment` 、それぞれが図形の接続部分を表す1つ以上のオブジェクトで構成されています。 セグメントの種類には、、、およびの各クラスが含まれ `LineSegment` `BezierSegment` `ArcSegment` ます。
+`PathGeometry` オブジェクトは1つ以上のオブジェクトで構成され `PathFigure` ます。 各 `PathFigure` オブジェクトは、異なる形状を表します。 各 `PathFigure` オブジェクトは `PathSegment` 、それぞれが図形の接続部分を表す1つ以上のオブジェクトで構成されています。 セグメントの種類には、、、およびの各クラスが含まれ `LineSegment` `BezierSegment` `ArcSegment` ます。
 
 次の XAML の例は、オブジェクトを使用して三角形を描画する方法を示してい `PathGeometry` ます。
 
@@ -103,8 +103,8 @@ ms.locfileid: "87918252"
 
 ## <a name="related-links"></a>関連リンク
 
-- [図形のデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
-- [Xamarin.Forms図形](index.md)
-- [Xamarin.Formsジオメトリ](geometries.md)
-- [Xamarin.Formsパスマークアップ構文](path-markup-syntax.md)
-- [Xamarin.Formsパスの変換](path-transforms.md)
+- [図形のデモ (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [Xamarin.Forms 図形](index.md)
+- [Xamarin.Forms ジオメトリ](geometries.md)
+- [Xamarin.Forms パスマークアップ構文](path-markup-syntax.md)
+- [Xamarin.Forms パスの変換](path-transforms.md)

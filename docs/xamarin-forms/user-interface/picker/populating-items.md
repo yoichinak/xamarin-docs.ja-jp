@@ -10,12 +10,12 @@ ms.date: 02/26/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8872c6748ba778a2622d82803d580c781bd282cd
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: d65352022057ce32bd969950c2165ad530c05bbb
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139634"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559624"
 ---
 # <a name="adding-data-to-a-pickers-items-collection"></a>ピッカーの項目コレクションへのデータの追加
 
@@ -62,7 +62,7 @@ picker.Items.Add("Japanese Macaque");
 は、一度 [`Picker`](xref:Xamarin.Forms.Picker) に1つの項目の選択をサポートします。 ユーザーが項目を選択すると、 [`SelectedIndexChanged`](xref:Xamarin.Forms.Picker.SelectedIndexChanged) イベントが発生し、 [`SelectedIndex`](xref:Xamarin.Forms.Picker.SelectedIndex) プロパティはリスト内で選択された項目のインデックスを表す整数に更新されます。 プロパティは、ユーザーが選択した `SelectedIndex` 項目を示す0から始まる数値です。 項目が選択されていない場合 (が最初に作成されて初期化された場合 `Picker` )、 `SelectedIndex` は-1 になります。
 
 > [!NOTE]
-> での項目選択の動作は、 [`Picker`](xref:Xamarin.Forms.Picker) プラットフォーム固有の iOS でカスタマイズできます。 詳細については、「[ピッカー項目の選択の制御](~/xamarin-forms/platform/ios/picker-selection.md)」を参照してください。
+> での項目選択の動作は、 [`Picker`](xref:Xamarin.Forms.Picker) プラットフォーム固有の iOS でカスタマイズできます。 詳細については、「 [ピッカー項目の選択の制御](~/xamarin-forms/platform/ios/picker-selection.md)」を参照してください。
 
 次のコード例は、イベント `OnPickerSelectedIndexChanged` の発生時に実行されるイベントハンドラーメソッドを示してい [`SelectedIndexChanged`](xref:Xamarin.Forms.Picker.SelectedIndexChanged) ます。
 
@@ -86,5 +86,5 @@ void OnPickerSelectedIndexChanged(object sender, EventArgs e)
 
 ## <a name="related-links"></a>関連リンク
 
-- [ピッカーのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-pickerdemo)
+- [ピッカーのデモ (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-pickerdemo)
 - [ピッカー](xref:Xamarin.Forms.Picker)

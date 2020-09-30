@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms大きい
+title: Xamarin.Forms 大きい
 description: このガイドでは ListView を紹介します。これを使用すると、 Xamarin.Forms 対話形式でデータを表示できます。
 ms.prod: xamarin
 ms.assetid: FEFDF7E0-720F-4BD1-863F-4477226AA695
@@ -10,18 +10,18 @@ ms.date: 09/04/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a1ff8dd5c8a8a4051cea8ce4b288c42bdbaa8d31
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: fa3769d2533a5a6b482c92b832d54506e4954250
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139907"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560144"
 ---
-# <a name="xamarinforms-listview"></a>Xamarin.Forms大きい
+# <a name="no-locxamarinforms-listview"></a>Xamarin.Forms 大きい
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistview)
 
-[`ListView`](xref:Xamarin.Forms.ListView)は、データのリストを表示するためのビューです。特に、スクロールが必要な長いリストです。
+[`ListView`](xref:Xamarin.Forms.ListView) は、データのリストを表示するためのビューです。特に、スクロールが必要な長いリストです。
 
 > [!IMPORTANT]
 > [`CollectionView`](xref:Xamarin.Forms.CollectionView) は、さまざまなレイアウト仕様を使用してデータを一覧表示するためのビューです。 これは、より柔軟でパフォーマンスの高い代替手段を提供することを目的として [`ListView`](xref:Xamarin.Forms.ListView) います。 詳細は、「[Xamarin.Forms CollectionView](~/xamarin-forms/user-interface/collectionview/index.md)」を参照してください。
@@ -38,7 +38,7 @@ ms.locfileid: "84139907"
 
 インスタンスにデータをバインドする方法の詳細につい `ListView` ては、「 [ListView データソース](~/xamarin-forms/user-interface/listview/data-and-databinding.md)」を参照してください。
 
-## <a name="components"></a>Components
+## <a name="components"></a>コンポーネント
 
 `ListView`コントロールには、各プラットフォームのネイティブ機能を実行するために使用できる多数のコンポーネントがあります。 これらのコンポーネントは、次のセクションで定義されています。
 
@@ -59,7 +59,7 @@ ms.locfileid: "84139907"
 - やなどの[組み込みセル](customizing-cell-appearance.md#built-in-cells)は、 `TextCell` `ImageCell` ネイティブコントロールに対応しており、特にパフォーマンスに優れています。
   - には、 [`TextCell`](customizing-cell-appearance.md#textcell) テキストの文字列が表示されます。オプションで、詳細テキストを表示できます。 詳細テキストは、アクセントカラーの小さいフォントで2行目としてレンダリングされます。
   - には、 [`ImageCell`](customizing-cell-appearance.md#imagecell) 画像とテキストが表示されます。 は、左側にイメージを含むとして表示され `TextCell` ます。
-- [カスタムセル](customizing-cell-appearance.md#custom-cells)は、複雑なデータを表示するために使用されます。 たとえば、カスタムセルを使用して、アルバムとアーティストを含む曲の一覧を表示できます。
+- [カスタムセル](customizing-cell-appearance.md#custom-cells) は、複雑なデータを表示するために使用されます。 たとえば、カスタムセルを使用して、アルバムとアーティストを含む曲の一覧を表示できます。
 
 次のスクリーンショットは、with ImageCell items を示してい `ListView` ます。
 
@@ -71,9 +71,9 @@ ms.locfileid: "84139907"
 
 クラスは、 `ListView` さまざまな相互作用スタイルをサポートしています。
 
-- [プルから更新](interactivity.md#pull-to-refresh)を行うことで、ユーザーはコンテンツを最新の状態に `ListView` 更新できます。
-- [コンテキストアクション](interactivity.md#context-actions)を使用すると、開発者は個々のリスト項目に対してカスタムアクションを指定できます。 たとえば、iOS へのスワイプ操作や、Android での長いタップ操作を実装できます。
-- [選択](interactivity.md#selection-and-taps)すると、開発者はリスト項目の選択イベントおよび deselection イベントに機能をアタッチできます。
+- [プルから更新](interactivity.md#pull-to-refresh) を行うことで、ユーザーはコンテンツを最新の状態に `ListView` 更新できます。
+- [コンテキストアクション](interactivity.md#context-actions) を使用すると、開発者は個々のリスト項目に対してカスタムアクションを指定できます。 たとえば、iOS へのスワイプ操作や、Android での長いタップ操作を実装できます。
+- [選択](interactivity.md#selection-and-taps) すると、開発者はリスト項目の選択イベントおよび deselection イベントに機能をアタッチできます。
 
 次のスクリーンショットは、 `ListView` コンテキストアクションを含むを示しています。
 
@@ -83,10 +83,10 @@ ms.locfileid: "84139907"
 
 ## <a name="related-links"></a>関連リンク
 
-- [ListView の操作 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistview)
-- [双方向のバインディング (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-switchentrytwobinding)
-- [組み込みセル (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-builtincells)
-- [カスタムセル (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-customcells)
-- [グループ化 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
-- [カスタムレンダラービュー (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative/)
-- [ListView のインタラクティビティ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-interactivity)
+- [ListView の操作 (サンプル)](/samples/xamarin/xamarin-forms-samples/workingwithlistview)
+- [双方向のバインディング (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-listview-switchentrytwobinding)
+- [組み込みセル (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-listview-builtincells)
+- [カスタムセル (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-listview-customcells)
+- [グループ化 (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
+- [カスタムレンダラービュー (サンプル)](/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative/)
+- [ListView のインタラクティビティ (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-listview-interactivity)

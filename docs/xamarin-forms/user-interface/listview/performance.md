@@ -10,12 +10,12 @@ ms.date: 12/11/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e2b8e057d9687cd0a472451fc73cc578f9358277
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: c010ac513cec8ac59927325dbe80ad1c8ac556d8
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139889"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560001"
 ---
 # <a name="listview-performance"></a>ListView のパフォーマンス
 
@@ -29,9 +29,9 @@ ms.locfileid: "84139889"
 
 ListViews は、画面に収まるよりも多くのデータを表示するためによく使用されます。 たとえば、音楽アプリには何千ものエントリを含む曲のライブラリがある場合があります。 エントリごとに項目を作成すると、貴重なメモリが無駄になり、パフォーマンスが低下します。 行を頻繁に作成して破棄するには、アプリケーションが常にオブジェクトをインスタンス化してクリーンアップする必要があります。この場合も、パフォーマンスが低下します。
 
-メモリを節約するために、各プラットフォームのネイティブに相当する機能には、行を再 [`ListView`](xref:Xamarin.Forms.ListView) 利用するための機能が組み込まれています。 画面に表示されるセルだけがメモリに読み込まれ、**コンテンツ**は既存のセルに読み込まれます。 このパターンは、アプリケーションが何千ものオブジェクトをインスタンス化して、時間とメモリを節約するのを防ぎます。
+メモリを節約するために、各プラットフォームのネイティブに相当する機能には、行を再 [`ListView`](xref:Xamarin.Forms.ListView) 利用するための機能が組み込まれています。 画面に表示されるセルだけがメモリに読み込まれ、 **コンテンツ** は既存のセルに読み込まれます。 このパターンは、アプリケーションが何千ものオブジェクトをインスタンス化して、時間とメモリを節約するのを防ぎます。
 
-Xamarin.Formsでは、 [`ListView`](xref:Xamarin.Forms.ListView) [`ListViewCachingStrategy`](xref:Xamarin.Forms.ListViewCachingStrategy) 次の値を持つ列挙体を使用したセルの再利用が許可されます。
+Xamarin.Forms では、 [`ListView`](xref:Xamarin.Forms.ListView) [`ListViewCachingStrategy`](xref:Xamarin.Forms.ListViewCachingStrategy) 次の値を持つ列挙体を使用したセルの再利用が許可されます。
 
 ```csharp
 public enum ListViewCachingStrategy
@@ -88,7 +88,7 @@ public class CustomCell : ViewCell
 }
 ```
 
-詳細については、「[バインドコンテキストの変更](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#binding-context-changes)」を参照してください。
+詳細については、「 [バインドコンテキストの変更](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md#binding-context-changes)」を参照してください。
 
 IOS と Android では、セルでカスタムレンダラーを使用する場合、プロパティの変更通知が正しく実装されていることを確認する必要があります。 セルが再利用されると、プロパティ値は、バインドコンテキストが、使用可能なセルのバインドコンテキストに更新されると変更され、 `PropertyChanged` イベントが発生します。 詳細については、「 [ViewCell のカスタマイズ](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md)」を参照してください。
 
@@ -168,19 +168,19 @@ public class CustomListView : ListView
 - Android では、パフォーマンスが `ListView` 大幅に低下するため、インスタンス化後に、の行区切り記号の可視性や色を設定しないようにしてください。
 - に基づいてセルのレイアウトを変更することは避けて [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) ください。 レイアウトを変更すると、大きな測定と初期化のコストが発生します。
 - 深く入れ子になったレイアウト階層は避けてください。 `AbsoluteLayout`またはを使用して、 `Grid` 入れ子を減らすことができます。
-- 以外は指定しないよう `LayoutOptions` `Fill` `Fill` にしてください (は、コンピューティングのコストが最も安いものです)。
+- 以外は指定しないよう `LayoutOptions`  `Fill` `Fill` にしてください (は、コンピューティングのコストが最も安いものです)。
 - 次の理由により、にを配置しないで `ListView` `ScrollView` ください。
   - は、 `ListView` 独自のスクロールを実装します。
   - は、 `ListView` 親によって処理されるため、どのようなジェスチャも受け取りません `ScrollView` 。
-  - は、 `ListView` リストの要素と共にスクロールする、カスタマイズされたヘッダーとフッターを提示できます。これにより、が使用された機能が提供される可能性があり `ScrollView` ます。 詳細については、「[ヘッダーとフッター](~/xamarin-forms/user-interface/listview/customizing-list-appearance.md#headers-and-footers)」を参照してください。
+  - は、 `ListView` リストの要素と共にスクロールする、カスタマイズされたヘッダーとフッターを提示できます。これにより、が使用された機能が提供される可能性があり `ScrollView` ます。 詳細については、「 [ヘッダーとフッター](~/xamarin-forms/user-interface/listview/customizing-list-appearance.md#headers-and-footers)」を参照してください。
 - セルに表示される特定の複雑なデザインが必要な場合は、カスタムレンダラーを検討してください。
 
-`AbsoluteLayout`1つのメジャー呼び出しを行わずにレイアウトを実行して、高いパフォーマンスを実現できる可能性があります。 `AbsoluteLayout`を使用できない場合は、を検討 [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) してください。 を使用する場合 `RelativeLayout` 、制約を直接渡すと、EXPRESSION API を使用するよりもはるかに高速になります。 このメソッドは、式 API が JIT を使用し、iOS ではツリーを解釈する必要があるため、処理速度が遅くなります。 Expression API は、初期レイアウトとローテーションでのみ必要なページレイアウトに適していますが、スクロール中に常に実行されている場合は、 `ListView` パフォーマンスが低下します。
+`AbsoluteLayout` 1つのメジャー呼び出しを行わずにレイアウトを実行して、高いパフォーマンスを実現できる可能性があります。 `AbsoluteLayout`を使用できない場合は、を検討 [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) してください。 を使用する場合 `RelativeLayout` 、制約を直接渡すと、EXPRESSION API を使用するよりもはるかに高速になります。 このメソッドは、式 API が JIT を使用し、iOS ではツリーを解釈する必要があるため、処理速度が遅くなります。 Expression API は、初期レイアウトとローテーションでのみ必要なページレイアウトに適していますが、スクロール中に常に実行されている場合は、 `ListView` パフォーマンスが低下します。
 
-またはそのセルのカスタムレンダラーを構築 [`ListView`](xref:Xamarin.Forms.ListView) する方法の1つは、スクロールパフォーマンスに対するレイアウト計算の効果を下げることです。 詳細については、「 [ListView のカスタマイズ](~/xamarin-forms/app-fundamentals/custom-renderer/listview.md)」および「 [viewcell のカスタマイズ](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md)」を参照してください。
+またはそのセルのカスタムレンダラーを構築 [`ListView`](xref:Xamarin.Forms.ListView) する方法の1つは、スクロールパフォーマンスに対するレイアウト計算の効果を下げることです。 詳細については、「 [ListView のカスタマイズ](~/xamarin-forms/app-fundamentals/custom-renderer/listview.md) 」および「 [viewcell のカスタマイズ](~/xamarin-forms/app-fundamentals/custom-renderer/viewcell.md)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 
-- [カスタムレンダラービュー (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative)
-- [カスタムレンダラー ViewCell (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-viewcell)
+- [カスタムレンダラービュー (サンプル)](/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative)
+- [カスタムレンダラー ViewCell (サンプル)](/samples/xamarin/xamarin-forms-samples/customrenderers-viewcell)
 - [ListViewCachingStrategy](xref:Xamarin.Forms.ListViewCachingStrategy)

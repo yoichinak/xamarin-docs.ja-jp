@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Formsピンのマップ
+title: Xamarin.Forms ピンのマップ
 description: この記事では、マップにピンを作成する方法について説明 Xamarin.Forms します。
 ms.prod: xamarin
 ms.assetid: F8FC081B-A811-4FBB-B8F8-30D6FD36BD40
@@ -10,14 +10,14 @@ ms.date: 10/23/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5e22888291a430863b8e45ee21d359a5acec750f
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 476ef1b8fd6c8e16c5fb3e5fdd1ac60eafd90b7c
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138438"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559845"
 ---
-# <a name="xamarinforms-map-pins"></a>Xamarin.Formsピンのマップ
+# <a name="no-locxamarinforms-map-pins"></a>Xamarin.Forms ピンのマップ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
@@ -80,7 +80,7 @@ ms.locfileid: "84138438"
 </ContentPage>
 ```
 
-この XAML は、 [`Map`](xref:Xamarin.Forms.Maps.Map) オブジェクトによって指定された領域を表示するオブジェクトを作成し [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) ます。 オブジェクトは、 `MapSpan` オブジェクトによって表される緯度と経度の中央に [`Position`](xref:Xamarin.Forms.Maps.Position) あり、0.01 緯度と経度の角度を超えています。 [`Pin`](xref:Xamarin.Forms.Maps.Pin)オブジェクトがコレクションに追加され、 [`Map.Pins`](xref:Xamarin.Forms.Maps.Pin) `Map` プロパティによって指定された位置のに描画され [`Position`](xref:Xamarin.Forms.Maps.Pin.Position) ます。 構造体の詳細については [`Position`](xref:Xamarin.Forms.Maps.Position) 、「[マップの位置と距離](position-distance.md)」を参照してください。 既定のコンストラクターを持たないオブジェクトに XAML の引数を渡す方法については、「 [xaml で引数を渡す](~/xamarin-forms/xaml/passing-arguments.md)」を参照してください。
+この XAML は、 [`Map`](xref:Xamarin.Forms.Maps.Map) オブジェクトによって指定された領域を表示するオブジェクトを作成し [`MapSpan`](xref:Xamarin.Forms.Maps.MapSpan) ます。 オブジェクトは、 `MapSpan` オブジェクトによって表される緯度と経度の中央に [`Position`](xref:Xamarin.Forms.Maps.Position) あり、0.01 緯度と経度の角度を超えています。 [`Pin`](xref:Xamarin.Forms.Maps.Pin)オブジェクトがコレクションに追加され、 [`Map.Pins`](xref:Xamarin.Forms.Maps.Pin) `Map` プロパティによって指定された位置のに描画され [`Position`](xref:Xamarin.Forms.Maps.Pin.Position) ます。 構造体の詳細については [`Position`](xref:Xamarin.Forms.Maps.Position) 、「 [マップの位置と距離](position-distance.md)」を参照してください。 既定のコンストラクターを持たないオブジェクトに XAML の引数を渡す方法については、「 [xaml で引数を渡す](~/xamarin-forms/xaml/passing-arguments.md)」を参照してください。
 
 これに相当する C# コードを次に示します。
 
@@ -157,14 +157,14 @@ wharfPin.InfoWindowClicked += async (s, args) =>
 
 ## <a name="pin-types"></a>Pin の種類
 
-[`Pin`](xref:Xamarin.Forms.Maps.Pin)オブジェクトには、 [`Type`](xref:Xamarin.Forms.Maps.Pin.Type) pin の種類を表す型のプロパティが含ま [`PinType`](xref:Xamarin.Forms.Maps.PinType) れます。 `PinType` 列挙体を使って、次のメンバーを定義できます。
+[`Pin`](xref:Xamarin.Forms.Maps.Pin) オブジェクトには、 [`Type`](xref:Xamarin.Forms.Maps.Pin.Type) pin の種類を表す型のプロパティが含ま [`PinType`](xref:Xamarin.Forms.Maps.PinType) れます。 `PinType` 列挙体を使って、次のメンバーを定義できます。
 
 - `Generic`は汎用的な pin を表します。
 - `Place`は、場所の pin を表します。
 - `SavedPin`は、保存された場所の pin を表します。
 - `SearchResult`は、検索結果の pin を表します。
 
-ただし、プロパティを [`Pin.Type`](xref:Xamarin.Forms.Maps.Pin.Type) 任意のメンバーに設定しても、 [`PinType`](xref:Xamarin.Forms.Maps.PinType) 表示される pin の外観は変わりません。 代わりに、カスタムレンダラーを作成して、pin の外観をカスタマイズする必要があります。 詳細については、「[マップのピン留めをカスタマイズする](~/xamarin-forms/app-fundamentals/custom-renderer/map-pin.md)」を参照してください。
+ただし、プロパティを [`Pin.Type`](xref:Xamarin.Forms.Maps.Pin.Type) 任意のメンバーに設定しても、 [`PinType`](xref:Xamarin.Forms.Maps.PinType) 表示される pin の外観は変わりません。 代わりに、カスタムレンダラーを作成して、pin の外観をカスタマイズする必要があります。 詳細については、「 [マップのピン留めをカスタマイズする](~/xamarin-forms/app-fundamentals/custom-renderer/map-pin.md)」を参照してください。
 
 ## <a name="display-a-pin-collection"></a>Pin コレクションを表示する
 
@@ -271,7 +271,7 @@ public class MapItemTemplateSelector : DataTemplateSelector
 
 ## <a name="related-links"></a>関連リンク
 
-- [Maps サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+- [Maps サンプル](/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 - [カスタムレンダラーのマップ](~/xamarin-forms/app-fundamentals/custom-renderer/map-pin.md)
 - [XAML での引数の受け渡し](~/xamarin-forms/xaml/passing-arguments.md)
 - [DataTemplateSelector の作成 Xamarin.Forms](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

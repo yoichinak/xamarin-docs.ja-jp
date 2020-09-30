@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Formsマップの初期化と構成
+title: Xamarin.Forms マップの初期化と構成
 description: Xamarin.Forms。Maps NuGet パッケージは、アプリケーションで maps 機能を使用するために必要です。 さらに、ユーザーの場所にアクセスするには、アプリケーションに対する場所のアクセス許可が必要です。
 ms.prod: xamarin
 ms.assetid: 59CD1344-8248-406C-9144-0C8A67141E5B
@@ -10,14 +10,14 @@ ms.date: 02/07/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 52e2ac5f8075c57f533fcba064223f355e07ba48
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 3da0223bf72e4de60cc50be2562a0fdbd279f52e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139842"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559741"
 ---
-# <a name="xamarinforms-map-initialization-and-configuration"></a>Xamarin.Formsマップの初期化と構成
+# <a name="no-locxamarinforms-map-initialization-and-configuration"></a>Xamarin.Forms マップの初期化と構成
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
@@ -41,13 +41,13 @@ Android では、メソッドの後にメソッドを呼び出すことによっ
 Xamarin.FormsMaps.Init(this, savedInstanceState);
 ```
 
-ユニバーサル Windows プラットフォーム (UWP) では、コンストラクターからメソッドを呼び出すことによって**MainPage.xaml.cs**でこれを行う必要があり `Xamarin.FormsMaps.Init` `MainPage` ます。
+ユニバーサル Windows プラットフォーム (UWP) では、コンストラクターからメソッドを呼び出すことによって **MainPage.xaml.cs** でこれを行う必要があり `Xamarin.FormsMaps.Init` `MainPage` ます。
 
 ```csharp
 Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
 ```
 
-UWP に必要な認証トークンの詳細については、「[ユニバーサル Windows プラットフォーム](#universal-windows-platform)」を参照してください。
+UWP に必要な認証トークンの詳細については、「 [ユニバーサル Windows プラットフォーム](#universal-windows-platform)」を参照してください。
 
 NuGet パッケージが追加され、各アプリケーション内部で初期化メソッドが呼び出されると、 `Xamarin.Forms.Maps` 共有コードプロジェクトで api を使用できるようになります。
 
@@ -57,18 +57,18 @@ Android では、マップを表示する前に、追加の構成が必要にな
 
 ### <a name="ios"></a>iOS
 
-IOS でマップを表示して操作する場合、追加の構成は必要ありません。 ただし、ロケーションサービスにアクセスするには、次のキーを**情報 plist**で設定する必要があります。
+IOS でマップを表示して操作する場合、追加の構成は必要ありません。 ただし、ロケーションサービスにアクセスするには、次のキーを **情報 plist**で設定する必要があります。
 
 - iOS 11 以降
-  - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26)–アプリケーションの使用時にロケーションサービスを使用する場合
-  - [`NSLocationAlwaysAndWhenInUseUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nslocationalwaysandwheninuseusagedescription)–常にロケーションサービスを使用する場合
+  - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) –アプリケーションの使用時にロケーションサービスを使用する場合
+  - [`NSLocationAlwaysAndWhenInUseUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nslocationalwaysandwheninuseusagedescription) –常にロケーションサービスを使用する場合
 - iOS 10 以前
-  - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26)–アプリケーションの使用時にロケーションサービスを使用する場合
-  - [`NSLocationAlwaysUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18)–常にロケーションサービスを使用する場合    
+  - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) –アプリケーションの使用時にロケーションサービスを使用する場合
+  - [`NSLocationAlwaysUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18) –常にロケーションサービスを使用する場合    
 
 IOS 11 以前をサポートするには、、、およびの3つのキーすべてを含めることができ `NSLocationWhenInUseUsageDescription` `NSLocationAlwaysAndWhenInUseUsageDescription` `NSLocationAlwaysUsageDescription` ます。
 
-次に、これらのキーの XML 表現を**情報 plist**で示します。 `string`アプリケーションが場所情報をどのように使用しているかを反映するように値を更新する必要があります。
+次に、これらのキーの XML 表現を **情報 plist** で示します。 `string`アプリケーションが場所情報をどのように使用しているかを反映するように値を更新する必要があります。
 
 ```xml
 <key>NSLocationAlwaysUsageDescription</key>
@@ -102,9 +102,9 @@ Android でマップを表示して操作するための構成プロセスは次
 
 #### <a name="get-a-google-maps-api-key"></a>Google Maps API キーを取得する
 
-Android で[Google MAPS api](https://developers.google.com/maps/documentation/android/)を使用するには、API キーを生成する必要があります。 これを行うには、「 [Google MAPS API キーを取得](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)する」の手順に従います。
+Android で [Google MAPS api](https://developers.google.com/maps/documentation/android/) を使用するには、API キーを生成する必要があります。 これを行うには、「 [Google MAPS API キーを取得](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)する」の手順に従います。
 
-API キーを取得したら、 `<application>` **Properties/AndroidManifest.xml**ファイルの要素内に追加する必要があります。
+API キーを取得したら、 `<application>` **Properties/AndroidManifest.xml** ファイルの要素内に追加する必要があります。
 
 ```xml
 <application ...>
@@ -115,9 +115,9 @@ API キーを取得したら、 `<application>` **Properties/AndroidManifest.xml
 これにより、API キーがマニフェストに埋め込まれます。 有効な API キーがない場合、コントロールには [`Map`](xref:Xamarin.Forms.Maps.Map) 空のグリッドが表示されます。
 
 > [!NOTE]
-> `com.google.android.geo.API_KEY`は、API キーの推奨されるメタデータ名です。 旧バージョンとの互換性のために、 `com.google.android.maps.v2.API_KEY` メタデータ名を使用できますが、Android MAPS API v2 での認証のみが許可されます。
+> `com.google.android.geo.API_KEY` は、API キーの推奨されるメタデータ名です。 旧バージョンとの互換性のために、 `com.google.android.maps.v2.API_KEY` メタデータ名を使用できますが、Android MAPS API v2 での認証のみが許可されます。
 
-APK が Google Maps にアクセスするには、APK に署名するために使用するすべてのキーストア (デバッグとリリース) に SHA-1 の指紋名とパッケージ名を含める必要があります。 たとえば、デバッグに1台のコンピューターを使用し、リリース APK を生成する別のコンピューターを使用する場合は、最初のコンピューターのデバッグキーストアから SHA-1 証明書のフィンガープリントを、2番目のコンピューターのリリースキーストアから SHA-1 証明書のフィンガープリントを含める必要があります。 また、アプリの**パッケージ名**が変更された場合は、キーの資格情報を編集することも忘れないでください。 「 [Google MAPS API キーを取得する」を](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)参照してください。
+APK が Google Maps にアクセスするには、APK に署名するために使用するすべてのキーストア (デバッグとリリース) に SHA-1 の指紋名とパッケージ名を含める必要があります。 たとえば、デバッグに1台のコンピューターを使用し、リリース APK を生成する別のコンピューターを使用する場合は、最初のコンピューターのデバッグキーストアから SHA-1 証明書のフィンガープリントを、2番目のコンピューターのリリースキーストアから SHA-1 証明書のフィンガープリントを含める必要があります。 また、アプリの **パッケージ名** が変更された場合は、キーの資格情報を編集することも忘れないでください。 「 [Google MAPS API キーを取得する」を](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)参照してください。
 
 #### <a name="specify-the-google-play-services-version-number"></a>Google Play services のバージョン番号を指定してください
 
@@ -271,7 +271,7 @@ Xamarin.Forms.Forms.Init(e, assembliesToInclude);
 
 ## <a name="related-links"></a>関連リンク
 
-- [Maps サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+- [Maps サンプル](/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 - [Xamarin.Forms.ピンをマップ](~/xamarin-forms/user-interface/map/pins.md)します。
 - [Maps API](xref:Xamarin.Forms.Maps)
 - [カスタムレンダラーのマップ](~/xamarin-forms/app-fundamentals/custom-renderer/map-pin.md)

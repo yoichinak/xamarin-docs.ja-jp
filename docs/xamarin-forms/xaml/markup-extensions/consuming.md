@@ -10,45 +10,45 @@ ms.date: 06/17/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b23aca29fa77b58183a1f09053bc2bb9ba66bb49
-ms.sourcegitcommit: 808ff109928a1eea16e17e23ea81f8c903a239e8
+ms.openlocfilehash: ee834bf7bae945536facb576ae26b9d13f5b7bcd
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88181512"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91558948"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>XAML マークアップ拡張の使用
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 
 XAML マークアップ拡張機能は、さまざまなソースから要素属性を設定できるようにすることで、XAML のパワーと柔軟性を向上させるのに役立ちます。 Xaml のマークアップ拡張機能のいくつかは、XAML 2009 仕様に含まれています。 これらは、慣例として名前空間プレフィックスを持つ XAML ファイルに表示され、 `x` 一般的にこのプレフィックスで参照されます。 この記事では、次のマークアップ拡張機能について説明します。
 
-- [`x:Static`](#xstatic-markup-extension)–静的プロパティ、フィールド、または列挙型のメンバーを参照します。
-- [`x:Reference`](#xreference-markup-extension)–ページの名前付き要素を参照します。
-- [`x:Type`](#xtype-markup-extension)–属性をオブジェクトに設定 `System.Type` します。
-- [`x:Array`](#xarray-markup-extension)–特定の型のオブジェクトの配列を構築します。
-- [`x:Null`](#xnull-markup-extension)–属性を値に設定 `null` します。
-- [`OnPlatform`](#onplatform-markup-extension)–プラットフォームごとに UI の外観をカスタマイズします。
-- [`OnIdiom`](#onidiom-markup-extension)–アプリケーションが実行されているデバイスの表現に基づいて UI の外観をカスタマイズします。
-- [`DataTemplate`](#datatemplate-markup-extension)–型をに変換 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) します。
-- [`FontImage`](#fontimage-markup-extension)–を表示できる任意のビューにフォントアイコンを表示 `ImageSource` します。
-- [`AppThemeBinding`](#appthemebinding-markup-extension)–現在のシステムテーマに基づいてリソースを使用します。
+- [`x:Static`](#xstatic-markup-extension) –静的プロパティ、フィールド、または列挙型のメンバーを参照します。
+- [`x:Reference`](#xreference-markup-extension) –ページの名前付き要素を参照します。
+- [`x:Type`](#xtype-markup-extension) –属性をオブジェクトに設定 `System.Type` します。
+- [`x:Array`](#xarray-markup-extension) –特定の型のオブジェクトの配列を構築します。
+- [`x:Null`](#xnull-markup-extension) –属性を値に設定 `null` します。
+- [`OnPlatform`](#onplatform-markup-extension) –プラットフォームごとに UI の外観をカスタマイズします。
+- [`OnIdiom`](#onidiom-markup-extension) –アプリケーションが実行されているデバイスの表現に基づいて UI の外観をカスタマイズします。
+- [`DataTemplate`](#datatemplate-markup-extension) –型をに変換 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) します。
+- [`FontImage`](#fontimage-markup-extension) –を表示できる任意のビューにフォントアイコンを表示 `ImageSource` します。
+- [`AppThemeBinding`](#appthemebinding-markup-extension) –現在のシステムテーマに基づいてリソースを使用します。
 
 追加の XAML マークアップ拡張機能は、従来は他の XAML 実装によってサポートされており、でもサポートされてい Xamarin.Forms ます。 これらの詳細については、他の記事で詳しく説明します。
 
-- `StaticResource`-リソースディクショナリからオブジェクトを参照します。詳細については、「[**リソースディクショナリ**](~/xamarin-forms/xaml/resource-dictionaries.md)」を参照してください。
-- `DynamicResource`-リソースディクショナリ内のオブジェクトの変更に応答します。詳細については、「[**動的スタイル**](~/xamarin-forms/user-interface/styles/dynamic.md)」を参照してください。
-- `Binding`-「[**データバインディング**](~/xamarin-forms/app-fundamentals/data-binding/index.md)」で説明されているように、2つのオブジェクトのプロパティ間のリンクを確立します。
+- `StaticResource` -リソースディクショナリからオブジェクトを参照します。詳細については、「  [**リソースディクショナリ**](~/xamarin-forms/xaml/resource-dictionaries.md)」を参照してください。
+- `DynamicResource` -リソースディクショナリ内のオブジェクトの変更に応答します。詳細については、「 [**動的スタイル**](~/xamarin-forms/user-interface/styles/dynamic.md)」を参照してください。
+- `Binding` -「 [**データバインディング**](~/xamarin-forms/app-fundamentals/data-binding/index.md)」で説明されているように、2つのオブジェクトのプロパティ間のリンクを確立します。
 - `TemplateBinding`-コントロールテンプレートからデータバインディングを実行します。これについては、「 [** Xamarin.Forms コントロールテンプレート**](~/xamarin-forms/app-fundamentals/templates/control-template.md)」をご覧ください。
-- `RelativeSource`-バインドソースを、バインディングターゲットの位置に対して相対的に設定します。これについては、「[相対バインド](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)」を参照してください。
+- `RelativeSource` -バインドソースを、バインディングターゲットの位置に対して相対的に設定します。これについては、「 [相対バインド](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)」を参照してください。
 
-レイアウトでは、 [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) カスタムマークアップ拡張機能を使用し [`ConstraintExpression`](xref:Xamarin.Forms.ConstraintExpression) ます。 このマークアップ拡張機能については、記事[**RelativeLayout**](~/xamarin-forms/user-interface/layouts/relativelayout.md)を参照してください。
+レイアウトでは、 [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) カスタムマークアップ拡張機能を使用し [`ConstraintExpression`](xref:Xamarin.Forms.ConstraintExpression) ます。 このマークアップ拡張機能については、記事 [**RelativeLayout**](~/xamarin-forms/user-interface/layouts/relativelayout.md)を参照してください。
 
 ## <a name="xstatic-markup-extension"></a>x:Static マークアップ拡張機能
 
 `x:Static`マークアップ拡張機能はクラスによってサポートされてい [`StaticExtension`](xref:Xamarin.Forms.Xaml.StaticExtension) ます。 クラスには、 [`Member`](xref:Xamarin.Forms.Xaml.StaticExtension.Member) `string` パブリック定数、静的プロパティ、静的フィールド、または列挙型のメンバーの名前に設定する、type という名前の単一のプロパティがあります。
 
-を使用する一般的な方法の1つとし `x:Static` て、最初に定数または静的変数を含むクラスを定義し `AppConstants` ます。たとえば、[**マークアップ拡張**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)プログラムでは、この小さなクラスを使用します。
+を使用する一般的な方法の1つとし `x:Static` て、最初に定数または静的変数を含むクラスを定義し `AppConstants` ます。たとえば、 [**マークアップ拡張**](/samples/xamarin/xamarin-forms-samples/xaml-markupextensions) プログラムでは、この小さなクラスを使用します。
 
 ```csharp
 static class AppConstants
@@ -96,7 +96,7 @@ static class AppConstants
        FontSize="{x:StaticExtension Member=local:AppConstants.NormalFontSize}" />
 ```
 
-中かっこ内に引用符が*ない*ことに注意してください。 `Member`のプロパティ `StaticExtension` が XML 属性ではなくなりました。 代わりに、マークアップ拡張機能の式の一部になります。
+中かっこ内に引用符が *ない* ことに注意してください。 `Member`のプロパティ `StaticExtension` が XML 属性ではなくなりました。 代わりに、マークアップ拡張機能の式の一部になります。
 
 `x:StaticExtension`オブジェクト要素として使用するときに、省略可能であるように `x:Static` 、中かっこ内の式で省略することもできます。
 
@@ -192,15 +192,15 @@ xmlns:sys="clr-namespace:System;assembly=netstandard"
 
 ## <a name="xtype-markup-extension"></a>x:Type マークアップ拡張機能
 
-`x:Type`マークアップ拡張機能は、C# キーワードに相当する XAML [`typeof`](/dotnet/csharp/language-reference/keywords/typeof/) です。 クラスによってサポートされてい [`TypeExtension`](xref:Xamarin.Forms.Xaml.TypeExtension) [`TypeName`](xref:Xamarin.Forms.Xaml.TypeExtension.TypeName) ます。このクラスは、 `string` クラスまたは構造体の名前に設定されている型の1つのプロパティを定義します。 `x:Type`マークアップ拡張機能は、 [`System.Type`](xref:System.Type) そのクラスまたは構造体のオブジェクトを返します。 `TypeName`はの content プロパティである `TypeExtension` ため、中 `TypeName=` `x:Type` かっこで囲まれている場合は必要ありません。
+`x:Type`マークアップ拡張機能は、C# キーワードに相当する XAML [`typeof`](/dotnet/csharp/language-reference/keywords/typeof/) です。 クラスによってサポートされてい [`TypeExtension`](xref:Xamarin.Forms.Xaml.TypeExtension) [`TypeName`](xref:Xamarin.Forms.Xaml.TypeExtension.TypeName) ます。このクラスは、 `string` クラスまたは構造体の名前に設定されている型の1つのプロパティを定義します。 `x:Type`マークアップ拡張機能は、 [`System.Type`](xref:System.Type) そのクラスまたは構造体のオブジェクトを返します。 `TypeName` はの content プロパティである `TypeExtension` ため、中 `TypeName=` `x:Type` かっこで囲まれている場合は必要ありません。
 
-内 Xamarin.Forms には、型の引数を持ついくつかのプロパティがあり `Type` ます。 たとえば、 [`TargetType`](xref:Xamarin.Forms.Style.TargetType) のプロパティ `Style` や、ジェネリッククラスの引数を指定するために使用される[x:TypeArguments](~/xamarin-forms/xaml/passing-arguments.md#specifying-a-generic-type-argument)属性などがあります。 ただし、XAML パーサーは `typeof` この操作を自動的に実行し `x:Type` ます。この場合、マークアップ拡張機能は使用されません。
+内 Xamarin.Forms には、型の引数を持ついくつかのプロパティがあり `Type` ます。 たとえば、 [`TargetType`](xref:Xamarin.Forms.Style.TargetType) のプロパティ `Style` や、ジェネリッククラスの引数を指定するために使用される [x:TypeArguments](~/xamarin-forms/xaml/passing-arguments.md#specifying-a-generic-type-argument) 属性などがあります。 ただし、XAML パーサーは `typeof` この操作を自動的に実行し `x:Type` ます。この場合、マークアップ拡張機能は使用されません。
 
 `x:Type`*が*必要な場所の1つは、 `x:Array` マークアップ拡張機能を使用することです。これについては、次の[セクション](#xarray-markup-extension)で説明します。
 
 `x:Type`マークアップ拡張機能は、各メニュー項目が特定の型のオブジェクトに対応するメニューを構築する場合にも便利です。 `Type`オブジェクトを各メニュー項目に関連付けて、メニュー項目を選択したときにオブジェクトをインスタンス化することができます。
 
-これは `MainPage` 、**マークアップ拡張機能**プログラムののナビゲーションメニューの動作です。 **Mainpage.xaml**ファイルには、 `TableView` `TextCell` プログラム内の特定のページに対応するそれぞれのが含まれています。
+これは `MainPage` 、 **マークアップ拡張機能** プログラムののナビゲーションメニューの動作です。 **Mainpage.xaml**ファイルには、 `TableView` `TextCell` プログラム内の特定のページに対応するそれぞれのが含まれています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -265,7 +265,7 @@ public partial class MainPage : ContentPage
 }
 ```
 
-`NavigateCommand`プロパティは、 `Command` `Type` &mdash; の値を型とする引数を指定して execute コマンドを実装するオブジェクトです `CommandParameter` 。 このメソッドは、を使用して `Activator.CreateInstance` ページをインスタンス化し、そのページに移動します。 コンストラクターは、ページのをそれ自体に設定することによって終了し `BindingContext` ます。これにより、が動作するようになり `Binding` `Command` ます。 この種類のコードの詳細については、[**データバインディング**](~/xamarin-forms/app-fundamentals/data-binding/index.md)に関する記事と、特に[**コマンド**](~/xamarin-forms/app-fundamentals/data-binding/commanding.md)の使用に関する記事を参照してください。
+`NavigateCommand`プロパティは、 `Command` `Type` &mdash; の値を型とする引数を指定して execute コマンドを実装するオブジェクトです `CommandParameter` 。 このメソッドは、を使用して `Activator.CreateInstance` ページをインスタンス化し、そのページに移動します。 コンストラクターは、ページのをそれ自体に設定することによって終了し `BindingContext` ます。これにより、が動作するようになり `Binding` `Command` ます。 この種類のコードの詳細については、 [**データバインディング**](~/xamarin-forms/app-fundamentals/data-binding/index.md) に関する記事と、特に [**コマンド**](~/xamarin-forms/app-fundamentals/data-binding/commanding.md) の使用に関する記事を参照してください。
 
 **X:Type Demo**ページでは、同様の手法を使用して要素をインスタンス化 Xamarin.Forms し、に追加し `StackLayout` ます。 XAML ファイルは、最初は3つの要素で構成され、 `Button` `Command` プロパティはに設定さ `Binding` れ、 `CommandParameter` プロパティは3つのビューの種類に設定され Xamarin.Forms ます。
 
@@ -330,8 +330,8 @@ public partial class TypeDemoPage : ContentPage
 
 `x:Array`マークアップ拡張機能を使用すると、マークアップで配列を定義できます。 これは、次の [`ArrayExtension`](xref:Xamarin.Forms.Xaml.ArrayExtension) 2 つのプロパティを定義するクラスによってサポートされています。
 
-- `Type`型の `Type` 。配列内の要素の型を示します。
-- `Items`型の `IList` 。これは、項目自体のコレクションです。 これは、の content プロパティです `ArrayExtension` 。
+- `Type` 型の `Type` 。配列内の要素の型を示します。
+- `Items` 型の `IList` 。これは、項目自体のコレクションです。 これは、の content プロパティです `ArrayExtension` 。
 
 `x:Array`マークアップ拡張機能自体は、中かっこで囲まれていません。 代わりに、 `x:Array` 開始タグと終了タグによって項目のリストが区切られます。 プロパティを `Type` `x:Type` マークアップ拡張機能に設定します。
 
@@ -399,7 +399,7 @@ public partial class TypeDemoPage : ContentPage
 <local:HslColor H="0.5" S="1.0" L="0.5" />
 ```
 
-文字列や数値などの共通型の配列を定義する場合は、[**コンストラクター引数の引き渡し**](~/xamarin-forms/xaml/passing-arguments.md#passing-constructor-arguments)に関する記事に記載されているタグを使用して、値を区切ります。
+文字列や数値などの共通型の配列を定義する場合は、 [**コンストラクター引数の引き渡し**](~/xamarin-forms/xaml/passing-arguments.md#passing-constructor-arguments) に関する記事に記載されているタグを使用して、値を区切ります。
 
 ## <a name="xnull-markup-extension"></a>x:Null マークアップ拡張機能
 
@@ -460,16 +460,16 @@ public partial class TypeDemoPage : ContentPage
 
 `OnPlatform`マークアップ拡張機能は、 [`OnPlatformExtension`](xref:Xamarin.Forms.Xaml.OnPlatformExtension) 次のプロパティを定義するクラスによってサポートされています。
 
-- `Default`型の `object` 。プラットフォームを表すプロパティに適用される既定値に設定します。
-- `Android`型の `object` 。 Android で適用される値に設定します。
-- `GTK`型の `object` 。 GTK プラットフォームに適用される値に設定します。
-- `iOS`型の `object` 。 iOS で適用される値に設定します。
-- `macOS`型の `object` 。 macOS に適用される値に設定します。
-- `Tizen`型の `object` 。 Tizen プラットフォームで適用される値に設定します。
-- `UWP`型の `object` 。ユニバーサル Windows プラットフォームに適用される値に設定します。
-- `WPF`型の `object` 。 Windows Presentation Foundation プラットフォームに適用される値に設定します。
-- `Converter`型の `IValueConverter` 。実装に設定でき `IValueConverter` ます。
-- `ConverterParameter`型の `object` 。実装に渡す値に設定でき `IValueConverter` ます。
+- `Default` 型の `object` 。プラットフォームを表すプロパティに適用される既定値に設定します。
+- `Android` 型の `object` 。 Android で適用される値に設定します。
+- `GTK` 型の `object` 。 GTK プラットフォームに適用される値に設定します。
+- `iOS` 型の `object` 。 iOS で適用される値に設定します。
+- `macOS` 型の `object` 。 macOS に適用される値に設定します。
+- `Tizen` 型の `object` 。 Tizen プラットフォームで適用される値に設定します。
+- `UWP` 型の `object` 。ユニバーサル Windows プラットフォームに適用される値に設定します。
+- `WPF` 型の `object` 。 Windows Presentation Foundation プラットフォームに適用される値に設定します。
+- `Converter` 型の `IValueConverter` 。実装に設定でき `IValueConverter` ます。
+- `ConverterParameter` 型の `object` 。実装に渡す値に設定でき `IValueConverter` ます。
 
 > [!NOTE]
 > XAML パーサーでは、 [`OnPlatformExtension`](xref:Xamarin.Forms.Xaml.OnPlatformExtension) クラスをとして省略でき `OnPlatform` ます。
@@ -498,14 +498,14 @@ public partial class TypeDemoPage : ContentPage
 
 `OnIdiom`マークアップ拡張機能を使用すると、アプリケーションが実行されているデバイスの表現に基づいて UI の外観をカスタマイズできます。 これは、 [`OnIdiomExtension`](xref:Xamarin.Forms.Xaml.OnIdiomExtension) 次のプロパティを定義するクラスによってサポートされています。
 
-- `Default`型の `object` 。デバイスの表現方法を表すプロパティに適用される既定値に設定します。
-- `Phone`型の `object` 。電話に適用される値に設定します。
-- `Tablet`型の `object` 。タブレットで適用される値に設定します。
-- `Desktop`型の `object` 。デスクトッププラットフォームに適用される値に設定します。
-- `TV`型の `object` 。 TV プラットフォームに適用される値に設定します。
-- `Watch`型の `object` 。 Watch プラットフォームで適用される値に設定します。
-- `Converter`型の `IValueConverter` 。実装に設定でき `IValueConverter` ます。
-- `ConverterParameter`型の `object` 。実装に渡す値に設定でき `IValueConverter` ます。
+- `Default` 型の `object` 。デバイスの表現方法を表すプロパティに適用される既定値に設定します。
+- `Phone` 型の `object` 。電話に適用される値に設定します。
+- `Tablet` 型の `object` 。タブレットで適用される値に設定します。
+- `Desktop` 型の `object` 。デスクトッププラットフォームに適用される値に設定します。
+- `TV` 型の `object` 。 TV プラットフォームに適用される値に設定します。
+- `Watch` 型の `object` 。 Watch プラットフォームで適用される値に設定します。
+- `Converter` 型の `IValueConverter` 。実装に設定でき `IValueConverter` ます。
+- `ConverterParameter` 型の `object` 。実装に渡す値に設定でき `IValueConverter` ます。
 
 > [!NOTE]
 > XAML パーサーでは、 [`OnIdiomExtension`](xref:Xamarin.Forms.Xaml.OnIdiomExtension) クラスをとして省略でき `OnIdiom` ます。
@@ -555,10 +555,10 @@ public partial class TypeDemoPage : ContentPage
 
 `FontImage` マークアップ拡張機能は、次のプロパティを定義する `FontImageExtension` クラスによってサポートされています。
 
-- `FontFamily`型の `string` 場合は、フォントアイコンが属するフォントファミリ。
-- `Glyph`型の `string` 場合は、フォントアイコンの unicode 文字値。
-- `Color`型の [`Color`](xref:Xamarin.Forms.Color) 場合は、フォントアイコンを表示するときに使用する色。
-- `Size`型の `double` 。表示されるフォントアイコンのサイズ (デバイスに依存しない単位)。 既定値は 30 です。 また、このプロパティは、名前付きフォントサイズに設定できます。
+- `FontFamily` 型の `string` 場合は、フォントアイコンが属するフォントファミリ。
+- `Glyph` 型の `string` 場合は、フォントアイコンの unicode 文字値。
+- `Color` 型の [`Color`](xref:Xamarin.Forms.Color) 場合は、フォントアイコンを表示するときに使用する色。
+- `Size` 型の `double` 。表示されるフォントアイコンのサイズ (デバイスに依存しない単位)。 既定値は 30 です。 また、このプロパティは、名前付きフォントサイズに設定できます。
 
 > [!NOTE]
 > XAML パーサーでは、`FontImageExtension` クラスを `FontImage` に短縮できます。
@@ -578,7 +578,7 @@ public partial class TypeDemoPage : ContentPage
 
 [![FontImage マークアップ拡張機能のスクリーンショット](consuming-images/fontimagedemo.png "FontImage のデモ")](consuming-images/fontimagedemo-large.png#lightbox "FontImage のデモ")
 
-オブジェクトのフォントアイコンデータを指定してフォントアイコンを表示する方法の詳細について `FontImageSource` は、「[フォント](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons)アイコンの表示」を参照してください。
+オブジェクトのフォントアイコンデータを指定してフォントアイコンを表示する方法の詳細について `FontImageSource` は、「 [フォント](~/xamarin-forms/user-interface/text/fonts.md#display-font-icons)アイコンの表示」を参照してください。
 
 ## <a name="appthemebinding-markup-extension"></a>AppThemeBinding マークアップ拡張
 
@@ -636,7 +636,7 @@ public partial class TypeDemoPage : ContentPage
 
 ## <a name="related-links"></a>関連リンク
 
-- [マークアップ拡張機能 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
+- [マークアップ拡張機能 (サンプル)](/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 - [本の XAML マークアップ拡張機能の章 Xamarin.Forms](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter10.md)
 - [リソース ディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [動的なスタイル](~/xamarin-forms/user-interface/styles/dynamic.md)

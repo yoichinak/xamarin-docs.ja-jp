@@ -10,12 +10,12 @@ ms.date: 12/11/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c420fe65b020067169230dd06dbcd5ce65c036ab
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a1c05fb6ea81827be97d1d49a8066a755ac0a1b7
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84128623"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560664"
 ---
 # <a name="swipeview-swipe-transition-mode-on-android"></a>Android での SwipeView スワイプ切り替えモード
 
@@ -56,8 +56,8 @@ swipeView.On<Android>().SetSwipeTransitionMode(SwipeTransitionMode.Drag);
 
 メソッドは、 `SwipeView.On<Android>` このプラットフォーム固有のが Android でのみ実行されることを指定します。 `SwipeView.SetSwipeTransitionMode`名前空間のメソッドは、 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) を開くときに使用される遷移を制御するために使用され `SwipeView` ます。 `SwipeTransitionMode`列挙体には、次の2つの値があります。
 
-- `Reveal`コンテンツがスワイプされたときにスワイプ項目が表示されることを示し `SwipeView` ます。は、プロパティの既定値です `SwipeView.SwipeTransitionMode` 。
-- `Drag`コンテンツがスワイプされると、スワイプ項目がビューにドラッグされることを示し `SwipeView` ます。
+- `Reveal` コンテンツがスワイプされたときにスワイプ項目が表示されることを示し `SwipeView` ます。は、プロパティの既定値です `SwipeView.SwipeTransitionMode` 。
+- `Drag` コンテンツがスワイプされると、スワイプ項目がビューにドラッグされることを示し `SwipeView` ます。
 
 また、メソッドを `SwipeView.GetSwipeTransitionMode` 使用して、に適用されたを返すこともでき `SwipeTransitionMode` `SwipeView` ます。
 
@@ -67,6 +67,6 @@ swipeView.On<Android>().SetSwipeTransitionMode(SwipeTransitionMode.Drag);
 
 ## <a name="related-links"></a>関連リンク
 
-- [PlatformSpecifics (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [プラットフォーム固有設定の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [AndroidSpecific の API](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific)

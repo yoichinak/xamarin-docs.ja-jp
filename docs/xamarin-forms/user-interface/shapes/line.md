@@ -1,5 +1,5 @@
 ---
-title: 'Xamarin.Forms図形: 線'
+title: 'Xamarin.Forms 図形: 線'
 description: 線 Xamarin.Forms クラスを使用して線を描画できます。
 ms.prod: xamarin
 ms.assetid: 384F1A72-6D3B-4FD3-BC40-E00A73A463EC
@@ -10,18 +10,18 @@ ms.date: 06/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a5d130922a9bd8f30b33b99f7f3dc512f056269f
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 845e5842f91a1da415509631ec2472330d972dfb
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918636"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559156"
 ---
-# <a name="no-locxamarinforms-shapes-line"></a>Xamarin.Forms図形: 線
+# <a name="no-locxamarinforms-shapes-line"></a>Xamarin.Forms 図形: 線
 
 ![プレリリース API](~/media/shared/preview.png)
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 `Line`クラスはクラスから派生 `Shape` し、線を描画するために使用できます。 クラスから継承されるプロパティの詳細につい `Line` `Shape` ては、「 [ Xamarin.Forms 図形](index.md)」を参照してください。
 
@@ -32,9 +32,9 @@ ms.locfileid: "87918636"
 - `X2`double 型のは、直線の終点の x 座標を示します。 このプロパティの既定値は0.0 です。
 - `Y2`double 型のは、直線の終点の y 座標を示します。 このプロパティの既定値は0.0 です。
 
-これらのプロパティは、オブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。これは、データバインディングのターゲットとスタイルを設定できることを意味します。
+これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトが基になっています。つまり、これらは、データ バインディングの対象にすることができ、スタイルを設定できます。
 
-線の端を描画する方法を制御する方法については、「[制御線の端点](index.md#control-line-ends)」を参照してください。
+線の端を描画する方法を制御する方法については、「 [制御線の端点](index.md#control-line-ends)」を参照してください。
 
 ## <a name="create-a-line"></a>線を作成する
 
@@ -85,9 +85,9 @@ ms.locfileid: "87918636"
 
 ![破線](line-images/dashed-line.png "破線")
 
-破線の描画の詳細については、「[破線の図形を描画](index.md#draw-dashed-shapes)する」を参照してください。
+破線の描画の詳細については、「 [破線の図形を描画](index.md#draw-dashed-shapes)する」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 
-- [図形のデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
-- [Xamarin.Forms図形](index.md)
+- [図形のデモ (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [Xamarin.Forms 図形](index.md)

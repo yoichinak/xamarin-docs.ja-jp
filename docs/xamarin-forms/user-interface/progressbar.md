@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Formsプログレス
+title: Xamarin.Forms プログレス
 description: Xamarin.FormsProgressBar は、フロートプロパティに基づいて塗りつぶされる水平バーとして進行状況を視覚的に表すコントロールです。
 ms.prod: xamarin
 ms.assetId: C2F85FED-797C-466B-A0FD-E73CFB79B267
@@ -10,14 +10,14 @@ ms.date: 07/09/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b4ac6231c0483c0c44755c2ac9539f237dd64251
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 111b3ad13902b272256464f6f70f0db3dfd015b6
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136280"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559455"
 ---
-# <a name="xamarinforms-progressbar"></a>Xamarin.Formsプログレス
+# <a name="no-locxamarinforms-progressbar"></a>Xamarin.Forms プログレス
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-progressbardemos/)
 
 このコントロールは、 Xamarin.Forms [`ProgressBar`](xref:Xamarin.Forms.ProgressBar) 進行状況を、値によって表されるパーセントに設定された水平バーとして視覚的に表し `float` ます。 クラスは、 `ProgressBar` から継承さ [`View`](xref:Xamarin.Forms.View) れます。
@@ -28,8 +28,8 @@ ms.locfileid: "84136280"
 
 コントロールは、 `ProgressBar` 次の2つのプロパティを定義します。
 
-* [`Progress`](xref:Xamarin.Forms.ProgressBar.Progress)`float`現在の進行状況を 0 ~ 1 の値として表す値を指定します。 `Progress`0未満の値は0に固定され、1より大きい値は1にクランプされます。
-* [`ProgressColor`](xref:Xamarin.Forms.ProgressBar.ProgressColor)は、 `Color` 現在の進行状況を表す内部バーの色に影響を与えるです。
+* [`Progress`](xref:Xamarin.Forms.ProgressBar.Progress)`float`現在の進行状況を 0 ~ 1 の値として表す値を指定します。 `Progress` 0未満の値は0に固定され、1より大きい値は1にクランプされます。
+* [`ProgressColor`](xref:Xamarin.Forms.ProgressBar.ProgressColor) は、 `Color` 現在の進行状況を表す内部バーの色に影響を与えるです。
 
 これらのプロパティは、オブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。つまり、を `ProgressBar` スタイル設定し、データバインディングのターゲットにすることができます。
 
@@ -86,4 +86,4 @@ await progressBar.ProgressTo(0.75, 500, Easing.Linear);
 
 ## <a name="related-links"></a>関連リンク
 
-* [ProgressBar のデモ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-progressbardemos/)
+* [ProgressBar のデモ](/samples/xamarin/xamarin-forms-samples/userinterface-progressbardemos/)

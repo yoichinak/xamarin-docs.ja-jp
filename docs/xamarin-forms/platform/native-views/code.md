@@ -10,12 +10,12 @@ ms.date: 04/27/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4cad46bdee1b49c316947bc56bdb69a3b9e9a270
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 71df780c648bcaa5a2ca4db388b52ac77a64d158
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938213"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560547"
 ---
 # <a name="native-views-in-c"></a>C のネイティブビュー\#
 
@@ -33,8 +33,8 @@ Xamarin.Formsを設定できるコントロール `Content` 、またはコレ�
 
 プラットフォーム固有のビューをレイアウトに追加する機能 Xamarin.Forms は、各プラットフォームの2つの拡張メソッドによって有効になります。
 
-- `Add`–レイアウトのコレクションにプラットフォーム固有のビューを追加し [`Children`](xref:Xamarin.Forms.Layout`1.Children) ます。
-- `ToView`–プラットフォーム固有のビューを取得し、 Xamarin.Forms [`View`](xref:Xamarin.Forms.View) コントロールのプロパティとして設定できるとしてラップし `Content` ます。
+- `Add` –レイアウトのコレクションにプラットフォーム固有のビューを追加し [`Children`](xref:Xamarin.Forms.Layout`1.Children) ます。
+- `ToView` –プラットフォーム固有のビューを取得し、 Xamarin.Forms [`View`](xref:Xamarin.Forms.View) コントロールのプロパティとして設定できるとしてラップし `Content` ます。
 
 共有プロジェクトでこれらのメソッドを使用するには Xamarin.Forms 、プラットフォーム固有の適切な名前空間をインポートする必要があり Xamarin.Forms ます。
 
@@ -325,5 +325,5 @@ stackLayout.Children.Add(fixedControl, arrangeOverrideDelegate: (renderer, final
 
 ## <a name="related-links"></a>関連リンク
 
-- [すべての埋め込み (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeembedding)
+- [すべての埋め込み (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-nativeembedding)
 - [ネイティブ フォーム](~/xamarin-forms/platform/native-forms.md)

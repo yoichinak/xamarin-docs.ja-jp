@@ -1,6 +1,6 @@
 ---
-title: 'Xamarin.Forms図形: ジオメトリ'
-description: Xamarin.Formsgeometry クラスを使用すると、2D 図形のジオメトリを記述できます。
+title: 'Xamarin.Forms 図形: ジオメトリ'
+description: Xamarin.Forms geometry クラスを使用すると、2D 図形のジオメトリを記述できます。
 ms.prod: xamarin
 ms.assetid: 07DE3D66-1820-4642-BDDF-84146D40C99D
 ms.technology: xamarin-forms
@@ -10,18 +10,18 @@ ms.date: 06/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 420099cadd3a541736084403265b9302c9a32b37
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: c6c6fb0ea9d3e2b728072fa36c3cdb2a86ade131
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918322"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91559325"
 ---
-# <a name="no-locxamarinforms-shapes-geometries"></a>Xamarin.Forms図形: ジオメトリ
+# <a name="no-locxamarinforms-shapes-geometries"></a>Xamarin.Forms 図形: ジオメトリ
 
 ![プレリリース API](~/media/shared/preview.png)
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 `Geometry`クラスとそれから派生するクラスを使用すると、2d 図形のジオメトリを記述できます。 `Geometry` オブジェクトは、四角形や円などの単純なものにすることも、2 つ以上のジオメトリ オブジェクトから作成された複合的なものにすることもできます。 さらに、円弧や曲線を含むより複雑なジオメトリを作成することもできます。
 
@@ -56,7 +56,7 @@ ms.locfileid: "87918322"
 - `RadiusX``double`geometry の x 半径の値を表す型の。 このプロパティの既定値は0.0 です。
 - `RadiusY``double`geometry の y 半径の値を表す型の。 このプロパティの既定値は0.0 です。
 
-これらのプロパティは、オブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。これは、データバインディングのターゲットとスタイルを設定できることを意味します。
+これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトが基になっています。つまり、これらは、データ バインディングの対象にすることができ、スタイルを設定できます。
 
 次の例は、オブジェクトでを作成して表示する方法を示してい `EllipseGeometry` `Path` ます。
 
@@ -85,7 +85,7 @@ ms.locfileid: "87918322"
 - `StartPoint`[`Point`](xref:Xamarin.Forms.Point)行の開始点を表す型の。
 - `EndPoint`[`Point`](xref:Xamarin.Forms.Point)線の終点を表す、型の。
 
-これらのプロパティは、オブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。これは、データバインディングのターゲットとスタイルを設定できることを意味します。
+これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトが基になっています。つまり、これらは、データ バインディングの対象にすることができ、スタイルを設定できます。
 
 次の例は、オブジェクトでを作成して表示する方法を示してい `LineGeometry` `Path` ます。
 
@@ -137,7 +137,7 @@ ms.locfileid: "87918322"
 - `Figures`型の `PathFigureCollection` `PathFigure` 。パスの内容を記述するオブジェクトのコレクションを表します。
 - `FillRule`型の。 `FillRule` これは、ジオメトリに含まれる交差する領域を結合する方法を決定します。 このプロパティの既定値は `FillRule.EvenOdd` です。
 
-これらのプロパティは、オブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。これは、データバインディングのターゲットとスタイルを設定できることを意味します。
+これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトが基になっています。つまり、これらは、データ バインディングの対象にすることができ、スタイルを設定できます。
 
 列挙体の詳細については `FillRule` 、「 [ Xamarin.Forms Shapes: Fill rules](fillrules.md)」を参照してください。
 
@@ -193,7 +193,7 @@ ms.locfileid: "87918322"
 - `SweepDirection``SweepDirection`円弧が描画される方向を指定する型の。 このプロパティの既定値は `SweepDirection.CounterClockwise` です。
 - `IsLargeArc`型の `bool` 。これは、弧が180°を超えるかどうかを示します。 このプロパティの既定値は `false` です。
 
-これらのプロパティは、オブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。これは、データバインディングのターゲットとスタイルを設定できることを意味します。
+これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトが基になっています。つまり、これらは、データ バインディングの対象にすることができ、スタイルを設定できます。
 
 > [!NOTE]
 > クラスに、 `ArcSegment` 円弧の開始点のプロパティが含まれていません。これは、それが表す円弧の終点だけを定義します。 円弧の始点は、の追加先となるの現在の点です `PathFigure` `ArcSegment` 。
@@ -242,7 +242,7 @@ ms.locfileid: "87918322"
 - `Point2`[`Point`](xref:Xamarin.Forms.Point)曲線の2番目の制御点を表す型の。 このプロパティの既定値は (0, 0) です。
 - `Point3`[`Point`](xref:Xamarin.Forms.Point)曲線の終点を表す型の。 このプロパティの既定値は (0, 0) です。
 
-これらのプロパティは、オブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。これは、データバインディングのターゲットとスタイルを設定できることを意味します。
+これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトが基になっています。つまり、これらは、データ バインディングの対象にすることができ、スタイルを設定できます。
 
 > [!NOTE]
 > クラスに、 `BezierSegment` 曲線の開始点のプロパティが含まれていません。 曲線の始点は、の追加先となるの現在の点です `PathFigure` `BezierSegment` 。
@@ -431,7 +431,7 @@ ms.locfileid: "87918322"
 - `Point1`[`Point`](xref:Xamarin.Forms.Point)曲線の制御点を表す型の。 このプロパティの既定値は (0, 0) です。
 - `Point2`[`Point`](xref:Xamarin.Forms.Point)曲線の終点を表す型の。 このプロパティの既定値は (0, 0) です。
 
-これらのプロパティは、オブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。これは、データバインディングのターゲットとスタイルを設定できることを意味します。
+これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトが基になっています。つまり、これらは、データ バインディングの対象にすることができ、スタイルを設定できます。
 
 > [!NOTE]
 > クラスに、 `QuadraticBezierSegment` 曲線の開始点のプロパティが含まれていません。 曲線の始点は、の追加先となるの現在の点です `PathFigure` `QuadraticBezierSegment` 。
@@ -560,7 +560,7 @@ ms.locfileid: "87918322"
 - `Children`型の `GeometryCollection` 。これは、を定義するオブジェクトを設定し `GeomtryGroup` ます。 `GeometryCollection`は、 `ObservableCollection` オブジェクトのです `Geometry` 。
 - `FillRule``FillRule`内の交差する領域を結合する方法を指定する型の。 `GeometryGroup` このプロパティの既定値は `FillRule.EvenOdd` です。
 
-これらのプロパティは、オブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。これは、データバインディングのターゲットとスタイルを設定できることを意味します。
+これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトが基になっています。つまり、これらは、データ バインディングの対象にすることができ、スタイルを設定できます。
 
 > [!NOTE]
 > `Children`プロパティは `ContentProperty` クラスのである `GeometryGroup` ため、XAML から明示的に設定する必要はありません。
@@ -630,6 +630,6 @@ ms.locfileid: "87918322"
 
 ## <a name="related-links"></a>関連リンク
 
-- [図形のデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
-- [Xamarin.Forms図形](index.md)
-- [Xamarin.Forms図形: 塗りつぶしルール](fillrules.md)
+- [図形のデモ (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+- [Xamarin.Forms 図形](index.md)
+- [Xamarin.Forms 図形: 塗りつぶしルール](fillrules.md)
