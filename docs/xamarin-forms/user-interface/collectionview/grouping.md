@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsCollectionView グループ化
+title: Xamarin.Forms CollectionView グループ化
 description: CollectionView では、IsGrouped 化プロパティを true に設定することによって、正しくグループ化されたデータを表示できます。
 ms.prod: xamarin
 ms.assetid: 7E494245-FDBD-49D6-B7FA-CEF976EB59BB
@@ -10,20 +10,20 @@ ms.date: 09/17/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 51661d6573d78386f4ca8bfea0063b752295c2d8
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 51bdcc6f9a95911c548269dbf7b3050cc5921183
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136462"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556621"
 ---
-# <a name="xamarinforms-collectionview-grouping"></a>Xamarin.FormsCollectionView グループ化
+# <a name="no-locxamarinforms-collectionview-grouping"></a>Xamarin.Forms CollectionView グループ化
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
 多くの場合、頻繁にスクロールするリストに表示すると、大きなデータセットが扱いにくくなる可能性があります。 このシナリオでは、データをグループにまとめると、データの移動が容易になるため、ユーザーエクスペリエンスが向上します。
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)グループ化されたデータの表示をサポートし、表示方法を制御する次のプロパティを定義します。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) グループ化されたデータの表示をサポートし、表示方法を制御する次のプロパティを定義します。
 
 - `IsGrouped`型のは、 `bool` 基になるデータをグループに表示するかどうかを示します。 このプロパティの既定値は `false` です。
 - `GroupHeaderTemplate`型の [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 。各グループのヘッダーに使用するテンプレート。
@@ -142,7 +142,7 @@ Animals.Add(new AnimalGroup("Monkeys", new List<Animal>
 
 ## <a name="display-grouped-data"></a>グループ化されたデータの表示
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)データが正しくグループ化されている場合は、プロパティをに設定して、グループ化されたデータを表示し `IsGrouped` `true` ます。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) データが正しくグループ化されている場合は、プロパティをに設定して、グループ化されたデータを表示し `IsGrouped` `true` ます。
 
 ```xaml
 <CollectionView ItemsSource="{Binding Animals}"
@@ -181,7 +181,7 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Animals");
 // ...
 ```
 
-の各項目の外観は、 [`CollectionView`](xref:Xamarin.Forms.CollectionView) プロパティをに設定することによって定義され [`CollectionView.ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate) [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ます。 詳細については、「[アイテムの外観を定義](~/xamarin-forms/user-interface/collectionview/populate-data.md#define-item-appearance)する」を参照してください。
+の各項目の外観は、 [`CollectionView`](xref:Xamarin.Forms.CollectionView) プロパティをに設定することによって定義され [`CollectionView.ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate) [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ます。 詳細については、「 [アイテムの外観を定義](~/xamarin-forms/user-interface/collectionview/populate-data.md#define-item-appearance)する」を参照してください。
 
 > [!NOTE]
 > 既定では、グループの [`CollectionView`](xref:Xamarin.Forms.CollectionView) ヘッダーとフッターにグループ名が表示されます。 この動作は、グループヘッダーとグループフッターをカスタマイズすることによって変更できます。
@@ -241,7 +241,7 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Animals");
 
 ## <a name="group-without-templates"></a>テンプレートのないグループ
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)プロパティをに設定せずに、正しくグループ化されたデータを表示でき [`CollectionView.ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate) [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ます。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) プロパティをに設定せずに、正しくグループ化されたデータを表示でき [`CollectionView.ItemTemplate`](xref:Xamarin.Forms.ItemsView.ItemTemplate) [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ます。
 
 ```xaml
 <CollectionView ItemsSource="{Binding Animals}"
@@ -252,5 +252,5 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Animals");
 
 ## <a name="related-links"></a>関連リンク
 
-- [CollectionView (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
-- [Xamarin.Formsデータテンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
+- [CollectionView (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+- [Xamarin.Forms データテンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)

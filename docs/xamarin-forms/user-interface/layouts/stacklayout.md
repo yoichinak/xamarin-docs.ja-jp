@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsStackLayout
+title: Xamarin.Forms StackLayout
 description: StackLayout は、1次元のスタック内の子ビューを水平方向または垂直方向に整理します。
 ms.prod: xamarin
 ms.assetid: 6A91EA70-268C-462C-AAAF-F8DA011403F8
@@ -10,18 +10,18 @@ ms.date: 05/11/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f624674cc6d4ba1bdc34a42fb52fb63ff8a7135a
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0c8e7c0e3edb581e13944ce48e2241f035791574
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137970"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556855"
 ---
-# <a name="xamarinforms-stacklayout"></a>Xamarin.FormsStackLayout
+# <a name="no-locxamarinforms-stacklayout"></a>Xamarin.Forms StackLayout
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stacklayoutdemos)
 
-[![Xamarin.FormsStackLayout](stacklayout-images/layouts.png "[!ファンド.NO LOC (Xamarin. Forms)] StackLayout")](stacklayout-images/layouts-large.png#lightbox "[!ファンド.NO LOC (Xamarin. Forms)] StackLayout")
+[![::: なし (Xamarin. Forms)::: StackLayout](stacklayout-images/layouts.png "::: なし (Xamarin. Forms)::: StackLayout")](stacklayout-images/layouts-large.png#lightbox "::: なし (Xamarin. Forms)::: StackLayout")
 
 は、 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 1 次元のスタック内の子ビューを水平方向または垂直方向に整理します。 既定では、は `StackLayout` 垂直方向に配置されます。 また、は、 `StackLayout` 他の子レイアウトを含む親レイアウトとして使用できます。
 
@@ -35,7 +35,7 @@ ms.locfileid: "84137970"
 クラスは、 [`StackLayout`](xref:Xamarin.Forms.StackLayout) `Layout<T>` 型のプロパティを定義するクラスから派生 `Children` `IList<T>` します。 `Children`プロパティは `ContentProperty` クラスのである `Layout<T>` ため、XAML から明示的に設定する必要はありません。
 
 > [!TIP]
-> レイアウトの最適なパフォーマンスを得るには、「[レイアウトのパフォーマンスを最適化](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)する」のガイドラインに従ってください。
+> レイアウトの最適なパフォーマンスを得るには、「 [レイアウトのパフォーマンスを最適化](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)する」のガイドラインに従ってください。
 
 ## <a name="vertical-orientation"></a>垂直方向
 
@@ -207,13 +207,13 @@ public class StackLayoutSpacingPageCS : ContentPage
 
 と [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) その子ビューのプロパティおよびプロパティは、 [`StackLayout`](xref:Xamarin.Forms.StackLayout) [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) 2 つのレイアウト設定をカプセル化する構造体のフィールドに設定できます。
 
-- *配置*では、親レイアウト内の子ビューの位置とサイズを決定します。
+- *配置* では、親レイアウト内の子ビューの位置とサイズを決定します。
 - [*展開*] は、子ビューが使用可能な場合に余分なスペースを使用する必要があるかどうかを示します。
 
 > [!TIP]
 > [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 必要がある場合を除き、のプロパティとプロパティを設定しないで [`StackLayout`](xref:Xamarin.Forms.StackLayout) ください。 既定値の `LayoutOptions.Fill` と `LayoutOptions.FillAndExpand` で、レイアウトの最適化が最大になります。 これらのプロパティを変更すると、既定値に戻す場合でも、コストがかかり、メモリが消費されます。
 
-### <a name="alignment"></a>アラインメント
+### <a name="alignment"></a>Alignment
 
 次の XAML の例では、の各子ビューに配置設定を設定し [`StackLayout`](xref:Xamarin.Forms.StackLayout) ます。
 
@@ -401,7 +401,7 @@ public ExpansionPageCS()
 [![入れ子になった StackLayout オブジェクトのスクリーンショット](stacklayout-images/combined.png "入れ子になった StackLayouts")](stacklayout-images/combined-large.png#lightbox "入れ子になった StackLayouts")
 
 > [!IMPORTANT]
-> [`StackLayout`](xref:Xamarin.Forms.StackLayout)オブジェクトやその他のレイアウトの入れ子を深くするほど、入れ子になったレイアウトの方がパフォーマンスに影響します。 詳細については、「[適切なレイアウトを選択する](~/xamarin-forms/deploy-test/performance.md#choose-the-correct-layout)」を参照してください。
+> [`StackLayout`](xref:Xamarin.Forms.StackLayout)オブジェクトやその他のレイアウトの入れ子を深くするほど、入れ子になったレイアウトの方がパフォーマンスに影響します。 詳細については、「 [適切なレイアウトを選択する](~/xamarin-forms/deploy-test/performance.md#choose-the-correct-layout)」を参照してください。
 
 これに相当する C# コードを次に示します。
 
@@ -471,7 +471,7 @@ public class CombinedStackLayoutPageCS : ContentPage
 
 ## <a name="related-links"></a>関連リンク
 
-- [StackLayout のデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stacklayoutdemos)
-- [レイアウトオプションXamarin.Forms](layout-options.md)
+- [StackLayout のデモ (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-stacklayoutdemos)
+- [レイアウトオプション Xamarin.Forms](layout-options.md)
 - [レイアウトの選択 Xamarin.Forms](choose-layout.md)
 - [アプリのパフォーマンスを向上させる Xamarin.Forms](~/xamarin-forms/deploy-test/performance.md)

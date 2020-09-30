@@ -1,5 +1,5 @@
 ---
-title: ファイルの処理Xamarin.Forms
+title: ファイルの処理 Xamarin.Forms
 description: を使用したファイル処理は Xamarin.Forms 、.NET Standard ライブラリのコードを使用するか、埋め込みリソースを使用して実現できます。
 ms.prod: xamarin
 ms.assetid: 9987C3F6-5F04-403B-BBB4-ECB024EA6CC8
@@ -10,14 +10,14 @@ ms.date: 06/21/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f62e5522b5b9a10a3806a70fe949561d77ce0d4e
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: f8d81e037d63a7144263ce4b3520647e6829bd57
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84574354"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557258"
 ---
-# <a name="file-handling-in-xamarinforms"></a>ファイルの処理Xamarin.Forms
+# <a name="file-handling-in-no-locxamarinforms"></a>ファイルの処理 Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)
 
@@ -25,7 +25,7 @@ _を使用したファイル処理は Xamarin.Forms 、.NET Standard ライブ�
 
 ## <a name="overview"></a>概要
 
-Xamarin.Formsコードは複数のプラットフォームで実行されます。各プラットフォームには独自のファイルシステムがあります。 そのことは以前、各プラットフォームでネイティブ ファイル API を使用することが最も簡単なファイルの読み書き方法であったことを意味しました。 代替的に、アプリでデータ ファイルを配布する方法として埋め込みリソースが最も単純な解決策となります。 ただし、.NET Standard 2.0 の場合、.NET Standard ライブラリでファイル アクセス コードを共有できます。
+Xamarin.Forms コードは複数のプラットフォームで実行されます。各プラットフォームには独自のファイルシステムがあります。 そのことは以前、各プラットフォームでネイティブ ファイル API を使用することが最も簡単なファイルの読み書き方法であったことを意味しました。 代替的に、アプリでデータ ファイルを配布する方法として埋め込みリソースが最も単純な解決策となります。 ただし、.NET Standard 2.0 の場合、.NET Standard ライブラリでファイル アクセス コードを共有できます。
 
 イメージ ファイルの処理方法については、[イメージの使用](~/xamarin-forms/user-interface/images.md)に関するページを参照してください。
 
@@ -75,7 +75,7 @@ string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFold
 
 -----
 
-`GetManifestResourceStream` は、その**リソース ID** を使用して埋め込みファイルにアクセスするために使用されます。 既定では、リソース ID は、そのファイルが埋め込まれているプロジェクトの既定の名前空間が付いたファイル名です。この場合、アセンブリは**WorkingWithFiles**であり、ファイル名は**LibTextResource.txt**ため、リソース id は `WorkingWithFiles.LibTextResource.txt` です。
+`GetManifestResourceStream` は、その**リソース ID** を使用して埋め込みファイルにアクセスするために使用されます。 既定では、リソース ID は、そのファイルが埋め込まれているプロジェクトの既定の名前空間が付いたファイル名です。この場合、アセンブリは **WorkingWithFiles** であり、ファイル名は **LibTextResource.txt**ため、リソース id は `WorkingWithFiles.LibTextResource.txt` です。
 
 ```csharp
 var assembly = IntrospectionExtensions.GetTypeInfo(typeof(LoadResourceText)).Assembly;
@@ -87,7 +87,7 @@ using (var reader = new System.IO.StreamReader (stream))
 }
 ```
 
-それから `text` 変数を利用してテキストを表示するか、利用しない場合、コードで使用します。 [サンプル アプリ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)のこのスクリーンショットで、`Label` コントロールでレンダリングされたテキストを確認できます。
+それから `text` 変数を利用してテキストを表示するか、利用しない場合、コードで使用します。 [サンプル アプリ](/samples/xamarin/xamarin-forms-samples/workingwithfiles)のこのスクリーンショットで、`Label` コントロールでレンダリングされたテキストを確認できます。
 
  [![.NET standard library に埋め込まれたテキストファイル](files-images/pcltext-sml.png "アプリに表示される .NET Standard ライブラリ内の埋め込みテキストファイル")](files-images/pcltext.png#lightbox "アプリに表示される .NET Standard ライブラリ内の埋め込みテキストファイル")
 
@@ -159,6 +159,6 @@ foreach (var res in assembly.GetManifestResourceNames()) {
 
 ## <a name="related-links"></a>関連リンク
 
-- [FilesSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)
+- [FilesSample](/samples/xamarin/xamarin-forms-samples/workingwithfiles)
 - [Xamarin.Forms サンプル](https://github.com/xamarin/xamarin-forms-samples)
 - [Xamarin.iOS でファイル システムを操作する](~/ios/app-fundamentals/file-system.md)

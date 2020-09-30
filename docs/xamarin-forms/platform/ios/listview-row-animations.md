@@ -10,12 +10,12 @@ ms.date: 02/21/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 594e436c9db7c123fea4f9aa262c9d27af765b07
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 53930f6b6b83ea855db9538f19e88482a4d1a82f
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136007"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557453"
 ---
 # <a name="listview-row-animations-on-ios"></a>IOS での ListView 行アニメーション
 
@@ -47,10 +47,10 @@ listView.On<iOS>().SetRowAnimationsEnabled(false);
 メソッドは、 `ListView.On<iOS>` このプラットフォーム固有のが iOS 上でのみ実行されることを指定します。 `ListView.SetRowAnimationsEnabled`名前空間のメソッドは、 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 項目のコレクションの更新時に行アニメーションを無効にするかどうかを制御するために使用され [`ListView`](xref:Xamarin.Forms.ListView) ます。 また、メソッドを `ListView.GetRowAnimationsEnabled` 使用して、で行アニメーションが無効になっているかどうかを返すこともでき `ListView` ます。
 
 > [!NOTE]
-> [`ListView`](xref:Xamarin.Forms.ListView)既定では、行アニメーションが有効になっています。 したがって、に新しい行が挿入されると、アニメーションが発生し `ListView` ます。
+> [`ListView`](xref:Xamarin.Forms.ListView) 既定では、行アニメーションが有効になっています。 したがって、に新しい行が挿入されると、アニメーションが発生し `ListView` ます。
 
 ## <a name="related-links"></a>関連リンク
 
-- [PlatformSpecifics (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [プラットフォーム固有設定の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific の API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

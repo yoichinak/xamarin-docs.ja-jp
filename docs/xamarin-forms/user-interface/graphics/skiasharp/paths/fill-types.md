@@ -10,12 +10,12 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e82572d88e380997fb2435179dba824c1b3f0c2f
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: aa427035dc33b617bed14e0c6aa0b0db27efca7f
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936189"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556569"
 ---
 # <a name="the-path-fill-types"></a>パスの塗りつぶしの種類
 
@@ -38,7 +38,7 @@ _SkiaSharp path fill 型で可能なさまざまな効果を発見する_
 
 多くのルーチンパスでは、ワインディングアルゴリズムによって、パスのすべての囲まれた領域がいっぱいになることがよくあります。 偶数の奇数のアルゴリズムでは、通常、より興味深い結果が生成されます。
 
-クラシックの例は、5つの**星**のページで説明されているように、星5つの星です。 [**Fivepointedstarpage .xaml**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/FivePointedStarPage.xaml)ファイルは、2つのビューをインスタンス化して `Picker` パスの塗りつぶしの種類を選択し、パスがストロークされるか、または塗りつぶされるか、またはその両方を順番に指定します。
+クラシックの例は、5つの **星** のページで説明されているように、星5つの星です。 [**Fivepointedstarpage .xaml**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/FivePointedStarPage.xaml)ファイルは、2つのビューをインスタンス化して `Picker` パスの塗りつぶしの種類を選択し、パスがストロークされるか、または塗りつぶされるか、またはその両方を順番に指定します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -230,5 +230,5 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

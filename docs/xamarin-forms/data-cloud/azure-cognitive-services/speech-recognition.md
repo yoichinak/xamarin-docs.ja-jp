@@ -10,12 +10,12 @@ ms.date: 01/14/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 171ecc02fda304135e5f535c3e798067595d7047
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: e5888e77948bef0fbb60a4e0068cbedf2d2a50e7
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84139322"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91555386"
 ---
 # <a name="speech-recognition-using-azure-speech-service"></a>Azure Speech Service を使用した音声認識
 
@@ -23,10 +23,10 @@ ms.locfileid: "84139322"
 
 Azure Speech Service は、次の機能を提供するクラウドベースの API です。
 
-- **音声からテキスト**への speech オーディオファイルまたはストリームをテキストに変換します。
-- **テキストから音声へ**の変換は、入力テキストを人間に似た合成音声に変換します。
-- **音声翻訳**を使用すると、音声からテキストへの変換と音声合成音声の両方について、リアルタイムで多言語翻訳を行うことができます。
-- **音声アシスタント**は、アプリケーション用の人間に似たメッセージ交換インターフェイスを作成できます。
+- **音声からテキスト** への speech オーディオファイルまたはストリームをテキストに変換します。
+- **テキストから音声へ** の変換は、入力テキストを人間に似た合成音声に変換します。
+- **音声翻訳** を使用すると、音声からテキストへの変換と音声合成音声の両方について、リアルタイムで多言語翻訳を行うことができます。
+- **音声アシスタント** は、アプリケーション用の人間に似たメッセージ交換インターフェイスを作成できます。
 
 この記事では Xamarin.Forms 、Azure Speech サービスを使用して、サンプルアプリケーションで音声からテキストを実装する方法について説明します。 次のスクリーンショットは、iOS と Android のサンプルアプリケーションを示しています。
 
@@ -34,23 +34,23 @@ Azure Speech Service は、次の機能を提供するクラウドベースの A
 
 ## <a name="create-an-azure-speech-service-resource"></a>Azure Speech Service リソースを作成する
 
-Azure Speech Service は Azure Cognitive Services の一部であり、画像認識、音声認識、翻訳、Bing search などのタスクにクラウドベースの Api を提供します。 詳細については、「 [Azure Cognitive Services とは](https://docs.microsoft.com/azure/cognitive-services/welcome)」を参照してください。
+Azure Speech Service は Azure Cognitive Services の一部であり、画像認識、音声認識、翻訳、Bing search などのタスクにクラウドベースの Api を提供します。 詳細については、「 [Azure Cognitive Services とは](/azure/cognitive-services/welcome)」を参照してください。
 
 サンプルプロジェクトでは、Azure portal に Azure Cognitive Services リソースを作成する必要があります。 Cognitive Services リソースは、Speech Service などの1つのサービスに対して、またはマルチサービスリソースとして作成できます。 Speech サービスリソースを作成する手順は次のとおりです。
 
 1. [Azure portal](https://portal.azure.com)にログインします。
 1. マルチサービスまたは単一サービスのリソースを作成します。
 1. リソースの API キーとリージョン情報を取得します。
-1. サンプルの**Constants.cs**ファイルを更新します。
+1. サンプルの **Constants.cs** ファイルを更新します。
 
-リソースを作成する手順については、「 [Cognitive Services リソースの作成](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account)」を参照してください。
+リソースを作成する手順については、「 [Cognitive Services リソースの作成](/azure/cognitive-services/cognitive-services-apis-create-account)」を参照してください。
 
 > [!NOTE]
 > [Azure サブスクリプション](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)をお持ちでない場合は、開始する前に[無料アカウント](https://aka.ms/azfree-docs-mobileapps)を作成してください。 アカウントを作成したら、サービスを試用するために、free レベルで1つのサービスリソースを作成できます。
 
 ## <a name="configure-your-app-with-the-speech-service"></a>Speech サービスを使用してアプリを構成する
 
-Cognitive Services リソースを作成した後、Azure リソースのリージョンと API キーを使用して**Constants.cs**ファイルを更新できます。
+Cognitive Services リソースを作成した後、Azure リソースのリージョンと API キーを使用して **Constants.cs** ファイルを更新できます。
 
 ```csharp
 public static class Constants
@@ -78,7 +78,7 @@ public interface IMicrophoneService
 
 ## <a name="create-the-page-layout"></a>ページレイアウトを作成する
 
-サンプルプロジェクトでは、 **mainpage.xaml**ファイルに基本的なページレイアウトを定義しています。 キーレイアウト要素は、 `Button` 議事録の処理を開始する、 `Label` 書き起こしテキストを格納する、および `ActivityIndicator` 議事録の処理が進行中であることを示すためのです。
+サンプルプロジェクトでは、 **mainpage.xaml** ファイルに基本的なページレイアウトを定義しています。 キーレイアウト要素は、 `Button` 議事録の処理を開始する、 `Label` 書き起こしテキストを格納する、および `ActivityIndicator` 議事録の処理が進行中であることを示すためのです。
 
 ```xaml
 <ContentPage ...>
@@ -347,7 +347,7 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
 
 `MainActivity`クラスは、という静的参照を定義し `Instance` ます。これは、 `AndroidMicrophoneService` アクセス許可を要求するときにオブジェクトによって要求されます。 `OnRequestPermissionsResult` `AndroidMicrophoneService` アクセス許可の要求がユーザーによって承認または拒否されたときに、メソッドをオーバーライドしてオブジェクトを更新します。
 
-最後に、Android アプリケーションには、 **AndroidManifest.xml**ファイルにオーディオを記録するためのアクセス許可が含まれている必要があります。
+最後に、Android アプリケーションには、 **AndroidManifest.xml** ファイルにオーディオを記録するためのアクセス許可が含まれている必要があります。
 
 ```xml
 <manifest ...>
@@ -399,7 +399,7 @@ namespace CognitiveSpeechService.iOS.Services
 1. メソッドは、 `RequestMicPermissions` 共有インスタンスを使用して `AVAudioSession` 記録アクセス許可を要求します。
 1. メソッドは、 `OnRequestPermissionResult` 指定された値を使用してインスタンスを更新し `TaskCompletionSource` `bool` ます。
 
-最後に、iOS アプリ**情報 plist**には、アプリがマイクへのアクセスを要求している理由をユーザーに通知するメッセージが含まれている必要があります。 情報の plist ファイルを編集して、要素内に次のタグを追加し `<dict>` ます。
+最後に、iOS アプリ **情報 plist** には、アプリがマイクへのアクセスを要求している理由をユーザーに通知するメッセージが含まれている必要があります。 情報の plist ファイルを編集して、要素内に次のタグを追加し `<dict>` ます。
 
 ```xml
 <plist>
@@ -458,20 +458,20 @@ namespace CognitiveSpeechService.UWP.Services
 1. メソッドは、 `GetPermissionAsync` インスタンスの初期化を試み `MediaCapture` ます。 失敗した場合は、マイクを有効にするためのユーザー要求を起動します。
 1. この `OnRequestPermissionResult` メソッドはインターフェイスを満たすために存在しますが、UWP 実装には必要ありません。
 
-最後に、 **package.appxmanifest**は、アプリケーションでマイクを使用するように指定する必要があります。 Package.appxmanifest ファイルをダブルクリックし、Visual Studio 2019 の [**機能**] タブで [**マイク**] オプションを選択します。
+最後に、 **package.appxmanifest** は、アプリケーションでマイクを使用するように指定する必要があります。 Package.appxmanifest ファイルをダブルクリックし、Visual Studio 2019 の [**機能**] タブで [**マイク**] オプションを選択します。
 
 [![Visual Studio 2019 のマニフェストのスクリーンショット](speech-recognition-images/package-manifest-cropped.png)](speech-recognition-images/package-manifest.png#lightbox "Visual Studio 2019 のマニフェストのスクリーンショット")
 
 ## <a name="test-the-application"></a>アプリケーションをテストする
 
-アプリを実行し、[**議事録**] ボタンをクリックします。 アプリはマイクへのアクセスを要求し、議事録の処理を開始する必要があります。 が `ActivityIndicator` アニメーション化され、議事録がアクティブであることが示されます。 話すと、アプリは Azure Speech Services リソースにオーディオデータをストリーミングし、書き起こしテキストで応答します。 書き起こしテキストは、受信時に要素に表示され `Label` ます。
+アプリを実行し、[ **議事録** ] ボタンをクリックします。 アプリはマイクへのアクセスを要求し、議事録の処理を開始する必要があります。 が `ActivityIndicator` アニメーション化され、議事録がアクティブであることが示されます。 話すと、アプリは Azure Speech Services リソースにオーディオデータをストリーミングし、書き起こしテキストで応答します。 書き起こしテキストは、受信時に要素に表示され `Label` ます。
 
 > [!NOTE]
 > Android エミュレーターは、Speech サービスライブラリの読み込みと初期化に失敗します。 Android プラットフォームでは、物理デバイスでのテストをお勧めします。
 
 ## <a name="related-links"></a>関連リンク
 
-- [Azure Speech Service のサンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-cognitivespeechservice)
-- [Azure Speech Service の概要](https://docs.microsoft.com/azure/cognitive-services/speech-service/overview)
-- [Cognitive Services リソースの作成](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account)
-- [クイック スタート: マイクから音声を認識する](https://docs.microsoft.com/azure/cognitive-services/speech-service/quickstarts/speech-to-text-from-microphone)
+- [Azure Speech Service のサンプル](/samples/xamarin/xamarin-forms-samples/webservices-cognitivespeechservice)
+- [Azure Speech Service の概要](/azure/cognitive-services/speech-service/overview)
+- [Cognitive Services リソースを作成する](/azure/cognitive-services/cognitive-services-apis-create-account)
+- [クイック スタート: マイクから音声を認識する](/azure/cognitive-services/speech-service/quickstarts/speech-to-text-from-microphone)

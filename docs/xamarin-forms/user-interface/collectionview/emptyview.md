@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsCollectionView EmptyView
+title: Xamarin.Forms CollectionView EmptyView
 description: CollectionView では、表示可能なデータがない場合にユーザーにフィードバックを提供する空のビューを指定できます。 空のビューには、文字列、ビュー、または複数のビューを指定できます。
 ms.prod: xamarin
 ms.assetid: 6CEBCFE6-5577-4F68-9709-431062609153
@@ -10,18 +10,18 @@ ms.date: 05/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d35e39e55d66452e47c7a3e3faf86a7a7d6adaca
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 041e614d94342834ed8e62c0f432794b3bc7d21a
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136493"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556413"
 ---
-# <a name="xamarinforms-collectionview-emptyview"></a>Xamarin.FormsCollectionView EmptyView
+# <a name="no-locxamarinforms-collectionview-emptyview"></a>Xamarin.Forms CollectionView EmptyView
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)表示するデータがない場合にユーザーフィードバックを提供するために使用できる次のプロパティを定義します。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 表示するデータがない場合にユーザーフィードバックを提供するために使用できる次のプロパティを定義します。
 
 - [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)型の、 `object` プロパティがのときに表示される文字列、バインディング、またはビュー、または [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) `null` プロパティによって指定されたコレクション `ItemsSource` が `null` または空の場合に表示される。 既定値は `null` です。
 - [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)型の [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 。指定したの書式設定に使用するテンプレート `EmptyView` 。 既定値は `null` です。
@@ -330,7 +330,7 @@ public class SearchTermDataTemplateSelector : DataTemplateSelector
 
 ## <a name="related-links"></a>関連リンク
 
-- [CollectionView (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
-- [Xamarin.Formsデータテンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
+- [CollectionView (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+- [Xamarin.Forms データテンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
 - [Xamarin.Forms のリソース ディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [DataTemplateSelector を作成する Xamarin.Forms](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

@@ -10,12 +10,12 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b7d039d26895b50f937392941e42a92a6e51f322
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: c7ff394fbe050fbd97c574c7edc32376e7d1b069
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137489"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557219"
 ---
 # <a name="webview-javascript-alerts-on-windows"></a>Windows での WebView JavaScript アラート
 
@@ -62,6 +62,6 @@ _webView.On<Windows>().SetIsJavaScriptAlertEnabled(!_webView.On<Windows>().IsJav
 
 ## <a name="related-links"></a>関連リンク
 
-- [PlatformSpecifics (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [プラットフォーム固有設定の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [WindowsSpecific の API](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

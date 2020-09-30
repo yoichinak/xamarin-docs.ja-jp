@@ -10,12 +10,12 @@ ms.date: 09/20/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 46a1b4d00b9eea276b9a3b3d5bffbdac3d31e0ef
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: b5c1310e300373fe75cbcd1464220acf989516ba
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136579"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91555685"
 ---
 # <a name="refreshview-pull-direction-on-windows"></a>Windows での RefreshView のプル方向
 
@@ -47,10 +47,10 @@ refreshView.On<Windows>().SetRefreshPullDirection(RefreshPullDirection.LeftToRig
 
 `RefreshView.On<Windows>`メソッドは、このプラットフォーム固有のがユニバーサル Windows プラットフォームでのみ実行されることを指定します。 `RefreshView.SetRefreshPullDirection`名前空間のメソッドは [`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) 、のプル方向を設定するために使用され `RefreshView` `RefreshPullDirection` ます。列挙体では、次の4つの値を指定できます。
 
-- `LeftToRight`左から右へのプルによって更新が開始されることを示します。
-- `TopToBottom`上から下へのプルが更新を開始し、の既定のプル方向であることを示し `RefreshView` ます。
-- `RightToLeft`右から左へプルすると、更新が開始されることを示します。
-- `BottomToTop`下から上へプルすると、更新が開始されることを示します。
+- `LeftToRight` 左から右へのプルによって更新が開始されることを示します。
+- `TopToBottom` 上から下へのプルが更新を開始し、の既定のプル方向であることを示し `RefreshView` ます。
+- `RightToLeft` 右から左へプルすると、更新が開始されることを示します。
+- `BottomToTop` 下から上へプルすると、更新が開始されることを示します。
 
 また、メソッドを `GetRefreshPullDirection` 使用して、の現在のを返すこともでき `RefreshPullDirection` `RefreshView` ます。
 
@@ -63,6 +63,6 @@ refreshView.On<Windows>().SetRefreshPullDirection(RefreshPullDirection.LeftToRig
 
 ## <a name="related-links"></a>関連リンク
 
-- [PlatformSpecifics (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [プラットフォーム固有設定の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [WindowsSpecific の API](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

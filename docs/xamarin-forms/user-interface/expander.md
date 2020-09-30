@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsExpander
+title: Xamarin.Forms Expander
 description: Xamarin.Formsエキスパンダーコントロールは、任意のコンテンツをホストするための拡張可能なコンテナーを提供します。 コンテンツを表示または非表示にするには、エキスパンダーヘッダーをタップします。
 ms.prod: xamarin
 ms.assetid: 381DCB55-522D-4414-B45B-E8DD70AA9985
@@ -10,14 +10,14 @@ ms.date: 04/15/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 33659dd52452c575c403d0a25b24f17daf9e3f17
-ms.sourcegitcommit: 8a18471b3d96f3f726b66f9bc50a829f1c122f29
+ms.openlocfilehash: 4be3744e0cce465aab8fc4af39495d2f7d8e9004
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84988221"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556608"
 ---
-# <a name="xamarinforms-expander"></a>Xamarin.FormsExpander
+# <a name="no-locxamarinforms-expander"></a>Xamarin.Forms Expander
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-expanderdemos/)
 
@@ -28,7 +28,7 @@ ms.locfileid: "84988221"
 ![展開された状態の展開コントロールのスクリーンショット (iOS と Android)](expander-images/expander.png "IOS と Android の展開")
 
 > [!IMPORTANT]
-> `Expander`は現在試験段階であり、フラグを設定することによってのみ使用でき `Expander_Experimental` ます。 詳細については、「試験的な[フラグ](~/xamarin-forms/internals/experimental-flags.md)」を参照してください。
+> `Expander` は現在試験段階であり、フラグを設定することによってのみ使用でき `Expander_Experimental` ます。 詳しくは、[試験的なフラグ](~/xamarin-forms/internals/experimental-flags.md)に関する記事を参照してください。
 >
 > また、コントロールは `Expander` 名前空間に完全に実装され `Xamarin.Forms` ます。 このため、でサポートされているすべてのプラットフォームで使用でき Xamarin.Forms ます。
 
@@ -47,17 +47,17 @@ ms.locfileid: "84988221"
 - `IsExpanded`が `bool` 展開されているかどうかを判断する、型の `Expander` 。 このプロパティは、 `TwoWay` バインディングモードを使用し、既定値は `false` です。
 - `State`の状態を表す、型の `ExpanderState` `Expander` 。 このプロパティは、 `OneWayToSource` バインドモードを使用します。
 
-これらのプロパティは、オブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。これは、データバインディングのターゲットとスタイルを設定できることを意味します。
+これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトが基になっています。つまり、これらは、データ バインディングの対象にすることができ、スタイルを設定できます。
 
 > [!NOTE]
-> `Content`プロパティはクラスの content プロパティである `Expander` ため、XAML から明示的に設定する必要はありません。
+> `Content` プロパティは `Expander` クラスのコンテンツ プロパティであるため、XAML から明示的に設定する必要はありません。
 
 `ExpanderState` 列挙体を使って、次のメンバーを定義できます。
 
-- `Expanding`が展開されていることを示し `Expander` ます。
-- `Expanded`が展開されていることを示し `Expander` ます。
-- `Collapsing`が折りたたまれていることを示し `Expander` ます。
-- `Collapsed`が折りたたまれていることを示し `Expander` ます。
+- `Expanding` が展開されていることを示し `Expander` ます。
+- `Expanded` が展開されていることを示し `Expander` ます。
+- `Collapsing` が折りたたまれていることを示し `Expander` ます。
+- `Collapsed` が折りたたまれていることを示し `Expander` ます。
 
 また、この `Expander` コントロールは `Tapped` 、ヘッダーがタップされたときに発生するイベントも定義し `Expander` ます。 また、には、 `Expander` `ForceUpdateSize` 実行時にプログラムによってのサイズを変更するために呼び出すことができるメソッドが用意されてい `Expander` ます。
 
@@ -91,7 +91,7 @@ ms.locfileid: "84988221"
 この例では、 `Expander` が既定で折りたたまれ、 [`Label`](xref:Xamarin.Forms.Label) ヘッダーとしてが表示されます。 ヘッダーをタップすると、が `Expander` 展開され、コンテンツ (子コントロールを含む) が表示され [`Grid`](xref:Xamarin.Forms.Grid) ます。 `Expander`が展開されている場合、そのヘッダーをタップすると、が折りたたまれ `Expander` ます。
 
 > [!IMPORTANT]
-> `Expander.Content`プロパティを暗黙的または明示的に設定すると、 `Expander` が折りたたまれている場合でも、コンテンツを含むページに移動するときにコンテンツが作成され `Expander` ます。 ただし、 `Expander.ContentTemplate` プロパティは、が初めて展開されるときにのみ増加するコンテンツに設定でき `Expander` ます。 詳細については、「[必要に応じて展開コンテンツを作成する](#create-expander-content-on-demand)」を参照してください。
+> `Expander.Content`プロパティを暗黙的または明示的に設定すると、 `Expander` が折りたたまれている場合でも、コンテンツを含むページに移動するときにコンテンツが作成され `Expander` ます。 ただし、 `Expander.ContentTemplate` プロパティは、が初めて展開されるときにのみ増加するコンテンツに設定でき `Expander` ます。 詳細については、「 [必要に応じて展開コンテンツを作成する](#create-expander-content-on-demand)」を参照してください。
 
 また、 `Expander` コードでを作成することもできます。
 
@@ -135,7 +135,7 @@ expander.Content = grid;
 
 ## <a name="create-expander-content-on-demand"></a>必要に応じて展開コンテンツを作成する
 
-`Expander`コンテンツは、拡張に応じて、オンデマンドで作成でき `Expander` ます。 これを実現するには、プロパティをコンテンツを含むに設定し `Expander.ContentTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ます。
+`Expander` コンテンツは、拡張に応じて、オンデマンドで作成でき `Expander` ます。 これを実現するには、プロパティをコンテンツを含むに設定し `Expander.ContentTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ます。
 
 ```xaml
 <Expander>
@@ -340,7 +340,7 @@ void OnLabelTapped(object sender, EventArgs e)
 
 ## <a name="related-links"></a>関連リンク
 
-- [エキスパンダーのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-expanderdemos/)
-- [Xamarin.Formsイージング関数](~/xamarin-forms/user-interface/animation/easing.md)
+- [エキスパンダーのデモ (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-expanderdemos/)
+- [Xamarin.Forms イージング関数](~/xamarin-forms/user-interface/animation/easing.md)
 - [Xamarin.Forms のトリガー](~/xamarin-forms/app-fundamentals/triggers.md)
-- [Xamarin.Formsバインド可能なレイアウト](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)
+- [Xamarin.Forms バインド可能なレイアウト](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)

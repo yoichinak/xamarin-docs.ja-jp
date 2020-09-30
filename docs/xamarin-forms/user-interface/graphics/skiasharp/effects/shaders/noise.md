@@ -10,12 +10,12 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 45ec48c0b7b58e26fa47d7343e96bb49591cb339
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 00b6251f530a4927d069ae92ec919645a06baf15
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127765"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91555399"
 ---
 # <a name="skiasharp-noise-and-composing"></a>SkiaSharp のノイズと作成
 
@@ -27,11 +27,11 @@ ms.locfileid: "84127765"
 
 ご覧のように、各ピクセルはランダムな色の値ではありません。 ピクセルからピクセルへの連続性は、ランダムな形状になります。
 
-Skia での Perlin ノイズのサポートは、CSS と SVG の W3C 仕様に基づいています。 フィルター効果のセクション8.20 の[**モジュールレベル 1**](https://www.w3.org/TR/filter-effects-1/#feTurbulenceElement)には、C コードの基になる Perlin ノイズアルゴリズムが含まれています。
+Skia での Perlin ノイズのサポートは、CSS と SVG の W3C 仕様に基づいています。 フィルター効果のセクション8.20 の [**モジュールレベル 1**](https://www.w3.org/TR/filter-effects-1/#feTurbulenceElement) には、C コードの基になる Perlin ノイズアルゴリズムが含まれています。
 
 ## <a name="exploring-perlin-noise"></a>Perlin ノイズの調査
 
-クラスは、 [`SKShader`](xref:SkiaSharp.SKShader) Perlin ノイズを生成するための2つの異なる静的メソッド (と) を定義し [`CreatePerlinNoiseFractalNoise`](xref:SkiaSharp.SKShader.CreatePerlinNoiseFractalNoise*) [`CreatePerlinNoiseTurbulence`](xref:SkiaSharp.SKShader.CreatePerlinNoiseTurbulence*) ます。 パラメーターは同じです。
+クラスは、 [`SKShader`](xref:SkiaSharp.SKShader) Perlin ノイズを生成するための2つの異なる静的メソッド (と) を定義し  [`CreatePerlinNoiseFractalNoise`](xref:SkiaSharp.SKShader.CreatePerlinNoiseFractalNoise*) [`CreatePerlinNoiseTurbulence`](xref:SkiaSharp.SKShader.CreatePerlinNoiseTurbulence*) ます。 パラメーターは同じです。
 
 ```csharp
 public static SkiaSharp CreatePerlinNoiseFractalNoise (float baseFrequencyX, float baseFrequencyY, int numOctaves, float seed);
@@ -39,7 +39,7 @@ public static SkiaSharp CreatePerlinNoiseFractalNoise (float baseFrequencyX, flo
 public static SkiaSharp.SKShader CreatePerlinNoiseTurbulence (float baseFrequencyX, float baseFrequencyY, int numOctaves, float seed);
 ```
 
-また、どちらのメソッドも、追加のパラメーターを使用して、オーバーロードされたバージョンに存在し `SKPointI` ます。 「 [**Perlin ノイズのタイル**](#tiling-perlin-noise)」では、これらのオーバーロードについて説明しています。
+また、どちらのメソッドも、追加のパラメーターを使用して、オーバーロードされたバージョンに存在し `SKPointI` ます。 「 [**Perlin ノイズのタイル**](#tiling-perlin-noise) 」では、これらのオーバーロードについて説明しています。
 
 2つの引数は、 `baseFrequency` 0 ~ 1 の範囲の SkiaSharp ドキュメントで定義されている正の値ですが、より高い値に設定することもできます。 値が大きいほど、ランダムな画像の変化が、水平方向と垂直方向に大きくなります。
 
@@ -47,7 +47,7 @@ public static SkiaSharp.SKShader CreatePerlinNoiseTurbulence (float baseFrequenc
 
 パラメーターは、 `seed` 乱数ジェネレーターの開始点です。 浮動小数点値として指定されていますが、分数は使用前に切り捨てられ、0は1と同じになります。
 
-[ **SkiaSharpFormsDemos**)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルの**Perlin ノイズ**ページを使用すると、引数と引数のさまざまな値を試すことができ `baseFrequency` `numOctaves` ます。 XAML ファイルを次に示します。
+[ **SkiaSharpFormsDemos**)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルの**Perlin ノイズ**ページを使用すると、引数と引数のさまざまな値を試すことができ `baseFrequency` `numOctaves` ます。 XAML ファイルを次に示します。
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -174,7 +174,7 @@ IOS、Android、およびユニバーサル Windows プラットフォーム (UW
 
 同じ引数を指定すると、左上隅から開始するのと同じパターンが常に生成されます。 この一貫性は、UWP ウィンドウの幅と高さを調整するときに明らかになります。 Windows 10 によって画面が再描画されると、キャンバスの上半分にあるパターンは変わりません。
 
-ノイズパターンには、さまざまな透明度が組み込まれています。 呼び出しに色を設定すると、透明度が明らかになり `canvas.Clear()` ます。 パターンでは、その色が目立つようになります。 また、[**複数のシェーダーを結合**](#combining-multiple-shaders)するセクションでも、この効果が得られます。
+ノイズパターンには、さまざまな透明度が組み込まれています。 呼び出しに色を設定すると、透明度が明らかになり `canvas.Clear()` ます。 パターンでは、その色が目立つようになります。 また、 [**複数のシェーダーを結合**](#combining-multiple-shaders)するセクションでも、この効果が得られます。
 
 これらの Perlin ノイズパターンは、単独で使用されることはほとんどありません。 多くの場合、これらは、後の記事で説明する blend モードとカラーフィルターに含まれています。
 
@@ -188,9 +188,9 @@ public static SKShader CreatePerlinNoiseFractalNoise (float baseFrequencyX, floa
 public static SKShader CreatePerlinNoiseTurbulence (float baseFrequencyX, float baseFrequencyY, int numOctaves, float seed, SKPointI tileSize);
 ```
 
-[`SKPointI`](xref:SkiaSharp.SKPointI)構造体は、使い慣れた構造体の整数バージョンです [`SKPoint`](xref:SkiaSharp.SKPoint) 。 `SKPointI`で `X` `Y` はなく型のプロパティとプロパティを定義し `int` `float` ます。
+[`SKPointI`](xref:SkiaSharp.SKPointI)構造体は、使い慣れた構造体の整数バージョンです [`SKPoint`](xref:SkiaSharp.SKPoint) 。 `SKPointI` で `X` `Y` はなく型のプロパティとプロパティを定義し `int` `float` ます。
 
-これらのメソッドは、指定されたサイズの繰り返しパターンを作成します。 各タイルでは、右端が左端と同じであり、上端が下端と同じになっています。 この特性は、タイル化された**Perlin ノイズ**ページで示されています。 XAML ファイルは前のサンプルと似ていますが、引数を `Stepper` 変更するためのビューしかありません `seed` 。
+これらのメソッドは、指定されたサイズの繰り返しパターンを作成します。 各タイルでは、右端が左端と同じであり、上端が下端と同じになっています。 この特性は、タイル化された **Perlin ノイズ** ページで示されています。 XAML ファイルは前のサンプルと似ていますが、引数を `Stepper` 変更するためのビューしかありません `seed` 。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -322,7 +322,7 @@ public static SKShader CreateCompose (SKShader dstShader, SKShader srcShader);
 
 Perlin ノイズシェーダーには透明度が含まれています。 そのシェーダーがソースである場合、コピー先のシェーダーは透明領域に表示されます。
 
-構成済みの**Perlin ノイズ**ページには、最初の**Perlin ノイズ**ページと実質的に同一の XAML ファイルがあります。 分離コードファイルも同様です。 ただし、元の**Perlin ノイズ**ページでは、 `Shader` のプロパティが、 `SKPaint` 静的なメソッドとメソッドから返されたシェーダーに設定され `CreatePerlinNoiseFractalNoise` `CreatePerlinNoiseTurbulence` ます。 これ**Composed Perlin Noise** `CreateCompose` は、組み合わせシェーダーの Perlin ノイズページ呼び出しを構成します。 コピー先は、を使用して作成された青いソリッドシェーダーです `CreateColor` 。 ソースは Perlin のノイズシェーダーです。
+構成済みの **Perlin ノイズ** ページには、最初の **Perlin ノイズ** ページと実質的に同一の XAML ファイルがあります。 分離コードファイルも同様です。 ただし、元の **Perlin ノイズ** ページでは、 `Shader` のプロパティが、 `SKPaint` 静的なメソッドとメソッドから返されたシェーダーに設定され `CreatePerlinNoiseFractalNoise` `CreatePerlinNoiseTurbulence` ます。 これ**Composed Perlin Noise** `CreateCompose` は、組み合わせシェーダーの Perlin ノイズページ呼び出しを構成します。 コピー先は、を使用して作成された青いソリッドシェーダーです `CreateColor` 。 ソースは Perlin のノイズシェーダーです。
 
 ```csharp
 public partial class ComposedPerlinNoisePage : ContentPage
@@ -389,7 +389,7 @@ public partial class ComposedPerlinNoisePage : ContentPage
 
 [![構成された Perlin ノイズ](noise-images/ComposedPerlinNoise.png "構成された Perlin ノイズ")](noise-images/ComposedPerlinNoise-Large.png#lightbox)
 
-これらのシェーダーは、 **Perlin ノイズ**ページで表示されているものよりも離れるの大きさに注意してください。 この違いは、ノイズシェーダーの透明度の大きさを示しています。
+これらのシェーダーは、 **Perlin ノイズ** ページで表示されているものよりも離れるの大きさに注意してください。 この違いは、ノイズシェーダーの透明度の大きさを示しています。
 
 メソッドのオーバーロードもあり [`CreateCompose`](xref:SkiaSharp.SKShader.CreateCompose(SkiaSharp.SKShader,SkiaSharp.SKShader,SkiaSharp.SKBlendMode)) ます。
 
@@ -401,5 +401,5 @@ public static SKShader CreateCompose (SKShader dstShader, SKShader srcShader, SK
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

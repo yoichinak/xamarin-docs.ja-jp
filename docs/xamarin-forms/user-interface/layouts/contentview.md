@@ -10,14 +10,14 @@ ms.date: 08/14/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 46d2abf895ffe31bd1dc1c22caf36440c54b331c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: eb94b2943cfe4659bb77764f810d45dc8b189005
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84130118"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91555373"
 ---
-# <a name="xamarinforms-contentview"></a>Xamarin.Forms ContentView
+# <a name="no-locxamarinforms-contentview"></a>Xamarin.Forms ContentView
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/)
 
@@ -29,11 +29,11 @@ ms.locfileid: "84130118"
 
 クラスは、 `ContentView` 1 つのプロパティを定義します。
 
-* [`Content`](xref:Xamarin.Forms.ContentView.Content)は `View` オブジェクトです。 このプロパティは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) データバインディングのターゲットとして使用できるように、オブジェクトによってサポートされます。
+* [`Content`](xref:Xamarin.Forms.ContentView.Content) は `View` オブジェクトです。 このプロパティは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) データバインディングのターゲットとして使用できるように、オブジェクトによってサポートされます。
 
 また、は、 `ContentView` クラスからプロパティを継承し `TemplatedView` ます。
 
-* [`ControlTemplate`](xref:Xamarin.Forms.TemplatedView.ControlTemplate)は、 `ControlTemplate` コントロールの外観を定義またはオーバーライドできるです。
+* [`ControlTemplate`](xref:Xamarin.Forms.TemplatedView.ControlTemplate) は、 `ControlTemplate` コントロールの外観を定義またはオーバーライドできるです。
 
 プロパティの詳細につい `ControlTemplate` ては、「 [ControlTemplate を使用して外観をカスタマイズする](#customize-appearance-with-a-controltemplate)」を参照してください。
 
@@ -48,7 +48,7 @@ ms.locfileid: "84130118"
 1. カスタムコントロールの UI を作成します。
 
 > [!NOTE]
-> XAML ではなくコードで定義されたレイアウトを持つカスタムコントロールを作成することができます。 わかりやすくするために、サンプルアプリケーションでは、XAML レイアウトを持つ1つのクラスのみを定義し `CardView` ます。 ただし、サンプルアプリケーションには、コード内でカスタムコントロールを使用するプロセスを示す**Cardviewcodepage**クラスが含まれています。
+> XAML ではなくコードで定義されたレイアウトを持つカスタムコントロールを作成することができます。 わかりやすくするために、サンプルアプリケーションでは、XAML レイアウトを持つ1つのクラスのみを定義し `CardView` ます。 ただし、サンプルアプリケーションには、コード内でカスタムコントロールを使用するプロセスを示す **Cardviewcodepage** クラスが含まれています。
 
 ### <a name="create-code-behind-properties"></a>分離コードプロパティの作成
 
@@ -86,7 +86,7 @@ public string CardTitle
 }
 ```
 
-オブジェクトの詳細について `BindableProperty` は、「バインド可能な[プロパティ](~/xamarin-forms/xaml/bindable-properties.md)」を参照してください。
+オブジェクトの詳細について `BindableProperty` は、「バインド可能な [プロパティ](~/xamarin-forms/xaml/bindable-properties.md)」を参照してください。
 
 ### <a name="define-ui"></a>UI の定義
 
@@ -119,16 +119,16 @@ public string CardTitle
 </ContentView>
 ```
 
-要素は、 `ContentView` `x:Name` プロパティをこのに設定します。**これ**を使用して、インスタンスにバインドされたオブジェクトにアクセスでき `CardView` ます。 プロパティのバインドセットの要素は、バインドされたオブジェクトで定義されている値に設定されます。
+要素は、 `ContentView` `x:Name` プロパティをこのに設定します。 **これ**を使用して、インスタンスにバインドされたオブジェクトにアクセスでき `CardView` ます。 プロパティのバインドセットの要素は、バインドされたオブジェクトで定義されている値に設定されます。
 
 データ バインディングの詳細については、「[Xamarin.Forms のデータ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)」を参照してください。
 
 > [!NOTE]
-> プロパティは、 `FallbackValue` バインディングがの場合に既定値を提供し `null` ます。 これにより、Visual Studio の[XAML プレビューアー](~/xamarin-forms/xaml/xaml-previewer/index.md)でコントロールを表示することもでき `CardView` ます。
+> プロパティは、 `FallbackValue` バインディングがの場合に既定値を提供し `null` ます。 これにより、Visual Studio の [XAML プレビューアー](~/xamarin-forms/xaml/xaml-previewer/index.md) でコントロールを表示することもでき `CardView` ます。
 
 ## <a name="instantiate-a-custom-control"></a>カスタムコントロールのインスタンス化
 
-カスタムコントロールの名前空間への参照は、カスタムコントロールをインスタンス化するページに追加する必要があります。 次の例は、XAML のインスタンスに追加された**コントロール**と呼ばれる名前空間参照を示してい `ContentPage` ます。
+カスタムコントロールの名前空間への参照は、カスタムコントロールをインスタンス化するページに追加する必要があります。 次の例は、XAML のインスタンスに追加された **コントロール** と呼ばれる名前空間参照を示してい `ContentPage` ます。
 
 ```xaml
 <ContentPage ...
@@ -211,7 +211,7 @@ CardView card = new CardView
 
 ## <a name="related-links"></a>関連リンク
 
-* [ContentView サンプルアプリケーション](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/)
+* [ContentView サンプルアプリケーション](/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/)
 * [Xamarin.Forms のデータ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 * [バインド](~/xamarin-forms/xaml/bindable-properties.md)可能なプロパティ。
 * [Xamarin.Forms のコントロール テンプレート](~/xamarin-forms/app-fundamentals/templates/control-template.md)

@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsCarouselView スクロール
+title: Xamarin.Forms CarouselView スクロール
 description: ユーザーがスクロールを開始しようとしたときに、項目が完全に表示されるように、スクロールの終了位置を制御できます。 さらに、CarouselView は2つの ScrollTo メソッドを定義して、プログラムによって項目をビューにスクロールします。
 ms.prod: xamarin
 ms.assetid: 92D7B618-07FA-4343-9D0F-212525E92C39
@@ -10,20 +10,20 @@ ms.date: 01/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5c15760919c2511ee24485ab7539463ec252d999
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 5e48b962130acf98aa99c83773318d077dde2666
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918132"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556647"
 ---
-# <a name="no-locxamarinforms-carouselview-scrolling"></a>Xamarin.FormsCarouselView スクロール
+# <a name="no-locxamarinforms-carouselview-scrolling"></a>Xamarin.Forms CarouselView スクロール
 
 ![プレリリース API](~/media/shared/preview.png)
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)スクロールに関連する次のプロパティを定義します。
+[`CarouselView`](xref:Xamarin.Forms.CarouselView) スクロールに関連する次のプロパティを定義します。
 
 - `HorizontalScrollBarVisibility``ScrollBarVisibility`水平スクロールバーを表示するタイミングを指定する型の。
 - `IsDragging``bool`がスクロールするかどうかを示す型の `CarouselView` 。 これは読み取り専用プロパティで、既定値は `false` です。
@@ -37,11 +37,11 @@ ms.locfileid: "87918132"
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)[`ScrollToRequested`](xref:Xamarin.Forms.ItemsView.ScrollToRequested)メソッドのいずれかが呼び出されたときに発生するイベントを定義 [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) します。 [`ScrollToRequestedEventArgs`](xref:Xamarin.Forms.ScrollToRequestedEventArgs)イベントに付随するオブジェクトには、、、、などの `ScrollToRequested` 多くのプロパティがあり `IsAnimated` `Index` `Item` `ScrollToPosition` ます。 これらのプロパティは、メソッドの呼び出しで指定された引数によって設定され `ScrollTo` ます。
 
-また、は、スクロールが発生したことを [`CarouselView`](xref:Xamarin.Forms.CarouselView) `Scrolled` 示すために発生するイベントを定義します。 `ItemsViewScrolledEventArgs`イベントに付随するオブジェクトに `Scrolled` は、多くのプロパティがあります。 詳細については、「[スクロールの検出](#detect-scrolling)」を参照してください。
+また、は、スクロールが発生したことを [`CarouselView`](xref:Xamarin.Forms.CarouselView) `Scrolled` 示すために発生するイベントを定義します。 `ItemsViewScrolledEventArgs`イベントに付随するオブジェクトに `Scrolled` は、多くのプロパティがあります。 詳細については、「 [スクロールの検出](#detect-scrolling)」を参照してください。
 
-ユーザーがスクロールを開始しようとしたときに、項目が完全に表示されるように、スクロールの終了位置を制御できます。 スクロールが停止したときに項目が位置にスナップされるため、この機能はスナップと呼ばれています。 詳細については、「[スナップポイント](#snap-points)」を参照してください。
+ユーザーがスクロールを開始しようとしたときに、項目が完全に表示されるように、スクロールの終了位置を制御できます。 スクロールが停止したときに項目が位置にスナップされるため、この機能はスナップと呼ばれています。 詳細については、「 [スナップポイント](#snap-points)」を参照してください。
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)ユーザーがスクロールするときに、データを徐々に読み込むこともできます。 詳細については、「[データの増分読み込み](populate-data.md#load-data-incrementally)」を参照してください。
+[`CarouselView`](xref:Xamarin.Forms.CarouselView) ユーザーがスクロールするときに、データを徐々に読み込むこともできます。 詳細については、「 [データの増分読み込み](populate-data.md#load-data-incrementally)」を参照してください。
 
 ## <a name="detect-scrolling"></a>スクロールの検出
 
@@ -135,7 +135,7 @@ carouselView.ScrollTo(monkey, position: ScrollToPosition.MakeVisible);
 > [!NOTE]
 > [`ScrollToPosition.MakeVisible`](xref:Xamarin.Forms.ScrollToPosition)メンバーは、 `position` メソッドの呼び出し時に引数が指定されていない場合に、既定で使用され `ScrollTo` ます。
 
-### <a name="start"></a>[開始]
+### <a name="start"></a>開始
 
 メンバーは、 [`ScrollToPosition.Start`](xref:Xamarin.Forms.ScrollToPosition) 項目をビューの先頭までスクロールする必要があることを示します。
 
@@ -167,11 +167,11 @@ carouselViewView.ScrollTo(monkey, position: ScrollToPosition.End);
 
 ## <a name="control-scroll-position-when-new-items-are-added"></a>新しい項目が追加されたときのスクロール位置の制御
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)バインド可能 `ItemsUpdatingScrollMode` なプロパティによってサポートされるプロパティを定義します。 このプロパティは `ItemsUpdatingScrollMode` 、 `CarouselView` 新しい項目が追加されたときののスクロール動作を表す列挙値を取得または設定します。 `ItemsUpdatingScrollMode` 列挙体を使って、次のメンバーを定義できます。
+[`CarouselView`](xref:Xamarin.Forms.CarouselView) バインド可能 `ItemsUpdatingScrollMode` なプロパティによってサポートされるプロパティを定義します。 このプロパティは `ItemsUpdatingScrollMode` 、 `CarouselView` 新しい項目が追加されたときののスクロール動作を表す列挙値を取得または設定します。 `ItemsUpdatingScrollMode` 列挙体を使って、次のメンバーを定義できます。
 
-- `KeepItemsInView`新しい項目が追加されたときに表示される最初の項目を維持するために、スクロールのオフセットを調整します。
-- `KeepScrollOffset`新しい項目が追加されたときに、リストの先頭を基準としたスクロールオフセットを維持します。
-- `KeepLastItemInView`新しい項目が追加されたときに最後の項目が表示されるように、スクロールのオフセットを調整します。
+- `KeepItemsInView` 新しい項目が追加されたときに表示される最初の項目を維持するために、スクロールのオフセットを調整します。
+- `KeepScrollOffset` 新しい項目が追加されたときに、リストの先頭を基準としたスクロールオフセットを維持します。
+- `KeepLastItemInView` 新しい項目が追加されたときに最後の項目が表示されるように、スクロールのオフセットを調整します。
 
 プロパティの既定値 `ItemsUpdatingScrollMode` は `KeepItemsInView` です。 したがって、新しい項目がに追加されると、リスト内の最初に表示された [`CarouselView`](xref:Xamarin.Forms.CarouselView) 項目が表示されたままになります。 新しく追加された項目が常に一覧の一番下に表示されるようにするには、 `ItemsUpdatingScrollMode` プロパティを次のように設定する必要があり `KeepLastItemInView` ます。
 
@@ -194,9 +194,9 @@ CarouselView carouselView = new CarouselView
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView)`HorizontalScrollBarVisibility`バインド可能 `VerticalScrollBarVisibility` なプロパティによってサポートされるプロパティとプロパティを定義します。 これらのプロパティは、 [`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollBarVisibility) 水平方向または垂直方向のスクロールバーを表示するタイミングを表す列挙値を取得または設定します。 `ScrollBarVisibility` 列挙体を使って、次のメンバーを定義できます。
 
-- [`Default`](xref:Xamarin.Forms.ScrollBarVisibility)プラットフォームの既定のスクロールバーの動作を示し `HorizontalScrollBarVisibility` ます。は、プロパティとプロパティの既定値です `VerticalScrollBarVisibility` 。
-- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility)ビューにコンテンツが収まる場合でも、スクロールバーが表示されることを示します。
-- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility)コンテンツがビューに収まらない場合でも、スクロールバーが表示されないことを示します。
+- [`Default`](xref:Xamarin.Forms.ScrollBarVisibility) プラットフォームの既定のスクロールバーの動作を示し `HorizontalScrollBarVisibility` ます。は、プロパティとプロパティの既定値です `VerticalScrollBarVisibility` 。
+- [`Always`](xref:Xamarin.Forms.ScrollBarVisibility) ビューにコンテンツが収まる場合でも、スクロールバーが表示されることを示します。
+- [`Never`](xref:Xamarin.Forms.ScrollBarVisibility) コンテンツがビューに収まらない場合でも、スクロールバーが表示されないことを示します。
 
 ## <a name="snap-points"></a>スナップ位置
 
@@ -214,9 +214,9 @@ CarouselView carouselView = new CarouselView
 
 [`SnapPointsType`](xref:Xamarin.Forms.SnapPointsType)列挙体は、次のメンバーを定義します。
 
-- `None`スクロールが項目にスナップされないことを示します。
-- `Mandatory`コンテンツを常に最も近いスナップポイントにスナップし、慣性の方向に沿ってスクロールが自然に停止することを示します。
-- `MandatorySingle`と同じ動作を示し `Mandatory` ますが、一度に1つの項目だけをスクロールします。
+- `None` スクロールが項目にスナップされないことを示します。
+- `Mandatory` コンテンツを常に最も近いスナップポイントにスナップし、慣性の方向に沿ってスクロールが自然に停止することを示します。
+- `MandatorySingle` と同じ動作を示し `Mandatory` ますが、一度に1つの項目だけをスクロールします。
 
 既定では、 [`CarouselView`](xref:Xamarin.Forms.CarouselView) [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) プロパティはに設定されます `SnapPointsType.MandatorySingle` 。これにより、スクロールによって一度に1つの項目だけがスクロールされるようになります。
 
@@ -231,7 +231,7 @@ CarouselView carouselView = new CarouselView
 > [!IMPORTANT]
 > プロパティの値は、 [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment) [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) プロパティがまたはに設定されている場合にのみ尊重され `Mandatory` `MandatorySingle` ます。
 
-#### <a name="start"></a>[開始]
+#### <a name="start"></a>開始
 
 メンバーは、 `SnapPointsAlignment.Start` スナップポイントが項目の先頭端に合わせて整列されていることを示します。 次の XAML の例は、この列挙型のメンバーを設定する方法を示しています。
 
@@ -337,4 +337,4 @@ CarouselView carouselView = new CarouselView
 
 ## <a name="related-links"></a>関連リンク
 
-- [CarouselView (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
+- [CarouselView (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)

@@ -1,23 +1,12 @@
 ---
-title: Xamarin.FormsCheckBox
-description: Xamarin.Formsチェックボックスは、チェックまたは空にすることができるボタンの種類です。 チェックボックスがオンになっている場合は、オンになっていると見なされます。 チェックボックスが空の場合は、オフになっていると見なされます。
-ms.prod: xamarin
-ms.assetid: B8B9268B-BCB8-42B9-B08C-C0F22C137238
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 06/11/2019
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8399dde2e4e2c9fb53b38fca2923eb0e3bfc6ce3
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
-ms.translationtype: MT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136475"
+タイトル: " Xamarin.Forms checkbox" 説明: チェックボックスは、チェック Xamarin.Forms または空にすることができるボタンの種類です。 チェックボックスがオンになっている場合は、オンになっていると見なされます。 チェックボックスが空の場合は、オフになっていると見なされます。
+ms. 製品: xamarin ms. assetid: B8B9268B-BCB8-42B9-B08C-C0F22C137238: xamarin-forms author: davidbritch: dabritch ms. date: 06/11/2019 no loc:
+- "Xamarin.Forms"
+- "Xamarin.Essentials"
+
 ---
-# <a name="xamarinforms-checkbox"></a>Xamarin.FormsCheckBox
+
+# <a name="no-locxamarinforms-checkbox"></a>Xamarin.Forms CheckBox
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos/)
 
@@ -133,7 +122,7 @@ checkBox.CheckedChanged += (sender, e) =>
 
 ## <a name="checkbox-visual-states"></a>チェックボックスの表示状態
 
-`CheckBox`には、が `IsChecked` [`VisualState`](xref:Xamarin.Forms.VisualState) チェックされたときに、へのビジュアル変更を開始するために使用できるがあり `CheckBox` ます。
+`CheckBox` には、が `IsChecked` [`VisualState`](xref:Xamarin.Forms.VisualState) チェックされたときに、へのビジュアル変更を開始するために使用できるがあり `CheckBox` ます。
 
 次の XAML の例は、状態の表示状態を定義する方法を示してい `IsChecked` ます。
 
@@ -165,6 +154,6 @@ checkBox.CheckedChanged += (sender, e) =>
 
 ## <a name="related-links"></a>関連リンク
 
-- [チェックボックスのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos/)
+- [チェックボックスのデモ (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos/)
 - [Xamarin.Forms のトリガー](~/xamarin-forms/app-fundamentals/triggers.md)
 - [Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)

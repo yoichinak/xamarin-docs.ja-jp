@@ -10,18 +10,18 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f7149a818506611176f7c34a6fae4ec733cd2ad9
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 8e8c5696235e0258ab4e300a821c1ef804e6bd50
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938568"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556686"
 ---
 # <a name="picker-item-selection-on-ios"></a>IOS でのピッカー項目の選択
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
-この iOS プラットフォーム固有のコントロールでは、で項目の選択が発生したときに、 [`Picker`](xref:Xamarin.Forms.Picker) ユーザーがコントロールの項目を参照するときに項目の選択を行うように指定できます。または、[**完了**] ボタンをクリックしたときにのみ、項目の選択が行われます。 これは、 `Picker.UpdateMode` 添付プロパティを列挙体の値に設定することによって XAML で使用され `UpdateMode` ます。
+この iOS プラットフォーム固有のコントロールでは、で項目の選択が発生したときに、 [`Picker`](xref:Xamarin.Forms.Picker) ユーザーがコントロールの項目を参照するときに項目の選択を行うように指定できます。または、[ **完了** ] ボタンをクリックしたときにのみ、項目の選択が行われます。 これは、 `Picker.UpdateMode` 添付プロパティを列挙体の値に設定することによって XAML で使用され `UpdateMode` ます。
 
 ```xaml
 <ContentPage ...
@@ -47,8 +47,8 @@ picker.On<iOS>().SetUpdateMode(UpdateMode.WhenFinished);
 
 メソッドは、 `Picker.On<iOS>` このプラットフォーム固有のが iOS 上でのみ実行されることを指定します。 `Picker.SetUpdateMode`名前空間のメソッドは、 [`Xamarin.Forms.PlatformConfiguration.iOSSpecific`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific) 項目の選択が行われるタイミングを制御するために使用され `UpdateMode` ます。列挙体では、次の2つの値を指定できます。
 
-- `Immediately`–項目の選択は、ユーザーが内の項目を参照したときに発生し [`Picker`](xref:Xamarin.Forms.Picker) ます。 これは、の既定の動作です Xamarin.Forms 。
-- `WhenFinished`–項目の選択は、ユーザーがの [**完了**] ボタンをクリックしたときにのみ発生し [`Picker`](xref:Xamarin.Forms.Picker) ます。
+- `Immediately` –項目の選択は、ユーザーが内の項目を参照したときに発生し [`Picker`](xref:Xamarin.Forms.Picker) ます。 これは、の既定の動作です Xamarin.Forms 。
+- `WhenFinished` –項目の選択は、ユーザーがの [ **完了** ] ボタンをクリックしたときにのみ発生し [`Picker`](xref:Xamarin.Forms.Picker) ます。
 
 また、メソッドを `SetUpdateMode` 使用して、現在のを返すメソッドを呼び出すことにより、列挙値を切り替えることもでき `UpdateMode` `UpdateMode` ます。
 
@@ -70,6 +70,6 @@ switch (picker.On<iOS>().UpdateMode())
 
 ## <a name="related-links"></a>関連リンク
 
-- [PlatformSpecifics (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [プラットフォーム固有設定の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific の API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

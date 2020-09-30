@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsCollectionView の選択
+title: Xamarin.Forms CollectionView の選択
 description: 既定では、CollectionView の選択は無効になっています。 ただし、1つまたは複数の選択を有効にすることができます。
 ms.prod: xamarin
 ms.assetid: 423D91C7-1E58-4735-9E80-58F11CDFD953
@@ -10,18 +10,18 @@ ms.date: 05/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 39f118d7073fc551923f891681c8c6cf6a4c5ddd
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: c432c1981ba057f61bba780b7997c8b78f8cef3f
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137385"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557349"
 ---
-# <a name="xamarinforms-collectionview-selection"></a>Xamarin.FormsCollectionView の選択
+# <a name="no-locxamarinforms-collectionview-selection"></a>Xamarin.Forms CollectionView の選択
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)項目の選択を制御する次のプロパティを定義します。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 項目の選択を制御する次のプロパティを定義します。
 
 - [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode)選択モードである、型の [`SelectionMode`](xref:Xamarin.Forms.SelectionMode) 。
 - [`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem)型の、 `object` リスト内の選択された項目。 このプロパティの既定のバインディングモードは `TwoWay` で、 `null` 項目が選択されていない場合は値が設定されます。
@@ -33,14 +33,14 @@ ms.locfileid: "84137385"
 
 既定で [`CollectionView`](xref:Xamarin.Forms.CollectionView) は、選択は無効になっています。 ただし、この動作は、 [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode) プロパティ値を列挙体のメンバーの1つに設定することによって変更でき [`SelectionMode`](xref:Xamarin.Forms.SelectionMode) ます。
 
-- `None`–項目を選択できないことを示します。 これが既定値です。
-- `Single`–1つの項目を選択し、選択した項目を強調表示することを示します。
-- `Multiple`–選択された項目が強調表示されている複数の項目を選択できることを示します。
+- `None` –項目を選択できないことを示します。 これが既定値です。
+- `Single` –1つの項目を選択し、選択した項目を強調表示することを示します。
+- `Multiple` –選択された項目が強調表示されている複数の項目を選択できることを示します。
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView)[`SelectionChanged`](xref:Xamarin.Forms.SelectableItemsView.SelectionChanged) [`SelectedItem`](xref:Xamarin.Forms.SelectableItemsView.SelectedItem) ユーザーが一覧から項目を選択したか、アプリケーションがプロパティを設定したときに、プロパティが変更されたときに発生するイベントを定義します。 また、このイベントは、プロパティが変更されたときにも発生し [`SelectedItems`](xref:Xamarin.Forms.SelectableItemsView.SelectedItems) ます。 [`SelectionChangedEventArgs`](xref:Xamarin.Forms.SelectionChangedEventArgs)イベントに付随するオブジェクトに `SelectionChanged` は、次の2種類のプロパティがあり `IReadOnlyList<object>` ます。
 
-- `PreviousSelection`–選択項目が変更される前に選択された項目の一覧。
-- `CurrentSelection`–選択の変更後に選択された項目の一覧。
+- `PreviousSelection` –選択項目が変更される前に選択された項目の一覧。
+- `CurrentSelection` –選択の変更後に選択された項目の一覧。
 
 さらに、には、選択した [`CollectionView`](xref:Xamarin.Forms.CollectionView) `UpdateSelectedItems` 項目のリストを使用してプロパティを更新するメソッドがありますが、 [`SelectedItems`](xref:Xamarin.Forms.SelectableItemsView.SelectedItems) 1 つの変更通知のみを実行します。
 
@@ -267,7 +267,7 @@ namespace CollectionViewDemos.ViewModels
 
 ## <a name="change-selected-item-color"></a>選択した項目の色の変更
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)では、を使用して `Selected` [`VisualState`](xref:Xamarin.Forms.VisualState) 、内の選択した項目に対するビジュアル変更を開始でき `CollectionView` ます。 一般的なユースケースで `VisualState` は、次の XAML の例に示すように、選択した項目の背景色を変更します。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) では、を使用して `Selected` [`VisualState`](xref:Xamarin.Forms.VisualState) 、内の選択した項目に対するビジュアル変更を開始でき `CollectionView` ます。 一般的なユースケースで `VisualState` は、次の XAML の例に示すように、選択した項目の背景色を変更します。
 
 ```xaml
 <ContentPage ...>
@@ -314,7 +314,7 @@ namespace CollectionViewDemos.ViewModels
 
 ## <a name="disable-selection"></a>選択の無効化
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)既定では、選択は無効になっています。 ただし、の選択が有効になっている場合は、 `CollectionView` プロパティをに設定することによって無効にすることができ [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode) `None` ます。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) 既定では、選択は無効になっています。 ただし、の選択が有効になっている場合は、 `CollectionView` プロパティをに設定することによって無効にすることができ [`SelectionMode`](xref:Xamarin.Forms.SelectableItemsView.SelectionMode) `None` ます。
 
 ```xaml
 <CollectionView ...
@@ -338,5 +338,5 @@ CollectionView collectionView = new CollectionView
 
 ## <a name="related-links"></a>関連リンク
 
-- [CollectionView (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+- [CollectionView (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 - [Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)

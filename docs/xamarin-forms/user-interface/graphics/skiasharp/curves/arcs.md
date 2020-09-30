@@ -10,12 +10,12 @@ ms.date: 05/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4eea7d500876793357113453493fa2fe2ede6cc4
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 32de64c0fa6b0ec0a0b03c8075710e1cbc92dd49
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84140017"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557414"
 ---
 # <a name="three-ways-to-draw-an-arc"></a>円弧を描画する 3 つの方法
 
@@ -63,9 +63,9 @@ public void ArcTo (SKRect oval, Single startAngle, Single sweepAngle, Boolean fo
 
 `startAngle`引数または引数には `sweepAngle` 負の値を指定できます。円弧は正の値の場合は時計回り、 `sweepAngle` 負の値の場合は反時計回りになります。
 
-ただし、で `AddArc` は、閉じた輪郭は定義*されません*。 の後にを呼び出すと `LineTo` `AddArc` 、円弧の末尾からメソッドの点までの線が描画され `LineTo` ます。また、の場合も同様です `ArcTo` 。
+ただし、で `AddArc` は、閉じた輪郭は定義 *されません* 。 の後にを呼び出すと `LineTo` `AddArc` 、円弧の末尾からメソッドの点までの線が描画され `LineTo` ます。また、の場合も同様です `ArcTo` 。
 
-`AddArc`新しい輪郭を自動的に開始します。これは、 `ArcTo` の最後の引数を使用したの呼び出しと機能的には同じです `true` 。
+`AddArc` 新しい輪郭を自動的に開始します。これは、 `ArcTo` の最後の引数を使用したの呼び出しと機能的には同じです `true` 。
 
 ```csharp
 path.ArcTo (oval, startAngle, sweepAngle, true);
@@ -79,7 +79,7 @@ path.ArcTo (oval, startAngle, sweepAngle, false);
 
 このバージョンのは、 `ArcTo` 現在の位置から円弧の先頭までの線を描画します。これは、円弧が大きな輪郭の途中にある可能性があることを意味します。
 
-[**山弧**] ページでは、2つのスライダーを使用して開始角度とスイープ角度を指定できます。 XAML ファイルは、2つの要素とをインスタンス化し `Slider` `SKCanvasView` ます。 `PaintCanvas` [**AngleArcPage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/AngleArcPage.xaml.cs)ファイルのハンドラーは、 `SKPaint` フィールドとして定義されている2つのオブジェクトを使用して、楕円と弧の両方を描画します。
+[ **山弧** ] ページでは、2つのスライダーを使用して開始角度とスイープ角度を指定できます。 XAML ファイルは、2つの要素とをインスタンス化し `Slider` `SKCanvasView` ます。 `PaintCanvas` [**AngleArcPage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/AngleArcPage.xaml.cs)ファイルのハンドラーは、 `SKPaint` フィールドとして定義されている2つのオブジェクトを使用して、楕円と弧の両方を描画します。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -219,9 +219,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ## <a name="the-tangent-arc"></a>アークタンジェント
 
-でサポートされている弧の2番目の型 `SKPath` は*タンジェント円弧*であり、弧は2つの接続された直線に接する円の円周であるため、が呼び出されます。
+でサポートされている弧の2番目の型 `SKPath` は *タンジェント円弧*であり、弧は2つの接続された直線に接する円の円周であるため、が呼び出されます。
 
-2つのパラメーターを持つメソッドを呼び出すことによって、 [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo(SkiaSharp.SKPoint,SkiaSharp.SKPoint,System.Single)) またはその点に対して別々のパラメーターを持つオーバーロードで、接線がパスに追加され `SKPoint` [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo(System.Single,System.Single,System.Single,System.Single,System.Single)) `Single` ます。
+2つのパラメーターを持つメソッドを呼び出すことによって、  [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo(SkiaSharp.SKPoint,SkiaSharp.SKPoint,System.Single)) またはその点に対して別々のパラメーターを持つオーバーロードで、接線がパスに追加され `SKPoint` [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo(System.Single,System.Single,System.Single,System.Single,System.Single)) `Single` ます。
 
 ```csharp
 public void ArcTo (SKPoint point1, SKPoint point2, Single radius)
@@ -265,7 +265,7 @@ public void ArcTo (Single x1, Single y1, Single x2, Single y2, Single radius)
 
 輪郭は、2番目のタンジェントポイントから継続できます。
 
-[**タンジェント弧**] ページを使用すると、アークタンジェントを試すことができます。これは、いくつかの [`InteractivePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/InteractivePage.cs) 便利なオブジェクトを定義 `SKPaint` して処理を実行する、から派生したいくつかのページの最初のページです `TouchPoint` 。
+[ **タンジェント弧** ] ページを使用すると、アークタンジェントを試すことができます。これは、いくつかの [`InteractivePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/InteractivePage.cs) 便利なオブジェクトを定義 `SKPaint` して処理を実行する、から派生したいくつかのページの最初のページです `TouchPoint` 。
 
 ```csharp
 public class InteractivePage : ContentPage
@@ -417,7 +417,7 @@ public partial class TangentArcPage : InteractivePage
 }
 ```
 
-次の例で**は、を実行してい**ます。
+次の例で **は、を実行してい** ます。
 
 [![アークタンジェントページのトリプルスクリーンショット](arcs-images/tangentarc-small.png)](arcs-images/tangentarc-large.png#lightbox)
 
@@ -498,7 +498,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ## <a name="the-elliptical-arc"></a>楕円の円弧
 
-楕円の円弧は、 [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo(SkiaSharp.SKPoint,System.Single,SkiaSharp.SKPathArcSize,SkiaSharp.SKPathDirection,SkiaSharp.SKPoint)) 2 つのパラメーターを持つメソッドへの呼び出し、 `SKPoint` または [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo(System.Single,System.Single,System.Single,SkiaSharp.SKPathArcSize,SkiaSharp.SKPathDirection,System.Single,System.Single)) 異なる X 座標と Y 座標を持つオーバーロードでパスに追加されます。
+楕円の円弧は、 [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo(SkiaSharp.SKPoint,System.Single,SkiaSharp.SKPathArcSize,SkiaSharp.SKPathDirection,SkiaSharp.SKPoint)) 2 つのパラメーターを持つメソッドへの呼び出し、 `SKPoint` または  [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo(System.Single,System.Single,System.Single,SkiaSharp.SKPathArcSize,SkiaSharp.SKPathDirection,System.Single,System.Single)) 異なる X 座標と Y 座標を持つオーバーロードでパスに追加されます。
 
 ```csharp
 public void ArcTo (SKPoint r, Single xAxisRotate, SKPathArcSize largeArc, SKPathDirection sweep, SKPoint xy)
@@ -506,7 +506,7 @@ public void ArcTo (SKPoint r, Single xAxisRotate, SKPathArcSize largeArc, SKPath
 public void ArcTo (Single rx, Single ry, Single xAxisRotate, SKPathArcSize largeArc, SKPathDirection sweep, Single x, Single y)
 ```
 
-楕円の円弧は、スケーラブルベクターグラフィックス (SVG) およびユニバーサル Windows プラットフォームクラスに含まれる[楕円の円弧](https://www.w3.org/TR/SVG11/paths.html#PathDataEllipticalArcCommands)と一致し [`ArcSegment`](/uwp/api/Windows.UI.Xaml.Media.ArcSegment/) ます。
+楕円の円弧は、スケーラブルベクターグラフィックス (SVG) およびユニバーサル Windows プラットフォームクラスに含まれる [楕円の円弧](https://www.w3.org/TR/SVG11/paths.html#PathDataEllipticalArcCommands) と一致し [`ArcSegment`](/uwp/api/Windows.UI.Xaml.Media.ArcSegment/) ます。
 
 これら `ArcTo` のメソッドは、輪郭の現在のポイントである2つの点と、メソッドへの最後のパラメーター `ArcTo` ( `xy` パラメーターまたは個別のパラメーターまたはパラメーター) の間に円弧を描画し `x` `y` ます。
 
@@ -547,7 +547,7 @@ public void ArcTo (Single rx, Single ry, Single xAxisRotate, SKPathArcSize large
 
 最初の発生時にはこのような円弧を定義する方法は複雑ですが、回転された楕円で円弧を定義できる唯一のアプローチであり、多くの場合、弧を他の部分と統合する必要がある場合に最も簡単な方法です。
 
-[**楕円の円弧**] ページでは、2つの点、および楕円のサイズと回転を対話形式で設定できます。 `EllipticalArcPage`クラスはから派生 `InteractivePage` し、 `PaintSurface` [**EllipticalArcPage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/EllipticalArcPage.xaml.cs)分離コードファイルのハンドラーは4つの円弧を描画します。
+[ **楕円の円弧** ] ページでは、2つの点、および楕円のサイズと回転を対話形式で設定できます。 `EllipticalArcPage`クラスはから派生 `InteractivePage` し、 `PaintSurface` [**EllipticalArcPage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/EllipticalArcPage.xaml.cs)分離コードファイルのハンドラーは4つの円弧を描画します。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -591,7 +591,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 [![楕円の円弧ページのトリプルスクリーンショット](arcs-images/ellipticalarc-small.png)](arcs-images/ellipticalarc-large.png#lightbox)
 
-[**弧無限大**] ページでは、楕円弧を使用して無限大記号を描画します。 無限大記号は、100単位で区切られた100ユニットの半径を持つ2つの円に基づいています。
+[ **弧無限大** ] ページでは、楕円弧を使用して無限大記号を描画します。 無限大記号は、100単位で区切られた100ユニットの半径を持つ2つの円に基づいています。
 
 ![2つの円](arcs-images/infinitycircles.png)
 
@@ -671,5 +671,5 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

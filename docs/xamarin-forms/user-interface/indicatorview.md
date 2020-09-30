@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsIndicatorView
+title: Xamarin.Forms IndicatorView
 description: IndicatorView は、CarouselView 内の項目数と現在位置を表すインジケーターを表示するコントロールです。
 ms.prod: xamarin
 ms.assetId: BBCC223B-4B02-46B7-80BB-EE0E86A67CE2
@@ -10,14 +10,14 @@ ms.date: 02/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0e6d223fd10e7b792f2d145a7cdd417865a095bb
-ms.sourcegitcommit: d86b7a18cf8b1ef28cd0fe1d311f1c58a65101a8
+ms.openlocfilehash: 95c4e247ca0be6e5f0f39a7bc95c41a73b3f590e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85101441"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556790"
 ---
-# <a name="xamarinforms-indicatorview"></a>Xamarin.FormsIndicatorView
+# <a name="no-locxamarinforms-indicatorview"></a>Xamarin.Forms IndicatorView
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-indicatorviewdemos/)
 
@@ -39,7 +39,7 @@ ms.locfileid: "85101441"
 - `Position`型の、 `int` 現在選択されているインジケーターインデックス。 このプロパティは、 `TwoWay` バインディングを使用します。 プロパティが設定されると、このプロパティは自動的に設定され `CarouselView.IndicatorView` ます。
 - `SelectedIndicatorColor`型の `Color` 。の現在の項目を表すインジケーターの色 `CarouselView` 。
 
-これらのプロパティは、オブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。これは、データバインディングのターゲットとスタイルを設定できることを意味します。
+これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトが基になっています。つまり、これらは、データ バインディングの対象にすることができ、スタイルを設定できます。
 
 ## <a name="create-an-indicatorview"></a>IndicatorView を作成する
 
@@ -69,8 +69,8 @@ ms.locfileid: "85101441"
 
 `IndicatorView`クラスには `IndicatorsShape` 、インジケーターの形状を決定するプロパティがあります。 このプロパティは、列挙体のメンバーの1つに設定でき `IndicatorShape` ます。
 
-- `Circle`インジケーター図形を円形にすることを指定します。 これは、`IndicatorView.IndicatorsShape` プロパティの既定値です。
-- `Square`インジケーターの形状が正方形であることを示します。
+- `Circle` インジケーター図形を円形にすることを指定します。 これは、`IndicatorView.IndicatorsShape` プロパティの既定値です。
+- `Square` インジケーターの形状が正方形であることを示します。
 
 次の例は、 `IndicatorView` 正方形のインジケーターを使用するように構成されたを示しています。
 
@@ -138,5 +138,5 @@ ms.locfileid: "85101441"
 
 ## <a name="related-links"></a>関連リンク
 
-- [IndicatorView (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-indicatorviewdemos/)
+- [IndicatorView (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-indicatorviewdemos/)
 - [FontImage のマークアップ拡張機能](~/xamarin-forms/xaml/markup-extensions/consuming.md#fontimage-markup-extension)

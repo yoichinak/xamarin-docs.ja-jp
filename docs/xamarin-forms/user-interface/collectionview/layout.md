@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsCollectionView レイアウト
+title: Xamarin.Forms CollectionView レイアウト
 description: 既定では、CollectionView は項目を縦に並べて表示します。 ただし、縦と横のリストおよびグリッドを指定することもできます。
 ms.prod: xamarin
 ms.assetid: 5FE78207-1BD6-4706-91EF-B13932321FC9
@@ -10,18 +10,18 @@ ms.date: 07/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 73e7ace96c17aea2b397f2706e128ea498338b09
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: e399ae590dbd1260f3b2a403c39ef7e7d98d3592
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918269"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557362"
 ---
-# <a name="no-locxamarinforms-collectionview-layout"></a>Xamarin.FormsCollectionView レイアウト
+# <a name="no-locxamarinforms-collectionview-layout"></a>Xamarin.Forms CollectionView レイアウト
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)レイアウトを制御する次のプロパティを定義します。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) レイアウトを制御する次のプロパティを定義します。
 
 - [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout)型ので、 [`IItemsLayout`](xref:Xamarin.Forms.IItemsLayout) 使用するレイアウトを指定します。
 - [`ItemSizingStrategy`](xref:Xamarin.Forms.StructuredItemsView.ItemSizingStrategy)型のは、 [`ItemSizingStrategy`](xref:Xamarin.Forms.ItemSizingStrategy) 使用される項目メジャー戦略を指定します。
@@ -35,7 +35,7 @@ ms.locfileid: "87918269"
 - 垂直グリッド-新しいアイテムが追加されると、垂直方向に拡張される複数列のグリッドです。
 - 水平グリッド-新しいアイテムが追加されると、水平方向に拡張される複数行のグリッドです。
 
-これらのレイアウトは、 [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) クラスから派生するクラスにプロパティを設定することによって指定でき [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout) ます。 このクラスは、次のプロパティを定義します。
+これらのレイアウトは、 [`ItemsLayout`](xref:Xamarin.Forms.StructuredItemsView.ItemsLayout) クラスから派生するクラスにプロパティを設定することによって指定でき [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout) ます。 このクラスでは、次のプロパティが定義されています。
 
 - [`Orientation`](xref:Xamarin.Forms.ItemsLayout.Orientation)型の。は、を [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation) [`CollectionView`](xref:Xamarin.Forms.CollectionView) 項目として追加する方向を指定します。
 - [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment)(型) では、 [`SnapPointsAlignment`](xref:Xamarin.Forms.SnapPointsAlignment) スナップポイントを項目と整列する方法を指定します。
@@ -45,8 +45,8 @@ ms.locfileid: "87918269"
 
 [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation)列挙体は、次のメンバーを定義します。
 
-- `Vertical`項目が追加されると、が垂直方向に展開されることを示し [`CollectionView`](xref:Xamarin.Forms.CollectionView) ます。
-- `Horizontal`項目が追加されると、が水平方向に展開されることを示し [`CollectionView`](xref:Xamarin.Forms.CollectionView) ます。
+- `Vertical` 項目が追加されると、が垂直方向に展開されることを示し [`CollectionView`](xref:Xamarin.Forms.CollectionView) ます。
+- `Horizontal` 項目が追加されると、が水平方向に展開されることを示し [`CollectionView`](xref:Xamarin.Forms.CollectionView) ます。
 
 クラスは、 `LinearItemsLayout` クラスから継承され、 [`ItemsLayout`](xref:Xamarin.Forms.ItemsLayout) `ItemSpacing` 各項目の周囲の空白を表す型のプロパティを定義し `double` ます。 このプロパティの既定値は0で、値は常に0以上である必要があります。 クラスは、 `LinearItemsLayout` 静的 `Vertical` メンバーとメンバーも定義し `Horizontal` ます。 これらのメンバーを使用すると、縦または横のリストをそれぞれ作成できます。 または、 `LinearItemsLayout` オブジェクトを作成し、 [`ItemsLayoutOrientation`](xref:Xamarin.Forms.ItemsLayoutOrientation) 列挙型のメンバーを引数として指定することもできます。
 
@@ -59,7 +59,7 @@ ms.locfileid: "87918269"
 これらのプロパティは、オブジェクトによって支えられてい [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) ます。これは、プロパティをデータバインディングのターゲットにできることを意味します。
 
 > [!NOTE]
-> [`CollectionView`](xref:Xamarin.Forms.CollectionView)ネイティブレイアウトエンジンを使用してレイアウトを実行します。
+> [`CollectionView`](xref:Xamarin.Forms.CollectionView) ネイティブレイアウトエンジンを使用してレイアウトを実行します。
 
 ## <a name="vertical-list"></a>縦方向の一覧
 
@@ -327,9 +327,9 @@ CollectionView collectionView = new CollectionView
 
 ## <a name="headers-and-footers"></a>ヘッダーとフッター
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)リスト内の項目と共にスクロールするヘッダーとフッターを表示できます。 ヘッダーとフッターには、文字列、ビュー、またはオブジェクトを指定でき [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ます。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) リスト内の項目と共にスクロールするヘッダーとフッターを表示できます。 ヘッダーとフッターには、文字列、ビュー、またはオブジェクトを指定でき [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ます。
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)ヘッダーとフッターを指定するための次のプロパティを定義します。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) ヘッダーとフッターを指定するための次のプロパティを定義します。
 
 - `Header`型のは、 `object` リストの先頭に表示される文字列、バインド、またはビューを指定します。
 - `HeaderTemplate`型のは、の [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) `DataTemplate` 書式設定に使用するを指定し `Header` ます。
@@ -550,8 +550,8 @@ CollectionView collectionView = new CollectionView
 
 既定では、の各項目 [`CollectionView`](xref:Xamarin.Forms.CollectionView) は個別に測定およびサイズ設定されます。これは、内の UI 要素が固定サイズを指定しない場合に限り [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ます。 この動作は変更可能ですが、プロパティ値によって指定され [`CollectionView.ItemSizingStrategy`](xref:Xamarin.Forms.StructuredItemsView.ItemSizingStrategy) ます。 このプロパティ値は、列挙体のいずれかのメンバーに設定でき [`ItemSizingStrategy`](xref:Xamarin.Forms.ItemSizingStrategy) ます。
 
-- `MeasureAllItems`–各項目は個別に測定されます。 これが既定値です。
-- `MeasureFirstItem`–最初の項目のみが測定され、後続のすべての項目には最初の項目と同じサイズが割り当てられます。
+- `MeasureAllItems` –各項目は個別に測定されます。 これが既定値です。
+- `MeasureFirstItem` –最初の項目のみが測定され、後続のすべての項目には最初の項目と同じサイズが割り当てられます。
 
 > [!IMPORTANT]
 > サイズ調整 `MeasureFirstItem` 戦略を使用すると、項目のサイズがすべての項目にわたって一様であることが意図されている場合に、パフォーマンスが向上します。
@@ -593,7 +593,7 @@ void OnImageTapped(object sender, EventArgs e)
 
 ## <a name="right-to-left-layout"></a>右から左へのレイアウト
 
-[`CollectionView`](xref:Xamarin.Forms.CollectionView)では、プロパティをに設定することによって、右から左へのフロー方向にコンテンツをレイアウトでき [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) [`RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft) ます。 ただし、 `FlowDirection` プロパティはページまたはルートレイアウトで設定することをお勧めします。これにより、ページ内のすべての要素、またはルートレイアウトがフロー方向に応答するようになります。
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) では、プロパティをに設定することによって、右から左へのフロー方向にコンテンツをレイアウトでき [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection) [`RightToLeft`](xref:Xamarin.Forms.FlowDirection.RightToLeft) ます。 ただし、 `FlowDirection` プロパティはページまたはルートレイアウトで設定することをお勧めします。これにより、ページ内のすべての要素、またはルートレイアウトがフロー方向に応答するようになります。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -613,10 +613,10 @@ void OnImageTapped(object sender, EventArgs e)
 
 [![IOS と Android での CollectionView 右から左方向のリストレイアウトのスクリーンショット](layout-images/vertical-list-rtl.png "CollectionView 右から左方向のリストレイアウト")](layout-images/vertical-list-rtl-large.png#lightbox "CollectionView 右から左方向のリストレイアウト")
 
-フローの方向の詳細については、「[右から左へのローカライズ](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)」を参照してください。
+フローの方向の詳細については、「 [右から左へのローカライズ](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 
-- [CollectionView (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+- [CollectionView (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 - [右から左へのローカライズ](~/xamarin-forms/app-fundamentals/localization/right-to-left.md)
-- [Xamarin.FormsCollectionView スクロール](scrolling.md)
+- [Xamarin.Forms CollectionView スクロール](scrolling.md)

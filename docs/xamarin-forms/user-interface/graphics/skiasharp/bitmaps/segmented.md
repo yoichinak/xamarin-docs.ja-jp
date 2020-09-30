@@ -10,12 +10,12 @@ ms.date: 07/17/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5c3909271580d0568d7c603de0d434ff5b3f3bc4
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 9a39433a0bad518055542adb190f4f441675ddfb
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138672"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556374"
 ---
 # <a name="segmented-display-of-skiasharp-bitmaps"></a>SkiaSharp ビットマップのセグメント化表示
 
@@ -27,7 +27,7 @@ SkiaSharp オブジェクトは、 `SKCanvas` という名前のメソッド `Dr
 
 これらのメソッドは、通常、ボタンなどのユーザーインターフェイスオブジェクトの一部を形成するビットマップをレンダリングするために使用されます。 ボタンをデザインするときは、通常、ボタンのコンテンツに基づいてボタンのサイズを設定しますが、ボタンのコンテンツに関係なく、ボタンの境界線の幅を同じにすることをお勧めします。 これは、の理想的なアプリケーション `DrawBitmapNinePatch` です。
 
-`DrawBitmapNinePatch`はの特殊なケースですが、を `DrawBitmapLattice` 使用して理解するには、次の2つの方法が簡単です。
+`DrawBitmapNinePatch` はの特殊なケースですが、を `DrawBitmapLattice` 使用して理解するには、次の2つの方法が簡単です。
 
 ## <a name="the-nine-patch-display"></a>9パッチ表示 
 
@@ -47,7 +47,7 @@ canvas.DrawBitmapNinePatch(bitmap, centerRectangle, destRectangle, paint);
 
 中央の四角形は、ビットマップを基準としています。 これは `SKRectI` 値 (の整数バージョン `SKRect` ) であり、すべての座標とサイズはピクセル単位で表されます。 コピー先の四角形は、表示サーフェイスに対して相対的です。 `paint` 引数は省略可能です。
 
-[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルの**9 つの更新プログラムの表示**ページでは、まず静的コンストラクターを使用して、型のパブリック静的プロパティを作成し `SKBitmap` ます。
+[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルの**9 つの更新プログラムの表示**ページでは、まず静的コンストラクターを使用して、型のパブリック静的プロパティを作成し `SKBitmap` ます。
 
 ```csharp
 public partial class NinePatchDisplayPage : ContentPage
@@ -141,8 +141,8 @@ SKRectI centerRect = new SKRectI(150, 150, 350, 350);
 
 Skia のドキュメントによれば、配列には `Flags` 四角形ごとに1つの要素が含まれており、最初に四角形の先頭行、次に2番目の行になります。 `Flags`配列は [`SKLatticeFlags`](xref:SkiaSharp.SKLatticeFlags) 、次のメンバーを持つ列挙体である型です。
 
-- `Default`値0
-- `Transparent`値1を持つ
+- `Default` 値0
+- `Transparent` 値1を持つ
 
 ただし、これらのフラグは意図したとおりに動作しないと思われるため、無視することをお勧めします。 ただし、 `Flags` プロパティをに設定しないで `null` ください。 `SKLatticeFlags`四角形の合計数を囲むのに十分な大きさの値の配列に設定します。
 
@@ -230,5 +230,5 @@ public class LatticeDisplayPage : ContentPage
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

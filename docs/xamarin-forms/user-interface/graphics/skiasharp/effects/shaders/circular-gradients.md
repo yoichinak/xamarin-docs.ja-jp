@@ -10,12 +10,12 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 418d29010a8cce81d2bb8c365608c54b61739622
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: ec84ac906ac146f37ba5b161a898582ce483bc95
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84135643"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556673"
 ---
 # <a name="the-skiasharp-circular-gradients"></a>SkiaSharp の円形のグラデーション
 
@@ -57,7 +57,7 @@ public static SKShader CreateRadialGradient (SKPoint center,
 
 を使用して円の塗りつぶしを行う場合は、 `CreateRadialGradient` グラデーションの中心を円の中心に、グラデーションの半径を円の半径に設定できます。 その場合、引数は `SKShaderTileMode` グラデーションのレンダリングに影響しません。 ただし、グラデーションによって塗りつぶされる領域がグラデーションで定義された円より大きい場合、 `SKShaderTileMode` 引数は円の外側で何が起こるかに大きな影響を与えます。
 
-の効果 `SKShaderMode` は、 [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルの [**放射状グラデーション**] ページで説明されています。 このページの XAML ファイルは、 `Picker` 列挙体の3つのメンバーのいずれかを選択できるようにするをインスタンス化し `SKShaderTileMode` ます。
+の効果 `SKShaderMode` は、 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルの [**放射状グラデーション**] ページで説明されています。 このページの XAML ファイルは、 `Picker` 列挙体の3つのメンバーのいずれかを選択できるようにするをインスタンス化し `SKShaderTileMode` ます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -215,9 +215,9 @@ public class RainbowArcGradientPage : ContentPage
 
 ## <a name="radial-gradients-for-masking"></a>マスクの放射状グラデーション
 
-線状グラデーションと同様に、放射状グラデーションには透明色または部分的に透明な色を組み込むことができます。 この機能は、イメージの一部を非表示にしてイメージの別の部分を強調する_マスキング_と呼ばれるプロセスに便利です。
+線状グラデーションと同様に、放射状グラデーションには透明色または部分的に透明な色を組み込むことができます。 この機能は、イメージの一部を非表示にしてイメージの別の部分を強調する _マスキング_と呼ばれるプロセスに便利です。
 
-[**放射状グラデーションマスク**] ページに例が表示されます。 プログラムによって、いずれかのリソースビットマップが読み込まれます。 `CENTER`およびフィールドは、 `RADIUS` ビットマップの検査によって決定され、強調表示する必要がある領域を参照します。 ハンドラーは、 `PaintSurface` ビットマップを表示する四角形を計算してから、その四角形に表示します。
+[ **放射状グラデーションマスク** ] ページに例が表示されます。 プログラムによって、いずれかのリソースビットマップが読み込まれます。 `CENTER`およびフィールドは、 `RADIUS` ビットマップの検査によって決定され、強調表示する必要がある領域を参照します。 ハンドラーは、 `PaintSurface` ビットマップを表示する四角形を計算してから、その四角形に表示します。
 
 ```csharp
 public class RadialGradientMaskPage : ContentPage
@@ -289,7 +289,7 @@ public class RadialGradientMaskPage : ContentPage
 
 ## <a name="radial-gradients-for-specular-highlights"></a>反射の光源の放射状グラデーション
 
-光が丸い表面になると、さまざまな方向に光が反射しますが、光の一部はビューアーの目に直接バウンスされます。 これにより、多くの場合、_反射の強調表示_と呼ばれる、表面上のあいまいな白い領域の外観が作成されます。
+光が丸い表面になると、さまざまな方向に光が反射しますが、光の一部はビューアーの目に直接バウンスされます。 これにより、多くの場合、 _反射の強調表示_と呼ばれる、表面上のあいまいな白い領域の外観が作成されます。
 
 3次元グラフィックスでは、光のパスと網掛けを決定するために使用されるアルゴリズムによって、反射の光源が強調表示されることがよくあります。 2次元グラフィックスでは、3D サーフェイスの外観を提案するために反射の光源が追加されることがあります。 反射の光源を使用すると、赤の平らな円を丸い赤いボールに変換できます。
 
@@ -338,7 +338,7 @@ public class RadialSpecularHighlightPage : ContentPage
 
 [![放射状反射の強調表示](circular-gradients-images/RadialSpecularHighlight.png "放射状反射の強調表示")](circular-gradients-images/RadialSpecularHighlight-Large.png#lightbox)
 
-このグラデーションをよく見ると、欠点があると判断する場合があります。 グラデーションは特定の点を中心にしています。また、丸みのある表面を反射するために、少し対称ではないようにしたい場合もあります。 そのような場合は、次に示す反射の強調表示を、[**反射の光源の円錐のグラデーション**](#conical-gradients-for-specular-highlights)のセクションで使用することをお勧めします。
+このグラデーションをよく見ると、欠点があると判断する場合があります。 グラデーションは特定の点を中心にしています。また、丸みのある表面を反射するために、少し対称ではないようにしたい場合もあります。 そのような場合は、次に示す反射の強調表示を、 [**反射の光源の円錐のグラデーション**](#conical-gradients-for-specular-highlights)のセクションで使用することをお勧めします。
 
 ## <a name="the-sweep-gradient"></a>スイープグラデーション
 
@@ -444,11 +444,11 @@ public static SKShader CreateTwoPointConicalGradient (SKPoint startCenter,
                                                       SKShaderTileMode mode)
 ```
 
-これらのパラメーターは、_開始_円と_終了_円と呼ばれる2つの円の中心点と半径で始まります。 残りの3つのパラメーターは、およびの場合と同じです `CreateLinearGradient` `CreateRadialGradient` 。 オーバーロードには、 [`CreateTwoPointConicalGradient`](xref:SkiaSharp.SKShader.CreateTwoPointConicalGradient(SkiaSharp.SKPoint,System.Single,SkiaSharp.SKPoint,System.Single,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKShaderTileMode,SkiaSharp.SKMatrix)) マトリックス変換が含まれます。
+これらのパラメーターは、 _開始_ 円と _終了_ 円と呼ばれる2つの円の中心点と半径で始まります。 残りの3つのパラメーターは、およびの場合と同じです `CreateLinearGradient` `CreateRadialGradient` 。 オーバーロードには、 [`CreateTwoPointConicalGradient`](xref:SkiaSharp.SKShader.CreateTwoPointConicalGradient(SkiaSharp.SKPoint,System.Single,SkiaSharp.SKPoint,System.Single,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKShaderTileMode,SkiaSharp.SKMatrix)) マトリックス変換が含まれます。
 
 グラデーションは開始円から始まり、最後の円で終わります。 パラメーターは、 `SKShaderTileMode` 2 つの円の後の動作を制御します。 2点の円錐のグラデーションは、領域を完全に塗りつぶす唯一のグラデーションです。 2つの円の半径が同じ場合、グラデーションは、円の直径と同じ幅の四角形に制限されます。 2つの円の半径が異なる場合、グラデーションはコーンを形成します。
 
-2点の円錐グラデーションを試してみることをお勧めします。これにより、**円錐のグラデーション**ページがから派生して、2つ `InteractivePage` の丸い半径に2つのタッチポイントを移動できるようになります。
+2点の円錐グラデーションを試してみることをお勧めします。これにより、 **円錐のグラデーション** ページがから派生して、2つ `InteractivePage` の丸い半径に2つのタッチポイントを移動できるようになります。
 
 ```xaml
 <local:InteractivePage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -622,5 +622,5 @@ public class ConicalSpecularHighlightPage : ContentPage
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

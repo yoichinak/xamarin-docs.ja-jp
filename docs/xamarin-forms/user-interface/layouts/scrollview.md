@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsScrollView
+title: Xamarin.Forms ScrollView
 description: Xamarin.FormsScrollView は、コンテンツをスクロールできるレイアウトです。
 ms.prod: xamarin
 ms.assetid: 7B542872-B3D1-49B3-B15E-0E98F53C1F6E
@@ -10,25 +10,25 @@ ms.date: 05/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f527acabe3b051cbfd6450ba6f5328449b1a728c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: af8513d86b7cf02ec7adcee75241d8ce99e2dfab
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84199195"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556829"
 ---
-# <a name="xamarinforms-scrollview"></a>Xamarin.FormsScrollView
+# <a name="no-locxamarinforms-scrollview"></a>Xamarin.Forms ScrollView
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-scrollviewdemos)
 
-[![Xamarin.FormsScrollView](scrollview-images/layouts.png "[!ファンド.NO LOC (Xamarin. Forms)] ScrollView")](scrollview-images/layouts-large.png#lightbox "[!ファンド.NO LOC (Xamarin. Forms)] ScrollView")
+[![::: no-loc (Xamarin. Forms)::: ScrollView](scrollview-images/layouts.png "::: no-loc (Xamarin. Forms)::: ScrollView")](scrollview-images/layouts-large.png#lightbox "::: no-loc (Xamarin. Forms)::: ScrollView")
 
-[`ScrollView`](xref:Xamarin.Forms.ScrollView)は、コンテンツをスクロールできるレイアウトです。 `ScrollView`クラスはクラスから派生 [`Layout`](xref:Xamarin.Forms.Layout) し、既定でコンテンツを垂直方向にスクロールします。 には `ScrollView` 1 つの子のみを指定できますが、これは他のレイアウトでもかまいません。
+[`ScrollView`](xref:Xamarin.Forms.ScrollView) は、コンテンツをスクロールできるレイアウトです。 `ScrollView`クラスはクラスから派生 [`Layout`](xref:Xamarin.Forms.Layout) し、既定でコンテンツを垂直方向にスクロールします。 には `ScrollView` 1 つの子のみを指定できますが、これは他のレイアウトでもかまいません。
 
 > [!WARNING]
-> [`ScrollView`](xref:Xamarin.Forms.ScrollView)オブジェクトを入れ子にすることはできません。 また、 `ScrollView` オブジェクトは、、、などのスクロールを提供する他のコントロールで入れ子にすることはできません [`CollectionView`](xref:Xamarin.Forms.CollectionView) [`ListView`](xref:Xamarin.Forms.ListView) [`WebView`](xref:Xamarin.Forms.WebView) 。
+> [`ScrollView`](xref:Xamarin.Forms.ScrollView) オブジェクトを入れ子にすることはできません。 また、 `ScrollView` オブジェクトは、、、などのスクロールを提供する他のコントロールで入れ子にすることはできません [`CollectionView`](xref:Xamarin.Forms.CollectionView) [`ListView`](xref:Xamarin.Forms.ListView) [`WebView`](xref:Xamarin.Forms.WebView) 。
 
-[`ScrollView`](xref:Xamarin.Forms.ScrollView)では、次のプロパティが定義されています。
+[`ScrollView`](xref:Xamarin.Forms.ScrollView) では、次のプロパティが定義されています。
 
 - [`Content`](xref:Xamarin.Forms.ScrollView.Content)型のは、 [`View`](xref:Xamarin.Forms.View) に表示されるコンテンツを表し [`ScrollView`](xref:Xamarin.Forms.ScrollView) ます。
 - [`ContentSize`](xref:Xamarin.Forms.ScrollView)型のは、 [`Size`](xref:Xamarin.Forms.Size) コンテンツのサイズを表します。 これは、読み取り専用プロパティです。
@@ -43,7 +43,7 @@ ms.locfileid: "84199195"
 [`Content`](xref:Xamarin.Forms.ScrollView.Content)プロパティは [`ContentProperty`](xref:Xamarin.Forms.ContentPropertyAttribute) クラスのである [`ScrollView`](xref:Xamarin.Forms.ScrollView) ため、XAML から明示的に設定する必要はありません。
 
 > [!TIP]
-> レイアウトの最適なパフォーマンスを得るには、「[レイアウトのパフォーマンスを最適化](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)する」のガイドラインに従ってください。
+> レイアウトの最適なパフォーマンスを得るには、「 [レイアウトのパフォーマンスを最適化](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)する」のガイドラインに従ってください。
 
 ## <a name="scrollview-as-a-root-layout"></a>ルートレイアウトとしての ScrollView
 
@@ -205,19 +205,19 @@ public class BlackCatPageCS : ContentPage
 
 ## <a name="orientation"></a>方向
 
-[`ScrollView`](xref:Xamarin.Forms.ScrollView)には、 [`Orientation`](xref:Xamarin.Forms.ScrollView.Orientation) のスクロール方向を表すプロパティがあり `ScrollView` ます。 このプロパティの型は [`ScrollOrientation`](xref:Xamarin.Forms.ScrollOrientation) で、次のメンバーを定義します。
+[`ScrollView`](xref:Xamarin.Forms.ScrollView) には、 [`Orientation`](xref:Xamarin.Forms.ScrollView.Orientation) のスクロール方向を表すプロパティがあり `ScrollView` ます。 このプロパティの型は [`ScrollOrientation`](xref:Xamarin.Forms.ScrollOrientation) で、次のメンバーを定義します。
 
-- `Vertical`が垂直方向にスクロールすることを示し `ScrollView` ます。 このメンバーは、プロパティの既定値です [`Orientation`](xref:Xamarin.Forms.ScrollView.Orientation) 。
-- `Horizontal`が水平にスクロールすることを示し `ScrollView` ます。
-- `Both`が水平方向および垂直方向にスクロールすることを示し `ScrollView` ます。
-- `Neither`が `ScrollView` スクロールしないことを示します。
+- `Vertical` が垂直方向にスクロールすることを示し `ScrollView` ます。 このメンバーは、プロパティの既定値です [`Orientation`](xref:Xamarin.Forms.ScrollView.Orientation) 。
+- `Horizontal` が水平にスクロールすることを示し `ScrollView` ます。
+- `Both` が水平方向および垂直方向にスクロールすることを示し `ScrollView` ます。
+- `Neither` が `ScrollView` スクロールしないことを示します。
 
 > [!TIP]
 > プロパティをに設定すると、スクロールを無効にすることができ [`Orientation`](xref:Xamarin.Forms.ScrollView.OrientationProperty) `Neither` ます。
 
 ## <a name="detect-scrolling"></a>スクロールの検出
 
-[`ScrollView`](xref:Xamarin.Forms.ScrollView)スクロールが [`Scrolled`](xref:Xamarin.Forms.ScrollView.Scrolled) 発生したことを示すために発生するイベントを定義します。 [`ScrolledEventArgs`](xref:Xamarin.Forms.ScrolledEventArgs)イベントに付随するオブジェクト `Scrolled` には `ScrollX` 、 `ScrollY` 型とプロパティの両方があり `double` ます。
+[`ScrollView`](xref:Xamarin.Forms.ScrollView) スクロールが [`Scrolled`](xref:Xamarin.Forms.ScrollView.Scrolled) 発生したことを示すために発生するイベントを定義します。 [`ScrolledEventArgs`](xref:Xamarin.Forms.ScrolledEventArgs)イベントに付随するオブジェクト `Scrolled` には `ScrollX` 、 `ScrollY` 型とプロパティの両方があり `double` ます。
 
 > [!IMPORTANT]
 > `ScrolledEventArgs.ScrollX`プロパティとプロパティには、 `ScrolledEventArgs.ScrollY` の先頭にスクロールするときに発生するバウンス効果があるため、負の値を指定できます [`ScrollView`](xref:Xamarin.Forms.ScrollView) 。
@@ -253,7 +253,7 @@ void OnScrollViewScrolled(object sender, ScrolledEventArgs e)
 
 ## <a name="scroll-programmatically"></a>プログラムによるスクロール
 
-[`ScrollView`](xref:Xamarin.Forms.ScrollView)を [`ScrollToAsync`](xref:Xamarin.Forms.ScrollView.ScrollToAsync*) 非同期的にスクロールする2つのメソッドを定義し `ScrollView` ます。 オーバーロードの1つは、内の指定された位置までスクロール `ScrollView` し、もう一方は指定された要素をビューにスクロールします。 どちらのオーバーロードにも、スクロールをアニメーション化するかどうかを示すために使用できる追加の引数があります。
+[`ScrollView`](xref:Xamarin.Forms.ScrollView) を [`ScrollToAsync`](xref:Xamarin.Forms.ScrollView.ScrollToAsync*) 非同期的にスクロールする2つのメソッドを定義し `ScrollView` ます。 オーバーロードの1つは、内の指定された位置までスクロール `ScrollView` し、もう一方は指定された要素をビューにスクロールします。 どちらのオーバーロードにも、スクロールをアニメーション化するかどうかを示すために使用できる追加の引数があります。
 
 > [!IMPORTANT]
 > [`ScrollToAsync`](xref:Xamarin.Forms.ScrollView.ScrollToAsync*) [`ScrollView.Orientation`](xref:Xamarin.Forms.ScrollView.OrientationProperty) プロパティがに設定されている場合、メソッドはスクロール `Neither` しません。
@@ -280,21 +280,21 @@ await scrollView.ScrollToAsync(label, ScrollToPosition.End, true);
 
 要素をビューにスクロールするとき、スクロールが完了した後の要素の正確な位置は、メソッドの2番目の引数を使用して設定でき `position` [`ScrollToAsync`](xref:Xamarin.Forms.ScrollView.ScrollToAsync*) ます。 この引数は、 [`ScrollToPosition`](xref:Xamarin.Forms.ScrollToPosition) 列挙型のメンバーを受け取ります。
 
-- `MakeVisible`要素がに表示されるまでスクロールする必要があることを示し `ScrollView` ます。
-- `Start`要素をの先頭までスクロールする必要があることを示し `ScrollView` ます。
-- `Center`要素をの中央にスクロールする必要があることを示し `ScrollView` ます。
-- `End`要素をの末尾までスクロールする必要があることを示し `ScrollView` ます。
+- `MakeVisible` 要素がに表示されるまでスクロールする必要があることを示し `ScrollView` ます。
+- `Start` 要素をの先頭までスクロールする必要があることを示し `ScrollView` ます。
+- `Center` 要素をの中央にスクロールする必要があることを示し `ScrollView` ます。
+- `End` 要素をの末尾までスクロールする必要があることを示し `ScrollView` ます。
 
 ## <a name="scroll-bar-visibility"></a>スクロールバーの表示
 
 [`ScrollView`](xref:Xamarin.Forms.ScrollView)[`HorizontalScrollBarVisibility`](xref:Xamarin.Forms.ScrollView)バインド可能 [`VerticalScrollBarVisibility`](xref:Xamarin.Forms.ScrollView) なプロパティによってサポートされるプロパティとプロパティを定義します。 これらのプロパティは、 [`ScrollBarVisibility`](xref:Xamarin.Forms.ScrollView.HorizontalScrollBarVisibility) 水平方向または垂直方向のスクロールバーを表示するかどうかを示す列挙値を取得または設定します。 `ScrollBarVisibility` 列挙体を使って、次のメンバーを定義できます。
 
-- `Default`プラットフォームの既定のスクロールバーの動作を示し `HorizontalScrollBarVisibility` ます。は、プロパティとプロパティの既定値です `VerticalScrollBarVisibility` 。
-- `Always`ビューにコンテンツが収まる場合でも、スクロールバーが表示されることを示します。
-- `Never`コンテンツがビューに収まらない場合でも、スクロールバーが表示されないことを示します。
+- `Default` プラットフォームの既定のスクロールバーの動作を示し `HorizontalScrollBarVisibility` ます。は、プロパティとプロパティの既定値です `VerticalScrollBarVisibility` 。
+- `Always` ビューにコンテンツが収まる場合でも、スクロールバーが表示されることを示します。
+- `Never` コンテンツがビューに収まらない場合でも、スクロールバーが表示されないことを示します。
 
 ## <a name="related-links"></a>関連リンク
 
-- [ScrollView デモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-scrollviewdemos)
-- [Xamarin.FormsStackLayout](stacklayout.md)
-- [バインド可能なレイアウトXamarin.Forms](bindable-layouts.md)
+- [ScrollView デモ (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-scrollviewdemos)
+- [Xamarin.Forms StackLayout](stacklayout.md)
+- [バインド可能なレイアウト Xamarin.Forms](bindable-layouts.md)

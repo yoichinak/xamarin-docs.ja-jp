@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0c2bbc89f503cfbaad24d8f1ac5d0635c1c22e48
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: f0d552db24e89c3bc10ca6f38f9e8f936bd4290d
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937814"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91555763"
 ---
 # <a name="page-toolbar-placement-on-windows"></a>Windows 上のページツールバーの配置
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 このユニバーサル Windows プラットフォーム、のツールバーの配置を変更するために使用され [`Page`](xref:Xamarin.Forms.Page) ます。 XAML では、 [`Page.ToolbarPlacement`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.Page.ToolbarPlacementProperty) 添付プロパティを列挙体の値に設定することによって使用され [`ToolbarPlacement`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement) ます。
 
@@ -41,7 +41,7 @@ using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
 page.On<Windows>().SetToolbarPlacement(ToolbarPlacement.Bottom);
 ```
 
-メソッドは、 `Page.On<Windows>` このプラットフォーム固有のが Windows 上でのみ実行されることを指定します。 [ `Page.SetToolbarPlacement` ] (Xref: Xamarin.FormsPlatformConfiguration. WindowsSpecific SetToolbarPlacement ( Xamarin.Forms .IPlatformElementConfiguration { Xamarin.Forms .PlatformConfiguration. Windows、 Xamarin.Forms 。ページ}、 Xamarin.Forms 。[`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) [`ToolbarPlacement`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement) 、、およびの3つの値を指定する列挙体を使用して、ツールバーの配置を設定するには、名前空間のメソッドを使用 [`Default`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Default) し [`Top`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Top) ます [`Bottom`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Bottom) 。
+メソッドは、 `Page.On<Windows>` このプラットフォーム固有のが Windows 上でのみ実行されることを指定します。 [ `Page.SetToolbarPlacement` ] (Xref: Xamarin.FormsPlatformConfiguration. WindowsSpecific SetToolbarPlacement ( Xamarin.Forms .IPlatformElementConfiguration { Xamarin.Forms .PlatformConfiguration. Windows、 Xamarin.Forms 。ページ}、 Xamarin.Forms 。 [`Xamarin.Forms.PlatformConfiguration.WindowsSpecific`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific) [`ToolbarPlacement`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement) 、、およびの3つの値を指定する列挙体を使用して、ツールバーの配置を設定するには、名前空間のメソッドを使用 [`Default`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Default) し [`Top`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Top) ます [`Bottom`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.ToolbarPlacement.Bottom) 。
 
 結果として、指定されたツールバーの配置がインスタンスに適用され [`Page`](xref:Xamarin.Forms.Page) ます。
 
@@ -49,6 +49,6 @@ page.On<Windows>().SetToolbarPlacement(ToolbarPlacement.Bottom);
 
 ## <a name="related-links"></a>関連リンク
 
-- [PlatformSpecifics (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [プラットフォーム固有設定の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [WindowsSpecific の API](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific)

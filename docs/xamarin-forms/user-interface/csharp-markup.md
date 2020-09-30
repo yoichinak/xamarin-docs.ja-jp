@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsC# マークアップ
+title: Xamarin.Forms C# マークアップ
 description: C# マークアップは、c# で宣言型のユーザーインターフェイスを構築するプロセスを簡略化するための、fluent ヘルパーメソッドとクラスのオプトインセットです Xamarin.Forms 。
 ms.prod: xamarin
 ms.assetid: D41B9DCD-5C34-4C2F-B177-FC082AB2E9E0
@@ -10,24 +10,24 @@ ms.date: 05/15/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3e8c95e84dd525c274403290712260ba86abd677
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: a07931bfa53a5e4d77c2755b08745b8dd962b695
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918565"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557154"
 ---
-# <a name="no-locxamarinforms-c-markup"></a>Xamarin.FormsC# マークアップ
+# <a name="no-locxamarinforms-c-markup"></a>Xamarin.Forms C# マークアップ
 
 ![プレリリース API](~/media/shared/preview.png)
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
 
 C# マークアップは、c# で宣言型のユーザーインターフェイスを構築するプロセスを簡略化するための、fluent ヘルパーメソッドとクラスのオプトインセットです Xamarin.Forms 。 C# マークアップによって提供される fluent API は、名前空間で使用でき `Xamarin.Forms.Markup` ます。
 
-XAML の場合と同様に、C# のマークアップでは、UI マークアップと UI ロジックを明確に分離できます。 これは、UI マークアップと UI ロジックを個別の部分クラスファイルに分割することで実現できます。 たとえば、ログインページの場合、UI マークアップは*LoginPage.cs*という名前のファイルにありますが、ui ロジックは*LoginPage.logic.cs*という名前のファイルにあります。
+XAML の場合と同様に、C# のマークアップでは、UI マークアップと UI ロジックを明確に分離できます。 これは、UI マークアップと UI ロジックを個別の部分クラスファイルに分割することで実現できます。 たとえば、ログインページの場合、UI マークアップは *LoginPage.cs*という名前のファイルにありますが、ui ロジックは *LoginPage.logic.cs*という名前のファイルにあります。
 
-C# マークアップは4.6 から入手でき Xamarin.Forms ます。 ただし、現在は実験的であり、 *App.cs*ファイルに次のコード行を追加することによってのみ使用できます。
+C# マークアップは4.6 から入手でき Xamarin.Forms ます。 ただし、現在は実験的であり、 *App.cs* ファイルに次のコード行を追加することによってのみ使用できます。
 
 ```csharp
 Device.SetFlags(new string[]{ "Markup_Experimental" });
@@ -207,7 +207,7 @@ new Label { } .FormattedText (
 
 ### <a name="gesture-recognizers"></a>ジェスチャ認識エンジン
 
-`Command`および `CommandParameter` プロパティは `GestureElement` `View` `BindClickGesture` 、、、およびの各拡張メソッドを使用して、型および型にデータをバインドでき `BindSwipeGesture` `BindTapGesture` ます。
+`Command` および `CommandParameter` プロパティは `GestureElement` `View` `BindClickGesture` 、、、およびの各拡張メソッドを使用して、型および型にデータをバインドでき `BindSwipeGesture` `BindTapGesture` ます。
 
 ```csharp
 using Xamarin.Forms.Markup;
@@ -532,7 +532,7 @@ new ListView { } .iOSGroupHeaderStyle(PciOS.GroupHeaderStyle.Grouped)
 - **目的**: コントロールの目的を識別する値を持つプロパティまたはヘルパーメソッド (、など `Text` `Placeholder` `Assign` )。
 - [**その他**]: レイアウトまたはバインドではない、同じ行または複数の行にあるすべてのプロパティまたはヘルパーメソッド。
 - **Layout**: レイアウトは、行と列、レイアウトオプション、余白、サイズ、埋め込み、およびコンテンツの配置の内側に並べられています。
-- **Bind**: データバインディングは、1行に1つのバインドプロパティを持つメソッドチェーンの最後に実行されます。 バインド可能な*既定*のプロパティがバインドされている場合は、メソッドチェーンの最後に配置する必要があります。
+- **Bind**: データバインディングは、1行に1つのバインドプロパティを持つメソッドチェーンの最後に実行されます。 バインド可能な *既定* のプロパティがバインドされている場合は、メソッドチェーンの最後に配置する必要があります。
 
 次のコードは、この規則に従う例を示しています。
 
@@ -553,7 +553,7 @@ new Label { }
 
 ## <a name="related-links"></a>関連リンク
 
-- [CSharpForMarkupDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
+- [CSharpForMarkupDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
 - [Android プラットフォームの機能](~/xamarin-forms/platform/android/index.md)
 - [iOS プラットフォームの機能](~/xamarin-forms/platform/ios/index.md)
 - [Windows プラットフォームの機能](~/xamarin-forms/platform/windows/index.md)

@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsCarouselView EmptyView
+title: Xamarin.Forms CarouselView EmptyView
 description: CarouselView では、表示可能なデータがない場合にユーザーにフィードバックを提供する空のビューを指定できます。 空のビューには、文字列、ビュー、または複数のビューを指定できます。
 ms.prod: xamarin
 ms.assetid: C6DEE1A9-63FC-4889-BC77-F401D5D7DF32
@@ -10,20 +10,20 @@ ms.date: 10/03/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0dd1f4a15d9a8c1315cd3f0f71b641c82bebe004
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 5a6ca7926196a993dda301bac1b87041a975da71
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918657"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557388"
 ---
-# <a name="no-locxamarinforms-carouselview-emptyview"></a>Xamarin.FormsCarouselView EmptyView
+# <a name="no-locxamarinforms-carouselview-emptyview"></a>Xamarin.Forms CarouselView EmptyView
 
 ![プレリリース API](~/media/shared/preview.png)
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 
-[`CarouselView`](xref:Xamarin.Forms.CarouselView)表示するデータがない場合にユーザーフィードバックを提供するために使用できる次のプロパティを定義します。
+[`CarouselView`](xref:Xamarin.Forms.CarouselView) 表示するデータがない場合にユーザーフィードバックを提供するために使用できる次のプロパティを定義します。
 
 - [`EmptyView`](xref:Xamarin.Forms.ItemsView.EmptyView)型の、 `object` プロパティがのときに表示される文字列、バインディング、またはビュー、または [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) `null` プロパティによって指定されたコレクション `ItemsSource` が `null` または空の場合に表示される。 既定値は `null` です。
 - [`EmptyViewTemplate`](xref:Xamarin.Forms.ItemsView.EmptyViewTemplate)型の [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 。指定したの書式設定に使用するテンプレート `EmptyView` 。 既定値は `null` です。
@@ -321,7 +321,7 @@ public class SearchTermDataTemplateSelector : DataTemplateSelector
 
 ## <a name="related-links"></a>関連リンク
 
-- [CarouselView (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
-- [Xamarin.Formsデータテンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
+- [CarouselView (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
+- [Xamarin.Forms データテンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)
 - [Xamarin.Forms のリソース ディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [DataTemplateSelector を作成する Xamarin.Forms](~/xamarin-forms/app-fundamentals/templates/data-templates/selector.md)

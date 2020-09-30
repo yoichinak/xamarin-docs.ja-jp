@@ -10,12 +10,12 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8ffa7ab7c9d2cebb9854ed155c3a00fe65e497c9
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 75f6f9b3e7a493121b8f4dacb87749d4a9616dee
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936137"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557102"
 ---
 # <a name="polylines-and-parametric-equations"></a>多角形やパラメーターの式
 
@@ -23,11 +23,11 @@ ms.locfileid: "86936137"
 
 _SkiaSharp を使用して、パラメーター式を使用して定義できる任意の線を表示します。_
 
-このガイドの「 [**SkiaSharp の曲線とパス**](../curves/index.md)」セクションでは、 [`SKPath`](xref:SkiaSharp.SKPath) 特定の種類の曲線をレンダリングするためにが定義されているさまざまなメソッドについて説明します。 ただし、によって直接サポートされない型の曲線を描画することが必要になる場合があり `SKPath` ます。 このような場合は、ポリライン (接続された直線のコレクション) を使用して、数学的に定義できる曲線を描画できます。 行を十分に小さくして十分な数にすると、結果は曲線のようになります。 このらせんは実際には、次のようにわずかに3600です。
+このガイドの「 [**SkiaSharp の曲線とパス**](../curves/index.md) 」セクションでは、 [`SKPath`](xref:SkiaSharp.SKPath) 特定の種類の曲線をレンダリングするためにが定義されているさまざまなメソッドについて説明します。 ただし、によって直接サポートされない型の曲線を描画することが必要になる場合があり `SKPath` ます。 このような場合は、ポリライン (接続された直線のコレクション) を使用して、数学的に定義できる曲線を描画できます。 行を十分に小さくして十分な数にすると、結果は曲線のようになります。 このらせんは実際には、次のようにわずかに3600です。
 
 ![らせん](polylines-images/spiralexample.png)
 
-一般に、パラメーター式のペアの観点から曲線を定義することをお勧めします。 これらは、3番目の変数に依存する X 座標と Y 座標の式であり、時間と呼ばれることもあり `t` ます。 たとえば、次のパラメーター式は、0 ~ 1 の*t*のポイント (0, 0) の中心が1である円を定義しています。
+一般に、パラメーター式のペアの観点から曲線を定義することをお勧めします。 これらは、3番目の変数に依存する X 座標と Y 座標の式であり、時間と呼ばれることもあり `t` ます。 たとえば、次のパラメーター式は、0 ~ 1 の *t* のポイント (0, 0) の中心が1である円を定義しています。
 
 `x = cos(2πt)`
 
@@ -72,7 +72,7 @@ path.Close();
 
 もちろん、ポリラインを使用して楕円を作成する必要はありません `SKPath` 。には、そのようなメソッドが含まれているため `AddOval` です。 ただし、で提供されていないビジュアルオブジェクトを描画することもでき `SKPath` ます。
 
-アーカイブのための**らせん**のページには、楕円コードに似たコードがありますが、大きな違いがあります。 次のように、円の360°を10回ループし、半径を継続的に調整します。
+アーカイブのための **らせん** のページには、楕円コードに似たコードがありますが、大きな違いがあります。 次のように、円の360°を10回ループし、半径を継続的に調整します。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -118,7 +118,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-各ループ間のオフセットは定数であるため、結果は*算術らせん*とも呼ばれます。
+各ループ間のオフセットは定数であるため、結果は *算術らせん* とも呼ばれます。
 
 [![アーカイブの三重のらせんページのトリプルスクリーンショット](polylines-images/archimedeanspiral-small.png)](polylines-images/archimedeanspiral-large.png#lightbox "アーカイブの三重のらせんページのトリプルスクリーンショット")
 
@@ -126,5 +126,5 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

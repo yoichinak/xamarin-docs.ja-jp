@@ -10,14 +10,14 @@ ms.date: 04/25/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: bdead80671a1ae6539de6614441df7e86863a5a6
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 9dc5b8e63a35c3a0b797d0794af7a31aea4969c9
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137476"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91555594"
 ---
-# <a name="can-i-update-the-xamarinforms-default-template-to-a-newer-nuget-package"></a>Xamarin.Forms既定のテンプレートを新しい NuGet パッケージに更新することはできますか。
+# <a name="can-i-update-the-no-locxamarinforms-default-template-to-a-newer-nuget-package"></a>Xamarin.Forms既定のテンプレートを新しい NuGet パッケージに更新することはできますか。
 
 このガイドでは、 Xamarin.Forms 例として .NET Standard ライブラリテンプレートを使用しますが、共有プロジェクトテンプレートでも同じ一般的な方法を使用でき Xamarin.Forms ます。 このガイドは、1.5.1.6471 から2.1.0.6529 に更新する例を基に記述されてい Xamarin.Forms ますが、同じ手順で他のバージョンを既定値として設定することもできます。
 
@@ -34,7 +34,7 @@ ms.locfileid: "84137476"
 
     例: `<package id="Xamarin.Forms" version="1.5.1.6471" />` -> `<package id="Xamarin.Forms" version="2.1.0.6529" />`
 
-4. メインの[複数プロジェクトのテンプレートファイル](https://msdn.microsoft.com/library/ms185308.aspx)() の "name" 要素を変更し `Xamarin.Forms.PCL.vstemplate` て、一意にしてください。 次に例を示します。
+4. メインの [複数プロジェクトのテンプレートファイル](/visualstudio/ide/how-to-create-multi-project-templates) () の "name" 要素を変更し `Xamarin.Forms.PCL.vstemplate` て、一意にしてください。 次に例を示します。
 
     > `<Name>Blank App (Xamarin.Forms Portable) - 2.1.0.6529</Name>`
 

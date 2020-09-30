@@ -10,16 +10,16 @@ ms.date: 04/12/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 020319761ba1274495b7595a0d18435f98a5f990
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 911365b6293fecd3bf309f3e61d9b232d90b7a13
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937177"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556556"
 ---
 # <a name="matrix-transforms-in-skiasharp"></a>SkiaSharp のマトリックス変換
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _汎用性のある変換マトリックスを使用した SkiaSharp 変換について詳しく知る_
 
@@ -41,13 +41,13 @@ _汎用性のある変換マトリックスを使用した SkiaSharp 変換に�
 | 0  0  1 |
 </pre>
 
-静的メソッドを使用して、id 行列を作成でき [`SKMatrix.MakeIdentity`](xref:SkiaSharp.SKMatrix.MakeIdentity) ます。
+静的メソッドを使用して、id 行列を作成でき  [`SKMatrix.MakeIdentity`](xref:SkiaSharp.SKMatrix.MakeIdentity) ます。
 
 ```csharp
 SKMatrix matrix = SKMatrix.MakeIdentity();
 ```
 
-既定のコンストラクターは、 `SKMatrix` id 行列を返し*ません*。 すべてのセルが0に設定されたマトリックスが返されます。 `SKMatrix`これらのセルを手動で設定する予定がない限り、コンストラクターは使用しないでください。
+既定のコンストラクターは、 `SKMatrix` id 行列を返し *ません* 。 すべてのセルが0に設定されたマトリックスが返されます。 `SKMatrix`これらのセルを手動で設定する予定がない限り、コンストラクターは使用しないでください。
 
 SkiaSharp がグラフィカルオブジェクトをレンダリングするとき、各点 (x、y) は、次の3番目の列の1を含む1対3の行列に効果的に変換されます。
 
@@ -149,11 +149,11 @@ SkiaSharp がグラフィカルオブジェクトをレンダリングすると�
 
 180度の回転は、オブジェクトを水平方向および垂直方向に反転することに相当します。これは、-1 のスケールファクターを設定することによっても実現されます。
 
-これらのすべての種類の変換は、*アフィン*変換として分類されます。 アフィン変換には、マトリックスの3番目の列は含まれません。これは、既定値の0、0、および1のままです。 非[**アフィン変換**](non-affine.md)については、非アフィン変換に関する記事をご覧ください。
+これらのすべての種類の変換は、 *アフィン* 変換として分類されます。 アフィン変換には、マトリックスの3番目の列は含まれません。これは、既定値の0、0、および1のままです。 非 [**アフィン変換**](non-affine.md) については、非アフィン変換に関する記事をご覧ください。
 
 ## <a name="matrix-multiplication"></a>行列乗算
 
-変換行列を使用する場合の大きな利点の1つは、複合変換を行列乗算によって取得できることです。これは、SkiaSharp ドキュメントで*連結*と呼ばれることがよくあります。 の変換関連のメソッドの多く `SKCanvas` は、"プリ連結" または "事前連結" を指しています。 これは乗算の順序を表します。これは、行列乗算が可換ではないために重要です。
+変換行列を使用する場合の大きな利点の1つは、複合変換を行列乗算によって取得できることです。これは、SkiaSharp ドキュメントで *連結*と呼ばれることがよくあります。 の変換関連のメソッドの多く `SKCanvas` は、"プリ連結" または "事前連結" を指しています。 これは乗算の順序を表します。これは、行列乗算が可換ではないために重要です。
 
 たとえば、メソッドのドキュメントでは、 [`Translate`](xref:SkiaSharp.SKCanvas.Translate(System.Single,System.Single)) "現在のマトリックスを指定された翻訳に事前に concats しています" という説明がありますが、メソッドのドキュメントでは、 [`Scale`](xref:SkiaSharp.SKCanvas.Scale(System.Single,System.Single)) "現在のマトリックスを指定されたスケールで事前に concats する" ことが示されています。
 
@@ -174,7 +174,7 @@ canvas.Scale(sx, sy);
 |  0   0   1 |   | tx  ty   1 |   | tx  ty   1 |
 </pre>
 
-`Scale`次のように、を呼び出すことができ `Translate` ます。
+`Scale` 次のように、を呼び出すことができ `Translate` ます。
 
 ```csharp
 canvas.Scale(sx, sy);
@@ -221,9 +221,9 @@ canvas.Translate(–px, –py);
 │ TransX  TransY  Persp2 │
 </pre>
 
-`SKMatrix`では、型のという名前のプロパティも定義さ [`Values`](xref:SkiaSharp.SKMatrix.Values) `float[]` れています。 このプロパティを使用して、1回のショットで、、、、、、、、およびの順に9つの値を設定または取得でき `ScaleX` `SkewX` `TransX` `SkewY` `ScaleY` `TransY` `Persp0` `Persp1` `Persp2` ます。
+`SKMatrix` では、型のという名前のプロパティも定義さ [`Values`](xref:SkiaSharp.SKMatrix.Values) `float[]` れています。 このプロパティを使用して、1回のショットで、、、、、、、、およびの順に9つの値を設定または取得でき `ScaleX` `SkewX` `TransX` `SkewY` `ScaleY` `TransY` `Persp0` `Persp1` `Persp2` ます。
 
-、、およびの各セルについては、 `Persp0` `Persp1` `Persp2` 「[**非アフィン変換**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md)」をご覧ください。 これらのセルの既定値が0、0、および1の場合、変換には次のような座標点が乗算されます。
+、、およびの各セルについては、 `Persp0` `Persp1` `Persp2` 「 [**非アフィン変換**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md)」をご覧ください。 これらのセルの既定値が0、0、および1の場合、変換には次のような座標点が乗算されます。
 
 <pre>
               │ ScaleX  SkewY   0 │
@@ -243,14 +243,14 @@ canvas.Translate(–px, –py);
 
 - [`MakeTranslation`](xref:SkiaSharp.SKMatrix.MakeTranslation(System.Single,System.Single))
 - [`MakeScale`](xref:SkiaSharp.SKMatrix.MakeScale(System.Single,System.Single))
-- [`MakeScale`](xref:SkiaSharp.SKMatrix.MakeScale(System.Single,System.Single,System.Single,System.Single))ピボットポイントを使用する
-- [`MakeRotation`](xref:SkiaSharp.SKMatrix.MakeRotation(System.Single))ラジアン単位の角度の場合
-- [`MakeRotation`](xref:SkiaSharp.SKMatrix.MakeRotation(System.Single,System.Single,System.Single))ピボットポイントを使用したラジアンの角度の場合
+- [`MakeScale`](xref:SkiaSharp.SKMatrix.MakeScale(System.Single,System.Single,System.Single,System.Single)) ピボットポイントを使用する
+- [`MakeRotation`](xref:SkiaSharp.SKMatrix.MakeRotation(System.Single)) ラジアン単位の角度の場合
+- [`MakeRotation`](xref:SkiaSharp.SKMatrix.MakeRotation(System.Single,System.Single,System.Single)) ピボットポイントを使用したラジアンの角度の場合
 - [`MakeRotationDegrees`](xref:SkiaSharp.SKMatrix.MakeRotationDegrees(System.Single))
-- [`MakeRotationDegrees`](xref:SkiaSharp.SKMatrix.MakeRotationDegrees(System.Single,System.Single,System.Single))ピボットポイントを使用する
+- [`MakeRotationDegrees`](xref:SkiaSharp.SKMatrix.MakeRotationDegrees(System.Single,System.Single,System.Single)) ピボットポイントを使用する
 - [`MakeSkew`](xref:SkiaSharp.SKMatrix.MakeSkew(System.Single,System.Single))
 
-`SKMatrix`では、2つの行列を連結するいくつかの静的メソッドも定義されています。 これらのメソッドには、、、およびという名前が付けられ、 [`Concat`](xref:SkiaSharp.SKMatrix.Concat*) [`PostConcat`](xref:SkiaSharp.SKMatrix.PostConcat*) それぞれに [`PreConcat`](xref:SkiaSharp.SKMatrix.PreConcat*) 2 つのバージョンがあります。 これらのメソッドには戻り値がありません。代わりに、引数を使用して既存の値を参照し `SKMatrix` `ref` ます。 次の例では、、 `A` `B` 、および `R` ("result" の場合) がすべての `SKMatrix` 値です。
+`SKMatrix` では、2つの行列を連結するいくつかの静的メソッドも定義されています。 これらのメソッドには、、、およびという名前が付けられ、 [`Concat`](xref:SkiaSharp.SKMatrix.Concat*) [`PostConcat`](xref:SkiaSharp.SKMatrix.PostConcat*) それぞれに [`PreConcat`](xref:SkiaSharp.SKMatrix.PreConcat*) 2 つのバージョンがあります。 これらのメソッドには戻り値がありません。代わりに、引数を使用して既存の値を参照し `SKMatrix` `ref` ます。 次の例では、、 `A` `B` 、および `R` ("result" の場合) がすべての `SKMatrix` 値です。
 
 この2つの `Concat` メソッドは次のように呼び出されます。
 
@@ -325,9 +325,9 @@ SKMatrix.RotateDegrees(ref R, degrees);
 SKMatrix.RotateDegrees(ref R, degrees, px, py);
 ```
 
-これらのメソッドは、回転変換を既存の変換に連結し*ません*。 これらのメソッドは、マトリックスのすべてのセルを設定します。 これらのメソッドは、 `MakeRotation` 値を `MakeRotationDegrees` インスタンス化しない点を除いて、およびメソッドと機能的には同じです `SKMatrix` 。
+これらのメソッドは、回転変換を既存の変換に連結し *ません* 。 これらのメソッドは、マトリックスのすべてのセルを設定します。 これらのメソッドは、 `MakeRotation` 値を `MakeRotationDegrees` インスタンス化しない点を除いて、およびメソッドと機能的には同じです `SKMatrix` 。
 
-表示するオブジェクトがあるとし `SKPath` ますが、別の向き、または別の中心点を使用することをお勧めします。 引数を指定してのメソッドを呼び出すことにより、そのパスのすべての座標を変更でき [`Transform`](xref:SkiaSharp.SKPath.Transform(SkiaSharp.SKMatrix)) `SKPath` `SKMatrix` ます。 [**パスの変換**] ページでは、これを行う方法を示しています。 [`PathTransform`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/PathTransformPage.cs)クラスはフィールド内のオブジェクトを参照し `HendecagramPath` ますが、そのコンストラクターを使用して、そのパスに変換を適用します。
+表示するオブジェクトがあるとし `SKPath` ますが、別の向き、または別の中心点を使用することをお勧めします。 引数を指定してのメソッドを呼び出すことにより、そのパスのすべての座標を変更でき [`Transform`](xref:SkiaSharp.SKPath.Transform(SkiaSharp.SKMatrix)) `SKPath` `SKMatrix` ます。 [ **パスの変換** ] ページでは、これを行う方法を示しています。 [`PathTransform`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/PathTransformPage.cs)クラスはフィールド内のオブジェクトを参照し `HendecagramPath` ますが、そのコンストラクターを使用して、そのパスに変換を適用します。
 
 ```csharp
 public class PathTransformPage : ContentPage
@@ -352,7 +352,7 @@ public class PathTransformPage : ContentPage
 }
 ```
 
-`HendecagramPath`オブジェクトの中心は (0, 0) で、星の11点は、その中心から100単位までのすべての方向に拡張されます。 これは、パスに正と負の両方の座標があることを意味します。 [**パスの変換**] ページでは、星の3倍の大きさと、すべての正の座標が使用されます。 さらに、星の1つのポイントをまっすぐポイントさせる必要はありません。 代わりに、星の1つのポイントが真下を指すようにしたいと考えています。 (星が11点であるため、両方を持つことはできません)。これには、星を22で割った360°の回転が必要です。
+`HendecagramPath`オブジェクトの中心は (0, 0) で、星の11点は、その中心から100単位までのすべての方向に拡張されます。 これは、パスに正と負の両方の座標があることを意味します。 [ **パスの変換** ] ページでは、星の3倍の大きさと、すべての正の座標が使用されます。 さらに、星の1つのポイントをまっすぐポイントさせる必要はありません。 代わりに、星の1つのポイントが真下を指すようにしたいと考えています。 (星が11点であるため、両方を持つことはできません)。これには、星を22で割った360°の回転が必要です。
 
 コンストラクターは、 `SKMatrix` メソッドを使用して、3つの個別の変換からオブジェクトを構築し `PostConcat` ます。このパターンでは、a、B、C はのインスタンスです `SKMatrix` 。
 
@@ -415,7 +415,7 @@ public class PathTransformPage : ContentPage
 transformedPath.Transform(matrix);
 ```
 
-このパスは、このマトリックスをプロパティとして保持し*ません*。 代わりに、パスのすべての座標に変換が適用されます。 が再度呼び出された場合は、 `Transform` 変換が再度適用され、元に戻すことができるのは、変換を元に戻す別の行列を適用することだけです。 さいわい、 `SKMatrix` 構造体は、 [`TryInvert`](xref:SkiaSharp.SKMatrix.TryInvert*) 指定された行列を反転する行列を取得するメソッドを定義します。
+このパスは、このマトリックスをプロパティとして保持し *ません* 。 代わりに、パスのすべての座標に変換が適用されます。 が再度呼び出された場合は、 `Transform` 変換が再度適用され、元に戻すことができるのは、変換を元に戻す別の行列を適用することだけです。 さいわい、 `SKMatrix` 構造体は、 [`TryInvert`](xref:SkiaSharp.SKMatrix.TryInvert*) 指定された行列を反転する行列を取得するメソッドを定義します。
 
 ```csharp
 SKMatrix inverse;
@@ -442,15 +442,15 @@ SKRect transformedRect = matrix.MapRect(rect);
 
 ## <a name="interactive-experimentation"></a>対話型実験
 
-アフィン変換の感覚を得る方法の1つとして、画面の周りでビットマップの3つのコーナーを対話形式で移動し、変換結果を確認する方法があります。 これは、[**アフィン行列の表示**] ページの背後にある概念です。 このページでは、他のデモンストレーションでも使用されている2つのクラスが必要です。
+アフィン変換の感覚を得る方法の1つとして、画面の周りでビットマップの3つのコーナーを対話形式で移動し、変換結果を確認する方法があります。 これは、[ **アフィン行列の表示** ] ページの背後にある概念です。 このページでは、他のデモンストレーションでも使用されている2つのクラスが必要です。
 
-クラスには、 [`TouchPoint`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchPoint.cs) 画面の周囲にドラッグできる半透明な円が表示されます。 `TouchPoint`またはの親である要素にがアタッチされている必要があり `SKCanvasView` `SKCanvasView` [`TouchEffect`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchEffect.cs) ます。 `Capture` プロパティを `true` に設定します。 `TouchAction`イベントハンドラーでは、プログラムは `ProcessTouchEvent` `TouchPoint` 各インスタンスに対してメソッドを呼び出す必要があり `TouchPoint` ます。 `true`タッチイベントによってタッチポイントが移動された場合、メソッドはを返します。 また、ハンドラーは、 `PaintSurface` `Paint` 各インスタンスでメソッドを呼び出し `TouchPoint` て、オブジェクトに渡す必要があり `SKCanvas` ます。
+クラスには、 [`TouchPoint`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchPoint.cs) 画面の周囲にドラッグできる半透明な円が表示されます。 `TouchPoint` またはの親である要素にがアタッチされている必要があり `SKCanvasView` `SKCanvasView` [`TouchEffect`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/TouchEffect.cs) ます。 `Capture` プロパティを `true`に設定します。 `TouchAction`イベントハンドラーでは、プログラムは `ProcessTouchEvent` `TouchPoint` 各インスタンスに対してメソッドを呼び出す必要があり `TouchPoint` ます。 `true`タッチイベントによってタッチポイントが移動された場合、メソッドはを返します。 また、ハンドラーは、 `PaintSurface` `Paint` 各インスタンスでメソッドを呼び出し `TouchPoint` て、オブジェクトに渡す必要があり `SKCanvas` ます。
 
-`TouchPoint`SkiaSharp ビジュアルを別のクラスにカプセル化する一般的な方法を示します。 クラスでは、ビジュアルの特性を指定するためのプロパティを定義できます。また、という名前のメソッドが `Paint` 引数を使用し `SKCanvas` てレンダリングできます。
+`TouchPoint` SkiaSharp ビジュアルを別のクラスにカプセル化する一般的な方法を示します。 クラスでは、ビジュアルの特性を指定するためのプロパティを定義できます。また、という名前のメソッドが `Paint` 引数を使用し `SKCanvas` てレンダリングできます。
 
 `Center`のプロパティは、 `TouchPoint` オブジェクトの場所を示します。 このプロパティは、場所を初期化するように設定できます。プロパティは、ユーザーがキャンバスの周りに円をドラッグしたときに変更されます。
 
-[**アフィン行列の表示] ページ**には、クラスも必要です [`MatrixDisplay`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/MatrixDisplay.cs) 。 このクラスは、オブジェクトのセルを表示 `SKMatrix` します。 2つのパブリックメソッドがあります。表示さ `Measure` れる行列の次元を取得し、 `Paint` それを表示します。 クラスには、 `MatrixPaint` `SKPaint` 別のフォントサイズまたは色で置き換えることができる型のプロパティが含まれています。
+[ **アフィン行列の表示] ページ** には、クラスも必要です [`MatrixDisplay`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/MatrixDisplay.cs) 。 このクラスは、オブジェクトのセルを表示 `SKMatrix` します。 2つのパブリックメソッドがあります。表示さ `Measure` れる行列の次元を取得し、 `Paint` それを表示します。 クラスには、 `MatrixPaint` `SKPaint` 別のフォントサイズまたは色で置き換えることができる型のプロパティが含まれています。
 
 [**ShowAffineMatrixPage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml)ファイルは、をインスタンス化 `SKCanvasView` し、をアタッチし `TouchEffect` ます。 [**ShowAffineMatrixPage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ShowAffineMatrixPage.xaml.cs)分離コードファイルは、3つのオブジェクトを作成し、 `TouchPoint` 埋め込みリソースから読み込むビットマップの3つのコーナーに対応する位置に設定します。
 
@@ -597,7 +597,7 @@ public partial class ShowAffineMatrixPage : ContentPage
 
 タッチポイントはビットマップの角をドラッグするように見えますが、これは錯覚です。 タッチポイントから計算された行列は、角がタッチポイントと重なるようにビットマップを変換します。
 
-ユーザーは、角をドラッグするのではなく、ビットマップの移動、サイズ変更、および回転を行うことができますが、オブジェクト上で1つまたは2本の指を使用してドラッグ、ピンチ、回転することができます。 これについては、次の「[**タッチ操作**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/touch.md)」で説明されています。
+ユーザーは、角をドラッグするのではなく、ビットマップの移動、サイズ変更、および回転を行うことができますが、オブジェクト上で1つまたは2本の指を使用してドラッグ、ピンチ、回転することができます。 これについては、次の「 [**タッチ操作**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/touch.md)」で説明されています。
 
 ## <a name="the-reason-for-the-3-by-3-matrix"></a>3-3 の行列の理由
 
@@ -611,7 +611,7 @@ public partial class ShowAffineMatrixPage : ContentPage
 
 これは、スケーリング、回転、および傾斜にも使用できますが、変換の最も基本的な変換ではありません。
 
-問題は、2バイバイ2行列が2次元の*線形*変換を表すことです。 線形変換ではいくつかの基本的な算術演算が保持されますが、影響の1つは、線形変換が点 (0, 0) を変更しないことです。 線形変換を使用すると、変換できません。
+問題は、2バイバイ2行列が2次元の *線形* 変換を表すことです。 線形変換ではいくつかの基本的な算術演算が保持されますが、影響の1つは、線形変換が点 (0, 0) を変更しないことです。 線形変換を使用すると、変換できません。
 
 3次元では、線形変換行列は次のようになります。
 
@@ -651,9 +651,9 @@ Z が1と等しい2次元平面にとどまりますが、との `SkewXZ` 各 `S
               │ TransX  TransY  Persp2 │
 </pre>
 
-およびの0以外の値は `Persp0` 、 `Persp1` Z が1の2次元平面からオブジェクトを移動する変換になります。 これらのオブジェクトがその平面に戻されるとどうなるかは、[**非アフィン変換**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md)に関する記事で説明されています。
+およびの0以外の値は `Persp0` 、 `Persp1` Z が1の2次元平面からオブジェクトを移動する変換になります。 これらのオブジェクトがその平面に戻されるとどうなるかは、 [**非アフィン変換**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md)に関する記事で説明されています。
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

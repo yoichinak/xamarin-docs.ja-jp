@@ -10,18 +10,18 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 52be7641ac3b2983f537e11bccd76f2a5b52574d
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a77ebb07a09c1bbd2df482c81040f271cdf8f56e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84130183"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556348"
 ---
 # <a name="the-non-separable-blend-modes"></a>分離不可能な blend モード
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-この記事で説明したように、分離可能な blend モードでは、赤、緑、および青のチャネルに対して個別に[**操作を実行**](separable.md)します。 分離不可能な blend モードには対応していません。 色の色合い、鮮やかさ、および輝度のレベルに基づいて操作することにより、分離不可能な blend モードで色を変更することができます。
+この記事で説明したように、分離可能な blend モードでは、赤、緑、および青のチャネルに対して個別に [**操作を実行**](separable.md)します。 分離不可能な blend モードには対応していません。 色の色合い、鮮やかさ、および輝度のレベルに基づいて操作することにより、分離不可能な blend モードで色を変更することができます。
 
 ![分離不可能なサンプル](non-separable-images/NonSeparableSample.png "分離不可能なサンプル")
 
@@ -52,9 +52,9 @@ HSL 値 (0、100、50) は RGB 値 (FF、00、00) です。これは純粋な赤
 | `Color`      | 色合いと鮮やかさ     | 明度                  | 
 | `Luminosity` | 明度             | 色合いと鮮やかさ          | 
 
-詳細については、「W3C[**合成」と「レベル 1**](https://www.w3.org/TR/compositing-1/)のアルゴリズムの合成」を参照してください。
+詳細については、「W3C [**合成」と「レベル 1**](https://www.w3.org/TR/compositing-1/) のアルゴリズムの合成」を参照してください。
 
-[**分離不可能な Blend モード**] ページには、 `Picker` 次のいずれかの blend モードを選択するためのが含まれており、3つの `Slider` ビューで HSL 色を選択します。
+[ **分離不可能な Blend モード** ] ページには、 `Picker` 次のいずれかの blend モードを選択するためのが含まれており、3つの `Slider` ビューで HSL 色を選択します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -211,11 +211,11 @@ Blend モードでは、 `SKBlendModes.Color` 変換先の輝度が保持され�
 
 ## <a name="a-matte-for-a-separable-mode"></a>分離可能モードのマット
 
-[**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルのリソースとして含まれているビットマップの1つを次に示します。 ファイル名は**Banana.jpg**:
+[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルのリソースとして含まれているビットマップの1つを次に示します。 ファイル名は **Banana.jpg**:
 
 ![バナナサル](non-separable-images/Banana.jpg "バナナサル")
 
-バナナだけを含むマットを作成することができます。 これは、 [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルのリソースでもあります。 ファイル名は**BananaMatte.png**:
+バナナだけを含むマットを作成することができます。 これは、 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) サンプルのリソースでもあります。 ファイル名は **BananaMatte.png**:
 
 ![バナナマット](non-separable-images/BananaMatte.png "バナナマット")
 
@@ -223,7 +223,7 @@ Blend モードでは、 `SKBlendModes.Color` 変換先の輝度が保持され�
 
 **Blue バナナ**ページでは、そのマットを使用して、サルが保持しているバナナの色合いと鮮やかさを変更しますが、イメージ内の他は何も変更しません。 
 
-次の `BlueBananaPage` クラスでは、 **Banana.jpg**ビットマップがフィールドとして読み込まれます。 コンストラクターは、オブジェクトとして**BananaMatte.png**ビットマップを読み込み `matteBitmap` ますが、コンストラクター以外のオブジェクトは保持しません。 代わりに、という名前の3番目のビットマップ `blueBananaBitmap` が作成されます。 はに `matteBitmap` 描画され、その後には `blueBananaBitmap` blue に設定され、が `SKPaint` `Color` に設定され `BlendMode` `SKBlendMode.SrcIn` ます。 は `blueBananaBitmap` ほとんど透明なままですが、バナナの完全に青い青い画像があります。
+次の `BlueBananaPage` クラスでは、 **Banana.jpg** ビットマップがフィールドとして読み込まれます。 コンストラクターは、オブジェクトとして **BananaMatte.png** ビットマップを読み込み `matteBitmap` ますが、コンストラクター以外のオブジェクトは保持しません。 代わりに、という名前の3番目のビットマップ `blueBananaBitmap` が作成されます。 はに `matteBitmap` 描画され、その後には `blueBananaBitmap` blue に設定され、が `SKPaint` `Color` に設定され `BlendMode` `SKBlendMode.SrcIn` ます。 は `blueBananaBitmap` ほとんど透明なままですが、バナナの完全に青い青い画像があります。
 
 ```csharp
 public class BlueBananaPage : ContentPage
@@ -294,5 +294,5 @@ Blend モードをに変更してみてください `SKBlendMode.Saturation` 。
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

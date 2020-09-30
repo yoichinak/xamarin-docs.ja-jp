@@ -10,12 +10,12 @@ ms.date: 02/08/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4c07f2667230695c6b884eb4902e68f7f4120f6b
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 719bc923a53d6a2ce9250def48a99893cadac32d
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939504"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91555308"
 ---
 # <a name="spell-checking-using-the-bing-spell-check-api"></a>Bing Spell Check API を使用したスペルチェック
 
@@ -27,15 +27,15 @@ _Bing Spell Check は、テキストに対して文脈によるスペルチェ�
 
 Bing Spell Check REST API には2つの動作モードがあり、API への要求を行うときにモードを指定する必要があります。
 
-- `Spell`大文字と小文字を変更せずに短いテキスト (最大9語) を修正します。
-- `Proof`長いテキストを修正し、大文字小文字の修正と基本的な句読点を提供し、積極的な修正を抑制します。
+- `Spell` 大文字と小文字を変更せずに短いテキスト (最大9語) を修正します。
+- `Proof` 長いテキストを修正し、大文字小文字の修正と基本的な句読点を提供し、積極的な修正を抑制します。
 
 > [!NOTE]
 > [Azure サブスクリプション](/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing)をお持ちでない場合は、開始する前に[無料アカウント](https://aka.ms/azfree-docs-mobileapps)を作成してください。
 
 Bing Spell Check API を使用するには、API キーを取得する必要があります。 これは、 [Try Cognitive Services](https://azure.microsoft.com/try/cognitive-services/)
 
-Bing Spell Check API によってサポートされる言語の一覧については、「[サポートされる言語](/azure/cognitive-services/bing-spell-check/bing-spell-check-supported-languages/)」を参照してください。 Bing Spell Check API の詳細については、 [Bing Spell Check のドキュメント](/azure/cognitive-services/bing-spell-check/)を参照してください。
+Bing Spell Check API によってサポートされる言語の一覧については、「 [サポートされる言語](/azure/cognitive-services/bing-spell-check/bing-spell-check-supported-languages/)」を参照してください。 Bing Spell Check API の詳細については、 [Bing Spell Check のドキュメント](/azure/cognitive-services/bing-spell-check/)を参照してください。
 
 ## <a name="authentication"></a>認証
 
@@ -101,7 +101,7 @@ async Task<string> SendRequestAsync(string url)
 
 このメソッドは、取得要求を API に送信し `SpellCheck` ます。要求 URL には、変換するテキストを指定し、スペルチェックモードを指定します。 次に、応答が読み取られ、呼び出し元のメソッドに返されます。
 
-要求が有効であり、要求された `SpellCheck` 情報が応答内にあることを示すために、API は応答で HTTP 状態コード 200 (OK) を送信します。 応答オブジェクトの一覧については、「[応答オブジェクト](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference#response-objects)」を参照してください。
+要求が有効であり、要求された `SpellCheck` 情報が応答内にあることを示すために、API は応答で HTTP 状態コード 200 (OK) を送信します。 応答オブジェクトの一覧については、「 [応答オブジェクト](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference#response-objects)」を参照してください。
 
 ### <a name="processing-the-response"></a>応答の処理
 
@@ -140,10 +140,10 @@ API 応答が JSON 形式で返されます。 次の JSON データは、テキ
 
 配列に、 `flaggedTokens` テキストのスペルが正しくない、または文法が間違っているというフラグが付けられたテキスト内の単語の配列が含まれています。 スペルミスまたは文法エラーが見つからない場合、配列は空になります。 配列内のタグは次のとおりです。
 
-- `offset`–文字列の先頭から、フラグが設定された単語までの、0から始まるオフセット。
-- `token`–文字列のスペルが正しくない、または文法が間違っている単語。
-- `type`–単語のフラグが設定される原因となったエラーの種類。 2つの値 (と) があり `RepeatedToken` `UnknownToken` ます。
-- `suggestions`–スペルミスまたは文法エラーを修正する単語の配列。 配列はとで構成され `suggestion` `score` ます。これは、提案された修正が正しいことを示す信頼度のレベルを示します。
+- `offset` –文字列の先頭から、フラグが設定された単語までの、0から始まるオフセット。
+- `token` –文字列のスペルが正しくない、または文法が間違っている単語。
+- `type` –単語のフラグが設定される原因となったエラーの種類。 2つの値 (と) があり `RepeatedToken` `UnknownToken` ます。
+- `suggestions` –スペルミスまたは文法エラーを修正する単語の配列。 配列はとで構成され `suggestion` `score` ます。これは、提案された修正が正しいことを示す信頼度のレベルを示します。
 
 サンプルアプリケーションでは、JSON 応答がインスタンスに逆シリアル化され、 `SpellCheckResult` 結果が表示のために呼び出し元のメソッドに返されます。 次のコード例では、 `SpellCheckResult` 表示するインスタンスの処理方法を示します。
 
@@ -172,5 +172,5 @@ foreach (var flaggedToken in spellCheckResult.FlaggedTokens)
 
 - [Bing Spell Check のドキュメント](/azure/cognitive-services/bing-spell-check/)
 - [RESTful Web サービスを使用する](~/xamarin-forms/data-cloud/web-services/rest.md)
-- [Todo Cognitive Services (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+- [Todo Cognitive Services (サンプル)](/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 - [Bing Spell Check API v7 リファレンス](/rest/api/cognitiveservices/bing-spell-check-api-v7-reference/)

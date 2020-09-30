@@ -10,16 +10,16 @@ ms.date: 10/01/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e0c6e305287c97abac3500cba4771479b60381ac
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: b029ffdb0a16d9f54951ae3754ca0f1eb7f69aaa
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939803"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556881"
 ---
 # <a name="platform-specifics"></a>プラットフォーム固有設定
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 _プラットフォーム固有の機能を使用すると、カスタムレンダラーや特殊効果を実装することなく、特定のプラットフォームでのみ使用できる機能を使用できます。_
 
@@ -45,24 +45,24 @@ Fluent コード API を介して使用されるプラットフォームの詳�
 
 プラットフォーム固有のを作成するプロセスは次のとおりです。
 
-1. 特定の機能を効果として実装します。 詳細については、「[効果の作成](~/xamarin-forms/app-fundamentals/effects/creating.md)」を参照してください。
-1. 効果を公開するプラットフォーム固有のクラスを作成します。 詳細については、「[プラットフォーム固有のクラスの作成](#creating-a-platform-specific-class)」を参照してください。
-1. プラットフォーム固有のクラスでは、アタッチされたプロパティを実装して、XAML を通じてプラットフォーム固有のを使用できるようにします。 詳細については、「[添付プロパティの追加](#adding-an-attached-property)」を参照してください。
-1. プラットフォーム固有のクラスでは、拡張メソッドを実装して、fluent コード API を使用してプラットフォーム固有のを使用できるようにします。 詳細については、「[拡張メソッドの追加](#adding-extension-methods)」を参照してください。
-1. 効果が適用されるのは、その効果と同じプラットフォームでプラットフォーム固有のが呼び出されている場合にのみ効果が適用されるように、効果の実装を変更します。 詳細については、「[効果の作成](#creating-the-effect)」を参照してください。
+1. 特定の機能を効果として実装します。 詳細については、「 [効果の作成](~/xamarin-forms/app-fundamentals/effects/creating.md)」を参照してください。
+1. 効果を公開するプラットフォーム固有のクラスを作成します。 詳細については、「 [プラットフォーム固有のクラスの作成](#creating-a-platform-specific-class)」を参照してください。
+1. プラットフォーム固有のクラスでは、アタッチされたプロパティを実装して、XAML を通じてプラットフォーム固有のを使用できるようにします。 詳細については、「 [添付プロパティの追加](#adding-an-attached-property)」を参照してください。
+1. プラットフォーム固有のクラスでは、拡張メソッドを実装して、fluent コード API を使用してプラットフォーム固有のを使用できるようにします。 詳細については、「 [拡張メソッドの追加](#adding-extension-methods)」を参照してください。
+1. 効果が適用されるのは、その効果と同じプラットフォームでプラットフォーム固有のが呼び出されている場合にのみ効果が適用されるように、効果の実装を変更します。 詳細については、「 [効果の作成](#creating-the-effect)」を参照してください。
 
 プラットフォーム固有として効果を公開した結果、XAML および fluent コード API を使用して効果をより簡単に使用できるようになります。
 
 > [!NOTE]
 > ベンダーは、この手法を使用して独自のプラットフォーム仕様を作成し、ユーザーによる使いやすさを予定ています。 ユーザーは独自のプラットフォーム仕様を作成することもできますが、効果を作成して使用するよりも多くのコードが必要であることに注意してください。
 
-この[サンプルアプリケーション](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific)は、 `Shadow` コントロールによって表示されるテキストに影を追加するプラットフォーム固有の例を示してい [`Label`](xref:Xamarin.Forms.Label) ます。
+この [サンプルアプリケーション](/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific) は、 `Shadow` コントロールによって表示されるテキストに影を追加するプラットフォーム固有の例を示してい [`Label`](xref:Xamarin.Forms.Label) ます。
 
 ![シャドウプラットフォーム固有](images/screenshots.png)
 
-この[サンプルアプリケーション](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific)では、理解しやすいように、プラットフォームごとにプラットフォーム固有のを実装して `Shadow` います。 ただし、プラットフォーム固有の各効果の実装とは別に、Shadow クラスの実装はプラットフォームごとにほぼ同じです。 このガイドでは、Shadow クラスの実装と、それに関連する1つのプラットフォームへの影響について焦点します。
+この [サンプルアプリケーション](/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific) では、理解しやすいように、プラットフォームごとにプラットフォーム固有のを実装して `Shadow` います。 ただし、プラットフォーム固有の各効果の実装とは別に、Shadow クラスの実装はプラットフォームごとにほぼ同じです。 このガイドでは、Shadow クラスの実装と、それに関連する1つのプラットフォームへの影響について焦点します。
 
-効果の詳細については、「[効果を持つコントロールのカスタマイズ](~/xamarin-forms/app-fundamentals/effects/index.md)」を参照してください。
+効果の詳細については、「 [効果を持つコントロールのカスタマイズ](~/xamarin-forms/app-fundamentals/effects/index.md)」を参照してください。
 
 ### <a name="creating-a-platform-specific-class"></a>プラットフォーム固有のクラスの作成
 
@@ -155,10 +155,10 @@ namespace MyCompany.Forms.PlatformConfiguration.iOS
 }
 ```
 
-添付プロパティは、クラスがアタッチされて `IsShadowed` `MyCompany.LabelShadowEffect` いるコントロールに対して、その効果を追加したり削除したりするために使用され `Shadow` ます。 この添付プロパティにより、プロパティの値が変更されるときに実行される `OnIsShadowedPropertyChanged` メソッドが登録されます。 次に、このメソッド `AttachEffect` はメソッドまたはメソッドを呼び出して、 `DetachEffect` 添付プロパティの値に基づいて効果を追加または削除し `IsShadowed` ます。 コントロールのコレクションを変更することによって、コントロールに対して効果が追加または削除され [`Effects`](xref:Xamarin.Forms.Element.Effects) ます。
+添付プロパティは、クラスがアタッチされて `IsShadowed` `MyCompany.LabelShadowEffect` いるコントロールに対して、その効果を追加したり削除したりするために使用され `Shadow` ます。 この添付プロパティにより、プロパティの値が変更されたときに実行される `OnIsShadowedPropertyChanged` デリゲートが登録されます。 次に、このメソッド `AttachEffect` はメソッドまたはメソッドを呼び出して、 `DetachEffect` 添付プロパティの値に基づいて効果を追加または削除し `IsShadowed` ます。 コントロールのコレクションを変更することによって、コントロールに対して効果が追加または削除され [`Effects`](xref:Xamarin.Forms.Element.Effects) ます。
 
 > [!NOTE]
-> 効果は、効果の実装で指定された解決グループ名と一意識別子を連結した値を指定することによって解決されることに注意してください。 詳細については、「[効果の作成](~/xamarin-forms/app-fundamentals/effects/creating.md)」を参照してください。
+> 効果は、効果の実装で指定された解決グループ名と一意識別子を連結した値を指定することによって解決されることに注意してください。 詳細については、「 [効果の作成](~/xamarin-forms/app-fundamentals/effects/creating.md)」を参照してください。
 
 添付プロパティについて詳しくは、「[添付プロパティ](~/xamarin-forms/xaml/attached-properties.md)」をご覧ください。
 
@@ -253,7 +253,7 @@ namespace ShadowPlatformSpecific.iOS
 
 `Shadow.IsShadowed`アタッチされたプロパティ値が実行時に変更された場合、その効果はシャドウを削除することによって応答する必要があります。 したがって、メソッドを `OnElementPropertyChanged` 呼び出して、バインド可能なプロパティの変更に応答するには、オーバーライドされたメソッドのバージョンを使用し `UpdateShadow` ます。
 
-効果を作成する方法の詳細については、「[効果の作成](~/xamarin-forms/app-fundamentals/effects/creating.md)」と「効果の[パラメーターを添付プロパティとして渡す](~/xamarin-forms/app-fundamentals/effects/passing-parameters/attached-properties.md)」を参照してください。
+効果を作成する方法の詳細については、「 [効果の作成](~/xamarin-forms/app-fundamentals/effects/creating.md) 」と「効果の [パラメーターを添付プロパティとして渡す](~/xamarin-forms/app-fundamentals/effects/passing-parameters/attached-properties.md)」を参照してください。
 
 ### <a name="consuming-the-platform-specific"></a>プラットフォーム固有の使用
 
@@ -280,8 +280,8 @@ shadowLabel.On<iOS>().SetIsShadowed(true);
 
 ## <a name="related-links"></a>関連リンク
 
-- [PlatformSpecifics (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
-- [ShadowPlatformSpecific (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific)
+- [PlatformSpecifics (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [ShadowPlatformSpecific (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-shadowplatformspecific)
 - [iOS プラットフォーム-詳細](~/xamarin-forms/platform/ios/index.md)
 - [Android プラットフォーム-詳細](~/xamarin-forms/platform/android/index.md)
 - [Windows プラットフォーム-詳細](~/xamarin-forms/platform/windows/index.md)

@@ -10,16 +10,16 @@ ms.date: 04/02/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 20bf6d3d8c802c1d4919cd16885d3939cb0102aa
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 9ed0c2b9b0916349b11f64e83c57f2737c302e92
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86930625"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557466"
 ---
 # <a name="modal-page-presentation-style-on-ios"></a>IOS のモーダルページプレゼンテーションスタイル
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 この iOS プラットフォーム固有のは、モーダルページのプレゼンテーションスタイルを設定するために使用され、さらに、透明な背景を持つモーダルページを表示するために使用できます。 これは、 `Page.ModalPresentationStyle` バインド可能なプロパティを列挙値に設定することによって XAML で使用され `UIModalPresentationStyle` ます。
 
@@ -67,6 +67,6 @@ public class iOSModalFormSheetPageCS : ContentPage
 
 ## <a name="related-links"></a>関連リンク
 
-- [PlatformSpecifics (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+- [PlatformSpecifics (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 - [プラットフォーム固有設定の作成](~/xamarin-forms/platform/platform-specifics/index.md#creating-platform-specifics)
 - [iOSSpecific の API](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific)

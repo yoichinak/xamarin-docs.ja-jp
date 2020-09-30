@@ -11,24 +11,24 @@ ms.date: 07/09/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 94c451305f04294924b3f7115c4f2b3a7a6bad07
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: 7272ef409c5662cf6e321a4284edc34982ec8186
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918664"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556725"
 ---
 # <a name="xaml-controls"></a>XAML コントロール
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
 
-ビューは、ラベル、ボタン、スライダーなどのユーザーインターフェイスオブジェクトであり、他のグラフィカルプログラミング環境では、*コントロール*や*ウィジェット*と呼ばれることがよくあります。 でサポートされるすべてのビューは、 Xamarin.Forms クラスから派生し [`View`](xref:Xamarin.Forms.View) ます。
+ビューは、ラベル、ボタン、スライダーなどのユーザーインターフェイスオブジェクトであり、他のグラフィカルプログラミング環境では、 *コントロール* や *ウィジェット* と呼ばれることがよくあります。 でサポートされるすべてのビューは、 Xamarin.Forms クラスから派生し [`View`](xref:Xamarin.Forms.View) ます。
 
 「」で定義されているすべてのビューは、 Xamarin.Forms XAML ファイルから参照できます。
 
 ## <a name="views-for-presentation"></a>表示用のビュー
 
-| View | 例 |
+| 表示 | 例 |
 | --- | --- |
 | <h3>BoxView</h3>特定の色の四角形を表示します。<p align="center">![BoxView のスクリーンショット](xaml-controls-images/BoxView.png "BoxView")</p>[API](xref:Xamarin.Forms.BoxView)  / [ガイド](~/xamarin-forms/user-interface/boxview.md) | <p valign="center"><pre>&lt;BoxView Color="Accent"<br />         WidthRequest="150"<br />         HeightRequest="150"<br />         HorizontalOptions="Center"&gt;</pre></p> |
 | <h3>Ellipse</h3>楕円または円を表示します。<p align="center">![楕円のスクリーンショット](xaml-controls-images/Ellipse.png "Ellipse")</p>[API](xref:Xamarin.Forms.Shapes.Ellipse)  / [ガイド](~/xamarin-forms/user-interface/shapes/ellipse.md) | <p valign="center"><pre>&lt;Ellipse Fill="Red"<br />         WidthRequest="150"<br />         HeightRequest="50"<br />         HorizontalOptions="Center" /&gt;</pre></p> |
@@ -47,7 +47,7 @@ ms.locfileid: "87918664"
 
 ## <a name="views-that-initiate-commands"></a>コマンドを開始するビュー
 
-| View | 例 |
+| 表示 | 例 |
 | --- | --- |
 | <h3>Button</h3>四角形のオブジェクトにテキストを表示します。<p align="center">![ボタンのスクリーンショット](xaml-controls-images/Button.png "Button")</p>[API](xref:Xamarin.Forms.Button)  / [ガイド](~/xamarin-forms/user-interface/button.md) | <p valign="center"><pre>&lt;Button Text="Click Me!"<br />        Font="Large"<br />        BorderWidth="1"<br />        HorizontalOptions="Center"<br />        VerticalOptions="CenterAndExpand"<br />        Clicked="OnButtonClicked" /&gt;</pre></p> |
 | <h3>ImageButton</h3>四角形のオブジェクトに画像を表示します。<p align="center">![ImageButton のスクリーンショット](xaml-controls-images/ImageButton.png "ImageButton")</p>[API](xref:Xamarin.Forms.ImageButton)  / [ガイド](~/xamarin-forms/user-interface/imagebutton.md) | <p valign="center"><pre>&lt;ImageButton Source="XamarinLogo.png"<br />             HorizontalOptions="Center"<br />             VerticalOptions="CenterAndExpand"<br />             Clicked="OnImageButtonClicked" /&gt;</pre></p> |
@@ -59,10 +59,10 @@ ms.locfileid: "87918664"
 
 ## <a name="views-for-setting-values"></a>値を設定するためのビュー
 
-| View | 例 |
+| 表示 | 例 |
 | --- | --- |
 | <h3>CheckBox</h3>値の選択を許可し `boolean` ます。<p align="center">![チェックボックスのスクリーンショット](xaml-controls-images/CheckBox.png "CheckBox")</p> [ガイド](~/xamarin-forms/user-interface/checkbox.md) | <p valign="center"><pre>&lt;CheckBox IsChecked="true"<br />          HorizontalOptions="Center"<br />          VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
-| <h3>スライダー</h3>連続した範囲から値を選択できるようにし `double` ます。<p align="center">![スライダーのスクリーンショット](xaml-controls-images/Slider.png "Slider")</p>[API](xref:Xamarin.Forms.Slider)  / [ガイド](~/xamarin-forms/user-interface/slider.md) | <p valign="center"><pre>&lt;Slider Minimum="0"<br />        Maximum="100"<br />        VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
+| <h3>Slider</h3>連続した範囲から値を選択できるようにし `double` ます。<p align="center">![スライダーのスクリーンショット](xaml-controls-images/Slider.png "Slider")</p>[API](xref:Xamarin.Forms.Slider)  / [ガイド](~/xamarin-forms/user-interface/slider.md) | <p valign="center"><pre>&lt;Slider Minimum="0"<br />        Maximum="100"<br />        VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
 | <h3>ステッパ</h3>増分範囲から値を選択できるようにし `double` ます。<p align="center">![ステッパのスクリーンショット](xaml-controls-images/Stepper.png "ステッパ")</p>[API](xref:Xamarin.Forms.Stepper)  / [ガイド](~/xamarin-forms/user-interface/stepper.md) | <p valign="center"><pre>&lt;Stepper Minimum="0"<br />         Maximum="10"<br />         Increment="0.1"<br />         HorizontalOptions="Center"<br />         VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
 | <h3>Switch</h3>値の選択を許可し `boolean` ます。<p align="center">![スイッチのスクリーンショット](xaml-controls-images/Switch.png "Switch")</p>[API](xref:Xamarin.Forms.Switch)  / [ガイド](~/xamarin-forms/user-interface/switch.md)| <p valign="center"><pre>&lt;Switch IsToggled="false"<br />        HorizontalOptions="Center"<br />        VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
 | <h3>DatePicker</h3>日付の選択を許可します。<p align="center">![DatePicker のスクリーンショット](xaml-controls-images/DatePicker.png "DatePicker")</p>[API](xref:Xamarin.Forms.DatePicker)  / [ガイド](~/xamarin-forms/user-interface/datepicker.md) | <p valign="center"><pre>&lt;DatePicker Format="D"<br/>            VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
@@ -71,7 +71,7 @@ ms.locfileid: "87918664"
 
 ## <a name="views-for-editing-text"></a>テキストを編集するためのビュー
 
-| View | 例 |
+| 表示 | 例 |
 | --- | --- |
 | <h3>入力</h3>1行のテキストを入力して編集できるようにします。<p align="center">![エントリのスクリーンショット](xaml-controls-images/Entry.png "入力")</p>[API](xref:Xamarin.Forms.Entry)  / [ガイド](~/xamarin-forms/user-interface/text/entry.md) | <p valign="center"><pre>&lt;Entry Keyboard="Email"<br />       Placeholder="Enter email address"<br />       VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
 | <h3>エディター</h3>複数行のテキストを入力および編集できます。<p align="center">![エディターのスクリーンショット](xaml-controls-images/Editor.png "ラベル")</p>[API](xref:Xamarin.Forms.Editor)  / [ガイド](~/xamarin-forms/user-interface/text/editor.md) | <p valign="center"><pre>&lt;Editor VerticalOptions="FillAndExpand" /&gt;</pre></p> |
@@ -79,7 +79,7 @@ ms.locfileid: "87918664"
 
 ## <a name="views-to-indicate-activity"></a>アクティビティを示すためのビュー
 
-| View | 例 |
+| 表示 | 例 |
 | --- | --- |
 | <h3>ActivityIndicator</h3>アプリケーションが時間のかかるアクティビティに関与していることを示すアニメーションを表示します。進行状況は示されません。<p align="center">![ActivityIndicator のスクリーンショット](xaml-controls-images/ActivityIndicator.png "ActivityIndicator")</p>[API](xref:Xamarin.Forms.ActivityIndicator)  / [ガイド](~/xamarin-forms/user-interface/activityindicator.md) | <p valign="center"><pre>&lt;ActivityIndicator IsRunning="True"<br />                   VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
 | <h3>ProgressBar</h3>アプリケーションが時間のかかるアクティビティを経て進行していることを示すアニメーションを表示します。<p align="center">![ProgressBar のスクリーンショット](xaml-controls-images/ProgressBar.png "ProgressBar")</p>[API](xref:Xamarin.Forms.ProgressBar)  / [ガイド](~/xamarin-forms/user-interface/progressbar.md) | <p valign="center"><pre>&lt;ProgressBar Progress=".5"<br />             VerticalOptions="CenterAndExpand" /&gt;</pre></p> |
@@ -87,7 +87,7 @@ ms.locfileid: "87918664"
 
 ## <a name="views-that-display-collections"></a>コレクションを表示するビュー
 
-| View | 例 |
+| 表示 | 例 |
 | --- | --- |
 | <h3>CarouselView</h3>データ項目のスクロール可能な一覧を表示します。<p align="center">![CarouselView のスクリーンショット](xaml-controls-images/CarouselView.png "CarouselView")</p>[ガイド](~/xamarin-forms/user-interface/carouselview/index.md) | <p valign="center"><pre>&lt;CarouselView ItemsSource="{Binding Monkeys}"&gt;<br/>              ItemTemplate="{StaticResource MonkeyTemplate}" /&gt;</pre></p>|
 | <h3>CollectionView</h3>さまざまなレイアウト仕様を使用して、選択可能なデータ項目のスクロール可能な一覧を表示します。<p align="center">![CollectionView のスクリーンショット](xaml-controls-images/CollectionView.png "CollectionView")</p>[ガイド](~/xamarin-forms/user-interface/collectionview/index.md) | <p valign="center"><pre>&lt;CollectionView ItemsSource="{Binding Monkeys}"&gt;<br/>                ItemTemplate="{StaticResource MonkeyTemplate}"<br />                ItemsLayout="VerticalGrid, 2" /&gt;</pre></p> |
@@ -99,6 +99,6 @@ ms.locfileid: "87918664"
 
 ## <a name="related-links"></a>関連リンク
 
-- [Xamarin.Formsフォームギャラリーのサンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
-- [Xamarin.Forms サンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
-- [Xamarin.FormsAPI ドキュメント](https://docs.microsoft.com/dotnet/api/xamarin.forms?view=xamarin-forms)
+- [Xamarin.Forms フォームギャラリーのサンプル](/samples/xamarin/xamarin-forms-samples/formsgallery)
+- [Xamarin.Forms サンプル](/samples/browse/?products=xamarin&term=Xamarin.Forms)
+- [Xamarin.Forms API ドキュメント](/dotnet/api/xamarin.forms?view=xamarin-forms)

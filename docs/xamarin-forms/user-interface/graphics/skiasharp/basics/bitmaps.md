@@ -10,12 +10,12 @@ ms.date: 07/17/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 440a078857a940f57f5700a18f91fc8b25bdfae8
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: a62d8f8e04d97b45fff779739d817defce1414f2
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937203"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556868"
 ---
 # <a name="bitmap-basics-in-skiasharp"></a>SkiaSharp でのビットマップの基礎
 
@@ -106,7 +106,7 @@ Android オペレーティングシステムは、 `Stream` `GetStreamAsync` メ
 
 コードに関して、ビットマップを読み込む最も簡単な方法は、ビットマップリソースをアプリケーションに直接含めることです。 **SkiaSharpFormsDemos**プログラムには、 **monkey.png**という名前のビットマップファイルを含む、**メディア**という名前のフォルダーが含まれています。 プログラムリソースとして格納されているビットマップの場合、[**プロパティ**] ダイアログボックスを使用して、**埋め込みリソース**の**ビルドアクション**をファイルに指定する必要があります。
 
-各埋め込みリソースには、プロジェクト名、フォルダー、およびファイル名で構成される*リソース ID*が含まれています。これらはすべて、ピリオド: **SkiaSharpFormsDemos.Media.monkey.png**で結ばれています。 このリソースにアクセスするには、そのリソース ID をクラスのメソッドの引数として指定し [`GetManifestResourceStream`](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String)) [`Assembly`](xref:System.Reflection.Assembly) ます。
+各埋め込みリソースには、プロジェクト名、フォルダー、およびファイル名で構成される *リソース ID* が含まれています。これらはすべて、ピリオド: **SkiaSharpFormsDemos.Media.monkey.png**で結ばれています。 このリソースにアクセスするには、そのリソース ID をクラスのメソッドの引数として指定し [`GetManifestResourceStream`](xref:System.Reflection.Assembly.GetManifestResourceStream(System.String)) [`Assembly`](xref:System.Reflection.Assembly) ます。
 
 ```csharp
 string resourceID = "SkiaSharpFormsDemos.Media.monkey.png";
@@ -122,9 +122,9 @@ using (Stream stream = assembly.GetManifestResourceStream(resourceID))
 
 ## <a name="loading-a-bitmap-from-the-photo-library"></a>フォトライブラリからビットマップを読み込む
 
-ユーザーは、デバイスの画像ライブラリから写真を読み込むこともできます。 この機能は、単独では提供されません Xamarin.Forms 。 このジョブには、「[画像ライブラリから写真を選択](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)する」で説明されているような依存関係サービスが必要です。
+ユーザーは、デバイスの画像ライブラリから写真を読み込むこともできます。 この機能は、単独では提供されません Xamarin.Forms 。 このジョブには、「 [画像ライブラリから写真を選択](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)する」で説明されているような依存関係サービスが必要です。
 
-**SkiaSharpFormsDemos**プロジェクトの**IPhotoLibrary.cs**ファイルと、プラットフォームプロジェクト内の3つの**PhotoLibrary.cs**ファイルは、その記事から応用されています。 さらに、この記事で説明されているように Android **MainActivity.cs**ファイルが変更されています。 iOS プロジェクトには、**情報 plist**ファイルの下部に2行の写真ライブラリへのアクセス許可が付与されています。
+**SkiaSharpFormsDemos**プロジェクトの**IPhotoLibrary.cs**ファイルと、プラットフォームプロジェクト内の3つの**PhotoLibrary.cs**ファイルは、その記事から応用されています。 さらに、この記事で説明されているように Android **MainActivity.cs** ファイルが変更されています。 iOS プロジェクトには、 **情報 plist** ファイルの下部に2行の写真ライブラリへのアクセス許可が付与されています。
 
 コンストラクターは、を `BasicBitmapsPage` に追加し `TapGestureRecognizer` て、 `SKCanvasView` タップが通知されるようにします。 タップを受け取ると、ハンドラーは `Tapped` picture picker dependency service にアクセスしてを呼び出し `PickPhotoAsync` ます。 `Stream`オブジェクトが返された場合は、メソッドに渡され `SKBitmap.Decode` ます。
 
@@ -247,10 +247,10 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 画像ライブラリからまだビットマップが読み込まれていない場合は、 `else` ユーザーに画面をタップするように求めるテキストがブロックに表示されます。
 
-さまざまな透明度でビットマップを表示できます。また、SkiaSharp の[**透明度**](transparency.md)に関する次の記事では、その方法について説明します。
+さまざまな透明度でビットマップを表示できます。また、SkiaSharp の [**透明度**](transparency.md) に関する次の記事では、その方法について説明します。
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 - [画像ライブラリから写真を選択する](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)

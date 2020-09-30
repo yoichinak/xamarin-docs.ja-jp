@@ -1,6 +1,6 @@
 ---
 title: レイアウトの選択 Xamarin.Forms
-description: Xamarin.Formsレイアウトクラスを使用すると、アプリケーションに UI コントロールを配置してグループ化できます。
+description: Xamarin.Forms レイアウトクラスを使用すると、アプリケーションに UI コントロールを配置してグループ化できます。
 ms.prod: xamarin
 ms.assetid: 05A39752-A174-447E-A30D-3CC9EF98CB96
 ms.technology: xamarin-forms
@@ -10,18 +10,18 @@ ms.date: 08/21/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 38b44bbb8f01f090d286bb2203014455a32a2290
-ms.sourcegitcommit: 808ff109928a1eea16e17e23ea81f8c903a239e8
+ms.openlocfilehash: 6f5702695698881a30cfbf3e63110856a97a2c24
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88181486"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91555348"
 ---
 # <a name="choose-a-no-locxamarinforms-layout"></a>レイアウトの選択 Xamarin.Forms
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
 
-Xamarin.Formsレイアウトクラスを使用すると、アプリケーションに UI コントロールを配置してグループ化できます。 レイアウトクラスを選択するには、レイアウトが子要素を配置する方法と、レイアウトがその子要素をどのようにサイズ調整するかについての知識が必要です。 また、レイアウトを入れ子にして目的のレイアウトを作成することが必要になる場合もあります。
+Xamarin.Forms レイアウトクラスを使用すると、アプリケーションに UI コントロールを配置してグループ化できます。 レイアウトクラスを選択するには、レイアウトが子要素を配置する方法と、レイアウトがその子要素をどのようにサイズ調整するかについての知識が必要です。 また、レイアウトを入れ子にして目的のレイアウトを作成することが必要になる場合もあります。
 
 次の図は、メインレイアウトクラスを使用して実現できる一般的なレイアウトを示してい Xamarin.Forms ます。
 
@@ -29,7 +29,7 @@ Xamarin.Formsレイアウトクラスを使用すると、アプリケーショ�
 
 ## <a name="stacklayout"></a>StackLayout
 
-は、 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 1 次元のスタック内の要素を水平方向または垂直方向に編成します。 [`Orientation`](xref:Xamarin.Forms.StackLayout.Orientation)プロパティは要素の方向を指定し、既定の向きは [`Vertical`](xref:Xamarin.Forms.StackOrientation) です。 `StackLayout`は、通常、ページ上の UI のサブセクションを配置するために使用されます。
+は、 [`StackLayout`](xref:Xamarin.Forms.StackLayout) 1 次元のスタック内の要素を水平方向または垂直方向に編成します。 [`Orientation`](xref:Xamarin.Forms.StackLayout.Orientation)プロパティは要素の方向を指定し、既定の向きは [`Vertical`](xref:Xamarin.Forms.StackOrientation) です。 `StackLayout` は、通常、ページ上の UI のサブセクションを配置するために使用されます。
 
 次の XAML は、3つのオブジェクトを含む垂直方向の作成方法を示してい [`StackLayout`](xref:Xamarin.Forms.StackLayout) [`Label`](xref:Xamarin.Forms.Label) ます。
 
@@ -78,14 +78,14 @@ Xamarin.Formsレイアウトクラスを使用すると、アプリケーショ�
 
 詳細については、「 [ Xamarin.Forms stacklayout](stacklayout.md)」を参照してください。
 
-## <a name="grid"></a>Grid
+## <a name="grid"></a>グリッド
 
 は、 [`Grid`](xref:Xamarin.Forms.Grid) 行と列に要素を表示するために使用されます。これは、比例または絶対的なサイズを持つことができます。 グリッドの行と列は、プロパティとプロパティで指定し [`RowDefinitions`](xref:Xamarin.Forms.Grid.RowDefinitions) [`ColumnDefinitions`](xref:Xamarin.Forms.Grid.ColumnDefinitions) ます。
 
 特定のセルに要素を配置するに [`Grid`](xref:Xamarin.Forms.Grid) は、 [`Grid.Column`](xref:Xamarin.Forms.Grid.ColumnProperty) および添付プロパティを使用し [`Grid.Row`](xref:Xamarin.Forms.Grid.RowProperty) ます。 複数の行および列にまたがる要素を作成するには、 [`Grid.RowSpan`](xref:Xamarin.Forms.Grid.RowSpanProperty) および添付プロパティを使用し [`Grid.ColumnSpan`](xref:Xamarin.Forms.Grid.ColumnSpanProperty) ます。
 
 > [!NOTE]
-> [`Grid`](xref:Xamarin.Forms.Grid)レイアウトはテーブルと混同しないようにしてください。表形式のデータを表示するためのものではありません。 HTML テーブルとは異なり、は、コンテンツをレイアウトすることを目的とし `Grid` ています。 表形式データを表示する場合は、 [ListView](~/xamarin-forms/user-interface/listview/index.md)、 [CollectionView](~/xamarin-forms/user-interface/collectionview/index.md)、または[TableView](~/xamarin-forms/user-interface/tableview.md)を使用することを検討してください。
+> [`Grid`](xref:Xamarin.Forms.Grid)レイアウトはテーブルと混同しないようにしてください。表形式のデータを表示するためのものではありません。 HTML テーブルとは異なり、は、コンテンツをレイアウトすることを目的とし `Grid` ています。 表形式データを表示する場合は、 [ListView](~/xamarin-forms/user-interface/listview/index.md)、 [CollectionView](~/xamarin-forms/user-interface/collectionview/index.md)、または [TableView](~/xamarin-forms/user-interface/tableview.md)を使用することを検討してください。
 
 次の XAML は、 [`Grid`](xref:Xamarin.Forms.Grid) 2 つの行と2つの列を持つを作成する方法を示しています。
 
@@ -244,18 +244,18 @@ Xamarin.Formsレイアウトクラスを使用すると、アプリケーショ�
 
 ## <a name="layout-performance"></a>レイアウトのパフォーマンス
 
-レイアウトの最適なパフォーマンスを得るには、「[レイアウトのパフォーマンスを最適化](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)する」のガイドラインに従ってください。
+レイアウトの最適なパフォーマンスを得るには、「 [レイアウトのパフォーマンスを最適化](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)する」のガイドラインに従ってください。
 
-さらに、レイアウトの圧縮を使用して、指定されたレイアウトをビジュアルツリーから削除することで、ページレンダリングのパフォーマンスを向上させることもできます。 詳細については、「[レイアウトの圧縮](layout-compression.md)」を参照してください。
+さらに、レイアウトの圧縮を使用して、指定されたレイアウトをビジュアルツリーから削除することで、ページレンダリングのパフォーマンスを向上させることもできます。 詳細については、「 [レイアウトの圧縮](layout-compression.md)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 
-- [レイアウト (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layout)
-- [Xamarin.Formsレイアウト (ビデオ)](https://youtu.be/4HlLjTZQzjM)
-- [Xamarin.FormsStackLayout](stacklayout.md)
-- [Xamarin.Forms行列](grid.md)
-- [Xamarin.FormsFlexLayout](flex-layout.md)
-- [Xamarin.FormsAbsoluteLayout](absolutelayout.md)
-- [Xamarin.FormsRelativeLayout](relativelayout.md)
+- [レイアウト (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-layout)
+- [Xamarin.Forms レイアウト (ビデオ)](https://youtu.be/4HlLjTZQzjM)
+- [Xamarin.Forms StackLayout](stacklayout.md)
+- [Xamarin.Forms 行列](grid.md)
+- [Xamarin.Forms FlexLayout](flex-layout.md)
+- [Xamarin.Forms AbsoluteLayout](absolutelayout.md)
+- [Xamarin.Forms RelativeLayout](relativelayout.md)
 - [レイアウトのパフォーマンスを最適化する](~/xamarin-forms/deploy-test/performance.md#optimize-layout-performance)
 - [レイアウトの圧縮](layout-compression.md)

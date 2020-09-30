@@ -10,20 +10,20 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 644e6ab4acffa7acf2d86733d68fed8db07a752a
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 75d19e41243076da127d58defdabeca908d900cd
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86932367"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556088"
 ---
 # <a name="lines-and-stroke-caps"></a>線とストローク キャップ
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _SkiaSharp を使用して異なるストロークキャップの線を描画する方法について説明します。_
 
-SkiaSharp では、単一行のレンダリングは、接続された一連の直線を描画することとは大きく異なります。 ただし、1つの線を描画する場合でも、多くの場合、線に特定のストロークの幅を付ける必要があります。 これらの行の幅が広くなるにつれて、線の端の外観も重要になります。 線の端の外観は、*ストロークキャップ*と呼ばれます。
+SkiaSharp では、単一行のレンダリングは、接続された一連の直線を描画することとは大きく異なります。 ただし、1つの線を描画する場合でも、多くの場合、線に特定のストロークの幅を付ける必要があります。 これらの行の幅が広くなるにつれて、線の端の外観も重要になります。 線の端の外観は、 *ストロークキャップ*と呼ばれます。
 
 ![3つのストロークキャップオプション](lines-images/strokecapsexample.png)
 
@@ -35,13 +35,13 @@ canvas.DrawLine (x0, y0, x1, y1, paint);
 
 既定では、 [`StrokeWidth`](xref:SkiaSharp.SKPaint.StrokeWidth) 新しくインスタンス化されたオブジェクトのプロパティ `SKPaint` は0であり、1ピクセルの線を太さで描画する場合の値1と同じ効果があります。 これは携帯電話などの高解像度のデバイスでは非常に薄く見えます。そのため、をより大きな値に設定することをお勧めし `StrokeWidth` ます。 しかし、サイズが非常に大きい線の描画を開始すると、別の問題が発生します。このような太い線の開始と終了はどのようにレンダリングされますか。
 
-線の始点と終点の外観は、*直線キャップ*、つまり skia では*ストロークキャップ*と呼ばれます。 このコンテキストの "cap" という単語は、 &mdash; 行の末尾にある一種の hat を指します。 [`StrokeCap`](xref:SkiaSharp.SKPaint.StrokeCap)オブジェクトのプロパティは、 `SKPaint` 列挙体の次のいずれかのメンバーに設定し [`SKStrokeCap`](xref:SkiaSharp.SKStrokeCap) ます。
+線の始点と終点の外観は、 *直線キャップ* 、つまり skia では *ストロークキャップ*と呼ばれます。 このコンテキストの "cap" という単語は、 &mdash; 行の末尾にある一種の hat を指します。 [`StrokeCap`](xref:SkiaSharp.SKPaint.StrokeCap)オブジェクトのプロパティは、 `SKPaint` 列挙体の次のいずれかのメンバーに設定し [`SKStrokeCap`](xref:SkiaSharp.SKStrokeCap) ます。
 
-- `Butt`(既定値)
+- `Butt` (既定値)
 - `Square`
 - `Round`
 
-これらの例は、サンプルプログラムを使用して説明します。 [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラムの**SkiaSharp Lines and Paths**セクションは、クラスに基づく**Stroke Caps**というタイトルのページから始まり [`StrokeCapsPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/StrokeCapsPage.cs) ます。 このページでは、列挙 `PaintSurface` 体の3つのメンバーをループ処理 `SKStrokeCap` し、列挙体のメンバーの名前とそのストロークキャップを使用して線を描画するイベントハンドラーを定義します。
+これらの例は、サンプルプログラムを使用して説明します。 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラムの**SkiaSharp Lines and Paths**セクションは、クラスに基づく**Stroke Caps**というタイトルのページから始まり [`StrokeCapsPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/StrokeCapsPage.cs) ます。 このページでは、列挙 `PaintSurface` 体の3つのメンバーをループ処理 `SKStrokeCap` し、列挙体のメンバーの名前とそのストロークキャップを使用して線を描画するイベントハンドラーを定義します。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -109,11 +109,11 @@ DrawPoints (SKPointMode mode, points, paint)
 
 `points`パラメーターは値の配列であり、次の `SKPoint` `mode` [`SKPointMode`](xref:SkiaSharp.SKPointMode) 3 つのメンバーを持つ列挙体のメンバーです。
 
-- `Points`個々の点を表示するには
-- `Lines`ポイントの各ペアを接続するには
-- `Polygon`すべての連続するポイントを接続するには
+- `Points` 個々の点を表示するには
+- `Lines` ポイントの各ペアを接続するには
+- `Polygon` すべての連続するポイントを接続するには
 
-[**複数行**] ページでは、このメソッドを示しています。 [**乗数 Elinespage .xaml**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/MultipleLinesPage.xaml)ファイルは、 `Picker` `SKPointMode` 列挙体のメンバーと列挙体のメンバーを選択できる2つのビューをインスタンス化し `SKStrokeCap` ます。
+[ **複数行** ] ページでは、このメソッドを示しています。 [**乗数 Elinespage .xaml**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/MultipleLinesPage.xaml)ファイルは、 `Picker` `SKPointMode` 列挙体のメンバーと列挙体のメンバーを選択できる2つのビューをインスタンス化し `SKStrokeCap` ます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -243,5 +243,5 @@ Android のスクリーンショットは、の結果を示して `SKPointMode.L
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

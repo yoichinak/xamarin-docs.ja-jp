@@ -10,33 +10,33 @@ ms.date: 03/12/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 23edbb007e912d13858686d1c5ec574c9e3349c7
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a8e8388a6a460b3a2958d3ab3b9a4c9c34ea1831
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127142"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556465"
 ---
-# <a name="create-a-xamarinforms-visual-renderer"></a>ビジュアルレンダラーを作成する Xamarin.Forms
+# <a name="create-a-no-locxamarinforms-visual-renderer"></a>ビジュアルレンダラーを作成する Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
 
-Xamarin.Formsビジュアルを使用すると、ビューをサブクラス化しなくても、レンダラーを作成し、オブジェクトに対して選択的に適用でき [`VisualElement`](xref:Xamarin.Forms.VisualElement) Xamarin.Forms ます。 `IVisual`の一部として型を指定するレンダラーは、 `ExportRendererAttribute` 既定のレンダラーではなくビューでの表示に使用されます。 レンダラーの選択時に、 `Visual` ビューのプロパティが検査され、レンダラーの選択プロセスに含まれます。
+Xamarin.Forms ビジュアルを使用すると、ビューをサブクラス化しなくても、レンダラーを作成し、オブジェクトに対して選択的に適用でき [`VisualElement`](xref:Xamarin.Forms.VisualElement) Xamarin.Forms ます。 `IVisual`の一部として型を指定するレンダラーは、 `ExportRendererAttribute` 既定のレンダラーではなくビューでの表示に使用されます。 レンダラーの選択時に、 `Visual` ビューのプロパティが検査され、レンダラーの選択プロセスに含まれます。
 
 > [!IMPORTANT]
 > 現在、 [`Visual`](xref:Xamarin.Forms.VisualElement.Visual) ビューを表示した後でプロパティを変更することはできませんが、今後のリリースでは変更されません。
 
 ビジュアルレンダラーを作成して使用するためのプロセス Xamarin.Forms は次のとおりです。
 
-1. 必要なビューのプラットフォームレンダラーを作成します。 詳細については、「[レンダラーを作成する](#create-platform-renderers)」を参照してください。
+1. 必要なビューのプラットフォームレンダラーを作成します。 詳細については、「 [レンダラーを作成する](#create-platform-renderers)」を参照してください。
 1. から派生する型を作成 `IVisual` します。 詳細については、「 [IVisual 型の作成](#create-an-ivisual-type)」を参照してください。
 1. レンダラーを `IVisual` 装飾するの一部として、型を登録し `ExportRendererAttribute` ます。 詳細については、「 [IVisual 型の登録](#register-the-ivisual-type)」を参照してください。
-1. ビューのプロパティを名前に設定して、ビジュアルレンダラーを使用し [`Visual`](xref:Xamarin.Forms.VisualElement.Visual) `IVisual` ます。 詳細については、「[ビジュアルレンダラーの使用](#consume-the-visual-renderer)」を参照してください。
+1. ビューのプロパティを名前に設定して、ビジュアルレンダラーを使用し [`Visual`](xref:Xamarin.Forms.VisualElement.Visual) `IVisual` ます。 詳細については、「 [ビジュアルレンダラーの使用](#consume-the-visual-renderer)」を参照してください。
 1. optional型の名前を登録 `IVisual` します。 詳細については、「 [IVisual 型の名前を登録する](#register-a-name-for-the-ivisual-type)」を参照してください。
 
 ## <a name="create-platform-renderers"></a>プラットフォームのレンダラーを作成する
 
-レンダラークラスの作成の詳細については、「[カスタムレンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)」を参照してください。 ただし、ビュー Xamarin.Forms をサブクラス化しなくても、ビジュアルレンダラーがビューに適用されることに注意してください。
+レンダラークラスの作成の詳細については、「 [カスタムレンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)」を参照してください。 ただし、ビュー Xamarin.Forms をサブクラス化しなくても、ビジュアルレンダラーがビューに適用されることに注意してください。
 
 ここで説明するレンダラークラスは、 [`Button`](xref:Xamarin.Forms.Button) テキストを影付きで表示するカスタムを実装します。
 
@@ -175,6 +175,6 @@ button.Visual = new CustomVisual();
 
 ## <a name="related-links"></a>関連リンク
 
-- [素材ビジュアル (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
+- [素材ビジュアル (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
 - [Xamarin.Forms の素材のビジュアル](material-visual.md)
 - [カスタム レンダラー](~/xamarin-forms/app-fundamentals/custom-renderer/index.md)

@@ -1,6 +1,6 @@
 ---
-title: 色Xamarin.Forms
-description: Xamarin.Forms柔軟なクロスプラットフォームカラークラスを提供します。 この記事では、Color クラスによって提供される機能とその使用方法について説明します。
+title: 色 Xamarin.Forms
+description: Xamarin.Forms 柔軟なクロスプラットフォームカラークラスを提供します。 この記事では、Color クラスによって提供される機能とその使用方法について説明します。
 ms.prod: xamarin
 ms.assetid: 22288ABF-57BE-47A9-ACC3-AC604D787C46
 ms.technology: xamarin-forms
@@ -10,31 +10,31 @@ ms.date: 04/02/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a02fe7451702367d85d322b756df4a547a009454
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 6b4e44cb667335ecca7a0c7e5ec77d6e14ed975c
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137346"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557232"
 ---
-# <a name="colors-in-xamarinforms"></a>色Xamarin.Forms
+# <a name="colors-in-no-locxamarinforms"></a>色 Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithcolors)
 
-_Xamarin Forms は、柔軟なクロスプラットフォームカラークラスを提供します。_
+_Xamarin.Forms 柔軟なクロスプラットフォームカラークラスを提供します。_
 
 この記事では、でクラスを使用するさまざまな方法について説明し [`Color`](xref:Xamarin.Forms.Color) Xamarin.Forms ます。
 
 クラスには、 [`Color`](xref:Xamarin.Forms.Color) インスタンスを構築するためのメソッドがいくつか用意されてい `Color` ます。
 
-- **名前**付きの色-、、など、一般的な名前付きの色のコレクション `Red` `Green` `Blue` 。
-- `FromHex`-HTML で使用される構文 ("00FF00" など) に類似した文字列値。 必要に応じて、最初の文字ペア ("CC00FF00") として Alpha を指定できます。
-- `FromHsla`-色合い、鮮やかさ、および明るさの `double` 値 (オプションのアルファ値 (0.0 ~ 1.0))。
-- `FromHsv`-色相、鮮やかさ、値 `int` または値 `double` 。
-- `FromHsva`-色相、鮮やかさ、値 `int` または値 `double` 。
-- `FromRgb`-赤、緑、および青の `int` 値 (0-255)。
-- `FromRgba`-赤、緑、青、およびアルファ `int` 値 (0-255)。
-- `FromUint`- `double` **argb**を表す単一の値を設定します。
+- **名前** 付きの色-、、など、一般的な名前付きの色のコレクション `Red` `Green` `Blue` 。
+- `FromHex` -HTML で使用される構文 ("00FF00" など) に類似した文字列値。 必要に応じて、最初の文字ペア ("CC00FF00") として Alpha を指定できます。
+- `FromHsla` -色合い、鮮やかさ、および明るさの `double` 値 (オプションのアルファ値 (0.0 ~ 1.0))。
+- `FromHsv` -色相、鮮やかさ、値 `int` または値 `double` 。
+- `FromHsva` -色相、鮮やかさ、値 `int` または値 `double` 。
+- `FromRgb` -赤、緑、および青の `int` 値 (0-255)。
+- `FromRgba` -赤、緑、青、およびアルファ  `int` 値 (0-255)。
+- `FromUint` - `double` **argb**を表す単一の値を設定します。
 
 次に、 `BackgroundColor` 許可されている構文のさまざまなバリエーションを使用して、一部のラベルのに割り当てられている色の例を示します。
 
@@ -60,7 +60,7 @@ var accent = new Label      { Text = "Accent",     BackgroundColor = Color.Accen
 
 を使用して、 `Default` 色の値をプラットフォームの既定値に戻します (または再設定します)。これは、各プロパティのプラットフォームごとに、基になる色が異なることを理解しています。
 
-開発者はこの値を使用し `Color` てプロパティを設定できますが、コンポーネントの RGB 値に対してこのインスタンスのクエリを実行することはできません (すべて-1 に設定**されてい**ます)。
+開発者はこの値を使用し `Color` てプロパティを設定できますが、コンポーネントの RGB 値に対してこのインスタンスのクエリを実行することはできません (すべて-1 に設定 **されてい** ます)。
 
 ## <a name="colortransparent"></a>色透明
 
@@ -72,14 +72,14 @@ IOS および Android では、このインスタンスは、既定の背景に�
 
 ## <a name="additional-methods"></a>その他のメソッド
 
-[`Color`](xref:Xamarin.Forms.Color)インスタンスには、次の追加メソッドが含まれます。
+[`Color`](xref:Xamarin.Forms.Color) インスタンスには、次の追加メソッドが含まれます。
 
-- `AddLuminosity`-指定された `Color` デルタによって輝度を変更することによって、を返します。
-- `MultiplyAlpha`-指定された `Color` アルファ値で乗算されたアルファを変更することによって、を返します。
-- `ToHex`-の16進数 `string` 表現を返し `Color` ます。
-- `WithHue`-を返し `Color` ます。色合いを指定された値に置き換えます。
-- `WithLuminosity`-を返します。これは、指定された `Color` 値で明るさを置き換えます。
-- `WithSaturation`-を返し `Color` ます。鮮やかさを指定された値に置き換えます。
+- `AddLuminosity` -指定された `Color` デルタによって輝度を変更することによって、を返します。
+- `MultiplyAlpha` -指定された `Color` アルファ値で乗算されたアルファを変更することによって、を返します。
+- `ToHex` -の16進数 `string` 表現を返し `Color` ます。
+- `WithHue` -を返し `Color` ます。色合いを指定された値に置き換えます。
+- `WithLuminosity` -を返します。これは、指定された `Color` 値で明るさを置き換えます。
+- `WithSaturation` -を返し `Color` ます。鮮やかさを指定された値に置き換えます。
 
 ## <a name="implicit-conversions"></a>暗黙の変換
 
@@ -125,5 +125,5 @@ ActivityIndicator activityIndicator = new ActivityIndicator
 
 ## <a name="related-links"></a>関連リンク
 
-- [ColorsSample](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithcolors)
-- [バインド可能なピッカー (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-bindablepicker)
+- [ColorsSample](/samples/xamarin/xamarin-forms-samples/workingwithcolors)
+- [バインド可能なピッカー (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-bindablepicker)

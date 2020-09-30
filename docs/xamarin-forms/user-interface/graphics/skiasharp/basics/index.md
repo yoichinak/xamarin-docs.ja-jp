@@ -10,12 +10,12 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fd82f7ffe135c12c9dfc59c3353d7d9f5d73068c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4c205c033f7032eb093b91c10292610bacc12a26
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137710"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556517"
 ---
 # <a name="skiasharp-drawing-basics"></a>SkiaSharp 描画の基礎
 
@@ -23,15 +23,15 @@ ms.locfileid: "84137710"
 
 _SkiaSharp グラフィックスの概念と座標の基本について説明します。_
 
-SkiaSharp NuGet パッケージをアプリケーションに追加したら Xamarin.Forms 、SkiaSharp グラフィックスの使用を開始できます。 [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)ソリューションには、より高度なレッスンで SkiaSharp プログラミング手法を示す多くのページが含まれています。
+SkiaSharp NuGet パッケージをアプリケーションに追加したら Xamarin.Forms 、SkiaSharp グラフィックスの使用を開始できます。 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)ソリューションには、より高度なレッスンで SkiaSharp プログラミング手法を示す多くのページが含まれています。
 
-このセクションのすべてのサンプルプログラムは、 [**SkiaSharpFormsDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラムのホームページとソリューションの [[**基本**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics)] フォルダーにある [ **SkiaSharp Drawing の基本**] という見出しの下に表示されます。
+このセクションのすべてのサンプルプログラムは、 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラムのホームページとソリューションの [[**基本**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics)] フォルダーにある [ **SkiaSharp Drawing の基本**] という見出しの下に表示されます。
 
 ## <a name="drawing-a-simple-circle"></a>[単純な円を描画](circle.md)
 
 キャンバスオブジェクトや paint オブジェクトなど、SkiaSharp drawing の基本について説明します。
 
-## <a name="integrating-with-xamarinformsintegrationmd"></a>[との統合Xamarin.Forms](integration.md)
+## <a name="integrating-with-no-locxamarinforms"></a>[との統合 Xamarin.Forms](integration.md)
 
 タッチ入力に応答し、要素と統合して、対話型の SkiaSharp グラフィックスを作成し Xamarin.Forms ます。
 
@@ -57,5 +57,5 @@ SkiaSharp グラフィックスをアニメーション化する方法につい�
 
 ## <a name="related-links"></a>関連リンク
 
-- [SkiaSharp Api](https://docs.microsoft.com/dotnet/api/skiasharp)
-- [SkiaSharpFormsDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+- [SkiaSharp Api](/dotnet/api/skiasharp)
+- [SkiaSharpFormsDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)

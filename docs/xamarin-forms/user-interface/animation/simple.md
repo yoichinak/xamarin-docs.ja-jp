@@ -1,5 +1,5 @@
 ---
-title: 単純なアニメーションXamarin.Forms
+title: 単純なアニメーション Xamarin.Forms
 description: ViewExtensions クラスは、単純なアニメーションを構築するために使用できる拡張メソッドを提供します。 この記事では、ViewExtensions クラスを使用してアニメーションを作成およびキャンセルする方法について説明します。
 ms.prod: xamarin
 ms.assetid: 4A6FAE5A-848F-4CE0-BFA1-22A6309B5225
@@ -10,14 +10,14 @@ ms.date: 11/05/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b13ec7ab079dcf7069b5f4b0dccbb52faf25f927
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 2336a4fbd92a7e9158d332de1ea2e2b018d144ce
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86933797"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556660"
 ---
-# <a name="simple-animations-in-xamarinforms"></a>単純なアニメーションXamarin.Forms
+# <a name="simple-animations-in-no-locxamarinforms"></a>単純なアニメーション Xamarin.Forms
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-basic)
 
@@ -43,9 +43,9 @@ _ViewExtensions クラスは、単純なアニメーションを構築するた�
 > [!NOTE]
 > クラスには [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) 、[ `LayoutTo` ] (xref: が用意されて Xamarin.Forms います。ViewExtensions。 LayoutTo ( Xamarin.Forms .VisualElement、 Xamarin.Forms 。四角形、system.string、 Xamarin.Forms 。イージング)) 拡張メソッド。 ただし、このメソッドは、サイズと位置の変更を含むレイアウト状態間の遷移をアニメーション化するためにレイアウトで使用されることを意図しています。 したがって、サブクラスでのみ使用する必要があり [`Layout`](xref:Xamarin.Forms.Layout) ます。
 
-クラスのアニメーション拡張メソッド [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) はすべて非同期であり、オブジェクトを返し `Task<bool>` ます。 `false`アニメーションが完了した場合、およびアニメーションがキャンセルされた場合、戻り値はになり `true` ます。 そのため、アニメーションメソッドは通常、演算子と共に使用する必要があり `await` ます。これにより、アニメーションがいつ完了したかを簡単に判断できるようになります。 さらに、前のメソッドの完了後に実行される後続のアニメーションメソッドを使用してシーケンシャルアニメーションを作成できるようになります。 詳細については、「[複合アニメーション](#compound-animations)」を参照してください。
+クラスのアニメーション拡張メソッド [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) はすべて非同期であり、オブジェクトを返し `Task<bool>` ます。 `false`アニメーションが完了した場合、およびアニメーションがキャンセルされた場合、戻り値はになり `true` ます。 そのため、アニメーションメソッドは通常、演算子と共に使用する必要があり `await` ます。これにより、アニメーションがいつ完了したかを簡単に判断できるようになります。 さらに、前のメソッドの完了後に実行される後続のアニメーションメソッドを使用してシーケンシャルアニメーションを作成できるようになります。 詳細については、「 [複合アニメーション](#compound-animations)」を参照してください。
 
-バックグラウンドでアニメーションを完了させる必要がある場合は、 `await` 演算子を省略できます。 このシナリオでは、アニメーションを開始した後、アニメーションの拡張メソッドを使用してアニメーションがバックグラウンドで発生するようになります。 この操作は、複合アニメーションを作成するときにを利用できます。 詳細については、「[複合アニメーション](#composite-animations)」を参照してください。
+バックグラウンドでアニメーションを完了させる必要がある場合は、 `await` 演算子を省略できます。 このシナリオでは、アニメーションを開始した後、アニメーションの拡張メソッドを使用してアニメーションがバックグラウンドで発生するようになります。 この操作は、複合アニメーションを作成するときにを利用できます。 詳細については、「 [複合アニメーション](#composite-animations)」を参照してください。
 
 オペレーターの詳細については `await` 、「 [Async Support の概要](~/cross-platform/platform/async.md)」を参照してください。
 
@@ -53,7 +53,7 @@ _ViewExtensions クラスは、単純なアニメーションを構築するた�
 
 の各拡張メソッドは、 [`ViewExtensions`](xref:Xamarin.Forms.ViewExtensions) 一定の期間にわたってプロパティをある値から別の値に徐々に変更する1つのアニメーション操作を実装します。 このセクションでは、各アニメーション操作について説明します。
 
-### <a name="rotation"></a>ローテーション
+### <a name="rotation"></a>回転
 
 次のコード例は、[ `RotateTo` ] (xref: を使用する方法を示して Xamarin.Forms います。ViewExtensions Xamarin.Forms . RotateTo ()VisualElement、system.string、system.string、 Xamarin.Forms 。イージング)) メソッドのプロパティをアニメーション化するメソッド [`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation) [`Image`](xref:Xamarin.Forms.Image) 。
 
@@ -237,5 +237,5 @@ ViewExtensions.CancelAnimations (image);
 ## <a name="related-links"></a>関連リンク
 
 - [非同期サポートの概要](~/cross-platform/platform/async.md)
-- [基本的なアニメーション (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-basic)
+- [基本的なアニメーション (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-animation-basic)
 - [ViewExtensions](xref:Xamarin.Forms.ViewExtensions)

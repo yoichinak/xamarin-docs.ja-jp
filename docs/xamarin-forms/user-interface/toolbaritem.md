@@ -1,5 +1,5 @@
 ---
-title: Xamarin.FormsToolbarItem
+title: Xamarin.Forms ToolbarItem
 description: ToolbarItem クラスは、アプリケーションのナビゲーションバーで使用される特殊なボタンです。
 ms.prod: xamarin
 ms.assetId: CC737D54-0280-46BD-A2BC-A0FB67DDD6A1
@@ -10,14 +10,14 @@ ms.date: 07/29/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 46aba32ebbae1646b9af00877bba530b619210cd
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: c6aabe5931dce51889432e7d5dce2be40631ffe2
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138217"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556504"
 ---
-# <a name="xamarinforms-toolbaritem"></a>Xamarin.FormsToolbarItem
+# <a name="no-locxamarinforms-toolbaritem"></a>Xamarin.Forms ToolbarItem
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
 
@@ -27,22 +27,22 @@ ms.locfileid: "84138217"
 
 !["Android と iOS の ToolbarItem demo スクリーンショット"](toolbaritem-images/toolbaritem-device-screenshot.png "Android と iOS の ToolbarItem demo スクリーンショット")
 
-`ToolbarItem`クラスは、次のプロパティを定義します。
+`ToolbarItem` クラスでは、次のプロパティが定義されます。
 
-* [`Order`](xref:Xamarin.Forms.ToolbarItem.Order)インスタンスを `ToolbarItemOrder` `ToolbarItem` プライマリメニューとセカンダリメニューのどちらに表示するかを決定する列挙値です。
-* [`Priority`](xref:Xamarin.Forms.ToolbarItem.Priority)オブジェクトの `integer` コレクション内のアイテムの表示順序を決定する値です `Page` `ToolbarItems` 。
+* [`Order`](xref:Xamarin.Forms.ToolbarItem.Order) インスタンスを `ToolbarItemOrder` `ToolbarItem` プライマリメニューとセカンダリメニューのどちらに表示するかを決定する列挙値です。
+* [`Priority`](xref:Xamarin.Forms.ToolbarItem.Priority) オブジェクトの `integer` コレクション内のアイテムの表示順序を決定する値です `Page` `ToolbarItems` 。
 
 クラスは、 `ToolbarItem` クラスから次の一般的に使用されるプロパティを継承し `MenuItem` ます。
 
-* [`Command`](xref:Xamarin.Forms.MenuItem.Command)は、 `ICommand` ユーザー操作 (指タップやクリックなど) を、ビューモデルで定義されているコマンドにバインドできるようにします。
+* [`Command`](xref:Xamarin.Forms.MenuItem.Command) は、 `ICommand` ユーザー操作 (指タップやクリックなど) を、ビューモデルで定義されているコマンドにバインドできるようにします。
 * [`CommandParameter`](xref:Xamarin.Forms.MenuItem.CommandParameter)`object`に渡す必要があるパラメーターを指定するです `Command` 。
 * [`IconImageSource`](xref:Xamarin.Forms.MenuItem.IconImageSource)`ImageSource`オブジェクトの表示アイコンを決定する値です `ToolbarItem` 。
-* [`Text`](xref:Xamarin.Forms.MenuItem.Text)は、 `string` オブジェクトの表示テキストを決定するです `ToolbarItem` 。
+* [`Text`](xref:Xamarin.Forms.MenuItem.Text) は、 `string` オブジェクトの表示テキストを決定するです `ToolbarItem` 。
 
 これらのプロパティは、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) `ToolbarItem` インスタンスがデータバインディングのターゲットになることができるように、オブジェクトによってバックアップされます。
 
 > [!NOTE]
-> オブジェクトからツールバーを作成する代わりに、 [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) [`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) 添付プロパティを複数のビューを含むレイアウトクラスに設定することもできます。 詳細については、「[ナビゲーションバーでのビューの表示](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md#displaying-views-in-the-navigation-bar)」を参照してください。
+> オブジェクトからツールバーを作成する代わりに、 [`ToolbarItem`](xref:Xamarin.Forms.ToolbarItem) [`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) 添付プロパティを複数のビューを含むレイアウトクラスに設定することもできます。 詳細については、「 [ナビゲーションバーでのビューの表示](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md#displaying-views-in-the-navigation-bar)」を参照してください。
 
 ## <a name="create-a-toolbaritem"></a>ToolbarItem を作成する
 
@@ -103,19 +103,19 @@ void OnItemClicked(object sender, EventArgs e)
 }
 ```
 
-`ToolbarItem`オブジェクトでは、 `Command` プロパティとプロパティを使用して、イベントハンドラーを使用 `CommandParameter` せずにユーザー入力に応答することもできます。 `ICommand`インターフェイスと MVVM データバインディングの詳細については、「 [ Xamarin.Forms MenuItem MVVM Behavior](~/xamarin-forms/user-interface/menuitem.md#define-menuitem-behavior-with-mvvm)」を参照してください。
+`ToolbarItem` オブジェクトでは、 `Command` プロパティとプロパティを使用して、イベントハンドラーを使用 `CommandParameter` せずにユーザー入力に応答することもできます。 `ICommand`インターフェイスと MVVM データバインディングの詳細については、「 [ Xamarin.Forms MenuItem MVVM Behavior](~/xamarin-forms/user-interface/menuitem.md#define-menuitem-behavior-with-mvvm)」を参照してください。
 
 ## <a name="enable-or-disable-a-toolbaritem-at-runtime"></a>実行時に ToolbarItem を有効または無効にする
 
 実行時にを無効にするには、 `ToolbarItem` そのプロパティを実装にバインドし、デリゲートがを有効にし、必要に応じて無効にするようにし `Command` `ICommand` `canExecute` `ICommand` ます。
 
-詳細については、「[実行時に MenuItem を有効または無効](menuitem.md#enable-or-disable-a-menuitem-at-runtime)にする」を参照してください。
+詳細については、「 [実行時に MenuItem を有効または無効](menuitem.md#enable-or-disable-a-menuitem-at-runtime)にする」を参照してください。
 
 ## <a name="primary-and-secondary-menus"></a>プライマリメニューとセカンダリメニュー
 
 `ToolbarItemOrder`列挙型には `Default` 、、、およびの各値があり `Primary` `Secondary` ます。
 
-プロパティがに設定されている場合、オブジェクトは、 `Order` `Primary` `ToolbarItem` すべてのプラットフォームのメインナビゲーションバーに表示されます。 `ToolbarItem`オブジェクトは、ページタイトルに対して優先順位が付けられます。これは、項目の領域を確保するために切り捨てられます。 次のスクリーンショットは、 `ToolbarItem` iOS および Android のプライマリメニューのオブジェクトを示しています。
+プロパティがに設定されている場合、オブジェクトは、 `Order` `Primary` `ToolbarItem` すべてのプラットフォームのメインナビゲーションバーに表示されます。 `ToolbarItem` オブジェクトは、ページタイトルに対して優先順位が付けられます。これは、項目の領域を確保するために切り捨てられます。 次のスクリーンショットは、 `ToolbarItem` iOS および Android のプライマリメニューのオブジェクトを示しています。
 
 !["ToolbarItem のプライマリメニューのスクリーンショット Android と iOS"](toolbaritem-images/toolbaritem-primary-menu.png "ToolbarItem Android と iOS のプライマリメニューのスクリーンショット")
 
@@ -128,6 +128,6 @@ void OnItemClicked(object sender, EventArgs e)
 
 ## <a name="related-links"></a>関連リンク
 
-* [ToolbarItem のデモ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
-* [画像Xamarin.Forms](~/xamarin-forms/user-interface/images.md)
-* [Xamarin.FormsMenuItem](~/xamarin-forms/user-interface/menuitem.md)
+* [ToolbarItem のデモ](/samples/xamarin/xamarin-forms-samples/userinterface-toolbaritem/)
+* [画像 Xamarin.Forms](~/xamarin-forms/user-interface/images.md)
+* [Xamarin.Forms MenuItem](~/xamarin-forms/user-interface/menuitem.md)

@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Forms;
+title: Xamarin.Forms ;
 description: このボタンは、特定のタスクを実行するようにアプリケーションに指示する tap または click に応答します。
 ms.prod: xamarin
 ms.assetid: 62CAEB63-0800-44F4-9B8C-EE632138C2F5
@@ -10,28 +10,28 @@ ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7ed24d38c75036245a024eecbef7f9a74380b591
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: fba8dcb344f79c21815a58cff0d8132967381cca
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87917888"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556738"
 ---
-# <a name="no-locxamarinforms-button"></a>Xamarin.Forms;
+# <a name="no-locxamarinforms-button"></a>Xamarin.Forms ;
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)
 
 _このボタンは、特定のタスクを実行するようにアプリケーションに指示する tap または click に応答します。_
 
 は、 [`Button`](xref:Xamarin.Forms.Button) すべてので最も基本的な対話型コントロールです Xamarin.Forms 。 は、 `Button` 通常、コマンドを示す短いテキスト文字列を表示しますが、ビットマップイメージ、またはテキストとイメージの組み合わせを表示することもできます。 ユーザーは、を `Button` 指で押すか、マウスでクリックしてそのコマンドを開始します。
 
-以下で説明するほとんどのトピックは、 [**Buttondemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)サンプルのページに対応しています。
+以下で説明するほとんどのトピックは、 [**Buttondemos**](/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos) サンプルのページに対応しています。
 
 ## <a name="handling-button-clicks"></a>ボタンのクリックの処理
 
 `Button`[`Clicked`](xref:Xamarin.Forms.Button.Clicked)ユーザーが `Button` 指またはマウスポインターを使用してをタップしたときに発生するイベントを定義します。 このイベントは、の表面から指またはマウスボタンが離されたときに発生し `Button` ます。 タップに応答するには、プロパティがに設定されている `Button` 必要があり [`IsEnabled`](xref:Xamarin.Forms.VisualElement.IsEnabled) `true` ます。
 
-[**Buttondemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)サンプルの**基本的なボタンクリック**のページは、XAML でをインスタンス化し、そのイベントを処理する方法を示して `Button` `Clicked` います。 **Basicbuttonclickpage .xaml**ファイルには、 `StackLayout` との両方を含むが含まれています `Label` `Button` 。
+[**Buttondemos**](/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)サンプルの**基本的なボタンクリック**のページは、XAML でをインスタンス化し、そのイベントを処理する方法を示して `Button` `Clicked` います。 **Basicbuttonclickpage .xaml**ファイルには、 `StackLayout` との両方を含むが含まれています `Label` `Button` 。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -59,7 +59,7 @@ _このボタンは、特定のタスクを実行するようにアプリケー�
 
 既定では、は `Button` 四角形ですが、以下のセクションで説明するように、プロパティを使用して角を丸くすることができ [`CornerRadius`](xref:Xamarin.Forms.Button.CornerRadius) ます。 [**Button appearance**](#button-appearance)
 
-[`Text`](xref:Xamarin.Forms.Button.Text)プロパティは、に表示されるテキストを指定し `Button` ます。 [`Clicked`](xref:Xamarin.Forms.Button.Clicked)イベントは、という名前のイベントハンドラーに設定され `OnButtonClicked` ます。 このハンドラーは、分離コードファイル**BasicButtonClickPage.xaml.cs**にあります。
+[`Text`](xref:Xamarin.Forms.Button.Text)プロパティは、に表示されるテキストを指定し `Button` ます。 [`Clicked`](xref:Xamarin.Forms.Button.Clicked)イベントは、という名前のイベントハンドラーに設定され `OnButtonClicked` ます。 このハンドラーは、分離コードファイル **BasicButtonClickPage.xaml.cs**にあります。
 
 ```csharp
 public partial class BasicButtonClickPage : ContentPage
@@ -84,7 +84,7 @@ public partial class BasicButtonClickPage : ContentPage
 
 `OnButtonClicked` `async` `await` イベントハンドラー内でが使用されているため、メソッドに修飾子が含まれていることに注意してください。 `Clicked`イベントハンドラーは、 `async` ハンドラーの本体でが使用されている場合にのみ、修飾子を必要とし `await` ます。
 
-各プラットフォームは、 `Button` 独自の方法でをレンダリングします。 [[**ボタンの外観**](#button-appearance)] セクションでは、色を設定し、カスタマイズさ `Button` れた外観を表示するために境界線を表示する方法について説明します。 `Button`インターフェイスを実装し [`IFontElement`](xref:Xamarin.Forms.Internals.IFontElement) ます。そのため、、、およびの各プロパティが含まれ [`FontFamily`](xref:Xamarin.Forms.Button.FontFamily) [`FontSize`](xref:Xamarin.Forms.Button.FontSize) [`FontAttributes`](xref:Xamarin.Forms.Button.FontAttributes) ます。
+各プラットフォームは、 `Button` 独自の方法でをレンダリングします。 [ [**ボタンの外観**](#button-appearance) ] セクションでは、色を設定し、カスタマイズさ `Button` れた外観を表示するために境界線を表示する方法について説明します。 `Button` インターフェイスを実装し [`IFontElement`](xref:Xamarin.Forms.Internals.IFontElement) ます。そのため、、、およびの各プロパティが含まれ [`FontFamily`](xref:Xamarin.Forms.Button.FontFamily) [`FontSize`](xref:Xamarin.Forms.Button.FontSize) [`FontAttributes`](xref:Xamarin.Forms.Button.FontAttributes) ます。
 
 ## <a name="creating-a-button-in-code"></a>コードでのボタンの作成
 
@@ -148,14 +148,14 @@ button.Clicked += OnButtonClicked;
 
 アプリケーションは、イベントを処理することなく、タップに応答することができ `Button` `Clicked` ます。 は、 `Button` コマンドまたは_コマンド_実行インターフェイスと呼ば_commanding_れる別の通知機構を実装します。 これは、次の2つのプロパティで構成されます。
 
-- [`Command`](xref:Xamarin.Forms.Button.Command)型の [`ICommand`](xref:System.Windows.Input.ICommand) 。名前空間で定義されているインターフェイス [`System.Windows.Input`](xref:System.Windows.Input) 。
-- [`CommandParameter`](xref:Xamarin.Forms.Button.CommandParameter)型のプロパティ [`Object`](xref:System.Object) 。
+- [`Command`](xref:Xamarin.Forms.Button.Command) 型の [`ICommand`](xref:System.Windows.Input.ICommand) 。名前空間で定義されているインターフェイス [`System.Windows.Input`](xref:System.Windows.Input) 。
+- [`CommandParameter`](xref:Xamarin.Forms.Button.CommandParameter) 型のプロパティ [`Object`](xref:System.Object) 。
 
-この方法は、特にモデルビューモデル (MVVM) アーキテクチャを実装する場合に、データバインディングとの接続に適しています。 これらのトピックについては、データ[バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)、 [MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)、 [MVVM](~/xamarin-forms/enterprise-application-patterns/mvvm.md)の各記事で説明されています。
+この方法は、特にモデルビューモデル (MVVM) アーキテクチャを実装する場合に、データバインディングとの接続に適しています。 これらのトピックについては、データ [バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)、 [MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)、 [MVVM](~/xamarin-forms/enterprise-application-patterns/mvvm.md)の各記事で説明されています。
 
-MVVM アプリケーションでは、ビューモデルは、 `ICommand` データバインディングを使用して XAML 要素に接続される型のプロパティを定義し `Button` ます。 Xamarin.Formsまた、 [`Command`](xref:Xamarin.Forms.Command) は、インターフェイスを実装するクラスとクラスを定義し、 [`Command<T>`](xref:Xamarin.Forms.Command`1) `ICommand` 型のプロパティを定義する際にビューモデルを支援し `ICommand` ます。
+MVVM アプリケーションでは、ビューモデルは、 `ICommand` データバインディングを使用して XAML 要素に接続される型のプロパティを定義し `Button` ます。 Xamarin.Forms また、 [`Command`](xref:Xamarin.Forms.Command) は、インターフェイスを実装するクラスとクラスを定義し、 [`Command<T>`](xref:Xamarin.Forms.Command`1) `ICommand` 型のプロパティを定義する際にビューモデルを支援し `ICommand` ます。
 
-コマンド実行の詳細については、「[**コマンドインターフェイス**](~/xamarin-forms/app-fundamentals/data-binding/commanding.md)」を参照してください。ただし、 [**Buttondemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)サンプルの**基本的なボタンコマンド**ページでは、基本的な方法を示しています。
+コマンド実行の詳細については、「[**コマンドインターフェイス**](~/xamarin-forms/app-fundamentals/data-binding/commanding.md)」を参照してください。ただし、 [**Buttondemos**](/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)サンプルの**基本的なボタンコマンド**ページでは、基本的な方法を示しています。
 
 クラスは、という `CommandDemoViewModel` 名前の型のプロパティ `double` と、 `Number` `ICommand` という名前の型の2つの `MultiplyBy2Command` プロパティ `DivideBy2Command` を定義する、非常に単純なビューモデルです。
 
@@ -271,7 +271,7 @@ class CommandDemoViewModel : INotifyPropertyChanged
 
 2つ以上の `Button` 要素が同じプロパティにバインドされる可能性があり `ICommand` ます。 要素は、 `Button` のプロパティを使用して区別でき [`CommandParameter`](xref:Xamarin.Forms.Button.CommandParameter) `Button` ます。 この場合は、ジェネリッククラスを使用し [`Command<T>`](xref:Xamarin.Forms.Command`1) ます。 オブジェクトは、 `CommandParameter` メソッドおよびメソッドに引数として渡され `execute` `canExecute` ます。 この手法の詳細については、[**コマンドインターフェイス**](~/xamarin-forms/app-fundamentals/data-binding/commanding.md#basic-commanding)の記事の「[**基本的な**](~/xamarin-forms/app-fundamentals/data-binding/commanding.md#basic-commanding)コマンド実行」セクションを参照してください。
 
-[**Buttondemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)のサンプルでは、クラスでもこの手法を使用し `MainPage` ます。 **Mainpage.xaml**ファイルには、 `Button` サンプルの各ページのが含まれています。
+[**Buttondemos**](/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)のサンプルでは、クラスでもこの手法を使用し `MainPage` ます。 **Mainpage.xaml**ファイルには、 `Button` サンプルの各ページのが含まれています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -419,20 +419,20 @@ public partial class PressAndReleaseButtonPage : ContentPage
 は、 `Button` その外観に影響を与えるいくつかのプロパティを継承または定義します。
 
 - [`TextColor`](xref:Xamarin.Forms.Button.TextColor)テキストの色です。 `Button`
-- [`BackgroundColor`](xref:Xamarin.Forms.VisualElement.BackgroundColor)は、そのテキストの背景色です。
-- [`BorderColor`](xref:Xamarin.Forms.Button.BorderColor)は、を囲む領域の色です。`Button`
-- [`FontFamily`](xref:Xamarin.Forms.Button.FontFamily)テキストに使用するフォントファミリを入力します。
-- [`FontSize`](xref:Xamarin.Forms.Button.FontSize)は、テキストのサイズです。
-- [`FontAttributes`](xref:Xamarin.Forms.Button.FontAttributes)テキストが斜体と太字のどちらであるかを示します。
-- [`BorderWidth`](xref:Xamarin.Forms.Button.BorderWidth)罫線の幅を示します。
-- [`CornerRadius`](xref:Xamarin.Forms.Button.CornerRadius)は、の角の半径です。`Button`
-- [`CharacterSpacing`](xref:Xamarin.Forms.Button.CharacterSpacing)テキストの文字間隔を示し `Button` ます。
-- `TextTransform`テキストの文字種を決定し `Button` ます。
+- [`BackgroundColor`](xref:Xamarin.Forms.VisualElement.BackgroundColor) は、そのテキストの背景色です。
+- [`BorderColor`](xref:Xamarin.Forms.Button.BorderColor) は、を囲む領域の色です。 `Button`
+- [`FontFamily`](xref:Xamarin.Forms.Button.FontFamily) テキストに使用するフォントファミリを入力します。
+- [`FontSize`](xref:Xamarin.Forms.Button.FontSize) は、テキストのサイズです。
+- [`FontAttributes`](xref:Xamarin.Forms.Button.FontAttributes) テキストが斜体と太字のどちらであるかを示します。
+- [`BorderWidth`](xref:Xamarin.Forms.Button.BorderWidth) 罫線の幅を示します。
+- [`CornerRadius`](xref:Xamarin.Forms.Button.CornerRadius) は、の角の半径です。 `Button`
+- [`CharacterSpacing`](xref:Xamarin.Forms.Button.CharacterSpacing) テキストの文字間隔を示し `Button` ます。
+- `TextTransform` テキストの文字種を決定し `Button` ます。
 
 > [!NOTE]
 > クラスには `Button` [`Margin`](xref:Xamarin.Forms.View.Margin) [`Padding`](xref:Xamarin.Forms.Button.Padding) 、のレイアウト動作を制御するプロパティとプロパティもあり `Button` ます。 詳細については「[Margin and Padding](~/xamarin-forms/user-interface/layouts/margin-and-padding.md)」 (余白とスペース) を参照してください。
 
-これらの6つのプロパティ (およびを除く) の効果は、 `FontFamily` `FontAttributes` ボタンの**外観**ページで説明されています。 もう1つのプロパティに [`Image`](xref:Xamarin.Forms.Button.ImageSource) ついては、「[**ボタンを使用したビットマップの使用**](#using-bitmaps-with-buttons)」セクションで説明します。
+これらの6つのプロパティ (およびを除く) の効果は、 `FontFamily` `FontAttributes` ボタンの **外観** ページで説明されています。 もう1つのプロパティに [`Image`](xref:Xamarin.Forms.Button.ImageSource) ついては、「 [**ボタンを使用したビットマップの使用**](#using-bitmaps-with-buttons)」セクションで説明します。
 
 **[ボタンの外観**] ページのすべてのビューとデータバインディングは、XAML ファイルで定義されています。
 
@@ -551,7 +551,7 @@ UWP で、の高さの半分を超えるを選択すると、 `CornerRadius` `Bu
 
 ## <a name="button-visual-states"></a>ボタンの表示状態
 
-[`Button`](xref:Xamarin.Forms.Button)が有効になっている場合、ユーザーが押された `Pressed` [`VisualState`](xref:Xamarin.Forms.VisualState) ときにに対するビジュアルの変更を開始するために使用できる `Button` 。
+[`Button`](xref:Xamarin.Forms.Button) が有効になっている場合、ユーザーが押された `Pressed` [`VisualState`](xref:Xamarin.Forms.VisualState) ときにに対するビジュアルの変更を開始するために使用できる `Button` 。
 
 次の XAML の例は、状態の表示状態を定義する方法を示してい `Pressed` ます。
 
@@ -760,15 +760,15 @@ IOS、Android、UWP で実行されているプログラムを次に示します
 
 のビットマップの場合 `Button` 、通常、最適なサイズは、必要なサイズに応じて、32から64のデバイスに依存しない単位です。 この例で使用されるイメージは、デバイスに依存しない48のサイズに基づいています。
 
-IOS プロジェクトの**Resources**フォルダーには、次の3つのイメージのサイズが含まれています。
+IOS プロジェクトの **Resources** フォルダーには、次の3つのイメージのサイズが含まれています。
 
 - **/Resources/MonkeyFace.png**として格納された48ピクセルの四角形のビットマップ
-- として格納された96ピクセルの四角形のビットマップ**/Resource/MonkeyFace@2x.png**
-- として格納された144ピクセルの四角形のビットマップ**/Resource/MonkeyFace@3x.png**
+- として格納された96ピクセルの四角形のビットマップ **/Resource/MonkeyFace@2x.png**
+- として格納された144ピクセルの四角形のビットマップ **/Resource/MonkeyFace@3x.png**
 
 3つのすべてのビットマップには、 **BundleResource**の**ビルドアクション**が割り当てられています。
 
-Android プロジェクトの場合、すべてのビットマップに同じ名前が付いていますが、 **Resources**フォルダーの別のサブフォルダーに格納されています。
+Android プロジェクトの場合、すべてのビットマップに同じ名前が付いていますが、 **Resources** フォルダーの別のサブフォルダーに格納されています。
 
 - **/Resourcesable/MonkeyFace.png**として格納された72ピクセルの四角形ビットマップ
 - **/Resourcesablexhdpi/MonkeyFace.png**として格納された96ピクセルの四角形ビットマップ
@@ -777,7 +777,7 @@ Android プロジェクトの場合、すべてのビットマップに同じ名
 
 これらには、 **Androidresource**の**ビルドアクション**が指定されました。
 
-UWP プロジェクトでは、プロジェクト内の任意の場所にビットマップを保存できますが、通常はカスタムフォルダーまたは**アセット**の既存のフォルダーに格納されます。 UWP プロジェクトには、次のビットマップが含まれています。
+UWP プロジェクトでは、プロジェクト内の任意の場所にビットマップを保存できますが、通常はカスタムフォルダーまたは **アセット** の既存のフォルダーに格納されます。 UWP プロジェクトには、次のビットマップが含まれています。
 
 - **/Assets/MonkeyFace.scale-100.png**として格納された48ピクセルの四角形のビットマップ
 - **/Assets/MonkeyFace.scale-200.png**として格納された96ピクセルの四角形のビットマップ
@@ -891,5 +891,5 @@ UWP ビットマップがプロジェクトのルートディレクトリに格�
 
 ## <a name="related-links"></a>関連リンク
 
-- [ButtonDemos のサンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)
+- [ButtonDemos のサンプル](/samples/xamarin/xamarin-forms-samples/userinterface-buttondemos)
 - [ボタンの API](xref:Xamarin.Forms.Button)
