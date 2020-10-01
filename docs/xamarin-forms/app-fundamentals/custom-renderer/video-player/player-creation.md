@@ -10,18 +10,18 @@ ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d026ecc3288da155aefb0f68ee0c70721106c0da
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 7de5f0ec67a4735b8157b539b80e193fa67256b1
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84133745"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563485"
 ---
 # <a name="creating-the-platform-video-players"></a>プラットフォーム ビデオ プレーヤーの作成
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
-[**VideoPlayerDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) ソリューションには、Xamarin.Forms 用のビデオ プレーヤーを実装するためのコードが含まれます。 また、アプリケーション内でビデオ プレーヤーを使用する方法を示す一連のページも含まれます。 `VideoPlayer` コードとそのプラットフォーム レンダラーはすべて、`FormsVideoLibrary` という名前のプロジェクト フォルダー内にあり、名前空間 `FormsVideoLibrary` も使用します。 このため、自身のアプリケーションへのファイルのコピーも、クラスの参照も簡単に行うことができます。
+[**VideoPlayerDemos**](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) ソリューションには、Xamarin.Forms 用のビデオ プレーヤーを実装するためのコードが含まれます。 また、アプリケーション内でビデオ プレーヤーを使用する方法を示す一連のページも含まれます。 `VideoPlayer` コードとそのプラットフォーム レンダラーはすべて、`FormsVideoLibrary` という名前のプロジェクト フォルダー内にあり、名前空間 `FormsVideoLibrary` も使用します。 このため、自身のアプリケーションへのファイルのコピーも、クラスの参照も簡単に行うことができます。
 
 ## <a name="the-video-player"></a>ビデオ プレーヤー
 
@@ -467,4 +467,4 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="related-links"></a>関連リンク
 
-- [ビデオ プレーヤーのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+- [ビデオ プレーヤーのデモ (サンプル)](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

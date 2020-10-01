@@ -1,6 +1,6 @@
 ---
-title: 'タイトル: "Xamarin.Forms コントロール テンプレート" の説明: "Xamarin.Forms コントロール テンプレートには、ContentView 派生カスタム コントロールと ContentPage 派生ページのビジュアル構造が定義されています。"'
-description: 'ms.prod: xamarin ms.assetid: 8B8E2360-6531-44A3-A7C8-9A8808DE9B86 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 01/13/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms のコントロール テンプレート
+description: Xamarin.Forms のコントロール テンプレートには、ContentView 派生カスタム コントロールと ContentPage 派生ページのビジュアル構造が定義されています。
 ms.prod: xamarin
 ms.assetid: 8B8E2360-6531-44A3-A7C8-9A8808DE9B86
 ms.technology: xamarin-forms
@@ -10,14 +10,14 @@ ms.date: 01/13/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 44eebed2a49fbdda5504f9a09873f93466d0326c
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: 575169459433725ae3f3a7db675fc65caef1494e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84132549"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563446"
 ---
-# <a name="xamarinforms-control-templates"></a>Xamarin.Forms のコントロール テンプレート
+# <a name="no-locxamarinforms-control-templates"></a>Xamarin.Forms のコントロール テンプレート
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-controltemplatedemos)
 
@@ -637,7 +637,7 @@ public partial class AccessTemplateElementPage : HeaderFooterPage
 
 ## <a name="related-links"></a>関連リンク
 
-- [ControlTemplateDemos (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-controltemplatedemos)
+- [ControlTemplateDemos (サンプル)](/samples/xamarin/xamarin-forms-samples/templates-controltemplatedemos)
 - [Xamarin.Forms ContentView](~/xamarin-forms/user-interface/layouts/contentview.md)
 - [Xamarin.Forms の相対的なバインディング](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)
 - [Xamarin.Forms のリソース ディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)

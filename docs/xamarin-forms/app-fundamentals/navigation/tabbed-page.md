@@ -10,12 +10,12 @@ ms.date: 11/07/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 733ec985f4d285f26aca62930868970026847825
-ms.sourcegitcommit: 69d9a61ba479f707d96eb4c1c56a4b05a2a2a26f
+ms.openlocfilehash: afcf182fe093a9bb02ea23f53d0f568fd83c862c
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87426878"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563316"
 ---
 # <a name="no-locxamarinforms-tabbedpage"></a>Xamarin.Forms の TabbedPage
 
@@ -238,8 +238,8 @@ public class TabbedPageDemoPageCS : TabbedPage
 
 ## <a name="related-links"></a>関連リンク
 
-- [ナビゲーション ページを含むタブ付きページ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
-- [タブ付きページ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpage)
+- [ナビゲーション ページを含むタブ付きページ (サンプル)](/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
+- [タブ付きページ (サンプル)](/samples/xamarin/xamarin-forms-samples/navigation-tabbedpage)
 - [階層ナビゲーション](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md)
 - [ページの変数](https://developer.xamarin.com/r/xamarin-forms/book/chapter25.pdf)
 - [TabbedPage API](xref:Xamarin.Forms.TabbedPage)

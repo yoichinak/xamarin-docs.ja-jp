@@ -1,6 +1,6 @@
 ---
-title: 'title: "Xamarin.Formsコンパイル済みのバインド" の説明:"この記事では、コンパイル済みのバインドを使用して、Xamarin.Forms アプリケーションでのデータ バインディングのパフォーマンスを向上させる方法について説明します。"'
-description: 'ms.prod: xamarin ms.assetid:ABE6B7F7-875E-4402-A1D2-845CE374402B ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:09/18/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms のコンパイル済みのバインド
+description: この記事では、コンパイル済みのバインドを使用して、Xamarin.Forms アプリケーションでのデータ バインディングのパフォーマンスを向上させる方法について説明します。
 ms.prod: xamarin
 ms.assetid: ABE6B7F7-875E-4402-A1D2-845CE374402B
 ms.technology: xamarin-forms
@@ -10,14 +10,14 @@ ms.date: 09/18/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 094691796fed9653f2a2e468ccb1c33d1a408a49
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 1bc2ed53b12e6953033760b072d38353c65a6708
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571559"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563459"
 ---
-# <a name="xamarinforms-compiled-bindings"></a>Xamarin.Forms のコンパイル済みのバインド
+# <a name="no-locxamarinforms-compiled-bindings"></a>Xamarin.Forms のコンパイル済みのバインド
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
@@ -178,4 +178,4 @@ _コンパイル済みのバインドは、従来のバインドより迅速に�
 
 ## <a name="related-links"></a>関連リンク
 
-- [データ バインディングのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+- [データ バインディングのデモ (サンプル)](/samples/xamarin/xamarin-forms-samples/databindingdemos)

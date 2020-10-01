@@ -10,12 +10,12 @@ ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 00f1434a55fb815710bff26ac090a90bce5f41ee
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: ff9f44ad790f3acda1e855f3308942bb702e66ee
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84197532"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563901"
 ---
 # <a name="accessing-the-devices-video-library"></a>デバイスのビデオ ライブラリへのアクセス
 
@@ -191,7 +191,7 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-`MainActivity` オブジェクトに追加されるのは、`FormsVideoLibrary` クラスをサポートするために通常のアプリケーション コードを変更する必要がある、[**VideoPlayerDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) ソリューションのコードのみです。
+`MainActivity` オブジェクトに追加されるのは、`FormsVideoLibrary` クラスをサポートするために通常のアプリケーション コードを変更する必要がある、[**VideoPlayerDemos**](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) ソリューションのコードのみです。
 
 ### <a name="the-uwp-video-picker"></a>UWP ビデオ ピッカー
 
@@ -232,7 +232,7 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="invoking-the-dependency-service"></a>依存関係サービスの起動
 
-[**VideoPlayerDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) プログラムの **Play Library Video** ページは、ビデオ ピッカー依存関係サービスの使用方法の例を示します。 次の XAML ファイルには、`VideoPlayer` インスタンスと、**Show Video Library** というラベルの付いた `Button` が含まれます。
+[**VideoPlayerDemos**](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) プログラムの **Play Library Video** ページは、ビデオ ピッカー依存関係サービスの使用方法の例を示します。 次の XAML ファイルには、`VideoPlayer` インスタンスと、**Show Video Library** というラベルの付いた `Button` が含まれます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -391,5 +391,5 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="related-links"></a>関連リンク
 
-- [ビデオ プレーヤーのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+- [ビデオ プレーヤーのデモ (サンプル)](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 - [画像ライブラリから写真を選択する](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)

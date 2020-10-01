@@ -10,12 +10,12 @@ ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 472c6c2a7c5a084520aee6b8ae160d9329c3f593
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: a1a0febfdb38e577363ba59e8d0a5ceda9464a26
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84133764"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563498"
 ---
 # <a name="loading-application-resource-videos"></a>アプリケーション リソース ビデオの読み込み
 
@@ -186,4 +186,4 @@ iOS リソースを**リソース** フォルダーに格納する場合、お�
 
 ## <a name="related-links"></a>関連リンク
 
-- [ビデオ プレーヤーのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+- [ビデオ プレーヤーのデモ (サンプル)](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)

@@ -10,14 +10,14 @@ ms.date: 09/20/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 29a99161ff2ef2d71b6c803db994522bfe80ed03
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 61e48328aea01347678540cde5141a29387e92f5
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138737"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563173"
 ---
-# <a name="xamarinforms-shell-introduction"></a>Xamarin.Forms シェルの概要
+# <a name="no-locxamarinforms-shell-introduction"></a>Xamarin.Forms シェルの概要
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
@@ -66,4 +66,4 @@ Xamarin.Forms ソリューションに UWP プロジェクトを追加する方�
 
 ## <a name="related-links"></a>関連リンク
 
-- [Xaminals (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+- [Xaminals (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
