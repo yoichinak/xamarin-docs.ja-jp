@@ -10,12 +10,12 @@ ms.date: 11/29/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: adbceca38fca2cbe65c739f0d7fe26f18bdf5450
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 4d9749c110019f2cf711c1df56196d3296223641
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939855"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557973"
 ---
 # <a name="customizing-a-contentpage"></a>ContentPage のカスタマイズ
 
@@ -37,7 +37,7 @@ _ContentPage は、単一ビューを表示し、画面の大部分を占める�
 
 ライブ カメラのフィードと写真をキャプチャする機能を提供する `CameraPage` を実装する各項目について順番に説明します。
 
-## <a name="creating-the-xamarinforms-page"></a>Xamarin.Forms ページを作成する
+## <a name="creating-the-no-locxamarinforms-page"></a>Xamarin.Forms ページを作成する
 
 次の XAML コード例に示すように、変更されていない [`ContentPage`](xref:Xamarin.Forms.ContentPage) を共有 Xamarin.Forms プロジェクトに追加できます。
 
@@ -76,7 +76,7 @@ public class CameraPageCS : ContentPage
 
 `CameraPage` のインスタンスは、各プラットフォームでライブ カメラ フィードを表示するために使用されます。 コントロールのカスタマイズはカスタム レンダラーで実行されるため、`CameraPage` クラスに追加の実装は必要ありません。
 
-## <a name="consuming-the-xamarinforms-page"></a>Xamarin.Forms ページを使用する
+## <a name="consuming-the-no-locxamarinforms-page"></a>Xamarin.Forms ページを使用する
 
 Xamarin.Forms アプリケーションには、必ず空の `CameraPage` が表示されます。 これは、次のコード例に示すように、`MainPage` インスタンスのボタンがタップされてから `OnTakePhotoButtonClicked` メソッドが実行されたときに起こります。
 
@@ -196,7 +196,7 @@ namespace CustomRenderer.Droid
 
 基底クラスの `OnElementChanged` メソッドを呼び出すことで、Android の `ViewGroup` コントロールがインスタンス化されます。これは、ビューのグループになります。 レンダラーが既存の Xamarin.Forms 要素にまだアタッチされておらず、カスタム レンダラーによってレンダリングされているページ インスタンスが存在する場合にのみ、ライブ カメラ ストリームがレンダリングされます。
 
-このページは、カメラからライブ ストリームを提供する `Camera` API と写真をキャプチャする機能を使用する一連のメソッドを呼び出すことでカスタマイズされます。それから、ライブ カメラ ストリーム UI を `ViewGroup` に追加する `AddView` メソッドが呼び出されます。 Android では、ビューに対してメジャーおよびレイアウト操作を実行するために `OnLayout` メソッドをオーバーライドする必要もある点に注意してください。 詳細については、[ContentPage レンダラーのサンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-contentpage)に関するページを参照してください。
+このページは、カメラからライブ ストリームを提供する `Camera` API と写真をキャプチャする機能を使用する一連のメソッドを呼び出すことでカスタマイズされます。それから、ライブ カメラ ストリーム UI を `ViewGroup` に追加する `AddView` メソッドが呼び出されます。 Android では、ビューに対してメジャーおよびレイアウト操作を実行するために `OnLayout` メソッドをオーバーライドする必要もある点に注意してください。 詳細については、[ContentPage レンダラーのサンプル](/samples/xamarin/xamarin-forms-samples/customrenderers-contentpage)に関するページを参照してください。
 
 ### <a name="creating-the-page-renderer-on-uwp"></a>UWP 上でページ レンダラーを作成する
 
@@ -245,7 +245,7 @@ namespace CustomRenderer.UWP
 UWP 上で `PageRenderer` から派生したカスタム レンダラーを実装する場合、ベース レンダラーはその処理方法を認識していないため、ページ コントロールを配置するために `ArrangeOverride` メソッドも実装する必要があります。 それ以外の場合は、結果として空のページになります。 そのため、この例では、`Page` インスタンスに対して `ArrangeOverride` メソッドによって `Arrange` メソッドが呼び出されます。
 
 > [!NOTE]
-> UWP アプリケーションでは、カメラにアクセスできるオブジェクトを停止して破棄することが重要です。 そうしないと、デバイスのカメラにアクセスしようとする他のアプリケーションの妨げになる可能性があります。 詳細については、「[Display the camera preview](https://msdn.microsoft.com/windows/uwp/audio-video-camera/simple-camera-preview-access)」(カメラ プレビューの表示) を参照してください。
+> UWP アプリケーションでは、カメラにアクセスできるオブジェクトを停止して破棄することが重要です。 そうしないと、デバイスのカメラにアクセスしようとする他のアプリケーションの妨げになる可能性があります。 詳細については、「[Display the camera preview](/windows/uwp/audio-video-camera/simple-camera-preview-access)」(カメラ プレビューの表示) を参照してください。
 
 ## <a name="summary"></a>まとめ
 
@@ -253,4 +253,4 @@ UWP 上で `PageRenderer` から派生したカスタム レンダラーを実�
 
 ## <a name="related-links"></a>関連リンク
 
-- [CustomRendererContentPage (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-contentpage)
+- [CustomRendererContentPage (サンプル)](/samples/xamarin/xamarin-forms-samples/customrenderers-contentpage)

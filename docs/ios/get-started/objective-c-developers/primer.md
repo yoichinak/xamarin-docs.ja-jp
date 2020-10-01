@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/05/2017
-ms.openlocfilehash: 451e69be771a1a3214a772f0f9afc48893a6fa8d
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: acde83ee88ab17884cadd375f83efee8afb0385e
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929585"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433380"
 ---
 # <a name="c-primer-for-objective-c-developers"></a>Objective-C 開発者向けの C# 入門書
 
@@ -143,7 +143,7 @@ Objective-C は、"*ブロック*" を使用してクロージャを作成しま
 };
 ```
 
-ラムダ式について詳しくは、Microsoft の [C# プログラミング ガイド](https://msdn.microsoft.com/library/vstudio/bb397687.aspx)のページをご覧ください。
+ラムダ式について詳しくは、Microsoft の [C# プログラミング ガイド](/dotnet/csharp/language-reference/operators/lambda-expressions)のページをご覧ください。
 
 ## <a name="summary"></a>まとめ
 

@@ -7,19 +7,19 @@ ms.technology: xamarin-android
 author: alexeystrakh
 ms.author: alstrakh
 ms.date: 02/11/2020
-ms.openlocfilehash: d2251a0219ca25ecd37e42361e49ac966bac131d
-ms.sourcegitcommit: a3f13a216fab4fc20a9adf343895b9d6a54634a5
+ms.openlocfilehash: 4fcb36f76ff2714a7a783b716abfe44de51b2855
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85852995"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454144"
 ---
 # <a name="bind-android-kotlin-libraries"></a>Android Kotlin ライブラリをバインドする
 
 > [!IMPORTANT]
 > 現在、Xamarin プラットフォームでのカスタム バインディングの使用を調査しています。 今後の開発作業の発展のために、この[**アンケート**](https://www.surveymonkey.com/r/KKBHNLT)にご回答ください。
 
-Android プラットフォームは、そのネイティブ言語とツールと共に常に進化しており、最新のオファリングを使用して開発されたサード パーティ製のライブラリが多数あります。 コードとコンポーネントを再利用して最大限に活用することは、クロスプラットフォーム開発の主な目標の 1 つです。 Kotlin でビルドされたコンポーネントを再利用する機能は、開発者の間で人気が高まり続けているため、Xamarin 開発者にとってますます重要になっています。 お客様は、通常の [Java](https://docs.microsoft.com/xamarin/android/platform/binding-java-library/) ライブラリをバインドするプロセスについて、既に理解されているかもしれません。 [Kotlin ライブラリをバインドする](walkthrough.md)プロセスについて説明する追加のドキュメントを利用できるようになったため、Xamarin アプリケーションでも同じ方法で使用できます。 このドキュメントの目的は、Xamarin 用の Kotlin バインドを作成するための上位レベルのアプローチについて説明することです。
+Android プラットフォームは、そのネイティブ言語とツールと共に常に進化しており、最新のオファリングを使用して開発されたサード パーティ製のライブラリが多数あります。 コードとコンポーネントを再利用して最大限に活用することは、クロスプラットフォーム開発の主な目標の 1 つです。 Kotlin でビルドされたコンポーネントを再利用する機能は、開発者の間で人気が高まり続けているため、Xamarin 開発者にとってますます重要になっています。 お客様は、通常の [Java](../binding-java-library/index.md) ライブラリをバインドするプロセスについて、既に理解されているかもしれません。 [Kotlin ライブラリをバインドする](walkthrough.md)プロセスについて説明する追加のドキュメントを利用できるようになったため、Xamarin アプリケーションでも同じ方法で使用できます。 このドキュメントの目的は、Xamarin 用の Kotlin バインドを作成するための上位レベルのアプローチについて説明することです。
 
 ## <a name="high-level-approach"></a>上位レベルのアプローチ
 
@@ -59,8 +59,8 @@ Xamarin を使用すると、任意のサード パーティ製のネイティ�
 - [Visual Studio for Mac](https://visualstudio.microsoft.com/downloads)
 - [Java デコンパイラ](http://java-decompiler.github.io/)
 - [BubblePicker Kotlin ライブラリ](https://github.com/igalata/Bubble-Picker)
-- [Java ライブラリのバインド](https://docs.microsoft.com/xamarin/android/platform/binding-java-library/)
+- [Java ライブラリのバインド](../binding-java-library/index.md)
 - [XPath](https://www.w3.org/TR/xpath/)
-- [Java バインド メタデータ](https://docs.microsoft.com/xamarin/android/platform/binding-java-library/customizing-bindings/java-bindings-metadata)
+- [Java バインド メタデータ](../binding-java-library/customizing-bindings/java-bindings-metadata.md)
 - [Xamarin.Kotlin.StdLib NuGet](https://www.nuget.org/packages/Xamarin.Kotlin.StdLib/)
 - [サンプル プロジェクト リポジトリ](https://github.com/xamcat/xamarin-binding-kotlin-framework)

@@ -10,12 +10,12 @@ ms.date: 03/10/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0d6a18ec55b49da2b668ccc183646d5e4dde5849
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 8e8c52c03534ca5d8b653eed4d8fc2c8f39edf61
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937229"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562640"
 ---
 # <a name="hierarchical-navigation"></a>階層ナビゲーション
 
@@ -307,7 +307,7 @@ async void OnLoginButtonClicked (object sender, EventArgs e)
 
 すべての Xamarin.Forms[`View`](xref:Xamarin.Forms.View) は、[`NavigationPage`](xref:Xamarin.Forms.NavigationPage) のナビゲーション バーに表示できます。 これを実現するには、[`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) 添付プロパティを `View` に設定します。 この添付プロパティは任意の [`Page`](xref:Xamarin.Forms.Page) に設定できます。また、`Page` が `NavigationPage` にプッシュされると、`NavigationPage` ではプロパティの値が反映されます。
 
-[タイトル ビュー サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-titleview)から取り上げた次の例は、[`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) 添付プロパティを XAML から設定する方法を示しています。
+[タイトル ビュー サンプル](/samples/xamarin/xamarin-forms-samples/navigation-titleview)から取り上げた次の例は、[`NavigationPage.TitleView`](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) 添付プロパティを XAML から設定する方法を示しています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -359,9 +359,9 @@ public class TitleViewPage : ContentPage
 ## <a name="related-links"></a>関連リンク
 
 - [ページのナビゲーション](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)
-- [階層 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-hierarchical)
-- [PassingData (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-passingdata)
-- [LoginFlow (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-loginflow)
-- [TitleView (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-titleview)
+- [階層 (サンプル)](/samples/xamarin/xamarin-forms-samples/navigation-hierarchical)
+- [PassingData (サンプル)](/samples/xamarin/xamarin-forms-samples/navigation-passingdata)
+- [LoginFlow (サンプル)](/samples/xamarin/xamarin-forms-samples/navigation-loginflow)
+- [TitleView (サンプル)](/samples/xamarin/xamarin-forms-samples/navigation-titleview)
 - [Xamarin.Forms でサインイン画面のフローを作成する方法のビデオ](https://www.youtube.com/watch?v=qKQ7pyyG1fo)
 - [NavigationPage](xref:Xamarin.Forms.NavigationPage)

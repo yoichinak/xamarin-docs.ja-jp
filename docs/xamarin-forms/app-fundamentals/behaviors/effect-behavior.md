@@ -10,12 +10,12 @@ ms.date: 04/06/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7ecc094abf816f11dcb16d9eba7d715c8c4e4ab1
-ms.sourcegitcommit: a003b036f6fb83818e2ecc9c72a641e3aeb373bd
+ms.openlocfilehash: 3a085226da3c63f4f151bc657976bba384c02170
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88964802"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561145"
 ---
 # <a name="reusable-effectbehavior"></a>再利用可能な EffectBehavior
 
@@ -35,7 +35,7 @@ _ビヘイビアーは、コントロールにエフェクトを追加するた�
 エフェクトの詳細については、[エフェクト](~/xamarin-forms/app-fundamentals/effects/index.md)に関するページを参照してください。
 
 > [!NOTE]
-> `EffectBehavior` は、[エフェクト ビヘイビアー サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-effectbehavior)に配置できるカスタム クラスであり、Xamarin.Forms の一部ではありません。
+> `EffectBehavior` は、[エフェクト ビヘイビアー サンプル](/samples/xamarin/xamarin-forms-samples/behaviors-effectbehavior)に配置できるカスタム クラスであり、Xamarin.Forms の一部ではありません。
 
 ## <a name="creating-the-behavior"></a>ビヘイビアーの作成
 
@@ -171,6 +171,6 @@ label.Behaviors.Add (new EffectBehavior {
 ## <a name="related-links"></a>関連リンク
 
 - [エフェクト](~/xamarin-forms/app-fundamentals/effects/index.md)
-- [エフェクト ビヘイビアー (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-effectbehavior)
+- [エフェクト ビヘイビアー (サンプル)](/samples/xamarin/xamarin-forms-samples/behaviors-effectbehavior)
 - [Behavior](xref:Xamarin.Forms.Behavior)
 - [Behavior&lt;T&gt;](xref:Xamarin.Forms.Behavior`1)

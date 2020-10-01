@@ -1,6 +1,6 @@
 ---
-title: 'title: "Xamarin.Forms の値コンバーターのバインド" の説明:"この記事では、値コンバーター (バインディング コンバーターまたはバインディング値コンバーターとも呼ばれます) を実装することで、Xamarin.Formsデータ バインディング内で値をキャストまたは変換する方法について説明します。"'
-description: 'ms.prod: xamarin ms.assetid:02B1BBE6-D804-490D-BDD4-8ACED8B70C92 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:01/05/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms バインディングの値コンバーター
+description: この記事では、値コンバーター (バインディング コンバーターまたはバインディング値コンバーターとも呼ばれます) を実装することで、Xamarin.Forms データ バインディング内で値をキャストまたは変換する方法について説明します。
 ms.prod: xamarin
 ms.assetid: 02B1BBE6-D804-490D-BDD4-8ACED8B70C92
 ms.technology: xamarin-forms
@@ -10,14 +10,14 @@ ms.date: 01/05/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e1a4faabc8f0703b497062a8c5d587221692dab7
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: 2a5912d18787543b05b3937f2b8b5c6a36b04873
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84139764"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556816"
 ---
-# <a name="xamarinforms-binding-value-converters"></a>Xamarin.Forms バインディングの値コンバーター
+# <a name="no-locxamarinforms-binding-value-converters"></a>Xamarin.Forms バインディングの値コンバーター
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
@@ -54,7 +54,7 @@ public class IntToBoolConverter : IValueConverter
 
 データ バインディングにも `StringFormat` 設定が含まれている場合、結果が文字列として書式設定される前に、値コンバーターが呼び出されます。
 
-[**Data Binding Demos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) (データ バインディング デモ) サンプルの**Enable Buttons** (ボタンの有効化) のページでは、データ バインディング内でこの値コンバーターを使用する方法のサンプルを示しています。 `IntToBoolConverter` は、ページのリソース ディクショナリ内でインスタンス化されます。 その後、2 つのデータ バインディングに `Converter` プロパティを設定するために、`StaticResource` マークアップ拡張を使って参照されます。 ページ上の複数のデータ バインディング間でデータ コンバーターを共有することは、極めて一般的です
+[**Data Binding Demos**](/samples/xamarin/xamarin-forms-samples/databindingdemos) (データ バインディング デモ) サンプルの**Enable Buttons** (ボタンの有効化) のページでは、データ バインディング内でこの値コンバーターを使用する方法のサンプルを示しています。 `IntToBoolConverter` は、ページのリソース ディクショナリ内でインスタンス化されます。 その後、2 つのデータ バインディングに `Converter` プロパティを設定するために、`StaticResource` マークアップ拡張を使って参照されます。 ページ上の複数のデータ バインディング間でデータ コンバーターを共有することは、極めて一般的です
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -469,5 +469,5 @@ binding.ConverterParameter = 255;
 
 ## <a name="related-links"></a>関連リンク
 
-- [データ バインディングのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+- [データ バインディングのデモ (サンプル)](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Xamarin.Forms ブックのデータ バインディングに関する章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

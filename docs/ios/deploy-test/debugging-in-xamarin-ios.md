@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: a5135d9bb481afcaefc851e392196a87b8ef80dd
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 8d4b60a2e8e53b5b3f97a781b7f1888239541f1a
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997203"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91431869"
 ---
 # <a name="debugging-xamarinios-apps"></a>Xamarin.iOS アプリのデバッグ
 
@@ -126,7 +126,7 @@ Visual Studio で条件付きブレークポイントを設定するには、最
 
 ここで、ブレークポイントが発生する条件を入力できます。
 
-以前のバージョンの Visual Studio でブレークポイント条件を利用する方法については、本トピックの [Visual Studio ドキュメント](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints)をご覧ください。
+以前のバージョンの Visual Studio でブレークポイント条件を利用する方法については、本トピックの [Visual Studio ドキュメント](/visualstudio/debugger/using-breakpoints)をご覧ください。
 
 -----
 
@@ -160,7 +160,7 @@ Visual Studio では次のように表示されます。
 - **ステップ イン (F10)** - このボタンの場合も次のコード行が実行されます。 次行が関数呼び出しの場合、[ステップ イン] をクリックすると関数の最初の行で停止するので、関数のデバッグを 1 行ずつ続行できます。 次行が関数ではない場合の動作は、[ステップ オーバー] と同じです。
 - **ステップ アウト (Shift + F11)** - 現在の関数が呼び出された行に戻ります。
 
-デバッグの詳しいドキュメントについては、「[Navigate Code with the Visual Studio Debugger](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger)」(Visual Studio デバッガーでコード内を移動する) をご覧ください。
+デバッグの詳しいドキュメントについては、「[Navigate Code with the Visual Studio Debugger](/visualstudio/debugger/navigating-through-code-with-the-debugger)」(Visual Studio デバッガーでコード内を移動する) をご覧ください。
 
 -----
 

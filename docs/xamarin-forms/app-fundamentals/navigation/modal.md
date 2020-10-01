@@ -10,14 +10,14 @@ ms.date: 12/01/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ea0d38946a773dc7571a08f999be5eb6500bfc9b
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 7ba5224c23eaed6b7c37312f8a765556d0263d9c
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86934499"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563030"
 ---
-# <a name="xamarinforms-modal-pages"></a>Xamarin.Forms モーダル ページ
+# <a name="no-locxamarinforms-modal-pages"></a>Xamarin.Forms モーダル ページ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-modal)
 
@@ -256,5 +256,5 @@ public class DetailPageCS : ContentPage
 ## <a name="related-links"></a>関連リンク
 
 - [ページのナビゲーション](https://developer.xamarin.com/r/xamarin-forms/book/chapter24.pdf)
-- [モーダル (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-modal)
-- [PassingData (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-passingdata)
+- [モーダル (サンプル)](/samples/xamarin/xamarin-forms-samples/navigation-modal)
+- [PassingData (サンプル)](/samples/xamarin/xamarin-forms-samples/navigation-passingdata)

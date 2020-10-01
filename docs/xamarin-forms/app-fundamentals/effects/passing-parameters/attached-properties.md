@@ -10,12 +10,12 @@ ms.date: 08/05/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 71238775e9cc9d3e32ab9c9287e5b52c759ca9eb
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: c014396f9670ece93295c2c8da1738f9dc7dae9e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939933"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91555984"
 ---
 # <a name="passing-effect-parameters-as-attached-properties"></a>エフェクトのパラメーターを添付プロパティとして渡す
 
@@ -442,4 +442,4 @@ public class LabelShadowEffect : PlatformEffect
 - [Effect](xref:Xamarin.Forms.Effect)
 - [PlatformEffect](xref:Xamarin.Forms.PlatformEffect`2)
 - [RoutingEffect](xref:Xamarin.Forms.RoutingEffect)
-- [影エフェクト (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffectruntimechange)
+- [影エフェクト (サンプル)](/samples/xamarin/xamarin-forms-samples/effects-shadoweffectruntimechange)

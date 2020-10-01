@@ -7,17 +7,17 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/29/2018
-ms.openlocfilehash: 1246eeac63a0ae232396d4c2fd69d8bf516f5e3e
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: c8c9e721bc46d9071bb2af479a5e1d37b93fce27
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73026997"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91458200"
 ---
 # <a name="how-do-i-automate-an-android-nunit-test-project"></a>Android NUnit テスト プロジェクトを自動化する方法を教えてください
 
 > [!NOTE]
-> このガイドでは、Xamarin.UITest プロジェクトではなく、Android NUnit テスト プロジェクトを自動化する方法について説明します。 Xamarin.UITest のガイドについては、[こちら](https://docs.microsoft.com/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest)をご覧ください。
+> このガイドでは、Xamarin.UITest プロジェクトではなく、Android NUnit テスト プロジェクトを自動化する方法について説明します。 Xamarin.UITest のガイドについては、[こちら](/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest)をご覧ください。
 
 Visual Studio で**単体テスト アプリ (Android)** プロジェクト (または、Visual Studio for Mac で **Android 単体テスト** プロジェクト) を作成すると、既定では、このプロジェクトによってテストは自動的に実行されません。
 ターゲット デバイスで NUnit テストを実行するには、次のコマンドを使用して開始される [Android.App.Instrumentation](xref:Android.App.Instrumentation) サブクラスを作成します。 

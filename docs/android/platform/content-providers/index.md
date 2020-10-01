@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/09/2018
-ms.openlocfilehash: 496e5c092c79f4f71bddaad30bea6acd1d58d375
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 00da8b668ea26aa9146ff0c30d07a60cefe6695a
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73027541"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454014"
 ---
 # <a name="intro-to-contentproviders"></a>ContentProviders の概要
 
@@ -42,8 +42,8 @@ Android (または他のアプリケーション) によって公開されてい
 
 ## <a name="related-links"></a>関連リンク
 
-- [ContactsAdapter デモ (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-contactsadapterdemo)
-- [SimpleContentProvider (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-simplecontentprovider)
+- [ContactsAdapter デモ (サンプル)](/samples/xamarin/monodroid-samples/platformfeatures-contactsadapterdemo)
+- [SimpleContentProvider (サンプル)](/samples/xamarin/monodroid-samples/platformfeatures-simplecontentprovider)
 - [コンテンツ プロバイダー開発者ガイド](https://developer.android.com/guide/topics/providers/content-providers.html)
 - [ContentProvider クラスのリファレンス](xref:Android.Content.ContentProvider)
 - [ContentResolver クラスのリファレンス](xref:Android.Content.ContentResolver)

@@ -11,12 +11,12 @@ ms.date: 11/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 727bac49c5bff522125a2f21a9742e428b81c924
-ms.sourcegitcommit: bb18e6b3b5d592374b17932efa1e85c3b5fbad57
+ms.openlocfilehash: fac41e57d13815dcd202521d16ae4730e1d99cfa
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88950743"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91555867"
 ---
 # <a name="no-locxamarinforms-string-and-image-localization"></a>Xamarin.Forms の文字列とイメージのローカライズ
 
@@ -26,7 +26,7 @@ ms.locfileid: "88950743"
 
 ![iOS および Android のローカライズ アプリケーションのスクリーンショット](text-images/localizationdemo-screenshots.png)
 
-.NET Framework には、[Resx リソース ファイル](https://docs.microsoft.com/dotnet/framework/resources/creating-resource-files-for-desktop-apps)を使用してアプリケーションをローカライズするための組み込みメカニズムが用意されています。 リソース ファイルには、指定されたキーのコンテンツをアプリケーションで取得できるように、テキストやその他のコンテンツが名前と値のペアとして格納されます。 リソース ファイルを使用すると、ローカライズされたコンテンツをアプリケーション コードから分離できます。
+.NET Framework には、[Resx リソース ファイル](/dotnet/framework/resources/creating-resource-files-for-desktop-apps)を使用してアプリケーションをローカライズするための組み込みメカニズムが用意されています。 リソース ファイルには、指定されたキーのコンテンツをアプリケーションで取得できるように、テキストやその他のコンテンツが名前と値のペアとして格納されます。 リソース ファイルを使用すると、ローカライズされたコンテンツをアプリケーション コードから分離できます。
 
 リソース ファイルを使用して Xamarin.Forms アプリケーションをローカライズするには、次の手順を実行する必要があります。
 
@@ -153,7 +153,7 @@ using System.Resources;
 
 既定のリソース ファイルが作成され、**AssemblyInfo.cs** ファイルで既定のカルチャが指定されると、実行時にアプリケーションでは、ローカライズされた文字列を取得できます。
 
-リソース ファイルの詳細については、「[Create resource files for .NET apps](https://docs.microsoft.com/dotnet/framework/resources/creating-resource-files-for-desktop-apps)」(.NET アプリでのリソース ファイルの作成) を参照してください。
+リソース ファイルの詳細については、「[Create resource files for .NET apps](/dotnet/framework/resources/creating-resource-files-for-desktop-apps)」(.NET アプリでのリソース ファイルの作成) を参照してください。
 
 ## <a name="specify-supported-languages-on-ios"></a>iOS でサポートされる言語を指定する
 
@@ -306,7 +306,7 @@ Image flag = new Image
 
 ## <a name="localize-the-application-name"></a>アプリケーション名をローカライズする
 
-アプリケーション名はプラットフォームごとに指定され、Resx リソース ファイルは使用されません。 Android でアプリケーション名をローカライズする方法については、[Android でのアプリ名のローカライズ](~/android/app-fundamentals/localization.md#stringsxml-file-format)に関するページを参照してください。 iOS でアプリケーション名をローカライズする方法については、[iOS でのアプリ名のローカライズ](~/ios/app-fundamentals/localization/index.md#app-name)に関するページを参照してください。 UWP でアプリケーション名をローカライズする方法については、[UWP パッケージ マニフェストでの文字列のローカライズ](https://docs.microsoft.com/windows/uwp/app-resources/localize-strings-ui-manifest)に関するページを参照してください。
+アプリケーション名はプラットフォームごとに指定され、Resx リソース ファイルは使用されません。 Android でアプリケーション名をローカライズする方法については、[Android でのアプリ名のローカライズ](~/android/app-fundamentals/localization.md#stringsxml-file-format)に関するページを参照してください。 iOS でアプリケーション名をローカライズする方法については、[iOS でのアプリ名のローカライズ](~/ios/app-fundamentals/localization/index.md#app-name)に関するページを参照してください。 UWP でアプリケーション名をローカライズする方法については、[UWP パッケージ マニフェストでの文字列のローカライズ](/windows/uwp/app-resources/localize-strings-ui-manifest)に関するページを参照してください。
 
 ## <a name="test-localization"></a>ローカライズをテストする
 
@@ -318,11 +318,11 @@ Android では、アプリケーションの起動時に言語設定が検出さ
 
 ## <a name="related-links"></a>関連リンク
 
-- [ローカライズのサンプル プロジェクト](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingresxlocalization)
-- [.NET アプリ用のリソース ファイルを作成する](https://docs.microsoft.com/dotnet/framework/resources/creating-resource-files-for-desktop-apps)
+- [ローカライズのサンプル プロジェクト](/samples/xamarin/xamarin-forms-samples/usingresxlocalization)
+- [.NET アプリ用のリソース ファイルを作成する](/dotnet/framework/resources/creating-resource-files-for-desktop-apps)
 - [クロスプラットフォームのローカライズ](~/cross-platform/app-fundamentals/localization.md)
-- [CultureInfo クラスの使用 (MSDN)](https://docs.microsoft.com/dotnet/api/system.globalization.cultureinfo)
+- [CultureInfo クラスの使用 (MSDN)](/dotnet/api/system.globalization.cultureinfo)
 - [Android のローカライズ](~/android/app-fundamentals/localization.md)
 - [iOS のローカライズ](~/ios/app-fundamentals/localization/index.md)
 - [UWP のローカライズ](/windows/uwp/design/globalizing/globalizing-portal/)
-- [固有カルチャのリソースの検索と使用 (MSDN)](https://msdn.microsoft.com/library/s9ckwb4b%28v=vs.90%29.aspx)
+- [固有カルチャのリソースの検索と使用 (MSDN)](/previous-versions/visualstudio/visual-studio-2008/s9ckwb4b(v=vs.90))

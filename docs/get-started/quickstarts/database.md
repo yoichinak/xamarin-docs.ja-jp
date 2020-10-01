@@ -12,12 +12,12 @@ ms.date: 04/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a28e391c6bacd460f095c94e30b2d9433a5191e4
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 8f19595fdabd663312e6346deaed65f85aed1280
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931795"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436971"
 ---
 # <a name="store-data-in-a-local-sqlitenet-database"></a>ローカルの SQLite.NET データベースにデータを格納する
 
@@ -35,7 +35,7 @@ ms.locfileid: "86931795"
 
 ## <a name="prerequisites"></a>必須コンポーネント
 
-このクイックスタートを試みるには、[前のクイックスタート](multi-page.md)を正常に完了しておく必要があります。 または、[前のクイックスタートのサンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)をダウンロードし、それをこのクイックスタートの出発点として使用します。
+このクイックスタートを試みるには、[前のクイックスタート](multi-page.md)を正常に完了しておく必要があります。 または、[前のクイックスタートのサンプル](/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)をダウンロードし、それをこのクイックスタートの出発点として使用します。
 
 ::: zone pivot="windows"
 
@@ -486,5 +486,5 @@ XAML スタイルを使用してアプリケーションのスタイルを設定
 
 ## <a name="related-links"></a>関連リンク
 
-- [Notes (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)
+- [Notes (サンプル)](/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)
 - [Xamarin.Forms クイックスタート Deep Dive](deepdive.md)

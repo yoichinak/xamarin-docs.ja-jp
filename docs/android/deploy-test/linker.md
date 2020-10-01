@@ -6,18 +6,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/30/2018
-ms.openlocfilehash: 729dede97a9b153738ca72af499d4d1e9d77fae0
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 3c42743a26ab4ec5388c1d3458d88ef4d161a1f3
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73021451"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454846"
 ---
 # <a name="linking-on-android"></a>Android でのリンク
 
 Xamarin.Android アプリケーションは、"*リンカー*" を使ってアプリケーションのサイズを小さくします。 リンカーは、アプリケーションのスタティック分析を利用して、実際に使われているアセンブリ、型、メンバーを判別します。 その後、リンカーは "*ガベージ コレクター*" のように動作して、参照されているアセンブリ、型、メンバーのクロージャ全体が見つかるまで、参照されているアセンブリ、型、メンバーを継続的に検索します。 そして、このクロージャの外部にあるものはすべて "*破棄*" されます。
 
-たとえば、[Hello, Android](https://docs.microsoft.com/samples/xamarin/monodroid-samples/hellom4a) の例を次に示します。
+たとえば、[Hello, Android](/samples/xamarin/monodroid-samples/hellom4a) の例を次に示します。
 
 |構成|1.2.0 のサイズ|4.0.1 のサイズ|
 |---|---|---|
@@ -26,7 +26,7 @@ Xamarin.Android アプリケーションは、"*リンカー*" を使ってア�
 
 リンクの結果、1.2.0 ではパッケージのサイズが元の (リンクされていない) パッケージの 30% に、4.0.1 では 18% になります。
 
-## <a name="control"></a>Control
+## <a name="control"></a>コントロール
 
 リンクは "*スタティック分析*" に基づいています。 したがって、ランタイム環境に依存するものはすべて検出されません。
 
@@ -50,7 +50,7 @@ public class MyActivity {
 
 ### <a name="linker-behavior"></a>リンカーの動作
 
-リンカーを制御する主要なメカニズムは、 **[プロジェクト オプション]** ダイアログ ボックスの **[リンカーの動作]** (Visual Studio では *[リンク]* ) ドロップダウンです。 次の 3 つのオプションがあります。
+リンカーを制御する主要なメカニズムは、**[プロジェクト オプション]** ダイアログ ボックスの **[リンカーの動作]** (Visual Studio では *[リンク]*) ドロップダウンです。 次の 3 つのオプションがあります。
 
 1. **リンクしない** (Visual Studio では "*なし*")
 1. **SDK アセンブリのみをリンクする** ("*SDK アセンブリのみ*")
@@ -63,7 +63,7 @@ public class MyActivity {
 
 **[すべてのアセンブリをリンクする]** オプションはすべてのアセンブリをリンクし、静的参照が存在しない場合はユーザーのコードも削除される可能性があることを意味します。
 
-上の例は、 *[リンクしない]* オプションと *[SDK アセンブリのみをリンクする]* オプションでは動作しますが、 *[すべてのアセンブリをリンクする]* 動作では失敗して、次のようなエラーが発生します。
+上の例は、*[リンクしない]* オプションと *[SDK アセンブリのみをリンクする]* オプションでは動作しますが、*[すべてのアセンブリをリンクする]* 動作では失敗して、次のようなエラーが発生します。
 
 ```shell
 E/mono    (17755): [0xafd4d440:] EXCEPTION handling: System.MissingMethodException: Default constructor not found for type ExampleLibrary.Example.

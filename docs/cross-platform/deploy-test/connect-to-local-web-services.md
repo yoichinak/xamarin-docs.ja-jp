@@ -6,12 +6,12 @@ ms.assetid: FD8FE199-898B-4841-8041-CC9CA1A00917
 author: davidbritch
 ms.author: dabritch
 ms.date: 04/29/2020
-ms.openlocfilehash: 29875b3f6c747d5dc2f45eb876a269d2bc7e85c6
-ms.sourcegitcommit: 443ecd9146fe2a7bbb9b5ab6d33c835876efcf1f
+ms.openlocfilehash: 9520f4e81403869542cf758627b8e3cfc9fabdd8
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82852464"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457979"
 ---
 # <a name="connect-to-local-web-services-from-ios-simulators-and-android-emulators"></a>iOS シミュレーターと Android エミュレーターからローカル Web サービスに接続する
 
@@ -126,7 +126,7 @@ public HttpClientHandler GetInsecureHandler()
 
 ## <a name="related-links"></a>関連リンク
 
-- [TodoREST (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest/)
+- [TodoREST (サンプル)](/samples/xamarin/xamarin-forms-samples/webservices-todorest/)
 - [ローカル HTTPS を有効にする](/aspnet/core/getting-started#enable-local-https)
 - [iOS/macOS 用の HttpClient と SSL/TLS の実装セレクター](~/cross-platform/macios/http-stack.md)
 - [Android 用の HttpClient スタックと SSL/TLS の実装セレクター](~/android/app-fundamentals/http-stack.md)

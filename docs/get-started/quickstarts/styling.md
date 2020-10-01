@@ -12,14 +12,14 @@ ms.date: 02/07/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 05560ae7c3d255140c0782e5f442dd2356d86cad
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 9794f429744611654ce883b48aa828b997ec881f
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937424"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435437"
 ---
-# <a name="style-a-cross-platform-xamarinforms-application"></a>クロスプラットフォーム Xamarin.Forms アプリケーションのスタイルを設定する
+# <a name="style-a-cross-platform-no-locxamarinforms-application"></a>クロスプラットフォーム Xamarin.Forms アプリケーションのスタイルを設定する
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-styled/)
 
@@ -34,7 +34,7 @@ ms.locfileid: "86937424"
 
 ### <a name="prerequisites"></a>必須コンポーネント
 
-このクイックスタートを試みるには、[前のクイックスタート](database.md)を正常に完了しておく必要があります。 または、[前のクイックスタートのサンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)をダウンロードし、それをこのクイックスタートの出発点として使用します。
+このクイックスタートを試みるには、[前のクイックスタート](database.md)を正常に完了しておく必要があります。 または、[前のクイックスタートのサンプル](/samples/xamarin/xamarin-forms-samples/getstarted-notes-database/)をダウンロードし、それをこのクイックスタートの出発点として使用します。
 
 ::: zone pivot="windows"
 
@@ -326,5 +326,5 @@ Xamarin.Forms を使用したアプリケーション開発の基礎の詳細に
 
 ## <a name="related-links"></a>関連リンク
 
-- [Notes (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-styled/)
+- [Notes (サンプル)](/samples/xamarin/xamarin-forms-samples/getstarted-notes-styled/)
 - [Xamarin.Forms クイックスタート Deep Dive](deepdive.md)

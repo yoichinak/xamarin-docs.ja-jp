@@ -6,12 +6,12 @@ ms.assetid: 420c5fdf-4610-4e71-9db5-fe894c961924
 author: davidortinau
 ms.author: daortin
 ms.date: 11/22/2016
-ms.openlocfilehash: 32dec6b8fcdd5387e138a7812d8c3e2074673111
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: f3de8f6bb5cc8cb717642ebc86cefe1a184f4a78
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939621"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91456627"
 ---
 # <a name="mobile-software-development-lifecycle"></a>モバイル ソフトウェア開発ライフ サイクル
 
@@ -70,7 +70,7 @@ ms.locfileid: "86939621"
 
 #### <a name="ux-design"></a>UX デザイン
 
-通常 UX は、多くの[デザイン ツールキット](https://docs.microsoft.com/windows/uwp/design/downloads/)のいずれかを使用したワイヤフレームまたはモックアップで行います。 UX モックアップを使用すると、実際の UI デザインを心配することなく UX をデザインできます。
+通常 UX は、多くの[デザイン ツールキット](/windows/uwp/design/downloads/)のいずれかを使用したワイヤフレームまたはモックアップで行います。 UX モックアップを使用すると、実際の UI デザインを心配することなく UX をデザインできます。
 
  [![通常 UX は、Balsamiq などのツールを使用したワイヤフレームまたはモックアップで行います](introduction-to-mobile-sdlc-images/balsamiq.png)](introduction-to-mobile-sdlc-images/balsamiq.png#lightbox)
 
@@ -78,7 +78,7 @@ UX モックアップを作成するときは、アプリが対象とする多�
 
 1. **Apple** -  [Human Interface Guidelines](https://developer.apple.com/ios/human-interface-guidelines/overview/themes/) (ヒューマン デザイン ガイドライン)
 1. **Android** - [Design Guidelines](https://developer.android.com/design/index.html) (デザイン ガイドライン)
-1. **UWP** – [UWP Design basics](https://docs.microsoft.com/windows/uwp/design/basics/) (UWP デザインの基本)
+1. **UWP** – [UWP Design basics](/windows/uwp/design/basics/) (UWP デザインの基本)
 
 たとえば、各アプリには、アプリケーションのセクション間を切り替える操作のメタファーがあります。 iOS は、画面の下部にあるタブ バーを使用し、Android は画面の上部にあるタブ バーを使用し、UWP は[ピボットまたはタブ](/windows/uwp/design/controls-and-patterns/pivot) ビューを使用します。
 
@@ -153,7 +153,7 @@ Android はこの情報を使用して、Android OS 内で実行されるアプ�
 
 #### <a name="uwp"></a>UWP
 
-UWP アプリケーションは、Microsoft ストアを介してユーザーに配布されます。 開発者は自作アプリを提出して承認を受けます。アプリは承認後にストアに表示されます。 Windows アプリを公開する方法の詳細については、UWP の[公開](https://docs.microsoft.com/windows/uwp/publish/)に関するドキュメントを参照してください。
+UWP アプリケーションは、Microsoft ストアを介してユーザーに配布されます。 開発者は自作アプリを提出して承認を受けます。アプリは承認後にストアに表示されます。 Windows アプリを公開する方法の詳細については、UWP の[公開](/windows/uwp/publish/)に関するドキュメントを参照してください。
 
 ## <a name="mobile-development-considerations"></a>モバイル開発に関する考慮事項
 
@@ -243,7 +243,7 @@ UWP ハードウェアは比較的均質ですが、オプションのコンポ�
 
 #### <a name="security-considerations"></a>セキュリティの考慮事項
 
-UWP のセキュリティに関する重要な考慮事項については、「[セキュリティ](https://docs.microsoft.com/windows/uwp/security/)」のドキュメントを参照してください。
+UWP のセキュリティに関する重要な考慮事項については、「[セキュリティ](/windows/uwp/security/)」のドキュメントを参照してください。
 
 ## <a name="summary"></a>まとめ
 

@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: e955d4f96724bd5682e7d0e6db2c36fa1b7810f4
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: aaa67972afeffd10c038a145a5703e917647b0fb
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73027428"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91453871"
 ---
 # <a name="fingerprint-authentication-guidance"></a>指紋認証のガイダンス
 
@@ -33,10 +33,10 @@ Android 6.0 の指紋認証に関する概念と API がわかったので、次
 
 最初に、Fingerprint API 自体である `FingerprintManager` (および `FingerprintManagerCompat`) について説明しました。 `FingerprintManager.AuthenticationCallbacks` 抽象クラスをアプリケーションで拡張し、指紋ハードウェアとアプリケーション自体の仲介役として使用する方法について説明しました。 次に、Java の `Cipher` オブジェクトを使用して、指紋スキャナーの結果の整合性を確認する方法について説明しました。 最後に、デバイスに指紋を登録し、**adb** を使用してエミュレーターで指紋のスワイプをシミュレートする方法を示すことで、テストについて少し説明しました。 
 
-まだ行っていない場合は、このガイドに付属している[サンプル アプリケーション](https://github.com/xamarin/monodroid-samples/tree/master/FingerprintGuide)を参照してください。 [Fingerprint Dialog Sample](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-fingerprintdialog) は Java から Xamarin.Android に移植されており、Android アプリケーションに指紋認証を追加する方法についてのもう 1 つの例が提供されます。
+まだ行っていない場合は、このガイドに付属している[サンプル アプリケーション](https://github.com/xamarin/monodroid-samples/tree/master/FingerprintGuide)を参照してください。 [Fingerprint Dialog Sample](/samples/xamarin/monodroid-samples/android-m-fingerprintdialog) は Java から Xamarin.Android に移植されており、Android アプリケーションに指紋認証を追加する方法についてのもう 1 つの例が提供されます。
 
 ## <a name="related-links"></a>関連リンク
 
 - [指紋ガイド サンプル アプリ](https://github.com/xamarin/monodroid-samples/tree/master/FingerprintGuide)
-- [Fingerprint Dialog Sample](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-fingerprintdialog)
+- [Fingerprint Dialog Sample](/samples/xamarin/monodroid-samples/android-m-fingerprintdialog)
 - [指紋アイコン](https://raw.githubusercontent.com/xamarin/monodroid-samples/master/FingerprintGuide/FingerprintSampleApp/Resources/drawable-hdpi/ic_fp_40px.png)

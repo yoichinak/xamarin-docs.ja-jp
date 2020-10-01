@@ -9,14 +9,14 @@ ms.custom: video
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 061bc1cfe785ad080092ba21340f7d38bc499ed9
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: f4bb252448abe3c2987def143634d15b5cae194c
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84801947"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433497"
 ---
-# <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials:セキュリティで保護されたストレージ
+# <a name="no-locxamarinessentials-secure-storage"></a>Xamarin.Essentials:セキュリティで保護されたストレージ
 
 **SecureStorage** クラスは、単純なキーと値のペアを安全に格納するのに役立ちます。
 
@@ -154,7 +154,7 @@ iOS デバイスに値を安全に格納するために、[キーチェーン](x
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-暗号化する値に対して、UWP デバイス上で [DataProtectionProvider](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) が安全に使用されます。
+暗号化する値に対して、UWP デバイス上で [DataProtectionProvider](/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) が安全に使用されます。
 
 暗号化された値は、`ApplicationData.Current.LocalSettings` の、 **[アプリの ID].xamarinessentials** という名前のコンテナーの内部に格納されます。
 

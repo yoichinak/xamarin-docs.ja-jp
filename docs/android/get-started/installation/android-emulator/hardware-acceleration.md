@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: jondouglas
 ms.author: jodou
 ms.date: 02/13/2020
-ms.openlocfilehash: 93336f5a741cf9643288163f2bf1d8ef44ea52d2
-ms.sourcegitcommit: d42dadc6da584953865b1adb616489d91a7b25d0
+ms.openlocfilehash: baeabf2cde7e0aabe3439d698e63636810069705
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86473438"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454612"
 ---
 # <a name="hardware-acceleration-for-emulator-performance-hyper-v--haxm"></a>エミュレーターのパフォーマンスのためのハードウェア高速化 (Hyper-V と HAXM)
 
@@ -37,7 +37,7 @@ Visual Studio で開発すると、Android デバイスが利用できないか�
 Android エミュレーターの高速化には、次の仮想化テクノロジを利用できます。
 
 1. **Microsoft の Hyper-V と Windows Hypervisor Platform (WHPX)** 。
-   [Hyper-V](https://docs.microsoft.com/virtualization/hyper-v-on-windows/) は Windows の仮想化技術の 1 つであり、物理的ホスト コンピューター上で、仮想化されたコンピューター システムを実行できます。
+   [Hyper-V](/virtualization/hyper-v-on-windows/) は Windows の仮想化技術の 1 つであり、物理的ホスト コンピューター上で、仮想化されたコンピューター システムを実行できます。
 
 2. **Intel の Hardware Accelerated Execution Manager (HAXM)** 。
    HAXM は Intel CPU を実行するコンピューターのための仮想化エンジンです。

@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 60c62bf4d2887cec3d68d44e7d384daae35c066f
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 4b9043d70bb7460abf62c964da8041f345cd1be6
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929044"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435604"
 ---
 # <a name="hello-ios--deep-dive"></a>Hello, iOS – 深い分析
 
@@ -26,7 +26,7 @@ ms.locfileid: "86929044"
 
 ## <a name="introduction-to-visual-studio-for-mac"></a>Visual Studio for Mac の概要
 
-Visual Studio for Mac は、Visual Studio と Xcode から機能を結合した無料のオープンソース IDE です。 ビジュアル デザイナー、リファクタリング ツール付きのテキスト エディター、アセンブリ ブラウザー、ソース コード統合などの機能が完全に統合されています。 このガイドでは、Visual Studio for Mac の基本的な機能についていくつか説明しますが、Visual Studio for Mac を初めてご利用になる方は、[Visual Studio for Mac](https://docs.microsoft.com/visualstudio/mac/) に関するドキュメントをご覧ください。
+Visual Studio for Mac は、Visual Studio と Xcode から機能を結合した無料のオープンソース IDE です。 ビジュアル デザイナー、リファクタリング ツール付きのテキスト エディター、アセンブリ ブラウザー、ソース コード統合などの機能が完全に統合されています。 このガイドでは、Visual Studio for Mac の基本的な機能についていくつか説明しますが、Visual Studio for Mac を初めてご利用になる方は、[Visual Studio for Mac](/visualstudio/mac/) に関するドキュメントをご覧ください。
 
 Visual Studio for Mac は、コードを*ソリューション*と*プロジェクト*に分けて整理するという Visual Studio の方法に従っています。 ソリューションとは、1 つまたは複数のプロジェクトを保持できるコンテナーです。 プロジェクトは、アプリケーション (iOS、Android など)、サポートするライブラリ、テスト アプリケーションなどの場合があります。 Phoneword アプリで、**単一ビュー アプリケーション** テンプレートが使用され、新しい iPhone プロジェクトが追加されています。 最初のソリューションは次のようになります。
 
@@ -64,7 +64,7 @@ Visual Studio は、コードをソリューションとプロジェクトに分
 
 「[Hello, iOS](~/ios/get-started/hello-ios/hello-ios-quickstart.md)」チュートリアルでは、**Phoneword** というソリューションを作成し、iOS プロジェクト (**Phoneword_iOS**) をその中に配置しました。 プロジェクト内には次の項目があります。
 
-- **References** アプリケーションのビルドと実行に必要なアセンブリが含まれています。 ディレクトリを展開すると、[System](https://docs.microsoft.com/dotnet/api/system)、System.Core、[System.Xml](https://docs.microsoft.com/dotnet/api/system.xml) などの .NET アセンブリへの参照、および Xamarin.iOS アセンブリへの参照が表示されます。
+- **References** アプリケーションのビルドと実行に必要なアセンブリが含まれています。 ディレクトリを展開すると、[System](/dotnet/api/system)、System.Core、[System.Xml](/dotnet/api/system.xml) などの .NET アセンブリへの参照、および Xamarin.iOS アセンブリへの参照が表示されます。
 - **Packages** - Packages ディレクトリには、あらかじめ用意されている NuGet パッケージが含まれています。
 - **Resources** - Resources フォルダーには、その他のメディアを格納します。
 - **Main.cs** – このファイルには、アプリケーションのメイン エントリ ポイントが含まれています。 アプリケーションを起動するには、メイン アプリケーション クラスの名前 `AppDelegate` が渡されます。
@@ -459,6 +459,6 @@ iOS デバイスにアプリが展開されます。
 
 ## <a name="related-links"></a>関連リンク
 
-- [Hello, iOS (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)
+- [Hello, iOS (サンプル)](/samples/xamarin/ios-samples/hello-ios)
 - [iOS ヒューマン インターフェイス ガイドライン](https://developer.apple.com/design/human-interface-guidelines/ios/overview/themes/)
 - [iOS プロビジョニング ポータル](https://developer.apple.com/account/#/overview)

@@ -5,12 +5,12 @@ ms.assetid: B3342772-FB88-4B7F-BC15-8BC78EED749E
 author: JonDouglas
 ms.author: jodou
 ms.date: 09/17/2019
-ms.openlocfilehash: b26d99c131e9759da3077a767476de38712bcb18
-ms.sourcegitcommit: a9280318bf7bb69e4e5744ee739e76a9cba36b28
+ms.openlocfilehash: 1ce0233a45211ee91b9f1e30247ac18cdd5c5a66
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82047574"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454300"
 ---
 # <a name="android-10-with-xamarin"></a>Xamarin を使用する Android 10
 
@@ -22,7 +22,7 @@ Android 10 を Google から入手できるようになりました。 このリ
 
 この記事は、Android 10 用 Xamarin.Android アプリの開発を始める際に役立つように構成されています。 必要な更新プログラムのインストール方法、SDK の構成方法、テスト用のエミュレーターまたはデバイスの準備方法について説明します。 また、Android 10 の新機能の概要について説明し、Android 10 の主要な機能のいくつかを使用する方法を示すサンプル ソース コードを提供します。
 
-Xamarin.Android 10.0 では、Android 10 のサポートが提供されます。 Xamarin.Android での Android 10 のサポートの詳細については、[Xamarin.Android 10.0 のリリース ノート](https://docs.microsoft.com/xamarin/android/release-notes/10/10.0)を参照してください。
+Xamarin.Android 10.0 では、Android 10 のサポートが提供されます。 Xamarin.Android での Android 10 のサポートの詳細については、[Xamarin.Android 10.0 のリリース ノート](/xamarin/android/release-notes/10/10.0)を参照してください。
 
 ## <a name="requirements"></a>要件
 
@@ -53,7 +53,7 @@ Xamarin.Android を使用して Android 10 アプリの開発を始めるには�
 
 Xamarin を使用して Android 10 アプリをビルドする場合は、Visual Studio 2019 をお勧めします。
 
-Visual Studio 2019 を使用している場合は、Visual Studio 2019 バージョン 16.3 以降に更新します (手順については、[Visual Studio 2019 の最新リリースへの更新](https://docs.microsoft.com/visualstudio/install/update-visual-studio)に関するページを参照してください)。 macOS 上では、Visual Studio 2019 for Mac 8.3 以降に更新します (手順については、[Visual Studio for Mac 2019 の最新リリースへの更新](https://docs.microsoft.com/visualstudio/mac/update)に関するページを参照してください)。
+Visual Studio 2019 を使用している場合は、Visual Studio 2019 バージョン 16.3 以降に更新します (手順については、[Visual Studio 2019 の最新リリースへの更新](/visualstudio/install/update-visual-studio)に関するページを参照してください)。 macOS 上では、Visual Studio 2019 for Mac 8.3 以降に更新します (手順については、[Visual Studio for Mac 2019 の最新リリースへの更新](/visualstudio/mac/update)に関するページを参照してください)。
 
 ### <a name="install-the-android-sdk"></a>Android SDK をインストールする
 
@@ -64,15 +64,15 @@ Xamarin.Android 10.0 でプロジェクトを作成するには、最初に Andr
 
     ![Android SDK マネージャーのリポジトリの選択](~/android/platform/android-10-images/sdkrepository.png)
 
-3. **Android 10 SDK Platform** パッケージをインストールします。これらは、 **[プラットフォーム]** タブで **[Android SDK Platform 29]** としてリストされます (SDK マネージャーの使用の詳細については、[Android SDK セットアップ](https://docs.microsoft.com/xamarin/android/get-started/installation/android-sdk)に関するページを参照してください)。
+3. **Android 10 SDK Platform** パッケージをインストールします。これらは、 **[プラットフォーム]** タブで **[Android SDK Platform 29]** としてリストされます (SDK マネージャーの使用の詳細については、[Android SDK セットアップ](../get-started/installation/android-sdk.md)に関するページを参照してください)。
 
     ![Android SDK マネージャーの [プラットフォーム] タブ](~/android/platform/android-10-images/sdkplatforms.png)
 
 ### <a name="create-a-xamarinandroid-project"></a>Xamarin.Android プロジェクトを作成する
 
-新しい Xamarin.Android プロジェクトを作成します。 Xamarin を使用した Android の開発を初めて行う場合は、「[Hello, Android](https://docs.microsoft.com/xamarin/android/get-started/hello-android/index)」を参照して、Xamarin.Android プロジェクトの作成について学習してください。
+新しい Xamarin.Android プロジェクトを作成します。 Xamarin を使用した Android の開発を初めて行う場合は、「[Hello, Android](../get-started/hello-android/index.md)」を参照して、Xamarin.Android プロジェクトの作成について学習してください。
 
-Android プロジェクトを作成するときは、Android 10.0 以降をターゲットとするようにバージョン設定を構成する必要があります。 たとえば、Android 10 をプロジェクトのターゲットとするには、プロジェクトのターゲット Android API レベルを **Android 10.0 (API 29)** に構成する必要があります。 これには、**ターゲット フレームワークのバージョン**と**ターゲット Android SDK バージョン**の両方を API 29 以降にすることが含まれます。 Android API レベルの構成の詳細については、「[Android API レベルの理解](https://docs.microsoft.com/xamarin/android/app-fundamentals/android-api-levels)」を参照してください。
+Android プロジェクトを作成するときは、Android 10.0 以降をターゲットとするようにバージョン設定を構成する必要があります。 たとえば、Android 10 をプロジェクトのターゲットとするには、プロジェクトのターゲット Android API レベルを **Android 10.0 (API 29)** に構成する必要があります。 これには、**ターゲット フレームワークのバージョン**と**ターゲット Android SDK バージョン**の両方を API 29 以降にすることが含まれます。 Android API レベルの構成の詳細については、「[Android API レベルの理解](../app-fundamentals/android-api-levels.md)」を参照してください。
 
 ![Xamarin Android のターゲット フレームワーク](~/android/platform/android-10-images/targetframework.png)
 
@@ -80,7 +80,7 @@ Android プロジェクトを作成するときは、Android 10.0 以降をタ�
 
 Pixel などの物理デバイスを使用している場合は、携帯電話の設定で [システム] > [システム アップデート] > [アップデートを確認] の順に移動して、Android 10 のアップデートをダウンロードできます。 デバイスをフラッシュする場合は、デバイスへの[ファクトリ イメージ](https://developers.google.com/android/images)または [OTA イメージ](https://developers.google.com/android/ota)のフラッシュに関する手順を参照してください。
 
-エミュレーターを使用している場合は、API レベル 29 の仮想デバイスを作成し、x86 ベースのイメージを選択します。 Android Device Manager を使用する仮想デバイスの作成および管理の詳細については、「[Android Device Manager による仮想デバイスの管理](https://docs.microsoft.com/xamarin/android/get-started/installation/android-emulator/device-manager)」を参照してください。 テストとデバッグでの Android Emulator の使用の詳細については、[Android Emulator でのデバッグ](https://docs.microsoft.com/xamarin/android/deploy-test/debugging/debug-on-emulator)に関するページを参照してください。
+エミュレーターを使用している場合は、API レベル 29 の仮想デバイスを作成し、x86 ベースのイメージを選択します。 Android Device Manager を使用する仮想デバイスの作成および管理の詳細については、「[Android Device Manager による仮想デバイスの管理](../get-started/installation/android-emulator/device-manager.md)」を参照してください。 テストとデバッグでの Android Emulator の使用の詳細については、[Android Emulator でのデバッグ](../deploy-test/debugging/debug-on-emulator.md)に関するページを参照してください。
 
 ## <a name="new-features"></a>新機能
 

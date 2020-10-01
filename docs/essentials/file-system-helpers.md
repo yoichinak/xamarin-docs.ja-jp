@@ -9,14 +9,14 @@ ms.date: 11/04/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: eb35750372c5ccb878c7b38f9d25898b09fd7f1e
-ms.sourcegitcommit: e412858ce431b3280c88241e324fcab33066eb58
+ms.openlocfilehash: 967fa5f54ec9ccbb1f8bac2a87d77dca63caba3a
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865898"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434333"
 ---
-# <a name="xamarinessentials-file-system-helpers"></a>Xamarin.Essentials:ファイル システム ヘルパー
+# <a name="no-locxamarinessentials-file-system-helpers"></a>Xamarin.Essentials:ファイル システム ヘルパー
 
 **FileSystem** クラスには、アプリケーションのキャッシュ ディレクトリやデータ ディレクトリを検索したり、アプリ パッケージ内のファイルを開いたりする、一連のヘルパーが含まれています。
 
@@ -77,8 +77,8 @@ var mainDir = FileSystem.AppDataDirectory;
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-- **CacheDirectory** – [LocalCacheFolder](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localcachefolder#Windows_Storage_ApplicationData_LocalCacheFolder) ディレクトリを返します.
-- **AppDataDirectory** – クラウドにバックアップされる [LocalFolder](https://docs.microsoft.com/uwp/api/windows.storage.applicationdata.localfolder#Windows_Storage_ApplicationData_LocalFolder) ディレクトリを返します。
+- **CacheDirectory** – [LocalCacheFolder](/uwp/api/windows.storage.applicationdata.localcachefolder#Windows_Storage_ApplicationData_LocalCacheFolder) ディレクトリを返します.
+- **AppDataDirectory** – クラウドにバックアップされる [LocalFolder](/uwp/api/windows.storage.applicationdata.localfolder#Windows_Storage_ApplicationData_LocalFolder) ディレクトリを返します。
 
 UWP プロジェクトのルートにファイルを追加し、`OpenAppPackageFileAsync` で使用されるようにビルド アクションを **Content** としてマークします。
 

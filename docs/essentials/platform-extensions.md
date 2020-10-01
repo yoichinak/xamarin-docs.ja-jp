@@ -8,14 +8,14 @@ ms.date: 03/13/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 56cb9619a4132f6568cee8fbf590965934024639
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4a13ed8e12e11595c6c1b7617e32a492205a9175
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84801924"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436569"
 ---
-# <a name="xamarinessentials-platform-extensions"></a>Xamarin.Essentials:プラットフォーム拡張
+# <a name="no-locxamarinessentials-platform-extensions"></a>Xamarin.Essentials:プラットフォーム拡張
 
 Xamarin.Essentials からは、プラットフォームの種類を使用する必要があるとき、Rect、Size、Point など、プラットフォーム拡張メソッドがいくつか提供されます。 つまり、iOS、Android、UWP 固有の種類に対して、これらの種類の `System` バージョン間で変換できます。
 
@@ -89,7 +89,7 @@ void Platform_ActivityStateChanged(object sender, Xamarin.Essentials.ActivitySta
 * Started
 * Stopped
 
-詳細については、「[アクティビティのライフサイクル](https://docs.microsoft.com/xamarin/android/app-fundamentals/activity-lifecycle/)」のドキュメントを参照してください。
+詳細については、「[アクティビティのライフサイクル](../android/app-fundamentals/activity-lifecycle/index.md)」のドキュメントを参照してください。
 
 ## <a name="ios-extensions"></a>iOS の拡張機能
 

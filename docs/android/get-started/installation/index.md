@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/22/2018
-ms.openlocfilehash: 2725f189ee3999061d3dcd397eed17cc4590eaa8
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: a3d51a9eb7de58b124fab48365371d91c5d4c95f
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86996150"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454352"
 ---
 # <a name="install-and-setup-xamarinandroid"></a>Xamarin.Android のインストールとセットアップ
 
@@ -22,7 +22,7 @@ ms.locfileid: "86996150"
 
 このガイドでは、インストール手順および Windows への Xamarin.Android のインストールに必要な構成の詳細について説明します。 この記事の終わりには、作業中の Xamarin.Android インストールが Visual Studio に統合され、最初の Xamarin.Android アプリケーションの作成を開始する準備ができます。
 
-## <a name="mac-installation"></a>[Mac のインストール](https://docs.microsoft.com/visualstudio/mac/installation)
+## <a name="mac-installation"></a>[Mac のインストール](/visualstudio/mac/installation)
 
 この記事では、インストール手順および Mac への Xamarin.Android のインストールに必要な構成の詳細について説明します。 この記事の終わりには、作業中の Xamarin.Android インストールが Visual Studio for Mac に統合され、最初の Xamarin.Android アプリケーションの作成を開始する準備ができます。
 

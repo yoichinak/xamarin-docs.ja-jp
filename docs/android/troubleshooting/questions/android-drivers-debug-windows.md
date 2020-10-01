@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/22/2018
-ms.openlocfilehash: 21fd8eff64d374e52e64194524a8c096cdf4d90e
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: c07f9099f3b76ed86a235883ce335ce19a426b99
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73027035"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457888"
 ---
 # <a name="what-usb-drivers-do-i-need-to-debug-android-on-windows"></a>Windows 上で Android をデバッグするために必要な USB ドライバーを教えてください
 
@@ -26,7 +26,7 @@ Windows で開発するときに Android デバイスでデバッグするには
 
 製造元よっては、必要な USB ドライバーを正確に追跡するのが困難な場合があります。 Windows で開発された Android アプリをテストするための代替手段としては、Android エミュレーターの使用や、外部テスト サービスの使用などがあります。 その例には次のものがあります。
 
-- [App Center テスト](https://docs.microsoft.com/appcenter/test-cloud/) - 多数の実際の Android デバイスで実行されるクラウド テスト サービス。
+- [App Center テスト](/appcenter/test-cloud/) - 多数の実際の Android デバイスで実行されるクラウド テスト サービス。
 
 - [Visual Studio Emulator for Android](https://visualstudio.microsoft.com/vs/msft-android-emulator/)
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/18/2020
-ms.openlocfilehash: 0aafe01fcbde6cf1aacf3e2dd47444d4b77021e2
-ms.sourcegitcommit: 79ba3deb031c8a60d0841bb3dbeaaf65daf2b224
+ms.openlocfilehash: 0c10e73d8d6c2dcafacbb069eaf905a227030b87
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85846379"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557531"
 ---
 # <a name="xamarinforms-multi-bindings"></a>Xamarin.Forms の複数バインド
 
@@ -273,7 +273,7 @@ Xamarin.Forms での文字列の書式設定の詳細については、「[Xamar
 
 ## <a name="related-links"></a>関連リンク
 
-- [データ バインディングのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+- [データ バインディングのデモ (サンプル)](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Xamarin.Forms の文字列の書式設定](string-formatting.md)
 - [Xamarin.Forms のバインドのフォールバック](binding-fallbacks.md)
 - [Xamarin.Forms の相対バインド](relative-bindings.md)

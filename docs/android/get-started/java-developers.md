@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/13/2018
-ms.openlocfilehash: eed18890c185ccd35d728176348c9fac481407e1
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: d32d30419550c9b5f9a612589d12eba7c74eef26
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571403"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454326"
 ---
 # <a name="xamarin-for-java-developers"></a>Java 開発者向け Xamarin
 
@@ -96,7 +96,7 @@ Java と C# はどちらも、マネージド実行環境で実行される中�
 
 Java では、通常、関連するクラスを **.jar** ファイルにパッケージ化します。 一方、C# と .NET では、再利用可能なプリコンパイル済みのコードは "*アセンブリ*" にパッケージ化され、通常、アセンブリは *.dll* ファイルとしてパッケージ化されます。 アセンブリは C#/.NET コードの展開の単位であり、通常、各アセンブリは C# プロジェクトと関連付けられます。 アセンブリには、実行時に Just-In-Time コンパイルされる中間コード (IL) が含まれます。
 
-アセンブリについて詳しくは、「[アセンブリとグローバル アセンブリ キャッシュ (C#)](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/assemblies-gac/)」トピックをご覧ください。
+アセンブリについて詳しくは、「[アセンブリとグローバル アセンブリ キャッシュ (C#)](/dotnet/csharp/programming-guide/concepts/assemblies-gac/)」トピックをご覧ください。
 
 ### <a name="packages-vs-namespaces"></a>パッケージと名前空間
 
@@ -142,7 +142,7 @@ using System.Threading.Tasks;
 
 ### <a name="generics"></a>ジェネリック
 
-Java と C# はどちらも "*ジェネリック*" をサポートします。ジェネリックとは、コンパイル時に異なる型を挿入できるプレースホルダーです。 ただし、ジェネリックの動作は C# では若干異なります。 Java では、[型消去](https://docs.oracle.com/javase/tutorial/java/generics/erasure.html)により、型の情報はコンパイル時にのみ使用でき、実行時には使用できません。 これに対し、.NET の共通言語ランタイム (CLR) では、ジェネリック型の明示的なサポートが提供されています。これは、C# は実行時に型情報にアクセスできることを意味します。 日常の Xamarin.Android 開発でこの違いの重要性に気付くことはあまりありませんが、[リフレクション](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/reflection)を使っている場合は、この機能に頼って実行時に型情報にアクセスしています。
+Java と C# はどちらも "*ジェネリック*" をサポートします。ジェネリックとは、コンパイル時に異なる型を挿入できるプレースホルダーです。 ただし、ジェネリックの動作は C# では若干異なります。 Java では、[型消去](https://docs.oracle.com/javase/tutorial/java/generics/erasure.html)により、型の情報はコンパイル時にのみ使用でき、実行時には使用できません。 これに対し、.NET の共通言語ランタイム (CLR) では、ジェネリック型の明示的なサポートが提供されています。これは、C# は実行時に型情報にアクセスできることを意味します。 日常の Xamarin.Android 開発でこの違いの重要性に気付くことはあまりありませんが、[リフレクション](/dotnet/csharp/programming-guide/concepts/reflection)を使っている場合は、この機能に頼って実行時に型情報にアクセスしています。
 
 Xamarin.Android では、レイアウト コントロールへの参照を取得するために使われているジェネリック メソッド `FindViewById` をよく目にします。 このメソッドは、参照するコントロールの種類を指定するジェネリック型パラメーターを受け取ります。 次に例を示します。
 
@@ -152,7 +152,7 @@ TextView label = FindViewById<TextView> (Resource.Id.Label);
 
 このコード例では、`FindViewById` はレイアウトで **Label** として定義されている `TextView` コントロールへの参照を取得し、`TextView` 型として返します。
 
-ジェネリックについて詳しくは、「[ジェネリック (C# プログラミング ガイド)](https://docs.microsoft.com/dotnet/csharp/programming-guide/generics/index)」トピックをご覧ください。
+ジェネリックについて詳しくは、「[ジェネリック (C# プログラミング ガイド)](/dotnet/csharp/programming-guide/generics/index)」トピックをご覧ください。
 Xamarin.Android でのジェネリック C# クラスのサポートにはいくつかの制限があることに注意してください。詳しくは、「[Limitations](~/android/internals/limitations.md)」(制限事項) をご覧ください。
 
 <a name="oopfeatures"></a>
@@ -211,7 +211,7 @@ public class SensorsActivity : Activity, ISensorEventListener
 
 C# でクラスがそれ以上サブクラス化されないようにしたい場合は、クラス名の前に `sealed` を付けます。Java では、クラス名の前に `final` を付けます。
 
-C# のクラス定義について詳しくは、[クラス](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/classes)に関するトピックと[継承](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/inheritance)に関するトピックをご覧ください。
+C# のクラス定義について詳しくは、[クラス](/dotnet/csharp/programming-guide/classes-and-structs/classes)に関するトピックと[継承](/dotnet/csharp/programming-guide/classes-and-structs/inheritance)に関するトピックをご覧ください。
 
 ### <a name="properties"></a>プロパティ
 
@@ -233,7 +233,7 @@ rulerView.DrawingCacheEnabled = true;
 
 プロパティへのアクセスは、読み取り/書き込み、読み取り専用、または書き込み専用にすることができます。 また、読み取りと書き込みに異なるアクセス修飾子を使うこともできます。 たとえば、1 つのプロパティに public 読み取りアクセスと private 書き込みアクセスを定義することができます。
 
-C# のプロパティについて詳しくは、「[プロパティ (C# プログラミング ガイド)](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/properties)」トピックをご覧ください。
+C# のプロパティについて詳しくは、「[プロパティ (C# プログラミング ガイド)](/dotnet/csharp/programming-guide/classes-and-structs/properties)」トピックをご覧ください。
 
 ### <a name="calling-base-class-methods"></a>基底クラスのメソッドの呼び出し
 
@@ -276,7 +276,7 @@ Java と C# はどちらも、`public`、`private`、`protected` の各アクセ
 
 - **`protected internal`** &ndash; クラスのメンバーは、定義アセンブリ、定義クラス、および派生クラス (アセンブリがアクセスできる内部と外部両方の派生クラス) 内でアクセスできます。
 
-C# のアクセス修飾子について詳しくは、「[アクセス修飾子 (C# プログラミング ガイド)](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/access-modifiers)」トピックをご覧ください。
+C# のアクセス修飾子について詳しくは、「[アクセス修飾子 (C# プログラミング ガイド)](/dotnet/csharp/programming-guide/classes-and-structs/access-modifiers)」トピックをご覧ください。
 
 ### <a name="virtual-and-override-methods"></a>仮想メソッドとオーバーライド メソッド
 
@@ -291,7 +291,7 @@ Java と同様に、C# は `abstract` のクラスとメソッドをサポート
 
 - C# の派生クラスでは、`override` キーワードを使って、仮想基底クラスのメソッドがオーバーライドされていることを明示的に示す必要があります。
 
-C# によるポリモーフィズムのサポートについて詳しくは、「[ポリモーフィズム (C# プログラミング ガイド)](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/polymorphism)」トピックをご覧ください。
+C# によるポリモーフィズムのサポートについて詳しくは、「[ポリモーフィズム (C# プログラミング ガイド)](/dotnet/csharp/programming-guide/classes-and-structs/polymorphism)」トピックをご覧ください。
 
 <a name="lambdas"></a>
 
@@ -321,7 +321,7 @@ button.Click += (sender, args) => {
 
 この例のラムダ式のコード (中かっこ内のコード) は、クリック数をインクリメントし、クリック数を表示する `button` テキストを更新しています。 このラムダ式は、ボタンをタップするたびに呼び出されるクリック イベント ハンドラーとして、`button` オブジェクトに登録されます (イベント ハンドラーについては後で詳しく説明します)。この簡単な例の `sender` および `args` パラメーターは、ラムダ式のコードでは使われていませんが、イベント登録のメソッド シグネチャ要件を満たすためにラムダ式で必要です。 内部では、C# のコンパイラはボタン クリック イベントが発生するたびに呼び出される匿名メソッドに、ラムダ式を変換します。
 
-C# とラムダ式について詳しくは、「[ラムダ式 (C# プログラミング ガイド)](https://docs.microsoft.com/dotnet/csharp/programming-guide/statements-expressions-operators/lambda-expressions)」トピックをご覧ください。
+C# とラムダ式について詳しくは、「[ラムダ式 (C# プログラミング ガイド)](/dotnet/csharp/programming-guide/statements-expressions-operators/lambda-expressions)」トピックをご覧ください。
 
 <a name="events"></a>
 
@@ -330,7 +330,7 @@ C# とラムダ式について詳しくは、「[ラムダ式 (C# プログラ�
 "*イベント*" は、何か重要なことがオブジェクトに起きたときに、そのオブジェクトが登録されているサブスクライバーに通知するための手段です。 Java では、サブスクライバーはコールバック メソッドを含む `Listener` インターフェイスを通常実装しますが、C# では、"*デリゲート*" によって言語レベルでイベント処理のサポートが提供されます。 "*デリゲート*" は、オブジェクト指向でのタイプ セーフな関数ポインターのようなものであり、オブジェクト参照とメソッド トークンをカプセル化しています。 クライアント オブジェクトでイベントをサブスクライブする必要がある場合は、デリゲートを作成して、通知オブジェクトにデリゲートを渡します。
 イベントが発生すると、通知オブジェクトはデリゲート オブジェクトによって表されるメソッドを呼び出し、サブスクライブしているクライアント オブジェクトにイベントを通知します。 C# では、基本的に、イベント ハンドラーはデリゲートを介して呼び出されるメソッドにすぎません。
 
-デリゲートについて詳しくは、「[デリゲート (C# プログラミング ガイド)](https://docs.microsoft.com/dotnet/csharp/programming-guide/delegates/index)」トピックをご覧ください。
+デリゲートについて詳しくは、「[デリゲート (C# プログラミング ガイド)](/dotnet/csharp/programming-guide/delegates/index)」トピックをご覧ください。
 
 C# の場合、イベントは "*マルチキャスト*" です。つまり、イベント発生の通知を、複数のリスナーが受け取ることができます。 この違いは、Java と C# でのイベント登録の構文上の違い考えるとわかります。 Java では、`SetXXXListener` を呼び出してイベント通知に登録します。C# では、`+=` 演算子を使い、イベント リスナーのリストにデリゲートを "追加する" ことによって、イベント通知に登録します。
 Java では `SetXXXListener` を呼び出して登録を解除しますが、C# では、`-=` を使ってリスナーのリストからデリゲートを "差し引き" ます。
@@ -403,7 +403,7 @@ async void downloadAsync(object sender, System.EventArgs e)
 `downloadAsync` のメソッド宣言の前に `async` キーワードが付いていて、非同期に実行してタスクを返すことを示していることに注意してください。 また、`DownloadDataTaskAsync` の呼び出しの前に `await` キーワードが付いていることにも注意してください。 アプリは、イベント ハンドラーの実行 (`await` が出現した場所で開始します) を、`DownloadDataTaskAsync` が完了して戻るまでバックグラウンド スレッドに移動します。
 その間も、アプリの UI スレッドはユーザー入力に応答して、他のコントロールに対するイベント ハンドラーを発動できます。 `DownloadDataTaskAsync` が完了すると (数秒かかることがあります)、`bytes` 変数に `DownloadDataTaskAsync` の呼び出しの結果が設定されて実行が再開され、イベント ハンドラーの残りのコードが呼び出し元の (UI) スレッドでダウンロードされたイメージを表示します。
 
-C# での `async`/`await` の概要については、「[Asynchronous Programming with Async and Await](https://docs.microsoft.com/dotnet/csharp/async)」(Async および Await を使用した非同期プログラミング (C# および Visual Basic)) のトピックをご覧ください。
+C# での `async`/`await` の概要については、「[Asynchronous Programming with Async and Await](/dotnet/csharp/async)」(Async および Await を使用した非同期プログラミング (C# および Visual Basic)) のトピックをご覧ください。
 Xamarin による非同期プログラミング機能のサポートについて詳しくは、「[非同期サポートの概要](~/cross-platform/platform/async.md)」をご覧ください。
 
 <a name="keywords"></a>
@@ -414,45 +414,45 @@ Java で使われている言語キーワードの多くは、C# でも使われ
 
 |Java|C#|説明|
 |---|---|---|
-|`boolean`|[bool](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/bool)|ブール値 true および false を宣言するために使われます。|
+|`boolean`|[bool](/dotnet/csharp/language-reference/keywords/bool)|ブール値 true および false を宣言するために使われます。|
 |`extends`|`:`|継承するクラスとインターフェイスの前に付きます。|
 |`implements`|`:`|継承するクラスとインターフェイスの前に付きます。|
-|`import`|[using](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/using)|名前空間から型をインポートし、名前空間の別名の作成にも使われます。|
-|`final`|[sealed](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/sealed)|クラスの派生を防止します。派生クラスでメソッドとプロパティがオーバーライドされるのを防止します。|
-|`instanceof`|[is](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/is)|オブジェクトに特定の型との互換性があるかどうかを評価します。|
-|`native`|[extern](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/extern)|外部で実装されているメソッドを宣言します。|
-|`package`|[namespace](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/namespace)|関連する一連のオブジェクトのスコープを宣言します。|
-|`T...`|[params T](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/params)|可変数個の引数を受け取るメソッド パラメーターを指定します。|
-|`super`|[base](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/base)|派生クラス内から親クラスのメンバーにアクセスするために使われます。|
-|`synchronized`|[lock](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/lock-statement)|ロックの取得と解放でコードの重要なセクションをラップします。|
+|`import`|[using](/dotnet/csharp/language-reference/keywords/using)|名前空間から型をインポートし、名前空間の別名の作成にも使われます。|
+|`final`|[sealed](/dotnet/csharp/language-reference/keywords/sealed)|クラスの派生を防止します。派生クラスでメソッドとプロパティがオーバーライドされるのを防止します。|
+|`instanceof`|[is](/dotnet/csharp/language-reference/keywords/is)|オブジェクトに特定の型との互換性があるかどうかを評価します。|
+|`native`|[extern](/dotnet/csharp/language-reference/keywords/extern)|外部で実装されているメソッドを宣言します。|
+|`package`|[namespace](/dotnet/csharp/language-reference/keywords/namespace)|関連する一連のオブジェクトのスコープを宣言します。|
+|`T...`|[params T](/dotnet/csharp/language-reference/keywords/params)|可変数個の引数を受け取るメソッド パラメーターを指定します。|
+|`super`|[base](/dotnet/csharp/language-reference/keywords/base)|派生クラス内から親クラスのメンバーにアクセスするために使われます。|
+|`synchronized`|[lock](/dotnet/csharp/language-reference/keywords/lock-statement)|ロックの取得と解放でコードの重要なセクションをラップします。|
 
-また、C# に固有で、Android 上で使用される Java には対応するもののないキーワードも多くあります。 Xamarin.Android のコードでは、以下の C# キーワードがよく使われます (この表は、Xamarin.Android の[サンプル コード](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Android)を読むときに参照すると便利です)。
+また、C# に固有で、Android 上で使用される Java には対応するもののないキーワードも多くあります。 Xamarin.Android のコードでは、以下の C# キーワードがよく使われます (この表は、Xamarin.Android の[サンプル コード](/samples/browse/?products=xamarin&term=Xamarin.Android)を読むときに参照すると便利です)。
 
 |C#|説明|
 |---|---|
-|[as](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/as)|互換性のある参照型の間、または null 許容型の間の変換を実行します。|
-|[async](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/async)|メソッドまたはラムダ式が非同期であることを指定します。|
-|[await](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/await)|タスクが完了するまで、メソッドの実行を中断します。|
-|[byte](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/byte)|符号なしの 8 ビット整数型です。|
-|[delegate](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/delegate)|メソッドまたは匿名メソッドをカプセル化するために使われます。|
-|[enum](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/enum)|列挙型つまり名前付き定数のセットを宣言します。|
-|[event](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/event)|パブリッシャー クラスのイベントを宣言します。|
-|[fixed](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/fixed-statement)|変数が再配置されないようにします。|
+|[as](/dotnet/csharp/language-reference/keywords/as)|互換性のある参照型の間、または null 許容型の間の変換を実行します。|
+|[async](/dotnet/csharp/language-reference/keywords/async)|メソッドまたはラムダ式が非同期であることを指定します。|
+|[await](/dotnet/csharp/language-reference/keywords/await)|タスクが完了するまで、メソッドの実行を中断します。|
+|[byte](/dotnet/csharp/language-reference/keywords/byte)|符号なしの 8 ビット整数型です。|
+|[delegate](/dotnet/csharp/language-reference/keywords/delegate)|メソッドまたは匿名メソッドをカプセル化するために使われます。|
+|[enum](/dotnet/csharp/language-reference/keywords/enum)|列挙型つまり名前付き定数のセットを宣言します。|
+|[event](/dotnet/csharp/language-reference/keywords/event)|パブリッシャー クラスのイベントを宣言します。|
+|[fixed](/dotnet/csharp/language-reference/keywords/fixed-statement)|変数が再配置されないようにします。|
 |`get`|プロパティの値を取得するアクセサー メソッドを定義します。|
-|[in](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/in-generic-modifier)|パラメーターがジェネリック インターフェイスの弱い派生型を受け付けられるようにします。|
-|[object](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/object)|.NET Framework のオブジェクト型の別名です。|
-|[out](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/out)|パラメーター修飾子またはジェネリック型パラメーターの宣言です。|
-|[override](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/override)|継承されたメンバーの実装を拡張または修正します。|
-|[partial](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/partial-method)|定義が複数のファイルに分割されることを宣言します。または、実装からのメソッド定義を分割します。|
-|[readonly](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/readonly)|クラスのメンバーが、宣言時にのみ、またはクラス コンストラクターによってのみ、割り当てられることを宣言します。|
-|[ref](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/ref)|値ではなく、参照によって引数が渡されるようにします。|
-|[set](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/set)|プロパティの値を設定するアクセサー メソッドを定義します。|
-|[string](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/string)|.NET Framework の文字列型の別名です。|
-|[struct](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/struct)|関連する変数のグループをカプセル化する値の型です。|
-|[typeof](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/typeof)|オブジェクトの型を取得します。|
-|[var](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/var)|暗黙的に型指定されたローカル変数を宣言します。|
-|[value](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/value)|クライアント コードがプロパティに代入する値を参照します。|
-|[virtual](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/virtual)|派生クラスでのメソッドのオーバーライドを許可します。|
+|[in](/dotnet/csharp/language-reference/keywords/in-generic-modifier)|パラメーターがジェネリック インターフェイスの弱い派生型を受け付けられるようにします。|
+|[object](/dotnet/csharp/language-reference/keywords/object)|.NET Framework のオブジェクト型の別名です。|
+|[out](/dotnet/csharp/language-reference/keywords/out)|パラメーター修飾子またはジェネリック型パラメーターの宣言です。|
+|[override](/dotnet/csharp/language-reference/keywords/override)|継承されたメンバーの実装を拡張または修正します。|
+|[partial](/dotnet/csharp/language-reference/keywords/partial-method)|定義が複数のファイルに分割されることを宣言します。または、実装からのメソッド定義を分割します。|
+|[readonly](/dotnet/csharp/language-reference/keywords/readonly)|クラスのメンバーが、宣言時にのみ、またはクラス コンストラクターによってのみ、割り当てられることを宣言します。|
+|[ref](/dotnet/csharp/language-reference/keywords/ref)|値ではなく、参照によって引数が渡されるようにします。|
+|[set](/dotnet/csharp/language-reference/keywords/set)|プロパティの値を設定するアクセサー メソッドを定義します。|
+|[string](/dotnet/csharp/language-reference/keywords/string)|.NET Framework の文字列型の別名です。|
+|[struct](/dotnet/csharp/language-reference/keywords/struct)|関連する変数のグループをカプセル化する値の型です。|
+|[typeof](/dotnet/csharp/language-reference/keywords/typeof)|オブジェクトの型を取得します。|
+|[var](/dotnet/csharp/language-reference/keywords/var)|暗黙的に型指定されたローカル変数を宣言します。|
+|[value](/dotnet/csharp/language-reference/keywords/value)|クライアント コードがプロパティに代入する値を参照します。|
+|[virtual](/dotnet/csharp/language-reference/keywords/virtual)|派生クラスでのメソッドのオーバーライドを許可します。|
 
 <a name="interop"></a>
 
@@ -468,7 +468,7 @@ C# に変換したくない既存の Java 機能がある場合は、2 つの方
 
 ## <a name="further-reading"></a>関連項目
 
-MSDN の「[C# プログラミング ガイド](https://docs.microsoft.com/dotnet/csharp/programming-guide/)」は C# プログラミング言語の学習を始めるときに役立ちます。「[C# リファレンス](https://docs.microsoft.com/dotnet/csharp/language-reference/)」を使うと C# 言語の特定の機能を検索できます。
+MSDN の「[C# プログラミング ガイド](/dotnet/csharp/programming-guide/)」は C# プログラミング言語の学習を始めるときに役立ちます。「[C# リファレンス](/dotnet/csharp/language-reference/)」を使うと C# 言語の特定の機能を検索できます。
 
 Java の知識には、少なくとも Java 言語の知識と同程度の Java クラス ライブラリの知識が必要ですが、同様に C# の実用的な知識には、.NET Framework についての知識がある程度必要です。 Microsoft の「[Java 開発者のための、C# および .NET Framework への移行](https://www.microsoft.com/download/details.aspx?id=6073)」 学習パケットは、Java の観点から (C# についてより深く理解しながら) .NET Framework を詳しく学習するのによい方法です。
 
@@ -481,6 +481,6 @@ C# で最初の Xamarin.Android プロジェクトに取り組む準備ができ
 ## <a name="related-links"></a>関連リンク
 
 - [Java 統合の概要](~/android/platform/java-integration/index.md)
-- [C# プログラミング ガイド](https://docs.microsoft.com/dotnet/csharp/programming-guide/)
-- [C# リファレンス](https://docs.microsoft.com/dotnet/csharp/language-reference/index)
+- [C# プログラミング ガイド](/dotnet/csharp/programming-guide/)
+- [C# リファレンス](/dotnet/csharp/language-reference/index)
 - [Java 開発者のための、C# および .NET Framework への移行](https://www.microsoft.com/download/details.aspx?id=6073)

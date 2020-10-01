@@ -8,25 +8,25 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 871a94d06048f893cf06b00de46d66dd59b3703e
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 01980ab03119729d5405691f94d2509ca9b1beee
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73023217"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435685"
 ---
 # <a name="hello-ios-multiscreen"></a>Hello, iOS マルチスクリーン
 
-## <a name="part-1-quickstart"></a>[第 1 部: クイック スタート](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-quickstart.md)
+## <a name="part-1-quickstart"></a>[パート 1: クイック スタート](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-quickstart.md)
 
 このガイドの前半では、入力した番号の履歴を追跡し続けるために、Phoneword サンプル アプリケーションに 2 つ目の画面を追加します。
 
-## <a name="part-2-deep-dive"></a>[第 2 部: 詳しく調べる](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md)
+## <a name="part-2-deep-dive"></a>[パート 2: 深い分析](~/ios/get-started/hello-ios-multiscreen/hello-ios-multiscreen-deepdive.md)
 
 このドキュメントの後半では、ビルドした内容を説明し、アーキテクチャ、ナビゲーション、およびその過程で遭遇したその他の新しい iOS の概念について説明します。
 
 ## <a name="related-links"></a>関連リンク
 
-- [Hello, iOS (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)
+- [Hello, iOS (サンプル)](/samples/xamarin/ios-samples/hello-ios)
 - [iOS ヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
 - [iOS プロビジョニング ポータル](https://developer.apple.com/ios/manage/overview/index.action)

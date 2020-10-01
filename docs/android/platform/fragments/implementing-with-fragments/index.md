@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/26/2018
-ms.openlocfilehash: b601fc37cc75dcd43c3688de8d302f0a47a06b35
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: ab680020f62548eed4d1da0e4dbb13434a6d8ce7
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73027415"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91453949"
 ---
 # <a name="implementing-fragments---walkthrough"></a>フラグメントの実装 - チュートリアル
 
@@ -33,7 +33,7 @@ _フラグメントは自己完結型のモジュール コンポーネントで
 
 [![Android タブレットで実行されているアプリ](./images/intro-screenshot-tablet-sml.png)](./images/intro-screenshot-tablet.png#lightbox)
 
-フラグメントと[代替レイアウト](/xamarin/android/app-fundamentals/resources-in-android/alternate-resources)を使用することにより、このサンプル アプリケーションは、最小限のコード変更で、さまざまなフォーム ファクターや向きに簡単に適応できます。
+フラグメントと[代替レイアウト](../../../app-fundamentals/resources-in-android/alternate-resources.md)を使用することにより、このサンプル アプリケーションは、最小限のコード変更で、さまざまなフォーム ファクターや向きに簡単に適応できます。
 
 アプリケーションのデータは、C# の文字列配列としてアプリにハードコーディングされた 2 つの文字列配列に存在します。 各配列は、1 つのフラグメントに対するデータ ソースとして機能します。  1 つの配列にはシェイクスピアの芝居の名前がいくつか保持されており、もう 1 つの配列にはその芝居からの引用が保持されます。 アプリが起動すると、`ListFragment` に芝居の名前が表示されます。 ユーザーが `ListFragment` で芝居をクリックすると、別のアクティビティが開始されて、その引用が表示されます。
 
@@ -50,7 +50,7 @@ _フラグメントは自己完結型のモジュール コンポーネントで
 
 ## <a name="related-links"></a>関連リンク
 
-- [FragmentsWalkthrough (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/fragmentswalkthrough)
+- [FragmentsWalkthrough (サンプル)](/samples/xamarin/monodroid-samples/fragmentswalkthrough)
 - [デザイナーの概要](~/android/user-interface/android-designer/index.md)
 - [フラグメントの実装](https://developer.android.com/guide/topics/fundamentals/fragments.html)
 - [サポート パッケージ](https://developer.android.com/sdk/compatibility-library.html)

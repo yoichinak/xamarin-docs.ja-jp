@@ -9,12 +9,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: 2f8c6a80b00a4a91c40c70af05ac0ebe18daaed3
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: e07a7e6ea11cbf717db22dd46eaa5e28d907bafa
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571442"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454924"
 ---
 # <a name="hello-android-deep-dive"></a>Hello, Android:詳しく調べる
 
@@ -70,7 +70,7 @@ Visual Studio は、コードを_ソリューション_と_プロジェクト_�
 
 ## <a name="introduction-to-visual-studio-for-mac"></a>Visual Studio for Mac の概要
 
-Visual Studio for Mac は、Visual Studio と類似した無料のオープン ソース IDE です。 ビジュアル デザイナー、リファクタリング ツール付きのテキスト エディター、アセンブリ ブラウザー、ソース コード統合などの機能が完全に統合されています。 このガイドでは、基本的な Visual Studio for Mac 機能の使用方法について学習します。 Visual Studio for Mac を初めて使用する場合、[Visual Studio for Mac の概要](https://docs.microsoft.com/visualstudio/mac/)について詳しい情報を確認したい場合があります。
+Visual Studio for Mac は、Visual Studio と類似した無料のオープン ソース IDE です。 ビジュアル デザイナー、リファクタリング ツール付きのテキスト エディター、アセンブリ ブラウザー、ソース コード統合などの機能が完全に統合されています。 このガイドでは、基本的な Visual Studio for Mac 機能の使用方法について学習します。 Visual Studio for Mac を初めて使用する場合、[Visual Studio for Mac の概要](/visualstudio/mac/)について詳しい情報を確認したい場合があります。
 
 Visual Studio for Mac は、コードを_ソリューション_と_プロジェクト_に分けて整理するという Visual Studio の方法に従っています。 ソリューションとは、1 つまたは複数のプロジェクトを保持できるコンテナーです。 プロジェクトは、アプリケーション (iOS、Android など)、サポートするライブラリ、テスト アプリケーションなどの場合があります。 **Phoneword** アプリで、**Android アプリケーション** テンプレートを使用して、[Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md) ガイドで作成した **Phoneword** ソリューションに新しい Android プロジェクトを追加しました。
 

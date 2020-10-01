@@ -10,12 +10,12 @@ ms.date: 01/05/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ad36bd5efe09909753fed948a961a690feb0592a
-ms.sourcegitcommit: a003b036f6fb83818e2ecc9c72a641e3aeb373bd
+ms.openlocfilehash: 7edde81a926b142a5e792a203e96ee61b1fdfb7b
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88964663"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562705"
 ---
 # <a name="the-no-locxamarinforms-command-interface"></a>Xamarin.Forms コマンド インターフェイス
 
@@ -89,7 +89,7 @@ Windows と Xamarin.Forms の間で ViewModel を共有する必要がない場�
 
 ## <a name="basic-commanding"></a>基本的なコマンド実行
 
-[**Data Binding Demos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) プログラムの **Person Entry** ページでは、ViewModel に実装されたいくつかの簡単なコマンドのデモが行われます。
+[**Data Binding Demos**](/samples/xamarin/xamarin-forms-samples/databindingdemos) プログラムの **Person Entry** ページでは、ViewModel に実装されたいくつかの簡単なコマンドのデモが行われます。
 
 `PersonViewModel` では、人を定義する `Name`、`Age`、`Skills` という名前の 3 つのプロパティが定義されています。 このクラスには、`ICommand` プロパティは含まれて "*いません*"。
 
@@ -691,7 +691,7 @@ public class DecimalKeypadViewModel : INotifyPropertyChanged
 
 ## <a name="asynchronous-commanding-for-navigation-menus"></a>ナビゲーション メニューのための非同期コマンド実行
 
-コマンド実行は、[**Data Binding Demos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) プログラム自体のように、ナビゲーション メニューを実装する場合に便利です。 **MainPage.xaml** の一部を次に示します。
+コマンド実行は、[**Data Binding Demos**](/samples/xamarin/xamarin-forms-samples/databindingdemos) プログラム自体のように、ナビゲーション メニューを実装する場合に便利です。 **MainPage.xaml** の一部を次に示します。
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -765,5 +765,5 @@ public partial class MainPage : ContentPage
 
 ## <a name="related-links"></a>関連リンク
 
-- [データ バインディングのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+- [データ バインディングのデモ (サンプル)](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Xamarin.Forms ブックのデータ バインディングに関する章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter18.md)

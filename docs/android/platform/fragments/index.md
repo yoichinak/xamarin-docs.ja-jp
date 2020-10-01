@@ -1,20 +1,20 @@
 ---
-title: フラグメント
-description: Android 3.0 では、スマートフォンやタブレットで検出されるさまざまな画面サイズに対して、より柔軟なデザインをサポートする方法を示すフラグメントが導入されました。 この記事では、フラグメントを使用して Xamarin.Android アプリケーションを開発する方法について説明します。さらに、Android 3.0 (API レベル 11) より前のデバイスでフラグメントをサポートする方法も説明します。
+title: fragments
+description: Android 3.0 では、スマートフォンやタブレットで検出されるさまざまな画面サイズに対して、より柔軟なデザインをサポートする方法を示すフラグメントが導入されました。 この記事では、フラグメントを使用して Xamarin.Android アプリケーションを開発する方法について説明します。さらに、Android 3.0 (API レベル 11) の前のデバイスでフラグメントをサポートする方法も説明します。
 ms.prod: xamarin
 ms.assetid: 1AFB4242-A337-F8E0-83D9-B8D850D7F384
 ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/15/2018
-ms.openlocfilehash: 5d243429fe4f61768568a634b205055c1ad94297
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 960f64c05bcc474a7e197c06990840d5e9b88caf
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73020252"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91453845"
 ---
-# <a name="fragments"></a>フラグメント
+# <a name="fragments"></a>fragments
 
 "_Android 3.0 では、スマートフォンやタブレットで検出されたさまざまな画面サイズに対して、より柔軟なデザインをサポートする方法を示すフラグメントが導入されました。この記事では、フラグメントを使用して Xamarin.Android アプリケーションを開発する方法について説明します。さらに、Android 3.0 (API レベル 11) の前のデバイスでフラグメントをサポートする方法も説明します。_ "
 
@@ -60,6 +60,6 @@ Android サポート パッケージと Xamarin.Android 4.2 以降を使用す�
 
 ## <a name="related-links"></a>関連リンク
 
-- [Honeycomb ギャラリー (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/honeycombgallery)
+- [Honeycomb ギャラリー (サンプル)](/samples/xamarin/monodroid-samples/honeycombgallery)
 - [フラグメント](https://developer.android.com/guide/topics/fundamentals/fragments.html)
 - [サポート パッケージ](https://developer.android.com/sdk/compatibility-library.html)

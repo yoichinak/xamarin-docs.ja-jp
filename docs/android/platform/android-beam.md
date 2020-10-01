@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/06/2017
-ms.openlocfilehash: aab121ed5f811baf38eed48cf891ccdf076eaf44
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 8132be3e709e6cfe519934ce6c16ae16ac7054c6
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "76723813"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454222"
 ---
 # <a name="android-beam"></a>Android ビーム
 
@@ -72,10 +72,10 @@ IParcelable [] rawMsgs = intent.GetParcelableArrayExtra (NfcAdapter.ExtraNdefMes
 NdefMessage msg = (NdefMessage) rawMsgs [0];
 ```
 
-次のスクリーンショットで実行されている Android ビームを使用する完全なコード例については、サンプル ギャラリーの [Android ビーム デモ](https://docs.microsoft.com/samples/xamarin/monodroid-samples/androidbeamdemo) を参照してください。
+次のスクリーンショットで実行されている Android ビームを使用する完全なコード例については、サンプル ギャラリーの [Android ビーム デモ](/samples/xamarin/monodroid-samples/androidbeamdemo) を参照してください。
 
 [![Android ビーム デモのスクリーンショットの例](android-beam-images/24.png)](android-beam-images/24.png#lightbox)
 
 ## <a name="related-links"></a>関連リンク
 
-- [Android ビーム デモ (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/androidbeamdemo)
+- [Android ビーム デモ (サンプル)](/samples/xamarin/monodroid-samples/androidbeamdemo)

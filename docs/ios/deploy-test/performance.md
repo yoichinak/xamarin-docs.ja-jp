@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 01/29/2016
-ms.openlocfilehash: bfa8c2cdcdcd6305618c0cd8e9cb69bde59b4f0b
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 06d413b2bf07df38f78e93af027de2c7dc0badcc
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73030204"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436778"
 ---
 # <a name="xamarinios-performance"></a>Xamarin.iOS のパフォーマンス
 
@@ -109,7 +109,7 @@ container.AddSubview (new MyView (container));
 
 #### <a name="weak-attribute"></a>Weak 属性
 
-[Xamarin.iOS 11.10](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/xamarin.ios_11/xamarin.ios_11.10.md#WeakAttribute) では、`[Weak]` 属性が導入されました。 `WeakReference <T>` と同様に、`[Weak]` を利用して[強い循環参照](https://docs.microsoft.com/xamarin/ios/deploy-test/performance#avoid-strong-circular-references)を中断できますが、コードがさらに短くなります。
+[Xamarin.iOS 11.10](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/ios/xamarin.ios_11/xamarin.ios_11.10.md#WeakAttribute) では、`[Weak]` 属性が導入されました。 `WeakReference <T>` と同様に、`[Weak]` を利用して[強い循環参照](#avoid-strong-circular-references)を中断できますが、コードがさらに短くなります。
 
 次のコード例をご覧ください。`WeakReference <T>` を使用しています。
 
@@ -211,7 +211,7 @@ class MyChild : UIView
 ```
 
 強い参照の解放の詳細については、「[Release IDisposable Resources](~/cross-platform/deploy-test/memory-perf-best-practices.md#idisposable)」(IDisposable リソースの解放) を参照してください。
-また、ブログ記事「[Xamarin.iOS, the garbage collector and me (Xamarin.iOS とガベージ コレクターと私)](https://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me)」の説明もお勧めします。
+また、ブログの投稿「[Xamarin.iOS, the garbage collector and me](https://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me)」(Xamarin.iOS とガベージ コレクターと私) の説明もお勧めします。
 
 ### <a name="more-information"></a>詳細情報
 
@@ -219,7 +219,7 @@ class MyChild : UIView
 
 ## <a name="optimize-table-views"></a>テーブル ビューを最適化する
 
-ユーザーは、[`UITableView`](xref:UIKit.UITableView) インスタンスのスムーズなスクロールと読み込み時間の短縮を期待します。 ただし、セルに深い入れ子のビュー階層が含まれる場合、またはセルに複雑なレイアウトが含まれる場合、スクロールのパフォーマンスは低下する可能性があります。 ただし、`UITableView` のパフォーマンス低下を回避するために使用できる手法があります。
+ユーザーは、[`UITableView`](xref:UIKit.UITableView) インスタンスのスムーズなスクロールと読み込み時間の短縮を期待します。 ただし、セルに深い入れ子のビュー階層が含まれる場合、またはセルに複雑なレイアウトが含まれる場合、スクロールのパフォーマンスは低下する可能性があります。 ただし、`UITableView` のパフォーマンス低下を回避するために使用できる次のような手法があります。
 
 - セルを再利用する。 詳細については、「[Reuse Cells](#reuse-cells)」(セルの再利用) を参照してください。
 - サブビューの数を減らす。
@@ -276,7 +276,7 @@ class MyTableSource : UITableViewSource
 
 ## <a name="synchronize-animations-with-the-display-refresh"></a>アニメーションと表示の更新を同期する
 
-ゲームには、ゲーム ロジックを実行し、画面を更新する厳格なループが含まれる傾向があります。 一般的なフレーム レート範囲は 1 秒あたり 30 から 60 フレームです。 開発者によっては、1 秒あたりの画面の更新回数を可能な限り多くした方がよいと考え、ゲームのシミュレーションを画面の更新を組み合わせて、1 秒あたりのフレーム数を 60 超にしようとするかもしれません。
+ゲームには、ゲーム ロジックを実行し、画面を更新するループが詰まっている傾向があります。 一般的なフレーム レート範囲は 1 秒あたり 30 から 60 フレームです。 開発者によっては、1 秒あたりの画面の更新回数を可能な限り多くした方がよいと考え、ゲームのシミュレーションを画面の更新を組み合わせて、1 秒あたりのフレーム数を 60 超にしようとするかもしれません。
 
 一方、ディスプレイ サーバーは 1 秒あたり 60 下位の上限で画面の更新を実行します。 そのため、この上限よりも高速に画面を更新しようとすると、画面の停止や途切れが発生する可能性があります。 画面の更新がディスプレイの更新と同期するようにコードを作成することをお勧めします。 この同期には、[`CoreAnimation.CADisplayLink`](xref:CoreAnimation.CADisplayLink) クラスを使用できます。このクラスは、1 秒あたり 60 フレームで実行される視覚化やゲームに適したタイマーです。
 

@@ -8,14 +8,14 @@ ms.date: 03/26/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e86ebcd55f3a36da1ad5c7c13bb50e7fc9094010
-ms.sourcegitcommit: 898ba8e5140ae32a7df7e07c056aff65f6fe4260
+ms.openlocfilehash: c4437f05eddd6885f88fc57ddc108f4fc9f4376d
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86226808"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433527"
 ---
-# <a name="xamarinessentials-web-authenticator"></a>Xamarin.Essentials:Web Authenticator
+# <a name="no-locxamarinessentials-web-authenticator"></a>Xamarin.Essentials:Web Authenticator
 
 **WebAuthenticator** クラスを使用すると、アプリに登録されている特定の URL へのコールバックをリッスンする、ブラウザー ベースのフローを開始できます。
 
@@ -23,7 +23,7 @@ ms.locfileid: "86226808"
 
 多くのアプリにはユーザー認証を追加する必要があり、これは多くの場合、ユーザーが既存の Microsoft、Facebook、Google、および Apple サインイン アカウントにサインインできるようにすることを意味します。
 
-[Microsoft Authentication Library (MSAL)](https://docs.microsoft.com/azure/active-directory/develop/msal-overview) には、アプリに認証を追加するための優れたターンキー ソリューションが用意されています。 クライアントの NuGet パッケージでは、Xamarin アプリもサポートされています。
+[Microsoft Authentication Library (MSAL)](/azure/active-directory/develop/msal-overview) には、アプリに認証を追加するための優れたターンキー ソリューションが用意されています。 クライアントの NuGet パッケージでは、Xamarin アプリもサポートされています。
 
 認証用に独自の Web サービスを使用する場合は、**WebAuthenticator** を使用してクライアント側の機能を実装することが可能です。
 
@@ -153,7 +153,7 @@ UWP では、サポートされている場合は `WebAuthenticationBroker` が�
 
 [Apple のレビュー ガイドライン](https://developer.apple.com/app-store/review/guidelines/#sign-in-with-apple)に従い、自分のアプリで認証のためにソーシャル ログイン サービスを使用する場合は、オプションとして Apple サインインも提供する必要があります。
 
-アプリに Apple サインインを追加するには、まず [Apple サインインを使用するようにアプリを構成する](https://docs.microsoft.com/xamarin/ios/platform/ios13/sign-in)必要があります。
+アプリに Apple サインインを追加するには、まず [Apple サインインを使用するようにアプリを構成する](../ios/platform/ios13/sign-in.md)必要があります。
 
 iOS 13 以降では、`AppleSignInAuthenticator.AuthenticateAsync()` メソッドを呼び出すことをお勧めします。 これは内部でネイティブの Apple サインイン API が使用されるため、ユーザーは各自のデバイス上で最良のエクスペリエンスを得ることができます。 次のように、実行時に適切な API を使用するように共有コードを記述できます。
 
@@ -190,7 +190,7 @@ var accessToken = r?.AccessToken;
 
 任意の Web バックエンド サービスと共に `WebAuthenticator` API を使用することができます。  ASP.NET Core アプリと共に使用するには、まず、次の手順で Web アプリを構成する必要があります。
 
-1. ASP.NET Core Web アプリで、必要な[外部ソーシャル認証プロバイダー](https://docs.microsoft.com/aspnet/core/security/authentication/social/?view=aspnetcore-3.1&tabs=visual-studio)をセットアップします。
+1. ASP.NET Core Web アプリで、必要な[外部ソーシャル認証プロバイダー](/aspnet/core/security/authentication/social/?tabs=visual-studio&view=aspnetcore-3.1)をセットアップします。
 2. `.AddAuthentication()` の呼び出しで、既定の認証スキームを `CookieAuthenticationDefaults.AuthenticationScheme` に設定します。
 3. Startup.cs の `.AddAuthentication()` の呼び出しで `.AddCookie()` を使用します。
 4. すべてのプロバイダーは `.SaveTokens = true;` を指定して構成する必要があります。

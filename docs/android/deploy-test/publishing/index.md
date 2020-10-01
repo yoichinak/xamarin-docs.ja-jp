@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 3062afda82be2b45146687b9d77210a42f8f55fa
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 0b44cbf754e8d1be66b0f3bf09badb78852978eb
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75487959"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454638"
 ---
 # <a name="publishing-an-application"></a>アプリケーションの発行
 
@@ -33,7 +33,7 @@ Xamarin.Android アプリケーション開発の最終手順は、アプリケ�
 
 - **Web サイトから** &ndash; Xamarin.Android アプリケーションは、Web サイトでダウンロード可能にすることができます。ここから、ユーザーはリンクをクリックしてアプリケーションをインストールできます。
 - **電子メールで** &ndash; ユーザーは、各自の電子メールから Xamarin.Android アプリケーションをインストールできます。 Android 搭載デバイスで添付ファイルを開くと、アプリケーションがインストールされます。
-- **マーケットから** &ndash; [Google Play](https://play.google.com/) や [Amazon App Store for Android](https://www.amazon.com/mobile-apps/b?ie=UTF8&node=2350149011) など、配布用に利用できるアプリケーション マーケットプレースがいくつかあります。
+- **マーケットから** &ndash;[Google Play](https://play.google.com/) や [Amazon App Store for Android](https://www.amazon.com/mobile-apps/b?ie=UTF8&node=2350149011) など、配布用に利用できるアプリケーション マーケットプレースがいくつかあります。
 
 人気のマーケットプレイスをアプリケーション公開に使うことが一般的です。市場が広く、配布管理が行き届いています。 ただし、マーケットプレイスでアプリケーションを公開する場合、さらに一手間かかります。
 
@@ -52,11 +52,11 @@ Amazon のモバイル アプリ配信プログラムでは、モバイル ア�
 
 ## <a name="related-links"></a>関連リンク
 
-- [HelloWorldPublishing (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/helloworldpublishing)
+- [HelloWorldPublishing (サンプル)](/samples/xamarin/monodroid-samples/helloworldpublishing)
 - [ビルド プロセス](~/android/deploy-test/building-apps/build-process.md)
 - [リンク](~/android/deploy-test/linker.md)
 - [Google マップ API キーを取得する](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)
-- [Visual Studio App Center を使用した展開](https://docs.microsoft.com/appcenter/distribution/stores/googleplay)
+- [Visual Studio App Center を使用した展開](/appcenter/distribution/stores/googleplay)
 - [アプリケーション署名](https://source.android.com/security/apksigning/)
 - [Google Play で公開する](https://developer.android.com/distribute/googleplay/publish/index.html)
 - [Google アプリケーション ライセンス](https://developer.android.com/guide/google/play/licensing/index.html)

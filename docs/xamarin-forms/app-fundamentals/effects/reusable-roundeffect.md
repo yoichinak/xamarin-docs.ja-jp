@@ -10,14 +10,14 @@ ms.date: 10/25/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fc3776934a4c109b2527132b11c6c6a93b7d9f9e
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 47b459945aec4ef8f1c3fa9729efd82461aec0e0
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138854"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561964"
 ---
-# <a name="xamarinforms-reusable-roundeffect"></a>Xamarin.Forms の再利用可能な RoundEffect
+# <a name="no-locxamarinforms-reusable-roundeffect"></a>Xamarin.Forms の再利用可能な RoundEffect
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-roundeffect/)
 
@@ -224,6 +224,6 @@ image.Effects.Add(new RoundEffect());
 
 ## <a name="related-links"></a>関連リンク
 
-- [RoundEffect サンプル アプリケーション](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-roundeffect/)
+- [RoundEffect サンプル アプリケーション](/samples/xamarin/xamarin-forms-samples/effects-roundeffect/)
 - [エフェクトの概要](~/xamarin-forms/app-fundamentals/effects/introduction.md)
 - [エフェクトの作成](~/xamarin-forms/app-fundamentals/effects/creating.md)

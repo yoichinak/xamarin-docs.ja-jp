@@ -7,19 +7,19 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 6fa1357adc9cf2f545fbcdf3a30fef70280593bb
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 2458abc3363d847623a27a73626266dabe6a7a5c
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86938022"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91437241"
 ---
 # <a name="walkthrough---using-apples-instruments-tool"></a>チュートリアル - Apple の Instruments ツールの使用
 
 _この記事では、Apple の Instruments ツールを使用して、Xamarin でビルドされた iOS アプリケーションのメモリ問題を診断する方法について説明します。Instruments を起動し、ヒープ スナップショットを取得してメモリの増加を分析する方法を示します。また、Instruments を使用して、メモリの問題を引き起こしている正確なコード行を表示および特定する方法も示します。_
 
 このページでは、**Xcode の Instruments ツール**を使用して iOS アプリケーションのメモリ問題を診断する方法を示します。
-最初に、[MemoryDemo サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/profiling-memorydemo)をダウンロードし、Visual Studio for Mac で **before** ソリューションを開きます。
+最初に、[MemoryDemo サンプル](/samples/xamarin/ios-samples/profiling-memorydemo)をダウンロードし、Visual Studio for Mac で **before** ソリューションを開きます。
 
 ## <a name="diagnosing-the-memory-issues"></a>メモリ問題を診断する
 
@@ -85,7 +85,7 @@ public override UICollectionViewCell GetCell (UICollectionView collectionView, N
 
 ![アプリのメモリ使用量を表示する](walkthrough-apples-instrument-images/06-reduced-memory.png)
 
-改善されたコードは、Visual Studio for Mac の **after** ソリューションの [MemoryDemo サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/profiling-memorydemo)で入手できます。
+改善されたコードは、Visual Studio for Mac の **after** ソリューションの [MemoryDemo サンプル](/samples/xamarin/ios-samples/profiling-memorydemo)で入手できます。
 
 [Xamarin.iOS ガベージ コレクション](https://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me/)に関するこのコミュニティ ブログは、Xamarin.iOS のメモリ問題に対処するためのリファレンスとして役立ちます。
 
@@ -97,5 +97,5 @@ Visual Studio for Mac 内から Instruments を起動して、メモリ割り当
 
 ## <a name="related-links"></a>関連リンク
 
-- [MemoryDemo サンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/profiling-memorydemo)
+- [MemoryDemo サンプル](/samples/xamarin/ios-samples/profiling-memorydemo)
 - [Xamarin.iOS ガベージ コレクション (ブログ記事)](https://c-sharx.net/2015-04-27-xamarin-ios-the-garbage-collector-and-me/)

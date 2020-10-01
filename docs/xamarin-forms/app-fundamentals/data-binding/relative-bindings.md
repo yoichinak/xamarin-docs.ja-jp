@@ -1,6 +1,6 @@
 ---
-title: 'title: "Xamarin.Forms の相対的なバインディング" の説明:"この記事では、RelativeSource マークアップ拡張機能を使用して、バインディング ターゲットに対して相対的な位置にバインディング ソースを設定することにより、相対バインドを作成する方法について説明します。"'
-description: 'ms.prod: xamarin ms.assetid:CC64BB1D-8303-46B1-94B6-4EF2F20317A8 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:12/04/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms の相対的なバインディング
+description: この記事では、RelativeSource マークアップ拡張機能を使用して、バインディング ソースをバインディング ターゲットの位置に対して設定することにより、相対バインドを作成する方法について説明します。
 ms.prod: xamarin
 ms.assetid: CC64BB1D-8303-46B1-94B6-4EF2F20317A8
 ms.technology: xamarin-forms
@@ -10,14 +10,14 @@ ms.date: 12/04/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8d4e2696e6027f07b7b8e638cd1e0f1d65a5503d
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: 24fa816519b05b46c38015fa602a4e70fbc07d16
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84139712"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91560391"
 ---
-# <a name="xamarinforms-relative-bindings"></a>Xamarin.Forms の相対的なバインディング
+# <a name="no-locxamarinforms-relative-bindings"></a>Xamarin.Forms の相対的なバインディング
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
@@ -186,6 +186,6 @@ Xamarin.Forms マークアップ拡張機能の詳細については、「[XAML 
 
 ## <a name="related-links"></a>関連リンク
 
-- [データ バインディングのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+- [データ バインディングのデモ (サンプル)](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [XAML マークアップ拡張](~/xamarin-forms/xaml/markup-extensions/index.md)
 - [Xamarin.Forms のコントロール テンプレート](~/xamarin-forms/app-fundamentals/templates/control-template.md)

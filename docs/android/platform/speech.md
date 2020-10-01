@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/02/2018
-ms.openlocfilehash: e8c7d1a4fb3537644ed3b7737158a5e50abcdae5
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: ce94179fe0ae7f3df1f2fa5ead20ec09fd6f8f5e
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73019764"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457914"
 ---
 # <a name="android-speech"></a>Android Speech
 
@@ -231,8 +231,8 @@ void TextToSpeech.IOnInitListener.OnInit(OperationResult status)
 
 ## <a name="related-links"></a>関連リンク
 
-- [Xamarin.Forms の DependencyService](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice//)
-- [テキスト読み上げ (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-texttospeech)
-- [音声テキスト変換 (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/platformfeatures-speechtotext)
+- [Xamarin.Forms の DependencyService](/samples/xamarin/xamarin-forms-samples/dependencyservice//)
+- [テキスト読み上げ (サンプル)](/samples/xamarin/monodroid-samples/platformfeatures-texttospeech)
+- [音声テキスト変換 (サンプル)](/samples/xamarin/monodroid-samples/platformfeatures-speechtotext)
 - [Android.Speech 名前空間](xref:Android.Speech)
 - [Android.Speech.Tts 名前空間](xref:Android.Speech.Tts)

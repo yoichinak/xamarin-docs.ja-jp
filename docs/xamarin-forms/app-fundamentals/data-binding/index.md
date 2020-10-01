@@ -10,14 +10,14 @@ ms.date: 05/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9abbe60865cbf5fb9082b5f4882c27fe095b36ac
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 88b2bd5a0fe6720a4e14e6327715690bfd74a185
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84946456"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556803"
 ---
-# <a name="xamarinforms-data-binding"></a>Xamarin.Forms のデータ バインディング
+# <a name="no-locxamarinforms-data-binding"></a>Xamarin.Forms のデータ バインディング
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
@@ -38,7 +38,7 @@ Xamarin.Forms アプリケーションは 1 つ以上のページで構成され
 - 通常は同じページ上にある、`View` の別の派生クラス。
 - コード ファイル内のオブジェクト。
 
-[**DataBindingDemos**](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos) サンプルにあるようなデモ プログラムでは、`View` の 2 つの派生クラス間のデータ バインディングは、多くの場合、わかりやすさと簡潔さのために示されます。 ただし、`View` と別のオブジェクト間のデータ バインディングにも、同じ原則を適用できます。 アプリケーションが Model-View-ViewModel (MVVM) アーキテクチャを使って構築されている場合、基になるデータを使うクラスは多くの場合 viewmodel と呼ばれます。
+[**DataBindingDemos**](/samples/xamarin/xamarin-forms-samples/databindingdemos) サンプルにあるようなデモ プログラムでは、`View` の 2 つの派生クラス間のデータ バインディングは、多くの場合、わかりやすさと簡潔さのために示されます。 ただし、`View` と別のオブジェクト間のデータ バインディングにも、同じ原則を適用できます。 アプリケーションが Model-View-ViewModel (MVVM) アーキテクチャを使って構築されている場合、基になるデータを使うクラスは多くの場合 viewmodel と呼ばれます。
 
 データ バインディングついては、次の一連の記事で説明されています。
 
@@ -84,6 +84,6 @@ Xamarin.Forms アプリケーションは 1 つ以上のページで構成され
 
 ## <a name="related-links"></a>関連リンク
 
-- [データ バインディングのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+- [データ バインディングのデモ (サンプル)](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Xamarin.Forms ブックのデータ バインディングに関する章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
 - [XAML マークアップ拡張](~/xamarin-forms/xaml/markup-extensions/index.md)

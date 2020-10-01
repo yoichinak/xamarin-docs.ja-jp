@@ -9,12 +9,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: b937cc653275f509b7f759af5c3d995e84381cb2
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 94bb87e10b8cab2a9a37c7701b59d621f6329b8d
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997346"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436182"
 ---
 # <a name="hello-ios-multiscreen--quickstart"></a>Hello, iOS マルチスクリーン – クイック スタート
 
@@ -26,7 +26,7 @@ ms.locfileid: "86997346"
 
 ## <a name="requirements"></a>必要条件
 
-このガイドは、「Hello, iOS」ドキュメントを中断した箇所から再開するため、「[Hello, iOS クイック スタート](~/ios/get-started/hello-ios/index.md)」を完了する必要があります。 Phoneword アプリの完成版は、[Hello, iOS のサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios) ページからダウンロードしてください。
+このガイドは、「Hello, iOS」ドキュメントを中断した箇所から再開するため、「[Hello, iOS クイック スタート](~/ios/get-started/hello-ios/index.md)」を完了する必要があります。 Phoneword アプリの完成版は、[Hello, iOS のサンプル](/samples/xamarin/ios-samples/hello-ios) ページからダウンロードしてください。
 
 ::: zone pivot="macos"
 
@@ -34,7 +34,7 @@ ms.locfileid: "86997346"
 
 このチュートリアルでは、**Phoneword** アプリケーションに通話履歴画面を追加します。
 
-1. Visual Studio for Mac で **Phoneword** アプリケーションを開きます。 必要に応じて、[Hello, iOS チュートリアル](~/ios/get-started/hello-ios/index.md) ガイドで完成した Phoneword アプリケーションを[ここ](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)からダウンロードすることができます。
+1. Visual Studio for Mac で **Phoneword** アプリケーションを開きます。 必要に応じて、[Hello, iOS チュートリアル](~/ios/get-started/hello-ios/index.md) ガイドで完成した Phoneword アプリケーションを[ここ](/samples/xamarin/ios-samples/hello-ios)からダウンロードすることができます。
 
 2. **Solution Pad** から **Main.storyboard** ファイルを開きます。
 
@@ -275,7 +275,7 @@ ms.locfileid: "86997346"
 
 このチュートリアルでは、**Phoneword** アプリケーションに通話履歴画面を追加します。
 
-1. Visual Studio で **Phoneword** アプリケーションを開きます。 必要に応じて、[Hello, iOS チュートリアル](~/ios/get-started/hello-ios/index.md) ガイドから[完成した Phoneword アプリケーション](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)をダウンロードします。 iOS Designer、および iOS シミュレーターを使用するには [Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) に接続する必要があることを思い出してください。
+1. Visual Studio で **Phoneword** アプリケーションを開きます。 必要に応じて、[Hello, iOS チュートリアル](~/ios/get-started/hello-ios/index.md) ガイドから[完成した Phoneword アプリケーション](/samples/xamarin/ios-samples/hello-ios)をダウンロードします。 iOS Designer、および iOS シミュレーターを使用するには [Mac](~/ios/get-started/installation/windows/connecting-to-mac/index.md) に接続する必要があることを思い出してください。
 
 2. ユーザー インターフェイスの編集を開始します。 **[表示方法]** が _iPhone 6_ に設定されていることを確認して、**ソリューション エクスプローラー**から **Main.storyboard** ファイルを開きます。
 
@@ -517,6 +517,6 @@ ms.locfileid: "86997346"
 
 ## <a name="related-links"></a>関連リンク
 
-- [Hello, iOS (サンプル)](https://docs.microsoft.com/samples/xamarin/ios-samples/hello-ios)
+- [Hello, iOS (サンプル)](/samples/xamarin/ios-samples/hello-ios)
 - [iOS ヒューマン インターフェイス ガイドライン](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html)
 - [iOS プロビジョニング ポータル](https://developer.apple.com/ios/manage/overview/index.action)

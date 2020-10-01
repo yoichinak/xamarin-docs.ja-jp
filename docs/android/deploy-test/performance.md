@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/16/2018
-ms.openlocfilehash: 63365ebc12089ced7de621b3a510996fa66119ce
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: e49c6d92d4c6bcabf45047321e183fe36d19096b
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571962"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454716"
 ---
 # <a name="xamarinandroid-performance"></a>Xamarin.Android のパフォーマンス
 
@@ -232,7 +232,7 @@ App.Current.Service1.Updated -= service1UpdateHandler;
 
 ## <a name="dispose-of-unused-image-resources"></a>未使用のイメージ リソースの破棄
 
-メモリの使用量を節約するには、不要になったサイズの大きいイメージ リソースは破棄することをお勧めします。 ただし、正しくイメージを破棄することが重要です。 明示的な `.Dispose()` 呼び出しを使用せず、[using](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/using-statement) ステートメントを使用すると、`IDisposable` オブジェクトを正しく使用できます。 
+メモリの使用量を節約するには、不要になったサイズの大きいイメージ リソースは破棄することをお勧めします。 ただし、正しくイメージを破棄することが重要です。 明示的な `.Dispose()` 呼び出しを使用せず、[using](/dotnet/csharp/language-reference/keywords/using-statement) ステートメントを使用すると、`IDisposable` オブジェクトを正しく使用できます。 
 
 たとえば、[Bitmap](xref:Android.Graphics.Bitmap) クラスは `IDisposable` を実装します。 `using` ブロックに `BitMap` オブジェクトのインスタンスをラップすると、このブロックを終了するときに、それが正しく破棄されることが保証されます。
 

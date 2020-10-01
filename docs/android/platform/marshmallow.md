@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 03/01/2018
-ms.openlocfilehash: fb1ba92be9527d490b3d34bd4c0e454b0a750837
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 52c44efa335d81004ce2e3dbf0d9160640118bea
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73019984"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91453546"
 ---
 # <a name="marshmallow-features"></a>Marshmallow の機能
 
@@ -131,7 +131,7 @@ Android Marshmallow で導入された変更の多くは、Android ユーザー 
 Android のアクセス許可システムは、Android Lollipop 以降、大幅に最適化され、簡素化されています。 Android Marshmallow では、ユーザーはインストール時ではなく実行時に個別にアクセス許可を付与します。 Android Marshmallow 以降でこの機能をサポートするには、実行時に (アクセス許可が必要な場所のコンテキストで) ユーザーにアクセス許可を求めるようにアプリを設計します。 この変更により、アプリのインストールとアップグレードのプロセスが合理化されるため、ユーザーはすぐにアプリを使い始めることができます。 
 
 Xamarin.Android アプリで実行時アクセス許可を実装する方法の詳細 (コード例を含む) については、[Android Marshmallow での実行時アクセス許可の要求](https://blog.xamarin.com/requesting-runtime-permissions-in-android-marshmallow/)に関するページを参照してください。
-Xamarin には、Android Marshmallow (およびそれ以降) で実行時アクセス許可がどのように機能するかを示すサンプル アプリ [RuntimePermissions](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-runtimepermissions) も用意されています。
+Xamarin には、Android Marshmallow (およびそれ以降) で実行時アクセス許可がどのように機能するかを示すサンプル アプリ [RuntimePermissions](/samples/xamarin/monodroid-samples/android-m-runtimepermissions) も用意されています。
 
 このサンプル アプリでは、次のことを示します。
 
@@ -160,7 +160,7 @@ Android Marshmallow には、パスワードの必要性をなくすために役
 指紋スキャン ハードウェアをサポートするデバイスでは、新しい `FingerPrintManager` クラスを使用してユーザーを認証できます。
 Android Marshmallow の指紋認証機能の詳細については、[指紋認証](https://developer.android.com/preview/api-overview.html#fingerprint-authentication)に関するページを参照してください。
 
-Xamarin には、登録された指紋を使用してアプリ内のユーザーを認証する方法を示すサンプル アプリ [FingerprintDialog](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-fingerprintdialog) が用意されています。
+Xamarin には、登録された指紋を使用してアプリ内のユーザーを認証する方法を示すサンプル アプリ [FingerprintDialog](/samples/xamarin/monodroid-samples/android-m-fingerprintdialog) が用意されています。
 
 このサンプル アプリを使用するには:
 
@@ -182,7 +182,7 @@ Xamarin.Android アプリで Voice Interaction API を使用する方法を示�
 Android Marshmallow の新しい "*資格情報の確認*" 機能を使用すると、デバイスのロックが解除された期間に基づいて認証することにより、ユーザーがアプリ固有のパスワードを記憶して入力する必要がなくなります。
 これを行うには、`KeyGenerator` の新しい `SetUserAuthenticationValidityDurationSeconds` メソッドを使用します。 `KeyGuardManager` の `CreateConfirmDeviceCredentialIntent` メソッドを使用して、アプリ内からユーザーを再認証します。 Android Marshmallow のこの新機能の詳細については、[資格情報の確認](https://developer.android.com/preview/api-overview.html#confirm-credential)に関するページを参照してください。
 
-Xamarin には、アプリでデバイスの資格情報 (PIN、パターン、パスワードなど) を使用する方法を示すサンプル アプリ [ConfirmCredential](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-confirmcredential) が用意されています
+Xamarin には、アプリでデバイスの資格情報 (PIN、パターン、パスワードなど) を使用する方法を示すサンプル アプリ [ConfirmCredential](/samples/xamarin/monodroid-samples/android-m-confirmcredential) が用意されています
 
 このサンプル アプリを使用するには:
 
@@ -208,7 +208,7 @@ Xamarin.Android アプリでこの機能を使用するには、[Android Support
 
 ### <a name="material-design-support-library"></a>マテリアル デザイン サポート ライブラリ
 
-Android Lollipop では、Android のエクスペリエンスを更新する新しいデザイン言語として "[マテリアル デザイン](https://www.google.com/design/spec/material-design/introduction.html)" を導入しました (Xamarin.Android アプリでのマテリアル デザインの使用については、「[マテリアル テーマ](~/android/user-interface/material-theme.md)」を参照してください)。 Google は、Android Marshmallow で "*Android デザイン サポート ライブラリ*" を導入し、アプリ開発者がマテリアル デザインの外観を採用しやすくなりました。 このライブラリには、次のコンポーネントが含まれています。
+Android Lollipop では、Android のエクスペリエンスを更新する新しいデザイン言語として "[マテリアル デザイン](https://www.google.com/design/spec/material-design/introduction.html)" を導入しました (Xamarin.Android アプリでのマテリアル デザインの使用については、「[素材のテーマ](~/android/user-interface/material-theme.md)」を参照してください)。 Google は、Android Marshmallow で "*Android デザイン サポート ライブラリ*" を導入し、アプリ開発者がマテリアル デザインの外観を採用しやすくなりました。 このライブラリには、次のコンポーネントが含まれています。
 
 - **CoordinatorLayout** &ndash; 新しい `CoordinatorLayout` ウィジェットは `FrameLayout` に似ていますが、より強力です。 `CoordinatorLayout` を子ビューのコンテナーまたは最上位のレイアウトとして使用できます。また、他のビューとの相対位置にビューを固定するために使用できる `layout_anchor` 属性が用意されています。
 
@@ -227,7 +227,7 @@ Android Lollipop では、Android のエクスペリエンスを更新する新�
 Xamarin.Android アプリで[デザイン サポート ライブラリ](https://developer.android.com/tools/support-library/features.html#design)を活用するには、Xamarin [Xamarin Support Library Design](https://www.nuget.org/packages/Xamarin.Android.Support.Design/) NuGet パッケージをダウンロードしてインストールします。
 
 Xamarin.Android アプリでのマテリアル デザイン サポート ライブラリ の使用の詳細 (コード例を含む) については、[Android サポート デザイン ライブラリを使用した美しいマテリアル デザイン](https://blog.xamarin.com/add-beautiful-material-design-with-the-android-support-design-library/)に関するページを参照してください。
-Xamarin には、Xamarin.Android &ndash; [Cheesesquare](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android50-cheesesquare) 上の新しい Android デザイン ライブラリの使用例を示すサンプル アプリが用意されています。
+Xamarin には、Xamarin.Android &ndash; [Cheesesquare](/samples/xamarin/monodroid-samples/android50-cheesesquare) 上の新しい Android デザイン ライブラリの使用例を示すサンプル アプリが用意されています。
 このサンプルは、デザイン ライブラリの次の機能の使用例を示しています。
 
 - 折りたたみツールバー
@@ -258,6 +258,6 @@ Android Marshmallow に加えて、Google はいくつかのコア Android ラ�
 - [Android SDK を入手する](https://developer.android.com/sdk/index.html#Other)
 - [機能の概要](https://developer.android.com/preview/api-overview.html)
 - [リリース ノート](https://github.com/xamarin/release-notes-archive/blob/master/release-notes/android/xamarin.android_5/xamarin.android_5.1.99/index.md)
-- [RuntimePermissions (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-runtimepermissions)
-- [ConfirmCredential (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-confirmcredential)
-- [FingerprintDialog (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-m-fingerprintdialog)
+- [RuntimePermissions (サンプル)](/samples/xamarin/monodroid-samples/android-m-runtimepermissions)
+- [ConfirmCredential (サンプル)](/samples/xamarin/monodroid-samples/android-m-confirmcredential)
+- [FingerprintDialog (サンプル)](/samples/xamarin/monodroid-samples/android-m-fingerprintdialog)

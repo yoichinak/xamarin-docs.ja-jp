@@ -10,12 +10,12 @@ ms.date: 07/19/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: de85e9108244230e9c0a740b1aa9140ecf92a033
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: af6da36e242ae2d967d795b61d65a38e5e43e22b
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997398"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557284"
 ---
 # <a name="creating-mobile-apps-with-no-locxamarinforms-book"></a>書籍『Creating Mobile Apps with Xamarin.Forms』
 
@@ -88,7 +88,7 @@ PDF ファイルとして[章ごとにダウンロードする](#download-chapte
 
 ## <a name="ways-in-which-the-book-is-outdated"></a>本の内容が古くなっている箇所
 
-『*Creating Mobile Apps with Xamarin.FormsXamarin.Forms* 』の発行以降、Xamarin.Forms にはいくつかの新機能が追加されています。 これらの新機能については、[Xamarin.Forms](/xamarin/) のドキュメントの個々の記事で説明されています。
+『*Creating Mobile Apps with Xamarin.FormsXamarin.Forms* 』の発行以降、Xamarin.Forms にはいくつかの新機能が追加されています。 これらの新機能については、[Xamarin.Forms](../../index.yml) のドキュメントの個々の記事で説明されています。
 
 その他の変更点は、本の一部の内容が古くなったためです。
 
@@ -131,5 +131,5 @@ Xamarin.Forms には、[Mac](~/xamarin-forms/platform/other/mac.md)、[WPF](~/xa
 
 ## <a name="related-links"></a>関連リンク
 
-- [MS Press のブログ](https://blogs.msdn.microsoft.com/microsoft_press/2016/03/31/free-ebook-creating-mobile-apps-with-xamarin-forms/)
+- [MS Press のブログ](/archive/blogs/microsoft_press/free-ebook-creating-mobile-apps-with-xamarin-forms)
 - [書籍のサンプル コード](https://github.com/xamarin/xamarin-forms-book-samples)

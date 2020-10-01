@@ -7,12 +7,12 @@ ms.custom: xamu-video
 author: davidortinau
 ms.author: daortin
 ms.date: 04/10/2017
-ms.openlocfilehash: bc7a5217f3260eb36e45a683b5520347c22641b0
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: da3148022f1280a18fd398e7c960c1a8440c0200
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73016386"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91456809"
 ---
 # <a name="building-mobile-apps"></a>モバイル アプリの構築
 
@@ -44,7 +44,7 @@ Xamarin のしくみや、モバイル アプリの開発プロジェクトに�
 
 Xamarin を選択し、モバイル アプリケーションを設計および開発する際にいくつかの事柄を念頭に置くことで、各モバイル プラットフォーム間で大規模なコード共有を実現し、市場に出すまでの時間を短縮し、既存の能力を活用し、モバイル アクセスに関する顧客の要望に応え、クロスプラットフォームの複雑性を緩和することができます。 このドキュメントでは、ユーティリティや生産性アプリケーションでこのような利点を実現するためにカギとなる指針について説明します。
 
-### <a name="introducing-visual-studio-for-mac"></a>[Visual Studio for Mac の概要](https://docs.microsoft.com/visualstudio/mac/)
+### <a name="introducing-visual-studio-for-mac"></a>[Visual Studio for Mac の概要](/visualstudio/mac/)
 
 Visual Studio for Mac (macOS 用の統合開発環境 (IDE)) について説明します。
 

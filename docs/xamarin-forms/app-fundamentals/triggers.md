@@ -10,12 +10,12 @@ ms.date: 04/17/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fa907babc8dae0f466fd870f55b0e5be23114498
-ms.sourcegitcommit: 37ad3c1ef8faa5bfeeb305fde06e7b4654a643e1
+ms.openlocfilehash: 29fb1300e62d15130e999f6816e2afefcd3fba3b
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87795995"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562601"
 ---
 # <a name="no-locxamarinforms-triggers"></a>Xamarin.Forms のトリガー
 
@@ -623,6 +623,6 @@ Unchecked state active: True
 
 ## <a name="related-links"></a>関連リンク
 
-- [トリガーのサンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
+- [トリガーのサンプル](/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
 - [Xamarin.Forms Visual State Manager](~/xamarin-forms/user-interface/visual-state-manager.md)
 - [Xamarin.Forms トリガー API](xref:Xamarin.Forms.TriggerAction`1)

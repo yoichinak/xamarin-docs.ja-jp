@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 05/22/2018
-ms.openlocfilehash: 0fc74ae2307ffd14f8c52515c93993a51455997a
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 37bfed9a2b49be2d04f58dab70d3185418f0f67d
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "80805953"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457472"
 ---
 # <a name="location-services-on-android"></a>Android での位置情報サービス
 
@@ -351,8 +351,8 @@ else
 
 ## <a name="related-links"></a>関連リンク
 
-- [場所 (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/location)
-- [FusedLocationProvider (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/fusedlocationprovider)
+- [場所 (サンプル)](/samples/xamarin/monodroid-samples/location)
+- [FusedLocationProvider (サンプル)](/samples/xamarin/monodroid-samples/fusedlocationprovider)
 - [Google Play 開発者サービス](https://developer.android.com/google/play-services/index.html)
 - [Criteria クラス](xref:Android.Locations.Criteria)
 - [LocationManager クラス](xref:Android.Locations.LocationManager)

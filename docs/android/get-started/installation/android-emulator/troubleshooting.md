@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/27/2018
-ms.openlocfilehash: ff68666d9f0385b159b9ac9908ff997f53715308
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 34416145fcf66f28d80a35a7d4dbc9b2fc2c6351
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84571936"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454482"
 ---
 # <a name="android-emulator-troubleshooting"></a>Android Emulator のトラブルシューティング
 
@@ -195,7 +195,7 @@ Enable-WindowsOptionalFeature -Online -FeatureName HypervisorPlatform -All
 
 これらのコマンドが完了したら、再起動します。 
 
-Hyper-V を有効化する (Deployment Image Servicing and Management ツールを使用して Hyper-V を有効化する手法を含む) 詳細については、[Hyper-V のインストール](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v)に関するページを参照してください。
+Hyper-V を有効化する (Deployment Image Servicing and Management ツールを使用して Hyper-V を有効化する手法を含む) 詳細については、[Hyper-V のインストール](/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v)に関するページを参照してください。
 
 ### <a name="haxm-issues"></a>HAXM の問題
 

@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/03/2018
-ms.openlocfilehash: fbd9fff6e7b63e86f0bba38f22025c5ea288f7c2
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 96c9e750238bce35d5c8c12dd2ceba6be7ab8fcc
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73027986"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454820"
 ---
 # <a name="profiling-android-apps"></a>Android アプリのプロファイリング
 
@@ -37,7 +37,7 @@ Android Studio 3.0 以降には、Android Profiler ツールが含まれてい�
 
 ### <a name="launching-a-xamarin-android-app-in-android-profiler"></a>Android Profiler での Xamarin Android アプリの起動
 
-次の手順では、Android Studio の Android Profiler ツールで Xamarin Android アプリケーションを起動する方法について説明します。 次のスクリーン ショットの例では、Xamarin Forms の [XamagonXuzzle](https://docs.microsoft.com/samples/xamarin/mobile-samples/liveplayer-xamagonxuzzlelp/) アプリがビルドされ、Android Profiler を使用してプロファイリングされています。
+次の手順では、Android Studio の Android Profiler ツールで Xamarin Android アプリケーションを起動する方法について説明します。 次のスクリーン ショットの例では、Xamarin Forms の [XamagonXuzzle](/samples/xamarin/mobile-samples/liveplayer-xamagonxuzzlelp/) アプリがビルドされ、Android Profiler を使用してプロファイリングされています。
 
 1. Android プロジェクトのビルド オプションで、 **[共有ランタイムの使用]** を無効にします。 これで、Android アプリケーション パッケージ (APK) は、開発時の共有 Mono ランタイムとの依存関係なしで、ビルドされるようになります。
 

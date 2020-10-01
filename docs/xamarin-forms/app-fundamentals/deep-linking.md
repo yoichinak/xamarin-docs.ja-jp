@@ -11,12 +11,12 @@ ms.date: 11/28/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d2bd0bf696e652e95e0feb88cca7cf685b14433b
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 5c5d95c3d326961db9d56631a0d7190d64ede72a
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936501"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556062"
 ---
 # <a name="application-indexing-and-deep-linking"></a>アプリケーション インデックス作成とディープ リンクの設定
 
@@ -251,7 +251,7 @@ pageLink.KeyValues.Add("companyName", "Xamarin");
 
 ## <a name="related-links"></a>関連リンク
 
-- [ディープ リンクの設定 (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/deeplinking)
+- [ディープ リンクの設定 (サンプル)](/samples/xamarin/xamarin-forms-samples/deeplinking)
 - [iOS 検索 API](~/ios/platform/search/index.md)
 - [Android 6.0 でのアプリ リンク作成](~/android/platform/app-linking.md)
 - [AppLinkEntry](xref:Xamarin.Forms.AppLinkEntry)

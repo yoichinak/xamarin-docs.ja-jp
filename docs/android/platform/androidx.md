@@ -5,12 +5,12 @@ ms.assetid: CC21BD28-EF67-4132-8C0D-CF25B78BA78B
 author: JonDouglas
 ms.author: jodou
 ms.date: 02/20/2020
-ms.openlocfilehash: ad6ea2f68fc01183f7ed42e85094f6be5fb3d9f9
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 05736fda26e5fd391d977481b340b3744f224c2f
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "77618912"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454209"
 ---
 # <a name="androidx-with-xamarin"></a>Xamarin を使用した AndroidX
 
@@ -37,7 +37,7 @@ Xamarin ベースのアプリで AndroidX の機能を使用するのに必要�
 
 ## <a name="get-started"></a>作業開始
 
-AndroidX の使用を開始するには、Android プロジェクト内に [AndroidX NuGet パッケージ](https://www.nuget.org/packages?q=Tags%3A%22AndroidX%22+Authors%3A%22Microsoft%22)を含めます。 [Visual Studio](https://docs.microsoft.com/nuget/quickstart/install-and-use-a-package-in-visual-studio) または [Visual Studio for Mac](https://docs.microsoft.com/nuget/quickstart/install-and-use-a-package-in-visual-studio-mac) でのパッケージのインストールと使用について詳しく確認します
+AndroidX の使用を開始するには、Android プロジェクト内に [AndroidX NuGet パッケージ](https://www.nuget.org/packages?q=Tags%3A%22AndroidX%22+Authors%3A%22Microsoft%22)を含めます。 [Visual Studio](/nuget/quickstart/install-and-use-a-package-in-visual-studio) または [Visual Studio for Mac](/nuget/quickstart/install-and-use-a-package-in-visual-studio-mac) でのパッケージのインストールと使用について詳しく確認します
 
 ## <a name="behavior-changes"></a>動作の変更
 

@@ -10,12 +10,12 @@ ms.date: 02/08/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a414127c01d26db6bf7b462d6fc5a7f9ae44dddc
-ms.sourcegitcommit: 69bd0fdc698c9b0c0d73217776d7084f32ae88ae
+ms.openlocfilehash: e1d2a443a6005050c518e21e4e0f2df64c2aab0c
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/21/2020
-ms.locfileid: "90832281"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91562627"
 ---
 # <a name="no-locxamarinforms-dual-screen"></a>Xamarin.Forms のデュアル画面
 
@@ -49,7 +49,7 @@ Microsoft Surface Duo のようなデュアル画面デバイスでは、アプ�
 
 `DualScreenInfo` クラスまたは `TwoPaneView` レイアウトが想定どおりに動作しない場合、このページのセットアップ手順を再確認してください。 `Init` メソッドまたは `ConfigurationChanges` 属性値を省略したり、間違って構成したりすることは、よくあるエラーの原因です。
 
-追加のガイダンスと参照実装が必要であれば、[Xamarin.Forms デュアル画面サンプル](https://docs.microsoft.com/dual-screen/xamarin/samples)をご覧ください。
+追加のガイダンスと参照実装が必要であれば、[Xamarin.Forms デュアル画面サンプル](/dual-screen/xamarin/samples)をご覧ください。
 
 ## <a name="next-steps"></a>次の手順
 
@@ -60,4 +60,4 @@ NuGet を追加したら、次の手順でアプリにデュアル画面機能�
 - [DualScreenInfo ヘルパー クラス](dual-screen-info.md) - `DualScreenInfo` で、表示されるペイン、その大きさ、デバイスがどのようなものか、ヒンジの角度などを決定できるようになります。
 - [デュアル画面トリガー](triggers.md) - [`Xamarin.Forms.DualScreen`](xref:Xamarin.Forms.DualScreen) 名前空間には、アタッチされたレイアウト (ウィンドウ) の表示モードが変更されたときに [`VisualState`](xref:Xamarin.Forms.VisualState) 変更をトリガーする 2 つの状態トリガーが含まれています。
 
-詳細については、[デュアル画面開発者向けのドキュメント](https://docs.microsoft.com/dual-screen/)を参照してください。
+詳細については、[デュアル画面開発者向けのドキュメント](/dual-screen/)を参照してください。

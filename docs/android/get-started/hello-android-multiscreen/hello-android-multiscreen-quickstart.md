@@ -9,18 +9,18 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 10/05/2018
-ms.openlocfilehash: b8f7d882306ed5c00404ae7a050da8e02a49d609
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 91583ff57c7336f6dabf7e83301ebfde7274ddbd
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75607907"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454781"
 ---
 # <a name="hello-android-multiscreen-quickstart"></a>Hello Android のマルチスクリーン:クイック スタート
 
 _この 2 部構成のガイドでは、Phoneword アプリケーションを拡張して 2 番目の画面を処理します。その過程で、基本的な Android アプリケーションの構成要素と Android アーキテクチャの詳細を紹介します。_
 
-このガイドのチュートリアル部分では、[Phoneword](https://docs.microsoft.com/samples/xamarin/monodroid-samples/phoneword) アプリケーションに 2 つ目の画面を追加して、アプリを使用して変換した番号の履歴を追跡し続けます。 [最終的なアプリケーション](https://docs.microsoft.com/samples/xamarin/monodroid-samples/phonewordmultiscreen)には、右のスクリーンショットのように、"変換された" 番号を表示する 2 つ目の画面が表示されます。
+このガイドのチュートリアル部分では、[Phoneword](/samples/xamarin/monodroid-samples/phoneword) アプリケーションに 2 つ目の画面を追加して、アプリを使用して変換した番号の履歴を追跡し続けます。 [最終的なアプリケーション](/samples/xamarin/monodroid-samples/phonewordmultiscreen)には、右のスクリーンショットのように、"変換された" 番号を表示する 2 つ目の画面が表示されます。
 
 [![例のアプリのスクリーンショット](hello-android-multiscreen-quickstart-images/screenshot-sml.png)](hello-android-multiscreen-quickstart-images/screenshot.png#lightbox)
 
@@ -29,7 +29,7 @@ _この 2 部構成のガイドでは、Phoneword アプリケーションを拡
 ## <a name="requirements"></a>必要条件
 
 このガイドは [Hello, Android](~/android/get-started/hello-android/index.md) の続きのため、[Hello, Android クイック スタート](~/android/get-started/hello-android/hello-android-quickstart.md)を完了する必要があります。
-以下のチュートリアルに直接ジャンプしたい場合は、(Hello, Android クイック スタートから) [Phoneword](https://docs.microsoft.com/samples/xamarin/monodroid-samples/phoneword) の完全版をダウンロードして、それを使用してチュートリアルを開始できます。
+以下のチュートリアルに直接ジャンプしたい場合は、(Hello, Android クイック スタートから) [Phoneword](/samples/xamarin/monodroid-samples/phoneword) の完全版をダウンロードして、それを使用してチュートリアルを開始できます。
 
 ## <a name="walkthrough"></a>チュートリアル
 
@@ -322,5 +322,5 @@ translateButton.Click += (sender, e) =>
 ## <a name="related-links"></a>関連リンク
 
 - [Xamarin App Icons & Launch Screens (ZIP)](https://github.com/xamarin/monodroid-samples/blob/master/Phoneword/Resources/XamarinAndroidIcons.zip?raw=true)
-- [Phoneword (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/phoneword)
-- [PhonewordMultiscreen (サンプル)](https://docs.microsoft.com/samples/xamarin/monodroid-samples/phonewordmultiscreen)
+- [Phoneword (サンプル)](/samples/xamarin/monodroid-samples/phoneword)
+- [PhonewordMultiscreen (サンプル)](/samples/xamarin/monodroid-samples/phonewordmultiscreen)

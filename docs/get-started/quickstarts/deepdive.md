@@ -13,14 +13,14 @@ ms.date: 11/27/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d1670506fa78b39825368fc91d2452a44ddf8f03
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 8bfa78ef334829ab228d691368ec44ac71d415ad
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939920"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433520"
 ---
-# <a name="xamarinforms-quickstart-deep-dive"></a>Xamarin.Forms クイック スタート Deep Dive
+# <a name="no-locxamarinforms-quickstart-deep-dive"></a>Xamarin.Forms クイック スタート Deep Dive
 
 [Xamarin.Forms クイック スタート](~/get-started/index.yml)では、Notes アプリケーションをビルドしました。 この記事では、Xamarin.Forms アプリケーションのしくみの基礎を理解するために、構築された内容を確認します。
 
@@ -39,7 +39,7 @@ Visual Studio は、コードを*ソリューション*と*プロジェクト*�
 - Notes.iOS: このプロジェクトは、iOS 固有のコードを保持しており、iOS アプリケーションのエントリ ポイントです。
 - Notes.UWP: このプロジェクトは、ユニバーサル Windows プラットフォーム (UWP) 固有のコードを保持保持しており、UWP アプリケーションのエントリ ポイントです。
 
-## <a name="anatomy-of-a-xamarinforms-application"></a>Xamarin.Forms アプリケーションの構造
+## <a name="anatomy-of-a-no-locxamarinforms-application"></a>Xamarin.Forms アプリケーションの構造
 
 次のスクリーンショットは、Visual Studio の Notes .NET Standard プロジェクトの内容です。
 
@@ -65,7 +65,7 @@ Visual Studio は、コードを*ソリューション*と*プロジェクト*�
 - Notes.Android: このプロジェクトは、Android 固有のコードを保持した、Android アプリケーションのエントリ ポイントです。
 - Notes.iOS: このプロジェクトは、iOS 固有のコードを保持しており、iOS アプリケーションのエントリ ポイントです。
 
-## <a name="anatomy-of-a-xamarinforms-application"></a>Xamarin.Forms アプリケーションの構造
+## <a name="anatomy-of-a-no-locxamarinforms-application"></a>Xamarin.Forms アプリケーションの構造
 
 次のスクリーンショットは、Visual Studio for Mac の Notes .NET Standard プロジェクトの内容を示しています。
 
@@ -540,8 +540,8 @@ Visual Studio for Mac と Visual Studio のいずれも、アプリケーショ�
 - [データ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)
 - [コントロールのリファレンス](~/xamarin-forms/user-interface/controls/index.md)
 - [XAML マークアップ拡張](~/xamarin-forms/xaml/markup-extensions/index.md)
-- [Xamarin.Forms サンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms)
-- [入門サンプル](https://docs.microsoft.com/samples/browse/?products=xamarin&term=Xamarin.Forms%20get%20started)
+- [Xamarin.Forms サンプル](/samples/browse/?products=xamarin&term=Xamarin.Forms)
+- [入門サンプル](/samples/browse/?products=xamarin&term=Xamarin.Forms%2bget%2bstarted)
 - [Xamarin.Forms API リファレンス](xref:Xamarin.Forms)
 - [無料のセルフ ガイド学習 (ビデオ)](https://university.xamarin.com/self-guided/)
 

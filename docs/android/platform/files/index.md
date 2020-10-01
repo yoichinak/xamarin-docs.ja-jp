@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 07/23/2018
-ms.openlocfilehash: 746433293c52d7071a3289962ea021f716fd0cfe
-ms.sourcegitcommit: f7fe46c0236a7130b63a33d9d1670d5111582dd2
+ms.openlocfilehash: 69c99d6aa132bb5326085f752b9220054e9f3e69
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88186175"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91453923"
 ---
 # <a name="file-storage-and-access-with-xamarinandroid"></a>Xamarin.Android でのファイルストレージとアクセス
 
@@ -81,7 +81,7 @@ Android アプリの一般的な要件として、画像の保存、ドキュメ
 
 ### <a name="reading-or-writing-to-files-on-internal-storage"></a>内部ストレージでのファイルの読み取りまたは書き込み
 
-ファイルへの[書き込み用の任意の C# API](https://docs.microsoft.com/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file) は十分です。必要なのは、アプリケーションに割り当てられているディレクトリ内のファイルへのパスを取得することだけです。 メイン スレッドをブロックするファイル アクセスに関連する可能性のある問題を最小限に抑えるために、非同期バージョンの .NET API を使用することを強くお勧めします。
+ファイルへの[書き込み用の任意の C# API](/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file) は十分です。必要なのは、アプリケーションに割り当てられているディレクトリ内のファイルへのパスを取得することだけです。 メイン スレッドをブロックするファイル アクセスに関連する可能性のある問題を最小限に抑えるために、非同期バージョンの .NET API を使用することを強くお勧めします。
 
 このコード スニペットは、アプリケーションの内部ストレージ ディレクトリに UTF-8 テキスト ファイルに整数を書き込む例の 1 つです。
 

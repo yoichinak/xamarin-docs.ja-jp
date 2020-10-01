@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 04/26/2018
-ms.openlocfilehash: 4d9ef88f39914f8fa5e578577ee9f6977c2bc88e
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: c0d4b0d1a31be43d16fb69eba18c07815631f496
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73020264"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91453936"
 ---
 # <a name="fragments-walkthrough-ndash-landscape"></a>フラグメントのチュートリアル &ndash; 横向き
 
@@ -34,9 +34,9 @@ ms.locfileid: "73020264"
 
 ## <a name="1-create-an-alternate-layout"></a>1.代替レイアウトを作成する
 
-Android デバイスでメイン アクティビティが作成されると、Android によってデバイスの向きに基づいて読み込むレイアウトが決定されます。 Android では、既定で **Resources/layout/activity_main.axml** レイアウト ファイルが提供されています。 横モードで読み込まれるデバイスの場合、Android によって **Resources/layout-land/activity_main.axml** レイアウト ファイルが提供されます。 [Android リソース](/xamarin/android/app-fundamentals/resources-in-android)に関するガイドでは、アプリケーション用に読み込むリソース ファイルを Android で決定する方法がさらに詳しく説明されています。
+Android デバイスでメイン アクティビティが作成されると、Android によってデバイスの向きに基づいて読み込むレイアウトが決定されます。 Android では、既定で **Resources/layout/activity_main.axml** レイアウト ファイルが提供されています。 横モードで読み込まれるデバイスの場合、Android によって **Resources/layout-land/activity_main.axml** レイアウト ファイルが提供されます。 [Android リソース](../../../app-fundamentals/resources-in-android/index.md)に関するガイドでは、アプリケーション用に読み込むリソース ファイルを Android で決定する方法がさらに詳しく説明されています。
 
-[代替レイアウト](/xamarin/android/user-interface/android-designer/alternative-layout-views)に関するガイドで説明されている手順に従って、**横**向きを対象とする代替レイアウトを作成します。 これにより、新しいレイアウト リソース ファイル **Resources/layout/activity_main.axml** がプロジェクトに追加されます。
+[代替レイアウト](../../../user-interface/android-designer/alternative-layout-views.md)に関するガイドで説明されている手順に従って、**横**向きを対象とする代替レイアウトを作成します。 これにより、新しいレイアウト リソース ファイル **Resources/layout/activity_main.axml** がプロジェクトに追加されます。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 

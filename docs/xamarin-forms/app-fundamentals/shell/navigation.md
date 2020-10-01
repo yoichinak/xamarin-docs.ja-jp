@@ -1,6 +1,6 @@
 ---
-title: 'title: "Xamarin.Formsシェルのナビゲーション" の説明: "Xamarin.Forms シェル アプリケーションでは、設定されたナビゲーション階層に従わなくても、アプリケーション内の任意のページへの移動を許可する URI ベースのナビゲーション操作を利用できます。"'
-description: 'ms.prod: xamarin ms.assetid: 57079D89-D1CB-48BD-9FEE-539CEC29EABB ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date: 04/02/2020 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms シェルのナビゲーション
+description: Xamarin.Forms シェル アプリケーションでは、設定されたナビゲーション階層に従わなくても、アプリケーション内の任意のページへの移動を許可する URI ベースのナビゲーション操作を利用できます。
 ms.prod: xamarin
 ms.assetid: 57079D89-D1CB-48BD-9FEE-539CEC29EABB
 ms.technology: xamarin-forms
@@ -10,14 +10,14 @@ ms.date: 04/02/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e67d49f300a8a98ec5685c33abf98f5b2ded08ed
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: 6cf4932c3265d1d66200ae12ba448a758586f11c
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84132393"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91563147"
 ---
-# <a name="xamarinforms-shell-navigation"></a>Xamarin.Forms シェルのナビゲーション
+# <a name="no-locxamarinforms-shell-navigation"></a>Xamarin.Forms シェルのナビゲーション
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
@@ -372,4 +372,4 @@ Shell.SetBackButtonBehavior(this, new BackButtonBehavior
 
 ## <a name="related-links"></a>関連リンク
 
-- [Xaminals (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+- [Xaminals (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)

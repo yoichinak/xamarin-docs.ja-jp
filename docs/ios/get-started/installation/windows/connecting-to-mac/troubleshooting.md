@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 1214360f98464e1451da58aaca13df6a3964aba9
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 56c4e9c5b0ca44500ca3930a63b300b6bd3fb33f
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86933069"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436595"
 ---
 # <a name="connection-troubleshooting-for-a-xamarinios-build-host"></a>Xamarin.iOS ビルド ホストの接続のトラブルシューティング
 
@@ -268,7 +268,7 @@ Mac で OS X 10.11 (El Capitan) 以降を実行している限り、このメッ
 
 1. Visual Studio を終了します。
 
-2. [**開発者コマンド プロンプト**](https://msdn.microsoft.com/library/ms229859(v=vs.110).aspx)を起動します。
+2. [**開発者コマンド プロンプト**](/dotnet/framework/tools/developer-command-prompt-for-vs)を起動します。
 
 3. コマンド プロンプトで次のコマンドを実行し、詳細ログありで Visual Studio を起動します。
 

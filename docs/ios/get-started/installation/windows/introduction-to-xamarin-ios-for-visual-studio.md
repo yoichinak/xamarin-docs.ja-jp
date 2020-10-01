@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/02/2018
-ms.openlocfilehash: 2650bda7115cd132e87bf669914320f63214e295
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: c152579ef1458db50359551bc7ed6632daf3d92f
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86933225"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436872"
 ---
 # <a name="introduction-to-xamarinios-for-visual-studio"></a>Xamarin.iOS for Visual Studio の概要
 
@@ -37,7 +37,7 @@ Visual Studio での iOS 向けの開発時に従う必要があるいくつか�
 
 いずれの場合も、次の手順に従う必要があります。
 
-- [Visual Studio for Mac をインストールする](https://docs.microsoft.com/visualstudio/mac/installation)
+- [Visual Studio for Mac をインストールする](/visualstudio/mac/installation)
 - [Windows に Xamarin ツールをインストールする](~/get-started/installation/windows.md)
 
 ## <a name="connecting-to-the-mac"></a>Mac への接続

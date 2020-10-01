@@ -9,12 +9,12 @@ ms.date: 03/20/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5ccd5a610ad41c0160a6778a63a367376bd200b3
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 0c74c132a623388f1d0b3b467b73d948cf2a2022
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84134018"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91437254"
 ---
 # <a name="installing-xamarin-preview-on-windows"></a>Windows に Xamarin (プレビュー) をインストールする
 
@@ -24,7 +24,7 @@ Visual Studio 2019 および Visual Studio 2017 では、アルファ、ベー�
 - **プレビュー** – Visual Studio for Mac の "_アルファ_" および "_ベータ_" チャネルと同等です
 
 > [!TIP]
-> プレリリース機能を試すには、[Visual Studio Preview インストーラーをダウンロードする](https://visualstudio.microsoft.com/vs/preview/)必要があります。これには、Visual Studio の**プレビュー** バージョンと安定 (リリース) バージョンをサイド バイ サイドでインストールするオプションがあります。 Visual Studio 2019 の新機能の詳細については、[リリース ノート](https://docs.microsoft.com/visualstudio/releases/2019/release-notes)をご覧ください。
+> プレリリース機能を試すには、[Visual Studio Preview インストーラーをダウンロードする](https://visualstudio.microsoft.com/vs/preview/)必要があります。これには、Visual Studio の**プレビュー** バージョンと安定 (リリース) バージョンをサイド バイ サイドでインストールするオプションがあります。 Visual Studio 2019 の新機能の詳細については、[リリース ノート](/visualstudio/releases/2019/release-notes)をご覧ください。
 
 Visual Studio のプレビュー バージョンには、次のような、Xamarin の機能の対応するプレビュー バージョンが含まれる場合があります。
 

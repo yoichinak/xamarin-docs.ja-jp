@@ -11,12 +11,12 @@ ms.date: 05/07/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 212674472706a36c66436a3955ab7b988f8e246b
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: fe27c00752723ac34d614c510f1305b197933715
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84137554"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91558168"
 ---
 # <a name="right-to-left-localization"></a>右から左へのローカライズ
 
@@ -77,7 +77,7 @@ this.FlowDirection = Device.FlowDirection;
 
 ![Info.plist のサポートされる言語](rtl-images/ios-locales.png "Info.plist のサポートされる言語")
 
-詳細については、「[iOS でのローカライズの基本事項](https://docs.microsoft.com/xamarin/ios/app-fundamentals/localization/#localization-basics-in-ios)」を参照してください。
+詳細については、「[iOS でのローカライズの基本事項](../../../ios/app-fundamentals/localization/index.md#localization-basics-in-ios)」を参照してください。
 
 右から左へのローカライズは、デバイスまたはシミュレーター上の言語とリージョンを **Info.plist** で指定された右から左のロケールに変更することによって、テストできます。
 
@@ -197,4 +197,4 @@ Window.DecorView.LayoutDirection = LayoutDirection.Rtl;
 
 ## <a name="related-links"></a>関連リンク
 
-- [TodoLocalizedRTL サンプル アプリ](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todolocalizedrtl)
+- [TodoLocalizedRTL サンプル アプリ](/samples/xamarin/xamarin-forms-samples/todolocalizedrtl)

@@ -9,12 +9,12 @@ ms.date: 05/11/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3599958a493dd4051064b5e7f54aa5901e6bf32c
-ms.sourcegitcommit: f6a2f07d2e689e0cfd01b30008d50c83c63fa70c
+ms.openlocfilehash: f8a65c7bd3476114b849bb0e9383227e2ec78c7c
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89052761"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91432615"
 ---
 # <a name="get-started-with-no-locxamarinessentials"></a>Xamarin.Essentials の使用を開始する
 
@@ -58,7 +58,7 @@ Xamarin.Essentials は、NuGet パッケージとして入手でき、Visual Stu
 
     Android 9.0 に対してコンパイルする場合、Xamarin.Essentials では、必要とされているバージョン 28.0.0.3 の Xamarin.Android.Support ライブラリがインストールされます。 アプリケーションで必要となるその他の Xamarin.Android.Support ライブラリも、NuGet パッケージ マネージャーを使用してバージョン 28.0.0.3 に更新する必要があります。 アプリケーションで使用される Xamarin.Android.Support ライブラリはすべて同じであり、かつ少なくともバージョン 28.0.0.3 以上である必要があります。 ソリューションでの Xamarin.Essentials の NuGet の追加や NuGet の更新で問題が発生する場合は、[トラブルシューティングのページ](troubleshooting.md)を参照してください。
 
-    バージョン 1.5.0 以降では、Android 10.0 に対してコンパイルする場合、Xamarin.Essentials では、必要とされている AndroidX サポート ライブラリがインストールされます。 まだ移行を行っていない場合は、[AndroidX のドキュメント](https://docs.microsoft.com/xamarin/android/platform/androidx)に目を通してください。
+    バージョン 1.5.0 以降では、Android 10.0 に対してコンパイルする場合、Xamarin.Essentials では、必要とされている AndroidX サポート ライブラリがインストールされます。 まだ移行を行っていない場合は、[AndroidX のドキュメント](../android/platform/androidx.md)に目を通してください。
 
     Android プロジェクトの `MainLauncher`、または起動されるすべての `Activity` では、`OnCreate` メソッド内で Xamarin.Essentials を初期化する必要があります。
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/21/2017
-ms.openlocfilehash: 173af9638f4e7b2da39a89dd745ec53f54cf6c39
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 4ba1daeb94706efc9d27136c6bd4b4d13e774689
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937567"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91437202"
 ---
 # <a name="xamarinios-api-design"></a>Xamarin.iOS API の設計
 
@@ -26,7 +26,7 @@ Objective-C コードと通信するための低レベルのランタイムが [
 
 Xamarin.iOS バインディングには設計原則がいくつかあります (macOS の Objective-C 用 Mono バインディングである Xamarin.Mac にも適用されます)。
 
-- [フレームワーク デザインのガイドライン](https://docs.microsoft.com/dotnet/standard/design-guidelines)に従う
+- [フレームワーク デザインのガイドライン](/dotnet/standard/design-guidelines)に従う
 - Objective-C クラスのサブクラス化を開発者に許可する
 
   - 既存クラスから派生させる
@@ -665,7 +665,7 @@ Xamarin.iOS に含まれるガベージ コレクターによって、不要に�
 
 オブジェクトによってカプセル化が行われることがあります。大きなメモリ ブロック (たとえば、`UIImage` は単純なポインターのように見えますが、2 メガバイトの画像を指していることがあります) や (動画の復号バッファーのような) その他の重要な有限リソースがカプセル化されます。そのようなオブジェクトを解放するとき、開発者を支援する便利な方法が `IDisposable` インターフェイスの公開です。
 
-NSObject では IDisposable interface が実装され、さらに [.NET Dispose パターン](https://msdn.microsoft.com/library/fs2xkftw.aspx)も実装されます。 これにより、開発者は NSObject をサブクラス化し、Dispose 動作をオーバーライドして自分だけのリソースを必要なときに解放できます。 たとえば、画像の集まりを維持するこのビュー コントローラーについて考えてください。
+NSObject では IDisposable interface が実装され、さらに [.NET Dispose パターン](/dotnet/standard/garbage-collection/implementing-dispose)も実装されます。 これにより、開発者は NSObject をサブクラス化し、Dispose 動作をオーバーライドして自分だけのリソースを必要なときに解放できます。 たとえば、画像の集まりを維持するこのビュー コントローラーについて考えてください。
 
 ```csharp
 class MenuViewController : UIViewController {

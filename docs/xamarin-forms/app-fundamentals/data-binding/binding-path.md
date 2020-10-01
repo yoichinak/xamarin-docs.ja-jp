@@ -1,6 +1,6 @@
 ---
-title: 'title: "Xamarin.Formsのバインド パス" の説明:"この記事では、Xamarin.Forms のデータ バインディングを使用して、Binding クラスの Path プロパティでサブプロパティおよびコレクション メンバーにアクセスする方法を説明します。"'
-description: 'ms.prod: xamarin ms.assetid:3CF721A5-E157-468B-AD3A-DA0A45E58E8D ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:01/05/2018 no-loc: [Xamarin.Forms, Xamarin.Essentials]'
+title: Xamarin.Forms のバインド パス
+description: この記事では、Xamarin.Forms のデータ バインディングを使用して、Binding クラスの Path プロパティでサブ プロパティおよびコレクション メンバーにアクセスする方法を説明します。
 ms.prod: xamarin
 ms.assetid: 3CF721A5-E157-468B-AD3A-DA0A45E58E8D
 ms.technology: xamarin-forms
@@ -10,14 +10,14 @@ ms.date: 01/05/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a0ac8a568c3e8c46fa7e53112461aa0bff5684ae
-ms.sourcegitcommit: 93e6358aac2ade44e8b800f066405b8bc8df2510
+ms.openlocfilehash: 154219f58c22005de0a0a2171aeedd04ec9f9ff9
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84570792"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557960"
 ---
-# <a name="xamarinforms-binding-path"></a>Xamarin.Forms のバインド パス
+# <a name="no-locxamarinforms-binding-path"></a>Xamarin.Forms のバインド パス
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
@@ -168,5 +168,5 @@ Xamarin.Forms は、バインド パスを処理するので、`INotifyPropertyC
 
 ## <a name="related-links"></a>関連リンク
 
-- [データ バインディングのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+- [データ バインディングのデモ (サンプル)](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Xamarin.Forms ブックのデータ バインディングに関する章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)

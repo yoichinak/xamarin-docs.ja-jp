@@ -9,14 +9,14 @@ ms.date: 03/13/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f54c31afef691d316cbc3108792ab3158359c47c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4a671be5f65e0e35c89f4acec17f406a214b9fa9
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84802326"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434616"
 ---
-# <a name="xamarinessentials-geolocation"></a>Xamarin.Essentials:位置情報
+# <a name="no-locxamarinessentials-geolocation"></a>Xamarin.Essentials:位置情報
 
 **Geolocation** クラスには、デバイスの現在の位置座標を取得する API が用意されています。
 
@@ -238,7 +238,7 @@ iOS では、[高度](https://developer.apple.com/documentation/corelocation/cll
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-UWP では、高度はメートル単位で返されます。 詳細については、[AltitudeReferenceSystem](https://docs.microsoft.com/uwp/api/windows.devices.geolocation.geopoint.altitudereferencesystem#Windows_Devices_Geolocation_Geopoint_AltitudeReferenceSystem) のドキュメントを参照してください。
+UWP では、高度はメートル単位で返されます。 詳細については、[AltitudeReferenceSystem](/uwp/api/windows.devices.geolocation.geopoint.altitudereferencesystem#Windows_Devices_Geolocation_Geopoint_AltitudeReferenceSystem) のドキュメントを参照してください。
 
 -----
 

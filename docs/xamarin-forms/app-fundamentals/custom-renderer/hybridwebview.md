@@ -10,12 +10,12 @@ ms.date: 03/31/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e0653e46d2c349e05df8716e5114de8f631cab1a
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 3d0cbae406861565d91b0bbc9f39d661c547ca1e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939543"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561158"
 ---
 # <a name="customizing-a-webview"></a>WebView のカスタマイズ
 
@@ -487,4 +487,4 @@ namespace CustomRenderer.UWP
 
 ## <a name="related-links"></a>関連リンク
 
-- [HybridWebView (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-hybridwebview)
+- [HybridWebView (サンプル)](/samples/xamarin/xamarin-forms-samples/customrenderers-hybridwebview)

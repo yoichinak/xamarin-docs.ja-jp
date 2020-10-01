@@ -10,12 +10,12 @@ ms.date: 04/06/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f265d1da894b195402c91cbf9468a11837c53bcf
-ms.sourcegitcommit: f6a2f07d2e689e0cfd01b30008d50c83c63fa70c
+ms.openlocfilehash: 53df681e79c4c233a8908764d31c8ee416c8a621
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "86933711"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561171"
 ---
 # <a name="create-no-locxamarinforms-behaviors"></a>Xamarin.Forms ビヘイビアーの作成
 
@@ -213,7 +213,7 @@ entry.Behaviors.Clear();
 
 ## <a name="related-links"></a>関連リンク
 
-- [Xamarin.Forms のビヘイビアー (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)
-- [スタイルを使用して適用される Xamarin.Forms のビヘイビアー (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehaviorstyle)
+- [Xamarin.Forms のビヘイビアー (サンプル)](/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)
+- [スタイルを使用して適用される Xamarin.Forms のビヘイビアー (サンプル)](/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehaviorstyle)
 - [Behavior](xref:Xamarin.Forms.Behavior)
 - [Behavior\<T>](xref:Xamarin.Forms.Behavior`1)

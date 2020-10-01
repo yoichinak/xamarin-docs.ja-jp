@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 04/16/2018
-ms.openlocfilehash: c5c819221bc08f1c39bde9b5900c2f9f9889764d
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 0f57c10ea263a3dcf882d2cf75a57105e7f7d0d4
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73022531"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434526"
 ---
 # <a name="configuring-visual-studio-for-ios-development"></a>iOS 開発用の Visual Studio の構成
 
@@ -27,7 +27,7 @@ Visual Studio 2019 または Visual Studio 2017 では、Mac ビルド ホスト
 - Visual Studio 2019 Preview を使用している場合は、Visual Studio for Mac で **[アルファ]** 更新チャネルを選択します。
 
 > [!NOTE]
-> [Visual Studio 2017 バージョン 15.6](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning) 以降では、Visual Studio 2017 は Mac ビルド ホストが Windows と同じバージョンの Xamarin.iOS を使用しているかどうかを自動的に検出します。 バージョンが一致しない場合、Visual Studio 2017 では Mac ビルド ホストに正しいバージョンをリモート インストールできます。 詳しくは、「[Mac とペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)」ガイドの「[Mac の自動プロビジョニング](~/ios/get-started/installation/windows/connecting-to-mac/index.md#automatic-mac-provisioning)」セクションをご覧ください。
+> [Visual Studio 2017 バージョン 15.6](/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning) 以降では、Visual Studio 2017 は Mac ビルド ホストが Windows と同じバージョンの Xamarin.iOS を使用しているかどうかを自動的に検出します。 バージョンが一致しない場合、Visual Studio 2017 では Mac ビルド ホストに正しいバージョンをリモート インストールできます。 詳しくは、「[Mac とペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)」ガイドの「[Mac の自動プロビジョニング](~/ios/get-started/installation/windows/connecting-to-mac/index.md#automatic-mac-provisioning)」セクションをご覧ください。
 
 ## <a name="ios-toolbar"></a>iOS ツール バー
 

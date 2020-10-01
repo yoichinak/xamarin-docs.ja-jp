@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 05/29/2018
-ms.openlocfilehash: 7bc6a7ce1b8cd20aa782ddde42925e4e72374ec4
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 8cbed52524eac05cc4a737936fd6ee7d90279f8e
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86996948"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91435455"
 ---
 # <a name="pair-to-mac-for-xamarinios-development"></a>Xamarin.iOS 開発のために Mac とペアリングする
 
@@ -43,7 +43,7 @@ Visual Studio 2019 の [Mac とペアリング] 機能は、Windows ベースの
 > このガイドの手順の前に、次の手順を実行します。
 >
 > - Windows コンピューターで、[Visual Studio 2019 をインストール](~/get-started/installation/windows.md)します
-> - Mac で、[Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) と [Visual Studio for Mac をインストール](https://docs.microsoft.com/visualstudio/mac/installation)します
+> - Mac で、[Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) と [Visual Studio for Mac をインストール](/visualstudio/mac/installation)します
 >   - 任意の追加コンポーネントを追加できるように、_インストール後に手動で Xcode を開く必要があります_。
 >
 > Visual Studio for Mac をインストールしない方がよい場合は、Visual Studio 2019 は Xamarin.iOS と Mono で Mac ビルド ホストを自動的に構成できます。
@@ -101,7 +101,7 @@ Mac ビルド ホストを設定するには、まずリモート ログイン�
 
 5. [Mac とペアリング] により自動的に Mac が構成されます。
 
-    [Visual Studio 2019 バージョン 15.6 以降では](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning)、Visual Studio 2019 は接続された Mac ビルド ホスト上の Mono と Xamarin.iOS を、必要に応じてインストールまたは更新します (ただし、Xcode はやはり手動でインストールする必要があることに注意してください)。 詳しくは、「[Mac の自動プロビジョニング](#automatic-mac-provisioning)」をご覧ください。
+    [Visual Studio 2019 バージョン 15.6 以降では](/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning)、Visual Studio 2019 は接続された Mac ビルド ホスト上の Mono と Xamarin.iOS を、必要に応じてインストールまたは更新します (ただし、Xcode はやはり手動でインストールする必要があることに注意してください)。 詳しくは、「[Mac の自動プロビジョニング](#automatic-mac-provisioning)」をご覧ください。
 
 6. 接続状態アイコンを確認します。
 
@@ -160,7 +160,7 @@ Mac とペアリングできない場合は、[Mac を手動で追加](#manually
 
 ## <a name="automatic-mac-provisioning"></a>Mac の自動プロビジョニング
 
-[Visual Studio 2019 バージョン 15.6](https://docs.microsoft.com/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning) より、[Mac とペアリング] によって、Xamarin.iOS アプリケーションを構築するために必要な、次のソフトウェアが Mac に自動的にプロビジョニングされます。Mono、Xamarin.iOS (ソフトウェア フレームワーク、Visual Studio for Mac の IDE ではない)、およびさまざまな Xcode 関連のツール (ただし、Xcode 自体ではない)。
+[Visual Studio 2019 バージョン 15.6](/visualstudio/releasenotes/vs2017-relnotes#automatic-macos-provisioning) より、[Mac とペアリング] によって、Xamarin.iOS アプリケーションを構築するために必要な、次のソフトウェアが Mac に自動的にプロビジョニングされます。Mono、Xamarin.iOS (ソフトウェア フレームワーク、Visual Studio for Mac の IDE ではない)、およびさまざまな Xcode 関連のツール (ただし、Xcode 自体ではない)。
 
 > [!IMPORTANT]
 >
@@ -185,7 +185,7 @@ Visual Studio 2019 を [Mac に接続している](#connect-to-the-mac-from-visu
 [Mac とペアリング] は、Windows コンピューターにインストールされているバージョンと一致するように、Mac 上の Xamarin.iOS をアップグレードします。
 
 > [!IMPORTANT]
-> [Mac とペアリング] は、Mac 上の Xamarin.iOS をアルファ/ベータから安定にダウングレードすることはありません。 Visual Studio for Mac をインストールした場合は、[リリース チャネル](https://docs.microsoft.com/visualstudio/mac/update)を次のように設定します。
+> [Mac とペアリング] は、Mac 上の Xamarin.iOS をアルファ/ベータから安定にダウングレードすることはありません。 Visual Studio for Mac をインストールした場合は、[リリース チャネル](/visualstudio/mac/update)を次のように設定します。
 >
 > - Visual Studio 2019 を使用している場合は、Visual Studio for Mac で **[Stable]** 更新チャネルを選択します。
 > - Visual Studio 2019 Preview を使用している場合は、Visual Studio for Mac で **[アルファ]** 更新チャネルを選択します。

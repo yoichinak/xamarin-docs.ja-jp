@@ -9,14 +9,14 @@ ms.date: 11/04/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e2ed2dfdca6b6811089d4dbb5d6e90e794c79591
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 77ef074ab23532249e7a22bdd0cf8ecd429120a3
+ms.sourcegitcommit: 744f977b0595f489c592e29c8a3ba548fde02b6f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84801804"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91410676"
 ---
-# <a name="xamarinessentials-vibration"></a>Xamarin.Essentials:振動
+# <a name="no-locxamarinessentials-vibration"></a>Xamarin.Essentials:振動
 
 **Vibration** クラスを使用すると、バイブレーション機能を開始して一定時間後に停止することができます。
 
@@ -52,7 +52,7 @@ Vibrate アクセス許可が必要です。Android プロジェクト内で構�
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-プラットフォームによる違いはありません。
+追加の設定は必要ありません。
 
 -----
 

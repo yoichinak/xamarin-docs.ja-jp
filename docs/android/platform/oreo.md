@@ -8,12 +8,12 @@ ms.custom: video
 author: davidortinau
 ms.author: daortin
 ms.date: 07/06/2018
-ms.openlocfilehash: 56430f8c4988c16a31f9806b0ffb8b6355d6340b
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 4c017f7b27d646155bb5c8e556955f495bde6be7
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73020002"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91457563"
 ---
 # <a name="oreo-features"></a>Oreo の機能
 
@@ -61,17 +61,17 @@ Visual Studio に Android Oreo のサポートを追加するには、次の手�
 
 - Visual Studio 2017 を使用している場合:
 
-    1. Visual Studio 2017 バージョン 15.7 以降に更新します ([Visual Studio 2017 の更新](https://docs.microsoft.com/visualstudio/install/update-visual-studio)に関するページを参照してください)。
+    1. Visual Studio 2017 バージョン 15.7 以降に更新します ([Visual Studio 2017 の更新](/visualstudio/install/update-visual-studio)に関するページを参照してください)。
 
     2. [SDK マネージャー](~/android/get-started/installation/android-sdk.md)を使用して API レベル 26.0 以降をインストールします。
 
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
-- 「[Visual Studio for Mac を更新する](https://docs.microsoft.com/visualstudio/mac/update)」で説明されているように、Visual Studio for Mac の最新の安定バージョンに更新します。
+- 「[Visual Studio for Mac を更新する](/visualstudio/mac/update)」で説明されているように、Visual Studio for Mac の最新の安定バージョンに更新します。
 
 -----
 
-Xamarin での Android Oreo のサポートの詳細については、[Xamarin.Android 8.0 のリリース ノート](https://docs.microsoft.com/xamarin/android/release-notes/8/8.0/)を参照してください。
+Xamarin での Android Oreo のサポートの詳細については、[Xamarin.Android 8.0 のリリース ノート](/xamarin/android/release-notes/8/8.0/)を参照してください。
 
 ### <a name="install-the-android-sdk"></a>Android SDK をインストールする
 
@@ -194,7 +194,7 @@ Android Oreo では、通知チャネル、通知バッジ、XML のカスタム
 "*通知チャネル*" は、通知のアプリ定義のカテゴリです。
 送信する必要がある通知の種類ごとに通知チャネルを作成できます。また、アプリのユーザーが行った選択を反映する通知チャネルを作成できます。 新しい通知チャネル機能を使用すると、さまざまな種類の通知をきめ細かく制御できます。 たとえば、メッセージング アプリを実装している場合、ユーザーが作成する会話グループごとに個別の通知チャネルを作成できます。
 
-「[通知チャネル](~/android/app-fundamentals/notifications/local-notifications.md#notif-chan)」では、通知チャネルを作成し、ローカル通知の投稿に使用する方法について説明しています。 実際のコード例については、[NotificationChannels](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-notificationchannels) サンプルを参照してください。このサンプル アプリでは、2 つのチャネルを管理し、追加の通知オプションを設定しています。
+「[通知チャネル](~/android/app-fundamentals/notifications/local-notifications.md#notif-chan)」では、通知チャネルを作成し、ローカル通知の投稿に使用する方法について説明しています。 実際のコード例については、[NotificationChannels](/samples/xamarin/monodroid-samples/android-o-notificationchannels) サンプルを参照してください。このサンプル アプリでは、2 つのチャネルを管理し、追加の通知オプションを設定しています。
 
 ### <a name="notification-badges"></a>通知バッジ
 
@@ -246,7 +246,7 @@ Android Oreo 以降、アプリは APK にフォントをバンドルするの�
 
 `RequestFonts` メソッドを呼び出すと、最初に (前の `RequestFont` の呼び出しから) フォントがローカルにキャッシュされているかどうかが確認されます。 キャッシュされていない場合は、フォント プロバイダーを呼び出し、非同期でフォントを取得し、`OnTypeFaceRetrieved` メソッドを呼び出して結果をアプリに返します。
 
-[DownloadableFonts](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-downloadablefonts) サンプルは、Android Oreo で導入されたダウンロード可能なフォント機能の使用方法を示しています。 
+[DownloadableFonts](/samples/xamarin/monodroid-samples/android-o-downloadablefonts) サンプルは、Android Oreo で導入されたダウンロード可能なフォント機能の使用方法を示しています。 
 
 フォントのダウンロードの詳細については、Android デベロッパーの「[DownloadableFonts](https://developer.android.com/guide/topics/ui/look-and-feel/downloadable-fonts.html)」トピックを参照してください。
 
@@ -254,7 +254,7 @@ Android Oreo 以降、アプリは APK にフォントをバンドルするの�
 
 Android Oreo の新しい "_自動入力_" フレームワークを使用すると、ユーザーはログイン、アカウント作成、クレジット カード トランザクションなどの繰り返し発生するタスクを簡単に処理できるようになります。 ユーザーは、(入力エラーにつながる可能性がある) 情報を再入力する時間が短縮されます。 アプリで自動入力フレームワークを使用するには、システム設定で自動入力 サービスを有効にしておく必要があります (ユーザーは自動入力を有効または無効にできます)。
 
-[AutofillFramework](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-autofillframework) サンプルは、自動入力フレームワークの使用方法を示しています。 これには、自動入力が必要なビューがあるクライアント アクティビティと、クライアント アクティビティに自動入力データを提供できるサービスの実装が含まれます。
+[AutofillFramework](/samples/xamarin/monodroid-samples/android-o-autofillframework) サンプルは、自動入力フレームワークの使用方法を示しています。 これには、自動入力が必要なビューがあるクライアント アクティビティと、クライアント アクティビティに自動入力データを提供できるサービスの実装が含まれます。
 
 新しい自動入力機能と、自動入力用にアプリを最適化する方法の詳細については、Android デベロッパーの「[自動入力フレームワーク](https://developer.android.com/guide/topics/text/autofill.html)」トピックを参照してください。
 
@@ -274,7 +274,7 @@ PIP モードの場合のアクティビティの動作を指定するには、�
 
 - [SetPictureInPictureParams](https://developer.android.com/reference/android/app/Activity.html#setPictureInPictureParams%28android.app.PictureInPictureParams%29) &ndash; アクティビティの PIP 構成設定を更新します (たとえば、縦横比の変更)。
 
-[PictureInPicture](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-pictureinpicture) サンプルは、Oreo で導入されたハンドヘルド デバイスでのピクチャインピクチャ (PiP) モードの基本的な使用方法を示しています。 このサンプルでは、表示モードまたは他のアクティビティを切り替えても中断せずに継続してビデオが再生されます。
+[PictureInPicture](/samples/xamarin/monodroid-samples/android-o-pictureinpicture) サンプルは、Oreo で導入されたハンドヘルド デバイスでのピクチャインピクチャ (PiP) モードの基本的な使用方法を示しています。 このサンプルでは、表示モードまたは他のアクティビティを切り替えても中断せずに継続してビデオが再生されます。
 
 ### <a name="other-features"></a>その他の機能
 
@@ -306,19 +306,19 @@ Android Oreo 以降をターゲットとするアプリでは、該当する場�
 
 Android Oreo の機能を使用する方法がわかる複数の Xamarin.Android サンプルを利用できます。
 
-- [NotificationsChannels](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-notificationchannels) は、Android Oreo で導入された新しい通知チャネル システムの使用方法を示しています。 このサンプルでは、2 つの通知チャネルを管理しています。1 つは既定の重要度のもの、もう 1 つは重要度が高いものです。
+- [NotificationsChannels](/samples/xamarin/monodroid-samples/android-o-notificationchannels) は、Android Oreo で導入された新しい通知チャネル システムの使用方法を示しています。 このサンプルでは、2 つの通知チャネルを管理しています。1 つは既定の重要度のもの、もう 1 つは重要度が高いものです。
 
-- [PictureInPicture](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-pictureinpicture) は、Oreo で導入されたハンドヘルド デバイスでのピクチャインピクチャ (PiP) モードの基本的な使用方法を示しています。 このサンプルでは、表示モードまたは他のアクティビティを切り替えても中断せずに継続してビデオが再生されます。
+- [PictureInPicture](/samples/xamarin/monodroid-samples/android-o-pictureinpicture) は、Oreo で導入されたハンドヘルド デバイスでのピクチャインピクチャ (PiP) モードの基本的な使用方法を示しています。 このサンプルでは、表示モードまたは他のアクティビティを切り替えても中断せずに継続してビデオが再生されます。
 
-- [AutofillFramework](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-autofillframework) は、自動入力フレームワークの使用方法を示しています。 これには、自動入力が必要なビューがあるクライアント アクティビティと、クライアント アクティビティに自動入力データを提供できるサービスの実装が含まれます。
+- [AutofillFramework](/samples/xamarin/monodroid-samples/android-o-autofillframework) は、自動入力フレームワークの使用方法を示しています。 これには、自動入力が必要なビューがあるクライアント アクティビティと、クライアント アクティビティに自動入力データを提供できるサービスの実装が含まれます。
 
-- [DownloadableFonts](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-downloadablefonts) は、前述のダウンロード可能なフォント機能の使用方法の例を示しています。
+- [DownloadableFonts](/samples/xamarin/monodroid-samples/android-o-downloadablefonts) は、前述のダウンロード可能なフォント機能の使用方法の例を示しています。
 
-- [EmojiCompat](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-emojicompat) は、EmojiCompat サポート ライブラリの使用方法を示しています。 このライブラリを使用すると、アプリに存在しない絵文字を "豆腐" 文字として表示しないようにすることができます。
+- [EmojiCompat](/samples/xamarin/monodroid-samples/android-o-emojicompat) は、EmojiCompat サポート ライブラリの使用方法を示しています。 このライブラリを使用すると、アプリに存在しない絵文字を "豆腐" 文字として表示しないようにすることができます。
 
-- [LocationUpdatesPendingIntent](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-androidplaylocation-locupdpendintent) は、Location API を使用し、`PendingIntent` を使用してデバイスの位置に関する更新情報を取得する方法を示しています。
+- [LocationUpdatesPendingIntent](/samples/xamarin/monodroid-samples/android-o-androidplaylocation-locupdpendintent) は、Location API を使用し、`PendingIntent` を使用してデバイスの位置に関する更新情報を取得する方法を示しています。
 
-- [LocationUpdatesForegroundService](https://docs.microsoft.com/samples/xamarin/monodroid-samples/android-o-androidplaylocation-locupdfgservice) は、Location API を使用し、バインドされ、開始されたフォアグラウンド サービスを使用してデバイスの位置に関する更新情報を取得する方法を示しています。
+- [LocationUpdatesForegroundService](/samples/xamarin/monodroid-samples/android-o-androidplaylocation-locupdfgservice) は、Location API を使用し、バインドされ、開始されたフォアグラウンド サービスを使用してデバイスの位置に関する更新情報を取得する方法を示しています。
 
 ## <a name="video"></a>ビデオ
 

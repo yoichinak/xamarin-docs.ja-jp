@@ -1,6 +1,6 @@
 ---
-title: 'title: "Xamarin.Formsの基本的なバインディング" の説明: "この記事では、通常は少なくとも一方がユーザー インターフェイス オブジェクトである 2 つのオブジェクト間でプロパティのペアをリンクする、Xamarin.Forms データ バインディングの使用方法について説明します。'
-description: 'これら 2 つのオブジェクトは、ターゲットおよびソースと呼ばれます。" ms.prod: xamarin ms.assetid: 96553DF7-12EA-4FB2-AE85-3D1D59382B40 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:  01/22/2019 no-loc: [Xamarin.Forms, Xamarin.Essentials] ms.custom: video'
+title: Xamarin.Forms の基本的なバインディング
+description: この記事では、通常は少なくとも一方がユーザー インターフェイス オブジェクトである 2 つのオブジェクト間でプロパティのペアをリンクする、Xamarin.Forms データ バインディングの使用方法について説明します。 これら 2 つのオブジェクトは、ターゲットおよびソースと呼ばれます。
 ms.prod: xamarin
 ms.assetid: 96553DF7-12EA-4FB2-AE85-3D1D59382B40
 ms.technology: xamarin-forms
@@ -11,14 +11,14 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.custom: video
-ms.openlocfilehash: c0c6bc6e1005997548952aedc09cd83a451e7caa
-ms.sourcegitcommit: ea9269b5d9e3d68b61bb428560a10034117ee457
+ms.openlocfilehash: 9bedde64f0eda233c289cb31296854b5cbca54a1
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84133538"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561119"
 ---
-# <a name="xamarinforms-basic-bindings"></a>Xamarin.Forms の基本的なバインディング
+# <a name="no-locxamarinforms-basic-bindings"></a>Xamarin.Forms の基本的なバインディング
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
@@ -334,7 +334,7 @@ XAML マークアップ拡張は、通常は中かっこで区切りますが、
 
 ## <a name="related-links"></a>関連リンク
 
-- [データ バインディングのデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+- [データ バインディングのデモ (サンプル)](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 - [Xamarin.Forms ブックのデータ バインディングに関する章](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
 
 ## <a name="related-video"></a>関連ビデオ
