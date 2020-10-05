@@ -10,12 +10,12 @@ ms.date: 02/18/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e868eccf446ab22879a66e6e507d810b7e0e13d7
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 43702453d1defc3b5a63aba845231f514913d7c5
+ms.sourcegitcommit: 1649554b8c08369b713d20246154455c0ba7d1c0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91559767"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91712558"
 ---
 # <a name="no-locxamarinforms-mediaelement"></a>Xamarin.Forms MediaElement
 
@@ -534,7 +534,7 @@ public class PositionSlider : Slider
 この例では、 [`Slider`](xref:Xamarin.Forms.Slider) データは `Value` プロパティをのプロパティにバインドし [`Volume`](xref:Xamarin.Forms.MediaElement.Volume) [`MediaElement`](xref:Xamarin.Forms.MediaElement) ます。 これが可能なのは、 `Volume` プロパティがバインディングを使用するためです `TwoWay` 。 したがって、プロパティを変更すると、 `Value` プロパティが変更され `Volume` ます。
 
 > [!NOTE]
-> プロパティには、 [`Volume`](xref:Xamarin.Forms.MediaElement.Volume) その値が0.0 以上で1.0 以下であることを保証する、vlidation コールバックが含まれています。
+> プロパティには、 [`Volume`](xref:Xamarin.Forms.MediaElement.Volume) その値が0.0 以上で1.0 以下であることを保証する検証コールバックがあります。
 
 の使用方法の詳細については [`Slider`](xref:Xamarin.Forms.Slider) 、「」を参照[ Xamarin.Forms ](~/xamarin-forms/user-interface/slider.md)してください。
 
