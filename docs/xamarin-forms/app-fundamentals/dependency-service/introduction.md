@@ -10,14 +10,14 @@ ms.date: 06/12/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f4d43a0c9c4878733d65b170c27e744b397aa4d0
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 2d63ac91031fc4a2cc127272a075f15a8ea81f4e
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84138360"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91555283"
 ---
-# <a name="xamarinforms-dependencyservice-introduction"></a>Xamarin.Forms の DependencyService の概要
+# <a name="no-locxamarinforms-dependencyservice-introduction"></a>Xamarin.Forms の DependencyService の概要
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
 
@@ -32,7 +32,7 @@ ms.locfileid: "84138360"
 
 次の図は、ネイティブ プラットフォームの機能が Xamarin.Forms アプリケーション内でどのように呼び出されるかを示しています。
 
-![Xamarin.Forms の DependencyService クラスを使用したサービスの場所の概要](introduction-images/dependency-service.png "DependencyService サービスの場所")
+![Xamarin.FormsDependencyService クラス](introduction-images/dependency-service.png "DependencyService サービスの場所")を使用するサービスの場所の概要
 
 ## <a name="create-an-interface"></a>インターフェイスの作成
 
@@ -159,5 +159,5 @@ DeviceOrientation orientation = DependencyService.Get<IDeviceOrientationService>
 
 ## <a name="related-links"></a>関連リンク
 
-- [DependencyService のデモ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/dependencyservice/)
+- [DependencyService のデモ (サンプル)](/samples/xamarin/xamarin-forms-samples/dependencyservice/)
 - [Xamarin.Forms の DependencyService の登録と解決](registration-and-resolution.md)

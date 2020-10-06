@@ -1,21 +1,9 @@
 ---
-title: ページの実装
-description: この記事では、デバイスのカメラからビデオ ストリームのプレビューを表示するために使う、Xamarin.Forms のカスタム コントロール用のカスタム レンダラーを作成する方法について説明します。
-ms.prod: xamarin
-ms.assetid: 915E25E7-4A6B-4F34-B7B4-07D5F4B240F2
-ms.technology: xamarin-forms
-author: davidbritch
-ms.author: dabritch
-ms.date: 05/10/2018
-no-loc:
-- Xamarin.Forms
-- Xamarin.Essentials
-ms.openlocfilehash: 8215454f80614c0c7cca79af5cf51e2dd96453ae
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86929482"
+title:ページの実装の説明: この記事では、デバイスのカメラからビデオ ストリームのプレビューを表示するために使う、Xamarin.Forms のカスタム コントロール用のカスタム レンダラーを作成する方法について説明します。
+ms.prod: xamarin ms.assetid:915E25E7-4A6B-4F34-B7B4-07D5F4B240F2 ms.technology: xamarin-forms author: davidbritch ms.author: dabritch ms.date:05/10/2018 no-loc:
+- "Xamarin.Forms"
+- "Xamarin.Essentials"
+
 ---
 # <a name="implementing-a-view"></a>ページの実装
 
@@ -331,4 +319,4 @@ namespace CustomRenderer.UWP
 
 ## <a name="related-links"></a>関連リンク
 
-- [CustomRendererView (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-view)
+- [CustomRendererView (サンプル)](/samples/xamarin/xamarin-forms-samples/customrenderers-view)

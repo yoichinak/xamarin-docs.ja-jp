@@ -5,18 +5,18 @@ ms.assetid: 34062D84-3E55-4AF7-A688-8551068B1E57
 author: jamesmontemagno
 ms.author: jamont
 ms.custom: video
-ms.date: 01/06/2020
+ms.date: 09/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d594e627fed21c3c2a73770313fcae29695370c5
-ms.sourcegitcommit: a658de488a6da916145ed4aa016825565110e767
+ms.openlocfilehash: 12631abacc56edf88d375d4be89e71a9a4588d03
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86972559"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91436376"
 ---
-# <a name="xamarinessentials-permissions"></a>Xamarin.Essentials:アクセス許可
+# <a name="no-locxamarinessentials-permissions"></a>Xamarin.Essentials:アクセス許可
 
 **Permissions** クラスでは、実行時のアクセス許可を確認および要求する機能が提供されます。
 
@@ -67,6 +67,13 @@ var status = await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
 * Disabled - この機能はデバイス上で無効になっています
 * Granted - ユーザーがアクセス許可を付与したか、自動的に付与されます
 * Restricted - 制限された状態です
+
+
+## <a name="explain-why-permission-is-needed"></a>アクセス許可が必要な理由を説明する
+
+![プレリリース API](~/media/shared/preview.png)
+
+アプリケーションに特定のアクセス許可が必要な理由を説明することをお勧めします。 iOS では、ユーザーに表示される文字列を指定する必要があります。 Android にはこの機能がなく、アクセス許可の状態の既定値は "Disabled" です。 そのため、ユーザーがアクセス許可を拒否したかどうか、またはユーザーにプロンプトを表示するのが初めてかどうかはわかりません。 `ShouldShowRationale` メソッドを使用すると、教育用 UI を表示する必要があるかどうかを判断できます。 このメソッドが `true` を返す場合、ユーザーは、過去にアクセス許可を拒否または無効にしています。 このメソッドを呼び出すと、他のプラットフォームは常に `false` を返します。
 
 ## <a name="available-permissions"></a>利用可能なアクセス許可
 
@@ -192,7 +199,7 @@ public class ReadWriteStoragePermission : Xamarin.Essentials.Permissions.BasePla
 await Permissions.RequestAsync<ReadWriteStoragePermission>();
 ```
 
-共有コードからこの API を呼び出す場合、インターフェイスを作成し、[依存関係サービス](https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/dependency-service/)を使用して実装を登録したり、取得したりできます。
+共有コードからこの API を呼び出す場合、インターフェイスを作成し、[依存関係サービス](../xamarin-forms/app-fundamentals/dependency-service/index.md)を使用して実装を登録したり、取得したりできます。
 
 ```csharp
 public interface IReadWritePermission
@@ -235,21 +242,21 @@ if (status != PermissionStatus.Granted)
 
 # <a name="android"></a>[Android](#tab/android)
 
-アクセス許可には、Android マニフェスト ファイルに一致する属性が設定されている必要があります。
+アクセス許可には、Android マニフェスト ファイルに一致する属性が設定されている必要があります。 アクセス許可の状態の既定値は "Denied" です。
 
-詳細については、「[Xamarin.Android のアクセス許可](https://docs.microsoft.com/xamarin/android/app-fundamentals/permissions)」のドキュメントをご覧ください。
+詳細については、「[Xamarin.Android のアクセス許可](../android/app-fundamentals/permissions.md)」のドキュメントをご覧ください。
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-アクセス許可は、`Info.plist` ファイルの文字列に一致する必要があります。 一度アクセス許可を要求して拒否されると、もう一度アクセス許可を要求してもポップアップが表示されなくなります。 iOS のアプリケーション設定画面で設定を手動で調整するようにユーザーに要求する必要があります。
+アクセス許可は、`Info.plist` ファイルの文字列に一致する必要があります。 一度アクセス許可を要求して拒否されると、もう一度アクセス許可を要求してもポップアップが表示されなくなります。 iOS のアプリケーション設定画面で設定を手動で調整するようにユーザーに要求する必要があります。 アクセス許可の状態の既定値は "Unknown" です。
 
-詳細については、「[iOS のセキュリティとプライバシーの機能](https://docs.microsoft.com/xamarin/ios/app-fundamentals/security-privacy)」のドキュメントをご覧ください。
+詳細については、「[iOS のセキュリティとプライバシーの機能](../ios/app-fundamentals/security-privacy.md)」のドキュメントをご覧ください。
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-アクセス許可には、パッケージ マニフェストで宣言された機能と一致する機能が備わっている必要があります。
+アクセス許可には、パッケージ マニフェストで宣言された機能と一致する機能が備わっている必要があります。 ほとんどのインスタンスで、アクセス許可の状態の既定値は "Unknown" です。
 
-詳細については、[アプリ機能の宣言](https://docs.microsoft.com/windows/uwp/packaging/app-capability-declarations)に関するドキュメントをご覧ください。
+詳細については、[アプリ機能の宣言](/windows/uwp/packaging/app-capability-declarations)に関するドキュメントをご覧ください。
 
 --------------
 

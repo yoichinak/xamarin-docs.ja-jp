@@ -10,12 +10,12 @@ ms.date: 11/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1f180173a42654c54c5686e423ba20d9586271ea
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: b2309d6ec6712be32f6e972fab130a542fbec857
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136709"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91557427"
 ---
 # <a name="summary-of-chapter-18-mvvm"></a>第 18 章の概要。 MVVM
 
@@ -45,7 +45,7 @@ Model は ViewModel について何も知らず、ViewModel は View につい�
 
 ### <a name="a-viewmodel-clock"></a>ViewModel の時計
 
-[**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit) ライブラリの [`DateTimeViewModel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/DateTimeViewModel.cs) によって、タイマーに基づいて変化する `DateTime` 型のプロパティが定義されます。 このクラスでは `INotifyPropertyChanged` が実装され、`DateTime` プロパティが変更されるたびに `PropertyChanged` イベントが発生します。
+[ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit) ライブラリの [`DateTimeViewModel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/DateTimeViewModel.cs) によって、タイマーに基づいて変化する `DateTime` 型のプロパティが定義されます。 このクラスでは `INotifyPropertyChanged` が実装され、`DateTime` プロパティが変更されるたびに `PropertyChanged` イベントが発生します。
 
 [**MvvmClock**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/MvvmClock) サンプルでは、この ViewModel をインスタンス化し、その ViewModel に対してデータ バインディングを使用して、更新された日付と時刻の情報を表示します。
 
@@ -55,13 +55,13 @@ Model は ViewModel について何も知らず、ViewModel は View につい�
 
 ### <a name="a-color-viewmodel"></a>カラー ViewModel
 
-[**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit) ライブラリの [`ColorViewModel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ColorViewModel.cs) では、RGB と HSL のカラー モデルが統合されています。 これは [**HslSliders**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/HslSliders) サンプルで示されています。
+[ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit) ライブラリの [`ColorViewModel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ColorViewModel.cs) では、RGB と HSL のカラー モデルが統合されています。 これは [**HslSliders**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/HslSliders) サンプルで示されています。
 
 [![TK のトリプル スクリーンショット](images/ch18fg08-small.png "HSL カラー モデル")](images/ch18fg08-large.png#lightbox "HSL カラー モデル")
 
 ### <a name="streamlining-the-viewmodel"></a>ViewModel の合理化
 
-ViewModel のコードは、呼び出し元のプロパティ名を自動的に取得する [`CallerMemberName`](xref:System.Runtime.CompilerServices.CallerMemberNameAttribute) 属性を使用して `OnPropertyChanged` メソッドを定義することで、合理化できます。 [**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit) ライブラリの [`ViewModelBase`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ViewModelBase.cs) クラスではこれが行われていて、ViewModel の基底クラスが提供されます。
+ViewModel のコードは、呼び出し元のプロパティ名を自動的に取得する [`CallerMemberName`](xref:System.Runtime.CompilerServices.CallerMemberNameAttribute) 属性を使用して `OnPropertyChanged` メソッドを定義することで、合理化できます。 [ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit) ライブラリの [`ViewModelBase`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/ViewModelBase.cs) クラスでは、これが行われ、ViewModel の基底クラスが提供されます。
 
 ## <a name="the-command-interface"></a>コマンド インターフェイス
 
@@ -90,7 +90,7 @@ Xamarin.Forms よりも前から存在する ViewModel を利用している場�
 
 ### <a name="a-calculator-almost"></a>(ほぼ) 電卓
 
-[**AddingMachine**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/AddingMachine) サンプルでは、`ICommand` の `Execute` メソッドと `CanExecute` メソッドの両方が使用されています。 [**Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs) ライブラリの [`AdderViewModel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs) クラスが使用されています。 ViewModel には、`ICommand` 型のプロパティが 6 つ含まれています。 これらは、`Command` の [`Command` コンストラクター](xref:Xamarin.Forms.Command.%23ctor(System.Action))および [`Command` コンストラクター](xref:Xamarin.Forms.Command.%23ctor(System.Action,System.Func{System.Boolean}))と、`Command<T>` の [`Command<T>` コンストラクター](https://docs.microsoft.com/dotnet/api/xamarin.forms.command.-ctor?view=xamarin-forms#Xamarin_Forms_Command__ctor_System_Action_System_Object__System_Func_System_Object_System_Boolean__)から初期化されます。 足し算プログラムの数値キーは、すべて `Command<T>` で初期化されるプロパティにバインドされます。また、`Execute` と `CanExecute` に対する `string` 引数によって、特定のキーが識別されます。
+[**AddingMachine**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter18/AddingMachine) サンプルでは、`ICommand` の `Execute` メソッドと `CanExecute` メソッドの両方が使用されています。 [ **Xamarin.FormsBook.Toolkit**](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs) ライブラリの [`AdderViewModel`](https://github.com/xamarin/xamarin-forms-book-samples/blob/master/Libraries/Xamarin.FormsBook.Toolkit/Xamarin.FormsBook.Toolkit/AdderViewModel.cs) クラスが使用されています。 ViewModel には、`ICommand` 型のプロパティが 6 つ含まれています。 これらは、`Command` の [`Command` コンストラクター](xref:Xamarin.Forms.Command.%23ctor(System.Action))および [`Command` コンストラクター](xref:Xamarin.Forms.Command.%23ctor(System.Action,System.Func{System.Boolean}))と、`Command<T>` の [`Command<T>` コンストラクター](/dotnet/api/xamarin.forms.command.-ctor?view=xamarin-forms#Xamarin_Forms_Command__ctor_System_Action_System_Object__System_Func_System_Object_System_Boolean__)から初期化されます。 足し算プログラムの数値キーは、すべて `Command<T>` で初期化されるプロパティにバインドされます。また、`Execute` と `CanExecute` に対する `string` 引数によって、特定のキーが識別されます。
 
 ## <a name="viewmodels-and-the-application-lifecycle"></a>ViewModel とアプリケーションのライフサイクル
 

@@ -10,18 +10,18 @@ ms.date: 12/18/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 341e1454c37d1fd20423204c95337e580eba7ecb
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: cadefcf4eb3fbc1c8e5c1e2545ef5f4a98eb64e7
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84573405"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91561316"
 ---
-# <a name="automation-properties-in-xamarinforms"></a>Xamarin.Forms でのオートメーションのプロパティ
+# <a name="automation-properties-in-no-locxamarinforms"></a>Xamarin.Forms でのオートメーションのプロパティ
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)
 
-_Xamarin.Forms では、AutomationProperties クラスの添付プロパティを使用して、ユーザー インターフェイス要素にアクセシビリティの値を設定できます。それによって、ネイティブなアクセシビリティ値が設定されます。この記事では、スクリーン リーダーでページの要素について読み上げることができるように、AutomationProperties クラスを使用する方法について説明します。_
+_Xamarin.Forms では、AutomationProperties クラスの添付プロパティを使用して、ユーザー インターフェイス要素にアクセシビリティの値を設定できます。これにより、ネイティブなアクセシビリティ値が設定されます。この記事では、スクリーン リーダーでページの要素について読み上げることができるように、AutomationProperties クラスを使用する方法について説明します。_
 
 Xamarin.Forms では、次の添付プロパティを使用して、ユーザー インターフェイス要素にオートメーション プロパティを設定できます。
 
@@ -174,4 +174,4 @@ Android 上では、スクリーン リーダーによって表示されかつ�
 ## <a name="related-links"></a>関連リンク
 
 - [関連付けられたプロパティ](~/xamarin-forms/xaml/attached-properties.md)
-- [アクセシビリティ (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)
+- [アクセシビリティ (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)

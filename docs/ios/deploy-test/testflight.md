@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/19/2017
-ms.openlocfilehash: 1f86227573fc5e9dc39d4781125c49a067e8967d
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+ms.openlocfilehash: 35adaf4a5cf9ce103cb36320692ad8307b9d1354
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86997489"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91564122"
 ---
 # <a name="using-testflight-to-distribute-xamarinios-apps"></a>TestFlight を使用して Xamarin.iOS アプリを配布する
 
@@ -52,9 +52,9 @@ TestFlight でビルドをテストするには、新しいベータ資格で "*
 3. ベータ テストを管理します。
     - メタデータを追加します。
     - 内部ユーザーを追加します。
-      - 最大 25 ユーザー。
+      - 最大 100 ユーザー。各ユーザーは最大 30 台のデバイスでテストできます。
     - 外部ユーザーを追加します。
-      - 最大 1000 ユーザー。
+      - 最大 10,000 ユーザー。
       - ベータ テスト レビューが必要です。そのためには、Apple のガイドラインへの準拠が必要です。
 4. ユーザーからのフィードバックを受け取り、それに対応して、ステップ 2 に戻ります。
 
@@ -187,7 +187,7 @@ TestFlight を使い始めるには、アプリの **[Prerelease]\(プレリリ�
 - **法務担当者** – チーム エージェントは、法務担当者ロールを割り当てられる唯一の管理者ユーザーです。 法的契約書に署名することができます。
 - **技術担当者** – 技術ユーザーは、アプリに関するほとんどのプロパティを変更できます。 たとえば、アプリ情報の編集、バイナリのアップロード、レビュー用のアプリの送信を行うことができます。
 
-各ビルドは、最大 25 人のメンバーで共有できます。
+各ビルドは、最大 100 人のメンバーで共有できます。各ユーザーは最大 30 台のデバイスでテストできます。
 
 テスト担当者を追加するには、iTunes Connect メイン画面の **[Users and Roles]\(ユーザーとロール\)** を使います。
 
@@ -221,7 +221,7 @@ TestFlight を使い始めるには、アプリの **[Prerelease]\(プレリリ�
 
 アプリがレビューに合格するには、TestFlight のベータ情報ページで必要なすべてのメタデータを入力する必要があります。
 
-招待の準備を開始し、[External Testers]\(外部テスト担当者\) タブでメール アドレス、名、姓を入力して、最大 2000 人の外部テスト担当者を追加できます (下図参照)。 入力するメール アドレスは、Apple ID でなくてもかまいません。これは、招待を受け取るためだけのメール アドレスです。
+招待の準備を開始し、[外部テスト担当者] タブでメール アドレス、名、姓を入力して、最大 10,000 人の外部テスト担当者を追加できます (下図参照)。 入力するメール アドレスは、Apple ID でなくてもかまいません。これは、招待を受け取るためだけのメール アドレスです。
 
 [![テスターを招待します](testflight-images/add-external.png)](testflight-images/add-external.png#lightbox)
 

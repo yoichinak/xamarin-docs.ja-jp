@@ -6,12 +6,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 02/15/2018
-ms.openlocfilehash: 54fc52c2f2460726fe1c22149d4e7cc0e8a92609
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: da0e3775f400c965ee59a762884e638e3379c8df
+ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73028073"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91454859"
 ---
 # <a name="xamarinandroid-environment"></a>Xamarin.Android Environment
 
@@ -36,7 +36,7 @@ Xamarin.Android 4.6 以降、*環境ファイル* をプロジェクトに追加
 
 *キー* が大文字で始まる場合、*キー* は環境変数として扱われます。**setenv** (3) は、プロセスの起動時に環境変数を指定された*値*に設定するために使用されます。
 
-*キー*が小文字で始まる場合、*キー*は Android システムのプロパティとして扱われ、*値*は*既定値*になります。Xamarin.Android の実行動作を制御する Android システムのプロパティは、まず Android システムのプロパティ ストアから検索され、値が存在しない場合は、環境ファイルに指定されている値が使用されます。 これは、診断のために、`adb shell setprop` を使用して環境ファイルの値をオーバーライドできるようにするためです。
+"*キー*" が小文字で始まる場合、"*キー*" は Android のシステム プロパティとして扱われます。"*値*" は "*既定値*" です。Xamarin.Android の実行動作を制御する Android システムのプロパティは、まず Android システムのプロパティ ストアから検索され、値が存在しない場合は、環境ファイルに指定されている値が使用されます。 これは、診断のために、`adb shell setprop` を使用して環境ファイルの値をオーバーライドできるようにするためです。
 
 ## <a name="xamarinandroid-environment-variables"></a>Xamarin.Android の環境変数
 
@@ -44,9 +44,9 @@ Xamarin.Android は `XA_HTTP_CLIENT_HANDLER_TYPE` 変数をサポートしてい
 
 ### `XA_HTTP_CLIENT_HANDLER_TYPE`
 
-[HttpMessageHandler](https://docs.microsoft.com/dotnet/api/system.net.http.httpmessagehandler?view=xamarinandroid-7.1) から継承する必要があり、[`HttpClient()` 既定コンストラクター](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient.-ctor?view=xamarinandroid-7.1#System_Net_Http_HttpClient__ctor)から構築されるアセンブリ修飾型です。
+[HttpMessageHandler](/dotnet/api/system.net.http.httpmessagehandler?view=xamarinandroid-7.1) から継承する必要があり、[`HttpClient()` 既定コンストラクター](/dotnet/api/system.net.http.httpclient.-ctor?view=xamarinandroid-7.1#System_Net_Http_HttpClient__ctor)から構築されるアセンブリ修飾型です。
 
-Xamarin.Android 6.1 では、この環境変数は既定では設定されておらず、[HttpClientHandler](https://docs.microsoft.com/dotnet/api/system.net.http.httpclienthandler?view=xamarinandroid-7.1) が使用されます。
+Xamarin.Android 6.1 では、この環境変数は既定では設定されておらず、[HttpClientHandler](/dotnet/api/system.net.http.httpclienthandler?view=xamarinandroid-7.1) が使用されます。
 
 または、値 `Xamarin.Android.Net.AndroidClientHandler` でネットワーク アクセスに [`java.net.URLConnection`](xref:Java.Net.URLConnection) を使用するよう指定できます。
 これでは、Android がサポートする場合、TLS 1.2 の使用を許可している*場合があります*。
@@ -89,23 +89,23 @@ Xamarin.Android は以下のシステム プロパティをサポートしてい
 Xamarin.Android が `adb logcat` にログを記録する追加情報を制御します。
 次のいずれかの値を含むコンマ区切りの文字列 (`,`) です。
 
-- `all`:*すべての*メッセージを出力します。 `lref` メッセージが含まれているので、あまりお勧めしません。
-- `assembly`:`.apk` を出力して、解析メッセージをアセンブリします。
-- `gc`:GC 関連のメッセージを出力します。
-- `gref`:JNI グローバル参照メッセージを出力します。
-- `lref`:JNI ローカル参照メッセージを出力します。
+- `all`: *すべての* メッセージを出力します。 `lref` メッセージが含まれているので、あまりお勧めしません。
+- `assembly`: `.apk` を出力して、解析メッセージをアセンブリします。
+- `gc`: GC 関連のメッセージを出力します。
+- `gref`: JNI グローバル参照メッセージを出力します。
+- `lref`: JNI ローカル参照メッセージを出力します。
   > [!NOTE]
   > これは*実際には*スパム `adb logcat` になります。
   > Xamarin.Android 5.1 では、`.__override__/lrefs.txt` ファイルも作成され、*巨大*なサイズになる可能性があります。
   > そのため、お勧めしません。
-- `timing`:いくつかのメソッド タイミング情報を出力します。 この処理で、ファイル `.__override__/methods.txt` と `.__override__/counters.txt` も作成されます。
+- `timing`: いくつかのメソッド タイミング情報を出力します。 この処理で、ファイル `.__override__/methods.txt` と `.__override__/counters.txt` も作成されます。
 
 ### `debug.mono.max_grefc`
 
 `debug.mono.max_grefc` システム プロパティの値は整数です。
 この値で、ターゲット デバイスの既定の検出された最大 GREF カウントが*オーバーライド*されます。
 
-*注意:* **environment.txt** ファイルで適時に値を取得できないので、`adb shell setprop
+*注:***environment.txt** ファイルで適時に値を取得できないので、`adb shell setprop
 debug.mono.max_grefc` でのみ使用できます。
 
 ### `debug.mono.profile`
@@ -130,8 +130,8 @@ debug.mono.max_grefc` でのみ使用できます。
 
 `debug.mono.wref` システム プロパティを使用すると、既定で検出された JNI の弱い参照メカニズムをオーバーライドすることができます。 サポートされている値は次の 2 つです。
 
-- `jni`:`JNIEnv::NewWeakGlobalRef()` で作成され、`JNIEnv::DeleteWeakGlobalREf()` によって破棄される JNI の弱い参照を使用します。
-- `java`:`java.lang.WeakReference` インスタンスを参照する JNI グローバル参照を使用します。
+- `jni`: `JNIEnv::NewWeakGlobalRef()` で作成され、`JNIEnv::DeleteWeakGlobalREf()` によって破棄される JNI の弱い参照を使用します。
+- `java`: `java.lang.WeakReference` インスタンスを参照する JNI グローバル参照を使用します。
 
 `java` は、既定では API-7 までと、ART が有効な場合は API-19 (Kit Kat) で使用されます (API-8 では `jni` の参照が追加され、ART によって `jni` の参照が "*破棄されました*")。
 

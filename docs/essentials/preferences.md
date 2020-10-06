@@ -9,14 +9,14 @@ ms.custom: video
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: acc0c48776c7a91e9e5a060928564bc6e0c1d775
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 60a5fbaa8386d0ecdc5d205b3262e05406cec4a6
+ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84801817"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91556244"
 ---
-# <a name="xamarinessentials-preferences"></a>Xamarin.Essentials:Preferences
+# <a name="no-locxamarinessentials-preferences"></a>Xamarin.Essentials:Preferences
 
 **Preferences** クラスを使用すると、アプリケーションのユーザー設定をキー/値ストアに保存できます。
 
@@ -62,7 +62,7 @@ Preferences.Remove("my_key");
 Preferences.Clear();
 ```
 
-これらのメソッドだけでなく、省略可能な `sharedName` を使用してユーザー設定用の追加コンテナーを作成できます。 以下のプラットフォームの実装の詳細をご覧ください。
+また、上記のメソッドでは、省略可能な `sharedName` を取り込みます。これを使用すると、ユーザー設定用の追加コンテナーを作成できます。 以下のプラットフォームの実装の詳細をご覧ください。
 
 ## <a name="supported-data-types"></a>サポートされているデータ型
 
@@ -81,7 +81,7 @@ Preferences.Clear();
 ユーザー設定はネイティブで格納されるため、設定をネイティブ システム設定に統合できます。 プラットフォーム ドキュメントとサンプルに従って、プラットフォームと統合します。
 
 * Apple: [iOS 設定バンドルの実装](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/UserDefaults/Preferences/Preferences.html)
-* [iOS アプリケーションのユーザー設定のサンプル](https://docs.microsoft.com/samples/xamarin/ios-samples/appprefs/)
+* [iOS アプリケーションのユーザー設定のサンプル](/samples/xamarin/ios-samples/appprefs/)
 * [watchOS の設定](https://developer.xamarin.com/guides/ios/watch/working-with/settings/)
 * Android:[設定画面の概要](https://developer.android.com/guide/topics/ui/settings.html)
 
@@ -93,15 +93,15 @@ Preferences.Clear();
 
 # <a name="android"></a>[Android](#tab/android)
 
-すべてのデータは [Shared Preferences](https://developer.android.com/training/data-storage/shared-preferences.html)に格納されます。 `sharedName` が指定されていない場合は既定の共有ユーザー設定が使用され、指定されている場合はその名前を使用して**プライベート**共有ユーザー設定が取得されます。
+すべてのデータは [Shared Preferences](https://developer.android.com/training/data-storage/shared-preferences.html)に格納されます。 `sharedName` が指定されていない場合は、既定の共有ユーザー設定が使用されます。指定されている場合は、その名前を使用して**プライベート**共有ユーザー設定が取得されます。
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-iOS デバイスに値を格納するには、[NSUserDefaults](https://docs.microsoft.com/xamarin/ios/app-fundamentals/user-defaults) が使用されます。 `sharedName` が指定されていない場合は、`StandardUserDefaults` が使用されます。指定されている場合は、`NSUserDefaultsType.SuiteName` に対して使用される指定された名前で新しい `NSUserDefaults` が作成されます。
+iOS デバイスに値を格納するには、[NSUserDefaults](../ios/app-fundamentals/user-defaults.md) が使用されます。 `sharedName` が指定されていない場合は、`StandardUserDefaults` が使用されます。指定されている場合は、`NSUserDefaultsType.SuiteName` に対して使用される指定された名前で新しい `NSUserDefaults` が作成されます。
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 
-デバイスに値を格納するには [ApplicationDataContainer](https://docs.microsoft.com/uwp/api/windows.storage.applicationdatacontainer) が使用されます。 `sharedName` が指定されていない場合は、`LocalSettings` が使用されます。指定されている場合は、その名前を使用して `LocalSettings` 内に新しいコンテナーが作成されます。
+デバイスに値を格納するには [ApplicationDataContainer](/uwp/api/windows.storage.applicationdatacontainer) が使用されます。 `sharedName` が指定されていない場合は、`LocalSettings` が使用されます。指定されている場合は、その名前を使用して `LocalSettings` 内に新しいコンテナーが作成されます。
 
 さらに、`LocalSettings` には、各設定の名前は最大で 255 文字という制限があります。 各設定のサイズは最大 8K バイトで、各コンポジット設定のサイズは最大 64K バイトです。
 
@@ -109,11 +109,11 @@ iOS デバイスに値を格納するには、[NSUserDefaults](https://docs.micr
 
 ## <a name="persistence"></a>永続性
 
-アプリケーションをアンインストールすると、すべての "_ユーザー設定_" が削除されます。 これには例外が 1 つあり、Android 6.0 (API レベル 23) 以降で実行されていて [__自動バックアップ__](https://developer.android.com/guide/topics/data/autobackup)を使用しているアプリの場合です。 この機能は既定で有効にされて、__Shared Preferences__などのアプリ データを保持し、**Preferences** API はそれを利用します。 この機能は、Google の [ドキュメント](https://developer.android.com/guide/topics/data/autobackup)に従って無効にできます。
+アプリケーションをアンインストールすると、すべての "_ユーザー設定_" が削除されます。ただし、[__自動バックアップ__](https://developer.android.com/guide/topics/data/autobackup)が使用されている Android 6.0 (API レベル 23) 以降を対象にして、そこで実行されるアプリは例外です。 この機能は既定で有効にされて、__Shared Preferences__などのアプリ データを保持し、**Preferences** API はそれを利用します。 この機能は、Google の [ドキュメント](https://developer.android.com/guide/topics/data/autobackup)に従って無効にできます。
 
 ## <a name="limitations"></a>制限事項
 
-文字列を格納するとき、この API では少量のテキストを格納することが想定されています。  大量のテキストを格納するためにこれを使用しようとすると、パフォーマンスが低下する可能性があります。
+文字列を格納するとき、この API では少量のテキストを格納することが想定されています。 大量のテキストを格納するためにこれを使用しようとすると、パフォーマンスが低下する可能性があります。
 
 ## <a name="api"></a>API
 

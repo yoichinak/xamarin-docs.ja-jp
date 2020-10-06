@@ -12,14 +12,14 @@ ms.date: 04/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8858a66d2caeea815bf06d5d2741bfc3623598f5
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 06cd68c56192664f6d11ec9f6adbe30f9ae5168c
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86933732"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91433473"
 ---
-# <a name="perform-navigation-in-a-multi-page-xamarinforms-application"></a>複数ページの Xamarin.Forms アプリケーションでナビゲーションを実行する
+# <a name="perform-navigation-in-a-multi-page-no-locxamarinforms-application"></a>複数ページの Xamarin.Forms アプリケーションでナビゲーションを実行する
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)
 
@@ -36,7 +36,7 @@ ms.locfileid: "86933732"
 
 ### <a name="prerequisites"></a>必須コンポーネント
 
-このクイックスタートを試みるには、[前のクイックスタート](single-page.md)を正常に完了しておく必要があります。 または、[前のクイックスタートのサンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)をダウンロードし、それをこのクイックスタートの出発点として使用します。
+このクイックスタートを試みるには、[前のクイックスタート](single-page.md)を正常に完了しておく必要があります。 または、[前のクイックスタートのサンプル](/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)をダウンロードし、それをこのクイックスタートの出発点として使用します。
 
 ::: zone pivot="windows"
 
@@ -86,7 +86,7 @@ ms.locfileid: "86933732"
 
 7. **ソリューション エクスプローラー**で、 **[Notes]** プロジェクトを右クリックし、 **[追加]、[新しい項目]** の順に選択します。 **[新しい項目の追加]** ダイアログで、 **[Visual C# アイテム]、[Xamarin.Forms]、[コンテンツ ページ]** の順に選択し、新しいファイルに **NoteEntryPage** という名前を付け、 **[追加]** ボタンをクリックします。
 
-    ![Xamarin.Forms ContentPage を追加する](multi-page-images/vs/add-note-entry-page.png)
+    ![Xamarin.Forms の追加ContentPage](multi-page-images/vs/add-note-entry-page.png)
 
     これにより、**NoteEntryPage** という名前の新しいページがプロジェクトのルート フォルダーに追加されます。 このページは、アプリケーションの 2 ページ目になります。
 
@@ -369,7 +369,7 @@ ms.locfileid: "86933732"
 
 7. **Solution Pad** で **[Notes]** プロジェクトを選択して右クリックし、 **[追加]、[新しいファイル]** の順に選択します。 **[新しいファイル]** ダイアログで、 **[フォーム]、[フォーム ContentPage XAML]** の順に選択して、新しいファイルに **NoteEntryPage** という名前を付け、 **[新規]** ボタンをクリックします。
 
-    ![Xamarin.Forms ContentPage を追加する](multi-page-images/vsmac/add-note-entry-page.png)
+    ![Xamarin.Forms の追加ContentPage](multi-page-images/vsmac/add-note-entry-page.png)
 
     これにより、**NoteEntryPage** という名前の新しいページがプロジェクトのルート フォルダーに追加されます。 このページは、アプリケーションの 2 ページ目になります。
 
@@ -620,5 +620,5 @@ ms.locfileid: "86933732"
 
 ## <a name="related-links"></a>関連リンク
 
-- [Notes (サンプル)](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)
+- [Notes (サンプル)](/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)
 - [Xamarin.Forms クイックスタート Deep Dive](deepdive.md)

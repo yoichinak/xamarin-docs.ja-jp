@@ -5,20 +5,47 @@ ms.assetid: 5FBB6FF0-0E7B-4C29-8F06-91642AF12629
 author: jamesmontemagno
 ms.custom: video
 ms.author: jamont
-ms.date: 08/20/2019
+ms.date: 09/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: eba2b6decc74c63e6b2790287842e6cc9b237bd2
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 059405d4e3219162022b3f8c0208ee5cc4ac2d38
+ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84802373"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91434541"
 ---
-# <a name="xamarinessentials-email"></a>Xamarin.Essentials:電子メール
+# <a name="no-locxamarinessentials-email"></a>Xamarin.Essentials:電子メール
 
 アプリケーションで **Email** クラスを使用すると、件名、本文、受信者 (TO、CC、BCC) などの情報を指定して既定のメール アプリケーションを開くことができます。
+
+**Email** の機能にアクセスするには、次のプラットフォーム固有の設定が必要です。
+
+# <a name="android"></a>[Android](#tab/android)
+
+プロジェクトのターゲット Android バージョンが **Android 11 (R API 30)** に設定される場合、新しい[パッケージの可視性要件](https://developer.android.com/preview/privacy/package-visibility)で使用されるクエリで Android マニフェストを更新する必要があります。
+
+**[プロパティ]** フォルダーにある **AndroidManifest.xml** ファイルを開き、**manifest** ノードの内部に以下を追加します。
+
+```xml
+<queries>
+  <intent>
+    <action android:name="android.intent.action.SENDTO" />
+    <data android:scheme="mailto" />
+  </intent>
+</queries>
+```
+
+# <a name="ios"></a>[iOS](#tab/ios)
+
+追加の設定は必要ありません。
+
+# <a name="uwp"></a>[UWP](#tab/uwp)
+
+プラットフォームによる違いはありません。
+
+-----
 
 ## <a name="get-started"></a>作業開始
 
@@ -102,7 +129,7 @@ Android の一部のメール クライアントは `Html` を検出する手段
 
 `Html` を送信しようとしている `BodyFormat` で `FeatureNotSupportedException` がスローされるため、`PlainText` のみをサポートします。
 
-すべての電子メール クライアントが添付ファイルの送信をサポートするわけではありません。 詳細については、[ドキュメント](https://docs.microsoft.com/windows/uwp/contacts-and-calendar/sending-email)をご覧ください。
+すべての電子メール クライアントが添付ファイルの送信をサポートするわけではありません。 詳細については、[ドキュメント](/windows/uwp/contacts-and-calendar/sending-email)をご覧ください。
 
 -----
 
