@@ -10,16 +10,16 @@ ms.date: 12/11/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9e5aeedb7dd51717a9bb987e90dffdcd9b514da0
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: cce3fbf6f80b8a0fddff2ed2b2af027721faf59d
+ms.sourcegitcommit: bfe713c038a0d6c4362da4c3221d7aee9ab03d2b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86937944"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91805610"
 ---
 # <a name="android-platform-features"></a>Android プラットフォーム機能
 
-Xamarin.FormsAndroid 用アプリケーションの開発には、Visual Studio が必要です。 [[サポートされているプラットフォーム] ページ](~/get-started/supported-platforms.md)には、前提条件に関する詳細情報が表示されます。
+Xamarin.FormsAndroid 用アプリケーションの開発には、Visual Studio が必要です。 [ [サポートされているプラットフォーム] ページ](~/get-started/supported-platforms.md) には、前提条件に関する詳細情報が表示されます。
 
 ## <a name="platform-specifics"></a>プラットフォーム固有設定
 
@@ -35,7 +35,7 @@ Android のビューには、次のプラットフォーム固有の機能が用
 - Android ボタンの既定の埋め込み値とシャドウ値を使用します。 詳細については、「 [Android でのボタンの余白と影](button-padding-shadow.md)」を参照してください。
 - のソフトキーボードの Input Method Editor オプションを設定 [`Entry`](xref:Xamarin.Forms.Entry) します。 詳細については、「 [Android の入力方式エディターオプション](entry-ime-options.md)」を参照してください。
 - でドロップシャドウを有効にする `ImageButton` 。 詳細については、「 [Android での ImageButton ドロップシャドウ](imagebutton-drop-shadow.md)」を参照してください。
-- での高速スクロールを有効にする [`ListView`](xref:Xamarin.Forms.ListView) 詳細については、「 [ListView fast スクロール (Android](listview-fast-scrolling.md))」を参照してください。
+- での高速スクロールを有効にする [`ListView`](xref:Xamarin.Forms.ListView) 。 詳細については、「 [ListView Fast の Android のスクロール](listview-fast-scrolling.md)」を参照してください。
 - を開くときに使用される遷移を制御し `SwipeView` ます。 詳細については、「 [SwipeView スワイプ切り替えモード](swipeview-swipetransitionmode.md)」を参照してください。
 - で混合コンテンツを表示できるかどうかを制御 [`WebView`](xref:Xamarin.Forms.WebView) します。 詳細については、「 [Android での WebView 混合コンテンツ](webview-mixed-content.md)」を参照してください。
 - でズームを有効にする [`WebView`](xref:Xamarin.Forms.WebView) 。 詳細については、「 [WebView Zoom On Android](webview-zoom-controls.md)」を参照してください。
@@ -62,11 +62,11 @@ Android のクラスには、次のプラットフォーム固有の機能が用
 
 ## <a name="material-design-via-appcompat"></a>AppCompat によるマテリアル設計
 
-Xamarin.FormsAndroid プロジェクトは、 `FormsAppCompatActivity` メインアクティビティの基本クラスとしてを使用するようになりました。 このクラスは、Android によって提供される**AppCompat**機能を使用して、マテリアルデザインテーマを実装します。
+Xamarin.Forms Android プロジェクトは、 `FormsAppCompatActivity` メインアクティビティの基本クラスとしてを使用するようになりました。 このクラスは、Android によって提供される **AppCompat** 機能を使用して、マテリアルデザインテーマを実装します。
 
 素材デザインのテーマを Android プロジェクトに追加するには Xamarin.Forms 、 [AppCompat サポートのインストール手順](appcompat-material-design.md)に従ってください。
 
-既定値を使用した**Todo**サンプルを次に示し `FormsApplicationActivity` ます。
+既定値を使用した **Todo** サンプルを次に示し `FormsApplicationActivity` ます。
 
 [![アプリケーションを使用しないサンプルアプリケーション](images/before-appcompat-sml.png)](images/before-appcompat.png#lightbox "アプリケーションを使用しないサンプルアプリケーション")
 
@@ -75,7 +75,7 @@ Xamarin.FormsAndroid プロジェクトは、 `FormsAppCompatActivity` メイン
 [![アプリケーションの状態とテーマを使用した Todo サンプルアプリケーション](images/post-appcompat-sml.png)](images/post-appcompat.png#lightbox "アプリケーションの状態とテーマを使用した Todo サンプルアプリケーション")
 
 > [!NOTE]
-> を使用する場合 `FormsAppCompatActivity` 、[一部の Android カスタムレンダラーの基本クラス](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md)は異なります。
+> を使用する場合 `FormsAppCompatActivity` 、 [一部の Android カスタムレンダラーの基本クラス](~/xamarin-forms/app-fundamentals/custom-renderer/renderers.md) は異なります。
 
 ## <a name="androidx-migration"></a>AndroidX への移行
 
