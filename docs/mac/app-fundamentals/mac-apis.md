@@ -7,12 +7,12 @@ ms.technology: xamarin-mac
 author: davidortinau
 ms.author: daortin
 ms.date: 03/02/2017
-ms.openlocfilehash: 67638a261cd9a6e8c356924d47ea4adb4eae6a80
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: efac76338af710e716decf47635652bf8de74910
+ms.sourcegitcommit: 6d347e1d7641ac1d2b389fb1dc7a6882a08f7c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91430988"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91851510"
 ---
 # <a name="macos-apis-for-xamarinmac-developers"></a>Xamarin. Mac 開発者向け macOS Api
 
@@ -33,8 +33,8 @@ Xamarin. Mac を使用した開発時間の大部分では、基礎となる目�
 - プレフィックスは、 `-` インスタンス (非静的) メソッドであることを意味します。 + は、クラス (静的) メソッドであることを意味します。
 - `(BOOL)` は戻り値の型です (C# では bool)
 - `canDragRowsWithIndexes` は、名前の最初の部分です。
-- `(NSIndexSet *)rowIndexes` は、最初のパラメーターであり、型はです。 最初のパラメーターの形式は次のとおりです。 `(Type) pararmName`
-- `atPoint:(NSPoint)mouseDownPoint` は2番目のパラメーターとその型です。 最初のパラメーターの後には、次の形式があります。 `selectorPart:(Type) pararmName`
+- `(NSIndexSet *)rowIndexes` は、最初のパラメーターであり、型はです。 最初のパラメーターの形式は次のとおりです。 `(Type) paramName`
+- `atPoint:(NSPoint)mouseDownPoint` は2番目のパラメーターとその型です。 最初のパラメーターの後には、次の形式があります。 `selectorPart:(Type) paramName`
 - このメッセージセレクターの完全な名前はです `canDragRowsWithIndexes:atPoint:` 。 終了時には注意 `:` が必要です。
 - 実際の Xamarin. Mac C# バインドは次のとおりです。 `bool CanDragRows (NSIndexSet rowIndexes, PointF mouseDownPoint)`
 
@@ -45,7 +45,7 @@ Xamarin. Mac を使用した開発時間の大部分では、基礎となる目�
 ```
 
 - インスタンス `v` は、 `canDragRowsWithIndexes:atPoint` 2 つのパラメーター (と) を使用して、というセレクターを呼び出しました `set` `point` 。
-- C# では、メソッドの呼び出しは次のようになります。 `x.CanDragRows (set, point);`
+- C# では、メソッドの呼び出しは次のようになります。 `v.CanDragRows (set, point);`
 
 <a name="finding_selector"></a>
 

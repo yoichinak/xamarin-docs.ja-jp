@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 03/22/2017
-ms.openlocfilehash: b70a4693f356fdf83ca2f7fee9615855a5569712
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 65cc67516442ea2602812a3b1f6ff4f0c71abb05
+ms.sourcegitcommit: 6d347e1d7641ac1d2b389fb1dc7a6882a08f7c00
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91437024"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91851549"
 ---
 # <a name="introduction-to-storyboards-in-xamarinios"></a>Xamarin のストーリーボードの概要
 
@@ -22,7 +22,7 @@ IOS アプリケーションの UI を視覚的に表現するために、Apple 
 
 ストーリーボードを作成し、開いて、Xamarin iOS Designer で編集することができます。 また、このガイドでは、C# を使用してナビゲーションをプログラミングするときに、デザイナーを使用してストーリーボードを作成する方法についても説明します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 ストーリーボードは、Xcode、Visual Studio for Mac の iOS デザイナー、Xamarin のワークロードがインストールされた Visual Studio 2019 で使用できます。
 
@@ -78,7 +78,7 @@ IOS アプリケーションの UI を視覚的に表現するために、Apple 
 
  iOS 8 では、使用可能なすべての画面サイズで iOS ストーリーボードファイルを操作できるように [サイズクラス](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes) が導入されました。これにより、開発者はすべての ios デバイス用に1つの UI を作成できます。 既定では、すべての新しい Xamarin iOS アプリケーションでサイズクラスが使用されます。 以前のプロジェクトのサイズクラスを使用するには、統合された [ストーリーボードの概要](~/ios/user-interface/storyboards/unified-storyboards.md) に関するガイドを参照してください。
 
-サイズクラスを使用するアプリケーションでは、新しい [*Adaptive セグエ*](~/ios/user-interface/storyboards/unified-storyboards.md)も使用されます。 サイズクラスを使用する場合は、iPhone または iPad を使用している天気を直接指定していないことに注意してください。 つまり、どのくらいの作業が必要であるかに関係なく、常に同じように表示される1つの UI を作成しています。 Adaptive セグエ work は、環境を審査し、コンテンツをどの程度最適に提示するかを決定します。 Adaptive セグエを次に示します。
+サイズクラスを使用するアプリケーションでは、新しい [*Adaptive セグエ*](~/ios/user-interface/storyboards/unified-storyboards.md)も使用されます。 サイズクラスを使用する場合は、iPhone と iPad のどちらを使用しているかを直接指定していないことに注意してください。 つまり、どのくらいの作業が必要であるかに関係なく、常に同じように表示される1つの UI を作成しています。 Adaptive セグエ work は、環境を審査し、コンテンツをどの程度最適に提示するかを決定します。 Adaptive セグエを次に示します。
 
 [![Adaptive セグエドロップダウン](images/adaptivesegue.png)](images/adaptivesegue.png#lightbox)
 
@@ -326,7 +326,7 @@ public partial class MainViewController : UIViewController
 
     [![中心線](images/passwordvc.png)](images/passwordvc.png#lightbox)
 
-2. [ピンクに移動] ボタンと [ビューコントローラー] の間のセグエを作成するには、[ *Pinkbutton* ] から [ *Pinkviewcontroller*] に移動し、[マウスの **プッシュ** ] を選択します。
+2. [セグエに移動] ボタンと [ビュー Ctrl-Dragging コントローラー] の間に、 *Pinkbutton* から *pinkviewcontroller*までを選択し、マウスで [ **プッシュ** ] を選択します。
 
 3. セグエをクリックして、 *識別子*を指定し `SegueToPink` ます。
 

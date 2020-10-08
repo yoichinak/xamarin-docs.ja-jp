@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 07/31/2018
-ms.openlocfilehash: 702ca70e220d8e4d28a1a2ddc6be40daae052d58
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: 75edc03706908df365bfda05229a8081ef50a4ac
+ms.sourcegitcommit: db5173f26edbb94b0ec60ab9a708fa04478480f6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91456045"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91853291"
 ---
 # <a name="remote-notifications-with-firebase-cloud-messaging"></a>Firebase クラウド メッセージングによるリモート通知
 
@@ -34,7 +34,7 @@ _このチュートリアルでは、アドインアプリケーションで、�
 
 このチュートリアルでは、 **Fcmclient** に機能を段階的に追加し、それをデバイスまたはエミュレーターで実行して、fcm との対話方法を理解します。 ログ記録を使用して、FCM サーバーでライブアプリトランザクションを監視します。また、FCM メッセージからの通知の生成方法については、「焼討 Base Console notification GUI」に入力します。
 
-## <a name="requirements"></a>必要条件
+## <a name="requirements"></a>要件
 
 これは、焼討 Base Cloud Messaging から送信できる [さまざまな種類のメッセージ](https://firebase.google.com/docs/cloud-messaging/concept-options#notifications_and_data_messages) を理解するのに役立ちます。 メッセージのペイロードによって、クライアントアプリがメッセージを受信して処理する方法が決まります。
 
@@ -476,7 +476,7 @@ if (Intent.Extras != null)
 Log.Debug(TAG, "google app id: " + GetString(Resource.String.google_app_id));
 ```
 
-出力ウィンドウに記録された値はgoogle-services.jsに記録された `google_app_id` 値と一致している必要があり `mobilesdk_app_id` ます。 **google-services.json**
+出力ウィンドウに記録された値はgoogle-services.jsに記録された `google_app_id` 値と一致している必要があり `mobilesdk_app_id` ます。 **google-services.json** は、 `Resource.String.google_app_id` **google-services.jsを**処理するときに msbuild によって生成されます。 
 
 ### <a name="send-a-message"></a>メッセージの送信
 
