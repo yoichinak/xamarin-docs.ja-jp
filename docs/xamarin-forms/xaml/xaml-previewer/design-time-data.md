@@ -10,16 +10,19 @@ ms.date: 03/27/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 182256fd572a370a7b322898b1e24ade12e971fd
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 4221cd313ca8fbc3f3f9f886e3bd3f774c7472f7
+ms.sourcegitcommit: 27f33b0a83b9dc871ad9fb207a1c9960ef197d9e
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84127368"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91897948"
 ---
 # <a name="use-design-time-data-with-the-xaml-previewer"></a>XAML プレビューアーでデザイン時データを使用する
 
 _一部のレイアウトでは、データなしで視覚化するのが困難です。これらのヒントを使用すると、データの多いページを XAML プレビューアーで最大限にプレビューすることができます。_
+
+> [!NOTE]
+> Windows Presentation Foundation (WPF) または UWP を使用している場合は、「[デスクトップアプリケーションの XAML デザイナーでデザイン時のデータを使用](/visualstudio/xaml-tools/xaml-designtime-data)する」を参照してください。
 
 ## <a name="design-time-data-basics"></a>デザイン時のデータの基礎
 
@@ -55,7 +58,7 @@ mc:Ignorable="d"
 
 ## <a name="preview-images-at-design-time"></a>デザイン時にイメージをプレビューする
 
-ページにバインドされている、または動的に読み込まれたイメージのデザイン時のソースを設定できます。 Android プロジェクトで、XAML プレビューアーに表示するイメージを [**リソース >** ] [作成] フォルダーに追加します。 IOS プロジェクトで、[**リソース**] フォルダーにイメージを追加します。 その後、デザイン時に XAML プレビューアーにそのイメージを表示できます。
+ページにバインドされている、または動的に読み込まれたイメージのデザイン時のソースを設定できます。 Android プロジェクトで、XAML プレビューアーに表示するイメージを [ **リソース >** ] [作成] フォルダーに追加します。 IOS プロジェクトで、[ **リソース** ] フォルダーにイメージを追加します。 その後、デザイン時に XAML プレビューアーにそのイメージを表示できます。
 
 ```xaml
 <Image Source={Binding ProfilePicture} d:Source="DesignTimePicture.jpg" />
@@ -134,11 +137,11 @@ xmlns:models="clr-namespace:Monkeys.Models"
 
 ## <a name="alternative-hardcode-a-static-viewmodel"></a>代替方法: 静的ビューモデルのハードコーディング
 
-デザイン時のデータを個々のコントロールに追加しない場合は、ページにバインドするためのモックデータストアを設定できます。 XAML の静的ビューモデルにバインドする方法については、「[デザイン時データの追加](https://montemagno.com/xamarin-forms-design-time-data-tips-best-practices/)」の James Montemagno のブログ記事を参照してください。
+デザイン時のデータを個々のコントロールに追加しない場合は、ページにバインドするためのモックデータストアを設定できます。 XAML の静的ビューモデルにバインドする方法については、「 [デザイン時データの追加](https://montemagno.com/xamarin-forms-design-time-data-tips-best-practices/) 」の James Montemagno のブログ記事を参照してください。
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 
-### <a name="requirements"></a>要件
+### <a name="requirements"></a>必要条件
 
 デザイン時データには、3.6 の最小バージョンが必要です Xamarin.Forms 。
 
