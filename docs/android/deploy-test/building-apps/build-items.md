@@ -59,8 +59,7 @@ Java Android プロジェクトの `assets` フォルダーに含まれるファ
 
 ## <a name="androidlintconfig"></a>AndroidLintConfig
 
-ビルド アクション 'AndroidLintConfig' は、[`$(AndroidLintEnabled)`](~/android/deploy-test/building-apps/build-properties.md#androidlintenabled) プロパティと組み合わせて使用する必要があります。
-プロパティに基づきます)。 このビルド アクションを含むファイルはマージされ、Android の `lint` ツールに渡されます。 これは、どのテストを有効および無効にするかに関する情報を含んだ XML ファイルになります。
+ビルド アクション 'AndroidLintConfig' は、[`$(AndroidLintEnabled)`](~/android/deploy-test/building-apps/build-properties.md#androidlintenabled) プロパティと組み合わせて使用する必要があります。 このビルド アクションを含むファイルはマージされ、Android の `lint` ツールに渡されます。 これは、どのテストを有効および無効にするかに関する情報を含んだ XML ファイルになります。
 
 詳細については、[Lint に関するドキュメント](https://developer.android.com/studio/write/lint)を参照してください。
 
@@ -132,7 +131,7 @@ Android では、複数のアプリケーション バイナリ インターフ�
 
 Xamarin.Android 10.2 で追加されました。
 
-## <a name="content"></a>コンテンツ
+## <a name="content"></a>Content
 
 通常の `Content` ビルド アクションはサポートされていません (コストのかかる可能性がある最初の実行手順を行わずにサポートする方法が見つかっていないからです)。
 

@@ -771,7 +771,7 @@ Xamarin.Android 7.2 で追加されました。
 
 Xamarin.Android 9.4 で追加されました。
 
-## <a name="configuration"></a>構成
+## <a name="configuration"></a>Configuration
 
 使用するビルド構成 ("Debug" や "Release" など) を指定します。 Configuration プロパティは、ターゲットの動作を決定するその他のプロパティの既定値を決定するために使用されます。 追加の構成は、IDE 内で作成できます。
 

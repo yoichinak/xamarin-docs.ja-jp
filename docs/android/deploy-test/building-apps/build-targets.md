@@ -18,7 +18,7 @@ ms.locfileid: "91247221"
 
 Xamarin.Android プロジェクトに対して、次のビルド ターゲットが定義されています。
 
-## <a name="build"></a>ビルド
+## <a name="build"></a>Build
 
 プロジェクト内のソース コードとすべての依存関係をビルドします。
 
@@ -61,7 +61,7 @@ aprofutil $(AProfUtilExtraOptions) -s -v -f -p $(AndroidAotProfilerPort) -o "$(A
 
 Xamarin.Android 10.2 で追加されました。
 
-## <a name="install"></a>インストール
+## <a name="install"></a>Install
 
 既定のデバイスまたは仮想デバイスに、Android パッケージを[作成、署名](#signandroidpackage)、およびインストールします。
 
@@ -106,7 +106,7 @@ adb shell am force-stop @PACKAGE_NAME@
 
 Xamarin.Android 10.2 で追加されました。
 
-## <a name="uninstall"></a>アンインストール
+## <a name="uninstall"></a>Uninstall
 
 既定のデバイスまたは仮想デバイスから Android パッケージをアンインストールします。
 
