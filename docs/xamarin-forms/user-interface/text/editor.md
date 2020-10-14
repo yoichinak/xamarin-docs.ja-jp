@@ -10,12 +10,12 @@ ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 42f89f09bd84127fd19bc3ab64794bdac7f145d7
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 257962516b8a183e63c49b22bc2be108364d9425
+ms.sourcegitcommit: e7d6f8bb074c08d87f7507ad5f1377cfacefa32a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561626"
+ms.lasthandoff: 10/14/2020
+ms.locfileid: "92041887"
 ---
 # <a name="no-locxamarinforms-editor"></a>Xamarin.Forms エディター
 
@@ -133,7 +133,7 @@ Editor editor = new editor { CharacterSpacing = 10 };
 
 ## <a name="auto-size-an-editor"></a>エディターの自動サイズ変更
 
-は、 [`Editor`](xref:Xamarin.Forms.Editor) [`Editor.AutoSize`](xref:Xamarin.Forms.Editor.AutoSize) プロパティを [`TextChanges`](xref:Xamarin.Forms.EditorAutoSizeOption.TextChanges) 列挙体の値であるに設定することにより、コンテンツへの自動サイズ変更を行うことができます [`EditoAutoSizeOption`](xref:Xamarin.Forms.EditorAutoSizeOption) 。 この列挙体には、次の2つの値があります。
+は、 [`Editor`](xref:Xamarin.Forms.Editor) [`Editor.AutoSize`](xref:Xamarin.Forms.Editor.AutoSize) プロパティを [`TextChanges`](xref:Xamarin.Forms.EditorAutoSizeOption.TextChanges) 列挙体の値であるに設定することにより、コンテンツへの自動サイズ変更を行うことができます [`EditorAutoSizeOption`](xref:Xamarin.Forms.EditorAutoSizeOption) 。 この列挙体には、次の2つの値があります。
 
 - [`Disabled`](xref:Xamarin.Forms.EditorAutoSizeOption.Disabled) 自動サイズ変更が無効になっていることを示します。これは既定値です。
 - [`TextChanges`](xref:Xamarin.Forms.EditorAutoSizeOption.TextChanges) 自動サイズ変更が有効になっていることを示します。
