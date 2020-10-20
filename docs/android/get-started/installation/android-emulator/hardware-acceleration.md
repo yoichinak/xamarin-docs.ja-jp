@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: jondouglas
 ms.author: jodou
 ms.date: 02/13/2020
-ms.openlocfilehash: baeabf2cde7e0aabe3439d698e63636810069705
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: 4956e0dc4961065650fc9289884c24cd5b5f702c
+ms.sourcegitcommit: 6d347e1d7641ac1d2b389fb1dc7a6882a08f7c00
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91454612"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91851536"
 ---
 # <a name="hardware-acceleration-for-emulator-performance-hyper-v--haxm"></a>エミュレーターのパフォーマンスのためのハードウェア高速化 (Hyper-V と HAXM)
 
@@ -115,9 +115,11 @@ systeminfo
 
 仮想デバイスを作成する (「[Android Device Manager による仮想デバイスの管理](~/android/get-started/installation/android-emulator/device-manager.md)」を参照) ときに、必ず **x86** ベースのイメージを選択してください。 ARM ベースのシステム イメージを使用すると、仮想デバイスは高速化されず、低速で実行されます。
 
+これで Hyper-V が有効になり、高速な Android エミュレーターを実行できるようになります。
+
 ## <a name="accelerating-with-haxm"></a>HAXM による高速化
 
-お使いのコンピューターが Hyper-V をサポートしていない場合は、HAXM を使用して Android エミュレーターを高速化します。 HAXM を使用する場合は、[Device Guard を無効にする](~/android/get-started/installation/android-emulator/troubleshooting.md?tabs=vswin#disable-devguard)必要があります。
+お使いのコンピューターが Hyper-V をサポートしていない場合は、HAXM を使用して Android エミュレーターを高速化できます。 HAXM を使用する場合は、[Device Guard を無効にする](~/android/get-started/installation/android-emulator/troubleshooting.md?tabs=vswin#disable-devguard)必要があります。
 
 ### <a name="verifying-haxm-support"></a>HAXM のサポートを確認する
 
