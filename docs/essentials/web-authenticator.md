@@ -8,12 +8,12 @@ ms.date: 03/26/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c4437f05eddd6885f88fc57ddc108f4fc9f4376d
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: f373b8c249d4dba11db3b8445648afe2c61d273f
+ms.sourcegitcommit: eda6acc7471acc2f95df498e747376006e3d3f2a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91433527"
+ms.lasthandoff: 10/20/2020
+ms.locfileid: "92214824"
 ---
 # <a name="no-locxamarinessentials-web-authenticator"></a>Xamarin.Essentials:Web Authenticator
 
@@ -25,11 +25,11 @@ ms.locfileid: "91433527"
 
 [Microsoft Authentication Library (MSAL)](/azure/active-directory/develop/msal-overview) には、アプリに認証を追加するための優れたターンキー ソリューションが用意されています。 クライアントの NuGet パッケージでは、Xamarin アプリもサポートされています。
 
-認証用に独自の Web サービスを使用する場合は、**WebAuthenticator** を使用してクライアント側の機能を実装することが可能です。
+認証用に独自の Web サービスを使用する場合は、 **WebAuthenticator** を使用してクライアント側の機能を実装することが可能です。
 
 ## <a name="why-use-a-server-back-end"></a>サーバー バックエンドを使用する理由
 
-多くの認証プロバイダーは、セキュリティを強化するために、明示的または 2 本足の認証フローのみの提供へと移行しました。 つまり、認証フローを完了するには、プロバイダーからの "_クライアント シークレット_" が必要です。 残念ながら、モバイル アプリはシークレットを格納するための最適な場所ではありません。モバイル アプリのコード、バイナリ、またはその他に格納されているデータは、通常、安全でないと見なされます。
+多くの認証プロバイダーは、セキュリティを強化するために、明示的または 2 本足の認証フローのみの提供へと移行しました。 つまり、認証フローを完了するには、プロバイダーからの " _クライアント シークレット_ " が必要です。 残念ながら、モバイル アプリはシークレットを格納するための最適な場所ではありません。モバイル アプリのコード、バイナリ、またはその他に格納されているデータは、通常、安全でないと見なされます。
 
 ここでのベスト プラクティスは、モバイル アプリと認証プロバイダーの間の中間レイヤーとして、Web バックエンドを使用することです。
 
@@ -74,12 +74,28 @@ protected override void OnResume()
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-iOS では、アプリのコールバック URI パターンを Info.plist に追加する必要があります。
+iOS では、アプリのコールバック URI パターンを次のような Info.plist に追加する必要があります。
+
+```xml
+<key>CFBundleURLTypes</key>
+<array>
+    <dict>
+        <key>CFBundleURLName</key>
+        <string>xamarinessentials</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+            <string>xamarinessentials</string>
+        </array>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+    </dict>
+</array>
+```
 
 > [!NOTE]
 > ベスト プラクティスとして、[ユニバーサル アプリ リンク](https://developer.apple.com/documentation/uikit/inter-process_communication/allowing_apps_and_websites_to_link_to_your_content)を使用してアプリのコールバック URI を登録することを検討してください。
 
-また、Essentials を呼び出すために `AppDelegate` の `OpenUrl` メソッドをオーバーライドする必要があります。
+また、Essentials を呼び出すために `AppDelegate` の `OpenUrl` および `ContinueUserActivity` メソッドをオーバーライドする必要があります。
 
 ```csharp
 public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
@@ -88,6 +104,13 @@ public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
         return true;
 
     return base.OpenUrl(app, url, options);
+}
+
+public override bool ContinueUserActivity(UIApplication application, NSUserActivity userActivity, UIApplicationRestorationHandler completionHandler)
+{
+    if (Xamarin.Essentials.Platform.ContinueUserActivity(application, userActivity, completionHandler))
+        return true;
+    return base.ContinueUserActivity(application, userActivity, completionHandler);
 }
 ```
 
@@ -190,19 +213,23 @@ var accessToken = r?.AccessToken;
 
 任意の Web バックエンド サービスと共に `WebAuthenticator` API を使用することができます。  ASP.NET Core アプリと共に使用するには、まず、次の手順で Web アプリを構成する必要があります。
 
-1. ASP.NET Core Web アプリで、必要な[外部ソーシャル認証プロバイダー](/aspnet/core/security/authentication/social/?tabs=visual-studio&view=aspnetcore-3.1)をセットアップします。
+1. ASP.NET Core Web アプリで、必要な[外部ソーシャル認証プロバイダー](/aspnet/core/security/authentication/social/?tabs=visual-studio)をセットアップします。
 2. `.AddAuthentication()` の呼び出しで、既定の認証スキームを `CookieAuthenticationDefaults.AuthenticationScheme` に設定します。
 3. Startup.cs の `.AddAuthentication()` の呼び出しで `.AddCookie()` を使用します。
 4. すべてのプロバイダーは `.SaveTokens = true;` を指定して構成する必要があります。
 
+
+``csharp services.AddAuthentication(o => { o.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme; }) .AddCookie() .AddFacebook(fb => { fb.AppId = Configuration["FacebookAppId"]; fb.AppSecret = Configuration["FacebookAppSecret"]; fb.SaveTokens = true; });
+```
+
 > [!TIP]
-> Apple サインインを含める場合は、`AspNet.Security.OAuth.Apple` NuGet パッケージを使用できます。  Essentials の GitHub リポジトリで完全な [Startup.cs のサンプル](https://github.com/xamarin/Essentials/blob/develop/Samples/Sample.Server.WebAuthenticator/Startup.cs#L32-L60)を見ることができます。
+> If you'd like to include Apple Sign In, you can use the `AspNet.Security.OAuth.Apple` NuGet package.  You can view the full [Startup.cs sample](https://github.com/xamarin/Essentials/blob/develop/Samples/Sample.Server.WebAuthenticator/Startup.cs#L32-L60) in the Essentials GitHub repository.
 
-### <a name="add-a-custom-mobile-auth-controller"></a>カスタム モバイル認証コントローラーを追加する
+### Add a custom mobile auth controller
 
-モバイル認証フローでは、通常、ユーザーが選択したプロバイダーに対して直接フローを開始することをお勧めします (たとえば、アプリのサインイン画面で [Microsoft] ボタンをクリックする)。  また、特定のコールバック URI でアプリに関連情報を返し、認証フローを終了できるようにすることも重要です。
+With a mobile authentication flow it is usually desirable to initiate the flow directly to a provider that the user has chosen (e.g. by clicking a "Microsoft" button on the sign in screen of the app).  It is also important to be able to return relevant information to your app at a specific callback URI to end the authentication flow.
 
-これを実現するには、カスタム API コントローラーを使用します。
+To achieve this, use a custom API Controller:
 
 ```csharp
 [Route("mobileauth")]
@@ -228,6 +255,9 @@ public class AuthController : ControllerBase
 プロバイダーの `access_token` などのデータをアプリに戻すことが必要になる場合があります。これは、コールバック URI のクエリ パラメーターを使用して実現できます。 または、代わりにサーバー上に独自の ID を作成して、独自のトークンをアプリに渡すこともできます。 この部分で何をどのように実行するかは、お客様の自由です。
 
 Essentials のリポジトリで[完全なコントローラーのサンプル](https://github.com/xamarin/Essentials/blob/develop/Samples/Sample.Server.WebAuthenticator/Controllers/MobileAuthController.cs)を確認してください。
+
+> [!NOTE]
+> 上のサンプルでは、サード パーティの認証 (つまりOAuth) プロバイダーからアクセ ストークンを返す方法が示されています。 Web バックエンド自体への Web 要求を承認するために使用できるトークンを取得するには、Web アプリで独自のトークンを作成し、代わりにそれを返す必要があります。  「[ASP.NET Core の認証の概要](/aspnet/core/security/authentication)」には、ASP.NET Core での高度な認証シナリオに関する詳細が記載されています。
 
 -----
 ## <a name="api"></a>API
