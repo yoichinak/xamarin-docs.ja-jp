@@ -6,20 +6,20 @@ ms.assetid: E1783E34-1C0F-401A-80D5-B2BE5508F5F8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/29/2020
+ms.date: 10/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 089fb69dfc12b23bb594d5f88a50b37f9694c778
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 77f47af2ed2cce787cf0f66e524c2314ef4c9452
+ms.sourcegitcommit: 1550019cd1e858d4d13a4ae6dfb4a5947702f24b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563381"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92897505"
 ---
 # <a name="no-locxamarinforms-collectionview-data"></a>Xamarin.Forms データの CollectionView
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView) には、表示するデータとその外観を定義する次のプロパティが含まれています。
 
@@ -35,56 +35,10 @@ ms.locfileid: "91563381"
 
 ## <a name="populate-a-collectionview-with-data"></a>CollectionView にデータを設定する
 
-には、 [`CollectionView`](xref:Xamarin.Forms.CollectionView) [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) プロパティをを実装する任意のコレクションに設定することにより、データが設定され `IEnumerable` ます。 項目は、 `ItemsSource` 文字列の配列からプロパティを初期化することによって、XAML で追加できます。
-
-```xaml
-<CollectionView>
-  <CollectionView.ItemsSource>
-    <x:Array Type="{x:Type x:String}">
-      <x:String>Baboon</x:String>
-      <x:String>Capuchin Monkey</x:String>
-      <x:String>Blue Monkey</x:String>
-      <x:String>Squirrel Monkey</x:String>
-      <x:String>Golden Lion Tamarin</x:String>
-      <x:String>Howler Monkey</x:String>
-      <x:String>Japanese Macaque</x:String>
-    </x:Array>
-  </CollectionView.ItemsSource>
-</CollectionView>
-```
-
-> [!NOTE]
-> `x:Array` 要素には、配列内の項目の型を示す `Type` 属性が必要です。
-
-これに相当する C# コードを次に示します。
-
-```csharp
-CollectionView collectionView = new CollectionView();
-collectionView.ItemsSource = new string[]
-{
-    "Baboon",
-    "Capuchin Monkey",
-    "Blue Monkey",
-    "Squirrel Monkey",
-    "Golden Lion Tamarin",
-    "Howler Monkey",
-    "Japanese Macaque"
-};
-```
-
-> [!WARNING]
-> [`CollectionView`](xref:Xamarin.Forms.CollectionView) UI スレッドからが更新された場合、は例外をスロー [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) します。
-
-既定では、 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 次のスクリーンショットに示すように、によって項目が縦の一覧に表示されます。
-
-[![IOS と Android のテキスト項目を含む CollectionView のスクリーンショット](populate-data-images/text.png "CollectionView のテキスト項目")](populate-data-images/text-large.png#lightbox "CollectionView のテキスト項目")
+には、 [`CollectionView`](xref:Xamarin.Forms.CollectionView) [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) プロパティをを実装する任意のコレクションに設定することにより、データが設定され `IEnumerable` ます。 既定では、は [`CollectionView`](xref:Xamarin.Forms.CollectionView) 項目を縦の一覧に表示します。
 
 > [!IMPORTANT]
 > 基に [`CollectionView`](xref:Xamarin.Forms.CollectionView) なるコレクションで項目が追加、削除、または変更されたときにを更新する必要がある場合、基になるコレクションは、 `IEnumerable` などのプロパティ変更通知を送信するコレクションである必要があり `ObservableCollection` ます。
-
-レイアウトを変更する方法の詳細につい [`CollectionView`](xref:Xamarin.Forms.CollectionView) ては、「 [ Xamarin.Forms CollectionView layout](layout.md)」を参照してください。 の各項目の外観を定義する方法の詳細につい `CollectionView` ては、「 [項目の外観を定義](#define-item-appearance)する」を参照してください。
-
-### <a name="data-binding"></a>データ バインディング
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView) データバインディングを使用してデータを設定し、そのプロパティをコレクションにバインドすることができ [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) `IEnumerable` ます。 XAML では、これはマークアップ拡張機能を使用して実現され `Binding` ます。
 
@@ -104,7 +58,10 @@ collectionView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 > [!NOTE]
 > コンパイル済みバインディングは、アプリケーションでのデータバインディングのパフォーマンスを向上させるために有効にすることができ Xamarin.Forms ます。 詳しくは、「[コンパイル済みのバインド](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)」を参照してください。
 
-データ バインディングの詳細については、「[Xamarin.Forms のデータ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)」を参照してください。
+レイアウトを変更する方法の詳細につい [`CollectionView`](xref:Xamarin.Forms.CollectionView) ては、「 [ Xamarin.Forms CollectionView layout](layout.md)」を参照してください。 の各項目の外観を定義する方法の詳細につい `CollectionView` ては、「 [項目の外観を定義](#define-item-appearance)する」を参照してください。 データ バインディングの詳細については、「[Xamarin.Forms のデータ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)」を参照してください。
+
+> [!WARNING]
+> [`CollectionView`](xref:Xamarin.Forms.CollectionView) UI スレッドからが更新された場合、は例外をスロー [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) します。
 
 ## <a name="define-item-appearance"></a>項目の外観を定義する
 

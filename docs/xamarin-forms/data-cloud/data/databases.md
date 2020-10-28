@@ -10,16 +10,16 @@ ms.date: 12/05/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6c5390057baf48634056101d44540020648ea709
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: afa5ccf8f4d4485ae7a9a45bcbc745bddee20f5c
+ms.sourcegitcommit: 1550019cd1e858d4d13a4ae6dfb4a5947702f24b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563108"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92897482"
 ---
 # <a name="no-locxamarinforms-local-databases"></a>Xamarin.Forms ローカルデータベース
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
 
 SQLite データベースエンジンを使用 Xamarin.Forms すると、アプリケーションは共有コードでデータオブジェクトを読み込んで保存することができます。 このサンプルアプリケーションでは、SQLite データベーステーブルを使用して todo 項目を格納します。 この記事では、共有コードで SQLite.Net を使用して、ローカルデータベースの情報を格納および取得する方法について説明します。
 
@@ -42,11 +42,10 @@ NuGet パッケージマネージャーを使用して、 **sqlite-pcl** を検�
 - **ID:** sqlite-net-pcl
 - **作成者:** SQLite-net
 - **所有者:** praeclarum
-- **プロジェクト URL:** https://github.com/praeclarum/sqlite-net
 - **NuGet リンク:** [sqlite-net-pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 > [!NOTE]
-> パッケージ名に関係なく、**sqlite-net-pcl** NuGet パッケージを .NET Standard プロジェクトでも使用します。
+> パッケージ名に関係なく、 **sqlite-net-pcl** NuGet パッケージを .NET Standard プロジェクトでも使用します。
 
 ## <a name="configure-app-constants"></a>アプリ定数の構成
 
@@ -137,7 +136,7 @@ public class TodoItemDatabase
 
 ### <a name="the-safefireandforget-extension-method"></a>Safe焼討 And忘れる拡張メソッド
 
-`TodoItemDatabase`クラスがインスタンス化されるときは、非同期プロセスであるデータベース接続を初期化する必要があります。 ただし
+`TodoItemDatabase`クラスがインスタンス化されるときは、非同期プロセスであるデータベース接続を初期化する必要があります。 ただし、
 
 - クラスコンストラクターを非同期にすることはできません。
 - 待機されていない非同期メソッドは、例外をスローしません。
@@ -260,9 +259,9 @@ SQLite は、この記事とサンプルアプリに記載されているより�
 
 既定では、SQLite は従来の rollback ジャーナルを使用します。 変更されていないデータベースの内容のコピーが別のロールバックファイルに書き込まれ、変更がデータベースファイルに直接書き込まれます。 このコミットは、ロールバックジャーナルが削除されたときに発生します。
 
-先行書き込みログ (WAL) は、最初に個別の WAL ファイルに変更を書き込みます。 WAL モードでは、コミットは特殊なレコードで、WAL ファイルに追加されます。これにより、1つの WAL ファイルで複数のトランザクションを実行できます。 WAL ファイルは、 _チェックポイント_と呼ばれる特殊な操作でデータベースファイルにマージされます。
+Write-Ahead のログ記録 (WAL) では、最初に個別の WAL ファイルに変更を書き込みます。 WAL モードでは、コミットは特殊なレコードで、WAL ファイルに追加されます。これにより、1つの WAL ファイルで複数のトランザクションを実行できます。 WAL ファイルは、 _チェックポイント_ と呼ばれる特殊な操作でデータベースファイルにマージされます。
 
-読み取りと書き込みの操作を同時に行うことができないため、ローカルデータベースでは WAL が高速になります。 ただし、WAL モードでは、 _ページサイズ_を変更することはできません。また、データベースにファイルの関連付けを追加し、追加の _チェックポイント_ 操作を追加します。
+読み取りと書き込みの操作を同時に行うことができないため、ローカルデータベースでは WAL が高速になります。 ただし、WAL モードでは、 _ページサイズ_ を変更することはできません。また、データベースにファイルの関連付けを追加し、追加の _チェックポイント_ 操作を追加します。
 
 SQLite.NET で WAL を有効にするには、 `EnableWriteAheadLoggingAsync` インスタンスでメソッドを呼び出し `SQLiteAsyncConnection` ます。
 
@@ -270,7 +269,7 @@ SQLite.NET で WAL を有効にするには、 `EnableWriteAheadLoggingAsync` �
 await Database.EnableWriteAheadLoggingAsync();
 ```
 
-詳細については、「sqlite.org での [SQLite 書き込みログ](https://www.sqlite.org/wal.html) 」を参照してください。
+詳細については、「 [SQLite Write-Ahead Logging](https://www.sqlite.org/wal.html) on sqlite.org」を参照してください。
 
 ### <a name="copying-a-database"></a>データベースのコピー
 

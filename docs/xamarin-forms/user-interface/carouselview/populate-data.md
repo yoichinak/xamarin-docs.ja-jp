@@ -6,22 +6,22 @@ ms.assetid: 20DB2C57-CE3A-4D91-80DC-73AE361A3CB0
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/29/2020
+ms.date: 10/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b0654aef28ac356fdffc5a846f9ca654db240367
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 82098c47a313eac48b457575620287af74aacd15
+ms.sourcegitcommit: 1550019cd1e858d4d13a4ae6dfb4a5947702f24b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562861"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92897547"
 ---
 # <a name="no-locxamarinforms-carouselview-data"></a>Xamarin.Forms データの CarouselView
 
 ![プレリリース API](~/media/shared/preview.png)
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView) には、表示するデータとその外観を定義する次のプロパティが含まれています。
 
@@ -37,53 +37,10 @@ ms.locfileid: "91562861"
 
 ## <a name="populate-a-carouselview-with-data"></a>CarouselView にデータを設定する
 
-には、 [`CarouselView`](xref:Xamarin.Forms.CarouselView) [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) プロパティをを実装する任意のコレクションに設定することにより、データが設定され `IEnumerable` ます。 項目は、 `ItemsSource` 文字列の配列からプロパティを初期化することによって、XAML で追加できます。
-
-```xaml
-<CarouselView>
-    <CarouselView.ItemsSource>
-        <x:Array Type="{x:Type x:String}">
-            <x:String>Baboon</x:String>
-            <x:String>Capuchin Monkey</x:String>
-            <x:String>Blue Monkey</x:String>
-            <x:String>Squirrel Monkey</x:String>
-            <x:String>Golden Lion Tamarin</x:String>
-            <x:String>Howler Monkey</x:String>
-            <x:String>Japanese Macaque</x:String>
-        </x:Array>
-    </CarouselView.ItemsSource>
-</CarouselView>
-```
-
-> [!NOTE]
-> `x:Array` 要素には、配列内の項目の型を示す `Type` 属性が必要です。
-
-これに相当する C# コードを次に示します。
-
-```csharp
-CarouselView carouselView = new CarouselView();
-carouselView.ItemsSource = new string[]
-{
-    "Baboon",
-    "Capuchin Monkey",
-    "Blue Monkey",
-    "Squirrel Monkey",
-    "Golden Lion Tamarin",
-    "Howler Monkey",
-    "Japanese Macaque"
-};
-```
+には、 [`CarouselView`](xref:Xamarin.Forms.CarouselView) [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) プロパティをを実装する任意のコレクションに設定することにより、データが設定され `IEnumerable` ます。 既定では、 [`CarouselView`](xref:Xamarin.Forms.CarouselView) アイテムは水平方向に表示されます。
 
 > [!IMPORTANT]
 > 基に [`CarouselView`](xref:Xamarin.Forms.CarouselView) なるコレクションで項目が追加、削除、または変更されたときにを更新する必要がある場合、基になるコレクションは、 `IEnumerable` などのプロパティ変更通知を送信するコレクションである必要があり `ObservableCollection` ます。
-
-既定では、 [`CarouselView`](xref:Xamarin.Forms.CarouselView) アイテムは水平方向に表示されます。 次のスクリーンショットは、 `CarouselView` iOS と Android でのさまざまな文字列項目の表示を示しています。
-
-[![IOS と Android のテキスト項目を含む CarouselView のスクリーンショット](populate-data-images/text.png "CarouselView のテキスト項目")](populate-data-images/text-large.png#lightbox "CarouselView のテキスト項目")
-
-向きを変更する方法の詳細につい [`CarouselView`](xref:Xamarin.Forms.CarouselView) ては、「 [ Xamarin.Forms CarouselView Layout](layout.md)」を参照してください。 の各項目の外観を定義する方法の詳細につい `CarouselView` ては、「 [項目の外観を定義](#define-item-appearance)する」を参照してください。
-
-### <a name="data-binding"></a>データ バインディング
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView) データバインディングを使用してデータを設定し、そのプロパティをコレクションにバインドすることができ [`ItemsSource`](xref:Xamarin.Forms.ItemsView.ItemsSource) `IEnumerable` ます。 XAML では、これはマークアップ拡張機能を使用して実現され `Binding` ます。
 
@@ -103,7 +60,7 @@ carouselView.SetBinding(ItemsView.ItemsSourceProperty, "Monkeys");
 > [!NOTE]
 > コンパイル済みバインディングは、アプリケーションでのデータバインディングのパフォーマンスを向上させるために有効にすることができ Xamarin.Forms ます。 詳しくは、「[コンパイル済みのバインド](~/xamarin-forms/app-fundamentals/data-binding/compiled-bindings.md)」を参照してください。
 
-データ バインディングの詳細については、「[Xamarin.Forms のデータ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)」を参照してください。
+向きを変更する方法の詳細につい [`CarouselView`](xref:Xamarin.Forms.CarouselView) ては、「 [ Xamarin.Forms CarouselView Layout](layout.md)」を参照してください。 の各項目の外観を定義する方法の詳細につい `CarouselView` ては、「 [項目の外観を定義](#define-item-appearance)する」を参照してください。 データ バインディングの詳細については、「[Xamarin.Forms のデータ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)」を参照してください。
 
 ## <a name="define-item-appearance"></a>項目の外観を定義する
 
