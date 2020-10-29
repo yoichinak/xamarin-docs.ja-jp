@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: jonpryor
 ms.author: jopryo
 ms.date: 09/23/2020
-ms.openlocfilehash: 90efe2533f971180124d044ec39ddcf1591b9d36
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: 8a23e973687ac9f775042685122d558788fc7be7
+ms.sourcegitcommit: 1550019cd1e858d4d13a4ae6dfb4a5947702f24b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91455041"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92897443"
 ---
 # <a name="build-items"></a>ビルド項目
 
@@ -34,7 +34,7 @@ Java Android プロジェクトの `assets` フォルダーに含まれるファ
 
 ## <a name="androidboundlayout"></a>AndroidBoundLayout
 
-`AndroidGenerateLayoutBindings` プロパティが `false` に設定された場合に、レイアウト ファイルにコードビハインドが生成されることを示します。 その他すべての面において、これは上記で説明された `AndroidResource` と同じです。 このアクションは、次のレイアウト ファイルで**のみ**使用できます。
+`AndroidGenerateLayoutBindings` プロパティが `false` に設定された場合に、レイアウト ファイルにコードビハインドが生成されることを示します。 その他すべての面において、これは上記で説明された `AndroidResource` と同じです。 このアクションは、次のレイアウト ファイルで **のみ** 使用できます。
 
 ```xml
 <AndroidBoundLayout Include="Resources\layout\Main.axml" />
@@ -107,7 +107,7 @@ Android では、複数のアプリケーション バイナリ インターフ�
   <AndroidResource Include="Resources-Debug\values\strings.xml"/>
 </ItemGroup>
 <PropertyGroup>
-  <MonoAndroidResourcePrefix>Resources;Resources-Debug<MonoAndroidResourcePrefix>
+  <MonoAndroidResourcePrefix>Resources;Resources-Debug</MonoAndroidResourcePrefix>
 </PropertyGroup>
 ```
 
@@ -140,7 +140,7 @@ Xamarin.Android 5.1 以降では、`@(Content)` ビルド アクションを使�
 
 ## <a name="linkdescription"></a>LinkDescription
 
-*LinkDescription* ビルド アクションを持つファイルは、[リンカーの動作を制御](~/cross-platform/deploy-test/linker.md)するために使用されます。
+*LinkDescription* ビルド アクションを持つファイルは、 [リンカーの動作を制御](~/cross-platform/deploy-test/linker.md)するために使用されます。
 
 ## <a name="proguardconfiguration"></a>ProguardConfiguration
 

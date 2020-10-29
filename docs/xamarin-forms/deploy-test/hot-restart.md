@@ -10,12 +10,12 @@ ms.date: 03/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3240906cdf964bcf798137e640a82dbd1e2341d9
-ms.sourcegitcommit: a662910a6ba14d241e01047739eb1cd87aa7d884
+ms.openlocfilehash: b441e5fd5ef045bf90244b4b69f868fe858e002d
+ms.sourcegitcommit: ba052b0990499d8191bcb25291c6ccd8d1ff26fc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2020
-ms.locfileid: "88029722"
+ms.lasthandoff: 10/23/2020
+ms.locfileid: "92493313"
 ---
 # <a name="xamarin-hot-restart-preview"></a>Xamarin のホット再起動 (プレビュー)
 
@@ -60,7 +60,7 @@ Xamarin のホット再起動を使用すると、複数ファイルのコード
 ## <a name="use-xamarin-hot-restart"></a>Xamarin のホット再起動を使用する
 初期セットアップの後、接続されているデバイスが [デバッグ ターゲット] ドロップダウン メニューに表示されます。 アプリをデバッグするには、ドロップダウンからデバイスを選択し、 **[実行]** ボタンをクリックします。 デバッグ セッションを開始するため、デバイスでアプリを手動で起動するように求めるメッセージが Visual Studio で表示される場合があります。
 
-デバッグ中にコード ファイルを編集し、[デバッグ] ツール バーの **[再起動]** ボタンを押すか、**Ctrl + Shift + F5** キーを使用して、新しい変更が適用されたデバッグ セッションを再起動することができます。
+デバッグ中にコード ファイルを編集し、[デバッグ] ツール バーの **[再起動]** ボタンを押すか、 **Ctrl + Shift + F5** キーを使用して、新しい変更が適用されたデバッグ セッションを再起動することができます。
 
 [![[再起動] ボタンが強調表示されている [デバッグ] ツール バーのスクリーンショット。](hot-restart-images/restart.png)](hot-restart-images/toolbar.png)
 
@@ -77,7 +77,6 @@ Xamarin のホット再起動を使用すると、複数ファイルのコード
 
 ## <a name="troubleshoot"></a>トラブルシューティング
 
-- iTunes が Microsoft Store からインストールされた場合、セットアップ ウィザードでは検出されません。 先にそのバージョンをアンインストールしてから、[Apple のインストーラー](https://go.microsoft.com/fwlink/?linkid=2101014)をダウンロードする必要があります。
 - デバイス固有のビルドを有効にすると、アプリがデバッグ モードに移行できない既知のイシューがあります。 回避策は、 **[プロパティ]、[iOS ビルド]** でこれを無効にし、デバッグを再試行することです。 これは今後のリリースで修正される予定です。
 - アプリがデバイスに既に存在する場合、ホット再起動を伴う配置を試行すると、`AMDeviceStartHouseArrestService` エラーが発生して失敗することがあります。 この回避策は、デバイスでアプリをアンインストールして、再度配置することです。
 - Apple Developer Program に含まれていない Apple ID を入力すると、次のエラーが発生する可能性があります: `Authentication Error. Xcode 7.3 or later is required to continue developing with your Apple ID`。 iOS デバイスで Xamarin のホット再起動を使用するには、有効な Apple Developer アカウントが必要です。 

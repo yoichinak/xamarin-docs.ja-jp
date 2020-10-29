@@ -11,12 +11,12 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 - Firebase
-ms.openlocfilehash: 721785fe2eeb35f0ef04d1a7854afe4039a66849
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 6135d8caec196ded385bc0f962f007c41d20e2cb
+ms.sourcegitcommit: 1550019cd1e858d4d13a4ae6dfb4a5947702f24b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561834"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92897500"
 ---
 # <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-no-locxamarinforms"></a>Azure Notification Hubs と Xamarin.Forms を使用してプッシュ通知を送受信する
 
@@ -44,7 +44,7 @@ Azure Notification Hubs と Xamarin.Forms モバイル アプリの統合は、A
 1. Android パッケージ名を定義します。たとえば、サンプルでは `com.xamarin.notifysample` を使用しています。
 1. Firebase コンソールから `google-services.json` をダウンロードします。 このファイルは、後の手順で Android アプリケーションに追加します。
 1. Azure Notification Hub インスタンスを作成して名前を付けます。 この記事とサンプルでは、ハブ名として `xdocsnotificationhub` を使用します。
-1. FCM **サーバー キー**をコピーして、**API キー**として Azure Notification Hub の **Google (GCM/FCM)** の下に保存します。
+1. FCM **サーバー キー** をコピーして、 **API キー** として Azure Notification Hub の **Google (GCM/FCM)** の下に保存します。
 
 次のスクリーンショットは、Azure Notification Hub の Google プラットフォーム構成を示しています。
 
@@ -132,7 +132,7 @@ public static class AppConstants
 
 次の手順を行って、通知を受信して処理するように Android アプリケーションを構成します。
 
-1. Firebase コンソールのパッケージ名と一致するように、Android の**パッケージ名**を構成します。
+1. Firebase コンソールのパッケージ名と一致するように、Android の **パッケージ名** を構成します。
 1. 次の NuGet パッケージをインストールして、Google Play、Firebase、Azure Notification Hubs とやりとり通信します。
     1. `Xamarin.GooglePlayServices.Base`
     1. `Xamarin.Firebase.Messaging`
@@ -278,9 +278,6 @@ void SendMessageToMainPage(string body)
 
 ローカル通知と `Intent` の例では、ユーザーは通知をタップする操作を行う必要があります。 これは、アプリケーションの状態が変化する前にユーザーがアクションを実行する必要がある場合に適しています。 ただし、場合によっては、ユーザーの操作を必要とせずに、メッセージ データにアクセスすることもできます。 また、前の例では、`SendMessageToMainPage` メソッドを使用して、現在の `MainPage` インスタンスにメッセージが直接送信されます。 運用環境では、両方のメソッドを 1 つのメッセージ型に対して実装すると、ユーザーが通知をタップしたときに、`MainPage` オブジェクトで、重複するメッセージが取得されます。
 
-> [!NOTE]
-> Android アプリケーションでは、バックグラウンドまたはフォアグラウンドで実行されている場合にのみプッシュ通知を受信します。 メイン `Activity` が実行されていないときにプッシュ通知を受信するには、サービスを実装する必要があります。これは、このサンプルの範囲を超えています。 詳細については、[Android サービスの作成](../../../android/app-fundamentals/services/index.md)に関するページをご覧ください
-
 ### <a name="add-incoming-notifications-to-the-no-locxamarinforms-ui"></a>Xamarin.Forms UI に受信通知を追加する
 
 `MainActivity` クラスでは、通知を処理し、受信メッセージ データを管理するためのアクセス許可を取得する必要があります。 次のコードは、`MainActivity` の完全な実装を示しています。
@@ -362,7 +359,7 @@ public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompa
 
 通知を受信するように iOS アプリケーションを構成するプロセスは次のとおりです。
 
-1. プロビジョニング プロファイルで使用されている値と一致するように、`Info.plist` ファイルの**バンドル識別子**を構成します。
+1. プロビジョニング プロファイルで使用されている値と一致するように、`Info.plist` ファイルの **バンドル識別子** を構成します。
 1. `Entitlements.plist` ファイルに **[プッシュ通知を有効にする]** オプションを追加します。
 1. `Xamarin.Azure.NotificationHubs.iOS` NuGet パッケージをプロジェクトに追加します。
 1. APNS で通知を[登録](#register-for-notifications-with-apns)します。
@@ -396,7 +393,7 @@ void RegisterForRemoteNotifications()
     if (UIDevice.CurrentDevice.CheckSystemVersion(10, 0))
     {
         UNUserNotificationCenter.Current.RequestAuthorization(UNAuthorizationOptions.Alert |
-            UNAuthorizationOptions.Sound |
+            UNAuthorizationOptions.Badge |
             UNAuthorizationOptions.Sound,
             (granted, error) =>
             {
@@ -537,7 +534,7 @@ public static class DispatcherConstants
 }
 ```
 
-Azure Notification Hub の構成と一致するように `DispatcherConstants.cs` ファイルを構成する必要があります。 `SubscriptionTags` プロパティの値は、クライアント アプリで使用される値と一致している必要があります。 `NotificationHubName` プロパティは、Azure Notification Hub インスタンスの名前です。 `FullAccessConnectionString` プロパティは、通知ハブの**アクセス ポリシー**内にあるアクセス キーです。 次のスクリーンショットは、Azure portal 内の `NotificationHubName` と `FullAccessConnectionString` のプロパティの場所を示しています。
+Azure Notification Hub の構成と一致するように `DispatcherConstants.cs` ファイルを構成する必要があります。 `SubscriptionTags` プロパティの値は、クライアント アプリで使用される値と一致している必要があります。 `NotificationHubName` プロパティは、Azure Notification Hub インスタンスの名前です。 `FullAccessConnectionString` プロパティは、通知ハブの **アクセス ポリシー** 内にあるアクセス キーです。 次のスクリーンショットは、Azure portal 内の `NotificationHubName` と `FullAccessConnectionString` のプロパティの場所を示しています。
 
 ![Azure Notification Hub の名前と FullAccessConnectionString のスクリーンショット](azure-notification-hub-images/notification-hub-full-access-policy.png "Azure Notification Hub の名前と FullAccessConnectionString")
 

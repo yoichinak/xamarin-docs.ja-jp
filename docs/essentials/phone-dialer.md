@@ -9,20 +9,45 @@ ms.date: 07/02/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d642005e9aed663570c251e955c6a3af4704ed5c
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 9bd281a61fd53ef3f6d0d3d2307f78a218f33cf4
+ms.sourcegitcommit: db423d51356cf5a2dfa1b3925204797b1baf3cd9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84802211"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92734773"
 ---
-# <a name="xamarinessentials-phone-dialer"></a>Xamarin.Essentials:ダイヤラー
+# <a name="no-locxamarinessentials-phone-dialer"></a>Xamarin.Essentials:ダイヤラー
 
 **PhoneDialer** クラスを使用すると、アプリケーションからダイヤラーで電話番号を開くことができます。
 
 ## <a name="get-started"></a>作業開始
 
 [!include[](~/essentials/includes/get-started.md)]
+
+# <a name="android"></a>[Android](#tab/android)
+
+プロジェクトのターゲット Android バージョンが **Android 11 (R API 30)** に設定される場合、新しい [パッケージの可視性要件](https://developer.android.com/preview/privacy/package-visibility)で使用されるクエリで Android マニフェストを更新する必要があります。
+
+**[プロパティ]** フォルダーにある **AndroidManifest.xml** ファイルを開き、 **manifest** ノードの内部に以下を追加します。
+
+```xml
+<queries>
+  <intent>
+    <action android:name="android.intent.action.DIAL" />
+    <data android:scheme="tel"/>
+  </intent>
+</queries>
+```
+
+# <a name="ios"></a>[iOS](#tab/ios)
+
+追加の設定は必要ありません。
+
+# <a name="uwp"></a>[UWP](#tab/uwp)
+
+プラットフォームによる違いはありません。
+
+-----
 
 ## <a name="using-phone-dialer"></a>PhoneDialer の使用
 

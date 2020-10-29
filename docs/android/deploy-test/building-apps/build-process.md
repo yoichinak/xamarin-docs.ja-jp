@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 09/11/2020
-ms.openlocfilehash: d89f686be99dc8ae8d1aada12dcbe94d857424d7
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: 4a89cfbb2406b6a5cda125044d43736dfa02d791
+ms.sourcegitcommit: 01ccefd54c0ced724784dbe1aec9ecfc9b00e633
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91454963"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92630232"
 ---
 # <a name="build-process"></a>ビルド プロセス
 
@@ -30,7 +30,7 @@ Xamarin.Android ビルド システムが生成できる Android アプリケー
 
 ## <a name="shared-runtime"></a>共有ランタイム
 
-*共有ランタイム*は、基本クラス ライブラリ (`mscorlib.dll` など) と Android バインド ライブラリ (`Mono.Android.dll` など) を提供する追加の Android パッケージのペアです。 デバッグ ビルドは共有ランタイムに依存して、基本クラス ライブラリとバインド アセンブリを Android アプリケーション パッケージ内に含める代わりに、デバッグ パッケージをより小さくできるようにします。
+*共有ランタイム* は、基本クラス ライブラリ (`mscorlib.dll` など) と Android バインド ライブラリ (`Mono.Android.dll` など) を提供する追加の Android パッケージのペアです。 デバッグ ビルドは共有ランタイムに依存して、基本クラス ライブラリとバインド アセンブリを Android アプリケーション パッケージ内に含める代わりに、デバッグ パッケージをより小さくできるようにします。
 
 共有ランタイムは、[`$(AndroidUseSharedRuntime)`](~/android/deploy-test/building-apps/build-properties.md#androidusesharedruntime)
 プロパティを `False` に設定することで、デバッグ ビルドで無効にすることができます。
@@ -39,7 +39,7 @@ Xamarin.Android ビルド システムが生成できる Android アプリケー
 
 ## <a name="fast-deployment"></a>高速展開
 
-*高速展開*は、共有ランタイムと連携して、Android アプリケーション パッケージのサイズをさらに縮小します。 これはアプリのアセンブリをパッケージ内にバンドルせずに、 `adb push` を介してターゲットにコピーすることで行います。 このプロセスにより、ビルド/展開/デバッグのサイクルが高速化されます。アセンブリ*のみ*が変更された場合、パッケージは再インストールされず、 代わりに、更新されたアセンブリだけがターゲット デバイスに再同期されるからです。
+*高速展開* は、共有ランタイムと連携して、Android アプリケーション パッケージのサイズをさらに縮小します。 これはアプリのアセンブリをパッケージ内にバンドルせずに、 `adb push` を介してターゲットにコピーすることで行います。 このプロセスにより、ビルド/展開/デバッグのサイクルが高速化されます。アセンブリ *のみ* が変更された場合、パッケージは再インストールされず、 代わりに、更新されたアセンブリだけがターゲット デバイスに再同期されるからです。
 
 高速展開は、`adb` のディレクトリ `/data/data/@PACKAGE_NAME@/files/.__override__` への同期をブロックするデバイスでは失敗することがわかっています。
 
@@ -145,7 +145,7 @@ Xamarin Android のビルド システムでは、ビルド プロセスに接�
 
 ## <a name="target-definitions"></a>ターゲットの定義
 
-ビルド プロセスの Xamarin.Android に固有の部分は、`$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets` で定義されますが、アセンブリをビルドするためには、*Microsoft.CSharp.targets* などの通常の言語固有ターゲットも必要です。
+ビルド プロセスの Xamarin.Android に固有の部分は、`$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets` で定義されますが、アセンブリをビルドするためには、 *Microsoft.CSharp.targets* などの通常の言語固有ターゲットも必要です。
 
 次のビルド プロパティは、ターゲットの言語をインポートする前に設定する必要があります。
 
