@@ -6,12 +6,12 @@ ms.assetid: 8A832A76-A770-1A7C-24BA-B3E6F57617A0
 author: davidortinau
 ms.author: daortin
 ms.date: 03/06/2018
-ms.openlocfilehash: ebb9baf7bb1a6da96615eac65d5384cb7a05a9d6
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: d7f66d9bda014337ae6108ab42158faa856632bb
+ms.sourcegitcommit: 4f0223cf13e14d35c52fa72a026b1c7696bf8929
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91457602"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93278339"
 ---
 # <a name="binding-objective-c-libraries"></a>バインディングの目的 C ライブラリ
 
@@ -37,7 +37,7 @@ C ライブラリを静的にリンクする方法の詳細については、「
 # <a name="visual-studio-for-mac"></a>[Visual Studio for Mac](#tab/macos)
 
 バインディングを作成する最も簡単な方法は、Xamarin の iOS バインドプロジェクトを作成することです。
-これを行うには、[プロジェクトの種類]、[ **iOS > ライブラリ > バインドライブラリ**] の順に選択し Visual Studio for Mac します。
+これを行うには、[プロジェクトの種類]、[ **iOS > ライブラリ > バインドライブラリ** ] の順に選択し Visual Studio for Mac します。
 
 [![これを行うには、[プロジェクトの種類]、[iOS ライブラリバインドライブラリ] の順に選択し Visual Studio for Mac します。](objective-c-libraries-images/00-sml.png)](objective-c-libraries-images/00.png#lightbox)
 
@@ -132,7 +132,7 @@ public partial class Camera {
 
 ライブラリをビルドすると、ネイティブバインドが生成されます。
 
-このバインディングを完了するには、ネイティブライブラリをプロジェクトに追加する必要があります。  これを行うには、ソリューションエクスプローラーでネイティブライブラリを Finder からプロジェクトにドラッグアンドドロップするか、プロジェクトを右クリックして [**追加**] [ファイルの追加] の順に選択し、ネイティブライブラリを  >  **Add Files**選択します。
+このバインディングを完了するには、ネイティブライブラリをプロジェクトに追加する必要があります。  これを行うには、ソリューションエクスプローラーでネイティブライブラリを Finder からプロジェクトにドラッグアンドドロップするか、プロジェクトを右クリックして [ **追加** ] [ファイルの追加] の順に選択し、ネイティブライブラリを  >  **Add Files** 選択します。
 ネイティブライブラリは、"lib" という語で始まり、拡張子 ". a" で終わります。 これを行うと、Visual Studio for Mac によって2つのファイルが追加されます。このファイルには、ネイティブライブラリに含まれる内容に関する情報を含む、自動的に設定された C# ファイルが追加されます。
 
  [![ネイティブライブラリは慣例により、"lib" から始まり、拡張子で終わります。](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png)](objective-c-libraries-images/screen-shot-2012-02-08-at-3.45.06-pm.png#lightbox)
@@ -214,7 +214,7 @@ string SetText ([NullAllowed] string text);
 および [`[Internal]`](~/cross-platform/macios/binding/binding-types-reference.md#InternalAttribute)
 アトリビュート.
 
-内部のプロパティで属性を使用する場合は、実際には、 [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) getter と setter の2つのメソッドをバインドします。 エクスポートするために指定する名前は、"set" という語を前に付加することによって計算されます。 set を使用して、**ベース**の最初の文字を大文字に変換し、セレクターが引数を受け取るよう**にします**。 つまり、 `[Export ("label")]` プロパティに適用されるは、"label" メソッドと "setLabel:" という目的で実際にバインドされます。
+内部のプロパティで属性を使用する場合は、実際には、 [`[Export]`](~/cross-platform/macios/binding/binding-types-reference.md#ExportAttribute) getter と setter の2つのメソッドをバインドします。 エクスポートするために指定する名前は、"set" という語を前に付加することによって計算されます。 set を使用して、 **ベース** の最初の文字を大文字に変換し、セレクターが引数を受け取るよう **にします** 。 つまり、 `[Export ("label")]` プロパティに適用されるは、"label" メソッドと "setLabel:" という目的で実際にバインドされます。
 
 場合によっては、目的の C プロパティが上記のパターンに従わず、名前が手動で上書きされることがあります。 そのような場合は、を使用して、バインディングの生成方法を制御できます。 [`[Bind]`](~/cross-platform/macios/binding/binding-types-reference.md#BindAttribute) 
 get アクセス操作子または setter の属性。次に例を示します。
@@ -269,7 +269,7 @@ string Text { get; [NullAllowed] set; }
 1. **バインドプロパティは静的でなければなりません** 。プロパティのバインドを定義するときは、 [`[Static]`](~/cross-platform/macios/binding/binding-types-reference.md#StaticAttribute) 属性を使用する必要があります。
 2. **プロパティ名は正確に一致する必要があり** ます。プロパティのバインドに使用される名前は、カスタムコントロールのプロパティの名前と正確に一致している必要があります。
 3. **プロパティの型は、厳密に一致する必要があり** ます。プロパティのバインドに使用される変数の型は、カスタムコントロールのプロパティの型と正確に一致する必要があります。
-4. プロパティの getter メソッドまたは setter メソッドに配置された**ブレークポイントとゲッター/setter** -ブレークポイントはヒットしません。
+4. プロパティの getter メソッドまたは setter メソッドに配置された **ブレークポイントとゲッター/setter** -ブレークポイントはヒットしません。
 5. **コールバックを観察** する-カスタムコントロールのプロパティ値の変更を通知するには、監視コールバックを使用する必要があります。
 
 上記のいずれかの警告が表示されない場合は、バインディングが実行時にサイレントに失敗する可能性があります。
@@ -397,7 +397,7 @@ static class IMyProtocol_Extensions {
 }
 ```
 
-**クラス実装**は、の個々のメソッドをオーバーライドし、完全なタイプセーフを取得できる、完全な抽象クラスを提供します。  ただし、C# では複数の継承がサポートされていないため、異なる基底クラスが必要になる場合がありますが、インターフェイスを実装する必要があります。
+**クラス実装** は、の個々のメソッドをオーバーライドし、完全なタイプセーフを取得できる、完全な抽象クラスを提供します。  ただし、C# では複数の継承がサポートされていないため、異なる基底クラスが必要になる場合がありますが、インターフェイスを実装する必要があります。
 
 生成された **インターフェイス定義** はにあります。  これは、プロトコルから必要なすべてのメソッドを含むインターフェイスです。  これにより、開発者は、インターフェイスを実装するだけで、プロトコルを実装することができます。  ランタイムは、プロトコルを採用するときに型を自動的に登録します。
 
@@ -445,7 +445,7 @@ class MyDelegate : NSObject, IUITableViewDelegate {
 }
 ```
 
-インターフェイスメソッドの実装は、適切な名前を使用して自動的にエクスポートされるため、次のようになります。
+必須のインターフェイスメソッドの実装は、適切な名前を使用してエクスポートされるため、次のようになります。
 
 ```csharp
 class MyDelegate : NSObject, IUITableViewDelegate {
@@ -456,7 +456,29 @@ class MyDelegate : NSObject, IUITableViewDelegate {
 }
 ```
 
-インターフェイスが暗黙的または明示的に実装されているかどうかは関係ありません。
+これは必要なすべてのプロトコルメンバーに対して機能しますが、オプションのセレクターを認識する特別なケースがあります。
+基本クラスを使用する場合、オプションのプロトコルメンバーは同じように扱われます。
+
+```
+public class UrlSessionDelegate : NSUrlSessionDownloadDelegate {
+    public override void DidWriteData (NSUrlSession session, NSUrlSessionDownloadTask downloadTask, long bytesWritten, long totalBytesWritten, long totalBytesExpectedToWrite)
+```
+
+ただし、プロトコルインターフェイスを使用する場合は、[Export] を追加する必要があります。 上書きを使用して追加すると、IDE によってオートコンプリートによって追加されます。 
+
+```
+public class UrlSessionDelegate : NSObject, INSUrlSessionDownloadDelegate {
+    [Export ("URLSession:downloadTask:didWriteData:totalBytesWritten:totalBytesExpectedToWrite:")]
+    public void DidWriteData (NSUrlSession session, NSUrlSessionDownloadTask downloadTask, long bytesWritten, long totalBytesWritten, long totalBytesExpectedToWrite)
+```
+
+実行時の2つの動作の違いはわずかです。
+
+- 基本クラスのユーザー (Nの Lsessiondownloaddelegate など) では、必須のセレクターとオプションのセレクターがすべて提供され、妥当な既定値が返されます。
+- インターフェイスのユーザー (INSUrlSessionDownloadDelegate など) は、指定されたセレクターにのみ応答します。
+
+いくつかのまれなクラスは、ここでは動作が異なる場合があります。 ただし、ほとんどの場合は、どちらも安全に使用できます。
+
 
 <a name="Binding_Class_Extensions"></a>
 
@@ -779,7 +801,7 @@ interface MyUIViewExtension {
 }
 ```
 
-上の例では、 `MyUIViewExtension` 拡張メソッドを含むクラスを作成し `MakeBackgroundRed` ます。  これは、任意のサブクラスで "MakeBackgroundRed" を呼び出すことができることを意味します。これにより、 `UIView` 目的の C でも同じ機能が得られます。 場合によっては、カテゴリを使用してシステムクラスを拡張するのではなく、装飾のために機能を整理します。  以下に例を示します。
+上の例では、 `MyUIViewExtension` 拡張メソッドを含むクラスを作成し `MakeBackgroundRed` ます。  これは、任意のサブクラスで "MakeBackgroundRed" を呼び出すことができることを意味します。これにより、 `UIView` 目的の C でも同じ機能が得られます。 場合によっては、カテゴリを使用してシステムクラスを拡張するのではなく、装飾のために機能を整理します。  例:
 
 ```csharp
 @interface SocialNetworking (Twitter)
@@ -1197,7 +1219,7 @@ void SomeString (ref NSObject byref);
 
 上の例では、値に "Retain" セマンティクスがあるとしてフラグが付けられています。 使用できるセマンティクスは次のとおりです。
 
-- 割り当て
+- 代入
 - コピー
 - 保持
 

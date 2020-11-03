@@ -6,18 +6,18 @@ ms.assetid: C6618E9D-07FA-4C84-D014-10DAC989E48D
 author: davidortinau
 ms.author: daortin
 ms.date: 03/06/2018
-ms.openlocfilehash: 8549e993bf46ffd3b24ad8ec495791eb25b25023
-ms.sourcegitcommit: bd49f28105218f04e978e58143bba8cdec9fd4a9
+ms.openlocfilehash: 764c6303956199982da779d87b0a29977575e767
+ms.sourcegitcommit: 4f0223cf13e14d35c52fa72a026b1c7696bf8929
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86925985"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93278352"
 ---
 # <a name="binding-types-reference-guide"></a>バインディングの種類のリファレンスガイド
 
 このドキュメントでは、API コントラクトファイルに注釈を付けて、バインディングと生成されたコードを駆動するために使用できる属性の一覧について説明します。
 
-Xamarin と Xamarin の API コントラクトは、ほとんどの場合、c# では、目的の C コードを C# に提示する方法を定義するインターフェイス定義として記述されています。 このプロセスには、インターフェイス宣言と、API コントラクトが必要とする基本的な型定義の組み合わせが含まれます。 バインディングの種類の概要については、「関連ガイド」バインドの「[目標 C ライブラリ](~/cross-platform/macios/binding/objective-c-libraries.md)」を参照してください。
+Xamarin と Xamarin の API コントラクトは、ほとんどの場合、c# では、目的の C コードを C# に提示する方法を定義するインターフェイス定義として記述されています。 このプロセスには、インターフェイス宣言と、API コントラクトが必要とする基本的な型定義の組み合わせが含まれます。 バインディングの種類の概要については、「関連ガイド」バインドの「 [目標 C ライブラリ](~/cross-platform/macios/binding/objective-c-libraries.md)」を参照してください。
 
 ## <a name="type-definitions"></a>型定義
 
@@ -283,7 +283,7 @@ interface MyUIViewExtension {
 
 上の例では、 `MyUIViewExtension` 拡張メソッドを含むクラスを作成し `MakeBackgroundRed` ます。   これは、任意のサブクラスでを呼び出すことができるようになったことを意味します。これにより、 `MakeBackgroundRed` `UIView` 目的の C でも同じ機能が得られます。
 
-場合によっては、次の例のように、**静的**メンバーがカテゴリ内に存在することがあります。
+場合によっては、次の例のように、 **静的** メンバーがカテゴリ内に存在することがあります。
 
 ```objc
 @interface FooObject (MyFooObjectExtension)
@@ -291,7 +291,7 @@ interface MyUIViewExtension {
 @end
 ```
 
-これにより、**正しくない**カテゴリの C# インターフェイス定義が発生します。
+これにより、 **正しくない** カテゴリの C# インターフェイス定義が発生します。
 
 ```csharp
 [Category]
@@ -305,7 +305,7 @@ interface FooObject_Extensions {
 }
 ```
 
-これは正しくありません。のインスタンスが必要な拡張機能を使用していて `BoolMethod` `FooObject` も、objc**静的**拡張をバインドしているためです。これは、C# の拡張メソッドの実装方法の事実による副作用になります。
+これは正しくありません。のインスタンスが必要な拡張機能を使用していて `BoolMethod` `FooObject` も、objc **静的** 拡張をバインドしているためです。これは、C# の拡張メソッドの実装方法の事実による副作用になります。
 
 上記の定義を使用する唯一の方法は、次のような厄介なコードです。
 
@@ -356,7 +356,7 @@ public partial class CBAdvertisement  {
 これは、ランタイムが、実際に上書きされたメソッドのみを目的の C に登録する点が異なります。
 それ以外の場合、メソッドは登録されません。
 
-これは一般に、でフラグが設定されたクラスをサブクラス化する場合 `ModelAttribute` 、基本メソッドを呼び出さないことを意味します。   このメソッドを呼び出すと、次の例外がスローされます: Foundation. You_Should_Not_Call_base_In_This_Method。 オーバーライドするすべてのメソッドに対して、サブクラスに動作全体を実装することになります。
+これは一般に、でフラグが設定されたクラスをサブクラス化する場合 `ModelAttribute` 、基本メソッドを呼び出さないことを意味します。   このメソッドを呼び出すと、次の例外がスローされます: Foundation.You_Should_Not_Call_base_In_This_Method。 オーバーライドするすべてのメソッドに対して、サブクラスに動作全体を実装することになります。
 
 <a name="AbstractAttribute"></a>
 
@@ -624,9 +624,9 @@ static class IMyProtocol_Extensions {
 }
 ```
 
-**クラス実装**は、の個々のメソッドをオーバーライドし、完全なタイプセーフを取得できる、完全な抽象クラスを提供します。 ただし、C# では複数の継承がサポートされていないため、異なる基本クラスが必要になる場合がありますが、インターフェイスを実装することもできます。
+**クラス実装** は、の個々のメソッドをオーバーライドし、完全なタイプセーフを取得できる、完全な抽象クラスを提供します。 ただし、C# では複数の継承がサポートされていないため、異なる基本クラスが必要になる場合がありますが、インターフェイスを実装することもできます。
 
-ここでは、生成された**インターフェイス定義**が含まれています。  これは、プロトコルから必要なすべてのメソッドを含むインターフェイスです。  これにより、開発者は、インターフェイスを実装するだけで、プロトコルを実装することができます。  ランタイムは、プロトコルを採用するときに型を自動的に登録します。
+ここでは、生成された **インターフェイス定義** が含まれています。  これは、プロトコルから必要なすべてのメソッドを含むインターフェイスです。  これにより、開発者は、インターフェイスを実装するだけで、プロトコルを実装することができます。  ランタイムは、プロトコルを採用するときに型を自動的に登録します。
 
 インターフェイスには、必要なメソッドが一覧表示されるだけで、オプションのメソッドが公開されることに注意してください。   これは、プロトコルを採用するクラスが必要なメソッドの完全な型チェックを取得することを意味しますが、省略可能なプロトコルメソッドに対しては、弱い型指定 (エクスポート属性を使用して手動で署名を使用すること) を行う必要があります。
 
@@ -671,7 +671,7 @@ class MyDelegate : NSObject, IUITableViewDelegate {
 }
 ```
 
-インターフェイスメソッドの実装は、適切な名前を使用して自動的にエクスポートされるため、次のようになります。
+必須のインターフェイスメソッドの実装は、適切な名前を使用してエクスポートされるため、次のようになります。
 
 ```csharp
 class MyDelegate : NSObject, IUITableViewDelegate {
@@ -682,7 +682,29 @@ class MyDelegate : NSObject, IUITableViewDelegate {
 }
 ```
 
-インターフェイスが暗黙的または明示的に実装されているかどうかは関係ありません。
+これは必要なすべてのプロトコルメンバーに対して機能しますが、オプションのセレクターを認識する特別なケースがあります。
+
+基本クラスを使用する場合、オプションのプロトコルメンバーは同じように扱われます。
+
+```
+public class UrlSessionDelegate : NSUrlSessionDownloadDelegate {
+    public override void DidWriteData (NSUrlSession session, NSUrlSessionDownloadTask downloadTask, long bytesWritten, long totalBytesWritten, long totalBytesExpectedToWrite)
+```
+
+ただし、プロトコルインターフェイスを使用する場合は、[Export] を追加する必要があります。 上書きを使用して追加すると、IDE によってオートコンプリートによって追加されます。 
+
+```
+public class UrlSessionDelegate : NSObject, INSUrlSessionDownloadDelegate {
+    [Export ("URLSession:downloadTask:didWriteData:totalBytesWritten:totalBytesExpectedToWrite:")]
+    public void DidWriteData (NSUrlSession session, NSUrlSessionDownloadTask downloadTask, long bytesWritten, long totalBytesWritten, long totalBytesExpectedToWrite)
+```
+
+実行時の2つの動作の違いはわずかです。
+
+- 基本クラスのユーザー (Nの Lsessiondownloaddelegate など) では、必須のセレクターとオプションのセレクターがすべて提供され、妥当な既定値が返されます。
+- インターフェイスのユーザー (INSUrlSessionDownloadDelegate など) は、指定されたセレクターにのみ応答します。
+
+いくつかのまれなクラスは、ここでは動作が異なる場合があります。 ただし、ほとんどの場合は、どちらも安全に使用できます。
 
 ### <a name="protocol-inlining"></a>プロトコルインライン展開
 
@@ -771,7 +793,7 @@ public partial class UIToolbar {
 
 `- (NSURLSessionDownloadTask *)downloadTaskWithRequest:(NSURLRequest *)request`
 
-これは、インスタンスを返すことを明確に示してい `NSURLSessionDownloadTask` ますが、が**返さ**れます。これは、 `NSURLSessionTask` スーパークラスであり、に変換できないことを示し `NSURLSessionDownloadTask` ます。 これはタイプセーフなコンテキストであるため、が `InvalidCastException` 発生します。
+これは、インスタンスを返すことを明確に示してい `NSURLSessionDownloadTask` ますが、が **返さ** れます。これは、 `NSURLSessionTask` スーパークラスであり、に変換できないことを示し `NSURLSessionDownloadTask` ます。 これはタイプセーフなコンテキストであるため、が `InvalidCastException` 発生します。
 
 ヘッダーの説明に従ってを回避するには、を `InvalidCastException` `[ForcedTypeAttribute]` 使用します。
 
@@ -785,7 +807,7 @@ interface NSUrlSession {
 }
 ```
 
-は、 `[ForcedTypeAttribute]` 既定ではという名前のブール値も受け入れ `Owns` `false` `[ForcedType (owns: true)]` ます。 所有しているパラメーターは、 **Core Foundation**オブジェクトの[所有権ポリシー](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html)に従うために使用されます。
+は、 `[ForcedTypeAttribute]` 既定ではという名前のブール値も受け入れ `Owns` `false` `[ForcedType (owns: true)]` ます。 所有しているパラメーターは、 **Core Foundation** オブジェクトの [所有権ポリシー](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/Ownership.html)に従うために使用されます。
 
 は、 `[ForcedTypeAttribute]` パラメーター、プロパティ、および戻り値でのみ有効です。
 
@@ -795,7 +817,7 @@ interface NSUrlSession {
 
 では、 `[BindAsAttribute]` `NSNumber` `NSValue` より正確な C# 型へのバインドと (列挙) が許可されて `NSString` います。 属性を使用すると、ネイティブ API でより正確で正確な .NET API を作成できます。
 
-メソッド (戻り値)、パラメーター、およびプロパティは、を使用して装飾でき `BindAs` ます。 唯一の制限は、メンバーがインターフェイスまたはインターフェイスの内側に配置さ**れていない**ことです `[Protocol]` [`[Model]`](#ModelAttribute) 。
+メソッド (戻り値)、パラメーター、およびプロパティは、を使用して装飾でき `BindAs` ます。 唯一の制限は、メンバーがインターフェイスまたはインターフェイスの内側に配置さ **れていない** ことです `[Protocol]` [`[Model]`](#ModelAttribute) 。
 
 次に例を示します。
 
@@ -883,7 +905,7 @@ CAScroll SupportedScrollMode { get; set; }
 
 #### <a name="arrays"></a>配列
 
-[`[BindAs]`](#BindAsAttribute)では、サポートされる任意の型の配列もサポートされています。例として、次の API 定義を使用できます。
+[`[BindAs]`](#BindAsAttribute) では、サポートされる任意の型の配列もサポートされています。例として、次の API 定義を使用できます。
 
 ```csharp
 [return: BindAs (typeof (CAScroll []))]
@@ -1155,7 +1177,7 @@ public NSObject this [NSObject idx] {
 この属性は、メソッドがネイティブ (目的 C) の例外をサポートするようにします。
 呼び出しは、直接呼び出すのではなく、特定の `objc_msgSend` Trampoline ec 例外をキャッチし、それらをマネージ例外にマーシャリングするカスタムのを経由します。
 
-現在のところ、サポートされているシグネチャはごくわずかです `objc_msgSend` (バインディングを使用するアプリのネイティブリンクが、不足している monotouch_*_objc_msgSend*シンボルで失敗した場合、署名がサポートされていないかどうかは確認できます) が、要求に追加することができます。
+現在のところ、サポートされているシグネチャはごくわずかです `objc_msgSend` (バインディングを使用するアプリのネイティブリンクが、不足している monotouch_ *_objc_msgSend* シンボルで失敗した場合、署名がサポートされていないかどうかは確認できます) が、要求に追加することができます。
 
 ### <a name="newattribute"></a>NewAttribute
 
@@ -1193,7 +1215,7 @@ public class MyClass {
 }
 ```
 
-コードのユーザーは、次のようなコードを使用して、 [Nsdefaultcenter](xref:Foundation.NSNotificationCenter.DefaultCenter)にポストされた通知を簡単にサブスクライブできます。
+コードのユーザーは、次のようなコードを使用して、 [Nsdefaultcenter](xref:Foundation.NSNotificationCenter.DefaultCenter) にポストされた通知を簡単にサブスクライブできます。
 
 ```csharp
 var token = MyClass.Notifications.ObserverDidStart ((notification) => {
@@ -1215,7 +1237,7 @@ var token = MyClass.Notifications.ObserverDidStart (objectToObserve, (notificati
 token.Dispose ();
 ```
 
-または、 [Nsnotification](xref:Foundation.NSNotificationCenter.RemoveObserver(Foundation.NSObject))を呼び出して、トークンを渡すこともできます。 通知にパラメーターが含まれている場合は、次のようにヘルパーインターフェイスを指定する必要があり `EventArgs` ます。
+または、 [Nsnotification](xref:Foundation.NSNotificationCenter.RemoveObserver(Foundation.NSObject)) を呼び出して、トークンを渡すこともできます。 通知にパラメーターが含まれている場合は、次のようにヘルパーインターフェイスを指定する必要があり `EventArgs` ます。
 
 ```csharp
 interface MyClass {
@@ -1238,7 +1260,7 @@ interface MyScreenChangedEventArgs {
 }
 ```
 
-上の例では、プロパティとプロパティを持つクラスが生成されます。これらのプロパティは、 `MyScreenChangedEventArgs` `ScreenX` `ScreenY` それぞれキーを使用して[nsnotification. UserInfo](xref:Foundation.NSNotification.UserInfo)ディクショナリからデータをフェッチし、 `ScreenXKey` 適切な変換を適用し `ScreenYKey` ます。 属性は、 `[ProbePresence]` 値を抽出するのではなく、でキーが設定されているかどうかを調べるジェネレーターに使用され `UserInfo` ます。 これは、キーの存在が値である場合 (通常はブール値の場合) に使用されます。
+上の例では、プロパティとプロパティを持つクラスが生成されます。これらのプロパティは、 `MyScreenChangedEventArgs` `ScreenX` `ScreenY` それぞれキーを使用して [nsnotification. UserInfo](xref:Foundation.NSNotification.UserInfo) ディクショナリからデータをフェッチし、 `ScreenXKey` 適切な変換を適用し `ScreenYKey` ます。 属性は、 `[ProbePresence]` 値を抽出するのではなく、でキーが設定されているかどうかを調べるジェネレーターに使用され `UserInfo` ます。 これは、キーの存在が値である場合 (通常はブール値の場合) に使用されます。
 
 これにより、次のようなコードを記述できます。
 
@@ -1366,7 +1388,7 @@ void Demo ();
 
 ### <a name="proxyattribute"></a>ProxyAttribute
 
-この属性は、プロキシオブジェクトとしてフラグを設定する戻り値に適用されます。 一部の目的 C Api は、ユーザーバインドと区別できないプロキシオブジェクトを返します。 この属性の効果は、オブジェクトをオブジェクトとしてフラグを付けることです `DirectBinding` 。 Xamarin. Mac のシナリオでは、[このバグに](https://bugzilla.novell.com/show_bug.cgi?id=670844)ついての説明を参照できます。
+この属性は、プロキシオブジェクトとしてフラグを設定する戻り値に適用されます。 一部の目的 C Api は、ユーザーバインドと区別できないプロキシオブジェクトを返します。 この属性の効果は、オブジェクトをオブジェクトとしてフラグを付けることです `DirectBinding` 。 Xamarin. Mac のシナリオでは、 [このバグに](https://bugzilla.novell.com/show_bug.cgi?id=670844)ついての説明を参照できます。
 
 ### <a name="retainlistattribute"></a>RetainListAttribute
 
@@ -1499,7 +1521,7 @@ interface FooExplorer {
 }
 ```
 
-`[Wrap]`は、プロパティの getter および setter で直接使用することもできます。
+`[Wrap]` は、プロパティの getter および setter で直接使用することもできます。
 これにより、に対してフルコントロールを設定し、必要に応じてコードを調整できます。
 たとえば、スマートな列挙型を使用する次の API 定義を考えてみます。
 
@@ -1663,7 +1685,7 @@ public class RetainListAttribute: Attribute {
 
 この属性は、getter を持つプロパティが基底クラスで導入され、変更可能なサブクラスが setter を導入する、目的 C の表現をサポートするために使用されます。
 
-C# ではこのモデルがサポートされていないため、基底クラスは setter と getter の両方を持つ必要があり、サブクラスは[Overrideattribute](#OverrideAttribute)を使用できます。
+C# ではこのモデルがサポートされていないため、基底クラスは setter と getter の両方を持つ必要があり、サブクラスは [Overrideattribute](#OverrideAttribute)を使用できます。
 
 この属性は、プロパティ setter でのみ使用され、目標 C で変更可能な表現をサポートするために使用されます。
 
@@ -1698,7 +1720,7 @@ interface MyMutableString {
 
 `NSString`定数を列挙値にマップすると、より適切な .NET API を簡単に作成できます。 それでは次のことが行われます。
 
-* API に対して正しい値**のみ**を表示することにより、コード補完をより効果的にすることができます。
+* API に対して正しい値 **のみ** を表示することにより、コード補完をより効果的にすることができます。
 * タイプセーフを追加し、間違ったコンテキストで別の定数を使用することはできません `NSString` 。
 * では、一部の定数を非表示にすることができます
 
@@ -1737,7 +1759,7 @@ CallApiWithEnum (NSRunLoopModeExtensions.GetValue (constant));
 
 ### <a name="defaultenumvalueattribute"></a>DefaultEnumValueAttribute
 
-この属性を使用して、 **1 つ**の列挙値を装飾できます。 これは、列挙値が不明な場合に返される定数になります。
+この属性を使用して、 **1 つ** の列挙値を装飾できます。 これは、列挙値が不明な場合に返される定数になります。
 
 上記の例から:
 
@@ -1823,7 +1845,7 @@ public class LinkWithAttribute : Attribute {
 }
 ```
 
-この属性はアセンブリレベルで適用されます。たとえば、 [Coreplot バインディング](https://github.com/mono/monotouch-bindings/tree/master/CorePlot)で使用されるのは次のようになります。
+この属性はアセンブリレベルで適用されます。たとえば、 [Coreplot バインディング](https://github.com/mono/monotouch-bindings/tree/master/CorePlot) で使用されるのは次のようになります。
 
 ```csharp
 [assembly: LinkWith ("libCorePlot-CocoaTouch.a", LinkTarget.ArmV7 | LinkTarget.ArmV7s | LinkTarget.Simulator, Frameworks = "CoreGraphics QuartzCore", ForceLoad = true)]
@@ -1899,7 +1921,7 @@ public class LinkWithAttribute : Attribute {
 
 プロパティは、 `WeakFrameworks` プロパティと同じように動作し `Frameworks` ます。ただし、リンク時には、 `-weak_framework` 指定された各フレームワークの gcc に指定子が渡されます。
 
-`WeakFrameworks`では、ライブラリとアプリケーションがプラットフォームフレームワークに対して弱いリンクを作成できるようになりました。使用可能な場合は、必要に応じてそれらを使用できます。ただし、ライブラリが新しいバージョンの iOS に追加機能を追加する場合に便利です。 弱いリンクの詳細については、[弱リンク](https://developer.apple.com/library/mac/#documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WeakLinking.html)に関する Apple のドキュメントを参照してください。
+`WeakFrameworks` では、ライブラリとアプリケーションがプラットフォームフレームワークに対して弱いリンクを作成できるようになりました。使用可能な場合は、必要に応じてそれらを使用できます。ただし、ライブラリが新しいバージョンの iOS に追加機能を追加する場合に便利です。 弱いリンクの詳細については、 [弱リンク](https://developer.apple.com/library/mac/#documentation/MacOSX/Conceptual/BPFrameworks/Concepts/WeakLinking.html)に関する Apple のドキュメントを参照してください。
 
 脆弱なリンクの候補としては、 `Frameworks` アカウント、、、 `CoreBluetooth` `CoreImage` `GLKit` 、 `NewsstandKit` および `Twitter` が iOS 5 でのみ利用可能であるというものがあります。
 
@@ -1955,9 +1977,9 @@ public interface UITableViewController {
 
 ### <a name="requiressuperattribute"></a>RequiresSuperAttribute
 
-これは、属性の特化されたサブクラスであり、メソッドをオーバーライドする場合に、 `[Advice]` 基本 (オーバーライドされた) メソッドを呼び出す**必要**があることを開発者にヒントに使用できます。
+これは、属性の特化されたサブクラスであり、メソッドをオーバーライドする場合に、 `[Advice]` 基本 (オーバーライドされた) メソッドを呼び出す **必要** があることを開発者にヒントに使用できます。
 
-これはに対応し `clang` ます。[`__attribute__((objc_requires_super))`](https://clang.llvm.org/docs/AttributeReference.html#objc-requires-super)
+これはに対応し `clang` ます。 [`__attribute__((objc_requires_super))`](https://clang.llvm.org/docs/AttributeReference.html#objc-requires-super)
 
 ### <a name="zerocopystringsattribute"></a>ZeroCopyStringsAttribute
 
@@ -1996,13 +2018,13 @@ interface MyBinding {
 
 Xamarin. iOS 8.0 では、をラップする厳密に型指定されたクラスを簡単に作成できるようになりました `NSDictionaries` 。
 
-常に、 [Dictionarycontainer](xref:Foundation.DictionaryContainer)データ型を手動の API と共に使用できるようになりましたが、これははるかに簡単になりました。  詳細については、「[厳密な型の提示](~/cross-platform/macios/binding/objective-c-libraries.md#Surfacing_Strong_Types)」を参照してください。
+常に、 [Dictionarycontainer](xref:Foundation.DictionaryContainer) データ型を手動の API と共に使用できるようになりましたが、これははるかに簡単になりました。  詳細については、「 [厳密な型の提示](~/cross-platform/macios/binding/objective-c-libraries.md#Surfacing_Strong_Types)」を参照してください。
 
 <a name="StrongDictionary"></a>
 
 ### <a name="strongdictionary"></a>StrongDictionary
 
-この属性がインターフェイスに適用されると、ジェネレーターは、 [Dictionarycontainer](xref:Foundation.DictionaryContainer)から派生したインターフェイスと同じ名前のクラスを生成し、インターフェイスに定義されている各プロパティを、そのディクショナリの厳密に型指定された getter および setter に変換します。
+この属性がインターフェイスに適用されると、ジェネレーターは、 [Dictionarycontainer](xref:Foundation.DictionaryContainer) から派生したインターフェイスと同じ名前のクラスを生成し、インターフェイスに定義されている各プロパティを、そのディクショナリの厳密に型指定された getter および setter に変換します。
 
 これにより、新しいを作成した既存のまたはからインスタンス化できるクラスが自動的に生成され `NSDictionary` ます。
 
@@ -2060,20 +2082,20 @@ interface MyColoringKeys {
 
 定義では、次のデータ型がサポートされてい `StrongDictionary` ます。
 
-|C# インターフェイス型|`NSDictionary`ストレージの種類|
+|C# インターフェイス型|`NSDictionary` ストレージの種類|
 |---|---|
-|`bool`|`Boolean`に格納されます。`NSNumber`|
-|列挙値|に格納されている整数`NSNumber`|
-|`int`|32-に格納されているビット整数`NSNumber`|
-|`uint`|32-に格納されたビット符号なし整数`NSNumber`|
-|`nint`|`NSInteger`に格納されます。`NSNumber`|
-|`nuint`|`NSUInteger`に格納されます。`NSNumber`|
-|`long`|64-に格納されているビット整数`NSNumber`|
-|`float`|32-として格納されるビット整数`NSNumber`|
-|`double`|64-として格納されるビット整数`NSNumber`|
-|`NSObject`およびサブクラス|`NSObject`|
+|`bool`|`Boolean` に格納されます。 `NSNumber`|
+|列挙値|に格納されている整数 `NSNumber`|
+|`int`|32-に格納されているビット整数 `NSNumber`|
+|`uint`|32-に格納されたビット符号なし整数 `NSNumber`|
+|`nint`|`NSInteger` に格納されます。 `NSNumber`|
+|`nuint`|`NSUInteger` に格納されます。 `NSNumber`|
+|`long`|64-に格納されているビット整数 `NSNumber`|
+|`float`|32-として格納されるビット整数 `NSNumber`|
+|`double`|64-として格納されるビット整数 `NSNumber`|
+|`NSObject` およびサブクラス|`NSObject`|
 |`NSDictionary`|`NSDictionary`|
 |`string`|`NSString`|
 |`NSString`|`NSString`|
 |C# `Array``NSObject`|`NSArray`|
-|`Array`列挙型の C#|`NSArray`格納する `NSNumber` 値|
+|`Array`列挙型の C#|`NSArray` 格納する `NSNumber` 値|
