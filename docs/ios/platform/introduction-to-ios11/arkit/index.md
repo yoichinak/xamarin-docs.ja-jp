@@ -7,21 +7,18 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 08/30/2017
-ms.openlocfilehash: 6803ecf2303ff2c91265f3ac8352a7aa15e74d40
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 6e96a57d2425d99839b723520ac24bafa57cc1a3
+ms.sourcegitcommit: 836d54779190b1bef1b43bc0c2016c9b3034bfda
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91436210"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93281262"
 ---
 # <a name="introduction-to-arkit-in-xamarinios"></a>Xamarin の ARKit の概要
 
 _IOS 11 の拡張現実_
 
-ARKit は、拡張されたさまざまな現実のアプリケーションやゲームを可能にします。 このセクションは、次のトピックで構成されています。
-
-- [ARKit を使用したはじめに](#gettingstarted)
-- [UrhoSharp で ARKit を使用する](urhosharp.md)
+ARKit では、さまざまな拡張現実アプリケーションとゲームが可能
 
 <a name="gettingstarted"></a>
 
@@ -107,12 +104,11 @@ SceneView.Session.Pause();
 
 上記のコードでは、単純な ARKit アプリケーションが生成されます。 さらに複雑な例としては、拡張された現実セッションをホストするビューコントローラーがを実装し、追加のメソッドを実装することが想定 `IARSCNViewDelegate` されています。
 
-ARKit は、surface tracking やユーザー操作など、より高度な機能を備えています。 ARKit の追跡と UrhoSharp の組み合わせの例については、 [urhosharp デモ](urhosharp.md) を参照してください。
+ARKit は、surface tracking やユーザー操作など、より高度な機能を備えています。
 
 ## <a name="related-links"></a>関連リンク
 
 - [拡張現実 (Apple)](https://developer.apple.com/arkit/)
-- [UrhoSharp で ARKit を使用する](urhosharp.md)
 - [簡易 ARKit (Jet) のサンプル](/samples/xamarin/ios-samples/ios11-arkitsample)
 - [ARKit 配置 (オブジェクトを) (サンプル)](/samples/xamarin/ios-samples/ios11-arkitplacingobjects)
 - [ARKit の導入-iOS 向けの拡張現実 (WWDC) (ビデオ)](https://developer.apple.com/videos/play/wwdc2017/602/)

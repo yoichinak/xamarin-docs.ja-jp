@@ -9,20 +9,20 @@ ms.date: 09/11/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6ca08815e422b9ec96dcb11d6b069a227bf62866
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 733f640a18196e6bf31eadfa1c632a7202fc1ccc
+ms.sourcegitcommit: 836d54779190b1bef1b43bc0c2016c9b3034bfda
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555269"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93281275"
 ---
 # <a name="skiasharp-graphics-in-no-locxamarinforms"></a>SkiaSharp のグラフィック Xamarin.Forms
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _アプリケーションで2D グラフィックスに SkiaSharp を使用する Xamarin.Forms_
 
-SkiaSharp は、Google 製品で幅広く使用されているオープンソース Skia グラフィックスエンジンを搭載した .NET および C# 用の2D グラフィックスシステムです。 アプリケーションで SkiaSharp を使用して Xamarin.Forms 、2d ベクターグラフィックス、ビットマップ、テキストを描画することができます。 SkiaSharp ライブラリとその他のチュートリアルに関する一般的な情報については、 [2d の描画](~/graphics-games/skiasharp/index.md) ガイドを参照してください。
+SkiaSharp は、Google 製品で幅広く使用されているオープンソース Skia グラフィックスエンジンを搭載した .NET および C# 用の2D グラフィックスシステムです。 アプリケーションで SkiaSharp を使用して Xamarin.Forms 、2d ベクターグラフィックス、ビットマップ、テキストを描画することができます。
 
 このガイドでは、プログラミングについて理解していることを前提としてい Xamarin.Forms ます。
 
@@ -32,7 +32,7 @@ SkiaSharp は、Google 製品で幅広く使用されているオープンソー
 
 ## <a name="skiasharp-preliminaries"></a>SkiaSharp 準備作業
 
-の SkiaSharp Xamarin.Forms は、NuGet パッケージとしてパッケージ化されています。 Xamarin.FormsVisual Studio または Visual Studio for Mac でソリューションを作成したら、NuGet パッケージマネージャーを使用して**SkiaSharp**パッケージを検索し、ソリューションに追加できます。 SkiaSharp を追加した後に各プロジェクトの [ **参照** ] セクションを確認すると、ソリューション内の各プロジェクトにさまざまな **SkiaSharp** ライブラリが追加されていることがわかります。
+の SkiaSharp Xamarin.Forms は、NuGet パッケージとしてパッケージ化されています。 Xamarin.FormsVisual Studio または Visual Studio for Mac でソリューションを作成したら、NuGet パッケージマネージャーを使用して **SkiaSharp** パッケージを検索し、ソリューションに追加できます。 SkiaSharp を追加した後に各プロジェクトの [ **参照** ] セクションを確認すると、ソリューション内の各プロジェクトにさまざまな **SkiaSharp** ライブラリが追加されていることがわかります。
 
 アプリケーションが Xamarin.Forms ios を対象としている場合は、その **情報の plist** ファイルを編集して、最小配置ターゲットを ios 8.0 に変更します。
 

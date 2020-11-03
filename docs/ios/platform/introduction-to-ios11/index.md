@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/19/2017
-ms.openlocfilehash: 35de7c5cf8fdb46f5bba0552e767ac00ee0fe34f
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 09b3ef1446f489b8f9077d59f74fee7cf157ca50
+ms.sourcegitcommit: 836d54779190b1bef1b43bc0c2016c9b3034bfda
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91437354"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93281288"
 ---
 # <a name="introduction-to-ios-11"></a>iOS 11 の概要
 
-![ARKit の例](images/arkit.png) ![AR オブジェクトの配置](images/arkit2.png) ![CoreML の例](images/coreml.png) ![MapKit の例](images/mapkit.png) ![ビジョン四角形の例](images/vision1.png) ![ビジョンの例](images/vision2.png) ![ドラッグアンドドロップの例](images/drag-drop.png) ![ドラッグアンドドロップの例](images/drag-drop2.png) ![SiriKit の例](images/sirikit.png)
+![ARKit の例](images/arkit.png) ![AR オブジェクトの配置](images/arkit2.png) ![CoreML の例](images/coreml.png) ![MapKit の例](images/mapkit.png) ![ビジョン四角形の例](images/vision1.png) ![ビジョンの例](images/vision2.png) ![ドラッグアンドドロップの例1](images/drag-drop.png) ![ドラッグアンドドロップの例2](images/drag-drop2.png) ![SiriKit の例](images/sirikit.png)
 
 iOS 11 には、さまざまなフレームワークにわたる多くの新機能と機能強化が含まれています。
 
@@ -27,7 +27,6 @@ Apple は、iOS 11 用のアーキテクチャの更新、新しいビジュア�
 ## <a name="arkit"></a>[ARKit](arkit/index.md)
 
 ARKit は、iOS に拡張された現実をもたらし、ユーザーはデバイスのカメラを介して世界中と対話できるようにします。
-Xamarin では、 [Arkit を UrhoSharp と共](arkit/urhosharp.md)に使用することもできます。
 
 ## <a name="coreml"></a>[CoreML](coreml.md)
 
@@ -63,7 +62,6 @@ Siri では、リストやメモなど、さらに多くの相互作用がサポ
 
 - [ARKit サンプル](/samples/xamarin/ios-samples/ios11-arkitsample)
 - [オブジェクトを配置する ARKit](/samples/xamarin/ios-samples/ios11-arkitplacingobjects)
-- [ARKit と UrhoSharp](arkit/urhosharp.md)
 - [CoreML イメージ認識のサンプル](/samples/xamarin/ios-samples/ios11-coremlimagerecognition)
 - [Azure カスタムモデルを使用した CoreML](/samples/xamarin/ios-samples/ios11-coremlazuremodel)
 - [CoreNFC タグリーダーのサンプル](/samples/xamarin/ios-samples/ios11-nfctagreader)

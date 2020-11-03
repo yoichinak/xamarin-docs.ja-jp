@@ -6,18 +6,18 @@ ms.assetid: E442EEFB-FA9C-40E9-9668-5A3F915C8400
 author: davidortinau
 ms.author: daortin
 ms.date: 03/23/2017
-ms.openlocfilehash: 72b41854160d0810bbc4a58972f638ef920a4068
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: bdf641ca15919958627850e000c117eeedd12de9
+ms.sourcegitcommit: 836d54779190b1bef1b43bc0c2016c9b3034bfda
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91457485"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93281249"
 ---
 # <a name="building-cross-platform-applications-overview"></a>クロスプラットフォームアプリケーションの構築の概要
 
 このガイドでは、Xamarin プラットフォームを紹介し、クロスプラットフォームアプリケーションを設計してコードの再利用を最大化し、メインのすべてのモバイルプラットフォーム (iOS、Android、および Windows Phone) で高品質のネイティブエクスペリエンスを提供する方法について説明します。
 
-このドキュメントで使用されるアプローチは、一般に生産性向上アプリとゲームアプリの両方に適用されます。ただし、この方法は生産性とユーティリティ (ゲーム以外のアプリケーション) に重点を置いています。 [モノゲームドキュメントの概要](~/graphics-games/monogame/introduction/index.md)に関する記事またはクロスプラットフォームのゲーム開発ガイダンスについては、 [Visual Studio Tools for Unity](/visualstudio/cross-platform/visual-studio-tools-for-unity)を参照してください。
+このドキュメントで使用されるアプローチは、一般に生産性向上アプリとゲームアプリの両方に適用されます。ただし、この方法は生産性とユーティリティ (ゲーム以外のアプリケーション) に重点を置いています。 クロスプラットフォームゲーム開発ガイダンスについては、「 [Visual Studio Tools for Unity](/visualstudio/cross-platform/visual-studio-tools-for-unity) 」を参照してください。
 
 "Write-once, すべての場所で実行する" という語句は、多くの場合、複数のプラットフォームで未変更で実行される単一のコードベースの多くを extol するために使用されます。 コードを再利用するという利点がありますが、このアプローチでは、共通の分母の特徴セットを持つアプリケーションや、ターゲットプラットフォームに適切に適合しない汎用的なユーザーインターフェイスを使用することがよくあります。
 
@@ -34,7 +34,7 @@ Xamarin クロスプラットフォームアプリを作成するための主要
 1. Windows では、Visual Studio または Blend の UI デザイナーで作成されたプレゼンテーション層に XAML を使用します。
 1. Mac では、Xcode で作成されたプレゼンテーション層にストーリーボードを使用します。
 
-Xamarin. Forms プロジェクトはすべてのプラットフォームでサポートされており、Xamarin を使用してプラットフォーム間で共有できるユーザーインターフェイスを作成することができます。 
+Xamarin. Forms プロジェクトはすべてのプラットフォームでサポートされており、Xamarin を使用してプラットフォーム間で共有できるユーザーインターフェイスを作成することができます。
 
 コードの再使用量は、共有コアに保持されるコードの量と、ユーザーインターフェイスに固有のコードの量に大きく左右されます。 コアコードは、ユーザーと直接やり取りしないものですが、代わりに、この情報を収集して表示するアプリケーションの一部のサービスを提供します。
 
@@ -59,4 +59,4 @@ Xamarin. Forms プロジェクトはすべてのプラットフォームでサ�
 
 ## <a name="case-studies"></a>ケース スタディ
 
-このドキュメントには、 *Tasky Pro*という1つのケーススタディが付属しています。 各ケーススタディでは、このドキュメントに記載されている概念の実装について、実際の例を通じて説明します。 このコードはオープンソースであり、 [github](https://github.com/xamarin/mobile-samples/)で入手できます。
+このドキュメントには、 *Tasky Pro* という1つのケーススタディが付属しています。 各ケーススタディでは、このドキュメントに記載されている概念の実装について、実際の例を通じて説明します。 このコードはオープンソースであり、 [github](https://github.com/xamarin/mobile-samples/)で入手できます。
