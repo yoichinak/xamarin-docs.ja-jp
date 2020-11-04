@@ -1,5 +1,5 @@
 ---
-title: Xamarin.Formsコモンコントロールのプロパティ、メソッド、およびイベント
+title: Xamarin.Forms コモンコントロールのプロパティ、メソッド、およびイベント
 description: この記事では、派生クラスで一般的に使用される、VisualElement クラスで定義されている共通のプロパティ、メソッド、およびイベントについて説明します。
 ms.prod: xamarin
 ms.assetId: 85A0CCF5-C1D8-40BB-927F-A4D944E5534D
@@ -10,16 +10,16 @@ ms.date: 07/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b4c0ef44f528e3cbc56a27e98a1c38246736ff8c
-ms.sourcegitcommit: 08290d004d1a7e7ac579bf1f96abf8437921dc70
+ms.openlocfilehash: c709331b743d6d6ac1f72fe87dae342b4478a920
+ms.sourcegitcommit: 9a83e49eb4d2afb8b3a99ac2347f4b9f8a19e76b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87918340"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93330963"
 ---
-# <a name="no-locxamarinforms-common-control-properties-methods-and-events"></a>Xamarin.Formsコモンコントロールのプロパティ、メソッド、およびイベント
+# <a name="no-locxamarinforms-common-control-properties-methods-and-events"></a>Xamarin.Forms コモンコントロールのプロパティ、メソッド、およびイベント
 
-クラスは、 Xamarin.Forms `VisualElement` アプリケーションで使用されるほとんどのコントロールの基本クラスです Xamarin.Forms 。 クラスは、 `VisualElement` 派生クラスで使用される多くの[プロパティ](#properties)、[メソッド](#methods)、および[イベント](#events)を定義します。
+クラスは、 Xamarin.Forms `VisualElement` アプリケーションで使用されるほとんどのコントロールの基本クラスです Xamarin.Forms 。 クラスは、 `VisualElement` 派生クラスで使用される多くの [プロパティ](#properties)、 [メソッド](#methods)、および [イベント](#events) を定義します。
 
 ## <a name="properties"></a>Properties
 
@@ -31,7 +31,7 @@ ms.locfileid: "87918340"
 
 ### [`AnchorY`](xref:Xamarin.Forms.VisualElement.AnchorY)
 
-プロパティは、 `AnchorY` `double` スケールや回転などの変換の X 軸の中心点を定義する値です。 既定値は0.5 です。
+プロパティは、 `AnchorY` `double` スケールや回転などの変換の Y 軸上の中心点を定義する値です。 既定値は0.5 です。
 
 ### `Background`
 
@@ -55,7 +55,7 @@ ms.locfileid: "87918340"
 
 ### [`Effects`](xref:Xamarin.Forms.Element.Effects)
 
-プロパティは、 `Effects` から継承された `List` オブジェクトのです `Effect` `Element` (xref: Xamarin.Forms要素) クラス。 効果を使用すると、ネイティブコントロールをカスタマイズでき、通常は小さなスタイル変更に使用されます。 クラスの詳細については `Effect` 、「 [ Xamarin.Forms 効果](~/xamarin-forms/app-fundamentals/effects/index.md)」を参照してください。
+プロパティは、 `Effects` `List` `Effect` クラスから継承されたオブジェクトのです [`Element`](xref:Xamarin.Forms.Element) 。 効果を使用すると、ネイティブコントロールをカスタマイズでき、通常は小さなスタイル変更に使用されます。 クラスの詳細については `Effect` 、「 [ Xamarin.Forms 効果](~/xamarin-forms/app-fundamentals/effects/index.md)」を参照してください。
 
 ### [`FlowDirection`](xref:Xamarin.Forms.VisualElement.FlowDirection)
 
@@ -63,11 +63,11 @@ ms.locfileid: "87918340"
 
 ### [`Height`](xref:Xamarin.Forms.VisualElement.Height)
 
-プロパティは、 `Height` コントロールの描画された高さを記述する読み取り専用の `double` 値です。 プロパティは、 `Height` レイアウトサイクル中に計算され、直接設定することはできません。 コントロールの高さは、高さ[要求プロパティ](#heightrequest)を使用して要求できます。
+プロパティは、 `Height` コントロールの描画された高さを記述する読み取り専用の `double` 値です。 プロパティは、 `Height` レイアウトサイクル中に計算され、直接設定することはできません。 コントロールの高さは、高さ [要求プロパティ](#heightrequest)を使用して要求できます。
 
 ### [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest)
 
-プロパティは、 `HeightRequest` `double` コントロールの必要な高さを決定する値です。 コントロールの絶対高さが、要求された値と一致しない可能性があります。 詳細については、「[要求のプロパティ](#request-properties)」を参照してください。
+プロパティは、 `HeightRequest` `double` コントロールの必要な高さを決定する値です。 コントロールの絶対高さが、要求された値と一致しない可能性があります。 詳細については、「 [要求のプロパティ](#request-properties)」を参照してください。
 
 ### [`InputTransparent`](xref:Xamarin.Forms.VisualElement.InputTransparent)
 
@@ -93,13 +93,13 @@ ms.locfileid: "87918340"
 
 プロパティは、 `MinimumHeightRequest` `double` 2 つの要素が制限された領域に対して競合する場合のオーバーフローの処理方法を決定する値です。 プロパティを設定すると、 `MinimumHeightRequest` レイアウトプロセスで、要求された最小の次元に要素をスケールダウンできます。 が指定されていない場合 `MinimumHeightRequest` 、既定値は-1 です。レイアウトプロセスでは、が最小値であると見なされ `HeightRequest` ます。 これは、値のない要素の `MinimumHeightRequest` 高さがスケーラブルではないことを意味します。
 
-詳細については、「[最小要求プロパティ](#minimum-request-properties)」を参照してください。
+詳細については、「 [最小要求プロパティ](#minimum-request-properties)」を参照してください。
 
 ### [`MinimumWidthRequest`](xref:Xamarin.Forms.VisualElement.MinimumWidthRequest)
 
 プロパティは、 `MinimumWidthRequest` `double` 2 つの要素が制限された領域に対して競合する場合のオーバーフローの処理方法を決定する値です。 プロパティを設定すると、 `MinimumWidthRequest` レイアウトプロセスで、要求された最小の次元に要素をスケールダウンできます。 が指定されていない場合 `MinimumWidthRequest` 、既定値は-1 です。レイアウトプロセスでは、が最小値であると見なされ `WidthRequest` ます。 これは、値のない要素の `MinimumWidthRequest` 幅が拡張されないことを意味します。
 
-詳細については、「[最小要求プロパティ](#minimum-request-properties)」を参照してください。
+詳細については、「 [最小要求プロパティ](#minimum-request-properties)」を参照してください。
 
 ### [`Opacity`](xref:Xamarin.Forms.VisualElement.Opacity)
 
@@ -113,7 +113,7 @@ ms.locfileid: "87918340"
 
 `Resources`プロパティは、 `ResourceDictionary` 通常、XAML から実行時に設定されるキーと値のペアを使用して設定されるインスタンスです。 このディクショナリを使用すると、アプリケーション開発者は、XAML で定義されたオブジェクトをコンパイル時と実行時の両方で再利用できます。 ディクショナリ内のキーは、 `x:Key` XAML タグの属性から設定されます。 XAML から作成されたオブジェクトは、 `ResourceDictionary` 指定されたキーのに挿入されます。 初期化されます。
 
-詳細については、「[リソースディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)」を参照してください。
+詳細については、「 [リソースディクショナリ](~/xamarin-forms/xaml/resource-dictionaries.md)」を参照してください。
 
 ### [`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation)
 
@@ -173,11 +173,11 @@ ms.locfileid: "87918340"
 
 ### [`Width`](xref:Xamarin.Forms.VisualElement.Width)
 
-プロパティは、 `Width` `double` コントロールの描画幅を記述する読み取り専用の値です。 プロパティは、 `Width` レイアウトサイクル中に計算され、直接設定することはできません。 Width[要求プロパティ](#widthrequest)を使用して、コントロールの幅を要求できます。
+プロパティは、 `Width` `double` コントロールの描画幅を記述する読み取り専用の値です。 プロパティは、 `Width` レイアウトサイクル中に計算され、直接設定することはできません。 Width [要求プロパティ](#widthrequest)を使用して、コントロールの幅を要求できます。
 
 ### [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest)
 
-プロパティは、 `WidthRequest` `double` コントロールの適切な幅を決定する値です。 コントロールの絶対幅が、要求された値と一致しない可能性があります。 詳細については、「[要求のプロパティ](#request-properties)」を参照してください。
+プロパティは、 `WidthRequest` `double` コントロールの適切な幅を決定する値です。 コントロールの絶対幅が、要求された値と一致しない可能性があります。 詳細については、「 [要求のプロパティ](#request-properties)」を参照してください。
 
 ### [`X`](xref:Xamarin.Forms.VisualElement.X)
 
@@ -239,7 +239,7 @@ public void Unfocus ()
 
 ## <a name="units-of-measurement"></a>測定単位
 
-Android、iOS、UWP の各プラットフォームには、デバイスによって異なる測定単位があります。 Xamarin.Formsでは、デバイスとプラットフォームの単位を正規化するプラットフォームに依存しない測定単位が使用されます。 には、1インチあたり160ユニットまたは 1 cm あたりの64ユニットがあり Xamarin.Forms ます。
+Android、iOS、UWP の各プラットフォームには、デバイスによって異なる測定単位があります。 Xamarin.Forms では、デバイスとプラットフォームの単位を正規化するプラットフォームに依存しない測定単位が使用されます。 には、1インチあたり160ユニットまたは 1 cm あたりの64ユニットがあり Xamarin.Forms ます。
 
 ## <a name="request-properties"></a>要求のプロパティ
 
@@ -251,7 +251,7 @@ Android、iOS、UWP の各プラットフォームには、デバイスによっ
 
 ### <a name="unspecified-minimum-property-values"></a>指定されていない最小プロパティ値
 
-最小値が設定されていない場合、minimum プロパティの既定値は-1 です。 レイアウトプロセスでは、この値は無視され、絶対値が最小値であると見なされます。 この動作の実際の結果として、最小値が指定されていない要素は圧縮され**ません**。 最小値を指定した要素**が縮小され**ます。
+最小値が設定されていない場合、minimum プロパティの既定値は-1 です。 レイアウトプロセスでは、この値は無視され、絶対値が最小値であると見なされます。 この動作の実際の結果として、最小値が指定されていない要素は圧縮され **ません** 。 最小値を指定した要素 **が縮小され** ます。
 
 次の XAML は、水平方向に2つの要素を示してい `BoxView` `StackLayout` ます。
 
@@ -272,7 +272,7 @@ Android、iOS、UWP の各プラットフォームには、デバイスによっ
 
 ### <a name="minimum-properties-within-a-grid"></a>グリッド内の最小プロパティ
 
-`Grid`レイアウトには、行と列の相対サイズを調整するための独自のシステムがあります。 レイアウト内でまたはを使用しても効果はあり `MinimumWidthRequest` `MinimumHeightRequest` `Grid` ません。 詳細については、「 [ Xamarin.Forms Grid](~/xamarin-forms/user-interface/layouts/grid.md)」を参照してください。
+`Grid` レイアウトには、行と列の相対サイズを調整するための独自のシステムがあります。 レイアウト内でまたはを使用しても効果はあり `MinimumWidthRequest` `MinimumHeightRequest` `Grid` ません。 詳細については、「 [ Xamarin.Forms Grid](~/xamarin-forms/user-interface/layouts/grid.md)」を参照してください。
 
 ## <a name="related-links"></a>関連リンク
 

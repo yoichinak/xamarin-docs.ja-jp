@@ -9,12 +9,12 @@ ms.date: 09/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 059405d4e3219162022b3f8c0208ee5cc4ac2d38
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 577628237d1e7433c2ad06466a2e804808874108
+ms.sourcegitcommit: d8627a500a9b8a07615aef9822c9b1dba2bf6650
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91434541"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92629637"
 ---
 # <a name="no-locxamarinessentials-email"></a>Xamarin.Essentials:電子メール
 
@@ -24,9 +24,9 @@ ms.locfileid: "91434541"
 
 # <a name="android"></a>[Android](#tab/android)
 
-プロジェクトのターゲット Android バージョンが **Android 11 (R API 30)** に設定される場合、新しい[パッケージの可視性要件](https://developer.android.com/preview/privacy/package-visibility)で使用されるクエリで Android マニフェストを更新する必要があります。
+プロジェクトのターゲット Android バージョンが **Android 11 (R API 30)** に設定される場合、新しい [パッケージの可視性要件](https://developer.android.com/preview/privacy/package-visibility)で使用されるクエリで Android マニフェストを更新する必要があります。
 
-**[プロパティ]** フォルダーにある **AndroidManifest.xml** ファイルを開き、**manifest** ノードの内部に以下を追加します。
+**[プロパティ]** フォルダーにある **AndroidManifest.xml** ファイルを開き、 **manifest** ノードの内部に以下を追加します。
 
 ```xml
 <queries>
@@ -39,7 +39,14 @@ ms.locfileid: "91434541"
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-追加の設定は必要ありません。
+iOS 9 以降、Apple は、アプリケーションが照会できるスキームを強制しています。 電子メールが有効なターゲットであるか問い合わせるには、`mailto` スキームを Info.plist ファイルの LSApplicationQueriesSchemes に指定する必要があります。
+
+```xml
+<key>LSApplicationQueriesSchemes</key>
+<array>
+  <string>mailto</string>
+</array>
+```
 
 # <a name="uwp"></a>[UWP](#tab/uwp)
 

@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 06/25/2018
-ms.openlocfilehash: 371876d087c7027d4cfe2d2d9ada8b0dbedb5dd5
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: c19a2c7c8b0a02f946bf4984945a3b24cca26d1c
+ms.sourcegitcommit: 1550019cd1e858d4d13a4ae6dfb4a5947702f24b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "75488973"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92897534"
 ---
 # <a name="obtaining-a-google-maps-api-key"></a>Google マップ API キーを取得する
 
@@ -80,7 +80,7 @@ keytool -list -v -keystore /Users/[USERNAME]/.local/share/Xamarin/Mono\ for\ And
 ### <a name="production-keys"></a>実稼働キー
 
 アプリを Google Play にデプロイする場合、[秘密キーで署名](~/android/deploy-test/signing/index.md)する必要があり ます。
-秘密キーの詳細と、実稼働 Google Maps API キーの作成に使用される取得済みの SHA-1 フィンガープリントを使用して、`keytool` を実行する必要があります。 デプロイする前に、**AndroidManifest.xml** ファイルを正しい Google Maps API キーで必ず更新してください。
+秘密キーの詳細と、実稼働 Google Maps API キーの作成に使用される取得済みの SHA-1 フィンガープリントを使用して、`keytool` を実行する必要があります。 デプロイする前に、 **AndroidManifest.xml** ファイルを正しい Google Maps API キーで必ず更新してください。
 
 ### <a name="keytool-output"></a>keytool の出力
 
@@ -103,13 +103,13 @@ Certificate fingerprints:
     Version: 3
 ```
 
-(**SHA1** の後に表示されている) SHA-1 フィンガープリントは、このガイドで後ほど使用します。
+( **SHA1** の後に表示されている) SHA-1 フィンガープリントは、このガイドで後ほど使用します。
 
 ## <a name="creating-an-api-project"></a>API プロジェクトを作成する
 
 署名キーストアの SHA-1 フィンガープリントを取得したら、Google API Console で新しいプロジェクトを作成する (または Google Maps Android API v2 サービスを既存のプロジェクトに追加する) 必要があります。
 
-1. ブラウザーで、[Google Developers Console の [API とサービス] ダッシュボード](https://console.developers.google.com/apis/dashboard/)に移動し、 **[プロジェクトの選択]** をクリックします。 プロジェクト名をクリックするか、 **[新しいプロジェクト]** をクリックして新しいプロジェクトを作成します。
+1. ブラウザーで、 [Google Developers Console の [API とサービス] ダッシュボード](https://console.developers.google.com/apis/dashboard/)に移動し、 **[プロジェクトの選択]** をクリックします。 プロジェクト名をクリックするか、 **[新しいプロジェクト]** をクリックして新しいプロジェクトを作成します。
 
    [![Google Developers Console のプロジェクトの作成ボタン](obtaining-a-google-maps-api-key-images/01-google-developer-console-vs-sml.png)](obtaining-a-google-maps-api-key-images/01-google-developer-console-vs.png#lightbox)
 
@@ -125,7 +125,7 @@ Certificate fingerprints:
 
    [![[ダッシュボード] セクションで [有効にする] をクリックする](obtaining-a-google-maps-api-key-images/04-enable-api-vs-sml.png)](obtaining-a-google-maps-api-key-images/04-enable-api-vs.png#lightbox)
 
-この時点で、API プロジェクトが作成され、Google Maps Android API v2 が追加されました。 ただし、プロジェクトの資格情報を作成するまで、プロジェクトでこの API を使用することはできません。 次のセクションでは、API キーを作成し、Xamarin.Android アプリケーションをホワイトリストに登録して、このキーを使用する権限を付与する方法について説明します。
+この時点で、API プロジェクトが作成され、Google Maps Android API v2 が追加されました。 ただし、プロジェクトの資格情報を作成するまで、プロジェクトでこの API を使用することはできません。 次のセクションでは、API キーを作成し、このキーを使用する権限を Xamarin.Android アプリケーションに与える方法について説明します。
 
 ## <a name="obtaining-the-api-key"></a>API キーを取得する
 
@@ -151,7 +151,7 @@ Certificate fingerprints:
 
    [![[+ パッケージ名とフィンガープリントを追加] をクリックする](obtaining-a-google-maps-api-key-images/09-add-package-fingerprint-vs-sml.png)](obtaining-a-google-maps-api-key-images/09-add-package-fingerprint-vs.png#lightbox)
 
-6. アプリのパッケージ名を入力し、SHA-1 証明書フィンガープリント (このガイドで前述したように、`keytool` を使用して取得) を入力します。 次の例では、`XamarinMapsDemo` のパッケージ名が入力され、**debug.keystore** から取得した SHA-1 証明書フィンガープリントが入力されています。
+6. アプリのパッケージ名を入力し、SHA-1 証明書フィンガープリント (このガイドで前述したように、`keytool` を使用して取得) を入力します。 次の例では、`XamarinMapsDemo` のパッケージ名が入力され、 **debug.keystore** から取得した SHA-1 証明書フィンガープリントが入力されています。
 
    [![入力されたパッケージ名は com.xamarin.docs.android.map](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs-sml.png)](obtaining-a-google-maps-api-key-images/10-enter-package-and-sha1-vs.png#lightbox)
 

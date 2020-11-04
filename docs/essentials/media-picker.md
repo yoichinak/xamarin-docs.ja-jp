@@ -8,12 +8,12 @@ ms.date: 09/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7c4299abf9c461a16f67ccf3d8caf03d5e568f13
-ms.sourcegitcommit: 827daa78c090bf79a1b55da45bb8012a1723b720
+ms.openlocfilehash: 9a988803b5e18ab91ff65a2b4976158458f68274
+ms.sourcegitcommit: 58247fe066ad271ee43c8967ac3301fdab6ca2d1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91997515"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92629562"
 ---
 # <a name="no-locxamarinessentials-media-picker"></a>Xamarin.Essentials: メディア ピッカー
 
@@ -48,7 +48,7 @@ ms.locfileid: "91997515"
 
 または、Android マニフェストを追加します。
 
-**[プロパティ]** フォルダーにある **AndroidManifest.xml** ファイルを開き、**manifest** ノードの内部に以下を追加します。
+**[プロパティ]** フォルダーにある **AndroidManifest.xml** ファイルを開き、 **manifest** ノードの内部に以下を追加します。
 
 ```xml
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -56,7 +56,7 @@ ms.locfileid: "91997515"
 <uses-permission android:name="android.permission.CAMERA" />
 ```
 
-または、Android プロジェクトを右クリックし、プロジェクトのプロパティを開きます。 **[Android マニフェスト]** の下で **[必要なアクセス許可]** 領域を探し、これらのアクセス許可をオンにします。 これにより、**AndroidManifest.xml** ファイルが自動的に更新されます。
+または、Android プロジェクトを右クリックし、プロジェクトのプロパティを開きます。 **[Android マニフェスト]** の下で **[必要なアクセス許可]** 領域を探し、これらのアクセス許可をオンにします。 これにより、 **AndroidManifest.xml** ファイルが自動的に更新されます。
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
@@ -91,6 +91,9 @@ ms.locfileid: "91997515"
 * `CaptureVideoAsync`: カメラを開いて、ビデオを撮影します。
 
 各メソッドでは、必要に応じて、ユーザーに表示される一部のオペレーティング システムで `Title` を設定できるようにする `MediaPickerOptions` パラメーターが取り込まれます。
+
+> [!TIP]
+> アクセス許可の確認と要求が Xamarin.Essentials によって自動的に処理されるため、UI スレッドではすべてのメソッドを呼び出す必要があります。
 
 ## <a name="general-usage"></a>一般的な使用法
 

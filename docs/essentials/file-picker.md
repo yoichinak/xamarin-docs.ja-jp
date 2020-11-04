@@ -8,12 +8,12 @@ ms.date: 09/22/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b3ee20de5534329f9e4686c908fe923ba94f3fff
-ms.sourcegitcommit: 744f977b0595f489c592e29c8a3ba548fde02b6f
+ms.openlocfilehash: e997ae3137110e18df9eed90ef07bfa2703e8088
+ms.sourcegitcommit: 58247fe066ad271ee43c8967ac3301fdab6ca2d1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91414692"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92629601"
 ---
 # <a name="no-locxamarinessentials-file-picker"></a>Xamarin.Essentials:ファイル ピッカー
 
@@ -39,13 +39,13 @@ ms.locfileid: "91414692"
 
 または、Android マニフェストを追加します。
 
-**[プロパティ]** フォルダーにある **AndroidManifest.xml** ファイルを開き、**manifest** ノードの内部に以下を追加します。
+**[プロパティ]** フォルダーにある **AndroidManifest.xml** ファイルを開き、 **manifest** ノードの内部に以下を追加します。
 
 ```xml
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 ```
 
-または、Android プロジェクトを右クリックし、プロジェクトのプロパティを開きます。 **[Android マニフェスト]** の下で **[必要なアクセス許可]** 領域を探し、このアクセス許可をオンにします。 これにより、**AndroidManifest.xml** ファイルが自動的に更新されます。
+または、Android プロジェクトを右クリックし、プロジェクトのプロパティを開きます。 **[Android マニフェスト]** の下で **[必要なアクセス許可]** 領域を探し、このアクセス許可をオンにします。 これにより、 **AndroidManifest.xml** ファイルが自動的に更新されます。
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
@@ -56,6 +56,9 @@ ms.locfileid: "91414692"
 追加の設定は必要ありません。
 
 -----
+
+> [!TIP]
+> アクセス許可の確認と要求が Xamarin.Essentials によって自動的に処理されるため、UI スレッドではすべてのメソッドを呼び出す必要があります。
 
 ## <a name="pick-file"></a>ファイルを選択する
 

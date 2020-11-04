@@ -6,13 +6,13 @@ ms.assetid: E73AE622-664C-4A90-B5B2-BD47D0E7A1A7
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/18/2020
-ms.openlocfilehash: 0c10e73d8d6c2dcafacbb069eaf905a227030b87
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.date: 10/26/2020
+ms.openlocfilehash: 6a3154d159c491c6460e118395286aa33cfa7e7e
+ms.sourcegitcommit: 1550019cd1e858d4d13a4ae6dfb4a5947702f24b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557531"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92897456"
 ---
 # <a name="xamarinforms-multi-bindings"></a>Xamarin.Forms の複数バインド
 
@@ -155,6 +155,33 @@ public class AllTrueMultiConverter : IMultiValueConverter
 
 既定では、[`CheckBox.IsChecked`](xref:Xamarin.Forms.CheckBox.IsChecked) プロパティでは [`TwoWay`](xref:Xamarin.Forms.BindingMode.TwoWay) バインドが使用されます。 したがって、`AllTrueMultiConverter` インスタンスの `ConvertBack` メソッドは、ユーザーが [`CheckBox`](xref:Xamarin.Forms.CheckBox) をオフにしたときに実行されます。これにより、ソース バインドの値が `CheckBox.IsChecked` プロパティの値に設定されます。
 
+これに相当する C# コードを次に示します。
+
+```csharp
+public class MultiBindingConverterCodePage : ContentPage
+{
+    public MultiBindingConverterCodePage()
+    {
+        BindingContext = new GroupViewModel();
+
+        CheckBox checkBox = new CheckBox();
+        checkBox.SetBinding(CheckBox.IsCheckedProperty, new MultiBinding
+        {
+            Bindings = new Collection<BindingBase>
+            {
+                new Binding("Employee1.IsOver16"),
+                new Binding("Employee1.HasPassedTest"),
+                new Binding("Employee1.IsSuspended", converter: new InverterConverter())
+            },
+            Converter = new AllTrueMultiConverter()
+        });
+
+        Title = "MultiBinding converter demo";
+        Content = checkBox;
+    }
+}
+```
+
 ## <a name="format-strings"></a>書式指定文字列
 
 `MultiBinding` では、`StringFormat` プロパティを使用して、文字列として表示される複数バインドの結果を書式設定できます。 このプロパティは、プレースホルダーを含む標準の .NET 書式設定文字列に設定できます。これによって、複数バインドの結果を書式設定する方法が指定されます。
@@ -172,6 +199,22 @@ public class AllTrueMultiConverter : IMultiValueConverter
 ```
 
 この例では、`StringFormat` プロパティによって、3 つのバインドされた値が、[`Label`](xref:Xamarin.Forms.Label) によって表示される 1 つの文字列に結合されています。
+
+これに相当する C# コードを次に示します。
+
+```csharp
+Label label = new Label();
+label.SetBinding(Label.TextProperty, new MultiBinding
+{
+    Bindings = new Collection<BindingBase>
+    {
+        new Binding("Employee1.Forename"),
+        new Binding("Employee1.MiddleName"),
+        new Binding("Employee1.Surname")
+    },
+    StringFormat = "{0} {1} {2}"
+});
+```
 
 > [!IMPORTANT]
 > 複合文字列形式に含まれるパラメーターの数は、`MultiBinding` 内の子 `Binding` オブジェクトの数を超えることはできません。

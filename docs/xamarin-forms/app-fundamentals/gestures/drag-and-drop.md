@@ -6,16 +6,16 @@ ms.assetid: 4CB2F270-908A-4A89-B852-70BC04066E8C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 08/04/2020
+ms.date: 10/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d3eb7edbb24c7e28ee375e1de85f6a7597ec63ac
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: af56e84598f73693a8cb0e93573b789a716c194a
+ms.sourcegitcommit: 1550019cd1e858d4d13a4ae6dfb4a5947702f24b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561016"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92897469"
 ---
 # <a name="add-drag-and-drop-gesture-recognizers"></a>ドラッグ アンド ドロップ ジェスチャ認識エンジンを追加する
 
@@ -30,7 +30,7 @@ ms.locfileid: "91561016"
 >
 > ドラッグ アンド ドロップ ジェスチャの認識は、iOS、Android、およびユニバーサル Windows プラットフォーム (UWP) でサポートされています。 ただし、iOS では、iOS 11 以降のプラットフォームが必要です。
 
-ドラッグ ジェスチャが開始される要素である "*ドラッグ ソース*" では、データ パッケージ オブジェクトを設定することにより、転送されるデータを提供できます。 ドラッグ ソースが解放されると、ドロップが発生します。 その後、ドラッグ ソースの下にある要素である "*ドロップ ターゲット*" により、データ パッケージが処理されます。
+ドラッグ ジェスチャが開始される要素である " *ドラッグ ソース* " では、データ パッケージ オブジェクトを設定することにより、転送されるデータを提供できます。 ドラッグ ソースが解放されると、ドロップが発生します。 その後、ドラッグ ソースの下にある要素である " *ドロップ ターゲット* " により、データ パッケージが処理されます。
 
 アプリケーションでドラッグ アンド ドロップを有効にするプロセスは次のとおりです。
 
@@ -50,7 +50,7 @@ Xamarin.Forms では、ドラッグ ジェスチャの認識は `DragGestureReco
 - `CanDrag`: `bool` 型、ジェスチャ認識エンジンがアタッチされている要素をドラッグ ソースにすることができるかどうかを示します。 このプロパティの既定値は `false` です。
 - `DragStartingCommand`: `ICommand`型、ドラッグ ジェスチャが最初に認識されたときに実行されます。
 - `DragStartingCommandParameter`: `object` 型、`DragStartingCommand` に渡されるパラメーター。
-- `DropCompletedCommmand`: `ICommand`型、ドラッグ ソースがドロップされたときに実行されます。
+- `DropCompletedCommand`: `ICommand`型、ドラッグ ソースがドロップされたときに実行されます。
 - `DropCompletedCommandParameter`: `object` 型、`DropCompletedCommand` に渡されるパラメーター。
 
 これらのプロパティは、[`BindableProperty`](xref:Xamarin.Forms.BindableProperty) オブジェクトが基になっています。つまり、これらは、データ バインディングの対象にすることができ、スタイルを設定できます。
@@ -79,6 +79,8 @@ Xamarin.Forms では、ドラッグ ジェスチャの認識は `DragGestureReco
 
 > [!TIP]
 > iOS、Android、UWP では、ドラッグ ジェスチャは長押しの後でドラッグすることによって開始されます。
+
+`DragGestureRecognizer` コマンドの使用例については、[サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-draganddropgesture/)を参照してください。
 
 ## <a name="build-a-data-package"></a>データ パッケージを作成する
 
@@ -211,6 +213,8 @@ Xamarin.Forms では、ドロップ ジェスチャの認識は `DropGestureReco
 ```
 
 この例では、ドラッグ ソースが [`Image`](xref:Xamarin.Forms.Image) ドロップ ターゲットにドロップされると、ドラッグ ソースが [`ImageSource`](xref:Xamarin.Forms.ImageSource) である場合は、ドラッグ ソースがドロップ ターゲットにコピーされます。 これは、Xamarin.Forms によって、ドラッグされた画像とテキストが互換性のあるドロップ ターゲットに自動的にコピーされるためです。
+
+`DropGestureRecognizer` コマンドの使用例については、[サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-draganddropgesture/)を参照してください。
 
 ## <a name="handle-the-dragover-event"></a>DragOver イベントを処理する
 

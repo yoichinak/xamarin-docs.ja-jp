@@ -9,12 +9,12 @@ ms.custom: video
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f4bb252448abe3c2987def143634d15b5cae194c
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 4a5190ef3e9f61fdb6d08f9cd68202e55a4faead
+ms.sourcegitcommit: 58247fe066ad271ee43c8967ac3301fdab6ca2d1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91433497"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92629587"
 ---
 # <a name="no-locxamarinessentials-secure-storage"></a>Xamarin.Essentials:セキュリティで保護されたストレージ
 
@@ -54,7 +54,7 @@ ms.locfileid: "91433497"
     </application>
     ```
 
-2. **auto_backup_rules.xml** という名前の新しい XML ファイルを、**AndroidResource** のビルド アクションで **Resources/xml** ディレクトリに作成します。 次に、`SecureStorage` を除くすべての共有の設定を含める次の内容を設定します。
+2. **auto_backup_rules.xml** という名前の新しい XML ファイルを、 **AndroidResource** のビルド アクションで **Resources/xml** ディレクトリに作成します。 次に、`SecureStorage` を除くすべての共有の設定を含める次の内容を設定します。
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -66,9 +66,9 @@ ms.locfileid: "91433497"
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
-**iOS シミュレーター**上で開発している場合は、**キーチェーン** エンタイトルメントを有効にし、アプリケーションのバンドル ID に対してキーチェーンのアクセス グループを追加します。
+**iOS シミュレーター** 上で開発している場合は、 **キーチェーン** エンタイトルメントを有効にし、アプリケーションのバンドル ID に対してキーチェーンのアクセス グループを追加します。
 
-iOS プロジェクト内の **Entitlements.plist** を開き、**キーチェーン** エンタイトルメントを見つけて有効にします。 これで、アプリケーションの ID がグループとして自動的に追加されます。
+iOS プロジェクト内の **Entitlements.plist** を開き、 **キーチェーン** エンタイトルメントを見つけて有効にします。 これで、アプリケーションの ID がグループとして自動的に追加されます。
 
 プロジェクトのプロパティの **[iOS バンドル署名]** で、 **[カスタムの権利]** を **Entitlements.plist** に設定します。
 
@@ -89,7 +89,7 @@ iOS プロジェクト内の **Entitlements.plist** を開き、**キーチェ�
 using Xamarin.Essentials;
 ```
 
-指定された_キー_に対する値をセキュリティで保護されたストレージに保存するには:
+指定された _キー_ に対する値をセキュリティで保護されたストレージに保存するには:
 
 ```csharp
 try
@@ -130,21 +130,24 @@ SecureStorage.Remove("oauth_token");
 SecureStorage.RemoveAll();
 ```
 
+> [!TIP]
+> `GetAsync` または `SetAsync` の呼び出し時に例外がスローされることがあります。 セキュリティで保護されたストレージに対応していないデバイス、暗号化キーの変更、データの破損が原因として考えられます。 可能であれば、設定を削除し、追加し直すことでこれに対処することをお勧めします。
+
 ## <a name="platform-implementation-specifics"></a>プラットフォームの実装の詳細
 
 # <a name="android"></a>[Android](#tab/android)
 
-[Android キーストア](https://developer.android.com/training/articles/keystore.html)は、[共有の設定](https://developer.android.com/training/data-storage/shared-preferences.html)に **[アプリのパッケージ ID].xamarinessentials** というファイル名で保存する前に、値を暗号化するための暗号キーを格納するために使用されます。  共有の設定ファイルで使用されるキー (暗号化キーではなく_値_の_キー_) は、`SecureStorage` API に渡されるキーの _MD5 ハッシュ_です。
+[Android キーストア](https://developer.android.com/training/articles/keystore.html)は、 [共有の設定](https://developer.android.com/training/data-storage/shared-preferences.html)に **[アプリのパッケージ ID].xamarinessentials** というファイル名で保存する前に、値を暗号化するための暗号キーを格納するために使用されます。  共有の設定ファイルで使用されるキー (暗号化キーではなく _値_ の _キー_ ) は、`SecureStorage` API に渡されるキーの _MD5 ハッシュ_ です。
 
 **API レベル 23 以上**
 
-新しい API レベルでは、Android キーストアから **AES** キーを取得し、**AES/GCM/NoPadding** 暗号と共に使用して、共有の設定ファイルに格納する前に値を暗号化します。
+新しい API レベルでは、Android キーストアから **AES** キーを取得し、 **AES/GCM/NoPadding** 暗号と共に使用して、共有の設定ファイルに格納する前に値を暗号化します。
 
 **API レベル 22 以下**
 
-古い API レベルでは、Android キーストアは **RSA** キーの格納のみをサポートしています。これは **RSA/ECB/PKCS1Padding** 暗号と共に使用され、**AES** キー (実行時にランダムで生成されます) を暗号化し、キー _SecureStorageKey_ の下で共有の設定ファイルに格納されます (まだ作成されていない場合)。
+古い API レベルでは、Android キーストアは **RSA** キーの格納のみをサポートしています。これは **RSA/ECB/PKCS1Padding** 暗号と共に使用され、 **AES** キー (実行時にランダムで生成されます) を暗号化し、キー _SecureStorageKey_ の下で共有の設定ファイルに格納されます (まだ作成されていない場合)。
 
-**SecureStorage** は [Preferences](preferences.md) API を使用し、[Preferences](preferences.md#persistence) ドキュメントで説明されているのと同じデータ永続化に従います。 デバイスが API レベル 22 以下から API レベル 23 以上にアップグレードされる場合、アプリをアンインストールするか **RemoveAll** を呼び出さない限り、この種類の暗号化が使用され続けます。
+**SecureStorage** は [Preferences](preferences.md) API を使用し、 [Preferences](preferences.md#persistence) ドキュメントで説明されているのと同じデータ永続化に従います。 デバイスが API レベル 22 以下から API レベル 23 以上にアップグレードされる場合、アプリをアンインストールするか **RemoveAll** を呼び出さない限り、この種類の暗号化が使用され続けます。
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
@@ -158,7 +161,7 @@ iOS デバイスに値を安全に格納するために、[キーチェーン](x
 
 暗号化された値は、`ApplicationData.Current.LocalSettings` の、 **[アプリの ID].xamarinessentials** という名前のコンテナーの内部に格納されます。
 
-**SecureStorage** は [Preferences](preferences.md) API を使用し、[Preferences](preferences.md#persistence) ドキュメントで説明されているのと同じデータ永続化に従います。 さらに、`LocalSettings` も使用します。これには、各設定の名前は最大で 255 文字という制限があります。 各設定のサイズは最大 8K バイトで、各コンポジット設定のサイズは最大 64K バイトです。
+**SecureStorage** は [Preferences](preferences.md) API を使用し、 [Preferences](preferences.md#persistence) ドキュメントで説明されているのと同じデータ永続化に従います。 さらに、`LocalSettings` も使用します。これには、各設定の名前は最大で 255 文字という制限があります。 各設定のサイズは最大 8K バイトで、各コンポジット設定のサイズは最大 64K バイトです。
 
 -----
 

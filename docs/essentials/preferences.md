@@ -9,12 +9,12 @@ ms.custom: video
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 60a5fbaa8386d0ecdc5d205b3262e05406cec4a6
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 07bfcabc7ffef20bee43531bfab3e78155beb9a9
+ms.sourcegitcommit: 58247fe066ad271ee43c8967ac3301fdab6ca2d1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556244"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92629575"
 ---
 # <a name="no-locxamarinessentials-preferences"></a>Xamarin.Essentials:Preferences
 
@@ -32,7 +32,7 @@ ms.locfileid: "91556244"
 using Xamarin.Essentials;
 ```
 
-特定の "_キー_" の値をユーザー設定に保存するには:
+特定の " _キー_ " の値をユーザー設定に保存するには:
 
 ```csharp
 Preferences.Set("my_key", "my_value");
@@ -50,7 +50,7 @@ var myValue = Preferences.Get("my_key", "default_value");
 bool hasKey = Preferences.ContainsKey("my_key");
 ```
 
-ユーザー設定から "_キー_" を削除するには:
+ユーザー設定から " _キー_ " を削除するには:
 
 ```csharp
 Preferences.Remove("my_key");
@@ -62,7 +62,8 @@ Preferences.Remove("my_key");
 Preferences.Clear();
 ```
 
-また、上記のメソッドでは、省略可能な `sharedName` を取り込みます。これを使用すると、ユーザー設定用の追加コンテナーを作成できます。 以下のプラットフォームの実装の詳細をご覧ください。
+> [!TIP]
+> 上のメソッドは、`sharedName` という名称のオプション `string` パラメーターを受け取ります。 このパラメーターは、一部のユース ケースで役に立つ基本設定用の追加コンテナーを作成するために使用されます。 ユース ケースの 1 つは、拡張機能全体で、あらゆる時計アプリケーションと基本設定を共有する必要がアプリケーションにあるときです。 下にあるプラットフォーム実装の詳細をご覧ください。
 
 ## <a name="supported-data-types"></a>サポートされているデータ型
 
@@ -93,7 +94,7 @@ Preferences.Clear();
 
 # <a name="android"></a>[Android](#tab/android)
 
-すべてのデータは [Shared Preferences](https://developer.android.com/training/data-storage/shared-preferences.html)に格納されます。 `sharedName` が指定されていない場合は、既定の共有ユーザー設定が使用されます。指定されている場合は、その名前を使用して**プライベート**共有ユーザー設定が取得されます。
+すべてのデータは [Shared Preferences](https://developer.android.com/training/data-storage/shared-preferences.html)に格納されます。 `sharedName` が指定されていない場合は、既定の共有ユーザー設定が使用されます。指定されている場合は、その名前を使用して **プライベート** 共有ユーザー設定が取得されます。
 
 # <a name="ios"></a>[iOS](#tab/ios)
 
@@ -109,7 +110,7 @@ iOS デバイスに値を格納するには、[NSUserDefaults](../ios/app-fundam
 
 ## <a name="persistence"></a>永続性
 
-アプリケーションをアンインストールすると、すべての "_ユーザー設定_" が削除されます。ただし、[__自動バックアップ__](https://developer.android.com/guide/topics/data/autobackup)が使用されている Android 6.0 (API レベル 23) 以降を対象にして、そこで実行されるアプリは例外です。 この機能は既定で有効にされて、__Shared Preferences__などのアプリ データを保持し、**Preferences** API はそれを利用します。 この機能は、Google の [ドキュメント](https://developer.android.com/guide/topics/data/autobackup)に従って無効にできます。
+アプリケーションをアンインストールすると、すべての " _ユーザー設定_ " が削除されます。ただし、 [__自動バックアップ__](https://developer.android.com/guide/topics/data/autobackup)が使用されている Android 6.0 (API レベル 23) 以降を対象にして、そこで実行されるアプリは例外です。 この機能は既定で有効にされて、 __Shared Preferences__ などのアプリ データを保持し、 **Preferences** API はそれを利用します。 この機能は、Google の [ドキュメント](https://developer.android.com/guide/topics/data/autobackup)に従って無効にできます。
 
 ## <a name="limitations"></a>制限事項
 

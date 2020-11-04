@@ -6,22 +6,25 @@ ms.assetid: B5DE7507-B565-4EE5-9897-27E5733FD173
 ms.technology: xamarin-forms
 author: profexorgeek
 ms.author: jusjohns
-ms.date: 10/25/2019
+ms.date: 10/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 47b459945aec4ef8f1c3fa9729efd82461aec0e0
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: e1474167d3bb56f0e5eb7ee0a8d321a5d4367ef2
+ms.sourcegitcommit: 1550019cd1e858d4d13a4ae6dfb4a5947702f24b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561964"
+ms.lasthandoff: 10/28/2020
+ms.locfileid: "92897560"
 ---
 # <a name="no-locxamarinforms-reusable-roundeffect"></a>Xamarin.Forms の再利用可能な RoundEffect
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-roundeffect/)
 
-RoundEffect を利用すると、円として VisualElement から派生するあらゆるコントロールのレンダリングが簡単になります。 このエフェクトを使用し、円形の画像、ボタン、その他のコントロールを作成できます。
+> [!IMPORTANT]
+> コントロールを円の形にレンダリングするために `RoundEffect` を使用する必要はなくなりました。 最新の推奨手法は `EllipseGeometry` を利用してコントロールをクリップすることです。 詳しくは、「[Geometry を使用してクリップする](~/xamarin-forms/user-interface/shapes/geometries.md#clip-with-a-geometry)」をご覧ください。
+
+RoundEffect を利用すると、円として `VisualElement` から派生するあらゆるコントロールのレンダリングが簡単になります。 このエフェクトを使用し、円形の画像、ボタン、その他のコントロールを作成できます。
 
 [![iOS と Android での RoundEffect のスクリーンショット](example-roundeffect-images/round-effect-cropped.png)](example-roundeffect-images/round-effect.png#lightbox)
 
@@ -220,7 +223,7 @@ image.Effects.Add(new RoundEffect());
 `RoundEffect` クラスは、`VisualElement` から派生するすべてのコントロールに適用できます。
 
 > [!NOTE]
-> 効果で正しい半径を計算するには、それが適用されるコントロールに明示的なサイズ設定を与える必要があります。 そのため、`HeightRequest` プロパティと `WidthRequest` プロパティを定義する必要があります。 影響を受けるコントロールが `StackLayout` に表示される場合、その `HorizontalOptions` プロパティでは、`LayoutOptions.CenterAndExpand` など、**Expand** 値を使用しないでください。使用した場合、寸法が精確になりません。
+> 効果で正しい半径を計算するには、それが適用されるコントロールに明示的なサイズ設定を与える必要があります。 そのため、`HeightRequest` プロパティと `WidthRequest` プロパティを定義する必要があります。 影響を受けるコントロールが `StackLayout` に表示される場合、その `HorizontalOptions` プロパティでは、`LayoutOptions.CenterAndExpand` など、 **Expand** 値を使用しないでください。使用した場合、寸法が精確になりません。
 
 ## <a name="related-links"></a>関連リンク
 

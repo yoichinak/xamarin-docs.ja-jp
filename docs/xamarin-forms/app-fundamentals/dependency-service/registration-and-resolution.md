@@ -10,12 +10,12 @@ ms.date: 06/05/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: da3c6c2f55f1cdbed1b3c4e1bb16c4f78e32cf23
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 9e8c0eeb70393cd3a5c6db7b99146b69b79ec14d
+ms.sourcegitcommit: 01ccefd54c0ced724784dbe1aec9ecfc9b00e633
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556049"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92630245"
 ---
 # <a name="no-locxamarinforms-dependencyservice-registration-and-resolution"></a>Xamarin.Forms の DependencyService の登録と解決
 
@@ -36,7 +36,7 @@ Xamarin.Forms の [`DependencyService`](xref:Xamarin.Forms.DependencyService) �
 
 [`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute) を使用して、プラットフォームの実装を [`DependencyService`](xref:Xamarin.Forms.DependencyService) に登録できます。 属性は、指定した型によってインターフェイスの具象実装が提供されることを示します。
 
-次の例は、[`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute) を使用した `IDeviceOrientationService` インターフェイスの iOS 実装の登録を示しています。
+次の例では、[`DependencyAttribute`](xref:Xamarin.Forms.DependencyAttribute) を使用し、`IDeviceOrientationService` インターフェイスの iOS 実装を登録します。
 
 ```csharp
 using Xamarin.Forms;
@@ -65,7 +65,7 @@ namespace DependencyServiceDemos.iOS
 
 [`DependencyService.Register`](xref:Xamarin.Forms.DependencyService.Register*) メソッド、および `RegisterSingleton` メソッドを使用して、プラットフォームの実装を [`DependencyService`](xref:Xamarin.Forms.DependencyService) に登録できます。
 
-次の例は、[`Register`](xref:Xamarin.Forms.DependencyService.Register*) メソッドを使用した `IDeviceOrientationService` インターフェイスの iOS 実装の登録を示しています。
+次の例では、[`Register`](xref:Xamarin.Forms.DependencyService.Register*) メソッドを使用して `IDeviceOrientationService` インターフェイスの iOS 実装を登録します。
 
 ```csharp
 [Register("AppDelegate")]
