@@ -18,7 +18,7 @@
           href: basics/text.md
         - name: ビットマップの基礎
           href: basics/bitmaps.md
-        - name: '[透明度]'
+        - name: 透明性
           href: basics/transparency.md
     - name: 線とパス
       href: paths/index.md
@@ -89,7 +89,7 @@
           href: bitmaps/pixel-bits.md
         - name: ビットマップのアニメーション化
           href: bitmaps/animating.md
-    - name: エフェクト
+    - name: 効果
       href: effects/index.md
       items:
         - name: シェーダー
@@ -118,10 +118,5 @@
           href: effects/image-filters.md
         - name: 色フィルター
           href: effects/color-filters.md
-    - name: プラットフォームに依存しない例
-      href: ~/graphics-games/skiasharp/introduction.md
-      items:
-        - name: プラットフォーム固有のメモ
-          href: ~/graphics-games/skiasharp/platform.md
     - name: API リファレンス
       href: /dotnet/api/skiasharp/
