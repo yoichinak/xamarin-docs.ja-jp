@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: de412e064fa84e516dcb8e9b604068c84a2689e6
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 9588feeaae1391bcd2ac7fd05e7340a3a40f6236
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563615"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374798"
 ---
 # <a name="listview-selectionmode-on-windows"></a>Windows 上の ListView の SelectionMode
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 ユニバーサル Windows プラットフォームでは、は既定でネイティブイベントを使用して、 Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) `ItemClick` ネイティブイベントではなく、対話に応答し `Tapped` ます。 これにより、Windows ナレーターとキーボードがと対話できるように、ユーザー補助機能が提供され `ListView` ます。 ただし、このメソッドは、操作不可能な内の tap ジェスチャもレンダリングし `ListView` ます。
 

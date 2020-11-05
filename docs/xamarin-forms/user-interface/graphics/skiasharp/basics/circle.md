@@ -10,16 +10,16 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 538a3ea3bd5b2293f93047d9796a185abfa5f2b9
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 39e9effa1c43a4456a1e75e391e14804e2aa0011
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556595"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375097"
 ---
 # <a name="drawing-a-simple-circle-in-skiasharp"></a>SkiaSharp での単純な円の描画
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _キャンバスオブジェクトと paint オブジェクトを含む SkiaSharp drawing の基本について説明します。_
 
@@ -103,7 +103,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-プロパティは、 [`Style`](xref:SkiaSharp.SKPaint.Style) 内部を*塗りつぶす*のではなく、線 (この場合は円の輪郭) を*描画*することを示します。 列挙体の3つのメンバーは次のとおりです [`SKPaintStyle`](xref:SkiaSharp.SKPaintStyle) 。
+プロパティは、 [`Style`](xref:SkiaSharp.SKPaint.Style) 内部を *塗りつぶす* のではなく、線 (この場合は円の輪郭) を *描画* することを示します。 列挙体の3つのメンバーは次のとおりです [`SKPaintStyle`](xref:SkiaSharp.SKPaintStyle) 。
 
 - [`Fill`](xref:SkiaSharp.SKPaintStyle.Fill)
 - [`Stroke`](xref:SkiaSharp.SKPaintStyle.Stroke)
@@ -126,7 +126,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-座標は、表示サーフェイスの左上隅に対して相対的に指定されます。 X 座標が右に上がり、Y 座標が増加します。 グラフィックスについては、多くの場合、点を示すために数学的表記 (x、y) が使用されます。 ポイント (0, 0) は、表示サーフェイスの左上隅で、多くの場合、 *原点*と呼ばれます。
+座標は、表示サーフェイスの左上隅に対して相対的に指定されます。 X 座標が右に上がり、Y 座標が増加します。 グラフィックスについては、多くの場合、点を示すために数学的表記 (x、y) が使用されます。 ポイント (0, 0) は、表示サーフェイスの左上隅で、多くの場合、 *原点* と呼ばれます。
 
 の最初の2つの引数は、 `DrawCircle` 円の中心の X 座標と Y 座標を示します。 これらは、表示サーフェイスの中央に円の中心を配置するために、画面の幅と高さの半分に割り当てられます。 3番目の引数は円の半径を指定し、最後の引数は `SKPaint` オブジェクトです。
 

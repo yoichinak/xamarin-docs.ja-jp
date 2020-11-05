@@ -10,18 +10,18 @@ ms.date: 06/24/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c6c6fb0ea9d3e2b728072fa36c3cdb2a86ade131
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 6fe7ce75af14e25fa3dc213f0fb5ed99a2e70a87
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91559325"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374824"
 ---
 # <a name="no-locxamarinforms-shapes-geometries"></a>Xamarin.Forms 図形: ジオメトリ
 
 ![プレリリース API](~/media/shared/preview.png)
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 `Geometry`クラスとそれから派生するクラスを使用すると、2d 図形のジオメトリを記述できます。 `Geometry` オブジェクトは、四角形や円などの単純なものにすることも、2 つ以上のジオメトリ オブジェクトから作成された複合的なものにすることもできます。 さらに、円弧や曲線を含むより複雑なジオメトリを作成することもできます。
 
@@ -38,7 +38,7 @@ ms.locfileid: "91559325"
 次のクラスには、オブジェクトに設定できるプロパティがあり `Geometry` ます。
 
 - `Path`クラスは、を使用して `Geometry` その内容を記述します。 を表示するには、 `Geometry` `Path.Data` プロパティをオブジェクトに設定し、 `Geometry` `Path` オブジェクトの `Fill` プロパティとプロパティを設定し `Stroke` ます。
-- [`VisualElement`](xref:Xamarin.Forms.VisualElement)クラスには、 `Clip` `Geometry` 要素の内容のアウトラインを定義する型のプロパティがあります。 `Clip`プロパティがオブジェクトに設定されている場合は、 `Geometry` の領域内にある領域だけが `Geometry` 表示されます。 詳細については、「 [Geometry を使用したクリップ](#clip-with-a-geometry)」を参照してください。
+- [`VisualElement`](xref:Xamarin.Forms.VisualElement)クラスには、 `Clip` `Geometry` 要素の内容のアウトラインを定義する型のプロパティがあります。 `Clip`プロパティがオブジェクトに設定されている場合は、 `Geometry` の領域内にある領域だけが `Geometry` 表示されます。 詳しくは、「[Geometry を使用してクリップする](#clip-with-a-geometry)」をご覧ください。
 
 クラスから派生するクラスは、 `Geometry` 単純なジオメトリ、パスジオメトリ、および複合ジオメトリという3つのカテゴリに分類できます。
 

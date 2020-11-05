@@ -10,16 +10,16 @@ ms.date: 01/15/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 372c268c13c50719953ac63bcc43cc8d9bff4bdd
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: a8c8a378775a9e52731e4b2df37b983fc15c1867
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563719"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375318"
 ---
 # <a name="timepicker-item-selection-on-ios"></a>IOS での TimePicker 項目の選択
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 この iOS プラットフォーム固有のコントロールでは、で項目の選択が発生したときに、 [`TimePicker`](xref:Xamarin.Forms.TimePicker) ユーザーがコントロールの項目を参照するときに項目の選択を行うように指定できます。または、[ **完了** ] ボタンをクリックしたときにのみ、項目の選択が行われます。 これは、 `TimePicker.UpdateMode` 添付プロパティを列挙体の値に設定することによって XAML で使用され `UpdateMode` ます。
 
@@ -65,7 +65,7 @@ switch (timePicker.On<iOS>().UpdateMode())
 
 結果として、指定された `UpdateMode` がに適用され [`TimePicker`](xref:Xamarin.Forms.TimePicker) ます。これは、項目の選択が行われるタイミングを制御します。
 
-[![TimePicker 更新モードのスクリーンショット](timepicker-selection-images/timepicker-updatemode.png "TimePicker UpdateMode プラットフォーム固有")](timepicker-selection-images/timepicker-updatemode-large.png#lightbox "TimePicker UpdateMode プラットフォーム固有")
+[![TimePicker 更新モードのスクリーンショット](timepicker-selection-images/timepicker-updatemode.png "TimePicker UpdateMode Platform-Specific")](timepicker-selection-images/timepicker-updatemode-large.png#lightbox "TimePicker UpdateMode Platform-Specific")
 
 ## <a name="related-links"></a>関連リンク
 

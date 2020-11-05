@@ -10,16 +10,16 @@ ms.date: 05/25/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9193cef76a5f474f3681b15a1315e5840b41d88a
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: aee429b3dcc898ae0663817d52ed5b03d919e239
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562978"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375370"
 ---
 # <a name="three-types-of-bzier-curves"></a>3 つの種類のベジエ曲線
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _SkiaSharp を使用して、3次ベジエ曲線を描画する方法について説明します。_
 
@@ -31,7 +31,7 @@ _SkiaSharp を使用して、3次ベジエ曲線を描画する方法につい�
 
 コンピューターベースのフォントの文字アウトラインは、通常、ベジエ曲線で定義されます。
 
-[**ベジエ曲線**](https://en.wikipedia.org/wiki/B%C3%A9zier_curve)の Wikipedia の記事には、いくつかの便利な背景情報が含まれています。 *ベジエ曲線*という用語は、実際には同様の曲線のファミリを指します。 SkiaSharp*は、* 3 種類のベジエ曲線 (3*種類のベジエ*曲線) をサポート*しています。* 円錐は、 *有理数*とも呼ばれます。
+[**ベジエ曲線**](https://en.wikipedia.org/wiki/B%C3%A9zier_curve)の Wikipedia の記事には、いくつかの便利な背景情報が含まれています。 *ベジエ曲線* という用語は、実際には同様の曲線のファミリを指します。 SkiaSharp *は、* 3 種類のベジエ曲線 (3 *種類のベジエ* 曲線) をサポート *しています。* 円錐は、 *有理数* とも呼ばれます。
 
 ## <a name="the-cubic-bzier-curve"></a>3次ベジエ曲線
 
@@ -100,7 +100,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 数学的には、曲線は3次多項式になります。 曲線は、最大3点で直線と交差します。 開始点では、曲線は常に始点から最初の制御点までの直線と同じ方向に接しています。 エンドポイントでは、曲線は常に、2番目の制御点から終点までの直線と同じ方向に接しています。
 
-3次ベジエ曲線は、常に4つの点を結ぶ凸状の四角形によって制限されます。 これは、 *凸ハル*と呼ばれます。 コントロールポイントが始点と終点の間の直線上にある場合、ベジエ曲線は直線としてレンダリングされます。 3番目のスクリーンショットに示すように、曲線もそれ自体を越えることができます。
+3次ベジエ曲線は、常に4つの点を結ぶ凸状の四角形によって制限されます。 これは、 *凸ハル* と呼ばれます。 コントロールポイントが始点と終点の間の直線上にある場合、ベジエ曲線は直線としてレンダリングされます。 3番目のスクリーンショットに示すように、曲線もそれ自体を越えることができます。
 
 パスの輪郭には、複数の接続された3次ベジエ曲線を含めることができますが、2つの三次ベジエ曲線間の接続は、次の3つの点が同じである (つまり、直線上にある) 場合にのみ、スムーズになります。
 
@@ -122,7 +122,7 @@ y (t) = (1 – t) ³ y ₀ + 3t (1 – t) ² y ₁ + 3t ² (1 ~ t) y ₂ + t ³ 
 
 ベジエ曲線を使用して円弧を描画すると便利な場合があります。3次ベジエ曲線では、円の弧が非常に大きくなる可能性があります。そのため、4つの接続されたベジエ曲線で円全体を定義できます。 この概数については、25年前に公開された2つの記事で説明されています。
 
-> Tor Dokken は、" *コンピューター支援ジオメトリ設計 7* (1990), 33-41" という、"曲率連続のベジエ曲線による丸の良い近似値" です。
+> Tor Dokken, et, "Curvature-Continuous ベジエ曲線による丸の良い近似値" *コンピューター支援ジオメトリ設計 7* (1990), 33-41 です。
 
 > Michael Goldapp、"3 次的 Polynomials による円弧の近似値"、" *コンピューター支援型のジオメトリック設計 8* (1991)、227-238。
 
@@ -130,7 +130,7 @@ y (t) = (1 – t) ³ y ₀ + 3t (1 – t) ² y ₁ + 3t ² (1 ~ t) y ₂ + t ³ 
 
 ![ベジエ曲線を持つ円弧の近似値](beziers-images/bezierarc45.png)
 
-開始位置から制御点までの線は、円とベジエ曲線に接し、長さは *L*になっています。上記の最初の記事では、この長さの *L* が次のように計算される場合に、ベジエ曲線が円弧に近似されることを示しています。
+開始位置から制御点までの線は、円とベジエ曲線に接し、長さは *L* になっています。上記の最初の記事では、この長さの *L* が次のように計算される場合に、ベジエ曲線が円弧に近似されることを示しています。
 
 L = 4 × tan (α/4)/3
 
@@ -224,7 +224,7 @@ float Magnitude(SKPoint v)
 
 円の半径が100の場合、 *L* は55であり、覚えやすい数値です。
 
-**2 乗**は、円と正方形の間の図形をアニメーション化します。 円は、次のように、クラスのこの配列定義の最初の列に座標が表示される4つのベジエ曲線によって近似され [`SquaringTheCirclePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/SquaringTheCirclePage.cs) ます。
+**2 乗** は、円と正方形の間の図形をアニメーション化します。 円は、次のように、クラスのこの配列定義の最初の列に座標が表示される4つのベジエ曲線によって近似され [`SquaringTheCirclePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/SquaringTheCirclePage.cs) ます。
 
 ```csharp
 public class SquaringTheCirclePage : ContentPage
@@ -347,7 +347,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 [![ベジエ無限大ページのトリプルスクリーンショット](beziers-images/bezierinfinity-small.png)](beziers-images/bezierinfinity-large.png#lightbox)
 
-Arc 記事[**を描画する3つの方法**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md)から、**アーク無限大**ページによってレンダリングされる無限大記号よりも、中心方向の方がややスムーズです。
+Arc 記事 [**を描画する3つの方法**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md)から、 **アーク無限大** ページによってレンダリングされる無限大記号よりも、中心方向の方がややスムーズです。
 
 ## <a name="the-quadratic-bzier-curve"></a>2次ベジエ曲線
 
@@ -420,7 +420,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 円錐ベジエ曲線は、 &mdash; 2 次ベジエ曲線とも呼ばれて &mdash; いますが、ベジエ曲線のファミリには比較的最近の追加があります。 2次ベジエ曲線と同様、有理数の2次ベジエ曲線には、始点、終点、および1つのコントロールポイントが含まれます。 ただし、有理数の2次ベジエ曲線にも *重み* 値が必要です。 パラメーター式には比率が含まれているため、これは *有理数* の2次式と呼ばれます。
 
-X と Y のパラメーター式は、同じ分母を共有する比率です。 次に示すのは、0から1までの *t* の分母と *w*の重み値の式です。
+X と Y のパラメーター式は、同じ分母を共有する比率です。 次に示すのは、0から1までの *t* の分母と *w* の重み値の式です。
 
 d (t) = (1 – t) ² + 2wt (1 ~ t) + t ²
 
@@ -490,7 +490,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ご覧のように、コントロールポイントは、重みが高くなると、曲線をさらに大きくするように見えます。 重みが0の場合、曲線は始点から終点までの直線になります。
 
-理論的には、負の重みが許容され、曲線が制御ポイントから *離れる* ようになります。 ただし、-1 以下の重みを指定すると、パラメーター式の分母が *t*の特定の値に対して負になります。 このような理由から、メソッドで負の重みが無視される場合があり `ConicTo` ます。 **円錐曲線**プログラムを使用すると、負の重みを設定できます。ただし、実験によって表示されるように、負の重みは重み付けが0の場合と同じ効果を持ち、直線がレンダリングされます。
+理論的には、負の重みが許容され、曲線が制御ポイントから *離れる* ようになります。 ただし、-1 以下の重みを指定すると、パラメーター式の分母が *t* の特定の値に対して負になります。 このような理由から、メソッドで負の重みが無視される場合があり `ConicTo` ます。 **円錐曲線** プログラムを使用すると、負の重みを設定できます。ただし、実験によって表示されるように、負の重みは重み付けが0の場合と同じ効果を持ち、直線がレンダリングされます。
 
 メソッドを使用して、 `ConicTo` 半円を最大 (またはそれを除く) まで円弧を描画するために、制御点とウェイトを簡単に派生させることができます。 次の図では、始点と終点の接線線が制御ポイントで一致しています。
 

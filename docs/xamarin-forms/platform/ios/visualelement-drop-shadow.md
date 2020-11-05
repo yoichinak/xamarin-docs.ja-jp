@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2e54182ca5c1f2afbc107011aea6b84af864e78d
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 2e4c669ee24c72cc5962feff0ec8e55b54f7d372
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562348"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375123"
 ---
 # <a name="visualelement-drop-shadows-on-ios"></a>IOS の VisualElement ドロップシャドウ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 この iOS プラットフォーム固有のは、のドロップシャドウを有効にするために使用され [`VisualElement`](xref:Xamarin.Forms.VisualElement) ます。 これは、添付プロパティをに設定することによって XAML で使用され [`VisualElement.IsShadowEnabled`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.IsShadowEnabledProperty) `true` ます。また、ドロップシャドウを制御する追加のオプションの添付プロパティがいくつかあります。
 

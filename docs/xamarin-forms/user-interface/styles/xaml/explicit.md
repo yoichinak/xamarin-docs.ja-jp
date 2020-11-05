@@ -10,22 +10,22 @@ ms.date: 02/17/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b462535815e1c8ca6262d82d2527d7667b645db8
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 6f812e252f714539c41b57552038ca74e4d5137c
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563927"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374915"
 ---
 # <a name="explicit-styles-in-no-locxamarinforms"></a>での明示的なスタイル Xamarin.Forms
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
 _明示的なスタイルとは、スタイルプロパティを設定することによってコントロールに選択的に適用されるスタイルです。_
 
 ## <a name="create-an-explicit-style-in-xaml"></a>XAML での明示的なスタイルの作成
 
-ページレベルでを宣言するには、 [`Style`](xref:Xamarin.Forms.Style) を [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) ページに追加し、1つ以上の宣言をに含める必要があり `Style` `ResourceDictionary` ます。 は、の `Style` 宣言に属性を指定することによって *明示的* に作成されます。これにより `x:Key` 、に説明的なキーが与えられ `ResourceDictionary` ます。 その後、プロパティを設定することによって、*明示的*なスタイルを特定のビジュアル要素に適用する必要があり [`Style`](xref:Xamarin.Forms.NavigableElement.Style) ます。
+ページレベルでを宣言するには、 [`Style`](xref:Xamarin.Forms.Style) を [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) ページに追加し、1つ以上の宣言をに含める必要があり `Style` `ResourceDictionary` ます。 は、の `Style` 宣言に属性を指定することによって *明示的* に作成されます。これにより `x:Key` 、に説明的なキーが与えられ `ResourceDictionary` ます。 その後、プロパティを設定することによって、 *明示的* なスタイルを特定のビジュアル要素に適用する必要があり [`Style`](xref:Xamarin.Forms.NavigableElement.Style) ます。
 
 次のコード例は、ページのインスタンスに適用される XAML で宣言された *明示的* なスタイル `ResourceDictionary` を示してい [`Label`](xref:Xamarin.Forms.Label) ます。
 

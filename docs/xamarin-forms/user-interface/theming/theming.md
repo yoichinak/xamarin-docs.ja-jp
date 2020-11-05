@@ -10,16 +10,16 @@ ms.date: 08/07/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7eef9cdf353c527be4e1de4721a5658a7763dabe
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 123a0868ce098f8c54e6805a1b2b9a6efb04c238
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557544"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375396"
 ---
 # <a name="theme-a-no-locxamarinforms-application"></a>アプリケーションのテーマを Xamarin.Forms 適用する
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-theming/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-theming/)
 
 Xamarin.Forms アプリケーションは、マークアップ拡張機能を使用して、実行時に動的にスタイル変更に応答でき `DynamicResource` ます。 このマークアップ拡張機能は、 `StaticResource` マークアップ拡張機能に似ています。では、ディクショナリキーを使用してから値をフェッチし [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) ます。 ただし、 `StaticResource` マークアップ拡張機能は、単一の辞書参照を実行しますが、 `DynamicResource` マークアップ拡張機能はディクショナリキーへのリンクを保持します。 このため、キーに関連付けられている値が置換された場合、変更はに適用され [`VisualElement`](xref:Xamarin.Forms.VisualElement) ます。 これにより、アプリケーションでランタイムテーマを実装できるようになり Xamarin.Forms ます。
 
@@ -86,7 +86,7 @@ Xamarin.Forms アプリケーションは、マークアップ拡張機能を使
 
 ## <a name="set-a-default-theme"></a>既定のテーマを設定する
 
-アプリケーションには既定のテーマが必要であるため、コントロールには、使用するリソースの値を設定できます。 既定のテーマを設定するには、 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) `ResourceDictionary` **app.xaml**に定義されているアプリケーションレベルにテーマをマージします。
+アプリケーションには既定のテーマが必要であるため、コントロールには、使用するリソースの値を設定できます。 既定のテーマを設定するには、 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) `ResourceDictionary` **app.xaml** に定義されているアプリケーションレベルにテーマをマージします。
 
 ```xaml
 <Application xmlns="http://xamarin.com/schemas/2014/forms"

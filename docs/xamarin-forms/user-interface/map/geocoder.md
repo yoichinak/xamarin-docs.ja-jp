@@ -10,16 +10,16 @@ ms.date: 10/22/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d6a63e952d7466dc4b7f2d3e8cfc39d6c63e4daf
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 12ba6e8f9bb1c547ad5a15e2e79f74c29b74ad12
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91559975"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375448"
 ---
 # <a name="no-locxamarinforms-map-geocoding"></a>Xamarin.Forms マップジオコーディング
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
 [`Xamarin.Forms.Maps`](xref:Xamarin.Forms.Maps)名前空間は、 [`Geocoder`](xref:Xamarin.Forms.Maps.Geocoder) オブジェクトに格納されている文字列のアドレスと緯度、経度の座標を変換するクラスを提供し [`Position`](xref:Xamarin.Forms.Maps.Position) ます。 構造体の詳細については [`Position`](xref:Xamarin.Forms.Maps.Position) 、「 [マップの位置と距離](position-distance.md)」を参照してください。
 

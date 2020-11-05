@@ -10,20 +10,20 @@ ms.date: 02/17/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b8665e5489da396cb9f7ef984c97fe79fda17434
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 5fdac3524e2213e43e1fad2ed3da9e12d7608b16
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91558324"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374928"
 ---
 # <a name="device-styles-in-no-locxamarinforms"></a>のデバイスのスタイル Xamarin.Forms
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
 
 _Xamarin.Forms には、デバイススタイルと呼ばれる6つの動的スタイルが、デバイススタイルクラスに含まれています。_
 
-*デバイス*のスタイルは次のとおりです。
+*デバイス* のスタイルは次のとおりです。
 
 - [`BodyStyle`](xref:Xamarin.Forms.Device.Styles.BodyStyle)
 - [`CaptionStyle`](xref:Xamarin.Forms.Device.Styles.CaptionStyle)
@@ -68,7 +68,7 @@ _Xamarin.Forms には、デバイススタイルと呼ばれる6つの動的ス�
 </ContentPage>
 ```
 
-デバイススタイルは、マークアップ拡張機能を使用してにバインドされ `DynamicResource` ます。 スタイルの動的な性質は、テキストサイズの **ユーザー補助** の設定を変更することで、iOS で見ることができます。 *デバイス*スタイルの外観は、次のスクリーンショットに示すように、プラットフォームによって異なります。
+デバイススタイルは、マークアップ拡張機能を使用してにバインドされ `DynamicResource` ます。 スタイルの動的な性質は、テキストサイズの **ユーザー補助** の設定を変更することで、iOS で見ることができます。 *デバイス* スタイルの外観は、次のスクリーンショットに示すように、プラットフォームによって異なります。
 
 ![各プラットフォームでのデバイスのスタイル](device-images/device-styles.png)
 
@@ -114,9 +114,9 @@ public class DeviceStylesPageCS : ContentPage
 
 [`Style`](xref:Xamarin.Forms.NavigableElement.Style)各インスタンスのプロパティ [`Label`](xref:Xamarin.Forms.Label) は、クラスからの適切なプロパティに設定され [`Devices.Styles`](xref:Xamarin.Forms.Device.Styles) ます。
 
-## <a name="accessibility"></a>ユーザー補助
+## <a name="accessibility"></a>アクセシビリティ
 
-*デバイス*のスタイルはユーザー補助の設定を優先します。そのため、各プラットフォームでアクセシビリティの設定が変更されると、フォントサイズが変更されます。 そのため、ユーザー補助テキストをサポートするには、アプリケーション内でテキストスタイルのベースとして *デバイス* のスタイルが使用されていることを確認してください。
+*デバイス* のスタイルはユーザー補助の設定を優先します。そのため、各プラットフォームでアクセシビリティの設定が変更されると、フォントサイズが変更されます。 そのため、ユーザー補助テキストをサポートするには、アプリケーション内でテキストスタイルのベースとして *デバイス* のスタイルが使用されていることを確認してください。
 
 次のスクリーンショットは、各プラットフォームのデバイススタイルを示しています。アクセス可能なフォントサイズは最も小さくなっています。
 

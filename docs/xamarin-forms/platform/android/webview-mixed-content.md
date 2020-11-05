@@ -10,16 +10,16 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 27d19773d86c125cd5574f7a281c37c26ef643fd
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: cfcdd52187fe8e3af258aedb25e8c0df85cbea4e
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563199"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375487"
 ---
 # <a name="webview-mixed-content-on-android"></a>Android での WebView 混合コンテンツ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 この Android プラットフォーム固有の設定は、が [`WebView`](xref:Xamarin.Forms.WebView) API 21 以上を対象とするアプリケーションで混合コンテンツを表示できるかどうかを制御します。 混合コンテンツは、HTTPS 接続を介して最初に読み込まれるコンテンツですが、HTTP 接続を介してリソース (画像、オーディオ、ビデオ、スタイルシート、スクリプトなど) を読み込みます。 これは、 [`WebView.MixedContentMode`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WebView.MixedContentModeProperty) 添付プロパティを列挙体の値に設定することによって XAML で使用され [`MixedContentHandling`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.MixedContentHandling) ます。
 

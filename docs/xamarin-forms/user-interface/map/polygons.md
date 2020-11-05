@@ -10,16 +10,16 @@ ms.date: 03/10/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d4b82cc9c04dd711cc99b558475c2e003e557252
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 1cb0b229af4ac819b33602e2249f20d308ec111c
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91559780"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374785"
 ---
 # <a name="no-locxamarinforms-map-polygons-and-polylines"></a>Xamarin.Forms 多角形とポリラインのマップ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
 `Polygon`、、およびの各要素を使用すると、 `Polyline` `Circle` マップ上の特定の領域を強調表示できます。 は、 `Polygon` ストロークと塗りつぶしの色を持つことができる、完全に囲まれた形状です。 は、 `Polyline` 領域を完全に囲む線ではありません。 は、 `Circle` マップの円形の領域を強調表示します。
 

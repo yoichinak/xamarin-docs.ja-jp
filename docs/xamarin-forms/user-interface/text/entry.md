@@ -10,16 +10,16 @@ ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ab2f0880f694bd9e270385dd6e0256374ed76c43
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 625dd57d1f84b95cef1c6513ae832af805bf565a
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562224"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375032"
 ---
 # <a name="no-locxamarinforms-entry"></a>Xamarin.Forms キー
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 は、 Xamarin.Forms [`Entry`](xref:Xamarin.Forms.Entry) 単一行のテキスト入力に使用されます。 は、 `Entry` ビューのように、 [`Editor`](xref:Xamarin.Forms.Editor) 複数のキーボードの種類をサポートしています。 また、は `Entry` パスワードフィールドとして使用できます。
 

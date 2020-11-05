@@ -10,16 +10,16 @@ ms.date: 12/04/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3b27ef8ecbd5f357eabd728423b5787ea222c593
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: e1cefd856cf6cfb5c4a25e6bd26173d527ca7e42
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562302"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375073"
 ---
 # <a name="no-locxamarinforms-imagebutton"></a>Xamarin.Forms ImageButton
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/formsgallery)
 
 _ImageButton はイメージを表示し、タップまたはクリックすると、特定のタスクを実行するようにアプリケーションに指示します。_
 
@@ -213,7 +213,7 @@ public class ImageButtonDemoPage : ContentPage
 
 ## <a name="using-the-command-interface"></a>コマンドインターフェイスの使用
 
-アプリケーションは、イベントを処理することなく、タップに応答することができ `ImageButton` `Clicked` ます。 は、 `ImageButton` コマンドまたは_コマンド_実行インターフェイスと呼ば_commanding_れる別の通知機構を実装します。 これは、次の2つのプロパティで構成されます。
+アプリケーションは、イベントを処理することなく、タップに応答することができ `ImageButton` `Clicked` ます。 は、 `ImageButton` コマンドまたは _コマンド_ 実行インターフェイスと呼ば _commanding_ れる別の通知機構を実装します。 これは、次の2つのプロパティで構成されます。
 
 - `Command` 型の [`ICommand`](xref:System.Windows.Input.ICommand) 。名前空間で定義されているインターフェイス [`System.Windows.Input`](xref:System.Windows.Input) 。
 - `CommandParameter` 型のプロパティ [`Object`](xref:System.Object) 。

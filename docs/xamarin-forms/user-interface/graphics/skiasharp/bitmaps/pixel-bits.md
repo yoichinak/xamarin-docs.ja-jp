@@ -10,16 +10,16 @@ ms.date: 07/11/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7f0b7c61d44170ab97b060a16693287c28903660
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 6e3edf7d0e7630429f8f1c76009987ee8a4b737a
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562965"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375331"
 ---
 # <a name="accessing-skiasharp-bitmap-pixel-bits"></a>SkiaSharp ビットマップピクセルビットへのアクセス
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 「 [**SkiaSharp ビットマップをファイルに保存する**](saving.md)」の記事で説明したように、通常、ビットマップは JPEG や PNG などの圧縮形式でファイルに保存されます。 とは異なりでは、メモリに格納されている SkiaSharp ビットマップは圧縮されません。 連続する一連のピクセルとして格納されます。 この圧縮されていない形式を指定すると、ビットマップを画面に簡単に転送できます。
 
@@ -148,7 +148,7 @@ IntPtr pixelsAddr = bitmap.GetPixels();
 byte* ptr = (byte*)pixelsAddr.ToPointer();
 ```
 
-`ptr`変数は_byte ポインター_型です。 この `ptr` 変数を使用すると、ビットマップのピクセルを格納するために使用されるメモリの個々のバイトにアクセスできます。 次のようなコードを使用して、このメモリからバイトを読み取り、またはメモリにバイトを書き込むことができます。
+`ptr`変数は _byte ポインター_ 型です。 この `ptr` 変数を使用すると、ビットマップのピクセルを格納するために使用されるメモリの個々のバイトにアクセスできます。 次のようなコードを使用して、このメモリからバイトを読み取り、またはメモリにバイトを書き込むことができます。
 
 ```csharp
 byte pixelComponent = *ptr;
@@ -520,7 +520,7 @@ BB GG RR AA
 
 ## <a name="random-access-of-pixels"></a>ピクセルのランダムアクセス
 
-`FillBitmapBytePtr`[ `FillBitmapUintPtr` **グラデーションビットマップ**] ページのメソッドとメソッドは、ビットマップを順番に、 `for` 先頭行から末尾の行に、各行を左から右に設定するように設計されたループから効果を持ちます。 ピクセルは、ポインターをインクリメントしたのと同じステートメントを使用して設定できます。
+`FillBitmapBytePtr`[ `FillBitmapUintPtr` **グラデーションビットマップ** ] ページのメソッドとメソッドは、ビットマップを順番に、 `for` 先頭行から末尾の行に、各行を左から右に設定するように設計されたループから効果を持ちます。 ピクセルは、ポインターをインクリメントしたのと同じステートメントを使用して設定できます。
 
 場合によっては、順番にではなく、ランダムにピクセルにアクセスする必要があります。 この方法を使用している場合は、 `GetPixels` 行と列に基づいてポインターを計算する必要があります。 これについては、「 **レインボーサイン** 」ページで説明されています。これは、サイン曲線の1サイクルの形でレインボーを示すビットマップを作成します。
 
@@ -748,9 +748,9 @@ public partial class ColorAdjustmentPage : ContentPage
 
 ## <a name="posterization"></a>Posterization
 
-ピクセルビットへのアクセスを伴うもう1つの一般的なジョブは、 _posterization_です。 ビットマップのピクセルでエンコードされた色が縮小され、カラーパレットが制限されている場合に、結果が手書きのポスターに似ている場合は、数値。
+ピクセルビットへのアクセスを伴うもう1つの一般的なジョブは、 _posterization_ です。 ビットマップのピクセルでエンコードされた色が縮小され、カラーパレットが制限されている場合に、結果が手書きのポスターに似ている場合は、数値。
 
-**ポスタリゼーション**ページでは、次のいずれかのサルイメージでこのプロセスを実行します。
+**ポスタリゼーション** ページでは、次のいずれかのサルイメージでこのプロセスを実行します。
 
 ```csharp
 public class PosterizePage : ContentPage

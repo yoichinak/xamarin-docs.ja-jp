@@ -10,14 +10,17 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: bf0315d2d077e06ff3ded4d66814afe050fdfad4
-ms.sourcegitcommit: f7fe46c0236a7130b63a33d9d1670d5111582dd2
+ms.openlocfilehash: be8b0866a6d16fdec62f7c6cd3f4fc3e6de3168d
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88186201"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374902"
 ---
 # <a name="communicating-between-loosely-coupled-components"></a>疎結合コンポーネント間の通信
+
+> [!NOTE]
+> この電子ブックは2017の spring で公開されており、その後、更新されていません。 本は貴重なものですが、一部のマテリアルは古くなっています。
 
 発行/サブスクライブ パターンは、パブリッシャーがサブスクライバーと呼ばれる受信者を知らずに、メッセージを送信するメッセージング パターンです。 同様に、サブスクライバーは、パブリッシャーを知らずに特定のメッセージをリッスンします。
 
@@ -41,7 +44,7 @@ EShopOnContainers モバイルアプリでは、クラスを使用して [`Messa
 
 - この `AddProduct` メッセージは、 `CatalogViewModel` 買い物かごに項目が追加されたときにクラスによって発行されます。 返されたクラスは、 `BasketViewModel` メッセージをサブスクライブし、応答としてショッピングカート内の項目の数を増やします。 また、 `BasketViewModel` クラスもこのメッセージからアンサブスクライブします。
 - この `Filter` メッセージは、 `CatalogViewModel` ユーザーがカタログから表示される項目にブランドまたは種類のフィルターを適用すると、クラスによって発行されます。 返されたクラスは、 `CatalogView` メッセージをサブスクライブし、フィルター条件に一致する項目のみが表示されるように UI を更新します。
-- `ChangeTab` `MainViewModel` が `CheckoutViewModel` `MainViewModel` 新しい注文の作成と送信に成功した後に、クラスによってメッセージが発行されます。 返されたクラスは、 `MainView` メッセージをサブスクライブし、 **[プロファイル**] タブがアクティブになるように UI を更新して、ユーザーの注文を表示します。
+- `ChangeTab` `MainViewModel` が `CheckoutViewModel` `MainViewModel` 新しい注文の作成と送信に成功した後に、クラスによってメッセージが発行されます。 返されたクラスは、 `MainView` メッセージをサブスクライブし、 **[プロファイル** ] タブがアクティブになるように UI を更新して、ユーザーの注文を表示します。
 
 > [!NOTE]
 > クラスは [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) 疎結合クラス間の通信を許可しますが、この問題に対する唯一のアーキテクチャソリューションを提供するわけではありません。 たとえば、ビューモデルとビュー間の通信は、バインディングエンジンとプロパティ変更通知を使用して実現することもできます。 また、ナビゲーション中にデータを渡すことによって、2つのビューモデル間の通信を実現することもできます。
@@ -55,19 +58,19 @@ EShopOnContainers モバイルアプリでは、を [`MessagingCenter`](xref:Xam
 
 ## <a name="defining-a-message"></a>メッセージの定義
 
-[`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter)メッセージは、メッセージを識別するために使用される文字列です。 次のコード例は、eShopOnContainers モバイルアプリ内で定義されているメッセージを示しています。
+[`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) メッセージは、メッセージを識別するために使用される文字列です。 次のコード例は、eShopOnContainers モバイルアプリ内で定義されているメッセージを示しています。
 
 ```csharp
-public class MessageKeys  
+public class MessageKeys  
 {  
-    // Add product to basket  
-    public const string AddProduct = "AddProduct";  
+    // Add product to basket  
+    public const string AddProduct = "AddProduct";  
 
-    // Filter  
-    public const string Filter = "Filter";  
+    // Filter  
+    public const string Filter = "Filter";  
 
-    // Change selected Tab programmatically  
-    public const string ChangeTab = "ChangeTab";  
+    // Change selected Tab programmatically  
+    public const string ChangeTab = "ChangeTab";  
 }
 ```
 
@@ -78,7 +81,7 @@ public class MessageKeys
 パブリッシャーは、[`MessagingCenter.Send`](xref:Xamarin.Forms.MessagingCenter.Send*) オーバーロードの 1 つを使用してメッセージをサブスクライバーに通知します。 次のコード例は、メッセージを公開する方法を示してい `AddProduct` ます。
 
 ```csharp
-MessagingCenter.Send(this, MessageKeys.AddProduct, catalogItem);
+MessagingCenter.Send(this, MessageKeys.AddProduct, catalogItem);
 ```
 
 この例では、 [`Send`](xref:Xamarin.Forms.MessagingCenter.Send*) メソッドは次の3つの引数を指定します。
@@ -97,12 +100,12 @@ MessagingCenter.Send(this, MessageKeys.AddProduct, catalogItem);
 サブスクライバーは、[`MessagingCenter.Subscribe`](xref:Xamarin.Forms.MessagingCenter.Subscribe*) オーバーロードのいずれかを使用して、メッセージを受信するように登録できます。 次のコード例は、eShopOnContainers モバイルアプリがメッセージをサブスクライブし、処理する方法を示してい `AddProduct` ます。
 
 ```csharp
-MessagingCenter.Subscribe<CatalogViewModel, CatalogItem>(  
-    this, MessageKeys.AddProduct, async (sender, arg) =>  
+MessagingCenter.Subscribe<CatalogViewModel, CatalogItem>(  
+    this, MessageKeys.AddProduct, async (sender, arg) =>  
 {  
-    BadgeCount++;  
+    BadgeCount++;  
 
-    await AddCatalogItemAsync(arg);  
+    await AddCatalogItemAsync(arg);  
 });
 ```
 
@@ -118,7 +121,7 @@ MessagingCenter.Subscribe<CatalogViewModel, CatalogItem>(
 サブスクライバーは、受信する必要がなくなったメッセージのサブスクライブを解除することができます。 これは、 [`MessagingCenter.Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) 次のコード例に示すように、オーバーロードのいずれかを使用して実現されます。
 
 ```csharp
-MessagingCenter.Unsubscribe<CatalogViewModel, CatalogItem>(this, MessageKeys.AddProduct);
+MessagingCenter.Unsubscribe<CatalogViewModel, CatalogItem>(this, MessageKeys.AddProduct);
 ```
 
 この例では、 [`Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) メソッドの構文は、メッセージを受信するためにサブスクライブするときに指定された型引数を反映して `AddProduct` います。

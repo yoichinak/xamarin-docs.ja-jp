@@ -8,7 +8,7 @@ ms. 製品: xamarin ms. assetid: B8B9268B-BCB8-42B9-B08C-C0F22C137238: xamarin-f
 
 # <a name="no-locxamarinforms-checkbox"></a>Xamarin.Forms CheckBox
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-checkboxdemos/)
 
 は、 Xamarin.Forms `CheckBox` チェックを行うか空にすることができるボタンの種類です。 チェックボックスがオンになっている場合は、オンになっていると見なされます。 チェックボックスが空の場合は、オフになっていると見なされます。
 

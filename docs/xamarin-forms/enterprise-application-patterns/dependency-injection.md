@@ -10,39 +10,42 @@ ms.date: 11/04/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8aea3ad36f6c35e9faf2771fc6b54c378c304afb
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 3facf6e1e5796d8e17488f3c018cba23e5f99b7f
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86933602"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375357"
 ---
 # <a name="dependency-injection"></a>依存関係の挿入
 
-通常、クラスコンストラクターは、オブジェクトをインスタンス化するときに呼び出され、オブジェクトが必要とする値は、コンストラクターに引数として渡されます。 これは依存関係の挿入の例であり、特に*コンストラクターインジェクション*と呼ばれています。 オブジェクトが必要とする依存関係は、コンストラクターに挿入されます。
+> [!NOTE]
+> この電子ブックは2017の spring で公開されており、その後、更新されていません。 本は貴重なものですが、一部のマテリアルは古くなっています。
+
+通常、クラスコンストラクターは、オブジェクトをインスタンス化するときに呼び出され、オブジェクトが必要とする値は、コンストラクターに引数として渡されます。 これは依存関係の挿入の例であり、特に *コンストラクターインジェクション* と呼ばれています。 オブジェクトが必要とする依存関係は、コンストラクターに挿入されます。
 
 依存関係をインターフェイス型として指定することにより、依存関係の挿入によって、これらの型に依存するコードから具象型を分離できます。 一般的には、インターフェイスと抽象型の間の登録とマッピングのリストを保持するコンテナーと、これらの型を実装または拡張する具象型を使用します。
 
-また、*プロパティセッターの挿入*や*メソッド呼び出しの挿入*など、他の種類の依存関係の注入もありますが、あまり一般的ではありません。 したがって、この章では、依存関係挿入コンテナーを使用したコンストラクターの挿入についてのみ説明します。
+また、 *プロパティセッターの挿入* や *メソッド呼び出しの挿入* など、他の種類の依存関係の注入もありますが、あまり一般的ではありません。 したがって、この章では、依存関係挿入コンテナーを使用したコンストラクターの挿入についてのみ説明します。
 
 ## <a name="introduction-to-dependency-injection"></a>依存関係の挿入の概要
 
 依存関係の挿入は、制御の反転 (IoC) パターンの特殊なバージョンであり、逆の懸念は、必要な依存関係を取得するプロセスです。 依存関係の挿入では、実行時に別のクラスがオブジェクトに依存関係を挿入します。 次のコード例では、 `ProfileViewModel` 依存関係の挿入を使用する場合にクラスがどのように構造化されているかを示します。
 
 ```csharp
-public class ProfileViewModel : ViewModelBase  
+public class ProfileViewModel : ViewModelBase  
 {  
-    private IOrderService _orderService;  
+    private IOrderService _orderService;  
 
-    public ProfileViewModel(IOrderService orderService)  
-    {  
-        _orderService = orderService;  
-    }  
-    ...  
+    public ProfileViewModel(IOrderService orderService)  
+    {  
+        _orderService = orderService;  
+    }  
+    ...  
 }
 ```
 
-コンストラクターは、 `ProfileViewModel` `IOrderService` 別のクラスによって挿入されたインスタンスを引数として受け取ります。 クラスの唯一の依存関係 `ProfileViewModel` は、インターフェイス型にあります。 そのため、クラスには、 `ProfileViewModel` オブジェクトのインスタンス化を行うクラスに関する知識がありません `IOrderService` 。 オブジェクトのインスタンス化 `IOrderService` とクラスへの挿入を行うクラス `ProfileViewModel` は、*依存関係の挿入コンテナー*と呼ばれます。
+コンストラクターは、 `ProfileViewModel` `IOrderService` 別のクラスによって挿入されたインスタンスを引数として受け取ります。 クラスの唯一の依存関係 `ProfileViewModel` は、インターフェイス型にあります。 そのため、クラスには、 `ProfileViewModel` オブジェクトのインスタンス化を行うクラスに関する知識がありません `IOrderService` 。 オブジェクトのインスタンス化 `IOrderService` とクラスへの挿入を行うクラス `ProfileViewModel` は、 *依存関係の挿入コンテナー* と呼ばれます。
 
 依存関係挿入コンテナーは、クラスインスタンスをインスタンス化し、コンテナーの構成に基づいて有効期間を管理する機能を提供することで、オブジェクト間の結合を減らします。 オブジェクトの作成中に、コンテナーは、オブジェクトに必要なすべての依存関係を挿入します。 これらの依存関係がまだ作成されていない場合、コンテナーはまず依存関係を作成して解決します。
 
@@ -66,10 +69,10 @@ TinyIoC では、 `TinyIoCContainer` 型は依存関係挿入コンテナーを�
 
 **図 3-1:** 依存関係の挿入を使用する場合の依存関係
 
-実行時に、コンテナーは、 `IOrderService` オブジェクトをインスタンス化する前に、インスタンス化する必要があるインターフェイスの実装を認識している必要があり `ProfileViewModel` ます。 これには次のものが含まれます。
+実行時に、コンテナーは、 `IOrderService` オブジェクトをインスタンス化する前に、インスタンス化する必要があるインターフェイスの実装を認識している必要があり `ProfileViewModel` ます。 これには以下が含まれます。
 
-- インターフェイスを実装するオブジェクトをインスタンス化する方法を決定するコンテナー `IOrderService` 。 これは*登録*と呼ばれます。
-- インターフェイスを実装するオブジェクトとオブジェクトをインスタンス化するコンテナー `IOrderService` `ProfileViewModel` 。 これを*解決*と呼びます。
+- インターフェイスを実装するオブジェクトをインスタンス化する方法を決定するコンテナー `IOrderService` 。 これは *登録* と呼ばれます。
+- インターフェイスを実装するオブジェクトとオブジェクトをインスタンス化するコンテナー `IOrderService` `ProfileViewModel` 。 これを *解決* と呼びます。
 
 最終的には、アプリケーションはオブジェクトの使用を終了 `ProfileViewModel` し、ガベージコレクションに使用できるようになります。 この時点で、 `IOrderService` 他のクラスが同じインスタンスを共有していない場合、ガベージコレクターはインスタンスを破棄する必要があります。
 
@@ -132,7 +135,7 @@ _container.Register<ProfileViewModel>();
 var requestProvider = _container.Resolve<IRequestProvider>();
 ```
 
-この例では、TinyIoC は、型の具象型と依存関係を解決するように求められ `IRequestProvider` ます。 通常、 `Resolve` メソッドは、特定の型のインスタンスが必要な場合に呼び出されます。 解決されたオブジェクトの有効期間の制御については、「[解決済みオブジェクトの有効期間の管理](#managing-the-lifetime-of-resolved-objects)」を参照してください。
+この例では、TinyIoC は、型の具象型と依存関係を解決するように求められ `IRequestProvider` ます。 通常、 `Resolve` メソッドは、特定の型のインスタンスが必要な場合に呼び出されます。 解決されたオブジェクトの有効期間の制御については、「 [解決済みオブジェクトの有効期間の管理](#managing-the-lifetime-of-resolved-objects)」を参照してください。
 
 次のコード例は、eShopOnContainers モバイルアプリがビューモデルの種類とその依存関係をインスタンス化する方法を示しています。
 
@@ -140,7 +143,7 @@ var requestProvider = _container.Resolve<IRequestProvider>();
 var viewModel = _container.Resolve(viewModelType);
 ```
 
-この例では、TinyIoC は、要求されたビューモデルのビューモデルの種類を解決するように求められます。また、コンテナーも依存関係を解決します。 型を解決 `ProfileViewModel` する場合、解決する依存関係は `ISettingsService` オブジェクトと `IOrderService` オブジェクトです。 クラスとクラスを登録するときにインターフェイス登録が使用されたため、TinyIoC はクラスと `SettingsService` `OrderService` クラスのシングルトンインスタンスを返し、 `SettingsService` `OrderService` クラスのコンストラクターに渡し `ProfileViewModel` ます。 EShopOnContainers mobile アプリがビューモデルを構築してビューに関連付ける方法の詳細については、「[ビューモデルロケーターを使用したビューモデルの自動作成](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically-creating-a-view-model-with-a-view-model-locator)」を参照してください。
+この例では、TinyIoC は、要求されたビューモデルのビューモデルの種類を解決するように求められます。また、コンテナーも依存関係を解決します。 型を解決 `ProfileViewModel` する場合、解決する依存関係は `ISettingsService` オブジェクトと `IOrderService` オブジェクトです。 クラスとクラスを登録するときにインターフェイス登録が使用されたため、TinyIoC はクラスと `SettingsService` `OrderService` クラスのシングルトンインスタンスを返し、 `SettingsService` `OrderService` クラスのコンストラクターに渡し `ProfileViewModel` ます。 EShopOnContainers mobile アプリがビューモデルを構築してビューに関連付ける方法の詳細については、「 [ビューモデルロケーターを使用したビューモデルの自動作成](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically-creating-a-view-model-with-a-view-model-locator)」を参照してください。
 
 > [!NOTE]
 > コンテナーで型を登録し、解決すると、パフォーマンス コストが発生します。特に、アプリのページ ナビゲーションごとに依存関係が再構築される場合には、各型を作成するために、コンテナーでリフレクションが使用されるからです。 依存関係が多いか深い場合、作成コストが大幅に増加する可能性があります。

@@ -10,16 +10,16 @@ ms.date: 04/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e6856e0ef513905a6300dcaf661ea33f4a89852c
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 05d0917ac748ca27350f43ae225f1cb1d1aad84f
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563914"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375383"
 ---
 # <a name="generics-in-no-locxamarinforms-xaml"></a>XAML のジェネリック Xamarin.Forms
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-generics/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/xaml-generics/)
 
 Xamarin.Forms XAML は、ジェネリック型の制約を型引数として指定することによって、ジェネリック CLR 型を使用するためのサポートを提供します。 このサポートはディレクティブによって提供され `x:TypeArguments` ます。このディレクティブは、ジェネリックの制約型引数をジェネリック型のコンストラクターに渡します。
 

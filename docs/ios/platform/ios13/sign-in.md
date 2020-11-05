@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 09/10/2019
-ms.openlocfilehash: d8c458ad30d7e281427dad0e29092c55fede7347
-ms.sourcegitcommit: fc689c1a6b641c124378dedc1bd157d96fc759a7
+ms.openlocfilehash: 5cbe3f36d1aeb12be671b14a4f76c79764e814e6
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71319524"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375006"
 ---
 # <a name="sign-in-with-apple-in-xamarinios"></a>Xamarin で Apple にサインインします。 iOS
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルをダウンロードします。](https://docs.microsoft.com/samples/xamarin/ios-samples/ios13-addingthesigninwithappleflowtoyourapp/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/ios-samples/ios13-addingthesigninwithappleflowtoyourapp/)
 
 Apple でのサインインは、サードパーティの認証サービスのユーザーの id 保護を提供する新しいサービスです。 IOS 13 以降では、サードパーティの認証サービスを使用する新しいアプリでも、Apple でのサインインを提供する必要があります。 更新中の既存のアプリは、2020年4月まで Apple にサインインを追加する必要はありません。
 
@@ -26,17 +26,17 @@ Apple でのサインインは、サードパーティの認証サービスの�
 
 Apple でサインインしてアプリをビルドして実行する前に、次の手順を完了する必要があります。 [Apple Developer 証明書では、識別子 & プロファイル][5]ポータル:
 
-1. 新しい**アプリ id**識別子を作成します。
-2. **[説明]** フィールドに説明を設定します。
-3. **明示的**なバンドル ID を選択`com.xamarin.AddingTheSignInWithAppleFlowToYourApp`し、フィールドにを設定します。
-4. **Apple 機能でのサインイン**を有効にし、新しい id を登録します。
+1. 新しい **アプリ id** 識別子を作成します。
+2. [ **説明** ] フィールドに説明を設定します。
+3. **明示的** なバンドル ID を選択し `com.xamarin.AddingTheSignInWithAppleFlowToYourApp` 、フィールドにを設定します。
+4. **Apple 機能でのサインイン** を有効にし、新しい id を登録します。
 5. 新しい Id で新しいプロビジョニングプロファイルを作成します。
 6. デバイスにダウンロードしてインストールします。
-7. Visual Studio で、「Apple の機能**を使用してサインイン**する **」ファイルを**有効にします。
+7. Visual Studio で、「Apple の機能 **を使用してサインイン** する **」ファイルを** 有効にします。
 
 ## <a name="check-sign-in-status"></a>サインインの状態を確認する
 
-アプリが開始されるとき、またはユーザーの認証状態を最初に確認する必要がある`ASAuthorizationAppleIdProvider`ときに、をインスタンス化し、現在の状態を確認します。
+アプリが開始されるとき、またはユーザーの認証状態を最初に確認する必要があるときに、をインスタンス化 `ASAuthorizationAppleIdProvider` し、現在の状態を確認します。
 
 ```csharp
 var appleIdProvider = new ASAuthorizationAppleIdProvider ();
@@ -65,11 +65,11 @@ appleIdProvider.GetCredentialState (KeychainItem.CurrentUserIdentifier, (credent
 });
 ```
 
-このコードでは、の`FinishedLaunching` `AppDelegate.cs`中で、 `LoginViewController`状態が`NotFound`である場合にアプリが処理され、ユーザーにが表示されます。 状態がまたは`Authorized` `Revoked`を返した場合は、ユーザーに別のアクションが表示されることがあります。
+このコードでは、 `FinishedLaunching` の中で、状態がである場合に `AppDelegate.cs` アプリが処理され、 `NotFound` ユーザーにが表示され `LoginViewController` ます。 状態がまたはを返した場合は `Authorized` `Revoked` 、ユーザーに別のアクションが表示されることがあります。
 
 ## <a name="a-loginviewcontroller-for-sign-in-with-apple"></a>Apple でサインインするための LoginViewController
 
-ログインロジックを実装し、次の`LoginViewController`例に示すように、 `IASAuthorizationControllerDelegate` Apple `IASAuthorizationControllerPresentationContextProviding`によるサインインで、とを実装する必要がある。`UIViewController`
+`UIViewController`ログインロジックを実装し、 `IASAuthorizationControllerDelegate` `IASAuthorizationControllerPresentationContextProviding` 次の例に示すように、Apple によるサインインで、とを実装する必要がある `LoginViewController` 。
 
 ```csharp
 public partial class LoginViewController : UIViewController, IASAuthorizationControllerDelegate, IASAuthorizationControllerPresentationContextProviding {
@@ -131,13 +131,13 @@ public partial class LoginViewController : UIViewController, IASAuthorizationCon
 
 ![Apple でのサインインを使用したサンプルアプリのアニメーション](sign-in-images/sign-in-flow.png)
 
-このコード例では、の`PerformExistingAccountSetupFlows`現在のログインの状態を確認し、現在のビューをデリゲートとして接続します。 既存の iCloud キーチェーン資格情報または Apple ID 資格情報が見つかった場合、ユーザーはそれを使用するように求められます。
+このコード例では、の現在のログインの状態を確認 `PerformExistingAccountSetupFlows` し、現在のビューをデリゲートとして接続します。 既存の iCloud キーチェーン資格情報または Apple ID 資格情報が見つかった場合、ユーザーはそれを使用するように求められます。
 
-Apple で`ASAuthorizationAppleIdButton`は、この目的に特化したボタンを提供しています。 このボタンをクリックすると、メソッド`HandleAuthorizationAppleIDButtonPress`で処理されたワークフローがトリガーされます。
+Apple では `ASAuthorizationAppleIdButton` 、この目的に特化したボタンを提供しています。 このボタンをクリックすると、メソッドで処理されたワークフローがトリガーされ `HandleAuthorizationAppleIDButtonPress` ます。
 
 ## <a name="handling-authorization"></a>承認の処理
 
-で、 `IASAuthorizationController`ユーザーのアカウントを格納するためのカスタムロジックを実装します。 次の例では、ユーザーのアカウントをキーチェーン (Apple の独自のストレージサービス) に格納します。
+で、 `IASAuthorizationController` ユーザーのアカウントを格納するためのカスタムロジックを実装します。 次の例では、ユーザーのアカウントをキーチェーン (Apple の独自のストレージサービス) に格納します。
 
 ```csharp
 #region IASAuthorizationController Delegate
@@ -197,7 +197,7 @@ public void DidComplete (ASAuthorizationController controller, NSError error)
 
 ## <a name="authorization-controller"></a>承認コントローラー
 
-この実装の最後の部分は、 `ASAuthorizationController`プロバイダーの承認要求を管理するです。
+この実装の最後の部分は、 `ASAuthorizationController` プロバイダーの承認要求を管理するです。
 
 ```csharp
 #region IASAuthorizationControllerPresentation Context Providing
@@ -211,7 +211,7 @@ public UIWindow GetPresentationAnchor (ASAuthorizationController controller) => 
 
 * [Apple でのサインインに関するガイドライン](https://developer.apple.com/design/human-interface-guidelines/sign-in-with-apple/overview/)
 * [Apple の権利を使用してサインインします。][2]
-* [WWDC 2019 セッション 706:Apple でのサインインの概要をご紹介します。][3]
+* [WWDC 2019 セッション 706: Apple でのサインインの概要。][3]
 * [Xamarin 用の Apple でのサインインの設定][4]
 
 [1]: https://developer.apple.com/documentation/authenticationservices/adding_the_sign_in_with_apple_flow_to_your_app

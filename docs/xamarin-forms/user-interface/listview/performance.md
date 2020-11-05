@@ -10,16 +10,16 @@ ms.date: 12/11/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c010ac513cec8ac59927325dbe80ad1c8ac556d8
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 98f91ec614df08997e7cbf23530086f541500b5d
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560001"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375474"
 ---
 # <a name="listview-performance"></a>ListView のパフォーマンス
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/workingwithlistviewnative)
 
 モバイルアプリケーションを作成するときは、パフォーマンスが重要です。 ユーザーは、スムーズスクロールと高速読み込み時間を期待できます。 ユーザーの期待に合わない場合、アプリケーションストアでの評価にコストがかかります。また、基幹業務アプリケーションの場合は、組織の時間とコストを削減できます。
 
@@ -132,7 +132,7 @@ XAML で、次の `CachingStrategy` xaml に示すように属性を設定しま
 
 #### <a name="set-the-caching-strategy-in-a-subclassed-listview"></a>サブクラス化された ListView でキャッシュ方法を設定する
 
-サブクラスの XAML から属性を設定しても、 `CachingStrategy` [`ListView`](xref:Xamarin.Forms.ListView) にはプロパティがないため、目的の動作は生成されません `CachingStrategy` `ListView` 。 さらに、 [XAMLC](~/xamarin-forms/xaml/xamlc.md)が有効になっている場合は、 **"cachingstrategy" のプロパティ、バインド可能なプロパティ、またはイベントが見つからない**というエラーメッセージが生成されます。
+サブクラスの XAML から属性を設定しても、 `CachingStrategy` [`ListView`](xref:Xamarin.Forms.ListView) にはプロパティがないため、目的の動作は生成されません `CachingStrategy` `ListView` 。 さらに、 [XAMLC](~/xamarin-forms/xaml/xamlc.md)が有効になっている場合は、 **"cachingstrategy" のプロパティ、バインド可能なプロパティ、またはイベントが見つからない** というエラーメッセージが生成されます。
 
 この問題を解決するには、 [`ListView`](xref:Xamarin.Forms.ListView) パラメーターを受け取り、 [`ListViewCachingStrategy`](xref:Xamarin.Forms.ListViewCachingStrategy) それを基底クラスに渡す、サブクラスのコンストラクターを指定します。
 

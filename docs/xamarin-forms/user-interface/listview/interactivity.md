@@ -10,16 +10,16 @@ ms.date: 09/25/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d665a80d6f1e0319fc9dc8696db379cf781ee833
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 4a922a841452e5e934cc7dcb88a9f84373ae3ded
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560118"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375498"
 ---
 # <a name="listview-interactivity"></a>ListView の対話機能
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-interactivity)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-listview-interactivity)
 
 クラスは、表示さ Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) れるデータとのユーザー操作をサポートします。
 
@@ -181,7 +181,7 @@ listView.RefreshControlColor = Color.Red;
 
 次のスクリーンショットは、ユーザーがプルしているときのプルツーリフレッシュを示しています。
 
-![ListView のプルによる更新の進行中](interactivity-images/refresh-start.png)
+![ListView Pull to Refresh In-Progress](interactivity-images/refresh-start.png)
 
 次のスクリーンショットは、ユーザーがプルを解放した後のプルから更新を示しています。これは、の更新中にスピンボタンが表示され [`ListView`](xref:Xamarin.Forms.ListView) ます。
 

@@ -10,16 +10,16 @@ ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 742cc1171901d5aa9b81cab31fd45258686c2085
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 045d2fa3575323a6a829921fb1b346c6d310cc6e
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557583"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374772"
 ---
 # <a name="no-locxamarinforms-label"></a>Xamarin.Forms タイトル
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 _テキストを表示する Xamarin.Forms_
 
@@ -104,7 +104,7 @@ Label label = new Label { Text = "Character spaced text", CharacterSpacing = 10 
 XAML から新しい行にテキストを強制するには、主に次の2つの方法があり [`Label`](xref:Xamarin.Forms.Label) ます。
 
 1. Unicode ラインフィード文字を使用します。これは " &amp; #10;" です。
-1. *Property 要素*の構文を使用してテキストを指定します。
+1. *Property 要素* の構文を使用してテキストを指定します。
 
 次のコードは、両方の手法の例を示しています。
 
@@ -178,7 +178,7 @@ public partial class LabelPage : ContentPage
 ラベルは、プロパティによって公開されるいくつかの方法のいずれかで1行に収めることができないテキストを処理するように設定でき `LineBreakMode` ます。 [`LineBreakMode`](xref:Xamarin.Forms.LineBreakMode) は、次の値を持つ列挙体です。
 
 - **ヘッドの切り捨て** &ndash; テキストの先頭を切り捨て、末尾を表示します。
-- 文字の**折り返し** &ndash;文字の境界でテキストを新しい行に折り返します。
+- 文字の **折り返し** &ndash;文字の境界でテキストを新しい行に折り返します。
 - **MiddleTruncation** &ndash; テキストの先頭と末尾を表示します。中央の部分は省略記号で置き換えられます。
 - **NoWrap** &ndash; はテキストを折り返しません。1行に収まる程度のテキストだけを表示します。
 - **TailTruncation** &ndash; テキストの先頭を切り捨て、末尾を切り捨てます。

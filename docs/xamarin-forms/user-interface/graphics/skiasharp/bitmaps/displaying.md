@@ -10,24 +10,24 @@ ms.date: 07/17/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1427b6f8461c74ded933fe562a7d17221790383a
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: c266cdee5a0949edc6ade7fff81816d0405af27f
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562315"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374889"
 ---
 # <a name="displaying-skiasharp-bitmaps"></a>表示 (SkiaSharp ビットマップを)
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-SkiaSharp ビットマップの件名は、 **[SkiaSharp の「ビットマップの基礎](../basics/bitmaps.md)**」で導入されました。 この記事では、ビットマップを読み込む3つの方法と、ビットマップを表示する3つの方法について説明しました。 この記事では、ビットマップを読み込み、のメソッドの使用方法について詳しく説明し `DrawBitmap` `SKCanvas` ます。
+SkiaSharp ビットマップの件名は、 **[SkiaSharp の「ビットマップの基礎](../basics/bitmaps.md)** 」で導入されました。 この記事では、ビットマップを読み込む3つの方法と、ビットマップを表示する3つの方法について説明しました。 この記事では、ビットマップを読み込み、のメソッドの使用方法について詳しく説明し `DrawBitmap` `SKCanvas` ます。
 
 ![サンプルの表示](displaying-images/DisplayingSample.png "サンプルの表示")
 
 `DrawBitmapLattice`メソッドと `DrawBitmapNinePatch` メソッドについては、 **[SkiaSharp ビットマップのセグメント](segmented.md)** 化された表示に関する記事で説明されています。
 
-このページのサンプルは、 **[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーションからのものです。 そのアプリケーションのホームページで、[ **SkiaSharp ビットマップ**] を選択し、[ **ビットマップの表示** ] セクションにアクセスします。
+このページのサンプルは、 **[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーションからのものです。 そのアプリケーションのホームページで、[ **SkiaSharp ビットマップ** ] を選択し、[ **ビットマップの表示** ] セクションにアクセスします。
 
 ## <a name="loading-a-bitmap"></a>ビットマップの読み込み
 
@@ -147,7 +147,7 @@ paint.Color = SKColors.Red.WithAlpha(0x80);
 
 また、オブジェクトは、 `SKPaint` blend モードまたはフィルター効果を使用してビットマップを表示するときにも役割を果たします。 これらの情報については、「 [SkiaSharp 合成」と「blend モード](../effects/blend-modes/index.md) と [SkiaSharp イメージフィルター](../effects/image-filters.md)」の記事で説明されています。
 
-**[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** サンプルプログラムの [**ピクセルディメンション**] ページには、320ピクセル、高さが240ピクセルのビットマップリソースが表示されます。
+**[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** サンプルプログラムの [ **ピクセルディメンション** ] ページには、320ピクセル、高さが240ピクセルのビットマップリソースが表示されます。
 
 ```csharp
 public class PixelDimensionsPage : ContentPage
@@ -269,7 +269,7 @@ public class FillRectanglePage : ContentPage
 
 ## <a name="stretching-while-preserving-the-aspect-ratio"></a>縦横比を維持しながら拡大する
 
-縦横比を維持したままビットマップを拡大するプロセスは、 _一様なスケーリング_とも呼ばれます。 この用語は、アルゴリズムのアプローチを提案します。 1つの考えられる解決方法を、 **一様なスケーリング** のページに示します。
+縦横比を維持したままビットマップを拡大するプロセスは、 _一様なスケーリング_ とも呼ばれます。 この用語は、アルゴリズムのアプローチを提案します。 1つの考えられる解決方法を、 **一様なスケーリング** のページに示します。
 
 ```csharp
 public class UniformScalingPage : ContentPage
@@ -622,7 +622,7 @@ public partial class ScalingModesPage : ContentPage
 
 [![スケーリングモード](displaying-images/ScalingModes.png "スケーリングモード")](displaying-images/ScalingModes-Large.png#lightbox)
 
-**四角形のサブセット**ページには**スケーリングモード**とほぼ同じ XAML ファイルがありますが、分離コードファイルでは、フィールドによって指定されたビットマップの四角形のサブセットが定義されてい `SOURCE` ます。 
+**四角形のサブセット** ページには **スケーリングモード** とほぼ同じ XAML ファイルがありますが、分離コードファイルでは、フィールドによって指定されたビットマップの四角形のサブセットが定義されてい `SOURCE` ます。 
 
 ```csharp
 public partial class ScalingModesPage : ContentPage

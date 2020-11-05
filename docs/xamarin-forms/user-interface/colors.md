@@ -10,16 +10,16 @@ ms.date: 04/02/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6b4e44cb667335ecca7a0c7e5ec77d6e14ed975c
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 6018946f280afa3f02d8f81bfc64338e561950fe
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557232"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375292"
 ---
 # <a name="colors-in-no-locxamarinforms"></a>色 Xamarin.Forms
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithcolors)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/workingwithcolors)
 
 _Xamarin.Forms 柔軟なクロスプラットフォームカラークラスを提供します。_
 
@@ -34,7 +34,7 @@ _Xamarin.Forms 柔軟なクロスプラットフォームカラークラスを�
 - `FromHsva` -色相、鮮やかさ、値 `int` または値 `double` 。
 - `FromRgb` -赤、緑、および青の `int` 値 (0-255)。
 - `FromRgba` -赤、緑、青、およびアルファ  `int` 値 (0-255)。
-- `FromUint` - `double` **argb**を表す単一の値を設定します。
+- `FromUint` - `double` **argb** を表す単一の値を設定します。
 
 次に、 `BackgroundColor` 許可されている構文のさまざまなバリエーションを使用して、一部のラベルのに割り当てられている色の例を示します。
 
@@ -81,7 +81,7 @@ IOS および Android では、このインスタンスは、既定の背景に�
 - `WithLuminosity` -を返します。これは、指定された `Color` 値で明るさを置き換えます。
 - `WithSaturation` -を返し `Color` ます。鮮やかさを指定された値に置き換えます。
 
-## <a name="implicit-conversions"></a>暗黙の変換
+## <a name="implicit-conversions"></a>暗黙的な変換
 
 型と型の間の暗黙的な変換は、次のように `Xamarin.Forms.Color` `System.Drawing.Color` 実行できます。
 

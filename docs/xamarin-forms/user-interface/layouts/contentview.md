@@ -10,16 +10,16 @@ ms.date: 08/14/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: eb94b2943cfe4659bb77764f810d45dc8b189005
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: a11178b9034561e9f1fdf1bbf17cf28cfe9d967b
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555373"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375084"
 ---
 # <a name="no-locxamarinforms-contentview"></a>Xamarin.Forms ContentView
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-contentviewdemos/)
 
 クラスは、 Xamarin.Forms [`ContentView`](xref:Xamarin.Forms.ContentView) 単一の子要素を格納する型であり、 `Layout` 通常は、カスタムの再利用可能なコントロールを作成するために使用されます。 クラスは、 `ContentView` から継承さ [`TemplatedView`](xref:Xamarin.Forms.TemplatedView) れます。 この記事および関連するサンプルでは、クラスに基づいてカスタムコントロールを作成する方法について説明し `CardView` `ContentView` ます。
 
@@ -119,7 +119,7 @@ public string CardTitle
 </ContentView>
 ```
 
-要素は、 `ContentView` `x:Name` プロパティをこのに設定します。 **これ**を使用して、インスタンスにバインドされたオブジェクトにアクセスでき `CardView` ます。 プロパティのバインドセットの要素は、バインドされたオブジェクトで定義されている値に設定されます。
+要素は、 `ContentView` `x:Name` プロパティをこのに設定します。 **これ** を使用して、インスタンスにバインドされたオブジェクトにアクセスでき `CardView` ます。 プロパティのバインドセットの要素は、バインドされたオブジェクトで定義されている値に設定されます。
 
 データ バインディングの詳細については、「[Xamarin.Forms のデータ バインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)」を参照してください。
 
