@@ -10,16 +10,16 @@ ms.date: 08/27/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4f10d39ff9fb08897f12cf1991ddcd2d7793b695
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 16e41b7a15483bddb3232de4bfeba0fd19b3c01f
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91564031"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93369871"
 ---
 # <a name="skiasharp-image-filters"></a>SkiaSharp イメージフィルター
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 イメージフィルターは、イメージを構成するすべてのカラービットのピクセルに作用する効果です。 これはマスクフィルターよりも汎用性があり、 [**SkiaSharp mask フィルター**](mask-filters.md)に関する記事で説明されているように、アルファチャネル上でのみ動作します。 イメージフィルターを使用するには、 [`ImageFilter`](xref:SkiaSharp.SKPaint.ImageFilter) クラスの `SKPaint` [`SKImageFilter`](xref:SkiaSharp.SKImageFilter) 静的メソッドの1つを呼び出すことによって、のプロパティを、作成した型のオブジェクトに設定します。
 
@@ -41,7 +41,7 @@ public static SkiaSharp.SKImageFilter CreateBlur (float sigmaX, float sigmaY,
 
 メソッドには、ぼかしの範囲の最初の方向が1つ、垂直方向が2番目のシグマ値が2つあり &mdash; ます。 別のイメージフィルターを省略可能な3番目の引数として指定することで、イメージフィルターを連鎖させることができます。 トリミング四角形を指定することもできます。
 
-[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)の**Image ぼかす実験**ページには、 `Slider` さまざまなぼかしレベルの設定を試すことができる2つのビューが含まれています。
+[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)の **Image ぼかす実験** ページには、 `Slider` さまざまなぼかしレベルの設定を試すことができる2つのビューが含まれています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -167,7 +167,7 @@ public static SKImageFilter CreateDropShadow (float dx, float dy,
 
 最後の2つのパラメーターは省略可能です。
 
-**ドロップシャドウ実験**プログラムを使用すると、、、、およびの値を試して `dx` 、 `dy` `sigmaX` `sigmaY` テキスト文字列とドロップシャドウを表示できます。 XAML ファイルは、 `Slider` これらの値を設定するために4つのビューをインスタンス化します。
+**ドロップシャドウ実験** プログラムを使用すると、、、、およびの値を試して `dx` 、 `dy` `sigmaX` `sigmaY` テキスト文字列とドロップシャドウを表示できます。 XAML ファイルは、 `Slider` これらの値を設定するために4つのビューをインスタンス化します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

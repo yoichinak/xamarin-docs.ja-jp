@@ -10,16 +10,16 @@ ms.date: 12/28/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cba4c670e9e092eef92f7b37eefc750782c94367
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: bd726a5e5d6064ecb9aa1c862697e08a9c4733f4
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563836"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370118"
 ---
 # <a name="store-and-access-data-in-azure-storage-from-no-locxamarinforms"></a>Azure Storage のデータの格納とアクセス Xamarin.Forms
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/webservices-azurestorage)
 
 _Azure Storage は、構造化されていない構造化データを格納するために使用できるスケーラブルなクラウドストレージソリューションです。この記事では、を使用して Xamarin.Forms Azure Storage にテキストとバイナリデータを格納する方法と、データにアクセスする方法について説明します。_
 
@@ -61,7 +61,7 @@ Blob は、任意の種類とサイズのファイルです。 Azure Storage で
 
 Blob は Azure Storage にアップロードされ、Azure Storage からダウンロードされ、バイトのストリームとしてダウンロードされます。 そのため、ファイルをアップロードする前にバイトのストリームに変換し、ダウンロード後に元の表現に変換し直す必要があります。
 
-Azure Storage に格納されているすべてのオブジェクトには、一意の URL アドレスがあります。 ストレージアカウント名はそのアドレスのサブドメインを形成し、サブドメインとドメイン名の組み合わせによってストレージアカウントの *エンドポイント* が形成されます。 たとえば、ストレージアカウントに *mystorageaccount*という名前が付けられている場合、ストレージアカウントの既定の blob エンドポイントはに `https://mystorageaccount.blob.core.windows.net` なります。
+Azure Storage に格納されているすべてのオブジェクトには、一意の URL アドレスがあります。 ストレージアカウント名はそのアドレスのサブドメインを形成し、サブドメインとドメイン名の組み合わせによってストレージアカウントの *エンドポイント* が形成されます。 たとえば、ストレージアカウントに *mystorageaccount* という名前が付けられている場合、ストレージアカウントの既定の blob エンドポイントはに `https://mystorageaccount.blob.core.windows.net` なります。
 
 ストレージ アカウント内のオブジェクトにアクセスするための URL は、ストレージ アカウント内のオブジェクトの場所をエンドポイントに追加して作成します。 たとえば、blob アドレスの形式は `https://mystorageaccount.blob.core.windows.net/mycontainer/myblob` です。
 

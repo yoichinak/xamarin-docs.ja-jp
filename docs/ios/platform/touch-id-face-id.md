@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: profexorgeek
 ms.author: jusjohns
 ms.date: 12/16/2019
-ms.openlocfilehash: 526de99f32a8682cbe6862e46f90c674cf7d3dc6
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: a092b5f84ebf0481652f5093a4898e44a55e19f8
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91430375"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93369559"
 ---
 # <a name="use-touch-id-and-face-id-with-xamarinios"></a>Xamarin で Touch ID と Face ID を使用する
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-faceidsample/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/ios-samples/ios11-faceidsample/)
 
 iOS では、次の2つの生体認証システムがサポートされます。
 
@@ -25,7 +25,7 @@ iOS では、次の2つの生体認証システムがサポートされます。
 
 タッチ ID は、ios 11 の iOS 7 と Face ID で導入されました。
 
-これらの認証システムは、 _セキュリティで保護さ_れたエンクレーブと呼ばれるハードウェアベースのセキュリティプロセッサに依存します。 セキュリティで保護されたエンクレーブは、顔と指紋のデータの数学的表現を暗号化し、この情報を使用してユーザーを認証する役割を担います。 Apple、顔、および指紋データはデバイスから離れていないため、iCloud にバックアップされません。 アプリは、 _ローカル認証_ API を介して Secure エンクレーブと対話します。また、顔や指紋データを取得したり、secure エンクレーブに直接アクセスしたりすることはできません。
+これらの認証システムは、 _セキュリティで保護さ_ れたエンクレーブと呼ばれるハードウェアベースのセキュリティプロセッサに依存します。 セキュリティで保護されたエンクレーブは、顔と指紋のデータの数学的表現を暗号化し、この情報を使用してユーザーを認証する役割を担います。 Apple、顔、および指紋データはデバイスから離れていないため、iCloud にバックアップされません。 アプリは、 _ローカル認証_ API を介して Secure エンクレーブと対話します。また、顔や指紋データを取得したり、secure エンクレーブに直接アクセスしたりすることはできません。
 
 Touch ID と Face ID は、保護されたコンテンツへのアクセスを提供する前に、アプリがユーザーを認証するために使用できます。
 
@@ -186,7 +186,7 @@ partial class AuthenticationViewController: UIViewController
 }
 ```
 
-`AuthenticateMe`メソッドは、ユーザーが [**ログイン**] ボタンをタップしたときに呼び出されます。 新しい `LAContext` オブジェクトがインスタンス化され、デバイスのバージョンがチェックされ、ローカル認証コンテキストに設定するプロパティが決定されます。
+`AuthenticateMe`メソッドは、ユーザーが [ **ログイン** ] ボタンをタップしたときに呼び出されます。 新しい `LAContext` オブジェクトがインスタンス化され、デバイスのバージョンがチェックされ、ローカル認証コンテキストに設定するプロパティが決定されます。
 
 メソッドは、生体認証が有効になっているかどうかを `CanEvaluatePolicy` 確認するために呼び出され、可能であれば PIN 認証にフォールバックします。また、認証が使用できない場合は、最後にセキュリティで保護されていないモードになります。 認証方法が使用可能な場合は、メソッドを使用して `EvaluatePolicy` UI を表示し、認証プロセスを完了します。
 

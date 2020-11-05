@@ -10,16 +10,16 @@ ms.date: 02/27/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4d53f999e27aa5aea852f09e8650ea66aac1d9b9
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 364cda6372986113e8a782a061783e0ca5455f3b
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91558831"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368545"
 ---
 # <a name="no-locxamarinforms-slider"></a>Xamarin.Forms Slider
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)
 
 _スライダーを使用して、連続する値の範囲から選択します。_
 
@@ -63,7 +63,7 @@ _スライダーを使用して、連続する値の範囲から選択します�
 
 ### <a name="creating-a-slider-in-code"></a>コードでのスライダーの作成
 
-[**SliderDemos**](/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)サンプルの**基本的なスライダーコード**ページでは、 `Slider` コード内にとの2つのオブジェクトを作成する方法を示してい `Label` ます。
+[**SliderDemos**](/samples/xamarin/xamarin-forms-samples/userinterface-sliderdemos)サンプルの **基本的なスライダーコード** ページでは、 `Slider` コード内にとの2つのオブジェクトを作成する方法を示してい `Label` ます。
 
 ```csharp
 public class BasicSliderCodePage : ContentPage
@@ -120,7 +120,7 @@ IOS デバイスと Android デバイスで実行されているプログラム�
 
 ### <a name="creating-a-slider-in-xaml"></a>XAML でのスライダーの作成
 
-**基本的なスライダーの xaml**ページは、**基本的なスライダーコード**と同じですが、主に xaml で実装されています。
+**基本的なスライダーの xaml** ページは、 **基本的なスライダーコード** と同じですが、主に xaml で実装されています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -208,7 +208,7 @@ double value = slider.Value;
 </ContentPage>
 ```
 
-最初ののプロパティはのプロパティ `Rotation` `Label` にバインドされ `Value` `Slider` ます。これは、 `Text` 2 番目のプロパティが `Label` 仕様であるためです `StringFormat` 。 **基本スライダーのバインド**ページは、前の2つのページとは少し異なる方法で機能します。ページが最初に表示されたとき、2番目のページに `Label` 値が表示されます。 これは、データバインディングを使用する利点です。 データバインディングなしでテキストを表示するには、のプロパティを明示的に初期化する `Text` `Label` か、 `ValueChanged` クラスコンストラクターからイベントハンドラーを呼び出すことによってイベントの発生をシミュレートする必要があります。
+最初ののプロパティはのプロパティ `Rotation` `Label` にバインドされ `Value` `Slider` ます。これは、 `Text` 2 番目のプロパティが `Label` 仕様であるためです `StringFormat` 。 **基本スライダーのバインド** ページは、前の2つのページとは少し異なる方法で機能します。ページが最初に表示されたとき、2番目のページに `Label` 値が表示されます。 これは、データバインディングを使用する利点です。 データバインディングなしでテキストを表示するには、のプロパティを明示的に初期化する `Text` `Label` か、 `ValueChanged` クラスコンストラクターからイベントハンドラーを呼び出すことによってイベントの発生をシミュレートする必要があります。
 
 ## <a name="precautions"></a>予防
 
@@ -298,7 +298,7 @@ Slider slider = new Slider
 
 ### <a name="the-stepslider-solution"></a>StepSlider ソリューション
 
-詳細について `StepSlider` は、27章で説明されてい[ます。](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch27-Apr2016.pdf)*で Mobile Apps を Xamarin.Forms 作成する*ブックのカスタムレンダラー。 は `StepSlider` に似てい `Slider` ますが、 `Steps` との間の値の数を指定するプロパティが追加されてい `Minimum` `Maximum` ます。
+詳細について `StepSlider` は、27章で説明されてい [ます。](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch27-Apr2016.pdf)*で Mobile Apps を Xamarin.Forms 作成する* ブックのカスタムレンダラー。 は `StepSlider` に似てい `Slider` ますが、 `Steps` との間の値の数を指定するプロパティが追加されてい `Minimum` `Maximum` ます。
 
 ## <a name="sliders-for-color-selection"></a>色の選択のスライダー
 
@@ -306,7 +306,7 @@ Slider slider = new Slider
 
 ### <a name="handling-sliders-in-the-code-behind-file"></a>分離コードファイルのスライダーの処理
 
-**RGB カラースライダー**ページでは、をインスタンス化して `BoxView` 色を表示し、3つのインスタンスを使用して `Slider` 色の赤、緑、および青のコンポーネントを選択し、 `Label` それらの色の値を表示するための3つの要素を指定します。
+**RGB カラースライダー** ページでは、をインスタンス化して `BoxView` 色を表示し、3つのインスタンスを使用して `Slider` 色の赤、緑、および青のコンポーネントを選択し、 `Label` それらの色の値を表示するための3つの要素を指定します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -463,7 +463,7 @@ public class HslColorViewModel : INotifyPropertyChanged
 
 Viewmodel と `INotifyPropertyChanged` インターフェイスについては、「 [データバインディング](~/xamarin-forms/app-fundamentals/data-binding/index.md)」で説明します。
 
-**HslColorSlidersPage**ファイルは、をインスタンス化 `HslColorViewModel` し、ページのプロパティに設定します。 `BindingContext` これにより、XAML ファイル内のすべての要素を、ビューモデルのプロパティにバインドできます。
+**HslColorSlidersPage** ファイルは、をインスタンス化 `HslColorViewModel` し、ページのプロパティに設定します。 `BindingContext` これにより、XAML ファイル内のすべての要素を、ビューモデルのプロパティにバインドできます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

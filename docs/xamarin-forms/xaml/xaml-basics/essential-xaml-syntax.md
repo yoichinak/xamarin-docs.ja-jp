@@ -10,16 +10,16 @@ ms.date: 10/25/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e8afb0aa2a36a73af6c63e48a6c1048d8b69cf90
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 23d24ab7477bb7d9e95e4d78f25f334ae13a8ea2
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563979"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368519"
 ---
 # <a name="part-2-essential-xaml-syntax"></a>第 2 部 基本的な XAML 構文
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _XAML は、ほとんどがオブジェクトのインスタンス化と初期化を行うように設計されています。ただし、多くの場合、プロパティは、XML 文字列として簡単に表すことができない複合オブジェクトに設定する必要があります。また、1つのクラスで定義されるプロパティを子クラスに設定する必要がある場合もあります。この2つのニーズには、プロパティ要素と添付プロパティの基本的な XAML 構文機能が必要です。_
 
@@ -85,9 +85,9 @@ XAML では、通常、クラスのプロパティは XML 属性として設定�
 
 この新しい構文では、便利な用語をいくつか紹介します。
 
-- `Label` は  *object 要素*です。 これは、 Xamarin.Forms XML 要素として表現されるオブジェクトです。
-- `Text`、  `VerticalOptions` 、 `FontAttributes` および  `FontSize` は、  *プロパティ属性*です。 これらは、 Xamarin.Forms XML 属性として表現されるプロパティです。
-- この最後のスニペットで `TextColor` は、が  *プロパティ要素*になりました。 これは Xamarin.Forms プロパティですが、XML 要素になりました。
+- `Label` は  *object 要素* です。 これは、 Xamarin.Forms XML 要素として表現されるオブジェクトです。
+- `Text`、  `VerticalOptions` 、 `FontAttributes` および  `FontSize` は、  *プロパティ属性* です。 これらは、 Xamarin.Forms XML 属性として表現されるプロパティです。
+- この最後のスニペットで `TextColor` は、が  *プロパティ要素* になりました。 これは Xamarin.Forms プロパティですが、XML 要素になりました。
 
 プロパティ要素の定義は、最初は XML 構文の違反であるように思われますが、そうではありません。 この期間は XML で特別な意味を持ちません。 XML デコーダーには、 `Label.TextColor` は単に通常の子要素です。
 
@@ -172,7 +172,7 @@ XAML では、通常、クラスのプロパティは XML 属性として設定�
 
 自動サイズのセル、ピクセル幅と高さのセル、およびスターの設定を定義するための省略構文に注意してください。
 
-## <a name="attached-properties"></a>アタッチされるプロパティ
+## <a name="attached-properties"></a>添付プロパティ
 
 では、 `Grid` とのコレクションに対して、 `RowDefinitions` `ColumnDefinitions` 行と列を定義するためのプロパティ要素が必要であることがわかりました。 ただし、の各子が存在する行と列をプログラマが示す方法もあり `Grid` ます。
 
@@ -257,11 +257,11 @@ XAML では、通常、クラスのプロパティは XML 属性として設定�
 
 次のようになります。
 
-[![Grid レイアウト](essential-xaml-syntax-images/griddemo.png)](essential-xaml-syntax-images/griddemo-large.png#lightbox)
+[![グリッドレイアウト](essential-xaml-syntax-images/griddemo.png)](essential-xaml-syntax-images/griddemo-large.png#lightbox)
 
 構文から審査だけでは、これらの、、 `Grid.Row` `Grid.Column` `Grid.RowSpan` 、および `Grid.ColumnSpan` 属性はの静的なフィールドまたはプロパティであるように見えますが、興味深いことに、、、 `Grid` `Grid` `Row` `Column` `RowSpan` 、またはという名前の何も定義しません `ColumnSpan` 。
 
-代わりに、は、、、 `Grid` 、およびという4つのバインド可能なプロパティを定義し `RowProperty` `ColumnProperty` `RowSpanProperty` `ColumnSpanProperty` ます。 これらは、 *添付プロパティ*と呼ばれる特別な種類のバインド可能プロパティです。 これらはクラスによって定義され `Grid` ますが、の子に設定され `Grid` ます。
+代わりに、は、、、 `Grid` 、およびという4つのバインド可能なプロパティを定義し `RowProperty` `ColumnProperty` `RowSpanProperty` `ColumnSpanProperty` ます。 これらは、 *添付プロパティ* と呼ばれる特別な種類のバインド可能プロパティです。 これらはクラスによって定義され `Grid` ますが、の子に設定され `Grid` ます。
 
 これらの添付プロパティをコードで使用する場合、クラスには、、など `Grid` という名前の静的メソッドが用意されて `SetRow` `GetColumn` います。 ただし、XAML では、これらの添付プロパティは、 `Grid` 単純なプロパティ名を使用して、の子の属性として設定されます。
 
@@ -324,7 +324,7 @@ XAML では、通常、クラスのプロパティは XML 属性として設定�
 
 前の例では、 `StackLayout` 、 `Grid` 、およびの `AbsoluteLayout` 各オブジェクトはのプロパティに設定され `Content` `ContentPage` ており、これらのレイアウトの子は実際にはコレクション内の項目です `Children` 。 ただし、これらの `Content` `Children` プロパティとプロパティは、XAML ファイルには存在しません。
 
-`Content` `Children` **XamlPlusCode**サンプルのように、プロパティとプロパティをプロパティ要素として含めることができます。
+`Content` `Children` **XamlPlusCode** サンプルのように、プロパティとプロパティをプロパティ要素として含めることができます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

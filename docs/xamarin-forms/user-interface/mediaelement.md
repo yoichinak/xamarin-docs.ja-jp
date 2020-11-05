@@ -10,18 +10,18 @@ ms.date: 02/18/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 43702453d1defc3b5a63aba845231f514913d7c5
-ms.sourcegitcommit: 1649554b8c08369b713d20246154455c0ba7d1c0
+ms.openlocfilehash: 0daae3edcfbf95d75c566b3ce10f20c83d099e13
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91712558"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368330"
 ---
 # <a name="no-locxamarinforms-mediaelement"></a>Xamarin.Forms MediaElement
 
 ![プレリリース API](~/media/shared/preview.png)
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-mediaelementdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-mediaelementdemos/)
 
 [`MediaElement`](xref:Xamarin.Forms.MediaElement) は、ビデオやオーディオを再生するためのビューです。 基になるプラットフォームでサポートされているメディアは、次のソースから再生できます。
 
@@ -103,7 +103,7 @@ Android でサポートされているメディア形式の詳細については
 プラットフォームプロジェクトにメディアファイルを格納することは、プラットフォームによって異なります。
 
 - IOS では、メディアファイルは **resources フォルダーに** 保存するか、 **resources** フォルダーのサブフォルダーに格納する必要があります。 メディアファイルには、のが含まれている必要があり `Build Action` `BundleResource` ます。
-- Android では、メディアファイルは**raw**という名前の**リソース**のサブフォルダーに格納されている必要があります。 **raw** フォルダーにサブフォルダーを含めることはできません。 メディアファイルには、のが含まれている必要があり `Build Action` `AndroidResource` ます。
+- Android では、メディアファイルは **raw** という名前の **リソース** のサブフォルダーに格納されている必要があります。 **raw** フォルダーにサブフォルダーを含めることはできません。 メディアファイルには、のが含まれている必要があり `Build Action` `AndroidResource` ます。
 - UWP では、メディアファイルはプロジェクト内の任意のフォルダーに格納できます。 メディアファイルには、のが含まれている必要があり `BuildAction` `Content` ます。
 
 これらの条件を満たすメディアファイルは、URI スキームを使用して再生でき `ms-appx:///` ます。
@@ -324,7 +324,7 @@ protected override void OnDisappearing()
 
 ## <a name="implement-custom-transport-controls"></a>カスタムトランスポートコントロールを実装する
 
-Media player のトランスポートコントロールには、 **再生**、 **一時停止**、および **停止**の機能を実行するボタンが含まれています。 これらのボタンは一般的に、テキストではなく使い慣れたアイコンで識別されます。また、**再生**と**一時停止**機能は一般的に、1 つのボタンに結合されています。
+Media player のトランスポートコントロールには、 **再生** 、 **一時停止** 、および **停止** の機能を実行するボタンが含まれています。 これらのボタンは一般的に、テキストではなく使い慣れたアイコンで識別されます。また、 **再生** と **一時停止** 機能は一般的に、1 つのボタンに結合されています。
 
 既定では、 [`MediaElement`](xref:Xamarin.Forms.MediaElement) 再生コントロールは無効になっています。 これにより、をプログラムで制御したり、独自のトランスポートコントロールを指定したりすることができ `MediaElement` ます。 このサポートでは、、、 `MediaElement` およびメソッドが含まれ [`Play`](xref:Xamarin.Forms.MediaElement.Play) [`Pause`](xref:Xamarin.Forms.MediaElement.Pause) [`Stop`](xref:Xamarin.Forms.MediaElement.Stop) ます。
 
@@ -377,7 +377,7 @@ Media player のトランスポートコントロールには、 **再生**、 *
 </ContentPage>
 ```
 
-この例では、カスタムトランスポートコントロールはオブジェクトとして定義されてい [`Button`](xref:Xamarin.Forms.Button) ます。 ただし、オブジェクトは2つだけです `Button` 。最初のオブジェクトは `Button` **Play** と **Pause**、2番目は `Button` **停止**を表します。 [`DataTrigger`](xref:Xamarin.Forms.DataTrigger) オブジェクトは、ボタンを有効または無効にしたり、 **再生** と **一時停止**の間で最初のボタンを切り替えたりするために使用されます。 データトリガーの詳細については、「 [ Xamarin.Forms トリガー](~/xamarin-forms/app-fundamentals/triggers.md)」を参照してください。
+この例では、カスタムトランスポートコントロールはオブジェクトとして定義されてい [`Button`](xref:Xamarin.Forms.Button) ます。 ただし、オブジェクトは2つだけです `Button` 。最初のオブジェクトは `Button` **Play** と **Pause** 、2番目は `Button` **停止** を表します。 [`DataTrigger`](xref:Xamarin.Forms.DataTrigger) オブジェクトは、ボタンを有効または無効にしたり、 **再生** と **一時停止** の間で最初のボタンを切り替えたりするために使用されます。 データトリガーの詳細については、「 [ Xamarin.Forms トリガー](~/xamarin-forms/app-fundamentals/triggers.md)」を参照してください。
 
 分離コードファイルには、イベントのハンドラーがあり [`Clicked`](xref:Xamarin.Forms.Button.Clicked) ます。
 

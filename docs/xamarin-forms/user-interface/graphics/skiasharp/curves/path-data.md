@@ -10,16 +10,16 @@ ms.date: 05/24/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f2e6735be2593133f755f87b365b8352bf09ebb4
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 12af5d9be025fb2113d70a93a364619aff75598d
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563082"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370066"
 ---
 # <a name="svg-path-data-in-skiasharp"></a>SkiaSharp の SVG パスデータ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _スケーラブルなベクターグラフィックス形式でテキスト文字列を使用してパスを定義する_
 
@@ -69,7 +69,7 @@ M x y
 L x y ...
 ```
 
-このコマンドは、直線 (または線) をパスに追加し、新しい現在位置を最後の行の末尾に設定します。 `L` *X*座標と*y*座標の複数のペアを使用して、コマンドに従うことができます。
+このコマンドは、直線 (または線) をパスに追加し、新しい現在位置を最後の行の末尾に設定します。 `L` *X* 座標と *y* 座標の複数のペアを使用して、コマンドに従うことができます。
 
 ## <a name="horizontal-lineto"></a>**横方向の LineTo**
 
@@ -103,13 +103,13 @@ Z
 A rx ry rotation-angle large-arc-flag sweep-flag x y ...
 ```
 
-*Rx*との*パラメーターは*、楕円の水平方向と垂直方向の半径です。 *回転角度*は時計回りに回転します。
+*Rx* との *パラメーターは* 、楕円の水平方向と垂直方向の半径です。 *回転角度* は時計回りに回転します。
 
 大きな弧の場合は、 *大きい* 円弧の場合は1に、小さい場合は0に設定します。
 
 時計回りの場合は *スイープフラグ* を1、反時計回りの場合は0に設定します。
 
-弧は、新しい現在位置になる点 (*x*, *y*) に描画されます。
+弧は、新しい現在位置になる点 ( *x* , *y* ) に描画されます。
 
 ## <a name="cubicto"></a>**CubicTo**
 
@@ -117,7 +117,7 @@ A rx ry rotation-angle large-arc-flag sweep-flag x y ...
 C x1 y1 x2 y2 x3 y3 ...
 ```
 
-このコマンドは、現在の位置から (*x3*, *y3*) に3次ベジエ曲線を追加します。これは、新しい現在位置になります。 ポイント (*x1*, *y1*) と (*x2*, *y2*) は制御ポイントです。
+このコマンドは、現在の位置から ( *x3* , *y3* ) に3次ベジエ曲線を追加します。これは、新しい現在位置になります。 ポイント ( *x1* , *y1* ) と ( *x2* , *y2* ) は制御ポイントです。
 
 1つのコマンドで複数のベジエ曲線を指定でき `C` ます。 ポイント数は3の倍数である必要があります。
 
@@ -135,7 +135,7 @@ S x2 y2 x3 y3 ...
 Q x1 y1 x2 y2 ...
 ```
 
-2次ベジエ曲線の場合、ポイント数は2の倍数である必要があります。 制御点は (*x1*, *y1*) で、終了点 (および新しい現在の位置) は (*x2*, *y2*) です。
+2次ベジエ曲線の場合、ポイント数は2の倍数である必要があります。 制御点は ( *x1* , *y1* ) で、終了点 (および新しい現在の位置) は ( *x2* , *y2* ) です。
 
 Smooth 2 次曲線コマンドもあります。
 
@@ -151,9 +151,9 @@ T x2 y2 ...
 
 静的メソッドには、 [`SKPath.ParseSvgPathData`](xref:SkiaSharp.SKPath.ParseSvgPathData(System.String)) 有効な SVG コマンドの文字列が必要です。 構文エラーが検出された場合、メソッドはを返し `null` ます。 これだけがエラーを示しています。
 
-メソッドは、 [`ToSvgPathData`](xref:SkiaSharp.SKPath.ToSvgPathData) 既存のオブジェクトから SVG パスデータを取得 `SKPath` して別のプログラムに転送したり、XML などのテキストベースのファイル形式で格納したりする場合に便利です。 ( `ToSvgPathData` メソッドは、この記事のサンプルコードには記載されていません)。パス*not*を `ToSvgPathData` 作成したメソッドの呼び出しに対して正確に対応する文字列を返さないようにします。 特に、円弧は複数のコマンドに変換されることがわかり `QuadTo` ます。これは、から返されるパスデータでのそれらの表示方法です `ToSvgPathData` 。
+メソッドは、 [`ToSvgPathData`](xref:SkiaSharp.SKPath.ToSvgPathData) 既存のオブジェクトから SVG パスデータを取得 `SKPath` して別のプログラムに転送したり、XML などのテキストベースのファイル形式で格納したりする場合に便利です。 ( `ToSvgPathData` メソッドは、この記事のサンプルコードには記載されていません)。パス *not* を `ToSvgPathData` 作成したメソッドの呼び出しに対して正確に対応する文字列を返さないようにします。 特に、円弧は複数のコマンドに変換されることがわかり `QuadTo` ます。これは、から返されるパスデータでのそれらの表示方法です `ToSvgPathData` 。
 
-**Path Data Hello**ページでは、SVG パスデータを使用して "hello" という語が使用されています。 オブジェクトとオブジェクトは、どちらも `SKPath` `SKPaint` クラスのフィールドとして定義されてい [`PathDataHelloPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataHelloPage.cs) ます。
+**Path Data Hello** ページでは、SVG パスデータを使用して "hello" という語が使用されています。 オブジェクトとオブジェクトは、どちらも `SKPath` `SKPaint` クラスのフィールドとして定義されてい [`PathDataHelloPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathDataHelloPage.cs) ます。
 
 ```csharp
 public class PathDataHelloPage : ContentPage
@@ -297,7 +297,7 @@ public class PathDataCatPage : ContentPage
 
 通常、オブジェクトがフィールドとして定義されている場合、その `SKPath` パスの輪郭は、コンストラクターまたは別のメソッドで定義されている必要があります。 ただし、SVG パスデータを使用する場合は、フィールド定義でパスを完全に指定できることがわかりました。
 
-[[**変換の回転**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/rotate.md)」では、前に見た見**づらいアナログクロック**サンプルが、時計の針を単純な線として表示していました。 次 **の例の** ように、これらの行 `SKPath` は、クラスのフィールドとして定義されているオブジェクトとオブジェクトに置き換えられてい [`PrettyAnalogClockPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PrettyAnalogClockPage.cs) `SKPaint` ます。
+[ [**変換の回転**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/rotate.md)」では、前に見た見 **づらいアナログクロック** サンプルが、時計の針を単純な線として表示していました。 次 **の例の** ように、これらの行 `SKPath` は、クラスのフィールドとして定義されているオブジェクトとオブジェクトに置き換えられてい [`PrettyAnalogClockPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PrettyAnalogClockPage.cs) `SKPaint` ます。
 
 ```csharp
 public class PrettyAnalogClockPage : ContentPage

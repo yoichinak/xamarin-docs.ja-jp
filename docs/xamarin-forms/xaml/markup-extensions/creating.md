@@ -10,16 +10,16 @@ ms.date: 01/05/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 43c8cd0dd7b50e3a5bfbd15d9858bd4502fedacc
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 87153223c79365053bfc05b2a8a97c9aa1d4c4a4
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91558779"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93369052"
 ---
 # <a name="creating-xaml-markup-extensions"></a>XAML マークアップ拡張の作成
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 
 プログラムレベルでは、XAML マークアップ拡張機能は、 [`IMarkupExtension`](xref:Xamarin.Forms.Xaml.IMarkupExtension) インターフェイスまたはインターフェイスを実装するクラスです [`IMarkupExtension<T>`](xref:Xamarin.Forms.Xaml.IMarkupExtension`1) 。 GitHub リポジトリの [**マークアップ拡張** ディレクトリ](https://github.com/xamarin/Xamarin.Forms/tree/master/Xamarin.Forms.Xaml/MarkupExtensions) で、以下に説明する標準のマークアップ拡張機能のソースコードを調べることができ Xamarin.Forms ます。
 
@@ -158,7 +158,7 @@ class ImageResourceExtension : IMarkupExtension<ImageSource>
 
 `ImageResourceExtension` は、XAML ファイルが、.NET Standard ライブラリプロジェクトに埋め込まれたリソースとして格納されているイメージファイルにアクセスする必要がある場合に便利です。 このメソッドは、プロパティを使用して `Source` 静的メソッドを呼び出し `ImageSource.FromResource` ます。 このメソッドには完全修飾リソース名が必要です。これは、アセンブリ名、フォルダー名、およびピリオドで区切られたファイル名で構成されます。 メソッドの2番目の引数は `ImageSource.FromResource` アセンブリ名を提供し、UWP のリリースビルドにのみ必要です。 に関係なく、は `ImageSource.FromResource` ビットマップを含むアセンブリから呼び出す必要があります。つまり、この XAML リソース拡張機能を外部ライブラリに含めることはできません。ただし、そのライブラリにも画像が含まれている必要はありません。 (埋め込みリソースとして格納されているビットマップへのアクセスの詳細については、 [**埋め込み画像**](~/xamarin-forms/user-interface/images.md#embedded-images) に関する記事を参照してください)。
 
-ではプロパティが設定されている `ImageResourceExtension` 必要があり `Source` ますが、 `Source` プロパティは、クラスの content プロパティとして属性で示されています。 これは、 `Source=` 中かっこ内の式の一部を省略できることを意味します。 **イメージリソースのデモ**ページでは、 `Image` 要素はフォルダー名とファイル名をピリオドで区切って2つのイメージをフェッチします。
+ではプロパティが設定されている `ImageResourceExtension` 必要があり `Source` ますが、 `Source` プロパティは、クラスの content プロパティとして属性で示されています。 これは、 `Source=` 中かっこ内の式の一部を省略できることを意味します。 **イメージリソースのデモ** ページでは、 `Image` 要素はフォルダー名とファイル名をピリオドで区切って2つのイメージをフェッチします。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

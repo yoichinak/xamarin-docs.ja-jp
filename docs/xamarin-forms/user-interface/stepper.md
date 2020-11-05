@@ -10,16 +10,16 @@ ms.date: 10/17/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 390bca8cb74fd2da725724769956b164e0264173
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: f1a84dad3048597cada0ec3fcbc5ef4035830abb
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91558759"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93369793"
 ---
 # <a name="no-locxamarinforms-stepper"></a>Xamarin.Forms ステッパ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)
 
 _値の範囲から数値を選択するには、ステッパを使用します。_
 
@@ -49,7 +49,7 @@ _値の範囲から数値を選択するには、ステッパを使用します�
 
 ### <a name="creating-a-stepper-in-code"></a>コードでのステッパの作成
 
-[**Stepperdemos**](/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)サンプルの「**基本的なステッパコード**」ページでは、 [`Stepper`](xref:Xamarin.Forms.Stepper) コード内にとの2つのオブジェクトを作成する方法を示してい [`Label`](xref:Xamarin.Forms.Label) ます。
+[**Stepperdemos**](/samples/xamarin/xamarin-forms-samples/userinterface-stepperdemos)サンプルの「 **基本的なステッパコード** 」ページでは、 [`Stepper`](xref:Xamarin.Forms.Stepper) コード内にとの2つのオブジェクトを作成する方法を示してい [`Label`](xref:Xamarin.Forms.Label) ます。
 
 ```csharp
 public class BasicStepperCodePage : ContentPage
@@ -103,7 +103,7 @@ public class BasicStepperCodePage : ContentPage
 
 ### <a name="creating-a-stepper-in-xaml"></a>XAML でのステッパの作成
 
-**基本的なステッパ xaml**ページは、**基本的なステッパコード**と機能的には同じですが、ほとんどの xaml で実装されています。
+**基本的なステッパ xaml** ページは、 **基本的なステッパコード** と機能的には同じですが、ほとんどの xaml で実装されています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -185,7 +185,7 @@ double value = stepper.Value;
 </ContentPage>
 ```
 
-最初ののプロパティはのプロパティ [`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation) [`Label`](xref:Xamarin.Forms.Label) にバインドされ [`Value`](xref:Xamarin.Forms.Stepper.Value) [`Stepper`](xref:Xamarin.Forms.Stepper) ます。これは、 [`Text`](xref:Xamarin.Forms.Label.Text) 2 番目のプロパティが `Label` 仕様であるためです `StringFormat` 。 **基本ステッパバインド**ページは、前の2つのページとは少し異なる方法で機能します。最初にページが表示されたときに、2番目のページに `Label` 値を含むテキスト文字列が表示されます。 これは、データバインディングを使用する利点です。 データバインディングなしでテキストを表示するには、のプロパティを明示的に初期化する `Text` `Label` か、 [`ValueChanged`](xref:Xamarin.Forms.Stepper.ValueChanged) クラスコンストラクターからイベントハンドラーを呼び出すことによってイベントの発生をシミュレートする必要があります。
+最初ののプロパティはのプロパティ [`Rotation`](xref:Xamarin.Forms.VisualElement.Rotation) [`Label`](xref:Xamarin.Forms.Label) にバインドされ [`Value`](xref:Xamarin.Forms.Stepper.Value) [`Stepper`](xref:Xamarin.Forms.Stepper) ます。これは、 [`Text`](xref:Xamarin.Forms.Label.Text) 2 番目のプロパティが `Label` 仕様であるためです `StringFormat` 。 **基本ステッパバインド** ページは、前の2つのページとは少し異なる方法で機能します。最初にページが表示されたときに、2番目のページに `Label` 値を含むテキスト文字列が表示されます。 これは、データバインディングを使用する利点です。 データバインディングなしでテキストを表示するには、のプロパティを明示的に初期化する `Text` `Label` か、 [`ValueChanged`](xref:Xamarin.Forms.Stepper.ValueChanged) クラスコンストラクターからイベントハンドラーを呼び出すことによってイベントの発生をシミュレートする必要があります。
 
 ## <a name="precautions"></a>予防
 

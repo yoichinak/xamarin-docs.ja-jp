@@ -11,16 +11,16 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.custom: video
-ms.openlocfilehash: cdf34d78751345857e89c6bfa6862b58207ad01e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 90068096eced1fd1ddd2eb59b845eb4d5e41286f
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562133"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368883"
 ---
 # <a name="no-locxamarinforms-resource-dictionaries"></a>Xamarin.Forms リソースディクショナリ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-resourcedictionaries)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/xaml-resourcedictionaries)
 
 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary)は、アプリケーションによって使用されるリソースのリポジトリです Xamarin.Forms 。 に格納されている一般的なリソースには、 `ResourceDictionary` [スタイル](~/xamarin-forms/user-interface/styles/index.md)、 [コントロールテンプレート](~/xamarin-forms/app-fundamentals/templates/control-template.md)、 [データテンプレート](~/xamarin-forms/app-fundamentals/templates/data-templates/index.md)、色、およびコンバーターがあります。
 
@@ -137,7 +137,7 @@ XAML で [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) `StaticRe
 
 このようなファイルを作成するには、新しい **コンテンツビュー** または **コンテンツページ** アイテムをプロジェクトに追加します (ただし、C# ファイルのみを含む **コンテンツビュー** や **コンテンツページ** は追加しません)。 分離コードファイルを削除し、XAML ファイルで基底クラスの名前を [`ContentView`](xref:Xamarin.Forms.ContentView) またはからに変更し [`ContentPage`](xref:Xamarin.Forms.ContentPage) [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) ます。 また、 `x:Class` ファイルのルートタグから属性を削除します。
 
-次の XAML の例は [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 、 **myresourcedictionary**という名前のを示しています。
+次の XAML の例は [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 、 **myresourcedictionary** という名前のを示しています。
 
 ```xaml
 <ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
@@ -194,7 +194,7 @@ XAML で [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) `StaticRe
 
 ### <a name="merge-resource-dictionaries-from-other-assemblies"></a>他のアセンブリからリソースディクショナリをマージする
 
-は [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) `ResourceDictionary` 、のプロパティに追加することで、別のにマージすることもでき [`MergedDictionaries`](xref:Xamarin.Forms.ResourceDictionary.MergedDictionaries) `ResourceDictionary` ます。 この手法では、リソースディクショナリが配置されているアセンブリに関係なく、リソースディクショナリをマージできます。 外部アセンブリからリソースディクショナリをマージするには、が [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) ビルドアクションを **EmbeddedResource**に設定し、分離コードファイルを持つようにし、 `x:Class` ファイルのルートタグに属性を定義する必要があります。
+は [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) `ResourceDictionary` 、のプロパティに追加することで、別のにマージすることもでき [`MergedDictionaries`](xref:Xamarin.Forms.ResourceDictionary.MergedDictionaries) `ResourceDictionary` ます。 この手法では、リソースディクショナリが配置されているアセンブリに関係なく、リソースディクショナリをマージできます。 外部アセンブリからリソースディクショナリをマージするには、が [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) ビルドアクションを **EmbeddedResource** に設定し、分離コードファイルを持つようにし、 `x:Class` ファイルのルートタグに属性を定義する必要があります。
 
 > [!WARNING]
 > クラスは、 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) プロパティも定義し [`MergedWith`](xref:Xamarin.Forms.ResourceDictionary.MergedWith) ます。 ただし、このプロパティは非推奨とされているため、使用できなくなりました。

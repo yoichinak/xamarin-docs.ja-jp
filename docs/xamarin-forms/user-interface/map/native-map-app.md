@@ -10,16 +10,16 @@ ms.date: 10/30/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ede34258650c378a45ee694f90de1e8b249acf71
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: cbd61d956b17df556cb4bb452f60b0e41b31b707
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91559884"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368246"
 ---
 # <a name="launch-the-native-map-app-from-no-locxamarinforms"></a>からネイティブマップアプリを起動します。 Xamarin.Forms
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
 各プラットフォームのネイティブマップアプリは、 Xamarin.Forms クラスによってアプリケーションから起動でき Xamarin.Essentials `Launcher` ます。 このクラスを使用すると、アプリケーションは、カスタム URI スキームを使用して別のアプリを開くことができます。 ランチャー機能は、メソッドを使用して呼び出すことができ `OpenAsync` ます。これを行うに `string` は、 `Uri` 開くカスタム URL スキームを表すまたは引数を渡します。 の詳細について Xamarin.Essentials は、「」を参照してください [Xamarin.Essentials](~/essentials/index.md?context=xamarin/xamarin-forms) 。
 

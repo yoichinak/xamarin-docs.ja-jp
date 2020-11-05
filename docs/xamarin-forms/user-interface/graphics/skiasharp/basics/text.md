@@ -10,16 +10,16 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 032a01a1e4e0f2b3e3d394aec6a30bd215fd84f8
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: fdc529e6b5f1678bd26b40a17b5e0c5257a6dc0e
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562419"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368584"
 ---
 # <a name="integrating-text-and-graphics"></a>テキストとグラフィックスの統合
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _テキストを SkiaSharp グラフィックスと統合するために表示されるテキスト文字列のサイズを確認する方法を参照してください。_
 
@@ -130,7 +130,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 電話またはシミュレーターを横向きにして、テキストとフレームのサイズの増加を確認することができます。
 
-画面上で一部のテキストを中央揃えにする必要があるだけの場合は、テキストを測定せずに、おおよその操作を行うことができます。 代わりに、 [`TextAlign`](xref:SkiaSharp.SKPaint.TextAlign) のプロパティを `SKPaint` 列挙体のメンバーに設定し [`SKTextAlign.Center`](xref:SkiaSharp.SKTextAlign) ます。 メソッドで指定した X 座標は、 `DrawText` テキストの水平方向の位置を示します。 画面の中間点をメソッドに渡すと、ベースラインが垂直方向に中央揃えになるため、テキストが中央揃えになり、 `DrawText` 垂直方向に中央揃えで*nearly*配置されます。
+画面上で一部のテキストを中央揃えにする必要があるだけの場合は、テキストを測定せずに、おおよその操作を行うことができます。 代わりに、 [`TextAlign`](xref:SkiaSharp.SKPaint.TextAlign) のプロパティを `SKPaint` 列挙体のメンバーに設定し [`SKTextAlign.Center`](xref:SkiaSharp.SKTextAlign) ます。 メソッドで指定した X 座標は、 `DrawText` テキストの水平方向の位置を示します。 画面の中間点をメソッドに渡すと、ベースラインが垂直方向に中央揃えになるため、テキストが中央揃えになり、 `DrawText` 垂直方向に中央揃えで *nearly* 配置されます。
 
 テキストは、他のグラフィカルオブジェクトと同様に扱うことができます。 簡単な方法の1つとして、テキスト文字のアウトラインを表示する方法があります。
 

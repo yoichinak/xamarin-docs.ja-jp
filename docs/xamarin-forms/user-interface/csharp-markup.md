@@ -10,22 +10,22 @@ ms.date: 05/15/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a07931bfa53a5e4d77c2755b08745b8dd962b695
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: e874543b356ffe5dd821c6c2f20e487d79919449
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557154"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367921"
 ---
 # <a name="no-locxamarinforms-c-markup"></a>Xamarin.Forms C# マークアップ
 
 ![プレリリース API](~/media/shared/preview.png)
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-csharpmarkupdemos/)
 
 C# マークアップは、c# で宣言型のユーザーインターフェイスを構築するプロセスを簡略化するための、fluent ヘルパーメソッドとクラスのオプトインセットです Xamarin.Forms 。 C# マークアップによって提供される fluent API は、名前空間で使用でき `Xamarin.Forms.Markup` ます。
 
-XAML の場合と同様に、C# のマークアップでは、UI マークアップと UI ロジックを明確に分離できます。 これは、UI マークアップと UI ロジックを個別の部分クラスファイルに分割することで実現できます。 たとえば、ログインページの場合、UI マークアップは *LoginPage.cs*という名前のファイルにありますが、ui ロジックは *LoginPage.logic.cs*という名前のファイルにあります。
+XAML の場合と同様に、C# のマークアップでは、UI マークアップと UI ロジックを明確に分離できます。 これは、UI マークアップと UI ロジックを個別の部分クラスファイルに分割することで実現できます。 たとえば、ログインページの場合、UI マークアップは *LoginPage.cs* という名前のファイルにありますが、ui ロジックは *LoginPage.logic.cs* という名前のファイルにあります。
 
 C# マークアップは4.6 から入手でき Xamarin.Forms ます。 ただし、現在は実験的であり、 *App.cs* ファイルに次のコード行を追加することによってのみ使用できます。
 
@@ -231,7 +231,7 @@ new Label { Text = "Tap Me" }
 
 ジェスチャ認識エンジンはであるため `BindableObject` 、 `Bind` `BindCommand` 初期化時におよび拡張メソッドを使用できます。 拡張メソッドを使用してカスタムジェスチャ認識エンジンの種類を初期化することもでき `Gesture<TGestureElement, TGestureRecognizer>` ます。
 
-## <a name="layout"></a>レイアウト
+## <a name="layout"></a>Layout
 
 C# マークアップには、レイアウト内のビューの配置をサポートする一連のレイアウト拡張メソッドと、ビューのコンテンツが含まれています。
 
@@ -371,7 +371,7 @@ new Grid
 - `Span`
 - `TimePicker`
 
-## <a name="effects"></a>エフェクト
+## <a name="effects"></a>効果
 
 拡張メソッドを使用して、コントロールに効果を適用でき `Effect` ます。
 
@@ -529,10 +529,10 @@ new ListView { } .iOSGroupHeaderStyle(PciOS.GroupHeaderStyle.Grouped)
 
 プロパティとヘルパーメソッドの推奨される順序とグループは次のとおりです。
 
-- **目的**: コントロールの目的を識別する値を持つプロパティまたはヘルパーメソッド (、など `Text` `Placeholder` `Assign` )。
-- [**その他**]: レイアウトまたはバインドではない、同じ行または複数の行にあるすべてのプロパティまたはヘルパーメソッド。
-- **Layout**: レイアウトは、行と列、レイアウトオプション、余白、サイズ、埋め込み、およびコンテンツの配置の内側に並べられています。
-- **Bind**: データバインディングは、1行に1つのバインドプロパティを持つメソッドチェーンの最後に実行されます。 バインド可能な *既定* のプロパティがバインドされている場合は、メソッドチェーンの最後に配置する必要があります。
+- **目的** : コントロールの目的を識別する値を持つプロパティまたはヘルパーメソッド (、など `Text` `Placeholder` `Assign` )。
+- [ **その他** ]: レイアウトまたはバインドではない、同じ行または複数の行にあるすべてのプロパティまたはヘルパーメソッド。
+- **Layout** : レイアウトは、行と列、レイアウトオプション、余白、サイズ、埋め込み、およびコンテンツの配置の内側に並べられています。
+- **Bind** : データバインディングは、1行に1つのバインドプロパティを持つメソッドチェーンの最後に実行されます。 バインド可能な *既定* のプロパティがバインドされている場合は、メソッドチェーンの最後に配置する必要があります。
 
 次のコードは、この規則に従う例を示しています。
 

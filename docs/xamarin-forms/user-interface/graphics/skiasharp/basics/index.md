@@ -10,22 +10,22 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4c205c033f7032eb093b91c10292610bacc12a26
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 3ec4a30f077aac53eda0a317bcb5294816e3c51a
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556517"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93369312"
 ---
 # <a name="skiasharp-drawing-basics"></a>SkiaSharp 描画の基礎
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _SkiaSharp グラフィックスの概念と座標の基本について説明します。_
 
 SkiaSharp NuGet パッケージをアプリケーションに追加したら Xamarin.Forms 、SkiaSharp グラフィックスの使用を開始できます。 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)ソリューションには、より高度なレッスンで SkiaSharp プログラミング手法を示す多くのページが含まれています。
 
-このセクションのすべてのサンプルプログラムは、 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラムのホームページとソリューションの [[**基本**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics)] フォルダーにある [ **SkiaSharp Drawing の基本**] という見出しの下に表示されます。
+このセクションのすべてのサンプルプログラムは、 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラムのホームページとソリューションの [ [**基本**](https://github.com/xamarin/xamarin-forms-samples/tree/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics)] フォルダーにある [ **SkiaSharp Drawing の基本** ] という見出しの下に表示されます。
 
 ## <a name="drawing-a-simple-circle"></a>[単純な円を描画](circle.md)
 

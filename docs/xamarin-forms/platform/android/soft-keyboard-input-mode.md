@@ -10,16 +10,16 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3baadfcb06a595c5809dbabd484a8f886ab84aec
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: e041c766d0a4beefb8b4c74b9024c7554c818511
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562367"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368636"
 ---
 # <a name="soft-keyboard-input-mode-on-android"></a>Android でのソフトキーボード入力モード
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 この Android プラットフォーム固有のは、ソフトキーボード入力領域の動作モードを設定するために使用され、XAML では、 [`Application.WindowSoftInputModeAdjust`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Application.WindowSoftInputModeAdjustProperty) 添付プロパティを列挙体の値に設定することによって使用され [`WindowSoftInputModeAdjust`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.WindowSoftInputModeAdjust) ます。
 
@@ -45,7 +45,7 @@ App.Current.On<Android>().UseWindowSoftInputModeAdjust(WindowSoftInputModeAdjust
 
 結果として、入力コントロールにフォーカスがあるときに、ソフトキーボード入力領域の動作モードを設定できます。
 
-[![ソフトキーボード動作モードプラットフォーム固有](soft-keyboard-input-mode-images/pan-resize.png)](soft-keyboard-input-mode-images/pan-resize-large.png#lightbox "ソフトキーボード動作モードプラットフォーム固有")
+[![ソフトキーボード動作モードプラットフォーム固有](soft-keyboard-input-mode-images/pan-resize.png)](soft-keyboard-input-mode-images/pan-resize-large.png#lightbox "ソフトキーボード動作モード Platform-Specific")
 
 ## <a name="related-links"></a>関連リンク
 

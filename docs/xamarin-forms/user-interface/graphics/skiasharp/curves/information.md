@@ -10,16 +10,16 @@ ms.date: 09/12/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cf9ebb819d5b424963170d563575c4900bbed28b
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 64a81b04961ebb0d03f661e99839b7ed78d710f2
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556361"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368675"
 ---
 # <a name="path-information-and-enumeration"></a>パス情報と列挙
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _パスに関する情報を取得して内容を列挙する_
 
@@ -37,7 +37,7 @@ _パスに関する情報を取得して内容を列挙する_
 
 クラスは、 [`SKPathMeasure`](xref:SkiaSharp.SKPathMeasure) 役に立ちます。 [コンストラクター](xref:SkiaSharp.SKPathMeasure.%23ctor(SkiaSharp.SKPath,System.Boolean,System.Single))は `SKPath` 引数を受け取り、プロパティは [`Length`](xref:SkiaSharp.SKPathMeasure.Length) その長さを表します。
 
-このクラスは、[**ベジエ曲線**] ページに基づく**Path Length**サンプルに示されています。 [**Pathlength ページ .xaml**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml)ファイルはから派生 `InteractivePage` し、touch インターフェイスを含みます。
+このクラスは、[ **ベジエ曲線** ] ページに基づく **Path Length** サンプルに示されています。 [**Pathlength ページ .xaml**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml)ファイルはから派生 `InteractivePage` し、touch インターフェイスを含みます。
 
 ```xaml
 <local:InteractivePage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -139,9 +139,9 @@ Boolean GetMatrix (Single distance, out SKMatrix matrix, SKPathMeasureMatrixFlag
 - `GetTangent`
 - `GetPositionAndTangent`
 
-**Unicycle ハーフパイプ**ページでは、3次ベジエ曲線に沿って逆方向になるように見える Unicycle で、スティック図形をアニメーション化します。
+**Unicycle ハーフパイプ** ページでは、3次ベジエ曲線に沿って逆方向になるように見える Unicycle で、スティック図形をアニメーション化します。
 
-[![Unicycle ハーフパイプページのトリプルスクリーンショット](information-images/unicyclehalfpipe-small.png)](information-images/unicyclehalfpipe-large.png#lightbox "Unicycle ハーフパイプページのトリプルスクリーンショット")
+[![Unicycle Half-Pipe ページのトリプルスクリーンショット](information-images/unicyclehalfpipe-small.png)](information-images/unicyclehalfpipe-large.png#lightbox "Unicycle Half-Pipe ページのトリプルスクリーンショット")
 
 `SKPaint`ハーフパイプと unicycle の両方を描画するために使用されるオブジェクトは、クラスのフィールドとして定義され `UnicycleHalfPipePage` ます。 また、unicycle のオブジェクトも定義されてい `SKPath` ます。
 
@@ -439,7 +439,7 @@ static class PathExtensions
 
 メソッドは、という変数内の各輪郭の最初の点 `firstPoint` と、変数内の各描画コマンドの後の現在位置を保持することに注意して `lastPoint` ください。 これらの変数は、 `Close` 動詞が検出されたときに最後の終了行を構築するために必要です。
 
-**GlobularText**サンプルでは、この拡張メソッドを使用して、次のように3d 効果で、この拡張メソッドを使用します。
+**GlobularText** サンプルでは、この拡張メソッドを使用して、次のように3d 効果で、この拡張メソッドを使用します。
 
 [![Globular テキストページのトリプルスクリーンショット](information-images/globulartext-small.png)](information-images/globulartext-large.png#lightbox "Globular テキストページのトリプルスクリーンショット")
 

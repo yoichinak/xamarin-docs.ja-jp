@@ -6,16 +6,16 @@ ms.assetid: 455fda67-3879-4299-8036-b12840e6a498
 author: davidortinau
 ms.author: daortin
 ms.date: 04/24/2019
-ms.openlocfilehash: 77df7d986f63861667c67b9c74b88ea6176f42ad
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: 96f8a8c2fa49e1ff59621908ef89d08d302aaffa
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91458187"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367973"
 ---
 # <a name="visual-basic-in-xamarin-android-and-ios"></a>Xamarin Android および iOS の Visual Basic
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/mobile-samples/visualbasic-taskyvb/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/mobile-samples/visualbasic-taskyvb/)
 
 [Taskyvb](/samples/xamarin/mobile-samples/visualbasic-taskyvb/)サンプルアプリケーションは、.NET Standard ライブラリにコンパイルされた Visual Basic コードを Xamarin で使用する方法を示しています。 Android および iOS で実行されているアプリのスクリーンショットを次に示します。
 
@@ -182,7 +182,7 @@ TaskMgr = new TodoItemManager(path);
 ## <a name="visual-studio-2019-for-mac"></a>Visual Studio 2019 for Mac
 
 > [!WARNING]
-> Visual Studio for Mac は Visual Basic 言語の編集をサポートしていません。 Visual Basic プロジェクトまたはファイルを作成するためのメニュー項目はありません。 **.Vb**を開いた場合、言語構文の強調表示、オートコンプリート、IntelliSense はありません。
+> Visual Studio for Mac は Visual Basic 言語の編集をサポートしていません。 Visual Basic プロジェクトまたはファイルを作成するためのメニュー項目はありません。 **.Vb** を開いた場合、言語構文の強調表示、オートコンプリート、IntelliSense はありません。
 
 Visual Studio 2019 for Mac では、Windows 上で作成された .NET Standard プロジェクトをコンパイル _できる_ ので、iOS アプリはこれらのプロジェクトを参照できます。
 

@@ -10,20 +10,20 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: dd1ef993fc2184561f01dad99aa01858251f8f73
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 1c345edf4c9980497d1fcd877a9142819afa9b56
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560677"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368649"
 ---
 # <a name="skiasharp-blend-modes"></a>SkiaSharp blend モード
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 これらの記事では、のプロパティに焦点を当てて [`BlendMode`](xref:SkiaSharp.SKPaint.BlendMode) [`SKPaint`](xref:SkiaSharp.SKPaint) います。 `BlendMode`プロパティの型は [`SKBlendMode`](xref:SkiaSharp.SKBlendMode) で、値は29メンバーで列挙されます。
 
-プロパティは、( `BlendMode` 通常は _ソース_と呼ばれる) グラフィックオブジェクトが既存のグラフィカルオブジェクト ( _変換先_と呼ばれます) の上に描画されるときの動作を決定します。 通常、新しいグラフィカルオブジェクトでは、その下のオブジェクトが見えにくくなることが予想されます。 ただし、これは既定の blend モードがであるためにのみ発生し `SKBlendMode.SrcOver` ます。 _over_つまり、ソースが変換先に描画されます。 他の28のメンバーは、 `SKBlendMode` 他の効果を引き起こします。 グラフィックスプログラミングでは、さまざまな方法でグラフィカルオブジェクトを組み合わせる手法を _複合_と呼びます。
+プロパティは、( `BlendMode` 通常は _ソース_ と呼ばれる) グラフィックオブジェクトが既存のグラフィカルオブジェクト ( _変換先_ と呼ばれます) の上に描画されるときの動作を決定します。 通常、新しいグラフィカルオブジェクトでは、その下のオブジェクトが見えにくくなることが予想されます。 ただし、これは既定の blend モードがであるためにのみ発生し `SKBlendMode.SrcOver` ます。 _over_ つまり、ソースが変換先に描画されます。 他の28のメンバーは、 `SKBlendMode` 他の効果を引き起こします。 グラフィックスプログラミングでは、さまざまな方法でグラフィカルオブジェクトを組み合わせる手法を _複合_ と呼びます。
 
 ## <a name="the-skblendmodes-enumeration"></a>SKBlendModes 列挙型
 
@@ -49,13 +49,13 @@ SkiaSharp blend モードは、W3C [**合成および Blend Level 1**](https://w
 
 これら3つのカテゴリの名前は、次のディスカッションでより多くの意味を持ちます。 メンバーが一覧表示される順序は、列挙型の定義と同じです `SKBlendMode` 。 最初の列の13個の列挙型のメンバーは、0 ~ 12 の整数値を持ちます。 2番目の列は、13 ~ 24 の整数に対応する列挙メンバーで、3番目の列のメンバーは 25 ~ 28 の値を持ちます。
 
-これらの blend モードについては、W3C**合成および Blend Level 1**のドキュメントと_ほぼ_同じ順序で説明されていますが、いくつかの違いがあります。 `Src` モードは w3c ドキュメントでは_Copy_と呼ばれ、 `Plus` _軽い_と呼ばれます。 W3C ドキュメントでは、と同じであるためにに含まれていない _通常_ の blend モードが定義されてい `SKBlendModes` `SrcOver` ます。 `Modulate`(最初の列の一番上にある) blend モードは W3C ドキュメントに含まれていません。また、モードの説明は `Multiply` 前に `Screen` あります。
+これらの blend モードについては、W3C **合成および Blend Level 1** のドキュメントと _ほぼ_ 同じ順序で説明されていますが、いくつかの違いがあります。 `Src` モードは w3c ドキュメントでは _Copy_ と呼ばれ、 `Plus` _軽い_ と呼ばれます。 W3C ドキュメントでは、と同じであるためにに含まれていない _通常_ の blend モードが定義されてい `SKBlendModes` `SrcOver` ます。 `Modulate`(最初の列の一番上にある) blend モードは W3C ドキュメントに含まれていません。また、モードの説明は `Multiply` 前に `Screen` あります。
 
-`Modulate`Blend モードは Skia に固有であるため、追加の Porter ff モードとして、分離可能モードとして説明されます。
+`Modulate`Blend モードは Skia に固有であるため、追加の Porter-Duff モードとして、分離可能モードとして説明します。
 
 ## <a name="the-importance-of-transparency"></a>透明度の重要性
 
-従来、複合は、 _アルファチャネル_の概念と共に開発されました。 オブジェクトやフルカラービットマップなどの表示画面では `SKCanvas` 、各ピクセルは4バイトで構成されます。各ピクセルは、赤、緑、および青のコンポーネント用に1バイト、透明度の追加のバイトです。 このアルファ成分は、完全な透過性の場合は0、完全な不透明度の場合は0xFF であり、これらの値の間には異なるレベルの透明度があります。
+従来、複合は、 _アルファチャネル_ の概念と共に開発されました。 オブジェクトやフルカラービットマップなどの表示画面では `SKCanvas` 、各ピクセルは4バイトで構成されます。各ピクセルは、赤、緑、および青のコンポーネント用に1バイト、透明度の追加のバイトです。 このアルファ成分は、完全な透過性の場合は0、完全な不透明度の場合は0xFF であり、これらの値の間には異なるレベルの透明度があります。
 
 Blend モードの多くは、透明度に依存しています。 通常、が最初にハンドラーで取得されるとき、またはが作成されてビットマップに描画されるときには、 `SKCanvas` `PaintSurface` `SKCanvas` 最初の手順は次の呼び出しです。
 

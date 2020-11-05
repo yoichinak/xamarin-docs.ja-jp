@@ -10,16 +10,16 @@ ms.date: 06/17/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ee834bf7bae945536facb576ae26b9d13f5b7bcd
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 6409bd5052f7943eee00e4405bf3e7da6623278e
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91558948"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93369286"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>XAML マークアップ拡張の使用
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/xaml-markupextensions)
 
 XAML マークアップ拡張機能は、さまざまなソースから要素属性を設定できるようにすることで、XAML のパワーと柔軟性を向上させるのに役立ちます。 Xaml のマークアップ拡張機能のいくつかは、XAML 2009 仕様に含まれています。 これらは、慣例として名前空間プレフィックスを持つ XAML ファイルに表示され、 `x` 一般的にこのプレフィックスで参照されます。 この記事では、次のマークアップ拡張機能について説明します。
 
@@ -39,7 +39,7 @@ XAML マークアップ拡張機能は、さまざまなソースから要素属
 - `StaticResource` -リソースディクショナリからオブジェクトを参照します。詳細については、「  [**リソースディクショナリ**](~/xamarin-forms/xaml/resource-dictionaries.md)」を参照してください。
 - `DynamicResource` -リソースディクショナリ内のオブジェクトの変更に応答します。詳細については、「 [**動的スタイル**](~/xamarin-forms/user-interface/styles/dynamic.md)」を参照してください。
 - `Binding` -「 [**データバインディング**](~/xamarin-forms/app-fundamentals/data-binding/index.md)」で説明されているように、2つのオブジェクトのプロパティ間のリンクを確立します。
-- `TemplateBinding`-コントロールテンプレートからデータバインディングを実行します。これについては、「 [** Xamarin.Forms コントロールテンプレート**](~/xamarin-forms/app-fundamentals/templates/control-template.md)」をご覧ください。
+- `TemplateBinding`-コントロールテンプレートからデータバインディングを実行します。これについては、「 [**Xamarin.Forms コントロールテンプレート**](~/xamarin-forms/app-fundamentals/templates/control-template.md)」をご覧ください。
 - `RelativeSource` -バインドソースを、バインディングターゲットの位置に対して相対的に設定します。これについては、「 [相対バインド](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)」を参照してください。
 
 レイアウトでは、 [`RelativeLayout`](xref:Xamarin.Forms.RelativeLayout) カスタムマークアップ拡張機能を使用し [`ConstraintExpression`](xref:Xamarin.Forms.ConstraintExpression) ます。 このマークアップ拡張機能については、記事 [**RelativeLayout**](~/xamarin-forms/user-interface/layouts/relativelayout.md)を参照してください。
@@ -114,7 +114,7 @@ static class AppConstants
 
 これは、 `x:Static` マークアップ拡張機能の最も一般的な形式です。
 
-**静的なデモ**ページには、他の2つの例が含まれています。 XAML ファイルのルートタグには、.NET 名前空間の XML 名前空間宣言が含まれてい `System` ます。
+**静的なデモ** ページには、他の2つの例が含まれています。 XAML ファイルのルートタグには、.NET 名前空間の XML 名前空間宣言が含まれてい `System` ます。
 
 ```xaml
 xmlns:sys="clr-namespace:System;assembly=netstandard"
@@ -152,9 +152,9 @@ xmlns:sys="clr-namespace:System;assembly=netstandard"
 
 `x:Reference`マークアップ拡張機能はクラスによってサポートされてい [`ReferenceExtension`](xref:Xamarin.Forms.Xaml.ReferenceExtension) ます。 クラスには、という名前の単一のプロパティがあります。このプロパティには、 [`Name`](xref:Xamarin.Forms.Xaml.ReferenceExtension.Name) という名前が付けられた `string` ページ上の要素の名前を設定し `x:Name` ます。 この `Name` プロパティはのコンテンツプロパティであるため、中 `ReferenceExtension` `Name=` かっこで囲まれている場合は必要ありません `x:Reference` 。
 
-`x:Reference`マークアップ拡張機能は、データバインディングで排他的に使用されます。詳細については、「[**データバインディング**](~/xamarin-forms/app-fundamentals/data-binding/index.md)」を参照してください。
+`x:Reference`マークアップ拡張機能は、データバインディングで排他的に使用されます。詳細については、「 [**データバインディング**](~/xamarin-forms/app-fundamentals/data-binding/index.md)」を参照してください。
 
-**X:Reference Demo**ページでは、データバインディングを使用したの2つの使用方法が示されています `x:Reference` 。最初に、オブジェクトのプロパティを設定するために使用します。2つ目は、 `Source` `Binding` `BindingContext` 2 つのデータバインディングのプロパティを設定するために使用されます。
+**X:Reference Demo** ページでは、データバインディングを使用したの2つの使用方法が示されています `x:Reference` 。最初に、オブジェクトのプロパティを設定するために使用します。2つ目は、 `Source` `Binding` `BindingContext` 2 つのデータバインディングのプロパティを設定するために使用されます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -196,11 +196,11 @@ xmlns:sys="clr-namespace:System;assembly=netstandard"
 
 内 Xamarin.Forms には、型の引数を持ついくつかのプロパティがあり `Type` ます。 たとえば、 [`TargetType`](xref:Xamarin.Forms.Style.TargetType) のプロパティ `Style` や、ジェネリッククラスの引数を指定するために使用される [x:TypeArguments](~/xamarin-forms/xaml/passing-arguments.md#specifying-a-generic-type-argument) 属性などがあります。 ただし、XAML パーサーは `typeof` この操作を自動的に実行し `x:Type` ます。この場合、マークアップ拡張機能は使用されません。
 
-`x:Type`*が*必要な場所の1つは、 `x:Array` マークアップ拡張機能を使用することです。これについては、次の[セクション](#xarray-markup-extension)で説明します。
+`x:Type`*が* 必要な場所の1つは、 `x:Array` マークアップ拡張機能を使用することです。これについては、次の [セクション](#xarray-markup-extension)で説明します。
 
 `x:Type`マークアップ拡張機能は、各メニュー項目が特定の型のオブジェクトに対応するメニューを構築する場合にも便利です。 `Type`オブジェクトを各メニュー項目に関連付けて、メニュー項目を選択したときにオブジェクトをインスタンス化することができます。
 
-これは `MainPage` 、 **マークアップ拡張機能** プログラムののナビゲーションメニューの動作です。 **Mainpage.xaml**ファイルには、 `TableView` `TextCell` プログラム内の特定のページに対応するそれぞれのが含まれています。
+これは `MainPage` 、 **マークアップ拡張機能** プログラムののナビゲーションメニューの動作です。 **Mainpage.xaml** ファイルには、 `TableView` `TextCell` プログラム内の特定のページに対応するそれぞれのが含まれています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -239,7 +239,7 @@ xmlns:sys="clr-namespace:System;assembly=netstandard"
 </ContentPage>
 ```
 
-**マークアップ拡張機能**の開始メインページは次のとおりです。
+**マークアップ拡張機能** の開始メインページは次のとおりです。
 
 [![メインページ](consuming-images/mainpage-small.png "メインページ")](consuming-images/mainpage-large.png#lightbox "メインページ")
 
@@ -267,7 +267,7 @@ public partial class MainPage : ContentPage
 
 `NavigateCommand`プロパティは、 `Command` `Type` &mdash; の値を型とする引数を指定して execute コマンドを実装するオブジェクトです `CommandParameter` 。 このメソッドは、を使用して `Activator.CreateInstance` ページをインスタンス化し、そのページに移動します。 コンストラクターは、ページのをそれ自体に設定することによって終了し `BindingContext` ます。これにより、が動作するようになり `Binding` `Command` ます。 この種類のコードの詳細については、 [**データバインディング**](~/xamarin-forms/app-fundamentals/data-binding/index.md) に関する記事と、特に [**コマンド**](~/xamarin-forms/app-fundamentals/data-binding/commanding.md) の使用に関する記事を参照してください。
 
-**X:Type Demo**ページでは、同様の手法を使用して要素をインスタンス化 Xamarin.Forms し、に追加し `StackLayout` ます。 XAML ファイルは、最初は3つの要素で構成され、 `Button` `Command` プロパティはに設定さ `Binding` れ、 `CommandParameter` プロパティは3つのビューの種類に設定され Xamarin.Forms ます。
+**X:Type Demo** ページでは、同様の手法を使用して要素をインスタンス化 Xamarin.Forms し、に追加し `StackLayout` ます。 XAML ファイルは、最初は3つの要素で構成され、 `Button` `Command` プロパティはに設定さ `Binding` れ、 `CommandParameter` プロパティは3つのビューの種類に設定され Xamarin.Forms ます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -335,7 +335,7 @@ public partial class TypeDemoPage : ContentPage
 
 `x:Array`マークアップ拡張機能自体は、中かっこで囲まれていません。 代わりに、 `x:Array` 開始タグと終了タグによって項目のリストが区切られます。 プロパティを `Type` `x:Type` マークアップ拡張機能に設定します。
 
-**X:Array Demo**ページでは、を使用し `x:Array` て、プロパティを `ListView` 配列に設定することによってに項目を追加する方法を示してい `ItemsSource` ます。
+**X:Array Demo** ページでは、を使用し `x:Array` て、プロパティを `ListView` 配列に設定することによってに項目を追加する方法を示してい `ItemsSource` ます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -407,7 +407,7 @@ public partial class TypeDemoPage : ContentPage
 
 `x:Null`マークアップ拡張機能はほとんど必要ありませんが、ほとんど使用されていませんが、必要な場合は、存在していることを確認してください。
 
-**X:Null Demo**ページには、便利な場合があるシナリオが示されてい `x:Null` ます。 プロパティをプラットフォームに依存する `Style` `Label` `Setter` ファミリ名に設定するを含むの暗黙的なを定義するとし `FontFamily` ます。
+**X:Null Demo** ページには、便利な場合があるシナリオが示されてい `x:Null` ます。 プロパティをプラットフォームに依存する `Style` `Label` `Setter` ファミリ名に設定するを含むの暗黙的なを定義するとし `FontFamily` ます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -515,7 +515,7 @@ public partial class TypeDemoPage : ContentPage
 > [!IMPORTANT]
 > XAML パーサーでは、適切な型の値がマークアップ拡張機能を使用するプロパティに提供されることを想定して `OnIdiom` います。 型変換が必要な場合、 `OnIdiom` マークアップ拡張機能は、によって提供される既定のコンバーターを使用してこれを実行しようとし Xamarin.Forms ます。 ただし、既定のコンバーターでは実行できない型変換がいくつかあり、このような場合は、 `Converter` プロパティを実装に設定する必要があり `IValueConverter` ます。
 
-**Onidiom のデモ**ページは、 `OnIdiom` マークアップ拡張機能の使用方法を示しています。
+**Onidiom のデモ** ページは、 `OnIdiom` マークアップ拡張機能の使用方法を示しています。
 
 ```xaml
 <BoxView Color="{OnIdiom Yellow, Phone=Red, Tablet=Green, Desktop=Blue}"
@@ -565,7 +565,7 @@ public partial class TypeDemoPage : ContentPage
 
 プロパティは、 `Glyph` の content プロパティです `FontImageExtension` 。 そのため、中かっこで囲まれた XAML マークアップ式では、 `Glyph=` 最初の引数であることを示す式の一部を削除できます。
 
-**FontImage Demo**ページは、マークアップ拡張機能の使用方法を示してい `FontImage` ます。
+**FontImage Demo** ページは、マークアップ拡張機能の使用方法を示してい `FontImage` ます。
 
 ```xaml
 <Image BackgroundColor="#D1D1D1"
@@ -599,7 +599,7 @@ public partial class TypeDemoPage : ContentPage
 
 プロパティは、 `Default` の content プロパティです `AppThemeBindingExtension` 。 そのため、中かっこで囲まれた XAML マークアップ式では、 `Default=` 最初の引数であることを示す式の一部を削除できます。
 
-**AppThemeBinding Demo**ページは、マークアップ拡張機能の使用方法を示してい `AppThemeBinding` ます。
+**AppThemeBinding Demo** ページは、マークアップ拡張機能の使用方法を示してい `AppThemeBinding` ます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

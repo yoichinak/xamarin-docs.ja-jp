@@ -10,16 +10,16 @@ ms.date: 09/12/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d3deb5631bd37e4081ebaa591a52adb09d9db274
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 18ab6b42753cefbcb8b69deeba9a76c37dc5b9b0
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560300"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93369234"
 ---
 # <a name="customizing-listview-cell-appearance"></a>ListView セルの外観のカスタマイズ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-customcells)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-listview-customcells)
 
 クラスは、 Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) 要素を使用してカスタマイズできるスクロール可能なリストを表示するために使用され `ViewCell` ます。 `ViewCell`要素は、テキストとイメージの表示、true/false 状態の指定、およびユーザー入力の受信を行うことができます。
 

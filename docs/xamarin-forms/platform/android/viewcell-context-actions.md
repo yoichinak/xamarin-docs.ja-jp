@@ -10,16 +10,16 @@ ms.date: 09/24/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6cbdea3656daa4df894a79edc70453c78e3844bc
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: e829c7f3763d25574b9ca70c1118ee9521633b48
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556751"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368467"
 ---
 # <a name="viewcell-context-actions-on-android"></a>Android での ViewCell コンテキスト アクション
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 4.3 から既定では、 Xamarin.Forms [`ViewCell`](xref:Xamarin.Forms.ViewCell) Android アプリケーションのがの各項目のコンテキストアクションを定義するときに、 [`ListView`](xref:Xamarin.Forms.ListView) で選択された項目が変更されると、コンテキストアクションメニューが更新され `ListView` ます。 ただし、以前のバージョンのでは、 Xamarin.Forms コンテキストアクションメニューは更新されていないため、この動作はレガシモードと呼ばれていました `ViewCell` 。 がを `ListView` 使用し [`DataTemplateSelector`](xref:Xamarin.Forms.DataTemplateSelector) て、 `ItemTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 異なるコンテキストアクションを定義するオブジェクトからを設定する場合、このレガシモードでは正しくない動作が発生する可能性があります。
 

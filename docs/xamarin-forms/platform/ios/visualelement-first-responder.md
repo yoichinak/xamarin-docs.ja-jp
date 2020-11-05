@@ -10,16 +10,16 @@ ms.date: 01/15/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ebe153ab8dfe4645b6c71fc6b973a6f001f97c0d
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: f5089a60d331433b8a007c1ec027746227e7a62f
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91564070"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368662"
 ---
 # <a name="visualelement-first-responder-on-ios"></a>IOS 上の VisualElement の最初のレスポンダー
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 この iOS プラットフォーム固有の機能を使用すると、 [`VisualElement`](xref:Xamarin.Forms.VisualElement) オブジェクトは、要素を含むページではなく、最初の応答側の応答者になることができます。 これは、バインド可能なプロパティをに設定することによって XAML で使用され `VisualElement.CanBecomeFirstResponder` `true` ます。
 

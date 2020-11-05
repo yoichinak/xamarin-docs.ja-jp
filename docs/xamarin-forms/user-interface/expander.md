@@ -10,18 +10,18 @@ ms.date: 04/15/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4be3744e0cce465aab8fc4af39495d2f7d8e9004
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 0d6cf880be995949553602f9925535e55a8dbb49
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556608"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93369507"
 ---
 # <a name="no-locxamarinforms-expander"></a>Xamarin.Forms Expander
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-expanderdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-expanderdemos/)
 
-コントロールには、 Xamarin.Forms `Expander` 任意のコンテンツをホストするための拡張可能なコンテナーが用意されています。 コントロールはヘッダーとコンテンツを持ち、ヘッダーをタップすることによってコンテンツを表示または非表示にし `Expander` ます。 `Expander`ヘッダーのみが表示されている場合は、が折りたたまれてい `Expander` ます。 *collapsed* `Expander`コンテンツが表示されると `Expander` 、が*展開*されます。
+コントロールには、 Xamarin.Forms `Expander` 任意のコンテンツをホストするための拡張可能なコンテナーが用意されています。 コントロールはヘッダーとコンテンツを持ち、ヘッダーをタップすることによってコンテンツを表示または非表示にし `Expander` ます。 `Expander`ヘッダーのみが表示されている場合は、が折りたたまれてい `Expander` ます。 *collapsed* `Expander`コンテンツが表示されると `Expander` 、が *展開* されます。
 
 次のスクリーンショットは、折りたたまれて展開された状態のを示してい `Expander` ます。赤いボックスは、ヘッダーとコンテンツを示しています。
 

@@ -10,16 +10,16 @@ ms.date: 07/09/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 369dbac74eef990a8773fe101a57530797ad2c2d
-ms.sourcegitcommit: 836d54779190b1bef1b43bc0c2016c9b3034bfda
+ms.openlocfilehash: 322fa0e3e6ee9adf31c9fe11418fceee3eff93ac
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93281301"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368532"
 ---
 # <a name="no-locxamarinforms-views"></a>Xamarin.Forms 表示モード
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/formsgallery/)
 
 _Xamarin.Forms ビューは、クロスプラットフォームモバイルユーザーインターフェイスの構成要素です。_
 

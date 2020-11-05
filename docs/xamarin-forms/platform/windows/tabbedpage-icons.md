@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 60b331b01f7ba16bd2ea828d429ee64ae25766ea
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 3b63e66018ec96df49dfed2eb0ac6320a9585084
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560274"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368332"
 ---
 # <a name="tabbedpage-icons-on-windows"></a>Windows 上の TabbedPage アイコン
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 これユニバーサル Windows プラットフォームプラットフォーム固有の機能により、ツールバーにページアイコンが表示されるようになり [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) ます。また、必要に応じてアイコンのサイズを指定することもできます。 添付プロパティをに設定し、 [`TabbedPage.HeaderIconsEnabled`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.HeaderIconsEnabledProperty) `true` 必要に応じて添付プロパティを値に設定することにより、XAML で使用され [`TabbedPage.HeaderIconsSize`](xref:Xamarin.Forms.PlatformConfiguration.WindowsSpecific.TabbedPage.HeaderIconsSizeProperty) [`Size`](xref:Xamarin.Forms.Size) ます。
 

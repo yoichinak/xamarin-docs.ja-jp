@@ -10,16 +10,16 @@ ms.date: 06/16/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2dacbc18fdbc7d9c7bd38d5ddfad2157e3a0a503
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: caa4f78d70f583c22fb4a00fd85b91ec7357013a
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563290"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93369741"
 ---
 # <a name="authenticate-users-with-an-azure-cosmos-db-document-database-and-no-locxamarinforms"></a>Azure Cosmos DB ドキュメントデータベースを使用してユーザーを認証する Xamarin.Forms
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdbauth)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdbauth)
 
 _Azure Cosmos DB ドキュメントデータベースは、複数のサーバーとパーティションにまたがることができるパーティション分割コレクションをサポートし、無制限のストレージとスループットをサポートします。この記事では、アクセス制御をパーティション分割されたコレクションと組み合わせることで、ユーザーがアプリケーション内の自分のドキュメントにしかアクセスできないようにする方法について説明し Xamarin.Forms ます。_
 
@@ -113,7 +113,7 @@ App Service 簡単な認証を構成するためのプロセスは次のとお�
 1. Azure Portal で、App Service web アプリに移動します。
 1. Azure Portal で、[認証/承認] ブレードを開き、次の構成を実行します。
     - App Service 認証を有効にする必要があります。
-    - 要求が認証されていないときに実行するアクションは、 **Facebook を使用してログイン**するように設定する必要があります。
+    - 要求が認証されていないときに実行するアクションは、 **Facebook を使用してログイン** するように設定する必要があります。
 
     次のスクリーンショットは、この構成を示しています。
 

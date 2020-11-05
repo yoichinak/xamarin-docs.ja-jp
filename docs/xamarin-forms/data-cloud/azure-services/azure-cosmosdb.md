@@ -11,16 +11,16 @@ ms.date: 06/16/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ef6ccbaac73946ac19f4f5fe194f395234226b5e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 3755f85b01821238e790bd2fb09f567c4e98d4d8
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562848"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368363"
 ---
 # <a name="consume-an-azure-cosmos-db-document-database-in-no-locxamarinforms"></a>で Azure Cosmos DB ドキュメントデータベースを使用する Xamarin.Forms
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdb)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/webservices-tododocumentdb)
 
 _Azure Cosmos DB ドキュメントデータベースは、JSON ドキュメントへの低待機時間のアクセスを提供する NoSQL データベースであり、シームレスなスケールとグローバルレプリケーションを必要とするアプリケーション向けに、高速で可用性の高いスケーラブルなデータベースサービスを提供します。この記事では、Azure Cosmos DB .NET Standard クライアントライブラリを使用して、Azure Cosmos DB ドキュメントデータベースをアプリケーションに統合する方法について説明し Xamarin.Forms ます。_
 

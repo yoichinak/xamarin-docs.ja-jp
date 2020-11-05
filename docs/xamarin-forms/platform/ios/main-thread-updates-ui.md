@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 844e04b91910152954973f7e6f10c0d56acadf22
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 404e84e9da1df8a44fa176a17f2407e314ae7968
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563687"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368315"
 ---
 # <a name="main-thread-control-updates-on-ios"></a>IOS でのメインスレッド制御の更新
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 この iOS プラットフォーム固有では、バックグラウンドスレッドで実行するのではなく、メインスレッドでコントロールレイアウトとレンダリング更新を実行できます。 これはほとんど必要ありませんが、場合によってはクラッシュを防ぐことができます。 バインド可能なプロパティをに設定することにより、XAML で使用され `Application.HandleControlUpdatesOnMainThread` `true` ます。
 

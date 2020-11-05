@@ -11,16 +11,16 @@ ms.custom: contperfq1
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d350ceee778c9f9ba9f25555a89a925558c6d38b
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 26c7294b816dbfeb42a7a313ec9b8ad1dcbf6583
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556842"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93369247"
 ---
 # <a name="no-locxamarinforms-relativelayout"></a>Xamarin.Forms RelativeLayout
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-relativelayoutdemos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-relativelayoutdemos)
 
 [![::: no-loc (Xamarin. Forms)::: RelativeLayout](relativelayout-images/layouts.png)](relativelayout-images/layouts-large.png#lightbox)
 
@@ -110,7 +110,7 @@ C# では、3つのオーバーロードによってに子を追加でき [`Rela
 
 ![絶対値を使用して RelativeLayout に配置された子](relativelayout-images/absolute-values.png)
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 public class StylishHeaderDemoPageCS : ContentPage

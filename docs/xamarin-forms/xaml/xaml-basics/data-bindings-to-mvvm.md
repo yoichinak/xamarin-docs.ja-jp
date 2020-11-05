@@ -11,16 +11,16 @@ ms.date: 10/25/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8cb59738519af933e509ebf63a923e573667941e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: a62fee4ca3cdb4de7f23856f123389df23692f62
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562913"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368922"
 ---
 # <a name="part-5-from-data-bindings-to-mvvm"></a>第 5 部 データ バインディングから MVVM まで
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _モデルビュービューモデル (MVVM) アーキテクチャパターンは、XAML を念頭に置いて考案されました。このパターンでは、3つのソフトウェアレイヤー (つまり、ビューと呼ばれる XAML ユーザーインターフェイス) の分離が適用されます。モデルと呼ばれる基になるデータ。ビューとモデルの間の中間点として、ビューモデルと呼ばれるものがあります。ビューとビューモデルは、多くの場合、XAML ファイルで定義されているデータバインディングを使用して接続されます。ビューの BindingContext は、通常、ビューモデルのインスタンスです。_
 
@@ -41,7 +41,7 @@ xmlns:sys="clr-namespace:System;assembly=netstandard"
 
 `BindingContext` は特殊なプロパティです。要素にを設定すると、その要素 `BindingContext` のすべての子によって継承されます。 これは、のすべての子 `StackLayout` が同じであり、 `BindingContext` そのオブジェクトのプロパティへの単純なバインドを含むことができることを意味します。
 
-**ワンショットの DateTime**プログラムでは、2つの子のうち、その値のプロパティへのバインドが含まれて `DateTime` いますが、他の2つの子にはバインドパスが欠落していると思われるバインドが含まれています。 これは `DateTime` 、値自体がに使用されることを意味し `StringFormat` ます。
+**ワンショットの DateTime** プログラムでは、2つの子のうち、その値のプロパティへのバインドが含まれて `DateTime` いますが、他の2つの子にはバインドパスが欠落していると思われるバインドが含まれています。 これは `DateTime` 、値自体がに使用されることを意味し `StringFormat` ます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -298,7 +298,7 @@ namespace XamlSamples
 
 それぞれのバインディング `Label` が既定値です `OneWay` 。 値を表示する必要があるだけです。 ただし、各のバインド `Slider` は `TwoWay` です。 これにより、 `Slider` をビューモデルから初期化できます。 `Color` `Aqua` ビューモデルがインスタンス化されるときに、プロパティがに設定されていることに注意してください。 ただし、の変更では、 `Slider` ビューモデルのプロパティに新しい値を設定する必要もあります。これにより、新しい色が計算されます。
 
-[![双方向のデータバインディングを使用した MVVM](data-bindings-to-mvvm-images/hslcolorscroll.png)](data-bindings-to-mvvm-images/hslcolorscroll-large.png#lightbox "双方向のデータバインディングを使用した MVVM")
+[![Two-Way データバインディングを使用した MVVM](data-bindings-to-mvvm-images/hslcolorscroll.png)](data-bindings-to-mvvm-images/hslcolorscroll-large.png#lightbox "Two-Way データバインディングを使用した MVVM")
 
 ## <a name="commanding-with-viewmodels"></a>Viewmodel でのコマンドの使用
 
@@ -566,7 +566,7 @@ namespace XamlSamples
 コマンドは、非同期メソッドを呼び出すこともできます。 これを実現するには `async` 、 `await` メソッドを指定するときにキーワードとキーワードを使用し `Execute` ます。
 
 ```csharp
-DownloadCommand = new Command (async () => await DownloadAsync ());
+DownloadCommand = new Command (async () => await DownloadAsync ());
 ```
 
 これ `DownloadAsync` は、メソッドがで、 `Task` 待機する必要があることを示しています。
