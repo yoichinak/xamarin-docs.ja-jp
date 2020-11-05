@@ -10,16 +10,16 @@ ms.date: 02/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 95c4e247ca0be6e5f0f39a7bc95c41a73b3f590e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 938bdc55cc577bda53fcf8c6d70bc71ea5cb97a0
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556790"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371964"
 ---
 # <a name="no-locxamarinforms-indicatorview"></a>Xamarin.Forms IndicatorView
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-indicatorviewdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-indicatorviewdemos/)
 
 は、 `IndicatorView` 内の項目数と現在位置を表すインジケーターを表示するコントロールです `CarouselView` 。
 

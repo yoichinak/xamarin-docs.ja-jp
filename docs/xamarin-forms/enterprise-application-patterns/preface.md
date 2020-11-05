@@ -10,16 +10,19 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6ea63fc483025fc6f9b0c7f379b6dfdc6ca30de8
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: f1c5af73c7c7fd160f715d7dbfab26c72cb06a31
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84198086"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371548"
 ---
 # <a name="preface-to-enterprise-app-development"></a>はじめにエンタープライズアプリ開発
 
-この電子ブックでは、を使用してクロスプラットフォームのエンタープライズアプリを構築するためのガイダンスを提供 Xamarin.Forms します。 Xamarin.Formsは、iOS、Android、ユニバーサル Windows プラットフォーム (UWP) などのプラットフォーム間で共有できるネイティブユーザーインターフェイスレイアウトを開発者が簡単に作成できるようにする、クロスプラットフォーム UI ツールキットです。 これにより、企業間 (B2E)、企業間 (B2B)、および B2C (B2C) アプリ向けの包括的なソリューションが提供され、すべてのターゲットプラットフォームでコードを共有し、総保有コスト (TCO) を削減することができます。
+> [!NOTE]
+> この電子ブックは2017の spring で公開されており、その後、更新されていません。 本は貴重なものですが、一部のマテリアルは古くなっています。
+
+この電子ブックでは、を使用してクロスプラットフォームのエンタープライズアプリを構築するためのガイダンスを提供 Xamarin.Forms します。 Xamarin.Forms は、iOS、Android、ユニバーサル Windows プラットフォーム (UWP) などのプラットフォーム間で共有できるネイティブユーザーインターフェイスレイアウトを開発者が簡単に作成できるようにする、クロスプラットフォーム UI ツールキットです。 これにより、企業間 (B2E)、企業間 (B2B)、および B2C (B2C) アプリ向けの包括的なソリューションが提供され、すべてのターゲットプラットフォームでコードを共有し、総保有コスト (TCO) を削減することができます。
 
 このガイドでは、適応性、保守性、およびテスト可能なエンタープライズアプリを開発するためのアーキテクチャガイダンスを提供し Xamarin.Forms ます。 MVVM、依存関係の注入、ナビゲーション、検証、および構成管理を実装する方法についてのガイダンスが提供されていますが、疎結合を維持しています。 また、認証と承認を実行する方法についても説明します。また、コンテナー化されたマイクロサービスからのデータへのアクセス、および単体テストについても説明します。
 
@@ -29,7 +32,7 @@ ms.locfileid: "84198086"
 
 このガイドは、に既に慣れている読者を対象としてい Xamarin.Forms ます。 の詳細については、の Xamarin.Forms [ Xamarin.Forms ドキュメント](~/xamarin-forms/index.yml)を参照し、を使用[ Xamarin.Forms ](https://aka.ms/xamformsebook)して Mobile Apps を作成してください。
 
-このガイドは、コンテナー化されたマイクロサービスの開発と展開に重点を置いた、 [.Net マイクロサービス: コンテナー化された .Net アプリケーションのアーキテクチャ](https://aka.ms/microservicesebook)を補完しています。 参考になるその他のガイドには、 [ASP.NET Core と Microsoft Azure を使用した最新の Web アプリケーションの設計と開発](https://aka.ms/WebAppEbook)、 [microsoft のプラットフォームとツールを使用](https://aka.ms/dockerlifecycleebook)したコンテナー化された Docker アプリケーションのライフサイクル、[モバイルアプリ開発用の microsoft プラットフォームとツール](https://aka.ms/MobAppDev/StndPDF)が含まれます。
+このガイドは、コンテナー化されたマイクロサービスの開発と展開に重点を置いた、 [.Net マイクロサービス: コンテナー化された .Net アプリケーションのアーキテクチャ](https://aka.ms/microservicesebook)を補完しています。 参考になるその他のガイドには、 [ASP.NET Core と Microsoft Azure を使用した最新の Web アプリケーションの設計と開発](https://aka.ms/WebAppEbook)、 [microsoft のプラットフォームとツールを使用](https://aka.ms/dockerlifecycleebook)したコンテナー化された Docker アプリケーションのライフサイクル、 [モバイルアプリ開発用の microsoft プラットフォームとツール](https://aka.ms/MobAppDev/StndPDF)が含まれます。
 
 ## <a name="who-should-use-this-guide"></a>このガイドを使用するユーザー
 

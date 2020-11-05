@@ -11,16 +11,16 @@ ms.custom: contperfq1
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0468d132ee6e75ab75c0150f1f5c9e0af6dfde40
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: b5dab372f5ebd3850702d122b21317fcb48e0a25
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557778"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371977"
 ---
 # <a name="no-locxamarinforms-absolutelayout"></a>Xamarin.Forms AbsoluteLayout
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-absolutelayoutdemos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-absolutelayoutdemos)
 
 [![::: no-loc (Xamarin. Forms)::: AbsoluteLayout](absolutelayout-images/layouts.png)](absolutelayout-images/layouts-large.png#lightbox)
 
@@ -90,7 +90,7 @@ ms.locfileid: "91557778"
 
 ![絶対値を使用して AbsoluteLayout に配置された子](absolutelayout-images/absolute-values.png)
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 public class StylishHeaderDemoPageCS : ContentPage
@@ -193,7 +193,7 @@ C# では、 [`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) `Children` �
 
 ![比例する位置の値を使用して AbsoluteLayout に配置された子](absolutelayout-images/proportional-position.png)
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 public class ProportionalDemoPageCS : ContentPage

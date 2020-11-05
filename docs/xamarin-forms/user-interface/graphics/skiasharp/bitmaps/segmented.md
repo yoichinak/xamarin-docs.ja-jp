@@ -10,16 +10,16 @@ ms.date: 07/17/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9a39433a0bad518055542adb190f4f441675ddfb
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: fe63f3fdab5d508ab0202fbfe93bdc223f97d28a
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556374"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370173"
 ---
 # <a name="segmented-display-of-skiasharp-bitmaps"></a>SkiaSharp ビットマップのセグメント化表示
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 SkiaSharp オブジェクトは、 `SKCanvas` という名前のメソッド `DrawBitmapNinePatch` と、 `DrawBitmapLattice` 非常によく似た2つのメソッドを定義します。 これらのメソッドはどちらもビットマップを変換先の四角形のサイズに描画しますが、ビットマップを均一に拡張するのではなく、ビットマップの一部をピクセルディメンションに表示し、ビットマップの他の部分を拡大して四角形に収まるようにします。
 
@@ -47,7 +47,7 @@ canvas.DrawBitmapNinePatch(bitmap, centerRectangle, destRectangle, paint);
 
 中央の四角形は、ビットマップを基準としています。 これは `SKRectI` 値 (の整数バージョン `SKRect` ) であり、すべての座標とサイズはピクセル単位で表されます。 コピー先の四角形は、表示サーフェイスに対して相対的です。 `paint` 引数は省略可能です。
 
-[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルの**9 つの更新プログラムの表示**ページでは、まず静的コンストラクターを使用して、型のパブリック静的プロパティを作成し `SKBitmap` ます。
+[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルの **9 つの更新プログラムの表示** ページでは、まず静的コンストラクターを使用して、型のパブリック静的プロパティを作成し `SKBitmap` ます。
 
 ```csharp
 public partial class NinePatchDisplayPage : ContentPage
@@ -110,7 +110,7 @@ public class NinePatchDisplayPage : ContentPage
 
 四角形には `centerRect` 、16個の円の中央配列が含まれます。 角の円はピクセルディメンションで表示され、それ以外の場合はそれに合わせて拡大されます。
 
-[![9-パッチ表示](segmented-images/NinePatchDisplay.png "9-パッチ表示")](segmented-images/NinePatchDisplay-Large.png#lightbox)
+[![9-パッチ表示](segmented-images/NinePatchDisplay.png "Nine-Patch 表示")](segmented-images/NinePatchDisplay-Large.png#lightbox)
 
 UWP ページは500ピクセル幅であるため、上と下の行は同じサイズの一連の円として表示されます。 それ以外の場合は、角にないすべての円が、楕円を形成するように拡大されます。
 
@@ -146,7 +146,7 @@ Skia のドキュメントによれば、配列には `Flags` 四角形ごとに
 
 ただし、これらのフラグは意図したとおりに動作しないと思われるため、無視することをお勧めします。 ただし、 `Flags` プロパティをに設定しないで `null` ください。 `SKLatticeFlags`四角形の合計数を囲むのに十分な大きさの値の配列に設定します。
 
-**Lattice 9 パッチ**ページはを使用して `DrawBitmapLattice` を模倣し `DrawBitmapNinePatch` ます。 次のように作成された同じビットマップを使用し `NinePatchDisplayPage` ます。
+**Lattice 9 パッチ** ページはを使用して `DrawBitmapLattice` を模倣し `DrawBitmapNinePatch` ます。 次のように作成された同じビットマップを使用し `NinePatchDisplayPage` ます。
 
 ```csharp
 public class LatticeNinePatchPage : ContentPage
@@ -182,9 +182,9 @@ public class LatticeNinePatchPage : ContentPage
 
 表示は、前のプログラムと同じです。
 
-[![Lattice 9-Patch](segmented-images/LatticeNinePatch.png "Lattice 9-Patch")](segmented-images/LatticeNinePatch-Large.png#lightbox)
+[![Lattice 9-Patch](segmented-images/LatticeNinePatch.png "Lattice Nine-Patch")](segmented-images/LatticeNinePatch-Large.png#lightbox)
 
-**Lattice 表示**ページでは、ビットマップが16の四角形に分割されます。
+**Lattice 表示** ページでは、ビットマップが16の四角形に分割されます。
 
 ```csharp
 public class LatticeDisplayPage : ContentPage
@@ -226,7 +226,7 @@ public class LatticeDisplayPage : ContentPage
 
 左側の iOS および Android イメージでは、小さい円だけがピクセルサイズでレンダリングされます。 他のすべてのものは拡張されます。
 
-**Lattice Display**ページでは、配列の作成が一般化され、より簡単に試してみることができ `Flags` `XDivs` `YDivs` ます。 特に、 `XDivs` 配列または配列の最初の要素を0に設定した場合の動作を確認し `YDivs` ます。 
+**Lattice Display** ページでは、配列の作成が一般化され、より簡単に試してみることができ `Flags` `XDivs` `YDivs` ます。 特に、 `XDivs` 配列または配列の最初の要素を0に設定した場合の動作を確認し `YDivs` ます。 
 
 ## <a name="related-links"></a>関連リンク
 

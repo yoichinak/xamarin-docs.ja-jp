@@ -7,22 +7,22 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 10/02/2019
-ms.openlocfilehash: 2b0b68be5cd36d908c7e152137b14b41a7a0b947
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: bd24fbf6ce99e87c6a7f4ccd8cceef6cbe826f0f
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91458174"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370534"
 ---
 # <a name="splash-screen"></a>スプラッシュ スクリーン
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/monodroid-samples/splashscreen)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/monodroid-samples/splashscreen)
 
 _Android アプリの起動には時間がかかります。特に、アプリがデバイスで最初に起動されるときです。スプラッシュスクリーンで、[開始の進行状況] がユーザーに表示されるか、ブランド化が示されることがあります。_
 
 ## <a name="overview"></a>概要
 
-Android アプリの起動には時間がかかります。特に、デバイスでアプリを初めて実行するとき ( _コールドスタート_と呼ばれることもあります)、 スプラッシュスクリーンでは、ユーザーに [開始] の進行状況が表示されます。または、アプリケーションを識別して昇格させるためのブランド情報が表示される場合があります。
+Android アプリの起動には時間がかかります。特に、デバイスでアプリを初めて実行するとき ( _コールドスタート_ と呼ばれることもあります)、 スプラッシュスクリーンでは、ユーザーに [開始] の進行状況が表示されます。または、アプリケーションを識別して昇格させるためのブランド情報が表示される場合があります。
 
 このガイドでは、Android アプリケーションでスプラッシュスクリーンを実装する方法の1つについて説明します。 次の手順について説明します。
 
@@ -50,7 +50,7 @@ Android アプリの起動には時間がかかります。特に、デバイス
 
 スプラッシュスクリーンでは、スプラッシュスクリーンアクティビティの背景に XML を描画できます。 画像を表示するには、ビットマップイメージ (PNG、JPG など) を使用する必要があります。
 
-このサンプルアプリケーションでは、 **splash_screen.xml**という名前の描画を定義しています。 この描画は、 [レイヤーリスト](https://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList) を使用して、次の xml に示すように、アプリケーションのスプラッシュスクリーンイメージを中心にしています。
+このサンプルアプリケーションでは、 **splash_screen.xml** という名前の描画を定義しています。 この描画は、 [レイヤーリスト](https://developer.android.com/guide/topics/resources/drawable-resource.html#LayerList) を使用して、次の xml に示すように、アプリケーションのスプラッシュスクリーンイメージを中心にしています。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -81,7 +81,7 @@ Android アプリの起動には時間がかかります。特に、デバイス
 
 ### <a name="implementing-a-theme"></a>テーマを実装する
 
-スプラッシュスクリーンアクティビティのカスタムテーマを作成するには、ファイルの **値/styles.xml** を編集 (または追加) し、 `style` スプラッシュスクリーン用の新しい要素を作成します。 サンプル **値/style.xml** ファイルは、次に示す mytheme という名前の付いてい `style` **ます。スプラッシュ**:
+スプラッシュスクリーンアクティビティのカスタムテーマを作成するには、ファイルの **値/styles.xml** を編集 (または追加) し、 `style` スプラッシュスクリーン用の新しい要素を作成します。 サンプル **値/style.xml** ファイルは、次に示す mytheme という名前の付いてい `style` **ます。スプラッシュ** :
 
 ```xml
 <resources>
@@ -167,7 +167,7 @@ public class MainActivity : AppCompatActivity
 
 1. [ **リソース/** 作成] フォルダーで、使用するスプラッシュスクリーンイメージの横バージョンを追加します。 この例では、 **splash_logo_land.png** が、上の例で使用したロゴの横バージョンです (青ではなくホワイト文字が使用されています)。
 
-2. **Resources/** 作成されたフォルダーで、前に定義した `layer-list` (たとえば、 **splash_screen_land.xml**) 前に定義した描画用の横バージョンを作成します。 このファイルで、ビットマップパスをスプラッシュスクリーンイメージの横バージョンに設定します。 次の例では**splash_screen_land.xml** 、splash_screen_land.xml**splash_logo_land.png**を使用します。
+2. **Resources/** 作成されたフォルダーで、前に定義した `layer-list` (たとえば、 **splash_screen_land.xml** ) 前に定義した描画用の横バージョンを作成します。 このファイルで、ビットマップパスをスプラッシュスクリーンイメージの横バージョンに設定します。 次の例では **splash_screen_land.xml** 、splash_screen_land.xml **splash_logo_land.png** を使用します。
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -184,7 +184,7 @@ public class MainActivity : AppCompatActivity
     </layer-list>
     ```
 
-3. **Resources/values-陸**フォルダーがまだ存在しない場合は作成します。
+3. **Resources/values-陸** フォルダーがまだ存在しない場合は作成します。
 
 4. ファイル **colors.xml** と **style.xml** を [ **値** ] に追加します (これらのファイルは、既存の  **値/colors.xml** と **値/style.xml** ファイルからコピーして変更できます)。
 

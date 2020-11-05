@@ -10,16 +10,16 @@ ms.date: 09/04/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fa3769d2533a5a6b482c92b832d54506e4954250
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 18a9347de9297c4c853cf695d169992ca60ace36
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560144"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93372016"
 ---
 # <a name="no-locxamarinforms-listview"></a>Xamarin.Forms 大きい
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithlistview)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/workingwithlistview)
 
 [`ListView`](xref:Xamarin.Forms.ListView) は、データのリストを表示するためのビューです。特に、スクロールが必要な長いリストです。
 
@@ -38,7 +38,7 @@ ms.locfileid: "91560144"
 
 インスタンスにデータをバインドする方法の詳細につい `ListView` ては、「 [ListView データソース](~/xamarin-forms/user-interface/listview/data-and-databinding.md)」を参照してください。
 
-## <a name="components"></a>コンポーネント
+## <a name="components"></a>Components
 
 `ListView`コントロールには、各プラットフォームのネイティブ機能を実行するために使用できる多数のコンポーネントがあります。 これらのコンポーネントは、次のセクションで定義されています。
 

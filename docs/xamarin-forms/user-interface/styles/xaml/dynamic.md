@@ -11,16 +11,16 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.custom: video
-ms.openlocfilehash: d6944da583679d58885c20d327b3e43e176eb6fa
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 520af44a307c8d493f550bbaeaa009bcdc94d8e0
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563355"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371613"
 ---
 # <a name="dynamic-styles-in-no-locxamarinforms"></a>動的スタイル Xamarin.Forms
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-styles-dynamicstyles)
 
 _スタイルは、プロパティの変更に応答せず、アプリケーションの継続中は変更されません。たとえば、視覚要素にスタイルを割り当てた後、Setter インスタンスのいずれかが変更、削除された場合、または新しい Setter インスタンスが追加された場合、変更はビジュアル要素に適用されません。ただし、アプリケーションは動的リソースを使用して、実行時に動的にスタイルの変更に応答できます。_
 

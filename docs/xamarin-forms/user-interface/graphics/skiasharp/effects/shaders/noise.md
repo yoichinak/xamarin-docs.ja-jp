@@ -10,18 +10,18 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 00b6251f530a4927d069ae92ec919645a06baf15
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 1a9a8b8dc31369b5774935a2e8fca5cf17faa24b
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555399"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371249"
 ---
 # <a name="skiasharp-noise-and-composing"></a>SkiaSharp のノイズと作成
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-単純なベクターグラフィックスは不自然に見える傾向があります。 直線、滑らかな曲線、純色は、実際のオブジェクトの傷とはよく似ていません。 コンピューター科学者 Ken Perlin は、コンピューターが生成した 1982 movie _Tron_用のグラフィックスを操作している間に、ランダムなプロセスを使用して、これらのイメージにより現実的なテクスチャを提供するアルゴリズムの開発を開始しました。 1997では、Ken Perlin は技術に関するアチーブメントを獲得しています。 彼の仕事は Perlin ノイズとして知られており、SkiaSharp でもサポートされています。 次に例を示します。
+単純なベクターグラフィックスは不自然に見える傾向があります。 直線、滑らかな曲線、純色は、実際のオブジェクトの傷とはよく似ていません。 コンピューター科学者 Ken Perlin は、コンピューターが生成した 1982 movie _Tron_ 用のグラフィックスを操作している間に、ランダムなプロセスを使用して、これらのイメージにより現実的なテクスチャを提供するアルゴリズムの開発を開始しました。 1997では、Ken Perlin は技術に関するアチーブメントを獲得しています。 彼の仕事は Perlin ノイズとして知られており、SkiaSharp でもサポートされています。 次に例を示します。
 
 ![Perlin のノイズのサンプル](noise-images/NoiseSample.png "Perlin のノイズのサンプル")
 
@@ -47,7 +47,7 @@ public static SkiaSharp.SKShader CreatePerlinNoiseTurbulence (float baseFrequenc
 
 パラメーターは、 `seed` 乱数ジェネレーターの開始点です。 浮動小数点値として指定されていますが、分数は使用前に切り捨てられ、0は1と同じになります。
 
-[ **SkiaSharpFormsDemos**)](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルの**Perlin ノイズ**ページを使用すると、引数と引数のさまざまな値を試すことができ `baseFrequency` `numOctaves` ます。 XAML ファイルを次に示します。
+[ **SkiaSharpFormsDemos** )](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルの **Perlin ノイズ** ページを使用すると、引数と引数のさまざまな値を試すことができ `baseFrequency` `numOctaves` ます。 XAML ファイルを次に示します。
 
 ```xaml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -322,7 +322,7 @@ public static SKShader CreateCompose (SKShader dstShader, SKShader srcShader);
 
 Perlin ノイズシェーダーには透明度が含まれています。 そのシェーダーがソースである場合、コピー先のシェーダーは透明領域に表示されます。
 
-構成済みの **Perlin ノイズ** ページには、最初の **Perlin ノイズ** ページと実質的に同一の XAML ファイルがあります。 分離コードファイルも同様です。 ただし、元の **Perlin ノイズ** ページでは、 `Shader` のプロパティが、 `SKPaint` 静的なメソッドとメソッドから返されたシェーダーに設定され `CreatePerlinNoiseFractalNoise` `CreatePerlinNoiseTurbulence` ます。 これ**Composed Perlin Noise** `CreateCompose` は、組み合わせシェーダーの Perlin ノイズページ呼び出しを構成します。 コピー先は、を使用して作成された青いソリッドシェーダーです `CreateColor` 。 ソースは Perlin のノイズシェーダーです。
+構成済みの **Perlin ノイズ** ページには、最初の **Perlin ノイズ** ページと実質的に同一の XAML ファイルがあります。 分離コードファイルも同様です。 ただし、元の **Perlin ノイズ** ページでは、 `Shader` のプロパティが、 `SKPaint` 静的なメソッドとメソッドから返されたシェーダーに設定され `CreatePerlinNoiseFractalNoise` `CreatePerlinNoiseTurbulence` ます。 これ **Composed Perlin Noise** `CreateCompose` は、組み合わせシェーダーの Perlin ノイズページ呼び出しを構成します。 コピー先は、を使用して作成された青いソリッドシェーダーです `CreateColor` 。 ソースは Perlin のノイズシェーダーです。
 
 ```csharp
 public partial class ComposedPerlinNoisePage : ContentPage

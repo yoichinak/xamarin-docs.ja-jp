@@ -10,16 +10,16 @@ ms.date: 02/17/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4b32c4b3ac4dea9dcdf52e3b9316f5f82aaad6ef
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 8d24300dcee76511466ec97f4944fe0be1278354
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91558337"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371587"
 ---
 # <a name="global-styles-in-no-locxamarinforms"></a>グローバルスタイル Xamarin.Forms
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
 _スタイルは、アプリケーションのリソースディクショナリに追加することで、グローバルに使用できます。これは、ページまたはコントロール間でスタイルが重複しないようにするために役立ちます。_
 
@@ -47,7 +47,7 @@ _スタイルは、アプリケーションのリソースディクショナリ�
 </Application>
 ```
 
-これに [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) より、インスタンスの外観を設定するために使用される、1つの *明示的* なスタイル () が定義され `buttonStyle` [`Button`](xref:Xamarin.Forms.Button) ます。 ただし、グローバルスタイルは *明示的* または *暗黙的*にすることができます。
+これに [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) より、インスタンスの外観を設定するために使用される、1つの *明示的* なスタイル () が定義され `buttonStyle` [`Button`](xref:Xamarin.Forms.Button) ます。 ただし、グローバルスタイルは *明示的* または *暗黙的* にすることができます。
 
 次のコード例は、をページのインスタンスに適用する XAML ページを示してい `buttonStyle` [`Button`](xref:Xamarin.Forms.Button) ます。
 
@@ -129,7 +129,7 @@ public class App : Application
 }
 ```
 
-コンストラクターは、アプリケーション全体のインスタンスに適用するための1つの *明示的* なスタイルを定義し [`Button`](xref:Xamarin.Forms.Button) ます。 *明示的* [`Style`](xref:Xamarin.Forms.Style) インスタンスは、 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) [`Add`](xref:Xamarin.Forms.ResourceDictionary.Add(System.String,System.Object)) `key` インスタンスを参照する文字列を指定して、メソッドを使用してに追加され `Style` ます。 この `Style` インスタンスは、アプリケーション内の正しい型のコントロールに適用できます。 ただし、グローバルスタイルは *明示的* または *暗黙的*にすることができます。
+コンストラクターは、アプリケーション全体のインスタンスに適用するための1つの *明示的* なスタイルを定義し [`Button`](xref:Xamarin.Forms.Button) ます。 *明示的* [`Style`](xref:Xamarin.Forms.Style) インスタンスは、 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) [`Add`](xref:Xamarin.Forms.ResourceDictionary.Add(System.String,System.Object)) `key` インスタンスを参照する文字列を指定して、メソッドを使用してに追加され `Style` ます。 この `Style` インスタンスは、アプリケーション内の正しい型のコントロールに適用できます。 ただし、グローバルスタイルは *明示的* または *暗黙的* にすることができます。
 
 次のコード例は、をページのインスタンスに適用する C# ページを示してい `buttonStyle` [`Button`](xref:Xamarin.Forms.Button) ます。
 

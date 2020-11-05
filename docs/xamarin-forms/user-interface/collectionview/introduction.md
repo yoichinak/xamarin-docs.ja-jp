@@ -10,16 +10,16 @@ ms.date: 12/11/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fbaa5779787efe2b7c62368080789fe767ca8021
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: a46214af677cd164a4e55b06cf386533d3130ccb
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560339"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370573"
 ---
 # <a name="no-locxamarinforms-collectionview-introduction"></a>Xamarin.Forms CollectionView の概要
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView) は、さまざまなレイアウト仕様を使用してデータを一覧表示するためのビューです。 これは、より柔軟でパフォーマンスの高い代替手段を提供することを目的として [`ListView`](xref:Xamarin.Forms.ListView) います。 たとえば、次のスクリーンショットは、 `CollectionView` 2 つの列の垂直グリッドを使用し、複数の選択を可能にするを示しています。
 
@@ -52,7 +52,7 @@ ms.locfileid: "91560339"
 | 項目の外観 | `ItemTemplate` | の各項目の外観は、プロパティをに設定すること [`CollectionView`](xref:Xamarin.Forms.CollectionView) によって定義でき `ItemTemplate` [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) ます。 詳細については、「 [アイテムの外観を定義](populate-data.md#define-item-appearance)する」を参照してください。 |
 | セル | `TextCell`, `ImageCell`, `ViewCell` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) セルの概念がないため、公開インジケーターの概念はありません。 代わりに、データテンプレートを使用して、リスト内の各データ項目の外観を定義します。 |
 | 行区切り記号 | `SeparatorColor`, `SeparatorVisibility` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) には、組み込みの区切り記号は含まれません。 これらは、必要に応じて項目テンプレートに指定できます。 |
-| 選択ツール | `SelectionMode`, `SelectedItem` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) 単一および複数の選択をサポートします。 詳細については、「 [ Xamarin.Forms CollectionView Selection](selection.md)」を参照してください。 |
+| 選択 | `SelectionMode`, `SelectedItem` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) 単一および複数の選択をサポートします。 詳細については、「 [ Xamarin.Forms CollectionView Selection](selection.md)」を参照してください。 |
 | 行の高さ | `HasUnevenRows`, `RowHeight` | では `CollectionView` 、各項目の行の高さはプロパティによって決定され `ItemSizingStrategy` ます。 詳細については、「 [項目のサイズ](layout.md#item-sizing)設定」を参照してください。|
 | キャッシュ | `CachingStrategy` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) は、基になるネイティブコントロールによって提供される仮想化を自動的に使用します。 |
 | ヘッダーとフッター | `Header`, `HeaderElement`, `HeaderTemplate`, `Footer`, `FooterElement`, `FooterTemplate` | [`CollectionView`](xref:Xamarin.Forms.CollectionView) は、、、、およびの各プロパティを使用して、リスト内の項目と共にスクロールするヘッダーとフッターを提供でき `Header` `Footer` `HeaderTemplate` `FooterTemplate` ます。 詳細については、「 [ヘッダーとフッター](layout.md#headers-and-footers)」を参照してください。 |

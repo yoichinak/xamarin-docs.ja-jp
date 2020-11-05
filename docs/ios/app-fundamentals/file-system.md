@@ -7,16 +7,16 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 11/12/2018
-ms.openlocfilehash: ef632b4bff3313de82c71cb5839ecdc24c9242ad
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: ffb49329b38705d097520b24d53285d5dbf15167
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91431489"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371808"
 ---
 # <a name="file-system-access-in-xamarinios"></a>Xamarin. iOS でのファイルシステムアクセス
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/ios-samples/filesystemsamplecode)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/ios-samples/filesystemsamplecode)
 
 `System.IO`Ios ファイルシステムにアクセスするには、 *.Net 基本クラスライブラリ (BCL)* の Xamarin およびクラスを使用します。 `File` クラスでは、ファイルを作成し、削除し、読み込むことができます。`Directory` クラスでは、ディレクトリの内容を作成し、削除し、列挙できます。 また、サブクラスを使用することもできます。これにより、ファイルの `Stream` 操作 (圧縮やファイル内の位置検索など) をより細かく制御できます。
 
@@ -149,13 +149,13 @@ Xamarin の iOS と .NET のファイル操作 (iOS と Xamarin) の類似性は
 
 既定では、プロジェクトにファイルを追加しても、最終的なアセンブリには含まれないため、アプリケーションでは使用できません。 アセンブリにファイルを含めるには、コンテンツと呼ばれる特別なビルドアクションを使用してファイルをマークする必要があります。
 
-ファイルを含めるようにマークするには、ファイルを右クリックし、Visual Studio for Mac で [ **アクション &gt; コンテンツのビルド** ] を選択します。 また、ファイルの**プロパティ**シートで**ビルドアクション**を変更することもできます。
+ファイルを含めるようにマークするには、ファイルを右クリックし、Visual Studio for Mac で [ **アクション &gt; コンテンツのビルド** ] を選択します。 また、ファイルの **プロパティ** シートで **ビルドアクション** を変更することもできます。
 
 ### <a name="case-sensitivity"></a>大文字小文字の区別
 
-IOS ファイルシステムでは *大文字と小文字が区別*されることを理解しておくことが重要です。 大文字と小文字の区別とは、ファイル名とディレクトリ名が **README.txt** 完全に一致する必要があることを意味し、 **readme.txt** は異なるファイル名と見なされます。
+IOS ファイルシステムでは *大文字と小文字が区別* されることを理解しておくことが重要です。 大文字と小文字の区別とは、ファイル名とディレクトリ名が **README.txt** 完全に一致する必要があることを意味し、 **readme.txt** は異なるファイル名と見なされます。
 
-これは、Windows ファイルシステムに慣れている .NET 開発者が、**ファイル**、**ファイル**、**ファイル**がすべて同じディレクトリを参照している*場合*に、混乱を招く可能性があります。
+これは、Windows ファイルシステムに慣れている .NET 開発者が、 **ファイル** 、 **ファイル** 、 **ファイル** がすべて同じディレクトリを参照している *場合* に、混乱を招く可能性があります。
 
 > [!WARNING]
 > IOS シミュレーターでは、大文字と小文字は区別されません。
@@ -169,7 +169,7 @@ iOS では、パスの区切り記号としてスラッシュ '/' が使用さ�
 
 ## <a name="application-sandbox"></a>アプリケーションサンドボックス
 
-ファイルシステムへのアプリケーションのアクセス (およびネットワークやハードウェアの機能などの他のリソース) は、セキュリティ上の理由で制限されています。 この制限は、 *アプリケーションサンドボックス*と呼ばれます。 ファイルシステムに関しては、アプリケーションはホームディレクトリ内のファイルとディレクトリの作成と削除に限定されます。
+ファイルシステムへのアプリケーションのアクセス (およびネットワークやハードウェアの機能などの他のリソース) は、セキュリティ上の理由で制限されています。 この制限は、 *アプリケーションサンドボックス* と呼ばれます。 ファイルシステムに関しては、アプリケーションはホームディレクトリ内のファイルとディレクトリの作成と削除に限定されます。
 
 ホームディレクトリは、アプリケーションとそのすべてのデータが格納されるファイルシステム内の一意の場所です。 アプリケーションのホームディレクトリの場所を選択 (または変更) することはできません。ただし、iOS と Xamarin には、内のファイルとディレクトリを管理するためのプロパティとメソッドが用意されています。
 
@@ -180,7 +180,7 @@ iOS では、パスの区切り記号としてスラッシュ '/' が使用さ�
 
 Mac OS でアプリケーションバンドルを参照すると、他のディレクトリに表示されるものとは異なるアイコンが表示され **ます** (と、アプリのサフィックスは非表示になります)。ただし、これはオペレーティングシステムの表示が異なる通常のディレクトリにすぎません。
 
-サンプルコードのアプリケーションバンドルを表示するには、 **Visual Studio for Mac** でプロジェクトを右クリックし、[ **Finder で**表示] を選択します。 次に、アプリケーションアイコンがある **bin/** ディレクトリ (次のスクリーンショットのように) に移動します。
+サンプルコードのアプリケーションバンドルを表示するには、 **Visual Studio for Mac** でプロジェクトを右クリックし、[ **Finder で** 表示] を選択します。 次に、アプリケーションアイコンがある **bin/** ディレクトリ (次のスクリーンショットのように) に移動します。
 
 ![Bin ディレクトリ内を移動して、次のスクリーンショットのようなアプリケーションアイコンを見つけます。](file-system-images/40-bundle.png)
 
@@ -200,7 +200,7 @@ Mac OS でアプリケーションバンドルを参照すると、他のディ�
 
 |ディレクトリ|説明|
 |---|---|
-|[ApplicationName]。アプリ/|**IOS 7 以前で**は、これは `ApplicationBundle` アプリケーションの実行可能ファイルが格納されているディレクトリです。 アプリで作成したディレクトリ構造は、このディレクトリに存在します (たとえば、Visual Studio for Mac プロジェクトでリソースとしてマークしたイメージやその他のファイルの種類など)。<br /><br />アプリケーションバンドル内のコンテンツファイルにアクセスする必要がある場合は、プロパティを介してこのディレクトリへのパスを使用でき `NSBundle.MainBundle.BundlePath` ます。|
+|[ApplicationName]。アプリ/|**IOS 7 以前で** は、これは `ApplicationBundle` アプリケーションの実行可能ファイルが格納されているディレクトリです。 アプリで作成したディレクトリ構造は、このディレクトリに存在します (たとえば、Visual Studio for Mac プロジェクトでリソースとしてマークしたイメージやその他のファイルの種類など)。<br /><br />アプリケーションバンドル内のコンテンツファイルにアクセスする必要がある場合は、プロパティを介してこのディレクトリへのパスを使用でき `NSBundle.MainBundle.BundlePath` ます。|
 |ドキュメント|ユーザードキュメントとアプリケーションデータファイルを格納するには、このディレクトリを使用します。<br /><br />このディレクトリの内容は、iTunes ファイル共有を通じてユーザーが使用できるようにすることができます (ただし、既定では無効になっています)。 `UIFileSharingEnabled`ユーザーがこれらのファイルにアクセスできるようにするには、情報 plist ファイルにブールキーを追加します。<br /><br />アプリケーションでファイル共有をすぐに有効にしない場合でも、このディレクトリ (共有する予定がない限り、データベースファイルなど) のユーザーに対して非表示にする必要があるファイルは配置しないようにしてください。 機密ファイルが非表示のままであれば、将来のバージョンでファイル共有が有効になっていると、これらのファイルは公開されません (また、iTunes によって移動、変更、または削除される可能性があります)。<br /><br /> メソッドを使用して、 `Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments)` アプリケーションの Documents ディレクトリへのパスを取得できます。<br /><br />このディレクトリの内容は、iTunes によってバックアップされます。|
 |ライブラリ|ライブラリディレクトリは、データベースやその他のアプリケーションで生成されたファイルなど、ユーザーによって直接作成されていないファイルを格納するのに適した場所です。 このディレクトリの内容は、iTunes を介してユーザーに公開されることはありません。<br /><br />独自のサブディレクトリをライブラリに作成することができます。ただし、ここでは、ユーザー設定やキャッシュなど、システムによって作成されたディレクトリがいくつか存在します。<br /><br />このディレクトリの内容 (キャッシュサブディレクトリを除く) は、iTunes によってバックアップされます。 ライブラリに作成したカスタムディレクトリがバックアップされます。|
 |ライブラリ/設定/|アプリケーション固有の基本設定ファイルは、このディレクトリに格納されます。 これらのファイルは直接作成しないでください。 代わりに、クラスを使用し `NSUserDefaults` ます。<br /><br />このディレクトリの内容は、iTunes によってバックアップされます。|
@@ -245,13 +245,13 @@ iOS 11 **では、ファイルアプリが** 導入されました。これは�
 
 ![LSSupportsOpeningDocumentsInPlace の設定](file-system-images/51-supports-opening.png)
 
-これで、アプリの **Documents** ディレクトリが **Files** アプリで閲覧できるようになります。 **ファイル**アプリで、 **[マイ iPhone] の**に移動します。共有ファイルがある各アプリが表示されます。 次のスクリーンショットは、 [FileSystem サンプルアプリ](/samples/xamarin/ios-samples/filesystemsamplecode) の外観を示しています。
+これで、アプリの **Documents** ディレクトリが **Files** アプリで閲覧できるようになります。 **ファイル** アプリで、 **[マイ iPhone] の** に移動します。共有ファイルがある各アプリが表示されます。 次のスクリーンショットは、 [FileSystem サンプルアプリ](/samples/xamarin/ios-samples/filesystemsamplecode) の外観を示しています。
 
 ![iOS 11 ファイルアプリ](file-system-images/50-files-app-1-sml.png) ![IPhone ファイルを参照する](file-system-images/50-files-app-2-sml.png) ![サンプルアプリファイル](file-system-images/50-files-app-3-sml.png)
 
 ## <a name="sharing-files-with-the-user-through-itunes"></a>ITunes を使用してユーザーとファイルを共有する
 
-ユーザーは、 `Info.plist` 次に示すように、ソースビューで iTunes 共有 () エントリを**サポートするアプリケーション**を編集して作成することによって、アプリケーションの Documents ディレクトリ内のファイルにアクセスでき `UIFileSharingEnabled` ます。 **Source**
+ユーザーは、 `Info.plist` 次に示すように、ソースビューで iTunes 共有 () エントリを **サポートするアプリケーション** を編集して作成することによって、アプリケーションの Documents ディレクトリ内のファイルにアクセスでき `UIFileSharingEnabled` ます。 **Source**
 
 [![アプリケーションの追加で iTunes 共有プロパティがサポートされる](file-system-images/09-uifilesharingenabled-plist-sml.png)](file-system-images/09-uifilesharingenabled-plist.png#lightbox)
 
@@ -263,7 +263,7 @@ iOS 11 **では、ファイルアプリが** 導入されました。これは�
 
 ドキュメントフォルダーの内容を変更すると、ユーザーが注意を払っていない場合、問題が発生する可能性があります。 アプリケーションはこのことを考慮し、ドキュメントフォルダーの破壊的な更新に対して回復力を持つ必要があります。
 
-この記事のサンプルコードでは、Documents フォルダー ( **SampleCode.cs**) にファイルとフォルダーの両方を作成し、ファイル共有を有効にします **。** このスクリーンショットは、iTunes でこれらがどのように表示されるかを示しています。
+この記事のサンプルコードでは、Documents フォルダー ( **SampleCode.cs** ) にファイルとフォルダーの両方を作成し、ファイル共有を有効にします **。** このスクリーンショットは、iTunes でこれらがどのように表示されるかを示しています。
 
 [![このスクリーンショットは、iTunes でファイルがどのように表示されるかを示しています。](file-system-images/15-itunes-file-sharing-example-sml.png)](file-system-images/15-itunes-file-sharing-example.png#lightbox)
 
@@ -319,7 +319,7 @@ NSFileManager.SetSkipBackupAttribute (filename, false); // file will be backed-u
 
 ### <a name="configure-an-app-group"></a>アプリグループを構成する
 
-共有の場所は、 [IOS デベロッパーセンター](https://developer.apple.com/devcenter/ios/)の「**証明書、識別子 & プロファイル**」セクションで構成されている[アプリグループ](https://developer.apple.com/library/archive/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW19)を使用して構成されます。 この値は、各プロジェクトの権利でも参照される必要があります。 **plist**です。
+共有の場所は、 [IOS デベロッパーセンター](https://developer.apple.com/devcenter/ios/)の「 **証明書、識別子 & プロファイル** 」セクションで構成されている [アプリグループ](https://developer.apple.com/library/archive/documentation/Miscellaneous/Reference/EntitlementKeyReference/Chapters/EnablingAppSandbox.html#//apple_ref/doc/uid/TP40011195-CH4-SW19)を使用して構成されます。 この値は、各プロジェクトの権利でも参照される必要があります。 **plist** です。
 
 アプリグループの作成と構成の詳細については、 [アプリグループの機能](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md) に関するガイドを参照してください。
 

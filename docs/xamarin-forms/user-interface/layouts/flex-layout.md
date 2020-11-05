@@ -11,20 +11,20 @@ ms.date: 05/07/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 88f89e3d17c693c48176a45605b036f56599ee6d
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: c7705304a6eda662095c1e2a57633bf74c90c6de
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563628"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370144"
 ---
 # <a name="the-no-locxamarinforms-flexlayout"></a>Xamarin.FormsFlexlayout
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)
 
 _子ビューのコレクションを積み重ねる場合やラッピングする場合は、FlexLayout を使用します。_
 
-は、 Xamarin.Forms [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) Xamarin.Forms バージョン3.0 の新バージョンです。 これは、CSS の [柔軟なボックスレイアウトモジュール](https://www.w3.org/TR/css-flexbox-1/)に基づいています。 _フレックスレイアウト_ または _フレックスボックス_と呼ばれます。これは、レイアウト内に子を配置するための柔軟なオプションが多数含まれているためです。
+は、 Xamarin.Forms [`FlexLayout`](xref:Xamarin.Forms.FlexLayout) Xamarin.Forms バージョン3.0 の新バージョンです。 これは、CSS の [柔軟なボックスレイアウトモジュール](https://www.w3.org/TR/css-flexbox-1/)に基づいています。 _フレックスレイアウト_ または _フレックスボックス_ と呼ばれます。これは、レイアウト内に子を配置するための柔軟なオプションが多数含まれているためです。
 
 `FlexLayout` はと似ていますが、 Xamarin.Forms [`StackLayout`](~/xamarin-forms/user-interface/layouts/stacklayout.md) スタック内で子を水平方向および垂直方向に整列させることができます。 ただし、では、 `FlexLayout` 1 つの行または列に収まりきらない場合に、子をラップすることもできます。また、さまざまな画面サイズに合わせて向きや配置を行うためのオプションも多数用意されています。
 
@@ -67,11 +67,11 @@ IOS、Android、ユニバーサル Windows プラットフォームで実行さ�
 
 [![[単純なスタック] ページ](flex-layout-images/SimpleStack.png "[単純なスタック] ページ")](flex-layout-images/SimpleStack-Large.png#lightbox)
 
-`FlexLayout` **Simplestackpage .xaml**ファイルには、次の3つのプロパティが表示されます。
+`FlexLayout` **Simplestackpage .xaml** ファイルには、次の3つのプロパティが表示されます。
 
 - [`Direction`](xref:Xamarin.Forms.FlexLayout.Direction)プロパティは、列挙体の値に設定され [`FlexDirection`](xref:Xamarin.Forms.FlexDirection) ます。 既定値は、`Row` です。 プロパティをに設定する `Column` と、の子が `FlexLayout` 項目の1つの列に配置されます。
 
-    内の項目 `FlexLayout` が列に配置されている場合、は、 `FlexLayout` 垂直方向の _メイン軸_ と横方向の _交差軸_を持つと言います。
+    内の項目 `FlexLayout` が列に配置されている場合、は、 `FlexLayout` 垂直方向の _メイン軸_ と横方向の _交差軸_ を持つと言います。
 
 - [`AlignItems`](xref:Xamarin.Forms.FlexLayout.AlignItems)プロパティは型で、 [`FlexAlignItems`](xref:Xamarin.Forms.FlexAlignItems) 交差軸に項目をどのように揃えるかを指定します。 `Center`オプションを指定すると、各項目が水平方向に中央揃えで配置されます。
 
@@ -93,7 +93,7 @@ IOS、Android、ユニバーサル Windows プラットフォームで実行さ�
 
 ### <a name="using-flexlayout-for-wrapping-items"></a>項目のラップに FlexLayout を使用する
 
-**[Flexlayoutdemos](/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** のサンプルの [**写真の折り返し**] ページでは、 `FlexLayout` がその子を追加の行または列にラップする方法を示しています。 XAML ファイルによってがインスタンス化され、 `FlexLayout` その2つのプロパティが割り当てられます。
+**[Flexlayoutdemos](/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** のサンプルの [ **写真の折り返し** ] ページでは、 `FlexLayout` がその子を追加の行または列にラップする方法を示しています。 XAML ファイルによってがインスタンス化され、 `FlexLayout` その2つのプロパティが割り当てられます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -193,7 +193,7 @@ public partial class PhotoWrappingPage : ContentPage
 
 Web デザインには、 [_究極_](https://en.wikipedia.org/wiki/Holy_grail_(web_design)) と呼ばれる標準的なレイアウトがあります。これは、非常に望ましいレイアウト形式ですが、多くの場合、完璧求めるでは実現が困難です。 レイアウトは、ページの上部にあるヘッダーと下部のフッターで構成され、両方ともページ全体の幅に拡張されます。 ページの中央を使用するのはメインコンテンツですが、多くの場合、コンテンツの左側には列形式のメニューがあり、右側には _補助的な情報 (領域と_ も呼ばれます) があります。 [「CSS フレキシブルボックスレイアウト仕様」のセクション 5.4.1](https://www.w3.org/TR/css-flexbox-1/#order-accessibility) では、フレックスボックスを使用して、聖究極レイアウトを実現する方法について説明しています。
 
-**[Flexlayoutdemos](/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** サンプルの**究極レイアウト**ページでは、 `FlexLayout` 別ので入れ子になっているものを使用して、このレイアウトの単純な実装を示しています。 このページは縦モードの携帯電話向けに設計されているため、コンテンツエリアの左右の領域は50ピクセル幅のみです。
+**[Flexlayoutdemos](/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** サンプルの **究極レイアウト** ページでは、 `FlexLayout` 別ので入れ子になっているものを使用して、このレイアウトの単純な実装を示しています。 このページは縦モードの携帯電話向けに設計されているため、コンテンツエリアの左右の領域は50ピクセル幅のみです。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -262,7 +262,7 @@ XAML ファイルの最初のは、 `FlexLayout` 垂直方向のメイン軸を�
 
 ### <a name="catalog-items-with-flexlayout"></a>FlexLayout を使用したカタログアイテム
 
-**[Flexlayoutdemos](/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** サンプルの [**カタログ項目**] ページは、 [CSS フレックスレイアウトボックスの仕様のセクション1.1 の例 1](https://www.w3.org//TR/css-flexbox-1/#overview)と似ています。ただし、水平スクロール可能な一連の画像と3つの猿の説明が表示されます。
+**[Flexlayoutdemos](/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** サンプルの [ **カタログ項目** ] ページは、 [CSS フレックスレイアウトボックスの仕様のセクション1.1 の例 1](https://www.w3.org//TR/css-flexbox-1/#overview)と似ています。ただし、水平スクロール可能な一連の画像と3つの猿の説明が表示されます。
 
 [![[カタログアイテム] ページ](flex-layout-images/CatalogItems.png "[カタログアイテム] ページ")](flex-layout-images/CatalogItems-Large.png#lightbox)
 
@@ -383,7 +383,7 @@ XAML ファイルの最初のは、 `FlexLayout` 垂直方向のメイン軸を�
 一般的なアプリケーションをいくつか紹介したので `FlexLayout` 、のプロパティを `FlexLayout` より詳細に調べることができます。
 `FlexLayout``FlexLayout`向きと配置を制御するために、コードまたは XAML で自身に設定する、6つのバインド可能なプロパティを定義します。 (これらのプロパティの1つ [`Position`](xref:Xamarin.Forms.FlexLayout.Position) は、この記事では説明されていません)。
 
-**[Flexlayoutdemos](/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** のサンプルの**実験**ページを使用して、残りの5つのバインド可能なプロパティを試すことができます。 このページでは、との間で子を追加または削除し、バインド可能な `FlexLayout` 5 つのプロパティの組み合わせを設定できます。 のすべての子は `FlexLayout` 、 `Label` さまざまな色とサイズのビューです `Text` 。プロパティは、コレクション内の位置に対応する数値に設定され `Children` ます。
+**[Flexlayoutdemos](/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** のサンプルの **実験** ページを使用して、残りの5つのバインド可能なプロパティを試すことができます。 このページでは、との間で子を追加または削除し、バインド可能な `FlexLayout` 5 つのプロパティの組み合わせを設定できます。 のすべての子は `FlexLayout` 、 `Label` さまざまな色とサイズのビューです `Text` 。プロパティは、コレクション内の位置に対応する数値に設定され `Children` ます。
 
 プログラムが起動すると、5つ `Picker` のビューにこれら5つのプロパティの既定値が表示さ `FlexLayout` れます。 `FlexLayout`画面の下部には、次の3つの子があります。
 
@@ -556,7 +556,7 @@ XAML では、デバイスに依存しない単位でサイズの数値を使用
 <Label ... FlexLayout.Basis="25%" ... />
 ```
 
-**[Flexlayoutdemos](/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** サンプルの**基本的な実験**ページでは、プロパティを試してみることができ `Basis` ます。 ページには、 `Label` 背景色と前景色が交互に表示される5つの要素からなる、ラップされた列が表示されます。 2つ `Slider` の要素を使用して `Basis` 、2番目と4番目の値を指定でき `Label` ます。
+**[Flexlayoutdemos](/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** サンプルの **基本的な実験** ページでは、プロパティを試してみることができ `Basis` ます。 ページには、 `Label` 背景色と前景色が交互に表示される5つの要素からなる、ラップされた列が表示されます。 2つ `Slider` の要素を使用して `Basis` 、2番目と4番目の値を指定でき `Label` ます。
 
 [![[ベース実験] ページ](flex-layout-images/BasisExperiment.png "[ベース実験] ページ")](flex-layout-images/BasisExperiment-Large.png#lightbox)
 
@@ -592,11 +592,11 @@ Android のスクリーンショットで `Shrink` は、2番目の値が0に設
 
 ## <a name="css-styling-with-flexlayout"></a>FlexLayout を使用した CSS スタイル
 
-3.0 で導入された [CSS スタイル](~/xamarin-forms/user-interface/styles/css/index.md) 機能は、 Xamarin.Forms との接続に使用でき `FlexLayout` ます。 **[Flexlayoutdemos](/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** サンプルの [ **css catalog items** ] ページでは、[**カタログアイテム**] ページのレイアウトが複製されますが、多くのスタイルの css スタイルシートがあります。
+3.0 で導入された [CSS スタイル](~/xamarin-forms/user-interface/styles/css/index.md) 機能は、 Xamarin.Forms との接続に使用でき `FlexLayout` ます。 **[Flexlayoutdemos](/samples/xamarin/xamarin-forms-samples/userinterface-flexlayoutdemos)** サンプルの [ **css catalog items** ] ページでは、[ **カタログアイテム** ] ページのレイアウトが複製されますが、多くのスタイルの css スタイルシートがあります。
 
 [![[CSS カタログアイテム] ページ](flex-layout-images/CssCatalogItems.png "[CSS カタログアイテム] ページ")](flex-layout-images/CssCatalogItems-Large.png#lightbox)
 
-元の **CatalogItemsPage** ファイルのセクションには、15個の `Style` オブジェクトを含む5つの定義があり `Resources` `Setter` ます。 **CssCatalogItemsPage**ファイルでは、4つのオブジェクトだけを持つ2つの定義に縮小されてい `Style` `Setter` ます。 これらのスタイルは、css スタイル機能で現在サポートされていないプロパティの CSS スタイルシートを補完し Xamarin.Forms ます。
+元の **CatalogItemsPage** ファイルのセクションには、15個の `Style` オブジェクトを含む5つの定義があり `Resources` `Setter` ます。 **CssCatalogItemsPage** ファイルでは、4つのオブジェクトだけを持つ2つの定義に縮小されてい `Style` `Setter` ます。 これらのスタイルは、css スタイル機能で現在サポートされていないプロパティの CSS スタイルシートを補完し Xamarin.Forms ます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

@@ -10,16 +10,16 @@ ms.date: 02/07/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3da0223bf72e4de60cc50be2562a0fdbd279f52e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: b84336f836c3fa421537daf7e43de01e7be20b01
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91559741"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371288"
 ---
 # <a name="no-locxamarinforms-map-initialization-and-configuration"></a>Xamarin.Forms マップの初期化と構成
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithmaps)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/workingwithmaps)
 
 コントロールは、 [`Map`](xref:Xamarin.Forms.Maps.Map) 各プラットフォームでネイティブマップコントロールを使用します。 これにより、ユーザーのための高速で使い慣れたマップエクスペリエンスが提供されますが、各プラットフォーム API の要件に準拠するためにはいくつかの構成手順が必要になります。
 
@@ -29,13 +29,13 @@ ms.locfileid: "91559741"
 
 をインストールした後[ Xamarin.Forms 。マップ](https://www.nuget.org/packages/Xamarin.Forms.Maps/)NuGet パッケージは、各プラットフォームプロジェクトで初期化する必要があります。
 
-IOS では、メソッドの後にメソッドを呼び出すことによって、 **AppDelegate.cs**でこれを行う必要があり `Xamarin.FormsMaps.Init` *after* `Xamarin.Forms.Forms.Init` ます。
+IOS では、メソッドの後にメソッドを呼び出すことによって、 **AppDelegate.cs** でこれを行う必要があり `Xamarin.FormsMaps.Init` *after* `Xamarin.Forms.Forms.Init` ます。
 
 ```csharp
 Xamarin.FormsMaps.Init();
 ```
 
-Android では、メソッドの後にメソッドを呼び出すことによって、 **MainActivity.cs**でこれを行う必要があり `Xamarin.FormsMaps.Init` *after* `Xamarin.Forms.Forms.Init` ます。
+Android では、メソッドの後にメソッドを呼び出すことによって、 **MainActivity.cs** でこれを行う必要があり `Xamarin.FormsMaps.Init` *after* `Xamarin.Forms.Forms.Init` ます。
 
 ```csharp
 Xamarin.FormsMaps.Init(this, savedInstanceState);
@@ -57,7 +57,7 @@ Android では、マップを表示する前に、追加の構成が必要にな
 
 ### <a name="ios"></a>iOS
 
-IOS でマップを表示して操作する場合、追加の構成は必要ありません。 ただし、ロケーションサービスにアクセスするには、次のキーを **情報 plist**で設定する必要があります。
+IOS でマップを表示して操作する場合、追加の構成は必要ありません。 ただし、ロケーションサービスにアクセスするには、次のキーを **情報 plist** で設定する必要があります。
 
 - iOS 11 以降
   - [`NSLocationWhenInUseUsageDescription`](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW26) –アプリケーションの使用時にロケーションサービスを使用する場合
@@ -79,7 +79,7 @@ IOS 11 以前をサポートするには、、、およびの3つのキーすべ
 <string>Can we use your location at all times?</string>
 ```
 
-また **、情報の plist ファイルを**編集しているときに、**ソース**ビューで**情報**を追加することもできます。
+また **、情報の plist ファイルを** 編集しているときに、 **ソース** ビューで **情報** を追加することもできます。
 
 ![IOS 8 用情報 plist](setup-images/ios8-map-permissions.png "iOS 8 必須情報. plist エントリ")
 
@@ -117,11 +117,11 @@ API キーを取得したら、 `<application>` **Properties/AndroidManifest.xml
 > [!NOTE]
 > `com.google.android.geo.API_KEY` は、API キーの推奨されるメタデータ名です。 旧バージョンとの互換性のために、 `com.google.android.maps.v2.API_KEY` メタデータ名を使用できますが、Android MAPS API v2 での認証のみが許可されます。
 
-APK が Google Maps にアクセスするには、APK に署名するために使用するすべてのキーストア (デバッグとリリース) に SHA-1 の指紋名とパッケージ名を含める必要があります。 たとえば、デバッグに1台のコンピューターを使用し、リリース APK を生成する別のコンピューターを使用する場合は、最初のコンピューターのデバッグキーストアから SHA-1 証明書のフィンガープリントを、2番目のコンピューターのリリースキーストアから SHA-1 証明書のフィンガープリントを含める必要があります。 また、アプリの **パッケージ名** が変更された場合は、キーの資格情報を編集することも忘れないでください。 「 [Google MAPS API キーを取得する」を](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)参照してください。
+APK が Google Maps にアクセスするには、APK に署名するために使用するすべてのキーストア (デバッグとリリース) に SHA-1 の指紋名とパッケージ名を含める必要があります。 たとえば、1 台のコンピューターをデバッグに使用し、別のコンピューターをリリース APK の生成に使用する場合、最初のコンピューターのデバッグ キーストアの SHA-1 証明書フィンガープリントと、2 番目のコンピューターのリリース キーストアの SHA-1 証明書フィンガープリントを含める必要があります。 また、アプリの **パッケージ名** が変更された場合は、キーの資格情報を編集することも忘れないでください。 「 [Google MAPS API キーを取得する」を](~/android/platform/maps-and-location/maps/obtaining-a-google-maps-api-key.md)参照してください。
 
 #### <a name="specify-the-google-play-services-version-number"></a>Google Play services のバージョン番号を指定してください
 
-AndroidManifest.xmlの要素内に次の宣言を追加し `<application>` ます。 ** **
+AndroidManifest.xmlの要素内に次の宣言を追加し `<application>` ます。 ****
 
 ```xml
 <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
@@ -131,7 +131,7 @@ AndroidManifest.xmlの要素内に次の宣言を追加し `<application>` ま�
 
 #### <a name="specify-the-requirement-for-the-apache-http-legacy-library"></a>Apache HTTP レガシライブラリの要件を指定します
 
-アプリケーションが Xamarin.Forms API 28 以上を対象としている場合は、AndroidManifest.xmlの要素内に次の宣言を追加する必要があり `<application>` ます。 ** **
+アプリケーションが Xamarin.Forms API 28 以上を対象としている場合は、AndroidManifest.xmlの要素内に次の宣言を追加する必要があり `<application>` ます。 ****
 
 ```xml
 <uses-library android:name="org.apache.http.legacy" android:required="false" />    
@@ -245,8 +245,8 @@ UWP では、マップを表示してマップサービスを使用する前に�
 
 また、アプリケーションがユーザーの場所にアクセスする必要がある場合は、パッケージマニフェストで場所の機能を有効にする必要があります。 これは次のようにして実装します。
 
-1. **ソリューション エクスプローラー**で、**package.appxmanifest** をダブルクリックし、**[機能]** タブを選びます。
-1. **[機能]** ボックスの一覧で、**[位置情報]** チェックボックスをオンにします。 これにより、 `location` デバイスの機能がパッケージマニフェストファイルに追加されます。
+1. **ソリューション エクスプローラー** で、 **package.appxmanifest** をダブルクリックし、 **[機能]** タブを選びます。
+1. **[機能]** ボックスの一覧で、 **[位置情報]** チェックボックスをオンにします。 これにより、 `location` デバイスの機能がパッケージマニフェストファイルに追加されます。
 
     ```xml
     <Capabilities>
@@ -255,7 +255,7 @@ UWP では、マップを表示してマップサービスを使用する前に�
     </Capabilities>
     ```
 
-#### <a name="release-builds"></a>リリースビルド
+#### <a name="release-builds"></a>リリース ビルド
 
 UWP リリースビルドでは、.NET ネイティブコンパイルを使用して、アプリケーションを直接ネイティブコードにコンパイルします。 ただし、このような結果として、UWP のコントロールのレンダラーが [`Map`](xref:Xamarin.Forms.Maps.Map) 実行可能ファイルからリンクされている可能性があります。 これは、App.xaml.cs のメソッドの UWP 固有のオーバーロードを使用して修正でき `Forms.Init` ます。 **App.xaml.cs**
 

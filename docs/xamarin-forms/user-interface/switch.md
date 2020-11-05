@@ -10,16 +10,16 @@ ms.date: 05/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 94f77fd70fee595efd341ff7372828b12661442d
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: b44a3fa34044327be6a928588397c3371f196336
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561730"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371132"
 ---
 # <a name="no-locxamarinforms-switch"></a>Xamarin.Forms 切り替わり
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-switchdemos/)
 
 Xamarin.Forms [`Switch`](xref:Xamarin.Forms.Switch) コントロールは水平方向のトグルボタンで、ユーザーは値で表されるオンとオフの状態を切り替えることができ `boolean` ます。 クラスは、 `Switch` から継承さ [`View`](xref:Xamarin.Forms.View) れます。
 
@@ -30,7 +30,7 @@ Xamarin.Forms [`Switch`](xref:Xamarin.Forms.Switch) コントロールは水平�
 コントロールは、 `Switch` 次のプロパティを定義します。
 
 - [`IsToggled`](xref:Xamarin.Forms.Switch.IsToggled)が `boolean` オンかどうかを示す値です `Switch` 。 **on**
-- [`OnColor`](xref:Xamarin.Forms.Switch.OnColor) は、が `Color` `Switch` 切り替えられるか、状態で表示さ **れるかに**影響するです。
+- [`OnColor`](xref:Xamarin.Forms.Switch.OnColor) は、が `Color` `Switch` 切り替えられるか、状態で表示さ **れるかに** 影響するです。
 - `ThumbColor` は、 `Color` スイッチのつまみのです。
 
 これらのプロパティはオブジェクトによって支えられています [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 。つまり、を `Switch` スタイル設定し、データバインディングのターゲットにすることができます。

@@ -10,16 +10,16 @@ ms.date: 09/25/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2a54b5e2523f4d1993cf0c86ba141135b1e9d74c
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: afb2c7c5c82a7ce530846c266d231b893bbbf39d
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561745"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371236"
 ---
 # <a name="no-locxamarinforms-tableview"></a>Xamarin.Forms TableView
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-tableview)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-tableview)
 
 [`TableView`](xref:Xamarin.Forms.TableView) は、同じテンプレートを共有しない行がある場合に、スクロール可能なデータまたは選択肢の一覧を表示するためのビューです。 [ListView](~/xamarin-forms/user-interface/listview/index.md)とは異なり、には `TableView` の概念がない `ItemsSource` ため、項目を子として手動で追加する必要があります。
 
@@ -35,7 +35,7 @@ ms.locfileid: "91561745"
 
 [`TableView`](xref:Xamarin.Forms.TableView) 上のシナリオで一般的に必要とされる、魅力的なセクションでの行のスクロールとレイアウトを処理します。 コントロールは、 `TableView` 使用可能な場合は各プラットフォームの基になる同等のビューを使用し、プラットフォームごとにネイティブな外観を作成します。
 
-## <a name="structure"></a>構造体
+## <a name="structure"></a>構造
 
 の要素 [`TableView`](xref:Xamarin.Forms.TableView) は、セクションに整理されています。 のルートのは、1つ以上のインスタンスの親であるです `TableView` [`TableRoot`](xref:Xamarin.Forms.TableRoot) [`TableSection`](xref:Xamarin.Forms.TableSection) 。 各は [`TableSection`](xref:Xamarin.Forms.TableSection) 、見出しと1つ以上のインスタンスで構成され [`ViewCell`](xref:Xamarin.Forms.ViewCell) ます。
 

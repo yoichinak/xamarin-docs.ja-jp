@@ -10,16 +10,16 @@ ms.date: 02/17/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a8aea2617d31289266e792afba773973eddb2d93
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 46e4147b61d4d78ec30e047452720c422e7b1dc9
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562237"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371860"
 ---
 # <a name="style-inheritance-in-no-locxamarinforms"></a>スタイルの継承 Xamarin.Forms
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-styles-basicstyles)
 
 _スタイルを他のスタイルから継承して、重複を減らし、再利用できるようにすることができます。_
 
@@ -74,7 +74,7 @@ _スタイルを他のスタイルから継承して、重複を減らし、再�
 
 ### <a name="respecting-the-inheritance-chain"></a>継承チェーンを尊重する
 
-スタイルは、ビュー階層内の同じレベル、またはそれ以上のスタイルからしか継承できません。 これによって、次のことが起こります。
+スタイルは、ビュー階層内の同じレベル、またはそれ以上のスタイルからしか継承できません。 これは、次のことを意味します。
 
 - アプリケーションレベルのリソースは、他のアプリケーションレベルのリソースからのみ継承できます。
 - ページレベルリソースは、アプリケーションレベルのリソース、およびその他のページレベルリソースから継承できます。

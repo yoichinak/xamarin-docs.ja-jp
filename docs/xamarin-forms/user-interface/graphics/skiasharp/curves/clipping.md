@@ -10,24 +10,24 @@ ms.date: 06/16/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 604d2aa8368c85b852530f999601fffca8e104e6
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 79c32595053cc80ffae91b5434e18690ca2dce4a
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562926"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370716"
 ---
 # <a name="clipping-with-paths-and-regions"></a>パスおよび領域でのクリッピング
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _パスを使用して、特定の領域にグラフィックスをクリップし、領域を作成する_
 
-グラフィックのレンダリングを特定の領域に制限することが必要になる場合があります。 これを *クリッピング*と呼びます。 次のような特殊な効果にはクリッピングを使用できます。たとえば、キー穴に見られるサルのイメージです。
+グラフィックのレンダリングを特定の領域に制限することが必要になる場合があります。 これを *クリッピング* と呼びます。 次のような特殊な効果にはクリッピングを使用できます。たとえば、キー穴に見られるサルのイメージです。
 
 ![Keyhole を介したサル](clipping-images/clippingsample.png)
 
-*クリッピング領域*は、グラフィックスがレンダリングされる画面の領域です。 クリッピング領域の外に表示されるものはレンダリングされません。 クリッピング領域は通常、四角形またはオブジェクトによって定義され [`SKPath`](xref:SkiaSharp.SKPath) ますが、オブジェクトを使用してクリッピング領域を定義することもでき [`SKRegion`](xref:SkiaSharp.SKRegion) ます。 最初の2種類のオブジェクトは、パスから領域を作成できるため、関連したように見えます。 ただし、地域からパスを作成することはできません。内部では、パスは一連の線と曲線で構成され、一連の水平スキャン行によって領域が定義されます。
+*クリッピング領域* は、グラフィックスがレンダリングされる画面の領域です。 クリッピング領域の外に表示されるものはレンダリングされません。 クリッピング領域は通常、四角形またはオブジェクトによって定義され [`SKPath`](xref:SkiaSharp.SKPath) ますが、オブジェクトを使用してクリッピング領域を定義することもでき [`SKRegion`](xref:SkiaSharp.SKRegion) ます。 最初の2種類のオブジェクトは、パスから領域を作成できるため、関連したように見えます。 ただし、地域からパスを作成することはできません。内部では、パスは一連の線と曲線で構成され、一連の水平スキャン行によって領域が定義されます。
 
 上の画像は、サルの **穴** のページを通じて作成されています。 クラスは、  [`MonkeyThroughKeyholePage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/MonkeyThroughKeyholePage.cs) SVG データを使用してパスを定義し、コンストラクターを使用してプログラムリソースからビットマップを読み込みます。
 
@@ -288,7 +288,7 @@ public void ClipRegion(SKRegion region, SKClipOperation operation = SKClipOperat
 
 これらの2つの円を組み合わせることができるかどうか。 結果のイメージは3つのコンポーネントの組み合わせとして考えてみます。これらのコンポーネント自体は、、、およびの各操作で見られ `Difference` `Intersect` `ReverseDifference` ます。 組み合わせの合計数は、2 ~ 3 (8) になります。 不足している2つの領域は、元の領域 (これはまったくを呼び出していません `Op` ) と完全に空の領域です。
 
-最初にパスを作成し、次にそのパスから領域を作成してから、複数の領域を結合する必要があるため、領域をクリッピングに使用するのは困難です。 **領域の操作**ページの全体的な構造は**クリップ操作**によく似ていますが、 [`RegionOperationsPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RegionOperationsPage.cs) クラスは画面を6つの領域に分割し、このジョブのリージョンを使用するために必要な追加作業を示しています。
+最初にパスを作成し、次にそのパスから領域を作成してから、複数の領域を結合する必要があるため、領域をクリッピングに使用するのは困難です。 **領域の操作** ページの全体的な構造は **クリップ操作** によく似ていますが、 [`RegionOperationsPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/RegionOperationsPage.cs) クラスは画面を6つの領域に分割し、このジョブのリージョンを使用するために必要な追加作業を示しています。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -511,7 +511,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 これは、4リーフの clover のようには見えませんが、クリッピングなしでレンダリングするのが難しいイメージです。
 
-[![4つのリーフページのトリプルスクリーンショット](clipping-images//fourleafclover-small.png)](clipping-images/fourleafclover-large.png#lightbox)
+[![Four-Leaf Clover ページのトリプルスクリーンショット](clipping-images//fourleafclover-small.png)](clipping-images/fourleafclover-large.png#lightbox)
 
 ## <a name="related-links"></a>関連リンク
 

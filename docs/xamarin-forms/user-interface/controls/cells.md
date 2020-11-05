@@ -10,20 +10,20 @@ ms.date: 01/12/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: be5b2854c2f546e2194bd4dc95db77c9dcaf0760
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 01f625d9ecfb91bc36013b7f6d45fb3d275e8bee
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562809"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370833"
 ---
 # <a name="no-locxamarinforms-cells"></a>Xamarin.Forms セル
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/formsgallery)
 
 _Xamarin.Forms セルは、ListViews と TableViews に追加できます。_
 
-*セル*は、テーブル内の項目に使用される特殊な要素で、リスト内の各項目をどのように表示するかを記述します。 [`Cell`](xref:Xamarin.Forms.Cell)クラスはから派生 [`Element`](xref:Xamarin.Forms.Element) [`VisualElement`](xref:Xamarin.Forms.Element) します。このからも派生します。 セルはそれ自体がビジュアル要素ではありません。代わりに、ビジュアル要素を作成するためのテンプレートです。
+*セル* は、テーブル内の項目に使用される特殊な要素で、リスト内の各項目をどのように表示するかを記述します。 [`Cell`](xref:Xamarin.Forms.Cell)クラスはから派生 [`Element`](xref:Xamarin.Forms.Element) [`VisualElement`](xref:Xamarin.Forms.Element) します。このからも派生します。 セルはそれ自体がビジュアル要素ではありません。代わりに、ビジュアル要素を作成するためのテンプレートです。
 
 `Cell` は、およびコントロールでのみ使用され [`ListView`](xref:Xamarin.Forms.ListView) [`TableView`](xref:Xamarin.Forms.TableView) ます。 セルを使用およびカスタマイズする方法については、およびのドキュメントを参照してください [`ListView`](~/xamarin-forms/user-interface/listview/index.md) [`TableView`](~/xamarin-forms/user-interface/tableview.md) 。
 

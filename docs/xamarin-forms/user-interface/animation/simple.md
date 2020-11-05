@@ -10,16 +10,16 @@ ms.date: 11/05/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2336a4fbd92a7e9158d332de1ea2e2b018d144ce
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: db7101d5e50dc6ee7840023f6ec4efeb2c52150b
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556660"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370196"
 ---
 # <a name="simple-animations-in-no-locxamarinforms"></a>単純なアニメーション Xamarin.Forms
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-basic)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-animation-basic)
 
 _ViewExtensions クラスは、単純なアニメーションを構築するために使用できる拡張メソッドを提供します。この記事では、ViewExtensions クラスを使用してアニメーションを作成およびキャンセルする方法について説明します。_
 

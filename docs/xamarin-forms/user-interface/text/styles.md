@@ -10,23 +10,23 @@ ms.date: 05/22/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e2c6898439da5869d79bc500643ca3cfc52c2e3f
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: db32d4250bf5ba63761c59f67b64b59fa565e651
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557557"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371015"
 ---
 # <a name="no-locxamarinforms-text-styles"></a>Xamarin.Forms テキストスタイル
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 _テキストのスタイル設定 Xamarin.Forms_
 
 スタイルを使用して、ラベル、エントリ、およびエディターの外観を調整できます。 スタイルは一度定義することも、多くのビューで使用することもできますが、1つの型のビューでのみ使用できます。
 スタイルを指定し、 `Key` 特定のコントロールのプロパティを使用して選択的に適用でき `Style` ます。
 
-## <a name="built-in-styles"></a>組み込みスタイル
+## <a name="built-in-styles"></a>Built-In スタイル
 
 Xamarin.Forms には、一般的なシナリオのための組み込みスタイルがいくつか [組み込ま](xref:Xamarin.Forms.Device.Styles) れています。
 
@@ -126,7 +126,7 @@ C# では、組み込みのスタイルは次のものから選択され `Device
 label.Style = Device.Styles.TitleStyle;
 ```
 
-## <a name="accessibility"></a>ユーザー補助
+## <a name="accessibility"></a>アクセシビリティ
 
 組み込みスタイルは、ユーザー補助の設定を容易にするために用意されています。 組み込みのスタイルのいずれかを使用する場合、ユーザーがそれに応じてユーザー補助の設定を設定すると、フォントサイズが自動的に増加します。
 
