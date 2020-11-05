@@ -13,10 +13,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 0992f7db22d79e58db0306bc09329f2852ef9489
-ms.sourcegitcommit: 1550019cd1e858d4d13a4ae6dfb4a5947702f24b
+ms.sourcegitcommit: 145bd7550d19088c84949ecf5b1cc39002183234
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/28/2020
+ms.lasthandoff: 11/02/2020
 ms.locfileid: "92897521"
 ---
 # <a name="store-data-in-a-local-sqlitenet-database"></a>ローカルの SQLite.NET データベースにデータを格納する
@@ -418,7 +418,7 @@ ms.locfileid: "92897521"
 
     このコードでは `Database` プロパティが定義されています。これによって、新しい `NoteDatabase` インスタンスがシングルトンとして作成され、データベースのファイル名が `NoteDatabase` コンストラクターに引数として渡されます。 データベースをシングルトンとして公開することの利点は、アプリケーションが実行されている間、開いたままになる単一のデータベース接続が作成されることです。そのため、データベース操作が実行されるときにデータベース ファイルを毎回開いて閉じる労力を避けることができます。
 
-    **[ファイル]、[保存]** の順に選択し (または **& #8984; + S** キーを押し)、 **App.xaml.cs** への変更内容を保存してから、ファイルを閉じます。
+    **[ファイル]、[保存]** の順に選択し (または **&#8984; + S** キーを押し)、 **App.xaml.cs** への変更内容を保存してから、ファイルを閉じます。
 
     > [!WARNING]
     > この時点でアプリケーションをビルドしようとするとエラーが発生しますが、これは以降の手順で修正します。

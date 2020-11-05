@@ -9,12 +9,12 @@ metadata:
   author: conceptdev
   ms.author: crdun
   ms.date: 09/26/2019
-  ms.openlocfilehash: c478d4f7f93d7ddeeb307aa87f324127f98ec6f4
-  ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+  ms.openlocfilehash: 4ca300805c51c6394ed39fb96a7e178a62e72856
+  ms.sourcegitcommit: 836d54779190b1bef1b43bc0c2016c9b3034bfda
   ms.translationtype: HT
   ms.contentlocale: ja-JP
-  ms.lasthandoff: 09/29/2020
-  ms.locfileid: "91453234"
+  ms.lasthandoff: 11/03/2020
+  ms.locfileid: "93281196"
 highlightedContent:
   items:
   - title: セットアップとインストール
@@ -128,8 +128,8 @@ additionalContent:
       summary: アプリがどのように開始され、バックグラウンドに移行するかを理解します。
       url: ~/xamarin-forms/app-fundamentals/app-lifecycle.md
     - title: データの一覧を表示する
-      summary: ListView でデータをスクロールして選択します。
-      url: ~/xamarin-forms/user-interface/listview/index.md
+      summary: CollectionView を使用してデータをスクロールして選択します。
+      url: ~/xamarin-forms/user-interface/collectionview/index.md
     - title: XAML およびデータ バインディングを使用する
       summary: MVVM パターンを使用して UI にデータを表示します。
       url: ~/xamarin-forms/xaml/xaml-basics/index.md
@@ -148,20 +148,6 @@ additionalContent:
     - title: SkiaSharp のグラフィックスをレンダリングする
       summary: クロスプラットフォームの 2D ベクターグラフィックスをレンダリングします。
       url: ~/xamarin-forms/user-interface/graphics/skiasharp/index.md
-  - title: モバイル開発者ツール
-    items:
-    - title: iOS Simulator for Windows
-      summary: Windows 上で Visual Studio を使用して iOS Simulator を操作する方法について説明します。
-      url: ~/tools/ios-simulator/index.md
-    - title: プロファイラー
-      summary: パフォーマンスの問題を特定して修正することができます。
-      url: ~/tools/profiler/index.md
-    - title: .NET の埋め込み
-      summary: 既存の .NET コードを他のプログラミング言語から使用できるようにします。
-      url: ~/tools/dotnet-embedding/index.md
-    - title: MonoGame
-      summary: C# を使用して、デスクトップ、モバイル、およびコンソール ゲームを構築します。
-      url: ~/graphics-games/monogame/introduction/index.md
   - title: Xamarin プラットフォームの概要
     items:
     - title: Xamarin.Forms クロスプラットフォーム
