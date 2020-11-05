@@ -10,14 +10,17 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cc0528e7696130a772e93be67526ea9d6b10373f
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 78609a6e91a2783d869bafbd88679cfc9be00795
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86936527"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374161"
 ---
 # <a name="the-model-view-viewmodel-pattern"></a>モデルビュービューモデルパターン
+
+> [!NOTE]
+> この電子ブックは2017の spring で公開されており、その後、更新されていません。 本は貴重なものですが、一部のマテリアルは古くなっています。
 
 通常、開発者の経験では、 Xamarin.Forms XAML でユーザーインターフェイスを作成し、ユーザーインターフェイスで動作する分離コードを追加する必要があります。 アプリが変更され、サイズと範囲が拡大するにつれて、複雑なメンテナンスの問題が発生する可能性があります。 これらの問題には、ui コントロールとビジネスロジックとの密結合が含まれます。これにより、UI の変更にかかるコストが増加し、このようなコードを単体テストすることが困難になります。
 
@@ -29,7 +32,7 @@ MVVM パターンには、モデル、ビュー、ビューモデルという3�
 
 ![MVVM パターン](mvvm-images/mvvm.png)
 
-**図 2-1**: MVVM パターン
+**図 2-1** : MVVM パターン
 
 各コンポーネントの役割について理解することに加えて、相互にやり取りする方法を理解することも重要です。 大まかに言えば、ビューはビューモデルを "認識" し、ビューモデルではモデルを認識しますが、モデルはビューモデルを認識せず、ビューモデルはビューを認識しません。 したがって、ビューモデルはビューをモデルから分離し、ビューとは無関係にモデルを進化させることができます。
 
@@ -95,11 +98,11 @@ MVVM を効果的に使用するための鍵は、アプリケーションコー
 最も簡単な方法は、ビューが XAML で対応するビューモデルを宣言によってインスタンス化することです。 ビューが構築されると、対応するビューモデルオブジェクトも構築されます。 この方法を次のコード例に示します。
 
 ```xaml
-<ContentPage ... xmlns:local="clr-namespace:eShop">  
-    <ContentPage.BindingContext>  
-        <local:LoginViewModel />  
-    </ContentPage.BindingContext>  
-    ...  
+<ContentPage ... xmlns:local="clr-namespace:eShop">  
+    <ContentPage.BindingContext>  
+        <local:LoginViewModel />  
+    </ContentPage.BindingContext>  
+    ...  
 </ContentPage>
 ```
 
@@ -112,14 +115,14 @@ MVVM を効果的に使用するための鍵は、アプリケーションコー
 ビューでは、ビューモデルがプロパティに割り当てられるコードビハインドファイルにコードを含めることができ [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) ます。 これは、次のコード例に示すように、多くの場合、ビューのコンストラクターで実現されます。
 
 ```csharp
-public LoginView()  
+public LoginView()  
 {  
-    InitializeComponent();  
-    BindingContext = new LoginViewModel(navigationService);  
+    InitializeComponent();  
+    BindingContext = new LoginViewModel(navigationService);  
 }
 ```
 
-ビューの分離コード内でのビューモデルのプログラムによる構築と割り当てには、単純な利点があります。 ただし、この方法の主な欠点は、ビューが必要な依存関係を持つビューモデルを提供する必要があることです。 依存関係挿入コンテナーを使用すると、ビューモデルとビューモデルの間の疎結合を維持するのに役立ちます。 詳細については、「[依存関係の挿入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)」を参照してください。
+ビューの分離コード内でのビューモデルのプログラムによる構築と割り当てには、単純な利点があります。 ただし、この方法の主な欠点は、ビューが必要な依存関係を持つビューモデルを提供する必要があることです。 依存関係挿入コンテナーを使用すると、ビューモデルとビューモデルの間の疎結合を維持するのに役立ちます。 詳細については、「 [依存関係の挿入](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)」を参照してください。
 
 ### <a name="creating-a-view-defined-as-a-data-template"></a>データテンプレートとして定義されたビューを作成する
 
@@ -136,27 +139,27 @@ viewModelBase:ViewModelLocator.AutoWireViewModel="true"
 `AutoWireViewModel`プロパティは、false に初期化されるバインド可能なプロパティであり、その値が変更されると、 `OnAutoWireViewModelChanged` イベントハンドラーが呼び出されます。 このメソッドは、ビューのビューモデルを解決します。 これを実現する方法を次のコード例に示します。
 
 ```csharp
-private static void OnAutoWireViewModelChanged(BindableObject bindable, object oldValue, object newValue)  
+private static void OnAutoWireViewModelChanged(BindableObject bindable, object oldValue, object newValue)  
 {  
-    var view = bindable as Element;  
-    if (view == null)  
-    {  
-        return;  
-    }  
+    var view = bindable as Element;  
+    if (view == null)  
+    {  
+        return;  
+    }  
 
-    var viewType = view.GetType();  
-    var viewName = viewType.FullName.Replace(".Views.", ".ViewModels.");  
-    var viewAssemblyName = viewType.GetTypeInfo().Assembly.FullName;  
-    var viewModelName = string.Format(  
-        CultureInfo.InvariantCulture, "{0}Model, {1}", viewName, viewAssemblyName);  
+    var viewType = view.GetType();  
+    var viewName = viewType.FullName.Replace(".Views.", ".ViewModels.");  
+    var viewAssemblyName = viewType.GetTypeInfo().Assembly.FullName;  
+    var viewModelName = string.Format(  
+        CultureInfo.InvariantCulture, "{0}Model, {1}", viewName, viewAssemblyName);  
 
-    var viewModelType = Type.GetType(viewModelName);  
-    if (viewModelType == null)  
-    {  
-        return;  
-    }  
-    var viewModel = _container.Resolve(viewModelType);  
-    view.BindingContext = viewModel;  
+    var viewModelType = Type.GetType(viewModelName);  
+    if (viewModelType == null)  
+    {  
+        return;  
+    }  
+    var viewModel = _container.Resolve(viewModelType);  
+    view.BindingContext = viewModel;  
 }
 ```
 
@@ -167,7 +170,7 @@ private static void OnAutoWireViewModelChanged(BindableObject bindable, obj
 - ビューモデルはに含まれています。Viewmodel child 名前空間。
 - ビューモデル名は、ビュー名に対応し、"モデルビュー" で終了します。
 
-最後に、 `OnAutoWireViewModelChanged` メソッドは、 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) ビュー型のを、解決されたビューモデル型に設定します。 ビューモデルの種類の解決の詳細については、「[解決策](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#resolution)」を参照してください。
+最後に、 `OnAutoWireViewModelChanged` メソッドは、 [`BindingContext`](xref:Xamarin.Forms.BindableObject.BindingContext) ビュー型のを、解決されたビューモデル型に設定します。 ビューモデルの種類の解決の詳細については、「 [解決策](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md#resolution)」を参照してください。
 
 このアプローチには、ビューモデルのインスタンス化とビューへの接続を行う単一のクラスがアプリにあるという利点があります。
 
@@ -190,18 +193,18 @@ private static void OnAutoWireViewModelChanged(BindableObject bindable, obj
 EShopOnContainers モバイルアプリでは、クラスを使用して `ExtendedBindableObject` 変更通知を提供します。次のコード例を参照してください。
 
 ```csharp
-public abstract class ExtendedBindableObject : BindableObject  
+public abstract class ExtendedBindableObject : BindableObject  
 {  
-    public void RaisePropertyChanged<T>(Expression<Func<T>> property)  
-    {  
-        var name = GetMemberInfo(property).Name;  
-        OnPropertyChanged(name);  
-    }  
+    public void RaisePropertyChanged<T>(Expression<Func<T>> property)  
+    {  
+        var name = GetMemberInfo(property).Name;  
+        OnPropertyChanged(name);  
+    }  
 
-    private MemberInfo GetMemberInfo(Expression expression)  
-    {  
-        ...  
-    }  
+    private MemberInfo GetMemberInfo(Expression expression)  
+    {  
+        ...  
+    }  
 }
 ```
 
@@ -210,17 +213,17 @@ Xamarin. Form [`BindableObject`](xref:Xamarin.Forms.BindableObject) クラスは
 EShopOnContainers モバイルアプリの各ビューモデルクラスは、クラスから派生します。このクラスは、クラス `ViewModelBase` から派生 `ExtendedBindableObject` します。 したがって、各ビューモデルクラスは、クラスのメソッドを使用して `RaisePropertyChanged` `ExtendedBindableObject` プロパティ変更通知を提供します。 次のコード例は、ラムダ式を使用して、eShopOnContainers モバイルアプリがプロパティ変更通知を呼び出す方法を示しています。
 
 ```csharp
-public bool IsLogin  
+public bool IsLogin  
 {  
-    get  
-    {  
-        return _isLogin;  
-    }  
-    set  
-    {  
-        _isLogin = value;  
-        RaisePropertyChanged(() => IsLogin);  
-    }  
+    get  
+    {  
+        return _isLogin;  
+    }  
+    set  
+    {  
+        _isLogin = value;  
+        RaisePropertyChanged(() => IsLogin);  
+    }  
 }
 ```
 
@@ -230,7 +233,7 @@ public bool IsLogin
 
 Mobile apps では、通常、アクションは、ボタンクリックなどのユーザー操作に応答して呼び出されます。これは、分離コードファイルにイベントハンドラーを作成することによって実装できます。 ただし、MVVM パターンでは、アクションを実装する責任はビューモデルにあり、分離コードにコードを配置することは避けてください。
 
-コマンドは、UI 内のコントロールにバインドできるアクションを表す便利な方法を提供します。 アクションを実装するコードをカプセル化し、ビューのビジュアル表現から分離された状態を維持するために役立ちます。 Xamarin.Formsには、コマンドに宣言によって接続できるコントロールが含まれています。これらのコントロールは、ユーザーがコントロールと対話するときにコマンドを呼び出します。
+コマンドは、UI 内のコントロールにバインドできるアクションを表す便利な方法を提供します。 アクションを実装するコードをカプセル化し、ビューのビジュアル表現から分離された状態を維持するために役立ちます。 Xamarin.Forms には、コマンドに宣言によって接続できるコントロールが含まれています。これらのコントロールは、ユーザーがコントロールと対話するときにコマンドを呼び出します。
 
 ビヘイビアーを使用すると、コントロールを宣言によってコマンドに接続することもできます。 ただし、ビヘイビアーを使用して、コントロールによって生成されるイベントの範囲に関連付けられたアクションを呼び出すことができます。 そのため、動作は、コマンド対応コントロールと同じシナリオの多くに対応しながら、柔軟性と制御性を高めることができます。 また、ビヘイビアーを使用して、コマンドを操作するために特に設計されていないコントロールにコマンドオブジェクトやメソッドを関連付けることもできます。
 
@@ -243,7 +246,7 @@ Mobile apps では、通常、アクションは、ボタンクリックなど�
 次のコードは、 [`Command`](xref:Xamarin.Forms.Command) レジスタコマンドを表すインスタンスを、ビューモデルメソッドへのデリゲートを指定することによって構築する方法を示してい `Register` ます。
 
 ```csharp
-public ICommand RegisterCommand => new Command(Register);
+public ICommand RegisterCommand => new Command(Register);
 ```
 
 コマンドは、への参照を返すプロパティを使用してビューに公開され `ICommand` ます。 `Execute`オブジェクトでメソッドが呼び出されると [`Command`](xref:Xamarin.Forms.Command) 、そのメソッドは、コンストラクターで指定されたデリゲートを介して、ビューモデルのメソッドへの呼び出しを単純に転送し `Command` ます。
@@ -251,13 +254,13 @@ public ICommand RegisterCommand => new Command(Register);
 コマンド `async` のデリゲートを指定するときに、キーワードとキーワードを使用して、コマンドによって非同期メソッドを呼び出すことができ `await` `Execute` ます。 これは、コールバックがであり、待機する必要があることを示し `Task` ます。 たとえば、次のコードは、 [`Command`](xref:Xamarin.Forms.Command) ビューモデルメソッドへのデリゲートを指定することによって、サインインコマンドを表すインスタンスを作成する方法を示してい `SignInAsync` ます。
 
 ```csharp
-public ICommand SignInCommand => new Command(async () => await SignInAsync());
+public ICommand SignInCommand => new Command(async () => await SignInAsync());
 ```
 
 パラメーターは、クラスを使用して `Execute` `CanExecute` コマンドをインスタンス化することにより、アクションとアクションに渡すことができ [`Command<T>`](xref:Xamarin.Forms.Command) ます。 たとえば、次のコードは、メソッドが `Command<T>` 型の引数を必要とすることを示すために、インスタンスを使用する方法を示してい `NavigateAsync` `string` ます。
 
 ```csharp
-public ICommand NavigateCommand => new Command<string>(NavigateAsync);
+public ICommand NavigateCommand => new Command<string>(NavigateAsync);
 ```
 
 [`Command`](xref:Xamarin.Forms.Command)クラスとクラスの両方で [`Command<T>`](xref:Xamarin.Forms.Command) 、 `CanExecute` 各コンストラクターのメソッドへのデリゲートは省略可能です。 デリゲートが指定されていない場合、は `Command` `true` を返し `CanExecute` ます。 ただし、ビューモデルでは、 `CanExecute` オブジェクトに対してメソッドを呼び出すことによって、コマンドの状態の変更を示すことができ `ChangeCanExecute` `Command` ます。 これにより、 `CanExecuteChanged` イベントが発生します。 コマンドにバインドされている UI 内のコントロールは、データバインドコマンドの可用性を反映するように、有効な状態を更新します。
@@ -267,11 +270,11 @@ public ICommand NavigateCommand => new Command<string>(NavigateAsync);
 次のコード例では、インスタンスを使用して、内のをクラスのにバインドする方法を示し [`Grid`](xref:Xamarin.Forms.Grid) `LoginView` `RegisterCommand` `LoginViewModel` [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) ます。
 
 ```xaml
-<Grid Grid.Column="1" HorizontalOptions="Center">  
-    <Label Text="REGISTER" TextColor="Gray"/>  
-    <Grid.GestureRecognizers>  
-        <TapGestureRecognizer Command="{Binding RegisterCommand}" NumberOfTapsRequired="1" />  
-    </Grid.GestureRecognizers>  
+<Grid Grid.Column="1" HorizontalOptions="Center">  
+    <Label Text="REGISTER" TextColor="Gray"/>  
+    <Grid.GestureRecognizers>  
+        <TapGestureRecognizer Command="{Binding RegisterCommand}" NumberOfTapsRequired="1" />  
+    </Grid.GestureRecognizers>  
 </Grid>
 ```
 
@@ -281,7 +284,7 @@ public ICommand NavigateCommand => new Command<string>(NavigateAsync);
 
 ビヘイビアーを使用すると、機能を UI コントロールに追加できるようになります。 代わりに、その機能はビヘイビアー クラスで実装され、それがコントロール自体の一部であるかのようにコントロールにアタッチされます。 動作を使用すると、通常は分離コードとして記述する必要のあるコードを実装できます。これは、コントロールに簡潔にアタッチし、複数のビューやアプリで再利用するためにパッケージ化できるように、コントロールの API と直接対話するためです。 MVVM のコンテキストでは、動作は、コントロールをコマンドに接続するための便利な方法です。
 
-添付プロパティを介してコントロールにアタッチされる動作は、アタッチされる*動作*と呼ばれます。 その後、この動作によって、関連付けられている要素の公開された API を使用して、ビューのビジュアルツリー内のコントロールまたはその他のコントロールに機能を追加できます。 EShopOnContainers モバイルアプリには、アタッチされる動作であるクラスが含まれてい `LineColorBehavior` ます。 この動作の詳細については、「[検証エラーの表示](~/xamarin-forms/enterprise-application-patterns/validation.md#displaying-validation-errors)」を参照してください。
+添付プロパティを介してコントロールにアタッチされる動作は、アタッチされる *動作* と呼ばれます。 その後、この動作によって、関連付けられている要素の公開された API を使用して、ビューのビジュアルツリー内のコントロールまたはその他のコントロールに機能を追加できます。 EShopOnContainers モバイルアプリには、アタッチされる動作であるクラスが含まれてい `LineColorBehavior` ます。 この動作の詳細については、「 [検証エラーの表示](~/xamarin-forms/enterprise-application-patterns/validation.md#displaying-validation-errors)」を参照してください。
 
 Xamarin.Forms動作は、クラスまたはクラスから派生するクラスです [`Behavior`](xref:Xamarin.Forms.Behavior) 。ここで、 [`Behavior<T>`](xref:Xamarin.Forms.Behavior`1) `T` は動作を適用するコントロールの型です。 これらのクラスにはメソッドとメソッドが用意されており、これをオーバーライドして、 `OnAttachedTo` `OnDetachingFrom` 動作がコントロールにアタッチされ、コントロールからデタッチされるときに実行されるロジックを提供する必要があります。
 
@@ -292,44 +295,44 @@ EShopOnContainers モバイルアプリでは、クラスは `BindableBehavior<T
 EShopOnContainers モバイルアプリには、 `EventToCommandBehavior` イベントの発生に応じてコマンドを実行するクラスが含まれています。 このクラスは、動作 `BindableBehavior<T>` が使用されるときに、 `ICommand` プロパティによって指定されたをバインドして実行できるように、クラスから派生し `Command` ます。 次に示すのは、`EventToCommandBehavior` クラスのコード例です。
 
 ```csharp
-public class EventToCommandBehavior : BindableBehavior<View>  
+public class EventToCommandBehavior : BindableBehavior<View>  
 {  
-    ...  
-    protected override void OnAttachedTo(View visualElement)  
-    {  
-        base.OnAttachedTo(visualElement);  
+    ...  
+    protected override void OnAttachedTo(View visualElement)  
+    {  
+        base.OnAttachedTo(visualElement);  
 
-        var events = AssociatedObject.GetType().GetRuntimeEvents().ToArray();  
-        if (events.Any())  
-        {  
-            _eventInfo = events.FirstOrDefault(e => e.Name == EventName);  
-            if (_eventInfo == null)  
-                throw new ArgumentException(string.Format(  
-                        "EventToCommand: Can't find any event named '{0}' on attached type",   
-                        EventName));  
+        var events = AssociatedObject.GetType().GetRuntimeEvents().ToArray();  
+        if (events.Any())  
+        {  
+            _eventInfo = events.FirstOrDefault(e => e.Name == EventName);  
+            if (_eventInfo == null)  
+                throw new ArgumentException(string.Format(  
+                        "EventToCommand: Can't find any event named '{0}' on attached type",   
+                        EventName));  
 
-            AddEventHandler(_eventInfo, AssociatedObject, OnFired);  
-        }  
-    }  
+            AddEventHandler(_eventInfo, AssociatedObject, OnFired);  
+        }  
+    }  
 
-    protected override void OnDetachingFrom(View view)  
-    {  
-        if (_handler != null)  
-            _eventInfo.RemoveEventHandler(AssociatedObject, _handler);  
+    protected override void OnDetachingFrom(View view)  
+    {  
+        if (_handler != null)  
+            _eventInfo.RemoveEventHandler(AssociatedObject, _handler);  
 
-        base.OnDetachingFrom(view);  
-    }  
+        base.OnDetachingFrom(view);  
+    }  
 
-    private void AddEventHandler(  
-            EventInfo eventInfo, object item, Action<object, EventArgs> action)  
-    {  
-        ...  
-    }  
+    private void AddEventHandler(  
+            EventInfo eventInfo, object item, Action<object, EventArgs> action)  
+    {  
+        ...  
+    }  
 
-    private void OnFired(object sender, EventArgs eventArgs)  
-    {  
-        ...  
-    }  
+    private void OnFired(object sender, EventArgs eventArgs)  
+    {  
+        ...  
+    }  
 }
 ```
 
@@ -343,21 +346,21 @@ public class EventToCommandBehavior : BindableBehavior<View>
 
 ```xaml
 <ListView>  
-    <ListView.Behaviors>  
-        <behaviors:EventToCommandBehavior             
-            EventName="ItemTapped"  
-            Command="{Binding OrderDetailCommand}"  
-            EventArgsConverter="{StaticResource ItemTappedEventArgsConverter}" />  
-    </ListView.Behaviors>  
-    ...  
+    <ListView.Behaviors>  
+        <behaviors:EventToCommandBehavior             
+            EventName="ItemTapped"  
+            Command="{Binding OrderDetailCommand}"  
+            EventArgsConverter="{StaticResource ItemTappedEventArgsConverter}" />  
+    </ListView.Behaviors>  
+    ...  
 </ListView>
 ```
 
 実行時には、 `EventToCommandBehavior` との対話に応答し [`ListView`](xref:Xamarin.Forms.ListView) ます。 で項目が選択されると、 `ListView` [`ItemTapped`](xref:Xamarin.Forms.ListView.ItemTapped) イベントが発生します。これにより、でが実行され `OrderDetailCommand` `ProfileViewModel` ます。 既定では、イベントのイベント引数がコマンドに渡されます。 このデータは、プロパティで指定されたコンバーターによってソースとターゲットの間で渡されるときに変換されます。これにより、 `EventArgsConverter` からのが返され [`Item`](xref:Xamarin.Forms.ItemTappedEventArgs.Item) `ListView` [`ItemTappedEventArgs`](xref:Xamarin.Forms.ItemTappedEventArgs) ます。 そのため、を実行すると、選択したが、登録された `OrderDetailCommand` `Order` アクションにパラメーターとして渡されます。
 
-動作の詳細については、「[動作](~/xamarin-forms/app-fundamentals/behaviors/index.md)」を参照してください。
+動作の詳細については、「 [動作](~/xamarin-forms/app-fundamentals/behaviors/index.md)」を参照してください。
 
-## <a name="summary"></a>要約
+## <a name="summary"></a>まとめ
 
 モデルビュービューモデル (MVVM) パターンは、アプリケーションのビジネスロジックとプレゼンテーションロジックをユーザーインターフェイス (UI) から明確に分離するのに役立ちます。 アプリケーションロジックと UI を明確に分離することによって、さまざまな開発上の問題に対処し、アプリケーションを簡単にテスト、保守、および進化させることができます。 また、コードの再利用の機会を大幅に向上させることができ、開発者や UI デザイナーはアプリの各部分を開発する際により簡単に共同作業を行うことができます。
 

@@ -10,16 +10,16 @@ ms.date: 09/20/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b5c1310e300373fe75cbcd1464220acf989516ba
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 2aebd86b4b15dec1a79cb60057e0c04f2e196ac5
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555685"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93372900"
 ---
 # <a name="refreshview-pull-direction-on-windows"></a>Windows での RefreshView のプル方向
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 このユニバーサル Windows プラットフォームプラットフォーム固有であるため、 `RefreshView` データを表示しているスクロール可能なコントロールの向きに合わせてのプル方向を変更できます。 このメソッドは、バインド可能な `RefreshView.RefreshPullDirection` プロパティを列挙体の値に設定することにより、XAML で使用され `RefreshPullDirection` ます。
 

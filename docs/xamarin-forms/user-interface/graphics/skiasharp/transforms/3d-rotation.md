@@ -10,16 +10,16 @@ ms.date: 04/14/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9bb2720d60f62c0bac6ab30007e226c362d1c5cd
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: dfc7ec9b029cedf5584590e17565069bbf83ed2a
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563875"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373173"
 ---
 # <a name="3d-rotations-in-skiasharp"></a>SkiaSharp の3D 回転
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _非アフィン変換を使用して、3D 空間内の2D オブジェクトを回転します。_
 
@@ -227,7 +227,7 @@ Y 軸を中心に正の角度を付けて2D オブジェクトを回転させる
 
 を使用する場合は `SKMatrix44` 、さまざまな値を乗算することによって、すべての3d 回転操作とパースペクティブ演算を実行し `SKMatrix44` ます。 次に、クラスのプロパティを使用して、4×4行列から2次元の3×3行列を抽出でき [`Matrix`](xref:SkiaSharp.SKMatrix44.Matrix) `SKMatrix44` ます。 このプロパティは、なじみのある値を返し `SKMatrix` ます。
 
-**回転 3d**ページでは、3d 回転を試すことができます。 [**Rotation3DPage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml)ファイルは、X 軸、Y 軸、Z 軸の周りの回転を設定し、深さの値を設定する4つのスライダーをインスタンス化します。
+**回転 3d** ページでは、3d 回転を試すことができます。 [**Rotation3DPage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/Rotation3DPage.xaml)ファイルは、X 軸、Y 軸、Z 軸の周りの回転を設定し、深さの値を設定する4つのスライダーをインスタンス化します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -414,7 +414,7 @@ public partial class Rotation3DPage : ContentPage
 
 [![回転3D ページのトリプルスクリーンショット](3d-rotation-images/rotation3d-small.png)](3d-rotation-images/rotation3d-large.png#lightbox "回転3D ページのトリプルスクリーンショット")
 
-**アニメーションの回転 3d**では、を使用して、 `SKMatrix44` 3d 空間のテキスト文字列をアニメーション化することもできます。 `textPaint`フィールドとして設定されたオブジェクトは、テキストの境界を決定するためにコンストラクターで使用されます。
+**アニメーションの回転 3d** では、を使用して、 `SKMatrix44` 3d 空間のテキスト文字列をアニメーション化することもできます。 `textPaint`フィールドとして設定されたオブジェクトは、テキストの境界を決定するためにコンストラクターで使用されます。
 
 ```csharp
 public class AnimatedRotation3DPage : ContentPage

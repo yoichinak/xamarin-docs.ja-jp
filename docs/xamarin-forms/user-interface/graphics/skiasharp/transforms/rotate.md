@@ -10,16 +10,16 @@ ms.date: 03/23/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2a6e19d25cefb4b8fcd870a9b590f129b2d9d85b
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: eb0c8bd01c9cab8a4048c0ee3deacad7afd56899
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557882"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373893"
 ---
 # <a name="the-rotate-transform"></a>回転変換
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _SkiaSharp rotate 変換で可能な効果とアニメーションを調べる_
 
@@ -73,7 +73,7 @@ public void RotateDegrees (Single degrees, Single px, Single py)
 public void RotateRadians (Single radians, Single px, Single py)
 ```
 
-**中央回転**のページは**基本的な回転**と同じですが、展開されたのバージョンを使用して、 `RotateDegrees` 回転の中心が、テキストの配置に使用されるのと同じポイントに設定されている点が異なります。
+**中央回転** のページは **基本的な回転** と同じですが、展開されたのバージョンを使用して、 `RotateDegrees` 回転の中心が、テキストの配置に使用されるのと同じポイントに設定されている点が異なります。
 
 ```csharp
 using (SKPaint textPaint = new SKPaint
@@ -258,7 +258,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-`revolveDegrees`フィールドと `rotateDegrees` フィールドはアニメーション化されます。 このプログラムでは、クラスに基づくさまざまなアニメーション手法を使用 Xamarin.Forms [`Animation`](xref:Xamarin.Forms.Animation) します。 (このクラスについては、「 [*を使用 Xamarin.Forms した Mobile Apps の作成*」の22章](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf)で説明されてい `OnAppearing` ます)。オーバーライドは、コールバックメソッドを持つ2つのオブジェクトを作成し、 `Animation` それらのオブジェクトに対してアニメーションの `Commit` 継続時間を
+`revolveDegrees`フィールドと `rotateDegrees` フィールドはアニメーション化されます。 このプログラムでは、クラスに基づくさまざまなアニメーション手法を使用 Xamarin.Forms [`Animation`](xref:Xamarin.Forms.Animation) します。 (このクラスについては、「 [*を使用 Xamarin.Forms した Mobile Apps の作成* 」の22章](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf)で説明されてい `OnAppearing` ます)。オーバーライドは、コールバックメソッドを持つ2つのオブジェクトを作成し、 `Animation` それらのオブジェクトに対してアニメーションの `Commit` 継続時間を
 
 ```csharp
 protected override void OnAppearing()

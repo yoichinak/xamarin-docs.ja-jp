@@ -11,16 +11,16 @@ ms.date: 07/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 39a6dbcbd5e825c6630bfb60b61bf00a308fdc0e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 656a9dbec5f0520b4167c482b227ea863eb4c412
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562783"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373537"
 ---
 # <a name="styling-no-locxamarinforms-apps-using-cascading-style-sheets-css"></a>Xamarin.Formsカスケードスタイルシートを使用したアプリのスタイル設定 (CSS)
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-styles-monkeyappcss)
 
 _Xamarin.Forms カスケードスタイルシート (CSS) を使用したビジュアル要素のスタイル設定をサポートします。_
 
@@ -90,7 +90,7 @@ stacklayout>image {
 ソリューションにスタイルシートを追加するには、次の手順を実行します。
 
 1. 空の CSS ファイルを .NET Standard ライブラリプロジェクトに追加します。
-1. CSS ファイルのビルドアクションを **EmbeddedResource**に設定します。
+1. CSS ファイルのビルドアクションを **EmbeddedResource** に設定します。
 
 ### <a name="loading-a-style-sheet"></a>スタイルシートの読み込み
 
@@ -114,7 +114,7 @@ stacklayout>image {
 プロパティは、 [`StyleSheet.Source`](xref:Xamarin.Forms.Xaml.StyleSheetExtension.Source) 外側の XAML ファイルの位置からの相対 uri としてスタイルシートを指定します。または、uri がで始まる場合は、プロジェクトのルートからの相対 uri として指定し `/` ます。
 
 > [!WARNING]
-> ビルドアクションが  **EmbeddedResource**に設定されていない場合、CSS ファイルの読み込みに失敗します。
+> ビルドアクションが  **EmbeddedResource** に設定されていない場合、CSS ファイルの読み込みに失敗します。
 
 または、スタイルシートをに追加する前に、クラスを使用してスタイルシートを読み込んで解析することもできます。これを行うには、 [`StyleSheet`](xref:Xamarin.Forms.StyleSheets.StyleSheet) [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) セクションにインライン展開し `CDATA` ます。
 
@@ -328,7 +328,7 @@ stacklayout>image {
 ```
 
 > [!NOTE]
-> `element>element`セレクターでは、子要素が親の_直接_の子である必要があります。
+> `element>element`セレクターでは、子要素が親の _直接_ の子である必要があります。
 
 ## <a name="selector-reference"></a>セレクターリファレンス
 
@@ -355,15 +355,15 @@ stacklayout>image {
 現在、次のセレクターはサポートされていません。
 
 - `[attribute]`
-- `@media` および `@supports`
-- `:` および `::`
+- `@media` と `@supports`
+- `:` と `::`
 
 > [!NOTE]
 > 特異性、および特異性のオーバーライドはサポートされていません。
 
 ## <a name="property-reference"></a>プロパティ リファレンス
 
-では、次の CSS プロパティがサポートされてい Xamarin.Forms ます ([ **値** ] 列では、型は _斜体_、文字列リテラルは `gray` )。
+では、次の CSS プロパティがサポートされてい Xamarin.Forms ます ([ **値** ] 列では、型は _斜体_ 、文字列リテラルは `gray` )。
 
 |プロパティ|適用対象|値|例|
 |---|---|---|---|
@@ -395,11 +395,11 @@ stacklayout>image {
 |`margin-top`|`View`|_太さ_ \|`initial` |`margin-top: 2;`|
 |`margin-right`|`View`|_太さ_ \|`initial` |`margin-right: 1;`|
 |`margin-bottom`|`View`|_太さ_ \|`initial` |`margin-bottom: 6;`|
-|`max-lines`|`Label`|_int_ \|`initial`|`max-lines: 2;`|
+|`max-lines`|`Label`|_INT_ \| `initial`|`max-lines: 2;`|
 |`min-height`|`VisualElement`|_double_ \|`initial` |`min-height: 50;`|
 |`min-width`|`VisualElement`|_double_ \|`initial` |`min-width: 112;`|
 |`opacity`|`VisualElement`|_double_ \|`initial` |`opacity: .3;`|
-|`order`|`VisualElement`|_int_ \|`initial`|`order: -1;`|
+|`order`|`VisualElement`|_INT_ \| `initial`|`order: -1;`|
 |`padding`|`Button`, `ImageButton`, `Layout`, `Page`|_太さ_ \|`initial` |`padding: 6 12 12;`|
 |`padding-left`|`Button`, `ImageButton`, `Layout`, `Page`|_double_ \|`initial`|`padding-left: 3;`|
 |`padding-top`|`Button`, `ImageButton`, `Layout`, `Page`| _double_ \|`initial` |`padding-top: 4;`|
@@ -411,7 +411,7 @@ stacklayout>image {
 |`text-decoration`|`Label`, `Span`|`none` \| `underline` \| `strikethrough` \| `line-through` \| `initial`|`text-decoration: underline, line-through;`|
 |`text-transform`|`Button`,`Editor`, `Entry`, `Label`, `SearchBar`, `SearchHandler`|`none` \| `default` \| `uppercase` \| `lowercase` \| `initial` |`text-transform: uppercase;`|
 |`transform`|`VisualElement`| `none`, `rotate`, `rotateX`, `rotateY`, `scale`, `scaleX`, `scaleY`, `translate`, `translateX`, `translateY`, `initial` |`transform: rotate(180), scaleX(2.5);`|
-|`transform-origin`|`VisualElement`| _double_、 _double_ \|`initial` |`transform-origin: 7.5, 12.5;`|
+|`transform-origin`|`VisualElement`| _double_ 、 _double_ \|`initial` |`transform-origin: 7.5, 12.5;`|
 |`vertical-align`|`Label`|`left` \| `top` \| `right` \| `bottom` \| `start` \| `center` \| `middle` \| `end` \| `initial`|`vertical-align: bottom;`|
 |`visibility`|`VisualElement`|`true` \| `visible` \| `false` \| `hidden` \| `collapse` \| `initial`|`visibility: hidden;`|
 |`width`|`VisualElement`|_double_ \|`initial`|`min-width: 320;`|
@@ -431,14 +431,14 @@ stacklayout>image {
 
 ### <a name="no-locxamarinforms-specific-properties"></a>Xamarin.Forms 特定のプロパティ
 
-次の Xamarin.Forms 特定の CSS プロパティもサポートされています ([ **値** ] 列では、型は _斜体_ですが、文字列リテラルは `gray` )。
+次の Xamarin.Forms 特定の CSS プロパティもサポートされています ([ **値** ] 列では、型は _斜体_ ですが、文字列リテラルは `gray` )。
 
 |プロパティ|適用対象|値|例|
 |---|---|---|---|
 |`-xf-bar-background-color`|`NavigationPage`, `TabbedPage`|_色_ \|`initial` |`-xf-bar-background-color: teal;`|
 |`-xf-bar-text-color`|`NavigationPage`, `TabbedPage`|_色_ \|`initial` |`-xf-bar-text-color: gray`|
 |`-xf-horizontal-scroll-bar-visibility`|`ScrollView`| `default` \| `always` \| `never` \| `initial` |`-xf-horizontal-scroll-bar-visibility: never;`|
-|`-xf-max-length`|`Entry`, `Editor`, `SearchBar`|_int_ \|`initial` |`-xf-max-length: 20;`|
+|`-xf-max-length`|`Entry`, `Editor`, `SearchBar`|_INT_ \| `initial` |`-xf-max-length: 20;`|
 |`-xf-max-track-color`|`Slider`|_色_ \|`initial` |`-xf-max-track-color: red;`|
 |`-xf-min-track-color`|`Slider`|_色_ \|`initial` |`-xf-min-track-color: yellow;`|
 |`-xf-orientation`|`ScrollView`, `StackLayout`| `horizontal` \| `vertical` \| `both` \| `initial`. `both` は、でのみサポートされてい `ScrollView` ます。 |`-xf-orientation: horizontal;`|
@@ -452,7 +452,7 @@ stacklayout>image {
 
 ### <a name="no-locxamarinforms-shell-specific-properties"></a>Xamarin.Forms シェル固有のプロパティ
 
-次の Xamarin.Forms シェル固有の CSS プロパティもサポートされています ([ **値** ] 列では、型は _斜体_ですが、文字列リテラルは `gray` )。
+次の Xamarin.Forms シェル固有の CSS プロパティもサポートされています ([ **値** ] 列では、型は _斜体_ ですが、文字列リテラルは `gray` )。
 
 |プロパティ|適用対象|値|例|
 |---|---|---|---|

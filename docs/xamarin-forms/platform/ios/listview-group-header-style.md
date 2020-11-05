@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b8be4610a327fb9902d62efb061406bff16de484
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 8a856dd74bb319436dbe1c8506d34dfcdb268834
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557479"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374174"
 ---
 # <a name="listview-group-header-style-on-ios"></a>IOS 上の ListView グループヘッダーのスタイル
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 この iOS プラットフォーム固有の設定は、 [`ListView`](xref:Xamarin.Forms.ListView) スクロール中にヘッダーセルをフローティングにするかどうかを制御します。 このメソッドは、バインド可能な `ListView.GroupHeaderStyle` プロパティを列挙体の値に設定することにより、XAML で使用され `GroupHeaderStyle` ます。
 

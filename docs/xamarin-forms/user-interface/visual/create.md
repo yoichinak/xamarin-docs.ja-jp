@@ -10,16 +10,16 @@ ms.date: 03/12/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a8e8388a6a460b3a2958d3ab3b9a4c9c34ea1831
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 3cf29c550a6ef3e4f12bdc3a1525d33b53198220
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556465"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374395"
 ---
 # <a name="create-a-no-locxamarinforms-visual-renderer"></a>ビジュアルレンダラーを作成する Xamarin.Forms
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
 
 Xamarin.Forms ビジュアルを使用すると、ビューをサブクラス化しなくても、レンダラーを作成し、オブジェクトに対して選択的に適用でき [`VisualElement`](xref:Xamarin.Forms.VisualElement) Xamarin.Forms ます。 `IVisual`の一部として型を指定するレンダラーは、 `ExportRendererAttribute` 既定のレンダラーではなくビューでの表示に使用されます。 レンダラーの選択時に、 `Visual` ビューのプロパティが検査され、レンダラーの選択プロセスに含まれます。
 

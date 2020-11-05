@@ -10,16 +10,16 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fa0bf466886309978743f4225b72520eb340fd1a
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 0548b706fc59021b63e0edfcf5c72eb00645f7a1
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563810"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373446"
 ---
 # <a name="button-padding-and-shadows-on-android"></a>Android でのボタンの余白と影
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 この Android プラットフォーム固有 Xamarin.Forms の設定では、ボタンが android ボタンの既定の埋め込み値とシャドウ値を使用するかどうかを制御します。 [`Button.UseDefaultPadding`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.UseDefaultPaddingProperty)プロパティと添付プロパティを値に設定することにより、XAML で使用 [`Button.UseDefaultShadow`](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.Button.UseDefaultShadowProperty) され `boolean` ます。
 

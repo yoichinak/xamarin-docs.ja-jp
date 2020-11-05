@@ -10,16 +10,16 @@ ms.date: 01/15/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f8b98d103021864aeb589787224f90bdaed17146
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 8668ef01e7fac02243934f145eb2e3f4ff4a6a8a
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563784"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373212"
 ---
 # <a name="datepicker-item-selection-on-ios"></a>IOS での DatePicker 項目の選択
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 この iOS プラットフォーム固有のコントロールでは、で項目の選択が発生したときに、 [`DatePicker`](xref:Xamarin.Forms.DatePicker) ユーザーがコントロールの項目を参照するときに項目の選択を行うように指定できます。または、[ **完了** ] ボタンをクリックしたときにのみ、項目の選択が行われます。 これは、 `DatePicker.UpdateMode` 添付プロパティを列挙体の値に設定することによって XAML で使用され `UpdateMode` ます。
 
@@ -66,7 +66,7 @@ switch (datePicker.On<iOS>().UpdateMode())
 
 結果として、指定された `UpdateMode` がに適用され [`DatePicker`](xref:Xamarin.Forms.DatePicker) ます。これは、項目の選択が行われるタイミングを制御します。
 
-[![DatePicker 更新モードのスクリーンショット](datepicker-selection-images/datepicker-updatemode.png "DatePicker UpdateMode プラットフォーム固有")](datepicker-selection-images/datepicker-updatemode-large.png#lightbox "DatePicker UpdateMode プラットフォーム固有")
+[![DatePicker 更新モードのスクリーンショット](datepicker-selection-images/datepicker-updatemode.png "DatePicker UpdateMode Platform-Specific")](datepicker-selection-images/datepicker-updatemode-large.png#lightbox "DatePicker UpdateMode Platform-Specific")
 
 ## <a name="related-links"></a>関連リンク
 

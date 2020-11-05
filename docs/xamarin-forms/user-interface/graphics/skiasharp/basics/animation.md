@@ -10,16 +10,16 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3052220b914b09f18490846bbd2558bbf07e4d3a
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 92631f66f729e2d1519bf577accb6f1ce9c1e1b5
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562263"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373589"
 ---
 # <a name="basic-animation-in-skiasharp"></a>SkiaSharp の基本的なアニメーション
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _SkiaSharp グラフィックスをアニメーション化する方法を見つける_
 
@@ -27,7 +27,7 @@ _SkiaSharp グラフィックスをアニメーション化する方法を見つ
 
 ![中心から拡張された複数の同心円の円](animation-images/animationexample.png)
 
-[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラムの2つの軸をアニメーション化して、その楕円の2つの軸をアニメーション**化します**。これにより、この pulsation の速度を制御することもできます。 [**PulsatingEllipsePage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml)ファイルは、 Xamarin.Forms `Slider` `Label` スライダーの現在の値を表示するためにとをインスタンス化します。 これは、を `SKCanvasView` 他のビューと統合する一般的な方法です Xamarin.Forms 。
+[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラムの2つの軸をアニメーション化して、その楕円の2つの軸をアニメーション **化します** 。これにより、この pulsation の速度を制御することもできます。 [**PulsatingEllipsePage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml)ファイルは、 Xamarin.Forms `Slider` `Label` スライダーの現在の値を表示するためにとをインスタンス化します。 これは、を `SKCanvasView` 他のビューと統合する一般的な方法です Xamarin.Forms 。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -109,7 +109,7 @@ async Task AnimationLoop()
 
 ```
 
-`while`ループは、からサイクル時間を取得することによって開始され `Slider` ます。 これは、たとえば5のように、秒単位の時間です。 2番目のステートメントは、 `t` *time*の値を計算します。 が `cycleTime` 5 の場合は、 `t` 5 秒ごとに0から1に増加します。 2番目のステートメントの関数の引数は、 `Math.Sin` 0 ~ 2 πの範囲で5秒ごとになります。 関数は、 `Math.Sin` 0 ~ 1 の範囲の値を0に戻し、 &ndash; 5 秒ごとに1と0に戻りますが、値が1または-1 のいずれかに近づくと、値がより遅く変化します。 値が常に正の値になるように値1が追加され、2で除算されているため、値は1/2 から1、1/2 から0、1/2 になりますが、値が 1 ~ 0 の場合は遅くなります。 これはフィールドに格納され、は `scale` `SKCanvasView` 無効になります。
+`while`ループは、からサイクル時間を取得することによって開始され `Slider` ます。 これは、たとえば5のように、秒単位の時間です。 2番目のステートメントは、 `t` *time* の値を計算します。 が `cycleTime` 5 の場合は、 `t` 5 秒ごとに0から1に増加します。 2番目のステートメントの関数の引数は、 `Math.Sin` 0 ~ 2 πの範囲で5秒ごとになります。 関数は、 `Math.Sin` 0 ~ 1 の範囲の値を0に戻し、 &ndash; 5 秒ごとに1と0に戻りますが、値が1または-1 のいずれかに近づくと、値がより遅く変化します。 値が常に正の値になるように値1が追加され、2で除算されているため、値は1/2 から1、1/2 から0、1/2 になりますが、値が 1 ~ 0 の場合は遅くなります。 これはフィールドに格納され、は `scale` `SKCanvasView` 無効になります。
 
 `PaintSurface`このメソッドは、この値を使用して、 `scale` 楕円の2つの軸を計算します。
 

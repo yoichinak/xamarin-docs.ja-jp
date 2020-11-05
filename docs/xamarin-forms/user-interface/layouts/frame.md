@@ -10,16 +10,16 @@ ms.date: 08/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8a14390afc04c1a0b2ccb5199350b69a9645a794
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: ba5fd2e8488f1f28f6bdc02b85c8e41fa212be32
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563550"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373745"
 ---
 # <a name="no-locxamarinforms-frame"></a>Xamarin.Forms フレーム
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-frame/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-frame/)
 
 クラスは、 Xamarin.Forms [`Frame`](xref:Xamarin.Forms.Frame) 色、影、およびその他のオプションを使用して構成できる境界線を持つビューをラップするために使用されるレイアウトです。 フレームは、通常、コントロールの周囲に境界線を作成するために使用されますが、より複雑な UI を作成するために使用できます。 詳細については、「 [高度なフレームの使用](#advanced-frame-usage)」を参照してください。
 
@@ -189,7 +189,7 @@ Frame circleImageFrame = new Frame
 };
 ```
 
-**outdoors.jpg**イメージは、各プラットフォームプロジェクトに追加する必要があります。また、プラットフォームによってどのように実現されるかが異なります。 詳細については、「 [」の Xamarin.Forms 「画像](~/xamarin-forms/user-interface/images.md)」を参照してください。
+**outdoors.jpg** イメージは、各プラットフォームプロジェクトに追加する必要があります。また、プラットフォームによってどのように実現されるかが異なります。 詳細については、「 [」の Xamarin.Forms 「画像](~/xamarin-forms/user-interface/images.md)」を参照してください。
 
 > [!NOTE]
 > 角を丸くすると、プラットフォームによって動作が若干異なります。 `Image`オブジェクトのは、 `Margin` イメージの幅と親フレームの幅の差の半分である必要があります。また、オブジェクト内でイメージを均等に中央揃えにするには、負の値にする必要があり `Frame` ます。 ただし、要求された幅と高さは保証されないため、 `Margin` 、、 `HeightRequest` およびの各プロパティは、イメージの `WidthRequest` サイズやその他のレイアウトの選択肢に基づいて変更する必要があります。

@@ -10,16 +10,16 @@ ms.date: 07/27/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6d4c9be2166881824e798e9cb801a5720ab55178
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 58210aaaa7c017c50ba3e2aee3e8402c1b76be16
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557857"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373927"
 ---
 # <a name="dependency-resolution-in-no-locxamarinforms"></a>Xamarin.Forms での依存関係の解決
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo)
 
 _この記事では、依存関係の解決方法をに挿入する方法について説明し Xamarin.Forms ます。これにより、アプリケーションの依存関係の挿入コンテナーが、カスタムレンダラー、効果、および DependencyService 実装の作成と有効期間を制御できるようになります。この記事のコード例は、「 [コンテナーを使用した依存関係の解決](/samples/xamarin/xamarin-forms-samples/advanced-dependencyresolution-dicontainerdemo) 」のサンプルから抜粋したものです。_
 

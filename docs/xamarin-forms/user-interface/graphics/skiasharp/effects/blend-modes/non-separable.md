@@ -10,16 +10,16 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a77ebb07a09c1bbd2df482c81040f271cdf8f56e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: ea590c0390ab045e5cf8b526aee66c2408d1b784
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556348"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374668"
 ---
 # <a name="the-non-separable-blend-modes"></a>分離不可能な blend モード
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 この記事で説明したように、分離可能な blend モードでは、赤、緑、および青のチャネルに対して個別に [**操作を実行**](separable.md)します。 分離不可能な blend モードには対応していません。 色の色合い、鮮やかさ、および輝度のレベルに基づいて操作することにより、分離不可能な blend モードで色を変更することができます。
 
@@ -29,7 +29,7 @@ ms.locfileid: "91556348"
 
 分離不可能な blend モードについて理解するためには、色合いと光源の輝度モデルで、変換先とソースのピクセルを色として扱う必要があります。 (明度は輝度とも呼ばれます)。
 
-HSL カラーモデルは、との統合に[**関する Xamarin.Forms **](../../basics/integration.md)記事で説明されています。また、この記事のサンプルプログラムでは、hsl 色を使用した実験を行うことができます。 `SKColor`静的な方法では、色合い、鮮やかさ、および明るさの値を使用して値を作成でき [`SKColor.FromHsl`](xref:SkiaSharp.SKColor.FromHsl*) ます。
+HSL カラーモデルは、との統合に [**関する Xamarin.Forms**](../../basics/integration.md)記事で説明されています。また、この記事のサンプルプログラムでは、hsl 色を使用した実験を行うことができます。 `SKColor`静的な方法では、色合い、鮮やかさ、および明るさの値を使用して値を作成でき [`SKColor.FromHsl`](xref:SkiaSharp.SKColor.FromHsl*) ます。
 
 色合いは、色の主要な波長を表します。 色合いの値は、0 ~ 360 の範囲で、加法と減法を循環しています。赤は0、黄色は60、緑は120、シアンは180、blue は240、マゼンタは300、そのサイクルは360で赤に戻ります。
 
@@ -205,23 +205,23 @@ Blend モードでは、 `SKBlendModes.Color` 変換先の輝度が保持され�
 
 [![分離不可能な Blend モード-輝度](non-separable-images/NonSeparableBlendModes-Luminosity.png "分離不可能な Blend モード-輝度")](non-separable-images/NonSeparableBlendModes-Luminosity-Large.png#lightbox)
 
-理論的には、画像の明るさを増減すると、明るくしたり暗くしたりすることができます。 興味深いことに、 [Skia **Skblendmode リファレンス**の輝度の例](https://skia.org/user/api/SkBlendMode_Reference#Luminosity)は非常に似ています。
+理論的には、画像の明るさを増減すると、明るくしたり暗くしたりすることができます。 興味深いことに、 [Skia **Skblendmode リファレンス** の輝度の例](https://skia.org/user/api/SkBlendMode_Reference#Luminosity)は非常に似ています。
 
 通常は、変換先イメージ全体に適用される単一の色で構成されるソースで、分離不可能な blend モードの1つを使用することはできません。 効果は非常に優れています。 イメージの1つの部分に効果を制限する必要があります。 この場合、ソースには transparancy が組み込まれているかもしれませんが、ソースは小さいグラフィックに制限されます。
 
 ## <a name="a-matte-for-a-separable-mode"></a>分離可能モードのマット
 
-[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルのリソースとして含まれているビットマップの1つを次に示します。 ファイル名は **Banana.jpg**:
+[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルのリソースとして含まれているビットマップの1つを次に示します。 ファイル名は **Banana.jpg** :
 
 ![バナナサル](non-separable-images/Banana.jpg "バナナサル")
 
-バナナだけを含むマットを作成することができます。 これは、 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) サンプルのリソースでもあります。 ファイル名は **BananaMatte.png**:
+バナナだけを含むマットを作成することができます。 これは、 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos) サンプルのリソースでもあります。 ファイル名は **BananaMatte.png** :
 
 ![バナナマット](non-separable-images/BananaMatte.png "バナナマット")
 
 黒のバナナ図形とは別に、ビットマップの残りの部分は透明になります。
 
-**Blue バナナ**ページでは、そのマットを使用して、サルが保持しているバナナの色合いと鮮やかさを変更しますが、イメージ内の他は何も変更しません。 
+**Blue バナナ** ページでは、そのマットを使用して、サルが保持しているバナナの色合いと鮮やかさを変更しますが、イメージ内の他は何も変更しません。 
 
 次の `BlueBananaPage` クラスでは、 **Banana.jpg** ビットマップがフィールドとして読み込まれます。 コンストラクターは、オブジェクトとして **BananaMatte.png** ビットマップを読み込み `matteBitmap` ますが、コンストラクター以外のオブジェクトは保持しません。 代わりに、という名前の3番目のビットマップ `blueBananaBitmap` が作成されます。 はに `matteBitmap` 描画され、その後には `blueBananaBitmap` blue に設定され、が `SKPaint` `Color` に設定され `BlendMode` `SKBlendMode.SrcIn` ます。 は `blueBananaBitmap` ほとんど透明なままですが、バナナの完全に青い青い画像があります。
 

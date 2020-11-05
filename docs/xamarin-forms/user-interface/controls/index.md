@@ -10,29 +10,29 @@ ms.date: 08/08/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 60c58ee17f68a12e3e51170f143adc9dc204e275
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 90d97e690c4d1fcdb22f17bbc856f9f9b2d0900c
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562770"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374655"
 ---
 # <a name="controls-reference"></a>コントロールのリファレンス
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/formsgallery/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/formsgallery/)
 
 アプリケーションのユーザーインターフェイス Xamarin.Forms は、各ターゲットプラットフォームのネイティブコントロールにマップされるオブジェクトで構成されます。 これにより、iOS、Android、およびユニバーサル Windows プラットフォーム用のプラットフォーム固有のアプリケーションで、 Xamarin.Forms [.NET Standard ライブラリ](~/cross-platform/app-fundamentals/net-standard.md)に含まれるコードを使用できるようになります。
 
 アプリケーションのユーザーインターフェイスを作成するために使用される4つの主要なコントロールグループは次のとおりです Xamarin.Forms 。
 
-- [**Pages**](pages.md)
+- [**ページ**](pages.md)
 - [**レイアウト**](layouts.md)
-- [**Views**](views.md)
+- [**表示モード**](views.md)
 - [**セル**](cells.md)
 
 Xamarin.Formsページは通常、画面全体を占めます。 このページには通常、ビューやその他のレイアウトを含むレイアウトが含まれています。 セルは、およびとの接続に使用される特殊なコンポーネントです [`TableView`](xref:Xamarin.Forms.TableView) [`ListView`](xref:Xamarin.Forms.ListView) 。 でユーザーインターフェイスを構築するために通常使用される型の階層を示すクラス図は、[ Xamarin.Forms [ Xamarin.Forms コントロールクラスの階層構造](~/xamarin-forms/internals/class-hierarchy.md)で見つかります。
 
-[**ページ**](pages.md)、[**レイアウト**](layouts.md)、[**ビュー**](views.md)、および[**セル**](cells.md)に関する4つの記事では、各種類のコントロールについて、API ドキュメントへのリンク、使用方法を説明する記事 (存在する場合)、および1つ以上のサンプルプログラム (存在する場合) が記述されています。 また、各種類のコントロールには、iOS および Android デバイスで実行されている [**フォームギャラリー**](/samples/xamarin/xamarin-forms-samples/formsgallery) サンプルのページを示すスクリーンショットも付属しています。 各スクリーンショットの下には、C# ページのソースコード、同等の XAML ページ、XAML ページの c# 分離コードファイルへのリンクがあります。
+[**ページ**](pages.md)、 [**レイアウト**](layouts.md)、 [**ビュー**](views.md)、および [**セル**](cells.md)に関する4つの記事では、各種類のコントロールについて、API ドキュメントへのリンク、使用方法を説明する記事 (存在する場合)、および1つ以上のサンプルプログラム (存在する場合) が記述されています。 また、各種類のコントロールには、iOS および Android デバイスで実行されている [**フォームギャラリー**](/samples/xamarin/xamarin-forms-samples/formsgallery) サンプルのページを示すスクリーンショットも付属しています。 各スクリーンショットの下には、C# ページのソースコード、同等の XAML ページ、XAML ページの c# 分離コードファイルへのリンクがあります。
 
 > [!NOTE]
 > ページ、レイアウト、およびビューは、クラスから派生し `VisualElement` ます。 クラスには、 `VisualElement` クラスの派生に役立つさまざまなプロパティ、メソッド、およびイベントが用意されています。 詳細については、「 [Visualelement のプロパティ」、「メソッド」、および「イベント](common-properties.md)」を参照してください。

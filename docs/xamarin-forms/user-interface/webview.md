@@ -10,22 +10,22 @@ ms.date: 05/06/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d535956e03ac02e2cf0c5d7528ee8e363a2a1e55
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 9b22b46cb5452e558328c383ed97e66a60cfc166
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561652"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374135"
 ---
 # <a name="no-locxamarinforms-webview"></a>Xamarin.Forms WebView
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithwebview)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/workingwithwebview)
 
 [`WebView`](xref:Xamarin.Forms.WebView) は、アプリで web および HTML コンテンツを表示するためのビューです。
 
 ![アプリブラウザーで](webview-images/in-app-browser.png)
 
-## <a name="content"></a>コンテンツ
+## <a name="content"></a>Content
 
 `WebView` では、次の種類のコンテンツをサポートしています。
 
@@ -175,7 +175,7 @@ source.BaseUrl = DependencyService.Get<IBaseUrl>().Get();
 
 #### <a name="ios"></a>iOS
 
-IOS では、次に示すように、web コンテンツは、build action *BundleResource*を使用してプロジェクトのルートディレクトリまたは**リソース**ディレクトリに配置されている必要があります。
+IOS では、次に示すように、web コンテンツは、build action *BundleResource* を使用してプロジェクトのルートディレクトリまたは **リソース** ディレクトリに配置されている必要があります。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -245,7 +245,7 @@ using (var streamReader = new StreamReader (assetManager.Open ("local.html")))
 
 #### <a name="universal-windows-platform"></a>ユニバーサル Windows プラットフォーム
 
-ユニバーサル Windows プラットフォーム (UWP) プロジェクトで、[ビルドアクション] を [ *コンテンツ*] に設定して、HTML、CSS、およびイメージをプロジェクトルートに配置します。
+ユニバーサル Windows プラットフォーム (UWP) プロジェクトで、[ビルドアクション] を [ *コンテンツ* ] に設定して、HTML、CSS、およびイメージをプロジェクトルートに配置します。
 
 は、次のよう `BaseUrl` に設定する必要があり `"ms-appx-web:///"` ます。
 
@@ -263,7 +263,7 @@ namespace WorkingWithWebview.UWP
 }
 ```
 
-## <a name="navigation"></a>ナビゲーション
+## <a name="navigation"></a>移動
 
 WebView では、使用できるようにするいくつかのメソッドとプロパティによるナビゲーションがサポートされています。
 
@@ -333,7 +333,7 @@ public partial class InAppBrowserXaml : ContentPage
 
 ![WebView ナビゲーションボタン](webview-images/in-app-browser.png)
 
-## <a name="events"></a>events
+## <a name="events"></a>イベント
 
 WebView は、状態の変化に対応するために次のイベントを発生させます。
 
@@ -430,7 +430,7 @@ webView.Reload();
 - **Android** &ndash;`INTERNET`ネットワークのコンテンツを表示する場合にのみ必要です。 ローカルコンテンツには特別なアクセス許可は必要ありません。
 - **iOS** &ndash; 特別なアクセス許可は必要ありません。
 
-## <a name="layout"></a>レイアウト
+## <a name="layout"></a>Layout
 
 他のほとんどのビューとは異なり Xamarin.Forms 、で `WebView` `HeightRequest` は、 `WidthRequest` Stacklayout または RelativeLayout に含まれるときにとが指定されている必要があります。 これらのプロパティを指定しなかった場合、は `WebView` 表示されません。
 
@@ -557,9 +557,9 @@ webView.Source = new UrlWebViewSource { Url = uri.ToString() };
 
 これを行うための前提条件は次のとおりです。
 
-- ** Xamarin.Forms 4.5 以上**。 Xamarin.Forms アプリで素材ビジュアルを使用する場合は、4.6 以上が必要です。
-- **13.10.0.17 以上**。 [Visual Studio で](~/cross-platform/troubleshooting/questions/version-logs.md#version-information)Xamarin iOS のバージョンを確認します。 このバージョンの Xamarin. iOS は Visual Studio for Mac dbms-guide-8.4.1 と Visual Studio 16.4.3 に含まれています。
-- **への参照 `UIWebView` を削除**します。 コードには、またはを使用するクラスへの参照を含めることはできません `UIWebView` `UIWebView` 。
+- **Xamarin.Forms 4.5 以上** 。 Xamarin.Forms アプリで素材ビジュアルを使用する場合は、4.6 以上が必要です。
+- **13.10.0.17 以上** 。 [Visual Studio で](~/cross-platform/troubleshooting/questions/version-logs.md#version-information)Xamarin iOS のバージョンを確認します。 このバージョンの Xamarin. iOS は Visual Studio for Mac dbms-guide-8.4.1 と Visual Studio 16.4.3 に含まれています。
+- **への参照 `UIWebView` を削除** します。 コードには、またはを使用するクラスへの参照を含めることはできません `UIWebView` `UIWebView` 。
 
 参照の検出と削除の詳細について `UIWebView` は、「 [uiwebview の廃止](~/ios/user-interface/controls/webview.md#uiwebview-deprecation)」を参照してください。
 
@@ -569,9 +569,9 @@ webView.Source = new UrlWebViewSource { Url = uri.ToString() };
 
 リンカーで参照を削除するには、次の手順に従い `UIWebView` ます。
 
-1. **IOS プロジェクトのプロパティ** &ndash; を開くIOS プロジェクトを右クリックし、[ **プロパティ**] を選択します。
+1. **IOS プロジェクトのプロパティ** &ndash; を開くIOS プロジェクトを右クリックし、[ **プロパティ** ] を選択します。
 1. **IOS のビルドセクション** &ndash; に移動します。[ **IOS ビルド** ] セクションを選択します。
-1. **追加の mtouch 引数** &ndash; を更新する追加の **mtouch 引数** で、このフラグ `--optimize=experimental-xforms-product-type` を追加します (既に存在している可能性がある値に加えて)。 注: このフラグは、SDK に対して**のみ**設定される**リンカーの動作**、またはすべてを**リンク**します。 何らかの理由で、リンカーの動作を All に設定したときにエラーが発生した場合は、おそらく、アプリケーションコードまたはリンカーセーフではないサードパーティ製のライブラリ内で問題が発生している可能性があります。 リンカーの詳細については、「 [Xamarin IOS アプリのリンク](~/ios/deploy-test/linker.md)」を参照してください。
+1. **追加の mtouch 引数** &ndash; を更新する追加の **mtouch 引数** で、このフラグ `--optimize=experimental-xforms-product-type` を追加します (既に存在している可能性がある値に加えて)。 注: このフラグは、SDK に対して **のみ** 設定される **リンカーの動作** 、またはすべてを **リンク** します。 何らかの理由で、リンカーの動作を All に設定したときにエラーが発生した場合は、おそらく、アプリケーションコードまたはリンカーセーフではないサードパーティ製のライブラリ内で問題が発生している可能性があります。 リンカーの詳細については、「 [Xamarin IOS アプリのリンク](~/ios/deploy-test/linker.md)」を参照してください。
 1. **すべてのビルド構成** &ndash; を更新するウィンドウの上部にある [ **構成** ] と [ **プラットフォーム** ] の一覧を使用して、すべてのビルド構成を更新します。 更新する最も重要な構成は、 **リリース/iPhone** の構成です。通常、これは、App Store の送信用にビルドを作成するために使用されるためです。
 
 このスクリーンショットでは、新しいフラグが設定されたウィンドウが表示されます。
@@ -582,9 +582,9 @@ webView.Source = new UrlWebViewSource { Url = uri.ToString() };
 
 リンカーで参照を削除するには、次の手順に従い `UIWebView` ます。
 
-1. **IOS プロジェクトオプション** &ndash; を開くIOS プロジェクトを右クリックし、[ **オプション**] を選択します。
+1. **IOS プロジェクトオプション** &ndash; を開くIOS プロジェクトを右クリックし、[ **オプション** ] を選択します。
 1. **IOS のビルドセクション** &ndash; に移動します。[ **IOS ビルド** ] セクションを選択します。
-1. **_mtouch_ **追加の Mtouch 引数の追加の mtouch 引数を更新し &ndash; ます。このフラグ** _mtouch_ ** `--optimize=experimental-xforms-product-type` は、既に存在している可能性がある値に加えて追加します。 注: このフラグは、SDK に対して**のみ**設定される**リンカーの動作**、またはすべてを**リンク**します。 何らかの理由で、リンカーの動作を All に設定したときにエラーが発生した場合は、おそらく、アプリケーションコードまたはリンカーセーフではないサードパーティ製のライブラリ内で問題が発生している可能性があります。 リンカーの詳細については、「 [Xamarin IOS アプリのリンク](~/ios/deploy-test/linker.md)」を参照してください。
+1. **_mtouch_** 追加の Mtouch 引数の追加の mtouch 引数を更新し &ndash; ます。このフラグ **_mtouch_** `--optimize=experimental-xforms-product-type` は、既に存在している可能性がある値に加えて追加します。 注: このフラグは、SDK に対して **のみ** 設定される **リンカーの動作** 、またはすべてを **リンク** します。 何らかの理由で、リンカーの動作を All に設定したときにエラーが発生した場合は、おそらく、アプリケーションコードまたはリンカーセーフではないサードパーティ製のライブラリ内で問題が発生している可能性があります。 リンカーの詳細については、「 [Xamarin IOS アプリのリンク](~/ios/deploy-test/linker.md)」を参照してください。
 1. **すべてのビルド構成** &ndash; を更新するウィンドウの上部にある [ **構成** ] と [ **プラットフォーム** ] の一覧を使用して、すべてのビルド構成を更新します。 更新する最も重要な構成は、 **リリース/iPhone** の構成です。通常、これは、App Store の送信用にビルドを作成するために使用されるためです。
 
 このスクリーンショットでは、新しいフラグが設定されたウィンドウが表示されます。

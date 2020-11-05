@@ -10,16 +10,16 @@ ms.date: 04/27/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 71df780c648bcaa5a2ca4db388b52ac77a64d158
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 32997a1453ca52abdfa0cac60e7637ae3367eeb2
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560547"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374200"
 ---
 # <a name="native-views-in-c"></a>C のネイティブビュー\#
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeembedding)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-nativeembedding)
 
 _IOS、Android、UWP のネイティブビューは、 Xamarin.Forms C# を使用して作成されたページから直接参照できます。この記事では、 Xamarin.Forms C# を使用して作成されたレイアウトにネイティブビューを追加する方法と、カスタムビューのレイアウトをオーバーライドして、その測定 API の使用状況を修正する方法について説明します。_
 
@@ -29,7 +29,7 @@ Xamarin.Formsを設定できるコントロール `Content` 、またはコレ�
 
 次のスクリーンショットは、に追加されたプラットフォーム固有のビューを示してい Xamarin.Forms [`StackLayout`](xref:Xamarin.Forms.StackLayout) ます。
 
-[![プラットフォーム固有のビューを含む StackLayout](code-images/screenshots-sml.png)](code-images/screenshots.png#lightbox "プラットフォーム固有のビューを含む StackLayout")
+[![Platform-Specific ビューを含む StackLayout](code-images/screenshots-sml.png)](code-images/screenshots.png#lightbox "Platform-Specific ビューを含む StackLayout")
 
 プラットフォーム固有のビューをレイアウトに追加する機能 Xamarin.Forms は、各プラットフォームの2つの拡張メソッドによって有効になります。
 
@@ -42,7 +42,7 @@ Xamarin.Formsを設定できるコントロール `Content` 、またはコレ�
 - **Android** – Xamarin.Forms.Platform.Android
 - **ユニバーサル Windows プラットフォーム (UWP)** – Xamarin.Forms.Platform.UWP
 
-## <a name="adding-platform-specific-views-on-each-platform"></a>プラットフォーム固有のビューを各プラットフォームに追加する
+## <a name="adding-platform-specific-views-on-each-platform"></a>各プラットフォームに Platform-Specific ビューを追加する
 
 以下のセクションでは、プラットフォーム固有のビューを各プラットフォームのレイアウトに追加する方法について説明し Xamarin.Forms ます。
 

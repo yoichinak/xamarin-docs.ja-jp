@@ -1,6 +1,6 @@
 ---
-title: ':::no-loc(Xamarin.Forms)::: 電子ブックを使用するエンタープライズ アプリケーション パターン'
-description: 'この電子ブックでは、柔軟で保守性の高い、テスト可能なエンタープライズアプリケーションを開発するためのアーキテクチャガイダンスを提供し :::no-loc(Xamarin.Forms)::: ます。'
+title: Xamarin.Forms 電子ブックを使用するエンタープライズ アプリケーション パターン
+description: この電子ブックでは、柔軟で保守性の高い、テスト可能なエンタープライズアプリケーションを開発するためのアーキテクチャガイダンスを提供し Xamarin.Forms ます。
 ms.prod: xamarin
 ms.assetid: 28cfed6c-6175-4223-a8cc-798d40bf0832
 ms.technology: xamarin-forms
@@ -8,20 +8,23 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 08/07/2017
 no-loc:
-- ':::no-loc(Xamarin.Forms):::'
-- ':::no-loc(Xamarin.Essentials):::'
-ms.openlocfilehash: 549fe496cdb1d68d091d5fb3ed247ccef5a111a8
-ms.sourcegitcommit: 952db1983c0bc373844c5fbe9d185e04a87d8fb4
+- Xamarin.Forms
+- Xamarin.Essentials
+ms.openlocfilehash: 1b8d33ba98dfeda8db23e516a989ebbfe1db9a66
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86996163"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373004"
 ---
-# <a name="enterprise-application-patterns-using-no-locxamarinforms-ebook"></a>:::no-loc(Xamarin.Forms)::: 電子ブックを使用するエンタープライズ アプリケーション パターン
+# <a name="enterprise-application-patterns-using-no-locxamarinforms-ebook"></a>Xamarin.Forms 電子ブックを使用するエンタープライズ アプリケーション パターン
 
-_適応性、保守性、およびテスト可能なエンタープライズアプリケーションを開発するためのアーキテクチャガイダンス :::no-loc(Xamarin.Forms):::_
+_適応性、保守性、およびテスト可能なエンタープライズアプリケーションを開発するためのアーキテクチャガイダンス Xamarin.Forms_
 
 ![::: No loc (Xamarin. Forms)::: eBook を使用したエンタープライズアプリケーションパターン](images/cover-sml.png)
+
+> [!NOTE]
+> この電子ブックは2017の spring で公開されており、その後、更新されていません。 本は貴重なものですが、一部のマテリアルは古くなっています。
 
 この電子ブックでは、疎結合を維持しながら、モデルビュービューモデル (MVVM) パターン、依存関係の注入、ナビゲーション、検証、および構成管理を実装する方法についてのガイダンスを提供します。 また、認証と承認を実行する方法についても説明します。また、コンテナー化されたマイクロサービスからのデータへのアクセス、および単体テストについても説明します。
 
@@ -37,7 +40,7 @@ _適応性、保守性、およびテスト可能なエンタープライズア�
 
 モデルビュービューモデル (MVVM) パターンは、アプリケーションのビジネスロジックとプレゼンテーションロジックをユーザーインターフェイス (UI) から明確に分離するのに役立ちます。 アプリケーションロジックと UI を明確に分離することによって、さまざまな開発上の問題に対処し、アプリケーションを簡単にテスト、保守、および進化させることができます。 また、コードの再利用の機会を大幅に向上させることができ、開発者や UI デザイナーはアプリの各部分を開発する際により簡単に共同作業を行うことができます。
 
-## <a name="dependency-injection"></a>[依存性の注入](dependency-injection.md)
+## <a name="dependency-injection"></a>[依存関係の挿入](dependency-injection.md)
 
 依存関係の挿入を使用すると、これらの型に依存するコードから具象型を切り離すことができます。 通常は、インターフェイスと抽象型の間の登録とマッピングのリストを保持するコンテナーと、これらの型を実装または拡張する具象型を使用します。
 
@@ -45,11 +48,11 @@ _適応性、保守性、およびテスト可能なエンタープライズア�
 
 ## <a name="communicating-between-loosely-coupled-components"></a>[疎結合コンポーネント間の通信](communicating-between-loosely-coupled-components.md)
 
-:::no-loc(Xamarin.Forms)::: の [`MessagingCenter`](xref::::no-loc(Xamarin.Forms):::.MessagingCenter) クラスでは、発行/サブスクライブ パターンが実装され、オブジェクトと型の参照によってリンクしにくいコンポーネント間で、メッセージ ベースの通信を行うことができます。 このメカニズムにより、パブリッシャーとサブスクライバーは相互に参照がなくても通信できるようになり、コンポーネント間の依存関係を軽減しながら、コンポーネントを個別に開発およびテストすることができます。
+Xamarin.Forms の [`MessagingCenter`](xref:Xamarin.Forms.MessagingCenter) クラスでは、発行/サブスクライブ パターンが実装され、オブジェクトと型の参照によってリンクしにくいコンポーネント間で、メッセージ ベースの通信を行うことができます。 このメカニズムにより、パブリッシャーとサブスクライバーは相互に参照がなくても通信できるようになり、コンポーネント間の依存関係を軽減しながら、コンポーネントを個別に開発およびテストすることができます。
 
 ## <a name="navigation"></a>[ナビゲーション](navigation.md)
 
-:::no-loc(Xamarin.Forms):::では、ページナビゲーションがサポートされています。これは通常、ユーザーが UI と対話するか、アプリ自体から、ロジックドリブンの状態が変更された結果として発生します。 ただし、MVVM パターンを使用するアプリでは、ナビゲーションが複雑になることがあります。
+Xamarin.Forms では、ページナビゲーションがサポートされています。これは通常、ユーザーが UI と対話するか、アプリ自体から、ロジックドリブンの状態が変更された結果として発生します。 ただし、MVVM パターンを使用するアプリでは、ナビゲーションが複雑になることがあります。
 
 この章では `NavigationService` 、ビューモデルからビューモデルの最初のナビゲーションを実行するために使用されるクラスについて説明します。 ビューモデルクラスにナビゲーションロジックを配置すると、自動テストでロジックを実行できるようになります。 さらに、ビューモデルは、ナビゲーションを制御するロジックを実装して、特定のビジネスルールを確実に適用することができます。
 
@@ -69,7 +72,7 @@ _適応性、保守性、およびテスト可能なエンタープライズア�
 
 ## <a name="authentication-and-authorization"></a>[認証と承認](authentication-and-authorization.md)
 
-:::no-loc(Xamarin.Forms):::ASP.NET MVC web アプリケーションと通信するアプリに認証と承認を統合する方法は多数あります。 ここでは、認証と承認は、ユーザー id を使用するコンテナー化された id マイクロサービスを使用して実行されます。 ユーザー Id は、ASP.NET Core Id と統合してベアラートークン認証を実行する ASP.NET Core 用のオープンソース OpenID Connect および OAuth 2.0 フレームワークです。
+Xamarin.FormsASP.NET MVC web アプリケーションと通信するアプリに認証と承認を統合する方法は多数あります。 ここでは、認証と承認は、ユーザー id を使用するコンテナー化された id マイクロサービスを使用して実行されます。 ユーザー Id は、ASP.NET Core Id と統合してベアラートークン認証を実行する ASP.NET Core 用のオープンソース OpenID Connect および OAuth 2.0 フレームワークです。
 
 ## <a name="accessing-remote-data"></a>[リモート データへのアクセス](accessing-remote-data.md)
 
@@ -81,7 +84,7 @@ MVVM アプリケーションからモデルをテストし、モデルを表示
 
 ## <a name="community-site"></a>コミュニティサイト
 
-このプロジェクトには、質問を投稿したり、フィードバックを提供したりできるコミュニティサイトがあります。 コミュニティサイトは[GitHub](https://github.com/dotnet-architecture/eShopOnContainers)にあります。 または、電子ブックに関するフィードバックをに電子メールで送信することもでき [dotnet-architecture-ebooks-feedback@service.microsoft.com](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com) ます。
+このプロジェクトには、質問を投稿したり、フィードバックを提供したりできるコミュニティサイトがあります。 コミュニティサイトは [GitHub](https://github.com/dotnet-architecture/eShopOnContainers)にあります。 または、電子ブックに関するフィードバックをに電子メールで送信することもでき [dotnet-architecture-ebooks-feedback@service.microsoft.com](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com) ます。
 
 ## <a name="related-links"></a>関連リンク
 

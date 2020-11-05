@@ -10,16 +10,16 @@ ms.date: 09/17/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: dad0c3fd70e2484033268f9ad0686d0b3f42cb70
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 1872f86c0e7be6ab07b4e962d17be7d8030c1d96
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91564109"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373160"
 ---
 # <a name="no-locxamarinforms-collectionview-scrolling"></a>Xamarin.Forms CollectionView スクロール
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView) 項目を [`ScrollTo`](xref:Xamarin.Forms.ItemsView.ScrollTo*) ビューにスクロールする2つのメソッドを定義します。 オーバーロードの1つは、指定されたインデックス位置にある項目をビューにスクロールし、もう一方は指定された項目をビューにスクロールします。 どちらのオーバーロードにも、項目が属するグループを示すために指定できる追加の引数、スクロールが完了した後の項目の正確な位置、およびスクロールをアニメーション化するかどうかを指定できます。
 
@@ -137,7 +137,7 @@ collectionView.ScrollTo(monkey, position: ScrollToPosition.MakeVisible);
 > [!NOTE]
 > [`ScrollToPosition.MakeVisible`](xref:Xamarin.Forms.ScrollToPosition)メンバーは、 `position` メソッドの呼び出し時に引数が指定されていない場合に、既定で使用され `ScrollTo` ます。
 
-### <a name="start"></a>開始
+### <a name="start"></a>[開始]
 
 メンバーは、 [`ScrollToPosition.Start`](xref:Xamarin.Forms.ScrollToPosition) 項目をビューの先頭までスクロールする必要があることを示します。
 
@@ -237,7 +237,7 @@ CollectionView collectionView = new CollectionView
 > [!IMPORTANT]
 > プロパティの値は、 [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment) [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) プロパティがまたはに設定されている場合にのみ尊重され `Mandatory` `MandatorySingle` ます。
 
-#### <a name="start"></a>開始
+#### <a name="start"></a>[開始]
 
 メンバーは、 `SnapPointsAlignment.Start` スナップポイントが項目の先頭端に合わせて整列されていることを示します。
 

@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fe9a93e8e5a35df98587efc0dc3ad6192653d173
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 527ae4eee614e1b3c6225c6cd2b220030faa7f3e
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563706"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93372484"
 ---
 # <a name="listview-separator-style-on-ios"></a>IOS での ListView 区切り記号のスタイル
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 この iOS プラットフォーム固有の制御は、のセル間の区切り記号がの [`ListView`](xref:Xamarin.Forms.ListView) 完全な幅を使用するかどうかを制御し `ListView` ます。 これは、 [`ListView.SeparatorStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.ListView.SeparatorStyleProperty) 添付プロパティを列挙体の値に設定することによって XAML で使用され [`SeparatorStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle) ます。
 
@@ -51,7 +51,7 @@ listView.On<iOS>().SetSeparatorStyle(SeparatorStyle.FullWidth);
 
 結果として、指定された [`SeparatorStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.SeparatorStyle) 値がに適用され [`ListView`](xref:Xamarin.Forms.ListView) 、セル間の区切り記号の幅が制御されます。
 
-![ListView SeparatorStyle プラットフォーム固有](listview-separator-style-images/listview-separatorstyle.png)
+![ListView SeparatorStyle Platform-Specific](listview-separator-style-images/listview-separatorstyle.png)
 
 > [!NOTE]
 > 区切り記号のスタイルをに設定すると `FullWidth` 、実行時にに戻すことはできません `Default` 。

@@ -10,16 +10,16 @@ ms.date: 07/20/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8eff115e894f77aeacff0f6c072bfd338fa19844
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: c28f10441e624a316762c5e677f613335a3f0f94
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560508"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373264"
 ---
 # <a name="no-locxamarinforms-device-class"></a>Xamarin.Forms デバイスクラス
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithdevice)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/workingwithdevice)
 
 クラスには、 [`Device`](xref:Xamarin.Forms.Device) 開発者がプラットフォームごとにレイアウトと機能をカスタマイズするのに役立つさまざまなプロパティとメソッドが含まれています。
 
@@ -247,7 +247,7 @@ Device.StartTimer (new TimeSpan (0, 0, 60), () =>
 
 ## <a name="interact-with-the-ui-from-background-threads"></a>バックグラウンドスレッドから UI を操作する
 
-IOS、Android、およびユニバーサル Windows プラットフォームを含むほとんどのオペレーティングシステムは、ユーザーインターフェイスを含むコードにシングルスレッドモデルを使用します。 このスレッドは、多くの場合、 *メインスレッド* または *UI スレッド*と呼ばれます。 このモデルの結果として、ユーザーインターフェイス要素にアクセスするすべてのコードは、アプリケーションのメインスレッドで実行する必要があります。
+IOS、Android、およびユニバーサル Windows プラットフォームを含むほとんどのオペレーティングシステムは、ユーザーインターフェイスを含むコードにシングルスレッドモデルを使用します。 このスレッドは、多くの場合、 *メインスレッド* または *UI スレッド* と呼ばれます。 このモデルの結果として、ユーザーインターフェイス要素にアクセスするすべてのコードは、アプリケーションのメインスレッドで実行する必要があります。
 
 アプリケーションでは、バックグラウンドスレッドを使用して、web サービスからデータを取得するなど、長時間実行される可能性がある操作を実行することがあります。 バックグラウンドスレッドで実行されているコードがユーザーインターフェイス要素にアクセスする必要がある場合は、メインスレッドでそのコードを実行する必要があります。
 

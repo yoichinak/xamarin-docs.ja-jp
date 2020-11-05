@@ -10,14 +10,17 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cf7e3a260308a81dc40c4fe81be66e5436ed7c63
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 8a5b7ecb0272543785c98bfff12bec7fcccf7fc8
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86935799"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373940"
 ---
 # <a name="validation-in-enterprise-apps"></a>エンタープライズアプリでの検証
+
+> [!NOTE]
+> この電子ブックは2017の spring で公開されており、その後、更新されていません。 本は貴重なものですが、一部のマテリアルは古くなっています。
 
 ユーザーからの入力を受け入れるアプリであれば、入力が有効であることを確認する必要があります。 たとえば、特定の範囲の文字のみを含む入力、特定の長さ、または特定の形式に一致する入力を確認することができます。 検証を行わないと、ユーザーはアプリを失敗させるデータを提供できます。 検証では、ビジネスルールを適用し、攻撃者が悪意のあるデータを挿入するのを防ぎます。
 
@@ -25,7 +28,7 @@ ms.locfileid: "86935799"
 
 [![EShopOnContainers モバイルアプリの検証クラス](validation-images/validation.png)](validation-images/validation-large.png#lightbox "EShopOnContainers モバイルアプリの検証クラス")
 
-**図 6-1**: eShopOnContainers モバイルアプリの検証クラス
+**図 6-1** : eShopOnContainers モバイルアプリの検証クラス
 
 検証を必要とするモデルのプロパティを型 `ValidatableObject<T>` として表示し `ValidatableObject<T>` ます。各インスタンスには、そのプロパティに検証規則が追加されてい `Validations` ます。 検証は、インスタンスのメソッドを呼び出すことによって、ビューモデルから呼び出され `Validate` ます。このメソッドは、 `ValidatableObject<T>` 検証規則を取得し、プロパティに対して実行し `ValidatableObject<T>` `Value` ます。 すべての検証エラーがインスタンスのプロパティに配置され、 `Errors` `ValidatableObject<T>` `IsValid` インスタンスのプロパティが更新され、 `ValidatableObject<T>` 検証が成功したか失敗したかが示されます。
 
@@ -36,10 +39,10 @@ ms.locfileid: "86935799"
 検証規則は、 `IValidationRule<T>` 次のコード例に示すように、インターフェイスから派生するクラスを作成することによって指定します。
 
 ```csharp
-public interface IValidationRule<T>  
+public interface IValidationRule<T>  
 {  
-    string ValidationMessage { get; set; }  
-    bool Check(T value);  
+    string ValidationMessage { get; set; }  
+    bool Check(T value);  
 }
 ```
 
@@ -48,20 +51,20 @@ public interface IValidationRule<T>
 次のコード例は、 `IsNotNullOrEmptyRule<T>` `LoginView` eShopOnContainers モバイルアプリでモックサービスを使用するときに、でユーザーが入力したユーザー名とパスワードの検証を実行するために使用される検証規則を示しています。
 
 ```csharp
-public class IsNotNullOrEmptyRule<T> : IValidationRule<T>  
+public class IsNotNullOrEmptyRule<T> : IValidationRule<T>  
 {  
-    public string ValidationMessage { get; set; }  
+    public string ValidationMessage { get; set; }  
 
-    public bool Check(T value)  
-    {  
-        if (value == null)  
-        {  
-            return false;  
-        }  
+    public bool Check(T value)  
+    {  
+        if (value == null)  
+        {  
+            return false;  
+        }  
 
-        var str = value as string;  
-        return !string.IsNullOrWhiteSpace(str);  
-    }  
+        var str = value as string;  
+        return !string.IsNullOrWhiteSpace(str);  
+    }  
 }
 ```
 
@@ -70,23 +73,23 @@ public class IsNotNullOrEmptyRule<T> : IValidationRule<T>
 EShopOnContainers モバイルアプリでは使用されませんが、次のコード例は、電子メールアドレスを検証するための検証規則を示しています。
 
 ```csharp
-public class EmailRule<T> : IValidationRule<T>  
+public class EmailRule<T> : IValidationRule<T>  
 {  
-    public string ValidationMessage { get; set; }  
+    public string ValidationMessage { get; set; }  
 
-    public bool Check(T value)  
-    {  
-        if (value == null)  
-        {  
-            return false;  
-        }  
+    public bool Check(T value)  
+    {  
+        if (value == null)  
+        {  
+            return false;  
+        }  
 
-        var str = value as string;  
-        Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");  
-        Match match = regex.Match(str);  
+        var str = value as string;  
+        Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");  
+        Match match = regex.Match(str);  
 
-        return match.Success;  
-    }  
+        return match.Success;  
+    }  
 }
 ```
 
@@ -100,46 +103,46 @@ public class EmailRule<T> : IValidationRule<T>
 EShopOnContainers モバイルアプリでは、検証を必要とするビューモデルプロパティが型として宣言され `ValidatableObject<T>` ます。ここで、 `T` は検証対象のデータの型です。 次のコード例は、このような2つのプロパティの例を示しています。
 
 ```csharp
-public ValidatableObject<string> UserName  
+public ValidatableObject<string> UserName  
 {  
-    get  
-    {  
-        return _userName;  
-    }  
-    set  
-    {  
-        _userName = value;  
-        RaisePropertyChanged(() => UserName);  
-    }  
+    get  
+    {  
+        return _userName;  
+    }  
+    set  
+    {  
+        _userName = value;  
+        RaisePropertyChanged(() => UserName);  
+    }  
 }  
 
-public ValidatableObject<string> Password  
+public ValidatableObject<string> Password  
 {  
-    get  
-    {  
-        return _password;  
-    }  
-    set  
-    {  
-        _password = value;  
-        RaisePropertyChanged(() => Password);  
-    }  
+    get  
+    {  
+        return _password;  
+    }  
+    set  
+    {  
+        _password = value;  
+        RaisePropertyChanged(() => Password);  
+    }  
 }
 ```
 
 検証を実行するには、 `Validations` `ValidatableObject<T>` 次のコード例に示すように、各インスタンスのコレクションに検証規則を追加する必要があります。
 
 ```csharp
-private void AddValidations()  
+private void AddValidations()  
 {  
-    _userName.Validations.Add(new IsNotNullOrEmptyRule<string>   
-    {   
-        ValidationMessage = "A username is required."   
-    });  
-    _password.Validations.Add(new IsNotNullOrEmptyRule<string>   
-    {   
-        ValidationMessage = "A password is required."   
-    });  
+    _userName.Validations.Add(new IsNotNullOrEmptyRule<string>   
+    {   
+        ValidationMessage = "A username is required."   
+    });  
+    _password.Validations.Add(new IsNotNullOrEmptyRule<string>   
+    {   
+        ValidationMessage = "A password is required."   
+    });  
 }
 ```
 
@@ -154,39 +157,39 @@ EShopOnContainers モバイルアプリで使用される検証方法では、�
 検証は、ビューモデルのプロパティに対して手動でトリガーできます。 たとえば、eShopOnContainers モバイルアプリでは、 **Login** `LoginView` モックサービスを使用しているときに、ユーザーがの [ログイン] ボタンをタップしたときに発生します。 コマンドデリゲートは、のメソッドを呼び出します。このメソッドは、 `MockSignInAsync` `LoginViewModel` 次の `Validate` コード例に示すように、メソッドを実行して検証を呼び出します。
 
 ```csharp
-private bool Validate()  
+private bool Validate()  
 {  
-    bool isValidUser = ValidateUserName();  
-    bool isValidPassword = ValidatePassword();  
-    return isValidUser && isValidPassword;  
+    bool isValidUser = ValidateUserName();  
+    bool isValidPassword = ValidatePassword();  
+    return isValidUser && isValidPassword;  
 }  
 
-private bool ValidateUserName()  
+private bool ValidateUserName()  
 {  
-    return _userName.Validate();  
+    return _userName.Validate();  
 }  
 
-private bool ValidatePassword()  
+private bool ValidatePassword()  
 {  
-    return _password.Validate();  
+    return _password.Validate();  
 }
 ```
 
 メソッドは、 `Validate` `LoginView` 各インスタンスで Validate メソッドを呼び出すことによって、にユーザーが入力したユーザー名とパスワードの検証を実行し `ValidatableObject<T>` ます。 次のコード例は、クラスの Validate メソッドを示してい `ValidatableObject<T>` ます。
 
 ```csharp
-public bool Validate()  
+public bool Validate()  
 {  
-    Errors.Clear();  
+    Errors.Clear();  
 
-    IEnumerable<string> errors = _validations  
-        .Where(v => !v.Check(Value))  
-        .Select(v => v.ValidationMessage);  
+    IEnumerable<string> errors = _validations  
+        .Where(v => !v.Check(Value))  
+        .Select(v => v.ValidationMessage);  
 
-    Errors = errors.ToList();  
-    IsValid = !Errors.Any();  
+    Errors = errors.ToList();  
+    IsValid = !Errors.Any();  
 
-    return this.IsValid;  
+    return this.IsValid;  
 }
 ```
 
@@ -197,19 +200,19 @@ public bool Validate()
 バインドされたプロパティが変更されるたびに、検証をトリガーすることもできます。 たとえば、内の双方向のバインディングで `LoginView` またはプロパティを設定すると、 `UserName` `Password` 検証がトリガーされます。 この状況を示すコード例を次に示します。
 
 ```xaml
-<Entry Text="{Binding UserName.Value, Mode=TwoWay}">  
-    <Entry.Behaviors>  
-        <behaviors:EventToCommandBehavior  
-            EventName="TextChanged"  
-            Command="{Binding ValidateUserNameCommand}" />  
-    </Entry.Behaviors>  
-    ...  
+<Entry Text="{Binding UserName.Value, Mode=TwoWay}">  
+    <Entry.Behaviors>  
+        <behaviors:EventToCommandBehavior  
+            EventName="TextChanged"  
+            Command="{Binding ValidateUserNameCommand}" />  
+    </Entry.Behaviors>  
+    ...  
 </Entry>
 ```
 
 [`Entry`](xref:Xamarin.Forms.Entry)コントロールが `UserName.Value` インスタンスのプロパティにバインドされ、 `ValidatableObject<T>` コントロールのコレクションに `Behaviors` インスタンスが `EventToCommandBehavior` 追加されます。 この動作は、の [] イベントの発生に応答してを実行し `ValidateUserNameCommand` `TextChanged` `Entry` ます。これは、のテキストが変更されたときに発生し `Entry` ます。 その後、 `ValidateUserNameCommand` デリゲートは `ValidateUserName` メソッドを実行し、 `Validate` インスタンスでメソッドを実行し `ValidatableObject<T>` ます。 したがって、ユーザーがユーザー名のコントロールに文字を入力するたびに、 `Entry` 入力されたデータの検証が行われます。
 
-動作の詳細については、「[動作の実装](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing-behaviors)」を参照してください。
+動作の詳細については、「 [動作の実装](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing-behaviors)」を参照してください。
 
 ## <a name="displaying-validation-errors"></a>検証エラーの表示
 
@@ -238,14 +241,14 @@ EShopOnContainers モバイルアプリは、無効なデータが含まれて�
 コントロールは、 [`Entry`](xref:Xamarin.Forms.Entry) 次のコード例に示すように、明示的なスタイルを使用します。
 
 ```xaml
-<Style x:Key="EntryStyle"  
-       TargetType="{x:Type Entry}">  
-    ...  
-    <Setter Property="behaviors:LineColorBehavior.ApplyLineColor"  
-            Value="True" />  
-    <Setter Property="behaviors:LineColorBehavior.LineColor"  
-            Value="{StaticResource BlackColor}" />  
-    ...  
+<Style x:Key="EntryStyle"  
+       TargetType="{x:Type Entry}">  
+    ...  
+    <Setter Property="behaviors:LineColorBehavior.ApplyLineColor"  
+            Value="True" />  
+    <Setter Property="behaviors:LineColorBehavior.LineColor"  
+            Value="{StaticResource BlackColor}" />  
+    ...  
 </Style>
 ```
 
@@ -254,46 +257,46 @@ EShopOnContainers モバイルアプリは、無効なデータが含まれて�
 `ApplyLineColor`添付プロパティの値が設定または変更されると、アタッチされた動作によってメソッドが実行され `LineColorBehavior` `OnApplyLineColorChanged` ます。次のコード例を参照してください。
 
 ```csharp
-public static class LineColorBehavior  
+public static class LineColorBehavior  
 {  
-    ...  
-    private static void OnApplyLineColorChanged(  
-                BindableObject bindable, object oldValue, object newValue)  
-    {  
-        var view = bindable as View;  
-        if (view == null)  
-        {  
-            return;  
-        }  
+    ...  
+    private static void OnApplyLineColorChanged(  
+                BindableObject bindable, object oldValue, object newValue)  
+    {  
+        var view = bindable as View;  
+        if (view == null)  
+        {  
+            return;  
+        }  
 
-        bool hasLine = (bool)newValue;  
-        if (hasLine)  
-        {  
-            view.Effects.Add(new EntryLineColorEffect());  
-        }  
-        else  
-        {  
-            var entryLineColorEffectToRemove =   
-                    view.Effects.FirstOrDefault(e => e is EntryLineColorEffect);  
-            if (entryLineColorEffectToRemove != null)  
-            {  
-                view.Effects.Remove(entryLineColorEffectToRemove);  
-            }  
-        }  
-    }  
+        bool hasLine = (bool)newValue;  
+        if (hasLine)  
+        {  
+            view.Effects.Add(new EntryLineColorEffect());  
+        }  
+        else  
+        {  
+            var entryLineColorEffectToRemove =   
+                    view.Effects.FirstOrDefault(e => e is EntryLineColorEffect);  
+            if (entryLineColorEffectToRemove != null)  
+            {  
+                view.Effects.Remove(entryLineColorEffectToRemove);  
+            }  
+        }  
+    }  
 }
 ```
 
-このメソッドのパラメーターは、動作がアタッチされるコントロールのインスタンス、および添付プロパティの新旧の値を提供し `ApplyLineColor` ます。 `EntryLineColorEffect`添付プロパティがの場合、クラスはコントロールのコレクションに追加され [`Effects`](xref:Xamarin.Forms.Element.Effects) `ApplyLineColor` ます。それ以外の場合は、 `true` コントロールのコレクションから削除され `Effects` ます。 動作の詳細については、「[動作の実装](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing-behaviors)」を参照してください。
+このメソッドのパラメーターは、動作がアタッチされるコントロールのインスタンス、および添付プロパティの新旧の値を提供し `ApplyLineColor` ます。 `EntryLineColorEffect`添付プロパティがの場合、クラスはコントロールのコレクションに追加され [`Effects`](xref:Xamarin.Forms.Element.Effects) `ApplyLineColor` ます。それ以外の場合は、 `true` コントロールのコレクションから削除され `Effects` ます。 動作の詳細については、「 [動作の実装](~/xamarin-forms/enterprise-application-patterns/mvvm.md#implementing-behaviors)」を参照してください。
 
 クラスのサブクラスは、 `EntryLineColorEffect` [`RoutingEffect`](xref:Xamarin.Forms.RoutingEffect) 次のコード例のようになります。
 
 ```csharp
-public class EntryLineColorEffect : RoutingEffect  
+public class EntryLineColorEffect : RoutingEffect  
 {  
-    public EntryLineColorEffect() : base("eShopOnContainers.EntryLineColorEffect")  
-    {  
-    }  
+    public EntryLineColorEffect() : base("eShopOnContainers.EntryLineColorEffect")  
+    {  
+    }  
 }
 ```
 
@@ -302,76 +305,76 @@ public class EntryLineColorEffect : RoutingEffect
 次のコード例は、 `eShopOnContainers.EntryLineColorEffect` iOS の実装を示しています。
 
 ```csharp
-[assembly: ResolutionGroupName("eShopOnContainers")]  
-[assembly: ExportEffect(typeof(EntryLineColorEffect), "EntryLineColorEffect")]  
-namespace eShopOnContainers.iOS.Effects  
+[assembly: ResolutionGroupName("eShopOnContainers")]  
+[assembly: ExportEffect(typeof(EntryLineColorEffect), "EntryLineColorEffect")]  
+namespace eShopOnContainers.iOS.Effects  
 {  
-    public class EntryLineColorEffect : PlatformEffect  
-    {  
-        UITextField control;  
+    public class EntryLineColorEffect : PlatformEffect  
+    {  
+        UITextField control;  
 
-        protected override void OnAttached()  
-        {  
-            try  
-            {  
-                control = Control as UITextField;  
-                UpdateLineColor();  
-            }  
-            catch (Exception ex)  
-            {  
-                Console.WriteLine("Can't set property on attached control. Error: ", ex.Message);  
-            }  
-        }  
+        protected override void OnAttached()  
+        {  
+            try  
+            {  
+                control = Control as UITextField;  
+                UpdateLineColor();  
+            }  
+            catch (Exception ex)  
+            {  
+                Console.WriteLine("Can't set property on attached control. Error: ", ex.Message);  
+            }  
+        }  
 
-        protected override void OnDetached()  
-        {  
-            control = null;  
-        }  
+        protected override void OnDetached()  
+        {  
+            control = null;  
+        }  
 
-        protected override void OnElementPropertyChanged(PropertyChangedEventArgs args)  
-        {  
-            base.OnElementPropertyChanged(args);  
+        protected override void OnElementPropertyChanged(PropertyChangedEventArgs args)  
+        {  
+            base.OnElementPropertyChanged(args);  
 
-            if (args.PropertyName == LineColorBehavior.LineColorProperty.PropertyName ||  
-                args.PropertyName == "Height")  
-            {  
-                Initialize();  
-                UpdateLineColor();  
-            }  
-        }  
+            if (args.PropertyName == LineColorBehavior.LineColorProperty.PropertyName ||  
+                args.PropertyName == "Height")  
+            {  
+                Initialize();  
+                UpdateLineColor();  
+            }  
+        }  
 
-        private void Initialize()  
-        {  
-            var entry = Element as Entry;  
-            if (entry != null)  
-            {  
-                Control.Bounds = new CGRect(0, 0, entry.Width, entry.Height);  
-            }  
-        }  
+        private void Initialize()  
+        {  
+            var entry = Element as Entry;  
+            if (entry != null)  
+            {  
+                Control.Bounds = new CGRect(0, 0, entry.Width, entry.Height);  
+            }  
+        }  
 
-        private void UpdateLineColor()  
-        {  
-            BorderLineLayer lineLayer = control.Layer.Sublayers.OfType<BorderLineLayer>()  
-                                                             .FirstOrDefault();  
+        private void UpdateLineColor()  
+        {  
+            BorderLineLayer lineLayer = control.Layer.Sublayers.OfType<BorderLineLayer>()  
+                                                             .FirstOrDefault();  
 
-            if (lineLayer == null)  
-            {  
-                lineLayer = new BorderLineLayer();  
-                lineLayer.MasksToBounds = true;  
-                lineLayer.BorderWidth = 1.0f;  
-                control.Layer.AddSublayer(lineLayer);  
-                control.BorderStyle = UITextBorderStyle.None;  
-            }  
+            if (lineLayer == null)  
+            {  
+                lineLayer = new BorderLineLayer();  
+                lineLayer.MasksToBounds = true;  
+                lineLayer.BorderWidth = 1.0f;  
+                control.Layer.AddSublayer(lineLayer);  
+                control.BorderStyle = UITextBorderStyle.None;  
+            }  
 
-            lineLayer.Frame = new CGRect(0f, Control.Frame.Height-1f, Control.Bounds.Width, 1f);  
-            lineLayer.BorderColor = LineColorBehavior.GetLineColor(Element).ToCGColor();  
-            control.TintColor = control.TextColor;  
-        }  
+            lineLayer.Frame = new CGRect(0f, Control.Frame.Height-1f, Control.Bounds.Width, 1f);  
+            lineLayer.BorderColor = LineColorBehavior.GetLineColor(Element).ToCGColor();  
+            control.TintColor = control.TextColor;  
+        }  
 
-        private class BorderLineLayer : CALayer  
-        {  
-        }  
-    }  
+        private class BorderLineLayer : CALayer  
+        {  
+        }  
+    }  
 }
 ```
 
@@ -381,22 +384,22 @@ namespace eShopOnContainers.iOS.Effects
 
 ![検証エラーがないことを示す黒い線](validation-images/validation-blackline.png)
 
-**図 6-3**: 検証エラーがないことを示す黒い線
+**図 6-3** : 検証エラーがないことを示す黒い線
 
 また、コントロールには [`Entry`](xref:Xamarin.Forms.Entry) 、 [`DataTrigger`](xref:Xamarin.Forms.DataTrigger) コレクションに追加されたがあり [`Triggers`](xref:Xamarin.Forms.VisualElement.Triggers) ます。 次のコード例は、を示してい `DataTrigger` ます。
 
 ```xaml
-<Entry Text="{Binding UserName.Value, Mode=TwoWay}">  
-    ...  
-    <Entry.Triggers>  
-        <DataTrigger   
-            TargetType="Entry"  
-            Binding="{Binding UserName.IsValid}"  
-            Value="False">  
-            <Setter Property="behaviors:LineColorBehavior.LineColor"   
-                    Value="{StaticResource ErrorColor}" />  
-        </DataTrigger>  
-    </Entry.Triggers>  
+<Entry Text="{Binding UserName.Value, Mode=TwoWay}">  
+    ...  
+    <Entry.Triggers>  
+        <DataTrigger   
+            TargetType="Entry"  
+            Binding="{Binding UserName.IsValid}"  
+            Value="False">  
+            <Setter Property="behaviors:LineColorBehavior.LineColor"   
+                    Value="{StaticResource ErrorColor}" />  
+        </DataTrigger>  
+    </Entry.Triggers>  
 </Entry>
 ```
 
@@ -404,24 +407,24 @@ namespace eShopOnContainers.iOS.Effects
 
 ![検証エラーを示す赤い線](validation-images/validation-redline.png)
 
-**図 6-4**: 検証エラーを示す赤い線
+**図 6-4** : 検証エラーを示す赤い線
 
 [`Entry`](xref:Xamarin.Forms.Entry)入力したデータが無効な場合、コントロールの線は赤のままになります。それ以外の場合は、入力したデータが有効であることを示すために黒に変更されます。
 
-トリガーの詳細については、「[トリガー](~/xamarin-forms/app-fundamentals/triggers.md)」を参照してください。
+トリガーの詳細については、「 [トリガー](~/xamarin-forms/app-fundamentals/triggers.md)」を参照してください。
 
 ### <a name="displaying-error-messages"></a>エラーメッセージの表示
 
 UI では、検証に失敗したデータを持つ各コントロールの下のラベルコントロールに検証エラーメッセージが表示されます。 次のコード例は、 [`Label`](xref:Xamarin.Forms.Label) ユーザーが有効なユーザー名を入力していない場合に検証エラーメッセージを表示するを示しています。
 
 ```xaml
-<Label Text="{Binding UserName.Errors, Converter={StaticResource FirstValidationErrorConverter}}"  
-       Style="{StaticResource ValidationErrorLabelStyle}" />
+<Label Text="{Binding UserName.Errors, Converter={StaticResource FirstValidationErrorConverter}}"  
+       Style="{StaticResource ValidationErrorLabelStyle}" />
 ```
 
 各は [`Label`](xref:Xamarin.Forms.Label) `Errors` 、検証対象のビューモデルオブジェクトのプロパティにバインドされます。 `Errors`プロパティはクラスによって提供され、 `ValidatableObject<T>` 型は `List<string>` です。 プロパティには `Errors` 複数の検証エラーを含めることができるため、インスタンスを使用して、 `FirstValidationErrorConverter` 表示するコレクションから最初のエラーを取得します。
 
-## <a name="summary"></a>要約
+## <a name="summary"></a>まとめ
 
 EShopOnContainers モバイルアプリは、ビューモデルのプロパティの同期クライアント側検証を実行し、無効なデータが含まれているコントロールを強調表示し、データが無効であることをユーザーに通知するエラーメッセージを表示することによって、検証エラーをユーザーに通知します。
 

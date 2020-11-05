@@ -10,16 +10,16 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6387da5ffa240c2509a2942a1e721def8f8d39b9
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: f80660c5875db77c85c39f570e9ae58c6c821eb6
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555633"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374629"
 ---
 # <a name="path-basics-in-skiasharp"></a>SkiaSharp のパスの基礎
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _接続された直線と曲線を組み合わせるための SkiaSharp SKPath オブジェクトの探索_
 
@@ -27,13 +27,13 @@ _接続された直線と曲線を組み合わせるための SkiaSharp SKPath �
 
 ![接続されている行と未接続の線の違いを示す2つの三角形](paths-images/connectedlinesexample.png)
 
-グラフィックスパスは、オブジェクトによってカプセル化され [`SKPath`](xref:SkiaSharp.SKPath) ます。 パスは、1つまたは複数の *輪郭*のコレクションです。 各輪郭は、 *接続さ* れた直線と曲線のコレクションです。 輪郭は相互に接続されていませんが、視覚的に重なり合う可能性があります。 場合によっては、1つの輪郭を重ねることができます。
+グラフィックスパスは、オブジェクトによってカプセル化され [`SKPath`](xref:SkiaSharp.SKPath) ます。 パスは、1つまたは複数の *輪郭* のコレクションです。 各輪郭は、 *接続さ* れた直線と曲線のコレクションです。 輪郭は相互に接続されていませんが、視覚的に重なり合う可能性があります。 場合によっては、1つの輪郭を重ねることができます。
 
 通常、輪郭は、の次のメソッドの呼び出しによって開始され `SKPath` ます。
 
 - [`MoveTo`](xref:SkiaSharp.SKPath.MoveTo*) 新しい輪郭を開始するには
 
-このメソッドの引数は単一点で、値として表現することも、 `SKPoint` 個別の X および Y 座標として表すこともできます。 この呼び出しにより、 `MoveTo` 輪郭の先頭と最初の *現在のポイント*にポイントが確立されます。 次のメソッドを呼び出して、現在の点からメソッドに指定された点までの線または曲線で輪郭を続行できます。これは、新しい現在の点になります。
+このメソッドの引数は単一点で、値として表現することも、 `SKPoint` 個別の X および Y 座標として表すこともできます。 この呼び出しにより、 `MoveTo` 輪郭の先頭と最初の *現在のポイント* にポイントが確立されます。 次のメソッドを呼び出して、現在の点からメソッドに指定された点までの線または曲線で輪郭を続行できます。これは、新しい現在の点になります。
 
 - [`LineTo`](xref:SkiaSharp.SKPath.LineTo*) 直線をパスに追加するには
 - [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo*) 円または楕円の円周の線である円弧を追加するには
@@ -52,7 +52,7 @@ _接続された直線と曲線を組み合わせるための SkiaSharp SKPath �
 - [`RQuadTo`](xref:SkiaSharp.SKPath.RQuadTo*)
 - [`RConicTo`](xref:SkiaSharp.SKPath.RConicTo*)
 
-は、 `R` *相対*を表します。 これらのメソッドは、を含まない対応するメソッドと同じ構文を持ち `R` ますが、現在のポイントに対する相対パスです。 これらは、複数回呼び出すメソッドで、パスの類似部分を描画する場合に便利です。
+は、 `R` *相対* を表します。 これらのメソッドは、を含まない対応するメソッドと同じ構文を持ち `R` ますが、現在のポイントに対する相対パスです。 これらは、複数回呼び出すメソッドで、パスの類似部分を描画する場合に便利です。
 
 輪郭は、新しい輪郭を開始するまたはへの別の呼び出しで終了します `MoveTo` `RMoveTo` 。または、の呼び出しによって、 `Close` 輪郭を閉じます。 メソッドは、 `Close` 現在の点から輪郭の最初の点までの直線を自動的に追加し、そのパスを closed としてマークします。これは、ストロークキャップがなくてもレンダリングされることを意味します。
 
@@ -122,7 +122,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 オブジェクトは、 `SKPath` ジオメトリのみを定義する &mdash; 点と、一連のポイントと接続を定義することに注意してください。 がオブジェクトと結合されている場合にのみ、 `SKPath` `SKPaint` 特定の色、ストローク幅などでレンダリングされるパスです。 また、メソッドに渡されたオブジェクトによって、 `SKPaint` `DrawPath` パス全体の特性が定義されていることに注意してください。 複数の色を必要とするものを描画する場合は、色ごとに個別のパスを使用する必要があります。
 
-線の始点と終点の外観がストロークキャップによって定義されているのと同じように、2つの線間の接続の外観は *ストローク結合*によって定義されます。 これを指定するには、 [`StrokeJoin`](xref:SkiaSharp.SKPaint.StrokeJoin) のプロパティを `SKPaint` 列挙体のメンバーに設定し [`SKStrokeJoin`](xref:SkiaSharp.SKStrokeJoin) ます。
+線の始点と終点の外観がストロークキャップによって定義されているのと同じように、2つの線間の接続の外観は *ストローク結合* によって定義されます。 これを指定するには、 [`StrokeJoin`](xref:SkiaSharp.SKPaint.StrokeJoin) のプロパティを `SKPaint` 列挙体のメンバーに設定し [`SKStrokeJoin`](xref:SkiaSharp.SKStrokeJoin) ます。
 
 - `Miter` まし join の場合
 - `Round` 丸い結合の場合

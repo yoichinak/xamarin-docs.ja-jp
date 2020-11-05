@@ -10,16 +10,16 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ec84ac906ac146f37ba5b161a898582ce483bc95
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: db2baea124f013d3b35451e62bd67c32dcebc470
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556673"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373602"
 ---
 # <a name="the-skiasharp-circular-gradients"></a>SkiaSharp の円形のグラデーション
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 クラスは、 [`SKShader`](xref:SkiaSharp.SKShader) 4 つの異なる種類のグラデーションを作成するための静的メソッドを定義します。 [**SkiaSharp 線状グラデーション**](linear-gradient.md)の記事では、メソッドについて説明し [`CreateLinearGradient`](xref:SkiaSharp.SKShader.CreateLinearGradient*) ます。 この記事では、他の3種類のグラデーションについて説明します。これらはすべて円に基づいています。
 
@@ -57,7 +57,7 @@ public static SKShader CreateRadialGradient (SKPoint center,
 
 を使用して円の塗りつぶしを行う場合は、 `CreateRadialGradient` グラデーションの中心を円の中心に、グラデーションの半径を円の半径に設定できます。 その場合、引数は `SKShaderTileMode` グラデーションのレンダリングに影響しません。 ただし、グラデーションによって塗りつぶされる領域がグラデーションで定義された円より大きい場合、 `SKShaderTileMode` 引数は円の外側で何が起こるかに大きな影響を与えます。
 
-の効果 `SKShaderMode` は、 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルの [**放射状グラデーション**] ページで説明されています。 このページの XAML ファイルは、 `Picker` 列挙体の3つのメンバーのいずれかを選択できるようにするをインスタンス化し `SKShaderTileMode` ます。
+の効果 `SKShaderMode` は、 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルの [ **放射状グラデーション** ] ページで説明されています。 このページの XAML ファイルは、 `Picker` 列挙体の3つのメンバーのいずれかを選択できるようにするをインスタンス化し `SKShaderTileMode` ます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -147,7 +147,7 @@ public partial class RadialGradientPage : ContentPage
 
 右側の [ユニバーサル Windows プラットフォーム] 画面に、に `SKShaderTileMode.Mirror` よってグラデーションの方向が交互に示されます。 最初のグラデーションは、中央の黒から100ピクセルの半径の白までです。 次のは、200ピクセル半径の場合は100ピクセル半径から黒になり、次のグラデーションは再び反転されます。
 
-放射状グラデーションでは、3つ以上の色を使用できます。 **レインボー弧のグラデーション**サンプルでは、レインボーの色に対応する8色の配列を作成し、赤で終了します。また、次の8つの位置値の配列も作成します。
+放射状グラデーションでは、3つ以上の色を使用できます。 **レインボー弧のグラデーション** サンプルでは、レインボーの色に対応する8色の配列を作成し、赤で終了します。また、次の8つの位置値の配列も作成します。
 
 ```csharp
 public class RainbowArcGradientPage : ContentPage
@@ -215,7 +215,7 @@ public class RainbowArcGradientPage : ContentPage
 
 ## <a name="radial-gradients-for-masking"></a>マスクの放射状グラデーション
 
-線状グラデーションと同様に、放射状グラデーションには透明色または部分的に透明な色を組み込むことができます。 この機能は、イメージの一部を非表示にしてイメージの別の部分を強調する _マスキング_と呼ばれるプロセスに便利です。
+線状グラデーションと同様に、放射状グラデーションには透明色または部分的に透明な色を組み込むことができます。 この機能は、イメージの一部を非表示にしてイメージの別の部分を強調する _マスキング_ と呼ばれるプロセスに便利です。
 
 [ **放射状グラデーションマスク** ] ページに例が表示されます。 プログラムによって、いずれかのリソースビットマップが読み込まれます。 `CENTER`およびフィールドは、 `RADIUS` ビットマップの検査によって決定され、強調表示する必要がある領域を参照します。 ハンドラーは、 `PaintSurface` ビットマップを表示する四角形を計算してから、その四角形に表示します。
 
@@ -285,15 +285,15 @@ public class RadialGradientMaskPage : ContentPage
 
 [![放射状グラデーションマスク](circular-gradients-images/RadialGradientMask.png "放射状グラデーションマスク")](circular-gradients-images/RadialGradientMask-Large.png#lightbox)
 
-この方法は、ビットマップをマスクするのに最適な方法ではありません。 問題として、マスクには、キャンバスの背景と一致するように選択された白の色が使用されます。 背景が他の色の場合、またはグラデーション自体の場合は、その背景が &mdash; &mdash; 一致しません。 マスクに対するより優れたアプローチについては、 [SkiaSharp Porter の blend モード](../blend-modes/porter-duff.md)に関する記事をご覧ください。
+この方法は、ビットマップをマスクするのに最適な方法ではありません。 問題として、マスクには、キャンバスの背景と一致するように選択された白の色が使用されます。 背景が他の色の場合、またはグラデーション自体の場合は、その背景が &mdash; &mdash; 一致しません。 マスクの方法としては、「 [SkiaSharp Porter-Duff blend モード](../blend-modes/porter-duff.md)」を参照してください。
 
 ## <a name="radial-gradients-for-specular-highlights"></a>反射の光源の放射状グラデーション
 
-光が丸い表面になると、さまざまな方向に光が反射しますが、光の一部はビューアーの目に直接バウンスされます。 これにより、多くの場合、 _反射の強調表示_と呼ばれる、表面上のあいまいな白い領域の外観が作成されます。
+光が丸い表面になると、さまざまな方向に光が反射しますが、光の一部はビューアーの目に直接バウンスされます。 これにより、多くの場合、 _反射の強調表示_ と呼ばれる、表面上のあいまいな白い領域の外観が作成されます。
 
 3次元グラフィックスでは、光のパスと網掛けを決定するために使用されるアルゴリズムによって、反射の光源が強調表示されることがよくあります。 2次元グラフィックスでは、3D サーフェイスの外観を提案するために反射の光源が追加されることがあります。 反射の光源を使用すると、赤の平らな円を丸い赤いボールに変換できます。
 
-**放射状反射の強調表示**ページでは、そのために放射状グラデーションが使用されます。 この `PaintSurface` ハンドラーは、円の半径を計算することによって、2つの `SKPoint` 値 &mdash; a と、 `center` `offCenter` 中央と円の左上隅の中間にあるを計算します。
+**放射状反射の強調表示** ページでは、そのために放射状グラデーションが使用されます。 この `PaintSurface` ハンドラーは、円の半径を計算することによって、2つの `SKPoint` 値 &mdash; a と、 `center` `offCenter` 中央と円の左上隅の中間にあるを計算します。
 
 ```csharp
 public class RadialSpecularHighlightPage : ContentPage
@@ -354,7 +354,7 @@ public static SKShader CreateSweepGradient (SKPoint center,
 
 [`CreateSweepGradient`](xref:SkiaSharp.SKShader.CreateSweepGradient(SkiaSharp.SKPoint,SkiaSharp.SKColor[],System.Single[],SkiaSharp.SKMatrix))マトリックス変換パラメーターを使用したオーバーロードを使用することもできます。 グラデーションに回転変換を適用して、開始点を変更することができます。 また、スケール変換を適用して、方向を時計回りから反時計回りに変更することもできます。
 
-**スイープグラデーション**ページではスイープグラデーションを使用して、ストロークの幅が50ピクセルの円に色を付けます。
+**スイープグラデーション** ページではスイープグラデーションを使用して、ストロークの幅が50ピクセルの円に色を付けます。
 
 [![スイープグラデーション](circular-gradients-images/SweepGradient.png "スイープグラデーション")](circular-gradients-images/SweepGradient-Large.png#lightbox)
 
@@ -592,7 +592,7 @@ UWP 画面には、小さい円が大きな円の内側に全体を移動した�
 
 非対称の外観では、オブジェクトの丸いサーフェイスがわかりやすくなります。 
 
-**円錐反射の強調表示**ページの描画コードは、シェーダーを除き、**放射状反射の強調表示**ページと同じです。
+**円錐反射の強調表示** ページの描画コードは、シェーダーを除き、 **放射状反射の強調表示** ページと同じです。
 
 ```csharp
 public class ConicalSpecularHighlightPage : ContentPage

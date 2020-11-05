@@ -10,16 +10,16 @@ ms.date: 11/25/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 753644b372fafc7c3ea22008267844251527050d
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: ecda3c6d0806894ce1ce657bc9e1c31cdfca7bf2
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556478"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374408"
 ---
 # <a name="no-locxamarinforms-material-visual"></a>Xamarin.Forms 素材ビジュアル
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-visualdemos)
 
 [マテリアルの設計](https://material.io) は、Google によって作成されたこだわりデザインシステムで、ビューやレイアウトの外観と動作について、サイズ、色、スペース、およびその他の側面を規定します。
 
@@ -58,14 +58,14 @@ Xamarin.Forms 素材ビジュアルを使用して、アプリケーションに
 
 をインストールした後[ Xamarin.Forms 。Visual の](https://www.nuget.org/packages/Xamarin.Forms.Visual.Material/)NuGet パッケージ。マテリアルレンダラーは、各プラットフォームプロジェクトで初期化する必要があります。
 
-IOS では、メソッドの後にメソッドを呼び出すことによって、 **AppDelegate.cs**でこれを行う必要があり `Xamarin.Forms.FormsMaterial.Init` *after* `Xamarin.Forms.Forms.Init` ます。
+IOS では、メソッドの後にメソッドを呼び出すことによって、 **AppDelegate.cs** でこれを行う必要があり `Xamarin.Forms.FormsMaterial.Init` *after* `Xamarin.Forms.Forms.Init` ます。
 
 ```csharp
 global::Xamarin.Forms.Forms.Init();
 global::Xamarin.Forms.FormsMaterial.Init();
 ```
 
-Android では、メソッドの後にメソッドを呼び出すことによって、 **MainActivity.cs**でこれを行う必要があり `Xamarin.Forms.FormsMaterial.Init` *after* `Xamarin.Forms.Forms.Init` ます。
+Android では、メソッドの後にメソッドを呼び出すことによって、 **MainActivity.cs** でこれを行う必要があり `Xamarin.Forms.FormsMaterial.Init` *after* `Xamarin.Forms.Forms.Init` ます。
 
 ```csharp
 global::Xamarin.Forms.Forms.Init(this, savedInstanceState);

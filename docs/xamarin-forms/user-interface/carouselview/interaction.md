@@ -10,16 +10,16 @@ ms.date: 02/11/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 43f2e32a240b74fde50659033096c8a7246ea60c
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: c6b6a5a538d69d396f8b30381fd1d0b73d3f0e9f
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91564057"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373823"
 ---
 # <a name="no-locxamarinforms-carouselview-interaction"></a>Xamarin.Forms CarouselView の相互作用
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-carouselviewdemos/)
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView) ユーザーの操作を制御する次のプロパティを定義します。
 
@@ -85,7 +85,7 @@ void OnCurrentItemChanged(object sender, CurrentItemChangedEventArgs e)
 
 [![以前の項目と現在の項目を含む CarouselView のスクリーンショット (iOS と Android)](interaction-images/current-item-events.png "現在と以前の項目を含む CarouselView")](interaction-images/current-item-events-large.png#lightbox "現在と以前の項目を含む CarouselView")
 
-### <a name="command"></a>command
+### <a name="command"></a>コマンド
 
 次の XAML の例は、 [`CarouselView`](xref:Xamarin.Forms.CarouselView) コマンドを使用して、変更中の現在の項目に応答するを示しています。
 
@@ -158,7 +158,7 @@ void OnPositionChanged(object sender, PositionChangedEventArgs e)
 
 [![以前の位置と現在の位置を含む CarouselView のスクリーンショット (iOS と Android)](interaction-images/current-position-events.png "現在と以前の位置を含む CarouselView")](interaction-images/current-position-events-large.png#lightbox "現在と以前の位置を含む CarouselView")
 
-### <a name="command"></a>command
+### <a name="command"></a>コマンド
 
 次の XAML の例は、 [`CarouselView`](xref:Xamarin.Forms.CarouselView) コマンドを使用してプロパティの変更に応答するを示してい `Position` ます。
 

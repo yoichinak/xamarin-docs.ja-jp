@@ -11,24 +11,24 @@ ms.date: 05/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7e59cddbe9192f29ca1636c567131aad60157066
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: f1ceadb6d7985f5d448fe729a42e0cf0a3d5d6f6
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556582"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374473"
 ---
 # <a name="no-locxamarinforms-visual-state-manager"></a>Xamarin.Forms ビジュアル状態マネージャー
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-vsmdemos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-vsmdemos)
 
 _Visual State Manager を使用して、コードから設定されたビジュアルの状態に基づいて XAML 要素を変更します。_
 
 Visual State Manager (VSM) は、コードからユーザーインターフェイスを視覚的に変更できるように構造化された方法を提供します。 ほとんどの場合、アプリケーションのユーザーインターフェイスは XAML で定義され、この XAML には、Visual State Manager がユーザーインターフェイスのビジュアルにどのように影響するかを説明するマークアップが含まれます。
 
-VSM には、視覚的な _状態_の概念が導入されています。 などのビューは、その Xamarin.Forms `Button` 基になる状態に応じて、無効に &mdash; なっているか、押されているか、または入力フォーカスがあるかによって、さまざまな視覚外観を持つことができます。 これは、ボタンの状態です。
+VSM には、視覚的な _状態_ の概念が導入されています。 などのビューは、その Xamarin.Forms `Button` 基になる状態に応じて、無効に &mdash; なっているか、押されているか、または入力フォーカスがあるかによって、さまざまな視覚外観を持つことができます。 これは、ボタンの状態です。
 
-ビジュアル状態は、表示 _状態グループ_で収集されます。 ビジュアル状態グループ内のすべての表示状態は、相互に排他的です。 視覚的な状態と表示状態の両方のグループは、単純なテキスト文字列によって識別されます。
+ビジュアル状態は、表示 _状態グループ_ で収集されます。 ビジュアル状態グループ内のすべての表示状態は、相互に排他的です。 視覚的な状態と表示状態の両方のグループは、単純なテキスト文字列によって識別されます。
 
 Xamarin.FormsVisual State Manager は、"CommonStates" という名前の1つの表示状態グループを定義します。表示状態は次のとおりです。
 
@@ -46,7 +46,7 @@ Xamarin.FormsVisual State Manager は、"CommonStates" という名前の1つの
 
 ## <a name="common-states"></a>一般的な状態
 
-ビジュアル状態マネージャーを使用すると、XAML ファイルにマークアップを含めることができます。これにより、ビューが通常、または無効になっている場合や、入力フォーカスがある場合にビューの外観を変更できます。 これらは _共通の状態_と呼ばれます。
+ビジュアル状態マネージャーを使用すると、XAML ファイルにマークアップを含めることができます。これにより、ビューが通常、または無効になっている場合や、入力フォーカスがある場合にビューの外観を変更できます。 これらは _共通の状態_ と呼ばれます。
 
 たとえば、 `Entry` ページにビューがあり、の視覚的な外観を次のように変更するとし `Entry` ます。
 
@@ -408,7 +408,7 @@ VSM マークアップの残りの部分は、以前と同じです。
 
 次の表に、で定義されている表示状態の一覧を示し Xamarin.Forms ます。
 
-| クラス | 状態 | 詳細情報 |
+| クラス | 状態 | 説明 |
 | ----- | ------ | ---------------- |
 | `Button` | `Pressed` | [ボタンの表示状態](~/xamarin-forms/user-interface/button.md#button-visual-states) |
 | `CheckBox` | `IsChecked` | [チェックボックスの表示状態](~/xamarin-forms/user-interface/checkbox.md#checkbox-visual-states) |
@@ -499,7 +499,7 @@ VisualStateManager.GoToState(this, "Focused");
 
 独自のビジュアル状態を実装する場合は、コードからを呼び出す必要があり `VisualStateManager.GoToState` ます。 ほとんどの場合、この呼び出しはページクラスの分離コードファイルから行います。
 
-**[VsmDemos](/samples/xamarin/xamarin-forms-samples/userinterface-vsmdemos)** サンプルの**VSM 検証**ページでは、入力検証と共に Visual State Manager を使用する方法を示しています。 XAML ファイルは、、 `StackLayout` 、およびという2つの要素で構成され `Label` `Entry` `Button` ます。
+**[VsmDemos](/samples/xamarin/xamarin-forms-samples/userinterface-vsmdemos)** サンプルの **VSM 検証** ページでは、入力検証と共に Visual State Manager を使用する方法を示しています。 XAML ファイルは、、 `StackLayout` 、およびという2つの要素で構成され `Label` `Entry` `Button` ます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -613,7 +613,7 @@ public partial class VsmValidationPage : ContentPage
 
 Xamarin.Formsスマートフォンで実行されるアプリケーションは、通常、縦または横の縦横比で表示でき、 Xamarin.Forms デスクトップで実行されているプログラムのサイズを変更して、さまざまなサイズや縦横比を想定することができます。 適切にデザインされたアプリケーションでは、さまざまなページまたはウィンドウのフォームファクターに応じてコンテンツが異なる方法で表示されることがあります。
 
-この手法は、 _アダプティブレイアウト_とも呼ばれます。 アダプティブレイアウトでは、プログラムのビジュアルのみが必要であるため、ビジュアル状態マネージャーの理想的なアプリケーションです。
+この手法は、 _アダプティブレイアウト_ とも呼ばれます。 アダプティブレイアウトでは、プログラムのビジュアルのみが必要であるため、ビジュアル状態マネージャーの理想的なアプリケーションです。
 
 単純な例として、アプリケーションのコンテンツに影響を与える小さなボタンのコレクションを表示するアプリケーションがあります。 縦モードでは、これらのボタンはページ上部の水平方向の行に表示されることがあります。
 
@@ -625,7 +625,7 @@ Xamarin.Formsスマートフォンで実行されるアプリケーションは�
 
 このプログラムは、上から下に、ユニバーサル Windows プラットフォーム、Android、および iOS で実行されています。
 
-[VsmDemos](/samples/xamarin/xamarin-forms-samples/userinterface-vsmdemos)サンプルの**VSM アダプティブレイアウト**ページでは、"縦" と "横" という名前の2つの表示状態を持つ "OrientationStates" という名前のグループを定義します。 (より複雑な方法は、複数の異なるページやウィンドウの幅に基づいている場合があります)。
+[VsmDemos](/samples/xamarin/xamarin-forms-samples/userinterface-vsmdemos)サンプルの **VSM アダプティブレイアウト** ページでは、"縦" と "横" という名前の2つの表示状態を持つ "OrientationStates" という名前のグループを定義します。 (より複雑な方法は、複数の異なるページやウィンドウの幅に基づいている場合があります)。
 
 VSM マークアップは、XAML ファイル内の4つの場所で実行されます。 `StackLayout`という名前のには、要素である `mainStack` メニューとコンテンツの両方が含まれてい `Image` ます。 縦 `StackLayout` モードの垂直方向と横向きモードの水平方向を持つ必要があります。
 

@@ -10,14 +10,17 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6def31ebfe2a619f1d5db1e0fba071494afbcd3e
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 618b3ee23698ef2d5e74d0fc4997f5f2e215d47a
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86931964"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374239"
 ---
 # <a name="configuration-management"></a>構成管理
+
+> [!NOTE]
+> この電子ブックは2017の spring で公開されており、その後、更新されていません。 本は貴重なものですが、一部のマテリアルは古くなっています。
 
 設定を使用すると、アプリの動作を構成するデータをコードから分離できるため、アプリを再構築しなくても動作を変更できます。 設定には、アプリ設定とユーザー設定の2種類があります。
 
@@ -25,7 +28,7 @@ ms.locfileid: "86931964"
 
 ユーザー設定は、アプリの動作に影響するアプリのカスタマイズ可能な設定であり、頻繁に再調整する必要はありません。 たとえば、アプリでは、ユーザーがデータの取得元を指定したり、画面に表示したりすることができます。
 
-Xamarin.Formsには、設定データを格納するために使用できる永続的なディクショナリが含まれています。 このディクショナリには、プロパティを使用してアクセスできます。このディクショナリに格納されて [`Application.Current.Properties`](xref:Xamarin.Forms.Application.Properties) いるデータは、アプリがスリープ状態になったときに保存され、アプリの再開時または再起動時に復元されます。 また、クラスに [`Application`](xref:Xamarin.Forms.Application) は、 [`SavePropertiesAsync`](xref:Xamarin.Forms.Application.SavePropertiesAsync) 必要に応じてアプリの設定を保存できるようにするメソッドもあります。 このディクショナリの詳細については、「 [Properties dictionary](~/xamarin-forms/app-fundamentals/application-class.md#properties-dictionary)」を参照してください。
+Xamarin.Forms には、設定データを格納するために使用できる永続的なディクショナリが含まれています。 このディクショナリには、プロパティを使用してアクセスできます。このディクショナリに格納されて [`Application.Current.Properties`](xref:Xamarin.Forms.Application.Properties) いるデータは、アプリがスリープ状態になったときに保存され、アプリの再開時または再起動時に復元されます。 また、クラスに [`Application`](xref:Xamarin.Forms.Application) は、 [`SavePropertiesAsync`](xref:Xamarin.Forms.Application.SavePropertiesAsync) 必要に応じてアプリの設定を保存できるようにするメソッドもあります。 このディクショナリの詳細については、「 [Properties dictionary](~/xamarin-forms/app-fundamentals/application-class.md#properties-dictionary)」を参照してください。
 
 永続ディクショナリを使用してデータを格納する Xamarin.Forms ことの欠点は、に簡単にデータをバインドできないことです。 そのため、eShopOnContainers モバイルアプリでは、 [NuGet](https://www.nuget.org/packages/Xam.Plugins.Settings/)から入手できる Xam. プラグインライブラリを使用します。 このライブラリは、アプリとユーザー設定の永続化と取得を行うための一貫したタイプセーフなクロスプラットフォームアプローチを提供します。また、各プラットフォームによって提供されるネイティブ設定管理を使用します。 また、データバインディングを使用して、ライブラリによって公開される設定データにアクセスするのも簡単です。
 
@@ -37,16 +40,16 @@ Xamarin.Formsには、設定データを格納するために使用できる永�
 設定ライブラリを使用する場合は、アプリに必要なアプリとユーザー設定を含む単一の静的クラスを作成する必要があります。 次のコード例は、eShopOnContainers モバイルアプリの Settings クラスを示しています。
 
 ```csharp
-public static class Settings  
+public static class Settings  
 {  
-    private static ISettings AppSettings  
-    {  
-        get  
-        {  
-            return CrossSettings.Current;  
-        }  
-    }  
-    ...  
+    private static ISettings AppSettings  
+    {  
+        get  
+        {  
+            return CrossSettings.Current;  
+        }  
+    }  
+    ...  
 }
 ```
 
@@ -60,24 +63,24 @@ public static class Settings
 各設定は、キー、既定値、およびプロパティで構成されます。 次のコード例では、eShopOnContainers モバイルアプリが接続するオンラインサービスのベース URL を表す、ユーザー設定の3つの項目すべてを示しています。
 
 ```csharp
-public static class Settings  
+public static class Settings  
 {  
-    ...  
-    private const string IdUrlBase = "url_base";  
-    private static readonly string UrlBaseDefault = GlobalSetting.Instance.BaseEndpoint;  
-    ...  
+    ...  
+    private const string IdUrlBase = "url_base";  
+    private static readonly string UrlBaseDefault = GlobalSetting.Instance.BaseEndpoint;  
+    ...  
 
-    public static string UrlBase  
-    {  
-        get  
-        {  
-            return AppSettings.GetValueOrDefault<string>(IdUrlBase, UrlBaseDefault);  
-        }  
-        set  
-        {  
-            AppSettings.AddOrUpdateValue<string>(IdUrlBase, value);  
-        }  
-    }  
+    public static string UrlBase  
+    {  
+        get  
+        {  
+            return AppSettings.GetValueOrDefault<string>(IdUrlBase, UrlBaseDefault);  
+        }  
+        set  
+        {  
+            AppSettings.AddOrUpdateValue<string>(IdUrlBase, value);  
+        }  
+    }  
 }
 ```
 
@@ -88,33 +91,33 @@ public static class Settings
 クラス内の既定値を定義するのではなく、 `Settings` `UrlBaseDefault` 文字列はクラスから値を取得し `GlobalSetting` ます。 次のコード例は、 `BaseEndpoint` このクラスのプロパティとメソッドを示してい `UpdateEndpoint` ます。
 
 ```csharp
-public class GlobalSetting  
+public class GlobalSetting  
 {  
-    ...  
-    public string BaseEndpoint  
-    {  
-        get { return _baseEndpoint; }  
-        set  
-        {  
-            _baseEndpoint = value;  
-            UpdateEndpoint(_baseEndpoint);  
-        }  
-    }  
-    ...  
+    ...  
+    public string BaseEndpoint  
+    {  
+        get { return _baseEndpoint; }  
+        set  
+        {  
+            _baseEndpoint = value;  
+            UpdateEndpoint(_baseEndpoint);  
+        }  
+    }  
+    ...  
 
-    private void UpdateEndpoint(string baseEndpoint)  
-    {  
-        RegisterWebsite = string.Format("{0}:5105/Account/Register", baseEndpoint);  
-        CatalogEndpoint = string.Format("{0}:5101", baseEndpoint);  
-        OrdersEndpoint = string.Format("{0}:5102", baseEndpoint);  
-        BasketEndpoint = string.Format("{0}:5103", baseEndpoint);  
-        IdentityEndpoint = string.Format("{0}:5105/connect/authorize", baseEndpoint);  
-        UserInfoEndpoint = string.Format("{0}:5105/connect/userinfo", baseEndpoint);  
-        TokenEndpoint = string.Format("{0}:5105/connect/token", baseEndpoint);  
-        LogoutEndpoint = string.Format("{0}:5105/connect/endsession", baseEndpoint);  
-        IdentityCallback = string.Format("{0}:5105/xamarincallback", baseEndpoint);  
-        LogoutCallback = string.Format("{0}:5105/Account/Redirecting", baseEndpoint);  
-    }  
+    private void UpdateEndpoint(string baseEndpoint)  
+    {  
+        RegisterWebsite = string.Format("{0}:5105/Account/Register", baseEndpoint);  
+        CatalogEndpoint = string.Format("{0}:5101", baseEndpoint);  
+        OrdersEndpoint = string.Format("{0}:5102", baseEndpoint);  
+        BasketEndpoint = string.Format("{0}:5103", baseEndpoint);  
+        IdentityEndpoint = string.Format("{0}:5105/connect/authorize", baseEndpoint);  
+        UserInfoEndpoint = string.Format("{0}:5105/connect/userinfo", baseEndpoint);  
+        TokenEndpoint = string.Format("{0}:5105/connect/token", baseEndpoint);  
+        LogoutEndpoint = string.Format("{0}:5105/connect/endsession", baseEndpoint);  
+        IdentityCallback = string.Format("{0}:5105/xamarincallback", baseEndpoint);  
+        LogoutCallback = string.Format("{0}:5105/Account/Redirecting", baseEndpoint);  
+    }  
 }
 ```
 
@@ -126,42 +129,42 @@ EShopOnContainers モバイルアプリでは、は `SettingsView` 2 つのユ�
 
 ![EShopOnContainers モバイルアプリによって公開されるユーザー設定](configuration-management-images/settings-endpoint.png)
 
-**図 7-1**: eShopOnContainers モバイルアプリによって公開されるユーザー設定
+**図 7-1** : eShopOnContainers モバイルアプリによって公開されるユーザー設定
 
-データバインディングを使用して、クラスによって公開される設定を取得および設定でき `Settings` ます。 これを実現するには、ビューバインディングのコントロールを使用して、クラスのプロパティにアクセスするモデルプロパティを表示 `Settings` し、設定値が変更された場合にプロパティの変更通知を発生させます。 EShopOnContainers mobile アプリがビューモデルを構築してビューに関連付ける方法については、「[ビューモデルロケーターを使用したビューモデルの自動作成](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically-creating-a-view-model-with-a-view-model-locator)」を参照してください。
+データバインディングを使用して、クラスによって公開される設定を取得および設定でき `Settings` ます。 これを実現するには、ビューバインディングのコントロールを使用して、クラスのプロパティにアクセスするモデルプロパティを表示 `Settings` し、設定値が変更された場合にプロパティの変更通知を発生させます。 EShopOnContainers mobile アプリがビューモデルを構築してビューに関連付ける方法については、「 [ビューモデルロケーターを使用したビューモデルの自動作成](~/xamarin-forms/enterprise-application-patterns/mvvm.md#automatically-creating-a-view-model-with-a-view-model-locator)」を参照してください。
 
 次のコード例は [`Entry`](xref:Xamarin.Forms.Entry) 、コンテナー化さ `SettingsView` れたマイクロサービスのベースエンドポイント URL をユーザーが入力できるようにする、のコントロールを示しています。
 
 ```xaml
-<Entry Text="{Binding Endpoint, Mode=TwoWay}" />
+<Entry Text="{Binding Endpoint, Mode=TwoWay}" />
 ```
 
 この [`Entry`](xref:Xamarin.Forms.Entry) コントロールは、 `Endpoint` 双方向のバインディングを使用して、クラスのプロパティにバインドさ `SettingsViewModel` れます。 次のコード例は、エンドポイントプロパティを示しています。
 
 ```csharp
-public string Endpoint  
+public string Endpoint  
 {  
-    get { return _endpoint; }  
-    set  
-    {  
-        _endpoint = value;  
+    get { return _endpoint; }  
+    set  
+    {  
+        _endpoint = value;  
 
-        if(!string.IsNullOrEmpty(_endpoint))  
-        {  
-            UpdateEndpoint(_endpoint);  
-        }  
+        if(!string.IsNullOrEmpty(_endpoint))  
+        {  
+            UpdateEndpoint(_endpoint);  
+        }  
 
-        RaisePropertyChanged(() => Endpoint);  
-    }  
+        RaisePropertyChanged(() => Endpoint);  
+    }  
 }
 ```
 
 プロパティが設定されている場合、 `Endpoint` `UpdateEndpoint` 指定された値が有効であると、メソッドが呼び出され、プロパティの変更通知が発生します。 次のコード例は、`UpdateEndpoint` メソッドを示しています。
 
 ```csharp
-private void UpdateEndpoint(string endpoint)  
+private void UpdateEndpoint(string endpoint)  
 {  
-    Settings.UrlBase = endpoint;  
+    Settings.UrlBase = endpoint;  
 }
 ```
 
@@ -170,15 +173,15 @@ private void UpdateEndpoint(string endpoint)
 `SettingsView`に移動すると、クラスの `InitializeAsync` メソッド `SettingsViewModel` が実行されます。 以下のコード例はこのメソッドを示しています。
 
 ```csharp
-public override Task InitializeAsync(object navigationData)  
+public override Task InitializeAsync(object navigationData)  
 {  
-    ...  
-    Endpoint = Settings.UrlBase;  
-    ...  
+    ...  
+    Endpoint = Settings.UrlBase;  
+    ...  
 }
 ```
 
-メソッドは、 `Endpoint` プロパティをクラスのプロパティの値に設定し `UrlBase` `Settings` ます。 プロパティにアクセス `UrlBase` すると、プラットフォーム固有のストレージから設定値が取得されます。 メソッドの呼び出し方法の詳細については `InitializeAsync` 、「[ナビゲーション中のパラメーターの引き渡し](~/xamarin-forms/enterprise-application-patterns/navigation.md#passing-parameters-during-navigation)」を参照してください。
+メソッドは、 `Endpoint` プロパティをクラスのプロパティの値に設定し `UrlBase` `Settings` ます。 プロパティにアクセス `UrlBase` すると、プラットフォーム固有のストレージから設定値が取得されます。 メソッドの呼び出し方法の詳細については `InitializeAsync` 、「 [ナビゲーション中のパラメーターの引き渡し](~/xamarin-forms/enterprise-application-patterns/navigation.md#passing-parameters-during-navigation)」を参照してください。
 
 このメカニズムにより、ユーザーが SettingsView に移動するたびに、ユーザー設定がプラットフォーム固有のストレージから取得され、データバインディングによって表示されるようになります。 その後、ユーザーが設定値を変更すると、データバインディングによって、それらの値が直ちにプラットフォーム固有のストレージに永続化されます。
 

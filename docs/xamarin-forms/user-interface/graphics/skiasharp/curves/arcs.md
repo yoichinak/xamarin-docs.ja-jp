@@ -10,16 +10,16 @@ ms.date: 05/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 32de64c0fa6b0ec0a0b03c8075710e1cbc92dd49
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 5f48300b6c974bbbb0106f1afaa6c863f8159c58
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557414"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374642"
 ---
 # <a name="three-ways-to-draw-an-arc"></a>円弧を描画する 3 つの方法
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _SkiaSharp を使用して、3つの異なる方法で円弧を定義する方法について説明します。_
 
@@ -116,7 +116,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 `angle`値は `startAngle` または `startAngle + sweepAngle` です。
 
-2つの角度を使用して弧を定義するのは、描画する弧の長さがわかっている場合に最適です。たとえば、円グラフを作成する場合に適しています。 **分割円グラフ**のページには、この例が示されています。 クラスは、内部クラスを使用して、いくつかの製造された [`ExplodedPieChartPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ExplodedPieChartPage.cs) データと色を定義します。
+2つの角度を使用して弧を定義するのは、描画する弧の長さがわかっている場合に最適です。たとえば、円グラフを作成する場合に適しています。 **分割円グラフ** のページには、この例が示されています。 クラスは、内部クラスを使用して、いくつかの製造された [`ExplodedPieChartPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ExplodedPieChartPage.cs) データと色を定義します。
 
 ```csharp
 class ChartData
@@ -219,7 +219,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ## <a name="the-tangent-arc"></a>アークタンジェント
 
-でサポートされている弧の2番目の型 `SKPath` は *タンジェント円弧*であり、弧は2つの接続された直線に接する円の円周であるため、が呼び出されます。
+でサポートされている弧の2番目の型 `SKPath` は *タンジェント円弧* であり、弧は2つの接続された直線に接する円の円周であるため、が呼び出されます。
 
 2つのパラメーターを持つメソッドを呼び出すことによって、  [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo(SkiaSharp.SKPoint,SkiaSharp.SKPoint,System.Single)) またはその点に対して別々のパラメーターを持つオーバーロードで、接線がパスに追加され `SKPoint` [`ArcTo`](xref:SkiaSharp.SKPath.ArcTo(System.Single,System.Single,System.Single,System.Single,System.Single)) `Single` ます。
 
@@ -234,8 +234,8 @@ public void ArcTo (Single x1, Single y1, Single x2, Single y2, Single radius)
 メソッドには、 `ArcTo` 次の3つの点が含まれます。
 
 - 輪郭の現在の点。 `MoveTo` が呼び出されていない場合は、ポイント (0, 0)。
-- `ArcTo`*コーナーポイント*と呼ばれるメソッドの最初のポイント引数
-- `ArcTo`*コピー先のポイント*と呼ばれる、の2番目の point 引数。
+- `ArcTo`*コーナーポイント* と呼ばれるメソッドの最初のポイント引数
+- `ArcTo`*コピー先のポイント* と呼ばれる、の2番目の point 引数。
 
 ![アークタンジェントを開始する3つの点](arcs-images/tangentarcthreepoints.png)
 

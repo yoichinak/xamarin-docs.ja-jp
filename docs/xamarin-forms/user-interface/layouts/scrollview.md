@@ -10,16 +10,16 @@ ms.date: 05/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: af8513d86b7cf02ec7adcee75241d8ce99e2dfab
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: f59d58ed582b3fd6fd5cc25b08bbf1c262d602b4
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556829"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93372685"
 ---
 # <a name="no-locxamarinforms-scrollview"></a>Xamarin.Forms ScrollView
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-scrollviewdemos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-scrollviewdemos)
 
 [![::: no-loc (Xamarin. Forms)::: ScrollView](scrollview-images/layouts.png "::: no-loc (Xamarin. Forms)::: ScrollView")](scrollview-images/layouts-large.png#lightbox "::: no-loc (Xamarin. Forms)::: ScrollView")
 
@@ -203,7 +203,7 @@ public class BlackCatPageCS : ContentPage
 }
 ```
 
-## <a name="orientation"></a>方向
+## <a name="orientation"></a>Orientation
 
 [`ScrollView`](xref:Xamarin.Forms.ScrollView) には、 [`Orientation`](xref:Xamarin.Forms.ScrollView.Orientation) のスクロール方向を表すプロパティがあり `ScrollView` ます。 このプロパティの型は [`ScrollOrientation`](xref:Xamarin.Forms.ScrollOrientation) で、次のメンバーを定義します。
 

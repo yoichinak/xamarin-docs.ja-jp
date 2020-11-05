@@ -7,22 +7,22 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 06/14/2017
-ms.openlocfilehash: 4fe58dbc02da47d5791afbbfe0132fd21e774b63
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: 5b9bcbd941c1f2d0a1e0e89d5fe34f09c7b5a0dc
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86939790"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373769"
 ---
 # <a name="photokit-in-xamarinios"></a>Xamarin の PhotoKit
 
-[![サンプル ](~/media/shared/download.png) をダウンロードするサンプルコードをダウンロードする](https://docs.microsoft.com/samples/xamarin/ios-samples/ios11-samplephotoapp/)
+[![サンプル ](~/media/shared/download.png) をダウンロードするサンプルコードをダウンロードする](/samples/xamarin/ios-samples/ios11-samplephotoapp/)
 
 PhotoKit は、アプリケーションがシステムイメージライブラリに対してクエリを実行し、その内容を表示および変更するためのカスタムユーザーインターフェイスを作成できるようにするフレームワークです。 これには、イメージとビデオ資産を表す多数のクラスと、アルバムやフォルダーなどの資産のコレクションが含まれます。
 
 ## <a name="permissions"></a>アクセス許可
 
-アプリがフォトライブラリにアクセスできるようにするには、ユーザーにアクセス許可のダイアログが表示されます。 アプリで写真ライブラリを使用する方法を説明するために、次のような**情報を plist**ファイルに記述する必要があります。
+アプリがフォトライブラリにアクセスできるようにするには、ユーザーにアクセス許可のダイアログが表示されます。 アプリで写真ライブラリを使用する方法を説明するために、次のような **情報を plist** ファイルに記述する必要があります。
 
 ```xml
 <key>NSPhotoLibraryUsageDescription</key>

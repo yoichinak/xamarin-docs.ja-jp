@@ -10,16 +10,16 @@ ms.date: 08/19/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e34144f253b19796ea6ec83cb3873fe373aeb914
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: aec9f0ec0b3092a5f84f183fb90cfc8bc9da7324
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560612"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374226"
 ---
 # <a name="no-locxamarinforms-in-xamarin-native-projects"></a>Xamarin.Forms Xamarin ネイティブプロジェクトで
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/native2forms)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/native2forms)
 
 通常、アプリケーションには Xamarin.Forms 、から派生した1つ以上のページが含まれ [`ContentPage`](xref:Xamarin.Forms.ContentPage) ます。これらのページは、.NET Standard ライブラリプロジェクトまたは共有プロジェクトのすべてのプラットフォームで共有されます。 ただし、ネイティブ形式では、 `ContentPage` ネイティブの xamarin、iOS、xamarin、および UWP アプリケーションに、の派生ページを直接追加できます。 ネイティブプロジェクトが `ContentPage` .NET Standard ライブラリプロジェクトまたは共有プロジェクトから派生したページを使用する場合と比較して、ネイティブプロジェクトにページを直接追加する利点は、ネイティブビューでページを拡張できることです。 その後、ネイティブビューを XAML で名前付けし `x:Name` 、分離コードから参照できます。 ネイティブビューの詳細については、「 [ネイティブビュー](~/xamarin-forms/platform/native-views/index.md)」を参照してください。
 

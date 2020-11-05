@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8e8c5696235e0258ab4e300a821c1ef804e6bd50
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 5b7315fce6a51c570c4486c54fdfc81932a4b8f8
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556686"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93372688"
 ---
 # <a name="picker-item-selection-on-ios"></a>IOS でのピッカー項目の選択
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 この iOS プラットフォーム固有のコントロールでは、で項目の選択が発生したときに、 [`Picker`](xref:Xamarin.Forms.Picker) ユーザーがコントロールの項目を参照するときに項目の選択を行うように指定できます。または、[ **完了** ] ボタンをクリックしたときにのみ、項目の選択が行われます。 これは、 `Picker.UpdateMode` 添付プロパティを列挙体の値に設定することによって XAML で使用され `UpdateMode` ます。
 
@@ -66,7 +66,7 @@ switch (picker.On<iOS>().UpdateMode())
 
 結果として、指定された `UpdateMode` がに適用され [`Picker`](xref:Xamarin.Forms.Picker) ます。これは、項目の選択が行われるタイミングを制御します。
 
-[![ピッカー UpdateMode プラットフォーム固有](picker-selection-images/picker-updatemode.png)](picker-selection-images/picker-updatemode-large.png#lightbox "ピッカー UpdateMode プラットフォーム固有")
+[![ピッカー UpdateMode プラットフォーム固有](picker-selection-images/picker-updatemode.png)](picker-selection-images/picker-updatemode-large.png#lightbox "選択 UpdateMode Platform-Specific")
 
 ## <a name="related-links"></a>関連リンク
 

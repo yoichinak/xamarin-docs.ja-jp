@@ -10,20 +10,20 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: af1747a19af6c715d1594122393e500d1f73c79b
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 837d58508c3f5b14c4c36a867a2aa974a5bf397c
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562523"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374317"
 ---
 # <a name="skiasharp-transparency"></a>SkiaSharp の透明度
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 既に説明したように、クラスには [`SKPaint`](xref:SkiaSharp.SKPaint) 型のプロパティが含まれてい [`Color`](xref:SkiaSharp.SKPaint.Color) [`SKColor`](xref:SkiaSharp.SKColor) ます。 `SKColor` にはアルファチャネルが含まれているため、値を使用して色を指定すると、 `SKColor` 部分的に透明になることがあります。 
 
-いくつかの透過性は、 [**SkiaSharp 記事の基本的なアニメーション**](animation.md) に示されています。 この記事では、複数のオブジェクトを1つのシーン ( _ブレンド_とも呼ばれます) で組み合わせることにより、透過性について少し掘り下げていきます。 より高度なブレンド手法については、「 [**SkiaSharp シェーダー**](../effects/shaders/index.md) 」セクションの記事で説明されています。
+いくつかの透過性は、 [**SkiaSharp 記事の基本的なアニメーション**](animation.md) に示されています。 この記事では、複数のオブジェクトを1つのシーン ( _ブレンド_ とも呼ばれます) で組み合わせることにより、透過性について少し掘り下げていきます。 より高度なブレンド手法については、「 [**SkiaSharp シェーダー**](../effects/shaders/index.md) 」セクションの記事で説明されています。
 
 4つのパラメーターを持つコンストラクターを使用して最初に色を作成するときに、透明度レベルを設定でき [`SKColor`](xref:SkiaSharp.SKColor.%23ctor(System.Byte,System.Byte,System.Byte,System.Byte)) ます。
 
@@ -39,7 +39,7 @@ SKColor (byte red, byte green, byte blue, byte alpha);
 SKColor halfTransparentBlue = SKColors.Blue.WithAlpha(0x80);
 ```
 
-部分的に透明なテキストの使用方法については、 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルのコードページを**参照**してください。 このページでは、値に透明度を組み込むことによって、2つのテキスト文字列をフェードアウトし `SKColor` ます。
+部分的に透明なテキストの使用方法については、 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルのコードページを **参照** してください。 このページでは、値に透明度を組み込むことによって、2つのテキスト文字列をフェードアウトし `SKColor` ます。
 
 ```csharp
 public class CodeMoreCodePage : ContentPage

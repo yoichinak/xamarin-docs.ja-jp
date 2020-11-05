@@ -10,16 +10,16 @@ ms.date: 07/17/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 91051b1ffc859d4e3deb62d41709db0c587b2789
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 3ca546f69dd8c4995747ad352c54e9ba184b2425
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560833"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373498"
 ---
 # <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>SkiaSharp ビットマップの作成と描画
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 アプリケーションで、Web からのビットマップ、アプリケーションリソース、およびユーザーの写真ライブラリを読み込む方法を説明しました。 また、アプリケーション内に新しいビットマップを作成することもできます。 最も簡単な方法は、のコンストラクターの1つです [`SKBitmap`](xref:SkiaSharp.SKBitmap.%23ctor(System.Int32,System.Int32,System.Boolean)) 。
 
@@ -59,7 +59,7 @@ using (SKCanvas canvas = new SKCanvas(bitmap))
 
 ビットマップが表示されます。 後で、プログラムは `SKCanvas` 同じビットマップに基づいて新しいオブジェクトを作成し、それをさらに描画できます。
 
-**[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーションの**hello ビットマップ**ページには、"hello, Bitmap!" というテキストが書き込まれます。 ビットマップでは、そのビットマップが複数回表示されます。
+**[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーションの **hello ビットマップ** ページには、"hello, Bitmap!" というテキストが書き込まれます。 ビットマップでは、そのビットマップが複数回表示されます。
 
 のコンストラクターは、 `HelloBitmapPage` `SKPaint` テキストを表示するためのオブジェクトを作成することによって開始されます。 ここでは、テキスト文字列の大きさを決定し、それらの寸法を使用してビットマップを作成します。 次に、その `SKCanvas` ビットマップに基づいてオブジェクトを作成し、 `Clear` を呼び出して、を呼び出し `DrawText` ます。 `Clear`新しく作成されたビットマップにはランダムなデータが含まれている可能性があるため、必ず新しいビットマップを使用してを呼び出すことをお勧めします。
 
@@ -202,7 +202,7 @@ Color = new SKColor(0, 0, 0, 0)
 
 新しいビットマップを作成して描画する必要はありません。 また、既存のビットマップを使用して描画することもできます。
 
-**サル Moustache**ページは、そのコンストラクターを使用して**MonkeyFace.png**イメージを読み込みます。 次に、その `SKCanvas` ビットマップに基づいてオブジェクトを作成し、オブジェクトとオブジェクトを使用し `SKPaint` `SKPath` て moustache を描画します。
+**サル Moustache** ページは、そのコンストラクターを使用して **MonkeyFace.png** イメージを読み込みます。 次に、その `SKCanvas` ビットマップに基づいてオブジェクトを作成し、オブジェクトとオブジェクトを使用し `SKPaint` `SKPath` て moustache を描画します。
 
 ```csharp
 public partial class MonkeyMoustachePage : ContentPage
@@ -271,11 +271,11 @@ public partial class MonkeyMoustachePage : ContentPage
 
 ![マウンテン Climbers](drawing-images/MountainClimbers.jpg "マウンテン Climbers")
 
-この写真を公開するために、左側にあるサルからアクセス許可を受け取っていないとします。 1つの解決策として、 _pixelization_という手法を使用して、サルの顔を隠すことができます。 面のピクセルは色のブロックで置き換えられるため、機能を使用できません。 通常、色のブロックは、これらのブロックに対応するピクセルの色を平均して元のイメージから派生します。 しかし、この平均化を自分で実行する必要はありません。 これは、ビットマップを小さいピクセルディメンションにコピーするときに自動的に発生します。
+この写真を公開するために、左側にあるサルからアクセス許可を受け取っていないとします。 1つの解決策として、 _pixelization_ という手法を使用して、サルの顔を隠すことができます。 面のピクセルは色のブロックで置き換えられるため、機能を使用できません。 通常、色のブロックは、これらのブロックに対応するピクセルの色を平均して元のイメージから派生します。 しかし、この平均化を自分で実行する必要はありません。 これは、ビットマップを小さいピクセルディメンションにコピーするときに自動的に発生します。
 
 左側のサルの顔は、約72ピクセルの四角形領域で、ポイント (112、238) の左上隅になります。 72ピクセルの四角形領域を、カラーブロックの 9 x 9 の配列 (それぞれ8×8ピクセルの正方形) に置き換えてみましょう。
 
-**Pixelize Image**ページがそのビットマップに読み込まれ、最初にという小さな9ピクセルの正方形のビットマップが作成され `faceBitmap` ます。 これは、サルの顔だけをコピーするための場所です。 コピー先の四角形は9ピクセルの正方形ですが、基になる四角形は72ピクセルの四角形です。 ソースピクセルの8×8ブロックはそれぞれ、色を平均して1ピクセルに統合されます。
+**Pixelize Image** ページがそのビットマップに読み込まれ、最初にという小さな9ピクセルの正方形のビットマップが作成され `faceBitmap` ます。 これは、サルの顔だけをコピーするための場所です。 コピー先の四角形は9ピクセルの正方形ですが、基になる四角形は72ピクセルの四角形です。 ソースピクセルの8×8ブロックはそれぞれ、色を平均して1ピクセルに統合されます。
 
 次の手順では、元のビットマップをと同じサイズの新しいビットマップにコピーし `pixelizedBitmap` ます。 次に、 `faceBitmap` の各ピクセルの `faceBitmap` サイズが8倍になるように、72ピクセルの四角形のコピー先の四角形を使用して、小さい方をコピーします。
 
@@ -386,7 +386,7 @@ using (SKCanvas canvas = new SKCanvas(rotatedBitmap))
 }
 ```
 
-この2つの方法は、「 [**SkiaSharp ビットマップのトリミング**](cropping.md#cropping-skiasharp-bitmaps)」で説明されている**写真パズル**ページで使用されます。
+この2つの方法は、「 [**SkiaSharp ビットマップのトリミング**](cropping.md#cropping-skiasharp-bitmaps)」で説明されている **写真パズル** ページで使用されます。
 
 ユーザーが90度の増分でビットマップを回転できるようにするプログラムでは、90°で回転するために1つの関数のみを実装する必要があります。 ユーザーは、この1つの関数を繰り返し実行することで、90度の任意のインクリメントでローテーションできます。
 
@@ -495,9 +495,9 @@ public partial class BitmapRotatorPage : ContentPage
 
 ## <a name="flipping-bitmaps"></a>ビットマップの反転
 
-通常、ビットマップに対して実行されるもう1つの操作は、 _反転_と呼ばれます。 概念的には、ビットマップは、垂直軸または水平軸を中心に、ビットマップの中心を通る3次元で回転します。 垂直方向の反転では、ミラーイメージが作成されます。
+通常、ビットマップに対して実行されるもう1つの操作は、 _反転_ と呼ばれます。 概念的には、ビットマップは、垂直軸または水平軸を中心に、ビットマップの中心を通る3次元で回転します。 垂直方向の反転では、ミラーイメージが作成されます。
 
-**[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーションの**ビットマップフリッパー**ページは、これらのプロセスを示しています。 XAML ファイルには、 `SKCanvasView` 垂直方向および水平方向に反転するためのボタンと2つのボタンが含まれています。
+**[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーションの **ビットマップフリッパー** ページは、これらのプロセスを示しています。 XAML ファイルには、 `SKCanvasView` 垂直方向および水平方向に反転するためのボタンと2つのボタンが含まれています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

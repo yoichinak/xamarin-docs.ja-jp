@@ -10,16 +10,16 @@ ms.date: 06/15/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 59a4d5c0730719d6cc332728c6cab641d02239b4
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 226c20acef7fc65cd0a4daf082c86e3c9c17bf54
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563563"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373782"
 ---
 # <a name="no-locxamarinforms-grid"></a>Xamarin.Forms 行列
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-griddemos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-griddemos)
 
 [![::: なし (Xamarin. Forms)::: Grid](grid-images/layouts.png "::: なし (Xamarin. Forms)::: Grid")](grid-images/layouts-large.png#lightbox "::: なし (Xamarin. Forms)::: Grid")
 
@@ -270,7 +270,7 @@ public class BasicGridPageCS : ContentPage
 
 コードでは、オブジェクトの高さとオブジェクトの幅を指定するために、 [`RowDefinition`](xref:Xamarin.Forms.RowDefinition) [`ColumnDefinition`](xref:Xamarin.Forms.ColumnDefinition) 多くの場合、 [`GridLength`](xref:Xamarin.Forms.GridLength) 列挙と組み合わせて構造体の値を使用し [`GridUnitType`](xref:Xamarin.Forms.GridUnitType) ます。
 
-上のコード例では、に子を追加し、それらが存在するセルを指定するためのいくつかの異なる方法も示して [`Grid`](xref:Xamarin.Forms.Grid) います。 `Add` *Left*、 *right*、 *top*、および*bottom*の各引数を指定するオーバーロードを使用しているときに、 *left*および*top*引数が常に内のセルを参照しているときに、 `Grid` *右*と*下*の引数がの外部にあるセルを参照しているように見え `Grid` ます。 これは、 *right* 引数は常に *左* の引数よりも大きくする必要があり、 *下* の引数は常に *top* 引数よりも大きくする必要があるためです。 次の例では、2x2 を前提とし `Grid` て、両方のオーバーロードを使用して同等のコードを示してい `Add` ます。
+上のコード例では、に子を追加し、それらが存在するセルを指定するためのいくつかの異なる方法も示して [`Grid`](xref:Xamarin.Forms.Grid) います。 `Add` *Left* 、 *right* 、 *top* 、および *bottom* の各引数を指定するオーバーロードを使用しているときに、 *left* および *top* 引数が常に内のセルを参照しているときに、 `Grid` *右* と *下* の引数がの外部にあるセルを参照しているように見え `Grid` ます。 これは、 *right* 引数は常に *左* の引数よりも大きくする必要があり、 *下* の引数は常に *top* 引数よりも大きくする必要があるためです。 次の例では、2x2 を前提とし `Grid` て、両方のオーバーロードを使用して同等のコードを示してい `Add` ます。
 
 ```csharp
 // left, top
@@ -344,7 +344,7 @@ public GridSpacingPageCS()
 }
 ```
 
-## <a name="alignment"></a>Alignment
+## <a name="alignment"></a>配置
 
 の子ビューは、 [`Grid`](xref:Xamarin.Forms.Grid) プロパティとプロパティによってセル内に配置でき [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) ます。 これらのプロパティは、構造体から次のフィールドに設定でき [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) ます。
 

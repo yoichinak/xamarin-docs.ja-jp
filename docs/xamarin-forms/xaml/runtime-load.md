@@ -10,20 +10,20 @@ ms.date: 12/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 071a7de630d7d7b7582e3c9fa8906919e92d1fb5
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: c027ef35462e6d2d43acf4ea5241a38abe15d41f
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562003"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374278"
 ---
 # <a name="loading-xaml-at-runtime-in-no-locxamarinforms"></a>実行時の XAML の読み込み Xamarin.Forms
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-loadruntimexaml)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/xaml-loadruntimexaml)
 
 名前空間には、 [`Xamarin.Forms.Xaml`](xref:Xamarin.Forms.Xaml) [`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*) 実行時に XAML を読み込んで解析するために使用できる2つの拡張メソッドが含まれています。
 
-## <a name="background"></a>背景
+## <a name="background"></a>バックグラウンド
 
 Xamarin.FormsXAML クラスが構築されると、 [`LoadFromXaml`](xref:Xamarin.Forms.Xaml.Extensions.LoadFromXaml*) メソッドは間接的に呼び出されます。 このエラーは、XAML クラスの分離コードファイルがコンストラクターからメソッドを呼び出すことが原因で発生し `InitializeComponent` ます。
 
@@ -37,7 +37,7 @@ public partial class MainPage : ContentPage
 }
 ```
 
-Visual Studio は、XAML ファイルを含むプロジェクトをビルドするときに、メソッドの定義を含む C# コードファイル (たとえば、 **MainPage.xaml.g.cs**) を生成するために xaml ファイルを解析し `InitializeComponent` ます。
+Visual Studio は、XAML ファイルを含むプロジェクトをビルドするときに、メソッドの定義を含む C# コードファイル (たとえば、 **MainPage.xaml.g.cs** ) を生成するために xaml ファイルを解析し `InitializeComponent` ます。
 
 ```csharp
 private void InitializeComponent()

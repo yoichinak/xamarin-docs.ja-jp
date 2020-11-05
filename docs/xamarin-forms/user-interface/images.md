@@ -10,16 +10,16 @@ ms.date: 05/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 824d5ca711495c8a8ad663034e77506468efd397
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 2ea65a646add3f42ee88e5cd884e80131b9964bf
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556192"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373836"
 ---
 # <a name="images-in-no-locxamarinforms"></a>画像 Xamarin.Forms
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithimages)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/workingwithimages)
 
 _イメージは、を使用してプラットフォーム間で共有でき Xamarin.Forms 、プラットフォームごとに個別に読み込むことも、表示用にダウンロードすることもできます。_
 
@@ -38,7 +38,7 @@ Xamarin.Forms[`Image`](xref:Xamarin.Forms.Image)ビューを使用して、ペ�
 
 - [`FromFile`](xref:Xamarin.Forms.ImageSource.FromFile(System.String)) -各プラットフォームで解決できるファイル名またはファイルパスが必要です。
 - [`FromUri`](xref:Xamarin.Forms.ImageSource.FromUri(System.Uri)) -Uri オブジェクトが必要です。例:  `new Uri("http://server.com/image.jpg")` .
-- [`FromResource`](xref:Xamarin.Forms.ImageSource.FromResource*) - **ビルドアクション EmbeddedResource**を使用して、アプリケーションまたは .NET Standard ライブラリプロジェクトに埋め込まれているイメージファイルのリソース識別子が必要です。
+- [`FromResource`](xref:Xamarin.Forms.ImageSource.FromResource*) - **ビルドアクション EmbeddedResource** を使用して、アプリケーションまたは .NET Standard ライブラリプロジェクトに埋め込まれているイメージファイルのリソース識別子が必要です。
 - [`FromStream`](xref:Xamarin.Forms.ImageSource.FromStream(System.Func{System.IO.Stream})) -イメージデータを提供するストリームが必要です。
 
 プロパティは、 [`Aspect`](xref:Xamarin.Forms.Image.Aspect) 表示領域に合わせてイメージをスケーリングする方法を決定します。
@@ -53,14 +53,14 @@ Xamarin.Forms[`Image`](xref:Xamarin.Forms.Image)ビューを使用して、ペ�
 
 イメージファイルは、各アプリケーションプロジェクトに追加し、共有コードから参照でき Xamarin.Forms ます。 このイメージ配布方法は、イメージがプラットフォーム固有の場合に必要になります。例えば、異なるプラットフォームで異なる解像度を使用する場合や、わずかに異なるデザインを使用する場合などです。
 
-すべてのアプリで1つのイメージを使用するには、すべての *プラットフォームで同じファイル名を使用する必要が*あります。また、有効な Android リソース名を指定する必要があります (つまり、小文字、数字、アンダースコア、ピリオドのみを使用できます)。
+すべてのアプリで1つのイメージを使用するには、すべての *プラットフォームで同じファイル名を使用する必要が* あります。また、有効な Android リソース名を指定する必要があります (つまり、小文字、数字、アンダースコア、ピリオドのみを使用できます)。
 
-- **ios** -ios 9 以降でイメージを管理およびサポートする場合は、 **資産カタログのイメージセット**を使用することをお勧めします。これには、アプリケーションのさまざまなデバイスとスケールファクターをサポートするために必要なイメージのすべてのバージョンが含まれている必要があります。 詳細については、「 [アセットカタログイメージセットへのイメージの追加](~/ios/app-fundamentals/images-icons/displaying-an-image.md)」を参照してください。
-- **Android** -ビルドアクションを使用して  **リソース/** 作成ディレクトリにイメージを配置します **: androidresource**。 イメージの高および低 DPI バージョンも提供できます (適切な名前が付けられた**リソース**サブディレクトリ **(たとえば、** 描画可能**な-ldpi**、 **xhdpi**)。
-- **ユニバーサル Windows プラットフォーム (UWP)** -既定では、イメージはアプリケーションのルートディレクトリに **ビルドアクション: コンテンツ**と共に配置する必要があります。 また、イメージを別のディレクトリに配置して、プラットフォーム固有ので指定することもできます。 詳細については、「 [Windows の既定のイメージディレクトリ](~/xamarin-forms/platform/windows/default-image-directory.md)」を参照してください。
+- **ios** -ios 9 以降でイメージを管理およびサポートする場合は、 **資産カタログのイメージセット** を使用することをお勧めします。これには、アプリケーションのさまざまなデバイスとスケールファクターをサポートするために必要なイメージのすべてのバージョンが含まれている必要があります。 詳細については、「 [アセットカタログイメージセットへのイメージの追加](~/ios/app-fundamentals/images-icons/displaying-an-image.md)」を参照してください。
+- **Android** -ビルドアクションを使用して  **リソース/** 作成ディレクトリにイメージを配置します **: androidresource** 。 イメージの高および低 DPI バージョンも提供できます (適切な名前が付けられた **リソース** サブディレクトリ **(たとえば、** 描画可能 **な-ldpi** 、 **xhdpi** )。
+- **ユニバーサル Windows プラットフォーム (UWP)** -既定では、イメージはアプリケーションのルートディレクトリに **ビルドアクション: コンテンツ** と共に配置する必要があります。 また、イメージを別のディレクトリに配置して、プラットフォーム固有ので指定することもできます。 詳細については、「 [Windows の既定のイメージディレクトリ](~/xamarin-forms/platform/windows/default-image-directory.md)」を参照してください。
 
 > [!IMPORTANT]
-> IOS 9 より前の場合、イメージは通常、 **Build Action: BundleResource**を使用して**Resources**フォルダーに配置されていました。 ただし、iOS アプリでイメージを操作するこの方法は、Apple によって非推奨とされています。 詳細については、「 [イメージのサイズとファイル名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)」を参照してください。
+> IOS 9 より前の場合、イメージは通常、 **Build Action: BundleResource** を使用して **Resources** フォルダーに配置されていました。 ただし、iOS アプリでイメージを操作するこの方法は、Apple によって非推奨とされています。 詳細については、「 [イメージのサイズとファイル名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)」を参照してください。
 
 これらの規則をファイルの名前付けと配置に準拠させることで、次の XAML がすべてのプラットフォームにイメージを読み込んで表示できるようになります。
 
@@ -95,13 +95,13 @@ iOS、Android、UWP には、さまざまなイメージの解像度がサポー
 
 IOS 9 以降でイメージを管理する場合は、適切な資産カタログのイメージセットに必要な各解像度のイメージをドラッグすることをお勧めします。 詳細については、「 [アセットカタログイメージセットへのイメージの追加](~/ios/app-fundamentals/images-icons/displaying-an-image.md)」を参照してください。
 
-IOS 9 より前では、retina バージョンのイメージは、 **Resources** **@2x** **@3x** ファイル拡張子の前にファイル名にまたはサフィックスを付けて、リソースフォルダー-2 ~ 3 倍の解像度で配置できます。 **myimage@2x.png**). ただし、iOS アプリでイメージを操作するこの方法は、Apple によって非推奨とされています。 詳細については、「 [イメージのサイズとファイル名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)」を参照してください。
+IOS 9 より前では、retina バージョンのイメージは、 **Resources** **@2x** **@3x** ファイル拡張子の前にファイル名にまたはサフィックスを付けて、リソースフォルダー-2 ~ 3 倍の解像度で配置できます。 **myimage@2x.png** ). ただし、iOS アプリでイメージを操作するこの方法は、Apple によって非推奨とされています。 詳細については、「 [イメージのサイズとファイル名](~/ios/app-fundamentals/images-icons/displaying-an-image.md)」を参照してください。
 
 Android の代替解像度のイメージは、次のスクリーンショットに示すように、Android プロジェクトの [特別に名前が付け](https://developer.android.com/guide/practices/screens_support.html) られたディレクトリに配置する必要があります。
 
 [![Android の複数解像度の画像の場所](images-images/xs-highdpisolution-sml.png)](images-images/xs-highdpisolution.png#lightbox)
 
-UWP イメージファイル名は、 [ `.scale-xxx` ファイル拡張子の前にサフィックスを付けることができ](/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast)ます。ここで、 `xxx` は資産に適用されるスケーリングの比率 ( **myimage.scale-200.png**など) です。 イメージは、スケール修飾子を使用せずにコードまたは XAML で参照できます。たとえば、 **myimage.png**だけです。 プラットフォームは、ディスプレイの現在の DPI に基づいて、最も近い適切な資産スケールを選択します。
+UWP イメージファイル名は、 [ `.scale-xxx` ファイル拡張子の前にサフィックスを付けることができ](/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast)ます。ここで、 `xxx` は資産に適用されるスケーリングの比率 ( **myimage.scale-200.png** など) です。 イメージは、スケール修飾子を使用せずにコードまたは XAML で参照できます。たとえば、 **myimage.png** だけです。 プラットフォームは、ディスプレイの現在の DPI に基づいて、最も近い適切な資産スケールを選択します。
 
 ### <a name="additional-controls-that-display-images"></a>画像を表示する追加のコントロール
 
@@ -120,7 +120,7 @@ UWP イメージファイル名は、 [ `.scale-xxx` ファイル拡張子の前
 
 埋め込み画像もアプリケーション (ローカルイメージなど) に付属していますが、各アプリケーションのファイル構造に画像のコピーが含まれているのではなく、イメージファイルがリソースとしてアセンブリに埋め込まれています。 このイメージの配布方法は、各プラットフォームで同じイメージを使用する場合に推奨されます。イメージはコードにバンドルされるため、コンポーネントの作成に特に適しています。
 
-プロジェクトにイメージを埋め込むには、右クリックして新しい項目を追加し、追加するイメージ/s を選択します。 既定では、イメージに **ビルドアクション**はありません。 **ビルドアクション: EmbeddedResource**に設定する必要があります。
+プロジェクトにイメージを埋め込むには、右クリックして新しい項目を追加し、追加するイメージ/s を選択します。 既定では、イメージに **ビルドアクション** はありません。 **ビルドアクション: EmbeddedResource** に設定する必要があります。
 
 <!-- markdownlint-disable MD001 -->
 
@@ -128,9 +128,9 @@ UWP イメージファイル名は、 [ `.scale-xxx` ファイル拡張子の前
 
 [![ビルドアクションを埋め込みリソースに設定](images-images/vs-buildaction-sml.png)](images-images/vs-buildaction.png#lightbox)
 
-**ビルドアクション**は、ファイルの [**プロパティ**] ウィンドウで表示および変更できます。
+**ビルドアクション** は、ファイルの [ **プロパティ** ] ウィンドウで表示および変更できます。
 
-この例では、リソース ID は **WorkingWithImages.beach.jpg**です。
+この例では、リソース ID は **WorkingWithImages.beach.jpg** です。
 IDE では、このプロジェクトの既定の **名前空間** とファイル名を連結することによって、この既定の名前空間を生成しました。各値の間にピリオド (.) を使用します。
 <!-- https://msdn.microsoft.com/library/ms950960.aspx -->
 
@@ -139,7 +139,7 @@ IDE では、このプロジェクトの既定の **名前空間** とファイ�
 ![ビルドアクションの設定: EmbeddedResource](images-images/xs-buildaction.png)
 
 **ビルドアクション** は、ファイルの **プロパティ** パッドで表示および変更することもできます。
-このパッドには、コードでリソースを参照するために使用される **リソース ID** が表示されます。 次のスクリーンショットでは、 **リソース ID** は **WorkingWithImages.beach.jpg**しています。
+このパッドには、コードでリソースを参照するために使用される **リソース ID** が表示されます。 次のスクリーンショットでは、 **リソース ID** は **WorkingWithImages.beach.jpg** しています。
 IDE では、このプロジェクトの既定の **名前空間** とファイル名を連結することによって、この既定の名前空間を生成しました。各値の間にピリオド (.) を使用します。
 この ID は **プロパティ** パッドで編集できますが、これらの例では **WorkingWithImages.beach.jpg** 値が使用されます。
 
@@ -147,7 +147,7 @@ IDE では、このプロジェクトの既定の **名前空間** とファイ�
 
 -----
 
-埋め込み画像をプロジェクト内のフォルダーに配置する場合、フォルダー名もリソース ID のピリオド (.) で区切られます。 **beach.jpg**イメージを**myimages**という名前のフォルダーに移動すると、リソース ID がになり**WorkingWithImages.MyImages.beach.jpg**
+埋め込み画像をプロジェクト内のフォルダーに配置する場合、フォルダー名もリソース ID のピリオド (.) で区切られます。 **beach.jpg** イメージを **myimages** という名前のフォルダーに移動すると、リソース ID がになり **WorkingWithImages.MyImages.beach.jpg**
 
 埋め込み画像を読み込むコードは、次に示すように、 **リソース ID** をメソッドに渡し [`ImageSource.FromResource`](xref:Xamarin.Forms.ImageSource.FromResource*) ます。
 

@@ -10,16 +10,16 @@ ms.date: 03/20/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ed1bcbed86874362e291fb23ce86dea8992d3408
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 088f96e4b8ab7f19dac90834e10c5a49875d0570
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563732"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373563"
 ---
 # <a name="the-skew-transform"></a>傾斜変換
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _傾斜変換による SkiaSharp での傾いたグラフオブジェクトの作成方法を確認する_
 
@@ -115,7 +115,7 @@ y ' = ySkew ·(x – px) + y
 
 100ピクセルの垂直方向への150ピクセルシフトの比率は、その角度のタンジェント (この例では56.3 度) です。
 
-**傾斜角度実験**ページの XAML ファイルは、[**傾斜角度**] ページと似ていますが、 `Slider` 要素の範囲が-90 °から90度になっている点が異なります。 [`SkewAngleExperiment`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SkewAngleExperimentPage.xaml.cs)分離コードファイルは、ページ上にテキストを配置し、を使用して、 `Translate` ページの中央に傾斜の中心を設定します。 `SkewDegrees`コードの一番下にある短いメソッドは、角度を傾斜値に変換します。
+**傾斜角度実験** ページの XAML ファイルは、[ **傾斜角度** ] ページと似ていますが、 `Slider` 要素の範囲が-90 °から90度になっている点が異なります。 [`SkewAngleExperiment`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SkewAngleExperimentPage.xaml.cs)分離コードファイルは、ページ上にテキストを配置し、を使用して、 `Translate` ページの中央に傾斜の中心を設定します。 `SkewDegrees`コードの一番下にある短いメソッドは、角度を傾斜値に変換します。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

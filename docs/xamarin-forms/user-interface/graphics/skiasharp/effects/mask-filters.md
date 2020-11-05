@@ -10,16 +10,16 @@ ms.date: 08/27/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 827b5618dce019e2dedb773f270fe1090da5d616
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 2a9291a56ffa1a05f8e2041033279363f8ec4d34
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562510"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374148"
 ---
 # <a name="skiasharp-mask-filters"></a>SkiaSharp mask フィルター
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 マスクフィルターは、グラフィカルオブジェクトのジオメトリおよびアルファチャネルを操作する効果です。 マスクフィルターを使用するには、 [`MaskFilter`](xref:SkiaSharp.SKPaint.MaskFilter) のプロパティを、 `SKPaint` [`SKMaskFilter`](xref:SkiaSharp.SKMaskFilter) いずれかの静的メソッドを呼び出すことによって作成した型のオブジェクトに設定し `SKMaskFilter` ます。
 
@@ -46,7 +46,7 @@ public static SKMaskFilter CreateBlur (SKBlurStyle blurStyle, float sigma);
 
 これらのスタイルの効果を次の例に示します。 パラメーターは、 `sigma` ぼかしの範囲を指定します。 以前のバージョンの Skia では、ぼかしの範囲は半径値で示されていました。 Radius 値がアプリケーションに適している場合は、 [`SKMaskFilter.ConvertRadiusToSigma`](xref:SkiaSharp.SKMaskFilter.ConvertRadiusToSigma*) 一方を別のに変換できる静的メソッドがあります。 このメソッドは、半径を0.57735 で乗算し、0.5 を追加します。
 
-[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルの**マスクのぼかし実験**ページでは、ぼかしのスタイルとシグマの値を試すことができます。 XAML ファイルは、 `Picker` 4 つの `SKBlurStyle` 列挙体メンバーと、シグマ値を指定するを使用してをインスタンス化し `Slider` ます。
+[**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルの **マスクのぼかし実験** ページでは、ぼかしのスタイルとシグマの値を試すことができます。 XAML ファイルは、 `Picker` 4 つの `SKBlurStyle` 列挙体メンバーと、シグマ値を指定するを使用してをインスタンス化し `Slider` ます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -189,11 +189,11 @@ IOS のスクリーンショットにはスタイルが表示されて `Solid` �
 
 右側の UWP スクリーンショットにスタイルが表示され `Inner` ます。 ぼかしは、テキスト文字が通常占有する領域に制限されます。
 
-[**SkiaSharp 線形グラデーション**](shaders/linear-gradient.md#transparency-and-gradients)に関する記事では、線形グラデーションと変換を使用してテキスト文字列の反射を模倣した**反射グラデーション**プログラムについて説明しています。
+[**SkiaSharp 線形グラデーション**](shaders/linear-gradient.md#transparency-and-gradients)に関する記事では、線形グラデーションと変換を使用してテキスト文字列の反射を模倣した **反射グラデーション** プログラムについて説明しています。
 
 [![反射のグラデーション](shaders/linear-gradient-images/ReflectionGradient.png "反射のグラデーション")](shaders/linear-gradient-images/ReflectionGradient-Large.png#lightbox)
 
-**ぼやけた反射**のページでは、そのコードに1つのステートメントが追加されます。
+**ぼやけた反射** のページでは、そのコードに1つのステートメントが追加されます。
 
 ```csharp
 public class BlurryReflectionPage : ContentPage

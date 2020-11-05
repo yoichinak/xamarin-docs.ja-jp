@@ -1,5 +1,5 @@
 ---
-title: アタッチされるプロパティ
+title: 添付プロパティ
 description: この記事では、添付プロパティの概要を説明し、それらを作成して使用する方法を示します。
 ms.prod: xamarin
 ms.assetid: 6E9DCDC3-A0E4-46A6-BAA9-4FEB6DF8A5A8
@@ -10,16 +10,16 @@ ms.date: 06/02/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 61edbb347b4d3466d1ca756208adb5d173d63b34
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: b3db63018bc8d927b9e9041c762b1989cfb17679
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561548"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374096"
 ---
-# <a name="attached-properties"></a>アタッチされるプロパティ
+# <a name="attached-properties"></a>添付プロパティ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/effects-shadoweffect)
 
 
 添付プロパティを使用すると、オブジェクトは、独自のクラスで定義されていないプロパティの値を割り当てることができます。 たとえば、子要素は添付プロパティを使用して、ユーザーインターフェイスにどのように表示されるかを親要素に知らせることができます。 コントロールでは、 [`Grid`](xref:Xamarin.Forms.Grid) `Grid.Row` プロパティと添付プロパティを設定することによって、子の行と列を指定でき `Grid.Column` ます。 `Grid.Row` と `Grid.Column` は、 `Grid` それ自体ではなく、の子である要素に設定されるため、添付プロパティです `Grid` 。
@@ -36,7 +36,7 @@ ms.locfileid: "91561548"
 添付プロパティを作成するプロセスは次のとおりです。
 
 1. [`BindableProperty`](xref:Xamarin.Forms.BindableProperty)メソッドオーバーロードのいずれかを使用してインスタンスを作成 [`CreateAttached`](xref:Xamarin.Forms.BindableProperty.CreateAttached*) します。
-1. `static` `Get` *Propertyname* `Set` メソッドと*propertyname*メソッドを添付プロパティのアクセサーとして指定します。
+1. `static` `Get` *Propertyname* `Set` メソッドと *propertyname* メソッドを添付プロパティのアクセサーとして指定します。
 
 ### <a name="create-a-property"></a>プロパティを作成する
 
@@ -60,21 +60,21 @@ public static readonly BindableProperty HasShadowProperty =
 
 ### <a name="create-accessors"></a>アクセサーの作成
 
-Static `Get` *PropertyName*および `Set` *propertyname*メソッドは添付プロパティのアクセサーとして必要です。それ以外の場合、プロパティシステムは添付プロパティを使用できません。 `Get` *PropertyName*アクセサーは、次のシグネチャに準拠している必要があります。
+Static `Get` *PropertyName* および `Set` *propertyname* メソッドは添付プロパティのアクセサーとして必要です。それ以外の場合、プロパティシステムは添付プロパティを使用できません。 `Get` *PropertyName* アクセサーは、次のシグネチャに準拠している必要があります。
 
 ```csharp
 public static valueType GetPropertyName(BindableObject target)
 ```
 
-`Get` *PropertyName*アクセサーは、添付プロパティの対応するフィールドに格納されている値を返す必要があり `BindableProperty` ます。 これは、[ `GetValue` ] (xref: を呼び出すことによって実現できます Xamarin.Forms 。BindableObject。 GetValue ( Xamarin.Forms .BindableProperty) メソッドを使用して、値を取得するバインド可能なプロパティ識別子を渡し、その結果の値を必要な型にキャストします。
+`Get` *PropertyName* アクセサーは、添付プロパティの対応するフィールドに格納されている値を返す必要があり `BindableProperty` ます。 これは、[ `GetValue` ] (xref: を呼び出すことによって実現できます Xamarin.Forms 。BindableObject。 GetValue ( Xamarin.Forms .BindableProperty) メソッドを使用して、値を取得するバインド可能なプロパティ識別子を渡し、その結果の値を必要な型にキャストします。
 
-`Set` *PropertyName*アクセサーは、次のシグネチャに準拠している必要があります。
+`Set` *PropertyName* アクセサーは、次のシグネチャに準拠している必要があります。
 
 ```csharp
 public static void SetPropertyName(BindableObject target, valueType value)
 ```
 
-`Set` *PropertyName*アクセサーは、添付プロパティの対応するフィールドの値を設定する必要があり `BindableProperty` ます。 これは、[ `SetValue` ] (xref: を呼び出すことによって実現できます Xamarin.Forms 。BindableObject. SetValue ( Xamarin.Forms .BindableProperty, System.object) メソッドを使用して、値を設定するバインド可能なプロパティ識別子と設定する値を渡します。
+`Set` *PropertyName* アクセサーは、添付プロパティの対応するフィールドの値を設定する必要があり `BindableProperty` ます。 これは、[ `SetValue` ] (xref: を呼び出すことによって実現できます Xamarin.Forms 。BindableObject. SetValue ( Xamarin.Forms .BindableProperty, System.object) メソッドを使用して、値を設定するバインド可能なプロパティ識別子と設定する値を渡します。
 
 両方のアクセサーでは、 *ターゲット* オブジェクトはであるか、またはから派生している必要があり [`BindableObject`](xref:Xamarin.Forms.BindableObject) ます。
 

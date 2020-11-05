@@ -10,16 +10,16 @@ ms.date: 03/05/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0b3f7a28452d8507c4cb4a42d75b5edb5d62d8e4
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: fc6185a303e8fd7bdf68903d3d7bacc646cde601
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563688"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93372419"
 ---
 # <a name="masterdetailpage-shadow-on-ios"></a>IOS 上の Masterのページシャドウ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 このプラットフォーム固有の設定により、の詳細ページに影が適用されているかどうかを制御し [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) ます (マスターページが公開されている場合)。 これは、バインド可能なプロパティをに設定することによって XAML で使用され `MasterDetailPage.ApplyShadow` `true` ます。
 

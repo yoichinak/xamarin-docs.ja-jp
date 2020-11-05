@@ -10,16 +10,16 @@ ms.date: 02/09/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3df3a606c54d7367079638d48330dfe1b214043b
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 5f12dbd4ef0cfea9d276fd8c939afab585541ece
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563186"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373898"
 ---
 # <a name="pixels-and-device-independent-units"></a>ピクセル、およびデバイスに依存しない単位
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _SkiaSharp の座標と座標の違いを調べる Xamarin.Forms_
 
@@ -29,9 +29,9 @@ _SkiaSharp の座標と座標の違いを調べる Xamarin.Forms_
 
 しばらくの間にプログラミングしている場合は Xamarin.Forms 、座標とサイズの感覚がある可能性があり Xamarin.Forms ます。 前の2つの記事で描画した円は、少し小さいように見えます。
 
-これらの円 *は* 、サイズと比較して小さく Xamarin.Forms なります。 既定では、SkiaSharp は、 Xamarin.Forms 基になるプラットフォームによって確立されたデバイスに依存しない単位に基づいて座標とサイズをピクセル単位で描画します。 (座標系の詳細については、「 Xamarin.Forms 5 章」を参照[してください。](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter05.md)*を使用して Mobile Apps Xamarin.Forms を作成する*本のサイズを処理します)。
+これらの円 *は* 、サイズと比較して小さく Xamarin.Forms なります。 既定では、SkiaSharp は、 Xamarin.Forms 基になるプラットフォームによって確立されたデバイスに依存しない単位に基づいて座標とサイズをピクセル単位で描画します。 (座標系の詳細については、「 Xamarin.Forms 5 章」を参照 [してください。](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter05.md)*を使用して Mobile Apps Xamarin.Forms を作成する* 本のサイズを処理します)。
 
-[**SkewSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラムで使用されている**画面サイズ**のページでは、SkiaSharp テキスト出力を使用して、3つの異なるソースからのディスプレイ画面のサイズを示しています。
+[**SkewSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラムで使用されている **画面サイズ** のページでは、SkiaSharp テキスト出力を使用して、3つの異なるソースからのディスプレイ画面のサイズを示しています。
 
 - Xamarin.Forms [`Width`](xref:Xamarin.Forms.VisualElement.Width) [`Height`](xref:Xamarin.Forms.VisualElement.Height) オブジェクトの通常のプロパティとプロパティ `SKCanvasView` 。
 - [`CanvasSize`](xref:SkiaSharp.Views.Forms.SKCanvasView.CanvasSize)オブジェクトのプロパティ `SKCanvasView` です。
@@ -114,13 +114,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 同じイメージの解像度を維持するには、2つの座標系の間で変換するための単純な関数を作成する方が適しています。
 
-`DrawCircle`では、メソッドに加え `SKCanvas` て、楕円を描画する2つのメソッドも定義されて `DrawOval` います。 楕円は、1つの半径ではなく2つの半径によって定義されます。 これらは、 *主要半径* と *補助半径*と呼ばれます。 この `DrawOval` メソッドは、X 軸と Y 軸に平行する2つの半径を持つ楕円を描画します。 (X 軸と Y 軸に平行になっていない軸を持つ楕円を描画する必要がある場合は、「[**円弧を描画する3つの方法**](../curves/arcs.md)」の記事で説明されているように、[**回転変換**](../transforms/rotate.md)またはグラフィックスパスに関する記事で説明されている回転変換を使用できます)。 このメソッドのオーバーロード [`DrawOval`](xref:SkiaSharp.SKCanvas.DrawOval(System.Single,System.Single,System.Single,System.Single,SkiaSharp.SKPaint)) は、2つの半径のパラメーターに名前を `rx` 指定し、 `ry` それらが X 軸と Y 軸に対して平行であることを示します。
+`DrawCircle`では、メソッドに加え `SKCanvas` て、楕円を描画する2つのメソッドも定義されて `DrawOval` います。 楕円は、1つの半径ではなく2つの半径によって定義されます。 これらは、 *主要半径* と *補助半径* と呼ばれます。 この `DrawOval` メソッドは、X 軸と Y 軸に平行する2つの半径を持つ楕円を描画します。 (X 軸と Y 軸に平行になっていない軸を持つ楕円を描画する必要がある場合は、「 [**円弧を描画する3つの方法**](../curves/arcs.md)」の記事で説明されているように、 [**回転変換**](../transforms/rotate.md)またはグラフィックスパスに関する記事で説明されている回転変換を使用できます)。 このメソッドのオーバーロード [`DrawOval`](xref:SkiaSharp.SKCanvas.DrawOval(System.Single,System.Single,System.Single,System.Single,SkiaSharp.SKPaint)) は、2つの半径のパラメーターに名前を `rx` 指定し、 `ry` それらが X 軸と Y 軸に対して平行であることを示します。
 
 ```csharp
 public void DrawOval (Single cx, Single cy, Single rx, Single ry, SKPaint paint)
 ```
 
-表示サーフェイスを塗りつぶす楕円を描画することはできますか。 **楕円の塗りつぶし**ページは、その方法を示しています。 `PaintSurface` [**EllipseFillPage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/EllipseFillPage.xaml.cs)クラスのイベントハンドラーは、 `xRadius` `yRadius` 楕円全体とその輪郭を表示サーフェイス内に収まるように、との値からストロークの幅の半分を減算します。
+表示サーフェイスを塗りつぶす楕円を描画することはできますか。 **楕円の塗りつぶし** ページは、その方法を示しています。 `PaintSurface` [**EllipseFillPage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/EllipseFillPage.xaml.cs)クラスのイベントハンドラーは、 `xRadius` `yRadius` 楕円全体とその輪郭を表示サーフェイス内に収まるように、との値からストロークの幅の半分を減算します。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

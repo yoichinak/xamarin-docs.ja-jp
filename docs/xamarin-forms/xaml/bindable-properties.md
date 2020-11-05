@@ -10,16 +10,16 @@ ms.date: 01/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: df2cf99ef0ea1fcbb1b52dda7abb6c8cfdd2d2e7
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: f50dde4bb96f43c6487cb40889746514f23d9d44
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561535"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374083"
 ---
 # <a name="no-locxamarinforms-bindable-properties"></a>Xamarin.Forms バインド可能なプロパティ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/behaviors-eventtocommandbehavior)
 
 バインド可能なプロパティは、プロパティをフィールドでバッキングするのではなく、型を使用してプロパティをバッキングすることによって、CLR プロパティの機能を拡張 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) します。 バインド可能なプロパティの目的は、データバインディング、スタイル、テンプレート、および親子関係を通じて設定される値をサポートするプロパティシステムを提供することです。 また、バインド可能なプロパティは、既定値、プロパティ値の検証、およびプロパティの変更を監視するコールバックを提供できます。
 
@@ -69,7 +69,7 @@ public static readonly BindableProperty EventNameProperty =
 
 必要に応じて、インスタンスを作成するときに、 [`BindableProperty`](xref:Xamarin.Forms.BindableProperty) 次のパラメーターを指定できます。
 
-- バインド モード。 これは、プロパティ値の変更が反映される方向を指定するために使用されます。 既定のバインディングモードでは、変更は *ソース* から *ターゲット*に反映されます。
+- バインド モード。 これは、プロパティ値の変更が反映される方向を指定するために使用されます。 既定のバインディングモードでは、変更は *ソース* から *ターゲット* に反映されます。
 - プロパティ値が設定されたときに呼び出される検証デリゲート。 詳細については、「 [検証コールバック](#validation-callbacks)」を参照してください。
 - プロパティ値が変更されたときに呼び出されるプロパティ変更デリゲート。 詳細については、「 [プロパティの変更の検出](#detect-property-changes)」を参照してください。
 - プロパティ値が変更されたときに呼び出されるプロパティ変更デリゲート。 このデリゲートには、プロパティ変更デリゲートと同じシグネチャがあります。

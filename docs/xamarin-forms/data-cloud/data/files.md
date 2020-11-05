@@ -10,16 +10,16 @@ ms.date: 06/21/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f8d81e037d63a7144263ce4b3520647e6829bd57
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 11f33c07d2a98e326717f284f0b5d6308a65a693
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557258"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374720"
 ---
 # <a name="file-handling-in-no-locxamarinforms"></a>ファイルの処理 Xamarin.Forms
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithfiles)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/workingwithfiles)
 
 _を使用したファイル処理は Xamarin.Forms 、.NET Standard ライブラリのコードを使用するか、埋め込みリソースを使用して実現できます。_
 
@@ -63,7 +63,7 @@ string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFold
 
 ## <a name="loading-files-embedded-as-resources"></a>リソースとして埋め込まれたファイルを読み込む
 
-**.NET Standard** アセンブリにファイルを埋め込むには、ファイルを作成するか追加し、**[ビルド アクション] が [EmbeddedResource]** になっていることを確認します。
+**.NET Standard** アセンブリにファイルを埋め込むには、ファイルを作成するか追加し、 **[ビルド アクション] が [EmbeddedResource]** になっていることを確認します。
 
 # <a name="visual-studio"></a>[Visual Studio](#tab/windows)
 
@@ -75,7 +75,7 @@ string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFold
 
 -----
 
-`GetManifestResourceStream` は、その**リソース ID** を使用して埋め込みファイルにアクセスするために使用されます。 既定では、リソース ID は、そのファイルが埋め込まれているプロジェクトの既定の名前空間が付いたファイル名です。この場合、アセンブリは **WorkingWithFiles** であり、ファイル名は **LibTextResource.txt**ため、リソース id は `WorkingWithFiles.LibTextResource.txt` です。
+`GetManifestResourceStream` は、その **リソース ID** を使用して埋め込みファイルにアクセスするために使用されます。 既定では、リソース ID は、そのファイルが埋め込まれているプロジェクトの既定の名前空間が付いたファイル名です。この場合、アセンブリは **WorkingWithFiles** であり、ファイル名は **LibTextResource.txt** ため、リソース id は `WorkingWithFiles.LibTextResource.txt` です。
 
 ```csharp
 var assembly = IntrospectionExtensions.GetTypeInfo(typeof(LoadResourceText)).Assembly;
@@ -113,7 +113,7 @@ listView.ItemsSource = monkeys;
 
 共有プロジェクトのこの問題には 2 つの解決策があります。
 
-- **プロジェクトを同期する** - 各プラットフォームのプロジェクト プロパティを編集し、**同じ**アセンブリ名と既定の名前空間を使用します。 この値は共有プロジェクトの埋め込みリソース ID のプレフィックスとして "ハードコード" できます。
+- **プロジェクトを同期する** - 各プラットフォームのプロジェクト プロパティを編集し、 **同じ** アセンブリ名と既定の名前空間を使用します。 この値は共有プロジェクトの埋め込みリソース ID のプレフィックスとして "ハードコード" できます。
 - **#if コンパイラ ディレクティブ** - コンパイラ ディレクティブを使用して正しいリソース ID プレフィックスを設定し、その値を使用して正しいリソース ID を動的に構築します。
 
 2 つ目のオプションを示すコードを以下に示します。 コンパイラ ディレクティブを使用し、ハードコードされたリソース プレフィックス (通常、参照元プロジェクトの既定の名前空間と同じです) を選択します。 次に、`resourcePrefix` 変数を埋め込みリソース ファイル名と連結することで有効なリソース ID が作成されます。

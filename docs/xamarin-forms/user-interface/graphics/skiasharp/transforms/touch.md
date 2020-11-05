@@ -10,16 +10,16 @@ ms.date: 09/14/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c6d568e948f02952fa71ed21af48160a53bfc419
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: ee69ca1e95f7dcffa60387579e89c3a2d3e985da
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556543"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374291"
 ---
 # <a name="touch-manipulations"></a>タッチ操作
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _マトリックス変換を使用してタッチドラッグ、ピンチ、および回転を実装する_
 
@@ -150,7 +150,7 @@ public partial class BitmapDraggingPage : ContentPage
 }
 ```
 
-指が画面に触れると、型のイベント `TouchActionType.Pressed` が発生します。 最初のタスクは、指がビットマップに接しているかどうかを判断することです。 このようなタスクは、しばしば _ヒットテスト_と呼ばれます。 この場合、ビットマップに対応する値を作成し、を `SKRect` 使用してマトリックス変換を適用した `MapRect` 後、タッチポイントが変換された四角形内にあるかどうかを判断することで、ヒットテストを行うことができます。
+指が画面に触れると、型のイベント `TouchActionType.Pressed` が発生します。 最初のタスクは、指がビットマップに接しているかどうかを判断することです。 このようなタスクは、しばしば _ヒットテスト_ と呼ばれます。 この場合、ビットマップに対応する値を作成し、を `SKRect` 使用してマトリックス変換を適用した `MapRect` 後、タッチポイントが変換された四角形内にあるかどうかを判断することで、ヒットテストを行うことができます。
 
 その場合は、 `touchId` フィールドがタッチ ID に設定され、指位置が保存されます。
 
@@ -268,7 +268,7 @@ public partial class BitmapScalingPage : ContentPage
 
 次に、ピボットポイントを基準とする新しい指位置の2つのベクトルと、ピボットポイントを基準とした古い指位置を計算します。 これらのベクトルの比率は、スケールファクターです。 0による除算は可能性があるので、無限値または NaN (非数) の値をチェックする必要があります。 すべてが適切な場合は、スケーリング変換が `SKMatrix` フィールドとして保存された値と連結されます。
 
-このページを試してみると、ビットマップを1つまたは2本の指でドラッグしたり、2本の指で拡大したりできることがわかります。 スケーリングは _異方_です。これは、水平方向と垂直方向でスケーリングが異なる場合があることを意味します。 これにより、縦横比が歪曲されますが、ビットマップを反転してミラーイメージを作成することもできます。 ビットマップを0次元に縮小しても、表示されなくなることがあります。 運用環境のコードでは、このことを防ぐ必要があります。
+このページを試してみると、ビットマップを1つまたは2本の指でドラッグしたり、2本の指で拡大したりできることがわかります。 スケーリングは _異方_ です。これは、水平方向と垂直方向でスケーリングが異なる場合があることを意味します。 これにより、縦横比が歪曲されますが、ビットマップを反転してミラーイメージを作成することもできます。 ビットマップを0次元に縮小しても、表示されなくなることがあります。 運用環境のコードでは、このことを防ぐ必要があります。
 
 ## <a name="two-finger-rotation"></a>2本指による回転
 
@@ -405,7 +405,7 @@ public partial class BitmapRotationPage : ContentPage
 
 ## <a name="encapsulating-the-touch-operations"></a>タッチ操作をカプセル化する
 
-**タッチ操作**ページは、1つのビットマップのタッチ操作を示しますが、上記のロジックの多くをカプセル化した他のいくつかのファイルを使用します。 最初のファイルは列挙型であり [`TouchManipulationMode`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationMode.cs) 、表示するコードによって実装されるさまざまな種類のタッチ操作を示します。
+**タッチ操作** ページは、1つのビットマップのタッチ操作を示しますが、上記のロジックの多くをカプセル化した他のいくつかのファイルを使用します。 最初のファイルは列挙型であり [`TouchManipulationMode`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationMode.cs) 、表示するコードによって実装されるさまざまな種類のタッチ操作を示します。
 
 ```csharp
 enum TouchManipulationMode
@@ -889,7 +889,7 @@ class TouchManipulationManager
 
 このメソッドには明示的な変換がないことがわかります。 ただし、 `MakeRotation` メソッドとメソッドはどちらも `MakeScale` ピボットポイントに基づいており、暗黙的な変換が含まれています。 ビットマップに2本の指を使用していて、同じ方向にドラッグしている場合、 `TouchManipulation` は、2本の指の間に一連のタッチイベントを交互に表示します。 各指はもう一方の点を基準に移動しますが、拡大縮小または回転の結果は逆になりますが、その他の指の動きによって否定され、結果は変換になります。
 
-**タッチ操作**ページの残りの部分は、 `PaintSurface` 分離コードファイル内のハンドラーだけです `TouchManipulationPage` 。 これにより `Paint` 、のメソッドが呼び出され `TouchManipulationBitmap` 、累積したタッチアクティビティを表す行列が適用されます。
+**タッチ操作** ページの残りの部分は、 `PaintSurface` 分離コードファイル内のハンドラーだけです `TouchManipulationPage` 。 これにより `Paint` 、のメソッドが呼び出され `TouchManipulationBitmap` 、累積したタッチアクティビティを表す行列が適用されます。
 
 ```csharp
 public partial class TouchManipulationPage : ContentPage
@@ -1060,7 +1060,7 @@ public partial class BitmapScatterViewPage : ContentPage
 
 [![ビットマップ散布図ビューページのトリプルスクリーンショット](touch-images/bitmapscatterview-small.png)](touch-images/bitmapscatterview-large.png#lightbox "ビットマップ散布図ビューページのトリプルスクリーンショット")
 
-## <a name="single-finger-scaling"></a>1本指によるスケーリング
+## <a name="single-finger-scaling"></a>Single-Finger スケーリング
 
 通常、スケーリング操作には、2本の指を使用したピンチジェスチャが必要です。 ただし、指を使用してビットマップの角を動かすことで、1本の指でスケーリングを実装することができます。
 
@@ -1089,7 +1089,7 @@ public partial class BitmapScatterViewPage : ContentPage
 </ContentPage>
 ```
 
-[**SingleFingerCornerScalePage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SingleFingerCornerScalePage.xaml.cs)ファイルは、**メディア**ディレクトリからビットマップリソースを読み込み、 `SKMatrix` フィールドとして定義されたオブジェクトを使用して表示します。
+[**SingleFingerCornerScalePage.xaml.cs**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SingleFingerCornerScalePage.xaml.cs)ファイルは、 **メディア** ディレクトリからビットマップリソースを読み込み、 `SKMatrix` フィールドとして定義されたオブジェクトを使用して表示します。
 
 ```csharp
 public partial class SingleFingerCornerScalePage : ContentPage

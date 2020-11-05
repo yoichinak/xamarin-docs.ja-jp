@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 22e020ad585c39671d3e3cc8ec47f55c8c41c90c
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: a3f5b920a3717bb70454eb16a5f830e6472413eb
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563758"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373186"
 ---
 # <a name="entry-font-size-on-ios"></a>IOS のエントリのフォントサイズ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 この iOS プラットフォーム固有のを使用して、のフォントサイズを拡大縮小し、 [`Entry`](xref:Xamarin.Forms.Entry) 入力テキストがコントロールに収まるようにします。 添付プロパティを値に設定することにより、XAML で使用 [`Entry.AdjustsFontSizeToFitWidth`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry.AdjustsFontSizeToFitWidthProperty) され `boolean` ます。
 
@@ -54,7 +54,7 @@ entry.On<iOS>().SetAdjustsFontSizeToFitWidth(!entry.On<iOS>().AdjustsFontSizeToF
 
 結果として、のフォントサイズは、 [`Entry`](xref:Xamarin.Forms.Entry) 入力テキストがコントロールに収まるようにスケーリングされます。
 
-![入力フォントサイズを調整するプラットフォーム固有](entry-font-size-images/entry-font-size.png)
+![エントリのフォントサイズを調整 Platform-Specific](entry-font-size-images/entry-font-size.png)
 
 ## <a name="related-links"></a>関連リンク
 

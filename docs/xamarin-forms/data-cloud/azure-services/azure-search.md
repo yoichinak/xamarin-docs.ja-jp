@@ -10,22 +10,22 @@ ms.date: 12/05/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 14d26c1360c1c1b7997598ef1263e3dd62e3c013
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 487ff8114a36212c1e7d413cc9bd1f4f2c016faa
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561782"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374434"
 ---
 # <a name="search-data-with-azure-search-and-no-locxamarinforms"></a>Azure Search とを使用してデータを検索する Xamarin.Forms
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azuresearch)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/webservices-azuresearch)
 
 _Azure Search は、アップロードされたデータのインデックス作成機能とクエリ機能を提供するクラウドサービスです。これにより、従来、アプリケーションでの検索機能の実装に関連するインフラストラクチャ要件と検索アルゴリズムの複雑さが解消されます。この記事では、Microsoft Azure 検索ライブラリを使用して Azure Search をアプリケーションに統合する方法について説明し Xamarin.Forms ます。_
 
 ## <a name="overview"></a>概要
 
-データは、インデックスおよびドキュメントとして Azure Search に格納されます。 *インデックス*は、Azure Search サービスによって検索できるデータの格納場所であり、概念的にはデータベーステーブルに似ています。 *ドキュメント*は、インデックス内の検索可能なデータの1つの単位であり、概念的にはデータベースの行に似ています。 ドキュメントをアップロードし、検索クエリを Azure Search に送信すると、search サービスの特定のインデックスに対して要求が行われます。
+データは、インデックスおよびドキュメントとして Azure Search に格納されます。 *インデックス* は、Azure Search サービスによって検索できるデータの格納場所であり、概念的にはデータベーステーブルに似ています。 *ドキュメント* は、インデックス内の検索可能なデータの1つの単位であり、概念的にはデータベースの行に似ています。 ドキュメントをアップロードし、検索クエリを Azure Search に送信すると、search サービスの特定のインデックスに対して要求が行われます。
 
 Azure Search に対して行われる各要求には、サービスの名前と API キーを含める必要があります。 API キーには、次の2種類があります。
 
@@ -34,8 +34,8 @@ Azure Search に対して行われる各要求には、サービスの名前と 
 
 Azure Search するための最も一般的な要求は、クエリを実行することです。 送信できるクエリには、次の2種類があります。
 
-- *検索*クエリは、インデックス内のすべての検索可能なフィールド内の1つ以上の項目を検索します。 検索クエリは、簡略化された構文または Lucene クエリ構文を使用して作成されます。 詳細については、「 [Azure Search の単純なクエリ構文](/rest/api/searchservice/Simple-query-syntax-in-Azure-Search/)」と「 [Azure Search での Lucene クエリ構文](/rest/api/searchservice/Lucene-query-syntax-in-Azure-Search/)」を参照してください。
-- *フィルター*クエリは、インデックス内のすべてのフィルター可能なフィールドに対してブール式を評価します。 フィルタークエリは、OData フィルター言語のサブセットを使用して作成されます。 詳細については、「 [Azure Search の OData 式の構文](/rest/api/searchservice/OData-Expression-Syntax-for-Azure-Search/)」を参照してください。
+- *検索* クエリは、インデックス内のすべての検索可能なフィールド内の1つ以上の項目を検索します。 検索クエリは、簡略化された構文または Lucene クエリ構文を使用して作成されます。 詳細については、「 [Azure Search の単純なクエリ構文](/rest/api/searchservice/Simple-query-syntax-in-Azure-Search/)」と「 [Azure Search での Lucene クエリ構文](/rest/api/searchservice/Lucene-query-syntax-in-Azure-Search/)」を参照してください。
+- *フィルター* クエリは、インデックス内のすべてのフィルター可能なフィールドに対してブール式を評価します。 フィルタークエリは、OData フィルター言語のサブセットを使用して作成されます。 詳細については、「 [Azure Search の OData 式の構文](/rest/api/searchservice/OData-Expression-Syntax-for-Azure-Search/)」を参照してください。
 
 検索クエリとフィルタークエリは、個別または組み合わせて使用できます。 フィルタークエリを一緒に使用すると、最初にインデックス全体に適用され、その後、フィルタークエリの結果に対して検索クエリが実行されます。
 

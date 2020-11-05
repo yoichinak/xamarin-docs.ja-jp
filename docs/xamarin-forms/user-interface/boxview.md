@@ -10,16 +10,16 @@ ms.date: 07/26/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3fba761d2740f323fb55e80d8cb4e3ba3d8e7cad
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 32571724c945c4bbd845943ac72fc959c42d584a
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563602"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374356"
 ---
 # <a name="no-locxamarinforms-boxview"></a>Xamarin.Forms BoxView
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/boxview-basicboxview)
 
 [`BoxView`](xref:Xamarin.Forms.BoxView) 指定した幅、高さ、および色の単純な四角形を描画します。 `BoxView`装飾、基本的なグラフィックス、およびタッチによるユーザーとの対話には、を使用できます。
 
@@ -40,9 +40,9 @@ ms.locfileid: "91563602"
 
 `CornerRadius`プロパティは型です。プロパティには、 [`CornerRadius`](xref:Xamarin.Forms.CornerRadius) 1 つの均一な `double` 角の半径値、またはの左上、 `CornerRadius` 右上、左下、右下に適用される4つの値で定義された構造体を設定でき `double` `BoxView` ます。
 
-`WidthRequest`プロパティと `HeightRequest` プロパティは、 `BoxView` がレイアウトで*制約*を持たない場合にのみ、ロールを再生します。 これは、レイアウトコンテナーが子のサイズを知る必要がある場合です。たとえば、 `BoxView` がレイアウト内の自動サイズのセルの子である場合です `Grid` 。 `BoxView` `HorizontalOptions` および `VerticalOptions` プロパティが以外の値に設定されている場合は、も制約され `LayoutOptions.Fill` ません。 に `BoxView` 制約はあり `WidthRequest` ませんが、 `HeightRequest` プロパティとプロパティが設定されていない場合、幅または高さは40単位の既定値、またはモバイルデバイスでは約1/4 インチに設定されます。
+`WidthRequest`プロパティと `HeightRequest` プロパティは、 `BoxView` がレイアウトで *制約* を持たない場合にのみ、ロールを再生します。 これは、レイアウトコンテナーが子のサイズを知る必要がある場合です。たとえば、 `BoxView` がレイアウト内の自動サイズのセルの子である場合です `Grid` 。 `BoxView` `HorizontalOptions` および `VerticalOptions` プロパティが以外の値に設定されている場合は、も制約され `LayoutOptions.Fill` ません。 に `BoxView` 制約はあり `WidthRequest` ませんが、 `HeightRequest` プロパティとプロパティが設定されていない場合、幅または高さは40単位の既定値、またはモバイルデバイスでは約1/4 インチに設定されます。
 
-`WidthRequest` `HeightRequest` がレイアウトで制限されている場合、プロパティとプロパティは無視されます。この場合、 `BoxView` レイアウトコンテナーはに独自のサイズを指定し*constrained* `BoxView` ます。
+`WidthRequest` `HeightRequest` がレイアウトで制限されている場合、プロパティとプロパティは無視されます。この場合、 `BoxView` レイアウトコンテナーはに独自のサイズを指定し *constrained* `BoxView` ます。
 
 `BoxView` では、一方の寸法を制約ありにし、他の寸法を制約なしにすることができます。 たとえば、 `BoxView` が垂直の子である場合、の `StackLayout` 垂直ディメンションは `BoxView` 制約されません。また、水平ディメンションは一般に制約されます。 ただし、その水平ディメンションには例外があります。の `BoxView` プロパティが以外の値に設定されている場合、 `HorizontalOptions` `LayoutOptions.Fill` 水平ディメンションも制約されません。 また、には制約の `StackLayout` ない水平ディメンションがある場合もあります。この場合、は `BoxView` 水平方向に制約されません。
 
@@ -349,7 +349,7 @@ class LifeCell : BoxView
 
 [**DotMatrixClock**](/samples/xamarin/xamarin-forms-samples/boxview-dotmatrixclock)プログラムは、210 `BoxView` の要素を作成して、旧形式のドットマトリックスディスプレイのドットをシミュレートします。 この時間は、縦モードまたは横モードで読むことができますが、横には大きくあります。
 
-[![ドットマトリックスクロック](boxview-images/dotmatrixclock-small.png "ドットマトリックスクロック")](boxview-images/dotmatrixclock-large.png#lightbox "ドットマトリックスクロック")
+[![ドットマトリックスクロック](boxview-images/dotmatrixclock-small.png "Dot-Matrix クロック")](boxview-images/dotmatrixclock-large.png#lightbox "Dot-Matrix クロック")
 
 XAML ファイルは、 `AbsoluteLayout` クロックに使用されるをインスタンス化するだけではありません。
 

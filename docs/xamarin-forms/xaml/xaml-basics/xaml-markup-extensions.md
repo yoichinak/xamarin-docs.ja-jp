@@ -10,16 +10,16 @@ ms.date: 03/27/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9923a7f0605a7ca5d9d81269c3d855e92fbccaf4
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: b934885369882dea2c3a5de1954b428fcfcbac59
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91564083"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374603"
 ---
 # <a name="part-3-xaml-markup-extensions"></a>第 3 部 XAML マークアップ拡張
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 _XAML マークアップ拡張機能は、他のソースから間接的に参照されるオブジェクトまたは値にプロパティを設定できるようにする、XAML の重要な機能を構成します。XAML マークアップ拡張機能は、オブジェクトを共有する場合や、アプリケーション全体で使用される定数を参照する場合に特に重要ですが、データバインディングで最も多くのユーティリティを見つけることができます。_
 
@@ -74,7 +74,7 @@ _XAML マークアップ拡張機能は、他のソースから間接的に参�
 
 これらのプロパティのいずれかを変更する必要がある場合は、3回ではなく、変更を1回だけ行うことをお勧めします。 これがコードである場合、定数と静的な読み取り専用オブジェクトを使用して、このような値の一貫性を保ち、変更しやすくすることができます。
 
-XAML では、このような値またはオブジェクトを *リソースディクショナリ*に格納するという一般的なソリューションが1つあります。 クラスは、型のと `VisualElement` いう名前のプロパティを定義し `Resources` `ResourceDictionary` ます。このプロパティは、型のキーと型の値を持つディクショナリです `string` `object` 。 このディクショナリにオブジェクトを格納してから、マークアップからそれらを参照することができます。
+XAML では、このような値またはオブジェクトを *リソースディクショナリ* に格納するという一般的なソリューションが1つあります。 クラスは、型のと `VisualElement` いう名前のプロパティを定義し `Resources` `ResourceDictionary` ます。このプロパティは、型のキーと型の値を持つディクショナリです `string` `object` 。 このディクショナリにオブジェクトを格納してから、マークアップからそれらを参照することができます。
 
 ページでリソースディクショナリを使用するには、プロパティ要素タグのペアを含め `Resources` ます。 ページの先頭に配置すると最も便利です。
 
@@ -398,7 +398,7 @@ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 xmlns:local="clr-namespace:XamlSamples"
 ```
 
-また、.NET Standard ライブラリが参照する任意のアセンブリの .NET 名前空間の XML 名前空間宣言を定義することもできます。 たとえば、次に示すのは、 `sys` `System` **netstandard.library** アセンブリに含まれる標準の .net 名前空間のプレフィックスです。 これは別のアセンブリなので、アセンブリ名も指定する必要があります。この場合、 **netstandard.library**:
+また、.NET Standard ライブラリが参照する任意のアセンブリの .NET 名前空間の XML 名前空間宣言を定義することもできます。 たとえば、次に示すのは、 `sys` `System` **netstandard.library** アセンブリに含まれる標準の .net 名前空間のプレフィックスです。 これは別のアセンブリなので、アセンブリ名も指定する必要があります。この場合、 **netstandard.library** :
 
 ```csharp
 xmlns:sys="clr-namespace:System;assembly=netstandard"

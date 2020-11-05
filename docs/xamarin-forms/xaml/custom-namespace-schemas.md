@@ -10,16 +10,16 @@ ms.date: 12/21/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5c7e0d90358ec230436276070ea2792539c446e5
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: f950db0694b21239b742867d519e893d9a62384c
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561483"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374070"
 ---
 # <a name="xaml-custom-namespace-schemas-in-no-locxamarinforms"></a>の XAML カスタム名前空間スキーマ Xamarin.Forms
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xaml-customnamespaceschemas)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/xaml-customnamespaceschemas)
 
 ライブラリ内の型は、XAML でライブラリの XAML 名前空間を宣言することで参照できます。このとき、共通言語ランタイム (CLR) の名前空間名とアセンブリ名を指定する名前空間宣言を使用します。
 

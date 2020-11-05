@@ -12,16 +12,16 @@ no-loc:
 - Xamarin.Essentials
 - RefreshView
 - Universal Windows Platform
-ms.openlocfilehash: aa71e486e81c62a39840e4db05f206c4cb20bacd
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 470093465191897a56cd54a6edaf828afbf40e11
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91559312"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93372879"
 ---
 # <a name="no-locxamarinforms-no-locrefreshview"></a>Xamarin.Forms RefreshView
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-refreshviewdemo/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-refreshviewdemo/)
 
 は、スクロール可能な `RefreshView` コンテンツに対してプルを更新する機能を提供するコンテナーコントロールです。 したがって、の子は `RefreshView` 、、、など、スクロール可能なコントロールである必要があり [`ScrollView`](xref:Xamarin.Forms.ScrollView) [`CollectionView`](xref:Xamarin.Forms.CollectionView) [`ListView`](xref:Xamarin.Forms.ListView) ます。
 

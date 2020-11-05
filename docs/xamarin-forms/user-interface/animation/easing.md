@@ -10,16 +10,16 @@ ms.date: 07/14/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1769a1eb562d4ae0551598493afa9b04491a42d5
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 50b64b394314ae2f63ab1f756f1cc73ba29e59e7
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562796"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93372848"
 ---
 # <a name="easing-functions-in-no-locxamarinforms"></a>イージング関数 Xamarin.Forms
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-animation-easing)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-animation-easing)
 
 _Xamarin.Forms にはイージングクラスが含まれています。このクラスを使用すると、アニメーションの実行速度を制御する転送関数を指定できます。この記事では、定義済みのイージング関数を使用する方法と、カスタムイージング関数を作成する方法について説明します。_
 

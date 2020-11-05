@@ -10,16 +10,16 @@ ms.date: 04/12/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 911365b6293fecd3bf309f3e61d9b232d90b7a13
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: e26e4b66cfc9648eee3c1caab2f8cdc0c02d5c7b
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556556"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374564"
 ---
 # <a name="matrix-transforms-in-skiasharp"></a>SkiaSharp のマトリックス変換
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _汎用性のある変換マトリックスを使用した SkiaSharp 変換について詳しく知る_
 
@@ -153,7 +153,7 @@ SkiaSharp がグラフィカルオブジェクトをレンダリングすると�
 
 ## <a name="matrix-multiplication"></a>行列乗算
 
-変換行列を使用する場合の大きな利点の1つは、複合変換を行列乗算によって取得できることです。これは、SkiaSharp ドキュメントで *連結*と呼ばれることがよくあります。 の変換関連のメソッドの多く `SKCanvas` は、"プリ連結" または "事前連結" を指しています。 これは乗算の順序を表します。これは、行列乗算が可換ではないために重要です。
+変換行列を使用する場合の大きな利点の1つは、複合変換を行列乗算によって取得できることです。これは、SkiaSharp ドキュメントで *連結* と呼ばれることがよくあります。 の変換関連のメソッドの多く `SKCanvas` は、"プリ連結" または "事前連結" を指しています。 これは乗算の順序を表します。これは、行列乗算が可換ではないために重要です。
 
 たとえば、メソッドのドキュメントでは、 [`Translate`](xref:SkiaSharp.SKCanvas.Translate(System.Single,System.Single)) "現在のマトリックスを指定された翻訳に事前に concats しています" という説明がありますが、メソッドのドキュメントでは、 [`Scale`](xref:SkiaSharp.SKCanvas.Scale(System.Single,System.Single)) "現在のマトリックスを指定されたスケールで事前に concats する" ことが示されています。
 

@@ -6,18 +6,18 @@ ms.assetid: da4b4ba9-9205-47dc-8bae-23272ede2c50
 author: davidortinau
 ms.author: daortin
 ms.date: 04/24/2019
-ms.openlocfilehash: 5b042116f6d1fe2832298d09e3d47cba745973ad
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: 8cb26c3d8cec03cfaa12f7acb974c9944119bdfc
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91456874"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374109"
 ---
 # <a name="xamarinforms-using-visual-basicnet"></a>Visual Basic.NET を使用した Xamarin. フォーム
 
 Xamarin では Visual Basic を直接サポートしていません。このページの指示に従って C# Xamarin. Forms ソリューションを作成し、.NET Standard C# プロジェクトを Visual Basic に置き換えます。
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/mobile-samples/visualbasic-xamarinformsvb/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/mobile-samples/visualbasic-xamarinformsvb/)
 
 [![Xamarin. Forms ソリューションを作成し、.NET Standard プロジェクトをに置き換え Visual Basic](xamarin-forms-images/hero-sml.png)](xamarin-forms-images/hero.png#lightbox)
 
@@ -28,37 +28,37 @@ Xamarin では Visual Basic を直接サポートしていません。このペ�
 
 Visual Basic を使用する単純な Xamarin. Forms プロジェクトを作成するには、次の手順に従います。
 
-1. Visual Studio 2019 から **、[新しいプロジェクトの作成**] を選択します。
+1. Visual Studio 2019 から **、[新しいプロジェクトの作成** ] を選択します。
 
-2. [ **新しいプロジェクトの作成** ] ウィンドウで、「 **Xamarin. forms** 」と入力して一覧をフィルター処理し、[ **モバイルアプリ (xamarin)**] を選択して、[ **次へ**] をクリックします。
+2. [ **新しいプロジェクトの作成** ] ウィンドウで、「 **Xamarin. forms** 」と入力して一覧をフィルター処理し、[ **モバイルアプリ (xamarin)** ] を選択して、[ **次へ** ] をクリックします。
 
     [![Xamarin. Forms アプリのフィルター](xamarin-forms-images/02-sml.png)](xamarin-forms-images/02.png#lightbox)
 
-3. 次の画面で、プロジェクトの名前を入力し、[ **作成**] をクリックします。
+3. 次の画面で、プロジェクトの名前を入力し、[ **作成** ] をクリックします。
 
-4. **空**のテンプレートを選択し、 **[OK]** をクリックします。
+4. **空** のテンプレートを選択し、 **[OK]** をクリックします。
 
     [![空の Xamarin. Forms テンプレート](xamarin-forms-images/04-sml.png)](xamarin-forms-images/04.png#lightbox)
 
     これにより、Visual Studio で C# を使用して Xamarin. Forms ソリューションが作成されます。 次の手順では、Visual Basic を使用するようにソリューションを変更します。
 
-5. ソリューションを右クリックし、[**新しいプロジェクトの追加 >** ] を選択します。
+5. ソリューションを右クリックし、[ **新しいプロジェクトの追加 >** ] を選択します。
 
-6. **Visual Basic ライブラリ**を入力してプロジェクトオプションをフィルター処理し、[**クラスライブラリ (.NET Standard)** ] オプションを Visual Basic アイコンで選択します。
+6. **Visual Basic ライブラリ** を入力してプロジェクトオプションをフィルター処理し、[ **クラスライブラリ (.NET Standard)** ] オプションを Visual Basic アイコンで選択します。
 
     [![Visual Basic ライブラリのフィルター](xamarin-forms-images/06-sml.png)](xamarin-forms-images/06.png#lightbox)
 
-7. 次の画面で、プロジェクトの名前を入力し、[ **作成**] をクリックします。
+7. 次の画面で、プロジェクトの名前を入力し、[ **作成** ] をクリックします。
 
-8. Visual Basic プロジェクトを右クリックし、[ **プロパティ**] を選択します。次に、既存の C# プロジェクトに合わせて **既定の名前空間** を変更します。
+8. Visual Basic プロジェクトを右クリックし、[ **プロパティ** ] を選択します。次に、既存の C# プロジェクトに合わせて **既定の名前空間** を変更します。
 
     [![Visual Basic ルート名前空間が Xamarin. Forms アプリと一致することを確認する](xamarin-forms-images/07a-sml.png)](xamarin-forms-images/07a.png#lightbox)
 
-9. 新しい Visual Basic プロジェクトを右クリックし、[ **NuGet パッケージの管理**] を選択します。次に、 **Xamarin** をインストールし、[パッケージマネージャー] ウィンドウを閉じます。
+9. 新しい Visual Basic プロジェクトを右クリックし、[ **NuGet パッケージの管理** ] を選択します。次に、 **Xamarin** をインストールし、[パッケージマネージャー] ウィンドウを閉じます。
 
     [![パッケージマネージャーウィンドウをフォームに表示して閉じる](xamarin-forms-images/07b-sml.png)](xamarin-forms-images/07b.png#lightbox)
 
-10. 既定の **Class1** ファイルの名前を **app.xaml**に変更します。
+10. 既定の **Class1** ファイルの名前を **app.xaml** に変更します。
 
     [![既定の Class1 ファイルとクラスの名前を App に変更する](xamarin-forms-images/08.png)](xamarin-forms-images/08.png#lightbox)
 
@@ -90,7 +90,7 @@ Visual Basic を使用する単純な Xamarin. Forms プロジェクトを作成
     ```
 
 12. Android および iOS プロジェクトを更新して、新しい Visual Basic プロジェクト (テンプレートによって作成された C# プロジェクトではない) を参照するようにします。
-Android および iOS プロジェクトの [ **参照設定** ] ノードを右クリックして、 **参照マネージャー**を開きます。 C# ライブラリのティックを解除し、Visual Basic ライブラリをマークします (Android と iOS の両方のプロジェクトについては忘れないでください)。
+Android および iOS プロジェクトの [ **参照設定** ] ノードを右クリックして、 **参照マネージャー** を開きます。 C# ライブラリのティックを解除し、Visual Basic ライブラリをマークします (Android と iOS の両方のプロジェクトについては忘れないでください)。
 
     [![古いプロジェクト参照の削除、Visual Basic 参照の追加](xamarin-forms-images/10-sml.png)](xamarin-forms-images/10.png#lightbox)
 

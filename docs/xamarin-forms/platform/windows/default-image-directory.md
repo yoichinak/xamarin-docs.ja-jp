@@ -10,16 +10,16 @@ ms.date: 01/16/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d6a8674f0cffe534b1ee83f20ab255766fbfcbda
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 4dd8655d4cd84f7d4214801e55677706eb67efa7
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557401"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374681"
 ---
 # <a name="default-image-directory-on-windows"></a>Windows 上の既定のイメージディレクトリ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 プラットフォーム固有のユニバーサル Windows プラットフォームは、イメージアセットの読み込み元となるプロジェクト内のディレクトリを定義します。 を XAML で使用するには、 `Application.ImageDirectory` `string` イメージアセットを含むプロジェクトディレクトリを表すをに設定します。
 

@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a9ab12b5aabee03d84c58580ec200de4b63d5106
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 38bc85cb06f89ecbc673d8f159c716136d183570
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562432"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373225"
 ---
 # <a name="cell-background-color-on-ios"></a>IOS のセルの背景色
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 この iOS プラットフォーム固有のは、インスタンスの既定の背景色を設定 [`Cell`](xref:Xamarin.Forms.Cell) します。 これは、バインド可能なプロパティをに設定することによって XAML で使用され `Cell.DefaultBackgroundColor` [`Color`](xref:Xamarin.Forms.Color) ます。
 

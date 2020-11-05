@@ -10,16 +10,16 @@ ms.date: 12/04/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: be1de99ba42e58e375792b0a4e03d1847e2e3c87
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: c24c8eb2ea4801037621cdc82f49073c89115817
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562887"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374370"
 ---
 # <a name="authenticate-users-with-azure-active-directory-b2c"></a>Azure Active Directory B2C を使用してユーザーを認証する
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azureadb2cauth)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/webservices-azureadb2cauth)
 
 _Azure Active Directory B2C は、コンシューマー向け web アプリケーションおよびモバイルアプリケーション用のクラウド id 管理を提供します。この記事では、Azure Active Directory B2C を使用して、Microsoft 認証ライブラリを使用して id 管理をモバイルアプリケーションに統合する方法について説明します。_
 
@@ -45,7 +45,7 @@ Microsoft 認証ライブラリでは、複数のアプリケーションアー�
 
 サンプルプロジェクトを実行するには、Azure Active Directory B2C テナントを作成する必要があります。 詳細については、「 [Azure portal での Azure Active Directory B2C テナントの作成](/azure/active-directory-b2c/active-directory-b2c-get-started/)」を参照してください。
 
-テナントを作成した後、モバイルアプリケーションを構成するには、 **テナント名** と **テナント ID** が必要になります。 テナント ID と名前は、テナント URL を作成したときに生成されたドメインによって定義されます。 生成されたテナント URL がの場合、テナント ID はで、 `https://contoso20190410tenant.onmicrosoft.com/` **tenant ID** `contoso20190410tenant.onmicrosoft.com` **テナント名**はです `contoso20190410tenant` 。 上部のメニューにある [ **ディレクトリとサブスクリプション] フィルター** をクリックして、Azure portal でテナントドメインを見つけます。 次のスクリーンショットは、[Azure directory とサブスクリプションのフィルター] ボタンとテナントドメインを示しています。
+テナントを作成した後、モバイルアプリケーションを構成するには、 **テナント名** と **テナント ID** が必要になります。 テナント ID と名前は、テナント URL を作成したときに生成されたドメインによって定義されます。 生成されたテナント URL がの場合、テナント ID はで、 `https://contoso20190410tenant.onmicrosoft.com/` **tenant ID** `contoso20190410tenant.onmicrosoft.com` **テナント名** はです `contoso20190410tenant` 。 上部のメニューにある [ **ディレクトリとサブスクリプション] フィルター** をクリックして、Azure portal でテナントドメインを見つけます。 次のスクリーンショットは、[Azure directory とサブスクリプションのフィルター] ボタンとテナントドメインを示しています。
 
 [![Azure ディレクトリとサブスクリプションのフィルタービューでのテナント名](azure-ad-b2c-images/azure-tenant-name-cropped.png)](azure-ad-b2c-images/azure-tenant-name.png#lightbox)
 
@@ -70,9 +70,9 @@ Microsoft 認証ライブラリでは、アプリケーションの **リダイ�
 
 ![Azure アプリケーションのプロパティビューのカスタムリダイレクト URI](azure-ad-b2c-images/azure-redirect-uri.png)
 
-この URL は、後で Android **ApplicationManifest.xml** と iOS **情報 plist**の両方で使用されます。
+この URL は、後で Android **ApplicationManifest.xml** と iOS **情報 plist** の両方で使用されます。
 
-サンプルプロジェクトで、 **Constants.cs** ファイルを編集し `clientId` て、フィールドに **アプリケーション ID**を設定します。 次のコードは、アプリケーション ID がの場合にこの値を設定する方法を示してい `1234abcd` ます。
+サンプルプロジェクトで、 **Constants.cs** ファイルを編集し `clientId` て、フィールドに **アプリケーション ID** を設定します。 次のコードは、アプリケーション ID がの場合にこの値を設定する方法を示してい `1234abcd` ます。
 
 ```csharp
 public static class Constants
@@ -110,7 +110,7 @@ public static class Constants
 
 Microsoft Authentication Library (MSAL) NuGet パッケージは、ソリューション内の共有、.NET Standard プロジェクト、プラットフォームプロジェクトに追加する必要があり Xamarin.Forms ます。 MSAL には、 `PublicClientApplicationBuilder` インターフェイスに準拠したオブジェクトを構築するクラスが含まれてい `IPublicClientApplication` ます。 MSAL で `With` は、コンストラクターと認証メソッドに追加のパラメーターを指定するために句を利用しています。
 
-サンプルプロジェクトでは、 **app.xaml** の分離コードがおよびという名前の静的プロパティを定義 `AuthenticationClient` し、 `UIParent` コンストラクター内のオブジェクトをインスタンス化し `AuthenticationClient` ます。 句は、 `WithIosKeychainSecurityGroup` iOS アプリケーションのセキュリティグループ名を提供します。 句には、 `WithB2CAuthority` ユーザーの認証に使用される既定の **機関**(ポリシー) が用意されています。 句は、 `WithRedirectUri` 複数の uri が指定されている場合に使用するリダイレクト URI を Azure Notification Hubs インスタンスに指示します。 次の例は、をインスタンス化する方法を示してい `PublicClientApplication` ます。
+サンプルプロジェクトでは、 **app.xaml** の分離コードがおよびという名前の静的プロパティを定義 `AuthenticationClient` し、 `UIParent` コンストラクター内のオブジェクトをインスタンス化し `AuthenticationClient` ます。 句は、 `WithIosKeychainSecurityGroup` iOS アプリケーションのセキュリティグループ名を提供します。 句には、 `WithB2CAuthority` ユーザーの認証に使用される既定の **機関** (ポリシー) が用意されています。 句は、 `WithRedirectUri` 複数の uri が指定されている場合に使用するリダイレクト URI を Azure Notification Hubs インスタンスに指示します。 次の例は、をインスタンス化する方法を示してい `PublicClientApplication` ます。
 
 ```csharp
 public partial class App : Application
@@ -169,7 +169,7 @@ public partial class LoginPage : ContentPage
 }
 ```
 
-`OnLoginButtonClicked`([ログイン] ボタンがクリックされたときに発生する) イベントハンドラーがを呼び出し `AcquireTokenAsync` ます。 MSAL ライブラリは、自動的にモバイルデバイスのブラウザーを開き、ログインページに移動します。 **証明機関**と呼ばれるサインイン URL は、 **Constants.cs**ファイルで定義されているテナント名とポリシーを組み合わせたものです。 ユーザーが [パスワードを忘れた場合] オプションを選択すると、例外が発生してアプリに返されます。これにより、パスワードを忘れたことが起動します。 次の例は、認証プロセスを示しています。
+`OnLoginButtonClicked`([ログイン] ボタンがクリックされたときに発生する) イベントハンドラーがを呼び出し `AcquireTokenAsync` ます。 MSAL ライブラリは、自動的にモバイルデバイスのブラウザーを開き、ログインページに移動します。 **証明機関** と呼ばれるサインイン URL は、 **Constants.cs** ファイルで定義されているテナント名とポリシーを組み合わせたものです。 ユーザーが [パスワードを忘れた場合] オプションを選択すると、例外が発生してアプリに返されます。これにより、パスワードを忘れたことが起動します。 次の例は、認証プロセスを示しています。
 
 ```csharp
 public partial class LoginPage : ContentPage
@@ -207,7 +207,7 @@ public partial class LoginPage : ContentPage
 }
 ```
 
-`OnForgotPassword`メソッドはサインインプロセスに似ていますが、カスタムポリシーを実装しています。 `OnForgotPassword` は、の異なるオーバーロードを使用し `AcquireTokenAsync` ます。これにより、特定の **権限**を提供できます。 次の例は、トークンを取得するときにカスタム **証明機関** を指定する方法を示しています。
+`OnForgotPassword`メソッドはサインインプロセスに似ていますが、カスタムポリシーを実装しています。 `OnForgotPassword` は、の異なるオーバーロードを使用し `AcquireTokenAsync` ます。これにより、特定の **権限** を提供できます。 次の例は、トークンを取得するときにカスタム **証明機関** を指定する方法を示しています。
 
 ```csharp
 public partial class LoginPage : ContentPage
@@ -256,11 +256,11 @@ public partial class LogoutPage : ContentPage
 
 ### <a name="ios"></a>iOS
 
-IOS では、Azure Active Directory B2C に登録されたカスタム URL スキームを、 **情報 plist**に登録する必要があります。 MSAL では、URL スキームが特定のパターンに準拠していることが想定されています。前述の「 [モバイルアプリケーションを Azure Active Directory B2C に登録](~/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md#register-your-mobile-application-with-azure-active-directory-b2c)する」で説明しています。 次のスクリーンショットは、 **ユーザーのカスタム URL スキームを示し**ています。
+IOS では、Azure Active Directory B2C に登録されたカスタム URL スキームを、 **情報 plist** に登録する必要があります。 MSAL では、URL スキームが特定のパターンに準拠していることが想定されています。前述の「 [モバイルアプリケーションを Azure Active Directory B2C に登録](~/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md#register-your-mobile-application-with-azure-active-directory-b2c)する」で説明しています。 次のスクリーンショットは、 **ユーザーのカスタム URL スキームを示し** ています。
 
 !["IOS でのカスタム URL スキームの登録"](azure-ad-b2c-images/customurl-ios.png)
 
-MSAL には、次のスクリーンショットに示すように、 **Entitilements**に登録されている IOS のキーチェーンの権利も必要です。
+MSAL には、次のスクリーンショットに示すように、 **Entitilements** に登録されている IOS のキーチェーンの権利も必要です。
 
 !["IOS でのアプリケーション権利の設定"](azure-ad-b2c-images/entitlements-ios.png)
 
@@ -286,7 +286,7 @@ namespace TodoAzure.iOS
 
 ### <a name="android"></a>Android
 
-Android では、Azure Active Directory B2C に登録されたカスタム URL スキームが **AndroidManifest.xml**に登録されている必要があります。 MSAL では、URL スキームが特定のパターンに準拠していることが想定されています。前述の「 [モバイルアプリケーションを Azure Active Directory B2C に登録](~/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md#register-your-mobile-application-with-azure-active-directory-b2c)する」で説明しています。 次の例では、 **AndroidManifest.xml**のカスタム URL スキームを示します。
+Android では、Azure Active Directory B2C に登録されたカスタム URL スキームが **AndroidManifest.xml** に登録されている必要があります。 MSAL では、URL スキームが特定のパターンに準拠していることが想定されています。前述の「 [モバイルアプリケーションを Azure Active Directory B2C に登録](~/xamarin-forms/data-cloud/authentication/azure-ad-b2c.md#register-your-mobile-application-with-azure-active-directory-b2c)する」で説明しています。 次の例では、 **AndroidManifest.xml** のカスタム URL スキームを示します。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -307,7 +307,7 @@ Android では、Azure Active Directory B2C に登録されたカスタム URL �
 </manifest>
 ```
 
-`MainActivity` `UIParent` 呼び出し中にオブジェクトをアプリケーションに提供するには、クラスを変更する必要があり `OnCreate` ます。 Azure Active Directory B2C が承認要求を完了すると、 **AndroidManifest.xml**から登録された URL スキームにリダイレクトされます。 登録された URI スキームは、メソッドに `OnActivityResult` よって処理される起動パラメーターとして、URL を使用してメソッドを呼び出し `SetAuthenticationContinuationEventArgs` ます。
+`MainActivity` `UIParent` 呼び出し中にオブジェクトをアプリケーションに提供するには、クラスを変更する必要があり `OnCreate` ます。 Azure Active Directory B2C が承認要求を完了すると、 **AndroidManifest.xml** から登録された URL スキームにリダイレクトされます。 登録された URI スキームは、メソッドに `OnActivityResult` よって処理される起動パラメーターとして、URL を使用してメソッドを呼び出し `SetAuthenticationContinuationEventArgs` ます。
 
 ```csharp
 public class MainActivity : FormsAppCompatActivity

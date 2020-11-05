@@ -10,16 +10,16 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c355816ec1b89801814b217cad8a23be2f453226
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 0f33d3e10b549e6e3e45d35a259ece71bf68724c
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563797"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373329"
 ---
 # <a name="imagebutton-drop-shadows-on-android"></a>Android での ImageButton ドロップシャドウ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 この Android プラットフォーム固有のは、のドロップシャドウを有効にするために使用され `ImageButton` ます。 このメソッドは、バインド可能なプロパティをに設定することによって XAML で使用され `ImageButton.IsShadowEnabled` `true` ます。また、ドロップシャドウを制御する追加のオプションのバインド可能なプロパティがいくつかあります。
 

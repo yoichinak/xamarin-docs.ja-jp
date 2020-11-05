@@ -10,16 +10,16 @@ ms.date: 04/02/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9ed0c2b9b0916349b11f64e83c57f2737c302e92
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: c522b1e9c191a4f030355f0cfcca1240d64e09df
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557466"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373706"
 ---
 # <a name="modal-page-presentation-style-on-ios"></a>IOS のモーダルページプレゼンテーションスタイル
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 この iOS プラットフォーム固有のは、モーダルページのプレゼンテーションスタイルを設定するために使用され、さらに、透明な背景を持つモーダルページを表示するために使用できます。 これは、 `Page.ModalPresentationStyle` バインド可能なプロパティを列挙値に設定することによって XAML で使用され `UIModalPresentationStyle` ます。
 

@@ -10,16 +10,16 @@ ms.date: 03/29/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 63a939e7093bcbe52f1aed376253c7aa78b078bf
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 2a7aa9ec588879eb4f59e42cf9848d6e3c560625
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563849"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373797"
 ---
 # <a name="create-a-custom-layout-in-no-locxamarinforms"></a>でカスタムレイアウトを作成する Xamarin.Forms
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
 
 _Xamarin.Forms 5つのレイアウトクラス (StackLayout、AbsoluteLayout、RelativeLayout、Grid、および FlexLayout) を定義し、それぞれが異なる方法で子を整列します。ただし、で提供されていないレイアウトを使用してページコンテンツを整理する必要がある場合もあり Xamarin.Forms ます。この記事では、カスタムレイアウトクラスを記述する方法について説明し、向きを区別する WrapLayout クラスを示します。このクラスは、ページの横に子を並べて配置し、後続の子の表示を追加の行にラップします。_
 
@@ -29,7 +29,7 @@ _Xamarin.Forms 5つのレイアウトクラス (StackLayout、AbsoluteLayout、R
 
 Xamarin.Formsカスタムレイアウトを作成するには、レイアウトと無効化のサイクルを十分に理解している必要があります。 ここでは、これらのサイクルについて説明します。
 
-## <a name="layout"></a>レイアウト
+## <a name="layout"></a>Layout
 
 レイアウトは、ビジュアルツリーの一番上からページを使用して開始され、ビジュアルツリーのすべての分岐を通じて、ページ上のすべてのビジュアル要素をカバーします。 他の要素の親である要素は、それ自体を基準にして子のサイズ設定と配置を行います。
 
@@ -50,7 +50,7 @@ Xamarin.Formsまたはプロパティを持つすべてのクラス `Content` �
 また、またはから派生したすべてのクラスは、 [`Layout`](xref:Xamarin.Forms.Layout) [`Layout<View>`](xref:Xamarin.Forms.Layout`1) メソッドをオーバーライドする必要があり [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) ます。これは、[ `Measure` ] (xref: を呼び出すことによって、レイアウトクラスが必要とするサイズを決定 Xamarin.Forms します。VisualElement. Measure (system.string, system.string, Xamarin.Forms .MeasureFlags)) の子のメソッド。
 
 > [!NOTE]
-> 要素は、要素の親内の要素に使用できる領域を示す *制約*に基づいて、サイズを決定します。 [ `Measure` ] (Xref: に渡される制約 Xamarin.FormsVisualElement. Measure (system.string, system.string, Xamarin.Forms .MeasureFlags)) と [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) メソッドの範囲は 0 ~ `Double.PositiveInfinity` です。 要素は、 *constrained*[] (xref: に対する呼び出しを受け取ると、制約を受けたり、*完全に制約*されたりします `Measure` Xamarin.Forms 。VisualElement. Measure (system.string, system.string, Xamarin.Forms .MeasureFlags)) メソッドが無限でないことを示します。要素は特定のサイズに制限されます。 要素は、少なくとも1つの引数を持つメソッドの呼び出しを受け取ると、 *制約*がない、または *部分的に制約*され `Measure` `Double.PositiveInfinity` ます。無限制約は、自動サイズ調整を示すと考えることができます。
+> 要素は、要素の親内の要素に使用できる領域を示す *制約* に基づいて、サイズを決定します。 [ `Measure` ] (Xref: に渡される制約 Xamarin.FormsVisualElement. Measure (system.string, system.string, Xamarin.Forms .MeasureFlags)) と [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) メソッドの範囲は 0 ~ `Double.PositiveInfinity` です。 要素は、 *constrained* [] (xref: に対する呼び出しを受け取ると、制約を受けたり、 *完全に制約* されたりします `Measure` Xamarin.Forms 。VisualElement. Measure (system.string, system.string, Xamarin.Forms .MeasureFlags)) メソッドが無限でないことを示します。要素は特定のサイズに制限されます。 要素は、少なくとも1つの引数を持つメソッドの呼び出しを受け取ると、 *制約* がない、または *部分的に制約* され `Measure` `Double.PositiveInfinity` ます。無限制約は、自動サイズ調整を示すと考えることができます。
 
 ## <a name="invalidation"></a>無効化
 
@@ -73,15 +73,15 @@ Xamarin.Formsまたはプロパティを持つすべてのクラス `Content` �
 カスタムレイアウトを作成するプロセスは次のとおりです。
 
 1. `Layout<View>` クラスから派生するクラスを作成します。 詳細については、「 [Create a WrapLayout](#create-a-wraplayout)」を参照してください。
-1. [*省略可能*]レイアウトクラスに設定する必要のあるパラメーターについて、バインド可能なプロパティによってサポートされるプロパティを追加します。 詳細については、「バインド可能な [プロパティによってサポート](#add-properties-backed-by-bindable-properties)されるプロパティの追加」を参照してください。
+1. [ *省略可能* ]レイアウトクラスに設定する必要のあるパラメーターについて、バインド可能なプロパティによってサポートされるプロパティを追加します。 詳細については、「バインド可能な [プロパティによってサポート](#add-properties-backed-by-bindable-properties)されるプロパティの追加」を参照してください。
 1. メソッドをオーバーライドし [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) て [ `Measure` ] (xref: を呼び出し Xamarin.Forms ます。VisualElement. Measure (system.string, system.string, Xamarin.Forms .MeasureFlags)) メソッドを使用して、レイアウトのすべての子に対して、要求されたサイズを返します。 詳細については、「 [OnMeasure メソッドのオーバーライド](#override-the-onmeasure-method)」を参照してください。
 1. メソッドをオーバーライドし [`LayoutChildren`](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) て [ `Layout` ] (xref: を呼び出し Xamarin.Forms ます。VisualElement。 Layout ( Xamarin.Forms .四角形)) メソッドをすべてのレイアウトの子に対してメソッドします。 [ `Layout` ] (Xref: を呼び出すことができません Xamarin.Forms 。VisualElement。 Layout ( Xamarin.Forms .四角形)) メソッドは、レイアウト内の各子に対して、正しいサイズまたは位置を受け取らないようにします。そのため、子はページ上に表示されなくなります。 詳細については、「 [LayoutChildren メソッドのオーバーライド](#override-the-layoutchildren-method)」を参照してください。
 
     > [!NOTE]
     > で子を列挙し、をオーバーライドする場合は [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) [`LayoutChildren`](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) 、 [`IsVisible`](xref:Xamarin.Forms.VisualElement.IsVisible) プロパティがに設定されている子をスキップし `false` ます。 これにより、カスタムレイアウトでは、非表示の子の領域が残されることがなくなります。
 
-1. [*省略可能*]メソッドをオーバーライドして、 [`InvalidateLayout`](xref:Xamarin.Forms.Layout.InvalidateLayout) 子がレイアウトに追加されたとき、またはレイアウトから削除されたときに通知されるようにします。 詳細については、「 [InvalidateLayout メソッドのオーバーライド](#override-the-invalidatelayout-method)」を参照してください。
-1. [*省略可能*]メソッドをオーバーライドして [`OnChildMeasureInvalidated`](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated) 、レイアウトの子のいずれかが変更されたときに通知されるようにします。 詳細については、「 [OnChildMeasureInvalidated メソッドのオーバーライド](#override-the-onchildmeasureinvalidated-method)」を参照してください。
+1. [ *省略可能* ]メソッドをオーバーライドして、 [`InvalidateLayout`](xref:Xamarin.Forms.Layout.InvalidateLayout) 子がレイアウトに追加されたとき、またはレイアウトから削除されたときに通知されるようにします。 詳細については、「 [InvalidateLayout メソッドのオーバーライド](#override-the-invalidatelayout-method)」を参照してください。
+1. [ *省略可能* ]メソッドをオーバーライドして [`OnChildMeasureInvalidated`](xref:Xamarin.Forms.Layout.OnChildMeasureInvalidated) 、レイアウトの子のいずれかが変更されたときに通知されるようにします。 詳細については、「 [OnChildMeasureInvalidated メソッドのオーバーライド](#override-the-onchildmeasureinvalidated-method)」を参照してください。
 
 > [!NOTE]
 > [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double))レイアウトのサイズが子ではなく親によって制御されている場合、オーバーライドは呼び出されないことに注意してください。 ただし、制約の一方または両方が無限の場合、または layout クラスに既定 [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) 値またはプロパティ値がない場合は、オーバーライドが呼び出され [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) ます。 このため、オーバーライドは、 [`LayoutChildren`](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) メソッドの呼び出し中に取得された子のサイズに依存することはできません [`OnMeasure`](xref:Xamarin.Forms.VisualElement.OnMeasure(System.Double,System.Double)) 。 代わりに、は `LayoutChildren` [ `Measure` ] (xref: を呼び出す必要があり Xamarin.Forms ます。VisualElement. Measure (system.string, system.string, Xamarin.Forms .MeasureFlags) メソッドを呼び出す前に、レイアウトの子のメソッドを呼び出します `Layout` Xamarin.Forms 。VisualElement。 Layout ( Xamarin.Forms .四角形)) メソッド。 または、オーバーライドで取得した子のサイズをキャッシュして、 `OnMeasure` オーバーライドでの後の呼び出しを回避することができ `Measure` `LayoutChildren` ます。ただし、レイアウトクラスは、サイズを再度取得する必要があるタイミングを知る必要があります。 詳細については、「 [レイアウトデータの計算とキャッシュ](#calculate-and-cache-layout-data)」を参照してください。
@@ -92,7 +92,7 @@ Xamarin.Formsまたはプロパティを持つすべてのクラス `Content` �
 
 サンプルアプリケーションでは、 `WrapLayout` ページの横に子を並べて配置し、後続の子の表示を追加の行にラップする、向きを区別するクラスを示しています。
 
-クラスは、子 `WrapLayout` の最大サイズに基づいて、 *セルサイズ*と呼ばれる各子に同じ領域を割り当てます。 セルのサイズより小さい子は、その [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) プロパティ値とプロパティ値に基づいてセル内に配置でき [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) ます。
+クラスは、子 `WrapLayout` の最大サイズに基づいて、 *セルサイズ* と呼ばれる各子に同じ領域を割り当てます。 セルのサイズより小さい子は、その [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) プロパティ値とプロパティ値に基づいてセル内に配置でき [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) ます。
 
 `WrapLayout`クラス定義を次のコード例に示します。
 
@@ -339,7 +339,7 @@ protected override void OnChildMeasureInvalidated()
 </ContentPage>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 public class ImageWrapLayoutPageCS : ContentPage
@@ -415,6 +415,6 @@ async Task<ImageList> GetImageListAsync()
 - [WrapLayout (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-customlayout-wraplayout)
 - [カスタム レイアウト](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter26.md)
 - [でのカスタムレイアウトの作成 Xamarin.Forms (ビデオ)](https://www.youtube.com/watch?v=sxjOqNZFhKU)
-- [レイアウト\<T>](xref:Xamarin.Forms.Layout`1)
+- [Layout\<T>](xref:Xamarin.Forms.Layout`1)
 - [レイアウト](xref:Xamarin.Forms.Layout)
 - [VisualElement](xref:Xamarin.Forms.VisualElement)

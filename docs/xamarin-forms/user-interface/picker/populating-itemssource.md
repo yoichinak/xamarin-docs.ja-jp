@@ -10,16 +10,16 @@ ms.date: 02/26/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 395536752fb0d581408d0b8f91ef623d926aeeb4
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: c08ef265cb3cf08f9d7015503f8038d9180a2c18
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91559546"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373147"
 ---
 # <a name="setting-a-pickers-itemssource-property"></a>ピッカーの ItemsSource プロパティの設定
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-monkeyapppicker)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-monkeyapppicker)
 
 _ピッカービューは、データの一覧からテキスト項目を選択するためのコントロールです。この記事では、ItemsSource プロパティを設定してピッカーにデータを設定する方法と、ユーザーが項目の選択に応答する方法について説明します。_
 
@@ -50,7 +50,7 @@ Xamarin.Forms 2.3.4 では、 [`Picker`](xref:Xamarin.Forms.Picker) プロパテ
 > [!NOTE]
 > `x:Array` 要素には、配列内の項目の型を示す `Type` 属性が必要です。
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 var monkeyList = new List<string>();
@@ -79,7 +79,7 @@ picker.ItemsSource = monkeyList;
 <Label Text="{Binding Source={x:Reference picker}, Path=SelectedItem}" />
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 var monkeyNameLabel = new Label();
@@ -117,7 +117,7 @@ void OnPickerSelectedIndexChanged(object sender, EventArgs e)
         ItemDisplayBinding="{Binding Name}" />
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 var picker = new Picker { Title = "Select a monkey", TitleColor = Color.Red };
@@ -155,7 +155,7 @@ public class Monkey
 <Label Text="{Binding SelectedMonkey.Details}" ... />
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 var picker = new Picker { Title = "Select a monkey", TitleColor = Color.Red };

@@ -10,18 +10,18 @@ ms.date: 07/02/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 37ee7fe2278176024dc1662b87b494e84344b98c
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: e8e41ef3b17c253132668ac7be5ed448695f3685
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91558961"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373862"
 ---
 # <a name="no-locxamarinforms-shapes-path-transforms"></a>Xamarin.Forms 図形: パスの変換
 
 ![プレリリース API](~/media/shared/preview.png)
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 は、ある `Transform` `Path` 座標空間から別の座標空間にオブジェクトを変換する方法を定義します。 変換がオブジェクトに適用されると `Path` 、オブジェクトが UI でどのようにレンダリングされるかが変更されます。
 

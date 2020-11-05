@@ -10,16 +10,16 @@ ms.date: 12/05/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: afa5ccf8f4d4485ae7a9a45bcbc745bddee20f5c
-ms.sourcegitcommit: 1550019cd1e858d4d13a4ae6dfb4a5947702f24b
+ms.openlocfilehash: 4331b29c54b5f7c59daf0a9e04cd398693e79201
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92897482"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374707"
 ---
 # <a name="no-locxamarinforms-local-databases"></a>Xamarin.Forms ローカルデータベース
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todo)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/todo)
 
 SQLite データベースエンジンを使用 Xamarin.Forms すると、アプリケーションは共有コードでデータオブジェクトを読み込んで保存することができます。 このサンプルアプリケーションでは、SQLite データベーステーブルを使用して todo 項目を格納します。 この記事では、共有コードで SQLite.Net を使用して、ローカルデータベースの情報を格納および取得する方法について説明します。
 

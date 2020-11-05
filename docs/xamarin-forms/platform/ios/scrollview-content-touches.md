@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 128d7271175846f415aa115c377bad0e0e2adaf5
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: e028c506745bfd61aaff8e530a4f13d2429864ff
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563966"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373914"
 ---
 # <a name="scrollview-content-touches-on-ios"></a>IOS での ScrollView コンテンツへの触れる
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 IOS のでタッチジェスチャが開始されると、暗黙的なタイマーがトリガーされ [`ScrollView`](xref:Xamarin.Forms.ScrollView) `ScrollView` ます。これは、タイマースパン内のユーザー操作に基づいて、ジェスチャを処理するか、そのコンテンツに渡すかどうかを決定します。 既定では、iOS はコンテンツにタッチしますが、これにより、 `ScrollView` コンテンツが `ScrollView` 必要になったときにジェスチャに優先されない状況が発生する可能性があります。 したがって、このプラットフォーム固有のは、がタッチジェスチャを処理するか、そのコンテンツに渡すかを制御し `ScrollView` ます。 添付プロパティを値に設定することにより、XAML で使用 `ScrollView.ShouldDelayContentTouches` され `boolean` ます。
 
@@ -60,7 +60,7 @@ scrollView.On<iOS>().SetShouldDelayContentTouches(!scrollView.On<iOS>().ShouldDe
 
 結果として、は、 [`ScrollView`](xref:Xamarin.Forms.ScrollView) コンテンツの受信遅延を無効にすることができます。このシナリオでは、はの [`Slider`](xref:Xamarin.Forms.Slider) ページではなくジェスチャを受け取り [`Detail`](xref:Xamarin.Forms.MasterDetailPage.Detail) [`MasterDetailPage`](xref:Xamarin.Forms.MasterDetailPage) ます。
 
-[![ScrollView Delay コンテンツはプラットフォーム固有のものに触れる](scrollview-content-touches-images/scrollview-delay-content-touches.png)](scrollview-content-touches-images/scrollview-delay-content-touches-large.png#lightbox "ScrollView Delay コンテンツはプラットフォーム固有のものに触れる")
+[![ScrollView Delay コンテンツはプラットフォーム固有のものに触れる](scrollview-content-touches-images/scrollview-delay-content-touches.png)](scrollview-content-touches-images/scrollview-delay-content-touches-large.png#lightbox "ScrollView Delay コンテンツに対するタッチ Platform-Specific")
 
 ## <a name="related-links"></a>関連リンク
 

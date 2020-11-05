@@ -10,16 +10,16 @@ ms.date: 05/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6af0641fe1f8f9be772b25c26825232b6bdba9b7
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 3146d1c1de66c0b2bc2e9c2d86a7a50d406ecd7e
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562380"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373368"
 ---
 # <a name="consume-a-restful-web-service"></a>RESTful Web サービスを使用する
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/webservices-todorest)
 
 _Web サービスをアプリケーションに統合することは、一般的なシナリオです。この記事では、アプリケーションから RESTful web サービスを使用する方法について説明 Xamarin.Forms します。_
 
@@ -29,7 +29,7 @@ _Web サービスをアプリケーションに統合することは、一般的
 - **POST** -この操作は、web サービスでデータの新しい項目を作成するために使用されます。
 - **PUT** –この操作は、web サービス上のデータ項目を更新するために使用されます。
 - **PATCH** –この操作は、項目の変更方法に関する一連の命令を記述することによって、web サービス上のデータ項目を更新するために使用されます。 この動詞は、サンプルアプリケーションでは使用されません。
-- [**削除**] –この操作は、web サービス上のデータの項目を削除するために使用されます。
+- [ **削除** ] –この操作は、web サービス上のデータの項目を削除するために使用されます。
 
 REST に準拠する Web サービス Api は RESTful Api と呼ばれ、次のものを使用して定義されます。
 

@@ -10,16 +10,16 @@ ms.date: 04/05/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 98722d29a674e4d69f31a670a541eaabb550898e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 2ff6b838ec7a3b1231e350dcb308e648a297fc0c
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555646"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373766"
 ---
 # <a name="finger-painting-in-skiasharp"></a>SkiaSharp での指描画
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _指を使用して、キャンバス上に描画します。_
 
@@ -31,7 +31,7 @@ _指を使用して、キャンバス上に描画します。_
 
 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)ソリューションには、このタッチ追跡イベントが含まれています。 .NET Standard ライブラリプロジェクトには、 `TouchEffect` クラス、 `TouchActionType` 列挙体、デリゲート、およびクラスが含まれてい `TouchActionEventHandler` `TouchActionEventArgs` ます。 各プラットフォームプロジェクトには、そのプラットフォームのクラスが含まれています `TouchEffect` 。 iOS プロジェクトには、クラスも含まれてい `TouchRecognizer` ます。
 
-**SkiaSharpFormsDemos**の**指描画**ページは、指描画の実装を簡略化したものです。 色またはストロークの幅を選択することはできません。キャンバスをクリアする方法はありません。もちろん、アートワークを保存することはできません。
+**SkiaSharpFormsDemos** の **指描画** ページは、指描画の実装を簡略化したものです。 色またはストロークの幅を選択することはできません。キャンバスをクリアする方法はありません。もちろん、アートワークを保存することはできません。
 
 [**FingerPaintPage**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/FingerPaintPage.xaml)ファイルは、を `SKCanvasView` 1 つのセルに格納し、を `Grid` そのにアタッチします `TouchEffect` `Grid` 。
 

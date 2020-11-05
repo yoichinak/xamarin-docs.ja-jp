@@ -10,18 +10,18 @@ ms.date: 06/19/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 743f6366cc7e798247ea0151720a81e9cbddfeeb
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: c774b795fce50b32f01b50c29cb71dd5fd02585c
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91559105"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373524"
 ---
 # <a name="no-locxamarinforms-shapes-path-markup-syntax"></a>Xamarin.Forms 図形: パスマークアップ構文
 
 ![プレリリース API](~/media/shared/preview.png)
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-shapesdemos/)
 
 Xamarin.Forms パスマークアップ構文を使用すると、XAML でパスジオメトリをコンパクトに指定できます。 構文は、プロパティに文字列値として指定され `Path.Data` ます。
 
@@ -47,7 +47,7 @@ Xamarin.Forms パスマークアップ構文を使用すると、XAML でパス�
 
 ## <a name="move-command"></a>移動コマンド
 
-Move コマンドは、新しい図形の始点を指定します。 このコマンドの構文は、 `M` *startPoint* または `m` *startPoint*です。
+Move コマンドは、新しい図形の始点を指定します。 このコマンドの構文は、 `M` *startPoint* または `m` *startPoint* です。
 
 この構文では、 *startPoint* は [`Point`](xref:Xamarin.Forms.Point) 新しい図形の始点を指定する構造体です。 Move コマンドの後に複数のポイントを指定すると、それらのポイントに線が描画されます。
 
@@ -70,7 +70,7 @@ Move コマンドは、新しい図形の始点を指定します。 このコ�
 
 ### <a name="line-command"></a>直線コマンド
 
-Line コマンドは、現在の点と指定された終点の間に直線を作成します。 このコマンドの構文は、 `L` *エンドポイント* または `l` *エンドポイント*です。
+Line コマンドは、現在の点と指定された終点の間に直線を作成します。 このコマンドの構文は、 `L` *エンドポイント* または `l` *エンドポイント* です。
 
 この構文では、 *エンド* ポイントは、 [`Point`](xref:Xamarin.Forms.Point) 直線の終点を表すです。
 
@@ -80,7 +80,7 @@ Line コマンドは、現在の点と指定された終点の間に直線を作
 
 ### <a name="horizontal-line-command"></a>水平線コマンド
 
-水平線コマンドは、現在の点と指定した x 座標の間に水平線を作成します。 このコマンドの構文は `H` *x* または `h` *x*です。
+水平線コマンドは、現在の点と指定した x 座標の間に水平線を作成します。 このコマンドの構文は `H` *x* または `h` *x* です。
 
 この構文では、 *x* は、 `double` 直線の終点の x 座標を表すです。
 
@@ -88,7 +88,7 @@ Line コマンドは、現在の点と指定された終点の間に直線を作
 
 ### <a name="vertical-line-command"></a>垂直線コマンド
 
-垂直線コマンドは、現在の点と指定された y 座標の間に垂直線を作成します。 このコマンドの構文は、 `V` *y* または `v` *y*です。
+垂直線コマンドは、現在の点と指定された y 座標の間に垂直線を作成します。 このコマンドの構文は、 `V` *y* または `v` *y* です。
 
 この構文で *y* は、 `double` 直線の終点の y 座標を表すです。
 
@@ -96,7 +96,7 @@ Line コマンドは、現在の点と指定された終点の間に直線を作
 
 ### <a name="elliptical-arc-command"></a>楕円円弧コマンド
 
-楕円の弧コマンドは、現在の点と指定された終点の間に楕円の円弧を作成します。 このコマンドの構文は、 `A` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endpoint* または `a` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endpoint*です。
+楕円の弧コマンドは、現在の点と指定された終点の間に楕円の円弧を作成します。 このコマンドの構文は、 `A` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endpoint* または `a` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endpoint* です。
 
 この構文では、次のようになります。
 
@@ -112,7 +112,7 @@ Line コマンドは、現在の点と指定された終点の間に直線を作
 
 ### <a name="cubic-bezier-curve-command"></a>3次ベジエ曲線コマンド
 
-3次ベジエ曲線コマンドは、指定された2つの制御点を使用して、現在の点と指定された終点の間に3次ベジエ曲線を作成します。 このコマンドの構文は、 `C` *controlPoint1* *controlPoint2* *endpoint* または `c` *controlPoint1* *controlPoint2* *endpoint*です。
+3次ベジエ曲線コマンドは、指定された2つの制御点を使用して、現在の点と指定された終点の間に3次ベジエ曲線を作成します。 このコマンドの構文は、 `C` *controlPoint1* *controlPoint2* *endpoint* または `c` *controlPoint1* *controlPoint2* *endpoint* です。
 
 この構文では、次のようになります。
 
@@ -126,7 +126,7 @@ Line コマンドは、現在の点と指定された終点の間に直線を作
 
 ### <a name="quadratic-bezier-curve-command"></a>2次ベジエ曲線コマンド
 
-2次ベジエ曲線コマンドは、指定された制御点を使用して、現在の点と指定された終点の間に2次ベジエ曲線を作成します。 このコマンドの構文は、 `Q` *controlpoint* *エンド* ポイントまたは `q` *controlpoint* *エンド*ポイントです。
+2次ベジエ曲線コマンドは、指定された制御点を使用して、現在の点と指定された終点の間に2次ベジエ曲線を作成します。 このコマンドの構文は、 `Q` *controlpoint* *エンド* ポイントまたは `q` *controlpoint* *エンド* ポイントです。
 
 この構文では、次のようになります。
 
@@ -139,7 +139,7 @@ Line コマンドは、現在の点と指定された終点の間に直線を作
 
 ### <a name="smooth-cubic-bezier-curve-command"></a>Smooth 三次ベジエ曲線コマンド
 
-Smooth 三次ベジエ曲線コマンドは、指定された制御点を使用して、現在の点と指定された終点の間に3次ベジエ曲線を作成します。 このコマンドの構文は、 `S` *controlPoint2* *endpoint*または `s` *controlPoint2* *endpoint*です。  
+Smooth 三次ベジエ曲線コマンドは、指定された制御点を使用して、現在の点と指定された終点の間に3次ベジエ曲線を作成します。 このコマンドの構文は、 `S` *controlPoint2* *endpoint* または `s` *controlPoint2* *endpoint* です。  
 
 この構文では、次のようになります。
 
@@ -152,7 +152,7 @@ Smooth 三次ベジエ曲線コマンドは、指定された制御点を使用�
 
 ### <a name="smooth-quadratic-bezier-curve-command"></a>Smooth 2 次ベジエ曲線コマンド
 
-Smooth 2 次ベジエ曲線コマンドは、コントロールポイントを使用して、現在の点と指定された終点の間に2次ベジエ曲線を作成します。 このコマンドの構文は、 `T` *エンドポイント* または `t` *エンドポイント*です。
+Smooth 2 次ベジエ曲線コマンドは、コントロールポイントを使用して、現在の点と指定された終点の間に2次ベジエ曲線を作成します。 このコマンドの構文は、 `T` *エンドポイント* または `t` *エンドポイント* です。
 
 この構文では、 *エンドポイント* は、 [`Point`](xref:Xamarin.Forms.Point) 曲線が描画される点を表すです。
 

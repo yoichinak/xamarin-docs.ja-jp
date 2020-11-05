@@ -10,16 +10,16 @@ ms.date: 04/14/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6de5e21c509203c5402ed8c7e75908b54808d140
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 16085f8bb3af57fdd0c00c7c111a91df1dd273f7
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556894"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374551"
 ---
 # <a name="non-affine-transforms"></a>非アフィン変換
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _変換行列の3番目の列を使用して、パースペクティブとテーパ効果を作成する_
 
@@ -243,7 +243,7 @@ z ' = Persp0 · x + Persp1 · y + 1
 
 通常、 `Persp0` とを分離して設定することはありません `Persp1` 。 また、場合によっては、特定の種類の非アフィン変換を実現するために、マトリックス内の他のセルも設定する必要があります。
 
-このような非アフィン変換の1つは、 *テーパ変換*です。 この種類の非アフィン変換は、四角形の全体の次元を保持しますが、1辺を tapers ます。
+このような非アフィン変換の1つは、 *テーパ変換* です。 この種類の非アフィン変換は、四角形の全体の次元を保持しますが、1辺を tapers ます。
 
 ![テーパ変換を受けたボックス](non-affine-images/tapertransform.png)
 
@@ -401,7 +401,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 次の記事「 [**3d**](3d-rotation.md)の回転」で説明されているように、一般的な非アフィン変換の別の型は3d ローテーションです。
 
-非アフィン変換は、四角形を任意の凸形に変換できます。 これは、[ **非アフィン行列の表示** ] ページで示されています。 これは、ビットマップの4番目の隅を操作する4番目のオブジェクトがある点を除いて、[**マトリックス変換**](matrix.md)の記事の [**アフィン行列の表示**] ページとよく似てい `TouchPoint` ます。
+非アフィン変換は、四角形を任意の凸形に変換できます。 これは、[ **非アフィン行列の表示** ] ページで示されています。 これは、ビットマップの4番目の隅を操作する4番目のオブジェクトがある点を除いて、 [**マトリックス変換**](matrix.md)の記事の [ **アフィン行列の表示** ] ページとよく似てい `TouchPoint` ます。
 
 [![[非アフィン行列の表示] ページのトリプルスクリーンショット](non-affine-images/shownonaffinematrix-small.png)](non-affine-images/shownonaffinematrix-large.png#lightbox "[非アフィン行列の表示] ページのトリプルスクリーンショット")
 

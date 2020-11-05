@@ -10,16 +10,16 @@ ms.date: 02/08/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f40220a29611bb365dc77eeb5e85445a0df19fd6
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 4dba270cbc08b3ce9209568a1e625e71cfa17d8d
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563251"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374460"
 ---
 # <a name="no-locxamarinforms-and-azure-cognitive-services-introduction"></a>Xamarin.Forms および Azure Cognitive Services の概要
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 _Microsoft Cognitive Services は、顔認識、音声認識、言語の理解などの機能を追加することで、開発者がアプリケーションをよりインテリジェントにするために使用できる Api、Sdk、およびサービスのセットです。この記事では、Microsoft 認知サービス Api の一部を呼び出す方法を示すサンプルアプリケーションの概要について説明します。_
 
@@ -66,7 +66,7 @@ _Microsoft Cognitive Services は、顔認識、音声認識、言語の理解�
 |リポジトリ|`ITodoItemRepository` `TodoItemRepository` データベース操作を実行するために使用されるインターフェイスとクラスが含まれています。|
 |サービス|さまざまな Microsoft 認知サービス Api にアクセスするために使用されるインターフェイスとクラス、およびプラットフォームプロジェクトでインターフェイスを実装するクラスを検索するためにクラスによって使用されるインターフェイスが含まれてい `DependencyService` ます。|
 |Utils|クラスを含み `Timer` ます。このクラスは、 `AuthenticationService` 9 分ごとに JWT アクセストークンを更新するためにクラスによって使用されます。|
-|Views|アプリケーションのページが含まれています。|
+|ビュー|アプリケーションのページが含まれています。|
 
 共有コードプロジェクトには、いくつかの重要なファイルも含まれています。
 

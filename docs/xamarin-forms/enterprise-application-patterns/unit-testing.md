@@ -10,14 +10,17 @@ ms.date: 08/07/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 4f30b8be762e23f84a90595a56912587cc3aa838
-ms.sourcegitcommit: 008bcbd37b6c96a7be2baf0633d066931d41f61a
+ms.openlocfilehash: dbc863c6f0de49c809de9d13dc9c682b43e2befe
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86934252"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373953"
 ---
 # <a name="unit-testing-enterprise-apps"></a>エンタープライズアプリの単体テスト
+
+> [!NOTE]
+> この電子ブックは2017の spring で公開されており、その後、更新されていません。 本は貴重なものですが、一部のマテリアルは古くなっています。
 
 モバイルアプリには、デスクトップと web ベースのアプリケーションが心配する必要がない固有の問題があります。 モバイルユーザーは、使用するデバイス、ネットワーク接続、サービスの可用性、およびその他のさまざまな要因によって異なります。 そのため、モバイルアプリは、品質、信頼性、およびパフォーマンスを向上させるために、実際の環境で使用されるため、テストする必要があります。 単体テスト、統合テスト、ユーザーインターフェイステストなど、アプリで実行する必要があるテストの種類は多数あります。単体テストは、最も一般的なテスト形式です。
 
@@ -30,9 +33,9 @@ ms.locfileid: "86934252"
 
 単体テストでは、通常、次のように配置パターンを使用します。
 
-- 単体テストメソッドの*配置*セクションでは、オブジェクトを初期化し、テスト対象のメソッドに渡されるデータの値を設定します。
-- *Act*セクションでは、必須の引数を使用してテスト対象のメソッドを呼び出します。
-- *Assert*セクションでは、テスト対象のメソッドのアクションが想定どおりに動作することを確認します。
+- 単体テストメソッドの *配置* セクションでは、オブジェクトを初期化し、テスト対象のメソッドに渡されるデータの値を設定します。
+- *Act* セクションでは、必須の引数を使用してテスト対象のメソッドを呼び出します。
+- *Assert* セクションでは、テスト対象のメソッドのアクションが想定どおりに動作することを確認します。
 
 このパターンに従うことで、単体テストが読み取り可能で一貫したものになります。
 
@@ -41,15 +44,15 @@ ms.locfileid: "86934252"
 疎結合アーキテクチャを採用する動機の1つは、単体テストを容易にすることです。 Autofac に登録されている型の1つは、 `OrderService` クラスです。 次のコード例は、このクラスの概要を示しています。
 
 ```csharp
-public class OrderDetailViewModel : ViewModelBase  
+public class OrderDetailViewModel : ViewModelBase  
 {  
-    private IOrderService _ordersService;  
+    private IOrderService _ordersService;  
 
-    public OrderDetailViewModel(IOrderService ordersService)  
-    {  
-        _ordersService = ordersService;  
-    }  
-    ...  
+    public OrderDetailViewModel(IOrderService ordersService)  
+    {  
+        _ordersService = ordersService;  
+    }  
+    ...  
 }
 ```
 
@@ -68,7 +71,7 @@ MVVM アプリケーションからモデルをテストし、モデルを表示
 > [!TIP]
 > 単体テストごとに1つのテストを行います。 単体テストでは、単位の動作の複数の側面を使用しないようにしてください。 そうすることで、読み取りと更新が困難なテストにつながります。 また、エラーを解釈するときに混乱を招く可能性もあります。
 
-EShopOnContainers モバイルアプリでは、 [Xunit](https://xunit.github.io/)を使用して単体テストを実行します。単体テストでは、2種類の単体テストがサポートされています。
+EShopOnContainers モバイルアプリでは、 [Xunit](https://xunit.github.io/) を使用して単体テストを実行します。単体テストでは、2種類の単体テストがサポートされています。
 
 - ファクトは常に true であり、インバリアント条件をテストするテストです。
 - 理論は、特定のデータセットに対してのみ当てはまるテストです。
@@ -84,19 +87,19 @@ MVVM パターンを実装する場合、通常、ビューモデルはサービ
 
 ```csharp
 [Fact]  
-public async Task OrderPropertyIsNotNullAfterViewModelInitializationTest()  
+public async Task OrderPropertyIsNotNullAfterViewModelInitializationTest()  
 {  
-    var orderService = new OrderMockService();  
-    var orderViewModel = new OrderDetailViewModel(orderService);  
+    var orderService = new OrderMockService();  
+    var orderViewModel = new OrderDetailViewModel(orderService);  
 
-    var order = await orderService.GetOrderAsync(1, GlobalSetting.Instance.AuthToken);  
-    await orderViewModel.InitializeAsync(order);  
+    var order = await orderService.GetOrderAsync(1, GlobalSetting.Instance.AuthToken);  
+    await orderViewModel.InitializeAsync(order);  
 
-    Assert.NotNull(orderViewModel.Order);  
+    Assert.NotNull(orderViewModel.Order);  
 }
 ```
 
-この単体テストでは、 `Order` `OrderDetailViewModel` メソッドが呼び出された後に、インスタンスのプロパティに値が設定されていることを確認 `InitializeAsync` します。 メソッドは、 `InitializeAsync` ビューモデルの対応するビューに移動したときに呼び出されます。 ナビゲーションの詳細については、「[ナビゲーション](~/xamarin-forms/enterprise-application-patterns/navigation.md)」を参照してください。
+この単体テストでは、 `Order` `OrderDetailViewModel` メソッドが呼び出された後に、インスタンスのプロパティに値が設定されていることを確認 `InitializeAsync` します。 メソッドは、 `InitializeAsync` ビューモデルの対応するビューに移動したときに呼び出されます。 ナビゲーションの詳細については、「 [ナビゲーション](~/xamarin-forms/enterprise-application-patterns/navigation.md)」を参照してください。
 
 インスタンスが作成されるときに `OrderDetailViewModel` は、 `OrderService` インスタンスが引数として指定されることを想定しています。 ただし、は、 `OrderService` web サービスからデータを取得します。 したがって、 `OrderMockService` クラスのモックバージョンであるインスタンスは、 `OrderService` コンストラクターの引数として指定され `OrderDetailViewModel` ます。 次に、ビューモデルの `InitializeAsync` メソッドが呼び出され、操作が呼び出されると、 `IOrderService` web サービスと通信するのではなく、モックデータが取得されます。
 
@@ -108,21 +111,21 @@ public async Task OrderPropertyIsNotNullAfterViewModelInitializationTest()
 
 ```csharp
 [Fact]  
-public async Task SettingOrderPropertyShouldRaisePropertyChanged()  
+public async Task SettingOrderPropertyShouldRaisePropertyChanged()  
 {  
-    bool invoked = false;  
-    var orderService = new OrderMockService();  
-    var orderViewModel = new OrderDetailViewModel(orderService);  
+    bool invoked = false;  
+    var orderService = new OrderMockService();  
+    var orderViewModel = new OrderDetailViewModel(orderService);  
 
-    orderViewModel.PropertyChanged += (sender, e) =>  
-    {  
-        if (e.PropertyName.Equals("Order"))  
-            invoked = true;  
-    };  
-    var order = await orderService.GetOrderAsync(1, GlobalSetting.Instance.AuthToken);  
-    await orderViewModel.InitializeAsync(order);  
+    orderViewModel.PropertyChanged += (sender, e) =>  
+    {  
+        if (e.PropertyName.Equals("Order"))  
+            invoked = true;  
+    };  
+    var order = await orderService.GetOrderAsync(1, GlobalSetting.Instance.AuthToken);  
+    await orderViewModel.InitializeAsync(order);  
 
-    Assert.True(invoked);  
+    Assert.True(invoked);  
 }
 ```
 
@@ -134,20 +137,20 @@ public async Task SettingOrderPropertyShouldRaisePropertyChanged()
 
 ```csharp
 [Fact]  
-public void AddCatalogItemCommandSendsAddProductMessageTest()  
+public void AddCatalogItemCommandSendsAddProductMessageTest()  
 {  
-    bool messageReceived = false;  
-    var catalogService = new CatalogMockService();  
-    var catalogViewModel = new CatalogViewModel(catalogService);  
+    bool messageReceived = false;  
+    var catalogService = new CatalogMockService();  
+    var catalogViewModel = new CatalogViewModel(catalogService);  
 
-    Xamarin.Forms.MessagingCenter.Subscribe<CatalogViewModel, CatalogItem>(  
-        this, MessageKeys.AddProduct, (sender, arg) =>  
-    {  
-        messageReceived = true;  
-    });  
-    catalogViewModel.AddCatalogItemCommand.Execute(null);  
+    Xamarin.Forms.MessagingCenter.Subscribe<CatalogViewModel, CatalogItem>(  
+        this, MessageKeys.AddProduct, (sender, arg) =>  
+    {  
+        messageReceived = true;  
+    });  
+    catalogViewModel.AddCatalogItemCommand.Execute(null);  
 
-    Assert.True(messageReceived);  
+    Assert.True(messageReceived);  
 }
 ```
 
@@ -159,15 +162,15 @@ public void AddCatalogItemCommandSendsAddProductMessageTest()
 
 ```csharp
 [Fact]  
-public void InvalidEventNameShouldThrowArgumentExceptionText()  
+public void InvalidEventNameShouldThrowArgumentExceptionText()  
 {  
-    var behavior = new MockEventToCommandBehavior  
-    {  
-        EventName = "OnItemTapped"  
-    };  
-    var listView = new ListView();  
+    var behavior = new MockEventToCommandBehavior  
+    {  
+        EventName = "OnItemTapped"  
+    };  
+    var listView = new ListView();  
 
-    Assert.Throws<ArgumentException>(() => listView.Behaviors.Add(behavior));  
+    Assert.Throws<ArgumentException>(() => listView.Behaviors.Add(behavior));  
 }
 ```
 
@@ -184,15 +187,15 @@ public void InvalidEventNameShouldThrowArgumentExceptionText()
 
 ```csharp
 [Fact]  
-public void CheckValidationPassesWhenBothPropertiesHaveDataTest()  
+public void CheckValidationPassesWhenBothPropertiesHaveDataTest()  
 {  
-    var mockViewModel = new MockViewModel();  
-    mockViewModel.Forename.Value = "John";  
-    mockViewModel.Surname.Value = "Smith";  
+    var mockViewModel = new MockViewModel();  
+    mockViewModel.Forename.Value = "John";  
+    mockViewModel.Surname.Value = "Smith";  
 
-    bool isValid = mockViewModel.Validate();  
+    bool isValid = mockViewModel.Validate();  
 
-    Assert.True(isValid);  
+    Assert.True(isValid);  
 }
 ```
 
@@ -202,26 +205,26 @@ public void CheckValidationPassesWhenBothPropertiesHaveDataTest()
 
 ```csharp
 [Fact]  
-public void CheckValidationFailsWhenOnlyForenameHasDataTest()  
+public void CheckValidationFailsWhenOnlyForenameHasDataTest()  
 {  
-    var mockViewModel = new MockViewModel();  
-    mockViewModel.Forename.Value = "John";  
+    var mockViewModel = new MockViewModel();  
+    mockViewModel.Forename.Value = "John";  
 
-    bool isValid = mockViewModel.Validate();  
+    bool isValid = mockViewModel.Validate();  
 
-    Assert.False(isValid);  
-    Assert.NotNull(mockViewModel.Forename.Value);  
-    Assert.Null(mockViewModel.Surname.Value);  
-    Assert.True(mockViewModel.Forename.IsValid);  
-    Assert.False(mockViewModel.Surname.IsValid);  
-    Assert.Empty(mockViewModel.Forename.Errors);  
-    Assert.NotEmpty(mockViewModel.Surname.Errors);  
+    Assert.False(isValid);  
+    Assert.NotNull(mockViewModel.Forename.Value);  
+    Assert.Null(mockViewModel.Surname.Value);  
+    Assert.True(mockViewModel.Forename.IsValid);  
+    Assert.False(mockViewModel.Surname.IsValid);  
+    Assert.Empty(mockViewModel.Forename.Errors);  
+    Assert.NotEmpty(mockViewModel.Surname.Errors);  
 }
 ```
 
 この単体テストで `Surname` は、のプロパティにデータが含まれておらず、 `MockViewModel` `Value` `IsValid` `Errors` 各インスタンスの、、およびプロパティ `ValidatableObject<T>` が正しく設定されている場合に、検証が失敗することを確認します。
 
-## <a name="summary"></a>要約
+## <a name="summary"></a>まとめ
 
 単体テストでは、アプリの小さな単位 (通常はメソッド) を受け取り、それをコードの残りの部分から分離し、想定どおりに動作することを確認します。 その目的は、機能の各単位が想定どおりに動作することを確認することです。これにより、エラーがアプリ全体に伝達されることがなくなります。
 

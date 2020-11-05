@@ -10,16 +10,16 @@ ms.date: 03/28/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 596fab91a1f64e0fb6c5483e354c2ef15fd24346
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 8d6b489ff31333e87c28796c7de49bf0e59bff9d
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557921"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373576"
 ---
 # <a name="consume-a-windows-communication-foundation-wcf-web-service"></a>Windows Communication Foundation (WCF) Web サービスを使用する
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todowcf)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/webservices-todowcf)
 
 _WCF は、サービス指向アプリケーションを構築するための Microsoft の統合フレームワークです。これにより、開発者は、セキュリティで保護された、信頼性の高い、トランザクションで相互運用可能な分散アプリケーションを構築できます。この記事では、アプリケーションから WCF Simple Object Access Protocol (SOAP) サービスを使用する方法について説明し Xamarin.Forms ます。_
 
@@ -63,11 +63,11 @@ WCF サービスは、次の操作を提供します。
 
 WCF サービスを使用するために *プロキシ* を生成する必要があります。これにより、アプリケーションはサービスに接続できるようになります。 プロキシは、メソッドと関連付けられたサービス構成を定義するサービスメタデータを使用することによって構築されます。 このメタデータは、web サービスによって生成される Web サービス記述言語 (WSDL) ドキュメントの形式で公開されます。 プロキシを作成するには、Visual Studio 2017 の Microsoft WCF Web Service Reference Provider を使用して、Web サービスのサービス参照を .NET Standard ライブラリに追加します。 Visual Studio 2017 の Microsoft WCF Web Service Reference Provider を使用してプロキシを作成する代わりに、ServiceModel Metadata Utility Tool (svcutil.exe) を使用することもできます。 詳細については、「 [ServiceModel メタデータユーティリティツール (Svcutil.exe)](/dotnet/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe/)」を参照してください。
 
-生成されたプロキシクラスは、非同期プログラミングモデル (APM) デザインパターンを使用する web サービスを使用するためのメソッドを提供します。 このパターンでは、非同期操作は、非同期操作を開始および終了する *Beginoperationname* と *EndOperationName*という2つのメソッドとして実装されます。
+生成されたプロキシクラスは、非同期プログラミングモデル (APM) デザインパターンを使用する web サービスを使用するためのメソッドを提供します。 このパターンでは、非同期操作は、非同期操作を開始および終了する *Beginoperationname* と *EndOperationName* という2つのメソッドとして実装されます。
 
-*Beginoperationname*メソッドは、非同期操作を開始し、インターフェイスを実装するオブジェクトを返し `IAsyncResult` ます。 *Beginoperationname*を呼び出した後、アプリケーションは、スレッドプールのスレッドで非同期操作を実行しながら、呼び出し元のスレッドで命令の実行を継続できます。
+*Beginoperationname* メソッドは、非同期操作を開始し、インターフェイスを実装するオブジェクトを返し `IAsyncResult` ます。 *Beginoperationname* を呼び出した後、アプリケーションは、スレッドプールのスレッドで非同期操作を実行しながら、呼び出し元のスレッドで命令の実行を継続できます。
 
-*Beginoperationname*の呼び出しごとに、アプリケーションも*EndOperationName*を呼び出して、操作の結果を取得する必要があります。 *EndOperationName*の戻り値は、同期 web サービスメソッドによって返される型と同じです。 たとえば、メソッドは、 `EndGetTodoItems` インスタンスのコレクションを返し `TodoItem` ます。 *EndOperationName*メソッドには、 `IAsyncResult` *beginoperationname*メソッドへの対応する呼び出しによって返されるインスタンスに設定する必要があるパラメーターも含まれています。
+*Beginoperationname* の呼び出しごとに、アプリケーションも *EndOperationName* を呼び出して、操作の結果を取得する必要があります。 *EndOperationName* の戻り値は、同期 web サービスメソッドによって返される型と同じです。 たとえば、メソッドは、 `EndGetTodoItems` インスタンスのコレクションを返し `TodoItem` ます。 *EndOperationName* メソッドには、 `IAsyncResult` *beginoperationname* メソッドへの対応する呼び出しによって返されるインスタンスに設定する必要があるパラメーターも含まれています。
 
 タスク並列ライブラリ (TPL) を使用すると、非同期操作を同じオブジェクトにカプセル化することで、APM の begin/end メソッドのペアを使用するプロセスを簡略化でき `Task` ます。 このカプセル化は、メソッドの複数のオーバーロードによって提供され `TaskFactory.FromAsync` ます。
 
@@ -234,13 +234,13 @@ Visual Studio 2017 または Visual Studio 2019 では、追加の構成なし�
 
 既定では、IIS Express はへの要求にのみ応答 `localhost` します。 リモートデバイス (Android デバイス、iPhone、シミュレーターなど) には、ローカル WCF サービスへのアクセス権はありません。 ローカルネットワーク上の Windows 10 ワークステーション IP アドレスを把握しておく必要があります。 この例では、ワークステーションに IP アドレスがあることを前提としてい `192.168.1.143` ます。 次の手順では、リモート接続を受け入れ、物理または仮想デバイスからサービスに接続するように Windows 10 と IIS Express を構成する方法について説明します。
 
-1. **Windows ファイアウォールに例外を追加**します。 サブネット上のアプリケーションが WCF サービスとの通信に使用できる Windows ファイアウォールを介してポートを開く必要があります。 ファイアウォールでポート49393を開く受信規則を作成します。 管理コマンドプロンプトで、次のコマンドを実行します。
+1. **Windows ファイアウォールに例外を追加** します。 サブネット上のアプリケーションが WCF サービスとの通信に使用できる Windows ファイアウォールを介してポートを開く必要があります。 ファイアウォールでポート49393を開く受信規則を作成します。 管理コマンドプロンプトで、次のコマンドを実行します。
 
     ```
     netsh advfirewall firewall add rule name="TodoWCFService" dir=in protocol=tcp localport=49393 profile=private remoteip=localsubnet action=allow
     ```
 
-1. **リモート接続を受け入れるように IIS Express を構成**します。 IIS Express を構成するには、 **[ソリューションディレクトリ] \.vs\config\applicationhost.config**で IIS Express の構成ファイルを編集します。という `site` 名前の要素を検索 `TodoWCFService` します。 次の XML のようになります。
+1. **リモート接続を受け入れるように IIS Express を構成** します。 IIS Express を構成するには、 **[ソリューションディレクトリ] \.vs\config\applicationhost.config** で IIS Express の構成ファイルを編集します。という `site` 名前の要素を検索 `TodoWCFService` します。 次の XML のようになります。
 
     ```xml
     <site name="TodoWCFService" id="2">
@@ -280,15 +280,15 @@ Visual Studio 2017 または Visual Studio 2019 では、追加の構成なし�
 
     これらの手順を完了すると、TodoWCFService を実行して、サブネット上の他のデバイスから接続できるようになります。 これをテストするには、アプリケーションを実行し、にアクセスし `http://localhost:49393/TodoService.svc` ます。 その URL にアクセスしたときに **無効な要求** エラーが発生した場合、 `bindings` IIS Express の構成では正しくない可能性があります (要求は IIS Express に到達していますが、拒否されています)。 別のエラーが発生した場合は、アプリケーションが実行されていないか、ファイアウォールが正しく構成されていない可能性があります。
 
-    IIS Express がサービスの実行とサービスの実行を継続できるようにするには、[**プロジェクトのプロパティ] > [Web > デバッガー**] の [**エディットコンティニュ**] オプションをオフにします。
+    IIS Express がサービスの実行とサービスの実行を継続できるようにするには、[ **プロジェクトのプロパティ] > [Web > デバッガー** ] の [ **エディットコンティニュ** ] オプションをオフにします。
 
-1. **サービスへのアクセスに使用するエンドポイントデバイスをカスタマイズ**します。 この手順では、物理デバイスまたはエミュレートされたデバイスで実行されているクライアントアプリケーションを、WCF サービスにアクセスするように構成します。
+1. **サービスへのアクセスに使用するエンドポイントデバイスをカスタマイズ** します。 この手順では、物理デバイスまたはエミュレートされたデバイスで実行されているクライアントアプリケーションを、WCF サービスにアクセスするように構成します。
 
     Android エミュレーターは、エミュレーターがホストコンピューターのアドレスに直接アクセスできないようにする内部プロキシを利用し `localhost` ます。 代わりに、エミュレーターのアドレス `10.0.2.2` が `localhost` 内部プロキシ経由でホストコンピューター上のにルーティングされます。 これらのプロキシされた要求は、 `127.0.0.1` 要求ヘッダーのホスト名としてを持ちます。このため、上記の手順でこのホスト名の IIS Express バインドを作成したのはそのためです。
 
     IOS シミュレーターは、 [リモートの Ios シミュレーター For Windows](~/tools/ios-simulator/index.md)を使用している場合でも、Mac ビルドホストで実行されます。 シミュレーターからのネットワーク要求では、ローカルネットワーク上のホスト名がホスト名として使用されます (この例では `192.168.1.143` 、実際の ip アドレスは異なる可能性があります)。 このため、上記の手順でこのホスト名の IIS Express バインドを作成したのはこのためです。
 
-    `SoapUrl`TodoWCF (ポータブル) プロジェクトの**Constants.cs**ファイルのプロパティに、使用しているネットワークに適した値が設定されていることを確認します。
+    `SoapUrl`TodoWCF (ポータブル) プロジェクトの **Constants.cs** ファイルのプロパティに、使用しているネットワークに適した値が設定されていることを確認します。
 
     ```csharp
     public static string SoapUrl

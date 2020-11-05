@@ -10,16 +10,16 @@ ms.date: 03/23/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5ea4fa88925925ba7c81f47c30875c3419603ab8
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 56254d4a5d255f2db05ff82f224df4ddff04ab1f
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555464"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373095"
 ---
 # <a name="the-scale-transform"></a>スケール変換
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _オブジェクトをさまざまなサイズにスケーリングするための SkiaSharp scale 変換について説明します。_
 
@@ -49,7 +49,7 @@ y ' = sy ·前年
 public void Scale (Single s)
 ```
 
-これは*isotropic* &mdash; 、両方向で同一の等幅スケーリングスケーリングと呼ばれます。 等幅スケーリングでは、オブジェクトの縦横比が維持されます。
+これは *isotropic* &mdash; 、両方向で同一の等幅スケーリングスケーリングと呼ばれます。 等幅スケーリングでは、オブジェクトの縦横比が維持されます。
 
 2番目の方法では、 [`Scale`](xref:SkiaSharp.SKCanvas.Scale(System.Single,System.Single)) 水平方向および垂直方向のスケーリングに異なる値を指定できます。
 
@@ -124,7 +124,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 public void Scale (Single sx, Single sy, Single px, Single py)
 ```
 
-`px`パラメーターと `py` パラメーターは、*スケールセンター*と呼ばれることもありますが、SkiaSharp のドキュメントでは*ピボットポイント*と呼ばれる点を定義します。 これは、スケーリングの影響を受けないキャンバスの左上隅を基準としたポイントです。 すべてのスケールは、その中心を基準として行われます。
+`px`パラメーターと `py` パラメーターは、 *スケールセンター* と呼ばれることもありますが、SkiaSharp のドキュメントでは *ピボットポイント* と呼ばれる点を定義します。 これは、スケーリングの影響を受けないキャンバスの左上隅を基準としたポイントです。 すべてのスケールは、その中心を基準として行われます。
 
 [**中央揃え**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/CenteredScalePage.xaml.cs)のページには、そのしくみが示されています。 この `PaintSurface` ハンドラーは **基本的なスケール** プログラムに似ています `margin` 。ただし、値はテキストを水平方向に中央揃えにすることを意味します。これは、プログラムが縦モードで最適に動作することを意味します。
 
@@ -222,7 +222,7 @@ canvas.Scale(sx, sy, px, py);
 
 クラスは、 `SKPath` [`Bounds`](xref:SkiaSharp.SKPath.Bounds) パス内の座標の範囲を定義するを返す読み取り専用プロパティを定義し `SKRect` ます。 たとえば、 `Bounds` 前に作成した hendecagram パスからプロパティを取得した場合、四角形のプロパティとプロパティは約100で、プロパティとプロパティは約 `Left` 100 で、プロパティ `Top` `Right` `Bottom` `Width` とプロパティは `Height` 約200です。 (実際の値のほとんどは、星の点は半径が100の円で定義されていますが、上の点だけが水平軸と垂直軸で平行しています)。
 
-この情報が利用可能であることは、パスをキャンバスのサイズにスケーリングするのに適したスケールと変換係数を導き出すことができることを意味します。 [ [**異方性の拡大/縮小**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AnisotropicScalingPage.cs) ] ページでは、このことを示しています。 *異*形スケールは、水平方向と垂直方向では等しくないことを意味します。つまり、星は元の縦横比を保持しません。 ハンドラー内の関連するコードを `PaintSurface` 次に示します。
+この情報が利用可能であることは、パスをキャンバスのサイズにスケーリングするのに適したスケールと変換係数を導き出すことができることを意味します。 [ [**異方性の拡大/縮小**](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AnisotropicScalingPage.cs) ] ページでは、このことを示しています。 *異* 形スケールは、水平方向と垂直方向では等しくないことを意味します。つまり、星は元の縦横比を保持しません。 ハンドラー内の関連するコードを `PaintSurface` 次に示します。
 
 ```csharp
 SKPath path = HendecagramPage.HendecagramPath;
