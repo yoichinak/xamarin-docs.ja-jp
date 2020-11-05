@@ -10,25 +10,25 @@ ms.date: 04/02/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 90f93c2fd17771ccd8bc5dc67404b76cd4ab9c30
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 316f79d72ade21fd068112e2d01660502d0ed0d2
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563004"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366764"
 ---
 # <a name="consume-an-aspnet-web-service-asmx"></a>ASP.NET Web サービス (ASMX) を使用する
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/webservices-todoasmx)
 
 _ASMX は、Simple Object Access Protocol (SOAP) を使用してメッセージを送信する web サービスを構築する機能を提供します。SOAP は、web サービスを構築してアクセスするための、プラットフォームに依存しない、言語に依存しないプロトコルです。ASMX サービスのコンシューマーは、サービスの実装に使用されるプラットフォーム、オブジェクトモデル、プログラミング言語について何も知る必要はありません。SOAP メッセージを送受信する方法を理解する必要があるだけです。この記事では、アプリケーションから ASMX SOAP サービスを使用する方法について説明し Xamarin.Forms ます。_
 
 SOAP メッセージは、次の要素を含む XML ドキュメントです。
 
 - SOAP メッセージとして XML ドキュメントを識別する、 *Envelope* という名前のルート要素。
-- 認証データなどのアプリケーション固有の情報を格納する *ヘッダー* 要素 (省略可能)。 *Header*要素が存在する場合は、 *Envelope*要素の最初の子要素である必要があります。
+- 認証データなどのアプリケーション固有の情報を格納する *ヘッダー* 要素 (省略可能)。 *Header* 要素が存在する場合は、 *Envelope* 要素の最初の子要素である必要があります。
 - 受信者を対象とした SOAP メッセージを含む必須の *Body* 要素。
-- エラーメッセージを示すために使用されるオプションの *Fault* 要素。 *Fault*要素が存在する場合は、 *Body*要素の子要素である必要があります。
+- エラーメッセージを示すために使用されるオプションの *Fault* 要素。 *Fault* 要素が存在する場合は、 *Body* 要素の子要素である必要があります。
 
 SOAP は、HTTP、SMTP、TCP、UDP など、多くのトランスポートプロトコルに対して動作します。 ただし、ASMX サービスは HTTP 経由でのみ動作します。 Xamarin プラットフォームは、HTTP を介した標準的な SOAP 1.1 実装をサポートしています。これには、標準的な ASMX サービス構成の多くがサポートされています。
 

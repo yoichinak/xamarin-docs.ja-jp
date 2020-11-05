@@ -10,16 +10,16 @@ ms.date: 05/11/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 0c8e7c0e3edb581e13944ce48e2241f035791574
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: fcd5f3deb2c7645988cd70b3556b718151df99fd
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556855"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366660"
 ---
 # <a name="no-locxamarinforms-stacklayout"></a>Xamarin.Forms StackLayout
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-stacklayoutdemos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-stacklayoutdemos)
 
 [![::: なし (Xamarin. Forms)::: StackLayout](stacklayout-images/layouts.png "::: なし (Xamarin. Forms)::: StackLayout")](stacklayout-images/layouts-large.png#lightbox "::: なし (Xamarin. Forms)::: StackLayout")
 
@@ -208,12 +208,12 @@ public class StackLayoutSpacingPageCS : ContentPage
 と [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) その子ビューのプロパティおよびプロパティは、 [`StackLayout`](xref:Xamarin.Forms.StackLayout) [`LayoutOptions`](xref:Xamarin.Forms.LayoutOptions) 2 つのレイアウト設定をカプセル化する構造体のフィールドに設定できます。
 
 - *配置* では、親レイアウト内の子ビューの位置とサイズを決定します。
-- [*展開*] は、子ビューが使用可能な場合に余分なスペースを使用する必要があるかどうかを示します。
+- [ *展開* ] は、子ビューが使用可能な場合に余分なスペースを使用する必要があるかどうかを示します。
 
 > [!TIP]
 > [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) 必要がある場合を除き、のプロパティとプロパティを設定しないで [`StackLayout`](xref:Xamarin.Forms.StackLayout) ください。 既定値の `LayoutOptions.Fill` と `LayoutOptions.FillAndExpand` で、レイアウトの最適化が最大になります。 これらのプロパティを変更すると、既定値に戻す場合でも、コストがかかり、メモリが消費されます。
 
-### <a name="alignment"></a>Alignment
+### <a name="alignment"></a>配置
 
 次の XAML の例では、の各子ビューに配置設定を設定し [`StackLayout`](xref:Xamarin.Forms.StackLayout) ます。
 

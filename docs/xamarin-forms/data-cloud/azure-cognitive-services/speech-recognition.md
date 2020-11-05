@@ -10,16 +10,16 @@ ms.date: 01/14/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e5888e77948bef0fbb60a4e0068cbedf2d2a50e7
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 45cf62354eb54007b9380ee06b1d93ee49000909
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555386"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93365854"
 ---
 # <a name="speech-recognition-using-azure-speech-service"></a>Azure Speech Service を使用した音声認識
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-cognitivespeechservice)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/webservices-cognitivespeechservice)
 
 Azure Speech Service は、次の機能を提供するクラウドベースの API です。
 
@@ -102,7 +102,7 @@ public interface IMicrophoneService
 
 ## <a name="implement-the-speech-service"></a>Speech サービスを実装する
 
-**MainPage.xaml.cs**分離コードファイルには、Azure Speech サービスから音声を送信し、書き起こしテキストを受信するためのすべてのロジックが含まれています。
+**MainPage.xaml.cs** 分離コードファイルには、Azure Speech サービスから音声を送信し、書き起こしテキストを受信するためのすべてのロジックが含まれています。
 
 `MainPage`コンストラクターは、からインターフェイスのインスタンスを取得し `IMicrophoneService` `DependencyService` ます。
 
@@ -458,7 +458,7 @@ namespace CognitiveSpeechService.UWP.Services
 1. メソッドは、 `GetPermissionAsync` インスタンスの初期化を試み `MediaCapture` ます。 失敗した場合は、マイクを有効にするためのユーザー要求を起動します。
 1. この `OnRequestPermissionResult` メソッドはインターフェイスを満たすために存在しますが、UWP 実装には必要ありません。
 
-最後に、 **package.appxmanifest** は、アプリケーションでマイクを使用するように指定する必要があります。 Package.appxmanifest ファイルをダブルクリックし、Visual Studio 2019 の [**機能**] タブで [**マイク**] オプションを選択します。
+最後に、 **package.appxmanifest** は、アプリケーションでマイクを使用するように指定する必要があります。 Package.appxmanifest ファイルをダブルクリックし、Visual Studio 2019 の [ **機能** ] タブで [ **マイク** ] オプションを選択します。
 
 [![Visual Studio 2019 のマニフェストのスクリーンショット](speech-recognition-images/package-manifest-cropped.png)](speech-recognition-images/package-manifest.png#lightbox "Visual Studio 2019 のマニフェストのスクリーンショット")
 

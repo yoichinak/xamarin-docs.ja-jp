@@ -10,16 +10,16 @@ ms.date: 07/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 257962516b8a183e63c49b22bc2be108364d9425
-ms.sourcegitcommit: e7d6f8bb074c08d87f7507ad5f1377cfacefa32a
+ms.openlocfilehash: 0a0517f0eac552f18a88d84bafba2e7e1e1f2631
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92041887"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367557"
 ---
 # <a name="no-locxamarinforms-editor"></a>Xamarin.Forms エディター
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-text)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-text)
 
 コントロールは、 [`Editor`](xref:Xamarin.Forms.Editor) 複数行の入力を受け入れるために使用されます。
 

@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6e25654fb856935c119d731df5db3eaa2d501930
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 7df914ae5b6de38b5179f5b1139b9c41e9559198
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560248"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367453"
 ---
 # <a name="visualelement-access-keys-on-windows"></a>Windows 上の VisualElement アクセスキー
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 アクセスキーは、ユニバーサル Windows プラットフォーム (UWP) 上のアプリの使いやすさとアクセシビリティを向上させるキーボードショートカットです。タッチやマウスを使用する代わりに、ユーザーがキーボードを使用してアプリの表示可能な UI をすばやく移動したり操作したりできるようにします。 これらは、Alt キーと1つ以上の英数字キーの組み合わせであり、通常は順番に押されています。 キーボードショートカットは、1つの英数字を使用するアクセスキーに対して自動的にサポートされます。
 

@@ -10,16 +10,16 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 7eb21f9a6a679c294a848d7fa79721c6db03bb0d
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 19f09025e44bb7deddbb8a9e6ae326d2137a5ce0
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563225"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367531"
 ---
 # <a name="visualelement-elevation-on-android"></a>Android での VisualElement の昇格
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 この Android プラットフォーム固有のは、API 21 以上を対象とするアプリケーションのビジュアル要素の昇格 (Z オーダー) を制御するために使用されます。 ビジュアル要素の昇格によって、描画順序が決定されます。これにより、Z 値が大きい occluding のビジュアル要素は、Z 値が小さくなります。 添付プロパティを値に設定することにより、XAML で使用 `VisualElement.Elevation` され `boolean` ます。
 

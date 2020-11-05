@@ -10,20 +10,20 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 75d19e41243076da127d58defdabeca908d900cd
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 7e27db7cd05c1997d3ac889b36aca5e3716d2d08
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556088"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367596"
 ---
 # <a name="lines-and-stroke-caps"></a>線とストローク キャップ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _SkiaSharp を使用して異なるストロークキャップの線を描画する方法について説明します。_
 
-SkiaSharp では、単一行のレンダリングは、接続された一連の直線を描画することとは大きく異なります。 ただし、1つの線を描画する場合でも、多くの場合、線に特定のストロークの幅を付ける必要があります。 これらの行の幅が広くなるにつれて、線の端の外観も重要になります。 線の端の外観は、 *ストロークキャップ*と呼ばれます。
+SkiaSharp では、単一行のレンダリングは、接続された一連の直線を描画することとは大きく異なります。 ただし、1つの線を描画する場合でも、多くの場合、線に特定のストロークの幅を付ける必要があります。 これらの行の幅が広くなるにつれて、線の端の外観も重要になります。 線の端の外観は、 *ストロークキャップ* と呼ばれます。
 
 ![3つのストロークキャップオプション](lines-images/strokecapsexample.png)
 
@@ -35,13 +35,13 @@ canvas.DrawLine (x0, y0, x1, y1, paint);
 
 既定では、 [`StrokeWidth`](xref:SkiaSharp.SKPaint.StrokeWidth) 新しくインスタンス化されたオブジェクトのプロパティ `SKPaint` は0であり、1ピクセルの線を太さで描画する場合の値1と同じ効果があります。 これは携帯電話などの高解像度のデバイスでは非常に薄く見えます。そのため、をより大きな値に設定することをお勧めし `StrokeWidth` ます。 しかし、サイズが非常に大きい線の描画を開始すると、別の問題が発生します。このような太い線の開始と終了はどのようにレンダリングされますか。
 
-線の始点と終点の外観は、 *直線キャップ* 、つまり skia では *ストロークキャップ*と呼ばれます。 このコンテキストの "cap" という単語は、 &mdash; 行の末尾にある一種の hat を指します。 [`StrokeCap`](xref:SkiaSharp.SKPaint.StrokeCap)オブジェクトのプロパティは、 `SKPaint` 列挙体の次のいずれかのメンバーに設定し [`SKStrokeCap`](xref:SkiaSharp.SKStrokeCap) ます。
+線の始点と終点の外観は、 *直線キャップ* 、つまり skia では *ストロークキャップ* と呼ばれます。 このコンテキストの "cap" という単語は、 &mdash; 行の末尾にある一種の hat を指します。 [`StrokeCap`](xref:SkiaSharp.SKPaint.StrokeCap)オブジェクトのプロパティは、 `SKPaint` 列挙体の次のいずれかのメンバーに設定し [`SKStrokeCap`](xref:SkiaSharp.SKStrokeCap) ます。
 
 - `Butt` (既定値)
 - `Square`
 - `Round`
 
-これらの例は、サンプルプログラムを使用して説明します。 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラムの**SkiaSharp Lines and Paths**セクションは、クラスに基づく**Stroke Caps**というタイトルのページから始まり [`StrokeCapsPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/StrokeCapsPage.cs) ます。 このページでは、列挙 `PaintSurface` 体の3つのメンバーをループ処理 `SKStrokeCap` し、列挙体のメンバーの名前とそのストロークキャップを使用して線を描画するイベントハンドラーを定義します。
+これらの例は、サンプルプログラムを使用して説明します。 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)プログラムの **SkiaSharp Lines and Paths** セクションは、クラスに基づく **Stroke Caps** というタイトルのページから始まり [`StrokeCapsPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/StrokeCapsPage.cs) ます。 このページでは、列挙 `PaintSurface` 体の3つのメンバーをループ処理 `SKStrokeCap` し、列挙体のメンバーの名前とそのストロークキャップを使用して線を描画するイベントハンドラーを定義します。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

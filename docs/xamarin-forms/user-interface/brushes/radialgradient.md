@@ -10,18 +10,18 @@ ms.date: 07/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a56d2f590b78bef0f47c764862b891c9c0d46129
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 10645e12b81b1ca4ee8e0790ed3a673a23a4ba26
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563576"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366933"
 ---
 # <a name="no-locxamarinforms-brushes-radial-gradients"></a>Xamarin.Forms ブラシ: 放射状グラデーション
 
 ![プレビュー API](~/media/shared/preview.png "この API は現在プレリリースです")
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-brushdemos/)
 
 `RadialGradientBrush`クラスはクラスから派生 `GradientBrush` し、放射状グラデーションで領域を塗りつぶします。これにより、円全体で2つ以上の色がブレンドされます。 `GradientStop` オブジェクトは、グラデーションの色とその位置を指定するために使用されます。 オブジェクトの詳細について `GradientStop` は、「 [ Xamarin.Forms ブラシ: グラデーション](gradient.md)」を参照してください。
 

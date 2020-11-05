@@ -10,16 +10,16 @@ ms.date: 02/08/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 719bc923a53d6a2ce9250def48a99893cadac32d
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 4446e92ee1d9b6938464375ba36c6e8e4cdfed6b
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555308"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93365790"
 ---
 # <a name="spell-checking-using-the-bing-spell-check-api"></a>Bing Spell Check API を使用したスペルチェック
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/webservices-todocognitiveservices)
 
 _Bing Spell Check は、テキストに対して文脈によるスペルチェックを実行し、スペルミスの語句にインラインでの候補を提供します。この記事では、Bing Spell Check REST API を使用して、アプリケーションのスペルミスを修正する方法について説明し Xamarin.Forms ます。_
 

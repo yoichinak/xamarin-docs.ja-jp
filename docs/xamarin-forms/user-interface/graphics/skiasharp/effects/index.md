@@ -10,18 +10,18 @@ ms.date: 08/22/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e63d92cde5925561dae4217c3c46af2c2c59f795
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: c6179f94b43f12a7bf4b91a05702c0539f3c8658
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563992"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367791"
 ---
 # <a name="skiasharp-effects"></a>SkiaSharp の効果
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-SkiaSharp クラスは、 [`SKPaint`](xref:SkiaSharp.SKPaint) 一般的な _効果_の下で分類できる6つのプロパティを定義します。 これらは、何らかの形でグラフィックスの通常の表示を変更するプロパティです。 SkiaSharp 効果は、次の6つのカテゴリに分類されます。
+SkiaSharp クラスは、 [`SKPaint`](xref:SkiaSharp.SKPaint) 一般的な _効果_ の下で分類できる6つのプロパティを定義します。 これらは、何らかの形でグラフィックスの通常の表示を変更するプロパティです。 SkiaSharp 効果は、次の6つのカテゴリに分類されます。
 
 ## <a name="path-effects"></a>[パスの効果](../curves/effects.md)
 
@@ -33,7 +33,7 @@ SkiaSharp クラスは、 [`SKPaint`](xref:SkiaSharp.SKPaint) 一般的な _効�
 
 ## <a name="blend-modes"></a>[ブレンド モード](blend-modes/index.md)
 
-[`BlendMode`](xref:SkiaSharp.SKPaint.BlendMode)のプロパティを `SKPaint` 列挙体のメンバーに設定して、 [`SKBlendMode`](xref:SkiaSharp.SKBlendMode) 変換先にソースグラフィックが表示されるときの動作を制御します。 SkiaSharp は、Porter-Duff モード、分離可能な blend モード、および分離不可能な blend モードを含む、すべての CSS 複合モードと blend モードをサポートしています。
+[`BlendMode`](xref:SkiaSharp.SKPaint.BlendMode)のプロパティを `SKPaint` 列挙体のメンバーに設定して、 [`SKBlendMode`](xref:SkiaSharp.SKBlendMode) 変換先にソースグラフィックが表示されるときの動作を制御します。 SkiaSharp は、Porter-Duff モード、分離可能な blend モード、分離不可能な blend モードなど、すべての CSS 複合モードと blend モードをサポートしています。
 
 ## <a name="mask-filters"></a>[マスク フィルター](mask-filters.md)
 
@@ -47,7 +47,7 @@ SkiaSharp クラスは、 [`SKPaint`](xref:SkiaSharp.SKPaint) 一般的な _効�
 
 [`ColorFilter`](xref:SkiaSharp.SKPaint.ColorFilter) `SKPaint` [`SKColorFilter`](xref:SkiaSharp.SKColorFilter) テーブルまたはマトリックス変換を使用して色を変更するには、のプロパティを型のオブジェクトに設定します。
 
-これらの記事のすべてのサンプルコードは、 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)にあります。 ホームページで、[ **SkiaSharp Effects**] を選択します。
+これらの記事のすべてのサンプルコードは、 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)にあります。 ホームページで、[ **SkiaSharp Effects** ] を選択します。
 
 ## <a name="related-links"></a>関連リンク
 

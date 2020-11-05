@@ -10,10 +10,10 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.openlocfilehash: 255c870407f1657196abd826b46c7e9b114285c9
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.sourcegitcommit: d1980b2251999224e71c1289e4b4097595b7e261
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 11/01/2020
 ms.locfileid: "91433319"
 ---
 # <a name="installing-xamarin-in-visual-studio-2019"></a>Visual Studio 2019 での Xamarin のインストール
@@ -26,7 +26,7 @@ ms.locfileid: "91433319"
 
 [!include[](~/cross-platform/includes/install-xamarin-windows-2019.md)]
 
-Visual Studio 2019 で、 **[ヘルプ]** メニューをクリックして Xamarin がインストールされていることを確認します。 Xamarin がインストールされている場合は、以下のスクリーン ショットのように、**Xamarin** のメニュー項目が表示されます。
+Visual Studio 2019 で、 **[ヘルプ]** メニューをクリックして Xamarin がインストールされていることを確認します。 Xamarin がインストールされている場合は、以下のスクリーン ショットのように、 **Xamarin** のメニュー項目が表示されます。
 
 ![[ヘルプ] メニューの [Xamarin] メニュー項目](windows-images/12-xamarin-menu-item.png "[ヘルプ] メニューの [Xamarin] メニュー項目")
 

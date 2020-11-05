@@ -10,16 +10,16 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: aa427035dc33b617bed14e0c6aa0b0db27efca7f
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 63833e80b15bb27ab656825b4b1f6b1e3eb31670
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556569"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367817"
 ---
 # <a name="the-path-fill-types"></a>パスの塗りつぶしの種類
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _SkiaSharp path fill 型で可能なさまざまな効果を発見する_
 
@@ -173,7 +173,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 通常、パスの塗りつぶしの種類は塗りつぶしにのみ影響し、ストロークは影響しませんが、2つの `Inverse` モードは塗りつぶしとストロークの両方に影響します。 塗りつぶしの場合、2つの型は、 `Inverse` 星の外側の領域が塗りつぶされるように、塗りつぶし領域を oppositely ます。 ストロークの場合、この 2 `Inverse` 種類の色はストロークを除くすべての色になります。 これらの逆フィルの種類を使用すると、iOS のスクリーンショットに示すように、いくつかの奇妙な効果が生じる可能性があります。
 
-[![5つの星のページのトリプルスクリーンショット](fill-types-images/fivepointedstar-small.png)](fill-types-images/fivepointedstar-large.png#lightbox "5つの星のページのトリプルスクリーンショット")
+[![Five-Pointed Star ページのトリプルスクリーンショット](fill-types-images/fivepointedstar-small.png)](fill-types-images/fivepointedstar-large.png#lightbox "Five-Pointed Star ページのトリプルスクリーンショット")
 
 Android のスクリーンショットには、通常の奇数とワインディングの効果が示されていますが、ストロークと塗りつぶしの順序も結果に影響します。
 
@@ -184,7 +184,7 @@ Android のスクリーンショットには、通常の奇数とワインディ
 
 パラメーターを含むのメソッドでは、 `SKPath` `SKPathDirection` 既定値のが指定さ `Clockwise` れます。
 
-**重なった円**ページにより、偶数の円で始まるパスが作成されます。
+**重なった円** ページにより、偶数の円で始まるパスが作成されます。
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)

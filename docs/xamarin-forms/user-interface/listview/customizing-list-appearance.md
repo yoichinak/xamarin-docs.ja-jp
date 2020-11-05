@@ -10,16 +10,16 @@ ms.date: 12/13/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: dcf4e7ca0f081ff000aaa69d8be3a3cb3aa43e8e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 415c10706252b11cc2ec009137feab1d6d7d90ba
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560287"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93365945"
 ---
 # <a name="listview-appearance"></a>ListView の外観
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-listview-grouping)
 
 を使用すると、リスト Xamarin.Forms [`ListView`](xref:Xamarin.Forms.ListView) の各行のインスタンスに加えて、一覧の表示をカスタマイズでき [`ViewCell`](xref:Xamarin.Forms.ViewCell) ます。
 

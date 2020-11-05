@@ -10,16 +10,16 @@ ms.date: 02/28/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ebff259519776718f41ab0fcc0a7abb0c692dac6
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 7d1cb1d9fa418cd16cb25519680e526864c9917c
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563420"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367726"
 ---
 # <a name="no-locxamarinforms-web-services-introduction"></a>Xamarin.Forms Web サービスの概要
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-todorest)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/webservices-todorest)
 
 _このトピックでは、 Xamarin.Forms さまざまな web サービスと通信する方法を示すサンプルアプリケーションのチュートリアルについて説明します。各 web サービスは個別のサンプルアプリケーションを使用しますが、機能的に類似した共通クラスを共有します。_
 
@@ -47,7 +47,7 @@ _このトピックでは、 Xamarin.Forms さまざまな web サービスと�
 |--- |--- |
 |データ|データ項目を管理し、web サービスと通信するために使用されるクラスとインターフェイスが含まれています。 これには、少なくともクラスが含まれ `TodoItemManager` ます。これは、 `App` web サービス操作を呼び出すためにクラスのプロパティを介して公開されます。|
 |モデル|アプリケーションのデータモデルクラスが含まれています。 少なくとも、 `TodoItem` アプリケーションによって使用される1つのデータ項目をモデル化するクラスが含まれています。 このフォルダーには、ユーザーデータのモデル化に使用する追加のクラスを含めることもできます。|
-|Views|アプリケーションのページが含まれています。 これは通常、 `TodoListPage` クラスと `TodoItemPage` クラス、および認証のために使用される追加のクラスで構成されます。|
+|ビュー|アプリケーションのページが含まれています。 これは通常、 `TodoListPage` クラスと `TodoItemPage` クラス、および認証のために使用される追加のクラスで構成されます。|
 
 各アプリケーションの共有コードプロジェクトも、いくつかの重要なファイルで構成されています。
 

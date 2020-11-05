@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 65bdeef161ce4bfed18ca07966a0ab3189c65ba2
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: f653f2a617022ddd80e910fcea7c43450cb911d0
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556712"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366725"
 ---
 # <a name="page-status-bar-visibility-on-ios"></a>IOS でのページステータスバーの表示
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 この iOS プラットフォーム固有のは、のステータスバーの表示を設定するために使用され [`Page`](xref:Xamarin.Forms.Page) ます。また、ステータスバーがを入力または脱退する方法を制御することもでき `Page` ます。 XAML で使用されるのは、 `Page.PrefersStatusBarHidden` 添付プロパティを列挙値に設定 `StatusBarHiddenMode` し、必要に応じて、 `Page.PreferredStatusBarUpdateAnimation` 添付プロパティを列挙値に設定すること `UIStatusBarAnimation` です。
 
@@ -47,7 +47,7 @@ On<iOS>().SetPrefersStatusBarHidden(StatusBarHiddenMode.True)
 
 結果として、のステータスバーの可視性は次のように [`Page`](xref:Xamarin.Forms.Page) 設定できます。
 
-![ステータスバーの可視性プラットフォーム固有](page-status-bar-visibility-images/hide-status-bar.png)
+![ステータスバーの表示 Platform-Specific](page-status-bar-visibility-images/hide-status-bar.png)
 
 > [!NOTE]
 > では [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) 、指定された列挙値によって、 `StatusBarHiddenMode` すべての子ページのステータスバーも更新されます。 その他のすべての [`Page`](xref:Xamarin.Forms.Page) 派生型では、指定された `StatusBarHiddenMode` 列挙値は現在のページのステータスバーのみを更新します。

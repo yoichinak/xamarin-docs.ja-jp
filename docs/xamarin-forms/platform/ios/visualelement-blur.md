@@ -10,16 +10,16 @@ ms.date: 10/24/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6a81e5a589e99a62aeaea58707228afd03016a8c
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: f02de8bc2bf0ed1091c73c3a91f748400f8615b7
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563940"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367583"
 ---
 # <a name="visualelement-blur-on-ios"></a>IOS での VisualElement のぼかし
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 この iOS プラットフォーム固有のを使用して、コンテンツをその下に配置し、任意のに適用でき [`VisualElement`](xref:Xamarin.Forms.VisualElement) ます。 これは、 [`VisualElement.BlurEffect`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.VisualElement.BlurEffectProperty) 添付プロパティを列挙体の値に設定することによって XAML で使用され [`BlurEffectStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle) ます。
 
@@ -49,7 +49,7 @@ boxView.On<iOS>().UseBlurEffect(BlurEffectStyle.ExtraLight);
 
 結果として、指定されたが [`BlurEffectStyle`](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.BlurEffectStyle) インスタンスに適用され [`BoxView`](xref:Xamarin.Forms.BoxView) 、その下の層がぼかしられ [`Image`](xref:Xamarin.Forms.Image) ます。
 
-![ぼかし効果プラットフォーム固有](applying-blur-images/blur-effect.png)
+![ぼかし効果 Platform-Specific](applying-blur-images/blur-effect.png)
 
 > [!NOTE]
 > にぼかし効果を追加する場合で [`VisualElement`](xref:Xamarin.Forms.VisualElement) も、タッチイベントはによって受信され `VisualElement` ます。

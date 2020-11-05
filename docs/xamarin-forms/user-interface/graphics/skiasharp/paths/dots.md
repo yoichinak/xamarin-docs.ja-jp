@@ -10,16 +10,16 @@ ms.date: 03/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5064a53b140c26acdc5149f5495cc002e657a9b0
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 56a652f6f8ff2c4e9780d72117241d79f71210b5
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91564005"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367391"
 ---
 # <a name="dots-and-dashes-in-skiasharp"></a>SkiaSharp のドットとダッシュ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 _SkiaSharp に点線や破線を描画した場合の複雑さをマスタにします。_
 
@@ -27,7 +27,7 @@ SkiaSharp を使用すると、実線ではなく、ドットとダッシュで�
 
 ![点線](dots-images/dottedlinesample.png)
 
-これを行うには、 *パス効果*を使用します。これは、 [`SKPathEffect`](xref:SkiaSharp.SKPathEffect) のプロパティに設定するクラスのインスタンスです [`PathEffect`](xref:SkiaSharp.SKPaint.PathEffect) `SKPaint` 。 で定義されているいずれかの静的作成方法を使用して、パス効果を作成する (またはパス効果を結合する) ことができ `SKPathEffect` ます。 ( `SKPathEffect` は、SkiaSharp でサポートされている6つの効果の1つです。その他は、 [**SkiaSharp の効果**](../effects/index.md)に関するセクションで説明されています)。
+これを行うには、 *パス効果* を使用します。これは、 [`SKPathEffect`](xref:SkiaSharp.SKPathEffect) のプロパティに設定するクラスのインスタンスです [`PathEffect`](xref:SkiaSharp.SKPaint.PathEffect) `SKPaint` 。 で定義されているいずれかの静的作成方法を使用して、パス効果を作成する (またはパス効果を結合する) ことができ `SKPathEffect` ます。 ( `SKPathEffect` は、SkiaSharp でサポートされている6つの効果の1つです。その他は、 [**SkiaSharp の効果**](../effects/index.md)に関するセクションで説明されています)。
 
 点線または破線を描画するには、 [`SKPathEffect.CreateDash`](xref:SkiaSharp.SKPathEffect.CreateDash(System.Single[],System.Single)) 静的メソッドを使用します。 2つの引数があります。これは、 `float` ドットとダッシュの長さ、およびそれらの間のスペースの長さを示す値の配列です。 この配列には、偶数個の要素を含める必要があります。また、少なくとも2つの要素が必要です。 (配列には0個の要素がありますが、その結果、実線になります)。要素が2つある場合、1つ目はドットまたはダッシュの長さ、2番目は次のドットまたはダッシュの前のギャップの長さです。 3つ以上の要素がある場合は、ダッシュの長さ、ギャップの長さ、ダッシュの長さ、ギャップの長さなどの順序になります。
 
@@ -167,7 +167,7 @@ UWP 画面に、のストロークキャップの点線と破線が表示され 
 
 ここまでは、メソッドの2番目のパラメーターについて言及していませんでした `SKPathEffect.CreateDash` 。 このパラメーターはという名前 `phase` で、行の先頭のドットとダッシュのパターン内のオフセットを参照します。 たとえば、ダッシュ配列が {10, 10} で、が10の場合、 `phase` 行はドットではなくギャップで始まります。
 
-パラメーターの興味深いアプリケーションの1つ `phase` は、アニメーションです。 アニメーション化された**らせん**のページは、クラスが**Archimedean Spiral** [`AnimatedSpiralPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/AnimatedSpiralPage.cs) `phase` メソッドを使用してパラメーターをアニメーション化する点を除いて、[アーカイブ] と同じようにらせんされたページに似てい Xamarin.Forms `Device.Timer` ます。
+パラメーターの興味深いアプリケーションの1つ `phase` は、アニメーションです。 アニメーション化された **らせん** のページは、クラスが **Archimedean Spiral** [`AnimatedSpiralPage`](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Paths/AnimatedSpiralPage.cs) `phase` メソッドを使用してパラメーターをアニメーション化する点を除いて、[アーカイブ] と同じようにらせんされたページに似てい Xamarin.Forms `Device.Timer` ます。
 
 ```csharp
 public class AnimatedSpiralPage : ContentPage

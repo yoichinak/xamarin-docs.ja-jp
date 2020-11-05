@@ -10,16 +10,16 @@ ms.date: 03/23/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 78bd93e2f6556480ae7d2903771d7d6303dda148
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: cd7c29f835b34b4c5ffb9a5af589815a09546a87
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91558377"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93365906"
 ---
 # <a name="native-views-in-xaml"></a>XAML のネイティブ ビュー
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-nativeviews-nativeswitch)
 
 _IOS、Android、およびユニバーサル Windows プラットフォームからのネイティブビューは、XAML ファイルから直接参照でき Xamarin.Forms ます。プロパティとイベントハンドラーはネイティブビューで設定でき、ビューと対話でき Xamarin.Forms ます。この記事では、XAML ファイルからネイティブビューを使用する方法について説明 Xamarin.Forms します。_
 
@@ -109,7 +109,7 @@ Android ウィジェットのコンストラクターには、通常、 `Context
 ![ネイティブスイッチが無効になっ ](xaml-images/native-switch-disabled.png)
  ![ ているネイティブスイッチの有効化](xaml-images/native-switch-enabled.png)
 
-双方向のバインディングは、ネイティブプロパティがを実装している `INotifyPropertyChanged` 場合、または iOS でのキー値の観察 (KVO) をサポートしている場合、またはが UWP の場合に、自動的にサポートされ `DependencyProperty` ます。 ただし、多くのネイティブビューでは、プロパティの変更通知はサポートされていません。 これらのビューでは、 [`UpdateSourceEventName`](xref:Xamarin.Forms.Binding.UpdateSourceEventName) バインド式の一部としてプロパティ値を指定できます。 このプロパティは、ターゲットプロパティが変更されたときに通知するネイティブビューのイベントの名前に設定する必要があります。 次に、ネイティブスイッチの値が変更されると、ユーザーがスイッチの値を変更した `Binding` ことが通知され、 `NativeSwitchPageViewModel.IsSwitchOn` プロパティの値が更新されます。
+双方向のバインディングは、ネイティブプロパティがを実装している `INotifyPropertyChanged` 場合、または iOS での Key-Value 観察 (KVO) をサポートしている場合、または UWP のの場合に、自動的にサポートされ `DependencyProperty` ます。 ただし、多くのネイティブビューでは、プロパティの変更通知はサポートされていません。 これらのビューでは、 [`UpdateSourceEventName`](xref:Xamarin.Forms.Binding.UpdateSourceEventName) バインド式の一部としてプロパティ値を指定できます。 このプロパティは、ターゲットプロパティが変更されたときに通知するネイティブビューのイベントの名前に設定する必要があります。 次に、ネイティブスイッチの値が変更されると、ユーザーがスイッチの値を変更した `Binding` ことが通知され、 `NativeSwitchPageViewModel.IsSwitchOn` プロパティの値が更新されます。
 
 ## <a name="pass-arguments-to-native-views"></a>ネイティブビューに引数を渡す
 

@@ -1,13 +1,13 @@
 ---
 ms.topic: include
 ms.openlocfilehash: d6cd51b9ced1821b297be195643e8719bf5aa0dc
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.sourcegitcommit: d1980b2251999224e71c1289e4b4097595b7e261
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
+ms.lasthandoff: 11/01/2020
 ms.locfileid: "91545643"
 ---
-以下の手順に従って、Xamarin を "_新しい_" Visual Studio 2019 のインストールの一部としてインストールできます。
+以下の手順に従って、Xamarin を " _新しい_ " Visual Studio 2019 のインストールの一部としてインストールできます。
 
 1. [Visual Studio](https://visualstudio.microsoft.com/vs/) ページから、Visual Studio 2019 Community、Visual Studio Professional、または Visual Studio Enterprise をダウンロードします (ダウンロード リンクは下部にあります)。
 

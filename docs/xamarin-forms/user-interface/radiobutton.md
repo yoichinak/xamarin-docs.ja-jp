@@ -10,16 +10,16 @@ ms.date: 03/13/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 964bac947f46e5279cbdcc6bdb61d74deba7f622
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 20ccf71771493afe56d4d899186c7e6330ee96dd
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91559390"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366582"
 ---
 # <a name="no-locxamarinforms-radiobutton"></a>Xamarin.Forms RadioButton
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-radiobuttondemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-radiobuttondemos/)
 
 Xamarin.Forms `RadioButton` は、ユーザーがセットから1つのオプションを選択できるようにするボタンの種類です。 各オプションは1つのラジオボタンで表され、1つのグループ内で選択できるラジオボタンは1つだけです。 `RadioButton`クラスは、クラスから継承され [`Button`](xref:Xamarin.Forms.Button) ます。
 

@@ -10,16 +10,16 @@ ms.date: 08/28/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 809477fe466ee7a8f0985308896c14341f2dd460
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: f7a31f54cb90fa3633217e8eb59d92c1e4d063c7
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561938"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93365919"
 ---
 # <a name="skiasharp-color-filters"></a>SkiaSharp カラーフィルター
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 色フィルターは、ビットマップ (またはその他のイメージ) の色を、posterization などの効果のために他の色に変換できます。
 
@@ -123,7 +123,7 @@ M44 セルは、不透明度を維持するため、非常に重要です。 通
 public static SKColorFilter CreateColorMatrix (float[] matrix);
 ```
 
-ここで `matrix` 、は20の値の配列 `float` です。 C# で配列を作成すると、4×5行列に似た数値を書式設定することが簡単になります。 これは、 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルの**グレースケールマトリックス**ページで説明されています。
+ここで `matrix` 、は20の値の配列 `float` です。 C# で配列を作成すると、4×5行列に似た数値を書式設定することが簡単になります。 これは、 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルの **グレースケールマトリックス** ページで説明されています。
 
 ```csharp
 public class GrayScaleMatrixPage : ContentPage
@@ -166,11 +166,11 @@ public class GrayScaleMatrixPage : ContentPage
 }
 ```
 
-`DrawBitmap`このコードで使用されるメソッドは、 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルに含まれている**BitmapExtension.cs**ファイルからのものです。 
+`DrawBitmap`このコードで使用されるメソッドは、 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルに含まれている **BitmapExtension.cs** ファイルからのものです。 
 
 IOS、Android、ユニバーサル Windows プラットフォームで実行されている結果を次に示します。
 
-[![グレースケールのマトリックス](color-filters-images/GrayScaleMatrix.png "グレースケールのマトリックス")](color-filters-images/GrayScaleMatrix-Large.png#lightbox)
+[![グレースケールのマトリックス](color-filters-images/GrayScaleMatrix.png "Gray-Scale 行列")](color-filters-images/GrayScaleMatrix-Large.png#lightbox)
 
 4番目の行と4番目の列の値を確認します。 これは、変換された色の "値" の元の色の値を乗算した重要な要素です。 そのセルが0の場合は何も表示されず、問題を見つけるのが困難な場合があります。
 
@@ -178,7 +178,7 @@ IOS、Android、ユニバーサル Windows プラットフォームで実行さ�
 
 色の変換を使用する方法については、「 [**画像**](/dotnet/framework/winforms/advanced/recoloring-images) の色の設定」ページを参照してください。 ディスカッションには Windows フォームがあり、マトリックスは異なる形式ですが、概念は同じです。
 
-**パステル行列**は、ソースの赤ピクセルを attenuating し、赤と緑のピクセルを少し強調することで、宛先の赤のピクセルを計算します。 このプロセスは、緑と青のピクセルに対しても同様に発生します。
+**パステル行列** は、ソースの赤ピクセルを attenuating し、赤と緑のピクセルを少し強調することで、宛先の赤のピクセルを計算します。 このプロセスは、緑と青のピクセルに対しても同様に発生します。
 
 ```csharp
 public class PastelMatrixPage : ContentPage
@@ -247,7 +247,7 @@ public static SKColorFilter CreateTable (byte[] tableA, byte[] tableR, byte[] ta
 
 2番目のメソッドへの引数の1つを、 `CreateTable` 順序が 0 ~ 255 の値を含むカラーテーブルに設定する場合は、代わりにを使用でき `null` ます。 多くの場合、 `CreateTable` 呼び出しには `null` アルファチャネルの最初の引数があります。
 
-[SkiaSharp ビットマップピクセルビット](../bitmaps/pixel-bits.md#posterization)へのアクセスに関する記事の**Posterization**のセクションでは、ビットマップのピクセルビットを変更して色解像度を下げる方法を説明しました。 これは、 _posterization_と呼ばれる手法です。 
+[SkiaSharp ビットマップピクセルビット](../bitmaps/pixel-bits.md#posterization)へのアクセスに関する記事の **Posterization** のセクションでは、ビットマップのピクセルビットを変更して色解像度を下げる方法を説明しました。 これは、 _posterization_ と呼ばれる手法です。 
 
 カラーテーブルを使用してビットマップを表示することもできます。 [ **ポスタリゼーションテーブル** ] ページのコンストラクターは、下位6ビットがゼロに設定されたバイトにインデックスをマップするカラーテーブルを作成します。
 

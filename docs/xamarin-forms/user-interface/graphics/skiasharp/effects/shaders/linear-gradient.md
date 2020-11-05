@@ -10,22 +10,22 @@ ms.date: 08/23/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2cc0806af28360cf4bf2bb7e382e8d0a423abab9
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 9d2ac2eec5422068243ac43e78092e25c10652f5
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555529"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366790"
 ---
 # <a name="the-skiasharp-linear-gradient"></a>SkiaSharp 線状グラデーション
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
-クラスは、 [`SKPaint`](xref:SkiaSharp.SKPaint) [`Color`](xref:SkiaSharp.SKPaint.Color) 線を描画したり、純色で塗りつぶしたりするために使用されるプロパティを定義します。 また、色を段階的に混ぜ合わせた _グラデーション_を使用して線を描画したり、塗りつぶしたりすることができます。
+クラスは、 [`SKPaint`](xref:SkiaSharp.SKPaint) [`Color`](xref:SkiaSharp.SKPaint.Color) 線を描画したり、純色で塗りつぶしたりするために使用されるプロパティを定義します。 また、色を段階的に混ぜ合わせた _グラデーション_ を使用して線を描画したり、塗りつぶしたりすることができます。
 
 ![線状グラデーションのサンプル](linear-gradient-images/LinearGradientSample.png "線状グラデーションのサンプル")
 
-最も基本的な種類のグラデーションは _線状_ グラデーションです。 色のブレンドは、ある点から別の点への線 ( _グラデーション線_と呼ばれます) に発生します。 グラデーション線に垂直な線の色は同じです。 線形グラデーションを作成するには、2つの静的メソッドのいずれかを使用し [`SKShader.CreateLinearGradient`](xref:SkiaSharp.SKShader.CreateLinearGradient*) ます。 2つのオーバーロードの違いは、一方にマトリックス変換が含まれていて、もう一方のオーバーロードが含まれていないことです。 
+最も基本的な種類のグラデーションは _線状_ グラデーションです。 色のブレンドは、ある点から別の点への線 ( _グラデーション線_ と呼ばれます) に発生します。 グラデーション線に垂直な線の色は同じです。 線形グラデーションを作成するには、2つの静的メソッドのいずれかを使用し [`SKShader.CreateLinearGradient`](xref:SkiaSharp.SKShader.CreateLinearGradient*) ます。 2つのオーバーロードの違いは、一方にマトリックス変換が含まれていて、もう一方のオーバーロードが含まれていないことです。 
 
 これらのメソッドは [`SKShader`](xref:SkiaSharp.SKShader) 、のプロパティに設定した型のオブジェクトを返し [`Shader`](xref:SkiaSharp.SKPaint.Shader) `SKPaint` ます。 `Shader`プロパティが null 以外の場合は、プロパティをオーバーライドし `Color` ます。 線またはこのオブジェクトを使用して塗りつぶされた領域は、 `SKPaint` 純色ではなくグラデーションに基づいています。
 
@@ -40,7 +40,7 @@ ms.locfileid: "91555529"
 - 右上隅に水平方向に配置
 - 右下隅に斜めになる
 
-対角線方向の線形グラデーションは、 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルの**SkiaSharp シェーダーとその他の効果**セクションの最初のページで示されています。 **コーナーとコーナーのグラデーション**ページでは、コンストラクターにが作成され `SKCanvasView` ます。 ハンドラーは、 `PaintSurface` `SKPaint` ステートメント内にオブジェクトを作成 `using` し、キャンバスの中央に300ピクセルの四角形の四角形を定義します。
+対角線方向の線形グラデーションは、 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルの **SkiaSharp シェーダーとその他の効果** セクションの最初のページで示されています。 **コーナーとコーナーのグラデーション** ページでは、コンストラクターにが作成され `SKCanvasView` ます。 ハンドラーは、 `PaintSurface` `SKPaint` ステートメント内にオブジェクトを作成 `using` し、キャンバスの中央に300ピクセルの四角形の四角形を定義します。
 
 ```csharp
 public class CornerToCornerGradientPage : ContentPage
@@ -99,7 +99,7 @@ public class CornerToCornerGradientPage : ContentPage
 
 [![コーナーとコーナーのグラデーション](linear-gradient-images/CornerToCornerGradient.png "コーナーとコーナーのグラデーション")](linear-gradient-images/CornerToCornerGradient-Large.png#lightbox)
 
-グラデーション線は、最初の2つの引数として指定された2つの点によって定義されます。 これらの点は、グラデーションと共に表示されるグラフィカルオブジェクトでは_なく_、_キャンバス_に対して相対的であることに注意してください。 グラデーション線に沿って、色は、左上から右下にある赤から青に徐々に変化します。 グラデーション線に垂直な線は、一定の色になります。
+グラデーション線は、最初の2つの引数として指定された2つの点によって定義されます。 これらの点は、グラデーションと共に表示されるグラフィカルオブジェクトでは _なく_ 、 _キャンバス_ に対して相対的であることに注意してください。 グラデーション線に沿って、色は、左上から右下にある赤から青に徐々に変化します。 グラデーション線に垂直な線は、一定の色になります。
 
 `float`4 番目の引数として指定された値の配列には、色の配列との1対1の対応があります。 値は、その色が出現するグラデーション線に沿った相対的な位置を示します。 ここで、0は、が `Red` グラデーション線の開始時に発生することを意味し、1は `Blue` 行の最後に発生することを意味します。 数値は昇順にする必要があり、0 ~ 1 の範囲で指定する必要があります。 範囲内にない場合は、その範囲内になるように調整されます。
 
@@ -164,7 +164,7 @@ public class CornerToCornerGradientPage : ContentPage
 
 ## <a name="interactively-experiment"></a>対話的に実験する
 
-**対話型の線形グラデーション**ページで線形グラデーションを対話的に試すことができます。 このページでは、この記事で説明したクラスを使用 `InteractivePage` して [**円弧を描画**](../../curves/arcs.md)します。 `InteractivePage` は、 [`TouchEffect`](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md) `TouchPoint` 指やマウスで移動できるオブジェクトのコレクションを保持するイベントを処理します。
+**対話型の線形グラデーション** ページで線形グラデーションを対話的に試すことができます。 このページでは、この記事で説明したクラスを使用 `InteractivePage` して [**円弧を描画**](../../curves/arcs.md)します。 `InteractivePage` は、 [`TouchEffect`](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md) `TouchPoint` 指やマウスで移動できるオブジェクトのコレクションを保持するイベントを処理します。
 
 XAML ファイルは、をの `TouchEffect` 親にアタッチ `SKCanvasView` します。また、 `Picker` 列挙体の3つのメンバーの1つを選択できるを含み [`SKShaderTileMode`](xref:SkiaSharp.SKShaderTileMode) ます。
 
@@ -426,7 +426,7 @@ textBounds.Offset(xText, yText);
 
 ## <a name="animating-a-gradient"></a>グラデーションのアニメーション化
 
-グラデーションをアニメーション化するには、いくつかの方法があります。 1つの方法は、開始点と終了点をアニメーション化することです。 **グラデーションアニメーション**ページは、キャンバスの中央にある円内の2つの点を移動します。 この円の半径は、キャンバスの幅または高さの半分です (どちらか小さい方)。 この円では始点と終点が逆になっており、グラデーションはタイルモードで白から黒に `Mirror` なります。
+グラデーションをアニメーション化するには、いくつかの方法があります。 1つの方法は、開始点と終了点をアニメーション化することです。 **グラデーションアニメーション** ページは、キャンバスの中央にある円内の2つの点を移動します。 この円の半径は、キャンバスの幅または高さの半分です (どちらか小さい方)。 この円では始点と終点が逆になっており、グラデーションはタイルモードで白から黒に `Mirror` なります。
 
 [![グラデーションアニメーション](linear-gradient-images/GradientAnimation.png "グラデーションアニメーション")](linear-gradient-images/GradientAnimation-Large.png#lightbox)
 
@@ -551,7 +551,7 @@ public class GradientAnimationPage : ContentPage
 
 **レインボーグラデーション**
 
-**レインボーグラデーション**ページでは、キャンバスの左上隅から右下隅にレインボーが描画されます。 しかし、このレインボーグラデーションは実際のレインボーとは似ていません。 これは曲線ではなく、直線ですが、0 ~ 360 の色相値を循環することによって決定される8つの HSL (色合いと鮮やかさの明るさ) の色に基づいています。
+**レインボーグラデーション** ページでは、キャンバスの左上隅から右下隅にレインボーが描画されます。 しかし、このレインボーグラデーションは実際のレインボーとは似ていません。 これは曲線ではなく、直線ですが、0 ~ 360 の色相値を循環することによって決定される8つの HSL (色合いと鮮やかさの明るさ) の色に基づいています。
 
 ```csharp
 SKColor[] colors = new SKColor[8];
@@ -626,7 +626,7 @@ public class RainbowGradientPage : ContentPage
 
 これは興味深いイメージですが、意図したものではありません。 問題は、線状グラデーションを作成するときに、グラデーションの線がグラデーション線に垂直になることです。 グラデーション線は、図が上端と左側に接している点に基づいています。この線は、通常、右下隅に拡張される図形の端に垂直方向ではありません。 この方法は、キャンバスが正方形の場合にのみ機能します。
 
-適切なレインボーグラデーションを作成するには、グラデーション線がレインボーの端に垂直になっている必要があります。 これは、より複雑な計算です。 ベクターは、図形の長い側に平行に定義されている必要があります。 ベクターは、その辺に対して垂直になるように90°回転されます。 次に、を乗算することによって、図形の幅として長くなり `rainbowWidth` ます。 2つのグラデーションポイントは、図形の横にある点に基づいて計算され、その点とベクターを加算したものになります。 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルの**レインボーグラデーション**ページに表示されるコードを次に示します。
+適切なレインボーグラデーションを作成するには、グラデーション線がレインボーの端に垂直になっている必要があります。 これは、より複雑な計算です。 ベクターは、図形の長い側に平行に定義されている必要があります。 ベクターは、その辺に対して垂直になるように90°回転されます。 次に、を乗算することによって、図形の幅として長くなり `rainbowWidth` ます。 2つのグラデーションポイントは、図形の横にある点に基づいて計算され、その点とベクターを加算したものになります。 [**SkiaSharpFormsDemos**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルの **レインボーグラデーション** ページに表示されるコードを次に示します。
 
 ```csharp
 public class RainbowGradientPage : ContentPage
@@ -839,7 +839,7 @@ public class InfinityColorsPage : ContentPage
 
 反転されたテキストは、一番上に透明色が50% のグラデーションで色付けされます。 これらのレベルの透明度は、0x80 と0のアルファ値に関連付けられています。
 
-`PaintSurface`**リフレクションのグラデーション**ページのハンドラーは、テキストのサイズをキャンバスの幅の90% に拡大します。 次に `xText` 、との `yText` 値を計算し、水平方向にテキストを配置しますが、ページの垂直方向中央に対応するベースライン上に配置します。
+`PaintSurface`**リフレクションのグラデーション** ページのハンドラーは、テキストのサイズをキャンバスの幅の90% に拡大します。 次に `xText` 、との `yText` 値を計算し、水平方向にテキストを配置しますが、ページの垂直方向中央に対応するベースライン上に配置します。
 
 ```csharp
 public class ReflectionGradientPage : ContentPage

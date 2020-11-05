@@ -10,16 +10,16 @@ ms.date: 02/10/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: bf85bb3bf6f694aa5eefa8512b8391084228598e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: dc85f93110d2faec69ae42823a121b6d16fdfe7f
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563524"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367778"
 ---
 # <a name="layout-options-in-no-locxamarinforms"></a>レイアウトオプション Xamarin.Forms
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-layoutoptions)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-layoutoptions)
 
 _すべて Xamarin.Forms のビューには、LayoutOptions 型の水平オプションと垂直オプションのプロパティがあります。この記事では、各 LayoutOptions 値がビューの配置と展開に与える影響について説明します。_
 
@@ -53,7 +53,7 @@ _すべて Xamarin.Forms のビューには、LayoutOptions 型の水平オプ�
 > [!NOTE]
 > ビューの [`HorizontalOptions`](xref:Xamarin.Forms.View.HorizontalOptions) プロパティと [`VerticalOptions`](xref:Xamarin.Forms.View.VerticalOptions) プロパティの既定値は[`LayoutOptions.Fill`](xref:Xamarin.Forms.LayoutOptions.Fill) です。
 
-## <a name="alignment"></a>Alignment
+## <a name="alignment"></a>配置
 
 配置では、親レイアウトに未使用の領域が含まれている場合 (つまり、親のレイアウトがすべての子の合計サイズを超える場合)、親レイアウト内でビューがどのように配置されるかを制御します。
 
@@ -76,7 +76,7 @@ _すべて Xamarin.Forms のビューには、LayoutOptions 型の水平オプ�
 </StackLayout>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 Content = new StackLayout
@@ -124,7 +124,7 @@ Content = new StackLayout
 </StackLayout>
 ```
 
-同等の C# コードを次に示します。
+これに相当する C# コードを次に示します。
 
 ```csharp
 Content = new StackLayout

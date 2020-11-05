@@ -10,12 +10,12 @@ ms.date: 04/02/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 6cf4932c3265d1d66200ae12ba448a758586f11c
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: ee027399aec51bb7ae4fac15e9c706c65d3af235
+ms.sourcegitcommit: d1980b2251999224e71c1289e4b4097595b7e261
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563147"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92928634"
 ---
 # <a name="no-locxamarinforms-shell-navigation"></a>Xamarin.Forms シェルのナビゲーション
 
@@ -41,9 +41,9 @@ Xamarin.Forms シェルには、設定されたナビゲーション階層に従
 
 ナビゲーションは、移動先の URI を指定して、シェル アプリケーション内で実行されます。 ナビゲーション URI には、3 つの要素を含めることができます。
 
-- "*ルート*"。シェルの視覚階層の一部として存在するコンテンツへのパスを定義します。
-- "*ページ*"。 シェルの視覚階層に存在しないページは、シェル アプリケーション内の任意の場所からナビゲーション スタック上にプッシュできます。 たとえば、項目の詳細ページは、シェルの視覚階層には定義されませんが、必要に応じてナビゲーション スタック上にプッシュできます。
-- 1 つまたは複数の "*クエリ パラメーター*"。 クエリ パラメーターは、ナビゲーション中に移動先ページに渡すことができるパラメーターです。
+- " *ルート* "。シェルの視覚階層の一部として存在するコンテンツへのパスを定義します。
+- " *ページ* "。 シェルの視覚階層に存在しないページは、シェル アプリケーション内の任意の場所からナビゲーション スタック上にプッシュできます。 たとえば、項目の詳細ページは、シェルの視覚階層には定義されませんが、必要に応じてナビゲーション スタック上にプッシュできます。
+- 1 つまたは複数の " *クエリ パラメーター* "。 クエリ パラメーターは、ナビゲーション中に移動先ページに渡すことができるパラメーターです。
 
 ナビゲーション URI に 3 つすべての要素を含めると、構造は //route/page?queryParameters にようになります。
 
@@ -108,7 +108,7 @@ Routing.RegisterRoute("dogdetails", typeof(DogDetailPage));
 Routing.RegisterRoute("elephantdetails", typeof(ElephantDetailPage));
 ```
 
-この例では、シェルのサブクラスに定義さていない項目の詳細ページを、ルートとして登録します。 これらのページには、URI ベースのナビゲーションを使用して、アプリケーション内の任意の場所から移動できます。 このようなページのルートは、"*グローバル ルート*" と呼ばれます。
+この例では、シェルのサブクラスに定義さていない項目の詳細ページを、ルートとして登録します。 これらのページには、URI ベースのナビゲーションを使用して、アプリケーション内の任意の場所から移動できます。 このようなページのルートは、" *グローバル ルート* " と呼ばれます。
 
 > [!NOTE]
 > `Routing.RegisterRoute` メソッドを使ってルートが登録されたページは、必要に応じて、`Routing.UnRegisterRoute` メソッドを使って登録解除できます。
@@ -213,8 +213,8 @@ await Shell.Current.GoToAsync("../../route");
 
 | 形式 | 説明 |
 | --- | --- |
-| *route* または /*route* | 視覚階層にあるルートは、ナビゲーション スタック上にプッシュできません。 |
-| //*page* または ///*page* | 現在、グローバル ルートをナビゲーション スタック上の唯一のページにはできません。 そのため、グローバル ルートへの絶対ルーティングはサポートされていません。 |
+| *route* または / *route* | 視覚階層にあるルートは、ナビゲーション スタック上にプッシュできません。 |
+| //*page* または /// *page* | 現在、グローバル ルートをナビゲーション スタック上の唯一のページにはできません。 そのため、グローバル ルートへの絶対ルーティングはサポートされていません。 |
 
 これらのルート形式のいずれかを使用すると、`Exception` がスローされます。
 
@@ -254,19 +254,13 @@ await Shell.Current.GoToAsync("../../route");
 
 さらに、`ShellNavigatingEventArgs` クラスでは、ナビゲーションのキャンセルに使用できる `Cancel` メソッドを提供しています。
 
-> [!NOTE]
-> `Navigated` イベントは、`Shell` クラスにあるオーバーライド可能な `OnNavigating` メソッドによって発生します。
-
 また、`Shell` クラスでは、ナビゲーションが完了したときに発生する `Navigated` イベントも定義しています。 `Navigating` イベントに伴う `ShellNavigatedEventArgs` オブジェクトでは、次のプロパティを提供しています。
 
-| プロパティ | 種類 | 説明 |
+| プロパティ | Type | 説明 |
 |---|---|---|
 | `Current` | `ShellNavigationState` | 現在のページの URI。 |
 | `Previous`| `ShellNavigationState` | 前のページの URI。 |
 | `Source`  | `ShellNavigationSource` | 発生したナビゲーションの種類。 |
-
-> [!NOTE]
-> `Navigating` イベントは、`Shell` クラスにあるオーバーライド可能な `OnNavigated` メソッドによって発生します。
 
 `ShellNavigatedEventArgs` および `ShellNavigatingEventArgs` クラスの両方に、`ShellNavigationSource` 型の `Source` プロパティがあります。 この列挙体では、次の値を提供しています。
 

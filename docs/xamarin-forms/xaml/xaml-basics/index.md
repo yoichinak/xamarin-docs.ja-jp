@@ -11,16 +11,16 @@ ms.date: 10/25/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3d2620014c9554712c746b98de3b9a0eeaa20864
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 1c660c04e89c56f10435964425b2b20dbf5c8eb3
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562757"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93365867"
 ---
 # <a name="no-locxamarinforms-xaml-basics"></a>Xamarin.Forms XAML の基礎
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/xamlsamples)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/xamlsamples)
 
 拡張可能なアプリケーションマークアップ言語 (XAML) は、オブジェクトをインスタンス化および初期化し、それらのオブジェクトを親子階層で整理するためのプログラミングコードの代わりに、Microsoft によって作成された XML ベースの言語です。 XAML は .NET framework 内のいくつかのテクノロジに応用されていますが、Windows Presentation Foundation (WPF)、Silverlight、Windows ランタイム、およびユニバーサル Windows プラットフォーム (UWP) 内のユーザーインターフェイスのレイアウトを定義するのに最も多くのユーティリティが見つかりました。
 
@@ -52,9 +52,9 @@ XAML は基本的に XML ですが、XAML にはいくつかの固有の構文�
 
 これらの機能は XML 拡張機能では *ありません* 。 XAML は完全に有効な XML です。 ただし、これらの XAML 構文機能では、一意の方法で XML を使用します。 これらの詳細については、以下の記事で詳しく説明します。これについては、MVVM を実装するための XAML の使用の概要について説明します。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
-この記事では、に関する知識があることを前提としてい Xamarin.Forms ます。 また、この記事では、xml 名前空間宣言の使用方法、 *要素*、 *タグ*、 *属性*などの xml について理解していることも前提としています。
+この記事では、に関する知識があることを前提としてい Xamarin.Forms ます。 また、この記事では、xml 名前空間宣言の使用方法、 *要素* 、 *タグ* 、 *属性* などの xml について理解していることも前提としています。
 
 と XML に慣れている場合 Xamarin.Forms は、パート1の読み取りを開始 [します。XAML ではじめに](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)します。
 

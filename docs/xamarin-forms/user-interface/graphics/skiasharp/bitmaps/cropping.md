@@ -10,16 +10,16 @@ ms.date: 07/17/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 45634695050dc6f74a9b1617a2180481e3788d11
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 639b9db51d4a9f0bb0ddd55a3d35bcbda7e31962
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557323"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366465"
 ---
 # <a name="cropping-skiasharp-bitmaps"></a>トリミング (SkiaSharp ビットマップを)
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 オブジェクトをコンストラクターに渡す方法については、「 [**SkiaSharp ビットマップの作成と描画**](drawing.md) 」を参照して `SKBitmap` `SKCanvas` ください。 そのキャンバスで呼び出された描画メソッドを使用すると、グラフィックスがビットマップにレンダリングされます。 これらの描画メソッドにはが含ま `DrawBitmap` れています。つまり、この手法では、あるビットマップの一部またはすべてを別のビットマップに転送できます (変換が適用されている場合など)。
 
@@ -448,7 +448,7 @@ class PhotoCropperCanvasView : SKCanvasView
 
 ## <a name="hosting-the-photo-cropper-canvas-view"></a>Photo cropper canvas ビューのホスト
 
-トリミングロジックを処理する2つのクラスでは、 **[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーションの**写真トリミング**ページの処理がほとんどありません。 XAML ファイルは、 `Grid` `PhotoCropperCanvasView` と [ **完了** ] ボタンをホストするために、をインスタンス化します。
+トリミングロジックを処理する2つのクラスでは、 **[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーションの **写真トリミング** ページの処理がほとんどありません。 XAML ファイルは、 `Grid` `PhotoCropperCanvasView` と [ **完了** ] ボタンをホストするために、をインスタンス化します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -537,9 +537,9 @@ photoCropper = new PhotoCropperCanvasView(bitmap, 1.78f);
 
 Xamarin.Forms有名な14-15 パズルのバージョンは、 [_Mobile Apps Xamarin.Forms を作成する_](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md)本の22章にあり、 [**XamagonXuzzle**](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter22/XamagonXuzzle)としてダウンロードできます。 ただし、自分の写真ライブラリのイメージに基づいてパズルを追加すると、より楽しいものになります (多くの場合、難しくなります)。
 
-このバージョンの14-15 パズルは **[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーションに含まれており、 **写真パズル**というタイトルの一連のページで構成されています。
+このバージョンの14-15 パズルは **[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)** アプリケーションに含まれており、 **写真パズル** というタイトルの一連のページで構成されています。
 
-**PhotoPuzzlePage1**ファイルは、次の要素で構成されます `Button` 。
+**PhotoPuzzlePage1** ファイルは、次の要素で構成されます `Button` 。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -583,7 +583,7 @@ public partial class PhotoPuzzlePage1 : ContentPage
 
 次に、メソッドはに移動し `PhotoPuzzlePage2` 、選択されたビットマップをコンストラクターでに渡します。
 
-ライブラリから選択した写真は、写真ライブラリに表示されているようには向きませんが、回転または反転される可能性があります。 (これは、特に iOS デバイスの問題です)。そのため、では、 `PhotoPuzzlePage2` イメージを目的の向きに回転させることができます。 XAML ファイルには、 **90&#x00B0; Right** (時計回り)、 **90&#x00B0; Left** (反時計回り)、および **Done**というラベルが付いた3つのボタンが含まれています。
+ライブラリから選択した写真は、写真ライブラリに表示されているようには向きませんが、回転または反転される可能性があります。 (これは、特に iOS デバイスの問題です)。そのため、では、 `PhotoPuzzlePage2` イメージを目的の向きに回転させることができます。 XAML ファイルには、 **90&#x00B0; Right** (時計回り)、 **90&#x00B0; Left** (反時計回り)、および **Done** というラベルが付いた3つのボタンが含まれています。
 
 分離コードファイルは、 **[SkiaSharp ビットマップの作成と描画に関する](drawing.md#rotating-bitmaps)** 記事に示されているビットマップ回転ロジックを実装します。 ユーザーは、90画像を時計回りまたは反時計回りに90度回転できます。
 
@@ -652,7 +652,7 @@ public partial class PhotoPuzzlePage2 : ContentPage
 
 `PhotoPuzzlePage3` 写真のトリミングを許可します。 このプログラムのタイルの4×4のグリッドに分割するには、正方形のビットマップが必要です。
 
-**PhotoPuzzlePage3**ファイルには、、を `Label` `Grid` ホストする、 `PhotoCropperCanvasView` およびもう1つの**Done**ボタンが含まれています。
+**PhotoPuzzlePage3** ファイルには、、を `Label` `Grid` ホストする、 `PhotoCropperCanvasView` およびもう1つの **Done** ボタンが含まれています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -737,7 +737,7 @@ public partial class PhotoPuzzlePage3 : ContentPage
 }
 ```
 
-**Done**ボタンハンドラーは、トリミングされたビットマップの幅と高さ (これらの2つの値は同じである必要があります) を取得し、それを15個の個別のビットマップに分割します。それぞれの幅と高さは1/4 です。 (16 ビットマップの最後のビットマップは作成されません)。 `DrawBitmap` コピー元とコピー先の四角形を持つメソッドを使用すると、大きなビットマップのサブセットに基づいてビットマップを作成できます。
+**Done** ボタンハンドラーは、トリミングされたビットマップの幅と高さ (これらの2つの値は同じである必要があります) を取得し、それを15個の個別のビットマップに分割します。それぞれの幅と高さは1/4 です。 (16 ビットマップの最後のビットマップは作成されません)。 `DrawBitmap` コピー元とコピー先の四角形を持つメソッドを使用すると、大きなビットマップのサブセットに基づいてビットマップを作成できます。
 
 ## <a name="converting-to-no-locxamarinforms-bitmaps"></a>変換 ( Xamarin.Forms ビットマップに)
 
@@ -747,7 +747,7 @@ public partial class PhotoPuzzlePage3 : ContentPage
 ImageSource[] imgSources = new ImageSource[15];
 ```
 
-`ImageSource`Xamarin.Formsビットマップをカプセル化する基本型です。 幸い、SkiaSharp では SkiaSharp ビットマップからビットマップに変換でき Xamarin.Forms ます。 **SkiaSharp**アセンブリは、 [`SKBitmapImageSource`](xref:SkiaSharp.Views.Forms.SKBitmapImageSource) から派生するクラスを定義しますが、 `ImageSource` SkiaSharp オブジェクトに基づいて作成することもでき `SKBitmap` ます。 `SKBitmapImageSource` また、との間の変換も定義 `SKBitmapImageSource` `SKBitmap` し `SKBitmap` ます。これは、オブジェクトがビットマップとして配列に格納される方法です Xamarin.Forms 。
+`ImageSource`Xamarin.Formsビットマップをカプセル化する基本型です。 幸い、SkiaSharp では SkiaSharp ビットマップからビットマップに変換でき Xamarin.Forms ます。 **SkiaSharp** アセンブリは、 [`SKBitmapImageSource`](xref:SkiaSharp.Views.Forms.SKBitmapImageSource) から派生するクラスを定義しますが、 `ImageSource` SkiaSharp オブジェクトに基づいて作成することもでき `SKBitmap` ます。 `SKBitmapImageSource` また、との間の変換も定義 `SKBitmapImageSource` `SKBitmap` し `SKBitmap` ます。これは、オブジェクトがビットマップとして配列に格納される方法です Xamarin.Forms 。
 
 ```csharp
 imgSources[4 * row + col] = (SKBitmapImageSource)bitmap;

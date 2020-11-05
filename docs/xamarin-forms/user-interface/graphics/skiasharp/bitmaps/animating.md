@@ -10,16 +10,16 @@ ms.date: 07/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d9a96de5520a03b2ef51426be2c589c736ca2396
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: eeaf62c684100ff9fd5bb9ffd15162bdb4c6afd6
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562393"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366517"
 ---
 # <a name="animating-skiasharp-bitmaps"></a>アニメーション化 (SkiaSharp ビットマップを)
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)
 
 通常、SkiaSharp グラフィックスをアニメーション化するアプリケーション `InvalidateSurface` では、通常、 `SKCanvasView` 16 ミリ秒ごとに固定レートでが呼び出されます。 Surface を無効にすると、ハンドラーへの呼び出しがトリガーされ、 `PaintSurface` 表示が再描画されます。 ビジュアルが1秒間に60回再描画されると、スムーズにアニメーション化されているように見えます。
 
@@ -37,13 +37,13 @@ SkiaSharp でも同様の操作を行うことができます。 この記事で
 
 ## <a name="bitmap-animation"></a>ビットマップアニメーション
 
-マンデルブロセットは視覚的に魅力的ますが、computionally 時間がかかります。 (マンデルブロセットとここで使用されている計算の詳細については、ページ666以降の[ _ Xamarin.Forms Mobile Apps の作成_に関する第20章](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch20-Apr2016.pdf)を参照してください。 次の説明は、背景知識があることを前提としています。)
+マンデルブロセットは視覚的に魅力的ますが、computionally 時間がかかります。 (マンデルブロセットとここで使用されている計算の詳細については、ページ666以降の [ _Xamarin.Forms Mobile Apps の作成_ に関する第20章](https://xamarin.azureedge.net/developer/xamarin-forms-book/XamarinFormsBook-Ch20-Apr2016.pdf)を参照してください。 次の説明は、背景知識があることを前提としています。)
 
 [**マンデルブロアニメーション**](/samples/xamarin/xamarin-forms-samples/skiasharpforms-mandelanima)のサンプルでは、ビットマップアニメーションを使用して、マンデルブロセット内の固定ポイントの連続ズームをシミュレートします。 ズームインの後にズームアウトすると、サイクルが永久に繰り返されるか、プログラムが終了するまで繰り返されます。
 
-このプログラムは、アプリケーションローカルストレージに格納される最大50のビットマップを作成することによって、このアニメーションを準備します。 各ビットマップには、前のビットマップとして、複雑な平面の幅と高さが半分含まれています。 (プログラムでは、これらのビットマップは、整数 _ズームレベル_を表すものと呼ばれます)。次に、ビットマップが順に表示されます。 各ビットマップの拡大縮小はアニメーション化され、あるビットマップから別のビットマップに滑らかに進むことができます。
+このプログラムは、アプリケーションローカルストレージに格納される最大50のビットマップを作成することによって、このアニメーションを準備します。 各ビットマップには、前のビットマップとして、複雑な平面の幅と高さが半分含まれています。 (プログラムでは、これらのビットマップは、整数 _ズームレベル_ を表すものと呼ばれます)。次に、ビットマップが順に表示されます。 各ビットマップの拡大縮小はアニメーション化され、あるビットマップから別のビットマップに滑らかに進むことができます。
 
-_を使用した Mobile Apps の Xamarin.Forms 作成に関する_第20章で説明した最終的なプログラムと同様に、**マンデルブロアニメーション**でのマンデルブロセットの計算は、8つのパラメーターを持つ非同期メソッドです。 パラメーターには、複雑な中心点、およびその中心点を囲む複合平面の幅と高さが含まれます。 次の3つのパラメーターは、作成するビットマップのピクセル幅と高さ、および再帰計算の反復処理の最大数です。 `progress`パラメーターは、この計算の進行状況を表示するために使用されます。 `cancelToken`このプログラムでは、パラメーターは使用されません。
+_を使用した Mobile Apps の Xamarin.Forms 作成に関する_ 第20章で説明した最終的なプログラムと同様に、 **マンデルブロアニメーション** でのマンデルブロセットの計算は、8つのパラメーターを持つ非同期メソッドです。 パラメーターには、複雑な中心点、およびその中心点を囲む複合平面の幅と高さが含まれます。 次の3つのパラメーターは、作成するビットマップのピクセル幅と高さ、および再帰計算の反復処理の最大数です。 `progress`パラメーターは、この計算の進行状況を表示するために使用されます。 `cancelToken`このプログラムでは、パラメーターは使用されません。
 
 ```csharp
 static class Mandelbrot
@@ -130,7 +130,7 @@ class BitmapInfo
 }
 ```
 
-**マンデルブロアニメーション**の XAML ファイルには、、、およびという2つのビューが含まれてい `Label` `ProgressBar` `Button` `SKCanvasView` ます。
+**マンデルブロアニメーション** の XAML ファイルには、、、およびという2つのビューが含まれてい `Label` `ProgressBar` `Button` `SKCanvasView` ます。
 
 ```csharp
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -182,11 +182,11 @@ public partial class MainPage : ContentPage
 }
 ```
 
-場合によっては、 `COUNT` 値を50に変更して、アニメーションの全範囲を表示することをお勧めします。 50を超える値は役に立ちません。 ズームレベルが48の場合、または、倍精度浮動小数点数の解像度が、マンデルブロ集合の計算では不十分になります。 この問題については _、を使用した Xamarin.Forms Mobile Apps の作成_に関するページ684で説明されています。
+場合によっては、 `COUNT` 値を50に変更して、アニメーションの全範囲を表示することをお勧めします。 50を超える値は役に立ちません。 ズームレベルが48の場合、または、倍精度浮動小数点数の解像度が、マンデルブロ集合の計算では不十分になります。 この問題については _、を使用した Xamarin.Forms Mobile Apps の作成_ に関するページ684で説明されています。
 
-この `center` 値は非常に重要です。 これは、アニメーションズームの焦点です。 このファイルの3つの値は、ページ684での_Mobile Apps の作成に関する Xamarin.Forms _ 20 章の3番目のスクリーンショットで使用されていますが、その章のプログラムを試して、独自の値のいずれかを取得することができます。
+この `center` 値は非常に重要です。 これは、アニメーションズームの焦点です。 このファイルの3つの値は、ページ684での _Mobile Apps の作成に関する Xamarin.Forms_ 20 章の3番目のスクリーンショットで使用されていますが、その章のプログラムを試して、独自の値のいずれかを取得することができます。
 
-**マンデルブロアニメーション**のサンプルでは、これらの `COUNT` ビットマップをローカルアプリケーションストレージに格納します。 50ビットマップではデバイス上に 20 mb 以上のストレージが必要であるため、これらのビットマップが使用されているストレージの量を把握し、すべてを削除することが必要な場合があります。 クラスの下部には、次の2つのメソッドの目的が `MainPage` あります。
+**マンデルブロアニメーション** のサンプルでは、これらの `COUNT` ビットマップをローカルアプリケーションストレージに格納します。 50ビットマップではデバイス上に 20 mb 以上のストレージが必要であるため、これらのビットマップが使用されているストレージの量を把握し、すべてを削除することが必要な場合があります。 クラスの下部には、次の2つのメソッドの目的が `MainPage` あります。
 
 ```csharp
 public partial class MainPage : ContentPage
@@ -470,9 +470,9 @@ public partial class MainPage : ContentPage
 
 ## <a name="gif-animation"></a>GIF アニメーション
 
-グラフィックスインターチェンジ形式 (GIF) 仕様には、1つの GIF ファイルに連続して表示できるシーンの複数の連続フレームを含めることができる機能が含まれています (多くの場合ループで)。 これらのファイルは、 _アニメーション gif_と呼ばれます。 Web ブラウザーでは、アニメーション gif を再生できます。また、SkiaSharp を使用すると、アプリケーションはアニメーション GIF ファイルからフレームを抽出し、順番に表示することができます。
+グラフィックスインターチェンジ形式 (GIF) 仕様には、1つの GIF ファイルに連続して表示できるシーンの複数の連続フレームを含めることができる機能が含まれています (多くの場合ループで)。 これらのファイルは、 _アニメーション gif_ と呼ばれます。 Web ブラウザーでは、アニメーション gif を再生できます。また、SkiaSharp を使用すると、アプリケーションはアニメーション GIF ファイルからフレームを抽出し、順番に表示することができます。
 
-[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルには、DemonDeLuxe によって作成された**Newtons_cradle_animation_book_2.gif**という名前のアニメーション gif リソースが含まれており、Wikipedia の[ニュートンのクレードル](https://en.wikipedia.org/wiki/Newton%27s_cradle)ページからダウンロードされます。 **アニメーション gif**ページには、その情報を提供し、をインスタンス化する XAML ファイルが含まれてい `SKCanvasView` ます。
+[SkiaSharpFormsDemos](/samples/xamarin/xamarin-forms-samples/skiasharpforms-demos)サンプルには、DemonDeLuxe によって作成された **Newtons_cradle_animation_book_2.gif** という名前のアニメーション gif リソースが含まれており、Wikipedia の [ニュートンのクレードル](https://en.wikipedia.org/wiki/Newton%27s_cradle)ページからダウンロードされます。 **アニメーション gif** ページには、その情報を提供し、をインスタンス化する XAML ファイルが含まれてい `SKCanvasView` ます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

@@ -10,16 +10,16 @@ ms.date: 07/10/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 80b8dc663457316eef831c1e60894cc6b95e281e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 38a59c2e468873d0beb632b601ee59d8c94bf716
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91564044"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367115"
 ---
 # <a name="listview-fast-scrolling-on-android"></a>Android での ListView の高速スクロール
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-platformspecifics)
 
 この Android プラットフォーム固有のは、内のデータをすばやくスクロールできるようにするために使用され [`ListView`](xref:Xamarin.Forms.ListView) ます。 添付プロパティを値に設定することにより、XAML で使用 `ListView.IsFastScrollEnabled` され `boolean` ます。
 
@@ -59,7 +59,7 @@ listView.On<Android>().SetIsFastScrollEnabled(!listView.On<Android>().IsFastScro
 
 結果として、のデータの高速スクロールが有効になり [`ListView`](xref:Xamarin.Forms.ListView) 、スクロールつまみのサイズが変更されます。
 
-[![ListView FastScroll プラットフォーム固有](listview-fast-scrolling-images/fastscroll.png)](listview-fast-scrolling-images/fastscroll-large.png#lightbox "ListView FastScroll プラットフォーム固有")
+[![ListView FastScroll プラットフォーム固有](listview-fast-scrolling-images/fastscroll.png)](listview-fast-scrolling-images/fastscroll-large.png#lightbox "ListView FastScroll Platform-Specific")
 
 ## <a name="related-links"></a>関連リンク
 
