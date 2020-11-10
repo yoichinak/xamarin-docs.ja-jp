@@ -10,12 +10,12 @@ ms.date: 01/13/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 575169459433725ae3f3a7db675fc65caef1494e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: c89c6b50335405b56349e502f95b9d2975a04f73
+ms.sourcegitcommit: 145bd7550d19088c84949ecf5b1cc39002183234
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563446"
+ms.lasthandoff: 11/02/2020
+ms.locfileid: "93185501"
 ---
 # <a name="no-locxamarinforms-control-templates"></a>Xamarin.Forms のコントロール テンプレート
 
@@ -122,7 +122,7 @@ public class CardView : ContentView
 </ContentPage>
 ```
 
-[`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) がリソースとして宣言される場合、リソース ディクショナリで識別できるように、`x:Key` 属性を使用して指定したキーが必要です。 この例では、`CardViewControlTemplate` のルート要素は [`Frame`](xref:Xamarin.Forms.Frame) オブジェクトです。 `Frame` オブジェクトでは、`RelativeSource` マークアップ拡張機能を使用して、その `BindingContext` をテンプレートが適用されるランタイム オブジェクト インスタンスに設定します。これは、"*テンプレート化された親*" と呼ばれます。 `CardView` オブジェクトのビジュアル構造を定義するために、`Frame` オブジェクトには [`Grid`](xref:Xamarin.Forms.Grid)、`Frame`、[`Image`](xref:Xamarin.Forms.Image)、[`Label`](xref:Xamarin.Forms.Label)、および [`BoxView`](xref:Xamarin.Forms.BoxView) の組み合わせが使用されます。 このようなオブジェクトのバインド式を使うと、ルート `Frame` エレメントから `BindingContext` が継承されるため、`CardView` プロパティに対して解決されます。 `RelativeSource` マークアップ拡張機能の詳細については、「[Xamarin.Forms の相対的なバインディング](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)」を参照してください。
+[`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) がリソースとして宣言される場合、リソース ディクショナリで識別できるように、`x:Key` 属性を使用して指定したキーが必要です。 この例では、`CardViewControlTemplate` のルート要素は [`Frame`](xref:Xamarin.Forms.Frame) オブジェクトです。 `Frame` オブジェクトでは、`RelativeSource` マークアップ拡張機能を使用して、その `BindingContext` をテンプレートが適用されるランタイム オブジェクト インスタンスに設定します。これは、" *テンプレート化された親* " と呼ばれます。 `CardView` オブジェクトのビジュアル構造を定義するために、`Frame` オブジェクトには [`Grid`](xref:Xamarin.Forms.Grid)、`Frame`、[`Image`](xref:Xamarin.Forms.Image)、[`Label`](xref:Xamarin.Forms.Label)、および [`BoxView`](xref:Xamarin.Forms.BoxView) の組み合わせが使用されます。 このようなオブジェクトのバインド式を使うと、ルート `Frame` エレメントから `BindingContext` が継承されるため、`CardView` プロパティに対して解決されます。 `RelativeSource` マークアップ拡張機能の詳細については、「[Xamarin.Forms の相対的なバインディング](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)」を参照してください。
 
 ## <a name="consume-a-controltemplate"></a>ControlTemplate を使用する
 
@@ -172,12 +172,12 @@ public class CardView : ContentView
 `TemplateBinding` マークアップ拡張機能を使うと、[`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) 内にある要素のプロパティを、テンプレート化されたカスタム コントロールまたはテンプレート化されたページによって定義されたパブリック プロパティにバインドできます。 `TemplateBinding` を使うと、コントロールのプロパティをテンプレートのパラメーターとして機能させることができます。 そのため、テンプレート化されたカスタム コントロールまたはテンプレート化されたページのプロパティを設定すると、`TemplateBinding` が指定された要素にその値が渡されます。
 
 > [!IMPORTANT]
-> `TemplateBinding` マークアップ拡張機能は、`RelativeSource` マークアップ拡張機能を使用してテンプレート内のルート要素の `BindingContext` をテンプレート化された親に設定するという [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) の作成の代替手段です。 `TemplateBinding` マークアップ拡張機能では、`RelativeSource` のバインドは排除され、`Binding` 式は `TemplateBinding` 式に置き換えられます。
+> `TemplateBinding` マークアップ式を使用すると、前のコントロール テンプレートからの `RelativeSource` バインドを削除し、`Binding` 式を置き換えることができます。
 
 `TemplateBinding` マークアップ拡張機能を使うと、次のプロパティを定義できます。
 
 - `Path` (`string` 型)。プロパティのパス。
-- `Mode` (`BindingMode` 型)。"*ソース*" と "*ターゲット*" の間で変更が反映される方向。
+- `Mode` (`BindingMode` 型)。" *ソース* " と " *ターゲット* " の間で変更が反映される方向。
 - `Converter` (`IValueConverter` 型)。バインディング値コンバーター。
 - `ConverterParameter` (`object` 型)。バインディング値コンバーターへのパラメーター。
 - `StringFormat` (`string` 型)。バインディングの文字列形式。
@@ -253,16 +253,16 @@ public class CardView : ContentView
 
 この例では、`TemplateBinding` マークアップ拡張機能によって、各 `CardView` オブジェクトのプロパティに対するバインド式が解決されます。 次のスクリーンショットは、3 つの `CardView` オブジェクトに適用された `CardViewControlTemplate` を示します。
 
-[![iOS および Android 上のテンプレート化された CardView オブジェクトのスクリーンショット](control-template-images/templatebinding-controltemplate.png "テンプレート化された CardView オブジェクト")](control-template-images/templatebinding-controltemplate-large.png#lightbox "テンプレート化された CardView オブジェクト")
+[![テンプレート化された CardView オブジェクトのスクリーンショット](control-template-images/templatebinding-controltemplate.png "テンプレート化された CardView オブジェクト")](control-template-images/templatebinding-controltemplate-large.png#lightbox "テンプレート化された CardView オブジェクト")
 
 > [!IMPORTANT]
 > `TemplateBinding` マークアップ拡張機能を使用することは、テンプレートのルート要素の `BindingContext` を `RelativeSource` マークアップ拡張機能を使用してテンプレート化された親に設定し、`Binding` マークアップ拡張機能を使用して子オブジェクトのバインドを解決することと同等です。 実際、`TemplateBinding` マークアップ拡張機能を使用すると、`Source` が `RelativeBindingSource.TemplatedParent` である `Binding` が作成されます。
 
 ## <a name="apply-a-controltemplate-with-a-style"></a>スタイルを使用して ControlTemplate を適用する
 
-コントロール テンプレートは、スタイルを使用して適用することもできます。 これを実行するには、[`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) を使用する "*暗黙的*" または "*明示的*" なスタイルを作成します。
+コントロール テンプレートは、スタイルを使用して適用することもできます。 これを実行するには、 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) を使用する " *暗黙的* " または " *明示的* " なスタイルを作成します。
 
-次の XAML の例は、`CardViewControlTemplate` を使用する "*暗黙的*" なスタイルを示します。
+次の XAML の例は、`CardViewControlTemplate` を使用する " *暗黙的* " なスタイルを示します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -299,7 +299,7 @@ public class CardView : ContentView
 </ContentPage>
 ```
 
-この例では、"*暗黙的な*" [`Style`](xref:Xamarin.Forms.Style) は各 `CardView` オブジェクトに自動的に適用され、各 `CardView` の [`ControlTemplate`](xref:Xamarin.Forms.TemplatedView.ControlTemplate) プロパティは `CardViewControlTemplate` に設定されます。
+この例では、" *暗黙的な* " [`Style`](xref:Xamarin.Forms.Style) は各 `CardView` オブジェクトに自動的に適用され、各 `CardView` の [`ControlTemplate`](xref:Xamarin.Forms.TemplatedView.ControlTemplate) プロパティは `CardViewControlTemplate` に設定されます。
 
 スタイルの詳細については、[Xamarin.Forms のスタイル](~/xamarin-forms/user-interface/styles/index.md)に関するページを参照してください。
 
@@ -549,7 +549,7 @@ public partial class AccessTemplateElementPage : HeaderFooterPage
 
 この例では、`ControlTemplate` がインスタンス化されると、`changeThemeLabel` という [`Label`](xref:Xamarin.Forms.Label) オブジェクトが取得されます。 これで、`AccessTemplateElementPage` クラスで `changeThemeLabel` にアクセスしたり操作したりできるようになります。 次のスクリーンショットは、`Label` によって表示されるテキストが変更されたことを示します。
 
-[![iOS および Android 上のテンプレート ページ オブジェクトのスクリーンショット](control-template-images/get-named-element.png "テンプレート化された ContentPage")](control-template-images/get-named-element-large.png#lightbox "テンプレート化された ContentPage")
+[![テンプレート化されたページ オブジェクトのスクリーンショット](control-template-images/get-named-element.png "テンプレート化された ContentPage")](control-template-images/get-named-element-large.png#lightbox "テンプレート化された ContentPage")
 
 ## <a name="bind-to-a-viewmodel"></a>viewmodel にバインドする
 
@@ -625,13 +625,13 @@ public partial class AccessTemplateElementPage : HeaderFooterPage
 
 この例では、[`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) のルート要素は [`Frame`](xref:Xamarin.Forms.Frame) オブジェクトです。 `Frame` オブジェクトでは、`RelativeSource` マークアップ拡張機能を使用して、その `BindingContext` をテンプレート化された親に設定します。 `BindingContext` はルートの `Frame` 要素から継承されるため、`Frame` オブジェクトとその子のバインディング式は、`CardView` プロパティに対して解決されます。 次のスクリーンショットは、3 つの項目で構成される `People` コレクションを表示するページを示します。
 
-[![iOS および Android 上のテンプレート化された CardView オブジェクトのスクリーンショット](control-template-images/viewmodel-controltemplate.png "テンプレート化された CardView オブジェクト")](control-template-images/viewmodel-controltemplate-large.png#lightbox "テンプレート化された CardView オブジェクト")
+[![3 つのテンプレート化された CardView オブジェクトのスクリーンショット](control-template-images/viewmodel-controltemplate.png "テンプレート化された CardView オブジェクト")](control-template-images/viewmodel-controltemplate-large.png#lightbox "テンプレート化された CardView オブジェクト")
 
 [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) のオブジェクトはテンプレート化された親のプロパティにバインドされますが、コントロール テンプレート内の [`Button`](xref:Xamarin.Forms.Button) は、テンプレート化された親と、viewmodel 内の `DeletePersonCommand` の両方にバインドされます。 これは、バインディング コンテキストの種類が `PeopleViewModel` ([`StackLayout`](xref:Xamarin.Forms.StackLayout)) である祖先のバインディング コンテキストになるように、`Button.Command` プロパティによってバインディング ソースが再定義されているためです。 そのため、バインディング式の `Path` 部分によって `DeletePersonCommand` プロパティを解決できます。 ただし、`Button.CommandParameter` プロパティによってバインディング ソースが変更されることはなく、代わりに [`ControlTemplate`](xref:Xamarin.Forms.ControlTemplate) の親から継承されます。 そのため、`CommandParameter` プロパティは `CardView` の `CardTitle` プロパティにバインドされます。
 
 [`Button`](xref:Xamarin.Forms.Button) のバインディングの全体的な効果として、`Button` がタップされると、`PeopleViewModel` クラスの `DeletePersonCommand` が実行され、`CardName` プロパティの値が `DeletePersonCommand` に渡されるようになります。 その結果、指定された `CardView` がバインド可能なレイアウトから削除されます。
 
-[![iOS および Android 上のテンプレート化された CardView オブジェクトのスクリーンショット](control-template-images/viewmodel-itemdeleted.png "テンプレート化された CardView オブジェクト")](control-template-images/viewmodel-itemdeleted-large.png#lightbox "テンプレート化された CardView オブジェクト")
+[![2 つのテンプレート化された CardView オブジェクトのスクリーンショット](control-template-images/viewmodel-itemdeleted.png "テンプレート化された CardView オブジェクト")](control-template-images/viewmodel-itemdeleted-large.png#lightbox "テンプレート化された CardView オブジェクト")
 
 相対的なバインディングの詳細については、「[Xamarin.Forms の相対的なバインディング](~/xamarin-forms/app-fundamentals/data-binding/relative-bindings.md)」を参照してください。
 

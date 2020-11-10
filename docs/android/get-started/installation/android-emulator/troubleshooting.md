@@ -8,12 +8,12 @@ ms.technology: xamarin-android
 author: davidortinau
 ms.author: daortin
 ms.date: 08/27/2018
-ms.openlocfilehash: 34416145fcf66f28d80a35a7d4dbc9b2fc2c6351
-ms.sourcegitcommit: 4e399f6fa72993b9580d41b93050be935544ffaa
+ms.openlocfilehash: f82c80e431b125ce0a94ec653f41bfc7931f58bb
+ms.sourcegitcommit: d1980b2251999224e71c1289e4b4097595b7e261
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91454482"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92928556"
 ---
 # <a name="android-emulator-troubleshooting"></a>Android Emulator のトラブルシューティング
 
@@ -27,11 +27,11 @@ _この記事では、Android Emulator の構成および実行中に発生す�
 
 ### <a name="deployment-errors"></a>展開エラー
 
-エミュレーターでの APK のインストールの失敗、または Android Debug Bridge (**adb**) の実行の失敗に関するエラーが表示された場合は、Android SDK がエミュレーターに接続できることを確認してください。 エミュレーターの接続を確認するには、次の手順を実行します。
+エミュレーターでの APK のインストールの失敗、または Android Debug Bridge ( **adb** ) の実行の失敗に関するエラーが表示された場合は、Android SDK がエミュレーターに接続できることを確認してください。 エミュレーターの接続を確認するには、次の手順を実行します。
 
 1. **Android Device Manager** からエミュレーターを起動します (仮想デバイスを選択し、 **[開始]** をクリックします)。
 
-2. コマンド プロンプトを開き、**adb** がインストールされているフォルダーに移動します。 既定の場所に Android SDK がインストールされている場合、**adb** は **C:\\Program Files (x86)\\Android\\android-sdk\\platform-tools\\adb.exe** にあります。そうでない場合は、このパスをお使いのコンピューター上にある Android SDK の場所に変更します。
+2. コマンド プロンプトを開き、 **adb** がインストールされているフォルダーに移動します。 既定の場所に Android SDK がインストールされている場合、 **adb** は **C:\\Program Files (x86)\\Android\\android-sdk\\platform-tools\\adb.exe** にあります。そうでない場合は、このパスをお使いのコンピューター上にある Android SDK の場所に変更します。
 
 3. 次のコマンドを入力します。
 
@@ -46,11 +46,11 @@ _この記事では、Android Emulator の構成および実行中に発生す�
    emulator-5554   device
    ```
 
-5. この一覧にエミュレーターが表示されない場合は、**Android SDK マネージャー**を起動し、すべての更新プログラムを適用し、エミュレーターをもう一度起動してみてください。
+5. この一覧にエミュレーターが表示されない場合は、 **Android SDK マネージャー** を起動し、すべての更新プログラムを適用し、エミュレーターをもう一度起動してみてください。
 
 ### <a name="mmio-access-error"></a>MMIO アクセス エラー
 
-「**MMIO アクセス エラーが発生しました**」というメッセージが表示されたら、エミュレーターを再起動します。
+「 **MMIO アクセス エラーが発生しました** 」というメッセージが表示されたら、エミュレーターを再起動します。
 
 <a name="gps-win"></a>
 
@@ -88,7 +88,7 @@ _この記事では、Android Emulator の構成および実行中に発生す�
 
 このエラー メッセージが表示された場合は、ハードウェア アクセラレーションを確認して有効化する手順について、後述の「[ハードウェア アクセラレーションの問題](#accel-issues-win)」を参照してください。
 
-### <a name="acceleration-is-enabled-but-the-emulator-runs-too-slowly"></a>アクセラレーションは有効化されているが、エミュレーターの実行が遅すぎる 
+### <a name="acceleration-is-enabled-but-the-emulator-runs-too-slowly"></a>アクセラレーションは有効化されているが、エミュレーターの実行が遅すぎる
 
 この問題の一般的な原因は、仮想デバイス (AVD) で x86 ベースのイメージが使用されていないことです。 仮想デバイスを作成する (「[Android Device Manager による仮想デバイスの管理](~/android/get-started/installation/android-emulator/device-manager.md)」を参照) ときに、必ず x86 ベースのイメージを選択してください。
 
@@ -104,11 +104,11 @@ _この記事では、Android Emulator の構成および実行中に発生す�
 "C:\Program Files (x86)\Android\android-sdk\emulator\emulator-check.exe" accel
 ```
 
-このコマンドでは、Android SDK が既定の場所 (**C:\\Program Files (x86)\\Android\\android-sdk**) にインストールされていることを前提としています。そうでない場合は、上記のパスをご使用のコンピューター上にある Android SDK の場所に変更します。
+このコマンドでは、Android SDK が既定の場所 ( **C:\\Program Files (x86)\\Android\\android-sdk** ) にインストールされていることを前提としています。そうでない場合は、上記のパスをご使用のコンピューター上にある Android SDK の場所に変更します。
 
 ### <a name="hardware-acceleration-not-available"></a>ハードウェア アクセラレーションが使用できない
 
-Hyper-V が使用可能な場合、**emulator-check.exe accel** コマンドから次の例のようなメッセージが返されます。
+Hyper-V が使用可能な場合、 **emulator-check.exe accel** コマンドから次の例のようなメッセージが返されます。
 
 ```cmd
 HAXM is not installed, but Windows Hypervisor Platform is available.
@@ -130,7 +130,7 @@ HAXM is not installed on this machine
 
 ### <a name="incorrect-bios-settings"></a>不適切な BIOS 設定
 
-BIOS がハードウェア アクセラレーションをサポートするように適切に構成されていないと、**emulator-check.exe accel** コマンドを実行したときに、次の例のようなメッセージが表示されます。
+BIOS がハードウェア アクセラレーションをサポートするように適切に構成されていないと、 **emulator-check.exe accel** コマンドを実行したときに、次の例のようなメッセージが表示されます。
 
 ```cmd
 VT feature disabled in BIOS/UEFI
@@ -148,7 +148,7 @@ VT feature disabled in BIOS/UEFI
 
 場合によっては、 **[Windows の機能の有効化または無効化]** ダイアログで **[Hyper-V]** と **[Windows Hypervisor Platform]** の両方を有効化すると、Hyper-V が正しく有効化されない場合があります。 Hyper-V が有効になっていることを確認するには、次の手順を実行します。
 
-1. Windows の検索ボックスに「**powershell**」と入力します。
+1. Windows の検索ボックスに「 **powershell** 」と入力します。
 
 2. 検索結果で **[Windows PowerShell]** を右クリックし、 **[管理者として実行]** を選択します。
 
@@ -166,7 +166,7 @@ VT feature disabled in BIOS/UEFI
     Description      : Provides services and management tools for creating and running virtual machines and their resources.
     RestartRequired  : Possible
     State            : Disabled
-    CustomProperties : 
+    CustomProperties :
     ```
 
 4. PowerShell コンソールで、次のコマンドを入力します。
@@ -183,7 +183,7 @@ VT feature disabled in BIOS/UEFI
     Description      : Enables virtualization software to run on the Windows hypervisor
     RestartRequired  : Possible
     State            : Disabled
-    CustomProperties : 
+    CustomProperties :
     ```
 
 Hyper-V および HypervisorPlatform のいずれかまたは両方が有効になっていない場合は、次の PowerShell コマンドを使用して有効にします。
@@ -193,7 +193,7 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 Enable-WindowsOptionalFeature -Online -FeatureName HypervisorPlatform -All
 ```
 
-これらのコマンドが完了したら、再起動します。 
+これらのコマンドが完了したら、再起動します。
 
 Hyper-V を有効化する (Deployment Image Servicing and Management ツールを使用して Hyper-V を有効化する手法を含む) 詳細については、[Hyper-V のインストール](/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v)に関するページを参照してください。
 
@@ -230,7 +230,7 @@ SERVICE_NAME: intelhaxm
 
 HAXM が、仮想化を使用する他のテクノロジ (Hyper-V、Windows Device Guard、ウイルス対策ソフトウェア) と競合している可能性があります。
 
-- **Hyper-V** &ndash; **Windows 10 April 2018 Update (ビルド 1803)** より前のバージョンの Windows を使用しており、Hyper-V が有効になっている場合は、HAXM を有効化できるように、「[Hyper-V を無効にする](#disable-hyperv)」の手順に従ってください。
+- **Hyper-V** &ndash; **Windows 10 April 2018 Update (ビルド 1803)** より前のバージョンの Windows を使用しており、Hyper-V が有効になっている場合は、HAXM を有効化できるように、「 [Hyper-V を無効にする](#disable-hyperv)」の手順に従ってください。
 
 - **Device Guard** &ndash; Device Guard と Credential Guard により、Windows マシン上で Hyper-V を無効にできない可能性があります。 Device Guard と Credential Guard を無効にするには、「[Disabling Device Guard](#disable-devguard)」 (Device Guard を無効にする) を参照してください。
 
@@ -252,7 +252,7 @@ Windows PC 上で HAXM を使用する場合、BIOS 内で仮想化テクノロ�
 
 次の手順に従って、コントロール パネルから HYPER-V を無効にできます。
 
-1. Windows 検索ボックスに「**Windows の機能**」を入力し、検索結果で **[Windows の機能の有効化または無効化]** を選択します。
+1. Windows 検索ボックスに「 **Windows の機能** 」を入力し、検索結果で **[Windows の機能の有効化または無効化]** を選択します。
 
 2. **[Hyper-V]** をオフにします。
 
@@ -264,7 +264,7 @@ Windows PC 上で HAXM を使用する場合、BIOS 内で仮想化テクノロ�
 
 `Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Hypervisor`
 
-Intel HAXM および Microsoft HYPER-V の両方を同時にアクティブ化することはできません。 残念ながら、コンピューターを再起動せずに Hyper-V と HAXM を切り替える方法はありません。 
+Intel HAXM および Microsoft HYPER-V の両方を同時にアクティブ化することはできません。 残念ながら、コンピューターを再起動せずに Hyper-V と HAXM を切り替える方法はありません。
 
 Device Guard と Credential Guard が有効になっていると、上記の手順で HYPER-V を無効にできない場合があります。 HYPER-V を無効にできない場合 (または無効になっているように見えるが、HAXM のインストールがまだ失敗する場合) は、次のセクションの手順に従って、Device Guard と Credential Guard を無効にします。
 
@@ -272,27 +272,27 @@ Device Guard と Credential Guard が有効になっていると、上記の手�
 
 #### <a name="disabling-device-guard"></a>Device Guard の無効化
 
-Device Guard と Credential Guard により、Windows コンピューター上で Hyper-V を無効にできない場合があります。 この状況は多くの場合、所有している組織によって構成され、制御されている、ドメインに参加しているマシンの問題です。 Windows 10 で、次の手順を使用して、**Device Guard** が実行されているかどうかを確認します。
+Device Guard と Credential Guard により、Windows コンピューター上で Hyper-V を無効にできない場合があります。 この状況は多くの場合、所有している組織によって構成され、制御されている、ドメインに参加しているマシンの問題です。 Windows 10 で、次の手順を使用して、 **Device Guard** が実行されているかどうかを確認します。
 
-1. Windows 検索ボックスに「**システム情報**」と入力し、検索結果で **[システム情報]** を選択します。
+1. Windows 検索ボックスに「 **システム情報** 」と入力し、検索結果で **[システム情報]** を選択します。
 
-2. **[システムの概要]** で、 **[Device Guard 仮想化ベースのセキュリティ]** があり、**実行**状態になっているかどうかを確認します。
+2. **[システムの概要]** で、 **[Device Guard 仮想化ベースのセキュリティ]** があり、 **実行** 状態になっているかどうかを確認します。
 
    [![Device Guard があり、実行されている](troubleshooting-images/win/04-device-guard-sml.png)](troubleshooting-images/win/04-device-guard.png#lightbox)
 
 Device Guard が有効になっている場合は、次の手順に従って無効にします。
 
-1. 前のセクションで説明したように、( **[Windows の機能の有効化または無効化**] の下で) **HYPER-V** が無効になっていることを確認します。
+1. 前のセクションで説明したように、( **[Windows の機能の有効化または無効化** ] の下で) **HYPER-V** が無効になっていることを確認します。
 
-2. Windows 検索ボックスで、「**gpedit.msc**」を入力し、検索結果で **[グループ ポリシーの編集]** を選択します。 この手順により**ローカル グループ ポリシー エディター**が起動します。
+2. Windows 検索ボックスで、「 **gpedit.msc** 」を入力し、検索結果で **[グループ ポリシーの編集]** を選択します。 この手順により **ローカル グループ ポリシー エディター** が起動します。
 
-3. **ローカル グループ ポリシー エディター**で、 **[コンピューターの構成]、[管理用テンプレート]、[システム]、[Device Guard]** の順に移動します。
+3. **ローカル グループ ポリシー エディター** で、 **[コンピューターの構成]、[管理用テンプレート]、[システム]、[Device Guard]** の順に移動します。
 
    [![ローカル グループ ポリシー エディターでの Device Guard](troubleshooting-images/win/05-group-policy-editor-sml.png)](troubleshooting-images/win/05-group-policy-editor.png#lightbox)
 
-4. (上記のように) **[仮想化ベースのセキュリティを有効にする]** を **[無効]** に変更し、**ローカル グループ ポリシー エディター**を終了します。
+4. (上記のように) **[仮想化ベースのセキュリティを有効にする]** を **[無効]** に変更し、 **ローカル グループ ポリシー エディター** を終了します。
 
-5. Windows 検索ボックスに「**cmd**」を入力します。 検索結果に **[コマンド プロンプト]** が表示されたら、 **[コマンド プロンプト]** を右クリックして **[管理者として実行]** を選択します。
+5. Windows 検索ボックスに「 **cmd** 」を入力します。 検索結果に **[コマンド プロンプト]** が表示されたら、 **[コマンド プロンプト]** を右クリックして **[管理者として実行]** を選択します。
 
 6. 次のコマンドをコピーしてコマンド プロンプト ウィンドウに貼り付けます (ドライブ **Z:** が使用中の場合は、代わりに使用する未使用のドライブ文字を選択してください)。
 
@@ -323,7 +323,7 @@ HYPER-V がまだ無効になっていない場合は、ドメインに参加し
 
 ### <a name="starting-the-emulator-from-the-command-line"></a>コマンド ラインから Android Emulator を起動する
 
-エミュレーターがまだ実行されていない場合は、コマンド ラインから (Visual Studio 内からではなく) 起動してその出力を表示できます。 通常、Android Emulator AVD イメージは、次の場所に格納されます (*ユーザー名*をご自分の Windows ユーザー名に置き換えます)。
+エミュレーターがまだ実行されていない場合は、コマンド ラインから (Visual Studio 内からではなく) 起動してその出力を表示できます。 通常、Android Emulator AVD イメージは、次の場所に格納されます ( *ユーザー名* をご自分の Windows ユーザー名に置き換えます)。
 
 **C:\\Users\\*ユーザー名*\\.android\\avd**
 
@@ -333,7 +333,7 @@ AVD のフォルダー名を渡すことで、この場所から AVD イメー�
 "C:\Program Files (x86)\Android\android-sdk\emulator\emulator.exe" -partition-size 512 -no-boot-anim -verbose -feature WindowsHypervisorPlatform -avd Pixel_API_27 -prop monodroid.avdname=Pixel_API_27
 ```
 
-この例では、Android SDK が既定の場所 (**C:\\Program Files (x86)\\Android\\android-sdk**) にインストールされていることを前提としています。そうでない場合は、上記のパスをご使用のコンピューター上にある Android SDK の場所に変更します。
+この例では、Android SDK が既定の場所 ( **C:\\Program Files (x86)\\Android\\android-sdk** ) にインストールされていることを前提としています。そうでない場合は、上記のパスをご使用のコンピューター上にある Android SDK の場所に変更します。
 
 このコマンドを実行すると、エミュレーターの起動中に多くの行の出力が生成されます。 具体的には、ハードウェア アクセラレーションが有効になっていて正常に機能している場合 (この例では、ハードウェア アクセラレーションに HAXM が使用されています) は、次の例のような行が出力されます。
 
@@ -346,7 +346,7 @@ emulator: CPU Acceleration status: HAXM version 6.2.1 (4) is installed and usabl
 
 多くの場合、デバイス マネージャー ログを表示して、エミュレーターの問題を診断できます。 これらのログは、次の場所に書き込まれます。
 
-**C:\\Users\\*ユーザー名*\\AppData\\Roaming\\XamarinDeviceManager**
+**C:\\Users\\< *ユーザー名* >\\AppData\\Local\\Xamarin\\Logs\\16.0**
 
 各 **DeviceManager.log** ファイルは、メモ帳などのテキスト エディターを使用して表示できます。 次のログ エントリの例は、コンピューターで HAXM が見つからなかったことを示しています。
 
@@ -363,11 +363,11 @@ Component Intel x86 Emulator Accelerator (HAXM installer) r6.2.1 [Extra: (Intel 
 
 ### <a name="deployment-errors"></a>展開エラー
 
-エミュレーターでの APK のインストールの失敗、または Android Debug Bridge (**adb**) の実行の失敗に関するエラーが表示された場合は、Android SDK がエミュレーターに接続できることを確認してください。 接続を確認するには、次の手順を実行します。
+エミュレーターでの APK のインストールの失敗、または Android Debug Bridge ( **adb** ) の実行の失敗に関するエラーが表示された場合は、Android SDK がエミュレーターに接続できることを確認してください。 接続を確認するには、次の手順を実行します。
 
 1. **Android Device Manager** からエミュレーターを起動します (仮想デバイスを選択し、 **[開始]** をクリックします)。
 
-2. コマンド プロンプトを開き、**adb** がインストールされているフォルダーに移動します。 既定の場所に Android SDK がインストールされている場合、**adb** は **~/Library/Developer/Xamarin/android-sdk-macosx/platform-tools/adb** にあります。そうでない場合は、このパスをご使用のコンピューター上にある Android SDK の場所に変更します。
+2. コマンド プロンプトを開き、 **adb** がインストールされているフォルダーに移動します。 既定の場所に Android SDK がインストールされている場合、 **adb** は **~/Library/Developer/Xamarin/android-sdk-macosx/platform-tools/adb** にあります。そうでない場合は、このパスをご使用のコンピューター上にある Android SDK の場所に変更します。
 
 3. 次のコマンドを入力します。
 
@@ -382,11 +382,11 @@ Component Intel x86 Emulator Accelerator (HAXM installer) r6.2.1 [Extra: (Intel 
    emulator-5554   device
    ```
 
-5. この一覧にエミュレーターが表示されない場合は、**Android SDK マネージャー**を起動し、すべての更新プログラムを適用し、エミュレーターをもう一度起動してみてください。
+5. この一覧にエミュレーターが表示されない場合は、 **Android SDK マネージャー** を起動し、すべての更新プログラムを適用し、エミュレーターをもう一度起動してみてください。
 
 ### <a name="mmio-access-error"></a>MMIO アクセス エラー
 
-「**MMIO アクセス エラーが発生しました**」が表示されたら、エミュレーターを再起動します。
+「 **MMIO アクセス エラーが発生しました** 」が表示されたら、エミュレーターを再起動します。
 
 <a name="gps-mac"></a>
 
@@ -418,9 +418,9 @@ Component Intel x86 Emulator Accelerator (HAXM installer) r6.2.1 [Extra: (Intel 
 
 ### <a name="hardware-acceleration-is-not-enabled"></a>ハードウェア アクセラレーションが有効化されていない
 
-ハードウェア アクセラレーションが有効化されていない場合、アプリを Android Emulator に展開するときに、「**デバイスはアクセラレータなしで実行されます**」といったメッセージがポップアップ表示されることがあります。 ご使用のコンピューターでハードウェア アクセラレーションが有効化されているかどうかわからない場合 (またはどのテクノロジがアクセラレーションを提供しているかを確認したい場合) は、ハードウェア アクセラレーションを確認して有効化する手順について、後述の「[ハードウェア アクセラレーションの問題](#accel-issues-mac)」を参照してください。
+ハードウェア アクセラレーションが有効化されていない場合、アプリを Android Emulator に展開するときに、「 **デバイスはアクセラレータなしで実行されます** 」といったメッセージがポップアップ表示されることがあります。 ご使用のコンピューターでハードウェア アクセラレーションが有効化されているかどうかわからない場合 (またはどのテクノロジがアクセラレーションを提供しているかを確認したい場合) は、ハードウェア アクセラレーションを確認して有効化する手順について、後述の「[ハードウェア アクセラレーションの問題](#accel-issues-mac)」を参照してください。
 
-### <a name="acceleration-is-enabled-but-the-emulator-runs-too-slowly"></a>アクセラレーションは有効化されているが、エミュレーターの実行が遅すぎる 
+### <a name="acceleration-is-enabled-but-the-emulator-runs-too-slowly"></a>アクセラレーションは有効化されているが、エミュレーターの実行が遅すぎる
 
 この問題の一般的な原因は、仮想デバイスで x86 ベースのイメージを使用していないことです。 仮想デバイスを作成する (「[Android Device Manager による仮想デバイスの管理](~/android/get-started/installation/android-emulator/device-manager.md)」を参照) ときに、必ず x86 ベースのイメージを選択してください。
 

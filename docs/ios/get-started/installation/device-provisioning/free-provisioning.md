@@ -7,21 +7,21 @@ ms.technology: xamarin-ios
 author: davidortinau
 ms.author: daortin
 ms.date: 07/16/2018
-ms.openlocfilehash: 951b019a4a0bf503629b6ac63853bd5b1c818bce
-ms.sourcegitcommit: b0ea451e18504e6267b896732dd26df64ddfa843
+ms.openlocfilehash: 8bb67b11543fedb628298d6dc467ebdca9da17c8
+ms.sourcegitcommit: d1980b2251999224e71c1289e4b4097595b7e261
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "73022757"
+ms.lasthandoff: 10/29/2020
+ms.locfileid: "92928543"
 ---
 # <a name="free-provisioning-for-xamarinios-apps"></a>Xamarin.iOS アプリの無料プロビジョニング
 
-無料プロビジョニングを使用すると、Xamarin.iOS の開発者は **Apple Developer Program** に参加**することなく**、iOS デバイス上でアプリの展開およびテストができます。
+無料プロビジョニングを使用すると、Xamarin.iOS の開発者は **Apple Developer Program** に参加 **することなく** 、iOS デバイス上でアプリの展開およびテストができます。
 シミュレーター テストは便利で使いやすいですが、アプリが実際のメモリ、ストレージ、ネットワーク接続の制約下で正しく機能することを確認するため、実際の iOS デバイスでテストすることが重要です。
 
 無料プロビジョニングを使用してアプリをデバイスに展開するには:
 
-- Xcode を使用して、必要な*署名 ID* (開発者の証明書と秘密キー) と*プロビジョニング プロファイル* (明示的なアプリ ID と接続されている iOS デバイスの UDID を含む) を作成します。
+- Xcode を使用して、必要な *署名 ID* (開発者の証明書と秘密キー) と *プロビジョニング プロファイル* (明示的なアプリ ID と接続されている iOS デバイスの UDID を含む) を作成します。
 - Xamarin.iOS アプリケーションを展開するには、Visual Studio for Mac または Visual Studio 2019 の Xcode で作成された署名 ID とプロビジョニング プロファイルを使用します。
 
 > [!IMPORTANT]
@@ -33,9 +33,9 @@ ms.locfileid: "73022757"
 
 - 使用する Apple ID が Apple Developer Program に接続されている必要はありません。
 - Xamarin.iOS アプリが、ワイルドカードのアプリ ID ではなく明示的なアプリ ID を使用する必要があります。
-- Xamarin.iOS アプリで使用するバンドル ID は一意である必要があり、別のアプリで過去に使用したものは使用できません。 無料プロビジョニングで使用されたバンドル ID は再利用**できません**。
+- Xamarin.iOS アプリで使用するバンドル ID は一意である必要があり、別のアプリで過去に使用したものは使用できません。 無料プロビジョニングで使用されたバンドル ID は再利用 **できません** 。
 - 既にアプリを配布している場合、そのアプリは無料プロビジョニングで展開できません。
-- アプリで App Services を使用している場合は、[デバイス プロビジョニング](~/ios/get-started/installation/device-provisioning/index.md#provisioning-for-application-services)のガイドを参照してプロビジョニング プロファイルを作成する必要があります。 
+- アプリで App Services を使用している場合は、[デバイス プロビジョニング](~/ios/get-started/installation/device-provisioning/index.md#provisioning-for-application-services)のガイドを参照してプロビジョニング プロファイルを作成する必要があります。
 
 無料プロビジョニングに関連する制限事項についてはこのドキュメントの「[制限事項](#limitations)」のセクションを、iOS アプリケーションの配布については、[アプリ配布のガイド](~/ios/deploy-test/app-distribution/index.md)を参照してください。
 
@@ -62,8 +62,8 @@ ms.locfileid: "73022757"
 
     ![Xcode ビルド スキームを選択する](free-provisioning-images/xcodescheme.png "Xcode ビルド スキームを選択する")
 
-9. Xcode の**プロジェクト ナビゲーター**で最上位のノードを選択して、アプリのプロジェクトの設定を開きます。
-10. **[General]\(一般\)、[Identity]\(ID\)** の下で、**バンドル ID** が Xamarin.iOS アプリのバンドル ID と "_完全に一致している_" ことを確認します。
+9. Xcode の **プロジェクト ナビゲーター** で最上位のノードを選択して、アプリのプロジェクトの設定を開きます。
+10. **[General]\(一般\) > [Identity]\(ID\)** で、 **[Bundle Identifier]\(バンドル ID\)** が Info.plist で見つかる Xamarin.iOS アプリのバンドル ID と " _完全に一致している_ " ことを確認します。
 
     ![バンドル ID を設定する](free-provisioning-images/launchapp5.png "バンドル ID を設定する")
 
@@ -95,8 +95,8 @@ ms.locfileid: "73022757"
 4. **[iOS バンドル署名]** ボタンをクリックします。 を追加します。
 5. **[構成]** に **[デバッグ]** を選択します。
 6. **[プラットフォーム]** に **[iPhone]** を選択します。
-7. Xcode で作成された**署名 ID** を選択します。
-8. Xcode で作成された**プロビジョニング プロファイル**を選択します。
+7. Xcode で作成された **署名 ID** を選択します。
+8. Xcode で作成された **プロビジョニング プロファイル** を選択します。
 
     ![署名 ID とプロビジョニング プロファイルを設定する](free-provisioning-images/launchapp8.png "署名 ID とプロビジョニング プロファイルを設定する")
 
@@ -110,14 +110,14 @@ ms.locfileid: "73022757"
 
 1. Visual Studio 2019 または Visual Studio 2017 が [Mac ビルド ホストとペアリング](~/ios/get-started/installation/windows/connecting-to-mac/index.md)されていることを確認します。
 2. iOS デバイスを USB 経由または[ワイヤレス](~/ios/deploy-test/wireless-deployment.md)で Mac ビルド ホストに接続します。
-3. Visual Studio 2019 または Visual Studio 2017 の**ソリューション エクスプローラー**で、Xamarin.iOS プロジェクトを右クリックし、 **[プロパティ]** を選択します。
+3. Visual Studio 2019 または Visual Studio 2017 の **ソリューション エクスプローラー** で、Xamarin.iOS プロジェクトを右クリックし、 **[プロパティ]** を選択します。
 4. **[iOS バンドル署名]** に移動します。
 5. **[構成]** に **[デバッグ]** を選択します。
 6. **[プラットフォーム]** に **[iPhone]** を選択します。
 7. **[手動プロビジョニング]** を選択します。
-8. Xcode で作成された**署名 ID** を選択します。
-9. Xcode で作成された**プロビジョニング プロファイル**を選択します。
-    
+8. Xcode で作成された **署名 ID** を選択します。
+9. Xcode で作成された **プロビジョニング プロファイル** を選択します。
+
     ![署名 ID とプロビジョニング プロファイルを設定する](free-provisioning-images/setprofile-w157.png "署名 ID とプロビジョニング プロファイルを設定する")
 
     > [!TIP]
@@ -130,10 +130,10 @@ ms.locfileid: "73022757"
 
 ## <a name="limitations"></a>制限事項
 
-Apple は、無料プロビジョニングを使用して iOS デバイスでアプリケーションを実行できるタイミングと方法について複数の制限を課し、*開発者自身*のデバイスにのみ展開できるように確保しています。
+Apple は、無料プロビジョニングを使用して iOS デバイスでアプリケーションを実行できるタイミングと方法について複数の制限を課し、 *開発者自身* のデバイスにのみ展開できるように確保しています。
 
 - iTunes Connect へのアクセスが制限されるので、アプリケーションを無料プロビジョニングする開発者は、App Store と TestFlight への発行などのサービスを使用できません。 アドホック配布または社内配布を利用するには、Apple Developer アカウント (法人または個人) が必要です。
-- 無料プロビジョニングで作成したプロビジョニング プロファイルは 1 週間後、署名 ID は 1 年後に期限切れになります。 
+- 無料プロビジョニングで作成したプロビジョニング プロファイルは 1 週間後、署名 ID は 1 年後に期限切れになります。
 - Xcode は明示的なアプリ ID のプロビジョニング プロファイルのみを作成するため、インストールするすべてのアプリについて[前述](#testing-on-device-with-free-provisioning)の手順を実行する必要があります。
 - 無料プロビジョニングでは、ほとんどのアプリケーション サービスのプロビジョニングを使用できません。 これには、Apple Pay、Game Center、iCloud、アプリ内購入、プッシュ通知、および Wallet が含まれます。 Apple の「[Supported capabilities (iOS)](https://help.apple.com/developer-account/#/dev21218dfd6)」(サポートされている機能 (iOS)) ガイドに、すべての機能のリストを提供しています。 アプリケーション サービスで使用するアプリをプロビジョニングする方法については、[機能の使用](~/ios/deploy-test/provisioning/capabilities/index.md)のガイドを参照してください。
 
