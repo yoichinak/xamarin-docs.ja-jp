@@ -10,16 +10,16 @@ ms.date: 08/05/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c014396f9670ece93295c2c8da1738f9dc7dae9e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 103839c7016b7e9776e80f3f3459f8dc92b3bcbb
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555984"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371652"
 ---
 # <a name="passing-effect-parameters-as-attached-properties"></a>エフェクトのパラメーターを添付プロパティとして渡す
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-shadoweffectruntimechange)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/effects-shadoweffectruntimechange)
 
 _添付プロパティは、実行時のプロパティの変更に応答するエフェクトのパラメーターの定義に使用できます。この記事では、添付プロパティを使用してエフェクトにパラメーターを渡す方法と、実行時にパラメーターを変更する方法を示します。_
 
@@ -164,7 +164,7 @@ ShadowEffect.SetColor (label, Color.Teal);
 
 ### <a name="consuming-the-effect-with-a-style"></a>スタイルでのエフェクトの使用
 
-添付プロパティをコントロールに追加することで使用できるエフェクトは、スタイルでも使用できます。 次の XAML コード例は、[`Label`](xref:Xamarin.Forms.Label) コントロールに適用できる、影エフェクトの "*明示的な*" スタイルを示します。
+添付プロパティをコントロールに追加することで使用できるエフェクトは、スタイルでも使用できます。 次の XAML コード例は、 [`Label`](xref:Xamarin.Forms.Label) コントロールに適用できる、影エフェクトの " *明示的な* " スタイルを示します。
 
 ```xaml
 <Style x:Key="ShadowEffectStyle" TargetType="Label">

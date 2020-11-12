@@ -10,22 +10,22 @@ ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ff9f44ad790f3acda1e855f3308942bb702e66ee
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 595eda84026a9b609f7bd0dadb72fdc9ac762a34
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563901"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367240"
 ---
 # <a name="accessing-the-devices-video-library"></a>デバイスのビデオ ライブラリへのアクセス
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 多くの最新のモバイル デバイスおよびデスクトップ コンピューターには、デバイスのカメラを使用してビデオを録画する機能があります。 ユーザーが作成するビデオは、デバイスにファイルとして格納されます。 これらのファイルは、イメージ ライブラリから取得して、他のビデオと同様、`VideoPlayer` クラスで再生できます。
 
 ## <a name="the-photo-picker-dependency-service"></a>フォト ピッカー依存関係サービス
 
-各プラットフォームには、ユーザーがデバイスのイメージ ライブラリから写真またはビデオを選択できる機能が含まれています。 デバイスのイメージ ライブラリからビデオを再生するには、まず、各プラットフォームでイメージ ピッカーを起動する依存関係サービスを構築します。 次に説明する依存関係サービスは、記事「[**Picking a Photo from the Picture Library**](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)」(画像ライブラリから写真を選択する) で定義されているサービスと非常によく似ています。ただし、ビデオ ピッカーは、`Stream` オブジェクトではなくファイル名を返します。
+各プラットフォームには、ユーザーがデバイスのイメージ ライブラリから写真またはビデオを選択できる機能が含まれています。 デバイスのイメージ ライブラリからビデオを再生するには、まず、各プラットフォームでイメージ ピッカーを起動する依存関係サービスを構築します。 次に説明する依存関係サービスは、記事「 [**Picking a Photo from the Picture Library**](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md)」(画像ライブラリから写真を選択する) で定義されているサービスと非常によく似ています。ただし、ビデオ ピッカーは、`Stream` オブジェクトではなくファイル名を返します。
 
 .NET Standard ライブラリ プロジェクトでは、この依存関係サービス用に `IVideoPicker` という名前のインターフェイスが定義されます。
 
@@ -149,7 +149,7 @@ namespace VideoPlayerDemos.Droid
 }
 ```
 
-`MainActivity` 内の `OnCreate` メソッドは、自身のインスタンスを静的な `Current` プロパティに格納します。 これにより、`IVideoPicker` の実装は、**Select Video** セレクタを開始するための `MainActivity` インスタンスを取得できます。
+`MainActivity` 内の `OnCreate` メソッドは、自身のインスタンスを静的な `Current` プロパティに格納します。 これにより、`IVideoPicker` の実装は、 **Select Video** セレクタを開始するための `MainActivity` インスタンスを取得できます。
 
 ```csharp
 using System;
@@ -191,7 +191,7 @@ namespace FormsVideoLibrary.Droid
 }
 ```
 
-`MainActivity` オブジェクトに追加されるのは、`FormsVideoLibrary` クラスをサポートするために通常のアプリケーション コードを変更する必要がある、[**VideoPlayerDemos**](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) ソリューションのコードのみです。
+`MainActivity` オブジェクトに追加されるのは、`FormsVideoLibrary` クラスをサポートするために通常のアプリケーション コードを変更する必要がある、 [**VideoPlayerDemos**](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) ソリューションのコードのみです。
 
 ### <a name="the-uwp-video-picker"></a>UWP ビデオ ピッカー
 
@@ -232,7 +232,7 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="invoking-the-dependency-service"></a>依存関係サービスの起動
 
-[**VideoPlayerDemos**](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) プログラムの **Play Library Video** ページは、ビデオ ピッカー依存関係サービスの使用方法の例を示します。 次の XAML ファイルには、`VideoPlayer` インスタンスと、**Show Video Library** というラベルの付いた `Button` が含まれます。
+[**VideoPlayerDemos**](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) プログラムの **Play Library Video** ページは、ビデオ ピッカー依存関係サービスの使用方法の例を示します。 次の XAML ファイルには、`VideoPlayer` インスタンスと、 **Show Video Library** というラベルの付いた `Button` が含まれます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

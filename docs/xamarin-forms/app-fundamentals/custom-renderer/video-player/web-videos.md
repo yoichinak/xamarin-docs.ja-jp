@@ -10,16 +10,16 @@ ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 113265ffd26fcb1daf1cc85867e55f3e8ebd091f
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 29d3dbc29424089b9e5c492395ccbadfa0a69ae7
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91557947"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373407"
 ---
 # <a name="playing-a-web-video"></a>Web ビデオの再生
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 `VideoPlayer` クラスでは、`AutoPlay` プロパティと共に、ビデオ ファイルのソースの指定に使用される `Source` プロパティが定義されます。 `AutoPlay` の既定の設定は `true` です。これは、`Source` の設定後、自動的にビデオの再生が開始されることを意味します。
 
@@ -452,7 +452,7 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="setting-a-url-source"></a>URL のソースの設定
 
-3 つのレンダラーでこれらのプロパティを実装すると、URL のソースからビデオを再生することができます。 [**VideoPlayDemos**](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) プログラムの「**Play Web Video**」(Web ビデオを再生する) ページは次の XAML ファイルによって定義されます。
+3 つのレンダラーでこれらのプロパティを実装すると、URL のソースからビデオを再生することができます。 [**VideoPlayDemos**](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) プログラムの「 **Play Web Video** 」(Web ビデオを再生する) ページは次の XAML ファイルによって定義されます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -466,7 +466,7 @@ namespace FormsVideoLibrary.UWP
 </ContentPage>
 ```
 
-`VideoSourceConverter` クラスは、文字列を `UriVideoSource` に変換します。 「**Play Web Video**」(Web ビデオを再生する) ページに移動すると、十分な量のデータがダウンロードされバッファされた時点でビデオの読み込みと再生が開始します。 このビデオの長さは、約 10 分です。
+`VideoSourceConverter` クラスは、文字列を `UriVideoSource` に変換します。 「 **Play Web Video** 」(Web ビデオを再生する) ページに移動すると、十分な量のデータがダウンロードされバッファされた時点でビデオの読み込みと再生が開始します。 このビデオの長さは、約 10 分です。
 
 [![Web ビデオを再生する](web-videos-images/playwebvideo-small.png "Web ビデオを再生する")](web-videos-images/playwebvideo-large.png#lightbox "Web ビデオを再生する")
 
@@ -514,7 +514,7 @@ namespace FormsVideoLibrary.UWP
 </Application>
 ```
 
-これらの他のムービーのいずれかを参照するには、**PlayWebVideo.xaml** ファイルの明示的な URL を `StaticResource` マークアップ拡張に置き換えます。この場合、`UriVideoSource` オブジェクトを作成するための `VideoSourceConverter` は不要です。
+これらの他のムービーのいずれかを参照するには、 **PlayWebVideo.xaml** ファイルの明示的な URL を `StaticResource` マークアップ拡張に置き換えます。この場合、`UriVideoSource` オブジェクトを作成するための `VideoSourceConverter` は不要です。
 
 ```xaml
 <video:VideoPlayer Source="{StaticResource ElephantsDream}" />

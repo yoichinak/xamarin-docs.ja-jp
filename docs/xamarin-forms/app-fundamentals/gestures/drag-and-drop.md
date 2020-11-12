@@ -10,18 +10,18 @@ ms.date: 10/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: af56e84598f73693a8cb0e93573b789a716c194a
-ms.sourcegitcommit: 1550019cd1e858d4d13a4ae6dfb4a5947702f24b
+ms.openlocfilehash: 30e77d4978e9a191c1ba19e80109f9854cc46f8f
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92897469"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375240"
 ---
 # <a name="add-drag-and-drop-gesture-recognizers"></a>ドラッグ アンド ドロップ ジェスチャ認識エンジンを追加する
 
 ![プレリリース API](~/media/shared/preview.png)
 
-[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-draganddropgesture/)
+[![サンプルのダウンロード](~/media/shared/download.png) サンプルをダウンロードします](/samples/xamarin/xamarin-forms-samples/workingwithgestures-draganddropgesture/)
 
 ドラッグ アンド ドロップ ジェスチャを使用すると、項目とそれに関連付けられているデータ パッケージを、連続するジェスチャを使用して、画面上のある位置から別の位置にドラッグできます。 ドラッグ アンド ドロップは 1 つのアプリケーション内で行うことも、あるアプリケーションで開始して別で終了することもできます。
 
@@ -80,7 +80,7 @@ Xamarin.Forms では、ドラッグ ジェスチャの認識は `DragGestureReco
 > [!TIP]
 > iOS、Android、UWP では、ドラッグ ジェスチャは長押しの後でドラッグすることによって開始されます。
 
-`DragGestureRecognizer` コマンドの使用例については、[サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-draganddropgesture/)を参照してください。
+`DragGestureRecognizer` コマンドの使用例については、[サンプル](/samples/xamarin/xamarin-forms-samples/workingwithgestures-draganddropgesture/)を参照してください。
 
 ## <a name="build-a-data-package"></a>データ パッケージを作成する
 
@@ -214,7 +214,7 @@ Xamarin.Forms では、ドロップ ジェスチャの認識は `DropGestureReco
 
 この例では、ドラッグ ソースが [`Image`](xref:Xamarin.Forms.Image) ドロップ ターゲットにドロップされると、ドラッグ ソースが [`ImageSource`](xref:Xamarin.Forms.ImageSource) である場合は、ドラッグ ソースがドロップ ターゲットにコピーされます。 これは、Xamarin.Forms によって、ドラッグされた画像とテキストが互換性のあるドロップ ターゲットに自動的にコピーされるためです。
 
-`DropGestureRecognizer` コマンドの使用例については、[サンプル](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-draganddropgesture/)を参照してください。
+`DropGestureRecognizer` コマンドの使用例については、[サンプル](/samples/xamarin/xamarin-forms-samples/workingwithgestures-draganddropgesture/)を参照してください。
 
 ## <a name="handle-the-dragover-event"></a>DragOver イベントを処理する
 

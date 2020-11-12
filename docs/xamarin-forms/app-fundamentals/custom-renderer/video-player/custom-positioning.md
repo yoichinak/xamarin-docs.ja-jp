@@ -10,16 +10,16 @@ ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 00b6617f754eb251eae0a7be9715deb840c33102
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 15529520668f4d6353fe99c13ddb2e6cc2801500
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562744"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367238"
 ---
 # <a name="custom-video-positioning"></a>カスタムのビデオ位置
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 各プラットフォームで実装されているトランスポート コントロールには、位置バーが含まれます。 このバーはスライダーまたはスクロール バーに似ており、ビデオの合計時間内の現在の位置を示します。 さらに、ユーザーは位置バーを操作して、ビデオ内の新しい位置へと前後に移動することができます。
 
@@ -73,7 +73,7 @@ namespace FormsVideoLibrary
 
 この記事で後述する `SetTimeToEnd` というメソッドを呼び出すプロパティ変更ハンドラーにも注意してください。
 
-`VideoPlayer` の `Source` プロパティが設定された直後には、ビデオの再生時間を*取得できません*。 基となるビデオ プレーヤーで再生時間が決定されるには、ビデオ ファイルの一部がダウンロードされる必要があります。
+`VideoPlayer` の `Source` プロパティが設定された直後には、ビデオの再生時間を *取得できません* 。 基となるビデオ プレーヤーで再生時間が決定されるには、ビデオ ファイルの一部がダウンロードされる必要があります。
 
 ここでは、各プラットフォーム レンダラーがビデオの再生時間を取得する方法について説明します。
 

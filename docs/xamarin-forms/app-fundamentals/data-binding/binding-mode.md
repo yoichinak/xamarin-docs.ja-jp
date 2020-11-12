@@ -10,18 +10,18 @@ ms.date: 05/01/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8a7c62ec6d7329227abd8f52644212341098185f
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 1ab0603555c55d969e1bee8ae709df3cac23de73
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556439"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373641"
 ---
 # <a name="no-locxamarinforms-binding-mode"></a>Xamarin.Forms のバインディング モード
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
-[前の記事](basic-bindings.md) では、**Alternative Code Binding** ページと **Alternative XAML Binding** ページに `Label` が備わっていて、その `Scale` プロパティは `Slider` の `Value` プロパティにバインドされていました。 `Slider` の初期値が 0 であるため、`Label` の `Scale` プロパティは 1 ではなく 0 に設定され、`Label` は非表示となりました。
+[前の記事](basic-bindings.md) では、 **Alternative Code Binding** ページと **Alternative XAML Binding** ページに `Label` が備わっていて、その `Scale` プロパティは `Slider` の `Value` プロパティにバインドされていました。 `Slider` の初期値が 0 であるため、`Label` の `Scale` プロパティは 1 ではなく 0 に設定され、`Label` は非表示となりました。
 
 [**DataBindingDemos**](/samples/xamarin/xamarin-forms-samples/databindingdemos) のサンプル内の **Reverse Binding** ページは、データ バインディングが `Label` ではなく `Slider` に対して定義されているという点を除けば、前の記事のプログラムに類似しています。
 
@@ -54,7 +54,7 @@ ms.locfileid: "91556439"
 
 しかし、Android のスクリーンショットで示すように、`Slider` が引き続き動作することに驚かれるかもしれません。 これは、期待したとおりに初期化が機能したことから、`Label` ではなく `Slider` がバインディング ターゲットである場合にデータ バインディングは適切に機能することを示唆しているようです。
 
-**Reverse Binding** サンプルと以前のサンプルとの違いは、"*バインディング モード*" に関係しています。
+**Reverse Binding** サンプルと以前のサンプルとの違いは、" *バインディング モード* " に関係しています。
 
 ## <a name="the-default-binding-mode"></a>既定のバインディング モード
 
@@ -112,7 +112,7 @@ Model-View-ViewModel (MVVM) アプリケーション アーキテクチャでデ
 
 **Simple Color Selector** ページに、シンプルな ViewModel の使用方法が示されています。 データ バインディングにより、ユーザーは色相、彩度、明度用の 3 つの `Slider` 要素を使用して色を選択することができます。
 
-ViewModel はデータ バインディングのソースです。 ViewModel ではバインド可能プロパティは定義*されません*。しかし、プロパティの値が変更されたタイミングをバインディング インフラストラクチャに通知するメカニズムが ViewModel によって実装されます。 この通知メカニズムは [`INotifyPropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged) インターフェイスであり、[`PropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged) という名前の 1 つのイベントを定義しています。 通常は、このインターフェイスを実装するクラスでは、そのパブリック プロパティのいずれかで値が変更されたときにイベントが発生します。 プロパティが変更されることがない場合、イベントを発生させる必要はありません。 (`INotifyPropertyChanged` インターフェイスも `BindableObject` によって実装されます。`PropertyChanged` イベントは、バインド可能なプロパティで値が変更されるたびに発生します)。
+ViewModel はデータ バインディングのソースです。 ViewModel ではバインド可能プロパティは定義 *されません* 。しかし、プロパティの値が変更されたタイミングをバインディング インフラストラクチャに通知するメカニズムが ViewModel によって実装されます。 この通知メカニズムは [`INotifyPropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged) インターフェイスであり、[`PropertyChanged`](xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged) という名前の 1 つのイベントを定義しています。 通常は、このインターフェイスを実装するクラスでは、そのパブリック プロパティのいずれかで値が変更されたときにイベントが発生します。 プロパティが変更されることがない場合、イベントを発生させる必要はありません。 (`INotifyPropertyChanged` インターフェイスも `BindableObject` によって実装されます。`PropertyChanged` イベントは、バインド可能なプロパティで値が変更されるたびに発生します)。
 
 `HslColorViewModel` クラスでは、5 つのプロパティが定義されます。`Hue`、`Saturation`、`Luminosity`、および `Color` のプロパティは相互に関連しています。 3 つの色コンポーネントのいずれかで値が変更されると、`Color` プロパティが再計算され、4 つのプロパティすべてに対して `PropertyChanged` イベントが発生します。
 
@@ -208,7 +208,7 @@ public class HslColorViewModel : INotifyPropertyChanged
 }
 ```
 
-`Color` プロパティが変更されると、`NamedColor` クラス内の静的な `GetNearestColorName` メソッド (**DataBindingDemos** ソリューションにも含まれている) によって、最も近い名前付きの色が取得され、`Name` プロパティが設定されます。 この `Name` プロパティはプライベートな `set` アクセサーを備えているので、クラスの外部から設定することはできません。
+`Color` プロパティが変更されると、`NamedColor` クラス内の静的な `GetNearestColorName` メソッド ( **DataBindingDemos** ソリューションにも含まれている) によって、最も近い名前付きの色が取得され、`Name` プロパティが設定されます。 この `Name` プロパティはプライベートな `set` アクセサーを備えているので、クラスの外部から設定することはできません。
 
 ViewModel がバインディング ソースとして設定されると、バインディング インフラストラクチャによってハンドラーが `PropertyChanged` イベントにアタッチされます。 このようにして、プロパティへの変更をバインディングに通知することができます。次にバインディングで、変更された値を基にターゲット プロパティを設定することができます。
 
@@ -320,7 +320,7 @@ Android のスクリーンショットに示したように、スライダーを
 
 既定のバインディング モードを `TwoWay` でオーバーライドするプログラムを非常に便利なものとするには、`ListView` の `SelectedItem` プロパティが必要です。 既定のバインディング モードは `OneWayToSource` です。 ViewModel 内のソース プロパティを参照するように、`SelectedItem` プロパティ上にデータ バインディングが設定されると、そのソース プロパティは `ListView` の選択範囲から設定されます。 ただし、状況によっては、`ListView` が ViewModel から初期化されるようにすることもお勧めします。
 
-このテクニックは、**Sample Settings** ページで示します。 このページには、アプリケーション設定のシンプルな実装が示されています。これらの設定は、多くの場合、ViewModel (この`SampleSettingsViewModel` ファイルなどの) で定義されます。
+このテクニックは、 **Sample Settings** ページで示します。 このページには、アプリケーション設定のシンプルな実装が示されています。これらの設定は、多くの場合、ViewModel (この`SampleSettingsViewModel` ファイルなどの) で定義されます。
 
 ```csharp
 public class SampleSettingsViewModel : INotifyPropertyChanged
@@ -562,9 +562,9 @@ public partial class App : Application
 }
 ```
 
-アプリケーションのライフサイクル メソッドの詳細については、[**アプリのライフ サイクル**](~/xamarin-forms/app-fundamentals/app-lifecycle.md)に関する記事を参照してください。
+アプリケーションのライフサイクル メソッドの詳細については、 [**アプリのライフ サイクル**](~/xamarin-forms/app-fundamentals/app-lifecycle.md)に関する記事を参照してください。
 
-他のほぼすべてのことは、**SampleSettingsPage.xaml** ファイル内で処理されます。 ページの `BindingContext` は `Binding` マークアップ拡張を使用して設定されます。バインディング ソースは静的な `Application.Current` プロパティ (プロジェクト内の `App` クラスのインスタンス) です。`Path` は `Settings` プロパティ (`SampleSettingsViewModel` オブジェクト) に設定されます。
+他のほぼすべてのことは、 **SampleSettingsPage.xaml** ファイル内で処理されます。 ページの `BindingContext` は `Binding` マークアップ拡張を使用して設定されます。バインディング ソースは静的な `Application.Current` プロパティ (プロジェクト内の `App` クラスのインスタンス) です。`Path` は `Settings` プロパティ (`SampleSettingsViewModel` オブジェクト) に設定されます。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -682,7 +682,7 @@ public partial class SampleSettingsPage : ContentPage
 
 他のスクリーンショットは、変更された設定を示しています。 このページを試してみる場合は、プログラムが実行されているデバイスまたはエミュレーター上でプログラムをスリープ状態にするか、または終了することを忘れないでください。 Visual Studio デバッガーからプログラムを終了すると、`App` クラス内の `OnSleep` オーバーライドは呼び出されません。
 
-次の記事では、`Label` の `Text` プロパティで設定されたデータ バインディングの[**文字列の書式設定**](string-formatting.md)を指定する方法を説明します。
+次の記事では、`Label` の `Text` プロパティで設定されたデータ バインディングの [**文字列の書式設定**](string-formatting.md)を指定する方法を説明します。
 
 ## <a name="related-links"></a>関連リンク
 

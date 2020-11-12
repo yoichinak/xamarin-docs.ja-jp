@@ -10,16 +10,16 @@ ms.date: 12/14/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3bbad7f96403cb1f386b80b2923b0cdd222f9596
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: d9cece5bc0b9799a4c2ac951cde8196a66465bd4
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555880"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375279"
 ---
 # <a name="invoking-events-from-effects"></a>エフェクトからのイベントの呼び出し
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/effects-touchtrackingeffect/)
 
 _エフェクトではイベントを定義して呼び出すことができ、基礎ネイティブ ビューの変化を信号で送ります。この記事では、低レベルのマルチタッチ フィンガー トラッキングを実装する方法とタッチ操作を信号で送るイベントを生成する方法を紹介します。_
 
@@ -31,9 +31,9 @@ _エフェクトではイベントを定義して呼び出すことができ、�
 
 iOS、Android、Universal Windows Platform にはすべて、タッチ操作の検出をアプリケーションに許可する低レベル API が含まれています。 このようなプラットフォームではすべて、基本的な 3 種類のタッチ イベントが区別されます。
 
-- *押す*。指が画面に触れたとき
-- *移動する*。画面に触れている指が移動するとき
-- *離す*。指を画面から離したとき
+- *押す* 。指が画面に触れたとき
+- *移動する* 。画面に触れている指が移動するとき
+- *離す* 。指を画面から離したとき
 
 マルチタッチ環境では、複数の指で同時に画面に触れることができます。 複数の指を区別するためにアプリケーションで利用される ID 番号が各種プラットフォームに含まれています。
 
@@ -120,7 +120,7 @@ public class TouchActionEventArgs : EventArgs
 
 ソリューションの .NET Standard ライブラリ プロジェクトにファイルを含め、任意の Xamarin.Forms 要素の `Effects` コレクションにインスタンスを追加することで、自分のアプリケーションで `TouchEffect` クラスを使用できます。 タッチ イベントを取得するには、`TouchAction` イベントにハンドラーをアタッチします。
 
-自分のアプリケーションで `TouchEffect` を使用するには、**TouchTrackingEffectDemos** ソリューションに含まれるプラットフォーム実装も必要になります。
+自分のアプリケーションで `TouchEffect` を使用するには、 **TouchTrackingEffectDemos** ソリューションに含まれるプラットフォーム実装も必要になります。
 
 ## <a name="the-touch-tracking-effect-implementations"></a>タッチトラッキング エフェクト実装
 
@@ -751,7 +751,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ### <a name="tracking-view-to-view-touch"></a>ビュー間タッチの追跡
 
-これまでの例ではすべて、`TouchEffect` が作成されたか、`Pressed` イベントが発生したとき、`TouchEffect` の `Capture` プロパティが `true` に設定されました。 これにより、最初にビューを押した指に関連付けられているすべてのイベントが同じ要素に受け取られます。 最後のサンプルでは、`Capture` が `true` に設定*されていません*。 それにより、画面に触れている指が要素間を動くとき、さまざまな動作が引き起こされます。 `Type` プロパティが `TouchActionType.Exited` に設定されたイベントを指の移動元の要素が受け取り、`Type` が `TouchActionType.Entered` に設定されたイベントを 2 つ目の要素が受け取ります。
+これまでの例ではすべて、`TouchEffect` が作成されたか、`Pressed` イベントが発生したとき、`TouchEffect` の `Capture` プロパティが `true` に設定されました。 これにより、最初にビューを押した指に関連付けられているすべてのイベントが同じ要素に受け取られます。 最後のサンプルでは、`Capture` が `true` に設定 *されていません* 。 それにより、画面に触れている指が要素間を動くとき、さまざまな動作が引き起こされます。 `Type` プロパティが `TouchActionType.Exited` に設定されたイベントを指の移動元の要素が受け取り、`Type` が `TouchActionType.Entered` に設定されたイベントを 2 つ目の要素が受け取ります。
 
 この種類のタッチ処理は音楽用キーボードで非常に便利です。 鍵盤は押されたタイミングだけでなく、指が鍵盤間をスライド移動したタイミングも検出できなければなりません。
 

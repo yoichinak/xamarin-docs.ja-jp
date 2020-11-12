@@ -12,16 +12,16 @@ ms.date: 02/07/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9794f429744611654ce883b48aa828b997ec881f
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 099c95af190fc9b43c8e8497eebdeec44aed36cd
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91435437"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368441"
 ---
 # <a name="style-a-cross-platform-no-locxamarinforms-application"></a>クロスプラットフォーム Xamarin.Forms アプリケーションのスタイルを設定する
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-styled/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/getstarted-notes-styled/)
 
 このクイックスタートでは、次の方法について学習します。
 

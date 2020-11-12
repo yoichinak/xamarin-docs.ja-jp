@@ -11,16 +11,16 @@ ms.date: 11/28/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5c5d95c3d326961db9d56631a0d7190d64ede72a
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 99da232d13202aadc338ff419042998f646b7c28
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556062"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373069"
 ---
 # <a name="application-indexing-and-deep-linking"></a>アプリケーション インデックス作成とディープ リンクの設定
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/deeplinking)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/deeplinking)
 
 _アプリケーション インデックス作成を使用すると、何度か使用した後に忘れてしまいそうなアプリケーションを検索結果に表示することで、関連性を保つことができます。ディープ リンクの設定を使用すると、アプリケーションのデータが含まれている検索結果にアプリケーションが応答するようにできます。通常の応答では、ディープ リンクから参照されているページに移動します。この記事では、アプリケーション インデックス作成とディープ リンクの設定を使用して、Xamarin.Forms アプリケーションのコンテンツを iOS および Android のデバイス上で検索できるようにする方法について説明します。_
 
@@ -73,7 +73,7 @@ Android プラットフォーム上でアプリケーション インデック�
 1. Web ブラウザーで、[Firebase Console](https://console.firebase.google.com/) を介して新しいプロジェクトを作成します。
 1. Firebase Console で、ご利用の Android アプリに Firebase を追加し、必要なデータを入力します。
 1. 結果として生成された **google-services.json** ファイルをダウンロードします。
-1. **google-services.json** ファイルを、Android プロジェクトのルート ディレクトリに追加し、その**ビルド アクション**を **GoogleServicesJson** に設定します。
+1. **google-services.json** ファイルを、Android プロジェクトのルート ディレクトリに追加し、その **ビルド アクション** を **GoogleServicesJson** に設定します。
 1. `MainActivity.OnCreate` オーバーライド内で、`Forms.Init(this, bundle)` の下に次のコード行を追加します。
 
 ```csharp
@@ -81,7 +81,7 @@ FirebaseApp.InitializeApp(this);
 AndroidAppLinks.Init(this);
 ```
 
-**google-services.json** をプロジェクトに追加 (および *GoogleServicesJson** ビルド アクションを設定) すると、ビルド プロセスによって、クライアント ID と API キーが抽出され、さらにこれらの資格情報が、生成されたマニフェスト ファイルに追加されます。
+**google-services.json** をプロジェクトに追加 (および *GoogleServicesJson* * ビルド アクションを設定) すると、ビルド プロセスによって、クライアント ID と API キーが抽出され、さらにこれらの資格情報が、生成されたマニフェスト ファイルに追加されます。
 
 > [!NOTE]
 > この記事では、多くの場合、アプリケーション リンクとディープ リンクという用語が同じ意味で使用されます。 しかし、Android に関しては、これらの用語は異なる意味を持ちます。 Android の場合、ディープ リンクとは、ユーザーがそのアプリで特定のアクティビティに直接移行できるようにするためのインテント フィルターのことです。 ディープ リンクをクリックすると、あいまいさ排除のためのダイアログが表示されることがあります。これにより、ユーザーはその URL を処理できる複数のアプリのいずれかを選択できます。 Android のアプリ リンクは、Web サイトの URL に基づくディープ リンクです。これは Web サイトに属することが検証済みです。 アプリ リンクをクリックすると、アプリがインストールされている場合はアプリが開き、あいまいさ排除のダイアログが開くことはありません。

@@ -10,16 +10,16 @@ ms.date: 03/31/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3d0cbae406861565d91b0bbc9f39d661c547ca1e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: dcfb713da09a9dab1974110e161d8045132f6b2f
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561158"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375019"
 ---
 # <a name="customizing-a-webview"></a>WebView のカスタマイズ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-hybridwebview)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/customrenderers-hybridwebview)
 
 _Xamarin.Forms `WebView` は、アプリに Web コンテンツと HTML コンテンツを表示するビューです。この記事では、JavaScript から C# コードを呼び出せるように `WebView` を拡張するカスタム レンダラーを作成する方法について説明します。_
 
@@ -161,7 +161,7 @@ public partial class HybridWebViewPage : ContentPage
 
 ![各プラットフォーム上の HybridWebView](hybridwebview-images/screenshots.png)
 
-`WkWebViewRenderer` クラスと `WebViewRenderer` クラスは `OnElementChanged` メソッドを公開します。このメソッドは、該当するネイティブ Web コントロールをレンダリングするために、Xamarin.Forms カスタム コントロールの作成時に呼び出されます。 このメソッドでは、`OldElement` および `NewElement` プロパティを含む `VisualElementChangedEventArgs` パラメーターを受け取ります。 これらのプロパティは、レンダラーがアタッチされて*いた* Xamarin.Forms 要素と、レンダラーが現在アタッチされて*いる* Xamarin.Forms 要素をそれぞれ表しています。 サンプル アプリケーションでは、`OldElement` プロパティが `null` になり、`NewElement` プロパティに `HybridWebView` インスタンスへの参照が含まれます。
+`WkWebViewRenderer` クラスと `WebViewRenderer` クラスは `OnElementChanged` メソッドを公開します。このメソッドは、該当するネイティブ Web コントロールをレンダリングするために、Xamarin.Forms カスタム コントロールの作成時に呼び出されます。 このメソッドでは、`OldElement` および `NewElement` プロパティを含む `VisualElementChangedEventArgs` パラメーターを受け取ります。 これらのプロパティは、レンダラーがアタッチされて *いた* Xamarin.Forms 要素と、レンダラーが現在アタッチされて *いる* Xamarin.Forms 要素をそれぞれ表しています。 サンプル アプリケーションでは、`OldElement` プロパティが `null` になり、`NewElement` プロパティに `HybridWebView` インスタンスへの参照が含まれます。
 
 各プラットフォームのレンダラー クラス内の、オーバーライドされたバージョンの `OnElementChanged` メソッドは、ネイティブの Web コントロールのカスタマイズを行う場所です。 レンダリングされている Xamarin.Forms コントロールへの参照は、`Element` プロパティを使用して取得することができます。
 
@@ -209,7 +209,7 @@ public partial class HybridWebViewPage : ContentPage
 
 `invokeCSharpAction` JavaScript 関数は Web ページで定義されておらず、各カスタム レンダラーによって挿入されます。
 
-iOS の場合、この HTML ファイルは、**BundleResource** のビルド アクションと一緒に、プラットフォーム プロジェクトの Content フォルダーに置かれます。 Android の場合、この HTML ファイルは、**AndroidAsset** のビルド アクションと一緒にプラットフォーム プロジェクトの Assets/Content フォルダーに置かれます。
+iOS の場合、この HTML ファイルは、 **BundleResource** のビルド アクションと一緒に、プラットフォーム プロジェクトの Content フォルダーに置かれます。 Android の場合、この HTML ファイルは、 **AndroidAsset** のビルド アクションと一緒にプラットフォーム プロジェクトの Assets/Content フォルダーに置かれます。
 
 ### <a name="invoke-c-from-javascript"></a>JavaScript から C# を呼び出す
 
@@ -300,7 +300,7 @@ namespace CustomRenderer.iOS
 > [!NOTE]
 > `WKWebView` クラスは、iOS 8 以降でのみサポートされています。
 
-さらに、次の値を含むように、**Info.plist** を更新する必要があります。
+さらに、次の値を含むように、 **Info.plist** を更新する必要があります。
 
 ```xml
 <key>NSAppTransportSecurity</key>

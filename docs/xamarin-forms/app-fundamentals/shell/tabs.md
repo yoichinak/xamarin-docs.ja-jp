@@ -10,16 +10,16 @@ ms.date: 11/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 59c7435273d7c01f93ef0bbfb0240e3917f8b716
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 5df5560966def16741f6eabdacb3312944063a1f
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563017"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93372614"
 ---
 # <a name="no-locxamarinforms-shell-tabs"></a>Xamarin.Forms シェルのタブ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
 アプリケーションのナビゲーション パターンに、ポップアップが含まれている場合、アプリケーションにおける次のレベルのナビゲーションは、下部のタブ バーです。 さらに、ポップアップを閉じた場合、下部のタブ バーを最上位のナビゲーションと見なすことができます。
 

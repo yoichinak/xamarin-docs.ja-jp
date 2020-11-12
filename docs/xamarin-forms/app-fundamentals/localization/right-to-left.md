@@ -11,16 +11,16 @@ ms.date: 05/07/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fe27c00752723ac34d614c510f1305b197933715
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 05f5e79f9df59859c4514150ec591e0a96912ed5
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91558168"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93368779"
 ---
 # <a name="right-to-left-localization"></a>右から左へのローカライズ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/todolocalizedrtl)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/todolocalizedrtl)
 
 _右から左へのローカライズでは、Xamarin.Forms アプリケーションに、右から左へのフロー方向のサポートが追加されます。_
 
@@ -101,7 +101,7 @@ this.FlowDirection = Device.FlowDirection;
 
 ### <a name="universal-windows-platform-uwp"></a>ユニバーサル Windows プラットフォーム (UWP)
 
-必要な言語リソースは、**Package.appxmanifest** ファイルの `<Resources>` ノードで指定する必要があります。 次の例では、`<Resources>` ノードに追加されているアラビア語を示します。
+必要な言語リソースは、 **Package.appxmanifest** ファイルの `<Resources>` ノードで指定する必要があります。 次の例では、`<Resources>` ノードに追加されているアラビア語を示します。
 
 ```xml
 <Resources>

@@ -10,20 +10,20 @@ ms.date: 01/05/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 2a5912d18787543b05b3937f2b8b5c6a36b04873
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 7a2d7251f3896994ab75aba07c2fb03af6558c4e
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556816"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370924"
 ---
 # <a name="no-locxamarinforms-binding-value-converters"></a>Xamarin.Forms バインディングの値コンバーター
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 データ バインディングでは通常、ソース プロパティからターゲット プロパティへ、または、場合によってはターゲット プロパティからソース プロパティへ、データを転送します。 ソース プロパティとターゲット プロパティの型が同じ場合、または、暗黙の型変換によって一方の型がもう一方の型に変換できる場合は、この転送はすみやかに進みます。 それ以外の場合は、型変換を行う必要があります。
 
-[**文字列の書式設定**](string-formatting.md)に関する記事では、データ バインディングの `StringFormat` プロパティを使用して任意の型を文字列に変換する方法を確認しました。 それ以外の型の変換では、[`IValueConverter`](xref:Xamarin.Forms.IValueConverter) インターフェイスを実装するクラス内に専用のコードを記述する必要があります (ユニバーサル Windows プラットフォームには、`Windows.UI.Xaml.Data` 名前空間内に [`IValueConverter`](/uwp/api/Windows.UI.Xaml.Data.IValueConverter/) という名前の類似のクラスが含まれますが、この `IValueConverter` は `Xamarin.Forms` 名前空間内にあります)。`IValueConverter` を実装するクラスは、*値コンバーター*と呼ばれますが、*バインディング コンバーター*または*バインディング値コンバーター*と呼ばれることもよくあります。
+[**文字列の書式設定**](string-formatting.md)に関する記事では、データ バインディングの `StringFormat` プロパティを使用して任意の型を文字列に変換する方法を確認しました。 それ以外の型の変換では、[`IValueConverter`](xref:Xamarin.Forms.IValueConverter) インターフェイスを実装するクラス内に専用のコードを記述する必要があります (ユニバーサル Windows プラットフォームには、`Windows.UI.Xaml.Data` 名前空間内に [`IValueConverter`](/uwp/api/Windows.UI.Xaml.Data.IValueConverter/) という名前の類似のクラスが含まれますが、この `IValueConverter` は `Xamarin.Forms` 名前空間内にあります)。`IValueConverter` を実装するクラスは、 *値コンバーター* と呼ばれますが、 *バインディング コンバーター* または *バインディング値コンバーター* と呼ばれることもよくあります。
 
 ## <a name="the-ivalueconverter-interface"></a>IValueConverter インターフェイス
 
@@ -54,7 +54,7 @@ public class IntToBoolConverter : IValueConverter
 
 データ バインディングにも `StringFormat` 設定が含まれている場合、結果が文字列として書式設定される前に、値コンバーターが呼び出されます。
 
-[**Data Binding Demos**](/samples/xamarin/xamarin-forms-samples/databindingdemos) (データ バインディング デモ) サンプルの**Enable Buttons** (ボタンの有効化) のページでは、データ バインディング内でこの値コンバーターを使用する方法のサンプルを示しています。 `IntToBoolConverter` は、ページのリソース ディクショナリ内でインスタンス化されます。 その後、2 つのデータ バインディングに `Converter` プロパティを設定するために、`StaticResource` マークアップ拡張を使って参照されます。 ページ上の複数のデータ バインディング間でデータ コンバーターを共有することは、極めて一般的です
+[**Data Binding Demos**](/samples/xamarin/xamarin-forms-samples/databindingdemos) (データ バインディング デモ) サンプルの **Enable Buttons** (ボタンの有効化) のページでは、データ バインディング内でこの値コンバーターを使用する方法のサンプルを示しています。 `IntToBoolConverter` は、ページのリソース ディクショナリ内でインスタンス化されます。 その後、2 つのデータ バインディングに `Converter` プロパティを設定するために、`StaticResource` マークアップ拡張を使って参照されます。 ページ上の複数のデータ バインディング間でデータ コンバーターを共有することは、極めて一般的です
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -96,7 +96,7 @@ public class IntToBoolConverter : IValueConverter
 </ContentPage>
 ```
 
-アプリケーションの複数のページで値コンバーターが使用されている場合は、**App.xaml** ファイルのリソース ディクショナリ内でインスタンス化できます。
+アプリケーションの複数のページで値コンバーターが使用されている場合は、 **App.xaml** ファイルのリソース ディクショナリ内でインスタンス化できます。
 
 **Enable Buttons** のページでは、ユーザーが `Entry` ビューに入力するテキストに基づいて `Button` による操作が実行される場合の、一般的なニーズを示しています。 `Entry` に何も入力されなかった場合は、`Button` を無効にする必要があります。 各 `Button` は、`IsEnabled` プロパティ上にデータ バインディングを含みます。 データ バインディング ソースは、対応する `Entry` の `Text` プロパティの `Length` プロパティです。 その `Length` プロパティが 0 ではない場合、値コンバーターは `true` を返し、`Button` は有効になります。
 

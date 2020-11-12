@@ -10,16 +10,16 @@ ms.date: 09/11/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: f4ca18a34dc66a81fd30ce4ae2b60e31df8cffb5
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 1da087a8906eb87b14f015371a584b164a8a9340
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562614"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373030"
 ---
 # <a name="creating-a-no-locxamarinforms-datatemplate"></a>Xamarin.Forms DataTemplate の作成
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
 
 _データ テンプレートは、ResourceDictionary 内でインラインで作成したり、またはカスタム型や適切な Xamarin.Forms のセルの種類から作成したりできます。この記事では、各手法について説明します。_
 

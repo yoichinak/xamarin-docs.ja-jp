@@ -11,21 +11,21 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.custom: video
-ms.openlocfilehash: 9bedde64f0eda233c289cb31296854b5cbca54a1
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 107916edee01171b8ff5d4871de3b1243c385dd5
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561119"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366426"
 ---
 # <a name="no-locxamarinforms-basic-bindings"></a>Xamarin.Forms の基本的なバインディング
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
-Xamarin.Forms のデータ バインディングでは、通常は少なくとも一方がユーザー インターフェイス オブジェクトである 2 つのオブジェクト間において、プロパティのペアをリンクします。 これら 2 つのオブジェクトは、"*ターゲット*" および "*ソース*" と呼ばれます。
+Xamarin.Forms のデータ バインディングでは、通常は少なくとも一方がユーザー インターフェイス オブジェクトである 2 つのオブジェクト間において、プロパティのペアをリンクします。 これら 2 つのオブジェクトは、" *ターゲット* " および " *ソース* " と呼ばれます。
 
-- "*ターゲット*" は、データ バインディングが設定されている方のオブジェクト (およびプロパティ) です。
-- "*ソース*" は、データ バインディングによって参照されている方のオブジェクト (およびプロパティ) です。
+- " *ターゲット* " は、データ バインディングが設定されている方のオブジェクト (およびプロパティ) です。
+- " *ソース* " は、データ バインディングによって参照されている方のオブジェクト (およびプロパティ) です。
 
 この区別は少し混乱を招くことがあります。最も単純な場合は、データがソースからターゲットに流れます。これは、ソース プロパティの値からターゲット プロパティの値が設定されることを意味します。 ただし、場合によっては、データがターゲットからソースに、または双方向に流れることがあります。 混乱を避けるには、ターゲットは (データを受け取るのではなく提供する場合でも) 常に、データ バインディングが設定されている方のオブジェクトであることに留意します。
 
@@ -86,7 +86,7 @@ public partial class BasicCodeBindingPage : ContentPage
 
 *ターゲット プロパティは、バインド可能なプロパティによってサポートされている必要があります。*
 
-このルールは、ターゲット オブジェクトが、`BindableObject` から派生したクラスのインスタンスである必要があることを示しています。 バインド可能なオブジェクトとバインド可能なプロパティの概要については、「[**バインド可能なプロパティ**](~/xamarin-forms/xaml/bindable-properties.md)」の記事を参照してください。
+このルールは、ターゲット オブジェクトが、`BindableObject` から派生したクラスのインスタンスである必要があることを示しています。 バインド可能なオブジェクトとバインド可能なプロパティの概要については、「 [**バインド可能なプロパティ**](~/xamarin-forms/xaml/bindable-properties.md)」の記事を参照してください。
 
 ソース プロパティにこのようなルールはなく、文字列として指定されます。 内部的には、実際のプロパティにアクセスするためにリフレクションが使用されます。 ただし、この特定のケースでは、`Value` プロパティはバインド可能なプロパティによってもサポートされています。
 
@@ -102,7 +102,7 @@ label.SetBinding(RotationProperty, "Value");
 
 [![Basic Code Binding](basic-bindings-images/basiccodebinding-small.png "Basic Code Binding")](basic-bindings-images/basiccodebinding-large.png#lightbox "Basic Code Binding")
 
-**Basic Xaml Binding** (基本的な XAML バインディング) ページは、すべてのデータ バインディングを XAML で定義している点を除き、**Basic Code Binding** (基本的なコード バインディング) と同じです。
+**Basic Xaml Binding** (基本的な XAML バインディング) ページは、すべてのデータ バインディングを XAML で定義している点を除き、 **Basic Code Binding** (基本的なコード バインディング) と同じです。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -141,7 +141,7 @@ BindingContext="slider"
 
 ソース プロパティが `BindingExtension` の [`Path`](xref:Xamarin.Forms.Xaml.BindingExtension.Path) プロパティを使用して指定されていることに注意してください。これは、[`Binding`](xref:Xamarin.Forms.Binding) クラスの [`Path`](xref:Xamarin.Forms.Binding.Path) プロパティに対応します。
 
-**Basic XAML Binding** (基本的な XAML バインディング) ページに示されているマークアップは、簡素化することができます。`x:Reference` や `Binding` などの XAML マークアップ拡張には、*コンテンツ プロパティ*属性を定義することができます。これは、XAML マークアップ拡張に対してプロパティ名を使用する必要がないことを意味します。 `Name` プロパティは `x:Reference` のコンテンツ プロパティであり、`Path` プロパティは `Binding` のコンテンツ プロパティです。つまり、これらは式から省略できます。
+**Basic XAML Binding** (基本的な XAML バインディング) ページに示されているマークアップは、簡素化することができます。`x:Reference` や `Binding` などの XAML マークアップ拡張には、 *コンテンツ プロパティ* 属性を定義することができます。これは、XAML マークアップ拡張に対してプロパティ名を使用する必要がないことを意味します。 `Name` プロパティは `x:Reference` のコンテンツ プロパティであり、`Path` プロパティは `Binding` のコンテンツ プロパティです。つまり、これらは式から省略できます。
 
 ```xaml
 <Label Text="TEXT"
@@ -156,7 +156,7 @@ BindingContext="slider"
 
 `BindingContext` プロパティは、データ バインディングの重要なコンポーネントですが、常に必要なわけではありません。 代わりに `SetBinding` 呼び出しまたは `Binding` マークアップ拡張においてソース オブジェクトを指定できます。
 
-これは、**Alternative Code Binding** サンプルに示されています。 XAML ファイルは、`Label` の `Scale` プロパティを制御するための `Slider` が定義されている点を除き、**Basic Code Binding** (基本的なコード バインディング) サンプルと同様です。 その理由のため、`Slider` は &ndash;2 から 2 までの範囲に設定されています。
+これは、 **Alternative Code Binding** サンプルに示されています。 XAML ファイルは、`Label` の `Scale` プロパティを制御するための `Slider` が定義されている点を除き、 **Basic Code Binding** (基本的なコード バインディング) サンプルと同様です。 その理由のため、`Slider` は &ndash;2 から 2 までの範囲に設定されています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -330,7 +330,7 @@ XAML マークアップ拡張は、通常は中かっこで区切りますが、
 
 [![バインディング コンテキストの継承](basic-bindings-images/bindingcontextinheritance-small.png "バインディング コンテキストの継承")](basic-bindings-images/bindingcontextinheritance-large.png#lightbox "バインディング コンテキストの継承")
 
-[次の記事](binding-mode.md)では、ターゲット オブジェクトとソース オブジェクトの間のデータ フローが*バインディング モード*によってどのように変わるかについて説明します。
+[次の記事](binding-mode.md)では、ターゲット オブジェクトとソース オブジェクトの間のデータ フローが *バインディング モード* によってどのように変わるかについて説明します。
 
 ## <a name="related-links"></a>関連リンク
 

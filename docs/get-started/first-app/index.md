@@ -12,12 +12,12 @@ ms.date: 05/23/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e6670faf921248c007c20307fddb6a34057c5202
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: d2bb00eeadb3862d25032da45860f1cc12e3aad2
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91436675"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93369884"
 ---
 # <a name="build-your-first-no-locxamarinforms-app"></a>最初の Xamarin.Forms アプリをビルドする
 
@@ -29,7 +29,7 @@ _このビデオを視聴し、作業を進めて、_ による最初のモバ�
 
 ## <a name="step-by-step-instructions-for-windows"></a>Windows での手順の詳細
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
 
 上記のビデオと共に以下の手順に従います。
 
@@ -45,7 +45,7 @@ _このビデオを視聴し、作業を進めて、_ による最初のモバ�
 
     [![プロジェクト名の選択](images/win-2019/03-sml.png)](images/win-2019/03.png#lightbox)
 
-4. **空**のプロジェクト タイプをクリックして、確実に **[Android]** と **[iOS]** が選択されているようにします。
+4. **空** のプロジェクト タイプをクリックして、確実に **[Android]** と **[iOS]** が選択されているようにします。
 
     [![Android および iOS と .NET Standard](images/win-2019/04-sml.png)](images/win-2019/04.png#lightbox)
 
@@ -114,7 +114,7 @@ _このビデオを視聴し、作業を進めて、_ による最初のモバ�
 
 ## <a name="step-by-step-instructions-for-windows"></a>Windows での手順の詳細
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
 
 上記のビデオと共に以下の手順に従います。
 
@@ -161,7 +161,7 @@ _このビデオを視聴し、作業を進めて、_ による最初のモバ�
 
 ## <a name="step-by-step-instructions-for-mac"></a>Mac での手順の詳細
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/getstarted-firstapp/)
 
 上記のビデオと共に以下の手順に従います。
 
@@ -200,7 +200,7 @@ _このビデオを視聴し、作業を進めて、_ による最初のモバ�
 
     ![Android アプリ](images/07-sml.png)
 
-8. 右クリックして、iOS を**スタートアップ プロジェクト**に設定します。
+8. 右クリックして、iOS を **スタートアップ プロジェクト** に設定します。
 
     [![スタートアップ プロジェクトを iOS に設定します](images/08-sml.png)](images/08.png#lightbox)
 

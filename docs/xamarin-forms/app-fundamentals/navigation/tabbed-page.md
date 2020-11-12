@@ -10,16 +10,16 @@ ms.date: 11/07/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: afcf182fe093a9bb02ea23f53d0f568fd83c862c
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: d5c380a5ce6e76b0f9275b09d2943be479ef09e4
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563316"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370898"
 ---
 # <a name="no-locxamarinforms-tabbedpage"></a>Xamarin.Forms の TabbedPage
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/navigation-tabbedpagewithnavigationpage)
 
 Xamarin.Forms の [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) は、タブのリストと大きい詳細エリアで構成されており、各タブでは、コンテンツが詳細エリアに読み込まれます。 次のスクリーンショットは、iOS と Android での `TabbedPage` を示しています。
 
@@ -109,7 +109,7 @@ public class MainPageCS : TabbedPage
 
 [![iOS と Android 上のタブを含む TabbedPage のスクリーンショット](tabbed-page-images/tabbedpage-week.png "タブがある TabbedPage")](tabbed-page-images/tabbedpage-week-large.png#lightbox "タブがある TabbedPage")
 
-**[スケジュール]** タブで、[`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトが [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) オブジェクト内にラップされます。
+**[スケジュール]** タブで、 [`ContentPage`](xref:Xamarin.Forms.ContentPage) オブジェクトが [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) オブジェクト内にラップされます。
 
 > [!WARNING]
 > [`NavigationPage`](xref:Xamarin.Forms.NavigationPage) を [`TabbedPage`](xref:Xamarin.Forms.TabbedPage) に配置することはできますが、`TabbedPage` を `NavigationPage` に配置することはお勧めしません。 これは、iOS では、`UITabBarController` が常に `UINavigationController` のラッパーとして機能するためです。 詳細については、iOS 開発者ライブラリの「[Combined View Controller Interfaces](https://developer.apple.com/library/ios/documentation/WindowsViews/Conceptual/ViewControllerCatalog/Chapters/CombiningViewControllers.html)」 (View Controller インターフェイスの結合) を参照してください。

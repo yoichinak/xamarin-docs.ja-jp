@@ -10,16 +10,16 @@ ms.date: 04/17/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 29fb1300e62d15130e999f6816e2afefcd3fba3b
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 1f2484fe7c6dee1f1b4df1318263624f3f50f604
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562601"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367180"
 ---
 # <a name="no-locxamarinforms-triggers"></a>Xamarin.Forms のトリガー
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/workingwithtriggers)
 
 トリガーを使用すると、イベントまたはプロパティの変更に基づいてコントロールの外観を変更するアクションを XAML での宣言として表すことができます。 また、トリガーの特殊なグループである状態トリガーでは、[`VisualState`](xref:Xamarin.Forms.VisualState) を適用する条件を定義できます。
 
@@ -268,7 +268,7 @@ XAML を以下に示します。 最初のマルチ トリガーの例と次の�
 > [!NOTE]
 > `EnterActions` コレクションと `ExitActions` コレクションで定義されている [`TriggerAction`](xref:Xamarin.Forms.TriggerAction) オブジェクトは、[`EventTrigger`](xref:Xamarin.Forms.EventTrigger) クラスによって無視されます。    
 
-トリガーで `Setter` と共に `EnterActions` と `ExitActions` の "*両方*" を提供できますが、`Setter` はすぐに呼び出されることに注意してください (`EnterAction` または `ExitAction` が完了するのを待機しません)。 代わりに、コードですべてを実行し、`Setter` をまったく使用しないこともできます。
+トリガーで `Setter` と共に `EnterActions` と `ExitActions` の " *両方* " を提供できますが、`Setter` はすぐに呼び出されることに注意してください (`EnterAction` または `ExitAction` が完了するのを待機しません)。 代わりに、コードですべてを実行し、`Setter` をまったく使用しないこともできます。
 
 ```xaml
 <Entry Placeholder="enter job title">

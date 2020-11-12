@@ -10,16 +10,16 @@ ms.date: 02/08/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 3c77e81dccea9bc6953d719d52056c772c16d823
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: c1f5da6ed6a2c7f130e98a3f05ef2c11afe6995e
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562666"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373810"
 ---
 # <a name="no-locxamarinforms-twopaneview-layout"></a>Xamarin.Forms TwoPaneView レイアウト
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 
 `TwoPaneView` クラスはコンテンツのサイズを変更し、左右または上下の使用可能な領域に配置する 2 つのビューを持つコンテナーを表しています。 `TwoPaneView` は `Grid` から継承するため、これらのプロパティについてはグリッドに適用されているかのように考える方法が最も簡単です。
 

@@ -10,16 +10,16 @@ ms.date: 05/09/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: db0591f89447a2ae083f5ac73f6e002b4d0ee6f8
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 011ef1fcb2de53cb1f1aa6f0b2c3953e9240d132
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561353"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374499"
 ---
 # <a name="keyboard-accessibility-in-no-locxamarinforms"></a>Xamarin.Forms でのキーボード アクセシビリティ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-accessibility)
 
 スクリーン リーダーを使用するユーザーや身体の不自由なユーザーの場合、適切なキーボード アクセスが提供されていないアプリケーションでは使いづらいことがあります。 Xamarin.Forms アプリケーションでは、望ましいタブ オーダーを指定して、ユーザビリティとアクセシビリティを改善することができます。 コントロールのタブ オーダーを指定することで、キーボード ナビゲーションが有効になり、アプリケーション ページが特定の順序で入力を受け取れるようになり、スクリーン リーダーがフォーカス可能な要素をユーザーに対して読み上げられるようになります。
 

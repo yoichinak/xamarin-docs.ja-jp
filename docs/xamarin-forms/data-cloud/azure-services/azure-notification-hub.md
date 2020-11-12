@@ -11,16 +11,16 @@ no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 - Firebase
-ms.openlocfilehash: 6135d8caec196ded385bc0f962f007c41d20e2cb
-ms.sourcegitcommit: 1550019cd1e858d4d13a4ae6dfb4a5947702f24b
+ms.openlocfilehash: 498e3b0bd2cb88df3e04dc19c66dbe671a8378dd
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92897500"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374447"
 ---
 # <a name="send-and-receive-push-notifications-with-azure-notification-hubs-and-no-locxamarinforms"></a>Azure Notification Hubs と Xamarin.Forms を使用してプッシュ通知を送受信する
 
-[![サンプルをダウンロードする](~/media/shared/download.png)サンプルをダウンロードする](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/webservices-azurenotificationhub/)
+[![サンプルをダウンロードする](~/media/shared/download.png)サンプルをダウンロードする](/samples/xamarin/xamarin-forms-samples/webservices-azurenotificationhub/)
 
 プッシュ通知により、情報がバックエンド システムからモバイル アプリケーションに配信されます。 Apple、Google、およびその他のプラットフォームにはそれぞれ独自のプッシュ通知サービス (PNS) が用意されています。 Azure Notification Hubs では、バックエンド アプリケーションが 1 つのハブと通信できるように、異なるプラットフォームにわたって通知を一元化でき、各プラットフォーム固有の PNS に通知が配信されます。
 

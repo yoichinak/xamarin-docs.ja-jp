@@ -10,18 +10,18 @@ ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5d48c699ed89e91452efe84749a1dedac18a34f5
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 947e630457a652b18abb6979b1f99fa9b1e8c389
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562731"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374993"
 ---
 # <a name="custom-video-transport-controls"></a>カスタムのビデオ トランスポート コントロール
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
-ビデオ プレーヤーのトランスポート コントロールには、**再生**、**一時停止**、および**停止**機能を実行するボタンが含まれています。 これらのボタンは一般的に、テキストではなく使い慣れたアイコンで識別されます。また、**再生**と**一時停止**機能は一般的に、1 つのボタンに結合されています。
+ビデオ プレーヤーのトランスポート コントロールには、 **再生** 、 **一時停止** 、および **停止** 機能を実行するボタンが含まれています。 これらのボタンは一般的に、テキストではなく使い慣れたアイコンで識別されます。また、 **再生** と **一時停止** 機能は一般的に、1 つのボタンに結合されています。
 
 既定では、`VideoPlayer` には各プラットフォームでサポートされているトランスポート コントロールが表示されます。 `AreTransportControlsEnabled` プロパティを `false` に設定すると、これらのコントロールは表示されません。 設定後、`VideoPlayer` をプログラムで制御することも、独自のトランスポート コントロールを指定することもできます。
 
@@ -215,7 +215,7 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="the-video-player-status"></a>ビデオ プレーヤーの状態
 
-**再生**、**一時停止**、**停止**機能を実装するだけでは、トランスポート コントロールをサポートするためには不十分です。 多くの場合、**再生**と**一時停止**コマンドは同じボタンに実装されます。このボタンの外観は、ビデオが現在再生中であるか一時停止中であるかによって変わります。 さらに、ビデオがまだ読み込まれていない場合、ボタンは有効にすべきではありません。
+**再生** 、 **一時停止** 、 **停止** 機能を実装するだけでは、トランスポート コントロールをサポートするためには不十分です。 多くの場合、 **再生** と **一時停止** コマンドは同じボタンに実装されます。このボタンの外観は、ビデオが現在再生中であるか一時停止中であるかによって変わります。 さらに、ビデオがまだ読み込まれていない場合、ボタンは有効にすべきではありません。
 
 これらの要件は、ビデオ プレーヤーの現在の状態、つまり再生中か一時停止中か、またはまだ再生準備ができていないかということが示される必要があるということを、意味します。 (各プラットフォームでは、ビデオが一時停止可能であること、または新しい位置に移動可能であることを示すプロパティもサポートされています。しかし、これらのプロパティは、ビデオ ファイルではなくストリーミング ビデオに適用されるものであるため、ここで説明している `VideoPlayer` においてはサポートされていません。)
 
@@ -525,25 +525,25 @@ namespace FormsVideoLibrary.UWP
 
 ## <a name="play-pause-and-stop-buttons"></a>再生、一時停止、および停止ボタン
 
-シンボリックな**再生**、**一時停止**、および**停止**イメージに対して Unicode 文字を使用することには、問題があります。 Unicode 標準の「[Miscellaneous Technical](https://unicode-table.com/en/blocks/miscellaneous-technical/)」 (その他の技術用記号) セクションに、外見的にはこの目的に適した 3 つの記号が定義されています。 これらのボタンの役割は、次のとおりです。
+シンボリックな **再生** 、 **一時停止** 、および **停止** イメージに対して Unicode 文字を使用することには、問題があります。 Unicode 標準の「[Miscellaneous Technical](https://unicode-table.com/en/blocks/miscellaneous-technical/)」 (その他の技術用記号) セクションに、外見的にはこの目的に適した 3 つの記号が定義されています。 これらのボタンの役割は、次のとおりです。
 
-- 0x23F5 (黒の中サイズの右向き三角形) &#x23F5;、**再生**向け
-- 0x23F8 (二重の縦棒) &#x23F8;、**一時停止**向け
-- 0x23F9 (黒い四角) &#x23F9;、**停止**向け
+- 0x23F5 (黒の中サイズの右向き三角形) &#x23F5;、 **再生** 向け
+- 0x23F8 (二重の縦棒) &#x23F8;、 **一時停止** 向け
+- 0x23F9 (黒い四角) &#x23F9;、 **停止** 向け
 
-ご利用のブラウザーでこれらの記号がどのように表示されるか (および各ブラウザーによる記号の取り扱い方法の違い) に関わらず、Xamarin.Forms でサポートされる各プラットフォーム上での表示は一貫していません。 iOS および UWP デバイスの場合、**一時停止**と**停止**文字は、青色の 3D 背景と白い前景という外観で表示されます。 Android の場合は、単純な青の記号として表示されます。 一方で、**再生**向けのコードポイント 0x23F5 の場合、UWP 上では同じような外観では表示されません、iOS と Android ではサポートもされていません。
+ご利用のブラウザーでこれらの記号がどのように表示されるか (および各ブラウザーによる記号の取り扱い方法の違い) に関わらず、Xamarin.Forms でサポートされる各プラットフォーム上での表示は一貫していません。 iOS および UWP デバイスの場合、 **一時停止** と **停止** 文字は、青色の 3D 背景と白い前景という外観で表示されます。 Android の場合は、単純な青の記号として表示されます。 一方で、 **再生** 向けのコードポイント 0x23F5 の場合、UWP 上では同じような外観では表示されません、iOS と Android ではサポートもされていません。
 
-そのため、0x23F5 コード ポイントは**再生**用に使用することはできません。 有効な代替方法は次のとおりです。
+そのため、0x23F5 コード ポイントは **再生** 用に使用することはできません。 有効な代替方法は次のとおりです。
 
-- 0x25B6 (黒の右向き三角形) &#x25B6;、**再生**向け
+- 0x25B6 (黒の右向き三角形) &#x25B6;、 **再生** 向け
 
-これは各プラットフォームでサポートされています。ただし、**一時停止**と**停止**の 3D 外観とは異なる、単純な黒の三角形が表示されます。 この場合、0x25B6 コードポイントの後にバリアント コードを付けるという方法があります。
+これは各プラットフォームでサポートされています。ただし、 **一時停止** と **停止** の 3D 外観とは異なる、単純な黒の三角形が表示されます。 この場合、0x25B6 コードポイントの後にバリアント コードを付けるという方法があります。
 
-- 0x25B6 の後に 0xFE0F (バリアント 16) &#x25B6;&#xFE0F;、**再生**向け
+- 0x25B6 の後に 0xFE0F (バリアント 16) &#x25B6;&#xFE0F;、 **再生** 向け
 
-これは、次に示すマークアップで使用されているものです。 iOS の場合、これで**一時停止**および**停止**ボタンと同じ 3D の外観が**再生**記号に与えられますが、このバリアントは Android と UWP の場合は機能しません。
+これは、次に示すマークアップで使用されているものです。 iOS の場合、これで **一時停止** および **停止** ボタンと同じ 3D の外観が **再生** 記号に与えられますが、このバリアントは Android と UWP の場合は機能しません。
 
-**Custom Transport** ページにより **AreTransportControlsEnabled** プロパティが **false** に設定され、ビデオのロード時に表示される `ActivityIndicator` と、2 つのボタンが含まれます。 `DataTrigger` オブジェクトが、`ActivityIndicator` とボタンの有効と無効の切り替え、最初のボタンの**再生**と**一時停止**間の切り替えに、使用されています。
+**Custom Transport** ページにより **AreTransportControlsEnabled** プロパティが **false** に設定され、ビデオのロード時に表示される `ActivityIndicator` と、2 つのボタンが含まれます。 `DataTrigger` オブジェクトが、`ActivityIndicator` とボタンの有効と無効の切り替え、最初のボタンの **再生** と **一時停止** 間の切り替えに、使用されています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -650,11 +650,11 @@ namespace VideoPlayerDemos
 }
 ```
 
-**CustomTransport.xaml** ファイル内で `AutoPlay` が `false` に設定されているため、ビデオの再生が可能になったら、**再生**ボタンを押す必要があります。 ボタンは、上で説明した Unicode 文字に対応するテキストが共に表示されるように、定義されています。 ビデオ再生時のボタンの外観は、各プラットフォーム間で一貫したものとなります。
+**CustomTransport.xaml** ファイル内で `AutoPlay` が `false` に設定されているため、ビデオの再生が可能になったら、 **再生** ボタンを押す必要があります。 ボタンは、上で説明した Unicode 文字に対応するテキストが共に表示されるように、定義されています。 ビデオ再生時のボタンの外観は、各プラットフォーム間で一貫したものとなります。
 
 [![Custom Transport の再生](custom-transport-images/customtransportplaying-small.png "Custom Transport の再生")](custom-transport-images/customtransportplaying-large.png#lightbox "Custom Transport の再生")
 
-ただし、Android と UWP では、ビデオを一時停止したときの**再生**ボタンの外観が大きく異なります。
+ただし、Android と UWP では、ビデオを一時停止したときの **再生** ボタンの外観が大きく異なります。
 
 [![Custom Transport の一時停止](custom-transport-images/customtransportpaused-small.png "Custom Transport の一時停止")](custom-transport-images/customtransportpaused-large.png#lightbox "Custom Transport の一時停止")
 

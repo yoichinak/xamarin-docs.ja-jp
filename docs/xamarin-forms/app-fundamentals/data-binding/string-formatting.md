@@ -10,16 +10,16 @@ ms.date: 01/05/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8e05420e41509c82c1912a4639159fb58b1a30dc
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: f2ec170a1e622586c4f025452ee334774fbaf5aa
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91558584"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93369780"
 ---
 # <a name="no-locxamarinforms-string-formatting"></a>Xamarin.Forms の文字列の書式設定
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/databindingdemos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/databindingdemos)
 
 データ バインディングを使用して、オブジェクトや値の文字列表現を表示することは便利な場合があります。 たとえば、`Label` を使用して、現在の `Slider` の値を表示したい場合があります。 このデータ バインディングでは、`Slider` はソースであり、ターゲットは `Label` の `Text` プロパティです。
 
@@ -132,7 +132,7 @@ XAML ファイルの次のセクションは、`BindingContext` を静的な `Da
 
 `Label` と `StringFormat` を使用して、ViewModel のターゲットでもあるビューの値を表示している場合、ビューから `Label` に、または ViewModel から `Label` にバインディングを定義できます。 一般に、2 番目の手法は、View と ViewModel の間のバインディングが機能していることを確認するために最適な手法です。
 
-この手法は、**Better Color Selector** サンプルで示されています。ここでは、[**バインディング モード**](binding-mode.md)に関する記事で示されている **Simple Color Selector** プログラムと同じ ViewModel を使用します。
+この手法は、 **Better Color Selector** サンプルで示されています。ここでは、 [**バインディング モード**](binding-mode.md)に関する記事で示されている **Simple Color Selector** プログラムと同じ ViewModel を使用します。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -183,9 +183,9 @@ XAML ファイルの次のセクションは、`BindingContext` を静的な `Da
 
 RGB (赤、緑、青) の値を従来の 2 桁の 16 進数形式でどのように表示するかと疑問に思うかもしれません。 これらの整数値を `Color` 構造から直接使用することはできません。 1 つのソリューションとして、ViewModel 内で色コンポーネントの整数値を計算し、プロパティとして公開することができます。 その後、`X2` の形式の指定を使用して書式設定することができます。
 
-もう 1 つの手法はより一般的です。後の記事の[**値コンバーターのバインディング**](converters.md)に関する記事で示されているように、*値コンバーターのバインディング*を記述することができます。
+もう 1 つの手法はより一般的です。後の記事の [**値コンバーターのバインディング**](converters.md)に関する記事で示されているように、 *値コンバーターのバインディング* を記述することができます。
 
-次の記事では、[**バインディング パス**](binding-path.md)の詳細を参照し、バインディング パスを使って、コレクションのサブ プロパティとアイテムを参照する方法について示しています。
+次の記事では、 [**バインディング パス**](binding-path.md)の詳細を参照し、バインディング パスを使って、コレクションのサブ プロパティとアイテムを参照する方法について示しています。
 
 ## <a name="related-links"></a>関連リンク
 

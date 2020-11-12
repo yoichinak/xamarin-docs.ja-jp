@@ -10,16 +10,16 @@ ms.date: 11/06/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 13d9ddb5ba13960b4ed5af8f4fdb98b486b7e93e
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: f4e0387b6b64c5a3bf801a31c6e333b6f514df1d
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562276"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367370"
 ---
 # <a name="customizing-a-map-pin"></a>マップ ピンのカスタマイズ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-map-pin)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/customrenderers-map-pin)
 
 _この記事では、各プラットフォーム上でカスタマイズされたピンとピン データのカスタマイズされたビューを含むネイティブ マップを表示する、マップ コントロール用のカスタム レンダラーを作成する方法を示します。_
 
@@ -141,7 +141,7 @@ public MapPage()
 
 ![各プラットフォームの CustomMap](map-pin-images/screenshots.png)
 
-`MapRenderer` クラスは `OnElementChanged` メソッドを公開しています。このメソッドは、該当するネイティブ コントロールをレンダリングするために、Xamarin.Forms カスタム マップが作成されるときに呼び出されます。 このメソッドでは、`OldElement` および `NewElement` プロパティを含む `ElementChangedEventArgs` パラメーターを受け取ります。 これらのプロパティは、レンダラーがアタッチされて*いた* Xamarin.Forms 要素と、レンダラーが現在アタッチされて*いる* Xamarin.Forms 要素をそれぞれ表しています。 サンプル アプリケーションでは、`OldElement` プロパティが `null` になり、`NewElement` プロパティに `CustomMap` インスタンスへの参照が含まれます。
+`MapRenderer` クラスは `OnElementChanged` メソッドを公開しています。このメソッドは、該当するネイティブ コントロールをレンダリングするために、Xamarin.Forms カスタム マップが作成されるときに呼び出されます。 このメソッドでは、`OldElement` および `NewElement` プロパティを含む `ElementChangedEventArgs` パラメーターを受け取ります。 これらのプロパティは、レンダラーがアタッチされて *いた* Xamarin.Forms 要素と、レンダラーが現在アタッチされて *いる* Xamarin.Forms 要素をそれぞれ表しています。 サンプル アプリケーションでは、`OldElement` プロパティが `null` になり、`NewElement` プロパティに `CustomMap` インスタンスへの参照が含まれます。
 
 各プラットフォーム固有のレンダラー クラス内の、オーバーライドされたバージョンの `OnElementChanged` メソッドは、ネイティブ コントロールのカスタマイズを行う場所です。 プラットフォーム上で使用されているネイティブ コントロールへの型指定された参照には、`Control` プロパティを使用してアクセスすることができます。 さらに、レンダリングされている Xamarin.Forms コントロールへの参照は、`Element` プロパティを使用して取得することができます。
 
@@ -176,7 +176,7 @@ protected override void OnElementChanged (ElementChangedEventArgs<Xamarin.Forms.
 
 ![カスタマイズの前と後のマップ コントロール](map-pin-images/map-layout-ios.png)
 
-iOS では、ピンは*注釈*と呼ばれ、カスタム イメージまたはさまざまな色のシステム定義のピンにすることができます。 注釈では、必要に応じて、注釈を選択するユーザーへの応答として表示される、*吹き出し*を示すことができます。 吹き出しでは、`Pin` インスタンスの `Label` および `Address` プロパティが表示され、オプションの左側と右側のアクセサリ ビューが示されます。 上記のスクリーンショットでは、左側のアクセサリ ビューはサルのイメージで、右側のアクセサリ ビューは*情報* ボタンとなっています。
+iOS では、ピンは *注釈* と呼ばれ、カスタム イメージまたはさまざまな色のシステム定義のピンにすることができます。 注釈では、必要に応じて、注釈を選択するユーザーへの応答として表示される、 *吹き出し* を示すことができます。 吹き出しでは、`Pin` インスタンスの `Label` および `Address` プロパティが表示され、オプションの左側と右側のアクセサリ ビューが示されます。 上記のスクリーンショットでは、左側のアクセサリ ビューはサルのイメージで、右側のアクセサリ ビューは *情報* ボタンとなっています。
 
 次のコード例は、iOS プラットフォーム用のカスタム レンダラーを示しています。
 
@@ -276,7 +276,7 @@ protected override MKAnnotationView GetViewForAnnotation(MKMapView mapView, IMKA
     - `CustomMKAnnotationView.Image` プロパティは、マップ上の注釈を表すイメージに設定されます。
     - `CustomMKAnnotationView.CalloutOffset` プロパティは `CGPoint` に設定されます。これにより、吹き出しが注釈の上の中央に表示されることが指定されます。
     - `CustomMKAnnotationView.LeftCalloutAccessoryView` プロパティは、注釈のタイトルとアドレスの左側に表示されるサルのイメージに設定されます。
-    - `CustomMKAnnotationView.RightCalloutAccessoryView` プロパティは、注釈のタイトルとアドレスの右側に表示される*情報* ボタンに設定されます。
+    - `CustomMKAnnotationView.RightCalloutAccessoryView` プロパティは、注釈のタイトルとアドレスの右側に表示される *情報* ボタンに設定されます。
     - `CustomMKAnnotationView.Name` プロパティは、`GetCustomPin` メソッドによって返される `CustomPin.Name` プロパティに設定されます。 これにより、注釈を識別でき、必要に応じて、その[吹き出しをさらにカスタマイズできる](#selecting-the-annotation)ようになります。
     - `CustomMKAnnotationView.Url` プロパティは、`GetCustomPin` メソッドによって返される `CustomPin.Url` プロパティに設定されます。 ユーザーが[右側の吹き出しのアクセサリ ビューに表示されるボタンをタップ](#tapping-on-the-right-callout-accessory-view)したときに、URL にナビゲートされます。
 1. [`MKAnnotationView.CanShowCallout`](xref:MapKit.MKAnnotationView.CanShowCallout*) プロパティは `true` に設定され、注釈がタップされたときに吹き出しが表示されるようになります。
@@ -308,7 +308,7 @@ void OnDidSelectAnnotationView(object sender, MKAnnotationViewEventArgs e)
 
 #### <a name="tapping-on-the-right-callout-accessory-view"></a>右側の吹き出しのアクセサリ ビューのタップ
 
-ユーザーが右側の吹き出しのアクセサリ ビューにある*情報* ボタンをタップすると、`CalloutAccessoryControlTapped` イベントが発生し、次に、`OnCalloutAccessoryControlTapped` メソッドが実行されます。
+ユーザーが右側の吹き出しのアクセサリ ビューにある *情報* ボタンをタップすると、`CalloutAccessoryControlTapped` イベントが発生し、次に、`OnCalloutAccessoryControlTapped` メソッドが実行されます。
 
 ```csharp
 void OnCalloutAccessoryControlTapped(object sender, MKMapViewAccessoryTappedEventArgs e)
@@ -349,7 +349,7 @@ void OnDidDeselectAnnotationView(object sender, MKAnnotationViewEventArgs e)
 
 ![カスタマイズの前と後のマップ コントロール](map-pin-images/map-layout-android.png)
 
-Android では、ピンは*マーカー*と呼ばれ、カスタム イメージまたはさまざまな色のシステム定義のマーカーにすることができます。 マーカーでは*情報ウィンドウ*を表示することができます。このウィンドウは、マーカーをタップしたユーザーへの応答として表示されます。 情報ウィンドウには `Pin` インスタンスの `Label` および `Address` プロパティが表示されます。このウィンドウをカスタマイズして、他のコンテンツを含めることができます。 しかし、情報ウィンドウを表示できるのは一度に 1 つのみとなります。
+Android では、ピンは *マーカー* と呼ばれ、カスタム イメージまたはさまざまな色のシステム定義のマーカーにすることができます。 マーカーでは *情報ウィンドウ* を表示することができます。このウィンドウは、マーカーをタップしたユーザーへの応答として表示されます。 情報ウィンドウには `Pin` インスタンスの `Label` および `Address` プロパティが表示されます。このウィンドウをカスタマイズして、他のコンテンツを含めることができます。 しかし、情報ウィンドウを表示できるのは一度に 1 つのみとなります。
 
 次のコード例は、Android プラットフォーム用のカスタム レンダラーを示しています。
 
@@ -512,7 +512,7 @@ void OnInfoWindowClick(object sender, GoogleMap.InfoWindowClickEventArgs e)
 
 ![カスタマイズの前と後のマップ コントロール](map-pin-images/map-layout-uwp.png)
 
-UWP では、ピンは*マップ アイコン*と呼ばれ、カスタム イメージまたはシステム定義の既定のイメージにすることができます。 マップ アイコンでは、そのマップ アイコンをタップしたユーザーへの応答として表示される、`UserControl` を示すことができます。 `UserControl` では、`Pin` インスタンスの `Label` および `Address` プロパティを含む、すべてのコンテンツを表示できます。
+UWP では、ピンは *マップ アイコン* と呼ばれ、カスタム イメージまたはシステム定義の既定のイメージにすることができます。 マップ アイコンでは、そのマップ アイコンをタップしたユーザーへの応答として表示される、`UserControl` を示すことができます。 `UserControl` では、`Pin` インスタンスの `Label` および `Address` プロパティを含む、すべてのコンテンツを表示できます。
 
 次のコード例は、UWP のカスタム レンダラーを示しています。
 
@@ -639,7 +639,7 @@ private void OnMapElementClick(MapControl sender, MapElementClickEventArgs args)
 
 #### <a name="tapping-on-the-information-button"></a>情報ボタンのタップ
 
-ユーザーが `XamarinMapOverlay` ユーザー コントロールにある*情報* ボタンをタップすると、`Tapped` イベントが発生し、次に `OnInfoButtonTapped` メソッドが実行されます。
+ユーザーが `XamarinMapOverlay` ユーザー コントロールにある *情報* ボタンをタップすると、`Tapped` イベントが発生し、次に `OnInfoButtonTapped` メソッドが実行されます。
 
 ```csharp
 private async void OnInfoButtonTapped(object sender, TappedRoutedEventArgs e)

@@ -12,16 +12,16 @@ ms.date: 04/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 06cd68c56192664f6d11ec9f6adbe30f9ae5168c
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: 406edc5257cc62ce59bb22a7802d5f7125ea4049
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91433473"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93371847"
 ---
 # <a name="perform-navigation-in-a-multi-page-no-locxamarinforms-application"></a>複数ページの Xamarin.Forms アプリケーションでナビゲーションを実行する
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/getstarted-notes-multipage/)
 
 このクイックスタートでは、次の方法について学習します。
 

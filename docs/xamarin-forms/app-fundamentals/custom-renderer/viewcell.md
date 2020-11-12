@@ -10,16 +10,16 @@ ms.date: 12/07/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 20de91e7a9d0acf5c5aacfb7a05088aec2c20c71
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: e4d1cb15812ca95a33196960c22574c0fada223f
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91558298"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373511"
 ---
 # <a name="customizing-a-viewcell"></a>ViewCell のカスタマイズ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-viewcell)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/customrenderers-viewcell)
 
 _Xamarin.Forms の ViewCell は、ListView または TableView に追加できるセルであり、開発者が定義したビューを含みます。この記事では、Xamarin.Forms の ListView コントロールの内部でホストされる ViewCell 用のカスタム レンダラーを作成する方法を示します。これにより、ListView のスクロール中に Xamarin.Forms のレイアウトの計算が繰り返し呼び出されることが回避されます。_
 

@@ -10,16 +10,16 @@ ms.date: 04/02/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: ee027399aec51bb7ae4fac15e9c706c65d3af235
-ms.sourcegitcommit: d1980b2251999224e71c1289e4b4097595b7e261
+ms.openlocfilehash: fb9d5243e5be4d99d741349564854c9c54e7a1bb
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92928634"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373290"
 ---
 # <a name="no-locxamarinforms-shell-navigation"></a>Xamarin.Forms シェルのナビゲーション
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-xaminals/)
 
 Xamarin.Forms シェルには、設定されたナビゲーション階層に従わなくても、アプリケーション内の任意のページに移動するルートを使用する URI ベースのナビゲーション操作が用意されています。 さらに、これにより、ナビゲーション スタックのすべてのページにアクセスすることなく、後方に移動する機能も提供されます。
 

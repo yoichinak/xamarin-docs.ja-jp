@@ -10,18 +10,18 @@ ms.date: 10/24/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: b109459f583afd491b613b4e32e4e4530eeb5ca4
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: cb1aa068e702b4d12bf112486e77a1c893b68956
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562692"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370859"
 ---
 # <a name="creating-an-effect"></a>エフェクトの作成
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-focuseffect)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/effects-focuseffect)
 
-"_エフェクトにより、コントロールのカスタマイズが簡略化されます。この記事では、入力コントロールがフォーカスを取得したときにコントロールの背景色を変更するエフェクトの作成方法を示します。_ "
+" _エフェクトにより、コントロールのカスタマイズが簡略化されます。この記事では、入力コントロールがフォーカスを取得したときにコントロールの背景色を変更するエフェクトの作成方法を示します。_ "
 
 各プラットフォーム固有のプロジェクトで効果を作成するプロセスは次のとおりです。
 

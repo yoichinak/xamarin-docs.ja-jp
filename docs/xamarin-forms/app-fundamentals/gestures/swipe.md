@@ -10,18 +10,18 @@ ms.date: 08/14/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: cbd1bdd097bc205f82f98574df5c356b03769e29
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 85492866c5d613b9688d215f5979192c32bb7263
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562653"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375203"
 ---
 # <a name="add-a-swipe-gesture-recognizer"></a>スワイプ ジェスチャ認識エンジンを追加する
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-swipegesture)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/workingwithgestures-swipegesture)
 
-_スワイプ ジェスチャが発生するのは、指が画面に沿って水平または垂直方向に動かされたときで、多くの場合コンテンツのナビゲーションを開始するために使われます。この記事のコード例は、[Swipe Gesture](/samples/xamarin/xamarin-forms-samples/workingwithgestures-swipegesture) サンプルから取得されています。_
+_スワイプ ジェスチャが発生するのは、指が画面に沿って水平または垂直方向に動かされたときで、多くの場合コンテンツのナビゲーションを開始するために使われます。この記事のコード例は、 [Swipe Gesture](/samples/xamarin/xamarin-forms-samples/workingwithgestures-swipegesture) サンプルから取得されています。_
 
 [`View`](xref:Xamarin.Forms.View) にスワイプ ジェスチャを認識させるには、[`SwipeGestureRecognizer`](xref:Xamarin.Forms.SwipeGestureRecognizer) インスタンスを作成し、[`Direction`](xref:Xamarin.Forms.SwipeGestureRecognizer.Direction) プロパティに [`SwipeDirection`](xref:Xamarin.Forms.SwipeDirection) 列挙値 (`Left`、`Right`、`Up`、または `Down`) を設定し、必要に応じて [`Threshold`](xref:Xamarin.Forms.SwipeGestureRecognizer.Threshold) プロパティを設定し、[`Swiped`](xref:Xamarin.Forms.SwipeGestureRecognizer.Swiped) イベントを処理して、新しいジェスチャ認識エンジンをビューの [`GestureRecognizers`](xref:Xamarin.Forms.View.GestureRecognizers) コレクションに追加します。 次に示すコード例は、[`BoxView`](xref:Xamarin.Forms.BoxView) に関連付けられている `SwipeGestureRecognizer` です。
 

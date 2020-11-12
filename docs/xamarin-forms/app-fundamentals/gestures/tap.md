@@ -10,16 +10,16 @@ ms.date: 01/21/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fef28c88c0de0bd14eb1ab5868dc6433456184e1
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: d0b9b5a568a94208d5e177c88d2e73edb54b735c
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563433"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375188"
 ---
 # <a name="add-a-tap-gesture-recognizer"></a>タップ ジェスチャ認識エンジンを追加する
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-tapgesture)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/workingwithgestures-tapgesture)
 
 _タップ ジェスチャはタップ検出に使用され、TapGestureRecognizer クラスで実装されています。_
 
@@ -43,7 +43,7 @@ tapGestureRecognizer.NumberOfTapsRequired = 2; // double-tap
 
 ## <a name="using-xaml"></a>Xaml を使用する
 
-ジェスチャ認識エンジンは、添付プロパティを使用して Xaml のコントロールに追加できます。 画像に [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) を追加する構文を以下に示します (この例では、*ダブル タップ* イベントを定義します)。
+ジェスチャ認識エンジンは、添付プロパティを使用して Xaml のコントロールに追加できます。 画像に [`TapGestureRecognizer`](xref:Xamarin.Forms.TapGestureRecognizer) を追加する構文を以下に示します (この例では、 *ダブル タップ* イベントを定義します)。
 
 ```xaml
 <Image Source="tapped.jpg">

@@ -10,16 +10,16 @@ ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a4b092d90b3afa2197c1db576545d233eb6e208d
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 34c3e2bb09c6e285f38b3c17bab2e10debe1d890
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563511"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367258"
 ---
 # <a name="implementing-a-video-player"></a>ビデオ プレーヤーの実装
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 Xamarin.Forms アプリケーション内でビデオ ファイルを再生することが望ましい場合があります。 この一連の記事では、`VideoPlayer` という名前の Xamarin.Forms クラスに向けて、iOS、Android、およびユニバーサル Windows プラットフォーム (UWP) 用のカスタム レンダラーを記述する方法について説明します。
 
@@ -31,7 +31,7 @@ Xamarin.Forms アプリケーション内でビデオ ファイルを再生す�
 - プラットフォーム アプリケーションに埋め込まれたリソース
 - デバイスのビデオ ライブラリ
 
-ビデオ プレーヤーには、"*トランスポート コントロール*" (ビデオを再生および一時停止するためのボタン) と、ビデオの進行状況を表示したりユーザーが別の場所にすばやくスキップできたりする位置バーが必要です。 `VideoPlayer` では、プラットフォームによって提供されるトランスポート コントロールと位置バーのどちらかを使えます (以下を参照)。または、ご自身でカスタムのトランスポート コントロールと位置バーを提供できます。 iOS、Android、およびユニバーサル Windows プラットフォームで実行されているプログラムを次に示します。
+ビデオ プレーヤーには、" *トランスポート コントロール* " (ビデオを再生および一時停止するためのボタン) と、ビデオの進行状況を表示したりユーザーが別の場所にすばやくスキップできたりする位置バーが必要です。 `VideoPlayer` では、プラットフォームによって提供されるトランスポート コントロールと位置バーのどちらかを使えます (以下を参照)。または、ご自身でカスタムのトランスポート コントロールと位置バーを提供できます。 iOS、Android、およびユニバーサル Windows プラットフォームで実行されているプログラムを次に示します。
 
 [![Web ビデオを再生する](web-videos-images/playwebvideo-small.png "Web ビデオを再生する")](web-videos-images/playwebvideo-large.png#lightbox "Web ビデオを再生する")
 

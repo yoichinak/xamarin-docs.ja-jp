@@ -10,16 +10,16 @@ ms.date: 09/11/2017
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 28dbbe6411983e1fd7986413ceac69a5543c4bb4
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 374444307ef0b6cc6354d2f660834762bb566434
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562575"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367960"
 ---
 # <a name="introduction-to-no-locxamarinforms-data-templates"></a>Xamarin.Forms データ テンプレートの概要
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/templates-datatemplates)
 
 _Xamarin.Forms のデータ テンプレートを使うと、サポートされているコントロール上のデータの表現方法を定義できます。この記事では、データ テンプレートの概要について説明し、これが必要である理由について調べます。_
 
@@ -129,7 +129,7 @@ public class Person
 > [!NOTE]
 > [`TableView`](xref:Xamarin.Forms.TableView) は [`Cell`](xref:Xamarin.Forms.Cell) オブジェクトを利用しますが、[`DataTemplate`](xref:Xamarin.Forms.DataTemplate) は使用しない点に注意してください。 これは、データ バインディングは常に `Cell` オブジェクトに直接設定されるためです。
 
-前述のプロパティの直接の子として配置された [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) は、*インライン テンプレート*と呼ばれます。 また、`DataTemplate` は、コントロールレベル、ページレベル、またはアプリケーションレベルのリソースとして定義できます。 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) を定義する場所の選択は、使用できる場所に影響があります。
+前述のプロパティの直接の子として配置された [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) は、 *インライン テンプレート* と呼ばれます。 また、`DataTemplate` は、コントロールレベル、ページレベル、またはアプリケーションレベルのリソースとして定義できます。 [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) を定義する場所の選択は、使用できる場所に影響があります。
 
 - コントロール レベルで定義された [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) は、コントロールにのみ適用できます。
 - ページ レベルで定義された [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) は、ページ上の複数の有効なコントロールに適用できます。

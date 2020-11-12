@@ -10,16 +10,16 @@ ms.date: 01/13/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c89c6b50335405b56349e502f95b9d2975a04f73
-ms.sourcegitcommit: 145bd7550d19088c84949ecf5b1cc39002183234
+ms.openlocfilehash: ad65c46f216af9a24eb02ab55411f0a89ac61100
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2020
-ms.locfileid: "93185501"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374616"
 ---
 # <a name="no-locxamarinforms-control-templates"></a>Xamarin.Forms のコントロール テンプレート
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/templates-controltemplatedemos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/templates-controltemplatedemos)
 
 Xamarin.Forms のコントロール テンプレートを使うと、[`ContentView`](xref:Xamarin.Forms.ContentView) 派生カスタム コントロールと [`ContentPage`](xref:Xamarin.Forms.ContentPage) 派生ページのビジュアル構造を定義できます。 コントロール テンプレートを使うと、カスタム コントロールまたはページのユーザー インターフェイス (UI) を、コントロールまたはページを実装するロジックから分離できます。 また、事前に定義した場所にあるテンプレート化されたカスタム コントロールまたはテンプレート化されたページに追加のコンテンツを挿入することもできます。
 

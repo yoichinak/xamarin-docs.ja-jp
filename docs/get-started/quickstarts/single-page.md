@@ -12,16 +12,16 @@ ms.date: 04/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 96b3e6bd055c0bc89ae7bcbb66c8b3f48b21ad17
-ms.sourcegitcommit: 00e6a61eb82ad5b0dd323d48d483a74bedd814f2
+ms.openlocfilehash: b550aed2dd2038a48fa4eafcf1ed1d874a08eb03
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91436231"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375526"
 ---
 # <a name="create-a-single-page-no-locxamarinforms-application"></a>単一ページの Xamarin.Forms アプリケーションを作成する
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/getstarted-notes-singlepage/)
 
 このクイックスタートでは、次の方法について学習します。
 
@@ -37,7 +37,7 @@ ms.locfileid: "91436231"
 
 ### <a name="prerequisites"></a>必須コンポーネント
 
-- Visual Studio 2019 (最新リリース) と、 **.NET によるモバイル開発**ワークロードがインストールされている。
+- Visual Studio 2019 (最新リリース) と、 **.NET によるモバイル開発** ワークロードがインストールされている。
 - C# に関する知識。
 - (必要に応じて) iOS 上でアプリケーションをビルドするためのペアリング済みの Mac。
 
@@ -58,7 +58,7 @@ ms.locfileid: "91436231"
     ![プロジェクトを構成する](single-page-images/vs/configure-project.png)
 
     > [!IMPORTANT]
-    > このクイックスタートの C# スニペットと XAML スニペットでは、**Notes** という名前のソリューションが必要です。 別の名前を使用すると、コードをこのクイック スタートからソリューションにコピーするときに、ビルド エラーが発生します。
+    > このクイックスタートの C# スニペットと XAML スニペットでは、 **Notes** という名前のソリューションが必要です。 別の名前を使用すると、コードをこのクイック スタートからソリューションにコピーするときに、ビルド エラーが発生します。
 
 4. **[新しいクロス プラットフォーム アプリ]** ダイアログで、 **[空のアプリケーション]** をクリックし、 **[OK]** ボタンをクリックします。
 
@@ -66,7 +66,7 @@ ms.locfileid: "91436231"
 
     作成される .NET Standard ライブラリの詳細については、[Xamarin.Forms クイック スタート Deep Dive](deepdive.md) の「[Xamarin.Forms アプリケーションの構造](deepdive.md#anatomy-of-a-xamarinforms-application)」を参照してください。
 
-5. **ソリューション エクスプローラー**の **Notes** プロジェクトで、 **[MainPage.xaml]** をダブルクリックして開きます。
+5. **ソリューション エクスプローラー** の **Notes** プロジェクトで、 **[MainPage.xaml]** をダブルクリックして開きます。
 
     ![MainPage.xaml を開く](single-page-images/vs/open-mainpage-xaml-2019.png)
 
@@ -101,9 +101,9 @@ ms.locfileid: "91436231"
 
     このコードにより、ページにユーザー インターフェイスが宣言的に定義されます。これは、テキストを表示する [`Label`](xref:Xamarin.Forms.Label)、テキスト入力用の [`Editor`](xref:Xamarin.Forms.Editor)、およびファイルの保存または削除をアプリケーションに指示する 2 つの [`Button`](xref:Xamarin.Forms.Button) インスタンスで構成されます。 この 2 つの `Button` インスタンスは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) に垂直に配置されている `Label`、`Editor`、`Grid` と共に、[`Grid`](xref:Xamarin.Forms.Grid) に水平に配置されます。 ユーザー インターフェイスの作成の詳細については、「[Xamarin.Forms クイック スタート Deep Dive](deepdive.md)」の「[ユーザー インターフェイス](deepdive.md#user-interface)」を参照してください。
 
-    **CTRL + S** を押し、**MainPage.xaml** への変更内容を保存してから、ファイルを閉じます。
+    **CTRL + S** を押し、 **MainPage.xaml** への変更内容を保存してから、ファイルを閉じます。
 
-7. **ソリューション エクスプローラー**の **Notes** プロジェクトで **[MainPage.xaml]** を展開し、 **[MainPage.xaml.cs]** をダブルクリックして開きます。
+7. **ソリューション エクスプローラー** の **Notes** プロジェクトで **[MainPage.xaml]** を展開し、 **[MainPage.xaml.cs]** をダブルクリックして開きます。
 
     ![MainPage.xaml.cs を開く](single-page-images/vs/open-mainpage-codebehind-2019.png)
 
@@ -149,7 +149,7 @@ ms.locfileid: "91436231"
 
     このコードでは、`notes.txt` という名前のファイルを参照する `_fileName` フィールドを定義します。このファイルで、アプリケーション用のローカル アプリケーション データ フォルダーにメモ データが保存されます。 ページ コンストラクターが実行されると、ファイルが存在する場合は読み取られ、[`Editor`](xref:Xamarin.Forms.Editor) に表示されます。 **[保存]** [`Button`](xref:Xamarin.Forms.Button) が押されると、`OnSaveButtonClicked` イベント ハンドラーが実行されます。これにより、`Editor` のコンテンツがファイルに保存されます。 **[削除]** `Button` が押されると、`OnDeleteButtonClicked` イベント ハンドラーが実行されます。これにより、ファイルが存在する場合は削除され、`Editor` から任意のテキストが削除されます。 ユーザーの操作の詳細については、「[Xamarin.Forms クイック スタート Deep Dive](deepdive.md)」の「[ユーザー操作に対する応答](deepdive.md#responding-to-user-interaction)」を参照してください。
 
-    **CTRL + S** を押し、**MainPage.xaml.cs** への変更内容を保存してから、ファイルを閉じます。
+    **CTRL + S** を押し、 **MainPage.xaml.cs** への変更内容を保存してから、ファイルを閉じます。
 
 ### <a name="building-the-quickstart"></a>クイック スタートのビルド
 
@@ -191,7 +191,7 @@ ms.locfileid: "91436231"
 
 ### <a name="prerequisites"></a>必須コンポーネント
 
-- Visual Studio 2017 と、 **.NET によるモバイル開発**ワークロードがインストールされている。
+- Visual Studio 2017 と、 **.NET によるモバイル開発** ワークロードがインストールされている。
 - C# に関する知識。
 - (必要に応じて) iOS 上でアプリケーションをビルドするためのペアリング済みの Mac。
 
@@ -203,12 +203,12 @@ ms.locfileid: "91436231"
 
     ![新しいプロジェクト](single-page-images/vs/new-solution.png)
 
-2. **[新しいプロジェクト]** ダイアログで、 **[クロスプラットフォーム]** をクリックして、 **[モバイル アプリ (Xamarin.Forms)]** テンプレートを選択し、[名前] を "**Notes**" に設定し、プロジェクトの適切な場所を選んで **[OK]** ボタンをクリックします。
+2. **[新しいプロジェクト]** ダイアログで、 **[クロスプラットフォーム]** をクリックして、 **[モバイル アプリ (Xamarin.Forms)]** テンプレートを選択し、[名前] を " **Notes** " に設定し、プロジェクトの適切な場所を選んで **[OK]** ボタンをクリックします。
 
     ![クロスプラットフォームのプロジェクト テンプレート](single-page-images/vs/new-project.png)
 
     > [!IMPORTANT]
-    > このクイックスタートの C# スニペットと XAML スニペットでは、**Notes** という名前のソリューションが必要です。 別の名前を使用すると、コードをこのクイック スタートからソリューションにコピーするときに、ビルド エラーが発生します。
+    > このクイックスタートの C# スニペットと XAML スニペットでは、 **Notes** という名前のソリューションが必要です。 別の名前を使用すると、コードをこのクイック スタートからソリューションにコピーするときに、ビルド エラーが発生します。
 
 3. **[新しいクロスプラットフォーム アプリ]** ダイアログで、 **[空のアプリケーション]** をクリックして、コード共有方法として **[.NET Standard]** を選択し、 **[OK]** ボタンをクリックします。
 
@@ -216,7 +216,7 @@ ms.locfileid: "91436231"
 
     作成される .NET Standard ライブラリの詳細については、[Xamarin.Forms クイック スタート Deep Dive](deepdive.md) の「[Xamarin.Forms アプリケーションの構造](deepdive.md#anatomy-of-a-xamarinforms-application)」を参照してください。
 
-4. **ソリューション エクスプローラー**の **Notes** プロジェクトで、 **[MainPage.xaml]** をダブルクリックして開きます。
+4. **ソリューション エクスプローラー** の **Notes** プロジェクトで、 **[MainPage.xaml]** をダブルクリックして開きます。
 
     ![MainPage.xaml を開く](single-page-images/vs/open-mainpage-xaml.png)
 
@@ -251,9 +251,9 @@ ms.locfileid: "91436231"
 
     このコードにより、ページにユーザー インターフェイスが宣言的に定義されます。これは、テキストを表示する [`Label`](xref:Xamarin.Forms.Label)、テキスト入力用の [`Editor`](xref:Xamarin.Forms.Editor)、およびファイルの保存または削除をアプリケーションに指示する 2 つの [`Button`](xref:Xamarin.Forms.Button) インスタンスで構成されます。 この 2 つの `Button` インスタンスは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) に垂直に配置されている `Label`、`Editor`、`Grid` と共に、[`Grid`](xref:Xamarin.Forms.Grid) に水平に配置されます。 ユーザー インターフェイスの作成の詳細については、「[Xamarin.Forms クイック スタート Deep Dive](deepdive.md)」の「[ユーザー インターフェイス](deepdive.md#user-interface)」を参照してください。
 
-    **CTRL + S** を押し、**MainPage.xaml** への変更内容を保存してから、ファイルを閉じます。
+    **CTRL + S** を押し、 **MainPage.xaml** への変更内容を保存してから、ファイルを閉じます。
 
-6. **ソリューション エクスプローラー**の **Notes** プロジェクトで **[MainPage.xaml]** を展開し、 **[MainPage.xaml.cs]** をダブルクリックして開きます。
+6. **ソリューション エクスプローラー** の **Notes** プロジェクトで **[MainPage.xaml]** を展開し、 **[MainPage.xaml.cs]** をダブルクリックして開きます。
 
     ![MainPage.xaml.cs を開く](single-page-images/vs/open-mainpage-codebehind.png)
 
@@ -299,7 +299,7 @@ ms.locfileid: "91436231"
 
     このコードでは、`notes.txt` という名前のファイルを参照する `_fileName` フィールドを定義します。このファイルで、アプリケーション用のローカル アプリケーション データ フォルダーにメモ データが保存されます。 ページ コンストラクターが実行されると、ファイルが存在する場合は読み取られ、[`Editor`](xref:Xamarin.Forms.Editor) に表示されます。 **[保存]** [`Button`](xref:Xamarin.Forms.Button) が押されると、`OnSaveButtonClicked` イベント ハンドラーが実行されます。これにより、`Editor` のコンテンツがファイルに保存されます。 **[削除]** `Button` が押されると、`OnDeleteButtonClicked` イベント ハンドラーが実行されます。これにより、ファイルが存在する場合は削除され、`Editor` から任意のテキストが削除されます。 ユーザーの操作の詳細については、「[Xamarin.Forms クイック スタート Deep Dive](deepdive.md)」の「[ユーザー操作に対する応答](deepdive.md#responding-to-user-interaction)」を参照してください。
 
-    **CTRL + S** を押し、**MainPage.xaml.cs** への変更内容を保存してから、ファイルを閉じます。
+    **CTRL + S** を押し、 **MainPage.xaml.cs** への変更内容を保存してから、ファイルを閉じます。
 
 ### <a name="building-the-quickstart"></a>クイック スタートのビルド
 
@@ -405,7 +405,7 @@ ms.locfileid: "91436231"
 
     このコードにより、ページにユーザー インターフェイスが宣言的に定義されます。これは、テキストを表示する [`Label`](xref:Xamarin.Forms.Label)、テキスト入力用の [`Editor`](xref:Xamarin.Forms.Editor)、およびファイルの保存または削除をアプリケーションに指示する 2 つの [`Button`](xref:Xamarin.Forms.Button) インスタンスで構成されます。 この 2 つの `Button` インスタンスは、[`StackLayout`](xref:Xamarin.Forms.StackLayout) に垂直に配置されている `Label`、`Editor`、`Grid` と共に、[`Grid`](xref:Xamarin.Forms.Grid) に水平に配置されます。 ユーザー インターフェイスの作成の詳細については、「[Xamarin.Forms クイック スタート Deep Dive](deepdive.md)」の「[ユーザー インターフェイス](deepdive.md#user-interface)」を参照してください。
 
-    **[ファイル]、[保存]** の順に選択し (または **&#8984; + S** キーを押し)、**MainPage.xaml** への変更内容を保存してから、ファイルを閉じます。
+    **[ファイル]、[保存]** の順に選択し (または **&#8984; + S** キーを押し)、 **MainPage.xaml** への変更内容を保存してから、ファイルを閉じます。
 
 7. **Solution Pad** の **Notes** プロジェクトで、 **[MainPage.xaml]** を展開し、 **[MainPage.xaml.cs]** をダブルクリックして開きます。
 
@@ -453,7 +453,7 @@ ms.locfileid: "91436231"
 
     このコードでは、`notes.txt` という名前のファイルを参照する `_fileName` フィールドを定義します。このファイルで、アプリケーション用のローカル アプリケーション データ フォルダーにメモ データが保存されます。 ページ コンストラクターが実行されると、ファイルが存在する場合は読み取られ、[`Editor`](xref:Xamarin.Forms.Editor) に表示されます。 **[保存]** [`Button`](xref:Xamarin.Forms.Button) が押されると、`OnSaveButtonClicked` イベント ハンドラーが実行されます。これにより、`Editor` のコンテンツがファイルに保存されます。 **[削除]** `Button` が押されると、`OnDeleteButtonClicked` イベント ハンドラーが実行されます。これにより、ファイルが存在する場合は削除され、`Editor` から任意のテキストが削除されます。 ユーザーの操作の詳細については、「[Xamarin.Forms クイック スタート Deep Dive](deepdive.md)」の「[ユーザー操作に対する応答](deepdive.md#responding-to-user-interaction)」を参照してください。
 
-    **[ファイル]、[保存]** の順に選択し (または **&#8984; + S** キーを押し)、**MainPage.xaml.cs** への変更内容を保存してから、ファイルを閉じます。
+    **[ファイル]、[保存]** の順に選択し (または **&#8984; + S** キーを押し)、 **MainPage.xaml.cs** への変更内容を保存してから、ファイルを閉じます。
 
 ### <a name="building-the-quickstart"></a>クイック スタートのビルド
 

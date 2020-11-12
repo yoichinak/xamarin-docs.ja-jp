@@ -10,16 +10,16 @@ ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a1a0febfdb38e577363ba59e8d0a5ceda9464a26
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: be7f7d953b47af96d0325e227e24748624948433
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91563498"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93367167"
 ---
 # <a name="loading-application-resource-videos"></a>アプリケーション リソース ビデオの読み込み
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
 `VideoPlayer` ビュー用のカスタム レンダラーは、アプリケーション リソースとして個々のプラットフォーム プロジェクトに埋め込まれたビデオ ファイルを再生できます。 しかし、現在のバージョンの `VideoPlayer` は、.NET Standard ライブラリに埋め込まれたリソースにアクセスすることはできません。
 
@@ -31,19 +31,19 @@ ms.locfileid: "91563498"
 
 ### <a name="ios-video-resources"></a>iOS ビデオ リソース
 
-iOS プロジェクトでは、ビデオを**リソース** フォルダー、または**リソース** フォルダーのサブフォルダーに格納できます。 ビデオ ファイルには、`BundleResource` の `Build Action` が含まれている必要があります。 `ResourceVideoSource` の `Path` プロパティをファイル名に設定します。たとえば、 **MyFile.mp4 (** **リソース** フォルダー内のファイルの場合) や **MyFolder/MyFile.mp4** (ここで、 **MyFolder** は、 **リソース** フォルダーのサブフォルダー) などに設定します。
+iOS プロジェクトでは、ビデオを **リソース** フォルダー、または **リソース** フォルダーのサブフォルダーに格納できます。 ビデオ ファイルには、`BundleResource` の `Build Action` が含まれている必要があります。 `ResourceVideoSource` の `Path` プロパティをファイル名に設定します。たとえば、 **MyFile.mp4 (** **リソース** フォルダー内のファイルの場合) や **MyFolder/MyFile.mp4** (ここで、 **MyFolder** は、 **リソース** フォルダーのサブフォルダー) などに設定します。
 
-**VideoPlayerDemos** ソリューションでは、**VideoPlayerDemos.iOS** に、**Videos** という名前の**リソース** フォルダーのサブフォルダーが含まれ、このサブフォルダーには、**iOSApiVideo.mp4** という名前のファイルが含まれます。 これは、Xamarin Web サイトを使用して iOS `AVPlayerViewController` クラス用のドキュメントを検索する方法を示す短いビデオです。
+**VideoPlayerDemos** ソリューションでは、 **VideoPlayerDemos.iOS** に、 **Videos** という名前の **リソース** フォルダーのサブフォルダーが含まれ、このサブフォルダーには、 **iOSApiVideo.mp4** という名前のファイルが含まれます。 これは、Xamarin Web サイトを使用して iOS `AVPlayerViewController` クラス用のドキュメントを検索する方法を示す短いビデオです。
 
 ### <a name="android-video-resources"></a>Android ビデオ リソース
 
-Android プロジェクトでは、**raw** という名前の**リソース** フォルダーのサブフォルダーにビデオを格納する必要があります。 **raw** フォルダーにサブフォルダーを含めることはできません。 ビデオ ファイルに `AndroidResource` の `Build Action` を指定します。 `ResourceVideoSource` の `Path` プロパティをファイル名 (たとえば、**MyFile.mp4**) に設定します。
+Android プロジェクトでは、 **raw** という名前の **リソース** フォルダーのサブフォルダーにビデオを格納する必要があります。 **raw** フォルダーにサブフォルダーを含めることはできません。 ビデオ ファイルに `AndroidResource` の `Build Action` を指定します。 `ResourceVideoSource` の `Path` プロパティをファイル名 (たとえば、 **MyFile.mp4** ) に設定します。
 
-**VideoPlayerDemos.Android** プロジェクトには、**raw** という名前の**リソース** フォルダーのサブフォルダーが含まれ、このサブフォルダーには、**AndroidApiVideo.mp4** という名前のファイルが含まれます。
+**VideoPlayerDemos.Android** プロジェクトには、 **raw** という名前の **リソース** フォルダーのサブフォルダーが含まれ、このサブフォルダーには、 **AndroidApiVideo.mp4** という名前のファイルが含まれます。
 
 ### <a name="uwp-video-resources"></a>UWP ビデオ リソース
 
-ユニバーサル Windows プラットフォーム プロジェクトでは、プロジェクト内の任意のフォルダーにビデオを格納できます。 ファイルに `Content` の `Build Action` を指定します。 `ResourceVideoSource` の `Path` プロパティをフォルダーとファイル名 (たとえば、**MyFolder/MyVideo.mp4**) に設定します。
+ユニバーサル Windows プラットフォーム プロジェクトでは、プロジェクト内の任意のフォルダーにビデオを格納できます。 ファイルに `Content` の `Build Action` を指定します。 `ResourceVideoSource` の `Path` プロパティをフォルダーとファイル名 (たとえば、 **MyFolder/MyVideo.mp4** ) に設定します。
 
 **VideoPlayerDemos.UWP** プロジェクトには **Videos** という名前のフォルダーが含まれ、このフォルダーにはファイル **UWPApiVideo.mp4** が含まれます。
 
@@ -87,7 +87,7 @@ namespace FormsVideoLibrary.iOS
 
 ### <a name="android-resource-loading"></a>Android リソースの読み込み
 
-Android `VideoPlayerRenderer` では、ファイル名とパッケージ名を使用して、`Uri` オブジェクトを構築します。 パッケージ名は、静的な `Context.PackageName` プロパティから取得できるアプリケーションの名前 (この場合は **VideoPlayerDemos.Android**) です。 この後、生成された `Uri` オブジェクトは、`VideoView` の `SetVideoURI` メソッドに渡されます。
+Android `VideoPlayerRenderer` では、ファイル名とパッケージ名を使用して、`Uri` オブジェクトを構築します。 パッケージ名は、静的な `Context.PackageName` プロパティから取得できるアプリケーションの名前 (この場合は **VideoPlayerDemos.Android** ) です。 この後、生成された `Uri` オブジェクトは、`VideoView` の `SetVideoURI` メソッドに渡されます。
 
 ```csharp
 namespace FormsVideoLibrary.Droid
@@ -176,7 +176,7 @@ namespace FormsVideoLibrary.UWP
 </ContentPage>
 ```
 
-iOS リソースを**リソース** フォルダーに格納する場合、および UWP リソースをプロジェクトのルート フォルダーに格納する場合、各プラットフォームに同じファイル名を使用できます。 その場合は、その名前を `VideoPlayer` の `Source` に直接設定できます。
+iOS リソースを **リソース** フォルダーに格納する場合、および UWP リソースをプロジェクトのルート フォルダーに格納する場合、各プラットフォームに同じファイル名を使用できます。 その場合は、その名前を `VideoPlayer` の `Source` に直接設定できます。
 
 以下に、実行中のページを示します。
 

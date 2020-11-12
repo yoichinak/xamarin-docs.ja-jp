@@ -10,16 +10,16 @@ ms.date: 01/21/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8c9968ac7de45f3e6e239f82ba43b53abd05a647
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 401924de371efb14095499a655a42642c3032d4b
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91558519"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375227"
 ---
 # <a name="add-a-pan-gesture-recognizer"></a>パン ジェスチャ認識エンジンを追加する
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pangesture)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/workingwithgestures-pangesture)
 
 _パン ジェスチャは、画面周辺の指の動きを検出し、その動きをコンテンツに適用するために使用され、`PanGestureRecognizer` クラスを使用して実装されます。パン ジェスチャの一般的なシナリオは、イメージを水平方向や垂直方向にパンし、イメージをそのイメージのディメンションより小さいビューポートで表示するときに、そのコンテンツがすべて表示されるようにすることです。これは、イメージをビューポート内で移動することによって実現され、この記事でその方法について説明します。_
 

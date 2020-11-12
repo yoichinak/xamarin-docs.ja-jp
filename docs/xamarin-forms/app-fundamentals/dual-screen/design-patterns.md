@@ -10,16 +10,16 @@ ms.date: 02/08/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 9b553a2fc3dea0d2793cb337142eacf0419ad994
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 8cd98f529c324e89a4b935a364a09ff794b6c5be
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91556075"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93369429"
 ---
 # <a name="no-locxamarinforms-dual-screen-design-patterns"></a>Xamarin.Forms のデュアル画面の設計パターン
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/userinterface-dualscreendemos/)
 
 このガイドでは、魅力的で便利なユーザー エクスペリエンスを提供するインターフェイスの作成に役立つコードとサンプルが含まれる、デュアル画面デバイス向けに推奨される設計パターンについて説明します。
 

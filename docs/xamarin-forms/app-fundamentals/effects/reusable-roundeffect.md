@@ -10,16 +10,16 @@ ms.date: 10/27/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: e1474167d3bb56f0e5eb7ee0a8d321a5d4367ef2
-ms.sourcegitcommit: 1550019cd1e858d4d13a4ae6dfb4a5947702f24b
+ms.openlocfilehash: 74df5809576745903f978862ddc8a1e98aa1c973
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92897560"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374265"
 ---
 # <a name="no-locxamarinforms-reusable-roundeffect"></a>Xamarin.Forms の再利用可能な RoundEffect
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/effects-roundeffect/)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/effects-roundeffect/)
 
 > [!IMPORTANT]
 > コントロールを円の形にレンダリングするために `RoundEffect` を使用する必要はなくなりました。 最新の推奨手法は `EllipseGeometry` を利用してコントロールをクリップすることです。 詳しくは、「[Geometry を使用してクリップする](~/xamarin-forms/user-interface/shapes/geometries.md#clip-with-a-geometry)」をご覧ください。

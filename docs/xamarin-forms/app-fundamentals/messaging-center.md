@@ -10,16 +10,16 @@ ms.date: 10/08/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d24ff6831bb8b52d840ff2db7c13c3eb674b7bd8
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 5ccff2fd24537be0bbf2d809b20a00bc35667c95
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555789"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93366856"
 ---
 # <a name="no-locxamarinforms-messagingcenter"></a>Xamarin.Forms の MessagingCenter
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingmessagingcenter)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/usingmessagingcenter)
 
 発行/サブスクライブ パターンは、パブリッシャーがサブスクライバーと呼ばれる受信者を知らずに、メッセージを送信するメッセージング パターンです。 同様に、サブスクライバーは、パブリッシャーを知らずに特定のメッセージをリッスンします。
 
@@ -94,7 +94,7 @@ MessagingCenter.Subscribe<MainPage, string>(this, "Hi", async (sender, arg) =>
 サブスクライバーは、受信する必要がなくなったメッセージのサブスクライブを解除することができます。 これは、いずれかの [`MessagingCenter.Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) オーバーロードで実現されます。
 
 ```csharp
-MessagingCenter.Unsubscribe<MainPage>(this, "Hi");
+MessagingCenter.Unsubscribe<MainPage>(this, "Hi");
 ```
 
 この例では、[`Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) メソッドで、`MainPage` 型によって送信された `Hi` メッセージから `this` オブジェクトのサブスクリプションを解除します。
@@ -102,7 +102,7 @@ MessagingCenter.Unsubscribe<MainPage>(this, "Hi");
 ペイロード データを含むメッセージは、次の 2 つのジェネリック引数を指定する [`Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) オーバーロードを使用して、サブスクリプションを解除する必要があります。
 
 ```csharp
-MessagingCenter.Unsubscribe<MainPage, string>(this, "Hi");
+MessagingCenter.Unsubscribe<MainPage, string>(this, "Hi");
 ```
 
 この例では、[`Unsubscribe`](xref:Xamarin.Forms.MessagingCenter.Unsubscribe*) メソッドで、ペイロード データが `string` である `MainPage` 型によって送信された `Hi` メッセージから `this` オブジェクトのサブスクリプションを解除します。

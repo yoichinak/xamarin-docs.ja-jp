@@ -10,16 +10,16 @@ ms.date: 04/06/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 53df681e79c4c233a8908764d31c8ee416c8a621
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: d5b0cc2bb4617a0f093971dfca69e8352779c088
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91561171"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93373654"
 ---
 # <a name="create-no-locxamarinforms-behaviors"></a>Xamarin.Forms ビヘイビアーの作成
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/behaviors-numericvalidationbehavior)
 
 _Xamarin.Forms のビヘイビアーは、Behavior または Behavior&lt;T&gt; クラスから派生させることで作成されます。この記事では、Xamarin.Forms のビヘイビアーを作成して使用する方法を示します。_
 
@@ -167,7 +167,7 @@ public class NumericValidationBehavior : Behavior<Entry>
 
 `NumericValidationBehavior` クラスには、`static` ゲッターとセッターがある `AttachBehavior` という名前の添付プロパティが含まれています。このプロパティにより、それが添付されるコントロールへのビヘイビアーの追加または削除が制御されます。 この添付プロパティにより、プロパティの値が変更されたときに実行される `OnAttachBehaviorChanged` デリゲートが登録されます。 このメソッドでは、`AttachBehavior` 添付プロパティの値に基づいて、ビヘイビアーの追加または削除が行われます。
 
-次のコード例で、`AttachBehavior` 添付プロパティを使用する `NumericValidationBehavior` 用の "*明示的な*" スタイルで、[`Entry`](xref:Xamarin.Forms.Entry) コントロールに適用できるものを示します。
+次のコード例で、`AttachBehavior` 添付プロパティを使用する `NumericValidationBehavior` 用の " *明示的な* " スタイルで、 [`Entry`](xref:Xamarin.Forms.Entry) コントロールに適用できるものを示します。
 
 ```xaml
 <Style x:Key="NumericValidationStyle" TargetType="Entry">

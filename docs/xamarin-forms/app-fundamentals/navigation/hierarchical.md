@@ -10,16 +10,16 @@ ms.date: 03/10/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 8e8c52c03534ca5d8b653eed4d8fc2c8f39edf61
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 9f72541bddcadabe4ce4fa71c2a4dfcae3c3c898
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562640"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374980"
 ---
 # <a name="hierarchical-navigation"></a>階層ナビゲーション
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/navigation-hierarchical)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/navigation-hierarchical)
 
 _NavigationPage クラスは、ユーザーが前後を希望どおりにページを移動することができる階層ナビゲーション エクスペリエンスを提供します。このクラスは、Page オブジェクトの後入れ先出し (LIFO) スタックとしてナビゲーションを提供します。この記事では、NavigationPage クラスを使用してページのスタックでナビゲーションを実行する方法について説明します。_
 
@@ -52,7 +52,7 @@ _NavigationPage クラスは、ユーザーが前後を希望どおりにペー�
 
 ### <a name="creating-the-root-page"></a>ルート ページを作成する
 
-ナビゲーション スタックに追加された最初のページは、アプリケーションの*ルート* ページとなります。次のコード例に、これを実現する方法を示しています。
+ナビゲーション スタックに追加された最初のページは、アプリケーションの *ルート* ページとなります。次のコード例に、これを実現する方法を示しています。
 
 ```csharp
 public App ()

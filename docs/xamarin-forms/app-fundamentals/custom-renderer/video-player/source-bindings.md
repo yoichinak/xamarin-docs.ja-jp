@@ -10,18 +10,18 @@ ms.date: 02/12/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: d417f5e0b2b0bea5a3e129c87e94b289dc7201ed
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 812adbbb4a9572d38dd57a3edd5c1a561909f1b0
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91562484"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374967"
 ---
 # <a name="binding-video-sources-to-the-player"></a>プレーヤーへのビデオ ソースのバインド
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos)
 
-`VideoPlayer` ビューの `Source` プロパティが新しいビデオ ファイルに設定されると、既存のビデオの再生が停止し、新しいビデオが開始されます。 この実例は、[**VideoPlayerDemos**](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) サンプルの **[Select Web Video]\(Web ビデオの選択\)** ページで示されています。 このページには、**App.xaml** ファイルから参照された 3 つのビデオのタイトルを示す `ListView` が含まれています。
+`VideoPlayer` ビューの `Source` プロパティが新しいビデオ ファイルに設定されると、既存のビデオの再生が停止し、新しいビデオが開始されます。 この実例は、 [**VideoPlayerDemos**](/samples/xamarin/xamarin-forms-samples/customrenderers-videoplayerdemos) サンプルの **[Select Web Video]\(Web ビデオの選択\)** ページで示されています。 このページには、 **App.xaml** ファイルから参照された 3 つのビデオのタイトルを示す `ListView` が含まれています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -52,7 +52,7 @@ ms.locfileid: "91562484"
 </ContentPage>
 ```
 
-ビデオが選択されると、分離コード ファイルの `ItemSelected` イベント ハンドラーが実行されます。 ハンドラーによってタイトルから空白とアポストロフィが削除され、それがキーとして使用され、**App.xaml** ファイルに定義されているリソースの 1 つが取得されます。 その `UriVideoSource` オブジェクトは `VideoPlayer` の `Source` プロパティに設定されます。
+ビデオが選択されると、分離コード ファイルの `ItemSelected` イベント ハンドラーが実行されます。 ハンドラーによってタイトルから空白とアポストロフィが削除され、それがキーとして使用され、 **App.xaml** ファイルに定義されているリソースの 1 つが取得されます。 その `UriVideoSource` オブジェクトは `VideoPlayer` の `Source` プロパティに設定されます。
 
 ```csharp
 namespace VideoPlayerDemos
@@ -99,7 +99,7 @@ namespace VideoPlayerDemos
 }
 ```
 
-**BindToVideoPlayer.xaml** ファイルの `ListView` には、これらの `VideoInfo` オブジェクトの配列が含まれており、それぞれ、ビデオ タイトルと、**App.xaml** のリソース ディレクトリの `UriVideoSource` オブジェクトを使用して初期化されています。
+**BindToVideoPlayer.xaml** ファイルの `ListView` には、これらの `VideoInfo` オブジェクトの配列が含まれており、それぞれ、ビデオ タイトルと、 **App.xaml** のリソース ディレクトリの `UriVideoSource` オブジェクトを使用して初期化されています。
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"

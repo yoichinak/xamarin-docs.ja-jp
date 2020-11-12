@@ -11,16 +11,16 @@ ms.date: 11/01/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: fac41e57d13815dcd202521d16ae4730e1d99cfa
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: cb811972d622ffdcf6042e030528a88fb18abaf7
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91555867"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93369806"
 ---
 # <a name="no-locxamarinforms-string-and-image-localization"></a>Xamarin.Forms の文字列とイメージのローカライズ
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/usingresxlocalization)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/usingresxlocalization)
 
 ローカライズは、ターゲット市場の特定の言語または文化の要件を満たすようにアプリケーションを適合させるプロセスです。 ローカライズを実現するには、アプリケーションのテキストとイメージを複数の言語に翻訳する必要がある場合があります。 ローカライズされたアプリケーションでは、モバイル デバイスのカルチャ設定に基づいて、翻訳されたテキストが自動的に表示されます。
 
@@ -67,7 +67,7 @@ Visual Studio 2019 では、 **[新しい項目の追加]** ダイアログを�
 1. AppResources.en.resx
 1. AppResources.resx (既定)
 
-次のスクリーンショットは、**AppResources.es.cs** という名前のスペイン語の翻訳ファイルを示しています。
+次のスクリーンショットは、 **AppResources.es.cs** という名前のスペイン語の翻訳ファイルを示しています。
 
 ![.resx ファイルで既定のスペイン語のテキスト リソースを指定する](text-images/pc-spanish-strings.png)
 
@@ -102,9 +102,9 @@ Visual Studio 2019 for Mac では、 **[新しい項目の追加]** ダイアロ
 
 ![リソース ファイルのプロパティで指定された [カスタム ツール]](text-images/mac-resx-properties.png)
 
-**[カスタム ツール]** を **[PublicResXFileCodeGenerator]** に設定すると、`public` アクセスを持つクラスが生成されます。 **[カスタム ツール]** を **[InternalResXFileCodeGenerator]** に設定すると、`internal` アクセスを持つクラスが生成されます。 **[カスタム ツール]** 値が空の場合、クラスは生成されません。 生成されたクラス名は、リソース ファイル名と一致します。 たとえば、**AppResources.resx** ファイルによって、**AppResources.designer.cs** という名前のファイルに `AppResources` クラスが作成されます。
+**[カスタム ツール]** を **[PublicResXFileCodeGenerator]** に設定すると、`public` アクセスを持つクラスが生成されます。 **[カスタム ツール]** を **[InternalResXFileCodeGenerator]** に設定すると、`internal` アクセスを持つクラスが生成されます。 **[カスタム ツール]** 値が空の場合、クラスは生成されません。 生成されたクラス名は、リソース ファイル名と一致します。 たとえば、 **AppResources.resx** ファイルによって、 **AppResources.designer.cs** という名前のファイルに `AppResources` クラスが作成されます。
 
-サポートされているカルチャごとに、追加のリソース ファイルを作成できます。 各言語ファイルでは、ファイル名に翻訳カルチャを含める必要があるため、**es-MX** をターゲットとするファイルには **AppResources.es-MX.resx** という名前を付ける必要があります。
+サポートされているカルチャごとに、追加のリソース ファイルを作成できます。 各言語ファイルでは、ファイル名に翻訳カルチャを含める必要があるため、 **es-MX** をターゲットとするファイルには **AppResources.es-MX.resx** という名前を付ける必要があります。
 
 実行時に、アプリケーションではリソース要求を特異性の順に解決することが試行されます。 たとえば、デバイスのカルチャが **en-US** である場合、アプリケーションでは次の順序でリソース ファイルが検索されます。
 
@@ -112,7 +112,7 @@ Visual Studio 2019 for Mac では、 **[新しい項目の追加]** ダイアロ
 1. AppResources.en.resx
 1. AppResources.resx (既定)
 
-言語翻訳ファイルには、既定のファイルと同じ **[名前]** 値が指定されている必要があります。 次の XML は、**AppResources.es.resx** という名前のスペイン語翻訳ファイルを示しています。
+言語翻訳ファイルには、既定のファイルと同じ **[名前]** 値が指定されている必要があります。 次の XML は、 **AppResources.es.resx** という名前のスペイン語翻訳ファイルを示しています。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -134,7 +134,7 @@ Visual Studio 2019 for Mac では、 **[新しい項目の追加]** ダイアロ
 
 ## <a name="specify-the-default-culture"></a>既定のカルチャを指定する
 
-リソース ファイルが正常に機能するには、アプリケーションに `NeutralResourcesLanguage` が指定されている必要があります。 共有プロジェクトでは、**AssemblyInfo.cs** ファイルをカスタマイズして既定のカルチャを指定する必要があります。 次のコードは、**AssemblyInfo.cs** ファイルで `NeutralResourcesLanguage` を **en-US** に設定する方法を示しています。
+リソース ファイルが正常に機能するには、アプリケーションに `NeutralResourcesLanguage` が指定されている必要があります。 共有プロジェクトでは、 **AssemblyInfo.cs** ファイルをカスタマイズして既定のカルチャを指定する必要があります。 次のコードは、 **AssemblyInfo.cs** ファイルで `NeutralResourcesLanguage` を **en-US** に設定する方法を示しています。
 
 ```csharp
 using System.Resources;
@@ -151,7 +151,7 @@ using System.Resources;
 > [!WARNING]
 > `NeutralResourcesLanguage` 属性を指定しない場合、`ResourceManager` クラスにより、特定のリソース ファイルを持たないすべてのカルチャに対して `null` 値が返されます。 既定のカルチャを指定した場合、`ResourceManager` により、サポートされていないカルチャに対して既定の Resx ファイルから結果が返されます。 そのため、サポートされていないカルチャに対してテキストが表示されるように、常に `NeutralResourcesLanguage` を指定することをお勧めします。
 
-既定のリソース ファイルが作成され、**AssemblyInfo.cs** ファイルで既定のカルチャが指定されると、実行時にアプリケーションでは、ローカライズされた文字列を取得できます。
+既定のリソース ファイルが作成され、 **AssemblyInfo.cs** ファイルで既定のカルチャが指定されると、実行時にアプリケーションでは、ローカライズされた文字列を取得できます。
 
 リソース ファイルの詳細については、「[Create resource files for .NET apps](/dotnet/framework/resources/creating-resource-files-for-desktop-apps)」(.NET アプリでのリソース ファイルの作成) を参照してください。
 
@@ -246,9 +246,9 @@ Resx ファイルには、テキストを格納するだけでなく、テキス
 
 ### <a name="localize-images-on-android"></a>Android でイメージをローカライズする
 
-Android の場合、ローカライズされたドローアブル (イメージ) は、**Resources** ディレクトリ内のフォルダーの名前付け規則を使用して格納されます。 フォルダーには、ターゲット言語のサフィックスの付いた **drawable** という名前が付けられます。 たとえば、スペイン語の言語のフォルダーには **drawable-es** という名前が付けられます。
+Android の場合、ローカライズされたドローアブル (イメージ) は、 **Resources** ディレクトリ内のフォルダーの名前付け規則を使用して格納されます。 フォルダーには、ターゲット言語のサフィックスの付いた **drawable** という名前が付けられます。 たとえば、スペイン語の言語のフォルダーには **drawable-es** という名前が付けられます。
 
-4 文字のロケール コードが必要な場合、Android では、ダッシュの後に **r** を追加する必要があります。 たとえば、メキシコ ロケール (es-MX) フォルダーには、**drawable-es-rMX** という名前を付ける必要があります。 各ロケール フォルダー内のイメージ ファイル名は同じである必要があります。
+4 文字のロケール コードが必要な場合、Android では、ダッシュの後に **r** を追加する必要があります。 たとえば、メキシコ ロケール (es-MX) フォルダーには、 **drawable-es-rMX** という名前を付ける必要があります。 各ロケール フォルダー内のイメージ ファイル名は同じである必要があります。
 
 ![Android プロジェクト内のローカライズされたイメージ](text-images/pc-android-images.png)
 
@@ -256,9 +256,9 @@ Android の場合、ローカライズされたドローアブル (イメージ)
 
 ### <a name="localize-images-on-ios"></a>iOS でイメージをローカライズする
 
-iOS の場合、ローカライズされたイメージは、**Resources** ディレクトリ内のフォルダーの名前付け規則を使用して格納されます。 既定のフォルダーには、**Base.lproj** という名前が付けられます。 言語固有のフォルダーの名前としては、言語またはロケールの名前の後に **lproj** が付けられます。 たとえば、スペイン語のフォルダーには **es.lproj** という名前が付けられます。
+iOS の場合、ローカライズされたイメージは、 **Resources** ディレクトリ内のフォルダーの名前付け規則を使用して格納されます。 既定のフォルダーには、 **Base.lproj** という名前が付けられます。 言語固有のフォルダーの名前としては、言語またはロケールの名前の後に **lproj** が付けられます。 たとえば、スペイン語のフォルダーには **es.lproj** という名前が付けられます。
 
-4 文字のローカル コードは、2 文字の言語コードと同じように動作します。 たとえば、メキシコ ロケール (es-MX) フォルダーには、**es-MX.lproj** という名前を付ける必要があります。 各ロケール フォルダー内のイメージ ファイル名は同じである必要があります。
+4 文字のローカル コードは、2 文字の言語コードと同じように動作します。 たとえば、メキシコ ロケール (es-MX) フォルダーには、 **es-MX.lproj** という名前を付ける必要があります。 各ロケール フォルダー内のイメージ ファイル名は同じである必要があります。
 
 ![iOS プロジェクト内のローカライズされたイメージ](text-images/pc-ios-images.png)
 
@@ -269,7 +269,7 @@ iOS の場合、ローカライズされたイメージは、**Resources** デ�
 
 ### <a name="localize-images-on-uwp"></a>UWP でイメージをローカライズする
 
-UWP の場合、ローカライズされたイメージは、**Assets/Images** ディレクトリ内のフォルダーの名前付け規則を使用して格納されます。 フォルダーには、言語またはロケールの名前が付けられます。 たとえば、スペイン語のフォルダーには **es**、メキシコ ロケール フォルダーには **es-MX** という名前を付ける必要があります。 各ロケール フォルダー内のイメージ ファイル名は同じである必要があります。
+UWP の場合、ローカライズされたイメージは、 **Assets/Images** ディレクトリ内のフォルダーの名前付け規則を使用して格納されます。 フォルダーには、言語またはロケールの名前が付けられます。 たとえば、スペイン語のフォルダーには **es** 、メキシコ ロケール フォルダーには **es-MX** という名前を付ける必要があります。 各ロケール フォルダー内のイメージ ファイル名は同じである必要があります。
 
 ![UWP プロジェクト内のローカライズされたイメージ](text-images/pc-uwp-images.png)
 

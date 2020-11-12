@@ -10,18 +10,18 @@ ms.date: 01/21/2016
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: bb471787a4b3304be3df008fc3ecea66ff8263b3
-ms.sourcegitcommit: 122b8ba3dcf4bc59368a16c44e71846b11c136c5
+ms.openlocfilehash: 4f7f0a1d8951166327b84f0003f5670f117d65f9
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91560989"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93375214"
 ---
 # <a name="add-a-pinch-gesture-recognizer"></a>ピンチ ジェスチャ認識エンジンを追加する
 
-[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://docs.microsoft.com/samples/xamarin/xamarin-forms-samples/workingwithgestures-pinchgesture)
+[![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](/samples/xamarin/xamarin-forms-samples/workingwithgestures-pinchgesture)
 
-"_ピンチ ジェスチャは対話型のズームを実行するために使用され、PinchGestureRecognizer クラスを使用して実装されます。ピンチ ジェスチャの一般的なシナリオは、ピンチ場所の画像に対して対話型のズームを実行することです。これは、ビューポートのコンテンツを拡大縮小することによって実現され、この記事でその方法について説明します。_ "
+" _ピンチ ジェスチャは対話型のズームを実行するために使用され、PinchGestureRecognizer クラスを使用して実装されます。ピンチ ジェスチャの一般的なシナリオは、ピンチ場所の画像に対して対話型のズームを実行することです。これは、ビューポートのコンテンツを拡大縮小することによって実現され、この記事でその方法について説明します。_ "
 
 ユーザー インターフェース要素をピンチ ジェスチャを使用してズームできるようにするには、[`PinchGestureRecognizer`](xref:Xamarin.Forms.PinchGestureRecognizer) インスタンスを作成し、[`PinchUpdated`](xref:Xamarin.Forms.PinchGestureRecognizer.PinchUpdated) イベントを処理し、新しいジェスチャ認識エンジンをユーザー インターフェイス要素の [`GestureRecognizers`](xref:Xamarin.Forms.View.GestureRecognizers) コレクションに追加します。 [`Image`](xref:Xamarin.Forms.Image) 要素にアタッチされている `PinchGestureRecognizer` のコード例を次に示します。
 
