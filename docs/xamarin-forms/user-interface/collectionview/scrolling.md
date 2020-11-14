@@ -10,12 +10,12 @@ ms.date: 09/17/2019
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 1872f86c0e7be6ab07b4e962d17be7d8030c1d96
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 557c82ac9318faaef5628a15989af2982a7f5ba4
+ms.sourcegitcommit: f2942b518f51317acbb263be5bc0c91e66239f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93373160"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94590416"
 ---
 # <a name="no-locxamarinforms-collectionview-scrolling"></a>Xamarin.Forms CollectionView スクロール
 
@@ -132,12 +132,12 @@ collectionView.ScrollTo(monkey, position: ScrollToPosition.MakeVisible);
 
 このコード例では、項目をスクロールして表示するために必要な最小限のスクロールが実行されます。
 
-[![IOS と Android でスクロールして項目が表示されている CollectionView の一覧のスクリーンショット](scrolling-images/scrolltoposition-makevisible.png "スクロールした項目を含む CollectionView の一覧")](scrolling-images/scrolltoposition-makevisible-large.png#lightbox "スクロールした項目を含む CollectionView の一覧")
+[![IOS と Android での CollectionView のリスト (ScrollToPosition を表示) のスクリーンショット](scrolling-images/scrolltoposition-makevisible.png "スクロールした項目を含む CollectionView の一覧")](scrolling-images/scrolltoposition-makevisible-large.png#lightbox "スクロールした項目を含む CollectionView の一覧")
 
 > [!NOTE]
 > [`ScrollToPosition.MakeVisible`](xref:Xamarin.Forms.ScrollToPosition)メンバーは、 `position` メソッドの呼び出し時に引数が指定されていない場合に、既定で使用され `ScrollTo` ます。
 
-### <a name="start"></a>[開始]
+### <a name="start"></a>開始
 
 メンバーは、 [`ScrollToPosition.Start`](xref:Xamarin.Forms.ScrollToPosition) 項目をビューの先頭までスクロールする必要があることを示します。
 
@@ -147,7 +147,7 @@ collectionView.ScrollTo(monkey, position: ScrollToPosition.Start);
 
 次のコード例では、項目がビューの先頭にスクロールされます。
 
-[![IOS と Android でスクロールして項目が表示されている CollectionView の一覧のスクリーンショット](scrolling-images/scrolltoposition-start.png "スクロールした項目を含む CollectionView の一覧")](scrolling-images/scrolltoposition-start-large.png#lightbox "スクロールした項目を含む CollectionView の一覧")
+[![CollectionView の一覧のスクリーンショット (ScrollToPosition)、iOS および Android の場合](scrolling-images/scrolltoposition-start.png "スクロールした項目を含む CollectionView の一覧")](scrolling-images/scrolltoposition-start-large.png#lightbox "スクロールした項目を含む CollectionView の一覧")
 
 ### <a name="center"></a>Center
 
@@ -159,7 +159,7 @@ collectionView.ScrollTo(monkey, position: ScrollToPosition.Center);
 
 次のコード例では、アイテムがビューの中央にスクロールされます。
 
-[![IOS と Android でスクロールして項目が表示されている CollectionView の一覧のスクリーンショット](scrolling-images/scrolltoposition-center.png "スクロールした項目を含む CollectionView の一覧")](scrolling-images/scrolltoposition-center-large.png#lightbox "スクロールした項目を含む CollectionView の一覧")
+[![CollectionView の一覧のスクリーンショット (ScrollToPosition)、iOS、Android](scrolling-images/scrolltoposition-center.png "スクロールした項目を含む CollectionView の一覧")](scrolling-images/scrolltoposition-center-large.png#lightbox "スクロールした項目を含む CollectionView の一覧")
 
 ### <a name="end"></a>End
 
@@ -171,17 +171,17 @@ collectionView.ScrollTo(monkey, position: ScrollToPosition.End);
 
 次のコード例では、ビューの最後までスクロールされる項目になります。
 
-[![IOS と Android でスクロールして項目が表示されている CollectionView の一覧のスクリーンショット](scrolling-images/scrolltoposition-end.png "スクロールした項目を含む CollectionView の一覧")](scrolling-images/scrolltoposition-end-large.png#lightbox "スクロールした項目を含む CollectionView の一覧")
+[![IOS と Android での CollectionView の一覧と ScrollToPosition のスクリーンショット](scrolling-images/scrolltoposition-end.png "スクロールした項目を含む CollectionView の一覧")](scrolling-images/scrolltoposition-end-large.png#lightbox "スクロールした項目を含む CollectionView の一覧")
 
 ## <a name="control-scroll-position-when-new-items-are-added"></a>新しい項目が追加されたときのスクロール位置の制御
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView) バインド可能 `ItemsUpdatingScrollMode` なプロパティによってサポートされるプロパティを定義します。 このプロパティは `ItemsUpdatingScrollMode` 、 `CollectionView` 新しい項目が追加されたときののスクロール動作を表す列挙値を取得または設定します。 `ItemsUpdatingScrollMode` 列挙体を使って、次のメンバーを定義できます。
 
-- `KeepItemsInView` 新しい項目が追加されたときに表示される最初の項目を維持するために、スクロールのオフセットを調整します。
-- `KeepScrollOffset` 新しい項目が追加されたときに、リストの先頭を基準としたスクロールオフセットを維持します。
-- `KeepLastItemInView` 新しい項目が追加されたときに最後の項目が表示されるように、スクロールのオフセットを調整します。
+- `KeepItemsInView` 新しい項目が追加されると、リスト内の最初の項目が表示されます。
+- `KeepScrollOffset` 新しい項目が追加されたときに、現在のスクロール位置が維持されるようにします。
+- `KeepLastItemInView` 新しい項目が追加されたときにリスト内の最後の項目を維持するように、スクロールのオフセットを調整します。
 
-プロパティの既定値 `ItemsUpdatingScrollMode` は `KeepItemsInView` です。 したがって、新しい項目がに追加されると、リスト内の最初に表示された [`CollectionView`](xref:Xamarin.Forms.CollectionView) 項目が表示されたままになります。 新しく追加された項目が常に一覧の一番下に表示されるようにするには、 `ItemsUpdatingScrollMode` プロパティを次のように設定する必要があり `KeepLastItemInView` ます。
+プロパティの既定値 `ItemsUpdatingScrollMode` は `KeepItemsInView` です。 したがって、新しい項目がに追加されると、 [`CollectionView`](xref:Xamarin.Forms.CollectionView) リスト内の最初の項目が表示されたままになります。 新しい項目が追加されたときにリスト内の最後の項目が表示されるようにするには、 `ItemsUpdatingScrollMode` プロパティをに設定し `KeepLastItemInView` ます。
 
 ```xaml
 <CollectionView ItemsUpdatingScrollMode="KeepLastItemInView">
@@ -237,7 +237,7 @@ CollectionView collectionView = new CollectionView
 > [!IMPORTANT]
 > プロパティの値は、 [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment) [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) プロパティがまたはに設定されている場合にのみ尊重され `Mandatory` `MandatorySingle` ます。
 
-#### <a name="start"></a>[開始]
+#### <a name="start"></a>開始
 
 メンバーは、 `SnapPointsAlignment.Start` スナップポイントが項目の先頭端に合わせて整列されていることを示します。
 

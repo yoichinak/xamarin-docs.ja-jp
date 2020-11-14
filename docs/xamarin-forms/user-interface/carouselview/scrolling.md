@@ -10,12 +10,12 @@ ms.date: 01/28/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 945b6656895b4c148ac4b138af0c4922f9e3bc8f
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 58d0da21c81586a2cee2268c5d2df668eab0515a
+ms.sourcegitcommit: f2942b518f51317acbb263be5bc0c91e66239f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93365698"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94590299"
 ---
 # <a name="no-locxamarinforms-carouselview-scrolling"></a>Xamarin.Forms CarouselView スクロール
 
@@ -135,7 +135,7 @@ carouselView.ScrollTo(monkey, position: ScrollToPosition.MakeVisible);
 > [!NOTE]
 > [`ScrollToPosition.MakeVisible`](xref:Xamarin.Forms.ScrollToPosition)メンバーは、 `position` メソッドの呼び出し時に引数が指定されていない場合に、既定で使用され `ScrollTo` ます。
 
-### <a name="start"></a>[開始]
+### <a name="start"></a>開始
 
 メンバーは、 [`ScrollToPosition.Start`](xref:Xamarin.Forms.ScrollToPosition) 項目をビューの先頭までスクロールする必要があることを示します。
 
@@ -169,11 +169,11 @@ carouselViewView.ScrollTo(monkey, position: ScrollToPosition.End);
 
 [`CarouselView`](xref:Xamarin.Forms.CarouselView) バインド可能 `ItemsUpdatingScrollMode` なプロパティによってサポートされるプロパティを定義します。 このプロパティは `ItemsUpdatingScrollMode` 、 `CarouselView` 新しい項目が追加されたときののスクロール動作を表す列挙値を取得または設定します。 `ItemsUpdatingScrollMode` 列挙体を使って、次のメンバーを定義できます。
 
-- `KeepItemsInView` 新しい項目が追加されたときに表示される最初の項目を維持するために、スクロールのオフセットを調整します。
-- `KeepScrollOffset` 新しい項目が追加されたときに、リストの先頭を基準としたスクロールオフセットを維持します。
-- `KeepLastItemInView` 新しい項目が追加されたときに最後の項目が表示されるように、スクロールのオフセットを調整します。
+- `KeepItemsInView` 新しい項目が追加されると、リスト内の最初の項目が表示されます。
+- `KeepScrollOffset` 新しい項目が追加されたときに、現在のスクロール位置が維持されるようにします。
+- `KeepLastItemInView` 新しい項目が追加されたときにリスト内の最後の項目を維持するように、スクロールのオフセットを調整します。
 
-プロパティの既定値 `ItemsUpdatingScrollMode` は `KeepItemsInView` です。 したがって、新しい項目がに追加されると、リスト内の最初に表示された [`CarouselView`](xref:Xamarin.Forms.CarouselView) 項目が表示されたままになります。 新しく追加された項目が常に一覧の一番下に表示されるようにするには、 `ItemsUpdatingScrollMode` プロパティを次のように設定する必要があり `KeepLastItemInView` ます。
+プロパティの既定値 `ItemsUpdatingScrollMode` は `KeepItemsInView` です。 したがって、新しい項目がに追加されると、 [`CarouselView`](xref:Xamarin.Forms.CarouselView) リスト内の最初の項目が表示されたままになります。 新しい項目が追加されたときにリスト内の最後の項目が表示されるようにするには、 `ItemsUpdatingScrollMode` プロパティをに設定し `KeepLastItemInView` ます。
 
 ```xaml
 <CarouselView ItemsUpdatingScrollMode="KeepLastItemInView">
@@ -231,7 +231,7 @@ CarouselView carouselView = new CarouselView
 > [!IMPORTANT]
 > プロパティの値は、 [`SnapPointsAlignment`](xref:Xamarin.Forms.ItemsLayout.SnapPointsAlignment) [`SnapPointsType`](xref:Xamarin.Forms.ItemsLayout.SnapPointsType) プロパティがまたはに設定されている場合にのみ尊重され `Mandatory` `MandatorySingle` ます。
 
-#### <a name="start"></a>[開始]
+#### <a name="start"></a>開始
 
 メンバーは、 `SnapPointsAlignment.Start` スナップポイントが項目の先頭端に合わせて整列されていることを示します。 次の XAML の例は、この列挙型のメンバーを設定する方法を示しています。
 

@@ -1,21 +1,21 @@
 ---
 title: Xamarin.Forms CollectionView の概要
-description: CollectionView は、さまざまなレイアウト仕様を使用してデータの一覧を表示するための、柔軟でパフォーマンスの高いビューです。
+description: CollectionView は、ListView の代わりに、柔軟性が高く、パフォーマンスに優れています。
 ms.prod: xamarin
 ms.assetid: 5C08F687-B9E6-4CE4-8726-F287F6D0B6A7
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/11/2019
+ms.date: 11/05/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: a46214af677cd164a4e55b06cf386533d3130ccb
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 1ad9ef36471b14ad44b108189b94bb22d1b3db41
+ms.sourcegitcommit: f2942b518f51317acbb263be5bc0c91e66239f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93370573"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94590253"
 ---
 # <a name="no-locxamarinforms-collectionview-introduction"></a>Xamarin.Forms CollectionView の概要
 
@@ -24,6 +24,8 @@ ms.locfileid: "93370573"
 [`CollectionView`](xref:Xamarin.Forms.CollectionView) は、さまざまなレイアウト仕様を使用してデータを一覧表示するためのビューです。 これは、より柔軟でパフォーマンスの高い代替手段を提供することを目的として [`ListView`](xref:Xamarin.Forms.ListView) います。 たとえば、次のスクリーンショットは、 `CollectionView` 2 つの列の垂直グリッドを使用し、複数の選択を可能にするを示しています。
 
 [![IOS と Android の CollectionView 垂直グリッドレイアウトのスクリーンショット](introduction-images/verticalgrid-multipleselection.png "複数選択の CollectionView 垂直グリッドレイアウト")](introduction-images/verticalgrid-multipleselection-large.png#lightbox "複数選択の CollectionView 垂直グリッドレイアウト")
+
+[`CollectionView`](xref:Xamarin.Forms.CollectionView) スクロールまたは選択が必要なデータの一覧を表示するには、を使用する必要があります。 バインド可能なレイアウトは、表示されるデータがスクロールや選択を必要としない場合に使用できます。 詳細については、「 [」 Xamarin.Forms の「バインド](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)可能なレイアウト」を参照してください。
 
 [`CollectionView`](xref:Xamarin.Forms.CollectionView) は4.3 から使用でき Xamarin.Forms ます。
 
@@ -44,7 +46,7 @@ ms.locfileid: "93370573"
 
 ## <a name="move-from-listview-to-collectionview"></a>ListView から CollectionView への移動
 
-[`ListView`](xref:Xamarin.Forms.ListView) 既存の実装の実装は Xamarin.Forms [`CollectionView`](xref:Xamarin.Forms.CollectionView) 、次の表を参考にして実装に移行できます。
+[`ListView`](xref:Xamarin.Forms.ListView) 既存のアプリケーションの実装は Xamarin.Forms [`CollectionView`](xref:Xamarin.Forms.CollectionView) 、次の表を参考にして実装に移行できます。
 
 | 概念 | ListView API | CollectionView |
 |---|---|---|
@@ -64,3 +66,4 @@ ms.locfileid: "93370573"
 ## <a name="related-links"></a>関連リンク
 
 - [CollectionView (サンプル)](/samples/xamarin/xamarin-forms-samples/userinterface-collectionviewdemos/)
+- [バインド可能なレイアウト Xamarin.Forms](~/xamarin-forms/user-interface/layouts/bindable-layouts.md)

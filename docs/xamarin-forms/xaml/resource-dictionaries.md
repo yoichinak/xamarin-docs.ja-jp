@@ -6,17 +6,17 @@ ms.assetid: DF103686-4A92-40FA-9CF1-A9376293B13C
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 04/01/2020
+ms.date: 11/10/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
 ms.custom: video
-ms.openlocfilehash: 90068096eced1fd1ddd2eb59b845eb4d5e41286f
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 60d16183e1a2ea162c97bbf8b30636a5a9999204
+ms.sourcegitcommit: f2942b518f51317acbb263be5bc0c91e66239f50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93368883"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94590267"
 ---
 # <a name="no-locxamarinforms-resource-dictionaries"></a>Xamarin.Forms リソースディクショナリ
 
@@ -133,7 +133,7 @@ XAML で [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) `StaticRe
 
 ## <a name="stand-alone-resource-dictionaries"></a>スタンドアロンリソースディクショナリ
 
-から派生したクラスは、 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 独立したスタンドアロンファイルにすることもできます。 結果ファイルは、アプリケーション間で共有できます。
+から派生したクラスは、 [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) スタンドアロンの XAML ファイルにも存在できます。 XAML ファイルは、アプリケーション間で共有できます。
 
 このようなファイルを作成するには、新しい **コンテンツビュー** または **コンテンツページ** アイテムをプロジェクトに追加します (ただし、C# ファイルのみを含む **コンテンツビュー** や **コンテンツページ** は追加しません)。 分離コードファイルを削除し、XAML ファイルで基底クラスの名前を [`ContentView`](xref:Xamarin.Forms.ContentView) またはからに変更し [`ContentPage`](xref:Xamarin.Forms.ContentPage) [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) ます。 また、 `x:Class` ファイルのルートタグから属性を削除します。
 
@@ -167,6 +167,17 @@ XAML で [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) `StaticRe
 ```
 
 この例では、に [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) 1 つのリソースが含まれています。これは、型のオブジェクトです [`DataTemplate`](xref:Xamarin.Forms.DataTemplate) 。 **Myresourcedictionary** は、別のリソースディクショナリにマージすることによって使用できます。
+
+既定では、リンカーの動作がすべてのアセンブリをリンクするように設定されている場合、リンカーはリリースビルドからスタンドアロンの XAML ファイルを削除します。 スタンドアロンの XAML ファイルをリリースビルドに残しておくには、次のようにします。
+
+1. `Preserve`スタンドアロンの XAML ファイルを含むアセンブリにカスタム属性を追加します。 詳細については、「 [コードの保存](~/ios/deploy-test/linker.md)」を参照してください。
+1. `Preserve`アセンブリレベルで属性を設定します。
+
+    ```csharp
+    [assembly:Preserve(AllMembers = true)]
+    ```
+
+リンクの詳細については、「 [Xamarin iOS アプリのリンク](~/ios/deploy-test/linker.md) と [Android でのリンク](~/android/deploy-test/linker.md)」を参照してください。
 
 ## <a name="merged-resource-dictionaries"></a>結合されたリソース ディクショナリ
 
@@ -239,7 +250,9 @@ XAML で [`ResourceDictionary`](xref:Xamarin.Forms.ResourceDictionary) `StaticRe
 - [リソースディクショナリ (サンプル)](/samples/xamarin/xamarin-forms-samples/xaml-resourcedictionaries)
 - [XAML マークアップ拡張](~/xamarin-forms/xaml/markup-extensions/index.md)
 - [Xamarin.Forms のスタイル](~/xamarin-forms/user-interface/styles/index.md)
-- [ResourceDictionary](xref:Xamarin.Forms.ResourceDictionary)
+- [Xamarin.iOS アプリをリンクする](~/ios/deploy-test/linker.md)
+- [Android でのリンク](~/android/deploy-test/linker.md)
+- [ResourceDictionary API](xref:Xamarin.Forms.ResourceDictionary)
 
 ## <a name="related-video"></a>関連ビデオ
 

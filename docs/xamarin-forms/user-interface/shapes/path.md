@@ -10,12 +10,12 @@ ms.date: 06/21/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 62bfb13f3aa4c09da76eca6723a34e6e8a72853d
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 1ba44903f20d0431c27f2d49429b2feb9c9a51e0
+ms.sourcegitcommit: f920ac0724f09e5c9b4f36be1995a5a17a6d9f95
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93373732"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94591061"
 ---
 # <a name="no-locxamarinforms-shapes-path"></a>Xamarin.Forms 図形: パス
 
@@ -56,9 +56,6 @@ ms.locfileid: "93373732"
 `Data`文字列は `M` 、パスの絶対開始点を確立するによって示される move コマンドで始まります。 `L` は line コマンドです。このコマンドは、始点から指定された終点までの直線を作成します。 `Z` close コマンドです。このコマンドは、現在の点を開始点につなげる線を作成します。 結果は三角形です。
 
 ![パスの三角形](path-images/triangle.png "パスの三角形")
-
-> [!NOTE]
-> パスマークアップ構文は、XAML でのみ使用できます。
 
 パスマークアップ構文の詳細については、「 [ Xamarin.Forms パスマークアップ構文](path-markup-syntax.md)」を参照してください。
 

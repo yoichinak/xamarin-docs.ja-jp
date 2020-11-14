@@ -6,16 +6,16 @@ ms.assetid: A2C1BD59-1A16-4E26-A825-0338E2AF9E65
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 06/19/2020
+ms.date: 11/13/2020
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: c774b795fce50b32f01b50c29cb71dd5fd02585c
-ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
+ms.openlocfilehash: 4f60a48d2d8b43ea08ccc36401103d8987e48b1c
+ms.sourcegitcommit: f920ac0724f09e5c9b4f36be1995a5a17a6d9f95
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93373524"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94591048"
 ---
 # <a name="no-locxamarinforms-shapes-path-markup-syntax"></a>Xamarin.Forms 図形: パスマークアップ構文
 
@@ -43,7 +43,13 @@ Xamarin.Forms パスマークアップ構文を使用すると、XAML でパス�
 パスマークアップ構文では、コマンドの前または後にスペースは必要ありません。 また、2つの数値はコンマまたは空白で区切る必要はありませんが、文字列が明確である場合にのみ実現できます。
 
 > [!TIP]
-> パスマークアップ言語では、スケーラブルベクターグラフィックス (SVG) イメージパス定義と互換性のある構文が使用されるため、SVG 形式からグラフィックスを移植する場合に便利です。
+> パスマークアップ構文は、スケーラブルベクターグラフィックス (SVG) イメージパス定義と互換性があるため、SVG 形式からグラフィックスを移植する場合に便利です。
+
+パスマークアップ構文は XAML での使用を目的としていますが、 `Geometry` クラスのメソッドを呼び出すことによって、コード内のオブジェクトに変換でき `ConvertFromInvariantString` `PathGeometryConverter` ます。
+
+```csharp
+Geometry pathData = (Geometry)new PathGeometryConverter().ConvertFromInvariantString("M13.908992,16.207977 L32.000049,16.207977 32.000049,31.999985 13.908992,30.109983Z");
+```
 
 ## <a name="move-command"></a>移動コマンド
 
