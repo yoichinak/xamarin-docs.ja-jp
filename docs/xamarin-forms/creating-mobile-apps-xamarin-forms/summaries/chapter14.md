@@ -10,16 +10,19 @@ ms.date: 07/19/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 5aa62927efe0a9803efbddaef97ac6557edccd6c
-ms.sourcegitcommit: c3329ab25d377907d8804cdd5e26dc84a274f39c
+ms.openlocfilehash: 09011647428e2af1bdfcdb2f9def8da64ef84144
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88130904"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93374845"
 ---
 # <a name="summary-of-chapter-14-absolute-layout"></a>第 14 章の概要: 絶対レイアウト
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter14)
+
+> [!NOTE]
+> この本は 2016 年春に発行されて以降、改訂されていません。 多くの情報はまだ価値がありますが、一部の資料は古くなっており、トピックの中にはまったく正しくないものまたは不完全なものもあります。
 
 `StackLayout` と同様に、[`AbsoluteLayout`](xref:Xamarin.Forms.AbsoluteLayout) は `Layout<View>` から派生し、`Children` プロパティを継承します。 `AbsoluteLayout` によって実装されるレイアウト システムでは、プログラマーがその子の位置と、必要に応じてサイズを指定する必要があります。 位置は、デバイスに依存しない単位で、`AbsoluteLayout` の左上隅を基準とする子の左上隅の位置によって指定されます。 `AbsoluteLayout` では、比例の配置とサイズ変更の機能も実装されています。
 

@@ -10,19 +10,19 @@ ms.date: 07/19/2018
 no-loc:
 - Xamarin.Forms
 - Xamarin.Essentials
-ms.openlocfilehash: 37403cfe9f37972c20fb074db5e30cc54b60fea9
-ms.sourcegitcommit: 32d2476a5f9016baa231b7471c88c1d4ccc08eb8
+ms.openlocfilehash: 8cd68fdc3d7e94b6ae12ce6296dc4d698bc0ebd2
+ms.sourcegitcommit: ebdc016b3ec0b06915170d0cbbd9e0e2469763b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84136878"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93370261"
 ---
 # <a name="summary-of-chapter-5-dealing-with-sizes"></a>第 5 章の概要: サイズの処理
 
 [![サンプルのダウンロード](~/media/shared/download.png)サンプルのダウンロード](https://github.com/xamarin/xamarin-forms-book-samples/tree/master/Chapter05)
 
 > [!NOTE]
-> このページの注記では、Xamarin.Forms が書籍に記載されている資料と異なる部分が示されています。
+> この本は 2016 年春に発行されて以降、改訂されていません。 多くの情報はまだ価値がありますが、一部の資料は古くなっており、トピックの中にはまったく正しくないものまたは不完全なものもあります。
 
 これまでに、Xamarin.Forms のいくつかのサイズについて説明しました。
 
